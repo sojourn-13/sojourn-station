@@ -224,7 +224,7 @@
 
 /datum/design/autolathe/gun/sts25
 	name = "SA AR 6.5x39mm \"STS-25\""
-	build_path = /obj/item/gun/projectile/automatic/sts
+	build_path = /obj/item/gun/projectile/automatic/sts/carbine
 
 /datum/design/autolathe/gun/saw
 	name = "SA LMG 6.5x39mm \"Pegasus\""

@@ -15,7 +15,7 @@
 	inventory = list(
 		"Projectiles" = list(
 			/obj/item/gun/projectile/automatic/c20r,
-			/obj/item/gun/projectile/automatic/sts,
+			/obj/item/gun/projectile/automatic/sts/carbine,
 			/obj/item/gun/projectile/automatic/sts/rifle,
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa,

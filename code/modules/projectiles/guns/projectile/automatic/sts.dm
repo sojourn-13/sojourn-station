@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/sts
 	name = "\"STS\" carbine"
-	desc = "The rugged STS-25, the right arm of the unfree world. Uses Carbine rounds."
+	desc = "The rugged STS-25, the right arm of the unfree world. Uses 6.5mm Carbine rounds."
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -22,7 +22,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SILENCABLE)
 	serial_type = "SA"
 	saw_off = TRUE
-	sawn = /obj/item/gun/projectile/automatic/sts/sawn
+	sawn = /obj/item/gun/projectile/automatic/sts/sawn/true
 
 
 	init_firemodes = list(
@@ -51,9 +51,11 @@
 	. = ..()
 	update_icon()
 
-/obj/item/gun/projectile/automatic/sts/sawn
+/obj/item/gun/projectile/automatic/sts/carbine
+
+/obj/item/gun/projectile/automatic/sts/sawn // Skeleton one for code reasons
 	name = "short-barreled \"STS\" carbine"
-	desc = "The rugged STS-25, the right left arm of the unfree world. Uses Carbine rounds. This one has had its stock lopped off, rendering it rather impractical to use."
+	desc = "The rugged STS-25, the right left arm of the unfree world. Uses 6.5mm Carbine rounds. This one has had its stock lopped off and its barrel shortened, rendering it rather impractical to use."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -65,6 +67,8 @@
 	saw_off = FALSE
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.2 // 20 vig for insta wield
+
+/obj/item/gun/projectile/automatic/sts/sawn/true // The one we should get
 
 /obj/item/gun/projectile/automatic/sts/rifle
 	name = "\"STS\" battle rifle"
