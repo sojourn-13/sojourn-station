@@ -2987,7 +2987,6 @@
 	M.dizziness = 0
 	M.confused = 0
 	M.sleeping = 0 // FOURTEEN HOURS SHIFT LET'S GOOOOOO
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.1)
 	M.add_chemical_effect(CE_PULSE, 2) // Purely flavor
 
 /datum/reagent/drink/antidepressant
