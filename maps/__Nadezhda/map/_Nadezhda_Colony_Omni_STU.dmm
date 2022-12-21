@@ -50825,6 +50825,11 @@
 /obj/random/contraband/low_chance,
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"jHI" = (
+/obj/structure/table/woodentable,
+/obj/item/material/kitchen/rollingpin,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/absolutism/vectorrooms)
 "jHL" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk,
@@ -51528,22 +51533,11 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "jOz" = (
-/obj/machinery/disposal/deliveryChute{
-	dir = 4
-	},
-/obj/structure/disposalpipe/trunk{
+/obj/machinery/light,
+/obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 1
-	},
-/obj/machinery/light,
-/obj/machinery/door/window,
-/obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 0
-	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/xenobiology)
 "jOG" = (
 /obj/item/reagent_containers/blood/AMinus{
@@ -97559,9 +97553,6 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/skyyard)
 "sjm" = (
-/obj/effect/floor_decal/industrial/danger{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
@@ -118366,10 +118357,11 @@
 /obj/item/reagent_containers/food/drinks/milk,
 /obj/item/reagent_containers/food/drinks/milk,
 /obj/item/reagent_containers/food/snacks/meat,
-/obj/item/material/kitchen/rollingpin,
 /obj/machinery/light_switch{
 	pixel_y = 30
 	},
+/obj/item/reagent_containers/food/drinks/bottle/cream,
+/obj/item/reagent_containers/food/drinks/bottle/cream,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/absolutism/vectorrooms)
 "weT" = (
@@ -234885,7 +234877,7 @@ oQZ
 elF
 xzr
 riw
-kyl
+jHI
 rYv
 rYv
 rYv

@@ -94,9 +94,9 @@
 
 /datum/craft_recipe/repairs/sts_carbine
 	name = "STS carbine"
-	result = /obj/item/gun/projectile/automatic/sts/lrifle
+	result = /obj/item/gun/projectile/automatic/sts/carbine
 	steps = list(
-		list(/obj/item/gun/projectile/automatic/sts/lrifle/sawn, 1, "time" = 60),
+		list(/obj/item/gun/projectile/automatic/sts/sawn/true, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_WELDING, 30, "time" = 60)

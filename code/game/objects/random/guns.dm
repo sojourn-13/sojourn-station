@@ -90,7 +90,7 @@
 /obj/random/gun_combat/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/automatic/texan = 1,\
 				/obj/item/gun/projectile/automatic/greasegun = 1,\
-				/obj/item/gun/projectile/automatic/sts/lrifle/sawn = 1,\
+				/obj/item/gun/projectile/automatic/sts/sawn/true = 1,\
 				/obj/item/ammo_kit = 0.8,
 				/obj/item/gun/projectile/automatic/sts/rifle/sawn = 1,\
 				/obj/item/gun/projectile/automatic/omnirifle/solmarine = 1,\
