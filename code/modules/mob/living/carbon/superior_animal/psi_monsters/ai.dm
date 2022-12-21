@@ -42,6 +42,10 @@
 	. = ..()
 
 /turf/proc/psionic_respawn(my_little_location, respawn_mob_type)
+	if(holy)
+		addtimer(CALLBACK(src, /turf/proc/psionic_respawn, src, respawn_mob_type), rand(15 MINUTES,20 MINUTES))
+		holy = FALSE
+		return
 	new respawn_mob_type(my_little_location)
 
 
