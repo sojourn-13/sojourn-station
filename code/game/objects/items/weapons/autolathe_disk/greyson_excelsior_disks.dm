@@ -66,6 +66,18 @@
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/onestar/rebar
+	disk_name = "Greyson Positronics - rebar"
+	icon_state = "onestar"
+	license = 10
+	designs = list(
+		/datum/design/autolathe/gun/rebar = 3,
+		/datum/design/autolathe/ammo/kurtz_practice = 0,
+		/datum/design/autolathe/ammo/kurtz_rubber,
+		/datum/design/autolathe/ammo/kurtz,
+		/datum/design/autolathe/ammo/kurtz_lethal = 2,
+		)
+
 /obj/item/computer_hardware/hard_drive/portable/design/onestar/nail_gun
 	disk_name = "Greyson Positronics - Nail Gun"
 	icon_state = "onestar"
