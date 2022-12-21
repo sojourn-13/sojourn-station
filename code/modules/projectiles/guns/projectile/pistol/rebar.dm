@@ -2,8 +2,8 @@
 	name = "\"Rebar\" heavy pistol"
 	desc = "A GP heavy pistol that could punch a whole into several layers of plasteel. Uses 12mm rounds."
 	icon = 'icons/obj/guns/projectile/rebar.dmi'
-	icon_state = "type-90"
-	item_state = "type-90"
+	icon_state = "type_90"
+	item_state = "type_90"
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_50
 	can_dual = TRUE
