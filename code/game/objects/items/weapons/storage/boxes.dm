@@ -863,3 +863,65 @@ Boxes with clothing on them, unable to put them back if taken out because...
 /obj/item/storage/box/guild_capacitor/populate_contents()
 	for(var/i in 1 to 4)
 		new /obj/item/stock_parts/capacitor/handmade(src)
+
+
+/obj/item/storage/box/njoy
+	name = "mix Njoy packet"
+	desc = "Packet full of red njoy pills."
+	illustration = null
+	icon_state = "packet_njoy_mix"
+	item_state = "packet_njoy_mix"
+
+/obj/item/storage/box/njoy/red/New()
+	. = ..()
+
+/obj/item/storage/box/njoy/red/populate_contents()
+	new /obj/item/storage/pill_bottle/njoy/red(src)
+	new /obj/item/storage/pill_bottle/njoy/blue(src)
+	new /obj/item/storage/pill_bottle/njoy/green(src)
+
+
+/obj/item/storage/box/njoy/red
+	name = "red Njoy packet"
+	desc = "Packet full of red njoy pills."
+	illustration = null
+	icon_state = "packet_njoy_red"
+	item_state = "packet_njoy_red"
+
+/obj/item/storage/box/njoy/red/New()
+	. = ..()
+
+/obj/item/storage/box/njoy/red/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/storage/pill_bottle/njoy/red(src)
+
+
+/obj/item/storage/box/njoy/blue
+	name = "blue Njoy packet"
+	desc = "Packet full of blue njoy pills."
+	illustration = null
+	icon_state = "packet_njoy_blue"
+	item_state = "packet_njoy_blue"
+
+/obj/item/storage/box/njoy/blue/New()
+	. = ..()
+
+/obj/item/storage/box/njoy/blue/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/storage/pill_bottle/njoy/blue(src)
+
+
+/obj/item/storage/box/njoy/green
+	name = "green Njoy packet"
+	desc = "Packet full of green njoy pills."
+	illustration = null
+	icon_state = "packet_njoy_green"
+	item_state = "packet_njoy_green"
+
+/obj/item/storage/box/njoy/green/New()
+	. = ..()
+
+/obj/item/storage/box/njoy/green/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/storage/pill_bottle/njoy/green(src)
+
