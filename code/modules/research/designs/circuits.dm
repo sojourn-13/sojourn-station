@@ -58,11 +58,6 @@
 	build_path = /obj/item/circuitboard/sleeper
 	category = CAT_MEDI
 
-/datum/design/research/circuit/hypersleeper
-	name = "Hyper-sleeper"
-	build_path = /obj/item/circuitboard/sleeper/hyper
-	category = CAT_MEDI
-
 /datum/design/research/circuit/autodoc
 	name = "Autodoc"
 	build_path = /obj/item/circuitboard/autodoc

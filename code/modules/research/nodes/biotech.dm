@@ -215,8 +215,8 @@
 							)
 
 /datum/technology/portable_biotech
-	name = "Advanced Chemistry and Portable Biotech"
-	desc = "Portable injection and scan method, capitalists' and not capitalists portable sleeper. Integrated medical sensors hud with hardsuits' systems. Improved sleeper designs."
+	name = "Advanced and Portable Chemistry Biotech"
+	desc = "Portable injection and scan method, capitalists' and not capitalists portable sleeper. Integrated medical sensors hud with hardsuits' systems."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.55
@@ -237,9 +237,7 @@
 							/datum/design/research/structure/bidontrigger,
 							/datum/design/research/item/medical/compact_defibs,
 							/datum/design/research/item/implant/alarm,
-							/datum/design/research/item/petite_scanner,
-							/datum/design/research/circuit/hypersleeper
-							)
+							/datum/design/research/item/petite_scanner)
 
 /datum/technology/tracker_tablet
 	name = "Tracker tablet"
