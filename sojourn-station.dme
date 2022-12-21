@@ -866,6 +866,7 @@
 #include "code\game\machinery\vendor\labtop_vendor.dm"
 #include "code\game\machinery\vendor\medical_vendors.dm"
 #include "code\game\machinery\vendor\misc_vendors.dm"
+#include "code\game\machinery\vendor\one_star_vending.dm"
 #include "code\game\machinery\vendor\recycle_vendor.dm"
 #include "code\game\machinery\vendor\technologies.dm"
 #include "code\game\machinery\vendor\tool_vendors.dm"

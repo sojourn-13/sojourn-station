@@ -152,6 +152,7 @@
 	var/list/can_stock = list()	//A whitelist of objects which can be stocked into this vendor
 	//Note that a vendor can always accept restocks of things it has had in the past. This is in addition to that
 	var/no_criminals = FALSE //If true, the machine asks if you're wanted by security when you try to order.
+	var/alt_currency_path	// If set, this machine will only take items of the given path as currency.
 
 /obj/machinery/vending/New()
 	..()
@@ -352,25 +353,33 @@
 	var/obj/item/card/id/ID = I.GetIdCard()
 
 	if (currently_vending && earnings_account && !earnings_account.suspended)
-		var/paid = 0
-		var/handled = 0
-		power_change(src)
-		if (ID) //for IDs and PDAs and wallets with IDs
-			paid = pay_with_card(ID,I)
-			handled = 1
-			playsound(usr.loc, 'sound/machines/id_swipe.ogg', 100, 1)
-		else if (istype(I, /obj/item/spacecash/ewallet))
-			var/obj/item/spacecash/ewallet/C = I
-			paid = pay_with_ewallet(C, user)
-			handled = 1
-			playsound(usr.loc, 'sound/machines/id_swipe.ogg', 100, 1)
-		else if (istype(I, /obj/item/spacecash/bundle))
-			var/obj/item/spacecash/bundle/C = I
-			paid = pay_with_cash(C)
-			handled = 1
+		var/paid = FALSE
+		var/handled = FALSE
+
+		if(alt_currency_path)
+			if(istype(I, alt_currency_path))
+				paid = pay_with_item(I, user)
+			else
+				var/atom/movable/AM = alt_currency_path
+				to_chat(user, SPAN_WARNING("This vending machine only accepts [initial(AM.name)] as currency."))
+			handled = TRUE
+		else
+			if(ID) //for IDs and PDAs and wallets with IDs
+				paid = pay_with_card(ID,I)
+				handled = TRUE
+				playsound(usr.loc, 'sound/machines/id_swipe.ogg', 100, 1)
+			else if(istype(I, /obj/item/spacecash/ewallet))
+				var/obj/item/spacecash/ewallet/C = I
+				paid = pay_with_ewallet(C)
+				handled = TRUE
+				playsound(usr.loc, 'sound/machines/id_swipe.ogg', 100, 1)
+			else if(istype(I, /obj/item/spacecash/bundle))
+				var/obj/item/spacecash/bundle/C = I
+				paid = pay_with_cash(C)
+				handled = TRUE
 
 		if(paid)
-			vend(currently_vending, usr)
+			vend(currently_vending, user)
 			return
 		else if(handled)
 			SSnano.update_uis(src)
@@ -384,7 +393,7 @@
 			status_message = "Error: Unable to access account. Please contact technical support if problem persists."
 			status_error = 1
 			SSnano.update_uis(src)
-			return 0
+			return
 
 		if(user_account.suspended)
 			status_message = "Unable to access account: account suspended."
@@ -415,7 +424,7 @@
 					status_message = "Unable to access account: incorrect credentials."
 					status_error = 1
 					SSnano.update_uis(src)
-					return 0
+					return
 			if(!machine_vendor_account)
 				machine_vendor_account = user_account
 				earnings_account = user_account
@@ -572,6 +581,31 @@
 		// owner made them
 		credit_purchase(customer_account.owner_name)
 		return 1
+
+// Pay with an alternative currency
+/obj/machinery/vending/proc/pay_with_item(obj/item/I, mob/user)
+	var/should_qdel = TRUE
+	var/amount_to_spend = currently_vending.price
+
+	if(istype(I, /obj/item/stack))
+		var/obj/item/stack/S = I
+		if(S.amount >= amount_to_spend)
+			S.use(amount_to_spend)
+			if(S.amount)
+				should_qdel = FALSE		// Don't qdel a stack with remaining charges
+		else
+			to_chat(user, SPAN_WARNING("\icon[I] That is not enough money."))
+			return FALSE
+	else
+		return FALSE
+
+	visible_message(SPAN_NOTICE("\The [user] inserts ["[amount_to_spend]"] [I.name] into \the [src]."))
+
+	if(should_qdel)
+		user.drop_from_inventory(I)
+		qdel(I)
+
+	return TRUE
 
 /**
  * Add money for current purchase to the vendor account.

@@ -140,6 +140,12 @@
 	id = DEPARTMENT_INDEPENDENT
 	jobs_in_department = list("/datum/job/off_colony_hunt_master","/datum/job/off_colony_hunter","/datum/job/off_colony_herbalist","/datum/job/outsider","/datum/job/assistant")
 
+/datum/department/greyson_positronic
+	name = "Greyson Positronic"
+	id = DEPARTMENT_GREYSON
+	jobs_in_department = list()
+
+
 ///////////////////////DEPARTMENT EXPERIENCE PERKS//////////////////////////////////////////
 
 /datum/perk/experienced
