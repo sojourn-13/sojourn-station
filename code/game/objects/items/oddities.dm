@@ -205,7 +205,7 @@
 	prob_perk = 5 //Grounded and talked about, hard to think outside the box when given its history and known lore
 	force = 1
 	effective_faction = list("psi_monster") // roach are weak to bricks.
-	damage_mult = 90 //90 damage to psionic mobs
+	damage_mult = 15 //15~, damage to psionic mobs no AP
 	oddity_stats = list(
 		STAT_ROB = 4,
 		STAT_VIG = 4
