@@ -565,3 +565,18 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/computer_hardware/network_card/advanced = 40,
 		/obj/random/lathe_disk/advanced/onestar = 15
 	)
+
+/obj/structure/salvageable/os/power  //todo:make a system to directly repair to a generator
+	name = "broken generator"
+	desc = "A GP cold fusion reactor, broken beyond repair. You may be able to salvage something from this."
+	icon_state = "generator_broken"
+	salvageable_parts = list(
+		/obj/item/stock_parts/console_screen = 80,
+		/obj/item/stock_parts/micro_laser/one_star = 50,
+		/obj/item/stock_parts/micro_laser/one_star = 20,
+		/obj/item/scrap_lump = 40,
+		/obj/item/scrap_lump = 40,
+		/obj/item/stock_parts/capacitor/one_star = 50,
+		/obj/item/trash/material/circuit = 60,
+		/obj/item/circuitboard/os_generator = 30
+	)

@@ -114,6 +114,10 @@
 	name = "NM 12mm Amnesty"
 	build_path = /obj/item/gun/projectile/lamia/amnesty
 
+/datum/design/autolathe/gun/rebar
+	name = "GP 12mm Rebar"
+	build_path = /obj/item/gun/projectile/rebar
+
 /// S M G S
 
 /datum/design/autolathe/gun/texan

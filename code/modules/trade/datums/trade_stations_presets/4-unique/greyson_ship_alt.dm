@@ -72,6 +72,8 @@
 	offer_types = list(
 		/obj/item/gun/projectile/spring = offer_data("GP Spring", 2500, 1),
 		/obj/item/gun/projectile/rivet = offer_data("GP Rivet", 3000, 1),
+		/obj/item/gun/projectile/rebar = offer_data("GP Rebar", 4000, 1),
 		/obj/item/gun/projectile/automatic/nail_gun = offer_data("GP Nail", 6000, 1),
+		/obj/item/gun/projectile/trouble_shooter = offer_data("GP Trouble Shooter", 18000, 1),
 		/obj/item/gun/projectile/automatic/scaffold = offer_data("GP Scaffold", 7500, 1)
 	)
