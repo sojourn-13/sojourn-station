@@ -223,16 +223,17 @@
 	new /obj/item/gun/projectile/revolver/mistral(src)
 	new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
 
-/obj/item/storage/box/syndie_kit/sts
+/obj/item/storage/box/syndie_kit/ak
 	name = "assault rifle box"
 	desc = "Assault rifle kit"
 	icon_state = "box_of_doom_big"
 	w_class = ITEM_SIZE_HUGE
 
 /obj/item/storage/box/syndie_kit/sts/populate_contents()
-	new /obj/item/gun/projectile/automatic/sts/carbine(src)
-	new /obj/item/ammo_magazine/light_rifle_257(src)
-	new /obj/item/ammo_magazine/light_rifle_257_short(src)
+	new /obj/item/gun/projectile/automatic/ak47/sa/tac(src)
+	new /obj/item/ammo_magazine/rifle_75(src)
+	new /obj/item/ammo_magazine/rifle_75(src)
+	new /obj/item/ammo_magazine/rifle_75(src)
 	new /obj/item/clothing/suit/storage/toggle/leather/blackjacket(src)
 
 /obj/item/storage/box/syndie_kit/pug
@@ -256,6 +257,8 @@
 	new /obj/item/weaponparts/heavysniper/stock(src)
 	new /obj/item/weaponparts/heavysniper/reciever(src)
 	new /obj/item/weaponparts/heavysniper/barrel(src)
+	new /obj/item/projectile/bullet/antim
+	    amount = 5
 
 /obj/item/storage/box/syndie_kit/toxin
 	name = "toxin kit"
