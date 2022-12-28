@@ -147,9 +147,7 @@
 		..()
 		new /obj/item/book/manual/wiki/engineering_construction(src)
 		new /obj/item/book/manual/wiki/engineering_hacking(src)
-		new /obj/item/book/manual/wiki/engineering_guide(src)
 		new /obj/item/book/manual/wiki/engineering_atmos(src)
-		new /obj/item/book/manual/wiki/engineering_singularity(src)
 		new /obj/item/book/manual/evaguide(src)
 		update_icon()
 
