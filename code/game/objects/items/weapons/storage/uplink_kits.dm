@@ -258,7 +258,6 @@
 	new /obj/item/weaponparts/heavysniper/reciever(src)
 	new /obj/item/weaponparts/heavysniper/barrel(src)
 	new /obj/item/projectile/bullet/antim/prespawn(src)
-	    amount = 5
 
 /obj/item/storage/box/syndie_kit/toxin
 	name = "toxin kit"
