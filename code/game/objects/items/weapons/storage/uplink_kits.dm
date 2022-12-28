@@ -229,7 +229,7 @@
 	icon_state = "box_of_doom_big"
 	w_class = ITEM_SIZE_HUGE
 
-/obj/item/storage/box/syndie_kit/sts/populate_contents()
+/obj/item/storage/box/syndie_kit/ak/populate_contents()
 	new /obj/item/gun/projectile/automatic/ak47/sa/tac(src)
 	new /obj/item/ammo_magazine/rifle_75(src)
 	new /obj/item/ammo_magazine/rifle_75(src)
