@@ -409,7 +409,7 @@
 	icon_state = "box_security"
 	illustration = "flashbang"
 
-/obj/item/storage/box/smokes/populate_contents()
+/obj/item/storage/box/phosphorous/populate_contents()
 	for(var/i in 1 to 5)
 		new /obj/item/grenade/frag/white_phosphorous(src)
 
