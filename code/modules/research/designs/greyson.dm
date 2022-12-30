@@ -160,7 +160,7 @@
 
 /datum/design/research/item/tool/multitool/multitool_onestar
 	name = "greyson positronic multitool"
-	build_path = /obj/item/tool/onestar_multitool
+	build_path = /obj/item/tool/multitool/advanced/onestar
 
 /datum/design/research/item/tool/weldertool_onestar
 	name = "greyson positronic welding tool"
