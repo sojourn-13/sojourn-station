@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/lmg
 	name = "SA \"SAW\""
-	desc = "A exstreamly rare HMG produced on a commision. Uses 7.62mm Rifle rounds."
+	desc = "An extremely rare HMG produced on commision. Uses 7.62mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/l6.dmi'
 	var/icon_base
 	icon_base = "l6"
@@ -121,7 +121,7 @@
 	icon_base = "saw"
 	icon_state = "saw_closed"
 	item_state = "saw_closed"
-	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_STANMAG
+	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_STANMAG|MAG_WELL_BOX //made it accept large boxes because it's not as good as the other machineguns
 	caliber = CAL_LRIFLE
 	penetration_multiplier = 0.85
 	damage_multiplier = 1.0
