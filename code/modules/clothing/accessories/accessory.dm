@@ -511,6 +511,11 @@
 	desc = "A sleek, green poncho. Tactical and stylish!"
 	icon_state = "tacpon_green"
 
+/obj/item/clothing/accessory/tacticalponcho/grey
+	name = "grey tactical poncho"
+	desc = "A sleek, tactical grey poncho. Great for black sites and tactical operations!"
+	icon_state = "tacpon_grey"
+
 /obj/item/clothing/accessory/tacticalponcho/camo
 	name = "camo tactical poncho"
 	desc = "A sleek, tactical camo poncho. Great for remaining inconspicuous in even the most densely  wooded combat enviroments"
