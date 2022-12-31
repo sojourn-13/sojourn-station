@@ -97,7 +97,7 @@
 
 /obj/item/clothing/glasses/powered/night/guild
 	name = "optimized night vision goggles"
-	desc = "Converted from boring mesons, this refined Guild design sports the benefits form the mesons power-saving making these last 10% longer than other NV goggles on the market!"
+	desc = "Converted from boring mesons, this refined Guild design sports the benefits form the mesons power-saving making these last 20% longer than other NV goggles on the market!"
 	icon_state = "guild" // New sprites by Dromkii aka Ezoken#5894 !
 	item_state = "guild"
 	off_state = "deguild"
@@ -106,7 +106,7 @@
 	origin_tech = list(TECH_MAGNET = 3)
 	price_tag = 350
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 2, MATERIAL_PLASTEEL = 2, MATERIAL_URANIUM = 1)
-	tick_cost = 0.4 //10% more so you have a reason to go to the guild and get these
+	tick_cost = 0.33 // 20% more battery life so you have a reason to go to the guild and get these
 
 
 /obj/item/clothing/glasses/powered/night/guild/crafted

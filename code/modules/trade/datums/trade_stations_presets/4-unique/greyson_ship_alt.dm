@@ -21,7 +21,7 @@
 		),
 		"Gongju" = list(
 			/obj/item/tool/crowbar/onestar = custom_good_nameprice("GP Crowbar", list(-100, -50)),
-			/obj/item/tool/onestar_multitool = custom_good_nameprice("GP Multitool", list(-100, -50)),
+			/obj/item/tool/multitool/advanced/onestar = custom_good_nameprice("GP Multitool", list(-100, -50)),
 			/obj/item/tool/weldingtool/onestar = custom_good_nameprice("GP Welding Tool", list(-100, -50)),
 			/obj/item/tool/screwdriver/combi_driver/onestar = custom_good_nameprice("GP Combination Drill", list(-100, -50)),
 			/obj/item/tool/hammer/powered_hammer/onestar_hammer = custom_good_nameprice("GP Sledgehammer", list(-100, -50)),

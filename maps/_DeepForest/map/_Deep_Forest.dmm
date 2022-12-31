@@ -11910,7 +11910,7 @@
 /obj/random/common_oddities/low_chance,
 /obj/item/stock_parts/matter_bin/one_star,
 /obj/item/tool/weldingtool/onestar,
-/obj/item/tool/onestar_multitool,
+/obj/item/tool/multitool/advanced/onestar,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
 "VF" = (
