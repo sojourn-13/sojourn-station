@@ -4,7 +4,7 @@
 	icon_state = "cog"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	item_charge_meter = TRUE
-	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous."
+	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made. They are ubiquitous, and has the ablity to have a Master Unmaker integrated into it."
 	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
@@ -23,6 +23,7 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.2 // 20 vig
+	allow_greyson_mods = TRUE
 
 /obj/item/gun/energy/cog/gear
 	name = "\"Gear\" lasgun"
@@ -38,6 +39,8 @@
 		list(mode_name="lethal", mode_desc="fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/energy/Laser4.ogg')
 	)
 	serial_type = "NM"
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	allow_greyson_mods = FALSE
 
 /obj/item/gun/energy/cog/sprocket
 	name = "Soteria \"Sprocket\" lasgun"
@@ -53,6 +56,7 @@
 	price_tag = 1000
 	fire_delay = 8 // Old platform modded to hell and tinkered by two factions
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_SILVER = 10)
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		list(mode_name="stun", mode_desc="fires a highly concentrated stun beam", projectile_type=/obj/item/projectile/beam/hardstun, charge_cost = 200, fire_delay=40, icon="grenade", fire_sound='sound/weapons/energy/Taser.ogg'), // Three shots on a T1 M-cell should be enough to reduce someone
 		list(mode_name="lethal", mode_desc="Fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam, charge_cost = 50, icon="kill", fire_sound='sound/weapons/energy/Laser.ogg')
@@ -62,6 +66,7 @@
 							  /obj/item/tool_upgrade/augment/expansion = TRUE, // No cheating either. You get three upgrades, make the most of them.
 							  )
 	serial_type = "GP-SI"
+	allow_greyson_mods = FALSE
 
 /obj/item/gun/energy/cog/sprocket/update_icon() // Necessary for the folded and unfolded states
 	var/iconstring = initial(icon_state)
@@ -110,9 +115,11 @@
 	penetration_multiplier = 0.7
 	charge_cost = 50
 	price_tag = 400
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL
 	)
 	twohanded = FALSE
 	init_recoil = HANDGUN_RECOIL(0.2)
 	serial_type = "GP-SI"
+	allow_greyson_mods = FALSE

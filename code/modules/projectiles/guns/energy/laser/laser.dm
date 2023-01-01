@@ -36,12 +36,14 @@
 
 /obj/item/gun/energy/laser/mounted/blitz
 	name = "SDF LR \"Strahl\""
-	desc = "A miniaturized laser rifle, remounted for robotic use only."
+	desc = "A miniaturized laser rifle, remounted for robotic use only. Also has the ablity to have a Master Unmaker integrated into it."
 	icon_state = "laser_turret"
 	damage_multiplier = 0.9
 	charge_meter = FALSE
 	twohanded = FALSE
 	serial_type = "GP"
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	allow_greyson_mods = TRUE
 
 /obj/item/gun/energy/laser/mounted/cyborg
 	name = "integrated \"Cog\" lasgun"
@@ -67,7 +69,7 @@
 	icon_state = "caplaser"
 	item_state = "caplaser"
 	item_charge_meter = TRUE
-	desc = "This weapon is old, yet still robust and reliable. It's marked with an old Greyson Positronic brand, a distant reminder of what this corporation was, before it fell to ruin."
+	desc = "This weapon is old, yet still robust and reliable. It's marked with an old Greyson Positronic brand, a distant reminder of what this corporation was, before it fell to ruin. Also has the ablity to have a Master Unmaker integrated into it."
 	force = WEAPON_FORCE_PAINFUL
 	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
@@ -77,11 +79,13 @@
 	origin_tech = null
 	self_recharge = TRUE
 	price_tag = 2250
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL,
 		WEAPON_CHARGE
 	)
 	twohanded = FALSE
+	allow_greyson_mods = TRUE
 	serial_type = "GP"
 
 	wield_delay = 0.3 SECOND

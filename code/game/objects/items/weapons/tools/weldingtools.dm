@@ -101,6 +101,7 @@
 	max_upgrades = 2
 	workspeed = 1.5
 	price_tag = 900
+	allow_greyson_mods = TRUE
 
 //Alchemy thingy
 /obj/item/tool/weldingtool/oil_burner

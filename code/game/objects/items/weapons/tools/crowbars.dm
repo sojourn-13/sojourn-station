@@ -41,6 +41,7 @@
 	degradation = 2
 	workspeed = 1.2
 	price_tag = 180 // Fancy but still just a crowbar.
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/crowbar/pneumatic
 	name = "pneumatic crowbar"

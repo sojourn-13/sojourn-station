@@ -41,6 +41,7 @@
 	workspeed = 1.6
 	max_upgrades = 5 //UNLIMITED MODS!
 	price_tag = 1500 // Diamond and super fancy/rare.
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/multitool/advanced
 	name = "advanced multitool"

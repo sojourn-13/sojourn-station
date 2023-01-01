@@ -16,6 +16,8 @@
 #define UPGRADE_BALLISTIC_ARMOR "bullet"
 #define UPGRADE_ENERGY_ARMOR "energy"
 #define UPGRADE_BOMB_ARMOR "bomb"
+#define UPGRADE_ALLOW_GREYON_MODS "allow_gp"
+#define GUN_UPGRADE_ALLOW_GREYON_MODS "allow_gp_gun"
 // ------------------
 
 #define SANCTIFIED "saint" //Used for weapons that was sanctified

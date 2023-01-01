@@ -88,6 +88,7 @@
 	use_power_cost = 1.5
 	workspeed = 1.5
 	max_upgrades = 2
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/hammer/foremansledge
 	name = "foreman's sledgehammer"
