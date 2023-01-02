@@ -198,6 +198,7 @@
 	charge_meter = FALSE
 	price_tag = 1500
 	serial_type = "BlueCross"
+	allow_greyson_mods = FALSE
 
 /obj/item/gun/energy/xray/psychic_cannon
 	name = "\"Manta-RAY\" cannon"

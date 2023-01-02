@@ -65,6 +65,7 @@
 	max_upgrades = 2
 	workspeed = 1.5
 	price_tag = 300
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/wirecutters/attack(mob/living/carbon/C as mob, mob/user as mob)
 	if(istype(C) && user.a_intent == I_HELP && (C.handcuffed) && (istype(C.handcuffed, /obj/item/handcuffs/cable)))

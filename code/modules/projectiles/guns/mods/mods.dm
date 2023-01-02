@@ -611,7 +611,9 @@
 	)
 	I.removal_time *= 10
 	I.gun_loc_tag = GUN_MECHANISM
+	I.req_fuel_cell = REQ_CELL
 	I.prefix = "catalytic"
+	I.greyson_moding = TRUE
 
 /obj/item/gun_upgrade/barrel/gauss
 	name = "Void Wolf \"Gauss Coil\" barrel"

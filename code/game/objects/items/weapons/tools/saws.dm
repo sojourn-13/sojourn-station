@@ -31,6 +31,7 @@
 	max_upgrades = 2
 	workspeed = 1.2
 	price_tag = 500 //Still just a saw.
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/saw/improvised
 	name = "choppa"

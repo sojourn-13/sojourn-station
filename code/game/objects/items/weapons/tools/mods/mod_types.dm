@@ -857,10 +857,11 @@
 /obj/item/tool_upgrade/augment/ai_tool
 	name = "nanointegrated AI"
 	desc = "A forgotten Greyson Positronic tech. Due to its unique installation method of \"slapping it hard enough onto anything should do the trick\", it is highly sought after. \
-		A powerful AI will integrate itself into this tool with the aid of nanotechnology and improve it in every way possible."
+		A powerful AI will integrate itself into this tool with the aid of nanotechnology and improve it in every way possible. Once added its embeding into the object making it a permanent integration."
 	icon_state = "ai_tool"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 3, MATERIAL_GOLD = 3, MATERIAL_DIAMOND = 1)
 	price_tag = 725
+	can_remove = FALSE
 
 /obj/item/tool_upgrade/augment/ai_tool/New()
 	..()
@@ -870,8 +871,10 @@
 	UPGRADE_PRECISION = 12,
 	UPGRADE_WORKSPEED = 3,
 	UPGRADE_HEALTH_THRESHOLD = -10,
+	UPGRADE_ALLOW_GREYON_MODS = TRUE,
 	)
 	I.weapon_upgrades = list(
+	GUN_UPGRADE_ALLOW_GREYON_MODS = TRUE,
 	GUN_UPGRADE_RECOIL = 0.8,
 	GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.1,
 	GUN_UPGRADE_DAMAGE_MULT = 1.1,
@@ -884,14 +887,17 @@
 	GUN_UPGRADE_OVERCHARGE_RATE = 1.2
 	)
 	I.prefix = "intelligent"
-	I.req_fuel_cell = REQ_FUEL_OR_CELL
+	I.req_fuel_cell = REQ_CELL
+	I.greyson_moding = TRUE
 
 /obj/item/tool_upgrade/augment/ai_tool_excelsior
 	name = "excelsior nanointegrated AI"
-	desc = "An attempt by the excelsior to copy the superior Greyson nano-AI for their weaponry. It isn't nearly as good, but its cheaper to produce and can fit any weapon, not just energy based, as it draws its power from excelsior teleporation technology."
+	desc = "An attempt by the excelsior to copy the superior Greyson nano-AI for their weaponry. It isn't nearly as good, but its cheaper to produce and can fit any tool, not just energy based, as it draws its power from excelsior teleporation technology.\
+	 Once added its embeding into the object making it a permanent integration."
 	icon_state = "ai_tool_excelsior"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 3, MATERIAL_GOLD = 3)
 	price_tag = 325 //freee markeetttt
+	can_remove = FALSE
 
 /obj/item/tool_upgrade/augment/ai_tool_excelsior/New()
 	..()
@@ -929,6 +935,8 @@
 	UPGRADE_DEGRADATION_MULT = 0.01,
 	UPGRADE_HEALTH_THRESHOLD = 10
 	)
+	I.greyson_moding = TRUE
+	I.req_fuel_cell = REQ_FUEL_OR_CELL
 	I.prefix = "self-repairing"
 
 /obj/item/tool_upgrade/augment/hydraulic

@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/spring
 	name = "Greyson Positronic \"Spring\" pistol"
-	desc = "GP \"Spring\" pistol, lost tech of a high power pistol using only 9mm rounds. "
+	desc = "GP \"Spring\" pistol, lost tech of a high power pistol using only 9mm rounds. Also has the ablity to have a Master Unmaker integrated into it."
 	icon = 'icons/obj/guns/projectile/spring.dmi'
 	icon_state = "spring"
 	damage_multiplier = 1.1
@@ -16,6 +16,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
+	allow_greyson_mods = TRUE
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY

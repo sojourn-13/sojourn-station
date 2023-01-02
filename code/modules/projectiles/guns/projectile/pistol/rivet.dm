@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/rivet
 	name = "Greyson Positronic \"Rivet\" magnum pistol"
-	desc = "GP \"Rivet\" magnum pistol, lost tech of a high power pistol using only 10mm Auto-Mag."
+	desc = "GP \"Rivet\" magnum pistol, lost tech of a high power pistol using only 10mm Auto-Mag. Also has the ablity to have a Master Unmaker integrated into it."
 	icon = 'icons/obj/guns/projectile/rivet_gun.dmi'
 	icon_state = "rivet"
 	damage_multiplier = 1.2
@@ -16,6 +16,7 @@
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	load_method = SINGLE_CASING|MAGAZINE
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL)
+	allow_greyson_mods = TRUE
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
