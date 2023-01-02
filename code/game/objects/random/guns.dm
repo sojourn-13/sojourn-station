@@ -77,14 +77,8 @@
 	spawn_nothing_percentage = 10
 
 /obj/random/gun_combat/item_to_spawn()
-<<<<<<< Updated upstream
-	return pickweight(list(/obj/item/gun/projectile/automatic/texan = 1,\
-				/obj/item/gun/projectile/automatic/greasegun = 1,\
-				/obj/item/gun/projectile/automatic/sts/sawn/true = 1,\
-=======
 	return pickweight(list(/obj/item/gun/projectile/automatic/greasegun = 1,\
-				/obj/item/gun/projectile/automatic/sts/lrifle/sawn = 1,\
->>>>>>> Stashed changes
+				/obj/item/gun/projectile/automatic/sts/carbine = 1,\
 				/obj/item/ammo_kit = 0.8,
 				/obj/item/gun/projectile/automatic/sts/rifle/sawn = 1,\
 				/obj/item/gun/projectile/automatic/omnirifle/solmarine = 1,\
