@@ -112,7 +112,7 @@
 			"20mm ceramic pile (5 ammo, 5 points" = list(5, /obj/item/ammo_casing/shotgun/ceramic/prespawned),
 			"20mm ceramic box (30 ammo, 20 points)" = list (20, /obj/item/ammo_magazine/ammobox/shotgun/ceramic),
 			"20mm incendiary pile (5 ammo, 15 points" = list(15, /obj/item/ammo_casing/shotgun/incendiary/prespawned),
-			"20mm incendiary box (30 ammo, 25 points)" = list(25, /obj/item/ammo_magazine/ammobox/shotgun/incendiary)
+			"20mm incendiary box (30 ammo, 32 points)" = list(32, /obj/item/ammo_magazine/ammobox/shotgun/incendiary)
 			),
 		CAL_FLARE = list(
 			"old flare (1 ammo, 1 points)" = list(1, /obj/item/ammo_casing/flare/old),
