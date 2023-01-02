@@ -31,11 +31,11 @@
 			/obj/item/gun/energy/tesla_shotgun
 		),
 		"Projectile weapons" = list(
-			/obj/item/gun/projectile/glock,
+			/obj/item/gun/projectile/glock = good_data("Sky pistol", list(2, 6), 650),
 			/obj/item/gun/projectile/giskard,
 			/obj/item/gun/projectile/olivaw,
-			/obj/item/gun/projectile/revolver/detective,
-			/obj/item/gun/projectile/automatic/ak47/sa,
+			/obj/item/gun/projectile/revolver/detective = good_data("Havelock revolver", list(2, 10), 300),
+			/obj/item/gun/projectile/automatic/ak47/sa = good_data("Kalshnikov rifle", list(1, 3), 1000),
 			/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
 		),
 		"Flame Thrower" = list(
