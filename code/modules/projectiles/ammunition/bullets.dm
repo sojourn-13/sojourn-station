@@ -9,6 +9,9 @@
 	projectile_type = /obj/item/projectile/bullet/pistol_35
 	maxamount = 15
 
+/obj/item/ammo_casing/pistol_35/prespawned
+	amount = 15
+
 /obj/item/ammo_casing/pistol_35/hv
 	desc = "A 9mm high-velocity bullet casing."
 	icon_state = "pistol_c_hv"
@@ -76,6 +79,9 @@
 	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/magnum_40
 	maxamount = 6
+
+/obj/item/ammo_casing/magnum_40/prespawned
+	amount = 6
 
 /obj/item/ammo_casing/magnum_40/practice
 	desc = "A 10mm Magnum practice bullet casing."
@@ -146,6 +152,9 @@
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257
 	maxamount = 10
 
+/obj/item/ammo_casing/light_rifle_257/prespawned
+	amount = 10
+
 /obj/item/ammo_casing/light_rifle_257/practice
 	desc = "A 6.5mm practice bullet casing."
 	icon_state = "srifle_c_p"
@@ -197,6 +206,9 @@
 	projectile_type = /obj/item/projectile/bullet/rifle_75
 	maxamount = 10
 
+/obj/item/ammo_casing/rifle_75/prespawned
+	amount = 10
+
 /obj/item/ammo_casing/rifle_75/hv
 	desc = "A 7.62mm high-velocity bullet casing."
 	icon_state = "srifle_c_hv"
@@ -246,6 +258,9 @@
 	caliber = CAL_HRIFLE
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408
 	maxamount = 10
+
+/obj/item/ammo_casing/heavy_rifle_408/prespawned
+	amount = 10
 
 /obj/item/ammo_casing/heavy_rifle_408/rubber
 	desc = "A 8.6mm rubber bullet casing."
