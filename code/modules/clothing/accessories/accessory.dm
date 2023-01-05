@@ -1457,3 +1457,47 @@
 	item_state = "btnecklace"
 	slot_flags = SLOT_MASK | SLOT_ACCESSORY_BUFFER
 	price_tag = 1500
+
+/* sashes (sprited by KitchiFox, powered by Goat) */
+
+/obj/item/clothing/accessory/sash
+	name = "blue sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_blue"
+	item_state = "sash_blue"
+
+/obj/item/clothing/accessory/sash/red
+	name = "red sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_red"
+	item_state = "sash_red"
+
+/obj/item/clothing/accessory/sash/yellow
+	name = "yellow sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_yellow"
+	item_state = "sash_yellow"
+
+/obj/item/clothing/accessory/sash/green
+	name = "green sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_green"
+	item_state = "sash_green"
+
+/obj/item/clothing/accessory/sash/orange
+	name = "orange sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_orange"
+	item_state = "sash_orange"
+
+/obj/item/clothing/accessory/sash/pink
+	name = "pink sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_pink"
+	item_state = "sash_pink"
+
+/obj/item/clothing/accessory/sash/purple
+	name = "purple sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_purple"
+	item_state = "sash_purple"
