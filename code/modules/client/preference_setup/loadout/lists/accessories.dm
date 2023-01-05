@@ -10,6 +10,11 @@
 	path = /obj/item/clothing/accessory/armband
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/accessory/sash
+	display_name = "sash selection"
+	path = /obj/item/clothing/accessory/sash
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/accessory/dropstraps
 	display_name = "drop straps"
 	path = /obj/item/clothing/accessory/dropstraps
