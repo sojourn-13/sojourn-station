@@ -5,6 +5,11 @@
 	sort_category = "Faction: Absolute"
 	cost = 0
 
+/datum/gear/factionabsolute/robe
+	display_name = "church robe"
+	path = /obj/item/clothing/under/rank/church/robe
+	cost = 0
+
 /datum/gear/factionabsolute/jersey
 	display_name = "church overalls"
 	path = /obj/item/clothing/under/jersey
