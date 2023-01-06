@@ -108,8 +108,8 @@
 	if (spinning)
 		to_chat(user, SPAN_WARNING("It is currently spinning."))
 		return
-	if (bet == 0)
-		to_chat(user, SPAN_NOTICE("Today's jackpot: $[jackpot]. Insert 1-1000 Credits."))
+	if (bet > 25) //So we can drain people
+		to_chat(user, SPAN_NOTICE("Today's jackpot: $[jackpot]. Insert 25-1000 Credits."))
 	else
 		jackpot += bet
 		spinning = 1
@@ -199,13 +199,13 @@
 		return
 	if (istype(S, /obj/item/spacecash))
 		var/obj/item/spacecash/cash = S
-		if ((cash.worth > 0) && (cash.worth<=1000) && (bet + cash.worth <= 1000))
+		if ((cash.worth >= 25) && (cash.worth<=1000) && (bet + cash.worth <= 1000))
 			to_chat(user, SPAN_NOTICE("You insert [cash.worth] Credits into [src]."))
 			bet += cash.worth
 			user.drop_from_inventory(cash)
 			qdel(cash)
 		else
-			to_chat(user, SPAN_WARNING("You must bet 1-1000 Credits!"))
+			to_chat(user, SPAN_WARNING("You must bet 25-1000 Credits!"))
 	else if (istype(S, /obj/item/coin))
 		to_chat(user, SPAN_NOTICE("You add the [S.name] into the [src]. It will slightly increase chance to win."))
 		user.drop_from_inventory(S)
