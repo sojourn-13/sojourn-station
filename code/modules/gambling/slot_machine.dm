@@ -108,7 +108,7 @@
 	if (spinning)
 		to_chat(user, SPAN_WARNING("It is currently spinning."))
 		return
-	if (bet > 25) //So we can drain people
+	if (bet < 25) //So we can drain people
 		to_chat(user, SPAN_NOTICE("Today's jackpot: $[jackpot]. Insert 25-1000 Credits."))
 	else
 		jackpot += bet
