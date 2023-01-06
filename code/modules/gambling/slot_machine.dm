@@ -11,8 +11,34 @@
 	var/jackpot = 0
 	var/plays = 0
 	var/list/slots = list()
-	var/list/slots_possible = list("Seven", "Diamond", "Cherry","Bar","Lemon","Heart","Watermelon", "Bell", "Bell", "Jester")
-	var/list/slots_payouts = list("Diamond" = 10, "Heart" = 8, "Cherry" = 8,"Bar" = 6,"Lemon" = 4, "Watermelon" = 3, "Seven" = 7, "Bell" = 2, "Jester" = 0)
+	var/list/slots_possible = list(\
+								"Diamond",
+								"Gold",
+								"Silver",
+								"Seven",
+								"Heart",
+								"Pineapple",
+								"Watermelon",
+								"Cherry",
+								"Plum",
+								"Bar",
+								"Bell",
+								"Lemon",
+								"Jester")
+	var/list/slots_payouts = list(\
+								"Diamond" = 10,
+								"Gold" = 9,
+								"Silver" = 8,
+								"Seven" = 7,
+								"Heart" = 6,
+								"Pineapple" = 5,
+								"Watermelon" = 4,
+								"Cherry" = 3,
+								"Plum" = 3,
+								"Bar" = 2,
+								"Bell" = 2,
+								"Lemon" = 1,
+								"Jester" = 0)
 	var/icon_type
 	var/auto_win //If set, the next spin will automatically roll three of this symbol.
 	use_power = IDLE_POWER_USE
@@ -25,7 +51,7 @@
 
 /obj/machinery/slotmachine/Initialize()
 	. = ..()
-	jackpot = rand(10000,20000);
+	jackpot = rand(8000,10000);
 	plays = rand(1,50)
 	slots = list("1" = "Seven","2" = "Seven","3" = "Seven")
 	update_icon()
@@ -85,6 +111,7 @@
 	if (bet == 0)
 		to_chat(user, SPAN_NOTICE("Today's jackpot: $[jackpot]. Insert 1-1000 Credits."))
 	else
+		jackpot += bet
 		spinning = 1
 		plays++
 		for(var/slot in slots)
@@ -115,18 +142,22 @@
 		var/wintype = check_win()
 		var/prize = 0
 		var/jester = FALSE
+		var/fruit_combo = 0
 		for(var/slot in slots)
 			if(slots[slot] == "Jester")
 				jester = TRUE
+			if(slots[slot] == "Pineapple" || slots[slot] == "Plum" || slots[slot] == "Cherry"|| slots[slot] == "Lemon"|| slots[slot] == "Watermelon")
+				fruit_combo += 1
 		switch(wintype)
 			if("Jackpot")
 				playsound(src.loc, 'sound/machines/ping.ogg', 50, 1)
 				prize = jackpot
-				jackpot = 0
+				jackpot = 1000 //So we can build back or down further
 				src.visible_message("<b>[name]</b> states, \"Damn son! JACKPOT!!! Congratulations!\"")
 			if("Refund")
 				playsound(src.loc, 'sound/machines/synth_yes.ogg', 50, 1)
 				src.visible_message("<b>[name]</b> states, \"Saved by the bell! That spin was free!\"")
+				jackpot = max(jackpot - prize, 0) //Can stack with fruit
 				spawn_money(bet,src.loc,user)
 			if("Zero")
 				playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 1)
@@ -142,10 +173,21 @@
 			else
 				playsound(src.loc, 'sound/machines/ping.ogg', 50, 1)
 				prize = bet*slots_payouts[wintype]
+		if(fruit_combo >= 3)
+			playsound(src.loc, 'sound/machines/fortune_riff.ogg', 50, 1)
+			src.visible_message("<b>[name]</b> states, \"FRUIT TASTIC! The Jackpot has increased!\"")
+			jackpot += 500
+		if(fruit_combo == 2)
+			playsound(src.loc, 'sound/machines/fortune_riff.ogg', 50, 1)
+			src.visible_message("<b>[name]</b> states, \"Fruit Combo! Small Added Prize!\"")
+			prize += max(round(bet/2, 1),1)
+		if(jester)
+			playsound(src.loc, 'sound/machines/synth_yes.ogg', 50, 1)
+			src.visible_message("<b>[name]</b> states, \"A Jester has messed with the Jackpot!\"")
+			jackpot += pick(50, 150, 200, 350) //More ways to refill a jackpot
 		if(prize > 0)
 			src.visible_message("<b>[name]</b> states, \"Congratulations! You won [prize] Credits!\"")
-			if(jester)
-				jackpot = max(jackpot - prize, 0)
+			jackpot = max(jackpot - prize, 0)
 			spawn_money(prize,src.loc,user)
 	src.add_fingerprint(user)
 	update_icon()
