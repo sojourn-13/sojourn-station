@@ -48,9 +48,9 @@
 			/obj/item/grenade/chem_grenade/incendiary,
 			/obj/item/grenade/flashbang,
 
-			/obj/item/ammo_magazine/ammobox/heavy_rifle_408,
-			/obj/item/ammo_magazine/ammobox/rifle_75,
-			/obj/item/ammo_magazine/ammobox/light_rifle_257,
+			/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small,
+			/obj/item/ammo_magazine/ammobox/rifle_75_small,
+			/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
 			/obj/item/ammo_magazine/ammobox/shotgun,
 			/obj/item/ammo_magazine/ammobox/kurtz_50,
 			/obj/item/ammo_magazine/ammobox/magnum_40,

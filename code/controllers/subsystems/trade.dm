@@ -553,13 +553,24 @@ SUBSYSTEM_DEF(trade)
 
 	var/invoice_contents_info
 	var/cost = 0
+	var/item_counter = 0
+	var/pass_counter = 0
 
-	for(var/atom/movable/AM in senderBeacon.get_objects())
+	for(var/obj/AM in senderBeacon.get_objects())
+		if(item_counter > 50) //You can only export 50 items at a time, anti-lag7
+			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"Success, scanners have passed over 50 items, starting Recharging Mode\""))
+			break
+		if(pass_counter > 50)
+			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"ERROR, scanners have passed over 50 items that have nested items, shutting down and starting Recharging Mode!\""))
+			break
+		item_counter += 1
 		if(isliving(AM))
 			var/mob/living/L = AM
 			L.apply_damages(0,5,0,0,0,5)
 			continue
-		if(AM.anchored)
+		if(AM.contents.len)
+			item_counter -= 1 //Refund
+			pass_counter += 1 //Hold on now
 			continue
 
 		var/list/contents_incl_self = AM.GetAllContents(5, TRUE)
