@@ -5,6 +5,7 @@
 	icon_state = "headset"
 	item_state = "headset"
 	matter = list(MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("silicon" = 15, "plasticide" = 9)
 	subspace_transmission = 1
 	canhear_range = 0 // can't hear headsets from very far away
 
