@@ -29,6 +29,8 @@
 			if("[tmp_icon_state]_tie" in icon_states(icon_override))
 				tmp_icon_state = "[tmp_icon_state]_tie"
 		inv_overlay = image(icon = mob_overlay.icon, icon_state = tmp_icon_state, dir = SOUTH)
+		if(color)
+			inv_overlay.color = color
 	return inv_overlay
 
 /obj/item/clothing/accessory/proc/get_mob_overlay()
@@ -40,6 +42,8 @@
 			mob_overlay = image("icon" = icon_override, "icon_state" = "[tmp_icon_state]")
 		else
 			mob_overlay = image("icon" = INV_ACCESSORIES_DEF_ICON, "icon_state" = "[tmp_icon_state]")
+		if(color)
+			mob_overlay.color = color
 	return mob_overlay
 
 //when user attached an accessory to S
@@ -1501,3 +1505,29 @@
 	desc = "A sash commonly worn by religious figures and members of various orders."
 	icon_state = "sash_purple"
 	item_state = "sash_purple"
+
+/obj/item/clothing/accessory/pin
+	name = "white badge"
+	desc = "A simple badge with a pin."
+	icon_state = "pin_white"
+	item_state = "pin_white"
+
+/obj/item/clothing/accessory/pin/rainbow
+	name = "rainbow badge"
+	desc = "A colorful badge with a pin."
+	icon_state = "pin_rainbow"
+	item_state = "pin_rainbow"
+
+/obj/item/clothing/accessory/pin/name
+	name = "nametag"
+	desc = "A rectangular, adhesive nametag."
+	icon_state = "pin_name"
+	item_state = "pin_name"
+	var/original_name = "nametag"
+
+/obj/item/clothing/accessory/pin/name/attackby(obj/item/I, mob/user)
+	..()
+	if(istype(I,/obj/item/pen))
+		var/t = input(user, "What would you like the label to say?", "Nametag")
+		if(t)
+			name = "nametag ([t])"
