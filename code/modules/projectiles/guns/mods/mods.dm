@@ -64,8 +64,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8
-		)
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
+		GUN_UPGRADE_STEPDELAY_MULT = 0.9, // Actually useful beyond being a glorified ergo grip
+		GUN_UPGRADE_MUZZLEFLASH = 0.75)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.prefix = "fluted barrel"
@@ -81,9 +82,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.1,
-		GUN_UPGRADE_FIRE_DELAY_MULT = 1.1,
-		GUN_UPGRADE_RECOIL = 1.25, // Better gas control should make it have less recoil actually but let's not question spessmen logic.
+		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.2,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.1, // Better than the mod used to make it
+		GUN_UPGRADE_RECOIL = 1.1, // Better than a ported barrel
 		UPGRADE_BULK = 1
 		)
 	I.gun_loc_tag = GUN_BARREL

@@ -358,6 +358,19 @@
 		/datum/design/autolathe/ammo/kurtz_lethal = 2,
 		)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/mateba
+	disk_name = "Seinemetall Defense GmbH - \"Mateba\" autorevolver"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/mateba = 4,
+		/datum/design/autolathe/ammo/slkurtz_practice = 0,
+		/datum/design/autolathe/ammo/slkurtz_rubber,
+		/datum/design/autolathe/ammo/slkurtz,
+		/datum/design/autolathe/ammo/slkurtz_lethal = 2,
+	)
+
 // SHOTGUNS
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/doublebarrel

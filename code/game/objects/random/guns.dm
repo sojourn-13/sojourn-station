@@ -83,7 +83,7 @@
 				/obj/item/gun/projectile/automatic/sts/rifle/sawn = 1,\
 				/obj/item/gun/projectile/automatic/omnirifle/solmarine = 1,\
 				/obj/item/gun/projectile/automatic/thompson = 0.5,
-				/obj/item/gun/projectile/automatic/ak47/sawn = 1,\
+				/obj/item/gun/projectile/automatic/ak47/sa/sawn = 1,\
 				/obj/item/gun/projectile/makarov = 1,\
 				/obj/item/gun/projectile/shotgun/pug = 0.5,
 				/obj/item/gun/projectile/revolver/hornet = 0.5))
@@ -118,7 +118,8 @@
 				/obj/item/gun/projectile/revolver/deckard = 0.4,\
 				/obj/item/gun/projectile/makarov = 1.1,\
 				/obj/item/gun/energy/lasercannon = 0.5,\
-				/obj/item/gun/projectile/boltgun/scout = 0.5))
+				/obj/item/gun/projectile/boltgun/scout = 0.5,\
+				/obj/item/gun/projectile/revolver/rev10/mateba = 0.5))
 
 /obj/random/gun_fancy/low_chance
 	name = "low chance fancy gun"
@@ -198,7 +199,7 @@
 
 /obj/random/dungeon_gun_ballistic/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/automatic/pulse_rifle = 2,
-				/obj/item/gun/projectile/automatic/sbaw = 1,
+				/obj/item/gun/projectile/automatic/sbaw = 0.7, // Too good, needs to be rare.
 				/obj/item/gun/projectile/automatic/chaingun = 1,
 				/obj/item/gun/projectile/automatic/lmg/pk = 3,
 				/obj/item/gun/projectile/automatic/dp = 2,

@@ -156,7 +156,7 @@
 // Ranger secondary kits
 /obj/item/storage/box/m_kit/deckard
 	name = "Deckards Secondary Kit"
-	desc = "The standard Marshal box kit containing a Deckard revolver. A handcanon in all but name, its cylinder having the capacity of five 12mm rounds."
+	desc = "The standard Marshal box kit containing a Deckard revolver. A handcanon in all but name, its cylinder having the capacity of six 12mm rounds."
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/deckard(src)
@@ -182,7 +182,37 @@
 		new /obj/item/gun/projectile/revolver/judge(src)
 		new /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber(src)
 
+// Warrant Officer secondaries (from voucher)
+/obj/item/storage/box/m_kit/mateba
+	name = "\improper Mateba Secondary Kit"
+	desc = "An equipment kit containing a specialized semiautomatic 12mm revolver. Great recoil control and even better stopping power, a flashy weapon of high-ranked officers."
 
+	populate_contents()
+		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
+
+/obj/item/storage/box/m_kit/galaxy
+	name = "\"Galaxy\" Plasma Pistol Kit"
+	desc = "A kit containing a versatile plasma pistol with an additional ion firemode."
+
+	populate_contents()
+		new /obj/item/gun/energy/glock(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
+
+/obj/item/storage/box/m_kit/amnesty
+	name = "\"Amnesty\" Heavy Pistol Kit"
+	desc = "A kit containing the prototype \"Amnesty\" heavy pistol, a 12mm powerhouse of improvement over improvement of the \"Lamia\" pattern"
+
+	populate_contents()
+		new /obj/item/gun/projectile/lamia/amnesty(src)
+		new /obj/item/ammo_magazine/kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/kurtz_50/rubber(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 // Armor Kits
 /obj/item/storage/box/m_kit/standard_armor

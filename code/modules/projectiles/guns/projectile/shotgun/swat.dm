@@ -70,7 +70,7 @@
 	name = "built in pistol"
 	desc = "Not much more than a tube and a firing mechanism, this pistol is designed to be fitted to another gun."
 	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
-	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
+	bulletinsert_sound = 'sound/weapons/guns/interact/bullet_insert.ogg' // It's not a shotgun!
 	w_class = ITEM_SIZE_NORMAL
 	matter = null
 	damage_multiplier = 1.4

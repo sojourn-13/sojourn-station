@@ -85,7 +85,7 @@
 	name = "Kalashnikov rifle"
 	result = /obj/item/gun/projectile/automatic/ak47/sa
 	steps = list(
-		list(/obj/item/gun/projectile/automatic/ak47/sawn, 1, "time" = 60),
+		list(/obj/item/gun/projectile/automatic/ak47/sa/sawn, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),

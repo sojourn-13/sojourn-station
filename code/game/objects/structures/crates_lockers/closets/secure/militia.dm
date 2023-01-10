@@ -4,8 +4,7 @@
 	icon_state = "mc"
 
 /obj/structure/closet/secure_closet/reinforced/commander/populate_contents()
-	new /obj/item/gunbox/commanding_officer(src)
-	new /obj/item/gun/projectile/lamia/scoped(src)
+	new /obj/item/gunbox/commanding_officer(src) // Secondary on their personal hardcase, primary on the locker.
 	new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 	new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 	new /obj/item/tool/knife/boot/blackshield(src)

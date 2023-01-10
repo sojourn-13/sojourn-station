@@ -51,11 +51,11 @@
 ///More defined gun types then just any
 
 /obj/random/lathe_disk/bolt_gun
-	name = "random bolt_gun lathe disk"
+	name = "random boltgun lathe disk"
 	icon_state = "tech-green"
 
 /obj/random/lathe_disk/bolt_gun/low_chance
-	name = "low chance bolt_gun lathe disk"
+	name = "low chance boltgun lathe disk"
 	icon_state = "tech-green-low"
 	spawn_nothing_percentage = 80
 
@@ -111,11 +111,11 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_drozd = 1))
 
 /obj/random/lathe_disk/rifle
-	name = "random assalt rifle lathe disk"
+	name = "random assault rifle lathe disk"
 	icon_state = "tech-green"
 
 /obj/random/lathe_disk/rifle/low_chance
-	name = "low chance assalt rifle lathe disk"
+	name = "low chance assault rifle lathe disk"
 	icon_state = "tech-green-low"
 	spawn_nothing_percentage = 80
 
@@ -166,11 +166,11 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/judiciary =2))
 
 /obj/random/lathe_disk/grande
-	name = "random grande based lathe disk"
+	name = "random grenade based weapon lathe disk"
 	icon_state = "tech-green"
 
 /obj/random/lathe_disk/grande/low_chance
-	name = "low chance grande based lathe disk"
+	name = "low chance grenade based weapon lathe disk"
 	icon_state = "tech-green-low"
 	spawn_nothing_percentage = 80
 
@@ -186,7 +186,7 @@
 	icon_state = "tech-green"
 
 /obj/random/lathe_disk/shotgun/low_chance
-	name = "low chance revolver lathe disk"
+	name = "low chance shotgun lathe disk"
 	icon_state = "tech-green-low"
 	spawn_nothing_percentage = 80
 
@@ -200,7 +200,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/state = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/rushingbull = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/pug = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/sbaw = 1))
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/sbaw = 0.7)) // Should be rarer as it has become too good.
 
 /obj/random/lathe_disk/revolver
 	name = "random revolver lathe disk"
@@ -216,10 +216,11 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/cheap_guns = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/lemant = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/rex10 = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/rev10 = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/rev10 = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/revolver = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/stun_revolver = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/sixshot = 1))
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/stun_revolver = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/sixshot = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/mateba = 1))
 
 /obj/random/lathe_disk/ammo
 	name = "random ammo lathe disk"

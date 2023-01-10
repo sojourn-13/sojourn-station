@@ -915,11 +915,7 @@
 		return FALSE
 	var/obj/item/projectile/P = new /obj/item/projectile/coin(get_turf(src))
 	P.shot_from = src
-	playsound(src, \
-		pick('sound/weapons/Gunshot.ogg','sound/weapons/guns/fire/Revolver_fire.ogg','sound/weapons/Gunshot_light.ogg',\
-		'sound/weapons/guns/fire/shotgunp_fire.ogg','sound/weapons/guns/fire/ltrifle_fire.ogg','sound/weapons/guns/fire/lmg_fire.ogg',\
-		'sound/weapons/guns/fire/ltrifle_fire.ogg','sound/weapons/guns/fire/batrifle_fire.ogg'),\
-		60, 1)
+	playsound(src, 'sound/weapons/Gunshot_light.ogg', 60, 1) // Please no more actual gunshot sounds from a vending machine
 	P.launch(target)
 	visible_message(SPAN_WARNING("\The [src] launches \a [P] at \the [target]!"))
 	return TRUE

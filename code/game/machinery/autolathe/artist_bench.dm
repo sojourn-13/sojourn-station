@@ -232,7 +232,7 @@
 
 			if("grenade")
 				R.caliber = CAL_GRENADE
-				R.fire_sound = 'sound/weapons/guns/fire/grenadelauncher_fire.ogg'
+				R.fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'
 
 		R.recoil = R.recoil.modifyAllRatings(1+rand(-2,2)/10)

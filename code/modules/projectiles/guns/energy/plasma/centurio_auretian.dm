@@ -41,8 +41,8 @@
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 
 	init_firemodes = list(
-		list(mode_name="plasma", mode_desc="Hard hitting plasma bolt that melts flesh and armor alike", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/Taser4.ogg', fire_delay=9, icon="destroy", projectile_color = "#00FFFF"),
-		list(mode_name="laser", mode_desc="Weak laser to pierce armor and skin", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/Taser3.ogg', fire_delay=0.5, icon="kill", projectile_color = "#00AAFF"),
+		list(mode_name="plasma", mode_desc="Hard hitting plasma bolt that melts flesh and armor alike", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/lasercannonfire.ogg', fire_delay=9, icon="destroy", projectile_color = "#00FFFF"),
+		list(mode_name="laser", mode_desc="Weak laser to pierce armor and skin", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/laser_pistol.ogg', fire_delay=0.5, icon="kill", projectile_color = "#00AAFF"),
 	)
 	serial_type = "SI"
 

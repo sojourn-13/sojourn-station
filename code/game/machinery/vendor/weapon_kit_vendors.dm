@@ -68,6 +68,8 @@
 				RedeemSargPrimary(I, user)
 			if("Secondary")
 				RedeemSecondary(I, user)
+			if("COSecondary")
+				RedeemCOSecondary(I, user)
 			if("Armor")
 				RedeemArmor(I, user)
 			if("CorpsmanArmor")
@@ -131,6 +133,19 @@
 					"Pilgrim Kit" = /obj/item/storage/box/bs_kit/pilgrim,
 					"Sawn-Off Shotgun Kit" = /obj/item/storage/box/bs_kit/sawn_shotgun,
 					"Martin Kit" = /obj/item/storage/box/bs_kit/martin)
+	var/selection = items[input(redeemer, "Pick your side-arm kit", "Blackshield Voucher Redemption") as null|anything in items]
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+	else
+		voucher.stamped = FALSE
+
+/obj/machinery/vending/blackshield_kit/proc/RedeemCOSecondary(obj/item/voucher/voucher, mob/redeemer)
+	var/items = list(
+					"Mateba Kit" = /obj/item/storage/box/bs_kit/mateba,
+					"Argos Kit" = /obj/item/storage/box/bs_kit/argos,
+					"Spider Rose Kit" = /obj/item/storage/box/bs_kit/spider)
 	var/selection = items[input(redeemer, "Pick your side-arm kit", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
@@ -220,6 +235,8 @@
 				RedeemSpecPrimary(I, user)
 			if("RangerPrimary")
 				RedeemRangerPrimary(I, user)
+			if("WOSecondary")
+				RedeemWOSecondary(I, user)
 			if("Armor")
 				RedeemArmor(I, user)
 		return
@@ -286,6 +303,19 @@
 					"Deckard Kit" = /obj/item/storage/box/m_kit/deckard,
 					"Zwang Kit" = /obj/item/storage/box/m_kit/zwang,
 					"Judge Revolver Kit" = /obj/item/storage/box/m_kit/judge)
+	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
+	if(selection)
+		new selection(loc)
+		qdel(voucher)
+		return TRUE
+	else
+		voucher.stamped = FALSE
+
+/obj/machinery/vending/marshal_kit/proc/RedeemWOSecondary(obj/item/voucher/voucher, mob/redeemer)
+	var/items = list(
+					"Mateba Kit" = /obj/item/storage/box/m_kit/mateba,
+					"Galaxy Kit" = /obj/item/storage/box/m_kit/galaxy,
+					"Amnesty Kit" = /obj/item/storage/box/m_kit/amnesty)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)

@@ -14,7 +14,7 @@
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_URANIUM = 1)
 	price_tag = 2000
-	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/python.ogg'
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
@@ -35,7 +35,7 @@
 
 /obj/item/gun/projectile/automatic/nordwind/watchtower
 	name = "\"Watchtower\" DMR"
-	desc = "A designated marksman rifle designed in cooperation between the marshals and the blackshield, made with lightweight materials and simple, easy to maintain components. \
+	desc = "A designated marksman rifle designed in cooperation between the Marshals and the Blackshield, made with lightweight materials and simple, easy to maintain components. \
 	A favorite of troopers who prefer to friendly fire rather than to be friendly fired."
 	icon = 'icons/obj/guns/projectile/watchtower.dmi'
 	icon_state = "watchtower"
@@ -71,6 +71,7 @@
 	gun_tags = list(GUN_PROJECTILE)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_WOOD = 10)
 	price_tag = 700
+	fire_sound = 'sound/weapons/guns/fire/solarian.ogg'
 	zoom_factors = list(0.6)
 	damage_multiplier = 0.9
 	extra_damage_mult_scoped = 0.3

@@ -110,6 +110,10 @@
 	name = "SolFed M6C 12mm \"SOCOM\""
 	build_path = /obj/item/gun/projectile/lamia/socom
 
+/datum/design/autolathe/gun/mateba
+	name = "Seinemetall Defense GmbH HG 12mm \"Mateba\" autorevolver"
+	build_path = /obj/item/gun/projectile/revolver/rev10/mateba
+
 /datum/design/autolathe/gun/amnesty
 	name = "NM 12mm Amnesty"
 	build_path = /obj/item/gun/projectile/lamia/amnesty

@@ -1,6 +1,8 @@
 /obj/item/gun/projectile/automatic/drozd
 	name = "Excelsior \"Drozd\" SMG"
-	desc = "An excellent fully automatic submachinegun. Famous for it's perfomance in close quarters and used by communists groups such as the excelsior. Uses 9mm rounds."
+	desc = "\"The supremacy of the proletariat will cause them to vanish still faster.\"\nAn excellent, fully automatic compact submachinegun. \
+			Famous for its perfomance in close quarters, and used by communist cells such as Excelsior. \
+			Chambered in 9mm, it takes both pistol and SMG magazines."
 	icon = 'icons/obj/guns/projectile/drozd.dmi'
 	icon_state = "drozd"
 	item_state = "drozd"
@@ -29,8 +31,10 @@
 
 /obj/item/gun/projectile/automatic/drozd/NM_colony
 	name = "\"Kompleks\" SMG"
-	desc = "An excellent fully automatic submachinegun. Famous for it's perfomance in close quarters. Uses 9mm rounds."
-	icon = 'icons/obj/guns/projectile/drozd.dmi'
+	desc = "An excellent, fully automatic compact submachinegun. Famous for its perfomance in close quarters. Uses 9mm rounds and can take a variety of pistol and SMG magazines.\nThis model of the \"Drozd\" SMG has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	icon = 'icons/obj/guns/projectile/drozd_bs.dmi'
+	icon_state = "drozd-bs"
+	item_state = "drozd-bs"
 	excelsior = FALSE
 	origin_tech = list(TECH_COMBAT = 4)
 	price_tag = 600

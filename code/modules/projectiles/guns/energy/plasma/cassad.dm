@@ -17,7 +17,7 @@
 	slot_flags = SLOT_BACK
 	init_firemodes = list(
 		list(mode_name="rapid fire", mode_desc="Light rapid plasma bolts", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=2, icon="stun", projectile_color = "#00FFFF"),
-		list(mode_name="armor penetrating", mode_desc="Harder hitting plasma bolts to reduce armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/Laser.ogg', fire_delay=6, icon="kill", projectile_color = "#00AAFF"),
+		list(mode_name="armor penetrating", mode_desc="Harder hitting plasma bolts to reduce armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/pulse.ogg', fire_delay=6, icon="kill", projectile_color = "#00AAFF"),
 	)
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 	twohanded = TRUE

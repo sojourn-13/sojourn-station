@@ -173,8 +173,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/ih/wo/populate_contents()
 	new /obj/item/handcuffs(src)
-	new /obj/item/ammo_magazine/kurtz_50/rubber(src)
-	new /obj/item/ammo_magazine/kurtz_50/rubber(src)
+	new /obj/item/voucher/marshal/wosecondary(src) // They no longer spawn with an Amnesty, moved it to this selection of secondaries.
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
@@ -221,8 +220,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/blackmarket/co/populate_contents()
 	new /obj/item/handcuffs(src)
-	new /obj/item/ammo_magazine/kurtz_50(src)
-	new /obj/item/ammo_magazine/kurtz_50(src)
+	new /obj/item/voucher/blackshield/COsecondary(src) // They don't spawn with a Lamia anymore, but come with their own secondary voucher.
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
@@ -492,10 +490,9 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	var/stamped
 	if(!stamped)
 		stamped = TRUE
-		var/list/options = list()
+		var/list/options = list() // Moved the Galaxy to secondary selection
 		options["Copperhead - assault rifle"] = list(/obj/item/gun/projectile/automatic/mamba/copperhead,/obj/item/ammo_magazine/rifle_75,/obj/item/ammo_magazine/rifle_75, /obj/item/ammo_magazine/rifle_75/rubber)
 		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags, /obj/item/ammo_magazine/ammobox/c10x24_small)
-		options["Galaxy - Plasma pistol"] = list(/obj/item/gun/energy/glock,/obj/item/cell/medium/high)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]

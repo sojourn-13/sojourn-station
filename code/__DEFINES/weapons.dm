@@ -95,7 +95,7 @@ Fire delay 15 = 40 rounds per minute
 #define WEAPON_CHARGE		list(mode_name="charge mode", mode_desc="Hold down the trigger, and let loose a more powerful shot", mode_type = /datum/firemode/charge, icon="charge")
 
 #define STUNBOLT			list(mode_name="stun", mode_desc="Stun bolt until they're eating the floortiles", projectile_type=/obj/item/projectile/beam/stun, item_modifystate="stun", fire_sound='sound/weapons/energy/Taser.ogg', icon="stun")
-#define LETHAL				list(mode_name="kill", mode_desc="To defeat the Vagabond, shoot it until it dies", projectile_type=/obj/item/projectile/beam, item_modifystate="kill", fire_sound='sound/weapons/energy/Laser.ogg', icon="kill")
+#define LETHAL				list(mode_name="kill", mode_desc="To defeat the Colonist, shoot it until it dies", projectile_type=/obj/item/projectile/beam, item_modifystate="kill", fire_sound='sound/weapons/energy/Laser.ogg', icon="kill")
 
 
 #define VIG_OVERCHARGE_GEN 0.05

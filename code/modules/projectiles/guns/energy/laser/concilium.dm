@@ -7,7 +7,7 @@
 	icon_state = "concilium"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	item_charge_meter = TRUE
-	fire_sound = 'sound/weapons/energy/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/laser_rifle.ogg' // Big unwieldy gun, despite the shit lasers
 	slot_flags = null
 	w_class = ITEM_SIZE_HUGE
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_WOOD = 25, MATERIAL_GLASS = 15, MATERIAL_SILVER = 5, MATERIAL_GOLD = 3)

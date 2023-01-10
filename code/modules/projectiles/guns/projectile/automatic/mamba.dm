@@ -7,7 +7,7 @@
 	icon_state = "mamba"
 	item_state = "mamba"
 	icon = 'icons/obj/guns/projectile/mamba.dmi'
-	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/solarian.ogg'
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BACK
 	caliber = CAL_LRIFLE
@@ -87,7 +87,7 @@
 	icon_state = "copperhead"
 	item_state = "copperhead"
 	icon = 'icons/obj/guns/projectile/copperhead.dmi'
-	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/copperhead.ogg'
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BACK
 	caliber = CAL_RIFLE
@@ -157,7 +157,7 @@
 	icon_state = "python"
 	item_state = "python"
 	icon = 'icons/obj/guns/projectile/python.dmi'
-	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/python.ogg'
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	caliber = CAL_RIFLE

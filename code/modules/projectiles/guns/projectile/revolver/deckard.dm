@@ -5,10 +5,11 @@
 	icon_state = "deckard"
 	caliber = CAL_50
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
-	max_shells = 5
+	max_shells = 6 // Standardizing speedloaders
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
 	price_tag = 1300 //one of most robust revolvers here
 	damage_multiplier = 1.2
+	proj_pve_damage_multiplier = 1.2
 	penetration_multiplier = 1.5
 	init_recoil = HANDGUN_RECOIL(1.5)
 	zoom_factors = list(0.4)

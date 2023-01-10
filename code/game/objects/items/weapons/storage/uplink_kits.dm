@@ -254,7 +254,7 @@
 /obj/item/storage/box/syndie_kit/antimaterial_rifle/populate_contents()
 	new /obj/item/ammo_casing/antim(src)
 	new /obj/item/weaponparts/heavysniper/stock(src)
-	new /obj/item/weaponparts/heavysniper/reciever(src)
+	new /obj/item/weaponparts/heavysniper/receiver(src)
 	new /obj/item/weaponparts/heavysniper/barrel(src)
 
 /obj/item/storage/box/syndie_kit/toxin
