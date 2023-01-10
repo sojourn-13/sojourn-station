@@ -66,7 +66,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/custer = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/roe = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/boltgun_sa = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/zatvor = 3,
+				/obj/item/computer_hardware/hard_drive/portable/design/zatvor = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/bounty_lever = 2))
 
 /obj/random/lathe_disk/lmg
@@ -129,7 +129,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/copperhead = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/duty = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki = 3,))
+				/obj/item/computer_hardware/hard_drive/portable/design/strelki = 3,))
 
 /obj/random/lathe_disk/rifle_heavy
 	name = "random heavy rifle lathe disk"

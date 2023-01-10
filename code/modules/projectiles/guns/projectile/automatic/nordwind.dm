@@ -35,7 +35,7 @@
 
 /obj/item/gun/projectile/automatic/nordwind/strelki
 	name = "\"Strelki\" precision rifle"
-	desc = "A Strelki precision rifle, an inexpensive rifle of dubious quality made by Nadezhda Marshals gunsmiths.\
+	desc = "A Strelki precision rifle, an inexpensive rifle of desent quality made by Hunt Inc.\
 			Its mostly wooden design and its usage of 7.62mm rounds make it the ideal weapon for a hunter tired of a crude boltaction. The frontier's favorite sniper!"
 	icon = 'icons/obj/guns/projectile/strelki.dmi'
 	icon_state = "strelki"
@@ -57,7 +57,7 @@
 		)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/nordwind/strelki/sawn
-	serial_type = "NM"
+	serial_type = "Hunt Inc"
 
 	wield_delay = 1.3 SECOND
 	wield_delay_factor = 0.3 // 30 vig to insta wield , not heavy class but not light
@@ -83,8 +83,8 @@
 
 /obj/item/gun/projectile/automatic/nordwind/strelki/sawn
 	name = "\"Strelki\" precision rifle"
-	desc = "A Strelki precision rifle, an inexpensive rifle of dubious quality made by Nadezhda Marshals gunsmiths.\
-			Someone has decided it's a good idea to take off the scope, saw off most of the wood and.. put a barrel shroud on it? Why in Gods name. ."
+	desc = "A Strelki precision rifle, an inexpensive rifle of dubious quality made by Hunt Inc.\
+			Someone has decided it's a good idea to take off the scope, saw off most of the wood and put a barrel shroud on it? Why in Gods name. ."
 	icon = 'icons/obj/guns/projectile/sawnoff/strelki.dmi'
 	icon_state = "strelki"
 	item_state = "strelki"
@@ -96,7 +96,7 @@
 	init_recoil = SMG_RECOIL(2.3)
 	damage_multiplier = 0.8
 	saw_off = FALSE
-	serial_type = "NM"
+	serial_type = "Hunt Inc"
 
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.2 // 20 vig to insta wield, sawn
