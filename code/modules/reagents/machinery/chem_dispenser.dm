@@ -3,7 +3,7 @@
 #define chemical_dispenser_ENERGY_COST (CHEM_SYNTH_ENERGY * CELLRATE)
 
 //list of available bottle sprites, holding 60u bottles that hold just about any chem
-#define BOTTLE_SPRITES list("bottle", "bottle2", "bottle3", "potion", "flask"/*, "tincture"*/)
+#define BOTTLE_SPRITES list("bottle", "potion", "tincture")
 
 //Pill bottles themselfs
 #define PILL_BOTTLE_MODELS list("pill_canister", "pill_lred", "pill_dred", \
@@ -36,7 +36,7 @@
 	var/cell_charger_additon = 0 //This is not a TRUE/FALSE
 	var/accept_beaker = TRUE //At TRUE, ONLY accepts beakers.
 	var/hackedcheck = FALSE
-	var/list/dispensable_reagents //I seriously hope this fixes the scrambling on part upgrade.
+	var/list/dispensable_reagents // Keep the list in this order to prevent chem scrambling when upgrading parts.
 	var/list/level0 = list(
 		"acetone", "aluminum", "ammonia",
 		"carbon", "copper", "ethanol",
