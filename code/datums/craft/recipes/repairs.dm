@@ -25,34 +25,12 @@
 		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
-/datum/craft_recipe/repairs/gladstone_shotgun
-	name = "Gladstone shotgun"
-	result = /obj/item/gun/projectile/shotgun/pump/gladstone
-	steps = list(
-		list(/obj/item/gun/projectile/shotgun/pump/gladstone/sawn, 1, "time" = 60),
-		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
-		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60)
-	)
-
 /datum/craft_recipe/repairs/sixshot_shotgun
 	name = "Sixshot shotgun"
 	result = /obj/item/gun/projectile/revolver/sixshot
 	steps = list(
 		list(/obj/item/gun/projectile/revolver/sixshot/sawn, 1, "time" = 60),
 		list(CRAFT_MATERIAL, 6, MATERIAL_WOOD),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
-		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_HAMMERING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60)
-	)
-
-/datum/craft_recipe/repairs/rushing_bull_shotgun
-	name = "Rushing Bull tactical shotgun"
-	result = /obj/item/gun/projectile/automatic/bull_autoshotgun
-	steps = list(
-		list(/obj/item/gun/projectile/automatic/cattle_autoshotgun, 1, "time" = 60),
-		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTIC),
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 60),
@@ -90,16 +68,6 @@
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 60)
-	)
-
-/datum/craft_recipe/repairs/sts_carbine
-	name = "STS carbine"
-	result = /obj/item/gun/projectile/automatic/sts/carbine
-	steps = list(
-		list(/obj/item/gun/projectile/automatic/sts/sawn/true, 1, "time" = 60),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC),
-		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 60)
 	)
 
 /datum/craft_recipe/repairs/sts_standard_rifle_blackshield

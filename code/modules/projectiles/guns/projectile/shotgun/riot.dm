@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/riot_autoshotgun
 	name = "\"State\" riot shotgun" //With correct mods this can be better then the pug
-	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation due to the success of the \"stolen\" \"Gladstone\" design. \
+	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation due to the success of the \"stolen\" \"Regulator\" design. \
 	This particular shotgun has been redesigned many times, never quite reaching a standard everyone was happy with, with some lauding it as confusing for a shotgun. \
 	Holds up to eight 20mm shells in a tube magazine."
 	icon = 'icons/obj/guns/projectile/milshotgun.dmi'
@@ -20,7 +20,7 @@
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1250
-	damage_multiplier = 1.2 //More damage less AP than gladstone
+	damage_multiplier = 1.2
 	init_recoil = RIFLE_RECOIL(1.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 
@@ -34,7 +34,7 @@
 
 /obj/item/gun/projectile/automatic/riot_autoshotgun/robo
 	name = "intergrated \"State\" riot shotgun"
-	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation due to the success of the \"stolen\" \"Gladstone\" design. \
+	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation due to the success of the \"stolen\" \"Regulator\" design. \
 	This particular shotgun has been redesigned many times, never quite reaching a standard everyone was happy with, with some lauding it as confusing for a shotgun. \
 	Holds up to six 20mm shells in a tube magazine."
 	icon = 'icons/obj/robot_items.dmi'

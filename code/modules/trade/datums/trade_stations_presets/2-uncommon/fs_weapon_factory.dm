@@ -15,11 +15,9 @@
 	inventory = list(
 		"Projectiles" = list(
 			/obj/item/gun/projectile/automatic/c20r,
-			/obj/item/gun/projectile/automatic/sts/carbine = good_data("STS-25 carbine", list(1, 4), 900),
 			/obj/item/gun/projectile/automatic/sts/rifle,
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa = good_data("Mosin boltaction rifle", list(1, 5), 500),
-			/obj/item/gun/projectile/shotgun/pump/gladstone,
 			/obj/item/gun/projectile/shotgun/bull,
 			/obj/item/gun/projectile/shotgun/pug,
 			/obj/item/gun/projectile/shotgun/pump = good_data("Grizzly shotgun", list(1, 5), 700),

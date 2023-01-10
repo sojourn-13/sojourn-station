@@ -33,31 +33,6 @@
 	wield_delay = 1.5 SECOND
 	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class rifle
 
-/obj/item/gun/projectile/automatic/nordwind/watchtower
-	name = "\"Watchtower\" DMR"
-	desc = "A designated marksman rifle designed in cooperation between the marshals and the blackshield, made with lightweight materials and simple, easy to maintain components. \
-	A favorite of troopers who prefer to friendly fire rather than to be friendly fired."
-	icon = 'icons/obj/guns/projectile/watchtower.dmi'
-	icon_state = "watchtower"
-	item_state = "watchtower"
-	slot_flags = SLOT_BACK
-	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_RIFLE
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10)
-	price_tag = 800
-	zoom_factors = list(0.8)
-	damage_multiplier = 1 //Little bit better Strelki
-	extra_damage_mult_scoped = 0.3
-	penetration_multiplier = 1.0
-	init_recoil = RIFLE_RECOIL(1.1)
-	see_invisible_gun = -1
-	auto_eject = FALSE
-	init_firemodes = list(
-		SEMI_AUTO_NODELAY
-		)
-	serial_type = "NM"
-
 /obj/item/gun/projectile/automatic/nordwind/strelki
 	name = "\"Strelki\" precision rifle"
 	desc = "A Strelki precision rifle, an inexpensive rifle of dubious quality made by Nadezhda Marshals gunsmiths.\
