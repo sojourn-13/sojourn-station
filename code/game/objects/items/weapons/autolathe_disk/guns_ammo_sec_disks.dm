@@ -538,9 +538,8 @@
 		/datum/design/autolathe/ammo/rifle_lethal = 4,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki
-	name = "Hunters Inc - 7.62mm \"Strelki\""
-	disk_name = ""
+/obj/item/computer_hardware/hard_drive/portable/design/strelki
+	disk_name = "Hunters Inc - 7.62mm \"Strelki\""
 	icon_state = "hunters"
 	license = 8
 
@@ -586,10 +585,9 @@
 		/datum/design/autolathe/ammo/sl_rifle,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/zatvor
-	name = "Unlicensed - 7.62mm bolt \"Zatvor\" rifle"
-	disk_name = ""
-	icon_state = "blackshield"
+/obj/item/computer_hardware/hard_drive/portable/design/zatvor
+	disk_name = "Unlicensed - 7.62mm bolt \"Zatvor\" rifle"
+	icon_state = "onestar"
 	license = 8
 
 	designs = list(

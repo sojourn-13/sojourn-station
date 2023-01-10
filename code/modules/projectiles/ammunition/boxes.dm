@@ -231,7 +231,7 @@
 
 // 6.5mm Packets
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small
-	name = "ammunition box (6.5mm Carbine FMJ)"
+	name = "ammunition packet (6.5mm Carbine FMJ)"
 	icon_state = "lrifle"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_LRIFLE
@@ -463,31 +463,31 @@
 	max_ammo = 40
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber
-	name = "ammunition box (8.6mm rubber)"
+	name = "ammunition packet (8.6mm rubber)"
 	icon_state = "hrifle_r"
 	desc = "A box of 8.6x70mm heavy rifle ammunition."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/practice
-	name = "ammunition box (8.6mm practice)"
+	name = "ammunition packet (8.6mm practice)"
 	icon_state = "hrifle_p"
 	desc = "A box of 8.6x70mm heavy rifle ammunition."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/practice
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/hv
-	name = "ammunition box (8.6mm SLAP)"
+	name = "ammunition packet (8.6mm SLAP)"
 	icon_state = "hrifle_hv"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 8mm Saboted Light Armor Penetrators, spoon-tipped."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/hv
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/lethal
-	name = "ammunition box (8.6mm hollow point)"
+	name = "ammunition packet (8.6mm hollow point)"
 	icon_state = "hrifle_l"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 10mm hollow-tipped full-caliber."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
-	name = "ammunition box (8.6mm laser)"
+	name = "ammunition packet (8.6mm laser)"
 	icon_state = "hrifle_si"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 7mm subcaliber laser rounds."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/laser
