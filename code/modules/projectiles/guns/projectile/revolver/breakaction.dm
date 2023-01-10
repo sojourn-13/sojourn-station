@@ -64,7 +64,7 @@
 	name = "\"Mateba\" autorevolver"
 	desc = "The \"Mateba\" autorevolver is a unique semiautomatic revolver chambered in 12mm whose patents were acquired by Seinemetall Defense GmbH for production. \
 			Its two-part frame is divided between cylinder and barrel, mounted atop rails on the lower grip, effectively reducing muzzle flip \
-			by aligning its bore with the operator's holding point, and sliding the whole mechanism back upon shooting thanks to its potent recoil compensator.\
+			by aligning its bore with the operator's holding point, and sliding the whole mechanism back upon shooting thanks to its potent recoil compensator. \
 			Such a mechanism, sadly, limits the caliber of this gun to the highest bore despite having sported interchangeable barrels at some point."
 	icon = 'icons/obj/guns/projectile/mateba.dmi'
 	icon_state = "mateba"
