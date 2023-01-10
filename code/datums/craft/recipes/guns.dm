@@ -181,20 +181,6 @@
 		list(QUALITY_WELDING, 10, 20)
 	)
 
-/datum/craft_recipe/gun/sts
-	name = "\"STS\" battle rifle"
-	result = /obj/item/gun/projectile/automatic/sts/rifle
-	steps = list(
-		list(/obj/item/gun/projectile/automatic/sts/carbine, 1, "time" = 60),
-		list(QUALITY_SCREW_DRIVING, 10, "time" = 10),
-		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
-		list(QUALITY_WELDING, 10, "time" = 30),
-		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
-		list(QUALITY_SAWING, 10, "time" = 10),
-		list(QUALITY_BOLT_TURNING, 20, "time" = 10)
-
-	)
-
 /datum/craft_recipe/gun/bssts
 	name = "\"STS PARA\" Blackshield rifle"
 	result = /obj/item/gun/projectile/automatic/sts/rifle/blackshield

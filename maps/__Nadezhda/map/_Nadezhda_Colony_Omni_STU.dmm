@@ -530,12 +530,7 @@
 "adJ" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/light/small,
-/obj/item/gun/projectile/automatic/mamba/copperhead{
-	pixel_y = 4
-	},
-/obj/item/gun/projectile/automatic/mamba/copperhead{
-	pixel_y = -4
-	},
+/obj/item/gun/projectile/grenade/lenar,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "adR" = (
@@ -13196,8 +13191,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/item/gun/projectile/automatic/nordwind/watchtower{
-	pixel_y = 8
+/obj/item/gun/projectile/automatic/vintorez/NM_colony{
+	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -13410,10 +13405,15 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
 "cDR" = (
-/obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_pump,
-/obj/item/gun/projectile/boltgun/scout,
+/obj/structure/table/rack/shelf,
+/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony{
+	pixel_y = -5
+	},
+/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony{
+	pixel_y = 5
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "cDV" = (
@@ -24795,7 +24795,7 @@
 /obj/item/storage/box/blast_grenade_shells,
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/westleft{
-	name = "Sniper rifles";
+	name = "grenades closet";
 	req_access = list(3)
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -30557,7 +30557,7 @@
 	pixel_y = 0
 	},
 /obj/machinery/door/window/westright{
-	name = "Sniper rifles";
+	name = "grenades closet";
 	req_access = list(3)
 	},
 /obj/structure/window/reinforced{
@@ -65532,14 +65532,14 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "mnI" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/mamba/viper{
-	pixel_y = 7
-	},
 /obj/machinery/door/window/southleft{
 	name = "Marksman weaponry";
 	req_access = list(3)
 	},
-/obj/item/gun/projectile/automatic/mamba/python{
+/obj/item/gun/projectile/automatic/mamba/copperhead{
+	pixel_y = 4
+	},
+/obj/item/gun/projectile/automatic/mamba/copperhead{
 	pixel_y = -4
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -72166,8 +72166,8 @@
 /area/nadezhda/engineering/construction)
 "nAD" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/grenade/lenar,
 /obj/machinery/light/small,
+/obj/item/gun/projectile/automatic/mamba/python,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "nAF" = (
@@ -79400,8 +79400,8 @@
 /area/nadezhda/security/vacantoffice2)
 "oQx" = (
 /obj/structure/closet/crate/serbcrate,
-/obj/item/gun/projectile/automatic/bull_autoshotgun,
-/obj/item/gun/projectile/boltgun/lever/shotgun/bounty,
+/obj/item/gun/projectile/automatic/omnirifle/solmarine,
+/obj/item/gun/projectile/boltgun/scout,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "oQy" = (
@@ -82128,7 +82128,6 @@
 /area/nadezhda/security/detectives_office)
 "pun" = (
 /obj/structure/closet/crate/serbcrate,
-/obj/item/gun/projectile/automatic/omnirifle/solmarine,
 /obj/item/gun/projectile/automatic/lmg/heroic,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
