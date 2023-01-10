@@ -22,9 +22,9 @@
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 800
-	penetration_multiplier = 2
+	penetration_multiplier = 1.8
 	pierce_multiplier = 2
-	damage_multiplier = 0.6 //Most AP and pens walls but least damage out of any shotgun
+	damage_multiplier = 0.8
 	init_recoil = RIFLE_RECOIL(1.4)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
 	saw_off = FALSE
