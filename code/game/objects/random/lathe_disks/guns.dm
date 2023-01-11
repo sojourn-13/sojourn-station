@@ -66,7 +66,6 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/custer = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/roe = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/boltgun_sa = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/zatvor = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/bounty_lever = 2))
 
 /obj/random/lathe_disk/lmg
@@ -83,7 +82,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/dp = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 2,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/saw = 2,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/tk = 1.5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/ex_ppsh = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/concillium = 2))
 
@@ -153,7 +152,6 @@
 /obj/random/lathe_disk/pistol/item_to_spawn()
 	return pickweight(list(
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58 = 5,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/NM_colt = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/colt = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/rafale = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/lamia = 2,

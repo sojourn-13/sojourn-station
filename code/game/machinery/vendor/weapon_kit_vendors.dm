@@ -14,7 +14,7 @@
 		/obj/item/storage/box/bs_kit/drozd = 2,
 		/obj/item/storage/box/bs_kit/ekaterina = 3,
 		/obj/item/storage/box/bs_kit/bounty = 3,
-		/obj/item/storage/box/bs_kit/stallion = 5,
+		/obj/item/storage/box/bs_kit/delta = 5,
 		/obj/item/storage/box/bs_kit/rex10 = 3,
 		/obj/item/storage/box/bs_kit/pilgrim = 3,
 		/obj/item/storage/box/bs_kit/makarov = 3,
@@ -37,7 +37,7 @@
 		/obj/item/storage/box/bs_kit/drozd = 800,
 		/obj/item/storage/box/bs_kit/ekaterina = 750,
 		/obj/item/storage/box/bs_kit/bounty = 750,
-		/obj/item/storage/box/bs_kit/stallion = 750,
+		/obj/item/storage/box/bs_kit/delta = 750,
 		/obj/item/storage/box/bs_kit/rex10 = 500,
 		/obj/item/storage/box/bs_kit/pilgrim = 750,
 		/obj/item/storage/box/bs_kit/makarov = 500,
@@ -127,7 +127,7 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Makarov Kit" = /obj/item/storage/box/bs_kit/makarov,
-					"Stallion Kit" = /obj/item/storage/box/bs_kit/stallion,
+					"Delta Elite Kit" = /obj/item/storage/box/bs_kit/delta,
 					"Cowboy Kit" = /obj/item/storage/box/bs_kit/rex10,
 					"Pilgrim Kit" = /obj/item/storage/box/bs_kit/pilgrim,
 					"Sawn-Off Shotgun Kit" = /obj/item/storage/box/bs_kit/sawn_shotgun,

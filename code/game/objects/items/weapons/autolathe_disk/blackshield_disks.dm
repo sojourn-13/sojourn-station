@@ -130,24 +130,6 @@
 		/datum/design/autolathe/ammo/pistol,
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/blackshield/NM_colt
-	name = "NM HG 9mm \"Bronco\""
-	disk_name = ""
-	icon_state = "blackshield"
-	license = 8
-
-	designs = list(
-		/datum/design/autolathe/gun/NM_colt = 3,
-		/datum/design/autolathe/ammo/pistol_practice = 0,
-		/datum/design/autolathe/ammo/pistol_rubber,
-		/datum/design/autolathe/ammo/pistol,
-		/datum/design/autolathe/ammo/pistol_lethal = 2,
-		/datum/design/autolathe/ammo/hpistol_practice = 1,
-		/datum/design/autolathe/ammo/hpistol_rubber = 2,
-		/datum/design/autolathe/ammo/hpistol = 2,
-		/datum/design/autolathe/ammo/hpistol_lethal = 2,
-		)
-
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich
 	name = "NM - 9mm PPV \"Semyonovich\""
 	disk_name = ""

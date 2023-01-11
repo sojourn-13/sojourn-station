@@ -14,7 +14,6 @@
 				/obj/item/gun/projectile/giskard = 1.5,\
 				/obj/item/gun/projectile/automatic/luger = 1,\
 				/obj/item/gun/projectile/boltgun/sa = 3,\
-				/obj/item/gun/projectile/boltgun/zatvor = 1,\
 				/obj/item/gun/projectile/shotgun/pump = 0.5,\
 				/obj/item/gun/projectile/revolver/sixshot/sawn = 0.5,\
 				/obj/item/gun/projectile/shotgun/pump/sawn = 1,\
@@ -23,7 +22,6 @@
 				/obj/item/gun/projectile/boltgun/sawn/true = 0.5,\
 				/obj/item/gun/projectile/boltgun/sawn/sa = 1,\
 				/obj/item/gun/projectile/automatic/luger = 1, \
-				/obj/item/gun/projectile/boltgun/zatvor = 2, \
 				/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless = 0.5, \
 				/obj/item/gun/projectile/olivaw = 2,
 				/obj/item/gun_upgrade/barrel/forged = 2))
@@ -108,9 +106,8 @@
 				/obj/item/gun/projectile/revolver/tacticool_revolver = 1,\
 				/obj/item/gun/projectile/silenced = 2,\
 				/obj/item/gun/projectile/revolver/mistral = 2,\
-				/obj/item/gun/projectile/colt/NM_colt = 2,\
 				/obj/item/gun/projectile/colt/ten = 2,\
-				/obj/item/gun/projectile/colt/ten/dark = 1,\
+				/obj/item/gun/projectile/colt/ten = 1,\
 				/obj/item/gun/projectile/automatic/nordwind/strelki = 0.3, \
 				/obj/item/gun/projectile/boltgun/lever = 1, \
 				/obj/item/gun/projectile/lamia/scoped = 1,\
