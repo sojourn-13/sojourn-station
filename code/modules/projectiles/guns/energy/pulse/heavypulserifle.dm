@@ -7,7 +7,7 @@
 	item_state = "heavypulserifle"
 	item_charge_meter = TRUE
 	slot_flags = SLOT_BACK //So we can use it like normal person
-	fire_sound = 'sound/weapons/energy/pulse2.ogg'
+	fire_sound = 'sound/weapons/energy/aer9fire.ogg'
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 3, TECH_POWER = 4)
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL

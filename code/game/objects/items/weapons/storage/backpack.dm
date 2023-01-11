@@ -60,7 +60,7 @@
 	if(!equip_access && is_equipped())
 		if (istype(L))
 			if(!no_message)
-				to_chat(L, "<span class='warning'>The [src] is too cumbersome to handle with one hand, you're going to have to set it down somewhere!</span>")
+				to_chat(L, "<span class='warning'>\The [src] is too cumbersome to handle with one hand, you're going to have to set it down somewhere!</span>")
 		if (!no_message && use_sound)
 			playsound(loc, use_sound, 50, 1, -5)
 		return FALSE
@@ -68,7 +68,7 @@
 	else if(!worn_access && is_worn())
 		if (istype(L))
 			if(!no_message)
-				to_chat(L, "<span class='warning'>Oh no! Your arms are not long enough to open [src] while it is on your back!</span>")
+				to_chat(L, "<span class='warning'>Oh no! Your arms are not long enough to reach inside \the [src] while it is on your back!</span>")
 		if (!no_message && use_sound)
 			playsound(loc, use_sound, 50, 1, -5)
 		return FALSE

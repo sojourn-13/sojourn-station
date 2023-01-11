@@ -174,8 +174,8 @@
 	max_shells = 9
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 700
-	damage_multiplier = 1.2
-	penetration_multiplier = 1.1
+	damage_multiplier = 1.3
+	penetration_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	var/obj/item/gun/projectile/underslung/launcher

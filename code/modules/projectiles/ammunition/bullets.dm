@@ -865,7 +865,7 @@
 	icon_state = "arrow-broad"
 	force = WEAPON_FORCE_PAINFUL
 	armor_penetration = 0
-	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has quite a broad head, letting it stick in wounds easily, but reducing its ability to penetrate armor."
+	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has quite a broad head, capable of causing severe damage to unarmored targets, but reducing its ability to penetrate armor."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/broadhead
 
 /obj/item/ammo_casing/arrow/serrated
@@ -873,7 +873,7 @@
 	icon_state = "arrow-serrated"
 	force = WEAPON_FORCE_PAINFUL
 	armor_penetration = 0
-	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has wicked sharp serrated blades along its head, capable of causing severe damage to unarmored targets."
+	desc = "A good-quality handmade aerodinamic arrow, with a metal head and plastic fletching. This one has wicked sharp serrated blades along its head, letting it stick in wounds easily, penetrating thick hide and armor alike at fast speeds."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/serrated
 
 /obj/item/ammo_casing/arrow/reagent

@@ -19,7 +19,6 @@
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/stungloves
 	glasses = /obj/item/clothing/glasses/sechud/tactical
-	belt = /obj/item/gun/projectile/lamia/amnesty
 	id_type = /obj/item/card/id/hos
 	head = /obj/item/clothing/head/rank/commander
 	pda_type = /obj/item/modular_computer/pda/heads/hos
@@ -33,7 +32,6 @@
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/stungloves
 	glasses = /obj/item/clothing/glasses/ballistic
-	belt = /obj/item/gun/projectile/lamia
 	id_type = /obj/item/card/id/hos
 	head = /obj/item/clothing/head/rank/milcom
 	pda_type = /obj/item/modular_computer/pda/heads/hos

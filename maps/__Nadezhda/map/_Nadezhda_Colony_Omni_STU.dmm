@@ -85565,7 +85565,7 @@
 /area/nadezhda/maintenance/guild)
 "pZS" = (
 /mob/living/simple_animal/opossum{
-	desc = "The Nedezhda basketball team mascot. - Currently scavenging for rebounds";
+	desc = "The Nadezhda basketball team mascot. - Currently scavenging for rebounds";
 	name = "'Cross-em' Opossum"
 	},
 /turf/simulated/floor/tiled/dark/golden,

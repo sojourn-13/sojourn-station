@@ -36,7 +36,7 @@
 
 /obj/item/gun/projectile/colt/ten
 	name = "\"Delta Elite\" magnum pistol"
-	desc = "A classy high-powered automatic based on the M1911 series handguns, with significant reinforcements produded by Scarborough Arms. Uses 10mm Auto-Mag."
+	desc = "A classy high-powered automatic based on the M1911 series handguns, with significant reinforcements produced by Scarborough Arms. Uses 10mm Auto-Mag."
 	icon_state = "delta"
 	item_state = "colt"
 	w_class = ITEM_SIZE_NORMAL

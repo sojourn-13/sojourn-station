@@ -73,7 +73,7 @@
 	new /obj/item/device/radio/headset/heads/hos(src)
 	new /obj/item/device/holowarrant(src)
 	new /obj/item/taperoll/police(src)
-	new /obj/item/gunbox/warrantofficer(src)
+	new /obj/item/gunbox/warrantofficer(src) // Primary on their locker, secondary on their hardcase.
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)

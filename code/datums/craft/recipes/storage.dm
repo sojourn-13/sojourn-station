@@ -26,6 +26,14 @@
 	)
 	related_stats = list(STAT_COG)
 
+/datum/craft_recipe/storage/plastic_jug
+	name = "plastic jug"
+	icon_state = "device"
+	result = /obj/item/reagent_containers/glass/plastic_jug
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC, "time" = 60)
+	)
+
 /datum/craft_recipe/storage/sheet_bag
 	name = "sheet snatcher"
 	result = /obj/item/storage/bag/sheetsnatcher

@@ -203,8 +203,10 @@
 					to_chat(user, SPAN_WARNING("[src] requires another magazine.")) //wrong magazine
 					return
 				if(tac_reloads && ammo_magazine)
-					unload_ammo(user)	// ejects the magazine before inserting the new one.
-					to_chat(user, SPAN_NOTICE("You tactically reload your [src] with [AM]!"))
+					if(replace_item(ammo_magazine, A, user)) // The replace_item() proc already existed, would've been easier this way...
+						ammo_magazine = A
+						update_icon()
+						to_chat(user, SPAN_NOTICE("You tactically reload your [src] with [AM]!"))
 				else if(ammo_magazine)
 					to_chat(user, SPAN_WARNING("[src] already has a magazine loaded.")) //already a magazine here
 					return

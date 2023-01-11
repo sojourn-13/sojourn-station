@@ -354,9 +354,15 @@
 	if(P.icon_state == "potion")
 		P.filling_states = "10;20;40;50;60"
 		P.label_icon_state = "label_potion"
-	if(P.icon_state == "tincture")
-		P.filling_states = "3;5;10;15;25;27;30;35;40;45;55;60"
-		P.label_icon_state = "label_tincture"
+	if(P.icon_state == "flask")
+		P.filling_states = "20;40;60;80;100"
+		P.label_icon_state = "label_flask"
+	if(P.icon_state == "bottle2")
+		P.filling_states = "20;40;60;80;100"
+		P.label_icon_state = "label_bottle2"
+	if(P.icon_state == "bottle3")
+		P.filling_states = "20;40;60;80;100"
+		P.label_icon_state = "label_bottle3"
 	P.toggle_lid()
 
 /obj/machinery/reagentgrinder/industrial/proc/grind()
