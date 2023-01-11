@@ -96,7 +96,7 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemCorpsPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Mosin Kit" = /obj/item/storage/box/bs_kit/mosin,
-					"STS Kit" = /obj/item/storage/box/bs_kit/duty,
+					"Duty Kit" = /obj/item/storage/box/bs_kit/duty,
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
 					"Ekaterina SMG Kit" = /obj/item/storage/box/bs_kit/ekaterina,
 					"Drozd SMG Kit" = /obj/item/storage/box/bs_kit/drozd,
