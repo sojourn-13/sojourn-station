@@ -162,6 +162,13 @@
 	volume = 300 // Bigger than a bucket
 	unacidable = 1
 
+/obj/item/reagent_containers/glass/plastic_jug/update_icon() // Necessary as it has no filling states.
+	cut_overlays()
+
+	if(has_lid())
+		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
+		add_overlay(lid)
+
 /obj/item/reagent_containers/glass/urn
 	name = "Urn"
 	desc = "A tall, rounded vase with a base, with a short stem, used for storing the ashes of a cremated person."
