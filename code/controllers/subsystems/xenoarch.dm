@@ -11,8 +11,13 @@ SUBSYSTEM_DEF(xenoarch)
 
 	var/list/artifact_spawning_turfs = list()
 	var/list/digsite_spawning_turfs = list()
+	var/list/map_data_list = list()
 
 /datum/controller/subsystem/xenoarch/Initialize(start_timeofday)
+	//fill list of map data so we can use it to determine digsite types
+	for(var/obj/map_data/MD in world)
+		if (MD.digsites)
+			map_data_list += MD
 	//create digsites
 	for(var/turf/simulated/mineral/M in block(locate(1,1,1), locate(world.maxx, world.maxy, world.maxz)))
 		if(isnull(M.geologic_data))
@@ -21,8 +26,11 @@ SUBSYSTEM_DEF(xenoarch)
 		if(!prob(xenoarch_spawn_chance))
 			continue
 
+		if(!(is_allowed_digsites(M.z)))
+			continue
+
 		digsite_spawning_turfs.Add(M)
-		var/digsite = get_random_digsite_type(M.z)
+		var/digsite = get_digsite_type(M.z, map_data_list)
 		var/target_digsite_size = rand(digsite_size_lower, digsite_size_upper)
 		var/list/processed_turfs = list()
 		var/list/turfs_to_process = list(M)

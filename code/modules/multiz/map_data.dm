@@ -55,6 +55,9 @@ GLOBAL_DATUM_INIT(maps_data, /datum/maps_data, new)
 		return TRUE
 	return FALSE
 
+/proc/is_allowed_digsites(var/level)
+	return level in GLOB.maps_data.allowed_digsites
+
 ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 /client/proc/test_MD()
 	set name = "Check level data"
@@ -79,6 +82,8 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 
 	to_chat(mob, "isAcessableLevel: [GLOB.maps_data.accessable_levels[num2text(mob.z)]]")
 
+	to_chat(mob, "allowed_digsites: [is_allowed_digsites(mob.z)]")
+
 	if(GLOB.maps_data.asteroid_levels[num2text(T.z)])
 		to_chat(mob, "Asteroid will be generated here")
 	else
@@ -95,6 +100,7 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 	var/list/accessable_levels = new
 	var/list/empty_levels = null     // Empty Z-levels that may be used for various things
 	var/list/names = new
+	var/list/allowed_digsites = list()
 	var/security_state = /decl/security_state/default // The default security state system to use.
 
 	var/list/loadout_blacklist	//list of types of loadout items that will not be pickable
@@ -195,6 +201,9 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 	if(MD.is_sealed)
 		sealed_levels += level
 
+	if(MD.digsites)
+		allowed_digsites += level
+
 /datum/maps_data/proc/get_empty_zlevel()
 	if(empty_levels == null)
 		world.incrementMaxZ()
@@ -241,6 +250,7 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 	var/is_sealed = FALSE //No transit at map edge
 	var/tmp/z_level
 	var/height = -1	///< The number of Z-Levels in the map.
+	var/digsites = null /// determines if digsites spawn if they do which types. (GARDEN,ANIMAL,HOUSE,TECHNICAL,TEMPLE,WAR,ANY)
 
 
 // If the height is more than 1, we mark all contained levels as connected.
