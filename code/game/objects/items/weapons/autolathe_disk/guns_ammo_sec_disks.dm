@@ -506,7 +506,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/tk
 	disk_name = "SD GmbH - 6.5mm Takeshi LMG"
-	icon_state = "sa"
+	icon_state = "frozenstar"
 
 	license = 8 //So we can print 2 and some ammo
 	designs = list(
