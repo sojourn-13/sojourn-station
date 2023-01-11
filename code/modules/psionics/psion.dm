@@ -167,7 +167,7 @@
 		to_chat(src, "You are dead.")
 		return
 	if(owner.stat == UNCONSCIOUS)
-		to_chat(src, "You cannot use your psionic powers while unconsious.")
+		to_chat(src, "You cannot use your psionic powers while unconscious.")
 		return
 	if(psi_points < psi_cost)
 		to_chat(usr,"You lack the psionic essence to do this.")

@@ -83,15 +83,15 @@
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/storage/pouch/tubular(src)
 
-/obj/item/storage/box/m_kit/viper
-	name = "Viper DMR Kit"
-	desc = "The standard Marshal box kit containing a Viper DMR. A marksman carbine for a true marksman."
+/obj/item/storage/box/m_kit/copperhead
+	name = "Copperhead Rifle Kit"
+	desc = "The standard Marshal box kit containing a Copperhead rifle. A high-quality rifle used by Marshal operators."
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/mamba/viper(src)
-		new /obj/item/ammo_magazine/light_rifle_257/rubber(src)
-		new /obj/item/ammo_magazine/light_rifle_257(src)
-		new /obj/item/ammo_magazine/light_rifle_257(src)
+		new /obj/item/gun/projectile/automatic/mamba/copperhead(src)
+		new /obj/item/ammo_magazine/rifle_75/rubber(src)
+		new /obj/item/ammo_magazine/rifle_75(src)
+		new /obj/item/ammo_magazine/rifle_75(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 //Ranger kits

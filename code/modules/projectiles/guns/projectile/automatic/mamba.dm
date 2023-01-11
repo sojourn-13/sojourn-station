@@ -16,8 +16,9 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.0
-	zoom_factors = list(0.4)
-	price_tag = 900
+	extra_damage_mult_scoped = 0.2
+	zoom_factors = list(0.8)
+	price_tag = 950
 	init_recoil = CARBINE_RECOIL(1)
 	folding_stock = TRUE
 	can_dual = FALSE //please god please please NO MORE NO MORE GOD, PLEASE
@@ -58,26 +59,6 @@
 	. = ..()
 	update_icon()
 
-//////////////////
-//6.5mm Viper DMR//
-//////////////////
-/obj/item/gun/projectile/automatic/mamba/viper
-	name = "\"Viper\" DMR"
-	desc = "A variant of the Nadezhda Marshal 6.5mm \"Mamba\" carbine, the \"Viper\" is sports an adjustable recoil compensating stock, a longer barrel and an integrated smart-scope. Perfect for both medium and long range engagements."
-	icon_state = "viper"
-	item_state = "viper"
-	matter = list(MATERIAL_PLASTEEL = 17, MATERIAL_PLASTIC = 9)
-	price_tag = 1000
-	damage_multiplier = 1.2
-	penetration_multiplier = 1.2
-	extra_damage_mult_scoped = 0.2
-	zoom_factors = list(0.8)
-	init_recoil = CARBINE_RECOIL(1.1)
-	folding_stock = FALSE
-	init_firemodes = list(
-		SEMI_AUTO_NODELAY
-		)
-
 /////////////////////////////////////////
 //7.62mm Copperhead w/ grenade launcher//
 /////////////////////////////////////////
@@ -94,7 +75,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
-	price_tag = 1000
+	price_tag = 1200
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
 	zoom_factors = list(0.4)

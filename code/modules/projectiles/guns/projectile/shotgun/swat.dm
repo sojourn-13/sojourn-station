@@ -10,7 +10,7 @@
 	caliber = CAL_SHOTGUN
 	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	origin_tech = list(TECH_COMBAT = 7, TECH_MATERIAL = 4)
-	max_shells = 7 //Same as the gladstone
+	max_shells = 7
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 1500

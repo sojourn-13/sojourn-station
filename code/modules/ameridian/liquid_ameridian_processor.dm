@@ -14,25 +14,25 @@
 	var/obj/structure/reagent_dispensers/bidon/Container
 	/*
 	Current as of wrighting is balance is around t5 parts aka 50% reduction
-	Meaning: 1 ameridain shard is worth 10, and 50% of 30 = 15 this 1.5 shards makes 1 steel or 2 golem kills
+	Meaning: 1 ameridain shard is worth 10, and 50% of 10 = 5 this 1 shards makes 2 steel
 	Its balance this way to both encurage its use to fill in gaps when a drill is failing or to round out numbers when needed
 	Ontop of it being able to be farmed semi-easily with an invest of 1 to 3 cores + time on return.
 	- Trilby 8/24/2022
 	*/
 	var/outputs = list(
-						list(name = "Steel", cost = 30, path = /obj/item/stack/material/steel),
-						list(name = "Plastic", cost = 30, path = /obj/item/stack/material/plastic),
-						list(name = "Glass", cost = 30, path = /obj/item/stack/material/glass),
-						list(name = "Plasteel", cost = 100, path = /obj/item/stack/material/plasteel),
-						list(name = "Silver", cost = 60, path = /obj/item/stack/material/silver),
-						list(name = "Gold", cost = 60, path = /obj/item/stack/material/gold),
-						list(name = "Platinum", cost = 120, path = /obj/item/stack/material/platinum),
-						list(name = "Uranium", cost = 120, path = /obj/item/stack/material/uranium),
-						list(name = "Plasma", cost = 120, path = /obj/item/stack/material/plasma),
-						list(name = "Osmium", cost = 200, path = /obj/item/stack/material/osmium),
-						list(name = "Diamonds", cost = 250, path = /obj/item/stack/material/diamond),
-						list(name = "Metallic Hydrogen", cost = 250, path=/obj/item/stack/material/mhydrogen),
-						list(name = "Tritium", cost = 250, path = /obj/item/stack/material/tritium),
+						list(name = "Steel", cost = 10, path = /obj/item/stack/material/steel),
+						list(name = "Plastic", cost = 10, path = /obj/item/stack/material/plastic),
+						list(name = "Glass", cost = 10, path = /obj/item/stack/material/glass),
+						list(name = "Plasteel", cost = 50, path = /obj/item/stack/material/plasteel),
+						list(name = "Silver", cost = 20, path = /obj/item/stack/material/silver),
+						list(name = "Gold", cost = 20, path = /obj/item/stack/material/gold),
+						list(name = "Platinum", cost = 60, path = /obj/item/stack/material/platinum),
+						list(name = "Uranium", cost = 60, path = /obj/item/stack/material/uranium),
+						list(name = "Plasma", cost = 60, path = /obj/item/stack/material/plasma),
+						list(name = "Osmium", cost = 100, path = /obj/item/stack/material/osmium),
+						list(name = "Diamonds", cost = 180, path = /obj/item/stack/material/diamond),
+						list(name = "Metallic Hydrogen", cost = 180, path=/obj/item/stack/material/mhydrogen),
+						list(name = "Tritium", cost = 180, path = /obj/item/stack/material/tritium),
 						list(name = "Ameridian Core", cost = 1200, path=/obj/item/ameridian_core) //At t8 parts its 1:1
 						)
 	var/cost_modifier = 1

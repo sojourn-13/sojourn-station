@@ -411,18 +411,6 @@
 		/datum/design/autolathe/ammo/sbaw_empty = 0, //So we can handload new mags
 		)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/gladstone
-	disk_name = "H&S - 20mm Gladstone Shotgun"
-	icon_state = "frozenstar"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/gladstone = 3,
-		/datum/design/autolathe/ammo/shotgun_beanbag,
-		/datum/design/autolathe/ammo/shotgun_blanks = 0,
-		/datum/design/autolathe/ammo/shotgun_illumination,
-		)
-
 /obj/item/computer_hardware/hard_drive/portable/design/guns/state
 	disk_name = "Seinemetall Defense GmbH - 20mm State Auto Shotgun"
 	desc = "Known as the state, an odd shotgun, often redesigned every few years in a way few people are fully happy with."
@@ -563,6 +551,19 @@
 		/datum/design/autolathe/ammo/rifle_lethal = 4,
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/strelki
+	disk_name = "Hunters Inc - 7.62mm \"Strelki\""
+	icon_state = "hunters"
+	license = 8
+
+	designs = list(
+		/datum/design/autolathe/gun/strelki = 3,
+		/datum/design/autolathe/ammo/rifle,
+		/datum/design/autolathe/ammo/rifle_rubber,
+		/datum/design/autolathe/ammo/rifle_practice = 0,
+		/datum/design/autolathe/ammo/rifle_lethal = 2
+		)
+
 /obj/item/computer_hardware/hard_drive/portable/design/guns/tac_kalashnikov
 	disk_name = "SA - 7.62mm Breacher Kalashnikov Rifle"
 	icon_state = "sa"
@@ -596,6 +597,20 @@
 		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal = 2,
 		/datum/design/autolathe/ammo/sl_rifle,
 	)
+
+/obj/item/computer_hardware/hard_drive/portable/design/zatvor
+	disk_name = "Unlicensed - 7.62mm bolt \"Zatvor\" rifle"
+	icon_state = "onestar"
+	license = 8
+
+	designs = list(
+		/datum/design/autolathe/gun/zatvor = 3,
+		/datum/design/autolathe/ammo/rifle_ammobox_small = 2,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_practice = 0,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_rubber = 2,
+		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal = 3,
+		/datum/design/autolathe/ammo/sl_rifle = 2
+		)
 
 //8.6mm heavy rifles
 

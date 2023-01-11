@@ -55,7 +55,6 @@
 				/obj/item/gun/projectile/revolver/sixshot = 1,\
 				/obj/item/gun/projectile/boltgun/lever = 1.5,\
 				/obj/item/gun/projectile/automatic/greasegun = 0.1,\
-				/obj/item/gun/projectile/shotgun/pump/gladstone/sawn = 0.5,\
 				/obj/item/gun/projectile/colt = 2,\
 				/obj/item/gun/projectile/revolver = 2,\
 				/obj/item/gun/projectile/boltgun = 0.5,\
@@ -78,7 +77,7 @@
 
 /obj/random/gun_combat/item_to_spawn()
 	return pickweight(list(/obj/item/gun/projectile/automatic/greasegun = 1,\
-				/obj/item/gun/projectile/automatic/sts/carbine = 1,\
+				/obj/item/gun/projectile/automatic/duty = 1,\
 				/obj/item/ammo_kit = 0.8,
 				/obj/item/gun/projectile/automatic/sts/rifle/sawn = 1,\
 				/obj/item/gun/projectile/automatic/omnirifle/solmarine = 1,\
@@ -183,8 +182,7 @@
 				/obj/item/gun/projectile/shotgun/doublebarrel/sawn = 2,\
 				/obj/item/gun/projectile/shotgun/pump/combat/sawn = 1,\
 				/obj/item/gun/projectile/shotgun/pug = 0.3,\
-				/obj/item/gun/projectile/revolver/sixshot = 0.7, \
-				/obj/item/gun/projectile/shotgun/pump/gladstone/sawn = 0.5))
+				/obj/item/gun/projectile/revolver/sixshot = 0.7))
 
 /obj/random/gun_shotgun/low_chance
 	name = "low chance random shotgun"

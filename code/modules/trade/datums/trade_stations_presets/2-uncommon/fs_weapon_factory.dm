@@ -15,11 +15,9 @@
 	inventory = list(
 		"Projectiles" = list(
 			/obj/item/gun/projectile/automatic/c20r,
-			/obj/item/gun/projectile/automatic/sts/carbine = good_data("STS-25 carbine", list(1, 4), 900),
 			/obj/item/gun/projectile/automatic/sts/rifle,
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa = good_data("Mosin boltaction rifle", list(1, 5), 500),
-			/obj/item/gun/projectile/shotgun/pump/gladstone,
 			/obj/item/gun/projectile/shotgun/bull,
 			/obj/item/gun/projectile/shotgun/pug,
 			/obj/item/gun/projectile/shotgun/pump = good_data("Grizzly shotgun", list(1, 5), 700),
@@ -31,9 +29,9 @@
 			/obj/item/ammo_magazine/m12/pellet = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_casing/antim/lethal/prespawned = custom_good_amount_range(list(1, 10)),
 
-			/obj/item/ammo_magazine/ammobox/heavy_rifle_408,
-			/obj/item/ammo_magazine/ammobox/rifle_75,
-			/obj/item/ammo_magazine/ammobox/light_rifle_257,
+			/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small,
+			/obj/item/ammo_magazine/ammobox/rifle_75_small,
+			/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
 			/obj/item/ammo_magazine/ammobox/shotgun,
 			/obj/item/ammo_magazine/ammobox/kurtz_50,
 			/obj/item/ammo_magazine/ammobox/magnum_40,

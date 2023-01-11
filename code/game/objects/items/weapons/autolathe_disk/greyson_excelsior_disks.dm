@@ -225,16 +225,16 @@
 		/datum/design/autolathe/ammo/hpistol_rubber,
 		/datum/design/autolathe/ammo/pistol_ammobox,
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
-		/datum/design/autolathe/ammo/smg,							//drozd ammo
+		/datum/design/autolathe/ammo/smg,							//ppsh ammo
 		/datum/design/autolathe/ammo/smg_rubber,
+		/datum/design/autolathe/ammo/smg_magnum_40,					//drozd ammo
 		/datum/design/autolathe/ammo/sl_rifle,						//boltgun ammo
 		/datum/design/autolathe/ammo/rifle,						//AK ammo
 		/datum/design/autolathe/ammo/rifle_rubber,
 		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/rifle,							//vintorez ammo
 		/datum/design/autolathe/ammo/rifle_short_hv,
-		/datum/design/autolathe/ammo/lrifle_ammobox,				//ppsh
-		/datum/design/autolathe/ammo/pistol_35_drum,
+		/datum/design/autolathe/ammo/pistol_35_drum,				//ppsh
 		/datum/design/autolathe/ammo/pistol_35_drum/empty,
 		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
 		/datum/design/autolathe/ammo/pistol_35_drum/hv,

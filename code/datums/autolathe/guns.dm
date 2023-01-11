@@ -129,7 +129,7 @@
 	build_path = /obj/item/gun/projectile/automatic/texan
 
 /datum/design/autolathe/gun/drozd
-	name = "Excelsior 9mm \"Drozd\""
+	name = "Excelsior 10mm \"Drozd\""
 	build_path = /obj/item/gun/projectile/automatic/drozd
 
 /datum/design/autolathe/gun/luger
@@ -143,10 +143,6 @@
 /datum/design/autolathe/gun/ppv
 	name = "BR 9mm \"Semyonovich\" assault SMG"
 	build_path = /obj/item/gun/projectile/automatic/ppsh/ppv
-
-/datum/design/autolathe/gun/buckler
-	name = "BR 9mm \"Buckler\" assault SMG"
-	build_path = /obj/item/gun/projectile/automatic/buckler
 
 // 10mm S M G S
 
@@ -184,10 +180,6 @@
 	name = "SA SG \"Pug\""
 	build_path = /obj/item/gun/projectile/shotgun/pug
 
-/datum/design/autolathe/gun/gladstone
-	name = "H&S SG \"Gladstone\""
-	build_path = /obj/item/gun/projectile/shotgun/pump/gladstone
-
 /datum/design/autolathe/gun/riot_shotgun
 	name = "Seinemetall Defense GmbH SG \"State\""
 	build_path = /obj/item/gun/projectile/automatic/riot_autoshotgun
@@ -200,9 +192,9 @@
 	name = "SA \"Six Shooter\" revolving shotgun"
 	build_path = /obj/item/gun/projectile/revolver/sixshot
 
-/datum/design/autolathe/gun/rushing_bull
-	name = "BR \"Rushing Bull\" tactical shotgun"
-	build_path = /obj/item/gun/projectile/automatic/bull_autoshotgun
+/datum/design/autolathe/gun/buffalo
+	name = "BR \"Buffalo\" tactical shotgun"
+	build_path = /obj/item/gun/projectile/automatic/buff_autoshotgun
 
 /datum/design/autolathe/gun/opshot
 	name = "NM \"Operator\" tactical shotgun"
@@ -230,10 +222,6 @@
 	name = "Seinemetall Defense GmbH AR 6.5x39mm \"Ostwind\""
 	build_path = /obj/item/gun/projectile/automatic/ostwind
 
-/datum/design/autolathe/gun/sts25
-	name = "SA AR 6.5x39mm \"STS-25\""
-	build_path = /obj/item/gun/projectile/automatic/sts/carbine
-
 /datum/design/autolathe/gun/saw
 	name = "SA LMG 6.5x39mm \"Pegasus\""
 	build_path = /obj/item/gun/projectile/automatic/lmg/saw
@@ -247,16 +235,12 @@
 	build_path = /obj/item/gun/projectile/automatic/nail_gun
 
 /datum/design/autolathe/gun/duty
-	name = "BR 6.5x39mm \"Duty\" heavy rifle"
+	name = "BR 6.5x39mm \"Duty\" carbine"
 	build_path = /obj/item/gun/projectile/automatic/duty
 
 /datum/design/autolathe/gun/mamba
 	name = "NM 6.5x39mm \"Mamba\" carbine"
 	build_path = /obj/item/gun/projectile/automatic/mamba
-
-/datum/design/autolathe/gun/viper
-	name = "NM 6.5x39mm \"Viper\" DMR"
-	build_path = /obj/item/gun/projectile/automatic/mamba/viper
 
 ///R I F L E S
 //7 . 5 m m
@@ -272,10 +256,6 @@
 /datum/design/autolathe/gun/nordwind
 	name = "Seinemetall Defense GmbH DMR - 7.62x39mm  \"Nordwind\""
 	build_path = /obj/item/gun/projectile/automatic/nordwind
-
-/datum/design/autolathe/gun/watchtower
-	name = "BR \"Watchtower\" DMR - 7.62x39mm"
-	build_path = /obj/item/gun/projectile/automatic/nordwind/watchtower
 
 /datum/design/autolathe/gun/sts30
 	name = "SA BR - 7.62x39mm  \"STS-30\""
@@ -300,6 +280,10 @@
 /datum/design/autolathe/gun/strelki
 	name = "BR  7.62x39mm \"strelki\""
 	build_path = /obj/item/gun/projectile/automatic/nordwind/strelki
+
+/datum/design/autolathe/gun/heroic
+	name = "NM 7.62x39mm \"Heroic\" LMG"
+	build_path = /obj/item/gun/projectile/automatic/lmg/heroic
 
 /datum/design/autolathe/gun/maxim
 	name = "Excelsior Maxim"

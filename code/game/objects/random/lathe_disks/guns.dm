@@ -66,7 +66,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/custer = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/roe = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/boltgun_sa = 6,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/zatvor = 3,
+				/obj/item/computer_hardware/hard_drive/portable/design/zatvor = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/bounty_lever = 2))
 
 /obj/random/lathe_disk/lmg
@@ -100,9 +100,8 @@
 /obj/random/lathe_disk/smg/item_to_spawn()
 	return pickweight(list(
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/texan = 6,
-				//obj/item/computer_hardware/hard_drive/portable/design/guns/mac = 6,
+				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/semyonovich = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/bastard = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/buckler = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/thompson = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/freedom = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/vector = 3,
@@ -130,8 +129,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/copperhead = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/duty = 1,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/strelki = 3,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/watchtower = 2,))
+				/obj/item/computer_hardware/hard_drive/portable/design/strelki = 3,))
 
 /obj/random/lathe_disk/rifle_heavy
 	name = "random heavy rifle lathe disk"
@@ -195,10 +193,8 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/doublebarrel = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/grizzly = 7,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/regulator = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/guns/gladstone = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/lemant = 2, //Has a built in shotgun, so low odds but still here
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/state = 4,
-				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/rushingbull = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/pug = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sbaw = 0.7)) // Should be rarer as it has become too good.
 
