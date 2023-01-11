@@ -17,7 +17,7 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
-		new /obj/item/gun/projectile/colt/ten/dark(src)
+		new /obj/item/gun/projectile/colt/ten(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
 		new /obj/item/clothing/accessory/holster/hip(src)
@@ -171,13 +171,13 @@
 		new /obj/item/storage/pouch/ammo(src)
 
 // Side-arms Kits
-/obj/item/storage/box/bs_kit/stallion
-	name = "\improper Stallion Secondary Kit"
-	desc = "The standard Blackshield equipment kit containing a stallion, a design based of the original M1911, modernized and given an auto eject system with built in audio alerts. Unlike the \
+/obj/item/storage/box/bs_kit/delta
+	name = "\improper Delta Elite Secondary Kit"
+	desc = "The standard Blackshield equipment kit containing a Delta Elite, a design based of the original M1911, modernized. Unlike the \
 	standard colt, it uses 10mm magnum rounds."
 
 	populate_contents()
-		new /obj/item/gun/projectile/colt/ten/dark(src)
+		new /obj/item/gun/projectile/colt/ten(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
 		new /obj/item/clothing/accessory/holster/hip(src)

@@ -27,7 +27,7 @@
 		"Sol Fed Stockpiles" = list(
 			/obj/item/gun/projectile/automatic/thompson = custom_good_amount_range(list(1, 3)),
 			/obj/item/gun/projectile/lamia/gemini = custom_good_amount_range(list(1, 1)),
-			/obj/item/gun/projectile/colt/ten/dark = custom_good_amount_range(list(1, 1)),
+			/obj/item/gun/projectile/colt/ten = custom_good_amount_range(list(1, 1)),
 			/obj/item/gun/projectile/automatic/omnirifle/solmarine = custom_good_amount_range(list(1, 1)),
 			/obj/item/gun/projectile/automatic/greasegun = custom_good_amount_range(list(2, 3)),
 			/obj/item/gun/projectile/automatic/omnirifle = custom_good_amount_range(list(1, 1))

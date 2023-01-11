@@ -1,5 +1,5 @@
 /obj/item/storage/box/m_kit
-	name = "\improper Marshal Kit"
+	name = "Marshal Kit"
 	desc = "A standard kit."
 	cant_hold = list(/obj/item) //stops them from being used as storage solutions - items can't be put back in.
 	w_class = ITEM_SIZE_BULKY //these carry guns and lots of items! Makes sense to make them bigger than some tiny box
@@ -18,7 +18,7 @@
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/breacher
-	name = "\improper Breaching Hammer Kit"
+	name = "Breaching Hammer Kit"
 	desc = "The standard Marshal box kit, containing a single heavy-duty breaching hammer. Equally beloved by Marshals more interested in utility than firepower, and those \
 	strange enough to take such an unwieldy thing into close combat"
 
@@ -26,7 +26,7 @@
 		new /obj/item/tool/hammer/ironhammer(src)
 
 /obj/item/storage/box/m_kit/mamba
-	name = "\improper Mamba Kit"
+	name = "Mamba Kit"
 	desc = "The standard Marshal box kit containing a Mamba, a proper carbine for a proper policemen."
 
 	populate_contents()
@@ -62,7 +62,7 @@
 
 //supply-specs kits
 /obj/item/storage/box/m_kit/typewriter
-	name = "\improper Sunrise Laser SMG kit"
+	name = "Sunrise Laser SMG kit"
 	desc = "The standard Marshal box kit containing a Marshal Gunsmith made laser SMG, for the discerning specialist."
 
 	populate_contents()
@@ -73,7 +73,7 @@
 		new /obj/item/storage/pouch/tubular(src)
 
 /obj/item/storage/box/m_kit/state_auto
-	name = "\improper State Auto-Shotgun Kit"
+	name = "State Auto-Shotgun Kit"
 	desc = "The standard Marshal box kit containing a state auto shotgun. What is lacks in penetration it makes up for with ammo capacity and fire rate."
 
 	populate_contents()
@@ -124,7 +124,7 @@
 
 // Secondary kits
 /obj/item/storage/box/m_kit/taser
-	name = "\improper Counselor Secondary kit"
+	name = "Counselor Secondary kit"
 	desc = "The standard Marshal box kit containing a counselor stun gun. An all round solid sidearm to round out the Marshals non-lethal kit."
 
 	populate_contents()
@@ -216,7 +216,7 @@
 
 // Armor Kits
 /obj/item/storage/box/m_kit/standard_armor
-	name = "\improper Standard Visor Armor Kit"
+	name = "Standard Visor Armor Kit"
 	desc = "An standard Marshal armor kit with a plate carrier and visor helmet."
 
 	populate_contents()
@@ -224,7 +224,7 @@
 		new /obj/item/clothing/head/helmet/marshal_full(src)
 
 /obj/item/storage/box/m_kit/bullet_proof
-	name = "\improper Bullet Proof Kit"
+	name = "Bullet Proof Kit"
 	desc = "An standard Marshal armor kit containing bullet proof armor and a helmet, perfect for dealing with hostile colonist and infiltrators, but bulky and slowing."
 
 	populate_contents()
@@ -232,7 +232,7 @@
 		new /obj/item/clothing/head/helmet/faceshield/altyn/ironhammer(src)
 
 /obj/item/storage/box/m_kit/laser_armor
-	name = "\improper Ablative Armor Kit"
+	name = "Ablative Armor Kit"
 	desc = "An standard Marshal armor kit containing a full ablative marshal branded suit for countering laser weaponry."
 
 	populate_contents()
@@ -242,7 +242,7 @@
 		new /obj/item/clothing/shoes/ablasive(src)
 
 /obj/item/storage/box/m_kit/riot
-	name = "\improper Riot Armor Kit"
+	name = "Riot Armor Kit"
 	desc = "An standard Marshal armor kit containing riot armor and a riot helmet, perfect for dealing with hostile fauna and anyone in melee, but bulky and slowing."
 
 	populate_contents()

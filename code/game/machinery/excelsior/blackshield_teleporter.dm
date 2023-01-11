@@ -55,8 +55,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		//Guns
 		/obj/item/gun/projectile/automatic/slaught_o_matic = 15, //So blackshiled can trade with propis :P
 		/obj/item/gun/projectile/boltgun/flare_gun = 10, //DAZZLATION!
-		/obj/item/gun/projectile/colt/NM_colt = 50,
-		/obj/item/gun/projectile/colt/ten/dark = 75,
+		/obj/item/gun/projectile/colt/ten = 75,
 		/obj/item/gun/projectile/boltgun/light = 50,
 		/obj/item/gun/projectile/boltgun = 75,
 		/obj/item/gun/projectile/boltgun/lever/shotgun/bounty = 400,

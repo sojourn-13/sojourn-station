@@ -73360,10 +73360,10 @@
 "nLB" = (
 /obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/gun/projectile/colt/ten/dark{
+/obj/item/gun/projectile/colt/ten{
 	pixel_y = -5
 	},
-/obj/item/gun/projectile/colt/ten/dark{
+/obj/item/gun/projectile/colt/ten{
 	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,

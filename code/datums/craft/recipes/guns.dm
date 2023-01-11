@@ -283,19 +283,6 @@
 		list(QUALITY_ADHESIVE, 15, 70)
 	)
 
-/datum/craft_recipe/gun/zatvor
-	name = "Makeshift 7.62 \"Zatvor\" boltrifle"
-	result = /obj/item/gun/projectile/boltgun/zatvor
-	steps = list(
-		list(/obj/item/gun/projectile/boltgun, 1),
-		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL),
-		list(QUALITY_WELDING, 10, 20),
-		list(QUALITY_SCREW_DRIVING, 10),
-		list(CRAFT_MATERIAL, 4, MATERIAL_WOOD),
-		list(QUALITY_HAMMERING, 10),
-		list(QUALITY_ADHESIVE, 15, 70)
-	)
-
 /datum/craft_recipe/gun/rxd
 	name = "RXD - rapid crossbow device"
 	result = /obj/item/gun/projectile/crossbow/RCD

@@ -504,13 +504,13 @@
 
 // 6.5mm Carbine
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/saw
-	disk_name = "SA - 6.5mm Pegasus LMG"
+/obj/item/computer_hardware/hard_drive/portable/design/guns/tk
+	disk_name = "SD GmbH - 6.5mm Takeshi LMG"
 	icon_state = "sa"
 
 	license = 8 //So we can print 2 and some ammo
 	designs = list(
-		/datum/design/autolathe/gun/saw = 3,
+		/datum/design/autolathe/gun/tk = 3,
 		/datum/design/autolathe/ammo/lrifle_ammobox = 2,
 		/datum/design/autolathe/ammo/lrifle_belt, //This is its linked ammo
 		/datum/design/autolathe/ammo/lrifle_belt_empty = 0,
@@ -597,20 +597,6 @@
 		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal = 2,
 		/datum/design/autolathe/ammo/sl_rifle,
 	)
-
-/obj/item/computer_hardware/hard_drive/portable/design/zatvor
-	disk_name = "Unlicensed - 7.62mm bolt \"Zatvor\" rifle"
-	icon_state = "onestar"
-	license = 8
-
-	designs = list(
-		/datum/design/autolathe/gun/zatvor = 3,
-		/datum/design/autolathe/ammo/rifle_ammobox_small = 2,
-		/datum/design/autolathe/ammo/rifle_ammobox_small_practice = 0,
-		/datum/design/autolathe/ammo/rifle_ammobox_small_rubber = 2,
-		/datum/design/autolathe/ammo/rifle_ammobox_small_lethal = 3,
-		/datum/design/autolathe/ammo/sl_rifle = 2
-		)
 
 //8.6mm heavy rifles
 

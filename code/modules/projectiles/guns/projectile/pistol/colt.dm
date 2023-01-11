@@ -20,20 +20,6 @@
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
 
-/obj/item/gun/projectile/colt/NM_colt
-	name = "\"Bronco\" pistol"
-	desc = "A rugged derivative of the venerable M1911, built on double-stack frames and modified by the Nadezhda Marshals gunsmiths from new or refitted weapons to meet match-grade standards. Uses 9mm rounds."
-	icon_state = "NM_colt"
-	item_state = "colt"
-	caliber = CAL_PISTOL
-	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
-	price_tag = 500
-	auto_eject = 1
-	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 5)
-	init_recoil = HANDGUN_RECOIL(0.3)
-	serial_type = "NM"
-
 /obj/item/gun/projectile/colt/ten
 	name = "\"Delta Elite\" magnum pistol"
 	desc = "A classy high-powered automatic based on the M1911 series handguns, with significant reinforcements produced by Scarborough Arms. Uses 10mm Auto-Mag."
@@ -57,18 +43,9 @@
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.4 // 40 vig
 
-/obj/item/gun/projectile/colt/ten/dark
-	name = "\"Stallion\" magnum pistol"
-	desc = "A rugged derivative of the venerable M1911, modernized to the M1911A5 standard and produced by SolFed armories across the galaxy, this one bears defaced serial numbers and the insignia of the Blackshield. Uses 10mm Auto-Mag."
-	icon_state = "dark_delta"
-	item_state = "colt"
-	auto_eject = 1
-	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	serial_type = "Sol Fed"
-
 /obj/item/gun/projectile/colt/liberty
 	name = "\"Liberty\" magnum pistol"
-	desc = "A common Nadezhda Marshal issue pistol chambered in 10mm Magnum. It appears to be loosely based off a Colt model, albeit with a changed slide and polymer grip and a built-in holographic scope."
+	desc = "A common Nadezhda Marshal issue pistol chambered in 10mm Magnum. It appears to be loosely based off a Colt model, albeit with a changed slide, polymer grip and a built-in holographic sight."
 	icon = 'icons/obj/guns/projectile/liberty.dmi'
 	icon_state = "liberty"
 	item_state = "liberty"
