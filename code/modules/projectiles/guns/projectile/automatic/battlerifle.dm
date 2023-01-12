@@ -64,7 +64,8 @@
 	desc = "A heavy front line designated marksman rifle manufactured by H&S, also known as the M13A2 Special Purpose Rifle in its generic military form. \
 		 Either a copy or 'liberated' example, it fires a variety of utility and specialized munitions. \
 		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
-		 This example is fitted with an advanced combat sight and limited to semiautomatic and burst modes."
+		 This example is fitted with an advanced combat sight and limited to semiautomatic and burst modes. \
+		 Do to market competition on the omnirifle platform, H&S allowed for an extra fee specital limited addition custom prints."
 	icon = 'icons/obj/guns/projectile/DMR.dmi'
 	icon_state = "sts_blackguard"
 	item_state = "sts_blackguard"
