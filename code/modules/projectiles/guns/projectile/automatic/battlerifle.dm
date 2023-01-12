@@ -66,8 +66,8 @@
 		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an advanced combat sight and limited to semiautomatic and burst modes."
 	icon = 'icons/obj/guns/projectile/DMR.dmi'
-	icon_state = "DMR"
-	item_state = "DMR"
+	icon_state = "sts_blackguard"
+	item_state = "sts_blackguard"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
 	mag_well = MAG_WELL_HRIFLE
 	price_tag = 2000
