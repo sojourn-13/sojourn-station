@@ -1,3 +1,5 @@
+//Temp removed do to player consquences
+
 /datum/trade_station/gamba
 	name_pool = list(
 		"FTB 'Solntsey'" = "Free Trade Beacon 'Solntsey': \"Try your luck with our grab bag specials!\"",
