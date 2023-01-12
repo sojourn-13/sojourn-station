@@ -30,7 +30,10 @@
 	/obj/item/oddity/common/book_unholy,
 	/obj/item/oddity/chem_book,
 	/obj/item/oddity/code_book,
-	/obj/item/oddity/ls/manual)
+	/obj/item/oddity/ls/manual,
+	/obj/item/folder,
+	/obj/item/paper,
+	/obj/item/paper_bundle)
 
 /obj/structure/bookcase/Initialize()
 	. = ..()

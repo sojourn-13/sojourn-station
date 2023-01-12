@@ -209,7 +209,7 @@
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 20
-	mag_type = /obj/item/ammo_magazine/rifle_223/empty
+	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 3
 
 	flash_resistances = 20 //no.
@@ -230,9 +230,7 @@
 	projectiletype = /obj/item/projectile/beam/weak/ap/reaver
 	drop_items = list(/obj/item/gun/energy/firestorm/reaver_modded)
 
-	casingtype = /obj/item/ammo_casing/beam/ap/spent
-
-	mag_type = /obj/item/ammo_magazine/rifle_223/empty
+	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 3
 
 	rapid_fire_shooting_amount = 5 //we're using the burst 5 mode

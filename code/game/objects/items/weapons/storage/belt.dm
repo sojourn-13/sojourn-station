@@ -215,7 +215,7 @@
 
 /obj/item/storage/belt/utility/opifex/full/populate_contents()
 	new /obj/item/tool/crowbar/pneumatic(src)
-	new /obj/item/tool/hammer(src)
+	new /obj/item/tool/hammer/deadblow(src)
 	new /obj/item/tool/multitool/advanced(src)
 	new /obj/item/tool/saw/circular/advanced(src)
 	new /obj/item/tool/screwdriver/electric(src)
@@ -345,7 +345,9 @@
 		/obj/item/tool/knife,
 		/obj/item/tool/shovel/combat,
 		/obj/item/gun/projectile/mk58,
-		/obj/item/gun/projectile/revolver/lemant,
+		/obj/item/gun/projectile/makarov,
+		/obj/item/gun/projectile/clarissa,
+		/obj/item/gun/projectile/colt,
 		/obj/item/gun/energy/gun,
 		/obj/item/gun/projectile/giskard,
 		/obj/item/gun/projectile/olivaw,

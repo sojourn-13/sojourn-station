@@ -26,19 +26,9 @@
 	build_path = /obj/item/gun/energy/sst
 	category = CAT_WEAPON
 
-/datum/design/research/item/greyson/formatbound
-	name = "\"SST Format Bound\" handgun"
-	build_path = /obj/item/gun/energy/sst/formatbound
-	category = CAT_WEAPON
-
 /datum/design/research/item/greyson/humility
 	name = "\"SST Humility\" shotgun"
 	build_path = /obj/item/gun/energy/sst/humility
-	category = CAT_WEAPON
-
-/datum/design/research/item/greyson/systemcost
-	name = "\"SST System Cost\" light machinegun"
-	build_path = /obj/item/gun/energy/sst/systemcost
 	category = CAT_WEAPON
 
 /datum/design/research/item/greyson/iron_lock_security_armor
