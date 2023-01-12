@@ -28,7 +28,8 @@
 
 	var/obj/item/gun/projectile/underslung_shotgun/shotgun
 	var/reload_delay = 5 // Delay between bullets when reloading from a box.
-
+//Removed do to gun bloat and balance
+/*
 /obj/item/gun/projectile/revolver/lemant/claw
 	name = "\"Pilgrim Claw\" magnum revolver"
 	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds nine 10mm rounds and one single action underslung 20mm shell. \
@@ -74,7 +75,7 @@
 	init_recoil = HANDGUN_RECOIL(1.3)// Massive recoil due to being a kurtz revolver without the weight to compensate for the blast. -Kaz
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
-
+*/
 //Defined here, may be used elsewhere but for now its only used here. -Kaz
 /obj/item/gun/projectile/underslung_shotgun
 	name = "underslung shotgun"

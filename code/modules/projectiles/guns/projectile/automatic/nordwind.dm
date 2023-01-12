@@ -88,7 +88,7 @@
 	icon = 'icons/obj/guns/projectile/sawnoff/strelki.dmi'
 	icon_state = "strelki"
 	item_state = "strelki"
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BACK|SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 6, MATERIAL_WOOD = 5)
 	price_tag = 450

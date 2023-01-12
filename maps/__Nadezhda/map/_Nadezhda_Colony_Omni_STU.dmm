@@ -8820,7 +8820,10 @@
 	name = "CEO's Office";
 	req_access = list(41)
 	},
-/obj/structure/disposalpipe/segment,
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/merchant)
 "bKS" = (
@@ -14231,15 +14234,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/hallway/side/f2section1)
 "cMX" = (
-/obj/structure/table/woodentable,
-/obj/item/maneki_neko,
-/obj/machinery/atmospherics/unary/vent_pump,
 /obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-s"
+	dir = 8;
+	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/carpet,
-/area/nadezhda/command/merchant)
+/turf/simulated/mineral,
+/area/colony)
 "cMY" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/pros/proelav)
@@ -30289,12 +30289,12 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
 "fMk" = (
-/obj/effect/floor_decal/industrial/danger{
-	dir = 1
+/obj/structure/bookcase{
+	name = "Sender Beacon Log Case";
+	desc = "A wooden shelving unit used for storing all sorts of literature and logs."
 	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/mineral,
-/area/colony)
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/quartermaster/hangarsupply)
 "fMq" = (
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/construction)
@@ -33564,6 +33564,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/command/tcommsat/computer)
+"gqW" = (
+/obj/structure/table/woodentable,
+/obj/item/maneki_neko,
+/obj/machinery/atmospherics/unary/vent_pump,
+/turf/simulated/floor/carpet,
+/area/nadezhda/command/merchant)
 "gqX" = (
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/asteroid/dirt,
@@ -51794,6 +51800,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
+"jQs" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/mineral,
+/area/colony)
 "jQv" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark/cyancorner,
@@ -67689,11 +67702,10 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "mHA" = (
-/obj/structure/bed/chair/comfy/brown{
-	dir = 4
-	},
-/turf/simulated/floor/carpet,
-/area/nadezhda/command/merchant)
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating,
+/area/nadezhda/quartermaster/office)
 "mHH" = (
 /obj/machinery/multistructure/biogenerator_part/port,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -76822,9 +76834,12 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "osA" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/carpet,
-/area/nadezhda/command/merchant)
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-s"
+	},
+/turf/simulated/mineral,
+/area/colony)
 "osJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -77049,7 +77064,6 @@
 /obj/item/gun/projectile/mk58/wood,
 /obj/item/gun/projectile/mk58/wood,
 /obj/item/gun/projectile/mk58/wood,
-/obj/item/gun/projectile/revolver/lemant/claw,
 /obj/item/ammo_magazine/ammobox/magnum_40/biomatter,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
@@ -101072,7 +101086,6 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/eris/crew_quarters/plasma_tag)
 "sUb" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
@@ -103145,12 +103158,12 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
 "tou" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
+/obj/structure/bookcase{
+	name = "Receiver Beacon Log Case";
+	desc = "A wooden shelving unit used for storing all sorts of literature and logs."
 	},
-/turf/simulated/floor/carpet,
-/area/nadezhda/command/merchant)
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/quartermaster/hangarsupply)
 "toA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild5,
@@ -143347,16 +143360,16 @@ sFI
 sFI
 sFI
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+jQs
+crC
+crC
+crC
+crC
+crC
+crC
+crC
+crC
+gGS
 sFI
 krD
 krD
@@ -143549,16 +143562,16 @@ sFI
 sFI
 sFI
 sFI
+osA
 sFI
 sFI
 sFI
+tfU
+tfU
+tfU
+tfU
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+osA
 sFI
 krD
 krD
@@ -143751,16 +143764,16 @@ sFI
 sFI
 sFI
 sFI
+osA
 sFI
 sFI
 sFI
+tfU
+xGf
+vXa
+tfU
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+osA
 sFI
 krD
 krD
@@ -143953,16 +143966,16 @@ sFI
 sFI
 sFI
 sFI
+osA
 sFI
 sFI
 sFI
+tfU
+cBX
+kWL
+tfU
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+osA
 sFI
 krD
 krD
@@ -144153,18 +144166,18 @@ crC
 crC
 crC
 crC
-fMk
 crC
 crC
-crC
-crC
-crC
-crC
-crC
-gGS
+cMX
 sFI
 sFI
 sFI
+tfU
+lDJ
+kWL
+tfU
+sFI
+osA
 sFI
 krD
 krD
@@ -144358,15 +144371,15 @@ koE
 koE
 sFI
 sFI
+sFI
+sFI
+sFI
 tfU
 tfU
-tfU
+dQW
 tfU
 tfU
 sfM
-tfU
-tfU
-tfU
 sFI
 sFI
 sFI
@@ -144560,15 +144573,15 @@ mMP
 koE
 sFI
 sFI
+sFI
+sFI
+sFI
 tfU
-xGf
-vXa
-tfU
-mHA
-cMX
-syJ
+oig
+vLf
+gqW
 qpz
-tfU
+sfM
 hPI
 vcJ
 vcJ
@@ -144762,13 +144775,13 @@ iuY
 koE
 sFI
 sFI
+sFI
+sFI
+sFI
 tfU
-cBX
-kWL
-dQW
+syJ
 vLf
-tou
-osA
+vLf
 sUb
 bKO
 koz
@@ -144964,11 +144977,11 @@ iuY
 koE
 sFI
 sFI
+sFI
+koE
+koE
 tfU
-lDJ
-kWL
 tfU
-oig
 nGC
 ugI
 uiv
@@ -145165,11 +145178,11 @@ iuY
 iuY
 koE
 koE
-tfU
-tfU
-tfU
-tfU
-tfU
+koE
+koE
+koE
+fMk
+tou
 tfU
 tfU
 tfU
@@ -146809,7 +146822,7 @@ vNL
 djT
 gPG
 maS
-fVU
+mHA
 smj
 fjX
 jlJ

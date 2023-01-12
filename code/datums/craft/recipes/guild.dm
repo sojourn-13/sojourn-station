@@ -347,20 +347,6 @@
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 	)
 
-/datum/craft_recipe/guild/pilgrim_devout
-	name = "pilgrim devout"
-	result = /obj/item/gun/projectile/revolver/lemant/belt
-	steps = list(
-		list(/obj/item/gun/projectile/revolver/lemant, 1, "time" = 30),
-		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 60),
-		list(QUALITY_SCREW_DRIVING, 30, "time" = 40),
-		list(QUALITY_BOLT_TURNING, 30, "time" = 40),
-		list(QUALITY_SAWING, 30, "time" = 60),
-		list(QUALITY_CUTTING, 30, "time" = 40),
-		list(QUALITY_WELDING, 40, "time" = 60),
-		list(QUALITY_HAMMERING, 30, "time" = 40),
-	)
-
 /datum/craft_recipe/guild/heavypulserifle
 	name = "\"PL-3\" Heavy Pulse Rifle"
 	result = /obj/item/gun/energy/laser/heavypulserifle

@@ -315,23 +315,3 @@
 		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 4, "time" = 60),
 		list(QUALITY_WELDING, 30, "time" = 180)
 	)
-
-/datum/craft_recipe/gun/pilgrim_claw
-	name = "Pilgrim Claw"
-	result = /obj/item/gun/projectile/revolver/lemant/claw
-	steps = list(
-		list(/obj/item/gun/projectile/revolver/lemant, 1, "time" = 20),
-		list(/obj/item/tool_upgrade/augment/spikes, 1, "time" = 20),
-		list(QUALITY_HAMMERING, 30, "time" = 10)
-	)
-
-/datum/craft_recipe/gun/pilgrim_uppercut
-	name = "Pilgrim Hero"
-	result = /obj/item/gun/projectile/revolver/lemant/uppercut
-	steps = list(
-		list(/obj/item/gun/projectile/revolver/lemant, 1, "time" = 20),
-		list(QUALITY_SAWING, 20, "time" = 60),
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 10),
-		list(QUALITY_WELDING, 25, "time" = 30),
-		list(QUALITY_HAMMERING, 30, "time" = 10)
-	)
