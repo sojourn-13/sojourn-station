@@ -81,7 +81,7 @@
 	var/items = list(
 					"Mosin Kit" = /obj/item/storage/box/bs_kit/mosin,
 					"Roe Kit" = /obj/item/storage/box/bs_kit/roe,
-					"STS Kit" = /obj/item/storage/box/bs_kit/duty,
+					"Duty Kit" = /obj/item/storage/box/bs_kit/duty,
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
 					"Ekaterina SMG Kit" = /obj/item/storage/box/bs_kit/ekaterina,
 					"Bounty Kit" = /obj/item/storage/box/bs_kit/bounty)
