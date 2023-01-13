@@ -187,6 +187,29 @@
 	desc = "A robust military backpack with crudely added IFF stripes of the Blackshield."
 	icon_state = "backpack_mil"
 
+/obj/item/storage/backpack/militia/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "backpack_mil"
+	options["Woodlands Blackshield Colours"] = "backpack_milgreen"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/storage/backpack/corpsman
 	name = "Corpsman backpack"
 	desc = "A robust military backpack with medical liverly."

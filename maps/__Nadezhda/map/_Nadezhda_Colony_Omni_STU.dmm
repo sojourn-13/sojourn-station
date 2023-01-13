@@ -72905,17 +72905,9 @@
 "nHE" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/belt/webbing,
-/obj/item/storage/belt/webbing/black,
-/obj/item/storage/belt/webbing/black,
-/obj/item/storage/belt/webbing/green,
-/obj/item/storage/belt/webbing/black,
-/obj/item/storage/belt/webbing/green,
-/obj/item/storage/belt/webbing/green,
-/obj/item/storage/belt/webbing,
-/obj/item/storage/belt/webbing/green,
 /obj/item/storage/belt/webbing,
 /obj/item/storage/belt/webbing,
-/obj/item/storage/belt/webbing/black,
+/obj/item/storage/belt/webbing,
 /obj/item/storage/pouch/ammo,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)

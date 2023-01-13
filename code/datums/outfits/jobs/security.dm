@@ -103,7 +103,7 @@
 	name = OUTFIT_JOB_NAME("Blackshield - Trooper")
 	l_ear = /obj/item/device/radio/headset/headset_blackshield
 	l_pocket = /obj/item/device/flash
-	uniform = /obj/item/clothing/under/rank/trooper
+	uniform = /obj/item/clothing/under/rank/trooper/gorka
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/ballistic
 	head = /obj/item/clothing/head/rank/trooper/cap
