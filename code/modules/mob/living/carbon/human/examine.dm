@@ -63,7 +63,7 @@
 						tie_msg += ","
 					else if(i > 1)
 						tie_msg += " and"
-					tie_msg += " <a href='?src=\ref[src];lookitem=\ref[acc]'>\a [acc]</a>"
+					tie_msg += " <a href='?src=\ref[user];lookitem=\ref[acc]'>\a [acc]</a>"
 					i += 1
 
 		if(w_uniform.blood_DNA)
