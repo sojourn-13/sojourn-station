@@ -16,7 +16,7 @@
 	wealth = 0
 	hidden_inv_threshold  = 2000
 	recommendation_threshold = 4000
-	stations_recommended = list("kriosanconfederacy") //"casion"
+	stations_recommended = list("casino", "kriosanconfederacy")
 	inventory  = list(
 		"Tools and Equipment" = list(
 			/obj/item/clothing/suit/storage/hazardvest,
