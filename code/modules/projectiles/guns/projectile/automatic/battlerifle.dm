@@ -66,7 +66,7 @@
 		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an advanced combat sight and limited to semiautomatic and burst modes. \
 		 Do to market competition on the omnirifle platform, H&S allowed for an extra fee specital limited addition custom prints."
-	icon = 'icons/obj/guns/projectile/DMR.dmi'
+	icon = 'icons/obj/guns/projectile/blackguard.dmi'
 	icon_state = "sts_blackguard"
 	item_state = "sts_blackguard"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
