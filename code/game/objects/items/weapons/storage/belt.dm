@@ -514,8 +514,8 @@
 /obj/item/storage/belt/webbing/ih
 	name = "security web harness"
 	desc = "Everything you need at hand, at belt."
-	icon_state = "webbing"
-	item_state = "webbing"
+	icon_state = "webbing_ih"
+	item_state = "webbing_ih"
 
 /obj/item/storage/belt/webbing/artificer
 	name = "artificer guild web harness"
