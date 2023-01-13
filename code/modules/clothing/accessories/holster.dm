@@ -89,7 +89,7 @@
 		if(get_dist(user, src) < 1) //Gotta be close to see what's in there
 			to_chat(user, "A [holstered] is holstered here.")
 		else
-			to_chat(user, "You can't get a good look at that holster...")
+			to_chat(user, "You can't get a good look at the contents of that holster...")
 	else
 		to_chat(user, "It is empty.")
 
