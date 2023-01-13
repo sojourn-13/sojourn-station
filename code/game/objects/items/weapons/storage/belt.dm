@@ -487,23 +487,35 @@
 	max_w_class = ITEM_SIZE_SMALL //Holds 14 small items like a real harness, and hats
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 
-/obj/item/storage/belt/webbing/green
-	name = "green web harness"
-	desc = "Everything you need at hand, at belt."
-	icon_state = "webbing_green"
-	item_state = "webbing_green"
+/obj/item/storage/belt/webbing/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/storage/belt/webbing/black
-	name = "black web harness"
-	desc = "Everything you need at hand, at belt."
-	icon_state = "webbing_black"
-	item_state = "webbing_black"
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Brown"] = "webbing"
+	options["Green"] = "webbing_green"
+	options["Black"] = "webbing_black"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/storage/belt/webbing/ih
 	name = "security web harness"
 	desc = "Everything you need at hand, at belt."
-	icon_state = "webbing_ih"
-	item_state = "webbing_ih"
+	icon_state = "webbing"
+	item_state = "webbing"
 
 /obj/item/storage/belt/webbing/artificer
 	name = "artificer guild web harness"
