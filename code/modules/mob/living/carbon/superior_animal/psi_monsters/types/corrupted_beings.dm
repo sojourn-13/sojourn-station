@@ -46,6 +46,9 @@
 	attacktext = "cuts into"
 	faction = "daskvey"
 
+	chameleon_skill = 255
+	phaser = FALSE
+
 	psionic_respawn = FALSE
 
 	colony_friend = FALSE
