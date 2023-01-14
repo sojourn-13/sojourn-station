@@ -334,8 +334,11 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Blackshield Standard Colors"] = "bdubsstandard"
+	options["Blackshield Standard Colors Rolled Up"] = "bdustandard_rolled"
 	options["Blackshield Woodland Colors"] = "bdubsgreen"
+	options["Blackshield Woodland Colors Rolled Up"] = "bdubsgreen_rolled"
 	options["Blackshield Desert Colors"] = "bdubstan"
+	options["Blackshield Desert Colors Rolled Up"] = "bdutan_rolled"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
