@@ -64338,7 +64338,6 @@
 /obj/machinery/camera/network/cargo{
 	dir = 1
 	},
-/obj/item/oddity/rare/golden_cup,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/quartermaster/office)
 "mdn" = (
@@ -94430,11 +94429,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos/storage)
-"rFp" = (
-/obj/structure/table/standard,
-/obj/item/oddity/rare/golden_cup,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/absolutism/bioreactor)
 "rFq" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -201962,7 +201956,7 @@ xYU
 prO
 prO
 mCq
-rFp
+xlO
 beK
 sFI
 sFI

@@ -79,7 +79,7 @@
 		melee_damage_lower = initial(melee_damage_lower) - fatigue * 2
 		melee_damage_upper = initial(melee_damage_upper) - fatigue * 2
 
-/mob/living/simple_animal/hostile/renderpatriarch/death(gibbed, deathmessage = "lets out a gutteral snarl before it crumbles to the ground dead!")
+/mob/living/simple_animal/hostile/renderpatriarch/death(gibbed, deathmessage = "lets out a guttural snarl before it crumbles to the ground dead!")
 	walk_to(src,0)
 	movement_target = null
 	icon_state = icon_dead
