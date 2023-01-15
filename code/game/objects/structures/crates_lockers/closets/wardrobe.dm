@@ -223,16 +223,10 @@
 	icon_door = "militia"
 
 /obj/structure/closet/wardrobe/militia/populate_contents()
-	new /obj/item/clothing/under/rank/trooper(src)
-	new /obj/item/clothing/under/rank/trooper(src)
-	new /obj/item/clothing/under/rank/trooper/tan(src)
-	new /obj/item/clothing/under/rank/trooper/tan(src)
-	new /obj/item/clothing/under/rank/trooper/green(src)
-	new /obj/item/clothing/under/rank/trooper/green(src)
+	new /obj/item/clothing/under/rank/trooper/gorka(src)
+	new /obj/item/clothing/under/rank/trooper/gorka(src)
 	new /obj/item/clothing/under/rank/trooper/cadet(src)
 	new /obj/item/clothing/under/rank/trooper/cadet(src)
-	new /obj/item/clothing/under/rank/trooper/skirt(src)
-	new /obj/item/clothing/under/rank/trooper/skirt(src)
 	new /obj/item/clothing/under/rank/fatigues/green(src)
 	new /obj/item/clothing/under/rank/fatigues/green(src)
 	new /obj/item/clothing/under/rank/fatigues/grey(src)

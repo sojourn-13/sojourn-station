@@ -61,7 +61,7 @@
 /turf/simulated/floor,
 /area/testing/first)
 "ap" = (
-/obj/item/implant/adrenalin,
+/obj/item/implant/adrenaline,
 /turf/simulated/floor,
 /area/testing/first)
 "aq" = (

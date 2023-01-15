@@ -683,6 +683,48 @@
 	new /obj/item/reagent_containers/pill/bloodregen(src)
 	new /obj/item/reagent_containers/pill/bloodregen(src)
 
+
+/obj/item/storage/pill_bottle/njoy
+	name = "bottle of mixed Njoy pills"
+	desc = "Contains pills used help the mental states."
+	icon_state = "bottle_njoy_mix"
+
+/obj/item/storage/pill_bottle/njoy/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/pill/suppressital(src)
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/pill/suppressital/green(src)
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/pill/suppressital/blue(src)
+
+
+/obj/item/storage/pill_bottle/njoy/red
+	name = "bottle of red Njoy pills"
+	desc = "Contains pills used help the mental states."
+	icon_state = "bottle_njoy_red"
+
+/obj/item/storage/pill_bottle/njoy/red/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/pill/suppressital(src)
+
+/obj/item/storage/pill_bottle/njoy/green
+	name = "bottle of green Njoy pills"
+	desc = "Contains pills used to stop the mental states."
+	icon_state = "bottle_njoy_green"
+
+/obj/item/storage/pill_bottle/njoy/green/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/pill/suppressital/green(src)
+
+/obj/item/storage/pill_bottle/njoy/blue
+	name = "bottle of blue Njoy pills"
+	desc = "Contains pills used to stop the mental states."
+	icon_state = "bottle_njoy_blue"
+
+/obj/item/storage/pill_bottle/njoy/blue/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/pill/suppressital/blue(src)
+
 /*
  * Portable Freezers
  */

@@ -62,26 +62,6 @@
 	)
 	related_stats = list(STAT_MEC)
 
-/datum/craft_recipe/wall/underplating
-	name = "underplating"
-	result = /obj/effect/flooring_type_spawner
-	time = WORKTIME_SLOW
-	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
-	steps = list(
-		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL)
-	)
-	related_stats = list(STAT_MEC)
-
-/datum/craft_recipe/wall/catwalk
-	name = "catwalk"
-	result = /obj/structure/catwalk
-	time = WORKTIME_FAST
-	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
-	steps = list(
-		list(CRAFT_MATERIAL, 8, MATERIAL_STEEL)
-	)
-	related_stats = list(STAT_MEC)
-
 /datum/craft_recipe/wall/lattice
 	name = "lattice"
 	result = /obj/structure/lattice

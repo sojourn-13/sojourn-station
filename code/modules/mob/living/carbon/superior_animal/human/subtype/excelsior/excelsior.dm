@@ -93,11 +93,11 @@
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_drozd
 	icon_state = "excel_drozd"
-	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
+	projectiletype = /obj/item/projectile/bullet/magnum_40/hv
 	drop_items = list(/obj/item/gun/projectile/automatic/drozd)
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	rounds_left = 32
-	mag_type = /obj/item/ammo_magazine/smg_35/empty
+	mag_type = /obj/item/ammo_magazine/smg_magnum_40/empty
 	mags_left = 2 //2+1
 
 /mob/living/carbon/superior_animal/human/excelsior/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")

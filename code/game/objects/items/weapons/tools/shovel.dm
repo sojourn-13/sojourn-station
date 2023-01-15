@@ -67,6 +67,7 @@
 	degradation = 2
 	max_upgrades = 2
 	price_tag = 320 // Still just a shovel.
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/shovel/spade
 	name = "spade"

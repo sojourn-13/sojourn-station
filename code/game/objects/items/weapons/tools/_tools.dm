@@ -750,7 +750,7 @@
 
 	if(use_power_cost)
 		if(!cell?.checked_use(use_power_cost*timespent))
-			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
+			to_chat(user, SPAN_WARNING("[src]'s battery is dead or missing."))
 			return FALSE
 
 	if(use_fuel_cost)
@@ -845,6 +845,7 @@
 	item_flags = initial(item_flags)
 	name = initial(name)
 	max_upgrades = initial(max_upgrades)
+	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
 	prefixes = list()

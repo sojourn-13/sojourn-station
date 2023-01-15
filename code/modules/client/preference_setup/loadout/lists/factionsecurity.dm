@@ -237,13 +237,6 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/jumpskirttrooper
-	display_name = "jumpskirt, blackshield"
-	path = /obj/item/clothing/under/rank/trooper/skirt
-	allowed_roles = list("Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
 /datum/gear/factionsecurity/security
 	display_name = "security HUD"
 	path = /obj/item/clothing/glasses/hud/security

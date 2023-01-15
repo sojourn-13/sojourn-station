@@ -1,8 +1,3 @@
-/obj/item/gun/energy/sst/add_initial_transforms()
-	. = ..()
-
-	add_new_transformation(/datum/transform_type/modular, list(0.65, 0.65, flag = SST_INITIAL_SCALE_TRANSFORM, priority = SST_INITIAL_SCALE_TRANSFORM_PRIORITY))
-
 /obj/item/gun/energy/sst
 	name = "\"SST Abnegate\" handgun"
 	desc = "\"Soteria Surface Tension\" brand handgun. A cooperative project between Soteria Medical and Soteria Research, the Abnegate uses Greyson tech to internally synthesize soporific coated 9mm bullets. \
@@ -27,6 +22,7 @@
 	projectile_type=/obj/item/projectile/bullet/pistol_35/rubber/soporific
 	price_tag = 1750
 	serial_type = "SI"
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE) // I can't believe I have to do this. Don't turn NL weapons into literal war crimes.
 
 /obj/item/gun/energy/sst/preloaded
 
@@ -34,7 +30,7 @@
 	cell = new /obj/item/cell/medium/moebius/high(src)
 	. = ..()
 	update_icon()
-
+/*
 /obj/item/gun/energy/sst/formatbound
 	name = "\"SST Format Bound\" handgun"
 	desc = "\"Soteria Surface Tension\" brand heavy handgun. Further development on the cooperative project between Soteria Medical and Soteria Research known as Soteria Surface Tension. \
@@ -54,6 +50,7 @@
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 0.2)
 	price_tag = 1600
+*/
 
 /obj/item/gun/energy/sst/humility
 	name = "\"SST Humility\" shotgun"
@@ -90,7 +87,7 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
-
+/*
 /obj/item/gun/energy/sst/systemcost
 	name = "\"SST System Cost\" light machinegun"
 	desc = "\"Soteria Surface Tension\" brand light machinegun. The true answer to a horde of either monsters or rubberneckers in the medical bay. \
@@ -130,3 +127,4 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+*/

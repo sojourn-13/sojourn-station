@@ -134,7 +134,7 @@
 	switch(armor_cache)
 		if("BASIC_A")
 			new /obj/item/clothing/suit/storage/scavengerarmor(src)
-			new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
+			new /obj/item/clothing/head/helmet/handmade/scavengerhelmet(src)
 			new /obj/item/clothing/gloves/thick/combat(src)
 			new /obj/item/clothing/shoes/combat(src)
 		if("BULLET_A")
@@ -338,7 +338,7 @@
 			new /obj/item/storage/backpack/holding(src)
 	//armor
 	new /obj/item/clothing/suit/storage/scavengerarmor(src)
-	new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
+	new /obj/item/clothing/head/helmet/handmade/scavengerhelmet(src)
 	//longarms
 	switch(main_weapon_cache)
 		if("SMG")
@@ -542,7 +542,7 @@
 	switch(armor_cache)
 		if("BASIC_A")
 			new /obj/item/clothing/suit/storage/scavengerarmor(src)
-			new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
+			new /obj/item/clothing/head/helmet/handmade/scavengerhelmet(src)
 			new /obj/item/clothing/gloves/thick/combat(src)
 			new /obj/item/clothing/shoes/combat(src)
 		if("BULLET_A")

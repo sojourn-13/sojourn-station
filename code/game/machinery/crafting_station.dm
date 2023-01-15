@@ -10,7 +10,7 @@
 
 	var/is_working = FALSE
 	var/storage_capacity = 20 // How many of each resource could be stored. Multiplied by matter bin rating
-	var/productivity_bonus = 2 // Sum of micro-laser and manipulator ratings, increases effectiveness of ammo crafting
+	var/productivity_bonus = 5 // Sum of micro-laser and manipulator ratings, increases effectiveness of ammo crafting
 	var/list/materials_stored = list()
 	var/list/materials_compatible = list (MATERIAL_PLASTEEL, MATERIAL_STEEL, MATERIAL_PLASTIC, MATERIAL_WOOD, MATERIAL_CARDBOARD, MATERIAL_PLASMA)
 	var/list/materials_ammo = list(MATERIAL_STEEL = 10, MATERIAL_CARDBOARD = 2)
@@ -30,8 +30,8 @@
 	origin_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 1)
 	req_components = list(
 		/obj/item/stock_parts/matter_bin = 1,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/micro_laser = 1
+		/obj/item/stock_parts/manipulator = 3,
+		/obj/item/stock_parts/micro_laser = 2
 	)
 
 // You (still) can't flick_light overlays in BYOND, and this is a vis_contents hack to provide the same functionality.

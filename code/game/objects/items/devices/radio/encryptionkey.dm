@@ -12,6 +12,7 @@
 	var/syndie = 0
 	var/list/channels = list()
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("silicon" = 6, "copper" = 5, "plasticide" = 9)
 
 /obj/item/device/encryptionkey/attackby(obj/item/W as obj, mob/user as mob)
 

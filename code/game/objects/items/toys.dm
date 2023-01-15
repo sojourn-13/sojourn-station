@@ -24,6 +24,7 @@
 	throw_speed = 4
 	throw_range = 20
 	matter = list(MATERIAL_PLASTIC = 3)
+	preloaded_reagents = list("plasticide" = 12)
 	force = NONE
 	price_tag = 10
 
@@ -1241,6 +1242,15 @@
 	desc = "You shouldn't be seeing this..."
 	phrase = ""
 	var/pokesound = null
+
+/obj/item/toy/plushie/fumo/marisa
+	icon_state = "fumoplushie_marisa"
+
+/obj/item/toy/plushie/fumo/astolfo
+	icon_state = "fumoplushie_astolfo"
+
+/obj/item/toy/plushie/fumo/cirno
+	icon_state = "fumoplushie_cirno"
 
 /obj/item/toy/plushie/fumo/attack_self(mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)

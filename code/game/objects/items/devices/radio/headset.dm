@@ -5,6 +5,7 @@
 	icon_state = "headset"
 	item_state = "headset"
 	matter = list(MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("silicon" = 15, "plasticide" = 9)
 	subspace_transmission = 1
 	canhear_range = 0 // can't hear headsets from very far away
 
@@ -114,6 +115,30 @@
 	slot_flags = SLOT_HEAD // No wearing this on your ears and a cap on top, we're not TF2
 	body_parts_covered = HEAD|EARS // Half cap, half headset
 	ks2type = /obj/item/device/encryptionkey/headset_bs
+
+/obj/item/device/radio/headset/radiohat_blackshield/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "radiohat"
+	options["Woodlands Blackshield Colours"] = "radiohatgreen"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/device/radio/headset/headset_eng
 	name = "guild radio headset"

@@ -530,12 +530,7 @@
 "adJ" = (
 /obj/structure/table/rack/shelf,
 /obj/machinery/light/small,
-/obj/item/gun/projectile/automatic/mamba/copperhead{
-	pixel_y = 4
-	},
-/obj/item/gun/projectile/automatic/mamba/copperhead{
-	pixel_y = -4
-	},
+/obj/item/gun/projectile/grenade/lenar,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "adR" = (
@@ -8825,7 +8820,10 @@
 	name = "CEO's Office";
 	req_access = list(41)
 	},
-/obj/structure/disposalpipe/segment,
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/merchant)
 "bKS" = (
@@ -13196,8 +13194,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/item/gun/projectile/automatic/nordwind/watchtower{
-	pixel_y = 8
+/obj/item/gun/projectile/automatic/vintorez/NM_colony{
+	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -13410,10 +13408,15 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
 "cDR" = (
-/obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_pump,
-/obj/item/gun/projectile/boltgun/scout,
+/obj/structure/table/rack/shelf,
+/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony{
+	pixel_y = -5
+	},
+/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony{
+	pixel_y = 5
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "cDV" = (
@@ -13826,8 +13829,6 @@
 /obj/item/honey_frame,
 /obj/item/bee_pack,
 /obj/item/bee_smoker,
-/obj/item/storage/box/botanydisk,
-/obj/item/storage/box/botanydisk,
 /obj/item/beehive_assembly,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
@@ -14233,15 +14234,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/hallway/side/f2section1)
 "cMX" = (
-/obj/structure/table/woodentable,
-/obj/item/maneki_neko,
-/obj/machinery/atmospherics/unary/vent_pump,
 /obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-s"
+	dir = 8;
+	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/carpet,
-/area/nadezhda/command/merchant)
+/turf/simulated/mineral,
+/area/colony)
 "cMY" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/pros/proelav)
@@ -24797,7 +24795,7 @@
 /obj/item/storage/box/blast_grenade_shells,
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/westleft{
-	name = "Sniper rifles";
+	name = "grenades closet";
 	req_access = list(3)
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -30291,12 +30289,12 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
 "fMk" = (
-/obj/effect/floor_decal/industrial/danger{
-	dir = 1
+/obj/structure/bookcase{
+	name = "Sender Beacon Log Case";
+	desc = "A wooden shelving unit used for storing all sorts of literature and logs."
 	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/mineral,
-/area/colony)
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/quartermaster/hangarsupply)
 "fMq" = (
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/construction)
@@ -30559,7 +30557,7 @@
 	pixel_y = 0
 	},
 /obj/machinery/door/window/westright{
-	name = "Sniper rifles";
+	name = "grenades closet";
 	req_access = list(3)
 	},
 /obj/structure/window/reinforced{
@@ -33566,6 +33564,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/command/tcommsat/computer)
+"gqW" = (
+/obj/structure/table/woodentable,
+/obj/item/maneki_neko,
+/obj/machinery/atmospherics/unary/vent_pump,
+/turf/simulated/floor/carpet,
+/area/nadezhda/command/merchant)
 "gqX" = (
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/asteroid/dirt,
@@ -50827,6 +50831,11 @@
 /obj/random/contraband/low_chance,
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"jHI" = (
+/obj/structure/table/woodentable,
+/obj/item/material/kitchen/rollingpin,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/absolutism/vectorrooms)
 "jHL" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk,
@@ -51530,22 +51539,11 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "jOz" = (
-/obj/machinery/disposal/deliveryChute{
-	dir = 4
-	},
-/obj/structure/disposalpipe/trunk{
+/obj/machinery/light,
+/obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 1
-	},
-/obj/machinery/light,
-/obj/machinery/door/window,
-/obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 0
-	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/xenobiology)
 "jOG" = (
 /obj/item/reagent_containers/blood/AMinus{
@@ -51802,6 +51800,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
+"jQs" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/mineral,
+/area/colony)
 "jQv" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark/cyancorner,
@@ -65540,14 +65545,14 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "mnI" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/mamba/viper{
-	pixel_y = 7
-	},
 /obj/machinery/door/window/southleft{
 	name = "Marksman weaponry";
 	req_access = list(3)
 	},
-/obj/item/gun/projectile/automatic/mamba/python{
+/obj/item/gun/projectile/automatic/mamba/copperhead{
+	pixel_y = 4
+	},
+/obj/item/gun/projectile/automatic/mamba/copperhead{
 	pixel_y = -4
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -67697,11 +67702,10 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "mHA" = (
-/obj/structure/bed/chair/comfy/brown{
-	dir = 4
-	},
-/turf/simulated/floor/carpet,
-/area/nadezhda/command/merchant)
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating,
+/area/nadezhda/quartermaster/office)
 "mHH" = (
 /obj/machinery/multistructure/biogenerator_part/port,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -72174,8 +72178,8 @@
 /area/nadezhda/engineering/construction)
 "nAD" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/grenade/lenar,
 /obj/machinery/light/small,
+/obj/item/gun/projectile/automatic/mamba/python,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "nAF" = (
@@ -72901,17 +72905,9 @@
 "nHE" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/belt/webbing,
-/obj/item/storage/belt/webbing/black,
-/obj/item/storage/belt/webbing/black,
-/obj/item/storage/belt/webbing/green,
-/obj/item/storage/belt/webbing/black,
-/obj/item/storage/belt/webbing/green,
-/obj/item/storage/belt/webbing/green,
-/obj/item/storage/belt/webbing,
-/obj/item/storage/belt/webbing/green,
 /obj/item/storage/belt/webbing,
 /obj/item/storage/belt/webbing,
-/obj/item/storage/belt/webbing/black,
+/obj/item/storage/belt/webbing,
 /obj/item/storage/pouch/ammo,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)
@@ -73368,10 +73364,10 @@
 "nLB" = (
 /obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/gun/projectile/colt/ten/dark{
+/obj/item/gun/projectile/colt/ten{
 	pixel_y = -5
 	},
-/obj/item/gun/projectile/colt/ten/dark{
+/obj/item/gun/projectile/colt/ten{
 	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -76830,9 +76826,12 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "osA" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/carpet,
-/area/nadezhda/command/merchant)
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-s"
+	},
+/turf/simulated/mineral,
+/area/colony)
 "osJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -77057,7 +77056,6 @@
 /obj/item/gun/projectile/mk58/wood,
 /obj/item/gun/projectile/mk58/wood,
 /obj/item/gun/projectile/mk58/wood,
-/obj/item/gun/projectile/revolver/lemant/claw,
 /obj/item/ammo_magazine/ammobox/magnum_40/biomatter,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
@@ -79408,8 +79406,8 @@
 /area/nadezhda/security/vacantoffice2)
 "oQx" = (
 /obj/structure/closet/crate/serbcrate,
-/obj/item/gun/projectile/automatic/bull_autoshotgun,
-/obj/item/gun/projectile/boltgun/lever/shotgun/bounty,
+/obj/item/gun/projectile/automatic/omnirifle/solmarine,
+/obj/item/gun/projectile/boltgun/scout,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "oQy" = (
@@ -82136,7 +82134,6 @@
 /area/nadezhda/security/detectives_office)
 "pun" = (
 /obj/structure/closet/crate/serbcrate,
-/obj/item/gun/projectile/automatic/omnirifle/solmarine,
 /obj/item/gun/projectile/automatic/lmg/heroic,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -85574,7 +85571,7 @@
 /area/nadezhda/maintenance/guild)
 "pZS" = (
 /mob/living/simple_animal/opossum{
-	desc = "The Nedezhda basketball team mascot. - Currently scavenging for rebounds";
+	desc = "The Nadezhda basketball team mascot. - Currently scavenging for rebounds";
 	name = "'Cross-em' Opossum"
 	},
 /turf/simulated/floor/tiled/dark/golden,
@@ -97561,9 +97558,6 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/skyyard)
 "sjm" = (
-/obj/effect/floor_decal/industrial/danger{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
@@ -101089,7 +101083,6 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/eris/crew_quarters/plasma_tag)
 "sUb" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
@@ -103162,12 +103155,12 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
 "tou" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
+/obj/structure/bookcase{
+	name = "Receiver Beacon Log Case";
+	desc = "A wooden shelving unit used for storing all sorts of literature and logs."
 	},
-/turf/simulated/floor/carpet,
-/area/nadezhda/command/merchant)
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/quartermaster/hangarsupply)
 "toA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild5,
@@ -118373,10 +118366,11 @@
 /obj/item/reagent_containers/food/drinks/milk,
 /obj/item/reagent_containers/food/drinks/milk,
 /obj/item/reagent_containers/food/snacks/meat,
-/obj/item/material/kitchen/rollingpin,
 /obj/machinery/light_switch{
 	pixel_y = 30
 	},
+/obj/item/reagent_containers/food/drinks/bottle/cream,
+/obj/item/reagent_containers/food/drinks/bottle/cream,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/absolutism/vectorrooms)
 "weT" = (
@@ -143363,16 +143357,16 @@ sFI
 sFI
 sFI
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+jQs
+crC
+crC
+crC
+crC
+crC
+crC
+crC
+crC
+gGS
 sFI
 krD
 krD
@@ -143565,16 +143559,16 @@ sFI
 sFI
 sFI
 sFI
+osA
 sFI
 sFI
 sFI
+tfU
+tfU
+tfU
+tfU
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+osA
 sFI
 krD
 krD
@@ -143767,16 +143761,16 @@ sFI
 sFI
 sFI
 sFI
+osA
 sFI
 sFI
 sFI
+tfU
+xGf
+vXa
+tfU
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+osA
 sFI
 krD
 krD
@@ -143969,16 +143963,16 @@ sFI
 sFI
 sFI
 sFI
+osA
 sFI
 sFI
 sFI
+tfU
+cBX
+kWL
+tfU
 sFI
-sFI
-sFI
-sFI
-sFI
-sFI
-sFI
+osA
 sFI
 krD
 krD
@@ -144169,18 +144163,18 @@ crC
 crC
 crC
 crC
-fMk
 crC
 crC
-crC
-crC
-crC
-crC
-crC
-gGS
+cMX
 sFI
 sFI
 sFI
+tfU
+lDJ
+kWL
+tfU
+sFI
+osA
 sFI
 krD
 krD
@@ -144374,15 +144368,15 @@ koE
 koE
 sFI
 sFI
+sFI
+sFI
+sFI
 tfU
 tfU
-tfU
+dQW
 tfU
 tfU
 sfM
-tfU
-tfU
-tfU
 sFI
 sFI
 sFI
@@ -144576,15 +144570,15 @@ mMP
 koE
 sFI
 sFI
+sFI
+sFI
+sFI
 tfU
-xGf
-vXa
-tfU
-mHA
-cMX
-syJ
+oig
+vLf
+gqW
 qpz
-tfU
+sfM
 hPI
 vcJ
 vcJ
@@ -144778,13 +144772,13 @@ iuY
 koE
 sFI
 sFI
+sFI
+sFI
+sFI
 tfU
-cBX
-kWL
-dQW
+syJ
 vLf
-tou
-osA
+vLf
 sUb
 bKO
 koz
@@ -144980,11 +144974,11 @@ iuY
 koE
 sFI
 sFI
+sFI
+koE
+koE
 tfU
-lDJ
-kWL
 tfU
-oig
 nGC
 ugI
 uiv
@@ -145181,11 +145175,11 @@ iuY
 iuY
 koE
 koE
-tfU
-tfU
-tfU
-tfU
-tfU
+koE
+koE
+koE
+fMk
+tou
 tfU
 tfU
 tfU
@@ -146825,7 +146819,7 @@ vNL
 djT
 gPG
 maS
-fVU
+mHA
 smj
 fjX
 jlJ
@@ -234892,7 +234886,7 @@ oQZ
 elF
 xzr
 riw
-kyl
+jHI
 rYv
 rYv
 rYv

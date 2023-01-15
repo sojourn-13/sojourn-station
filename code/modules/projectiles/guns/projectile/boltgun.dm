@@ -17,7 +17,7 @@
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 10
-	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/mosin.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 	fire_sound_silenced = 'sound/weapons/guns/fire/silenced_rifle.ogg' // More cohesive sound, still loud for its caliber
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
@@ -153,13 +153,14 @@
 	return ..()
 
 /obj/item/gun/projectile/boltgun/load_ammo(var/obj/item/A, mob/user)
-	if(!bolt_open)
-		to_chat(user, SPAN_WARNING("You add in ammo [src] while the bolt is closed!"))
-		return
+	if(istype(A, /obj/item/ammo_casing)) // Should prevent the following message while sawing down the gun or adding a mod. - Seb
+		if(!bolt_open)
+			to_chat(user, SPAN_WARNING("You cannot add in ammo to \the [src] while the bolt is closed!"))
+			return
 	..()
 
 /obj/item/gun/projectile/boltgun/unload_ammo(mob/user, var/allow_dump=1)
 	if(!bolt_open)
-		to_chat(user, SPAN_WARNING("You can't take out ammo [src] while the bolt is closed!"))
+		to_chat(user, SPAN_WARNING("You can't take ammo out of \the [src] while the bolt is closed!"))
 		return
 	..()

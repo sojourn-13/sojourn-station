@@ -373,10 +373,10 @@
 	var/list/possible_results
 	if(prob(positive_prob))
 		possible_results = subtypesof(/datum/breakdown/positive)
-	else if(prob(negative_prob))
+	if(prob(negative_prob) && !owner.stats.getPerk(PERK_NJOY))
 		possible_results = subtypesof(/datum/breakdown/negative)
-	else
-		possible_results = subtypesof(/datum/breakdown/common)
+
+	possible_results += subtypesof(/datum/breakdown/common)
 
 	for(var/datum/breakdown/B in breakdowns)
 		possible_results -= B.type

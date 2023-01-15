@@ -55,14 +55,14 @@
 
 /obj/item/tool/hammer/powered_hammer/turn_on(mob/user)
 
-	if (cell && cell.charge > 0)
+	if (cell && cell.charge >= 1)
 		item_state = "[initial(item_state)]_on"
 		to_chat(user, SPAN_NOTICE("You switch [src] on."))
 		playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
 		..()
 	else
 		item_state = initial(item_state)
-		to_chat(user, SPAN_WARNING("[src] has no power!"))
+		to_chat(user, SPAN_WARNING("[src]'s battery is dead or missing."))
 
 /obj/item/tool/hammer/powered_hammer/turn_off(mob/user)
 	item_state = initial(item_state)
@@ -88,6 +88,7 @@
 	use_power_cost = 1.5
 	workspeed = 1.5
 	max_upgrades = 2
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/hammer/foremansledge
 	name = "foreman's sledgehammer"
@@ -196,7 +197,7 @@
 
 /obj/item/tool/hammer/charge/turn_on(mob/user)
 
-	if (cell && cell.charge > 0)
+	if (cell && cell.charge >= 1)
 		item_state = "[initial(item_state)]-on"
 		icon_state = "[initial(icon_state)]_on"
 		if(wielded)
@@ -206,7 +207,7 @@
 		..()
 	else
 		item_state = initial(item_state)
-		to_chat(user, SPAN_WARNING("[src] has no power!"))
+		to_chat(user, SPAN_WARNING("[src]'s battery is dead or missing."))
 
 /obj/item/tool/hammer/charge/turn_off(mob/user)
 	item_state = initial(item_state)

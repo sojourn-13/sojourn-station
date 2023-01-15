@@ -63,6 +63,7 @@
 	workspeed = 1.2
 	price_tag = 1400 // Super fancy
 	degradation = 2
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/medmultitool/medimplant
 	name = "soteria medical omnitool"
@@ -78,6 +79,7 @@
 	degradation = 0.5
 	workspeed = 0.8
 	price_tag = 600 // Not nearly as fancy.
+	allow_greyson_mods = FALSE
 
 	use_power_cost = 1.2
 	suitable_cell = /obj/item/cell/medium

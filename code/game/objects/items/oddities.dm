@@ -178,7 +178,9 @@
 
 /obj/item/oddity/common/book_omega
 	name = "occult book"
-	desc = "Most of the stories in this book seem to be the ramblings of a mad man, but at least the stories are interesting. Some of the phrases are written in Latin, an odd thing in this day and age."
+	desc = "Most of the stories in this book seem to be the ramblings of an insane cultist, but at least the stories are interesting. \
+			Some of the phrases are written in a language that makes sense at times, but becomes intelligible to you a second after. Something about candles around a magic circle on the floor...\
+			While this sounds like utter nonsense to you, you have a dreadful feeling that using this book in the runes described would have some sinister effect..."
 	icon_state = "book_eyes" // This sprite fits better an occult book, swapped with the observer one.
 	prob_perk = 15 //old wrighting with the madmans ink allows the mind to go a bit more wild then just a single paper
 	oddity_stats = list(
@@ -201,6 +203,9 @@
 	desc = "This is the account of the heavens and the earth when they were created..."
 	icon_state = "book_bible"
 	prob_perk = 5 //Grounded and talked about, hard to think outside the box when given its history and known lore
+	force = 1
+	effective_faction = list("psi_monster") // roach are weak to bricks.
+	damage_mult = 15 //15~, damage to psionic mobs no AP
 	oddity_stats = list(
 		STAT_ROB = 4,
 		STAT_VIG = 4
@@ -407,7 +412,8 @@
 
 /obj/item/oddity/common/book_unholy
 	name = "unholy book"
-	desc = "The writings inside entail some strange ritual. Pages have been torn out or smudged to illegibility."
+	desc = "The writings inside describe some strange rituals whose price is always paid in blood. Some pages have been torn out or smudged to illegibility, but what little you can make out tells you that \"...to be able to see beyond the veil, the enchanter will need to be half blind...\". \
+			While this sounds like utter nonsense to you, you have a dreadful feeling that using this book in the runes described would have some sinister effect..."
 	icon_state = "book_skull"
 	prob_perk = 80 //Cult around this gives it great power
 	oddity_stats = list(

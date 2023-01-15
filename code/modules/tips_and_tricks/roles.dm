@@ -30,11 +30,11 @@
 
 /tipsAndTricks/roles/computerPrograms
     roles_list = list(/datum/antagonist/traitor)
-    tipText = "Когда вы емагаете компьютер, он открывает доступ к некоторым уникальным программам. Дешифратор доступа - один из них. Обратите внимание, что большинство программ зависят от вычислительной мощности компьютера."
+    tipText = "When you emag a computer it unlocks access to some unique programs. Access Decipherer is one of them. Note that most of the programs depend on computer processing power."
 
 /tipsAndTricks/roles/borgEmag
     roles_list = list(/datum/antagonist/traitor)
-    tipText = "Емагнув киборга, вы получаете могущественного союзника с полным доступом. Не забудьте сначала открыть его панель."
+    tipText = "By emagging a cyborg, you obtain a powerful ally with full access. Don't forget to open its panel first."
 
 /tipsAndTricks/roles/siliconLaws
     roles_list = list(/datum/antagonist)

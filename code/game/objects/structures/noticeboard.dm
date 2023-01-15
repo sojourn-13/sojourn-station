@@ -228,13 +228,13 @@ P.S - <u><h1>Don't leave the drills running unattended!</u></h1>"
 	P.name = "Memo RE: Ameridian handling"
 	P.info = "Remember, when dealing with Ameridian Crystals, to :<ol> \
 	<li> Wear a Radiation Suit. The crystals are radioactive with a radius of 2 meters, and the small ones are as radioactive as the grown ones.\
-	<li> Let the crystals grow. Only a fully grown crystal will spread and allow for a sustainable field.\
-	<li> Not let it grow out of control. If enough fully matured crystals are close enough together, golems can appear.\
-	<li> Retreat past the Sonic Fence if golems appear. The Sonic Fence will instantly destroy the golems that touches it. You can also use the Handheld Sonic emitter to destroy the golem.\
-	<li> Not turn off the Sonic Fence or allow it to be turned off. The Sonic Fence is a perfect containment to Ameridian, when it is active. If it turned off, the crystal will be able to spread out of control. If it needs to be turned off for whatever reason, either keep an eye on the crystals, or harvest them all to prevent unwanted spread.\
-	<li> Reseed the field. In case the field get removed completely, more crystals can be seeded with either 5 ameridian shard, or by splashing at least 10u of Liquid Ameridian on the floor.\
+	<li> Let the crystals grow. Fully grown crystals are the best to harvest as they give the most.\
+	<li> If you need to leave, DONT DESTORY THE SPIRE UNLESS NESSARY. You can let it spread out and clear the golems, and then walk away safely, golems only grow when new shards uproot up.\
+	<li> Golems will only grow when a new shard growth is spread. Meaning if you let the main spire grow out its maximum  amount clearing all the golems, the area is safe from any golems regrowing, but not the radiation.\
+	<li> Crystals grown from the spire itself can also spread to its neighboring area, the offspring of these lesser growths can not spread.\
+	<li> You can also use the Handheld Sonic emitter to destroy the golem, using said Sonic emitter will not result in you getting extra shards from the golems, or from the crystals if used.\
 	<li> Refine the shards. While Ameridian is valuable on its own, it's true value can only be used when refining it into Liquid Ameridian using an Ameridian Refinery, after which it can be further transformed into regular materials in the Liquid Ameridian Processor.\
-	<li> Carry the shards through the fence. Your body interfere with the Sonic Fence, allowing you to carry ameridian shards through the fence. The same cannot be said for dragged or thrown crystals, which will get destroyed on contact. Do not throw money away.</ol> "
+	<li> If you set up a Sonic Fence, carry the shards through the fence. Your body interfere with the Sonic Fence, allowing you to carry ameridian shards through the fence. The same cannot be said for dragged or thrown crystals, which will get destroyed on contact. Do not throw money away.</ol> "
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P

@@ -103,9 +103,7 @@
 	required_tech_levels = list(RESEARCH_GREYSON = 3) //Likely people will get parts/cog/bots for this
 	cost = 5625
 	unlocks_designs = list(/datum/design/research/item/greyson/abnegate,
-						/datum/design/research/item/greyson/formatbound,
-						/datum/design/research/item/greyson/humility,
-						/datum/design/research/item/greyson/systemcost)
+						/datum/design/research/item/greyson/humility,)
 
 /datum/technology/hardsuit_nonlethal
 	name = "Mounted Non-Lethal"

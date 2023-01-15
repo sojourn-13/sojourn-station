@@ -1,6 +1,6 @@
 /*
 
-Miscellaneous traitor devices
+Miscellaneous contractor devices
 
 BATTERER
 

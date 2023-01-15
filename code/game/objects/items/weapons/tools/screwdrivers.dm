@@ -76,3 +76,4 @@
 	suitable_cell = /obj/item/cell/small
 	max_upgrades = 2
 	price_tag = 1200 // Very prized.
+	allow_greyson_mods = TRUE

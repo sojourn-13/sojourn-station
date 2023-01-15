@@ -3810,7 +3810,6 @@
 "jT" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/tablet/lease/preset/medical,
-/obj/item/storage/box/botanydisk,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostbotany)
 "jU" = (
@@ -6939,7 +6938,7 @@
 "qR" = (
 /obj/machinery/sleeper{
 	dir = 4;
-	icon_state = "sleeper_0"
+	icon_state = "sleeper"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)
@@ -7123,7 +7122,7 @@
 	},
 /obj/machinery/sleeper{
 	dir = 4;
-	icon_state = "sleeper_0"
+	icon_state = "sleeper"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/outpostmedical)

@@ -24,6 +24,7 @@
 //Resistance value is also used on simple animals.
 //Reduces the damage they take by flat amounts
 #define RESISTANCE_NONE 				0
+#define RESISTANCE_FLIMSY				2
 #define RESISTANCE_FRAGILE 				4
 #define RESISTANCE_AVERAGE 				8
 #define RESISTANCE_IMPROVED 			12
@@ -76,7 +77,10 @@ Fire delay 15 = 40 rounds per minute
 #define FULL_AUTO_300_NOLOSS		list(mode_name = "full auto",    mode_desc = "300 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 2  , icon="auto")
 #define FULL_AUTO_600_NOLOSS		list(mode_name = "fuller auto",  mode_desc = "600 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 1,   icon="auto")
 
-#define SEMI_AUTO_NODELAY	list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=0, move_delay=null, icon="semi") //Some delay
+#define SEMI_AUTO_NODELAY	list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=0, move_delay=null, icon="semi")
+#define SEMI_AUTO_SOMEDELAY	list(mode_name = "semiauto",  mode_desc = "Small Delay with chambering before fire", burst=1, fire_delay=1, move_delay=null, icon="semi")
+
+
 
 #define BURST_2_ROUND		list(mode_name="2-round bursts", mode_desc = "Short, two shot bursts",     burst=2, fire_delay=null, move_delay=2, icon="burst", damage_mult_add = -0.2)
 #define BURST_3_ROUND		list(mode_name="3-round bursts", mode_desc = "Short, three shot bursts",   burst=3, fire_delay=null, move_delay=4, icon="burst", damage_mult_add = -0.2)

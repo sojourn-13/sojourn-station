@@ -5,7 +5,7 @@
 	icon_state = "lcore"
 	item_state = "lcore"
 	item_charge_meter = TRUE
-	fire_sound = 'sound/weapons/energy/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/laser_sniper.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
 	projectile_type = /obj/item/projectile/beam/heavylaser

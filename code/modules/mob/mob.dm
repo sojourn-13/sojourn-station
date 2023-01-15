@@ -257,7 +257,8 @@
 		to_chat(src, "<span class='notice'>Something is there but you can't see it.</span>")
 		return 1
 
-	face_atom(A)
+	if(!istype(A, /obj/screen))
+		face_atom(A)
 	var/obj/item/device/lighting/toggleable/flashlight/FL = locate() in src
 	if (FL && FL.on && src.stat != DEAD && !incapacitated())
 		FL.afterattack(A,src)

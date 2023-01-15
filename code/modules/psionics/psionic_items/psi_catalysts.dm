@@ -238,7 +238,7 @@
 	work, it absolutely succeeded.</p><br>\
 	<br><p>As an aside, our secondary labs working on improving cryogenics, genetics, and chemical research have hit several break throughs. The new machines they've cooked up have done wonders \
 	to the monkies we've taken to testing on. Trials for higher life forms will begin shortly, though some are worried that such tamperings will end quite poorly if we progress too quickly. \
-	Given what our benefactor has stressed about safety, I've exchanged the standard load out of our more brutish workers to include gladstone shotguns, a common and easily procured firearm here \
+	Given what our benefactor has stressed about safety, I've exchanged the standard load out of our more brutish workers to include grizzly shotguns, a common and easily procured firearm here \
 	on the frontier. Just a shame that our contacts in krios must trade so secretively.</p>"
 
 /obj/item/paper/psi_log_4

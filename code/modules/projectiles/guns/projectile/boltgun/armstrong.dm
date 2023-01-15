@@ -30,6 +30,7 @@
 	caliber = CAL_HRIFLE
 	max_shells = 7
 	price_tag = 1200
+	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	init_recoil = HMG_RECOIL(0.6)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 15, MATERIAL_WOOD = 10)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
