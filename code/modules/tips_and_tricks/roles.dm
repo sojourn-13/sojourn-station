@@ -3,8 +3,9 @@
     var/list/roles_list       //list of roles to which tip can be shown
     textColor = "purple"
 
-/tipsAndTricks/roles/traitor_uplink
-    roles_list = list(/datum/antagonist/traitor)
+
+/tipsAndTricks/roles/contractor_uplink
+    roles_list = list(/datum/antagonist/contractor)
     tipText = "Как предатель, вы можете заказать все виды полезных вещей со своего КПК / гарнитуры / импланта аплинка, таких как оружие, устройства, экипировка, услуги и даже деньги!"
 
 /tipsAndTricks/roles/antag_good_rp
