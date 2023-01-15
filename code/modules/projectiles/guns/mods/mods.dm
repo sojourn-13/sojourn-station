@@ -82,6 +82,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_MULT = 1.2,
 		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.2,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.1, // Better than the mod used to make it
 		GUN_UPGRADE_RECOIL = 1.1, // Better than a ported barrel
@@ -148,6 +149,7 @@
 		GUN_UPGRADE_HONK = TRUE,
 		GUN_UPGRADE_RECOIL = 1.2,
 		GUN_UPGRADE_DAMAGE_MULT = 0.8,
+		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 0.8,
 		GUN_UPGRADE_PEN_MULT = 0.8,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
 		GUN_UPGRADE_MOVE_DELAY_MULT = 1.2,
@@ -172,6 +174,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_MULT = 1.3,
 		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.3,
 		GUN_UPGRADE_CHARGECOST = 1.15,
 		UPGRADE_BULK = 0.5,
@@ -316,11 +319,12 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_MULT = 1.1,
 		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.1, //10% more damage
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9, //10% declay removed
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9, //10% delay removed
 		GUN_UPGRADE_PEN_MULT = 1.2, //we shoot harder, but not by much
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.9, //We shoot somehwat faster (not hit scan)
-		GUN_UPGRADE_RECOIL = 0.85, //15% less recoil (dosnt help as much without stacking it with other mods)
+		GUN_UPGRADE_RECOIL = 0.85, //15% less recoil (doesn't help as much without stacking it with other mods)
 		UPGRADE_BULK = -1
 		)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
@@ -343,7 +347,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.15, //15% more damage
 		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.15, //15% more damage to mobs
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8, //20% declay removed
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8, //20% delay removed
 		GUN_UPGRADE_PEN_MULT = 2, //we shoot harder
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.6, //We shoot way faster (not hit scan)
 		GUN_UPGRADE_MUZZLEFLASH = 2, //Bigger flash
@@ -458,6 +462,7 @@
 	GUN_UPGRADE_RECOIL = 2,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
 	GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 2,
+	GUN_UPGRADE_DAMAGE_MULT = 2,
 	GUN_UPGRADE_CHARGECOST = 2)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
@@ -720,8 +725,8 @@
 
 // Greatly reduces firerate but will turn on or off auto-eject
 /obj/item/gun_upgrade/magwell/auto_eject
-	name = "H&S \"Dropper\" Magwell Braker"
-	desc = "A rather smartly designed magwell braker box that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwel itself out! When force-ejecting a mag, will play a beeping sound."
+	name = "H&S \"Dropper\" Magwell Breaker"
+	desc = "A rather smartly-designed magwell breaker box that, when added to guns that do not already possess an auto-eject feature, will automatically drop the gun's magazine into the floor once it empties! When force-ejecting a mag, it will play a beeping sound."
 	icon_state = "auto_spingbox"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2)
 	price_tag = 70
@@ -740,8 +745,8 @@
 //Fancy verson
 /obj/item/gun_upgrade/magwell/auto_eject/no_removal
 	name = "SI \"Faller\" Magwell Clearer"
-	desc = "A rather oddly designed magwell clearing device that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwell itself out! When force-ejecting a mag, it will play a beeping sound.\
-	Unlike the other versions on the market this, once added, will not be removable as it replaces key components to be as seamless as possible."
+	desc = "A rather oddly-designed magwell breaker box that, when added to guns that do not already possess an auto-eject feature, will automatically drop the gun's magazine into the floor once it empties! When force-ejecting a mag, it will play a beeping sound.\
+	Unlike the other versions on the market this, once added, will not be removable as it replaces key components of the receiver to be as seamless as possible."
 	can_remove = FALSE
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GLASS = 2, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1)
 
@@ -761,7 +766,7 @@
 
 /obj/item/gun_upgrade/underbarrel/bipod
 	name = "H&S \"Stand\" bipod"
-	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. It greatly reduces recoil when deployed, but also increases the gun\'s weight, making it unwieldy unless braced."
+	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. It greatly reduces recoil when deployed, but also increases the gun's weight, making it unwieldy unless braced."
 	icon_state = "bipod"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3)
 	price_tag = 130
@@ -811,6 +816,7 @@
 		GUN_UPGRADE_OFFSET = rand(5,15),
 		GUN_UPGRADE_PEN_MULT = rand(4,9)/10,
 		GUN_UPGRADE_DAMAGE_MULT = rand(4,9)/10,
+		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = rand(4,9)/10
 	)
 	I.destroy_on_removal = TRUE
 	I.removal_time *= rand(10, 14)/10
