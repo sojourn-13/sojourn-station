@@ -30,11 +30,11 @@
     tipText = "Вы можете создавать очень мощные бомбы в лабораториях Сотерии. У вас также есть различные способы детонации на выбор."
 
 /tipsAndTricks/roles/computerPrograms
-    roles_list = list(/datum/antagonist/traitor)
+    roles_list = list(/datum/antagonist/contractor)
     tipText = "When you emag a computer it unlocks access to some unique programs. Access Decipherer is one of them. Note that most of the programs depend on computer processing power."
 
 /tipsAndTricks/roles/borgEmag
-    roles_list = list(/datum/antagonist/traitor)
+    roles_list = list(/datum/antagonist/contractor)
     tipText = "By emagging a cyborg, you obtain a powerful ally with full access. Don't forget to open its panel first."
 
 /tipsAndTricks/roles/siliconLaws
