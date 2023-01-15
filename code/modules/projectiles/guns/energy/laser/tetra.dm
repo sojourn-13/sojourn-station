@@ -29,7 +29,7 @@
 		list(mode_name = "full auto",    mode_desc = "Higher volume automatic fire",   mode_type = /datum/firemode/automatic, fire_delay = 1.5, icon="auto", projectile_type = /obj/item/projectile/beam, silenced = FALSE),
 		list(mode_name = "IR focused",     mode_desc = "Fire invisible, quieter focused IR beams", burst = 1, fire_delay = 7.5, damage_mult_add = 0.4, move_delay=null, icon="semi", projectile_type = /obj/item/projectile/beam/infrared, silenced = TRUE),
 		list(mode_name = "IR slow auto",    mode_desc = "Invisible, quieter IR beams at a more controllable automatic firerate",   mode_type = /datum/firemode/automatic, fire_delay = 4, icon="burst", projectile_type = /obj/item/projectile/beam/infrared, silenced = TRUE),
-		list(mode_name = "bake",    mode_desc = "Bake targets in infrared radiation",   mode_type = /datum/firemode/automatic, fire_delay = 1.5, icon="auto", projectile_type = /obj/item/projectile/beam/infrared, silenced = TRUE)
+		list(mode_name = "bake",    mode_desc = "Bake targets in infrared radiation",   mode_type = /datum/firemode/automatic, fire_delay = 1.5, icon="fuller", projectile_type = /obj/item/projectile/beam/infrared, silenced = TRUE)
 		)
 	serial_type = "AG"
 
