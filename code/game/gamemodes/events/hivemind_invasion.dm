@@ -28,6 +28,8 @@
 	var/active_players = 0
 	var/mob/living/carbon/human/fighter
 	for(fighter in GLOB.player_list)
+		if(!fighter.mind)
+			return
 		if(fighter.mind.assigned_role in list(JOBS_ANTI_HIVEMIND))
 			active_players++
 
