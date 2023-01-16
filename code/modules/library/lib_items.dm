@@ -30,7 +30,10 @@
 	/obj/item/oddity/common/book_unholy,
 	/obj/item/oddity/chem_book,
 	/obj/item/oddity/code_book,
-	/obj/item/oddity/ls/manual)
+	/obj/item/oddity/ls/manual,
+	/obj/item/folder,
+	/obj/item/paper,
+	/obj/item/paper_bundle)
 
 /obj/structure/bookcase/Initialize()
 	. = ..()
@@ -147,9 +150,7 @@
 		..()
 		new /obj/item/book/manual/wiki/engineering_construction(src)
 		new /obj/item/book/manual/wiki/engineering_hacking(src)
-		new /obj/item/book/manual/wiki/engineering_guide(src)
 		new /obj/item/book/manual/wiki/engineering_atmos(src)
-		new /obj/item/book/manual/wiki/engineering_singularity(src)
 		new /obj/item/book/manual/evaguide(src)
 		update_icon()
 

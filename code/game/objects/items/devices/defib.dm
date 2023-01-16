@@ -826,7 +826,7 @@
 	chargetime = (10)
 
 /* From the Bay port, this doesn't seem to have a sprite.
-/obj/item/shockpaddles/standalone/traitor
+/obj/item/shockpaddles/standalone/contractor
 	name = "defibrillator paddles"
 	desc = "A pair of unusual looking paddles powered by an experimental miniaturized reactor. It possesses both the ability to penetrate armor and to deliver powerful shocks."
 	icon = 'icons/obj/weapons.dmi'

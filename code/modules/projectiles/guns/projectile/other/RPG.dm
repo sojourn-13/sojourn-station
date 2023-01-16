@@ -10,7 +10,7 @@
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	caliber = CAL_ROCKET
-	fire_sound = 'sound/effects/bang.ogg' //placeholder, needs new sound
+	fire_sound = 'sound/weapons/guns/fire/rpg.ogg' // Actual RPG sound
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 5)
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 5)
 	price_tag = 4000
@@ -19,8 +19,7 @@
 	handle_casings = EJECT_CASINGS
 	max_shells = 1
 	init_recoil = HANDGUN_RECOIL(3)
-	fire_sound = 'sound/effects/bang.ogg'
-	bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg' //placeholder, needs new sound
+	bulletinsert_sound = 'sound/weapons/guns/interact/china_lake_reload.ogg'
 	twohanded = TRUE
 	gun_tags = list(GUN_SCOPE)
 	allow_racking = FALSE

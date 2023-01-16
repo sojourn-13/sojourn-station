@@ -58,6 +58,9 @@
 #define COMSIG_RITUAL "ritual"
 #define COMSIG_TRANSATION "transation"          //from transfer_funds()
 
+/// from datum ui_act (usr, action)
+#define COMSIG_UI_ACT "COMSIG_UI_ACT"
+
 // /datum/mecha signals
 #define COMSIG_HUD_DELETED "hud_deleted"
 
@@ -127,6 +130,8 @@
 
 //machinery
 #define COMSIG_AREA_APC_OPERATING "area_operating"  //from apc process()
+#define COMSIG_AREA_APC_DELETED "area_apc_gone"
+#define COMSIG_AREA_APC_POWER_CHANGE "area_apc_power_change"
 #define COMSING_DESTRUCTIVE_ANALIZER "destructive_analizer"
 #define COMSIG_TURRENT "create_turrent"
 

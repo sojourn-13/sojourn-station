@@ -28,6 +28,7 @@
 	is_sealed = TRUE
 	generate_asteroid = TRUE
 	height = 3
+	digsites = "HOUSE"
 
 
 /obj/map_data/nadezda_s

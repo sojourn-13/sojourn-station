@@ -951,7 +951,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	fold(span_chat = TRUE)
 
-/obj/item/gun/proc/can_interact(mob/user)
+/obj/item/gun/can_interact(mob/user)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
 		return 1
 	if(istype(loc, /obj/item/storage))
@@ -977,8 +977,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	update_firemode()
 
 /obj/item/gun/dropped(mob/user)
-	.=..()
 	update_firemode(FALSE)
+	.=..()
 
 /obj/item/gun/swapped_from()
 	.=..()
@@ -1056,7 +1056,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(item_upgrades.len)
 		data["attachments"] = list()
 		for(var/atom/A in item_upgrades)
-			data["attachments"] += list(list("name" = A.name, "icon" = getAtomCacheFilename(A)))
+			data["attachments"] += list(list("name" = A.name, "icon" = SSassets.transport.get_asset_url(A)))
 
 	return data
 

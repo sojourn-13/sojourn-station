@@ -225,14 +225,14 @@
 			if("sniper")//From sniper.dm, Arbitrary values
 				R.caliber = CAL_ANTIM
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
-				R.fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+				R.fire_sound = 'sound/weapons/guns/fire/AMR.ogg'
 
 			if("gyro")//From gyropistol.dm, Arbitrary values
 				R.caliber = CAL_70
 
 			if("grenade")
 				R.caliber = CAL_GRENADE
-				R.fire_sound = 'sound/weapons/guns/fire/grenadelauncher_fire.ogg'
+				R.fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'
 
 		R.recoil = R.recoil.modifyAllRatings(1+rand(-2,2)/10)

@@ -135,6 +135,27 @@
 //////////////////////////////
 //			Psionic Firearms
 //////////////////////////////
+
+//the STS is unable to be gotton normally as its for mobs to use and drop
+/obj/item/gun/projectile/automatic/sts/rifle/cult
+	name = "\"Eclipse\" psi-rifle"
+	desc = "An STS conjured from the minds of a psion who shaped an oddity into a weapon. It is nearly identical to a normal STS-30 battle rifle, save for lacking as much penetration or stopping power."
+	icon = 'icons/obj/psionic/occgun.dmi'
+	icon_state = "eclipse"
+	origin_tech = list()
+	matter = list()
+	price_tag = 0
+	damage_multiplier = 0.9
+	penetration_multiplier = 0.9
+	serial_shown = FALSE
+	saw_off = FALSE
+
+/obj/item/gun/projectile/automatic/sts/rifle/cult/deepmaints
+	name = "\"Aster\" psi-rifle"
+	desc = "A rather perfect copy of an STS-30 made form either pure willpower or a desperate need for survival."
+	damage_multiplier = 1
+	penetration_multiplier = 1
+
 /obj/item/gun/energy/laser/cult
 	name = "\"Moonrise\" psi-laser rifle"
 	desc = "Radiant and deadly, a weapon forged from the mind of a psion who shaped an oddity into a weapon. Perhaps the twisted reimagination of the zealotry often attributed to the local cult. \

@@ -32,6 +32,23 @@
 	glow_color = COLOR_BLUE_LIGHT
 	max_upgrades = 4 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
 
+/obj/item/tool/polytool/marqua
+	name = "Mar'quaian poly tool"
+	desc = "A complicated mess of drivers, bits, wrench heads, snips and pliers, this intricate mess of a tool in a handle has it all, its made of a strange alloy yet still has a slot under it for fuel."
+	icon_state = "clustertool"
+	item_state = "clustertool"
+	max_health = 300
+	w_class = ITEM_SIZE_NORMAL
+	worksound = WORKSOUND_DRIVER_TOOL
+	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 75, QUALITY_BOLT_TURNING = 75, QUALITY_DRILLING = 40, QUALITY_PULSING = 60, QUALITY_WIRE_CUTTING = 30, QUALITY_WELDING = 60, QUALITY_CAUTERIZING = 30)
+	price_tag = 6000
+	use_fuel_cost = 0.01
+	max_fuel = 100
+	toggleable = TRUE
+	create_hot_spot = TRUE
+	glow_color = COLOR_BLUE_LIGHT
+	max_upgrades = 0 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
+
 /obj/item/tool/medmultitool
 	name = "Greyson Positronic medical multitool"
 	desc = "A compact Greyson Positronic medical multitool. It has all surgery tools and takes a medium cell in its handle.."
@@ -46,6 +63,7 @@
 	workspeed = 1.2
 	price_tag = 1400 // Super fancy
 	degradation = 2
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/medmultitool/medimplant
 	name = "soteria medical omnitool"
@@ -61,6 +79,7 @@
 	degradation = 0.5
 	workspeed = 0.8
 	price_tag = 600 // Not nearly as fancy.
+	allow_greyson_mods = FALSE
 
 	use_power_cost = 1.2
 	suitable_cell = /obj/item/cell/medium

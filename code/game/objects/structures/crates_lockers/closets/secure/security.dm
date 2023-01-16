@@ -37,7 +37,7 @@
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/head/helmet(src)
 	new /obj/item/device/radio/headset/heads/hop(src)
-	new /obj/item/gun/projectile/colt/ten/dark(src)
+	new /obj/item/gun/projectile/colt/ten(src)
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
@@ -73,7 +73,7 @@
 	new /obj/item/device/radio/headset/heads/hos(src)
 	new /obj/item/device/holowarrant(src)
 	new /obj/item/taperoll/police(src)
-	new /obj/item/gunbox/warrantofficer(src)
+	new /obj/item/gunbox/warrantofficer(src) // Primary on their locker, secondary on their hardcase.
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)

@@ -1,10 +1,10 @@
 /datum/language/jana
 	name = LANGUAGE_JANA
-	desc = "A hybrid language of Mandarin, Japanese, and Cantonese written in a modernized verticle fashion."
+	desc = "A hybrid language of Mandarin, Japanese, and Cantonese written in a modernized vertical fashion."
 	speech_verb = list("states")
 	ask_verb = list("implores")
 	exclaim_verb = list("intently states")
-	colour = "brass"
+	colour = "jana"
 	key = "j"
 	shorthand = "JA"
 	partial_understanding = list(

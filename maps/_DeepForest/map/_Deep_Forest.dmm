@@ -713,7 +713,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/soap/syndie,
 /obj/machinery/light/small,
-/obj/item/implanter/adrenalin,
+/obj/item/implanter/adrenaline,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cQ" = (
@@ -2326,7 +2326,6 @@
 /turf/simulated/floor/tiled,
 /area/nadezhda/dungeon/outside/zoo)
 "iG" = (
-/obj/machinery/power/smes,
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
@@ -2337,14 +2336,15 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
+/obj/machinery/power/smes/buildable,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/dungeon/outside/zoo)
 "iH" = (
-/obj/machinery/power/smes,
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/power/smes/buildable,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/dungeon/outside/zoo)
 "iI" = (
@@ -11910,7 +11910,7 @@
 /obj/random/common_oddities/low_chance,
 /obj/item/stock_parts/matter_bin/one_star,
 /obj/item/tool/weldingtool/onestar,
-/obj/item/tool/onestar_multitool,
+/obj/item/tool/multitool/advanced/onestar,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
 "VF" = (

@@ -114,6 +114,12 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/under/rank/church/robe
+	desc = "a robe that smells like incense."
+	name = "church robe"
+	icon_state = "churchgrobe"
+	item_state = "churchgrobe"
+
 /obj/item/clothing/under/rank/chef
 	desc = "A pleasant yet practical suit for professional kitchen staff."
 	name = "chef's uniform"

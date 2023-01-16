@@ -255,28 +255,39 @@
  * Trooper/Corpsman
  */
 
-/obj/item/clothing/under/rank/trooper
+/obj/item/clothing/under/rank/trooper/gorka
 	name = "blackshield gorka suit"
 	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the insignia of the Blackshield."
 	icon_state = "gorka_ih"
 
-/obj/item/clothing/under/rank/trooper/skirt
-	name = "blackshield skirt"
-	desc = "A skirt in Blackshield colours and fitted for same attachments of shoulderboards. Sadly this likely will not help protect your feet or legs form cuts and scratches"
-	icon_state = "gorka_blackshield_skort"
-	item_state = "gorka_blackshield_skort"
+/obj/item/clothing/under/rank/trooper/gorka/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/clothing/under/rank/trooper/green
-	name = "green blackshield gorka"
-	desc = "A rugged set of militant and quite slavic two-tone clothes."
-	icon_state = "gorka"
-	item_state = "gorka"
+	if(!isliving(loc))
+		return
 
-/obj/item/clothing/under/rank/trooper/tan
-	name = "tan blackshield suit"
-	desc = "A rugged set of militant and quite slavic two-tone clothes, this time coyote brown on tan."
-	icon_state = "gorka_tan"
-	item_state = "gorka_tan"
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Standard Colors"] = "gorka_ih"
+	options["Blackshield Woodland Colors"] = "gorka"
+	options["Blackshield Desert Colors"] = "gorka_tan"
+	options["Blackshield Skirt"] = "gorka_blackshield_skort"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+			)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/under/rank/trooper/service
 	name = "blackshield service uniform"
@@ -312,32 +323,72 @@
 	icon_state = "bdubsstandard"
 	item_state = "bdubsstandard"
 
-/obj/item/clothing/under/rank/bdu/troopergreen
-	name = "Blackshield green BDU"
-	desc = "A rugged militia Battle Dress Uniform, made with robust materials and wearing the insignia of the Blackshield. This one is in a lovely olive drab."
-	icon_state = "bdubsgreen"
-	item_state = "bdubsgreen"
+/obj/item/clothing/under/rank/bdu/trooper/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/clothing/under/rank/bdu/troopertan
-	name = "Blackshield tan BDU"
-	desc = "A rugged militia Battle Dress Uniform, made with robust materials and wearing the insignia of the Blackshield. This one is in shades of tan."
-	icon_state = "bdubstan"
-	item_state = "bdubstan"
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Standard Colors"] = "bdubsstandard"
+	options["Blackshield Standard Colors Rolled Up"] = "bdustandard_rolled"
+	options["Blackshield Woodland Colors"] = "bdubsgreen"
+	options["Blackshield Woodland Colors Rolled Up"] = "bdubsgreen_rolled"
+	options["Blackshield Desert Colors"] = "bdubstan"
+	options["Blackshield Desert Colors Rolled Up"] = "bdutan_rolled"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+			)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /*
  * Sergeant
  */
 
-/obj/item/clothing/under/rank/armorer
+/obj/item/clothing/under/rank/armorer/gorka
 	name = "Sergeant's uniform"
 	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the pins of a Blackshield Sergeant."
 	icon_state = "gorka_ih"
 
-/obj/item/clothing/under/rank/armorer/green
-	name = "green sergeant's gorka"
-	desc = "A rugged set of militant and quite slavic two-tone clothes with the pins of a Blackshield Sergeant."
-	icon_state = "gorka"
-	item_state = "gorka"
+/obj/item/clothing/under/rank/armorer/gorka/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Standard Colors"] = "gorka_ih"
+	options["Blackshield Woodland Colors"] = "gorka"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+			)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/under/tactical
 	name = "tactical turtleneck"

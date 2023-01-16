@@ -87,7 +87,7 @@
 
 
 	if(pay_power_cost(psi_point_cost))
-		if(alert(usr, "Are you sure you want to do this? It will absoutely kill you.", "Merge Flesh and Steel", "Yes", "No") == "Yes" && pay_power_cost(psi_point_cost))
+		if(alert(usr, "Are you sure you want to do this? It will absoutely kill you.", "Merge Flesh and Steel", "Yes", "No") == "Yes")
 			new /obj/machinery/hivemind_machine/node(owner.loc)
 			owner.gib()
 			log_and_message_admins("[owner] has merged flesh and steel and become a hivemind node!")
@@ -114,7 +114,7 @@
 					to_chat(owner, "They refused your gift!")
 					return
 				else
-					if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
+					if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC)
 						visible_message(
 							SPAN_WARNING("[src] grabs [L]! Psionic energy alights [src]'s eyes as they focus intently on [L] !"),
 							SPAN_WARNING("You project your psionic essence, turning it towards [L].")
@@ -143,21 +143,21 @@
 				usr.show_message(SPAN_DANGER("Your head pulsates with pain as your mind bashes against an unbreakable barrier!"))
 				return
 
-			if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
+			if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC)
 				usr.visible_message(
 						SPAN_DANGER("[usr] places a hand on [L], a terrible crackle of psionic energy lancing their eyes!"),
 						SPAN_DANGER("You place your hand upon [L], focusing your thoughts before you snuff out their life!")
 						)
 				L.adjustBrainLoss(60)
 		var/mob/living/carbon/superior_animal/S = get_grabbed_mob(owner)
-		if(istype(S, /mob/living/carbon/superior_animal) && pay_power_cost(psi_point_cost))
+		if(istype(S, /mob/living/carbon/superior_animal))
 			usr.visible_message(
 					SPAN_DANGER("[usr] places a hand on [S], a terrible crackle of psionic energy lancing their eyes before their whole form is overwhelmed!"),
 					SPAN_DANGER("You place your hand upon [S], focusing your thoughts before you snuff out their life!")
 					)
 			S.gib()
 		var/mob/living/simple_animal/hostile/A = get_grabbed_mob(owner)
-		if(istype(A, /mob/living/simple_animal/hostile) && pay_power_cost(psi_point_cost))
+		if(istype(A, /mob/living/simple_animal/hostile))
 			usr.visible_message(
 					SPAN_DANGER("[usr] places a hand on [A], a terrible crackle of psionic energy lancing their eyes before their whole form is overwhelmed!"),
 					SPAN_DANGER("You place your hand upon [A], focusing your thoughts before you snuff out their life!")

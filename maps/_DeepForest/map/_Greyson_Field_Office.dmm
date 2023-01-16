@@ -6365,7 +6365,7 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "SY" = (
-/obj/item/tool/onestar_multitool,
+/obj/item/tool/multitool/advanced/onestar,
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)

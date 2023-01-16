@@ -10,6 +10,11 @@
 	path = /obj/item/clothing/accessory/armband
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/accessory/sash
+	display_name = "sash selection"
+	path = /obj/item/clothing/accessory/sash
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/accessory/dropstraps
 	display_name = "drop straps"
 	path = /obj/item/clothing/accessory/dropstraps
@@ -109,3 +114,8 @@
 	display_name = "passcard - work visa - passport  selection"
 	path = /obj/item/clothing/accessory/passcard
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/badge
+	display_name = "badge (colorable)"
+	path = /obj/item/clothing/accessory/pin
+	flags = GEAR_HAS_TYPE_SELECTION | GEAR_HAS_COLOR_SELECTION

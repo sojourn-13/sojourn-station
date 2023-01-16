@@ -227,12 +227,16 @@
 	if(item_upgrades.len)
 		data["attachments"] = list()
 		for(var/atom/A in item_upgrades)
-			data["attachments"] += list(list("name" = A.name, "icon" = getAtomCacheFilename(A)))
+			data["attachments"] += list(list("name" = A.name, "icon" = SSassets.transport.get_asset_url(name)))
 
 	return data
 
 /obj/item/tool/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
 	var/list/data = nano_ui_data(user)
+
+	var/datum/asset/toolupgrageds = get_asset_datum(/datum/asset/simple/tool_upgrades)
+	if (toolupgrageds.send(user.client))
+		user.client.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -750,7 +754,7 @@
 
 	if(use_power_cost)
 		if(!cell?.checked_use(use_power_cost*timespent))
-			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
+			to_chat(user, SPAN_WARNING("[src]'s battery is dead or missing."))
 			return FALSE
 
 	if(use_fuel_cost)
@@ -845,6 +849,7 @@
 	item_flags = initial(item_flags)
 	name = initial(name)
 	max_upgrades = initial(max_upgrades)
+	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
 	prefixes = list()

@@ -126,7 +126,7 @@
 	comfy_range = 7
 	ranged_cooldown = 5
 	projectiletype = /obj/item/projectile/bullet/grenade
-	projectilesound = 'sound/weapons/guns/fire/grenadelauncher_fire.ogg'
+	projectilesound = 'sound/weapons/guns/fire/GLfire.ogg'
 	limited_ammo = FALSE
 	mag_drop = FALSE
 

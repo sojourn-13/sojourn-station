@@ -169,12 +169,12 @@ SUBSYSTEM_DEF(vote)
 
 	if(href_list["toggle_admin"])
 		var/datum/poll/poll = locate(href_list["toggle_admin"])
-		if(istype(poll) && check_rights(R_ADMIN))
+		if(istype(poll) && check_rights(R_ADMIN|R_FUN))
 			poll.only_admin = !poll.only_admin
 
 	if(href_list["start_vote"])
 		var/datum/poll/poll = locate(href_list["start_vote"])
-		if(istype(poll) && (check_rights(R_ADMIN) || (!poll.only_admin && poll.can_start())))
+		if(istype(poll) && (check_rights(R_ADMIN|R_FUN) || (!poll.only_admin && poll.can_start())))
 			start_vote(poll.type)
 
 	if(href_list["cancel"])
