@@ -122,6 +122,10 @@
 	name = "Underground Floor 2 South Maintenance"
 	icon_state = "erisgreen"
 
+/area/nadezhda/maintenance/surface_maints_1
+	name = "Surface North Maintenance"
+	icon_state = "erisyellow"
+
 /area/nadezhda/maintenance/cavehideout
 	name = "Abandoned Cave Shed"
 	icon_state = "section2deck2starboard"
@@ -386,19 +390,19 @@
 	name = "Floor 1 Substation 3"
 
 /area/nadezhda/maintenance/substation/section3
-	name = "Floor 2 Substation 1"
+	name = "Floor 1 Substation 1"
 
 /area/nadezhda/maintenance/substation/section4
-	name = "Floor 2 Substation 2"
+	name = "Floor 1 Substation 2"
 
 /area/nadezhda/maintenance/substation/section5
-	name = "Floor 2 Substation 3"
+	name = "Floor 1 Substation 3"
 
 /area/nadezhda/maintenance/substation/section6
 	name = "Floor 2 Substation 4"
 
 /area/nadezhda/maintenance/substation/section7
-	name = "Floor 2 Substation 5"
+	name = "Floor 1 Substation 5"
 
 /area/nadezhda/maintenance/substation/bridge
 	name = "Bridge Substation"
