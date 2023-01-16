@@ -106,7 +106,7 @@
 	icon_state = "bdumarshal"
 	item_state = "bdumarshal"
 
-/obj/item/clothing/under/rank/bdu/verb/toggle_style()
+/obj/item/clothing/under/rank/bdu/marshal/verb/toggle_style()
 	set name = "Adjust style"
 	set category = "Object"
 	set src in usr

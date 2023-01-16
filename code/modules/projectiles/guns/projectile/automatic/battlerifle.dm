@@ -65,7 +65,7 @@
 		 Either a copy or 'liberated' example, it fires a variety of utility and specialized munitions. \
 		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
 		 This example is fitted with an advanced combat sight and limited to semiautomatic and burst modes. \
-		 Do to market competition on the omnirifle platform, H&S allowed for an extra fee specital limited addition custom prints."
+		 Due to market competition on the Omnirifle platform, H&S allowed for an extra fee specital limited addition custom prints."
 	icon = 'icons/obj/guns/projectile/blackguard.dmi'
 	icon_state = "sts_blackguard"
 	item_state = "sts_blackguard"
@@ -82,8 +82,8 @@
 	penetration_multiplier = 1.35
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND,
-		BURST_2_ROUND
+		BURST_2_ROUND,
+		BURST_3_ROUND
 		)
 	serial_type = "H&S"
 

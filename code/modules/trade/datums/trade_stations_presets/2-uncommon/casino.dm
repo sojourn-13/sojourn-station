@@ -1,8 +1,6 @@
-//Temp removed do to player consquences
-
 /datum/trade_station/gamba
 	name_pool = list(
-		"FTB 'Solntsey'" = "Free Trade Beacon 'Solntsey': \"Try your luck with our grab bag specials!\"",
+		"FTB 'Lucky Deck'" = "Free Trade Beacon 'Lucky Deck': \"Try your luck with our random box specials!\"",
 	)
 	uid = "casino"
 	tree_x = 0.62
