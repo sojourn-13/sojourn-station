@@ -53680,11 +53680,6 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/pros/prep)
 "kcG" = (
@@ -82759,15 +82754,6 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
 "ppZ" = (
@@ -107869,19 +107855,6 @@
 /obj/structure/largecrate/animal/pig,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/crew_quarters/botanist)
-"tYJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/turf/simulated/floor/reinforced,
-/area/nadezhda/pros/prep)
 "tYS" = (
 /obj/machinery/alarm{
 	pixel_y = 24
@@ -229866,7 +229839,7 @@ aew
 aew
 bJq
 ifw
-cHl
+dyz
 dyz
 dyz
 dyz
@@ -239959,7 +239932,7 @@ cAQ
 eVe
 wbP
 rtn
-cAQ
+xdv
 xdv
 xdv
 buz
@@ -240161,7 +240134,7 @@ cAQ
 cAQ
 and
 qVe
-cAQ
+xdv
 veZ
 veZ
 scG
@@ -242978,8 +242951,8 @@ veZ
 veZ
 veZ
 cAn
-tYJ
-xsT
+hib
+hib
 kcF
 xsT
 xsT
