@@ -58,6 +58,7 @@
 			/obj/item/grenade/explosive,
 			/obj/item/grenade/anti_photon,
 			/obj/item/grenade/heatwave,
+			/obj/item/grenade/frag/white_phosphorous,
 			/obj/item/plastique = good_data("plastic explosive", (list(2, 4)), 1500)
 		),
 		"Top Class Firearms" = list(

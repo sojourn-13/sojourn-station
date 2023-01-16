@@ -26,7 +26,8 @@
 			/obj/item/noslipmodule,
 			/obj/item/storage/box/syndie_kit/imp_compress,
 			/obj/item/grenade/empgrenade,
-			/obj/item/storage/backpack/military = good_data("MOLLE pack", list(3, 8), 1000)
+			/obj/item/storage/backpack/military = good_data("MOLLE pack", list(3, 8), 1000),
+			/obj/item/card/emag = good_data ("Cryptographic Sequencer", list(1, 1), 15000)
 		),
 		"Weapons" = list(
 			/obj/item/melee/energy/sword,
