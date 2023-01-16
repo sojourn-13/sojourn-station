@@ -6,7 +6,7 @@
 	icon_state = "railgun"
 	item_state = "railgun"
 	item_charge_meter = TRUE
-	fire_sound = 'sound/weapons/rail.ogg'
+	fire_sound = 'sound/weapons/railgun.ogg'
 	item_charge_meter = TRUE
 	w_class = ITEM_SIZE_BULKY
 	extra_bulk = 2
@@ -77,6 +77,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 4, MATERIAL_SILVER = 5)
 	fire_delay = 7
 	charge_cost = 100
+	fire_sound = 'sound/weapons/rail.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
 	init_recoil = RIFLE_RECOIL(0.8)
 	can_dual = TRUE
@@ -148,7 +149,7 @@
 
 /obj/item/gun/energy/laser/railgun/mounted
 	name = "SDF SC \"Schrapnell\""
-	desc = "An energy-based railgun, employing a matter fabricator to pull shotgun rounds from thin air and energy before launching them at faster than light speeds."
+	desc = "An energy-based railgun, employing a matter fabricator to pull shotgun rounds from thin air and energy before launching them at faster than light speeds. Has the ablity to have a Master Unmaker integrated into it."
 	icon_state = "shrapnel"
 	self_recharge = 1
 	use_external_power = 1
@@ -163,6 +164,8 @@
 		list(mode_name="Blast", mode_desc="Fires a slug synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun, charge_cost=null, icon="destroy"),
 	)
 	serial_type = "GP"
+	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	allow_greyson_mods = TRUE
 
 
 //Gauss-rifle type, snowflake launcher mixed with rail rifle and hydrogen gun code. Consumes matter-stack and cell charge to fire. - Rebel0

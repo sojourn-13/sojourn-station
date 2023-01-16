@@ -5,6 +5,12 @@
 	icon_state = "chefhat"
 	item_state = "chefhat"
 
+//Cargo Tech
+/obj/item/clothing/head/rank/cargosoft
+	name = "lonestar cap"
+	desc = "A grey cap with the Lonestar logo on it."
+	icon_state = "cargosoft"
+
 //Captain
 
 /obj/item/clothing/head/rank/captain
@@ -240,6 +246,30 @@
 	name = "blackshield cap"
 	desc = "A faded black cap with the badge of the Blackshield."
 	icon_state = "milsoft"
+
+/obj/item/clothing/head/rank/trooper/cap/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "milsoft"
+	options["Woodlands Blackshield Colours"] = "milsoftgreen"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/rank/corpsman/cap
 	name = "Corpsman cap"

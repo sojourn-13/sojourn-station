@@ -19,7 +19,6 @@
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/stungloves
 	glasses = /obj/item/clothing/glasses/sechud/tactical
-	belt = /obj/item/gun/projectile/lamia/amnesty
 	id_type = /obj/item/card/id/hos
 	head = /obj/item/clothing/head/rank/commander
 	pda_type = /obj/item/modular_computer/pda/heads/hos
@@ -33,7 +32,6 @@
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/stungloves
 	glasses = /obj/item/clothing/glasses/ballistic
-	belt = /obj/item/gun/projectile/lamia
 	id_type = /obj/item/card/id/hos
 	head = /obj/item/clothing/head/rank/milcom
 	pda_type = /obj/item/modular_computer/pda/heads/hos
@@ -105,7 +103,7 @@
 	name = OUTFIT_JOB_NAME("Blackshield - Trooper")
 	l_ear = /obj/item/device/radio/headset/headset_blackshield
 	l_pocket = /obj/item/device/flash
-	uniform = /obj/item/clothing/under/rank/trooper
+	uniform = /obj/item/clothing/under/rank/trooper/gorka
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/ballistic
 	head = /obj/item/clothing/head/rank/trooper/cap

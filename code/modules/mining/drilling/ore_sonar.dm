@@ -2,7 +2,7 @@
 	name = "ore sonar"
 	desc = "A solid and robust looking white device made to work in the toughest conditions. It's able to scan and print a readout of the local ore heatmap. It works off an internal battery that takes a very long time to recharge. A droopy eared rabbit shape is stamped onto its side."
 	icon_state = "ore-sonar"
-	item_state = "electronic"
+	item_state = "ore-sonar"
 	slot_flags = SLOT_BELT
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MAGNET = 2, TECH_ENGINEERING = 2)

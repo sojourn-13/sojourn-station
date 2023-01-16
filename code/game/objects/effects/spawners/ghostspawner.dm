@@ -181,7 +181,7 @@
 //remnants of the opened sleepers
 /obj/structure/empty_sleeper
 	icon = 'icons/obj/Cryogenic2.dmi'
-	icon_state = "sleeper_0"
+	icon_state = "sleeper"
 
 obj/effect/mob_spawn/human/Destroy()
 	new/obj/structure/empty_sleeper(get_turf(src))

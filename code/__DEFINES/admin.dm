@@ -64,8 +64,7 @@ GLOBAL_LIST_EMPTY(buildholders)
 #define ADMIN_PP(user) "(<a href='?_src_=holder;adminplayeropts=[REF(user)]'>PP</a>)"
 #define ADMIN_VV(atom) "(<a href='?_src_=vars;Vars=[REF(atom)]'>VV</a>)"
 #define ADMIN_SM(user) "(<a href='?_src_=holder;subtlemessage=[REF(user)]'>SM</a>)"
-#define ADMIN_TP(user) "(<a href='?_src_=holder;traitor=[REF(user)]'>TP</a>)"
-
+#define ADMIN_TP(user) "(<a href='?_src_=holder;contractor=[REF(user)]'>TP</a>)"
 #define ADMIN_JMP(src) "(<a href='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)"
 #define COORD(src) "[src ? src.Admin_Coordinates_Readable() : "nonexistent location"]"
 #define AREACOORD(src) "[src ? src.Admin_Coordinates_Readable(TRUE) : "nonexistent location"]"

@@ -150,6 +150,25 @@
 		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
 		add_overlay(lid)
 
+/obj/item/reagent_containers/glass/plastic_jug
+	name = "plastic jug"
+	desc = "It's a plastic jug, made of polyethylene and other compounds. Robust enough to carry a lot of liquid." // Jesse we have to cook
+	item_state = "plastic_jug"
+	icon_state = "plastic_jug"
+	matter = list(MATERIAL_PLASTIC = 3)
+	w_class = ITEM_SIZE_BULKY
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10,20,30,60,100,120,300)
+	volume = 300 // Bigger than a bucket
+	unacidable = 1
+
+/obj/item/reagent_containers/glass/plastic_jug/update_icon() // Necessary as it has no filling states.
+	cut_overlays()
+
+	if(has_lid())
+		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
+		add_overlay(lid)
+
 /obj/item/reagent_containers/glass/urn
 	name = "Urn"
 	desc = "A tall, rounded vase with a base, with a short stem, used for storing the ashes of a cremated person."

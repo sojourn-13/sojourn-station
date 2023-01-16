@@ -133,9 +133,6 @@
 						/obj/item/ammo_magazine/ammobox/rifle_75/hv,
 						/obj/item/ammo_magazine/ammobox/rifle_75_small/hv,
 						/obj/item/ammo_magazine/ammobox/rifle_75_small/scrap,
-						/obj/item/ammo_magazine/ammobox/laser_223,
-						/obj/item/ammo_magazine/ammobox/laser_223/ap,
-						/obj/item/ammo_magazine/ammobox/laser_223/lethal,
 						/obj/item/ammo_magazine/ammobox/kurtz_50/hv,
 						/obj/item/ammo_magazine/ammobox/kurtz_50/laser,
 						/obj/item/ammo_magazine/ammobox/antim, //Unlike the small box holds 15

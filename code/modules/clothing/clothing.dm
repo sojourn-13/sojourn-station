@@ -516,7 +516,6 @@ BLIND     // can't see anything
 	if(!holding)
 		verbs -= /obj/item/clothing/shoes/proc/draw_knife
 
-	update_icon()
 	return
 
 /obj/item/clothing/shoes/AltClick()
@@ -538,7 +537,7 @@ BLIND     // can't see anything
 		if (item_flags != 0)
 			noslip = item_flags
 		module_inside = 1
-		to_chat(user, "You attached no slip sole")
+		to_chat(user, "You attached a no-slip sole to \the [src].")
 		permeability_coefficient = 0.05
 		item_flags = NOSLIP | SILENT
 		origin_tech = list(TECH_ILLEGAL = 3)
@@ -569,7 +568,6 @@ BLIND     // can't see anything
 			holding = I
 			user.visible_message(SPAN_NOTICE("\The [user] shoves \the [I] into \the [src]."))
 			verbs |= /obj/item/clothing/shoes/proc/draw_knife
-			update_icon()
 	else
 		return ..()
 
@@ -583,7 +581,7 @@ BLIND     // can't see anything
 			item_flags = noslip
 		var/obj/item/noslipmodule/NSM = new()
 		usr.put_in_hands(NSM)
-	else to_chat(usr, "You haven't got any accessories in your shoes")
+	else to_chat(usr, "You haven't got any accessories in your shoes.")
 
 /obj/item/clothing/shoes/update_icon()
 	cut_overlays()
@@ -698,6 +696,7 @@ BLIND     // can't see anything
 /obj/item/clothing/under/New()
 	..()
 	item_state_slots[slot_w_uniform_str] = icon_state //TODO: drop or gonna use it?
+	sensor_mode = 3 // All clothing on tracking by default now.
 
 /obj/item/clothing/under/examine(mob/user)
 	..(user)
@@ -748,11 +747,6 @@ BLIND     // can't see anything
 			if(3)
 				for(var/mob/V in viewers(usr, 1))
 					V.show_message("[usr] sets [src.loc]'s sensors to maximum.", 1)
-
-
-/obj/item/clothing/under/rank/New()
-	sensor_mode = 3
-	..()
 
 /obj/item/clothing/under/attackby(var/obj/item/I, var/mob/U)
 	if(I.get_tool_type(usr, list(QUALITY_SCREW_DRIVING), src) && ishuman(U) && !is_sharp(I)) // No setting sensors with knives!

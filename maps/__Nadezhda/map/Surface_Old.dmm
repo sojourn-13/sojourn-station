@@ -104,7 +104,7 @@
 /area/nadezhda/security/armory)
 "aap" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/shotgun/pump/gladstone{
+/obj/item/gun/projectile/shotgun/pump{
 	pixel_y = 4
 	},
 /obj/item/gun/projectile/shotgun/bull,

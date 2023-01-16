@@ -393,7 +393,7 @@ This function restores all organs.
 	if(damagetype != BRUTE && damagetype != BURN)
 		if(damagetype == HALLOSS && !(species && (species.flags & NO_PAIN)))
 			if (!stat && (damage > 25 && prob(20)) || (damage > 50 && prob(60)))
-				emote("scream")
+				emote("painscream")
 
 		..(damage, damagetype, def_zone)
 		sanity.onDamage(damage)

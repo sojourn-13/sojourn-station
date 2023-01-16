@@ -55,6 +55,16 @@
 		icon_state = "bugeyeright"
 		body_parts = list(BP_HEAD)
 
+	oneye
+		name = "Cyclops monoeye"
+		icon_state = "cyclops"
+		body_parts = list(BP_HEAD)
+
+	bigeye
+		name = "Cyclops monoeye (big) - Use with Blank Round Face"
+		icon_state = "cyclops_big"
+		body_parts = list(BP_HEAD)
+
 /*Back Stripe*/
 
 	backstripe
@@ -95,7 +105,7 @@
 		species_allowed = list(SPECIES_TAJ)
 
 	blank_face
-		name = "Blank Round Face (Use With Monster Mouth)"
+		name = "Blank Round Face"
 		icon_state = "blankface"
 		blend = ICON_MULTIPLY
 		body_parts = list(BP_HEAD)
@@ -404,6 +414,16 @@
 		icon_state = "morpheus_optics"
 		body_parts = list(BP_HEAD)
 
+	synth_eyes_l
+		name = "FBP-Synthflesh eye (left)"
+		icon_state = "synth_eye_l"
+		body_parts = list(BP_HEAD)
+
+	synth_eyes_r
+		name = "FBP-Synthflesh eye (right)"
+		icon_state = "synth_eye_r"
+		body_parts = list(BP_HEAD)
+
 	synthskin_human
 		name = "FBP-Human synthskin"
 		icon_state = "synthskinhuman"
@@ -473,7 +493,7 @@
 		body_parts = list(BP_HEAD)
 
 	monster_mouth
-		name = "Monster Mouth"
+		name = "Monster Mouth (Use With Blank Round Face)"
 		icon_state = "monster"
 		body_parts = list(BP_HEAD)
 

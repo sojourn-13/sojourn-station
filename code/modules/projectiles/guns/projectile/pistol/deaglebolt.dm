@@ -14,6 +14,7 @@
 	price_tag = 1750
 	can_dual = TRUE
 	damage_multiplier = 1.4
+	proj_pve_damage_multiplier = 1.4
 	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.3)
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
@@ -35,14 +36,14 @@
 	playsound(src.loc, 'sound/weapons/guns/interact/chaingun_cock.ogg', 100, 1)
 	if(caliber == CAL_50)
 		caliber = CAL_MAGNUM
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to 10mm magnum caliber!"), \
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 10mm magnum caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	else if(caliber == CAL_MAGNUM)
 		caliber = CAL_PISTOL
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to 9mm pistol caliber!"), \
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 9mm pistol caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	else if (caliber == CAL_PISTOL)
 		caliber = CAL_50
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to 12mm heavy pistol caliber!"), \
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 12mm heavy pistol caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	refresh_upgrades()

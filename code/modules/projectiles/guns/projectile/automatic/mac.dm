@@ -70,7 +70,7 @@
 
 	init_firemodes = list(
 		FULL_AUTO_600_NOLOSS,
-		list(mode_name="fuller auto", mode_desc = "Hold down trigger to make anything you point it at have 32 more holes around it", mode_type = /datum/firemode/automatic, fire_delay=0, icon="auto"),
+		list(mode_name="fuller auto", mode_desc = "Hold down trigger to make anything you point it at have 32 more holes around it", mode_type = /datum/firemode/automatic, fire_delay=0, icon="fuller"),
 		)
 
 /obj/item/gun/projectile/automatic/mac/croon/update_icon()

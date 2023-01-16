@@ -1,8 +1,8 @@
 /obj/item/gun/projectile/shotgun/pug
 	name = "\"Pug\" auto-shotgun"
-	desc = "It's magazine-fed shotgun designed for close quarters combat, nicknamed 'Striker' by boarding parties. \
-			Robust and reliable design allows you to swap magazines on the go and dump as many shells at your foes as you want... \
-			if you could manage recoil, of course. Compatible only with special M12 8-round 20mm drum magazines."
+	desc = "This magazine-fed shotgun was designed for close quarters combat, nicknamed 'Striker' by boarding parties. \
+			Its robust and reliable design allows you to swap magazines on the go and dump as many shells at your foes as you want... \
+			if you can manage its recoil, of course. Compatible only with special M12 20-round 20mm drum magazines."
 	icon = 'icons/obj/guns/projectile/pug.dmi'
 	icon_state = "pug"
 	w_class = ITEM_SIZE_BULKY
@@ -10,7 +10,7 @@
 	caliber = CAL_SHOTGUN
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_DRUM //Made for drums, this way it can't be OP despite being literal traitor shotgun
+	mag_well = MAG_WELL_DRUM //Made for drums, this way it can't be OP despite being literal contractor shotgun
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1250
 	fire_sound = 'sound/weapons/guns/fire/riot_shotgun.ogg' //Meatier sound

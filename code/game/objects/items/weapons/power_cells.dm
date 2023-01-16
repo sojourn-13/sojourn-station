@@ -6,6 +6,7 @@
 	icon_state = "b_st"
 	maxcharge = 2000
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3)
+	preloaded_reagents = list("lithium" = 25)
 	price_tag = 200
 
 /obj/item/cell/large/high
@@ -61,6 +62,7 @@
 	desc = "Soteria Institute-brand rechargeable L-standardized power cell. This one being part of the Omega line, making it the be-all-end-all power cell of its type, yet to hit the open market."
 	icon_state = "meb_b_omega"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_GOLD = 6)
+	preloaded_reagents = list("lithium" = 15, "radium" = 10)
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 20000
 	max_chargerate = 0.24
@@ -72,6 +74,7 @@
 	autorecharging = TRUE
 	origin_tech = list(TECH_POWER = 6)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 6)
+	preloaded_reagents = list("radium" = 10, "lithium" = 10, "phosphorus" = 5)
 	maxcharge = 14000
 	price_tag = 400
 
@@ -83,6 +86,7 @@
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_PLATINUM = 3, MATERIAL_URANIUM = 6)
+	preloaded_reagents = list("radium" = 10, "lithium" = 10, "phosphorus" = 5)
 	price_tag = 600
 
 /obj/item/cell/large/excelsior
@@ -135,6 +139,7 @@
 	throw_range = 7
 	maxcharge = 600
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2)
+	preloaded_reagents = list("lithium" = 15)
 	price_tag = 100
 
 /obj/item/cell/medium/depleted
@@ -202,6 +207,7 @@
 	desc = "Soteria Institute branded rechargeable M-standardized power cell. This one being part of the Omega line, making it the be-all-end-all power cell of its type, yet to hit the open market."
 	icon_state = "meb_m_omega"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GOLD = 4)
+	preloaded_reagents = list("lithium" = 10, "radium" = 5)
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 1600
 	max_chargerate = 0.24
@@ -212,6 +218,7 @@
 	icon_state = "meb_m_nu"
 	autorecharging = TRUE
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_URANIUM = 4)
+	preloaded_reagents = list("lithium" = 5, "radium" = 5, "phosphorus" = 5)
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1000
 	price_tag = 200
@@ -224,6 +231,7 @@
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 2, MATERIAL_URANIUM = 4)
+	preloaded_reagents = list("lithium" = 5, "radium" = 5, "phosphorus" = 5)
 	price_tag = 300
 
 /obj/item/cell/medium/excelsior
@@ -262,6 +270,7 @@
 	throw_range = 7
 	maxcharge = 100
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1)
+	preloaded_reagents = list("lithium" = 5)
 	price_tag = 50
 
 /obj/item/cell/small/depleted
@@ -325,6 +334,7 @@
 	desc = "Soteria Institute branded rechargeable S-standardized power cell. This one being part of the Omega line making it the be-all-end-all power cell of its type, yet to hit the open market."
 	icon_state = "meb_s_omega"
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1, MATERIAL_GOLD = 2)
+	preloaded_reagents = list("radium" = 5)
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 500
 	max_chargerate = 0.24
@@ -336,6 +346,7 @@
 	autorecharging = TRUE
 	origin_tech = list(TECH_POWER = 6)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1, MATERIAL_URANIUM = 2)
+	preloaded_reagents = list("radium" = 5)
 	maxcharge = 300
 	price_tag = 100
 
@@ -345,6 +356,7 @@
 	icon_state = "meb_pda"
 	origin_tech = list(TECH_POWER = 4)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_URANIUM = 1)
+	preloaded_reagents = list("radium" = 5)
 	maxcharge = 50
 	// Autorecharge rate is buffed compared to eris, to compensate for the cell's cooldown.
 	autorecharging = TRUE
@@ -360,6 +372,7 @@
 	autorecharging = TRUE
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_PLATINUM = 1, MATERIAL_URANIUM = 2)
+	preloaded_reagents = list("radium" = 5)
 	price_tag = 150
 
 /obj/item/cell/small/excelsior

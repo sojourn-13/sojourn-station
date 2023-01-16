@@ -6,10 +6,10 @@
 		LANGUAGE_MONKEY = 5,			//hehe le monkey
 		LANGUAGE_LATIN = 5,
 		LANGUAGE_JANA = 5,
-		LANGUAGE_ESPERANTO = 10,
-		LANGUAGE_GERMAN = 20,
+		LANGUAGE_ROMANA = 10,
+		LANGUAGE_EURO = 20,
 		LANGUAGE_CYRILLIC = 5,
-		LANGUAGE_SERBIAN = 5,
+		LANGUAGE_ILLYRIAN = 5,
 		LANGUAGE_KRIOSAN = 10
 	)
 	flags = RESTRICTED
@@ -92,12 +92,15 @@
 
 /datum/language/russian
 	name = LANGUAGE_CYRILLIC
-	desc = "Ancient language of Russian colonists, rusted with time and bastardized with technical terms in everyday use."
-	colour = "russian"
+	desc = "A language derived from Earth's Eastern European and Central Asian regions. Commonly spoken in frontier colonies, it also finds home on many agricultural worlds."
+	colour = "slavic"
 	key = "r"
+	speech_verb = list("spouts")
+	ask_verb = list("crudely asks")
+	exclaim_verb = list("blurts out")
 	partial_understanding = list(
-		LANGUAGE_SERBIAN = 60,
-		LANGUAGE_ESPERANTO = 20
+		LANGUAGE_ILLYRIAN = 60,
+		LANGUAGE_ROMANA = 20
 	)
 	space_chance = 80
 	syllables = list("zhena", "reb", "kot", "tvoy", "vodka", "blyad", "verbovka", "ponimat", "zhit", "kley", "sto", "yat", "si", "det", \
@@ -114,5 +117,5 @@
 					 "portal", "systema", "electronika", "nigilizm", "anarhizm", "communistu", "tupuye", "sopla", "obshivka", "obtekaemost", \
 					 "dinamica", "statica", "organizacuya", "yeyenet", "radio", "peredacha", "priem", "slushno", "chastota", "gerts", "stantiya", \
 					 "suda", "huyar", "odin", "dva", "tri", "holod", "granata", "ne", "re", "ru", "korabl")
-	shorthand = "RU"
+	shorthand = "SL"
 

@@ -97,7 +97,6 @@
 //	update_wear_icon()
 
 
-
 /obj/item/gun/projectile/automatic/lmg/pk
 	name = "Pulemyot Kalashnikova"
 	desc = "\"Kalashnikov's Machinegun\", a well-made copy of what many consider to be the best traditional machinegun ever designed."
@@ -105,34 +104,11 @@
 	icon_base = "pk"
 	icon_state = "pk_closed"
 	item_state = "pk_closed"
-	damage_multiplier = 0.9
+	damage_multiplier = 1.0
 	init_firemodes = list(
 		FULL_AUTO_300,
 		BURST_5_ROUND,
 		BURST_8_ROUND
-		)
-
-//Typical LMG/SAW, use this for the high end of "normal."
-/obj/item/gun/projectile/automatic/lmg/saw
-	name = "\"Pegasus\" light machinegun"
-	desc = "A common LMG chambered in 6.5mm Carbine, accepting either boxes or standard magazines, though this calls into question some reliability issues. \
-	This particular example bears a winged horse in laurels and a \"Pegasus\" nameplate, all other markings have been filed off."
-	icon = 'icons/obj/guns/projectile/lmg.dmi'
-	icon_base = "saw"
-	icon_state = "saw_closed"
-	item_state = "saw_closed"
-	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_STANMAG
-	caliber = CAL_LRIFLE
-	penetration_multiplier = 0.85
-	damage_multiplier = 1.0
-	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10)
-	price_tag = 1500
-	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
-	init_recoil = LMG_RECOIL(0.7)
-
-	init_firemodes = list(
-		FULL_AUTO_600,
-		BURST_5_ROUND,
 		)
 
 //This should be in its own file...

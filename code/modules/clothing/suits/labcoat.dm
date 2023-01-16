@@ -94,3 +94,13 @@
 		bio = 0,
 		rad = 0
 	)
+
+/obj/item/clothing/suit/storage/toggle/labcoat/purple
+	name = "purple labcoat"
+	desc = "A normal labcoat with purple highlights. It seems to have a patch removed from its back, the company it belonged to long lost to time."
+	icon_state = "purple_labcoat"
+	item_state = "purple_labcoat"
+	icon_open = "purple_labcoat_open"
+	icon_closed = "purple_labcoat"
+	icon_drape = null
+

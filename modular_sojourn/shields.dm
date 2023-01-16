@@ -1,6 +1,6 @@
 /obj/item/shield/riot/bastion
 	name = "Deployable: Bastion Shield"
-	desc = "A Project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as surprisingly successful idea, both light enough kit to carry out into a combat zone. A true marval of Guild, SI and Blackshield team work to pull off such a task. When deployed can even brace a gun on it."
+	desc = "A project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as a surprisingly successful one, both surprisingly light and insurmountably sturdy enough to be carried out into the most dangerous combat zones. A true marvel of Guild, SI and Blackshield joint effort. When deployed, you can even brace a gun on it."
 	icon = 'icons/obj/bastion.dmi'
 	icon_state = "bastion"
 	item_state = "bastion"
@@ -25,8 +25,8 @@
 
 /obj/item/bastion_broken
 	name = "Broken: Bastion Shield"
-	desc = "Once project inspired by an idea for a true deployable barrier, once the \"Bastion Shield\" was surprisingly successful idea, both light enough kit to carry out into a combat zone. Once a marval of Guild, SI and Blackshield team work to pull off such a task. \
-	Now a broken shell of its former self, maybe it still has scrap inside..."
+	desc = "Once a project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as a surprisingly successful one, both surprisingly light and insurmountably sturdy enough to be carried out into the most dangerous combat zones. A true marvel of Guild, SI and Blackshield joint effort. \
+	Now a broken shell of its former self, maybe it can still be scrapped for what it's worth..."
 	icon = 'icons/obj/bastion.dmi'
 	icon_state = "bastion_broken"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 4)
@@ -47,7 +47,7 @@
 
 /obj/structure/shield_deployed
 	name = "Bastion Barrier"
-	desc = "A Deployed Bastion shield, ready to be used as a combat barrier for gunfights, can brace guns."
+	desc = "A Deployed Bastion shield, ready to be used as a combat barrier for gunfights. Guns can be braced on it."
 	icon = 'icons/obj/bastion.dmi'
 	icon_state = "barrier"
 	density = TRUE

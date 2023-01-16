@@ -232,7 +232,7 @@
 				if(bottlesprite == "potion")
 					P.filling_states = "10;20;40;50;60"
 				if(bottlesprite == "tincture")
-					P.filling_states = "3;5;10;15;25;27;30;35;40;45;55;60"
+					P.filling_states = "3;5;10;15;20;25;27;30;35;40;45;50;55;60"
 				P.label_icon_state = "label_[bottlesprite]"
 				P.matter = list()
 				reagents.trans_to_obj(P,60)

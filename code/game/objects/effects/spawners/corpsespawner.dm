@@ -7,23 +7,28 @@
 /obj/landmark/corpse
 	name = "Unknown"
 	icon_state = "player-black"
-	var/mobname = "Unknown"  //Unused now but it'd fuck up maps to remove it now
-	var/corpseuniform = null //Set this to an object path to have the slot filled with said object on the corpse.
-	var/corpsesuit = null
-	var/corpseshoes = null
-	var/corpsegloves = null
-	var/corpseradio = null
-	var/corpseglasses = null
-	var/corpsemask = null
-	var/corpsehelmet = null
-	var/corpsebelt = null
-	var/corpsepocket1 = null
-	var/corpsepocket2 = null
-	var/corpseback = null
-	var/corpseid = 0     //Just set to 1 if you want them to have an ID
-	var/corpseidjob = null // Needs to be in quotes, such as "Clown" or "Chef." This just determines what the ID reads as, not their access
-	var/corpseidaccess = null //This is for access. See access.dm for which jobs give what access. Again, put in quotes. Use "Captain" if you want it to be all access.
-	var/species = "Human"
+	var/mobname
+	var/skintone				// Needs to be a negative number
+	var/min_age
+	var/max_age
+	//var/gender				// Built-in byond variable
+	var/corpseuniform			// Set this to an object path to have the slot filled with said object on the corpse.
+	var/corpsesuit
+	var/corpseshoes
+	var/corpsegloves
+	var/corpseradio
+	var/corpseglasses
+	var/corpsemask
+	var/corpsehelmet
+	var/corpsebelt
+	var/corpsepocket1
+	var/corpsepocket2
+	var/corpseback
+	var/corpseid = 0    		// Just set to 1 if you want them to have an ID
+	var/corpseidjob 			// Needs to be in quotes, such as "Clown" or "Chef." This just determines what the ID reads as, not their access
+	var/corpseidaccess 			// This is for access. See access.dm for which jobs give what access. Again, put in quotes. Use "Captain" if you want it to be all access.
+	var/species = SPECIES_HUMAN
+	var/injury_level = 0		// Number of times to inflict a random injury on the mob
 
 /obj/landmark/corpse/Initialize()
 	..()
@@ -33,36 +38,70 @@
 /obj/landmark/corpse/proc/createCorpse() //Creates a mob and checks for gear in each slot before attempting to equip it.
 	var/mob/living/carbon/human/M = new /mob/living/carbon/human (src.loc)
 	M.set_species(species)
-	M.real_name = src.name
-	M.death(1) //Kills the new mob
-	if(src.corpseuniform)
-		M.equip_to_slot_or_del(new src.corpseuniform(M), slot_w_uniform)
-	if(src.corpsesuit)
-		M.equip_to_slot_or_del(new src.corpsesuit(M), slot_wear_suit)
-	if(src.corpseshoes)
-		M.equip_to_slot_or_del(new src.corpseshoes(M), slot_shoes)
-	if(src.corpsegloves)
-		M.equip_to_slot_or_del(new src.corpsegloves(M), slot_gloves)
-	if(src.corpseradio)
-		M.equip_to_slot_or_del(new src.corpseradio(M), slot_l_ear)
-	if(src.corpseglasses)
-		M.equip_to_slot_or_del(new src.corpseglasses(M), slot_glasses)
-	if(src.corpsemask)
-		M.equip_to_slot_or_del(new src.corpsemask(M), slot_wear_mask)
-	if(src.corpsehelmet)
-		M.equip_to_slot_or_del(new src.corpsehelmet(M), slot_head)
-	if(src.corpsebelt)
-		M.equip_to_slot_or_del(new src.corpsebelt(M), slot_belt)
-	if(src.corpsepocket1)
-		M.equip_to_slot_or_del(new src.corpsepocket1(M), slot_r_store)
-	if(src.corpsepocket2)
-		M.equip_to_slot_or_del(new src.corpsepocket2(M), slot_l_store)
-	if(src.corpseback)
-		M.equip_to_slot_or_del(new src.corpseback(M), slot_back)
 
-	var/datum/job/jobdatum = corpseidjob && SSjob.GetJob(corpseidjob)
+	if(species)
+		M.reset_hair()
 
-	if(src.corpseid)
+	for(var/count in 1 to injury_level)
+		M.take_overall_damage(30,10)
+
+	// Kill the mob
+	M.death(FALSE)
+	for(var/obj/item/organ/O in M.internal_organs)
+		O.die()
+	STOP_PROCESSING(SSmobs, src)
+	M.pulse = PULSE_NONE			// Because killing a mob and its organs doesn't stop its pulse
+	GLOB.human_mob_list -= M
+
+	gender = pick(MALE, FEMALE)
+	M.gender = gender
+
+	if(mobname)
+		M.real_name = mobname
+	else
+		M.real_name = M.species.get_random_name(gender)
+
+	if(skintone)
+		M.change_skin_tone(skintone)
+	else
+		M.change_skin_tone(rand(-200,-15))
+
+	if(min_age && max_age)
+		M.age = rand(min_age, max_age)
+	else if(M.species.min_age && M.species.max_age)
+		M.age = rand(M.species.min_age, M.species.max_age)
+
+	if(corpseuniform)
+		M.equip_to_slot_or_del(new corpseuniform(M), slot_w_uniform)
+	if(corpsesuit)
+		M.equip_to_slot_or_del(new corpsesuit(M), slot_wear_suit)
+	if(corpseshoes)
+		M.equip_to_slot_or_del(new corpseshoes(M), slot_shoes)
+	if(corpsegloves)
+		M.equip_to_slot_or_del(new corpsegloves(M), slot_gloves)
+	if(corpseradio)
+		M.equip_to_slot_or_del(new corpseradio(M), slot_l_ear)
+	if(corpseglasses)
+		M.equip_to_slot_or_del(new corpseglasses(M), slot_glasses)
+	if(corpsemask)
+		M.equip_to_slot_or_del(new corpsemask(M), slot_wear_mask)
+	if(corpsehelmet)
+		M.equip_to_slot_or_del(new corpsehelmet(M), slot_head)
+	if(corpsebelt)
+		M.equip_to_slot_or_del(new corpsebelt(M), slot_belt)
+	if(corpsepocket1)
+		M.equip_to_slot_or_del(new corpsepocket1(M), slot_r_store)
+	if(corpsepocket2)
+		M.equip_to_slot_or_del(new corpsepocket2(M), slot_l_store)
+	if(corpseback)
+		M.equip_to_slot_or_del(new corpseback(M), slot_back)
+
+	var/datum/job/jobdatum = corpseidjob ? SSjob.GetJob(corpseidjob) : null
+	if(jobdatum)
+		jobdatum.equip(M)
+
+	if(corpseid)
+		var/datum/money_account/MA = create_account(M.real_name, rand(500,2000))
 		var/datum/job/job_access = jobdatum
 		if(corpseidaccess)
 			job_access = SSjob.GetJob(corpseidaccess)
@@ -71,10 +110,181 @@
 			W.access = job_access.get_access()
 		else
 			W.access = list()
-		W.assignment = corpseidjob
+		W.assignment = pick(corpseidjob)
+		W.associated_account_number = MA.account_number
 		M.set_id_info(W)
 		M.equip_to_slot_or_del(W, slot_wear_id)
 
+// Eris corpses
+/obj/landmark/corpse/hobo
+	name = "Hobo"
+	corpseuniform = /obj/item/clothing/under/turtleneck
+	corpsesuit = /obj/item/clothing/suit/storage/toggle/leather
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpseradio = /obj/item/device/radio/headset
+	corpsemask = /obj/item/clothing/mask/smokable/cigarette/cigar/cohiba
+	corpsepocket1 = /obj/item/modular_computer/pda
+	corpsepocket2 = /obj/item/oddity/common/old_id
+	corpseid = TRUE
+	corpseidjob = list("Therapist", "Private Security", "Master Chef", "Researcher", "Market Analyst", "Colonist")
+	injury_level = 4
+
+/obj/landmark/corpse/excelsior
+	name = "Unknown"
+	corpseuniform = /obj/item/clothing/under/excelsior
+	corpsesuit = /obj/item/clothing/suit/space/void/excelsior
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpsegloves = /obj/item/clothing/gloves
+	injury_level = 8
+
+/obj/landmark/corpse/one_star
+	name = "twisted skeletal remains"
+	species = SPECIES_SKELETON
+	min_age = 359	// OS disappeared in 2291, CEV Eris launched 2642. This means the skeleton of a child of 8 years would be 359 years old.
+	max_age = 499	// Oldest skeleton is of a person of 140 years. Implies OS managed to extend life expectancy via technology. Revise according to lore.
+	corpseuniform = /obj/item/clothing/under/os_jumpsuit
+	corpsesuit = /obj/item/clothing/suit/greatcoat/os
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpseradio = /obj/item/device/radio/headset
+	corpsehelmet = /obj/item/clothing/head/os_cap
+	//corpseid = TRUE
+	//corpseidjob = list("Therapist", "Private Security", "Master Chef", "Researcher", "Market Analyst", "Colonist")
+
+/obj/landmark/corpse/one_star/void
+	name = "warped skeletal remains"
+	corpseuniform = /obj/item/clothing/under/os_jumpsuit
+	corpsesuit = /obj/item/clothing/suit/space/os	// Helmet won't spawn pre-equipped, but it's there
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpseradio = /obj/item/device/radio/headset
+	//corpseid = TRUE
+	//corpseidjob = list("Therapist", "Private Security", "Master Chef", "Researcher", "Market Analyst", "Colonist")
+
+// Legacy corpses
+/obj/landmark/corpse/syndicatesoldier
+	name = "Older Syndicate Operative"
+	corpseuniform = /obj/item/clothing/under/syndicate
+	corpsesuit = /obj/item/clothing/suit/armor/vest
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpsegloves = /obj/item/clothing/gloves
+	corpseradio = /obj/item/device/radio/headset
+	corpsemask = /obj/item/clothing/mask/gas
+	corpsehelmet = /obj/item/clothing/head/armor/helmet
+	corpseback = /obj/item/storage/backpack
+	corpseid = 1
+	corpseidjob = "Operative"
+	corpseidaccess = "Syndicate"
+
+
+
+/obj/landmark/corpse/syndicatecommando
+	name = "Older Syndicate Commando"
+	corpseuniform = /obj/item/clothing/under/syndicate
+	corpsesuit = /obj/item/clothing/suit/space/void/merc
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpsegloves = /obj/item/clothing/gloves
+	corpseradio = /obj/item/device/radio/headset
+	corpsemask = /obj/item/clothing/mask/gas
+	corpseback = /obj/item/tank/jetpack/oxygen
+	corpsepocket1 = /obj/item/tank/emergency_oxygen
+	corpseid = 1
+	corpseidjob = "Operative"
+	corpseidaccess = "Syndicate"
+
+/obj/landmark/corpse/hobo
+	name = "Hobo"
+	corpseuniform = /obj/item/clothing/under/rank/assistant
+
+///////////Civilians//////////////////////
+
+/obj/landmark/corpse/chef
+	name = "Chef"
+	corpseuniform = /obj/item/clothing/under/rank/chef
+	corpsesuit = /obj/item/clothing/suit/rank/chef
+	corpseshoes = /obj/item/clothing/shoes/reinforced
+	corpseradio = /obj/item/device/radio/headset
+	corpsehelmet = /obj/item/clothing/head/rank/chef
+	corpseid = 1
+	corpseidjob = "Chef"
+
+/obj/landmark/corpse/doctor
+	name = "Medical doctor"
+	corpseuniform = /obj/item/clothing/under/rank/medical
+	corpseshoes = /obj/item/clothing/shoes/reinforced
+	corpseradio = /obj/item/device/radio/headset
+	corpsepocket1 = /obj/item/device/lighting/toggleable/flashlight/pen
+	corpsebelt = /obj/item/storage/belt/medical/
+	corpseid = 1
+	corpseidjob = "Medical doctor"
+
+/obj/landmark/corpse/engineer
+	name = "Technomancer"
+	corpseid = 1
+	corpseidjob = "Technomancer"
+
+/obj/landmark/corpse/engineer/rig
+	corpsesuit = /obj/item/clothing/suit/space/void/engineering
+	corpsemask = /obj/item/clothing/mask/breath
+
+/obj/landmark/corpse/scientist
+	name = "Scientist"
+	corpseuniform = /obj/item/clothing/under/rank/scientist
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpseradio = /obj/item/device/radio/headset
+	corpsesuit = /obj/item/clothing/suit/storage/toggle/labcoat/science
+	corpseid = 1
+	corpseidjob = "Scientist"
+
+/obj/landmark/corpse/miner
+	name = "Guild Miner"
+	corpseuniform = /obj/item/clothing/under/rank/miner
+	corpseshoes = /obj/item/clothing/shoes/color/black
+	corpseradio = /obj/item/device/radio/headset/headset_cargo
+	corpseid = 1
+	corpseidjob = "Guild Miner"
+
+/obj/landmark/corpse/miner/rig
+	corpsesuit = /obj/item/clothing/suit/space/void/mining
+	corpsemask = /obj/item/clothing/mask/breath
+
+/obj/landmark/corpse/security
+	name = "Security Officer"
+	corpseuniform = /obj/item/clothing/under/rank/security
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpseradio = /obj/item/device/radio/headset
+	corpsesuit = /obj/item/clothing/suit/armor/vest/ironhammer
+	corpsehelmet = /obj/item/clothing/head/helmet
+
+/obj/landmark/corpse/security/prisonguard
+	name = "Prison Guard"
+	corpsehelmet = null
+
+/////////////////Officers//////////////////////
+
+/obj/landmark/corpse/bridgeofficer
+	name = "Bridge Officer"
+	corpseradio = /obj/item/device/radio/headset
+	corpseuniform = /obj/item/clothing/under/rank/first_officer
+	corpsesuit = /obj/item/clothing/suit/armor/bulletproof
+	corpseshoes = /obj/item/clothing/shoes/color/black
+	corpseglasses = /obj/item/clothing/glasses/sunglasses
+	corpseid = 1
+	corpseidjob = "Bridge Officer"
+	// corpseidaccess = "Captain"  // No reason for them to have all access on Eris
+
+/obj/landmark/corpse/commander
+	name = "Commander"
+	corpseuniform = /obj/item/clothing/under/rank/first_officer
+	corpsesuit = /obj/item/clothing/suit/armor/bulletproof
+	corpseradio = /obj/item/device/radio/headset/heads/captain
+	corpseglasses = /obj/item/clothing/glasses/eyepatch
+	corpsemask = /obj/item/clothing/mask/smokable/cigarette/cigar/cohiba
+	corpsehelmet = /obj/item/clothing/head/centhat
+	corpsegloves = /obj/item/clothing/gloves
+	corpseshoes = /obj/item/clothing/shoes/jackboots
+	corpsepocket1 = /obj/item/flame/lighter/zippo
+	corpseid = 1
+	corpseidjob = "Commander"
+	// corpseidaccess = "Captain"  // No reason for them to have all access on Eris
 
 
 /obj/landmark/corpse/generic/clown

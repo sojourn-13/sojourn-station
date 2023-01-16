@@ -916,7 +916,7 @@
 			pixel_x = location.pixel_x
 			pixel_y = location.pixel_y
 
-			if(!bumped && !isturf(original))
+			if(!bumped && !QDELETED(original) && !isturf(original))
 				if(loc == get_turf(original))
 					if(!(original in permutated))
 						if(Bump(original))
@@ -1117,7 +1117,7 @@
 			damage_types -= dmg_type
 	if(!damage_types.len)
 		on_impact(A)
-		qdel(A)
+		qdel(src)
 
 	return dmg_total ? (dmg_remaining / dmg_total) : 0
 

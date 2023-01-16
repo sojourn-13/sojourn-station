@@ -44,9 +44,17 @@
 
 /obj/item/clothing/under/rank/cargotech
 	name = "lonestar cargo uniform"
-	desc = "A dull Lonestar turtleneck complete with sturdy work jeans."
+	desc = "A grey and orange Lonestar jumpsuit to fit Lonestar regulations."
 	icon_state = "cargotech"
-	item_state = "lb_suit"
+	item_state = "miner"
+
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
+/obj/item/clothing/under/rank/cargoclerk
+	name = "lonestar office uniform"
+	desc = "A grey and orange Lonestar suit to fit Lonestar regulations."
+	icon_state = "cargoclerk"
+	item_state = "miner"
 
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
@@ -106,6 +114,12 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/under/rank/church/robe
+	desc = "a robe that smells like incense."
+	name = "church robe"
+	icon_state = "churchgrobe"
+	item_state = "churchgrobe"
+
 /obj/item/clothing/under/rank/chef
 	desc = "A pleasant yet practical suit for professional kitchen staff."
 	name = "chef's uniform"
@@ -159,8 +173,8 @@
 	item_state = "artist"
 
 /obj/item/clothing/under/rank/miner
-	desc = "A snappy Lonestar jumpsuit complete with sturdy mining overalls."
-	name = "lonestar miner's jumpsuit"
+	desc = "A snappy Lonestar jumpsuit to handle the harshness of the mines."
+	name = "lonestar miner uniform"
 	icon_state = "miner"
 	item_state = "miner"
 

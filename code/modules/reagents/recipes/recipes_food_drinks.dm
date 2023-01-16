@@ -801,6 +801,12 @@
 	required_reagents = list("manhattan" = 1, "fernet" = 1)
 	result_amount = 2
 
+/datum/chemical_reaction/drinks/jagerbomb
+	result = "jagerbomb"
+	required_reagents = list("fernet" = 1, "energy_drink_monster" = 1)
+	result_amount = 2
+	mix_message = "The bitter shot falls into the energy drink with a plop!"
+
 /datum/chemical_reaction/drinks/antidepressant
 	result = "antidepressant"
 	required_reagents = list("space_up" = 10, "triplecitrus" = 20, "sugarrush" = 10, "ice" = 5, "cola" = 10, "pineapplejuice" = 10)

@@ -713,7 +713,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/soap/syndie,
 /obj/machinery/light/small,
-/obj/item/implanter/adrenalin,
+/obj/item/implanter/adrenaline,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cQ" = (
@@ -11766,9 +11766,6 @@
 /obj/random/powercell/low_chance,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
-"Va" = (
-/turf/simulated/floor/rock/manmade/concrete,
-/area/asteroid/rogue)
 "Vb" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha2,
@@ -11913,7 +11910,7 @@
 /obj/random/common_oddities/low_chance,
 /obj/item/stock_parts/matter_bin/one_star,
 /obj/item/tool/weldingtool/onestar,
-/obj/item/tool/onestar_multitool,
+/obj/item/tool/multitool/advanced/onestar,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
 "VF" = (
@@ -12909,6 +12906,9 @@
 /obj/item/oddity/common/old_newspaper,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"ZX" = (
+/turf/simulated/floor/rock/manmade/concrete,
+/area/asteroid/rogue)
 "ZZ" = (
 /obj/structure/flora/small/trailrockb2,
 /obj/machinery/light/floor,
@@ -22486,7 +22486,7 @@ Km
 Kl
 Kl
 ER
-ad
+ER
 ER
 ER
 ER
@@ -44395,7 +44395,7 @@ aV
 aV
 aV
 aV
-Va
+ZX
 aV
 aV
 aV

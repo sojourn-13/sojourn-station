@@ -1,9 +1,9 @@
 /obj/item/device/ano_scanner
 	name = "Alden-Saraspova counter"
 	desc = "Aids in triangulation of exotic particles."
-	icon = 'icons/obj/device.dmi'
+	icon = 'icons/obj/xenoarchaeology.dmi'
 	icon_state = "ano_scanner"
-	item_state = "lampgreen"
+	item_state = "xenoarch_scanner"
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5)

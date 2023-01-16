@@ -26,6 +26,7 @@
 		FORM_BSSYNTH,
 		FORM_CHURCHSYNTH,
 		FORM_NASHEF,
+		FORM_MYCUS,
 		FORM_UNBRANDED
 		)
 
@@ -740,7 +741,7 @@
 
 /datum/sprite_accessory/hair/vriska_s
 	name = "Vriska"
-	icon_state = "vriska_s"
+	icon_state = "vriska"
 
 /datum/sprite_accessory/hair/undercut
 	name = "Undercut"
@@ -972,7 +973,7 @@
 /datum/sprite_accessory/hair/marqua_long
 	name = "Long Headtails"
 	icon_state = "marqua_hair_verylong_s"
-	
+
 /datum/sprite_accessory/hair/split
 	name = "Split Headtails"
 	icon_state = "marqua_hair_split_s"
@@ -992,23 +993,23 @@
 /datum/sprite_accessory/hair/marqua_scarfverylong
 	name = "Scrarf Long Headtails"
 	icon_state = "marqua_hair_scarfverylong_s"
-	
+
 /datum/sprite_accessory/hair/marqua_wavylong
 	name = "Wavy Long Headtails"
 	icon_state = "marqua_hair_wavylong_s"
-	
+
 /datum/sprite_accessory/hair/marqua_wavyverylong
 	name = "Wavy Very Long Headtails"
 	icon_state = "marqua_hair_wavyverylong_s"
-	
+
 /datum/sprite_accessory/hair/marqua_pullback
 	name = "Pullback Headtails"
 	icon_state = "marqua_hair_pullback_s"
-	
+
 /datum/sprite_accessory/hair/marqua_pullbacklong
 	name = "Pullback Long Headtails"
 	icon_state = "marqua_hair_pullbacklong_s"
-	
+
 /datum/sprite_accessory/hair/marqua_pullbackverylong
 	name = "Pullback Very Long Headtails"
 	icon_state = "marqua_hair_pullbackverylong_s"
