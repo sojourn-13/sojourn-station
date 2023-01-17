@@ -206,10 +206,8 @@
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "jr" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/multi_tile/metal/mait{
-	dir = 1;
-	icon_state = "door_closed";
-	name = "Lost Outpost"
+/obj/machinery/door/airlock/maintenance_interior{
+	name = "Airlock"
 	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
@@ -305,12 +303,10 @@
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "pj" = (
-/obj/machinery/door/airlock/multi_tile/metal/mait{
-	dir = 2;
-	icon_state = "door_closed";
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/maintenance_interior{
 	name = "Airlock"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "pv" = (
@@ -713,11 +709,6 @@
 /obj/landmark/storyevent/midgame_stash_spawn,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
-"KC" = (
-/obj/machinery/door/airlock/multi_tile/metal/mait,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techmaint_perforated,
-/area/nadezhda/dungeon/outside/abandoned_outpost)
 "KV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/mob/roomba/any,
@@ -731,10 +722,6 @@
 /obj/structure/flora/small/grassa1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
-"LP" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techmaint_perforated,
-/area/nadezhda/dungeon/outside/abandoned_outpost)
 "LQ" = (
 /obj/structure/table/woodentable,
 /obj/random/rations/low_chance,
@@ -912,13 +899,6 @@
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
-"Xs" = (
-/obj/machinery/door/airlock/multi_tile/metal/mait{
-	name = "Lost Outpost"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techmaint_perforated,
-/area/nadezhda/dungeon/outside/abandoned_outpost)
 "Xz" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/dirt,
@@ -944,6 +924,15 @@
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "Zh" = (
 /obj/machinery/power/port_gen/os_generator,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
+	},
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "Zi" = (
@@ -970,13 +959,6 @@
 /obj/random/gun_energy_cheap/low_chance,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/tool/advanced/onestar,
-/turf/simulated/floor/tiled/techmaint_perforated,
-/area/nadezhda/dungeon/outside/abandoned_outpost)
-"ZS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/multi_tile/metal/mait{
-	name = "Lost Outpost"
-	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 
@@ -1093,7 +1075,7 @@ Px
 Px
 Px
 Gx
-LP
+jr
 jr
 Gx
 Gx
@@ -1257,7 +1239,7 @@ Cj
 my
 KV
 RW
-KC
+jr
 qn
 Ko
 dp
@@ -1289,7 +1271,7 @@ vg
 Ko
 Ko
 Ko
-LP
+jr
 Ko
 pz
 pz
@@ -1377,7 +1359,7 @@ Ag
 Ag
 Ag
 Ag
-Xs
+jr
 Ko
 qn
 RW
@@ -1409,7 +1391,7 @@ Ag
 GB
 Ag
 Ag
-LP
+jr
 Ko
 Ko
 Ko
@@ -1445,7 +1427,7 @@ Gx
 Gx
 aM
 Gx
-Ko
+pj
 pj
 Gx
 Gx
@@ -1473,7 +1455,7 @@ Ag
 Ag
 Ag
 Ag
-ZS
+jr
 Ko
 Ko
 IE
@@ -1505,7 +1487,7 @@ Ag
 Ag
 Ag
 Ag
-LP
+jr
 Ko
 RW
 qn
