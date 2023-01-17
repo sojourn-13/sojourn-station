@@ -1,0 +1,1955 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"av" = (
+/obj/machinery/mech_recharger,
+/obj/random/mecha/low_chance,
+/turf/simulated/floor/tiled/techmaint_panels,
+/area/space)
+"bd" = (
+/obj/structure/closet/onestar/tier3/medical,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"bf" = (
+/obj/machinery/vending/cigarette,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"bs" = (
+/obj/structure/table/rack/shelf,
+/obj/random/gun_energy_cheap/low_chance,
+/obj/random/gun_energy_cheap/low_chance,
+/obj/random/gun_energy_cheap/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/tool/advanced/onestar,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"bY" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"cg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/roomba/range,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"cm" = (
+/obj/machinery/door/airlock/multi_tile/metal/mait{
+	dir = 2;
+	icon_state = "door_closed";
+	name = "Airlock"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"cB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/generic,
+/obj/item/trash/material/device,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"cC" = (
+/obj/structure/table/rack/shelf,
+/obj/random/gun_cheap/low_chance,
+/obj/random/gun_cheap/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/pack/tech_loot/onestar,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"cT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"cZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/onestar,
+/obj/random/material_resources,
+/obj/random/material_resources,
+/obj/random/material_resources,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"dr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/rods/random,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"dt" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"dw" = (
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"dF" = (
+/obj/structure/table/rack/shelf,
+/obj/random/ammo/low_chance,
+/obj/random/ammo/shotgun/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"dJ" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"dK" = (
+/obj/structure/flora/small/rock5,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"ea" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/closet/onestar/tier3/mineral,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"eH" = (
+/obj/random/scrap/moderate_weighted/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"eI" = (
+/obj/structure/table/rack/shelf,
+/obj/random/toolbox/low_chance,
+/obj/random/toolbox/low_chance,
+/obj/random/toolbox/low_chance,
+/turf/simulated/floor/tiled/techmaint_panels,
+/area/space)
+"eY" = (
+/obj/random/powercell/low_chance,
+/obj/random/powercell/low_chance,
+/obj/random/medical_lowcost/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/onestar,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"fo" = (
+/obj/structure/flora/ausbushes/pointybush,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"fr" = (
+/obj/machinery/recharger,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/obj/structure/table/onestar,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
+"fT" = (
+/obj/random/pack/tech_loot/onestar,
+/obj/structure/table/onestar,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
+"gE" = (
+/obj/structure/flora/ausbushes/grassybush,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"hi" = (
+/obj/machinery/power/port_gen/pacman/diesel,
+/turf/simulated/floor/tiled/techmaint_panels,
+/area/space)
+"ht" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/roomba/range,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"hu" = (
+/obj/random/turret/os,
+/turf/simulated/floor/asteroid/dirt,
+/area/space)
+"hK" = (
+/obj/structure/table/rack/shelf,
+/obj/random/ammo/low_chance,
+/obj/random/ammo/low_chance,
+/obj/random/ammo/shotgun/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"ih" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"ij" = (
+/obj/structure/table/rack/shelf,
+/obj/random/material_rare/low_chance,
+/obj/random/material_rare/low_chance,
+/obj/random/material_rare/low_chance,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
+"il" = (
+/obj/random/scrap/sparse_even/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"iF" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"iR" = (
+/obj/structure/table/woodentable,
+/obj/random/rations/low_chance,
+/obj/random/junkfood/low_chance,
+/obj/random/junkfood/low_chance,
+/obj/random/junkfood/low_chance,
+/obj/random/booze/low_chance,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"jg" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/dirt,
+/area/space)
+"jw" = (
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"jA" = (
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"jM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/generic,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"kJ" = (
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"lV" = (
+/obj/structure/window/basic,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/onestar,
+/obj/random/lathe_disk/advanced/onestar/low_chance,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"lX" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"lY" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/dirt,
+/area/space)
+"mh" = (
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/onestar,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"mj" = (
+/obj/structure/table/woodentable,
+/obj/random/rations/low_chance,
+/obj/random/rations/low_chance,
+/obj/random/junkfood/low_chance,
+/obj/random/junkfood/low_chance,
+/obj/random/booze/low_chance,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"ms" = (
+/obj/structure/table/onestar,
+/obj/random/material,
+/obj/random/material,
+/obj/random/material,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"mA" = (
+/obj/structure/table/onestar,
+/obj/random/lathe_disk/advanced/onestar/low_chance,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"mD" = (
+/obj/structure/table/rack/shelf,
+/obj/random/ammo_lowcost/low_chance,
+/obj/random/ammo_lowcost/low_chance,
+/obj/random/ammo/shotgun/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"mY" = (
+/obj/structure/window/basic,
+/obj/structure/closet/crate/bin,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/material/metal,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"no" = (
+/obj/random/junk/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"nu" = (
+/obj/structure/table/rack/shelf,
+/obj/random/gun_energy_cheap/low_chance,
+/obj/random/gun_energy_cheap/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/tool/advanced/onestar,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"nw" = (
+/obj/structure/table/woodentable,
+/obj/machinery/microwave,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"nK" = (
+/obj/random/powercell/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/onestar,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"oD" = (
+/obj/structure/flora/small/grassb5,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"oL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/landmark/storyevent/midgame_stash_spawn,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"pP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"pR" = (
+/obj/random/scrap/moderate_weighted/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"qk" = (
+/obj/random/scrap/moderate_weighted,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"qn" = (
+/obj/structure/flora/small/busha3,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"qu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/frame/apc,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"qx" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/cafe,
+/area/space)
+"ra" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"rr" = (
+/obj/structure/bed,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"rN" = (
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/techmaint_panels,
+/area/space)
+"sg" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/asteroid/dirt,
+/area/space)
+"tT" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"uc" = (
+/obj/machinery/recharger,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/onestar,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
+"uk" = (
+/obj/structure/window/basic{
+	dir = 4;
+	icon_state = "window"
+	},
+/obj/random/scrap/sparse_even/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"uq" = (
+/obj/machinery/vending/snack,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"ut" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/landmark/storyevent/midgame_stash_spawn,
+/turf/simulated/floor/tiled/cafe,
+/area/space)
+"uE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/material/metal,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"uM" = (
+/obj/structure/salvageable/autolathe_os,
+/obj/random/lathe_disk/advanced/onestar,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"uN" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"vd" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"vq" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/closet/onestar/tier3/medical,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"vt" = (
+/obj/structure/flora/small/grassb5,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/space)
+"vw" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"vA" = (
+/obj/structure/sink{
+	dir = 8;
+	icon_state = "sink";
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/material/metal,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"vX" = (
+/obj/structure/flora/small/grassa1,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"wm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/generic,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"wu" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"wY" = (
+/obj/structure/flora/small/grassb1,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"xh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/generic,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"xV" = (
+/obj/structure/table/onestar,
+/obj/random/material_resources,
+/obj/random/material_resources,
+/obj/random/material_resources,
+/obj/random/material_resources,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"yc" = (
+/obj/structure/salvageable/os/power,
+/turf/simulated/floor/tiled/techmaint_panels,
+/area/space)
+"yp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/random/mob/roomba/melee,
+/turf/simulated/floor/tiled/cafe,
+/area/space)
+"yQ" = (
+/obj/item/stack/rods/random,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"yU" = (
+/turf/simulated/floor/asteroid/dirt,
+/area/space)
+"zk" = (
+/obj/machinery/door/airlock/maintenance_interior,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/cafe,
+/area/space)
+"zq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/multi_tile/metal/mait{
+	name = "Lost Outpost"
+	},
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"zD" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"zP" = (
+/obj/machinery/vending/cola,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"AD" = (
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"AK" = (
+/obj/structure/table/onestar,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
+"Bd" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1;
+	icon_state = "warningcorner"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"Be" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/lathe_disk/advanced/onestar/low_chance,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"Bg" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"BA" = (
+/obj/machinery/power/port_gen/os_generator,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
+"BN" = (
+/obj/machinery/door/airlock/multi_tile/metal/mait{
+	name = "Lost Outpost"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"Ci" = (
+/obj/machinery/recharge_station,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint_panels,
+/area/space)
+"CZ" = (
+/obj/structure/sink{
+	dir = 8;
+	icon_state = "sink";
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/cafe,
+/area/space)
+"DU" = (
+/turf/simulated/wall/untinted/onestar_reinforced,
+/area/space)
+"Ea" = (
+/obj/structure/table/onestar,
+/obj/item/trash/material/circuit,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"Ef" = (
+/obj/structure/table/rack/shelf,
+/obj/random/rig/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"Em" = (
+/obj/structure/flora/small/grassb5,
+/obj/structure/flora/big/bush2,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"EB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"Fo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"Fp" = (
+/obj/structure/window/basic,
+/obj/structure/table/onestar,
+/obj/random/material,
+/obj/random/material,
+/obj/random/material,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"Fq" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"Fs" = (
+/obj/random/scrap/sparse_even/low_chance,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"FJ" = (
+/obj/machinery/reagentgrinder,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/onestar,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"GA" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"GN" = (
+/obj/structure/closet/onestar/tier1/medical,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"HW" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"If" = (
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"IA" = (
+/obj/structure/table/rack/shelf,
+/obj/random/rig/damaged/low_chance,
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"Jc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/multi_tile/metal/mait{
+	dir = 1;
+	icon_state = "door_closed";
+	name = "Lost Outpost"
+	},
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"Ji" = (
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical_lowcost/low_chance,
+/obj/structure/table/onestar,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"Jy" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/big/bush3,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"JL" = (
+/obj/structure/window/basic{
+	dir = 4;
+	icon_state = "window"
+	},
+/obj/random/scrap/sparse_even/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"Kk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/os/power,
+/turf/simulated/floor/tiled/techmaint_panels,
+/area/space)
+"Km" = (
+/obj/structure/table/rack/shelf,
+/obj/random/gun_shotgun/low_chance,
+/obj/random/gun_shotgun/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/pack/tech_loot/onestar,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"Kx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"KE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/roomba/mecha,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"KT" = (
+/obj/structure/table/rack/shelf,
+/obj/random/gun_shotgun,
+/obj/random/gun_shotgun/low_chance,
+/obj/random/gun_shotgun/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"Lb" = (
+/obj/structure/flora/small/lavarock2,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt,
+/area/space)
+"Lj" = (
+/obj/structure/table/woodentable,
+/obj/item/storage/box/donkpockets,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"LC" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"LE" = (
+/obj/structure/flora/big/bush2,
+/obj/structure/flora/small/busha3,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"Mr" = (
+/obj/random/pouch/low_chance,
+/obj/random/pouch/low_chance,
+/obj/structure/table/onestar,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"Ms" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/onestar/tier1/normal,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"MP" = (
+/obj/structure/salvageable/autolathe_os,
+/obj/item/oddity/common/disk,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"MT" = (
+/obj/structure/table/rack/shelf,
+/obj/random/gun_cheap/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"Ne" = (
+/obj/random/flora/small_jungle_tree,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"NB" = (
+/obj/structure/closet/crate/trashcart,
+/turf/simulated/floor/asteroid/dirt,
+/area/space)
+"NC" = (
+/obj/structure/closet/crate/bin,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"OD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"OE" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/random/turret/os,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"OJ" = (
+/obj/structure/table/standard,
+/obj/random/tool_upgrade/low_chance,
+/obj/random/tool_upgrade/low_chance,
+/obj/random/tool_upgrade/low_chance,
+/obj/random/tool_upgrade/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
+"OM" = (
+/obj/structure/flora/big/bush1,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"OR" = (
+/obj/structure/window/basic,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/turret/os,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"Pb" = (
+/obj/structure/flora/ausbushes/palebush,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"PB" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"PU" = (
+/obj/effect/window_lwall_spawn/smartspawn/onestar,
+/turf/simulated/floor/plating/under,
+/area/space)
+"PV" = (
+/obj/structure/table/standard,
+/obj/random/material_resources/low_chance,
+/obj/random/material_resources/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"PY" = (
+/obj/structure/table/standard,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"Ry" = (
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"RK" = (
+/obj/structure/flora/big/bush3,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"RT" = (
+/obj/structure/table/rack/shelf,
+/obj/random/knife/low_chance,
+/obj/random/knife/low_chance,
+/obj/random/knife/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"Sc" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"Se" = (
+/obj/structure/closet/onestar/tier1/special,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"Sk" = (
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"SL" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint,
+/area/space)
+"SN" = (
+/obj/structure/flora/small/grassa1,
+/obj/structure/flora/small/bushc3,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"SP" = (
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/space)
+"Ta" = (
+/obj/structure/closet/onestar/tier2/special,
+/turf/simulated/floor/wood/wild5,
+/area/space)
+"TR" = (
+/obj/structure/flora/small/bushb3,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"TS" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4;
+	icon_state = "warningcorner"
+	},
+/obj/machinery/status_display{
+	density = 0;
+	layer = 4;
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"TW" = (
+/obj/machinery/door/airlock/multi_tile/metal/mait,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"Ux" = (
+/obj/structure/closet/onestar/tier1/normal,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"UB" = (
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/asteroid/dirt,
+/area/space)
+"Vf" = (
+/obj/structure/flora/small/grassb5,
+/obj/random/flora/jungle_tree,
+/obj/structure/flora/small/bushc3,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"Vt" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"Vu" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"VR" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/random/spider_trap_burrowing/low_chance,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"Wf" = (
+/obj/structure/window/basic{
+	dir = 4;
+	icon_state = "window"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"Wi" = (
+/obj/effect/decal/cleanable/generic,
+/obj/landmark/storyevent/midgame_stash_spawn,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"Ws" = (
+/obj/structure/flora/small/busha1,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"WR" = (
+/obj/structure/table/rack/shelf,
+/obj/random/knife/low_chance,
+/obj/random/knife/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"WW" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"WX" = (
+/obj/structure/flora/small/grassb5,
+/obj/random/mob/roomba/any,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"Xl" = (
+/obj/structure/flora/ausbushes/grassybush,
+/turf/simulated/floor/asteroid/dirt,
+/area/space)
+"XC" = (
+/obj/structure/flora/small/bushc3,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"XT" = (
+/obj/random/scrap/moderate_weighted,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"YE" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"YP" = (
+/obj/structure/table/rack/shelf,
+/obj/random/gun_cheap/low_chance,
+/obj/random/gun_cheap/low_chance,
+/obj/random/gun_cheap/low_chance,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"YY" = (
+/obj/structure/flora/small/bushc1,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"Zy" = (
+/obj/machinery/door/airlock/maintenance_interior{
+	name = "Airlock"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/space)
+"ZG" = (
+/obj/structure/closet/onestar/tier1/normal,
+/obj/structure/table/onestar,
+/turf/simulated/floor/tiled/steel,
+/area/space)
+"ZT" = (
+/turf/simulated/floor/tiled/steel,
+/area/space)
+
+(1,1,1) = {"
+yU
+yU
+yU
+yU
+jg
+dJ
+vd
+vd
+fo
+fo
+vd
+vd
+vd
+vd
+jA
+oD
+Vf
+vt
+jA
+RK
+DU
+PU
+PU
+DU
+PU
+PU
+DU
+PU
+PU
+DU
+"}
+(2,1,1) = {"
+Lb
+yU
+yU
+jg
+tT
+Pb
+Ry
+jA
+fo
+jA
+wY
+jA
+jA
+jA
+jA
+Em
+yU
+vt
+Em
+dK
+DU
+qk
+XT
+GN
+Ux
+Ux
+pR
+pR
+pR
+DU
+"}
+(3,1,1) = {"
+dJ
+yU
+yU
+yU
+vw
+jA
+jA
+qn
+jA
+jA
+jA
+jA
+jA
+qn
+WX
+jA
+SP
+SP
+oD
+XC
+DU
+qk
+YE
+EB
+wm
+YE
+YE
+YE
+ZG
+DU
+"}
+(4,1,1) = {"
+jA
+yU
+yU
+yU
+jA
+jA
+qn
+DU
+DU
+DU
+DU
+PU
+PU
+PU
+PU
+DU
+Vu
+Jc
+DU
+DU
+DU
+bY
+YE
+bs
+MT
+nu
+YE
+EB
+fT
+DU
+"}
+(5,1,1) = {"
+jA
+yU
+yU
+yU
+jA
+Vt
+jA
+DU
+CZ
+ut
+DU
+nw
+Lj
+iR
+mj
+PU
+jw
+kJ
+PY
+bd
+PU
+eH
+YE
+YP
+cC
+mD
+ZT
+YE
+uc
+DU
+"}
+(6,1,1) = {"
+jA
+yU
+UB
+yU
+Vt
+Vt
+jA
+DU
+yp
+qx
+DU
+wu
+wu
+cT
+wu
+DU
+YE
+ZT
+ZT
+ZT
+PU
+eH
+ZT
+If
+YE
+YE
+Wi
+YE
+fr
+DU
+"}
+(7,1,1) = {"
+jA
+yU
+yU
+yU
+Vt
+Vt
+Vt
+DU
+DU
+zk
+DU
+Fq
+wu
+wu
+wu
+Zy
+YE
+xh
+ra
+iF
+DU
+eH
+YE
+YE
+ht
+YE
+YE
+YE
+fT
+DU
+"}
+(8,1,1) = {"
+jA
+yU
+yU
+yU
+Vt
+Vt
+Ry
+DU
+bf
+cT
+wu
+wu
+cT
+wu
+wu
+PU
+ZT
+ra
+ra
+YE
+DU
+ZT
+YE
+KT
+Km
+dF
+EB
+YE
+AK
+DU
+"}
+(9,1,1) = {"
+Vt
+yU
+yU
+yU
+vw
+Vt
+jA
+DU
+NC
+pP
+wu
+Sk
+Sk
+zP
+uq
+PU
+ZT
+ra
+Kx
+wm
+TW
+EB
+YE
+RT
+WR
+hK
+YE
+YE
+fT
+DU
+"}
+(10,1,1) = {"
+jA
+yU
+yU
+yU
+Vt
+Vt
+yU
+DU
+DU
+DU
+PU
+PU
+DU
+DU
+DU
+DU
+TS
+YE
+YE
+YE
+Vu
+YE
+ZT
+ZT
+YE
+YE
+wm
+YE
+Ux
+DU
+"}
+(11,1,1) = {"
+jA
+yU
+yU
+yU
+lY
+Vt
+lY
+lY
+lY
+lY
+lY
+lY
+DU
+rN
+Ci
+av
+dt
+YE
+YE
+ZT
+DU
+Se
+Se
+Ux
+Ux
+Ms
+eH
+eH
+pR
+DU
+"}
+(12,1,1) = {"
+jA
+yU
+yU
+yU
+lY
+Xl
+gE
+Xl
+Xl
+Xl
+Xl
+sg
+DU
+zD
+zD
+WW
+Bd
+YE
+EB
+PV
+DU
+PU
+PU
+DU
+PU
+PU
+DU
+PU
+PU
+DU
+"}
+(13,1,1) = {"
+jA
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+BN
+YE
+EB
+wm
+YE
+YE
+YE
+IA
+DU
+SN
+vX
+vX
+vX
+dw
+qn
+jA
+dw
+jA
+"}
+(14,1,1) = {"
+jA
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+UB
+yU
+yU
+Vu
+YE
+YE
+YE
+ZT
+ZT
+ZT
+Ef
+DU
+qn
+XC
+qn
+jA
+jA
+jA
+jA
+jA
+jA
+"}
+(15,1,1) = {"
+jA
+jA
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+hu
+DU
+DU
+DU
+DU
+YE
+cm
+DU
+DU
+DU
+vX
+XC
+Ry
+dw
+qn
+jA
+dw
+jA
+jA
+"}
+(16,1,1) = {"
+jA
+jA
+jA
+jA
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+yU
+zq
+YE
+YE
+Fo
+YE
+YE
+il
+il
+DU
+jA
+Ne
+jA
+jA
+qn
+jA
+jA
+jA
+jA
+"}
+(17,1,1) = {"
+jA
+jA
+jA
+jA
+jA
+jA
+yU
+yU
+yU
+yU
+yU
+yU
+Vu
+YE
+wm
+EB
+YE
+YE
+YE
+il
+DU
+DU
+DU
+DU
+DU
+DU
+jA
+Ry
+jA
+dw
+"}
+(18,1,1) = {"
+jA
+jA
+ih
+vd
+vd
+VR
+VR
+gE
+gE
+Xl
+yU
+yU
+DU
+YE
+ra
+Sc
+Sc
+LC
+Kx
+ZT
+DU
+BA
+ZT
+oL
+ij
+PU
+qn
+jA
+jA
+jA
+"}
+(19,1,1) = {"
+Ne
+vd
+vd
+jA
+jA
+jA
+jA
+Ry
+jA
+gE
+yU
+NB
+DU
+vq
+ra
+Ji
+mh
+Mr
+ra
+iF
+DU
+OJ
+YE
+YE
+ij
+PU
+jA
+jA
+jA
+jA
+"}
+(20,1,1) = {"
+jA
+jA
+Vt
+jA
+Vt
+Vt
+jA
+jA
+jA
+gE
+yU
+NB
+DU
+bd
+ra
+FJ
+nK
+eY
+ra
+ZT
+DU
+ea
+YE
+YE
+ht
+PU
+jA
+jA
+jA
+jA
+"}
+(21,1,1) = {"
+jA
+Jy
+Vt
+Vt
+Vt
+jA
+jA
+DU
+DU
+PU
+PU
+PU
+DU
+ZT
+ra
+PB
+PB
+SL
+ra
+YE
+Zy
+YE
+wm
+HW
+OE
+DU
+jA
+jA
+jA
+jA
+"}
+(22,1,1) = {"
+jA
+Vt
+Vt
+Vt
+Ne
+jA
+dw
+DU
+Ea
+cg
+vA
+ms
+Fp
+YE
+no
+ht
+YE
+wm
+YE
+il
+DU
+qu
+YE
+Bg
+Kk
+PU
+jA
+dw
+jA
+jA
+"}
+(23,1,1) = {"
+jA
+OM
+Vt
+Vt
+jA
+jA
+jA
+PU
+mA
+yQ
+cB
+OD
+Be
+YE
+YE
+Wf
+Wf
+Wf
+JL
+uk
+DU
+eI
+YE
+Bg
+yc
+PU
+jA
+jA
+dK
+jA
+"}
+(24,1,1) = {"
+YY
+jA
+jA
+Vt
+jA
+jA
+jA
+PU
+uM
+uE
+KE
+dr
+mY
+ZT
+YE
+wu
+wu
+jM
+cT
+Fs
+DU
+hi
+ZT
+lX
+yc
+PU
+jA
+jA
+jA
+jA
+"}
+(25,1,1) = {"
+YY
+jA
+Ry
+Vt
+jA
+jA
+jA
+PU
+cZ
+uN
+Be
+uN
+OR
+il
+YE
+wu
+wu
+Sk
+Sk
+Fs
+DU
+DU
+DU
+DU
+DU
+DU
+jA
+Ry
+jA
+jA
+"}
+(26,1,1) = {"
+OM
+YY
+jA
+jA
+AD
+jA
+jA
+DU
+xV
+cZ
+MP
+cg
+lV
+il
+ZT
+GA
+rr
+Ta
+rr
+Ta
+DU
+LE
+qn
+qn
+jA
+jA
+jA
+jA
+jA
+jA
+"}
+(27,1,1) = {"
+OM
+jA
+jA
+jA
+dw
+jA
+jA
+DU
+DU
+PU
+PU
+PU
+DU
+DU
+DU
+DU
+DU
+DU
+DU
+DU
+DU
+qn
+qn
+Ry
+jA
+jA
+jA
+TR
+TR
+qn
+"}
+(28,1,1) = {"
+jA
+jA
+TR
+TR
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+Ry
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+qn
+qn
+jA
+jA
+jA
+jA
+TR
+TR
+jA
+jA
+"}
+(29,1,1) = {"
+Ws
+Ws
+jA
+jA
+jA
+Ry
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+Ry
+jA
+jA
+jA
+jA
+jA
+jA
+OM
+jA
+jA
+jA
+jA
+dw
+"}
+(30,1,1) = {"
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+jA
+OM
+dw
+jA
+jA
+"}
