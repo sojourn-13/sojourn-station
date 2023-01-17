@@ -39,5 +39,6 @@
 	offer_types = list(
 		// TODO: offers
 		/obj/item/rig/merc = offer_data("crimson hardsuit control module", 10000, 1), 	 	// base price: 6282 (incl. components)
-		/obj/item/storage/bag/sheetsnatcher/guild = offer_data("advanced sheet snatcher", 400, 2)
+		/obj/item/storage/bag/sheetsnatcher/guild = offer_data("advanced sheet snatcher", 400, 2),
+		/datum/reagent/drug/space_drugs = offer_data("space drugs bottle(60u)", 750, 2)
 	)
