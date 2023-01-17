@@ -28434,6 +28434,9 @@
 /obj/machinery/door/airlock/maintenance_interior,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/surface/section1)
+"fsJ" = (
+/turf/simulated/floor/rock/manmade/concrete,
+/area/colony)
 "fsM" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -176630,7 +176633,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+fsJ
 sFI
 sFI
 sFI
@@ -202718,7 +202721,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+fsJ
 sFI
 sFI
 sFI
