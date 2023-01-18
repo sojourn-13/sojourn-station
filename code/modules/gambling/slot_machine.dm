@@ -188,7 +188,7 @@
 			src.visible_message("<b>[name]</b> states, \"Congratulations! You won [prize] Credits!\"")
 			jackpot = max(jackpot - prize, 0)
 			spawn_money(prize,src.loc,user)
-			if(wintype == Jackpot)
+			if(wintype == "Jackpot")
 				jackpot = 1000
 	src.add_fingerprint(user)
 	update_icon()
