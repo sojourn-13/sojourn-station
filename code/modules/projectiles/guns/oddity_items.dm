@@ -262,7 +262,7 @@
 	init_recoil = HANDGUN_RECOIL(0.1)
 
 	init_firemodes = list(
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		)
 	serial_type = "BlueCross"
@@ -325,7 +325,7 @@
 	init_recoil = HANDGUN_RECOIL(0.1)
 	gun_tags = list(GUN_ENERGY, GUN_LASER, GUN_SILENCABLE)
 	init_firemodes = list(
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		FULL_AUTO_300
 		)

@@ -28,7 +28,7 @@
 	auto_eject = TRUE //Eather a blessing or a curse, always can be fixed with a gunmod tho
 
 	init_firemodes = list(
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND_NOLOSS,
 		FULL_AUTO_300_NOLOSS
 		)

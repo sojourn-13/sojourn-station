@@ -24,7 +24,7 @@
 	force = WEAPON_FORCE_ROBUST
 	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET, GUN_SCOPE)
 	init_firemodes = list(
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
 		FULL_AUTO_200
 		)

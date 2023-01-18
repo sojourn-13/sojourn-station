@@ -25,7 +25,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
 	init_firemodes = list(
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
 	serial_type = "SD GmbH"
@@ -53,7 +53,7 @@
 	see_invisible_gun = -1
 	auto_eject = FALSE
 	init_firemodes = list(
-		SEMI_AUTO
+		SEMI_AUTO_NODELAY
 		)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/nordwind/strelki/sawn

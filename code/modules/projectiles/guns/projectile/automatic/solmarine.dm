@@ -16,7 +16,7 @@
 	penetration_multiplier = 1.2
 	init_recoil = CARBINE_RECOIL(1.1)
 	init_firemodes = list(
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		list(mode_name="fire shotgun", mode_desc="Shoot the underbarrel shotgun",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
@@ -86,7 +86,7 @@
 	can_dual = TRUE
 	init_recoil = CARBINE_RECOIL(1.2)
 	init_firemodes = list(
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
 
@@ -106,7 +106,7 @@
 	item_state = "solmarine"
 	shotgun_haver = FALSE
 	init_firemodes = list(
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
 
@@ -124,7 +124,7 @@
 	sawn = /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless_sawn
 	serial_type = "Sol Fed"
 	init_firemodes = list(
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
 

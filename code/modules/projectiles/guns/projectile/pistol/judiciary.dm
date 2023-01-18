@@ -20,7 +20,7 @@
 	init_recoil = HANDGUN_RECOIL(0.8)
 	auto_eject = TRUE
 	init_firemodes = list(
-		SEMI_AUTO
+		SEMI_AUTO_NODELAY
 		)
 	serial_type = "NM"
 
