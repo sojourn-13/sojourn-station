@@ -16,7 +16,7 @@
 	pierce_multiplier = 2
 	init_recoil = HMG_RECOIL(0.5)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		BURST_3_ROUND
 		)
 	serial_type = "GP"

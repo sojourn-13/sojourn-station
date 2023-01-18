@@ -26,7 +26,7 @@
 
 	init_firemodes = list(
 		FULL_AUTO_300,
-		SEMI_AUTO_NODELAY
+		SEMI_AUTO
 		)
 	serial_type = "EXC"
 
@@ -135,7 +135,7 @@
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	init_firemodes = list(
 		FULL_AUTO_300,
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		list(mode_name="fire shotgun", mode_desc="Shoot the underbarrel shotgun",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 
@@ -199,7 +199,7 @@
 	penetration_multiplier = 0.8
 
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY	//too poorly made for burst or automatic
+		SEMI_AUTO	//too poorly made for burst or automatic
 	)
 	matter = list(MATERIAL_STEEL = 22, MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 5, MATERIAL_WOOD = 12)
 	price_tag = 500

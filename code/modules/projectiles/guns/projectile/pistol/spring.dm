@@ -19,7 +19,7 @@
 	allow_greyson_mods = TRUE
 
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		SEMI_AUTO
 		)
 	serial_type = "GP"
 

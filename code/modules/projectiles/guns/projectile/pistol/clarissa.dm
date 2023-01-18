@@ -67,7 +67,7 @@
 	price_tag = 500
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2, TECH_ILLEGAL = 3)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		SEMI_AUTO
 		)
 	serial_type = "Sol Fed"
 	wield_delay = 0.3 SECOND

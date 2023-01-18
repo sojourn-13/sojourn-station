@@ -31,7 +31,7 @@
 
 	init_firemodes = list(
 	FULL_AUTO_200,
-	SEMI_AUTO_NODELAY
+	SEMI_AUTO
 	)
 	serial_type = "Sol Fed"
 	wield_delay = 1.6 SECOND
@@ -81,7 +81,7 @@
 	init_recoil = RIFLE_RECOIL(0.7)
 	penetration_multiplier = 1.35
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		BURST_2_ROUND,
 		BURST_3_ROUND
 		)
@@ -104,7 +104,7 @@
 	init_recoil = RIFLE_RECOIL(0.8)
 	zoom_factors = list(0.4)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		FULL_AUTO_200,
 		BURST_3_ROUND
 		)

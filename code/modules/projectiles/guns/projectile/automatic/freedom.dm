@@ -21,7 +21,7 @@
 	penetration_multiplier = 1.1
 	init_recoil = HANDGUN_RECOIL(0.9)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		BURST_3_ROUND_NOLOSS,
 		FULL_AUTO_600_NOLOSS
 		)

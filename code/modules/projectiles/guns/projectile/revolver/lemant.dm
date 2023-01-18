@@ -18,7 +18,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		list(mode_name="fire 20mm shell", mode_desc="Shoot the underbarrel shotgun shell",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 	serial_type = "Absolute"
@@ -41,7 +41,7 @@
 	price_tag = 550
 
 	init_firemodes = list(
-		SEMI_AUTO_SOMEDELAY,
+		SEMI_AUTO_DELAYED,
 		list(mode_name="fire 20mm shell", mode_desc="Shoot the underbarrel shotgun shell",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 
@@ -187,7 +187,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	var/obj/item/gun/projectile/underslung/launcher
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		list(mode_name="fire grenades", mode_desc="Shoot the underbarrel grenade shell",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 	serial_type = "BlueCross"

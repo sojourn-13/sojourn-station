@@ -78,6 +78,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 */
 
+	var/next_fire_time = 0
+
 	var/suppress_delay_warning = FALSE
 
 	var/safety = TRUE//is safety will be toggled on spawn() or not
@@ -85,8 +87,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/dna_compare_samples = FALSE //If DNA-lock installed
 	var/dna_lock_sample = "not_set" //real_name from mob who installed DNA-lock
 	var/dna_user_sample = "not_set" //Current user's real_name
-
-	var/can_fire_next = 1
 
 	var/sel_mode = 1 //index of the currently selected mode
 	var/list/firemodes = list()
@@ -409,15 +409,16 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			return FALSE
 	return TRUE
 
-/obj/item/gun/proc/ready_to_shoot()
-	can_fire_next = TRUE
-
-
 /obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, extra_proj_damagemult = 0, extra_proj_penmult = 0, extra_proj_wallbangmult = 0, extra_proj_stepdelaymult = 0, multiply_projectile_agony = 0, multiply_pve_damage = 0)
 	if(!user || !target) return
 
-	if(!can_fire_next || currently_firing)
-		if (!suppress_delay_warning && world.time % 3) //to prevent spam
+	if(world.time < next_fire_time)
+		if(!suppress_delay_warning && world.time % 3) //to prevent spam
+			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
+		return
+
+	if(currently_firing)
+		if(!suppress_delay_warning && world.time % 3) //to prevent spam
 			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
 		return
 
@@ -429,11 +430,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	currently_firing = TRUE
 
-	var/shoot_time = (burst - 1)* burst_delay
+	var/shoot_time = (burst - 1) * burst_delay + ((fire_delay < GUN_MINIMUM_FIRETIME ? GUN_MINIMUM_FIRETIME : fire_delay) * ((!twohanded && user.stats.getPerk(PERK_GUNSLINGER)) ? 0.66 : 1))
 	user.setClickCooldown(shoot_time) //no clicking on things while shooting
-	can_fire_next = FALSE
-	addtimer(CALLBACK(src, /obj/item/gun/proc/ready_to_shoot), fire_delay)
-
+	next_fire_time = world.time + shoot_time
 	if(muzzle_flash)
 		set_light(muzzle_flash)
 
@@ -508,13 +507,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 		if(!(target && target.loc))
 			target = targloc
-			pointblank = 0
-
-	//update timing
-	user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
-	user.set_move_cooldown(move_delay)
-	if(!twohanded && user.stats.getPerk(PERK_GUNSLINGER))
-		addtimer(CALLBACK(src, /obj/item/gun/proc/ready_to_shoot), min(0, (fire_delay - fire_delay * 0.33)))
+			pointblank = FALSE
 
 	if((CLUMSY in user.mutations) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
@@ -1003,9 +996,10 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	data["penetration_multiplier"] = penetration_multiplier
 	data["proj_agony_multiplier"] = proj_agony_multiplier
 
-	data["fire_delay"] = fire_delay //time between shot, in ms
+	data["minimum_fire_delay"] = GUN_MINIMUM_FIRETIME
+	data["fire_delay"] = fire_delay * 5  //time between shot, in ms
 	data["burst"] = burst //How many shots are fired per click
-	data["burst_delay"] = burst_delay //time between shot in burst mode, in ms
+	data["burst_delay"] = burst_delay * 5  //time between shot in burst mode, in ms
 
 	data["force"] = force
 	data["force_max"] = initial(force)*10
@@ -1043,8 +1037,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				"name" = F.name,
 				"desc" = F.desc,
 				"burst" = F.settings["burst"],
-				"fire_delay" = F.settings["fire_delay"],
-				"move_delay" = F.settings["move_delay"],
+				"minimum_fire_delay" = GUN_MINIMUM_FIRETIME,
+				"fire_delay" = F.settings["fire_delay"] * 5 ,
+				"move_delay" = F.settings["move_delay"] * 5 ,
 				)
 			if(F.settings["projectile_type"])
 				var/proj_path = F.settings["projectile_type"]

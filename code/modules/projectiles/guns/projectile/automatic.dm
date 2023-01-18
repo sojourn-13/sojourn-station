@@ -20,7 +20,7 @@
 	auto_rack = TRUE
 	init_firemodes = list(
 		FULL_AUTO_300,
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		BURST_3_ROUND,
 		BURST_5_ROUND
 		)
@@ -92,6 +92,6 @@
 		//Create and assign the click handler
 		//A click handler intercepts mouseup/drag/down events which allow fullauto firing
 		CH = new /datum/click_handler/fullauto()
-		CH.receiver = gun //receiver is the gun that gets the fire events
+		CH.reciever = gun //receiver is the gun that gets the fire events
 		L.client.CH = CH //Put it on the client
 		CH.owner = L.client //And tell it where it is
