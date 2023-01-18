@@ -152,7 +152,6 @@
 			if("Jackpot")
 				playsound(src.loc, 'sound/machines/ping.ogg', 50, 1)
 				prize = jackpot
-				jackpot = 1000 //So we can build back or down further
 				src.visible_message("<b>[name]</b> states, \"Damn son! JACKPOT!!! Congratulations!\"")
 			if("Refund")
 				playsound(src.loc, 'sound/machines/synth_yes.ogg', 50, 1)
@@ -189,6 +188,8 @@
 			src.visible_message("<b>[name]</b> states, \"Congratulations! You won [prize] Credits!\"")
 			jackpot = max(jackpot - prize, 0)
 			spawn_money(prize,src.loc,user)
+			if(wintype == "Jackpot")
+				jackpot = 1000
 	src.add_fingerprint(user)
 	update_icon()
 	bet = 0
