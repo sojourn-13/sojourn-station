@@ -29,8 +29,8 @@
 				to_chat(src, "<b>WARNING:</b> It would seem that you are sharing connection or computer with another player. If you haven't done so already, please contact the staff via the Adminhelp verb to resolve this situation. Failure to do so may result in administrative action. You have been warned.")
 
 /mob/Login()
-	if(!client)
-		return FALSE
+	//if(!client) Soj Edit removes some client checking
+	//	return FALSE
 	GLOB.player_list |= src
 	update_Login_details()
 	world.update_status()
@@ -60,8 +60,8 @@
 	// You do not want this
 	..()
 
-	if(!client)
-		return FALSE
+//	if(!client) Soj Edit removes some client checking
+//		return FALSE
 
 	SEND_SIGNAL(src, COMSIG_MOB_LOGIN)
 	// the datum fires first than actual login. Do actual login first before triggering login events

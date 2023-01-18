@@ -1,8 +1,12 @@
 
 /mob/living/Login()
+	..()
+/* Soj Edit, for some reasont this makes issues
 	. = ..()
 	if(!. || !client)
 		return FALSE
+*/
+
 
 	//Mind updates
 	mind_initialize()	//updates the mind (or creates and initializes one if one doesn't exist)
