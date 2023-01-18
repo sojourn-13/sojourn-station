@@ -462,7 +462,8 @@
 //Doesn't work onlarger things like crowbars and drills
 /obj/item/tool_upgrade/refinement/stabilized_grip
 	name = "gyrostabilized grip"
-	desc = "A fancy mechanical grip that partially floats around a tool, absorbing tremors and shocks. Allows precise work with a shaky hand."
+	desc = "A fancy mechanical grip that partially floats around a tool, absorbing tremors and shocks. Allows precise work with a shaky hand. \
+			Can also be applied to guns to slightly help with recoil control."
 	icon_state = "stabilizing"
 	matter = list(MATERIAL_PLASTIC = 3)
 	preloaded_reagents = list("plasticide" = 5)

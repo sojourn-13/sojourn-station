@@ -10,7 +10,7 @@
 	w_class = ITEM_SIZE_BULKY
 	mag_well = MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
-	fire_sound = 'sound/weapons/guns/fire/solarian.ogg'
+	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
 	price_tag = 1100
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.2

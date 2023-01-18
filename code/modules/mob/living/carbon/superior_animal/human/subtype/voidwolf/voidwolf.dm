@@ -277,7 +277,7 @@
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet
 	icon_state = "reaver_gyro"
-	projectilesound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
+	projectilesound = 'sound/weapons/guns/fire/ubgl.ogg'
 	projectiletype = /obj/item/projectile/bullet/gyro
 	drop_items = list(/obj/item/gun/projectile/gyropistol)
 	rapid = FALSE

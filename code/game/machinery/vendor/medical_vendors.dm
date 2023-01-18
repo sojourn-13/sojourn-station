@@ -4,6 +4,7 @@
 	icon_state = "med"
 	icon_deny = "med-deny"
 	req_access = list(access_medical_equip)
+	shut_up = 1 // Products are all free please stop offering them
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!;You do know how to use those, right?"
 	products = list(/obj/item/reagent_containers/glass/bottle/antitoxin = 4,
 					/obj/item/reagent_containers/glass/bottle/inaprovaline = 4,

@@ -10,6 +10,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	caliber = CAL_RIFLE
+	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	price_tag = 3400
 	damage_multiplier = 1.5
 	penetration_multiplier = 3

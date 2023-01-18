@@ -293,7 +293,7 @@
 	origin_tech = list(TECH_MAGNET = 10) //3500 points for rnd, eh its meant to stay in player hands not be deconned
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
 	price_tag = 2450
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
@@ -318,7 +318,7 @@
 	projectile_type = /obj/item/projectile/beam/weak/pistol_35
 	charge_cost = 1000000000000000000000000000000000000
 	suitable_cell = null
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	can_dual = TRUE
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.2

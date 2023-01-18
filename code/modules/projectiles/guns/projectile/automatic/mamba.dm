@@ -7,7 +7,7 @@
 	icon_state = "mamba"
 	item_state = "mamba"
 	icon = 'icons/obj/guns/projectile/mamba.dmi'
-	fire_sound = 'sound/weapons/guns/fire/solarian.ogg'
+	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BACK
 	caliber = CAL_LRIFLE
@@ -68,7 +68,7 @@
 	icon_state = "copperhead"
 	item_state = "copperhead"
 	icon = 'icons/obj/guns/projectile/copperhead.dmi'
-	fire_sound = 'sound/weapons/guns/fire/copperhead.ogg'
+	fire_sound = 'sound/weapons/guns/fire/rifle.ogg'
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BACK
 	caliber = CAL_RIFLE
