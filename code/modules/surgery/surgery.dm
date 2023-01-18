@@ -102,7 +102,7 @@
 			return FALSE
 
 	if(status & ORGAN_SPLINTED)
-		to_chat(user, SPAN_WARNING("You need to remove the brace first!"))
+		to_chat(user, SPAN_WARNING("You need to remove the splints first!"))
 		return FALSE
 
 	if(!S.is_valid_target(src, target))

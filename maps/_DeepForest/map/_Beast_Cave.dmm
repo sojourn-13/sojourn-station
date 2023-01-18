@@ -2043,8 +2043,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "ir" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/small/bushb2,
-/obj/structure/flora/big/bush2,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "is" = (
@@ -2322,7 +2321,8 @@
 	reinforcement_security = 40
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/glass/bucket,
+/obj/structure/grille,
+/obj/structure/barricade,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "jt" = (
@@ -2330,9 +2330,6 @@
 /obj/structure/flora/big/bush2,
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
-"ju" = (
-/turf/simulated/wall/wood_old,
 /area/nadezhda/outside/forest/beast_cave_light)
 "jv" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2467,10 +2464,11 @@
 /turf/simulated/floor/beach/water/ocean,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "jU" = (
-/obj/structure/grille,
-/obj/structure/barricade,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/bear/mukwah,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "jV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/unpowered/simple/wood/saloon,
@@ -2478,8 +2476,9 @@
 /area/nadezhda/outside/forest/swamp_hut)
 "jW" = (
 /obj/effect/window_lwall_spawn,
+/obj/structure/curtain/black,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/outside/forest/beast_cave_light)
+/area/nadezhda/outside/forest/swamp_hut)
 "jX" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/ausbushes/grassybush,
@@ -2616,11 +2615,6 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
-"kx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/unpowered/simple/wood/saloon,
-/turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/forest/beast_cave_light)
 "ky" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -2655,9 +2649,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/vending/hydroseeds,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/forest/swamp_hut)
-"kF" = (
-/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/swamp_hut)
 "kG" = (
 /obj/random/techpart/low_chance,
@@ -2908,6 +2899,7 @@
 "lz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
+/obj/machinery/light/small,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
 "lA" = (
@@ -5382,13 +5374,9 @@
 /turf/simulated/floor/carpet,
 /area/nadezhda/outside/forest/swamp_hut)
 "uA" = (
-/obj/structure/railing{
-	dir = 4;
-	icon_state = "reinforced_railing0";
-	reinforced = 1;
-	reinforcement_security = 40
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade,
+/obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "uB" = (
@@ -5508,9 +5496,6 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/cafe,
-/area/nadezhda/outside/forest/swamp_hut)
-"uQ" = (
-/turf/simulated/mineral/random/rogue,
 /area/nadezhda/outside/forest/swamp_hut)
 "uR" = (
 /obj/structure/table/woodentable,
@@ -6525,6 +6510,12 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"FG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/grille,
+/obj/structure/barricade,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_light)
 "FH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -6570,6 +6561,12 @@
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/rock5,
 /turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest/beast_cave_light)
+"Gr" = (
+/obj/structure/flora/big/bush2,
+/obj/structure/flora/small/bushb2,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Gs" = (
 /obj/effect/decal/cleanable/dirt,
@@ -17635,9 +17632,9 @@ gy
 gy
 gm
 dS
-dS
-dS
-hk
+Gr
+bt
+in
 iL
 bt
 dS
@@ -17837,7 +17834,7 @@ gy
 gB
 dS
 dS
-dS
+bt
 ir
 iC
 bt
@@ -17845,13 +17842,13 @@ in
 dS
 hk
 dS
-kF
-kF
-kF
-kF
-kF
-kF
-kF
+dS
+dS
+dS
+dS
+dS
+dS
+dS
 dS
 dS
 dS
@@ -18039,22 +18036,22 @@ hO
 gy
 dS
 dS
-ir
+in
 bt
 bt
 bt
-bt
+FG
 va
 et
-ju
 kI
 kI
 kI
 kI
-kF
-kF
-kF
-kF
+kI
+dS
+dS
+dS
+dS
 dS
 dS
 dS
@@ -18241,14 +18238,14 @@ gy
 gy
 dS
 dS
+js
+js
 uA
 js
-bt
-uA
-uA
+js
 vm
 kc
-kx
+jV
 kv
 vz
 kI
@@ -18256,12 +18253,12 @@ kI
 kI
 kI
 kI
-kF
-kF
-kF
-kF
-kF
-kF
+dS
+dS
+dS
+dS
+dS
+dS
 dS
 dS
 dS
@@ -18444,13 +18441,13 @@ gy
 gB
 dS
 fu
-eE
-jU
-iw
+et
+et
+et
 et
 iw
 jc
-ju
+kI
 kJ
 kv
 kI
@@ -18463,7 +18460,7 @@ kI
 kI
 kI
 kI
-kF
+dS
 dS
 dS
 dS
@@ -18665,7 +18662,7 @@ uX
 uR
 uW
 kI
-kF
+dS
 dS
 dS
 dS
@@ -18867,7 +18864,7 @@ uI
 OI
 vt
 kI
-kF
+dS
 dS
 dS
 dS
@@ -19069,7 +19066,7 @@ uS
 uZ
 uY
 kI
-kF
+dS
 dS
 dS
 dS
@@ -19271,7 +19268,7 @@ kI
 kI
 kI
 kI
-kF
+dS
 dS
 dS
 dS
@@ -19460,7 +19457,7 @@ et
 eE
 et
 jc
-ju
+kI
 kV
 kv
 kv
@@ -19472,8 +19469,8 @@ uK
 uO
 uT
 kI
-kF
-kF
+dS
+dS
 dS
 dS
 dS
@@ -19662,7 +19659,7 @@ iD
 et
 et
 kc
-ju
+kI
 la
 kv
 kv
@@ -19674,8 +19671,8 @@ us
 uC
 uJ
 kI
-kF
-kF
+dS
+dS
 dS
 dS
 gB
@@ -19864,7 +19861,7 @@ jr
 et
 iw
 jc
-ju
+kI
 lb
 kv
 kv
@@ -19876,8 +19873,8 @@ uL
 uP
 uU
 kI
-uQ
-kF
+bn
+dS
 dS
 dS
 af
@@ -20066,7 +20063,7 @@ jG
 et
 et
 kd
-ju
+kI
 lm
 kv
 kv
@@ -20078,8 +20075,8 @@ kI
 kI
 kI
 kI
-uQ
-kF
+bn
+dS
 dS
 dS
 iJ
@@ -20268,7 +20265,7 @@ jG
 et
 et
 kc
-ju
+kI
 kv
 lH
 us
@@ -20276,12 +20273,12 @@ us
 uy
 uH
 kI
-kF
-uQ
-uQ
-uQ
-uQ
-uQ
+dS
+bn
+bn
+bn
+bn
+bn
 UM
 bn
 iJ
@@ -20470,7 +20467,7 @@ bt
 et
 et
 jc
-ju
+kI
 lt
 lI
 lK
@@ -20478,12 +20475,12 @@ ut
 us
 uE
 kI
-kF
-kF
-kF
-uQ
-uQ
-uQ
+dS
+dS
+dS
+bn
+bn
+bn
 UM
 bn
 bn
@@ -20672,20 +20669,20 @@ jG
 et
 iw
 kd
-ju
-ju
-ju
+kI
+kI
+kI
 jW
 jW
 jW
-ju
-ju
+kI
+kI
 dS
 dS
 dS
-uQ
-uQ
-uQ
+bn
+bn
+bn
 UM
 bn
 mf
@@ -22286,11 +22283,11 @@ it
 ja
 jG
 et
-ju
-ju
-ju
+kI
+kI
+kI
 lu
-ju
+kI
 jc
 af
 Hd
@@ -22488,11 +22485,11 @@ it
 iE
 jG
 et
-ju
+kI
 jY
 kB
 lv
-ju
+kI
 et
 dS
 iW
@@ -22694,7 +22691,7 @@ jV
 jZ
 kC
 lx
-ju
+kI
 dS
 dS
 af
@@ -22892,11 +22889,11 @@ it
 iE
 jI
 jJ
-ju
+kI
 lm
 kD
 kD
-ju
+kI
 dS
 dS
 dS
@@ -23094,11 +23091,11 @@ dS
 it
 it
 it
-ju
+kI
 kw
 kE
 ly
-ju
+kI
 dS
 dS
 dS
@@ -23296,11 +23293,11 @@ dS
 dS
 dS
 dS
-ju
-ju
-ju
-ju
-ju
+kI
+kI
+kI
+kI
+kI
 dS
 dS
 dS
@@ -23320,7 +23317,7 @@ sd
 nx
 aZ
 sm
-le
+rZ
 sv
 rH
 rH
@@ -23518,7 +23515,7 @@ sl
 rH
 rH
 rK
-jz
+sd
 lF
 sd
 rU
@@ -23719,13 +23716,13 @@ dS
 sl
 rH
 rK
-sj
+jU
 ki
 sr
 sd
 sd
 sA
-rU
+IR
 rK
 rH
 rH
