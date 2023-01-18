@@ -1,7 +1,10 @@
 /mob/living/silicon/ai/Login()
+	..()
+/* Soj Edit, for some reasont this makes issues
 	. = ..()
 	if(!. || !client)
 		return FALSE
+*/
 
 	regenerate_icons()
 
