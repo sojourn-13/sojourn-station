@@ -111,6 +111,10 @@
 	name= "banana vape vial"
 	preloaded_reagents = list("nicotine" = 20, "banana" = 10)
 
+/obj/item/reagent_containers/glass/beaker/vial/vape/mint
+	name= "mint vape vial"
+	preloaded_reagents = list("nicotine" = 20, "mint" = 10)
+
 /obj/item/reagent_containers/glass/beaker/vial/vape/nicotine
 	name = "nicotine vape vial"
 	preloaded_reagents = list("nicotine" = 30)

@@ -349,7 +349,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "lonestaroff"
 	icon_on = "lonestaron"
 	icon_off = "lonestaroff"
-	preloaded_reagents = list("nicotineplus" = 5, "cafe_latte" = 5)
+	preloaded_reagents = list("nicotine" = 5, "cafe_latte" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/faith
 	name = "\improper TempleOS light cigarette"
