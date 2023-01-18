@@ -21,7 +21,7 @@
 	zoom_factors = list(0.2)
 	init_recoil = LMG_RECOIL(0.4)
 	init_firemodes = list(
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		FULL_AUTO_600_NOLOSS
 		)
 	serial_type = "NM"

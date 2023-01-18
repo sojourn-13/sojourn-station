@@ -16,7 +16,7 @@
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5, MATERIAL_WOOD = 12)
 	init_firemodes = list(
 		FULL_AUTO_300,
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		)
 	can_dual = 1
 	damage_multiplier = 0.8

@@ -28,7 +28,7 @@
 
 	init_firemodes = list(
 		FULL_AUTO_200_NOLOSS,
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND_NOLOSS
 		)
 

@@ -35,7 +35,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SIGHT)
 	var/obj/item/gun/projectile/underslung/built_in/launcher // Internal grenade launcher magazine
 	init_firemodes = list(
-	SEMI_AUTO,
+	SEMI_AUTO_NODELAY,
 	list(mode_name="fire grenades", mode_desc="Shoot the stored grenades", burst=null, fire_delay=15, move_delay=null, icon="grenade", use_launcher=1)
 	)
 	serial_type = "Sol Fed"
@@ -103,7 +103,7 @@
 	init_recoil = RIFLE_RECOIL(1.1)
 	fire_delay = 0.5
 	init_firemodes = list(
-	SEMI_AUTO,
+	SEMI_AUTO_NODELAY,
 	FULL_AUTO_300,
 	)
 	serial_type = "BlueCross"

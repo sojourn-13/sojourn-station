@@ -26,7 +26,7 @@
 
 	init_firemodes = list(
 		FULL_AUTO_600,
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
 	serial_type = "INDEX"

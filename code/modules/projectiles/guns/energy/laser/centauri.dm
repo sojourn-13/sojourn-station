@@ -24,7 +24,7 @@
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
 		FULL_AUTO_300,
-		SEMI_AUTO,
+		SEMI_AUTO_NODELAY,
 		BURST_5_ROUND
 		)
 	serial_type = "SI"

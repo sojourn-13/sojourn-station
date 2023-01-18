@@ -22,7 +22,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
 	init_firemodes = list(
 		FULL_AUTO_300_NOLOSS,
-		SEMI_AUTO
+		SEMI_AUTO_NODELAY
 		)
 	serial_type = "EXC"
 

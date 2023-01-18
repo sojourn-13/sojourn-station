@@ -22,7 +22,7 @@
 	init_firemodes = list(
 		FULL_AUTO_300_NOLOSS,
 		BURST_3_ROUND_NOLOSS,
-		SEMI_AUTO
+		SEMI_AUTO_NODELAY
 		)
 	serial_type = "INDEX"
 	serial_shown = FALSE
