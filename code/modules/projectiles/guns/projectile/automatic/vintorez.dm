@@ -25,7 +25,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		FULL_AUTO_300
 		)
 	serial_type = "EXC"

@@ -24,7 +24,7 @@
 	//while also preserving ability to shoot as fast as you can click and maintain recoil good enough
 	init_firemodes = list(
 		FULL_AUTO_300,
-		SEMI_AUTO_NODELAY
+		SEMI_AUTO
 		)
 
 	wield_delay = 0.8 SECOND

@@ -81,8 +81,9 @@ Fire delay 15 = 40 rounds per minute
 #define FULL_AUTO_300_NOLOSS		list(mode_name = "full auto",    mode_desc = "300 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 2  , icon="auto")
 #define FULL_AUTO_600_NOLOSS		list(mode_name = "fuller auto",  mode_desc = "600 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 1,   icon="fuller")
 
-#define SEMI_AUTO_NODELAY	list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=0, move_delay=null, icon="semi")
-#define SEMI_AUTO_SOMEDELAY	list(mode_name = "semiauto",  mode_desc = "Small Delay with chambering before fire", burst=1, fire_delay=1, move_delay=null, icon="semi")
+#define SEMI_AUTO_NO_DELAY	list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=0, move_delay=null, icon="semi")
+#define SEMI_AUTO	list(mode_name = "semiauto",  mode_desc = "Fire as fast as a bullet chambers", burst=1, fire_delay=2, move_delay=null, icon="semi")
+#define SEMI_AUTO_DELAYED	list(mode_name = "semiauto",  mode_desc = "Small Delay with chambering before fire", burst=1, fire_delay=6, move_delay=null, icon="semi")
 
 
 

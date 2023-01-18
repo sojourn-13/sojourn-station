@@ -18,7 +18,7 @@
 	init_recoil = HANDGUN_RECOIL(1)
 	auto_eject = TRUE
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		BURST_2_ROUND
 		)
 	serial_type = "SD GmbH"

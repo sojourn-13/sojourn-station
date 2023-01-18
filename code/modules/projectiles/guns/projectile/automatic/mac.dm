@@ -20,7 +20,7 @@
 	init_firemodes = list(
 		FULL_AUTO_600_NOLOSS,
 		BURST_8_ROUND_NOLOSS,
-		SEMI_AUTO_NODELAY
+		SEMI_AUTO
 		)
 	serial_type = "SA"
 

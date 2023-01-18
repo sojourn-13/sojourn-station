@@ -113,7 +113,7 @@
 	matter = list(MATERIAL_PLASTEEL = 35, MATERIAL_STEEL = 25, MATERIAL_SILVER = 15, MATERIAL_GOLD = 12, MATERIAL_PLATINUM = 0.5)
 	damage_multiplier = 1.2
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		FULL_AUTO_300
 		)
 

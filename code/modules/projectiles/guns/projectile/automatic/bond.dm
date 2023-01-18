@@ -34,7 +34,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SIGHT, GUN_MAGWELL, GUN_SILENCABLE)
 
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY)
+		SEMI_AUTO)
 
 /obj/item/gun/projectile/automatic/survivalrifle/Initialize()
 	. = ..()

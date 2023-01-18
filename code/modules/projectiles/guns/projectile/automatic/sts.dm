@@ -27,7 +27,7 @@
 
 	init_firemodes = list(
 		FULL_AUTO_300,
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		BURST_3_ROUND,
 		)
 
@@ -89,7 +89,7 @@
 
 
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		BURST_2_ROUND,
 		FULL_AUTO_300
 		)
@@ -109,7 +109,7 @@
 	saw_off = FALSE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		BURST_2_ROUND,
 		FULL_AUTO_300
 		)
@@ -137,7 +137,7 @@
 
 	max_upgrades = 2 // We got good baseline lets not get out of hand here
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		BURST_2_ROUND,
 		FULL_AUTO_300
 		)
@@ -171,7 +171,7 @@
 							  /obj/item/tool_upgrade/refinement/stabilized_grip = TRUE)
 
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		BURST_2_ROUND,
 		FULL_AUTO_300
 		)

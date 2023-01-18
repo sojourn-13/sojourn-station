@@ -21,7 +21,7 @@
 	folding_stock = TRUE //we can fold are stocks
 
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
+		SEMI_AUTO,
 		list(mode_name="fire 10x24 pistol", mode_desc="Shoot the built in 10x24 pistol",  burst=1, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 	serial_type = "SD GmbH"
