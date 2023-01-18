@@ -49,6 +49,7 @@
 
 
 /*
+These might be out of date
 Fire delay 1 = 600 rounds per minute
 Fire delay 2 = 300 rounds per minute
 Fire delay 3 = 200 rounds per minute
@@ -65,6 +66,9 @@ Fire delay 13 = 46 rounds per minute
 Fire delay 14 = 42 rounds per minute
 Fire delay 15 = 40 rounds per minute
 */
+
+// Weapon minimum fire_delay
+#define GUN_MINIMUM_FIRETIME 1.1  // 110 MS , ~9 shots per second.
 
 //Quick defines for fire modes
 #define FULL_AUTO_150		list(mode_name = "full auto",    mode_desc = "150 rounds per minute",   mode_type = /datum/firemode/automatic, fire_delay = 4  , icon="auto", damage_mult_add = -0.2)
