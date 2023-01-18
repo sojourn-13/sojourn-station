@@ -5508,7 +5508,7 @@
 "uS" = (
 /obj/machinery/cryopod/dormitory,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
+/area/nadezhda/outside/forest/swamp_hut)
 "uT" = (
 /obj/structure/toilet{
 	dir = 4
