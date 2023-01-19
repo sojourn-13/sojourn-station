@@ -34,6 +34,9 @@
 	//For weather we level up this task or not
 	var/level_threshholds = 10
 
+	//For when we want to scale are level_threshholds at a different rate
+	var/alt_scaling_number = 0
+
 	//The text displayed to a player when they gain a learnt task.
 	var/gain_text
 
