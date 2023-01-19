@@ -170,7 +170,7 @@
 				to_chat(owner, SPAN_NOTICE("You have gained insight.[resting ? " Now you need to rest and rethink your life choices." : " Your previous insight has been discarded, shifting your desires for new ones."]"))
 				pick_desires()
 				insight -= 100
-			owner.playsound_local(get_turf(owner), 'sound/sanity/psychochimes.ogg', 100)
+			owner.playsound_local(get_turf(owner), 'sound/sanity/level_up.ogg', 100)
 
 	var/obj/screen/sanity/hud = owner.HUDneed["sanity"]
 	hud?.update_icon()
