@@ -298,7 +298,7 @@
 	icon_state = "gym"
 
 	products = list(
-		/obj/item/gym_ticket = 99,
+		/obj/item/gym_ticket = 150,
 		/obj/item/tool/hammer/dumbbell = 10,
 		/obj/item/reagent_containers/food/drinks/energy = 10,
 		/obj/item/reagent_containers/food/drinks/protein_shake = 10
