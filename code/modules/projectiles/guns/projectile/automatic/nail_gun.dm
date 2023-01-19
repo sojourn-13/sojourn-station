@@ -15,6 +15,7 @@
 	auto_eject = TRUE
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 25, MATERIAL_PLATINUM = 20)
 	price_tag = 2000
+	fire_sound_silenced = 'sound/weapons/guns/fire/m41_shoot.ogg'
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
@@ -27,9 +28,9 @@
 	allow_greyson_mods = TRUE
 
 	init_firemodes = list(
-		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND
+		BURST_3_ROUND,
+		FULL_AUTO_300
 		)
 	serial_type = "GP"
 

@@ -1261,7 +1261,7 @@
 /obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer,
 /obj/item/reagent_containers/food/snacks/meat/carp,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "alp" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/mineral,
@@ -3636,7 +3636,7 @@
 /obj/item/reagent_containers/food/snacks/meat/corgi,
 /obj/item/reagent_containers/food/snacks/meat/bearmeat,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "aLc" = (
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/crew_quarters/dorm3{
@@ -10058,7 +10058,7 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "bXf" = (
 /obj/structure/cable/yellow{
 	d2 = 8;
@@ -17283,7 +17283,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/landmark/storyevent/midgame_stash_spawn,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "dqf" = (
 /obj/structure/table/standard,
 /obj/item/device/radio/headset,
@@ -25230,7 +25230,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/random/mob/termite_no_despawn,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "eQw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spider/stickyweb,
@@ -28434,6 +28434,9 @@
 /obj/machinery/door/airlock/maintenance_interior,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/hallway/surface/section1)
+"fsJ" = (
+/turf/simulated/floor/rock/manmade/concrete,
+/area/colony)
 "fsM" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -30315,7 +30318,7 @@
 /obj/item/reagent_containers/food/snacks/meat/bearmeat,
 /obj/item/reagent_containers/food/snacks/meat/spider,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "fJu" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 33
@@ -34306,7 +34309,7 @@
 /area/nadezhda/outside/pond)
 "guT" = (
 /turf/simulated/wall/wood_old,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "guU" = (
 /obj/machinery/computer/rdconsole/core{
 	dir = 4
@@ -37425,7 +37428,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/random/mob/termite_no_despawn,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "gYl" = (
 /obj/machinery/atmospherics/unary/vent_pump,
 /obj/effect/decal/cleanable/dirt,
@@ -62897,13 +62900,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/random/mob/termite_no_despawn,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "lJj" = (
 /obj/random/traps/low_chance,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "lJk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -71965,8 +71968,8 @@
 /obj/machinery/light_switch{
 	pixel_x = -20
 	},
-/obj/item/storage/deferred/surgery,
-/obj/item/storage/deferred/surgery,
+/obj/item/storage/firstaid/surgery/combat,
+/obj/item/storage/firstaid/surgery/combat,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/triage_blackshield)
 "nqG" = (
@@ -76353,7 +76356,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/random/mob/termite_no_despawn,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "ofU" = (
 /turf/unsimulated/mineral,
 /area/turret_protected/ai_upload)
@@ -89435,7 +89438,7 @@
 /obj/random/furniture,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "qBQ" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/sign/faction/neotheology{
@@ -89615,7 +89618,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/filth,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "qDV" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -97617,7 +97620,7 @@
 /obj/item/gun/projectile/crossbow,
 /obj/random/mob/termite_no_despawn,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "rZl" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -104094,7 +104097,7 @@
 /obj/item/device/lighting/toggleable/lamp/green,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "tlv" = (
 /obj/effect/spider/stickyweb,
 /obj/random/scrap/dense_weighted,
@@ -105894,7 +105897,7 @@
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "tEe" = (
 /obj/machinery/smartfridge/kitchen/church/public,
 /turf/simulated/floor/tiled/dark/golden,
@@ -112803,7 +112806,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "uSx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
@@ -113859,7 +113862,7 @@
 /obj/item/tool/knife/butch,
 /obj/item/handcuffs,
 /turf/simulated/floor/wood/wild4,
-/area/nadezhda/outside/forest)
+/area/nadezhda/dungeon/outside/hunter_cabin)
 "vbI" = (
 /obj/effect/decal/cleanable/blood/oil,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -176630,7 +176633,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+fsJ
 sFI
 sFI
 sFI
@@ -202718,7 +202721,7 @@ sFI
 sFI
 sFI
 sFI
-sFI
+fsJ
 sFI
 sFI
 sFI

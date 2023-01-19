@@ -4,7 +4,7 @@
 	icon = 'icons/obj/guns/projectile/lightboltgun_wood.dmi'
 	icon_state = "boltgun"
 	item_state = "boltgun"
-	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
 	max_shells = 10
 	init_recoil = HMG_RECOIL(0.5)
 	zoom_factors = list(2.0)

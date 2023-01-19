@@ -61,7 +61,7 @@
 /obj/item/tool/saw/circular/medical
 	name = "medical circular saw"
 	desc = "For clean bone cutting but doesn't seem all that durable. Spins slower than the normal saw to allow for higher surgical precision."
-	icon_state = "saw"
+	icon_state = "saw_medical"
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 4, MATERIAL_PLASTEEL = 2)
 	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 40)
@@ -69,6 +69,9 @@
 	degradation = 2.65
 	suitable_cell = /obj/item/cell/small
 	price_tag = 290
+
+/obj/item/tool/saw/circular/medical/si
+	icon_state = "saw_si"
 
 /obj/item/tool/saw/circular/advanced
 	name = "advanced circular saw"

@@ -11,6 +11,7 @@
 
 /obj/item/tool/hemostat/adv
 	name = "precise hemostat"
+	icon_state = "hemostat_adv"
 	desc = "An advanced hemostat with better vein clamping strength and an adaptive tip tuned to also allow easier extraction of shrapnel, organs, and implants."
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 1)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 3)

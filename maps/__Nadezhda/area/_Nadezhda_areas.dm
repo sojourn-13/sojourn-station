@@ -175,9 +175,10 @@
 	icon_state = "erisgreen"
 
 /area/nadezhda/dungeon/outside/hunter_cabin
-	name = "Hunter Cabin"
+	name = "Abandoned Hunter Cabin"
 	icon_state = "erisgreen"
-	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
+	dynamic_lighting = TRUE
+	requires_power = FALSE
 
 /area/nadezhda/dungeon/outside/campground
 	name = "Campground"
@@ -312,17 +313,31 @@
 	dynamic_lighting = TRUE
 	requires_power = FALSE
 
+/area/nadezhda/outside/forest/plains_farm
+	name = "Desolate Farmstead"
+	icon_state = "erisblue"
+	requires_power = FALSE
+
 /area/nadezhda/outside/forest/river_forest_light
-	name = "River Forest"
+	name = "Hunting Plains"
 	icon_state = "forest"
 
+/area/nadezhda/outside/forest/river_forest_lake
+	name = "Hunting Plains River"
+	icon_state = "hammerblue"
+
+/area/nadezhda/outside/forest/river_forest_cabin
+	name = "Hunting Plains Cabin"
+	icon_state = "erisgreen"
+	requires_power = FALSE
+
 /area/nadezhda/outside/forest/river_forest_dark
-	name = "River Forest"
+	name = "Hunting Plains Caves"
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/forest/river_forest_underground
-	name = "River Forest Underground"
+	name = "Hunting plains underground caves"
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 

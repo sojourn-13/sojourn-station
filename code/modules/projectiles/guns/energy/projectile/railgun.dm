@@ -171,8 +171,8 @@
 //Gauss-rifle type, snowflake launcher mixed with rail rifle and hydrogen gun code. Consumes matter-stack and cell charge to fire. - Rebel0
 /obj/item/gun/energy/laser/railgun/gauss
 	name = "\"Bat'ko\" gauss rifle"
-	desc = "A rather heavy rifle sporting a cell-loading mount, a adjustable recoil-compensating stock, a hand-crank to manually chamber the next round and a series of coils lining its front. \
-	This strange gauss coil rifle has valves along the large, external coil mounts. To fire this gun it requires common venting less it overheat. \
+	desc = "A rather heavy rifle sporting a cell-loading mount, an adjustable recoil-compensating stock, a hand-crank to manually chamber the next round and a series of coils lining its front. \
+	This strange gauss coil rifle has valves along the large, external coil mounts. To fire this gun requires constant venting, lest it overheats. \
 	At the stock a large script-styled 'M' appears to be engraved into it, a form of signature from its designer along with an artificer Guild logo."
 	icon = 'icons/obj/guns/energy/gauss.dmi'
 	icon_state = "gauss"
@@ -238,7 +238,7 @@
 
 	var/datum/component/heat/H = GetComponent(/datum/component/heat)
 	if((H.currentHeat > H.heatThresholdSpecial ||stored_matter < projectile_cost || !..()))
-		to_chat(user, "The [src] is currently overheating!")
+		to_chat(user, "\The [src] is currently overheating!")
 		handleoverheat()
 		return null
 
@@ -264,11 +264,11 @@
 
 //Hydrogen gun snowflake variables for the Gauss
 /obj/item/gun/energy/laser/railgun/gauss/proc/ventEvent()
-	src.visible_message("[src]'s vents open valves atop of the exterior coil mounts, cooling itself down.")
+	src.visible_message("\The [src]'s vents open valves atop of the exterior coil mounts, cooling itself down.")
 	playsound(usr.loc, 'sound/weapons/guns/interact/gauss_vent.ogg', 50, 1)
 
 /obj/item/gun/energy/laser/railgun/gauss/proc/handleoverheat()
-	src.visible_message(SPAN_DANGER("[src] overheats, its exterior becoming blisteringly hot burning the skin down to the flesh!!"))
+	src.visible_message(SPAN_DANGER("\The [src] overheats, its exterior becoming blisteringly hot, burning skin down to the flesh!!"))
 	var/mob/living/L = loc
 	if(istype(L))
 		if(L.hand == L.l_hand) // Are we using the left arm?

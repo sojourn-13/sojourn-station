@@ -32,7 +32,7 @@
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8)
 	price_tag = 550
-	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	init_recoil = HANDGUN_RECOIL(0.5)
@@ -51,6 +51,7 @@
 	item_state = "liberty"
 	caliber = CAL_MAGNUM
 	price_tag = 650
+	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.3

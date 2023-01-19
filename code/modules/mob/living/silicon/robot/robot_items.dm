@@ -538,7 +538,7 @@
 /obj/item/tool/robotic_omni_surgery
 	name = "Surgery omni tool"
 	desc = "A surgery omni tool for borgs, uses internal power cell rather then its own."
-	icon_state = "medimplant_sci"
+	icon_state = "medimplant"
 	tool_qualities = list(QUALITY_CLAMPING = 60,
 						  QUALITY_RETRACTING = 60,
 						  QUALITY_BONE_SETTING = 60,
