@@ -27,8 +27,8 @@
 	..()
 
 /datum/perk/cooldown/exertion/assign(mob/living/carbon/human/H)
-	if(..())
-		holder.stats.changeStat(STAT_TGH, -35)
+	..()
+	holder.stats.changeStat(STAT_TGH, -35)
 
 /datum/perk/cooldown/exertion/remove()
 	if(holder)
@@ -42,8 +42,8 @@
 	//icon_state = "reason" //https://game-icons.net/1x1/lorc/brainstorm.html
 
 /datum/perk/cooldown/reason/assign(mob/living/carbon/human/H)
-	if(..())
-		holder.stats.changeStat(STAT_COG, -35)
+	..()
+	holder.stats.changeStat(STAT_COG, -35)
 
 /datum/perk/cooldown/reason/remove()
 	if(holder)
