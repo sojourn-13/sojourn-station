@@ -13,7 +13,7 @@
 	name = "Lonestar (and Soteria) Presents: Victoria's Incredible Kitchen Assistant"
 
 /datum/nano_module/cook_catalog/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_REINITIALIZE, state = GLOB.default_state)
-	var/list/data = ui_data(user)
+	var/list/data = nano_ui_data(user)
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "cooking_catalog.tmpl", name, 640, 700, state = state)
@@ -122,7 +122,7 @@
 	return data
 
 
-/datum/catalog_entry/cooking/ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/cooking/nano_ui_data(mob/user, ui_key = "main")
 	var/list/data = ..()
 	data["name"] = recipe.name
 	data["id"] = recipe.type
@@ -148,7 +148,7 @@
 		data["product_count"] = 0
 		data["byproduct_name"] = "None"
 		data["byproduct_count"] = 0
-	
+
 //data["recipe_list"] = recipe.get_instruction_ui_data()
 
 	return data
