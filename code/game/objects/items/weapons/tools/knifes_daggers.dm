@@ -54,19 +54,20 @@
 
 /obj/item/tool/knife/boot/blackshield
 	name = "blackshield tactical knife"
-	desc = "A small fixed-blade knife for putting inside a boot, this verson is painted in blackshield colours and has saw teeth."
+	desc = "A small fixed-blade knife for putting inside a boot, this version is painted in Blackshield colours and has sawed teeth."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "tacknife_blackguard"
 	item_state = "knife"
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 1)
+	force = WEAPON_FORCE_DANGEROUS // Serrated teeth
 	armor_penetration = ARMOR_PEN_MODERATE
 	throwforce = WEAPON_FORCE_LETHAL
 	price_tag = 35
 
 /obj/item/tool/knife/hook
 	name = "meat hook"
-	desc = "A sharp, metal hook what sticks into things."
+	desc = "A sharp plasteel butcher's hook used to hold dressed game in place to butcher. It has quite the sharpened tip to embed more easily in flesh."
 	icon_state = "hook_knife"
 	item_state = "hook_knife"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2)
@@ -87,7 +88,7 @@
 /obj/item/tool/knife/butch
 	name = "butcher's cleaver"
 	icon_state = "butch"
-	desc = "A huge thing used for chopping and chopping up meat. This includes roaches and roach-by-products."
+	desc = "A huge thing used for chopping up vegetables and meat. This includes roaches and roach-byproducts."
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_DANGEROUS+2
 	backstab_damage = 8
@@ -125,7 +126,7 @@
 	item_state = "knife"
 	backstab_damage = 14
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2)
-	force = WEAPON_FORCE_PAINFUL
+	force = WEAPON_FORCE_DANGEROUS // Serrated combat knife
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5,  QUALITY_SAWING = 5)
 	armor_penetration = ARMOR_PEN_MODERATE
 	throwforce = WEAPON_FORCE_LETHAL
@@ -148,7 +149,7 @@
 
 /obj/item/tool/knife/dagger/skinning
 	name = "skinning knife"
-	desc = "A sharp tool that is the pride and joy of the local hunting lodge. While not well suited as a weapon, its blade is as finely edged as any laser scalpel. Considered sacred by \
+	desc = "A sharp tool that is the pride and joy of the local Hunting Lodge. While not well suited as a weapon, its blade is as finely edged as any laser scalpel. Considered sacred by \
 	the hunters that normally carry them."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "skinning"

@@ -56,6 +56,7 @@ em						{font-style: normal;font-weight: bold;}
 .bsradio				{color: #88100a;}
 .engradio				{color: #A66300;}
 .medradio				{color: #0081A3;}
+.medaltradio			{color: #0081A3;}
 .sciradio				{color: #993399;}
 .supradio				{color: #5F4519;}
 .srvradio				{color: #6EAA2C;}
