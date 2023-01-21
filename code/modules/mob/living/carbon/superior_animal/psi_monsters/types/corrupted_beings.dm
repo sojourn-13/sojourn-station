@@ -64,6 +64,105 @@
 	//Same armor that they are warning
 	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 30, bio = 100, rad = 50)
 
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey
+	name = "Daskvey"
+	desc = "A lumbering dragon as dark as the void of space itself, \
+	large sheets of leathery wings furl behind its back, \
+	while its head looks on with its eyeless gaze, \
+	only sockets in place of normal eyes. \
+	It remains deep in thought in its squating position at all times, \
+	positivly streaming psionic energy to the entire area around it."
+	icon_state = "phoron_dragon_squat_complete"
+	icon_living = "phoron_dragon_squat_complete"
+	icon = 'icons/mob/64x64.dmi'
+
+	maxHealth = 7500
+	health = 7500
+	attack_sound = 'sound/weapons/slice.ogg'
+	melee_damage_lower = 40
+	melee_damage_upper = 60
+	emote_see = list("sighs deeply")
+	turns_per_move = 1
+	move_to_delay = 1
+	attacktext = "rends apart"
+
+	armor_penetration = 35
+
+	color = null
+
+	drop_items = list(/obj/item/clothing/glasses/eyepatch, /obj/item/clothing/glasses/eyepatch)
+
+	delay_for_range = 3 SECONDS
+	limited_ammo = FALSE
+	mag_drop = FALSE
+	ranged = TRUE
+	comfy_range = 6
+	projectiletype = /obj/item/projectile/kinetic_blast_electro/brutal
+
+	var/loaded_ammo = 1
+
+	//Wowerz scales are FIRE PROOF? who would have known
+	//Scale armor ref from CDDA
+	//Dragons are weak to melee - source: Dnd
+	//Ive never seen a wizard NOT nuke a dragon with fire ball
+	armor = list(melee = 40, bullet = 30, energy = 95, bomb = 40, bio = 100, rad = 100)
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/MiddleClickOn(mob/targetDD as mob)
+	var/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/shooter = src //We're the shooter.
+	if(loaded_ammo == 1)
+		projectiletype = /obj/item/projectile/kinetic_blast_electro/brutal
+		shooter.OpenFire(targetDD)
+		return
+	if(loaded_ammo == 2)
+		projectiletype = /obj/item/projectile/kinetic_blast_pyro
+		shooter.OpenFire(targetDD)
+		loaded_ammo = 1
+		return
+	if(loaded_ammo == 3)
+		projectiletype = /obj/item/projectile/tether/tail
+		shooter.OpenFire(targetDD)
+		loaded_ammo = 1
+		return
+	shooter.OpenFire(targetDD)
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/verb/badbreathverb()
+	set name = "Fire Breath"
+	set category = "Abilities"
+	src.badbreath()
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/proc/badbreath()
+	visible_message(SPAN_WARNING("\red [src] has a firey look in its maw!"))
+	loaded_ammo = 2
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/verb/tail_throwverb()
+	set name = "Tail Grapple Breath"
+	set category = "Abilities"
+	src.tail_throw()
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/proc/tail_throw()
+	visible_message(SPAN_WARNING("\red [src] flicks its tail and wings!"))
+	loaded_ammo = 3
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/verb/mind_of_cloathverb()
+	set name = "Rune Chat"
+	set category = "Abilities"
+	src.mind_of_cloath()
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/proc/mind_of_cloath(mob/M)
+	visible_message(SPAN_WARNING("\red [src] pierces the minds, blanking them in arcane knowledge!"))
+	for(M in living_mobs_in_view(5, src))
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.sanity.breakdown_fabric()
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/Bump(var/atom/obstacle)
+	.=..()
+	if(iscarbon(obstacle))
+		var/mob/living/carbon/J = obstacle
+		J.take_organ_damage(12)
+		J.throw_at(get_edge_target_turf(src,pick(alldirs)),rand(3,6),30)
+
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/cleaver
 	name = "Daskveyian Wall Breaker"
 	desc = "A basic footsoldier of the Hand of Daskvey. Donning the mask of the warrior, the agressive souls of former criminals find themselves too enraged to naught but strike their enemies down with furious rage. Flesh or steel, the axe will smash its way through."
