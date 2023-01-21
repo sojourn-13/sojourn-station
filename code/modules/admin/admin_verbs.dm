@@ -614,6 +614,7 @@ ADMIN_VERB_ADD(/client/proc/perkadd, R_ADMIN, FALSE)
 	T.stats.addPerk(perkname)
 	message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(T)].", 1)
 
+/*
 ADMIN_VERB_ADD(/client/proc/perkbreakdown, R_ADMIN, FALSE)
 /client/proc/perkbreakdown(mob/living/carbon/T as mob in SSmobs.mob_list)
 	set category = "Fun"
@@ -628,7 +629,7 @@ ADMIN_VERB_ADD(/client/proc/perkbreakdown, R_ADMIN, FALSE)
 	var/mob/living/carbon/human/ouch = T
 	ouch.sanity.breakdown_debug(breakdown_name)
 	message_admins("\blue [key_name_admin(usr)] gave the perk [breakdown_name] to [key_name(T)].", 1)
-
+*/
 
 ADMIN_VERB_ADD(/client/proc/playtimebypass, R_ADMIN|R_MOD|R_DEBUG, FALSE)
 /client/proc/playtimebypass(mob/T as mob in GLOB.player_list)
