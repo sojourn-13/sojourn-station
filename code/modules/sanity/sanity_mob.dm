@@ -448,34 +448,4 @@
 			breakdowns += B
 		return
 
-/datum/sanity/proc/breakdown_fabric()
-	breakdown_time = world.time + SANITY_COOLDOWN_BREAKDOWN
-
-
-	var/datum/breakdown/B = new /datum/breakdown/negative/fabric(src)
-
-	if(!B.can_occur())
-		message_admins("\blue breakdown_debug has errored or otherwised failed breakdown_fabric.", 1)
-		qdel(B)
-		return
-
-	if(B.occur())
-		breakdowns += B
-
-/datum/sanity/proc/breakdown_debug(breakdown)
-	breakdown_time = world.time + SANITY_COOLDOWN_BREAKDOWN
-	if(!breakdown)
-		message_admins("\blue breakdown_debug has errored or otherwised failed breakdown:[breakdown].", 1)
-		return
-
-	var/datum/breakdown/B = new breakdown(src)
-
-	if(!B.can_occur())
-		message_admins("\blue breakdown_debug has errored or otherwised failed breakdown:[breakdown].", 1)
-		qdel(B)
-		return
-
-	if(B.occur())
-		breakdowns += B
-
 #undef SANITY_PASSIVE_GAIN

@@ -380,15 +380,6 @@
 	stun = 2 //Horrors
 	weaken = 2 //Unspeakable
 
-/obj/item/projectile/tether/tail
-	name = "tail lash"
-	damage_types = list(BRUTE = 13)
-	armor_penetration = 35
-	nodamage = FALSE
-	stun = 2 //Horrors
-	weaken = 2 //Unspeakable
-
-
 /obj/item/projectile/tether/Initialize()
 	..()
 	our_tracers = list()
