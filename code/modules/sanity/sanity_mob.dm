@@ -161,7 +161,7 @@
 
 /datum/sanity/proc/handle_Insight()
 	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.3 : 1) * (owner.stats.getPerk(PERK_COGENHANCE) ? 1.1 : 1))
-	while(insight >= 100)
+	if(resting < max_resting && insight >= 100)
 		if(!rest_timer_active)//Prevent any exploits(timer is only active for one minute tops)
 			give_resting(1)
 			if(owner.stats.getPerk(PERK_ARTIST))
@@ -332,11 +332,14 @@
 		finish_rest()
 
 /datum/sanity/proc/finish_rest()
+	desires.Cut()
 	if(!rest_timer_active)
 		to_chat(owner, "<font color='purple'>[owner.stats.getPerk(PERK_ARTIST) ? "You have created art." : "You have rested well."]\
 					<br>Select what you wish to do with your fulfilled insight <a HREF=?src=\ref[src];here_and_now=TRUE>here and now</a> or get to safety first if you are in danger.\
 					<br>The prompt will appear in one minute.</font>")
 
+		if(owner.stats.getPerk(PERK_ARTIST))
+			resting = 0
 		rest_timer_active = TRUE
 		rest_timer_time = 60 SECONDS
 		owner.playsound_local(get_turf(owner), 'sound/sanity/rest.ogg', 100)
