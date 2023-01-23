@@ -32,7 +32,20 @@
 		/obj/item/genetics/purger,
 		/obj/item/genetics/sample,
 		/obj/item/genetics/mut_injector,
-		/obj/item/stamp)
+		/obj/item/stamp,
+		// All these anomalies should be small in size enough to be able to fit inside a wallet.
+		/obj/item/oddity/common/old_id, // ID's fit
+		/obj/item/oddity/common/lighter, // Zippos fit
+		/obj/item/oddity/common/coin, // Coins fit
+		/obj/item/oddity/common/photo_crime, // All sizes of photos should fit
+		/obj/item/oddity/common/photo_landscape,
+		/obj/item/oddity/common/photo_coridor,
+		/obj/item/oddity/common/photo_eyes,
+		/obj/item/oddity/common/paper_crumpled, // Papers fit
+		/obj/item/oddity/common/paper_bundle,
+		/obj/item/oddity/common/broken_key, // It's broken and small enough to fit
+		/obj/item/oddity/common/old_money // Money stacks fit
+		)
 	slot_flags = SLOT_ID
 
 	matter = list(MATERIAL_BIOMATTER = 4)
