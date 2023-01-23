@@ -66,8 +66,7 @@
 			"5 points, 6 ammo: Scrap 10mm speedloader" = list(5, /obj/item/ammo_magazine/speed_loader_magnum_40/scrap),
 			"7 points, 6 ammo: 10mm magnum ammo pile" = list(7, /obj/item/ammo_casing/magnum_40/prespawned),
 			"26 points, 30 ammo: 10mm ammo box" = list(26, /obj/item/ammo_magazine/ammobox/magnum_40),
-			"7 points: EMPTY 10mm pistol magazine" = list(7, /obj/item/ammo_magazine/magnum_40/empty),
-			"10 points: EMPTY 10mm SMG magazine" = list(10, /obj/item/ammo_magazine/smg_magnum_40/empty)
+			"7 points: EMPTY 10mm pistol magazine" = list(7, /obj/item/ammo_magazine/magnum_40/empty)
 			),
 		CAL_50 = list(
 			"8 points, 6 ammo: 12mm ammo pile" = list(8, /obj/item/ammo_casing/kurtz_50/prespawned),
@@ -125,7 +124,7 @@
 			"5 points, 3 ammo: Scrap 14.5mm ammo pile" = list(5, /obj/item/ammo_casing/antim/scrap/prespawned),
 			"10 points, 5 ammo: Scrap 14.5mm ammo box" = list(10, /obj/item/ammo_magazine/ammobox/antim/scrap),
 			"10 points, 3 ammo: 14.5mm ammo pile" = list(10, /obj/item/ammo_casing/antim/prespawned),
-			"26 points, 15 ammo: 14.5mm ammo box" = list(26, /obj/item/ammo_magazine/ammobox/antim_small) // Same price as every packet for half the ammo, otherwise impossible to get
+			"28 points, 15 ammo: 14.5mm ammo box" = list(26, /obj/item/ammo_magazine/ammobox/antim_small) // Same price as every packet for half the ammo, otherwise impossible to get
 			),
 		CAL_FLARE = list(
 			"1 point: old flare x1" = list(1, /obj/item/ammo_casing/flare/old),
