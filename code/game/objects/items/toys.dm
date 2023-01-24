@@ -119,6 +119,14 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "tinyxmastree"
 
+/obj/item/toy/junk/photo_frame
+    name = "a blank photo frame"
+    desc = "This usually has some photo on it, but you're drawing a blank right now!"
+    icon_state = "photo"
+    item_state = "paper"
+    icon = 'icons/obj/items.dmi'
+    w_class = ITEM_SIZE_SMALL
+
 /*
  * Toy crossbow
  */
@@ -1361,6 +1369,8 @@
 	icon_state = "contraband"
 	item_state = "contraband"
 	desc = "A rubber ball with air in it. Intented to be thrown at one a other for fun games. This one has a face on it."
+
+
 
 //////////////////////////////////////////////////////
 //				Magic 8-Ball / Conch				//
