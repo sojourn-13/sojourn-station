@@ -149,7 +149,7 @@ var/list/radiochannels = list(
 	"Engineering"	= ENG_FREQ,
 	"Security" 		= SEC_FREQ,
 	"Blackshield"   = BLS_FREQ,
-	"Marshal"      = MAR_FREQ,
+	"Marshals"      = MAR_FREQ,
 	"Special Ops" 	= DTH_FREQ,
 	"Mercenary" 	= SYND_FREQ,
 	"Supply" 		= SUP_FREQ,
@@ -203,6 +203,8 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, PRO_
 		return "sciradio"
 	if(frequency == MED_FREQ)
 		return "medradio"
+	if(frequency == MED_I_FREQ)
+		return "medaltradio"
 	if(frequency == SUP_FREQ) // cargo
 		return "supradio"
 	if(frequency == SRV_FREQ) // service

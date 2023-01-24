@@ -330,6 +330,7 @@
 	name = "Hunting Plains Cabin"
 	icon_state = "erisgreen"
 	requires_power = FALSE
+	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/forest/river_forest_dark
 	name = "Hunting Plains Caves"

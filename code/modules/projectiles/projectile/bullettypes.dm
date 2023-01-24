@@ -1025,7 +1025,7 @@
 	icon_state = "arrow"
 	damage_types = list(BRUTE = 2) //Multiplied by 10 when fired.
 	armor_penetration = 2
-	effective_faction = list("wurm", "roach", "spider") //good against common colony mobs
+	effective_faction = list("wurm", "roach", "spider", "vox_tribe", "russian", "tengo") //good against common colony mobs
 	damage_mult = 2 // Turns out arrows always sucked
 	embed = FALSE //don't want to embed and drop an arrow, that would be weird
 	check_armour = ARMOR_MELEE

@@ -601,11 +601,11 @@
 //Has some armor and but is a mix of the scav suit and a webbing
 /obj/item/clothing/suit/storage/vest/scav
 	name = "armored rig"
-	desc = "A simple plate carrier modified for personal use, additional pouches have been attached to it's front, \
+	desc = "A simple plate carrier modified for personal use, additional pouches have been attached to its front, \
 	with matching knee and arm pads to protect limbs without hindering movement. \
-	Opening the plate pouch would reveal a sheet of some Greyson alloy, welded and forced into a shape for the vest, \
-	far lighter and offering more protection then it's more common ceramic counterparts. \
-	Do to its scrappy yet robust design its able to take additional armor plates then a strandered heavy vest."
+	Opening the plate pouch would reveal a sheet of some Greyson alloy, welded and forced into shape for the vest, \
+	far lighter and offering more protection than it's more common ceramic counterparts. \
+	Due to its jury-rigged yet robust design, it's able to take more armor plates than a standard heavy vest."
 	icon_state = "forehead_armor"
 	item_state = "forehead_armor"
 	max_upgrades = 2 //Like all scav armor, this means investing into these will be better but buying gear will still be viable

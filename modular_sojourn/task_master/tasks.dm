@@ -58,7 +58,7 @@
 /datum/task_master/task/clay_thumb
 	name = "Potted Plant Maintainer"
 	key = "CLAY_THUMB_CONISOUR"
-	desc = "Do to maintaining small potted plants your knowings on biodiversity grows!"
+	desc = "Thanks to regularly maintaining small potted plants, your knowledge of biodiversity grows!"
 	gain_text = "Keeping potted plants alive sure is rewarding labour!"
 	level_threshholds = 10 //What looks like a low value is rather high, as this only gains bio on the second+ level up i.e first 10 points are wasted
 

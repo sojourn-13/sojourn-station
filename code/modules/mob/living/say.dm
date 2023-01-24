@@ -7,6 +7,7 @@ var/list/department_radio_keys = list(
 	"c" = "Command",
 	"n" = "Science",
 	"m" = "Medical",
+	"j" = "Medical(I)",
 	"e" = "Engineering",
 	"s" = "Marshal",
 	"b" = "Blackshield",
