@@ -70,16 +70,16 @@
 	if(CR)
 		data["cur_item"] = list(
 			"name" = CR.name,
-			"icon" = SSassets.transport.get_asset_url("[CR.result].png"),
-			"ref"  = "\ref[CR]",
+			"icon" = SSassets.transport.get_asset_url(sanitizeFileName("[CR.result].png")),
+			"ref"  = "[REF(CR)]",
 			"desc" = CR.get_description(),
 			"batch" = CR.flags & CRAFT_BATCH
 		)
 	var/list/items = list()
 	for(var/datum/craft_recipe/recipe in SScraft.categories[curr_category])
 		items += list(list(
-			"name" = (recipe.name),
-			"ref" = "\ref[recipe]"
+			"name" = capitalize(recipe.name),
+			"ref" = "[REF(recipe)]"
 			))
 	data["items"] = items
 
