@@ -50,12 +50,15 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["shirt and pants"] = "cbo"
-	options["bossgirl"] = "cbo_skirt"
+	options["girlboss"] = "cbo_skirt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
 		to_chat(M, "You decided to roll with the [choice] style.")
 		update_icon()
 		update_wear_icon()
@@ -98,6 +101,9 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
 		to_chat(M, "You decided to roll with the [choice] style.")
 		update_icon()
 		update_wear_icon()
@@ -160,6 +166,9 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+		)
 		to_chat(M, "You decided to roll with the [choice] style.")
 		update_icon()
 		update_wear_icon()
