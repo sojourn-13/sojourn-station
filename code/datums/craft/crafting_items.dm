@@ -172,6 +172,9 @@
 	var/turf/T = get_turf(src)
 	O.forceMove(T)
 	user.put_in_hands(O)
+/*
+	This on eris is desided for spawning with "additional items" like ammo or mags so when you make the gun you can also have a mag/ammo for it. We dont have this system
+	If someone were to make it or port it that be greate to have.
 	if(istype(O, /obj/item/gun/projectile))
 		var/list/aditional_objects = SSspawn_data.all_accompanying_obj_by_path[O.type]
 		var/atom/movable/aditional_obj
@@ -181,7 +184,7 @@
 				if(!prob(initial(AM.prob_aditional_object)))
 					continue
 				aditional_obj = new thing (T)
-		user.put_in_hands(aditional_obj)
+		user.put_in_hands(aditional_obj)*/
 	to_chat(user, SPAN_NOTICE("You have used [src] to craft a [O.name]."))
 	spawn(1)
 		if(!QDELETED(src))
