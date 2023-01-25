@@ -42,9 +42,10 @@
 		OACI.namespace_parent = ACI.namespace_parent = (ACI.namespace_parent | OACI.namespace_parent)
 		OACI.namespace = OACI.namespace || ACI.namespace
 		if (OACI.hash != ACI.hash)
-			var/error_msg = "ERROR: new asset added to the asset cache with the same name as another asset: [asset_name] existing asset hash: [OACI.hash] new asset hash:[ACI.hash]"
+			/*var/error_msg = "ERROR: new asset added to the asset cache with the same name as another asset: [asset_name] existing asset hash: [OACI.hash] new asset hash:[ACI.hash]" // commented out because 800 MB logs crash PCs
 			stack_trace(error_msg)
-			log_asset(error_msg)
+			log_asset(error_msg) */
+			return TRUE
 		else
 			if (length(ACI.namespace))
 				return ACI
@@ -71,6 +72,7 @@
 	if (keep_local_name)
 		return url_encode(asset_cache_item.name)
 	return url_encode("asset.[asset_cache_item.hash][asset_cache_item.ext]")
+
 
 /// Sends a list of browser assets to a client
 /// client - a client or mob
@@ -127,7 +129,7 @@
 				|| (ACI.namespace && !ACI.namespace_parent)
 			if (!keep_local_name)
 				new_asset_name = "asset.[ACI.hash][ACI.ext]"
-			log_asset("Sending asset `[asset_name]` to client `[client]` as `[new_asset_name]`")
+			// log_asset("Sending asset `[asset_name]` to client `[client]` as `[new_asset_name]`") // commented out because this caused 800 MB log files
 			client << browse_rsc(ACI.resource, new_asset_name)
 
 			client.sent_assets[new_asset_name] = ACI.hash
