@@ -116,6 +116,16 @@
 		BURST_8_ROUND,
 		FULL_AUTO_300
 		)
+	gun_parts = list(/obj/item/part/gun/frame/pk = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
+/obj/item/part/gun/frame/pk
+	name = "Pulemyot Kalashnikova frame"
+	desc = "A Pulemyot Kalashnikova LMG frame. A violent and beautiful spark of the past."
+	icon_state = "frame_pk"
+	result = /obj/item/gun/projectile/automatic/lmg/pk
+	gripvars = /obj/item/part/gun/grip/serb
+	mechanismvar = /obj/item/part/gun/mechanism/machinegun
+	barrelvars = /obj/item/part/gun/barrel/lrifle
 
 //This should be in its own file...
 /obj/item/gun/projectile/automatic/lmg/tk
@@ -132,6 +142,16 @@
 	penetration_multiplier = 1.2
 	init_recoil = LMG_RECOIL(0.8)
 	serial_type = "SD GmbH"
+	gun_parts = list(/obj/item/part/gun/frame/tk = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
+/obj/item/part/gun/frame/tk
+	name = "Takeshi frame"
+	desc = "A Takeshi LMG frame. A fine-oiled machine of war and death."
+	icon_state = "frame_mg"
+	result = /obj/item/gun/projectile/automatic/lmg/tk
+	gripvars = /obj/item/part/gun/grip/rubber
+	mechanismvar = /obj/item/part/gun/mechanism/machinegun
+	barrelvars = /obj/item/part/gun/barrel/lrifle
 
 /obj/item/gun/projectile/automatic/lmg/tk/update_icon()
 //	..() We are rather different than other guns and lmgs.

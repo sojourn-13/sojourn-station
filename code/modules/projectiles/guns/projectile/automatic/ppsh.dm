@@ -83,3 +83,13 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/part/gun/frame/drozd
+	name = "PPSH frame"
+	desc = "A PPSH SMG frame. A workers best friend."
+	icon_state = "frame_ppsh"
+	result = /obj/item/gun/projectile/automatic/ppsh
+	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/smg
+	barrelvars = /obj/item/part/gun/barrel/pistol
+	resultvars = list(/obj/item/gun/projectile/automatic/ppsh, /obj/item/gun/projectile/automatic/ppsh/NM_colony, /obj/item/gun/projectile/automatic/ppsh/ppv)

@@ -24,11 +24,25 @@
 	init_recoil = RIFLE_RECOIL(0.8)
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
 
+	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
 	init_firemodes = list(
 		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "EXC"
+
+//AK-47 base-frame
+/obj/item/part/gun/frame/ak47
+	name = "AK frame"
+	desc = "An AK rifle frame. The eternal firearm."
+	icon_state = "frame_ak"
+	matter = list(MATERIAL_PLASTEEL = 8)
+	result = /obj/item/gun/projectile/automatic/ak47
+	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black)
+	resultvars = list(/obj/item/gun/projectile/automatic/ak47, /obj/item/gun/projectile/automatic/ak47/sa, /obj/item/gun/projectile/automatic/ak47/NM_colony)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = /obj/item/part/gun/barrel/lrifle
 
 /obj/item/gun/projectile/automatic/ak47/NM_colony
 	name = "polymer \"Kalashnikov\" rifle"
@@ -37,6 +51,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	price_tag = 800
 	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 /obj/item/gun/projectile/automatic/ak47/update_icon()
 	..()
@@ -71,6 +86,7 @@
 	mag_well = MAG_WELL_RIFLE|MAG_WELL_DRUM // Saigas do have drum mags
 	init_recoil = RIFLE_RECOIL(1.3)
 	serial_type = "EXC"
+	gun_parts = list(/obj/item/part/gun/frame/saiga = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/shotgun = 1)
 
 /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony
 	name = "\"Saigini 12\" shotgun"
@@ -82,6 +98,19 @@
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1)
 	price_tag = 800
 	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/saiga = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/shotgun = 1)
+
+//AK-47 base-frame
+/obj/item/part/gun/frame/saiga
+	name = "Saiga frame"
+	desc = "An Saiga shotgun frame. Based off the timeless AK design."
+	icon_state = "frame_ak"
+	matter = list(MATERIAL_PLASTEEL = 8)
+	result = /obj/item/gun/projectile/automatic/ak47/saiga
+	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/black)
+	resultvars = list(/obj/item/gun/projectile/automatic/ak47/saiga, /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = /obj/item/part/gun/barrel/shotgun
 
 /obj/item/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" rifle"
@@ -98,6 +127,7 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/ak47/sa/sawn
 	serial_type = "SA"
+	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 /obj/item/gun/projectile/automatic/ak47/sa/sawn
 	name = "sawn-off \"Kalashnikov\" rifle"
@@ -131,6 +161,7 @@
 	init_recoil = RIFLE_RECOIL(0.8)
 	saw_off = FALSE
 	serial_type = "SA"
+	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1, /obj/item/part/gun/barrel/shotgun = 1, /obj/item/part/gun/mechanism/shotgun = 1)
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	init_firemodes = list(
@@ -192,6 +223,7 @@
 	init_recoil = RIFLE_RECOIL(0.7)
 	mag_well = MAG_WELL_RIFLE
 	excelsior = FALSE
+	gun_parts = list(/obj/item/part/gun = 3 ,/obj/item/stack/material/plasteel = 7)
 
 	origin_tech = list(TECH_COMBAT = 2)	//bad copies don't give good science
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
@@ -205,3 +237,14 @@
 	price_tag = 500
 	serial_type = "INDEX"
 	serial_shown = FALSE
+	gun_parts = list(/obj/item/part/gun/frame/kalash = 1, /obj/item/part/gun/grip/black = 1 , /obj/item/part/gun/mechanism/autorifle/steel = 1, /obj/item/part/gun/barrel/lrifle/steel = 1)
+
+/obj/item/part/gun/frame/kalash
+	name = "Homemade Kalash frame"
+	desc = "A homemade Kalash rifle frame. Cobbled together, but as good as new. Sort of."
+	icon_state = "frame_kalash"
+	matter = list(MATERIAL_STEEL = 10)
+	resultvars = list(/obj/item/gun/projectile/automatic/ak47/makeshift)
+	gripvars = list(/obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle/steel
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle/steel, /obj/item/part/gun/barrel/srifle/steel)

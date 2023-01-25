@@ -31,6 +31,17 @@
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.4 // 40 vig
 
+	gun_parts = list(/obj/item/part/gun/frame/minotaur = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/magnum = 1)
+
+/obj/item/part/gun/frame/minotaur
+	name = "Minotaur frame"
+	desc = "A Minotaur revolver frame. The officer's choice."
+	icon_state = "frame_mateba"
+	result = /obj/item/gun/projectile/revolver
+	gripvars = /obj/item/part/gun/grip/rubber
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
+	barrelvars = /obj/item/part/gun/barrel/magnum
+
 /obj/item/gun/projectile/revolver/verb/spin_cylinder()
 	set name = "Spin revolver"
 	set desc = "Fun when you're bored out of your skull."

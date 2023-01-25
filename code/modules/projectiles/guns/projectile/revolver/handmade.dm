@@ -15,3 +15,4 @@
 	serial_shown = FALSE
 
 	wield_delay = 0 SECOND
+	gun_parts = list(/obj/item/part/gun = 1 ,/obj/item/stack/material/steel = 15)

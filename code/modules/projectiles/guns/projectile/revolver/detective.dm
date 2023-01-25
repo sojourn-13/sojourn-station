@@ -19,6 +19,16 @@
 	serial_type = "H&S"
 
 	wield_delay = 0 SECOND //god it's bad
+	gun_parts = list(/obj/item/part/gun/frame/havelock = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/pistol = 1)
+
+/obj/item/part/gun/frame/havelock
+	name = "Havelock frame"
+	desc = "A Havelock revolver frame. Personal defense in a small package."
+	icon_state = "frame_havelock"
+	result = /obj/item/gun/projectile/revolver/detective
+	gripvars = /obj/item/part/gun/grip/wood
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
+	barrelvars = /obj/item/part/gun/barrel/pistol
 
 /obj/item/gun/projectile/revolver/detective/update_icon()
 	..()

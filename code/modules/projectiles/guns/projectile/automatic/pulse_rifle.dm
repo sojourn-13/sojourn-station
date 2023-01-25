@@ -23,6 +23,7 @@
 	damage_multiplier = 1
 	init_recoil = LMG_RECOIL(0.7)
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
+	gun_parts = list(/obj/item/part/gun = 2, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/clrifle = 1)
 
 	init_firemodes = list(
 		FULL_AUTO_600,

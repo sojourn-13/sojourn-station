@@ -32,6 +32,7 @@
 		BURST_3_ROUND
 		)
 	serial_type = "SD GmbH"
+	gun_parts = list(/obj/item/part/gun = 2, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/ostwind/update_icon()
 	..()

@@ -36,6 +36,7 @@
 
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // SMG level
+	gun_parts = list(/obj/item/part/gun = 2, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 /obj/item/gun/projectile/automatic/nail_gun/update_icon()
 	..()

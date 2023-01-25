@@ -21,6 +21,16 @@
 
 	wield_delay = 1 SECOND
 	wield_delay_factor = 0.4 // 40 vig
+	gun_parts = list(/obj/item/part/gun/frame/sixshot = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/shotgun = 1)
+
+/obj/item/part/gun/frame/sixshot
+	name = "Six-Shot frame"
+	desc = "A Six-Shot revolving shotgun frame. Classy."
+	icon_state = "frame_mateba"
+	result = /obj/item/gun/projectile/revolver/sixshot
+	gripvars = /obj/item/part/gun/grip/wood
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
+	barrelvars = /obj/item/part/gun/barrel/shotgun
 
 /obj/item/gun/projectile/revolver/sixshot/conversion
 	name = "\"Ten-Shot\" conversion shotgun"

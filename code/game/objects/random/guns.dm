@@ -298,3 +298,16 @@
 	name = "low chance random armor mod"
 	icon_state = "gun-red-low"
 	spawn_nothing_percentage = 80
+
+//Gun parts spawners - Wasn't sure where tf to put these, they're here for orgnization.
+/obj/random/gun_parts
+	name = "random gun part"
+	icon_state = "gun-black"
+
+/obj/random/gun_parts/item_to_spawn()
+	return pickweight(list())
+
+/obj/random/gun_parts/low
+	name = "low chance random gun part"
+	icon_state = "gun-black-low"
+	spawn_nothing_percentage = 75

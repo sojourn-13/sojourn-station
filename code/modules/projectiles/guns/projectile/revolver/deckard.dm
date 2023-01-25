@@ -19,3 +19,13 @@
 
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
+	gun_parts = list(/obj/item/part/gun/frame/deckard = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/kurtz = 1)
+
+/obj/item/part/gun/frame/deckard
+	name = "Deckard frame"
+	desc = "A Deckard revolver frame. The secret policeman's choice."
+	icon_state = "frame_thatgun"
+	result = /obj/item/gun/projectile/revolver/deckard
+	gripvars = /obj/item/part/gun/grip/wood
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
+	barrelvars = /obj/item/part/gun/barrel/kurtz

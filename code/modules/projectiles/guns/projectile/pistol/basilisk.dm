@@ -24,6 +24,16 @@
 
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
+	gun_parts = list(/obj/item/part/gun/frame/basilisk = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/kurtz = 1)
+
+/obj/item/part/gun/frame/basilisk
+	name = "Basilisk frame"
+	desc = "An Basilisk pistol frame. Big n' cheap."
+	icon_state = "frame_basilisk"
+	result = /obj/item/gun/projectile/basilisk
+	gripvars = /obj/item/part/gun/grip/wood
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = /obj/item/part/gun/barrel/kurtz
 
 /obj/item/gun/projectile/basilisk/update_icon()
 	..()

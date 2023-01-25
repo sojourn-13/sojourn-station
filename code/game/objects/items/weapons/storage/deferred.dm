@@ -334,10 +334,10 @@
 	desc = "A small collection of autolathe disks"
 	initial_contents = list(/obj/random/lathe_disk = 7)
 
-///obj/item/storage/deferred/gun_parts
-//	name = "gun part box"
-//	desc = "Uppers, lowers, and everything in between"
-//	initial_contents = list(/obj/spawner/gun_parts = 7)
+obj/item/storage/deferred/gun_parts
+	name = "gun part box"
+	desc = "Uppers, lowers, and everything in between"
+	initial_contents = list(/obj/random/gun_parts = 7)
 
 /obj/item/storage/deferred/powercells
 	name = "powercell box"
