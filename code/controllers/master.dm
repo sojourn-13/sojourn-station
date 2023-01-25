@@ -514,6 +514,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		SS = thing
 		if (SS.state != SS_IDLE)
 			continue
+		if (SS.suspended > 0)
+			continue
 		if (SS.can_fire <= 0)
 			continue
 		if (SS.next_fire > world.time)

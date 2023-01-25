@@ -218,7 +218,7 @@ var/global/list/big_deepmaint_room_templates = list()
 		else
 			sleep(150)
 	spawn()
-		testing_variable(start, REALTIMEOFDAY)
+		//testing_variable(start, REALTIMEOFDAY)
 		var/obj/procedural/jp_DungeonGenerator/deepmaint/generate = new /obj/procedural/jp_DungeonGenerator/deepmaint(src)
 		testing("Beginning procedural generation of [name] -  Z-level [z].")
 		generate.name = name
