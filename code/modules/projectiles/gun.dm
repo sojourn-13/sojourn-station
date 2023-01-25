@@ -404,7 +404,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			serial_shown = FALSE
 			return FALSE
 
-	if(QUALITY_BOLT_TURNING)
+	if(I.get_tool_quality(QUALITY_PRYING))
 		if(!gun_parts)
 			to_chat(user, SPAN_NOTICE("You can't dismantle [src] as it has no gun parts! How strange..."))
 			return FALSE
