@@ -30,9 +30,9 @@
 	desc = "An Lamia pistol frame. For a pocket sized hole puncher."
 	icon_state = "frame_lamia"
 	result = /obj/item/gun/projectile/lamia
-	gripvars = /obj/item/part/gun/grip/rubber
+	gripvars = list(/obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
-	barrelvars = /obj/item/part/gun/barrel/kurtz
+	barrelvars = list(/obj/item/part/gun/barrel/kurtz)
 
 /obj/item/gun/projectile/lamia/update_icon()
 	..()

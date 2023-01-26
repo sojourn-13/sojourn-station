@@ -33,6 +33,6 @@
 	desc = "A Wayfarer revolver frame. A easily produced weapon, for when a worker wants to ice his boss."
 	icon_state = "frame_skydriver"
 	result = /obj/item/gun/projectile/revolver/wayfarer
-	gripvars = /obj/item/part/gun/grip/excel
+	gripvars = list(/obj/item/part/gun/grip/excel)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
-	barrelvars = /obj/item/part/gun/barrel/clrifle
+	barrelvars = list(/obj/item/part/gun/barrel/clrifle)

@@ -123,9 +123,9 @@
 	desc = "A Pulemyot Kalashnikova LMG frame. A violent and beautiful spark of the past."
 	icon_state = "frame_pk"
 	result = /obj/item/gun/projectile/automatic/lmg/pk
-	gripvars = /obj/item/part/gun/grip/serb
+	gripvars = list(/obj/item/part/gun/grip/serb)
 	mechanismvar = /obj/item/part/gun/mechanism/machinegun
-	barrelvars = /obj/item/part/gun/barrel/lrifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
 
 //This should be in its own file...
 /obj/item/gun/projectile/automatic/lmg/tk
@@ -149,9 +149,9 @@
 	desc = "A Takeshi LMG frame. A fine-oiled machine of war and death."
 	icon_state = "frame_mg"
 	result = /obj/item/gun/projectile/automatic/lmg/tk
-	gripvars = /obj/item/part/gun/grip/rubber
+	gripvars = list(/obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/machinegun
-	barrelvars = /obj/item/part/gun/barrel/lrifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
 
 /obj/item/gun/projectile/automatic/lmg/tk/update_icon()
 //	..() We are rather different than other guns and lmgs.
@@ -207,6 +207,7 @@
 		BURST_8_ROUND,
 		FULL_AUTO_600 // Meant to be a supressive fire GPMG
 		)
+	gun_parts = list(/obj/item/part/gun = 3, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 // Even more special than the Takeshi so we have to do this all over again instead of being a Takeshi child
 /obj/item/gun/projectile/automatic/lmg/heroic/update_icon()

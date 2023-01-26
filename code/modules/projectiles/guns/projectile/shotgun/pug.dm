@@ -36,9 +36,9 @@
 	desc = "A Pug shotgun frame. Specially designed to sweep streets and spaceship halls."
 	icon_state = "frame_pug"
 	result = /obj/item/gun/projectile/shotgun/pug
-	gripvars = /obj/item/part/gun/grip/serb
+	gripvars = list(/obj/item/part/gun/grip/serb)
 	mechanismvar = /obj/item/part/gun/mechanism/shotgun
-	barrelvars = /obj/item/part/gun/barrel/shotgun
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
 
 /obj/item/gun/projectile/shotgun/pug/update_icon()
 	cut_overlays()

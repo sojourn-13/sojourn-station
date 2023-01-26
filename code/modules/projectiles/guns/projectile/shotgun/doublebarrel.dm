@@ -39,9 +39,9 @@
 	desc = "A double-barreled shotgun frame. An immortal classic of cowboys and bartenders alike."
 	icon_state = "frame_dshotgun"
 	result = /obj/item/gun/projectile/shotgun/doublebarrel
-	gripvars = /obj/item/part/gun/grip/wood
+	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/shotgun
-	barrelvars = /obj/item/part/gun/barrel/shotgun
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
 
 /obj/item/gun/projectile/shotgun/doublebarrel/update_icon()
 	..()

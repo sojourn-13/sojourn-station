@@ -42,7 +42,7 @@
 	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black)
 	resultvars = list(/obj/item/gun/projectile/automatic/ak47, /obj/item/gun/projectile/automatic/ak47/sa, /obj/item/gun/projectile/automatic/ak47/NM_colony)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
-	barrelvars = /obj/item/part/gun/barrel/lrifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
 
 /obj/item/gun/projectile/automatic/ak47/NM_colony
 	name = "polymer \"Kalashnikov\" rifle"
@@ -110,7 +110,7 @@
 	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/black)
 	resultvars = list(/obj/item/gun/projectile/automatic/ak47/saiga, /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
-	barrelvars = /obj/item/part/gun/barrel/shotgun
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
 
 /obj/item/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" rifle"

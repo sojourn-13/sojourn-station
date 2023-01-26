@@ -73,4 +73,4 @@
 	result = /obj/item/gun/projectile/automatic/vintorez
 	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
-	barrelvars = /obj/item/part/gun/barrel/lrifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)

@@ -53,6 +53,6 @@ obj/item/gun/projectile/automatic/dp/update_icon()
 	desc = "A DP27 frame. A gravity-operated machinegun fed by pan-mags."
 	icon_state = "frame_dp27"
 	result = /obj/item/gun/projectile/automatic/dp
-	gripvars = /obj/item/part/gun/grip/wood
+	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/machinegun
-	barrelvars = /obj/item/part/gun/barrel/lrifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)

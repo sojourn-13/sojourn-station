@@ -183,10 +183,10 @@
 /obj/item/part/gun/frame/sts
 	name = "STS rifle frame"
 	desc = "A STS rifle frame. Cheap, effective, and replacable."
-	icon_state = "frame_sol"
+	icon_state = "frame_sts"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/sts/rifle
 	gripvars = list(/obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/rubber)
 	resultvars = list(/obj/item/gun/projectile/automatic/sts/rifle, /obj/item/gun/projectile/automatic/sts/rifle/blackshield)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
-	barrelvars = /obj/item/part/gun/barrel/lrifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)

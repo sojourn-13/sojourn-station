@@ -58,6 +58,6 @@
 	icon_state = "frame_specop"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/specop
-	gripvars = /obj/item/part/gun/grip/rubber
+	gripvars = list(/obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/smg
-	barrelvars = /obj/item/part/gun/barrel/clrifle
+	barrelvars = list(/obj/item/part/gun/barrel/clrifle)

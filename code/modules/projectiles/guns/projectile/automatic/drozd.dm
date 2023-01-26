@@ -67,5 +67,5 @@
 	result = /obj/item/gun/projectile/automatic/drozd
 	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/smg
-	barrelvars = /obj/item/part/gun/barrel/magnum
+	barrelvars = list(/obj/item/part/gun/barrel/magnum)
 	resultvars = list(/obj/item/gun/projectile/automatic/drozd, /obj/item/gun/projectile/automatic/drozd/NM_colony)

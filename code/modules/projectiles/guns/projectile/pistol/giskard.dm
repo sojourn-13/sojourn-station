@@ -28,9 +28,9 @@
 	desc = "A Giskard pistol frame. A ubiquitous pocket deterrent."
 	icon_state = "frame_giskard"
 	result = /obj/item/gun/projectile/giskard
-	gripvars = /obj/item/part/gun/grip/wood
+	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
-	barrelvars = /obj/item/part/gun/barrel/pistol
+	barrelvars = list(/obj/item/part/gun/barrel/pistol)
 
 /obj/item/gun/projectile/giskard/update_icon()
 	..()

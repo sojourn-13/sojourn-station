@@ -39,6 +39,6 @@
 	desc = "A Roe boltaction rifle frame. Perfect for small game and practice."
 	icon_state = "frame_roe"
 	result = /obj/item/gun/projectile/boltgun/light
-	gripvars = /obj/item/part/gun/grip/wood
+	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/boltgun
-	barrelvars = /obj/item/part/gun/barrel/srifle
+	barrelvars = list(/obj/item/part/gun/barrel/srifle)

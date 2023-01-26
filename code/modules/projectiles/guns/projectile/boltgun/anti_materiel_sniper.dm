@@ -42,7 +42,7 @@
 /obj/item/part/gun/frame/heavysniper
 	name = "Anti-Material Rifle frame"
 	desc = "An AMR frame. For removing chunks of man and machine alike."
-	icon_state = "frame_antimaterial"
+	icon_state = "frame_amr"
 	resultvars = list(/obj/item/gun/projectile/boltgun/heavysniper)
 	gripvars = list(/obj/item/part/gun/grip/serb)
 	mechanismvar = /obj/item/part/gun/mechanism/boltgun

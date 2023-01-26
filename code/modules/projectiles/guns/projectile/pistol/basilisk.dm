@@ -31,9 +31,9 @@
 	desc = "An Basilisk pistol frame. Big n' cheap."
 	icon_state = "frame_basilisk"
 	result = /obj/item/gun/projectile/basilisk
-	gripvars = /obj/item/part/gun/grip/wood
+	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
-	barrelvars = /obj/item/part/gun/barrel/kurtz
+	barrelvars = list(/obj/item/part/gun/barrel/kurtz)
 
 /obj/item/gun/projectile/basilisk/update_icon()
 	..()

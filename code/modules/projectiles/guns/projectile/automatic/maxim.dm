@@ -67,5 +67,5 @@
 	result = /obj/item/gun/projectile/automatic/maxim
 	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/machinegun
-	barrelvars = /obj/item/part/gun/barrel/lrifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
 	resultvars = list(/obj/item/gun/projectile/automatic/maxim, /obj/item/gun/projectile/automatic/maxim/NM_colony)

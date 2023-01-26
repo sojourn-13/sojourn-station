@@ -45,6 +45,7 @@
 
 	wield_delay = 2.5 SECOND
 	wield_delay_factor = 0.6 // 60 vig , holy shit big gun
+	gun_parts = list(/obj/item/part/gun = 4, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/hrifle = 1)
 
 /obj/item/gun/projectile/automatic/chaingun/special_check(mob/user)
 	if(cover_open)

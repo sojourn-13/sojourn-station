@@ -34,9 +34,9 @@
 	desc = "A Grizzly shotgun frame. A militiaman's favorite."
 	icon_state = "frame_shotgun"
 	result = /obj/item/gun/projectile/shotgun/pump
-	gripvars = /obj/item/part/gun/grip/wood
+	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/shotgun
-	barrelvars = /obj/item/part/gun/barrel/shotgun
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
 
 /obj/item/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)
