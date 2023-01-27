@@ -37,7 +37,7 @@
 	color = "#BF0000"
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
-	nerve_system_accumulations = 35 //Cheap
+	nerve_system_accumulations = 15 // Basic chems shouldn't hurt the body as much as higher potency ones.
 
 /datum/reagent/medicine/bicaridine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
@@ -56,7 +56,7 @@
 	color = "#964e06"
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = TRUE
-	nerve_system_accumulations = 15
+	nerve_system_accumulations = 30
 
 /datum/reagent/medicine/vermicetol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.heal_organ_damage(12 * removed, 0)
@@ -87,7 +87,7 @@
 	color = "#E6666C"
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
-	nerve_system_accumulations = 15
+	nerve_system_accumulations = 30
 
 /datum/reagent/medicine/meralyne/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.heal_organ_damage(0.6 * effect_multiplier, 0, 5 * effect_multiplier)
@@ -102,7 +102,7 @@
 	color = "#FFA800"
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
-	nerve_system_accumulations = 30
+	nerve_system_accumulations = 10
 
 /datum/reagent/medicine/kelotane/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
@@ -133,7 +133,7 @@
 	color = "#00A000"
 	scannable = TRUE
 	overdose = REAGENTS_OVERDOSE
-	nerve_system_accumulations = 15
+	nerve_system_accumulations = 0
 
 /datum/reagent/medicine/dylovene/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
@@ -263,7 +263,7 @@
 	color = "#000080"
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = TRUE
-	nerve_system_accumulations = 30
+	nerve_system_accumulations = -30
 
 /datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/removed = REM)
 	if(ishuman(M))
@@ -557,7 +557,7 @@
 	metabolism = REM * 0.25
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
-	nerve_system_accumulations = 10
+	nerve_system_accumulations = -15
 
 /datum/reagent/medicine/alkysine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustBrainLoss(-(3 + (M.getBrainLoss() * 0.05)) * effect_multiplier)
@@ -593,7 +593,7 @@
 	color = "#561EC3"
 	overdose = 10
 	scannable = TRUE
-	nerve_system_accumulations = 40
+	nerve_system_accumulations = 30
 
 /datum/reagent/medicine/peridaxon/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
 	if(M.species?.reagent_tag == IS_CHTMANT)
@@ -687,7 +687,7 @@
 	metabolism = REM * 0.25
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
-	nerve_system_accumulations = -5
+	nerve_system_accumulations = 15
 
 /datum/reagent/medicine/hyronalin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.radiation = max(M.radiation - (3 * effect_multiplier), 0)
@@ -701,7 +701,7 @@
 	metabolism = REM * 0.25
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
-	nerve_system_accumulations = -15
+	nerve_system_accumulations = 30
 
 /datum/reagent/medicine/arithrazine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.radiation = max(M.radiation - (7 + (M.radiation * 0.10)) * effect_multiplier, 0)
@@ -719,7 +719,7 @@
 	metabolism = REM * 0.05 //Infections are already a pain in the neck to treat, this should ease having to re-dose every time above the 5u threshold.
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
-	nerve_system_accumulations = 5
+	nerve_system_accumulations = -5
 
 /datum/reagent/medicine/spaceacillin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.adjustToxLoss(-((0.1 + (M.getToxLoss() * 0.01)) * effect_multiplier))
@@ -848,7 +848,7 @@
 	color = "#669900"
 	overdose = REAGENTS_OVERDOSE * 0.4 // Should OD at 12 units, you still shouldn't ever use more than 2u at a time anyways. - Seb
 	scannable = TRUE
-	nerve_system_accumulations = 0
+	nerve_system_accumulations = 40
 
 /datum/reagent/medicine/rezadone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustCloneLoss(-(2 + (M.getCloneLoss() * 0.05)) * effect_multiplier)
@@ -944,7 +944,7 @@
 	color = "#bc018a"
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
-	nerve_system_accumulations = -35
+	nerve_system_accumulations = -50
 
 /datum/reagent/medicine/noexcutite/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.make_jittery(-50)
@@ -993,7 +993,7 @@
 	scannable = TRUE
 	metabolism = REM/2
 	overdose = REAGENTS_OVERDOSE
-	nerve_system_accumulations = 15
+	nerve_system_accumulations = 5
 
 /datum/reagent/medicine/polystem/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.heal_organ_damage(0.3 * effect_multiplier, 0, 3 * effect_multiplier)
@@ -1012,7 +1012,7 @@
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
 	metabolism = REM/2
-	nerve_system_accumulations = -15
+	nerve_system_accumulations = -100
 
 /datum/reagent/medicine/detox/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(!M.metabolism_effects.nsa_chem_bonus)
@@ -1091,7 +1091,7 @@
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
 	metabolism = REM/2
-	nerve_system_accumulations = -10
+	nerve_system_accumulations = -15
 
 /datum/reagent/medicine/aminazine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_NOWITHDRAW, 1)
@@ -1106,7 +1106,7 @@
 	overdose = REAGENTS_OVERDOSE/2
 	scannable = TRUE
 	metabolism = REM/2
-	nerve_system_accumulations = -10
+	nerve_system_accumulations = -50
 
 /datum/reagent/medicine/haloperidol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.bloodstr)

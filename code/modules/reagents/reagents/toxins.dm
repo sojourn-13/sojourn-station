@@ -456,7 +456,7 @@
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#13BC5E"
-	nerve_system_accumulations = 0
+	nerve_system_accumulations = 50
 
 /datum/reagent/toxin/slimetoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
@@ -508,7 +508,7 @@
 	color = "#a37d9c"
 	overdose = REAGENTS_OVERDOSE/3
 	addiction_chance = 0.01 //Will STILL likely always be addicting
-	nerve_system_accumulations = 30
+	nerve_system_accumulations = 15
 	metabolism = REM * 0.2 //but processes much faster than other toxins
 	strength = 0.3 //Rather lethal
 	heating_point = 523
@@ -864,7 +864,7 @@
 	color = "#CF3600"
 	strength = 0.2
 	metabolism = REM * 2
-	nerve_system_accumulations = 40
+	nerve_system_accumulations = 30
 	var/agony_amount = 4
 
 /datum/reagent/toxin/wasp_toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)

@@ -123,7 +123,7 @@
 	var/nsa_amount = get_nsa()
 	if(nsa_amount < nsa_threshold*1.1)
 		return
-	parent.shake_animation(2)
+	parent.make_jittery(2)
 
 	if(nsa_amount < nsa_threshold*1.2)
 		return
