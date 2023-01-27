@@ -236,21 +236,25 @@
 /obj/machinery/smelter/RefreshParts()
 	..()
 
-	var/manipulator_rating = 0
-	var/manipulator_count = 0
+	var/speed_rating = 0
+	var/speed_parts_count = 0
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
-		manipulator_rating += M.rating
-		++manipulator_count
+		speed_rating += M.rating
+		++speed_parts_count
 
-	speed = initial(speed)*(manipulator_rating/manipulator_count)
+	for(var/obj/item/stock_parts/scanning_module/S in component_parts)
+		speed_rating += S.rating
+		++speed_parts_count
+
+	speed = initial(speed)*(speed_rating/speed_parts_count)
 
 	var/ml_rating = 0
-	var/ml_count = 0
+	//var/ml_count = 0
 	for(var/obj/item/stock_parts/micro_laser/ML in component_parts)
 		ml_rating += ML.rating
-		++ml_count
+		//++ml_count
 
-	scrap_multiplier = initial(scrap_multiplier)+(((ml_rating/ml_count)-1)*0.05)
+	scrap_multiplier = initial(scrap_multiplier)+(((ml_rating)-1)*0.1) // /ml_count
 	if(scrap_multiplier > 1)
 		scrap_multiplier = 1
 
@@ -345,3 +349,4 @@
 
 	SSnano.update_uis(src)
 	return FALSE
+	
