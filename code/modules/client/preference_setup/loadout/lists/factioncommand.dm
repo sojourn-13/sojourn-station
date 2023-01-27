@@ -41,3 +41,27 @@
 	slot = slot_wear_suit
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Faction: Command"
+
+/datum/gear/factioncommand/captainturtleneck
+	display_name = "turtleneck, premier"
+	path = /obj/item/clothing/under/turtleneck/premier
+	allowed_roles = list("Premier")
+	slot = slot_w_uniform
+	sort_category = "Faction: Command"
+	cost = 0
+
+/datum/gear/factioncommand/captainturtleneckbrown
+	display_name = "turtleneckdrab, premier"
+	path = /obj/item/clothing/under/turtleneck/premierbrown
+	allowed_roles = list("Premier")
+	slot = slot_w_uniform
+	sort_category = "Faction: Command"
+	cost = 0
+
+/datum/gear/factioncommand/captainturtleneckskirt
+	display_name = "turtleneckskirt, premier"
+	path = /obj/item/clothing/under/turtleneck/premierskirt
+	allowed_roles = list("Premier")
+	slot = slot_w_uniform
+	sort_category = "Faction: Command"
+	cost = 0

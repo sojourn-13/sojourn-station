@@ -353,6 +353,28 @@
 	icon_state = "blackturtle"
 	item_state = "blackturtle"
 
+//Role:premier-turtlenecks
+
+/obj/item/clothing/under/turtleneck/premier
+	name = "premier turtleneck"
+	desc = "A green turtleneck complete with black pants and golden buckle."
+	icon_state = "tn_premier"
+	item_state = "tn_premier"
+
+/obj/item/clothing/under/turtleneck/premierbrown
+	name = "premier green and drab turtleneck"
+	desc = "A black turtleneck complete with brown pants and golden buckle."
+	icon_state = "tn_premierdrab"
+	item_state = "tn_premierdrab"
+
+/obj/item/clothing/under/turtleneck/premierskirt
+	name = "premier green turtleneck with skirt"
+	desc = "A green turtleneck. This one has a plain black skirt and golden buckle, for people who like their neck constrained but their legs free."
+	icon_state = "tn_premierskirt"
+	item_state = "tn_premierskirt"
+
+//Role:premier-turtlenecks end
+
 /obj/item/clothing/under/dismas
 	name = "highwayman clothes"
 	desc = "A set of clothes for a man of dubious morals who seeks redemption on the old road."
