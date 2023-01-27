@@ -134,7 +134,11 @@
 			if(!(material in stored_material))
 				stored_material[material] = 0
 
-			stored_material[material] += (materials[material] *= scrap_multiplier)
+			if(istype(smelting, /obj/item/stack))
+				var/obj/item/stack/stacked_item = smelting
+				stored_material[material] += (materials[material] * stacked_item.amount)
+			else
+				stored_material[material] += (materials[material] *= scrap_multiplier)
 
 	for(var/obj/O in smelting.contents)
 		smelt_item(O)

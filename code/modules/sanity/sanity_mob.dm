@@ -315,7 +315,7 @@
 			owner.give_health_via_stats()
 			while(stat_pool > 0)
 				stat_pool--
-				LAZYAPLUS(stat_change, pick(ALL_STATS), 3)
+				LAZYAPLUS(stat_change, pick(ALL_STATS_FOR_LEVEL_UP), 3)
 
 			for(var/stat in stat_change)
 				owner.stats.changeStat(stat, stat_change[stat])
