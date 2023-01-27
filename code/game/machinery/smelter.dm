@@ -250,7 +250,7 @@
 		ml_rating += ML.rating
 		++ml_count
 
-	scrap_multiplier = initial(scrap_multiplier)+(((ml_rating/ml_count)-1)*0.05)
+	scrap_multiplier = initial(scrap_multiplier)+(((ml_rating/ml_count)-1)*0.125)
 	if(scrap_multiplier > 1)
 		scrap_multiplier = 1
 
@@ -345,3 +345,4 @@
 
 	SSnano.update_uis(src)
 	return FALSE
+	
