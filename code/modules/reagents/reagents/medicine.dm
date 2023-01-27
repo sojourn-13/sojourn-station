@@ -71,7 +71,7 @@
 	color = "#FF69B4" //rgb(255,105,180)hotpink
 	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = TRUE
-	nerve_system_accumulations = 15
+	nerve_system_accumulations = 20
 
 /datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.heal_organ_damage(9 * removed, 0)
