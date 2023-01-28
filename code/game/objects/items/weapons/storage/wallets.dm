@@ -142,7 +142,7 @@
 						/obj/item/coin/iron,
 						/obj/item/oddity/common/coin,
 						/obj/item/oddity/common/paper_crumpled,
-						/obj/item/oddity/common/old_money
+						/obj/item/oddity/common/old_money,
 						/obj/random/cigarettes/singles,
 						/obj/item/reagent_containers/pill/floorpill/wallet)
 
