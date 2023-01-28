@@ -108,11 +108,53 @@
 		return ..()
 
 /obj/item/storage/wallet/random/populate_contents()
-	var/item1_type = pick(/obj/item/spacecash/bundle/c10,/obj/item/spacecash/bundle/c100,/obj/item/spacecash/bundle/c1000,/obj/item/spacecash/bundle/c20,/obj/item/spacecash/bundle/c200,/obj/item/spacecash/bundle/c50,/obj/item/spacecash/bundle/c500)
+	var/item1_type
 	var/item2_type
+	var/item3_type
+	var/item4_type
+
+	if(prob(80))
+		item1_type = pick(/obj/item/spacecash/bundle/c10,
+						/obj/item/spacecash/bundle/c100,
+						/obj/item/spacecash/bundle/c20,
+						/obj/item/spacecash/bundle/c50,
+						/obj/random/cigarettes/singles,
+						//Gives work_visa_sol a LOT
+						/obj/item/clothing/accessory/work_visa_sol,
+						/obj/item/clothing/accessory/work_visa_sol,
+						/obj/item/clothing/accessory/work_visa_sol,
+						/obj/item/clothing/accessory/work_visa_sol,
+						/obj/random/cigarettes/singles,
+						/obj/item/reagent_containers/pill/floorpill/wallet)
+
+	if(prob(30))
+		item2_type = pick(/obj/item/spacecash/bundle/c10,
+						/obj/item/spacecash/bundle/c100,
+						/obj/item/spacecash/bundle/c20,
+						/obj/item/spacecash/bundle/c50,
+						/obj/random/cigarettes/singles,
+						/obj/item/oddity/common/lighter,
+						/obj/item/reagent_containers/pill/floorpill/wallet)
+
 	if(prob(50))
-		item2_type = pick(/obj/item/spacecash/bundle/c10,/obj/item/spacecash/bundle/c100,/obj/item/spacecash/bundle/c1000,/obj/item/spacecash/bundle/c20,/obj/item/spacecash/bundle/c200,/obj/item/spacecash/bundle/c50,/obj/item/spacecash/bundle/c500)
-	var/item3_type = pick(/obj/item/coin/silver, /obj/item/coin/silver, /obj/item/coin/gold, /obj/item/coin/iron, /obj/item/coin/iron, /obj/item/coin/iron)
+		item3_type = pick(/obj/item/coin/silver,
+						/obj/item/coin/gold,
+						/obj/item/coin/iron,
+						/obj/item/oddity/common/coin,
+						/obj/item/oddity/common/paper_crumpled,
+						/obj/item/oddity/common/old_money,
+						/obj/random/cigarettes/singles,
+						/obj/item/reagent_containers/pill/floorpill/wallet)
+
+	if(prob(50))
+		item4_type = pick(/obj/item/oddity/common/old_id,
+						/obj/item/oddity/common/broken_key,
+						/obj/item/oddity/common/paper_bundle,
+						/obj/item/flame/lighter,
+						/obj/item/flame/match,
+						/obj/item/paper,
+						/obj/item/pen,
+						/obj/item/reagent_containers/pill/floorpill/wallet)
 
 	if(item1_type)
 		new item1_type(src)
@@ -120,3 +162,5 @@
 		new item2_type(src)
 	if(item3_type)
 		new item3_type(src)
+	if(item4_type)
+		new item4_type(src)
