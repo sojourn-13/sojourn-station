@@ -361,17 +361,29 @@
 	icon_state = "tn_premier"
 	item_state = "tn_premier"
 
-/obj/item/clothing/under/turtleneck/premierbrown
-	name = "premier green and drab turtleneck"
-	desc = "A black turtleneck complete with brown pants and golden buckle."
-	icon_state = "tn_premierdrab"
-	item_state = "tn_premierdrab"
+/obj/item/clothing/under/turtleneck/premier/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/clothing/under/turtleneck/premierskirt
-	name = "premier green turtleneck with skirt"
-	desc = "A green turtleneck. This one has a plain black skirt and golden buckle, for people who like their neck constrained but their legs free."
-	icon_state = "tn_premierskirt"
-	item_state = "tn_premierskirt"
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Premier Default"] = "tn_premier"
+	options["Premier Drab"] = "tn_premierdrab"
+	options["Premier Skirt"] = "tn_premierskirt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 //Role:premier-turtlenecks end
 
