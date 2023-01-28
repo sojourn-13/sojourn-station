@@ -69,6 +69,11 @@
 	desc = "An armored vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations."
 	icon_state = "armor_ironhammer"
 
+/obj/item/clothing/suit/armor/vest/ironhammer_wintercoat //pieced together thanks to Rebel's Supply spec coat - Dongels
+	name = "security armored coat"
+	desc = "An armored winter coat with vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations. You're pretty sure the coat is just thick enough to keep warm, and that's all. Why you would want that on a sweaty jungle planet is beyond thought."
+	icon_state = "coatsecurity_long"
+
 /obj/item/clothing/suit/storage/vest/ironhammer
 	name = "webbed operator armor"
 	desc = "An armored vest that protects against some damage. This one has been done in Ironhammer Security colors and has various pouches and straps attached."
@@ -234,6 +239,9 @@
 	options["divisor armor"] = "divisor_armor"
 	options["tessellate armor"] = "tessellate_armor"
 	options["vector breastplate"] = "absolute_breast"
+	options["vinculum dress garbs"] = "vinculum_cassock"
+	options["tessellate plague garbs"] = "tessellate_plague_garbs"
+	options["tessellate dark plague garbs"] = "tessellate_plague_garbs_dark"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
