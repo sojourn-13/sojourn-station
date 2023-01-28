@@ -1531,3 +1531,4 @@
 		var/t = input(user, "What would you like the label to say?", "Nametag")
 		if(t)
 			name = "nametag ([t])"
+

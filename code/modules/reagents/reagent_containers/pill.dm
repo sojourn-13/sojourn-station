@@ -233,6 +233,11 @@
 	name = "floor pill"
 	desc = "Dare you?"
 
+
+/obj/item/reagent_containers/pill/floorpill/wallet
+	name = "random pill"
+	desc = "Dare you?"
+
 /obj/item/reagent_containers/pill/floorpill/Initialize()
 	. = ..()
 

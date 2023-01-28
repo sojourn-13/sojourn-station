@@ -132,7 +132,7 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/gun_fancy = 0.3,
 					/obj/random/tool_upgrade/rare = 4,
 					/obj/random/rig_module/rare = 4,
-					/obj/random/credits/c1000 = 3,
+					/obj/random/credits/c500 = 3,
 					/obj/random/mecha_equipment = 3,
 					/obj/random/cloth/holster = 4,
 					/obj/item/stash_spawner = 4 //Creates a stash of goodies for a scavenger hunt

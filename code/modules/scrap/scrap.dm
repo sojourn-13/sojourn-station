@@ -424,7 +424,10 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	name = "cloth pile"
 	desc = "A pile of ruined and discarded clothing."
 	parts_icon = 'icons/obj/structures/scrap/cloth.dmi'
-	loot_list = list(/obj/random/pack/cloth,/obj/random/pack/rare = 0.2)
+	loot_list = list(/obj/random/pack/cloth,
+		/obj/random/pack/rare = 0.2,
+		/obj/item/storage/wallet = 0.2,
+		/obj/item/storage/wallet/random = 0.1)
 
 /obj/structure/scrap/poor
 	icontype = "poor"
