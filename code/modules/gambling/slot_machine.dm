@@ -173,17 +173,14 @@
 				playsound(src.loc, 'sound/machines/ping.ogg', 50, 1)
 				prize = bet*slots_payouts[wintype]
 		if(fruit_combo >= 3)
-			playsound(src.loc, 'sound/machines/fortune_riff.ogg', 50, 1)
 			src.visible_message("<b>[name]</b> states, \"FRUIT TASTIC! The Jackpot has increased!\"")
 			jackpot += 500
 		if(fruit_combo == 2)
-			playsound(src.loc, 'sound/machines/fortune_riff.ogg', 50, 1)
 			src.visible_message("<b>[name]</b> states, \"Fruit Combo! Small Added Prize!\"")
 			prize += max(round(bet/2, 1),1)
 		if(jester)
-			playsound(src.loc, 'sound/machines/synth_yes.ogg', 50, 1)
 			src.visible_message("<b>[name]</b> states, \"A Jester has messed with the Jackpot!\"")
-			jackpot += pick(50, 150, 200, 350) //More ways to refill a jackpot
+			jackpot += pick(50, 75, 100) //More ways to refill a jackpot
 		if(prize > 0)
 			src.visible_message("<b>[name]</b> states, \"Congratulations! You won [prize] Credits!\"")
 			jackpot = max(jackpot - prize, 0)
