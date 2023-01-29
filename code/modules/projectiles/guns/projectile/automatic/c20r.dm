@@ -32,6 +32,9 @@
 		BURST_3_ROUND_NOLOSS
 		)
 
+	wield_delay = 0.5 SECOND
+	wield_delay_factor = 0.1 // 10 vig
+
 /obj/item/gun/projectile/automatic/c20r/update_icon()
 	cut_overlays()
 	icon_state = "[initial(icon_state)][silenced ? "_s" : ""]"

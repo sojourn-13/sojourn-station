@@ -916,7 +916,7 @@
 			pixel_x = location.pixel_x
 			pixel_y = location.pixel_y
 
-			if(!bumped && !isturf(original))
+			if(!bumped && !QDELETED(original) && !isturf(original))
 				if(loc == get_turf(original))
 					if(!(original in permutated))
 						if(Bump(original))
@@ -1096,6 +1096,30 @@
 			P.pixel_x = location.pixel_x
 			P.pixel_y = location.pixel_y
 			P.activate(P.lifetime)
+
+/obj/item/projectile/proc/block_damage(var/amount, atom/A)
+	amount /= armor_penetration
+	var/dmg_total = 0
+	var/dmg_remaining = 0
+	for(var/dmg_type in damage_types)
+		var/dmg = damage_types[dmg_type]
+		if(!(dmg_type == HALLOSS))
+			dmg_total += dmg
+		if(dmg && amount)
+			var/dmg_armor_difference = dmg - amount
+			amount = dmg_armor_difference ? 0 : -dmg_armor_difference
+			dmg = dmg_armor_difference ? dmg_armor_difference : 0
+			if(!(dmg_type == HALLOSS))
+				dmg_remaining += dmg
+		if(dmg)
+			damage_types[dmg_type] = dmg
+		else
+			damage_types -= dmg_type
+	if(!damage_types.len)
+		on_impact(A)
+		qdel(src)
+
+	return dmg_total ? (dmg_remaining / dmg_total) : 0
 
 //"Tracing" projectile
 /obj/item/projectile/test //Used to see if you can hit them.

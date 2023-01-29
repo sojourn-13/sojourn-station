@@ -52,7 +52,7 @@
 	mags_left = 6 //each vox has 6 rocks normally
 	rounds_per_fire = 1
 	reload_message = "perpares fling a sting!"
-	range_telegraph = "starts to push out its stinger, orienting it towards"
+	range_telegraph = "starts to push out its stinger, orienting it towards "
 	bones_amount = 0
 	inherent_mutations = list(MUTATION_BLOOD_BANK)
 	var/poison_per_bite = 3

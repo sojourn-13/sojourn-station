@@ -11,6 +11,14 @@
 		empulse(target, 1, 1)
 	return TRUE
 
+/obj/item/projectile/ion/heavy
+	name = "heavy ion bolt"
+
+/obj/item/projectile/ion/heavy/on_impact(atom/target)
+	if (!testing)
+		empulse(target, 2, 3)
+	return TRUE
+
 /obj/item/projectile/bullet/gyro
 	name = "explosive bolt"
 	icon_state = "bolter"
@@ -371,6 +379,15 @@
 	nodamage = FALSE
 	stun = 2 //Horrors
 	weaken = 2 //Unspeakable
+
+/obj/item/projectile/tether/tail
+	name = "tail lash"
+	damage_types = list(BRUTE = 13)
+	armor_penetration = 35
+	nodamage = FALSE
+	stun = 2 //Horrors
+	weaken = 2 //Unspeakable
+
 
 /obj/item/projectile/tether/Initialize()
 	..()

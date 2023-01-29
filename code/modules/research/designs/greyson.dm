@@ -8,36 +8,27 @@
 	build_path = /obj/item/gun/energy/cog/sawn
 	category = CAT_WEAPON
 
+/*	// Unneeded with the introduction of the Sprocket, keeps this variant as Marshal exclusive
 /datum/design/research/item/greyson/cog_gear
 	name = "GP \"Gear\" lasgun"
 	build_path = /obj/item/gun/energy/cog/gear
 	category = CAT_WEAPON
+*/
 
-/*
 /datum/design/research/item/greyson/cog_sprocket
 	name = "Soteria \"Sprocket\" lasgun"
 	build_path = /obj/item/gun/energy/cog/sprocket
 	category = CAT_WEAPON
-*/
+
 
 /datum/design/research/item/greyson/abnegate
 	name = "\"SST Abnegate\" handgun"
 	build_path = /obj/item/gun/energy/sst
 	category = CAT_WEAPON
 
-/datum/design/research/item/greyson/formatbound
-	name = "\"SST Format Bound\" handgun"
-	build_path = /obj/item/gun/energy/sst/formatbound
-	category = CAT_WEAPON
-
 /datum/design/research/item/greyson/humility
 	name = "\"SST Humility\" shotgun"
 	build_path = /obj/item/gun/energy/sst/humility
-	category = CAT_WEAPON
-
-/datum/design/research/item/greyson/systemcost
-	name = "\"SST System Cost\" light machinegun"
-	build_path = /obj/item/gun/energy/sst/systemcost
 	category = CAT_WEAPON
 
 /datum/design/research/item/greyson/iron_lock_security_armor
@@ -159,7 +150,7 @@
 
 /datum/design/research/item/tool/multitool/multitool_onestar
 	name = "greyson positronic multitool"
-	build_path = /obj/item/tool/onestar_multitool
+	build_path = /obj/item/tool/multitool/advanced/onestar
 
 /datum/design/research/item/tool/weldertool_onestar
 	name = "greyson positronic welding tool"

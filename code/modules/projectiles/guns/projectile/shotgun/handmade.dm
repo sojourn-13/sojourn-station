@@ -19,3 +19,6 @@
 	price_tag = 250 //cheap as they get
 	serial_type = "INDEX"
 	serial_shown = FALSE
+
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig

@@ -3,11 +3,11 @@ var/global/list/robot_modules = list(
 	"Service" 					= /obj/item/robot_module/service,
 	"Research" 					= /obj/item/robot_module/research,
 	"Miner" 					= /obj/item/robot_module/miner,
-//	"Rescue" 					= /obj/item/robot_module/medical/rescue, Removed and condenced to medical verson - todo, admin only
+//	"Rescue" 					= /obj/item/robot_module/medical/rescue, Removed and condensed to medical verson - todo, admin only
 	"Medical" 					= /obj/item/robot_module/medical/general,
 	"Security" 					= /obj/item/robot_module/security/general,
 	"Engineering"					= /obj/item/robot_module/engineering/general,
-//	"Construction"					= /obj/item/robot_module/engineering/construction, Removed and condenced into contruction - todo, admin only
+//	"Construction"					= /obj/item/robot_module/engineering/construction, Removed and condensed into contruction - todo, admin only
 	"Custodial" 					= /obj/item/robot_module/custodial,
 	//"Combat" 					= /obj/item/robot_module/combat,
 	)
@@ -24,9 +24,14 @@ var/global/list/robot_modules = list(
 	var/networks = list()
 	var/languages = list(							//Any listed language will be understandable. Any set to 1 will be speakable
 					LANGUAGE_COMMON = 1,
-					LANGUAGE_SERBIAN = 1,
+					LANGUAGE_ROMANA = 1,
+					LANGUAGE_KRIOSAN = 1,
+					LANGUAGE_AKULA = 1,
+					LANGUAGE_MARQUA = 1,
+					LANGUAGE_YASSARI = 1,
+					LANGUAGE_ILLYRIAN = 1,
 					LANGUAGE_CYRILLIC = 1,
-					LANGUAGE_GERMAN = 1,
+					LANGUAGE_EURO = 1,
 					LANGUAGE_JANA = 1,
 					LANGUAGE_LATIN = 1,
 					LANGUAGE_JIVE = 0
@@ -767,12 +772,6 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/service
 	name = "service robot module"
 	channels = list("Service" = 1)
-	languages = list(
-					LANGUAGE_COMMON = 1,
-					LANGUAGE_SERBIAN = 1,
-					LANGUAGE_CYRILLIC = 1,
-					LANGUAGE_JIVE = 0
-					)
 
 	sprites = list(	"Waitress" = "service",
 					"Kent" = "toiletbot",

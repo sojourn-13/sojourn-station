@@ -92,7 +92,7 @@
 	if (!occupant || cover_locked)
 		return
 	if(autodoc_processor.active)
-		to_chat(usr, SPAN_WARNING("Comrade, autodoc is locked down! Wait until all operations is done."))
+		to_chat(usr, SPAN_WARNING("Comrade, autodoc is locked down! Wait until all operations are done."))
 		return
 	if(cover_closed)
 		open_cover()

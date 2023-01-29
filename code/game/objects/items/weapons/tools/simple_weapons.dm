@@ -61,7 +61,7 @@
 	wielded_icon = "fireaxe1"
 	sharp = TRUE
 	edge = TRUE
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_penetration = ARMOR_PEN_DEEP
 	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_PRYING = 20, QUALITY_SAWING = 15)
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
@@ -69,7 +69,7 @@
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
-	embed_mult = 1 //Axes cut deep, and their hooked shape catches on things
+	embed_mult = 1.2 //Axes cut deep, and their hooked shape catches on things
 	worksound = WORKSOUND_HARD_SLASH
 	price_tag = 190
 	item_icons = list(
@@ -209,6 +209,7 @@
 	desc = "Modern Japanese-style blade that has no curve to it. This one looks pretty sharp."
 	icon_state = "katana" // New sprite courtesy of Kavric
 	item_state = "katana"
+	hitsound = 'sound/weapons/heavyslash.ogg'
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_DIAMOND = 1) //sharpened using diamond dust or whatever
 	slot_flags = SLOT_BELT | SLOT_BACK
 	force = WEAPON_FORCE_BRUTAL
@@ -244,7 +245,7 @@
 
 	switched_on_qualities = list(QUALITY_CUTTING = 25, QUALITY_SAWING = 15)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 6)
-	switched_on_force = WEAPON_FORCE_LETHAL
+	switched_on_forcemult = 1.2 //40
 	price_tag = 800
 
 /obj/item/tool/sword/katana/nano/turn_on(mob/user)
@@ -282,7 +283,7 @@
 	switched_on_qualities = list(QUALITY_CUTTING = 25, QUALITY_SAWING = 15, QUALITY_CAUTERIZING = 10, QUALITY_WELDING = 15)
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
 	force = WEAPON_FORCE_NORMAL
-	switched_on_force = WEAPON_FORCE_BRUTAL
+	switched_on_forcemult = 3.3 //33
 	//Weaker than the Muramasa and other high end weapons, as it's not LETHAL, but sets the target on fire. 1 stack though.
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 	//A heated blade can not be sharp, it's just shaped like a sword while being a blunt object. When turned off it has as much damage as other blunt implements.
@@ -426,7 +427,7 @@
 	item_state = "powerfist"
 	toggleable = TRUE
 	worksound = WORKSOUND_HAMMER
-	switched_on_force = WEAPON_FORCE_BRUTAL
+	switched_on_forcemult = 3.3 //33
 	armor_penetration = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 7)

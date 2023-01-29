@@ -26,6 +26,9 @@
 	fire_sound = 'sound/weapons/guns/fire/fire_silver.ogg'
 	serial_type = "NM"
 
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig
+
 /obj/item/gun/projectile/silvereye/update_icon()
 	..()
 

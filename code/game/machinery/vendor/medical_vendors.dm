@@ -4,6 +4,7 @@
 	icon_state = "med"
 	icon_deny = "med-deny"
 	req_access = list(access_medical_equip)
+	shut_up = 1 // Products are all free please stop offering them
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!;You do know how to use those, right?"
 	products = list(/obj/item/reagent_containers/glass/bottle/antitoxin = 4,
 					/obj/item/reagent_containers/glass/bottle/inaprovaline = 4,
@@ -40,8 +41,10 @@
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;I hope you know what you're doing."
 
 	products = list(
-		/obj/item/stack/medical/bruise_pack = 2,
-		/obj/item/stack/medical/ointment = 2,
+		/obj/item/stack/medical/bruise_pack = 4,
+		/obj/item/stack/medical/bruise_pack/soteria = 4,
+		/obj/item/stack/medical/ointment = 4,
+		/obj/item/stack/medical/ointment/soteria = 4,
 		/obj/item/stack/medical/splint = 10,
 
 		/obj/item/reagent_containers/hypospray/autoinjector = 4,
@@ -49,25 +52,41 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 8,
 		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 5,
 		/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 20,
+		/obj/item/reagent_containers/hypospray/autoinjector/kelotane = 4,
+		/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 4,
+		/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 8,
+		/obj/item/reagent_containers/hypospray/autoinjector/tramadol = 4,
 
-		/obj/item/device/scanner/health = 1
+		/obj/item/device/scanner/health = 3
 		)
 	contraband = list(
 		/obj/item/reagent_containers/syringe/antitoxin = 2,
 		/obj/item/reagent_containers/syringe/spaceacillin = 2,
-		/obj/item/reagent_containers/pill/tox = 1
+		/obj/item/reagent_containers/pill/tox = 5,
+		/obj/item/stack/medical/bruise_pack/handmade = 10,
+		/obj/item/stack/medical/ointment/handmade  = 10,
+		/obj/item/stack/medical/splint/improvised = 5
 		)
 	prices = list(
 		/obj/item/device/scanner/health = 50,
 
+		/obj/item/stack/medical/bruise_pack/handmade = 25,
 		/obj/item/stack/medical/bruise_pack = 50,
+		/obj/item/stack/medical/bruise_pack/soteria = 700,
+		/obj/item/stack/medical/ointment/handmade  = 25,
 		/obj/item/stack/medical/ointment = 35,
+		/obj/item/stack/medical/ointment/soteria = 700,
+		/obj/item/stack/medical/splint/improvised = 5,
 		/obj/item/stack/medical/splint = 10,
 
 		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 50,
 		/obj/item/reagent_containers/hypospray/autoinjector/tricordrazine = 75,
 		/obj/item/reagent_containers/hypospray/autoinjector/spaceacillin = 50,
 		/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 20,
+		/obj/item/reagent_containers/hypospray/autoinjector/kelotane = 250,
+		/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 250,
+		/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 200,
+		/obj/item/reagent_containers/hypospray/autoinjector/tramadol = 500,
 
 		/obj/item/reagent_containers/pill/tox = 100
 		)
@@ -79,12 +98,15 @@
 	products = list(
 		/obj/item/device/scanner/health = 6,
 
-		/obj/item/stack/medical/bruise_pack = 2,
-		/obj/item/stack/medical/ointment = 2,
-		/obj/item/stack/medical/advanced/bruise_pack = 1,
-		/obj/item/stack/medical/advanced/ointment = 1,
+		/obj/item/stack/medical/bruise_pack = 6,
+		/obj/item/stack/medical/bruise_pack/soteria = 4,
+		/obj/item/stack/medical/advanced/bruise_pack = 2,
+		/obj/item/stack/medical/ointment = 6,
+		/obj/item/stack/medical/ointment/soteria = 4,
+		/obj/item/stack/medical/advanced/ointment = 2,
+
 		/obj/item/stack/medical/splint = 20, //Legit dosnt heal, stacks on 1 cuz scam
-		/obj/item/stack/nanopaste = 2,
+		/obj/item/stack/nanopaste = 4,
 
 		/obj/item/reagent_containers/hypospray/autoinjector/antitoxin = 5,
 		/obj/item/reagent_containers/syringe/antitoxin = 5,
@@ -94,6 +116,11 @@
 		/obj/item/reagent_containers/syringe/spaceacillin = 3,
 		/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 20,
 
+		/obj/item/reagent_containers/hypospray/autoinjector/kelotane = 4,
+		/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 4,
+		/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 8,
+		/obj/item/reagent_containers/hypospray/autoinjector/tramadol = 4,
+
 		/obj/item/implantcase/death_alarm = 4,
 		/obj/item/implanter = 4,
 
@@ -102,14 +129,22 @@
 	contraband = list(
 		/obj/item/reagent_containers/hypospray/autoinjector/hyperzine = 1,
 		/obj/item/reagent_containers/hypospray/autoinjector/drugs = 2,
+		/obj/item/stack/medical/bruise_pack/handmade = 10,
+		/obj/item/stack/medical/ointment/handmade  = 10,
+		/obj/item/stack/medical/splint/improvised = 5
 		)
 	prices = list(
 		/obj/item/device/scanner/health = 50,
 
+		/obj/item/stack/medical/bruise_pack/handmade = 25,
 		/obj/item/stack/medical/bruise_pack = 50,
-		/obj/item/stack/medical/ointment = 35,
 		/obj/item/stack/medical/advanced/bruise_pack = 100,
+		/obj/item/stack/medical/bruise_pack/soteria = 700,
+		/obj/item/stack/medical/ointment/handmade  = 25,
+		/obj/item/stack/medical/ointment = 35,
 		/obj/item/stack/medical/advanced/ointment = 100,
+		/obj/item/stack/medical/ointment/soteria = 700,
+		/obj/item/stack/medical/splint/improvised = 5,
 		/obj/item/stack/medical/splint = 10,
 		/obj/item/stack/nanopaste = 300,
 
@@ -121,12 +156,17 @@
 		/obj/item/reagent_containers/syringe/spaceacillin = 100,
 		/obj/item/reagent_containers/hypospray/autoinjector/quickclot = 20,
 
+		/obj/item/reagent_containers/hypospray/autoinjector/kelotane = 250,
+		/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 250,
+		/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 200,
+		/obj/item/reagent_containers/hypospray/autoinjector/tramadol = 500,
+
 		/obj/item/implantcase/death_alarm = 25,
 		/obj/item/implanter = 25,
 
 		/obj/item/device/defib_kit = 750,
 
 		/obj/item/reagent_containers/hypospray/autoinjector/hyperzine = 100,
-		/obj/item/reagent_containers/hypospray/autoinjector/drugs = 100,
+		/obj/item/reagent_containers/hypospray/autoinjector/drugs = 100
 		)
 	auto_price = FALSE

@@ -37,7 +37,7 @@
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/head/helmet(src)
 	new /obj/item/device/radio/headset/heads/hop(src)
-	new /obj/item/gun/projectile/colt/ten/dark(src)
+	new /obj/item/gun/projectile/colt/ten(src)
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
@@ -73,7 +73,7 @@
 	new /obj/item/device/radio/headset/heads/hos(src)
 	new /obj/item/device/holowarrant(src)
 	new /obj/item/taperoll/police(src)
-	new /obj/item/gunbox/warrantofficer(src)
+	new /obj/item/gunbox/warrantofficer(src) // Primary on their locker, secondary on their hardcase.
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
@@ -198,7 +198,7 @@
 	new /obj/item/clipboard(src)
 	new /obj/item/device/camera(src)
 	new /obj/item/clothing/accessory/holster/armpit(src)
-	new /obj/item/storage/pouch/pistol_holster(src)
+	new /obj/item/storage/pouch/pistol_holster/cowboy(src) // More thematic
 	new /obj/item/implantpad(src)
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/voucher/marshal/rangerprimary(src)

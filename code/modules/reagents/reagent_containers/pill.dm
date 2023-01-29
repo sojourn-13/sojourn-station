@@ -214,9 +214,28 @@
 	icon_state = "pill5"
 	preloaded_reagents = list("iron" = 10, "protein" = 10) // Sugar does nothing to restore blood, but Protein does!
 
+/obj/item/reagent_containers/pill/suppressital
+	name = "Njoy red pill"
+	desc = "Prevents some breakdowns."
+	icon_state = "pill_njoy_red"
+	preloaded_reagents = list("suppressital" = 15)
+
+/obj/item/reagent_containers/pill/suppressital/blue
+	name = "Njoy blue pill"
+	icon_state = "pill_njoy_blue"
+
+/obj/item/reagent_containers/pill/suppressital/green
+	name = "Njoy green pill"
+	icon_state = "pill_njoy_green"
+
 //Pills with random content
 /obj/item/reagent_containers/pill/floorpill
 	name = "floor pill"
+	desc = "Dare you?"
+
+
+/obj/item/reagent_containers/pill/floorpill/wallet
+	name = "random pill"
 	desc = "Dare you?"
 
 /obj/item/reagent_containers/pill/floorpill/Initialize()

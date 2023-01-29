@@ -4,7 +4,7 @@
 	icon_state = "biblegun"
 	icon = 'icons/obj/guns/matter/books.dmi'
 	slot_flags = SLOT_BELT
-	fire_sound = 'sound/weapons/Taser.ogg'
+	fire_sound = 'sound/weapons/energy/Taser.ogg'
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2, TECH_BIO = 6)
 	matter_type = MATERIAL_BIOMATTER
 	max_stored_matter = 15

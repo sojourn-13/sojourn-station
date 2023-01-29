@@ -23,6 +23,7 @@
 	var/mob/living/carbon/superior_animal/nanobot/Stand // The personal robot of the owner. I wonder how many people will get the reference... -R4d6
 	var/obj/item/rig/nanite/nanite_rig // The nanite rig you can make
 	var/list/perk_list = list() //List of activated perks for later removal
+	min_broken_damage = 10 //Should break when organ is at 10 health of its 60.
 
 	owner_verbs = list(
 		/obj/item/organ/internal/nanogate/proc/nanite_antenna,
@@ -79,3 +80,26 @@ obj/item/organ/internal/nanogate/artificer
 		// Rig Upgrades
 		/obj/item/organ/internal/nanogate/proc/nanite_rig_opifex
 		)
+
+
+// Nanogates use either nanomachines or electromagnetic nanites. So - you would be impacted by EMPs.
+/obj/item/organ/internal/nanogate/emp_act(severity)
+	..()
+	switch (severity)
+		if(1)
+			owner.apply_effect(40, AGONY)
+		if(2)
+			owner.apply_effect(30, AGONY)
+		if(3)
+			owner.apply_effect(20, AGONY)
+
+// If the organ goes below is theshold it dies. And does bad effects.
+/obj/item/organ/internal/nanogate/die()
+	if(status & ORGAN_BROKEN)
+		var/obj/item/organ/internal/targeted_organ
+		to_chat(owner, SPAN_DANGER("You are in absolute agony as your nanites attack your own body!"))
+		var/list/listed_organs  = list("brain",OP_EYES,"heart")
+		targeted_organ = owner.random_organ_by_process(pick(listed_organs))
+		targeted_organ.damage += rand (5,10)
+		owner.apply_effect(60, AGONY)
+		addtimer(CALLBACK(src, .proc/die), 1 MINUTES, TIMER_STOPPABLE)

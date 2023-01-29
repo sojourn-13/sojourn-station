@@ -46,6 +46,9 @@
 	max_upgrades = 4
 	price_tag = 550
 
+/obj/item/tool/scalpel/laser/si
+	icon_state = "scalpel_t5_SI"
+	use_power_cost = 0.1
 
 //A makeshift knife, for doing all manner of cutting and stabbing tasks in a half-assed manner
 /obj/item/tool/knife/shiv

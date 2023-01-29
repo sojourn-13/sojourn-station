@@ -50,6 +50,7 @@
 	uniform = /obj/item/clothing/under/rank/psych
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	r_ear  = /obj/item/reagent_containers/syringe/large
+	backpack_contents = list(/obj/item/storage/hcases/med/medical_job_psyco = 1)
 
 /decl/hierarchy/outfit/job/medical/doctor/medStudent
 	name = OUTFIT_JOB_NAME("Soteria - Soteria Medical Student")

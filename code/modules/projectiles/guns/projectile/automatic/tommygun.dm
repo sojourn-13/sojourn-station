@@ -27,6 +27,9 @@
 		)
 	serial_type = "Sol Fed"
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.3 // Heavy smg , 30 vig to insta wield
+
 /obj/item/gun/projectile/automatic/thompson/update_icon()
 	..()
 	var/iconstring = initial(icon_state)

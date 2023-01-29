@@ -32,7 +32,6 @@
 	/obj/item/gun/projectile/automatic/greasegun = 2,
 	//Shotgun
 	/obj/item/gun/projectile/boltgun/lever = 2,
-	/obj/item/gun/projectile/shotgun/pump/gladstone = 2,
 	/obj/item/gun/projectile/shotgun/pump/china = 2,
 	//Ammo
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 3,
@@ -73,12 +72,16 @@
 	/obj/item/ammo_casing/flare/blue/prespawn = 15,
 	/obj/item/ammo_casing/flare/green/prespawn = 15,
 	//Misc
-	/obj/item/clothing/accessory/holster/armpit = 2,
-	/obj/item/clothing/accessory/holster/leg = 2,
+	/obj/item/clothing/accessory/holster/armpit = 5,
+	/obj/item/clothing/accessory/holster/waist = 5,
+	/obj/item/clothing/accessory/holster/hip = 5,
+	/obj/item/clothing/accessory/holster/leg = 5,
 	/obj/item/gun_upgrade/mechanism/weintraub = 2,
-	/obj/item/storage/pouch/pistol_holster = 2,
+	/obj/item/storage/pouch/pistol_holster = 5,
+	/obj/item/storage/pouch/pistol_holster/cowboy = 5,
+	/obj/item/storage/pouch/kniferig = 5,
 	/obj/item/storage/pouch/ammo = 2,
-	/obj/item/storage/backpack/duffelbag/guncase = 35,
+	/obj/item/storage/backpack/guncase = 35,
 	/obj/item/storage/box/smokes = 3)
 
 	prices = list(
@@ -107,7 +110,6 @@
 	/obj/item/gun/projectile/automatic/greasegun = 800,
 	//Shotgun
 	/obj/item/gun/projectile/boltgun/lever = 650,
-	/obj/item/gun/projectile/shotgun/pump/gladstone = 850,
 	/obj/item/gun/projectile/shotgun/pump/china = 1750,
 	//Ammo
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 20,
@@ -149,11 +151,15 @@
 	/obj/item/ammo_casing/flare/green/prespawn = 80,
 	//Misc
 	/obj/item/clothing/accessory/holster/armpit = 50,
+	/obj/item/clothing/accessory/holster/waist = 50,
+	/obj/item/clothing/accessory/holster/hip = 50,
 	/obj/item/clothing/accessory/holster/leg = 50,
 	/obj/item/gun_upgrade/mechanism/weintraub = 200,
 	/obj/item/storage/pouch/pistol_holster = 50,
+	/obj/item/storage/pouch/pistol_holster/cowboy = 100, // Two pistols, double the price
+	/obj/item/storage/pouch/kniferig = 50,
 	/obj/item/storage/pouch/ammo = 75,
-	/obj/item/storage/backpack/duffelbag/guncase = 25,
+	/obj/item/storage/backpack/guncase = 25,
 	/obj/item/storage/box/smokes = 100)
 
 /obj/machinery/vending/security
@@ -239,7 +245,6 @@
 					/obj/item/grenade/chem_grenade/cleaner/nt_cleaner = 5,
 					/obj/item/tool/knife/dagger/nt = 3,
 					/obj/item/tool/sword/nt = 3,
-					/obj/item/gun/energy/ntpistol = 3,
 					/obj/item/computer_hardware/hard_drive/portable/design/guns/lemant = 2,
 					/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58 = 2,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 2,
@@ -284,7 +289,6 @@
 					/obj/item/grenade/chem_grenade/cleaner/nt_cleaner = 50,
 					/obj/item/tool/knife/dagger/nt = 50,
 					/obj/item/tool/sword/nt = 100,
-					/obj/item/gun/energy/ntpistol = 120,
 					/obj/item/computer_hardware/hard_drive/portable/design/guns/lemant = 600,
 					/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58 = 550,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 950,

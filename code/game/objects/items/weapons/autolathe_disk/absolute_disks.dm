@@ -3,7 +3,7 @@
 // Absolute
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt
-	disk_name = "NeoTheology Armory"
+	disk_name = "Absolute Armory"
 	icon_state = "neotheology"
 	license = -1
 
@@ -224,16 +224,6 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
-/obj/item/computer_hardware/hard_drive/portable/design/guns/nt_counselor
-	disk_name = "Absolute Armory - NT LP \"Serenity\""
-	icon_state = "neotheology"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/ntpistol = 2,
-		/datum/design/autolathe/cell/small/high,
-	)
-
 //for the EOTP
 /obj/item/computer_hardware/hard_drive/portable/design/nt/counselor
 	disk_name = "Absolute Armory - Counselor PDW E Plus"
@@ -244,17 +234,6 @@
 		/datum/design/autolathe/gun/taser,
 		/datum/design/autolathe/cell/medium/high,
 	)
-
-/obj/item/computer_hardware/hard_drive/portable/design/nt/nt_counselor
-	disk_name = "Absolute Armory - NT LP \"Serenity\" Plus"
-	icon_state = "neotheology"
-
-	license = 8
-	designs = list(
-		/datum/design/autolathe/gun/ntpistol,
-		/datum/design/autolathe/cell/small/high,
-	)
-
 
 // ENERGY ARMS
 
@@ -448,7 +427,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 // Grenade Launchers
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/protector
-	disk_name = "OT GL - Grenade Launcher"
+	disk_name = "Absolute Armory GL - Grenade Launcher"
 	icon_state = "neotheology"
 
 	license = 3
@@ -458,7 +437,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 
 //for the EOTP
 /obj/item/computer_hardware/hard_drive/portable/design/nt/protector
-	disk_name = "OT GL - Grenade Launcher Plus"
+	disk_name = "Absolute Armory GL - Grenade Launcher Plus"
 	icon_state = "neotheology"
 
 	license = 5
@@ -502,6 +481,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/gun/mk58,
 		/datum/design/autolathe/gun/mk58_wood = 2,
 		/datum/design/autolathe/gun/regulator = 3,
+		/datum/design/autolathe/gun/lemant = 3,
 		/datum/design/autolathe/gun/taser,
 		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/gun/sniperrifle = 6,
@@ -519,7 +499,9 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/gun/mk58,
 		/datum/design/autolathe/gun/mk58_wood = 2,
 		/datum/design/autolathe/gun/regulator = 3,
+		/datum/design/autolathe/gun/lemant = 3,
 		/datum/design/autolathe/gun/taser,
+		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/gun/sniperrifle = 6,
 		/datum/design/autolathe/ammo/pistol_ammobox_biomatter,
 		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2
@@ -539,6 +521,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/sword/nt_spear,
 		/datum/design/autolathe/sword/nt_warhammer,
 		/datum/design/autolathe/sword/nt_flanged,
+		/datum/design/autolathe/sword/nt_power,
 		/datum/design/autolathe/nt/shield/nt_buckler,
 		/datum/design/autolathe/shield/nt_shield,
 		/datum/design/autolathe/gun/plasma/martyr,
@@ -565,6 +548,8 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/bioprinter/pouch/ammo,
 		/datum/design/bioprinter/pouch/baton_holster,
 		/datum/design/bioprinter/pouch/pistol_holster,
+		/datum/design/bioprinter/pouch/pistol_double,
+		/datum/design/bioprinter/pouch/kniferig,
 		//mods
 		/datum/design/autolathe/tool_upgrade/sanctifier,
 		/datum/design/autolathe/gun_upgrade/barrel/excruciator,
@@ -615,7 +600,6 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 	designs = list(
 		/datum/design/autolathe/gun/energy_crossbow = 10,
 		/datum/design/autolathe/gun/large_energy_crossbow = 12,
-		/datum/design/autolathe/gun/ntpistol,
 		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/gun/pulse = 5,
 		/datum/design/autolathe/gun/pulse_destroyer = 8,
@@ -634,7 +618,6 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 	designs = list(
 		/datum/design/autolathe/gun/energy_crossbow = 10,
 		/datum/design/autolathe/gun/large_energy_crossbow = 12,
-		/datum/design/autolathe/gun/ntpistol,
 		/datum/design/autolathe/gun/pulse = 5,
 		/datum/design/autolathe/gun/pulse_destroyer = 8,
 		/datum/design/autolathe/gun/ionrifle = 3,

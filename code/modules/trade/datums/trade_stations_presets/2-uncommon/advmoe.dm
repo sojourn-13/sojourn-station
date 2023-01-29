@@ -29,7 +29,7 @@
 		),
 		"Chemical Surplus" = list(
 			/obj/item/reagent_containers/glass/bottle/inaprovaline = custom_good_amount_range(list(1, 3)),
-			/obj/item/reagent_containers/glass/bottle/antitoxin = custom_good_amount_range(list(1, 3)),
+			/obj/item/reagent_containers/glass/bottle/antitoxin = good_data("dylovene bottle", list(1,3), 200),
 			/obj/item/reagent_containers/glass/bottle/trade/kelotane = good_data("kelotane bottle", list(1, 3), 200),
 			/obj/item/reagent_containers/glass/bottle/trade/bicaridine = good_data("bicaridine bottle", list(1, 3), 200),
 			/obj/item/reagent_containers/glass/bottle/trade/cronexidone = good_data("cronexidone bottle", list(1, 3), 800),

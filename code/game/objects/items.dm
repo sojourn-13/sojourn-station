@@ -78,7 +78,7 @@
 
 	//Damage vars
 	var/force = 0	//How much damage the weapon deals
-	var/embed_mult = 0.5 //Multiplier for the chance of embedding in mobs. Set to zero to completely disable embedding
+	var/embed_mult = 1 //Multiplier for the chance of embedding in mobs. Set to zero to completely disable embedding
 	var/structure_damage_factor = STRUCTURE_DAMAGE_NORMAL	//Multiplier applied to the damage when attacking structures and machinery
 
 	var/post_penetration_dammult = 1 //how much damage do we do post-armor-penetation
@@ -91,6 +91,7 @@
 	var/list/initialized_upgrades = list()
 
 	var/max_upgrades = 3
+	var/allow_greyson_mods = FALSE
 	prefixes = list()
 	var/list/blacklist_upgrades = list() //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
 	var/my_fuel = "fuel" //If we use fuel, what do we use?
@@ -199,6 +200,10 @@
 
 	for(var/Q in tool_qualities)
 		message += "\n<blue>It possesses [tool_qualities[Q]] tier of [Q] quality.<blue>"
+
+	if(allow_greyson_mods)
+		message += "\n<blue>This allows for Greyson Positronic based mods to be integrated without normal constraints.<blue>"
+
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -590,6 +595,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	item_flags = initial(item_flags)
 	name = initial(name)
 	max_upgrades = initial(max_upgrades)
+	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
 	prefixes = list()

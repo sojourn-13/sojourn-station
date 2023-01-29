@@ -33,6 +33,8 @@
 		FULL_AUTO_600
 		)
 
+	wield_delay = 0
+
 /obj/item/gun/projectile/automatic/slaught_o_matic/Initialize()
 	. = ..()
 	ammo_magazine = new magazine_type(src)

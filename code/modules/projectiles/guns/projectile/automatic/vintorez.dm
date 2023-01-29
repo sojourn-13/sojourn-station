@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/vintorez
 	name = "Excelsior \"Vintorez\" silenced rifle"
 	desc = "\"We have no compassion and we ask no compassion from you. When our turn comes, we shall not make excuses for the terror.\"\
-	A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds."
+	A powerful armor-piercing marksman rifle with an integrated silencer. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds."
 	icon = 'icons/obj/guns/projectile/vintorez.dmi'
 	icon_state = "vintorez"
 	item_state = "vintorez"
@@ -21,6 +21,7 @@
 	extra_damage_mult_scoped = 0.3
 	init_recoil = RIFLE_RECOIL(1.2)
 	silenced = TRUE
+	fire_sound_silenced = 'sound/weapons/guns/fire/vintorez.ogg' // Snowflake!
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 	init_firemodes = list(
@@ -29,9 +30,15 @@
 		)
 	serial_type = "EXC"
 
+	wield_delay = 1.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class assault rifle. Why is this 7.62 instead of 9mm? I'll never know.
+
 /obj/item/gun/projectile/automatic/vintorez/NM_colony
 	name = "\"Val\" silenced rifle"
-	desc = "A powerful armor-piercing rifle. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds."
+	desc = "A powerful armor-piercing marksman rifle with an integrated silencer. Utilises a defunct design, but remains a popular armament. Uses 7.62mm Rifle rounds.\nThis model of the \"Vintorez\" rifle has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	icon = 'icons/obj/guns/projectile/vintorez_bs.dmi'
+	icon_state = "vintorez_bs"
+	item_state = "vintorez_bs"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	damage_multiplier = 1.0 //The gun is made to be Excelsior, thus its higher stats. Nerfed since this variant is not supposed to be an antag-weapon. Plus - extra damage when scoped.
 	price_tag = 800

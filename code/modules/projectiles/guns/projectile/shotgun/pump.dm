@@ -25,6 +25,9 @@
 	allow_racking = FALSE
 	serial_type = "H&S"
 
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.3 // 30 vig
+
 /obj/item/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)
 		return chambered.BB
@@ -66,6 +69,9 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/obrez
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.3 // 30 vig
+
 /obj/item/gun/projectile/shotgun/pump/obrez
 	name = "obrez \"Grizzly\" shotgun"
 	desc = "A common open-source pump-action shotgun, hacked up, sawn down, and ready to rob a liquor store."
@@ -82,3 +88,6 @@
 	penetration_multiplier = 0.8
 	init_recoil = RIFLE_RECOIL(1.3)
 	saw_off = FALSE
+
+	wield_delay = 0.2 SECOND
+	wield_delay_factor = 0.2 // 20 vig

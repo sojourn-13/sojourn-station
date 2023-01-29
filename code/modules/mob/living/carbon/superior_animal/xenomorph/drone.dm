@@ -16,7 +16,7 @@ var/datum/xenomorph/xenomorph_ai
 
 	mob_size = MOB_LARGE
 	viewRange = 8
-	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 30, bullet = 30, energy = 5, bomb = 30, bio = 100, rad = 100)
 	armor_penetration = 15
 
 	maxHealth = 30
@@ -71,6 +71,21 @@ var/datum/xenomorph/xenomorph_ai
 	never_stimulate_air = TRUE
 
 	known_languages = list(LANGUAGE_XENOMORPH)
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/health/mult/positive/low = 42,
+		/datum/stat_modifier/health/mult/positive/medium = 21,
+		/datum/stat_modifier/health/mult/positive/high = 14,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
+	)
+
+
+
 
 /mob/living/carbon/superior_animal/xenomorph/slip(slipped_on,stun_duration=8)
 	return FALSE

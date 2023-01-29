@@ -69,6 +69,11 @@
 	desc = "An armored vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations."
 	icon_state = "armor_ironhammer"
 
+/obj/item/clothing/suit/armor/vest/ironhammer_wintercoat //pieced together thanks to Rebel's Supply spec coat - Dongels
+	name = "security armored coat"
+	desc = "An armored winter coat with vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations. You're pretty sure the coat is just thick enough to keep warm, and that's all. Why you would want that on a sweaty jungle planet is beyond thought."
+	icon_state = "coatsecurity_long"
+
 /obj/item/clothing/suit/storage/vest/ironhammer
 	name = "webbed operator armor"
 	desc = "An armored vest that protects against some damage. This one has been done in Ironhammer Security colors and has various pouches and straps attached."
@@ -233,6 +238,10 @@
 	options["monomial armor"] = "monomial_armor"
 	options["divisor armor"] = "divisor_armor"
 	options["tessellate armor"] = "tessellate_armor"
+	options["vector breastplate"] = "absolute_breast"
+	options["vinculum dress garbs"] = "vinculum_cassock"
+	options["tessellate plague garbs"] = "tessellate_plague_garbs"
+	options["tessellate dark plague garbs"] = "tessellate_plague_garbs_dark"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -341,6 +350,9 @@
 	var/list/options = list()
 	options["prime dark"] = "prime"
 	options["prime royal"] = "prime_alt"
+	options["prime saint"] = "prime_saint"
+	options["prime paladin"] = "prime_paladin"
+	options["prime paladin alt"] = "prime_paladin_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -597,11 +609,11 @@
 //Has some armor and but is a mix of the scav suit and a webbing
 /obj/item/clothing/suit/storage/vest/scav
 	name = "armored rig"
-	desc = "A simple plate carrier modified for personal use, additional pouches have been attached to it's front, \
+	desc = "A simple plate carrier modified for personal use, additional pouches have been attached to its front, \
 	with matching knee and arm pads to protect limbs without hindering movement. \
-	Opening the plate pouch would reveal a sheet of some Greyson alloy, welded and forced into a shape for the vest, \
-	far lighter and offering more protection then it's more common ceramic counterparts. \
-	Do to its scrappy yet robust design its able to take additional armor plates then a strandered heavy vest."
+	Opening the plate pouch would reveal a sheet of some Greyson alloy, welded and forced into shape for the vest, \
+	far lighter and offering more protection than it's more common ceramic counterparts. \
+	Due to its jury-rigged yet robust design, it's able to take more armor plates than a standard heavy vest."
 	icon_state = "forehead_armor"
 	item_state = "forehead_armor"
 	max_upgrades = 2 //Like all scav armor, this means investing into these will be better but buying gear will still be viable

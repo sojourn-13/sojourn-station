@@ -97,6 +97,8 @@
 	name = "Gazer Eyestalks"
 	desc = ""
 	icon_state = "eyestalk"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/harpywings
 	name = "Harpy Wings"

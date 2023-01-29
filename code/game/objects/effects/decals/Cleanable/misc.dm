@@ -135,6 +135,13 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "greenglow"
 
+/obj/effect/decal/cleanable/slimecorpse // Slimepeople remains
+	name = "runny slime pool"
+	icon = 'icons/effects/effects.dmi'
+	desc = "Liquified remains of what appears to have been a slime lifeform before. Its composition is too thin to be able to gellify once more into form..."
+	icon_state = "toxic_puddle"
+	anchored = TRUE
+
 /obj/effect/decal/cleanable/filth
 	name = "filth"
 	desc = "Disgusting. Someone from last shift didn't do their job properly."

@@ -93,10 +93,23 @@
 	if(!(stat & BROKEN))
 		stat |= BROKEN
 
+/**
+ * Called when an atom is created in byond (built in engine proc)
+ *
+ * Not a lot happens here in SS13 code, as we offload most of the work to the
+ * [Intialization][/atom/proc/Initialize] proc, mostly we run the preloader
+ * if the preloader is being used and then call [InitAtom][/datum/controller/subsystem/atoms/proc/InitAtom] of which the ultimate
+ * result is that the Intialize proc is called.
+ *
+ * We also generate a tag here if the DF_USE_TAG flag is set on the atom
+ */
 /atom/New(loc, ...)
 	init_plane()
 	update_plane()
 //	init_light()
+
+	if(datum_flags & DF_USE_TAG)
+		GenerateTag()
 
 	var/do_initialize = SSatoms.initialized
 	if(do_initialize != INITIALIZATION_INSSATOMS)
@@ -230,6 +243,10 @@
 		update_openspace()
 
 	return ..()
+
+///Generate a tag for this atom
+/atom/proc/GenerateTag()
+	return
 
 /atom/proc/reveal_blood()
 	return
@@ -706,7 +723,8 @@ its easier to just keep the beam vertical.
 		M.check_dna()
 		if (M.species)
 			blood_color = M.species.blood_color
-	. = TRUE
+			if(!blood_color)
+				return FALSE
 	return TRUE
 
 /atom/proc/add_vomit_floor(mob/living/carbon/M, var/toxvomit = FALSE)

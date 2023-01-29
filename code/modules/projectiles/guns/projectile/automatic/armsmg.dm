@@ -27,6 +27,9 @@
 	serial_type = "INDEX"
 	serial_shown = FALSE
 
+	wield_delay = 0.5 SECOND
+	wield_delay_factor = 0.1 // 10 vig for instant
+
 /obj/item/gun/projectile/automatic/armsmg/blackshield
 
 /obj/item/gun/projectile/automatic/armsmg/blackshield/New()

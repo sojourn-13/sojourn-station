@@ -175,15 +175,10 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aR" = (
-/obj/structure/sink{
-	density = 1;
-	desc = "A small fountain of polished stone and has a small pump at the bottom that helps push fresh water.";
-	icon_state = "BaptismFont_Water";
-	name = "Water Fountain"
-	},
 /obj/effect/floor_decal/spline/fancy{
 	color = "#6c3d26"
 	},
+/obj/structure/sink/basion,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aS" = (
@@ -1024,7 +1019,7 @@
 "fi" = (
 /obj/machinery/light,
 /obj/structure/table/woodentable,
-/obj/item/gun/projectile/shotgun/pump/gladstone/queen,
+/obj/item/gun/projectile/shotgun/pump,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fj" = (
@@ -1968,9 +1963,6 @@
 /obj/machinery/honey_extractor,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
-"mP" = (
-/turf/simulated/wall/wood,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
 "np" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1;
@@ -2004,8 +1996,10 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/power/smes/dummysimple{
-	output_level = 17000
+/obj/machinery/power/smes/buildable{
+	name = "simple power storage unit";
+	desc = "A overly simplified high-capacity superconducting magnetic energy storage (SMES) unit. It goes as far as to have big red arrows pointing to the switches, and indentations on the controles to allow even the blind or unable to read to set this SMES.";
+	skill_check = -30
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2272,12 +2266,7 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "rd" = (
-/obj/structure/sink{
-	density = 1;
-	desc = "A small fountain of polished stone and has a small pump at the bottom that helps push fresh water.";
-	icon_state = "BaptismFont_Water";
-	name = "Water Fountain"
-	},
+/obj/structure/sink/basion,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "rg" = (
@@ -9498,7 +9487,7 @@ ar
 ar
 ar
 ar
-mP
+WQ
 jj
 jj
 Cb

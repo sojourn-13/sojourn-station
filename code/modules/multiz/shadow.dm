@@ -20,6 +20,7 @@
 	return FALSE
 
 /mob/shadow/New(var/mob/L)
+	datum_flags &= ~DF_USE_TAG //In case something tries to REF us
 	if(!istype(L))
 		qdel(src)
 		return

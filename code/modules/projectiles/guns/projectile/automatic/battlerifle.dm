@@ -34,6 +34,8 @@
 	SEMI_AUTO_NODELAY
 	)
 	serial_type = "Sol Fed"
+	wield_delay = 1.6 SECOND
+	wield_delay_factor = 0.5 // 50 vig to insta wield , heavy class battle rifle
 
 /obj/item/gun/projectile/automatic/omnirifle/update_icon()
 	..()
@@ -62,10 +64,11 @@
 	desc = "A heavy front line designated marksman rifle manufactured by H&S, also known as the M13A2 Special Purpose Rifle in its generic military form. \
 		 Either a copy or 'liberated' example, it fires a variety of utility and specialized munitions. \
 		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
-		 This example is fitted with an advanced combat sight and limited to semiautomatic and burst modes."
-	icon = 'icons/obj/guns/projectile/DMR.dmi'
-	icon_state = "DMR"
-	item_state = "DMR"
+		 This example is fitted with an advanced combat sight and limited to semiautomatic and burst modes. \
+		 Due to market competition on the Omnirifle platform, H&S allowed for an extra fee specital limited addition custom prints."
+	icon = 'icons/obj/guns/projectile/blackguard.dmi'
+	icon_state = "sts_blackguard"
+	item_state = "sts_blackguard"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
 	mag_well = MAG_WELL_HRIFLE
 	price_tag = 2000
@@ -79,8 +82,8 @@
 	penetration_multiplier = 1.35
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND,
-		BURST_2_ROUND
+		BURST_2_ROUND,
+		BURST_3_ROUND
 		)
 	serial_type = "H&S"
 

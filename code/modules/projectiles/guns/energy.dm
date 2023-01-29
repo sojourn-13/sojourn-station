@@ -3,7 +3,7 @@
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy/energy.dmi'
 	icon_state = "energy"
-	fire_sound = 'sound/weapons/Taser.ogg'
+	fire_sound = 'sound/weapons/energy/Taser.ogg'
 	fire_sound_text = "laser blast"
 
 	init_recoil = HANDGUN_RECOIL(0.1)
@@ -24,8 +24,12 @@
 	var/disposable = FALSE
 	var/use_external_power = 0 //if set, the weapon will look for an external power source to draw from, otherwise it recharges magically
 	var/recharge_time = 4
+	var/recharge_amount = null //If set, the gun will recharge this many units per recharge_time, rather than restoring exactly enough for one shot
 	var/charge_tick = 0
 	gun_tags = list(GUN_ENERGY)
+
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.2 // 20 vig
 
 /obj/item/gun/energy/loadAmmoBestGuess()
 	var/obj/item/cell/chosenCell = null
@@ -82,7 +86,10 @@
 			if(!external || !external.use(charge_cost)) //Take power from the borg...
 				return 0
 
-		cell.give(charge_cost) //... to recharge the shot
+		if(recharge_amount)
+			cell.give(recharge_amount)
+		else
+			cell.give(charge_cost) //... to recharge the shot
 		update_icon()
 	return 1
 

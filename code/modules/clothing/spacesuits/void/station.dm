@@ -488,8 +488,10 @@
 /obj/item/clothing/head/space/void/assault
 	name = "assault helmet"
 	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor as well as a light built in."
-
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	action_button_name = "Toggle Headlamp"
+	icon_state = "assaulthelm" // Cyan by default as it fits more thematically
+	item_state = "assaulthelm"
 	brightness_on = 4 //luminosity when on
 	light_overlay = "hardhat_light"
 
@@ -510,14 +512,40 @@
 	siemens_coefficient = 0.4
 	light_overlay = "helmet_light_dual"
 
-/obj/item/clothing/head/space/void/assault/New()
-	icon_state = "assaulthelm-[pick("b","w","p","o","g","r")]"
-	item_state = icon_state
-	..()
+/obj/item/clothing/head/space/void/assault/verb/toggle_style() // Fuck random colors, we choose our drip.
+	set name = "Adjust visor color"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["standard cyan"] = ""
+	options["white"] = "-w"
+	options["purple"] = "-p"
+	options["orange"] = "-o"
+	options["green"] = "-g"
+	options["Void Wolf red"] = "-r"
+	var/choice = input(M,"What color of visor do you want?","Adjust visor color") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You change the helmet's visor color to [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/space/void/assault/void_wolf
 	name = "reaver assault helmet"
 	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor as well as a light built in. This one was made for a Void Wolf Reaver."
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 
 /obj/item/clothing/head/space/void/assault/void_wolf/New()
 	icon_state = "assault_wolf"

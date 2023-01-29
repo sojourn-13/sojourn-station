@@ -20,12 +20,14 @@
 		)
 	can_dual = 1
 	damage_multiplier = 0.8
-	penetration_multiplier = 0
+	penetration_multiplier = 0.6
 	init_recoil = SMG_RECOIL(0.6)
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	serial_type = "INDEX"
 	serial_shown = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
+
+	wield_delay = 0 // No delay for this , its litteraly a junk gun
 
 /obj/item/gun/projectile/automatic/luty/update_icon()
 	..()

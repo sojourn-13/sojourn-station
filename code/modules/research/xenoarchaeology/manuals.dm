@@ -2,7 +2,7 @@
 /obj/item/book/manual/excavation
 	name = "Out on the Dig"
 	icon_state = "excavation"
-	author = "Professor Patrick Mason, Curator of the Antiquities Museum on Ichar VII, Edited by Professor Wisponellus for Nedezhda use."
+	author = "Professor Patrick Mason, Curator of the Antiquities Museum on Ichar VII, Edited by Professor Wisponellus for Nadezhda use."
 	title = "Out on the Dig"
 	dat = {"<html>
 				<head>
@@ -45,7 +45,7 @@
 				<h1><a name="Tools">Knowing your tools</a></h1>
 				Every archaeologist has a plethora of tools at their disposal, but here's the important ones:<br>
 				<ul>
-					<li><b>Picks and pickaxes</b> - The bread and butter of your digging utensils. The big one works well on digging thru rocks. While
+					<li><b>Picks and pickaxes</b> - The bread and butter of your digging utensils. The big one works well on digging through rocks. While
 					The small one works well on actually excavating things.</li>
 					<li><b>Measuring tape</b> - don't leave home without it, you can use it to measure the depth you or someone else has dug.</li>
 					<li><b>GPS</b> - helps others to find you if something bad happens.</li>
@@ -140,7 +140,7 @@
 /obj/item/book/manual/suspension
 	name = "Suspension Setup"
 	icon_state = "excavation"
-	author = "Professor Euclidenies Wisponellus, Curator of Nedezhda's Museum of Ancients"
+	author = "Professor Euclidenies Wisponellus, Curator of Nadezhda's Museum of Ancients"
 	title = "Suspension Setup"
 	dat = {"<html>
 				<head>

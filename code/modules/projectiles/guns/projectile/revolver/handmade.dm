@@ -13,3 +13,5 @@
 	init_recoil = HANDGUN_RECOIL(0.8)
 	serial_type = "INDEX"
 	serial_shown = FALSE
+
+	wield_delay = 0 SECOND
