@@ -177,6 +177,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
+	new /obj/item/clothing/accessory/badge/holo/wo(src)
 
 /obj/item/storage/hcases/ammo/ih/spec_officer
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -186,6 +187,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
+	new /obj/item/clothing/accessory/badge/holo/warden(src)
 
 
 /obj/item/storage/hcases/ammo/ih/ranger_officer
@@ -196,6 +198,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
+	new /obj/item/clothing/accessory/badge/holo/inspector(src)
 	new /obj/item/cell/small/high(src)
 
 /obj/item/storage/hcases/ammo/ih/marshal_officer
@@ -225,6 +228,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
+	new /obj/item/clothing/accessory/badge/holo/co(src)
 
 /obj/item/storage/hcases/ammo/blackmarket/serg
 	exspand_when_spawned = FALSE //No exspanding cheats

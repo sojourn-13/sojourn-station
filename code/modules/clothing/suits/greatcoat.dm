@@ -1,42 +1,3 @@
-/obj/item/clothing/suit/storage/greatcoat/ihc
-	name = "warrant officer's greatcoat"
-	desc = "A durable greatcoat, designed for protecion and style."
-	icon_state = "ihc_coat"
-	item_state = "ihc_coat"
-	blood_overlay_type = "coat"
-	permeability_coefficient = 0.50
-	armor_list = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //Same as IH Commander standard coat
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
-	stiffness = LIGHT_STIFFNESS
-
-/obj/item/clothing/suit/storage/greatcoat/ihc/verb/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["WO Greatcoat"] = "ihc_coat"
-	options["WO Cloaked Greatcoat"] = "ihc_coat_cloak"
-	options["WO Blue Greatcoat"] = "ihc_coat_blue"
-	options["WO Blue Cloaked Greatcoat"] = "ihc_coat_cloak_blue"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
 
 /obj/item/clothing/suit/greatcoat/cap
 	name = "premier's greatcoat"
@@ -63,42 +24,6 @@
 	var/list/options = list()
 	options["Premier Cloaked Greatcoat"] = "cap_coat_cloak"
 	options["Premier Greatcoat"] = "cap_coat"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
-/obj/item/clothing/suit/storage/greatcoat/ihc/bmc
-	name = "blackshield commander's greatcoat"
-	desc = "A durable greatcoat, designed for protecion and style."
-	icon_state = "mc_coat"
-	item_state = "mc_coat"
-	blood_overlay_type = "coat"
-	permeability_coefficient = 0.50
-	armor_list = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
-
-/obj/item/clothing/suit/storage/greatcoat/ihc/bmc/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["BC Cloaked Greatcoat"] = "mc_coat_cloak"
-	options["BC Greatcoat"] = "mc_coat"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

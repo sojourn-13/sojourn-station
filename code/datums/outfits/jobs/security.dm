@@ -51,8 +51,8 @@
 /decl/hierarchy/outfit/job/security/serg
 	name = OUTFIT_JOB_NAME("Blackshield - Sergeant")
 	l_ear = /obj/item/device/radio/headset/headset_blackshield
-	uniform = /obj/item/clothing/under/instructor
-	head = /obj/item/clothing/head/rank/instructor_hat
+	uniform = /obj/item/clothing/under/rank/armorer/gorka
+	head = /obj/item/clothing/head/rank/armorer/cap
 	glasses = /obj/item/clothing/glasses/ballistic
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/thick/swat/blackshield

@@ -1014,6 +1014,51 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	slowdown = 0.6 // Bulkier due to protecting more
 
+/obj/item/clothing/suit/armor/hos
+	name = "armored coat"
+	desc = "A greatcoat enhanced with a special alloy for some protection and style."
+	icon_state = "hos"
+	item_state = "hos"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	armor_list = list(
+		melee = 40,
+		bullet = 40,
+		energy = 30,
+		bomb = 25,
+		bio = 0,
+		rad = 0
+	)
+	siemens_coefficient = 0.6
+
+/obj/item/clothing/suit/armor/hos/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Armored coat"] = "hos"
+	options["Alt armored coat"] = "new_wo"
+	options["Formal coat"] = "wo_formal"
+	options["Formal coat alt"] = "wo_formallong"
+	options["WO Greatcoat"] = "ihc_coat"
+	options["WO Cloaked Greatcoat"] = "ihc_coat_cloak"
+	options["WO Blue Greatcoat"] = "ihc_coat_blue"
+	options["WO Blue Cloaked Greatcoat"] = "ihc_coat_cloak_blue"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/armor/commander
 	name = "commander's armored coat"
 	desc = "A heavily armored combination of menacing style and cutting-edge body armor."
@@ -1029,10 +1074,11 @@
 	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/armor/commander/militia
-	name = "blackshield commander's armored coat"
-	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Commander. The armor plates even can be recoloured on the go to act as camo."
+	name = "commander's armored coat"
+	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Commander."
 	icon_state = "commander_mil"
 	item_state = "commander_mil"
+	siemens_coefficient = 0.6
 
 /obj/item/clothing/suit/armor/commander/militia/verb/toggle_style()
 	set name = "Adjust Style"
@@ -1048,6 +1094,8 @@
 	options["Desert Combat"] = "commander_tan"
 	options["Woodlands Combat"] = "commander_green"
 	options["Woodlands Blackshield Combat"] = "commander_green_mil"
+	options["BC Cloaked Greatcoat"] = "mc_coat_cloak"
+	options["BC Greatcoat"] = "mc_coat"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1060,21 +1108,21 @@
 		usr.update_action_buttons()
 		return 1
 
-/obj/item/clothing/suit/storage/armor/commander/militia_overcoat // Pockets for your hands on the cold.
+/obj/item/clothing/suit/storage/armor/militia_overcoat // Pockets for your hands on the cold.
 	name = "blackshield armored overcoat"
 	desc = "Blackshield greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
 	armor_list = list(melee = 30, bullet = 35, energy = 20, bomb = 10, bio = 0, rad = 0)
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
 
-/obj/item/clothing/suit/storage/armor/commander/marshal_coat
+/obj/item/clothing/suit/storage/armor/marshal_coat
 	name = "marshal officers greatcoat"
 	desc = "Marshal Officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
 	armor_list = list(melee = 35, bullet = 30, energy = 20, bomb = 10, bio = 0, rad = 0)
 	icon_state = "marshal_coat"
 	item_state = "marshal_coat"
 
-obj/item/clothing/suit/armor/commander/marshal_coat_ss
+/obj/item/clothing/suit/storage/armor/marshal_coat_ss
 	name = "supply specialist's jacket"
 	desc = "Supply Specialist's jacket with an armored weave. For formality, protection and style."
 	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 10, bio = 0, rad = 0)
