@@ -279,6 +279,14 @@
 		new /obj/item/clothing/suit/armor/platecarrier/militia(src)
 		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
 
+/obj/item/storage/box/bs_kit/militia_overcoat
+	name = "\improper Armored Overcoat Armor Kit"
+	desc = "An armor kit containg a militia overcoat and a ballistic helmet."
+
+	populate_contents()
+		new /obj/item/clothing/suit/storage/armor/militia_overcoat(src)
+		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
+
 /obj/item/storage/box/bs_kit/flak_armor
 	name = "\improper Flak Armor Kit"
 	desc = "An armor kit containing a blackshield flack vest and ballistic helmet."

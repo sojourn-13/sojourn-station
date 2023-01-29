@@ -778,9 +778,8 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 	New()
 		..()
-		new /obj/item/clothing/under/rank/commander/service(src)
-		new /obj/item/clothing/suit/rank/commander/service(src)
-		new /obj/item/clothing/suit/rank/commander/dress(src)
+		new /obj/item/clothing/under/rank/commander_service(src)
+		new /obj/item/clothing/suit/rank/commander_service(src)
 		new /obj/item/clothing/head/rank/commanderdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)

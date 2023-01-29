@@ -209,13 +209,6 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/inspector
-	display_name = "uniform, patrol"
-	path = /obj/item/clothing/under/rank/inspector/uniform
-	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
 /datum/gear/factionsecurity/jumpskirtcommander
 	display_name = "jumpskirt, commander"
 	path = /obj/item/clothing/under/rank/ih_commander/skirt

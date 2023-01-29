@@ -131,6 +131,7 @@
 		new /obj/item/gun/energy/taser(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/m_kit/liberty
 	name = "Liberty Secondary Kit"
@@ -141,6 +142,7 @@
 		new /obj/item/ammo_magazine/magnum_40/rubber(src)
 		new /obj/item/ammo_magazine/magnum_40/rubber(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/m_kit/judiciary
 	name = "Judiciary Secondary Kit"
@@ -152,6 +154,7 @@
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 // Ranger secondary kits
 /obj/item/storage/box/m_kit/deckard
@@ -164,6 +167,7 @@
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/m_kit/zwang
 	name = "Zwang Secondary Kit"
@@ -173,6 +177,7 @@
 		new /obj/item/gun/energy/zwang(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/m_kit/judge
 	name = "Judge Secondary Kit"
@@ -181,6 +186,7 @@
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/judge(src)
 		new /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 // Warrant Officer secondaries (from voucher)
 /obj/item/storage/box/m_kit/mateba
@@ -222,6 +228,15 @@
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/ih(src)
 		new /obj/item/clothing/head/helmet/marshal_full(src)
+
+/obj/item/storage/box/m_kit/armored_overcoat
+	name = "\improper Armored Overcoat Armor Kit"
+	desc = "An armor kit containg a militia overcoat and a ballistic helmet."
+
+	populate_contents()
+		new /obj/item/clothing/suit/storage/armor/marshal_coat(src)
+		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
+
 
 /obj/item/storage/box/m_kit/bullet_proof
 	name = "Bullet Proof Kit"
