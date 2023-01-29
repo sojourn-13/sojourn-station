@@ -48,7 +48,7 @@
 	In future, we will implement largescale missions and research contracts to earn money, and then set it
 	to a much lower starting value
 	*/
-	account_initial_balance = 1000 //50000
+	account_initial_balance = 50000
 	jobs_in_department = list("/datum/job/premier","/datum/job/pg")
 /*************
 	Retainers
@@ -60,14 +60,14 @@
 	//This is balanced around full team in 6 hours with nepitism
 	//Without nepitsm a full team 27000 in 6 hours
 	//With nepitsm a full team 35100 in 6 hours
-	account_initial_balance = 1000 //50000 //+15k~ do to being state funded
+	account_initial_balance = 50000 //+15k~ do to being state funded
 	jobs_in_department = list("/datum/job/smc","/datum/job/swo","/datum/job/supsec","/datum/job/serg","/datum/job/inspector","/datum/job/medspec","/datum/job/trooper","/datum/job/officer")
 
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
-	account_initial_balance = 1000  //25000 //+15k~ do to being state funded
+	account_initial_balance = 25000 //+15k~ do to being state funded
 	//Full team with nepitsm in 6 hours is 11900
 	//A full crew GM + 4 adpets is 1700 an hour, takes 10~ hours to drain the department funds
 	jobs_in_department = list("/datum/job/chief_engineer","/datum/job/technomancer")
@@ -89,7 +89,7 @@
 	id = DEPARTMENT_MEDICAL
 	//18600 in 6 hours with full crew
 	//24180 in 6 hours with full crew + nep
-	account_initial_balance = 1000 //30000 //5~k For buying medical and items and payments
+	account_initial_balance = 30000 //5~k For buying medical and items and payments
 	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/recovery_team","/datum/job/psychiatrist")
 
 /datum/department/moebius_research
@@ -97,7 +97,7 @@
 	id = DEPARTMENT_SCIENCE
 	//15000 in 6 hours with full crew
 	//19500 in 6 hours with full crew + nepitism
-	account_initial_balance = 1000 //20000//+10k~ For buying materials and components and things of scientific value as well as pay the demanding staff
+	account_initial_balance = 20000 //+10k~ For buying materials and components and things of scientific value as well as pay the demanding staff
 	jobs_in_department = list("/datum/job/rd","/datum/job/scientist","/datum/job/roboticist")
 
 /datum/department/church
@@ -105,7 +105,7 @@
 	id = DEPARTMENT_CHURCH
 	//9600 in 6 hours with full crew
 	//12480 with all nep in 6 hours
-	account_initial_balance = 1000 //25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
+	account_initial_balance = 25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
 	jobs_in_department = list ("/datum/job/chaplain","/datum/job/acolyte")
 
 /******************
@@ -123,7 +123,7 @@
 	if you manage to get this variable refferenced there you're a better man than me. godspeed
 	*/
 	//Note: LSS isnt accounted for wages when starting money as they have the easyest ways to make money
-	account_initial_balance = 1000 // 25000//has a lot of workers thus needs a higher starting to off-set its paychecks if no one actively runs the cargo shuttle
+	account_initial_balance = 25000 //has a lot of workers thus needs a higher starting to off-set its paychecks if no one actively runs the cargo shuttle
 	jobs_in_department = list("/datum/job/merchant","/datum/job/cargo_tech","/datum/job/mining")
 
 /datum/department/prospector
@@ -132,7 +132,7 @@
 	//Full team in 6 hours is 6600
 	//Full team with Nep in 6 hours is 6600
 	//Nep in 6 hours with full team is 8580
-	account_initial_balance = 1000 //12500 //5k+6~hours of work. should be good for them to make money
+	account_initial_balance = 12500 //5k+6~hours of work. should be good for them to make money
 	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro")
 
 /datum/department/independent
