@@ -215,15 +215,6 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, PRO_
 		return "proradio"
 	if(frequency in DEPT_FREQS)
 		return "deptradio"
-//Plasma tag radio colours are all the same.
-	if(frequency in PT_BT_FREQ)
-		return "syndradio"
-	if(frequency in PT_RT_FREQ)
-		return "syndradio"
-	if(frequency in PT_YT_FREQ)
-		return "syndradio"
-	if(frequency in PT_GT_FREQ)
-		return "syndradio"
 
 	return "radio"
 
