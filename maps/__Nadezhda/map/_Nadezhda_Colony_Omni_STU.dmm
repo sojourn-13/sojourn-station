@@ -983,6 +983,11 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "ail" = (
@@ -4433,6 +4438,18 @@
 /obj/structure/salvageable/autolathe,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"aSB" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/carpet/turcarpet,
+/area/nadezhda/crew_quarters/cafeteria)
 "aSG" = (
 /obj/machinery/door_timer{
 	id = "Cell 2";
@@ -7283,6 +7300,11 @@
 /obj/effect/floor_decal/spline/wood{
 	dir = 6;
 	icon_state = "spline_fancy"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/cafeteria)
@@ -22610,6 +22632,11 @@
 	dir = 4;
 	icon_state = "spline_fancy"
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/crew_quarters/cafeteria)
 "esz" = (
@@ -34745,6 +34772,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "gCn" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/cafeteria)
 "gCt" = (
@@ -87388,6 +87420,17 @@
 /obj/item/device/lighting/toggleable/lamp/green,
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/merchant)
+"qpB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28;
+	pixel_y = 0
+	},
+/obj/structure/cable/green,
+/turf/simulated/floor/wood,
+/area/nadezhda/crew_quarters/cafeteria)
 "qpG" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -92773,6 +92816,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/unpowered/simple/wood/saloon,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/cafeteria)
 "rol" = (
@@ -97676,6 +97724,17 @@
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/botanist)
+"shq" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/carpet/turcarpet,
+/area/nadezhda/crew_quarters/cafeteria)
 "shs" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/techmaint,
@@ -102989,6 +103048,14 @@
 	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/robotics)
+"tji" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/crew_quarters/cafeteria)
 "tjk" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
@@ -143594,7 +143661,7 @@ kCz
 fNh
 lVH
 wgI
-fNh
+tji
 iAU
 uDf
 kEP
@@ -144402,7 +144469,7 @@ kCz
 fNh
 lVH
 fNh
-fNh
+tji
 fNh
 qqd
 qqd
@@ -144604,9 +144671,9 @@ efv
 mZZ
 seJ
 seJ
-seJ
-seJ
-jdf
+aSB
+shq
+qpB
 dJB
 saL
 qTV
