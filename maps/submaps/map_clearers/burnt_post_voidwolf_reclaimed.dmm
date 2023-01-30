@@ -39,10 +39,6 @@
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
-"cs" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/burned_outpost)
 "cB" = (
 /obj/structure/flora/small/grassb1,
 /obj/structure/flora/small/busha1,
@@ -748,7 +744,7 @@ HQ
 Wd
 XP
 gP
-cs
+Ps
 Fw
 Pu
 IS
@@ -780,7 +776,7 @@ zE
 gP
 gP
 gP
-cs
+Ps
 fu
 Iz
 Mh
@@ -812,7 +808,7 @@ gP
 gP
 gP
 Wd
-cs
+Ps
 uZ
 Pu
 lz
@@ -844,7 +840,7 @@ WD
 WD
 gP
 gP
-cs
+Ps
 es
 Pu
 RE
@@ -876,7 +872,7 @@ gP
 Zs
 gP
 gP
-cs
+Ps
 uZ
 Sw
 hE
@@ -908,7 +904,7 @@ gP
 gP
 XP
 gP
-cs
+Ps
 nk
 Pu
 lz
@@ -940,7 +936,7 @@ gP
 gP
 gP
 sN
-cs
+Ps
 uZ
 Pu
 RE
@@ -972,7 +968,7 @@ gP
 gP
 gP
 gP
-cs
+Ps
 uZ
 Sw
 Te
