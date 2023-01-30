@@ -2,7 +2,7 @@
  * Contains:
  *		Trooper
  *		Corpsman
- *		Sergeant
+ *		Squad Leader
  *		Blackshield Commander
  */
 
@@ -359,8 +359,8 @@
  */
 
 /obj/item/clothing/under/rank/armorer/gorka
-	name = "Sergeant's uniform"
-	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the pins of a Blackshield Sergeant."
+	name = "Squad leader's uniform"
+	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the pins of a Blackshield Squad leader."
 	icon_state = "gorka_ih"
 
 /obj/item/clothing/under/rank/armorer/gorka/verb/toggle_style()

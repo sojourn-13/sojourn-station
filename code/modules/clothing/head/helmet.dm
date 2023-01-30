@@ -159,7 +159,7 @@
 		return 1
 
 /obj/item/clothing/head/helmet/ballistic/sergeant
-	name = "Sergeant's ballistic gorget"
+	name = "Squad leader's ballistic gorget"
 	desc = "Standard military gear. A somewhat uncommon piece of equipment, despite its unusual appearance\n this piece of headgear provides much-needed protection to oft-neglected locations while not interfering unduly\
 	with the user's range of motion or ability to communicate."
 	icon_state = "sergeanthelm"

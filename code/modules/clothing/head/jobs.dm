@@ -320,13 +320,13 @@
 		return 1
 
 /obj/item/clothing/head/rank/armorer/cap
-	name = "Sergeant's cap"
-	desc = "A faded black cap with the badge of a Blackshield Sergeant."
+	name = "Squad leader's cap"
+	desc = "A faded black cap with the badge of a Blackshield Squad leader."
 	icon_state = "milsoft"
 
 /obj/item/clothing/head/rank/armorer/beret
-	name = "Sergeant's beret"
-	desc = "A faded black beret with the badge of a Blackshield Sergeant."
+	name = "Squad leader's beret"
+	desc = "A faded black beret with the badge of a Blackshield Squad leader."
 	icon_state = "sarge_beret"
 
 /obj/item/clothing/head/rank/armorer/beret/verb/toggle_style()

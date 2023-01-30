@@ -32,7 +32,7 @@
 		new /obj/random/rations/crayon(src)
 
 /obj/structure/closet/secure_closet/armorer
-	name = "sergeant's locker"
+	name = "Squad Leader's locker"
 	req_access = list(access_armory)
 	icon_state = "armorer"
 

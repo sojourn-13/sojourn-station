@@ -186,7 +186,7 @@
 
 
 /datum/job/serg
-	title = "Sergeant"
+	title = "Squad Leader"
 	flag = SERG
 	department = DEPARTMENT_SECURITY
 	department_flag = SECURITY
@@ -222,10 +222,10 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Sergeant is the second-in-command of the Blackshield and the de-facto commanding officer if the Blackshield commander isn't around or injured. <br>\
+	description = "The Squad leader is the second-in-command of the Blackshield and the de-facto commanding officer if the Blackshield commander isn't around or injured. <br>\
 	Your role is mainly keeping order among the Blackshield troopers and corpsman and ensuring they do not act like a pack of thugs.<br>\
 	You will often be maintaining discipline and order within the ranks and fulfilling orders from the Blackshield commander.<br>\
-	You will also the secondary squad leader during conflicts, often times leading troopers independent of the Blackshield commander, but usually under his explicit orders.<br>\
+	You will also the secondary leader during conflicts, often times leading troopers independent of the Blackshield commander, but usually under his explicit orders.<br>\
 	In quieter times, you serve as a form of military police and drill instructor. Take the initiative to offer a variety of training drills, especially to junior operatives and report behavior that should have a member of security removed from their post.<br>\
 	Remember that any Blackshield Commander duties may be delegated to you if they wish, and will automatically be given if they are not present."
 
@@ -234,7 +234,7 @@
 	Follow the orders of the Blackshield Commander and in his absence keep security in line."
 
 /obj/landmark/join/start/serg
-	name = "Sergeant"
+	name = "Squad Leader"
 	icon_state = "player-blue"
 	join_tag = /datum/job/serg
 

@@ -758,7 +758,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 		new /obj/item/clothing/accessory/armband/corpsman(src)
 
 /obj/item/storage/box/sergeantuniform
-	name = "Sergeant Service and Dress Kit"
+	name = "Squad leader Service and Dress Kit"
 	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
 	icon_state = "box"
 
