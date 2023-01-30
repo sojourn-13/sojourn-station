@@ -150,7 +150,7 @@
 
 		//For if a user is doing 'surgery' on their own prosthetic bodypart
 		if(nature == MODIFICATION_SILICON)
-			difficulty_adjust = 80
+			difficulty_adjust = 60
 			time_adjust = 20
 
 		// ...unless you are a carrion
