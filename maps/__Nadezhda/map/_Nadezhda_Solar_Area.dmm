@@ -78,6 +78,11 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
+"aw" = (
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
 "ax" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/asteroid/grass,
@@ -1027,16 +1032,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"fv" = (
-/obj/machinery/door/airlock/atmos{
-	name = "Atmospherics";
-	req_access = newlist();
-	req_one_access = list(24,10)
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/wall,
-/area/nadezhda/engineering/dorm)
 "fD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/warningnew/radiation,
@@ -1134,6 +1129,15 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
+"hZ" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
 "ik" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -1159,15 +1163,6 @@
 /obj/machinery/vending/dinnerware,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
-/area/nadezhda/engineering/dorm)
-"iE" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
 "iH" = (
 /obj/random/traps/wire_splicing/low_chance,
@@ -1252,6 +1247,10 @@
 /obj/effect/floor_decal/industrial/box,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/dorm)
+"ku" = (
+/obj/machinery/atmospherics/pipe/simple/visible/universal,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
 "kC" = (
 /obj/machinery/atmospherics/trinary/filter/m_filter{
 	dir = 8
@@ -1313,6 +1312,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
 /turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
+"lJ" = (
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "lK" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1412,6 +1417,11 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
+"nW" = (
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/empty,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
 "nY" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
@@ -1432,12 +1442,6 @@
 "on" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/radiation,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/outside/mountainsolars)
-"or" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "ou" = (
@@ -1565,6 +1569,17 @@
 /obj/item/storage/pill_bottle/dice,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
+"qN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
 "qU" = (
 /obj/structure/flora/small/rock4,
 /turf/simulated/floor/asteroid/grass,
@@ -1579,11 +1594,6 @@
 /obj/random/flora/jungle_tree/low,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"ro" = (
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/canister/empty,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "rC" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
@@ -1662,11 +1672,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
-"sz" = (
-/obj/machinery/door/airlock/multi_tile/glass,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/outside/mountainsolars)
 "sS" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -1704,6 +1709,12 @@
 	},
 /turf/space,
 /area/nadezhda/outside/mountainsolars)
+"tg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
 "tr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1903,11 +1914,6 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/mountainsolars)
-"yn" = (
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/canister/air,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "yo" = (
 /obj/structure/railing{
 	dir = 8;
@@ -1959,48 +1965,21 @@
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"zv" = (
-/turf/unsimulated/mineral,
-/area/nadezhda/engineering/dorm)
 "zG" = (
 /obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/reinforced/airless,
 /area/nadezhda/outside/mountainsolars)
-"zH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel,
-/area/nadezhda/engineering/dorm)
 "zI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet/personal/engineering_personal,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
-"zN" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
-"zQ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/outside/mountainsolars)
 "zV" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
-"zW" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "Af" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/scrap/dense_weighted,
@@ -2028,12 +2007,16 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"Bg" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
+"Be" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/dorm)
+"Bg" = (
+/obj/machinery/door/airlock/multi_tile/glass,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/outside/mountainsolars)
 "Bi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder,
@@ -2043,6 +2026,15 @@
 /obj/machinery/atmospherics/pipe/manifold/visible,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
+"BA" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
 "BD" = (
 /obj/machinery/camera/network/engineering{
 	dir = 1
@@ -2075,12 +2067,11 @@
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
 "Cn" = (
-/obj/structure/railing{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
 "CE" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/fixed/hydrotile,
@@ -2221,6 +2212,12 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
+"EB" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
 "EI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2321,11 +2318,21 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
 "Gh" = (
-/obj/machinery/atmospherics/binary/pump/high_power/on{
-	dir = 1;
-	target_pressure = 295
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
 	},
-/turf/simulated/floor/tiled/steel/orangecorner,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"Gj" = (
+/obj/machinery/door/airlock/atmos{
+	name = "Atmospherics";
+	req_access = newlist();
+	req_one_access = list(24,10)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/wall,
 /area/nadezhda/engineering/dorm)
 "GD" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -2337,15 +2344,6 @@
 /obj/structure/closet/crate/solar,
 /obj/machinery/camera/network/engineering,
 /turf/simulated/floor/tiled/techmaint_perforated,
-/area/nadezhda/engineering/dorm)
-"Ha" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
 "Hk" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -2382,9 +2380,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"HC" = (
-/turf/simulated/mineral/planet,
-/area/nadezhda/engineering/dorm)
 "HP" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
@@ -2429,10 +2424,6 @@
 /obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"Ii" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel,
-/area/nadezhda/engineering/dorm)
 "Io" = (
 /obj/structure/catwalk,
 /obj/machinery/light{
@@ -2440,12 +2431,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"IK" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel,
-/area/nadezhda/engineering/dorm)
 "IQ" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/railing{
@@ -2458,11 +2443,23 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
+"Jl" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
 "JB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/junk/cigbutt,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
+"JJ" = (
+/obj/machinery/atmospherics/binary/pump/high_power/on{
+	target_pressure = 5000
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
 "JU" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/grass,
@@ -2610,8 +2607,13 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
 "Mr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
@@ -2643,6 +2645,12 @@
 /obj/structure/flora/small/bushc2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
+"Nn" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
 "Nq" = (
 /obj/structure/flora/small/trailrocka4,
 /turf/simulated/floor/asteroid/dirt,
@@ -2707,16 +2715,6 @@
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
-"Or" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "Ot" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
@@ -2747,12 +2745,6 @@
 "OU" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
-"OV" = (
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "Pd" = (
 /obj/effect/decal/cleanable/rubble,
@@ -2811,6 +2803,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/mineral,
 /area/nadezhda/outside/mountainsolars)
+"Qr" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/dorm)
 "QH" = (
 /obj/structure/flora/small/busha3,
 /turf/simulated/floor/fixed/hydrotile,
@@ -2891,9 +2887,12 @@
 /obj/structure/cable,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"Sn" = (
-/obj/machinery/atmospherics/binary/pump/high_power/on{
-	target_pressure = 5000
+"Se" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
@@ -2908,17 +2907,6 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
-"SH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "SI" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
@@ -2926,6 +2914,10 @@
 "SM" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/space,
+/area/nadezhda/outside/mountainsolars)
+"SO" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/outside/mountainsolars)
 "Td" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -2937,6 +2929,12 @@
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
+"Te" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
 "Tq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -3092,12 +3090,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"VE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel,
-/area/nadezhda/engineering/dorm)
 "VL" = (
 /obj/machinery/holoposter{
 	pixel_y = 32
@@ -3139,6 +3131,22 @@
 /obj/machinery/atmospherics/pipe/simple/visible,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
+"Wv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
+"Wy" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
 "WE" = (
 /obj/structure/railing{
 	dir = 1;
@@ -3194,17 +3202,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"Xf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "Xj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/office/light{
@@ -3286,10 +3283,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/dorm)
-"Zh" = (
-/obj/machinery/atmospherics/pipe/simple/visible/universal,
-/turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
 "Zj" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -3331,6 +3324,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
+"ZH" = (
+/obj/machinery/atmospherics/binary/pump/high_power/on{
+	dir = 1;
+	target_pressure = 295
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/engineering/dorm)
 "ZY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning,
@@ -9808,11 +9808,11 @@ ab
 ab
 ab
 ab
-HC
-HC
-HC
-zv
-zv
+nt
+nt
+nt
+nt
+nt
 nt
 Yv
 Um
@@ -9910,13 +9910,13 @@ ab
 ab
 ab
 ab
-HC
-yn
-Sn
-Zh
-Bg
 nt
-zW
+aw
+JJ
+ku
+Wy
+nt
+Te
 iY
 aE
 aL
@@ -10012,14 +10012,14 @@ ab
 ab
 ab
 ab
-HC
+nt
+EB
 Um
 Um
-Um
-iE
-fv
-zN
-SH
+BA
+Gj
+hZ
+qN
 Di
 Cm
 OC
@@ -10114,14 +10114,14 @@ ab
 ab
 ab
 ab
-HC
-ro
-Gh
-Zh
-Mr
+nt
+nW
+ZH
+ku
+Nn
 nt
 RO
-Xf
+Mr
 aE
 aM
 aM
@@ -10216,14 +10216,14 @@ ab
 ab
 ab
 ab
-HC
-HC
-HC
-HC
-zv
+nt
+nt
+nt
+nt
+nt
 nt
 xh
-Ha
+Se
 rL
 aE
 Di
@@ -10325,7 +10325,7 @@ ab
 aa
 nt
 VL
-Or
+Wv
 Og
 aB
 aA
@@ -10427,7 +10427,7 @@ aa
 nt
 nt
 YM
-Or
+Wv
 aA
 aA
 aA
@@ -10435,8 +10435,8 @@ kq
 gS
 ak
 fp
-Cn
-Cn
+Gh
+Gh
 yp
 cg
 cz
@@ -10535,8 +10535,8 @@ XR
 qB
 wU
 EI
-sz
-or
+Bg
+Jl
 cg
 au
 au
@@ -10632,13 +10632,13 @@ nt
 tE
 jH
 nl
-Ii
-zH
-VE
-IK
+Qr
+Be
+Cn
+tg
 YR
-zQ
-OV
+SO
+lJ
 cg
 cz
 cz
@@ -11353,7 +11353,7 @@ cp
 be
 bw
 bC
-Cn
+Gh
 al
 ac
 ak
