@@ -68,7 +68,7 @@
 		LEGACY_SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
 		return S ? S.getValue(pure) : 0
 	else
-		log_debug("passed list to getStat()")
+		log_debug("passed list to getStat(), statName without a list: [statName]")
 
 //	Those are accept list of stats
 //	Compound stat checks.
