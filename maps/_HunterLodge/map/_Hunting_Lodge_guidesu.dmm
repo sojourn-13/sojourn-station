@@ -1,0 +1,7530 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/unsimulated/mineral,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ab" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/turf/simulated/floor/asteroid/dirt/dark/plough,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ac" = (
+/obj/structure/table/steel,
+/obj/item/tool/shovel/improvised,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"af" = (
+/obj/effect/floor_decal/industrial/arrows,
+/turf/simulated/floor/hull,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ag" = (
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ah" = (
+/obj/structure/table/rack/shelf,
+/obj/item/tool/hammer,
+/obj/item/tool/hammer,
+/obj/item/tool/hammer,
+/obj/item/tool/hammer,
+/obj/item/tool/hammer,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ai" = (
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"aj" = (
+/obj/machinery/vending/hydronutrients,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ak" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/mob/living/simple_animal/goose{
+	desc = "This bird has a sense of smug superiority and missing eye.";
+	name = "Jea Junior"
+	},
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"an" = (
+/obj/machinery/power/solar,
+/obj/structure/cable,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ao" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 8;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/structure/closet/crate/trashcart{
+	old_lock_odds = -20
+	},
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"aq" = (
+/obj/structure/table/marble,
+/turf/simulated/floor/carpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ar" = (
+/obj/structure/table/rack,
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/item/gun/projectile/boltgun/lever,
+/obj/item/ammo_magazine/ammobox/magnum_40,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"at" = (
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"au" = (
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"av" = (
+/obj/machinery/cryopod/dormitory,
+/obj/item/bedsheet/orange,
+/obj/machinery/alarm{
+	pixel_y = 24
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ax" = (
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ay" = (
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/hunting_lodge)
+"az" = (
+/obj/structure/sink/puddle,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
+"aB" = (
+/turf/simulated/wall/wood_barrel,
+/area/nadezhda/outside/forest/hunting_lodge)
+"aC" = (
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"aD" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 8;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
+"aG" = (
+/obj/structure/table/woodentable,
+/obj/item/clothing/head/hairflower/white,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"aM" = (
+/turf/unsimulated/mineral/transition,
+/area/nadezhda/outside/forest/hunting_lodge)
+"aN" = (
+/obj/machinery/beehive{
+	pixel_x = 31;
+	pixel_y = 17
+	},
+/turf/simulated/wall/wood_barrel,
+/area/nadezhda/outside/forest/hunting_lodge)
+"aP" = (
+/obj/structure/closet/crate/trashcart{
+	old_lock_odds = -20
+	},
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"aR" = (
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass/colonialjungle1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"aS" = (
+/turf/simulated/floor/carpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"aT" = (
+/obj/machinery/door/window/southright,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge)
+"aX" = (
+/obj/machinery/microwave/burnbarrel{
+	pixel_y = -12;
+	pixel_x = 15
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"aY" = (
+/obj/structure/closet/secure_closet/freezer/meat,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"aZ" = (
+/obj/structure/table/rack,
+/obj/item/gun/projectile/boltgun/sa,
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bb" = (
+/obj/machinery/vending/dinnerware,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bc" = (
+/obj/structure/table/rack/shelf,
+/obj/item/stack/material/plasteel/random,
+/obj/item/stack/material/plasteel/random,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"bg" = (
+/obj/structure/table/woodentable,
+/obj/machinery/electrolyzer,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"bk" = (
+/obj/structure/table/rack,
+/obj/item/gun/projectile/boltgun/light,
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bl" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bn" = (
+/obj/structure/table/rack/shelf,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bo" = (
+/obj/structure/table/woodentable,
+/obj/item/paper_bin,
+/obj/item/pen/multi,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bp" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bq" = (
+/obj/machinery/space_heater{
+	pixel_y = 8;
+	pixel_x = -7
+	},
+/obj/structure/railing/grey{
+	dir = 4;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/railing/grey,
+/turf/simulated/floor/beach/water/flooded,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"bs" = (
+/mob/living/carbon/superior_animal/lodge/clucker,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bt" = (
+/obj/structure/table/glass,
+/obj/item/storage/box/masks,
+/obj/item/storage/box/gloves{
+	pixel_x = 3;
+	pixel_y = 4
+	},
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"bu" = (
+/obj/structure/table/rack/shelf,
+/obj/random/common_oddities,
+/obj/random/common_oddities,
+/obj/random/credits,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost_handmade,
+/obj/random/medical_lowcost,
+/obj/random/medical_lowcost,
+/obj/random/melee,
+/obj/random/tool_upgrade,
+/obj/random/tool_upgrade,
+/obj/random/tool_upgrade,
+/obj/random/ammo,
+/obj/random/ammo,
+/obj/random/ammo,
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bv" = (
+/obj/structure/table/woodentable,
+/obj/machinery/recharger,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"by" = (
+/obj/structure/table/rack/shelf,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bB" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"bC" = (
+/obj/machinery/botany/extractor,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"bH" = (
+/obj/structure/closet/secure_closet/freezer/kitchen{
+	name = "fridge";
+	req_access = list()
+	},
+/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/storage/fancy/egg_box,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bI" = (
+/obj/structure/table/standard,
+/obj/random/medical,
+/obj/random/medical,
+/obj/effect/floor_decal/steeldecal/steel_decals10{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"bJ" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 4;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bK" = (
+/obj/structure/flora/tree/jungle_small,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bN" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bO" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bR" = (
+/obj/structure/closet/crate/hydroponics,
+/obj/item/tool/shovel/spade,
+/obj/item/reagent_containers/spray/plantbgone,
+/obj/item/tool/wirecutters,
+/obj/item/plantspray/pests,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/device/scanner/plant,
+/obj/item/storage/makeshift_grinder,
+/obj/item/tool/scythe,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bS" = (
+/obj/structure/sink{
+	dir = 8;
+	icon_state = "sink";
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bT" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"bX" = (
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"bY" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ca" = (
+/obj/structure/table/rack/shelf,
+/obj/item/storage/belt/utility/handmade,
+/obj/item/storage/belt/utility/handmade,
+/obj/item/storage/belt/utility,
+/obj/item/storage/belt/utility,
+/obj/item/storage/belt/medical,
+/obj/item/storage/belt/medical,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"cc" = (
+/obj/machinery/vending/cigarette,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"cf" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge)
+"cg" = (
+/obj/structure/table/rack/shelf,
+/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
+/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"co" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"cr" = (
+/obj/structure/table/steel,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ct" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"cu" = (
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"cw" = (
+/obj/machinery/seed_extractor,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"cz" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"cB" = (
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0"
+	},
+/obj/structure/closet/secure_closet/personal/hydroponics{
+	name = "xenoflorist's locker";
+	req_access = list(5)
+	},
+/obj/item/storage/box/bottles,
+/obj/item/storage/box/botanydisk,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"cD" = (
+/obj/structure/flora/tree/jungle_small{
+	pixel_y = -1
+	},
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"cG" = (
+/obj/structure/table/woodentable,
+/obj/item/reagent_containers/food/drinks/shaker,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"cJ" = (
+/obj/structure/table/rack/shelf,
+/obj/item/device/lighting/toggleable/lantern,
+/obj/item/device/lighting/toggleable/lantern,
+/obj/item/device/lighting/toggleable/lantern,
+/obj/item/device/lighting/toggleable/lantern,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"cK" = (
+/obj/machinery/power/port_gen/pacman/diesel,
+/obj/item/reagent_containers/glass/bottle/petrel,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"cP" = (
+/obj/structure/table/standard,
+/obj/item/honey_frame,
+/obj/item/honey_frame,
+/obj/item/honey_frame,
+/obj/item/bee_pack,
+/obj/item/bee_smoker,
+/obj/item/tool/crowbar/improvised,
+/obj/item/bee_pack,
+/obj/item/storage/box/costume/scarecrow,
+/obj/item/storage/box/costume/scarecrow,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
+"cR" = (
+/obj/structure/table/rack/shelf,
+/obj/item/stack/material/steel/full,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"cS" = (
+/obj/machinery/reagentgrinder/industrial,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"cU" = (
+/obj/structure/reagent_dispensers/meadkeg,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"cV" = (
+/mob/living/simple_animal/yithian,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"cZ" = (
+/obj/structure/table/rack/shelf,
+/obj/item/stack/material/wood/random,
+/obj/item/stack/material/wood/random,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"db" = (
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 1
+	},
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 4;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/carpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"dc" = (
+/obj/structure/flora/church_tree{
+	density = 0;
+	icon_state = "red_tree";
+	name = "Spiritual Tree";
+	pixel_x = -32
+	},
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dd" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 4
+	},
+/obj/machinery/light,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge)
+"de" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dk" = (
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"dl" = (
+/obj/structure/reagent_dispensers/meadkeg,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"dm" = (
+/obj/structure/bed,
+/obj/structure/bed,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"dn" = (
+/obj/structure/table/bench/wooden,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ds" = (
+/obj/structure/bed/chair/wood{
+	dir = 1
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"dt" = (
+/obj/structure/bed/double/padded,
+/obj/item/bedsheet/hopdouble,
+/obj/landmark/join/start/lodge_hunter,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"du" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 8;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dv" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dw" = (
+/obj/structure/table/woodentable,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/carpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"dx" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"dz" = (
+/obj/item/soap/hunters,
+/obj/item/tool_upgrade/productivity/whetstone,
+/obj/item/tool_upgrade/productivity/whetstone,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/structure/closet/secure_closet/freezer,
+/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/food/snacks/meat,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dA" = (
+/obj/structure/table/woodentable,
+/obj/machinery/chem_heater{
+	pixel_y = 6
+	},
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#0892d0"
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"dB" = (
+/obj/machinery/portable_atmospherics/hydroponics,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"dC" = (
+/obj/machinery/door/unpowered/simple/wood/saloon{
+	name = "Hunt Masters Office"
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"dD" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dJ" = (
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dN" = (
+/obj/machinery/light,
+/obj/structure/table/woodentable,
+/obj/random/booze/low_chance,
+/obj/random/booze/low_chance,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"dO" = (
+/obj/machinery/conveyor/southeast/ccw{
+	id = "bioreactor_intake";
+	dir = 4
+	},
+/obj/machinery/conveyor/southeast/ccw{
+	id = "hunters_trash";
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"dP" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dQ" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dS" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dT" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dU" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 6
+	},
+/obj/effect/floor_decal/industrial/danger,
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dV" = (
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
+"dZ" = (
+/obj/structure/table/rack/shelf,
+/obj/item/stack/cable_coil/random,
+/obj/item/stack/cable_coil/random,
+/obj/item/stack/cable_coil/random,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ea" = (
+/obj/structure/catwalk,
+/obj/machinery/power/solar_control,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ec" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 4;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ed" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ee" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/vending/fortune,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"eg" = (
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#0892d0"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ei" = (
+/obj/machinery/biogenerator,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ek" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"el" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge)
+"eo" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"er" = (
+/obj/structure/table/woodentable,
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = -4
+	},
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"es" = (
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"et" = (
+/turf/simulated/wall/wood_old,
+/area/nadezhda/outside/forest/hunting_lodge)
+"eu" = (
+/obj/map_data/hunting_lodge,
+/turf/unsimulated/mineral,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ev" = (
+/obj/random/scrap/sparse_weighted,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ew" = (
+/turf/simulated/mineral/planet,
+/area/nadezhda/outside/forest/hunting_lodge)
+"eB" = (
+/obj/machinery/smelter{
+	name = "primary smelter";
+	output_side = 4;
+	refuse_output_side = 1
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"eD" = (
+/obj/structure/bed/roller,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"eE" = (
+/obj/structure/table/bench/wooden,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"eL" = (
+/turf/simulated/mineral/planet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"eN" = (
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 8
+	},
+/turf/simulated/floor/hull,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"eP" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/carpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"eR" = (
+/obj/structure/table/rack/shelf,
+/obj/item/tool/spear,
+/obj/item/tool/spear,
+/obj/item/tool/spear,
+/obj/item/tool/spear,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"eW" = (
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0"
+	},
+/obj/structure/closet/secure_closet/personal/hydroponics{
+	name = "xenoflorist's locker";
+	req_access = list(5)
+	},
+/obj/item/storage/box/bottles,
+/obj/item/storage/box/botanydisk,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"eX" = (
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"eY" = (
+/obj/structure/table/woodentable,
+/obj/item/device/defib_kit,
+/obj/item/cell/large,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"eZ" = (
+/obj/structure/flora/small/rock4,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fc" = (
+/obj/machinery/smartfridge/chemistry,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fd" = (
+/obj/structure/table/woodentable,
+/obj/item/clothing/under/dress/casual/flowerdress,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fe" = (
+/turf/simulated/floor/asteroid/dirt/dark/plough,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fg" = (
+/obj/structure/table/glass,
+/obj/item/storage/firstaid/surgery,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fk" = (
+/obj/structure/table/rack/shelf,
+/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fl" = (
+/obj/structure/table/rack/shelf,
+/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/computer_hardware/hard_drive/portable/design/janitor,
+/obj/item/computer_hardware/hard_drive/portable/basic,
+/obj/item/computer_hardware/hard_drive/portable/design/security,
+/obj/item/computer_hardware/hard_drive/portable/design/medical,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fr" = (
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fs" = (
+/obj/structure/bookcase,
+/obj/item/book/manual/barman_recipes,
+/obj/item/book/manual/chef_recipes,
+/obj/item/book/manual/engineering_construction,
+/obj/item/book/manual/engineering_guide,
+/obj/item/book/manual/engineering_hacking,
+/obj/item/book/manual/medical_diagnostics_manual,
+/obj/item/book/manual/supermatter_engine,
+/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/anomaly_testing,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fv" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fw" = (
+/obj/structure/railing{
+	anchored = 1;
+	dir = 8;
+	icon_state = "railing0"
+	},
+/turf/simulated/wall/wood_old,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fx" = (
+/obj/structure/table/woodentable,
+/obj/machinery/recharger,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fy" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fA" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fB" = (
+/mob/living/simple_animal/chicken,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fE" = (
+/mob/living/simple_animal/cow,
+/turf/simulated/floor/asteroid/grass/colonial2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fF" = (
+/obj/structure/curtain/open/privacy,
+/obj/structure/invislight,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fG" = (
+/obj/machinery/door/unpowered/simple/wood/saloon{
+	name = "Tatonka Pen"
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fI" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fJ" = (
+/obj/item/farmbot_arm_assembly,
+/obj/item/device/assembly/prox_sensor,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fN" = (
+/obj/structure/table/rack,
+/obj/item/gun/projectile/boltgun/lever/custer,
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fR" = (
+/obj/structure/table/rack/shelf,
+/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/computer_hardware/hard_drive/portable/design/janitor,
+/obj/item/computer_hardware/hard_drive/portable/basic,
+/obj/item/computer_hardware/hard_drive/portable/design/security,
+/obj/item/computer_hardware/hard_drive/portable/design/medical,
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 4;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fS" = (
+/obj/machinery/botany/editor,
+/obj/machinery/light{
+	brightness_power = 1;
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fT" = (
+/obj/structure/table/rack/shelf,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"fU" = (
+/obj/structure/table/woodentable,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/box/bodybags,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"fX" = (
+/obj/structure/barricade,
+/obj/structure/grille,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gc" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gg" = (
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"gh" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gj" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gk" = (
+/obj/machinery/door/window/southleft{
+	name = "shower door"
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"gp" = (
+/obj/structure/sink{
+	density = 1;
+	desc = "A small fountain of polished stone and has a small pump at the bottom that helps push fresh water.";
+	icon_state = "BaptismFont_Water";
+	name = "Water Fountain"
+	},
+/turf/simulated/floor/asteroid/dirt/dark/plough,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gr" = (
+/obj/structure/table/rack,
+/obj/item/device/lighting/toggleable/lantern,
+/obj/item/device/lighting/toggleable/lantern,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gs" = (
+/obj/structure/table/rack,
+/obj/item/gun/projectile/boltgun/handmade,
+/obj/item/gun/projectile/boltgun/handmade,
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 8;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gt" = (
+/obj/machinery/honey_extractor,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"gu" = (
+/obj/structure/table/bench/wooden,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gv" = (
+/obj/structure/table/bench/wooden,
+/obj/machinery/light,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gw" = (
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gC" = (
+/obj/structure/flora/small/bushb1,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gE" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gG" = (
+/obj/structure/catwalk,
+/obj/structure/cable,
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/high;
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gI" = (
+/obj/machinery/door/unpowered/simple/wood/saloon{
+	name = "Cerberus Pen"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gK" = (
+/obj/landmark/join/start/lodge_herbalist,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"gL" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/food/drinks/shaker,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gM" = (
+/obj/structure/table/steel,
+/obj/item/tool/shovel/improvised,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"gR" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"gV" = (
+/obj/structure/table/steel,
+/obj/machinery/recharger,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"gZ" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 8;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/dirt/dark/plough,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ha" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"hb" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"hd" = (
+/obj/structure/table/rack/shelf,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/obj/item/stack/rods/random,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"he" = (
+/obj/structure/table/woodentable,
+/obj/item/clothing/head/hairflower/blue,
+/obj/item/oddity/ls/bouquet,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"hf" = (
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/hunting_lodge)
+"hg" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/structure/sink{
+	density = 1;
+	desc = "A small fountain of polished stone and has a small pump at the bottom that helps push fresh water.";
+	icon_state = "BaptismFont_Water";
+	name = "Water Fountain"
+	},
+/turf/simulated/floor/carpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hi" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/random/scrap/sparse_weighted,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hj" = (
+/obj/structure/bookcase{
+	name = "bookcase (Religious)"
+	},
+/obj/item/book/ritual/cruciform,
+/obj/item/book/ritual/cruciform,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hm" = (
+/obj/structure/table/woodentable,
+/obj/item/clothing/head/hairflower,
+/obj/item/oddity/ls/bouquet,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"hq" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hr" = (
+/obj/structure/table/marble,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge)
+"hu" = (
+/obj/machinery/smartfridge/drying_rack,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"hv" = (
+/obj/random/scrap/sparse_weighted,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hy" = (
+/obj/structure/table/rack/shelf,
+/obj/item/tool/spear/hunter_halberd,
+/obj/item/tool/spear/hunter_halberd,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hz" = (
+/obj/machinery/power/nt_obelisk,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hA" = (
+/obj/machinery/craftingstation,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hH" = (
+/obj/structure/sink/puddle,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"hK" = (
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 1
+	},
+/turf/simulated/floor/hull,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hL" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/machinery/seed_storage/garden,
+/turf/simulated/floor/asteroid/dirt/dark/plough,
+/area/nadezhda/outside/forest/hunting_lodge)
+"hM" = (
+/obj/machinery/bioprinter,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hN" = (
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hT" = (
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"hX" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ig" = (
+/obj/structure/bed,
+/obj/structure/medical_stand/anesthetic{
+	pixel_x = 4;
+	pixel_y = 17
+	},
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ik" = (
+/obj/machinery/seed_storage/xenobotany,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"il" = (
+/obj/machinery/conveyor/southeast/ccw{
+	id = "hunters_trash";
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ip" = (
+/obj/structure/table/woodentable,
+/obj/item/device/lighting/toggleable/lamp/green,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"it" = (
+/obj/structure/table/bench/wooden,
+/obj/landmark/join/start/lodge_hunter,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"iv" = (
+/obj/structure/table/rack/shelf,
+/obj/item/stack/material/glass/random,
+/obj/item/stack/material/glass/random,
+/obj/item/stack/material/glass/random,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ix" = (
+/obj/structure/table/rack/shelf,
+/obj/item/gun/projectile/bow/hunting,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"iy" = (
+/obj/structure/bed,
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"iB" = (
+/obj/machinery/power/port_gen/pacman/diesel,
+/obj/item/reagent_containers/glass/bottle/petrel,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"iE" = (
+/obj/structure/table/glass,
+/obj/item/stack/nanopaste{
+	pixel_x = 14;
+	pixel_y = 2
+	},
+/obj/item/stack/nanopaste{
+	pixel_x = 14;
+	pixel_y = 2
+	},
+/obj/item/storage/freezer,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"iI" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"iR" = (
+/obj/structure/table/rack,
+/obj/item/gun/projectile/revolver/handmade,
+/obj/item/gun/projectile/revolver/handmade,
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 4;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"iS" = (
+/turf/simulated/wall/wood_old,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"iU" = (
+/obj/machinery/autolathe/industrial,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"iW" = (
+/obj/machinery/door/unpowered/simple/wood/saloon{
+	name = "Misc Pen"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"iX" = (
+/obj/structure/bonfire/permanent,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ja" = (
+/obj/machinery/power/tracker,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"je" = (
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"jj" = (
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"jl" = (
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#0892d0"
+	},
+/turf/simulated/floor/hull,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"jn" = (
+/mob/living/simple_animal/fennec,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"jq" = (
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 1
+	},
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/hull,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"jr" = (
+/obj/landmark/join/start/lodge_herbalist,
+/turf/simulated/floor/asteroid/dirt/dark/plough,
+/area/nadezhda/outside/forest/hunting_lodge)
+"js" = (
+/obj/structure/medical_stand/anesthetic{
+	pixel_x = 4;
+	pixel_y = 17
+	},
+/obj/structure/bed/roller,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"jv" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"jw" = (
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"jx" = (
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 8
+	},
+/turf/simulated/floor/hull,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"jy" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 8;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/forest/hunting_lodge)
+"jC" = (
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 4
+	},
+/turf/simulated/floor/hull,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"jF" = (
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#0892d0"
+	},
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"jH" = (
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"jI" = (
+/obj/machinery/light,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"jM" = (
+/obj/random/toy/plushie_onlycarp,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/hunting_lodge)
+"jR" = (
+/obj/structure/table/woodentable,
+/obj/item/clothing/head/hairflower/orange,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"jU" = (
+/obj/machinery/smartfridge/drying_rack,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"jX" = (
+/obj/structure/table/rack/shelf,
+/obj/item/gun/projectile/revolver/rev10/rex10,
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 4;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"jY" = (
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ke" = (
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"kf" = (
+/obj/structure/table/woodentable,
+/obj/item/reagent_containers/food/drinks/mug/teacup,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ko" = (
+/obj/machinery/beehive{
+	pixel_x = 21;
+	pixel_y = -13
+	},
+/turf/simulated/wall/wood_old,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ks" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 4;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"kt" = (
+/obj/structure/table/woodentable,
+/obj/item/storage/fancy/cigar,
+/obj/item/flame/lighter/zippo/bullet,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"kv" = (
+/obj/structure/closet/secure_closet/freezer/blood,
+/obj/item/reagent_containers/blood/OPlus,
+/obj/item/reagent_containers/blood/OPlus,
+/obj/item/reagent_containers/blood/OPlus,
+/obj/item/reagent_containers/blood/OPlus,
+/obj/item/reagent_containers/blood/OPlus,
+/obj/item/reagent_containers/blood/OPlus,
+/obj/item/storage/box/pillbottles,
+/obj/item/storage/box/pillbottles,
+/obj/item/storage/box/bottles,
+/obj/item/storage/box/bottles,
+/obj/item/storage/firstaid/toxin,
+/obj/machinery/light{
+	brightness_power = 1;
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"kw" = (
+/obj/structure/bed/double/padded,
+/obj/item/bedsheet/orangedouble,
+/obj/landmark/join/start/lodge_hunter,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge)
+"kz" = (
+/obj/structure/railing{
+	dir = 8;
+	icon_state = "railing0";
+	tag = "icon-railing0 (WEST)"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"kC" = (
+/obj/machinery/cryopod/dormitory,
+/obj/item/bedsheet/orange,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"kF" = (
+/obj/structure/table/rack/shelf,
+/obj/item/tool/fireaxe/woodsman,
+/obj/item/tool/fireaxe/woodsman,
+/obj/item/tool/fireaxe/woodsman,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"kG" = (
+/obj/structure/closet/secure_closet/freezer,
+/obj/random/junkfood,
+/obj/random/junkfood,
+/obj/random/junkfood,
+/obj/random/booze,
+/obj/random/booze,
+/obj/random/booze,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge)
+"lf" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/asteroid/grass/colonialjungle1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"lj" = (
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt/dark/plough,
+/area/nadezhda/outside/forest/hunting_lodge)
+"lr" = (
+/obj/effect/floor_decal/industrial/danger,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"mc" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"mo" = (
+/obj/machinery/door/unpowered/simple/wood/saloon{
+	name = "Hunt Masters Office"
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"mv" = (
+/obj/structure/sink/puddle,
+/turf/simulated/floor/asteroid/grass/colonial2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"mz" = (
+/obj/machinery/power/terminal{
+	dir = 1;
+	icon_state = "term"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"mK" = (
+/obj/structure/catwalk,
+/obj/structure/catwalk,
+/obj/structure/catwalk,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"mO" = (
+/obj/structure/table/standard,
+/obj/machinery/recharger,
+/obj/item/cell/small,
+/obj/item/cell/small,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"nj" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"nt" = (
+/obj/structure/reagent_dispensers/fueltank/huge,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"nu" = (
+/obj/structure/table/woodentable,
+/obj/machinery/button/remote/airlock{
+	id = "LG1";
+	name = "External Gate Lock";
+	pixel_x = 37;
+	pixel_y = 5;
+	req_access = list(81);
+	specialfunctions = 4
+	},
+/obj/machinery/button/remote/airlock{
+	id = "LG2";
+	name = "Internal Gate Control";
+	pixel_x = 26;
+	pixel_y = -7;
+	req_access = list(81)
+	},
+/obj/machinery/button/remote/airlock{
+	id = "LG1";
+	name = "External Gate Control";
+	pixel_x = 26;
+	pixel_y = 5;
+	req_access = list(81)
+	},
+/obj/machinery/button/remote/airlock{
+	id = "LG2";
+	name = "Internal Gate Lock";
+	pixel_x = 37;
+	pixel_y = -7;
+	req_access = list(81);
+	specialfunctions = 4
+	},
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge)
+"nG" = (
+/obj/structure/curtain/open/privacy,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"nJ" = (
+/obj/effect/shuttle_landmark/hunting_lodge,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"nM" = (
+/obj/structure/catwalk,
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/high;
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/obj/structure/invislight,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"nS" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"oc" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"op" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ov" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"oZ" = (
+/obj/structure/table/woodentable,
+/obj/item/paper_bin,
+/obj/item/pen/blue,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"pc" = (
+/turf/simulated/floor/hull,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"pw" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"py" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1;
+	icon_state = "danger"
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"pZ" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge)
+"qA" = (
+/obj/structure/bed/psych{
+	desc = "It can be a bit noisy, but still serves well.";
+	name = "old mantle"
+	},
+/turf/simulated/floor/asteroid/grass/colonialjungle1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"rg" = (
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ro" = (
+/obj/structure/invislight,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"rw" = (
+/obj/structure/table/bench/wooden,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"rx" = (
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 1;
+	id_tag = "LG1";
+	name = "External Gate";
+	req_access = newlist();
+	req_one_access = list(81)
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
+"rA" = (
+/obj/structure/grille,
+/obj/structure/barricade,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
+"rB" = (
+/obj/structure/bookcase,
+/obj/item/book/manual/fiction/littlewomen,
+/obj/item/book/manual/fiction/aroundtheworld,
+/obj/item/book/manual/fiction/muchadoaboutnothing,
+/obj/item/book/manual/fiction/theinvisibleman,
+/obj/item/book/manual/fiction/waroftheworlds,
+/obj/item/book/manual/fiction/thetimemachine,
+/obj/item/book/manual/fiction/thejunglebook,
+/obj/item/book/manual/fiction/rimeoftheancientmariner,
+/obj/item/book/manual/fiction/dracula,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"rQ" = (
+/obj/machinery/light,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"rW" = (
+/obj/random/structures,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"sp" = (
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ss" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"sz" = (
+/obj/structure/coatrack,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"sV" = (
+/obj/machinery/smartfridge/chemistry,
+/obj/structure/curtain/open/privacy,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"sW" = (
+/obj/structure/table/steel,
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#0892d0"
+	},
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"sY" = (
+/obj/effect/floor_decal/industrial/stand_clear,
+/turf/simulated/floor/hull,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"tb" = (
+/obj/machinery/computer/shuttle_control/multi/surface_transport,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"tn" = (
+/obj/structure/table/bench/wooden,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"tu" = (
+/mob/living/simple_animal/pig,
+/turf/simulated/floor/asteroid/grass/colonial2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"tz" = (
+/turf/unsimulated/mineral,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"tS" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"tV" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"uh" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ur" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"us" = (
+/obj/random/scrap/sparse_weighted,
+/obj/random/scrap/sparse_weighted,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"uv" = (
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ux" = (
+/mob/living/simple_animal/redpanda/fae,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"uy" = (
+/obj/structure/closet/wall_mounted{
+	pixel_x = 32
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"uX" = (
+/obj/structure/flora/ausbushes/pointybush,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"vA" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"vV" = (
+/turf/simulated/floor/asteroid/grass/colonial2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"wg" = (
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"wk" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"wq" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/machinery/seed_extractor,
+/turf/simulated/floor/asteroid/dirt/dark/plough,
+/area/nadezhda/outside/forest/hunting_lodge)
+"wC" = (
+/obj/structure/bed/chair/custom/wood,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge)
+"wJ" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"wS" = (
+/obj/structure/table/woodentable,
+/obj/machinery/photocopier/faxmachine{
+	department = "Lodge Hunt Master's Office"
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"wX" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/structure/curtain/open/privacy,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"wY" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"xo" = (
+/obj/structure/bed/double/padded,
+/obj/item/bedsheet/purpledouble,
+/obj/landmark/join/start/lodge_hunter,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"xv" = (
+/obj/machinery/chem_master,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"xx" = (
+/obj/structure/table/bench/padded,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"xy" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"xH" = (
+/obj/structure/table/marble,
+/obj/machinery/chemical_dispenser/coffee_master,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"xK" = (
+/obj/landmark/join/start/lodge_hunter,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
+"xM" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	anchored = 1;
+	dir = 4;
+	icon_state = "railing0";
+	tag = "icon-railing0 (EAST)"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"yo" = (
+/obj/structure/flora/small/rock2,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"yr" = (
+/obj/item/paper_bin,
+/obj/item/pen/multi,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"yx" = (
+/obj/effect/floor_decal/industrial/box/white,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"yL" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"yU" = (
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
+"zo" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge)
+"zr" = (
+/obj/structure/table/rack,
+/obj/item/towel,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"zy" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 8;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"zF" = (
+/turf/simulated/wall/wood_barrel,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"zS" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"zY" = (
+/obj/structure/catwalk,
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Ae" = (
+/obj/structure/table/bench/wooden,
+/turf/simulated/floor/asteroid/grass/colonialjungle1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Aq" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Aw" = (
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/hunting_lodge)
+"AC" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"AD" = (
+/obj/random/scrap/sparse_even,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Bq" = (
+/obj/structure/multiz/stairs/enter/bottom,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"BB" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 4;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Cb" = (
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Cf" = (
+/obj/structure/table/marble,
+/obj/machinery/chemical_dispenser/beer,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Cv" = (
+/obj/machinery/light,
+/turf/simulated/floor/carpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"CA" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"CB" = (
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
+"CE" = (
+/obj/machinery/vending/gamers/hunters,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"CG" = (
+/obj/effect/step_trigger/riverforest_to_huntinglodge_1_A,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/hunting_lodge)
+"CO" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Da" = (
+/obj/structure/table/rack/shelf,
+/obj/item/beartrap,
+/obj/item/beartrap,
+/obj/item/beartrap,
+/obj/item/beartrap,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Db" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/cryopod/robot,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/hunting_lodge)
+"De" = (
+/obj/item/stool,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Di" = (
+/obj/random/scrap/moderate_weighted,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"DL" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"DP" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"DT" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/machinery/suit_storage_unit/standard_unit,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Eo" = (
+/obj/landmark/join/start/lodge_hunter,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/turf/simulated/floor/asteroid/dirt/dark/plough,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Ez" = (
+/obj/machinery/photocopier,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"EG" = (
+/obj/machinery/power/port_gen/pacman/camp{
+	anchored = 1
+	},
+/obj/item/stack/material/wood/full,
+/obj/item/stack/material/wood/full,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ES" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"EU" = (
+/mob/living/carbon/superior_animal/lodge/tatonka,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Fe" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Fr" = (
+/obj/machinery/computer/cryopod/elevator{
+	pixel_y = -32
+	},
+/obj/effect/floor_decal/industrial/stand_clear/white,
+/obj/machinery/light,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"FF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/invislight,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"FL" = (
+/obj/machinery/vending/props,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"FU" = (
+/mob/living/simple_animal/fennec/fennix,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"FW" = (
+/obj/structure/sink/puddle,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
+"FZ" = (
+/obj/structure/table/rack/shelf,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Gc" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Gk" = (
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Gz" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/machinery/vending/hydronutrients,
+/turf/simulated/floor/asteroid/dirt/dark/plough,
+/area/nadezhda/outside/forest/hunting_lodge)
+"GC" = (
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 1;
+	id_tag = "LG2";
+	name = "Internal Gate";
+	req_access = newlist();
+	req_one_access = list(81)
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
+"GD" = (
+/obj/effect/floor_decal/industrial/danger,
+/obj/effect/floor_decal/industrial/stand_clear,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"GH" = (
+/obj/structure/bed/chair/sofa/beige/left,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Hh" = (
+/obj/structure/bookcase,
+/obj/item/book/manual/nonfiction/ageofreason,
+/obj/item/book/manual/nonfiction/ethics,
+/obj/item/book/manual/nonfiction/leviathan,
+/obj/item/book/manual/nonfiction/lifewithoutprinciple,
+/obj/item/book/manual/nonfiction/manthereformer,
+/obj/item/book/manual/nonfiction/metaphysics,
+/obj/item/book/manual/nonfiction/thescienceofright,
+/obj/item/book/manual/nonfiction/thetranscendentalist,
+/obj/item/book/manual/nonfiction/suntzu,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Hq" = (
+/obj/random/mob/luna_solis,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Hw" = (
+/obj/structure/table/marble,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Hz" = (
+/obj/machinery/recharge_station,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/hunting_lodge)
+"HJ" = (
+/obj/item/trash/cigbutt/cigarbutt,
+/obj/structure/table/woodentable,
+/obj/item/material/ashtray,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"HK" = (
+/obj/structure/table/marble,
+/obj/machinery/chemical_dispenser/soda,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"HM" = (
+/turf/simulated/wall/wood_barrel,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"HP" = (
+/obj/structure/table/rack/shelf,
+/obj/item/tool/knife/dagger,
+/obj/item/tool/knife/dagger,
+/obj/item/tool/knife/dagger,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"HR" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/material/kitchen/rollingpin,
+/obj/item/reagent_containers/food/condiment/flour,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"IB" = (
+/obj/structure/table/bench/wooden,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"IC" = (
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"IE" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
+"IN" = (
+/obj/machinery/light,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"IO" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"IZ" = (
+/obj/machinery/door/airlock/external,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Jh" = (
+/obj/machinery/recycler,
+/obj/machinery/conveyor/southeast/ccw{
+	id = "hunters_trash";
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Jl" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Ju" = (
+/obj/machinery/power/solar,
+/obj/structure/cable,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Jx" = (
+/obj/structure/bed/chair/sofa/beige/right,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"JB" = (
+/obj/structure/bed/chair,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"JC" = (
+/obj/structure/table/woodentable,
+/obj/item/clothing/head/hairflower/yellow,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Kf" = (
+/obj/machinery/door/unpowered/simple/wood/saloon{
+	name = "Clucker Pen"
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Kp" = (
+/obj/structure/catwalk,
+/obj/structure/railing,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Kt" = (
+/mob/living/simple_animal/tindalos,
+/turf/simulated/floor/asteroid/grass/jungle,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Ky" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"KG" = (
+/obj/structure/table/standard,
+/obj/item/storage/briefcase,
+/obj/item/tool/crowbar,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Ls" = (
+/obj/machinery/gibber,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"LE" = (
+/obj/structure/cable,
+/obj/machinery/power/smes/dummysimple,
+/turf/simulated/floor/plating,
+/area/nadezhda/outside/forest/hunting_lodge)
+"LK" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"LM" = (
+/obj/landmark/join/start/lodge_hunter,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"LO" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"LQ" = (
+/obj/structure/table/bench/wooden,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Mj" = (
+/obj/structure/table/woodentable,
+/obj/random/toy/plushie_onlycat,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Mk" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Mp" = (
+/obj/structure/sign/warning/hazard_danger,
+/turf/simulated/wall/wood_barrel,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Ms" = (
+/obj/item/device/synthesized_instrument/guitar{
+	desc = "A wooden musical instrument with six strings. This guitar has seen more history then most hunters. Inscribed on the back of it is 'Charles Astra, Hunt Master'.";
+	name = "Worn Guitar"
+	},
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"MV" = (
+/obj/structure/table/bench/wooden,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Nk" = (
+/obj/structure/bonfire/permanent,
+/turf/simulated/floor/asteroid/grass/colonialjungle1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"NO" = (
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 1
+	},
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge)
+"NR" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"NW" = (
+/obj/structure/curtain/open/privacy,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"NZ" = (
+/obj/machinery/vending/gamers/hunters,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"On" = (
+/obj/machinery/conveyor_switch/oneway{
+	convdir = -1;
+	id = "hunters_trash"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Os" = (
+/obj/machinery/microwave/burnbarrel{
+	pixel_y = 22
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge)
+"OI" = (
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge)
+"OU" = (
+/obj/structure/table/rack/shelf,
+/obj/item/gun/projectile/shotgun/pump/queen,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"OY" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Pa" = (
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 1
+	},
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 8;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Ph" = (
+/obj/structure/bed/padded,
+/obj/landmark/join/late/dormitory,
+/obj/random/furniture/bedsheet,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Pl" = (
+/obj/effect/step_trigger/riverforest_to_huntinglodge_1_B,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Pu" = (
+/mob/living/simple_animal/schlorgo,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Px" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Py" = (
+/obj/structure/flora/big/rocks3,
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"PD" = (
+/obj/structure/table/rack/shelf,
+/obj/item/gun/projectile/shotgun/pump/hunter_crossbow_implanted,
+/obj/item/gun/projectile/shotgun/pump/hunter_crossbow_implanted,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"PK" = (
+/obj/structure/table/rack/shelf,
+/obj/item/oddity/common/book_log,
+/obj/item/oddity/common/old_radio,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/surgery,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Qb" = (
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Qp" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Qv" = (
+/obj/structure/table/woodentable,
+/obj/random/credits/c1000,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"QF" = (
+/obj/structure/table/woodentable,
+/obj/item/paper_bin,
+/obj/item/pen/multi,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"QH" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 8;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/structure/sink{
+	density = 1;
+	desc = "A small fountain of polished stone and has a small pump at the bottom that helps push fresh water.";
+	icon_state = "BaptismFont_Water";
+	name = "Water Fountain"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/forest/hunting_lodge)
+"QO" = (
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"QV" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 9
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1;
+	icon_state = "danger"
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Rl" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Rn" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Rz" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/structure/curtain/open/privacy,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"RE" = (
+/turf/simulated/wall/wood,
+/area/nadezhda/outside/forest/hunting_lodge)
+"RJ" = (
+/obj/structure/flora/small/rock2,
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"RK" = (
+/obj/structure/sign/warning/hazard_danger,
+/turf/simulated/wall/wood_old,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"RM" = (
+/obj/structure/bed/chair/office/dark,
+/obj/landmark/join/start/hunt_master,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"RR" = (
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Sb" = (
+/mob/living/carbon/superior_animal/lodge/cerberus,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
+"St" = (
+/obj/structure/curtain/open/bed{
+	name = "red curtain"
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Sy" = (
+/obj/machinery/atm{
+	pixel_y = 32
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge)
+"SM" = (
+/obj/structure/invislight,
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/forest/hunting_lodge)
+"ST" = (
+/obj/structure/bookcase,
+/obj/item/book/ritual/cruciform,
+/obj/item/book/ritual/cruciform,
+/obj/item/book/ritual/cruciform,
+/obj/item/book/ritual/cruciform/priest,
+/obj/item/book/ritual/cruciform/priest,
+/obj/item/book/ritual/cruciform/priest,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"SW" = (
+/obj/machinery/computer/arcade/orion_trail,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Tl" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 4;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Tv" = (
+/obj/item/material/harpoon,
+/obj/item/toy/plushie/carp,
+/turf/simulated/floor/beach/sand,
+/area/nadezhda/outside/forest/hunting_lodge)
+"TE" = (
+/obj/structure/table/woodentable,
+/obj/item/reagent_containers/dropper,
+/obj/item/reagent_containers/food/condiment/cookingoil,
+/turf/simulated/floor/asteroid/grass/colonial1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"TS" = (
+/obj/structure/table/rack/shelf,
+/obj/item/gun/projectile/shotgun/pump/hunter_crossbow,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"TX" = (
+/obj/structure/table/steel,
+/obj/item/tool/shovel/improvised,
+/obj/machinery/light/small,
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Uy" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"UE" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"UI" = (
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 1;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/obj/structure/railing{
+	desc = "A standard wood fence painted in copper color. Prevents live stock from stepping onto crops.";
+	dir = 8;
+	matter = list("wood"=4);
+	name = "wooden fence"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"UL" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"UP" = (
+/obj/machinery/newscaster{
+	dir = 4;
+	pixel_x = 24
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"UR" = (
+/obj/random/scrap/dense_weighted,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"UY" = (
+/turf/simulated/floor/asteroid/grass/colonialjungle1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Ve" = (
+/obj/machinery/cryopod/elevator{
+	name = "Elevator to Lodge's bunker";
+	on_store_name = "Bunker Oversight";
+	desc = "An elevator that takes you to the lower parts of the lodge bunker districts. You do have an shack down there, don't you?";
+	cryo_announcement = 0
+	},
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"VA" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/forest/hunting_lodge)
+"VN" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"VZ" = (
+/obj/structure/bed/chair/wood{
+	dir = 1;
+	icon_state = "wooden_chair";
+	tag = "icon-wooden_chair (NORTH)"
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Wu" = (
+/obj/structure/table/marble,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Xo" = (
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"XA" = (
+/obj/random/structures,
+/obj/random/structures,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"XI" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"XK" = (
+/obj/structure/flora/big/rocks3,
+/turf/simulated/floor/asteroid/grass/colonialjungle2,
+/area/nadezhda/outside/forest/hunting_lodge)
+"XL" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"XO" = (
+/obj/structure/table/standard,
+/obj/item/storage/box/donut,
+/obj/effect/floor_decal/steeldecal/steel_decals10,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/alarm{
+	pixel_y = 24
+	},
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"XS" = (
+/obj/structure/catwalk,
+/obj/machinery/computer/shuttle_control/multi/surface_transport,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge)
+"XZ" = (
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"Ye" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Yq" = (
+/obj/machinery/door/airlock/highsecurity{
+	name = "Master Armory";
+	req_access = list(80)
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"YS" = (
+/obj/structure/flora/rock,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/forest/hunting_lodge)
+"YX" = (
+/obj/structure/table/woodentable,
+/obj/item/reagent_containers/food/drinks/teapot,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Zi" = (
+/obj/structure/catwalk,
+/obj/structure/catwalk,
+/obj/structure/catwalk,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Zr" = (
+/obj/structure/table/marble,
+/obj/machinery/microwave,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Zy" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Zz" = (
+/obj/structure/table/standard,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ZD" = (
+/obj/structure/burrow{
+	deepmaint_entry_point = 1;
+	desc = "Cracks on the floor, yet you can see shifting lights and hear the tick of crawling clawed beasts below...";
+	isRevealed = 1;
+	isSealed = 1;
+	name = "strange cracks"
+	},
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"ZR" = (
+/mob/living/simple_animal/crab,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/outside/forest/hunting_lodge)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+eu
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+aa
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+zF
+zF
+zF
+zF
+zF
+zF
+zF
+zF
+tz
+tz
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+"}
+(3,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+jY
+dT
+pw
+dT
+pw
+dT
+jY
+jY
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+zF
+rB
+rB
+Hh
+bY
+bY
+SW
+zF
+tz
+tz
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+jM
+hf
+aa
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+"}
+(4,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+dT
+dv
+pw
+dv
+pw
+dv
+dT
+jY
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+zF
+Cb
+Cb
+Cb
+Cb
+Cb
+De
+zF
+tz
+tz
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+hf
+hf
+aa
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+iS
+iS
+iS
+iS
+iS
+iS
+tz
+tz
+aB
+aN
+aB
+aB
+aa
+aa
+aa
+aa
+tz
+"}
+(5,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+pw
+dv
+pw
+dv
+pw
+dv
+pw
+jY
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+zF
+CE
+ip
+bY
+dk
+Pu
+IN
+zF
+tz
+tz
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ag
+hf
+hf
+aa
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+iS
+iS
+iS
+iS
+kv
+iS
+bC
+fS
+ik
+iS
+iS
+et
+fe
+ab
+aB
+aa
+aa
+aa
+aa
+tz
+"}
+(6,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+pw
+dv
+pw
+dv
+pw
+dv
+pw
+jY
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+zF
+Cb
+Cb
+Cb
+Cb
+Cb
+Cb
+zF
+tz
+tz
+tz
+tz
+tz
+aa
+aa
+aa
+aa
+ag
+hf
+hf
+aa
+aa
+aa
+tz
+tz
+tz
+iS
+iS
+iS
+iS
+iS
+tz
+iS
+iS
+js
+eD
+ai
+ai
+iS
+gg
+gg
+gg
+gg
+CO
+fy
+lj
+ab
+aB
+aB
+aa
+aa
+aa
+tz
+"}
+(7,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+pw
+dv
+pw
+dv
+pw
+dv
+pw
+jY
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+zF
+rB
+fs
+ST
+ST
+Cb
+Cb
+zF
+tz
+tz
+tz
+tz
+tz
+aa
+aa
+aa
+aa
+ag
+hf
+Tv
+aa
+aa
+aa
+iS
+iS
+iS
+iS
+QO
+db
+aS
+iS
+iS
+iS
+dx
+ai
+ai
+ai
+gK
+iS
+fJ
+gg
+gt
+aj
+cw
+ko
+fe
+ab
+ab
+aB
+aa
+aa
+aa
+tz
+"}
+(8,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+pw
+dv
+pw
+dv
+pw
+dv
+pw
+jY
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+zF
+zF
+zF
+zF
+zF
+St
+St
+zF
+zF
+tz
+tz
+tz
+tz
+aa
+aa
+aa
+aa
+ag
+hf
+ag
+aa
+aa
+et
+iS
+cU
+Rl
+xx
+QO
+hg
+aS
+iS
+fc
+iS
+ai
+iy
+dm
+hT
+ai
+iS
+dB
+gg
+ei
+et
+et
+et
+fe
+ab
+ab
+aB
+aa
+aa
+aa
+tz
+"}
+(9,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+pw
+dv
+pw
+dv
+pw
+dv
+pw
+jY
+aa
+aa
+aa
+aa
+ew
+aB
+ew
+aB
+ew
+aB
+ew
+aB
+tz
+zF
+bI
+cu
+cu
+cu
+zF
+zF
+tz
+tz
+tz
+aa
+aa
+aa
+ag
+hf
+jM
+ag
+at
+dJ
+eo
+QO
+QO
+QO
+QO
+QO
+aq
+Cv
+iS
+ai
+iS
+nG
+fw
+fw
+eY
+ai
+iS
+dB
+gg
+xv
+et
+ab
+gp
+fe
+ab
+ab
+aB
+aB
+aB
+aa
+tz
+"}
+(10,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+pw
+dv
+pw
+dv
+pw
+dv
+pw
+jY
+aa
+aa
+aa
+aB
+lf
+qA
+UY
+qA
+UY
+qA
+UY
+qA
+eL
+zF
+Zz
+cu
+cu
+yx
+Ve
+zF
+tz
+tz
+tz
+aa
+aa
+ag
+hf
+hf
+hf
+ag
+at
+at
+et
+hj
+xx
+QO
+xx
+QO
+dw
+eP
+iS
+ai
+ai
+ai
+hM
+iS
+fU
+ai
+sV
+gg
+gg
+gg
+et
+ab
+ab
+jr
+ab
+ab
+ab
+ab
+aB
+aa
+tz
+"}
+(11,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+pw
+dv
+pw
+dv
+pw
+dv
+pw
+jY
+aa
+aa
+ew
+UY
+lf
+lf
+UY
+lf
+UY
+lf
+UY
+lf
+zF
+zF
+KG
+cu
+cu
+Fr
+zF
+zF
+tz
+tz
+tz
+aa
+eX
+ag
+hf
+hf
+ag
+at
+at
+at
+et
+hj
+xx
+QO
+xx
+QO
+QO
+hz
+iS
+ai
+gK
+ai
+iE
+iS
+fx
+ai
+iS
+cS
+dA
+bg
+et
+ab
+ab
+fe
+ab
+ab
+ab
+aB
+aB
+aa
+tz
+"}
+(12,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+pw
+dv
+pw
+dv
+pw
+dv
+pw
+jY
+aa
+aa
+aB
+UY
+UY
+UY
+UY
+UY
+UY
+UY
+UY
+UY
+zF
+zF
+mO
+cu
+cu
+yx
+Ve
+zF
+tz
+tz
+tz
+aa
+eX
+ag
+hf
+ZR
+ag
+gs
+zy
+at
+et
+et
+et
+et
+et
+iS
+iS
+iS
+iS
+ig
+fg
+bB
+bt
+iS
+ai
+ai
+zF
+et
+et
+et
+et
+ab
+Eo
+fe
+ab
+aB
+aB
+aB
+aa
+aa
+tz
+"}
+(13,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+pw
+dv
+pw
+dv
+pw
+dv
+pw
+jY
+aa
+aa
+ew
+Ae
+UY
+UY
+UY
+ux
+gw
+gw
+gw
+UY
+eL
+zF
+XO
+cu
+cu
+cu
+zF
+zF
+tz
+tz
+tz
+eX
+eX
+ag
+hf
+hf
+ag
+aZ
+at
+at
+gr
+kF
+at
+hd
+et
+bc
+hq
+hy
+iS
+et
+et
+et
+et
+et
+fF
+fF
+aB
+ax
+FW
+ax
+aB
+cB
+ax
+ax
+hu
+aB
+aa
+aa
+aa
+aa
+tz
+"}
+(14,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+oc
+gc
+IO
+gc
+IO
+dP
+CA
+jY
+aa
+aa
+aB
+Nk
+Ae
+UY
+UY
+gw
+ag
+dc
+jn
+UY
+zF
+zF
+zF
+St
+St
+zF
+zF
+zF
+zF
+zF
+tz
+eX
+eX
+SM
+jM
+hf
+ag
+fN
+at
+at
+eR
+HP
+at
+fT
+et
+iv
+sp
+sp
+iU
+et
+IB
+hm
+IB
+he
+gw
+gw
+aB
+ax
+bs
+ax
+fX
+eW
+ax
+ax
+jU
+aB
+aa
+aa
+aa
+aa
+tz
+"}
+(15,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+gj
+fA
+tS
+Qp
+tS
+UE
+pw
+jY
+aa
+aa
+ew
+Ae
+UY
+UY
+UY
+gw
+ag
+ag
+gw
+UY
+eL
+zF
+av
+QO
+gg
+kC
+fr
+gg
+NZ
+zF
+MV
+eX
+eX
+ag
+hf
+ag
+gw
+at
+at
+at
+at
+at
+at
+dJ
+ed
+LM
+sp
+sp
+hA
+et
+IB
+eX
+eX
+gw
+gw
+gw
+fX
+ax
+ax
+ax
+aB
+eW
+ax
+ax
+jU
+aB
+aB
+aB
+aa
+aa
+tz
+"}
+(16,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+jY
+gj
+IO
+CA
+gj
+dv
+pw
+jY
+aa
+aa
+aB
+UY
+UY
+UY
+UY
+gw
+gw
+gw
+gw
+UY
+zF
+zF
+Ph
+QO
+gg
+Ph
+QO
+gg
+gg
+St
+jw
+uv
+gw
+ag
+hf
+ag
+gw
+at
+at
+at
+at
+at
+at
+dJ
+ed
+sp
+sp
+sp
+fl
+et
+IB
+eX
+JC
+gw
+gw
+gw
+fX
+ax
+bs
+ax
+aB
+au
+ax
+ax
+wg
+dV
+bR
+aB
+aa
+aa
+tz
+"}
+(17,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+jY
+jY
+jY
+pw
+VN
+dv
+pw
+jY
+aa
+aa
+ew
+UY
+UY
+UY
+UY
+UY
+UY
+UY
+UY
+UY
+eL
+zF
+ee
+QO
+gg
+gg
+QO
+gg
+wY
+St
+jw
+gw
+gw
+aD
+aD
+aD
+gw
+bu
+at
+ca
+at
+Da
+at
+bn
+et
+cZ
+sp
+sp
+dN
+et
+fd
+jR
+aG
+gw
+fI
+IB
+aB
+ax
+ax
+ax
+fX
+au
+ax
+ax
+wg
+dV
+cP
+aB
+aa
+aa
+tz
+"}
+(18,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+et
+cK
+et
+pw
+VN
+dv
+pw
+jY
+aa
+aa
+aB
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+zF
+zF
+kC
+QO
+gg
+kC
+QO
+gg
+gg
+St
+jw
+uv
+gw
+du
+du
+jy
+gw
+bk
+at
+cJ
+at
+cg
+at
+by
+et
+cR
+sp
+sp
+dZ
+ed
+uv
+gw
+gw
+gw
+nj
+IB
+aB
+aB
+Kf
+aB
+aB
+au
+ax
+ax
+wg
+dV
+bR
+aB
+aa
+aa
+tz
+"}
+(19,1,1) = {"
+aa
+aa
+aa
+jY
+et
+VN
+fv
+co
+pw
+VN
+dv
+pw
+jY
+tz
+tz
+aa
+ew
+aB
+ew
+aB
+ew
+aB
+ew
+gg
+gg
+tz
+zF
+Ph
+QO
+gg
+Ph
+QO
+UP
+Fe
+zF
+gw
+gw
+eX
+hf
+hf
+ag
+gw
+ar
+at
+fk
+at
+ix
+at
+ah
+et
+et
+ed
+ed
+et
+et
+eX
+bK
+dD
+gw
+dD
+aB
+aB
+aB
+wg
+kz
+kz
+wg
+ax
+ax
+wg
+dV
+YS
+aB
+aa
+aa
+tz
+"}
+(20,1,1) = {"
+aa
+aa
+aa
+jY
+EG
+co
+EG
+ct
+pw
+pw
+dv
+bl
+ro
+gg
+CO
+gg
+gg
+CO
+gg
+CO
+gg
+CO
+gg
+gg
+FU
+gg
+zF
+zF
+St
+St
+zF
+zF
+zF
+zF
+zF
+gw
+gw
+eX
+hf
+jM
+ag
+gw
+iR
+bJ
+jX
+bJ
+fR
+bJ
+et
+et
+bb
+gR
+uv
+bO
+de
+dD
+de
+dD
+gw
+gw
+gw
+wg
+wg
+wg
+wg
+wg
+wg
+ax
+ax
+wg
+aB
+aB
+aB
+aB
+aB
+tz
+"}
+(21,1,1) = {"
+aa
+aa
+aa
+jY
+EG
+ct
+EG
+ct
+pw
+pw
+dv
+bl
+ro
+gg
+gg
+gg
+gg
+gg
+gg
+gg
+gg
+gg
+gg
+gg
+gg
+gg
+CO
+gg
+gg
+gg
+eL
+tz
+aa
+ak
+gw
+gw
+gw
+eX
+hf
+hf
+ag
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+wg
+gw
+gw
+wg
+mc
+mc
+wg
+ax
+ax
+wg
+aB
+dV
+dV
+az
+aB
+tz
+"}
+(22,1,1) = {"
+aa
+aa
+aa
+jY
+et
+dv
+et
+dv
+pw
+pw
+dv
+pw
+jY
+tz
+tz
+eL
+zF
+eL
+zF
+eL
+zF
+eL
+zF
+eL
+zF
+gg
+gg
+gg
+FL
+cc
+zF
+tz
+aa
+nj
+gw
+gw
+eX
+ag
+hf
+hf
+ag
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+aB
+aB
+aB
+iW
+aB
+aB
+aC
+ax
+ax
+wg
+aB
+dV
+Sb
+dV
+aB
+tz
+"}
+(23,1,1) = {"
+aa
+aa
+aa
+jY
+EG
+ct
+EG
+ct
+pw
+pw
+dv
+pw
+jY
+aa
+aa
+jY
+tz
+zF
+zF
+zF
+zF
+zF
+zF
+zF
+eL
+ds
+Qv
+VZ
+eL
+zF
+eL
+tz
+aa
+dD
+gw
+gw
+eX
+ag
+hf
+hf
+ag
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+uX
+ha
+bT
+eE
+it
+eE
+er
+gw
+gw
+uh
+fX
+mv
+vV
+tu
+fX
+je
+ax
+ax
+wg
+aB
+dV
+dV
+dV
+aB
+tz
+"}
+(24,1,1) = {"
+aa
+aa
+aa
+jY
+et
+dv
+nt
+dv
+pw
+pw
+dv
+pw
+jY
+jY
+aa
+jY
+tz
+zF
+Ez
+sp
+sp
+Yq
+ES
+PK
+zF
+eL
+zF
+eL
+zF
+tz
+tz
+aa
+aa
+bO
+gw
+gw
+gw
+aD
+aD
+aD
+aD
+gw
+gw
+et
+et
+et
+et
+et
+et
+et
+fy
+et
+et
+et
+cV
+at
+at
+eE
+gw
+gw
+uh
+aB
+vV
+vV
+vV
+aB
+je
+ax
+ax
+wg
+rA
+dV
+dV
+dV
+aB
+tz
+"}
+(25,1,1) = {"
+aa
+aa
+aa
+jY
+iB
+ov
+LK
+gc
+pw
+pw
+dv
+pw
+dT
+jY
+aa
+jY
+tz
+HM
+Xo
+JB
+yr
+zF
+sp
+OU
+zF
+tz
+tz
+tz
+tz
+tz
+aa
+aa
+aa
+IB
+gw
+gw
+gw
+CB
+CB
+CB
+CB
+gw
+gw
+et
+tn
+Hw
+tn
+et
+Ls
+jH
+jH
+gL
+Cf
+Zr
+aX
+iX
+at
+it
+gw
+gw
+uh
+fX
+vV
+fE
+vV
+fX
+je
+ax
+ax
+wg
+rA
+dV
+dV
+dV
+aB
+tz
+"}
+(26,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+XL
+LK
+ct
+pw
+pw
+yL
+dQ
+wk
+Ju
+jY
+jY
+tz
+zF
+tb
+sp
+wS
+zF
+TS
+PD
+zF
+tz
+tz
+tz
+aa
+aa
+aa
+aa
+aa
+IB
+gw
+gw
+eX
+jy
+du
+du
+jy
+eX
+eX
+et
+Qb
+Qb
+jI
+et
+dz
+jH
+jH
+jH
+dn
+HR
+at
+iX
+Kt
+eE
+gw
+gw
+cG
+aB
+fE
+vV
+vV
+aB
+je
+ax
+ax
+wg
+gI
+dV
+dV
+dV
+aB
+tz
+"}
+(27,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+jY
+XL
+ct
+pw
+pw
+yL
+dQ
+jv
+wk
+Ju
+jY
+tz
+zF
+zF
+NR
+zF
+zF
+zF
+zF
+zF
+tz
+tz
+tz
+aa
+aa
+aa
+aa
+aa
+IB
+gw
+gw
+eX
+ag
+hf
+hf
+ag
+eX
+eX
+et
+Qb
+Hw
+xo
+et
+bH
+Wu
+aY
+HK
+xH
+et
+at
+at
+at
+eE
+gw
+gw
+ek
+aB
+gw
+vV
+fB
+aB
+iI
+ax
+ax
+wg
+rA
+dV
+dV
+dV
+aB
+tz
+"}
+(28,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+jY
+XL
+ct
+pw
+pw
+dv
+pw
+VN
+dT
+jY
+jY
+tz
+zF
+bv
+sp
+OY
+sp
+sp
+dl
+zF
+tz
+tz
+tz
+aa
+aa
+aa
+aa
+aa
+bO
+gw
+gw
+ag
+hf
+hf
+ag
+eX
+eX
+eX
+et
+eo
+et
+et
+et
+et
+et
+et
+et
+et
+et
+eE
+it
+eE
+TE
+gw
+gw
+bo
+aB
+fX
+fX
+fX
+aB
+ss
+ax
+ax
+wg
+rA
+dV
+dV
+dV
+aB
+tz
+"}
+(29,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+ja
+co
+dv
+pw
+pw
+yL
+dQ
+jv
+Ye
+Ju
+jY
+tz
+zF
+Jx
+sp
+Mj
+sp
+sz
+zF
+zF
+zF
+zF
+zF
+aB
+et
+et
+IB
+IB
+et
+gw
+gw
+ag
+hf
+jM
+ag
+eX
+eX
+eX
+eX
+uv
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+eX
+fX
+fX
+fX
+fX
+fX
+ss
+ax
+xK
+wg
+aB
+dV
+dV
+dV
+aB
+tz
+"}
+(30,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+ea
+hX
+ct
+pw
+pw
+dv
+pw
+VN
+pw
+jY
+jY
+tz
+zF
+GH
+RM
+kt
+XZ
+sp
+dC
+Hq
+ES
+sp
+sp
+mo
+uv
+gw
+gw
+gw
+gw
+gw
+gw
+aD
+aD
+aD
+aD
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+eX
+aB
+gw
+gw
+hH
+aB
+ss
+ax
+ax
+wg
+aB
+dV
+dV
+dV
+aB
+tz
+"}
+(31,1,1) = {"
+aa
+aa
+aa
+jY
+jY
+jY
+XL
+ct
+pw
+pw
+dv
+pw
+VN
+pw
+eX
+jY
+tz
+zF
+Ms
+HJ
+QF
+IC
+sp
+dC
+sp
+Uy
+sp
+sp
+mo
+uv
+gw
+gw
+gw
+gw
+gw
+gw
+CB
+CB
+CB
+CB
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+eX
+fX
+gw
+gw
+gw
+fX
+ss
+ax
+ax
+wg
+aB
+dV
+Sb
+dV
+aB
+tz
+"}
+(32,1,1) = {"
+aa
+aa
+aa
+jY
+dT
+jY
+dT
+ct
+vA
+vA
+vA
+pw
+VN
+pw
+eX
+jY
+tz
+zF
+zF
+zF
+zF
+zF
+zF
+zF
+zF
+zF
+zF
+zF
+aB
+et
+et
+IB
+IB
+et
+gw
+gw
+jy
+du
+du
+jy
+eX
+eX
+et
+et
+et
+et
+cD
+gw
+et
+et
+et
+et
+et
+gw
+gw
+gw
+gw
+gw
+gw
+gw
+eX
+aB
+gw
+gw
+gw
+aB
+ss
+ax
+ax
+wg
+aB
+dV
+dV
+dV
+aB
+tz
+"}
+(33,1,1) = {"
+aa
+aa
+aa
+jY
+Gc
+LK
+gE
+dv
+pw
+Px
+Px
+DL
+VN
+pw
+eX
+jY
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+yo
+eX
+XK
+gw
+gw
+gw
+ag
+hf
+jM
+ag
+et
+et
+et
+kG
+Aw
+et
+et
+gw
+et
+hb
+hb
+LQ
+et
+et
+eX
+eX
+eX
+gw
+gw
+gw
+eX
+fX
+gw
+gw
+gw
+fG
+ax
+ax
+ax
+wg
+aB
+aB
+aB
+aB
+aB
+tz
+"}
+(34,1,1) = {"
+aa
+aa
+aa
+jY
+nM
+XL
+zS
+gh
+DP
+LK
+Zy
+cz
+gG
+gj
+eX
+jY
+jY
+eX
+eX
+aB
+aB
+aB
+aB
+aB
+yo
+gC
+yo
+eX
+XK
+yo
+gC
+eX
+yo
+gw
+gw
+eX
+ag
+hf
+hf
+ag
+et
+bS
+hr
+Aw
+Aw
+Aw
+el
+uv
+ed
+es
+es
+es
+es
+et
+eX
+eX
+eX
+gw
+gw
+gw
+eX
+aB
+aB
+EU
+EU
+fG
+ax
+ax
+ax
+wg
+ab
+aB
+aB
+aa
+aa
+tz
+"}
+(35,1,1) = {"
+aa
+aa
+aa
+aa
+zF
+jY
+XL
+an
+hX
+LE
+mz
+gj
+aB
+eX
+eX
+eX
+eX
+eX
+eX
+aB
+XS
+zo
+zo
+aB
+RJ
+XK
+gC
+Gk
+eX
+eX
+Py
+gC
+eZ
+gw
+gw
+ag
+hf
+hf
+ag
+eX
+et
+eg
+hr
+gu
+Aw
+dd
+et
+gw
+et
+es
+es
+hb
+gv
+et
+eX
+Gk
+eX
+gw
+gw
+gw
+gw
+fX
+aB
+aB
+gw
+aB
+QH
+gZ
+gZ
+wg
+wg
+ab
+aB
+aa
+aa
+tz
+"}
+(36,1,1) = {"
+tz
+tz
+tz
+tz
+tz
+aa
+aa
+aa
+eX
+eX
+mK
+Zi
+Zi
+Zi
+Zi
+Zi
+Zi
+Zi
+Zi
+Zi
+Zi
+Zi
+zo
+aB
+eX
+eX
+yo
+gC
+yo
+eX
+eX
+yo
+gC
+gw
+gw
+ag
+hf
+hf
+ag
+eX
+et
+Os
+hr
+gu
+Aw
+cf
+et
+gw
+et
+hb
+dt
+hb
+hb
+et
+eX
+eX
+eX
+aa
+aB
+gw
+gw
+fX
+aa
+aB
+aB
+aB
+wq
+wg
+wg
+wg
+ab
+aB
+aB
+aa
+aa
+tz
+"}
+(37,1,1) = {"
+tz
+tz
+tz
+tz
+tz
+aa
+aa
+aa
+aa
+eX
+eX
+eX
+eX
+eX
+eX
+eX
+eX
+eX
+eX
+aB
+NO
+pZ
+wJ
+wJ
+wJ
+wJ
+wJ
+wJ
+wJ
+wJ
+wJ
+wJ
+Bq
+gw
+gw
+ag
+jM
+hf
+ag
+eX
+et
+OI
+aT
+Aw
+Aw
+kw
+et
+gw
+et
+et
+et
+et
+et
+et
+eX
+aa
+aa
+aa
+aa
+gw
+gw
+aB
+aa
+aa
+aa
+aB
+hL
+wg
+ab
+wg
+ab
+aB
+aa
+aa
+aa
+tz
+"}
+(38,1,1) = {"
+tz
+tz
+tz
+tz
+tz
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aB
+XI
+VN
+VN
+QV
+VA
+Ky
+VA
+VA
+Ky
+op
+VN
+VN
+zY
+eX
+IB
+ag
+hf
+hf
+ag
+eX
+et
+et
+et
+et
+et
+et
+et
+gw
+gw
+gw
+eX
+eX
+eX
+eX
+aa
+aa
+aa
+aa
+aB
+ax
+gw
+fX
+aa
+aa
+aa
+aB
+Gz
+wg
+ab
+wg
+ab
+aB
+aB
+aa
+aa
+tz
+"}
+(39,1,1) = {"
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+iS
+iS
+iS
+iS
+iS
+iS
+tz
+aa
+aB
+Jl
+VN
+VN
+py
+ke
+ke
+ke
+ke
+ke
+lr
+VN
+VN
+Kp
+eX
+IB
+ag
+hf
+hf
+ag
+eX
+eX
+eX
+eX
+eX
+eX
+eX
+eX
+gw
+gw
+gw
+eX
+eX
+eX
+aa
+aa
+aB
+aB
+aa
+aa
+ax
+ax
+fX
+aa
+aa
+aa
+aa
+aB
+aB
+aB
+wg
+wg
+ab
+aB
+aa
+aa
+tz
+"}
+(40,1,1) = {"
+tz
+tz
+tz
+tz
+rW
+rW
+tz
+tz
+tz
+tz
+tz
+iS
+gM
+gV
+ac
+cr
+iS
+iS
+aa
+aB
+DT
+VN
+VN
+py
+ke
+ke
+ke
+ke
+ke
+lr
+VN
+VN
+Kp
+eX
+ag
+hf
+hf
+ag
+uv
+gw
+ks
+ks
+gw
+uv
+gw
+ks
+ks
+gw
+gw
+ks
+Tl
+eX
+aa
+aB
+aB
+es
+es
+es
+ed
+ax
+ax
+aB
+aB
+aB
+aB
+aB
+aB
+aa
+aB
+aB
+aB
+aB
+aB
+aa
+aa
+tz
+"}
+(41,1,1) = {"
+tz
+tz
+tz
+AD
+AD
+AD
+rW
+AD
+XA
+rW
+Rn
+iS
+QO
+QO
+QO
+QO
+TX
+iS
+aa
+aB
+DT
+VN
+VN
+py
+ke
+ke
+ke
+ke
+ke
+GD
+VN
+VN
+Kp
+jY
+et
+aa
+jM
+et
+IE
+et
+jM
+hf
+et
+IE
+et
+et
+UL
+rg
+rg
+LO
+aB
+eX
+aa
+aB
+FZ
+es
+es
+aB
+aB
+ax
+GC
+Aq
+es
+es
+es
+Hz
+aB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+"}
+(42,1,1) = {"
+tz
+tz
+tz
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+Rn
+iS
+ec
+ec
+QO
+ec
+iS
+iS
+iS
+aB
+DT
+VN
+VN
+py
+ke
+ke
+ke
+ke
+ke
+lr
+VN
+VN
+Kp
+jY
+aa
+aa
+aa
+iS
+wX
+iS
+iS
+iS
+jj
+gk
+Rz
+et
+rg
+rw
+rw
+rg
+aa
+aa
+aa
+aB
+FZ
+es
+wC
+bN
+Aq
+ax
+ax
+IZ
+es
+es
+es
+es
+aB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+"}
+(43,1,1) = {"
+tz
+tz
+rW
+RR
+rW
+AD
+Di
+Di
+RR
+RR
+tz
+iS
+BB
+BB
+hN
+pc
+hv
+hv
+hv
+aB
+Jl
+VN
+VN
+py
+ke
+ke
+nJ
+ke
+ke
+lr
+VN
+VN
+Kp
+jY
+aa
+aa
+tz
+iS
+iS
+iS
+iS
+zr
+jj
+rQ
+iS
+iS
+rg
+dS
+kf
+rg
+aB
+aa
+aa
+aB
+aB
+es
+wC
+nu
+Aq
+ax
+ax
+aB
+Sy
+uy
+uy
+Db
+aB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+"}
+(44,1,1) = {"
+tz
+tz
+XA
+RR
+rW
+AD
+rW
+rW
+rW
+RR
+Rn
+iS
+dO
+eB
+il
+eN
+hv
+hv
+hv
+aB
+Jl
+VN
+VN
+py
+ke
+ke
+ke
+ke
+ke
+lr
+VN
+VN
+Kp
+jY
+aa
+aa
+bq
+bX
+bX
+bX
+iS
+zr
+jj
+gk
+Rz
+iS
+rg
+dS
+YX
+rg
+aa
+aa
+aa
+aB
+oZ
+es
+es
+RE
+aB
+ax
+rx
+aB
+aB
+aB
+aB
+aB
+aB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+"}
+(45,1,1) = {"
+tz
+ev
+ev
+RR
+rW
+XA
+AD
+rW
+RR
+RR
+Rn
+iS
+Jh
+UI
+On
+jx
+hv
+hv
+hv
+aB
+Jl
+VN
+VN
+py
+ke
+ke
+ke
+ke
+ke
+lr
+VN
+VN
+Kp
+jY
+aa
+bX
+bX
+bX
+bX
+iS
+iS
+zr
+jj
+rQ
+iS
+iS
+ur
+rw
+rw
+xy
+aB
+aa
+aa
+aB
+hb
+es
+es
+es
+aB
+ax
+ax
+aB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+"}
+(46,1,1) = {"
+tz
+ev
+ev
+RR
+RR
+XA
+ev
+ev
+rW
+ZD
+tz
+iS
+jl
+jq
+hK
+pc
+af
+sY
+pc
+dE
+yU
+VN
+VN
+py
+ke
+ke
+ke
+ke
+ke
+GD
+VN
+VN
+Kp
+jY
+aa
+bX
+bX
+jF
+bX
+Pa
+NW
+jj
+jj
+gk
+Rz
+iS
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aB
+hb
+hb
+uy
+AC
+aB
+ay
+ay
+aB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+"}
+(47,1,1) = {"
+tz
+ev
+ev
+rW
+RR
+RR
+RR
+us
+RR
+RR
+tz
+iS
+hN
+hi
+hv
+jC
+hv
+hv
+hv
+Mp
+Jl
+VN
+VN
+py
+ke
+ke
+ke
+ke
+ke
+lr
+VN
+VN
+Kp
+jY
+aa
+aa
+iS
+iS
+fw
+fw
+iS
+iS
+iS
+iS
+iS
+iS
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aB
+aB
+aB
+aB
+aB
+aB
+Pl
+CG
+aB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+"}
+(48,1,1) = {"
+tz
+AD
+RR
+RR
+RR
+XA
+RR
+RR
+rW
+RR
+tz
+RK
+hN
+hv
+hv
+pc
+hv
+hv
+hv
+aB
+Jl
+VN
+VN
+py
+ke
+ke
+ke
+ke
+ke
+lr
+VN
+VN
+Kp
+jY
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aB
+aM
+aM
+aB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+"}
+(49,1,1) = {"
+tz
+rW
+Rn
+Rn
+Rn
+AD
+ev
+AD
+rW
+RR
+nS
+FF
+hN
+hN
+hN
+pc
+UR
+UR
+UR
+aB
+Jl
+VN
+VN
+Mk
+tV
+bp
+tV
+tV
+bp
+dU
+VN
+VN
+Kp
+jY
+aa
+aa
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+"}
+(50,1,1) = {"
+tz
+tz
+rW
+AD
+ev
+ev
+AD
+tz
+Rn
+Rn
+tz
+cr
+QO
+ao
+iS
+iS
+iS
+iS
+iS
+aB
+aB
+xM
+xM
+xM
+xM
+xM
+xM
+xM
+xM
+xM
+xM
+xM
+jY
+jY
+jY
+jY
+jY
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+"}
+(51,1,1) = {"
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+iS
+sW
+QO
+aP
+iS
+tz
+tz
+tz
+tz
+aa
+aa
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+jY
+aa
+aa
+aa
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+"}
+(52,1,1) = {"
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+iS
+aP
+iS
+iS
+tz
+tz
+tz
+tz
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+"}
+(53,1,1) = {"
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+iS
+iS
+iS
+tz
+tz
+tz
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+"}
+(54,1,1) = {"
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+tz
+"}

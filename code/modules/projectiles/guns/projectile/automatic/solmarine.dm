@@ -1,4 +1,4 @@
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine
+/obj/item/gun/projectile/automatic/omnirifle/solmarine
 	name = "\"Solarian\" carbine"
 	desc = "An ancient looking rifle found commonly in the Sol Federation's old military stockpiles. Reliable but heavily dated. \
 		 It appears to have been converted at some point to chamber in 6.5mm, possibly having taken different rounds at some point. \
@@ -10,6 +10,7 @@
 	w_class = ITEM_SIZE_BULKY
 	mag_well = MAG_WELL_STANMAG
 	caliber = CAL_LRIFLE
+	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
 	price_tag = 1100
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.2
@@ -20,18 +21,18 @@
 		list(mode_name="fire shotgun", mode_desc="Shoot the underbarrel shotgun",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
 	saw_off = TRUE
-	sawn = /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
+	sawn = /obj/item/gun/projectile/automatic/omnirifle/solmarine/sawn
 	serial_type = "Sol Fed"
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	var/shotgun_haver = TRUE
 
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/Initialize()
+/obj/item/gun/projectile/automatic/omnirifle/solmarine/Initialize()
 	. = ..()
 	if(shotgun_haver)
 		shotgun = new(src)
 
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
+/obj/item/gun/projectile/automatic/omnirifle/solmarine/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
 	var/datum/firemode/cur_mode = firemodes[sel_mode]
 
 	if(cur_mode.settings["use_launcher"])
@@ -42,7 +43,7 @@
 	else
 		..()
 
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/attackby(obj/item/I, mob/user)
+/obj/item/gun/projectile/automatic/omnirifle/solmarine/attackby(obj/item/I, mob/user)
 	if((istype(I, /obj/item/ammo_casing/shotgun)) && shotgun_haver)
 		shotgun.load_ammo(I, user)
 	else
@@ -51,7 +52,7 @@
 /obj/item/gun/projectile/automatic/underslung/shotgun_3
 	name = "built in shotgun"
 	desc = "Not much more than a tube and a firing mechanism, this shotgun is designed to be fitted to another gun."
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	matter = null
@@ -61,7 +62,7 @@
 	safety = FALSE
 	twohanded = FALSE
 	load_method = SINGLE_CASING
-	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	ammo_type = /obj/item/ammo_casing/shotgun
 	caliber = CAL_SHOTGUN
 	handle_casings = EJECT_CASINGS
 	init_firemodes = list(
@@ -69,7 +70,7 @@
 		)
 	serial_type = "H&S"
 
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/sawn
+/obj/item/gun/projectile/automatic/omnirifle/solmarine/sawn
 	name = "sawn down \"Solarian\" carbine"
 	desc = "An ancient looking rifle found commonly in the Sol Federation's old military stockpiles. Reliable but heavily dated. \
 		 It appears to have been converted at some point to chamber in 6.5mm, possibly having taken different rounds at some point. \
@@ -91,11 +92,11 @@
 
 	shotgun_haver = FALSE
 
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless_sawn
+/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless_sawn
 	name = "sawn down \"Saturnian\" carbine"
-	desc = "An ancient that predates mass autolathen printing rifle found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
-		 Unlike other old stock this one was always intented to be a 6.5mm.\
-		 Someone butchered this thing beyond recognition! At least it fits in a holster."
+	desc = "An ancient design that predates mass autolathe-printed rifles found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
+		 Unlike other old stocks this one was always intented to be a 6.5mm.\
+		 Someone butchered this thing beyond recognition! At least it fits in a holster now."
 	icon = 'icons/obj/guns/projectile/sawnoff/solmarine.dmi'
 	matter = list(MATERIAL_IRON = 10, MATERIAL_PLASTIC = 8)
 	init_recoil = CARBINE_RECOIL(1.2)
@@ -110,9 +111,9 @@
 		)
 
 
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless
+/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
 	name = "\"Saturnian\" carbine"
-	desc = "An ancient that predates mass autolathen printing rifle found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
+	desc = "An ancient design that predates mass autolathe-printed rifles found commonly in the Sol Federation's oldest military stockpiles. Reliable but heavily dated. \
 		 Unlike other old stock this one was always intented to be a 6.5mm."
 	icon = 'icons/obj/guns/projectile/martian.dmi'
 	icon_state = "service"
@@ -120,14 +121,14 @@
 	matter = list(MATERIAL_IRON = 20, MATERIAL_PLASTIC = 16)
 	shotgun_haver = FALSE
 	saw_off = TRUE
-	sawn = /obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless_sawn
+	sawn = /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless_sawn
 	serial_type = "Sol Fed"
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
 
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless/update_icon()
+/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless/update_icon()
 	..()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
@@ -142,6 +143,6 @@
 	icon_state = iconstring
 	set_item_state(itemstring)
 
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless/Initialize()
+/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless/Initialize()
 	. = ..()
 	update_icon()

@@ -101,15 +101,20 @@
 		return ..()
 	if(!on && istype(C, /obj/item/reagent_containers) && C.is_open_container())
 		if (!mainBeaker || separationBeakers.len < beakerSlots)
-			C.forceMove(src)
-			C.add_fingerprint(user)
-			if(!mainBeaker)
-				mainBeaker = C
-			else
-				separationBeakers.Add(C)
-			to_chat(user, SPAN_NOTICE("You add [C] to [src]."))
-			SSnano.update_uis(src)
-			update_icon()
+			if(user.drop_from_inventory(C))
+				user.drop_from_inventory(C)
+				C.forceMove(src)
+				user.visible_message("[user.name] places \the [C] into \the [src].", \
+					"You place \the [C] into the [src].")
+				playsound(loc, 'sound/machines/vending_drop.ogg', 100, 1)
+				C.add_fingerprint(user)
+				if(!mainBeaker)
+					mainBeaker = C
+				else
+					separationBeakers.Add(C)
+				to_chat(user, SPAN_NOTICE("You add [C] to [src]."))
+				SSnano.update_uis(src)
+				update_icon()
 	else
 		return ..()
 
@@ -136,7 +141,7 @@
 	nano_ui_interact(user)
 
 /obj/machinery/centrifuge/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -150,7 +155,7 @@
 		ui.open()
 
 
-/obj/machinery/centrifuge/ui_data()
+/obj/machinery/centrifuge/nano_ui_data()
 	var/data = list()
 	data["on"] = on
 	data["mode"] = mode
@@ -160,14 +165,14 @@
 	data["UPS"] = unitsPerSec
 
 	if(mainBeaker)
-		data["mainBeaker"] = mainBeaker.reagents.ui_data()
+		data["mainBeaker"] = mainBeaker.reagents.nano_ui_data()
 	var/list/beakersData = list()
 	for(var/i = 1, i <= beakerSlots, i++)
 		var/list/beakerInfo = list()
 		if(i <= separationBeakers.len)
 			var/obj/item/reagent_containers/B = separationBeakers[i]
 			if(B && B.reagents)
-				beakerInfo = B.reagents.ui_data()
+				beakerInfo = B.reagents.nano_ui_data()
 		beakerInfo["slot"] = i
 		beakersData.Add(list(beakerInfo))
 	data["beakers"] = beakersData
@@ -280,15 +285,17 @@
 		return ..()
 	if(!on && istype(C, /obj/item/reagent_containers) && C.is_open_container())
 		if (!mainBeaker || separationBeakers.len < beakerSlots)
-			C.forceMove(src)
-			C.add_fingerprint(user)
-			if(!mainBeaker)
-				mainBeaker = C
-			else
-				separationBeakers.Add(C)
-			to_chat(user, SPAN_NOTICE("You add [C] to [src]."))
-			SSnano.update_uis(src)
-			update_icon()
+			if(user.drop_from_inventory(C))
+				user.drop_from_inventory(C)
+				C.forceMove(src)
+				C.add_fingerprint(user)
+				if(!mainBeaker)
+					mainBeaker = C
+				else
+					separationBeakers.Add(C)
+				to_chat(user, SPAN_NOTICE("You add [C] to [src]."))
+				SSnano.update_uis(src)
+				update_icon()
 	else
 		return ..()
 
@@ -313,7 +320,7 @@
 	nano_ui_interact(user)
 
 /obj/item/device/makeshift_centrifuge/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	// update the ui if it exists, returns null if no ui is passed/found
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -326,7 +333,7 @@
 		// open the new ui window
 		ui.open()
 
-/obj/item/device/makeshift_centrifuge/ui_data()
+/obj/item/device/makeshift_centrifuge/nano_ui_data()
 	var/data = list()
 	data["on"] = on
 	data["mode"] = mode
@@ -334,14 +341,14 @@
 	data["minimal"] = TRUE
 
 	if(mainBeaker)
-		data["mainBeaker"] = mainBeaker.reagents.ui_data()
+		data["mainBeaker"] = mainBeaker.reagents.nano_ui_data()
 	var/list/beakersData = list()
 	for(var/i = 1, i <= beakerSlots, i++)
 		var/list/beakerInfo = list()
 		if(i <= separationBeakers.len)
 			var/obj/item/reagent_containers/B = separationBeakers[i]
 			if(B && B.reagents)
-				beakerInfo = B.reagents.ui_data()
+				beakerInfo = B.reagents.nano_ui_data()
 		beakerInfo["slot"] = i
 		beakersData.Add(list(beakerInfo))
 	data["beakers"] = beakersData

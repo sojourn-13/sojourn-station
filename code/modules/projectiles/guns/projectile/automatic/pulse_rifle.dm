@@ -32,6 +32,9 @@
 	serial_type = "INDEX"
 	serial_shown = FALSE
 
+	wield_delay = 1.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig for insta wield
+
 /obj/item/gun/projectile/automatic/dallas/update_icon()
 	..()
 	if(ammo_magazine)

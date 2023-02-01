@@ -39,7 +39,6 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/ammo_magazine/smg_35 = 35,
 		/obj/item/ammo_magazine/magnum_40 = 40,
 		/obj/item/ammo_magazine/kurtz_50 = 60,
-		/obj/item/ammo_magazine/maxim_75 = 130,
 		/obj/item/ammo_magazine/speed_loader_light_rifle_257 = 15,
 		/obj/item/ammo_magazine/speed_loader_rifle_75 = 15, //More or less for ammo rather then speedloader
 		/obj/item/ammo_magazine/light_rifle_257 = 30,
@@ -56,25 +55,17 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		//Guns
 		/obj/item/gun/projectile/automatic/slaught_o_matic = 15, //So blackshiled can trade with propis :P
 		/obj/item/gun/projectile/boltgun/flare_gun = 10, //DAZZLATION!
-		/obj/item/gun/projectile/colt/NM_colt = 70,
-		/obj/item/gun/projectile/automatic/buckler = 500,
-		/obj/item/gun/projectile/automatic/triage = 550,
-		/obj/item/gun/projectile/automatic/bull_autoshotgun = 650,
-		/obj/item/gun/projectile/boltgun/lever/shotgun/bounty = 700,
-		/obj/item/gun/projectile/automatic/sts/lrifle = 200,
-		/obj/item/gun/projectile/automatic/sts/rifle = 300,
-		/obj/item/gun/projectile/automatic/sts/hrifle = 500,
-		/obj/item/gun/projectile/automatic/lmg/saw = 500,
-		/obj/item/gun/projectile/boltgun = 50,
-		/obj/item/gun/projectile/automatic/duty = 350,
-		/obj/item/gun/projectile/automatic/nordwind/watchtower = 600,
-		/obj/item/gun/projectile/automatic/blackguard = 750,
-		/obj/item/gun/projectile/automatic/drozd/NM_colony = 300,
-		/obj/item/gun/projectile/automatic/ppsh/NM_colony = 450,
-		/obj/item/gun/projectile/automatic/ak47/NM_colony = 325,
+		/obj/item/gun/projectile/colt/ten = 75,
+		/obj/item/gun/projectile/boltgun/light = 50,
+		/obj/item/gun/projectile/boltgun = 75,
+		/obj/item/gun/projectile/boltgun/lever/shotgun/bounty = 400,
+		/obj/item/gun/projectile/automatic/duty = 325,
+		/obj/item/gun/projectile/automatic/sts/rifle = 400,
+		/obj/item/gun/projectile/automatic/drozd/NM_colony = 375,
+		/obj/item/gun/projectile/automatic/ppsh/NM_colony = 300,
+		/obj/item/gun/projectile/automatic/ak47/NM_colony = 450,
 		/obj/item/gun/projectile/automatic/vintorez/NM_colony = 400,
 		/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony = 500,
-		/obj/item/gun/projectile/automatic/maxim/NM_colony = 600,
 		/obj/item/shield/buckler = 250,
 		/obj/item/shield/riot = 350,
 		//Armor
@@ -88,7 +79,8 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/tool/baton = 200,
 		/obj/item/storage/firstaid/surgery/traitor = 250, //Advanced tools inside
 		/obj/item/computer_hardware/hard_drive/portable/design/blackshield = 500,
-		/obj/item/storage/firstaid/blackshield/large = 500
+		/obj/item/storage/firstaid/blackshield/large = 500,
+		/obj/item/stock_parts/blackshield/stskit = 750 //For making STS PARAs
 		)
 	var/entropy_value = 1 //It is still bluespace
 
@@ -180,7 +172,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 	if(stat & (BROKEN|NOPOWER)) return
 	if(user.stat || user.restrained()) return
 
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	time_until_scan = time2text((1800 - ((world.time - round_start_time) % 1800)), "mm:ss")
 
@@ -190,7 +182,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		ui.set_initial_data(data)
 		ui.open()
 
-/obj/machinery/blackshield_teleporter/ui_data()
+/obj/machinery/blackshield_teleporter/nano_ui_data()
 	var/list/data = list()
 	data["energy"] = round(blackshield_energy)
 	data["maxEnergy"] = round(blackshield_max_energy)

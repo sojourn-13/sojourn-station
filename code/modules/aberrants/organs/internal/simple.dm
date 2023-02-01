@@ -5,20 +5,9 @@
 	process_mod_path = /obj/item/modification/organ/internal/process/boost
 	output_mod_path = /obj/item/modification/organ/internal/output/chemical_effects
 	specific_input_type_pool = list(/datum/reagent/toxin)	// Should let these scrub ANY toxin
-	output_pool = ALL_HORMONES
+	should_process_have_organ_stats = FALSE
+	output_pool = TYPE_2_HORMONES
 	output_info = list(NOT_USED)
-
-/obj/item/organ/internal/scaffold/aberrant/scrub_toxin/New()
-	..()
-	var/obj/item/modification/organ/internal/process/P
-	for(var/obj/item/modification/organ/internal/mod in item_upgrades)
-		if(istype(mod, /obj/item/modification/organ/internal/process))
-			P = mod
-
-	var/datum/component/modification/organ/process/PC = P.GetComponent(/datum/component/modification/organ/process)
-	PC.organ_efficiency_mod = list()		// Clear organ efficiencies since this is mimicking an organ process. Also, organ will need its own name.
-	organ_efficiency = list()
-	refresh_upgrades()
 
 /obj/item/organ/internal/scaffold/aberrant/scrub_toxin/blood
 	name = "filtration node"
@@ -47,20 +36,9 @@
 	specific_input_type_pool = list(/datum/reagent/other/crayon_dust, /datum/reagent/other/paint, /datum/reagent/other/ultraglue, /datum/reagent/other/space_cleaner,
 									/datum/reagent/toxin/amatoxin, /datum/reagent/toxin/carpotoxin, /datum/reagent/toxin/fertilizer)
 	input_mode = CHEM_INGEST
+	should_process_have_organ_stats = FALSE
 	output_pool = list(/datum/reagent/organic/nutriment)
-	output_info = list(VERY_LOW_OUTPUT)
-
-/obj/item/organ/internal/scaffold/aberrant/gastric/New()
-	..()
-	var/obj/item/modification/organ/internal/process/P
-	for(var/obj/item/modification/organ/internal/mod in item_upgrades)
-		if(istype(mod, /obj/item/modification/organ/internal/process))
-			P = mod
-
-	var/datum/component/modification/organ/process/PC = P.GetComponent(/datum/component/modification/organ/process)
-	PC.organ_efficiency_mod = list()		// Clear organ efficiencies since this is mimicking an organ process. Also, organ will need its own name.
-	organ_efficiency = list()
-	refresh_upgrades()
+	output_info = list(LOW_OUTPUT)
 
 /obj/item/organ/internal/scaffold/aberrant/damage_response
 	name = "endocrine gland"
@@ -70,19 +48,9 @@
 	input_mod_path = /obj/item/modification/organ/internal/input/damage
 	process_mod_path = /obj/item/modification/organ/internal/process/boost
 	output_mod_path = /obj/item/modification/organ/internal/output/chemical_effects
-	specific_input_type_pool = ALL_USABLE_DAMAGE_TYPES
+	specific_input_type_pool = ALL_DAMAGE_TYPES
 	input_mode = NOT_USED
-	output_pool = ALL_HORMONES
+	input_threshold = 20
+	should_process_have_organ_stats = FALSE
+	output_pool = TYPE_2_HORMONES
 	output_info = list(NOT_USED)
-
-/obj/item/organ/internal/scaffold/aberrant/damage_response/New()
-	..()
-	var/obj/item/modification/organ/internal/process/P
-	for(var/obj/item/modification/organ/internal/mod in item_upgrades)
-		if(istype(mod, /obj/item/modification/organ/internal/process))
-			P = mod
-
-	var/datum/component/modification/organ/process/PC = P.GetComponent(/datum/component/modification/organ/process)
-	PC.organ_efficiency_mod = list()		// Clear organ efficiencies since this is mimicking an organ process. Also, organ will need its own name.
-	organ_efficiency = list()
-	refresh_upgrades()

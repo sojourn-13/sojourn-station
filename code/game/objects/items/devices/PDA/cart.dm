@@ -389,7 +389,7 @@
 
 
 
-	/*	Supply Shuttle Requests Menu (Mode: 47)		*/
+	/*	Supply Shuttle Requests Menu (Mode: 47)
 
 	if(mode==47)
 		var/supplyData[0]
@@ -427,7 +427,7 @@
 
 		values["supply"] = supplyData
 
-
+*/
 
 	/* 	Janitor Supplies Locator  (Mode: 49)      */
 	if(mode==49)

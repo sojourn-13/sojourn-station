@@ -123,7 +123,7 @@
 	if(!nano_template)
 		return
 
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -131,7 +131,7 @@
 		ui.set_initial_data(data)
 		ui.open()
 
-/obj/machinery/reagentgrinder/ui_data()
+/obj/machinery/reagentgrinder/nano_ui_data()
 	var/list/data = list()
 
 	data["contents"] = list()
@@ -224,12 +224,12 @@
 
 	return ..()
 
-/obj/machinery/reagentgrinder/portable/ui_data()
+/obj/machinery/reagentgrinder/portable/nano_ui_data()
 	var/list/data = ..()
 	data["on"] = inuse
 
 	if(beaker)
-		data["beaker"] = beaker.reagents.ui_data()
+		data["beaker"] = beaker.reagents.nano_ui_data()
 	return data
 
 /obj/machinery/reagentgrinder/portable/AltClick(mob/living/user)
@@ -326,10 +326,10 @@
 	if(panel_open)
 		add_overlay(image(icon, "[icon_state]_p"))
 
-/obj/machinery/reagentgrinder/industrial/ui_data()
+/obj/machinery/reagentgrinder/industrial/nano_ui_data()
 	var/list/data = ..()
 
-	data["reagents"] = reagents.ui_data()
+	data["reagents"] = reagents.nano_ui_data()
 	return data
 
 /obj/machinery/reagentgrinder/industrial/Topic(href, href_list)
@@ -355,7 +355,7 @@
 		P.filling_states = "10;20;40;50;60"
 		P.label_icon_state = "label_potion"
 	if(P.icon_state == "tincture")
-		P.filling_states = "3;5;10;15;25;27;30;35;40;45;55;60"
+		P.filling_states = "3;5;10;15;20;25;27;30;35;40;45;50;55;60"
 		P.label_icon_state = "label_tincture"
 	P.toggle_lid()
 

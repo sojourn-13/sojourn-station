@@ -164,7 +164,7 @@
 	retarget_timer_initial = 15
 	retarget_chance = 90
 
-	projectilesound = 'sound/weapons/blaster.ogg'
+	projectilesound = 'sound/weapons/energy/hydrogen_heavy.ogg'
 	projectilevolume = 300
 
 	fire_through_walls = TRUE //this bad boy can BREAK cover

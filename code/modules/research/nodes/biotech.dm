@@ -84,8 +84,7 @@
 
 	unlocks_designs = list(/datum/design/research/circuit/sleeper,
 							/datum/design/research/circuit/slime_compresser,
-							/datum/design/research/item/medical/compact_roller_bed,
-							/datum/design/research/circuit/sleeper)
+							/datum/design/research/item/medical/compact_roller_bed)
 
 /datum/technology/hydroponics
 	name = "Hydroponics"
@@ -104,8 +103,7 @@
 							/datum/design/research/circuit/extractor,
 							/datum/design/research/circuit/seed_extractor,
 							/datum/design/research/circuit/editor,
-							/datum/design/research/item/weapon/flora_gun,
-							/datum/design/research/item/botany_disk
+							/datum/design/research/item/weapon/flora_gun
 							)
 
 /datum/technology/portable_chemistry
@@ -166,7 +164,7 @@
 */
 /datum/technology/basic_medical_tools
 	name = "Basic Medical Tools"
-	desc = "Mass Spectrometry method. Experimental surgical, laser tools. Medical sensors intergrated hud in hud-glass and large revival electrical shocks. Artificial quick dry bone gel composite."
+	desc = "Mass Spectrometry method. Experimental surgical, laser tools. Medical sensors intergrated HUD in hud-glass and large revival electrical shocks. Artificial quick dry bone gel composite."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.4
@@ -187,7 +185,7 @@
 
 /datum/technology/improved_biotech
 	name = "Improved Biotech"
-	desc = "Improved micro manipulations, advaced scanning method. Chemical implant and better surgerical tools, be careful."
+	desc = "Improved micro manipulations, advanced scanning methods. Chemical implants and better surgical tools, be careful."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.5
@@ -217,7 +215,7 @@
 							)
 
 /datum/technology/portable_biotech
-	name = "Portable Biotech"
+	name = "Advanced and Portable Chemistry Biotech"
 	desc = "Portable injection and scan method, capitalists' and not capitalists portable sleeper. Integrated medical sensors hud with hardsuits' systems."
 	tech_type = RESEARCH_BIOTECH
 
@@ -239,8 +237,7 @@
 							/datum/design/research/structure/bidontrigger,
 							/datum/design/research/item/medical/compact_defibs,
 							/datum/design/research/item/implant/alarm,
-							/datum/design/research/item/petite_scanner
-							)
+							/datum/design/research/item/petite_scanner)
 
 /datum/technology/tracker_tablet
 	name = "Tracker tablet"
@@ -275,7 +272,7 @@
 */
 /datum/technology/advanced_biotech
 	name = "Advanced Biotech"
-	desc = "Top-tier micro manipulations systems. Top-tier scan method. Upgraded mass spectrometry. Advaced sprayer. Machinegunlike syringe-gun."
+	desc = "Top-tier micro manipulations systems. Top-tier scan method. Upgraded mass spectrometry. Advanced sprayer. Machinegun-like syringe-gun."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.6
@@ -292,12 +289,11 @@
 							/datum/design/research/item/medical/adv_reagent_scanner,
 							/datum/design/research/item/weapon/chemsprayer,
 							/datum/design/research/item/weapon/rapidsyringe,
-							/datum/design/research/item/ammo/rapidsyringe
-							)
+							/datum/design/research/item/ammo/rapidsyringe)
 
 /datum/technology/top_biotech
 	name = "Augmentations' Biotech"
-	desc = "Augmentations for body, this tech using almost all previous technologies."
+	desc = "Body augmentations in the way of Soteria-brand prosthesis and implantable omnitools."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.7
@@ -326,7 +322,7 @@
 
 /datum/technology/omega_biotech
 	name = "Advanced Augmentations Biotech"
-	desc = "Refined and end of the line advancements that the body and the mind can handle."
+	desc = "Refined and end of the line advancements that both body and mind can handle."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.7
@@ -352,8 +348,8 @@
 							)
 
 /datum/technology/rig_medical_stuff
-	name = "RIG Medical Addaptation"
-	desc = "Augmentations for body, this tech using almost all previous technologies."
+	name = "RIG Medical Adaptation"
+	desc = "Top of the line RIG Modules for medical application."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.85

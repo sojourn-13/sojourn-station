@@ -14,7 +14,7 @@
 	playtimerequired = 1200
 	wage = WAGE_COMMAND
 	ideal_character_age = 50
-	minimum_character_age = 30
+	minimum_character_age = 25
 	health_modifier = 5
 
 	disallow_species = list(FORM_UNBRANDED, FORM_SOTSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
@@ -76,7 +76,7 @@
 	selection_color = "#d5c88f"
 	wage = WAGE_PROFESSIONAL
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer
-	alt_titles = list("Guild Trainee","Guild Electrician", "Guild Tinkerer", "Guild Pipefitter")
+	alt_titles = list("Guild Trainee","Guild Electrician", "Guild Mechanical Engineer")
 	noob_name = "Guild Trainee"
 	access = list(
 		access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,

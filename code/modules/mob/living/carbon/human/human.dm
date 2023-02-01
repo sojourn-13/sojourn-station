@@ -54,9 +54,13 @@
 		dna.ready_dna(src)
 		dna.real_name = real_name
 		sync_organ_dna()
+
 	make_blood()
 
 	sanity = new(src)
+
+	flash_mod = species.flash_mod
+	movement_hunger_factors *= species.hunger_factor
 
 	AddComponent(/datum/component/fabric)
 
@@ -76,7 +80,6 @@
 
 	QDEL_NULL(sanity)
 	QDEL_NULL(vessel)
-
 	worn_underwear.Cut()
 	return ..()
 
@@ -141,7 +144,7 @@
 	if(blinded)
 		return
 	if(eye_damage)
-		eye_damage += eye_damage * species.flash_mod // increase based on how susceptible they are
+		eye_damage *= species.flash_mod // increase based on how susceptible they are
 		var/obj/item/organ/internal/eyes/E = src.random_organ_by_process(OP_EYES)
 		E.take_damage(eye_damage, FALSE)
 		if (E && E.damage >= E.min_bruised_damage)
@@ -654,11 +657,11 @@ var/list/rank_prefix = list(\
 ///Returns a number between -1 to 2
 /mob/living/carbon/human/eyecheck()
 	if(!species.has_process[OP_EYES]) //No eyes, can't hurt them.
-		return FLASH_PROTECTION_MAJOR
+		return FLASH_PROTECTION_MODERATE
 
 	var/eye_efficiency = get_organ_efficiency(OP_EYES)
 	if(eye_efficiency <= 0)
-		return FLASH_PROTECTION_MAJOR
+		return FLASH_PROTECTION_MODERATE
 
 	return flash_protection
 
@@ -727,7 +730,7 @@ var/list/rank_prefix = list(\
 		return FALSE
 	return TRUE
 
-/mob/living/carbon/human/vomit()
+/mob/living/carbon/human/vomit(forced = 0)
 
 	if(!check_has_mouth())
 		return
@@ -735,23 +738,32 @@ var/list/rank_prefix = list(\
 		return
 	if(!lastpuke)
 		lastpuke = 1
-		to_chat(src, SPAN_WARNING("You feel nauseous..."))
-		spawn(150)	//15 seconds until second warning
+		if(!forced)
+			to_chat(src, SPAN_WARNING("You feel nauseous..."))
+			sleep(150)	//15 seconds until second warning
 			to_chat(src, SPAN_WARNING("You feel like you are about to throw up!"))
-			spawn(100)	//and you have 10 more for mad dash to the bucket
-				Stun(5)
+			sleep(100)	//and you have 10 more for mad dash to the bucket
+		Stun(2)
 
-				src.visible_message(SPAN_WARNING("[src] throws up!"),SPAN_WARNING("You throw up!"))
-				playsound(loc, 'sound/effects/splat.ogg', 50, 1)
+		visible_message(SPAN_WARNING("[src] throws up!"),SPAN_WARNING("You throw up!"))
+		playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 
-				var/turf/location = loc
-				if (istype(location, /turf/simulated))
-					location.add_vomit_floor(src, 1)
+		var/turf/location = loc
+		if(istype(location, /turf/simulated))
+			location.add_vomit_floor(src, 1)
 
-				nutrition -= 40
-				adjustToxLoss(-3)
-				spawn(350)	//wait 35 seconds before next volley
-					lastpuke = 0
+		adjustNutrition(-40)
+		adjustToxLoss(-3)
+		if(src.ingested && src.ingested.reagent_list.len > 0) // If we have anything on our stomach...
+			for(var/datum/reagent/R in src.ingested.reagent_list)
+				if(R == src)
+					continue
+				src.ingested.remove_reagent(R.id, 10, 0) // ...We vomit some of it down!
+		//regen_slickness(-3)
+		//dodge_time = get_game_time()
+		//confidence = FALSE
+		spawn(350)	//wait 35 seconds before next volley
+			lastpuke = 0
 
 /mob/living/carbon/human/proc/morph()
 	set name = "Morph"
@@ -1152,6 +1164,8 @@ var/list/rank_prefix = list(\
 	maxHealth = species.total_health
 
 	spawn(0)
+		if(QDELETED(src))	// Needed because mannequins will continue this proc and runtime after being qdel'd
+			return
 		regenerate_icons()
 		if(!QDELETED(src))
 			if(vessel.total_volume < species.blood_volume)
@@ -1448,60 +1462,6 @@ var/list/rank_prefix = list(\
 	Weaken(stun_duration)
 	return TRUE
 
-/mob/living/carbon/human/proc/undislocate()
-	set category = "Object"
-	set name = "Undislocate Joint"
-	set desc = "Pop a joint back into place. Extremely painful."
-	set src in view(1)
-
-	if(!isliving(usr) || !usr.can_click())
-		return
-
-	usr.setClickCooldown(20)
-
-	if(usr.stat > 0)
-		to_chat(usr, "You are unconcious and cannot do that!")
-		return
-
-	if(usr.restrained())
-		to_chat(usr, "You are restrained and cannot do that!")
-		return
-
-	var/mob/S = src
-	var/mob/U = usr
-	var/self
-	if(S == U)
-		self = 1 // Removing object from yourself.
-
-	var/list/limbs = list()
-	for(var/limb in organs_by_name)
-		var/obj/item/organ/external/current_limb = organs_by_name[limb]
-		if(current_limb && current_limb.dislocated == 2)
-			limbs |= limb
-	var/choice = input(usr,"Which joint do you wish to relocate?") as null|anything in limbs
-
-	if(!choice)
-		return
-
-	var/obj/item/organ/external/current_limb = organs_by_name[choice]
-
-	if(self)
-		to_chat(src, SPAN_WARNING("You brace yourself to relocate your [current_limb.joint]..."))
-	else
-		to_chat(U, SPAN_WARNING("You begin to relocate [S]'s [current_limb.joint]..."))
-
-	if(!do_after(U, 30, src))
-		return
-	if(!choice || !current_limb || !S || !U)
-		return
-
-	if(self)
-		to_chat(src, SPAN_DANGER("You pop your [current_limb.joint] back in!"))
-	else
-		to_chat(U, SPAN_DANGER("You pop [S]'s [current_limb.joint] back in!"))
-		to_chat(S, SPAN_DANGER("[U] pops your [current_limb.joint] back in!"))
-	current_limb.undislocate()
-
 /mob/living/carbon/human/reset_view(atom/A, update_hud = 1)
 	..()
 	if(update_hud)
@@ -1639,25 +1599,42 @@ var/list/rank_prefix = list(\
 
 		switch(burndamage)
 			if(1 to 10)
-				status += "numb"
+				status += "stinging"
 			if(10 to 40)
 				status += "blistered"
 			if(40 to INFINITY)
 				status += "peeling away"
 
-		if(org.is_stump())
-			status += "MISSING"
+		if(org.is_stump()) // You at least have a stump still
+			status += "just a stump"
+		//Sanity check. You should not be able to see this
+		// as the limb gets removed from the list of organs asked at the start of this proc
+		if(!org) // NO LIMB!
+			status += "<b>GONE!</b>"
 		if(org.status & ORGAN_MUTATED)
-			status += "weirdly shapen"
-		if(org.dislocated == 2)
-			status += "dislocated"
+			status += "misshapen"
+		if(org.nerve_struck == 2)
+			status += "torpid"
 		if(org.status & ORGAN_BROKEN)
 			status += "hurts when touched"
+		if(org.status & ORGAN_BLEEDING) // "Oh hey, I'm bleeding"
+			status += "<b>bleeding profusely</b>"
+		// Infections should be obvious to us as well
+		if(org.germ_level >= INFECTION_LEVEL_ONE && org.germ_level < INFECTION_LEVEL_TWO)
+			status += "<font color='90EE90'>greenishly discolored</font>" // Very light green
+		if(org.germ_level >= INFECTION_LEVEL_TWO && org.germ_level < INFECTION_LEVEL_THREE)
+			status += "<font color='00FF00'>oozing with pus</font>" // Lighter green
+		if(org.germ_level >= INFECTION_LEVEL_THREE && !(org.status & ORGAN_DEAD))
+			status += "<b><font color='407A18'>rotting away</font></b>" // Dark green and bolded, your organ is close to necropsy
 		if(org.status & ORGAN_DEAD)
-			status += "is bruised and necrotic"
+			status += "<b><font color='005500'>rotten</font></b>" // Necrotic
 		if(!org.is_usable())
 			status += "dangling uselessly"
-
+		for(var/obj/item/organ/internal/blood_vessel/BV in org.internal_organs)
+			if(BV.damage > 4) // Same as examine text, if our blood vessels are damaged beyond self-healing threshold...
+				status += "<font color='6533da'>swollen with black and blue spots</font>" // ...Let us see our bruises.
+		if(org.status & ORGAN_SPLINTED) // If our limb is splinted, tell us...
+			status += "<a href='?src=\ref[src];item=splints'>splinted</a>" // ...And let us remove the splints ourselves!
 		var/status_text = SPAN_NOTICE("OK")
 		if(status.len)
 			status_text = SPAN_WARNING(english_list(status))

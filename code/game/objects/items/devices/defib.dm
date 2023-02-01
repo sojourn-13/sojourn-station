@@ -488,6 +488,9 @@
 	make_announcement("pings, \"Resuscitation successful.\"", "notice")
 	playsound(get_turf(src), 'sound/machines/defib_success.ogg', 50, 0)
 
+	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = H)
+
+
 	log_and_message_admins("used \a [src] to revive [key_name(H)].")
 
 
@@ -525,7 +528,7 @@
 	H.stun_effect_act(2, 120, target_zone)
 	var/burn_damage = H.electrocute_act(burn_damage_amt*2, src, def_zone = target_zone)
 	if(burn_damage > 15 && H.can_feel_pain())
-		H.emote("scream")
+		H.emote("painscream")
 
 	log_attack("[user.name]/([user.ckey]) shocked [H.name] ([H.ckey]) using [name]")
 
@@ -823,7 +826,7 @@
 	chargetime = (10)
 
 /* From the Bay port, this doesn't seem to have a sprite.
-/obj/item/shockpaddles/standalone/traitor
+/obj/item/shockpaddles/standalone/contractor
 	name = "defibrillator paddles"
 	desc = "A pair of unusual looking paddles powered by an experimental miniaturized reactor. It possesses both the ability to penetrate armor and to deliver powerful shocks."
 	icon = 'icons/obj/weapons.dmi'

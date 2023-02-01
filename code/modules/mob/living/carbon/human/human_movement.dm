@@ -15,18 +15,16 @@
 	if(isturf(loc))
 		var/turf/T = loc
 		if(T.get_lumcount() < 0.6)
-			if(stats.getPerk(PERK_NIGHTCRAWLER))
-				tally -= 0.5
-			else if(see_invisible != SEE_INVISIBLE_NOLIGHTING)
+			if(see_invisible != SEE_INVISIBLE_NOLIGHTING)
 				tally += 0.5
 	if(stats.getPerk(PERK_FAST_WALKER))
-		tally -= 0.5
-	if(stats.getPerk(PERK_NANITE_MUSCLE))
 		tally -= 0.4
+	if(stats.getPerk(PERK_NANITE_MUSCLE))
+		tally -= 0.3
 	if(stats.getPerk(PERK_SCUTTLEBUG))
 		tally -= 0.3
 	if(stats.getPerk(PERK_REZ_SICKNESS))
-		tally += 0.90
+		tally += 1
 
 	var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
 	if(C && C.active)
@@ -62,11 +60,9 @@
 		tally += (283.222 - bodytemperature) / 10 * 1.75
 	tally += stance_damage // missing/damaged legs or augs affect speed
 
-	if(slowdown)
-		tally += 1
+	tally += slowdown
 
-	if(added_movedelay)
-		tally += added_movedelay
+	tally += added_movedelay
 
 	tally += (r_hand?.slowdown_hold + l_hand?.slowdown_hold)
 

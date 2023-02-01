@@ -110,7 +110,7 @@
 	join_tag = /datum/job/doctor
 
 /datum/job/recovery_team
-	title = "Soteria Client Recovery Specialist"
+	title = "Soteria Lifeline Technician"
 	flag = RECOVERYTEAM
 	department = DEPARTMENT_MEDICAL
 	department_flag = MEDICAL
@@ -121,7 +121,6 @@
 	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
-	alt_titles = list("Soteria Emergency Medical Technician")
 	outfit_type = /decl/hierarchy/outfit/job/medical/recovery_team
 	disallow_species = list(FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 

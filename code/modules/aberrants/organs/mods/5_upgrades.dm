@@ -32,7 +32,7 @@
 /obj/item/modification/organ/internal/stromal/improvement/durability/New()
 	var/datum/component/modification/organ/stromal/M = AddComponent(/datum/component/modification/organ/stromal)
 
-	M.specific_organ_size_mod = 0.5
+	M.specific_organ_size_mod = 0.25
 	M.min_bruised_damage_multiplier = 0.20
 	M.min_broken_damage_multiplier = 0.20
 	M.max_damage_multiplier = 0.20
@@ -95,7 +95,7 @@
 /obj/item/modification/organ/internal/stromal/augment/expander/New()
 	var/datum/component/modification/organ/stromal/M = AddComponent(/datum/component/modification/organ/stromal)
 
-	M.specific_organ_size_mod = 0.5
+	M.specific_organ_size_mod = 0.25
 	M.max_upgrade_mod = 2
 	M.removable = FALSE		// Not feasible to remove
 	M.prefix = "expanded"
@@ -114,12 +114,19 @@
 	M.prefix = "scanner-masked"
 	..()
 
-// From living failure projectiles
-/obj/item/modification/organ/internal/stromal/parasitic
-	name = "parasitic organoid"
-	desc = "An organoid that draws blood and nutrients from surrounding tissue, reducing its effectiveness."
+/obj/item/modification/organ/internal/parenchymal
+	name = "pygmy parenchymal membrane"
+	desc = "A graftable membrane for organ tissues. Contains functional tissue from one or more organs."
+	description_info = "Adds/increases organ efficiencies. Size, blood, oxygen, and nutrition requirements are based on the added efficiencies."
+	icon_state = "membrane"
+	var/organ_eff_mod = 0.2
 
-/obj/item/modification/organ/internal/stromal/parasitic/New()
+/obj/item/modification/organ/internal/parenchymal/New(loc, generate_organ_stats = TRUE, predefined_modifier = organ_eff_mod)
+	var/datum/component/modification/organ/parenchymal/M = AddComponent(/datum/component/modification/organ/parenchymal)
+
+	M.prefix = "multi-functional"
 	..()
-	var/datum/component/modification/organ/stromal/S = AddComponent(/datum/component/modification/organ/stromal)
-	generate_organ_stats_for_mod(S, -0.125)
+
+/obj/item/modification/organ/internal/parenchymal/large
+	name = "parenchymal membrane"
+	organ_eff_mod = 0.4

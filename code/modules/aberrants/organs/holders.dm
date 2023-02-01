@@ -3,6 +3,7 @@
 	icon = 'icons/obj/aberrant_organs.dmi'
 	icon_state = "organ_scaffold"
 	desc = "A collagen-based biostructure."
+	description_info = "A functionless organ with three slots for organ mods or organoids. Best used with an input, process, and output organoid to create a modular organ."
 	price_tag = 100
 	organ_efficiency = list()
 	specific_organ_size = 0.4
@@ -19,6 +20,7 @@
 	var/ruined = FALSE
 	var/ruined_name = "organ scaffold"
 	var/ruined_desc = "A collagen-based biostructure."
+	var/ruined_description_info = "A functionless organ with three slots for organ mods or organoids. Best used with an input, process, and output organoid to create a modular organ."
 	var/ruined_color = null
 
 /obj/item/organ/internal/scaffold/New()
@@ -31,25 +33,35 @@
 /obj/item/organ/internal/scaffold/Destroy()
 	..()
 	UnregisterSignal(src, COMSIG_ABERRANT_COOLDOWN)
+	if(LAZYLEN(item_upgrades))
+		for(var/datum/mod in item_upgrades)
+			SEND_SIGNAL(mod, COMSIG_REMOVE, src)
+			qdel(mod)
+	return ..()
 
 /obj/item/organ/internal/scaffold/Process()
-	. = ..()
+	..()
 	if(owner && !on_cooldown && damage < min_broken_damage)
 		LEGACY_SEND_SIGNAL(src, COMSIG_ABERRANT_INPUT, src, owner)
 
 /obj/item/organ/internal/scaffold/examine(mob/user)
 	. = ..()
-	if(user.stats?.getStat(STAT_BIO) >= STAT_LEVEL_EXPERT || user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
-		if(item_upgrades.len)
-			to_chat(user, SPAN_NOTICE("Organoid grafts present ([item_upgrades.len]/[max_upgrades]). Use a laser cutting tool to remove."))
-		if(aberrant_cooldown_time > 0)
-			to_chat(user, SPAN_NOTICE("Average organ process duration: [aberrant_cooldown_time / (1 SECOND)] seconds"))
-		var/organs = ""
-		for(var/organ in organ_efficiency)
-			organs += organ + " ([organ_efficiency[organ]]), "
-		organs = copytext(organs, 1, length(organs) - 1)
-		to_chat(user, SPAN_NOTICE("Organ tissues present (efficiency): <span style='color:pink'>[organs ? organs : "none"]</span>"))
-	if(user.stats?.getStat(STAT_BIO) >= STAT_LEVEL_PROF || user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
+	var/using_sci_goggles = FALSE
+	var/details_unlocked = FALSE
+	
+	if(ishuman(user))
+		// Goggles check
+		var/mob/living/carbon/human/H = user
+		if(istype(H.glasses, /obj/item/clothing/glasses/powered/science))
+			var/obj/item/clothing/glasses/powered/G = H.glasses
+			using_sci_goggles = G.active	// Meat vision
+
+		// Stat check
+		details_unlocked = (user.stats.getStat(STAT_BIO) >= STAT_LEVEL_PROF || user.stats?.getPerk(PERK_ADVANCED_MEDICAL)) ? TRUE : FALSE
+	else if(istype(user, /mob/observer/ghost))
+		details_unlocked = TRUE
+
+	if(using_sci_goggles || details_unlocked)
 		var/function_info
 		var/input_info
 		var/process_info
@@ -73,34 +85,13 @@
 						output_info + (output_info && secondary_info ? "\n" : null) +\
 						secondary_info
 
+		if(aberrant_cooldown_time > 0)
+			to_chat(user, SPAN_NOTICE("Average organ process duration: [aberrant_cooldown_time / (1 SECOND)] seconds"))
+
 		if(function_info)
 			to_chat(user, SPAN_NOTICE(function_info))
-
-/obj/item/organ/internal/scaffold/refresh_upgrades()
-	name = initial(name)
-	color = initial(color)
-	max_upgrades = max_upgrades ? initial(max_upgrades) : 0		// If no max upgrades, it must be a ruined teratoma. So, leave it at 0.
-	prefixes = list()
-	min_bruised_damage = initial(min_bruised_damage)
-	min_broken_damage = initial(min_broken_damage)
-	max_damage = initial(max_damage) ? initial(max_damage) : min_broken_damage * 2
-	owner_verbs = initial_owner_verbs.Copy()
-	organ_efficiency = initial_organ_efficiency.Copy()
-	scanner_hidden = initial(scanner_hidden)
-	unique_tag = initial(unique_tag)
-	specific_organ_size = initial(specific_organ_size)
-	max_blood_storage = initial(max_blood_storage)
-	current_blood = initial(current_blood)
-	blood_req = initial(blood_req)
-	nutriment_req = initial(nutriment_req)
-	oxygen_req = initial(oxygen_req)
-
-	update_color()
-
-	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
-
-	update_name()
-	update_icon()
+	else
+		to_chat(user, SPAN_WARNING("You lack the biological knowledge required to understand its functions."))
 
 /obj/item/organ/internal/scaffold/update_icon()
 	if(use_generated_icon)
@@ -134,6 +125,7 @@
 	ruined = TRUE
 	name = ruined_name ? ruined_name : initial(name)
 	desc = ruined_desc ? ruined_desc : initial(desc)
+	description_info = ruined_description_info ? ruined_description_info : initial(description_info)
 	color = ruined_color ? ruined_color : initial(color)
 	price_tag = 100
 	use_generated_name = TRUE
@@ -237,6 +229,9 @@
 /obj/item/organ/internal/scaffold/rare
 	name = "large organ scaffold"
 	desc = "A collagen-based biostructure. This one has room for an extra organoid."
+	ruined_desc = "A collagen-based biostructure. This one has room for an extra organoid."
+	description_info = "A functionless organ with four slots for organ mods or organoids. Generally, you'll want to save the fourth upgrade slot for a membrane."
+	ruined_description_info = "A functionless organ with four slots for organ mods or organoids. Generally, you'll want to save the fourth upgrade slot for a membrane."
 	max_upgrades = 4
 
 /obj/item/organ/internal/scaffold/aberrant
@@ -253,6 +248,7 @@
 	var/base_input_type = null
 	var/list/specific_input_type_pool = list()
 	var/input_mode = null
+	var/input_threshold = 0
 	var/list/process_info = list()
 	var/should_process_have_organ_stats = TRUE
 	var/list/output_pool = list()
@@ -300,7 +296,7 @@
 
 	var/obj/item/modification/organ/internal/input/I
 	if(ispath(input_mod_path, /obj/item/modification/organ/internal/input))
-		I = new input_mod_path(src, FALSE, null, input_info, input_mode, additional_input_info)
+		I = new input_mod_path(src, FALSE, null, input_info, input_mode, input_threshold, additional_input_info)
 
 	var/obj/item/modification/organ/internal/process/P
 	if(ispath(process_mod_path, /obj/item/modification/organ/internal/process))

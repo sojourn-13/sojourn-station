@@ -28,7 +28,8 @@
 	required_tech_levels = list()
 	cost = 375
 
-	unlocks_designs = list(/datum/design/research/item/flash)
+	unlocks_designs = list(/datum/design/research/item/flash,
+						   /datum/design/research/item/weapon/weapon_upgrade/auto_eject_no_removal)
 
 
 
@@ -102,9 +103,7 @@
 	required_tech_levels = list(RESEARCH_GREYSON = 3) //Likely people will get parts/cog/bots for this
 	cost = 5625
 	unlocks_designs = list(/datum/design/research/item/greyson/abnegate,
-						/datum/design/research/item/greyson/formatbound,
-						/datum/design/research/item/greyson/humility,
-						/datum/design/research/item/greyson/systemcost)
+						/datum/design/research/item/greyson/humility,)
 
 /datum/technology/hardsuit_nonlethal
 	name = "Mounted Non-Lethal"
@@ -193,8 +192,7 @@
 	required_tech_levels = list()
 	cost = 3750
 
-	unlocks_designs = list(	/datum/design/research/item/weapon/decloner,
-							/datum/design/research/item/weapon/centurio,
+	unlocks_designs = list(	/datum/design/research/item/weapon/centurio,
 							/datum/design/research/item/weapon/auretian
 						)
 
@@ -216,13 +214,6 @@
 							/datum/design/research/item/weapon/c20r,
 							/datum/design/research/item/ammo/smg_mag/lethal,
 							/datum/design/research/item/ammo/smg_mag/rubber,
-							/datum/design/research/item/weapon/starstriker,
-							/datum/design/research/item/ammo/laser,
-							/datum/design/research/item/ammo/laser/ap,
-							/datum/design/research/item/ammo/laser/lethal,
-							/datum/design/research/item/ammo/laser/box,
-							/datum/design/research/item/ammo/laser/ap/box,
-							/datum/design/research/item/ammo/laser/lethal/box,
 							/datum/design/research/item/weapon/katana,
 							/datum/design/research/item/ammo/rifle_75,
 							/datum/design/research/item/ammo/light_rifle_257,
@@ -248,6 +239,7 @@
 							/datum/design/research/item/weapon/weapon_upgrade/toxin_coater,
 							/datum/design/research/item/weapon/weapon_upgrade/overheat,
 							/datum/design/research/item/weapon/weapon_upgrade/penetrator,
+							/datum/design/research/item/weapon/weapon_upgrade/dnalock_mod
 							//datum/design/research/item/weapon/weapon_upgrade/isotope_diffuser,
 							//datum/design/research/item/weapon/weapon_upgrade/psionic_catalyst
 						)
@@ -268,8 +260,6 @@
 	unlocks_designs = list(/datum/design/research/item/weapon/nuclear_gun,
 							/datum/design/research/item/weapon/lasercannon,
 							/datum/design/research/item/ammo/heavy_rifle_408,
-							/datum/design/research/item/ammo/laser_mag,
-							/datum/design/research/item/weapon/laser_ak,
 							/datum/design/research/item/weapon/centauri
 							)
 

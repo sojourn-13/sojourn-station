@@ -27,6 +27,7 @@
 				/obj/item/reagent_containers/glass/beaker/vial/vape/berry = 10,
 				/obj/item/reagent_containers/glass/beaker/vial/vape/banana = 10,
 				/obj/item/reagent_containers/glass/beaker/vial/vape/lemon = 10,
+				/obj/item/reagent_containers/glass/beaker/vial/vape/mint = 10,
 				/obj/item/reagent_containers/glass/beaker/vial/vape/nicotine = 5,
 				/obj/item/storage/box/matches = 10,
 				/obj/item/flame/lighter/random = 4,
@@ -65,6 +66,7 @@
 				/obj/item/reagent_containers/glass/beaker/vial/vape/berry = 25,
 				/obj/item/reagent_containers/glass/beaker/vial/vape/banana = 25,
 				/obj/item/reagent_containers/glass/beaker/vial/vape/lemon = 25,
+				/obj/item/reagent_containers/glass/beaker/vial/vape/mint = 25,
 				/obj/item/reagent_containers/glass/beaker/vial/vape/nicotine = 25,
 				/obj/item/storage/box/matches = 10,
 				/obj/item/flame/lighter/random = 25,
@@ -119,7 +121,6 @@
 	desc = "A one stop shop for all your card or board game needs!"
 	icon_state = "nutrimat"
 	icon_vend = "nutrimat-vend"
-	vendor_department = DEPARTMENT_CHURCH
 	product_slogans = list("All purchases are non-refundable!",
 	"Once payed for no returning!",
 	"Buying any product makes you liable for its conduction!")
@@ -127,6 +128,16 @@
 	products = list(
 					/obj/item/storage/pill_bottle/dice = 7,
 					/obj/item/storage/pill_bottle/dice_nerd = 5,
+					// D&D Figurines
+					/obj/item/toy/figure/character/rpg/warrior = 5,
+					/obj/item/toy/figure/character/rpg/cleric = 5,
+					/obj/item/toy/figure/character/rpg/thief = 5,
+					/obj/item/toy/figure/character/rpg/wizard = 5,
+					/obj/item/toy/figure/character/rpg/voidone = 5,
+					/obj/item/toy/figure/character/rpg/lich = 5,
+					/obj/item/toy/figure/character/rpg/alien = 5,
+					/obj/item/toy/figure/character/rpg/owl = 5,
+					/obj/item/toy/figure/character/rpg/griffin = 5,
 					/obj/item/storage/pill_bottle/chechker = 7,
 					/obj/item/toy/junk/dodgeball = 5,
 					/obj/item/toy/junk/dodgeball/face = 5,
@@ -157,6 +168,15 @@
 	prices = list(
 					/obj/item/storage/pill_bottle/dice = 20,
 					/obj/item/storage/pill_bottle/dice_nerd = 35,
+					/obj/item/toy/figure/character/rpg/warrior = 10,
+					/obj/item/toy/figure/character/rpg/cleric = 10,
+					/obj/item/toy/figure/character/rpg/thief = 10,
+					/obj/item/toy/figure/character/rpg/wizard = 10,
+					/obj/item/toy/figure/character/rpg/voidone = 10,
+					/obj/item/toy/figure/character/rpg/lich = 10,
+					/obj/item/toy/figure/character/rpg/alien = 10,
+					/obj/item/toy/figure/character/rpg/owl = 10,
+					/obj/item/toy/figure/character/rpg/griffin = 10,
 					/obj/item/storage/pill_bottle/chechker = 40,
 					/obj/item/storage/fancy/crayons = 150,
 					/obj/item/toy/junk/dodgeball = 15,
@@ -190,6 +210,16 @@
 	products = list(
 					/obj/item/storage/pill_bottle/dice = 3,
 					/obj/item/storage/pill_bottle/dice_nerd = 2,
+					// D&D Figurines
+					/obj/item/toy/figure/character/rpg/warrior = 5,
+					/obj/item/toy/figure/character/rpg/cleric = 5,
+					/obj/item/toy/figure/character/rpg/thief = 5,
+					/obj/item/toy/figure/character/rpg/wizard = 5,
+					/obj/item/toy/figure/character/rpg/voidone = 5,
+					/obj/item/toy/figure/character/rpg/lich = 5,
+					/obj/item/toy/figure/character/rpg/alien = 5,
+					/obj/item/toy/figure/character/rpg/owl = 5,
+					/obj/item/toy/figure/character/rpg/griffin = 5,
 					/obj/item/storage/pill_bottle/chechker = 4,
 					/obj/item/toy/junk/dodgeball = 4,
 					/obj/item/toy/junk/dodgeball/face = 4,
@@ -220,6 +250,16 @@
 	prices = list(
 					/obj/item/storage/pill_bottle/dice = 0,
 					/obj/item/storage/pill_bottle/dice_nerd = 0,
+					// D&D Figurines
+					/obj/item/toy/figure/character/rpg/warrior = 0,
+					/obj/item/toy/figure/character/rpg/cleric = 0,
+					/obj/item/toy/figure/character/rpg/thief = 0,
+					/obj/item/toy/figure/character/rpg/wizard = 0,
+					/obj/item/toy/figure/character/rpg/voidone = 0,
+					/obj/item/toy/figure/character/rpg/lich = 0,
+					/obj/item/toy/figure/character/rpg/alien = 0,
+					/obj/item/toy/figure/character/rpg/owl = 0,
+					/obj/item/toy/figure/character/rpg/griffin = 0,
 					/obj/item/storage/pill_bottle/chechker = 0,
 					/obj/item/storage/fancy/crayons = 0,
 					/obj/item/toy/junk/dodgeball = 0,
@@ -247,4 +287,39 @@
 					/obj/item/clothing/under/dodgeball_blue = 0,
 					/obj/item/clothing/under/dodgeball_red = 0)
 	always_open = TRUE
+	give_discounts = FALSE
+	give_discount_points = FALSE
 
+/obj/machinery/vending/gym
+	name = "Club\'s Total Workout"
+	desc = "A LSS vendor that sells exercise equipment."
+	product_slogans = "Usually no carcinogens!;Best sports!;Become the strongest!"
+	product_ads = "Strength!;Cheap!;There are contraindications, it is recommended to consult a medical specialist."
+	icon_state = "gym"
+
+	products = list(
+		/obj/item/gym_ticket = 150,
+		/obj/item/tool/hammer/dumbbell = 10,
+		/obj/item/reagent_containers/food/drinks/cans/energy = 10,
+		/obj/item/reagent_containers/food/drinks/protein_shake = 10
+		)
+
+	prices = list(
+		/obj/item/gym_ticket = 150, // Still half a hourly salary
+		/obj/item/tool/hammer/dumbbell = 120,
+		/obj/item/reagent_containers/food/drinks/protein_shake = 150, // Still a total ripoff, but it has mechanical use
+		/obj/item/reagent_containers/food/drinks/cans/energy = 75, // No longer overpriced colonist cola
+		/obj/item/reagent_containers/syringe/paracetamol = 150,
+		/obj/item/reagent_containers/syringe/adrenaline = 450,
+		/obj/item/reagent_containers/syringe/stim/steady = 600,
+		/obj/item/reagent_containers/syringe/stim/bouncer = 600,
+		/obj/item/reagent_containers/syringe/stim/violence = 600
+		)
+
+	contraband = list(
+		/obj/item/reagent_containers/syringe/paracetamol = 10,
+		/obj/item/reagent_containers/syringe/adrenaline = 10,
+		/obj/item/reagent_containers/syringe/stim/steady = 3,
+		/obj/item/reagent_containers/syringe/stim/bouncer = 3,
+		/obj/item/reagent_containers/syringe/stim/violence = 3
+		)

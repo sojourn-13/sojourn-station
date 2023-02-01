@@ -1,5 +1,5 @@
 /datum/reagent/stim
-	scannable = 1
+	scannable = TRUE
 	metabolism = REM/4
 	constant_metabolism = TRUE
 	reagent_type = "Stimulator"
@@ -344,7 +344,7 @@
 	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, STIM_TIME, "turbo")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "turbo")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "turbo")
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.4)
 	M.add_chemical_effect(CE_PULSE, 2)
 
 /datum/reagent/stim/turbo/withdrawal_act(mob/living/carbon/M)
@@ -370,17 +370,17 @@
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#ffb3b7"
-	overdose = REAGENTS_OVERDOSE - 18
+	overdose = REAGENTS_OVERDOSE - 20
 	nerve_system_accumulations = 70
 	addiction_chance = 50
 
 /datum/reagent/stim/party_drops/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_ADEPT, STIM_TIME, "party_drops")
-	M.stats.addTempStat(STAT_BIO, STAT_LEVEL_ADEPT, STIM_TIME, "party_drops")
-	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "party_drops")
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "party_drops")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "party_drops")
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "party_drops")
+	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "party_drops")
+	M.stats.addTempStat(STAT_BIO, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "party_drops")
+	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "party_drops")
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "party_drops")
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "party_drops")
+	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "party_drops")
 
 /datum/reagent/stim/party_drops/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "partyDrops_w")
@@ -390,7 +390,7 @@
 		M.shake_animation(8)
 
 /datum/reagent/stim/party_drops/overdose(mob/living/carbon/M, alien)
-	M.adjustOxyLoss(2)
+	M.adjustBrainLoss(2)
 	M.slurring = max(M.slurring, 30)
 	if(prob(5))
 		M.vomit()
@@ -402,24 +402,24 @@
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#ffb3b7"
-	overdose = REAGENTS_OVERDOSE - 21
+	overdose = REAGENTS_OVERDOSE - 18
 	nerve_system_accumulations = 70
 	addiction_chance = 90
 
 /datum/reagent/stim/menace/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, STIM_TIME, "menace")
-	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "menace")
-	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "menace")
-	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "menace")
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "menace")
-	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "menace")
+	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace")
+	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace")
+	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "menace")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "menace")
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "menace")
 	M.slurring = max(M.slurring, 30)
 	M.add_chemical_effect(CE_SPEECH_VOLUME, 4)
 
 /datum/reagent/stim/menace/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, STIM_TIME, "menace_w")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, STIM_TIME, "menace_w")
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, STIM_TIME, "menace_w")
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace_w")
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace_w")
+	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace_w")
 	if(prob(25 - (5 * M.stats.getMult(STAT_TGH))))
 		M.shake_animation(8)
 	M.adjustNutrition(-7)
@@ -518,7 +518,7 @@
 	taste_description = "sponge cake"
 	reagent_state = LIQUID
 	color = "#00FFFF"
-	scannable = 1
+	scannable = TRUE
 
 /datum/reagent/stim/reviver/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(20 * effect_multiplier))
@@ -535,6 +535,9 @@
 			if((L in GLOB.living_mob_list) || (L in GLOB.dead_mob_list))
 				WARNING("Mob [L] was Adenosine+ but already in the living or dead list still!")
 			GLOB.living_mob_list += L
+
+			L.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = L)
+
 
 			L.timeofdeath = 0
 			L.stat = UNCONSCIOUS //Life() can bring them back to consciousness if it needs to.

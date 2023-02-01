@@ -10,13 +10,15 @@
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 5)
-	fire_sound = 'sound/effects/bang.ogg'
 
 	release_force = 15
 	throw_distance = 30
 	var/max_rockets = 1
 	var/list/rockets = new/list()
 	serial_type = "SA"
+
+	wield_delay = 2 SECOND
+	wield_delay_factor = 0.6 // 60 vig , heavy stuff
 
 /obj/item/gun/launcher/rocket/examine(mob/user)
 	if(!..(user, 2))

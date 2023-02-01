@@ -15,15 +15,18 @@
 	unload_sound = 'sound/weapons/guns/interact/smg_magout.ogg'
 	reload_sound = 'sound/weapons/guns/interact/smg_magin.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/smg_cock.ogg'
-	zoom_factor = 0 //Default zoom factor you want on all automatic weapons.
+	zoom_factors = list()
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
 	auto_rack = TRUE
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		BURST_5_ROUND
 		)
+
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.3 // 30 vig for insta wield
 
 
 //Automatic firing
@@ -89,6 +92,6 @@
 		//Create and assign the click handler
 		//A click handler intercepts mouseup/drag/down events which allow fullauto firing
 		CH = new /datum/click_handler/fullauto()
-		CH.reciever = gun //Reciever is the gun that gets the fire events
+		CH.receiver = gun //receiver is the gun that gets the fire events
 		L.client.CH = CH //Put it on the client
 		CH.owner = L.client //And tell it where it is

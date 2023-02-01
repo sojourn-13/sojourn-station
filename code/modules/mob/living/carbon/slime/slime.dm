@@ -16,6 +16,7 @@
 
 	see_in_dark = 8
 	update_slimes = 0
+	inherent_mutations = list(MUTATION_SLIME_BONE, MUTATION_BOTTOMLESS_BELLY, MUTATION_RAND_UNSTABLE)
 
 	// canstun and canweaken don't affect slimes because they ignore stun and weakened variables
 	// for the sake of cleanliness, though, here they are.

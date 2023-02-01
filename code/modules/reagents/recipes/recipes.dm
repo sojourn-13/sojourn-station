@@ -20,7 +20,7 @@
 
 /datum/chemical_reaction/cordradaxon
 	result = "cordradaxon"
-	required_reagents = list("potassium_chloride" = 1, "blattedin" = 1, "clonexadone" = 0.1)
+	required_reagents = list("potassium_chloride" = 1, "blattedin" = 1, "cronexidone" = 0.1)
 	catalysts = list("plasma" = 5)
 	result_amount = 2
 
@@ -114,7 +114,7 @@
 
 /datum/chemical_reaction/peridaxon
 	result = "peridaxon"
-	required_reagents = list("bicaridine" = 2, "clonexadone" = 0.1)
+	required_reagents = list("bicaridine" = 2, "cronexidone" = 0.1)
 	catalysts = list("plasma" = 5)
 	result_amount = 2
 
@@ -159,7 +159,7 @@
 
 /datum/chemical_reaction/respirodaxon
 	result = "respirodaxon"
-	required_reagents = list("dexalinp" = 1, "blattedin" = 1, "clonexadone" = 0.1)
+	required_reagents = list("dexalinp" = 1, "blattedin" = 1, "cronexidone" = 0.1)
 	catalysts = list("plasma" = 5)
 	result_amount = 2
 
@@ -171,7 +171,7 @@
 
 /datum/chemical_reaction/vermicetol
 	result = "vermicetol"
-	required_reagents = list("kelotane" = 1, "dermaline" = 1, "blattedin" = 1, "cryoxadone" = 0.5, "clonexadone" = 0.5)
+	required_reagents = list("kelotane" = 1, "dermaline" = 1, "blattedin" = 1, "cryoxadone" = 0.5, "cronexidone" = 0.5)
 	catalysts = list("plasma" = 5)
 	result_amount = 2
 
@@ -201,6 +201,7 @@
 	required_reagents = list("psi_juice" = 30, "water" = 30, "silicon" = 30)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution solidifies into a cerebrix inhaler!"
 
 /datum/chemical_reaction/psi_juice_inhaler/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -241,13 +242,21 @@
 	maximum_temperature = 90
 	minimum_temperature = 45
 
-/datum/chemical_reaction/clonexadone
-	result = "clonexadone"
+/datum/chemical_reaction/cronexidone
+	result = "cronexidone"
 	required_reagents = list("cryoxadone" = 1, "sodium" = 1, "radium" = 0.1)
 	maximum_temperature = 45
 	minimum_temperature = 22.5
 	catalysts = list("plasma" = 5)
 	result_amount = 2
+
+/datum/chemical_reaction/nanitefluid
+	result = "nanofluid"
+	required_reagents = list("cronexidone" = 1, "aluminum" = 1, "iron" = 1, "uncap nanites" = 0.1) // Raw nanites mess up with Aluminum.
+	catalysts = list("plasma" = 5)
+	maximum_temperature = 98
+	minimum_temperature = 73
+	result_amount = 3
 
 /datum/chemical_reaction/spaceacillin
 	result = "spaceacillin"
@@ -336,11 +345,15 @@
 	result = "coolant"
 	required_reagents = list("tungsten" = 1, "acetone" = 1, "water" = 1)
 	result_amount = 3
-	log_is_important = 1
+
+/datum/chemical_reaction/refrigerant
+	result = "refrigerant"
+	required_reagents = list("carbon" = 1, "acetone" = 1, "water" = 1)
+	result_amount = 3
 
 /datum/chemical_reaction/rezadone
 	result = "rezadone"
-	required_reagents = list("clonexadone" = 1, "cryptobiolin" = 1, "copper" = 1)
+	required_reagents = list("cronexidone" = 1, "cryptobiolin" = 1, "copper" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/lexorin
@@ -374,6 +387,7 @@
 	required_reagents = list("slimejelly" = 100)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution coalesces into a compressed jelly jar!"
 
 /datum/chemical_reaction/compressedjelly/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var /obj/item/slime_potion/slimes_reviver/R = new /obj/item/slime_potion/slimes_reviver
@@ -399,6 +413,7 @@
 	result = null
 	required_reagents = list("iron" = 5, "frostoil" = 5, "plasma" = 20)
 	result_amount = 1
+	mix_message = "The solution coalesces into solid sheets of plasma!"
 
 /datum/chemical_reaction/plasmasolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new /obj/item/stack/material/plasma(get_turf(holder.my_atom), created_volume)
@@ -408,6 +423,7 @@
 	result = null
 	required_reagents = list("pacid" = 1, "plasticide" = 2)
 	result_amount = 1
+	mix_message = "The solution coalesces into solid sheets of plastic!"
 
 /datum/chemical_reaction/plastication/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new /obj/item/stack/material/plastic(get_turf(holder.my_atom), created_volume)
@@ -418,6 +434,7 @@
 	result = null
 	required_reagents = list("iron" = 5, "frostoil" = 5, MATERIAL_GOLD = 20)
 	result_amount = 1
+	mix_message = "The solution coalesces into solid sheets of gold! Alchemy is real!"
 
 /datum/chemical_reaction/goldsolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new /obj/item/stack/material/gold(get_turf(holder.my_atom), created_volume)
@@ -427,6 +444,7 @@
 	result = null
 	required_reagents = list("phosphorus" = 5, "frostoil" = 5, MATERIAL_URANIUM = 20)
 	result_amount = 1
+	mix_message = "The solution dangerously coalesces into solid sheets of stable uranium!"
 
 /datum/chemical_reaction/uraniumsolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new /obj/item/stack/material/uranium(get_turf(holder.my_atom), created_volume)
@@ -436,6 +454,7 @@
 	result = null
 	required_reagents = list("iron" =5, "frostoil" =5, "silver" =20)
 	result_amount =1
+	mix_message = "The solution coalesces into solid sheets of silver!"
 
 /datum/chemical_reaction/silversolidification/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new /obj/item/stack/material/silver(get_turf(holder.my_atom), created_volume)
@@ -445,6 +464,7 @@
 	result = null
 	required_reagents = list("woodpulp" = 5, "water" = 5)
 	result_amount = 1
+	mix_message = "The mixture dries up and becomes sheets of pliable cardboard."
 
 /datum/chemical_reaction/cardboardification/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new /obj/item/stack/material/cardboard(get_turf(holder.my_atom), created_volume)
@@ -457,17 +477,11 @@
 	required_reagents = list("water" = 1, "potassium" = 1)
 	result_amount = 2
 	mix_message = null
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/explosion_potassium/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/datum/effect/effect/system/reagents_explosion/e = new()
 	e.set_up(round (created_volume/45, 1), holder.my_atom, 0, 0) // 600/45 = 13.3 , 13/3 = 4-3 light-range , slightly weaker than a cracker.
-	if(isliving(holder.my_atom))
-		e.amount *= 0.5
-		var/mob/living/L = holder.my_atom
-		if(L.stat != DEAD)
-			if(e.amount >= 6)
-				L.gib()
-			e.amount *= 1.5
 	e.start()
 	holder.clear_reagents()
 	return
@@ -476,6 +490,7 @@
 	result = null
 	required_reagents = list("aluminum" = 1, "potassium" = 1, "sulfur" = 1 )
 	result_amount = null
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/flash_powder/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -485,22 +500,23 @@
 	for(var/mob/living/carbon/M in viewers(world.view, location))
 		switch(get_dist(M, location))
 			if(0 to 3)
-				if(M.eyecheck() <= FLASH_PROTECTION_MAJOR)
+				if(M.eyecheck() <= FLASH_PROTECTION_MODERATE)
 					M.flash(15, FALSE , FALSE , FALSE)
 
 			if(4 to 5)
-				if(M.eyecheck() <= FLASH_PROTECTION_MAJOR)
+				if(M.eyecheck() <= FLASH_PROTECTION_MODERATE)
 					M.flash(0, FALSE , FALSE , FALSE)
 
 /datum/chemical_reaction/emp_pulse
 	result = null
 	required_reagents = list(MATERIAL_URANIUM = 1, "iron" = 1) // Yes, laugh, it's the best recipe I could think of that makes a little bit of sense
 	result_amount = 2
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/emp_pulse/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
-	// 100 created volume = 4 heavy range & 7 light range. A few tiles smaller than traitor EMP grandes.
-	// 200 created volume = 8 heavy range & 14 light range. 4 tiles larger than traitor EMP grenades.
+	// 100 created volume = 4 heavy range & 7 light range. A few tiles smaller than contractor EMP grandes.
+	// 200 created volume = 8 heavy range & 14 light range. 4 tiles larger than contractor EMP grenades.
 	empulse(location, round(created_volume / 24), round(created_volume / 14), 1)
 	holder.clear_reagents()
 	return
@@ -510,6 +526,7 @@
 	required_reagents = list("glycerol" = 1, "pacid" = 1, "sacid" = 1)
 	result_amount = 2
 	log_is_important = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/nitroglycerin/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/datum/effect/effect/system/reagents_explosion/e = new()
@@ -520,11 +537,6 @@
 	//at created_volume/4,  doble 240 beaker bomb is 60,
 	//at created_volume/2,  doble 240 beaker bomb is 120,
 	//Given the effort it takes and hydr needed for this 10 is fine, it requires BS beakers to make a max cap.
-	if(isliving(holder.my_atom))
-		e.amount *= 0.5
-		var/mob/living/L = holder.my_atom
-		if(L.stat!=DEAD)
-			e.amount *= 0.5
 	e.start()
 
 	holder.clear_reagents()
@@ -534,6 +546,7 @@
 	result = null
 	required_reagents = list("aluminum" = 1, "plasma" = 1, "sacid" = 1 )
 	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/napalm/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/turf/location = get_turf(holder.my_atom.loc)
@@ -547,6 +560,7 @@
 	result = null
 	required_reagents = list("potassium" = 1, "sugar" = 1, "phosphorus" = 1)
 	result_amount = 0.4
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/chemsmoke/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -564,6 +578,7 @@
 	required_reagents = list("surfactant" = 1, "water" = 1)
 	result_amount = 2
 	mix_message = "The solution violently bubbles!"
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/foam/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -581,6 +596,7 @@
 	result = null
 	required_reagents = list("aluminum" = 3, "foaming_agent" = 1, "pacid" = 1)
 	result_amount = 5
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/metalfoam/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -597,6 +613,7 @@
 	result = null
 	required_reagents = list("iron" = 3, "foaming_agent" = 1, "pacid" = 1)
 	result_amount = 5
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
 
 /datum/chemical_reaction/ironfoam/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -738,7 +755,7 @@
 
 /datum/chemical_reaction/kyphotorin
 	result = "kyphotorin"
-	required_reagents = list("peridaxon" = 1, "mutagen" = 1, "clonexadone" = 1)
+	required_reagents = list("peridaxon" = 1, "mutagen" = 1, "cronexidone" = 1)
 	result_amount = 3
 
 /*
@@ -755,13 +772,13 @@
 
 /datum/chemical_reaction/quickclot
 	result = "quickclot"
-	required_reagents = list("kelotane" = 1, "clonexadone" = 1)
+	required_reagents = list("kelotane" = 1, "cronexidone" = 1)
 	result_amount = 2
 	catalysts = list("plasma" = 1)
 
 /datum/chemical_reaction/ossisine
 	result = "ossisine"
-	required_reagents = list("stoxin" = 1, "clonexadone" = 1, "bicaridine" = 1)
+	required_reagents = list("stoxin" = 1, "cronexidone" = 1, "bicaridine" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/instant_ice
@@ -774,7 +791,6 @@
 	supports_decomposition_by_electrolysis = FALSE
 	required_reagents = list("instant_ice" = 3, "water" = 3)
 	result_amount = 4
-
 
 /datum/chemical_reaction/instant_ice_with_water/on_reaction(datum/reagents/holder, var/created_volume)
 	..()
@@ -892,7 +908,7 @@
 	result = "sterilizer"
 	required_reagents = list("dermaline" = 1, "sodium" = 1, "sterilizine" = 1)
 	result_amount = 3
-	catalysts = list("clonexadone" = 5)
+	catalysts = list("cronexidone" = 5)
 
 /datum/chemical_reaction/sterilizer_crystal
 	result = null
@@ -909,6 +925,13 @@
 
 /datum/chemical_reaction/reviver
 	result = "reviver"
-	required_reagents = list("dermaline" = 1, "clonexadone" = 1, "sterilizine" = 1, "aminazine" = 1, "serotrotium" = 1, "polystem" = 1, "paroxetine" = 1,"rezadone" = 1,"spaceacillin" = 1,"rejuvenating_agent" = 1,"cordradaxon" = 1,"carthatoline" = 1,"dexalinp" = 1)
+	required_reagents = list("dermaline" = 1, "cronexidone" = 1, "sterilizine" = 1, "aminazine" = 1, "serotrotium" = 1, "polystem" = 1, "paroxetine" = 1,"rezadone" = 1,"spaceacillin" = 1,"rejuvenating_agent" = 1,"cordradaxon" = 1,"carthatoline" = 1,"dexalinp" = 1)
 	result_amount = 1
 	catalysts = list("honey" = 5)
+
+/datum/chemical_reaction/suppressital
+	result = "suppressital"
+	required_reagents = list("blood" = 1, "citalopram" = 1)
+	result_amount = 2
+	maximum_temperature = 12.7
+	minimum_temperature = 7.7

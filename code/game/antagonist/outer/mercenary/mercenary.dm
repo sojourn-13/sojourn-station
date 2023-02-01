@@ -39,13 +39,13 @@
 	O.equip(L)
 
 	//Set their language, This also adds it to their list
-	L.set_default_language(LANGUAGE_SERBIAN)
+	L.set_default_language(LANGUAGE_ILLYRIAN)
 
 	//Normal mercs can't speak common
 	L.remove_language(LANGUAGE_COMMON)
 
 	//And we'll give them a random serbian name to start off with
-	var/datum/language/lang = all_languages[LANGUAGE_SERBIAN]
+	var/datum/language/lang = all_languages[LANGUAGE_ILLYRIAN]
 	lang.set_random_name(L)
 
 	//the missingg parrt was antag's stats!

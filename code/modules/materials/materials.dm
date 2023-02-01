@@ -671,6 +671,7 @@ var/list/name_to_material
 /material/cloth //todo
 	name = MATERIAL_CLOTH
 	stack_origin_tech = list(TECH_MATERIAL = 2)
+	stack_type = /obj/item/stack/material/cloth
 	door_icon_base = "wood"
 	ignition_point = T0C+232
 	melting_point = T0C+300
@@ -679,6 +680,7 @@ var/list/name_to_material
 /material/silk //todo
 	name = MATERIAL_SILK
 	stack_origin_tech = list(TECH_MATERIAL = 2)
+	stack_type = /obj/item/stack/material/silk
 	composite_material = list(MATERIAL_BIOMATTER = 1) //So we have a vaule to more then one faction
 	door_icon_base = "wood"
 	ignition_point = T0C+232
@@ -705,6 +707,7 @@ var/list/name_to_material
 //TODO PLACEHOLDERS:
 /material/leather
 	name = MATERIAL_LEATHER
+	stack_type = /obj/item/stack/material/leather
 	icon_colour = "#5C4831"
 	stack_origin_tech = list(TECH_MATERIAL = 2)
 	flags = MATERIAL_PADDING
@@ -713,6 +716,7 @@ var/list/name_to_material
 
 /material/bone
 	name = MATERIAL_BONE
+	stack_type = /obj/item/stack/material/bone
 	icon_colour = "#EDE1D1"
 	stack_origin_tech = list(TECH_MATERIAL = 2)
 	flags = MATERIAL_PADDING
@@ -724,6 +728,7 @@ var/list/name_to_material
 /material/carpet
 	name = "carpet"
 	display_name = "comfy"
+	stack_type = /obj/item/stack/tile/carpet // The icon is red, thus red carpet by default
 	use_name = "red upholstery"
 	icon_colour = "#DA020A"
 	flags = MATERIAL_PADDING
@@ -735,6 +740,7 @@ var/list/name_to_material
 /material/cotton
 	name = "cotton"
 	display_name ="cotton"
+	stack_type = /obj/item/stack/material/cloth
 	icon_colour = "#FFFFFF"
 	flags = MATERIAL_PADDING
 	ignition_point = T0C+232

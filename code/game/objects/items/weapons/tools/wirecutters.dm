@@ -60,11 +60,12 @@
 	edge = TRUE //We
 	sharp = TRUE//Are
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 35, QUALITY_CLAMPING = 35, QUALITY_BOLT_TURNING = 35, QUALITY_BONE_SETTING = 35, QUALITY_RETRACTING = 20)
-	degradation = 0.8 //We drgrade quickly...
+	degradation = 2
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 1)
 	max_upgrades = 2
 	workspeed = 1.5
 	price_tag = 300
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/wirecutters/attack(mob/living/carbon/C as mob, mob/user as mob)
 	if(istype(C) && user.a_intent == I_HELP && (C.handcuffed) && (istype(C.handcuffed, /obj/item/handcuffs/cable)))

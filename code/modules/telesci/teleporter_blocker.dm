@@ -32,10 +32,10 @@
 	. = ..()
 	var/area/my_area = get_area(src)
 	if(my_area.bluespace_entropy)
-		to_chat(user, SPAN_NOTICE("The scanner indicates that the room can handle [my_area.bluespace_hazard_threshold] bluespace entropy before anomalous events occur."))
+		to_chat(user, SPAN_NOTICE("The inhibitor node's scanner indicates that the room can handle [my_area.bluespace_hazard_threshold] Zeframs of bluespace entropy before anomalous events occur."))
 
 	if(GLOB.bluespace_entropy)
-		to_chat(user, SPAN_NOTICE("The scanner indicates that the planet can handle [GLOB.bluespace_hazard_threshold] bluespace entropy before anomalous events occur."))
+		to_chat(user, SPAN_NOTICE("The inhibitor node's scanner indicates that the planet can handle [GLOB.bluespace_hazard_threshold] Zeframs of bluespace entropy before anomalous events occur."))
 
 /obj/machinery/telesci_inhibitor/power_change()
 	. = ..()

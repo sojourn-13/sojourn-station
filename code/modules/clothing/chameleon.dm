@@ -222,7 +222,7 @@
 		A.disguise(loadout[10], user)
 
 
-/obj/item/clothing/under/chameleon/nano_ui_interact(mob/user, ui_key, datum/nanoui/ui, force_open, datum/nanoui/master_ui, datum/topic_state/state)
+/obj/item/clothing/under/chameleon/nano_ui_interact(mob/user, ui_key, datum/nanoui/ui, force_open, datum/nanoui/master_ui, datum/nano_topic_state/state)
 	var/list/data = list()
 
 	var/list/loadouts = list()

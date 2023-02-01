@@ -28,6 +28,9 @@
 	allow_racking = FALSE
 	serial_type = "H&S"
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig
+
 /obj/item/gun/projectile/revolver/verb/spin_cylinder()
 	set name = "Spin revolver"
 	set desc = "Fun when you're bored out of your skull."

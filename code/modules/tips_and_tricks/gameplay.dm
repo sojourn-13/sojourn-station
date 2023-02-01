@@ -9,7 +9,10 @@
     tipText = "Did you know? You can click on the turf tile where an airlock is located instead of the actual airlock to toggle it."
 
 /tipsAndTricks/gameplay/fightBlob
-    tipText = "If you're trying to take on a blob, a flamethrower is your best weapon."
+    tipText = "Blobs have a nasty acid attack allowing them to in any melee melt your weapon and armor! Stay far away from them or ware bio-resistant clothing to prevent these chemical warfare tactics."
+
+/tipsAndTricks/gameplay/fightBlob_two
+    tipText = "Blobs are shockingly weak to flashbangs, and smoke grenade. Make good use of them in cases were a blob is overrunning the colony."
 
 /tipsAndTricks/gameplay/fuhrerRoachReinforcement
     tipText = "The Fuhrer roach can call for an entire battalion of reinforcement roaches. If you hear it scream, RUN!"
@@ -61,3 +64,14 @@
 
 /tipsAndTricks/gameplay/flashlights_fit_in_baton_holsters
     tipText = "Tubular and Baton Holsters can fit many things inside them, from flashlights to hatton tubes try to fit just about anything inside them to learn what can and cant fit."
+
+/tipsAndTricks/gameplay/examinetab
+    tipText = "Automatically switching to the examine tab upon examining something can be disabled in your preferences."
+
+/tipsAndTricks/gameplay/fighting_slimes
+    tipText = "Fire extinguishers, while slow, do work. But in cases were slimes are overrunning the colony it's best to get slime batons."
+
+/tipsAndTricks/gameplay/fighting_slimes_two
+    tipText = "Slimes are weaker to cold than heat. You can use frost oil or bullets to greater affect, while lasers and pepper spray only make a slime stronger!"
+
+

@@ -1,7 +1,6 @@
 /*
 	Datum-based species. Should make for much cleaner and easier to maintain race code.
 */
-#define SPECIES_BLOOD_DEFAULT 560
 /datum/species
 
 	// Descriptors and strings.
@@ -310,6 +309,8 @@
 	if(!H.druggy)
 		H.see_in_dark = (H.sight == SEE_TURFS|SEE_MOBS|SEE_OBJS) ? darksight : min(darksight + H.equipment_darkness_modifier, darksight)
 		H.see_in_dark += H.equipment_darkness_modifier
+		H.see_in_dark += H.additional_darksight //Done like this for sake of easyer to read
+
 		if(H.see_in_dark <= 0)
 			H.see_in_dark = 1
 
@@ -406,3 +407,9 @@
 		H.add_language(LANGUAGE_OPIFEXEE)
 	if(H.species.reagent_tag == IS_KRIOSAN)
 		H.add_language(LANGUAGE_KRIOSAN)
+	if(H.species.reagent_tag == IS_AKULA)
+		H.add_language(LANGUAGE_AKULA)
+	if(H.species.reagent_tag == IS_MARQUA)
+		H.add_language(LANGUAGE_MARQUA)
+	if(H.species.reagent_tag == IS_TREE)
+		H.add_language(LANGUAGE_PLANT)

@@ -71,6 +71,9 @@ Bullet also tend to have more armor against them do to this and can be douged un
 	if(istype(A, /turf/simulated/wall))
 		var/turf/simulated/wall/W = A
 		chance = round(damage/W.material.integrity*180)
+	else if(istype(A, /obj/item/shield)) // Shields block projectiles as intended
+		var/obj/item/shield/S = A
+		chance = round(S.durability / armor_penetration)
 	else if(istype(A, /obj/machinery/door))
 		var/obj/machinery/door/D = A
 		chance = round(damage/D.maxHealth*180)
@@ -81,9 +84,10 @@ Bullet also tend to have more armor against them do to this and can be douged un
 		chance = damage
 
 	if(prob(chance) || (A in holder.force_penetration_on))
-		if(A.opacity)
+		if(A.opacity || istype(A, /obj/item/shield))
 			//display a message so that people on the other side aren't so confused
 			A.visible_message(SPAN_WARNING("\The [src] pierces through \the [A]!"))
+			playsound(A.loc, 'sound/weapons/shield/shieldpen.ogg', 50, 1)
 		if (testing)
 			holder.force_penetration_on += A //we are only tracking as a trace
 		else
@@ -156,3 +160,13 @@ Bullet also tend to have more armor against them do to this and can be douged un
 			if(M.lying || !M.CanPass(src, loc)) //Bump if lying or if we would normally Bump.
 				if(Bump(M)) //Bump will make sure we don't hit a mob multiple times
 					return
+
+/obj/item/projectile/bullet/pellet/adjust_damages(var/list/newdamages)
+	if(!newdamages.len)
+		return
+	for(var/damage_type in newdamages)
+		var/bonus = pellets > 2 ? newdamages[damage_type] / pellets * 2 : newdamages[damage_type]
+		if(damage_type == IRRADIATE)
+			irradiate += bonus
+			continue
+		damage_types[damage_type] += bonus

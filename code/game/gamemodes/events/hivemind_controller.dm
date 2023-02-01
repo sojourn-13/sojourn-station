@@ -7,7 +7,8 @@ GLOBAL_LIST_INIT(hive_data_bool, list(
 	"tyrant_death_kills_hive"		= FALSE,
 	"all_church_to_battle"			= FALSE,
 	"gibbing_dead"					= FALSE,
-	"pop_lock"						= TRUE))
+	"pop_lock"						= TRUE,
+	"slime_pop_lock"				= TRUE))
 
 GLOBAL_LIST_INIT(hive_data_float, list(
 	"maximum_controlled_areas"		= 0, // Stop expansion when controlling certain number of areas, 0 to disable
@@ -115,6 +116,9 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	data += "<br>Prevent Hivemind Events Below 15 Pop: [GLOB.hive_data_bool["pop_lock"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_pop_lock=1'>\[TOGGLE\]</a>"
 
+	data += "<br>Prevent Blob Events Below 7 Pop: [GLOB.hive_data_bool["slime_pop_lock"] ? "Enabled" : "Disabled"] \
+	<a href='?src=\ref[src];toggle_slime_pop_lock=1'>\[TOGGLE\]</a>"
+
 	data += "</td></tr></table>"
 	usr << browse(data, "window=hive_main;size=600x600")
 
@@ -206,6 +210,8 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	if(href_list["toggle_pop_lock"])
 		GLOB.hive_data_bool["pop_lock"] = !GLOB.hive_data_bool["pop_lock"]
 
+	if(href_list["toggle_slime_pop_lock"])
+		GLOB.hive_data_bool["slime_pop_lock"] = !GLOB.hive_data_bool["slime_pop_lock"]
 
 	if(href_list["toggle_inquisitors"])
 		GLOB.hive_data_bool["all_church_to_battle"] = !GLOB.hive_data_bool["all_church_to_battle"]

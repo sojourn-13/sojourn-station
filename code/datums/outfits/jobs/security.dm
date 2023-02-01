@@ -1,6 +1,6 @@
 /decl/hierarchy/outfit/job/security
 	hierarchy_type = /decl/hierarchy/outfit/job/security
-	l_ear = /obj/item/device/radio/headset/headset_sec
+	l_ear = /obj/item/device/radio/headset/headset_sec/bowman
 	gloves = /obj/item/clothing/gloves/thick
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_type = /obj/item/card/id/sec
@@ -13,13 +13,12 @@
 
 /decl/hierarchy/outfit/job/security/swo
 	name = OUTFIT_JOB_NAME("Marshal - Warrant Officer")
-	l_ear = /obj/item/device/radio/headset/heads/hos
+	l_ear = /obj/item/device/radio/headset/heads/hos/bowman
 	uniform = /obj/item/clothing/under/rank/ih_commander
 	suit = /obj/item/clothing/suit/armor/hos
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/stungloves
 	glasses = /obj/item/clothing/glasses/sechud/tactical
-	belt = /obj/item/gun/projectile/lamia/amnesty
 	id_type = /obj/item/card/id/hos
 	head = /obj/item/clothing/head/rank/commander
 	pda_type = /obj/item/modular_computer/pda/heads/hos
@@ -33,7 +32,6 @@
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/stungloves
 	glasses = /obj/item/clothing/glasses/ballistic
-	belt = /obj/item/gun/projectile/lamia
 	id_type = /obj/item/card/id/hos
 	head = /obj/item/clothing/head/rank/milcom
 	pda_type = /obj/item/modular_computer/pda/heads/hos
@@ -53,8 +51,8 @@
 /decl/hierarchy/outfit/job/security/serg
 	name = OUTFIT_JOB_NAME("Blackshield - Sergeant")
 	l_ear = /obj/item/device/radio/headset/headset_blackshield
-	uniform = /obj/item/clothing/under/instructor
-	head = /obj/item/clothing/head/rank/instructor_hat
+	uniform = /obj/item/clothing/under/rank/armorer/gorka
+	head = /obj/item/clothing/head/rank/armorer/cap
 	glasses = /obj/item/clothing/glasses/ballistic
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/thick/swat/blackshield
@@ -82,7 +80,7 @@
 /decl/hierarchy/outfit/job/security/medspec
 	name = OUTFIT_JOB_NAME("Blackshield - Corpsman")
 	l_pocket = /obj/item/device/flash
-	l_ear = /obj/item/device/radio/headset/headset_blackshield
+	l_ear = /obj/item/device/radio/headset/headset_blackshield/corps
 	id_type = /obj/item/card/id/medcpec
 	uniform = /obj/item/clothing/under/rank/corpsman
 	head = /obj/item/clothing/head/rank/corpsman/beret
@@ -105,7 +103,7 @@
 	name = OUTFIT_JOB_NAME("Blackshield - Trooper")
 	l_ear = /obj/item/device/radio/headset/headset_blackshield
 	l_pocket = /obj/item/device/flash
-	uniform = /obj/item/clothing/under/rank/trooper
+	uniform = /obj/item/clothing/under/rank/trooper/gorka
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/ballistic
 	head = /obj/item/clothing/head/rank/trooper/cap

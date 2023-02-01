@@ -30,7 +30,7 @@
 	. = ..()
 	screenOverlay = global_hud.thermal
 
-/obj/item/clothing/glasses/powered/thermal/syndi	//These are now a traitor item, concealed as mesons.	-Pete
+/obj/item/clothing/glasses/powered/thermal/syndi	//These are now a contractor item, concealed as mesons.	-Pete
 	name = "optical meson scanner"
 	desc = "Used for seeing walls, floors, and stuff through anything."
 	icon_state = "meson"
@@ -39,9 +39,11 @@
 
 /obj/item/clothing/glasses/powered/thermal/onestar
 	name = "type-73 zhenchayuan goggles"
-	desc = "Incredibly GP thermals in the shape of goggles."
+	desc = "Previously nothing more than a prototype, these Greyson Positronic thermal goggles are incredibly battery-efficient."
 	icon_state = "onestar_thermal"
 	off_state = "onestar_thermal"
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 5, MATERIAL_PLATINUM = 2) // GP tech all use platinum
+	tick_cost = 0.25 // 400 ticks on a stock cell. Incredibly efficient due to being cutting edge tech, also justifies the research node rather than just taking syndie ones.
 
 /obj/item/clothing/glasses/powered/thermal/plain
 	toggleable = FALSE
@@ -49,8 +51,8 @@
 	action_button_name = null
 
 /obj/item/clothing/glasses/powered/thermal/plain/monocle
-	name = "thermoncle"
-	desc = "A monocle thermal."
+	name = "thermonocle"
+	desc = "A monocle with a thermal lens installed."
 	icon_state = "thermoncle"
 	flags = null //doesn't protect eyes because it's a monocle, duh
 
@@ -58,13 +60,13 @@
 
 /obj/item/clothing/glasses/powered/thermal/plain/eyepatch
 	name = "optical thermal eyepatch"
-	desc = "An eyepatch with built-in thermal optics"
+	desc = "An eyepatch with built-in thermal optics."
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
 	body_parts_covered = 0
 
 /obj/item/clothing/glasses/powered/thermal/plain/jensen
 	name = "optical thermal implants"
-	desc = "A set of implantable lenses designed to augment your vision"
+	desc = "A set of implantable lenses designed to augment your vision."
 	icon_state = "thermalimplants"
 	item_state = "syringe_kit"

@@ -91,18 +91,16 @@ SUBSYSTEM_DEF(mapping)
 	flags |= SS_NO_INIT
 
 /hook/roundstart/proc/init_overmap_events()
-	if (config.use_overmap)
-		if (GLOB.maps_data.overmap_z)
+	if(config.use_overmap)
+		if(GLOB.maps_data.overmap_z)
 			testing("Creating overmap events...")
-			var/t1 = world.tick_usage
+			//testing_variable(t1, world.tick_usage)
 			overmap_event_handler.create_events(GLOB.maps_data.overmap_z, GLOB.maps_data.overmap_size, GLOB.maps_data.overmap_event_areas)
-			testing("Overmap events created in [(world.tick_usage-t1)*0.01*world.tick_lag] seconds")
+			//testing("Overmap events created in [(world.tick_usage-t1)*0.01*world.tick_lag] seconds")
 		else
 			testing("Overmap failed to create events.")
 			return FALSE
 	return TRUE
-
-
 
 /datum/controller/subsystem/mapping/proc/load_map_templates()
 	for(var/T in subtypesof(/datum/map_template))

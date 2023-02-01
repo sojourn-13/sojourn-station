@@ -4,7 +4,7 @@
 	desc = "Looking at this makes you feel nervous."
 	organ_efficiency = list(OP_NERVE = 100)
 	price_tag = 100
-	specific_organ_size = 0.5
+	specific_organ_size = 1
 	blood_req = 0.5
 	max_blood_storage = 2.5
 	nutriment_req = 0.5
@@ -45,7 +45,7 @@
 	price_tag = 150
 	icon_state = "nerve_sensitive"
 	organ_efficiency = list(OP_NERVE = 150)
-	specific_organ_size = 0.6
+	specific_organ_size = 1.1
 
 /obj/item/organ/internal/nerve/sensitive_nerve/exalt
 	name = "exalt nerve synapses"

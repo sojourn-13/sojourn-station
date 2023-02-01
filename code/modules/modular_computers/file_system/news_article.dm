@@ -88,6 +88,7 @@
 /datum/computer_file/data/news_article/Official_Marshal_communique
 	filename = "Official Marshal communique"
 	server_file_path = 'news_articles/Official_Marshal_communique.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/kros_news
 	filename = "Official Marshal communique"
@@ -97,3 +98,10 @@
 	filename = "Trouble in Sector N-2"
 	server_file_path = 'news_articles/kros_news_ii.html'
 
+/datum/computer_file/data/news_article/fire_in_jungle
+	filename = "Fire In The Jungle"
+	server_file_path = 'news_articles/FIRE_IN_THE_JUNGLE.html'
+
+/datum/computer_file/data/news_article/Mangos_Untitled_Stream
+	filename = "Mango's Untitled Stream #473"
+	server_file_path = 'news_articles/Mangos_Untitled_Stream.html'

@@ -54,7 +54,7 @@ SUBSYSTEM_DEF(tickets)
 		for(var/num in stales)
 			report += "[num], "
 		log_admin("<span class='[span_class]'>Tickets [report] have been open for over [TICKET_TIMEOUT / 600] minutes. Changing status to stale.</span>")
-		message_admins("<span class='[span_class]'>Tickets [report] have been open for over [TICKET_TIMEOUT / 600] minutes. Changing status to stale.</span>")
+		message_admins("<span class='[span_class]'>Tickets [report] have been open for over [TICKET_TIMEOUT / 600] minutes. Changing status to stale.</span>", mod_send_message = TRUE)
 
 /datum/controller/subsystem/tickets/stat_entry()
 	..("Tickets: [LAZYLEN(allTickets)]")
@@ -103,7 +103,7 @@ SUBSYSTEM_DEF(tickets)
 		to_chat(C.mob, "<span class='[span_class]'>Your [ticket_name] #[ticketNum] remains open! Visit \"My tickets\" under the Admin Tab to view it.</span>")
 		var/url_message = makeUrlMessage(C, text, ticketNum)
 		log_admin(url_message)
-		message_admins(url_message)
+		message_admins(url_message, mod_send_message = TRUE)
 	else
 		newTicket(C, text, text)
 		// Play adminhelp sound to all admins who have not disabled it in preferences
@@ -151,14 +151,14 @@ SUBSYSTEM_DEF(tickets)
 	sound_to(C, "sound/effects/adminhelp.ogg")
 
 	log_admin(url_title)
-	message_admins(url_title)
+	message_admins(url_title, mod_send_message = TRUE)
 
 //Set ticket state with key N to open
 /datum/controller/subsystem/tickets/proc/openTicket(N)
 	var/datum/ticket/T = allTickets[N]
 	if(T.ticketState != TICKET_OPEN)
 		log_admin("<span class='[span_class]'>[usr.client] / ([usr]) re-opened [ticket_name] number [N]</span>")
-		message_admins("<span class='[span_class]'>[usr.client] / ([usr]) re-opened [ticket_name] number [N]</span>")
+		message_admins("<span class='[span_class]'>[usr.client] / ([usr]) re-opened [ticket_name] number [N]</span>", mod_send_message = TRUE)
 		T.ticketState = TICKET_OPEN
 		return TRUE
 
@@ -168,7 +168,7 @@ SUBSYSTEM_DEF(tickets)
 	if(T.ticketState != TICKET_RESOLVED)
 		T.ticketState = TICKET_RESOLVED
 		log_admin("<span class='[span_class]'>[usr.client] / ([usr]) resolved [ticket_name] number [N]</span>")
-		message_admins("<span class='[span_class]'>[usr.client] / ([usr]) resolved [ticket_name] number [N]</span>")
+		message_admins("<span class='[span_class]'>[usr.client] / ([usr]) resolved [ticket_name] number [N]</span>", mod_send_message = TRUE)
 		to_chat_safe(returnClient(N), "<span class='[span_class]'>Your [ticket_name] has now been resolved.</span>")
 		return TRUE
 
@@ -200,7 +200,7 @@ SUBSYSTEM_DEF(tickets)
 	to_chat_safe(owner, list("<span class='[span_class]'>[C] has converted your ticket to a [other_ticket_name] ticket.</span>",\
 									"<span class='[span_class]'>Be sure to use the correct type of help next time!</span>"))
 	log_admin("<span class='[span_class]'>[C] has converted ticket number [T.ticketNum] to a [other_ticket_name] ticket.</span>")
-	message_admins("<span class='[span_class]'>[C] has converted ticket number [T.ticketNum] to a [other_ticket_name] ticket.</span>")
+	message_admins("<span class='[span_class]'>[C] has converted ticket number [T.ticketNum] to a [other_ticket_name] ticket.</span>", mod_send_message = TRUE)
 	create_other_system_ticket(T)
 
 /datum/controller/subsystem/tickets/proc/create_other_system_ticket(datum/ticket/T)
@@ -263,7 +263,7 @@ SUBSYSTEM_DEF(tickets)
 	var/datum/ticket/T = allTickets[N]
 	if(T.ticketState != TICKET_CLOSED)
 		log_admin("<span class='[span_class]'>[usr.client] / ([usr]) closed [ticket_name] number [N]</span>")
-		message_admins("<span class='[span_class]'>[usr.client] / ([usr]) closed [ticket_name] number [N]</span>")
+		message_admins("<span class='[span_class]'>[usr.client] / ([usr]) closed [ticket_name] number [N]</span>", mod_send_message = TRUE)
 		to_chat_safe(returnClient(N), close_messages)
 		T.ticketState = TICKET_CLOSED
 		return TRUE
@@ -606,7 +606,7 @@ UI STUFF
 /datum/controller/subsystem/tickets/proc/takeTicket(var/index)
 	if(assignStaffToTicket(usr.client, index))
 		log_admin("<span class='[span_class]'>[usr.client] / ([usr]) has taken [ticket_name] number [index]</span>")
-		message_admins("<span class='[span_class]'>[usr.client] / ([usr]) has taken [ticket_name] number [index]</span>")
+		message_admins("<span class='[span_class]'>[usr.client] / ([usr]) has taken [ticket_name] number [index]</span>", mod_send_message = TRUE)
 		to_chat_safe(returnClient(index), "<span class='[span_class]'>Your [ticket_name] is being handled by [usr.client].</span>")
 
 /datum/controller/subsystem/tickets/proc/unassignTicket(index)
@@ -615,7 +615,7 @@ UI STUFF
 		T.staffAssigned = null
 		to_chat_safe(returnClient(index), "<span class='[span_class]'>Your [ticket_name] has been unassigned. Another staff member will help you soon.</span>")
 		log_admin("<span class='[span_class]'>[usr.client] / ([usr]) has unassigned [ticket_name] number [index]</span>")
-		message_admins("<span class='[span_class]'>[usr.client] / ([usr]) has unassigned [ticket_name] number [index]</span>")
+		message_admins("<span class='[span_class]'>[usr.client] / ([usr]) has unassigned [ticket_name] number [index]</span>", mod_send_message = TRUE)
 
 #undef TICKET_STAFF_MESSAGE_ADMIN_CHANNEL
 #undef TICKET_STAFF_MESSAGE_PREFIX

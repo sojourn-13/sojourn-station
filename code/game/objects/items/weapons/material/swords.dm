@@ -58,6 +58,7 @@
 	desc = "Woefully underpowered in D20. This one looks pretty sharp."
 	icon_state = "katana"
 	item_state = "katana"
+	hitsound = 'sound/weapons/heavyslash.ogg'
 	slot_flags = SLOT_BELT | SLOT_BACK
 
 /obj/item/material/sword/katana/update_icon()

@@ -88,6 +88,38 @@
 /datum/genetics/mutation_recipe/combination/reaper/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/giant_spider/tarantula/emperor/reaper_spider, "reaper spider")
 */
+
+//======================================================================
+//Termite Combinations
+/datum/genetics/mutation_recipe/irradiation/termite
+	required_on_clone_types = list(/mob/living/carbon/superior_animal/termite)
+
+/datum/genetics/mutation_recipe/irradiation/termite/get_result()
+	var/list/random_termite = pick(
+		list("type" = /mob/living/carbon/superior_animal/termite, "name" = "Pekhota termite"),
+		list("type" = /mob/living/carbon/superior_animal/termite/iron, "name" = "Pomoshchnik termite"),
+		list("type" = /mob/living/carbon/superior_animal/termite/silver, "name" = "Pushka termite"),
+		list("type" = /mob/living/carbon/superior_animal/termite/uranium, "name" = "Smertnik termite"),
+		list("type" = /mob/living/carbon/superior_animal/termite/plasma, "name" = "Kop'ye termite"))
+	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(random_termite["type"], random_termite["name"])
+	return new_mutation
+//=======================
+//Queen
+/datum/genetics/mutation_recipe/combination/queen_termite
+	required_on_clone_types = list(/mob/living/carbon/superior_animal/termite/silver)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/queen_termite/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/termite/diamond, "Koroleva termite")
+//=======================
+//King
+/datum/genetics/mutation_recipe/combination/king_termite
+	required_on_clone_types = list(/mob/living/carbon/superior_animal/termite/plasma)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/king_termite/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/termite/osmium, "Korol termite")
+
 //======================================================================
 //Increase Cow.
 /datum/genetics/mutation_recipe/combination/tatonka_1
@@ -96,7 +128,7 @@
 /datum/genetics/mutation_recipe/combination/tatonka_1/get_result()
 	var/datum/genetics/mutation/new_mutation = new /datum/genetics/mutation/copy_mob(/mob/living/carbon/superior_animal/lodge/tatonka, "tatonka")
 	return new_mutation
-//======================================================================
+//====================
 //Increase Cow FURTHER.
 /datum/genetics/mutation_recipe/combination/tangu_1
 	required_mutations = list(MUTATION_COW_SKIN, MUTATION_COW_SKIN)
@@ -235,13 +267,19 @@
 
 //======================================================================
 //Bears
+/datum/genetics/mutation_recipe/combination/bear
+	required_on_clone_types = list(/mob/living/simple_animal/corgi)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/bear/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/bear, "bear")
+//=======================
 /datum/genetics/mutation_recipe/combination/bear_brown
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/bear)
 	required_mutations = list(MUTATION_CHOC_MILK)
 
 /datum/genetics/mutation_recipe/combination/bear_brown/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/bear/brown, "brown bear")
-
 //=======================
 /datum/genetics/mutation_recipe/combination/bear_polar
 	required_on_clone_types = list(/mob/living/simple_animal/hostile/bear)
@@ -294,3 +332,26 @@
 
 /datum/genetics/mutation_recipe/combination/mouse/get_result()
 	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/opossum, "opossom")
+
+//======================================================================
+//cat and panther
+/datum/genetics/mutation_recipe/combination/kitten
+	required_on_clone_types = list(/mob/living/simple_animal/cat)
+	required_mutations = list(MUTATION_DWARFISM)
+
+/datum/genetics/mutation_recipe/combination/kitten/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/cat/kitten, "kitten")
+
+/datum/genetics/mutation_recipe/combination/cat
+	required_on_clone_types = list(/mob/living/simple_animal/cat/kitten)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/cat/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/cat, "cat")
+
+/datum/genetics/mutation_recipe/combination/panther
+	required_on_clone_types = list(/mob/living/simple_animal/cat)
+	required_mutations = list(MUTATION_GIGANTISM)
+
+/datum/genetics/mutation_recipe/combination/panther/get_result()
+	return new /datum/genetics/mutation/copy_mob(/mob/living/simple_animal/hostile/panther, "panther")

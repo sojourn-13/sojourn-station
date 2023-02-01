@@ -16,8 +16,8 @@
 		STAT_TGH = 3,
 		STAT_VIG = 5,
 		STAT_BIO = 0,
-		STAT_MEC = -8,
-		STAT_COG = 5
+		STAT_MEC = 8, // Working mechanical jobs for most of your life, you should know how to use tools
+		STAT_COG = -5 // No education
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/pressered_in_life
@@ -46,12 +46,12 @@
 	danger is present. This certainly made switching to regular life a bit of a culture shock."
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 2,
-		STAT_VIG = -4,
+		STAT_ROB = -5,
+		STAT_TGH = -5, // Physically weak
+		STAT_VIG = -2, // Naivety from sheltered upbringing
 		STAT_BIO = 5,
 		STAT_MEC = 5,
-		STAT_COG = -3
+		STAT_COG = 5 // Education
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/refugee
@@ -103,7 +103,8 @@
 		STAT_VIG = 4,
 		STAT_BIO = 6,
 		STAT_MEC = 0,
-		STAT_COG = 5
+		STAT_COG = -5, // Brain fried from drugs
+		STAT_VIV = 5
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/klutz
@@ -119,21 +120,21 @@
 		STAT_VIG = -20,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_COG = -5 // Dumb, or just careless
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/no_light
-	name = "Achromatic Lifestyle"
+	name = "Umbral Upbringing"
 	desc = "Much of your early life was spent in areas which did not have much, if any, natural light. This may have been planetary where stretches of time hid your world from the sun's light \
 	or you lived in an area where light wasn't a feasible resource due to economic, biological, or local reasons. Whatever the specifics, you've gotten highly adapted to finding your way through the \
-	dark, a shame this lifestyle didn't sharpen your eyesight as much as you'd have liked."
+	dark, your pupils widening faster to better take in your surroundings. This quick adaptation however, has led you to become more photosensitive to sudden bright lights and flashes."
 
 	perks = list(/datum/perk/nightcrawler)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
 		STAT_TGH = 0,
-		STAT_VIG = 0,
+		STAT_VIG = 5, // Eyes of an eagle
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -164,8 +165,8 @@
 		STAT_ROB = 0,
 		STAT_TGH = 0,
 		STAT_VIG = 4,
-		STAT_BIO = 8,
-		STAT_MEC = 8,
+		STAT_BIO = 4,
+		STAT_MEC = 4,
 		STAT_COG = -15
 	)
 
@@ -179,12 +180,12 @@
 	perks = list(/datum/perk/psi_harmony)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
-		STAT_VIG = 0,
+		STAT_ROB = -2,
+		STAT_TGH = -2, // Peaceful thoughts eschew you from applying violence
+		STAT_VIG = 2,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_COG = 5 // A peaceful mind is a focused mind.
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/psionic_mania
@@ -197,12 +198,12 @@
 	perks = list(/datum/perk/psi_mania)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 0,
+		STAT_ROB = 2,
+		STAT_TGH = 2, // Hardened by violent thoughts probably put to practice
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 0
+		STAT_COG = -5 // Violence clouds the mind, tradeoff for a good perk that never had any mechanical drawbacks
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/razor_maniac

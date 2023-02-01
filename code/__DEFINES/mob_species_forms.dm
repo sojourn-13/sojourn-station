@@ -59,6 +59,7 @@
 #define FORM_CANINE				"Canine"
 #define FORM_FELINE				"Feline"
 #define FORM_SHARK				"Shark"
+#define FORM_SUDAK				"Shark (Snoutless)"
 #define FORM_LIZARD				"Lizard"
 #define FORM_LIZARD_TGSHARP     "Sharp-Snouted Lizard"
 #define FORM_LIZARD_TGSMOOTH    "Smooth-Snouted Lizard"

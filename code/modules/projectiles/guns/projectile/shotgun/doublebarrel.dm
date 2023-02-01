@@ -30,6 +30,8 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/doublebarrel/sawn
 	serial_type = "SA"
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.3 // 30 vig , great as a surprise
 
 /obj/item/gun/projectile/shotgun/doublebarrel/update_icon()
 	..()
@@ -103,6 +105,8 @@
 	damage_multiplier = 0.8 //slightly weaker due to sawn-off barrels
 	init_recoil = RIFLE_RECOIL(1.1)
 	saw_off = FALSE
+
+	wield_delay = 0 SECOND //KER-BLAM!!!
 
 /obj/item/gun/projectile/shotgun/doublebarrel/axe
 	name = "axe double-barreled shotgun"

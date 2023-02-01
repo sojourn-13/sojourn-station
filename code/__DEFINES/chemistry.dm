@@ -39,11 +39,14 @@
 // Some on_mob_life() procs check for alien races.
 #define IS_XENOS   1
 #define IS_CHTMANT 2
-#define IS_OPIFEX 3
-#define IS_SYNTHETIC 4
-#define IS_SLIME 5
-#define IS_MARQUA 6
-#define IS_KRIOSAN 7
+#define IS_SYNTHETIC 3
+#define IS_SLIME 4
+#define IS_MARQUA 5
+#define IS_KRIOSAN 6
+#define IS_AKULA 7
+#define IS_TREE 8
+#define IS_OPIFEX 9
+
 
 #define CE_STABLE "stable" // Inaprovaline
 #define CE_ANTIBIOTIC "antibiotic" // Spaceacilin

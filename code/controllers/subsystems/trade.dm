@@ -160,6 +160,38 @@ SUBSYSTEM_DEF(trade)
 			return station
 	return FALSE
 
+// Automatically sorts paths by child to parent
+/datum/controller/subsystem/trade/proc/add_to_offer_types(path)
+	if(!islist(offer_types))
+		offer_types = list()
+
+	if(!offer_types.len)
+		offer_types.Add(path)
+		offer_types[path] += 1
+		return
+
+	var/type_to_move
+	var/value_to_move
+
+	for(var/offer_type in offer_types)
+		if(path == offer_type)
+			offer_types[offer_type] += 1
+			return
+		if(ispath(path, offer_type))
+			type_to_move = offer_type
+			value_to_move = offer_types[offer_type]
+			offer_types.Remove(offer_type)
+			break
+		else if(ispath(offer_type, path))
+			break
+
+	offer_types |= path
+	offer_types[path] += 1
+
+	if(type_to_move && value_to_move)
+		offer_types.Add(type_to_move)
+		offer_types[type_to_move] = value_to_move
+
 // === PRICING ===
 
 // Returns cost of an existing object including contents
@@ -204,7 +236,7 @@ SUBSYSTEM_DEF(trade)
 
 // Checks item stacks and item containers to see if they match their base states (no more selling empty first-aid kits or split item stacks as if they were full)
 // Checks reagent containers to see if they match their base state or if they match the special offer from a station
-/datum/controller/subsystem/trade/proc/check_offer_contents(item, offer_path)
+/datum/controller/subsystem/trade/proc/check_contents(item, offer_path)
 	if(istype(item, /obj/item/reagent_containers))
 		var/obj/item/reagent_containers/current_container = item
 		var/datum/reagent/target_reagent = offer_path
@@ -240,16 +272,33 @@ SUBSYSTEM_DEF(trade)
 
 	return TRUE		// Otherwise, pass since we're not checking for anything with special considerations (reagents, stacks, containers) if the previous checks did not return
 
-/datum/controller/subsystem/trade/proc/assess_offer(obj/machinery/trade_beacon/sending/beacon, offer_path)
+/datum/controller/subsystem/trade/proc/check_attachments(item, offer_path, list/attachments, attach_count)
+	if(attachments && attach_count)
+		var/obj/item/I = item
+		if(I.item_upgrades && I.item_upgrades.len)
+			var/success_count = 0
+			for(var/mod in I.item_upgrades)
+				var/list/attachments_to_compare = attachments.Copy()
+				for(var/path in attachments_to_compare)
+					if(istype(mod, path))
+						++success_count
+						if(attachments_to_compare.len == attach_count)
+							attachments_to_compare.Remove(path)
+			if(success_count >= attach_count)
+				return TRUE
+		return FALSE	// If we're looking for attachments and the item has no upgrades, fail
+	return TRUE			// If attachments and attach_count are null, we're not looking for an item with attactments
+
+/datum/controller/subsystem/trade/proc/assess_offer(obj/machinery/trade_beacon/sending/beacon, offer_path, list/attachments = null, attach_count = null)
 	if(QDELETED(beacon))
 		return
-		
+
 	. = list()
 
 	for(var/atom/movable/AM in beacon.get_objects())
 		if(AM.anchored || !(istype(AM, offer_path) || ispath(offer_path, /datum/reagent)))
 			continue
-		if(!check_offer_contents(AM, offer_path))		// Check contents after we know it's the same type
+		if(!check_attachments(AM, offer_path, attachments, attach_count) || !check_contents(AM, offer_path))		// Check contents after we know it's the same type
 			continue
 		. += AM
 
@@ -263,7 +312,7 @@ SUBSYSTEM_DEF(trade)
 		for(var/offer_path in offer_types)
 			if(AM.anchored || !(istype(AM, offer_path) || ispath(offer_path, /datum/reagent)))
 				continue
-			if(!check_offer_contents(AM, offer_path))		// Check contents after we know it's the same type
+			if(!check_contents(AM, offer_path))		// Check contents after we know it's the same type
 				continue
 			if(!islist(all_offers[offer_path]))
 				all_offers[offer_path] = list()
@@ -277,9 +326,8 @@ SUBSYSTEM_DEF(trade)
 	return all_offers
 
 /datum/controller/subsystem/trade/proc/fulfill_offer(obj/machinery/trade_beacon/sending/beacon, datum/money_account/account, datum/trade_station/station, offer_path, is_slaved = FALSE)
-	var/list/exported = assess_offer(beacon, offer_path)
-
 	var/list/offer_content = station.special_offers[offer_path]
+	var/list/exported = assess_offer(beacon, offer_path, offer_content["attachments"], offer_content["attach_count"])
 	var/offer_amount = text2num(offer_content["amount"])
 	var/offer_price = text2num(offer_content["price"])
 	if(!exported || length(exported) < offer_amount || !offer_amount)
@@ -325,17 +373,31 @@ SUBSYSTEM_DEF(trade)
 
 /datum/controller/subsystem/trade/proc/fulfill_all_offers(obj/machinery/trade_beacon/sending/beacon, datum/money_account/account, is_slaved = FALSE)
 	var/list/exported = assess_all_offers(beacon)
+	var/list/reversed_stations = reverseRange(discovered_stations.Copy()) // Most recently discovered stations are checked first
 
-	for(var/station in discovered_stations)
+	for(var/station in reversed_stations)
 		var/datum/trade_station/TS = station
 
 		for(var/offer_path in TS.offer_types)
 			var/list/offer_content = TS.special_offers[offer_path]
 			var/offer_amount = text2num(offer_content["amount"])
 			var/offer_price = text2num(offer_content["price"])
+			var/list/offer_attachments = offer_content["attachments"]
+			var/offer_attach_count = offer_content["attach_count"]
 			var/list/item_list = exported[offer_path]
 
-			if(!item_list || item_list.len < offer_amount || !offer_amount)
+			if(!item_list || !offer_amount)
+				continue
+
+			// Check attachments after assessing offers since we need station-specific info
+			if(offer_attach_count > 0)
+				var/list/checked_item_list = list()
+				for(var/item in item_list)
+					if(check_attachments(item, offer_path, offer_attachments, offer_attach_count))
+						checked_item_list += item
+				item_list = checked_item_list
+
+			if(item_list.len < offer_amount)
 				continue
 
 			if(account)
@@ -404,15 +466,20 @@ SUBSYSTEM_DEF(trade)
 	for(var/path in category)
 		. += get_import_cost(path, station) * category[path]
 
-/datum/controller/subsystem/trade/proc/buy(obj/machinery/trade_beacon/receiving/senderBeacon, datum/money_account/account, list/shopList)
+/datum/controller/subsystem/trade/proc/buy(obj/machinery/trade_beacon/receiving/senderBeacon, datum/money_account/account, list/shopList, is_order = FALSE, buyer_name = null)
 	if(QDELETED(senderBeacon) || !istype(senderBeacon) || !account || !recursiveLen(shopList))
 		return
 
-	var/obj/structure/closet/crate/C
+	var/obj/structure/closet/secure_closet/personal/trade/C
 	var/count_of_all = collect_counts_from(shopList)
 	var/price_for_all = collect_price_for_list(shopList)
 	if(isnum(count_of_all) && count_of_all > 1)
-		C = senderBeacon.drop(/obj/structure/closet/crate)
+		C = senderBeacon.drop(/obj/structure/closet/secure_closet/personal/trade)
+		if(is_order)
+			C.locked = TRUE
+			C.registered_name = buyer_name
+			C.name = "[initial(C.name)] ([C.registered_name])"
+			C.update_icon()
 	if(price_for_all && get_account_credits(account) < price_for_all)
 		return
 
@@ -486,13 +553,24 @@ SUBSYSTEM_DEF(trade)
 
 	var/invoice_contents_info
 	var/cost = 0
+	var/item_counter = 0
+	var/pass_counter = 0
 
-	for(var/atom/movable/AM in senderBeacon.get_objects())
+	for(var/obj/AM in senderBeacon.get_objects())
+		if(item_counter > 50) //You can only export 50 items at a time, anti-lag7
+			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"Success, scanners have passed over 50 items, starting Recharging Mode\""))
+			break
+		if(pass_counter > 50)
+			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"ERROR, scanners have passed over 50 items that have nested items, shutting down and starting Recharging Mode!\""))
+			break
+		item_counter += 1
 		if(isliving(AM))
 			var/mob/living/L = AM
 			L.apply_damages(0,5,0,0,0,5)
 			continue
-		if(AM.anchored)
+		if(AM.contents.len)
+			item_counter -= 1 //Refund
+			pass_counter += 1 //Hold on now
 			continue
 
 		var/list/contents_incl_self = AM.GetAllContents(5, TRUE)
@@ -597,7 +675,7 @@ SUBSYSTEM_DEF(trade)
 		var/total_cost = order["cost"] + order["fee"]
 		var/is_requestor_master = (requesting_account == master_account) ? TRUE : FALSE
 
-		buy(beacon, master_account, shopping_list)
+		buy(beacon, master_account, shopping_list, !is_requestor_master, requesting_account.owner_name)
 		if(!is_requestor_master)
 			transfer_funds(requesting_account, master_account, "Order Request", null, total_cost)
 		create_log_entry("Order", requesting_account.get_name(), viewable_contents, total_cost)

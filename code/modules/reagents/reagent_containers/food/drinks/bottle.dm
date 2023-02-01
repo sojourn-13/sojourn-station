@@ -6,8 +6,10 @@
 /obj/item/reagent_containers/food/drinks/bottle
 	amount_per_transfer_from_this = 10
 	volume = 100
+	description_info = "Thrown bottles don't break when you throw them while being on help intent."
 	item_state = "broken_beer" //Generic held-item sprite until unique ones are made.
-	force = 5
+	force = WEAPON_FORCE_WEAK
+	throwforce = WEAPON_FORCE_WEAK
 	var/smash_duration = 5 //Directly relates to the 'weaken' duration. Lowered by armor (i.e. helmets)
 	var/isGlass = 1 //Whether the 'bottle' is made of glass or not so that milk cartons dont shatter when someone gets hit by it
 
@@ -22,7 +24,8 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/Initialize()
 	icon_state_full = "[icon_state]"
-	icon_state_empty = "[icon_state]_empty"
+	if (icon_state_empty == null)
+		icon_state_empty = "[icon_state]_empty"
 	. = ..()
 	if(isGlass)
 		unacidable = TRUE
@@ -45,13 +48,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/throw_impact(atom/hit_atom, speed)
 	..()
 
-	if(bottle_thrower_intent == I_HURT)
-		var/throw_dist = get_dist(throw_source, loc)
-		if(speed >= throw_speed && smash_check(throw_dist)) //not as reliable as smashing directly
-			if(reagents)
-				hit_atom.visible_message(SPAN_NOTICE("The contents of \the [src] splash all over [hit_atom]!"))
-				reagents.splash(hit_atom, reagents.total_volume)
-			src.smash(loc, hit_atom)
+	if(bottle_thrower_intent != I_HELP)
+		if(reagents)
+			hit_atom.visible_message(SPAN_NOTICE("The contents of \the [src] splash all over [hit_atom]!"))
+			reagents.splash(hit_atom, reagents.total_volume)
+		src.smash(loc, hit_atom)
 
 /obj/item/reagent_containers/food/drinks/bottle/proc/smash_check(distance)
 	if(!isGlass || !smash_duration)
@@ -218,6 +219,14 @@
 	center_of_mass = list("x"=16, "y"=8)
 	preloaded_reagents = list("rum" = 100)
 
+/obj/item/reagent_containers/food/drinks/bottle/rombuty
+	name = "Captain Flint's Secret Rum"
+	desc = "For some reason, to you, the label on this bottle reads the same as Death."
+	icon_state = "rombuty"
+	item_state = "rombuty"
+	center_of_mass = list("x"=16, "y"=8)
+	preloaded_reagents = list("rum" = 100)
+
 /obj/item/reagent_containers/food/drinks/bottle/vermouth
 	name = "Goldeneye Vermouth"
 	desc = "Sweet, sweet dryness~"
@@ -227,7 +236,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/kahlua
 	name = "Robert Robust's Coffee Kahlua"
-	desc = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936, HONK"
+	desc = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936."
 	icon_state = "kahluabottle"
 	center_of_mass = list("x"=17, "y"=3)
 	preloaded_reagents = list("kahlua" = 100)
@@ -297,7 +306,7 @@
 	icon_state = "alco-white"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("nanatsunoumi" = 100)
-	icon_state_empty = "alco-white_empty"
+	icon_state_empty = "alco-empty"
 
 /obj/item/reagent_containers/food/drinks/bottle/grenadine
 	name = "Briar Rose Grenadine Syrup"

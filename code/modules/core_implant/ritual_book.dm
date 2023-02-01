@@ -18,7 +18,7 @@
 		), rand(40,80), 1)
 	interact(H)
 
-/obj/item/book/ritual/ui_data(mob/user)
+/obj/item/book/ritual/nano_ui_data(mob/user)
 	var/obj/item/implant/core_implant/cruciform/CI
 	if(isliving(user))
 		var/mob/living/L = user
@@ -82,7 +82,7 @@
 
 
 /obj/item/book/ritual/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data(user, ui_key)
+	var/list/data = nano_ui_data(user, ui_key)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)

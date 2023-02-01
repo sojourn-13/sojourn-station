@@ -31,13 +31,15 @@
 	name = "random os structure"
 
 /obj/random/structures/os/item_to_spawn()
-	return pickweight(list(/obj/structure/salvageable/machine_os = 10,\
-				/obj/structure/salvageable/autolathe_os = 10,\
-				/obj/structure/salvageable/implant_container_os = 3,\
-				/obj/structure/salvageable/data_os = 6,\
-				/obj/structure/salvageable/server_os = 6,\
-				/obj/structure/salvageable/computer_os = 6,\
-				/obj/structure/salvageable/console_broken_os = 6,\
-				/obj/structure/salvageable/console_os = 3,\
-				/obj/structure/computerframe = 2,\
-				/obj/machinery/constructable_frame/machine_frame = 2))
+	return pickweight(list(/obj/structure/salvageable/machine_os = 12,\
+				/obj/structure/salvageable/autolathe_os = 12,\
+				/obj/structure/salvageable/implant_container_os = 5,\
+				/obj/structure/salvageable/data_os = 8,\
+				/obj/structure/salvageable/server_os = 8,\
+				/obj/structure/salvageable/computer_os = 8,\
+				/obj/structure/salvageable/console_broken_os = 8,\
+				/obj/structure/salvageable/console_os = 5,\
+				/obj/machinery/power/port_gen/os_generator = 1,\
+				/obj/structure/salvageable/os/power = 4, \
+				/obj/structure/computerframe = 3,\
+				/obj/machinery/constructable_frame/machine_frame = 3))

@@ -6,6 +6,7 @@
 	item_state = "analyzer"
 
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
+	preloaded_reagents = list("mercury" = 15, "lithium" = 5, "plasticide" = 9)
 	origin_tech = list(TECH_MAGNET = 1, TECH_ENGINEERING = 1)
 
 	charge_per_use = 5

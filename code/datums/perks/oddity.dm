@@ -49,6 +49,11 @@
 	gain_text = "You feel your pace quickening, your thoughts barely catching up with your stride..."
 	//icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
 
+/datum/perk/oddity/fast_walker/assign(mob/living/carbon/human/H)
+	..()
+	if(holder.stats.getPerk(PERK_FAST_WALKER)) // Prevents stacking the same perk over and over for Emperor spider levels of speed. - Seb
+		return FALSE
+
 /datum/perk/oddity/harden
 	name = "Natural Armor"
 	desc = "Your skin has become harder, more durable, able to accept blunt force and endure."
@@ -214,7 +219,7 @@
 ///////////////////////////////////////
 
 /datum/perk/nt_oddity
-	gain_text = "The Absolute chose you to expand his will."
+	gain_text = "The Absolute chose you to expand its will."
 
 /datum/perk/nt_oddity/holy_light
 	name = "Holy Light"
@@ -245,10 +250,10 @@
 			H.adjustFireLoss(-healing_power)
 
 /datum/perk/bluespace
-	name = "Bluespace Alinement"
-	desc = "The sci tool is taxing on the mind but rewarding... Along with some other side affects..."
-	gain_text = "With such much look and inside into stablizing bluespace you cant help but feel its affects."
-	lose_text = "Time cures all."
+	name = "Bluespace Alignement"
+	desc = "The Tuning Device is taxing on the mind but rewarding... Along with some other side affects..."
+	gain_text = "Having stared too much into the abyss that is Bluespace itself, you can't help but feel its gaze staring back at you."
+	lose_text = "The death heat of the universe strays further away... for now."
 	//icon_state = "" // - No icon, suggestion, vortex?
 	var/initial_time
 
@@ -307,3 +312,20 @@
 /datum/perk/drug/ultrasurgeon
 	name = "Ultrasurgeon Knowledge"
 	desc = "After your fix of ultrasurgeon you can feel your mind ease just as your muscles relax."
+
+/datum/perk/njoy
+	name = "Njoy (Active)"
+	desc = "Your mind can focus on what is real, just like when you get rid of a painful earring."
+	//icon_state = "cheerful"  //https://game-icons.net/1x1/lorc/cheerful.html
+
+	gain_text = "Your mind feels much clearer now."
+	lose_text = "You feel the shadows once more."
+
+/datum/perk/njoy/assign(mob/living/carbon/human/H)
+	if(..())
+		holder.sanity.insight_gain_multiplier *= 0.5
+
+/datum/perk/njoy/remove()
+	if(holder)
+		holder.sanity.insight_gain_multiplier *= 2
+	..()

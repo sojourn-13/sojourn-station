@@ -24,13 +24,16 @@
 	burst_delay = null
 	fire_delay = null
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/max_sawn_off.ogg' // It's a double barrel, gets a double barrel sound
 	move_delay = null
 	init_firemodes = list(
 		list(mode_name="Single barrel", mode_desc="Shoots one barrel", burst=1, icon="semi"),
 		list(mode_name="Double barrel", mode_desc="Shoots both barrels at once", burst=2, icon="burst"),
 		)
 	serial_type = "H&S"
+
+	wield_delay = 0.9 SECOND
+	wield_delay_factor = 0.2 // 40 vig
 
 /obj/item/gun/projectile/shotgun/bull/bison
 	name = "\"Bison\" shotgun"

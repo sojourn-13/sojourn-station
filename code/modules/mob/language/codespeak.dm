@@ -1,11 +1,17 @@
 var/cop_code_expire
 var/cop_code_last
 
-/proc/get_cop_code()
-	var/cop_code_1 = pick("10", "20", "0", "13")
-	var/cop_code_2 = pick("1","4", "7", "8", "10", "13", "17", "21", "22", "24", "33", "40", "55", "64", "75", "88", "99")
-	var/cop_code_3 = pick("Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Sierra", "Uniform")
-	var/cop_code_new = "[cop_code_1]-[cop_code_2] [cop_code_3]"
+/proc/get_cop_code(holy = FALSE)
+	var/cop_code_1 = pick("2", "10", "20", "0", "13")
+	var/cop_code_2 = pick("1","4", "7", "8", "10", "13", "15", "17", "21", "22", "24", "33", "40", "55", "64", "75", "88", "99")
+	var/cop_code_3 = pick("Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Sierra", "Uniform", "Youth On Skates")
+	var/cop_code_holy = pick("Apostle ", "Bishop", "Chaplin", "Deacon", "Exclaustration", "Friars", "Seminarian", "Upanishads")
+
+	var/cop_code_new
+	if(holy)
+		cop_code_new = "[cop_code_1]-[cop_code_2] [cop_code_holy]"
+	else
+		cop_code_new = "[cop_code_1]-[cop_code_2] [cop_code_3]"
 	if(world.time < cop_code_expire)
 		return cop_code_last
 	else
@@ -168,17 +174,17 @@ var/cop_code_last
 /mob/living/carbon/human/proc/codespeak_warcrime_local()
 	set category = "Codespeak"
 	set name = "(local) Attack Lethal?"
-	src.codesay("Permission to lethally engage?", FALSE, TRUE) //TODO: Replace with something that sounds good
+	src.codesay("Proposing to Lethally engage.", FALSE, TRUE)
 
 /mob/living/carbon/human/proc/codespeak_detain_local()
 	set category = "Codespeak"
 	set name = "(local) Detaining"
-	src.codesay("Permission to Detaining?", FALSE, TRUE) //TODO: Replace with something that sounds good
+	src.codesay("Detaining Suspect.", FALSE, TRUE)
 
 /mob/living/carbon/human/proc/codespeak_rules_of_engagmentn_local()
 	set category = "Codespeak"
 	set name = "(local) Non-Lethal Attack?"
-	src.codesay("Non-Lethal Engeagement?", FALSE, TRUE) //TODO: Replace with something that sounds good
+	src.codesay("Proposing to Non-Lethally engage.", FALSE, TRUE)
 
 /mob/living/carbon/human/proc/codespeak_run_local()
 	set category = "Codespeak"

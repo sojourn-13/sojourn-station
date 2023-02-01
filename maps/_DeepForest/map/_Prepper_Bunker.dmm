@@ -10,6 +10,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "ae" = (
 /obj/effect/decal/cleanable/cobweb2,
+/obj/random/mob/prepper_boss_lowchance,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "af" = (
@@ -234,7 +235,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "aS" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/mob/prepper,
+/obj/random/mob/prepper_boss_lowchance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "aT" = (
@@ -982,10 +983,9 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "dP" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/junk,
-/obj/random/traps/low_chance,
+/obj/random/mob/prepper_boss_lowchance,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/dungeon/outside/prepper/vault/floor3)
+/area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "dT" = (
 /obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -4329,7 +4329,7 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/liquid_fuel,
-/obj/random/mob/prepper,
+/obj/random/mob/prepper_boss_lowchance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tN" = (
@@ -4351,7 +4351,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "tQ" = (
 /obj/structure/closet/cabinet,
-/obj/item/gun/projectile/boltgun/light_wood,
+/obj/item/gun/projectile/boltgun/light,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "tR" = (
@@ -7291,7 +7291,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Gm" = (
-/obj/random/cluster/roaches/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/prepper_boss_lowchance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "Gn" = (
@@ -9369,8 +9370,8 @@ FD
 Ms
 Ms
 Gc
+yg
 Gm
-yq
 yg
 yg
 yq
@@ -15774,7 +15775,7 @@ ho
 ho
 ho
 hG
-dP
+ho
 QM
 iS
 aw
@@ -16251,7 +16252,7 @@ aa
 yT
 Fb
 Av
-Fb
+dP
 tV
 yT
 yT
@@ -16431,7 +16432,7 @@ aa
 yT
 ze
 Av
-JM
+zG
 Fb
 yT
 gw
@@ -24145,7 +24146,7 @@ dp
 yJ
 aB
 aV
-bn
+cN
 dp
 aa
 aa
@@ -24414,7 +24415,7 @@ dp
 dp
 at
 Sg
-aB
+aS
 bp
 dp
 aa

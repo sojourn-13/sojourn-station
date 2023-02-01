@@ -36,6 +36,66 @@
 		rad = 0
 	)
 
+/obj/item/clothing/suit/storage/rank/cargoclerk_jacket
+	name = "lonestar office jacket"
+	desc = "Stylish jacket lined for lonestar office workers. It seems have a little protection from physical harm."
+	icon_state = "cargoclerk_jacket"
+	item_state = "cargo_jacket"
+	blood_overlay_type = "coat"
+	body_parts_covered = UPPER_TORSO|ARMS
+	armor_list = list(
+		melee = 5,
+		bullet = 5,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/suit/storage/cargovest
+	name = "lonestar hazard vest"
+	desc = "A Lonestar hazard vest in grey and orange to be used in work zones."
+	icon_state = "cargovest"
+	item_state = "hazard"
+	blood_overlay_type = "armor"
+	extra_allowed = list(/obj/item/tool)
+	body_parts_covered = UPPER_TORSO
+	armor_list = list(
+		melee = 10,
+		bullet = 10,
+		energy = 5,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+)
+
+/obj/item/clothing/suit/storage/cargovest/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["standard"] = ""
+	options["alt style"] = "_color"
+
+	var/choice = input(M,"How would you like to wear your vest?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You alter your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 //Quartermaster
 /obj/item/clothing/suit/storage/rank/qm_coat
 	name = "executive officer coat"
@@ -174,28 +234,30 @@
 	armor_list = list(melee = 30, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
 	price_tag = 250
 
-/obj/item/clothing/suit/storage/rank/det_trench
-	name = "brown trenchcoat"
-	desc = "A rugged canvas trenchcoat, designed and created by TX Fabrication Corp. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
-	icon_state = "detective"
-	item_state = "det_suit"
-	blood_overlay_type = "coat"
-	body_parts_covered = UPPER_TORSO|ARMS
-	armor_list = list(
-		melee = 20,
-		bullet = 20,
-		energy = 20,
-		bomb = 0,
-		bio = 0,
-		rad = 0
-	)
-	price_tag = 125
+/obj/item/clothing/suit/storage/rank/insp_trench/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/clothing/suit/storage/rank/det_trench/grey
-	name = "grey trenchcoat"
-	desc = "A rugged canvas trenchcoat, designed and created by TX Fabrication Corp. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
-	icon_state = "detective_grey"
-	item_state = "det_suit_grey"
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Rangercoat Default"] = "rangercoat"
+	options["Brown Trenchcoat"] = "detective"
+	options["Grey Trenchcoat"] = "detective_grey"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 //Engineering
 /obj/item/clothing/suit/storage/hazardvest

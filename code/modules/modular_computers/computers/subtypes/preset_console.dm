@@ -215,7 +215,6 @@
 /obj/item/modular_computer/console/preset/trade/install_default_programs()
 	..()
 	hard_drive.store_file(new /datum/computer_file/program/trade())
-	hard_drive.store_file(new /datum/computer_file/program/trade_log())
 	set_autorun("trade")
 
 // Trade Ordering Console

@@ -29,10 +29,6 @@
 	name = "Cable layer"
 	build_path = /obj/item/mecha_parts/mecha_equipment/tool/cable_layer
 
-/datum/design/research/item/mecha/flaregun
-	name = "Flare launcher"
-	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flare
-
 /datum/design/research/item/mecha/sleeper
 	name = "Sleeper"
 	build_path = /obj/item/mecha_parts/mecha_equipment/tool/sleeper
@@ -55,16 +51,11 @@
 	build_path = /obj/item/mecha_parts/mecha_equipment/tool/ai_holder
 
 //obj/item/mecha_parts/mecha_equipment/repair_droid,
+//Ballistic Mech Ammo
 
-/datum/design/research/item/mecha/ammo/lmg
-	name = "Ultra AC 2 ammunition box"
-	build_path = /obj/item/mech_ammo_box/lmg
-	starts_unlocked = TRUE
-	category = "Ammo"
-
-/datum/design/research/item/mecha/ammo/scattershot
-	name = "LBX AC 10 ammunition box"
-	build_path = /obj/item/mech_ammo_box/scattershot
+/datum/design/research/item/mecha/ammo/hmg
+	name = "HMG ammunition box"
+	build_path = /obj/item/mech_ammo_box/hmg
 	starts_unlocked = TRUE
 	category = "Ammo"
 
@@ -74,71 +65,89 @@
 	starts_unlocked = TRUE
 	category = "Ammo"
 
+/datum/design/research/item/mecha/ammo/ultracannon
+	name = "Ultra Autocannon ammunition box"
+	build_path = /obj/item/mech_ammo_box/ultracannon
+	starts_unlocked = TRUE
+	category = "Ammo"
+
+/datum/design/research/item/mecha/ammo/scattershot
+	name = "LB-X Autocannon / Flak ammunition box"
+	build_path = /obj/item/mech_ammo_box/scattershot
+	starts_unlocked = TRUE
+	category = "Ammo"
+
+// Ballistic Mech Weapons
+/datum/design/research/item/mecha/weapon
+
+/datum/design/research/item/mecha/weapon/hmg
+	name = "25mm Heavy Machinegun \"Lynx\""
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/hmg
+	starts_unlocked = TRUE
+
+/datum/design/research/item/mecha/weapon/flak
+	name = "Flak Cannon \"Hippopotamus\""
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/flak
+	starts_unlocked = TRUE
+
+/datum/design/research/item/mecha/weapon/cannon
+	name = "Ancient Autocannon \"Mule\""
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon
+	starts_unlocked = TRUE
+
+/datum/design/research/item/mecha/weapon/cannon/military
+	name = "Autocannon \"Soaring Eagle\""
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/military
+	starts_unlocked = TRUE
+
+/datum/design/research/item/mecha/weapon/ultracannon
+	name = "Ultra Autocannon \"Prowling Cougar\""
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/ultracannon
+	starts_unlocked = TRUE
+
+/datum/design/research/item/mecha/weapon/scattershot
+	name = "LB-X Autocannon \"Roaring Lion\""
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot
+
+
+// Energy
+
 /datum/design/research/item/mecha/taser
-	name = "PBT \"Pacifier\" mounted taser"
+	name = "MHM \"Pacifier\" mounted taser"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/taser
 	starts_unlocked = TRUE
 
-/datum/design/research/item/mecha/lmg
-	name = "Ultra AC 2"
-	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg
-	starts_unlocked = TRUE
-
-/datum/design/research/item/mecha/lmg/scrap
-	name = "Jury-Rigged Lead Repeater"
-	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/scrap
-	starts_unlocked = TRUE
-
-/datum/design/research/item/mecha/scattershot/flak
-	name = "Jury-Rigged Flak Cannon"
-	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/flak
-	starts_unlocked = TRUE
-
-/datum/design/research/item/mecha/weapon
-
-// *** Weapon modules
-/datum/design/research/item/mecha/weapon/scattershot
-	name = "LBX AC 10 \"Scattershot\""
-	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot
+/datum/design/research/item/mecha/weapon/ion
+	name = "PHM \"Nebula\" ion cannon"
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
 
 /datum/design/research/item/mecha/weapon/laser
-	name = "CH-PS \"Immolator\" laser"
+	name = "MHM \"Immolator\" mining laser"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser
 
-/datum/design/research/item/mecha/weapon/laser_rigged
-	name = "Jury-rigged welder-laser"
-	desc = "Allows for the construction of a welder-laser assembly package for non-combat exosuits."
-	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/riggedlaser
-	starts_unlocked = TRUE
-
 /datum/design/research/item/mecha/weapon/laser_heavy
-	name = "CH-LC \"Solaris\" laser cannon"
+	name = "MHM-MS \"Solaris\" laser cannon"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
 
 /datum/design/research/item/mecha/weapon/hydrogen
 	name = "Mech-mounted Hydrogen-Plasma Cannon"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/hydrogen
 
-/datum/design/research/item/mecha/weapon/ion
-	name = "MkIV ion heavy cannon"
-	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ion
 /datum/design/research/item/mecha/weapon/sonic
 	name = "mech-mounted sonic emitter"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/sonic
+
+//Explosives
 
 /datum/design/research/item/mecha/weapon/grenade_launcher
 	name = "SGL-6 grenade launcher"
 	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang
 
-/datum/design/research/item/mecha/cannon
-	name = "Autocannon"
-	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon
-	starts_unlocked = TRUE
+/datum/design/research/item/mecha/flaregun
+	name = "Flare launcher"
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flare
 
-/datum/design/research/item/mecha/cannon/scrap
-	name = "Ancient Mech Rifle"
-	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/scrap
-	starts_unlocked = TRUE
+//Melee
 
 /datum/design/research/item/mecha/weapon/mecha_sword
 	name = "Mecha Sword"
@@ -148,10 +157,21 @@
 	name = "Mech Energy Cutlass"
 	build_path = /obj/item/mecha_parts/mecha_equipment/melee_weapon/cutlass
 
+// Mech Armors
+
 /datum/design/research/item/mecha/weapon/mecha_fist
 	name = "Mech Melee Plating"
 	build_path = /obj/item/mecha_parts/mecha_equipment/fist_plating
 	starts_unlocked = TRUE
+
+/datum/design/research/item/mecha/ccw_armor
+	name = "CCW armor booster"
+	desc = "Exosuit close-combat armor booster."
+	build_path = /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster
+
+/datum/design/research/item/mecha/proj_armor
+	desc = "Exosuit projectile armor booster."
+	build_path = /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster
 
 // *** Nonweapon modules
 /datum/design/research/item/mecha/wormhole_gen
@@ -191,15 +211,6 @@
 /datum/design/research/item/mecha/energy_relay
 	name = "Energy relay"
 	build_path = /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay
-
-/datum/design/research/item/mecha/ccw_armor
-	name = "CCW armor booster"
-	desc = "Exosuit close-combat armor booster."
-	build_path = /obj/item/mecha_parts/mecha_equipment/armor_booster/anticcw_armor_booster
-
-/datum/design/research/item/mecha/proj_armor
-	desc = "Exosuit projectile armor booster."
-	build_path = /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster
 
 /datum/design/research/item/mecha/diamond_drill
 	name = "Diamond drill"

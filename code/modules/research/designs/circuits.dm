@@ -483,7 +483,7 @@
 	build_path = /obj/item/circuitboard/editor
 	category = CAT_MACHINE
 
-
+/*
 // Cargo
 /datum/design/research/circuit/ordercomp
 	name = "supply ordering console"
@@ -494,3 +494,4 @@
 	name = "supply control console"
 	build_path = /obj/item/circuitboard/supplycomp
 	category = CAT_COMP
+*/

@@ -21,9 +21,12 @@
 
 	init_firemodes = list(
 		BURST_5_ROUND,
-		FULL_AUTO_700
+		FULL_AUTO_600
 		)
 	serial_type = "NM"
+
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.2 // 20 vig
 
 /obj/item/gun/projectile/automatic/bastard/update_icon()
 	var/iconstring = initial(icon_state)

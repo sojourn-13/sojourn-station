@@ -14,15 +14,19 @@
 	price_tag = 1750
 	can_dual = TRUE
 	damage_multiplier = 1.4
+	proj_pve_damage_multiplier = 1.4
 	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.3)
-	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM, GUN_CALIBRE_9MM)
 	serial_type = "BlueCross"
+
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig
 
 /obj/item/gun/projectile/deaglebolt/verb/change_caliber()
 	set name = "Change Caliber"
@@ -31,15 +35,18 @@
 
 	playsound(src.loc, 'sound/weapons/guns/interact/chaingun_cock.ogg', 100, 1)
 	if(caliber == CAL_50)
-		caliber = CAL_MAGNUM
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to 10mm magnum caliber!"), \
-		SPAN_NOTICE("You hear something metallic whirr and beep."))
-	else if(caliber == CAL_MAGNUM)
 		caliber = CAL_PISTOL
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to 9mm pistol caliber!"), \
+		fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 9mm pistol caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
-	else if (caliber == CAL_PISTOL)
+	else if(caliber == CAL_PISTOL)
+		caliber = CAL_MAGNUM
+		fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 10mm magnum caliber!"), \
+		SPAN_NOTICE("You hear something metallic whirr and beep."))
+	else if (caliber == CAL_MAGNUM)
 		caliber = CAL_50
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and metallic whirr is heard before it changes to 12mm heavy pistol caliber!"), \
+		fire_sound = initial(fire_sound)
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 12mm heavy pistol caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	refresh_upgrades()

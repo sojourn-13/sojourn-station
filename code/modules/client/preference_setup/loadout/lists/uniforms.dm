@@ -4,6 +4,7 @@
 	path = /obj/item/clothing/under/bride_white
 	slot = slot_w_uniform
 	sort_category = "Uniforms and Casual Dress"
+	cost = 0
 
 /datum/gear/uniform/tracksuit
 	display_name = "track suit"
@@ -229,6 +230,10 @@
 	display_name = "eva skinsuit"
 	path = /obj/item/clothing/under/bodysuit
 
+/datum/gear/uniform/skintight
+	display_name = "skintight bodysuit"
+	path = /obj/item/clothing/under/skintight
+
 /datum/gear/uniform/greyturtleneck
 	display_name = "grey turtleneck"
 	path = /obj/item/clothing/under/greyturtleneck
@@ -249,3 +254,7 @@
 /datum/gear/uniform/jersey
 	display_name = "tacky jersey"
 	path = /obj/item/clothing/under/costume/misc/jersey
+
+/datum/gear/uniform/sports
+	display_name = "white tank top"
+	path = /obj/item/clothing/under/sports

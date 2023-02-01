@@ -295,7 +295,7 @@
 				Now go back to the lab and wait for your patient to be cloned. It won't be long now, I promise.
 
 				<a name='9'><h3>Step 9: Cryo and clean SE injector on person</h3>
-				Has your body been cloned yet? Great! As soon as the guy pops out, grab them and stick them in cryogenics. Clonexadone and Cryoxadone help rebuild their genetic material. Then grab your clean SE injector and jab it in them. Once you've injected them,
+				Has your body been cloned yet? Great! As soon as the guy pops out, grab them and stick them in cryogenics. Cronexidone and Cryoxadone help rebuild their genetic material. Then grab your clean SE injector and jab it in them. Once you've injected them,
 				they now have clean Structural Enzymes and their defects, if any, will disappear in a short while.
 
 				<a name='10'><h3>Step 10: Give person clothes back</h3>
@@ -306,7 +306,7 @@
 				Give the patient one last check-over - make sure they don't still have any defects and that they have all their possessions. Ask them how they died, if they know, so that you can report any foul play over the radio.
 				Once you're done, your patient is ready to go back to work! Chances are they do not have Medbay access, so you should let them out of Genetics and the Medbay main entrance.
 
-				<p>If you've gotten this far, congratulations! You have mastered the art of cloning. Now, the real problem is how to resurrect yourself after that traitor had his way with you for cloning his target.
+				<p>If you've gotten this far, congratulations! You have mastered the art of cloning. Now, the real problem is how to resurrect yourself after that contractor had his way with you for cloning his target.
 
 				</body>
 				</html>
@@ -1304,7 +1304,7 @@
 	author = "Victoria Ponsonby"
 	title = "Chef Recipes"
 	page_link = "Guide_to_Food_and_Drinks"
-				
+
 /obj/item/book/manual/h_book
 	name = "Holy Book"
 	desc = "An undescript book for an unnamed religion."

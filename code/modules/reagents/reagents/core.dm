@@ -7,7 +7,7 @@
 	color = "#C80000"
 	taste_description = "iron"
 	taste_mult = 1.3
-	scannable = 1
+	scannable = TRUE
 	glass_icon_state = "glass_red"
 	glass_name = "tomato juice"
 	glass_desc = "Are you sure this is tomato juice?"

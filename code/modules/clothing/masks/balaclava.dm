@@ -15,7 +15,7 @@
 	if(!user.incapacitated())
 		switch(open)
 			if (0)
-				flags_inv = BLOCKHEADHAIR
+				flags_inv = BLOCKHEADHAIR|HIDEEARS
 				body_parts_covered = HEAD
 				icon_state = initial(icon_state) + "_open"
 				to_chat(user, "You put the balaclava away, revealing your face.")
@@ -27,12 +27,13 @@
 				to_chat(user, "You adjust the balaclava up to cover your mouth.")
 				open = 2
 			else
-				flags_inv = HIDEFACE|BLOCKHAIR
+				flags_inv = HIDEFACE|BLOCKHAIR|HIDEEARS
 				body_parts_covered = FACE|HEAD
 				icon_state = initial(icon_state)
 				to_chat(user, "You pull the balaclava up to cover your whole head.")
 				open = 0
 		user.update_hair(0)
+		user.update_ears(0) // Fix to prevent ear clipping
 		user.update_inv_ears(0)
 		user.update_inv_wear_mask() //Updates mob icons
 

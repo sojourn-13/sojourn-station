@@ -25,7 +25,7 @@
 		/datum/design/autolathe/gun/cop_mod = 0,
 		/datum/design/autolathe/sec/stunbaton = 5, //balance, we can only make 4
 		/datum/design/autolathe/sec/auto_eject_mod,
-		/datum/design/autolathe/gun/dnalock_mod,
+		/datum/design/research/item/weapon/weapon_upgrade/dnalock_mod,
 		/datum/design/autolathe/gun/bipod_mod = 2,
 		/datum/design/autolathe/gun/flare_gun = 3,
 		/datum/design/autolathe/sec/riot = 10,
@@ -47,21 +47,16 @@
 	designs = list(
 		/datum/design/autolathe/gun/judiciary,
 		/datum/design/autolathe/gun/liberty,
-		/datum/design/autolathe/gun/rev10,
 		/datum/design/autolathe/gun/amnesty = 2,
 		/datum/design/autolathe/gun/judge = 2,
 		//SMGs
-		/datum/design/autolathe/gun/wirbelwind = 2,
 		/datum/design/autolathe/gun/freedom = 2,
 		/datum/design/autolathe/gun/specop = 3,
 		//rifles
 		/datum/design/autolathe/gun/mamba = 3,
-		/datum/design/autolathe/gun/viper = 4,
-		/datum/design/autolathe/gun/ostwind = 5,
 		/datum/design/autolathe/gun/copperhead = 4,
 		//shotguns
-		/datum/design/autolathe/gun/operator = 4,
-		/datum/design/autolathe/gun/riot_shotgun = 4,
+		/datum/design/autolathe/gun/opshot = 4,
 		//machinegun
 		/datum/design/autolathe/gun/dp = 2,
 		/datum/design/autolathe/gun/bastard = 3,
@@ -71,7 +66,6 @@
 		/datum/design/autolathe/gun/grenade_launcher_lenar = 7,
 		//sniper
 		/datum/design/autolathe/gun/python = 5,
-		/datum/design/autolathe/gun/nordwind = 7,
 		//flaregun
 		/datum/design/autolathe/gun/flare_gun,
 		//laser
@@ -81,11 +75,12 @@
 		//Misc
 		/datum/design/autolathe/tool/ironhammer,
 		/datum/design/autolathe/sec/stunbaton/maul,
-		/datum/design/autolathe/sec/riot,
-		/datum/design/autolathe/device/landmine = 0,
 		/datum/design/autolathe/sec/buckler = 0,
 		/datum/design/autolathe/sec/bastion = 0,
+		/datum/design/autolathe/sec/riot,
+		/datum/design/autolathe/device/landmine = 0,
 		/datum/design/autolathe/container/ammocan_ih = 0,
+		/datum/design/autolathe/device/smartlink = 3,
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo
@@ -125,6 +120,8 @@
 		/datum/design/autolathe/ammo/kurtz_ammobox_rubber = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/mag_10x24 = 0,
+		/datum/design/autolathe/ammo/box_10x24 = 3, // Two entire mags of a Pulse Rifle, thus costs 10% of license cost. It's also armory access exclusive.
 		/datum/design/autolathe/ammo/lrifle_ammobox = 1,
 		/datum/design/autolathe/ammo/lrifle_ammobox_lethal = 1,
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber = 0,
@@ -181,7 +178,7 @@
 
 	license = 12
 	designs = list(
-		/datum/design/autolathe/gun/thompson = 4,
+		/datum/design/autolathe/gun/freedom = 4,
 		/datum/design/autolathe/ammo/smg_magnum_40 = 2,
 		/datum/design/autolathe/ammo/smg_magnum_40_rubber = 1,
 		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 3,
@@ -211,7 +208,7 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/operator = 3,
+		/datum/design/autolathe/gun/opshot = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_illumination,
@@ -237,23 +234,6 @@
 	license = 16
 	designs = list(
 		/datum/design/autolathe/gun/mamba = 6,
-		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_short_rubber,
-		/datum/design/autolathe/ammo/lrifle_short,
-		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
-		/datum/design/autolathe/ammo/lrifle_practice = 1,
-		/datum/design/autolathe/ammo/lrifle_rubber = 2,
-		/datum/design/autolathe/ammo/lrifle = 2,
-		/datum/design/autolathe/ammo/lrifle_lethal = 4,
-	)
-
-/obj/item/computer_hardware/hard_drive/portable/design/guns/viper
-	disk_name = "NM - 6.5mm Viper DMR"
-	icon_state = "marshal"
-
-	license = 16
-	designs = list(
-		/datum/design/autolathe/gun/viper = 6,
 		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
 		/datum/design/autolathe/ammo/lrifle_short,

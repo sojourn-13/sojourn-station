@@ -26,7 +26,7 @@
 	for(var/obj/item/organ/I in internal_organs)
 		if(I.inserted_and_processing && I.Process() == PROCESS_KILL)
 			I.inserted_and_processing = FALSE
-			
+
 
 	handle_stance()
 	handle_grasp()
@@ -97,7 +97,7 @@
 	if(stance_damage >= 8 || (stance_damage >= 4 && prob(5)))
 		if(!(lying || resting))
 			if(species && !(species.flags & NO_PAIN))
-				emote("scream")
+				emote("painscream")
 			custom_emote(1, "collapses!")
 		Weaken(5) //can't emote while weakened, apparently.
 
@@ -130,44 +130,25 @@
 		if(!E || !(E.functions & BODYPART_GRASP) || (E.status & ORGAN_SPLINTED))
 			continue
 
-		if(E.is_broken() || E.is_dislocated() || E.limb_efficiency < 50)
-			switch(E.body_part)
-				if(ARM_LEFT)
-					if(!l_hand)
-						continue
-					drop_from_inventory(l_hand)
-				if(ARM_RIGHT)
-					if(!r_hand)
-						continue
-					drop_from_inventory(r_hand)
+		if(E.mob_can_unequip(src))
+			if(E.is_broken() || E.is_nerve_struck() || E.limb_efficiency <= 50)
 
-			var/emote_scream = pick("screams in pain and ", "lets out a sharp cry and ", "cries out and ")
-			if(E.limb_efficiency < 50)
-				var/emote_2 = pick("unable to grasp it", "unable to feel it", "too weak to hold it")
-				emote("me", 1, "drops what they were holding in their [E.name], [emote_2]!")
+				drop_from_inventory(E)
 
-			else
-				emote("me", 1, "[(species.flags & NO_PAIN) ? "" : emote_scream ]drops what they were holding in their [E.name]!")
+				if(E.limb_efficiency <= 50)
+					emote("me", 1, "drops what they were holding in their [E.name], [pick("unable to grasp it", "unable to feel it", "too weak to hold it")]!")
+				else
+					emote("me", 1, "[(species.flags & NO_PAIN) ? "" : pick("screams in pain and ", "lets out a sharp cry and ", "cries out and ")]drops what they were holding in their [E.name]!")
 
-		else if(E.is_malfunctioning())
-			switch(E.body_part)
-				if(ARM_LEFT)
-					if(!l_hand)
-						continue
-					drop_from_inventory(l_hand)
-				if(ARM_RIGHT)
-					if(!r_hand)
-						continue
-					drop_from_inventory(r_hand)
+			else if(E.is_malfunctioning())
+				drop_from_inventory(E)
+				emote("pain", 1, "drops what they were holding, their [E.name] malfunctioning!")
 
-			emote("pain", 1, "drops what they were holding, their [E.name] malfunctioning!")
-
-			var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
-			spark_system.set_up(5, 0, src)
-			spark_system.attach(src)
-			spark_system.start()
-			spawn(10)
-				qdel(spark_system)
+				var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
+				spark_system.set_up(5, 0, src)
+				spark_system.attach(src)
+				spark_system.start()
+				QDEL_IN(spark_system, 1 SECOND)
 
 //Handles chem traces
 /mob/living/carbon/human/proc/handle_trace_chems()

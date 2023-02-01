@@ -109,6 +109,11 @@
 	desc = "A pair of black pants."
 	icon_state = "blackpants"
 
+/obj/item/clothing/under/pants/black/outlaw
+	name = "black pants with lucha belt"
+	desc = "A pair of skin-tight black pants with a red lucha belt."
+	icon_state = "randopants"
+
 /obj/item/clothing/under/pants/blackbaggy
 	name = "black baggy pants"
 	desc = "A pair of baggy black pants."

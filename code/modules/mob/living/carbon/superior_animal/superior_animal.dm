@@ -48,10 +48,14 @@
 
 	target_mob = null
 
-	friends.Cut()
+	LAZYCLEARLIST(objectsInView)
+	LAZYCLEARLIST(friends)
 
 	UnregisterSignal(src, COMSIG_ATTACKED)
 
+	lastarea = null
+
+	known_languages = null
 	. = ..()
 
 /mob/living/carbon/superior_animal/u_equip(obj/item/W as obj)
@@ -526,7 +530,7 @@
 			update_icons()
 
 /mob/living/carbon/superior_animal/handle_regular_status_updates()
-	health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
+	health = maxHealth - oxyloss - toxloss - fireloss - bruteloss - cloneloss - halloss
 	if(health <= death_threshold && stat != DEAD)
 		death()
 		blinded = TRUE

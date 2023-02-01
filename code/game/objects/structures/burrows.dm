@@ -677,8 +677,15 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		if(locate(/obj/effect/plant) in loc)
 			return
 
-		if(!hive_mind_ai || !hive_mind_ai.hives.len || maintenance)
+		if(!hive_mind_ai || !hive_mind_ai.hives.len || maintenance || !GLOB.hive_data_bool["spread_trough_burrows"])
 			return
+
+		var/area/A = get_area(src)
+		if(!(A.name in GLOB.hivemind_areas))
+			if(!GLOB.hive_data_float["maximum_controlled_areas"] || GLOB.hivemind_areas.len < GLOB.hive_data_float["maximum_controlled_areas"])
+				GLOB.hivemind_areas.Add(A.name)
+			else
+				return
 
 		break_open()
 		var/obj/machinery/hivemind_machine/node/hivemind_node = pick(hive_mind_ai.hives)
@@ -691,7 +698,6 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	//The plant is not assigned a parent, so it will become the parent of plants that grow from here
 	//If it were assigned a parent from a previous burrow, it'd never spread at all due to distance
 	new /obj/effect/plant(get_turf(src), plant)
-
 
 
 /****************************

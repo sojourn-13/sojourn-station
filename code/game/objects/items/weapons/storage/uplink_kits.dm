@@ -189,9 +189,21 @@
 	desc = "12mm suppressed handgun and its kit."
 
 /obj/item/storage/box/syndie_kit/hpistol/populate_contents()
-	new /obj/item/gun/projectile/lamia/akurra(src)
+	new /obj/item/gun/projectile/lamia/socom(src)
 	new /obj/item/ammo_magazine/kurtz_50/hv(src)
 	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/clothing/glasses/sunglasses(src)
+	new /obj/item/clothing/mask/balaclava(src)
+
+/obj/item/storage/box/syndie_kit/painrevolver
+	name = "\improper vigilante revolver kit"
+	desc = "12mm revolver and its kit."
+
+/obj/item/storage/box/syndie_kit/painrevolver/populate_contents()
+	new /obj/item/gun/projectile/revolver/hornet(src)
+	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
+	new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
+	new /obj/item/ammo_magazine/speed_loader_kurtz_50/highvelocity(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/mask/balaclava(src)
 
@@ -218,9 +230,9 @@
 	w_class = ITEM_SIZE_HUGE
 
 /obj/item/storage/box/syndie_kit/sts/populate_contents()
-	new /obj/item/gun/projectile/automatic/sts/lrifle(src)
-	new /obj/item/ammo_magazine/light_rifle_257(src)
-	new /obj/item/ammo_magazine/light_rifle_257_short(src)
+	new /obj/item/gun/projectile/automatic/sts/rifle(src)
+	new /obj/item/ammo_magazine/rifle_75(src)
+	new /obj/item/ammo_magazine/rifle_75_short(src)
 	new /obj/item/clothing/suit/storage/toggle/leather/blackjacket(src)
 
 /obj/item/storage/box/syndie_kit/pug
@@ -242,7 +254,7 @@
 /obj/item/storage/box/syndie_kit/antimaterial_rifle/populate_contents()
 	new /obj/item/ammo_casing/antim(src)
 	new /obj/item/weaponparts/heavysniper/stock(src)
-	new /obj/item/weaponparts/heavysniper/reciever(src)
+	new /obj/item/weaponparts/heavysniper/receiver(src)
 	new /obj/item/weaponparts/heavysniper/barrel(src)
 
 /obj/item/storage/box/syndie_kit/toxin

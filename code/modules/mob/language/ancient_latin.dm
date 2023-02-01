@@ -1,10 +1,10 @@
 /datum/language/ancientlatin
 	name = LANGUAGE_LATIN
-	desc = "An ancient language once used by most of europe but now mainly used by followers of the Church of Absolute."
+	desc = "An ancient language once used by most of europe and academics but now mainly used by followers of Christian branches and the Church of Absolute."
 	colour = "latin"
 	key = "l"
 	partial_understanding = list(
-		LANGUAGE_ESPERANTO = 30,
+		LANGUAGE_ROMANA = 30,
 		LANGUAGE_CULT = 40,
 		LANGUAGE_OCCULT = 40,
 		LANGUAGE_COMMON = 5

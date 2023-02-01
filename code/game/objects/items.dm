@@ -30,6 +30,8 @@
 	var/datum/action/item_action/action = null
 	var/action_button_name //It is also the text which gets displayed on the action button. If not set it defaults to 'Use [name]'. If it's not set, there'll be no button.
 	var/action_button_is_hands_free = 0 //If 1, bypass the restrained, lying, and stunned checks action buttons normally test for
+	var/action_button_proc //If set, when the button is used it calls the proc of that name
+	var/action_button_arguments //If set, hands these arguments to the proc.
 
 	//This flag is used to determine when items in someone's inventory cover others. IE helmets making it so you can't see glasses, etc.
 	//It should be used purely for appearance. For gameplay effects caused by items covering body parts, use body_parts_covered.
@@ -76,7 +78,7 @@
 
 	//Damage vars
 	var/force = 0	//How much damage the weapon deals
-	var/embed_mult = 0.5 //Multiplier for the chance of embedding in mobs. Set to zero to completely disable embedding
+	var/embed_mult = 1 //Multiplier for the chance of embedding in mobs. Set to zero to completely disable embedding
 	var/structure_damage_factor = STRUCTURE_DAMAGE_NORMAL	//Multiplier applied to the damage when attacking structures and machinery
 
 	var/post_penetration_dammult = 1 //how much damage do we do post-armor-penetation
@@ -89,6 +91,7 @@
 	var/list/initialized_upgrades = list()
 
 	var/max_upgrades = 3
+	var/allow_greyson_mods = FALSE
 	prefixes = list()
 	var/list/blacklist_upgrades = list() //Zebra list. /item/upgrade/thing = TRUE means it IS  blacklisted, /item/upgrade/thing/subtype = FALSE means it won't b blacklisted. subtypes go first.
 	var/my_fuel = "fuel" //If we use fuel, what do we use?
@@ -124,6 +127,8 @@
 
 /obj/item/Destroy()
 	QDEL_NULL(hidden_uplink)
+	if(blood_overlay && items_blood_overlay_by_type[type] == blood_overlay)
+		LAZYREMOVE(items_blood_overlay_by_type, type)
 	QDEL_NULL(blood_overlay)
 	QDEL_NULL(action)
 	if(ismob(loc))
@@ -195,6 +200,10 @@
 
 	for(var/Q in tool_qualities)
 		message += "\n<blue>It possesses [tool_qualities[Q]] tier of [Q] quality.<blue>"
+
+	if(allow_greyson_mods)
+		message += "\n<blue>This allows for Greyson Positronic based mods to be integrated without normal constraints.<blue>"
+
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -464,7 +473,7 @@ modules/mob/mob_movement.dm if you move you will be zoomed out
 modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 */
 //Looking through a scope or binoculars should /not/ improve your periphereal vision. Still, increase viewsize a tiny bit so that sniping isn't as restricted to NSEW
-/obj/item/proc/zoom(tileoffset = 14,viewsize = 9) //tileoffset is client view offset in the direction the user is facing. viewsize is how far out this thing zooms. 7 is normal view
+/obj/item/proc/zoom(tileoffset = 14,viewsize = 9, stayzoomed = FALSE) //tileoffset is client view offset in the direction the user is facing. viewsize is how far out this thing zooms. 7 is normal view
 	if(!usr)
 		return
 
@@ -487,7 +496,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		to_chat(usr, "You are too distracted to look through the [devicename]. Perhaps if it was in your active hand you could look through it.")
 		cannotzoom = 1
 
-	if(!zoom && !cannotzoom)
+	if((!zoom && !cannotzoom)|stayzoomed)
 		//if(usr.hud_used.hud_shown)
 			//usr.toggle_zoom_hud()	// If the user has already limited their HUD this avoids them having a HUD when they zoom in
 		usr.client.view = viewsize
@@ -510,7 +519,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 				usr.client.pixel_x = -viewoffset
 				usr.client.pixel_y = 0
 
-		usr.visible_message("[usr] peers through the [zoomdevicename ? "[zoomdevicename] of the [name]" : "[name]"].")
+		if(!stayzoomed)
+			usr.visible_message("[usr] peers through the [zoomdevicename ? "[zoomdevicename] of the [name]" : "[name]"].")
 		var/mob/living/carbon/human/H = usr
 		H.using_scope = src
 	else
@@ -585,6 +595,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	item_flags = initial(item_flags)
 	name = initial(name)
 	max_upgrades = initial(max_upgrades)
+	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
 	prefixes = list()

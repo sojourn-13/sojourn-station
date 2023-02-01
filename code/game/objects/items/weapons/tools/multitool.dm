@@ -28,7 +28,7 @@
 	icon_state = "bs_multitool"
 	tool_qualities = list(QUALITY_PULSING = 100)
 
-/obj/item/tool/onestar_multitool
+/obj/item/tool/multitool/advanced/onestar
 	name = "Greyson Positronic multitool"
 	desc = "Used for pulsing wires to test which to cut. You can use this on airlocks or APCs to try to hack them. \
 			The advanced and precise engineering allows for more DIY improvements than most Greyson Positronic tools ."
@@ -37,11 +37,11 @@
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_PLATINUM = 1, MATERIAL_DIAMOND = 1)
 	origin_tech = list(TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	use_power_cost = 0.01
-	degradation = 0.6
+	degradation = 2
 	workspeed = 1.6
 	max_upgrades = 5 //UNLIMITED MODS!
-	suitable_cell = /obj/item/cell/medium
 	price_tag = 1500 // Diamond and super fancy/rare.
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/multitool/advanced
 	name = "advanced multitool"

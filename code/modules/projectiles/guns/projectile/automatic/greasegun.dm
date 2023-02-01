@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/greasegun
 	name = "M3 \"Grease Gun\" assault SMG"
-	desc = "An old, handy firearm hailing from Sol. Despite it's inredibly dated design it has maintained use within the Sol Federal Police due to its compactness and sub-sonic rounds. \
+	desc = "An old, handy firearm hailing from Sol. Despite it's inredibly dated design it has maintained use within the Sol Federal Stockpiles due to its compactness and sub-sonic rounds. \
 		 It appears to be made for urban combat with a built in silencer and chambered in 9mm; taking specifically only SMG magazines. Reliable but slow firing."
 	icon = 'icons/obj/guns/projectile/greasegun.dmi'
 	icon_state = "greasegun"
@@ -19,10 +19,13 @@
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
 	init_firemodes = list(
-		FULL_AUTO_400_NOLOSS,
+		FULL_AUTO_300_NOLOSS,
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "Sol Fed"
+
+	wield_delay = 0.5 SECOND
+	wield_delay_factor = 0.1 // 10 vig
 
 /obj/item/gun/projectile/automatic/greasegun/update_icon()
 	..()

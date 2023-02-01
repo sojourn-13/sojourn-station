@@ -64,5 +64,15 @@
 			"used an implanter, [src.name] ([implant.name]), on"
 			)
 			log_and_message_admins(" - [implant.name] injected into [M] at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
+
+			if(istype(implant, /obj/item/implant/excelsior) && ishuman(M))
+				var/datum/antag_faction/F = get_faction_by_id(FACTION_EXCELSIOR)
+				var/datum/objective/timed/excelsior/E = (locate(/datum/objective/timed/excelsior) in F.objectives)
+				if(E)
+					if(!E.active)
+						E.start_excel_timer()
+					else
+						E.on_convert()
+
 			implant = null
 			update_icon()

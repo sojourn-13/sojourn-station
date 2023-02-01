@@ -1,13 +1,14 @@
 /obj/item/modification/organ
+	name = "organoid"
 	matter = list(MATERIAL_BIOMATTER = 5)
+	origin_tech = list(TECH_BIO = 3)	// One level higher than regular organs
 
 /obj/item/modification/organ/internal
-	name = "organoid"
 	icon = 'icons/obj/organ_mods.dmi'
 	icon_state = "organoid"
 	desc = "Functional tissue of one or more organs in graftable form."
 	spawn_tags = SPAWN_TAG_ORGAN_MOD
-	price_tag = 400
+	price_tag = 25
 
 /obj/item/modification/organ/internal/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	..()
@@ -16,6 +17,13 @@
 		var/datum/component/modification/organ/M = GetComponent(/datum/component/modification/organ)
 		if(M)
 			generate_organ_stats_for_mod(M, predefined_modifier)
+
+/obj/item/modification/organ/internal/Destroy()
+	if(LAZYLEN(datum_components))
+		for(var/datum/component/comp in datum_components)
+			comp.RemoveComponent()
+			qdel(comp)
+	return ..()
 
 /obj/item/modification/organ/internal/update_icon()
 	icon_state = initial(icon_state) + "-[rand(1,5)]"
@@ -45,6 +53,9 @@
 			O.blood_req_mod 				+= round(organ_stats[4] * modifier * (1 + (1 * is_parasitic)), 0.01)
 			O.nutriment_req_mod 			+= round(organ_stats[5] * modifier * (1 + (1 * is_parasitic)), 0.01)
 			O.oxygen_req_mod 				+= round(organ_stats[6] * modifier * (1 + (1 * is_parasitic)), 0.01)
+
+			if(predefined_modifier)
+				break
 
 			probability = probability / 8
 

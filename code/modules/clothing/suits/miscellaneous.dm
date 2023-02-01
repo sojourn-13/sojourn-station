@@ -55,6 +55,11 @@ obj/item/clothing/suit/fluff/kimono
 	desc = "A traditional Japanese kimono."
 	icon_state = "kimono"
 
+obj/item/clothing/suit/fluff/miko
+	name = "miko dress"
+	desc = "A traditional purple Japanese miko dress."
+	icon_state = "miko"
+
 /obj/item/clothing/suit/fluff/customs
 	name = "customs jacket"
 	desc = "A standard SolFed Customs formal jacket."
@@ -326,7 +331,7 @@ obj/item/clothing/suit/fluff/kimono
 	equip_delay = 2 SECONDS
 	armor_list = list(
 		melee = 30, //Not the best armor, but easily crafted and adds some utility with decent protection all round.
-		bullet = 25,
+		bullet = 20,
 		energy = 25,
 		bomb = 25,
 		bio = 0,
@@ -400,7 +405,7 @@ obj/item/clothing/suit/fluff/kimono
 	armor_list = list(
 		melee = 20,
 		bullet = 10,
-		energy = 20, //Decent starting armor but intentionally shitty because outsiders are hard mode. Scavenge better. Triumph or die! -Kaz
+		energy = 20,
 		bomb = 10,
 		bio = 5,
 		rad = 5

@@ -40,7 +40,7 @@
 	..()
 	crew_announcement.newscast = 1
 
-/datum/nano_module/program/comm/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/program/comm/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 
 	var/list/data = host.initial_data()
 
@@ -173,7 +173,7 @@
 						to_chat(usr, "<span class='warning'>Arrays recycling. Please stand by.</span>")
 						SSnano.update_uis(src)
 						return
-					if(!is_relay_online())//Contact Centcom has a check, Syndie doesn't to allow for Traitor funs.
+					if(!is_relay_online())//Contact Centcom has a check, Syndie doesn't to allow for contractor funs.
 						to_chat(usr, "<span class='warning'>No Emergency Bluespace Relay detected. Unable to transmit message.</span>")
 						return 1
 

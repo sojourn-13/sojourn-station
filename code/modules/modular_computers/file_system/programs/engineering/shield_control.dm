@@ -11,7 +11,7 @@
 	nanomodule_path = /datum/nano_module/shield_control
 	program_icon_state = "engine"
 	extended_desc = "This program allows remote management of the hull shield generator. Cannot be run on tablet computers."
-	required_access = access_syndicate //disabled for now, change to engine when fixed
+	required_access = access_engine
 	requires_ntnet = 1
 	network_destination = "shield control system"
 	requires_ntnet_feature = NTNET_SYSTEMCONTROL
@@ -66,7 +66,7 @@
 		playsound_host('sound/machines/buzz-two.ogg', 50)
 		genloc = ""
 
-/datum/nano_module/shield_control/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/topic_state/state = GLOB.default_state)
+/datum/nano_module/shield_control/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, datum/nano_topic_state/state = GLOB.default_state)
 	if(!host)
 		return
 	var/list/data = host.initial_data()
@@ -199,7 +199,7 @@
 
 // If PC is not null header template is loaded. Use PC.get_header_data() to get relevant nanoui data from it. All data entries begin with "PC_...."
 // In future it may be expanded to other modular computer devices.
-/datum/nano_module/power_monitor/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = default_state)
+/datum/nano_module/power_monitor/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = default_state)
 	var/list/data = host.initial_data()
 
 	var/list/sensors = list()

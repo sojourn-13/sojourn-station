@@ -246,7 +246,7 @@
 					targeted_organ = H.random_organ_by_process("liver")
 				if (targeted_organ && targeted_organ.is_usable())
 					if (targeted_organ.nature !=MODIFICATION_SILICON) // If randomly chosen organ is prothestic, no damage.
-						targeted_organ.damage += rand (5,10) // How much damage is dealt to each organ. Please adjust for balance
+						targeted_organ.damage += rand (2,6) // How much damage is dealt to each organ. Please adjust for balance
 
 /mob/living/carbon/human/setToxLoss(var/amount)
 	if(!(species.flags & NO_POISON) && !isSynthetic())
@@ -393,7 +393,7 @@ This function restores all organs.
 	if(damagetype != BRUTE && damagetype != BURN)
 		if(damagetype == HALLOSS && !(species && (species.flags & NO_PAIN)))
 			if (!stat && (damage > 25 && prob(20)) || (damage > 50 && prob(60)))
-				emote("scream")
+				emote("painscream")
 
 		..(damage, damagetype, def_zone)
 		sanity.onDamage(damage)

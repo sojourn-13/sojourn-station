@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/revolver/judge
 	name = "\"Judge\" heavy revolver"
 	desc = "A specially made revolver procued by Nadezhda Marshal's gunsmiths to solve the problem of ever-heavier armors being used in criminal actions. \
-	This revolver specifically is chambered in 7.5, packing quite a punch for a revolver even in spite of its short barrel."
+	This revolver specifically is chambered in 7.62, packing quite a punch for a revolver even in spite of its short barrel."
 	icon = 'icons/obj/guns/projectile/judge.dmi'
 	icon_state = "judge"
 	item_state = "judge"
@@ -13,7 +13,10 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.4
 	init_recoil = HANDGUN_RECOIL(1.5)
-	zoom_factor = 0.2
+	zoom_factors = list(0.2)
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "NM"
+
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig

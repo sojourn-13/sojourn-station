@@ -1,5 +1,5 @@
 /////////////////////////////////////////////
-//NOT USED BECAUSE OF NEW REVOLUTION SYSTEM//
+//NOT USED BECAUSE OF NEW REVOLUTION SYSTEM// - Now true
 /////////////////////////////////////////////
 
 /datum/objective/faction/excelsior/get_panel_entry()
@@ -34,4 +34,28 @@
 
 	return FALSE
 
+/datum/objective/timed/excelsior
+	var/detect_timer = 60 MINUTES
+	var/active = FALSE
+	var/convert_decrease = 8 MINUTES
+	var/mandate_increase = 12 MINUTES
 
+/datum/objective/timed/excelsior/New()
+	..()
+	explanation_text = "Expand and grow in power before the colony systems detect your presence! The detection countdown of [time2hours(detect_timer)] Hour starts once you force-implant a new comrade. It is lowered by [time2minutes(convert_decrease)] Minutes for each additional recruit, and increased by [time2minutes(mandate_increase)] Minutes for each completed mandate"
+
+/datum/objective/timed/excelsior/proc/start_excel_timer()
+	START_PROCESSING(SSobj, src)
+	active = TRUE
+
+/datum/objective/timed/excelsior/Process()
+	detect_timer -= 1 SECONDS
+	if(detect_timer <= 0)
+		level_nine_announcement()
+		STOP_PROCESSING(SSobj, src)
+
+/datum/objective/timed/excelsior/proc/on_convert()
+	detect_timer -= convert_decrease
+
+/datum/objective/timed/excelsior/proc/mandate_completion()
+	detect_timer += mandate_increase

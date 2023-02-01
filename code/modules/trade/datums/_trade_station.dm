@@ -1,19 +1,3 @@
-#define good_data(nam, randList, price) list("name" = nam, "amount_range" = randList, "price" = price)
-#define custom_good_name(nam) good_data(nam, null, null)
-#define custom_good_amount_range(randList) good_data(null, randList, null)
-#define custom_good_nameprice(nam, randList) good_data(nam, randList, null)
-#define custom_good_price(price) good_data(null, null, price)
-
-#define offer_data(name, price, amount) list("name" = name, "price" = price, "amount" = amount)
-
-#define category_data(nam, listOfTags) list("name" = nam, "tags" = listOfTags)
-
-#define WHOLESALE_GOODS 0.8
-#define COMMON_GOODS 1.2
-#define UNCOMMON_GOODS 1.6
-#define RARE_GOODS 2.0
-#define UNIQUE_GOODS 2.8
-
 /datum/trade_station
 	var/name
 	var/desc
@@ -156,7 +140,7 @@
 			var/offer_index = offer_types.Find(offer_path)
 			special_offers.Insert(offer_index, offer_path)
 			special_offers[offer_path] = offer_content
-			SStrade.offer_types |= offer_path				// For blacklisting offers from exports
+			SStrade.add_to_offer_types(offer_path) 			// For blacklisting offer goods from exports
 
 /datum/trade_station/proc/update_tick()
 	offer_tick()
@@ -342,12 +326,18 @@
 		var/name = "ERROR: no name found"	// Shouldn't see these anyway
 		var/base_price = 1					//
 		var/amount_cap = 0					//
+		var/list/components
+		var/component_count
 		if(offer_content?.len >= 3)
 			name = offer_content["name"]
 			base_price = text2num(offer_content["price"])
 			amount_cap = text2num(offer_content["amount"])
 		else
 			continue
+
+		if(offer_content?.len >= 5)
+			components = offer_content["attachments"]
+			component_count = offer_content["attach_count"]
 
 		var/min_amt = round(SPECIAL_OFFER_MIN_PRICE / max(1, base_price))
 		var/max_amt = round(SPECIAL_OFFER_MAX_PRICE / (max(1, base_price)))
@@ -368,7 +358,10 @@
 		var/max_price = clamp(new_amt * max(1, base_price), min_price, SPECIAL_OFFER_MAX_PRICE)
 		var/new_price = rand(min_price, max_price)
 
-		offer_content = offer_data(name, new_price, new_amt)
+		if(offer_content?.len >= 5)
+			offer_content = offer_data_mods(name, new_price, new_amt, components, component_count)
+		else
+			offer_content = offer_data(name, new_price, new_amt)
 		special_offers[offer_type] = offer_content
 
 /datum/trade_station/proc/offer_tick()

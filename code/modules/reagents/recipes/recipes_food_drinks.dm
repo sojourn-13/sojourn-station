@@ -36,6 +36,7 @@
 	catalysts = list("enzyme" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution solidifies into a block of tofu!"
 
 /datum/chemical_reaction/tofu/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -47,6 +48,7 @@
 	required_reagents = list("soymilk" = 2, "coco" = 2, "sugar" = 2)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution solidifies into a chocolate bar!"
 
 /datum/chemical_reaction/chocolate_bar/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -58,6 +60,7 @@
 	required_reagents = list("chocolatemilk" = 2, "coco" = 1, "sugar" = 2) // Not the prettiest fix but the most practical. -Seb
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution solidifies into a chocolate bar!"
 
 /datum/chemical_reaction/chocolate_bar2/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -75,6 +78,7 @@
 	required_reagents = list("icecreambase" = 10, "honey" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution freezes into icecream!"
 
 /datum/chemical_reaction/honey_icecream/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -112,6 +116,7 @@
 	catalysts = list("enzyme" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution solidifies into a wheel of cheese!"
 
 /datum/chemical_reaction/cheesewheel/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -123,6 +128,7 @@
 	required_reagents = list("protein" = 3, "flour" = 5)
 	result_amount = 3
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "You shape the mixture into a meatball."
 
 /datum/chemical_reaction/meatball/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -134,6 +140,7 @@
 	required_reagents = list("egg" = 3, "flour" = 10)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "You coax the mixture into a taut ball of dough."
 
 /datum/chemical_reaction/dough/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -142,9 +149,10 @@
 
 /datum/chemical_reaction/syntiflesh
 	result = null
-	required_reagents = list("blood" = 5, "clonexadone" = 1)
+	required_reagents = list("blood" = 5, "cronexidone" = 1)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The liquid tissue solidifies into a mass of meat."
 
 /datum/chemical_reaction/syntiflesh/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -166,6 +174,7 @@
 	required_reagents = list("cream" = 5, "sodiumchloride" = 5) // Consider this a placeholder until there's a better way to make butter by churning - Seb
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution solidifies into a block of butter!"
 
 /datum/chemical_reaction/butter/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -177,6 +186,7 @@
 	required_reagents = list("icecreambase" = 10, "ice" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution freezes into icecream!"
 
 /datum/chemical_reaction/vanillaicecream/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -188,6 +198,7 @@
 	required_reagents = list("icecreambase" = 10, "coco" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution freezes into icecream!"
 
 /datum/chemical_reaction/chocolateicecream/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -199,6 +210,7 @@
 	required_reagents = list("icecreambase" = 10, "berryjuice" = 5)
 	result_amount = 1
 	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution freezes into icecream!"
 
 /datum/chemical_reaction/strawberryicecream/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -789,6 +801,12 @@
 	required_reagents = list("manhattan" = 1, "fernet" = 1)
 	result_amount = 2
 
+/datum/chemical_reaction/drinks/jagerbomb
+	result = "jagerbomb"
+	required_reagents = list("fernet" = 1, "energy_drink_monster" = 1)
+	result_amount = 2
+	mix_message = "The bitter shot falls into the energy drink with a plop!"
+
 /datum/chemical_reaction/drinks/antidepressant
 	result = "antidepressant"
 	required_reagents = list("space_up" = 10, "triplecitrus" = 20, "sugarrush" = 10, "ice" = 5, "cola" = 10, "pineapplejuice" = 10)
@@ -880,3 +898,11 @@
 	result = "friendlyfire"
 	required_reagents = list("rum" = 2, "iron" = 1, "vodka" = 1)
 	result_amount = 3
+
+
+/* Other */
+
+/datum/chemical_reaction/protein_shake
+	result = "protein_shake"
+	required_reagents = list("milk" = 1, "protein" = 1)
+	result_amount = 2

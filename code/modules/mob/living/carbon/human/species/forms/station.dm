@@ -328,5 +328,12 @@
 	blood_color = "#05FF9B"
 	flesh_color = "#05FFFB"
 
-	remains_type = /obj/effect/decal/cleanable/ash // TODO : Better remains
+	remains_type = /obj/effect/decal/cleanable/slimecorpse // Snowflake remains done, sorry carrions!
 	death_message = "rapidly loses cohesion, splattering across the ground..."
+
+/datum/species_form/sudak
+	playable = TRUE
+	name = FORM_SUDAK
+	base = 'icons/mob/human_races/r_sudak.dmi'
+	deform = 'icons/mob/human_races/r_def_sudak.dmi'
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR

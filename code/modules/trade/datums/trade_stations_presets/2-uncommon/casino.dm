@@ -1,6 +1,6 @@
 /datum/trade_station/gamba
 	name_pool = list(
-		"FTB 'Solntsey'" = "Free Trade Beacon 'Solntsey': \"Try your luck with our grab bag specials!\"",
+		"FTB 'Lucky Deck'" = "Free Trade Beacon 'Lucky Deck': \"Try your luck with our random box specials!\"",
 	)
 	uid = "casino"
 	tree_x = 0.62
@@ -29,12 +29,15 @@
 		)
 	)
 	hidden_inventory = list(
+		"Premium Assorted Goods" = list(
 			/obj/item/storage/deferred/disks = custom_good_amount_range(list(2, 4)),
 			/obj/item/storage/deferred/rig = custom_good_amount_range(list(2, 4)),
 			/obj/item/storage/deferred/tools = custom_good_amount_range(list(2, 4)),
 			/obj/item/gem //THE BIG TICKET ITEM
+		)
 	)
 	offer_types = list(
 		/obj/item/oddity/common/coin = offer_data("strange coin", 800, 1),
-		/obj/item/oddity/common/old_money = offer_data("old money", 800, 1)
+		/obj/item/oddity/common/old_money = offer_data("old money", 800, 1),
+		/datum/reagent/other/woodpulp = offer_data("wood pulp bottle (60u)", 400, 2) //Well, if boxes aren't acceptable, the reagent to MAKE the boxes should work.
 	)

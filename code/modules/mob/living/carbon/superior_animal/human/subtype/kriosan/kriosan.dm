@@ -61,7 +61,7 @@
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/bullet/pistol_35
-	projectilesound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	projectilesound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 32

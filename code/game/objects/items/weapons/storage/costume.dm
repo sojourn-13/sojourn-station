@@ -492,3 +492,44 @@
 	new /obj/item/clothing/under/shorts/athleticblue(src)
 	new /obj/item/clothing/under/shorts/athleticblack(src)
 
+/obj/item/storage/box/costume/livesey
+	name = "Naval Surgeon outfit box"
+	desc = "A box filled with apparel befitting an archaic naval surgeon."
+	icon_state = "box_of_doom_big"
+
+/obj/item/storage/box/costume/livesey/populate_contents()
+	new /obj/item/clothing/under/suit_jacket/livesey(src)
+	new /obj/item/clothing/gloves/latex/regal(src)
+	new /obj/item/clothing/shoes/leather/regal(src)
+	new /obj/item/clothing/suit/storage/suitjacket/livesey(src)
+	new /obj/item/clothing/head/costume/livesey(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/rombuty(src) // The words "Rum"...
+	new /obj/item/toy/badtothebone(src) // ...and "death" mean the same to you.
+	new /obj/item/tool/sword/saber(src)
+	new /obj/item/clothing/accessory/holster/saber(src)
+
+/obj/item/storage/box/costume/rando
+	name = "warlord costume box"
+	desc = "A box containing a large costume for a post-apocalyptic warlord."
+	icon_state = "box_of_doom_big"
+
+/obj/item/storage/box/costume/rando/populate_contents()
+	new /obj/item/clothing/under/pants/black/outlaw(src)
+	new /obj/item/clothing/suit/storage/rando(src)
+	new /obj/item/clothing/head/costume/halloween/rando(src)
+	new /obj/item/reagent_containers/food/snacks/donkpocket(src)
+	new /obj/item/reagent_containers/food/snacks/donkpocket(src)
+	new /obj/item/reagent_containers/food/snacks/donkpocket(src) // Rando rations.
+
+/obj/item/storage/box/costume/randoarmy
+	name = "outlaw biker costume"
+	desc = "A box containing a costume for a post-apocalyptic biker outlaw of sorts."
+	icon_state = "box_of_doom"
+
+/obj/item/storage/box/costume/randoarmy/populate_contents()
+	new /obj/item/clothing/under/pants/black/outlaw(src)
+	new /obj/item/clothing/suit/storage/toggle/leather/denimjacket/outlaw(src)
+	new /obj/item/clothing/head/helmet/biker/football(src)
+	new /obj/item/clothing/shoes/reinforced(src)
+	new /obj/item/clothing/gloves/dusters(src)
+

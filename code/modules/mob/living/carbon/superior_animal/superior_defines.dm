@@ -280,8 +280,8 @@
 	/// The last mob this mob has followed, nulled on the first tick the mob is not following anymore. Make sure to assign this to the same value as following.
 	var/mob/last_followed = null // Who did we follow last?
 	var/follow_distance = 2 // How close do we stay?
-	var/follow_message = "nods and start following." // Message that the mob emote when they start following. Include the name of the one who follow at the end
-	var/stop_message = "nods and stop following." // Message that the mob emote when they stop following. Include the name of the one who follow at the end
+	var/follow_message = "nods and starts following you." // Message that the mob emote when they start following. Include the name of the one who follow at the end
+	var/stop_message = "nods and stops in place." // Message that the mob emote when they stop following. Include the name of the one who follow at the end
 
 	var/list/known_languages = list() // The languages that the superior mob know.
 

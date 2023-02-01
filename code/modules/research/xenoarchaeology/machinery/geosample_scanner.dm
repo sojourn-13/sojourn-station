@@ -214,7 +214,7 @@
 			//modify the optimal wavelength
 			tleft_retarget_optimal_wavelength -= deltaT
 			if(tleft_retarget_optimal_wavelength <= 0)
-				tleft_retarget_optimal_wavelength = pick(4,8,15)
+				tleft_retarget_optimal_wavelength = pick(9,12,15)
 				optimal_wavelength_target = rand() * 9900 + 100
 			//
 			if(optimal_wavelength < optimal_wavelength_target)

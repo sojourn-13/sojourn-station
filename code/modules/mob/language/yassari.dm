@@ -1,6 +1,6 @@
 /datum/language/yassari
 	name = LANGUAGE_YASSARI
-	desc = "A pideon language of sorts adopted by frontier nomads, converts and merchants alike, derived from various Islamic origins back on Earth."
+	desc = "A pidgin language of sorts adopted by frontier nomads, converts and merchants alike, derived from various Islamic origins back on Earth."
 	speech_verb = list("stipulates")
 	ask_verb = list("queries")
 	exclaim_verb = list("rambles")

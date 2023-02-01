@@ -10,6 +10,7 @@
 		wearer.apply_damage(10, BURN, part)
 		to_chat(wearer, SPAN_DANGER("You feel an uncomfortable heat build up within you!"))
 		visible_message(SPAN_WARNING("[wearer] suddenly turns brighter and brighter!"))
+		src.uninstall()
 	else
 		visible_message(SPAN_DANGER("[src] flashes brightly!"))
 	playsound(src, 'sound/voice/insect_battle_screeching.ogg', 80, 1, 5)

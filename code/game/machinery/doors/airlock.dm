@@ -757,7 +757,7 @@ There are 9 wires.
 /obj/machinery/door/airlock/attack_ai(mob/user as mob)
 	nano_ui_interact(user)
 
-/obj/machinery/door/airlock/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/obj/machinery/door/airlock/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 	var/data[0]
 
 	data["main_power_loss"]		= round(main_power_lost_until 	> 0 ? max(main_power_lost_until - world.time,	0) / 10 : main_power_lost_until,	1)
@@ -1280,7 +1280,7 @@ There are 9 wires.
 /mob/living/carbon/airlock_crush(crush_damage)
 	. = ..()
 	if (!(species && (species.flags & NO_PAIN)))
-		emote("scream")
+		emote("painscream")
 
 /mob/living/silicon/robot/airlock_crush(crush_damage)
 	adjustBruteLoss(crush_damage)
