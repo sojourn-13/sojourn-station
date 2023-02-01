@@ -61,23 +61,30 @@
 
 /mob/living/simple_animal/corgi/fluff/Life()
 	..()
+	if(!friend)
+		return //Prevents runtimes and optimization
+	health_of_friend_checks()
 
-	if (get_dist(src, friend) <= 1)
-		if (friend.stat >= DEAD || friend.health <= HEALTH_THRESHOLD_SOFTCRIT)
-			if (prob((friend.stat < DEAD)? 50 : 15))
-				var/verb = pick("howls", "whines", "bawls")
-				visible_emote(pick("[verb] in distress.", "[verb] anxiously."))
-				playsound(loc, 'sound/effects/creatures/death_whine.ogg', 50, 1)
+/mob/living/simple_animal/corgi/fluff/proc/health_of_friend_checks()
+	if(get_dist(src, friend) >= 2)
+			return
+	if(friend.stat >= DEAD || friend.health <= HEALTH_THRESHOLD_SOFTCRIT)
+		if(prob((friend.stat < DEAD)? 50 : 15))
+			var/verb = pick("howls", "whines", "bawls")
+			visible_emote(pick("[verb] in distress.", "[verb] anxiously."))
+			playsound(loc, 'sound/effects/creatures/death_whine.ogg', 50, 1)
+			return
 
-		else
-			if (prob(5))
-				var/msg5 = (pick("nuzzles [friend], demanding cuddles",
-								   "randomly licks [friend]'s hand",
-								   "rests their head on top of [friend]'s feet",
-								   "wags their tail, panting and looking expectantly at [friend]"))
-				src.visible_message("<span class='name'>[src]</span> [msg5].")
-	else if (friend.health <= 50)
-		if (prob(10))
+
+		if(prob(5))
+			var/msg5 = (pick("nuzzles [friend], demanding cuddles",
+							   "randomly licks [friend]'s hand",
+							   "rests their head on top of [friend]'s feet",
+							   "wags their tail, panting and looking expectantly at [friend]"))
+			src.visible_message("<span class='name'>[src]</span> [msg5].")
+
+	if(friend.health <= 50)
+		if(prob(10))
 			var/verb = pick("barks", "yaps", "woofs")
 			visible_emote("[verb] anxiously.")
 			playsound(loc, 'sound/effects/creatures/barking.ogg', 50, 1)
