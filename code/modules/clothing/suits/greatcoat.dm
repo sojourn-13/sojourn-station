@@ -78,6 +78,49 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 
+/obj/item/clothing/suit/greatcoat/nt_wintercoat //Sprite recolour from a Civ13 open github skyrim hidden piece with a few change ups to match our pallet -Dongels
+	name = "absolutist wintercoat"
+	desc = "A comfortably warm, and thick decorated wintercoat for the Absolutist faith and its supporters. Keeping the faithfull warm in the jungle heat since 2652."
+	icon_state = "nt_wintercoat"
+	item_state = "nt_wintercoat"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	armor_list = list( //thicker material so +5 boost (from base 10) to armor values, but lower rad/same bomb since not metal lined. Maybe add in minor slowdown if needed -Dongels
+		melee = 15,
+		bullet = 15,
+		energy = 15,
+		bomb = 10,
+		bio = 100,
+		rad = 50
+	)
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
+/obj/item/clothing/suit/greatcoat/nt_wintercoat/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["wintercoat default"] = "nt_wintercoat"
+	options["wintercoat dark"] = "nt_wintercoat_dark"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/greatcoat/general
 	name = "grey greatcoat"
 	desc = "A grey greatcoat. It's thick and insulated with furs, it makes you feel snug and warm."
