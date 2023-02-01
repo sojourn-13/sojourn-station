@@ -12,6 +12,7 @@
 	is_accessable_level = FALSE
 	is_sealed = TRUE
 	height = 2
+	digsites = "TECHNICAL"
 
 /obj/map_data/beast_cave
 	name = "Beast Cave"
@@ -20,6 +21,7 @@
 	is_accessable_level = FALSE
 	is_sealed = TRUE
 	height = 1
+	digsites = "TEMPLE"
 
 /obj/map_data/greyson_field_offices
 	name = "Greyson Field Offices"
@@ -44,6 +46,7 @@
 	is_accessable_level = FALSE
 	is_sealed = TRUE
 	height = 2
+	digsites = "Fossil"
 
 /obj/map_data/river_to_colony
 	name = "Scrap Haven"
@@ -54,4 +57,4 @@
 	is_sealed = TRUE
 	height = 5
 	generate_asteroid = TRUE
-
+	digsites = "WAR"

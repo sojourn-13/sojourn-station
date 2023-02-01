@@ -527,7 +527,7 @@
 "cf" = (
 /obj/structure/window/reinforced,
 /obj/structure/table/standard,
-/obj/item/storage/deferred/surgery,
+/obj/item/storage/firstaid/surgery/combat,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cg" = (
@@ -713,7 +713,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/soap/syndie,
 /obj/machinery/light/small,
-/obj/item/implanter/adrenalin,
+/obj/item/implanter/adrenaline,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cQ" = (
@@ -1992,6 +1992,10 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
+"he" = (
+/obj/structure/table/bench/steel,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/dungeon/outside/smuggler_zone)
 "hg" = (
 /obj/effect/step_trigger/surface_to_forest_2_A,
 /turf/simulated/floor/asteroid/dirt,
@@ -2326,7 +2330,6 @@
 /turf/simulated/floor/tiled,
 /area/nadezhda/dungeon/outside/zoo)
 "iG" = (
-/obj/machinery/power/smes,
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
@@ -2337,14 +2340,15 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
+/obj/machinery/power/smes/buildable,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/dungeon/outside/zoo)
 "iH" = (
-/obj/machinery/power/smes,
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/power/smes/buildable,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/dungeon/outside/zoo)
 "iI" = (
@@ -2799,6 +2803,11 @@
 /obj/structure/curtain/medical,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
+"kk" = (
+/obj/structure/table/woodentable,
+/obj/item/storage/box/drinkingglasses,
+/turf/simulated/floor/carpet/turcarpet,
+/area/nadezhda/dungeon/outside/smuggler_zone)
 "kl" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/grass,
@@ -5567,11 +5576,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "um" = (
-/obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/snacks/sliceable/pizza/mushroompizza{
-	desc = "A very stale pizza. These mushrooms don't look like they were there originally. ";
-	name = "old mushroom pizza"
-	},
+/obj/machinery/vending/fitness,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "un" = (
@@ -5585,7 +5590,7 @@
 	dir = 1
 	},
 /obj/structure/table/woodentable,
-/obj/item/storage/box/drinkingglasses,
+/obj/machinery/chemical_dispenser/beer,
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "up" = (
@@ -5626,11 +5631,12 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "uw" = (
-/obj/item/stool/padded,
-/turf/simulated/floor/carpet/sblucarpet,
+/obj/machinery/light/small,
+/obj/structure/table/bench/steel,
+/turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "ux" = (
-/obj/structure/table/gamblingtable,
+/obj/random/mob/voidwolf,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "uy" = (
@@ -5639,6 +5645,7 @@
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "uz" = (
 /obj/structure/table/woodentable,
+/obj/item/oddity/common/coin,
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "uA" = (
@@ -5654,8 +5661,6 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "uD" = (
-/obj/structure/table/gamblingtable,
-/obj/item/oddity/common/old_money,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "uE" = (
@@ -5705,15 +5710,13 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "uO" = (
-/obj/structure/table/gamblingtable,
-/obj/item/oddity/common/coin,
-/turf/simulated/floor/carpet/sblucarpet,
+/obj/structure/table/steel_reinforced,
+/obj/machinery/chemical_dispenser/coffee_master,
+/turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "uP" = (
-/obj/structure/table/woodentable,
-/obj/item/deck/cah/black,
-/obj/item/deck/cah,
-/obj/item/storage/pill_bottle/dice,
+/obj/structure/table/rack,
+/obj/item/towel/random,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "uQ" = (
@@ -5731,10 +5734,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
 "uU" = (
-/obj/structure/table/woodentable,
-/obj/item/deck/cards,
-/obj/item/deck/tarot,
-/obj/item/storage/pill_bottle/dice_nerd,
+/obj/machinery/vending/gym,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "uV" = (
@@ -9200,8 +9200,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "JY" = (
-/obj/item/stool/padded,
-/obj/random/mob/voidwolf,
+/obj/machinery/gym/robustness,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "JZ" = (
@@ -10306,6 +10305,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"ON" = (
+/obj/machinery/gym/toughness,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/dungeon/outside/smuggler_zone)
 "OP" = (
 /obj/random/junk,
 /obj/random/traps/low_chance,
@@ -11172,6 +11175,10 @@
 	},
 /turf/simulated/floor/carpet,
 /area/colony/exposedsun/pastgate)
+"SA" = (
+/obj/random/powercell/large_safe,
+/turf/simulated/floor/tiled,
+/area/nadezhda/dungeon/outside/zoo)
 "SB" = (
 /obj/item/stool/custom/bar_special,
 /turf/simulated/floor/tiled/cafe,
@@ -11428,6 +11435,10 @@
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"TI" = (
+/obj/machinery/gym,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/dungeon/outside/smuggler_zone)
 "TJ" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/mob/undergroundmob/low_chance,
@@ -11766,9 +11777,6 @@
 /obj/random/powercell/low_chance,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
-"Va" = (
-/turf/simulated/floor/rock/manmade/concrete,
-/area/asteroid/rogue)
 "Vb" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha2,
@@ -11913,7 +11921,7 @@
 /obj/random/common_oddities/low_chance,
 /obj/item/stock_parts/matter_bin/one_star,
 /obj/item/tool/weldingtool/onestar,
-/obj/item/tool/onestar_multitool,
+/obj/item/tool/multitool/advanced/onestar,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
 "VF" = (
@@ -12703,6 +12711,12 @@
 "Za" = (
 /turf/simulated/floor/beach/water/ocean,
 /area/colony/exposedsun/pastgate)
+"Zb" = (
+/obj/structure/table/rack,
+/obj/item/tool/hammer/dumbbell,
+/obj/item/tool/hammer/dumbbell,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/dungeon/outside/smuggler_zone)
 "Zc" = (
 /obj/random/firstaid/low_chance,
 /turf/simulated/floor/tiled/white/panels,
@@ -12909,6 +12923,9 @@
 /obj/item/oddity/common/old_newspaper,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"ZX" = (
+/turf/simulated/floor/rock/manmade/concrete,
+/area/asteroid/rogue)
 "ZZ" = (
 /obj/structure/flora/small/trailrockb2,
 /obj/machinery/light/floor,
@@ -22486,7 +22503,7 @@ Km
 Kl
 Kl
 ER
-ad
+ER
 ER
 ER
 ER
@@ -44395,7 +44412,7 @@ aV
 aV
 aV
 aV
-Va
+ZX
 aV
 aV
 aV
@@ -55739,7 +55756,7 @@ An
 co
 dA
 BL
-hW
+BL
 BL
 zw
 sX
@@ -56572,11 +56589,11 @@ Cf
 zw
 ty
 aQ
+uP
 bu
+dX
 bu
-bu
-bu
-bu
+Zb
 aQ
 uW
 uW
@@ -56782,9 +56799,9 @@ zw
 ty
 aQ
 bu
-uw
+uD
 JY
-uw
+uD
 bu
 aQ
 bu
@@ -56990,11 +57007,11 @@ hW
 zw
 sX
 aQ
-bu
+TI
+uD
 ux
-ux
-uO
-bu
+uD
+he
 aQ
 bu
 bu
@@ -57200,10 +57217,10 @@ Jx
 sX
 aQ
 bv
-ux
 uD
-ux
-dt
+uD
+uD
+uw
 aQ
 bF
 bu
@@ -57408,11 +57425,11 @@ Cr
 zw
 sX
 aQ
-bu
+ON
+ux
 JY
-uw
-JY
-bu
+ux
+he
 aQ
 ud
 ud
@@ -57829,7 +57846,7 @@ aQ
 um
 bu
 bu
-uP
+bu
 uU
 aQ
 bu
@@ -59290,7 +59307,7 @@ sX
 sK
 aQ
 uo
-uz
+kk
 uz
 uQ
 uV
@@ -60751,7 +60768,7 @@ aQ
 sX
 aQ
 tW
-uf
+uO
 uq
 bu
 aQ
@@ -69165,7 +69182,7 @@ Ae
 Ae
 hW
 hW
-Te
+BL
 hA
 hA
 hA
@@ -69373,7 +69390,7 @@ hW
 hW
 hW
 hW
-Rg
+BL
 BL
 hA
 hA
@@ -91943,7 +91960,7 @@ iH
 iZ
 gG
 hR
-gG
+SA
 gH
 gt
 kn

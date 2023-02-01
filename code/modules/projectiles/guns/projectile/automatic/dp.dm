@@ -34,6 +34,9 @@
 		)
 	serial_type = "NM"
 
+	wield_delay = 1 SECOND
+	wield_delay_factor = 0.5 // 50 vig for instant wield
+
 obj/item/gun/projectile/automatic/dp/update_icon()
 	..()
 	if(ammo_magazine)

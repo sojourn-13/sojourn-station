@@ -1,5 +1,6 @@
 /mob/living/silicon/robot/emote(var/act,var/m_type=1,var/message = null)
 	var/param = null
+	var/cloud_emote = ""
 	if (findtext(act, "-", 1, null))
 		var/t1 = findtext(act, "-", 1, null)
 		param = copytext(act, t1 + 1, length(act) + 1)
@@ -66,7 +67,7 @@
 
 		if ("slowclap")
 			if (!src.restrained())
-				message = "emits a sarcastically slow claps."
+				message = "activates their slow-clap processor." // Because I'M A POTATO.
 				m_type = 2
 				playsound(loc, 'sound/misc/slowclap.ogg', 80)
 
@@ -100,6 +101,7 @@
 		if ("deathgasp")
 			message = "shudders violently for a moment, then becomes motionless, its eyes slowly darkening."
 			m_type = 1
+			cloud_emote = "cloud-malfunction"
 
 		if ("glare")
 			var/M = null
@@ -183,6 +185,7 @@
 			m_type = 1
 
 		if("buzz")
+			cloud_emote = "cloud-malfunction"
 			var/M = null
 			if(param)
 				for (var/mob/A in view(null, null))
@@ -217,6 +220,7 @@
 			m_type = 1
 
 		if("deny")
+			cloud_emote = "cloud-malfunction"
 			var/M = null
 			if(param)
 				for (var/mob/A in view(null, null))
@@ -239,6 +243,7 @@
 
 				playsound(src.loc, 'sound/voice/biamthelaw.ogg', 50, 0)
 				m_type = 2
+				cloud_emote = "cloud-scream"
 			else
 				to_chat(src, "You are not THE LAW, pal.")
 
@@ -248,6 +253,7 @@
 
 				playsound(src.loc, 'sound/voice/halt.ogg', 50, 0)
 				m_type = 2
+				cloud_emote = "cloud-scream"
 			else
 				to_chat(src, "You are not security.")
 
@@ -258,5 +264,10 @@
 
 	if ((message && src.stat == 0))
 		custom_emote(m_type, message)
+
+	if(cloud_emote)
+		var/image/emote_bubble = image('icons/mob/emote.dmi', src, cloud_emote, ABOVE_MOB_LAYER)
+		flick_overlay(emote_bubble, clients, 30)
+		QDEL_IN(emote_bubble, 3 SECONDS)
 
 	return

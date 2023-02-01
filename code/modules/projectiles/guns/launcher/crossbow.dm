@@ -43,6 +43,7 @@
 /obj/item/gun/projectile/crossbow
 	name = "powered crossbow"
 	desc = "A 2557AD twist on an old classic. Pick up that can."
+	description_info = "Uses metal rods as ammunition. Insert a rod and use in hand to pull the string, then fire. To fire superheated rods instead, insert a Large powercell. To remove a drained powercell, use a Screwdriving tool."
 	icon = 'icons/obj/guns/launcher/crossbow-solid.dmi'
 	icon_state = "crossbow"
 	item_state = "crossbow-solid"

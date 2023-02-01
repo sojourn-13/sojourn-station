@@ -32,7 +32,6 @@
 	/obj/item/gun/projectile/automatic/greasegun = 2,
 	//Shotgun
 	/obj/item/gun/projectile/boltgun/lever = 2,
-	/obj/item/gun/projectile/shotgun/pump/gladstone = 2,
 	/obj/item/gun/projectile/shotgun/pump/china = 2,
 	//Ammo
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 3,
@@ -82,7 +81,7 @@
 	/obj/item/storage/pouch/pistol_holster/cowboy = 5,
 	/obj/item/storage/pouch/kniferig = 5,
 	/obj/item/storage/pouch/ammo = 2,
-	/obj/item/storage/backpack/duffelbag/guncase = 35,
+	/obj/item/storage/backpack/guncase = 35,
 	/obj/item/storage/box/smokes = 3)
 
 	prices = list(
@@ -111,7 +110,6 @@
 	/obj/item/gun/projectile/automatic/greasegun = 800,
 	//Shotgun
 	/obj/item/gun/projectile/boltgun/lever = 650,
-	/obj/item/gun/projectile/shotgun/pump/gladstone = 850,
 	/obj/item/gun/projectile/shotgun/pump/china = 1750,
 	//Ammo
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 20,
@@ -161,7 +159,7 @@
 	/obj/item/storage/pouch/pistol_holster/cowboy = 100, // Two pistols, double the price
 	/obj/item/storage/pouch/kniferig = 50,
 	/obj/item/storage/pouch/ammo = 75,
-	/obj/item/storage/backpack/duffelbag/guncase = 25,
+	/obj/item/storage/backpack/guncase = 25,
 	/obj/item/storage/box/smokes = 100)
 
 /obj/machinery/vending/security

@@ -57,5 +57,6 @@
 	offer_types = list(
 		/obj/item/mine = offer_data("landmine", 1200, 3),
 		/obj/item/beartrap = offer_data("mechanical trap", 600, 5),
-		/obj/item/device/assembly/mousetrap = offer_data("mousetrap", 200, 10)
+		/obj/item/device/assembly/mousetrap = offer_data("mousetrap", 200, 10),
+		/datum/reagent/toxin/zombiepowder = offer_data("zombie powder bottle(60u)", 800, 2)
 	)

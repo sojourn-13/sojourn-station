@@ -97,7 +97,7 @@
 				return
 
 		if(reagents.total_volume > 30) // 30 equates to 3 SECONDS.
-			usr.visible_message(SPAN_NOTICE("[usr] prepares to gulp down [src]."), SPAN_NOTICE("You prepare to gulp down [src]."))
+			usr.visible_message(SPAN_NOTICE("[usr] prepares to gulp down [src]."), SPAN_NOTICE("You prepare to gulp down \the [src]."))
 		if(!do_after(usr, reagents.total_volume))
 			standard_splash_mob(usr, usr)
 			return
@@ -105,7 +105,7 @@
 		if(!Adjacent(usr))
 			return
 
-		usr.visible_message(SPAN_NOTICE("[usr] gulped down the whole [src]!"),SPAN_NOTICE("You gulped down the whole [src]!"))
+		usr.visible_message(SPAN_NOTICE("[usr] gulped down the whole \the [src]!"),SPAN_NOTICE("You gulped down the whole \the [src]!"))
 		reagents.trans_to_mob(usr, reagents.total_volume, CHEM_INGEST)
 		feed_sound(usr)
 	else

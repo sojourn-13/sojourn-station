@@ -138,6 +138,12 @@
 	Are we truly changing anything?"
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/psychoactive_manipulation
 
+/obj/item/device/psionic_catalyst/Light_psi_armor
+	name = "psionic catalyst: Void robe"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: TEST"
+	stored_power = /obj/item/organ/internal/psionic_tumor/proc/Light_psi_armor
+
 /obj/item/device/psionic_catalyst/Hpsi_armor
 	name = "psionic catalyst: Durable shell"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
@@ -180,7 +186,8 @@
 				/obj/item/device/psionic_catalyst/dream_seeker = 10,
 				/obj/item/device/psionic_catalyst/kings_decorum = 10,
 				/obj/item/device/psionic_catalyst/psionic_ascension = 10,
-				/obj/item/device/psionic_catalyst/Hpsi_armor = 7,
+				/obj/item/device/psionic_catalyst/Hpsi_armor = 4,
+				/obj/item/device/psionic_catalyst/Light_psi_armor = 4,
 				/obj/item/device/psionic_catalyst/heretical_ascension = 1))
 
 // Psi-related lore paperwork. Not really a good place to put this so here it is. -Kaz
@@ -222,7 +229,7 @@
 	work, it absolutely succeeded.</p><br>\
 	<br><p>As an aside, our secondary labs working on improving cryogenics, genetics, and chemical research have hit several break throughs. The new machines they've cooked up have done wonders \
 	to the monkies we've taken to testing on. Trials for higher life forms will begin shortly, though some are worried that such tamperings will end quite poorly if we progress too quickly. \
-	Given what our benefactor has stressed about safety, I've exchanged the standard load out of our more brutish workers to include gladstone shotguns, a common and easily procured firearm here \
+	Given what our benefactor has stressed about safety, I've exchanged the standard load out of our more brutish workers to include grizzly shotguns, a common and easily procured firearm here \
 	on the frontier. Just a shame that our contacts in krios must trade so secretively.</p>"
 
 /obj/item/paper/psi_log_4

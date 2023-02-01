@@ -215,7 +215,7 @@
 
 /obj/item/storage/belt/utility/opifex/full/populate_contents()
 	new /obj/item/tool/crowbar/pneumatic(src)
-	new /obj/item/tool/hammer(src)
+	new /obj/item/tool/hammer/deadblow(src)
 	new /obj/item/tool/multitool/advanced(src)
 	new /obj/item/tool/saw/circular/advanced(src)
 	new /obj/item/tool/screwdriver/electric(src)
@@ -345,7 +345,9 @@
 		/obj/item/tool/knife,
 		/obj/item/tool/shovel/combat,
 		/obj/item/gun/projectile/mk58,
-		/obj/item/gun/projectile/revolver/lemant,
+		/obj/item/gun/projectile/makarov,
+		/obj/item/gun/projectile/clarissa,
+		/obj/item/gun/projectile/colt,
 		/obj/item/gun/energy/gun,
 		/obj/item/gun/projectile/giskard,
 		/obj/item/gun/projectile/olivaw,
@@ -361,7 +363,8 @@
 		/obj/item/folder,
 		/obj/item/reagent_containers/food/snacks,
 		/obj/item/reagent_containers/food/drinks,
-		/obj/item/device/binoculars // By popular demand. - Seb
+		/obj/item/device/binoculars, // By popular demand. - Seb
+		/obj/item/tool/baton/mini
 	)
 
 /obj/item/storage/belt/holding
@@ -484,17 +487,29 @@
 	max_w_class = ITEM_SIZE_SMALL //Holds 14 small items like a real harness, and hats
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 
-/obj/item/storage/belt/webbing/green
-	name = "green web harness"
-	desc = "Everything you need at hand, at belt."
-	icon_state = "webbing_green"
-	item_state = "webbing_green"
+/obj/item/storage/belt/webbing/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/storage/belt/webbing/black
-	name = "black web harness"
-	desc = "Everything you need at hand, at belt."
-	icon_state = "webbing_black"
-	item_state = "webbing_black"
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Brown"] = "webbing"
+	options["Green"] = "webbing_green"
+	options["Black"] = "webbing_black"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/storage/belt/webbing/ih
 	name = "security web harness"

@@ -34,6 +34,9 @@
 	//For weather we level up this task or not
 	var/level_threshholds = 10
 
+	//For when we want to scale are level_threshholds at a different rate
+	var/alt_scaling_number = 0
+
 	//The text displayed to a player when they gain a learnt task.
 	var/gain_text
 
@@ -49,11 +52,13 @@
 	//log_debug("[forwards_refence] Has gained additonal insight.")
 	forwards_refence.sanity.give_insight(level + 3)
 	forwards_refence.sanity.give_insight_rest(level + 3)
+	forwards_refence.sanity.resting += level
+
 
 /datum/task_master/task/clay_thumb
 	name = "Potted Plant Maintainer"
 	key = "CLAY_THUMB_CONISOUR"
-	desc = "Do to maintaining small potted plants your knowings on biodiversity grows!"
+	desc = "Thanks to regularly maintaining small potted plants, your knowledge of biodiversity grows!"
 	gain_text = "Keeping potted plants alive sure is rewarding labour!"
 	level_threshholds = 10 //What looks like a low value is rather high, as this only gains bio on the second+ level up i.e first 10 points are wasted
 
@@ -80,7 +85,7 @@
 	unlocked = TRUE //Morality
 
 /datum/task_master/task/return_to_sender/activate_affect()
-	forwards_refence.max_nutrition += (level * 15) //415 level 1 -> 445 level 2 -> 490 level 2 ect ect
+	forwards_refence.max_nutrition += (level * 15) //415 level 1 -> 445 level 2 -> 490 level 3 ect ect
 	forwards_refence.stats.changeStat(STAT_VIV, (level + 2)) //Exstreamly miner: 3 level 1 -> 7 level 2 -> 13 level 3 ect ect
 
 //Huskification
@@ -98,3 +103,15 @@
 	forwards_refence.maxHealth += 5 //Scars and battle wounds heal back stronger.
 	forwards_refence.health += 5 //Scars and battle wounds heal back stronger.
 
+//Gym buff
+/datum/task_master/task/gym_goer
+	name = "Body Builder"
+	key = "GYM_GOER"
+	desc = "Nothing beats hitting the gym."
+	gain_text = "Feels great to be fit."
+	level_threshholds = 3 //Gym has long cooldowns and costs a bit
+
+/datum/task_master/task/gym_goer/activate_affect()
+	forwards_refence.stats.changeStat(STAT_VIV, (level + 2))
+	forwards_refence.max_nutrition += (level * 5) //405 level 1 -> 415 level 2 -> 430 level 3 ect ect
+	forwards_refence.vessel.maximum_volume  += 5 //Blood flow is being aided

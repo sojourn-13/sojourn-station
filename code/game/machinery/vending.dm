@@ -111,7 +111,6 @@
 	var/list/prices   = list() // Prices for each item, list(/type/path = price), items not in the list don't have a price.
 
 	//Vars for task_mastery
-	var/discount_points_reward = 0
 	var/give_discounts = TRUE
 	var/give_discount_points = TRUE
 
@@ -152,6 +151,7 @@
 	var/list/can_stock = list()	//A whitelist of objects which can be stocked into this vendor
 	//Note that a vendor can always accept restocks of things it has had in the past. This is in addition to that
 	var/no_criminals = FALSE //If true, the machine asks if you're wanted by security when you try to order.
+	var/alt_currency_path	// If set, this machine will only take items of the given path as currency.
 
 /obj/machinery/vending/New()
 	..()
@@ -352,25 +352,33 @@
 	var/obj/item/card/id/ID = I.GetIdCard()
 
 	if (currently_vending && earnings_account && !earnings_account.suspended)
-		var/paid = 0
-		var/handled = 0
-		power_change(src)
-		if (ID) //for IDs and PDAs and wallets with IDs
-			paid = pay_with_card(ID,I)
-			handled = 1
-			playsound(usr.loc, 'sound/machines/id_swipe.ogg', 100, 1)
-		else if (istype(I, /obj/item/spacecash/ewallet))
-			var/obj/item/spacecash/ewallet/C = I
-			paid = pay_with_ewallet(C, user)
-			handled = 1
-			playsound(usr.loc, 'sound/machines/id_swipe.ogg', 100, 1)
-		else if (istype(I, /obj/item/spacecash/bundle))
-			var/obj/item/spacecash/bundle/C = I
-			paid = pay_with_cash(C)
-			handled = 1
+		var/paid = FALSE
+		var/handled = FALSE
+
+		if(alt_currency_path)
+			if(istype(I, alt_currency_path))
+				paid = pay_with_item(I, user)
+			else
+				var/atom/movable/AM = alt_currency_path
+				to_chat(user, SPAN_WARNING("This vending machine only accepts [initial(AM.name)] as currency."))
+			handled = TRUE
+		else
+			if(ID) //for IDs and PDAs and wallets with IDs
+				paid = pay_with_card(ID,I)
+				handled = TRUE
+				playsound(usr.loc, 'sound/machines/id_swipe.ogg', 100, 1)
+			else if(istype(I, /obj/item/spacecash/ewallet))
+				var/obj/item/spacecash/ewallet/C = I
+				paid = pay_with_ewallet(C, user)
+				handled = TRUE
+				playsound(usr.loc, 'sound/machines/id_swipe.ogg', 100, 1)
+			else if(istype(I, /obj/item/spacecash/bundle))
+				var/obj/item/spacecash/bundle/C = I
+				paid = pay_with_cash(C)
+				handled = TRUE
 
 		if(paid)
-			vend(currently_vending, usr)
+			vend(currently_vending, user)
 			return
 		else if(handled)
 			SSnano.update_uis(src)
@@ -384,7 +392,7 @@
 			status_message = "Error: Unable to access account. Please contact technical support if problem persists."
 			status_error = 1
 			SSnano.update_uis(src)
-			return 0
+			return
 
 		if(user_account.suspended)
 			status_message = "Unable to access account: account suspended."
@@ -415,7 +423,7 @@
 					status_message = "Unable to access account: incorrect credentials."
 					status_error = 1
 					SSnano.update_uis(src)
-					return 0
+					return
 			if(!machine_vendor_account)
 				machine_vendor_account = user_account
 				earnings_account = user_account
@@ -498,30 +506,30 @@
 	if(currently_vending.price > wallet.worth)
 		status_message = "Insufficient funds on chargecard."
 		status_error = 1
-		return 0
-	else
-		if(give_discounts && give_discount_points)
-			if(ishuman(user))
-				var/mob/living/carbon/human/H = user
-				if(currently_vending.price)
-					var/points_rewarded = (currently_vending.price / 100) //Shockingly this is MORE fair then a flat value as it rewards better for high spenders well still punishing low value endless transations
-					H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/vender_e_shopper, "VENDER_E_SHOPPER", skill_gained = points_rewarded, learner = H)
-				//Small order of operations here to prevent first time buyers being SCAMMED out of point rewards and such.
-				var/task_level = H.learnt_tasks.get_task_mastery_level("VENDER_E_SHOPPER")
+		return FALSE
 
-				if(task_level < currently_vending.price) //so free stuff dosnt get discounted/givepoints
-					currently_vending.price -= task_level
-					wallet.worth -= currently_vending.price
-					credit_purchase("[wallet.owner_name] (chargecard)")
-					currently_vending.price += task_level //So we dont perma lower the price of things
-					return 1
+	if(give_discounts && give_discount_points)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			if(currently_vending.price)
+				var/points_rewarded = (currently_vending.price / 100) //Shockingly this is MORE fair then a flat value as it rewards better for high spenders well still punishing low value endless transations
+				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/vender_e_shopper, "VENDER_E_SHOPPER", skill_gained = points_rewarded, learner = H)
+			//Small order of operations here to prevent first time buyers being SCAMMED out of point rewards and such.
+			var/task_level = H.learnt_tasks.get_task_mastery_level("VENDER_E_SHOPPER")
 
+			if(task_level < currently_vending.price) //so free stuff dosnt get discounted/givepoints
+				currently_vending.price -= task_level
 				wallet.worth -= currently_vending.price
 				credit_purchase("[wallet.owner_name] (chargecard)")
-				return 1
+				currently_vending.price += task_level //So we dont perma lower the price of things
+				return TRUE
+
+			wallet.worth -= currently_vending.price
+			credit_purchase("[wallet.owner_name] (chargecard)")
+			return TRUE
 		wallet.worth -= currently_vending.price
 		credit_purchase("[wallet.owner_name] (chargecard)")
-		return 1
+		return TRUE
 
 /**
  * Scan a card and attempt to transfer payment from associated account.
@@ -572,6 +580,31 @@
 		// owner made them
 		credit_purchase(customer_account.owner_name)
 		return 1
+
+// Pay with an alternative currency
+/obj/machinery/vending/proc/pay_with_item(obj/item/I, mob/user)
+	var/should_qdel = TRUE
+	var/amount_to_spend = currently_vending.price
+
+	if(istype(I, /obj/item/stack))
+		var/obj/item/stack/S = I
+		if(S.amount >= amount_to_spend)
+			S.use(amount_to_spend)
+			if(S.amount)
+				should_qdel = FALSE		// Don't qdel a stack with remaining charges
+		else
+			to_chat(user, SPAN_WARNING("\icon[I] That is not enough money."))
+			return FALSE
+	else
+		return FALSE
+
+	visible_message(SPAN_NOTICE("\The [user] inserts ["[amount_to_spend]"] [I.name] into \the [src]."))
+
+	if(should_qdel)
+		user.drop_from_inventory(I)
+		qdel(I)
+
+	return TRUE
 
 /**
  * Add money for current purchase to the vendor account.
@@ -881,11 +914,7 @@
 		return FALSE
 	var/obj/item/projectile/P = new /obj/item/projectile/coin(get_turf(src))
 	P.shot_from = src
-	playsound(src, \
-		pick('sound/weapons/Gunshot.ogg','sound/weapons/guns/fire/Revolver_fire.ogg','sound/weapons/Gunshot_light.ogg',\
-		'sound/weapons/guns/fire/shotgunp_fire.ogg','sound/weapons/guns/fire/ltrifle_fire.ogg','sound/weapons/guns/fire/lmg_fire.ogg',\
-		'sound/weapons/guns/fire/ltrifle_fire.ogg','sound/weapons/guns/fire/batrifle_fire.ogg'),\
-		60, 1)
+	playsound(src, 'sound/weapons/Gunshot_light.ogg', 60, 1) // Please no more actual gunshot sounds from a vending machine
 	P.launch(target)
 	visible_message(SPAN_WARNING("\The [src] launches \a [P] at \the [target]!"))
 	return TRUE

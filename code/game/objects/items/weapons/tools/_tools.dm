@@ -58,11 +58,15 @@
 	var/toggleable = FALSE	//Determines if it can be switched ON or OFF, for example, if you need a tool that will consume power/fuel upon turning it ON only. Such as welder.
 	var/switched_on = FALSE	//Curent status of tool. Dont edit this in subtypes vars, its for procs only.
 	var/switched_on_qualities = list()	//This var will REPLACE tool_qualities when tool will be toggled on.
-	var/switched_on_force = null
+	var/switched_on_forcemult = null
+	var/switched_on_penmult = null
+	var/switched_on_icon_state = null
+	var/switched_on_item_state = null
 	var/switched_off_qualities = list()	//This var will REPLACE tool_qualities when tool will be toggled off. So its possible for tool to have diferent qualities both for ON and OFF state.
 	var/create_hot_spot = FALSE	 //Set this TRUE to ignite plasma on turf with tool upon activation
 	var/glow_color = null	//Set color of glow upon activation, or leave it null if you dont want any light
 	var/last_tooluse = 0 //When the tool was last used for a tool operation. This is set both at the start of an operation, and after the doafter call
+	var/active_time = null //If set to an integer, the tool cannot be manually turned off, and will instead remain on for that many ticks.
 
 	//Vars for tool upgrades
 	var/precision = 0	//Subtracted from failure rates
@@ -163,6 +167,9 @@
 /obj/item/tool/attack_self(mob/user)
 	if(toggleable)
 		if(switched_on)
+			if(active_time)
+				to_chat(user, SPAN_NOTICE("You can't turn off \the [src] manually!"))
+				return FALSE
 			turn_off(user)
 		else
 			turn_on(user)
@@ -220,12 +227,16 @@
 	if(item_upgrades.len)
 		data["attachments"] = list()
 		for(var/atom/A in item_upgrades)
-			data["attachments"] += list(list("name" = A.name, "icon" = getAtomCacheFilename(A)))
+			data["attachments"] += list(list("name" = A.name, "icon" = SSassets.transport.get_asset_url(name)))
 
 	return data
 
 /obj/item/tool/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
 	var/list/data = nano_ui_data(user)
+
+	var/datum/asset/toolupgrageds = get_asset_datum(/datum/asset/simple/tool_upgrades)
+	if (toolupgrageds.send(user.client))
+		user.client.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -676,16 +687,25 @@
 		to_chat(user, SPAN_NOTICE("\The [src] turns on."))
 	switched_on = TRUE
 	tool_qualities = switched_on_qualities
-	if(!isnull(switched_on_force))
-		force = switched_on_force
-		if(wielded)
-			force *= 1.3
+	if(switched_on_forcemult)
+		force *= switched_on_forcemult
+	if(switched_on_penmult)
+		armor_penetration *= switched_on_penmult
 	if(glow_color)
 		set_light(l_range = 1.7, l_power = 1.3, l_color = glow_color)
+	if(switched_on_icon_state)
+		icon_state = switched_on_icon_state
+	if(switched_on_item_state)
+		item_state = switched_on_item_state
 	START_PROCESSING(SSobj, src)
 	update_icon()
 	update_wear_icon()
-	return TRUE
+	if(!active_time)
+		return TRUE
+	else
+		spawn(active_time)
+			to_chat(user, SPAN_NOTICE("\The [src] turns off automatically."))
+			turn_off()
 
 /obj/item/tool/proc/turn_off(var/mob/user)
 	if(user)
@@ -693,9 +713,16 @@
 	switched_on = FALSE
 	STOP_PROCESSING(SSobj, src)
 	tool_qualities = switched_off_qualities
-	force = initial(force)
+	if(switched_on_forcemult)
+		force /= switched_on_forcemult
+	if(switched_on_penmult)
+		armor_penetration /= switched_on_penmult
 	if(glow_color)
 		set_light(l_range = 0, l_power = 0, l_color = glow_color)
+	if(switched_on_icon_state)
+		icon_state = initial(icon_state)
+	if(switched_on_item_state)
+		icon_state = initial(item_state)
 	update_icon()
 	update_wear_icon()
 
@@ -727,7 +754,7 @@
 
 	if(use_power_cost)
 		if(!cell?.checked_use(use_power_cost*timespent))
-			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
+			to_chat(user, SPAN_WARNING("[src]'s battery is dead or missing."))
 			return FALSE
 
 	if(use_fuel_cost)
@@ -817,11 +844,12 @@
 	stunforce = initial(stunforce)
 	agonyforce = initial(agonyforce)
 
-	switched_on_force = initial(switched_on_force)
+
 	extra_bulk = initial(extra_bulk)
 	item_flags = initial(item_flags)
 	name = initial(name)
 	max_upgrades = initial(max_upgrades)
+	allow_greyson_mods = initial(allow_greyson_mods)
 	color = initial(color)
 	sharp = initial(sharp)
 	prefixes = list()

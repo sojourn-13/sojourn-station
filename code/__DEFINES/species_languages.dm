@@ -24,13 +24,13 @@
 
 // Languages.
 #define LANGUAGE_COMMON		"English Common"
-#define LANGUAGE_CYRILLIC	"Techno-Russian"
-#define LANGUAGE_SERBIAN	"Serbian"
+#define LANGUAGE_CYRILLIC	"Interslavic"
+#define LANGUAGE_ILLYRIAN	"Illyrian"
 #define LANGUAGE_JIVE		"Jive"
-#define LANGUAGE_GERMAN		"German"
+#define LANGUAGE_EURO		"Eurolang"
 #define LANGUAGE_JANA	    "Jana"
-#define LANGUAGE_LATIN 		"Ancient Latin"
-#define LANGUAGE_ESPERANTO	"Esperanto"
+#define LANGUAGE_LATIN 		"Latin"
+#define LANGUAGE_ROMANA		"Lingua Romana"
 #define LANGUAGE_YASSARI	"Yassari"
 
 //Alein / Species specific langauges.

@@ -132,7 +132,7 @@
 	if(iscarbon(L))
 		gib = FALSE
 		if(!L.stat)
-			L.emote("scream", , , 1)
+			L.emote("painscream", , , 1)
 		add_blood(L)
 	if(!blood && !issilicon(L))
 		blood = TRUE

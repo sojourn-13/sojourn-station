@@ -35,7 +35,8 @@
 	to_chat(source, "The implanted compressed matter implant can be activated by using the [src.activation_emote] emote, <B>say *[src.activation_emote]</B> to attempt to activate.")
 
 /obj/item/implanter/compressed
-	name = "implanter (C)"
+	name = "implanter (compressed matter)"
+	desc = "An implanter containing a Compressed Matter implant, to store a single item for smuggling."
 	icon_state = "cimplanter1"
 	implant = /obj/item/implant/compressed
 	price_tag = 4000

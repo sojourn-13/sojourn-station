@@ -355,6 +355,10 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass/wineglass,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
+"nA" = (
+/obj/effect/step_trigger/temple_to_bigtemple_1_A,
+/turf/simulated/floor/rock/manmade/ruin3,
+/area/asteroid/rogue)
 "nC" = (
 /obj/structure/sink/basion{
 	icon_state = "BaptismFont_Wine";
@@ -555,6 +559,10 @@
 /obj/item/trash/candle,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
+"ti" = (
+/obj/effect/step_trigger/temple_to_bigtemple_1_B,
+/turf/simulated/floor/rock/manmade/ruin3,
+/area/asteroid/rogue)
 "tm" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/big/bush3,
@@ -660,11 +668,27 @@
 /obj/structure/largecrate/animal/cow,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
+"yo" = (
+/obj/structure/railing/grey{
+	dir = 8;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/multiz/stairs/enter/bottom,
+/turf/simulated/floor/rock/manmade/ruin3,
+/area/asteroid/rogue)
 "yw" = (
 /obj/structure/flora/small/bushc1,
 /obj/structure/flora/small/bushc1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"yA" = (
+/obj/structure/railing/grey{
+	dir = 4;
+	icon_state = "grey_railing0"
+	},
+/obj/structure/multiz/stairs/enter/bottom,
+/turf/simulated/floor/rock/manmade/ruin3,
+/area/asteroid/rogue)
 "yE" = (
 /obj/structure/closet/crate/bin,
 /obj/item/trash/candle,
@@ -1270,7 +1294,6 @@
 /obj/machinery/optable/altar{
 	name = "Altar"
 	},
-/obj/item/organ/internal/heart,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/asteroid/rogue)
 "Ts" = (
@@ -1476,7 +1499,6 @@
 /obj/effect/decal/cleanable/crayon,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/blood/gibs,
-/obj/item/oddity/common/paper_omega,
 /turf/simulated/floor/rock/manmade/concrete,
 /area/asteroid/rogue)
 
@@ -1566,8 +1588,8 @@ oC
 "}
 (3,1,1) = {"
 oC
-WE
-kK
+yo
+nA
 kK
 Mj
 kK
@@ -1608,8 +1630,8 @@ oC
 "}
 (4,1,1) = {"
 oC
-WE
-kK
+yA
+ti
 kK
 Mj
 kK
@@ -1650,7 +1672,7 @@ oC
 "}
 (5,1,1) = {"
 oC
-kK
+eE
 kK
 kK
 kK
@@ -1692,7 +1714,7 @@ Ca
 "}
 (6,1,1) = {"
 Ca
-kK
+WE
 kK
 kK
 kK
@@ -1734,7 +1756,7 @@ oC
 "}
 (7,1,1) = {"
 oC
-kK
+eE
 kK
 kK
 eE
@@ -1986,7 +2008,7 @@ oC
 "}
 (13,1,1) = {"
 oC
-kK
+eE
 kK
 kK
 eE
@@ -2028,7 +2050,7 @@ Ca
 "}
 (14,1,1) = {"
 Ca
-kK
+WE
 kK
 kK
 kK
@@ -2070,7 +2092,7 @@ oC
 "}
 (15,1,1) = {"
 oC
-kK
+eE
 kK
 kK
 kK
@@ -2112,7 +2134,7 @@ Ca
 "}
 (16,1,1) = {"
 oC
-WE
+kK
 kK
 kK
 Mj
@@ -2154,7 +2176,7 @@ oC
 "}
 (17,1,1) = {"
 oC
-WE
+kK
 kK
 kK
 Mj
@@ -2399,9 +2421,9 @@ kK
 kK
 kK
 kK
-kK
-kK
 eE
+kK
+kK
 Ca
 "}
 (23,1,1) = {"
@@ -2803,7 +2825,7 @@ Ca
 kK
 kK
 Ca
-kK
+oC
 oC
 Zk
 kK
@@ -2845,7 +2867,7 @@ kK
 kK
 kK
 kK
-kK
+oC
 oC
 pw
 kK
@@ -2875,7 +2897,7 @@ mY
 mY
 ap
 oC
-ae
+oC
 OK
 QV
 cr
@@ -2887,7 +2909,7 @@ ua
 kK
 OK
 kK
-kK
+ae
 oC
 pw
 kK
@@ -2917,7 +2939,7 @@ mY
 mY
 ap
 oC
-rQ
+oC
 OK
 pt
 ZX
@@ -2929,7 +2951,7 @@ kK
 Ij
 kK
 kK
-kK
+rQ
 Ca
 kK
 kK
@@ -2971,7 +2993,7 @@ kK
 kK
 su
 kK
-kK
+oC
 oC
 dT
 kK
@@ -3013,7 +3035,7 @@ Ca
 kK
 kK
 Ca
-kK
+oC
 oC
 dT
 kK

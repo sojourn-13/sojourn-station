@@ -10,16 +10,18 @@
 
 	var/is_working = FALSE
 	var/storage_capacity = 20 // How many of each resource could be stored. Multiplied by matter bin rating
-	var/productivity_bonus = 2 // Sum of micro-laser and manipulator ratings, increases effectiveness of ammo crafting
+	var/productivity_bonus = 5 // Sum of micro-laser and manipulator ratings, increases effectiveness of ammo crafting
 	var/list/materials_stored = list()
 	var/list/materials_compatible = list (MATERIAL_PLASTEEL, MATERIAL_STEEL, MATERIAL_PLASTIC, MATERIAL_WOOD, MATERIAL_CARDBOARD, MATERIAL_PLASMA)
-	//var/list/materials_gunpart = list(MATERIAL_PLASTEEL = 5)
-	//var/list/materials_armorpart = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_WOOD = 20, MATERIAL_CARDBOARD = 20)
-	var/list/materials_ammo = list(MATERIAL_STEEL = 10, MATERIAL_CARDBOARD = 5)
+	var/list/materials_ammo = list(MATERIAL_STEEL = 10, MATERIAL_CARDBOARD = 2)
 	var/list/materials_rocket = list(MATERIAL_PLASMA = 5, MATERIAL_PLASTIC = 5, MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 10)
 
 	// A vis_contents hack for materials loading animation.
 	var/tmp/obj/effect/flick_light_overlay/image_load
+
+	//Gun crafting does not work yet. This will be done later; Marshals should get their own means of crafting unique/specific weapons and/or parts, Guild should get some basic ones via this station.
+	//var/list/materials_gunpart = list(MATERIAL_PLASTEEL = 5)
+	//var/list/materials_armorpart = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_WOOD = 20, MATERIAL_CARDBOARD = 20)
 
 /obj/item/circuitboard/crafting_station
 	build_name = "crafting station"
@@ -28,8 +30,8 @@
 	origin_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 1)
 	req_components = list(
 		/obj/item/stock_parts/matter_bin = 1,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/micro_laser = 1
+		/obj/item/stock_parts/manipulator = 3,
+		/obj/item/stock_parts/micro_laser = 2
 	)
 
 // You (still) can't flick_light overlays in BYOND, and this is a vis_contents hack to provide the same functionality.
@@ -111,7 +113,7 @@
 
 	var/choice = input(user, "What do you want to craft?") as null|anything in list(
 		"Ammunition",
-		".70")
+		"19mm gyrojet rocket")
 		//"Gun parts",
 		//"Armor parts")
 
@@ -122,7 +124,7 @@
 		if("Ammunition")
 			required_resources = materials_ammo
 
-		if(".70 shell")
+		if("19mm gyrojet rocket")
 			required_resources = materials_rocket
 			items_to_spawn = list("" = /obj/item/ammo_casing/a75)
 /*

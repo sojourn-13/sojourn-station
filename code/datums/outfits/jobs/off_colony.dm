@@ -2,9 +2,9 @@
 	name = OUTFIT_JOB_NAME("Lodge - Hunt Master")
 	l_pocket = /obj/item/device/radio
 	uniform = /obj/item/clothing/under/genericr
-	suit = /obj/item/clothing/suit/armor/hunter/bone
-	gloves = /obj/item/clothing/gloves/thick/brown
-	shoes = /obj/item/clothing/shoes/jackboots/german
+	suit = /obj/item/clothing/suit/armor/hunter
+	gloves = /obj/item/clothing/gloves/thick/hunter
+	shoes = /obj/item/clothing/shoes/hunterboots
 	mask = /obj/item/clothing/mask/gas/tactical
 	head = /obj/item/clothing/head/helmet/huntmaster_helmet
 	l_ear = null
@@ -20,10 +20,10 @@
 	mask = /obj/item/clothing/mask/gas/tactical
 	head = /obj/item/clothing/head/helmet/hunter
 	gloves = /obj/item/clothing/gloves/thick/brown
-	shoes = /obj/item/clothing/shoes/jackboots/german
+	shoes = /obj/item/clothing/shoes/hunterboots
 	l_ear = null
-	id_type = /obj/item/card/id/lodge
 	pda_type = FALSE
+	id_type = /obj/item/card/id/lodge
 	backpack_contents = list(/obj/item/tool/knife/dagger/skinning = 1)
 
 /decl/hierarchy/outfit/job/off_colony/herbalist
@@ -36,8 +36,8 @@
 	gloves = /obj/item/clothing/gloves/botanic_leather
 	shoes = /obj/item/clothing/shoes/workboots
 	l_ear = null
-	id_type = /obj/item/card/id/lodge
 	pda_type = FALSE
+	id_type = /obj/item/card/id/lodge
 	backpack_contents = list(/obj/item/tool/knife/dagger/skinning = 1, /obj/item/device/scanner/health = 1)
 
 /decl/hierarchy/outfit/job/outsider

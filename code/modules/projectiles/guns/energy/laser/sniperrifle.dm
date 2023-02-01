@@ -5,7 +5,7 @@
 	icon_state = "sniper"
 	item_state = "sniper"
 	item_charge_meter = TRUE
-	fire_sound = 'sound/weapons/energy/marauder.ogg'
+	fire_sound = 'sound/weapons/energy/laser_sniper.ogg'
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 5, TECH_POWER = 4)
 	projectile_type = /obj/item/projectile/beam/sniper
 	slot_flags = SLOT_BACK

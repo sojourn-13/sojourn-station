@@ -178,7 +178,9 @@
 
 /obj/item/oddity/common/book_omega
 	name = "occult book"
-	desc = "Most of the stories in this book seem to be the ramblings of a mad man, but at least the stories are interesting. Some of the phrases are written in Latin, an odd thing in this day and age."
+	desc = "Most of the stories in this book seem to be the ramblings of an insane cultist, but at least the stories are interesting. \
+			Some of the phrases are written in a language that makes sense at times, but becomes intelligible to you a second after. Something about candles around a magic circle on the floor...\
+			While this sounds like utter nonsense to you, you have a dreadful feeling that using this book in the runes described would have some sinister effect..."
 	icon_state = "book_eyes" // This sprite fits better an occult book, swapped with the observer one.
 	prob_perk = 15 //old wrighting with the madmans ink allows the mind to go a bit more wild then just a single paper
 	oddity_stats = list(
@@ -201,6 +203,9 @@
 	desc = "This is the account of the heavens and the earth when they were created..."
 	icon_state = "book_bible"
 	prob_perk = 5 //Grounded and talked about, hard to think outside the box when given its history and known lore
+	force = 1
+	effective_faction = list("psi_monster") // roach are weak to bricks.
+	damage_mult = 15 //15~, damage to psionic mobs no AP
 	oddity_stats = list(
 		STAT_ROB = 4,
 		STAT_VIG = 4
@@ -407,7 +412,8 @@
 
 /obj/item/oddity/common/book_unholy
 	name = "unholy book"
-	desc = "The writings inside entail some strange ritual. Pages have been torn out or smudged to illegibility."
+	desc = "The writings inside describe some strange rituals whose price is always paid in blood. Some pages have been torn out or smudged to illegibility, but what little you can make out tells you that \"...to be able to see beyond the veil, the enchanter will need to be half blind...\". \
+			While this sounds like utter nonsense to you, you have a dreadful feeling that using this book in the runes described would have some sinister effect..."
 	icon_state = "book_skull"
 	prob_perk = 80 //Cult around this gives it great power
 	oddity_stats = list(
@@ -622,7 +628,7 @@
 
 /obj/item/oddity/si_bluespace_scanner
 	name = "Bluespace Tuning Device"
-	desc = "A tool used by SI to stablize and get readings of bluespace entropy." //TODO get a better desc, this is horrable the worst even
+	desc = "An anomalous, experimental tool produced by the Soteria Institute to get accurate readings of local and global Bluespace entropy." // It's a lie that it stabilizes Bluespace.
 	icon_state = "si_scan"
 	item_state = "si_scan"
 	matter = list(MATERIAL_PLASTIC = 15, MATERIAL_STEEL = 10, MATERIAL_PLASMAGLASS = 2, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_PLASMA = 5, MATERIAL_DIAMOND = 1)
@@ -637,14 +643,16 @@
 	if(!iscarbon(user) || !issilicon(user))
 		return//Prevents ghosts form making a runtime
 	if(!user.stats?.getPerk(PERK_SI_SCI) || !usr.stat_check(STAT_COG, 90)) //got to be smarts
-		to_chat(usr, SPAN_WARNING("This tool is far to complex to read let alone use."))
+		to_chat(usr, SPAN_WARNING("This tool is far too complex for you to comprehend how to even use it. The data and formulas displayed look like complete alien gibberish."))
 		return
 	var/area/my_area = get_area(src)
 	if(my_area.bluespace_entropy)
-		to_chat(user, SPAN_NOTICE("The scanner reads the room to [my_area.bluespace_entropy] annomlies bluespace."))
+		to_chat(user, SPAN_NOTICE("The Tuning Device measures bluespace entropy in this room to be [my_area.bluespace_entropy] zeframs.")) // Considering Bluespace Entropy the same as Subspace Distortion, and not making the reference more obvious than it is.
 
 	if(GLOB.bluespace_entropy)
-		to_chat(user, SPAN_NOTICE("The scanner is giving off [GLOB.bluespace_entropy]!"))
+		to_chat(user, SPAN_NOTICE("The long-range scanner notifies of stellar discrepancy at [GLOB.bluespace_entropy] zeframs of bluespace entropy on the planet."))
+
+// Considering the vast amount of references in code, a Zefram being a unit of measurement for Bluespace Entropy fits, while not being directly a Cochrane. - Seb
 
 /obj/item/oddity/code_book
 	name = "Marshal Code Handbook"

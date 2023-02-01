@@ -12,8 +12,8 @@
 	silenced = TRUE
 	caliber = CAL_ARROW
 	matter = list(MATERIAL_WOOD = 10)
-	fire_sound_silenced = 'sound/weapons/guns/fire/GLfire.ogg' //todo,, real sounds
-	bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'   //Placeholder, could use a new sound
+	fire_sound_silenced = 'sound/weapons/energy/xbow_fire.ogg' // Always meant to be shared with the crossbow.
+	bulletinsert_sound = 'sound/effects/pageturn2.ogg'   //Placeholder, could use a new sound
 	fire_sound_text = "a dull twang"
 	gun_tags = list(GUN_SCOPE, ARROW_FIRING)
 	max_upgrades = 2
@@ -72,6 +72,7 @@
 
 /obj/item/gun/projectile/bow/begin_charge(mob/living/user)
 	to_chat(user, SPAN_NOTICE("You begin drawing back the string on [src]."))
+	playsound(loc, 'sound/weapons/bow_draw.ogg', 50, 1)
 	overcharge_timer = addtimer(CALLBACK(src, .proc/add_charge, user), overcharge_timer_step, TIMER_STOPPABLE)
 
 /obj/item/gun/projectile/bow/add_charge(mob/living/user)

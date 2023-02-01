@@ -1,8 +1,8 @@
  //For loadouts so we dont give them a 1.1 damage mod pistol to people
 /obj/item/gun/projectile/clarissa
 	name = "\"Clarissa\" pistol"
-	desc = "A made on demand pocket pistol, uses older designs of fully plastic pistols used by spys to take down a target well looking like a civilian,\
-	but now commonly for self defence. Do to its full plastic internals it has a low power and impossable to maintain day to day use. Uses 9mm rounds."
+	desc = "A pocket pistol made on demand, it uses older designs of fully plastic pistols used by spies to take down a target while undercover as civilians,\
+	but now is commonly for self-defence. Due to its full plastic internals, it has low stopping power and is impossible to maintain. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/clarissa_black.dmi'
 	icon_state = "clarissa"
 	item_state = "clarissa"
@@ -20,6 +20,8 @@
 	damage_multiplier = 0.7
 	init_recoil = HANDGUN_RECOIL(0.2)
 	serial_type = "SA"
+
+	wield_delay = 0 SECOND
 
 /obj/item/gun/projectile/clarissa/preloaded
 
@@ -56,7 +58,7 @@
 	can_dual = TRUE
 	silenced = 0
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_PLASTIC = 6)
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
@@ -68,6 +70,8 @@
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "Sol Fed"
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.2 // 20 vig
 
 /obj/item/gun/projectile/makarov/preloaded
 
@@ -96,8 +100,9 @@
 
 /obj/item/gun/projectile/makarov/moebius
 	name = "SI HG 9mm \"Malpractice\"" // SI stands for Soteria Institution
-	desc = "A small, easily concealable, but somewhat underpowered gun produced by SI as based off the \"Little Commit\" but ended up being a copy of the \"Clarissa\" with white paint. Uses 9mm rounds."
+	desc = "A small, easily concealable, but somewhat underpowered gun produced by SI as based off the \"Little Comet\" but ended up being a copy of the \"Clarissa\" with white paint. Uses 9mm rounds."
 	icon = 'icons/obj/guns/projectile/clarissa_white.dmi'
+	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	price_tag = 200
 	serial_type = "SI"
 	icon_state = "clarissa"

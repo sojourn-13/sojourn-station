@@ -80,21 +80,18 @@
 	display_name = "medical HUD"
 	path = /obj/item/clothing/glasses/hud/health
 	allowed_roles = list(JOBS_MEDICAL)
-	slot = slot_glasses
 	sort_category = "Faction: Soteria"
 
 /datum/gear/factionsoteria/medicalscouter
 	display_name = "medical HUD, scouter"
 	path = /obj/item/clothing/glasses/hud/health/scouter
 	allowed_roles = list("Chief Biolab Overseer","Soteria Doctor","Soteria Lifeline Technician","Corpsman")
-	slot = slot_glasses
 	sort_category = "Faction: Soteria"
 
 /datum/gear/factionsoteria/hudpatch
 	display_name = "medical HUD, eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch/medpatch
 	allowed_roles = list("Chief Biolab Overseer","Soteria Doctor","Soteria Lifeline Technician","Corpsman")
-	slot = slot_glasses
 	sort_category = "Faction: Soteria"
 
 /datum/gear/factionsoteria/sciencegoggles

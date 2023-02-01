@@ -27,6 +27,7 @@
 				/obj/item/reagent_containers/glass/beaker/vial/vape/berry = 10,
 				/obj/item/reagent_containers/glass/beaker/vial/vape/banana = 10,
 				/obj/item/reagent_containers/glass/beaker/vial/vape/lemon = 10,
+				/obj/item/reagent_containers/glass/beaker/vial/vape/mint = 10,
 				/obj/item/reagent_containers/glass/beaker/vial/vape/nicotine = 5,
 				/obj/item/storage/box/matches = 10,
 				/obj/item/flame/lighter/random = 4,
@@ -65,6 +66,7 @@
 				/obj/item/reagent_containers/glass/beaker/vial/vape/berry = 25,
 				/obj/item/reagent_containers/glass/beaker/vial/vape/banana = 25,
 				/obj/item/reagent_containers/glass/beaker/vial/vape/lemon = 25,
+				/obj/item/reagent_containers/glass/beaker/vial/vape/mint = 25,
 				/obj/item/reagent_containers/glass/beaker/vial/vape/nicotine = 25,
 				/obj/item/storage/box/matches = 10,
 				/obj/item/flame/lighter/random = 25,
@@ -119,7 +121,6 @@
 	desc = "A one stop shop for all your card or board game needs!"
 	icon_state = "nutrimat"
 	icon_vend = "nutrimat-vend"
-	vendor_department = DEPARTMENT_CHURCH
 	product_slogans = list("All purchases are non-refundable!",
 	"Once payed for no returning!",
 	"Buying any product makes you liable for its conduction!")
@@ -288,3 +289,37 @@
 	always_open = TRUE
 	give_discounts = FALSE
 	give_discount_points = FALSE
+
+/obj/machinery/vending/gym
+	name = "Club\'s Total Workout"
+	desc = "A LSS vendor that sells exercise equipment."
+	product_slogans = "Usually no carcinogens!;Best sports!;Become the strongest!"
+	product_ads = "Strength!;Cheap!;There are contraindications, it is recommended to consult a medical specialist."
+	icon_state = "gym"
+
+	products = list(
+		/obj/item/gym_ticket = 150,
+		/obj/item/tool/hammer/dumbbell = 10,
+		/obj/item/reagent_containers/food/drinks/cans/energy = 10,
+		/obj/item/reagent_containers/food/drinks/protein_shake = 10
+		)
+
+	prices = list(
+		/obj/item/gym_ticket = 150, // Still half a hourly salary
+		/obj/item/tool/hammer/dumbbell = 120,
+		/obj/item/reagent_containers/food/drinks/protein_shake = 150, // Still a total ripoff, but it has mechanical use
+		/obj/item/reagent_containers/food/drinks/cans/energy = 75, // No longer overpriced colonist cola
+		/obj/item/reagent_containers/syringe/paracetamol = 150,
+		/obj/item/reagent_containers/syringe/adrenaline = 450,
+		/obj/item/reagent_containers/syringe/stim/steady = 600,
+		/obj/item/reagent_containers/syringe/stim/bouncer = 600,
+		/obj/item/reagent_containers/syringe/stim/violence = 600
+		)
+
+	contraband = list(
+		/obj/item/reagent_containers/syringe/paracetamol = 10,
+		/obj/item/reagent_containers/syringe/adrenaline = 10,
+		/obj/item/reagent_containers/syringe/stim/steady = 3,
+		/obj/item/reagent_containers/syringe/stim/bouncer = 3,
+		/obj/item/reagent_containers/syringe/stim/violence = 3
+		)

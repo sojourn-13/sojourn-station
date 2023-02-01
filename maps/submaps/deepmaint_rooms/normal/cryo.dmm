@@ -132,7 +132,7 @@
 /area/deepmaint)
 "v" = (
 /obj/machinery/sleeper{
-	icon_state = "sleeper_0";
+	icon_state = "sleeper";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/gray_platform,

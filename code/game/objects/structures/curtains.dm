@@ -5,6 +5,7 @@
 	icon_state = "closed"
 	opacity = 1
 	density = 0
+	anchored = 1
 	layer = WALL_OBJ_LAYER
 
 /obj/structure/curtain/open

@@ -157,6 +157,7 @@
 #define PERK_NANITE_CHEM_OXYRUSH /datum/perk/nanite_chem/oxyrush
 #define PERK_NANITE_CHEM_NANTIDOTE /datum/perk/nanite_chem/nantidotes
 
+
 //Wage Perks
 #define PERK_NEPOTISM /datum/perk/nepotism
 #define PERK_DEBTOR /datum/perk/debtor
@@ -179,5 +180,11 @@
 							   PERK_IRON_WILL, \
 							   PERK_SNACKIVORE)
 
-	//Temporary drug perks
+//Temporary drug perks
 #define PERK_ULTRASURGEON /datum/perk/drug/ultrasurgeon
+#define PERK_NJOY /datum/perk/njoy
+
+
+//cooldown perks
+#define PERK_COOLDOWN_REASON /datum/perk/cooldown/reason
+#define PERK_COOLDOWN_EXERTION /datum/perk/cooldown/exertion

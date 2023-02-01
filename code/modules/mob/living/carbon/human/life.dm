@@ -81,6 +81,7 @@
 			total_blood_req = 0
 			total_oxygen_req = 0
 			total_nutriment_req = 0
+			germ_level += 1
 			for(var/obj/item/organ/internal/I in internal_organs)
 				if(BP_IS_ROBOTIC(I))
 					continue

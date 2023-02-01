@@ -24,7 +24,7 @@
 		if(usr.stats.getPerk(PERK_PERFECT_SHOT))
 			scale = 0.5 //less recoil build up
 		if(usr.stats.getPerk(PERK_SMARTLINK))
-			scale = 0.7 //Not as crazy as racial because it's kriosan niche
+			scale = 0.8 //Not as crazy as racial because it's kriosan niche
 
 	if(recoil <= base)
 		recoil = 0
