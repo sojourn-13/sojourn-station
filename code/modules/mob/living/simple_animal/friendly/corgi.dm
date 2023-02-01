@@ -61,9 +61,8 @@
 
 /mob/living/simple_animal/corgi/fluff/Life()
 	..()
-	if(!friend)
-		return //Prevents runtimes and optimization
-	health_of_friend_checks()
+	if(friend)
+		health_of_friend_checks()
 
 /mob/living/simple_animal/corgi/fluff/proc/health_of_friend_checks()
 	if(get_dist(src, friend) >= 2)
