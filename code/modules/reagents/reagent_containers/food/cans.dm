@@ -257,19 +257,12 @@
 	volume = 60
 
 //Discount cans
-/obj/item/reagent_containers/food/drinks/energy
+/obj/item/reagent_containers/food/drinks/cans/energy // Refactoring into cans for the sake of its state being whack.
 	name = "energy drink"
 	desc = "A heart attack that fits in your pocket."
 	icon_state = "eris_energy_drink"
 	center_of_mass = list("x"=15, "y"=13)
-	preloaded_reagents = list("sugar" = 10, "cola" = 20)
-
-/obj/item/reagent_containers/food/drinks/energy/update_icon()
-	if(reagent_flags == OPENCONTAINER)
-		if(reagents && reagents.total_volume)
-			icon_state = "eris_energy_drink_open"
-		else
-			icon_state = "eris_energy_drink_whacked"
+	preloaded_reagents = list("energy_drink_monster" = 30, "sugar" = 10) // Now it's a proper energy drink instead of overpriced cola
 
 /obj/item/reagent_containers/food/drinks/protein_shake
 	name = "protein shake"
