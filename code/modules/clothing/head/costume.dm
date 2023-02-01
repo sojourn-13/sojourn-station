@@ -386,7 +386,7 @@
 	desc = "A large, featureless clear orb worn on the head. Reminds you of fish!"
 	icon_state = "fishbowl"
 	item_state= "fishbowl"
-	body_parts_covered = HEAD
+	body_parts_covered = HEAD|FACE
 
 /obj/item/clothing/head/costume/misc/justice
 	name = "red justice helm"

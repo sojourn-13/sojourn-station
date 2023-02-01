@@ -3,7 +3,7 @@
 // Absolute
 
 /obj/item/computer_hardware/hard_drive/portable/design/nt
-	disk_name = "NeoTheology Armory"
+	disk_name = "Absolute Armory"
 	icon_state = "neotheology"
 	license = -1
 
@@ -427,7 +427,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 // Grenade Launchers
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/protector
-	disk_name = "OT GL - Grenade Launcher"
+	disk_name = "Absolute Armory GL - Grenade Launcher"
 	icon_state = "neotheology"
 
 	license = 3
@@ -437,7 +437,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 
 //for the EOTP
 /obj/item/computer_hardware/hard_drive/portable/design/nt/protector
-	disk_name = "OT GL - Grenade Launcher Plus"
+	disk_name = "Absolute Armory GL - Grenade Launcher Plus"
 	icon_state = "neotheology"
 
 	license = 5
@@ -481,6 +481,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/gun/mk58,
 		/datum/design/autolathe/gun/mk58_wood = 2,
 		/datum/design/autolathe/gun/regulator = 3,
+		/datum/design/autolathe/gun/lemant = 3,
 		/datum/design/autolathe/gun/taser,
 		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/gun/sniperrifle = 6,
@@ -498,7 +499,9 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/gun/mk58,
 		/datum/design/autolathe/gun/mk58_wood = 2,
 		/datum/design/autolathe/gun/regulator = 3,
+		/datum/design/autolathe/gun/lemant = 3,
 		/datum/design/autolathe/gun/taser,
+		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/gun/sniperrifle = 6,
 		/datum/design/autolathe/ammo/pistol_ammobox_biomatter,
 		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2
@@ -518,6 +521,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/sword/nt_spear,
 		/datum/design/autolathe/sword/nt_warhammer,
 		/datum/design/autolathe/sword/nt_flanged,
+		/datum/design/autolathe/sword/nt_power,
 		/datum/design/autolathe/nt/shield/nt_buckler,
 		/datum/design/autolathe/shield/nt_shield,
 		/datum/design/autolathe/gun/plasma/martyr,

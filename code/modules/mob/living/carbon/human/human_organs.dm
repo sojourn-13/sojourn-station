@@ -97,7 +97,7 @@
 	if(stance_damage >= 8 || (stance_damage >= 4 && prob(5)))
 		if(!(lying || resting))
 			if(species && !(species.flags & NO_PAIN))
-				emote("scream")
+				emote("painscream")
 			custom_emote(1, "collapses!")
 		Weaken(5) //can't emote while weakened, apparently.
 

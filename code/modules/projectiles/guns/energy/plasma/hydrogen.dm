@@ -25,11 +25,11 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	can_dual = TRUE
 	max_upgrades = 3
 	fire_delay = 10
-	fire_sound = 'sound/weapons/energy/lasercannonfire.ogg'
+	fire_sound = 'sound/weapons/energy/hydrogen.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_MHYDROGEN = 3, MATERIAL_TRITIUM = 1)
 	init_firemodes = list(
-		list(mode_name = "standard", mode_desc="A large ball of hydrogen to blow up bulwarks or weak targets", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/energy/lasercannonfire.ogg', fire_delay=30, icon="destroy", use_plasma_cost = 10),
-		list(mode_name = "overclock", mode_desc="A large ball of volatile hydrogen to blow up cover or targets", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound='sound/effects/supermatter.ogg', fire_delay=50, icon="kill", use_plasma_cost = 20)
+		list(mode_name = "standard", mode_desc="A large ball of hydrogen to blow up bulwarks or weak targets", projectile_type = /obj/item/projectile/hydrogen, fire_sound = 'sound/weapons/energy/hydrogen.ogg', fire_delay=30, icon="destroy", use_plasma_cost = 10),
+		list(mode_name = "overclock", mode_desc="A large ball of volatile hydrogen to blow up cover or targets", projectile_type = /obj/item/projectile/hydrogen/max, fire_sound='sound/weapons/energy/hydrogen_heavy.ogg', fire_delay=50, icon="vaporize", use_plasma_cost = 20)
 	)
 
 	var/projectile_type = /obj/item/projectile/hydrogen
@@ -67,8 +67,8 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	if(!flask)
 		to_chat(user, SPAN_NOTICE("[src] has no flask inserted."))
 		return
-	if(use_plasma_cost) // So that the bluecross weapon can use 0 plasma
-		to_chat(user, "[src] has [round(flask.plasma / use_plasma_cost)] shot\s remaining.")
+	if(use_plasma_cost) // Sanity check
+		to_chat(user, "\The [src] has [round(flask.plasma / use_plasma_cost)] shot\s remaining.")
 	if(!secured)
 		to_chat(user, SPAN_DANGER("The fuel cell is not secured!"))
 	to_chat(user, SPAN_NOTICE("Control-Click to manually vent this weapon's heat."))
@@ -90,7 +90,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 		var/obj/item/tool/T = W // To use tool-only checks
 		if(QUALITY_SCREW_DRIVING in T.tool_qualities)
 			if((flask) && !(connected) && !(istype(W, /obj/item/hydrogen_fuel_cell/backpack)))
-				if(T.use_tool(user, src, WORKTIME_EXTREMELY_LONG, QUALITY_SCREW_DRIVING, FAILCHANCE_HARD, required_stat = STAT_MEC)) // Skill check. Hard to pass and long to do.
+				if(T.use_tool(user, src, WORKTIME_LONG, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_MEC)) // Skill check. Long to do, requires at least a professional to do it.
 					if(secured)
 						user.visible_message(
 												SPAN_NOTICE("[user] unsecure the plasma flask."),
@@ -105,10 +105,10 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 						secured = TRUE
 					return
 				else // When you fail
-					if(prob(75) && secured) // Get burned.
+					if(prob(65) && secured) // Get burned.
 						user.visible_message(
-												SPAN_NOTICE("[user] make a mistake while unsecuring the flask and burns \his hand."),
-												SPAN_NOTICE("You make a mistake while unsecuring the flask and burns your hand.")
+												SPAN_NOTICE("[user] makes a mistake while unsecuring the flask and burns their hand."),
+												SPAN_NOTICE("You make a mistake while unsecuring the flask and burn your hand.")
 											)
 						if(user.hand == user.l_hand) // Are we using the left arm?
 							user.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
@@ -137,7 +137,7 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	if(connected) // Are we connected to something?
 		if(loc != connected) // Are we in the connected object?
 			if(loc != connected.loc) // Are we not in the same place?
-				src.visible_message("The [src.name] reattach itself to the [connected.name].")
+				src.visible_message("The [src.name] reattaches itself to the [connected.name].")
 				usr.remove_from_mob(src)
 				forceMove(connected)
 
@@ -174,10 +174,13 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 // Vent the weapon
 /obj/item/gun/hydrogen/proc/ventEvent()
 	src.visible_message("[src]'s vents open and spew super-heated steam, cooling itself down.")
+	playsound(usr.loc, 'sound/weapons/guns/interact/gauss_vent.ogg', 50, 1)
 
 // The weapon is too hot, burns the user's hand.
 /obj/item/gun/hydrogen/proc/handleoverheat()
 	src.visible_message(SPAN_DANGER("[src] overheats, its surface becoming blisteringly hot as a pressure warning beeps!"))
+	playsound(loc, 'sound/weapons/energy/hydrogen_warning.ogg', 80)
+	flick("[icon_state]_crit", src)
 	addtimer(CALLBACK(src , .proc/doVentsplosion), 3 SECONDS)
 	var/mob/living/L = loc
 	if(istype(L))

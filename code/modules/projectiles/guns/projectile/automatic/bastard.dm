@@ -25,6 +25,9 @@
 		)
 	serial_type = "NM"
 
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+
 /obj/item/gun/projectile/automatic/bastard/update_icon()
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""

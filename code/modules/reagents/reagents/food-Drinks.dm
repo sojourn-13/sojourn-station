@@ -846,6 +846,32 @@
 
 	glass_unique_appearance = FALSE
 
+/datum/reagent/drink/protein_shake
+	name = "protein shake"
+	id = "protein_shake"
+	description = "Pure protein. Typically consumed after a workout in order to aid in muscle recovery."
+	taste_description = "strength"
+	sanity_gain_ingest = 0 //Your muscles recover, but not your mind
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "protein_shake"
+	glass_name = "protein shake"
+	glass_desc = "Pure protein. Typically consumed after a workout in order to aid in muscle recovery."
+
+/datum/reagent/drink/protein_shake/commercial
+	name = "commercial protein shake"
+	id = "protein_shake_commercial"
+	description = "An \"apple-flavored\" protein shake. Typically consumed after a workout in order to aid in muscle recovery... You aren't sure if this will be effective."
+	taste_description = "viscous slurry with bits of jelly"
+
+	glass_unique_appearance = TRUE
+	glass_icon_state = "protein_shake_commercial"
+	glass_name = "commercial protein shake"
+	glass_desc = "An \"apple-flavored\" protein shake. Typically consumed after a workout in order to aid in muscle recovery... You aren't sure if this will be effective."
+
+//there is no affect_ingest since the 'muscle recovery' is handled in the perk itself
+
+
 /datum/reagent/drink/tea
 	name = "Tea"
 	id = "tea"
@@ -2781,7 +2807,7 @@
 	taste_description = "refreshing citrus and rum"
 	color = "#d1ff49d0" // rgb(209, 255, 73
 	glass_icon_state = "daiquiri"
-	strength = 25
+	strength = 35
 
 	glass_unique_appearance = TRUE
 	glass_name = "Daiquiri"
@@ -2795,7 +2821,7 @@
 	color = "#d1ff49d0" // rgb(209, 255, 73
 	glass_unique_appearance = TRUE
 	glass_icon_state = "daiquiristrawberry"
-	strength = 23 //Washed down with FLAVOUR
+	strength = 35 //Washed down with FLAVOUR
 
 	glass_name = "Daiquiri Pink"
 	glass_desc = "Refreshing rum and strawberry juice. Time for a tropical get away, even if its too fruity."
@@ -2876,6 +2902,7 @@
 	glass_desc = "It will knock the drunkenness out of you or knock you out cold."
 
 /datum/reagent/drink/crevicespike/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
 	M.dizziness = 0
 	M.drowsyness = 0
 	M.stuttering = 0
@@ -2912,17 +2939,18 @@
 /datum/reagent/ethanol/fernet
 	name = "Fernet"
 	id = "fernet"
-	description = "Pure Fernet, a bitter herb digestiff. Drink if you dare."
+	description = "Pure Fernet, a bitter herb digestif. Drink if you dare."
 	taste_description = "unbearable bitterness"
 	color = "#150905d0" // rgb(21, 9, 5)
 	strength = 5 //Not meant to be drank on its own!
 
 	glass_icon_state = "fernetpuro"
 	glass_name = "pure Fernet"
-	glass_desc = "A glass of pure Fernet, a bitter herb digestiff. Are you sure you can stomach this undilluted...?"
+	glass_desc = "A glass of pure Fernet, a bitter herb digestif. Are you sure you can stomach this undilluted...?"
 
 /datum/reagent/ethanol/fernet/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0) //Since it's a digestiff it allows you to be less "full" by making you hungry!
+	..()
+	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0) //Since it's a digestif it allows you to be less "full" by making you hungry!
 	if(dose > 10)
 		M.adjustToxLoss(0.2 * effect_multiplier) //Toxic! Don't drink alone! May this be a reminder!
 	if(dose > 60 && ishuman(M) && prob(5))
@@ -2944,10 +2972,11 @@
 	glass_unique_appearance = TRUE
 	glass_icon_state = "godlyblend"
 	glass_name = "sawn-off bottle of Fernet cola"
-	glass_desc = "Fernet mixed with cola, served on a sawn-off bottle as per tradition. A smooth digestiff for when you've eaten more than you could chew."
+	glass_desc = "Fernet mixed with cola, served on a sawn-off bottle as per tradition. A smooth digestif for when you've eaten more than you could chew."
 
 /datum/reagent/ethanol/fernetcola/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0)
+	..()
 
 /datum/reagent/drink/fanciulli
 	name = "Fanciulli"
@@ -2957,14 +2986,34 @@
 	glass_unique_appearance = TRUE
 	glass_icon_state = "fanciulli"
 	glass_name = "Fanciulli"
-	glass_desc = "What if the Manhattan cocktail <b>actually</b> used a digestiff? Helps you sober up, but makes you sluggish."
+	glass_desc = "What if the Manhattan cocktail <b>actually</b> used a digestif? Helps you sober up, but makes you sluggish."
 
 /datum/reagent/drink/fanciulli/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	..()
 	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0)
 	M.dizziness = 0
 	M.stuttering = 0
 	M.confused = 0
 	M.Weaken(2)
+
+/datum/reagent/ethanol/jagerbomb
+	name = "Jager bomb"
+	id = "jagerbomb"
+	strength = 15 // Strong!
+	description = "Claw energy drink mixed with Fernet, a sweet drink with a strong bitter aftertaste."
+	taste_description = "carbonated sweetness with a strong kick and bitter aftertaste"
+	glass_unique_appearance = TRUE
+	glass_icon_state = "jagerbomb"
+	glass_name = "jager bomb shot"
+	glass_desc = "A shot glass of bitter herb digestif dropped into a glass of Claw energy drink \
+				makes for a drink beloved by sleep deprived paramedics and Lodge Huntmasters alike. \n Tradition dictates that you must drink this all in one go!"
+
+/datum/reagent/ethanol/jagerbomb/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	M.dizziness = 0
+	M.confused = 0
+	M.sleeping = 0 // FOURTEEN HOURS SHIFT LET'S GOOOOOO
+	M.add_chemical_effect(CE_PULSE, 2) // Purely flavor
 
 /datum/reagent/drink/antidepressant
 	name = "Antidepressant"
@@ -3036,7 +3085,7 @@
 	description = "Best served warm and in a shallow bowl for lapping."
 	taste_description = "unbearable bitterness"
 	color = "#F9F9F9" // rgb(98, 98, 98)
-	strength = 50 //rice wine stronk
+	strength = 10 //rice wine stronk
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "sake"
@@ -3049,7 +3098,7 @@
 	description = "Said to make even the strongest of accents all the more unintelligible."
 	taste_description = "robust hops and carbon"
 	color = "#E0CE8A" // rgb(88, 81, 54)
-	strength = 140 //stronk
+	strength = 20 //stronk
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "tankardlidfull"

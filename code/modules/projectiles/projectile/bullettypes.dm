@@ -1024,9 +1024,9 @@
 	name = "arrow"
 	icon_state = "arrow"
 	damage_types = list(BRUTE = 2) //Multiplied by 10 when fired.
-	armor_penetration = 2 //..
-	effective_faction = list("wurm", "roach", "spider") //good against common colony mobs
-	damage_mult = 1.5 //but not too good
+	armor_penetration = 2
+	effective_faction = list("wurm", "roach", "spider", "vox_tribe", "russian", "tengo") //good against common colony mobs
+	damage_mult = 2 // Turns out arrows always sucked
 	embed = FALSE //don't want to embed and drop an arrow, that would be weird
 	check_armour = ARMOR_MELEE
 	step_delay = 0.9
@@ -1036,23 +1036,29 @@
 	recoil = 0 //arrow moment
 	added_damage_bullet_pve = 20
 
-/obj/item/projectile/bullet/reusable/arrow/broadhead //Similar base damage, higher embed rate, lower AP. Arrow-hollowpoints type 1.
-	name = "broadhead arrow"
-	icon_state = "arrow-broad"
-	embed = TRUE //we are going to try really hard to embed
-	embed_mult = 3
-	armor_penetration = 1.5
-	create_type = null
-	shrapnel_type = /obj/item/ammo_casing/arrow/broadhead //the ENTIRE arrow!
-
-/obj/item/projectile/bullet/reusable/arrow/serrated
+/obj/item/projectile/bullet/reusable/arrow/serrated //Lower base damage, higher embed rate, higher AP. Arrow HV's, though not as good as the Lodge's.
 	name = "serrated arrow"
 	icon_state = "arrow"
+	embed = TRUE
+	damage_types = list(BRUTE = 1.5) // 15 damage at max pull
+	damage_mult = 1.5 // Less bonus damage against effective faction
+	embed_mult = 3 //we are going to try really hard to embed
+	armor_penetration = 7 // Crossbow bolts are better, however this should not penetrate armor the same as a bullet (if not MORE).
+	hitscan = TRUE // As every HV ammo
+	affective_damage_range = 8
+	affective_ap_range = 8
+	create_type = null
+	shrapnel_type = /obj/item/ammo_casing/arrow/serrated //the ENTIRE arrow!
+
+/obj/item/projectile/bullet/reusable/arrow/broadhead
+	name = "broadhead arrow"
+	icon_state = "arrow-broad"
 	post_penetration_dammult = 1.1
-	damage_types = list(BRUTE = 5.5) //Very good base damage, negligible (5) AP, but no embedding. Think of it as arrow-hollowpoints type 2.
+	damage_types = list(BRUTE = 4.5) //Very good base damage, negligible (5) AP, but no embedding. Think of it as arrow-hollowpoints.
 	embed = FALSE
 	armor_penetration = 0.5
-	create_type = /obj/item/ammo_casing/arrow/serrated
+	create_type = /obj/item/ammo_casing/arrow/broadhead
+	added_damage_bullet_pve = 30 // Raw damage is the name of the game.
 
 /obj/item/projectile/bullet/reusable/arrow/hunting
 	name = "hunting arrow"
@@ -1060,8 +1066,8 @@
 	damage_types = list(BRUTE = 1) //Multiplied by 10 when fired.
 	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE)
 	supereffective_mult = 5 //we do 10 damage base, up to 50 against SE mobs, then with 50 AP on should do ~100. Slow to fire, unwieldly, slow projectiles (but reusable), so I'll say this is fair?
-	armor_penetration = 5 //high ap to take advantage of overpen on mobs
-	step_delay = 0.8
+	armor_penetration = 10 //high ap to take advantage of overpen on mobs
+	step_delay = 0.7 // 20% faster than normal arrows
 	affective_damage_range = 8 //worse than the baroque, but better than regular arrows
 	affective_ap_range = 8
 	create_type = /obj/item/ammo_casing/arrow/hunting
@@ -1071,9 +1077,10 @@
 	icon_state = "arrow-bone"
 	damage_types = list(BRUTE = 2) //Multiplied by 10 when fired.
 	embed = TRUE
+	hitscan = TRUE // Sniping round, fast
 	supereffective_mult = 18 //we do 20 damage base, up to 360 against SE mobs, then with 55 (+5 hunting bow) AP on should do ~410. Baroque is around ~430 vs mobs, so roughly baroque-tier vs mobs, with the same wieldliness and different ammo costs (bone/leather/metal/plastic vs metal/cardboard).
-	affective_damage_range = 8
-	affective_ap_range = 8
+	affective_damage_range = 10 // Worse than Baroque, better than its predecesor arrow
+	affective_ap_range = 10
 	create_type = null //NOT reusable.
 
 /obj/item/projectile/bullet/reusable/arrow/reagent

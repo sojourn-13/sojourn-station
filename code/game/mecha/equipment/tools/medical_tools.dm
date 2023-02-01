@@ -230,16 +230,17 @@
 		M.Paralyse(2)
 		M.Weaken(2)
 		M.Stun(2)
-		if(M.reagents.get_reagent_amount("inaprovaline") < 1)
-			M.reagents.add_reagent("inaprovaline", 5)
+		// This entire list is terrible and there should be a better way to do this for a sleeper.
+		if(M.reagents.get_reagent_amount("carthatoline") < 1) // Thanks to livermed, a must.
+			M.reagents.add_reagent("carthatoline", 5)
 		if(M.reagents.get_reagent_amount("bicaridine") < 1)
 			M.reagents.add_reagent("bicaridine", 5)
 		if(M.reagents.get_reagent_amount("dermaline") < 1)
 			M.reagents.add_reagent("dermaline", 5)
 		if(M.reagents.get_reagent_amount("dexalinp") < 1)
 			M.reagents.add_reagent("dexalinp", 5)
-		if(M.reagents.get_reagent_amount("tricordrazine") < 1)
-			M.reagents.add_reagent("tricordrazine", 5)
+		if(M.reagents.get_reagent_amount("quickclot") < 1)
+			M.reagents.add_reagent("quickclot", 5) // Since we can't seal external wounds with gauze, stabilize so they don't bleed in their way to safety.
 		S.chassis.use_power(S.energy_drain)
 		S.update_equip_info()
 		return

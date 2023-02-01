@@ -12,6 +12,7 @@
 	var/syndie = 0
 	var/list/channels = list()
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("silicon" = 6, "copper" = 5, "plasticide" = 9)
 
 /obj/item/device/encryptionkey/attackby(obj/item/W as obj, mob/user as mob)
 
@@ -32,6 +33,11 @@
 	icon_state = "sec_cypherkey"
 	channels = list("Blackshield" = 1)// "Marshal" = 1 removed do to blackshield being marshals illegal
 
+/obj/item/device/encryptionkey/headset_bs/corps
+	name = "corpsman radio encryption key"
+	icon_state = "mil_cypherkey"
+	channels = list("Blackshield" = 1, "Medical(I)" = 1)
+
 /obj/item/device/encryptionkey/headset_mar
 	name = "security radio encryption key"
 	icon_state = "sec_cypherkey"
@@ -47,11 +53,6 @@
 	icon_state = "rob_cypherkey"
 	channels = list("Engineering" = 1, "Science" = 1)
 
-/obj/item/device/encryptionkey/headset_med
-	name = "soteria medical radio encryption key"
-	icon_state = "med_cypherkey"
-	channels = list("Medical" = 1)
-
 /obj/item/device/encryptionkey/headset_church
 	name = "church radio encryption key"
 	icon_state = "nt_cypherkey"
@@ -60,12 +61,12 @@
 /obj/item/device/encryptionkey/headset_sci
 	name = "soteria science radio encryption key"
 	icon_state = "sci_cypherkey"
-	channels = list("Science" = 1)
+	channels = list("Science" = 1, "Medical" = 1)
 
 /obj/item/device/encryptionkey/headset_moebius
-	name = "soteria laboratories encryption key"
-	icon_state = "sci_cypherkey"
-	channels = list("Science" = 1, "Medical" = 1)
+	name = "soteria medical encryption key"
+	icon_state = "med_cypherkey"
+	channels = list("Science" = 1, "Medical" = 1, "Medical(I)" = 1)
 
 /obj/item/device/encryptionkey/headset_com
 	name = "council command radio encryption key"
@@ -90,9 +91,9 @@
 	translate_binary = 1
 
 /obj/item/device/encryptionkey/heads/moebius
-	name = "soteria command encryption key"
+	name = "biolab overseer's encryption key"
 	icon_state = "rd_cypherkey"
-	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
+	channels = list("Science" = 1, "Medical" = 1, "Medical(I)" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/hos
 	name = "security commander's encryption key"

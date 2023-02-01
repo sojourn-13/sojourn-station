@@ -16,6 +16,7 @@
 	var/pillamount = 10
 	var/bottlesprite = "bottle"
 	var/syrettesprite = "syrette"
+	var/supeyrettesprite = "supeyrette"
 	var/pillsprite = "1"
 	var/pill_bottle_sprite = "pill_canister"
 	var/client/has_sprites = list()
@@ -231,7 +232,7 @@
 				if(bottlesprite == "potion")
 					P.filling_states = "10;20;40;50;60"
 				if(bottlesprite == "tincture")
-					P.filling_states = "3;5;10;15;25;27;30;35;40;45;55;60"
+					P.filling_states = "3;5;10;15;20;25;27;30;35;40;45;50;55;60"
 				P.label_icon_state = "label_[bottlesprite]"
 				P.matter = list()
 				reagents.trans_to_obj(P,60)
@@ -254,6 +255,22 @@
 				P.baseline_sprite = syrettesprite
 				reagents.trans_to_obj(P,5)
 				P.update_icon()
+
+		else if(href_list["createsupeyrette"])
+			if(!condi)
+				var/name = sanitizeSafe(input(usr,"Name:","Name your advanced syrette!",reagents.get_master_reagent_name()), MAX_NAME_LEN)
+				var/obj/item/reagent_containers/hypospray/autoinjector/large/chemmaters/P = new/obj/item/reagent_containers/hypospray/autoinjector/large/chemmaters(src.loc)
+				if(!name) name = reagents.get_master_reagent_name()
+				P.name = "[name] advanced syrette"
+				P.pixel_x = rand(-7, 7) //random position
+				P.pixel_y = rand(-7, 7)
+				P.matter = list()
+				P.icon_state = supeyrettesprite
+				P.item_state = supeyrettesprite
+				P.baseline_sprite = supeyrettesprite
+				reagents.trans_to_obj(P,10)
+				P.update_icon()
+
 		else if(href_list["change_pill"])
 			#define MAX_PILL_SPRITE 20 //max icon state of the pill sprites
 			var/dat = "<table>"
@@ -358,6 +375,7 @@
 			dat += "<A href='?src=\ref[src];createpill_multiple=1'>Create multiple pills</A><BR>"
 			dat += "<A href='?src=\ref[src];createbottle=1'>Create bottle (60 units max)<a href=\"?src=\ref[src]&change_bottle=1\"><img src=\"[bottlesprite].png\" /></A><BR>"
 			dat += "<A href='?src=\ref[src];createsyrette=1'>Create syrette (5 units max)<a href=\"?src=\ref[src]&change_syrette=1\"><img src=\"[syrettesprite].png\" /></A><BR>"
+			dat += "<A href='?src=\ref[src];createsupeyrette=1'>Create advanced syrette (10 units max)<a href=\"?src=\ref[src]&change_supeyrette=1\"><img src=\"[supeyrettesprite].png\" /></A><BR>"
 			dat += "<A href='?src=\ref[src];change_pill_bottle=1'>Change Pill Bottle Sprite<a href=\"?src=\ref[src]&pill_bottle_sprite=1\"><img src=\"[pill_bottle_sprite].png\" /></A>"
 		else
 			dat += "<A href='?src=\ref[src];createbottle=1'>Create bottle (50 units max)</A>"

@@ -1,0 +1,75 @@
+<!--
+Title: Drinks machine UI
+This is done so that Booze, Soda Fountain and Coffee dispensers have their own values for chems
+Used In File(s): \code\modules\reagents\machinery\chem_dispenser.dm
+ -->
+<div class="item">
+	<div class="itemLabel">
+		Energy:
+	</div>
+	<div class="itemContent">
+		{{:helper.displayBar(data.energy, 0, data.maxEnergy, 'good', data.energy + ' Units')}}
+	</div>
+</div>
+
+<div class="item">
+	<div class="itemLabel">
+		Dispense:
+	</div>
+	<div class="itemContent">
+		{{:helper.link('1', 'gear', {'amount' : 1}, (data.amount == 1) ? 'selected' : null)}}
+		{{:helper.link('2', 'gear', {'amount' : 2}, (data.amount == 2) ? 'selected' : null)}}
+		{{:helper.link('5', 'gear', {'amount' : 5}, (data.amount == 5) ? 'selected' : null)}}
+		{{:helper.link('10', 'gear', {'amount' : 10}, (data.amount == 10) ? 'selected' : null)}}
+		{{:helper.link('15', 'gear', {'amount' : 15}, (data.amount == 15) ? 'selected' : null)}}
+		{{:helper.link('20', 'gear', {'amount' : 20}, (data.amount == 20) ? 'selected' : null)}}
+		<br/><br/><br/>
+		{{:helper.link('--', '', {'amount' : data.amount-10})}}
+		{{:helper.link('-', '', {'amount' : data.amount-1})}}
+		<div style="float: left; width: 80px; text-align: center;">{{:data.amount}}</div>
+		{{:helper.link('+', '', {'amount' : data.amount+1})}}
+		{{:helper.link('++', '', {'amount' : data.amount+10})}}
+	</div>
+</div>
+<div class="item">&nbsp;</div>
+<div class="item">
+	<div class="itemContentWide" style="width: 100%;">
+		{{for data.chemicals}}
+			{{:helper.link(value.title, 'circle-arrow-s', value.commands, null, data.accept_beaker ? 'fixedLeft' : 'fixedLeftWide')}}
+		{{/for}}
+
+	</div>
+</div>
+<div class="item">&nbsp;</div>
+<div class="item">
+	<div class="itemLabel">
+		{{if data.glass}}
+			Glass
+		{{else}}
+			Beaker
+		{{/if}} Contents
+	</div>
+	<div class="itemContent">
+		{{:helper.link(data.accept_beaker ? 'Eject Beaker' : 'Eject Container', 'eject', {'ejectBeaker' : 1}, data.beaker ? null : 'disabled', 'floatRight')}}
+	</div>
+</div>
+<div class="statusDisplay" style="min-height: 180px;">
+	<div class="item">
+		<div class="itemContent" style="width: 100%;">
+			{{if data.beaker}}
+				<b>Volume:&nbsp;{{:data.beaker.total_volume}}&nbsp;/&nbsp;{{:data.beaker.maximum_volume}}</b><br>
+				{{for data.beaker.contents}}
+					<span class="highlight">{{:value.volume}} units of {{:value.name}}</span><br>
+				{{empty}}
+					<span class="bad">
+						{{:data.accept_beaker ? "Beaker" : "Container"}} is empty
+					</span>
+				{{/for}}
+			{{else}}
+				<span class="average"><i>
+					No {{:data.accept_beaker ? "beaker" : "container"}} loaded
+				</i></span>
+			{{/if}}
+		</div>
+	</div>
+</div>

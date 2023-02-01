@@ -98,7 +98,7 @@
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_MHYDROGEN = 6, MATERIAL_TRITIUM = 6)
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 7, TECH_PLASMA = 10)
 	projectile = /obj/item/projectile/hydrogen/cannon/max
-	fire_sound = 'sound/weapons/energy/pulse.ogg'
+	fire_sound = 'sound/weapons/energy/hydrogen_heavy.ogg'
 	required_type = list(/obj/mecha/combat)
 	price_tag = 1300 //state of the art
 

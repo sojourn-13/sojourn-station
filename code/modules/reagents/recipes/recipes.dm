@@ -515,8 +515,8 @@
 
 /datum/chemical_reaction/emp_pulse/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/location = get_turf(holder.my_atom)
-	// 100 created volume = 4 heavy range & 7 light range. A few tiles smaller than traitor EMP grandes.
-	// 200 created volume = 8 heavy range & 14 light range. 4 tiles larger than traitor EMP grenades.
+	// 100 created volume = 4 heavy range & 7 light range. A few tiles smaller than contractor EMP grandes.
+	// 200 created volume = 8 heavy range & 14 light range. 4 tiles larger than contractor EMP grenades.
 	empulse(location, round(created_volume / 24), round(created_volume / 14), 1)
 	holder.clear_reagents()
 	return
@@ -928,3 +928,10 @@
 	required_reagents = list("dermaline" = 1, "cronexidone" = 1, "sterilizine" = 1, "aminazine" = 1, "serotrotium" = 1, "polystem" = 1, "paroxetine" = 1,"rezadone" = 1,"spaceacillin" = 1,"rejuvenating_agent" = 1,"cordradaxon" = 1,"carthatoline" = 1,"dexalinp" = 1)
 	result_amount = 1
 	catalysts = list("honey" = 5)
+
+/datum/chemical_reaction/suppressital
+	result = "suppressital"
+	required_reagents = list("blood" = 1, "citalopram" = 1)
+	result_amount = 2
+	maximum_temperature = 12.7
+	minimum_temperature = 7.7

@@ -32,6 +32,9 @@
 		)
 	serial_type = "H&S"
 
+	wield_delay = 0.9 SECOND
+	wield_delay_factor = 0.2 // 40 vig
+
 /obj/item/gun/projectile/shotgun/bull/bison
 	name = "\"Bison\" shotgun"
 	desc = "A \"Holland & Sullivan\" double-barreled pump-action shotgun. A nightmare of engineering turned sleek room-clearer by the Artificers guild. Its snub barrel reinforced and lengthened, \

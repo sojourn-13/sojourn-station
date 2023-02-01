@@ -83,6 +83,8 @@
 				/obj/item/tank/nitrogen = 2,
 				/obj/item/clothing/mask/balaclava = 2,
 				/obj/item/clothing/mask/gas = 2,
+				/obj/item/storage/wallet = 2,
+				/obj/item/storage/wallet/random = 1,
 				/obj/random/cloth/masks = 1,
 				/obj/random/cloth/under = 1,
 				/obj/random/cloth/head = 1,

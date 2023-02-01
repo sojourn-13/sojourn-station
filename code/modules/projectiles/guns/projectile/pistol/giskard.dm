@@ -20,6 +20,8 @@
 	init_recoil = HANDGUN_RECOIL(1)
 	serial_type = "H&S"
 
+	wield_delay = 0 SECOND
+
 /obj/item/gun/projectile/giskard/update_icon()
 	..()
 

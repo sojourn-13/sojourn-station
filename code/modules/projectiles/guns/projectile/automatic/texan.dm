@@ -24,6 +24,8 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND_NOLOSS
 		)
+	wield_delay = 0.5 SECOND
+	wield_delay_factor = 0.1 // 10 vig
 
 /obj/item/gun/projectile/automatic/texan/update_icon()
 	..()

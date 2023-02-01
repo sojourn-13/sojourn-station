@@ -311,6 +311,7 @@
 
 	can_hold = list(
 		/obj/item/gun/projectile/makarov,
+		/obj/item/gun/projectile/clarissa,
 		/obj/item/gun/projectile/colt,
 		/obj/item/gun/projectile/basilisk,
 		/obj/item/gun/projectile/giskard,
@@ -322,19 +323,59 @@
 		/obj/item/gun/projectile/silenced,
 		/obj/item/gun/projectile/ladon,
 		/obj/item/gun/projectile/glock,
+		/obj/item/gun/projectile/that_gun,
+		/obj/item/gun/projectile/judiciary,
+		/obj/item/gun/projectile/rebar,
+		/obj/item/gun/projectile/rivet,
+		/obj/item/gun/projectile/silvereye,
+		/obj/item/gun/projectile/spring,
+		/obj/item/gun/projectile/boltgun/sawn,
+		/obj/item/gun/projectile/shotgun/pump/obrez,
+		/obj/item/gun/projectile/automatic/texan,
+		/obj/item/gun/projectile/automatic/sts/sawn,
+		/obj/item/gun/projectile/automatic/luty,
+		/obj/item/gun/projectile/automatic/freedom,
+		/obj/item/gun/projectile/automatic/slaught_o_matic,
+		/obj/item/gun/projectile/automatic/nordwind/strelki/sawn,
+		/obj/item/gun/projectile/automatic/omnirifle/solmarine/sawn,
+		/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless_sawn,
 		/obj/item/gun/energy/glock,
 		/obj/item/gun/energy/ionpistol,
 		/obj/item/gun/energy/gun,
 		/obj/item/gun/energy/chameleon,
-		//obj/item/gun/energy/captain, //too unwieldy, use belt/suit slot or other storage
+		/obj/item/gun/energy/centurio,
 		/obj/item/gun/energy/stunrevolver,
+		/obj/item/gun/energy/ntpistol,
+		/obj/item/gun/energy/zwang,
+		/obj/item/gun/energy/captain/zapper,
+		/obj/item/gun/energy/floragun,
+		/obj/item/gun/energy/taser,
+		/obj/item/gun/energy/slimegun,
+		/obj/item/gun/energy/sonic_emitter,
+		/obj/item/gun/energy/crossbow,
+		/obj/item/gun/energy/xray/psychic_cannon,
+		/obj/item/gun/energy/laser/railgun/pistol,
+		/obj/item/gun/energy/laser/makeshift,
+		/obj/item/gun/energy/cog/sawn,
 		/obj/item/gun/projectile/revolver,
+		/obj/item/gun/projectile/revolver/sixshot/sawn,
 		/obj/item/gun/projectile/shotgun/doublebarrel/sawn, //short enough to fit in
 		/obj/item/gun/launcher/syringe,
 		/obj/item/gun/energy/plasma/auretian,
-		/obj/item/gun/energy/centurio,
-		/obj/item/gun/projectile/boltgun/flare_gun
+		/obj/item/gun/energy/plasma/stranger,
+		/obj/item/gun/energy/plasma/martyr,
+		/obj/item/gun/projectile/boltgun/flare_gun,
+		/obj/item/gun/matter/launcher/nt_sprayer
 		)
+
+	cant_hold = list(/obj/item/storage/pouch,
+					 /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield,
+					 /obj/item/gun/projectile/automatic/sts/rifle/sawn,
+					 /obj/item/gun/projectile/revolver/sixshot,
+					 /obj/item/gun/energy/gun/nuclear,
+					 /obj/item/gun/energy/crossbow/largecrossbow,
+					 )
+
 
 	sliding_behavior = TRUE
 
@@ -364,10 +405,10 @@
 /obj/item/storage/pouch/kniferig
 	name = "throwing knife rig"
 	desc = "A rig for professionals at knife throwing."
-	icon_state = "knife"
-	item_state = "knife"
+	icon_state = "kniferig"
+	item_state = "kniferig"
 	price_tag = 50
-	storage_slots = 4
+	storage_slots = 4 // 12 knives total counting stacks
 	can_hold = list(
 		/obj/item/stack/thrown/throwing_knife
 		)

@@ -157,14 +157,14 @@
 	anti_cheat = TRUE
 	var/mob/M = usr
 	var/list/options = list()
-	options["German"] = LANGUAGE_GERMAN
+	options["Eurolang"] = LANGUAGE_EURO
 	options["Jive"] = LANGUAGE_JIVE
 	options["Jana"] = LANGUAGE_JANA
-	options["Serbian"] = LANGUAGE_SERBIAN
-	options["Techno-Russian"] = LANGUAGE_CYRILLIC
-	options["Esperanto"] = LANGUAGE_ESPERANTO
+	options["Illyrian"] = LANGUAGE_ILLYRIAN
+	options["Interslavic"] = LANGUAGE_CYRILLIC
+	options["Lingua Romana"] = LANGUAGE_ROMANA
 	options["Yassari"] = LANGUAGE_YASSARI
-	options["Ancient Latin"] = LANGUAGE_LATIN
+	options["Latin"] = LANGUAGE_LATIN
 	var/choice = input(M,"Which language do you know?","Linguist Choice") as null|anything in options
 	if(src && choice)
 		M.add_language(choice)

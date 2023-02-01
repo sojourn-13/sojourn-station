@@ -103,14 +103,14 @@
 
 /datum/supply_pack/kickasscrate
 	name = "LS Time to Kick Ass Specialty Crate"
-	contains = list(/obj/item/gun/projectile/basilisk, //600
-					/obj/item/ammo_magazine/kurtz_50,
-					/obj/item/ammo_magazine/kurtz_50,
+	contains = list(/obj/item/gun/projectile/revolver/rev10/mateba, //1500
+					/obj/item/ammo_magazine/speed_loader_kurtz_50,
+					/obj/item/ammo_magazine/speed_loader_kurtz_50,
 					/obj/item/clothing/gloves/thick/combat,
 					/obj/item/clothing/shoes/combat,
 					/obj/item/clothing/under/johnny,
 					/obj/item/reagent_containers/food/snacks/candy_drop_blue)
-	cost = 1000
+	cost = 1900
 	containertype = /obj/structure/closet/crate/secure/weapon
 	crate_name = "LS Time to Kick Ass Specialty Crate"
 	group = "Enforcement"

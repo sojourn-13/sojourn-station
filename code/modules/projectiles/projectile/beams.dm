@@ -133,10 +133,10 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	check_armour = ARMOR_ENERGY
 	eyeblur = 2
 
-/obj/item/projectile/beam/midlaser
-	damage_types = list(BURN = 20)
-	added_damage_laser_pve = 20
-	armor_penetration = 10
+/obj/item/projectile/beam/midlaser // Middle ground between better than stock but worse than heavy.
+	damage_types = list(BURN = 25)
+	added_damage_laser_pve = 25
+	armor_penetration = 25
 
 /obj/item/projectile/beam/heavylaser
 	name = "heavy laser"

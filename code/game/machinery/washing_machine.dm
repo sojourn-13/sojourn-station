@@ -17,11 +17,6 @@
 	anchored = TRUE
 	active_power_usage = 400
 	var/state = WASHSTATE_EMPTYOPENDOOR
-	//1 = empty, open door
-	//2 = empty, closed door
-	//3 = full, open door
-	//4 = full, closed door
-	//5 = running
 	var/obj/crayon
 
 	var/tick = 0
@@ -32,7 +27,9 @@
 	/obj/item/bedsheet,
 	/obj/item/storage/belt,
 	/obj/item/storage/backpack,
-	/obj/item/rig)
+	/obj/item/rig,
+	/obj/item/towel,
+	/obj/item/underwear)
 
 /obj/machinery/washing_machine/Destroy()
 	qdel(crayon)

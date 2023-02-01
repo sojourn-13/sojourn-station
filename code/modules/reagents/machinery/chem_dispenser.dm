@@ -36,7 +36,7 @@
 	var/cell_charger_additon = 0 //This is not a TRUE/FALSE
 	var/accept_beaker = TRUE //At TRUE, ONLY accepts beakers.
 	var/hackedcheck = FALSE
-	var/list/dispensable_reagents //I seriously hope this fixes the scrambling on part upgrade.
+	var/list/dispensable_reagents // Keep the list in this order to prevent chem scrambling when upgrading parts.
 	var/list/level0 = list(
 		"acetone", "aluminum", "ammonia",
 		"carbon", "copper", "ethanol",
@@ -191,9 +191,9 @@
 		return
 
 	if(href_list["amount"])
-		// Since the user can actually type the commands himself, some sanity checking
-		amount = round(text2num(href_list["amount"]), 5) // round to nearest 5
-		amount = CLAMP(amount, 0, 120)
+		// We do a little adjustment since we can now choose finnicky amounts of chems
+		amount = round(text2num(href_list["amount"]), 1) // round to nearest 1
+		amount = max(0, min(120, amount)) // Sanity check so that we don't transfer 0 units of chems
 
 	if(href_list["dispense"])
 		if (dispensable_reagents.Find(href_list["dispense"]) && beaker && beaker.is_refillable())
@@ -278,12 +278,21 @@
 		"tonic","sodawater","lemon_lime","sugar","orangejuice","limejuice","lemonjuice", "pineapplejuice", "berryjuice","grapesoda","watermelonjuice")
 
 	level1 = list("capsaicin", "carbon")
-	level2 = list("banana")
+	level2 = list("banana", "triplecitrus")
 	level3 = list("soymilk") //Commie stock part gives this
 	level4 = list("enzyme")
 
-	hacked_reagents = list("thirteenloko")
+	hacked_reagents = list("thirteenloko", "energy_drink_monster", "energy_drink_baton")
 	circuit = /obj/item/circuitboard/chemical_dispenser/soda
+
+/obj/machinery/chemical_dispenser/soda/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+	var/list/data = nano_ui_data()
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	if (!ui)
+        // Snowflake UI for the sake of having their own low-units dripping for drinks purposes.
+		ui = new(user, src, ui_key, "booze_soda_coffee.tmpl", ui_title, 390, 655)
+		ui.set_initial_data(data)
+		ui.open()
 
 /obj/machinery/chemical_dispenser/soda/hacked(mob/user)
 	if(!hackedcheck)
@@ -328,6 +337,15 @@
 	level4 = list("kahlua")
 	circuit = /obj/item/circuitboard/chemical_dispenser/coffee_master
 
+/obj/machinery/chemical_dispenser/coffee_master/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+	var/list/data = nano_ui_data()
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	if (!ui)
+        // Snowflake UI for the sake of having their own low-units dripping for drinks purposes.
+		ui = new(user, src, ui_key, "booze_soda_coffee.tmpl", ui_title, 390, 655)
+		ui.set_initial_data(data)
+		ui.open()
+
 /obj/machinery/chemical_dispenser/beer
 	icon_state = "booze_dispenser"
 	name = "booze dispenser"
@@ -351,6 +369,15 @@
 
 	hacked_reagents = list("goldschlager","patron","berryjuice")
 	circuit = /obj/item/circuitboard/chemical_dispenser/beer
+
+/obj/machinery/chemical_dispenser/beer/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
+	var/list/data = nano_ui_data()
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	if (!ui)
+        // Snowflake UI for the sake of having their own low-units dripping for drinks purposes.
+		ui = new(user, src, ui_key, "booze_soda_coffee.tmpl", ui_title, 390, 655)
+		ui.set_initial_data(data)
+		ui.open()
 
 /obj/machinery/chemical_dispenser/beer/hacked(mob/user)
 	if(!hackedcheck)

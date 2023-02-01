@@ -207,10 +207,10 @@
 
 		else
 			if (prob(5))
-				var/msg5 = (pick("nuzzles [friend].",
-								   "brushes against [friend].",
-								   "rubs against [friend].",
-								   "purrs."))
+				var/msg5 = (pick("nuzzles [friend]",
+								   "brushes against [friend]",
+								   "rubs against [friend]",
+								   "purrs"))
 				src.visible_message("<span class='name'>[src]</span> [msg5].")
 				playsound(loc, 'sound/voice/purr.ogg', 50, 1, -1)
 	else if (friend.health <= 50)

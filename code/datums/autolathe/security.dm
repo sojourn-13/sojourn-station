@@ -37,7 +37,7 @@
 
 /datum/design/autolathe/sec/gun_case
 	name = "gun case"
-	build_path = /obj/item/storage/backpack/duffelbag/guncase
+	build_path = /obj/item/storage/backpack/guncase
 	materials = list(MATERIAL_PLASTIC = 7, MATERIAL_STEEL = 2)
 
 /datum/design/autolathe/sec/hailer
@@ -57,7 +57,7 @@
 	build_path = /obj/item/tool/baton/mini
 
 /datum/design/autolathe/sec/auto_eject_mod
-	name = "H&S \"Dropper\" Magwell Braker"
+	name = "H&S \"Dropper\" Magwell Breaker"
 	build_path = /obj/item/gun_upgrade/magwell/auto_eject
 
 //Shields

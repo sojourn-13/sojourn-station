@@ -391,7 +391,7 @@ icon_state='innards'
 /obj/item/genetics/reject
 	name = "Genetic Reject"
 	desc = "A product of hasty genetics work. Whatever this mound of flesh could have been, it will never see the light of day."
-	icon = 'icons/obj/genetics/dna_syringes.dmi'
+	icon = 'icons/obj/surgery.dmi'
 	icon_state = "innards"
 
 /obj/item/genetics/reject/New(var/parent_name)

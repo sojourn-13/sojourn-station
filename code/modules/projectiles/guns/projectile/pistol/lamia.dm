@@ -4,7 +4,7 @@
 	icon = 'icons/obj/guns/projectile/lamia.dmi'
 	icon_state = "lamia"
 	item_state = "lamia"
-	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	caliber = CAL_50
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
 	can_dual = TRUE
@@ -20,6 +20,9 @@
 	init_recoil = HANDGUN_RECOIL(1.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM)
 	serial_type = "H&S"
+
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig
 
 /obj/item/gun/projectile/lamia/update_icon()
 	..()
@@ -58,6 +61,10 @@
 	zoom_factors = list(0.4)
 	init_recoil = HANDGUN_RECOIL(0.7)
 	price_tag = 1100
+	unload_sound 	= 'sound/weapons/guns/interact/avasarala_unload.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/avasarala_cock.ogg'
+	fire_sound 	= 'sound/weapons/guns/fire/avasarala_fire.ogg'
 	serial_type = "SD GmbH"
 
 /obj/item/gun/projectile/lamia/socom
@@ -71,6 +78,7 @@
 	silenced = TRUE
 	penetration_multiplier = 1 // Assuming the silencer turns bullets into subsonic ammo, it has less velocity and thus less penetration.
 	price_tag = 1400
+	fire_sound_silenced = 'sound/weapons/guns/fire/vintorez.ogg'
 	serial_type = "Sol Fed"
 	blacklist_upgrades = list(/obj/item/tool_upgrade/refinement/laserguide = TRUE) // Already has an underbarrel one, hence the recoil control
 

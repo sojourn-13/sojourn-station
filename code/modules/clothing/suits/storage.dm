@@ -281,6 +281,14 @@
 	icon_state = "militaryjacket_white"
 	item_state = "militaryjacket_white"
 
+/obj/item/clothing/suit/storage/toggle/miljacket_soyfed
+	name = "solfed military jacket"
+	desc = "A military canvas jacket with old SolFed patches on it."
+	icon_state = "militaryjacket_soyfed_open"
+	item_state = "militaryjacket_soyfed_open"
+	icon_open = "militaryjacket_soyfed_open"
+	icon_closed = "militaryjacket_soyfed"
+
 /*Snowsuits*/
 
 /obj/item/clothing/suit/storage/snowsuit
@@ -1160,13 +1168,13 @@ obj/item/clothing/suit/sweater/blue
 	item_state = "boxer_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 
-/obj/item/clothing/suit/storage/toggle/rando
+/obj/item/clothing/suit/storage/rando
 	name = "army leader outfit"
 	desc = "A menacing, imposing costume of a warlord from a post-apocalyptic gang."
 	icon_state = "warlord"
 	item_state = "warlord"
 
-/obj/item/clothing/suit/storage/toggle/rando/verb/toggle_style()
+/obj/item/clothing/suit/storage/rando/verb/toggle_style()
 	set name = "Adjust Costume"
 	set category = "Object"
 	set src in usr

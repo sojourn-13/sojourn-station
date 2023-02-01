@@ -17,10 +17,10 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
-		new /obj/item/gun/projectile/colt/ten/dark(src)
+		new /obj/item/gun/projectile/colt/ten(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
-		new /obj/item/clothing/accessory/holster/leg(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 		new /obj/item/clothing/suit/armor/platecarrier/militia(src)
 		new /obj/item/clothing/head/helmet/ballistic/militia(src)
 		new /obj/item/storage/pouch/ammo(src)
@@ -28,11 +28,10 @@
 // Primary Weapon Kits
 /obj/item/storage/box/bs_kit/mosin
 	name = "\improper Mosin Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a mosin bolt action rifle and a basic scope. The most powerful weapon any trooper can get from their kit vendor, but often neglected given its age and style."
+	desc = "The standard Blackshield equipment kit containing a mosin bolt action rifle. The most powerful weapon any trooper can get from their kit vendor, but often neglected given its age and style."
 
 	populate_contents()
 		new /obj/item/gun/projectile/boltgun(src)
-		new /obj/item/gun_upgrade/scope/acog(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
@@ -40,9 +39,22 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+/obj/item/storage/box/bs_kit/roe
+	name = "\improper Roe Primary Kit"
+	desc = "The standard Blackshield equipment kit containing a Roe bolt action rifle, kitted with an enhanced scope. A highly accurate sniper rifle used by hunters galaxy wide for hunting medium sized game."
+
+	populate_contents()
+		new /obj/item/gun/projectile/boltgun/light(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/storage/pouch/ammo(src)
+
 /obj/item/storage/box/bs_kit/duty
 	name = "\improper Duty Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a Duty heavy carbine, a locally made rifle with a sharp knife at the end, good for just about any trooper. Can even be speed loaded to quickly reload the mag inside."
+	desc = "The standard Blackshield equipment kit containing an Duty carbine, a powerful battle rifle chambered in 6.5 carbine. Perfect for accurate albiet slow full-automatic fire."
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/duty(src)
@@ -51,28 +63,15 @@
 		new /obj/item/ammo_magazine/light_rifle_257_short(src)
 		new /obj/item/ammo_magazine/light_rifle_257_short(src)
 		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
 		new /obj/item/storage/pouch/ammo(src)
 
-
-/obj/item/storage/box/bs_kit/sts
-	name = "\improper STS Primary Kit"
-	desc = "The standard Blackshield equipment kit containing an STS carbine, a powerful and all round deadly rifle that performs well in any circumstance."
+/obj/item/storage/box/bs_kit/vintorez
+	name = "\improper Vintorez Kit"
+	desc = "The standard Blackshield equipment kit containing an Vintorez, a longer range rifle simular to the the base AK platform but with much better recoil control and a scope at the sacrifice of its fire rate."
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/sts(src)
-		new /obj/item/ammo_magazine/light_rifle_257_short(src)
-		new /obj/item/ammo_magazine/light_rifle_257_short(src)
-		new /obj/item/ammo_magazine/light_rifle_257_short(src)
-		new /obj/item/ammo_magazine/light_rifle_257_short(src)
-		new /obj/item/ammo_magazine/light_rifle_257_short(src)
-		new /obj/item/storage/pouch/ammo(src)
-
-/obj/item/storage/box/bs_kit/watchtower
-	name = "\improper DMR watchtower Kit"
-	desc = "The standard Blackshield equipment kit containing an Watchtower DMR, a longer range rifle simular to the Strelki but with much better recoil controle at the cost of penitration power and scope range."
-
-	populate_contents()
-		new /obj/item/gun/projectile/automatic/nordwind/watchtower(src)
+		new /obj/item/gun/projectile/automatic/vintorez/NM_colony(src)
 		new /obj/item/ammo_magazine/rifle_75_short(src)
 		new /obj/item/ammo_magazine/rifle_75_short(src)
 		new /obj/item/ammo_magazine/rifle_75_short(src)
@@ -80,11 +79,11 @@
 		new /obj/item/ammo_magazine/rifle_75_short(src)
 		new /obj/item/storage/pouch/ammo(src)
 
-//Sargents
+//Seargents
 
 /obj/item/storage/box/bs_kit/sts_para
 	name = "\improper STS Para Primary Kit"
-	desc = "The standard Blackshield equipment kit containing an STS Para rifle, a powerful and all round deadly rifle that performs well in any circumstance."
+	desc = "The standard Blackshield equipment kit containing an STS PARA rifle, a powerful and all round deadly rifle that performs well in any circumstance."
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/sts/rifle/blackshield(src)
@@ -121,24 +120,24 @@
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/storage/pouch/tubular(src)
 
-/obj/item/storage/box/bs_kit/triage
-	name = "\improper Triage Kit"
-	desc = "A box containing a standard issue Triage Smg issued uniquely to corpsmen. Boasting a compact frame, low rate of fire but decent stopping power to deal with armored threats."
+/obj/item/storage/box/bs_kit/drozd
+	name = "\improper Drozd Kit"
+	desc = "A box containing a standard issue Drozd SMG issued uniquely to corpsmen. Boasting a compact frame, low rate of fire but decent stopping power to deal with armored threats."
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/triage(src)
+		new /obj/item/gun/projectile/automatic/drozd/NM_colony(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 
-/obj/item/storage/box/bs_kit/buckler
-	name = "\improper Buckler Gun Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a buckler smg, a choice for speed with its rather high rate of fire and good recoil controle comes with a folding stock."
+/obj/item/storage/box/bs_kit/ekaterina
+	name = "\improper Ekaterina SMG Primary Kit"
+	desc = "The standard Blackshield equipment kit containing a Ekaterina smg, a choice for speed with its rather high rate of fire and drum capatiblility."
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/buckler(src)
+		new /obj/item/gun/projectile/automatic/ppsh/NM_colony(src)
 		new /obj/item/ammo_magazine/smg_35(src)
 		new /obj/item/ammo_magazine/smg_35(src)
 		new /obj/item/ammo_magazine/smg_35(src)
@@ -147,53 +146,41 @@
 		new /obj/item/storage/pouch/ammo(src)
 
 
-/obj/item/storage/box/bs_kit/grizzly
-	name = "\improper Grizzly Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a grizzly shotgun. While outshone by most other shotguns, standard slug and buckshot are a powerful choice even in this. \
-	Can be sawn down to modify size and specs, making it highly modular."
+/obj/item/storage/box/bs_kit/bounty
+	name = "\improper Bounty Primary Kit"
+	desc = "The standard Blackshield equipment kit containing a Bounty lever action shotgun. While run-of-the-mill in terms of stopping power and sporting no 'advanced technology' this firearm sports an uncommon feature. \
+	That of a lever instead of a pump. While it makes the shotgun harder to use in a prone or cramped condition it also allows an incresed firerate compared to its peers."
 
 	populate_contents()
-		new /obj/item/gun/projectile/shotgun/pump(src)
+		new /obj/item/gun/projectile/boltgun/lever/shotgun/bounty(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/storage/pouch/ammo(src)
 
-/obj/item/storage/box/bs_kit/rushing_bull
-	name = "\improper Rushing Bull Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a tactical shotgun. While a higher powered weapon by most other issued geared, standard slug are a powerful choice even in this."
+/obj/item/storage/box/bs_kit/saiga
+	name = "\improper Saiga Primary Kit"
+	desc = "The standard Blackshield equipment kit containing a Saiga shotgun. A fast-firing shotgun based of a modular AK platform. While not known for reliability it easily outshines many other variations of automatic shotgun."
 
 	populate_contents()
-		new /obj/item/gun/projectile/automatic/bull_autoshotgun(src)
-		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
-		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
-		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
-		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
+		new /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony(src)
+		new /obj/item/ammo_magazine/sbaw(src)
+		new /obj/item/ammo_magazine/sbaw(src)
+		new /obj/item/ammo_magazine/sbaw(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 // Side-arms Kits
-/obj/item/storage/box/bs_kit/stallion
-	name = "\improper Stallion Secondary Kit"
-	desc = "The standard Blackshield equipment kit containing a stallion, a design based of the original M1911, modernized and given an auto eject system with built in audio alerts. Unlike the \
+/obj/item/storage/box/bs_kit/delta
+	name = "\improper Delta Elite Secondary Kit"
+	desc = "The standard Blackshield equipment kit containing a Delta Elite, a design based of the original M1911, modernized. Unlike the \
 	standard colt, it uses 10mm magnum rounds."
 
 	populate_contents()
-		new /obj/item/gun/projectile/colt/ten/dark(src)
+		new /obj/item/gun/projectile/colt/ten(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
-		new /obj/item/clothing/accessory/holster/leg(src)
-
-/obj/item/storage/box/bs_kit/lamia
-	name = "\improper Lamia Secondary Kit"
-	desc = "The standard Blackshield equipment kit containing a lamia, a 12mm pistol boasting high damage and armor penetration but low magazine size and hefty recoil. A favorite for sharp \
-	shooters and people with something to compensate for."
-
-	populate_contents()
-		new /obj/item/gun/projectile/lamia(src)
-		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
-		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
-		new /obj/item/clothing/accessory/holster/leg(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/bs_kit/rex10
 	name = "\improper Cowboy Secondary Kit"
@@ -205,32 +192,19 @@
 		new /obj/item/ammo_magazine/speed_loader_pistol_35/hv(src)
 		new /obj/item/ammo_magazine/speed_loader_pistol_35/hv(src)
 		new /obj/item/ammo_magazine/ammobox/pistol_35/hv(src)
-		new /obj/item/clothing/accessory/holster/leg(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/bs_kit/pilgrim
 	name = "\improper Pilgrim Secondary Kit"
-	desc = "The standard Blackshield equipment kit containing a pilgrim revolver. A ballistic design by the church new testament arms division. A tricky choice, as a gift from the church it \
-	comes with a box of 10mm magnum caustic rounds which are poison rounds that cause a great deal of pain and toxin damage. A good choice of gunning down people and most animals. The internal design requires \
-	unloading each shot from the revolver individually but it boasts a underslung shotgun, five 20mm buckshot shells, and can have all nine chambers loaded at once using an ammobox. Some \
-	upgrade it into the pilgrim claw to enhance its melee damage."
+	desc = "The standard Blackshield equipment kit containing a Pilgrim revolver. A ballistic design by the Absolute's Old Testament arms division. A tricky choice, as a gift from the church it \
+	comes with a box of 10mm magnum caustic rounds which are poison rounds that cause a great deal of pain and toxin damage. A good choice for gunning down people and most animals. The internal design requires \
+	unloading each shot from the revolver individually but it boasts a underslung shotgun, five 20mm buckshot shells, and can have all nine chambers loaded at once using an ammobox."
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/lemant(src)
 		new /obj/item/ammo_magazine/ammobox/magnum_40/biomatter(src)
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
-		new /obj/item/clothing/accessory/holster/leg(src)
-
-/obj/item/storage/box/bs_kit/colt
-	name = "\improper Colt Secondary Kit"
-	desc = "The standard Blackshield equipment kit containing a standard colt. While not as powerful as its 10mm magnum variant, the stallion, this cheap firearm boasts a higher magazine capacity \
-	and comes with an additional magazine. For when you prefer capacity over power or penetration."
-
-	populate_contents()
-		new /obj/item/gun/projectile/colt(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35(src) //Highcaps
-		new /obj/item/ammo_magazine/highcap_pistol_35(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35(src)
-		new /obj/item/clothing/accessory/holster/leg(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/bs_kit/makarov
 	name = "\improper Makarov Secondary Kit"
@@ -240,7 +214,7 @@
 		new /obj/item/gun/projectile/makarov(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src) //Highcaps
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
-		new /obj/item/clothing/accessory/holster/leg(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/bs_kit/martin
 	name = "\improper Martin Secondary Kit"
@@ -250,7 +224,7 @@
 		new /obj/item/gun/energy/gun/martin(src)
 		new /obj/item/cell/small/high(src)
 		new /obj/item/cell/small/high(src)
-		new /obj/item/clothing/accessory/holster/leg(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/bs_kit/sawn_shotgun
 	name = "\improper Sawn-Down Double Barrel Secondary Kit"
@@ -261,7 +235,39 @@
 		new /obj/item/gun/projectile/shotgun/doublebarrel/sawn(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
-		new /obj/item/clothing/accessory/holster/leg(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
+
+// Commander's secondary weapons.
+
+/obj/item/storage/box/bs_kit/spider
+	name = "\improper \"Spider Rose\" energy pistol kit"
+	desc = "An equipment kit containing a generic energy sidearm, yet the only one with any kind of nonlethal capacity, should it ever be required."
+
+	populate_contents()
+		new /obj/item/gun/energy/gun(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
+
+/obj/item/storage/box/bs_kit/mateba
+	name = "\improper Mateba Secondary Kit"
+	desc = "An equipment kit containing a specialized semiautomatic 12mm revolver. Great recoil control and even better stopping power, a flashy weapon of high-ranked officers."
+
+	populate_contents()
+		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
+
+/obj/item/storage/box/bs_kit/argos
+	name = "\"Argos\" Secondary Kit"
+	desc = "A kit containing a highly specialized 12mm pistol with smart-linked optics and stabilizers."
+
+	populate_contents()
+		new /obj/item/gun/projectile/lamia/scoped(src)
+		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 // Armor Kits
 /obj/item/storage/box/bs_kit/standard_armor
@@ -270,6 +276,14 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/militia(src)
+		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
+
+/obj/item/storage/box/bs_kit/militia_overcoat
+	name = "\improper Armored Overcoat Armor Kit"
+	desc = "An armor kit containg a militia overcoat and a ballistic helmet."
+
+	populate_contents()
+		new /obj/item/clothing/suit/storage/armor/militia_overcoat(src)
 		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
 
 /obj/item/storage/box/bs_kit/flak_armor
@@ -319,7 +333,7 @@
 		stamped = TRUE
 		var/list/options = list()
 		options["\"Longarm\" - marksman rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped,/obj/item/ammo_magazine/heavy_rifle_408/lethal,/obj/item/ammo_magazine/heavy_rifle_408/lethal, /obj/item/ammo_magazine/heavy_rifle_408/lethal)
-		options["\"Bounty\"- lever shotgun"] = list(/obj/item/gun/projectile/boltgun/lever/shotgun/bounty, /obj/item/ammo_magazine/speed_loader_shotgun, /obj/item/ammo_magazine/speed_loader_shotgun/pellet)
+		options["\"Buffalo\" - automatic shotgun"] = list(/obj/item/gun/projectile/automatic/buff_autoshotgun, /obj/item/ammo_magazine/speed_loader_shotgun, /obj/item/ammo_magazine/speed_loader_shotgun/pellet)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]

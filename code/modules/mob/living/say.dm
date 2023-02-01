@@ -7,6 +7,7 @@ var/list/department_radio_keys = list(
 	"c" = "Command",
 	"n" = "Science",
 	"m" = "Medical",
+	"j" = "Medical(I)",
 	"e" = "Engineering",
 	"s" = "Marshal",
 	"b" = "Blackshield",
@@ -299,7 +300,7 @@ var/list/channel_to_radio_key = new
 mob/proc/format_say_message(var/message = null)
 
 	///List of symbols that we dont want a dot after
-	var/list/punctuation = list("!","?",".")
+	var/list/punctuation = list("!","?",".","-","~")
 
 	///Last character in the message
 	var/last_character = copytext(message,length_char(message))

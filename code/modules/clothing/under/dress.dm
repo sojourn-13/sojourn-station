@@ -229,7 +229,7 @@
 
 /obj/item/clothing/under/sexymaid
 	name = "Skimpy maid dress"
-	desc = "More practical than latex, but still too short to of much use cleaning anything other than spears"
+	desc = "More practical than a latex one, but still too short to be of much use cleaning anything other than spears..."
 	icon_state = "sexymaid"
 	item_state = "sexymaid"
 	price_tag = 45

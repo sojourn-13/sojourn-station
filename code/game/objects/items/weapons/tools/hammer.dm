@@ -33,7 +33,7 @@
 	icon_state = "powered_hammer"
 	item_state = "powered_hammer"
 	wielded_icon = "powered_hammer_on"
-	switched_on_force = WEAPON_FORCE_BRUTAL
+	switched_on_forcemult = 2.2 //33 total
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BELT|SLOT_BACK
@@ -42,7 +42,7 @@
 	switched_on_qualities = list(QUALITY_HAMMERING = 45)
 	switched_off_qualities = list(QUALITY_HAMMERING = 30)
 	toggleable = TRUE
-	armor_penetration = ARMOR_PEN_EXTREME
+	armor_penetration = ARMOR_PEN_EXTREME // Retains AP when turned off - it's a hammer.
 	degradation = 0.7
 	use_power_cost = 2
 	suitable_cell = /obj/item/cell/medium
@@ -55,14 +55,14 @@
 
 /obj/item/tool/hammer/powered_hammer/turn_on(mob/user)
 
-	if (cell && cell.charge > 0)
+	if (cell && cell.charge >= 1)
 		item_state = "[initial(item_state)]_on"
 		to_chat(user, SPAN_NOTICE("You switch [src] on."))
 		playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
 		..()
 	else
 		item_state = initial(item_state)
-		to_chat(user, SPAN_WARNING("[src] has no power!"))
+		to_chat(user, SPAN_WARNING("[src]'s battery is dead or missing."))
 
 /obj/item/tool/hammer/powered_hammer/turn_off(mob/user)
 	item_state = initial(item_state)
@@ -76,8 +76,8 @@
 	icon_state = "onehammer"
 	item_state = "onehammer"
 	wielded_icon = "onehammer_on"
-	switched_on_force = WEAPON_FORCE_LETHAL
-	armor_penetration = ARMOR_PEN_EXTREME // Somehow was not inheriting
+	switched_on_forcemult = 2.6 // 39 total
+	armor_penetration = ARMOR_PEN_EXTREME // Retains AP when turned off - it's a hammer.
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 3, MATERIAL_DIAMOND = 3)
 	price_tag = 860
@@ -88,6 +88,7 @@
 	use_power_cost = 1.5
 	workspeed = 1.5
 	max_upgrades = 2
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/hammer/foremansledge
 	name = "foreman's sledgehammer"
@@ -173,6 +174,14 @@
 	degradation = 5 //This one breaks REALLY fast
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
+/obj/item/tool/hammer/dumbbell
+	name = "dumbbell"
+	desc = "To get stronger with this thing, you need to regularly train for many a month. But to hammer a nail, or crack a skull..."
+	icon_state = "dumbbell"
+	item_state = "dumbbell"
+	tool_qualities = list(QUALITY_HAMMERING = 15)
+	matter = list(MATERIAL_STEEL = 5)
+
 /obj/item/tool/hammer/charge
 	name = "rocket hammer"
 	desc = "After many issues with scientists trying to hammer a nail, one bright individual wondered what could be achieved by attaching a stellar-grade ship engine to the back."
@@ -181,8 +190,8 @@
 	wielded_icon = "chargehammer1"
 	item_state = "chargehammer0"
 	w_class = ITEM_SIZE_HUGE
-	switched_on_force = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_EXTREME // On par with powered hammers
+	switched_on_forcemult = 2.2
+	armor_penetration = ARMOR_PEN_EXTREME // Retains AP when turned off - it's a hammer.
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	switched_on_qualities = list(QUALITY_HAMMERING = 60)
 	switched_off_qualities = list(QUALITY_HAMMERING = 35)
@@ -196,7 +205,7 @@
 
 /obj/item/tool/hammer/charge/turn_on(mob/user)
 
-	if (cell && cell.charge > 0)
+	if (cell && cell.charge >= 1)
 		item_state = "[initial(item_state)]-on"
 		icon_state = "[initial(icon_state)]_on"
 		if(wielded)
@@ -206,7 +215,7 @@
 		..()
 	else
 		item_state = initial(item_state)
-		to_chat(user, SPAN_WARNING("[src] has no power!"))
+		to_chat(user, SPAN_WARNING("[src]'s battery is dead or missing."))
 
 /obj/item/tool/hammer/charge/turn_off(mob/user)
 	item_state = initial(item_state)
