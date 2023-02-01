@@ -254,7 +254,7 @@
 		if("corgi")
 			M.change_mob_type( /mob/living/simple_animal/corgi , null, null, delmob )
 		if("ian")
-			M.change_mob_type( /mob/living/simple_animal/corgi/Ian , null, null, delmob )
+			M.change_mob_type( /mob/living/simple_animal/corgi/fluff/Ian , null, null, delmob )
 		if("crab")
 			M.change_mob_type( /mob/living/simple_animal/crab , null, null, delmob )
 		if("coffee")

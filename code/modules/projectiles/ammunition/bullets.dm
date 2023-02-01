@@ -700,7 +700,8 @@
 	projectile_type = /obj/item/projectile/bullet/rocket/emp
 
 /obj/item/ammo_casing/a75
-	desc = "A .70 gyrojet casing."
+	name = "microjet casing"
+	desc = "A 19mm gyrojet rocket."
 	caliber = CAL_70
 	projectile_type = /obj/item/projectile/bullet/gyro
 

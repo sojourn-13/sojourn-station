@@ -1110,7 +1110,7 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
-/mob/living/simple_animal/corgi/Ian,
+/mob/living/simple_animal/corgi/fluff/Ian,
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/command/captain)
 "ajE" = (
@@ -70586,7 +70586,7 @@
 /area/nadezhda/outside/forest)
 "nib" = (
 /obj/structure/dogbed,
-/mob/living/simple_animal/corgi/Lisa,
+/mob/living/simple_animal/corgi/fluff/Lisa,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
 "nic" = (

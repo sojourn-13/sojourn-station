@@ -20,7 +20,7 @@
 	return TRUE
 
 /obj/item/projectile/bullet/gyro
-	name = "explosive bolt"
+	name = "explosive microjet"
 	icon_state = "bolter"
 	damage_types = list(BRUTE = 50)
 	check_armour = ARMOR_BULLET

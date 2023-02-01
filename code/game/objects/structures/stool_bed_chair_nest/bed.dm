@@ -96,18 +96,16 @@
 				return
 
 /obj/structure/bed/affect_grab(var/mob/user, var/mob/target)
-	user.visible_message(SPAN_NOTICE("[user] attempts to buckle [target] into \the [src]!"))
-	if(do_after(user, 20, src) && Adjacent(target))
-		target.forceMove(loc)
-		spawn(0)
-			if(buckle_mob(target))
-				update_icon() // When buckling someone to a compact roller bed, update the icon so that it doesn't look like stock.
-				target.visible_message(
-					SPAN_DANGER("[target] is buckled to [src] by [user]!"),
-					SPAN_DANGER("You are buckled to [src] by [user]!"),
-					SPAN_NOTICE("You hear metal clanking.")
-				)
-		return TRUE
+	target.forceMove(loc)
+	spawn(0)
+		if(buckle_mob(target))
+			update_icon() // When buckling someone to a compact roller bed, update the icon so that it doesn't look like stock.
+			target.visible_message(
+				SPAN_DANGER("[target] is buckled to [src] by [user]!"),
+				SPAN_DANGER("You are buckled to [src] by [user]!"),
+				SPAN_NOTICE("You hear metal clanking.")
+			)
+	return TRUE
 
 /obj/structure/bed/attackby(obj/item/W as obj, mob/user as mob)
 	if(W.has_quality(QUALITY_BOLT_TURNING))
@@ -228,6 +226,9 @@
 /obj/structure/bed/roller
 	name = "roller bed"
 	icon = 'icons/obj/rollerbed.dmi'
+	description_info = "Use an IV bag on the bed to attach it. To hook/unhook someone to an IV bag \
+						for blood transfer, click-drag the bed to their sprite. \
+						Use an empty hand to retrieve the IV bag, if any is attached."
 	icon_state = "down"
 	anchored = 0
 	buckle_pixel_shift = "x=0;y=6"
@@ -235,6 +236,15 @@
 	var/obj/item/reagent_containers/beaker
 	var/iv_attached = 0 // Bay port of attachable IV bags.
 	var/iv_stand = TRUE
+
+/obj/structure/bed/roller/examine(var/mob/user)
+	.=..()
+	if(iv_stand && beaker && !iv_attached)
+		to_chat(user, SPAN_NOTICE("There is a \the [beaker] attached to it."))
+	else if(iv_attached)
+		to_chat(user, SPAN_NOTICE("\The [beaker] is hooked to [buckled_mob]."))
+	else
+		to_chat(user, SPAN_NOTICE("The stand for an IV bag is empty."))
 
 /obj/structure/bed/roller/proc/remove_beaker(mob/user)
 	to_chat(user, "You detach \the [beaker] from \the [src].")
@@ -291,7 +301,7 @@
 	..()
 
 /obj/structure/bed/roller/attack_hand(mob/living/user)
-	if(beaker && !buckled_mob)
+	if(beaker)
 		remove_beaker(user)
 	else
 		..()

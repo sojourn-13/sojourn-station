@@ -113,7 +113,7 @@
 
 	var/choice = input(user, "What do you want to craft?") as null|anything in list(
 		"Ammunition",
-		".70")
+		"19mm gyrojet rocket")
 		//"Gun parts",
 		//"Armor parts")
 
@@ -124,7 +124,7 @@
 		if("Ammunition")
 			required_resources = materials_ammo
 
-		if(".70 shell")
+		if("19mm gyrojet rocket")
 			required_resources = materials_rocket
 			items_to_spawn = list("" = /obj/item/ammo_casing/a75)
 /*
