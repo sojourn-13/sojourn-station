@@ -67,7 +67,7 @@
 
 /mob/living/simple_animal/corgi/fluff/proc/health_of_friend_checks()
 	if(get_dist(src, friend) >= 2)
-			return
+		return
 	if(friend.stat >= DEAD || friend.health <= HEALTH_THRESHOLD_SOFTCRIT)
 		if(prob((friend.stat < DEAD)? 50 : 15))
 			var/verb = pick("howls", "whines", "bawls")
