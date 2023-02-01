@@ -428,6 +428,13 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/under/skintight
+	name = "skintight bodysuit"
+	desc = "A bodysuit made of neoprene and other pliable fibers, it's elastic enough to fit skin-tight to the body of its wearer. \
+			Generally worn underneath mech pilot uniforms for the sake of motion sensor padding being easily attachable to it."
+	icon_state = "bodysuit"
+	item_state = "bodysuit"
+
 /obj/item/clothing/under/greyturtleneck
 	name = "grey turtleneck"
 	desc = "A grey turtleneck complete with matching grey jeans."

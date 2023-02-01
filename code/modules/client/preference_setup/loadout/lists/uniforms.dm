@@ -230,6 +230,10 @@
 	display_name = "eva skinsuit"
 	path = /obj/item/clothing/under/bodysuit
 
+/datum/gear/uniform/skintight
+	display_name = "skintight bodysuit"
+	path = /obj/item/clothing/under/skintight
+
 /datum/gear/uniform/greyturtleneck
 	display_name = "grey turtleneck"
 	path = /obj/item/clothing/under/greyturtleneck
