@@ -294,6 +294,8 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 	cooking_container = POT
 	reagent_id = "glaze"
 	reagent_amount = 30
+	description = "Cool glaze!"
+	recipe_guide = "Add 30 units of sugar. Add 30 units of water. Cook on a stove set to 'Low' for 30 seconds."
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "sugar", 30),
 		list(CWJ_ADD_REAGENT, "water", 30),

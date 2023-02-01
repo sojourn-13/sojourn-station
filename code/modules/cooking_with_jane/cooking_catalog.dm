@@ -149,7 +149,8 @@
 		data["byproduct_name"] = "None"
 		data["byproduct_count"] = 0
 
-	data["recipe_description"] = recipe.recipe_guide
+	data["description"] = recipe.description
+	data["recipe_guide"] = recipe.recipe_guide
 
 	return data
 
