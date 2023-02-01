@@ -149,7 +149,7 @@
 		data["byproduct_name"] = "None"
 		data["byproduct_count"] = 0
 
-//data["recipe_list"] = recipe.get_instruction_ui_data()
+	data["recipe_description"] = recipe.recipe_guide
 
 	return data
 

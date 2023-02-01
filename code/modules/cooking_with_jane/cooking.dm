@@ -25,6 +25,7 @@ Food quality is calculated based on the steps taken.
 	var/unique_id
 	var/name				//Name for the cooking guide. Auto-populates if not set.
 	var/description			//Description for the cooking guide. Auto-populates if not set.
+	var/recipe_guide		//Step by step recipe guide. I hate it.
 	var/recipe_icon			//Icon for the cooking guide. Auto-populates if not set.
 	var/recipe_icon_state	//Icon state for the cooking guide. Auto-populates if not set.
 
