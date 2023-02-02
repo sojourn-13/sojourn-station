@@ -14,6 +14,10 @@
 	/obj/item/photo
 	)
 
+/obj/item/folder/black
+	desc = "A black folder."
+	icon_state = "folder_black"
+	bg_color = "#313639"
 
 /obj/item/folder/blue
 	desc = "A blue folder."
