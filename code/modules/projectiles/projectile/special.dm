@@ -60,8 +60,8 @@
 /obj/item/projectile/bullet/rocket/emp
 	name = "EMP rocket"
 	icon_state = "rocket_e"
-	damage_types = list(BRUTE = 10, BURN = 30)
-	armor_penetration = 100
+	damage_types = list(BRUTE = 20, BURN = 15)
+	armor_penetration = 30
 	check_armour = ARMOR_BULLET
 	var/heavy_emp_range = 3
 	var/light_emp_range = 8
