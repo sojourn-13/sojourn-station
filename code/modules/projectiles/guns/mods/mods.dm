@@ -725,7 +725,7 @@
 
 // Greatly reduces firerate but will turn on or off auto-eject
 /obj/item/gun_upgrade/magwell/auto_eject
-	name = "H&S \"Dropper\" Magwell Breaker"
+	name = "H&S \"Dropper\" Magwell Autodrop Mechanism"
 	desc = "A rather smartly-designed magwell breaker box that, when added to guns that do not already possess an auto-eject feature, will automatically drop the gun's magazine into the floor once it empties! When force-ejecting a mag, it will play a beeping sound."
 	icon_state = "auto_spingbox"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2)
@@ -744,7 +744,7 @@
 
 //Fancy verson
 /obj/item/gun_upgrade/magwell/auto_eject/no_removal
-	name = "SI \"Faller\" Magwell Clearer"
+	name = "SI \"Braker\" Magwell Autodrop System"
 	desc = "A rather oddly-designed magwell breaker box that, when added to guns that do not already possess an auto-eject feature, will automatically drop the gun's magazine into the floor once it empties! When force-ejecting a mag, it will play a beeping sound.\
 	Unlike the other versions on the market this, once added, will not be removable as it replaces key components of the receiver to be as seamless as possible."
 	can_remove = FALSE

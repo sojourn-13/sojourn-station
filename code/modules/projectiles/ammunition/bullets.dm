@@ -382,6 +382,9 @@
 	icon_state = "lrifle_c_l"
 	spent_icon = "lrifle_c_l-spent"
 
+/obj/item/ammo_casing/kurtz_50/prespawned
+	amount = 6
+
 /obj/item/ammo_casing/kurtz_50/rubber
 	desc = "A 12mm rubber bullet casing."
 	caliber = CAL_50
@@ -707,7 +710,8 @@
 	projectile_type = /obj/item/projectile/bullet/rocket/emp
 
 /obj/item/ammo_casing/a75
-	desc = "A .70 gyrojet casing."
+	name = "microjet casing"
+	desc = "A 19mm gyrojet rocket."
 	caliber = CAL_70
 	projectile_type = /obj/item/projectile/bullet/gyro
 
@@ -799,7 +803,7 @@
 
 /obj/item/ammo_casing/crossbow_bolts/fragment
 	name = "fragment crossbow bolt"
-	desc = "A finely made bolt designed for a crossbow with sharp shards of ores and rocks attached to the tip that brake apart inside the target."
+	desc = "A finely made bolt designed for a crossbow with sharp shards of ores and rocks attached to the tip that break apart inside the target."
 	icon_state = "bolt"
 	projectile_type = /obj/item/projectile/bullet/crossbow_bolt/lethal
 	matter = list(MATERIAL_STEEL = 1)

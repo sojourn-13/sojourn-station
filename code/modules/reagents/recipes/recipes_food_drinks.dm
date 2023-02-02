@@ -898,3 +898,11 @@
 	result = "friendlyfire"
 	required_reagents = list("rum" = 2, "iron" = 1, "vodka" = 1)
 	result_amount = 3
+
+
+/* Other */
+
+/datum/chemical_reaction/protein_shake
+	result = "protein_shake"
+	required_reagents = list("milk" = 1, "protein" = 1)
+	result_amount = 2

@@ -164,12 +164,12 @@ export const TguiEslintTarget = new Juke.Target({
   dependsOn: [YarnTarget],
   executes: ({ get }) => yarn('tgui:lint', !get(CiParameter) && '--fix'),
 });
-
+/* Temp removal
 export const TguiPrettierTarget = new Juke.Target({
   dependsOn: [YarnTarget],
   executes: () => yarn('tgui:prettier'),
 });
-
+*/
 export const TguiSonarTarget = new Juke.Target({
   dependsOn: [YarnTarget],
   executes: () => yarn('tgui:sonar'),
@@ -185,9 +185,9 @@ export const TguiTestTarget = new Juke.Target({
   dependsOn: [YarnTarget],
   executes: ({ get }) => yarn(`tgui:test-${get(CiParameter) ? 'ci' : 'simple'}`),
 });
-
+//temp removal of TguiPrettierTarget
 export const TguiLintTarget = new Juke.Target({
-  dependsOn: [YarnTarget, TguiPrettierTarget, TguiEslintTarget, TguiTscTarget],
+  dependsOn: [YarnTarget, TguiEslintTarget, TguiTscTarget],
 });
 
 export const TguiDevTarget = new Juke.Target({

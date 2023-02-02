@@ -135,7 +135,7 @@
 			required_resources = materials_rocket
 			items_to_spawn = list("" = /obj/item/ammo_casing/rocket/scrap/prespawned)
 
-		if(".70 shell")
+		if("19mm gyrojet rocket")
 			required_resources = materials_rocket
 			items_to_spawn = list("" = /obj/item/ammo_casing/a75)
 

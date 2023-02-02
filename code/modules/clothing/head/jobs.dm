@@ -23,16 +23,30 @@
 		)
 	body_parts_covered = 0
 
-/obj/item/clothing/head/rank/captain/cap
-	name = "premier's cap"
-	desc = "You fear to wear it for the negligence it brings."
-	icon_state = "capcap"
+/obj/item/clothing/head/rank/captain/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
+	if(!isliving(loc))
+		return
 
-/obj/item/clothing/head/rank/captain/formal
-	name = "parade hat"
-	desc = "No one in a commanding position should be without a perfect, white hat of ultimate authority."
-	icon_state = "officercap"
+	var/mob/M = usr
+	var/list/options = list()
+	options["Premier's Hat"] = "captain"
+	options["Premier's Cap"] = "capcap"
+	options["Parade Hat"] = "officercap"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 //HOP
 /obj/item/clothing/head/rank/first_officer
@@ -357,6 +371,7 @@
 	options["BC Beret"] = "beret_militia"
 	options["BC Cap"] = "commander_cap"
 	options["BC Default"] = "hoshat"
+	options["Campaign Cover"] = "instructor"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -368,11 +383,6 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
-
-/obj/item/clothing/head/rank/instructor_hat
-	name = "campaign cover"
-	desc = "Mama, mama, can't you see what this Corps has done to me?"
-	icon_state = "instructor"
 
 /obj/item/clothing/head/rank/commanderdress
 	name = "Blackshield command cover"
