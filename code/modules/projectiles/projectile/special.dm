@@ -57,6 +57,12 @@
 		set_light(0)
 	return TRUE
 
+/obj/item/projectile/bullet/rocket/scrap
+	damage_types = list(BRUTE = 30)
+
+/obj/item/projectile/bullet/rocket/scrap/on_impact(atom/target)
+	explosion(target, 0, 0, 2, 3)
+
 /obj/item/projectile/bullet/rocket/emp
 	name = "EMP rocket"
 	icon_state = "rocket_e"
