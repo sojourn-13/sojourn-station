@@ -140,7 +140,7 @@
 			items_to_spawn = list("" = /obj/item/ammo_casing/a75)
 
 		if("Gun parts")
-			choice = input(user, "Which type of part do you want to craft?") as null|anything in list("Small parts", "Large parts", "Heavy parts", "Cheap parts", "Grips")
+			choice = input(user, "Which type of part do you want to craft?") as null|anything in list("Small parts", "Large parts", /*"Heavy parts"*/, "Cheap parts", "Grips")
 			switch(choice)
 				if("Small parts")
 					choice = input(user, "Which type of part do you want to craft?") as null|anything in list("Barrels", "Mechanisms")
@@ -169,12 +169,10 @@
 					switch(choice)
 						if("Barrels")
 							required_resources = materials_lbarrel
-							choice = input(user) as null|anything in list("6.5mm barrel", "caseless barrel", "7.62 barrel", "Shotgun barrel")
+							choice = input(user) as null|anything in list("6.5mm barrel", "7.62 barrel", "Shotgun barrel")
 							switch(choice)
 								if("6.5mm barrel")
 									items_to_spawn = list("" = /obj/item/part/gun/barrel/srifle)
-								if("caseless barrel")
-									items_to_spawn = list("" = /obj/item/part/gun/barrel/clrifle)
 								if("7.62 barrel")
 									items_to_spawn = list("" = /obj/item/part/gun/barrel/lrifle)
 								if("Shotgun barrel")
@@ -188,12 +186,13 @@
 								if("Shotgun mechanism")
 									items_to_spawn = list("" = /obj/item/part/gun/mechanism/shotgun)
 
-				if("Heavy parts")
+					//For now - lets try without Guild making AMRs. This will hurt the AMR economy.
+				/*if("Heavy parts")
 					required_resources = materials_hpart
 					choice = input(user, "Which type of part do you want to craft?") as null|anything in list("Anti-materiel barrel", "Machinegun mechanism")
 					switch(choice)
 						if("Anti-materiel barrel")
-							items_to_spawn = list("" = /obj/item/part/gun/barrel/antim)
+							items_to_spawn = list("" = /obj/item/part/gun/barrel/antim)*/
 
 				if("Cheap parts")
 					choice = input(user, "Which type of part do you want to craft?") as null|anything in list("Barrels", "Mechanisms")

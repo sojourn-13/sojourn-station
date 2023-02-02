@@ -99,7 +99,8 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/ammo = 8,
 					/obj/random/ammo/shotgun = 8,
 					/obj/random/ammo_lowcost = 10,
-					/obj/random/cloth/holster = 4
+					/obj/random/cloth/holster = 4,
+					/obj/random/gun_parts = 20
 				))
 
 /obj/random/pack/gun_loot/low_chance
