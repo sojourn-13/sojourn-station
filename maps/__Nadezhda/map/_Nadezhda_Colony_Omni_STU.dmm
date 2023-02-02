@@ -11802,6 +11802,8 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/storage/pouch/tubular,
+/obj/item/storage/pouch/tubular,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "crC" = (
@@ -77927,6 +77929,8 @@
 /obj/structure/closet/crate/serbcrate,
 /obj/item/gun/projectile/automatic/omnirifle/solmarine,
 /obj/item/gun/projectile/boltgun/scout,
+/obj/item/gun/projectile/automatic/omnirifle,
+/obj/item/gun/projectile/automatic/omnirifle,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "oQy" = (
@@ -125923,8 +125927,14 @@
 /area/eris/crew_quarters/plasma_tag)
 "xVO" = (
 /obj/structure/closet/crate/serbcrate,
-/obj/item/gun/projectile/automatic/omnirifle,
-/obj/item/gun/projectile/automatic/omnirifle,
+/obj/item/gun/projectile/rpg,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket/emp,
+/obj/item/ammo_casing/rocket/emp,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "xVT" = (
