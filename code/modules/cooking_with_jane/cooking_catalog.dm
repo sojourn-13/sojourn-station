@@ -32,7 +32,8 @@
 //===================================================================================
 /proc/createCookingCatalogs()
 	for(var/datum/cooking_with_jane/recipe/our_recipe in GLOB.cwj_recipe_list)
-		create_cooking_catalog_entry(our_recipe)
+		if(our_recipe.appear_in_default_catalog)
+			create_cooking_catalog_entry(our_recipe)
 
 	//Do a sort
 	var/datum/catalog/C = GLOB.catalogs[CATALOG_COOKING]
