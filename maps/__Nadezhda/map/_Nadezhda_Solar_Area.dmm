@@ -2899,10 +2899,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
-"SM" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/space,
-/area/nadezhda/outside/mountainsolars)
 "SO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
@@ -10146,7 +10142,7 @@ bi
 bi
 VW
 wZ
-SM
+mN
 bw
 bi
 yC
