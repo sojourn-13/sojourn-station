@@ -29,7 +29,7 @@
 /obj/item/part/gun/frame/basilisk
 	name = "Basilisk frame"
 	desc = "An Basilisk pistol frame. Big n' cheap."
-	icon_state = "frame_basilisk"
+	icon_state = "frame_deagle"
 	result = /obj/item/gun/projectile/basilisk
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol

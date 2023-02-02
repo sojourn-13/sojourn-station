@@ -31,7 +31,7 @@
 /obj/item/part/gun/frame/wayfarer
 	name = "Wayfarer frame"
 	desc = "A Wayfarer revolver frame. A easily produced weapon, for when a worker wants to ice his boss."
-	icon_state = "frame_skydriver"
+	icon_state = "frame_inspector"
 	result = /obj/item/gun/projectile/revolver/wayfarer
 	gripvars = list(/obj/item/part/gun/grip/excel)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver

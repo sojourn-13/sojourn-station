@@ -26,7 +26,7 @@
 /obj/item/part/gun/frame/sixshot
 	name = "Six-Shot frame"
 	desc = "A Six-Shot revolving shotgun frame. Classy."
-	icon_state = "frame_mateba"
+	icon_state = "frame_revolver"
 	result = /obj/item/gun/projectile/revolver/sixshot
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
