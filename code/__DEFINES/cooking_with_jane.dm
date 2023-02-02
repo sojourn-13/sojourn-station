@@ -1,7 +1,7 @@
-#define CWJ_DEBUG 1
+//#define CWJ_DEBUG 1
 
 
-//Step classifications, for easy reference later. 
+//Step classifications, for easy reference later.
 //If something falls outside these classifications, why would it?
 #define CWJ_START 					1		//Default step to construct the list.
 #define CWJ_ADD_ITEM 				2		//Adding an item to a recipe (Ex- adding a slice of bread)
@@ -14,7 +14,7 @@
 #define CWJ_USE_OVEN	 			9 		//Using a stove in a recipe
 #define CWJ_USE_OTHER 				10 		//Custom Command flag, will take in argument lists.
 
-											
+
 //Optional flags
 #define CWJ_ADD_ITEM_OPTIONAL		200
 #define CWJ_ADD_REAGENT_OPTIONAL	300
@@ -51,7 +51,7 @@
 
 #define CWJ_CHECK_INVALID	0
 #define CWJ_CHECK_VALID		1
-#define CWJ_CHECK_FULL		2 //For reagents, nothing can be added to 
+#define CWJ_CHECK_FULL		2 //For reagents, nothing can be added to
 
 //Cooking container types
 #define PLATE 			"plate"
