@@ -1,5 +1,5 @@
 /datum/computer_file/program/cook_catalog
-	filename = "cookCatalog"
+	filename = "cook_catalog"
 	filedesc = "VIKA"
 	extended_desc = "Lonestar (and Soteria) Presents: Victoria's Incredible Kitchen Assistant - an AI-generated electronic catalog for cooking."
 	program_icon_state = "generic"
@@ -12,8 +12,13 @@
 /datum/nano_module/cook_catalog
 	name = "Lonestar (and Soteria) Presents: Victoria's Incredible Kitchen Assistant"
 
-/datum/nano_module/cook_catalog/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_REINITIALIZE, state = GLOB.default_state)
+/datum/nano_module/cook_catalog/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, state = GLOB.default_state)
 	var/list/data = nano_ui_data(user)
+
+	var/datum/asset/cooking_icons = get_asset_datum(/datum/asset/simple/cooking_icons)
+	if (cooking_icons.send(user.client))
+		user.client.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
+
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "cooking_catalog.tmpl", name, 640, 700, state = state)
@@ -98,7 +103,7 @@
 	var/list/data = ..()
 	data["name"] = recipe.name
 	data["id"] = recipe.type
-	data["icon"] = recipe.icon_image_file
+	data["icon"] = SSassets.transport.get_asset_url(sanitizeFileName(recipe.icon_image_file))
 	data["product_is_reagent"] = 0
 	if(recipe.product_name)
 		data["product_name"] = recipe.product_name
@@ -127,7 +132,13 @@
 	var/list/data = ..()
 	data["name"] = recipe.name
 	data["id"] = recipe.type
-	data["icon"] = recipe.icon_image_file
+
+	var/url = SSassets.transport.get_asset_url(sanitizeFileName(recipe.icon_image_file))
+	#ifdef CWJ_DEBUG
+	log_debug("Retrieved [url] for [recipe.icon_image_file]")
+	#endif
+
+	data["icon"] = url
 	data["product_is_reagent"] = 0
 	if(recipe.product_name)
 		data["product_name"] = recipe.product_name
@@ -156,6 +167,9 @@
 	return data
 
 //===========================================================
+/datum/asset/simple/cooking_icons
+	keep_local_name = FALSE
+
 /datum/asset/simple/cooking_icons/register()
 	for(var/datum/cooking_with_jane/recipe/our_recipe in GLOB.cwj_recipe_list)
 		var/icon/I = null
