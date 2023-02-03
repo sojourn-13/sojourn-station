@@ -1746,10 +1746,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/mountainsolars)
-"ul" = (
-/obj/structure/closet/secure_closet/personal/engineering_personal,
-/turf/simulated/floor/tiled/techmaint_perforated,
-/area/nadezhda/engineering/dorm)
 "ut" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1970,7 +1966,6 @@
 "zI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/secure_closet/personal/engineering_personal,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
 "zV" = (
@@ -9197,7 +9192,7 @@ ab
 ab
 ab
 aa
-nt
+ab
 nt
 xh
 Gd
@@ -9299,8 +9294,8 @@ ab
 ab
 ab
 aa
+ab
 nt
-ul
 Gd
 Gd
 Og
@@ -9401,8 +9396,8 @@ ab
 ab
 ab
 aa
+ab
 nt
-ul
 jH
 jH
 QX
@@ -9503,8 +9498,8 @@ ab
 ab
 ab
 aa
+ab
 nt
-ul
 DS
 DS
 Di
@@ -9605,8 +9600,8 @@ ab
 ab
 ab
 aa
+ab
 nt
-ul
 DS
 DS
 aE
@@ -9707,7 +9702,7 @@ ab
 ab
 ab
 aa
-nt
+ab
 nt
 xh
 jH
