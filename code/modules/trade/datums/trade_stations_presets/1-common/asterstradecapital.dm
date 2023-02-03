@@ -97,7 +97,6 @@
 		"Miscellanous" = list(
 			/obj/item/device/camera,
 			/obj/item/device/camera_film,
-			/obj/item/device/toner,
 			/obj/item/storage/photo_album,
 			/obj/item/wrapping_paper,
 			/obj/item/packageWrap,

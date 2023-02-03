@@ -11,7 +11,7 @@ var/datum/xenomorph/xenomorph_ai
 	icon_rest = "drone_stunned"
 	icon_gib = "drone_gibbed"
 	pass_flags = PASSTABLE
-
+	get_stat_modifier = TRUE
 	cant_be_pulled = TRUE
 
 	mob_size = MOB_LARGE
