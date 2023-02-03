@@ -188,8 +188,10 @@
 		for(var/oretype in typesof(/ore)-/ore)
 			var/ore/OD = new oretype()
 			ore_data[OD.name] = OD
-			ores_processing[OD.name] = 0
-			ores_stored[OD.name] = 0
+
+	for(var/orename in ore_data)
+		ores_processing[orename] = 0
+		ores_stored[orename] = 0
 
 	spawn()
 		//Locate our output and input machinery.
@@ -214,6 +216,8 @@
 			ores_stored[O.material] += O.sheet_amout * O.amount
 		else
 			ores_stored[O.material] = O.sheet_amout * O.amount
+		if(isnull(ores_processing[O.material]))
+			ores_processing[O.material] = 0
 		points += (ore_values[O.material] * O.amount) // Give Points!
 		qdel(O)
 	if(!active)
