@@ -28,6 +28,9 @@
 
 	var/serial_type = ""
 
+	//Cares about having modular gun parts or not (i.e can take different barrels to make same gun ect)
+	var/nra = TRUE
+
 /obj/item/part/gun/frame/New(loc, ...)
 	. = ..()
 	var/obj/item/gun/G = new result(null)
@@ -157,8 +160,9 @@
 	if(!InstalledBarrel)
 		to_chat(user, SPAN_WARNING("\the [src] does not have a barrel!"))
 		return
-	if(check_legal())
-		return
+	if(nra)
+		if(check_legal(user))
+			return
 	var/obj/item/gun/G = new result(T)
 	G.serial_type = serial_type
 	if(barrelvars.len > 1 && istype(G, /obj/item/gun/projectile))
@@ -168,22 +172,66 @@
 	qdel(src)
 	return
 
+//Wow this is trash
 /obj/item/part/gun/frame/proc/check_legal(mob/user)
 	var/illegal = FALSE
+	log_debug("Check Legal Marker 0, I have started")
 	if(result)
-		var/obj/item/gun/legal = new result(null)
-		var/obj/item/part/gun/frame/legal_team = legal.gun_parts[1]
-		if(!InstalledGrip == legal_team.InstalledGrip)
+		var/obj/item/gun/projectile/legal = new result(null)
+		var/obj/item/part/gun/grip/frame_to_grip
+		var/obj/item/part/gun/mechanism/frame_to_mechanism
+		var/obj/item/part/gun/barrel/frame_to_barrel
+
+		for(var/target_item in legal.gun_parts)
+			var/amount = legal.gun_parts[target_item]
+			while(amount)
+				if(ispath(target_item, /obj/item/part/gun/grip))
+					var/obj/item/part/gun/grip/G = new target_item(null)
+					frame_to_grip = G.refence_for_legal
+					qdel(G)
+
+				if(ispath(target_item, /obj/item/part/gun/mechanism))
+					var/obj/item/part/gun/mechanism/M = new target_item(null)
+					frame_to_mechanism = M.refence_for_legal
+					qdel(M)
+
+				if(ispath(target_item, /obj/item/part/gun/barrel))
+					var/obj/item/part/gun/barrel/B = new target_item(null)
+					frame_to_barrel = B.refence_for_legal
+					qdel(B)
+				amount--
+
+
+		var/legal_grip = InstalledGrip.refence_for_legal
+		var/legal_mechanism = InstalledMechanism.refence_for_legal
+		var/legal_barrel = InstalledBarrel.refence_for_legal
+
+		log_debug("Check Legal Marker 1")
+
+		log_debug("frame_to_grip == [frame_to_grip]")
+		log_debug("frame_to_mechanism == [frame_to_mechanism]")
+		log_debug("frame_to_barrel == [frame_to_barrel]")
+
+
+		log_debug("legal_grip refence == [legal_grip]")
+		log_debug("legal_mechanism refence == [legal_mechanism]")
+		log_debug("legal_barrel refence == [legal_barrel]")
+
+		if(legal_grip != frame_to_grip)
 			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper grip for the componence's!"))
 			illegal = TRUE
-		if(!InstalledMechanism == legal_team.InstalledMechanism)
+
+		if(legal_mechanism != frame_to_mechanism)
 			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper mechanism for the componence's!"))
 			illegal = TRUE
-		if(!InstalledBarrel == legal_team.InstalledBarrel)
-			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper mechanism for the componence's!"))
+
+		if(legal_barrel != frame_to_barrel)
+			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper barrel for the componence's!"))
 			illegal = TRUE
-		qdel(legal_team)
+
+		log_debug("Check Legal Marker 2")
 		qdel(legal)
+		log_debug("Check Legal Marker 3, I have ended")
 		return illegal
 
 /obj/item/part/gun/frame/examine(user, distance)
@@ -215,32 +263,38 @@
 	generic = FALSE
 	matter = list(MATERIAL_PLASTIC = 6)
 	price_tag = 100
+	var/refence_for_legal = "baseline"
 
 /obj/item/part/gun/grip/wood
 	name = "wood grip"
 	desc = "A wood firearm grip, unattached from a firearm."
 	icon_state = "grip_wood"
 	matter = list(MATERIAL_WOOD = 6)
+	refence_for_legal = "wooden"
 
 /obj/item/part/gun/grip/black //Nanotrasen, Moebius, Syndicate, Oberth, Blackshield, etc
 	name = "plastic grip"
 	desc = "A black plastic firearm grip, unattached from a firearm. For sleekness and decorum."
 	icon_state = "grip_black"
+	refence_for_legal = "black"
 
 /obj/item/part/gun/grip/rubber //Marshals, high-end guns
 	name = "rubber grip"
 	desc = "A rubber firearm grip, unattached from a firearm. For professionalism and violence of action."
 	icon_state = "grip_rubber"
+	refence_for_legal = "rubber"
 
 /obj/item/part/gun/grip/excel
 	name = "Excelsior plastic grip"
 	desc = "A tan plastic firearm grip, unattached from a firearm. To fight for Haven and to spread the unified revolution!"
 	icon_state = "grip_excel"
+	refence_for_legal = "excel"
 
 /obj/item/part/gun/grip/serb
 	name = "bakelite plastic grip"
 	desc = "A brown plastic firearm grip, unattached from a firearm. Classics never go out of style."
 	icon_state = "grip_serb"
+	refence_for_legal = "serb"
 
 //Mechanisms
 /obj/item/part/gun/mechanism
@@ -250,36 +304,43 @@
 	generic = FALSE
 	matter = list(MATERIAL_PLASTEEL = 4)
 	price_tag = 100
+	var/refence_for_legal = "baseline"
 
 /obj/item/part/gun/mechanism/pistol
 	name = "pistol mechanism"
 	desc = "All the bits that makes the bullet go bang, all in a small, convenient frame."
 	icon_state = "mechanism_pistol"
+	refence_for_legal = "pistol"
 
 /obj/item/part/gun/mechanism/revolver
 	name = "revolver mechanism"
 	desc = "All the bits that makes the bullet go bang, rolling round and round."
 	icon_state = "mechanism_revolver"
+	refence_for_legal = "revolver"
 
 /obj/item/part/gun/mechanism/shotgun
 	name = "shotgun mechanism"
 	desc = "All the bits that makes the bullet go bang, perfect for long shells."
 	icon_state = "mechanism_shotgun"
+	refence_for_legal = "shotgun"
 
 /obj/item/part/gun/mechanism/smg
 	name = "SMG mechanism"
 	desc = "All the bits that makes the bullet go bang, in a speedy package."
 	icon_state = "mechanism_smg"
+	refence_for_legal = "smg"
 
 /obj/item/part/gun/mechanism/autorifle
 	name = "self-loading mechanism"
 	desc = "All the bits that makes the bullet go bang, for all the military hardware you know and love."
 	icon_state = "mechanism_autorifle"
+	refence_for_legal = "autorifle"
 
 /obj/item/part/gun/mechanism/machinegun
 	name = "machine gun mechanism"
 	desc = "All the bits that makes the bullet go bang. Now I have a machine gun, Ho, Ho, Ho."
 	icon_state = "mechanism_machinegun"
+	refence_for_legal = "machinegun"
 
 // steel mechanisms
 /obj/item/part/gun/mechanism/pistol/steel
@@ -311,6 +372,7 @@
 	desc = "All the bits that makes the bullet go bang, slow and methodical."
 	icon_state = "mechanism_boltaction"
 	matter = list(MATERIAL_STEEL = 3)
+	refence_for_legal = "boltaction"
 
 /obj/item/part/gun/mechanism/autorifle/steel
 	name = "cheap self-loading mechanism"
@@ -327,6 +389,7 @@
 	matter = list(MATERIAL_PLASTEEL = 4)
 	price_tag = 200
 	var/caliber = CAL_PISTOL
+	var/refence_for_legal = "baseline"
 
 /obj/item/part/gun/barrel/pistol
 	name = "9mm pistol barrel"
@@ -334,6 +397,7 @@
 	icon_state = "barrel_9mm"
 	price_tag = 100
 	caliber = CAL_PISTOL
+	refence_for_legal = "pistol"
 
 /obj/item/part/gun/barrel/magnum
 	name = "10mm pistol barrel"
@@ -341,6 +405,7 @@
 	icon_state = "barrel_10mm"
 	price_tag = 125
 	caliber = CAL_MAGNUM
+	refence_for_legal = "magnum"
 
 /obj/item/part/gun/barrel/kurtz
 	name = "12mm pistol barrel"
@@ -348,6 +413,7 @@
 	icon_state = "barrel_12mm"
 	price_tag = 150
 	caliber = CAL_50
+	refence_for_legal = "kurtz"
 
 /obj/item/part/gun/barrel/srifle
 	name = "6.5mm carbine barrel"
@@ -355,6 +421,7 @@
 	icon_state = "barrel_carbine"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	caliber = CAL_LRIFLE
+	refence_for_legal = "srifle"
 
 /obj/item/part/gun/barrel/clrifle
 	name = "10x24mm caseless barrel"
@@ -362,6 +429,7 @@
 	icon_state = "barrel_casless"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	caliber = "10x24"
+	refence_for_legal = "clrifle"
 
 /obj/item/part/gun/barrel/lrifle
 	name = "7.62mm rifle barrel"
@@ -369,6 +437,7 @@
 	icon_state = "barrel_rifle"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	caliber = CAL_RIFLE
+	refence_for_legal = "lrifle"
 
 /obj/item/part/gun/barrel/hrifle
 	name = "8.6mm heavy rifle barrel"
@@ -376,6 +445,7 @@
 	icon_state = "barrel_heavy"
 	matter = list(MATIERAL_PLASTEEL = 10)
 	caliber = CAL_HRIFLE
+	refence_for_legal = "hrifle"
 
 /obj/item/part/gun/barrel/shotgun
 	name = "shotgun barrel"
@@ -383,6 +453,7 @@
 	icon_state = "barrel_shotgun"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	caliber = CAL_SHOTGUN
+	refence_for_legal = "shotgun"
 
 /obj/item/part/gun/barrel/antim
 	name = "14.5mm AMR barrel"
@@ -390,6 +461,7 @@
 	icon_state = "barrel_amr"
 	matter = list(MATERIAL_PLASTEEL = 16)
 	caliber = CAL_ANTIM
+	refence_for_legal = "antim"
 
 // steel barrels
 /obj/item/part/gun/barrel/pistol/steel
