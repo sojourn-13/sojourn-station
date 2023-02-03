@@ -157,6 +157,8 @@
 	if(!InstalledBarrel)
 		to_chat(user, SPAN_WARNING("\the [src] does not have a barrel!"))
 		return
+	if(check_legal())
+		return
 	var/obj/item/gun/G = new result(T)
 	G.serial_type = serial_type
 	if(barrelvars.len > 1 && istype(G, /obj/item/gun/projectile))
@@ -165,6 +167,24 @@
 		G.gun_parts = list(src.type = 1, InstalledGrip.type = 1, InstalledMechanism.type = 1, InstalledBarrel.type = 1)
 	qdel(src)
 	return
+
+/obj/item/part/gun/frame/proc/check_legal(mob/user)
+	var/illegal = FALSE
+	if(result)
+		var/obj/item/gun/legal = new result(null)
+		var/obj/item/part/gun/frame/legal_team = legal.gun_parts[1]
+		if(!InstalledGrip == legal_team.InstalledGrip)
+			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper grip for the componence's!"))
+			illegal = TRUE
+		if(!InstalledMechanism == legal_team.InstalledMechanism)
+			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper mechanism for the componence's!"))
+			illegal = TRUE
+		if(!InstalledBarrel == legal_team.InstalledBarrel)
+			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper mechanism for the componence's!"))
+			illegal = TRUE
+		qdel(legal_team)
+		qdel(legal)
+		return illegal
 
 /obj/item/part/gun/frame/examine(user, distance)
 	. = ..()
