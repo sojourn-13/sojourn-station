@@ -937,7 +937,7 @@
 /turf/simulated/mineral,
 /area/nadezhda/outside/mountainsolars)
 "dN" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 6
 	},
 /obj/effect/window_lwall_spawn/reinforced,
@@ -997,7 +997,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
 "eT" = (
@@ -1015,7 +1015,8 @@
 /area/nadezhda/engineering/dorm)
 "fo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/hologram/holopad,
+/obj/structure/table/standard,
+/obj/item/device/pipe_painter,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "fp" = (
@@ -1061,12 +1062,11 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
 "gD" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 5;
-	tag = "icon-intact (NORTHEAST)"
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 5
 	},
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating/under,
@@ -1124,7 +1124,8 @@
 /area/nadezhda/engineering/dorm)
 "hV" = (
 /obj/machinery/atmospherics/portables_connector{
-	dir = 8
+	dir = 8;
+	name = "FILTER REFUSE"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/steel/orangecorner,
@@ -1208,11 +1209,11 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
 "ju" = (
-/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
 "jE" = (
@@ -1286,7 +1287,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
 "lh" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -1423,7 +1424,7 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
 "nY" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -1472,7 +1473,7 @@
 "oM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning,
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 10
 	},
 /obj/machinery/meter,
@@ -1483,9 +1484,8 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
 "oV" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 5;
-	tag = "icon-intact (NORTHEAST)"
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 5
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1499,9 +1499,8 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 9;
-	tag = "icon-intact (NORTHWEST)"
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 9
 	},
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -1661,14 +1660,14 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
 /obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
 "sw" = (
-/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
@@ -1747,10 +1746,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/mountainsolars)
-"ul" = (
-/obj/structure/closet/secure_closet/personal/engineering_personal,
-/turf/simulated/floor/tiled/techmaint_perforated,
-/area/nadezhda/engineering/dorm)
 "ut" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1761,10 +1756,10 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "uY" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
@@ -1820,7 +1815,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -1931,7 +1926,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "yC" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
 	},
 /obj/effect/window_lwall_spawn/smartspawnplasma,
@@ -1955,9 +1950,8 @@
 /area/nadezhda/engineering/dorm)
 "zb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 5;
-	tag = "icon-intact (NORTHEAST)"
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 5
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
@@ -1972,7 +1966,6 @@
 "zI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/secure_closet/personal/engineering_personal,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
 "zV" = (
@@ -1986,7 +1979,7 @@
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
 "Az" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
 	},
 /obj/structure/catwalk,
@@ -2088,7 +2081,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning,
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 10
 	},
 /obj/machinery/meter,
@@ -2107,7 +2100,7 @@
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/manifold/visible,
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
 "Dt" = (
@@ -2119,13 +2112,9 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "DA" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/visible,
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -2213,11 +2202,9 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
 "EB" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/engineering/dorm)
+/area/nadezhda/outside/mountainsolars)
 "EI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2241,9 +2228,8 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 5;
-	tag = "icon-intact (NORTHEAST)"
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 5
 	},
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -2332,10 +2318,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/wall,
+/turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
 "GD" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
@@ -2346,9 +2332,8 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
 "Hk" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 9;
-	tag = "icon-intact (NORTHWEST)"
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 9
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -2361,9 +2346,8 @@
 "Ht" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning,
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 6;
-	tag = "icon-intact (SOUTHEAST)"
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 6
 	},
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -2470,7 +2454,7 @@
 /area/nadezhda/engineering/dorm)
 "JZ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -2481,7 +2465,7 @@
 /obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
 "Kf" = (
@@ -2494,9 +2478,8 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "Kn" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 5;
-	tag = "icon-intact (NORTHEAST)"
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
@@ -2509,7 +2492,7 @@
 /area/nadezhda/outside/mountainsolars)
 "KO" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/manifold/visible{
+/obj/machinery/atmospherics/pipe/manifold/visible/blue{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -2523,9 +2506,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 6;
-	tag = "icon-intact (SOUTHEAST)"
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 6
 	},
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -2560,9 +2542,8 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 5;
-	tag = "icon-intact (NORTHEAST)"
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 5
 	},
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -2599,7 +2580,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "Mg" = (
-/obj/machinery/atmospherics/pipe/manifold/visible{
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 1
 	},
 /obj/structure/catwalk,
@@ -2626,7 +2607,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
 "MM" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
 	},
 /obj/machinery/meter,
@@ -2649,6 +2630,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
 "Nq" = (
@@ -2660,9 +2644,8 @@
 /turf/simulated/wall,
 /area/nadezhda/outside/mountainsolars)
 "NF" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 5;
-	tag = "icon-intact (NORTHEAST)"
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 9
 	},
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating/under,
@@ -2784,7 +2767,7 @@
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
 "Qh" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
 	dir = 4
 	},
 /obj/machinery/door/window/eastleft,
@@ -2849,7 +2832,7 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/mountainsolars)
 "Rj" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -2902,7 +2885,7 @@
 /area/nadezhda/outside/mountainsolars)
 "SG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 6
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -2910,10 +2893,6 @@
 "SI" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/outside/mountainsolars)
-"SM" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/space,
 /area/nadezhda/outside/mountainsolars)
 "SO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -2923,7 +2902,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/visible{
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 1
 	},
 /obj/machinery/meter,
@@ -2968,9 +2947,8 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 9;
-	tag = "icon-intact (NORTHWEST)"
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 9
 	},
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -2994,7 +2972,7 @@
 /area/nadezhda/outside/mountainsolars)
 "Uc" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning,
@@ -3009,7 +2987,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
 "Uk" = (
-/obj/machinery/atmospherics/pipe/manifold/visible{
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
 	dir = 1
 	},
 /obj/structure/window/reinforced{
@@ -3024,7 +3002,7 @@
 /obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -3052,7 +3030,7 @@
 /area/nadezhda/outside/mountainsolars)
 "UE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/manifold4w/visible,
+/obj/machinery/atmospherics/pipe/manifold4w/visible/yellow,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
 "UF" = (
@@ -3231,7 +3209,7 @@
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/outside/mountainsolars)
 "XQ" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -3258,6 +3236,13 @@
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
+"YI" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/effect/window_lwall_spawn/smartspawnplasma,
+/turf/simulated/floor/plating,
+/area/nadezhda/outside/mountainsolars)
 "YM" = (
 /obj/machinery/power/apc/hyper{
 	dir = 1;
@@ -3283,6 +3268,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/dorm)
+"Zh" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
 "Zj" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -3311,7 +3303,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/mountainsolars)
 "Zy" = (
-/obj/machinery/atmospherics/pipe/simple/visible,
+/obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -9200,7 +9192,7 @@ ab
 ab
 ab
 aa
-nt
+ab
 nt
 xh
 Gd
@@ -9302,8 +9294,8 @@ ab
 ab
 ab
 aa
+ab
 nt
-ul
 Gd
 Gd
 Og
@@ -9404,8 +9396,8 @@ ab
 ab
 ab
 aa
+ab
 nt
-ul
 jH
 jH
 QX
@@ -9506,8 +9498,8 @@ ab
 ab
 ab
 aa
+ab
 nt
-ul
 DS
 DS
 Di
@@ -9608,8 +9600,8 @@ ab
 ab
 ab
 aa
+ab
 nt
-ul
 DS
 DS
 aE
@@ -9710,7 +9702,7 @@ ab
 ab
 ab
 aa
-nt
+ab
 nt
 xh
 jH
@@ -9834,7 +9826,7 @@ cN
 av
 al
 aS
-SM
+mN
 qX
 Es
 mN
@@ -9936,7 +9928,7 @@ ac
 ac
 ac
 ac
-SM
+mN
 qg
 pl
 mN
@@ -10013,7 +10005,7 @@ ab
 ab
 ab
 nt
-EB
+Um
 Um
 Um
 BA
@@ -10038,7 +10030,7 @@ ac
 ac
 al
 al
-SM
+mN
 sX
 Us
 PQ
@@ -10145,11 +10137,11 @@ bi
 bi
 VW
 wZ
-SM
+mN
 bw
 bi
 yC
-yC
+YI
 dL
 bi
 ad
@@ -11061,7 +11053,7 @@ bk
 bi
 bw
 EU
-fo
+kp
 cz
 LA
 ZY
@@ -11071,7 +11063,7 @@ Uj
 Xa
 RS
 oG
-au
+EB
 cg
 tr
 bw
@@ -11163,7 +11155,7 @@ cg
 bi
 bw
 EU
-kp
+fo
 au
 TB
 Ht
@@ -11681,7 +11673,7 @@ ac
 ac
 bw
 bw
-rW
+Zh
 GD
 Ev
 WH

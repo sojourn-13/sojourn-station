@@ -91,8 +91,9 @@
 	archived = 1
 
 /datum/computer_file/data/news_article/kros_news
-	filename = "Official Marshal communique"
+	filename = "Trouble in Sector N-1"
 	server_file_path = 'news_articles/kros_news.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/kros_news_ii
 	filename = "Trouble in Sector N-2"
@@ -105,3 +106,7 @@
 /datum/computer_file/data/news_article/Mangos_Untitled_Stream
 	filename = "Mango's Untitled Stream #473"
 	server_file_path = 'news_articles/Mangos_Untitled_Stream.html'
+
+/datum/computer_file/data/news_article/Emily_chu
+	filename = "Emily Chu's Report"
+	server_file_path = 'news_articles/Emily_chu.html'
