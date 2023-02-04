@@ -16652,10 +16652,11 @@
 	})
 "dpc" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/suit_storage_unit/security,
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "dpg" = (
@@ -27416,8 +27417,8 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
 "frf" = (
-/obj/structure/closet/secure_closet/warden,
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/obj/machinery/autolathe/loaded,
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "frh" = (
 /obj/effect/floor_decal/industrial/warningwhite{
@@ -31663,8 +31664,6 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/workshop)
 "gfI" = (
-/obj/structure/table/steel_reinforced,
-/obj/machinery/recharger,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -31673,6 +31672,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/closet/secure_closet/warden,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "gfK" = (
@@ -49146,18 +49146,11 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
 "jyT" = (
-/obj/structure/window/reinforced,
-/obj/item/gun/projectile/automatic/lmg/tk,
-/obj/structure/table/rack/shelf,
-/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber,
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/door/window/eastleft{
-	name = "Light Machineguns";
-	req_access = list(3)
-	},
-/turf/simulated/floor/tiled/dark/bluecorner,
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "jzd" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -53401,8 +53394,6 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "knD" = (
-/obj/structure/table/steel_reinforced,
-/obj/machinery/recharger,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -53417,6 +53408,16 @@
 /obj/machinery/camera/network/security{
 	dir = 1
 	},
+/obj/item/storage/backpack/guncase,
+/obj/item/storage/backpack/guncase,
+/obj/structure/table/rack/shelf,
+/obj/item/storage/backpack/guncase,
+/obj/item/storage/backpack/guncase,
+/obj/item/storage/pouch/pistol_holster,
+/obj/item/storage/pouch/pistol_holster,
+/obj/item/clothing/accessory/holster/hip,
+/obj/item/storage/pouch/pistol_holster/cowboy,
+/obj/item/clothing/accessory/holster/hip,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "knH" = (
@@ -54675,8 +54676,14 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/command/cro)
 "kzg" = (
+/obj/structure/table/rack/shelf,
+/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber,
+/obj/item/gun/projectile/automatic/lmg/tk,
+/obj/machinery/door/window/eastleft{
+	name = "Light Machineguns";
+	req_access = list(3)
+	},
 /obj/structure/window/reinforced,
-/obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "kzk" = (
@@ -76010,11 +76017,12 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "oww" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 24
 	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "owz" = (
@@ -78731,9 +78739,6 @@
 	name = "\improper Blackshield - Firing Range"
 	})
 "oYn" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -28
 	},
@@ -80144,15 +80149,8 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "png" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/stock_parts/manipulator,
-/obj/item/circuitboard/vending,
-/obj/item/tool/screwdriver,
-/obj/item/stack/material/steel{
-	amount = 8
-	},
-/obj/item/stock_parts/console_screen,
-/obj/item/stock_parts/matter_bin,
-/obj/item/stack/cable_coil/blue,
+/obj/item/computer_hardware/hard_drive/portable/design/gun_parts/marshal,
+/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/marshal,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "pnh" = (
@@ -82188,8 +82186,15 @@
 	dir = 1
 	},
 /obj/structure/table/steel_reinforced,
-/obj/item/folder/blue,
-/obj/item/modular_computer/tablet/lease/preset,
+/obj/item/stock_parts/manipulator,
+/obj/item/circuitboard/vending,
+/obj/item/tool/screwdriver,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stack/cable_coil/blue,
 /obj/item/device/eftpos{
 	eftpos_name = "Marshal EFTPOS scanner"
 	},
@@ -91476,6 +91481,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 8
 	},
+/obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/security/prisoncells)
 "rtg" = (
@@ -96479,13 +96485,7 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "son" = (
-/obj/structure/table/rack/shelf,
-/obj/item/storage/backpack/guncase,
-/obj/item/storage/backpack/guncase,
-/obj/item/storage/backpack/guncase,
-/obj/item/storage/pouch/pistol_holster,
-/obj/item/storage/pouch/pistol_holster,
-/obj/item/storage/pouch/pistol_holster,
+/obj/machinery/suit_storage_unit/security,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "soq" = (
@@ -117340,9 +117340,7 @@
 /area/nadezhda/crew_quarters/cafeteria)
 "wmt" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/security/marshal_guns{
-	pixel_y = 16
-	},
+/obj/item/computer_hardware/hard_drive/portable/design/security/marshal_guns,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "wmx" = (
@@ -140966,7 +140964,7 @@ rji
 eLa
 cWT
 png
-son
+frf
 mNQ
 sUO
 wcv
@@ -141367,9 +141365,9 @@ nAD
 krD
 esU
 eAI
-frf
-nKC
 jto
+nKC
+nKC
 eAI
 uqw
 knD
@@ -141560,7 +141558,7 @@ sFI
 osA
 sFI
 krD
-krD
+son
 eAI
 eAI
 vxB
@@ -141770,7 +141768,7 @@ kMy
 adJ
 krD
 ecu
-ezx
+eAI
 jqG
 jJx
 wmt

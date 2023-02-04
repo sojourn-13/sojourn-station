@@ -38,7 +38,7 @@
 	desc = "An AK rifle frame. The eternal firearm."
 	icon_state = "frame_ak"
 	matter = list(MATERIAL_PLASTEEL = 8)
-	result = /obj/item/gun/projectile/automatic/ak47
+	result = /obj/item/gun/projectile/automatic/ak47/sa
 	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black)
 	resultvars = list(/obj/item/gun/projectile/automatic/ak47, /obj/item/gun/projectile/automatic/ak47/sa, /obj/item/gun/projectile/automatic/ak47/NM_colony)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle

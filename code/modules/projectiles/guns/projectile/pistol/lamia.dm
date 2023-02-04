@@ -109,3 +109,13 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/avasarala_cock.ogg'
 	fire_sound 	= 'sound/weapons/guns/fire/avasarala_fire.ogg'
 	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/amnesty = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/kurtz = 1)
+
+/obj/item/part/gun/frame/amnesty
+	name = "Amnesty frame"
+	desc = "An Amnesty pistol frame. For a pocket sized hole puncher."
+	icon_state = "frame_lamia"
+	result = /obj/item/gun/projectile/lamia
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = list(/obj/item/part/gun/barrel/kurtz)

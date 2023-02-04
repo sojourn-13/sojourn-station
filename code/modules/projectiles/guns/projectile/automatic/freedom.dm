@@ -29,7 +29,7 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.3 // Heavy smg , 30 vig to insta wield
-	gun_parts = list(/obj/item/part/gun/frame/colt = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/magnum = 1)
+	gun_parts = list(/obj/item/part/gun/frame/freedom = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/magnum = 1)
 
 /obj/item/gun/projectile/automatic/freedom/update_icon()
 	..()
@@ -57,3 +57,12 @@
 /obj/item/gun/projectile/automatic/freedom/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/part/gun/frame/freedom
+	name = "Freedom SMG frame"
+	desc = "A Colt-based Freedom SMG frame. For when you need to fight five more world wars."
+	icon_state = "frame_1911"
+	result = /obj/item/gun/projectile/colt
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/smg
+	barrelvars = list(/obj/item/part/gun/barrel/magnum)
