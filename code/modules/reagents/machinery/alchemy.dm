@@ -96,16 +96,20 @@
 
 /obj/item/alchemy/recipe_scroll/Initialize()
 	var/blurb = pick(list(
-		"iron suppliments tungsten, needs to be reformed with sodiumchloride",
-		"ammonia dissolves carbon, crystalize with sodiumchloride",
-		"water and carbon mixed slowly with sodiumchloride",
-		"detox slowly mixed with viroputine, boil with citalopram",
-		"detox combined with purger and boiled off with citalopram",
-		"iron ground into flakes, absorbed by silicon and enriched with sodiumchloride",
-		"oil to suspend sodiumchloride then slowly dissolved with iron",
-		"gold ground into a powder, combine after mixing sodiumchloride with tatonka_milk",
-		"protein enriched egg, further enrich with tatonka_milk",
-		"protein enriched honey thats slowly steamed with ethanol",
-		"blackpepper ground into flakes. Combine with milk and drops of ethanol",
-		"blood dissolved with gold, boil with lively_concoxion"))
-	desc = "A list of various ingredients on a tatty paper. Something about [blurb]"
+		"Iron binds with tungsten, but needs to be recondensed with salt",
+		"Ammonia dissolves carbon - crystalize with salt",
+		"Water and carbon can be mixed with salt",
+		"Detox can be purified when mixed with viroputine and citalopram",
+		"Citalopram and purger bring out the purest essence of detox",
+		"Iron and silicon, ground into flakes, and enriched with sodiumchloride",
+		"Suspend salt in oil, and stir in iron shavings",
+		"Ground gold and salt, mixed into a tatonka's milk",
+		"Tatonka milk can be fortified with eggs and extra protein",
+		"Honey, ethanol and pure protien make an invigorating brew",
+		"Ethanol and milk, plus a dash of pepper",
+		"Fresh blood and pure gold can distill an elixir of health into its most potent form"))
+	desc = "[desc] It reads \"[blurb]\""
+
+/obj/item/alchemy/recipe_scroll/lodge
+	name = "hunters' recipe"
+	desc = "An old sheet of paper with a carefully-guarded Lodge recipe on it. There's a diagram showing some sort of symbol..."
