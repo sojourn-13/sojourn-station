@@ -109,7 +109,7 @@
 	adhoc_fallback = TRUE
 
 /obj/item/device/radio/headset/headset_blackshield/bowman/corps
-	name = "corspman bowman headset"
+	name = "corpsman bowman headset"
 	ks2type = /obj/item/device/encryptionkey/headset_bs/corps
 
 /obj/item/device/radio/headset/radiohat_blackshield // No longer a cap, a honest to god cap with a FUNCTIONAL headset. - Seb

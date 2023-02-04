@@ -139,6 +139,7 @@
 	new /obj/item/clothing/glasses/chameleon(src)
 	new /obj/item/device/radio/headset/chameleon(src)
 	new /obj/item/gun/energy/chameleon(src)
+	new /obj/item/clothing/accessory/chameleon(src)
 
 /obj/item/storage/box/syndie_kit/clerical
 	name = "clerical kit"

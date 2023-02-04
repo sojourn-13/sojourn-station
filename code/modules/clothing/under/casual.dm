@@ -435,6 +435,34 @@
 	icon_state = "bodysuit"
 	item_state = "bodysuit"
 
+/obj/item/clothing/under/skintight/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Full bodysuit"] = ""
+	options["Rolled sleeves"] = "_sleeves"
+	options["Pants"] = "_pants"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You decided to wear your bodysuit in the [choice] style.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/greyturtleneck
 	name = "grey turtleneck"
 	desc = "A grey turtleneck complete with matching grey jeans."
