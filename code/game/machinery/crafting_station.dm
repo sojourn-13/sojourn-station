@@ -74,11 +74,12 @@
 		"RPG shell" = materials_rocket,
 		".70 shell" = materials_rocket,
 		//"armor parts" = materials_armorpart, - Not implimented yet.
-		"barrels" = "4 plasteel for small; 8 plasteel for large; 16 plasteel for heavy",
-		"mechanisms" ="5 plasteel for small; 10 plasteel for large; 16 plasteel for heavy",
-		"cheap barrels" = "4 steel for small; 8 steel for large",
-		"cheap mechanisms" = "5 steel for small; 10 steel for large",
-		"grips" = "6 plastic or 6 wood")
+//		"barrels" = "4 plasteel for small; 8 plasteel for large; 16 plasteel for heavy",
+//		"mechanisms" ="5 plasteel for small; 10 plasteel for large; 16 plasteel for heavy",
+//		"cheap barrels" = "4 steel for small; 8 steel for large",
+//		"cheap mechanisms" = "5 steel for small; 10 steel for large",
+//		"grips" = "6 plastic or 6 wood"
+		)
 
 	for(var/i in craft_options)
 		var/list/required_materials = craft_options[i]
@@ -90,6 +91,15 @@
 	var/list/matter_count = list()
 	for(var/material in materials_stored)
 		matter_count += " [materials_stored[material]] [material]"
+
+	//Lazy temppermit fix for the above
+	to_chat(user, SPAN_NOTICE("Materials required to craft barrels: 4 plasteel for small; 8 plasteel for large; 16 plasteel for heavy."))
+	to_chat(user, SPAN_NOTICE("Materials required to craft mechanisms: 5 plasteel for small; 10 plasteel for large; 16 plasteel for heavy."))
+	to_chat(user, SPAN_NOTICE("Materials required to craft cheap barrels: 4 steel for small; 8 steel for large."))
+	to_chat(user, SPAN_NOTICE("Materials required to craft cheap mechanisms: 5 steel for small; 10 steel for large."))
+	to_chat(user, SPAN_NOTICE("Materials required to craft grips: 6 plastic or 6 wood."))
+
+
 	to_chat(user, SPAN_NOTICE("It contains: [english_list(matter_count)]."))
 
 

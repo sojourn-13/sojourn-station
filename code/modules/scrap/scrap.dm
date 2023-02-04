@@ -396,12 +396,13 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/pack/gun_loot = 8,
 		/obj/random/powercell,
 		/obj/random/mecha_equipment = 2,
-		/obj/item/toy/weapon/crossbow,
 		/obj/item/material/shard,
 		/obj/item/stack/material/steel/random,
 		/obj/item/stack/material/plasteel/random = 0.6,
 		/obj/random/junk/nondense,
-		/obj/random/pack/rare = 0.3
+		/obj/random/pack/rare = 0.3,
+		/obj/random/gun_parts/frames = 1,
+		/obj/random/gun_parts = 2
 	)
 
 /obj/structure/scrap/science
@@ -427,6 +428,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	parts_icon = 'icons/obj/structures/scrap/cloth.dmi'
 	loot_list = list(/obj/random/pack/cloth,
 		/obj/random/pack/rare = 0.2,
+		/obj/random/gun_parts/frames = 0.2,
+		/obj/random/gun_parts = 0.5,
 		/obj/item/storage/wallet = 0.2,
 		/obj/item/storage/wallet/random = 0.1)
 
