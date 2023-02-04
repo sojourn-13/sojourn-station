@@ -176,130 +176,9 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="It has meat in it.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
 	)
-
-/datum/cooking_with_jane/recipe/sandwich_basic_bowl
-	cooking_container = BOWL
-	product_type = /obj/item/reagent_containers/food/snacks/sandwich
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="It has meat in it.", result_desc="There is meat between the bread."),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
-	)
-	appear_in_default_catalog = FALSE
-
-/datum/cooking_with_jane/recipe/sandwich_deep_fryer
-	cooking_container = DF_BASKET
-	product_type = /obj/item/reagent_containers/food/snacks/sandwich
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="It has meat in it.", result_desc="There is meat between the bread."),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
-	)
-	appear_in_default_catalog = FALSE
-
-/datum/cooking_with_jane/recipe/sandwich_air_fryer
-	cooking_container = AF_BASKET
-	product_type = /obj/item/reagent_containers/food/snacks/sandwich
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="It has meat in it.", result_desc="There is meat between the bread."),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
-	)
-	appear_in_default_catalog = FALSE
-
-/datum/cooking_with_jane/recipe/sandwich_pot
-	cooking_container = POT
-	product_type = /obj/item/reagent_containers/food/snacks/sandwich
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="It has meat in it.", result_desc="There is meat between the bread."),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
-	)
-	appear_in_default_catalog = FALSE
-
-/datum/cooking_with_jane/recipe/sandwich_oven
-	cooking_container = OVEN
-	product_type = /obj/item/reagent_containers/food/snacks/sandwich
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="It has meat in it.", result_desc="There is meat between the bread."),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
-	)
-	appear_in_default_catalog = FALSE
-
-
-/datum/cooking_with_jane/recipe/sandwich_bad_with_tomato
-	cooking_container = CUTTING_BOARD
-	product_type = /obj/item/reagent_containers/food/snacks/sandwich
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="It has meat in it.", result_desc="There is meat between the bread."),
-		list(CWJ_ADD_PRODUCE, "tomato", result_desc="There is a whole tomato stuffed in the sandwich."),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
-	)
-	appear_in_default_catalog = FALSE
-
-/datum/cooking_with_jane/recipe/sandwich_tofu_bad
-	cooking_container = CUTTING_BOARD
-	product_type = /obj/item/reagent_containers/food/snacks/sandwich
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/tofu, desc="It has tofu in it.", result_desc="There is tofu between the bread."),
-		list(CWJ_USE_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/tofu, desc="Tofu has been used on it.", result_desc="It has been in contact with tofu."),
-		CWJ_END_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
-	)
-	appear_in_default_catalog = FALSE
-
-/datum/cooking_with_jane/recipe/sandwich_bad_stacked
-	cooking_container = CUTTING_BOARD
-	product_type = /obj/item/reagent_containers/food/snacks/sandwich
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="It has meat in it.", result_desc="There is meat between the bread."),
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/cutlet, desc="It has additional meat in it.", result_desc="There is additional meat between the bread."),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
-	)
-	appear_in_default_catalog = FALSE
-
-
-
-
-/datum/cooking_with_jane/recipe/sandwich_salted
-	cooking_container = CUTTING_BOARD
-	product_type = /obj/item/reagent_containers/food/snacks/sandwich
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="It has meat in it.", result_desc="There is meat between the bread."),
-		list(CWJ_ADD_REAGENT, "sodiumchloride", 5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
-	)
-	appear_in_default_catalog = FALSE
-
-/datum/cooking_with_jane/recipe/sandwich_split
-	cooking_container = PAN
-	product_type = /obj/item/reagent_containers/food/snacks/sandwich
-	product_count = 2
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sandwich, qmod=0.5),
-		list(CWJ_USE_TOOL, QUALITY_SAWING, 10)
-	)
-	appear_in_default_catalog = FALSE
-
-
-/datum/cooking_with_jane/recipe/sandwich_toasted
-	cooking_container = GRILL
-	product_type = /obj/item/reagent_containers/food/snacks/sandwich
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sandwich),
-		list(CWJ_USE_GRILL, J_LO, 30 SECONDS, result_desc="It has been toasted.")
-	)
-	appear_in_default_catalog = FALSE
-
 
 /datum/cooking_with_jane/recipe/icing
 	cooking_container = POT
@@ -328,50 +207,125 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 
 /*
 //Example of the same recipe, but for the grill, just to show off how compact everything is.
-/datum/cooking_with_jane/recipe/grill_stove
-	cooking_container = SKILLET
-	product_type = /obj/item/reagent_containers/food/snacks/meatsteak
-	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat, qmod=0.5, remain_percent=0),
-		list(CWJ_USE_TOOL_OPTIONAL, QUALITY_HAMMERING, 15)
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'salt', 3, base=3),
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'pepper', 3, base=3),
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'capsaicin', 5, base=6, prod_desc="The steak was Spiced with chili powder."),
-		list(CWJ_USE_GRILL, J_MED, 30)
-	)
 
-
-
-/datum/cooking_with_jane/recipe/sandwich
-	cooking_container = PLATE
+/datum/cooking_with_jane/recipe/sandwich_basic_bowl
+	cooking_container = BOWL
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="It has meat in it."),
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'salt', 5, desc="The Meat is salted."),
-		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'ketchup', 5, base=2),
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'mustard', 5, base=3),
-		CWJ_END_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_PRODUCE_OPTIONAL, 'tomato', base=1),
-		list(CWJ_ADD_PRODUCE_OPTIONAL, 'lettuce', base=1),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, base=3)
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
 	)
+	appear_in_default_catalog = FALSE
 
-/datum/cooking_with_jane/recipe/steak
-	start_type_list = list(/obj/item/reagent_containers/food/snacks/meat)
-	product_type = /obj/item/reagent_containers/food/snacks/meatsteak
+/datum/cooking_with_jane/recipe/sandwich_deep_fryer
+	cooking_container = DF_BASKET
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	step_builder = list(
-		CWJ_BEGIN_EXCLUSIVE_OPTIONS
-		CWJ_BEGIN_OPTION_CHAIN
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'salt', 3, base=3)
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'pepper', 3, base=3)
-		CWJ_END_OPTION_CHAIN
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'sp_sauce', 5, base=6)
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'wine', 5, base=6, prod_desc="The steak was sauteed in wine")
-		CWJ_END_EXCLUSIVE_OPTIONS
-		list(CWJ_ADD_REAGENT_OPTIONAL, 'capsaicin', 5, base=6, prod_desc="The steak was Spiced with chili powder.")
-		list(CWJ_ADD_PRODUCE_OPTIONAL, 'parsley', base=1),
-		list(CWJ_ADD_APPLIANCE, 'grill', temp=300, time = 1 MINUTE, max=4)
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
 	)
+	appear_in_default_catalog = FALSE
+
+/datum/cooking_with_jane/recipe/sandwich_air_fryer
+	cooking_container = AF_BASKET
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
+	)
+	appear_in_default_catalog = FALSE
+
+/datum/cooking_with_jane/recipe/sandwich_pot
+	cooking_container = POT
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
+	)
+	appear_in_default_catalog = FALSE
+
+/datum/cooking_with_jane/recipe/sandwich_oven
+	cooking_container = OVEN
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
+	)
+	appear_in_default_catalog = FALSE
+
+
+/datum/cooking_with_jane/recipe/sandwich_bad_with_tomato
+	cooking_container = CUTTING_BOARD
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_PRODUCE, "tomato", result_desc="There is a whole tomato stuffed in the sandwich."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
+	)
+	appear_in_default_catalog = FALSE
+
+/datum/cooking_with_jane/recipe/sandwich_tofu_bad
+	cooking_container = CUTTING_BOARD
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
+		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/tofu, desc="Add tofu to it.", result_desc="There is tofu between the bread."),
+		list(CWJ_USE_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/tofu, desc="Brush Tofu on it.", result_desc="It has been in contact with tofu."),
+		CWJ_END_EXCLUSIVE_OPTIONS,
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
+	)
+	appear_in_default_catalog = FALSE
+
+/datum/cooking_with_jane/recipe/sandwich_bad_stacked
+	cooking_container = CUTTING_BOARD
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/cutlet, desc="Add even more of any kind of cutlet.", result_desc="There is additional meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
+	)
+	appear_in_default_catalog = FALSE
+
+
+
+
+/datum/cooking_with_jane/recipe/sandwich_salted
+	cooking_container = CUTTING_BOARD
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_REAGENT, "sodiumchloride", 5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
+	)
+	appear_in_default_catalog = FALSE
+
+/datum/cooking_with_jane/recipe/sandwich_split
+	cooking_container = PAN
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	product_count = 2
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sandwich, qmod=0.5),
+		list(CWJ_USE_TOOL, QUALITY_SAWING, 10)
+	)
+	appear_in_default_catalog = FALSE
+
+
+/datum/cooking_with_jane/recipe/sandwich_toasted
+	cooking_container = GRILL
+	product_type = /obj/item/reagent_containers/food/snacks/sandwich
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sandwich),
+		list(CWJ_USE_GRILL, J_LO, 30 SECONDS, result_desc="It has been toasted.")
+	)
+	appear_in_default_catalog = FALSE
+
 */

@@ -346,6 +346,8 @@ Food quality is calculated based on the steps taken.
 
 			if(reason)
 				CRASH("[src.type]/New: CWJ Step Builder failed. Reason: [reason]")
+
+			propagate_step_description()
 		else
 			switch(step)
 				if(CWJ_BEGIN_EXCLUSIVE_OPTIONS)
@@ -365,6 +367,17 @@ Food quality is calculated based on the steps taken.
 
 	if(last_created_step.flags & CWJ_IS_OPTIONAL)
 		CRASH("/datum/cooking_with_jane/recipe/New: Last option in builder is optional. It must be a required step! Recipe name=[name].")
+
+//Adds to the recipe description for every step of the recipe
+/datum/cooking_with_jane/recipe/proc/propagate_step_description()
+	var/qualifier = "> "
+	if(last_created_step.flags & CWJ_IS_OPTIONAL)
+		qualifier = ">> (Optional) "
+	if(last_created_step.flags & CWJ_IS_OPTION_CHAIN)
+		qualifier = ">> (Option Chain) "
+	if(last_created_step.flags & CWJ_IS_EXCLUSIVE)
+		qualifier = ">> (Exclusive Option) "
+	recipe_guide +="<br>[qualifier][last_created_step.desc]"
 
 //-----------------------------------------------------------------------------------
 //Commands for interacting with the recipe tracker
