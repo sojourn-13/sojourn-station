@@ -45,21 +45,6 @@
 	icon_state = "marshal"
 	license = 20 //1:1 with blackshield guns
 	designs = list(
-		/datum/design/autolathe/gun/judiciary,
-		/datum/design/autolathe/gun/liberty,
-		/datum/design/autolathe/gun/amnesty = 2,
-		/datum/design/autolathe/gun/judge = 2,
-		//SMGs
-		/datum/design/autolathe/gun/freedom = 2,
-		/datum/design/autolathe/gun/specop = 3,
-		//rifles
-		/datum/design/autolathe/gun/mamba = 3,
-		/datum/design/autolathe/gun/copperhead = 4,
-		//shotguns
-		/datum/design/autolathe/gun/opshot = 4,
-		//machinegun
-		/datum/design/autolathe/gun/dp = 2,
-		/datum/design/autolathe/gun/bastard = 3,
 		//ion
 		/datum/design/autolathe/gun/ion_pistol = 5,
 		//launcher

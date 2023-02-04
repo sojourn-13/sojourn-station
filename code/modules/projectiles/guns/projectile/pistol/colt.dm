@@ -64,7 +64,7 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.4 // 40 vig
-	gun_parts = list(/obj/item/part/gun/frame/colt = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol= 1)
+	gun_parts = list(/obj/item/part/gun/frame/colt = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/magnum = 1)
 
 
 /obj/item/gun/projectile/colt/update_icon()
@@ -95,8 +95,10 @@
 	gripvars = list(/obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
 	barrelvars = list(/obj/item/part/gun/barrel/pistol, /obj/item/part/gun/barrel/magnum)
-	resultvars = list(/obj/item/gun/projectile/colt, /obj/item/gun/projectile/colt/ten, /obj/item/gun/projectile/colt/liberty)
+	resultvars = list(/obj/item/gun/projectile/colt, /obj/item/gun/projectile/colt/liberty, /obj/item/gun/projectile/colt/ten)
+
 /*
+Stored code - not implimented /yet/, test at a later time. Taken from the gun_parts.dm original code.
 /obj/item/part/gun/frame/colt/attack_self(mob/user)
 	. = ..()
 	var/turf/T = get_turf(src)

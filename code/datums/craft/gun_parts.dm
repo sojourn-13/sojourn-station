@@ -172,7 +172,8 @@
 	qdel(src)
 	return
 
-//Wow this is trash
+// The way this system works is checking if a guns barrel is 'legal' to install into a gun. Basically Soj's jank solution to making guns take the correct barrel to make certain guns.
+// Snowflake code per-gun can prevent this check, allowing you to mix-and-match calibers as wanted.
 /obj/item/part/gun/frame/proc/check_legal(mob/user)
 	var/illegal = FALSE
 	log_debug("Check Legal Marker 0, I have started")
@@ -254,6 +255,17 @@
 				to_chat(user, SPAN_WARNING("There is a serial number on the frame, it reads [serial_type]."))
 			else if(isnull(serial_type))
 				to_chat(user, SPAN_DANGER("The serial is scribbled away."))
+
+///////////////////////
+// Gun parts section //
+///////////////////////
+/*
+These are the individual parts that fit into a gun. If you make any unique gun parts, such as a new caliber or mechanism for.. whatever reason, it needs to go here.
+Steel parts are for bootleg firearms, such as handmade firearms, low-tier / trash guns, and the like. Plasteel parts are for normal firearms.
+
+Possible TO:DO for future coding:
+Make it so steel parts fit into any gun you want but can 'break', or cause jams. Allows bootleg high-quality firearms but comes with downsides to cheapness.
+*/
 
 //Grips
 /obj/item/part/gun/grip
