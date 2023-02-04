@@ -25,6 +25,8 @@
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/gun_parts/low(src)
 	new /obj/random/gun_parts/low(src)
+	if(prob(40))
+		new /obj/random/gun_parts/frames(src)
 
 // Tier 2
 /obj/structure/closet/onestar/tier2
@@ -50,6 +52,10 @@
 	new /obj/random/gun_parts/low(src)
 	new /obj/random/gun_parts/low(src)
 	new /obj/random/gun_parts/low(src)
+	if(prob(80))
+		new /obj/random/gun_parts/frames(src)
+		new /obj/random/gun_parts/frames(src)
+
 
 // Tier 3
 /obj/structure/closet/onestar/tier3
@@ -80,6 +86,11 @@
 	new /obj/random/gun_parts/low(src)
 	new /obj/random/gun_parts/low(src)
 	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/frames(src)
+	new /obj/random/gun_parts/frames(src)
+	if(prob(80))
+		new /obj/random/gun_parts/frames(src)
+		new /obj/random/gun_parts/frames(src)
 
 ////// Closets
 
@@ -146,6 +157,7 @@
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/frames(src)
 	..()
 
 // Empty
@@ -164,6 +176,8 @@
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/frames(src)
+	new /obj/random/gun_parts/frames(src)
 	..()
 
 // Empty
@@ -182,6 +196,8 @@
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/frames(src)
+	new /obj/random/gun_parts/frames(src)
 	..()
 
 // Empty
@@ -199,6 +215,8 @@
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/frames(src)
+	new /obj/random/gun_parts/frames(src)
 	..()
 
 // Empty
@@ -216,6 +234,8 @@
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/frames(src)
+	new /obj/random/gun_parts/frames(src)
 	..()
 
 // Empty
@@ -234,6 +254,8 @@
 	new /obj/random/lowkeyrandom(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/frames(src)
+	new /obj/random/gun_parts/frames(src)
 	..()
 
 // Empty
@@ -268,6 +290,7 @@
 	new /obj/random/lowkeyrandom(src)
 	new /obj/random/cloth/greyson_clothing/low_chance(src)
 	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/frames(src)
 	..()
 
 // Empty
