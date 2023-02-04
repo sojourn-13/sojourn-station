@@ -409,7 +409,7 @@
 /obj/random/gun_parts/low
 	name = "low chance random gun part"
 	icon_state = "gun-black-low"
-	spawn_nothing_percentage = 75
+	spawn_nothing_percentage = 50
 
 /obj/random/gun_parts/high_end
 	name = "high-end random gun part"
