@@ -89,6 +89,14 @@
 				if((spell.message == "The End." || spell.message == "The Beginning.") && candle_amount >= 1)
 					end_spell(M)
 					continue
+
+				if(spell.message == "Brew." && candle_amount >= 2)
+					brew_spell(M)
+					continue
+
+				if(spell.message == "Recipe." && candle_amount >= 1)
+					recipe_spell(M)
+					continue
 			return
 
 	if(istype(I, /obj/item/tool/knife/ritual) || istype(I, /obj/item/tool/knife/neotritual))
@@ -134,6 +142,26 @@
 	M.health -= 20
 	B.remove_self(50)
 	M.unnatural_mutations.total_instability += 15
+	return
+
+/obj/effect/decal/cleanable/crayon/proc/recipe_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	for(var/obj/item/paper/P in oview(1)) // Must be on the spell circle
+		to_chat(M, "<span class='info'>A echoing sound of scribbling fills the air.</span>")
+		B.remove_self(20)
+		var/obj/item/alchemy/recipe_scroll/S = new /obj/item/alchemy/recipe_scroll
+		S.loc = P.loc
+		qdel(P)
+	return
+
+/obj/effect/decal/cleanable/crayon/proc/brew_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	M.maxHealth -= 25
+	M.health -= 25
+	B.remove_self(50)
+	M.metabolism_effects.nsa_bonus -= 25 //Works to balance out the NSA given from the perk. That way those who get it naturally have a bonus.
+	M.stats.addPerk(PERK_ALCHEMY)
+	to_chat(M, "<span class='warning'>Your mind expands with creations lost. Your body feels sick.</span>")
 	return
 
 /obj/effect/decal/cleanable/crayon/proc/ignorance_spell(mob/living/carbon/human/M)
