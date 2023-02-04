@@ -21,9 +21,13 @@
 
 	init_firemodes = list(
 		BURST_5_ROUND,
-		FULL_AUTO_700
+		FULL_AUTO_600
 		)
 	serial_type = "NM"
+
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.2 // 20 vig
+	gun_parts = list(/obj/item/part/gun/frame/bastard = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/bastard/update_icon()
 	var/iconstring = initial(icon_state)
@@ -37,3 +41,12 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/part/gun/frame/bastard
+	name = "Bastard frame"
+	desc = "A Bastard SMG frame. For when you want a carbine but even smaller."
+	icon_state = "frame_bastard"
+	result = /obj/item/gun/projectile/automatic/bastard
+	gripvars =  list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/smg
+	barrelvars =  list(/obj/item/part/gun/barrel/srifle)

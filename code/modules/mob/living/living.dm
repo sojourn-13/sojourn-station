@@ -8,6 +8,18 @@
 
 	return
 
+/mob/living/proc/flash(duration = 0, drop_items = FALSE, doblind = FALSE, doblurry = FALSE)
+	if(blinded)
+		return
+	if (HUDtech.Find("flash"))
+		flick("e_flash", HUDtech["flash"])
+	if(duration)
+		Weaken(duration, drop_items)
+		if(doblind)
+			eye_blind += duration
+		if(doblurry)
+			eye_blurry += duration
+
 //mob verbs are faster than object verbs. See above.
 /mob/living/pointed(atom/A as mob|obj|turf in view())
 	if(src.stat || !src.canmove || src.restrained())
@@ -27,7 +39,7 @@ default behaviour is:
  - passive mob checks to see if its mob_bump_flag is in the non-passive's mob_bump_flags
  - if si, the proc returns
 */
-/mob/living/proc/can_move_mob(var/mob/living/swapped, swapping = 0, passive = 0)
+/mob/living/proc/can_move_mob(mob/living/swapped, swapping = 0, passive = 0)
 	if(!swapped)
 		return TRUE
 	if(!passive)
@@ -129,7 +141,7 @@ default behaviour is:
 			return
 	return
 
-/proc/swap_density_check(var/mob/swapper, var/mob/swapee)
+/proc/swap_density_check(mob/swapper, mob/swapee)
 	var/turf/T = get_turf(swapper)
 	if(!T) return TRUE //If there's nothing there, feel free to move.
 	if(T.density)
@@ -140,7 +152,7 @@ default behaviour is:
 		if(!A.CanPass(swapee, T, 1))
 			return TRUE
 
-/mob/living/proc/can_swap_with(var/mob/living/tmob)
+/mob/living/proc/can_swap_with(mob/living/tmob)
 	if(tmob.buckled || buckled)
 		return FALSE
 	//BubbleWrap: people in handcuffs are always switched around as if they were on 'help' intent to prevent a person being pulled from being seperated from their puller
@@ -172,12 +184,10 @@ default behaviour is:
 	else
 		health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
 
-
 //This proc is used for mobs which are affected by pressure to calculate the amount of pressure that actually
 //affects them once clothing is factored in. ~Errorage
-/mob/living/proc/calculate_affecting_pressure(var/pressure)
+/mob/living/proc/calculate_affecting_pressure(pressure)
 	return
-
 
 //sort of a legacy burn method for /electrocute, /shock, and the e_chair
 /mob/living/proc/burn_skin(burn_amount)
@@ -226,7 +236,7 @@ default behaviour is:
 /mob/living/proc/getBruteLoss()
 	return bruteloss
 
-/mob/living/proc/adjustBruteLoss(var/amount)
+/mob/living/proc/adjustBruteLoss(amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	bruteloss = min(max(bruteloss + amount, 0),(maxHealth*2))
@@ -234,12 +244,12 @@ default behaviour is:
 /mob/living/proc/getOxyLoss()
 	return oxyloss
 
-/mob/living/proc/adjustOxyLoss(var/amount)
+/mob/living/proc/adjustOxyLoss(amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	oxyloss = min(max(oxyloss + amount, 0),(maxHealth*2))
 
-/mob/living/proc/setOxyLoss(var/amount)
+/mob/living/proc/setOxyLoss(amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	oxyloss = amount
@@ -247,13 +257,12 @@ default behaviour is:
 /mob/living/proc/getToxLoss()
 	return toxloss
 
-/mob/living/proc/adjustToxLoss(var/amount)
+/mob/living/proc/adjustToxLoss(amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	toxloss = min(max(toxloss + amount, 0),(maxHealth*2))
 
-
-/mob/living/proc/setToxLoss(var/amount)
+/mob/living/proc/setToxLoss(amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	toxloss = amount
@@ -261,7 +270,7 @@ default behaviour is:
 /mob/living/proc/getFireLoss()
 	return fireloss
 
-/mob/living/proc/adjustFireLoss(var/amount)
+/mob/living/proc/adjustFireLoss(amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	fireloss = min(max(fireloss + amount, 0),(maxHealth*2))
@@ -269,12 +278,12 @@ default behaviour is:
 /mob/living/proc/getCloneLoss()
 	return cloneloss
 
-/mob/living/proc/adjustCloneLoss(var/amount)
+/mob/living/proc/adjustCloneLoss(amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	cloneloss = min(max(cloneloss + amount, 0),(maxHealth*2))
 
-/mob/living/proc/setCloneLoss(var/amount)
+/mob/living/proc/setCloneLoss(amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	cloneloss = amount
@@ -282,12 +291,12 @@ default behaviour is:
 /mob/living/proc/getBrainLoss()
 	return brainloss
 
-/mob/living/proc/adjustBrainLoss(var/amount)
+/mob/living/proc/adjustBrainLoss(amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	brainloss = min(max(brainloss + amount, 0),(maxHealth*2))
 
-/mob/living/proc/setBrainLoss(var/amount)
+/mob/living/proc/setBrainLoss(amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	brainloss = amount
@@ -295,12 +304,12 @@ default behaviour is:
 /mob/living/proc/getHalLoss()
 	return halloss
 
-/mob/living/proc/adjustHalLoss(var/amount)
+/mob/living/proc/adjustHalLoss(amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	halloss = min(max(halloss + amount, 0),(maxHealth*2))
 
-/mob/living/proc/setHalLoss(var/amount)
+/mob/living/proc/setHalLoss(amount)
 	if(status_flags & GODMODE)
 		return FALSE	//godmode
 	halloss = amount
@@ -308,7 +317,7 @@ default behaviour is:
 /mob/living/proc/getmaxHealth()
 	return maxHealth
 
-/mob/living/proc/setmaxHealth(var/newmaxHealth)
+/mob/living/proc/setmaxHealth(newmaxHealth)
 	maxHealth = newmaxHealth
 
 /mob/living/proc/get_limb_efficiency(bodypartdefine)
@@ -336,7 +345,7 @@ default behaviour is:
 
 
 //Recursive function to find everything a mob is holding.
-/mob/living/get_contents(var/obj/item/storage/Storage = null)
+/mob/living/get_contents(obj/item/storage/Storage = null)
 	var/list/L = list()
 
 	if(Storage) //If it called itself
@@ -383,7 +392,7 @@ default behaviour is:
 	return FALSE
 
 
-/mob/living/proc/can_inject(var/mob/user, var/error_msg, var/target_zone)
+/mob/living/proc/can_inject(mob/user, error_msg, target_zone)
 	return TRUE
 
 /mob/living/is_injectable(allowmobs = TRUE)
@@ -481,7 +490,7 @@ default behaviour is:
 /mob/living/proc/UpdateDamageIcon()
 	return
 
-/mob/living/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
+/mob/living/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, glide_size_override = 0)
 	if (buckled)
 		return
 
@@ -537,7 +546,7 @@ default behaviour is:
 							var/area/A = get_area(M)
 							if(A.has_gravity)
 								//this is the gay blood on floor shit -- Added back -- Skie
-								if (M.lying && (prob(M.getBruteLoss() / 6)))
+								if(M.lying && (prob(M.getBruteLoss() / 6)))
 									var/turf/location = M.loc
 									if (istype(location, /turf/simulated))
 										location.add_blood(M)
@@ -550,14 +559,13 @@ default behaviour is:
 										M.adjustBruteLoss(2)
 										visible_message("<span class='danger'>\The [M]'s [M.isSynthetic() ? "state" : "wounds"] worsen terribly from being dragged!</span>")
 										var/turf/location = M.loc
-										if (istype(location, /turf/simulated))
-											location.add_blood(M)
+										if(istype(location, /turf/simulated))
 											if(ishuman(M))
 												var/mob/living/carbon/human/H = M
 												var/blood_volume = round(H.vessel.get_reagent_amount("blood"))
 												if(blood_volume > 0)
 													H.vessel.remove_reagent("blood", 0.5)
-
+													location.add_blood(M)
 
 						step_glide(pulling, get_dir(pulling.loc, T), glide_size)
 						if(t)
@@ -673,7 +681,7 @@ default behaviour is:
 			sleep(world.tick_lag + 0.5)
 		C.mloop = 0
 
-/mob/living/simple_animal/spiderbot/is_allowed_vent_crawl_item(var/obj/item/carried_item)
+/mob/living/simple_animal/spiderbot/is_allowed_vent_crawl_item(obj/item/carried_item)
 	if(carried_item == held_item)
 		return FALSE
 	return ..()
@@ -692,7 +700,7 @@ default behaviour is:
 /mob/living/proc/has_eyes()
 	return TRUE
 
-/mob/living/proc/slip(var/slipped_on,stun_duration=8)
+/mob/living/proc/slip(slipped_on,stun_duration=8)
 	return FALSE
 
 /mob/living/proc/trip(tripped_on, stun_duration)
@@ -700,39 +708,39 @@ default behaviour is:
 
 
 //damage/heal the mob ears and adjust the deaf amount
-/mob/living/adjustEarDamage(var/damage, var/deaf)
+/mob/living/adjustEarDamage(damage, deaf)
 	ear_damage = max(0, ear_damage + damage)
 	ear_deaf = max(0, ear_deaf + deaf)
 
 //pass a negative argument to skip one of the variable
-/mob/living/setEarDamage(var/damage, var/deaf)
+/mob/living/setEarDamage(damage, deaf)
 	if(damage >= 0)
 		ear_damage = damage
 	if(deaf >= 0)
 		ear_deaf = deaf
 
-/mob/living/proc/can_feel_pain(var/check_organ)
+/mob/living/proc/can_feel_pain(check_organ)
 	if(isSynthetic())
 		return FALSE
 	return TRUE
 
-/mob/proc/can_be_possessed_by(var/mob/observer/ghost/possessor)
+/mob/proc/can_be_possessed_by(mob/observer/ghost/possessor)
 	return istype(possessor) && possessor.client
 
-/mob/living/can_be_possessed_by(var/mob/observer/ghost/possessor)
+/mob/living/can_be_possessed_by(mob/observer/ghost/possessor, animal_check = TRUE)
 	if(!..())
 		return FALSE
 	if(!possession_candidate)
 		to_chat(possessor, "<span class='warning'>That animal cannot be possessed.</span>")
 		return FALSE
-	if(jobban_isbanned(possessor, "Animal"))
+	if(jobban_isbanned(possessor, "Animal") && animal_check)
 		to_chat(possessor, "<span class='warning'>You are banned from animal roles.</span>")
 		return FALSE
 	if(!possessor.MayRespawn(0 ,ANIMAL))
 		return FALSE
 	return TRUE
 
-/mob/living/proc/do_possession(var/mob/observer/ghost/possessor)
+/mob/living/proc/do_possession(mob/observer/ghost/possessor)
 
 	if(!(istype(possessor) && possessor.ckey))
 		return FALSE
@@ -788,7 +796,7 @@ default behaviour is:
 			var/obj/screen/HUDthrow/HUD = HUDneed["pull"]
 			HUD.update_icon()
 
-/mob/living/start_pulling(var/atom/movable/AM)
+/mob/living/start_pulling(atom/movable/AM)
 
 	if (!AM || !usr || src==AM || !isturf(src.loc))	//if there's no person pulling OR the person is pulling themself OR the object being pulled is inside something: abort!
 		return
@@ -871,6 +879,9 @@ default behaviour is:
 	//Mutations populated through horrendous genetic tampering.
 	unnatural_mutations = new(src)
 
+	//Skills and mastery holder
+	learnt_tasks = new(src)
+
 	generate_static_overlay()
 	for(var/mob/observer/eye/angel/A in GLOB.player_list)
 		if(A)
@@ -893,7 +904,16 @@ default behaviour is:
 
 	QDEL_NULL(stats)
 
-	unnatural_mutations.holder = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly
+	static_overlay.loc = null
+	static_overlay.transform = null
+	QDEL_NULL(static_overlay)
+
+	unnatural_mutations = null //causes a GC failure if we qdel-and it seems its not SUPPOSED to qdel, oddly
+
+	learnt_tasks = null
+
+	if(registered_z)
+		SSmobs.mob_living_by_zlevel[registered_z] -= src	// STOP_PROCESSING() doesn't remove the mob from this list
 
 	update_z(null)
 
@@ -903,7 +923,7 @@ default behaviour is:
 /mob/living/proc/vomit()
 	return
 
-/mob/living/proc/adjustNutrition(var/amount, var/mob/living/carbon/human/H)
+/mob/living/proc/adjustNutrition(amount, mob/living/carbon/human/H)
 	if(H)
 		if(H.species.reagent_tag == IS_SYNTHETIC)
 			return
@@ -923,8 +943,31 @@ default behaviour is:
 		drop_items = null
 
 //Makes a blood drop, leaking amt units of blood from the mob
-/mob/living/proc/drip_blood(var/amt as num)
+/mob/living/proc/drip_blood(amt as num)
 	blood_splatter(src,src)
 
 /mob/living/proc/eyecheck()
 	return 0
+
+/mob/living/verb/show_tasks()
+	set name		= "Show tasks"
+	set desc		= "Browse your character tasks."
+	set category	= "IC"
+	set src			= usr
+
+	var/list/data = list()
+	var/list/tasks = learnt_tasks.learnt_tasks
+	if(LAZYLEN(tasks))
+		for(var/task in tasks)
+			var/datum/task_master/task/T = task
+			data["tasks"] += list(list(
+				"name" = T.name,
+				"desc" = T.desc,
+				"value" = T.value,
+				"level_threshold" = T.level_threshholds,
+				"level" = T.level
+			))
+
+	var/datum/nanoui/ui = new(usr, src, "main", "tasks.tmpl", "Tasks", 500, 300)
+	ui.set_initial_data(data)	// when the ui is first opened this is the data it will use
+	ui.open()					// open the new ui window

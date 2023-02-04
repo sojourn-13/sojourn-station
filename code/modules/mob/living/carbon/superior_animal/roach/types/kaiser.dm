@@ -42,7 +42,8 @@ Has ability of every roach.
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/kaiser
 	meat_amount = 15
 	sanity_damage = 3
-
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/kingly_pheromone_gland)
 	ranged = TRUE // RUN, COWARD!
 	limited_ammo = TRUE //Do we run out of ammo?
 	rounds_left = 2 //We get 2 shots then go for melee, this makes us a threat
@@ -52,19 +53,20 @@ Has ability of every roach.
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 
 /mob/living/carbon/superior_animal/roach/kaiser/getTargets()
-	..()
+	. = ..()
+
 	rounds_left = 2 //Reload us, after all we are now targeting someone new
 	ranged = TRUE //Were reloaded we can be ranged once more
 
 /mob/living/carbon/superior_animal/roach/kaiser/New()
-	..()
+	. = ..()
 	gas_sac = new /datum/reagents(100, src)
 	pixel_x = -16  // For some reason it doesn't work when I overload them in class definition, so here it is.
 	pixel_y = -16
 
 
 /mob/living/carbon/superior_animal/roach/kaiser/handle_ai()
-	..()
+	. = ..()
 
 	if(can_call_reinforcements())
 		distress_call()

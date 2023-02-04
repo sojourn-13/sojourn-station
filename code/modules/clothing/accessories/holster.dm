@@ -86,7 +86,10 @@
 /obj/item/clothing/accessory/holster/examine(mob/user)
 	..(user)
 	if (holstered)
-		to_chat(user, "A [holstered] is holstered here.")
+		if(get_dist(user, src) < 1) //Gotta be close to see what's in there
+			to_chat(user, "A [holstered] is holstered here.")
+		else
+			to_chat(user, "You can't get a good look at the contents of that holster...")
 	else
 		to_chat(user, "It is empty.")
 
@@ -161,6 +164,7 @@ Sword holsters
 	desc = "A white leather weapon sheath mounted around the waist."
 	icon_state = "saber_holster"
 	overlay_state = "saber"
+	slot_flags = SLOT_ACCESSORY_BUFFER|SLOT_BELT
 	slot = "utility"
 	can_hold = list(/obj/item/tool/sword/saber)
 	price_tag = 200
@@ -324,6 +328,27 @@ Sword holsters
 	var/holstered_spawn = /obj/item/tool/sword/saber/cutlass
 
 /obj/item/clothing/accessory/holster/saber/cutlass/occupied/Initialize()
+	holstered = new holstered_spawn
+	update_icon()
+
+/obj/item/clothing/accessory/holster/saber/saya
+	name = "katana saya"
+	desc = "A traditional \"saya\", a sheath for a non-curved oriental sword known as a katana."
+	icon_state = "saya"
+	overlay_state = "saya"
+	slot = "utility"
+	can_hold = list(/obj/item/tool/sword/katana_makeshift, /obj/item/tool/sword/katana, /obj/item/material/sword/katana, /obj/item/tool/sword/katana/nano) // Only straight swords.
+
+/obj/item/clothing/accessory/holster/saber/saya/update_icon()
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/accessory/icon.dmi', "saya_layer"))
+
+/obj/item/clothing/accessory/holster/saber/saya/occupied
+	var/holstered_spawn = /obj/item/tool/sword/katana
+
+/obj/item/clothing/accessory/holster/saber/saya/occupied/Initialize()
 	holstered = new holstered_spawn
 	update_icon()
 

@@ -239,6 +239,10 @@
 	name = "NT Flanged Mace"
 	build_path = /obj/item/tool/sword/nt/flanged
 
+/datum/design/autolathe/sword/nt_power
+	name = "NT Forceblade"
+	build_path = /obj/item/tool/sword/nt/power
+
 //[GRENADES]
 /datum/design/autolathe/grenade/nt_heatwave
 	name = "NT HG \"Inferno\""
@@ -294,36 +298,6 @@
 /datum/design/bioprinter/medical/advanced/ointment/nt
 	name = "Absolutist burn kit"
 	build_path = /obj/item/stack/medical/advanced/ointment/nt
-
-/datum/design/bioprinter/lungs
-	name = "Extended Lungs"
-	materials = list(MATERIAL_BIOMATTER = 30)
-	build_path = /obj/item/organ/internal/lungs/long
-
-/datum/design/bioprinter/heart
-	name = "Huge Heart"
-	materials = list(MATERIAL_BIOMATTER = 45)
-	build_path = /obj/item/organ/internal/heart/huge
-
-/datum/design/bioprinter/liver
-	name = "Big Liver"
-	materials = list(MATERIAL_BIOMATTER = 30)
-	build_path = /obj/item/organ/internal/liver/big
-
-/datum/design/bioprinter/nerves
-	name = "Hypersensitive Nerves"
-	materials = list(MATERIAL_BIOMATTER = 15, MATERIAL_GOLD = 1)
-	build_path = /obj/item/organ/internal/nerve/sensitive_nerve
-
-/datum/design/bioprinter/muscle
-	name = "Super Muscle"
-	materials = list(MATERIAL_BIOMATTER = 30)
-	build_path = /obj/item/organ/internal/muscle/super_muscle
-
-/datum/design/bioprinter/blood_vessel
-	name = "Extensive Blood Vessels"
-	materials = list(MATERIAL_BIOMATTER = 30, MATERIAL_PLASTIC = 2)
-	build_path = /obj/item/organ/internal/blood_vessel/extensive
 
 /datum/design/autolathe/firstaid/nt
 	name = "Absolutism Medkit"
@@ -389,15 +363,23 @@
 	build_path = /obj/item/storage/pouch/ammo
 
 /datum/design/bioprinter/pouch/baton_holster
-	name = "Baton pouch"
+	name = "Baton holster"
 	build_path = /obj/item/storage/pouch/baton_holster
 
 /datum/design/bioprinter/pouch/pistol_holster
-	name = "Pistol holster pouch"
+	name = "Pistol holster"
 	build_path = /obj/item/storage/pouch/pistol_holster
 
+/datum/design/bioprinter/pouch/pistol_double
+	name = "Belt pistol holster"
+	build_path = /obj/item/storage/pouch/pistol_holster/cowboy
+
+/datum/design/bioprinter/pouch/kniferig
+	name = "Throwing knives scabbard"
+	build_path = /obj/item/storage/pouch/kniferig
+
 /datum/design/bioprinter/pouch/engineering_supply
-	name = "Engineering supply pouch"
+	name = "Engineering supplies pouch"
 	build_path = /obj/item/storage/pouch/engineering_supply
 
 /datum/design/bioprinter/pouch/engineering_tools
@@ -405,7 +387,7 @@
 	build_path = /obj/item/storage/pouch/engineering_tools
 
 /datum/design/bioprinter/pouch/janitor_supply
-	name = "Janitor supply pouch"
+	name = "Janitor supplies pouch"
 	build_path = /obj/item/storage/pouch/janitor_supply
 
 /datum/design/bioprinter/pouch/small_generic/purple

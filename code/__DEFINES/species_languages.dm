@@ -24,27 +24,33 @@
 
 // Languages.
 #define LANGUAGE_COMMON		"English Common"
-#define LANGUAGE_CYRILLIC	"Techno-Russian"
-#define LANGUAGE_SERBIAN	"Serbian"
+#define LANGUAGE_CYRILLIC	"Interslavic"
+#define LANGUAGE_ILLYRIAN	"Illyrian"
 #define LANGUAGE_JIVE		"Jive"
-#define LANGUAGE_GERMAN		"German"
+#define LANGUAGE_EURO		"Eurolang"
 #define LANGUAGE_JANA	    "Jana"
-#define LANGUAGE_LATIN 		"Ancient Latin"
-#define LANGUAGE_ESPERANTO	"Esperanto"
+#define LANGUAGE_LATIN 		"Latin"
+#define LANGUAGE_ROMANA		"Lingua Romana"
 #define LANGUAGE_YASSARI	"Yassari"
 
+//Alein / Species specific langauges.
 #define LANGUAGE_ROBOT "Robot Talk"
-#define LANGUAGE_DRONE "Drone Talk"
-#define LANGUAGE_MONKEY "Chimpanzee"
+#define LANGUAGE_OPIFEXEE "Opifexee"
+#define LANGUAGE_CHTMANT "Chthive"
+#define LANGUAGE_KRIOSAN "Kriosan"
+#define LANGUAGE_AKULA "Akula"
+#define LANGUAGE_MARQUA "Marqua"
+#define LANGUAGE_PLANT "Native Plant"
 
+// Special / Antag langauges.
+#define LANGUAGE_MONKEY "Chimpanzee"
+#define LANGUAGE_DRONE "Drone Talk"
 #define LANGUAGE_XENOMORPH "Xenomorph"
 #define LANGUAGE_HIVEMIND "Hivemind"
 #define LANGUAGE_CORTICAL "Cortical Link"
 #define LANGUAGE_CULT "Cult"
 #define LANGUAGE_OCCULT "Occult"
 #define LANGUAGE_BLITZ "Blitzshell Communique"
-#define LANGUAGE_OPIFEXEE "Opifexee"
-#define LANGUAGE_CHTMANT "Chthive"
 
 // Language flags.
 #define WHITELISTED  1   // Language is available if the speaker is whitelisted.

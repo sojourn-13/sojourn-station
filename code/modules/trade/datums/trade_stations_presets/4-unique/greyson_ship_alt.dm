@@ -21,7 +21,7 @@
 		),
 		"Gongju" = list(
 			/obj/item/tool/crowbar/onestar = custom_good_nameprice("GP Crowbar", list(-100, -50)),
-			/obj/item/tool/onestar_multitool = custom_good_nameprice("GP Multitool", list(-100, -50)),
+			/obj/item/tool/multitool/advanced/onestar = custom_good_nameprice("GP Multitool", list(-100, -50)),
 			/obj/item/tool/weldingtool/onestar = custom_good_nameprice("GP Welding Tool", list(-100, -50)),
 			/obj/item/tool/screwdriver/combi_driver/onestar = custom_good_nameprice("GP Combination Drill", list(-100, -50)),
 			/obj/item/tool/hammer/powered_hammer/onestar_hammer = custom_good_nameprice("GP Sledgehammer", list(-100, -50)),
@@ -72,6 +72,8 @@
 	offer_types = list(
 		/obj/item/gun/projectile/spring = offer_data("GP Spring", 2500, 1),
 		/obj/item/gun/projectile/rivet = offer_data("GP Rivet", 3000, 1),
+		/obj/item/gun/projectile/rebar = offer_data("GP Rebar", 4000, 1),
 		/obj/item/gun/projectile/automatic/nail_gun = offer_data("GP Nail", 6000, 1),
+		/obj/item/gun/projectile/trouble_shooter = offer_data("GP Trouble Shooter", 18000, 1),
 		/obj/item/gun/projectile/automatic/scaffold = offer_data("GP Scaffold", 7500, 1)
 	)

@@ -261,13 +261,13 @@ Proc for attack log creation, because really why not
 			progbar.update(world.time - starttime)
 
 		if(immobile)
-			if(!user || user.incapacitated(incapacitation_flags) || user.loc != original_loc)
+			if(user.loc != original_loc)
 				. = 0
 				break
 
-			if(target_loc && (!target || target_loc != target.loc))
-				. = 0
-				break
+		if(target_loc && (!target || target_loc != target.loc))
+			. = 0
+			break
 
 		if(needhand)
 			if(user.get_active_hand() != holding)
@@ -457,3 +457,17 @@ Proc for attack log creation, because really why not
 	if(isnull(choice) || src.incapacitated() || (required_item && !GLOB.hands_state.can_use_topic(required_item,src)))
 		return null
 	return choice
+
+/// Gets the client of the mob, allowing for mocking of the client.
+/// You only need to use this if you know you're going to be mocking clients somewhere else.
+#define GET_CLIENT(mob) (##mob.client) //  || ##mob.mock_client
+
+///Makes a call in the context of a different usr. Use sparingly
+/world/proc/push_usr(mob/user_mob, datum/callback/invoked_callback, ...)
+	var/temp = usr
+	usr = user_mob
+	if (length(args) > 2)
+		. = invoked_callback.Invoke(arglist(args.Copy(3)))
+	else
+		. = invoked_callback.Invoke()
+	usr = temp

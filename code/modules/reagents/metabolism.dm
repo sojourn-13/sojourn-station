@@ -1,4 +1,4 @@
-#define NSA_THRESHOLD_MINIMUM 20 //The lowest someone's NSA Threshhold can reach
+#define NSA_THRESHOLD_MINIMUM 50 //The lowest someone's NSA Threshhold can reach
 
 /datum/reagents/metabolism
 	var/metabolism_class //CHEM_TOUCH, CHEM_INGEST, or CHEM_BLOOD
@@ -10,6 +10,11 @@
 	metabolism_class = met_class
 	if(istype(parent_mob))
 		parent = parent_mob
+
+/datum/reagents/metabolism/Destroy()
+	parent = null
+	return ..()
+
 
 /datum/reagents/metabolism/proc/metabolize()
 	expose_temperature(parent.bodytemperature, 0.25)
@@ -48,6 +53,13 @@
 	/// The final chance for an addiction to manifest is multiplied by this value before being passed to prob.
 	var/addiction_chance_multiplier = 1
 
+/datum/metabolism_effects/Destroy()
+	parent = null
+	withdrawal_list.Cut()
+	active_withdrawals.Cut()
+	addiction_list.Cut()
+	return ..()
+
 //Must be called WHENEVER you modify nsa_bonus, nsa_chem_bonus, nsa_mult, or when you change nerve efficiency.
 //calc_nerves: Activates nerve efficiency recalculation, so its not recalculated every time.
 /datum/metabolism_effects/proc/calculate_nsa(calc_nerves = FALSE)
@@ -75,7 +87,7 @@
 		return nerve_system_accumulations[tag]
 
 /datum/metabolism_effects/proc/get_nsa()
-	SEND_SIGNAL(parent, COMSING_NSA, nsa_current)
+	LEGACY_SEND_SIGNAL(parent, COMSING_NSA, nsa_current)
 	return nsa_current
 
 /datum/metabolism_effects/proc/get_nsa_target()
@@ -105,21 +117,54 @@
 	var/obj/screen/nsa/hud = parent.HUDneed["neural system accumulation"]
 	hud?.update_icon()
 
+//NSA Overloads!
+//First we have a tell were over are limit, harmless shaking
 /datum/metabolism_effects/proc/nsa_breached_effect()
-	if(get_nsa() < nsa_threshold*1.2) // 20% more
+	var/nsa_amount = get_nsa()
+	if(nsa_amount < nsa_threshold*1.1)
 		return
-	parent.vomit()
+	parent.make_jittery(2)
 
-	if(get_nsa() < nsa_threshold*1.6)
+	if(nsa_amount < nsa_threshold*1.2)
 		return
 	parent.drop_l_hand()
 	parent.drop_r_hand()
 
-	if(get_nsa() < nsa_threshold*1.8)
+	if(nsa_amount < nsa_threshold*1.3)
+		return
+	parent.vomit()
+
+	if(nsa_amount < nsa_threshold*1.4)
+		return
+	parent.adjust_hallucination(8,12)
+
+	if(nsa_amount < nsa_threshold*1.5)
 		return
 	parent.adjustToxLoss(1)
+	parent.eye_blurry = max(parent.eye_blurry, 3)
 
-	if(get_nsa() < nsa_threshold*2)
+	if(nsa_amount < nsa_threshold*1.6)
+		return
+	parent.drip_blood(10) //This is quite a bit but your also suffering a lot
+
+	//At this point were starting to have a heart attack
+	if(nsa_amount < nsa_threshold*1.7)
+		return
+	if(ishuman(parent))
+		var/mob/living/carbon/human/H = parent
+		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_HEART)
+		if(H && istype(H))
+			C.take_damage(0.5, FALSE)
+
+	if(nsa_amount < nsa_threshold*1.8)
+		return
+	parent.confused = max(parent.confused, 3)
+
+	if(nsa_amount < nsa_threshold*1.9)
+		return
+	parent.paralysis = max(parent.paralysis, 10)
+
+	if(nsa_amount < nsa_threshold*2)
 		return
 	parent.Sleeping(2)
 
@@ -164,7 +209,7 @@
 			addiction_list.Add(new_reagent)
 			addiction_list[new_reagent] = 0
 			for(var/mob/living/carbon/human/H in viewers(parent))
-				SEND_SIGNAL(H, COMSIG_CARBON_ADICTION, parent, R)
+				LEGACY_SEND_SIGNAL(H, COMSIG_CARBON_ADICTION, parent, R)
 
 	if(is_type_in_list(R, addiction_list))
 		for(var/addiction in addiction_list)

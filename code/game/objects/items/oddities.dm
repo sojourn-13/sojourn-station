@@ -153,7 +153,7 @@
 /obj/item/oddity/common/paper_omega
 	name = "collection of obscure reports"
 	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. The logo is faded, making it hard to tell if this was Greyson, Soteria, or an independent group."
-	icon_state = "paper_omega"
+	icon_state = "reports1"
 	prob_perk = 45 //The skeptical mind of the inker helps keep it grounded but it shows something unable to be shaken out of the mind
 	oddity_stats = list(
 		STAT_MEC = 6,
@@ -161,10 +161,14 @@
 		STAT_BIO = 6
 	)
 
+/obj/item/oddity/common/paper_omega/Initialize()
+	icon_state = "reports[rand(1,6)]" // All these unused sprites will now add variety to reports. - Seb
+	.=..()
+
 /obj/item/oddity/common/book_eyes
 	name = "observer book"
 	desc = "This book details information on some cybernetic creatures. Who did this? How is this even possible? The illustrations bear uncomfortable likeness to hivemind abominations."
-	icon_state = "book_eyes"
+	icon_state = "book_omega"
 	prob_perk = 15 //A book of robotic beings well fearing an upraising its paranioa in the puplics mind, only given power by mar qua
 	oddity_stats = list(
 		STAT_ROB = 7,
@@ -174,8 +178,10 @@
 
 /obj/item/oddity/common/book_omega
 	name = "occult book"
-	desc = "Most of the stories in this book seem to be the writings of madmen, but at least the stories are interesting. Some of the phrases are written in Latin, an odd thing in this day and age."
-	icon_state = "book_omega"
+	desc = "Most of the stories in this book seem to be the ramblings of an insane cultist, but at least the stories are interesting. \
+			Some of the phrases are written in a language that makes sense at times, but becomes intelligible to you a second after. Something about candles around a magic circle on the floor...\
+			While this sounds like utter nonsense to you, you have a dreadful feeling that using this book in the runes described would have some sinister effect..."
+	icon_state = "book_eyes" // This sprite fits better an occult book, swapped with the observer one.
 	prob_perk = 15 //old wrighting with the madmans ink allows the mind to go a bit more wild then just a single paper
 	oddity_stats = list(
 		STAT_BIO = 5,
@@ -185,7 +191,7 @@
 
 /obj/item/oddity/common/broken_key
 	name = "broken key"
-	desc = "A yellow or golden key that goes to who knows what. The end bit broken off..."
+	desc = "An archaic yellow or golden key that belongs to an unknown door. The end bit has broken off..."
 	prob_perk = 75 //A key to an unknown item or place, this one gets quite the imagination...
 	icon_state = "broken_key"
 	oddity_stats = list(
@@ -194,9 +200,12 @@
 
 /obj/item/oddity/common/book_bible
 	name = "old bible"
-	desc = "Oh, how quickly we forgot."
+	desc = "This is the account of the heavens and the earth when they were created..."
 	icon_state = "book_bible"
 	prob_perk = 5 //Grounded and talked about, hard to think outside the box when given its history and known lore
+	force = 1
+	effective_faction = list("psi_monster") // roach are weak to bricks.
+	damage_mult = 15 //15~, damage to psionic mobs no AP
 	oddity_stats = list(
 		STAT_ROB = 4,
 		STAT_VIG = 4
@@ -204,7 +213,7 @@
 
 /obj/item/oddity/common/book_log
 	name = "forgotten logs"
-	desc = "A once detailed book containing information on all manner of things, slashes and now ruined pages are whats left..."
+	desc = "A once detailed book containing information on all manner of things, ruined pages and smudged writings are all what's left of it..."
 	icon_state = "book_log"
 	prob_perk = 15 //Grounded in the real life and the real planets nature anomliest yes but still has links to the plan
 	oddity_stats = list(
@@ -225,7 +234,7 @@
 
 /obj/item/oddity/common/healthscanner
 	name = "odd health scanner"
-	desc = "It's broken and stuck on some really strange readings. Was this even human?"
+	desc = "It's broken and stuck on some really strange readings. What species is this data from, even...?"
 	icon_state = "healthscanner"
 	item_state = "electronic"
 	prob_perk = 10 //Powerful as unreadable data is its not all that able to be exspanded on
@@ -268,7 +277,7 @@
 
 /obj/item/oddity/common/old_knife
 	name = "old knife"
-	desc = "Is this blood older than you? You can't tell and will never know."
+	desc = "Is this blood older than you? You can't tell and probably you will never know."
 	icon_state = "old_knife"
 	item_state = "knife"
 	prob_perk = 5 //Only so much you can imagine a knife about
@@ -317,7 +326,7 @@
 
 /obj/item/oddity/techno
 	name = "Unknown technological part"
-	desc = "A technological part made by Artificer Perfection Cube."
+	desc = "A technological part made by the Artificer Perfection Cube."
 	icon_state = "techno_part1"
 	prob_perk = 25 //Unknown tech unknown parts unknown uses by a cult much to exspand the mind in
 
@@ -337,7 +346,7 @@
 
 /obj/item/oddity/common/paper_bundle
 	name = "paper bundle"
-	desc = "Somewhere there is a truth, hidden under all of this scrap."
+	desc = "There surely is a glimmer of truth, hidden under all of this dissociated knowledge."
 	icon_state = "paper_bundle"
 	prob_perk = 20 //Data, so much data to grasp straws on
 	oddity_stats = list(
@@ -403,7 +412,8 @@
 
 /obj/item/oddity/common/book_unholy
 	name = "unholy book"
-	desc = "The writings inside entail some strange ritual. Pages have been torn out or smudged to illegibility."
+	desc = "The writings inside describe some strange rituals whose price is always paid in blood. Some pages have been torn out or smudged to illegibility, but what little you can make out tells you that \"...to be able to see beyond the veil, the enchanter will need to be half blind...\". \
+			While this sounds like utter nonsense to you, you have a dreadful feeling that using this book in the runes described would have some sinister effect..."
 	icon_state = "book_skull"
 	prob_perk = 80 //Cult around this gives it great power
 	oddity_stats = list(
@@ -440,7 +450,7 @@
 /obj/item/oddity/rare/golden_cup
 	name = "Colony Games Trophy"
 	desc = "A trophy earned during the monthly competitions between various factions. The gold is fashioned from anomalous metal, giving it beneficial properties to carry with you. Hold your factions achievement high!"
-	icon_state = "golden_cup"
+	icon_state = "golden_cup" // Sprite by Dongels
 	min_stats = 5
 	oddity_stats = list(
 		STAT_ROB = 8,
@@ -596,7 +606,7 @@
 
 /obj/item/oddity/nt/pyramid
 	name = "Pyramid"
-	desc = "A small structure with various triangular bricks and forms a triangular frame. This one seems like a egyptian pyramid in specific, and have various ancient egyptian engravings about forgotten gods that only the today's history researcher may know, considering that various aspects of civilization has been lost over time as the old earth has lost their old history entities from the newer, non-earth born generations, or straight up alien. This lifts the important need to preserve history to never be forgotten. It seems this is supposed to be, more specifically, a figure of the Pyramid which Queen Khentkaus I has been buried. Anubis is the god more present on the arid, golden sand bricks and chiselled by hand."
+	desc = "A small sandstone pyramid, covered in bizzare engravings. The Cartographer of the Church of the Absolute has declared relics like this holy beyond any doubt, though none know exactly why."
 	icon_state = "pyramid"
 	oddity_stats = list(
 		STAT_TGH = 16
@@ -618,7 +628,7 @@
 
 /obj/item/oddity/si_bluespace_scanner
 	name = "Bluespace Tuning Device"
-	desc = "A tool used by SI to stablize and get readings of bluespace entropy." //TODO get a better desc, this is horrable the worst even
+	desc = "An anomalous, experimental tool produced by the Soteria Institute to get accurate readings of local and global Bluespace entropy." // It's a lie that it stabilizes Bluespace.
 	icon_state = "si_scan"
 	item_state = "si_scan"
 	matter = list(MATERIAL_PLASTIC = 15, MATERIAL_STEEL = 10, MATERIAL_PLASMAGLASS = 2, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_PLASMA = 5, MATERIAL_DIAMOND = 1)
@@ -633,19 +643,21 @@
 	if(!iscarbon(user) || !issilicon(user))
 		return//Prevents ghosts form making a runtime
 	if(!user.stats?.getPerk(PERK_SI_SCI) || !usr.stat_check(STAT_COG, 90)) //got to be smarts
-		to_chat(usr, SPAN_WARNING("This tool is far to complex to read let alone use."))
+		to_chat(usr, SPAN_WARNING("This tool is far too complex for you to comprehend how to even use it. The data and formulas displayed look like complete alien gibberish."))
 		return
 	var/area/my_area = get_area(src)
 	if(my_area.bluespace_entropy)
-		to_chat(user, SPAN_NOTICE("The scanner reads the room to [my_area.bluespace_entropy] annomlies bluespace."))
+		to_chat(user, SPAN_NOTICE("The Tuning Device measures bluespace entropy in this room to be [my_area.bluespace_entropy] zeframs.")) // Considering Bluespace Entropy the same as Subspace Distortion, and not making the reference more obvious than it is.
 
 	if(GLOB.bluespace_entropy)
-		to_chat(user, SPAN_NOTICE("The scanner is giving off [GLOB.bluespace_entropy]!"))
+		to_chat(user, SPAN_NOTICE("The long-range scanner notifies of stellar discrepancy at [GLOB.bluespace_entropy] zeframs of bluespace entropy on the planet."))
+
+// Considering the vast amount of references in code, a Zefram being a unit of measurement for Bluespace Entropy fits, while not being directly a Cochrane. - Seb
 
 /obj/item/oddity/code_book
 	name = "Marshal Code Handbook"
 	desc = "A heavy book with details and translations of the Marshal codes."
-	icon_state = "book_code"
+	icon_state = "instructional_rob" // Fits better with a supposed Marshal's logo up front. - Seb
 	oddity_stats = list(
 		STAT_VIG = 6
 	)
@@ -855,7 +867,7 @@
 		to_chat(user, "<span class='info'>Further attempts have gotten you no closer to solving the [src].</span>")
 		return
 	if(prob(openchance))
-		new /mob/living/simple_animal/hostile/stranger(user.loc)
+		new /mob/living/carbon/superior_animal/human/stranger(user.loc)
 		new /obj/item/oddity/rare/openedpuzzlebox(user.loc)
 		to_chat(user, SPAN_WARNING("[src] clicks and lights up!"))
 		qdel(src)

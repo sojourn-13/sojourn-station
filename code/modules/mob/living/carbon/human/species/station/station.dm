@@ -25,8 +25,9 @@
 		STAT_TGH = 2,
 		STAT_VIG = 2
 	)
+	darksight = 2
 
-	perks = list(/datum/perk/tenacity, /datum/perk/iwillsurvive, /datum/perk/slymarbo)
+	perks = list(PERK_IWILLSURVIVE, PERK_BATTLECRY, PERK_TENACITY, PERK_DIVERSE_CULTURE)
 
 	spawn_flags = CAN_JOIN
 
@@ -50,7 +51,7 @@
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 200 //Effectively ageless, but human history is only so long.
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.1
+	hunger_factor = 1.1
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
@@ -64,9 +65,9 @@
 		STAT_VIG = 5
 	)
 
-	darksight = 6
+	darksight = 3
 
-	perks = list(/datum/perk/debtor, /datum/perk/splicer)
+	perks = list(PERK_DEBTOR, PERK_SPLICER, PERK_DIVERSE_CULTURE)
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/exalt,
@@ -150,12 +151,25 @@
 		"Sablekyne Curled Horns (small)",
 		"Sablekyne Small Horns 1",
 		"Sablekyne Small Horns 2",
-		"Sablekyne Small Horns 3"
+		"Sablekyne Small Horns 3",
+		"Sablekyne Stabber Horns",
+		"Sablekyne Dogma Horns",
+		"Sablekyne Outstretched Horns",
+		"Sablekyne Halo Horns",
+		"Sablekyne Upward Horns",
+		"Sablekyne Great Horns",
+		"Sablekyne Bun Horns",
+		"Sabelkyne Murauder Horns",
+		"Sabelkyne Faceguard Horns",
+		"Uni-Horn",
+		"Ox Horns",
+		"Stabber Horns (Colorable)"
 		)
 	permitted_tail  = list("Sablekyne Tail")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/laststand,/datum/perk/bone, /datum/perk/brawn, /datum/perk/carnivore)
+	darksight = 3 //Cat eyes
+	perks = list(PERK_LASTSTAND, PERK_BONE, PERK_BRAWN, PERK_CARNIVORE)
 
 /datum/species/sablekyne/get_bodytype()
 	return "Sablekyne"
@@ -173,7 +187,7 @@
 	min_age = 18
 	max_age = 160
 	blurb = "no."
-	hunger_factor = DEFAULT_HUNGER_FACTOR/2
+	hunger_factor = 0.5
 	taste_sensitivity = TASTE_HYPERSENSITIVE
 
 	dark_color = "#afeeee"
@@ -213,7 +227,7 @@
 	permitted_tail  = list()
 	permitted_wings = list()
 
-	perks = list(/datum/perk/suddenbrilliance,/datum/perk/inspired, /datum/perk/alien_nerves)
+	perks = list(PERK_SUDDENBRILLIANCE, PERK_INSPIRED, PERK_ALIEN_NERVES)
 
 /datum/species/marqua/get_bodytype()
 	return "Mar'Qua"
@@ -226,15 +240,16 @@
 	name_plural = "Kriosans"
 	default_form = FORM_KRIOSAN
 	obligate_form = TRUE
+	reagent_tag = IS_KRIOSAN
 	unarmed_types = list(/datum/unarmed_attack/needle, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
-	darksight = 8
+	darksight = 4 //enhanced eyes dosnt mean perfected
 	num_alternate_languages = 2
 	name_language = null
 	min_age = 18
 	max_age = 110
 	blurb = "no."
 	taste_sensitivity = TASTE_HYPERSENSITIVE
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.25
+	hunger_factor = 1.25
 	radiation_mod = 0.5
 	total_health = 150
 	siemens_coefficient = 2
@@ -277,7 +292,7 @@
 		)
 	permitted_wings = list()
 
-	perks = list(/datum/perk/enhancedsenses, /datum/perk/exceptional_aim)
+	perks = list(PERK_PERFECT_SHOT, PERK_ENHANCEDSENSES)
 
 /datum/species/kriosan/get_bodytype()
 	return "Kriosan"
@@ -287,15 +302,16 @@
 	name_plural = "Akulas"
 	default_form = FORM_AKULA
 	obligate_form = TRUE
+	reagent_tag = IS_AKULA
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/tail, /datum/unarmed_attack/bite/strong)
-	darksight = 4
+	darksight = 3
 	num_alternate_languages = 2
 	name_language = null
 	min_age = 18
 	max_age = 130
 	blurb = "no."
 	taste_sensitivity = TASTE_DULL
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.25
+	hunger_factor = 1.25
 
 	cold_level_1 = 240 //Default 270
 	cold_level_2 = 200 //Default 230
@@ -320,7 +336,7 @@
 	permitted_tail  = list("Akula Tail")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/recklessfrenzy, /datum/perk/iron_flesh, /datum/perk/carnivore)
+	perks = list(PERK_RECKLESSFRENZY, PERK_IRON_FLESH, PERK_CARNIVORE)
 
 /datum/species/akula/get_bodytype()
 	return "Akula"
@@ -337,6 +353,7 @@
 	max_age = 60
 	slowdown = -0.5
 	blurb = "no."
+	darksight = 2
 
 	spawn_flags = CAN_JOIN
 
@@ -354,7 +371,7 @@
 	permitted_tail  = list("Naramad Tail", "Naramad Tail 2")
 	permitted_wings = list()
 
-	perks = list(/datum/perk/adrenalineburst,/datum/perk/born_warrior, /datum/perk/stay_hydrated)
+	perks = list(PERK_ADRENALINEBURST, PERK_BORN_WARRIOR, PERK_STAY_HYDRATED)
 
 /datum/species/naramad/get_bodytype()
 	return "Naramad"
@@ -376,7 +393,7 @@
 	exhale_type = "carbon_dioxide"
 	siemens_coefficient = 0.5
 	spawn_flags = CAN_JOIN
-	hunger_factor = DEFAULT_HUNGER_FACTOR/2
+	hunger_factor = 0.5
 
 	stat_modifiers = list(
 		STAT_MEC = 5,
@@ -385,6 +402,7 @@
 
 	dark_color = "#dddddd"
 	light_color = "#dddddd"
+	darksight = 2
 
 	permitted_ears  = list()
 	permitted_tail  = list("Avian Wagtail", "Avian Fantail")
@@ -395,7 +413,7 @@
 		"Feathered Wings, Large"
 		)
 
-	perks = list(/datum/perk/opifex_turret,/datum/perk/opifex_patchkit)
+	perks = list(PERK_OPIFEX_TURRET, PERK_OPIFEX_PATCHKIT)
 
 /datum/species/vox/get_bodytype()
 	return "Opifex"
@@ -415,6 +433,7 @@
 	flags = NO_PAIN
 	spawn_flags = CAN_JOIN
 	taste_sensitivity = TASTE_HYPERSENSITIVE
+	darksight = 4
 
 	brute_mod =     1.25                    // Physical damage multiplier.
 	burn_mod =      0.85                    // Burn damage multiplier.
@@ -503,6 +522,7 @@
 	spawn_flags = CAN_JOIN
 	total_health = 130                    // Burn damage multiplier.
 	radiation_mod = 0
+	darksight = 3
 
 	stat_modifiers = list(
 		STAT_BIO = 2,
@@ -567,7 +587,7 @@
 		"Spines, Short Membrane",
 		)
 
-	perks = list(/datum/perk/purgetoxins,/datum/perk/purgeinfections, /datum/perk/second_skin)
+	perks = list(PERK_PURGEINFECTIONS, PERK_PURGETOXINS, PERK_SECOND_SKIN)
 
 /datum/species/cindarite/get_bodytype()
 	return "Cindarite"
@@ -578,6 +598,7 @@
 	default_form = FORM_FOLKEN
 	obligate_name = TRUE
 	obligate_form = TRUE
+	reagent_tag = IS_TREE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "N/A"
 	num_alternate_languages = 2
@@ -589,6 +610,7 @@
 	vision_flags = SEE_SELF
 	flags = NO_PAIN | IS_PLANT
 	taste_sensitivity = TASTE_NUMB
+	darksight = 4
 
 	dark_color = "#93eb9e"
 	light_color = "#93eb9e"
@@ -623,6 +645,7 @@
 	default_form = FORM_MYCUS
 	obligate_name = TRUE
 	obligate_form = TRUE
+	reagent_tag = IS_TREE
 	unarmed_types = list(/datum/unarmed_attack/punch/hammer_fist, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "N/A"
 	num_alternate_languages = 2
@@ -631,7 +654,8 @@
 	max_age = 200
 	flags = NO_PAIN | IS_PLANT | NO_POISON | NO_BREATHE
 	slowdown = 0.3
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.3
+	hunger_factor = 1.3
+	darksight = 6
 
 	burn_mod = 2						// Burn damage multiplier.
 	light_dam = 1 // Same threshold as the Nightcrawler perk
@@ -679,6 +703,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	darksight = 2
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/full_body_prosthetic,
@@ -691,7 +716,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -728,6 +753,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	darksight = 2
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/unbranded,
@@ -740,7 +766,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -783,6 +809,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	darksight = 2
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
@@ -798,7 +825,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -845,6 +872,7 @@
 	breath_type = null
 	poison_type = null
 	total_health = 75
+	darksight = 2
 
 	dark_color = "#FA8128"
 	light_color = "#FCAE1E"
@@ -860,7 +888,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and defalut organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -907,6 +935,7 @@
 	total_health = 75
 	dark_color = "#FFFFFF"
 	light_color = "#000000"
+	darksight = 2
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/blackshield_synthetic,
@@ -919,7 +948,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -964,6 +993,7 @@
 	breath_type = null
 	poison_type = null
 	total_health = 75
+	darksight = 2
 
 	dark_color = "#FFFFFF"
 	light_color = "#000000"
@@ -979,7 +1009,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -1023,6 +1053,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
+	darksight = 3
 
 	dark_color = "#FFFFFF"
 	light_color = "#000000"
@@ -1038,7 +1069,7 @@
 		)
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
-		OP_HEART = /obj/item/organ/internal/cell,
+		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
 		)
@@ -1074,7 +1105,7 @@
 	virus_immune = TRUE
 	breath_type = null
 	poison_type = null
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 2
+	hunger_factor = 2
 	spawn_flags = IS_RESTRICTED
 
 	burn_mod = 1.15

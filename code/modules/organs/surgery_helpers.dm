@@ -32,7 +32,6 @@
 	status_data["cut_away"] = status & ORGAN_CUT_AWAY
 	status_data["bleeding"] = status & ORGAN_BLEEDING
 	status_data["broken"] = status & ORGAN_BROKEN
-	status_data["destroyed"] = status & ORGAN_DESTROYED
 	status_data["splintered"] = status & ORGAN_SPLINTED
 	status_data["dead"] = status & ORGAN_DEAD
 	status_data["mutated"] = status & ORGAN_MUTATED
@@ -82,6 +81,25 @@
 			"step" = /datum/surgery_step/robotic/connect_organ
 		)))
 	else
+		var/is_aberrant = istype(src, /obj/item/organ/internal/scaffold)
+		if(item_upgrades.len < max_upgrades)
+			actions_list.Add(list(list(
+				"name" = is_aberrant ? "Attach Mod/Organoid" : "Attach Mod",
+				"organ" = "\ref[src]",
+				"step" = /datum/surgery_step/attach_mod
+			)))
+		if(item_upgrades.len)
+			actions_list.Add(list(list(
+				"name" = is_aberrant ? "Remove Mod/Organoid" : "Remove Mod",
+				"organ" = "\ref[src]",
+				"step" = /datum/surgery_step/remove_mod
+			)))
+		if(is_aberrant)	// Currently, scaffolds are the only type that warrant examining in-body
+			actions_list.Add(list(list(
+				"name" = "Examine",
+				"organ" = "\ref[src]",
+				"step" = /datum/surgery_step/examine
+			)))
 		actions_list.Add(list(list(
 			"name" = (status & ORGAN_CUT_AWAY) ? "Attach" : "Separate",
 			"organ" = "\ref[src]",

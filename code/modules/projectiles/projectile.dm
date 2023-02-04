@@ -79,6 +79,7 @@
 	var/agony = 0
 	var/embed = 0 // whether or not the projectile can embed itself in the mob
 	var/knockback = 0
+	var/fire_stacks = 0 //Whether to apply fire stacks
 
 	var/shrapnel_type //Do we have a special thing to embed in the target? If this is null, it will embed a generic 'shrapnel' item.
 
@@ -186,6 +187,10 @@
 	added_damage_bullet_pve = initial(added_damage_bullet_pve) * newmult
 	added_damage_laser_pve  = initial(added_damage_laser_pve) * newmult
 
+/obj/item/projectile/add_fire_stacks(newmult)
+	fire_stacks = initial(fire_stacks) + newmult
+
+// bullet/pellets redefines this
 /obj/item/projectile/proc/adjust_damages(var/list/newdamages)
 	if(!newdamages.len)
 		return
@@ -202,6 +207,10 @@
 		return FALSE
 	var/mob/living/L = target
 	if (!testing)
+		if(fire_stacks && iscarbon(L))
+			L.adjust_fire_stacks(fire_stacks)
+			L.IgniteMob()
+			src.visible_message(SPAN_WARNING("\The [src] sets [target] on fire!"))
 		L.apply_effects(stun, weaken, paralyze, irradiate, stutter, eyeblur, drowsy)
 	return TRUE
 
@@ -228,7 +237,7 @@
 	return TRUE
 
 /obj/item/projectile/proc/get_structure_damage()
-	return damage_types[BRUTE] + damage_types[BURN]
+	return ((damage_types[BRUTE] + damage_types[BURN]) * structure_damage_factor)
 
 //return 1 if the projectile should be allowed to pass through after all, 0 if not.
 /obj/item/projectile/proc/check_penetrate(atom/A)
@@ -254,6 +263,7 @@
 
 	if (firer_arg)
 		firer = firer_arg
+		original_firer = firer_arg
 
 	if (firer && (isliving(firer))) //here we apply the projectile adjustments applied by prefixes and such
 		var/mob/living/livingfirer = firer
@@ -325,6 +335,9 @@
 	original_firer = firer
 	shot_from = launcher.name
 	silenced = launcher.item_flags & SILENT
+
+	if(QDELETED(target))
+		return FALSE
 
 	return launch(target, target_zone, x_offset, y_offset, angle_offset)
 
@@ -903,7 +916,7 @@
 			pixel_x = location.pixel_x
 			pixel_y = location.pixel_y
 
-			if(!bumped && !isturf(original))
+			if(!bumped && !QDELETED(original) && !isturf(original))
 				if(loc == get_turf(original))
 					if(!(original in permutated))
 						if(Bump(original))
@@ -1008,7 +1021,8 @@
 	effect_transform.Scale(trajectory.return_hypotenuse(), 1)
 	effect_transform.Turn(-trajectory.return_angle())		//no idea why this has to be inverted, but it works
 
-	transform = turn(transform, -(trajectory.return_angle() + 90)) //no idea why 90 needs to be added, but it works
+	var/to_turn = (-(trajectory.return_angle() + 90))//no idea why 90 needs to be added, but it works
+	add_new_transformation(/datum/transform_type/modular, list(rotation = to_turn, flag = PROJECTILE_FIRED_ROTATION_TRANSFORM, priority = PROJECTILE_FIRED_ROTATION_TRANSFORM_PRIORITY))
 
 /obj/item/projectile/proc/muzzle_effect(var/matrix/T)
 	if (testing)
@@ -1083,6 +1097,30 @@
 			P.pixel_y = location.pixel_y
 			P.activate(P.lifetime)
 
+/obj/item/projectile/proc/block_damage(var/amount, atom/A)
+	amount /= armor_penetration
+	var/dmg_total = 0
+	var/dmg_remaining = 0
+	for(var/dmg_type in damage_types)
+		var/dmg = damage_types[dmg_type]
+		if(!(dmg_type == HALLOSS))
+			dmg_total += dmg
+		if(dmg && amount)
+			var/dmg_armor_difference = dmg - amount
+			amount = dmg_armor_difference ? 0 : -dmg_armor_difference
+			dmg = dmg_armor_difference ? dmg_armor_difference : 0
+			if(!(dmg_type == HALLOSS))
+				dmg_remaining += dmg
+		if(dmg)
+			damage_types[dmg_type] = dmg
+		else
+			damage_types -= dmg_type
+	if(!damage_types.len)
+		on_impact(A)
+		qdel(src)
+
+	return dmg_total ? (dmg_remaining / dmg_total) : 0
+
 //"Tracing" projectile
 /obj/item/projectile/test //Used to see if you can hit them.
 	invisibility = 101 //Nope!  Can't see me!
@@ -1147,7 +1185,7 @@
  * atom/movable/firer: The source of the bullet, will be set as trace.firer.
  * proj: The typepath of the projectile to simulate.
 **/
-/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj)
+/proc/check_trajectory_raytrace(atom/movable/target, atom/movable/firer, var/proj, var/offset = 0)
 	var/obj/item/projectile/trace = new proj(get_turf(firer))
 	trace.testing = TRUE
 	trace.invisibility = INFINITY //nobody can see it
@@ -1157,7 +1195,7 @@
 
 	trace.firer = firer
 
-	trace.launch(target)
+	trace.launch(target, angle_offset = offset) // offset is by default null
 
 	return trace
 

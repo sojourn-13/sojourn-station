@@ -80,7 +80,7 @@
 
 	var/list/modifiers = params2list(params)
 	if(modifiers["shift"] && modifiers["ctrl"])
-		CtrlShiftClickOn(A)
+		CtrlShiftClickOn(A, params)
 		return 1
 	if(modifiers["ctrl"] && modifiers["alt"])
 		CtrlAltClickOn(A)
@@ -92,13 +92,16 @@
 			MiddleClickOn(A)
 		return 1
 	if(modifiers["shift"])
+		SEND_SIGNAL(src, COMSIG_SHIFTCLICK, A)
 		ShiftClickOn(A)
 		return 0
 	if(modifiers["alt"]) // alt and alt-gr (rightalt)
+		SEND_SIGNAL(src, COMSIG_ALTCLICK, A)
 		AltClickOn(A)
 		return 1
 	if(modifiers["ctrl"])
-		CtrlClickOn(A)
+		SEND_SIGNAL(src, COMSIG_CTRLCLICK, A)
+		CtrlClickOn(A, params)
 		return 1
 
 	if(stat || paralysis || stunned || weakened)
@@ -137,13 +140,13 @@
 	if((!isturf(A) && A == loc) || (sdepth != -1 && sdepth <= 1))
 		// faster access to objects already on you
 		if(W)
-			var/resolved = (SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
+			var/resolved = (LEGACY_SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (LEGACY_SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
 			if(!resolved && A && W)
 				W.afterattack(A, src, 1, params) // 1 indicates adjacency
 		else
 			if(ismob(A)) // No instant mob attacking
 				setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-			UnarmedAttack(A, 1)
+			UnarmedAttack(A, 1, params)
 		return 1
 
 	if(!isturf(loc)) // This is going to stop you from telekinesing from inside a closet, but I don't shed many tears for that
@@ -156,13 +159,13 @@
 		if(A.Adjacent(src)) // see adjacent.dm
 			if(W)
 				// Return 1 in attackby() to prevent afterattack() effects (when safely moving items for example)
-				var/resolved = (SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
+				var/resolved = (LEGACY_SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (LEGACY_SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
 				if(!resolved && A && W)
 					W.afterattack(A, src, 1, params) // 1: clicking something Adjacent
 			else
 				if(ismob(A)) // No instant mob attacking
 					setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-				UnarmedAttack(A, 1)
+				UnarmedAttack(A, 1, params)
 			return
 		else // non-adjacent click
 			if(W)
@@ -203,10 +206,10 @@
 	proximity_flag is not currently passed to attack_hand, and is instead used
 	in human click code to allow glove touches only at melee range.
 */
-/mob/proc/UnarmedAttack(var/atom/A, var/proximity_flag)
+/mob/proc/UnarmedAttack(var/atom/A, var/proximity_flag, params)
 	return
 
-/mob/living/UnarmedAttack(var/atom/A, var/proximity_flag)
+/mob/living/UnarmedAttack(var/atom/A, var/proximity_flag, params)
 	if(stat)
 		return 0
 
@@ -284,14 +287,15 @@
 	Ctrl click
 	For most objects, pull
 */
-/mob/proc/CtrlClickOn(var/atom/A)
-	A.CtrlClick(src)
-	return
-/atom/proc/CtrlClick(var/mob/user)
-	SEND_SIGNAL(src, COMSIG_CLICK_CTRL, user)
+/mob/proc/CtrlClickOn(var/atom/A, params)
+	A.CtrlClick(src, params)
 	return
 
-/atom/movable/CtrlClick(var/mob/user)
+/atom/proc/CtrlClick(var/mob/user, params)
+	LEGACY_SEND_SIGNAL(src, COMSIG_CLICK_CTRL, user)
+	return
+
+/atom/movable/CtrlClick(var/mob/user, params)
 	if(Adjacent(user) && loc != user) //cant pull things on yourself
 		user.start_pulling(src)
 	..()
@@ -304,7 +308,7 @@
 	return
 
 /atom/proc/AltClick(var/mob/user)
-	SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
+	LEGACY_SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
 	var/turf/T = get_turf(src)
 	if(T && user.TurfAdjacent(T))
 		if(user.listed_turf == T)
@@ -321,11 +325,11 @@
 	Control+Shift click
 	Unused except for AI
 */
-/mob/proc/CtrlShiftClickOn(var/atom/A)
-	A.CtrlShiftClick(src)
+/mob/proc/CtrlShiftClickOn(var/atom/A, params)
+	A.CtrlShiftClick(src, params)
 	return
 
-/atom/proc/CtrlShiftClick(var/mob/user)
+/atom/proc/CtrlShiftClick(var/mob/user, params)
 	return
 
 /*
@@ -344,7 +348,7 @@
 	var/obj/item/projectile/beam/LE = new (T)
 	LE.icon = 'icons/effects/genetics.dmi'
 	LE.icon_state = "eyelasers"
-	mob_playsound(usr.loc, 'sound/weapons/taser2.ogg', 75, 1)
+	mob_playsound(usr.loc, 'sound/weapons/energy/taser2.ogg', 75, 1)
 	LE.launch(A)
 
 /mob/living/carbon/human/LaserEyes()

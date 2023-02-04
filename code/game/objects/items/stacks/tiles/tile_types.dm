@@ -351,7 +351,7 @@
 /obj/item/stack/tile/floor/white/techfloor
 	name = "white techfloor tile"
 	singular_name = "white techfloor tile"
-	icon_state = "tile_white_techfloor"
+	icon_state = "tile-white-techfloor"
 
 /obj/item/stack/tile/floor/white/techfloor_grid
 	name = "white techfloor tile with vents"
@@ -366,7 +366,7 @@
 /obj/item/stack/tile/floor/white/gray_perforated
 	name = "white gray perforated tile"
 	singular_name = "white gray perforated tile"
-	icon_state = "tile-white-grayperforated"
+	icon_state = "tile_white_grayperforated"
 
 /obj/item/stack/tile/floor/white/cargo
 	name = "white cargo tile"

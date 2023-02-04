@@ -39,10 +39,10 @@
 	var/destroy_on_removal = FALSE
 	var/unique_removal = FALSE 		//Flag for unique removals.
 	var/unique_removal_type 		//What slot do we remove when this is removed? Used for rails.
+	var/greyson_moding = FALSE
 
 /datum/component/item_upgrade/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_IATTACK, .proc/attempt_install)
-	RegisterSignal(parent, COMSIG_ATTACKBY, .proc/attempt_install)
 	RegisterSignal(parent, COMSIG_EXAMINE, .proc/on_examine)
 	RegisterSignal(parent, COMSIG_REMOVE, .proc/uninstall)
 
@@ -125,6 +125,10 @@
 				if(user)
 					to_chat(user, SPAN_WARNING("This tool can not accept the modification!"))
 				return FALSE
+
+	//Bypasses any other checks.
+	if(greyson_moding && T.allow_greyson_mods)
+		return TRUE
 
 	if((req_fuel_cell & REQ_FUEL) && !T.use_fuel_cost)
 		if(user)
@@ -222,6 +226,10 @@
 			if(user)
 				to_chat(user, SPAN_WARNING("There is already something attached to \the [G]'s [gun_loc_tag]!"))
 			return FALSE
+
+	//Bypasses any other checks.
+	if(greyson_moding && G.allow_greyson_mods)
+		return TRUE
 
 	for(var/I in req_gun_tags)
 		if(!G.gun_tags.Find(I))
@@ -334,6 +342,8 @@
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
 	if(tool_upgrades[UPGRADE_SANCTIFY])
 		T.aspects += list(SANCTIFIED)
+	if(tool_upgrades[UPGRADE_ALLOW_GREYON_MODS])
+		T.allow_greyson_mods = tool_upgrades[UPGRADE_ALLOW_GREYON_MODS]
 	if(tool_upgrades[UPGRADE_PRECISION])
 		T.precision += tool_upgrades[UPGRADE_PRECISION]
 	if(tool_upgrades[UPGRADE_WORKSPEED])
@@ -381,20 +391,21 @@
 				T.suitable_cell = /obj/item/cell/medium
 				prefix = "medium-cell"
 	T.force = initial(T.force) * T.force_upgrade_mults + T.force_upgrade_mods
-	T.switched_on_force = initial(T.switched_on_force) * T.force_upgrade_mults + T.force_upgrade_mods
 	T.prefixes |= prefix
 
 /datum/component/item_upgrade/proc/apply_values_gun(var/obj/item/gun/G)
+	if(weapon_upgrades[GUN_UPGRADE_ALLOW_GREYON_MODS])
+		G.allow_greyson_mods = weapon_upgrades[GUN_UPGRADE_ALLOW_GREYON_MODS]
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT])
 		G.damage_multiplier *= weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT]
-	if(weapon_upgrades[GUN_UPGRADE_DAMAGEMOD_PLUS])
-		G.damage_multiplier += weapon_upgrades[GUN_UPGRADE_DAMAGEMOD_PLUS]
+	if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
+		G.proj_agony_multiplier += weapon_upgrades[GUN_UPGRADE_PAIN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
 		G.penetration_multiplier *= weapon_upgrades[GUN_UPGRADE_PEN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 		G.pierce_multiplier += weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE])
-		G.proj_agony_multiplier *= weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]
+		G.proj_pve_damage_multiplier *= weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]
 	if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
 		G.proj_step_multiplier *= weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
@@ -433,6 +444,7 @@
 		G.max_upgrades += weapon_upgrades[UPGRADE_MAXUPGRADES]
 	if(weapon_upgrades[GUN_UPGRADE_HONK])
 		G.fire_sound = 'sound/items/bikehorn.ogg'
+		G.modded_sound = TRUE
 	if(weapon_upgrades[GUN_UPGRADE_RIGGED])
 		G.rigged = TRUE
 	if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
@@ -446,8 +458,10 @@
 	if(weapon_upgrades[UPGRADE_COLOR])
 		G.color = weapon_upgrades[UPGRADE_COLOR]
 	if(weapon_upgrades[GUN_UPGRADE_ZOOM])
-		G.zoom_factor += weapon_upgrades[GUN_UPGRADE_ZOOM]
-		G.initialize_scope()
+		if(G.zoom_factors.len <1)
+			var/newtype = weapon_upgrades[GUN_UPGRADE_ZOOM]
+			G.zoom_factors.Add(newtype)
+			G.initialize_scope()
 		if(istype(G.loc, /mob))
 			var/mob/user = G.loc
 			user.update_action_buttons()
@@ -507,7 +521,7 @@
 
 /datum/component/item_upgrade/proc/add_values_gun(var/obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_FULLAUTO])
-		G.add_firemode(FULL_AUTO_400)
+		G.add_firemode(FULL_AUTO_300)
 
 /datum/component/item_upgrade/proc/apply_values_firemode(var/datum/firemode/F)
 	for(var/i in F.settings)
@@ -559,6 +573,9 @@
 	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
 		to_chat(user, SPAN_NOTICE("Increases explosive defense by [tool_upgrades[UPGRADE_BOMB_ARMOR]]"))
 
+	if(tool_upgrades[UPGRADE_ALLOW_GREYON_MODS])
+		to_chat(user, SPAN_NOTICE("This mod allows you to install Greyson Positronic mods"))
+
 	if(required_qualities.len)
 		to_chat(user, SPAN_WARNING("Requires a tool with one of the following qualities:"))
 		to_chat(user, english_list(required_qualities, and_text = " or "))
@@ -572,6 +589,20 @@
 				to_chat(user, SPAN_NOTICE("Increases projectile damage by [amount*100]%"))
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile damage by [abs(amount*100)]%"))
+
+		if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
+			var/amount = weapon_upgrades[GUN_UPGRADE_PAIN_MULT]-1
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases projectile agony damage by [amount*100]%"))
+			else
+				to_chat(user, SPAN_WARNING("Decreases projectile agony damage by [abs(amount*100)]%"))
+
+		if(weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE])
+			var/amount = weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]-1
+			if(amount > 0)
+				to_chat(user, SPAN_NOTICE("Increases PVE damage by [amount*100]%"))
+			else
+				to_chat(user, SPAN_WARNING("Decreases PVE damage by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_MULT]-1
@@ -618,33 +649,33 @@
 		if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT]-1
 			if(amount > 0)
-				to_chat(user, SPAN_WARNING("Slows down the weapons projectile by [amount*100]%"))
+				to_chat(user, SPAN_WARNING("Slows down the weapon's projectile by [amount*100]%"))
 			else
-				to_chat(user, SPAN_NOTICE("Speeds up the weapons projectile by [abs(amount*100)]%"))
+				to_chat(user, SPAN_NOTICE("Speeds up the weapon's projectile by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DNALOCK] == 1)
 			to_chat(user, SPAN_WARNING("Adds a biometric scanner to the weapon."))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE])
-			to_chat(user, SPAN_NOTICE("Modifies projectile brute damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's brute damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE]] damage points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BURN])
-			to_chat(user, SPAN_NOTICE("Modifies projectile burn damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BURN]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's burn damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BURN]] damage points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_TOX])
-			to_chat(user, SPAN_NOTICE("Modifies projectile toxic damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_TOX]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's toxic damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_TOX]] damage points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_OXY])
-			to_chat(user, SPAN_NOTICE("Modifies projectile oxy-loss damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_OXY]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's oxy-loss damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_OXY]] damage points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_CLONE])
-			to_chat(user, SPAN_NOTICE("Modifies projectile clone damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_CLONE]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's cellular damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_CLONE]] damage points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_HALLOSS])
-			to_chat(user, SPAN_NOTICE("Modifies projectile pseudo damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_HALLOSS]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's pain trauma by [weapon_upgrades[GUN_UPGRADE_DAMAGE_HALLOSS]] points"))
 
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION])
-			to_chat(user, SPAN_NOTICE("Modifies projectile radiation damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION]] damage points"))
+			to_chat(user, SPAN_NOTICE("Modifies projectile's radiation damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_RADIATION]] damage points"))
 
 
 		if(weapon_upgrades[GUN_UPGRADE_RECOIL])
@@ -716,6 +747,9 @@
 		if(weapon_upgrades[GUN_UPGRADE_RAIL])
 			to_chat(user, SPAN_WARNING("Adds a scope slot."))
 
+		if(weapon_upgrades[GUN_UPGRADE_ALLOW_GREYON_MODS])
+			to_chat(user, SPAN_NOTICE("This mod allows you to install Greyson Positronic mods"))
+
 		if(weapon_upgrades[GUN_UPGRADE_ZOOM])
 			var/amount = weapon_upgrades[GUN_UPGRADE_ZOOM]
 			if(amount > 0)
@@ -777,7 +811,7 @@
 		if(C.use_tool(user = user, target =  upgrade_loc, base_time = IU.removal_time, required_quality = QUALITY_SCREW_DRIVING, fail_chance = IU.removal_difficulty, required_stat = STAT_MEC))
 			//If you pass the check, then you manage to remove the upgrade intact
 			to_chat(user, SPAN_NOTICE("You successfully remove \the [toremove] while leaving it intact."))
-			SEND_SIGNAL(toremove, COMSIG_REMOVE, upgrade_loc)
+			LEGACY_SEND_SIGNAL(toremove, COMSIG_REMOVE, upgrade_loc)
 			upgrade_loc.refresh_upgrades()
 			return 1
 		else
@@ -789,7 +823,7 @@
 			else if(prob(50))
 				//50% chance to break the upgrade and remove it
 				to_chat(user, SPAN_DANGER("You successfully remove \the [toremove], but destroy it in the process."))
-				SEND_SIGNAL(toremove, COMSIG_REMOVE, parent)
+				LEGACY_SEND_SIGNAL(toremove, COMSIG_REMOVE, parent)
 				QDEL_NULL(toremove)
 				upgrade_loc.refresh_upgrades()
 				user.update_action_buttons()

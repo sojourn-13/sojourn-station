@@ -28,10 +28,23 @@
 /datum/event/blob/start()
 	var/area/A = random_ship_area(filter_players = TRUE, filter_critical = TRUE)
 	var/turf/T = A.random_space()
+	var/active_players = 0
+	var/mob/living/carbon/human/fighter
 	if(!T)
 		log_and_message_admins("Blob failed to find a viable turf.")
 		kill()
 		return
+
+	for(fighter in GLOB.player_list)
+		if(fighter.mind.assigned_role in list(JOBS_ANTI_HIVEMIND))
+			active_players++
+
+	log_and_message_admins("Active Blob combative players number is [active_players].")
+	if(GLOB.hive_data_bool["pop_lock"])
+		if(active_players <= 7)
+			log_and_message_admins("Blob failed to spawn as their was less then 7 active players exspected to combat the blob.")
+			kill()
+			return
 
 	log_and_message_admins("Blob spawned at \the [get_area(T)]", location = T)
 	Blob = new /obj/effect/blob/core(T)
@@ -69,7 +82,7 @@
 	health = 1
 	var/health_regen = 3
 	var/brute_resist = 1.25
-	var/fire_resist = 0.6
+	var/fire_resist = 0.8
 	var/expandType = /obj/effect/blob
 
 	//We will periodically update and track neighbors in two lists:
@@ -101,15 +114,15 @@
 	update_icon()
 	set_awake()
 
-
 	//Random rotation for blobs, as well as larger sizing for some
-	var/rot = pick(list(0, 90, 180, -90))
-	var/matrix/M = matrix()
-	M.Turn(rot)
-	M.Scale(icon_scale)
-	transform = M
 	name += "[rand(0,999)]"
 	return ..(loc)
+
+/obj/effect/blob/add_initial_transforms()
+	. = ..()
+
+	var/rot = pick(list(0, 90, 180, -90))
+	add_new_transformation(/datum/transform_type/modular, list(scale_x = icon_scale, scale_y = icon_scale, rotation = rot, flag = BLOB_INITIAL_TRANSFORM, priority = BLOB_INITIAL_TRANSFORM_PRIORITY))
 
 /obj/effect/blob/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -209,9 +222,6 @@
 		//If the core is gone, no more expansion
 		next_expansion = INFINITY
 
-
-
-
 /*
 	TO minimise performance costs at massive sizes, blobs will go to sleep once they're no longer at the
 	edge or relevant.
@@ -297,12 +307,6 @@
 		else
 			update_icon()
 			wake_neighbors()
-
-
-
-
-
-
 
 /*********************************
 	EXPANDING!
@@ -568,7 +572,7 @@
 	maxHealth = 200
 	health = 200
 	brute_resist = 4
-	fire_resist = 2
+	fire_resist = 3
 	density = TRUE
 	icon_scale = 1.2
 	health_regen = 1
@@ -602,7 +606,7 @@
 	health = 160
 	health_regen = 5
 	brute_resist = 2
-	fire_resist = 1
+	fire_resist = 1.3
 	density = TRUE
 	icon_scale = 1.2
 

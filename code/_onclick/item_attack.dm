@@ -58,8 +58,6 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	if(!istype(I, /obj/item/tool/sword/nt_sword))
 		return FALSE
 	var/obj/item/tool/sword/nt_sword/NT = I
-	if(NT.isBroken)
-		return FALSE
 	if(!(NT.flags & NOBLUDGEON))
 		if(user.a_intent == I_HELP)
 			return FALSE
@@ -70,7 +68,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		if(prob(10))
 			for(var/mob/living/carbon/human/H in viewers(user))
-				SEND_SIGNAL(H, SWORD_OF_TRUTH_OF_DESTRUCTION, src)
+				LEGACY_SEND_SIGNAL(H, SWORD_OF_TRUTH_OF_DESTRUCTION, src)
 			qdel(src)
 		. = TRUE
 

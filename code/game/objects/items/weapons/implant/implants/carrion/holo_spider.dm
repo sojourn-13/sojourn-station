@@ -198,7 +198,7 @@
 //			P.virtual_scanner.afterattack(src, user, get_dist(src, user) <= 1)
 
 
-		SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
+		LEGACY_SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
 	else
 		. = ..()
 

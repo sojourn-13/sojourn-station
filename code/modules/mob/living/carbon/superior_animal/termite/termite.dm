@@ -36,7 +36,7 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 
 	// Type of ore to spawn when the termite dies
 	var/ore
-
+	var/dropped_ore = FALSE
 	// The bane of termite's existence
 	var/obj/machinery/mining/drill/DD
 
@@ -58,6 +58,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	)
 
 	range_telegraph = "chitin begins to crack and spikes emerge, as it prepares to launch them at"
+
+	cant_gib = TRUE
 
 /mob/living/carbon/superior_animal/termite/New(loc, obj/machinery/mining/drill/drill, datum/termite_controller/parent)
 	..()
@@ -92,7 +94,8 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	. = ..()
 
 // Spawn ores
-	if(ore)
+	if(ore && !dropped_ore)
+		dropped_ore = TRUE
 		var/nb_ores = rand(3, 5)
 		for(var/i in 1 to nb_ores)
 			new ore(loc)
@@ -108,15 +111,15 @@ GLOBAL_LIST_INIT(termites_special, list(/mob/living/carbon/superior_animal/termi
 	for (var/dir in alldirs) // All 8 directions
 		for(var/obj/machinery/mining/drill/obstacle in get_step(src, dir))//A locker as a block? We will brake it.
 			if(obstacle.density == TRUE)
-				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 				return
 
 	if(iswall(T))  // Wall breaker attack
-		T.attack_generic(src, rand(surrounds_mult * melee_damage_lower, surrounds_mult * melee_damage_upper), attacktext, TRUE)
+		T.attack_generic(src, rand(surrounds_mult * melee_damage_lower, surrounds_mult * melee_damage_upper),pick(attacktext), TRUE)
 	else
 		var/obj/structure/obstacle = locate(/obj/structure) in T
 		if(obstacle && !istype(obstacle, /obj/structure/termite_burrow))
-			obstacle.attack_generic(src, rand(surrounds_mult * melee_damage_lower, surrounds_mult * melee_damage_upper), attacktext, TRUE)
+			obstacle.attack_generic(src, rand(surrounds_mult * melee_damage_lower, surrounds_mult * melee_damage_upper),pick(attacktext), TRUE)
 
 
 

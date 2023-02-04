@@ -153,19 +153,18 @@
 		"Exotic",
 			list(name="Ammo Strip (7.62mm Rifle)", cost=400, path=/obj/item/ammo_magazine/speed_loader_rifle_75),
 			list(name="Ammo Strip (8.6mm Rifle)", cost=400, path=/obj/item/ammo_magazine/speed_loader_heavy_rifle_408),
-			list(name="Shells (20mm Incendiary)", cost=400, path=/obj/item/ammo_casing/shotgun/incendiary/prespawned),
 			list(name="Shells (20mm Payload)", cost=500, path=/obj/item/ammo_casing/shotgun/payload/prespawned),
 			list(name="Heavy Rifle Drum Magazine (8.6mm Drum)", cost=700, path=/obj/item/ammo_magazine/heavy_rifle_408_drum),
 			list(name="Caseless Magazine (10x24mm Standard)", cost=500, path=/obj/item/ammo_magazine/c10x24),
-			list(name="Caseless Light Rifle Magazine (10x24mm Standard)", cost=100, path=/obj/item/ammo_magazine/rifle_10x24),
-			list(name="Ammo Magazine (19mm Gyro)", cost=500, path=/obj/item/ammo_magazine/a75),
+			list(name="Caseless Light Rifle Magazine (10x24mm Standard)", cost=100, path=/obj/item/ammo_magazine/smg_10x24),
 			list(name="Grenade Shell Baton", cost=250, path=/obj/item/ammo_casing/grenade),
 			list(name="Grenade Shell Flash", cost=250, path=/obj/item/ammo_casing/grenade/flash),
 			list(name="Grenade Shell Blast", cost=350, path=/obj/item/ammo_casing/grenade/blast),
 			list(name="Grenade Shell Frag", cost=350, path=/obj/item/ammo_casing/grenade/frag),
+			list(name="Grenade Shell Stinger", cost=300, path=/obj/item/ammo_casing/grenade/frag/stinger),
 			list(name="Grenade Shell EMP", cost=300, path=/obj/item/ammo_casing/grenade/emp),
-			list(name="14.5×114mm Anti-Material \"Red-Nose\"", cost=2400, path=/obj/item/ammo_casing/antim/lethal/prespawned),
-			list(name="14.5×114mm Anti-Material \"Off-Switch\"", cost=2400, path=/obj/item/ammo_casing/antim/ion/prespawned),
+			list(name="14.5×114mm Anti-Materiel \"Red-Nose\"", cost=2400, path=/obj/item/ammo_casing/antim/lethal/prespawned),
+			list(name="14.5×114mm Anti-Materiel \"Off-Switch\"", cost=2400, path=/obj/item/ammo_casing/antim/ion/prespawned),
 		"9mm Ammo Packets",
 			list(name="Packet (9mm Auto)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35),
 			list(name="Packet (9mm Auto high-velocity)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35/hv),
@@ -251,7 +250,7 @@
 			list(name="Box (10x24mm Caseless)", cost=1650, path=/obj/item/ammo_magazine/ammobox/c10x24),
 			list(name="Box (14.5×114mm AP)", cost=1650, path=/obj/item/ammo_magazine/ammobox/antim),
 		"Mech Boxes",
-			list(name="Ultra AC 2 ammunition box", cost=750, path=/obj/item/mech_ammo_box/lmg), //Cheap for the sake of sales, 35 x 2 = 70 so its a 11x~ mark up
+			list(name="Ultra AC 2 ammunition box", cost=750, path=/obj/item/mech_ammo_box/ultracannon), //Cheap for the sake of sales, 35 x 2 = 70 so its a 11x~ mark up
 			list(name="LBX AC 10 ammunition box", cost=750, path=/obj/item/mech_ammo_box/scattershot),
 	)
 
@@ -286,7 +285,7 @@
 		return
 	if(processing)
 		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
-	else if(!istype(I, /obj/item/stack/material))
+	else if(!istype(I, /obj/item/stack/material) && !istype(I, /obj/item/stack/sheet/refined_scrap))
 		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]."))
 	else
 		var/i = 0
@@ -301,7 +300,7 @@
 	update_icon()
 	return
 
-/obj/machinery/bulletfabricator/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state =GLOB.outside_state)
+/obj/machinery/bulletfabricator/nano_ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state =GLOB.outside_state)
 	user.set_machine(src)
 	var/list/data = list()
 	data["points"] = points
@@ -358,7 +357,7 @@
 		to_chat(usr, SPAN_NOTICE("The bullet fabricator is in the process of working."))
 		return
 	var/S = 0
-	for(var/obj/item/stack/material/I in contents)
+	for(var/obj/item/stack/I in contents)
 		S += 5
 		points += I.amount * I.price_tag * 5
 		//if(I.reagents.get_reagent_amount("nutriment") < 0.1)
@@ -417,7 +416,7 @@
 		processing = FALSE
 		menustat = "menu" //complete adds an extra step thats annoying to deal with
 		update_icon()
-		return TRUE
+		return
 
 /obj/machinery/bulletfabricator/Topic(href, href_list)
 	if(stat & BROKEN) return
@@ -454,7 +453,7 @@
 	eat_eff = bin_rating
 
 /obj/machinery/bulletfabricator/proc/check_user(mob/user)
-	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))
+	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stats?.getPerk(PERK_GUNSMITH) || user.stat_check(STAT_MEC, STAT_LEVEL_EXPERT))
 		return TRUE
 	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 	return FALSE

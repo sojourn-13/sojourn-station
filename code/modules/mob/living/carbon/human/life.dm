@@ -81,6 +81,7 @@
 			total_blood_req = 0
 			total_oxygen_req = 0
 			total_nutriment_req = 0
+			germ_level += 1
 			for(var/obj/item/organ/internal/I in internal_organs)
 				if(BP_IS_ROBOTIC(I))
 					continue
@@ -824,7 +825,7 @@
 			blinded = 1
 			silent = 0
 			return 1
-		if(health <= HEALTH_THRESHOLD_DEAD) //No health = death
+		if(health <= death_threshold) //No health = death
 			if(stats.getPerk(PERK_UNFINISHED_DELIVERY) && prob(50)) //Unless you have this perk
 				heal_organ_damage(100, 100)
 				adjustOxyLoss(-200)
@@ -832,6 +833,7 @@
 				AdjustSleeping(rand(20,30))
 				updatehealth()
 				stats.removePerk(PERK_UNFINISHED_DELIVERY)
+				learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/return_to_sender, "RETURN_TO_SENDER", skill_gained = 1, learner = src)
 			else
 				death()
 				blinded = 1
@@ -996,6 +998,8 @@
 		health_threshold_softcrit -= 20
 	if(stats.getPerk(PERK_BONE))
 		health_threshold_softcrit -= 20
+	if(stats.getPerk(PERK_TENACITY))
+		health_threshold_softcrit -= 10
 	if(health < health_threshold_softcrit)// health 0 - stat makes you immediately collapse
 		shock_stage = max(shock_stage, 61)
 	else if(shock_resist)
@@ -1204,7 +1208,7 @@
 		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
 		if(world.time >= next_onfire_hal)
 			next_onfire_hal = world.time + 50
-			adjustHalLoss(fire_stacks*10 + 3)
+			adjustHalLoss(fire_stacks*5 + 3) //adjusted to be lower. You need time to put yourself out. And each roll only removes 2.5 stacks.
 
 /mob/living/carbon/human/rejuvenate()
 	sanity.setLevel(sanity.max_level)
@@ -1251,5 +1255,7 @@
 		sight |= SEE_TURFS|SEE_MOBS|SEE_OBJS
 	if(unnatural_mutations.getMutation("MUTATION_CAT_EYES", TRUE))
 		see_invisible = SEE_INVISIBLE_NOLIGHTING
+	if(unnatural_mutations.getMutation("MUTATION_ECHOLOCATION", TRUE))
+		see_invisible |= SEE_INVISIBLE_NOLIGHTING|SEE_MOBS
 	if(CE_DARKSIGHT in chem_effects)//TODO: Move this to where it belongs, doesn't work without being right here for now. -Kaz/k5.
 		see_invisible = min(see_invisible, chem_effects[CE_DARKSIGHT])

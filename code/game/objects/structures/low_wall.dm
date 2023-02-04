@@ -154,7 +154,8 @@
 /obj/structure/low_wall/proc/check_cover(obj/item/projectile/P, turf/from)
 	if (get_dist(P.starting, loc) <= 1) //Simulates firing over the low wall
 		return TRUE
-	//For some reason there was an IF(TRUE) here, re-add if it breaks anything to have it removed - Wizard
+	if(get_dist(loc, P.trajectory.target) > 1 ) // Target turf must be adjacent for it to count as cover
+		return TRUE
 	if(ismob(P.original))
 		var/mob/M = P.original
 		if(M.lying)

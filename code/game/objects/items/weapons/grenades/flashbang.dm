@@ -1,10 +1,12 @@
 /obj/item/grenade/flashbang
 	name = "Seinemetall Defense GmbH FBG \"Serra\""
 	desc = "A \"Serra\" flashbang grenade. If in any doubt - use it."
+	description_info = "Will stun anyone using thermals from double the distance for a normal person, through walls"
 	icon_state = "flashbang"
 	item_state = "flashbang"
 	origin_tech = list(TECH_MATERIAL = 2, TECH_COMBAT = 1)
 	var/banglet = 0
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_SILVER = 1)
 
 /obj/item/grenade/flashbang/prime()
 	..()
@@ -26,7 +28,7 @@
 
 	for(var/obj/effect/blob/B in hear(8,get_turf(src)))	//Blob damage here
 		var/damage = round(30/(get_dist(B,get_turf(src))+1))
-		B.health -= damage
+		B.take_damage(damage)
 		B.update_icon()
 
 	new/obj/effect/sparks(loc)
@@ -34,23 +36,12 @@
 	qdel(src)
 
 /obj/item/proc/flashbang_without_the_bang(turf/T, mob/living/carbon/M) //Flashbang_bang but bang-less.
-//Checking for protections
-	var/eye_safety = 0
-	if(iscarbon(M))
-		eye_safety = M.eyecheck()
-//Flashing everyone
-	if(eye_safety < FLASH_PROTECTION_MODERATE)
-		if (M.HUDtech.Find("flash"))
-			flick("e_flash", M.HUDtech["flash"])
-		M.eye_blurry = max(M.eye_blurry, 15)
-		M.eye_blind = max(M.eye_blind, 5)
-
 	//This really should be in mob not every check
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/eyes/E = H.random_organ_by_process(OP_EYES)
-		if (E && E.damage >= E.min_bruised_damage)
-			to_chat(M, SPAN_DANGER("Your eyes start to burn badly!"))
+		H.flash(3, FALSE , TRUE , TRUE, 15)
+	else
+		M.flash(5, FALSE, TRUE , TRUE)
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, 10 SECONDS, "flashbang")
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT, 10 SECONDS, "flashbang")
 	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_ADEPT, 10 SECONDS, "flashbang")
@@ -71,8 +62,12 @@
 		if(ishuman(M))
 			if(istype(M:l_ear, /obj/item/clothing/ears/earmuffs) || istype(M:r_ear, /obj/item/clothing/ears/earmuffs))
 				ear_safety += 2
-			if(HULK in M.mutations)
-				ear_safety += 1
+			if(istype(M:l_ear, /obj/item/device/radio/headset/headset_sec/bowman) || istype(M:r_ear, /obj/item/device/radio/headset/headset_sec/bowman))
+				ear_safety += 2
+			if(istype(M:l_ear, /obj/item/device/radio/headset/heads/hos/bowman) || istype(M:r_ear, /obj/item/device/radio/headset/heads/hos/bowman))
+				ear_safety += 2
+//			if(HULK in M.mutations)
+//				ear_safety += 1
 			if(istype(M:head, /obj/item/clothing/head/helmet))
 				ear_safety += 1
 			if(M.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
@@ -81,12 +76,8 @@
 		eye_safety += 1
 
 //Flashing everyone
-	if(eye_safety < FLASH_PROTECTION_MAJOR)
-		if (M.HUDtech.Find("flash"))
-			flick("e_flash", M.HUDtech["flash"])
 	if(eye_safety < FLASH_PROTECTION_MODERATE)
-		M.eye_blurry = max(M.eye_blurry, 15)
-		M.eye_blind = max(M.eye_blind, 5)
+		M.flash(3, FALSE , TRUE , TRUE , 15 - (15*eye_safety))
 
 //Now applying sound
 	var/flash_distance
@@ -164,8 +155,7 @@
 /obj/item/grenade/flashbang/nt/flashbang_without_the_bang(turf/T, mob/living/carbon/M)
 	if(M.get_core_implant(/obj/item/implant/core_implant/cruciform))
 		to_chat(M, span_singing("You are blinded by the Absolute\' light!"))
-		if (M.HUDtech.Find("flash"))
-			flick("e_flash", M.HUDtech["flash"])
+		M.flash(0, FALSE, FALSE , FALSE, 0) // angel light , non-harmfull other than the overlay
 		return
 	..()
 

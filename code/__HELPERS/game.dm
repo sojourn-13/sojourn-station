@@ -1,11 +1,5 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
 
-#define RANGE_TURFS(RADIUS, CENTER) \
-  block( \
-    locate(max(CENTER.x-(RADIUS),1),          max(CENTER.y-(RADIUS),1),          CENTER.z), \
-    locate(min(CENTER.x+(RADIUS),world.maxx), min(CENTER.y+(RADIUS),world.maxy), CENTER.z) \
-  )
-
 /proc/dopage(src, target)
 	var/href_list
 	var/href
@@ -25,16 +19,17 @@
 			return A
 	return 0
 
+// get the area's name
+/proc/get_area_name_litteral(atom/X, format_text = FALSE)
+	var/area/A = isarea(X) ? X : get_area(X)
+	if(!A)
+		return null
+	return format_text ? format_text(A.name) : A.name
+
 /proc/get_area_master(const/O)
 	var/area/A = get_area(O)
 	if (isarea(A))
 		return A
-
-/proc/in_range(source, user)
-	if(get_dist(source, user) <= 1)
-		return 1
-
-	return 0 //not in range and not telekinetic
 
 // Like view but bypasses luminosity check
 
@@ -45,16 +40,31 @@
 	var/list/heard = view(range, source)
 	var/list/extra_heard = view(range+3, source) - heard
 	if(extra_heard.len)
-		for(var/ear in extra_heard)
-			if(!ishuman(ear))
-				continue
-			var/mob/living/carbon/human/H = ear
+		for(var/mob/living/carbon/human/H in extra_heard)
 			if(!H.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
 				continue
-			heard += ear
+			heard += H
 	source.luminosity = lum
 
 	return heard
+
+/proc/hear_movables(range, atom/source)
+
+	. = list()
+
+	var/lum = source.luminosity
+	source.luminosity = world.view
+	for (var/atom/movable/AM in view(range+3, source))
+		if ((get_dist(AM, source) > range))
+			if (ishuman(AM))
+				var/mob/living/carbon/human/H = AM
+				if(!H.stats.getPerk(PERK_EAR_OF_QUICKSILVER))
+					continue
+				. += H
+		else
+			. += AM
+
+	source.luminosity = lum
 
 /proc/circlerange(center=usr, radius=3)
 

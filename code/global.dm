@@ -104,7 +104,7 @@ var/global/list/alphabet_uppercase = list("A", "B", "C", "D", "E", "F", "G", "H"
 // Some scary sounds.
 var/static/list/scarySounds = list(
 	'sound/weapons/thudswoosh.ogg',
-	'sound/weapons/Taser.ogg',
+	'sound/weapons/energy/Taser.ogg',
 	'sound/weapons/armbomb.ogg',
 	'sound/voice/hiss1.ogg',
 	'sound/voice/hiss2.ogg',

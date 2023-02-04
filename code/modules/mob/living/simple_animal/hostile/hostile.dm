@@ -110,13 +110,13 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 				if(prob(45))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
+					SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 				else
 					OpenFire(targetted_mob)
 			else
 				stance = HOSTILE_STANCE_ATTACKING
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
+				SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 	return FALSE
 
 /mob/living/simple_animal/hostile/proc/DestroyPathToTarget()
@@ -197,15 +197,21 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 		P.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 		playsound(src.loc, attack_sound, 50, 1)
 		return P
+	if(istype(targetted_mob,/obj/machinery/tesla_turret))
+		var/obj/machinery/tesla_turret/T = targetted_mob
+		T.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+		playsound(src.loc, attack_sound, 50, 1)
+		return T
+
 
 /mob/living/simple_animal/hostile/proc/LoseTarget()
 	stance = HOSTILE_STANCE_IDLE
 	target_mob = null
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 
 /mob/living/simple_animal/hostile/proc/LostTarget()
 	stance = HOSTILE_STANCE_IDLE
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 
 
 /mob/living/simple_animal/hostile/proc/ListTargets(var/dist = 7)
@@ -225,7 +231,7 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 
 	if(!stasis && !AI_inactive)
 		if(!.)
-			walk(src, 0)
+			SSmove_manager.stop_looping(src)
 			return 0
 		if(client)
 			return 0
@@ -245,9 +251,16 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 						DestroySurroundings()
 					AttackTarget()
 
-/mob/living/simple_animal/hostile/proc/OpenFire(target_mob)
+/mob/living/simple_animal/hostile/proc/OpenFire(atom/target_mob)
 	var/target = target_mob
+
+	if(QDELETED(target_mob))
+		stance = HOSTILE_STANCE_IDLE
+		target_mob = null
+		return
+
 	visible_message("\red <b>[src]</b> [fire_verb] at [target]!", 1)
+
 
 	if(rapid)
 		spawn(1)
@@ -387,6 +400,11 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 			for(var/obj/structure/shield_deployed/obstacle in get_step(src,dir))
 				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
 				return
+
+			for(var/obj/machinery/tesla_turret/obstacle in get_step(src,dir)) //Weak plastic will not bar us
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					return
 
 /mob/living/simple_animal/hostile/verb/break_around()
 	set name = "Attack Surroundings "

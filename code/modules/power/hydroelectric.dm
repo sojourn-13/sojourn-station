@@ -190,7 +190,7 @@
 	..()
 	update_icon()
 
-/obj/machinery/power/hydroelectric_control/nano_ui_interact(mob/user, ui_key = "hydroelectric", datum/nanoui/ui=null, force_open=NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/obj/machinery/power/hydroelectric_control/nano_ui_interact(mob/user, ui_key = "hydroelectric", datum/nanoui/ui=null, force_open=NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 
 	if(stat & BROKEN)
 		return

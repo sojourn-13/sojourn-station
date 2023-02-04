@@ -29,7 +29,7 @@ SUBSYSTEM_DEF(atoms)
 	if(initialized == INITIALIZATION_INSSATOMS)
 		return
 
-	var/previous_state
+	var/previous_state = null
 	if(initialized != INITIALIZATION_INNEW_MAPLOAD)
 		previous_state = initialized
 		initialized = INITIALIZATION_INNEW_MAPLOAD

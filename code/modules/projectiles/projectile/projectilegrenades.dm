@@ -46,6 +46,7 @@
 /obj/item/projectile/bullet/grenade/proc/grenade_effect(target)
 	explosion(target, devastation_range, heavy_impact_range, light_impact_range, flash_range)
 
+
 /obj/item/projectile/bullet/grenade/frag
 	name = "frag shell"
 	var/range = 7
@@ -58,6 +59,11 @@
 
 /obj/item/projectile/bullet/grenade/frag/grenade_effect(target)
 	fragment_explosion(target, range, f_type, f_amount, f_damage, f_step, same_turf_hit_chance)
+
+/obj/item/projectile/bullet/grenade/frag/stinger
+	name = "stinger shell"
+	f_type = /obj/item/projectile/bullet/pellet/fragment/rubber
+	f_amount = 50 //25 less than a handheld grenade, still does a LOT of halloss
 
 //Weaker do to being used in a strong gun
 /obj/item/projectile/bullet/grenade/frag/nt
@@ -106,7 +112,7 @@
 
 		for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
 			var/damage = round(30/(get_dist(B,get_turf(src))+1))
-			B.health -= damage
+			B.take_damage(damage)
 			B.update_icon()
 
 		new/obj/effect/sparks(src.loc)
@@ -139,10 +145,7 @@
 
 //Flashing everyone
 	if(eye_safety < FLASH_PROTECTION_MODERATE)
-		if (M.HUDtech.Find("flash"))
-			flick("e_flash", M.HUDtech["flash"])
-		M.eye_blurry = max(M.eye_blurry, 15)
-		M.eye_blind = max(M.eye_blind, 5)
+		flash(0, TRUE,TRUE,TRUE)
 
 
 

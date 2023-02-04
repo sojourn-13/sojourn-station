@@ -38,7 +38,7 @@
 	if ((CLUMSY in user.mutations) && prob(10))
 		to_chat(user, SPAN_WARNING("You club yourself over the head."))
 		playsound(src.loc, 'sound/effects/woodhit.ogg', 50, 1, -1)
-		user.Weaken(3 * force)
+		user.Weaken(0.2 * force)
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.damage_through_armor(2 * force, BRUTE, BP_HEAD, ARMOR_MELEE)
@@ -124,7 +124,7 @@
 
 		if ((CLUMSY in user.mutations) && prob(10))
 			to_chat(user, SPAN_WARNING("You club yourself over the head."))
-			user.Weaken(3 * force)
+			user.Weaken(0.1 * force)
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.damage_through_armor(2 * force, BRUTE, BP_HEAD, ARMOR_MELEE)

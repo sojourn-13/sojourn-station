@@ -440,11 +440,11 @@
 		for(var/mob/living/M in contents)
 			if (M.stat!=2)
 				if (!iscarbon(M))
-					M.emote("scream")
+					M.emote("painscream")
 				else
 					var/mob/living/carbon/C = M
 					if (!(C.species && (C.species.flags & NO_PAIN)))
-						C.emote("scream")
+						C.emote("painscream")
 
 			//Logging for this causes runtimes resulting in the cremator locking up. Commenting it out until that's figured out.
 			//M.attack_log += "\[[time_stamp()]\] Has been cremated by <b>[user]/[user.ckey]</b>" //No point in this when the mob's about to be deleted

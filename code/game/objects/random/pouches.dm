@@ -13,8 +13,14 @@
 	/obj/item/storage/pouch/tubular = 7,
 	/obj/item/storage/pouch/ammo = 3,
 	/obj/item/storage/pouch/pistol_holster = 3,
+	/obj/item/storage/pouch/pistol_holster/cowboy = 2,
+	/obj/item/storage/pouch/kniferig = 3,
 	/obj/item/storage/pouch/baton_holster = 3
 	))
+
+/obj/random/pouch/always_spawn
+	name = "random always spawn pouch"
+	spawn_nothing_percentage = 0
 
 /obj/random/pouch/low_chance
 	name = "low chance random pouch"

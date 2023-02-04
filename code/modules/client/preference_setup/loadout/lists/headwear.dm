@@ -19,10 +19,21 @@
 	path = /obj/item/clothing/head/beret
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/head/beretselect_fancy
+	display_name = "fashionable beret selection"
+	path = /obj/item/clothing/head/beret/fashion
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/head/beretcustom
 	display_name = "beret, customized"
 	path = /obj/item/clothing/head/beret/custom
 	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/head/bikerhelmet
+	display_name = "biker helmet selection"
+	path = /obj/item/clothing/head/helmet/biker
+	flags = GEAR_HAS_TYPE_SELECTION
+	cost = 2 //Has some good armor
 
 /datum/gear/head/boater
 	display_name = "boater hat"
@@ -127,3 +138,8 @@
 /datum/gear/head/papakha
 	display_name = "black papakha"
 	path = /obj/item/clothing/head/costume/history/anarchist
+
+/datum/gear/head/livesey
+	display_name = "Naval Surgeon Tricorne"
+	path = /obj/item/clothing/head/costume/livesey
+

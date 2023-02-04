@@ -9,7 +9,7 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 13
 	attacktext = "sawed"
-	projectilesound = 'sound/weapons/Laser.ogg'
+	projectilesound = 'sound/weapons/energy/Laser.ogg'
 	projectiletype = /obj/item/projectile/beam/drone
 	faction = "hivebot"
 	min_oxy = 0
@@ -33,6 +33,7 @@
 	var/drop2 = null
 	needs_environment = FALSE
 	armor = list(melee = 15, bullet = 5, energy = 20, bomb = 25, bio = 100, rad = 25)
+	cant_gib = TRUE
 
 /mob/living/simple_animal/hostile/hivebot/emp_act(severity)
 	..()
@@ -75,7 +76,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 25
 	attacktext = "clawed"
-	projectilesound = 'sound/weapons/Laser.ogg'
+	projectilesound = 'sound/weapons/energy/Laser.ogg'
 	projectiletype = /obj/item/projectile/beam //This basiclly nulls armor + deals 20 damage
 	faction = "hivebot"
 

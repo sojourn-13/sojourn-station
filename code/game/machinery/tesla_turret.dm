@@ -47,9 +47,9 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	idle_power_usage = 50		//when inactive, this turret takes up constant 50 Equipment power
 	power_channel = STATIC_EQUIP	//drains power from the EQUIPMENT channel
 
-	health = 80			//the turret's health
-	maxHealth = 80		//turrets maximal health.
-	var/resistance = RESISTANCE_FRAGILE 		//reduction on incoming damage
+	health = 120			//the turret's health - has more then normal as they do get attacked
+	maxHealth = 120		//turrets maximal health.
+	var/resistance = RESISTANCE_AVERAGE 		//reduction on incoming damage, were made stronger
 	var/locked = TRUE			//if the turret's behaviour control access is locked
 
 	var/damage_cap = 90 // How much damage can the turret do per zap maximum.
@@ -110,7 +110,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 
 	//Includes the Tesla Turret in the running for an individual objective
 	var/area/A = get_area(src)
-	SEND_SIGNAL(A, COMSIG_TURRENT, src)
+	LEGACY_SEND_SIGNAL(A, COMSIG_TURRENT, src)
 
 	//Now we fuck around with power and find out
 	update_power_use()
@@ -120,6 +120,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	qdel(spark_system)
 	spark_system = null
 	shock_net.turrets.Remove(src)
+	density = FALSE
 	. = ..()
 
 /obj/machinery/tesla_turret/update_icon()
@@ -424,7 +425,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		emagged = TRUE
 		locked = FALSE
 		enabled = FALSE //turns off the turret temporarily
-		spawn(60) //6 seconds for the traitor to gtfo of the area before the turret decides to ruin his shit
+		spawn(60) //6 seconds for the contractor to gtfo of the area before the turret decides to ruin his shit
 			enabled = TRUE //turns it back on.
 		return TRUE
 

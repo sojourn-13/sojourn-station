@@ -15,13 +15,13 @@
 	stations_recommended = list("mcronalds", "serbian")
 	inventory = list(
 		"Basic Ingredients" = list(
-			/obj/item/reagent_containers/food/condiment/flour,
-			/obj/item/reagent_containers/food/drinks/milk,
-			/obj/item/storage/fancy/egg_box,
-			/obj/item/reagent_containers/food/snacks/tofu,
-			/obj/item/reagent_containers/food/snacks/meat,
+			/obj/item/reagent_containers/food/condiment/flour = good_data("flour sack", list(1, 2), 250),
+			/obj/item/reagent_containers/food/drinks/milk = good_data("milk carton", list(1, 2), 100),
+			/obj/item/storage/fancy/egg_box = good_data("egg box", list(1, 2), 300),
+			/obj/item/reagent_containers/food/snacks/tofu = good_data("tofu", list(1, 2), 20),
+			/obj/item/reagent_containers/food/snacks/meat = good_data("meat", list(1, 2), 25),
 			/obj/item/reagent_containers/food/condiment/enzyme,
-			/obj/item/reagent_containers/food/condiment/cookingoil
+			/obj/item/reagent_containers/food/condiment/cookingoil = good_data("cooking oil bottle", list(1, 2), 200)
 		),
 		"Drinks" = list(
 			/obj/item/reagent_containers/food/drinks/bottle/gin,
@@ -92,12 +92,12 @@
 		"Kegs" = list(
 			/obj/structure/reagent_dispensers/beerkeg/cargo,
 			/obj/structure/reagent_dispensers/meadkeg/cargo,
-			/obj/structure/reagent_dispensers/premiumwhiske/cargo
+			/obj/structure/reagent_dispensers/premiumwhiskey/cargo
 		)
 	)
 
 	offer_types = list(
-		/obj/item/tool/knife = offer_data("spare knifes", 80, 0),
+		/obj/item/tool/knife = offer_data("spare knifes", 40, 20),
 		/obj/item/reagent_containers/food/snacks/grown = offer_data("spare grown food", 10, 120), //10 credits a grown item basicl
 		/obj/item/reagent_containers/food/snacks/kampferburger = offer_data("kampfer burger", 400, 3),
 		/obj/item/reagent_containers/food/snacks/panzerburger = offer_data("panzer burger", 500, 2),
@@ -117,10 +117,10 @@
 /obj/structure/reagent_dispensers/meadkeg/cargo/New()
 	price_tag = 900
 
-/obj/structure/reagent_dispensers/premiumwhiske/cargo
+/obj/structure/reagent_dispensers/premiumwhiskey/cargo
 	price_tag = 5000
 
-/obj/structure/reagent_dispensers/premiumwhiske/cargo/New()
+/obj/structure/reagent_dispensers/premiumwhiskey/cargo/New()
 	price_tag = 500
 
 

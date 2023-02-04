@@ -78,12 +78,6 @@
 /mob/living/carbon/superior_animal/nanobot/handle_environment(var/datum/gas_mixture/environment) //were space proof
 	return
 
-/mob/living/carbon/superior_animal/nanobot/handle_cheap_breath(datum/gas_mixture/breath as anything)
-	return
-
-/mob/living/carbon/superior_animal/nanobot/handle_cheap_environment(datum/gas_mixture/environment as anything)
-	return
-
 /mob/living/carbon/superior_animal/nanobot/New()
 	. = ..()
 	Radio = new/obj/item/device/radio(src)
@@ -155,9 +149,9 @@
 										SPAN_NOTICE("You [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name].")
 										)
 					if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
-						heal_overall_damage(50, 50)
+						health += 50
 					else
-						heal_overall_damage(rand(30, 50), rand(30, 50))
+						health += (rand(30, 50))
 					return
 				return
 			to_chat(user, "[src] doesn't need repairs.")

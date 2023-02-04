@@ -79,7 +79,7 @@
 		melee_damage_lower = initial(melee_damage_lower) - fatigue * 2
 		melee_damage_upper = initial(melee_damage_upper) - fatigue * 2
 
-/mob/living/simple_animal/hostile/renderpatriarch/death(gibbed, deathmessage = "lets out a gutteral snarl before it crumbles to the ground dead!")
+/mob/living/simple_animal/hostile/renderpatriarch/death(gibbed, deathmessage = "lets out a guttural snarl before it crumbles to the ground dead!")
 	walk_to(src,0)
 	movement_target = null
 	icon_state = icon_dead
@@ -103,7 +103,7 @@
 	if(!T)
 		return
 	DestroySurroundings()
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 	src.dir=dir
 	animate(src, alpha = 255, color = "#FF0000", transform = matrix()*1.2, time = 2)
 	sleep(2)
@@ -123,10 +123,10 @@
 	animate(src, alpha = 255, color = "#FF0000", transform = matrix()*1.2, time = 3)
 	sleep(1)
 	var/movespeed = 0.7
-	walk_towards(src, T, movespeed)
+	SSmove_manager.home_onto(src, T, movespeed)
 	charging = 1
 	sleep(get_dist(src, T)* movespeed)
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 	animate(src, alpha = 255, color = initial(color), transform = matrix()*1, time = 3)
 	charging = 0
 	fatigue = 0

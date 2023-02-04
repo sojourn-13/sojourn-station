@@ -8,7 +8,7 @@
 	var/artifact_detect_range
 
 /datum/artifact_find/New()
-	artifact_detect_range = rand(5,300)
+	artifact_detect_range = rand(100,500)
 
 	artifact_id = "[pick("kappa","sigma","antaeres","beta","omicron","iota","epsilon","omega","gamma","delta","tau","alpha")]-[rand(100,999)]"
 

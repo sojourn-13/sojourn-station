@@ -76,12 +76,14 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	real_name = name
 
 	ghost_multitool = new(src)
+	SSmobs.ghost_list += src
 	..()
 
 /mob/observer/ghost/Destroy()
 	stop_following()
 	qdel(ghost_multitool)
 	ghost_multitool = null
+	SSmobs.ghost_list -= src
 	return ..()
 
 /mob/observer/ghost/Topic(href, href_list)
@@ -557,31 +559,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return null
 	else
 		return bestvent
-
-// Allow the ghost to spawn as an ameridian tender near an ameridian spire
-/mob/observer/verb/become_tender()
-	set name = "Respawn as ameridian tender"
-	set category = "Ghost"
-
-	if(!MayRespawn(1, ANIMAL))
-		return FALSE
-
-	if(!BC_IsKeyAllowedToConnect(usr.ckey) && !usr.client.holder)
-		to_chat(usr, SPAN_DANGER("Border Control is enabled, and you haven't been whitelisted!  You're welcome to observe, \
-								but in order to play, you'll need to be whitelisted!  Please visit our discord to submit an access request!"))
-		return FALSE
-
-	var/response = input(src, "Are you -sure- you want to become an ameridian tender? This will not affect your crew or drone respawn time","Ameridian Tender Choise", null) as null|anything in list("Yes", "No")
-	if(response == "No")
-		response = null
-
-	if(response)
-		for(var/mob/living/simple_animal/ameridian_tender/AT in GLOB.living_mob_list)
-			if(AT.can_be_possessed_by(src))
-				return AT.do_possession(src)
-		to_chat(usr, SPAN_WARNING("There are no valid ameridian tender."))
-		return FALSE
-	else return FALSE
 
 /mob/observer/ghost/verb/view_manfiest()
 	set name = "Show Crew Manifest"

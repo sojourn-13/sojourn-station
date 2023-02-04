@@ -68,7 +68,7 @@
 /obj/item/reagent_containers/pill/tox
 	name = "Toxins pill"
 	desc = "Highly toxic."
-	icon_state = "pill5"
+	icon_state = "pill12"
 	preloaded_reagents = list("toxin" = 50)
 
 
@@ -95,120 +95,147 @@
 /obj/item/reagent_containers/pill/kelotane
 	name = "Kelotane pill"
 	desc = "Used to treat burns."
-	icon_state = "pill11"
+	icon_state = "pill7"
 	preloaded_reagents = list("kelotane" = 15)
 
 
 /obj/item/reagent_containers/pill/paracetamol
 	name = "Paracetamol pill"
 	desc = "Tylenol! A painkiller for the ages. Chewables!"
-	icon_state = "pill8"
+	icon_state = "pill9"
 	preloaded_reagents = list("paracetamol" = 15)
 
 
 /obj/item/reagent_containers/pill/tramadol
 	name = "Tramadol pill"
 	desc = "A simple painkiller."
-	icon_state = "pill8"
+	icon_state = "pill10"
 	preloaded_reagents = list("tramadol" = 15)
 
 
 /obj/item/reagent_containers/pill/methylphenidate
 	name = "Methylphenidate pill"
 	desc = "Improves the ability to concentrate."
-	icon_state = "pill8"
+	icon_state = "pill13"
 	preloaded_reagents = list("methylphenidate" = 15)
 
 
 /obj/item/reagent_containers/pill/citalopram
 	name = "Citalopram pill"
 	desc = "Mild anti-depressant."
-	icon_state = "pill8"
+	icon_state = "pill3"
 	preloaded_reagents = list("citalopram" = 15)
 
 
 /obj/item/reagent_containers/pill/inaprovaline
 	name = "Inaprovaline pill"
 	desc = "Used to stabilize patients."
-	icon_state = "pill20"
+	icon_state = "pill3"
 	preloaded_reagents = list("inaprovaline" = 30)
 
 
 /obj/item/reagent_containers/pill/dexalin
 	name = "Dexalin pill"
 	desc = "Used to treat oxygen deprivation."
-	icon_state = "pill16"
+	icon_state = "pill8"
 	preloaded_reagents = list("dexalin" = 15)
 
 
 /obj/item/reagent_containers/pill/dexalin_plus
 	name = "Dexalin Plus pill"
 	desc = "Used to treat extreme oxygen deprivation."
-	icon_state = "pill8"
+	icon_state = "pill16"
 	preloaded_reagents = list("dexalinp" = 15)
 
 
 /obj/item/reagent_containers/pill/dermaline
 	name = "Dermaline pill"
 	desc = "Used to treat burn wounds."
-	icon_state = "pill12"
+	icon_state = "pill15"
 	preloaded_reagents = list("dermaline" = 15)
 
 
 /obj/item/reagent_containers/pill/dylovene
 	name = "Dylovene pill"
 	desc = "A broad-spectrum anti-toxin."
-	icon_state = "pill13"
+	icon_state = "pill11"
 	preloaded_reagents = list("anti_toxin" = 15)
 
+/obj/item/reagent_containers/pill/carthatoline
+	name = "Carthatoline pill"
+	desc = "A powerful anti-toxin and liver restorer."
+	icon_state = "pill17"
+	preloaded_reagents = list("carthatoline" = 15)
 
 /obj/item/reagent_containers/pill/inaprovaline
 	name = "Inaprovaline pill"
 	desc = "Used to stabilize patients."
-	icon_state = "pill20"
+	icon_state = "pill3"
 	preloaded_reagents = list("inaprovaline" = 30)
 
 
 /obj/item/reagent_containers/pill/bicaridine
 	name = "Bicaridine pill"
 	desc = "Used to treat physical injuries."
-	icon_state = "pill18"
+	icon_state = "pill4"
 	preloaded_reagents = list("bicaridine" = 20)
 
 
 /obj/item/reagent_containers/pill/happy
 	name = "Happy pill"
 	desc = "Happy happy joy joy!"
-	icon_state = "pill18"
+	icon_state = "pill8" // Literally Joy
 	preloaded_reagents = list("space_drugs" = 15, "sugar" = 15)
 
 
 /obj/item/reagent_containers/pill/zoom
 	name = "Zoom pill"
 	desc = "Zoooom!"
-	icon_state = "pill18"
+	icon_state = "pill20"
 	preloaded_reagents = list("impedrezene" = 10, "synaptizine" = 5, "hyperzine" = 5)
 
 
 /obj/item/reagent_containers/pill/spaceacillin
 	name = "Spaceacillin pill"
 	desc = "Contains antiviral agents."
-	icon_state = "pill19"
+	icon_state = "pill18"
 	preloaded_reagents = list("spaceacillin" = 15)
 
 
 /obj/item/reagent_containers/pill/prosurgeon
 	name = "ProSurgeon pill"
 	desc = "Contains a stimulating drug that is used to reduce tremor to minimum."
-	icon_state = "pill3"
+	icon_state = "pill19"
 	preloaded_reagents = list("prosurgeon" = 10)
 
+/obj/item/reagent_containers/pill/bloodregen
+	name = "Ferritin-Hemosiderin pill"
+	desc = "A pill of iron supplements meant to help the natural restoration of blood."
+	icon_state = "pill5"
+	preloaded_reagents = list("iron" = 10, "protein" = 10) // Sugar does nothing to restore blood, but Protein does!
 
+/obj/item/reagent_containers/pill/suppressital
+	name = "Njoy red pill"
+	desc = "Prevents some breakdowns."
+	icon_state = "pill_njoy_red"
+	preloaded_reagents = list("suppressital" = 15)
 
+/obj/item/reagent_containers/pill/suppressital/blue
+	name = "Njoy blue pill"
+	icon_state = "pill_njoy_blue"
+
+/obj/item/reagent_containers/pill/suppressital/green
+	name = "Njoy green pill"
+	icon_state = "pill_njoy_green"
 
 //Pills with random content
 /obj/item/reagent_containers/pill/floorpill
 	name = "floor pill"
+	desc = "Dare you?"
+
+
+/obj/item/reagent_containers/pill/floorpill/wallet
+	name = "random pill"
 	desc = "Dare you?"
 
 /obj/item/reagent_containers/pill/floorpill/Initialize()

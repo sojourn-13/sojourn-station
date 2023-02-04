@@ -14,6 +14,7 @@
 	var/datum/genetics/genetics_holder/unnatural_mutations = new() //GMO in your MEAT
 	var/source_mob
 	var/source_name
+	price_tag = 20 //Partially to make it not dirt-cheap to buy from the beacon. Plus it's useful as biomatter, so it's worth something.
 
 //For initializing genetics information for meat, so it's easy to call.
 /obj/item/reagent_containers/food/snacks/meat/proc/initialize_genetics(mob/living/meat_source)
@@ -50,8 +51,9 @@
 	desc = "A slab of sickly-green bubbling meat cut from a giant termite. It looks to be rather rich in minerals. Delicious!"
 	icon_state = "xenomeat"
 	filling_color = "#E2FFDE"
-	preloaded_reagents = list("protein" = 5, "iron" = 4)
+	preloaded_reagents = list("protein" = 5, "hclacid" = 4, "sacid" = 4, "phosphorus" = 8)
 	//Todo make each termite meat have their ground up mineral inside
+	// IDK if anyone is ever going to do this, so, adding some of the otherwise unobtainable ghetto chems to it - obey
 
 /obj/item/reagent_containers/food/snacks/meat/roachmeat
 	desc = "A slab of sickly-green bubbling meat cut from a giant roach. You swear you can see it still twitching occasionally. Delicious!"
@@ -62,7 +64,8 @@
 	preloaded_reagents = list("protein" = 4, "blattedin" = 8, "diplopterum" = 7)
 
 /obj/item/reagent_containers/food/snacks/meat/roachmeat/seuche
-	preloaded_reagents = list("protein" = 4, "seligitillin" = 8, "diplopterum" = 6)
+	preloaded_reagents = list("protein" = 2, "blattedin"= 12, "seligitillin" = 8, "diplopterum" = 6)
+	// The roach that produces giant clouds of blattedin doesn't contain any blattedin in it's system? Tweaked. To compensate, making Jagers give even less blatt
 
 /obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer
 	preloaded_reagents = list("protein" = 8, "blattedin" = 12, "starkellin" = 15, "diplopterum" = 4)
@@ -74,7 +77,7 @@
 	preloaded_reagents = list("protein" = 6, "blattedin" = 12, "seligitillin" = 6, "starkellin" = 15, "fuhrerole" = 12, "diplopterum" = 6)
 
 /obj/item/reagent_containers/food/snacks/meat/roachmeat/jager
-	preloaded_reagents = list("protein" = 6, "blattedin" = 6, "gewaltine" = 8, "diplopterum" = 2)
+	preloaded_reagents = list("protein" = 6, "blattedin" = 2, "gewaltine" = 8, "diplopterum" = 2)
 
 /obj/item/reagent_containers/food/snacks/meat/roachmeat/kraftwerk
 	preloaded_reagents = list("protein" = 6, "blattedin" = 6, "gewaltine" = 6, "uncap nanites" = 2, "nanites" = 3)
@@ -95,7 +98,7 @@
 	filling_color = "#E2FFDE"
 
 	bitesize = 6
-	preloaded_reagents = list("protein" = 7, "pararein" = 12)
+	preloaded_reagents = list("protein" = 7, "pararein" = 12, "ammonia" = 4)
 
 /obj/item/reagent_containers/food/snacks/meat/spider/hunter
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
@@ -103,7 +106,7 @@
 	filling_color = "#E2FFDE"
 
 	bitesize = 6
-	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "pararein" = 2)
+	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "pararein" = 2, "ammonia" = 4)
 
 /obj/item/reagent_containers/food/snacks/meat/spider/plasma
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
@@ -111,7 +114,7 @@
 	filling_color = "#E2FFDE"
 
 	bitesize = 6
-	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "plasma" = 5)
+	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "plasma" = 5, "ammonia" = 4)
 
 /obj/item/reagent_containers/food/snacks/meat/spider/pepper
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
@@ -119,7 +122,7 @@
 	filling_color = "#E2FFDE"
 
 	bitesize = 6
-	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "condensedcapsaicinspider" = 5)
+	preloaded_reagents = list("protein" = 9, "aranecolmin" = 8, "condensedcapsaicinspider" = 5, "ammonia" = 4)
 
 /obj/item/reagent_containers/food/snacks/meat/spider/emperor
 	desc = "A bloated slab of sickly-green meat cut from a spider. This one smells like cognitive improvement drugs."
@@ -127,7 +130,7 @@
 	filling_color = "#E2FFDE"
 	//Emperor Spider's meat contains party drops, big brain chemical. 8 seems fine. Emperors are dangerous.
 	bitesize = 6
-	preloaded_reagents = list("protein" = 8, "pararein" = 8, "party drops" =8)
+	preloaded_reagents = list("protein" = 8, "pararein" = 8, "party drops" =8, "ammonia" = 4)
 
 /obj/item/reagent_containers/food/snacks/meat/spider/reaper_spider
 	desc = "A bloated slab of sickly-green meat cut from a spider. This one smells like cognitive improvement drugs."
@@ -135,7 +138,7 @@
 	filling_color = "#E2FFDE"
 	//Emperor Spider's meat contains party drops, big brain chemical. 8 seems fine. Emperors are dangerous.
 	bitesize = 6
-	preloaded_reagents = list("protein" = 8, "pararein" = 8, "stoxin" =8)
+	preloaded_reagents = list("protein" = 8, "pararein" = 8, "stoxin" =8, "ammonia" = 4)
 
 /obj/item/reagent_containers/food/snacks/meat/spider/nurse
 	desc = "A bloated slab of sickly-green meat cut from a spider. The venom just gives it more flavor. Delicious!"
@@ -143,7 +146,7 @@
 	filling_color = "#E2FFDE"
 
 	bitesize = 6
-	preloaded_reagents = list("protein" = 8, "pararein" = 8)
+	preloaded_reagents = list("protein" = 8, "pararein" = 8, "stoxin" = 12, "ammonia" = 4)
 
 /obj/item/reagent_containers/food/snacks/meat/spider/midwife
 	desc = "A bloated slab of sickly-green meat cut from a spider. It twitches and shudders as you look it as if actively mutating even in death."
@@ -151,7 +154,7 @@
 	filling_color = "#E2FFDE"
 
 	bitesize = 6
-	preloaded_reagents = list("protein" = 8, "pararein" = 8, "mutagen" = 8)
+	preloaded_reagents = list("protein" = 8, "pararein" = 8, "mutagen" = 8, "ammonia" = 4)
 
 /obj/item/reagent_containers/food/snacks/meat/spider/cave_spider
 	desc = "A bloated slab of sickly-green meat cut from a spider. It seems to always be cold and even when warmed by flames it cools quickly."
@@ -159,7 +162,7 @@
 	filling_color = "#E2FFDE"
 
 	bitesize = 6
-	preloaded_reagents = list("protein" = 8, "pararein" = 8, "frostoil" = 8)
+	preloaded_reagents = list("protein" = 8, "pararein" = 8, "frostoil" = 8, "ammonia" = 4)
 
 /obj/item/reagent_containers/food/snacks/meat/spider/recluse
 	desc = "A bloated slab of sickly-green meat cut from a spider. The smell from this one makes your nose go numb."
@@ -167,7 +170,7 @@
 	filling_color = "#E2FFDE"
 	//Zombie Powder is fairly dangerous and recluses are easy to kill. 6 units per slab is good enough.
 	bitesize = 6
-	preloaded_reagents = list("protein" = 8, "pararein" = 8, "zombiepowder" = 6)
+	preloaded_reagents = list("protein" = 8, "pararein" = 8, "zombiepowder" = 6, "ammonia" = 4)
 
 /obj/item/reagent_containers/food/snacks/meat/spider/queen
 	desc = "A bloated slab of sickly-green meat cut from a spider queen. This one smells of combat stimulants for some reason."
@@ -175,7 +178,7 @@
 	filling_color = "#E2FFDE"
 	//Queens aren't hard to kill and aren't too rare. 6 units of menace should be enough per slab.
 	bitesize = 6
-	preloaded_reagents = list("protein" = 8, "pararein" = 8, "menace" = 6)
+	preloaded_reagents = list("protein" = 8, "pararein" = 8, "menace" = 6, "ammonia" = 4)
 
 /obj/item/reagent_containers/food/snacks/meat/carp
 	name = "carp fillet"

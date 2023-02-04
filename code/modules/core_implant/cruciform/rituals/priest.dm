@@ -89,6 +89,9 @@
 		else
 			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			H.vessel.remove_reagent("blood",blood_cost)
+	if(H.species?.reagent_tag == IS_SYNTHETIC)
+		to_chat(H, SPAN_WARNING("You fail to cast the litany due to your non-organic body..."))
+		return FALSE
 	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain.</span>")
 	H.reagents.add_reagent("laudanum", 10)
 	H.adjustBruteLoss(-20)
@@ -139,6 +142,8 @@
 			user.vessel.remove_reagent("blood",blood_cost)
 	if (do_after(user, 40, H, TRUE))
 		T = get_turf(user)
+		if (H.species?.reagent_tag == IS_SYNTHETIC)
+			to_chat(user, SPAN_DANGER("[H] is synthetic, healing them has no effect!"))
 		if (!(T.Adjacent(get_turf(H))))
 			to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
 			return
@@ -192,9 +197,7 @@
 
 /datum/ritual/cruciform/priest/heal_heathen/proc/heal_other(mob/living/carbon/human/participant)
 		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain.</span>")
-		participant.reagents.add_reagent("laudanum", 5)
-		participant.adjustBruteLoss(-15)
-		participant.adjustFireLoss(-15)
+		participant.reagents.add_reagent("laudanum", 5, "bicaridine", 5, "kelotane", 5)
 		participant.adjustToxLoss(-15)
 		participant.adjustOxyLoss(-30)
 		participant.adjustBrainLoss(-5)
@@ -441,7 +444,7 @@
 
 	var/mob/M = CI.wearer
 
-	if(ishuman(M) && M.is_dead())
+	if(ishuman(M) && is_dead(M))
 		if(user.species?.reagent_tag != IS_SYNTHETIC)
 			if(user.nutrition >= nutri_cost)
 				user.nutrition -= nutri_cost
@@ -456,7 +459,7 @@
 		CI.uninstall()
 		return TRUE
 
-	else if(ismob(M) && M.is_dead()) //Cruciforms can't normally be placed on non-humans, but this is still here for sanity purposes.
+	else if(ismob(M) && is_dead(M)) //Cruciforms can't normally be placed on non-humans, but this is still here for sanity purposes.
 		CI.name = "[M]'s Cruciform"
 		CI.uninstall()
 		return TRUE

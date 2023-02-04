@@ -867,7 +867,7 @@ area/space/atmosalert()
 	base_turf = /turf/simulated/floor/tiled
 	has_gravity = 1
 	requires_power = 0
-	area_light_color = COLOR_LIGHTING_MAINT_DARK
+	area_light_color = COLOR_NAVY_BLUE //That is below is that of above
 
 // This area is mostly there to prevent the initial crystals from processing when there is no one nearby.
 // In an ideal situation, it would be wider than the potential full size of the field to prevent any escapes. -R4d6

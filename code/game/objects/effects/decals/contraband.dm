@@ -101,7 +101,7 @@
 	else
 		placement_dir = reverse_dir[placement_dir]
 		for(var/t_dir in cardinal)
-			if(!t_dir & placement_dir) continue
+			if(!(t_dir & placement_dir)) continue
 			if(iswall(get_step(W, t_dir)))
 				if(iswall(get_step(W, placement_dir-t_dir)))
 					break
@@ -699,6 +699,11 @@
 	icon_state="bsposter29"
 	name = "Winter Is Coming"
 	desc = "On the poster is a frighteningly large wolf, he warns: \"Only YOU can keep the station from freezing during planetary occultation!\""
+
+/obj/item/contraband/poster/placed/popculture/gilld_chese
+	icon_state = "gilld_chese"
+	name = "gilld chese"
+	desc = "This is a poster of a small cat being fed a Deluxe Toasted Sandwich, one of the Artificers Guild's best culinary innovations on the use of Petrol Pumps."
 
 /*Pinups*/
 /obj/item/contraband/poster/placed/pinup/cindy

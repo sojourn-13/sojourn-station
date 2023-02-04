@@ -33,17 +33,17 @@
 	currentHeat += heatPerFire
 
 	if(currentHeat >= heatThresholdSpecial)
-		SEND_SIGNAL(parent, COMSIG_HEAT_SPECIAL)
+		LEGACY_SEND_SIGNAL(parent, COMSIG_HEAT_SPECIAL)
 
 	if(currentHeat >= overheatThreshold)
-		SEND_SIGNAL(parent, COMSIG_HEAT_OVERHEAT)
+		LEGACY_SEND_SIGNAL(parent, COMSIG_HEAT_OVERHEAT)
 		overheatVent()
 
 
 /datum/component/heat/proc/ventHeat(var/forced = FALSE)
 	if(world.time - lastVentedTick > ventCooldown)
 		currentHeat = 0
-		SEND_SIGNAL(parent, COMSIG_HEAT_VENT)
+		LEGACY_SEND_SIGNAL(parent, COMSIG_HEAT_VENT)
 		lastVentedTick = world.time
 	else
 		return FALSE //we fail

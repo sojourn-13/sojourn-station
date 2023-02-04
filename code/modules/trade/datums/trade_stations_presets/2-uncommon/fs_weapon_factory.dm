@@ -14,17 +14,13 @@
 	recommendations_needed = 1
 	inventory = list(
 		"Projectiles" = list(
-			/obj/item/gun/projectile/automatic/mac,
 			/obj/item/gun/projectile/automatic/c20r,
-			/obj/item/gun/projectile/automatic/sts/lrifle,
 			/obj/item/gun/projectile/automatic/sts/rifle,
-			/obj/item/gun/projectile/automatic/sts/hrifle,
 			/obj/item/gun/projectile/boltgun/lever,
-			/obj/item/gun/projectile/boltgun/sa,
-			/obj/item/gun/projectile/shotgun/pump/gladstone,
+			/obj/item/gun/projectile/boltgun/sa = good_data("Mosin boltaction rifle", list(1, 5), 500),
 			/obj/item/gun/projectile/shotgun/bull,
 			/obj/item/gun/projectile/shotgun/pug,
-			/obj/item/gun/projectile/shotgun/pump
+			/obj/item/gun/projectile/shotgun/pump = good_data("Grizzly shotgun", list(1, 5), 700),
 		),
 		"Ammunition" = list(
 			/obj/item/ammo_magazine/c10x24 = custom_good_amount_range(list(1, 10)),
@@ -33,9 +29,9 @@
 			/obj/item/ammo_magazine/m12/pellet = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_casing/antim/lethal/prespawned = custom_good_amount_range(list(1, 10)),
 
-			/obj/item/ammo_magazine/ammobox/heavy_rifle_408,
-			/obj/item/ammo_magazine/ammobox/rifle_75,
-			/obj/item/ammo_magazine/ammobox/light_rifle_257,
+			/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small,
+			/obj/item/ammo_magazine/ammobox/rifle_75_small,
+			/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
 			/obj/item/ammo_magazine/ammobox/shotgun,
 			/obj/item/ammo_magazine/ammobox/kurtz_50,
 			/obj/item/ammo_magazine/ammobox/magnum_40,
@@ -66,13 +62,13 @@
 		),
 		"Top Class Firearms" = list(
 			/obj/item/gun/projectile/boltgun/scout,
-			/obj/item/gun/projectile/avasarala,
 			/obj/item/gun/projectile/basilisk,
-			/obj/item/gun/projectile/revolver/mateba,
+			/obj/item/gun/projectile/revolver/hornet,
 			/obj/item/gun/projectile/revolver/tacticool_revolver
 		),
 		"High End Laser Guns" = list(
 			/obj/item/gun/energy/firestorm,
+			/obj/item/gun/energy/xray,
 			/obj/item/gun/energy/lasercore,
 			/obj/item/gun/energy/pulse/cassad
 		)
@@ -86,5 +82,6 @@
 		/obj/item/gun_upgrade/muzzle/silencer = offer_data("silencer", 150, 6),
 		/obj/item/gun_upgrade/barrel/bore = offer_data("bored barrel", 750, 2),
 		/obj/item/gun_upgrade/barrel/forged = offer_data("forged barrel", 750, 4),
-		/obj/item/gun_upgrade/magwell/auto_eject = offer_data("H&S \"Dropper\" Magwell Braker", 450, 5)
+		/obj/item/gun_upgrade/magwell/auto_eject = offer_data("H&S \"Dropper\" Magwell Braker", 450, 5),
+		/obj/item/clothing/glasses/powered/night/guild  = offer_data("Converted NV Goggles", 1000, 1)
 	)

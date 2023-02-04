@@ -8,7 +8,7 @@
 	anchored = TRUE
 	flags = ON_BORDER
 	maxHealth = 20
-	var/resistance = RESISTANCE_NONE	//Incoming damage is reduced by this flat amount before being subtracted from health. Defines found in code\__defines\weapons.dm
+	var/resistance = RESISTANCE_FLIMSY	//Incoming damage is reduced by this flat amount before being subtracted from health. Defines found in code\__defines\weapons.dm
 	var/maximal_heat = T0C + 100 		// Maximal heat before this window begins taking damage from fire
 	var/damage_per_fire_tick = 2.0 		// Amount of damage per fire tick. Regular windows are not fireproof so they might as well break quickly.
 	health
@@ -176,12 +176,14 @@
 /obj/structure/window/proc/is_full_window()
 	return (dir == SOUTHWEST || dir == SOUTHEAST || dir == NORTHWEST || dir == NORTHEAST)
 
-/obj/structure/window/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+/obj/structure/window/CanPass(atom/movable/mover, turf/target, height=0, air_group=0, direction)
 	if(istype(mover) && mover.checkpass(PASSGLASS))
 		return 1
 	if(is_full_window())
 		return 0	//full tile window, you can't move into it!
-	if(get_dir(loc, target) & dir)
+	if (isnull(direction))
+		direction = get_dir(loc, target)
+	if(direction & dir)
 		return !density
 	else
 		return 1
@@ -210,10 +212,9 @@
 		var/obj/item/I = AM
 		tforce = I.throwforce
 	if(reinf) tforce *= 0.25
-	if(health - tforce <= 7 && !reinf)
+	if(hit(tforce) && health <= 7 && !reinf)
 		set_anchored(FALSE)
 		step(src, get_dir(AM, src))
-	hit(tforce)
 	mount_check()
 
 /obj/structure/window/attack_tk(mob/user as mob)
@@ -296,10 +297,9 @@
 
 	var/tforce = 15
 	if(reinf) tforce *= 0.25
-	if(health - tforce <= 7 && !reinf)
+	if(hit(tforce) && health <= 7 && !reinf)
 		set_anchored(FALSE)
 		step(src, get_dir(M, src))
-	hit(tforce)
 	mount_check()
 
 /obj/structure/window/attackby(obj/item/I, mob/user)
@@ -390,7 +390,7 @@
 	damage = take_damage(damage, TRUE, ignore_resistance)
 	if(sound_effect && loc) // If the window was shattered and, thus, nullspaced, don't try to play hit sound
 		playsound(loc, 'sound/effects/glasshit.ogg', damage*4.5, 1, damage*0.6, damage*0.6) //The harder the hit, the louder and farther travelling the sound
-
+	return damage
 
 /obj/structure/window/proc/rotate()
 	set name = "Rotate Window Counter-Clockwise"
@@ -545,7 +545,7 @@
 	maximal_heat = T0C + 200	// Was 100. Spaceship windows surely surpass coffee pots.
 	damage_per_fire_tick = 3.0	// Was 2. Made weaker than rglass per tick.
 	maxHealth = 15
-	resistance = RESISTANCE_NONE
+	resistance = RESISTANCE_FLIMSY
 
 /obj/structure/window/basic/full
 	dir = SOUTH|EAST
@@ -553,7 +553,7 @@
 	icon_state = "fwindow"
 	alpha = 120
 	maxHealth = 40
-	resistance = RESISTANCE_NONE
+	resistance = RESISTANCE_FLIMSY
 	flags = null
 
 /obj/structure/window/plasmabasic

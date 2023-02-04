@@ -108,11 +108,11 @@
 	)
 
 /obj/item/rig/combat/knight
-	name = "knight hardsuit control module"
-	desc = "A RIG module for a \"Knight\" model hardsuit, jointly manufactured by Divisors and Numericals of the New Testament. \
+	name = "hussar hardsuit control module"
+	desc = "A RIG module for a \"Hussar\" model hardsuit, jointly manufactured by Divisors and Numericals of the New Testament. \
 	The Tau Cross shining brightly upon its shoulder, it offers moderate combat protection against many a type of threat to the Absolute."
-	icon_state = "knight_rig"
-	suit_type = "knight rig"
+	icon_state = "hussar_rig" //Rig modula by Gundam Tanaka#9565
+	suit_type = "hussar rig"
 	armor_list = list(
 		melee = 50,
 		bullet = 45,
@@ -139,17 +139,17 @@
 		/obj/item/rig_module/held/shield
 		)
 
-/obj/item/clothing/suit/space/rig/combat/knight
-	name = "knight hardsuit breastplate"
+/obj/item/clothing/suit/space/rig/combat/knight //Suit by Polyushko#0323
+	name = "hussar hardsuit breastplate"
 
-/obj/item/clothing/gloves/rig/combat/knight
-	name = "knight hardsuit gauntlets"
+/obj/item/clothing/gloves/rig/combat/knight //Gloves by Gundam Tanaka#9565
+	name = "hussar hardsuit gauntlets"
 
-/obj/item/clothing/shoes/magboots/rig/combat/knight
-	name = "knight hardsuit greaves"
+/obj/item/clothing/shoes/magboots/rig/combat/knight //Boots by Gundam Tanaka#9565
+	name = "hussar hardsuit greaves"
 
-/obj/item/clothing/head/helmet/space/rig/combat/knight
-	name = "knight hardsuit full helm"
+/obj/item/clothing/head/helmet/space/rig/combat/knight //Helm by Polyushko#0323
+	name = "hussar hardsuit full helm"
 	desc = "One's spirit is generally the greatest shield."
 	light_overlay = "helmet_light_dual"
 	armor_list = list(

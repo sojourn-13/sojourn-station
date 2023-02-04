@@ -61,3 +61,4 @@
 	range_telegraph = "starts to spin their sling around, orienting it towards"
 	bones_amount = 1
 	var/knock_over_odds = 5
+	inherent_mutations = list(MUTATION_BLOOD_BANK)

@@ -158,3 +158,8 @@ var/list/datum/ai_icon/ai_icons
 	name = "Law 2"
 	alive_icon = "ai-law2"
 	dead_icon = "ai-law2_dead"
+
+/datum/ai_icon/door_command
+	name = "Fish!"
+	alive_icon = "fish"
+	dead_icon = "ai-heartline_dead"

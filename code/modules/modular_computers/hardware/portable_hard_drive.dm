@@ -99,7 +99,7 @@
 		store_file(D)
 	..()
 
-/obj/item/computer_hardware/hard_drive/portable/ui_data()
+/obj/item/computer_hardware/hard_drive/portable/nano_ui_data()
 	var/list/data = ..()
 	data["license"] = license
 	return data

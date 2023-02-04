@@ -132,7 +132,7 @@
 	if(iscarbon(L))
 		gib = FALSE
 		if(!L.stat)
-			L.emote("scream", , , 1)
+			L.emote("painscream", , , 1)
 		add_blood(L)
 	if(!blood && !issilicon(L))
 		blood = TRUE
@@ -159,8 +159,6 @@
 	if(istype(L, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = L
 		H.nutrition -= 100
-		if(H.nutrition <= 0)
-			H.gib()
 		if(H.isMonkey())
 			slab_type = /obj/item/reagent_containers/food/snacks/meat/monkey
 		else

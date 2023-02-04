@@ -15,6 +15,7 @@
  *		Action figures
  *		Plushies
  *		Toy cult sword
+ *		Misc. Crafting for export goods, by Wilson! They're functionally useless, so what better place to have them?
  */
 
 
@@ -23,6 +24,7 @@
 	throw_speed = 4
 	throw_range = 20
 	matter = list(MATERIAL_PLASTIC = 3)
+	preloaded_reagents = list("plasticide" = 12)
 	force = NONE
 	price_tag = 10
 
@@ -116,6 +118,14 @@
 	desc = "Tiny cute Christmas tree."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "tinyxmastree"
+
+/obj/item/toy/junk/photo_frame
+    name = "a blank photo frame"
+    desc = "This usually has some photo on it, but you're drawing a blank right now!"
+    icon_state = "photo"
+    item_state = "paper"
+    icon = 'icons/obj/items.dmi'
+    w_class = ITEM_SIZE_SMALL
 
 /*
  * Toy crossbow
@@ -238,6 +248,19 @@
 	anchored = 1
 	density = 0
 
+/obj/item/storage/box/foambow
+	name = "foam crossbow ammo"
+	desc = "A box containing ammo for the foam crossbow."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "foambox"
+
+/obj/item/storage/box/foambow/populate_contents()
+	new /obj/item/toy/ammo/crossbow(src)
+	new /obj/item/toy/ammo/crossbow(src)
+	new /obj/item/toy/ammo/crossbow(src)
+	new /obj/item/toy/ammo/crossbow(src)
+	new /obj/item/toy/ammo/crossbow(src)
+	new /obj/item/toy/ammo/crossbow(src)
 
 /*Toy Weapons*/
 /obj/item/toy/weapon/sword
@@ -291,6 +314,13 @@
 	item_state = "cultblade"
 	w_class = ITEM_SIZE_BULKY
 	attack_verb = list("attacked", "slashed", "stabbed", "poked")
+
+/obj/item/toy/badtothebone // CHANANANA NANA
+	name = "replica skull"
+	desc = "A fake skull for theatrical purposes, it's neither alive nor almighty. Alas, poor Yorick..."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "yorick"
+	item_state = "yorick"
 
 /*
  * Snap pops
@@ -500,16 +530,16 @@
 /obj/item/toy/figure/character/attack_self(mob/user as mob)
 	if(cooldown < world.time)
 		cooldown = (world.time + 30) //3 second cooldown
-		user.visible_message("<span class='notice'>The [src] says \"[toysay]\".</span>")
+		user.visible_message("<span class='notice'>\The [src] says \"[toysay]\".</span>")
 		playsound(user, 'sound/machines/click.ogg', 20, 1)
 
 /*Civilian*/
 
 /obj/item/toy/figure/character/civilian/assistant
-	name = "assistant action figure"
+	name = "colonist action figure"
 	desc = "The lowly but dutiful helper. Civilians 1/7."
-	icon_state = "assistant"
-	toysay = "Greytide, stationwide!"
+	icon_state = "colonist"
+	toysay = "Where's dorms?"
 
 /obj/item/toy/figure/character/civilian/bartender
 	name = "bartender action figure"
@@ -551,43 +581,43 @@
 
 /obj/item/toy/figure/character/moebius/cmo
 	name = "biolab overseer action figure"
-	desc = "The health of the crew is in their hands. Soteria 1/9."
+	desc = "The health of the crew is in their hands. Soteria 1/8."
 	icon_state = "cmo"
 	toysay = "Suit sensors on, people!"
 
 /obj/item/toy/figure/character/moebius/rd
 	name = "research overseer action figure"
-	desc = "All research requests go through them. Soteria 2/9."
+	desc = "All research requests go through them. Soteria 2/8."
 	icon_state = "rd"
 	toysay = "One day, I'll get a rubber ducky on my office..."
 
 /obj/item/toy/figure/character/moebius/md
 	name = "medical doctor action figure"
-	desc = "They'll do their best to uphold the oath. Soteria 3/9."
+	desc = "They'll do their best to uphold the oath. Soteria 3/8."
 	icon_state = "md"
 	toysay = "You got the cash for treatment, right...?"
 
 /obj/item/toy/figure/character/moebius/psychologist
 	name = "psychologist action figure"
-	desc = "Diseases of the mind are just as deadly. Soteria 4/9."
+	desc = "Diseases of the mind are just as deadly. Soteria 4/8."
 	icon_state = "psychologist"
 	toysay = "Just come and have a seat."
 
 /obj/item/toy/figure/character/moebius/paramedic
-	name = "paramedic action figure"
-	desc = "They'll go anywhere to save a life. Soteria 5/9."
+	name = "lifeline technician action figure"
+	desc = "They'll go anywhere to save a life. Soteria 5/8."
 	icon_state = "paramedic"
 	toysay = "Your sensors are off, where are you?!"
 
 /obj/item/toy/figure/character/moebius/chemist
 	name = "chemist action figure"
-	desc = "Hopefully it won't blow up this time. Soteria 6/9."
+	desc = "Hopefully it won't blow up this time." // Job don't exist
 	icon_state = "chemist"
 	toysay = "Pills here!"
 
 /obj/item/toy/figure/character/moebius/scientist
 	name = "scientist action figure"
-	desc = "Their experiments sometimes go wacky. Soteria 7/9."
+	desc = "Their experiments sometimes go wacky. Soteria 7/8."
 	icon_state = "scientist"
 	toysay = "I swear that is just a new mutant tobacco strain I discovered, Officer..."
 
@@ -666,13 +696,13 @@
 /*Security*/
 
 /obj/item/toy/figure/character/ironhammer/hos
-	name = "commander action figure"
+	name = "warrant officer action figure"
 	desc = "The most formidable force on the station. Marshal 1/4."
 	icon_state = "hos"
 	toysay = "I'll be hugging my fax machine on my office if anyone needs me..."
 
 /obj/item/toy/figure/character/ironhammer/secofficer
-	name = "operative action figure"
+	name = "marshal officer action figure"
 	desc = "They don't make the law, but they enforce it. Marshal 2/4."
 	icon_state = "secofficer"
 	toysay = "Where's your gun case?"
@@ -920,8 +950,8 @@
 
 /obj/structure/plushie/carp
 	name = "plush carp"
-	desc = "A plushie of an elated carp! Straight from the wilds of the Nyx frontier, now right here in your hands."
-	icon_state = "carpplushie"
+	desc = "A plushie of an elated carp! Straight from the wilds of the Chromin 8 frontier, now right here in your hands."
+	icon_state = "carpplushie" // Realistically scary
 	phrase = "Glorf!"
 
 /obj/structure/plushie/beepsky
@@ -1027,55 +1057,55 @@
 	phrase = "Hug!"
 
 /obj/item/toy/plushie/fox
-	name = "fox red plushie"
+	name = "red fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "redfox"
 	phrase = "Gecker!"
 
 /obj/item/toy/plushie/fox/black
-	name = "fox black plushie"
+	name = "black fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "blackfox"
 	phrase = "Ack!"
 
 /obj/item/toy/plushie/fox/marble
-	name = "fox marble plushie"
+	name = "arctic fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "marblefox"
 	phrase = "Awoo!"
 
 /obj/item/toy/plushie/fox/blue
-	name = "fox blue plushie"
+	name = "blue fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "bluefox"
 	phrase = "Yoww!"
 
 /obj/item/toy/plushie/fox/orange
-	name = "fox orange plushie"
+	name = "orange fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "orangefox"
 	phrase = "Yagh!"
 
 /obj/item/toy/plushie/fox/coffee
-	name = "fox coffee plushie"
+	name = "coffee fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "coffeefox"
 	phrase = "Gerr!"
 
 /obj/item/toy/plushie/fox/pink
-	name = "fox pink plushie"
+	name = "pink fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "pinkfox"
 	phrase = "Yack!"
 
 /obj/item/toy/plushie/fox/purple
-	name = "fox purple plushie"
+	name = "purple fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "purplefox"
 	phrase = "Whine!"
 
 /obj/item/toy/plushie/fox/crimson
-	name = "fox crimson plushie"
+	name = "crimson fox plushie"
 	desc = "A fox plush doll."
 	icon_state = "crimsonfox"
 	phrase = "Auuu!"
@@ -1087,63 +1117,63 @@
 	phrase = "Bleat!"
 
 /obj/item/toy/plushie/cat
-	name = "cat black plushie"
+	name = "black cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "blackcat"
 	phrase = "Mlem!"
 
 /obj/item/toy/plushie/cat/grey
-	name = "cat grey plushie"
+	name = "grey cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "greycat"
 	phrase = "Mraw!"
 
 /obj/item/toy/plushie/cat/white
-	name = "cat white plushie"
+	name = "white cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "whitecat"
 	phrase = "Mew!"
 
 /obj/item/toy/plushie/cat/orange
-	name = "cat orange plushie"
+	name = "orange cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "orangecat"
 	phrase = "Meow!"
 
 /obj/item/toy/plushie/cat/siamese
-	name = "cat siamese plushie"
+	name = "siamese cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "siamesecat"
 	phrase = "Mrew?"
 
 /obj/item/toy/plushie/cat/tabby
-	name = "cat tabby plushie"
+	name = "tabby cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "tabbycat"
 	phrase = "Purr!"
 
 /obj/item/toy/plushie/cat/tuxedo
-	name = "cat tuxedo plushie"
+	name = "tuxedo cat plushie"
 	desc = "A cat plush doll."
 	icon_state = "tuxedocat"
 	phrase = "Mrowww!!"
 
 /obj/item/toy/plushie/squid
-	name = "squid green plushie"
+	name = "green squid plushie"
 	desc = "A small, cute and loveable squid friend. This one is green."
 	icon_state = "greensquid"
 	slot_flags = SLOT_HEAD
 	phrase = "Squrr!"
 
 /obj/item/toy/plushie/squid/mint
-	name = "squid mint plushie"
+	name = "mint squid plushie"
 	desc = "A small, cute and loveable squid friend. This one is mint."
 	icon_state = "mintsquid"
 	slot_flags = SLOT_HEAD
 	phrase = "Blurble!"
 
 /obj/item/toy/plushie/squid/blue
-	name = "squid blue plushie"
+	name = "blue squid plushie"
 	desc = "A small, cute and loveable squid friend. This one is blue."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "bluesquid"
@@ -1151,21 +1181,21 @@
 	phrase = "Blob!"
 
 /obj/item/toy/plushie/squid/orange
-	name = "squid orange plushie"
+	name = "orange squid plushie"
 	desc = "A small, cute and loveable squid friend. This one is orange."
 	icon_state = "orangesquid"
 	slot_flags = SLOT_HEAD
 	phrase = "Squash!"
 
 /obj/item/toy/plushie/squid/yellow
-	name = "squid yellow plushie"
+	name = "yellow squid plushie"
 	desc = "A small, cute and loveable squid friend. This one is yellow."
 	icon_state = "yellowsquid"
 	slot_flags = SLOT_HEAD
 	phrase = "Glorble!"
 
 /obj/item/toy/plushie/squid/pink
-	name = "squid pink plushie"
+	name = "pink squid plushie"
 	desc = "A small, cute and loveable squid friend. This one is pink."
 	icon_state = "pinksquid"
 	slot_flags = SLOT_HEAD
@@ -1213,14 +1243,24 @@
 	item_state = "egg3" // It's the green egg in items_left/righthand
 	w_class = ITEM_SIZE_TINY
 
-/obj/item/toy/plushie/fumo/arcueid // If people want to add more fumos, make them children of this one. - Seb
-	name = "neco arc fumo"
-	desc = "...What the fuck?"
-	icon_state = "arcueid"
-	phrase = "Burenyaa~"
-	var/pokesound = 'sound/sanity/burenyaa.ogg'
 
-/obj/item/toy/plushie/fumo/arcueid/attack_self(mob/user as mob)
+/obj/item/toy/plushie/fumo
+	name = "\improper placeholder fumo"
+	icon_state = "arcueid"
+	desc = "You shouldn't be seeing this..."
+	phrase = ""
+	var/pokesound = null
+
+/obj/item/toy/plushie/fumo/marisa
+	icon_state = "fumoplushie_marisa"
+
+/obj/item/toy/plushie/fumo/astolfo
+	icon_state = "fumoplushie_astolfo"
+
+/obj/item/toy/plushie/fumo/cirno
+	icon_state = "fumoplushie_cirno"
+
+/obj/item/toy/plushie/fumo/attack_self(mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(user.a_intent == I_HELP)
 		user.visible_message(SPAN_NOTICE("<b>\The [user]</b> hugs [src]!"),SPAN_NOTICE("You hug [src]!"))
@@ -1233,8 +1273,22 @@
 		visible_message("[src] says, \"[phrase]\"")
 		playsound(src.loc, pokesound, 50, 0) // Should work for any pokesound anyone might want to add to fumos.
 
+/obj/item/toy/plushie/fumo/arcueid // Make sure all future fumos are children of /fumo and not this one.
+	name = "\improper Neco Arc fumo"
+	desc = "...What the fuck?"
+	icon_state = "arcueid"
+	phrase = "Burenyaa~"
+	pokesound = 'sound/sanity/burenyaa.ogg'
+
+/obj/item/toy/plushie/fumo/necochaos
+	name = "\improper Neco Arc Chaos fumo"
+	desc = "Hey! Taxi!"
+	icon_state = "neco-chaos"
+	phrase = "Money...ideals...canned cat food...nightmare."
+	pokesound = 'sound/sanity/nyah.ogg'
+
 /obj/item/toy/plushie/carp
-	name = "carp space plushie"
+	name = "space carp plushie"
 	desc = "An adorable stuffed toy that resembles a space carp."
 	icon_state = "basecarp"
 	attack_verb = list("bitten", "eaten", "fin slapped")
@@ -1251,43 +1305,43 @@
 	return ..()
 
 /obj/item/toy/plushie/carp/ice
-	name = "carp ice plushie"
+	name = "ice carp plushie"
 	icon_state = "icecarp"
 
 /obj/item/toy/plushie/carp/silent
-	name = "carp monochrome plushie"
+	name = "monochrome carp plushie"
 	icon_state = "silentcarp"
 
 /obj/item/toy/plushie/carp/electric
-	name = "carp electric plushie"
+	name = "electric carp plushie"
 	icon_state = "electriccarp"
 
 /obj/item/toy/plushie/carp/gold
-	name = "carp golden plushie"
+	name = "golden carp plushie"
 	icon_state = "goldcarp"
 
 /obj/item/toy/plushie/carp/toxin
-	name = "carp toxic plushie"
+	name = "toxic carp plushie"
 	icon_state = "toxincarp"
 
 /obj/item/toy/plushie/carp/dragon
-	name = "carp dragon plushie"
+	name = "dragon carp plushie"
 	icon_state = "dragoncarp"
 
 /obj/item/toy/plushie/carp/pink
-	name = "carp pink plushie"
+	name = "pink carp plushie"
 	icon_state = "pinkcarp"
 
 /obj/item/toy/plushie/carp/candy
-	name = "carp candy plushie"
+	name = "candy carp plushie"
 	icon_state = "candycarp"
 
 /obj/item/toy/plushie/carp/nebula
-	name = "carp nebula plushie"
+	name = "nebula carp plushie"
 	icon_state = "nebulacarp"
 
 /obj/item/toy/plushie/carp/void
-	name = "carp void plushie"
+	name = "void carp plushie"
 	icon_state = "voidcarp"
 
 /*Inflatable Duck*/
@@ -1299,6 +1353,23 @@
 	item_state = "inflatable"
 	icon = 'icons/inventory/belt/icon.dmi'
 	slot_flags = SLOT_BELT
+
+/*Inflatable Duck*/
+
+/obj/item/toy/junk/dodgeball
+	name = "dodgeball"
+	desc = "A rubber ball with air in it. Intented to be thrown at one a other for fun games."
+	icon_state = "wrench"
+	item_state = "contraband "
+	icon = 'icons/obj/toy.dmi'
+	attack_verb = list("tapped", "outted")
+
+/obj/item/toy/junk/dodgeball/face
+	name = "Buddy dodgeball"
+	icon_state = "contraband"
+	item_state = "contraband"
+	desc = "A rubber ball with air in it. Intented to be thrown at one a other for fun games. This one has a face on it."
+
 
 
 //////////////////////////////////////////////////////
@@ -1361,3 +1432,33 @@
 	name = "dipping bird model"
 	desc = "A favorite amongst clerks and desk jockeys."
 	icon_state= "dippybird"
+
+//Consumer!!!
+
+/obj/item/toy/consumer
+	name = "Notably Generic Consumer Concept"
+	desc = "Do NOT consume. Oh my goodness gracious."
+	icon = 'icons/obj/crafts_consumergood.dmi'
+
+/obj/item/toy/consumer/kit
+	name = "Notably Generic Consumer Kit"
+	desc = "Do NOT assemble. Oh me oh my."
+	icon = 'icons/obj/crafts_consumergood.dmi'
+	price_tag = 60
+
+/obj/item/toy/consumer/product
+	matter = list(MATERIAL_STEEL = 3)
+	name = " Notably Generic Consumer Product"
+	desc = "Do NOT produce."
+	icon = 'icons/obj/crafts_consumergood.dmi'
+	price_tag = 125
+
+/obj/item/toy/consumer/kit/toaster
+	name = "toaster assembly kit"
+	desc = "Everything you need to assemble your very own toolbox themed toaster!"
+	icon_state = "placeholder_device"
+
+/obj/item/toy/consumer/product/toaster
+	name = "toolbox toaster"
+	desc = "A toolbox themed toaster! Too bad there's no compatible outlets here. Only comes in red. Keep away from bathtubs."
+	icon_state = "toaster"

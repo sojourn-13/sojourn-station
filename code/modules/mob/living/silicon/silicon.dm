@@ -36,14 +36,16 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	colony_friend = TRUE
 
+	status_flags = CANWEAKEN|CANSTUN|CANPUSH
+
 /mob/living/silicon/Initialize()
 	GLOB.silicon_mob_list |= src
 	. = ..()
 	add_language(LANGUAGE_COMMON)
 	add_language(LANGUAGE_ROBOT)
 	add_language(LANGUAGE_COMMON)
-	add_language(LANGUAGE_SERBIAN)
-	add_language(LANGUAGE_GERMAN)
+	add_language(LANGUAGE_ILLYRIAN)
+	add_language(LANGUAGE_EURO)
 	add_language(LANGUAGE_JANA)
 	add_language(LANGUAGE_CYRILLIC)
 	add_language(LANGUAGE_LATIN)
@@ -96,8 +98,7 @@
 			src.take_organ_damage(0,10,emp=TRUE)
 			confused = (min(confused + 2, 30))
 //	flick("noise", src.flash)
-	if (HUDtech.Find("flash"))
-		flick("noise", HUDtech["flash"])
+	flash(0, FALSE , FALSE , FALSE)
 	to_chat(src, SPAN_DANGER("<B>*BZZZT*</B>"))
 	to_chat(src, SPAN_DANGER("Warning: Electromagnetic pulse detected."))
 	..()
@@ -276,9 +277,7 @@
 	return 1
 
 /mob/living/silicon/ex_act(severity)
-	if(!blinded)
-		if (HUDtech.Find("flash"))
-			flick("flash", HUDtech["flash"])
+	flash(0, FALSE , FALSE , FALSE)
 
 	switch(severity)
 		if(1.0)
@@ -355,8 +354,8 @@
 		cameratext += "[(cameratext == "")? "" : "|"]<A HREF='?src=\ref[src];switchcamera=\ref[C]'>[C.c_tag]</A>"
 	to_chat(src, "[A.alarm_name()]! ([(cameratext)? cameratext : "No Camera"])")
 
-/mob/living/silicon/proc/is_malf_or_traitor()
-	return check_special_role(ROLE_TRAITOR) || check_special_role(ROLE_MALFUNCTION)
+/mob/living/silicon/proc/is_malf_or_contractor()
+	return check_special_role(ROLE_CONTRACTOR) || check_special_role(ROLE_MALFUNCTION)
 
 /mob/living/silicon/adjustEarDamage()
 	return

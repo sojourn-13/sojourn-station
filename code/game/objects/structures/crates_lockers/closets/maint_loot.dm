@@ -23,6 +23,7 @@
 	new /obj/random/pack/gun_loot/low_chance(src)
 	new /obj/random/pouch/hardcase_scrap/low_chance(src)
 	new /obj/random/cluster/roaches/lower_chance(src)
+	new /obj/random/gun_parts/low(src)
 
 /obj/structure/closet/random_tech
 	name = "\improper technical closet"
@@ -102,6 +103,8 @@
 	new /obj/random/medical/low_chance(src)
 	new /obj/random/pouch/hardcase_scrap/low_chance(src)
 	new /obj/random/cluster/roaches/lower_chance(src)
+	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/low(src)
 
 /obj/structure/closet/random_medsupply
 	name = "\improper medical supply closet"
@@ -144,6 +147,9 @@
 	new /obj/random/pack/gun_loot(src)
 	new /obj/random/pouch/hardcase_scrap/low_chance(src)
 	new /obj/random/cluster/roaches/lower_chance(src)
+	new /obj/random/gun_parts(src)
+	new /obj/random/gun_parts(src)
+	new /obj/random/gun_parts/low(src)
 
 
 //Closet with unfair bullshit inside
@@ -156,6 +162,8 @@
 /obj/structure/closet/random_hostilemobs/populate_contents()
 	new /obj/random/pack/rare(src) //To reward players for fighting this bullshit
 	new /obj/random/pack/rare(src)
+	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/low(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
@@ -170,6 +178,7 @@
 /obj/structure/closet/random_hostilemobs/beacon/populate_contents()
 	new /obj/random/pack/rare(src) //To reward players for fighting this bullshit
 	new /obj/random/pack/rare(src)
+	new /obj/random/gun_parts/low(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)
 	new /obj/random/lowkeyrandom/low_chance(src)

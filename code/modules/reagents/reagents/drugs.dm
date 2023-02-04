@@ -1,24 +1,24 @@
 /* Drugs */
 /datum/reagent/drug
 	reagent_type = "Drug"
-	scannable = 1
+	scannable = TRUE
 
 	var/sanity_gain = 0.5
 
 /datum/reagent/drug/on_mob_add(mob/living/L)
 	..()
-	SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_ADD_DRUG)
+	LEGACY_SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_ADD_DRUG)
 
 /datum/reagent/drug/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(sanity_gain)
 		var/mob/living/carbon/human/H = M
 		if(istype(H))
 			H.sanity.onDrug(src, effect_multiplier)
-		SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
+		LEGACY_SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
 
 /datum/reagent/drug/on_mob_delete(mob/living/L)
 	..()
-	SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_DELETE_DRUG)
+	LEGACY_SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_DELETE_DRUG)
 
 /datum/reagent/drug/space_drugs
 	name = "Space drugs"
@@ -81,7 +81,7 @@
 		var/mob/living/carbon/human/H = M
 		if(istype(H))
 			H.sanity.onDrug(src, effect_multiplier)
-		SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
+		LEGACY_SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
 	..()
 
 /datum/reagent/drug/serotrotium
@@ -359,7 +359,7 @@
 /datum/reagent/drug/hyperzine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(5))
 		M.emote(pick("twitch", "blink_r", "shiver"))
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.6)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.4)
 	M.add_chemical_effect(CE_PULSE, 2)
 	M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
 

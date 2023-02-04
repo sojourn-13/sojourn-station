@@ -68,9 +68,6 @@ var/list/holder_mob_icon_cache = list()
 	slot_flags = SLOT_HEAD | SLOT_OCLOTHING | SLOT_HOLSTER
 
 
-/obj/item/holder/borer
-	origin_tech = list(TECH_BIO = 8)
-
 /obj/item/holder/Process()
 	if (!contained)
 		qdel(src)
@@ -256,7 +253,7 @@ var/list/holder_mob_icon_cache = list()
 			//If the scooping up failed something must have gone wrong
 			H.release_mob()
 
-		return success
+		return
 
 
 /mob/living/proc/get_holder_location()
@@ -526,13 +523,6 @@ var/list/holder_mob_icon_cache = list()
 	item_state = "corgi"
 	//contained_sprite = 1 //Part of contained sprite overhaul, not yet ported
 	w_class = ITEM_SIZE_NORMAL
-
-/obj/item/holder/borer
-	name = "cortical borer"
-	desc = "It's a slimy brain slug. Gross."
-	icon_state = "brainslug"
-	origin_tech = list(TECH_BIO = 6)
-	w_class = ITEM_SIZE_TINY
 
 /obj/item/holder/monkey
 	name = "monkey"

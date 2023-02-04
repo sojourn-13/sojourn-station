@@ -29,9 +29,8 @@
 
 		//blind adjacent people
 		for (var/mob/living/carbon/M in viewers(T, flash_range))
-			if(M.eyecheck() < FLASH_PROTECTION_MODERATE)
-				if (M.HUDtech.Find("flash"))
-					flick("e_flash", M.HUDtech["flash"])
+			if(M.eyecheck() < FLASH_PROTECTION_MINOR)
+				flash(0, FALSE,FALSE,FALSE)
 
 		//snap pop
 		playsound(src, 'sound/effects/snap.ogg', 50, 1)

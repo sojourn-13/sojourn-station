@@ -34,7 +34,7 @@
 
 		/*
 		Further purging of signals for interacting with things -Hex
-		SEND_SIGNAL(src, COMSIG_GLASS_LENSES_REMOVED, usr, src)
+		LEGACY_SEND_SIGNAL(src, COMSIG_GLASS_LENSES_REMOVED, usr, src)
 		*/
 		have_lenses = FALSE
 	else

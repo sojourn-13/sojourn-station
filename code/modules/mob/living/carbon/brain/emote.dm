@@ -11,6 +11,9 @@
 
 	if(src.stat == DEAD)
 		return
+
+	var/cloud_emote = ""
+
 	switch(act)
 		if ("me")
 			if(silent)
@@ -33,14 +36,17 @@
 			to_chat(src, "You sound an alarm.")
 			message = "<B>[src]</B> sounds an alarm."
 			m_type = 2
+			cloud_emote = "cloud-malfunction"
 		if ("alert")
 			to_chat(src, "You let out a distressed noise.")
 			message = "<B>[src]</B> lets out a distressed noise."
 			m_type = 2
+			cloud_emote = "cloud-malfunction"
 		if ("notice")
 			to_chat(src, "You play a loud tone.")
 			message = "<B>[src]</B> plays a loud tone."
 			m_type = 2
+			cloud_emote = "cloud-music"
 		if ("flash")
 			message = "The lights on <B>[src]</B> flash quickly."
 			m_type = 1
@@ -51,6 +57,7 @@
 			to_chat(src, "You whistle.")
 			message = "<B>[src]</B> whistles."
 			m_type = 2
+			cloud_emote = "cloud-music"
 		if ("beep")
 			to_chat(src, "You beep.")
 			message = "<B>[src]</B> beeps."
@@ -68,3 +75,8 @@
 		log_emote("[name]/[key] : [message]")
 
 		send_emote(message, m_type)
+
+	if(cloud_emote)
+		var/image/emote_bubble = image('icons/mob/emote.dmi', src, cloud_emote, ABOVE_MOB_LAYER)
+		flick_overlay(emote_bubble, clients, 30)
+		QDEL_IN(emote_bubble, 3 SECONDS)

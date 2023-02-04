@@ -8,20 +8,20 @@
 //*********************************//
 ///9mm///
 /obj/item/projectile/bullet/pistol_35
-	damage_types = list(BRUTE = 8)
+	damage_types = list(BRUTE = 15)
 	armor_penetration = 5
 	step_delay = 0.65
 	can_ricochet = TRUE
 
-	affective_damage_range = 2
-	affective_ap_range = 2
+	affective_damage_range = 3
+	affective_ap_range = 3
 	recoil = 3
-	added_damage_bullet_pve = 8
+	added_damage_bullet_pve = 4
 
 /obj/item/projectile/bullet/pistol_35/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 3)
+	damage_types = list(BRUTE = 4)
 	agony = 22
 	armor_penetration = 0
 	embed = FALSE
@@ -31,6 +31,8 @@
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific
 	name = "soporific coated rubber bullet"
+	damage_types = list(BRUTE = 0)
+	agony = 25
 	var/spray = "stoxin"
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/New()
@@ -47,8 +49,7 @@
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
 	name = "soporific condensed plastic bullet"
-	damage_types = list(BRUTE = 0)
-	agony = 25
+	agony = 30
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
@@ -58,18 +59,18 @@
 
 
 /obj/item/projectile/bullet/pistol_35/hv
-	damage_types = list(BRUTE = 5)
+	damage_types = list(BRUTE = 10)
 	armor_penetration = 20
 	step_delay = 0.5
 	affective_damage_range = 4
 	affective_ap_range = 4
 	can_ricochet = TRUE
 	recoil = 5
-	added_damage_bullet_pve = 5
+	added_damage_bullet_pve = 2
 
 /obj/item/projectile/bullet/pistol_35/practice
 	name = "practice bullet"
-	damage_types = list(BRUTE = 1)
+	damage_types = list(BRUTE = 2)
 	agony = 3
 	armor_penetration = 0
 	embed = FALSE
@@ -81,7 +82,7 @@
 
 /obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 8.5)
+	damage_types = list(BRUTE = 17)
 	agony = 6
 	post_penetration_dammult = 2
 	armor_penetration = 0
@@ -91,20 +92,20 @@
 	sharp = TRUE
 	step_delay = 0.65
 	recoil = 2
-	added_damage_bullet_pve = 17
+	added_damage_bullet_pve = 14
 
 /obj/item/projectile/bullet/pistol_35/scrap
-	damage_types = list(BRUTE = 6)
+	damage_types = list(BRUTE = 12)
 	armor_penetration = 0
 
 	affective_damage_range = 1
 	affective_ap_range = 1
 	recoil = 1
-	added_damage_bullet_pve = 6
+	added_damage_bullet_pve = 3
 
 /obj/item/projectile/bullet/pistol_35/biomatter
 	name = "biomatter bullet"
-	damage_types = list(TOX = 9)
+	damage_types = list(TOX = 15)
 	agony = 20
 	armor_penetration = 0
 	penetrating = 0
@@ -114,27 +115,28 @@
 	step_delay = 0.65
 	check_armour = ARMOR_BIO
 	recoil = 1
-	added_damage_bullet_pve = 9
+	added_damage_bullet_pve = 6
 
 //Revolvers and high-caliber pistols
 //*********************************//
 /// 10mm Magnum ///
 
 /obj/item/projectile/bullet/magnum_40
-	damage_types = list(BRUTE = 12)
+	icon_state = "bullet_magnum"
+	damage_types = list(BRUTE = 19)
 	armor_penetration = 10
 	can_ricochet = TRUE
 	step_delay = 0.4
 
 	affective_damage_range = 3
 	affective_ap_range = 3
-	recoil = 4
-	added_damage_bullet_pve = 12
+	recoil = 5
+	added_damage_bullet_pve = 9
 
 /obj/item/projectile/bullet/magnum_40/practice
 	name = "practice bullet"
-	damage_types = list(BRUTE = 1)
-	agony = 3
+	damage_types = list(BRUTE = 2)
+	agony = 4
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
@@ -144,27 +146,27 @@
 	added_damage_bullet_pve = 1
 
 /obj/item/projectile/bullet/magnum_40/hv
-	damage_types = list(BRUTE = 10)
+	damage_types = list(BRUTE = 16)
 	armor_penetration = 33
 	penetrating = 1
 	step_delay = 0.25
 	nocap_structures = TRUE //Door breaching
 	affective_damage_range = 4
 	affective_ap_range = 4
-	recoil = 6
-	added_damage_bullet_pve = 10
+	recoil = 7
+	added_damage_bullet_pve = 7
 
 /obj/item/projectile/bullet/magnum_40/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 5)
+	damage_types = list(BRUTE = 12)
 	agony = 30
 	armor_penetration = 0
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 0.5
-	recoil = 2
-	added_damage_bullet_pve = 5
+	recoil = 4
+	added_damage_bullet_pve = 2
 
 /obj/item/projectile/bullet/magnum_40/rubber/pepperball
 	name = "pepperball"
@@ -187,6 +189,8 @@
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific
 	name = "soporific coated rubber bullet"
+	damage_types = list(BRUTE = 0)
+	agony = 35
 	var/spray = "stoxin"
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific/New()
@@ -203,7 +207,7 @@
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 12)
+	damage_types = list(BRUTE = 19)
 	agony = 11
 	armor_penetration = 0
 	post_penetration_dammult = 2
@@ -212,20 +216,20 @@
 	embed = TRUE
 	sharp = TRUE
 	step_delay = 0.5
-	recoil = 2
-	added_damage_bullet_pve = 24
+	recoil = 5
+	added_damage_bullet_pve = 21
 
 /obj/item/projectile/bullet/magnum_40/scrap
-	damage_types = list(BRUTE = 10)
+	damage_types = list(BRUTE = 16)
 	armor_penetration = 5
 	affective_damage_range = 1
 	affective_ap_range = 1
-	recoil = 1
-	added_damage_bullet_pve = 10
+	recoil = 4
+	added_damage_bullet_pve = 7
 
 /obj/item/projectile/bullet/magnum_40/biomatter
 	name = "biomatter bullet"
-	damage_types = list(TOX = 13)
+	damage_types = list(TOX = 20)
 	agony = 32
 	armor_penetration = 0
 	penetrating = 0
@@ -234,32 +238,33 @@
 	sharp = FALSE
 	step_delay = 0.65
 	check_armour = ARMOR_BIO
-	recoil = 2
-	added_damage_bullet_pve = 13
+	recoil = 4
+	added_damage_bullet_pve = 10
 
 /// 12mm Heavy Pistol ///
 /obj/item/projectile/bullet/kurtz_50
-	damage_types = list(BRUTE = 17.5)
+	icon_state = "bullet_krutz"
+	damage_types = list(BRUTE = 23.5)
 	armor_penetration = 15
 	can_ricochet = TRUE
 	embed = TRUE
 	step_delay = 0.65
 	affective_damage_range = 3
 	affective_ap_range = 3
-	recoil = 7
-	added_damage_bullet_pve = 17.5
+	recoil = 8
+	added_damage_bullet_pve = 9.5
 
 /obj/item/projectile/bullet/kurtz_50/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 8)
+	damage_types = list(BRUTE = 13)
 	agony = 35
 	check_armour = ARMOR_MELEE
 	armor_penetration = 0
 	can_ricochet = TRUE
 	step_delay = 0.75
-	recoil = 5
-	added_damage_bullet_pve = 8
+	recoil = 6
+	added_damage_bullet_pve = 3
 
 /obj/item/projectile/bullet/kurtz_50/practice
 	name = "practice bullet"
@@ -274,19 +279,19 @@
 
 /obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 15)
+	damage_types = list(BRUTE = 20)
 	agony = 12
 	post_penetration_dammult = 2
 	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
 	step_delay = 0.8
-	recoil = 6
-	added_damage_bullet_pve = 30
+	recoil = 10
+	added_damage_bullet_pve = 25
 
 /obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
-	damage_types = list(BRUTE = 15)
+	damage_types = list(BRUTE = 20)
 	armor_penetration = 35
 	penetrating = 2
 	can_ricochet = FALSE
@@ -294,8 +299,8 @@
 	affective_damage_range = 4
 	affective_ap_range = 4
 	nocap_structures = TRUE //We can breach doors rather well
-	recoil = 10
-	added_damage_bullet_pve = 15
+	recoil = 12
+	added_damage_bullet_pve = 10
 
 
 //Carbines and rifles
@@ -304,15 +309,16 @@
 /// 6.5x39mm Carbine///
 
 /obj/item/projectile/bullet/light_rifle_257
-	damage_types = list(BRUTE = 11)
+	icon_state = "bullet_carbine"
+	damage_types = list(BRUTE = 14)
 	armor_penetration = 15
 	penetrating = 1
 	can_ricochet = TRUE
 	step_delay = 0.3
 	affective_damage_range = 7
 	affective_ap_range = 7
-	recoil = 2
-	added_damage_bullet_pve = 11
+	recoil = 3
+	added_damage_bullet_pve = 8
 
 /obj/item/projectile/bullet/light_rifle_257/practice
 	name = "practice bullet"
@@ -323,19 +329,19 @@
 	sharp = FALSE
 	can_ricochet = FALSE
 	step_delay = 0.5
-	recoil = 1
+	recoil = 2
 	added_damage_bullet_pve = 2
 
 /obj/item/projectile/bullet/light_rifle_257/hv
-	damage_types = list(BRUTE = 10)
+	damage_types = list(BRUTE = 13)
 	armor_penetration = 30
 	penetrating = 2
 	hitscan = TRUE
 	affective_damage_range = 8 //Can snipe
 	affective_ap_range = 8
 	nocap_structures = TRUE //RATARATARAT down a door
-	recoil = 4
-	added_damage_bullet_pve = 10
+	recoil = 5
+	added_damage_bullet_pve = 7
 
 /obj/item/projectile/bullet/light_rifle_257/rubber
 	name = "rubber bullet"
@@ -348,12 +354,12 @@
 	sharp = FALSE
 	can_ricochet = TRUE
 	step_delay = 0.9
-	recoil = 1
+	recoil = 2
 	added_damage_bullet_pve = 3
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 9)
+	damage_types = list(BRUTE = 12)
 	agony = 6
 	post_penetration_dammult = 2
 	armor_penetration = 0
@@ -362,16 +368,16 @@
 	embed = TRUE
 	sharp = TRUE
 	step_delay = 0.6
-	recoil = 1
-	added_damage_bullet_pve = 18
+	recoil = 4
+	added_damage_bullet_pve = 15
 
 /obj/item/projectile/bullet/light_rifle_257/scrap
-	damage_types = list(BRUTE = 9)
+	damage_types = list(BRUTE = 12)
 	armor_penetration = 7
 	affective_damage_range = 4
 	affective_ap_range = 4
-	recoil = 1
-	added_damage_bullet_pve = 9
+	recoil = 4
+	added_damage_bullet_pve = 6
 
 /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 	muzzle_type = null
@@ -379,7 +385,7 @@
 /// 7.62x39mm Rifle ///
 
 /obj/item/projectile/bullet/rifle_75
-	damage_types = list(BRUTE = 12.5)
+	damage_types = list(BRUTE = 15.5)
 	armor_penetration = 20
 	penetrating = 1
 	can_ricochet = TRUE
@@ -387,10 +393,10 @@
 	affective_damage_range = 7
 	affective_ap_range = 7
 	recoil = 8
-	added_damage_bullet_pve = 12.5
+	added_damage_bullet_pve = 9.5
 
 /obj/item/projectile/bullet/rifle_75/hv
-	damage_types = list(BRUTE = 11)
+	damage_types = list(BRUTE = 14)
 	armor_penetration = 36
 	penetrating = 2
 	hitscan = TRUE
@@ -398,7 +404,7 @@
 	affective_ap_range = 8
 	nocap_structures = TRUE //Helps against walls and doors
 	recoil = 12
-	added_damage_bullet_pve = 11
+	added_damage_bullet_pve = 7
 
 /obj/item/projectile/bullet/rifle_75/practice
 	name = "practice bullet"
@@ -414,7 +420,7 @@
 /obj/item/projectile/bullet/rifle_75/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 4)
+	damage_types = list(BRUTE = 7)
 	agony = 26
 	check_armour = ARMOR_MELEE
 	armor_penetration = 0
@@ -423,10 +429,13 @@
 	can_ricochet = TRUE
 	step_delay = 0.9
 	recoil = 4
-	added_damage_bullet_pve = 4
+	added_damage_bullet_pve = 1
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific
 	name = "soporific coated rubber bullet"
+	damage_types = list(BRUTE = 4) // Minor damage from blunt trauma, it's meant to be LTL
+	added_damage_bullet_pve = 10 // Justifying the upgrade into a longarm for mob control
+	agony = 30
 	var/spray = "stoxin"
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific/New()
@@ -444,7 +453,7 @@
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 12)
+	damage_types = list(BRUTE = 15)
 	agony = 9
 	post_penetration_dammult = 2
 	armor_penetration = 0
@@ -454,33 +463,34 @@
 	sharp = TRUE
 	step_delay = 0.8
 	recoil = 6
-	added_damage_bullet_pve = 24
+	added_damage_bullet_pve = 21
 
 /obj/item/projectile/bullet/rifle_75/scrap
-	damage_types = list(BRUTE = 11)
+	damage_types = list(BRUTE = 14)
 	armor_penetration = 10
 	affective_damage_range = 3
 	affective_ap_range = 3
 	recoil = 3
-	added_damage_bullet_pve = 11
+	added_damage_bullet_pve = 8
 
 /// 8.6x70mm Heavy Rifle ///
 
 /obj/item/projectile/bullet/heavy_rifle_408
-	damage_types = list(BRUTE = 14)
-	armor_penetration = 30
+	icon_state = "bullet_heavy"
+	damage_types = list(BRUTE = 20)
+	armor_penetration = 25
 	penetrating = 2
 	can_ricochet = TRUE
 	step_delay = 0.3
 	affective_damage_range = 8
 	affective_ap_range = 8
-	recoil = 10
-	added_damage_bullet_pve = 14
+	recoil = 12
+	added_damage_bullet_pve = 12
 
 /obj/item/projectile/bullet/heavy_rifle_408/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 10)
+	damage_types = list(BRUTE = 13)
 	agony = 32
 	check_armour = ARMOR_MELEE
 	armor_penetration = 0
@@ -489,7 +499,7 @@
 	can_ricochet = TRUE
 	step_delay = 0.9
 	recoil = 8
-	added_damage_bullet_pve = 10
+	added_damage_bullet_pve = 7
 
 /obj/item/projectile/bullet/heavy_rifle_408/practice
 	name = "practice bullet"
@@ -505,20 +515,20 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/hv
 	name = "sabot penetrator"
-	damage_types = list(BRUTE = 12)
-	armor_penetration = 48
+	damage_types = list(BRUTE = 16)
+	armor_penetration = 46
 	penetrating = 3
 	hitscan = TRUE
 	affective_damage_range = 9 //Sniping cal
 	affective_ap_range = 9
 	nocap_structures = TRUE //anit-wall/door
-	recoil = 14
-	added_damage_bullet_pve = 12
+	recoil = 16
+	added_damage_bullet_pve = 9
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 14.5)
-	agony = 12
+	damage_types = list(BRUTE = 25)
+	agony = 14
 	post_penetration_dammult = 2
 	armor_penetration = 0 //Half of normal
 	penetrating = 0
@@ -526,21 +536,21 @@
 	embed = TRUE
 	sharp = TRUE
 	step_delay = 0.5
-	recoil = 8
-	added_damage_bullet_pve = 29
+	recoil = 10
+	added_damage_bullet_pve = 26
 
 /obj/item/projectile/bullet/heavy_rifle_408/scrap
-	damage_types = list(BRUTE = 10)
+	damage_types = list(BRUTE = 15)
 	armor_penetration = 15 //half  of normal
-	affective_damage_range = 3
-	affective_ap_range = 3
-	recoil = 6
-	added_damage_bullet_pve = 10
+	affective_damage_range = 4
+	affective_ap_range = 4
+	recoil = 8
+	added_damage_bullet_pve = 7
 
 ///Snowflake  ///
 
 /obj/item/projectile/bullet/c10x24
-	damage_types = list(BRUTE = 9)
+	damage_types = list(BRUTE = 19)
 	armor_penetration = 18
 	penetrating = 2
 	can_ricochet = TRUE
@@ -549,10 +559,10 @@
 	affective_damage_range = 9
 	affective_ap_range = 9
 	recoil = 5
-	added_damage_bullet_pve = 9
+	added_damage_bullet_pve = 3
 
 /obj/item/projectile/bullet/auto_460
-	damage_types = list(BRUTE = 25)
+	damage_types = list(BRUTE = 30)
 	armor_penetration = 25
 	penetrating = 2
 	can_ricochet = TRUE
@@ -560,10 +570,10 @@
 	affective_damage_range = 8
 	affective_ap_range = 8
 	recoil = 12
-	added_damage_bullet_pve = 25
+	added_damage_bullet_pve = 20
 
 /obj/item/projectile/bullet/auto_460/scrap
-	damage_types = list(BRUTE = 12.5)
+	damage_types = list(BRUTE = 17.5)
 	armor_penetration = 15
 	penetrating = 1
 	can_ricochet = TRUE
@@ -571,11 +581,11 @@
 	affective_damage_range = 5
 	affective_ap_range = 5
 	recoil = 10
-	added_damage_bullet_pve = 12.5
+	added_damage_bullet_pve = 7.5
 
-//// 14.5×114mm Anti-Material Rifle Rounds ////
+//// 14.5×114mm Anti-Materiel Rifle Rounds ////
 /obj/item/projectile/bullet/antim
-	damage_types = list(BRUTE = 45)
+	damage_types = list(BRUTE = 60)
 	armor_penetration = 100
 	nocap_structures = TRUE
 	//stun = 5
@@ -585,10 +595,10 @@
 	affective_damage_range = 10
 	affective_ap_range = 10
 	recoil = 40
-	added_damage_bullet_pve = 45
+	added_damage_bullet_pve = 30
 
 /obj/item/projectile/bullet/antim/lethal
-	damage_types = list(BRUTE = 30)
+	damage_types = list(BRUTE = 45)
 	embed = TRUE
 	armor_penetration = 60
 	agony = 100
@@ -597,21 +607,21 @@
 	affective_ap_range = 9
 	penetrating = -5
 	recoil = 20
-	added_damage_bullet_pve = 60
+	added_damage_bullet_pve = 45
 
 /obj/item/projectile/bullet/antim/scrap
-	damage_types = list(BRUTE = 31.5)
+	damage_types = list(BRUTE = 41.5)
 	armor_penetration = 50
 	affective_damage_range = 8
 	affective_ap_range = 8
 	recoil = 30
-	added_damage_bullet_pve = 31.5
+	added_damage_bullet_pve = 21.5
 
 /obj/item/projectile/bullet/antim/ion
-	damage_types = list(BRUTE = 20)
+	damage_types = list(BRUTE = 25)
 	armor_penetration = 40
 	recoil = 15
-	added_damage_bullet_pve = 20
+	added_damage_bullet_pve = 15
 
 /obj/item/projectile/bullet/antim/ion/on_impact(atom/target, blocked = FALSE)
 	. = ..()
@@ -621,7 +631,7 @@
 //smoothbore rifles
 /obj/item/projectile/bullet/ball
 	nocap_structures = TRUE
-	damage_types = list(BRUTE = 30) //Grab me musket as the founding fathers intended
+	damage_types = list(BRUTE = 40) //Grab me musket as the founding fathers intended
 	armor_penetration = 250 //It's a little jenk, but this makes it super effective against mobs while only middle against players given its slow shot pattern. -Kaz
 	agony = 60
 	penetrating = 2
@@ -629,7 +639,7 @@
 	affective_damage_range = 12
 	affective_ap_range = 12 //Good rifling!
 	recoil = 35
-	added_damage_bullet_pve = 30
+	added_damage_bullet_pve = 20
 
 //Shotguns
 //*********************************//
@@ -637,7 +647,7 @@
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	icon_state = "slug"
-	damage_types = list(BRUTE = 27)
+	damage_types = list(BRUTE = 37)
 	armor_penetration = 25
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
@@ -645,12 +655,23 @@
 	affective_damage_range = 5
 	affective_ap_range = 8
 	recoil = 16
-	added_damage_bullet_pve = 27
+	added_damage_bullet_pve = 20
+
+/obj/item/projectile/bullet/shotgun/ceramic
+	name = "ceramic slug"
+	icon_state = "slug"
+	damage_types = list(BRUTE = 30)
+	armor_penetration = 10
+	knockback = 1 //KER-BLAM!!!!
+	affective_damage_range = 4
+	affective_ap_range = 4
+	recoil = 20
+	added_damage_bullet_pve = 10
 
 /obj/item/projectile/bullet/shotgun/beanbag
 	name = "beanbag"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 10)
+	damage_types = list(BRUTE = 15)
 	agony = 60
 	armor_penetration = 0
 	embed = FALSE
@@ -659,10 +680,13 @@
 	affective_damage_range = 5
 	affective_ap_range = 2
 	recoil = 8
-	added_damage_bullet_pve = 10
+	added_damage_bullet_pve = 5
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific
 	name = "soporific coated beanbag"
+	damage_types = list(BRUTE = 10) // They still hurt!
+	agony = 65
+	added_damage_bullet_pve = 10 // For battling mobs as per gun description
 	var/spray = "stoxin"
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific/New()
@@ -692,39 +716,32 @@
 /obj/item/projectile/bullet/shotgun/incendiary
 	//This is the best ammo for pvp in a shotgun, beating the stunshell with its pain and cooks anyone in any armor!
 	damage_types = list(BURN = 22.5) //We deal most of are damage with fire stacks
-	var/fire_stacks = 4 //40 pain a fire proc through ALL armor!
+	fire_stacks = 4 //40 pain a fire proc through ALL armor!
 	recoil = 38
 	added_damage_laser_pve = 22.5
 
-/obj/item/projectile/bullet/shotgun/incendiary/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(iscarbon(target) && !testing)
-		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(fire_stacks)
-		M.IgniteMob()
-
 /obj/item/projectile/bullet/shotgun/scrap
-	damage_types = list(BRUTE = 24)
+	damage_types = list(BRUTE = 27)
 	armor_penetration = 5
 	affective_damage_range = 3
 	affective_ap_range = 4
 	recoil = 8
-	added_damage_bullet_pve = 24
+	added_damage_bullet_pve = 21
 
 /obj/item/projectile/bullet/shotgun/beanbag/scrap
-	damage_types = list(BRUTE = 9)
+	damage_types = list(BRUTE = 13)
 	agony = 55
 	affective_damage_range = 1
 	affective_ap_range = 1
 	recoil = 6
-	added_damage_bullet_pve = 9
+	added_damage_bullet_pve = 6
 
 /obj/item/projectile/bullet/pellet/shotgun/scrap
-	damage_types = list(BRUTE = 4.5)
+	damage_types = list(BRUTE = 7.5)
 	affective_damage_range = 4
 	affective_ap_range = 4
 	recoil = 4
-	added_damage_bullet_pve = 4.5
+	added_damage_bullet_pve = 1.5
 
 //Railgun
 /obj/item/projectile/bullet/shotgun/railgun
@@ -768,15 +785,8 @@
 	embed = FALSE
 	can_ricochet = FALSE
 	knockback = 0
-	var/fire_stacks = 4
+	fire_stacks = 4
 	recoil = 17
-
-/obj/item/projectile/bullet/kurtz_50/incendiary/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(iscarbon(target) && !testing)
-		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(fire_stacks)
-		M.IgniteMob()
 
 /obj/item/projectile/bullet/heavy_rifle_408/railgun
 	can_ricochet = FALSE
@@ -793,23 +803,23 @@
 	can_ricochet = FALSE
 	knockback = 0
 	recoil = 18
-	var/fire_stacks = 4
-
+	fire_stacks = 4
+/*
 /obj/item/projectile/bullet/lrifle/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(iscarbon(target) && !testing)
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
-
+*/
 //Gauss rifle
 /obj/item/projectile/bullet/gauss
 	name = "gauss"
 	icon_state = "gauss"
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/ric4.ogg'
-	damage_types = list(BRUTE = 27)
-	added_damage_bullet_pve = 27
+	damage_types = list(BRUTE = 34)
+	added_damage_bullet_pve = 20
 	armor_penetration = 40
 	check_armour = ARMOR_BULLET
 	embed = FALSE
@@ -825,16 +835,16 @@
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	icon_state = "birdshot-1"
-	damage_types = list(BRUTE = 9)
-	added_damage_bullet_pve = 9
+	damage_types = list(BRUTE = 11)
+	added_damage_bullet_pve = 10
 	agony = 5
 	pellets = 4
 	range_step = 1
 	spread_step = 10
 	knockback = 0 //We do not knockback do to issues with bullet douping
 	step_delay = 0.9
-	affective_damage_range = 1
-	affective_ap_range = 1
+	affective_damage_range = 2
+	affective_ap_range = 2
 	recoil = 11
 
 /obj/item/projectile/bullet/pellet/shotgun/Initialize()
@@ -863,7 +873,7 @@
 /obj/item/projectile/bullet/pellet/shotgun/energy
 	name = "Unstable energy bolt"
 	icon_state = "l_birdshot-1"
-	damage_types = list(BURN = 7.5) //slightly less than buck, but FAR more painful
+	damage_types = list(BURN = 11.5) //slightly less than buck, but FAR more painful
 	armor_penetration = 15 //heated shot melt armor.
 	embed = FALSE
 	can_ricochet = FALSE
@@ -871,7 +881,7 @@
 	muzzle_type = /obj/effect/projectile/plasma/muzzle/red
 	check_armour = ARMOR_ENERGY
 	recoil = 7
-	added_damage_laser_pve = 7.5
+	added_damage_laser_pve = 3.5
 
 //For the love of God don't make this common.
 /obj/item/projectile/bullet/shotgun/payload
@@ -880,7 +890,7 @@
 	damage_types = list(BRUTE = 15)
 	agony = 5
 	knockback = 1
-	var/fire_stacks = 2
+	fire_stacks = 2
 	armor_penetration = 10
 	nocap_structures = TRUE
 	check_armour = ARMOR_BOMB
@@ -893,10 +903,6 @@
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
 	if (!testing)
 		explosion(target, 0, 0, 3)
-		if(iscarbon(target))
-			var/mob/living/carbon/M = target
-			M.adjust_fire_stacks(fire_stacks)
-			M.IgniteMob()
 	return TRUE
 
 //Miscellaneous
@@ -1018,9 +1024,9 @@
 	name = "arrow"
 	icon_state = "arrow"
 	damage_types = list(BRUTE = 2) //Multiplied by 10 when fired.
-	armor_penetration = 2 //..
-	effective_faction = list("wurm", "roach", "spider") //good against common colony mobs
-	damage_mult = 1.5 //but not too good
+	armor_penetration = 2
+	effective_faction = list("wurm", "roach", "spider", "vox_tribe", "russian", "tengo") //good against common colony mobs
+	damage_mult = 2 // Turns out arrows always sucked
 	embed = FALSE //don't want to embed and drop an arrow, that would be weird
 	check_armour = ARMOR_MELEE
 	step_delay = 0.9
@@ -1030,23 +1036,29 @@
 	recoil = 0 //arrow moment
 	added_damage_bullet_pve = 20
 
-/obj/item/projectile/bullet/reusable/arrow/broadhead //Similar base damage, higher embed rate, lower AP. Arrow-hollowpoints type 1.
-	name = "broadhead arrow"
-	icon_state = "arrow-broad"
-	embed = TRUE //we are going to try really hard to embed
-	embed_mult = 3
-	armor_penetration = 1.5
-	create_type = null
-	shrapnel_type = /obj/item/ammo_casing/arrow/broadhead //the ENTIRE arrow!
-
-/obj/item/projectile/bullet/reusable/arrow/serrated
+/obj/item/projectile/bullet/reusable/arrow/serrated //Lower base damage, higher embed rate, higher AP. Arrow HV's, though not as good as the Lodge's.
 	name = "serrated arrow"
 	icon_state = "arrow"
+	embed = TRUE
+	damage_types = list(BRUTE = 1.5) // 15 damage at max pull
+	damage_mult = 1.5 // Less bonus damage against effective faction
+	embed_mult = 3 //we are going to try really hard to embed
+	armor_penetration = 7 // Crossbow bolts are better, however this should not penetrate armor the same as a bullet (if not MORE).
+	hitscan = TRUE // As every HV ammo
+	affective_damage_range = 8
+	affective_ap_range = 8
+	create_type = null
+	shrapnel_type = /obj/item/ammo_casing/arrow/serrated //the ENTIRE arrow!
+
+/obj/item/projectile/bullet/reusable/arrow/broadhead
+	name = "broadhead arrow"
+	icon_state = "arrow-broad"
 	post_penetration_dammult = 1.1
-	damage_types = list(BRUTE = 5.5) //Very good base damage, negligible (5) AP, but no embedding. Think of it as arrow-hollowpoints type 2.
+	damage_types = list(BRUTE = 4.5) //Very good base damage, negligible (5) AP, but no embedding. Think of it as arrow-hollowpoints.
 	embed = FALSE
 	armor_penetration = 0.5
-	create_type = /obj/item/ammo_casing/arrow/serrated
+	create_type = /obj/item/ammo_casing/arrow/broadhead
+	added_damage_bullet_pve = 30 // Raw damage is the name of the game.
 
 /obj/item/projectile/bullet/reusable/arrow/hunting
 	name = "hunting arrow"
@@ -1054,8 +1066,8 @@
 	damage_types = list(BRUTE = 1) //Multiplied by 10 when fired.
 	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE)
 	supereffective_mult = 5 //we do 10 damage base, up to 50 against SE mobs, then with 50 AP on should do ~100. Slow to fire, unwieldly, slow projectiles (but reusable), so I'll say this is fair?
-	armor_penetration = 5 //high ap to take advantage of overpen on mobs
-	step_delay = 0.8
+	armor_penetration = 10 //high ap to take advantage of overpen on mobs
+	step_delay = 0.7 // 20% faster than normal arrows
 	affective_damage_range = 8 //worse than the baroque, but better than regular arrows
 	affective_ap_range = 8
 	create_type = /obj/item/ammo_casing/arrow/hunting
@@ -1065,9 +1077,10 @@
 	icon_state = "arrow-bone"
 	damage_types = list(BRUTE = 2) //Multiplied by 10 when fired.
 	embed = TRUE
+	hitscan = TRUE // Sniping round, fast
 	supereffective_mult = 18 //we do 20 damage base, up to 360 against SE mobs, then with 55 (+5 hunting bow) AP on should do ~410. Baroque is around ~430 vs mobs, so roughly baroque-tier vs mobs, with the same wieldliness and different ammo costs (bone/leather/metal/plastic vs metal/cardboard).
-	affective_damage_range = 8
-	affective_ap_range = 8
+	affective_damage_range = 10 // Worse than Baroque, better than its predecesor arrow
+	affective_ap_range = 10
 	create_type = null //NOT reusable.
 
 /obj/item/projectile/bullet/reusable/arrow/reagent

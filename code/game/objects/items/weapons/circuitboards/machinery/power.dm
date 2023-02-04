@@ -64,3 +64,16 @@
 		/obj/item/stock_parts/scanning_module = 1,
 		/obj/item/stock_parts/manipulator = 1
 	)
+
+
+/obj/item/circuitboard/os_generator
+	name = "fusion microgenerator"
+	build_path = /obj/machinery/power/port_gen/os_generator
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 3, TECH_POWER = 5, TECH_ENGINEERING = 5)
+	req_components = list(
+		/obj/item/stock_parts/console_screen = 1,
+		/obj/item/stock_parts/micro_laser/one_star = 1,		// If not OS, no output
+		/obj/item/stack/cable_coil = 2,
+		/obj/item/stock_parts/capacitor/one_star = 1			// If not OS, no output
+	)

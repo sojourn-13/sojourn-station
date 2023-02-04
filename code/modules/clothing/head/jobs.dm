@@ -5,6 +5,12 @@
 	icon_state = "chefhat"
 	item_state = "chefhat"
 
+//Cargo Tech
+/obj/item/clothing/head/rank/cargosoft
+	name = "lonestar cap"
+	desc = "A grey cap with the Lonestar logo on it."
+	icon_state = "cargosoft"
+
 //Captain
 
 /obj/item/clothing/head/rank/captain
@@ -17,16 +23,30 @@
 		)
 	body_parts_covered = 0
 
-/obj/item/clothing/head/rank/captain/cap
-	name = "premier's cap"
-	desc = "You fear to wear it for the negligence it brings."
-	icon_state = "capcap"
+/obj/item/clothing/head/rank/captain/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
+	if(!isliving(loc))
+		return
 
-/obj/item/clothing/head/rank/captain/formal
-	name = "parade hat"
-	desc = "No one in a commanding position should be without a perfect, white hat of ultimate authority."
-	icon_state = "officercap"
+	var/mob/M = usr
+	var/list/options = list()
+	options["Premier's Hat"] = "captain"
+	options["Premier's Cap"] = "capcap"
+	options["Parade Hat"] = "officercap"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 //HOP
 /obj/item/clothing/head/rank/first_officer
@@ -65,6 +85,60 @@
 	desc = "An easily colored, plain beret. Classy!"
 	icon_state = "beret_whiterim"
 
+//Sprites by Michiyamenotehifunana and Occulist
+/obj/item/clothing/head/beret/fashion
+	name = "tan beret"
+	desc = "A fashionable and colorful beret."
+	icon_state = "beret-tan"
+
+/obj/item/clothing/head/beret/fashion/grey
+	name = "grey beret"
+	icon_state = "beret-grey"
+
+/obj/item/clothing/head/beret/fashion/pink
+	name = "pink beret"
+	icon_state = "beret-pink"
+
+/obj/item/clothing/head/beret/fashion/red
+	name = "red beret"
+	icon_state = "beret-red"
+
+/obj/item/clothing/head/beret/fashion/brown
+	name = "brown beret"
+	icon_state = "beret-brown"
+
+/obj/item/clothing/head/beret/fashion/copper
+	name = "copper beret"
+	icon_state = "beret-copper"
+
+/obj/item/clothing/head/beret/fashion/orange
+	name = "orange beret"
+	icon_state = "beret-orange"
+
+/obj/item/clothing/head/beret/fashion/yellow
+	name = "yellow beret"
+	icon_state = "beret-yellow"
+
+/obj/item/clothing/head/beret/fashion/lime
+	name = "lime beret"
+	icon_state = "beret-lime"
+
+/obj/item/clothing/head/beret/fashion/cyan
+	name = "cyan beret"
+	icon_state = "beret-cyan"
+
+/obj/item/clothing/head/beret/fashion/ice
+	name = "ice beret"
+	icon_state = "beret-ice"
+
+/obj/item/clothing/head/beret/fashion/blue
+	name = "blue beret"
+	icon_state = "beret-blue"
+
+/obj/item/clothing/head/beret/fashion/purple
+	name = "purple beret"
+	icon_state = "beret-purple"
+//End of sprites by Michiyamenotehifunana and Occulist
 //Security
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"
@@ -141,7 +215,7 @@
 	name = "blue surgical cap"
 	desc = "A sterile blue surgical cap for medical operations."
 	icon_state = "surgcap_blue"
-	flags_inv = BLOCKHEADHAIR
+	flags_inv = BLOCKHEADHAIR|HIDEEARS
 
 /obj/item/clothing/head/surgery/purple
 	name = "purple surgical cap"
@@ -186,6 +260,30 @@
 	name = "blackshield cap"
 	desc = "A faded black cap with the badge of the Blackshield."
 	icon_state = "milsoft"
+
+/obj/item/clothing/head/rank/trooper/cap/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "milsoft"
+	options["Woodlands Blackshield Colours"] = "milsoftgreen"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/rank/corpsman/cap
 	name = "Corpsman cap"
@@ -273,6 +371,7 @@
 	options["BC Beret"] = "beret_militia"
 	options["BC Cap"] = "commander_cap"
 	options["BC Default"] = "hoshat"
+	options["Campaign Cover"] = "instructor"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -284,11 +383,6 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
-
-/obj/item/clothing/head/rank/instructor_hat
-	name = "campaign cover"
-	desc = "Mama, mama, can't you see what this Corps has done to me?"
-	icon_state = "instructor"
 
 /obj/item/clothing/head/rank/commanderdress
 	name = "Blackshield command cover"

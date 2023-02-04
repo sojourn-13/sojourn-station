@@ -1,12 +1,16 @@
 /datum/language/yassari
 	name = LANGUAGE_YASSARI
-	desc = "A pideon language of sorts adopted by frontier nomads, converts and merchants alike, derived from various Islamic origins back on Earth."
+	desc = "A pidgin language of sorts adopted by frontier nomads, converts and merchants alike, derived from various Islamic origins back on Earth."
 	speech_verb = list("stipulates")
 	ask_verb = list("queries")
 	exclaim_verb = list("rambles")
 	colour = "yassari"
 	key = "y"
+	partial_understanding = list(
+		LANGUAGE_OPIFEXEE = 15
+	)
 	space_chance = 100
+	has_written_form = TRUE
 	shorthand = "YI"
 	syllables = list("laa", "naaam", "masaa' alkhayr", "haydi bakalim", "hal yumkinuk", "hadduth bibut'", "afham tamaaman", "maafi mushki", "habeebti", "hala", "ahlan wa sahlan", \
 				"merhaba", "shukran", "mahbrook", "min fadlak", "sayh'rah", "al-mar'ah", "yadhab 'ila", "ata nahw", "tanzuru", "bin salamosu", "bagagah sagirah", "'innaha imr", "waghun qabih", \

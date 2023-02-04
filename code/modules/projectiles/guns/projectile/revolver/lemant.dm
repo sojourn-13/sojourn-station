@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/revolver/lemant
 	name = "\"Pilgrim\" magnum revolver"
-	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds nine 10mm rounds and one single action underslung 20mm shell. \
-	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually."
+	desc = "Designed by the Old Testament to have good utility and plenty of shots, at the cost of requireing each spent shell individually be removed, and can't be speed loaded. \
+	This signature weapon from New Byzantine holds nine 10mm rounds and one single action underslung 20mm shell."
 	icon = 'icons/obj/guns/projectile/lemant.dmi'
 	icon_state = "lemant"
 	item_state = "lemant"
@@ -23,9 +23,34 @@
 		)
 	serial_type = "Absolute"
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig
+
 	var/obj/item/gun/projectile/underslung_shotgun/shotgun
 	var/reload_delay = 5 // Delay between bullets when reloading from a box.
 
+/obj/item/gun/projectile/revolver/lemant/belt
+	name = "\"Pilgrim Devout\" magnum revolver"
+	desc = "Artificer Guild's revamped design of the Pilgrim to have even more shots before requiring to reload. \
+	Even with the belt design this revolver requires each spent shell individually be removed, and can't be speed loaded. \
+	Holds seventeen 10mm rounds and one single action underslung 20mm shell."
+	icon = 'icons/obj/guns/projectile/lemant_way.dmi'
+	icon_state = "lemant_way"
+	item_state = "lemant_way"
+	max_shells = 17
+	price_tag = 550
+
+	init_firemodes = list(
+		SEMI_AUTO_SOMEDELAY,
+		list(mode_name="fire 20mm shell", mode_desc="Shoot the underbarrel shotgun shell",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
+		)
+
+	init_recoil = HANDGUN_RECOIL(0.5)
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig
+
+//Removed do to gun bloat and balance
+/*
 /obj/item/gun/projectile/revolver/lemant/claw
 	name = "\"Pilgrim Claw\" magnum revolver"
 	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds nine 10mm rounds and one single action underslung 20mm shell. \
@@ -39,19 +64,6 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_BAYONET)
 	price_tag = 475 // Still an upgrade.
 
-/obj/item/gun/projectile/revolver/lemant/belt
-	name = "\"Pilgrim Devout\" magnum revolver"
-	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds seventeen 10mm rounds and one single action underslung 20mm shell. \
-	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually. \
-	This model is a conversion by the Artificer Guild, known as the pilgrim devout, it uses a belt fed rotation instead of a cylinder, increasing the number of shots before needing to reload. \
-	Reloading still takes ages, even with speed loaders."
-	icon = 'icons/obj/guns/projectile/lemant_way.dmi'
-	icon_state = "lemant_way"
-	item_state = "lemant_way"
-	max_shells = 17
-	price_tag = 550
-	init_recoil = HANDGUN_RECOIL(0.3)// Exceptional weight helps with recoil control, but unwieldy enough to merely match the claw. -Kaz
-
 /obj/item/gun/projectile/revolver/lemant/uppercut
 	name = "\"Pilgrim Hero\" kurtz revolver"
 	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds six 12mm rounds and one single action underslung 20mm shell. \
@@ -62,16 +74,19 @@
 	icon_state = "lemant_hero"
 	item_state = "lemant_hero"
 	caliber = CAL_50
+	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	max_shells = 6
 	price_tag = 500
 	init_recoil = HANDGUN_RECOIL(1.3)// Massive recoil due to being a kurtz revolver without the weight to compensate for the blast. -Kaz
-
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig
+*/
 //Defined here, may be used elsewhere but for now its only used here. -Kaz
 /obj/item/gun/projectile/underslung_shotgun
 	name = "underslung shotgun"
 	desc = "Not much more than a tube and a firing mechanism, this shotgun is designed to be fitted to another gun."
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	matter = null
@@ -159,14 +174,15 @@
 	icon = 'icons/obj/guns/projectile/lemant_blue.dmi'
 	icon_state = "lemant_blue"
 	item_state = "lemant_blue"
+	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	caliber = CAL_50
 	drawChargeMeter = FALSE
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	max_shells = 9
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 700
-	damage_multiplier = 1.2
-	penetration_multiplier = 1.1
+	damage_multiplier = 1.3
+	penetration_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	var/obj/item/gun/projectile/underslung/launcher

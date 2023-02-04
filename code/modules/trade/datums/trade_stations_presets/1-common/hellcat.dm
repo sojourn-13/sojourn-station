@@ -28,18 +28,15 @@
 		"Energy weapons" = list(
 			/obj/item/gun/energy/gun/martin,
 			/obj/item/gun/energy/laser,
-			/obj/item/gun/energy/tesla_shotgun,
-			/obj/item/gun/energy/tesla_shotgun/manual,
-			/obj/item/gun/energy/tesla_shotgun/high_damage
+			/obj/item/gun/energy/tesla_shotgun
 		),
 		"Projectile weapons" = list(
-			/obj/item/gun/projectile/glock,
-			/obj/item/gun/projectile/clarissa,
+			/obj/item/gun/projectile/glock = good_data("Sky pistol", list(2, 6), 650),
+			/obj/item/gun/projectile/giskard,
 			/obj/item/gun/projectile/olivaw,
-			/obj/item/gun/projectile/revolver/detective,
-			/obj/item/gun/projectile/automatic/ak47/sa,
-			/obj/item/gun/projectile/automatic/mac,
-			/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/solmarine/shotgunless
+			/obj/item/gun/projectile/revolver/detective = good_data("Havelock revolver", list(2, 10), 300),
+			/obj/item/gun/projectile/automatic/ak47/sa = good_data("Kalshnikov rifle", list(1, 3), 1000),
+			/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
 		),
 		"Flame Thrower" = list(
 			/obj/item/gun/flamethrower,
@@ -51,9 +48,9 @@
 			/obj/item/grenade/chem_grenade/incendiary,
 			/obj/item/grenade/flashbang,
 
-			/obj/item/ammo_magazine/ammobox/heavy_rifle_408,
-			/obj/item/ammo_magazine/ammobox/rifle_75,
-			/obj/item/ammo_magazine/ammobox/light_rifle_257,
+			/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small,
+			/obj/item/ammo_magazine/ammobox/rifle_75_small,
+			/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
 			/obj/item/ammo_magazine/ammobox/shotgun,
 			/obj/item/ammo_magazine/ammobox/kurtz_50,
 			/obj/item/ammo_magazine/ammobox/magnum_40,

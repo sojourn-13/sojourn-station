@@ -19,6 +19,9 @@
 	var/allow_spin = TRUE
 	var/used_now = FALSE //For tools system, check for it should forbid to work on atom for more than one user at time
 
+	/// Associative list containing FLAG -> transform_type. Holds all transform_types currently applying their effects to us.
+	var/list/transform_types = list()
+
 	/**
 	 * Associative list. Key should be a typepath of /datum/stat_modifier, and the value should be a weight for use in prob.
 	 *
@@ -75,6 +78,7 @@
 	var/stat = 0
 
 /atom/proc/update_icon()
+	update_all_transforms()
 	return
 
 /atom/proc/healthCheck()
@@ -89,10 +93,23 @@
 	if(!(stat & BROKEN))
 		stat |= BROKEN
 
+/**
+ * Called when an atom is created in byond (built in engine proc)
+ *
+ * Not a lot happens here in SS13 code, as we offload most of the work to the
+ * [Intialization][/atom/proc/Initialize] proc, mostly we run the preloader
+ * if the preloader is being used and then call [InitAtom][/datum/controller/subsystem/atoms/proc/InitAtom] of which the ultimate
+ * result is that the Intialize proc is called.
+ *
+ * We also generate a tag here if the DF_USE_TAG flag is set on the atom
+ */
 /atom/New(loc, ...)
 	init_plane()
 	update_plane()
 //	init_light()
+
+	if(datum_flags & DF_USE_TAG)
+		GenerateTag()
 
 	var/do_initialize = SSatoms.initialized
 	if(do_initialize != INITIALIZATION_INSSATOMS)
@@ -187,6 +204,8 @@
 			if (!(chosen_modifier.valid_check(src, arguments)))
 				QDEL_NULL(chosen_modifier)
 
+	add_initial_transforms()
+
 	return INITIALIZE_HINT_NORMAL
 
 /**
@@ -217,12 +236,17 @@
 	if(reagents)
 		QDEL_NULL(reagents)
 
+	QDEL_LIST_ASSOC_VAL(transform_types)
 	QDEL_LIST(current_stat_modifiers)
 
 	spawn()
 		update_openspace()
 
 	return ..()
+
+///Generate a tag for this atom
+/atom/proc/GenerateTag()
+	return
 
 /atom/proc/reveal_blood()
 	return
@@ -422,6 +446,9 @@ its easier to just keep the beam vertical.
 
 	if(desc)
 		to_chat(user, desc)
+		var/pref = user.get_preference_value("SWITCHEXAMINE")
+		if(pref == GLOB.PREF_YES)
+			user.client.statpanel = "Examine"
 //Soj Edits
 	if (current_stat_modifiers && current_stat_modifiers.len)
 		var/list/descriptions_to_print = list()
@@ -486,7 +513,7 @@ its easier to just keep the beam vertical.
 		var/obj/item/I = P.virtual_scanner
 		I.afterattack(src, user, get_dist(src, user) <= 1)
 
-	SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
+	LEGACY_SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
 
 	return distance == -1 || (get_dist(src, user) <= distance) || isobserver(user)
 
@@ -696,7 +723,8 @@ its easier to just keep the beam vertical.
 		M.check_dna()
 		if (M.species)
 			blood_color = M.species.blood_color
-	. = TRUE
+			if(!blood_color)
+				return FALSE
 	return TRUE
 
 /atom/proc/add_vomit_floor(mob/living/carbon/M, var/toxvomit = FALSE)
@@ -799,8 +827,7 @@ its easier to just keep the beam vertical.
 
 /atom/Entered(var/atom/movable/AM, var/atom/old_loc, var/special_event)
 	if(loc)
-		for(var/i in AM.contents)
-			var/atom/movable/A = i
+		for(var/atom/movable/A as anything in AM.contents)
 			A.entered_with_container(old_loc)
 		if(MOVED_DROP == special_event)
 			AM.forceMove(loc, MOVED_DROP)
@@ -875,11 +902,21 @@ its easier to just keep the beam vertical.
 
 
 /atom/proc/get_recursive_contents()
-	var/list/result = list()
-	for (var/atom/a in contents)
-		result += a
-		result |= a.get_recursive_contents()
-	return result
+	. = list()
+	for (var/atom/a as anything in contents)
+		. += a
+		. |= a.get_recursive_contents()
+
+/atom/proc/get_recursive_contents_until(limit = INFINITY, current_recursion = 0)
+	if (limit <= current_recursion)
+		return
+	. = list()
+	current_recursion++
+	for (var/atom/a as anything in contents)
+		. += a
+		var/recursive_contents = a.get_recursive_contents_until(limit, current_recursion)
+		if (!isnull(recursive_contents))
+			. |= recursive_contents
 
 /atom/proc/AllowDrop()
 	return FALSE

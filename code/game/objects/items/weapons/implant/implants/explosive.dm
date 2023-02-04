@@ -64,7 +64,7 @@
 						qdel(src)
 					else
 						explosion(get_turf(wearer), 0, 0, 2, 3)
-						part.droplimb(0,DROPLIMB_BLUNT)
+						part.droplimb(0,DISMEMBER_METHOD_BLUNT)
 						qdel(src)
 			if (elevel == "Destroy Body")
 				explosion(get_turf(T), 0, 0, 1, 6)
@@ -103,7 +103,7 @@
 				if (part.organ_tag in list(BP_CHEST, BP_GROIN, BP_HEAD))
 					part.createwound(BRUISE, 60)	//mangle them instead
 				else
-					part.droplimb(0,DROPLIMB_BLUNT)
+					part.droplimb(0,DISMEMBER_METHOD_BLUNT)
 			explosion(get_turf(wearer), 0, 0, 2, 3)
 			qdel(src)
 

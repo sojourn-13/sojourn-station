@@ -4,7 +4,7 @@
 	icon_state = "armor-blue"
 	spawn_nothing_percentage = 20
 
-/obj/random/rig/item_to_spawn()
+/obj/random/psi/item_to_spawn()
 	return pickweight(list(
 	//Swords and hammers
 	/obj/item/tool/sword/cult/deepmaints = 1,
@@ -16,7 +16,6 @@
 	//Guns and Lasers
 	/obj/item/gun/energy/laser/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/cassad/cult/deepmaints = 1,
-	/obj/item/gun/energy/gun/martin/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/auretian/cult/deepmaints = 1,
 	/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints = 1,
 	//Tools
@@ -45,7 +44,6 @@
 	//Guns and Lasers
 	/obj/item/gun/energy/laser/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/cassad/cult/deepmaints = 1,
-	/obj/item/gun/energy/gun/martin/cult/deepmaints = 1,
 	/obj/item/gun/energy/plasma/auretian/cult/deepmaints = 1,
 	/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints = 1
 	))

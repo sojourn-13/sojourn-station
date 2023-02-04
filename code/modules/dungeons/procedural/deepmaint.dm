@@ -42,6 +42,10 @@ var/global/list/big_deepmaint_room_templates = list()
 
 /obj/procedural/jp_DungeonGenerator/deepmaint
 	name = "Deep Maintenance Procedural Generator"
+	regen_specific = TRUE
+	regen_light = /obj/machinery/light/small/autoattach/deepmaints
+
+
 /*
 	Finds a line of walls adjacent to the line of turfs given
 */
@@ -145,16 +149,16 @@ var/global/list/big_deepmaint_room_templates = list()
 	if(wall_line.len)
 		for(var/turf/W in nicheline)
 			if(prob(30))
-				new /obj/random/pack/machine(W)
+				new /obj/random/pack/deep_machine(W)
 		for(var/turf/W in wall_line)
-			if(locate(/obj/machinery/light/small/autoattach, W))
-				var/obj/machinery/light/small/autoattach/L = locate(/obj/machinery/light/small/autoattach, W)
+			if(locate(/obj/machinery/light/small/autoattach/deepmaints, W))
+				var/obj/machinery/light/small/autoattach/deepmaints/L = locate(/obj/machinery/light/small/autoattach/deepmaints, W)
 				qdel(L)
 			W.ChangeTurf(/turf/simulated/floor/tiled/techmaint_perforated)
 			for(var/turf/simulated/wall/A in getAdjacent(W))
 				A.update_connections(1)
 			if(prob(70))
-				new /obj/random/pack/machine(W)
+				new /obj/random/pack/deep_machine(W)
 		return TRUE
 	else
 		return FALSE
@@ -200,7 +204,12 @@ var/global/list/big_deepmaint_room_templates = list()
 /obj/procedural/dungenerator/deepmaint
 	name = "Deep Maint Gen"
 
-
+// Skip deepmaint. DO NOT REMOVE ELSE, it becomes unreachable
+#if defined(UNIT_TESTS) || defined(SPACEMAN_DMM)
+/obj/procedural/dungenerator/deepmaint/New()
+	log_test("Skipping deepmaint generation for unit tests")
+	return
+#else
 /obj/procedural/dungenerator/deepmaint/New()
 	while(1)
 		if(Master.current_runlevel)
@@ -209,7 +218,7 @@ var/global/list/big_deepmaint_room_templates = list()
 		else
 			sleep(150)
 	spawn()
-		var/start = REALTIMEOFDAY
+		//testing_variable(start, REALTIMEOFDAY)
 		var/obj/procedural/jp_DungeonGenerator/deepmaint/generate = new /obj/procedural/jp_DungeonGenerator/deepmaint(src)
 		testing("Beginning procedural generation of [name] -  Z-level [z].")
 		generate.name = name
@@ -250,4 +259,5 @@ var/global/list/big_deepmaint_room_templates = list()
 		generate.populateCorridors()
 		generate.makeLadders()
 		testing("Finished procedural generation of [name]. [generate.errString(generate.out_error)] -  Z-level [z], in [(REALTIMEOFDAY - start) / 10] seconds.")
+#endif
 

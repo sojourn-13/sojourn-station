@@ -168,7 +168,9 @@
 		/obj/item/soap,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
-		/obj/item/oddity/chimeric_fang_trophy
+		/obj/item/oddity/chimeric_fang_trophy,
+		/obj/item/device/binoculars,
+		/obj/item/device/lighting/glowstick/flare/torch
 	)
 
 /obj/item/storage/belt/utility/neotheology
@@ -185,7 +187,7 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol
+		/obj/item/device/binoculars
 	)
 
 /obj/item/storage/belt/utility/handmade
@@ -213,7 +215,7 @@
 
 /obj/item/storage/belt/utility/opifex/full/populate_contents()
 	new /obj/item/tool/crowbar/pneumatic(src)
-	new /obj/item/tool/hammer(src)
+	new /obj/item/tool/hammer/deadblow(src)
 	new /obj/item/tool/multitool/advanced(src)
 	new /obj/item/tool/saw/circular/advanced(src)
 	new /obj/item/tool/screwdriver/electric(src)
@@ -343,9 +345,10 @@
 		/obj/item/tool/knife,
 		/obj/item/tool/shovel/combat,
 		/obj/item/gun/projectile/mk58,
-		/obj/item/gun/projectile/revolver/lemant,
-		/obj/item/gun/energy/gun,
+		/obj/item/gun/projectile/makarov,
 		/obj/item/gun/projectile/clarissa,
+		/obj/item/gun/projectile/colt,
+		/obj/item/gun/energy/gun,
 		/obj/item/gun/projectile/giskard,
 		/obj/item/gun/projectile/olivaw,
 		/obj/item/gun/projectile/revolver/detective,
@@ -359,7 +362,9 @@
 		/obj/item/device/camera,
 		/obj/item/folder,
 		/obj/item/reagent_containers/food/snacks,
-		/obj/item/reagent_containers/food/drinks
+		/obj/item/reagent_containers/food/drinks,
+		/obj/item/device/binoculars, // By popular demand. - Seb
+		/obj/item/tool/baton/mini
 	)
 
 /obj/item/storage/belt/holding
@@ -386,10 +391,10 @@
 			var/held = W.get_equip_slot()
 			if (held == slot_l_hand)
 				var/obj/item/organ/external/E = H.get_organ(BP_L_ARM)
-				E.droplimb(0, DROPLIMB_BLUNT)
+				E.droplimb(0, DISMEMBER_METHOD_BLUNT)
 			else if (held == slot_r_hand)
 				var/obj/item/organ/external/E = H.get_organ(BP_R_ARM)
-				E.droplimb(0, DROPLIMB_BLUNT)
+				E.droplimb(0, DISMEMBER_METHOD_BLUNT)
 		user.drop_item()
 		return
 	..()
@@ -454,7 +459,7 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
-		/obj/item/gun/energy/ntpistol
+		/obj/item/device/binoculars
 	)
 
 /obj/item/storage/belt/champion
@@ -482,17 +487,29 @@
 	max_w_class = ITEM_SIZE_SMALL //Holds 14 small items like a real harness, and hats
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 
-/obj/item/storage/belt/webbing/green
-	name = "green web harness"
-	desc = "Everything you need at hand, at belt."
-	icon_state = "webbing_green"
-	item_state = "webbing_green"
+/obj/item/storage/belt/webbing/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/storage/belt/webbing/black
-	name = "black web harness"
-	desc = "Everything you need at hand, at belt."
-	icon_state = "webbing_black"
-	item_state = "webbing_black"
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Brown"] = "webbing"
+	options["Green"] = "webbing_green"
+	options["Black"] = "webbing_black"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/storage/belt/webbing/ih
 	name = "security web harness"
@@ -551,6 +568,18 @@
 
 		return 1
 
+//Start with normal
+/obj/item/storage/belt/webbing/artificer/ert
+	storage_slots = 9 //Like old belts used to be
+	max_w_class = ITEM_SIZE_NORMAL
 
-
-
+/obj/item/storage/belt/webbing/artificer/ert/populate_contents()
+	new /obj/item/tool/crowbar/pneumatic(src)
+	new /obj/item/tool/hammer/deadblow(src)
+	new /obj/item/tool/multitool/advanced(src)
+	new /obj/item/tool/screwdriver/electric(src)
+	new /obj/item/tool/shovel/power(src)
+	new /obj/item/tool/tape_roll/fiber(src)
+	new /obj/item/tool/baton/arcwelder(src)
+	new /obj/item/tool/wirecutters/armature(src)
+	new /obj/item/tool/wrench/big_wrench(src)

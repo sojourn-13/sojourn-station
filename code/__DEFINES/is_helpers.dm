@@ -1,7 +1,19 @@
+// simple is_type and similar inline helpers
+
+#define in_range(source, user) (get_dist(source, user) <= 1 && (get_step(source, 0)?:z) == (get_step(user, 0)?:z))
+
+/// Within given range, but not counting z-levels
+#define IN_GIVEN_RANGE(source, other, given_range) (get_dist(source, other) <= given_range && (get_step(source, 0)?:z) == (get_step(other, 0)?:z))
+
+#define isatom(A) (isloc(A))
+
+#define isdatum(thing) (istype(thing, /datum))
 
 #define isweakref(D) (istype(D, /datum/weakref))
 
+
 #define islist(A) istype(A, /list)
+
 
 #define ismob(A) istype(A, /mob)
 
@@ -40,6 +52,8 @@
 
 #define iscorgi(A) istype(A, /mob/living/simple_animal/corgi)
 
+#define iscatto(A) istype(A, /mob/living/simple_animal/cat)
+
 #define ismouse(A) istype(A, /mob/living/simple_animal/mouse)
 
 #define issuperioranimal(A) istype(A, /mob/living/carbon/superior_animal)
@@ -77,6 +91,8 @@
 #define isHUDobj(A) istype(A, /obj/screen)
 
 #define isitem(A) istype(A, /obj/item)
+
+#define isprojectile(A) istype(A, /obj/item/projectile)
 
 #define isorgan(A) istype(A, /obj/item/organ/external)
 

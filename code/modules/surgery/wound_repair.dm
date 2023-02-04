@@ -30,6 +30,7 @@
 
 /datum/old_surgery_step/external/brute_heal
 	allowed_tools = list(/obj/item/stack/medical/advanced/bruise_pack = 100, /obj/item/stack/medical/advanced/bruise_pack/mending_ichor = 100)
+	duration = 80
 
 /datum/old_surgery_step/external/brute_heal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
@@ -41,6 +42,10 @@
 	if (!hasorgans(target))
 		return
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
+
+	if (tool.amount <= 0)
+		to_chat(user, SPAN_WARNING("[tool_name] has no more uses left."))
+		return
 
 	if (target.getBruteLoss() > 0)
 		user.visible_message(SPAN_NOTICE("[user] begins treating the brute damage to [target]'s body with the [tool_name]."), \
@@ -93,6 +98,7 @@
 
 /datum/old_surgery_step/external/burn_heal
 	allowed_tools = list(/obj/item/stack/medical/advanced/ointment = 100, /obj/item/stack/medical/advanced/ointment/regenerative_ichor = 100)
+	duration = 80
 
 /datum/old_surgery_step/external/burn_heal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
@@ -105,6 +111,10 @@
 		return
 
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
+
+	if (tool.amount <= 0)
+		to_chat(user, SPAN_WARNING("[tool_name] has no more uses left."))
+		return
 
 	if (target.getFireLoss() > 0)
 		user.visible_message(SPAN_NOTICE("[user] begins treating the burn damage to [target]'s body with the [tool_name]."), \
@@ -126,6 +136,7 @@
 		var/advanced_medical = user.stats.getPerk(PERK_ADVANCED_MEDICAL)
 		if(advanced_medical)
 			heal_amount -= calculate_expert_surgery_bonus(user)
+
 		user.visible_message(SPAN_NOTICE("[user] [advanced_medical ? "expertly" : ""] treats the burn damage to [target]'s body with the [tool_name]."), \
 			SPAN_NOTICE("You treat the burn damage to [target]'s body with [tool_name].") )
 		if(target.getFireLoss() > 0 && tool.use(1))
@@ -150,6 +161,7 @@
 
 /datum/old_surgery_step/external/tox_heal
 	allowed_tools = list(/obj/item/stack/nanopaste = 100, /obj/item/stack/ichor/purging_ichor = 100)
+	duration = 80
 
 /datum/old_surgery_step/external/tox_heal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
@@ -161,6 +173,10 @@
 	if (!hasorgans(target))
 		return
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
+
+	if (tool.amount <= 0)
+		to_chat(user, SPAN_WARNING("[tool_name] has no more uses left."))
+		return
 
 	if (target.getToxLoss() >= 0 || world.time - target.timeofdeath > DEFIB_TIME_LIMIT)
 		user.visible_message(SPAN_NOTICE("[user] begins filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \

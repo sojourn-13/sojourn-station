@@ -23,7 +23,7 @@
 	var/datum/component/inspiration/inspiration
 	var/obj/item/oddity
 
-/obj/machinery/autolathe/artist_bench/ui_data()
+/obj/machinery/autolathe/artist_bench/nano_ui_data()
 	var/list/data = list()
 
 	data["have_disk"] = have_disk
@@ -44,7 +44,7 @@
 
 
 /obj/machinery/autolathe/artist_bench/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui, force_open = NANOUI_FOCUS)
-	var/list/data = ui_data(user, ui_key)
+	var/list/data = nano_ui_data(user, ui_key)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -225,14 +225,14 @@
 			if("sniper")//From sniper.dm, Arbitrary values
 				R.caliber = CAL_ANTIM
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
-				R.fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+				R.fire_sound = 'sound/weapons/guns/fire/AMR.ogg'
 
 			if("gyro")//From gyropistol.dm, Arbitrary values
 				R.caliber = CAL_70
 
 			if("grenade")
 				R.caliber = CAL_GRENADE
-				R.fire_sound = 'sound/weapons/guns/fire/grenadelauncher_fire.ogg'
+				R.fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'
 
 		R.recoil = R.recoil.modifyAllRatings(1+rand(-2,2)/10)

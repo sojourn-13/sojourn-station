@@ -69,6 +69,7 @@
 		return
 	for(var/obj/O in src)
 		O.forceMove(loc)
+	autodoc_processor.stop()
 	occupant.forceMove(loc)
 	occupant.reset_view()
 	occupant.unset_machine()
@@ -136,7 +137,7 @@
 		locked = autodoc_processor.active
 	update_icon()
 
-/obj/machinery/autodoc/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FORCE_OPEN, var/datum/topic_state/state = GLOB.default_state)
+/obj/machinery/autodoc/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FORCE_OPEN, var/datum/nano_topic_state/state = GLOB.default_state)
 	autodoc_processor.nano_ui_interact(user, ui_key, ui, force_open, state)
 
 /obj/machinery/autodoc/Topic(href, href_list)

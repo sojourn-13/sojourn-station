@@ -32,6 +32,38 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+//Icons form Occult sprited By Zenitheevee (I think)
+/datum/sprite_accessory/ears/antlers_marked_small_occultported
+	name = "Antlers Mark, Small"
+	desc = ""
+	icon_state = "antlermarksmall"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/antlermarksmall_head_occultported
+	name = "Antlers Mark, Small Head"
+	desc = ""
+	icon_state = "antlermarksmall-head"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/antlers_mark_occultported
+	name = "Antlers Mark"
+	desc = ""
+	icon_state = "antlermark"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/antlermark_head_occultported
+	name = "Antlers Mark, Head"
+	desc = ""
+	icon_state = "antlermark-head"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+
+//End of Occult sprited things (That im aware of)
+
 /datum/sprite_accessory/ears/antlers_smallwithears
 	name = "Antlers, Small With Ears"
 	desc = ""
@@ -67,6 +99,14 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+//Skyrats ported
+/datum/sprite_accessory/ears/bunnyhc_alt
+	name = "Bunny Ears, Alt"
+	desc = ""
+	icon_state = "bunny_alt"
+	colored_layers = 3 //Looks like 2 is intented
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/bunny_floppy
 	name = "Bunny Ears, Floppy"
 	desc = ""
@@ -81,6 +121,22 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+//Skyrats ported
+/datum/sprite_accessory/ears/bunny_rabbet
+	name = "Bunny Ears, Rabbet"
+	desc = ""
+	icon_state = "rabbit_lop"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
+
+//Skyrats ported
+/datum/sprite_accessory/ears/bunny_rabbet_alt
+	name = "Bunny Ears, Rabbet Alt"
+	desc = ""
+	icon_state = "rabbit"
+	colored_layers = 6
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/bnnuy
 	name = "Bunny Ears, Short"
 	desc = ""
@@ -93,6 +149,14 @@
 	desc = ""
 	icon_state = "bnnuy_long"
 	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+//Skyrats ported
+/datum/sprite_accessory/ears/bnnuy_long_est
+	name = "Bunny Ears, Tall"
+	desc = ""
+	icon_state = "bunny_tall"
+	colored_layers = 4 //Looks like 3 is intented
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/jackalope
@@ -198,6 +262,14 @@
 	desc = ""
 	icon_state = "foxearshc"
 	colored_layers = 1
+	blend = ICON_MULTIPLY
+
+//Skyrats ported
+/datum/sprite_accessory/ears/higherlanderhc_alt
+	name = "Fox Ears Alt"
+	desc = ""
+	icon_state = "fox"
+	colored_layers = 4
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/frills_aquatic
@@ -451,6 +523,13 @@
 	desc = ""
 	icon_state = "wolf"
 	colored_layers = 2
+	blend = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/wolfhc_tall
+	name = "Wolf Ears Taller"
+	desc = ""
+	icon_state = "bigwolf"
+	colored_layers = 3
 	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/axolotl

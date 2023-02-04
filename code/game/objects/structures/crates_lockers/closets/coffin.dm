@@ -17,7 +17,7 @@
 //The coffin processes when there's a mob inside
 /obj/structure/closet/coffin/lost_in_space()
 	//The coffin has left the ship. Burial at space
-	if (occupant && occupant.is_dead())
+	if (occupant && is_dead(occupant))
 		var/mob/M = key2mob(occupant.mind.key)
 		//We send a message to the occupant's current mob - probably a ghost, but who knows.
 		to_chat(M, SPAN_NOTICE("Your remains have been committed to the void. Your crew respawn time has been reduced by 15 minutes."))

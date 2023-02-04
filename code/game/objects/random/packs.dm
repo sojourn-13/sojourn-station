@@ -91,15 +91,16 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/gun_cheap = 4,
 					/obj/random/gun_normal = 1,
 					/obj/random/gun_energy_cheap = 3,
-					/obj/random/gun_combat = 0.5,
-					/obj/random/gun_fancy = 0.5,
+					/obj/random/gun_combat = 0.3,
+					/obj/random/gun_fancy = 0.1,
 					/obj/random/gun_shotgun = 3,
 					/obj/random/knife = 3,
 					/obj/random/melee = 3,
 					/obj/random/ammo = 8,
 					/obj/random/ammo/shotgun = 8,
 					/obj/random/ammo_lowcost = 10,
-					/obj/random/cloth/holster = 4
+					/obj/random/cloth/holster = 4,
+					/obj/random/gun_parts = 20
 				))
 
 /obj/random/pack/gun_loot/low_chance
@@ -129,10 +130,10 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/voidsuit = 4,
 					/obj/random/pouch = 2,
 					/obj/random/gun_combat = 0.5,
-					/obj/random/gun_fancy = 0.5,
+					/obj/random/gun_fancy = 0.3,
 					/obj/random/tool_upgrade/rare = 4,
 					/obj/random/rig_module/rare = 4,
-					/obj/random/credits/c1000 = 3,
+					/obj/random/credits/c500 = 3,
 					/obj/random/mecha_equipment = 3,
 					/obj/random/cloth/holster = 4,
 					/obj/item/stash_spawner = 4 //Creates a stash of goodies for a scavenger hunt
@@ -204,6 +205,28 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/mecha/damaged = 1, //Some dangerous shit can be found there
 				))
 
+// MAchine pack, but with deep maint specific spawns
+/obj/random/pack/deep_machine
+	name = "random deepmaint machine"
+	icon_state = "machine-orange"
+
+
+/obj/random/pack/deep_machine/item_to_spawn()
+	return pickweight(list(
+					/obj/random/structures = 28, //That one have MUCH MORE important objects for maints inside, that's why the number is hight
+					/obj/random/closet_maintloot = 18, //That one is also important part of the maints
+					/obj/random/closet_tech = 6,
+					/obj/random/closet = 4,
+					/obj/random/closet_wardrobe = 2,
+					/obj/random/scrap/moderate_weighted = 12, //Our scrap pile. This is basically just a huge spawner.
+					/obj/random/mecha/damaged = 1, //Some dangerous shit can be found there
+					/obj/random/aberrant_machine = 6
+				))
+
+/obj/random/pack/deep_machine/low_chance
+	name = "low chance deepmaint machine"
+	icon_state = "machine-orange-low"
+	spawn_nothing_percentage = 70
 
 /obj/random/prothesis
 	name = "random prosthesis"

@@ -32,15 +32,16 @@
 	name = "security records"
 	build_path = /obj/item/clothing/glasses/hud/security
 
-/datum/design/research/item/botany_disk
-	name = "flora data disk"
-	build_path = /obj/item/disk/botany
-	category = "Misc"
-
 /datum/design/research/item/tracker_tablet
 	name = "Tracker tablet frame"
 	desc = "Modified tablet frame with extra screens for use with sensor monitoring software."
 	build_path = /obj/item/modular_computer/tablet/moebius
+	category = "Medical"
+
+/datum/design/research/item/cogenhancer
+	name = "Cognitive Enhancer Implanter"
+	desc = "A device used to install Cognitive Enhancer."
+	build_path = /obj/item/device/hardware_imprinter/cogenhance
 	category = "Medical"
 
 //Bluespace stuff

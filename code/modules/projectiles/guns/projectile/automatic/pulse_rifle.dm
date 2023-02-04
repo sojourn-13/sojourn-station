@@ -23,6 +23,7 @@
 	damage_multiplier = 1
 	init_recoil = LMG_RECOIL(0.7)
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
+	gun_parts = list(/obj/item/part/gun = 2, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/clrifle = 1)
 
 	init_firemodes = list(
 		FULL_AUTO_600,
@@ -32,6 +33,9 @@
 	serial_type = "INDEX"
 	serial_shown = FALSE
 
+	wield_delay = 1.4 SECOND
+	wield_delay_factor = 0.4 // 40 vig for insta wield
+
 /obj/item/gun/projectile/automatic/dallas/update_icon()
 	..()
 	if(ammo_magazine)
@@ -39,3 +43,12 @@
 	else
 		icon_state = initial(icon_state)
 	return
+
+/obj/item/part/gun/frame/dallas
+	name = "Pulse rifle frame"
+	desc = "A pulse rifle frame. For true marines."
+	icon_state = "frame_dallas"
+	result = /obj/item/gun/projectile/automatic/pulse_rifle
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/machinegun
+	barrelvars = list(/obj/item/part/gun/barrel/clrifle)

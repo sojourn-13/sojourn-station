@@ -17,7 +17,7 @@
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
-	projectilesound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	projectilesound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 16
@@ -50,19 +50,13 @@
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
-	drop_items = list(/obj/item/gun/projectile/clarissa/makarov)
+	drop_items = list(/obj/item/gun/projectile/makarov)
 	faction = "excelsior"
 
 /mob/living/carbon/superior_animal/human/excelsior/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
 	return
 
 /mob/living/carbon/superior_animal/human/excelsior/handle_environment(var/datum/gas_mixture/environment) //are armor legit is a void suit
-	return
-
-/mob/living/carbon/superior_animal/human/excelsior/handle_cheap_breath(datum/gas_mixture/breath as anything)
-	return
-
-/mob/living/carbon/superior_animal/human/excelsior/handle_cheap_environment(datum/gas_mixture/environment as anything)
 	return
 
 /mob/living/carbon/superior_animal/human/excelsior/start_pulling(var/atom/movable/AM)
@@ -99,11 +93,11 @@
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_drozd
 	icon_state = "excel_drozd"
-	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
+	projectiletype = /obj/item/projectile/bullet/magnum_40/hv
 	drop_items = list(/obj/item/gun/projectile/automatic/drozd)
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	rounds_left = 32
-	mag_type = /obj/item/ammo_magazine/smg_35/empty
+	mag_type = /obj/item/ammo_magazine/smg_magnum_40/empty
 	mags_left = 2 //2+1
 
 /mob/living/carbon/superior_animal/human/excelsior/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")

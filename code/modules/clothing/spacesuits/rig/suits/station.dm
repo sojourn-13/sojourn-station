@@ -75,7 +75,7 @@
 /obj/item/rig/eva
 	name = "EVA suit control module"
 	suit_type = "EVA hardsuit"
-	desc = "A light rig for repairs and maintenance to the outside of habitats and vessels."
+	desc = "A light RIG for performing minute repairs and maintenance on low-pressure environments."
 	icon_state = "eva_rig"
 	armor_list = list(
 		melee = 20,
@@ -116,9 +116,9 @@
 Advanced Voidsuit: Guild Master
 ****************************************/
 /obj/item/rig/ce
-	name = "advanced voidsuit control module"
-	suit_type = "advanced voidsuit"
-	desc = "An advanced voidsuit that protects against hazardous, low pressure environments. Shines with a high polish."
+	name = "advanced hardsuit control module"
+	suit_type = "advanced hardsuit"
+	desc = "An advanced hardsuit that protects against hazardous, low pressure environments. Shines with a high polish."
 	icon_state = "ce_rig"
 	armor_list = list(
 		melee = 40,
@@ -372,12 +372,12 @@ Technomancer RIG
 		/obj/item/rig_module/storage
 		)
 
-/obj/item/rig/trauma_suit
-	name = "trauma suit control module"
-	suit_type = "trauma team hardsuit"
-	desc = "An upgraded hardsuit designed by the Soteria for their trauma team division. While not as heavily armored as a proper hardsuit, the inbuilt medical systems make it highly prized. \
+/obj/item/rig/recovery_suit
+	name = "recovery team suit control module"
+	suit_type = "Recovery Team hardsuit"
+	desc = "An upgraded hardsuit designed by the Soteria for their Recovery Team division. While not as heavily armored as a proper hardsuit, the inbuilt medical systems make it highly prized. \
 	It is best suited for surviving and combating wild life, but has reasonably decent kevlar plating and impact pads to absorb bullets and energy blasts."
-	icon_state = "tt_rig"
+	icon_state = "response_team"
 	armor_list = list(
 		melee = 60,
 		bullet = 35,
@@ -398,7 +398,7 @@ Technomancer RIG
 	)
 
 
-/obj/item/rig/trauma_suit/equipped
+/obj/item/rig/recovery_suit/equipped
 	req_access = list()
 	req_one_access = list()
 
@@ -444,4 +444,37 @@ Technomancer RIG
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/grenade_launcher,
 		/obj/item/rig_module/mounted/taser
+		)
+/obj/item/rig/hazard/steward
+	name = "hazard hardsuit control module"
+	suit_type = "hazard hardsuit"
+	desc = "A modification of the traditional hazard rig built for equal parts utility and defense. Marked with a seal of two Armstrong rifles crossing each other in a X at the base of the neck."
+	icon_state = "hazard_rig"
+	armor_list = list(
+		melee = 40,
+		bullet = 40,
+		energy = 40,
+		bomb = 90,
+		bio = 100,
+		rad = 100
+	)
+	slowdown = 0.3
+	drain = 3.5
+	offline_slowdown = 3
+	offline_vision_restriction = 1
+
+	helm_type = /obj/item/clothing/head/helmet/space/rig/hazard
+	max_upgrades = 1
+	req_access = list(access_hop)
+	req_one_access = list()
+
+
+	initial_modules = list(
+		/obj/item/rig_module/mounted/taser,
+		/obj/item/rig_module/device/flash,
+		/obj/item/rig_module/vision/medhud,
+		/obj/item/rig_module/device/healthscanner,
+		/obj/item/rig_module/modular_injector/medical,
+		/obj/item/rig_module/ai_container,
+		/obj/item/rig_module/storage
 		)

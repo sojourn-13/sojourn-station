@@ -29,6 +29,8 @@
 			if("[tmp_icon_state]_tie" in icon_states(icon_override))
 				tmp_icon_state = "[tmp_icon_state]_tie"
 		inv_overlay = image(icon = mob_overlay.icon, icon_state = tmp_icon_state, dir = SOUTH)
+		if(color)
+			inv_overlay.color = color
 	return inv_overlay
 
 /obj/item/clothing/accessory/proc/get_mob_overlay()
@@ -40,6 +42,8 @@
 			mob_overlay = image("icon" = icon_override, "icon_state" = "[tmp_icon_state]")
 		else
 			mob_overlay = image("icon" = INV_ACCESSORIES_DEF_ICON, "icon_state" = "[tmp_icon_state]")
+		if(color)
+			mob_overlay.color = color
 	return mob_overlay
 
 //when user attached an accessory to S
@@ -86,22 +90,22 @@
 
 /obj/item/clothing/accessory/tie/blueclip
 	name = "blue clip tie"
-	desc = "A neosilk clip-on tie with a striped blue design and clip."
+	desc = "A neosilk clip-on long tie with a striped blue design and clip."
 	icon_state = "bluecliptie"
 
 /obj/item/clothing/accessory/tie/bluestriped
 	name = "blue striped tie"
-	desc = "A neosilk clip-on tie with a striped blue design."
+	desc = "A neosilk clip-on long tie with a striped blue design."
 	icon_state = "bluelongtie"
 
 /obj/item/clothing/accessory/tie/darkgreen
 	name = "dark green tie"
-	desc = "A neosilk clip-on tie with a dark green design."
+	desc = "A neosilk clip-on long tie with a dark green design."
 	icon_state = "dgreentie"
 
 /obj/item/clothing/accessory/tie/navy
 	name = "navy tie"
-	desc = "A neosilk clip-on tie with a navy design."
+	desc = "A neosilk clip-on long tie with a navy design."
 	icon_state = "navytie"
 
 /obj/item/clothing/accessory/tie/red
@@ -111,17 +115,17 @@
 
 /obj/item/clothing/accessory/tie/redclip
 	name = "red clip tie"
-	desc = "A neosilk clip-on tie with a striped red design and clip."
+	desc = "A neosilk clip-on long tie with a striped red design and clip."
 	icon_state = "redcliptie"
 
 /obj/item/clothing/accessory/tie/redstriped
 	name = "red striped tie"
-	desc = "A neosilk clip-on tie with a striped red design."
+	desc = "A neosilk clip-on long tie with a striped red design."
 	icon_state = "redlongtie"
 
 /obj/item/clothing/accessory/tie/white
 	name = "white tie"
-	desc = "A neosilk clip-on tie with a white design."
+	desc = "A neosilk clip-on long tie with a white design."
 	icon_state = "whitetie"
 
 /obj/item/clothing/accessory/tie/yellow
@@ -265,11 +269,6 @@
 	desc = "A raggedy cloak made of leather and reclaimed materials, can be worn over one's armor as a sign of pride for their outcast nature."
 	icon_state = "outcast_cloak"
 
-/obj/item/clothing/accessory/cape/scav
-	name = "makeshift cape"
-	desc = "A cape haphazardly cut from a large bolt of water resistant fabric, while some may wear it for the style, others would prefer it's use as a quick poncho, if it'll every rain."
-	icon_state = "scav_mantle"
-
 /obj/item/clothing/accessory/cape/blackedge
 	name = "heavy black cloak"
 	desc = "A rough and heavy black cloak for draping over yourself like some kind of cave dwelling royal."
@@ -280,6 +279,11 @@
 	desc = "A rough and heavy brown cloak, perfectly suited to marching through the cold to the front door of an old friend."
 	icon_state = "browncloak"
 
+/obj/item/clothing/accessory/cape/prospie
+	name = "prospector mantle"
+	desc = "A rough mantle of salvaged hydrophobic materials typically worn around one's shoulders. While some may wear it for style, others prefer its use as decent camouflage on the humid amethian jungle."
+	icon_state = "prospie_cape"
+
 // Head of Departments
 /obj/item/clothing/accessory/job/cape
 	name = "premier's cloak"
@@ -288,9 +292,9 @@
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/job/cape/fo
-	name = "premier guard's cloak"
+	name = "steward's cloak"
 	icon_state = "focloak"
-	desc = "A blue cloak with red epaulette."
+	desc = "A blue cloak with red epaulettes."
 
 /obj/item/clothing/accessory/job/cape/meo
 	name = "research overseer's cloak"
@@ -365,8 +369,8 @@
 
 /obj/item/clothing/accessory/halfcape/ceo
 	name = "CEOs holo-mantle"
-	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar\
-	 make to similar cloaks, its quality cannot be contested."
+	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar \
+	make to similar cloaks, its quality cannot be contested."
 	icon_state = "half_ceo"
 
 
@@ -418,14 +422,19 @@
 	desc = "A thick, luxurious cloak with red trim."
 
 /obj/item/clothing/accessory/job/cape/church/small
-	name = "black Absolutists cloak"
+	name = "black Absolutist cloak"
 	icon_state = "churchcloakblack"
-	desc = "A sleek, luxurious cloak with black trim."
+	desc = "A sleek, luxurious black cloak with golden trim."
 
-/obj/item/clothing/accessory/job/cape/church/smallalt
-	name = "red Absolutists cloak"
-	icon_state = "churchcloakblack"
-	desc = "A sleek, luxurious cloak with red trim."
+/obj/item/clothing/accessory/job/cape/church/small/red
+	name = "red Absolutist cloak"
+	icon_state = "churchcloakred"
+	desc = "A sleek, luxurious red cloak with golden trim."
+
+/obj/item/clothing/accessory/job/cape/church/small/white
+	name = "white Absolutist cloak"
+	icon_state = "churchcloakwhite"
+	desc = "A sleek, luxurious white cloak with golden trim."
 
 /obj/item/clothing/accessory/job/cape/ironhammer
 	name = "security cloak"
@@ -506,6 +515,11 @@
 	desc = "A sleek, green poncho. Tactical and stylish!"
 	icon_state = "tacpon_green"
 
+/obj/item/clothing/accessory/tacticalponcho/grey
+	name = "grey tactical poncho"
+	desc = "A sleek, tactical grey poncho. Great for black sites and tactical operations!"
+	icon_state = "tacpon_grey"
+
 /obj/item/clothing/accessory/tacticalponcho/camo
 	name = "camo tactical poncho"
 	desc = "A sleek, tactical camo poncho. Great for remaining inconspicuous in even the most densely  wooded combat enviroments"
@@ -575,6 +589,106 @@
 		usr.update_action_buttons()
 		return 1
 
+/*Dusters*/
+
+/obj/item/clothing/accessory/duster
+	name = "tan duster"
+	desc = "A resilient tan duster composed of somewhat frayed fabric."
+	icon_state = "soldiercoat"
+	item_state = "soldiercoat"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+/obj/item/clothing/accessory/duster/brown
+	name = "brown duster"
+	desc = "A standard brown duster with an added collar."
+	icon_state = "duster"
+	item_state = "duster"
+
+/obj/item/clothing/accessory/duster/chestnut
+	name = "chestnut duster"
+	desc = "A worn brown duster with a tough metallic belt."
+	icon_state = "autumn"
+	item_state = "autumn"
+
+/obj/item/clothing/accessory/duster/crimson
+	name = "crimson duster"
+	desc = "A deep red duster coat with a thick layer of padding."
+	icon_state = "battlecoat"
+	item_state = "battlecoat"
+
+/obj/item/clothing/accessory/duster/bloodred
+	name = "blood red duster"
+	desc = "A deep red duster coat with black trim padding."
+	icon_state = "te_coat"
+	item_state = "te_coat"
+
+/obj/item/clothing/accessory/duster/gauntlet
+	name = "gauntlet duster"
+	desc = "A thick brown duster with a tough but comfortable design."
+	icon_state = "sheriff"
+	item_state = "sheriff"
+
+/obj/item/clothing/accessory/duster/ivory
+	name = "ivory duster"
+	desc = "A lightly toned duster with a thinly layered undercoat."
+	icon_state = "ranger"
+	item_state = "ranger"
+
+/obj/item/clothing/accessory/duster/lumber
+	name = "lumber duster"
+	desc = "A dark blue sleeveless duster with a clasp."
+	icon_state = "veteran"
+	item_state = "veteran"
+
+/obj/item/clothing/accessory/duster/navy
+	name = "navy duster"
+	desc = "A battered dark navy duster with a well-worn look."
+	icon_state = "courier"
+	item_state = "courier"
+
+/obj/item/clothing/accessory/duster/cyberpunklong
+	name = "cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long"
+	item_state = "cyberpunksleek_long"
+
+/obj/item/clothing/accessory/duster/cyberpunklong/green
+	name = "green cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long_green"
+	item_state = "cyberpunksleek_long_green"
+
+/obj/item/clothing/accessory/duster/cyberpunklong/black
+	name = "black cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long_black"
+	item_state = "cyberpunksleek_long_black"
+
+/obj/item/clothing/accessory/duster/cyberpunklong/white
+	name = "white cyberpunk coat"
+	desc = "A sleek longcoat made of neo-laminated fabric."
+	icon_state = "cyberpunksleek_long_white"
+	item_state = "cyberpunksleek_long_white"
+
+/obj/item/clothing/accessory/duster/bladerunner
+	name = "runner coat"
+	desc = "A sleek longcoat perfectly made for a driven person."
+	icon_state = "bladerunner_coat"
+	item_state = "bladerunner_coat"
+
+/obj/item/clothing/accessory/duster/donte
+	name = "exterminators jacket"
+	desc = "Your prom date won't know what to say when you show up wearing this stylish leather coat."
+	icon_state = "dante"
+	item_state = "dante"
+
+/obj/item/clothing/accessory/duster/denton
+	name = "futuristic coat"
+	desc = "whether hopping into action, or reading your coworkers emails, you'll be ready for any hostage situations"
+	icon_state = "denton"
+	item_state = "denton"
+
+/*BS Coats*/
+
 /obj/item/clothing/accessory/bscloak
 	name = "Blackshield longcoat"
 	desc = "A simple, durable longcoat with Blackshield stripes, intended to be worn over armored vests for protection in inclement weather."
@@ -594,6 +708,17 @@
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /*Scarves*/
+
+/obj/item/clothing/accessory/scarf
+	name = "striped red scarf"
+	desc = "A striped red scarf."
+	icon_state = "stripedredscarf"
+	item_state = "stripedredscarf"
+	body_parts_covered = FACE
+	item_flags = FLEXIBLEMATERIAL
+	w_class = ITEM_SIZE_SMALL
+	gas_transfer_coefficient = 0.90
+	price_tag = 50
 
 /obj/item/clothing/accessory/scarf/black
 	name = "black scarf"
@@ -709,11 +834,6 @@
 	desc = "A blue neck scarf."
 	icon_state = "blue_scarf"
 	item_state = "blue_scarf"
-	body_parts_covered = FACE
-	item_flags = FLEXIBLEMATERIAL
-	w_class = ITEM_SIZE_SMALL
-	gas_transfer_coefficient = 0.90
-	price_tag = 50
 
 /obj/item/clothing/accessory/scarf/checkered
 	name = "checkered neck scarf"
@@ -751,12 +871,6 @@
 	icon_state = "stripedpurplescarf"
 	item_state = "stripedpurplescarf"
 
-/obj/item/clothing/accessory/scarf
-	name = "striped red scarf"
-	desc = "A striped red scarf."
-	icon_state = "stripedredscarf"
-	item_state = "stripedredscarf"
-
 /obj/item/clothing/accessory/ninjascarf /*Omitted from scarf selection because it's more of a costume piece.*/
 	name = "ninja scarf"
 	desc = "A stealthy, ominous scarf."
@@ -764,6 +878,78 @@
 	item_state = "ninja_scarf"
 	siemens_coefficient = 0
 
+//Sprites by Michiyamenotehifunana and Occulist
+/obj/item/clothing/accessory/shemagh
+	name = "shemagh"
+	desc = "A piece of light fabric, suited for protection in hot, arid climates."
+	icon_state = "shemagh"
+	item_state = "shemagh"
+
+/obj/item/clothing/accessory/shemagh/blue
+	name = "blue shemagh"
+	icon_state = "shemagh-blue"
+	item_state = "shemagh-blue"
+
+/obj/item/clothing/accessory/shemagh/brown
+	name = "brown shemagh"
+	icon_state = "shemagh-brown"
+	item_state = "shemagh-brown"
+
+/obj/item/clothing/accessory/shemagh/camo
+	name = "camo shemagh"
+	icon_state = "shemagh-camo"
+	item_state = "shemagh-camo"
+
+/obj/item/clothing/accessory/shemagh/copper
+	name = "copper shemagh"
+	icon_state = "shemagh-copper"
+	item_state = "shemagh-copper"
+
+/obj/item/clothing/accessory/shemagh/cyan
+	name = "cyan shemagh"
+	icon_state = "shemagh-cyan"
+	item_state = "shemagh-cyan"
+
+/obj/item/clothing/accessory/shemagh/grey
+	name = "grey shemagh"
+	icon_state = "shemagh-grey"
+	item_state = "shemagh-grey"
+
+/obj/item/clothing/accessory/shemagh/ice
+	name = "ice shemagh"
+	icon_state = "shemagh-ice"
+	item_state = "shemagh-ice"
+
+/obj/item/clothing/accessory/shemagh/lime
+	name = "lime shemagh"
+	icon_state = "shemagh-lime"
+	item_state = "shemagh-lime"
+
+/obj/item/clothing/accessory/shemagh/orange
+	name = "orange shemagh"
+	icon_state = "shemagh-orange"
+	item_state = "shemagh-orange"
+
+/obj/item/clothing/accessory/shemagh/pink
+	name = "pink shemagh"
+	icon_state = "shemagh-pink"
+	item_state = "shemagh-pink"
+
+/obj/item/clothing/accessory/shemagh/purple
+	name = "purple shemagh"
+	icon_state = "shemagh-purple"
+	item_state = "shemagh-purple"
+/obj/item/clothing/accessory/shemagh/red
+	name = "red shemagh"
+	icon_state = "shemagh-red"
+	item_state = "shemagh-red"
+
+/obj/item/clothing/accessory/shemagh/yellow
+	name = "yellow shemagh"
+	icon_state = "shemagh-yellow"
+	item_state = "shemagh-yellow"
+
+//End of sprites by Michiyamenotehifunana and Occulist
 /*One-Off Stuff*/
 
 /obj/item/clothing/accessory/dropstraps
@@ -1085,12 +1271,6 @@
 	icon_state = "wristwatch_fancy"
 	item_state = "wristwatch_fancy"
 
-/obj/item/clothing/accessory/bracelet/watch
-	name = "fancy watch"
-	desc = "An expensive watch with a red band wrapped around your wrist. Snazzy."
-	icon_state = "wristwatch_fancy"
-	item_state = "wristwatch_fancy"
-
 /obj/item/clothing/accessory/bracelet/watch/leather
 	name = "fancy leather watch"
 	desc = "An expensive watch with a leather brown band wrapped around your wrist. Snazzy."
@@ -1253,7 +1433,7 @@
 /obj/item/clothing/accessory/passcard/donbettyr
 	name = "Donbettyr passcard"
 	desc = "A passcard issued to citizens of Donbettyr, the homeworld of the Akula. An old, primarily ocean world with two moons and few thousand separated areas of land making up a series of islands and archipelagos."
-	icon_state = "passcard_aqua_fria"
+	icon_state = "passcard_donbettyr"
 	item_state = "badge"
 
 /obj/item/clothing/accessory/passcard/passport_sol
@@ -1273,3 +1453,82 @@
 	desc = "A passport issued to Kriosans by the Kriosan Government who are working or living on Amethyn, in the Chromin 8 system."
 	icon_state = "workvisa"
 	item_state = "kuri"
+
+/obj/item/clothing/accessory/hunter_necklace
+	name = "Fang Tooth Necklace"
+	desc = "A collection of pristine fangs taken from the prey of the hunt tied with some leather strapping."
+	icon_state = "btnecklace"
+	item_state = "btnecklace"
+	slot_flags = SLOT_MASK | SLOT_ACCESSORY_BUFFER
+	price_tag = 1500
+
+/* sashes (sprited by KitchiFox, powered by Goat) */
+
+/obj/item/clothing/accessory/sash
+	name = "blue sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_blue"
+	item_state = "sash_blue"
+
+/obj/item/clothing/accessory/sash/red
+	name = "red sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_red"
+	item_state = "sash_red"
+
+/obj/item/clothing/accessory/sash/yellow
+	name = "yellow sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_yellow"
+	item_state = "sash_yellow"
+
+/obj/item/clothing/accessory/sash/green
+	name = "green sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_green"
+	item_state = "sash_green"
+
+/obj/item/clothing/accessory/sash/orange
+	name = "orange sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_orange"
+	item_state = "sash_orange"
+
+/obj/item/clothing/accessory/sash/pink
+	name = "pink sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_pink"
+	item_state = "sash_pink"
+
+/obj/item/clothing/accessory/sash/purple
+	name = "purple sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_purple"
+	item_state = "sash_purple"
+
+/obj/item/clothing/accessory/pin
+	name = "white badge"
+	desc = "A simple badge with a pin."
+	icon_state = "pin_white"
+	item_state = "pin_white"
+
+/obj/item/clothing/accessory/pin/rainbow
+	name = "rainbow badge"
+	desc = "A colorful badge with a pin."
+	icon_state = "pin_rainbow"
+	item_state = "pin_rainbow"
+
+/obj/item/clothing/accessory/pin/name
+	name = "nametag"
+	desc = "A rectangular, adhesive nametag."
+	icon_state = "pin_name"
+	item_state = "pin_name"
+	var/original_name = "nametag"
+
+/obj/item/clothing/accessory/pin/name/attackby(obj/item/I, mob/user)
+	..()
+	if(istype(I,/obj/item/pen))
+		var/t = input(user, "What would you like the label to say?", "Nametag")
+		if(t)
+			name = "nametag ([t])"
+

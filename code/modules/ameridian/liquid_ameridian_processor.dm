@@ -12,21 +12,28 @@
 	anchor_direction = WEST
 	circuit = /obj/item/circuitboard/liquid_ameridian_processor
 	var/obj/structure/reagent_dispensers/bidon/Container
+	/*
+	Current as of wrighting is balance is around t5 parts aka 50% reduction
+	Meaning: 1 ameridain shard is worth 10, and 50% of 10 = 5 this 1 shards makes 2 steel
+	Its balance this way to both encurage its use to fill in gaps when a drill is failing or to round out numbers when needed
+	Ontop of it being able to be farmed semi-easily with an invest of 1 to 3 cores + time on return.
+	- Trilby 8/24/2022
+	*/
 	var/outputs = list(
-						list(name = "Steel", cost = 100, path = /obj/item/stack/material/steel),
-						list(name = "Plastic", cost = 100, path = /obj/item/stack/material/plastic),
-						list(name = "Glass", cost = 100, path = /obj/item/stack/material/glass),
-						list(name = "Plasteel", cost = 350, path = /obj/item/stack/material/plasteel),
-						list(name = "Silver", cost = 200, path = /obj/item/stack/material/silver),
-						list(name = "Gold", cost = 200, path = /obj/item/stack/material/gold),
-						list(name = "Platinum", cost = 250, path = /obj/item/stack/material/platinum),
-						list(name = "Uranium", cost = 250, path = /obj/item/stack/material/uranium),
-						list(name = "Plasma", cost = 250, path = /obj/item/stack/material/plasma),
-						list(name = "Osmium", cost = 400, path = /obj/item/stack/material/osmium),
-						list(name = "Diamonds", cost = 400, path = /obj/item/stack/material/diamond),
-						list(name = "Metallic Hydrogen", cost = 400, path=/obj/item/stack/material/mhydrogen),
-						list(name = "Tritium", cost = 400, path = /obj/item/stack/material/tritium),
-						list(name = "Ameridian Core", cost = 3600, path=/obj/item/ameridian_core)
+						list(name = "Steel", cost = 10, path = /obj/item/stack/material/steel),
+						list(name = "Plastic", cost = 10, path = /obj/item/stack/material/plastic),
+						list(name = "Glass", cost = 10, path = /obj/item/stack/material/glass),
+						list(name = "Plasteel", cost = 50, path = /obj/item/stack/material/plasteel),
+						list(name = "Silver", cost = 20, path = /obj/item/stack/material/silver),
+						list(name = "Gold", cost = 20, path = /obj/item/stack/material/gold),
+						list(name = "Platinum", cost = 60, path = /obj/item/stack/material/platinum),
+						list(name = "Uranium", cost = 60, path = /obj/item/stack/material/uranium),
+						list(name = "Plasma", cost = 60, path = /obj/item/stack/material/plasma),
+						list(name = "Osmium", cost = 100, path = /obj/item/stack/material/osmium),
+						list(name = "Diamonds", cost = 180, path = /obj/item/stack/material/diamond),
+						list(name = "Metallic Hydrogen", cost = 180, path=/obj/item/stack/material/mhydrogen),
+						list(name = "Tritium", cost = 180, path = /obj/item/stack/material/tritium),
+						list(name = "Ameridian Core", cost = 1200, path=/obj/item/ameridian_core) //At t8 parts its 1:1
 						)
 	var/cost_modifier = 1
 
@@ -59,6 +66,9 @@
 	man_rating /= man_amount
 
 	cost_modifier = man_rating
+
+	if(cost_modifier < 0.2)
+		cost_modifier = 0.2 //Sanity so we dont end up giving or being 0 costs
 
 	updateDialog()
 
@@ -130,8 +140,17 @@
 		return
 
 	if(href_list["material"])
-		var/list/L = list(path=text2path(href_list["material"]), cost=text2num(href_list["cost"]), amount=text2num(href_list["amount"]))
+		var/list/L = list(path=text2path(href_list["material"]), cost=round(text2num(href_list["cost"])), amount=text2num(href_list["amount"]))
 		var/L_path = L["path"]
+		var/successful = FALSE
+		for(var/path in outputs)
+			if(path["path"] == L_path)
+				successful = TRUE
+				break
+		if(L["cost"] <= 0)
+			successful = FALSE
+		if(!successful)
+			return
 
 		if(use_bidon_ameridian((L["cost"]) * L["amount"])) // Check if we have enough liquid ameridian
 			if(ispath(L["path"], /obj/item/stack/material)) // Material sheets are handled differently

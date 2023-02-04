@@ -8,5 +8,6 @@
 	generate_asteroid = TRUE
 	is_sealed = TRUE
 	height = 1
+	digsites = "ANY"
 
 //MINING

@@ -59,6 +59,7 @@
 #define FORM_CANINE				"Canine"
 #define FORM_FELINE				"Feline"
 #define FORM_SHARK				"Shark"
+#define FORM_SUDAK				"Shark (Snoutless)"
 #define FORM_LIZARD				"Lizard"
 #define FORM_LIZARD_TGSHARP     "Sharp-Snouted Lizard"
 #define FORM_LIZARD_TGSMOOTH    "Smooth-Snouted Lizard"
@@ -107,7 +108,7 @@
 //
 #define FORM_MONKEY				"Monkey"
 #define FORM_GOLEM				"Golem"
-#define FORM_HIVEMIND			"Hivelord"
+//#define FORM_HIVEMIND			"Hivelord" - we defeated you >:T
 #define FORM_ALIEN_DRONE		"Xenomorph Drone"
 #define FORM_ALIEN_SENTINEL		"Xenomorph Sentinel"
 #define FORM_ALIEN_HUNTER		"Xenomorph Hunter"

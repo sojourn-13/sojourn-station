@@ -214,10 +214,15 @@
 			return
 
 		I.add_fingerprint(user)
-		I.forceMove(src)
-		user.visible_message("[user.name] places \the [I] into \the [src].", \
-			"You place \the [I] into the [src].")
-		playsound(loc, 'sound/machines/vending_drop.ogg', 100, 1)
+		if(user.drop_from_inventory(I))
+			user.drop_from_inventory(I)
+			I.forceMove(src)
+			user.visible_message("[user.name] places \the [I] into \the [src].", \
+				"You place \the [I] into the [src].")
+			playsound(loc, 'sound/machines/vending_drop.ogg', 100, 1)
+		else
+			user.visible_message("[user.name] fails to throw away \the [I] into \the [src].", \
+				"You fail to throw away \the [I] into the [src].")
 		update()
 		return
 	. = ..()
@@ -1352,7 +1357,8 @@
 /obj/structure/disposalpipe/trunk/Destroy()
 	// Unlink trunk and disposal so that objets are not sent to nullspace
 	var/obj/machinery/disposal/D = linked
-	D.trunk = null
+	if (istype(D))
+		D.trunk = null
 	linked = null
 	return ..()
 

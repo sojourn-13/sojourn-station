@@ -2,7 +2,7 @@
 	name = "ore sonar"
 	desc = "A solid and robust looking white device made to work in the toughest conditions. It's able to scan and print a readout of the local ore heatmap. It works off an internal battery that takes a very long time to recharge. A droopy eared rabbit shape is stamped onto its side."
 	icon_state = "ore-sonar"
-	item_state = "electronic"
+	item_state = "ore-sonar"
 	slot_flags = SLOT_BELT
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MAGNET = 2, TECH_ENGINEERING = 2)
@@ -59,13 +59,23 @@
 				continue
 				//addblueish and continue
 			if(istype(TA.mineral, /ore/platinum))
-				mineralmapss.DrawBox(rgb(255,255,255),TA.x,TA.y,TA.x, TA.y)
+				mineralmapss.DrawBox(rgb(0,0,255),TA.x,TA.y,TA.x, TA.y)
 				continue
 				//addgreysih and continue
 			if(istype(TA.mineral, /ore/hydrogen))
 				mineralmapss.DrawBox(rgb(124,143,90),TA.x,TA.y,TA.x, TA.y)
 				continue
 				//adddarkishcolor and continue
+		if(istype(T, /turf/simulated/floor/asteroid))
+			//So we first add on are floor tile colour then re-draw are check for the crystal.
+			var/turf/simulated/floor/asteroid/TA = T
+			mineralmapss.DrawBox(rgb(255,248,220),TA.x,TA.y,TA.x, TA.y)
+			for(var/c in TA.contents)
+				var/obj/structure/ameridian_crystal/CA = c
+				if(istype(CA, /obj/structure/ameridian_crystal))
+					mineralmapss.DrawBox(rgb(0,255,255),CA.x,CA.y,CA.x, CA.y)
+			continue
+		//Now we add areself
 		if(T == origin)
 			mineralmapss.DrawBox(rgb(255,0,0),T.x,T.y,T.x, T.y)
 			continue
@@ -73,7 +83,7 @@
 	sleep(20)
 	var/obj/item/paper/G = new(user.loc)
 	G.name = "Ore Heatmap"
-	G.info = "[icon2html(mineralmapss,world)] <br> Legend:<br> <font color='#00FF00'>Uranium</font><br>"
+	G.info = "[icon2html(mineralmapss,world)] <br> Legend:<br> <font color='#00FF00'>Uranium</font> Electric green<br>"
 	G.info += "<font color='#CC6600'>Hematite</font> Rusty Orange<br>"
 	G.info += "<font color='#595959'>Coal</font> Shadowy Grey<br>"
 	G.info += "<font color='#FFFF99'>Sand</font> Bright Yellow<br>"
@@ -81,8 +91,10 @@
 	G.info += "<font color='#E0E0EB'>Silver</font> Bright Grey<br>"
 	G.info += "<font color='#FFCC00'>Gold</font> Golden Yellow<br>"
 	G.info += "<font color='#FF408E'>Diamond</font> Cute Pink<br>"
-	G.info += "<font color='#FFFFFF'>Platinum</font> Bright White<br>"
+	G.info += "<font color='#0000FF'>Platinum</font> Slick Blue<br>"
 	G.info += "<font color='#7C8E5A'>Hydrogen</font> Army Green<br>"
+	G.info += "<font color='#00FFFF'>Ameridian Growth</font> Neon Cyan<br>"
+	G.info += "<font color='#964B00'>Dirt Flooring</font> Light Cream<br>"
 	G.info += "<font color='#FF0000'>Your location</font> Angry Red<br>"
 	G.update_icon()
 

@@ -72,6 +72,7 @@
 // Fuel stuff
 /obj/structure/bonfire/proc/add_fuel(obj/item/W, mob/user)
 	insert_item(W, user) // Insert the plank in the fire
+	consume_fuel()
 	user.visible_message(
 						SPAN_NOTICE("[user] insert the [W.name] in the [src.name].") // No need for the user message sine 'insert_item' handle that
 						)

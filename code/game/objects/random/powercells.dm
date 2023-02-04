@@ -45,6 +45,7 @@
 
 /obj/random/powercell/large_safe/item_to_spawn()
 	return pickweight(list(
+				/obj/item/cell/large = 15,\
 				/obj/item/cell/large/high = 10,\
 				/obj/item/cell/large/super = 9,\
 				/obj/item/cell/large/hyper = 3,\
@@ -54,14 +55,27 @@
 				/obj/item/cell/large/moebius/nuclear = 1
 				))
 
+/obj/random/powercell/large_safe_lonestar
+	name = "random large lonestar only powercell"
+	icon_state = "battery-green"
+
+/obj/random/powercell/large_safe_lonestar/item_to_spawn()
+	return pickweight(list(
+				/obj/item/cell/large = 20,\
+				/obj/item/cell/large/high = 15,\
+				/obj/item/cell/large/super = 5,\
+				/obj/item/cell/large/hyper = 1
+				))
+
+
 /obj/random/powercell/medium_safe
 	name = "random medium lonestar weighted powercell"
 	icon_state = "battery-green"
 
 /obj/random/powercell/medium_safe/item_to_spawn()
 	return pickweight(list(
-				/obj/item/cell/medium = 10,\
-				/obj/item/cell/medium/high = 30,\
+				/obj/item/cell/medium = 30,\
+				/obj/item/cell/medium/high = 20,\
 				/obj/item/cell/medium/super = 12,\
 				/obj/item/cell/medium/hyper = 3,\
 				/obj/item/cell/medium/moebius = 20,\
@@ -71,6 +85,18 @@
 				/obj/item/cell/medium/moebius/nuclear = 2
 				))
 
+/obj/random/powercell/medium_safe_lonestar
+	name = "random medium lonestar only powercell"
+	icon_state = "battery-green"
+
+/obj/random/powercell/medium_safe_lonestar/item_to_spawn()
+	return pickweight(list(
+				/obj/item/cell/medium = 30,\
+				/obj/item/cell/medium/high = 15,\
+				/obj/item/cell/medium/super = 5,\
+				/obj/item/cell/medium/hyper = 1
+				))
+
 /obj/random/powercell/small_safe
 	name = "random small lonestar weighted powercell"
 	icon_state = "battery-green"
@@ -78,7 +104,7 @@
 /obj/random/powercell/small_safe/item_to_spawn()
 	return pickweight(list(
 				/obj/item/cell/small = 20,\
-				/obj/item/cell/small/high = 40,\
+				/obj/item/cell/small/high = 20,\
 				/obj/item/cell/small/super = 16,\
 				/obj/item/cell/small/hyper = 4,\
 				/obj/item/cell/small/moebius = 12,\
@@ -86,4 +112,16 @@
 				/obj/item/cell/small/moebius/super = 8,\
 				/obj/item/cell/small/moebius/hyper = 6,\
 				/obj/item/cell/small/moebius/nuclear = 2
+				))
+
+/obj/random/powercell/small_safe_lonestar
+	name = "random small lonestar only powercell"
+	icon_state = "battery-green"
+
+/obj/random/powercell/small_safe_lonestar/item_to_spawn()
+	return pickweight(list(
+				/obj/item/cell/small = 20,\
+				/obj/item/cell/small/high = 10,\
+				/obj/item/cell/small/super = 5,\
+				/obj/item/cell/small/hyper = 1
 				))

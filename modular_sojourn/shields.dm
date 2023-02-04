@@ -1,6 +1,6 @@
 /obj/item/shield/riot/bastion
 	name = "Deployable: Bastion Shield"
-	desc = "A Project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as surprisingly successful idea, both light enough kit to carry out into a combat zone. A true marval of Guild, SI and Blackshield team work to pull off such a task. When deployed can even brace a gun on it."
+	desc = "A project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as a surprisingly successful one, both surprisingly light and insurmountably sturdy enough to be carried out into the most dangerous combat zones. A true marvel of Guild, SI and Blackshield joint effort. When deployed, you can even brace a gun on it."
 	icon = 'icons/obj/bastion.dmi'
 	icon_state = "bastion"
 	item_state = "bastion"
@@ -25,8 +25,8 @@
 
 /obj/item/bastion_broken
 	name = "Broken: Bastion Shield"
-	desc = "Once project inspired by an idea for a true deployable barrier, once the \"Bastion Shield\" was surprisingly successful idea, both light enough kit to carry out into a combat zone. Once a marval of Guild, SI and Blackshield team work to pull off such a task. \
-	Now a broken shell of its former self, maybe it still has scrap inside..."
+	desc = "Once a project inspired by an idea for a true deployable barrier, the \"Bastion Shield\" came as a surprisingly successful one, both surprisingly light and insurmountably sturdy enough to be carried out into the most dangerous combat zones. A true marvel of Guild, SI and Blackshield joint effort. \
+	Now a broken shell of its former self, maybe it can still be scrapped for what it's worth..."
 	icon = 'icons/obj/bastion.dmi'
 	icon_state = "bastion_broken"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 4)
@@ -47,7 +47,7 @@
 
 /obj/structure/shield_deployed
 	name = "Bastion Barrier"
-	desc = "A Deployed Bastion shield, ready to be used as a combat barrier for gunfights, can brace guns."
+	desc = "A Deployed Bastion shield, ready to be used as a combat barrier for gunfights. Guns can be braced on it."
 	icon = 'icons/obj/bastion.dmi'
 	icon_state = "barrier"
 	density = TRUE
@@ -56,6 +56,10 @@
 	climbable = TRUE
 	maxHealth = 300 //Lets not like, be unkillable or what not, would suck to eat like 500 shots or hits
 	health = 300
+	var/base_blocking = 60
+	var/reinforced_blocking = 40
+	var/base_cover = 50
+	var/reinforced_added_cover = 50
 	var/reinforced = FALSE
 	var/item_form_type = /obj/item/shield/riot/bastion
 
@@ -67,7 +71,7 @@
 
 /obj/structure/shield_deployed/proc/damage(damage)
 	health -= damage
-	if(health <= 0)
+	if(health < 1)
 		new /obj/item/bastion_broken(get_turf(src))
 		qdel(src)
 
@@ -120,21 +124,30 @@
 		return 1
 
 /obj/structure/shield_deployed/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	if(air_group || (height==0)) return 1
+	if(air_group || (height==0))
+		return 1
 	if(istype(mover,/obj/item/projectile))
-		if(locate(/mob/living/) in get_turf(loc))
-			return (check_cover(mover,target))
 
 		var/obj/item/projectile/P = mover
-		var/chance = 40
+		var/chance = base_blocking
+
+		if(locate(/mob/living/) in get_turf(loc))
+			return (check_cover(P,target))
 		if(get_dist(P.starting, loc) <= 1)
 			return 1
+		if(istype(P, /obj/item/projectile/test) || P.testing) // Turrets need to try to kill the shield and so their test bullet needs to penetrate.
+			return 1
+		var/bad_arc = reverse_direction(dir) // Arc of directions from which we cannot block.
+		if(!check_parry_arc(src, bad_arc, P)) // This is actually for mobs but it will work for our purposes as well.
+			return 1
+
 		if(health >= 1)
 			if(reinforced == TRUE)
-				chance += 40
+				chance += reinforced_blocking
 			if((prob(chance)) && (!(P.testing)))
 				damage(P.get_structure_damage())
 				visible_message(SPAN_WARNING("[P] hits \the [src]!"))
+				qdel(P)
 				return 0
 		else
 			return 1
@@ -159,21 +172,28 @@
 		return 1
 	if(get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
 		return 1
-	if(get_turf(P.original) == cover)
-		var/chance = 40
-		if(reinforced == TRUE)
-			chance += 40
-		if(health==0)
-			chance = 0
-		if((prob(chance)) && (!(P.testing)))
-			damage(P.get_structure_damage())
-			if (health > 0)
-				visible_message(SPAN_WARNING("[P] hits \the [src]!"))
-				return 0
-			else
-				//visible_message(SPAN_WARNING("[src] breaks down!"))
-				//break_to_parts()
-				return 1
+
+	if(istype(P, /obj/item/projectile/test) || P.testing) // Turrets need to try to kill the shield and so their test bullet needs to penetrate.
+		return 1
+
+	var/bad_arc = reverse_direction(dir) // Arc of directions from which we cannot block.
+	if(!check_parry_arc(src, bad_arc, P)) // This is actually for mobs but it will work for our purposes as well.
+		return 1
+
+	var/chance = base_cover
+	if(reinforced == TRUE)
+		chance += reinforced_added_cover
+	if((prob(chance)) && (!(P.testing)))
+		damage(P.get_structure_damage())
+		if (health > 0)
+			visible_message(SPAN_WARNING("[P] hits \the [src]!"))
+			qdel(P)
+			return 0
+		else
+			//visible_message(SPAN_WARNING("[src] breaks down!"))
+			//break_to_parts()
+			return 1
+
 	return 1
 
 /obj/structure/shield_deployed/CheckExit(atom/movable/O as mob|obj, target as turf)

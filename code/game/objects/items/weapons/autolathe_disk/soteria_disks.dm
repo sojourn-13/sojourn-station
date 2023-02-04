@@ -33,7 +33,7 @@
 		/datum/design/autolathe/misc/bodybag,
 		/datum/design/research/item/medical/autopsy_scanner,
 		/datum/design/research/item/medical/roller_bed,
-		/datum/design/autolathe/gun/dnalock_mod,
+		/datum/design/research/item/weapon/weapon_upgrade/dnalock_mod,
 		/datum/design/autolathe/container/hcase_med
 	)
 
@@ -75,7 +75,7 @@
 		/datum/design/research/item/clothing/health = 2,
 		/datum/design/autolathe/clothing/si_xenobio_hood,
 		/datum/design/autolathe/clothing/si_xenobio_suit,
-		/datum/design/autolathe/gun/dnalock_mod,
+		/datum/design/research/item/weapon/weapon_upgrade/dnalock_mod,
 		/datum/design/autolathe/container/hcase_med
 	)
 
@@ -88,18 +88,33 @@
 	disk_name = "Soteria Advanced Medical Designs Factory"
 	license = -1 //Same disk, but for the CBO exclusively with endless uses.
 
+/obj/item/computer_hardware/hard_drive/portable/design/medical/surgery
+	disk_name = "Soteria Standard Organs"
+	license = -1
+	designs = list(
+		/datum/design/organ/heart,
+		/datum/design/organ/lungs,
+		/datum/design/organ/kidney_left,
+		/datum/design/organ/kidney_right,
+		/datum/design/organ/liver,
+		/datum/design/organ/eyes,
+		/datum/design/organ/nerves,
+		/datum/design/organ/muscle,
+		/datum/design/organ/blood_vessel
+	)
+
 /obj/item/computer_hardware/hard_drive/portable/design/surgery
 	disk_name = "Back Alley Organs"
 	icon_state = "moebius"
 
 	license = 5
 	designs = list(
-		/datum/design/bioprinter/lungs,
-		/datum/design/bioprinter/heart,
-		/datum/design/bioprinter/liver,
-		/datum/design/bioprinter/nerves,
-		/datum/design/bioprinter/muscle,
-		/datum/design/bioprinter/blood_vessel
+		/datum/design/organ/back_alley/ex_lungs,
+		/datum/design/organ/back_alley/huge_heart,
+		/datum/design/organ/back_alley/big_liver,
+		/datum/design/organ/back_alley/hyper_nerves,
+		/datum/design/organ/back_alley/super_muscle,
+		/datum/design/organ/back_alley/ex_blood_vessel
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/computer
@@ -110,6 +125,7 @@
 		/datum/design/autolathe/computer_part/frame_pda,
 		/datum/design/autolathe/computer_part/frame_tablet,
 		/datum/design/autolathe/computer_part/frame_laptop,
+		/datum/design/autolathe/computer_part/frame_wristmount,
 		/datum/design/research/item/computer_part/disk/micro,
 		/datum/design/research/item/computer_part/disk/small,
 		/datum/design/research/item/computer_part/disk/normal,

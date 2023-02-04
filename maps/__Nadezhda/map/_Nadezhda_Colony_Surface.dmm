@@ -13122,10 +13122,10 @@
 /area/nadezhda/engineering/atmos/surface)
 "hYX" = (
 /obj/structure/table/standard,
-/obj/item/gun/projectile/automatic/blackguard{
+/obj/item/gun/projectile/automatic/omnirifle/scoped{
 	pixel_x = 12
 	},
-/obj/item/gun/projectile/automatic/blackguard{
+/obj/item/gun/projectile/automatic/omnirifle/scoped{
 	pixel_x = 12;
 	pixel_y = 8
 	},
@@ -18319,10 +18319,10 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/campground)
 "nma" = (
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine{
+/obj/item/gun/projectile/automatic/omnirifle{
 	pixel_y = 4
 	},
-/obj/item/gun/projectile/automatic/omnirifle/omnicarbine/rds,
+/obj/item/gun/projectile/automatic/omnirifle/rds,
 /obj/structure/closet/crate/serbcrate,
 /obj/random/gun_combat/low_chance,
 /obj/random/gun_combat/low_chance,

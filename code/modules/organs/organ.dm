@@ -119,7 +119,15 @@
 	if(istype(loc, /obj/item/device/mmi) || istype(loc, /mob/living/simple_animal/spider_core))
 		return TRUE
 
-	if(istype(loc, /obj/structure/closet/body_bag/cryobag) || istype(loc, /obj/structure/closet/crate/freezer) || istype(loc, /obj/item/storage/freezer))
+	var/list/stasis_types = list(
+		/obj/structure/closet/body_bag/cryobag,
+		/obj/structure/closet/crate/freezer,
+		/obj/item/storage/freezer,
+		/obj/machinery/smartfridge,
+		/obj/machinery/vending
+	)
+
+	if(is_type_in_list(loc, stasis_types))
 		return TRUE
 
 	return FALSE
@@ -261,14 +269,14 @@
 
 //Note: external organs have their own version of this proc
 /obj/item/organ/proc/take_damage(amount, silent=0)
-	if(BP_IS_ROBOTIC(src))
+	/*if(BP_IS_ROBOTIC(src))
 		damage = between(0, damage + (amount * 0.8), max_damage)
 	else
-		damage = between(0, damage + amount, max_damage)
+		damage = between(0, damage + amount, max_damage)*/
 
-		//only show this if the organ is not robotic
-		if(owner && parent && amount > 0 && !silent)
-			owner.custom_pain("Something inside your [parent.name] hurts a lot.", 1)
+	//only show this if the organ is not robotic
+	if(owner && parent && amount > 0 && !silent)
+		owner.custom_pain("Something inside your [parent.name] hurts a lot.", 1)
 
 /obj/item/organ/proc/bruise()
 	damage = max(damage, min_bruised_damage)
@@ -276,13 +284,25 @@
 /obj/item/organ/emp_act(severity)
 	if(!BP_IS_ROBOTIC(src))
 		return
-	switch (severity)
-		if(1)
-			take_damage(30) //Deals half the organs damage
-		if(2)
-			take_damage(25)
-		if(3)
-			take_damage(15)
+
+	//Robotic body parts conduct EMPs way better than flesh
+	if(parent && BP_IS_ROBOTIC(parent))
+		switch (severity)
+			if(1)
+				take_damage(40) //Deals half the organs damage
+			if(2)
+				take_damage(30)
+			if(3)
+				take_damage(20)
+	else
+		switch (severity)
+			if(1)
+				take_damage(25) //Deals half the organs damage
+			if(2)
+				take_damage(20)
+			if(3)
+				take_damage(10)
+
 
 // Gets the limb this organ is located in, if any
 /obj/item/organ/proc/get_limb()

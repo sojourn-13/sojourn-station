@@ -36,7 +36,7 @@
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/scavenger
-	ghost_role_perks = list(/datum/perk/stalker, /datum/perk/lungs_of_iron, /datum/perk/sure_step)
+	ghost_role_perks = list(/datum/perk/stalker, /datum/perk/lungs_of_iron, /datum/perk/sure_step, /datum/perk/true_name)
 	short_desc = "You're a scavenger, who barely even owns the clothes on your back and the rifle in your hands."
 	flavour_text = "It seems you've arrived. You're here to get the good stuff and skedaddle with your life intact. \
 	There may be others to cooperate with, but don't count on it. There shouldn't be many if any cops this far out, and laws don't carry much truck around here."
@@ -49,7 +49,7 @@
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
-	ghost_role_perks = list(/datum/perk/job/bolt_reflect, /datum/perk/lungs_of_iron, /datum/perk/sure_step)
+	ghost_role_perks = list(/datum/perk/job/bolt_reflect, /datum/perk/lungs_of_iron, /datum/perk/sure_step, /datum/perk/true_name)
 	outfit = /decl/hierarchy/outfit/antagonist/mercenary/excelsior
 	short_desc = "You are a excelsior, move ever upwards."
 	flavour_text = "It seems you've arrived. You're here to get the good stuff and skedaddle with your life intact. \
@@ -75,7 +75,7 @@
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/antagonist/mercenary/void_wolf
-	ghost_role_perks = list(/datum/perk/second_skin, /datum/perk/lungs_of_iron, /datum/perk/sure_step)
+	ghost_role_perks = list(/datum/perk/second_skin, /datum/perk/lungs_of_iron, /datum/perk/sure_step, /datum/perk/true_name)
 	short_desc = "You are a Void wolf."
 	flavour_text = "It seems you've arrived. You're here to get the good stuff and skedaddle with your life intact. \
 	There may be others to cooperate with, but don't count on it."
@@ -97,7 +97,7 @@
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/si_medical_ert
-	ghost_role_perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, /datum/perk/si_sci, /datum/perk/chemist, /datum/perk/sure_step)
+	ghost_role_perks = list(/datum/perk/medicalexpertise, /datum/perk/advanced_medical, /datum/perk/si_sci, /datum/perk/chemist, /datum/perk/sure_step, /datum/perk/true_name)
 	short_desc = "You are a Medical Emergency Personnel."
 	flavour_text = "Something has happend to the upper colony to warrent your deployment, you are a doctor first, save as many lives as possable with your healing gear not gun."
 	assignedrole = "Medical Emergency Personnel"
@@ -118,7 +118,7 @@
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/marshal_ert
-	ghost_role_perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/bolt_reflect, /datum/perk/codespeak, /datum/perk/chem_contraband)
+	ghost_role_perks = list(/datum/perk/ass_of_concrete, /datum/perk/job/bolt_reflect, /datum/perk/codespeak, /datum/perk/chem_contraband, /datum/perk/true_name)
 	short_desc = "You are a Marshal agent."
 	flavour_text = "Something has happend to the upper colony to warrant your deployment. Uphold the word of law and ensure peace is upkept in Nadezhda."
 	assignedrole = "Marshal Agent"
@@ -132,6 +132,49 @@
 		STAT_COG = 10
 	)
 
+/obj/effect/mob_spawn/human/engi_ert
+	name = "deployment sleeper"
+	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in advanced Guild equipment."
+	mob_name = "a human"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/engi_ert
+	ghost_role_perks = list(/datum/perk/inspiration, /datum/perk/handyman, /datum/perk/sure_step, /datum/perk/true_name)
+	short_desc = "You are a Medical Emergency Personnel."
+	flavour_text = "Something has happend to the upper colony to warrent your deployment, you are a engineer first, repair the problem, law breakers are not in your juristiction."
+	assignedrole = "Guild Emergency Personnel"
+	title = "Guild Emergency Personnel"
+	stat_modifiers = list(
+		STAT_ROB = 35,
+		STAT_TGH = 35,
+		STAT_BIO = 35,
+		STAT_MEC = 100,
+		STAT_VIG = 5,
+		STAT_COG = 65
+	)
+
+/obj/effect/mob_spawn/human/lss_ert
+	name = "deployment sleeper"
+	desc = "An sleeper, with an unconscious body inside. The occupant seems to be an Auditor."
+	mob_name = "a human"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/lss_ert
+	ghost_role_perks = list(/datum/perk/si_sci, /datum/perk/chemist, /datum/perk/sure_step, /datum/perk/true_name)
+	short_desc = "You are an Auditor."
+	flavour_text = "The upper colony has done something thats not upto code, weather it be LSS, SI or any other department your job is to look into any matter that HC tells you about. \
+	Your not a cop, your not a medical personal your here to correct some papers not criminals."
+	assignedrole = "Guild Emergency Personnel"
+	title = "Guild Emergency Personnel"
+	stat_modifiers = list(
+		STAT_ROB = 45,
+		STAT_TGH = 45,
+		STAT_BIO = 45,
+		STAT_MEC = 45,
+		STAT_VIG = 45,
+		STAT_COG = 65
+	)
+
 
 /obj/effect/mob_spawn/human/kriosan_trooper
 	name = "deployment sleeper"
@@ -140,7 +183,7 @@
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/doggo
-	ghost_role_perks = list(/datum/perk/exceptional_aim, /datum/perk/enhancedsenses)
+	ghost_role_perks = list(/datum/perk/exceptional_aim, /datum/perk/enhancedsenses, /datum/perk/true_name)
 	short_desc = "You are a kriosan trooper."
 	flavour_text = "*bark."
 	assignedrole = "Kriosan Trooper"

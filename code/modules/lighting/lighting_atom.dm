@@ -75,12 +75,6 @@
 		if(open.isOpen())
 			open.fallThrough(src)
 
-/atom/movable/Destroy()
-	var/turf/T = loc
-	if(opacity && istype(T))
-		T.reconsider_lights()
-	return ..()
-
 /atom/movable/Move()
 	var/turf/old_loc = loc
 	. = ..()
@@ -128,5 +122,5 @@
 
 /obj/item/dropped()
 	. = ..()
-	SEND_SIGNAL(src, COMSIG_ITEM_DROPPED, src)
+	LEGACY_SEND_SIGNAL(src, COMSIG_ITEM_DROPPED, src)
 	update_light()

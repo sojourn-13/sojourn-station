@@ -23,7 +23,7 @@
 /obj/machinery/trade_beacon/sending
 	name = "sending trade beacon"
 	icon_state = "beacon_sending"
-	circuit = /obj/item/circuitboard/trade_beacon/receiving
+	circuit = /obj/item/circuitboard/trade_beacon/sending
 	var/export_cooldown = 180 SECONDS
 	var/export_timer_start
 
@@ -51,7 +51,7 @@
 
 /obj/machinery/trade_beacon/receiving
 	name = "receiving trade beacon"
-	circuit = /obj/item/circuitboard/trade_beacon/sending_beacon
+	circuit = /obj/item/circuitboard/trade_beacon/receiving
 
 /obj/machinery/trade_beacon/receiving/Initialize()
 	. = ..()
@@ -71,7 +71,7 @@
 		return FALSE
 	activate()
 	var/turf/simulated/floor/pickfloor = pick(floor)
-	if(ispath(drop_type, /obj/structure/closet/crate))
+	if(ispath(drop_type, /obj/structure/closet))
 		var/mob/living/carbon/human/dude = locate(/mob/living/carbon/human) in pickfloor
 		if(dude)
 			dude.damage_through_armor(30)

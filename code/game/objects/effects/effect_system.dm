@@ -16,21 +16,16 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	unacidable = 1//So effect are not targeted by alien acid.
 	pass_flags = PASSTABLE | PASSGRILLE
 
-
-/obj/effect/Initialize(mapload, ...)
+/obj/effect/add_initial_transforms()
 	. = ..()
-	if (random_rotation)
-		var/matrix/M = transform
-		if (random_rotation == 1)
-			M.Turn(pick(0,90,180,-90))
 
-		else if (random_rotation == 2)
-			M.Turn(rand(0,360))
-
-		transform = M
-	if(random_offset)
-		pixel_x += rand(-random_offset,random_offset)
-		pixel_y += rand(-random_offset,random_offset)
+	var/rotation_amount = 0
+	switch (random_rotation)
+		if (1)
+			rotation_amount = pick(0, 90, 180, -90)
+		if (2)
+			rotation_amount= rand(0,360)
+	add_new_transformation(/datum/transform_type/modular, list(rotation = rotation_amount, flag = EFFECT_INITIAL_ROTATION_TRANSFORM, priority = EFFECT_INITIAL_ROTATION_TRANSFORM_PRIORITY))
 
 /datum/effect/effect/system
 	var/number = 3
@@ -333,6 +328,18 @@ steam.start() -- spawns the effect
 		M.emote("cough")
 		spawn ( 20 )
 			M.coughedtime = 0
+
+/////////////////////////////////////////////
+//  White phosphorous
+/////////////////////////////////////////////
+
+/obj/effect/effect/smoke/white_phosphorous
+    name = "white phosphorous smoke"
+
+/obj/effect/effect/smoke/white_phosphorous/affect(mob/living/carbon/M)
+    M.fire_stacks += 5
+    M.fire_act()
+
 /////////////////////////////////////////////
 // Mustard Gas
 /////////////////////////////////////////////
@@ -403,11 +410,11 @@ steam.start() -- spawns the effect
 /datum/effect/effect/system/smoke_spread/sleepy
 	smoke_type = /obj/effect/effect/smoke/sleepy
 
-
 /datum/effect/effect/system/smoke_spread/mustard
 	smoke_type = /obj/effect/effect/smoke/mustard
 
-
+/datum/effect/effect/system/smoke_spread/white_phosphorous
+	smoke_type = /obj/effect/effect/smoke/white_phosphorous
 
 
 
@@ -418,10 +425,8 @@ steam.start() -- spawns the effect
 
 	set_up (amt, loc, flash = 0, flash_fact = 0)
 		amount = amt
-		if(istype(loc, /turf/))
-			location = loc
-		else
-			location = get_turf(loc)
+
+		location = loc
 
 		flashing = flash
 		flashing_factor = flash_fact
@@ -429,14 +434,14 @@ steam.start() -- spawns the effect
 		return
 
 	start()
-		if (amount <= 2)
+		if (amount <= 3)
 			var/datum/effect/effect/system/spark_spread/s = new
-			s.set_up(2, 1, location)
+			s.set_up(3, 1, location)
 			s.start()
 
-			for(var/mob/M in viewers(5, location))
+			for(var/mob/M in viewers(5, get_turf(location)))
 				to_chat(M, SPAN_WARNING("The solution violently explodes."))
-			for(var/mob/M in viewers(1, location))
+			for(var/mob/M in viewers(1, get_turf(location)))
 				if (prob (50 * amount))
 					to_chat(M, SPAN_WARNING("The explosion knocks you down."))
 					M.Weaken(rand(1,5))
@@ -460,7 +465,7 @@ steam.start() -- spawns the effect
 			if (flashing && flashing_factor)
 				flash = (amount/4) * flashing_factor
 
-			for(var/mob/M in viewers(8, location))
+			for(var/mob/M in viewers(8, get_turf(location)))
 				to_chat(M, SPAN_WARNING("The solution violently explodes."))
 
 			explosion(

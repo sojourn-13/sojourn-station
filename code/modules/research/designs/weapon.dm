@@ -20,7 +20,7 @@
 	build_path = /obj/item/gun/energy/stunrevolver/sci
 
 /datum/design/research/item/weapon/nuclear_gun
-	name = "Prototype: Advanced Energy Gun"
+	name = "\"EBR-IV\" Nuclear Particle Rifle"
 	build_path = /obj/item/gun/energy/gun/nuclear
 
 /datum/design/research/item/weapon/lasercannon
@@ -46,11 +46,7 @@
 	build_path = /obj/item/gun/energy/centauri
 
 /datum/design/research/item/weapon/clarissa
-	build_path = /obj/item/gun/projectile/clarissa/moebius
-
-/datum/design/research/item/weapon/decloner
-	name = "Prototype: Biological Demolecularizer"
-	build_path = /obj/item/gun/energy/decloner
+	build_path = /obj/item/gun/projectile/makarov/moebius
 
 /datum/design/research/item/weapon/slimegun
 	name = "Prototype: \"Ranch\" core stopper gun"
@@ -135,16 +131,11 @@
 			this device suffers from a wide number of reliability issues stemming from it being lathe printed."
 	build_path = /obj/item/hatton/moebius
 
-//Starstriker - The gun thats able to strike the stars!
-/datum/design/research/item/weapon/starstriker
-	name = "\"Star Striker\" laser boltgun"
-	desc = "A mix of the lighter version of the Sike point 257 hunting rifle, but with the twist of using laser based casings rather then normal bullet based projectiles. Its cal is .233 unlike the gun its based on."
-	build_path = /obj/item/gun/projectile/boltgun/sci
+//OP dart gun
+/datum/design/research/item/weapon/carbine_dartgun
+	name = "\"Artemis\" dart carbine"
+	build_path = /obj/item/gun/projectile/dartgun
 
-//LAK - The gun thats able to laser shot away most proplems
-/datum/design/research/item/weapon/laser_ak
-	name = "\"Legkiy-Kalashnikov\" laser carbine"
-	build_path = /obj/item/gun/projectile/automatic/ak47/akl
 
 // Plasma guns
 /datum/design/research/item/weapon/hydrogen_rifle
@@ -227,6 +218,18 @@
 	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50/laser
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 
+/datum/design/research/item/ammo/fancy_dart
+	name = "carbine chem dart"
+	desc = "A hollow dart that loads into a cartridge."
+	build_path = /obj/item/ammo_casing/chemdart
+	materials = list(MATERIAL_STEEL = 3)
+
+/datum/design/research/item/ammo/dart_mag
+	name = "dart cartridge"
+	desc = "A rack of hollow darts."
+	build_path = /obj/item/ammo_magazine/chemdart
+	materials = list(MATERIAL_STEEL = 3)
+
 // Shotgun Ammo
 
 /datum/design/research/item/ammo/shotgun_stun
@@ -257,48 +260,6 @@
 /datum/design/research/item/ammo/rapidsyringe
 	name = "Syringe Gun Cartridge"
 	build_path = /obj/item/syringe_cartridge
-
-/datum/design/research/item/ammo/laser_mag
-	name = "Laser 5.56mm casing mag (empty)"
-	desc = "A 20 round magazine marked for 5.56mm Carbine laser ammunition."
-	build_path = /obj/item/ammo_magazine/rifle_223/empty
-	materials = list(MATERIAL_STEEL = 5) // It's an empty 20 round mag. 15 steel a piece base cost is too much.
-
-/datum/design/research/item/ammo/laser  // Smaller investment and technically more cost-efficient, but more useful for boltgun users than anyone else.
-	name = "\"Star Striker\" casing"
-	desc = "A 30 round packet of casings for the Star Striker laser rifle, its cal is 5.56mm."
-	build_path = /obj/item/ammo_magazine/ammobox/laser_223
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_SILVER = 2.5) //Takes silver
-
-/datum/design/research/item/ammo/laser/ap
-	name = "\"Star Striker\" piercing laser casing."
-	desc = "A 30 round packet of casings for the Star Striker laser rifle. Meant for penetration of armor, its cal is 5.56mm."
-	build_path = /obj/item/ammo_magazine/ammobox/laser_223/ap
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5) //Takes gold
-
-/datum/design/research/item/ammo/laser/lethal
-	name = "\"Star Striker\" dense laser casing."
-	desc = "A 30 round packet of casings for the Star Striker laser rifle. Compact laser that deals more damage but is easily blocked by armor, its cal is 5.56mm."
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_PLASMA = 2.5) //Takes plasma
-	build_path = /obj/item/ammo_magazine/ammobox/laser_223/lethal
-
-/datum/design/research/item/ammo/laser/box // larger initial investment, but highly beneficial for Laser AK users.
-	name = "\"Legkiy-Kalashnikov\" standard laser box"
-	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine, its cal is 5.56mm."
-	build_path = /obj/item/ammo_magazine/ammobox/laser_223/box
-	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_SILVER = 25)
-
-/datum/design/research/item/ammo/laser/ap/box
-	name = "\"Legkiy-Kalashnikov\" piercing laser box."
-	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine. Meant for penetration of armor, its cal is 5.56mm."
-	build_path = /obj/item/ammo_magazine/ammobox/laser_223/ap/box
-	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_GOLD = 25)
-
-/datum/design/research/item/ammo/laser/lethal/box
-	name = "\"Legkiy-Kalashnikov\" dense laser box."
-	desc = "A 200 round box of casings for the Legkiy-Kalashnikov laser carbine. Compact laser that deals more damage but is easily blocked by armor, its cal is 5.56mm."
-	materials = list(MATERIAL_STEEL = 50, MATERIAL_GLASS = 50, MATERIAL_PLASMA = 25)
-	build_path = /obj/item/ammo_magazine/ammobox/laser_223/lethal/box
 
 /datum/design/research/item/ammo/hydroflaskette
 	name = "Compressed metallic hydrogen flask"
@@ -340,6 +301,15 @@
 /datum/design/research/item/weapon/weapon_upgrade/toxin_coater
 	name = "Soteria \"Black Viper\" toxin coater"
 	build_path = /obj/item/gun_upgrade/barrel/toxin_coater
+
+/datum/design/research/item/weapon/weapon_upgrade/dnalock_mod
+	name = "Soteria \"DNA lock\" Finger Imprinter Trigger"
+	build_path = /obj/item/gun_upgrade/trigger/dnalock
+
+/datum/design/research/item/weapon/weapon_upgrade/auto_eject_no_removal
+	name = "Soteria \"Faller\" Magwell Clearer"
+	build_path = /obj/item/gun_upgrade/magwell/auto_eject/no_removal
+
 /*
 /datum/design/research/item/weapon/weapon_upgrade/isotope_diffuser
 	name = "Soteria \"Atomik\" isotope diffuser"

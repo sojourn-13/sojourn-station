@@ -21,15 +21,15 @@
 	. = ..()
 	if(prob(5))
 		empulse(loc, 0, 3)
-		playsound(loc, list('sound/weapons/unknown_spacegun_burn.ogg', 'sound/weapons/unknown_spacegun_melt.ogg', 'sound/weapons/unknown_spacegun_incinerate.ogg', 'sound/weapons/unknown_spacegun_vaporize.ogg'), 50, 1)
+		playsound(loc, list('sound/weapons/guns/unknown_spacegun_burn.ogg', 'sound/weapons/guns/unknown_spacegun_melt.ogg', 'sound/weapons/guns/unknown_spacegun_incinerate.ogg', 'sound/weapons/guns/unknown_spacegun_vaporize.ogg'), 50, 1)
 
 /mob/living/carbon/superior_animal/roach/elektromagnetisch/death(gibbed,message = deathmessage)
 	if (stat != DEAD)
 		target_mob = null
 		stance = initial(stance)
 		stop_automated_movement = initial(stop_automated_movement)
-		walk(src, 0)
-		playsound(loc, list('sound/weapons/unknown_spacegun_burn.ogg', 'sound/weapons/unknown_spacegun_melt.ogg', 'sound/weapons/unknown_spacegun_incinerate.ogg', 'sound/weapons/unknown_spacegun_vaporize.ogg'))
+		SSmove_manager.stop_looping(src)
+		playsound(loc, list('sound/weapons/guns/unknown_spacegun_burn.ogg', 'sound/weapons/guns/unknown_spacegun_melt.ogg', 'sound/weapons/guns/unknown_spacegun_incinerate.ogg', 'sound/weapons/guns/unknown_spacegun_vaporize.ogg'))
 		empulse(loc, 3,3) //Death mixes it making it even worst
 
 		density = 0

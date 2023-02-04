@@ -99,10 +99,11 @@
 	if (target.buckled)
 		to_chat(user, SPAN_NOTICE("Unbuckle the subject before attempting to move them."))
 		return
-	user.visible_message(
-		SPAN_NOTICE("\The [user] begins placing \the [target] into \the [src]."),
-		SPAN_NOTICE("You start placing \the [target] into \the [src].")
-	)
+	if(target == user)
+		visible_message("\The [user] starts climbing into \the [src].")
+	else
+		visible_message("\The [user] starts putting [target] into \the [src].")
+
 	if(!do_after(user, 30, src) || !Adjacent(target))
 		return
 	set_occupant(target)

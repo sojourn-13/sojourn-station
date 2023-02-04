@@ -30,13 +30,13 @@
 
 	var/turf/our_turf = get_turf(src)
 	if (our_turf) //If we're not in anything, continue
-		for(var/mob/living/target_mob in hearers(src, viewRange))
+		for(var/mob/living/target_mob as anything in hearers(src, viewRange)) //as anything works because isvalid has a isliving check, change if necessary
 			if (isValidAttackTarget(target_mob))
 				if(target_mob.target_dummy && prioritize_dummies) //Target me over anyone else
 					return target_mob
 				filteredTargets += target_mob
 
-		for (var/obj/mecha/M in GLOB.mechas_list)
+		for (var/obj/mecha/M as anything in GLOB.mechas_list)
 			//As goofy as this looks its more optimized as were not looking at every mech outside are z-level if they are around us. - Trilby
 			if(M.z == z)
 				if(get_dist(src, M) <= viewRange)
@@ -49,7 +49,7 @@
 		doTargetMessage()
 
 	if (filteredTarget)
-		target_location = WEAKREF(filteredTarget.loc)
+		target_location = WEAKREF(get_turf(filteredTarget))
 
 	return filteredTarget
 
@@ -104,7 +104,10 @@
 /mob/living/carbon/superior_animal/proc/loseTarget(stop_pursuit = TRUE, simply_losetarget = FALSE)
 	if (stop_pursuit)
 		stop_automated_movement = 0
-		walk_to_wrapper(src, 0, deathcheck = FALSE)
+		if (move_packet)
+			var/datum/move_loop/our_loop = move_packet.existing_loops[SSmovement] //niko todo: replace with something better
+			if (our_loop && our_loop.priority < MOVEMENT_PATHMODE_PRIORITY)
+				SSmove_manager.stop_looping(src)
 	if (!simply_losetarget)
 		fire_delay = fire_delay_initial
 		melee_delay = melee_delay_initial
@@ -149,82 +152,87 @@
 	if (prob(break_stuff_probability))
 
 		for (var/obj/structure/window/obstacle in loc) // To destroy directional windows that are on the creature's tile
-			obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+			obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 			return
 
 		for (var/obj/machinery/door/window/obstacle in loc) // To destroy windoors that are on the creature's tile
-			obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+			obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 			return
 
 		for (var/dir in cardinal) // North, South, East, West
 			for (var/obj/structure/window/obstacle in get_step(src, dir))
 				if ((obstacle.is_full_window()) || (obstacle.dir == reverse_dir[dir])) // So that directional windows get smashed in the right order
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 					return
 
 			for (var/obj/machinery/door/window/obstacle in get_step(src, dir))
 				if (obstacle.dir == reverse_dir[dir]) // So that windoors get smashed in the right order
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 					return
 
 			for(var/obj/structure/closet/obstacle in get_step(src, dir))//A locker as a block? We will brake it.
 				if(obstacle.opened == FALSE || obstacle.density == TRUE) //Are we closed or dence? then attack!
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 					return
 
 			for(var/obj/structure/table/obstacle in get_step(src, dir))//Tables do not save you.
 				if(obstacle.density == TRUE) //In cases were its flipped and its walking past it
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 					return
 
 			for(var/obj/structure/low_wall/obstacle in get_step(src, dir))//This is only a miner issue... We will brake it
 				if(obstacle.density == TRUE) //Almost never will do anything, but in cases were theirs a non-dence lower wall
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper) * 3,attacktext) //Lots of health
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper) * 3,pick(attacktext)) //Lots of health
 					return
 
 			for(var/obj/structure/girder/obstacle in get_step(src, dir))//We know your tricks, they will now fail.
 				if(obstacle.density == TRUE)
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper) * 2,attacktext) //A bit of health
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper) * 2,pick(attacktext)) //A bit of health
 					return
 
 			for(var/obj/structure/railing/obstacle in get_step(src, dir))//Bulkwork defence... Easy to brake
 				if(obstacle.density == TRUE)
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 					return
 
 			for(var/obj/mecha/obstacle in get_step(src, dir))//Hmm, notable but not everlasting.
 				if(obstacle.density == TRUE) //will always likely be dence but in cases were its somehow not
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 					return
 
 			for(var/obj/structure/barricade/obstacle in get_step(src, dir))//Steel will not stop us, then why would planks?
 				if(obstacle.density == TRUE)
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 					return
 
 			for(var/obj/machinery/deployable/obstacle in get_step(src, dir))//Steel will not stop us, then why would planks?
 				if(obstacle.density == TRUE)
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 					return
 
 			for(var/obj/structure/grille/obstacle in get_step(src, dir))//An insult to defences... We will make you pay
 				if(obstacle.density == TRUE)
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 					return
 
 			for(var/obj/machinery/door/obstacle in get_step(src,dir)) //Doors, will stop us when closed, but we will brake it
 				if(obstacle.density == TRUE)
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 					return
 
 			for(var/obj/structure/plasticflaps/obstacle in get_step(src,dir)) //Weak plastic will not bar us
 				if(obstacle.density == TRUE)
-					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 					return
 
 			for(var/obj/structure/shield_deployed/obstacle in get_step(src,dir))
-				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),attacktext)
+				obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
 				return
+
+			for(var/obj/machinery/tesla_turret/obstacle in get_step(src,dir)) //Weak plastic will not bar us
+				if(obstacle.density == TRUE)
+					obstacle.attack_generic(src,rand(melee_damage_lower,melee_damage_upper),pick(attacktext))
+					return
 
 /mob/living/carbon/superior_animal/hear_say(var/message, var/verb = "says", var/datum/language/language = null, var/alt_name = "", var/italics = 0, var/mob/living/speaker = null, var/sound/speech_sound, var/sound_vol, speech_volume)
 	..()
@@ -260,3 +268,41 @@
 	else
 		AI_inactive = TRUE
 		to_chat(src, SPAN_NOTICE("You toggle the mobs default AI to OFF."))
+
+/**
+ * Signal handler. Called whenever a superior mob is attacked.
+ * On base, will target the mob that attacked them if they dont currently have a target.
+ *
+ * Args:
+ * source: src.
+ * obj/item/attacked_with: The item they were attacked with. Optional.
+ * atom/attacker: The atom that attacked them. Optional.
+ * params: A legacy arg that I only added because a proc that would send this signal had that arg.
+**/
+/mob/living/carbon/superior_animal/proc/react_to_attack(var/mob/living/carbon/superior_animal/source = src, var/obj/item/attacked_with, var/atom/attacker, params)
+	SIGNAL_HANDLER
+
+	if (attacked_with && (isprojectile(attacked_with)))
+		var/obj/item/projectile/Proj = attacked_with
+		if (Proj.testing) //sanity
+			return FALSE
+
+	if (!react_to_attack)
+		return FALSE
+
+	if (attacker && !target_mob) //no target? target this guy
+		if (isValidAttackTarget(attacker))
+			var/atom/new_target = attacker
+			var/atom/new_target_location = get_turf(attacker)
+			var/distance = (get_dist(src, attacker))
+			if (distance > viewRange) // are they out of our viewrange? TODO: maybe add a see/hear check
+				new_target_location = target_outside_of_view_range(attacker, distance) //this is where we think they might be
+			target_mob = WEAKREF(new_target)
+			target_location = WEAKREF(new_target_location)
+
+			lost_sight = TRUE //not sure if this is necessary
+
+			if (retaliation_type)
+				if (retaliation_type & APPROACH_ATTACKER)
+					if (stat != DEAD)
+						INVOKE_ASYNC(SSmove_manager, /datum/controller/subsystem/move_manager/proc/move_to, src, target_location, (comfy_range - comfy_distance), move_to_delay)

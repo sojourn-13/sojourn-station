@@ -1,12 +1,12 @@
 /obj/item/storage/sheath/judgement
 	icon_state = "sheath_judgement"
+	item_state = "sheath_judgement"
 	name = "curved sheath"
 	icon = 'icons/obj/sheath.dmi'
 	desc = "A dark blue leather sheathe designed to fit a curved sword. The base and head are patterned with gold and you can see a strange cyan crystal at the mouth."
 	max_w_class = ITEM_SIZE_HUGE
 	can_hold = list(
-		/obj/item/tool/sword/saber,
-		/obj/item/tool/sword/katana
+		/obj/item/tool/sword/katana/spatial_cutter
 	)
 
 	force = 15
@@ -77,6 +77,7 @@
 
 /obj/item/storage/sheath/judgement/exultor
 	icon_state = "exultor_sheath"
+	item_state = "exultor_sheath"
 
 /obj/item/storage/sheath/judgement/exultor/filled/New()
 	update_icon()
@@ -86,6 +87,7 @@
 /obj/item/tool/sword/katana/spatial_cutter
 	name = "spatial cutter"
 	desc = "A strange sword said to be one of the artificer guild grand master's few forays into weapon design. The blade is curved and thrums in your hand with a coming storm, a single swing leaves a blurred after image carrying all the intent and lethality of strikes past."
+
 	icon_state = "2ndkey"
 
 	max_upgrades = 0 //OP already
@@ -139,7 +141,7 @@
 
 /obj/item/tool/sword/katana/spatial_cutter/sword_of_lie/Destroy()
 //	for(var/mob/living/carbon/human/H in viewers(get_turf(src)))
-//		SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
+//		LEGACY_SEND_SIGNAL(H, COMSIG_OBJ_FACTION_ITEM_DESTROY, src)
 //	GLOB.all_faction_items -= src
 //	GLOB.technomancer_faction_item_loss++
 	. = ..()
@@ -171,7 +173,7 @@
 /atom/movable/SpatialCut/Initialize(mapload, obj/item/tool/sword/katana/spatial_cutter/C, _color = color, _angle, _time)
 	. = ..()
 	MyCutter = C
-	transform = turn(transform, _angle)
+	add_new_transformation(/datum/transform_type/modular, list(rotation = _angle, flag = SPATIALCUT_INITIAL_SCALE_TRANSFORM, priority = SPATIALCUT_INITIAL_SCALE_TRANSFORM_PRIORITY))
 	color = _color
 
 	if(_time)

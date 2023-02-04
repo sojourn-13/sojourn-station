@@ -2,22 +2,24 @@
 	name = "flash"
 	desc = "Used for blinding and being an asshole."
 	icon_state = "flash"
+	description_info = "Can blind anyone that doesn't have welder-grade light protection"
 	item_state = "flashtool"
 	throwforce = WEAPON_FORCE_HARMLESS
 	w_class = ITEM_SIZE_SMALL
 	throw_speed = 4
 	throw_range = 10
+	price_tag = 5
 	flags = CONDUCT
 	origin_tech = list(TECH_MAGNET = 2, TECH_COMBAT = 1)
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_GLASS = 1)
-	price_tag = 5
+
 	var/times_used = 0 //Number of times it's been used.
 	var/broken = 0     //Is the flash burnt out?
 	var/last_used = 0 //last world.time it was used.
 
 /obj/item/device/flash/proc/clown_check(var/mob/user)
 	if(user && (CLUMSY in user.mutations) && prob(15))
-		to_chat(user, SPAN_WARNING("\The [src] clumsily slips out from your hand."))
+		to_chat(user, SPAN_WARNING("\The [src] clumsily slips out of your hand."))
 		user.drop_item()
 		return 0
 	return 1
@@ -84,26 +86,23 @@
 		if(M.stat!=DEAD)
 			var/mob/living/carbon/C = M
 			var/safety = C.eyecheck()
-			if(safety < FLASH_PROTECTION_MODERATE)
-				var/flash_strength = 10
+			var/flash_strength = 10 - (10*safety) // FLASH_PROTECTION_MINOR halves it, FLASH_PROTECTION_REDUCED doubles it.
+			if(flash_strength > 0)
 				if(ishuman(M))
 					var/mob/living/carbon/human/H = M
-					flash_strength *= H.species.flash_mod
-				if(flash_strength > 0)
-					M.Weaken(flash_strength)
-					if (M.HUDtech.Find("flash"))
-						flick("e_flash", M.HUDtech["flash"])
+					if(flash_strength > 0)
+						H.flash(flash_strength, FALSE, FALSE , FALSE, flash_strength / 2)
+				else
+					M.flash(flash_strength, FALSE, FALSE , FALSE)
 			else
-				flashfail = 1
+				flashfail = TRUE
 
 	else if(isrobot(M))
 		var/mob/living/silicon/robot/robo = M
 		if(robo.HasTrait(CYBORG_TRAIT_FLASH_RESISTANT))
 			flashfail = TRUE
 		else
-			robo.Weaken(rand(5,10))
-			if (robo.HUDtech.Find("flash"))
-				flick("e_flash", robo.HUDtech["flash"])
+			robo.flash(rand(5,10), FALSE , FALSE , FALSE)
 	else
 		flashfail = TRUE
 
@@ -174,10 +173,8 @@
 
 	for(var/mob/living/carbon/M in oviewers(3, null))
 		var/safety = M.eyecheck()
-		if(safety < FLASH_PROTECTION_MODERATE)
-			if(!M.blinded)
-				if (M.HUDtech.Find("flash"))
-					flick("flash", M.HUDtech["flash"])
+		if(safety < FLASH_PROTECTION_MINOR)
+			M.flash(0, FALSE, FALSE, TRUE)
 
 	return
 
@@ -194,10 +191,8 @@
 			if(iscarbon(loc))
 				var/mob/living/carbon/M = loc
 				var/safety = M.eyecheck()
-				if(safety < FLASH_PROTECTION_MODERATE)
-					M.Weaken(10)
-					if (M.HUDtech.Find("flash"))
-						flick("e_flash", M.HUDtech["flash"])
+				if(safety < FLASH_PROTECTION_MINOR)
+					M.flash(10-(10*safety), FALSE, FALSE, TRUE)
 					for(var/mob/O in viewers(M, null))
 						O.show_message("<span class='disarm'>[M] is blinded by the flash!</span>")
 	..()

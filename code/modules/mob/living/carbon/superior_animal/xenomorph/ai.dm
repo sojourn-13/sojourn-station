@@ -8,7 +8,7 @@
 		target_mob = null
 		stance = initial(stance)
 		stop_automated_movement = initial(stop_automated_movement)
-		walk(src, 0)
+		SSmove_manager.stop_looping(src)
 		playsound(loc, list('sound/xenomorph/alien_death.ogg', 'sound/xenomorph/alien_death2.ogg', 'sound/xenomorph/alien_help1.ogg'), 120, 1)
 
 		density = FALSE
@@ -21,7 +21,7 @@
 		target_mob = null
 		stance = initial(stance)
 		stop_automated_movement = initial(stop_automated_movement)
-		walk(src, 0)
+		SSmove_manager.stop_looping(src)
 		playsound(loc, list('sound/xenomorph/alien_death.ogg', 'sound/xenomorph/alien_death2.ogg', 'sound/xenomorph/alien_help1.ogg'))
 		explosion(loc, 0,1,3)
 

@@ -148,7 +148,6 @@ var/const/NO_EMAG_ACT = -50
 		user << browse_rsc(side, "side.png")
 	var/datum/browser/popup = new(user, "idcard", name, 600, 250)
 	popup.set_content(dat())
-	popup.set_title_image(usr.browse_rsc_icon(src.icon, src.icon_state))
 	popup.open()
 	return
 
@@ -219,6 +218,27 @@ var/const/NO_EMAG_ACT = -50
 		access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
 		access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels,
 		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits)
+
+/obj/item/card/id/guild_command
+	name = "Guild AA ID card"
+	desc = "An ID card with all access as the guild uses several backdoors and emergency access commands to bypass most access requirements."
+	registered_name = "Guild ERT"
+	assignment = "Guild ERT"
+
+/obj/item/card/id/guild_command/New()
+	access = get_all_station_access()
+	..()
+
+/obj/item/card/id/lss_command
+	name = "LSS Auditor ID card"
+	desc = "An ID card that is for top down, with access to check out and inspect anything anyware at a moments time."
+	registered_name = "LSS Auditor"
+	assignment = "LSS Auditor"
+
+/obj/item/card/id/lss_command/New()
+	access = get_all_station_access()
+	..()
+
 
 /obj/item/card/id/captains_spare
 	name = "premier's spare ID"

@@ -93,7 +93,7 @@
 				patchnote.surgery_operations |= AUTODOC_FRACTURE
 		if(AUTODOC_EMBED_OBJECT in possible_operations)
 			if(external.implants)
-				if(/obj/item/material/shard/shrapnel in external.implants)
+				if(locate(/obj/item/material/shard/shrapnel) in external.implants)
 					patchnote.surgery_operations |= AUTODOC_EMBED_OBJECT
 
 		if(external.wounds.len)
@@ -152,9 +152,8 @@
 
 	else if(patchnote.surgery_operations & AUTODOC_EMBED_OBJECT)
 		to_chat(patient, SPAN_NOTICE("Removing embedded objects from the patients [external]."))
-		for(var/obj/item/material/shard/shrapnel/shrapnel in external.implants)
-			external.implants -= shrapnel
-			shrapnel.loc = get_turf(patient)
+		for(var/obj/item/material/shard/shrapnel/shrap in external.implants)
+			external.remove_item(shrap, patient, FALSE)
 		patchnote.surgery_operations &= ~AUTODOC_EMBED_OBJECT
 
 	else if(patchnote.surgery_operations & AUTODOC_OPEN_WOUNDS)
@@ -184,8 +183,9 @@
 	return !patchnote.surgery_operations
 
 /datum/autodoc/Process()
-	if(!patient)
+	if(!patient || picked_patchnotes.len <= current_step)
 		stop()
+		return
 
 	while(!(picked_patchnotes[current_step].surgery_operations))
 		if(current_step + 1 > picked_patchnotes.len)
@@ -208,7 +208,7 @@
 /datum/autodoc/proc/fail()
 	current_step++
 
-/datum/autodoc/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 2, var/datum/topic_state/state)
+/datum/autodoc/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 2, var/datum/nano_topic_state/state)
 	if(!patient)
 		if(ui)
 			ui.close()
@@ -438,10 +438,17 @@
 	var/obj/item/card/id/id_card = patient.GetIdCard()
 	if(id_card)
 		patient_account = get_account(id_card.associated_account_number)
-		if(patient_account.security_level)
+		if(!patient_account || !patient_account.is_valid())
+			to_chat(patient, SPAN_WARNING("Proper banking account is needed."))
+		else if(patient_account.security_level)
 			var/attempt_pin = ""
 			attempt_pin = input("Enter pin code", "Autodoc payement") as num
 			patient_account = attempt_account_access(id_card.associated_account_number, attempt_pin, 2)
+
+/datum/autodoc/capitalist_autodoc/set_patient(var/mob/living/carbon/human/human = null)
+	..()
+	if (human == null)
+		patient_account = null
 
 /datum/autodoc/capitalist_autodoc/start()
 	if(!charge(processing_cost))

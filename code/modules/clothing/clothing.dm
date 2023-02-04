@@ -17,6 +17,11 @@
 
 	//Used for hardsuits. If false, this piece cannot be retracted while the core module is engaged
 	var/retract_while_active = TRUE
+	blacklist_upgrades = list(
+							/obj/item/tool_upgrade/augment = TRUE,
+							/obj/item/tool_upgrade/refinement = TRUE,
+							/obj/item/gun_upgrade = TRUE, // Goodbye tacticool clothing
+							/obj/item/tool_upgrade/artwork_tool_mod = TRUE)
 
 /obj/item/clothing/Initialize(mapload, ...)
 	. = ..()
@@ -105,7 +110,7 @@
 
 	return english_list(body_partsL)
 
-/obj/item/clothing/ui_data()
+/obj/item/clothing/nano_ui_data()
 	var/list/data = list()
 	var/list/armorlist = armor.getList()
 	if(armorlist.len)
@@ -133,7 +138,7 @@
 	return data
 
 /obj/item/clothing/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
-	var/list/data = ui_data(user)
+	var/list/data = nano_ui_data(user)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -511,7 +516,6 @@ BLIND     // can't see anything
 	if(!holding)
 		verbs -= /obj/item/clothing/shoes/proc/draw_knife
 
-	update_icon()
 	return
 
 /obj/item/clothing/shoes/AltClick()
@@ -528,11 +532,12 @@ BLIND     // can't see anything
 
 /obj/item/clothing/shoes/attackby(var/obj/item/I, var/mob/user)
 	var/global/knifes
+	var/global/not_a_knife
 	if(istype(I,/obj/item/noslipmodule))
 		if (item_flags != 0)
 			noslip = item_flags
 		module_inside = 1
-		to_chat(user, "You attached no slip sole")
+		to_chat(user, "You attached a no-slip sole to \the [src].")
 		permeability_coefficient = 0.05
 		item_flags = NOSLIP | SILENT
 		origin_tech = list(TECH_ILLEGAL = 3)
@@ -550,15 +555,19 @@ BLIND     // can't see anything
 			/obj/item/tool/knife/tacknife,
 			/obj/item/tool/knife/shiv
 		)
+	if(!not_a_knife)
+		not_a_knife = list(/obj/item/tool/knife/psionic_blade)
 	if(can_hold_knife && is_type_in_list(I, knifes))
 		if(holding)
 			to_chat(user, SPAN_WARNING("\The [src] is already holding \a [holding]."))
+			return
+		if(is_type_in_list(I, not_a_knife))
+			to_chat(user, SPAN_WARNING("\The [src] is not a real knife."))
 			return
 		if(user.unEquip(I, src))
 			holding = I
 			user.visible_message(SPAN_NOTICE("\The [user] shoves \the [I] into \the [src]."))
 			verbs |= /obj/item/clothing/shoes/proc/draw_knife
-			update_icon()
 	else
 		return ..()
 
@@ -572,7 +581,7 @@ BLIND     // can't see anything
 			item_flags = noslip
 		var/obj/item/noslipmodule/NSM = new()
 		usr.put_in_hands(NSM)
-	else to_chat(usr, "You haven't got any accessories in your shoes")
+	else to_chat(usr, "You haven't got any accessories in your shoes.")
 
 /obj/item/clothing/shoes/update_icon()
 	cut_overlays()
@@ -593,7 +602,11 @@ BLIND     // can't see anything
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	allowed = list(
 		/obj/item/clipboard,
-		/obj/item/storage/pouch/,
+		/obj/item/pen,
+		/obj/item/paper,
+		/obj/item/device/flash,
+		/obj/item/storage/pouch,
+		/obj/item/storage/sheath,
 		/obj/item/gun,
 		/obj/item/melee,
 		/obj/item/material,
@@ -609,15 +622,25 @@ BLIND     // can't see anything
 		/obj/item/device/lighting,
 		/obj/item/device/scanner,
 		/obj/item/reagent_containers/spray,
+		/obj/item/device/lighting/toggleable/flashlight,
+		/obj/item/storage/box/matches,
+		/obj/item/reagent_containers/food/drinks/flask,
 		/obj/item/device/radio,
 		/obj/item/clothing/mask,
-		/obj/item/storage/backpack/duffelbag/guncase,
+		/obj/item/storage/backpack/guncase,
 		/obj/item/implant/carrion_spider/holographic)
 	slot_flags = SLOT_OCLOTHING
 	var/blood_overlay_type = "suit"
 	siemens_coefficient = 0.9
 	w_class = ITEM_SIZE_NORMAL
 	var/list/extra_allowed = list()
+	blacklisted_allowed = list(
+		/obj/item/tool/knife/psionic_blade,
+		/obj/item/tool/hammer/telekinetic_fist,
+		/obj/item/tool/psionic_omnitool,
+		/obj/item/shield/riot/crusader/psionic,
+		/obj/item/gun/kinetic_blaster
+		)
 	equip_delay = 1 SECONDS
 
 	valid_accessory_slots = list("armband","decor")
@@ -673,6 +696,7 @@ BLIND     // can't see anything
 /obj/item/clothing/under/New()
 	..()
 	item_state_slots[slot_w_uniform_str] = icon_state //TODO: drop or gonna use it?
+	sensor_mode = 3 // All clothing on tracking by default now.
 
 /obj/item/clothing/under/examine(mob/user)
 	..(user)
@@ -723,11 +747,6 @@ BLIND     // can't see anything
 			if(3)
 				for(var/mob/V in viewers(usr, 1))
 					V.show_message("[usr] sets [src.loc]'s sensors to maximum.", 1)
-
-
-/obj/item/clothing/under/rank/New()
-	sensor_mode = 3
-	..()
 
 /obj/item/clothing/under/attackby(var/obj/item/I, var/mob/U)
 	if(I.get_tool_type(usr, list(QUALITY_SCREW_DRIVING), src) && ishuman(U) && !is_sharp(I)) // No setting sensors with knives!

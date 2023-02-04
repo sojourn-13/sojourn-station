@@ -12,6 +12,8 @@
 	selection_color = "#b39aaf"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
+	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+
 
 	outfit_type = /decl/hierarchy/outfit/job/science/rd
 	playtimerequired = 1200
@@ -23,7 +25,7 @@
 		access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network, access_maint_tunnels, access_research_equipment
 	)
 	ideal_character_age = 40
-	minimum_character_age = 30
+	minimum_character_age = 25
 
 	stat_modifiers = list(
 		STAT_MEC = 25,
@@ -73,6 +75,7 @@
 	noob_name = "Soteria Research Student"
 	alt_titles = list("Soteria Research Student","Soteria Xenobiologist", "Soteria Xenoarcheologist", "Soteria Xenobotanist", "Soteria Research Fabricator", "Soteria Geneticist")
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
+	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	software_on_spawn = list(/datum/computer_file/program/signaller, /datum/computer_file/program/chem_catalog)
 
@@ -116,10 +119,12 @@
 	supervisors = "the Chief Research Overseer"
 	difficulty = "Medium."
 	noob_name = "Soteria Roboticist Trainee"
-	alt_titles = list("Soteria Roboticist Trainee","Soteria Roboticist Fabricator", "Soteria Cyberneticist", "Soteria Mechanist", "Soteria Biomechanical Engineer")
+	alt_titles = list("Soteria Roboticist Trainee", "Soteria Cyberneticist", "Soteria Mechanist", "Soteria Biomechanical Engineer")
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
 	department_account_access = TRUE
+	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+
 
 	outfit_type = /decl/hierarchy/outfit/job/science/roboticist
 

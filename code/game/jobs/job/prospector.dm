@@ -15,6 +15,9 @@
 	department_account_access = TRUE
 	health_modifier = 15
 
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+
+
 	outfit_type = /decl/hierarchy/outfit/job/foreman
 	playtimerequired = 1200
 	access = list(
@@ -63,11 +66,12 @@
 	supervisors = "the Foreman"
 	difficulty = "Medium."
 	noob_name = "Rookie Salvager"
-	alt_titles = list("Rookie Salvager","Scrapper","Sapper","Junk Technician","Sawbones")
+	alt_titles = list("Sawbones", "Rookie Salvager")
 	alt_perks = list("Sawbones"=list(/datum/perk/medicalexpertise, /datum/perk/stalker), "Junk Technician"=list(/datum/perk/junkborn, /datum/perk/robotics_expert))
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR
 
+	disallow_species = list(FORM_BSSYNTH, FORM_NASHEF)
 	outfit_type = /decl/hierarchy/outfit/job/salv
 
 	health_modifier = 5
@@ -111,11 +115,12 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
-	noob_name = "Greenhorn Prospector"
-	alt_titles = list("Greenhorn Prospector","Enforcer","Frontiersmen","Triggerman")
+	noob_name = "Rookie Prospector"
+	alt_titles = list("Rookie Prospector", "Hired Muscle")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_DUMB
 
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 	outfit_type = /decl/hierarchy/outfit/job/pro
 	health_modifier = 10
 

@@ -17,6 +17,9 @@
 	var/light_direction
 	var/lightspot_hitObstacle = FALSE
 
+	description_info = "Can be used on other people's eyes to check for brain damage, and if they're drugged or have the x-ray mutation"
+	description_antag = "Can be used to flash people on harm intent, provided they do not have any protection"
+
 /obj/item/device/lighting/toggleable/flashlight/Initialize()
 	. = ..()
 	if(!cell && suitable_cell)
@@ -114,7 +117,6 @@
 	if (light_spot && on && !T.is_space())
 		light_spot.forceMove(T)
 		light_spot.icon_state = "nothing"
-		light_spot.transform = initial(light_spot.transform)
 		light_spot.set_light(light_spot_radius, light_spot_power)
 
 		if (cell && cell.percent() <= 25)
@@ -134,15 +136,20 @@
 				if (4)
 					light_spot.icon_state = "lightspot_far"
 		if(angle)
-			light_spot.transform = turn(light_spot.transform, angle)
+			light_spot.add_new_transformation(/datum/transform_type/modular, list(rotation = angle, flag = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priority = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
 		else
+			var/to_rotate = 0
 			switch(light_direction)	//icon pointing north by default
+				if (NORTH)
+					to_rotate = 0
 				if(SOUTH)
-					light_spot.transform = turn(light_spot.transform, 180)
+					to_rotate = 180
 				if(EAST)
-					light_spot.transform = turn(light_spot.transform, 90)
+					to_rotate = 90
 				if(WEST)
-					light_spot.transform = turn(light_spot.transform, -90)
+					to_rotate = 270
+
+			light_spot.add_new_transformation(/datum/transform_type/modular, list(rotation = to_rotate, flag = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM, priority = FLASHLIGHT_LIGHT_SPOT_ROTATION_TRANSFORM_PRIORITY, override = TRUE))
 
 /obj/item/device/lighting/toggleable/flashlight/proc/lightSpotPassable(var/turf/T)
 	if (is_opaque(T))
@@ -267,7 +274,7 @@
 		var/mob/living/carbon/human/H = M	//mob has protective eyewear
 		if(istype(H))
 			for(var/obj/item/clothing/C in list(H.head,H.wear_mask,H.glasses))
-				if(istype(C) && (C.body_parts_covered & EYES))
+				if(istype(C) && (C.body_parts_covered & EYES) && C.flash_protection > 0)
 					to_chat(user, SPAN_WARNING("You're going to need to remove [C.name] first."))
 					return
 
@@ -302,9 +309,14 @@
 				else
 					to_chat(user, SPAN_NOTICE("\The [M]'s pupils narrow."))
 
-			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //can be used offensively
-			if(M.HUDtech.Find("flash"))
-				flick("flash", M.HUDtech["flash"])
+				if(user.a_intent == I_HURT)
+					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //can be used offensively
+					M.flash(0, FALSE , FALSE , FALSE, 2)
+					return
+
+			if(user.a_intent == I_HURT)
+				user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //can be used offensively
+				M.flash(0, FALSE , FALSE , FALSE)
 	else
 		return ..()
 

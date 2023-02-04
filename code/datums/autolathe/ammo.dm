@@ -901,11 +901,11 @@
 	materials = list(MATERIAL_STEEL = 25)
 
 /datum/design/autolathe/ammo/mag_10x24
-	name = "rifle magazine (10x24mm Caseless)"
-	build_path = /obj/item/ammo_magazine/rifle_10x24
+	name = "high capacity box magazine (10x24mm Caseless)"
+	build_path = /obj/item/ammo_magazine/smg_10x24
 	materials = list(MATERIAL_STEEL = 2)
 
-//14.5×114mm anti-material
+//14.5×114mm anti-materiel
 /datum/design/autolathe/ammo/box_antim
 	name = "ammunition box (14.5×114mm)"
 	build_path = /obj/item/ammo_magazine/ammobox/antim
@@ -932,6 +932,11 @@
 	name = "fragmentation grenade shell"
 	build_path = /obj/item/ammo_casing/grenade/frag
 	materials = list(MATERIAL_STEEL = 14)
+
+/datum/design/autolathe/ammo/grenade/stinger
+	name = "stinger grenade shell"
+	build_path = /obj/item/ammo_casing/grenade/frag/stinger
+	materials = list(MATERIAL_STEEL = 7, MATERIAL_PLASTIC = 7)
 
 /datum/design/autolathe/ammo/grenade/emp
 	name = "EMP grenade shell"

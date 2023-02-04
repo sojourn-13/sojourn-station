@@ -27,7 +27,7 @@
 	cost = 1000
 
 	unlocks_designs = list(/datum/design/research/item/greyson/cog_sawn,
-						   /datum/design/research/item/greyson/cog_gear)
+						   /datum/design/research/item/greyson/cog_sprocket) // Making the Gear Marshal-only, Soteria gets their own version
 
 /datum/technology/GP_roomba
 	name = "Greyson Positronic Roomba Creation"

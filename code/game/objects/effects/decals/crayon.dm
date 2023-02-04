@@ -39,18 +39,18 @@
 
 			//Anti-Death check
 			if(M.maxHealth <= 30)
-				to_chat(M, "<span class='info'>You try to do as the book wrights but the failing body prevents you form even mubbling a single more word.</span>")
+				to_chat(M, "<span class='info'>You try to do as the book describes but your frail body condition physically prevents you from even mumbling a single word out of its pages.</span>")
 				return
 
 			var/datum/reagent/organic/blood/B = M.get_blood()
 			var/candle_amount = 0
-			to_chat(M, "<span class='info'>The wrightings inside the book and the rune drawn match up.</span>")
+			to_chat(M, "<span class='info'>The writings on the book and the drawn rune coincide, their dissociated knowledge piecing themselves together.</span>")
 			for(var/obj/item/flame/candle/mage_candle in oview(3))
 				if(!mage_candle.lit)
 					mage_candle.light(flavor_text = SPAN_NOTICE("\The [name] lights up."))
 					mage_candle.endless_burn = TRUE
 					B.remove_self(15)
-					to_chat(M, "<span class='info'>Something lights a candle.</span>")
+					to_chat(M, "<span class='info'>A candle is lit by forces unknown...</span>")
 				candle_amount += 1
 
 			for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) //Dont forget to clear your old work
@@ -89,6 +89,14 @@
 				if((spell.message == "The End." || spell.message == "The Beginning.") && candle_amount >= 1)
 					end_spell(M)
 					continue
+
+				if(spell.message == "Brew." && candle_amount >= 2)
+					brew_spell(M)
+					continue
+
+				if(spell.message == "Recipe." && candle_amount >= 1)
+					recipe_spell(M)
+					continue
 			return
 
 	if(istype(I, /obj/item/tool/knife/ritual) || istype(I, /obj/item/tool/knife/neotritual))
@@ -96,9 +104,9 @@
 
 			//Anti-Death check
 			if(M.maxHealth <= 30)
-				to_chat(M, "<span class='info'>Your hand shakes to much as your body fails you to do anything of value here.</span>")
+				to_chat(M, "<span class='info'>Your hand is shaking, your concentration too shattered. The ritual cannot proceed with your constitution as frail as it is.</span>")
 				return
-		to_chat(M, "<span class='info'>The writings of the rune are correct.</span>")
+		to_chat(M, "<span class='info'>The writings on the rune are as right as the stars.</span>")
 		var/able_to_cast = FALSE
 		for(var/datum/language/L in M.languages)
 			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
@@ -111,7 +119,7 @@
 				mage_candle.light(flavor_text = SPAN_NOTICE("\The [name] lights up."))
 				mage_candle.endless_burn = TRUE
 				B.remove_self(15)
-				to_chat(M, "<span class='info'>Something lights a candle.</span>")
+				to_chat(M, "<span class='info'>A candle is lit by forces unknown...</span>")
 			candle_amount += 1
 
 		for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) //Dont forget to clear your old work
@@ -129,17 +137,37 @@
 /obj/effect/decal/cleanable/crayon/proc/babel_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.add_language(LANGUAGE_CULT)
-	to_chat(M, "<span class='info'>Your head feels heavy with unknown knowledge and your heart start to raise with shock of blood loss.</span>")
+	to_chat(M, "<span class='warning'>Your head throbs like a maddening heartbeat, eldritch knowledge gnawing open the doors of your psyche and crawling inside, granting you a glimpse of languages older than time itself. The heart pounds in synchrony, making up for the price of blood in exchange.</span>")
 	M.maxHealth -= 20
 	M.health -= 20
 	B.remove_self(50)
 	M.unnatural_mutations.total_instability += 15
 	return
 
+/obj/effect/decal/cleanable/crayon/proc/recipe_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	for(var/obj/item/paper/P in oview(1)) // Must be on the spell circle
+		to_chat(M, "<span class='info'>A echoing sound of scribbling fills the air.</span>")
+		B.remove_self(20)
+		var/obj/item/alchemy/recipe_scroll/S = new /obj/item/alchemy/recipe_scroll
+		S.loc = P.loc
+		qdel(P)
+	return
+
+/obj/effect/decal/cleanable/crayon/proc/brew_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	M.maxHealth -= 25
+	M.health -= 25
+	B.remove_self(50)
+	M.metabolism_effects.nsa_bonus -= 25 //Works to balance out the NSA given from the perk. That way those who get it naturally have a bonus.
+	M.stats.addPerk(PERK_ALCHEMY)
+	to_chat(M, "<span class='warning'>Your mind expands with creations lost. Your body feels sick.</span>")
+	return
+
 /obj/effect/decal/cleanable/crayon/proc/ignorance_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.psi_blocking_additive = 50
-	to_chat(M, "<span class='info'>The top of your head acks in pain and feels heavy as your blood runs thin.</span>")
+	to_chat(M, "<span class='warning'>Your mind feels like an impenetrable fortress against psionic assaults. Your heart is beating like a drum, exerting itself to recover the blood paid for your boon.</span>")
 	M.maxHealth -= 5
 	M.health -= 5
 	B.remove_self(50)
@@ -149,7 +177,7 @@
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	for(var/mob/living/carbon/superior_animal/greater in oview(1)) // Must be on the spell circle
 		if(M.maxHealth > 30)
-			to_chat(M, "<span class='info'>To raise the dead one must use the self, and in the self we draw closer to death...</span>")
+			to_chat(M, "<span class='warning'>Gung vf abg qrnq juvpu pna rgreany yvr, naq jvgu fgenatr nrbaf rira qrngu znl qvr.</span>") // Guess the language and the phrase.
 			greater.revive()
 			greater.colony_friend = TRUE
 			greater.friendly_to_colony = TRUE
@@ -165,7 +193,7 @@
 
 	for(var/mob/living/simple_animal/lesser in oview(1)) // Must be on the spell circle
 		if(M.maxHealth > 30)
-			to_chat(M, "<span class='info'>To raise the dead one must use the self, and in the self we draw closer to death...</span>")
+			to_chat(M, "<span class='info'>Gung vf abg qrnq juvpu pna rgreany yvr, naq jvgu fgenatr nrbaf rira qrngu znl qvr.</span>")
 			lesser.revive()
 			lesser.colony_friend = TRUE
 			lesser.friendly_to_colony = TRUE
@@ -181,7 +209,7 @@
 
 /obj/effect/decal/cleanable/crayon/proc/madness_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	to_chat(M, "<span class='info'>Your blood grows thin but your mind expand into unknown wonders?</span>")
+	to_chat(M, "<span class='warning'>Your blood runs thin as you catch a glimpse of forbidden aeons, shortening your lifespan as you come to terms with your feeble inconsequentiality on the greater scheme of things.</span>")
 	M.maxHealth -= 5
 	M.health -= 5
 	B.remove_self(20)
@@ -190,14 +218,14 @@
 
 /obj/effect/decal/cleanable/crayon/proc/sight_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	to_chat(M, "<span class='info'>Your book says not to use this...</span>")
+	to_chat(M, "<span class='warning'>Your vision is impaired no more, your heart stresses itself to recover the blood paid for your blinding to the dark arts. The eyes deceive, true perception will be achieved without their hindrance.</span>")
 	M.disabilities &= ~NEARSIGHTED
 	B.remove_self(150)
 	return
 
 /obj/effect/decal/cleanable/crayon/proc/paradox_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	to_chat(M, "<span class='info'>The air to you grows hot, your heart races from not only blood-loss but the feeling of dread over you. You hear a whisper in the back of your ear \"What bottom?\"</span>")
+	to_chat(M, "<span class='warning'>The air around you grows hot, your heart races as a feeling of dread washes over you. You hear a faint whisper in the back of your head, \"Upside, downside... all cardinal directions, an illusion...\"</span>")
 	M.maxHealth -= 25
 	M.health -= 25
 	B.remove_self(100)
@@ -208,7 +236,7 @@
 
 /obj/effect/decal/cleanable/crayon/proc/end_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	to_chat(M, "<span class='info'>The back of your eyes burn. The body feels better. Why?</span>")
+	to_chat(M, "<span class='warning'>The truth of the universe flashes before your eyes at a sickening speed, eldritch knowledge being forcefully vacuumed out of your psyche. The light! It burns! IT BURNS!!!</span>")
 	M.maxHealth += 5
 	M.health += 5
 	M.disabilities &= ~NEARSIGHTED
@@ -224,7 +252,7 @@
 /obj/effect/decal/cleanable/crayon/proc/flux_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	var/area/my_area = get_area(src)
-	to_chat(M, "<span class='info'>The echos of smashing glass and splinting wood pound against the mind as the body drys heaving.</span>")
+	to_chat(M, "<span class='warning'>Reality itself fluctuates around you as a canvas of impending doom. The truth behind the heat death of the universe draws ever nearer, thugged by your strings...</span>")
 	my_area.bluespace_hazard_threshold -= 1
 	GLOB.bluespace_hazard_threshold -= 1
 	bluespace_entropy(1, get_turf(src), TRUE)
@@ -244,7 +272,7 @@
 /obj/effect/decal/cleanable/crayon/proc/negentropy_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	var/area/my_area = get_area(src)
-	to_chat(M, "<span class='info'>Soft echos of trees rustle, wind blowing and trickingly of water dance around your ears, a calmness even if only a minor one feels present.</span>")
+	to_chat(M, "<span class='info'>The threads of creation itself are spun anew, a feeling of inextricable tranquility permeates your thoughts. For reasons perhaps unbeknownst to you, the death heat of the universe strays further away...</span>")
 	my_area.bluespace_hazard_threshold += 1
 	GLOB.bluespace_hazard_threshold += 1
 	bluespace_entropy(-5, get_turf(src), TRUE)
@@ -264,7 +292,7 @@
 /obj/effect/decal/cleanable/crayon/proc/voice_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.add_language(LANGUAGE_OCCULT)
-	to_chat(M, "<span class='info'>Your head feels heavy with unknown knowlage and your heart strats to rase with shock of blood loss.</span>")
+	to_chat(M, "<span class='warning'>Your head throbs like a maddening heartbeat, eldritch knowledge gnawing open the doors of your psyche and crawling inside, granting you a glimpse of languages older than time itself. The heart pounds in synchrony, making up for the price of blood in exchange.</span>")
 	M.maxHealth -= 20
 	M.health -= 20
 	B.remove_self(50)
@@ -274,7 +302,7 @@
 /obj/effect/decal/cleanable/crayon/proc/drain_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	for(var/mob/living/carbon/superior_animal/greater in oview(1))
-		to_chat(M, "<span class='info'>The body before you is no more as its code is one with you.</span>")
+		to_chat(M, "<span class='warning'>The sacrifice vanishes to dust before you. You feel an ominous warm wind envelop your form as you absorb its lifeforce unto your own.</span>")
 		if(able_to_cast)
 			M.maxHealth += 1
 			M.health += 1
@@ -284,7 +312,7 @@
 		return
 
 	for(var/mob/living/simple_animal/lesser in oview(1))
-		to_chat(M, "<span class='info'>The body before you is no more as its code is one with you.</span>")
+		to_chat(M, "<span class='warning'>The sacrifice vanishes to dust before you. You feel an ominous warm wind envelop your form as you absorb its lifeforce unto your own.</span>")
 		if(able_to_cast)
 			M.maxHealth += 1
 			M.health += 1

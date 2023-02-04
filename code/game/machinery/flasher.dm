@@ -1,7 +1,7 @@
 // It is a gizmo that flashes a small area
 
 /obj/machinery/flasher
-	name = "mounted flash"
+	name = "Mounted flash"
 	desc = "A wall-mounted flashbulb device."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "mflash1"
@@ -11,7 +11,7 @@
 	var/last_flash = 0 //Don't want it getting spammed like regular flashes
 	var/strength = 10 //How weakened targets are when flashed.
 	var/base_state = "mflash"
-	anchored = 1
+	anchored = TRUE
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 2
 	flags = PROXMOVE
@@ -21,11 +21,12 @@
 /obj/machinery/flasher/portable //Portable version of the flasher. Only flashes when anchored
 	name = "portable flasher"
 	desc = "A portable flashing device. Wrench to activate and deactivate. Cannot detect slow movements."
+	description_info = "Will flash people that run"
 	icon_state = "pflash1"
 	strength = 8
-	anchored = 0
+	anchored = FALSE
 	base_state = "pflash"
-	density = 1
+	density = TRUE
 	range = 3 //the eris' hallways are wider than other maps
 
 /obj/machinery/flasher/Initialize()
@@ -86,30 +87,19 @@
 			var/mob/living/carbon/human/H = O
 			if(!H.eyecheck() <= 0)
 				continue
-			flash_time *= H.species.flash_mod
-			var/obj/item/organ/internal/eyes/E = H.random_organ_by_process(OP_EYES)
-			if(!E)
-				return
-			if(E.is_bruised() && prob(E.damage + 50))
-				if (O.HUDtech.Find("flash"))
-					flick("e_flash", O.HUDtech["flash"])
-				E.damage += rand(1, 5)
+			O.flash(strength, FALSE , TRUE , TRUE , 10)
 		else
 			if(isrobot(O))
 				var/mob/living/silicon/robot/robo = O
 				if(robo.HasTrait(CYBORG_TRAIT_FLASH_RESISTANT))
 					continue
 				else
-					robo.Weaken(flash_time)
-					if(robo.HUDtech.Find("flash"))
-						flick("e_flash", robo.HUDtech["flash"])
-						continue
+					robo.flash(strength, FALSE, FALSE , FALSE)
+					continue
 			else
-				if(!O.blinded)
-					if (istype(O,/mob/living/silicon/ai))
-						return
-					if (O.HUDtech.Find("flash"))
-						flick("flash", O.HUDtech["flash"])
+				if (istype(O,/mob/living/silicon/ai))
+					return
+				O.flash(strength , FALSE, FALSE ,FALSE)
 			O.Weaken(flash_time)
 
 

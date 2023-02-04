@@ -4,7 +4,7 @@
 	item_state = "welder"
 	flags = CONDUCT
 	force = WEAPON_FORCE_WEAK
-	switched_on_force = WEAPON_FORCE_PAINFUL
+	switched_on_forcemult = 2.1 //15
 	throwforce = WEAPON_FORCE_WEAK
 	worksound = WORKSOUND_WELDING
 	matter = list(MATERIAL_STEEL = 5)
@@ -50,7 +50,7 @@
 	desc = "An assembly of pipes attached to a little gas tank. Serves capably as a welder, though a bit risky. Can be improved greatly with a large amount of tool mods."
 	icon_state = "ghettowelder"
 	item_state = "ghettowelder"
-	switched_on_force = WEAPON_FORCE_PAINFUL * 0.8
+	switched_on_forcemult = 1.7 //12
 	max_fuel = 15
 	switched_on_qualities = list(QUALITY_WELDING = 15, QUALITY_CAUTERIZING = 10, QUALITY_WIRE_CUTTING = 10)
 	degradation = 1.5
@@ -71,7 +71,7 @@
 	switched_on_qualities = list(QUALITY_WELDING = 45, QUALITY_CAUTERIZING = 15, QUALITY_WIRE_CUTTING = 15)
 	max_fuel = 40
 	matter = list(MATERIAL_PLASTEEL = 5)
-	switched_on_force = WEAPON_FORCE_PAINFUL * 1.15 //Slightly more powerful, not much more so
+	switched_on_forcemult = 2.5 //17
 	heat = 3773
 	degradation = 0.7
 	max_upgrades = 4
@@ -96,21 +96,25 @@
 	glow_color = COLOR_RED_LIGHT
 	use_fuel_cost = 0.15
 	max_fuel = 20
-	degradation = 0.6
+	degradation = 2
 	heat = 2750
 	max_upgrades = 2
 	workspeed = 1.5
 	price_tag = 900
+	allow_greyson_mods = TRUE
 
 //Alchemy thingy
 /obj/item/tool/weldingtool/oil_burner
 	name = "oil burner"
 	desc = "A oil burner used for lighting or to slowly boil things."
-	icon_state = "oil_burner"
-	item_state = "oil_burner"
+	icon_state = "oil_lamp"
+	item_state = "oil_lamp"
 	switched_on_qualities = list(QUALITY_HEATING = 35, QUALITY_CAUTERIZING = 10, QUALITY_WIRE_CUTTING = 10)
 	use_fuel_cost = 0.001
 	max_fuel = 10
 	my_fuel = "oil"
 	sparks_on_use = FALSE
 	eye_hazard = FALSE
+
+/obj/item/tool/weldingtool/oil_burner/Created()
+	return

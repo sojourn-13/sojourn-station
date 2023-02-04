@@ -111,6 +111,10 @@
 	name= "banana vape vial"
 	preloaded_reagents = list("nicotine" = 20, "banana" = 10)
 
+/obj/item/reagent_containers/glass/beaker/vial/vape/mint
+	name= "mint vape vial"
+	preloaded_reagents = list("nicotine" = 20, "mint" = 10)
+
 /obj/item/reagent_containers/glass/beaker/vial/vape/nicotine
 	name = "nicotine vape vial"
 	preloaded_reagents = list("nicotine" = 30)
@@ -150,6 +154,25 @@
 		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
 		add_overlay(lid)
 
+/obj/item/reagent_containers/glass/plastic_jug
+	name = "plastic jug"
+	desc = "It's a plastic jug, made of polyethylene and other compounds. Robust enough to carry a lot of liquid." // Jesse we have to cook
+	item_state = "plastic_jug"
+	icon_state = "plastic_jug"
+	matter = list(MATERIAL_PLASTIC = 3)
+	w_class = ITEM_SIZE_BULKY
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10,20,30,60,100,120,300)
+	volume = 300 // Bigger than a bucket
+	unacidable = 1
+
+/obj/item/reagent_containers/glass/plastic_jug/update_icon() // Necessary as it has no filling states.
+	cut_overlays()
+
+	if(has_lid())
+		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
+		add_overlay(lid)
+
 /obj/item/reagent_containers/glass/urn
 	name = "Urn"
 	desc = "A tall, rounded vase with a base, with a short stem, used for storing the ashes of a cremated person."
@@ -160,8 +183,7 @@
 	can_be_placed_into = null
 
 /obj/item/reagent_containers/glass/urn/veteran
-	name = "Veteran Saint Urn"
-	desc = "Here lies the unnamed or unknown warriors of the church that sacrificed themselves for the greater good and protection of their brothers and sisters during the exodus. The low quantity of bodies recovered after the infight - mostly gathered during risk, sneaky attempts to recover the dead to be properly buried under SolFed's gaze, is enough to make any vector's compassionate heart throb in pain, but the ones that was recovered has been cremated and kept on this urn, for everyone to pray for their soul. \
-	Until someone not that compassionate attempts to remove the lid and tip it over. What a terrible fate! Just don't expect the church to take it kindly for the ones who disrespects the dead - worse fate may come to the ones that disrespects their cultural heroes. Do you feel lucky, punk?"
+	name = "Martyr's Urn"
+	desc = "An urn filled with mixed ashes from the faithful defenders of New Byzantine. Only a very small number of bodies could be retrieved from the planet after its occupation by SolFed forces, each one coming at terrible risk. Augustine has declared the ashes a relic of all those who died in defense of the faith. Do not spill."
 	icon_state = "saint_urn"
 	preloaded_reagents = list("carbon" = 30)

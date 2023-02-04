@@ -1,4 +1,9 @@
 /mob/observer/ghost/say(var/message)
+
+	if(!BC_IsKeyAllowedToConnect(ckey) && !usr.client.holder)
+		to_chat(src, "Non-Whitelisted may not use Dsay.")
+		return
+
 	message = sanitize(message)
 
 	if(!message)

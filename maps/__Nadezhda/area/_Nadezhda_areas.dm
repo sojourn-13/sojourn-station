@@ -44,11 +44,15 @@
 
 /area/nadezhda/maintenance
 	is_maintenance = TRUE
+	ship_area = TRUE
 	flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
 	turf_initializer = new /datum/turf_initializer/maintenance()
 	forced_ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
+
+/area/nadezhda/maintenance/guild
+	name = "Guild Maintence"
 
 /area/nadezhda/maintenance/junk
 	name = "Junk Beacon"
@@ -119,6 +123,10 @@
 	name = "Underground Floor 2 South Maintenance"
 	icon_state = "erisgreen"
 
+/area/nadezhda/maintenance/surface_maints_1
+	name = "Surface North Maintenance"
+	icon_state = "erisyellow"
+
 /area/nadezhda/maintenance/cavehideout
 	name = "Abandoned Cave Shed"
 	icon_state = "section2deck2starboard"
@@ -138,14 +146,13 @@
 //Outside abandoned structures
 
 /area/nadezhda/dungeon/outside
-	is_maintenance = TRUE
+	is_maintenance = FALSE
 	flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
 	turf_initializer = new /datum/turf_initializer/maintenance()
 	ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
 	dynamic_lighting = FALSE
-	ship_area = FALSE
 	is_dungeon_lootable = TRUE
 
 
@@ -168,9 +175,10 @@
 	icon_state = "erisgreen"
 
 /area/nadezhda/dungeon/outside/hunter_cabin
-	name = "Hunter Cabin"
+	name = "Abandoned Hunter Cabin"
 	icon_state = "erisgreen"
-	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
+	dynamic_lighting = TRUE
+	requires_power = FALSE
 
 /area/nadezhda/dungeon/outside/campground
 	name = "Campground"
@@ -305,17 +313,32 @@
 	dynamic_lighting = TRUE
 	requires_power = FALSE
 
+/area/nadezhda/outside/forest/plains_farm
+	name = "Desolate Farmstead"
+	icon_state = "erisblue"
+	requires_power = FALSE
+
 /area/nadezhda/outside/forest/river_forest_light
-	name = "River Forest"
+	name = "Hunting Plains"
 	icon_state = "forest"
 
+/area/nadezhda/outside/forest/river_forest_lake
+	name = "Hunting Plains River"
+	icon_state = "hammerblue"
+
+/area/nadezhda/outside/forest/river_forest_cabin
+	name = "Hunting Plains Cabin"
+	icon_state = "erisgreen"
+	requires_power = FALSE
+	dynamic_lighting = TRUE
+
 /area/nadezhda/outside/forest/river_forest_dark
-	name = "River Forest"
+	name = "Hunting Plains Caves"
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/forest/river_forest_underground
-	name = "River Forest Underground"
+	name = "Hunting plains underground caves"
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
@@ -337,23 +360,30 @@
 	is_dungeon_lootable = FALSE
 
 /area/nadezhda/outside/lakeside
-    name = "Lakeside"
-    icon_state = "erisblue"
-    sound_env = MOUNTAINS
-    forced_ambience = list('sound/ambience/lakeamb1.ogg', 'sound/ambience/lakeamb2.ogg', 'sound/ambience/lakeamb3.ogg')
+	name = "Lakeside"
+	icon_state = "erisblue"
+	sound_env = MOUNTAINS
+	forced_ambience = list('sound/ambience/lakeamb1.ogg', 'sound/ambience/lakeamb2.ogg', 'sound/ambience/lakeamb3.ogg')
 
 /area/nadezhda/outside/meadow
-    name = "Meadow"
-    icon_state = "meadow"
-    sound_env = MOUNTAINS
-    forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
+	name = "Deep Forest"
+	icon_state = "meadow"
+	sound_env = MOUNTAINS
+	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
+
+/area/nadezhda/outside/inside_colony
+	name = "Colony Meadow"
+	icon_state = "meadow"
+	sound_env = MOUNTAINS
+	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
+
 
 /area/nadezhda/outside/mountainsolars
-    name = "Mountain Solars"
-    icon_state = "meadow"
-    sound_env = MOUNTAINS
-    forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
-    is_dungeon_lootable = FALSE
+	name = "Mountain Solars"
+	icon_state = "meadow"
+	sound_env = MOUNTAINS
+	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
+	is_dungeon_lootable = FALSE
 
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 
@@ -376,19 +406,19 @@
 	name = "Floor 1 Substation 3"
 
 /area/nadezhda/maintenance/substation/section3
-	name = "Floor 2 Substation 1"
+	name = "Floor 1 Substation 1"
 
 /area/nadezhda/maintenance/substation/section4
-	name = "Floor 2 Substation 2"
+	name = "Floor 1 Substation 2"
 
 /area/nadezhda/maintenance/substation/section5
-	name = "Floor 2 Substation 3"
+	name = "Floor 1 Substation 3"
 
 /area/nadezhda/maintenance/substation/section6
 	name = "Floor 2 Substation 4"
 
 /area/nadezhda/maintenance/substation/section7
-	name = "Floor 2 Substation 5"
+	name = "Floor 1 Substation 5"
 
 /area/nadezhda/maintenance/substation/bridge
 	name = "Bridge Substation"
@@ -505,17 +535,19 @@
 /area/nadezhda/command/panic_room
 	name = "\improper Panic Room"
 	icon_state = "bridge"
+	flags = AREA_FLAG_CRITICAL | AREA_FLAG_RAD_SHIELDED
 	sound_env = SMALL_ENCLOSED
 
 /area/nadezhda/command/bridgebar
 	name = "V.I.P. Bar"
-	icon_state = "nadezhdablue"
+	icon_state = "bar"
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/captain
 	name = "\improper Command - Premier's Office"
 	icon_state = "captain"
 	sound_env = SMALL_SOFTFLOOR
+	flags = AREA_FLAG_CRITICAL
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/captain/quarters
@@ -525,11 +557,13 @@
 	name = "\improper Command - Steward's Quarters"
 	icon_state = "head_quarters"
 	sound_env = SMALL_SOFTFLOOR
+	flags = AREA_FLAG_CRITICAL
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/cro
 	name = "\improper Research - CRO's Office"
 	icon_state = "head_quarters"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 
 /area/nadezhda/command/cro/quarters
@@ -541,6 +575,7 @@
 /area/nadezhda/command/gmaster
 	name = "\improper Engineering - Guild Master's Office"
 	icon_state = "head_quarters"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 
 /area/nadezhda/command/gmaster/quarters
@@ -552,6 +587,7 @@
 /area/nadezhda/command/cbo
 	name = "\improper Medbay - CBO's Office"
 	icon_state = "head_quarters"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 
 /area/nadezhda/command/cbo/quarters
@@ -561,13 +597,14 @@
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/swo
-	name = "Warrent Officer's Office"
+	name = "Warrant Officer's Office"
 	icon_state = "hammerred"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/swo/quarters
-	name = "Warrent Officer's Quarters"
+	name = "Warrant Officer's Quarters"
 	icon_state = "hammerred"
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
@@ -575,6 +612,7 @@
 /area/nadezhda/command/smc
 	name = "Blackshield Commander's Office"
 	icon_state = "hammerred"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
@@ -587,6 +625,7 @@
 /area/nadezhda/command/prime
 	name = "Prime's Office"
 	icon_state = "head_quarters"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
@@ -599,6 +638,7 @@
 /area/nadezhda/command/merchant
 	name = "\improper Lonestar - CEO's Office"
 	icon_state = "quart"
+	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
 
 /area/nadezhda/command/teleporter
@@ -778,6 +818,10 @@
 	name = "\improper Hydroponics"
 	icon_state = "hydro"
 
+/area/nadezhda/crew_quarters/botanist
+	name = "\improper Gardener's room"
+	icon_state = "hydro"
+
 /area/nadezhda/crew_quarters/hydroponics/garden
 	name = "\improper Garden"
 	icon_state = "garden"
@@ -795,6 +839,10 @@
 /area/nadezhda/crew_quarters/publichydro
 	name = "Public Hydroponics"
 	icon_state = "erisblue"
+
+/area/nadezhda/crew_quarters/techshop
+	name =  "Vacant Tech shops"
+	icon_state = "construction"
 
 //Church
 
@@ -1190,6 +1238,9 @@ area/nadezhda/medical/medbaymeeting
 	name = "Medbay Upper Coridor"
 	icon_state = "erisgreen"
 
+/area/nadezhda/medical/organ_lab
+	name = "Organ Laboratory"
+
 //Security
 
 /area/nadezhda/security
@@ -1409,6 +1460,10 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Cargo Mining Dock"
 	icon_state = "mining"
 
+/area/nadezhda/quartermaster/mining_outside_doc
+	name = "\improper Cargo Mining Area"
+	icon_state = "mining"
+
 /area/nadezhda/quartermaster/disposaldrop
 	name = "Disposal and Delivery"
 	icon_state = "erisred"
@@ -1444,6 +1499,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/rnd/research
 	name = "\improper Research and Development"
 	icon_state = "research"
+	flags = AREA_FLAG_CRITICAL
 
 /area/nadezhda/rnd/researchbathroom
 	name = "\improper Research Bathroom"
@@ -1476,6 +1532,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/rnd/robotics
 	name = "\improper Robotics Lab"
 	icon_state = "robotics"
+	flags = AREA_FLAG_CRITICAL
 
 /area/nadezhda/rnd/rdoffice
 	name = "\improper Soteria Expedition Overseer's Office"

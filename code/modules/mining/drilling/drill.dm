@@ -51,7 +51,13 @@
 /obj/machinery/mining/drill/Destroy()
 	for(var/obj/machinery/mining/brace/b in supports)
 		b.disconnect()
-	QDEL_NULL(soul)
+
+	if(TC)
+		TC.stop()
+		TC = null
+
+	if(soul)
+		QDEL_NULL(soul)
 	return ..()
 
 /obj/machinery/mining/drill/Initialize()
@@ -218,28 +224,35 @@
 			to_chat(user, SPAN_WARNING("\The [src] needs some time to cool down! [round((last_use + DRILL_COOLDOWN - world.time) / 10)] seconds remaining."))
 		if(use_cell_power())
 			active = !active
-			if(active)
-				var/turf/simulated/T = get_turf(loc)
-				TC = new /datum/termite_controller(location=T, seismic=T.seismic_activity, drill=src)
-				visible_message(SPAN_NOTICE("\The [src] lurches downwards, grinding noisily."))
-				need_update_field = 1
-				if(!soul)
-					var/mob/living/simple_animal/soul/S = new(src)
-					soul = S
-				soul.loc = src.loc
-			else
-				TC.stop()
-				TC = null
-				visible_message(SPAN_NOTICE("\The [src] shudders to a grinding halt."))
-				if(!soul)
-					var/mob/living/simple_animal/soul/S = new(src)
-					soul = S
-				soul.loc = src.contents
+			toggle_drilling_combat()
+
 		else
 			to_chat(user, SPAN_NOTICE("The drill is unpowered."))
 	else
 		to_chat(user, SPAN_NOTICE("Turning on a piece of industrial machinery without sufficient bracing or wires exposed is a bad idea."))
 	update_icon()
+
+
+/obj/machinery/mining/drill/proc/toggle_drilling_combat(mob/user as mob)
+	if(active)
+		var/turf/simulated/T = get_turf(loc)
+		TC = new /datum/termite_controller(location=T, seismic=T.seismic_activity, drill=src)
+		visible_message(SPAN_NOTICE("\The [src] lurches downwards, grinding noisily."))
+		need_update_field = 1
+		if(!soul)
+			var/mob/living/simple_animal/soul/S = new(src)
+			soul = S
+		soul.loc = src.loc
+	else
+		TC.stop()
+		TC = null
+		visible_message(SPAN_NOTICE("\The [src] shudders to a grinding halt."))
+		if(!soul)
+			var/mob/living/simple_animal/soul/S = new(src)
+			soul = S
+		soul.loc = src.contents
+
+
 
 /obj/machinery/mining/drill/update_icon()
 	if(need_player_check)
@@ -282,7 +295,8 @@
 	if(error)
 		src.visible_message(SPAN_NOTICE("\The [src] flashes a '[error]' warning."))
 	need_player_check = 1
-	active = 0
+	active = FALSE
+	toggle_drilling_combat()
 	update_icon()
 
 /obj/machinery/mining/drill/proc/get_resource_field()
@@ -339,9 +353,19 @@
 		var/turf/O = get_turf(src)
 		if(O)
 			explosion(O, -1, 1, 4, 10)
+			if(TC)
+				TC.stop()
+				TC = null
+			if(soul)
+				QDEL_NULL(soul)
 			qdel(src)
 			return
 		else
+			if(TC)
+				TC.stop()
+				TC = null
+			if(soul)
+				QDEL_NULL(soul)
 			qdel(src)
 
 /obj/machinery/mining/drill/examine(mob/user)

@@ -6,7 +6,7 @@
  of common tasks that the system will be expected to perform below. ~Z
  To use:
    - Get the appropriate datum via get_antag_data("antagonist id")
-     using the id var of the desired /datum/antagonist ie. var/datum/antagonist/A = get_antag_data("traitor")
+     using the id var of the desired /datum/antagonist ie. var/datum/antagonist/A = get_antag_data("contractor")
    - Call add_antagonist() on the desired target mind ie. A.add_antagonist(mob.mind)
    - To ignore protected roles, supply a positive second argument.
    - To skip equipping with appropriate gear, supply a positive third argument.
@@ -176,7 +176,7 @@ GLOBAL_LIST_EMPTY(faction_types)
 /proc/get_dead_antags_count(var/a_type)
 	var/count = 0
 	for(var/datum/antagonist/antag in GLOB.current_antags)
-		if((!a_type || antag.id == a_type) && antag.is_dead())
+		if((!a_type || antag.id == a_type) && antag.isdead())
 			count++
 	return count
 

@@ -18,8 +18,10 @@
 		access_heads, access_mining_station, access_RC_announce, access_keycard_auth, access_sec_doors,
 		access_eva, access_external_airlocks, access_hydroponics, access_bar, access_kitchen, access_theatre
 	)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+
 	ideal_character_age = 40
-	minimum_character_age = 30
+	minimum_character_age = 25
 	playtimerequired = 1200
 	health_modifier = 5
 
@@ -67,11 +69,14 @@ Counsel the council on directing the colony towards profitable opportunities."
 	spawn_positions = 4
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
-	alt_titles = list("Cargo Specialist", "Lonestar Sales Technician", "Lonestar Salesclerk")
+	alt_titles = list("Cargo Specialist", "Lonestar Sales Technician", "Lonestar Retail Assistant")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_DUMB
 	department_account_access = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
+
+	disallow_species = list(FORM_BSSYNTH)
+
 
 	access = list(
 		access_mailsorting, access_cargo, access_cargo_bot, access_mining,
@@ -118,11 +123,12 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	spawn_positions = 4
 	supervisors = "the Chief Executive Officer"
 	difficulty = "Easy."
-	alt_titles = list("Lonestar Drill Technician","Lonestar Digger","Mining Specialist","Junior Lonestar Miner","Ameridian Gatherer")
+	alt_titles = list("Lonestar Drill Technician", "Junior Lonestar Miner")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_HAZARD //The miners union is stubborn
 	health_modifier = 5
 
+	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/mining
 
 	description = "The Miner is a professional resource procurer, acquiring valuable minerals for Lonestar Shipping Solutions.<br>\

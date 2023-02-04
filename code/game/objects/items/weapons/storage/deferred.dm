@@ -98,13 +98,13 @@
 	icon_state = "combat_surgery_kit"
 	item_state = "combat_surgery_kit"
 	initial_contents = list(
-		/obj/item/tool/bonesetter,
+		/obj/item/tool/bonesetter/adv,
 		/obj/item/tool/saw/circular/medical,
 		/obj/item/tool/hemostat/adv,
 		/obj/item/tool/retractor/adv,
 		/obj/item/tool/scalpel/laser,
 		/obj/item/tool/tape_roll/bonegel,
-		/obj/item/tool/surgicaldrill,
+		/obj/item/tool/surgicaldrill/adv,
 		/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
 		/obj/item/storage/pill_bottle/tramadol,
 		/obj/item/stack/medical/advanced/bruise_pack
@@ -130,9 +130,10 @@
 	initial_contents = list(/obj/item/storage/pill_bottle/bicaridine,
 	/obj/item/storage/pill_bottle/dermaline,
 	/obj/item/storage/pill_bottle/dexalin_plus,
-	/obj/item/storage/pill_bottle/dylovene,
+	/obj/item/storage/pill_bottle/carthatoline,
 	/obj/item/storage/pill_bottle/tramadol,
 	/obj/item/storage/pill_bottle/spaceacillin,
+	/obj/item/reagent_containers/hypospray/autoinjector/sanguinum,
 	/obj/item/stack/medical/splint)
 
 //Crates
@@ -203,7 +204,7 @@
 	name = "sidearm crate"
 	desc = "A crate containing six Makarov 9mm pistols, 200 rounds of ammunition, and six fixed-blade combat knives."
 	icon_state = "serbcrate_deferred_green"
-	initial_contents = list(/obj/item/gun/projectile/clarissa/makarov = 6,
+	initial_contents = list(/obj/item/gun/projectile/makarov = 6,
 	/obj/item/ammo_magazine/highcap_pistol_35  = 20,
 	/obj/item/tool/knife/boot = 6)
 
@@ -303,7 +304,7 @@
 	name = "excelsior crate"
 	desc = "A crate containing everything you need for the revolution."
 	icon_state = "exc_deferred"
-	initial_contents = list(/obj/item/gun/projectile/clarissa/makarov = 2,
+	initial_contents = list(/obj/item/gun/projectile/makarov = 2,
 	/obj/item/ammo_magazine/highcap_pistol_35  = 4,
 	/obj/item/tool/knife/boot = 1,
 	/obj/item/circuitboard/excelsior_teleporter = 1,
@@ -333,10 +334,10 @@
 	desc = "A small collection of autolathe disks"
 	initial_contents = list(/obj/random/lathe_disk = 7)
 
-///obj/item/storage/deferred/gun_parts
-//	name = "gun part box"
-//	desc = "Uppers, lowers, and everything in between"
-//	initial_contents = list(/obj/spawner/gun_parts = 7)
+obj/item/storage/deferred/gun_parts
+	name = "gun part box"
+	desc = "Uppers, lowers, and everything in between"
+	initial_contents = list(/obj/random/gun_parts = 7)
 
 /obj/item/storage/deferred/powercells
 	name = "powercell box"
@@ -433,7 +434,6 @@
 	name = "SA rifle pack"
 	desc = "A small collection of SA disks"
 	initial_contents = list(
-		/obj/item/computer_hardware/hard_drive/portable/design/guns/sts40 = 1,
 		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_kalashnikov = 1,
 		/obj/item/computer_hardware/hard_drive/portable/design/guns/sa_pk = 1
 	)

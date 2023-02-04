@@ -104,8 +104,8 @@
 	category = CAT_COMP
 
 /datum/design/research/circuit/rdconsole
-	name = "R&D control console"
-	build_path = /obj/item/circuitboard/rdconsole
+	name = "unlicensed R&D control console"
+	build_path = /obj/item/circuitboard/rdconsole_unlicensed
 	category = CAT_COMP
 
 /datum/design/research/circuit/aifixer
@@ -409,21 +409,18 @@
 	build_path = /obj/item/circuitboard/teleporterhub
 	category = CAT_BLUE
 
+/*
 //Experimental devices
 /datum/design/research/circuit/mindswapper
 	name = "experimental mind swapper"
 	build_path = /obj/item/circuitboard/mindswapper
 	category = CAT_MEDI
+*/
 
 /datum/design/research/circuit/tesla_turret
 	name = "experimental tesla turret"
 	build_path = /obj/item/circuitboard/tesla_turret
 	category = CAT_POWER
-
-/datum/design/research/circuit/ameridianshieldwallgen
-	name = "sonic fence generator"
-	build_path = /obj/item/circuitboard/ameridianshieldwallgen
-	category = CAT_AMERIDIAN
 
 /datum/design/research/circuit/ameridian_refinery
 	name = "ameridian refinery"
@@ -439,6 +436,13 @@
 	name = "liquid ameridian analyzer"
 	build_path = /obj/item/circuitboard/ameridian_analyzer
 	category = CAT_AMERIDIAN
+
+/datum/design/research/circuit/ameridianshieldwallgen
+	name = "sonic fence generator"
+	build_path = /obj/item/circuitboard/ameridianshieldwallgen
+	category = CAT_AMERIDIAN
+
+
 
 //Industrial Printing
 
@@ -479,7 +483,7 @@
 	build_path = /obj/item/circuitboard/editor
 	category = CAT_MACHINE
 
-
+/*
 // Cargo
 /datum/design/research/circuit/ordercomp
 	name = "supply ordering console"
@@ -490,3 +494,4 @@
 	name = "supply control console"
 	build_path = /obj/item/circuitboard/supplycomp
 	category = CAT_COMP
+*/

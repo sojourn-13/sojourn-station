@@ -29,6 +29,12 @@
 
 #define SQRTWO 1.414
 
+/// Returns the difference between num1 and num2.
+#define GET_DIFFERENCE(num1, num2) (num1 - num2)
+
+/// Returns multiplicative inverse of num1.
+#define GET_MULT_INVERSE(num1) (1/num1)
+
 /// Returns the difference between multiplier and the product of multiplier * multiplicand.
 #define MULT_DIFFERENCE(multiplier, multiplicand) ((multiplier * multiplicand) - multiplier)
 
@@ -36,7 +42,10 @@
 #define SAFEMULT(multiplier, multiplicand, check) ((max(multiplier, check)) * multiplicand)
 
 /// Returns the higher of dividend and check, then divides it with divisor.
-#define SAFEDIVIDE(dividend, divisor, check) ((max(dividend, check)) * divisor)
+#define SAFEDIVIDE(dividend, divisor, check) ((max(dividend, check)) / divisor)
+
+/// Subtracts num1 from 360. Useful for degrees and angles and such.
+#define SUBTRACT_FROM_360(num1) (360-num1)
 
 #define PERCENT(val) (round((val)*100, 0.1))
 #define CLAMP01(x) (CLAMP(x, 0, 1))
@@ -85,6 +94,9 @@
 
 // Used for calculating the radioactive strength falloff
 #define INVERSE_SQUARE(initial_strength,cur_distance,initial_distance) ( (initial_strength)*((initial_distance)**2/(cur_distance)**2) )
+
+// Inverts the sign of the given number.
+#define INVERT_SIGN(number) ((number)*-1)
 
 // Vector algebra.
 #define SQUAREDNORM(x, y) (x**2 + y**)

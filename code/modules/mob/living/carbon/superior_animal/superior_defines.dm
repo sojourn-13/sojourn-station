@@ -54,6 +54,9 @@
 	/// Has this mob lost sight of their target? This is how we make sure mobs don't constantly go to the position of the target they've lost sight of.
 	var/lost_sight = FALSE
 
+	/// Flags for AI.
+	var/ai_flags = 0
+
 	///How delayed are our ranged attacks, in ticks. Reduces DPS.
 	var/fire_delay = 0
 	/// Value used when resetting fire_delay. initial() works but breaks vareditting.
@@ -80,8 +83,8 @@
 	var/see_through_walls = FALSE
 	/// Will this mob continue to fire at it's targets through walls? Ideally used with see_through_walls
 	var/fire_through_walls = FALSE
-	/// Increments world.time + one tick if a mob with fire_through_walls = TRUE cant see it's target, to prevent any weird walks.
-	var/cant_see_timer = 0
+
+	var/see_past_viewRange = FALSE
 	/// How many ticks are we willing to wait before untargetting a mob that we can't see?
 	var/patience = 5
 	/// What patience will be reset to whenever it's reset.
@@ -180,6 +183,17 @@
 	melee_damage_lower = 0
 	melee_damage_upper = 10
 
+	/// Determines if the mob will target whoever attacked them in the absence of an existing target. Ignores view range.
+	var/react_to_attack = TRUE
+	/// Determines what the mob will fire at if reacting to an attack they can't see. DO NOT MERGE IF NIKO DOES NOT REMOVE THIS COMMENT
+	var/retaliation_type = NO_RETALIATION
+	/// Determines what the mob will do if they are reacting to an attack and they can't see their target.
+	var/target_out_of_sight_mode = GUESS_LOCATION_WITH_END_OF_LINE
+	/// If true, turfs that have no LOS on the target out of viewrange will be ignored when finding a location in an aura/line that's out of viewrange.
+	var/out_of_sight_turf_LOS_check = TRUE
+	/// If target_out_of_sight_mode == GUESS_LOCATION_WITH_LINE, distance from src and target will be multiplied by this, then set as the limit for the line search.
+	var/out_of_viewrange_line_distance_mult = 2
+
 	var/list/objectsInView //memoization for getObjectsInView()
 	var/viewRange = 7 //how far the mob AI can see
 	var/acceptableTargetDistance = 1 //consider all targets within this range equally
@@ -266,8 +280,8 @@
 	/// The last mob this mob has followed, nulled on the first tick the mob is not following anymore. Make sure to assign this to the same value as following.
 	var/mob/last_followed = null // Who did we follow last?
 	var/follow_distance = 2 // How close do we stay?
-	var/follow_message = "nods and start following." // Message that the mob emote when they start following. Include the name of the one who follow at the end
-	var/stop_message = "nods and stop following." // Message that the mob emote when they stop following. Include the name of the one who follow at the end
+	var/follow_message = "nods and starts following you." // Message that the mob emote when they start following. Include the name of the one who follow at the end
+	var/stop_message = "nods and stops in place." // Message that the mob emote when they stop following. Include the name of the one who follow at the end
 
 	var/list/known_languages = list() // The languages that the superior mob know.
 
@@ -277,3 +291,12 @@
 	delay_for_rapid_range = 0.75 SECONDS
 	delay_for_melee = 0 SECONDS
 	delay_for_all = 0.5 SECONDS
+
+	/// Used in proc/shoot to determine the inaccuracy of the projectile. Initial value.
+	var/initial_firing_offset = 2 // By default, two degrees of inaccuracy.
+	/**
+	 * Used in proc/shoot to determine the inaccuracy of the projectile. Used value.
+	 * A value between this and the sign-inverted (5 becomes -5) version of itself will be picked at random when the mob fires a projectile, and THAT will be the
+	 * final offset of the projectile. Make sure to sync with initial_firing_offset.
+	**/
+	var/current_firing_offset = 2

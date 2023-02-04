@@ -41,11 +41,31 @@
 // This also handles psi points limits and regeneration, the effect is dynamic so increases to cognition through things like stims and chems will update accordingly.
 /obj/item/organ/internal/psionic_tumor/Process()
 	..()
-	if(disabled == FALSE && damage < 60)
+	if(!disabled && allow_loop && owner)
+		regen_points() //We start
+		allow_loop = FALSE
+
+
+
+/obj/item/organ/internal/psionic_tumor/proc/regen_points()
+	if(!owner)
+		return
+	if(!disabled && damage < 10)
+
+		//First we undo any inhibitation or add it if needed
+		if(!inhibited && owner.psi_blocking > 0)
+			owner.show_message("\blue Your psionic power has been inhibited by an outside force!")
+			inhibited = TRUE
+		else if(inhibited && owner.psi_blocking <= 0)
+			owner.show_message("\blue Your psionic power has been freed from its captivity!")
+			inhibited = FALSE
+
+		//Removes any implants that are metal, including death alarms
+		remove_synthetics()
+
+		//Now we do are math to under are point cap and regen
 		var/psi_max_bonus = 0
 		var/cognitive_potential = 1
-		if(round(world.time) % 5 == 0)
-			remove_synthetics()
 
 		if(!owner.stats.getPerk(PERK_PSION))
 			owner.stats.addPerk(PERK_PSION)
@@ -56,34 +76,23 @@
 		if(owner.stats.getPerk(PERK_PSI_PSYCHOLOGIST))
 			psi_max_bonus += 5
 
-		max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) / 10), 1, 30)) + psi_max_bonus
+		max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) * 0.1), 1, 30)) + psi_max_bonus
 
-		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) / 20), 0, 5))
+		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) * 0.2), 0, 5))
 
-		if(!inhibited && owner.psi_blocking > 0)
-			owner.show_message("\blue Your psionic power has been inhibited by an outside force!")
-			inhibited = TRUE
-		else if(inhibited && owner.psi_blocking <= 0)
-			owner.show_message("\blue Your psionic power has been freed from its captivity!")
-			inhibited = FALSE
 
-		if(psi_points > max_psi_points && owner.stats.initialized == TRUE) //Tracks Deltas in Cog changing maximum psi, but also acts as a short circuit check for round-start psionics.
-			psi_points = max_psi_points
+		if(owner.stats.getPerk(PERK_PSI_GRACE))
+			addtimer(CALLBACK(src, .proc/regen_points), (10 MINUTES - cognitive_potential MINUTES) * 0.5)
+		else
+			addtimer(CALLBACK(src, .proc/regen_points), (10 MINUTES - cognitive_potential MINUTES))
 
-		if(world.time > last_psi_point_gain)
-			if(psi_points >= max_psi_points)
-				return
+		if(psi_points < max_psi_points)
 			psi_points += 1
-			if(owner.stats.getPerk(PERK_PSI_GRACE))
-				last_psi_point_gain = world.time + ((10 MINUTES - cognitive_potential MINUTES) / 2)
-			else
-				last_psi_point_gain = world.time + (10 MINUTES - cognitive_potential MINUTES)
-
-
 
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
 	..()
 	disabled = TRUE
+	allow_loop = TRUE
 
 // This proc removes all implants. Synthetic limbs and implants are exploded out of the body while organ_modules and synthetic organs are teleported away.
 /obj/item/organ/internal/psionic_tumor/proc/remove_synthetics()
@@ -115,18 +124,6 @@
 				var/mob/living/carbon/human/H = owner
 				H.update_implants()
 
-		if(istype(O, /obj/item/implant))
-			if(O == src)
-				continue
-			var/obj/item/implant/R = O
-			owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s body."),\
-			SPAN_DANGER("[R.name] rips through your body."))
-			R.uninstall()
-			R.malfunction = MALFUNCTION_PERMANENT
-			if(ishuman(owner))
-				var/mob/living/carbon/human/H = owner
-				H.update_implants()
-
 		if(istype(O, /obj/item/organ_module))
 			if(O == src)
 				continue
@@ -140,6 +137,26 @@
 					var/mob/living/carbon/human/H = owner
 					H.update_implants()
 
+	for(var/obj/item/implant/O in owner.contents)
+		if(istype(O, /obj/item/implant))
+			var/obj/item/implant/I = O
+			remove_implanted(I)
+
+
+
+// This proc removes all implanters other then non-metal ones.
+/obj/item/organ/internal/psionic_tumor/proc/remove_implanted(metal_implant)
+	if(istype(metal_implant, /obj/item/implant))
+		var/obj/item/implant/R = metal_implant
+		if(R.implanted)
+			owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s body."),\
+			SPAN_DANGER("[R.name] rips through your body."))
+			R.uninstall()
+			R.malfunction = MALFUNCTION_PERMANENT
+			if(ishuman(owner))
+				var/mob/living/carbon/human/H = owner
+				H.update_implants()
+
 
 // This proc handles paying for your powers and checks if you attempt to use your power while you are dead or unconcious. Placed here so it doesn't need to be in every power function.
 /obj/item/organ/internal/psionic_tumor/proc/pay_power_cost(var/psi_cost)
@@ -150,7 +167,7 @@
 		to_chat(src, "You are dead.")
 		return
 	if(owner.stat == UNCONSCIOUS)
-		to_chat(src, "You cannot use your psionic powers while unconsious.")
+		to_chat(src, "You cannot use your psionic powers while unconscious.")
 		return
 	if(psi_points < psi_cost)
 		to_chat(usr,"You lack the psionic essence to do this.")

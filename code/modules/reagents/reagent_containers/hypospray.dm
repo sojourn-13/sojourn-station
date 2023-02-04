@@ -238,6 +238,13 @@
 	item_state = "syrette_quickclot"
 	baseline_sprite = "syrette_quickclot"
 
+/obj/item/reagent_containers/hypospray/autoinjector/sanguinum
+	name = "autoinjector (sanguinum)"
+	preloaded_reagents = list("sanguinum" = 5)
+	icon_state = "syrette_red"
+	item_state = "syrette_red"
+	baseline_sprite = "syrette_red"
+
 /obj/item/reagent_containers/hypospray/autoinjector/spaceacillin
 	name = "autoinjector (spaceacillin)"
 	icon_state = "syrette_spacealine"
@@ -276,3 +283,23 @@
 	preloaded_reagents = list("kelotane" = 1.25, "dermaline" = 1.25, "tricordrazine" = 1.25, "polystem" = 1.25)
 	price_tag = 100
 	can_be_refilled = FALSE
+
+/obj/item/reagent_containers/hypospray/autoinjector/large //bigger storage, not refillable. great for medical to sell, I suppose?
+	name = "advanced autoinjector" //placeholder
+	desc = "A larger, more robust autoinjector whos design prevents refilling, but allows for much more storage. A proprietary Soteria design."
+	icon_state = "supeyrette" //fancy animated sprite courtesy of Guidesu.
+	item_state = "supeyrette"
+	amount_per_transfer_from_this = 10
+	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE
+	volume = 10
+	preloaded_reagents = list("inaprovaline" = 10)
+	can_be_refilled = FALSE //No refill!!!
+	baseline_sprite = "supeyrette"
+	injtime = 5 //150% longer inject time for 100% more storage.A worthy trade off for this tool
+
+
+/obj/item/reagent_containers/hypospray/autoinjector/large/chemmaters
+	icon_state = "supeyrette" //still missing the icons from doll.
+	item_state = "supeyrette"
+	baseline_sprite = "syrette"
+	preloaded_reagents = list()

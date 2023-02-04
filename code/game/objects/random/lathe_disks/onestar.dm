@@ -16,5 +16,7 @@
 						/obj/item/computer_hardware/hard_drive/portable/design/onestar/spring = 5,
 						/obj/item/computer_hardware/hard_drive/portable/design/onestar/rivet = 4,
 						/obj/item/computer_hardware/hard_drive/portable/design/onestar/nail_gun = 3,
-						/obj/item/computer_hardware/hard_drive/portable/design/onestar/scaffold = 1))
+						/obj/item/computer_hardware/hard_drive/portable/design/onestar/scaffold = 2,
+						/obj/item/computer_hardware/hard_drive/portable/design/onestar/rebar = 2,
+						/obj/item/computer_hardware/hard_drive/portable/design/onestar/trouble_shooter = 1))
 

@@ -50,7 +50,7 @@
 	src.visible_message("\The [src] spits out a piece of paper.")
 
 //I have no idea what im doing
-/obj/machinery/computer/mecha/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/topic_state/state = GLOB.default_state)
+/obj/machinery/computer/mecha/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 	if(..())
 		return
 	user.set_machine(src)

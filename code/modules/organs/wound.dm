@@ -269,12 +269,12 @@
 	// Minor cuts have max_bleeding_stage set to the stage that bears the wound type's name.
 	// The major cut types have the max_bleeding_stage set to the clot stage (which is accordingly given the "blood soaked" descriptor).
 	max_bleeding_stage = 3
-	stages = list("ugly ripped cut" = 20, "ripped cut" = 10, "cut" = 5, "healing cut" = 2, "small scab" = 0)
+	stages = list("ugly ripped cut" = 20, "ripped cut" = 10, "cut" = 5, "healing cut" = 2, "healing scab" = 0) // OCCULUS EDIT: was 'fresh skin' for 0
 	damage_type = CUT
 
 /datum/wound/cut/deep
 	max_bleeding_stage = 3
-	stages = list("ugly deep ripped cut" = 25, "deep ripped cut" = 20, "deep cut" = 15, "clotted cut" = 8, "scab" = 2, "fresh skin" = 0)
+	stages = list("ugly deep ripped cut" = 25, "deep ripped cut" = 20, "deep cut" = 15, "clotted cut" = 8, "large scab" = 2, "healing large scab" = 0) // OCCULUS EDIT: was 'fresh skin' for 0
 	damage_type = CUT
 
 /datum/wound/cut/flesh
@@ -348,11 +348,11 @@ datum/wound/puncture/massive
 	return 0
 
 /datum/wound/burn/moderate
-	stages = list("ripped burn" = 10, "moderate burn" = 5, "healing moderate burn" = 2, "fresh skin" = 0)
+	stages = list("ripped burn" = 10, "moderate burn" = 5, "healing moderate burn" = 2, "fading burn spot" = 0) // OCCULUS EDIT: was 'fresh skin' for 0
 	damage_type = BURN
 
 /datum/wound/burn/large
-	stages = list("ripped large burn" = 20, "large burn" = 15, "healing large burn" = 5, "fresh skin" = 0)
+	stages = list("ripped large burn" = 20, "large burn" = 15, "healing large burn" = 5, "large fading burn spot" = 0) // OCCULUS EDIT: was 'fresh skin' for 0
 	damage_type = BURN
 
 /datum/wound/burn/severe
@@ -379,7 +379,7 @@ datum/wound/puncture/massive
 		damage_amt /= 2
 
 	switch(losstype)
-		if(DROPLIMB_EDGE, DROPLIMB_BLUNT)
+		if(DISMEMBER_METHOD_EDGE, DISMEMBER_METHOD_BLUNT)
 			damage_type = CUT
 			max_bleeding_stage = 3 //clotted stump and above can bleed.
 			stages = list(
@@ -388,7 +388,7 @@ datum/wound/puncture/massive
 				"clotted stump" = damage_amt*0.5,
 				"scarred stump" = 0
 				)
-		if(DROPLIMB_BURN)
+		if(DISMEMBER_METHOD_BURN)
 			damage_type = BURN
 			stages = list(
 				"ripped charred stump" = damage_amt*1.3,

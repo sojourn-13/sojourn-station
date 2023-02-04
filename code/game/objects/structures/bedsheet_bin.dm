@@ -40,7 +40,7 @@ LINEN BINS
 		to_chat(user, "Someone is already using \the [src]")
 		return FALSE
 	inuse = TRUE
-	if (do_after(user, 6, src, incapacitation_flags = INCAPACITATION_UNCONSCIOUS))
+	if (do_after(user, 6, src, incapacitation_flags = INCAPACITATION_KNOCKOUT))
 		if(user.loc != loc)
 			user.do_attack_animation(src)
 		playsound(get_turf(loc), "rustle", 15, 1, -5)
@@ -128,7 +128,7 @@ LINEN BINS
 	..()
 
 /obj/item/bedsheet/attack_hand(mob/user)
-	if(!user || user.incapacitated(INCAPACITATION_UNCONSCIOUS))
+	if(!user || user.incapacitated(INCAPACITATION_KNOCKOUT))
 		return
 	if(!folded)
 		toggle_roll(user)

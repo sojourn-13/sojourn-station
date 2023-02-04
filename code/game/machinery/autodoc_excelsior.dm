@@ -92,7 +92,7 @@
 	if (!occupant || cover_locked)
 		return
 	if(autodoc_processor.active)
-		to_chat(usr, SPAN_WARNING("Comrade, autodoc is locked down! Wait until all operations is done."))
+		to_chat(usr, SPAN_WARNING("Comrade, autodoc is locked down! Wait until all operations are done."))
 		return
 	if(cover_closed)
 		open_cover()
@@ -193,7 +193,7 @@
 		autodoc_processor.stop()
 		update_icon()
 
-/obj/machinery/excelsior_autodoc/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FORCE_OPEN, datum/topic_state/state = GLOB.default_state)
+/obj/machinery/excelsior_autodoc/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FORCE_OPEN, datum/nano_topic_state/state = GLOB.default_state)
 	autodoc_processor.nano_ui_interact(user, ui_key, ui, force_open, state)
 
 /obj/machinery/excelsior_autodoc/Topic(href, href_list)

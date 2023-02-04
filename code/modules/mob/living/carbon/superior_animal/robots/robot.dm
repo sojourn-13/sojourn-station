@@ -50,17 +50,12 @@
 	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null
 	var/cell_drop = null
+	cant_gib = TRUE
 
 /mob/living/carbon/superior_animal/robot/handle_breath(datum/gas_mixture/breath) //we dont care about the air
 	return
 
 /mob/living/carbon/superior_animal/robot/handle_environment(datum/gas_mixture/environment) //We are robots, no air or presser will harm us
-	return
-
-/mob/living/carbon/superior_animal/robot/handle_cheap_breath(datum/gas_mixture/breath as anything)
-	return
-
-/mob/living/carbon/superior_animal/robot/handle_cheap_environment(datum/gas_mixture/environment as anything)
 	return
 
 /mob/living/carbon/superior_animal/robot/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, glide_size_override = 0) //WE CLEAN!

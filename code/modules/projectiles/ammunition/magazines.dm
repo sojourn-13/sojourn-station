@@ -542,7 +542,8 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75
 	max_ammo = 100
 	multiple_sprites = 1
-	w_class = ITEM_SIZE_NORMAL //Balance change, these things are the size a box do to being legit 5 mags worth ammo
+	w_class = ITEM_SIZE_BULKY //Balance change, these things are the size a box due to being legit 5 mags worth of ammo. Wacky that it was normal-sized before.
+	extra_bulk = -2
 
 /obj/item/ammo_magazine/rifle_75_linked_box/update_icon()
 	if (!stored_ammo.len)
@@ -644,7 +645,7 @@
 /obj/item/ammo_magazine/heavy_rifle_408
 	name = "heavy rifle magazine"
 	icon_state = "hrifle"
-	desc = "A 20 round magazine marked for 8.6x70mm Heavy Rifle."
+	desc = "A 14 round magazine marked for 8.6x70mm Heavy Rifle."
 	origin_tech = list(TECH_COMBAT = 2)
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
@@ -652,7 +653,7 @@
 	caliber = CAL_HRIFLE
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
-	max_ammo = 20
+	max_ammo = 14
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/heavy_rifle_408/empty
@@ -725,8 +726,8 @@
 	icon_state = "10x24"
 	initial_ammo = 0
 
-/obj/item/ammo_magazine/rifle_10x24
-	name = "light rifle magazine"
+/obj/item/ammo_magazine/smg_10x24 // Refactors as it's not intended for a rifle but rather the Spec Ops.
+	name = "high-capacity box magazine"
 	desc = "A 40 round magazine marked for 10x24mm rounds."
 	icon_state = "rifle"
 	mag_type = MAGAZINE
@@ -741,7 +742,7 @@
 
 /obj/item/ammo_magazine/kurtz_50
 	name = "heavy pistol magazine"
-	desc = "An 8 round magazine marked for 12mm."
+	desc = "A 10 round magazine marked for 12mm."
 	icon_state = "kurtz"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -749,7 +750,7 @@
 	caliber = CAL_50
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/kurtz_50
-	max_ammo = 8
+	max_ammo = 10
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/kurtz_50/empty
@@ -783,37 +784,38 @@
 /obj/item/ammo_magazine/speed_loader_pistol_35
 	name = "speed loader (9mm Special)"
 	desc = "A 6 round speed loader marked for (9mm."
-	icon_state = "slpistol_l"
+	icon_state = "slpistol_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_PISTOL
 	matter = list(MATERIAL_STEEL = 3)
 	ammo_type = /obj/item/ammo_casing/pistol_35
 	max_ammo = 6
-	multiple_sprites = 1
+
+/obj/item/ammo_magazine/speed_loader_pistol_35/update_icon()
+	cut_overlays()
+	var/count = 0
+	for(var/obj/item/ammo_casing/AC in stored_ammo)
+		count++
+		add_overlay("slpistol_[AC.shell_color]-[count]")
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/practice
 	name = "speed loader (9mm Special practice)"
-	icon_state = "slpistol_p"
 	ammo_type = /obj/item/ammo_casing/pistol_35/practice
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/hv
 	name = "speed loader (9mm Special high-velocity)"
-	icon_state = "slpistol_hv"
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/rubber
 	name = "speed loader (9mm Special rubber)"
-	icon_state = "slpistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/lethal
 	name = "speed loader (9mm Special hollow point)"
-	icon_state = "slpistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/scrap
 	name = "old speed loader (9mm Special)"
-	icon_state = "slpistol_s"
 	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
 
 //////// 10mm SPEEDLOADERS //////////
@@ -821,75 +823,81 @@
 /obj/item/ammo_magazine/speed_loader_magnum_40
 	name = "speed loader (10mm Magnum)"
 	desc = "A 6 round speed loader marked for 10mm Magnum."
-	icon_state = "slmagnum_l"
+	icon_state = "slmagnum_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_MAGNUM
 	ammo_type = /obj/item/ammo_casing/magnum_40
 	matter = list(MATERIAL_STEEL = 3)
 	max_ammo = 6
-	multiple_sprites = 1
+
+/obj/item/ammo_magazine/speed_loader_magnum_40/update_icon()
+	cut_overlays()
+	var/count = 0
+	for(var/obj/item/ammo_casing/AC in stored_ammo)
+		count++
+		add_overlay("slmagnum_[AC.shell_color]-[count]")
+
+/obj/item/ammo_magazine/speed_loader_magnum_40/Initialize()
+	. = ..()
+	update_icon()
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/practice
 	name = "speed loader (10mm Magnum practice)"
-	icon_state = "slmagnum_p"
 	ammo_type = /obj/item/ammo_casing/magnum_40/practice
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/highvelocity
 	name = "speed loader (10mm Magnum high-velocity)"
-	icon_state = "slmagnum_hv"
 	ammo_type = /obj/item/ammo_casing/magnum_40/hv
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/rubber
 	name = "speed loader (10mm Magnum rubber)"
-	icon_state = "slmagnum_r"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/lethal
 	name = "speed loader (10mm Magnum hollow-point)"
-	icon_state = "slmagnum_l"
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/scrap
 	name = "old speed loader (10mm Magnum)"
-	icon_state = "slmagnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/biomatter
 	name = "speed loader (10mm Magnum Caustic)"
-	icon_state = "slmagnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/biomatter
 
 //// 12mm speed loader ////
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50
 	name = "speed loader (12mm Special)"
-	desc = "A 5 round speed loader marked for 12mm."
-	icon_state = "slmagnum_p"
+	desc = "A 6 round speed loader marked for 12mm."
+	icon_state = "slmagnum_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_50
 	ammo_type = /obj/item/ammo_casing/kurtz_50
 	matter = list(MATERIAL_STEEL = 3)
-	max_ammo = 5
-	multiple_sprites = 1
+	max_ammo = 6
+
+/obj/item/ammo_magazine/speed_loader_kurtz_50/update_icon()
+	cut_overlays()
+	var/count = 0
+	for(var/obj/item/ammo_casing/AC in stored_ammo)
+		count++
+		add_overlay("slmagnum_[AC.shell_color]-[count]")
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/practice
 	name = "speed loader (12mm practice)"
-	icon_state = "slmagnum_p"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/practice
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber
 	name = "speed loader (12mm rubber)"
-	icon_state = "slmagnum_r"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal
 	name = "speed loader (12mm hollow-point)"
-	icon_state = "slmagnum_l"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/lethal
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/highvelocity
 	name = "speed loader (12mm high-velocity)"
-	icon_state = "slmagnum_hv"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/hv
 
 //////// RIFLE SPEEDLOADERS ////////
@@ -965,6 +973,10 @@
 	. = ..()
 	update_icon()
 
+/obj/item/ammo_magazine/speed_loader_heavy_rifle_408/empty
+	icon_state = "stripper_base"
+	initial_ammo = 0
+
 //////// SHOTGUN SPEEDLOADERS ////////
 /obj/item/ammo_magazine/speed_loader_shotgun
 	name = "20mm loader tube (sabot slug)"
@@ -1026,14 +1038,14 @@
 
 /obj/item/ammo_magazine/m12
 	name = "20mm ammo drum (sabot slug)"
-	desc = "A 20mm ammo drum for the Pug Shotgun or Payload Rifle, holds 8 shells"
+	desc = "A 20mm ammo drum for automatic and semiautomatic shotguns, holds 20 shells"
 	icon_state = "m12_hv"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_STEEL = 2)
-	max_ammo = 8
+	max_ammo = 20 // 5 times a Grizzly's capacity (or four if you cock a round in), how did a drum hold less ammo than a mag...
 	ammo_color = "-hv"
 
 /obj/item/ammo_magazine/m12/update_icon()
@@ -1065,16 +1077,17 @@
 
 /obj/item/ammo_magazine/sbaw
 	name = "20mm SBAW magazine (sabot slug)"
-	desc = "A 10 magazine for 20mm shotgun shells."
-	icon_state = "sbaw"
+	desc = "A 12 round magazine for 20mm shotgun shells."
+	icon_state = "sbaw_s"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun
 	multiple_sprites = 1
-	max_ammo = 10
+	max_ammo = 12 // Three times a Grizzly's capacity
 
 /obj/item/ammo_magazine/sbaw/empty
+	name = "20mm SBAW magazine"
 	icon_state = "sbaw"
 	matter = list(MATERIAL_STEEL = 1)
 	initial_ammo = 0

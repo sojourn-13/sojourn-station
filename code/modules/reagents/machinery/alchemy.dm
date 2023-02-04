@@ -17,7 +17,7 @@
 		set name = "Start Alchemical Reaction"
 		set src in view(1)
 
-		if (usr.stat || usr.restrained() || anchored)
+		if (usr.stat || usr.restrained() || anchored || !usr.stats.getPerk(PERK_ALCHEMY))
 			return
 
 		if (!beaker)
@@ -87,3 +87,25 @@
 	amount_per_transfer_from_this = 1
 	possible_transfer_amounts = list(1,2,3)
 	reagent_flags = TRANSPARENT | NO_REACT // It's a stasis BIDON, shouldn't allow chems to react inside it.
+
+/obj/item/alchemy/recipe_scroll
+	name = "alchemy recipe"
+	desc = "A tatty paper written in a strange language."
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "scroll"
+
+/obj/item/alchemy/recipe_scroll/Initialize()
+	var/blurb = pick(list(
+		"iron suppliments tungsten, needs to be reformed with sodiumchloride",
+		"ammonia dissolves carbon, crystalize with sodiumchloride",
+		"water and carbon mixed slowly with sodiumchloride",
+		"detox slowly mixed with viroputine, boil with citalopram",
+		"detox combined with purger and boiled off with citalopram",
+		"iron ground into flakes, absorbed by silicon and enriched with sodiumchloride",
+		"oil to suspend sodiumchloride then slowly dissolved with iron",
+		"gold ground into a powder, combine after mixing sodiumchloride with tatonka_milk",
+		"protein enriched egg, further enrich with tatonka_milk",
+		"protein enriched honey thats slowly steamed with ethanol",
+		"blackpepper ground into flakes. Combine with milk and drops of ethanol",
+		"blood dissolved with gold, boil with lively_concoxion"))
+	desc = "A list of various ingredients on a tatty paper. Something about [blurb]"

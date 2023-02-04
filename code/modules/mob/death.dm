@@ -1,6 +1,7 @@
 //This is the proc for gibbing a mob. Cannot gib ghosts.
 //added different sort of gibs and animations. N
 /mob/proc/gib(anim="gibbed-m",do_gibs)
+	if(cant_gib) return
 	death(1)
 	transforming = TRUE
 	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
@@ -19,17 +20,20 @@
 		animation.icon = 'icons/mob/mob.dmi'
 		animation.master = src
 		flick(anim, animation)
-	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
-	STOP_PROCESSING(SSmobs, src) //were dead, and have no possable way to revive
+		addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
+	else
+		qdel(src)
 
 /mob/proc/check_delete(var/atom/movable/overlay/animation)
 	if(animation)	qdel(animation)
 	if(src)			qdel(src)
 
+
 //This is the proc for turning a mob into ash. Mostly a copy of gib code (above).
 //Originally created for wizard disintegrate. I've removed the virus code since it's irrelevant here.
 //Dusting robots does not eject the MMI, so it's a bit more powerful than gib() /N
 /mob/proc/dust(anim = "dust-m", remains = /obj/effect/decal/cleanable/ash, iconfile = 'icons/mob/mob.dmi')
+	if(cant_gib) return
 	death(1)
 	if (istype(loc, /obj/item/holder))
 		var/obj/item/holder/H = loc
@@ -52,14 +56,15 @@
 		animation.icon = iconfile
 		animation.master = src
 		flick(anim, animation)
-	addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
-	STOP_PROCESSING(SSmobs, src) //were dead, and have no possable way to revive
+		addtimer(CALLBACK(src, .proc/check_delete, animation), 15)
+	else
+		qdel(src)
 
 /mob/proc/death(gibbed,deathmessage="seizes up and falls limp...",show_dead_message = "You have died.")
 	if(stat == DEAD)
-		return 0
+		return FALSE
 
-	walk(src, 0)
+	SSmove_manager.stop_looping(src)
 
 	activate_mobs_in_range(src, 5) //Its quite clear to everyone close by when something dies
 	facing_dir = null
@@ -78,7 +83,7 @@
 
 	for(var/mob/living/carbon/human/H in oviewers(src))
 		H.sanity.onSeeDeath(src)
-		SEND_SIGNAL(H, COMSIG_MOB_DEATH, src) //im not going to use this for the mob spawner becuase i dont understand signals enough
+		LEGACY_SEND_SIGNAL(H, COMSIG_MOB_DEATH, src) //im not going to use this for the mob spawner becuase i dont understand signals enough
 
 	stat = DEAD
 	update_lying_buckled_and_verb_status()
@@ -118,6 +123,7 @@
 		mind.store_memory("Time of death: [stationtime2text()]", 0)
 	switch_from_living_to_dead_mob_list()
 	updateicon()
+	update_icons()
 	to_chat(src,"<span class='deadsay'>[show_dead_message]</span>")
 
 	if (spawned_from)

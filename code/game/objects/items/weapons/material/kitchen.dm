@@ -98,6 +98,6 @@
 		to_chat(user, SPAN_WARNING("\The [src] accidentally slips out of your hand."))
 		user.drop_from_inventory(src)
 		user.take_organ_damage(2)
-		user.Paralyse(2)
+		user.Weaken(1)
 		return
 	return ..()

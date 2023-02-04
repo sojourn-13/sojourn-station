@@ -32,8 +32,8 @@
 	var/obj/item/mine/kamikaze = null // Store the mine the roomba can hold.
 	cell = new /obj/item/cell/medium/moebius // Hold the roomba's power cell, but default to a cheap one
 
-	follow_message = "emits an affirmative blip and start following."
-	stop_message = "emits an affirmative blip and stop following."
+	follow_message = "emits an affirmative blip and starts following you."
+	stop_message = "emits an affirmative blip and stops in place."
 	exam_message = null
 
 /mob/living/carbon/superior_animal/handmade/roomba/New()

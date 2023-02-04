@@ -85,7 +85,7 @@
 		admin_attack_log(user, src, "Attempted to remove \a [target_slot]", "Target of an attempt to remove \a [target_slot].", "attempted to remove \a [target_slot] from")
 		unEquip(target_slot)
 		if(istype(target_slot,  /obj/item/storage/backpack))
-			SEND_SIGNAL(user, COMSIG_EMPTY_POCKETS, src)
+			LEGACY_SEND_SIGNAL(user, COMSIG_EMPTY_POCKETS, src)
 	else if(user.unEquip(held))
 		equip_to_slot_if_possible(held, text2num(slot_to_strip), TRUE) // Disable warning
 		if(held.loc != src)
@@ -104,7 +104,7 @@
 		visible_message(SPAN_DANGER("\The [user] empties \the [src]'s pockets!"))
 	else
 		to_chat(user, SPAN_NOTICE("You empty \the [src]'s pockets."))
-	SEND_SIGNAL(user, COMSIG_EMPTY_POCKETS, src)
+	LEGACY_SEND_SIGNAL(user, COMSIG_EMPTY_POCKETS, src)
 // Remove all splints.
 /mob/living/carbon/human/proc/remove_splints(var/mob/living/user)
 
@@ -112,7 +112,7 @@
 	if(istype(wear_suit,/obj/item/clothing/suit/space))
 		var/obj/item/clothing/suit/space/suit = wear_suit
 		if(suit.supporting_limbs && suit.supporting_limbs.len)
-			to_chat(user, SPAN_WARNING("You cannot remove the splints - [src]'s [suit] is supporting some of the breaks."))
+			to_chat(user, SPAN_WARNING("You cannot remove the splints - [src]'s [suit] is in the way."))
 			can_reach_splints = 0
 
 	if(can_reach_splints)

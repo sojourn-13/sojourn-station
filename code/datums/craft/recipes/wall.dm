@@ -61,3 +61,13 @@
 		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL)
 	)
 	related_stats = list(STAT_MEC)
+
+/datum/craft_recipe/wall/lattice
+	name = "lattice"
+	result = /obj/structure/lattice
+	time = WORKTIME_FAST
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL)
+	)
+	related_stats = list(STAT_MEC)

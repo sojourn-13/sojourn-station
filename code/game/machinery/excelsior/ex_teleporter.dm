@@ -176,7 +176,7 @@ var/global/excelsior_last_draft = 0
 	if(stat & (BROKEN|NOPOWER)) return
 	if(user.stat || user.restrained()) return
 
-	var/list/data = ui_data()
+	var/list/data = nano_ui_data()
 
 	time_until_scan = time2text((1800 - ((world.time - round_start_time) % 1800)), "mm:ss")
 
@@ -186,7 +186,7 @@ var/global/excelsior_last_draft = 0
 		ui.set_initial_data(data)
 		ui.open()
 
-/obj/machinery/complant_teleporter/ui_data()
+/obj/machinery/complant_teleporter/nano_ui_data()
 	var/list/data = list()
 	data["energy"] = round(excelsior_energy)
 	data["maxEnergy"] = round(excelsior_max_energy)

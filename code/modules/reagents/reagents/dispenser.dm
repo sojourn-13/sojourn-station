@@ -109,7 +109,7 @@
 	touch_met = 5
 	var/nutriment_factor = 0
 	var/strength = 10 // This is, essentially, units between stages - the lower, the stronger. Less fine tuning, more clarity.
-	var/strength_mod = 1
+	var/strength_mod = 2
 	var/toxicity = 1
 
 	var/druggy = 0
@@ -130,47 +130,47 @@
 
 /datum/reagent/ethanol/on_mob_add(mob/living/L)
 	..()
-	SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_ADD_DRUG)
+	LEGACY_SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_ADD_DRUG)
 
 /datum/reagent/ethanol/on_mob_delete(mob/living/L)
 	..()
-	SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_DELETE_DRUG)
+	LEGACY_SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_DELETE_DRUG)
 
 /datum/reagent/ethanol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustToxLoss(0.2 * toxicity * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
 	M.add_chemical_effect(CE_PAINKILLER, max(55-strength, 1))
-	SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
+	LEGACY_SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
 	return
 
-/datum/reagent/ethanol/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+/datum/reagent/ethanol/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustNutrition(nutriment_factor * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
-	var/strength_mod = 1
 
 	M.add_chemical_effect(CE_ALCOHOL, 1)
 
 //Tough people can drink a lot
-	var/tolerance = max(10, strength + M.stats.getStat(STAT_TGH))
+	var/tolerance = max(5, strength + (M.stats.getStat(STAT_TGH) * 0.5)) //TGH scaling is 50%
 
-	if(dose * strength_mod >= tolerance) // Early warning
-		M.make_dizzy(6) // It is decreased at the speed of 3 per tick
 
-	if(dose * strength_mod >= tolerance * 2) // Slurring
+	if(dose * strength_mod >= tolerance) // Slurring
 		M.slurring = max(M.slurring, 30)
 
-	if(dose * strength_mod >= tolerance * 3) // Confusion - walking in random directions
-		M.confused = max(M.confused, 20)
+	if(dose * strength_mod >= tolerance * 1.5) // Early warning
+		M.make_dizzy(6) // It is decreased at the speed of 3 per tick
 
-	if(dose * strength_mod >= tolerance * 4) // Blurry vision
-		M.eye_blurry = max(M.eye_blurry, 10)
+	if(dose * strength_mod >= tolerance * 2) // Confusion - walking in random directions
+		M.confused = max(M.confused, 3)
 
-	if(dose * strength_mod >= tolerance * 5) // Drowsyness - periodically falling asleep
-		M.drowsyness = max(M.drowsyness, 20)
+	if(dose * strength_mod >= tolerance * 3) // Blurry vision
+		M.eye_blurry = max(M.eye_blurry, 5)
 
-	if(dose * strength_mod >= tolerance * 7) // Pass out
-		M.paralysis = max(M.paralysis, 20)
-		M.sleeping  = max(M.sleeping, 30)
+	if(dose * strength_mod >= tolerance * 4) // Drowsyness - periodically falling asleep
+		M.drowsyness = max(M.drowsyness, 5)
 
-	if(dose * strength_mod >= tolerance * 9) // Toxic dose
+	if(dose * strength_mod >= tolerance * 5) // Pass out
+		M.paralysis = max(M.paralysis, 10)
+		M.sleeping  = max(M.sleeping, 15)
+
+	if(dose * strength_mod >= tolerance * 6) // Toxic dose
 		M.add_chemical_effect(CE_ALCOHOL_TOXIC, toxicity)
 
 
@@ -232,6 +232,7 @@
 	taste_description = "metal"
 	reagent_state = SOLID
 	color = "#353535"
+	scannable = TRUE // Helps with blood restoration, should avoid confusion with other stuff
 
 
 /datum/reagent/metal/iron/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
@@ -288,6 +289,7 @@
 	taste_description = "sweetness" //potassium is bitter in higher doses but sweet in lower ones.
 	reagent_state = SOLID
 	color = "#A0A0A0"
+	scannable = TRUE // Helps with pinpointing kidney failure
 
 /datum/reagent/metal/potassium/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
@@ -341,67 +343,73 @@
 /datum/reagent/acid/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.take_organ_damage(0, (issmall(M) ? effect_multiplier * 2: effect_multiplier * power * 2))
 
-/datum/reagent/acid/affect_touch(var/mob/living/carbon/M, var/alien, var/effect_multiplier) // This is the most interesting
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.head)
-			if(H.head.unacidable)
-				to_chat(H, "<span class='danger'>Your [H.head] protects you from the acid.</span>")
-				remove_self(volume)
-				return
-			else if(volume > meltdose)
-				to_chat(H, "<span class='danger'>Your [H.head] melts away!</span>")
-				qdel(H.head)
-				H.update_inv_head(1)
-				H.update_hair(1)
-				remove_self(meltdose)
-		if(volume <= 0)
-			return
-
-		if(H.wear_mask)
-			if(H.wear_mask.unacidable)
-				to_chat(H, "<span class='danger'>Your [H.wear_mask] protects you from the acid.</span>")
-				remove_self(volume)
-				return
-			else if(volume > meltdose)
-				to_chat(H, "<span class='danger'>Your [H.wear_mask] melts away!</span>")
-				qdel(H.wear_mask)
-				H.update_inv_wear_mask(1)
-				H.update_hair(1)
-				remove_self(meltdose)
-		if(volume <= 0)
-			return
-
-		if(H.glasses)
-			if(H.glasses.unacidable)
-				to_chat(H, "<span class='danger'>Your [H.glasses] partially protect you from the acid!</span>")
-				volume /= 2
-			else if(volume > meltdose)
-				to_chat(H, "<span class='danger'>Your [H.glasses] melt away!</span>")
-				qdel(H.glasses)
-				H.update_inv_glasses(1)
-				remove_self(meltdose / 2)
-		if(volume <= 0)
-			return
-
-	if(volume < meltdose) // Not enough to melt anything
-		M.take_organ_damage(0, effect_multiplier * power * 0.2) //burn damage, since it causes chemical burns. Acid doesn't make bones shatter, like brute trauma would.
+/datum/reagent/acid/affect_touch(mob/living/carbon/M, alien, effect_multiplier) // This is the most interesting
+	if(!ishuman(M))
+		M.apply_damage(volume * power * 0.2, BURN)
 		return
-	if(!M.unacidable && volume > 0)
-		if(ishuman(M) && volume >= meltdose)
-			var/mob/living/carbon/human/H = M
-			var/obj/item/organ/external/affecting = H.get_organ(BP_HEAD)
-			if(affecting)
-				if(affecting.take_damage(0, volume * power * 0.1))
-					H.UpdateDamageIcon()
-				if(prob(100 * volume / meltdose)) // Applies disfigurement
-					if (!(H.species && (H.species.flags & NO_PAIN)))
-						H.emote("scream")
-					H.status_flags |= DISFIGURED
-		else
-			M.take_organ_damage(0, volume * power * 0.1) // Balance. The damage is instant, so it's weaker. 10 units -> 5 damage, double for pacid. 120 units beaker could deal 60, but a) it's burn, which is not as dangerous, b) it's a one-use weapon, c) missing with it will splash it over the ground and d) clothes give some protection, so not everything will hit
+	var/mob/living/carbon/human/our_man = M
+	var/list/bodyparts = list(HEAD,UPPER_TORSO,LOWER_TORSO,ARM_LEFT,ARM_RIGHT,LEG_LEFT,LEG_RIGHT)
+	var/units_per_bodypart = volume / 7
+	var/list/obj/item/clothing/wearing_1 = list(
+		our_man.head,
+		our_man.glasses,
+		our_man.wear_suit,
+		our_man.shoes,
+		our_man.gloves
+	)
+	var/list/obj/item/clothing/wearing_2 = list(
+		our_man.wear_mask,
+		our_man.w_uniform,
+	)
+	remove_self(volume)
+	for(var/bodypart in bodyparts)
+		var/stop_loop = FALSE
+		var/units_for_this_part = units_per_bodypart
+		// handles first layer of clothing.
+		for(var/obj/item/clothing/C in wearing_1)
+			if(!(C.body_parts_covered & bodypart))
+				continue
+			if(C.unacidable || C.armor.bio > 99)
+				stop_loop = TRUE
+				continue
+			var/melting_requirement = (C.max_health / C.health) * (1 - C.armor.bio / 100) * meltdose
+			if(melting_requirement > units_per_bodypart)
+				C.health -= (C.max_health / meltdose) * (1 - C.armor.bio / 100) * units_per_bodypart
+				stop_loop = TRUE
+			else
+				to_chat(our_man, SPAN_DANGER("The [C.name] melts under the action of acid."))
+				units_for_this_part -= melting_requirement
+				our_man.remove_from_mob(C)
+				C.forceMove(NULLSPACE)
+				wearing_1 -= C
+				qdel(C)
+		if(stop_loop)
+			continue
+		// second layer of clothing.
+		for(var/obj/item/clothing/C in wearing_2)
+			if(!(C.body_parts_covered & bodypart))
+				continue
+			if(C.unacidable || C.armor.bio > 99)
+				stop_loop = TRUE
+				continue
+			var/melting_requirement = (C.max_health / C.health) * (1 - C.armor.bio / 100) * meltdose
+			if(melting_requirement > units_per_bodypart)
+				C.health -= (C.max_health / meltdose) * (1 - C.armor.bio / 100) * units_per_bodypart
+				stop_loop = TRUE
+			else
+				to_chat(our_man, SPAN_DANGER("The [C.name] melts under the action of acid."))
+				units_for_this_part -= melting_requirement
+				our_man.remove_from_mob(C)
+				C.forceMove(NULLSPACE)
+				wearing_2 -= C
+				qdel(C)
+		if(stop_loop)
+			continue
+		M.take_organ_damage(0, units_for_this_part * power * 0.1)
 
-/datum/reagent/acid/touch_obj(var/obj/O)
+/datum/reagent/acid/touch_obj(obj/O)
+	if(istype(O, /obj/effect/plant/hivemind))
+		qdel(O)
 	if(O.unacidable)
 		return
 	if((istype(O, /obj/item) || istype(O, /obj/effect/plant)) && (volume > meltdose))

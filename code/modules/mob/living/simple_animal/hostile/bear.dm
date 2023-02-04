@@ -49,14 +49,14 @@
 					H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 					H.added_movedelay -= 0.1
 					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, -0.1), 60)
-					to_chat(H, SPAN_WARNING("The [src] 's roar triggers the familiar feeling of flight or fight in you!"))
+					to_chat(H, SPAN_WARNING("\The [src] 's roar triggers the familiar feeling of flight or fight in you!"))
 				else
-					to_chat(H, SPAN_NOTICE("The natural insticts of fear become apparent, but you ingore such things."))
+					to_chat(H, SPAN_NOTICE("The natural insticts of fear become apparent, but you ignore such things."))
 					H.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 					H.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 					H.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, 30 SECONDS, "fear_of_bear")
 					H.added_movedelay -= 0.1
-					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, -0.1), 60) //Needs to be a negitive as it subtracts meaning its - - 0.1 (aka doble negitive so it adds)
+					addtimer(CALLBACK(H, /mob/living/carbon/human/proc/clear_movement_delay, -0.1), 60) //Needs to be a negative as it subtracts meaning its - - 0.1 (aka doble negitive so it adds)
 
 		anchored = TRUE
 		addtimer(CALLBACK(src, .proc/unanchor), 10)
@@ -82,13 +82,13 @@
 				if(prob(45))
 					stance = HOSTILE_STANCE_ATTACKING
 					set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-					walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
+					SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 				else
 					OpenFire(targetted_mob)
 			else
 				stance = HOSTILE_STANCE_ATTACKING
 				set_glide_size(DELAY2GLIDESIZE(move_to_delay))
-				walk_to_wrapper(src, targetted_mob, 1, move_to_delay)
+				SSmove_manager.move_to(src, targetted_mob, 1, move_to_delay)
 
 	if(horror_modifer && !rawr_cooldown)
 		rawr_xd()
@@ -139,6 +139,7 @@
 	icon_gib = "brownbear_gib"
 	icon_dead = "combatbear_dead"
 	faction = "excelsior"
+	armor = list(melee = 20, bullet = 15, energy = 5, bomb = 10, bio = 100, rad = 100, agony = 0) // It's an ARMORED bear
 	maxHealth = 400
 	health = 400
 	melee_damage_lower = 30

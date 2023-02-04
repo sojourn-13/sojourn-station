@@ -12,6 +12,20 @@
 	icon_state = "blue_pyjamas"
 	item_state = "w_suit"
 
+
+/obj/item/clothing/under/dodgeball_red
+	name = "red dodgeball uniform"
+	desc = "A red threaded uniform for gym dodgeball activities."
+	icon_state = "gym_red"
+	item_state = "gym_red"
+
+// Proc for gender change deleted as it's no longer necessary - Seb
+/obj/item/clothing/under/dodgeball_blue
+	name = "blue dodgeball uniform"
+	desc = "A blue threaded uniform for gym dodgeball activities."
+	icon_state = "gym_blue"
+	item_state = "gym_blue"
+
 /*Gowns and stuff*/
 
 /obj/item/clothing/under/bathrobe
@@ -72,12 +86,12 @@
 
 /obj/item/clothing/under/loincloth
 	name = "loincloth"
-	desc = "A sturdy cloth that covers the private areas."
+	desc = "A sturdy cloth that covers just the groin."
 	icon_state = "loincloth"
 
 /obj/item/clothing/under/chestwrap
-	name = "chest wrap"
-	desc = "A sturdy cloth that covers the private areas of females."
+	name = "rag wraps"
+	desc = "A sturdy cloth that covers the private areas of the body."
 	icon_state = "chestwrap"
 
 /obj/item/clothing/under/gharness
@@ -660,10 +674,10 @@
 	price_tag = 45
 
 /obj/item/clothing/under/dress/casual/barmaid
-	name = "barmaids dress"
-	desc = "The bar-wench standard for a thousand years!"
-	icon_state = "barmaid"
-	item_state = "barmaid"
+	name = "fantasy bartender outfit"
+	desc = "The bar standard for a thousand years!"
+	icon_state = "bartender"
+	item_state = "bartender"
 	price_tag = 45
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 

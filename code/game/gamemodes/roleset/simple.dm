@@ -1,13 +1,3 @@
-/datum/storyevent/roleset/borer
-	id = "borer"
-	name = "cortical borers"
-	role_id = ROLE_BORER
-	weight = 0.4
-
-
-	base_quantity = 2
-	scaling_threshold = 15
-
 /datum/storyevent/roleset/blitz
 	id = "blitz"
 	name = "blitzshell infiltration"
@@ -17,10 +7,10 @@
 	base_quantity = 1
 	scaling_threshold = 15
 
-/datum/storyevent/roleset/traitor
-	id = "traitor"
-	name = "traitor"
-	role_id = ROLE_TRAITOR
+/datum/storyevent/roleset/contractor
+	id = "contractor"
+	name = "contractor"
+	role_id = ROLE_CONTRACTOR
 	weight = 1.2
 	scaling_threshold = 10
 
@@ -46,7 +36,7 @@
 
 	var/a_count = 0
 	for(var/datum/antagonist/A in GLOB.current_antags)
-		if(A.owner && A.is_active() && !A.is_dead())
+		if(A.owner && A.is_active() && !A.isdead())
 			a_count++
 
 	if (!a_count && !c_count)
@@ -62,7 +52,7 @@
 
 	var/a_count = 0
 	for(var/datum/antagonist/A in GLOB.current_antags)
-		if(A.owner && A.is_active() && !A.is_dead())
+		if(A.owner && A.is_active() && !A.isdead())
 			a_count++
 			break
 
@@ -96,7 +86,7 @@
 /datum/storyevent/roleset/marshal/can_trigger(var/severity, var/report)
 	var/a_count = 0
 	for(var/datum/antagonist/A in GLOB.current_antags)
-		if(!A.is_dead())
+		if(!A.isdead())
 			a_count++
 			break
 
@@ -109,7 +99,7 @@
 /datum/storyevent/roleset/marshal/get_special_weight(var/new_weight)
 	var/a_count = 0
 	for(var/datum/antagonist/A in GLOB.current_antags)
-		if(A.owner && A.is_active() && !A.is_dead())
+		if(A.owner && A.is_active() && !A.isdead())
 			a_count++
 
 	if (a_count == 0)

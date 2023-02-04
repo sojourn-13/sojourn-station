@@ -160,20 +160,38 @@ Please contact me on #coderbus IRC. ~Carn x
 			add_overlay(species.get_eyes(src))
 
 	if(lying && !form.prone_icon) //Only rotate them if we're not drawing a specific icon for being prone.
-		var/matrix/M = matrix()
-		M.Turn(90)
-		M.Scale(size_multiplier)
-		M.Translate(1,-6)
-		src.transform = M
+		add_new_transformations(list(
+								/datum/transform_type/prone,
+								list(/datum/transform_type/modular, list(shift_x = 1, shift_y = -6, flag = HUMAN_PRONE_TRANSFORM, priority = HUMAN_PRONE_TRANSFORM_PRIORITY)))
+)
 	else
-		var/matrix/M = matrix()
-		M.Scale(size_multiplier)
-		M.Translate(0, 16*(size_multiplier-1))
-		src.transform = M
+		remove_transformations(list(HUMAN_PRONE_TRANSFORM, PRONE_TRANSFORM))
 
 	COMPILE_OVERLAYS(src)
 
-	..()
+	. = ..()
+
+	var/list/scale = get_scale()
+	animate(
+		src,
+		transform = matrix().Update(
+			scale_x = scale[1],
+			scale_y = scale[2],
+			rotation = lying ? 90 : 0,
+			offset_y = lying ? -6 - default_pixel_z : 16 * (scale[2] - 1)
+		),
+		time = ANIM_LYING_TIME
+	)
+
+/mob/living/carbon/human/proc/get_scale()
+	//bastardised bay's code
+	var/mob/living/carbon/human/H = src
+	var/build_modifier = H.scale_effect
+	var/height_modifier = H.scale_effect
+	return list(
+		(1 + build_modifier * 0.01) * (tf_scale_x || 1),
+		(1 + height_modifier * 0.01) * (tf_scale_y || 1)
+	)
 
 var/global/list/damage_icon_parts = list()
 
@@ -202,25 +220,24 @@ var/global/list/wings_icon_cache = list()
 	var/image/standing_image = image(form.damage_overlays, icon_state = "00")
 
 	// blend the individual damage states with our icons
-	for(var/obj/item/organ/external/O in organs)
-		if(O.is_stump())
-			continue
+	if(species.blood_color)
+		for(var/obj/item/organ/external/O in organs)
+			if(O.is_stump())
+				continue
 
-		O.update_damstate()
-		if(O.damage_state == "00") continue
-		var/icon/DI
+			O.update_damstate()
+			if(O.damage_state == "00") continue
+			var/icon/DI
+			var/cache_index = "[O.damage_state]/[O.organ_tag]/[species.blood_color]/[species.get_bodytype()]"
+			if(damage_icon_parts[cache_index] == null)
+				DI = new /icon(form.damage_overlays, O.damage_state)			// the damage icon for whole human
+				DI.Blend(new /icon(form.damage_mask, O.organ_tag), ICON_MULTIPLY)	// mask with this organ's pixels
+				DI.Blend(species.blood_color, ICON_MULTIPLY)
+				damage_icon_parts[cache_index] = DI
+			else
+				DI = damage_icon_parts[cache_index]
 
-		var/cache_index = "[O.damage_state]/[O.organ_tag]/[form.blood_color]/[species.get_bodytype()]"
-		if(damage_icon_parts[cache_index] == null)
-
-			DI = new /icon(form.damage_overlays, O.damage_state)			// the damage icon for whole human
-			DI.Blend(new /icon(form.damage_mask, O.organ_tag), ICON_MULTIPLY)	// mask with this organ's pixels
-			DI.Blend(form.blood_color, ICON_MULTIPLY)
-			damage_icon_parts[cache_index] = DI
-		else
-			DI = damage_icon_parts[cache_index]
-
-		standing_image.add_overlay(DI)
+			standing_image.overlays += DI
 
 	overlays_standing[DAMAGE_LAYER] = standing_image
 
@@ -335,10 +352,10 @@ var/global/list/wings_icon_cache = list()
 	overlays_standing[UNDERWEAR_LAYER] = null
 
 	if(form.appearance_flags & HAS_UNDERWEAR)
-		var/icon/underwear = new/icon(form.underwear_icon, "blank")
+		var/icon/underwear = new/icon(get_gender_icon(gender, "underwear"), "blank")
 		for(var/entry in worn_underwear)
 			var/obj/item/underwear/UW = entry
-			var/icon/I = new /icon(form.underwear_icon, UW.icon_state)
+			var/icon/I = new /icon(get_gender_icon(gender, "underwear"), UW.icon_state)
 			if(UW.color)
 				I.Blend(UW.color, ICON_MULTIPLY)
 			underwear.Blend(I, ICON_OVERLAY)
@@ -462,11 +479,11 @@ var/global/list/wings_icon_cache = list()
 			//Eris lacks hands and feet. This code should allow hands and feet.
 			//This exists because the sprites are separated over all limbs whereas this codebase doesn't have hands or feet.
 			//Apparently chest and groin are considered disembodied, which I otherwise used to exclude severed limbs.
-			var/valid = (part in organs_by_name) && organs_by_name[part] && ((part in BP_BASE_PARTS) || organs_by_name[part]:dislocated >= 0)
+			var/valid = (part in organs_by_name) && organs_by_name[part] && ((part in BP_BASE_PARTS) || organs_by_name[part]:nerve_struck >= 0)
 			if(!valid)
 				for(var/organ in organs_by_name)
 					var/obj/item/organ/external/O = organs_by_name[organ]
-					if(O.dislocated >= 0 && (part in O.additional_limb_parts))
+					if(O.nerve_struck >= 0 && (part in O.additional_limb_parts))
 						valid = TRUE
 						break
 			if(valid && ("[real_marking.icon_state]-[part]" in icon_states(real_marking.icon)))
@@ -665,6 +682,34 @@ mob/living/carbon/human/proc/get_wings_image()
 #define WORN_ID		"_id"
 #define WORN_MASK	"_ma"
 
+// Proc to instantly switch the user's clothing to either male or female version upon being worn
+// This is goodbye to a lot of alt style procs on clothing (and crossdressing)
+
+/mob/living/carbon/human/proc/get_gender_icon(var/g = MALE, var/slot)
+	var/list/icons = list(
+		"uniform"		= (g == MALE) ? 'icons/inventory/uniform/mob.dmi' : 'icons/inventory/uniform/mob_fem.dmi',
+		"suit"			= (g == MALE) ? 'icons/inventory/suit/mob.dmi' : 'icons/inventory/suit/mob_fem.dmi',
+		"gloves"		= 'icons/inventory/hands/mob.dmi',
+		"glasses"		= 'icons/inventory/eyes/mob.dmi',
+		"ears"			= 'icons/inventory/ears/mob.dmi',
+		"mask"			= 'icons/inventory/face/mob.dmi',
+		"hat"			= 'icons/inventory/head/mob.dmi',
+		"shoes"			= 'icons/inventory/feet/mob.dmi',
+		"misc"			= 'icons/mob/mob.dmi',
+		"belt"			= 'icons/inventory/belt/mob.dmi',
+		"s_store"		= 'icons/inventory/on_suit/mob.dmi',
+		"backpack"		= 'icons/inventory/back/mob.dmi',
+		"underwear"		= 'icons/inventory/underwear/mob.dmi'
+		)
+	return icons[slot]
+
+// Contained sprite gender icons
+/mob/living/carbon/human/proc/get_gender_icon_contained(var/g = MALE)
+	if (g == FEMALE)
+		return "_f"
+	else
+		return
+
 //vvvvvv UPDATE_INV PROCS vvvvvv
 
 /mob/living/carbon/human/update_inv_w_uniform(var/update_icons=1)
@@ -680,12 +725,12 @@ mob/living/carbon/human/proc/get_wings_image()
 			else
 				under_icon = w_uniform.icon
 
-			under_state += w_uniform.icon_state + WORN_UNDER
+			under_state += w_uniform.icon_state + WORN_UNDER + get_gender_icon_contained(gender)
 
 		else if(w_uniform.icon_override)
 			under_icon = w_uniform.icon_override
 		else
-			under_icon = form.get_mob_icon("uniform")
+			under_icon = get_gender_icon(gender, "uniform")
 
 		//determine state to use
 		if (!under_state)
@@ -702,7 +747,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			if (uniformcheck.rolldown)//Are we rolled down?
 				var/icon/originalicon = icon(under_icon, icon_state = under_state)
 				var/icon/rollalpha = icon('icons/inventory/overlays.dmi', icon_state = "rolldown")//If we are, grab the overlay
-				originalicon.Blend(rollalpha, ICON_MULTIPLY)//Then apply the transform to the standing icon. 
+				originalicon.Blend(rollalpha, ICON_MULTIPLY)//Then apply the transform to the standing icon.
 				under_icon = originalicon
 
 		//need to append _s to the icon state for legacy compatibility
@@ -1018,7 +1063,7 @@ mob/living/carbon/human/proc/get_wings_image()
 	update_wings(update_icons)
 	if( wear_suit && istype(wear_suit, /obj/item/) )
 		var/image/standing
-		var/t_icon = form.get_mob_icon("suit")
+		var/t_icon = get_gender_icon(gender, "suit")
 		var/suit_state = ""
 		if(wear_suit.contained_sprite)
 			var/state = ""
@@ -1029,7 +1074,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			else
 				t_icon = image(icon = wear_suit.icon, icon_state = state)
 
-			suit_state += wear_suit.icon_state + WORN_SUIT
+			suit_state += wear_suit.icon_state + WORN_SUIT + get_gender_icon_contained(gender)
 
 		else if(wear_suit.icon_override)
 			t_icon = wear_suit.icon_override

@@ -246,6 +246,14 @@
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 70, rad = 0)
 	is_alts = FALSE
 
+/obj/item/clothing/mask/gas/bigguy
+	name = "compact rebreather"
+	desc = "A small, Lonestar-brand rebreather designed to regulate the flux of gasses fed to its user. Taking it off will not make you die...unless you're in a non-breathable environment." // It won't be extremely painful either. - Seb
+	flags_inv = BLOCKFACEHAIR
+	body_parts_covered = FACE
+	icon_state = "bane"
+	is_alts = FALSE
+
 /obj/item/clothing/mask/gas/opifex
 	name = "opifex gas mask"
 	desc = "An archaic gas mask used commonly by opifex to filter out oxygen and other biohazards. They'll slowly die without wearing this, as will any other race that dons this mask."
