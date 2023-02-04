@@ -62,7 +62,7 @@
 	name = "Freedom SMG frame"
 	desc = "A Colt-based Freedom SMG frame. For when you need to fight five more world wars."
 	icon_state = "frame_1911"
-	result = /obj/item/gun/projectile/colt
+	result = /obj/item/gun/projectile/automatic/freedom
 	gripvars = list(/obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/smg
 	barrelvars = list(/obj/item/part/gun/barrel/magnum)
