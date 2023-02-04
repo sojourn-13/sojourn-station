@@ -20,6 +20,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/material,
 		/obj/item/stack/rods/random,
 		/obj/item/material/shard,
+		/obj/random/gun_parts,
 		/obj/random/junk/nondense = 2,
 		/obj/random/pack/rare = 0.4
 	)

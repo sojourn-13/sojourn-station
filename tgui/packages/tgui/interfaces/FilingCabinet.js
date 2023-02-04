@@ -7,7 +7,7 @@ export const FilingCabinet = (props, context) => {
   const { cabinet_name, hex_code_for_backround, contents, contents_ref } = data;
   return (
     <Window title={cabinet_name || "Filing Cabinet"} width={350} height={300}>
-      <Window.Content backgroundColor={hex_code_for_backround} scrollable>
+      <Window.Content backgroundColor={hex_code_for_backround || "#7f7f7f"} scrollable>
         {contents.map((object, index) => (
           <Flex
             key={contents_ref[index]}

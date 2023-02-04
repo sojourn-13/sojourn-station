@@ -33,7 +33,9 @@
 	/obj/item/oddity/ls/manual,
 	/obj/item/folder,
 	/obj/item/paper,
-	/obj/item/paper_bundle)
+	/obj/item/paper_bundle,
+	/obj/item/photo
+	)
 	var/hex_code_for_ui_backround = "#C4A484"
 
 /obj/structure/bookcase/Initialize()

@@ -12,10 +12,7 @@
 
 /obj/item/part
 	icon ='icons/obj/crafts.dmi'
-	rarity_value = 10
-	spawn_frequency = 10
 	price_tag = 300
-	bad_type = /obj/item/part
 	spawn_tags = SPAWN_TAG_PART
 
 /obj/item/part/armor
@@ -27,7 +24,6 @@
 
 /obj/item/part/armor/artwork
 	desc = "This is an artistically-made armor part."
-	spawn_frequency = 0
 
 /obj/item/part/armor/artwork/Initialize()
 	name = get_weapon_name(capitalize = TRUE)
@@ -56,7 +52,6 @@
 
 /obj/item/part/gun/artwork
 	desc = "This is an artistically-made gun part."
-	spawn_frequency = 0
 
 /obj/item/part/gun/artwork/Initialize()
 	name = get_weapon_name(capitalize = TRUE)
@@ -75,8 +70,6 @@
 	icon ='icons/obj/crafts.dmi'
 	icon_state = "gun_frame"
 	matter = list()
-	bad_type = /obj/item/craft_frame
-	spawn_frequency = 0
 	var/req_sat = STAT_MEC
 	var/suitable_part
 	var/view_only = 0
@@ -92,7 +85,6 @@
 	desc = "Add some weapon parts to complete this, use your knowledge of mechanics and create a gun."
 	matter = list(MATERIAL_PLASTEEL = 5)
 	suitable_part = /obj/item/part/gun
-	spawn_frequency = 0
 	tags_to_spawn = list(SPAWN_GUN)
 
 /obj/item/craft_frame/examine(user, distance)
@@ -121,9 +113,9 @@
 	complete = TRUE
 
 /obj/item/craft_frame/proc/generate_guns()
-	for(var/i in 1 to total_items)
+/*	for(var/i in 1 to total_items)
 		var/list/canidates = SSspawn_data.valid_candidates(tags_to_spawn, null, FALSE, i*300, i*500, TRUE, null, paths, null)
-		paths += list(SSspawn_data.pick_spawn(canidates))
+		paths += list(SSspawn_data.pick_spawn(canidates))*/
 	for(var/path in paths)
 		items += new path()
 
@@ -137,7 +129,7 @@
 		to_chat(user, SPAN_WARNING("[src] is not yet complete."))
 	else
 		view_only = round(total_items * (1 - user.stats.getMult(req_sat, 100))/2) +1 // 1 choice per 10 stat + 1
-		if(user.stats.getPerk(/datum/perk/oddity/gunsmith))
+		if(user.stats.getPerk(/datum/perk/gunsmith))
 			view_only += 3
 		ui_interact(user)
 		SSnano.update_uis(src)
@@ -180,6 +172,9 @@
 	var/turf/T = get_turf(src)
 	O.forceMove(T)
 	user.put_in_hands(O)
+/*
+	This on eris is desided for spawning with "additional items" like ammo or mags so when you make the gun you can also have a mag/ammo for it. We dont have this system
+	If someone were to make it or port it that be greate to have.
 	if(istype(O, /obj/item/gun/projectile))
 		var/list/aditional_objects = SSspawn_data.all_accompanying_obj_by_path[O.type]
 		var/atom/movable/aditional_obj
@@ -189,7 +184,7 @@
 				if(!prob(initial(AM.prob_aditional_object)))
 					continue
 				aditional_obj = new thing (T)
-		user.put_in_hands(aditional_obj)
+		user.put_in_hands(aditional_obj)*/
 	to_chat(user, SPAN_NOTICE("You have used [src] to craft a [O.name]."))
 	spawn(1)
 		if(!QDELETED(src))

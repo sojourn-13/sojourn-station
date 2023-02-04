@@ -53,6 +53,8 @@
 	var/braced = FALSE //for gun_brace proc.
 	var/braceable = 1 //can the gun be used for gun_brace proc, modifies recoil. If the gun has foregrip mod installed, it's not braceable. Bipod mod increases value by 1.
 
+	var/list/gun_parts = list(/obj/item/part/gun = 1 ,/obj/item/stack/material/steel = 4)
+
 	var/muzzle_flash = 3
 	var/dual_wielding
 	var/can_dual = FALSE // Controls whether guns can be dual-wielded (firing two at once).
@@ -401,6 +403,24 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			serial_shown = FALSE
 			return FALSE
 
+	if(I.get_tool_quality(QUALITY_WIRE_CUTTING))
+		if(!gun_parts)
+			to_chat(user, SPAN_NOTICE("You can't dismantle [src] as it has no gun parts! How strange..."))
+			return FALSE
+
+		user.visible_message(SPAN_NOTICE("[user] begins breaking apart [src]."), SPAN_WARNING("You begin breaking apart [src] for gun parts."))
+		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			user.visible_message(SPAN_NOTICE("[user] breaks [src] apart for gun parts!"), SPAN_NOTICE("You break [src] apart for gun parts."))
+			for(var/target_item in gun_parts)
+				var/amount = gun_parts[target_item]
+				while(amount)
+					if(ispath(target_item, /obj/item/part/gun/frame))
+						var/obj/item/part/gun/frame/F = new target_item(get_turf(src))
+						F.serial_type = serial_type
+					else
+						new target_item(get_turf(src))
+					amount--
+			qdel(src)
 
 /obj/item/gun/proc/dna_check(user)
 	if(dna_compare_samples)

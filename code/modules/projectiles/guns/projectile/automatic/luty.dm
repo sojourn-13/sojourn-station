@@ -29,6 +29,16 @@
 
 	wield_delay = 0 // No delay for this , its litteraly a junk gun
 
+/obj/item/part/gun/frame/luty
+	name = "Luty frame"
+	desc = "A Luty SMG. It rattles a bit, but it's okay. Just don't shake it too hard."
+	icon_state = "frame_luty"
+	matter = list(MATERIAL_STEEL = 5)
+	resultvars = list(/obj/item/gun/projectile/automatic/luty)
+	gripvars = list(/obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/smg/steel
+	barrelvars = list(/obj/item/part/gun/barrel/pistol/steel, /obj/item/part/gun/barrel/magnum/steel)
+
 /obj/item/gun/projectile/automatic/luty/update_icon()
 	..()
 	cut_overlays()
