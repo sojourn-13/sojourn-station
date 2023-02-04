@@ -28,6 +28,7 @@
 
 	wield_delay = 0.5 SECOND
 	wield_delay_factor = 0.1 // 10 vig
+	gun_parts = list(/obj/item/part/gun/frame/drozd = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/magnum = 1)
 
 /obj/item/gun/projectile/automatic/drozd/NM_colony
 	name = "\"Kompleks\" SMG"
@@ -38,6 +39,7 @@
 	excelsior = FALSE
 	origin_tech = list(TECH_COMBAT = 4)
 	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/drozd = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/magnum = 1)
 
 /obj/item/gun/projectile/automatic/drozd/update_icon()
 	..()
@@ -57,3 +59,13 @@
 
 	icon_state = iconstring
 	item_state = itemstring
+
+/obj/item/part/gun/frame/drozd
+	name = "Drozd frame"
+	desc = "A Drozd SMG frame. Workhorse of the Excelsior force."
+	icon_state = "frame_excelsmg"
+	result = /obj/item/gun/projectile/automatic/drozd
+	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/smg
+	barrelvars = list(/obj/item/part/gun/barrel/magnum)
+	resultvars = list(/obj/item/gun/projectile/automatic/drozd, /obj/item/gun/projectile/automatic/drozd/NM_colony)

@@ -18,3 +18,14 @@
 	saw_off = FALSE //No sawning it down and remaking it into a Kardashev-Mosin
 	serial_type = "INDEX"
 	serial_shown = FALSE
+	gun_parts = list(/obj/item/part/gun/frame/homemadebolt = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/lrifle/steel = 1)
+
+/obj/item/part/gun/frame/homemadebolt
+	name = "handmade rifle frame"
+	desc = "A handmade bolt-action rifle frame. For the absolute poorest in the universe."
+	icon_state = "frame_riose"
+	matter = list(MATERIAL_STEEL = 5)
+	resultvars = list(/obj/item/gun/projectile/boltgun/handmade)
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/boltgun
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle/steel, /obj/item/part/gun/barrel/srifle/steel, /obj/item/part/gun/barrel/clrifle/steel)

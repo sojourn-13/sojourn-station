@@ -22,6 +22,16 @@
 	serial_type = "SA"
 
 	wield_delay = 0 SECOND
+	gun_parts = list(/obj/item/part/gun/frame/clarissa = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol = 1)
+
+/obj/item/part/gun/frame/clarissa
+	name = "Clarissa frame"
+	desc = "A Clarissa pistol frame. Concealable yet anemic yet fast."
+	icon_state = "frame_clarissa"
+	result = /obj/item/gun/projectile/clarissa
+	gripvars = list(/obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = list(/obj/item/part/gun/barrel/pistol)
 
 /obj/item/gun/projectile/clarissa/preloaded
 
@@ -72,6 +82,16 @@
 	serial_type = "Sol Fed"
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
+	gun_parts = list(/obj/item/part/gun/frame/makarov = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol = 1)
+
+/obj/item/part/gun/frame/makarov
+	name = "Makarov frame"
+	desc = "A Makarov pistol frame. Technology may have stagnated, but effectiveness hasn't."
+	icon_state = "frame_makarov"
+	result = /obj/item/gun/projectile/makarov
+	gripvars = list(/obj/item/part/gun/grip/excel)
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = list(/obj/item/part/gun/barrel/pistol)
 
 /obj/item/gun/projectile/makarov/preloaded
 

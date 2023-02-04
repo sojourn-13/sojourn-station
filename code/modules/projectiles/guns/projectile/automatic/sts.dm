@@ -87,6 +87,7 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn
 
+	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -134,6 +135,7 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield
 	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 	max_upgrades = 2 // We got good baseline lets not get out of hand here
 	init_firemodes = list(
@@ -177,3 +179,14 @@
 		)
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.2 // 20 vig for insta wield
+
+/obj/item/part/gun/frame/sts
+	name = "STS rifle frame"
+	desc = "A STS rifle frame. Cheap, effective, and replacable."
+	icon_state = "frame_sts"
+	matter = list(MATERIAL_PLASTEEL = 8)
+	result = /obj/item/gun/projectile/automatic/sts/rifle
+	gripvars = list(/obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/rubber)
+	resultvars = list(/obj/item/gun/projectile/automatic/sts/rifle, /obj/item/gun/projectile/automatic/sts/rifle/blackshield)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)

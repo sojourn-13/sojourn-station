@@ -29,6 +29,7 @@
 		FULL_AUTO_200
 		)
 	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/strelki = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/duty/update_icon()
 	..()
@@ -48,8 +49,3 @@
 
 //SNOWFLAKE CODE
 //TODO make all projectile guns work like this with a flag
-
-
-
-
-
