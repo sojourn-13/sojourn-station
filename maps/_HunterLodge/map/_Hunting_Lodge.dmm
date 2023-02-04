@@ -475,9 +475,12 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cr" = (
-/obj/structure/table/woodentable,
+/obj/structure/bookcase,
 /obj/item/alchemy/recipe_scroll/lodge,
-/turf/simulated/floor/carpet/bcarpet,
+/obj/item/alchemy/recipe_scroll/lodge,
+/obj/item/alchemy/recipe_scroll/lodge,
+/obj/item/alchemy/recipe_scroll/lodge,
+/turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ct" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -7866,7 +7869,7 @@ WQ
 jw
 Cb
 aT
-cr
+bY
 es
 wC
 gg
@@ -8334,7 +8337,7 @@ gg
 Ae
 Cb
 Cb
-Xz
+cr
 Rl
 hb
 hb
