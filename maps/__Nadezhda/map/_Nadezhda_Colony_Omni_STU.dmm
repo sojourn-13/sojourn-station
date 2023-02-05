@@ -18720,7 +18720,7 @@
 	},
 /obj/machinery/button/remote/airlock{
 	dir = 8;
-	id = "CH1";
+	id = "CR1";
 	name = "Door Bolt Control";
 	pixel_x = 23;
 	specialfunctions = 4
@@ -37996,7 +37996,7 @@
 	},
 /obj/machinery/button/remote/airlock{
 	dir = 8;
-	id = "CH2";
+	id = "CR2";
 	name = "Door Bolt Control";
 	pixel_x = 23;
 	specialfunctions = 4
@@ -41366,7 +41366,7 @@
 /area/nadezhda/command/captain/quarters)
 "ick" = (
 /obj/machinery/door/airlock/hatch{
-	id_tag = CR1;
+	id_tag = "CR1";
 	name = "Capsule 1"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -107940,7 +107940,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/hatch{
-	id_tag = CR2;
+	id_tag = "CR2";
 	name = "Capsule 2"
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -112277,10 +112277,6 @@
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
-	},
-/obj/machinery/light_switch{
-	name = "light switch ";
-	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/crew_quarters)
