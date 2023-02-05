@@ -28,6 +28,7 @@
 	desc = "A Six-Shot revolving shotgun frame. Classy."
 	icon_state = "frame_revolver"
 	result = /obj/item/gun/projectile/revolver/sixshot
+	resultvars = list(/obj/item/gun/projectile/revolver/sixshot)
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
 	barrelvars = list(/obj/item/part/gun/barrel/shotgun)

@@ -48,6 +48,7 @@
 	desc = "A Grease Gun SMG frame. Cheap? Yes, but also effective."
 	icon_state = "frame_grease"
 	result = /obj/item/gun/projectile/automatic/greasegun
+	resultvars = list(/obj/item/gun/projectile/automatic/greasegun)
 	gripvars = list(/obj/item/part/gun/grip/black)
 	mechanismvar = /obj/item/part/gun/mechanism/smg
 	barrelvars = list(/obj/item/part/gun/barrel/pistol)

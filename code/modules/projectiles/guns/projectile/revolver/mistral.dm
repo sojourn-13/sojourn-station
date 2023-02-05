@@ -25,6 +25,7 @@
 	desc = "A Minstral revolver frame. The gambler's choice."
 	icon_state = "frame_mateba"
 	result = /obj/item/gun/projectile/revolver/mistral
+	resultvars = list(/obj/item/gun/projectile/revolver/mistral)
 	gripvars = list(/obj/item/part/gun/grip/black)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
 	barrelvars = list(/obj/item/part/gun/barrel/magnum)

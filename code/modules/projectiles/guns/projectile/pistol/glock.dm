@@ -51,6 +51,7 @@
 	desc = "A Sky pistol frame. An ugly, blocky piece of shit."
 	icon_state = "frame_glock"
 	result = /obj/item/gun/projectile/glock
+	resultvars = list(/obj/item/gun/projectile/glock)
 	gripvars = list(/obj/item/part/gun/grip/black)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
 	barrelvars = list(/obj/item/part/gun/barrel/pistol)

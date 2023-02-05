@@ -47,6 +47,7 @@
 	desc = "A Bastard SMG frame. For when you want a carbine but even smaller."
 	icon_state = "frame_bastard"
 	result = /obj/item/gun/projectile/automatic/bastard
+	resultvars = list(/obj/item/gun/projectile/automatic/bastard)
 	gripvars =  list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/smg
 	barrelvars =  list(/obj/item/part/gun/barrel/srifle)

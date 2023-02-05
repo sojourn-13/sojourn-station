@@ -61,6 +61,7 @@
 	icon_state = "frame_thompson"
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_STEEL = 4)
 	result = /obj/item/gun/projectile/automatic/thompson
+	resultvars = list(/obj/item/gun/projectile/automatic/thompson)
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/smg
 	barrelvars = list(/obj/item/part/gun/barrel/magnum)

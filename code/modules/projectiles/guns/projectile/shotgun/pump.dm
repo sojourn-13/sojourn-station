@@ -34,6 +34,7 @@
 	desc = "A Grizzly shotgun frame. A militiaman's favorite."
 	icon_state = "frame_shotgun"
 	result = /obj/item/gun/projectile/shotgun/pump
+	resultvars = list(/obj/item/gun/projectile/shotgun/pump)
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/shotgun
 	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
