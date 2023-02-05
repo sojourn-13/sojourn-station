@@ -9133,14 +9133,16 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/abandoned_solars)
 "bQa" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
 	},
-/obj/structure/table/bench/padded,
-/turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/hallway/main/stairwell)
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "bQd" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/brflowers,
@@ -22215,15 +22217,6 @@
 /obj/item/spider_shadow_trap,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"euz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "euC" = (
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 1
@@ -24206,6 +24199,17 @@
 /obj/effect/floor_decal/industrial/box/red,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/command/meeting_room)
+"ePP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "ePZ" = (
 /obj/effect/floor_decal/steeldecal/steel_decals10,
 /turf/simulated/floor/tiled/steel,
@@ -31457,17 +31461,6 @@
 /obj/random/pouch/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/dungeon/outside/burned_outpost)
-"gfT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "gfX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -48965,15 +48958,6 @@
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
-"jAh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "jAi" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -50683,6 +50667,15 @@
 "jQF" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/medical/psych)
+"jQN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "jQP" = (
 /obj/structure/railing{
 	dir = 4
@@ -58546,17 +58539,6 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/sleep/cryo2)
-"lpL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 4
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "lpS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -68902,6 +68884,15 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/eris/crew_quarters/plasma_tag)
+"nrh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "nrl" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 4
@@ -178057,8 +178048,8 @@ xmw
 hKh
 cEg
 xmw
-jAh
-euz
+nrh
+jQN
 rRK
 rRK
 xmw
@@ -178259,8 +178250,8 @@ rAd
 giT
 rAd
 rAd
-lpL
-gfT
+ePP
+bQa
 rAd
 rAd
 rAd
@@ -183898,7 +183889,7 @@ tnX
 euC
 hPP
 xVy
-bQa
+kzY
 kzY
 nJr
 dVP
