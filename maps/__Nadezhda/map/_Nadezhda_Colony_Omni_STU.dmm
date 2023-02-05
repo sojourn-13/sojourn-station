@@ -101599,9 +101599,7 @@
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
 "tPG" = (
-/obj/machinery/door/airlock/glass_security{
-	req_access = list(25)
-	},
+/obj/machinery/door/airlock/glass_security,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
