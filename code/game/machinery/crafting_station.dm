@@ -136,7 +136,7 @@
 	var/list/required_resources = list()
 	var/list/items_to_spawn = list()
 
-	var/choice = input(user, "What do you want to craft?") as null|anything in list("Ammunition","RPG shell","Gun parts","Armor parts")
+	var/choice = input(user, "What do you want to craft?") as null|anything in list("Ammunition","RPG shell","Gun parts") //,"Armor parts"
 	switch(choice)
 		if("Ammunition")
 			required_resources = materials_ammo
@@ -251,7 +251,7 @@
 									items_to_spawn = list("" = /obj/item/part/gun/mechanism/shotgun/steel)
 
 				if("Grips")
-					choice = input(user) as null|anything in list("Plastic grip", "Rubber grip", "Excelsior grip", "Bakelite grip", "Wooden grip")
+					choice = input(user) as null|anything in list("Plastic grip", "Bakelite grip", "Wooden grip") //"Rubber grip", "Excelsior grip",
 					switch(choice)
 						if("Plastic grip")
 							required_resources = materials_pgrip
@@ -259,9 +259,6 @@
 						if("Bakelite grip")
 							required_resources = materials_pgrip
 							items_to_spawn = list("" = /obj/item/part/gun/grip/serb)
-						if("Rubber grip")
-							required_resources = materials_pgrip
-							items_to_spawn = list("" = /obj/item/part/gun/grip/rubber)
 						if("Wooden grip")
 							required_resources = materials_wgrip
 							items_to_spawn = list("" = /obj/item/part/gun/grip/wood)
