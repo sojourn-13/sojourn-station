@@ -49,6 +49,7 @@
 	desc = "A pulse rifle frame. For true marines."
 	icon_state = "frame_dallas"
 	result = /obj/item/gun/projectile/automatic/pulse_rifle
+	resultvars = list(/obj/item/gun/projectile/automatic/pulse_rifle)
 	gripvars = list(/obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/machinegun
 	barrelvars = list(/obj/item/part/gun/barrel/clrifle)

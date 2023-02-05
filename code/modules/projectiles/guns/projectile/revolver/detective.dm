@@ -26,6 +26,7 @@
 	desc = "A Havelock revolver frame. Personal defense in a small package."
 	icon_state = "frame_havelock"
 	result = /obj/item/gun/projectile/revolver/detective
+	resultvars = list(/obj/item/gun/projectile/revolver/detective)
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
 	barrelvars = list(/obj/item/part/gun/barrel/pistol)

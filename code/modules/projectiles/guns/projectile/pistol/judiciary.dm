@@ -33,6 +33,7 @@
 	desc = "A Judiciary pistol frame. A reliable companion in the field."
 	icon_state = "frame_judiciary"
 	result = /obj/item/gun/projectile/judiciary
+	resultvars = list(/obj/item/gun/projectile/judiciary)
 	gripvars = list(/obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
 	barrelvars = list(/obj/item/part/gun/barrel/pistol)

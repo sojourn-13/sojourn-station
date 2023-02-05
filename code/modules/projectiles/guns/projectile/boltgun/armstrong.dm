@@ -26,6 +26,7 @@
 	desc = "A Armstrong lever rifle. If death is our destination this will surely bring it."
 	icon_state = "frame_armstrong"
 	result = /obj/item/gun/projectile/boltgun/lever
+	resultvars = list(/obj/item/gun/projectile/boltgun/lever)
 	gripvars = list(/obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/boltgun
 	barrelvars = list(/obj/item/part/gun/barrel/magnum)

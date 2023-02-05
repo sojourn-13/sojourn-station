@@ -27,6 +27,7 @@
 	desc = "An Judge revolver frame. For when you just really don't like someone."
 	icon_state = "frame_inspector"
 	result = /obj/item/gun/projectile/revolver/judge
+	resultvars = list(/obj/item/gun/projectile/revolver/judge)
 	gripvars = list(/obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
 	barrelvars = list(/obj/item/part/gun/barrel/lrifle)

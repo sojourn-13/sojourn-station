@@ -38,6 +38,7 @@
 	desc = "A Minotaur revolver frame. The officer's choice."
 	icon_state = "frame_revolver"
 	result = /obj/item/gun/projectile/revolver
+	resultvars = list(/obj/item/gun/projectile/revolver)
 	gripvars = list(/obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
 	barrelvars = list(/obj/item/part/gun/barrel/magnum)

@@ -28,6 +28,7 @@
 	desc = "A Regulator shotgun frame. The gold standard for boarder repelling."
 	icon_state = "frame_regulator"
 	result = /obj/item/gun/projectile/shotgun/pump/combat
+	resultvars = list(/obj/item/gun/projectile/shotgun/pump/combat)
 	gripvars = list(/obj/item/part/gun/grip/black)
 	mechanismvar = /obj/item/part/gun/mechanism/shotgun
 	barrelvars = list(/obj/item/part/gun/barrel/shotgun)

@@ -30,6 +30,7 @@
 	desc = "An Lamia pistol frame. For a pocket sized hole puncher."
 	icon_state = "frame_lamia"
 	result = /obj/item/gun/projectile/lamia
+	resultvars = list(/obj/item/gun/projectile/lamia)
 	gripvars = list(/obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
 	barrelvars = list(/obj/item/part/gun/barrel/kurtz)
@@ -115,7 +116,8 @@
 	name = "Amnesty frame"
 	desc = "An Amnesty pistol frame. For a pocket sized hole puncher."
 	icon_state = "frame_lamia"
-	result = /obj/item/gun/projectile/lamia
+	result = /obj/item/gun/projectile/lamia/amnesty
+	resultvars = list(/obj/item/gun/projectile/lamia/amnesty)
 	gripvars = list(/obj/item/part/gun/grip/rubber)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
 	barrelvars = list(/obj/item/part/gun/barrel/kurtz)
