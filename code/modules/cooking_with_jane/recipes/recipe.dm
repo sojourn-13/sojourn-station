@@ -176,6 +176,14 @@
 		list(CWJ_USE_STOVE, J_LO, 30 SECONDS)
 	)
 
+/datum/cooking_with_jane/recipe/raw_speggie
+	cooking_container = CUTTING_BOARD
+	product_type = /obj/item/reagent_containers/food/snacks/doughslice
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 1, base=1),
+		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1),
+	)
 
 /datum/cooking_with_jane/recipe/bread
 	cooking_container = OVEN
@@ -259,7 +267,7 @@
 
 /datum/cooking_with_jane/recipe/bearchili
 	cooking_container = POT
-	product_type = /obj/item/reagent_containers/food/snacks/coldchili
+	product_type = /obj/item/reagent_containers/food/snacks/bearchili
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "water", 10),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
