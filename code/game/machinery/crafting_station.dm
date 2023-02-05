@@ -259,6 +259,9 @@
 						if("Bakelite grip")
 							required_resources = materials_pgrip
 							items_to_spawn = list("" = /obj/item/part/gun/grip/serb)
+						if("Rubber grip")
+							required_resources = materials_pgrip
+							items_to_spawn = list("" = /obj/item/part/gun/grip/rubber)
 						if("Wooden grip")
 							required_resources = materials_wgrip
 							items_to_spawn = list("" = /obj/item/part/gun/grip/wood)
