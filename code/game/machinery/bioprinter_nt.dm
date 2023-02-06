@@ -27,6 +27,7 @@
 	speed = initial(speed)
 	mat_efficiency = initial(mat_efficiency)
 
+
 /obj/machinery/autolathe/bioprinter/disk
 	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter
 

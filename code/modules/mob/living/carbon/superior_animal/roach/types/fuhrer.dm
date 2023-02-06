@@ -5,8 +5,8 @@
 	icon_state = "fuhrer"
 
 	turns_per_move = 4
-	maxHealth = 200
-	health = 200
+	maxHealth = 125
+	health = 125
 
 	knockdown_odds = 5
 	melee_damage_lower = 15

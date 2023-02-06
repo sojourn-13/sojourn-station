@@ -7,8 +7,8 @@
 
 	meat_amount = 2
 	turns_per_move = 1
-	maxHealth = 45
-	health = 45
+	maxHealth = 40
+	health = 40
 
 	flash_resistances = 10 //We are the light
 
