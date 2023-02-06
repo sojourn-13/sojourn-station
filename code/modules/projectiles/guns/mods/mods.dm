@@ -83,7 +83,6 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.2,
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.2,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.1, // Better than the mod used to make it
 		GUN_UPGRADE_RECOIL = 1.1, // Better than a ported barrel
 		UPGRADE_BULK = 1
@@ -149,7 +148,6 @@
 		GUN_UPGRADE_HONK = TRUE,
 		GUN_UPGRADE_RECOIL = 1.2,
 		GUN_UPGRADE_DAMAGE_MULT = 0.8,
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 0.8,
 		GUN_UPGRADE_PEN_MULT = 0.8,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
 		GUN_UPGRADE_MOVE_DELAY_MULT = 1.2,
@@ -175,7 +173,6 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.3,
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.3,
 		GUN_UPGRADE_CHARGECOST = 1.15,
 		UPGRADE_BULK = 0.5,
 		)
@@ -195,7 +192,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.45,
+		GUN_UPGRADE_DAMAGE_MULT = 1.45,
 		GUN_UPGRADE_CHARGECOST = 1.25,
 		UPGRADE_BULK = 0.75,
 		)
@@ -320,7 +317,6 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.1,
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.1, //10% more damage
 		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9, //10% delay removed
 		GUN_UPGRADE_PEN_MULT = 1.2, //we shoot harder, but not by much
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.9, //We shoot somehwat faster (not hit scan)
@@ -346,7 +342,6 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.15, //15% more damage
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.15, //15% more damage to mobs
 		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8, //20% delay removed
 		GUN_UPGRADE_PEN_MULT = 2, //we shoot harder
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.6, //We shoot way faster (not hit scan)
@@ -461,7 +456,6 @@
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 2,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
-	GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 2,
 	GUN_UPGRADE_DAMAGE_MULT = 2,
 	GUN_UPGRADE_CHARGECOST = 2)
 	I.req_fuel_cell = REQ_CELL
@@ -816,7 +810,6 @@
 		GUN_UPGRADE_OFFSET = rand(5,15),
 		GUN_UPGRADE_PEN_MULT = rand(4,9)/10,
 		GUN_UPGRADE_DAMAGE_MULT = rand(4,9)/10,
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = rand(4,9)/10
 	)
 	I.destroy_on_removal = TRUE
 	I.removal_time *= rand(10, 14)/10

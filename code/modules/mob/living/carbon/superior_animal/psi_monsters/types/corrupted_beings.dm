@@ -5,8 +5,8 @@
 	icon_state = "q-hound"
 	icon_living = "q-hound"
 	icon = 'icons/mob/mobs-monster.dmi'
-	maxHealth = 400
-	health = 400
+	maxHealth = 200
+	health = 200
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	melee_damage_lower = 20
 	melee_damage_upper = 30

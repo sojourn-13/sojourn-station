@@ -112,7 +112,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/twohanded = FALSE //If TRUE, gun can only be fired when wileded
 	var/recentwield = 0 // to prevent spammage
 	var/proj_step_multiplier = 1
-	var/proj_pve_damage_multiplier = 1 //Damage against mobs that are not player multiplier
 	var/list/proj_damage_adjust = list() //What additional damage do we give to the bullet. Type(string) -> Amount(int), damage is divided for pellets
 
 	var/eject_animatio = FALSE //Only currenly in bolt guns. Check boltgun.dm for more information on this
@@ -492,8 +491,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 		if(multiply_pve_damage)
 			projectile.multiply_pve_damage(multiply_pve_damage)
-
-		projectile.multiply_pve_damage(proj_pve_damage_multiplier)
 
 		if(fire_stacks)
 			projectile.add_fire_stacks(fire_stacks)
@@ -1022,7 +1019,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/nano_ui_data(mob/user)
 	var/list/data = list()
 	data["damage_multiplier"] = damage_multiplier
-	data["multiply_pve_damage"] = proj_pve_damage_multiplier
 	data["pierce_multiplier"] = pierce_multiplier
 	data["penetration_multiplier"] = penetration_multiplier
 	data["proj_agony_multiplier"] = proj_agony_multiplier
@@ -1103,7 +1099,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/data = list()
 	data["projectile_name"] = P.name
 	data["projectile_damage"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()
-	data["projectile_damage_pve"] = (P.get_total_damage() * damage_multiplier) + (P.get_total_damage_pve() * proj_pve_damage_multiplier) + get_total_damage_adjust() + (P.agony * proj_agony_multiplier)
+	data["projectile_damage_pve"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust() + (P.agony * proj_agony_multiplier)
 	data["projectile_AP"] = P.armor_penetration * penetration_multiplier
 	data["projectile_pain"] = P.agony * proj_agony_multiplier
 	data["projectile_recoil"] = P.recoil
@@ -1117,7 +1113,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	pierce_multiplier = initial(pierce_multiplier)
 	proj_step_multiplier = initial(proj_step_multiplier)
 	proj_agony_multiplier = initial(proj_agony_multiplier)
-	proj_pve_damage_multiplier = initial(proj_pve_damage_multiplier)
 	extra_damage_mult_scoped = initial(extra_damage_mult_scoped)
 	scoped_offset_reduction  = initial(scoped_offset_reduction)
 	fire_delay = initial(fire_delay)
