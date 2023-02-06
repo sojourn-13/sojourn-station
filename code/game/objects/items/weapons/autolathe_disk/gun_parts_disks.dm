@@ -42,7 +42,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/part/grip/wood = 0,
 		/datum/design/autolathe/part/grip/plastic,
 		/datum/design/autolathe/part/grip/serb,
-		/datum/design/autolathe/part/grip/rubber = 2,
+		/datum/design/autolathe/part/grip/rubber,
 		/datum/design/autolathe/part/mechanism/pistol,
 		/datum/design/autolathe/part/mechanism/revolver,
 		/datum/design/autolathe/part/mechanism/shotgun,
