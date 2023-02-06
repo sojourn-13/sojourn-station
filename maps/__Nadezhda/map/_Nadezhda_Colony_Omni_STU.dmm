@@ -60660,11 +60660,11 @@
 /area/nadezhda/pros/prep)
 "lNd" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/storage/box/teargas{
-	pixel_x = 8
-	},
 /obj/item/storage/box/flashbangs{
 	pixel_x = -8
+	},
+/obj/item/storage/box/frag{
+	pixel_x = 6
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -67648,8 +67648,9 @@
 /obj/item/storage/box/explosive{
 	pixel_x = -10
 	},
-/obj/item/storage/box/frag{
-	pixel_x = 6
+/obj/item/toy/figure/character/discontinued/dsquad{
+	pixel_x = 4;
+	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -79197,8 +79198,14 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/security/detectives_office)
 "pun" = (
-/obj/structure/closet/crate/serbcrate,
-/obj/item/gun/projectile/automatic/lmg/heroic,
+/obj/item/storage/pouch/tubular,
+/obj/structure/closet/crate/serbcrate{
+	name = "Heavy ordinance crate"
+	},
+/obj/item/gun/projectile/rpg,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket/emp,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "puu" = (
@@ -123144,6 +123151,7 @@
 /obj/structure/closet/crate/serbcrate,
 /obj/item/gun/projectile/automatic/omnirifle,
 /obj/item/gun/projectile/automatic/omnirifle,
+/obj/item/gun/projectile/automatic/lmg/heroic,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "xVT" = (
@@ -182641,7 +182649,7 @@ dNb
 psV
 cCd
 ikW
-nev
+lrJ
 eEn
 hSx
 hSx
@@ -183247,7 +183255,7 @@ ikW
 ikW
 phu
 ikW
-lrJ
+nev
 eEn
 hSx
 hSx
