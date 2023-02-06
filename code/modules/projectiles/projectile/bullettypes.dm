@@ -237,7 +237,7 @@
 	step_delay = 0.65
 	affective_damage_range = 3
 	affective_ap_range = 3
-	recoil = 8
+	recoil = 10
 
 /obj/item/projectile/bullet/kurtz_50/rubber
 	name = "rubber bullet"
@@ -248,7 +248,7 @@
 	armor_penetration = 0
 	can_ricochet = TRUE
 	step_delay = 0.75
-	recoil = 6
+	recoil = 7
 
 /obj/item/projectile/bullet/kurtz_50/practice
 	name = "practice bullet"
@@ -258,7 +258,7 @@
 	embed = FALSE
 	can_ricochet = FALSE
 	step_delay = 0.75
-	recoil = 5
+	recoil = 6
 
 /obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
@@ -269,7 +269,7 @@
 	penetrating = 0
 	can_ricochet = FALSE
 	step_delay = 0.8
-	recoil = 10
+	recoil = 12
 
 /obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
@@ -281,7 +281,7 @@
 	affective_damage_range = 4
 	affective_ap_range = 4
 	nocap_structures = TRUE //We can breach doors rather well
-	recoil = 12
+	recoil = 14
 
 
 //Carbines and rifles
@@ -520,7 +520,7 @@
 	step_delay = 0.3
 	affective_damage_range = 9
 	affective_ap_range = 9
-	recoil = 5
+	recoil = 7
 
 /obj/item/projectile/bullet/auto_460
 	damage_types = list(BRUTE = 30)
