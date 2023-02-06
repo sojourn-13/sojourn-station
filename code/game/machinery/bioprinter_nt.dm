@@ -5,7 +5,7 @@
 	unsuitable_materials = list()
 	build_type = AUTOLATHE | BIOPRINTER
 	storage_capacity = 480
-	speed = 5
+	speed = 11
 	have_recycling = TRUE
 	queue_max = 16 //Might be 8 in game do to wires
 	mat_efficiency = 0.5
@@ -24,8 +24,8 @@
 
 /obj/machinery/autolathe/bioprinter/RefreshParts()
 	..()
-	speed = initial(speed) + 4 + 2
-	mat_efficiency = 0.5
+	speed = initial(speed)
+	mat_efficiency = initial(mat_efficiency)
 
 /obj/machinery/autolathe/bioprinter/disk
 	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter
