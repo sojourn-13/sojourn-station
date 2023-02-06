@@ -138,6 +138,10 @@
 			if(spell.message == "Cards." && candle_amount >= 3)
 				cards_spell(M)
 				continue
+
+			if(spell.message == "Equalize." && candle_amount >= 6)
+				equalize_spell(M)
+				continue
 			return
 		return
 	return
@@ -412,4 +416,41 @@
 		target.faction = "Living Dead"
 		target.maxHealth *= 0.2
 		target.health *= 0.2
+	return
+/obj/effect/decal/cleanable/crayon/proc/equalize_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+
+	//get percent of blood. Then pass it back into people. Thats total blood between all / by number of people.
+	var/bloodpercent = 0
+	var/bloodtotal = 0
+	var/list/targets = list()
+	//add the caster in first. They don't get included in the for loops.
+	targets += M
+	bloodtotal = M.get_blood_volume()
+
+	//We go thru all possible targets and set them to the list and gather our blood amount
+	for(var/mob/living/carbon/human/T in oview(3))
+		if(T.species?.reagent_tag != IS_SYNTHETIC)
+			targets += T
+			bloodtotal += T.get_blood_volume()
+	bloodpercent = ((bloodtotal / targets.len) * 0.01) // turn it into a decimal for later maths.
+
+	//emergency catch in case somehow we don't have vars we need.
+	if(!targets || !bloodpercent)
+		return
+
+	//Blood alteration of targets
+	for(var/mob/living/carbon/human/T in oview(3))
+		if(T.species?.reagent_tag != IS_SYNTHETIC)
+			if(T.get_blood_volume() >= (bloodpercent * T.species.blood_volume))
+				T.vessel.remove_reagent("blood", ((T.get_blood_volume() * 0.01) - bloodpercent) * T.species.blood_volume)
+			else T.vessel.add_reagent("blood", (bloodpercent - (T.get_blood_volume() * 0.01)) * T.species.blood_volume)
+			to_chat(T, "<span class='warning'>You feel extremly woozy and light headed for a second. It partially recovers.</span>")
+
+	//caster blood handling below
+	to_chat(M, "<span class='warning'>The sound of a heart beat fills the air around you.</span>")
+	if(M.get_blood_volume() < bloodpercent)
+		M.vessel.add_reagent("blood", (bloodpercent - (M.get_blood_volume() * 0.01)) * M.species.blood_volume)
+	else M.vessel.remove_reagent("blood", ((M.get_blood_volume() * 0.01) - bloodpercent) * M.species.blood_volume)
+	B.remove_self(min(20 * targets.len, 80))
 	return
