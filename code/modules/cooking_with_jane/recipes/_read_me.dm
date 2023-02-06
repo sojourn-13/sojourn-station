@@ -80,9 +80,9 @@ list(<CWJ_STEP_CLASS><_OPTIONAL>, <REQUIRED_ARGS>, <CUSTOM_ARGS>=value)
 			If not defined, there is no maximum quality a step can add.
 			Example: max=10
 
-		result_desc
+		prod_desc
 			Adds a custom description to the result of the recipe step. This will be read off on the item product.
-			Example: result_desc="A Slice of Bread is in the sandwich."
+			Example: prod_desc="A Slice of Bread is in the sandwich."
 
 		exact
 			CWJ_ADD_ITEM or CWJ_USE_ITEM ONLY:

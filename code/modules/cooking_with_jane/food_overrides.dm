@@ -2,6 +2,8 @@
 	if(!..(user, get_dist(user, src)))
 		return
 
+	if(cooking_description_modifier)
+		to_chat(user, SPAN_NOTICE(cooking_description_modifier))
 
 	to_chat(user, SPAN_NOTICE("The food's level of quality is [food_quality]"))
 
