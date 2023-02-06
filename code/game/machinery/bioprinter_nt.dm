@@ -8,7 +8,7 @@
 	speed = 5
 	have_recycling = TRUE
 	queue_max = 16 //Might be 8 in game do to wires
-	mat_efficiency = 0.3
+	mat_efficiency = 0.5
 
 /obj/machinery/autolathe/bioprinter/attackby(obj/item/I, mob/user)
 	//hacky way to forbid deconstruction but use ..()
