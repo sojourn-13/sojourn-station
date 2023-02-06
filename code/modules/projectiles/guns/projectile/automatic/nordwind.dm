@@ -32,6 +32,17 @@
 
 	wield_delay = 1.5 SECOND
 	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class rifle
+	gun_parts = list(/obj/item/part/gun/frame/nord = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
+/obj/item/part/gun/frame/nord
+	name = "Wind-series frame"
+	desc = "A generic -Wind series rifle frame. Simply use a drill-bit or a buffer to your desired caliber!."
+	icon_state = "frame_wind"
+	result = /obj/item/gun/projectile/automatic/nordwind
+	gripvars = list(/obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle, /obj/item/part/gun/barrel/srifle)
+	resultvars = list(/obj/item/gun/projectile/automatic/nordwind, /obj/item/gun/projectile/automatic/ostwind)
 
 /obj/item/gun/projectile/automatic/nordwind/strelki
 	name = "\"Strelki\" precision rifle"
@@ -100,3 +111,13 @@
 
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.2 // 20 vig to insta wield, sawn
+
+/obj/item/part/gun/frame/strelki
+	name = "Strelki frame"
+	desc = "A Strelki rifle frame. The finest among hunters and operators alike, known for building cheap Strelki rifles or more expensive Duty rifles."
+	icon_state = "frame_orrifle"
+	result = /obj/item/gun/projectile/automatic/nordwind/strelki
+	gripvars = list(/obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle, /obj/item/part/gun/barrel/srifle)
+	resultvars = list(/obj/item/gun/projectile/automatic/nordwind/strelki, /obj/item/gun/projectile/automatic/duty)

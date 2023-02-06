@@ -14,9 +14,7 @@
 	used_weapon				= null,
 	sharp					= FALSE,
 	edge					= FALSE,
-	post_pen_mult			= 1,
-	added_damage_bullet_pve	= 0,
-	added_damage_laser_pve	= 0
+	post_pen_mult			= 1
 	)
 
 	if(damage == 0)
@@ -55,8 +53,6 @@
 		//message_admins("burns_armor_overpenetration = [burns_armor_overpenetration]!")
 
 		//message_admins("effective_damage = [effective_damage]!")
-		//message_admins("added_damage_bullet_pve = [added_damage_bullet_pve]!")
-		//message_admins("added_damage_laser_pve = [added_damage_laser_pve]!")
 
 		if(damagetype == HALLOSS)
 			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
@@ -69,14 +65,6 @@
 
 		if(burns_armor_overpenetration > 0 && damagetype == BURN)
 			effective_damage += max(0,round(burns_armor_overpenetration))
-
-		//This is why we cut are armor, otherwise we would be checking base armor 2 times for reduction
-		if(added_damage_bullet_pve)
-			effective_damage += max(0,round(added_damage_bullet_pve - mob_brute_armor))
-
-		if(added_damage_laser_pve)
-			effective_damage += max(0,round(added_damage_laser_pve - mob_laser_armor))
-
 
 		//message_admins("post math effective_damage = [effective_damage]!")
 
@@ -189,7 +177,7 @@
 					dmult += P.supereffective_mult
 			damage *= dmult
 			if (!(P.testing))
-				damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult, added_damage_bullet_pve = P.added_damage_bullet_pve, added_damage_laser_pve = P.added_damage_laser_pve)
+				damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult)
 
 
 	if(P.agony > 0 && istype(P,/obj/item/projectile/bullet))

@@ -171,7 +171,7 @@
 		),
 		"Speghetti" = list(
 			/obj/item/reagent_containers/food/snacks/boiledspagetti= good_data("Boiled Noodles", list(-100, -50), 20),
-			/obj/item/reagent_containers/food/snacks/spagetti = good_data("Speghetti", list(-100, -50), 23),
+			/obj/item/reagent_containers/food/snacks/spagetti = good_data("Raw Speghetti", list(-100, -50), 23),
 			/obj/item/reagent_containers/food/snacks/pastatomato = good_data("Spaghetti Pasta", list(-100, -50), 30),
 			/obj/item/reagent_containers/food/snacks/meatballspagetti = good_data("Spaghetti & Meatballs", list(-100, -50), 35),
 			/obj/item/reagent_containers/food/snacks/spesslaw = good_data("Spesslaw", list(-100, -50), 45)

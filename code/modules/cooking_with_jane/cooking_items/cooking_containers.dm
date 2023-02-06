@@ -48,7 +48,7 @@
 	return "It contains [reagents.total_volume] units of reagents."
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/attackby(var/obj/item/used_item, var/mob/user)
-		
+
 	#ifdef CWJ_DEBUG
 	log_debug("cooking_container/attackby() called!")
 	#endif
@@ -99,7 +99,7 @@
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/proc/process_item(var/obj/I, var/mob/user, var/lower_quality_on_fail = 0, var/send_message = TRUE)
 
-	
+
 	#ifdef CWJ_DEBUG
 	log_debug("cooking_container/process_item() called!")
 	#endif
@@ -345,9 +345,9 @@
 	appliancetype = GRILL
 
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl
-	name = "serving bowl"
+	name = "prep bowl"
 	shortname = "bowl"
-	desc = "A bowl."
+	desc = "A bowl for mixing, or tossing a salad. Not to be eaten out of"
 
 	icon_state = "bowl"
 	lip = "bowl_lip"

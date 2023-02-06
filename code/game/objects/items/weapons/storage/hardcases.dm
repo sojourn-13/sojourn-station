@@ -161,7 +161,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/device/flash,
 		/obj/item/grenade,
 		/obj/item/reagent_containers/spray/pepper,
-		/obj/item/handcuffs
+		/obj/item/handcuffs,
+		/obj/item/part/gun
 		)
 
 /obj/item/storage/hcases/ammo/ih
@@ -328,7 +329,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/tool_upgrade,
 		/obj/item/clothing/head/welding,
 		/obj/item/weldpack,
-		/obj/item/circuitboard
+		/obj/item/circuitboard,
+		/obj/item/part/gun
 		)
 
 /obj/item/storage/hcases/parts/scrap
@@ -470,7 +472,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/airlock_electronics,
 		/obj/item/airalarm_electronics,
 		/obj/item/tool_upgrade,
-		/obj/item/cell
+		/obj/item/cell,
+		/obj/item/part/gun
 		)
 
 /obj/item/storage/hcases/engi/scrap

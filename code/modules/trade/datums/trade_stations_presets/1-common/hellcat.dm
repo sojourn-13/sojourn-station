@@ -71,6 +71,14 @@
 		)
 	)
 	hidden_inventory = list(
+		"Gun Resale Parts" = list(
+			/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/resale = good_data("Blackmarket Gun Frame Disk", list(1, 1), 800),
+			/obj/item/part/gun/grip/black,
+			/obj/item/part/gun/barrel/srifle,
+			/obj/item/part/gun/barrel/shotgun,
+			/obj/item/part/gun/mechanism/shotgun,
+			/obj/item/part/gun/mechanism/boltgun,
+		),
 		"Basic Gun Mods" = list(
 			/obj/item/gun_upgrade/barrel/gauss,
 			/obj/item/tool_upgrade/productivity/ergonomic_grip,

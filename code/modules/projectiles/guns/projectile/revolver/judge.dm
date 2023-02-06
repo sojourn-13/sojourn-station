@@ -20,3 +20,14 @@
 
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
+	gun_parts = list(/obj/item/part/gun/frame/judge = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
+/obj/item/part/gun/frame/judge
+	name = "Judge frame"
+	desc = "An Judge revolver frame. For when you just really don't like someone."
+	icon_state = "frame_inspector"
+	result = /obj/item/gun/projectile/revolver/judge
+	resultvars = list(/obj/item/gun/projectile/revolver/judge)
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)

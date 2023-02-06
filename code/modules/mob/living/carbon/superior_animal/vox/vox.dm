@@ -4,8 +4,8 @@
 	icon_state = "vox_marsmud"
 	icon = 'icons/mob/mobs-voxy.dmi'
 
-	maxHealth = 75
-	health = 75
+	maxHealth = 50
+	health = 50
 
 	faction = "vox_tribe" //In case of different tribes
 	turns_per_move = 5

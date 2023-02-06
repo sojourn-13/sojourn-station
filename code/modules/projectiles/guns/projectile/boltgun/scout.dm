@@ -26,7 +26,16 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.3 // 30 vig, little heavier than normal
+	gun_parts = list(/obj/item/part/gun/frame/scout = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/hrifle = 1)
 
+/obj/item/part/gun/frame/scout
+	name = "Scout frame"
+	desc = "A Scout heavy boltgun frame. For when you really want to put a hole in your target."
+	icon_state = "frame_scout"
+	resultvars = list(/obj/item/gun/projectile/boltgun/scout)
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/boltgun
+	barrelvars = list(/obj/item/part/gun/barrel/hrifle)
 
 /obj/item/gun/projectile/boltgun/sawn/scout
 	name = "\"obrez\" Scout heavy boltgun"
@@ -42,3 +51,5 @@
 	saw_off = FALSE
 	slowdown_hold = FALSE
 	serial_type = "H&S"
+	gun_parts = list(/obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/hrifle = 1)
+

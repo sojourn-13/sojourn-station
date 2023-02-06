@@ -21,6 +21,17 @@
 	serial_type = "H&S"
 
 	wield_delay = 0 SECOND
+	gun_parts = list(/obj/item/part/gun/frame/giskard = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol = 1)
+
+/obj/item/part/gun/frame/giskard
+	name = "Giskard frame"
+	desc = "A Giskard pistol frame. A ubiquitous pocket deterrent."
+	icon_state = "frame_giskard"
+	result = /obj/item/gun/projectile/giskard
+	resultvars = list(/obj/item/gun/projectile/giskard)
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = list(/obj/item/part/gun/barrel/pistol)
 
 /obj/item/gun/projectile/giskard/update_icon()
 	..()

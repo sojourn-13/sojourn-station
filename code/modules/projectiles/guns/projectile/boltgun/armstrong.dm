@@ -19,6 +19,17 @@
 	saw_off = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
 	serial_type = "H&S"
+	gun_parts = list(/obj/item/part/gun/frame/armstrong = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/magnum = 1)
+
+/obj/item/part/gun/frame/armstrong
+	name = "Armstrong frame"
+	desc = "A Armstrong lever rifle. If death is our destination this will surely bring it."
+	icon_state = "frame_armstrong"
+	result = /obj/item/gun/projectile/boltgun/lever
+	resultvars = list(/obj/item/gun/projectile/boltgun/lever, /obj/item/gun/projectile/boltgun/lever/custer)
+	gripvars = list(/obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/serb)
+	mechanismvar = /obj/item/part/gun/mechanism/boltgun
+	barrelvars = list(/obj/item/part/gun/barrel/magnum, /obj/item/part/gun/barrel/hrifle)
 
 /obj/item/gun/projectile/boltgun/lever/custer
 	name = "\"Custer\" repeating rifle"
@@ -34,3 +45,4 @@
 	init_recoil = HMG_RECOIL(0.6)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 15, MATERIAL_WOOD = 10)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE)
+	gun_parts = list(/obj/item/part/gun/frame/armstrong = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/hrifle = 1)

@@ -11,7 +11,8 @@
 	/obj/item/folder,
 	/obj/item/paper,
 	/obj/item/paper_bundle,
-	/obj/item/photo
+	/obj/item/photo,
+	/obj/item/alchemy/recipe_scroll
 	)
 
 /obj/item/folder/black

@@ -496,7 +496,7 @@
 	desc = "A helmet patched together by Prospector Salvagers, light and easy to breath in, \
 	the helmet has a few bells and whistles, a set of inbuilt goggles to keep dust and blood out of ones eyes, \
 	salvaged Greyson material coating it's outside it offer superb protection, and even a inbuilt radio. \
-	Tragically the scav incharge of the radio was unable to tune it or turn it on."
+	Tragically the scav in charge of the radio was unable to tune it or turn it on."
 	icon_state = "forehead_helmet"
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 23, MATERIAL_PLATINUM  = 8, MATERIAL_STEEL = 30, MATERIAL_SILVER = 12) //worth stealing
 	price_tag = 1200
@@ -528,6 +528,7 @@
 	var/list/options = list()
 	options["salvaged helmet"] = "forehead_helmet"
 	options["alt salvaged helmet"] = "alt_scavenger_helmet"
+	options["Ranger"] = "quak" // Due to popular demand
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
