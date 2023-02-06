@@ -97,7 +97,8 @@
 			user.visible_message(SPAN_NOTICE("[user] begins scribbling \the [name]'s gun serial number away."), SPAN_NOTICE("You begin removing the serial number from \the [name]."))
 			if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_MEC))
 				user.visible_message(SPAN_DANGER("[user] removes \the [name]'s gun serial number."), SPAN_NOTICE("You successfully remove the serial number from \the [name]."))
-				serial_type = null
+				serial_type = "INDEX"
+				serial_type += "-[generate_gun_serial(pick(3,4,5,6,7,8))]"
 				return
 
 		if(QUALITY_SCREW_DRIVING)

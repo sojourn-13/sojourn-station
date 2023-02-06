@@ -26,6 +26,7 @@
 	serial_type = "INDEX"
 	serial_shown = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
+	gun_parts = list(/obj/item/part/gun/frame/luty = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/smg/steel = 1, /obj/item/part/gun/barrel/pistol/steel = 1)
 
 	wield_delay = 0 // No delay for this , its litteraly a junk gun
 
@@ -35,9 +36,9 @@
 	icon_state = "frame_luty"
 	matter = list(MATERIAL_STEEL = 5)
 	resultvars = list(/obj/item/gun/projectile/automatic/luty)
-	gripvars = list(/obj/item/part/gun/grip/black)
+	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/smg/steel
-	barrelvars = list(/obj/item/part/gun/barrel/pistol/steel, /obj/item/part/gun/barrel/magnum/steel)
+	barrelvars = list(/obj/item/part/gun/barrel/pistol/steel)
 
 /obj/item/gun/projectile/automatic/luty/update_icon()
 	..()

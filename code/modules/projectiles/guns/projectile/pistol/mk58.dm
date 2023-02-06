@@ -20,6 +20,18 @@
 
 	wield_delay = 0.2 SECOND
 	wield_delay_factor = 0.2 // 20 vig
+	gun_parts = list(/obj/item/part/gun/frame/mk58 = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol = 1)
+
+/obj/item/part/gun/frame/mk58
+	name = "Absolute Pistol frame"
+	desc = "A standerized pistol frame from the Absolute. The frame needed to make the Thorn or the Rose."
+	icon_state = "frame_mk58"
+	result = /obj/item/gun/projectile/mk58
+	resultvars = list(/obj/item/gun/projectile/mk58, /obj/item/gun/projectile/mk58/wood)
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = list(/obj/item/part/gun/barrel/pistol, /obj/item/part/gun/barrel/magnum)
+
 
 /obj/item/gun/projectile/mk58/update_icon()
 	..()
@@ -51,6 +63,8 @@
 	damage_multiplier = 0.9
 	init_recoil = HANDGUN_RECOIL(0.8)
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL)
+	gun_parts = list(/obj/item/part/gun/frame/mk58 = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/magnum = 1)
+
 
 /obj/item/gun/projectile/mk58/wood/update_icon()
 	..()
