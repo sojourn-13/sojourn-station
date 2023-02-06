@@ -310,7 +310,7 @@
 	name = "firearm 20mm shotgun barrel"
 	build_path = /obj/item/part/gun/barrel/shotgun
 
-/datum/design/autolathe/part/barrel/heavy
+/datum/design/autolathe/part/barrel/amr
 	name = "firearm 14.5mm anti-material rifle barrel"
 	build_path = /obj/item/part/gun/barrel/antim
 
