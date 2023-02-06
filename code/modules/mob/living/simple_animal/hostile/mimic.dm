@@ -13,8 +13,8 @@
 	response_disarm = "pushes"
 	response_harm = "hits"
 	speed = 1
-	maxHealth = 200
-	health = 200
+	maxHealth = 100
+	health = 100
 
 	melee_damage_lower = 15
 	melee_damage_upper = 20
