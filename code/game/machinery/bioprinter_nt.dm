@@ -22,6 +22,10 @@
 
 	..(I, user)
 
+/obj/machinery/autolathe/bioprinter/RefreshParts()
+	..()
+	speed = initial(speed) + 4 + 2
+
 /obj/machinery/autolathe/bioprinter/disk
 	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter
 
