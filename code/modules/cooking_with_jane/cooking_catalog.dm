@@ -164,6 +164,28 @@
 	data["description"] = recipe.description
 	data["recipe_guide"] = recipe.recipe_guide
 
+	switch(recipe.cooking_container)
+		if(PLATE)
+			data["create_in"] = "Made with a debug-only serving plate."
+		if(CUTTING_BOARD)
+			data["create_in"] = "Made on a cutting board."
+		if(PAN)
+			data["create_in"] = "Made with a pan or skillet."
+		if(POT)
+			data["create_in"] = "Made in a cooking pot."
+		if(BOWL)
+			data["create_in"] = "Made in a prep bowl."
+		if(DF_BASKET)
+			data["create_in"] = "Made in a deep frying basket."
+		if(DF_BASKET)
+			data["create_in"] = "Made in an air frying basket."
+		if(OVEN)
+			data["create_in"] = "Made with an oven dish."
+		if(GRILL)
+			data["create_in"] = "Made on a grill."
+		else
+			data["create_in"] = "Made with a ~//SEGMENTATION FAULT//~ 00110001"
+
 	return data
 
 //===========================================================
