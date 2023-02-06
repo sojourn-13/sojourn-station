@@ -25,4 +25,5 @@
 	resultvars = list(/obj/item/gun/projectile/revolver/handmade)
 	gripvars = list(/obj/item/part/gun/grip/wood)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver/steel
+	nra = FALSE
 	barrelvars = list(/obj/item/part/gun/barrel/magnum/steel, /obj/item/part/gun/barrel/pistol/steel)

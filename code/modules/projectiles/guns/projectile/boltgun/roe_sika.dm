@@ -33,6 +33,9 @@
 	max_shells = 10
 	saw_off = FALSE
 	serial_type = "Hunt Inc"
+	//Sawn guns lose their frames
+	gun_parts = list(/obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/srifle = 1)
+
 
 /obj/item/part/gun/frame/roe
 	name = "Roe frame"
