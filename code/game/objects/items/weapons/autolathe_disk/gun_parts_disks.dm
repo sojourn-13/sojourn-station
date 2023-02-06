@@ -54,9 +54,9 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/part/barrel/kurtz = 2,
 		/datum/design/autolathe/part/barrel/carbine = 2,
 		/datum/design/autolathe/part/barrel/rifle = 2,
-		/datum/design/autolathe/part/barrel/heavy = 3,
+		/datum/design/autolathe/part/barrel/heavy = 2,
 		/datum/design/autolathe/part/barrel/shotgun,
-		/datum/design/autolathe/part/barrel/heavy = 4,
+		/datum/design/autolathe/part/barrel/amr = 4,
 	)
 
 // Bootleg-gun production stuff. Found in loot-piles, can be bought by LSS for a slightly inflated price.
