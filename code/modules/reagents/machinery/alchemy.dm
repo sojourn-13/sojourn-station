@@ -88,8 +88,7 @@
 	possible_transfer_amounts = list(1,2,3)
 	reagent_flags = TRANSPARENT | NO_REACT // It's a stasis BIDON, shouldn't allow chems to react inside it.
 
-/obj/item/reagent_containers/glass/beaker/flask_alchemy/Initialize()
-	update_icon()
+	New() update_icon()
 
 /obj/item/alchemy/recipe_scroll
 	name = "alchemy recipe"
