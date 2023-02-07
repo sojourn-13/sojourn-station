@@ -49,6 +49,7 @@
 
 	var/radio_filter_out
 	var/radio_filter_in
+	var/takenap = 0
 
 /obj/machinery/atmospherics/unary/vent_pump/on
 	use_power = IDLE_POWER_USE
@@ -138,24 +139,27 @@
 /obj/machinery/atmospherics/unary/vent_pump/Process()
 	..()
 
+	if(takenap > world.time)
+		return TRUE
+
 	if (!node1)
 		use_power = NO_POWER_USE
-		return
+		return FALSE
 
 	if(!use_power)
-		return 0
+		return FALSE
 
 	if(stat & (NOPOWER|BROKEN))
-		return 0
+		return FALSE
 
 	if(welded)
-		return 0
+		return FALSE
 
 	var/list/environments = get_target_environments(src, expanded_range)
 	if(!length(environments))
-		return 0
+		return FALSE
 
-	var/power_draw = 1 //Baindaid correction
+	var/power_draw = 0
 	var/transfer_happened = FALSE
 
 	for(var/e in environments)
@@ -188,20 +192,16 @@
 
 			transfer_happened = TRUE
 
-	if(0 > power_draw) //Stops negitives, baindaid correction
-		if(!has_errored)
-			log_to_dd("Error: Vent has had a negitive power draw - X:[src.x] Y:[src.y] Z:[src.z]")
-			has_errored = TRUE
-		power_draw = 0
-
 	if(transfer_happened)
 
 		last_power_draw = power_draw
 		use_power(power_draw)
 		if(network)
 			network.update = 1
+	else
+		takenap = (world.time + rand(100,900))
 
-	return 1
+	return TRUE
 
 /obj/machinery/atmospherics/unary/vent_pump/proc/get_pressure_delta(datum/gas_mixture/environment)
 	var/pressure_delta = DEFAULT_PRESSURE_DELTA

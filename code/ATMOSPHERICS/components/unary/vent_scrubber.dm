@@ -1,6 +1,5 @@
 #define SIPHONING	0
 #define SCRUBBING	1
-#define SLEEPOUT_TIME	15 SECONDS // If ZAS TICK does not occur for 15 seconds, sleep us
 
 /obj/machinery/atmospherics/unary/vent_scrubber
 	icon = 'icons/atmos/vent_scrubber.dmi'
@@ -37,6 +36,7 @@
 	var/radio_filter_in
 
 	var/welded = FALSE
+	//var/takenap = 0 //in case this code is removed from SSmachines uncomment those
 
 /obj/machinery/atmospherics/unary/vent_scrubber/on
 	use_power = IDLE_POWER_USE
@@ -92,7 +92,7 @@
 	SHOULD_NOT_SLEEP(TRUE)
 	last_zas_update = world.time
 	if(!currently_processing)
-		START_PROCESSING(SSmachines, src)
+		START_PROCESSING(SSmachines, src)	//this has to go from this file ASAP for the sake of lag
 		return TRUE
 	return FALSE
 
@@ -170,14 +170,17 @@
 		src.broadcast_status()
 
 /obj/machinery/atmospherics/unary/vent_scrubber/Process()
-	if(last_zas_update + SLEEPOUT_TIME < world.time)
+	if(last_zas_update + rand(1,30) < world.time) //now it "sleeps" for up to 30 seconds
 		currently_processing = FALSE
 		return PROCESS_KILL
 	..()
 
+	//if(takenap > world.time)  //in case this code is removed from SSmachines uncomment those
+		//return TRUE
+
 	if (!node1)
 		use_power = NO_POWER_USE
-		return
+		return FALSE
 	//broadcast_status()
 	if(!use_power)
 		return FALSE
@@ -192,7 +195,7 @@
 	if(!length(environments))
 		return FALSE
 
-	var/power_draw = 1 //Bandaid correction, vents atm gain 1w magiclly do to a math bug that is current unknown - Trilby
+	var/power_draw = 0
 	var/transfer_happened = FALSE
 
 	for(var/e in environments)
@@ -206,7 +209,7 @@
 			//group_multiplier gets divided out here
 			power_draw += scrub_gas(src, scrubbing_gas, environment, air_contents, transfer_moles, power_rating)
 			if(debug)
-				log_debug("Srub Gas: scrubbing gas [scrubbing_gas] - enviroment: [environment] - air contents: [air_contents] - transfer moles: [transfer_moles] - Power-rating: [power_rating]")
+				log_debug("Scrub Gas: scrubbing gas [scrubbing_gas] - enviroment: [environment] - air contents: [air_contents] - transfer moles: [transfer_moles] - Power-rating: [power_rating]")
 
 		else //Just siphon all air
 			//limit flow rate from turfs
@@ -219,18 +222,14 @@
 
 		transfer_happened = TRUE
 
-	if(0 > power_draw) //Stops negitives, baindaid correction
-		if(!has_errored)
-			log_to_dd("Error: Scrubber has had a negitive power draw - X:[src.x] Y:[src.y] Z:[src.z]")
-			has_errored = TRUE
-		power_draw = 0
-
 	if(transfer_happened)
 
 		last_power_draw = power_draw
 		use_power(power_draw)
 		if(network)
 			network.update = TRUE
+	//else	//in case this code is removed from SSmachines uncomment those
+		//takenap = (world.time + rand(100,1200))
 
 	return TRUE
 
@@ -382,4 +381,3 @@
 
 #undef SIPHONING
 #undef SCRUBBING
-#undef SLEEPOUT_TIME
