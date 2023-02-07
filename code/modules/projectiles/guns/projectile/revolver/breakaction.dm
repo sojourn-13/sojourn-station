@@ -75,6 +75,7 @@
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	price_tag = 1500 // Very rare, very well made
 	damage_multiplier = 1.3 // Not as good as the Deckard in penetration for balance purposes, still quite good.
+	proj_pve_damage_multiplier = 1.3 // TODO: At some point we will have to add this var to every single firearm (except Marshals' since they're meant for PVP) after the PVP/PVE damage split, since they made lead-based firearms suck...
 	init_recoil = HANDGUN_RECOIL(0.5) // Takes no mods that assist with recoil.
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig, heavy gun

@@ -10,8 +10,8 @@
 	pixel_x = -4
 	ranged = TRUE
 
-	health = 800
-	maxHealth = 800
+	health = 1700
+	maxHealth = 1700
 	break_stuff_probability = 100
 	stop_automated_movement = 1
 

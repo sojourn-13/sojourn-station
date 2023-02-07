@@ -4,8 +4,8 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one has sparkling purple eyes."
 	icon_state = "hunter"
 	icon_living = "hunter"
-	maxHealth = 70
-	health = 70
+	maxHealth = 90
+	health = 90
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	poison_per_bite = 4
@@ -30,8 +30,8 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one has sparkling purple eyes and a large red splotch on its abdomen."
 	icon_state = "viper"
 	icon_living = "viper"
-	maxHealth = 100
-	health = 100
+	maxHealth = 140
+	health = 140
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 
@@ -41,8 +41,8 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one is infused with plasma and has mutated spikes protruding from its chitin."
 	icon_state = "phoron"
 	icon_living = "phoron"
-	maxHealth = 30
-	health = 30
+	maxHealth = 60
+	health = 60
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	poison_per_bite = 2
@@ -64,8 +64,8 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one is an absolute unit of chitin, armor, and chittering horror."
 	icon_state = "tarantula"
 	icon_living = "tarantula"
-	maxHealth = 110
-	health = 110
+	maxHealth = 160
+	health = 160
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 	emote_see = list("chitters.","rubs its legs.","thumps its many legs on the ground.")
@@ -165,8 +165,8 @@
 	icon_state = "ogre"
 	icon_living = "ogre"
 	poison_per_bite = 4
-	maxHealth = 130
-	health = 130
+	maxHealth = 180
+	health = 180
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/pit
 	name = "pit snapper spider"
@@ -184,8 +184,8 @@
 	icon_state = "burrowing"
 	icon_living = "burrowing"
 	poison_type = "stoxin"
-	maxHealth = 90
-	health = 90
+	maxHealth = 140
+	health = 140
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/emperor
 	name = "emperor spider"
@@ -193,8 +193,8 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "spider_emperor"
 	icon_living = "spider_emperor"
-	maxHealth = 200
-	health = 200
+	maxHealth = 400
+	health = 400
 	move_to_delay = 1
 	turns_per_move = 7
 	viewRange = 9
@@ -227,8 +227,8 @@
 	desc = "Furry, white, and black, it makes you shudder to look at it. This one is a massive hulking leviathan capable of striking fear in even the most powerful and stalwart of men."
 	icon_state = "terror_empress"
 	icon_living = "terror_empress"
-	maxHealth = 750
-	health = 750
+	maxHealth = 1500
+	health = 1500
 	move_to_delay = 2
 	turns_per_move = 1
 	melee_damage_lower = 40

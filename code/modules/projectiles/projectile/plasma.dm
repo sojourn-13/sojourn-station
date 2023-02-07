@@ -16,16 +16,19 @@
 
 	muzzle_type = /obj/effect/projectile/plasma/muzzle
 	impact_type = /obj/effect/projectile/plasma/impact
+	added_damage_laser_pve = 14
 
 /obj/item/projectile/plasma/shell
 	damage_types = list(BURN = 36)
 	recoil = 12
+	added_damage_laser_pve = 18
 
 /obj/item/projectile/plasma/light
 	name = "light plasma bolt"
 	damage_types = list(BURN = 28)
 	armor_penetration = 0
 	recoil = 7
+	added_damage_laser_pve = 14
 
 /obj/item/projectile/plasma/heavy
 	name = "heavy plasma bolt"
@@ -37,10 +40,12 @@
 
 	damage_types = list(BURN = 30)
 	armor_penetration = 30
+	added_damage_laser_pve = 15
 
 /obj/item/projectile/plasma/heavy/shell
 	damage_types = list(BURN = 42)
 	recoil = 24
+	added_damage_laser_pve = 21
 
 /obj/item/projectile/plasma/heavy/super_heavy
 	name = "superheavy plasma bolt"
@@ -48,6 +53,7 @@
 	affective_damage_range = 1
 	affective_ap_range = 2
 	recoil = 30
+	added_damage_laser_pve = 25
 	fire_stacks = 4
 
 /obj/item/projectile/plasma/impact
@@ -192,6 +198,7 @@
 	affective_ap_range = 16
 	hitscan = TRUE
 	recoil = 50
+	added_damage_laser_pve = 27
 	fire_stacks = 0
 
 /obj/item/projectile/plasma/check_penetrate(var/atom/A)

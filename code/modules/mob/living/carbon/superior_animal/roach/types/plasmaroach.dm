@@ -6,8 +6,8 @@
 
 	meat_amount = 2
 	turns_per_move = 10 //fast boy
-	maxHealth = 15
-	health = 15
+	maxHealth = 25
+	health = 25
 
 	contaminant_immunity = TRUE
 
