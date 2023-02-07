@@ -178,9 +178,9 @@
 
 /datum/cooking_with_jane/recipe/raw_speggie
 	cooking_container = CUTTING_BOARD
-	product_type = /obj/item/reagent_containers/food/snacks/doughslice
+	product_type = /obj/item/reagent_containers/food/snacks/spagetti
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "flour", 1, base=1),
 		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1),
 	)
