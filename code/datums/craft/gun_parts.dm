@@ -456,7 +456,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	name = "8.6mm heavy rifle barrel"
 	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 8.6mm heavy rifle."
 	icon_state = "barrel_heavy"
-	matter = list(MATIERAL_PLASTEEL = 10)
+	matter = list(MATERIAL_PLASTEEL = 10)
 	caliber = CAL_HRIFLE
 	refence_for_legal = "hrifle"
 

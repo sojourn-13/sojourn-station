@@ -7,7 +7,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", prod_desc="There is meat between the bread."),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
 	)
 	appear_in_default_catalog = FALSE
@@ -17,7 +17,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", prod_desc="There is meat between the bread."),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
 	)
 	appear_in_default_catalog = FALSE
@@ -27,7 +27,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", prod_desc="There is meat between the bread."),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
 	)
 	appear_in_default_catalog = FALSE
@@ -37,7 +37,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", prod_desc="There is meat between the bread."),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
 	)
 	appear_in_default_catalog = FALSE
@@ -47,7 +47,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, qmod=0.5, desc="Add any kind of cutlet.", prod_desc="There is meat between the bread."),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
 	)
 	appear_in_default_catalog = FALSE
@@ -58,8 +58,8 @@
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
-		list(CWJ_ADD_PRODUCE, "tomato", result_desc="There is a whole tomato stuffed in the sandwich."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="Add any kind of cutlet.", prod_desc="There is meat between the bread."),
+		list(CWJ_ADD_PRODUCE, "tomato", prod_desc="There is a whole tomato stuffed in the sandwich."),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
 	)
 	appear_in_default_catalog = FALSE
@@ -70,8 +70,8 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
 		CWJ_BEGIN_EXCLUSIVE_OPTIONS,
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/tofu, desc="Add tofu to it.", result_desc="There is tofu between the bread."),
-		list(CWJ_USE_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/tofu, desc="Brush Tofu on it.", result_desc="It has been in contact with tofu."),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/tofu, desc="Add tofu to it.", prod_desc="There is tofu between the bread."),
+		list(CWJ_USE_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/tofu, desc="Brush Tofu on it.", prod_desc="It has been in contact with tofu."),
 		CWJ_END_EXCLUSIVE_OPTIONS,
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
 	)
@@ -82,8 +82,8 @@
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
-		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/cutlet, desc="Add even more of any kind of cutlet.", result_desc="There is additional meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="Add any kind of cutlet.", prod_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/cutlet, desc="Add even more of any kind of cutlet.", prod_desc="There is additional meat between the bread."),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
 	)
 	appear_in_default_catalog = FALSE
@@ -93,7 +93,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="Add any kind of cutlet.", result_desc="There is meat between the bread."),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet, desc="Add any kind of cutlet.", prod_desc="There is meat between the bread."),
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice)
 	)
@@ -115,7 +115,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/sandwich
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sandwich),
-		list(CWJ_USE_GRILL, J_LO, 30 SECONDS, result_desc="It has been toasted.")
+		list(CWJ_USE_GRILL, J_LO, 30 SECONDS, prod_desc="It has been toasted.")
 	)
 	appear_in_default_catalog = FALSE
 

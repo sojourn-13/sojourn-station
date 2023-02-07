@@ -315,8 +315,8 @@ Food quality is calculated based on the steps taken.
 			if("max" in step_list)
 				set_step_max_quality(step_list["max"])
 
-			if("result_desc" in step_list)
-				set_step_custom_result_desc(step_list["result_desc"])
+			if("prod_desc" in step_list)
+				set_step_custom_result_desc(step_list["prod_desc"])
 
 			if("qmod" in step_list)
 				if(!set_inherited_quality_modifier(step_list["qmod"]))
@@ -701,9 +701,18 @@ Food quality is calculated based on the steps taken.
 
 			var/reagent_quality = calculate_reagent_quality(pointer)
 
+
+			//Produce Item descriptions based on the steps taken
+			var/cooking_description_modifier = ""
+			for(var/id in pointer.steps_taken)
+				if(pointer.steps_taken[id] != "skip")
+					cooking_description_modifier += "[pointer.steps_taken[id]]\n"
+
 			for(var/i = 0; i < product_count; i++)
 				var/obj/item/new_item = new product_type(container)
-				log_debug("Item created with reagents of [new_item.reagents.total_volume]")
+				#ifdef CWJ_DEBUG
+				log_debug("/recipe/proc/create_product: Item created with reagents of [new_item.reagents.total_volume]")
+				#endif
 				if(replace_reagents)
 					//Clearing out reagents in data. If initialize hasn't been called, we also null that out here.
 					#ifdef CWJ_DEBUG
@@ -716,6 +725,7 @@ Food quality is calculated based on the steps taken.
 				slurry.trans_to_holder(new_item.reagents, amount=slurry.total_volume, copy=1)
 
 				new_item?:food_quality = pointer.tracked_quality + reagent_quality
+				new_item?:cooking_description_modifier = cooking_description_modifier
 				//TODO: Consider making an item's base components show up in the reagents of the product.
 		else
 			//Purge the contents of the container we no longer need it
