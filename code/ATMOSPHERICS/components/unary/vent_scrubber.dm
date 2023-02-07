@@ -170,7 +170,7 @@
 		src.broadcast_status()
 
 /obj/machinery/atmospherics/unary/vent_scrubber/Process()
-	if(last_zas_update + rand(1,30) < world.time) //now it "sleeps" for up to 30 seconds
+	if(last_zas_update + rand(1,30) < world.time) //now it "sleeps" for up to 30 seconds, this entire if will have to go too if SSmachines is removed
 		currently_processing = FALSE
 		return PROCESS_KILL
 	..()
