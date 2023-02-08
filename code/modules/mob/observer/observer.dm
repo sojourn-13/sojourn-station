@@ -22,7 +22,7 @@ var/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 	..()
 	ghost_image = image(src.icon,src)
 	ghost_image.appearance = src
-	ghost_image.appearance_flags = RESET_ALPHA
+	ghost_image.appearance_flags = RESET_ALPHA | DEFAULT_APPEARANCE_FLAGS
 	if(ghost_image_flag & GHOST_IMAGE_DARKNESS)
 		ghost_darkness_images |= ghost_image //so ghosts can see the eye when they disable darkness
 	if(ghost_image_flag & GHOST_IMAGE_SIGHTLESS)

@@ -65,7 +65,7 @@
     ..()
     cut_overlays()
     var/image/I = image(icon, icon_state = "katana_handle")
-    I.appearance_flags = RESET_COLOR
+    I.appearance_flags = RESET_COLOR | DEFAULT_APPEARANCE_FLAGS
     add_overlay(I)
 
 /obj/item/material/sword/katana/gold
