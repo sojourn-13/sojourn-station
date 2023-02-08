@@ -37,7 +37,7 @@
 #define PERK_MIND_OF_MATTER /datum/perk/oddity/mind_of_matter
 #define PERK_IRON_WILL /datum/perk/oddity/iron_will
 
-//roundstart perks (job and racial)
+//roundstart perks (job)
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
 #define PERK_LUNGS_OF_IRON /datum/perk/lungs_of_iron
 #define PERK_BLOOD_OF_LEAD /datum/perk/blood_of_lead
@@ -68,7 +68,6 @@
 #define PERK_MASTER_HERBALIST /datum/perk/job/master_herbalist
 #define PERK_SI_SCI /datum/perk/si_sci
 #define PERK_ODD_REROLL /datum/perk/oddity_reroll
-#define PERK_FOLKEN_HEALING_YOUNG /datum/perk/folken_healing/young
 #define PERK_MUSH_FOLLOWER /datum/perk/mushroom_follower
 #define PERK_SLIME_FOLLOWER /datum/perk/slime_follower
 #define PERK_GREENTHUMB /datum/perk/greenthumb
@@ -78,35 +77,50 @@
 #define PERK_SOMELLIER /datum/perk/sommelier
 #define PERK_SOLBORN /datum/perk/solborn
 
-
-//Race Perks
+//////////////
+//Race Perks//
+//////////////
+//Regular Human
 #define PERK_TENACITY /datum/perk/tenacity
 #define PERK_IWILLSURVIVE /datum/perk/iwillsurvive
 #define PERK_BATTLECRY /datum/perk/battlecry
 #define PERK_DIVERSE_CULTURE /datum/perk/linguist_for_humans
+//Exalt Human
 #define PERK_SPLICER /datum/perk/splicer
+//Sablekyne
 #define PERK_LASTSTAND /datum/perk/laststand
 #define PERK_BONE /datum/perk/bone
 #define PERK_BRAWN /datum/perk/brawn
+//Mar'Qua
 #define PERK_SUDDENBRILLIANCE /datum/perk/suddenbrilliance
 #define PERK_INSPIRED /datum/perk/inspired
 #define PERK_ALIEN_NERVES /datum/perk/alien_nerves
+//Kriosan
 #define PERK_PERFECT_SHOT /datum/perk/exceptional_aim
 #define PERK_ENHANCEDSENSES /datum/perk/enhancedsenses
+//Akula
 #define PERK_IRON_FLESH /datum/perk/iron_flesh
 #define PERK_RECKLESSFRENZY /datum/perk/recklessfrenzy
+//Naramad
 #define PERK_BORN_WARRIOR /datum/perk/born_warrior
 #define PERK_ADRENALINEBURST /datum/perk/adrenalineburst
 #define PERK_STAY_HYDRATED /datum/perk/stay_hydrated
+//Opifex
 #define PERK_OPIFEX_TURRET /datum/perk/opifex_turret
 #define PERK_OPIFEX_PATCHKIT /datum/perk/opifex_patchkit
+//Cindarite
 #define PERK_SECOND_SKIN /datum/perk/second_skin
 #define PERK_PURGETOXINS /datum/perk/purgeinfections
 #define PERK_PURGEINFECTIONS /datum/perk/purgetoxins
+//Ch'mant
 #define PERK_SPIDER_FRIEND /datum/perk/spiderfriend
 #define PERK_SCUTTLEBUG /datum/perk/scuttlebug
+//Mycus
 #define PERK_DARK_HEAL /datum/perk/dark_heal
+//Folken
 #define PERK_FOLKEN_HEALING /datum/perk/folken_healing
+#define PERK_FOLKEN_HEALING_YOUNG /datum/perk/folken_healing/young
+//Slime
 #define PERK_LIMB_REGEN /datum/perk/limb_regen
 #define PERK_MIND_BOOST /datum/perk/slime_stat_boost/mental
 #define PERK_BODY_BOOST /datum/perk/slime_stat_boost/physical
@@ -143,6 +157,7 @@
 #define PERK_NANITE_CHEM_OXYRUSH /datum/perk/nanite_chem/oxyrush
 #define PERK_NANITE_CHEM_NANTIDOTE /datum/perk/nanite_chem/nantidotes
 
+
 //Wage Perks
 #define PERK_NEPOTISM /datum/perk/nepotism
 #define PERK_DEBTOR /datum/perk/debtor
@@ -165,8 +180,9 @@
 							   PERK_IRON_WILL, \
 							   PERK_SNACKIVORE)
 
-	//Temporary drug perks
+//Temporary drug perks
 #define PERK_ULTRASURGEON /datum/perk/drug/ultrasurgeon
+
 
 // Human/Abhuman Custom species racial perks
 //Body/Physical traits
@@ -202,3 +218,9 @@
 //#define PERK_AUTO_HISS /datum/perk/
 //#define PERK_CONDUCTIVE /datum/perk/
 //#define PERK_NO_DARK_SIGHT /datum/perk/
+
+//cooldown perks
+#define PERK_COOLDOWN_REASON /datum/perk/cooldown/reason
+#define PERK_COOLDOWN_EXERTION /datum/perk/cooldown/exertion
+
+#define PERK_NJOY /datum/perk/njoy

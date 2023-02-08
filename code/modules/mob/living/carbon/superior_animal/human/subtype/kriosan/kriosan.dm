@@ -6,8 +6,8 @@
 	icon_dead = "kriosan_troop_scout_dead"
 	stop_automated_movement_when_pulled = 1
 	wander = 0
-	maxHealth = 150 //About as much health as a normal person
-	health = 150
+	maxHealth = 100
+	health = 100
 
 	armor = list(melee = 50, bullet = 50, energy = 45, bomb = 50, bio = 100, rad = 100)
 
@@ -61,7 +61,7 @@
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/bullet/pistol_35
-	projectilesound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	projectilesound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 32

@@ -111,6 +111,10 @@
 	name= "banana vape vial"
 	preloaded_reagents = list("nicotine" = 20, "banana" = 10)
 
+/obj/item/reagent_containers/glass/beaker/vial/vape/mint
+	name= "mint vape vial"
+	preloaded_reagents = list("nicotine" = 20, "mint" = 10)
+
 /obj/item/reagent_containers/glass/beaker/vial/vape/nicotine
 	name = "nicotine vape vial"
 	preloaded_reagents = list("nicotine" = 30)
@@ -146,6 +150,25 @@
 	cut_overlays()
 	if(reagents.total_volume >= 1)
 		add_overlay("water_bucket")
+	if(has_lid())
+		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
+		add_overlay(lid)
+
+/obj/item/reagent_containers/glass/plastic_jug
+	name = "plastic jug"
+	desc = "It's a plastic jug, made of polyethylene and other compounds. Robust enough to carry a lot of liquid." // Jesse we have to cook
+	item_state = "plastic_jug"
+	icon_state = "plastic_jug"
+	matter = list(MATERIAL_PLASTIC = 3)
+	w_class = ITEM_SIZE_BULKY
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10,20,30,60,100,120,300)
+	volume = 300 // Bigger than a bucket
+	unacidable = 1
+
+/obj/item/reagent_containers/glass/plastic_jug/update_icon() // Necessary as it has no filling states.
+	cut_overlays()
+
 	if(has_lid())
 		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")
 		add_overlay(lid)

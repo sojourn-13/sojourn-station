@@ -68,6 +68,7 @@
 	desc = "A bulky antique suit of refurbished infantry armour, retrofitted with seals and coatings to make it EVA capable but also reducing mobility. This one has a void wolf paint job with intimidating red colors."
 	icon_state = "scaf_wolf"
 	item_state = "scaf_wolf"
+	slowdown = 1.1 // Red makes it go fasta!
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF/voidwolf
 
 /obj/item/clothing/head/helmet/space/void/SCAF/voidwolf
@@ -87,6 +88,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Standard"] = "scaf_wolf"
+	options["Void Cat"] = "scaf_cat" // Requested by Trilby long ago
 
 	var/choice = input(M,"What kind of helmet style do you want to switch to?","Adjust style") as null|anything in options
 
@@ -136,7 +138,7 @@
 	item_state = "scaf_mil"
 	helmet = /obj/item/clothing/head/helmet/space/void/SCAF/blackshield
 
-//Voidsuit for traitors
+//Voidsuit for contractors
 /obj/item/clothing/head/helmet/space/void/merc
 	name = "blood-red voidsuit helmet"
 	desc = "An advanced helmet designed for work in special operations. This version is additionally reinforced against melee attacks."

@@ -353,6 +353,40 @@
 	icon_state = "blackturtle"
 	item_state = "blackturtle"
 
+//Role:premier-turtlenecks
+
+/obj/item/clothing/under/turtleneck/premier
+	name = "premier turtleneck"
+	desc = "A green turtleneck complete with black pants and golden buckle."
+	icon_state = "tn_premier"
+	item_state = "tn_premier"
+
+/obj/item/clothing/under/turtleneck/premier/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Premier Default"] = "tn_premier"
+	options["Premier Drab"] = "tn_premierdrab"
+	options["Premier Skirt"] = "tn_premierskirt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+//Role:premier-turtlenecks end
+
 /obj/item/clothing/under/dismas
 	name = "highwayman clothes"
 	desc = "A set of clothes for a man of dubious morals who seeks redemption on the old road."
@@ -389,6 +423,41 @@
 		item_state = base
 		item_state_slots = null
 		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/under/skintight
+	name = "skintight bodysuit"
+	desc = "A bodysuit made of neoprene and other pliable fibers, it's elastic enough to fit skin-tight to the body of its wearer. \
+			Generally worn underneath mech pilot uniforms for the sake of motion sensor padding being easily attachable to it."
+	icon_state = "bodysuit"
+	item_state = "bodysuit"
+
+/obj/item/clothing/under/skintight/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Full bodysuit"] = ""
+	options["Rolled sleeves"] = "_sleeves"
+	options["Pants"] = "_pants"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You decided to wear your bodysuit in the [choice] style.")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -447,7 +516,7 @@
 	item_state = "summerdress_nt"
 
 /obj/item/clothing/under/sports
-	name= "White tank top"
-	desc= "Sweat stains not included."
+	name = "White tank top"
+	desc = "Sweat stains not included."
 	icon_state = "sports"
 	item_state = "sports"

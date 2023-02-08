@@ -24,6 +24,9 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND_NOLOSS
 		)
+	wield_delay = 0.5 SECOND
+	wield_delay_factor = 0.1 // 10 vig
+	gun_parts = list(/obj/item/part/gun/frame/grease = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 /obj/item/gun/projectile/automatic/texan/update_icon()
 	..()

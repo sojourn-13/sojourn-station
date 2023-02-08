@@ -25,6 +25,20 @@
 	allow_racking = FALSE
 	serial_type = "H&S"
 
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.3 // 30 vig
+	gun_parts = list(/obj/item/part/gun/frame/grizzly = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/part/gun/barrel/shotgun = 1)
+
+/obj/item/part/gun/frame/grizzly
+	name = "Grizzly frame"
+	desc = "A Grizzly shotgun frame. A militiaman's favorite."
+	icon_state = "frame_shotgun"
+	result = /obj/item/gun/projectile/shotgun/pump
+	resultvars = list(/obj/item/gun/projectile/shotgun/pump)
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/shotgun
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
+
 /obj/item/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)
 		return chambered.BB
@@ -66,6 +80,9 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/obrez
 
+	wield_delay = 0.4 SECOND
+	wield_delay_factor = 0.3 // 30 vig
+
 /obj/item/gun/projectile/shotgun/pump/obrez
 	name = "obrez \"Grizzly\" shotgun"
 	desc = "A common open-source pump-action shotgun, hacked up, sawn down, and ready to rob a liquor store."
@@ -82,3 +99,6 @@
 	penetration_multiplier = 0.8
 	init_recoil = RIFLE_RECOIL(1.3)
 	saw_off = FALSE
+
+	wield_delay = 0.2 SECOND
+	wield_delay_factor = 0.2 // 20 vig

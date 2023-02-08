@@ -436,6 +436,13 @@ obj/item/clothing/head/ribbon/red
 	item_state = "tacponhood_green"
 	flags_inv = HIDEEARS|BLOCKHAIR
 
+/obj/item/clothing/head/tacticalhood/grey
+	name = "grey tactical hood"
+	desc = "A tactical grey hood to no doubt match an equally tactical grey poncho."
+	icon_state = "tacponhood_grey"
+	item_state = "tacponhood_grey"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
 /obj/item/clothing/head/tacticalhood/camo
 	name = "camo tactical hood"
 	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."

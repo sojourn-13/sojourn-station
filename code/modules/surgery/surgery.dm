@@ -102,7 +102,7 @@
 			return FALSE
 
 	if(status & ORGAN_SPLINTED)
-		to_chat(user, SPAN_WARNING("You need to remove the brace first!"))
+		to_chat(user, SPAN_WARNING("You need to remove the splints first!"))
 		return FALSE
 
 	if(!S.is_valid_target(src, target))
@@ -140,17 +140,17 @@
 		time_adjust = -130
 
 	if(user.stats.getPerk(PERK_MASTER_HERBALIST) && !S.is_robotic)
-		difficulty_adjust = -90
-		time_adjust = -130
+		difficulty_adjust = -80 // Negates the difficulty of most basic surgical steps, but not as good as a professional at this
+		time_adjust = -100
 
 	// Self-surgery increases failure chance
 	if(owner && user == owner)
-		difficulty_adjust = 120
+		difficulty_adjust = 80 // Godlike status required for surgery, in preparation for hardcap of stats at 120
 		time_adjust = 40
 
 		//For if a user is doing 'surgery' on their own prosthetic bodypart
 		if(nature == MODIFICATION_SILICON)
-			difficulty_adjust = 80
+			difficulty_adjust = 60
 			time_adjust = 20
 
 		// ...unless you are a carrion
@@ -171,12 +171,14 @@
 			S.difficulty + difficulty_adjust,
 			required_stat = S.required_stat
 		)
+
 	else
 		var/wait
+		var/time_bonus = bio_time_bonus(user) // 80 being base duration, whatever value the proc returns will be deducted from the surgical step's duration. - Seb
 		if(ismob(surgery_target))
-			wait = do_mob(user, surgery_target, S.duration)
+			wait = do_mob(user, surgery_target, S.duration - time_bonus)
 		else
-			wait = do_after(user, S.duration, surgery_target)
+			wait = do_after(user, S.duration - time_bonus, surgery_target)
 
 		if(wait && prob(S.tool_quality(tool) - difficulty_adjust))
 			success = TOOL_USE_SUCCESS
@@ -361,3 +363,21 @@ proc/calculate_expert_surgery_bonus(mob/living/user)
 	else if(user_stat > STAT_LEVEL_GODLIKE)
 		stat_bonus = 30 + (user_stat - STAT_LEVEL_GODLIKE) * 0.1
 	return stat_bonus
+
+// Same logic as above, but instead gives a bonus to reduce surgery step duration
+// These formulas are done with a base 80 duration in mind and apply only to any non-tool_use_extended surgical steps
+// These are, namely, brute_heal(), burn_heal(), tox_heal() and insert_item()
+// - Sebastian Schrader
+
+proc/bio_time_bonus(mob/living/user)
+	var/user_stat = max(user.stats.getStat(STAT_BIO), user.stats.getStat(STAT_MEC)) // Pick the highest between MEC and BIO, so that roboticists may also benefit.
+	var/time_bonus = 0 // Maximum of 80
+	if(user_stat > STAT_LEVEL_EXPERT && user_stat <= STAT_LEVEL_PROF) // Average doctor gets 40 BIO, bonuses start from 41 MEC/BIO onwards
+		time_bonus = (user_stat - 40) // Minimum of 1 up to 20 at 60 MEC/BIO
+	else if(user_stat > STAT_LEVEL_PROF && user_stat <= STAT_LEVEL_GODLIKE)
+		time_bonus = 20 + (user_stat - STAT_LEVEL_PROF) // 21 up to 40 at 80 MEC/BIO
+	else if(user_stat > STAT_LEVEL_GODLIKE && user_stat <= 120) // Soft cap to prevent going over the surgical step duration
+		time_bonus = 40 + (user_stat - STAT_LEVEL_GODLIKE) // 41 to 80 (instant!) at 120 MEC/BIO and over
+	else if(user_stat >= 120) // Sanity check
+		time_bonus = 80 // Hardcap met at 120 MEC/BIO already, don't ever make it go over this no matter how insane our stats are
+	return time_bonus

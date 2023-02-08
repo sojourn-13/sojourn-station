@@ -167,10 +167,10 @@
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
-	max_durability = 100 //Can be made on mass and is meant to to be a light weak shield
-	durability = 100
+	max_durability = 80 //Can be made on mass and is meant to to be a light weak shield
+	durability = 80
 	slowdown_time = 0 //Were crappy and mass made by the mind
-	armor_list = list(melee = 10, bullet = 10, energy = 5, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 15, energy = 35, bomb = 15, bio = 0, rad = 0)
 	base_block_chance = 40
 	var/mob/living/carbon/holder // The one that prevent the blade from fading
 

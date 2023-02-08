@@ -25,7 +25,8 @@
 	var/list/nutriment_desc = list("food" = 1)
 	center_of_mass = list("x"=16, "y"=16)
 	w_class = ITEM_SIZE_SMALL
-
+	var/food_quality = 1
+	var/cooking_description_modifier
 	var/sanity_gain = 0.2 //Per bite
 	var/cooked = FALSE
 	var/appraised = 0 //Has this piece of food been appraised? We can only do that once.
@@ -220,17 +221,6 @@
 
 	return 0
 
-/obj/item/reagent_containers/food/snacks/examine(mob/user)
-	if(!..(user, 1))
-		return
-	if (bitecount==0)
-		return
-	else if (bitecount==1)
-		to_chat(user, SPAN_NOTICE("\The [src] was bitten by someone!"))
-	else if (bitecount<=3)
-		to_chat(user, SPAN_NOTICE("\The [src] was bitten [bitecount] time\s!"))
-	else
-		to_chat(user, SPAN_NOTICE("\The [src] was bitten multiple times!"))
 
 /obj/item/reagent_containers/food/snacks/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/storage))
@@ -286,6 +276,8 @@
 			for(var/i=1 to (slices_num-slices_lost))
 				var/obj/slice = new slice_path (src.loc)
 				reagents.trans_to_obj(slice, reagents_per_slice)
+				if(istype(slice_path, /obj/item/reagent_containers/food/snacks))
+					slice_path?:food_quality = src.food_quality
 			qdel(src)
 			return
 

@@ -64,8 +64,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8
-		)
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
+		GUN_UPGRADE_STEPDELAY_MULT = 0.9, // Actually useful beyond being a glorified ergo grip
+		GUN_UPGRADE_MUZZLEFLASH = 0.75)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.prefix = "fluted barrel"
@@ -81,9 +82,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.1,
-		GUN_UPGRADE_FIRE_DELAY_MULT = 1.1,
-		GUN_UPGRADE_RECOIL = 1.25, // Better gas control should make it have less recoil actually but let's not question spessmen logic.
+		GUN_UPGRADE_DAMAGE_MULT = 1.2,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.1, // Better than the mod used to make it
+		GUN_UPGRADE_RECOIL = 1.1, // Better than a ported barrel
 		UPGRADE_BULK = 1
 		)
 	I.gun_loc_tag = GUN_BARREL
@@ -171,7 +172,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.3,
+		GUN_UPGRADE_DAMAGE_MULT = 1.3,
 		GUN_UPGRADE_CHARGECOST = 1.15,
 		UPGRADE_BULK = 0.5,
 		)
@@ -179,6 +180,7 @@
 	I.req_gun_tags = list(GUN_ENERGY)
 	I.prefix = "focused"
 
+/*
 /obj/item/gun_upgrade/barrel/excruciator_plus
 	name = "Factorial \"EXCRUCIATOR\" hyper lens"
 	desc = "It's time for us to shine. This device has been modified by members of the factorial path, doubling its strength and drawbacks, for better or worse."
@@ -190,7 +192,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.45,
+		GUN_UPGRADE_DAMAGE_MULT = 1.45,
 		GUN_UPGRADE_CHARGECOST = 1.25,
 		UPGRADE_BULK = 0.75,
 		)
@@ -200,7 +202,7 @@
 
 /obj/item/gun_upgrade/trigger
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
-
+*/
 //Disables the ability to toggle the safety, toggles the safety permanently off, decreases fire delay. Acquired through loot spawns
 /obj/item/gun_upgrade/trigger/dangerzone
 	name = "\"Danger Zone\" Trigger"
@@ -314,11 +316,11 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.1, //10% more damage
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9, //10% declay removed
+		GUN_UPGRADE_DAMAGE_MULT = 1.1,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9, //10% delay removed
 		GUN_UPGRADE_PEN_MULT = 1.2, //we shoot harder, but not by much
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.9, //We shoot somehwat faster (not hit scan)
-		GUN_UPGRADE_RECOIL = 0.85, //15% less recoil (dosnt help as much without stacking it with other mods)
+		GUN_UPGRADE_RECOIL = 0.85, //15% less recoil (doesn't help as much without stacking it with other mods)
 		UPGRADE_BULK = -1
 		)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
@@ -340,8 +342,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.15, //15% more damage
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.15, //15% more damage to mobs
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8, //20% declay removed
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8, //20% delay removed
 		GUN_UPGRADE_PEN_MULT = 2, //we shoot harder
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.6, //We shoot way faster (not hit scan)
 		GUN_UPGRADE_MUZZLEFLASH = 2, //Bigger flash
@@ -455,7 +456,7 @@
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 2,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
-	GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 2,
+	GUN_UPGRADE_DAMAGE_MULT = 2,
 	GUN_UPGRADE_CHARGECOST = 2)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
@@ -610,7 +611,9 @@
 	)
 	I.removal_time *= 10
 	I.gun_loc_tag = GUN_MECHANISM
+	I.req_fuel_cell = REQ_CELL
 	I.prefix = "catalytic"
+	I.greyson_moding = TRUE
 
 /obj/item/gun_upgrade/barrel/gauss
 	name = "Void Wolf \"Gauss Coil\" barrel"
@@ -716,8 +719,8 @@
 
 // Greatly reduces firerate but will turn on or off auto-eject
 /obj/item/gun_upgrade/magwell/auto_eject
-	name = "H&S \"Dropper\" Magwell Braker"
-	desc = "A rather smartly designed magwell braker box that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwel itself out! When force-ejecting a mag, will play a beeping sound."
+	name = "H&S \"Dropper\" Magwell Autodrop Mechanism"
+	desc = "A rather smartly-designed magwell breaker box that, when added to guns that do not already possess an auto-eject feature, will automatically drop the gun's magazine into the floor once it empties! When force-ejecting a mag, it will play a beeping sound."
 	icon_state = "auto_spingbox"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2)
 	price_tag = 70
@@ -735,9 +738,9 @@
 
 //Fancy verson
 /obj/item/gun_upgrade/magwell/auto_eject/no_removal
-	name = "SI \"Faller\" Magwell Clearer"
-	desc = "A rather oddly designed magwell clearing device that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwell itself out! When force-ejecting a mag, it will play a beeping sound.\
-	Unlike the other versions on the market this, once added, will not be removable as it replaces key components to be as seamless as possible."
+	name = "SI \"Braker\" Magwell Autodrop System"
+	desc = "A rather oddly-designed magwell breaker box that, when added to guns that do not already possess an auto-eject feature, will automatically drop the gun's magazine into the floor once it empties! When force-ejecting a mag, it will play a beeping sound.\
+	Unlike the other versions on the market this, once added, will not be removable as it replaces key components of the receiver to be as seamless as possible."
 	can_remove = FALSE
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GLASS = 2, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1)
 
@@ -757,7 +760,7 @@
 
 /obj/item/gun_upgrade/underbarrel/bipod
 	name = "H&S \"Stand\" bipod"
-	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. It greatly reduces recoil when deployed, but also increases the gun\'s weight, making it unwieldy unless braced."
+	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. It greatly reduces recoil when deployed, but also increases the gun's weight, making it unwieldy unless braced."
 	icon_state = "bipod"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3)
 	price_tag = 130

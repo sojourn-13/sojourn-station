@@ -230,6 +230,14 @@
 /turf/simulated/wall/wood/New(var/newloc)
 	..(newloc,MATERIAL_WOOD)
 
+
+/turf/simulated/wall/marble/New(var/newloc)
+	..(newloc,MATERIAL_MARBLE)
+
+/turf/simulated/wall/marble/dark/New(var/newloc)
+	..(newloc,MATERIAL_MARBLE)
+	base_color = "#333333"
+
 /turf/simulated/wall/wood
 	icon_state = "wood"
 	icon_base_override = "wood"

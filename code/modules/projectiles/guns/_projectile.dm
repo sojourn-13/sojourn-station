@@ -177,7 +177,7 @@
 	if(istype(A, /obj/item/ammo_magazine))
 		var/obj/item/ammo_magazine/AM = A
 		if(!(load_method & AM.mag_type) || caliber != AM.caliber)
-			to_chat(user, SPAN_WARNING("[AM] won't fit into the magwell. This mag and ammunition inside it is incompatible with [src]."))
+			to_chat(user, SPAN_WARNING("[AM] won't fit into the magwell. This mag and ammunition inside it is incompatible with \the [src]."))
 			return //incompatible
 
 		//How are we trying to apply this magazine to this gun?
@@ -200,16 +200,21 @@
 		switch(method_for_this_load)
 			if(MAGAZINE)
 				if(AM.ammo_mag != ammo_mag && ammo_mag != "default")
-					to_chat(user, SPAN_WARNING("[src] requires another magazine.")) //wrong magazine
+					to_chat(user, SPAN_WARNING("[src] requires another magazine.")) // Magazine not defined, might be internal
 					return
 				if(tac_reloads && ammo_magazine)
-					unload_ammo(user)	// ejects the magazine before inserting the new one.
-					to_chat(user, SPAN_NOTICE("You tactically reload your [src] with [AM]!"))
+					if(!(AM.mag_well & mag_well))
+						to_chat(user, SPAN_WARNING("\The [AM] won't fit into the magwell.")) //Prevents an exploit
+						return
+					else if(replace_item(ammo_magazine, A, user)) // The replace_item() proc already existed, THIS is a proper tac reload and not an Iraqi reload.
+						ammo_magazine = A
+						update_icon()
+						to_chat(user, SPAN_NOTICE("You tactically reload your [src] with [AM]!"))
 				else if(ammo_magazine)
-					to_chat(user, SPAN_WARNING("[src] already has a magazine loaded.")) //already a magazine here
+					to_chat(user, SPAN_WARNING("\The [src] already has a magazine loaded.")) //already a magazine here, and this type of gun doesn't allow tactical reloads.
 					return
 				if(!(AM.mag_well & mag_well))
-					to_chat(user, SPAN_WARNING("[AM] won't fit into the magwell.")) //wrong magazine
+					to_chat(user, SPAN_WARNING("\The [AM] won't fit into the magwell.")) // The gun lacks the proper magwell for this type of mag
 					return
 				user.remove_from_mob(AM)
 				AM.loc = src
@@ -227,14 +232,14 @@
 				if(loaded.len >= max_shells)
 					if(ammo_magazine)
 						if(ammo_magazine.stored_ammo.len >= ammo_magazine.max_ammo)
-							to_chat(user, SPAN_WARNING("[src] is full!"))
+							to_chat(user, SPAN_WARNING("\The [src] is full!"))
 							return
 					else
-						to_chat(user, SPAN_WARNING("[src] is full!"))
+						to_chat(user, SPAN_WARNING("\The [src] is full!"))
 						return
 				var/count = 0
 				if(AM.reload_delay)
-					to_chat(user, SPAN_NOTICE("It takes some time to reload [src] with [AM]..."))
+					to_chat(user, SPAN_NOTICE("It takes some time to reload \the [src] with \the [AM]..."))
 				if (do_after(user, AM.reload_delay, user))
 					for(var/obj/item/ammo_casing/C in AM.stored_ammo)
 						if(loaded.len >= max_shells)
@@ -254,7 +259,7 @@
 							count++
 							AM.update_icon()
 				if(count)
-					user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
+					user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into \the [src]."))
 					if(reload_sound) playsound(src.loc, reload_sound, 75, 1)
 					cock_gun(user)
 				update_firemode()
@@ -262,14 +267,14 @@
 	else if(istype(A, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/C = A
 		if(!(load_method & SINGLE_CASING) || caliber != C.caliber)
-			to_chat(user, SPAN_WARNING("[src] is incompatible with [C]."))
+			to_chat(user, SPAN_WARNING("\The [src] is incompatible with \the [C]."))
 			return //incompatible
 		if(loaded.len >= max_shells)
 			to_chat(user, SPAN_WARNING("[src] is full."))
 			return
 
 		if(C.reload_delay)
-			to_chat(user, SPAN_NOTICE("It takes some time to reload [src] with [C]..."))
+			to_chat(user, SPAN_NOTICE("It takes some time to reload \the [src] with \the [C]..."))
 		if (!do_after(user, C.reload_delay, user))
 			return
 
@@ -299,7 +304,7 @@
 			C.forceMove(src)
 			loaded.Insert(1, C) //add to the head of the list
 		update_firemode()
-		user.visible_message("[user] inserts \a [C] into [src].", SPAN_NOTICE("You insert \a [C] into [src]."))
+		user.visible_message("[user] inserts \a [C] into [src].", SPAN_NOTICE("You insert \a [C] into \the [src]."))
 		if(bulletinsert_sound) playsound(src.loc, bulletinsert_sound, 75, 1)
 
 	update_icon()
@@ -325,13 +330,13 @@
 					count++
 				loaded.Cut()
 			if(count)
-				user.visible_message("[user] unloads [src].", SPAN_NOTICE("You unload [count] round\s from [src]."))
+				user.visible_message("[user] unloads [src].", SPAN_NOTICE("You unload [count] round\s from \the [src]."))
 				if(bulletinsert_sound) playsound(src.loc, bulletinsert_sound, 75, 1)
 		else if(load_method & SINGLE_CASING)
 			var/obj/item/ammo_casing/C = loaded[loaded.len]
 			loaded.len--
 			user.put_in_hands(C)
-			user.visible_message("[user] removes \a [C] from [src].", SPAN_NOTICE("You remove \a [C] from [src]."))
+			user.visible_message("[user] removes \a [C] from [src].", SPAN_NOTICE("You remove \a [C] from \the [src]."))
 			if(bulletinsert_sound) playsound(src.loc, bulletinsert_sound, 75, 1)
 	else
 		to_chat(user, SPAN_WARNING("[src] is empty."))

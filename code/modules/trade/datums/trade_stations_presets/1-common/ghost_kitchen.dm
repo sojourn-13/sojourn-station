@@ -14,7 +14,7 @@
 	regain_stock = FALSE
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 300
-	stations_recommended = list("mcronalds") //Alt way to get to it
+	stations_recommended = list("mcronalds", "botany") //Alt way to get to it
 	inventory = list(
 		"Non-Meals" = list(
 			/obj/item/reagent_containers/food/snacks/rawcutlet = good_data("Raw Cutlet", list(-100, -50), 5),
@@ -171,7 +171,7 @@
 		),
 		"Speghetti" = list(
 			/obj/item/reagent_containers/food/snacks/boiledspagetti= good_data("Boiled Noodles", list(-100, -50), 20),
-			/obj/item/reagent_containers/food/snacks/spagetti = good_data("Speghetti", list(-100, -50), 23),
+			/obj/item/reagent_containers/food/snacks/spagetti = good_data("Raw Speghetti", list(-100, -50), 23),
 			/obj/item/reagent_containers/food/snacks/pastatomato = good_data("Spaghetti Pasta", list(-100, -50), 30),
 			/obj/item/reagent_containers/food/snacks/meatballspagetti = good_data("Spaghetti & Meatballs", list(-100, -50), 35),
 			/obj/item/reagent_containers/food/snacks/spesslaw = good_data("Spesslaw", list(-100, -50), 45)

@@ -340,11 +340,17 @@
 	options["prime royal"] = "prime_alt"
 	options["prime royal claric"] = "prime_alt2"
 	options["prime royal doctor"] = "prime_alt3"
+	options["prime saint"] = "prime_saint"
+	options["prime paladin"] = "prime_paladin"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		if(choice == "prime saint")
+			flags_inv = HIDEEARS
+		else
+			flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
@@ -490,7 +496,7 @@
 	desc = "A helmet patched together by Prospector Salvagers, light and easy to breath in, \
 	the helmet has a few bells and whistles, a set of inbuilt goggles to keep dust and blood out of ones eyes, \
 	salvaged Greyson material coating it's outside it offer superb protection, and even a inbuilt radio. \
-	Tragically the scav incharge of the radio was unable to tune it or turn it on."
+	Tragically the scav in charge of the radio was unable to tune it or turn it on."
 	icon_state = "forehead_helmet"
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 23, MATERIAL_PLATINUM  = 8, MATERIAL_STEEL = 30, MATERIAL_SILVER = 12) //worth stealing
 	price_tag = 1200
@@ -522,6 +528,7 @@
 	var/list/options = list()
 	options["salvaged helmet"] = "forehead_helmet"
 	options["alt salvaged helmet"] = "alt_scavenger_helmet"
+	options["Ranger"] = "quak" // Due to popular demand
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -742,12 +749,43 @@
 	name = "bucket-helm"
 	desc = "A bucket with two holes for eyes and some smaller ones for ventilation, with steel added to gain some protection. One may say, <i>'Situla Vult!'</i>."
 	icon_state = "hm_greathelm"
-	armor_list = list(melee = 27, bullet = 29,energy = 27, bomb = 3, bio = 1, rad = 0)
+	armor_list = list(melee = 27, bullet = 15,energy = 25, bomb = 12, bio = 1, rad = 0) // Only difference with handmade combat helmet is 2 sheets of metal, shouldn't be that far superior.
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS|EYES
 	siemens_coefficient = 0.6
 	price_tag = 85
 	obscuration = MEDIUM_OBSCURATION
+
+/obj/item/clothing/head/helmet/handmade/scavengerhelmet
+	name = "scavenger helmet"
+	desc = "A sturdy, handcrafted helmet. It's well balanced and sits low on your head, with padding on the inside."
+	icon_state = "scav_helmet"
+	armor_list = list(melee = 35, bullet = 20, energy = 25, bomb = 25, bio = 0, rad = 0)
+	price_tag = 200
+	max_upgrades = 1 // Good baseline already
+
+/obj/item/clothing/head/helmet/handmade/scavengerhelmet/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["scavenger grey"] = "scav_helmet"
+	options["scavenger brown"] = "quak" // Quad damage!
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] colors.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/armor/helmet/penance
 	name = "penance helmet"

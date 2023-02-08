@@ -112,7 +112,7 @@
 	if(istype(wear_suit,/obj/item/clothing/suit/space))
 		var/obj/item/clothing/suit/space/suit = wear_suit
 		if(suit.supporting_limbs && suit.supporting_limbs.len)
-			to_chat(user, SPAN_WARNING("You cannot remove the splints - [src]'s [suit] is supporting some of the breaks."))
+			to_chat(user, SPAN_WARNING("You cannot remove the splints - [src]'s [suit] is in the way."))
 			can_reach_splints = 0
 
 	if(can_reach_splints)

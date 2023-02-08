@@ -27,6 +27,16 @@
 		list(QUALITY_WELDING, 10, "time" = 30),
 		list(QUALITY_HAMMERING, 10, "time" = 20)
 	)
+	
+/datum/craft_recipe/weapon/parrying_dagger
+	name = "parrying dagger"
+	result = /obj/item/shield/parrying
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(QUALITY_HAMMERING, 10, "time" = 20),
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 10)
+	)
 
 /datum/craft_recipe/weapon/knife_blade
 	name = "butterfly knife blade"
@@ -117,6 +127,17 @@
 		list(/obj/item/tray, 1),
 		list(/obj/item/storage/belt, 1, "time" = 10)
 	)
+
+/datum/craft_recipe/weapon/dozershield
+	name = "bulldozer shield"
+	result = /obj/item/shield/riot/dozershield
+	steps = list (
+		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL), // Frame
+		list(/obj/structure/closet, 1, "time" = 30), // We need its door
+		list(QUALITY_WELDING, 10, 20), // Take the closet's door out
+		list(QUALITY_SAWING, 10, 20), // Weld it to the frame
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL), // Reinforce with anti ballistics
+		list(QUALITY_WELDING, 10, 20)) // Weld the "kevlar" to finish
 
 /datum/craft_recipe/weapon/homewrecker
 	name = "homewrecker"

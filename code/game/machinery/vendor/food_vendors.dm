@@ -273,6 +273,13 @@
 					/obj/item/tool/knife = 6,
 					/obj/item/material/kitchen/utensil/spoon = 6,
 					/obj/item/material/kitchen/rollingpin = 3,
+					/obj/item/spatula = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/board = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate = 6,
 					/obj/item/reagent_containers/glass/rag = 5,
 					/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/shot = 30,
@@ -321,6 +328,13 @@
 					/obj/item/tool/knife = 6,
 					/obj/item/material/kitchen/utensil/spoon = 6,
 					/obj/item/material/kitchen/rollingpin = 3,
+					/obj/item/spatula = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/board = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate = 6,
 					/obj/item/reagent_containers/glass/rag = 5,
 					/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/shot = 30,
@@ -360,6 +374,13 @@
 					/obj/item/tool/knife = 35,
 					/obj/item/material/kitchen/utensil/spoon = 3,
 					/obj/item/material/kitchen/rollingpin = 9,
+					/obj/item/spatula = 12,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/board = 15,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven = 5,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan = 40,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot = 40,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl = 8,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate = 6,
 					/obj/item/reagent_containers/glass/rag = 15,
 					/obj/item/reagent_containers/food/drinks/drinkingglass = 1,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/shot = 1,
@@ -471,3 +492,50 @@
 
 	if(contents.len && !(stat & NOPOWER))
 		add_overlay(image(icon, icon_fill))
+
+/obj/machinery/vending/plant_gene
+	name = "Eugene's Plant Genes"
+	desc = "A vendor selling data disks with individual plant genes."
+	product_slogans = "Keep your plants on!;Get back to your roots!;Don't leaf me!"
+	product_ads = "Seed for yourself!;Green!;OMG! Only Modified Genetically!"
+	icon_state = "seeds"
+	products = list(
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/potency_high = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/yield_high = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/production_high = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/maturation_fast = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/metabolism/no_nutrients_water = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/psilocybin = 2
+		)
+	contraband = list(
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/potency_max = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/yield_max = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/production_max = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/maturation_faster = 2
+		)
+	prices = list(
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/potency_high = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/yield_high = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/production_high = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/maturation_fast = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/metabolism/no_nutrients_water = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/psilocybin = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/potency_max = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/yield_max = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/production_max = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/maturation_faster = 500
+		)
+
+/obj/machinery/vending/plant_gene/Initialize()
+	. = ..()
+	var/light_color = pick(\
+		COLOR_LIGHTING_RED_DARK,\
+		COLOR_LIGHTING_BLUE_DARK,\
+		COLOR_LIGHTING_GREEN_DARK,\
+		COLOR_LIGHTING_ORANGE_DARK,\
+		COLOR_LIGHTING_PURPLE_DARK,\
+		COLOR_LIGHTING_CYAN_DARK\
+		)
+	set_light(1.4, 1, light_color)
+	earnings_account = department_accounts[vendor_department]	// Weirdness with offship account demands this
+	wires = new /datum/wires/vending/intermediate(src)

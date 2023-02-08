@@ -15,7 +15,7 @@
 /obj/item/tool/sword/nt/equipped(mob/living/M)
 	. = ..()
 	if(is_held() && is_neotheology_disciple(M))
-		embed_mult = 0.1
+		embed_mult = 0.05
 	else
 		embed_mult = initial(embed_mult)
 
@@ -147,12 +147,12 @@
 /obj/item/tool/sword/nt/spear/equipped(mob/living/W)
 	. = ..()
 	if(is_held() && is_neotheology_disciple(W))
-		embed_mult = 0.1
+		embed_mult = 0.2
 	else
 		embed_mult = initial(embed_mult)
 
 /obj/item/tool/sword/nt/spear/dropped(mob/living/W)
-	embed_mult = 300
+	embed_mult = 600
 	..()
 
 /obj/item/tool/sword/nt/spear/on_embed(mob/user)
@@ -246,6 +246,39 @@
 		target.throw_at(get_edge_target_turf(target, throwdir),whack_speed,whack_speed)
 	..()
 
+/obj/item/tool/sword/nt/power
+	name = "\"Vexilar\" forceblade"
+	desc = "A hefty greatsword with golden wiring embedded into its handle and blade, designed to channel the power of a cruciform to project an ultra-sharp energy blade. \
+	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
+	icon_state = "nt_force"
+	item_state = "nt_force"
+	switched_on_icon_state = "nt_force_on"
+	switched_on_item_state = "nt_force_on"
+	force = WEAPON_FORCE_DANGEROUS
+	armor_penetration = ARMOR_PEN_MODERATE
+	w_class = ITEM_SIZE_BULKY
+	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 4, MATERIAL_GOLD = 3)
+	toggleable = TRUE
+	switched_on_forcemult = 1.75 //35 total; slightly better than a halberd
+	switched_on_penmult = 2 //30 total; same as a halberd
+	switched_on_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 30)
+	switched_off_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
+	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
+	active_time = 50
+	var/faith_cost = 50 //How much faith does it take to use this?
+
+/obj/item/tool/sword/nt/power/attack_self(mob/living/user)
+	if(!user.get_core_implant(/obj/item/implant/core_implant/cruciform)) //No cruciform, no activation
+		to_chat(user, SPAN_WARNING("You have absolutely no idea how this works."))
+		return FALSE
+	else
+		var/obj/item/implant/core_implant/cruciform/user_cruci = user.get_core_implant(/obj/item/implant/core_implant/cruciform)
+		if(user_cruci.power < faith_cost)
+			to_chat(user, SPAN_WARNING("Your cruciform has to recharge before you activate the [name]!"))
+			return FALSE
+		else
+			user_cruci.use_power(faith_cost)
+	..()
 /obj/item/shield/riot/nt
 	name = "shield"
 	desc = "A saintly looking shield, let the God protect you. \
@@ -255,11 +288,14 @@
 	icon_state = "nt_shield"
 	item_state = "nt_shield"
 	force = WEAPON_FORCE_DANGEROUS
-	armor_list = list(melee = 20, bullet = 30, energy = 30, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 20, bullet = 20, energy = 10, bomb = 15, bio = 0, rad = 0)
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 10, MATERIAL_GOLD = 5)
 	price_tag = 1000
 	base_block_chance = 60
 	item_flags = DRAG_AND_DROP_UNEQUIP
+
+	max_durability = 180
+	durability = 180
 
 	item_icons = list(
 		slot_back_str = 'icons/inventory/back/mob.dmi')
@@ -328,8 +364,8 @@
 	price_tag = 300
 	base_block_chance = 45
 	item_flags = DRAG_AND_DROP_UNEQUIP
-	max_durability = 110 //So we can brake and need healing time to time
-	durability = 110
+	max_durability = 60 //So we can brake and need healing time to time
+	durability = 60
 	var/obj/item/storage/internal/container
 	var/storage_slots = 1
 	var/max_w_class = ITEM_SIZE_HUGE
@@ -406,7 +442,7 @@
 /obj/item/stack/thrown/nt/equipped(mob/living/M)
 	..()
 	if(is_held() && is_neotheology_disciple(M))
-		embed_mult = 0.1
+		embed_mult = 0.2
 	else
 		embed_mult = initial(embed_mult)
 
@@ -431,5 +467,5 @@
 	//style_damage = 30 - todo port this maybe?
 
 /obj/item/stack/thrown/nt/verutum/launchAt()
-	embed_mult = 300
+	embed_mult = 600
 	..()

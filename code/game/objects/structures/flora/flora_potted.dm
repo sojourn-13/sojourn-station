@@ -171,31 +171,31 @@
 
 /obj/structure/flora/pottedplant/bamboo
 	name = "potted bamboo shoots plant"
-	desc = "A small patch of bamboo shoots. Perfect for sipping tea by."
+	desc = "A small patch of bamboo shoots. Perfect background ornament for tea ceremonies."
 	icon_state = "plant-27"
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/bamboo_red
 	name = "potted red bamboo shoots plant"
-	desc = "A small patch of red bamboo shoots. Perfect for sipping red tea by."
+	desc = "A small patch of red bamboo shoots. Perfect background ornament for tea ceremonies."
 	icon_state = "plant-28"
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/redshoot
 	name = "potted red shoot plant"
-	desc = "A meak and red vine plant that grows bright yellow pettles."
+	desc = "A meek and red vine plant that grows bright yellow petals."
 	icon_state = "plant-29"
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/rotwood
 	name = "potted iron rot tree"
-	desc = "A mini red rot tree typically grown in high iron deposits."
+	desc = "A mini red rot tree typically grown in ore deposits high on iron."
 	icon_state = "plant-30"
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/rotwood_green
 	name = "potted copper rot tree"
-	desc = "A mini green rot tree typically grown in high copper deposits well it would normally be a copper colour it leaches only off the oxygenation."
+	desc = "A mini green rot tree typically grown in ore deposits high on copper. While it would normally be of a copper color, it has changed its leaves' colors due to exposure to oxygen."
 	icon_state = "plant-31"
 	needs_to_maintain = TRUE
 
@@ -207,49 +207,49 @@
 
 /obj/structure/flora/pottedplant/bush_buds
 	name = "potted bush bud grove tree"
-	desc = "A round bush that produces large bulbs of silky peddles this ones a deep blue."
+	desc = "A round bush that produces small silky bulbs and flowers of varied colors, this one has budding deep blue flowers."
 	icon_state = "plant-33"
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/bush_buds_yellow
 	name = "potted yellow bush bud grove tree"
-	desc = "A round bush that produces large bulbs of silky peddles this ones a mellow yellow do to lack of propper lighting in its natural habitat."
+	desc = "A round bush that produces small silky bulbs and flowers of varied colors, this one has budding mellow yellow flowers due to lack of proper lighting in its natural habitat."
 	icon_state = "plant-34"
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/grave_poppers
 	name = "potted grave poppers"
-	desc = "A large grave popper plant that tend to grow over graves and other battle fields. This one is a mix of red and blue in its pettles."
+	desc = "A large grave popper plant that tends to grow over graves and former battlefields. This one has a mix of red and blue in its petals."
 	icon_state = "plant-35"
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/bush_buds_red
 	name = "potted ruby bush bud grove tree"
-	desc = "A round bush that produces large bulbs of silky peddles this ones a ruby red reflecting on its green base."
+	desc = "A round bush that produces small silky bulbs and flowers of varied colors, this one has budding ruby red flowers."
 	icon_state = "plant-36"
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/grave_poppers_blue
 	name = "potted blue grave poppers"
-	desc = "A large grave popper plant that tend to grow over graves and other battle fields. This one is a light blue in its pettles."
+	desc = "A large grave popper plant that tends to grow over graves and former battlefields. This one has light blue petals."
 	icon_state = "plant-37"
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/grave_poppers_red
 	name = "potted red grave poppers"
-	desc = "A large grave popper plant that tend to grow over graves and other battle fields. This one is a deep red in its pettles."
+	desc = "A large grave popper plant that tends to grow over graves and former battlefields. This one is a deep red in its pettles."
 	icon_state = "plant-38"
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/barrel_cactus
 	name = "potted barrel cactus"
-	desc = "Small and subby barrel cactus requiring little to not maintains."
+	desc = "Small and stubby barrel cactus requiring little to no maintenance."
 	icon_state = "plant-39"
 	needs_to_maintain = FALSE
 
 /obj/structure/flora/pottedplant/clockcult
 	name = "crafted tesla bolb plant"
-	desc = "Handmade of brass and life like bulb plant pettles it runs on an intenal cell that makes a ticking sound?"
+	desc = "A handmade plant-like structure of brass and lifelike bulbs, it runs on a perpetual motion mechanism that makes a strange ticking sound..."
 	icon_state = "plant-40"
 	light_range = 2
 	light_power = 0.6
@@ -258,19 +258,19 @@
 
 /obj/structure/flora/pottedplant/bush_ball
 	name = "potted bush ball"
-	desc = "Mini bush trimmed to be in a ball for a generic plant to have in a office setting."
+	desc = "Mini bush trimmed to be ball shaped, makes for a generic plant to have in an office setting."
 	icon_state = "plant-41"
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/bush_tall
 	name = "potted bush piller"
-	desc = "Mini bush trimmed to be in a piller for a generic plant to have in a office setting."
+	desc = "Mini bush trimmed to be pillar shaped, makes for a generic plant to have in an office setting."
 	icon_state = "plant-42"
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/bush_bullet
 	name = "potted bush cone"
-	desc = "Mini bush trimmed to be in a cone for a generic plant to have in a office setting."
+	desc = "Mini bush trimmed to be cone shaped, makes for a generic plant to have in an office setting."
 	icon_state = "plant-43"
 	needs_to_maintain = TRUE
 
@@ -282,7 +282,7 @@
 
 /obj/structure/flora/pottedplant/water_root
 	name = "potted water root vine"
-	desc = "A rather Sol looking water root vine that tends to be able to grow in any climet..."
+	desc = "A rather Sol looking water root vine that tends to be able to grow in any climate..."
 	icon_state = "plant-45"
 	needs_to_maintain = TRUE
 
@@ -294,7 +294,7 @@
 
 /obj/structure/flora/pottedplant/xmas
 	name = "small christmas tree"
-	desc = "This is a tiny well lit decorative christmas tree."
+	desc = "This is a tiny, well-lit decorative christmas tree."
 	icon_state = "plant-xmas"
 	needs_to_maintain = TRUE
 

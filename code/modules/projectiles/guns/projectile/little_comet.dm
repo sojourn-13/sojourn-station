@@ -1,13 +1,14 @@
 /obj/item/gun/projectile/revolver/little_comet
 	name = "\"Little Comet\" revolver"
 	desc = "A special revolver developed to be as flashy and over priced as the businessmen that carry them. A special gravity based modification in the cylinder allows for it to over penetrate \
-	even solid steel walls despite its low caliber, the weapons value derived from said gravitonic modification being old tech from greyson that can no longer be reproduced. Uses 9mm special rounds."
+	even solid steel walls despite its low caliber, the weapons value derived from said gravitonic modification being old tech from Greyson Positronics that can no longer be reproduced. Uses 9mm special rounds."
 	icon = 'icons/obj/guns/projectile/little_comet.dmi'
 	icon_state = "little_comet"
 	item_state = "little_comet"
 	drawChargeMeter = FALSE
 	max_shells = 6
 	caliber = CAL_PISTOL
+	fire_sound = 'sound/weapons/guns/fire/9mm_revolver.ogg'
 	origin_tech = list(TECH_COMBAT = 10, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/pistol_35
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)

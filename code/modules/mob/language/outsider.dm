@@ -111,7 +111,7 @@
 //Kriosan racial language. Lore: German creolization due to Sol-Gov occupation; therefor intelligibility with German.
 /datum/language/kriosan
 	name = LANGUAGE_KRIOSAN
-	desc = "The main language of Krios, Kriosan Creole. Mostly consiting of quill-hound noises, posturing and many German borrow words."
+	desc = "The main language of Krios, Kriosan Creole. Mostly consiting of quill-hound noises, posturing and many Eurolang loan words."
 	speech_verb = list("states", "rumbles")
 	ask_verb = list("stipulates", "huffs")
 	exclaim_verb = list("barks", "yips")
@@ -120,7 +120,7 @@
 	flags = RESTRICTED
 	has_written_form = FALSE	//Lore reason - Creolized German and their ancient native language. Therefor their written language is 'dead' effectively.
 	partial_understanding = list(
-		LANGUAGE_GERMAN = 75,
+		LANGUAGE_EURO = 75,
 		LANGUAGE_COMMON = 10
 	)
 	shorthand = "KO"

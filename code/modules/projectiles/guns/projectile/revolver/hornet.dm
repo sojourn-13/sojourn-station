@@ -15,9 +15,23 @@
 	penetration_multiplier = 1
 	init_recoil = HANDGUN_RECOIL(1) //So it can accully be used
 	zoom_factors = list(0.2)
-	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	serial_type = "SA"
+
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig
+	gun_parts = list(/obj/item/part/gun/frame/hornet = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/kurtz = 1)
+
+/obj/item/part/gun/frame/hornet
+	name = "Hornet frame"
+	desc = "A Hornet revolver frame. The pain-maker!"
+	icon_state = "frame_hornet"
+	result = /obj/item/gun/projectile/revolver/hornet
+	resultvars = list(/obj/item/gun/projectile/revolver/hornet)
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
+	barrelvars = list(/obj/item/part/gun/barrel/kurtz)

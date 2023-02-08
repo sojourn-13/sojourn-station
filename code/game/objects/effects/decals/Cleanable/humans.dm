@@ -31,12 +31,12 @@ var/global/list/image/splatter_cache=list()
 	. = ..()
 	if(iscarbon(user) || issilicon(user))
 		if(shoe_types.len && (user.stats?.getPerk(PERK_EAR_OF_QUICKSILVER) || user.stats.getStat(STAT_VIG) >= STAT_LEVEL_EXPERT)) //Basiclly rangers are meant to do this so they have a bypass
-			to_chat(user, "<span class='info'>Their is a trace shoe print that likly is form:</span>")
+			to_chat(user, "<span class='info'>There is traces of shoe prints that are likely from:</span>")
 			for(var/shoe in shoe_types)
 				var/obj/item/clothing/shoes/S = shoe
 				to_chat(user, "<span class='info'>some <B>[initial(S.name)]</B> </B></span>") //as cool as  [icon2html(initial(S.icon) is it dosnt work well
 		else
-			to_chat(user, "<span class='info'>These footprints have no shoe prints that you can recognize</span>")
+			to_chat(user, "<span class='info'>These footprints have no shoe prints that you can recognize.</span>")
 
 /obj/effect/decal/cleanable/blood/reveal_blood()
 	if(!fluorescent)

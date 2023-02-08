@@ -246,8 +246,16 @@
 		/mob/living/simple_animal/hostile/hivebot/range = 12,
 		/mob/living/simple_animal/hostile/republicon = 16,
 		/mob/living/simple_animal/hostile/republicon/range = 8,
-		/mob/living/carbon/superior_animal/sentinal_seeker = 1 //Were rare and tanky
 		))
+
+/obj/random/mob/prepper_boss_lowchance
+	name = "low chance sentinel seeker"
+	icon_state = "hostilemob-red"
+	alpha = 128
+	spawn_nothing_percentage = 90 // Same HP and stats as a Render while being as fast as an Emperor.
+
+/obj/random/mob/prepper_boss_lowchance/item_to_spawn()
+	return /mob/living/carbon/superior_animal/sentinal_seeker
 
 /obj/random/mob/prepper_ranged
 	name = "random prepper base mob (range only)"

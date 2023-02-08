@@ -45,22 +45,6 @@
 	icon_state = "marshal"
 	license = 20 //1:1 with blackshield guns
 	designs = list(
-		/datum/design/autolathe/gun/judiciary,
-		/datum/design/autolathe/gun/liberty,
-		/datum/design/autolathe/gun/amnesty = 2,
-		/datum/design/autolathe/gun/judge = 2,
-		//SMGs
-		/datum/design/autolathe/gun/freedom = 2,
-		/datum/design/autolathe/gun/specop = 3,
-		//rifles
-		/datum/design/autolathe/gun/mamba = 3,
-		/datum/design/autolathe/gun/viper = 4,
-		/datum/design/autolathe/gun/copperhead = 4,
-		//shotguns
-		/datum/design/autolathe/gun/operator = 4,
-		//machinegun
-		/datum/design/autolathe/gun/dp = 2,
-		/datum/design/autolathe/gun/bastard = 3,
 		//ion
 		/datum/design/autolathe/gun/ion_pistol = 5,
 		//launcher
@@ -122,7 +106,7 @@
 		/datum/design/autolathe/ammo/kurtz_ammobox = 0,
 		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/mag_10x24 = 0,
-		/datum/design/autolathe/ammo/box_10x24_small = 1,
+		/datum/design/autolathe/ammo/box_10x24 = 3, // Two entire mags of a Pulse Rifle, thus costs 10% of license cost. It's also armory access exclusive.
 		/datum/design/autolathe/ammo/lrifle_ammobox = 1,
 		/datum/design/autolathe/ammo/lrifle_ammobox_lethal = 1,
 		/datum/design/autolathe/ammo/lrifle_ammobox_rubber = 0,
@@ -209,7 +193,7 @@
 
 	license = 8
 	designs = list(
-		/datum/design/autolathe/gun/operator = 3,
+		/datum/design/autolathe/gun/opshot = 3,
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_illumination,
@@ -235,23 +219,6 @@
 	license = 16
 	designs = list(
 		/datum/design/autolathe/gun/mamba = 6,
-		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
-		/datum/design/autolathe/ammo/lrifle_short_rubber,
-		/datum/design/autolathe/ammo/lrifle_short,
-		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
-		/datum/design/autolathe/ammo/lrifle_practice = 1,
-		/datum/design/autolathe/ammo/lrifle_rubber = 2,
-		/datum/design/autolathe/ammo/lrifle = 2,
-		/datum/design/autolathe/ammo/lrifle_lethal = 4,
-	)
-
-/obj/item/computer_hardware/hard_drive/portable/design/guns/viper
-	disk_name = "NM - 6.5mm Viper DMR"
-	icon_state = "marshal"
-
-	license = 16
-	designs = list(
-		/datum/design/autolathe/gun/viper = 6,
 		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
 		/datum/design/autolathe/ammo/lrifle_short,

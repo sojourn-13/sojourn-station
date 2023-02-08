@@ -135,12 +135,6 @@
 	min_cost = 5
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/mk58
 
-/datum/armament/item/disk/nt_counselor
-	name = "Disk - Serenity"
-	cost = 5
-	min_cost = 5
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/nt_counselor
-
 /datum/armament/item/disk/counselor
 	name = "Disk - Counselor"
 	cost = 5

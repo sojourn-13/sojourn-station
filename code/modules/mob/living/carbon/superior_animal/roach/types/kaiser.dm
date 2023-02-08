@@ -12,8 +12,8 @@ Has ability of every roach.
 	density = TRUE
 
 	turns_per_move = 6
-	maxHealth = 2000
-	health = 2000
+	maxHealth = 1000
+	health = 1000
 	contaminant_immunity = TRUE
 
 	var/datum/reagents/gas_sac

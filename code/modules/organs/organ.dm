@@ -269,14 +269,14 @@
 
 //Note: external organs have their own version of this proc
 /obj/item/organ/proc/take_damage(amount, silent=0)
-	if(BP_IS_ROBOTIC(src))
+	/*if(BP_IS_ROBOTIC(src))
 		damage = between(0, damage + (amount * 0.8), max_damage)
 	else
-		damage = between(0, damage + amount, max_damage)
+		damage = between(0, damage + amount, max_damage)*/
 
-		//only show this if the organ is not robotic
-		if(owner && parent && amount > 0 && !silent)
-			owner.custom_pain("Something inside your [parent.name] hurts a lot.", 1)
+	//only show this if the organ is not robotic
+	if(owner && parent && amount > 0 && !silent)
+		owner.custom_pain("Something inside your [parent.name] hurts a lot.", 1)
 
 /obj/item/organ/proc/bruise()
 	damage = max(damage, min_bruised_damage)
@@ -284,7 +284,7 @@
 /obj/item/organ/emp_act(severity)
 	if(!BP_IS_ROBOTIC(src))
 		return
-	
+
 	//Robotic body parts conduct EMPs way better than flesh
 	if(parent && BP_IS_ROBOTIC(parent))
 		switch (severity)
@@ -302,7 +302,7 @@
 				take_damage(20)
 			if(3)
 				take_damage(10)
-		
+
 
 // Gets the limb this organ is located in, if any
 /obj/item/organ/proc/get_limb()

@@ -28,6 +28,7 @@
 	is_sealed = TRUE
 	generate_asteroid = TRUE
 	height = 3
+	digsites = "HOUSE"
 
 
 /obj/map_data/nadezda_s
@@ -66,7 +67,7 @@
 
 /obj/map_data/nadezda_solars
 	name = "Nadezhda Mountain Solars"
-	is_station_level = FALSE
+	is_station_level = TRUE
 	is_player_level = TRUE
 	is_contact_level = TRUE
 	is_accessable_level = FALSE

@@ -8,8 +8,8 @@
 	icon_state = "voidwolf_melee"
 	icon_dead = "voidwolf_melee_dead"
 	stop_automated_movement_when_pulled = 0
-	maxHealth = 200
-	health = 200
+	maxHealth = 125
+	health = 125
 	melee_damage_lower = 30
 	melee_damage_upper = 30
 	breath_required_type = 0 // Doesn't need to breath, in a space suit
@@ -106,11 +106,11 @@
 	desc = "A Void Wolf mercenary wielding an energy rifle."
 	icon_state = "voidwolf"
 	icon_dead = "voidwolf_dead"
-	projectilesound = 'sound/weapons/laser.ogg'
+	projectilesound = 'sound/weapons/energy/laser.ogg'
 	melee_damage_lower = 10 //We dont like melee
 	melee_damage_upper = 15
-	maxHealth = 100
-	health = 100
+	maxHealth = 75
+	health = 75
 	ranged = TRUE
 	rapid = TRUE
 	rapid_fire_shooting_amount = 3
@@ -137,7 +137,7 @@
 	ranged = TRUE
 	rapid = FALSE
 	projectiletype = /obj/item/projectile/beam
-	projectilesound = 'sound/weapons/laser.ogg'
+	projectilesound = 'sound/weapons/energy/laser.ogg'
 	drop_items = list(/obj/item/tool/weldingtool/advanced, /obj/item/gun/energy/gun/martin)
 	limited_ammo = TRUE
 	mag_drop = TRUE
@@ -173,8 +173,8 @@
 	icon_dead = "voidwolfcap_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	maxHealth = 200
-	health = 200
+	maxHealth = 150
+	health = 150
 	ranged_cooldown = 3
 	ranged = TRUE
 	rapid = FALSE
@@ -198,7 +198,7 @@
 	name = "Void Reaver Stormtrooper"
 	desc = "A void wolf reaver stormtrooper, vatgrown and given bionic enhancements, with far better equipment and decades of experience raiding ships and killing men under the command of a true reaver."
 	icon_state = "reaver_lasrak"
-	projectilesound = 'sound/weapons/Laser.ogg'
+	projectilesound = 'sound/weapons/energy/Laser.ogg'
 	melee_damage_lower = 20 //We dont like melee
 	melee_damage_upper = 25
 	ranged = TRUE
@@ -209,7 +209,7 @@
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 20
-	mag_type = /obj/item/ammo_magazine/rifle_223/empty
+	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 3
 
 	flash_resistances = 20 //no.
@@ -230,9 +230,7 @@
 	projectiletype = /obj/item/projectile/beam/weak/ap/reaver
 	drop_items = list(/obj/item/gun/energy/firestorm/reaver_modded)
 
-	casingtype = /obj/item/ammo_casing/beam/ap/spent
-
-	mag_type = /obj/item/ammo_magazine/rifle_223/empty
+	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 3
 
 	rapid_fire_shooting_amount = 5 //we're using the burst 5 mode
@@ -279,7 +277,7 @@
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet
 	icon_state = "reaver_gyro"
-	projectilesound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
+	projectilesound = 'sound/weapons/guns/fire/ubgl.ogg'
 	projectiletype = /obj/item/projectile/bullet/gyro
 	drop_items = list(/obj/item/gun/projectile/gyropistol)
 	rapid = FALSE

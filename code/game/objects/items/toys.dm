@@ -15,6 +15,7 @@
  *		Action figures
  *		Plushies
  *		Toy cult sword
+ *		Misc. Crafting for export goods, by Wilson! They're functionally useless, so what better place to have them?
  */
 
 
@@ -23,6 +24,7 @@
 	throw_speed = 4
 	throw_range = 20
 	matter = list(MATERIAL_PLASTIC = 3)
+	preloaded_reagents = list("plasticide" = 12)
 	force = NONE
 	price_tag = 10
 
@@ -116,6 +118,14 @@
 	desc = "Tiny cute Christmas tree."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "tinyxmastree"
+
+/obj/item/toy/junk/photo_frame
+    name = "a blank photo frame"
+    desc = "This usually has some photo on it, but you're drawing a blank right now!"
+    icon_state = "photo"
+    item_state = "paper"
+    icon = 'icons/obj/items.dmi'
+    w_class = ITEM_SIZE_SMALL
 
 /*
  * Toy crossbow
@@ -1241,6 +1251,15 @@
 	phrase = ""
 	var/pokesound = null
 
+/obj/item/toy/plushie/fumo/marisa
+	icon_state = "fumoplushie_marisa"
+
+/obj/item/toy/plushie/fumo/astolfo
+	icon_state = "fumoplushie_astolfo"
+
+/obj/item/toy/plushie/fumo/cirno
+	icon_state = "fumoplushie_cirno"
+
 /obj/item/toy/plushie/fumo/attack_self(mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(user.a_intent == I_HELP)
@@ -1351,6 +1370,8 @@
 	item_state = "contraband"
 	desc = "A rubber ball with air in it. Intented to be thrown at one a other for fun games. This one has a face on it."
 
+
+
 //////////////////////////////////////////////////////
 //				Magic 8-Ball / Conch				//
 //////////////////////////////////////////////////////
@@ -1411,3 +1432,33 @@
 	name = "dipping bird model"
 	desc = "A favorite amongst clerks and desk jockeys."
 	icon_state= "dippybird"
+
+//Consumer!!!
+
+/obj/item/toy/consumer
+	name = "Notably Generic Consumer Concept"
+	desc = "Do NOT consume. Oh my goodness gracious."
+	icon = 'icons/obj/crafts_consumergood.dmi'
+
+/obj/item/toy/consumer/kit
+	name = "Notably Generic Consumer Kit"
+	desc = "Do NOT assemble. Oh me oh my."
+	icon = 'icons/obj/crafts_consumergood.dmi'
+	price_tag = 60
+
+/obj/item/toy/consumer/product
+	matter = list(MATERIAL_STEEL = 3)
+	name = " Notably Generic Consumer Product"
+	desc = "Do NOT produce."
+	icon = 'icons/obj/crafts_consumergood.dmi'
+	price_tag = 125
+
+/obj/item/toy/consumer/kit/toaster
+	name = "toaster assembly kit"
+	desc = "Everything you need to assemble your very own toolbox themed toaster!"
+	icon_state = "placeholder_device"
+
+/obj/item/toy/consumer/product/toaster
+	name = "toolbox toaster"
+	desc = "A toolbox themed toaster! Too bad there's no compatible outlets here. Only comes in red. Keep away from bathtubs."
+	icon_state = "toaster"

@@ -163,7 +163,7 @@
 						/obj/item/tool/screwdriver/combi_driver/onestar = 1,
 						/obj/item/tool/weldingtool/onestar = 1,
 						/obj/item/tool/wirecutters/onestar_pliers = 0.2,
-						/obj/item/tool/onestar_multitool = 0.1))
+						/obj/item/tool/multitool/advanced/onestar = 0.1))
 
 /obj/random/tool/advanced/onestar/low_chance
 	icon_state = "tool-orange-low"

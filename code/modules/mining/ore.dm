@@ -19,25 +19,25 @@
 	pixel_y = rand(0,8)-8
 	if(material_randomly_has)
 		if(prob(5))
-			material = MATERIAL_MHYDROGEN
+			material = ORE_HYDROGEN
 		if(prob(15))
-			material = MATERIAL_PLATINUM
+			material = ORE_PLATINUM
 		if(prob(10))
-			material = MATERIAL_DIAMOND
+			material = ORE_DIAMOND
 		if(prob(20))
-			material = MATERIAL_GOLD
+			material = ORE_GOLD
 		if(prob(15))
-			material = MATERIAL_URANIUM
+			material = ORE_URANIUM
 		if(prob(20))
-			material = MATERIAL_SILVER
+			material = ORE_SILVER
 		if(prob(10))
-			material = MATERIAL_PLASMA
+			material = ORE_PLASMA
 		if(prob(40))
-			material = "carbon"
+			material = ORE_CARBON
 		if(prob(40))
-			material = "hematite"
+			material = ORE_IRON
 		else
-			material = "sand"
+			material = ORE_SAND
 
 /obj/item/stack/ore/ex_act(severity)
 	return //We allow mining charges to not blow up ores
@@ -85,7 +85,7 @@
 	name = "pitchblende"
 	icon_state = "ore_uranium"
 	origin_tech = list(TECH_MATERIAL = 5)
-	material = MATERIAL_URANIUM
+	material = ORE_URANIUM
 	crushable = FALSE
 	material_randomly_has = FALSE
 	price_tag = 3
@@ -99,7 +99,7 @@
 	name = "hematite"
 	icon_state = "ore_iron"
 	origin_tech = list(TECH_MATERIAL = 1)
-	material = "hematite"
+	material = ORE_IRON
 	crushable = FALSE
 	material_randomly_has = FALSE
 
@@ -111,7 +111,7 @@
 	name = "raw carbon"
 	icon_state = "ore_coal"
 	origin_tech = list(TECH_MATERIAL = 1)
-	material = "carbon"
+	material = ORE_CARBON
 	crushable = FALSE
 	material_randomly_has = FALSE
 
@@ -121,7 +121,7 @@
 
 /obj/item/stack/ore/glass
 	name = "sand"
-	icon_state = "ore_glass"
+	icon_state = ORE_SAND
 	origin_tech = list(TECH_MATERIAL = 1)
 	material = "sand"
 	slot_flags = SLOT_HOLSTER
@@ -144,7 +144,7 @@
 	name = "plasma crystals"
 	icon_state = "ore_plasma"
 	origin_tech = list(TECH_MATERIAL = 2)
-	material = MATERIAL_PLASMA
+	material = ORE_PLASMA
 	crushable = FALSE
 	material_randomly_has = FALSE
 	price_tag = 5
@@ -157,7 +157,7 @@
 	name = "native silver ore"
 	icon_state = "ore_silver"
 	origin_tech = list(TECH_MATERIAL = 3)
-	material = MATERIAL_SILVER
+	material = ORE_SILVER
 	crushable = FALSE
 	material_randomly_has = FALSE
 	price_tag = 2
@@ -170,7 +170,7 @@
 	name = "native gold ore"
 	icon_state = "ore_gold"
 	origin_tech = list(TECH_MATERIAL = 4)
-	material = MATERIAL_GOLD
+	material = ORE_GOLD
 	crushable = FALSE
 	material_randomly_has = FALSE
 	price_tag = 6
@@ -183,7 +183,7 @@
 	name = "diamonds"
 	icon_state = "ore_diamond"
 	origin_tech = list(TECH_MATERIAL = 6)
-	material = MATERIAL_DIAMOND
+	material = ORE_DIAMOND
 	crushable = FALSE
 	material_randomly_has = FALSE
 	price_tag = 7
@@ -195,7 +195,7 @@
 /obj/item/stack/ore/osmium
 	name = "raw platinum"
 	icon_state = "ore_platinum"
-	material = MATERIAL_PLATINUM
+	material = ORE_PLATINUM
 	crushable = FALSE
 	material_randomly_has = FALSE
 	price_tag = 9
@@ -207,7 +207,7 @@
 /obj/item/stack/ore/hydrogen
 	name = "raw hydrogen"
 	icon_state = "ore_hydrogen"
-	material = MATERIAL_MHYDROGEN
+	material = ORE_HYDROGEN
 	crushable = FALSE
 	material_randomly_has = FALSE
 	price_tag = 10

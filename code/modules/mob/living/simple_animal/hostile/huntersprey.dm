@@ -12,8 +12,8 @@
 	break_stuff_probability = 95
 	attacktext = "mauled"
 	faction = "deathclaw"
-	maxHealth = 2200
-	health = 2200
+	maxHealth = 1000
+	health = 1000
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 	old_x = -16
@@ -79,7 +79,7 @@
 		melee_damage_lower = initial(melee_damage_lower) - fatigue * 2
 		melee_damage_upper = initial(melee_damage_upper) - fatigue * 2
 
-/mob/living/simple_animal/hostile/renderpatriarch/death(gibbed, deathmessage = "lets out a gutteral snarl before it crumbles to the ground dead!")
+/mob/living/simple_animal/hostile/renderpatriarch/death(gibbed, deathmessage = "lets out a guttural snarl before it crumbles to the ground dead!")
 	walk_to(src,0)
 	movement_target = null
 	icon_state = icon_dead
@@ -348,8 +348,8 @@
 	break_stuff_probability = 95
 	attacktext = "kicked"
 	faction = "excelsior"
-	maxHealth = 2200
-	health = 2200
+	maxHealth = 1000
+	health = 1000
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	old_x = -16

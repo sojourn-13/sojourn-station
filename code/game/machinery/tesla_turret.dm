@@ -425,7 +425,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		emagged = TRUE
 		locked = FALSE
 		enabled = FALSE //turns off the turret temporarily
-		spawn(60) //6 seconds for the traitor to gtfo of the area before the turret decides to ruin his shit
+		spawn(60) //6 seconds for the contractor to gtfo of the area before the turret decides to ruin his shit
 			enabled = TRUE //turns it back on.
 		return TRUE
 

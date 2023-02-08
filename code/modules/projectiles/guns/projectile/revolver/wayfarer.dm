@@ -24,3 +24,16 @@
 	max_upgrades = 7 //Holds more slots do to being exl gun and not that good cal wise/easy to get
 	serial_type = "INDEX"
 	serial_shown = FALSE
+	wield_delay = 0.3 SECOND
+	wield_delay_factor = 0.3 // 30 vig
+	gun_parts = list(/obj/item/part/gun/frame/wayfarer = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/clrifle = 1)
+
+/obj/item/part/gun/frame/wayfarer
+	name = "Wayfarer frame"
+	desc = "A Wayfarer revolver frame. A easily produced weapon, for when a worker wants to ice his boss."
+	icon_state = "frame_inspector"
+	result = /obj/item/gun/projectile/revolver/wayfarer
+	resultvars = list(/obj/item/gun/projectile/revolver/wayfarer)
+	gripvars = list(/obj/item/part/gun/grip/excel)
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
+	barrelvars = list(/obj/item/part/gun/barrel/clrifle)

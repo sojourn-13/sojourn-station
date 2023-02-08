@@ -6,8 +6,8 @@
 	icon_dead = "solfed_trooper_dead"
 	stop_automated_movement_when_pulled = 1
 	wander = 0
-	maxHealth = 150 //About as much health as a normal person
-	health = 150
+	maxHealth = 100
+	health = 100
 
 	armor = list(melee = 50, bullet = 50, energy = 45, bomb = 50, bio = 100, rad = 100)
 
@@ -118,15 +118,15 @@
 	icon_state = "solfed_trooper_specialist"
 	icon_dead = "solfed_trooper_specialist_dead"
 
-	maxHealth = 125 //Less health than a noraml person.
-	health = 125
+	maxHealth = 75 //Less health than a noraml person.
+	health = 75
 
 	casingtype = null
 
 	comfy_range = 7
 	ranged_cooldown = 5
 	projectiletype = /obj/item/projectile/bullet/grenade
-	projectilesound = 'sound/weapons/guns/fire/grenadelauncher_fire.ogg'
+	projectilesound = 'sound/weapons/guns/fire/GLfire.ogg'
 	limited_ammo = FALSE
 	mag_drop = FALSE
 
@@ -146,8 +146,8 @@
 	icon_state = "solfed_trooper_heavy"
 	icon_dead = "solfed_trooper_heavy_dead"
 
-	maxHealth = 175 //More than a normal person.
-	health = 175
+	maxHealth = 125 //More than a normal person.
+	health = 125
 
 	comfy_range = 6
 	rapid = TRUE
@@ -167,8 +167,8 @@
 	icon_state = "solfed_trooper_sniper"
 	icon_dead = "solfed_trooper_sniper_dead"
 
-	maxHealth = 100 //Less health than a noraml person.
-	health = 100
+	maxHealth = 75 //Less health than a noraml person.
+	health = 75
 
 	armor = list(melee = 25, bullet = 40, energy = 35, bomb = 20, bio = 100, rad = 100)
 

@@ -20,12 +20,25 @@
 		)
 	can_dual = 1
 	damage_multiplier = 0.8
-	penetration_multiplier = 0
+	penetration_multiplier = 0.6
 	init_recoil = SMG_RECOIL(0.6)
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	serial_type = "INDEX"
 	serial_shown = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
+	gun_parts = list(/obj/item/part/gun/frame/luty = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/smg/steel = 1, /obj/item/part/gun/barrel/pistol/steel = 1)
+
+	wield_delay = 0 // No delay for this , its litteraly a junk gun
+
+/obj/item/part/gun/frame/luty
+	name = "Luty frame"
+	desc = "A Luty SMG. It rattles a bit, but it's okay. Just don't shake it too hard."
+	icon_state = "frame_luty"
+	matter = list(MATERIAL_STEEL = 5)
+	resultvars = list(/obj/item/gun/projectile/automatic/luty)
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/smg/steel
+	barrelvars = list(/obj/item/part/gun/barrel/pistol/steel)
 
 /obj/item/gun/projectile/automatic/luty/update_icon()
 	..()

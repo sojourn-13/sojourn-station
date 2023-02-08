@@ -21,6 +21,7 @@
 	randpixel = 0
 	deathmessage = "falls from the sky curling up into a ball before laying flat!"
 	attack_sound = 'sound/weapons/slash.ogg'
+	var/dropped_goods = FALSE //so you can't revive and kill the same wasp for goodies
 
 	ranged = FALSE
 
@@ -52,7 +53,7 @@
 	mags_left = 6 //each vox has 6 rocks normally
 	rounds_per_fire = 1
 	reload_message = "perpares fling a sting!"
-	range_telegraph = "starts to push out its stinger, orienting it towards"
+	range_telegraph = "starts to push out its stinger, orienting it towards "
 	bones_amount = 0
 	inherent_mutations = list(MUTATION_BLOOD_BANK)
 	var/poison_per_bite = 3
@@ -71,3 +72,11 @@
 				var/zone_armor =  L.getarmor(targeted_organ, ARMOR_MELEE)
 				var/poison_injected = zone_armor ? poison_per_bite * (-0.01 * zone_armor + 1) : poison_per_bite
 				L.reagents.add_reagent(poison_type, poison_injected)
+
+/mob/living/carbon/superior_animal/vox/wasp/death(message = deathmessage)
+	..()
+	if(!dropped_goods)
+		dropped_goods = TRUE
+		var/nb_goods = rand(1, 3)
+		for(var/i in 1 to nb_goods)
+			new /obj/item/stack/wax(loc)

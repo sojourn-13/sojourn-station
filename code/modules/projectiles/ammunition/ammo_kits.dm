@@ -50,56 +50,95 @@
 				material_points += 15
 
 	var/list/array = list(
-		CAL_RIFLE = list(
-			"7.62mm rifle ammo pile (10 ammo, 3 points)" = list(3, /obj/item/ammo_casing/rifle_75/scrap/prespawned),
-			"7.62mm rifle standard magazine (empty, 10 ammo, 5 points)" = list(5, /obj/item/ammo_magazine/rifle_75_short/scrap/empty),
-			"7.62mm rifle extended magazine (empty, 20 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/rifle_75/empty),
-			"7.62mm rifle drum magazine (empty, 40 ammo, 30 points)" = list(30, /obj/item/ammo_magazine/rifle_75_drum/empty),
-			"7.62mm rifle linked box (empty, 100 ammo, 20 points)" = list(20, /obj/item/ammo_magazine/rifle_75_linked_box/empty),
-			"7.62mm rifle ammo box (30 ammo, 15 points)" = list(15, /obj/item/ammo_magazine/ammobox/rifle_75_small/scrap)),
-		CAL_LRIFLE = list(
-			"6.5mm carbine ammo pile (10 ammo, 3 points)" = list(3, /obj/item/ammo_casing/light_rifle_257/scrap/prespawned),
-			"6.5mm carbine standard magazine (empty, 20 ammo, 5 points)" = list(5, /obj/item/ammo_magazine/light_rifle_257_short/empty),
-			"6.5mm carbine extended magazine (empty, 30 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/light_rifle_257/scrap/empty),
-			"6.5mm carbine drum magazine (empty, 60 ammo, 30 points)" = list(30, /obj/item/ammo_magazine/light_rifle_257_drum/empty),
-			"6.5mm carbine linked box (empty, 100 ammo, 20 points)" = list(20, /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty),
-			"6.5mm carbine ammo box (30 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/ammobox/light_rifle_257/scrap)),
-		CAL_HRIFLE = list(
-			"8.6mm heavy rifle ammo pile (10 ammo, 3 points)" = list(3, /obj/item/ammo_casing/heavy_rifle_408/scrap/prespawned),
-			"8.6mm heavy rifle standard magazine (empty, 20 ammo, 5 points)" = list(5, /obj/item/ammo_magazine/heavy_rifle_408/scrap/empty),,
-			"8.6mm heavy rifle drum magazine (empty, 36 ammo, 30 points)" = list(30, /obj/item/ammo_magazine/heavy_rifle_408_drum/empty),
-			"8.6mm heavy rifle ammo box (40 ammo, 15 points)" = list(15, /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap)),
 		CAL_PISTOL = list(
-			"9mm ammo pile (15 ammo, 5 points)" = list(5, /obj/item/ammo_casing/pistol_35/scrap/prespawned),
-			"9mm speedloader (6 ammo, 3 points)" = list(3, /obj/item/ammo_magazine/speed_loader_pistol_35/scrap),
-			"9mm standard magazine (empty, 10 ammo, 5 points)" = list(5, /obj/item/ammo_magazine/pistol_35/scrap/empty),
-			"9mm extended magazine (empty, 16 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/highcap_pistol_35/empty),
-			"9mm SMG magazine (empty, 32 ammo, 12 points)" = list(12, /obj/item/ammo_magazine/smg_35/empty),
-			"9mm ammo box (30 ammo, 12 points)" = list(12, /obj/item/ammo_magazine/ammobox/pistol_35/scrap)),
+			"5 points, 15 ammo: Scrap 9mm ammo pile" = list(5, /obj/item/ammo_casing/pistol_35/scrap/prespawned),
+			"3 points, 6 ammo: Scrap 9mm speedloader" = list(3, /obj/item/ammo_magazine/speed_loader_pistol_35/scrap),
+			"12 points, 30 ammo: Scrap 9mm ammo box" = list(12, /obj/item/ammo_magazine/ammobox/pistol_35/scrap),
+			"8 points, 15 ammo: 9mm ammo pile" = list(8, /obj/item/ammo_casing/pistol_35/prespawned),
+			"18 points, 30 ammo: 9mm ammo box" = list(18, /obj/item/ammo_magazine/ammobox/pistol_35),
+			"5 points: EMPTY 9mm pistol magazine" = list(5, /obj/item/ammo_magazine/pistol_35/empty),
+			"7 points: EMPTY 9mm extended magazine" = list(7, /obj/item/ammo_magazine/highcap_pistol_35/empty),
+			"9 points: EMPTY 9mm SMG magazine" = list(12, /obj/item/ammo_magazine/smg_35/empty)
+			),
 		CAL_MAGNUM = list(
-			"10mm magnum ammo pile (6 ammo, 3 points)" = list(3, /obj/item/ammo_casing/magnum_40/scrap/prespawned),
-			"10mm magunum speedloader (6 ammo, 5 points)" = list(5, /obj/item/ammo_magazine/speed_loader_magnum_40/scrap),
-			"10mm magnum standard magazine (empty, 10 ammo, 5 points)" = list(5, /obj/item/ammo_magazine/magnum_40/empty),
-			"10mm magnum ammo box (30 ammo, 15 points)" = list(15, /obj/item/ammo_magazine/ammobox/magnum_40/scrap)),
+			"3 points, 6 ammo: Scrap 10mm ammo pile" = list(3, /obj/item/ammo_casing/magnum_40/scrap/prespawned),
+			"15 points, 30 ammo: Scrap 10mm ammo box" = list(15, /obj/item/ammo_magazine/ammobox/magnum_40/scrap),
+			"5 points, 6 ammo: Scrap 10mm speedloader" = list(5, /obj/item/ammo_magazine/speed_loader_magnum_40/scrap),
+			"7 points, 6 ammo: 10mm magnum ammo pile" = list(7, /obj/item/ammo_casing/magnum_40/prespawned),
+			"26 points, 30 ammo: 10mm ammo box" = list(26, /obj/item/ammo_magazine/ammobox/magnum_40),
+			"7 points: EMPTY 10mm pistol magazine" = list(7, /obj/item/ammo_magazine/magnum_40/empty)
+			),
+		CAL_50 = list(
+			"8 points, 6 ammo: 12mm ammo pile" = list(8, /obj/item/ammo_casing/kurtz_50/prespawned),
+			"8 points: EMPTY 12mm heavy pistol magazine" = list(8, /obj/item/ammo_magazine/kurtz_50/empty),
+			"10 points, 6 ammo: 12mm speedloader" = list(10, /obj/item/ammo_magazine/speed_loader_kurtz_50),
+			"26 points, 24 ammo: 12mm ammo box" = list(26, /obj/item/ammo_magazine/ammobox/kurtz_50) // Same price for all packets, except 4 less ammo
+			),
 		CAL_SHOTGUN = list(
-			"20mm slug pile (5 ammo, 3 points)" = list(3, /obj/item/ammo_casing/shotgun/scrap/prespawned),
-			"20mm pellet pile (5 ammo, 3 points)" = list(3, /obj/item/ammo_casing/shotgun/pellet/scrap/prespawned),
-			"20mm beanbag pile (5 ammo, 2 points)" = list(2, /obj/item/ammo_casing/shotgun/beanbag/scrap/prespawned),
-			"20mm slug box (30 ammo, 20 points)" = list(20, /obj/item/ammo_magazine/ammobox/shotgun/scrap_slug),
-			"20mm pellet box (30 ammo, 15 points)" = list(15, /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet),
-			"20mm beanbag box (30 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag),
-			"20mm ceramic pile (5 ammo, 5 points" = list(5, /obj/item/ammo_casing/shotgun/ceramic/prespawned),
-			"20mm ceramic box (30 ammo, 20 points)" = list (20, /obj/item/ammo_magazine/ammobox/shotgun/ceramic),
-			"20mm incendiary pile (5 ammo, 5 points" = list(5, /obj/item/ammo_casing/shotgun/incendiary/prespawned),
-			"20mm incendiary box (30 ammo, 20 points)" = list(20, /obj/item/ammo_magazine/ammobox/shotgun/incendiary)),
-		CAL_FLARE = list(
-			"flare (1 ammo, 1 points)" = list(1, /obj/item/ammo_casing/flare/old)),
-		CAL_BALL = list(
-			"17mm ball ammo pile (4 ammo, 1 points)" = list(1, /obj/item/ammo_casing/ball/prespawned),
-			"17mm ball ammo box (30 ammo, 15 points)" = list(15, /obj/item/ammo_magazine/ammobox/ball)),
+			"3 points, 5 ammo: Scrap beanbags pile" = list(3, /obj/item/ammo_casing/shotgun/beanbag/scrap/prespawned),
+			"4 points, 5 ammo: Scrap buckshot pile" = list(4, /obj/item/ammo_casing/shotgun/pellet/scrap/prespawned),
+			"4 points, 5 ammo: Scrap slugs pile" = list(4, /obj/item/ammo_casing/shotgun/scrap/prespawned),
+			"15 points, 30 ammo: Scrap slugs box" = list(15, /obj/item/ammo_magazine/ammobox/shotgun/scrap_slug),
+			"12 points, 30 ammo: Scrap buckshot box" = list(12, /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet),
+			"10 points, 30 ammo: Scrap beanbag box" = list(10, /obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag),
+			"6 points, 5 ammo: 20mm beanbag pile" = list(6, /obj/item/ammo_casing/shotgun/beanbag/prespawned),
+			"9 points, 5 ammo: 20mm buckshot pile" = list(9, /obj/item/ammo_casing/shotgun/pellet/prespawned),
+			"9 points, 5 ammo: 20mm slug pile" = list(9, /obj/item/ammo_casing/shotgun/prespawned),
+			"15 points, 30 ammo: 20mm beanbag box" = list(15, /obj/item/ammo_magazine/ammobox/shotgun/beanbags),
+			"20 points, 30 ammo: 20mm buckshot box" = list(20, /obj/item/ammo_magazine/ammobox/shotgun/buckshot),
+			"25 points, 30 ammo: 20mm slug box" = list(25, /obj/item/ammo_magazine/ammobox/shotgun),
+			"5 points, 5 ammo: 20mm ceramic pile" = list(5, /obj/item/ammo_casing/shotgun/ceramic/prespawned),
+			"20 points, 30 ammo: 20mm ceramic box" = list (20, /obj/item/ammo_magazine/ammobox/shotgun/ceramic),
+			"12 points, 5 ammo: 20mm incendiary pile" = list(12, /obj/item/ammo_casing/shotgun/incendiary/prespawned),
+			"28 points, 30 ammo: 20mm incendiary box" = list(28, /obj/item/ammo_magazine/ammobox/shotgun/incendiary)
+			),
+		CAL_LRIFLE = list(
+			"3 points, 10 ammo: Scrap carbine ammo pile" = list(3, /obj/item/ammo_casing/light_rifle_257/scrap/prespawned),
+			"10 points, 30 ammo: Scrap carbine ammo packet" = list(10, /obj/item/ammo_magazine/ammobox/light_rifle_257/scrap),
+			"8 points, 10 ammo: Carbine ammo pile" = list(8, /obj/item/ammo_casing/light_rifle_257/prespawned),
+			"26 points, 30 ammo: Carbine ammo packet" = list(26, /obj/item/ammo_magazine/ammobox/light_rifle_257_small),
+			"5 points: EMPTY carbine standard magazine" = list(5, /obj/item/ammo_magazine/light_rifle_257_short/empty),
+			"10 points: EMPTY carbine extended magazine" = list(10, /obj/item/ammo_magazine/light_rifle_257/scrap/empty),
+			"30 points: EMPTY carbine drum magazine" = list(30, /obj/item/ammo_magazine/light_rifle_257_drum/empty),
+			"20 points: EMPTY carbine linked box" = list(20, /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty)
+			),
+		CAL_RIFLE = list(
+			"3 points, 10 ammo: Scrap ammo pile" = list(3, /obj/item/ammo_casing/rifle_75/scrap/prespawned),
+			"15 points, 30 ammo: Scrap rifle ammo packet" = list(15, /obj/item/ammo_magazine/ammobox/rifle_75_small/scrap),
+			"8 points, 10 ammo: Rifle ammo pile" = list(8, /obj/item/ammo_casing/rifle_75/prespawned),
+			"26 points, 30 ammo: Rifle ammo packet" = list(26, /obj/item/ammo_magazine/ammobox/rifle_75_small),
+			"5 points: EMPTY Rifle short magazine" = list(5, /obj/item/ammo_magazine/rifle_75_short/scrap/empty),
+			"10 points: EMPTY Rifle extended magazine" = list(10, /obj/item/ammo_magazine/rifle_75/empty),
+			"30 points: EMPTY Rifle drum magazine" = list(30, /obj/item/ammo_magazine/rifle_75_drum/empty),
+			"20 points: EMPTY Rifle linked box" = list(20, /obj/item/ammo_magazine/rifle_75_linked_box/empty)
+			),
+		CAL_HRIFLE = list(
+			"3 points, 10 ammo: Scrap ammo pile" = list(3, /obj/item/ammo_casing/heavy_rifle_408/scrap/prespawned),
+			"15 points, 40 ammo: Scrap ammo box" = list(15, /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap),
+			"8 points, 10 ammo: ammo pile" = list(8, /obj/item/ammo_casing/heavy_rifle_408/prespawned),
+			"26 points, 40 ammo: ammo packet" = list(26, /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small),
+			"5 points: EMPTY heavy rifle magazine" = list(5, /obj/item/ammo_magazine/heavy_rifle_408/scrap/empty),
+			"30 points: EMPTY heavy rifle drum magazine" = list(30, /obj/item/ammo_magazine/heavy_rifle_408_drum/empty)
+			),
 		CAL_ANTIM = list(
-			"14.5mm ammo pile (3 ammo, 5 points)" = list(5, /obj/item/ammo_casing/antim/scrap/prespawned),
-			"14.5mm ammo box (5 ammo, 10 points)" = list(10, /obj/item/ammo_magazine/ammobox/antim/scrap)),
+			"5 points, 3 ammo: Scrap 14.5mm ammo pile" = list(5, /obj/item/ammo_casing/antim/scrap/prespawned),
+			"10 points, 5 ammo: Scrap 14.5mm ammo box" = list(10, /obj/item/ammo_magazine/ammobox/antim/scrap),
+			"10 points, 3 ammo: 14.5mm ammo pile" = list(10, /obj/item/ammo_casing/antim/prespawned),
+			"28 points, 15 ammo: 14.5mm ammo box" = list(26, /obj/item/ammo_magazine/ammobox/antim_small) // Same price as every packet for half the ammo, otherwise impossible to get
+			),
+		CAL_FLARE = list(
+			"1 point: old flare x1" = list(1, /obj/item/ammo_casing/flare/old),
+			"2 points: red flare x1" = list(2, /obj/item/ammo_casing/flare),
+			"2 points: blue flare x1" = list(2, /obj/item/ammo_casing/flare/blue),
+			"2 points: green flare x1" = list(2, /obj/item/ammo_casing/flare/green)
+			),
+		CAL_BALL = list(
+			"1 point, 4 ammo: 17mm ball ammo pile" = list(1, /obj/item/ammo_casing/ball/prespawned),
+			"15 points, 30 ammo: 17mm ball ammo box" = list(15, /obj/item/ammo_magazine/ammobox/ball)
+			),
+		CAL_70 = list(
+			"26 points: EMPTY 19mm Gyrojet magazine" = list(26, /obj/item/ammo_magazine/a75/empty)
+			)
 		)
 
 	var/list/items_to_spawn = list()

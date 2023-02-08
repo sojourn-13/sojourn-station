@@ -68,7 +68,7 @@
 		LEGACY_SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
 		return S ? S.getValue(pure) : 0
 	else
-		log_debug("passed list to getStat()")
+		log_debug("passed list to getStat(), statName without a list: [statName]")
 
 //	Those are accept list of stats
 //	Compound stat checks.
@@ -216,7 +216,7 @@
 
 /datum/stat/productivity
 	name = STAT_MEC
-	desc = "The world hadn't ever had so many moving parts or so few labels. Character's ability in building and using various tools.."
+	desc = "The world hadn't ever had so many moving parts or so few labels. Character's ability in building and using various tools."
 
 /datum/stat/cognition
 	name = STAT_COG
@@ -228,15 +228,15 @@
 
 /datum/stat/robustness
 	name = STAT_ROB
-	desc = "Violence is what people do when they run out of good ideas. Increases your health, damage in unarmed combat, affect the knockdown chance."
+	desc = "Violence is what people do when they run out of good ideas. Increases your damage in unarmed combat, and your proficiency at it."
 
 /datum/stat/toughness
 	name = STAT_TGH
-	desc = "You're a tough guy, but I'm a nightmare wrapped in the apocalypse. Enhances your resistance to poisons and also raises your speed in uncomfortable clothes."
+	desc = "You're a tough guy, but I'm a nightmare wrapped in the apocalypse. Enhances your resistance to gases and poisons, and helps you stand your ground when they try to knock you down."
 
 /datum/stat/aiming
 	name = STAT_VIG
-	desc = "Here, paranoia is nothing but a useful trait. Improves your ability to control recoil on guns, helps you resist insanity."
+	desc = "Be pure! Be vigilant! But never behave. Having sharp eyes and nerves of steel improves your proficiency with guns and overcoming fear from creatures' roars, among other feats."
 
 /datum/stat/vivification
 	name = STAT_VIV

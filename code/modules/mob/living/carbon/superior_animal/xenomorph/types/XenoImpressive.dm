@@ -5,14 +5,24 @@
 	icon_living = "crusher"
 	icon_dead = "crusher_dead"
 	icon_rest = "crusher_stunned"
-	maxHealth = 500
-	health = 500
+	maxHealth = 250
+	health = 250
 	attack_sound = list('sound/xenomorph/alien_footstep_charge1.ogg', 'sound/xenomorph/alien_footstep_charge2.ogg', 'sound/xenomorph/alien_footstep_charge3.ogg')
 
-	armor = list(melee = 15, bullet = 15, energy = 10, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 30, bio = 100, rad = 100)
 
 	melee_damage_lower = 30
 	melee_damage_upper = 35
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/health/mult/positive/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
+	)
 
 /mob/living/carbon/superior_animal/xenomorph/warrior/shrike/screecher
 	name = "screecher"
@@ -21,11 +31,21 @@
 	icon_living = "screecher"
 	icon_dead = "screecher_dead"
 	icon_rest = "screecher_stunned"
-	maxHealth = 400
-	health = 400
+	maxHealth = 200
+	health = 200
 
 	melee_damage_lower = 20
 	melee_damage_upper = 25
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/health/mult/positive/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
+	)
 
 /mob/living/carbon/superior_animal/xenomorph/runner/ravager
 	name = "ravager"
@@ -35,8 +55,8 @@
 	icon_living = "ravager"
 	icon_dead = "ravager_dead"
 	icon_rest = "ravager_stunned"
-	maxHealth = 450
-	health = 450
+	maxHealth = 225
+	health = 225
 
 	melee_damage_lower = 40
 	melee_damage_upper = 50
@@ -51,12 +71,22 @@
 	icon_living = "defiler"
 	icon_dead = "defiler_dead"
 	icon_rest = "defiler_stunned"
-	maxHealth = 400
-	health = 400
+	maxHealth = 200
+	health = 200
 
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 	poison_per_bite = 5
+
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/health/mult/positive/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
+	)
 
 /mob/living/carbon/superior_animal/xenomorph/warrior/hivelord
 	name = "hivelord"
@@ -66,10 +96,20 @@
 	icon_living = "hivelord"
 	icon_dead = "hivelord_dead"
 	icon_rest = "hivelord_stunned"
-	maxHealth = 600
-	health = 600
+	maxHealth = 300
+	health = 300
 
-	armor = list(melee = 20, bullet = 25, energy = 15, bomb = 30, bio = 100, rad = 100)
+	allowed_stat_modifiers = list(
+		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/old/xeno = 26,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/young/xeno = 50,
+		/datum/stat_modifier/health/mult/positive/low = 5,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/durable/xeno = 22,
+		/datum/stat_modifier/mob/living/carbon/superior_animal/brutish/xeno = 12,
+		/datum/stat_modifier/mob/living/speed/flat/positive/low = 1
+	)
+
+	armor = list(melee = 30, bullet = 30, energy = 15, bomb = 30, bio = 100, rad = 100)
 
 	melee_damage_lower = 30
 	melee_damage_upper = 35

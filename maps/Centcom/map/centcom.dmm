@@ -210,6 +210,12 @@
 	name = "plating"
 	},
 /area/space)
+"aP" = (
+/obj/structure/table/woodentable,
+/obj/item/device/camera_film,
+/obj/item/pack_card_carp,
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
 "aQ" = (
 /obj/machinery/conveyor/east{
 	id = "QMLoad"
@@ -5427,6 +5433,66 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "oK" = (
+/obj/structure/table/marble,
+/obj/machinery/cooking_with_jane/stove,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"oL" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/food/snacks/meat,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"oM" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"oN" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"oO" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/deep_basket,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"oP" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/air_basket,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"oQ" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/board,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"oR" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"oS" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"oT" = (
+/obj/structure/table/marble,
+/obj/item/stack/material/wood/full,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"oU" = (
+/obj/structure/table/marble,
+/obj/machinery/cooking_with_jane/grill,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"oV" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/food/snacks/sandwich,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"oW" = (
 /obj/machinery/door/blast/regular/open{
 	id = "shipjackshutters"
 	},
@@ -5481,6 +5547,11 @@
 "ps" = (
 /obj/machinery/vending/cola,
 /turf/simulated/floor/tiled/dark/golden,
+/area/centcom/evac)
+"pA" = (
+/obj/structure/table/woodentable,
+/obj/item/oddity/common/book_omega,
+/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "pC" = (
 /obj/structure/railing{
@@ -5540,6 +5611,11 @@
 "qO" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/golden,
+/area/centcom/evac)
+"qS" = (
+/obj/structure/table/woodentable,
+/obj/item/tool/knife/ritual,
+/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "qY" = (
 /obj/machinery/light{
@@ -5756,6 +5832,11 @@
 	},
 /turf/simulated/floor/tiled/dark/panels,
 /area/centcom/raider_base)
+"vm" = (
+/obj/structure/table/woodentable,
+/obj/item/clothing/glasses/binoclard_lenses/dark,
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
 "vB" = (
 /obj/structure/railing,
 /turf/simulated/floor/tiled/dark/golden,
@@ -5789,6 +5870,17 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
+"wx" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/food/snacks/dough,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"xg" = (
+/obj/structure/table/marble,
+/obj/item/seeds/tomatoseed,
+/obj/item/reagent_containers/food/snacks/dollop,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "xl" = (
 /obj/machinery/light{
 	dir = 4
@@ -5815,6 +5907,11 @@
 /obj/item/contraband/poster/placed/advertisement/eat,
 /turf/simulated/wall/r_wall,
 /area/centcom/evac)
+"xI" = (
+/obj/structure/table/marble,
+/obj/machinery/chemical_dispenser/coffee_master,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "xJ" = (
 /obj/structure/filingcabinet/security,
 /turf/simulated/floor/tiled/dark/golden,
@@ -5838,6 +5935,11 @@
 	},
 /turf/simulated/floor/tiled/dark/panels,
 /area/centcom/raider_base)
+"yl" = (
+/obj/structure/table/marble,
+/obj/machinery/chemical_dispenser/beer,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "yq" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -5849,6 +5951,14 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/golden,
+/area/centcom/evac)
+"yC" = (
+/obj/machinery/cooking_with_jane/oven,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
+"yL" = (
+/obj/item/flame/candle,
+/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "yR" = (
 /obj/structure/sign/department/bar,
@@ -5931,6 +6041,10 @@
 /obj/random/booze,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/centcom/raider_base)
+"AU" = (
+/obj/machinery/portable_atmospherics/hydroponics,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "Bh" = (
 /obj/machinery/vending/cola{
 	name = "hacked Robust Softdrinks";
@@ -5950,6 +6064,14 @@
 /obj/structure/table/rack/shelf,
 /obj/item/cell/large/moebius/nuclear,
 /turf/simulated/floor/tiled/dark/golden,
+/area/centcom/evac)
+"Bo" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/food/snacks/sandwich,
+/obj/item/reagent_containers/food/snacks/sandwich,
+/obj/item/reagent_containers/food/snacks/sandwich,
+/obj/item/reagent_containers/food/snacks/sandwich,
+/turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Bp" = (
 /obj/structure/mopbucket,
@@ -5989,6 +6111,11 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass_command,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/centcom/evac)
+"BW" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
+/turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "BX" = (
 /obj/structure/bed/chair{
@@ -6038,11 +6165,21 @@
 /obj/machinery/vending/tool,
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
+"CP" = (
+/obj/structure/table/marble,
+/obj/machinery/chemical_dispenser/soda,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "CR" = (
 /obj/machinery/computer/teleporter,
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/panels,
 /area/centcom/raider_base)
+"CW" = (
+/obj/item/flame/candle,
+/obj/item/flame/candle,
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
 "CX" = (
 /obj/item/modular_computer/console{
 	dir = 4
@@ -6171,6 +6308,7 @@
 "FZ" = (
 /obj/structure/table/marble,
 /obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Ga" = (
@@ -6242,6 +6380,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/centcom/raider_base)
+"Hl" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "Hu" = (
 /obj/item/storage/firstaid/surgery/traitor,
 /obj/structure/table/glass,
@@ -6274,6 +6416,13 @@
 /obj/effect/floor_decal/industrial/warningwhite/full,
 /turf/simulated/floor/carpet/purcarpet,
 /area/centcom/raider_base)
+"Ie" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/food/snacks/tofu,
+/obj/item/reagent_containers/food/snacks/tofu,
+/obj/item/reagent_containers/food/snacks/tofu,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "Ip" = (
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/fixed/fgrass,
@@ -6324,9 +6473,18 @@
 /obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/carpet/purcarpet,
 /area/centcom/raider_base)
+"Ja" = (
+/obj/structure/table/marble,
+/obj/item/spatula,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "Jb" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled/dark/golden,
+/area/centcom/evac)
+"Jx" = (
+/obj/effect/decal/cleanable/crayon,
+/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "JG" = (
 /obj/machinery/biogenerator,
@@ -6351,6 +6509,10 @@
 /obj/structure/nt_pedestal,
 /obj/item/tool/sword/crusader/nt_sword_truth,
 /turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
+"Kr" = (
+/obj/machinery/chemical_dispenser/beer,
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "Ks" = (
 /obj/structure/railing{
@@ -6387,6 +6549,11 @@
 "KR" = (
 /turf/unsimulated/wall,
 /area/centcom/evac)
+"La" = (
+/obj/structure/table/marble,
+/obj/item/tool/saw,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "Lb" = (
 /obj/structure/railing{
 	dir = 1
@@ -6406,6 +6573,16 @@
 /obj/structure/table/woodentable,
 /obj/item/organ/internal/bone/head,
 /turf/simulated/floor/tiled/dark/golden,
+/area/centcom/evac)
+"LO" = (
+/obj/structure/table/woodentable,
+/obj/item/storage/fancy/crayons,
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
+"Mb" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
+/turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Mc" = (
 /obj/random/closet_wardrobe,
@@ -6500,6 +6677,9 @@
 /area/centcom/raider_base)
 "Oc" = (
 /obj/structure/table/marble,
+/obj/item/reagent_containers/food/snacks/cutlet,
+/obj/item/reagent_containers/food/snacks/cutlet,
+/obj/item/reagent_containers/food/snacks/cutlet,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Og" = (
@@ -6666,6 +6846,13 @@
 /obj/structure/flora/small/grassa5,
 /turf/simulated/floor/fixed/fgrass,
 /area/centcom/evac)
+"Rw" = (
+/obj/structure/table/woodentable,
+/obj/item/paper_bin{
+	pixel_y = 4
+	},
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
 "Ry" = (
 /obj/structure/table/standard,
 /obj/random/booze,
@@ -6685,6 +6872,11 @@
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/panels,
 /area/centcom/raider_base)
+"Sb" = (
+/obj/item/device/scanner/health,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
 "Sl" = (
 /obj/machinery/vending/security,
 /turf/simulated/floor/tiled/dark/golden,
@@ -6692,6 +6884,10 @@
 "Ss" = (
 /obj/machinery/door/airlock/multi_tile/glass,
 /turf/simulated/floor/tiled/dark/gray_platform,
+/area/centcom/evac)
+"Sv" = (
+/obj/structure/bookcase,
+/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Sx" = (
 /obj/machinery/light/small,
@@ -6718,6 +6914,12 @@
 /obj/item/melee/toolbox_maul,
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/dark/golden,
+/area/centcom/evac)
+"SX" = (
+/obj/structure/table/woodentable,
+/obj/item/storage/fancy/candle_box,
+/obj/item/storage/fancy/candle_box,
+/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Tf" = (
 /obj/structure/table/woodentable,
@@ -6796,13 +6998,22 @@
 /area/centcom/raider_base)
 "Ut" = (
 /obj/structure/table/marble,
-/obj/item/glass_jar,
+/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/food/snacks/breadslice,
+/obj/item/reagent_containers/food/snacks/breadslice,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Uw" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/shuttle/skipjack_area)
+"UC" = (
+/obj/structure/table/marble,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "UF" = (
 /obj/structure/railing,
 /turf/simulated/floor/beach/sand,
@@ -6815,6 +7026,11 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/vault/bolted,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/centcom/evac)
+"VC" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/food/condiment/saltshaker,
+/turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "VG" = (
 /obj/structure/railing{
@@ -6858,6 +7074,10 @@
 /obj/random/firstaid,
 /turf/simulated/floor/tiled/white/cargo,
 /area/centcom/raider_base)
+"WE" = (
+/obj/structure/bed/chair/wood,
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
 "WF" = (
 /obj/structure/table/rack,
 /obj/item/storage/deferred/crate/tools,
@@ -16284,7 +16504,7 @@ qH
 qH
 qH
 qH
-oK
+oW
 di
 dg
 dg
@@ -17900,7 +18120,7 @@ qH
 qH
 qH
 qH
-oK
+oW
 di
 dg
 dg
@@ -18450,7 +18670,7 @@ KR
 ho
 ho
 ho
-ho
+TR
 ho
 ho
 ho
@@ -18458,7 +18678,7 @@ ho
 yR
 FM
 FZ
-Oc
+Ie
 Oc
 Ut
 ho
@@ -18649,13 +18869,13 @@ qH
 qH
 qH
 KR
-KR
-KR
-KR
-KR
-KR
-KR
-KR
+ho
+qS
+pA
+MH
+MH
+Rw
+Sb
 ho
 EX
 FM
@@ -18850,14 +19070,14 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+LO
+EJ
+MH
+MH
+WE
+vm
 xD
 sd
 FM
@@ -19052,18 +19272,18 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+SX
+MH
+MH
+MH
+MH
+aP
 ho
 EX
 FM
-FM
+Hl
 GW
 Ir
 zI
@@ -19254,21 +19474,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
 ho
+MH
+MH
+MH
+MH
+MH
+MH
 ho
-ho
-ho
-ho
-ho
-ho
+xg
+FM
+FM
+FM
+FM
+FM
 ho
 bI
 dL
@@ -19456,21 +19676,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
-KR
-KR
-KR
-KR
-KR
-KR
-KR
+ho
+yL
+yL
+MH
+MH
+MH
+Sv
+ho
+AU
+FM
+FM
+FM
+FM
+FM
 ho
 cq
 aD
@@ -19658,21 +19878,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+yL
+Jx
+MH
+MH
+MH
+Sv
+ho
+CP
+FM
+Mb
+Bo
+La
+oL
 ho
 dl
 dl
@@ -19860,21 +20080,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+yL
+yL
+MH
+MH
+MH
+Sv
+ho
+xI
+FM
+FM
+FM
+FM
+FM
 ho
 do
 zA
@@ -20062,21 +20282,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+MH
+MH
+MH
+MH
+MH
+MH
+ho
+yl
+FM
+FM
+FM
+FM
+FM
 ho
 dK
 oD
@@ -20264,21 +20484,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+MH
+MH
+MH
+MH
+MH
+MH
+ho
+yC
+FM
+BW
+Oc
+Ut
+VC
 ho
 zA
 zA
@@ -20466,21 +20686,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+MH
+MH
+MH
+MH
+MH
+MH
+ho
+Ja
+FM
+FM
+FM
+FM
+FM
 ho
 hx
 hx
@@ -20668,21 +20888,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+yL
+yL
+MH
+MH
+MH
+MH
+ho
+oK
+FM
+oM
+Mb
+oN
+oR
 ho
 au
 au
@@ -20870,21 +21090,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+CW
+Jx
+MH
+MH
+MH
+MH
+ho
+oT
+FM
+oO
+oP
+oQ
+oS
 ho
 aE
 dn
@@ -21072,21 +21292,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+yL
+yL
+MH
+MH
+MH
+MH
+ho
+oU
+FM
+FM
+FM
+FM
+FM
 ho
 bI
 dL
@@ -21274,21 +21494,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+MH
+MH
+MH
+MH
+MH
+MH
+ho
+oS
+FM
+oV
+wx
+UC
+UC
 ho
 cq
 aD
@@ -21476,21 +21696,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+FM
+FM
+UC
+UC
+UC
+UC
 ho
 oJ
 dl
@@ -21500,7 +21720,7 @@ aD
 dn
 dn
 dn
-dn
+Kr
 aD
 ho
 KR
@@ -21678,21 +21898,21 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+ho
+FM
+FM
+FM
+FM
+FM
+FM
 ho
 do
 zA
@@ -21887,14 +22107,14 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+FM
+FM
+FM
+FM
+FM
+FM
 ho
 dK
 rq
@@ -22089,14 +22309,14 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+FM
+FM
+FM
+FM
+FM
+FM
 ho
 zA
 zA
@@ -22291,14 +22511,14 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+FM
+FM
+FM
+FM
+FM
+FM
 ho
 hx
 hx
@@ -22493,14 +22713,14 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+FM
+FM
+FM
+FM
+FM
+FM
 ho
 hY
 aD
@@ -22695,14 +22915,14 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+FM
+FM
+FM
+FM
+FM
+FM
 ho
 ji
 dn
@@ -22897,14 +23117,14 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+FM
+FM
+FM
+FM
+FM
+FM
 ho
 jP
 aD
@@ -23099,14 +23319,14 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
 KR
+ho
+ho
+ho
+ho
+ho
+ho
+ho
 ho
 ho
 ho
@@ -23301,13 +23521,13 @@ qH
 qH
 qH
 qH
-qH
-qH
-qH
-qH
-qH
-qH
-qH
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 KR
 KR
 KR

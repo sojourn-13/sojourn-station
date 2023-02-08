@@ -181,6 +181,10 @@
 			return FALSE
 
 	if(!is_drainable())
+		#ifdef CWJ_DEBUG
+		log_debug("reagent_containers/standard_pour_into()- Container not drainable!")
+		#endif
+
 		is_closed_message(user)
 		return FALSE
 

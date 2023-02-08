@@ -56,7 +56,7 @@
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_SILVER = 5)
 	missile_speed = 3
 	missile_range = 10 //Short range
-	fire_sound = 'sound/effects/bang.ogg'
+	fire_sound = 'sound/mecha/weapons/rocketlauncher.ogg'
 	projectiles = 6
 	projectile_energy_cost = 2000
 	equip_cooldown = 60
@@ -73,7 +73,7 @@
 	projectile = /obj/item/missile
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_SILVER = 5)
 	missile_speed = 2
-	fire_sound = 'sound/effects/bang.ogg'
+	fire_sound = 'sound/mecha/weapons/rocketlauncher.ogg'
 	projectiles = 8
 	projectile_energy_cost = 2000
 	equip_cooldown = 60

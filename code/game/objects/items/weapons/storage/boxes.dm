@@ -403,6 +403,16 @@
 	for(var/i in 1 to 5)
 		new /obj/item/grenade/smokebomb(src)
 
+/obj/item/storage/box/phosphorous
+	name = "box of white phosphorous grenades"
+	desc = "A box containing 7 antipersonnel incendiary  grenades.<br> WARNING: These devices are extremely dangerous and can cause severe burns and fires."
+	icon_state = "box_security"
+	illustration = "flashbang"
+
+/obj/item/storage/box/phosphorous/populate_contents()
+	for(var/i in 1 to 5)
+		new /obj/item/grenade/frag/white_phosphorous(src)
+
 /obj/item/storage/box/anti_photons
 	name = "box of anti-photon grenades"
 	desc = "A box containing five experimental photon disruption grenades."
@@ -768,9 +778,8 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 	New()
 		..()
-		new /obj/item/clothing/under/rank/commander/service(src)
-		new /obj/item/clothing/suit/rank/commander/service(src)
-		new /obj/item/clothing/suit/rank/commander/dress(src)
+		new /obj/item/clothing/under/rank/commander_service(src)
+		new /obj/item/clothing/suit/rank/commander_service(src)
 		new /obj/item/clothing/head/rank/commanderdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
@@ -853,3 +862,65 @@ Boxes with clothing on them, unable to put them back if taken out because...
 /obj/item/storage/box/guild_capacitor/populate_contents()
 	for(var/i in 1 to 4)
 		new /obj/item/stock_parts/capacitor/handmade(src)
+
+
+/obj/item/storage/box/njoy
+	name = "mix Njoy packet"
+	desc = "Packet full of red njoy pills."
+	illustration = null
+	icon_state = "packet_njoy_mix"
+	item_state = "packet_njoy_mix"
+
+/obj/item/storage/box/njoy/red/New()
+	. = ..()
+
+/obj/item/storage/box/njoy/red/populate_contents()
+	new /obj/item/storage/pill_bottle/njoy/red(src)
+	new /obj/item/storage/pill_bottle/njoy/blue(src)
+	new /obj/item/storage/pill_bottle/njoy/green(src)
+
+
+/obj/item/storage/box/njoy/red
+	name = "red Njoy packet"
+	desc = "Packet full of red njoy pills."
+	illustration = null
+	icon_state = "packet_njoy_red"
+	item_state = "packet_njoy_red"
+
+/obj/item/storage/box/njoy/red/New()
+	. = ..()
+
+/obj/item/storage/box/njoy/red/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/storage/pill_bottle/njoy/red(src)
+
+
+/obj/item/storage/box/njoy/blue
+	name = "blue Njoy packet"
+	desc = "Packet full of blue njoy pills."
+	illustration = null
+	icon_state = "packet_njoy_blue"
+	item_state = "packet_njoy_blue"
+
+/obj/item/storage/box/njoy/blue/New()
+	. = ..()
+
+/obj/item/storage/box/njoy/blue/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/storage/pill_bottle/njoy/blue(src)
+
+
+/obj/item/storage/box/njoy/green
+	name = "green Njoy packet"
+	desc = "Packet full of green njoy pills."
+	illustration = null
+	icon_state = "packet_njoy_green"
+	item_state = "packet_njoy_green"
+
+/obj/item/storage/box/njoy/green/New()
+	. = ..()
+
+/obj/item/storage/box/njoy/green/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/storage/pill_bottle/njoy/green(src)
+

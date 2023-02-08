@@ -356,11 +356,11 @@
 	if(length(matter))
 		for(var/i in matter)
 			var/material/M = get_material_by_name(i)
-			var/matter_ammount = round(matter[i] * 0.75) // around 75% matterials back
-			if (matter_ammount < 1)
+			var/matter_amount = round(matter[i] * 0.75) // around 75% matterials back
+			if (matter_amount < 1)
 				continue
 			var/obj/item/stack/material/MS = new M.stack_type(O.drop_location())
-			MS.amount = matter_ammount
+			MS.amount = matter_amount
 		O.Destroy()
 
 /datum/reagent/other/space_cleaner

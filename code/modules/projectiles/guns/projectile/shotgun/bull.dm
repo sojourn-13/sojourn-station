@@ -24,13 +24,27 @@
 	burst_delay = null
 	fire_delay = null
 	bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/max_sawn_off.ogg' // It's a double barrel, gets a double barrel sound
 	move_delay = null
 	init_firemodes = list(
 		list(mode_name="Single barrel", mode_desc="Shoots one barrel", burst=1, icon="semi"),
 		list(mode_name="Double barrel", mode_desc="Shoots both barrels at once", burst=2, icon="burst"),
 		)
 	serial_type = "H&S"
+
+	wield_delay = 0.9 SECOND
+	wield_delay_factor = 0.2 // 40 vig
+	gun_parts = list(/obj/item/part/gun/frame/bull = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/part/gun/barrel/shotgun = 1)
+
+/obj/item/part/gun/frame/bull
+	name = "Bull frame"
+	desc = "A Bull shotgun frame. Double-barrel and pump action, through a miracle of engineering."
+	icon_state = "frame_bull"
+	result = /obj/item/gun/projectile/shotgun/bull
+	resultvars = list(/obj/item/gun/projectile/shotgun/bull)
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/shotgun
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
 
 /obj/item/gun/projectile/shotgun/bull/bison
 	name = "\"Bison\" shotgun"

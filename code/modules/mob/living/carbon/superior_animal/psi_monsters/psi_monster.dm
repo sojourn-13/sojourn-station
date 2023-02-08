@@ -17,13 +17,13 @@
 
 	cant_be_pulled = TRUE
 	cant_gib = TRUE
-	maxHealth = 120
-	health = 120
+	maxHealth = 100
+	health = 100
 	randpixel = 0
 	attack_sound = list('sound/xenomorph/alien_claw_flesh1.ogg', 'sound/xenomorph/alien_claw_flesh2.ogg', 'sound/xenomorph/alien_claw_flesh3.ogg', 'sound/xenomorph/alien_tail_attack.ogg')
 	var/aggro_noise = 'sound/hallucinations/hell_screech.ogg'
 	attack_sound_chance = 100
-	speak_emote = list("murmurs", "howls", "whispers")
+	speak_emote = list("murmurs...", "howls!", "whispers...")
 	emote_see = list("groans in pain.", "moans in agony.", "chitters madly!")
 	speak_chance = 5
 	deathmessage = "looses a guttural snarl as it crumbles to dust!"
