@@ -753,30 +753,6 @@
 	items = list(/obj/item/reagent_containers/food/snacks/butterslice)
 	result = /obj/item/reagent_containers/food/snacks/appletart
 
-/datum/recipe/tossedsalad
-	fruit = list("cabbage" = 2, "tomato" = 1, "carrot" = 1, "apple" = 1)
-	result = /obj/item/reagent_containers/food/snacks/tossedsalad
-
-/datum/recipe/aesirsalad
-	fruit = list("goldapple" = 1, "ambrosiadeus" = 1)
-	result = /obj/item/reagent_containers/food/snacks/aesirsalad
-
-/datum/recipe/validsalad
-	fruit = list("potato" = 1, "ambrosia" = 3)
-	items = list(/obj/item/reagent_containers/food/snacks/meatball)
-	result = /obj/item/reagent_containers/food/snacks/validsalad
-	make_food(var/obj/container as obj)
-		var/obj/item/reagent_containers/food/snacks/validsalad/being_cooked = ..(container)
-		being_cooked.reagents.del_reagent("toxin")
-		return being_cooked
-
-
-/datum/recipe/stuffing
-	reagents = list("water" = 5, "sodiumchloride" = 1, "blackpepper" = 1)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/sliceable/bread,
-	)
-	result = /obj/item/reagent_containers/food/snacks/stuffing
 
 /datum/recipe/tofurkey
 	items = list(
@@ -821,30 +797,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/taco
 
-/datum/recipe/bun
-	items = list(
-		/obj/item/reagent_containers/food/snacks/dough
-	)
-	result = /obj/item/reagent_containers/food/snacks/bun
-
-/datum/recipe/flatbread
-	items = list(
-		/obj/item/reagent_containers/food/snacks/sliceable/flatdough
-	)
-	result = /obj/item/reagent_containers/food/snacks/flatbread
-
-/datum/recipe/meatball
-	items = list(
-		/obj/item/reagent_containers/food/snacks/rawmeatball
-	)
-	result = /obj/item/reagent_containers/food/snacks/meatball
-
-/datum/recipe/cutlet
-	items = list(
-		/obj/item/reagent_containers/food/snacks/rawcutlet
-	)
-	result = /obj/item/reagent_containers/food/snacks/cutlet
-
 /datum/recipe/fries
 	reagents = list("cornoil" = 1)
 	items = list(
@@ -857,67 +809,6 @@
 	result = /obj/item/reagent_containers/food/snacks/mint
 
 
-// Cakes.
-/datum/recipe/cake
-	reagents = list("milk" = 5, "flour" = 15, "sugar" = 15, "egg" = 9)
-	items = list(/obj/item/reagent_containers/food/snacks/sliceable/butterstick)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/plaincake
-
-/datum/recipe/cake/carrot
-	fruit = list("carrot" = 3)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/carrotcake
-
-/datum/recipe/cake/cheese
-	items = list(
-		/obj/item/reagent_containers/food/snacks/cheesewedge,
-		/obj/item/reagent_containers/food/snacks/cheesewedge
-	)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/cheesecake
-
-/datum/recipe/cake/orange
-	fruit = list("orange" = 1)
-	reagents = list("milk" = 5, "flour" = 15, "egg" = 9, "orangejuice" = 3, "sugar" = 5)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/orangecake
-
-/datum/recipe/cake/lime
-	fruit = list("lime" = 1)
-	reagents = list("milk" = 5, "flour" = 15, "egg" = 9, "limejuice" = 3, "sugar" = 5)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/limecake
-
-/datum/recipe/cake/lemon
-	fruit = list("lemon" = 1)
-	reagents = list("milk" = 5, "flour" = 15, "egg" = 9, "lemonjuice" = 3, "sugar" = 5)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/lemoncake
-
-/datum/recipe/cake/chocolate
-	items = list(/obj/item/reagent_containers/food/snacks/chocolatebar)
-	reagents = list("milk" = 5, "flour" = 15, "egg" = 9, "coco" = 5, "sugar" = 5)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/chocolatecake
-
-/datum/recipe/cake/birthday
-	items = list(
-		/obj/item/clothing/head/costume/misc/cake,
-		/obj/item/reagent_containers/food/snacks/sliceable/butterstick,
-		)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/birthdaycake
-
-/datum/recipe/cake/apple
-	fruit = list("apple" = 2)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/applecake
-
-/datum/recipe/cake/brain
-	items = list(
-		/obj/item/organ/internal/brain,
-		/obj/item/reagent_containers/food/snacks/sliceable/butterstick,
-		)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/braincake
-
-/datum/recipe/brownies
-	reagents = list("coco" = 10, "flour" = 15, "egg" = 3, "sugar" = 5)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/sliceable/butterstick,
-	)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/brownie
 
 //Roach cubes
 

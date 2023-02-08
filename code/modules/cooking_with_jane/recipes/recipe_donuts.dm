@@ -4,10 +4,11 @@
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
+		list(CWJ_USE_OVEN, J_LO, 20 SECONDS),
 		list(CWJ_ADD_REAGENT, "sugar", 5),
-		list(CWJ_ADD_REAGENT, "milk", 5),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
-		list(CWJ_USE_OVEN, J_LO, 20 SECONDS)
+		list(CWJ_ADD_REAGENT, "milk", 5),
+		list(CWJ_USE_TOOL, QUALITY_CUTTING, 1)
 	)
 
 /datum/cooking_with_jane/recipe/donut
