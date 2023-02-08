@@ -2,7 +2,7 @@
 //node2, air2, network2 correspond to output
 
 /obj/machinery/atmospherics/binary/circulator
-	name = "circulator binary atmospherics pipe"
+	name = "circulator"
 	desc = "A gas circulator turbine and heat exchanger."
 	icon = 	'icons/obj/machines/thermoelectric.dmi'
 	icon_state = "circ-unassembled"
@@ -75,18 +75,18 @@
 
 /obj/machinery/atmospherics/binary/circulator/update_icon()
 	icon_state = anchored ? "circ-assembled" : "circ-unassembled"
-	cut_overlays()
+	overlays.Cut()
 	if (stat & (BROKEN|NOPOWER) || !anchored)
 		return
 	if (last_pressure_delta > 0 && recent_moles_transferred > 0)
 		if (temperature_overlay)
-			add_overlay(temperature_overlay)
+			overlays += temperature_overlay
 		if (last_pressure_delta > 5*ONE_ATMOSPHERE)
-			add_overlay("circ-run")
+			overlays += "circ-run"
 		else
-			add_overlay("circ-slow")
+			overlays += "circ-slow"
 	else
-		add_overlay("circ-off")
+		overlays += "circ-off"
 
 /obj/machinery/atmospherics/binary/circulator/attackby(obj/item/I, mob/user)
 	if(QUALITY_BOLT_TURNING in I.tool_qualities)
