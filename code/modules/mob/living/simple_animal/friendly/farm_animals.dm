@@ -330,7 +330,7 @@ var/global/chicken_count = 0
 	friendly_to_colony = TRUE
 	inherent_mutations = list(MUTATION_IMBECILE, MUTATION_NERVOUSNESS, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 	clone_difficulty = CLONE_EASY
-
+	var/hogsleft = 0
 
 /mob/living/simple_animal/pig/Life()
 	. = ..()
@@ -350,6 +350,69 @@ var/global/chicken_count = 0
 				to_chat(M, pick(responses))
 	else
 		..()
+
+/mob/living/simple_animal/pig/hog
+	name = "Amerethi hog"
+	desc = "The result of crossing genetics between the colony's aging sow and cerberi from the Lodge, this is a docile species with asexual reproduction when fed mushrooms, raised chiefly for its meat without the otherwise ugly connotations of raising for slaughter what should have been a valued hunting companion."
+	icon_state = "pighog"
+
+/mob/living/simple_animal/pig/hog/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	if(istype(O, /obj/item/reagent_containers/food/snacks/grown)) //feedin' dem hogs
+		var/obj/item/reagent_containers/food/snacks/grown/G = O
+		if(G.seed && G.seed.kitchen_tag == "mushroom")
+			if(!stat && hogsleft < 4)
+				user.visible_message("\blue [user] feeds [O] to [name]! She snorts happily.","\blue You feed [O] to [name]! She snorts happily.")
+				user.drop_item()
+				qdel(O)
+				hogsleft += rand(1, 4)
+			else
+				to_chat(user, "\blue [name] doesn't seem hungry!")
+		else
+			to_chat(user, "[name] doesn't seem interested in that.")
+	else
+		..()
+
+/mob/living/simple_animal/pig/hog/Life()
+	. =..()
+	if(!.)
+		return
+	if(!stat && prob(3) && hogsleft > 0)
+		visible_message("[src] lays down and births a hoglet.")
+		hogsleft--
+		var/mob/living/simple_animal/hoglet/E = new(get_turf(src))
+		START_PROCESSING(SSmobs, E)
+
+/mob/living/simple_animal/hoglet
+	name = "hoglet"
+	desc = "An adorable little hoglet that will quickly grow to an impressive size."
+	icon = 'icons/mob/mobs-domestic.dmi'
+	icon_state = "pighog"
+	speak_chance = 5
+	speak_emote = list("oinks","grunts softly")
+	emote_see = list("scratches at the ground.","gives a small snort.","hops back and forth.")
+	turns_per_move = 2
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
+	meat_amount = 1
+	health = 30
+	var/amount_grown = 0
+	mob_size = MOB_SMALL
+	colony_friend = TRUE
+	friendly_to_colony = TRUE
+
+/mob/living/simple_animal/hoglet/add_initial_transforms()
+	. = ..()
+
+	add_new_transformation(/datum/transform_type/modular, list(0.5, 0.5, flag = BABY_CERBERUS_INITIAL_SCALE_TRANSFORM, priority = BABY_CERBERUS_INITIAL_SCALE_TRANSFORM_PRIORITY))
+
+/mob/living/simple_animal/hoglet/Life()
+	. =..()
+	if(!.)
+		return
+	if(!stat)
+		amount_grown += rand(1,2)
+		if(amount_grown >= 50)
+			new /mob/living/simple_animal/pig/hog(src.loc)
+			qdel(src)
 
 /mob/living/simple_animal/metal_chicken
 	name = "\improper C.H.I.C.K"
