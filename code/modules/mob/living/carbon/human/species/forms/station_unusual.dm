@@ -14,7 +14,7 @@
 	belt_icon = 		'icons/inventory/teshari/teshari_belts.dmi'
 	ears_icon = 		'icons/inventory/teshari/teshari_ears.dmi'
 	icon_fallback = null
-	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR | DEFAULT_APPEARANCE_FLAGS
 	playable = FALSE
 
 /datum/species_form/vox
@@ -30,7 +30,7 @@
 	head_icon = 		'icons/inventory/vox/vox_head.dmi'
 	suit_icon = 		'icons/inventory/vox/vox_suit.dmi'
 	mask_icon = 		'icons/inventory/vox/vox_masks.dmi'
-	appearance_flags =	 HAS_HAIR_COLOR | HAS_EYE_COLOR
+	appearance_flags =	 HAS_HAIR_COLOR | HAS_EYE_COLOR | DEFAULT_APPEARANCE_FLAGS
 
 /datum/species_form/vox/azure
 	name = FORM_VOX_AZURE
