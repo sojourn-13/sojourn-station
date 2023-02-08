@@ -306,12 +306,14 @@
 
 /obj/effect/decal/cleanable/crayon/proc/bees_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	for(var/obj/item/honey_frame/F in oview(1)) // Must be on the spell circle
-		to_chat(M, "<span class='info'>Figures form in the smoke above the candles. Distant voices calling out from everywhere. NOT THE BEES!</span>")
+	M.maxHealth -= 10
+	M.health -= 10
+	for(var/obj/item/reagent_containers/food/snacks/grown/G in oview(5)) // Must be on the spell circle
+		to_chat(M, "<span class='info'>Distant voices call out from everywhere. NOT THE BEES!</span>")
 		B.remove_self(70)
-		for(var/obj/item/flame/candle/mage_candle in oview(5))
-			new /mob/living/carbon/superior_animal/vox/wasp(mage_candle.loc)
-		qdel(F)
+		if(G.name == "sunflower")
+			new /mob/living/carbon/superior_animal/vox/wasp(G.loc)
+			qdel(G)
 	return
 
 /obj/effect/decal/cleanable/crayon/proc/voice_spell(mob/living/carbon/human/M)
