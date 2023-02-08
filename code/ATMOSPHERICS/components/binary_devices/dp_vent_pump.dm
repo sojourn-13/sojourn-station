@@ -15,7 +15,7 @@
 	//node2 is output port
 	//node1 is input port
 
-	name = "dual port air vent"
+	name = "Dual Port Air Vent"
 	desc = "Has a valve and pump attached to it. There are two ports."
 
 	level = BELOW_PLATING_LEVEL
@@ -33,7 +33,7 @@
 	var/output_pressure_max = DEFAULT_PRESSURE_DELTA
 
 	var/frequency = 0
-	var/id = null
+	var/id
 	var/datum/radio_frequency/radio_connection
 
 	var/pressure_checks = PRESSURE_CHECK_EXTERNAL
@@ -48,7 +48,7 @@
 	icon = null
 
 /obj/machinery/atmospherics/binary/dp_vent_pump/high_volume
-	name = "large dual port air vent"
+	name = "Large Dual Port Air Vent"
 
 /obj/machinery/atmospherics/binary/dp_vent_pump/high_volume/New()
 	..()
@@ -59,7 +59,7 @@
 	if(!check_icon_cache())
 		return
 
-	cut_overlays()
+	overlays.Cut()
 
 	var/vent_icon = "vent"
 
@@ -75,7 +75,7 @@
 	else
 		vent_icon += "[use_power ? "[pump_direction ? "out" : "in"]" : "off"]"
 
-	add_overlay(icon_manager.get_atmos_icon("device", , , vent_icon))
+	overlays += icon_manager.get_atmos_icon("device", , , vent_icon)
 
 /obj/machinery/atmospherics/binary/dp_vent_pump/update_underlays()
 	if(..())
