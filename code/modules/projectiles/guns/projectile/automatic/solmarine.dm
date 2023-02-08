@@ -26,7 +26,7 @@
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	var/shotgun_haver = TRUE
-	gun_parts = list(/obj/item/part/gun/frame/solmarine = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/part/gun/barrel/srifle = 1)
+	gun_parts = list(/obj/item/part/gun/frame/solmarine = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/omnirifle/solmarine/Initialize()
 	. = ..()

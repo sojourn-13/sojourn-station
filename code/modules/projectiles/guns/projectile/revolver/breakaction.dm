@@ -86,6 +86,17 @@
 							  /obj/item/tool_upgrade/productivity/ergonomic_grip = TRUE,
 							  /obj/item/tool_upgrade/refinement/ported_barrel = TRUE,)
 	zoom_factors = list()
+	gun_parts = list(/obj/item/part/gun/frame/mateba = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/kurtz = 1)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	serial_type = "SD GmbH"
+
+/obj/item/part/gun/frame/mateba
+	name = "Mateba frame"
+	desc = "A \"Mateba\" autorevolver frame. A specialized, recoil-absorbing revolver frame for a potent firearm chambered in 12mm."
+	icon_state = "frame_mateba"
+	result = /obj/item/gun/projectile/revolver/rev10/mateba
+	gripvars = /obj/item/part/gun/grip/wood
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
+	barrelvars = /obj/item/part/gun/barrel/kurtz
+	resultvars = /obj/item/gun/projectile/revolver/rev10/mateba
 

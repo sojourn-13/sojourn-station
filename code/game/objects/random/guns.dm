@@ -530,8 +530,9 @@
 	/obj/item/part/gun/frame/minstral = 4,
 	/obj/item/part/gun/frame/minotaur = 6,
 	/obj/item/part/gun/frame/tacticool = 8,
+	/obj/item/part/gun/frame/mateba = 1,
 	/obj/item/part/gun/frame/wayfarer = 1,
 	/obj/item/part/gun/frame/bull = 5,
-	/obj/item/part/gun/frame/pug = 7,
+	/obj/item/part/gun/frame/pug = 7
 	))
 

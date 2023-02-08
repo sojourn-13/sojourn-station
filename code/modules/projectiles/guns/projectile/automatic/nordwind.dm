@@ -46,8 +46,8 @@
 
 /obj/item/gun/projectile/automatic/nordwind/strelki
 	name = "\"Strelki\" precision rifle"
-	desc = "A Strelki precision rifle, an inexpensive rifle of desent quality made by Hunt Inc.\
-			Its mostly wooden design and its usage of 7.62mm rounds make it the ideal weapon for a hunter tired of a crude boltaction. The frontier's favorite sniper!"
+	desc = "A Strelki precision rifle, an inexpensive rifle of desent quality made by Hunters Inc.\
+			Its mostly wooden design and its usage of 7.62mm rounds make it the ideal weapon for a hunter tired of a crude bolt action. The frontier's favorite sniper!"
 	icon = 'icons/obj/guns/projectile/strelki.dmi'
 	icon_state = "strelki"
 	item_state = "strelki"
@@ -72,6 +72,7 @@
 
 	wield_delay = 1.3 SECOND
 	wield_delay_factor = 0.3 // 30 vig to insta wield , not heavy class but not light
+	gun_parts = list(/obj/item/part/gun/frame/strelki = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 /obj/item/gun/projectile/automatic/nordwind/update_icon()
 	..()

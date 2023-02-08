@@ -378,6 +378,14 @@
 	name = "Throwing knives scabbard"
 	build_path = /obj/item/storage/pouch/kniferig
 
+/datum/design/bioprinter/pouch/quiver
+	name = "arrows quiver"
+	build_path = /obj/item/storage/pouch/quiver
+
+/datum/design/bioprinter/pouch/xbowquiver
+	name = "crossbow bolts quiver"
+	build_path = /obj/item/storage/pouch/bolts
+
 /datum/design/bioprinter/pouch/engineering_supply
 	name = "Engineering supplies pouch"
 	build_path = /obj/item/storage/pouch/engineering_supply
