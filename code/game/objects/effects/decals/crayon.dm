@@ -308,6 +308,7 @@
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.maxHealth -= 10
 	M.health -= 10
+	to_chat(M, "<span class='info'>To make life from dyes, takes carbon...</span>")
 	for(var/obj/item/reagent_containers/food/snacks/grown/G in oview(5)) // Must be on the spell circle
 		to_chat(M, "<span class='info'>Distant voices call out from everywhere. NOT THE BEES!</span>")
 		B.remove_self(70)
