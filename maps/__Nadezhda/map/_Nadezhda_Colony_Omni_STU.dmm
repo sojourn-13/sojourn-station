@@ -59115,11 +59115,8 @@
 	name = "Science Expedition prep"
 	})
 "lok" = (
-/obj/structure/sink/kitchen{
-	dir = 4;
-	pixel_x = -19
-	},
-/turf/simulated/wall,
+/mob/living/simple_animal/pig/hog,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "lol" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -145521,7 +145518,7 @@ ahD
 eTn
 pqe
 nIE
-lok
+dQP
 jfH
 jlJ
 fED
@@ -147938,7 +147935,7 @@ uZS
 dQP
 xwT
 lHT
-xwi
+lok
 ydT
 jpD
 qgd
