@@ -48,11 +48,11 @@
 
 /obj/machinery/atmospherics/omni/update_icon()
 	if(stat & NOPOWER)
-		overlays = overlays_off
+		copy_overlays(overlays_off, TRUE)
 	else if(error_check())
-		overlays = overlays_error
+		copy_overlays(overlays_error, TRUE)
 	else
-		overlays = use_power ? (overlays_on) : (overlays_off)
+		copy_overlays(use_power ? (overlays_on) : (overlays_off), TRUE)
 
 	underlays = underlays_current
 
@@ -87,7 +87,7 @@
 		int_pressure += P.air.return_pressure()
 	var/datum/gas_mixture/env_air = loc.return_air()
 	if ((int_pressure - env_air.return_pressure()) > 2*ONE_ATMOSPHERE)
-		to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], it is too exerted due to internal pressure."))
+		to_chat(user, SPAN_WARNING("You cannot unfasten \the [src], it is under too much pressure."))
 		add_fingerprint(user)
 		return 1
 	to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
@@ -95,7 +95,7 @@
 		user.visible_message( \
 			SPAN_NOTICE("\The [user] unfastens \the [src]."), \
 			SPAN_NOTICE("You have unfastened \the [src]."), \
-			"You hear a ratchet.")
+			"You hear a ratcheting.")
 		investigate_log("was unfastened by [key_name(user)]", "atmos")
 		new /obj/item/pipe(loc, make_from=src)
 		qdel(src)
