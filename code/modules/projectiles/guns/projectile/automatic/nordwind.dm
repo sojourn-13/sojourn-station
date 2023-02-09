@@ -36,7 +36,7 @@
 
 /obj/item/part/gun/frame/nord
 	name = "Wind-series frame"
-	desc = "A generic -Wind series rifle frame. Simply use a drill-bit or a buffer to your desired caliber!."
+	desc = "A generic -Wind series rifle frame. Simply use a drill-bit or a buffer to your desired caliber!"
 	icon_state = "frame_wind"
 	result = /obj/item/gun/projectile/automatic/nordwind
 	gripvars = list(/obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black)

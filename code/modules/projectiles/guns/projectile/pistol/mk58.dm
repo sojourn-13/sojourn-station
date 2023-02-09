@@ -24,7 +24,7 @@
 
 /obj/item/part/gun/frame/mk58
 	name = "Absolute Pistol frame"
-	desc = "A standerized pistol frame from the Absolute. The frame needed to make the Thorn or the Rose."
+	desc = "A standardized pistol frame from the Absolute. The frame needed to make either the Thorn or the Rose."
 	icon_state = "frame_mk58"
 	result = /obj/item/gun/projectile/mk58
 	resultvars = list(/obj/item/gun/projectile/mk58, /obj/item/gun/projectile/mk58/wood)

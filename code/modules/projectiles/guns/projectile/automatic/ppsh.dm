@@ -89,7 +89,7 @@
 
 /obj/item/part/gun/frame/ppsh
 	name = "PPSH frame"
-	desc = "A PPSH SMG frame. A workers best friend."
+	desc = "A PPSH SMG frame. A worker's best friend."
 	icon_state = "frame_ppsh"
 	result = /obj/item/gun/projectile/automatic/ppsh
 	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black)

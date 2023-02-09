@@ -151,7 +151,7 @@
 
 /obj/item/part/gun/frame/solmarine
 	name = "Solmarine frame"
-	desc = "An Solmarine carbine frame. For those who want to LARP 600 years in the past."
+	desc = "A Solmarine carbine frame. For those who want to LARP 600 years in the past."
 	icon_state = "frame_sol"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/omnirifle/solmarine

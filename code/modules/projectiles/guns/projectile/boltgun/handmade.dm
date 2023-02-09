@@ -23,7 +23,7 @@
 
 /obj/item/part/gun/frame/homemadebolt
 	name = "handmade rifle frame"
-	desc = "A handmade bolt-action rifle frame. For the absolute poorest in the universe. Also insainly modular taking any rifle barrel type."
+	desc = "A handmade bolt-action rifle frame. For the absolute poorest in the universe. Also insanely modular, taking any rifle barrel type."
 	icon_state = "frame_riose"
 	matter = list(MATERIAL_STEEL = 5)
 	nra = FALSE

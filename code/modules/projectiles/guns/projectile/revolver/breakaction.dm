@@ -94,9 +94,9 @@
 	name = "Mateba frame"
 	desc = "A \"Mateba\" autorevolver frame. A specialized, recoil-absorbing revolver frame for a potent firearm chambered in 12mm."
 	icon_state = "frame_mateba"
-	result = list(/obj/item/gun/projectile/revolver/rev10/mateba)
+	result = /obj/item/gun/projectile/revolver/rev10/mateba
 	gripvars = list(/obj/item/part/gun/grip/wood)
-	mechanismvar = list(/obj/item/part/gun/mechanism/revolver)
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
 	barrelvars = list(/obj/item/part/gun/barrel/kurtz)
 	resultvars = list(/obj/item/gun/projectile/revolver/rev10/mateba)
 

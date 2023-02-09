@@ -39,7 +39,7 @@
 
 /obj/item/part/gun/frame/roe
 	name = "Roe frame"
-	desc = "A Roe boltaction rifle frame. Perfect for small game and practice."
+	desc = "A Roe bolt-action rifle frame. Perfect for small game and practice."
 	icon_state = "frame_roe"
 	result = /obj/item/gun/projectile/boltgun/light
 	resultvars = list(/obj/item/gun/projectile/boltgun/light)
