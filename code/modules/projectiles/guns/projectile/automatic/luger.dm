@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/automatic/luger
-	name = "\"Vintovka Lyugera\" carbine"
-	desc = "An old-world pistol mutilated and modified into an SMG of sorts. Reliable, well crafted but bulky. Amazingly it.. works! The look is hard to describe.. a mix between 'makeshift' and 'amazing'. \
-	While able to take both 9mm pistol and SMG magazines the gun appears to lack a proper fire selection."
+	name = "\"Vintovka Lyugera\" SMG"
+	desc = "An old-world pistol mutilated and modified into an SMG of sorts. Reliable, well crafted but bulky. Amazingly it... works! The look is hard to describe... a mix between 'jury rigged' and 'amazing'. \
+	While able to take all kinds of 9mm pistol and SMG magazines, it features only two modes: Semiauto, and uncontrollable automatic fire."
 	icon = 'icons/obj/guns/projectile/luger.dmi'
 	icon_state = "luger"
 	item_state = "luger"
@@ -22,6 +22,7 @@
 
 	wield_delay = 0.5 SECOND
 	wield_delay_factor = 0.1 // 10 vig
+	gun_parts = list(/obj/item/part/gun/frame/luger = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 /obj/item/gun/projectile/automatic/luger/update_icon()
 	..()
@@ -37,3 +38,15 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/part/gun/frame/luger
+	name = "Luger frame"
+	desc = "A frame that looks like an AK yet it's an SMG, its magwell located where the grip should go. \
+			Why is this mangled monstruosity called a Luger anyways...?"
+	icon_state = "frame_luger"
+	result = /obj/item/gun/projectile/automatic/luger
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	resultvars = list(/obj/item/gun/projectile/automatic/luger)
+	mechanismvar = /obj/item/part/gun/mechanism/smg
+	barrelvars = list(/obj/item/part/gun/barrel/pistol)
+
