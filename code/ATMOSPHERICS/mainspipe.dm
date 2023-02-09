@@ -1,5 +1,5 @@
 // internal pipe, don't actually place or use these
-/obj/machinery/atmospherics/pipe/mains_component
+obj/machinery/atmospherics/pipe/mains_component
 	var/obj/machinery/atmospherics/mains_pipe/parent_pipe
 	var/list/obj/machinery/atmospherics/pipe/mains_component/nodes = new()
 
@@ -32,7 +32,7 @@
 	proc/mains_burst()
 		parent_pipe.burst()
 
-/obj/machinery/atmospherics/mains_pipe
+obj/machinery/atmospherics/mains_pipe
 	icon = 'icons/obj/atmospherics/mainspipe.dmi'
 	layer = 2.4 //under wires with their 2.5
 
@@ -73,6 +73,7 @@
 		update_icon()
 
 	proc/burst()
+
 		for(var/obj/machinery/atmospherics/pipe/mains_component/pipe in contents)
 			burst()
 
@@ -108,7 +109,7 @@
 				scrubbers.nodes[i] = node.scrubbers
 				aux.nodes[i] = node.aux
 
-/obj/machinery/atmospherics/mains_pipe/simple
+obj/machinery/atmospherics/mains_pipe/simple
 	name = "mains pipe"
 	desc = "A one meter section of 3-line mains pipe"
 
@@ -191,7 +192,7 @@
 		level = ABOVE_PLATING_LEVEL
 		icon_state = "intact"
 
-/obj/machinery/atmospherics/mains_pipe/manifold
+obj/machinery/atmospherics/mains_pipe/manifold
 	name = "manifold pipe"
 	desc = "A manifold composed of mains pipes"
 
@@ -256,7 +257,7 @@
 		level = ABOVE_PLATING_LEVEL
 		icon_state = "manifold"
 
-/obj/machinery/atmospherics/mains_pipe/manifold4w
+obj/machinery/atmospherics/mains_pipe/manifold4w
 	name = "manifold pipe"
 	desc = "A manifold composed of mains pipes"
 
@@ -306,9 +307,9 @@
 		level = ABOVE_PLATING_LEVEL
 		icon_state = "manifold4w"
 
-/obj/machinery/atmospherics/mains_pipe/split
+obj/machinery/atmospherics/mains_pipe/split
 	name = "mains splitter"
-	desc = "A splitter for connecting to a single pipe off a mains."
+	desc = "A splitter that forks mains off to a single pipe."
 
 	var/obj/machinery/atmospherics/pipe/mains_component/split_node
 	var/obj/machinery/atmospherics/node3
@@ -407,7 +408,7 @@
 			level = ABOVE_PLATING_LEVEL
 			icon_state = "split-aux"
 
-/obj/machinery/atmospherics/mains_pipe/split3
+obj/machinery/atmospherics/mains_pipe/split3
 	name = "triple mains splitter"
 	desc = "A splitter for connecting to the 3 pipes on a mainline."
 
@@ -499,9 +500,9 @@
 		level = ABOVE_PLATING_LEVEL
 		icon_state = "split-t"
 
-/obj/machinery/atmospherics/mains_pipe/cap
+obj/machinery/atmospherics/mains_pipe/cap
 	name = "pipe cap"
-	desc = "A cap for the end of a mains pipe"
+	desc = "A cap that seals the end of a mains pipe"
 
 	dir = SOUTH
 	initialize_directions = SOUTH

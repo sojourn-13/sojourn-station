@@ -1,15 +1,15 @@
 obj/machinery/atmospherics/unary/oxygen_generator
 	icon = 'icons/obj/atmospherics/oxygen_generator.dmi'
 	icon_state = "intact_off"
-	density = TRUE
+	density = 1
 
-	name = "Oxygen Generator"
+	name = "oxygen generator"
 	desc = ""
 
 	dir = SOUTH
 	initialize_directions = SOUTH
 
-	var/on = FALSE
+	var/on = 0
 
 	var/oxygen_content = 10
 
@@ -19,7 +19,7 @@ obj/machinery/atmospherics/unary/oxygen_generator
 		else
 			icon_state = "exposed_off"
 
-			on = FALSE
+			on = 0
 
 		return
 
