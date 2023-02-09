@@ -46,7 +46,7 @@
 
 /obj/item/gun/projectile/automatic/nordwind/strelki
 	name = "\"Strelki\" precision rifle"
-	desc = "A Strelki precision rifle, an inexpensive rifle of desent quality made by Hunters Inc.\
+	desc = "A Strelki precision rifle, an inexpensive rifle of decent quality made by Hunters Inc.\
 			Its mostly wooden design and its usage of 7.62mm rounds make it the ideal weapon for a hunter tired of a crude bolt action. The frontier's favorite sniper!"
 	icon = 'icons/obj/guns/projectile/strelki.dmi'
 	icon_state = "strelki"
