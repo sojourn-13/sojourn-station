@@ -346,6 +346,7 @@
 	//if(breath)
 	//	loc.assume_air(breath) //by default, exhale
 
+/* this is now handled upwards in living_defense
 /mob/living/carbon/superior_animal/handle_fire(flammable_gas, turf/location)
 	if(never_stimulate_air)
 		if (fire_stacks > 0)
@@ -362,7 +363,7 @@
 	if(!on_fire)
 		return FALSE
 	adjustFireLoss(2 * bodytemperature / max_bodytemperature) // scaling with how much you are over your body temp
-	bodytemperature += fire_stacks * 5 // 5 degrees per firestack
+	bodytemperature += fire_stacks * 10 // 5 degrees per firestack
 	if(isturf(location))
 		location.hotspot_expose( FIRESTACKS_TEMP_CONV(fire_stacks), 50, 1)
 
@@ -370,6 +371,7 @@
 	cut_overlay(image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing"))
 	if(on_fire)
 		add_overlay(image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing"))
+*/
 
 //The most common cause of an airflow stun is a sudden breach. Evac conditions generally
 /mob/living/carbon/superior_animal/airflow_stun()
