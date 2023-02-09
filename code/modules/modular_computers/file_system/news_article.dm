@@ -102,20 +102,19 @@
 	filename = "Fire In The Jungle"
 	server_file_path = 'news_articles/FIRE_IN_THE_JUNGLE.html'
 
-<<<<<<< Updated upstream
 /datum/computer_file/data/news_article/Mangos_Untitled_Stream
 	filename = "Mango's Untitled Stream #473"
 	server_file_path = 'news_articles/Mangos_Untitled_Stream.html'
-=======
+
 /datum/computer_file/data/news_article/The_month_in_recap
 	filename = "The month in recap!"
 	server_file_path = 'news_articles/The_month_in_recap.html'
 
-	/datum/computer_file/data/news_article/Full_stop
+/datum/computer_file/data/news_article/Full_stop
 	filename = "Full stop"
 	server_file_path = 'news_articles/Full_stop.html'
 
-	/datum/computer_file/data/news_article/An_odd_twist_of_fate
+/datum/computer_file/data/news_article/An_odd_twist_of_fate
 	filename = "An odd twist of fate"
 	server_file_path = 'news_articles/An_odd_twist_of_fate.html'
->>>>>>> Stashed changes
+
