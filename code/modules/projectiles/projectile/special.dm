@@ -58,7 +58,7 @@
 	return TRUE
 
 /obj/item/projectile/bullet/rocket/scrap
-	damage_types = list(BRUTE = 30)
+	damage_types = list(BRUTE = 45)
 
 /obj/item/projectile/bullet/rocket/scrap/on_impact(atom/target)
 	explosion(target, 0, 0, 2, 3)
