@@ -1,10 +1,10 @@
 
 //Sprite base by Près de l'oiseau#2625
 /obj/machinery/power/ex_bluespace_repairer
-	name = "excelsior bluespace alinger"
-	desc = "Large semi-radio-like tower like machinery, that is used to aline and repair bluespace, \
-	used mostly when a the long range teleporters start to destable local space, \
-	and warn people about a rooms entropy."
+	name = "excelsior bluespace aligner"
+	desc = "A large tower-radio-like machinery that is used to align and repair bluespace, \
+	used mostly when the long-range teleporters start to destabilize local space. \
+	It can also warn people about a room's bluespace entropy levels."
 	icon = 'icons/obj/machines/excelsior/bluespace_fixer.dmi'
 	icon_state = "exl_stablizer"
 	idle_power_usage = 1200
@@ -26,10 +26,10 @@
 	. = ..()
 	var/area/my_area = get_area(src)
 	if(my_area.bluespace_entropy)
-		to_chat(user, SPAN_NOTICE("The scanner reads the room to [my_area.bluespace_entropy] annomlst bluespace."))
+		to_chat(user, SPAN_NOTICE("Scanners are detecting bluespace entropy in this room to be [my_area.bluespace_entropy] zeframs."))
 
 	if(GLOB.bluespace_entropy)
-		to_chat(user, SPAN_NOTICE("The scanner is giving off [GLOB.bluespace_entropy] on the planet."))
+		to_chat(user, SPAN_NOTICE("The Bluespace Aligner's global scanner notifies of stellar discrepancy at [GLOB.bluespace_entropy] zeframs of bluespace entropy on the planet."))
 
 /obj/machinery/power/ex_bluespace_repairer/proc/lower_entropy(turf/T)
 	var/area/A = get_area(T)

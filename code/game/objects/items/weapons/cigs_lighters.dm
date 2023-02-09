@@ -349,7 +349,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "lonestaroff"
 	icon_on = "lonestaron"
 	icon_off = "lonestaroff"
-	preloaded_reagents = list("nicotineplus" = 5, "cafe_latte" = 5)
+	preloaded_reagents = list("nicotine" = 5, "cafe_latte" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/faith
 	name = "\improper TempleOS light cigarette"
@@ -444,7 +444,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			return 1
 		if(last_drag <= world.time - 30) //No chainsmoking.
 			last_drag = world.time
-			H.visible_message("<span class='notice'>[H.name] takes a drag of their [name].</span>")
+			H.visible_message("<span class='notice'>[H.name] takes a drag of [H.identifying_gender == "male" ? "his" : H.identifying_gender == "female" ? "her" : "their"] [name].</span>")
 			playsound(H, 'sound/items/cigs_lighters/inhale.ogg', 50, 0, -1)
 			reagents.trans_to_mob(H, (rand(10,20)/10), CHEM_INGEST)
 			return 1
@@ -923,19 +923,19 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			icon_state = "[base_state]on"
 			item_state = "[base_state]on"
 			if(istype(src, /obj/item/flame/lighter/zippo) )
-				playsound(src, 'sound/items/zippo.ogg', 20, 1, 1)
-				user.visible_message("<span class='rose'>Without even breaking stride, [user] flips open and lights [src] in one smooth movement.</span>")
+				playsound(src, 'sound/items/zippo_open.ogg', 80)
+				user.visible_message("<span class='rose'>Without even breaking stride, [user] flips open and lights \the [src] in one smooth movement.</span>")
 			else
-				playsound(src, 'sound/items/lighter.ogg', 20, 1, 1)
+				playsound(src, 'sound/items/lighter.ogg', 80)
 				if(prob(95))
-					user.visible_message(SPAN_NOTICE("After a few attempts, [user] manages to light the [src]."))
+					user.visible_message(SPAN_NOTICE("After a few attempts, [user] manages to light \the [src]."))
 				else
 					to_chat(user, SPAN_WARNING("You burn yourself while lighting the lighter."))
 					if (user.l_hand == src)
 						user.apply_damage(2, BURN, BP_L_ARM)
 					else
 						user.apply_damage(2, BURN, BP_R_ARM)
-					user.visible_message(SPAN_NOTICE("After a few attempts, [user] manages to light the [src], they however burn their finger in the process."))
+					user.visible_message(SPAN_NOTICE("After a few attempts, [user] manages to light \the [src], they however burn their finger in the process."))
 			tool_qualities = list(QUALITY_CAUTERIZING = 10)
 			damtype = BURN
 			force++
@@ -946,11 +946,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			icon_state = "[base_state]"
 			item_state = "[base_state]"
 			if(istype(src, /obj/item/flame/lighter/zippo) )
-				playsound(src, 'sound/items/zippo.ogg', 20, 1, 1)
-				user.visible_message("<span class='rose'>You hear a quiet click, as [user] shuts off [src] without even looking at what they're doing.</span>")
+				playsound(src, 'sound/items/zippo_close.ogg', 20, 1, 1)
+				user.visible_message("<span class='rose'>You hear a quiet click, as [user] shuts off \the [src] without even looking at what they're doing.</span>")
 			else
 				playsound(src, 'sound/items/lighter.ogg', 20, 1, 1)
-				user.visible_message(SPAN_NOTICE("[user] quietly shuts off the [src]."))
+				user.visible_message(SPAN_NOTICE("[user] quietly shuts off \the [src]."))
 			tool_qualities = initial(tool_qualities)
 			damtype = initial(damtype)
 			force--
@@ -972,9 +972,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			cig.attackby(src, user)
 		else
 			if(istype(src, /obj/item/flame/lighter/zippo))
-				cig.light("<span class='rose'>[user] whips the [name] out and holds it for [M].</span>")
+				cig.light("<span class='rose'>[user] whips \the [name] out and holds it steady for [M], lightning their [cig.name] in a smooth motion.</span>")
 			else
-				cig.light(SPAN_NOTICE("[user] holds the [name] out for [M], and lights the [cig.name]."))
+				cig.light(SPAN_NOTICE("[user] holds \the [name] out for [M], and lights their \the [cig.name]."))
 	else
 		..()
 

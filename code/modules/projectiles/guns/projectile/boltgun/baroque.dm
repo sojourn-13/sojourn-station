@@ -28,7 +28,7 @@ Own a musket for department defense, since that's what the founding hunters inte
 	load_method = SINGLE_CASING
 	max_shells = 1
 	ammo_type = /obj/item/ammo_casing/ball
-	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/sniper.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_BONE = 20)
 	price_tag = 1750

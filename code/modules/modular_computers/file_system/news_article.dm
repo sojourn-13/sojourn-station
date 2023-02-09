@@ -91,8 +91,9 @@
 	archived = 1
 
 /datum/computer_file/data/news_article/kros_news
-	filename = "Official Marshal communique"
+	filename = "Trouble in Sector N-1"
 	server_file_path = 'news_articles/kros_news.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/kros_news_ii
 	filename = "Trouble in Sector N-2"
@@ -117,4 +118,8 @@
 /datum/computer_file/data/news_article/An_odd_twist_of_fate
 	filename = "An odd twist of fate"
 	server_file_path = 'news_articles/An_odd_twist_of_fate.html'
+
+/datum/computer_file/data/news_article/Emily_chu
+	filename = "Emily Chu's Report"
+	server_file_path = 'news_articles/Emily_chu.html'
 

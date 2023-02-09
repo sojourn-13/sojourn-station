@@ -26,9 +26,11 @@
 	var/time_between_shots = 0.5 SECONDS
 	var/list/shot_timer_ids = list()
 	var/cooldown_time = null
+	var/shot_sound = 'sound/weapons/energy/energy_shotgun.ogg'
+
 
 	// Internal
-	var/emp_cooldown = 4 SECONDS
+	var/emp_cooldown = 8 SECONDS
 	var/emp_timer_id
 	var/on_cooldown = FALSE
 	var/cooldown_timer_id
@@ -45,6 +47,7 @@
 	number_of_shots = 3
 	time_between_shots = 0.3 SECONDS
 	cooldown_time = 2 SECONDS
+	shot_sound = 'sound/weapons/guns/misc/laser_searwall.ogg'
 
 /obj/machinery/power/os_turret/Initialize()
 	. = ..()
@@ -63,6 +66,7 @@
 
 	if(health <= 0)
 		stat |= BROKEN
+		update_icon()
 		return
 
 	if(!on_cooldown)
@@ -170,7 +174,11 @@
 
 /obj/machinery/power/os_turret/update_icon()
 	underlays.Cut()
-	underlays += image(icon, "osframe")
+	if(stat & BROKEN)
+		icon_state = "[initial(icon_state)]_broken"
+		underlays += image(icon, "osframe_broken")
+	else
+		underlays += image(icon, "osframe")
 
 /obj/machinery/power/os_turret/emp_act()
 	..()
@@ -251,6 +259,9 @@
 	health = max(health - amount, 0)
 	if(health <= 0)
 		stat |= BROKEN
+		update_icon()
+	else if(prob(50))
+		do_sparks(1, 0, loc)
 	return amount
 
 /obj/machinery/power/os_turret/proc/try_shoot(target)
@@ -299,6 +310,7 @@
 	set_dir(get_dir(src, target))
 	var/obj/item/projectile/P = new projectile(loc)
 	P.launch(target, def_zone)
+	playsound(src, shot_sound, 60, 1)
 
 /obj/machinery/power/os_turret/proc/cooldown()
 	on_cooldown = FALSE

@@ -5,7 +5,8 @@
 
 /turf/simulated/floor/holofloor
 	thermal_conductivity = 0
-	plane = PLANE_SPACE
+	plane = -2
+	original_plane = -2
 	layer = SPACE_LAYER
 
 /turf/simulated/floor/holofloor/attackby(obj/item/W as obj, mob/user as mob)

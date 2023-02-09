@@ -53,6 +53,8 @@
 	var/braced = FALSE //for gun_brace proc.
 	var/braceable = 1 //can the gun be used for gun_brace proc, modifies recoil. If the gun has foregrip mod installed, it's not braceable. Bipod mod increases value by 1.
 
+	var/list/gun_parts = list(/obj/item/part/gun = 1 ,/obj/item/stack/material/steel = 4)
+
 	var/muzzle_flash = 3
 	var/dual_wielding
 	var/can_dual = FALSE // Controls whether guns can be dual-wielded (firing two at once).
@@ -110,7 +112,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/twohanded = FALSE //If TRUE, gun can only be fired when wileded
 	var/recentwield = 0 // to prevent spammage
 	var/proj_step_multiplier = 1
-	var/proj_pve_damage_multiplier = 1 //Damage against mobs that are not player multiplier
 	var/list/proj_damage_adjust = list() //What additional damage do we give to the bullet. Type(string) -> Amount(int), damage is divided for pellets
 
 	var/eject_animatio = FALSE //Only currenly in bolt guns. Check boltgun.dm for more information on this
@@ -211,7 +212,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/examine(mob/user)
 	..()
 	if(folding_stock)
-		to_chat(user, "<span class='info'>This gun can be folded by Ctrl Shift Clicking it.</span>")
+		to_chat(user, "<span class='info'>\The [src]'s stock can be folded by clicking on it while holding Ctrl + Shift.</span>")
 
 	if(serial_type && serial_shown)
 		to_chat(user, SPAN_WARNING("There is a serial number on this gun, it reads [serial_type]."))
@@ -270,24 +271,24 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		return FALSE
 	if(!restrict_safety)
 		if(safety)
-			to_chat(user, SPAN_DANGER("The gun's safety is on!"))
+			to_chat(user, SPAN_DANGER("The safety is on!"))
 			handle_click_empty(user)
 			return FALSE
 	if(restrict_safety) //if we are restructed to be only saft then we also check
 		if(safety) //Danger zone dosnt force safety so we check again
-			to_chat(user, SPAN_DANGER("The gun's safety is on!"))
+			to_chat(user, SPAN_DANGER("The safety is on!"))
 			handle_click_empty(user)
 			return FALSE
 
 	if(twohanded)
 		if(!wielded)
 			if (world.time >= recentwield + 1 SECONDS)
-				to_chat(user, SPAN_DANGER("The gun is too heavy to shoot in one hand!"))
+				to_chat(user, SPAN_DANGER("\The [src] is too heavy to shoot in one hand!"))
 				recentwield = world.time
 			return FALSE
 
 	if(!dna_check(M))
-		to_chat(user, SPAN_DANGER("The gun's biometric scanner prevents you from firing!"))
+		to_chat(user, SPAN_DANGER("\The [src]'s biometric scanner prevents you from firing!"))
 		handle_click_empty(user)
 		return FALSE
 
@@ -297,8 +298,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			if(process_projectile(P, user, user, pick(BP_L_LEG, BP_R_LEG)))
 				handle_post_fire(user, user)
 				user.visible_message(
-					SPAN_DANGER("\The [user] fumbles with \the [src] and shoot themselves in the foot with \the [src]!"),
-					SPAN_DANGER("You fumble with the gun and accidentally shoot yourself in the foot with \the [src]!")
+					SPAN_DANGER("\The [user] fumbles with \the [src] and shoot themselves in the foot!"),
+					SPAN_DANGER("You fumble with \the [src] and accidentally shoot yourself in the foot with it!")
 					)
 				currently_firing = FALSE
 		else
@@ -311,7 +312,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			if(process_projectile(P, user, user, BP_HEAD))
 				handle_post_fire(user, user)
 				user.visible_message(
-					SPAN_DANGER("As \the [user] pulls the trigger on \the [src], a bullet fires backwards out of it"),
+					SPAN_DANGER("As \the [user] pulls the trigger on \the [src], a bullet somehow fires backwards out of it1"),
 					SPAN_DANGER("Your \the [src] fires backwards, shooting you in the face!")
 					)
 				currently_firing = FALSE
@@ -328,7 +329,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 					handle_post_fire(user, user)
 					currently_firing = FALSE
 					user.visible_message(
-						SPAN_DANGER("As \the [user] pulls the trigger on \the [src], a bullet fires backwards out of it"),
+						SPAN_DANGER("As \the [user] pulls the trigger on \the [src], a bullet fires backwards out of it!"),
 						SPAN_DANGER("Your \the [src] fires backwards, shooting you in the face!")
 						)
 
@@ -382,10 +383,10 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	//Detectable crime >:T
 	if(istype(I, /obj/item/device/bullet_scanner))
 		if(serial_type)
-			to_chat(user, "<span class='info'>Projectile Serial Caliberation: [serial_type].</span>")
+			to_chat(user, "<span class='info'>Projectile Serial Calibration: [serial_type].</span>")
 			return
 		else
-			to_chat(user, "<span class='info'>Projectile Serial Caliberation: ERROR.</span>")
+			to_chat(user, "<span class='info'>Projectile Serial Calibration: ERROR.</span>")
 
 
 	if(!istool(I) || user.a_intent != I_HURT)
@@ -393,14 +394,32 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	//UNDETECTABLE CRIIIIMEEEE!!!!!!!
 	if(I.get_tool_quality(QUALITY_HAMMERING) && serial_type)
-		user.visible_message(SPAN_NOTICE("[user] begins scribbling \the [name]'s gun serial number away."), SPAN_NOTICE("You begin removing the serial number from \the [name]."))
+		user.visible_message(SPAN_NOTICE("[user] begins chiseling \the [name]'s serial numbers away."), SPAN_NOTICE("You begin removing the serial numbers from \the [name]."))
 		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_MEC))
-			user.visible_message(SPAN_DANGER("[user] removes \the [name]'s gun serial number."), SPAN_NOTICE("You successfully remove the serial number from \the [name]."))
+			user.visible_message(SPAN_DANGER("[user] removes \the [name]'s serial numbers."), SPAN_NOTICE("You successfully remove the serial numbers from \the [name]."))
 			serial_type = "INDEX"
 			serial_type += "-[generate_gun_serial(pick(3,4,5,6,7,8))]"
 			serial_shown = FALSE
 			return FALSE
 
+	if(I.get_tool_quality(QUALITY_WIRE_CUTTING))
+		if(!gun_parts)
+			to_chat(user, SPAN_NOTICE("You can't dismantle [src] as it has no gun parts! How strange..."))
+			return FALSE
+
+		user.visible_message(SPAN_NOTICE("[user] begins breaking apart [src]."), SPAN_WARNING("You begin breaking apart [src] for gun parts."))
+		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			user.visible_message(SPAN_NOTICE("[user] breaks [src] apart for gun parts!"), SPAN_NOTICE("You break [src] apart for gun parts."))
+			for(var/target_item in gun_parts)
+				var/amount = gun_parts[target_item]
+				while(amount)
+					if(ispath(target_item, /obj/item/part/gun/frame))
+						var/obj/item/part/gun/frame/F = new target_item(get_turf(src))
+						F.serial_type = serial_type
+					else
+						new target_item(get_turf(src))
+					amount--
+			qdel(src)
 
 /obj/item/gun/proc/dna_check(user)
 	if(dna_compare_samples)
@@ -418,7 +437,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	if(!can_fire_next || currently_firing)
 		if (!suppress_delay_warning && world.time % 3) //to prevent spam
-			to_chat(user, SPAN_WARNING("[src] is not ready to fire again!"))
+			to_chat(user, SPAN_WARNING("\The [src] is not ready to fire again!"))
 		return
 
 	if(user)
@@ -473,8 +492,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		if(multiply_pve_damage)
 			projectile.multiply_pve_damage(multiply_pve_damage)
 
-		projectile.multiply_pve_damage(proj_pve_damage_multiplier)
-
 		if(fire_stacks)
 			projectile.add_fire_stacks(fire_stacks)
 
@@ -522,7 +539,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			if(process_projectile(P, user, user, pick(BP_L_LEG, BP_R_LEG)))
 				handle_post_fire(user, user)
 				user.visible_message(
-					SPAN_DANGER("\The [user] shoots \himself in the foot with \the [src]!"),
+					SPAN_DANGER("\The [user] shoots themselves in the foot with \the [src]!"),
 					SPAN_DANGER("You shoot yourself in the foot with \the [src]!")
 					)
 				user.drop_item()
@@ -741,18 +758,18 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		var/brace_direction = get_dir(user, target)
 		user.is_busy = TRUE
 		user.facing_dir = null
-		to_chat(user, SPAN_NOTICE("You brace your weapon on \the [target]."))
+		to_chat(user, SPAN_NOTICE("You brace your [src] on \the [target]."))
 		braced = TRUE
 		while(user.loc == original_loc && user.dir == brace_direction)
 			sleep(2)
-		to_chat(user, SPAN_NOTICE("You stop bracing your weapon."))
+		to_chat(user, SPAN_NOTICE("You stop bracing your gun."))
 		braced = FALSE
 		user.is_busy = FALSE
 	else
 		if(user.is_busy)
-			to_chat(user, SPAN_NOTICE("You are already bracing your weapon!"))
+			to_chat(user, SPAN_NOTICE("You are already bracing your gun!"))
 		else
-			to_chat(user, SPAN_WARNING("You can\'t properly place your weapon on \the [target] because of the foregrip!"))
+			to_chat(user, SPAN_WARNING("You can\'t properly place your gun on \the [target] because of its foregrip!"))
 
 /obj/item/gun/proc/toggle_scope(mob/living/user, switchzoom = FALSE)
 	//looking through a scope limits your periphereal vision
@@ -951,7 +968,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	fold(span_chat = TRUE)
 
-/obj/item/gun/proc/can_interact(mob/user)
+/obj/item/gun/can_interact(mob/user)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
 		return 1
 	if(istype(loc, /obj/item/storage))
@@ -968,8 +985,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			if(span_chat)
 				to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
 			folded = FALSE
-	refresh_upgrades() //First we grab are upgrades to not do anything silly
-	update_icon() //Likely has alt icons for being folded or not so we refresh are icon
+	refresh_upgrades() //First we grab our upgrades to not do anything silly
+	update_icon() //Likely has alt icons for being folded or not so we refresh our icon
 
 //Updating firing modes at appropriate times
 /obj/item/gun/pickup(mob/user)
@@ -977,8 +994,12 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	update_firemode()
 
 /obj/item/gun/dropped(mob/user)
-	.=..()
+	// I really fucking hate this but this is how this is going to work.
+	var/mob/living/carbon/human/H = user
+	if (istype(H) && H.using_scope)
+		toggle_scope(H)
 	update_firemode(FALSE)
+	.=..()
 
 /obj/item/gun/swapped_from()
 	.=..()
@@ -998,12 +1019,11 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/nano_ui_data(mob/user)
 	var/list/data = list()
 	data["damage_multiplier"] = damage_multiplier
-	data["multiply_pve_damage"] = proj_pve_damage_multiplier
 	data["pierce_multiplier"] = pierce_multiplier
 	data["penetration_multiplier"] = penetration_multiplier
 	data["proj_agony_multiplier"] = proj_agony_multiplier
 
-	data["fire_delay"] = fire_delay //time between shot, in ms
+	data["fire_delay"] = fire_delay //time between shots, in ms
 	data["burst"] = burst //How many shots are fired per click
 	data["burst_delay"] = burst_delay //time between shot in burst mode, in ms
 
@@ -1056,7 +1076,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(item_upgrades.len)
 		data["attachments"] = list()
 		for(var/atom/A in item_upgrades)
-			data["attachments"] += list(list("name" = A.name, "icon" = getAtomCacheFilename(A)))
+			data["attachments"] += list(list("name" = A.name, "icon" = SSassets.transport.get_asset_url(A)))
 
 	return data
 
@@ -1079,7 +1099,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/data = list()
 	data["projectile_name"] = P.name
 	data["projectile_damage"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()
-	data["projectile_damage_pve"] = (P.get_total_damage() * damage_multiplier) + (P.get_total_damage_pve() * proj_pve_damage_multiplier) + get_total_damage_adjust() + (P.agony * proj_agony_multiplier)
+	data["projectile_damage_pve"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust() + (P.agony * proj_agony_multiplier)
 	data["projectile_AP"] = P.armor_penetration * penetration_multiplier
 	data["projectile_pain"] = P.agony * proj_agony_multiplier
 	data["projectile_recoil"] = P.recoil
@@ -1087,13 +1107,12 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	return data
 
 /obj/item/gun/refresh_upgrades()
-	//First of all, lets reset any var that could possibly be altered by an upgrade
+	//First of all, let's reset any var that could possibly be altered by an upgrade
 	damage_multiplier = initial(damage_multiplier)
 	penetration_multiplier = initial(penetration_multiplier)
 	pierce_multiplier = initial(pierce_multiplier)
 	proj_step_multiplier = initial(proj_step_multiplier)
 	proj_agony_multiplier = initial(proj_agony_multiplier)
-	proj_pve_damage_multiplier = initial(proj_pve_damage_multiplier)
 	extra_damage_mult_scoped = initial(extra_damage_mult_scoped)
 	scoped_offset_reduction  = initial(scoped_offset_reduction)
 	fire_delay = initial(fire_delay)
@@ -1120,7 +1139,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	auto_eject = initial(auto_eject) //SoJ edit
 	initialize_scope()
 	initialize_firemodes()
-	//Lets get are prefixes and name fresh
+	//Let's refresh our name and prefixes
+	// FIXME: This sadly sometimes resets the gun from <prefixes><gun_name> to just the gun's name when storing it on a container.
 	name = initial(name)
 	max_upgrades = initial(max_upgrades)
 	color = initial(color)

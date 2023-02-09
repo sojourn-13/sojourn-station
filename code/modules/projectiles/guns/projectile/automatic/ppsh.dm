@@ -1,7 +1,6 @@
 /obj/item/gun/projectile/automatic/ppsh
 	name = "Excelsior \"Shpagin\" assault SMG"
-	desc = "\"We are spiritual wanderers, poor in spirit. What do we live on? We live from the pure hatred we feel. We cannot love anyone. We destroy things, we shout them, we burn them..\"\
-		 An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm; taking only specific drum magizines. For the union, for the future."
+	desc = "\"We are spiritual wanderers, poor in spirit. What do we live on? We live from the pure hatred we feel. We cannot love anyone. We destroy things, we shout them, we burn them.\"\nAn experimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm, taking only specific drum magazines. For the union, for the future."
 	icon = 'icons/obj/guns/projectile/ppsh.dmi'
 	icon_state = "ppsh"
 	item_state = "ppsh"
@@ -13,7 +12,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 4)
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_DRUM
+	mag_well = MAG_WELL_SMG|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 28, MATERIAL_PLASTIC = 10)
 	price_tag = 1000
 	penetration_multiplier = 1.2
@@ -31,14 +30,19 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.3 // Heavy smg , 30 vig to insta wield
+	gun_parts = list(/obj/item/part/gun/frame/ppsh = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 /obj/item/gun/projectile/automatic/ppsh/NM_colony
 	name = "\"Ekaterina\" assault SMG"
-	desc = "An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm; taking only specific drum magizines."
+	desc = "An experimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm, taking only specific drum magazines.\nThis model of the \"Shpagin\" assault SMG has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
+	icon = 'icons/obj/guns/projectile/ppsh_bs.dmi'
+	icon_state = "ppsh_bs"
+	item_state = "ppsh_bs"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	price_tag = 800
 	serial_type = "NM"
 	excelsior = FALSE
+	gun_parts = list(/obj/item/part/gun/frame/ppsh = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 /obj/item/gun/projectile/automatic/ppsh/update_icon()
 	..()
@@ -53,7 +57,7 @@
 /obj/item/gun/projectile/automatic/ppsh/ppv
 	name = "\"Semyonovich\" assault SMG"
 	desc = "Some madmans bastardized yet idealized version of the past; improved yet its meaning and worth lost to time. \
-		 An expirimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm. Unlike it's older cousin it can use both stick and drum magazines. The hammer to break the chains."
+		 An experimental sub-machine gun design made for urban combat with a built in silencer and chambered in 9mm. Unlike its older cousin, it can use both stick and drum magazines." // Don't add communist spiel on de-excelsiored guns for consistency, please.
 	icon = 'icons/obj/guns/projectile/ppv.dmi'
 	icon_state = "ppv"
 	item_state = "ppv"
@@ -66,6 +70,7 @@
 	auto_eject = 0
 	serial_type = "NM"
 	excelsior = FALSE
+	gun_parts = list(/obj/item/part/gun/frame/ppsh = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 /obj/item/gun/projectile/automatic/ppsh/ppv/update_icon()
 	..()
@@ -81,3 +86,13 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/part/gun/frame/ppsh
+	name = "PPSH frame"
+	desc = "A PPSH SMG frame. A workers best friend."
+	icon_state = "frame_ppsh"
+	result = /obj/item/gun/projectile/automatic/ppsh
+	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/smg
+	barrelvars = list(/obj/item/part/gun/barrel/pistol)
+	resultvars = list(/obj/item/gun/projectile/automatic/ppsh, /obj/item/gun/projectile/automatic/ppsh/NM_colony, /obj/item/gun/projectile/automatic/ppsh/ppv)

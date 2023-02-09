@@ -73,7 +73,7 @@ Bullet also tend to have more armor against them do to this and can be douged un
 		chance = round(damage/W.material.integrity*180)
 	else if(istype(A, /obj/item/shield)) // Shields block projectiles as intended
 		var/obj/item/shield/S = A
-		chance = round(S.durability / armor_penetration / 8)
+		chance = round(S.durability / armor_penetration)
 	else if(istype(A, /obj/machinery/door))
 		var/obj/machinery/door/D = A
 		chance = round(damage/D.maxHealth*180)

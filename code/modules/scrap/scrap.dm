@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 /obj/structure/scrap
 	name = "scrap pile"
 	desc = "A pile of industrial debris."
-	appearance_flags = TILE_BOUND
+	appearance_flags = TILE_BOUND | DEFAULT_APPEARANCE_FLAGS
 	anchored = TRUE
 	opacity = FALSE
 	density = FALSE
@@ -20,6 +20,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/material,
 		/obj/item/stack/rods/random,
 		/obj/item/material/shard,
+		/obj/random/gun_parts,
 		/obj/random/junk/nondense = 2,
 		/obj/random/pack/rare = 0.4
 	)
@@ -395,12 +396,13 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/pack/gun_loot = 8,
 		/obj/random/powercell,
 		/obj/random/mecha_equipment = 2,
-		/obj/item/toy/weapon/crossbow,
 		/obj/item/material/shard,
 		/obj/item/stack/material/steel/random,
 		/obj/item/stack/material/plasteel/random = 0.6,
 		/obj/random/junk/nondense,
-		/obj/random/pack/rare = 0.3
+		/obj/random/pack/rare = 0.3,
+		/obj/random/gun_parts/frames = 1,
+		/obj/random/gun_parts = 2
 	)
 
 /obj/structure/scrap/science
@@ -424,7 +426,12 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	name = "cloth pile"
 	desc = "A pile of ruined and discarded clothing."
 	parts_icon = 'icons/obj/structures/scrap/cloth.dmi'
-	loot_list = list(/obj/random/pack/cloth,/obj/random/pack/rare = 0.2)
+	loot_list = list(/obj/random/pack/cloth,
+		/obj/random/pack/rare = 0.2,
+		/obj/random/gun_parts/frames = 0.2,
+		/obj/random/gun_parts = 0.5,
+		/obj/item/storage/wallet = 0.2,
+		/obj/item/storage/wallet/random = 0.1)
 
 /obj/structure/scrap/poor
 	icontype = "poor"
@@ -436,6 +443,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/junk/nondense = 4,
 		/obj/item/stack/rods/random = 3,
 		/obj/random/common_oddities = 0.5,
+		/obj/random/cigarettes = 0.3,
 		/obj/random/material_ore,
 		/obj/item/material/shard,
 		/obj/random/pack/rare = 0.3
@@ -455,6 +463,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/poor/large/beacon
 	beacon = TRUE
+	big_item_chance = 45
 
 /obj/structure/scrap/vehicle/large
 	name = "large industrial debris pile"
@@ -467,10 +476,11 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	base_min = 9
 	base_max = 14
 	base_spread = 16
-	big_item_chance = 100
+	big_item_chance = 80
 
 /obj/structure/scrap/vehicle/large/beacon
 	beacon = TRUE
+	big_item_chance = 60
 
 /obj/structure/scrap/food/large
 	name = "large food trash pile"
@@ -487,6 +497,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/food/large/beacon
 	beacon = TRUE
+	big_item_chance = 20
 
 /obj/structure/scrap/medical/large
 	name = "large medical refuse pile"
@@ -503,6 +514,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/medical/large/beacon
 	beacon = TRUE
+	big_item_chance = 30
 
 /obj/structure/scrap/guns/large
 	name = "large armaments refuse pile"
@@ -519,6 +531,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/guns/large/beacon
 	beacon = TRUE
+	big_item_chance = 25
 
 /obj/structure/scrap/science/large
 	name = "large scientific trash pile"
@@ -535,6 +548,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/science/large/beacon
 	beacon = TRUE
+	big_item_chance = 60
 
 /obj/structure/scrap/cloth/large
 	name = "large cloth pile"
@@ -551,6 +565,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/cloth/large/beacon
 	beacon = TRUE
+	big_item_chance = 35
 
 /obj/structure/scrap/poor/structure
 	name = "large mixed rubbish"
@@ -562,10 +577,11 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	dig_amount = 3
 	base_min = 3
 	base_max = 6
-	big_item_chance = 100
+	big_item_chance = 80
 
 /obj/structure/scrap/poor/structure/beacon
 	beacon = TRUE
+	big_item_chance = 65
 
 
 /obj/structure/scrap/poor/structure/update_icon() //make big trash icon for this

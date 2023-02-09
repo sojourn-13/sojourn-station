@@ -5,8 +5,8 @@
 	icon_state = "snake"
 	icon_dead = "snake-dead"
 	faction = "snake"
-	maxHealth = 200
-	health = 200
+	maxHealth = 100
+	health = 100
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	old_x = -16
@@ -41,8 +41,8 @@
 
 	mob_size = MOB_LARGE
 
-	maxHealth = 900
-	health = 900
+	maxHealth = 550
+	health = 550
 	melee_damage_lower = 35
 	melee_damage_upper = 40
 
@@ -70,7 +70,7 @@
 		visible_emote("lets out a deafening roar and charges at [.]!")
 		playsound(src, 'sound/voice/deathclaw_roar.ogg', 200, 1, -3)
 
-/mob/living/simple_animal/hostile/render/death(gibbed, deathmessage = "lets out a gutteral snarl before it crumbles to the ground dead!")
+/mob/living/simple_animal/hostile/render/death(gibbed, deathmessage = "lets out a guttural snarl before it crumbles to the ground dead!")
 	walk_to(src,0)
 	movement_target = null
 	icon_state = icon_dead
@@ -84,8 +84,8 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "chunks"
 	icon_dead = "deathclaw_dead"
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 500
+	health = 500
 	melee_damage_lower = 30
 	melee_damage_upper = 40
 	meat_amount = 8
@@ -98,8 +98,8 @@
 	icon_state = "panther"
 	icon_dead = "panther_dead"
 	faction = "panther"
-	maxHealth = 200
-	health = 200
+	maxHealth = 100
+	health = 100
 	move_to_delay = 4
 	speak_chance = 2
 	speak = list("RAWR!","Rawr!","GRR!","Growl!")
@@ -129,8 +129,8 @@
 	icon_state = "gaslamp"
 	icon_dead = "gaslamp_dead"
 	faction = "virgo3b"
-	maxHealth = 100
-	health = 100
+	maxHealth = 50
+	health = 50
 	move_to_delay = 4
 	speak_chance = 1
 	emote_see = list("looms", "sways gently")
@@ -159,8 +159,8 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "hippo"
 	icon_dead = "hippo_dead"
-	maxHealth = 200
-	health = 200
+	maxHealth = 125
+	health = 125
 	turns_per_move = 5
 	see_in_dark = 3
 	speed = 5
@@ -198,8 +198,8 @@
 	icon_dead = "arachnid_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	maxHealth = 600
-	health = 600
+	maxHealth = 300
+	health = 300
 	move_to_delay = 2
 	turns_per_move = 2
 	vision_range = 5
@@ -228,8 +228,8 @@
 	icon_dead = "arachnid_daemon_dead"
 	melee_damage_lower = 40
 	melee_damage_upper = 60
-	maxHealth = 900
-	health = 900
+	maxHealth = 450
+	health = 450
 	move_to_delay = 4
 	turns_per_move = 4
 	vision_range = 8
@@ -268,8 +268,8 @@
 	icon_dead = "leaper_dead"
 	melee_damage_lower = 50
 	melee_damage_upper = 60
-	maxHealth = 1200
-	health = 1200
+	maxHealth = 600
+	health = 600
 	move_to_delay = 4
 	turns_per_move = 4
 	vision_range = 16
@@ -321,8 +321,8 @@
 	icon_dead = "hellpig_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 45
-	maxHealth = 1100
-	health = 1100
+	maxHealth = 550
+	health = 550
 	move_to_delay = 4
 	turns_per_move = 4
 	vision_range = 16
@@ -353,8 +353,8 @@
 	icon_dead = "wendigo_dead"
 	melee_damage_lower = 25
 	melee_damage_upper = 35
-	maxHealth = 800
-	health = 800
+	maxHealth = 400
+	health = 400
 	move_to_delay = 2
 	turns_per_move = 6
 	speak_emote = list("snarls!", "jerks erratically.")
@@ -375,8 +375,8 @@
 	icon_dead = "slepnir_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	maxHealth = 700
-	health = 700
+	maxHealth = 350
+	health = 350
 	vision_range = 8
 	aggro_vision_range = 16
 	move_to_delay = 1

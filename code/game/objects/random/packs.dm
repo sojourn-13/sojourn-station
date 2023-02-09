@@ -91,15 +91,16 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/gun_cheap = 4,
 					/obj/random/gun_normal = 1,
 					/obj/random/gun_energy_cheap = 3,
-					/obj/random/gun_combat = 0.5,
-					/obj/random/gun_fancy = 0.5,
+					/obj/random/gun_combat = 0.3,
+					/obj/random/gun_fancy = 0.1,
 					/obj/random/gun_shotgun = 3,
 					/obj/random/knife = 3,
 					/obj/random/melee = 3,
 					/obj/random/ammo = 8,
 					/obj/random/ammo/shotgun = 8,
 					/obj/random/ammo_lowcost = 10,
-					/obj/random/cloth/holster = 4
+					/obj/random/cloth/holster = 4,
+					/obj/random/gun_parts = 20
 				))
 
 /obj/random/pack/gun_loot/low_chance
@@ -129,10 +130,10 @@ They generally give more random result and can provide more divercity in spawn.
 					/obj/random/voidsuit = 4,
 					/obj/random/pouch = 2,
 					/obj/random/gun_combat = 0.5,
-					/obj/random/gun_fancy = 0.5,
+					/obj/random/gun_fancy = 0.3,
 					/obj/random/tool_upgrade/rare = 4,
 					/obj/random/rig_module/rare = 4,
-					/obj/random/credits/c1000 = 3,
+					/obj/random/credits/c500 = 3,
 					/obj/random/mecha_equipment = 3,
 					/obj/random/cloth/holster = 4,
 					/obj/item/stash_spawner = 4 //Creates a stash of goodies for a scavenger hunt

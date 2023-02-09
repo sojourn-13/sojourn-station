@@ -17,16 +17,28 @@
 	density = 1
 	anchored = 1
 	var/list/can_hold = list(
+		/obj/item/book,
+		/obj/item/oddity/common/blueprint,
+		/obj/item/oddity/common/book_eyes,
+		/obj/item/oddity/common/book_omega,
+		/obj/item/oddity/common/book_bible,
+		/obj/item/oddity/common/book_log,
+		/obj/item/oddity/common/book_unholy,
+		/obj/item/oddity/chem_book,
+		/obj/item/oddity/code_book,
+		/obj/item/oddity/ls/manual,
 		/obj/item/paper,
 		/obj/item/folder,
 		/obj/item/photo,
 		/obj/item/paper_bundle,
+		/obj/item/alchemy/recipe_scroll,
 		/obj/item/sample)
+	var/hex_code_for_ui_backround = "#897E75"
 
 /obj/structure/filingcabinet/chestdrawer
 	name = "chest drawer"
 	icon_state = "chestdrawer"
-
+	hex_code_for_ui_backround = "#E8DACC"
 
 /obj/structure/filingcabinet/filingcabinet	//not changing the path to avoid unecessary map issues, but please don't name stuff like this in the future -Pete
 	icon_state = "tallcabinet"
@@ -54,29 +66,56 @@
 		to_chat(user, SPAN_NOTICE("You can't put [I] in [src]!"))
 
 
-/obj/structure/filingcabinet/attack_hand(mob/user as mob)
-	if(contents.len <= 0)
-		to_chat(user, SPAN_NOTICE("\The [src] is empty."))
+/obj/structure/filingcabinet/attack_hand(mob/living/carbon/user, list/modifiers)
+	. = ..()
+	ui_interact(user)
+
+/obj/structure/filingcabinet/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "FilingCabinet")
+		ui.open()
+
+/obj/structure/filingcabinet/ui_data(mob/user)
+	var/list/data = list()
+
+	data["cabinet_name"] = "[name]"
+	data["contents"] = list()
+	data["contents_ref"] = list()
+	data["hex_code_for_backround"] = hex_code_for_ui_backround
+	for(var/obj/item/content in src)
+		data["contents"] += "[content]"
+		data["contents_ref"] += "[REF(content)]"
+
+	return data
+
+/obj/structure/filingcabinet/ui_act(action, params)
+	. = ..()
+	if(.)
 		return
 
-	user.set_machine(src)
-	var/dat = list("<center><table>")
-	for(var/obj/item/P in src)
-		dat += "<tr><td><a href='?src=\ref[src];retrieve=\ref[P]'>[P.name]</a></td></tr>"
-	dat += "</table></center>"
-	user << browse("<html><head><title>[name]</title></head><body>[jointext(dat,null)]</body></html>", "window=filingcabinet;size=350x300")
+	switch(action)
+		// Take the object out
+		if("remove_object")
+			var/obj/item/content = locate(params["ref"]) in src
+			if(istype(content) && in_range(src, usr))
+				usr.put_in_hands(content)
+				updateUsrDialog()
+				icon_state = "[initial(icon_state)]-open"
+				addtimer(VARSET_CALLBACK(src, icon_state, initial(icon_state)), 5)
+
 
 /obj/structure/filingcabinet/attack_tk(mob/user)
 	if(anchored)
-		attack_self_tk(user)
-	else
-		..()
+		return attack_self_tk(user)
+	return ..()
 
 /obj/structure/filingcabinet/attack_self_tk(mob/user)
 	if(contents.len)
 		if(prob(40 + contents.len * 5))
 			var/obj/item/I = pick(contents)
 			I.loc = loc
+			I.reset_plane_and_layer()
 			if(prob(25))
 				step_rand(I)
 			to_chat(user, SPAN_NOTICE("You pull \a [I] out of [src] at random."))
@@ -87,9 +126,8 @@
 	if(href_list["retrieve"])
 		usr << browse("", "window=filingcabinet") // Close the menu
 
-		//var/retrieveindex = text2num(href_list["retrieve"])
-		var/obj/item/P = locate(href_list["retrieve"])//contents[retrieveindex]
-		if(istype(P) && (P.loc == src) && src.Adjacent(usr))
+		var/obj/item/P = locate(href_list["retrieve"]) in src //contents[retrieveindex]
+		if(istype(P) && in_range(src, usr))
 			usr.put_in_hands(P)
 			updateUsrDialog()
 			flick("[initial(icon_state)]-open",src)

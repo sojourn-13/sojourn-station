@@ -26,6 +26,17 @@
 
 	wield_delay = 0.2 SECOND
 	wield_delay_factor = 0.2 // 20 vig
+	gun_parts = list(/obj/item/part/gun/frame/judiciary = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol = 1)
+
+/obj/item/part/gun/frame/judiciary
+	name = "Judiciary frame"
+	desc = "A Judiciary pistol frame. A reliable companion in the field."
+	icon_state = "frame_judiciary"
+	result = /obj/item/gun/projectile/judiciary
+	resultvars = list(/obj/item/gun/projectile/judiciary)
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = list(/obj/item/part/gun/barrel/pistol)
 
 /obj/item/gun/projectile/judiciary/update_icon()
 	..()

@@ -39,6 +39,7 @@
 	var/destroy_on_removal = FALSE
 	var/unique_removal = FALSE 		//Flag for unique removals.
 	var/unique_removal_type 		//What slot do we remove when this is removed? Used for rails.
+	var/greyson_moding = FALSE
 
 /datum/component/item_upgrade/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_IATTACK, .proc/attempt_install)
@@ -124,6 +125,10 @@
 				if(user)
 					to_chat(user, SPAN_WARNING("This tool can not accept the modification!"))
 				return FALSE
+
+	//Bypasses any other checks.
+	if(greyson_moding && T.allow_greyson_mods)
+		return TRUE
 
 	if((req_fuel_cell & REQ_FUEL) && !T.use_fuel_cost)
 		if(user)
@@ -221,6 +226,10 @@
 			if(user)
 				to_chat(user, SPAN_WARNING("There is already something attached to \the [G]'s [gun_loc_tag]!"))
 			return FALSE
+
+	//Bypasses any other checks.
+	if(greyson_moding && G.allow_greyson_mods)
+		return TRUE
 
 	for(var/I in req_gun_tags)
 		if(!G.gun_tags.Find(I))
@@ -333,6 +342,8 @@
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
 	if(tool_upgrades[UPGRADE_SANCTIFY])
 		T.aspects += list(SANCTIFIED)
+	if(tool_upgrades[UPGRADE_ALLOW_GREYON_MODS])
+		T.allow_greyson_mods = tool_upgrades[UPGRADE_ALLOW_GREYON_MODS]
 	if(tool_upgrades[UPGRADE_PRECISION])
 		T.precision += tool_upgrades[UPGRADE_PRECISION]
 	if(tool_upgrades[UPGRADE_WORKSPEED])
@@ -380,10 +391,11 @@
 				T.suitable_cell = /obj/item/cell/medium
 				prefix = "medium-cell"
 	T.force = initial(T.force) * T.force_upgrade_mults + T.force_upgrade_mods
-	T.switched_on_force = initial(T.switched_on_force) * T.force_upgrade_mults + T.force_upgrade_mods
 	T.prefixes |= prefix
 
 /datum/component/item_upgrade/proc/apply_values_gun(var/obj/item/gun/G)
+	if(weapon_upgrades[GUN_UPGRADE_ALLOW_GREYON_MODS])
+		G.allow_greyson_mods = weapon_upgrades[GUN_UPGRADE_ALLOW_GREYON_MODS]
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT])
 		G.damage_multiplier *= weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
@@ -392,8 +404,6 @@
 		G.penetration_multiplier *= weapon_upgrades[GUN_UPGRADE_PEN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 		G.pierce_multiplier += weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
-	if(weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE])
-		G.proj_pve_damage_multiplier *= weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]
 	if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
 		G.proj_step_multiplier *= weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
@@ -561,6 +571,9 @@
 	if(tool_upgrades[UPGRADE_BOMB_ARMOR])
 		to_chat(user, SPAN_NOTICE("Increases explosive defense by [tool_upgrades[UPGRADE_BOMB_ARMOR]]"))
 
+	if(tool_upgrades[UPGRADE_ALLOW_GREYON_MODS])
+		to_chat(user, SPAN_NOTICE("This mod allows you to install Greyson Positronic mods"))
+
 	if(required_qualities.len)
 		to_chat(user, SPAN_WARNING("Requires a tool with one of the following qualities:"))
 		to_chat(user, english_list(required_qualities, and_text = " or "))
@@ -581,13 +594,6 @@
 				to_chat(user, SPAN_NOTICE("Increases projectile agony damage by [amount*100]%"))
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile agony damage by [abs(amount*100)]%"))
-
-		if(weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE])
-			var/amount = weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]-1
-			if(amount > 0)
-				to_chat(user, SPAN_NOTICE("Increases PVE damage by [amount*100]%"))
-			else
-				to_chat(user, SPAN_WARNING("Decreases PVE damage by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_MULT]-1
@@ -731,6 +737,9 @@
 
 		if(weapon_upgrades[GUN_UPGRADE_RAIL])
 			to_chat(user, SPAN_WARNING("Adds a scope slot."))
+
+		if(weapon_upgrades[GUN_UPGRADE_ALLOW_GREYON_MODS])
+			to_chat(user, SPAN_NOTICE("This mod allows you to install Greyson Positronic mods"))
 
 		if(weapon_upgrades[GUN_UPGRADE_ZOOM])
 			var/amount = weapon_upgrades[GUN_UPGRADE_ZOOM]

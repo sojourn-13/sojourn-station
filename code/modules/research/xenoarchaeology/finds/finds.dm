@@ -6,7 +6,7 @@
 /datum/find
 	var/find_type = 0				//random according to the digsite type
 	var/excavation_required = 0		//random 5-95%
-	var/view_range = 20				//how close excavation has to come to show an overlay on the turf
+	var/view_range = 50				//how close excavation has to come to show an overlay on the turf
 	var/clearance_range = 3			//how close excavation has to come to extract the item
 									//if excavation hits var/excavation_required exactly, it's contained find is extracted cleanly without the ore
 	var/prob_delicate = 90			//probability it requires an active suspension field to not insta-crumble

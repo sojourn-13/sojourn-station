@@ -60,7 +60,7 @@
 	if(!equip_access && is_equipped())
 		if (istype(L))
 			if(!no_message)
-				to_chat(L, "<span class='warning'>The [src] is too cumbersome to handle with one hand, you're going to have to set it down somewhere!</span>")
+				to_chat(L, "<span class='warning'>\The [src] is too cumbersome to handle with one hand, you're going to have to set it down somewhere!</span>")
 		if (!no_message && use_sound)
 			playsound(loc, use_sound, 50, 1, -5)
 		return FALSE
@@ -68,7 +68,7 @@
 	else if(!worn_access && is_worn())
 		if (istype(L))
 			if(!no_message)
-				to_chat(L, "<span class='warning'>Oh no! Your arms are not long enough to open [src] while it is on your back!</span>")
+				to_chat(L, "<span class='warning'>Oh no! Your arms are not long enough to reach inside \the [src] while it is on your back!</span>")
 		if (!no_message && use_sound)
 			playsound(loc, use_sound, 50, 1, -5)
 		return FALSE
@@ -186,6 +186,29 @@
 	name = "blackshield backpack"
 	desc = "A robust military backpack with crudely added IFF stripes of the Blackshield."
 	icon_state = "backpack_mil"
+
+/obj/item/storage/backpack/militia/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "backpack_mil"
+	options["Woodlands Blackshield Colours"] = "backpack_milgreen"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/storage/backpack/corpsman
 	name = "Corpsman backpack"

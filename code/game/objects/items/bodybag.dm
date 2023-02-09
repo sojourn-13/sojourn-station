@@ -7,6 +7,7 @@
 	icon_state = "bodybag_folded"
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_PLASTIC = 2)
+	preloaded_reagents = list("plasticide" = 30,)
 	price_tag = 10
 
 	attack_self(mob/user)

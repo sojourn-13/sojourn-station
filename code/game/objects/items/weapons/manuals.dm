@@ -306,7 +306,7 @@
 				Give the patient one last check-over - make sure they don't still have any defects and that they have all their possessions. Ask them how they died, if they know, so that you can report any foul play over the radio.
 				Once you're done, your patient is ready to go back to work! Chances are they do not have Medbay access, so you should let them out of Genetics and the Medbay main entrance.
 
-				<p>If you've gotten this far, congratulations! You have mastered the art of cloning. Now, the real problem is how to resurrect yourself after that traitor had his way with you for cloning his target.
+				<p>If you've gotten this far, congratulations! You have mastered the art of cloning. Now, the real problem is how to resurrect yourself after that contractor had his way with you for cloning his target.
 
 				</body>
 				</html>
@@ -1187,18 +1187,12 @@
     			}
 			</script>
 			<p id='loading'>You start skimming through the manual...</p>
-			<iframe width='100%' height='97%' onload="pageloaded(this)" src="[config.wikiurl]/[page_link]_Eris[config.language]?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+			<iframe width='100%' height='97%' onload="pageloaded(this)" src="[config.wikiurl][page_link][config.language]?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
 			</body>
 			</html>
 			"}
 
 //engineering
-/obj/item/book/manual/wiki/engineering_guide
-	name = "Engineering Textbook"
-	icon_state = "book_engineering"
-	author = "Engineering Encyclopedia"
-	title = "Engineering Textbook"
-	page_link = "Guide_to_Engineering"
 
 /obj/item/book/manual/wiki/engineering_construction
 	name = "Colony Repairs and Construction"
@@ -1220,20 +1214,6 @@
 	author = "Engineering Encyclopedia"
 	title = "Hacking"
 	page_link = "Guide_to_Hacking"
-
-/obj/item/book/manual/wiki/engineering_singularity
-	name = "Singularity Safety in Special Circumstances"
-	icon_state ="book_singularity"
-	author = "Engineering Encyclopedia"
-	title = "Singularity Safety in Special Circumstances"
-	page_link = "Guide_to_Singularity"
-
-/obj/item/book/manual/wiki/engineering_supermatter
-	name = "Supermatter Engine Operating Manual"
-	icon_state = "book_supermatter"
-	author = "Central Engineering Division"
-	title = "Supermatter Engine Operating Manual"
-	page_link = "Guide_to_Supermatter"
 
 //science
 /obj/item/book/manual/wiki/science_research
@@ -1257,14 +1237,7 @@
 	icon_state = "book_ironparagraphs"
 	author = "Marshal Security"
 	title = "Marshal Paragraphs"
-	page_link = "Ironhammer_Paragraphs"
-
-/obj/item/book/manual/wiki/security_detective
-	name = "The Film Noir: Proper Procedures for Investigations"
-	icon_state = "book_forensics"
-	author = "Ironhammer Security"
-	title = "The Film Noir: Proper Procedures for Investigations"
-	page_link = "Guide_to_Forensics"
+	page_link = "Guide_to_Security"
 
 //medical
 /obj/item/book/manual/wiki/medical_guide
@@ -1273,7 +1246,7 @@
 	icon_state = "book_medical"
 	author = "Medical Journal, volume 1"
 	title = "Medical Diagnostics Manual"
-	page_link = "Guide_to_Medical"
+	page_link = "Guide_to_Medicine"
 
 /obj/item/book/manual/wiki/medical_chemistry
 	name = "Chemistry Textbook"
@@ -1283,12 +1256,6 @@
 	page_link = "Guide_to_Chemistry"
 
 //neotheology
-/obj/item/book/manual/wiki/neotheology_cloning //TODO: Completely change this to be NT-oriented.
-	name = "Cloning Rituals"
-	icon_state = "book"//TODO: Add icon
-	author = "The Church"
-	title = "Cloning Rituals"
-	page_link = "Guide_to_Cloning"
 
 //service
 /obj/item/book/manual/wiki/barman_recipes
@@ -1296,14 +1263,14 @@
 	icon_state = "book"
 	author = "Sir John Rose"
 	title = "Barman Recipes"
-	page_link = "Guide_to_Food_and_Drinks"
+	page_link = "Guide_to_Drinks"
 
 /obj/item/book/manual/wiki/chef_recipes
 	name = "Chef Recipes"
 	icon_state = "chefbook"
 	author = "Victoria Ponsonby"
 	title = "Chef Recipes"
-	page_link = "Guide_to_Food_and_Drinks"
+	page_link = "Guide_to_Food"
 
 /obj/item/book/manual/religion/c_bible
 	name = "Christian Bible"

@@ -6,16 +6,18 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	The normal \"Valkyrie\" design meeting the improvements with Lightfall design in a wooden frame with a golden barrel to help conduct the extra little bit of juice to hit as hard as possible."
 	charge_cost = 200
+	extra_damage_mult_scoped = 0.2
 	fire_delay = 25
 	price_tag = 3750
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_GOLD = 9, MATERIAL_URANIUM = 6) //The normal valk needs silver this is gold plated!
 	icon = 'icons/obj/guns/energy/sniper_saint.dmi'
+	fire_sound = 'sound/weapons/energy/aer9fire.ogg'
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/revolver/mistral/elite
 	name = "\"Elite\" magnum revolver"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	Unlike a standard mistral magnum this one has a bluespace crystal in the cylinder and weighted barrel for better recoil control. How many bullets does it hold? Uses 10mm Magnum rounds."
+	Unlike a standard Mistral magnum this one has a bluespace crystal in its cylinder and a weighted barrel for better recoil control. How many bullets does it hold? Uses 10mm Magnum rounds."
 	max_shells = 60
 	init_recoil = RIFLE_RECOIL(1.1)
 	price_tag = 3000
@@ -42,11 +44,11 @@
 	penetration_multiplier = 2
 	init_recoil = RIFLE_RECOIL(4)
 	price_tag = 3250
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //Regains its internal mag do to its more annoying way of reloading
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //Regains its internal mag due to its more annoying way of reloading
 	serial_type = "BlueCross"
 	icon = 'icons/obj/guns/projectile/sawnoff/bluecross_shotgun.dmi'
 	init_firemodes = list(
-		list(mode_name="King's Wrath", mode_desc="Echos the will of king that onced used it.", burst=1, icon="semi"), //Snowfalk fire mode for snowflake gun
+		list(mode_name="King's Wrath", mode_desc="Echos the will of king that onced used it.", burst=1, icon="semi"), //Snowflake fire mode for snowflake gun
 		list(mode_name="August Presence", mode_desc="Fires two of the king's decrees at the same time.", burst=2, icon="semi")
 		)
 
@@ -68,11 +70,12 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A black and blue version of the defunct \"Serenity\" energy pistol, somehow despite looking just like a repainted job it conserves power unusually well."
 	icon_state = "ntpistol"
+	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
 	charge_cost = 2
 	projectile_type = /obj/item/projectile/beam
 	can_dual = TRUE
 	init_firemodes = list(
-		LETHAL,
+		WEAPON_NORMAL,
 		WEAPON_CHARGE
 	)
 	twohanded = FALSE
@@ -86,6 +89,9 @@
 	name = "\"Maxim\" light machinegun"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A common design used by certain nefarious political groups, this model however has been stripped of its fellows evil machinations, making it safe to use by anyone."
+	icon = 'icons/obj/guns/projectile/maxim_colony.dmi'
+	icon_state = "maxim_bluecross"
+	item_state = "maxim_bluecross"
 	price_tag = 1884
 	slowdown_hold = 0
 	init_recoil = LMG_RECOIL(0.5)
@@ -95,8 +101,12 @@
 /obj/item/gun/energy/lasersmg/inferno
 	name = "Disco Inferno \"Light Show\""
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	Someone has inscribed 'inferno' in a stylized multi-color crayon on the side while modifying its internal power capacitor to be much more effeciant."
-	charge_cost = 5
+	Someone has inscribed 'INFERNO' in a stylized multi-color crayon on the side while modifying its internal power capacitor to be much more efficient."
+	charge_cost = 10 // Ridiculously cell efficient
+	projectile_type = /obj/item/projectile/beam/weak/smg/firestorm // DISCO INFERNO
+	fire_sound = 'sound/weapons/guns/fire/sunrise_fire.ogg'
+	icon_state = "lightshow" // 7 colors of the rainbow from pre-existing energy weapons! Woo!
+	item_state = "lightshow"
 	price_tag = 1000
 	serial_type = "BlueCross"
 
@@ -107,18 +117,23 @@
 	icon = 'icons/obj/guns/energy/lasersmg_hell.dmi'
 	icon_state = "chaossmg"
 	item_state = "chaossmg"
-	damage_multiplier = 1.1 //makeshift laser
+	projectile_type = /obj/item/projectile/beam/weak // Stronger
+	damage_multiplier = 1 //makeshift laser
 	init_recoil = HANDGUN_RECOIL(0.3)
 	init_offset = 10 //makeshift laser
-	charge_cost = 5
+	charge_cost = 20 // Less cost than a Lasblender, but let's not get out of hand here
 	price_tag = 1500
+	init_firemodes = list(
+		BURST_8_ROUND,
+		FULL_AUTO_600 // UNLEASH HELL
+		)
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/silenced/rat
 	name = "\"Rat Man\" silenced pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A spray painted decal of a rat man with a grinning face has been placed on the grip, the deadliest killers are often those ignored or underestimated by others after all. \
-	This particular pistol has been oiled, cleaned, and appears to be so well maintenanced that its become 110% of its normal potential."
+	This particular pistol has been oiled, cleaned, and appears to be so well maintained that its become 110% of its normal potential."
 	damage_multiplier = 1.8
 	init_recoil = HANDGUN_RECOIL(0.3)
 	penetration_multiplier = 3.1
@@ -133,10 +148,10 @@
 	icon = 'icons/obj/guns/projectile/bluecross.dmi'
 	icon_state = "bluecross"
 	item_state = "bluecross"
+	fire_sound = 'sound/weapons/guns/fire/sniper.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
 	force = WEAPON_FORCE_DANGEROUS
 	bolt_training = FALSE
-	damage_multiplier = 2.5 //basic shot will 67.6~ damage
 	penetration_multiplier  = 2
 	max_shells = 1
 	price_tag = 2750
@@ -147,7 +162,7 @@
 /obj/item/gun/projectile/clarissa/devil_eye
 	name = "\"Devil Eye\" pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-			A small red eye has been painted onto the firing pin of this formerly undepowered pistol, this one has been modified with a better feed mechaism to allow \
+			A small red eye has been painted onto the firing pin of this formerly undepowered pistol, this one has been modified with a better feed mechanism to allow \
 			for deadlier shots. Uses 9mm rounds and can take standard pistol magazines, high cap magazines, or submachine gun mags."
 	price_tag = 2000
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
@@ -160,12 +175,13 @@
 /obj/item/gun/projectile/boltgun/lever/handcock
 	name = "\"Handcock\" lever action rifle"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-			The weapon's loading port seems skillfully enlarged to allow larger rounds to be loaded into the rifle of .06-06 caliber! \
-			Wild-west styled antimaterial rifle.. who would have thought?"
+			This lever action rifle seems to be masterfully rebored, its loading port skillfully enlarged to allow 14.5mm anti-materiel rounds to be loaded! \
+			Wild-west styled antimateriel rifle... who would have thought?"
 	icon = 'icons/obj/guns/projectile/lever.dmi'
 	icon_state = "lever"
 	item_state = "lever"
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE) //Dosnt take a silencer cuz thats just mean, also 14.5 AMR
+	fire_sound = 'sound/weapons/guns/fire/sniper.ogg' // High caliber but not AMR sound
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE) //Doesn't take a silencer cuz thats just mean, also 14.5 AMR
 	bolt_training = FALSE
 	caliber = CAL_ANTIM
 	max_shells = 4
@@ -178,6 +194,7 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			A mix of several other Slot-o-Matics put together after being sawn apart to make a rainbow and then fitted with a long unreloadable 10x24 caseless mag."
 	caliber = "10x24"
+	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
 	ammo_type = "/obj/item/ammo_casing/pistol"
 	mag_well = MAG_WELL_PULSE
 	magazine_type = /obj/item/ammo_magazine/c10x24
@@ -190,14 +207,16 @@
 /obj/item/gun/energy/captain/zapper
 	name = "\"Retro-Funk\" Zapper"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-			Not really much of an interesting weapon by cross standards, with no unusual properties besides a self charging battery and incredible shot capacity. Often loved for its simplicity and retro style."
+			Not really much of an interesting weapon by Bluecross standards, with no unusual properties besides a self charging battery and incredible shot capacity. Often loved for its simplicity and retro style."
 	icon = 'icons/obj/guns/energy/zapper.dmi'
+	fire_sound = 'sound/weapons/energy/Laser4.ogg' // Retro!
 	icon_state = "zap"
 	charge_cost = 50
 	item_charge_meter = FALSE
 	charge_meter = FALSE
 	price_tag = 1500
 	serial_type = "BlueCross"
+	allow_greyson_mods = FALSE
 
 /obj/item/gun/energy/xray/psychic_cannon
 	name = "\"Manta-RAY\" cannon"
@@ -223,7 +242,7 @@
 /obj/item/gun/projectile/that_gun
 	name = "\"That Gun\" revolver pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-			A sneaky postol weapon designed to like a revolver to fool people into thinking you only have six shots."
+			A sneaky pistol designed to look like a revolver to fool people into thinking you only have six shots. Feeling lucky, punk?"
 	icon = 'icons/obj/guns/projectile/that_gun.dmi'
 	icon_state = "thatgun"
 	item_state = "thatgun"
@@ -264,8 +283,7 @@
 /obj/item/gun/projectile/colt/cult
 	name = "Brass \"Cult\" pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-			A normal looking Colt 35 but made completely out of brass with a small light in its chamber that glows an weary red, listening closely theirs a small ticking sound from inside \
-			as well as warm to the touch."
+			A normal looking H&S Colt but somehow made completely out of brass, with a small light in its chamber that glows an eerie red and feeling warm to the touch. If you listen in closely, there's a faint sound of whirling cogs coming from the inside."
 	icon = 'icons/obj/guns/projectile/colt.dmi'
 	icon_state = "brass"
 	item_state = "brass"
@@ -273,11 +291,12 @@
 	origin_tech = list(TECH_MAGNET = 10) //3500 points for rnd, eh its meant to stay in player hands not be deconned
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
 	price_tag = 2450
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	damage_multiplier = 1.5
+	penetration_multiplier = 1.2 // So that it's good for PVE too
 	init_recoil = HANDGUN_RECOIL(0.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "BlueCross"
@@ -296,7 +315,7 @@
 	projectile_type = /obj/item/projectile/beam/weak/pistol_35
 	charge_cost = 1000000000000000000000000000000000000
 	suitable_cell = null
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	can_dual = TRUE
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.2
@@ -329,8 +348,9 @@
 	w_class = ITEM_SIZE_NORMAL
 	armor_penetration = ARMOR_PEN_HALF
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
+	tool_qualities = list(QUALITY_HAMMERING = 20)
 	max_upgrades = 3
-	price_tag = 3500 //the materals
+	price_tag = 3500 // It has durasteel spikes
 	matter = list(MATERIAL_WOOD = 4, MATERIAL_DURASTEEL = 1)
 
 /obj/item/tool/knife/dagger/assassin/ubersaw //Waiting for code to be done to deal blood damage/take % of blood
@@ -359,11 +379,17 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 			The only thing they fear is you."
 	icon_state = "rip_and_tear"
+	item_state = "rip_and_tear"
+	switched_on_icon_state = "rip_and_tear"
+	switched_on_item_state = "rip_and_tear"
+	wielded_icon = "rip_and_tear_on"
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
-	force = WEAPON_FORCE_GODLIKE
+	force = WEAPON_FORCE_DANGEROUS
+	switched_on_forcemult = 4.4 //88
 	w_class = ITEM_SIZE_NORMAL
-	armor_penetration = ARMOR_PEN_HALF
+	armor_penetration = ARMOR_PEN_DEEP
+	switched_on_penmult = 2.5 //50
 	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 3)
 	tool_qualities = list(QUALITY_SAWING = 70, QUALITY_CUTTING = 60, QUALITY_WIRE_CUTTING = 30)
 	max_upgrades = 1//Already over powered.
@@ -371,6 +397,25 @@
 	use_power_cost = 1
 	suitable_cell = /obj/item/cell/medium
 	price_tag = 1850
+
+/obj/item/tool/saw/hyper/doombringer/turn_on(mob/user)
+	if (cell && cell.charge >= 1)
+		item_state = "[initial(item_state)]_on"
+		to_chat(user, SPAN_NOTICE("You rev up the [src]."))
+		to_chat(user, SPAN_WARNING("\red <font size=3><b>Rip and Tear, until it is DONE.</b></font>")) // Berserk pack active
+		playsound(loc, 'sound/items/chainsaw_on.ogg', 40)
+
+	else
+		item_state = initial(item_state)
+		to_chat(user, SPAN_WARNING("[src]'s battery is dead or missing."))
+	..()
+
+/obj/item/tool/saw/hyper/doombringer/turn_off(mob/user)
+	item_state = initial(item_state)
+	playsound(loc, 'sound/items/chainsaw_off.ogg', 80)
+	to_chat(user, SPAN_NOTICE("You turn the [src] off."))
+	..()
+
 
 //Armor
 

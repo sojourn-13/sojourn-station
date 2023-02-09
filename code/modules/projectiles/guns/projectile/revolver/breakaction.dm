@@ -15,7 +15,7 @@
 	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.2)
 	zoom_factors = list(0.2)
-	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/revolver_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	can_dual = TRUE
 	serial_type = "H&S"
@@ -60,19 +60,32 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_INTERNAL_MAG, GUN_REVOLVER)
 	serial_type = "H&S"
 
-/obj/item/gun/projectile/revolver/rev10/rex10/showdown
-	name = "\"Showdown\" kurtz revolver"
-	desc = "An uncommon revolver known for being an old model break action, chambered in fifty kurtz and capable of blowing a hole through a man with ease. While not exceptionally lethal as far \
-	as 12mm kurtz handguns go, its ability to blow through armor thanks to its brutal design make it a favorite among those at the wrong side of a gun and the law. Chambered in 12mm rounds."
-	icon = 'icons/obj/guns/projectile/showdown.dmi'
-	icon_state = "showdown"
-	item_state = "showdown"
+/obj/item/gun/projectile/revolver/rev10/mateba
+	name = "\"Mateba\" autorevolver"
+	desc = "The \"Mateba\" autorevolver is a unique semiautomatic revolver chambered in 12mm whose patents were acquired by Seinemetall Defense GmbH for production. \
+			Its two-part frame is divided between cylinder and barrel, mounted atop rails on the lower grip, effectively reducing muzzle flip \
+			by aligning its bore with the operator's holding point, and sliding the whole mechanism back upon shooting thanks to its potent recoil compensator. \
+			Such a mechanism, sadly, limits the caliber of this gun to the highest bore despite having sported interchangeable barrels at some point."
+	icon = 'icons/obj/guns/projectile/mateba.dmi'
+	icon_state = "mateba"
+	item_state = "mateba"
 	caliber = CAL_50
-	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	origin_tech = list(TECH_COMBAT = 10, TECH_MATERIAL = 5)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 6, MATERIAL_PLATINUM = 2)
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
-	price_tag = 900
-	damage_multiplier = 1
-	penetration_multiplier = 1.5
-	init_recoil = HANDGUN_RECOIL(1)
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM, GUN_INTERNAL_MAG, GUN_REVOLVER)
-	serial_type = "SA" //Hand made good old gun I guess?
+	price_tag = 1500 // Very rare, very well made
+	damage_multiplier = 1.3 // Not as good as the Deckard in penetration for balance purposes, still quite good.
+	init_recoil = HANDGUN_RECOIL(0.5) // Takes no mods that assist with recoil.
+	wield_delay = 0.6 SECOND
+	wield_delay_factor = 0.6 // 60 vig, heavy gun
+	can_dual = FALSE
+	max_upgrades = 4 // Deckard on steroids, let's not get out of hand
+	blacklist_upgrades = list( // Gun already has amazing recoil control, barrels that reduce recoil interfere with the sliding recoil control mechanism.
+							  /obj/item/tool_upgrade/refinement/vibcompensator = TRUE,
+							  /obj/item/tool_upgrade/reinforcement/guard = TRUE,
+							  /obj/item/tool_upgrade/productivity/ergonomic_grip = TRUE,
+							  /obj/item/tool_upgrade/refinement/ported_barrel = TRUE,)
+	zoom_factors = list()
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
+	serial_type = "SD GmbH"
+

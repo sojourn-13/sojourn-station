@@ -283,7 +283,7 @@
 			OCCUPANT.take_organ_damage(0, burndamage)
 			OCCUPANT.apply_effect(50, IRRADIATE)
 			if (!(OCCUPANT.species && (OCCUPANT.species.flags & NO_PAIN)))
-				OCCUPANT.emote("scream")
+				OCCUPANT.emote("painscream")
 
 	//End of the cycle
 	if(!issuperUV)

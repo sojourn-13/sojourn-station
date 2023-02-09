@@ -24,7 +24,8 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/Initialize()
 	icon_state_full = "[icon_state]"
-	icon_state_empty = "[icon_state]_empty"
+	if (icon_state_empty == null)
+		icon_state_empty = "[icon_state]_empty"
 	. = ..()
 	if(isGlass)
 		unacidable = TRUE
@@ -305,7 +306,7 @@
 	icon_state = "alco-white"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("nanatsunoumi" = 100)
-	icon_state_empty = "alco-white_empty"
+	icon_state_empty = "alco-empty"
 
 /obj/item/reagent_containers/food/drinks/bottle/grenadine
 	name = "Briar Rose Grenadine Syrup"

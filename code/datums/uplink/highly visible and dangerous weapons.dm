@@ -45,7 +45,7 @@
 	item_cost = 7
 	path = /obj/item/storage/box/syndie_kit/revolver
 
-//These are for traitors (or other antags, perhaps) to have the option of purchasing some merc gear.
+//These are for contractors (or other antags, perhaps) to have the option of purchasing some merc gear.
 /datum/uplink_item/item/visible_weapons/submachinegun
 	name = "Sub-Machine Gun"
 	item_cost = 7

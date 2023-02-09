@@ -6,7 +6,7 @@
 	item_state = null	//so the human update icon uses the icon_state instead.
 	item_charge_meter = TRUE
 	can_dual = TRUE
-	fire_sound = 'sound/weapons/energy/Taser.ogg'
+	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
 	charge_cost = 100
 	matter = list(MATERIAL_PLASTEEL = 13, MATERIAL_PLASTIC = 6, MATERIAL_SILVER = 6)
 	price_tag = 650
@@ -18,7 +18,7 @@
 
 	init_firemodes = list(
 		STUNBOLT,
-		LETHAL,
+		list(mode_name="kill", mode_desc="Fires a lethal laser projectile", projectile_type=/obj/item/projectile/beam, item_modifystate="kill", fire_sound='sound/weapons/energy/laser_pistol.ogg', icon="kill"), // This is so that it uses the laser pistol firing sound. Use the LETHAL define for stock energy rifles.
 		WEAPON_CHARGE,
 		)
 	serial_type = "H&S"
@@ -35,7 +35,7 @@
 
 /obj/item/gun/energy/gun/martin
 	name = "\"Martin\" energy pistol"
-	desc = "Martin is essentialy downscaled Spider Rose, made for security employees and civilians to use it as personal self defence weapon."
+	desc = "Martin is essentialy a downscaled Spider Rose, made for security employees and civilians to use it as a personal self defence weapon."
 	icon = 'icons/obj/guns/energy/pdw.dmi'
 	icon_state = "PDW"
 	item_state = "gun"
@@ -49,7 +49,6 @@
 	modifystate = null
 	suitable_cell = /obj/item/cell/small
 	cell_type = /obj/item/cell/small
-
 	wield_delay = 0.2 SECOND
 	wield_delay_factor = 0.2 // 20 vig
 
@@ -79,6 +78,11 @@
 	charge_cost = 25
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 4, MATERIAL_SILVER = 2, MATERIAL_URANIUM = 1)
 	price_tag = 500
+	init_firemodes = list(
+		list(mode_name="stun", mode_desc="Fires a concentrated stun beam", projectile_type=/obj/item/projectile/beam/stun, charge_cost = 25, icon="stun", fire_sound='sound/weapons/energy/Taser.ogg'),
+		list(mode_name="lethal", mode_desc="Fires a concentrated laser blast", projectile_type=/obj/item/projectile/beam/midlaser, charge_cost = 25, icon="kill", fire_sound='sound/weapons/energy/laser_pistol.ogg'), // Intensified lens = more damage
+		list(mode_name="charge mode", mode_desc="Hold down the trigger, and let loose a more powerful shot", mode_type = /datum/firemode/charge, icon="charge")
+	)
 
 /obj/item/gun/energy/gun/martin/upgraded/update_mode()
 	var/datum/firemode/current_mode = firemodes[sel_mode]

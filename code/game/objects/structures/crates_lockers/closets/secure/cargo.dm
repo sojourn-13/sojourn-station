@@ -116,7 +116,7 @@
 	gain_rng()
 
 	new /obj/item/device/radio/headset/headset_pro(src)
-	new /obj/item/clothing/accessory/cape/scav(src)
+	new /obj/item/clothing/accessory/cape/prospie(src)
 
 	switch(bag_cache)
 		if("INDUSTRIAL")
@@ -134,7 +134,7 @@
 	switch(armor_cache)
 		if("BASIC_A")
 			new /obj/item/clothing/suit/storage/scavengerarmor(src)
-			new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
+			new /obj/item/clothing/head/helmet/handmade/scavengerhelmet(src)
 			new /obj/item/clothing/gloves/thick/combat(src)
 			new /obj/item/clothing/shoes/combat(src)
 		if("BULLET_A")
@@ -322,7 +322,7 @@
 	gain_rng()
 
 	new /obj/item/device/radio/headset/headset_pro(src)
-	new /obj/item/clothing/accessory/cape/scav(src)
+	new /obj/item/clothing/accessory/cape/prospie(src)
 
 	switch(bag_cache)
 		if("INDUSTRIAL")
@@ -338,7 +338,7 @@
 			new /obj/item/storage/backpack/holding(src)
 	//armor
 	new /obj/item/clothing/suit/storage/scavengerarmor(src)
-	new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
+	new /obj/item/clothing/head/helmet/handmade/scavengerhelmet(src)
 	//longarms
 	switch(main_weapon_cache)
 		if("SMG")
@@ -519,7 +519,7 @@
 	gain_rng()
 
 	new /obj/item/device/radio/headset/heads/foreman(src)
-	new /obj/item/clothing/accessory/cape/scav(src)
+	new /obj/item/clothing/accessory/cape/prospie(src)
 	new /obj/item/clothing/accessory/halfcape/foreman(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/scav/forman(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/guns/vector(src)
@@ -542,7 +542,7 @@
 	switch(armor_cache)
 		if("BASIC_A")
 			new /obj/item/clothing/suit/storage/scavengerarmor(src)
-			new /obj/item/clothing/head/space/void/riggedvoidsuit(src)
+			new /obj/item/clothing/head/helmet/handmade/scavengerhelmet(src)
 			new /obj/item/clothing/gloves/thick/combat(src)
 			new /obj/item/clothing/shoes/combat(src)
 		if("BULLET_A")

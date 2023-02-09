@@ -108,6 +108,7 @@
 
 
 	var/datum/sanity/sanity = null
+	var/rest_points = 0
 
 	var/shock_resist = 0 // Resistance to paincrit
 

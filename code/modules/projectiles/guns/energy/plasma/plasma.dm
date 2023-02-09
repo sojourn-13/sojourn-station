@@ -11,7 +11,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 7, MATERIAL_URANIUM = 8)
 	price_tag = 2000
 	origin_tech = list(TECH_COMBAT = 3, TECH_PLASMA = 2)
-	fire_sound = 'sound/weapons/energy/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	projectile_type = /obj/item/projectile/beam
 	cell_type = /obj/item/cell/medium
 	sel_mode = 2
@@ -37,10 +37,12 @@
 
 /obj/item/gun/energy/plasma/mounted/blitz
 	name = "SDF PR \"Sprengen\""
-	desc = "A miniaturized plasma rifle, remounted for robotic use only."
+	desc = "A miniaturized plasma rifle, remounted for robotic use only. Also has the ablity to have a Master Unmaker integrated into it."
 	icon_state = "plasma_turret"
 	charge_meter = FALSE
 	serial_type = "GP"
+	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
+	allow_greyson_mods = TRUE
 
 /obj/item/gun/energy/plasma/destroyer
 	name = "\"Purger\" plasma rifle"
@@ -74,7 +76,7 @@
 	disposable = TRUE
 	origin_tech = list(TECH_COMBAT = 1, TECH_PLASMA = 1)
 	price_tag = 250
-	fire_sound = 'sound/weapons/energy/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
 	cell_type = /obj/item/cell/small //can't recharge this one
 	sel_mode = 2
 	charge_cost = 12.5 // for 8 shots
@@ -84,7 +86,7 @@
 	gun_tags = list(GUN_ENERGY)
 
 	init_firemodes = list(
-		list(mode_name="Stun", mode_desc="A weakening bolt of plasma that disables people", projectile_type=/obj/item/projectile/plasma/stun, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=2, icon="stun", projectile_color = "#0000FF"),
+		list(mode_name="Stun", mode_desc="A weakening bolt of plasma that disables people", projectile_type=/obj/item/projectile/plasma/stun, fire_sound='sound/weapons/energy/marauder.ogg', fire_delay=2, icon="stun", projectile_color = "#0000FF"),
 		list(mode_name="Melt", mode_desc="A heavier plasma bolt designed to melt through armor and flesh alike", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
 	)
 
@@ -93,7 +95,7 @@
 
 /obj/item/gun/energy/plasma/super_heavy
 	name = "\"Ragefire\" Experimental Plasma Gun"
-	desc = "An \"Soteria\" brand experimental weapon that uses coolant to fire deadly plasma projectiles without needing to cool down between shots, however the gun is extremly unstable without cooling."
+	desc = "A \"Soteria\" brand experimental weapon that uses coolant to fire deadly plasma projectiles without needing to cool down between shots, however the gun is extremely unstable without cooling."
 	icon = 'icons/obj/guns/energy/plasma.dmi'
 	icon_state = "plasma"
 	fire_sound = 'sound/weapons/energy/lasercannonfire.ogg'
@@ -168,7 +170,7 @@
 /obj/item/gun/energy/plasma/super_heavy/handle_post_fire(mob/user)
 	..() // We shoot the gun before using the coolant.
 	if(!(container) || !(container.reagents.remove_reagent("coolant", coolant_used_per_shot))) // First check if we have a container, if we do, then try to remove the coolant, if it can't, we continue.
-		to_chat(user, SPAN_WARNING("Your [src.name] start to overheat.")) // Warn the user that they ran out.
+		to_chat(user, SPAN_WARNING("Your [src.name] starts to overheat.")) // Warn the user that they ran out.
 
 		if(prob(explode_chance)) // This roll the dice to see if the gun explode.
 			usr.visible_message(SPAN_DANGER("[usr]'s [src.name] overheat and explode !")) // Obvious Message

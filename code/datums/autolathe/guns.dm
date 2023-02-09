@@ -30,10 +30,6 @@
 	name = "H&S HG 9mm \"Colt\""
 	build_path = /obj/item/gun/projectile/colt
 
-/datum/design/autolathe/gun/NM_colt
-	name = "BR 9mm \"Bronco\""
-	build_path = /obj/item/gun/projectile/colt/NM_colt
-
 /datum/design/autolathe/gun/detective
 	name = "H&S REV 9mm \"Havelock\""
 	build_path = /obj/item/gun/projectile/revolver/detective
@@ -72,10 +68,6 @@
 	name = "SA HG 10mm \"Delta Elite\""
 	build_path = /obj/item/gun/projectile/colt/ten
 
-/datum/design/autolathe/gun/ten_dark
-	name = "SolFed 10mm \"Stallion\""
-	build_path = /obj/item/gun/projectile/colt/ten/dark
-
 /datum/design/autolathe/gun/revolver
 	name = "H&S REV 10mm Magnum \"Minotaur\""
 	build_path = /obj/item/gun/projectile/revolver
@@ -110,9 +102,17 @@
 	name = "SolFed M6C 12mm \"SOCOM\""
 	build_path = /obj/item/gun/projectile/lamia/socom
 
+/datum/design/autolathe/gun/mateba
+	name = "Seinemetall Defense GmbH HG 12mm \"Mateba\" autorevolver"
+	build_path = /obj/item/gun/projectile/revolver/rev10/mateba
+
 /datum/design/autolathe/gun/amnesty
 	name = "NM 12mm Amnesty"
 	build_path = /obj/item/gun/projectile/lamia/amnesty
+
+/datum/design/autolathe/gun/rebar
+	name = "GP 12mm Rebar"
+	build_path = /obj/item/gun/projectile/rebar
 
 /// S M G S
 
@@ -121,7 +121,7 @@
 	build_path = /obj/item/gun/projectile/automatic/texan
 
 /datum/design/autolathe/gun/drozd
-	name = "Excelsior 9mm \"Drozd\""
+	name = "Excelsior 10mm \"Drozd\""
 	build_path = /obj/item/gun/projectile/automatic/drozd
 
 /datum/design/autolathe/gun/luger
@@ -135,10 +135,6 @@
 /datum/design/autolathe/gun/ppv
 	name = "BR 9mm \"Semyonovich\" assault SMG"
 	build_path = /obj/item/gun/projectile/automatic/ppsh/ppv
-
-/datum/design/autolathe/gun/buckler
-	name = "BR 9mm \"Buckler\" assault SMG"
-	build_path = /obj/item/gun/projectile/automatic/buckler
 
 // 10mm S M G S
 
@@ -176,10 +172,6 @@
 	name = "SA SG \"Pug\""
 	build_path = /obj/item/gun/projectile/shotgun/pug
 
-/datum/design/autolathe/gun/gladstone
-	name = "H&S SG \"Gladstone\""
-	build_path = /obj/item/gun/projectile/shotgun/pump/gladstone
-
 /datum/design/autolathe/gun/riot_shotgun
 	name = "Seinemetall Defense GmbH SG \"State\""
 	build_path = /obj/item/gun/projectile/automatic/riot_autoshotgun
@@ -192,9 +184,9 @@
 	name = "SA \"Six Shooter\" revolving shotgun"
 	build_path = /obj/item/gun/projectile/revolver/sixshot
 
-/datum/design/autolathe/gun/rushing_bull
-	name = "BR \"Rushing Bull\" tactical shotgun"
-	build_path = /obj/item/gun/projectile/automatic/bull_autoshotgun
+/datum/design/autolathe/gun/buffalo
+	name = "BR \"Buffalo\" tactical shotgun"
+	build_path = /obj/item/gun/projectile/automatic/buff_autoshotgun
 
 /datum/design/autolathe/gun/opshot
 	name = "NM \"Operator\" tactical shotgun"
@@ -222,13 +214,9 @@
 	name = "Seinemetall Defense GmbH AR 6.5x39mm \"Ostwind\""
 	build_path = /obj/item/gun/projectile/automatic/ostwind
 
-/datum/design/autolathe/gun/sts25
-	name = "SA AR 6.5x39mm \"STS-25\""
-	build_path = /obj/item/gun/projectile/automatic/sts/lrifle
-
-/datum/design/autolathe/gun/saw
-	name = "SA LMG 6.5x39mm \"Pegasus\""
-	build_path = /obj/item/gun/projectile/automatic/lmg/saw
+/datum/design/autolathe/gun/tk
+	name = "SD GmbH LMG 6.5x39mm \"Takeshi\""
+	build_path = /obj/item/gun/projectile/automatic/lmg/tk
 
 /datum/design/autolathe/gun/roe
 	name = "Hunters Inc BR 6.5x39mm \"Roe\""
@@ -239,23 +227,15 @@
 	build_path = /obj/item/gun/projectile/automatic/nail_gun
 
 /datum/design/autolathe/gun/duty
-	name = "BR 6.5x39mm \"Duty\" heavy rifle"
+	name = "BR 6.5x39mm \"Duty\" carbine"
 	build_path = /obj/item/gun/projectile/automatic/duty
 
 /datum/design/autolathe/gun/mamba
 	name = "NM 6.5x39mm \"Mamba\" carbine"
 	build_path = /obj/item/gun/projectile/automatic/mamba
 
-/datum/design/autolathe/gun/viper
-	name = "NM 6.5x39mm \"Viper\" DMR"
-	build_path = /obj/item/gun/projectile/automatic/mamba/viper
-
 ///R I F L E S
-//7 . 5 m m
-
-/datum/design/autolathe/gun/zatvor
-	name = "BR 7.62x39mm \"Zatvor\""
-	build_path = /obj/item/gun/projectile/boltgun/zatvor
+//7 . 6 2 m m
 
 /datum/design/autolathe/gun/vintorez
 	name = "Excelsior 7.62x39mm \"Vintorez\""
@@ -264,10 +244,6 @@
 /datum/design/autolathe/gun/nordwind
 	name = "Seinemetall Defense GmbH DMR - 7.62x39mm  \"Nordwind\""
 	build_path = /obj/item/gun/projectile/automatic/nordwind
-
-/datum/design/autolathe/gun/watchtower
-	name = "BR \"Watchtower\" DMR - 7.62x39mm"
-	build_path = /obj/item/gun/projectile/automatic/nordwind/watchtower
 
 /datum/design/autolathe/gun/sts30
 	name = "SA BR - 7.62x39mm  \"STS-30\""
@@ -292,6 +268,10 @@
 /datum/design/autolathe/gun/strelki
 	name = "BR  7.62x39mm \"strelki\""
 	build_path = /obj/item/gun/projectile/automatic/nordwind/strelki
+
+/datum/design/autolathe/gun/heroic
+	name = "NM 7.62x39mm \"Heroic\" LMG"
+	build_path = /obj/item/gun/projectile/automatic/lmg/heroic
 
 /datum/design/autolathe/gun/maxim
 	name = "Excelsior Maxim"
@@ -406,7 +386,7 @@
 
 /datum/design/autolathe/gun/revolver_taser
 	name = "Seinemetall Defense GmbH - \"Zeus\" Stun Revolver"
-	build_path = /obj/item/gun/energy/taser
+	build_path = /obj/item/gun/energy/stunrevolver
 
 /datum/design/autolathe/gun/ion_pistol
 	name = "Seinemetall Defense GmbH - \"Aedes\" Ion Pistol"

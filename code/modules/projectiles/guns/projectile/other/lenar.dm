@@ -7,14 +7,15 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10)
-	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
-	bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'   //Placeholder, could use a new sound
+	fire_sound = 'sound/weapons/guns/fire/ubgl.ogg'
+	bulletinsert_sound = 'sound/weapons/guns/interact/china_lake_reload.ogg'
 	fire_sound_text = "a metallic thunk"
 	price_tag = 1200
 	serial_type = "SD GmbH"
 
 	wield_delay = 1.5 SECOND
 	wield_delay_factor = 0.6 // 60 vig , heavy stuff
+	gun_parts = list(/obj/item/part/gun = 2, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/shotgun = 1)
 
 /obj/item/gun/projectile/grenade/lenar/proc/update_charge()
 	var/ratio = loaded.len / max_shells

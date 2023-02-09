@@ -6,6 +6,13 @@
 	sort_category = "Faction: Security"
 	cost = 0
 
+/datum/gear/factionsecurity/ironhammer_wintercoat //it's just a generic marshal plate carrier coat with no added coverage -Dongels
+	display_name = "security armored coat"
+	path = /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	slot = slot_wear_suit
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/beretcommander
 	display_name = "beret, security head"
 	path = /obj/item/clothing/head/rank/commander
@@ -202,13 +209,6 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/inspector
-	display_name = "uniform, patrol"
-	path = /obj/item/clothing/under/rank/inspector/uniform
-	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
 /datum/gear/factionsecurity/jumpskirtcommander
 	display_name = "jumpskirt, commander"
 	path = /obj/item/clothing/under/rank/ih_commander/skirt
@@ -234,13 +234,6 @@
 	display_name = "jumpskirt, supply specialist"
 	path = /obj/item/clothing/under/rank/warden/skirt
 	allowed_roles = list("Supply Specialist")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/jumpskirttrooper
-	display_name = "jumpskirt, blackshield"
-	path = /obj/item/clothing/under/rank/trooper/skirt
-	allowed_roles = list("Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 

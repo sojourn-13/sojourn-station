@@ -15,6 +15,7 @@
 	charge_cost = 100 //worst lightfall
 	fire_delay = 10 //ditto
 	price_tag = 400
+	fire_sound = 'sound/weapons/energy/laser_rifle.ogg'
 	init_firemodes = list(
 		WEAPON_NORMAL
 	)

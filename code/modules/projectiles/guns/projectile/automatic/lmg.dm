@@ -1,6 +1,11 @@
+
+// Belt-fed LMG's start here. Treat this as the unused skeleton for all of them.
+// Do note that pen_multiplier is a base of 1 from inheritance.
+
 /obj/item/gun/projectile/automatic/lmg
 	name = "SA \"SAW\""
-	desc = "A exstreamly rare HMG produced on a commision. Uses 7.62mm Rifle rounds."
+	desc = "An extremely rare HMG produced on a commision. Uses 7.62mm Rifle rounds."
+	description_info = "To reload, use an empty hand on it to open its cover, then again to take out the ammo box if any. Insert the linked box, then use in-hand to close it."
 	icon = 'icons/obj/guns/projectile/l6.dmi'
 	var/icon_base
 	icon_base = "l6"
@@ -24,9 +29,9 @@
 	init_recoil = HMG_RECOIL(1)
 	slowdown_hold = 1
 	init_firemodes = list(
-		FULL_AUTO_300,
 		BURST_5_ROUND,
-		BURST_8_ROUND
+		BURST_8_ROUND,
+		FULL_AUTO_300
 		)
 	serial_type = "SA"
 
@@ -37,13 +42,13 @@
 
 /obj/item/gun/projectile/automatic/lmg/special_check(mob/user)
 	if(cover_open)
-		to_chat(user, SPAN_WARNING("[src]'s cover is open! Close it before firing!"))
+		to_chat(user, SPAN_WARNING("\The [src]'s cover is open! Close it before firing!"))
 		return 0
 	return ..()
 
 /obj/item/gun/projectile/automatic/lmg/proc/toggle_cover(mob/user)
 	cover_open = !cover_open
-	to_chat(user, SPAN_NOTICE("You [cover_open ? "open" : "close"] [src]'s cover."))
+	to_chat(user, SPAN_NOTICE("You [cover_open ? "open" : "close"] \the [src]'s cover."))
 	update_icon()
 
 /obj/item/gun/projectile/automatic/lmg/attack_self(mob/user as mob)
@@ -66,13 +71,13 @@
 
 /obj/item/gun/projectile/automatic/lmg/load_ammo(var/obj/item/A, mob/user)
 	if(!cover_open)
-		to_chat(user, SPAN_WARNING("You need to open the cover to load [src]."))
+		to_chat(user, SPAN_WARNING("You need to open the cover to load \the [src]."))
 		return
 	..()
 
 /obj/item/gun/projectile/automatic/lmg/unload_ammo(mob/user, var/allow_dump=1)
 	if(!cover_open)
-		to_chat(user, SPAN_WARNING("You need to open the cover to unload [src]."))
+		to_chat(user, SPAN_WARNING("You need to open the cover to unload \the [src]."))
 		return
 	..()
 
@@ -97,7 +102,7 @@
 //	update_wear_icon()
 
 
-
+// After the removal of the Unicorn, treat this as the "high-end of normal" for any future LMG's.
 /obj/item/gun/projectile/automatic/lmg/pk
 	name = "Pulemyot Kalashnikova"
 	desc = "\"Kalashnikov's Machinegun\", a well-made copy of what many consider to be the best traditional machinegun ever designed."
@@ -105,40 +110,29 @@
 	icon_base = "pk"
 	icon_state = "pk_closed"
 	item_state = "pk_closed"
-	damage_multiplier = 0.9
+	damage_multiplier = 1.0 // This becomes x0.8 as forced full auto modes incurr 20% damage penalty.
 	init_firemodes = list(
-		FULL_AUTO_300,
 		BURST_5_ROUND,
-		BURST_8_ROUND
+		BURST_8_ROUND,
+		FULL_AUTO_300
 		)
+	gun_parts = list(/obj/item/part/gun/frame/pk = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
-//Typical LMG/SAW, use this for the high end of "normal."
-/obj/item/gun/projectile/automatic/lmg/saw
-	name = "\"Pegasus\" light machinegun"
-	desc = "A common LMG chambered in 6.5mm Carbine, accepting either boxes or standard magazines, though this calls into question some reliability issues. \
-	This particular example bears a winged horse in laurels and a \"Pegasus\" nameplate, all other markings have been filed off."
-	icon = 'icons/obj/guns/projectile/lmg.dmi'
-	icon_base = "saw"
-	icon_state = "saw_closed"
-	item_state = "saw_closed"
-	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_STANMAG
-	caliber = CAL_LRIFLE
-	penetration_multiplier = 0.85
-	damage_multiplier = 1.0
-	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 10)
-	price_tag = 1500
-	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
-	init_recoil = LMG_RECOIL(0.7)
-
-	init_firemodes = list(
-		FULL_AUTO_600,
-		BURST_5_ROUND,
-		)
+/obj/item/part/gun/frame/pk
+	name = "Pulemyot Kalashnikova frame"
+	desc = "A Pulemyot Kalashnikova LMG frame. A violent and beautiful spark of the past."
+	icon_state = "frame_pk"
+	result = /obj/item/gun/projectile/automatic/lmg/pk
+	resultvars = list(/obj/item/gun/projectile/automatic/lmg/pk)
+	gripvars = list(/obj/item/part/gun/grip/serb)
+	mechanismvar = /obj/item/part/gun/mechanism/machinegun
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
 
 //This should be in its own file...
 /obj/item/gun/projectile/automatic/lmg/tk
 	name = "\"Takeshi\" suppression machinegun"
-	desc = "The \"Takeshi LMG\" is Seinemetall Defense GmbH's answer to any scenario that requires suppression or meat grinding, a fine oiled machine of war and death."
+	desc = "The \"Takeshi LMG\" is Seinemetall Defense GmbH's answer to any scenario that requires suppression or meat grinding, a fine oiled machine of war and death. \
+			Takes 6.5mm linked boxes as well as normal carbine magazines."
 	icon = 'icons/obj/guns/projectile/tk.dmi'
 	icon_base = "tk"
 	icon_state = "tk"
@@ -149,9 +143,20 @@
 	penetration_multiplier = 1.2
 	init_recoil = LMG_RECOIL(0.8)
 	serial_type = "SD GmbH"
+	gun_parts = list(/obj/item/part/gun/frame/tk = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
+/obj/item/part/gun/frame/tk
+	name = "Takeshi frame"
+	desc = "A Takeshi LMG frame. A fine-oiled machine of war and death."
+	icon_state = "frame_mg"
+	result = /obj/item/gun/projectile/automatic/lmg/tk
+	resultvars = list(/obj/item/gun/projectile/automatic/lmg/tk)
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/machinegun
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
 
 /obj/item/gun/projectile/automatic/lmg/tk/update_icon()
-//	..() We are rather different then other guns and lmgs.
+//	..() We are rather different than other guns and lmgs.
 //	icon_state = "[icon_base][cover_open ? "_open" : "_closed"]" - this is for ref of what it did before.
 	var/iconstring = initial(icon_state)
 	var/itemstring = ""
@@ -200,10 +205,11 @@
 	serial_type = "NM"
 
 	init_firemodes = list(
-		FULL_AUTO_300, // Meant to be a supressive fire GPMG
 		BURST_5_ROUND,
-		BURST_8_ROUND
+		BURST_8_ROUND,
+		FULL_AUTO_600 // Meant to be a supressive fire GPMG
 		)
+	gun_parts = list(/obj/item/part/gun = 3, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 // Even more special than the Takeshi so we have to do this all over again instead of being a Takeshi child
 /obj/item/gun/projectile/automatic/lmg/heroic/update_icon()

@@ -154,7 +154,9 @@
 	desc = "Contains tools for surgery. Has precise foam fitting for safe transport."
 	icon_state = "surgeon"
 	item_state = "firstaid-surgeon"
-	max_storage_space = 19
+	max_storage_space = null // We have to null storage space so that it has the exact number of slots defined on storage_slots.
+	storage_slots = 9 // Enough for the tools it holds, and not one more.
+	max_w_class = ITEM_SIZE_NORMAL // Average size of the tools it can hold.
 	matter = list(MATERIAL_PLASTIC = 10) //holds more
 	can_hold = list(
 		/obj/item/tool/bonesetter,
@@ -168,7 +170,13 @@
 		/obj/item/device/scanner,
 		/obj/item/storage/pill_bottle,
 		/obj/item/stack/medical,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/tool/medmultitool,
 		)
+
+// make_exact_fit() completely ruins the can_hold list,
+// and makes it not accept any of the items it does not come pre-populated with.
+// Please never use this proc on these containers.
 
 /obj/item/storage/firstaid/surgery/populate_contents()
 	if (empty) return
@@ -181,7 +189,13 @@
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/tool/surgicaldrill(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	make_exact_fit()
+
+/obj/item/storage/firstaid/surgery/traitor
+	name = "conspicuous surgery kit"
+	icon_state = "surgeon_sus"
+	item_state = "combat_surgery_kit"
+	storage_slots = 12 // Fits all the tools it comes with
+	matter = list(MATERIAL_PLASTIC = 12) // More slots
 
 /obj/item/storage/firstaid/surgery/traitor/populate_contents()
 	if (empty) return
@@ -196,9 +210,43 @@
 	new /obj/item/tool/surgicaldrill/adv(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
-	new /obj/item/storage/pill_bottle/prosurgeon(src)
-	make_exact_fit()
+	new /obj/item/reagent_containers/syringe/stim/ultra_surgeon(src) // Antags don't come with the medical perk, this helps them make use of the ATK provided
 
+/obj/item/storage/firstaid/surgery/combat
+	name = "combat surgery kit"
+	desc = "Contains tools for surgery. Has precise foam fitting for safe transport of highly advanced tools."
+	icon = 'icons/obj/storage/deferred.dmi'
+	icon_state = "combat_surgery_kit"
+	item_state = "combat_surgery_kit"
+	storage_slots = 10 // Enough for the tools it holds, 1 more slot than standard surgical kits, but less than Soteria made ones.
+	max_w_class = ITEM_SIZE_NORMAL
+	matter = list(MATERIAL_PLASTIC = 12) // More slots
+	can_hold = list(
+		/obj/item/tool/bonesetter,
+		/obj/item/tool/saw/circular,
+		/obj/item/tool/hemostat,
+		/obj/item/tool/retractor,
+		/obj/item/tool/scalpel,
+		/obj/item/tool/surgicaldrill,
+		/obj/item/tool/tape_roll/bonegel,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/storage/pill_bottle,
+		/obj/item/tool/medmultitool,
+		/obj/item/stack/medical/advanced/bruise_pack
+		)
+
+/obj/item/storage/firstaid/surgery/combat/populate_contents()
+	if (empty) return
+	new /obj/item/tool/scalpel/laser(src)
+	new /obj/item/tool/hemostat/adv(src)
+	new /obj/item/tool/retractor/adv(src)
+	new /obj/item/tool/bonesetter/adv(src)
+	new /obj/item/tool/tape_roll/bonegel(src)
+	new /obj/item/tool/saw/circular/medical(src)
+	new /obj/item/tool/surgicaldrill/adv(src)
+	new /obj/item/reagent_containers/syringe/stim/ultra_surgeon(src)
+	new /obj/item/storage/pill_bottle/tramadol(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
 
 /obj/item/storage/firstaid/surgery/si
 	name = "advanced surgery kit"
@@ -206,21 +254,21 @@
 	icon_state = "surgery_box_SI"
 	item_state = "combat_surgery_kit"
 	icon = 'icons/obj/storage/deferred.dmi'
-	max_storage_space = 19
+	storage_slots = 12 // All tools a full one would fit + pill bottle and syringe, in case they're needed.
 
 /obj/item/storage/firstaid/surgery/si/empty
 	empty = TRUE
 
 /obj/item/storage/firstaid/surgery/si/populate_contents()
 	if (empty) return
-	new /obj/item/tool/bonesetter/adv/si(src)
-	new /obj/item/tool/saw/circular/medical(src)
-	new /obj/item/tool/hemostat/adv/si(src)
-	new /obj/item/tool/retractor/adv/si(src)
 	new /obj/item/tool/scalpel/advanced/si(src)
 	new /obj/item/tool/scalpel/laser(src)
+	new /obj/item/tool/hemostat/adv/si(src)
+	new /obj/item/tool/retractor/adv/si(src)
+	new /obj/item/tool/bonesetter/adv/si(src)
 	new /obj/item/tool/cautery/adv/si(src)
 	new /obj/item/tool/tape_roll/bonegel/si(src)
+	new /obj/item/tool/saw/circular/medical/si(src)
 	new /obj/item/tool/surgicaldrill/adv/si(src)
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 
@@ -682,6 +730,48 @@
 	new /obj/item/reagent_containers/pill/bloodregen(src)
 	new /obj/item/reagent_containers/pill/bloodregen(src)
 	new /obj/item/reagent_containers/pill/bloodregen(src)
+
+
+/obj/item/storage/pill_bottle/njoy
+	name = "bottle of mixed Njoy pills"
+	desc = "Contains pills used help the mental states."
+	icon_state = "bottle_njoy_mix"
+
+/obj/item/storage/pill_bottle/njoy/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/pill/suppressital(src)
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/pill/suppressital/green(src)
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/pill/suppressital/blue(src)
+
+
+/obj/item/storage/pill_bottle/njoy/red
+	name = "bottle of red Njoy pills"
+	desc = "Contains pills used help the mental states."
+	icon_state = "bottle_njoy_red"
+
+/obj/item/storage/pill_bottle/njoy/red/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/pill/suppressital(src)
+
+/obj/item/storage/pill_bottle/njoy/green
+	name = "bottle of green Njoy pills"
+	desc = "Contains pills used to stop the mental states."
+	icon_state = "bottle_njoy_green"
+
+/obj/item/storage/pill_bottle/njoy/green/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/pill/suppressital/green(src)
+
+/obj/item/storage/pill_bottle/njoy/blue
+	name = "bottle of blue Njoy pills"
+	desc = "Contains pills used to stop the mental states."
+	icon_state = "bottle_njoy_blue"
+
+/obj/item/storage/pill_bottle/njoy/blue/populate_contents()
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/pill/suppressital/blue(src)
 
 /*
  * Portable Freezers

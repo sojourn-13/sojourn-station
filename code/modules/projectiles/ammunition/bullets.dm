@@ -9,6 +9,9 @@
 	projectile_type = /obj/item/projectile/bullet/pistol_35
 	maxamount = 15
 
+/obj/item/ammo_casing/pistol_35/prespawned
+	amount = 15
+
 /obj/item/ammo_casing/pistol_35/hv
 	desc = "A 9mm high-velocity bullet casing."
 	icon_state = "pistol_c_hv"
@@ -76,6 +79,9 @@
 	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/magnum_40
 	maxamount = 6
+
+/obj/item/ammo_casing/magnum_40/prespawned
+	amount = 6
 
 /obj/item/ammo_casing/magnum_40/practice
 	desc = "A 10mm Magnum practice bullet casing."
@@ -146,6 +152,9 @@
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257
 	maxamount = 10
 
+/obj/item/ammo_casing/light_rifle_257/prespawned
+	amount = 10
+
 /obj/item/ammo_casing/light_rifle_257/practice
 	desc = "A 6.5mm practice bullet casing."
 	icon_state = "srifle_c_p"
@@ -197,6 +206,9 @@
 	projectile_type = /obj/item/projectile/bullet/rifle_75
 	maxamount = 10
 
+/obj/item/ammo_casing/rifle_75/prespawned
+	amount = 10
+
 /obj/item/ammo_casing/rifle_75/hv
 	desc = "A 7.62mm high-velocity bullet casing."
 	icon_state = "srifle_c_hv"
@@ -246,6 +258,9 @@
 	caliber = CAL_HRIFLE
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408
 	maxamount = 10
+
+/obj/item/ammo_casing/heavy_rifle_408/prespawned
+	amount = 10
 
 /obj/item/ammo_casing/heavy_rifle_408/rubber
 	desc = "A 8.6mm rubber bullet casing."
@@ -366,6 +381,9 @@
 	shell_color = "l"
 	icon_state = "lrifle_c_l"
 	spent_icon = "lrifle_c_l-spent"
+
+/obj/item/ammo_casing/kurtz_50/prespawned
+	amount = 6
 
 /obj/item/ammo_casing/kurtz_50/rubber
 	desc = "A 12mm rubber bullet casing."
@@ -598,7 +616,9 @@
 /obj/item/ammo_casing/shotgun/payload
 	name = "explosive shell"
 	desc = "A 20mm explosive shell."
-	shell_color = "i"
+	icon_state = "s-shell_p"
+	spent_icon = "s-shell_p-spent"
+	shell_color = "p"
 	projectile_type = /obj/item/projectile/bullet/shotgun/payload
 	maxamount = 5
 	is_caseless = TRUE
@@ -621,8 +641,8 @@
 /obj/item/ammo_casing/shotgun/plasma_heavy
 	name = "heavy plasma shell"
 	desc = "A 20mm heavy plasma shot shell."
-	icon_state = "plasmashell"
-	spent_icon = "plasmashell-spent"
+	icon_state = "plasmaheavy"
+	spent_icon = "plasmaheavy-spent"
 	shell_color = "i"
 	projectile_type = /obj/item/projectile/plasma/heavy/shell
 	maxamount = 5
@@ -674,13 +694,24 @@
 	is_caseless = TRUE
 	w_class = ITEM_SIZE_NORMAL
 
+/obj/item/ammo_casing/rocket/scrap
+	name = "scrap rocket"
+	desc = "An old improvised rocket shell for the RPG-7 launcher. Has a tubular shape."
+	icon_state = "old_rocketshell"
+	projectile_type = /obj/item/projectile/bullet/rocket/scrap
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASMA = 2)
+
+/obj/item/ammo_casing/rocket/scrap/prespawned
+	amount = 1
+
 /obj/item/ammo_casing/rocket/emp
 	name = "PG-7EMP grenade"
 	desc = "A 40mm EMP/Flash warhead designed for the RPG-7 launcher. Has a tubular shape."
 	projectile_type = /obj/item/projectile/bullet/rocket/emp
 
 /obj/item/ammo_casing/a75
-	desc = "A .70 gyrojet casing."
+	name = "microjet casing"
+	desc = "A 19mm gyrojet rocket."
 	caliber = CAL_70
 	projectile_type = /obj/item/projectile/bullet/gyro
 
@@ -772,7 +803,7 @@
 
 /obj/item/ammo_casing/crossbow_bolts/fragment
 	name = "fragment crossbow bolt"
-	desc = "A finely made bolt designed for a crossbow with sharp shards of ores and rocks attached to the tip that brake apart inside the target."
+	desc = "A finely made bolt designed for a crossbow with sharp shards of ores and rocks attached to the tip that break apart inside the target."
 	icon_state = "bolt"
 	projectile_type = /obj/item/projectile/bullet/crossbow_bolt/lethal
 	matter = list(MATERIAL_STEEL = 1)
@@ -848,7 +879,7 @@
 	icon_state = "arrow-broad"
 	force = WEAPON_FORCE_PAINFUL
 	armor_penetration = 0
-	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has quite a broad head, letting it stick in wounds easily, but reducing its ability to penetrate armor."
+	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has quite a broad head, capable of causing severe damage to unarmored targets, but reducing its ability to penetrate armor."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/broadhead
 
 /obj/item/ammo_casing/arrow/serrated
@@ -856,7 +887,7 @@
 	icon_state = "arrow-serrated"
 	force = WEAPON_FORCE_PAINFUL
 	armor_penetration = 0
-	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has wicked sharp serrated blades along its head, capable of causing severe damage to unarmored targets."
+	desc = "A good-quality handmade aerodinamic arrow, with a metal head and plastic fletching. This one has wicked sharp serrated blades along its head, letting it stick in wounds easily, penetrating thick hide and armor alike at fast speeds."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/serrated
 
 /obj/item/ammo_casing/arrow/reagent

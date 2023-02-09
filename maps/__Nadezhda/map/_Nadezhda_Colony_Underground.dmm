@@ -3055,7 +3055,7 @@
 	dir = 1
 	},
 /obj/structure/table/rack,
-/obj/item/gun/projectile/shotgun/pump/gladstone,
+/obj/item/gun/projectile/shotgun/pump,
 /obj/structure/sign/departmentold/security2{
 	pixel_x = -32
 	},
@@ -36234,7 +36234,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "gyX" = (
-/mob/living/simple_animal/corgi/Lisa,
+/mob/living/simple_animal/corgi/fluff/Lisa,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/swo/quarters)
 "gzb" = (

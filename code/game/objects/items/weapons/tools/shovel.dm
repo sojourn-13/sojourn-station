@@ -42,6 +42,19 @@
 	workspeed = 1.2
 	price_tag = 175
 
+/obj/item/tool/shovel/combat/marqua
+	name = "Mar'quaian crovel"
+	desc = "A sharp, balanced crovel made from made of a strange alloy."
+	icon_state = "clustertool-shovel"
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce = WEAPON_FORCE_DANGEROUS
+	w_class = ITEM_SIZE_SMALL
+	armor_penetration = ARMOR_PEN_SHALLOW
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6)
+	tool_qualities = list(QUALITY_SHOVELING = 85, QUALITY_DIGGING = 85, QUALITY_PRYING = 70, QUALITY_CUTTING = 30, QUALITY_SAWING = 45)
+	workspeed = 1.5
+	price_tag = 2875
+
 /obj/item/tool/shovel/onestar_shovel
 	name = "Greyson Positronic shovel"
 	desc = "A large tool for digging and moving dirt and rock with the finest engineering put into it for maximum lift and heaving."
@@ -54,6 +67,7 @@
 	degradation = 2
 	max_upgrades = 2
 	price_tag = 320 // Still just a shovel.
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/shovel/spade
 	name = "spade"

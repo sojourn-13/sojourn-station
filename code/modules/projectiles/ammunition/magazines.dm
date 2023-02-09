@@ -742,7 +742,7 @@
 
 /obj/item/ammo_magazine/kurtz_50
 	name = "heavy pistol magazine"
-	desc = "An 8 round magazine marked for 12mm."
+	desc = "A 10 round magazine marked for 12mm."
 	icon_state = "kurtz"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -750,7 +750,7 @@
 	caliber = CAL_50
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/kurtz_50
-	max_ammo = 8
+	max_ammo = 10
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/kurtz_50/empty
@@ -869,13 +869,13 @@
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50
 	name = "speed loader (12mm Special)"
-	desc = "A 5 round speed loader marked for 12mm."
+	desc = "A 6 round speed loader marked for 12mm."
 	icon_state = "slmagnum_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_50
 	ammo_type = /obj/item/ammo_casing/kurtz_50
 	matter = list(MATERIAL_STEEL = 3)
-	max_ammo = 5
+	max_ammo = 6
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/update_icon()
 	cut_overlays()
@@ -973,6 +973,10 @@
 	. = ..()
 	update_icon()
 
+/obj/item/ammo_magazine/speed_loader_heavy_rifle_408/empty
+	icon_state = "stripper_base"
+	initial_ammo = 0
+
 //////// SHOTGUN SPEEDLOADERS ////////
 /obj/item/ammo_magazine/speed_loader_shotgun
 	name = "20mm loader tube (sabot slug)"
@@ -1034,14 +1038,14 @@
 
 /obj/item/ammo_magazine/m12
 	name = "20mm ammo drum (sabot slug)"
-	desc = "A 20mm ammo drum for the Pug Shotgun or Payload Rifle, holds 8 shells"
+	desc = "A 20mm ammo drum for automatic and semiautomatic shotguns, holds 20 shells"
 	icon_state = "m12_hv"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_DRUM
 	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun
 	matter = list(MATERIAL_STEEL = 2)
-	max_ammo = 8
+	max_ammo = 20 // 5 times a Grizzly's capacity (or four if you cock a round in), how did a drum hold less ammo than a mag...
 	ammo_color = "-hv"
 
 /obj/item/ammo_magazine/m12/update_icon()
@@ -1073,16 +1077,17 @@
 
 /obj/item/ammo_magazine/sbaw
 	name = "20mm SBAW magazine (sabot slug)"
-	desc = "A 10 magazine for 20mm shotgun shells."
-	icon_state = "sbaw"
+	desc = "A 12 round magazine for 20mm shotgun shells."
+	icon_state = "sbaw_s"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	caliber = CAL_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun
 	multiple_sprites = 1
-	max_ammo = 10
+	max_ammo = 12 // Three times a Grizzly's capacity
 
 /obj/item/ammo_magazine/sbaw/empty
+	name = "20mm SBAW magazine"
 	icon_state = "sbaw"
 	matter = list(MATERIAL_STEEL = 1)
 	initial_ammo = 0

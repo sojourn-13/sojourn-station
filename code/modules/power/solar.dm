@@ -582,10 +582,10 @@
 
 /obj/item/paper/voidwolfwarning
 	name = "paper- 'Read this you vat grown retards!'"
-	info = "<h1>Good you got a few fucking brain cells</h1><p>For those limp dicks who fucking forgot ever since the colony killed Preston and his Jackels they can't reset this teleporter, its stuck \
-	on forever because none of our boffins know how the fuck it works. Doesn't matter anyways, the fortress got taken over by Preston's formerly caged face rippers so none of you should be getting \
-	your shit stained arses ripped in half trying to loot the place. The teleporter has enough juice to get you back and forth but thats it. Guard this side until we can get enough boys to \
-	take out that huge queen looking bitch. P.S. Watch out for the landmines we laced a few spots with, might cause a breach so keep your void suits on and your oxygen tanks filled.</p>"
+	info = "<h1>Good, you got a few fucking functional brain cells</h1><p>For those limp dicks who fucking forgot, ever since the colony killed the Hivemind Overminds, the space fortress got blown to kingdom come, \
+	forever, along with all of Preston's formerly caged face rippers and both of the Overminds with them. <b>The teleporter itself was also blown by them</b> to prevent anyone stupid enough (that's all of ya') from ever \
+	setting foot in that accursed place ever again. All our fucking loot is gone, along with those two fleshy-metallic freaks and the queen-looking bitch, so you at least better guard up our armory tight since that's all we got left. \
+	Oh, and if your sad excuse of a flashgrown brain made it this far reading, don't forget the satellite dish is also fried to shit, so I wouldn't suggest touching that shit unless you want your energy weapons drained and your electronics scrambled.</p>"
 
 
 /obj/item/paper/solar

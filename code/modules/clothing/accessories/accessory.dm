@@ -29,6 +29,8 @@
 			if("[tmp_icon_state]_tie" in icon_states(icon_override))
 				tmp_icon_state = "[tmp_icon_state]_tie"
 		inv_overlay = image(icon = mob_overlay.icon, icon_state = tmp_icon_state, dir = SOUTH)
+		if(color)
+			inv_overlay.color = color
 	return inv_overlay
 
 /obj/item/clothing/accessory/proc/get_mob_overlay()
@@ -40,6 +42,8 @@
 			mob_overlay = image("icon" = icon_override, "icon_state" = "[tmp_icon_state]")
 		else
 			mob_overlay = image("icon" = INV_ACCESSORIES_DEF_ICON, "icon_state" = "[tmp_icon_state]")
+		if(color)
+			mob_overlay.color = color
 	return mob_overlay
 
 //when user attached an accessory to S
@@ -265,11 +269,6 @@
 	desc = "A raggedy cloak made of leather and reclaimed materials, can be worn over one's armor as a sign of pride for their outcast nature."
 	icon_state = "outcast_cloak"
 
-/obj/item/clothing/accessory/cape/scav
-	name = "makeshift cape"
-	desc = "A cape haphazardly cut from a large bolt of water resistant fabric, while some may wear it for the style, others would prefer it's use as a quick poncho, if it'll every rain."
-	icon_state = "scav_mantle"
-
 /obj/item/clothing/accessory/cape/blackedge
 	name = "heavy black cloak"
 	desc = "A rough and heavy black cloak for draping over yourself like some kind of cave dwelling royal."
@@ -280,6 +279,11 @@
 	desc = "A rough and heavy brown cloak, perfectly suited to marching through the cold to the front door of an old friend."
 	icon_state = "browncloak"
 
+/obj/item/clothing/accessory/cape/prospie
+	name = "prospector mantle"
+	desc = "A rough mantle of salvaged hydrophobic materials typically worn around one's shoulders. While some may wear it for style, others prefer its use as decent camouflage on the humid amethian jungle."
+	icon_state = "prospie_cape"
+
 // Head of Departments
 /obj/item/clothing/accessory/job/cape
 	name = "premier's cloak"
@@ -288,9 +292,9 @@
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/job/cape/fo
-	name = "premier guard's cloak"
+	name = "steward's cloak"
 	icon_state = "focloak"
-	desc = "A blue cloak with red epaulette."
+	desc = "A blue cloak with red epaulettes."
 
 /obj/item/clothing/accessory/job/cape/meo
 	name = "research overseer's cloak"
@@ -418,14 +422,19 @@
 	desc = "A thick, luxurious cloak with red trim."
 
 /obj/item/clothing/accessory/job/cape/church/small
-	name = "black Absolutists cloak"
+	name = "black Absolutist cloak"
 	icon_state = "churchcloakblack"
-	desc = "A sleek, luxurious cloak with black trim."
+	desc = "A sleek, luxurious black cloak with golden trim."
 
-/obj/item/clothing/accessory/job/cape/church/smallalt
-	name = "red Absolutists cloak"
+/obj/item/clothing/accessory/job/cape/church/small/red
+	name = "red Absolutist cloak"
 	icon_state = "churchcloakred"
-	desc = "A sleek, luxurious cloak with red trim."
+	desc = "A sleek, luxurious red cloak with golden trim."
+
+/obj/item/clothing/accessory/job/cape/church/small/white
+	name = "white Absolutist cloak"
+	icon_state = "churchcloakwhite"
+	desc = "A sleek, luxurious white cloak with golden trim."
 
 /obj/item/clothing/accessory/job/cape/ironhammer
 	name = "security cloak"
@@ -505,6 +514,11 @@
 	name = "green tactical poncho"
 	desc = "A sleek, green poncho. Tactical and stylish!"
 	icon_state = "tacpon_green"
+
+/obj/item/clothing/accessory/tacticalponcho/grey
+	name = "grey tactical poncho"
+	desc = "A sleek, tactical grey poncho. Great for black sites and tactical operations!"
+	icon_state = "tacpon_grey"
 
 /obj/item/clothing/accessory/tacticalponcho/camo
 	name = "camo tactical poncho"
@@ -1447,3 +1461,74 @@
 	item_state = "btnecklace"
 	slot_flags = SLOT_MASK | SLOT_ACCESSORY_BUFFER
 	price_tag = 1500
+
+/* sashes (sprited by KitchiFox, powered by Goat) */
+
+/obj/item/clothing/accessory/sash
+	name = "blue sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_blue"
+	item_state = "sash_blue"
+
+/obj/item/clothing/accessory/sash/red
+	name = "red sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_red"
+	item_state = "sash_red"
+
+/obj/item/clothing/accessory/sash/yellow
+	name = "yellow sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_yellow"
+	item_state = "sash_yellow"
+
+/obj/item/clothing/accessory/sash/green
+	name = "green sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_green"
+	item_state = "sash_green"
+
+/obj/item/clothing/accessory/sash/orange
+	name = "orange sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_orange"
+	item_state = "sash_orange"
+
+/obj/item/clothing/accessory/sash/pink
+	name = "pink sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_pink"
+	item_state = "sash_pink"
+
+/obj/item/clothing/accessory/sash/purple
+	name = "purple sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_purple"
+	item_state = "sash_purple"
+
+/obj/item/clothing/accessory/pin
+	name = "white badge"
+	desc = "A simple badge with a pin."
+	icon_state = "pin_white"
+	item_state = "pin_white"
+
+/obj/item/clothing/accessory/pin/rainbow
+	name = "rainbow badge"
+	desc = "A colorful badge with a pin."
+	icon_state = "pin_rainbow"
+	item_state = "pin_rainbow"
+
+/obj/item/clothing/accessory/pin/name
+	name = "nametag"
+	desc = "A rectangular, adhesive nametag."
+	icon_state = "pin_name"
+	item_state = "pin_name"
+	var/original_name = "nametag"
+
+/obj/item/clothing/accessory/pin/name/attackby(obj/item/I, mob/user)
+	..()
+	if(istype(I,/obj/item/pen))
+		var/t = input(user, "What would you like the label to say?", "Nametag")
+		if(t)
+			name = "nametag ([t])"
+

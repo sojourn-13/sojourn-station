@@ -123,9 +123,6 @@
 
 	var/recoil = 0
 
-	var/added_damage_bullet_pve = 0 //Added damage against mobs, checks bullet armor
-	var/added_damage_laser_pve  = 0 //Added damage against mobs, checks enegery armor
-
 /obj/item/projectile/New()
 
 	penetration_holder = new /datum/penetration_holder
@@ -153,12 +150,6 @@
 		val += damage_types[i]
 	return val
 
-/obj/item/projectile/proc/get_total_damage_pve()
-	var/val = 0
-	val += added_damage_bullet_pve
-	val += added_damage_laser_pve
-	return val
-
 
 /obj/item/projectile/proc/is_halloss()
 	for(var/i in damage_types)
@@ -182,10 +173,6 @@
 
 /obj/item/projectile/multiply_projectile_agony(newmult)
 	agony = initial(agony) * newmult
-
-/obj/item/projectile/multiply_pve_damage(newmult)
-	added_damage_bullet_pve = initial(added_damage_bullet_pve) * newmult
-	added_damage_laser_pve  = initial(added_damage_laser_pve) * newmult
 
 /obj/item/projectile/add_fire_stacks(newmult)
 	fire_stacks = initial(fire_stacks) + newmult
@@ -916,7 +903,7 @@
 			pixel_x = location.pixel_x
 			pixel_y = location.pixel_y
 
-			if(!bumped && !isturf(original))
+			if(!bumped && !QDELETED(original) && !isturf(original))
 				if(loc == get_turf(original))
 					if(!(original in permutated))
 						if(Bump(original))
@@ -1117,7 +1104,7 @@
 			damage_types -= dmg_type
 	if(!damage_types.len)
 		on_impact(A)
-		qdel(A)
+		qdel(src)
 
 	return dmg_total ? (dmg_remaining / dmg_total) : 0
 

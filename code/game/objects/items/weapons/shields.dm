@@ -33,9 +33,10 @@
 	name = "shield"
 	var/base_block_chance = 35
 	var/slowdown_time = 1
-	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
-	var/max_durability = 250 //So we can brake and need healing time to time
-	var/durability = 250
+	armor_list = list(melee = 10, bullet = 10, energy = 5, bomb = 0, bio = 0, rad = 0)
+	var/max_durability = 200 //So we can brake and need healing time to time
+	var/durability = 200
+	var/can_block_proj = TRUE
 
 /obj/item/shield/proc/breakShield(mob/user)
 	if(user)
@@ -44,12 +45,14 @@
 	else
 		new /obj/item/material/shard/shrapnel(get_turf(src))
 	playsound(get_turf(src), 'sound/items/electronic_assembly_emptying.ogg', 50, 1 -3)
-	spawn(10) qdel(src)
+	spawn(2) qdel(src)
 	return
 
 /obj/item/shield/proc/adjustShieldDurability(amount, user)
-	durability = CLAMP(durability + amount, 0, max_durability)
-	if(durability == 0)
+	durability += amount
+	if(durability > max_durability)
+		durability = max_durability
+	if(durability <= 1)
 		breakShield(user)
 
 /obj/item/shield/attackby(obj/item/I, mob/user)
@@ -57,7 +60,7 @@
 		if(src.durability)
 			user.visible_message(SPAN_NOTICE("[user] begins repairing \the [src] with the [I]!"))
 			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_ADHESIVE, FAILCHANCE_EASY, required_stat = STAT_MEC))
-				src.adjustShieldDurability(src.max_durability * 0.8 + (user.stats.getStat(STAT_MEC)/2)/100, user)
+				src.adjustShieldDurability(src.max_durability * 0.8 + (user.stats.getStat(STAT_MEC)*0.2)*0.1, user)
 
 /obj/item/shield/examine(mob/user)
 	if(!..(user,2))
@@ -94,7 +97,7 @@
 				return 0
 			else
 				var/damage_received = CLAMP(damage * (CLAMP(100-user.stats.getStat(STAT_TGH)/2,0,100) / 100) - user.stats.getStat(STAT_TGH)/5,1,100)
-				src.durability = src.durability -  CLAMP(damage_received,10,100) // Shields still take some damage, can't have it go unscathed
+				adjustShieldDurability(-damage_received)
 				defender.adjustHalLoss(damage_received)
 				defender.visible_message(SPAN_DANGER("\The [defender] blocks [attack_text] with \the [src]!"))
 				return 1
@@ -109,11 +112,13 @@
 	var/list/protected_area = get_protected_area(user)
 	if(prob(50))
 		protected_area = protected_area | get_partial_protected_area(user)
-	if(protected_area.Find(def_zone) && check_shield_arc(user, bad_arc, damage_source))
-		if(!damage_source.check_penetrate(src))
-			visible_message(SPAN_DANGER("\The [user] blocks \the [damage_source] with \the [src]!"))
-			playsound(user.loc, 'sound/weapons/shield/shieldblock.ogg', 50, 1)
-			return 1
+	if(protected_area.Find(def_zone) && check_shield_arc(user, bad_arc, damage_source) && can_block_proj)
+		visible_message(SPAN_DANGER("\The [user] blocks \the [damage_source] with \the [src]!"))
+		adjustShieldDurability(-damage_source.damage_types[BRUTE], user)
+		adjustShieldDurability(-damage_source.damage_types[BURN], user)
+		visible_message(SPAN_DANGER("\The [user] blocks \the [damage_source] with \the [src]!"))
+		playsound(user.loc, 'sound/weapons/shield/shieldblock.ogg', 50, 1)
+		return 1
 	return 0
 
 /obj/item/shield/proc/check_shield_arc(mob/user, var/bad_arc, atom/damage_source = null, mob/attacker = null)
@@ -178,12 +183,12 @@
 	throw_range = 6
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_MATERIAL = 2)
-	armor_list = list(melee = 15, bullet = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 20, bullet = 25, energy = 10, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_GLASS = 5, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 12)
 	price_tag = 100
 	attack_verb = list("shoved", "bashed")
-	max_durability = 150 //So we can brake and need healing time to time
-	durability = 150
+	max_durability = 120 //So we can brake and need healing time to time
+	durability = 120
 	var/cooldown = 0 //shield bash cooldown. based on world.time
 	var/picked_by_human = FALSE
 	var/mob/living/carbon/human/picking_human
@@ -234,11 +239,11 @@
 	throw_range = 4
 	w_class = ITEM_SIZE_HUGE
 	origin_tech = list(TECH_MATERIAL = 2)
-	matter = list(MATERIAL_GLASS = 10, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 15)
+	matter = list(MATERIAL_GLASS = 20, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 15)
 	price_tag = 230
 	base_block_chance = 60
 	attack_verb = list("shoved", "bashed")
-	armor_list = list(melee = 15, bullet = 5, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 35, energy = 10, bomb = 20, bio = 0, rad = 0)
 	var/cooldown = 0 //shield bash cooldown. based on world.time
 	var/picked_by_human = FALSE
 	var/mob/living/carbon/human/picking_human
@@ -252,7 +257,7 @@
 
 /obj/item/shield/riot/damaged/Initialize()
 	. = ..()
-	durability -= rand(230, 50)
+	durability -= rand(130, 50)
 
 /obj/item/shield/riot/handle_shield(mob/user)
 	. = ..()
@@ -337,11 +342,10 @@
 	flags = CONDUCT
 	throw_speed = 2
 	throw_range = 2
-	max_durability = 150//Clearly meant to be better
-	durability = 150
+	durability = 70
 	matter = list(MATERIAL_STEEL = 8)
 	base_block_chance = 40
-	max_durability = 125 //So we can brake and need healing time to time
+	max_durability = 70 //So we can brake and need healing time to time
 
 /obj/item/shield/riot/dozershield
 	name = "bulldozer shield"
@@ -380,7 +384,7 @@
 	price_tag = 0
 	base_block_chance = 70
 	attack_verb = list("smashed", "bashed")
-	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 15, bullet = 20, energy = 10, bomb = 0, bio = 0, rad = 0)
 	max_durability = 250 //So we can brake and need healing time to time
 	durability = 250
 	var/cooldown = 0 //shield bash cooldown. based on world.time
@@ -480,10 +484,11 @@
 	flags = null
 	throw_speed = 2
 	throw_range = 6
-	armor_list = list(melee = 15, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 30, bullet = 15, energy = 20, bomb = 10, bio = 0, rad = 0)
 	matter = list(MATERIAL_BONE = 6)
 	base_block_chance = 50
-
+	max_durability = 130 //So we can brake and need healing time to time
+	durability = 130
 
 /obj/item/shield/riot/tray
 	name = "tray shield"
@@ -495,8 +500,9 @@
 	throw_range = 4
 	matter = list(MATERIAL_STEEL = 4)
 	base_block_chance = 50
-	max_durability = 80 //So we can brake and need healing time to time
-	durability = 80
+	max_durability = 90 //So we can brake and need healing time to time
+	durability = 90
+	armor_list = list(melee = 20, bullet = 10, energy = 5, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/shield/riot/tray/get_protected_area(mob/user)
 	var/list/p_area = list(BP_CHEST, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_GROIN)
@@ -517,9 +523,9 @@
 	icon_state = "nt_shield"
 	item_state = "nt_shield"
 	price_tag = 2000
-	max_durability = 800 //Well clearly made to last it should require some repair post crusade
-	durability = 800
-	armor_list = list(melee = 10, bullet = 10, energy = 15, bomb = 10, bio = 0, rad = 0)
+	max_durability = 500 //Well clearly made to last it should require some repair post crusade
+	durability = 500
+	armor_list = list(melee = 30, bullet = 35, energy = 25, bomb = 15, bio = 0, rad = 0)
 	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 10, MATERIAL_DURASTEEL = 20)
 	item_icons = list(
 		slot_back_str = 'icons/inventory/back/mob.dmi')
@@ -550,8 +556,8 @@
 	origin_tech = list(TECH_MATERIAL = 4, TECH_MAGNET = 3, TECH_ILLEGAL = 4)
 	attack_verb = list("shoved", "bashed")
 	var/active = 0
-	max_durability = 150 //So we can brake and need healing time to time
-	durability = 150
+	max_durability = 80 //So we can brake and need healing time to time
+	durability = 80
 	slot_flags = SLOT_BELT
 
 /obj/item/shield/buckler/energy/handle_shield(mob/user)
@@ -624,3 +630,52 @@
 		set_light(1.5, 1.5, COLOR_LIGHTING_RED_BRIGHT)
 	else
 		set_light(0)
+
+/obj/item/shield/parrying
+	name = "parrying dagger"
+	desc = "A parrying dagger forged in a specific way to easily parry other melee attacks with ease, sacrificing its lethality in exchange."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "dagger"
+	item_state = "dagger"
+	flags = CONDUCT
+	w_class = ITEM_SIZE_SMALL
+	slot_flags = SLOT_BELT
+	force = WEAPON_FORCE_NORMAL
+	throwforce = WEAPON_FORCE_DANGEROUS
+	throw_speed = 2
+	throw_range = 6
+	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2)
+	price_tag = 250
+	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	max_durability = 35 //So we can brake and need healing time to time
+	durability = 35
+	var/cooldown = 0 //shield bash cooldown. based on world.time
+	var/picked_by_human = FALSE
+	var/mob/living/carbon/human/picking_human
+	can_block_proj = FALSE
+
+/obj/item/shield/parrying/handle_shield(mob/user)
+	. = ..()
+	if(.) playsound(user.loc, 'sound/weapons/shield/shieldmelee.ogg', 50, 1)
+
+/obj/item/shield/parrying/get_protected_area(mob/user)
+	var/list/p_area = list(BP_CHEST)
+
+	if(user.get_equipped_item(slot_l_hand) == src)
+		p_area.Add(BP_L_ARM)
+	else if(user.get_equipped_item(slot_r_hand) == src)
+		p_area.Add(BP_R_ARM)
+
+	return p_area
+
+/obj/item/shield/parrying/get_partial_protected_area(mob/user)
+	return list(BP_GROIN,BP_HEAD)
+
+
+/obj/item/shield/parrying/proc/on_bash(var/obj/item/W, var/mob/user)
+	if(cooldown < world.time - 25)
+		user.visible_message(SPAN_WARNING("[user] slashes [src] with [W]!"))
+		playsound(user.loc, 'sound/weapons/sharphit.ogg', 50, 1)
+		cooldown = world.time

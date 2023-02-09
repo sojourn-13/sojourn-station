@@ -20,7 +20,7 @@
 	..()
 	return QDEL_HINT_QUEUE //just to be safe
 
-/obj/item/storage/hcases/proc/can_interact(mob/user)
+/obj/item/storage/hcases/can_interact(mob/user)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
 		return 1
 	if(istype(loc, /obj/item/storage))
@@ -161,7 +161,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/device/flash,
 		/obj/item/grenade,
 		/obj/item/reagent_containers/spray/pepper,
-		/obj/item/handcuffs
+		/obj/item/handcuffs,
+		/obj/item/part/gun
 		)
 
 /obj/item/storage/hcases/ammo/ih
@@ -173,11 +174,11 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/ih/wo/populate_contents()
 	new /obj/item/handcuffs(src)
-	new /obj/item/ammo_magazine/kurtz_50/rubber(src)
-	new /obj/item/ammo_magazine/kurtz_50/rubber(src)
+	new /obj/item/voucher/marshal/wosecondary(src) // They no longer spawn with an Amnesty, moved it to this selection of secondaries.
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
+	new /obj/item/clothing/accessory/badge/holo/wo(src)
 
 /obj/item/storage/hcases/ammo/ih/spec_officer
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -187,6 +188,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
+	new /obj/item/clothing/accessory/badge/holo/warden(src)
 
 
 /obj/item/storage/hcases/ammo/ih/ranger_officer
@@ -197,6 +199,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
+	new /obj/item/clothing/accessory/badge/holo/inspector(src)
 	new /obj/item/cell/small/high(src)
 
 /obj/item/storage/hcases/ammo/ih/marshal_officer
@@ -221,12 +224,12 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/blackmarket/co/populate_contents()
 	new /obj/item/handcuffs(src)
-	new /obj/item/ammo_magazine/kurtz_50(src)
-	new /obj/item/ammo_magazine/kurtz_50(src)
+	new /obj/item/voucher/blackshield/COsecondary(src) // They don't spawn with a Lamia anymore, but come with their own secondary voucher.
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
+	new /obj/item/clothing/accessory/badge/holo/co(src)
 
 /obj/item/storage/hcases/ammo/blackmarket/serg
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -326,7 +329,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/tool_upgrade,
 		/obj/item/clothing/head/welding,
 		/obj/item/weldpack,
-		/obj/item/circuitboard
+		/obj/item/circuitboard,
+		/obj/item/part/gun
 		)
 
 /obj/item/storage/hcases/parts/scrap
@@ -385,6 +389,27 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	//Has medicals items inside it to save on spawn storage.
 	new /obj/item/storage/firstaid/soteria(src)
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
+
+
+/obj/item/storage/hcases/med/medical_job_psyco
+	exspand_when_spawned = FALSE //No exspanding cheats
+
+/obj/item/storage/hcases/med/medical_job_psyco/populate_contents()
+	new /obj/item/stack/medical/advanced/bruise_pack/large(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/advanced/ointment/large(src)
+	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/splint(src)
+	new /obj/item/reagent_containers/syringe/inaprovaline(src)
+	new /obj/item/device/scanner/health(src)
+	//Has medicals items inside it to save on spawn storage.
+	new /obj/item/storage/firstaid/soteria(src)
+	new /obj/item/storage/pill_bottle/njoy/red(src)
+	new /obj/item/storage/pill_bottle/njoy/blue(src)
+	new /obj/item/storage/pill_bottle/njoy/green(src)
+	new /obj/item/modular_computer/tablet/moebius/preset(src)
+
 
 /obj/item/storage/hcases/med/medical_job_cbo
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -447,7 +472,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/airlock_electronics,
 		/obj/item/airalarm_electronics,
 		/obj/item/tool_upgrade,
-		/obj/item/cell
+		/obj/item/cell,
+		/obj/item/part/gun
 		)
 
 /obj/item/storage/hcases/engi/scrap
@@ -471,10 +497,9 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	var/stamped
 	if(!stamped)
 		stamped = TRUE
-		var/list/options = list()
+		var/list/options = list() // Moved the Galaxy to secondary selection
 		options["Copperhead - assault rifle"] = list(/obj/item/gun/projectile/automatic/mamba/copperhead,/obj/item/ammo_magazine/rifle_75,/obj/item/ammo_magazine/rifle_75, /obj/item/ammo_magazine/rifle_75/rubber)
 		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags, /obj/item/ammo_magazine/ammobox/c10x24_small)
-		options["Galaxy - Plasma pistol"] = list(/obj/item/gun/energy/glock,/obj/item/cell/medium/high)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]

@@ -57,7 +57,7 @@
 	build_path = /obj/item/tool/baton/mini
 
 /datum/design/autolathe/sec/auto_eject_mod
-	name = "H&S \"Dropper\" Magwell Braker"
+	name = "H&S \"Dropper\" Magwell Breaker"
 	build_path = /obj/item/gun_upgrade/magwell/auto_eject
 
 //Shields

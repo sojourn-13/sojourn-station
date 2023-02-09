@@ -31,11 +31,11 @@
 			/obj/item/gun/energy/tesla_shotgun
 		),
 		"Projectile weapons" = list(
-			/obj/item/gun/projectile/glock,
+			/obj/item/gun/projectile/glock = good_data("Sky pistol", list(2, 6), 650),
 			/obj/item/gun/projectile/giskard,
 			/obj/item/gun/projectile/olivaw,
-			/obj/item/gun/projectile/revolver/detective,
-			/obj/item/gun/projectile/automatic/ak47/sa,
+			/obj/item/gun/projectile/revolver/detective = good_data("Havelock revolver", list(2, 10), 300),
+			/obj/item/gun/projectile/automatic/ak47/sa = good_data("Kalshnikov rifle", list(1, 3), 1000),
 			/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
 		),
 		"Flame Thrower" = list(
@@ -48,9 +48,9 @@
 			/obj/item/grenade/chem_grenade/incendiary,
 			/obj/item/grenade/flashbang,
 
-			/obj/item/ammo_magazine/ammobox/heavy_rifle_408,
-			/obj/item/ammo_magazine/ammobox/rifle_75,
-			/obj/item/ammo_magazine/ammobox/light_rifle_257,
+			/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small,
+			/obj/item/ammo_magazine/ammobox/rifle_75_small,
+			/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
 			/obj/item/ammo_magazine/ammobox/shotgun,
 			/obj/item/ammo_magazine/ammobox/kurtz_50,
 			/obj/item/ammo_magazine/ammobox/magnum_40,
@@ -71,6 +71,14 @@
 		)
 	)
 	hidden_inventory = list(
+		"Gun Resale Parts" = list(
+			/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/resale = good_data("Blackmarket Gun Frame Disk", list(1, 1), 800),
+			/obj/item/part/gun/grip/black,
+			/obj/item/part/gun/barrel/srifle,
+			/obj/item/part/gun/barrel/shotgun,
+			/obj/item/part/gun/mechanism/shotgun,
+			/obj/item/part/gun/mechanism/boltgun,
+		),
 		"Basic Gun Mods" = list(
 			/obj/item/gun_upgrade/barrel/gauss,
 			/obj/item/tool_upgrade/productivity/ergonomic_grip,

@@ -6,7 +6,7 @@
 	item_state = "tacticool_revolver"
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	caliber = CAL_50
-	max_shells = 5
+	max_shells = 6
 	fire_delay = 4
 	drawChargeMeter = FALSE
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 3)
@@ -19,3 +19,14 @@
 	serial_type = "SA"
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
+	gun_parts = list(/obj/item/part/gun/frame/tacticool = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/kurtz = 1)
+
+/obj/item/part/gun/frame/tacticool
+	name = "Tacticool frame"
+	desc = "A Tacticool revolver frame. A device that can put holes in ships, let alone a person."
+	icon_state = "frame_skydriver"
+	result = /obj/item/gun/projectile/revolver/tacticool_revolver
+	resultvars = list(/obj/item/gun/projectile/revolver/tacticool_revolver)
+	gripvars = list(/obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
+	barrelvars = list(/obj/item/part/gun/barrel/kurtz)

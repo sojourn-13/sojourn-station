@@ -28,7 +28,7 @@
 
 	to_chat(user, SPAN_DANGER("[src] plunges into your eye, imprinting your mind with new information!"))
 	playsound(usr, 'sound/effects/refill.ogg', 50, -5)
-	user.emote("scream")//Flavor
+	user.emote("painscream")//Flavor
 
 	spent = TRUE
 	price_tag = 30

@@ -14,10 +14,11 @@
 	price_tag = 1500
 	sharp = 0
 	caliber = CAL_HRIFLE
-	load_method = SINGLE_CASING
+	load_method = SINGLE_CASING|SPEEDLOADER
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 10)
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)
+	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/boltgun/sawn/scout
 	slowdown_hold = 1
@@ -25,19 +26,30 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.3 // 30 vig, little heavier than normal
+	gun_parts = list(/obj/item/part/gun/frame/scout = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/hrifle = 1)
 
+/obj/item/part/gun/frame/scout
+	name = "Scout frame"
+	desc = "A Scout heavy boltgun frame. For when you really want to put a hole in your target."
+	icon_state = "frame_scout"
+	resultvars = list(/obj/item/gun/projectile/boltgun/scout)
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/boltgun
+	barrelvars = list(/obj/item/part/gun/barrel/hrifle)
 
 /obj/item/gun/projectile/boltgun/sawn/scout
-	name = "\"obrez\" heavy boltgun"
-	desc = "A crudly mangled and sawn-down 8.6x70mm bolt action rifle. Rifle was fine."
+	name = "\"obrez\" Scout heavy boltgun"
+	desc = "A crudely mangled and sawn-down 8.6x70mm bolt action rifle. Rifle was fine."
 	icon = 'icons/obj/guns/projectile/sawnoff/heavyboltgun.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"
 	caliber = CAL_HRIFLE
-	load_method = SINGLE_CASING
+	load_method = SINGLE_CASING|SPEEDLOADER
 	fire_delay = 18
 	max_shells = 5
 	init_recoil = HMG_RECOIL(1.2)
 	saw_off = FALSE
 	slowdown_hold = FALSE
 	serial_type = "H&S"
+	gun_parts = list(/obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/hrifle = 1)
+

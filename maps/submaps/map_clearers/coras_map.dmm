@@ -205,9 +205,6 @@
 /obj/item/paper/crumpled,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
-"hM" = (
-/turf/space,
-/area/asteroid/rogue)
 "hS" = (
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/under/rank/chef,
@@ -2339,10 +2336,10 @@ kK
 kK
 kK
 kK
-oC
-oC
-oC
-oC
+kK
+kK
+kK
+kK
 oC
 "}
 (21,1,1) = {"
@@ -2378,13 +2375,13 @@ kK
 kK
 kK
 kK
-hM
 kK
 kK
-oC
-oC
-oC
-oC
+kK
+kK
+kK
+kK
+kK
 oC
 "}
 (22,1,1) = {"
@@ -2420,13 +2417,13 @@ eE
 kK
 kK
 kK
-hM
 kK
 kK
-oC
-oC
-oC
-oC
+kK
+kK
+eE
+kK
+kK
 Ca
 "}
 (23,1,1) = {"
@@ -2465,10 +2462,10 @@ kK
 kK
 kK
 kK
-oC
-oC
-oC
-oC
+kK
+kK
+kK
+kK
 oC
 "}
 (24,1,1) = {"
@@ -2507,10 +2504,10 @@ kK
 kK
 kK
 kK
-oC
-oC
-oC
-oC
+kK
+kK
+kK
+kK
 oC
 "}
 (25,1,1) = {"

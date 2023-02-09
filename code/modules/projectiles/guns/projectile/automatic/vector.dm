@@ -1,9 +1,9 @@
 /obj/item/gun/projectile/automatic/vector
 	name = "\"Trajectory\" Magnum SMG"
-	desc = "A 10mm SMG who's design data was recently acquired by Overboss Hogg through various connections with offworld traders. \
-	A Scarborough Arms logo is stamped on the side, though the SMG seems far better designed then most their usual product line. \
-	Regardless it sports robust recoil control system that dampens it's shots to near nothing, a array of firing modes for the discerning shooter, \
-	and even a folding stock for those with strong wrists or weak shoulders. Has threaded barrel for a silencer and a nice slot for a scope to be attached."
+	desc = "A 10mm SMG whose design data was recently acquired by Overboss Hogg through various connections with offworld traders. \
+	A Scarborough Arms logo is stamped on the side, though the SMG seems far better designed than most of their usual product line. \
+	Regardless, it sports a robust recoil control system that dampens its shots to almost no kickback, an array of firing modes for the discerning shooter, \
+	and even a folding stock for those with strong wrists or weak shoulders. Has a threaded barrel for silencer attachments and a nice top mount for a scope to be attached."
 	icon = 'icons/obj/guns/projectile/vector.dmi'
 	icon_state = "vector"
 	item_state = "vector"
@@ -36,6 +36,7 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.3 // Heavy smg , 30 vig to insta wield
+	gun_parts = list(/obj/item/part/gun = 2, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/magnum = 1)
 
 /obj/item/gun/projectile/automatic/vector/update_icon()
 	..()

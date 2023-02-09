@@ -1,13 +1,15 @@
 /obj/item/gun/projectile/automatic/maxim
-	name = "Excelsior machine gun"
-	desc = "An old and surprisingly deprecated gun from the Excelsior. One of their more dangerous weapons, effective at dealing with crowds or suppressing firing lines."
+	name = "Excelsior \"Maxim\" machine gun"
+	desc = "\"There is only one way in which the murderous death agonies of the old society and the bloody birth throes of the new society can be shortened, \
+			simplified and concentrated, and that way is revolutionary terror.\"\nAn old and unsurprisingly deprecated gun from the Excelsior. \
+			One of their most dangerous weapons, effective at dealing with crowds or suppressing firing lines. Uses the unique 7.62mm pan-magazines."
 	icon = 'icons/obj/guns/projectile/maxim.dmi'
 	icon_state = "maxim"
 	item_state = "maxim"
 	excelsior = TRUE
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
-	slot_flags = 0
+	slot_flags = SLOT_BACK
 	max_shells = 1
 	slowdown_hold = 1
 	caliber = CAL_RIFLE
@@ -35,10 +37,15 @@
 
 	wield_delay = 2 SECOND
 	wield_delay_factor = 0.5 // 50 vig , excels are not as trained
+	gun_parts = list(/obj/item/part/gun/frame/maxim = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
 
 /obj/item/gun/projectile/automatic/maxim/NM_colony
-	name = "\"Maxim\" machine gun"
-	desc = "An old and surprisingly deprecated gun from the Excelsior. One of their more dangerous weapons, effective at dealing with crowds or suppressing firing lines."
+	name = "\"Oprichnik\" machine gun"
+	desc = "An old and unsurprisingly deprecated top feeding machine gun chambered in 7.62mm. A dangerous weapon effective at dealing with crowds or suppressing firing lines. Takes specialized pan-magazines from Excelsior Maxims, while being completely free from their taint."
+	icon = 'icons/obj/guns/projectile/maxim_colony.dmi'
+	icon_state = "maxim_bs"
+	item_state = "maxim_bs"
 	price_tag = 2000
 	serial_type = "NM"
 	excelsior = FALSE
@@ -52,3 +59,13 @@
 		icon_state = initial(icon_state)
 		set_item_state()
 	return
+
+/obj/item/part/gun/frame/maxim
+	name = "Maxim frame"
+	desc = "A Maxim HMG frame. Whatever happens, we have got the Maxim gun and they have not."
+	icon_state = "frame_maxim"
+	result = /obj/item/gun/projectile/automatic/maxim
+	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/machinegun
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
+	resultvars = list(/obj/item/gun/projectile/automatic/maxim, /obj/item/gun/projectile/automatic/maxim/NM_colony)

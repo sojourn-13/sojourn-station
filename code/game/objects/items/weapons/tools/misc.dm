@@ -32,9 +32,26 @@
 	glow_color = COLOR_BLUE_LIGHT
 	max_upgrades = 4 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
 
+/obj/item/tool/polytool/marqua
+	name = "Mar'quaian poly tool"
+	desc = "A complicated mess of drivers, bits, wrench heads, snips and pliers, this intricate mess of a tool in a handle has it all, its made of a strange alloy yet still has a slot under it for fuel."
+	icon_state = "clustertool"
+	item_state = "clustertool"
+	max_health = 300
+	w_class = ITEM_SIZE_NORMAL
+	worksound = WORKSOUND_DRIVER_TOOL
+	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 75, QUALITY_BOLT_TURNING = 75, QUALITY_DRILLING = 40, QUALITY_PULSING = 60, QUALITY_WIRE_CUTTING = 30, QUALITY_WELDING = 60, QUALITY_CAUTERIZING = 30)
+	price_tag = 6000
+	use_fuel_cost = 0.01
+	max_fuel = 100
+	toggleable = TRUE
+	create_hot_spot = TRUE
+	glow_color = COLOR_BLUE_LIGHT
+	max_upgrades = 0 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
+
 /obj/item/tool/medmultitool
-	name = "Greyson Positronic medical multitool"
-	desc = "A compact Greyson Positronic medical multitool. It has all surgery tools and takes a medium cell in its handle.."
+	name = "Greyson Positronic medical omnitool"
+	desc = "A compact Greyson Positronic medical omnitool. It has all surgery tools and takes a medium cell in its handle."
 	icon_state = "medmulti"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)
 	flags = CONDUCT
@@ -46,11 +63,12 @@
 	workspeed = 1.2
 	price_tag = 1400 // Super fancy
 	degradation = 2
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/medmultitool/medimplant
-	name = "soteria medical omnitool"
+	name = "Soteria medical omnitool implant"
 	desc = "An all-in-one medical tool based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a medium power cell."
-	icon_state = "medimplant"
+	icon_state = "medmulti_sci"
 	matter = null
 	force = WEAPON_FORCE_PAINFUL
 	sharp = TRUE
@@ -61,6 +79,7 @@
 	degradation = 0.5
 	workspeed = 0.8
 	price_tag = 600 // Not nearly as fancy.
+	allow_greyson_mods = FALSE
 
 	use_power_cost = 1.2
 	suitable_cell = /obj/item/cell/medium
@@ -68,9 +87,9 @@
 	max_upgrades = 1
 
 /obj/item/tool/medmultitool/medimplant/sci
-	name = "soteria medical omnitool"
+	name = "Soteria medical omnitool"
 	desc = "An all-in-one medical tool based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a small power cell. This one is a cheap copy of better versions."
-	icon_state = "medimplant_sci"
+	icon_state = "medimplant"
 	matter = null //Nope
 	degradation = 1
 	workspeed = 0.2 //SLOW
@@ -101,7 +120,7 @@
 	//matter = list(MATERIAL_BIOMATTER = 10) No
 
 /obj/item/tool/engimplant
-	name = "engineering omnitool"
+	name = "engineering omnitool implant"
 	desc = "An all-in-one engineering tool implant. Convenient to use and more effective than the basics, but much less efficient than customized or more specialized tools."
 	icon_state = "engimplant"
 	force = WEAPON_FORCE_DANGEROUS
@@ -188,7 +207,7 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "multitool_improvised"
 	force = WEAPON_FORCE_PAINFUL
-	switched_on_force = WEAPON_FORCE_PAINFUL * 0.8
+	switched_on_forcemult = 0.8
 	worksound = WORKSOUND_DRIVER_TOOL
 	flags = CONDUCT
 	switched_on_qualities = list(
@@ -223,3 +242,32 @@
 	glow_color = COLOR_ORANGE
 
 	heat = 2250
+
+/obj/item/tool/factorial_omni
+	name = "blessed touch"
+	desc = "Through the right litanies, a Factorial can coax bolts to turn and metal to join of their own accord, albeit not quite as effectively as actual tools."
+	icon_state = "fact_omni"
+	force = WEAPON_FORCE_DANGEROUS
+	worksound = WORKSOUND_PULSING
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = null
+	flags = CONDUCT
+	tool_qualities = list(QUALITY_SCREW_DRIVING = 30, QUALITY_BOLT_TURNING = 30, QUALITY_DRILLING = 30, QUALITY_WELDING = 30, QUALITY_PRYING = 30, QUALITY_DIGGING = 30, QUALITY_PULSING = 30, QUALITY_WIRE_CUTTING = 30, QUALITY_HAMMERING = 30, QUALITY_SHOVELING = 30, QUALITY_EXCAVATION = 30, QUALITY_SAWING = 30, QUALITY_CUTTING = 30)
+	degradation = 0
+	workspeed = 0.8
+	max_upgrades = 0 // Can't upgrade it
+	price_tag = 0
+	var/mob/living/carbon/holder // The one that summoned the tool
+
+/obj/item/tool/factorial_omni/New(var/loc, var/mob/living/carbon/Maker)
+	..()
+	holder = Maker
+	START_PROCESSING(SSobj, src)
+
+/obj/item/tool/factorial_omni/Process()
+	..()
+	if(loc != holder) // We're no longer in the owner's hand.
+		visible_message("The [src.name] fades into nothingness.")
+		STOP_PROCESSING(SSobj, src)
+		qdel(src)
+		return

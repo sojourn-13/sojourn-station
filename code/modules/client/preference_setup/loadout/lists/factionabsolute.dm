@@ -5,6 +5,11 @@
 	sort_category = "Faction: Absolute"
 	cost = 0
 
+/datum/gear/factionabsolute/robe
+	display_name = "church robe"
+	path = /obj/item/clothing/under/rank/church/robe
+	cost = 0
+
 /datum/gear/factionabsolute/jersey
 	display_name = "church overalls"
 	path = /obj/item/clothing/under/jersey
@@ -87,6 +92,12 @@
 	display_name = "absolutist cloak"
 	slot = slot_wear_suit
 	path = /obj/item/clothing/suit/hooded/absolutecloak
+	cost = 0
+
+/datum/gear/factionabsolute/nt_wintercoat
+	display_name = "absolute wintercoat"
+	slot = slot_wear_suit
+	path = /obj/item/clothing/suit/greatcoat/nt_wintercoat
 	cost = 0
 
 /datum/gear/factionabsolute/ritual_book

@@ -6,7 +6,7 @@
 	icon_state = "corgi"
 	item_state = "corgi"
 	speak_emote = list("barks", "woofs")
-	emote_see = list("shakes its head", "shivers")
+	emote_see = list("shakes their head", "shivers")
 	speak_chance = 1
 	turns_per_move = 10
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/corgi
@@ -30,8 +30,12 @@
 	..()
 	nutrition = max_nutrition * 0.3//Ian doesn't start with a full belly so will be hungry at roundstart
 
+/mob/living/simple_animal/corgi/fluff // Refactoring pets here for the sake of AI
+	var/mob/living/carbon/human/friend
+	var/befriend_job = null
+
 //IAN! SQUEEEEEEEEE~
-/mob/living/simple_animal/corgi/Ian
+/mob/living/simple_animal/corgi/fluff/Ian
 	name = "Ian"
 	real_name = "Ian"	//Intended to hold the name without altering it.
 	gender = MALE
@@ -41,6 +45,7 @@
 	response_harm   = "kicks"
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	befriend_job = "Premier"
 
 /mob/living/simple_animal/corgi/Life()
 	..()
@@ -54,8 +59,61 @@
 					set_dir(i)
 					sleep(1)
 
+/mob/living/simple_animal/corgi/fluff/Life()
+	..()
+	if(friend)
+		health_of_friend_checks()
+
+/mob/living/simple_animal/corgi/fluff/proc/health_of_friend_checks()
+	if(get_dist(src, friend) >= 2)
+		return
+	if(friend.stat >= DEAD || friend.health <= HEALTH_THRESHOLD_SOFTCRIT)
+		if(prob((friend.stat < DEAD)? 50 : 15))
+			var/verb = pick("howls", "whines", "bawls")
+			visible_emote(pick("[verb] in distress.", "[verb] anxiously."))
+			playsound(loc, 'sound/effects/creatures/death_whine.ogg', 50, 1)
+			return
+
+
+		if(prob(5))
+			var/msg5 = (pick("nuzzles [friend], demanding cuddles",
+							   "randomly licks [friend]'s hand",
+							   "rests their head on top of [friend]'s feet",
+							   "wags their tail, panting and looking expectantly at [friend]"))
+			src.visible_message("<span class='name'>[src]</span> [msg5].")
+
+	if(friend.health <= 50)
+		if(prob(10))
+			var/verb = pick("barks", "yaps", "woofs")
+			visible_emote("[verb] anxiously.")
+			playsound(loc, 'sound/effects/creatures/barking.ogg', 50, 1)
+
+/mob/living/simple_animal/corgi/fluff/verb/friend()
+	set name = "Become Friends"
+	set category = "IC"
+	set src in view(1)
+
+	if(friend && usr == friend)
+		set_dir(get_dir(src, friend))
+		say("Bark!")
+		playsound(loc, 'sound/voice/bark2.ogg', 50, 1)
+		return
+
+	if (ishuman(usr))
+		var/mob/living/carbon/human/H = usr
+		if(H.job == befriend_job)
+			friend = usr
+			set_dir(get_dir(src, friend))
+			say("Bark!")
+			playsound(loc, 'sound/voice/bark2.ogg', 50, 1)
+			return
+
+	to_chat(usr, SPAN_NOTICE("[src] ignores you."))
+	return
+
 /mob/living/simple_animal/corgi/beg(var/atom/thing, var/atom/holder)
-	visible_emote("stares at the [thing] that [holder] has with sad puppy eyes.")
+	visible_emote("stares at \the [thing] that [holder] has with sad puppy eyes.")
+	playsound(loc, 'sound/effects/creatures/ian_beg.ogg', 50, 1)
 
 /obj/item/reagent_containers/food/snacks/meat/corgi
 	name = "Corgi meat"
@@ -113,9 +171,12 @@
 		return
 	..()
 
+/mob/living/simple_animal/corgi/puppy/beg(var/atom/thing, var/atom/holder)
+	visible_emote("stares at \the [thing] that [holder] has with sad puppy eyes.")
+	playsound(loc, 'sound/effects/creatures/puppy_beg.ogg', 50, 1)
 
 //LISA! SQUEEEEEEEEE~
-/mob/living/simple_animal/corgi/Lisa
+/mob/living/simple_animal/corgi/fluff/Lisa
 	name = "Lisa"
 	real_name = "Lisa"
 	gender = FEMALE
@@ -127,15 +188,16 @@
 	var/puppies = 0
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	befriend_job = "Warrant Officer"
 
 //Lisa already has a cute bow!
-/mob/living/simple_animal/corgi/Lisa/Topic(href, href_list)
+/mob/living/simple_animal/corgi/fluff/Lisa/Topic(href, href_list)
 	if(href_list["remove_inv"] || href_list["add_inv"])
 		to_chat(usr, "\red [src] already has a cute bow!")
 		return
 	..()
 
-/mob/living/simple_animal/corgi/Lisa/Life()
+/mob/living/simple_animal/corgi/fluff/Lisa/Life()
 	..()
 
 	if(!stat && !resting && !buckled)
@@ -145,7 +207,7 @@
 			var/alone = 1
 			var/ian = 0
 			for(var/mob/M in oviewers(7, src))
-				if(istype(M, /mob/living/simple_animal/corgi/Ian))
+				if(istype(M, /mob/living/simple_animal/corgi/fluff/Ian))
 					if(M.client)
 						alone = 0
 						break

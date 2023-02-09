@@ -14,7 +14,7 @@
 	load_method = SINGLE_CASING
 	max_shells = 1
 	ammo_type = /obj/item/ammo_casing/antim
-	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/AMR.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/rifle_load.ogg'
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 20, MATERIAL_DIAMOND = 3, MATERIAL_OSMIUM = 5, MATERIAL_URANIUM = 2)
 	price_tag = 7500
@@ -23,13 +23,13 @@
 	twohanded = TRUE
 	sharp = FALSE
 	saw_off = FALSE
-	eject_animatio = FALSE //Todo: this
+	eject_animatio = TRUE // Now with boolet eject animation!
 	bolt_training = FALSE
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
 	scoped_offset_reduction = 8
 	extra_damage_mult_scoped = 0.2
 	gun_tags = list(GUN_AMR, GUN_PROJECTILE) //AMR tag atm does nothing
-	slowdown_hold = 1.5  //Were entrenched
+	slowdown_hold = 1.5  // Massive, unwieldy rifle
 	pierce_multiplier = 6
 	serial_type = "SA"
 	action_button_name = "Switch zoom level"
@@ -37,7 +37,18 @@
 
 	wield_delay = 2 SECOND
 	wield_delay_factor = 0.6 // 60 vig, heavy as shit
+	gun_parts = list(/obj/item/part/gun/frame/heavysniper = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/antim = 1)
 
+/obj/item/part/gun/frame/heavysniper
+	name = "Anti-Material Rifle frame"
+	desc = "An AMR frame. For removing chunks of man and machine alike."
+	icon_state = "frame_amr"
+	resultvars = list(/obj/item/gun/projectile/boltgun/heavysniper)
+	gripvars = list(/obj/item/part/gun/grip/serb)
+	mechanismvar = /obj/item/part/gun/mechanism/boltgun
+	barrelvars = list(/obj/item/part/gun/barrel/antim)
+
+/* - Old comonents system. Updated with weapon pars system instead.
 
 /obj/item/weaponparts
 	var/part_color = ""
@@ -46,29 +57,29 @@
 	icon = 'icons/obj/weaponparts.dmi'
 
 /obj/item/weaponparts/heavysniper/stock
-	name = "sniper stock"
-	desc = "This is a sniper stock. You need to attach the reciever."
-	icon_state = "sniper_stock"
+	name = "AMR stock"
+	desc = "This is a stock for an anti-materiel rifle. You need to attach a receiver to it."
+	icon_state = "AMR_stock" // Actual AMR sprite disassembly
 
-/obj/item/weaponparts/heavysniper/reciever
-	name = "sniper reciever"
-	desc = "This is a sniper reciever. You need to attach it to the stock."
-	icon_state = "sniper_reciever"
+/obj/item/weaponparts/heavysniper/receiver
+	name = "AMR receiver"
+	desc = "This is a receiver for an anti-materiel rifle. You need to attach it to the stock."
+	icon_state = "AMR_receiver"
 
-/obj/item/weaponparts/heavysniper/stockreciever
-	name = "sniper stock with reciever"
-	desc = "This is a sniper stock with reciever. Now attach the barrel."
-	icon_state = "sniper_stockreciever"
+/obj/item/weaponparts/heavysniper/stockreceiver
+	name = "AMR stock with receiver"
+	desc = "This is an anti-materiel rifle stock with the receiver and bolt mechanism installed. Now you must attach the barrel to finish."
+	icon_state = "AMR_stockreceiver"
 
 /obj/item/weaponparts/heavysniper/barrel
-	name = "sniper rifle barrel"
-	desc = "This is a barrel from a sniper rifle."
-	icon_state = "sniper_barrel"
+	name = "heavy bore barrel"
+	desc = "This is a hefty barrel bored in 14.5mm, clearly part of an anti-materiel rifle. Needs to be attached to a combination of stock and receiver to finish assembly."
+	icon_state = "AMR_barrel"
 
 /obj/item/weaponparts/heavysniper/stock/attackby(obj/item/W, mob/user,)
-	if(istype(W,/obj/item/weaponparts/heavysniper/reciever))
-		to_chat(user, "You attach the reciever to the stock")
-		var/obj/item/weaponparts/heavysniper/stockreciever/HS = new (get_turf(src))
+	if(istype(W,/obj/item/weaponparts/heavysniper/receiver))
+		to_chat(user, "You attach the receiver to the stock")
+		var/obj/item/weaponparts/heavysniper/stockreceiver/HS = new (get_turf(src))
 		if(loc == user)
 			equip_slot = user.get_inventory_slot(src)
 			if(equip_slot in list(slot_r_hand, slot_l_hand))
@@ -78,7 +89,7 @@
 		qdel(src)
 
 
-/obj/item/weaponparts/heavysniper/stockreciever/attackby(obj/item/W, mob/user)
+/obj/item/weaponparts/heavysniper/stockreceiver/attackby(obj/item/W, mob/user)
 	if(istype(W,/obj/item/weaponparts/heavysniper/barrel))
 		to_chat(user, "You attach the barrel to the stock")
 		var/obj/item/gun/projectile/boltgun/heavysniper/HS = new (get_turf(src))
@@ -89,3 +100,4 @@
 				user.equip_to_slot_if_possible(HS, equip_slot)
 		qdel(W)
 		qdel(src)
+*/

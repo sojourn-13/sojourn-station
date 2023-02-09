@@ -2,9 +2,9 @@
 // All owner_verbs are standard powers given to psions the moment they ascend. BP_PSION is called for bodily effects relating specifically to psions, such as chemicals.
 /obj/item/organ/internal/psionic_tumor
 	name = "ascended flesh"
-	health = 400 //They need to live awhile longer than other organs. Is this even used by organ code anymore?
 	desc = "A tumorous mass that resembles a pulsating muscle-like brain. It's uncomfortable to look at..."
 	organ_efficiency = list(BP_PSION = 100)
+	max_damage = 15
 	parent_organ_base = BP_HEAD
 	icon_state = "psion_tumor"
 	force = 1.0
@@ -21,12 +21,13 @@
 	max_blood_storage = 80
 	oxygen_req = 8
 	nutriment_req = 6
-	var/psi_points = 31 //psi_points starts at a high value so it can be adjusted in the psionic_tumor/Process() step at round start.
+	var/psi_points = 0         //How many points we have currently
 	var/max_psi_points = 0
-	var/disabled = TRUE //Whether or not the implant functions.
-	var/last_psi_point_gain
+	var/burn
+	var/disabled = TRUE        //Whether or not the implant functions.
 	var/psi_point_cost
-	var/inhibited = FALSE //Whether or not the organ has been inhibited by an external force
+	var/inhibited = FALSE      //Whether or not the organ has been inhibited by an external force
+	var/allow_loop = TRUE      //Used for starting a looping process of regenning poings
 
 	owner_verbs = list(
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_healing,
@@ -69,7 +70,6 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_armor,
 		/obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster,
 		// Psych unique powers just for them. Do not add these to other lists. -Kaz
-		/obj/item/organ/internal/psionic_tumor/proc/peace_of_mind,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_heal_other,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_heal_brain,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_gift

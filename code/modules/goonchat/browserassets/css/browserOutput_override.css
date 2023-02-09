@@ -33,6 +33,7 @@
 
 .engradio				{color: #A66300;}
 .medradio				{color: #008160;}
+.medaltradio				{color: #008160;}
 .supradio				{color: #5F4519;}
 
 /* Game Messages */
@@ -50,12 +51,13 @@
 .chthive				{color: #4f8529;}
 .rough					{font-family: Trebuchet MS, cursive, sans-serif;}
 .say_quote				{font-family: Georgia, Verdana, sans-serif;}
-.russian				{color: #635d17}
-.serbian				{color: #Ad6f1d}
+.slavic					{color: #635d17}
+.illyrian				{color: #Ad6f1d}
 .jive					{color: #666666}
 .jana					{color: #993399}
 .latin					{color: #deb63d}
-.esperanto				{color: #ed7961}
+.romana					{color: #ed7961}
+.euro					{color: #6533da}
 .yassari				{color: #5fbf4e}
 .marqua					{color: #00FFFF}
 .akula					{color: #f8412c}

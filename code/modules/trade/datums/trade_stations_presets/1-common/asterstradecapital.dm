@@ -94,10 +94,17 @@
 			/obj/item/ammo_magazine/ammobox/pistol_35,
 			/obj/item/ammo_magazine/ammobox/pistol_35/rubber
 		),
+		"Solnishko 'Guns-from-Home' Parts" = list(
+			/obj/item/computer_hardware/hard_drive/portable/design/gun_parts/bootleg = good_data("Solnishko Distrubtion - Homemade Parts", list(1, 1), 600),
+			/obj/item/part/gun/grip/wood,
+			/obj/item/part/gun/mechanism/pistol,
+			/obj/item/part/gun/mechanism/revolver,
+			/obj/item/part/gun/barrel/pistol,
+			/obj/item/part/gun/barrel/magnum
+		),
 		"Miscellanous" = list(
 			/obj/item/device/camera,
 			/obj/item/device/camera_film,
-			/obj/item/device/toner,
 			/obj/item/storage/photo_album,
 			/obj/item/wrapping_paper,
 			/obj/item/packageWrap,

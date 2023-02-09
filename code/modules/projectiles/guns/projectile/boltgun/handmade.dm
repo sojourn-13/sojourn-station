@@ -10,7 +10,7 @@
 	damage_multiplier = 1
 	penetration_multiplier = 1
 	max_shells = 5
-	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/mosin.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 	price_tag = 150 // so we dont make a market on the cargo shuttle for these
 	init_recoil = HMG_RECOIL(0.2)
@@ -18,3 +18,16 @@
 	saw_off = FALSE //No sawning it down and remaking it into a Kardashev-Mosin
 	serial_type = "INDEX"
 	serial_shown = FALSE
+	gun_parts = list(/obj/item/part/gun/frame/homemadebolt = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/lrifle/steel = 1)
+
+
+/obj/item/part/gun/frame/homemadebolt
+	name = "handmade rifle frame"
+	desc = "A handmade bolt-action rifle frame. For the absolute poorest in the universe. Also insainly modular taking any rifle barrel type."
+	icon_state = "frame_riose"
+	matter = list(MATERIAL_STEEL = 5)
+	nra = FALSE
+	resultvars = list(/obj/item/gun/projectile/boltgun/handmade)
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/boltgun
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle/steel, /obj/item/part/gun/barrel/srifle/steel, /obj/item/part/gun/barrel/clrifle/steel)

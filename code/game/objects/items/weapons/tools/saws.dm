@@ -31,6 +31,7 @@
 	max_upgrades = 2
 	workspeed = 1.2
 	price_tag = 500 //Still just a saw.
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/saw/improvised
 	name = "choppa"
@@ -60,7 +61,7 @@
 /obj/item/tool/saw/circular/medical
 	name = "medical circular saw"
 	desc = "For clean bone cutting but doesn't seem all that durable. Spins slower than the normal saw to allow for higher surgical precision."
-	icon_state = "saw"
+	icon_state = "saw_medical"
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 4, MATERIAL_PLASTEEL = 2)
 	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 40)
@@ -68,6 +69,9 @@
 	degradation = 2.65
 	suitable_cell = /obj/item/cell/small
 	price_tag = 290
+
+/obj/item/tool/saw/circular/medical/si
+	icon_state = "saw_si"
 
 /obj/item/tool/saw/circular/advanced
 	name = "advanced circular saw"
@@ -87,29 +91,68 @@
 	icon_state = "chainsaw"
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
-	force = WEAPON_FORCE_BRUTAL //Rip and tear!
+	force = WEAPON_FORCE_WEAK
+	switched_on_forcemult = 4 //28 total
 	w_class = ITEM_SIZE_NORMAL
 	armor_penetration = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 2)
-	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 50, QUALITY_WIRE_CUTTING = 20) //not the best choice to cut wires
+	tool_qualities = list(QUALITY_SAWING = 5, QUALITY_CUTTING = 5, QUALITY_WIRE_CUTTING = 5) //barely usable when off, but allows mods to be applied
+	switched_off_qualities = list(QUALITY_CUTTING = 5)
 	max_upgrades = 3
 	use_fuel_cost = 0.1
+	toggleable = TRUE
+	switched_on_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 50, QUALITY_WIRE_CUTTING = 20)
 	max_fuel = 80
 	price_tag = 550
+
+/obj/item/tool/saw/chain/turn_on(mob/user)
+	.=..()
+	if(.)
+		to_chat(user, SPAN_NOTICE("You rev up the [src]."))
+		playsound(loc, 'sound/items/chainsaw_on.ogg', 40)
+		START_PROCESSING(SSobj, src)
+
+/obj/item/tool/saw/chain/turn_off()
+	playsound(loc, 'sound/items/chainsaw_off.ogg', 80)
+	..()
 
 /obj/item/tool/saw/hyper //tier 4, focusing on damage, cell variant
 	name = "TM hypersaw"
 	desc = "This eco-friendly chainsaw will Rip and Tear until it is done."
 	icon_state = "hypersaw"
+	item_state = "hypersaw"
+	switched_on_item_state = "hypersaw"
+	switched_on_icon_state = "hypersaw"
+	wielded_icon = "hypersaw_on"
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
-	force = WEAPON_FORCE_BRUTAL
+	force = WEAPON_FORCE_WEAK
+	switched_on_forcemult = 4 //28 total
 	w_class = ITEM_SIZE_NORMAL
 	armor_penetration = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 3)
-	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 50, QUALITY_WIRE_CUTTING = 20)
+	tool_qualities = list(QUALITY_SAWING = 5, QUALITY_CUTTING = 5, QUALITY_WIRE_CUTTING = 5) //barely usable when off, but allows mods to be applied
+	switched_off_qualities = list(QUALITY_CUTTING = 5)
 	max_upgrades = 2
 	degradation = 0.7
 	use_power_cost = 1
+	toggleable = TRUE
+	switched_on_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 50, QUALITY_WIRE_CUTTING = 20)
 	suitable_cell = /obj/item/cell/medium
 	price_tag = 720
+
+/obj/item/tool/saw/hyper/turn_on(mob/user)
+	if (cell && cell.charge >= 1)
+		item_state = "[initial(item_state)]_on"
+		to_chat(user, SPAN_NOTICE("You rev up the [src]."))
+		playsound(loc, 'sound/items/chainsaw_on.ogg', 40)
+		..()
+
+	else if (!cell || cell.charge <= 0)
+		item_state = initial(item_state)
+		to_chat(user, SPAN_WARNING("[src]'s battery is dead or missing."))
+
+/obj/item/tool/saw/hyper/turn_off(mob/user)
+	playsound(loc, 'sound/items/chainsaw_off.ogg', 80)
+	to_chat(user, SPAN_NOTICE("You turn the [src] off."))
+	..()

@@ -139,6 +139,7 @@
 	new /obj/item/clothing/glasses/chameleon(src)
 	new /obj/item/device/radio/headset/chameleon(src)
 	new /obj/item/gun/energy/chameleon(src)
+	new /obj/item/clothing/accessory/chameleon(src)
 
 /obj/item/storage/box/syndie_kit/clerical
 	name = "clerical kit"
@@ -230,9 +231,9 @@
 	w_class = ITEM_SIZE_HUGE
 
 /obj/item/storage/box/syndie_kit/sts/populate_contents()
-	new /obj/item/gun/projectile/automatic/sts/lrifle(src)
-	new /obj/item/ammo_magazine/light_rifle_257(src)
-	new /obj/item/ammo_magazine/light_rifle_257_short(src)
+	new /obj/item/gun/projectile/automatic/sts/rifle(src)
+	new /obj/item/ammo_magazine/rifle_75(src)
+	new /obj/item/ammo_magazine/rifle_75_short(src)
 	new /obj/item/clothing/suit/storage/toggle/leather/blackjacket(src)
 
 /obj/item/storage/box/syndie_kit/pug
@@ -252,10 +253,10 @@
 	w_class = ITEM_SIZE_HUGE
 
 /obj/item/storage/box/syndie_kit/antimaterial_rifle/populate_contents()
-	new /obj/item/ammo_casing/antim(src)
-	new /obj/item/weaponparts/heavysniper/stock(src)
-	new /obj/item/weaponparts/heavysniper/reciever(src)
-	new /obj/item/weaponparts/heavysniper/barrel(src)
+	new /obj/item/part/gun/frame/heavysniper(src)
+	new /obj/item/part/gun/grip/serb(src)
+	new /obj/item/part/gun/mechanism/boltgun(src)
+	new /obj/item/part/gun/barrel/antim(src)
 
 /obj/item/storage/box/syndie_kit/toxin
 	name = "toxin kit"

@@ -73,3 +73,8 @@
 /datum/gear/trackingimplanter
 	display_name = "implanter (tracking)"
 	path = /obj/item/implanter/tracking
+
+/datum/gear/photo_frame
+    display_name = "photograph frame"
+    path = /obj/item/toy/junk/photo_frame
+

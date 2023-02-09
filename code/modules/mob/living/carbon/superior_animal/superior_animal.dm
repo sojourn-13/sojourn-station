@@ -530,7 +530,7 @@
 			update_icons()
 
 /mob/living/carbon/superior_animal/handle_regular_status_updates()
-	health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
+	health = maxHealth - oxyloss - toxloss - fireloss - bruteloss - cloneloss - halloss
 	if(health <= death_threshold && stat != DEAD)
 		death()
 		blinded = TRUE

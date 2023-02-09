@@ -17,7 +17,7 @@
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
 	max_shells = 10
-	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/mosin.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'
 	fire_sound_silenced = 'sound/weapons/guns/fire/silenced_rifle.ogg' // More cohesive sound, still loud for its caliber
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
@@ -35,6 +35,7 @@
 
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
+	gun_parts = list(/obj/item/part/gun/frame/boltgun = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/lrifle/steel = 1)
 
 /obj/item/gun/projectile/boltgun/sawn //subtype for code
 	name = "\"obrez\" mosin boltgun"
@@ -55,6 +56,7 @@
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
 	saw_off = FALSE
 	bolt_training = FALSE //Trainning didnt cover obrez
+	gun_parts = list(/obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/lrifle/steel = 1)
 
 /obj/item/gun/projectile/boltgun/sawn/true //used for the Kardashev-Mosin, so we dont cheat crafting menus
 
@@ -106,17 +108,13 @@
 	bolt_open = !bolt_open
 	if(bolt_open)
 		var/print_string = "You work the bolt open."
-		if(contents.len || loaded.len)
+		if(loaded.len)
 			if(chambered)
 				if(eject_animatio && loaded.len) //Are bullet amination check
 					if(silenced)
 						flick("bullet_eject_s", src)
 					else
 						flick("bullet_eject", src)
-				if(chambered.is_caseless && !chambered.BB)
-					loaded -= chambered
-					QDEL_NULL(chambered)
-				else
 					print_string = "You work the bolt open, ejecting [chambered]!"
 					chambered.forceMove(get_turf(src))
 					loaded -= chambered
@@ -129,13 +127,9 @@
 						flick("bullet_eject", src)
 				if(LAZYLEN(loaded))
 					var/obj/item/ammo_casing/B = loaded[loaded.len]
-					if(B.is_caseless && !B.BB)
-						loaded -= B
-						QDEL_NULL(B)
-					else
-						print_string = "You work the bolt open, ejecting [B]!"
-						B.forceMove(get_turf(src))
-						loaded -= B
+					print_string = "You work the bolt open, ejecting [B]!"
+					B.forceMove(get_turf(src))
+					loaded -= B
 
 		to_chat(user, SPAN_NOTICE(print_string))
 	else
@@ -146,6 +140,13 @@
 		add_fingerprint(user)
 	update_icon()
 
+/obj/item/gun/projectile/boltgun/process_chambered()
+	..()
+	if(LAZYLEN(loaded))
+		var/obj/item/ammo_casing/B = loaded[1]
+		if(B.is_caseless && !B.BB)
+			loaded -= B
+			QDEL_NULL(B)
 
 /obj/item/gun/projectile/boltgun/special_check(mob/user)
 	if(bolt_open)
@@ -154,13 +155,24 @@
 	return ..()
 
 /obj/item/gun/projectile/boltgun/load_ammo(var/obj/item/A, mob/user)
-	if(!bolt_open)
-		to_chat(user, SPAN_WARNING("You add in ammo [src] while the bolt is closed!"))
-		return
+	if(istype(A, /obj/item/ammo_casing)) // Should prevent the following message while sawing down the gun or adding a mod. - Seb
+		if(!bolt_open)
+			to_chat(user, SPAN_WARNING("You cannot add in ammo to \the [src] while the bolt is closed!"))
+			return
 	..()
 
 /obj/item/gun/projectile/boltgun/unload_ammo(mob/user, var/allow_dump=1)
 	if(!bolt_open)
-		to_chat(user, SPAN_WARNING("You can't take out ammo [src] while the bolt is closed!"))
+		to_chat(user, SPAN_WARNING("You can't take ammo out of \the [src] while the bolt is closed!"))
 		return
 	..()
+
+/obj/item/part/gun/frame/boltgun
+	name = "bolt-action rifle frame"
+	desc = "A bolt-action rifle frame. For hunting or endless trench warfare."
+	icon_state = "frame_serbrifle"
+	result = /obj/item/gun/projectile/boltgun
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/wood)
+	resultvars = list(/obj/item/gun/projectile/boltgun, /obj/item/gun/projectile/boltgun/sa)
+	mechanismvar = /obj/item/part/gun/mechanism/boltgun
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)

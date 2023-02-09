@@ -4,7 +4,7 @@
 	icon = 'icons/obj/guns/projectile/lightboltgun_wood.dmi'
 	icon_state = "boltgun"
 	item_state = "boltgun"
-	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
 	max_shells = 10
 	init_recoil = HMG_RECOIL(0.5)
 	zoom_factors = list(2.0)
@@ -18,6 +18,7 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/boltgun/sawn/light
 	serial_type = "Hunt Inc"
+	gun_parts = list(/obj/item/part/gun/frame/roe = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/boltgun/sawn/light
 	name = "\"obrez\" light boltgun"
@@ -32,3 +33,16 @@
 	max_shells = 10
 	saw_off = FALSE
 	serial_type = "Hunt Inc"
+	//Sawn guns lose their frames
+	gun_parts = list(/obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/srifle = 1)
+
+
+/obj/item/part/gun/frame/roe
+	name = "Roe frame"
+	desc = "A Roe boltaction rifle frame. Perfect for small game and practice."
+	icon_state = "frame_roe"
+	result = /obj/item/gun/projectile/boltgun/light
+	resultvars = list(/obj/item/gun/projectile/boltgun/light)
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/boltgun
+	barrelvars = list(/obj/item/part/gun/barrel/srifle)

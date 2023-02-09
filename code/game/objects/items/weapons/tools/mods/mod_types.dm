@@ -13,6 +13,7 @@
 
 	price_tag = 120
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("iron" = 15, "plasticide" = 5)
 
 //list/tool_upgrades, list/required_qualities, list/negative_qualities, prefix, req_fuel, req_cell
 
@@ -33,6 +34,7 @@
 	desc = "An array of plasteel fins which dissipates heat, reducing damage and extending the lifespan of power tools or improving energy weapon cooling."
 	icon_state = "heatsink"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("iron" = 15, "plasticide" = 5)
 
 /obj/item/tool_upgrade/reinforcement/heatsink/New()
 	..()
@@ -56,6 +58,7 @@
 	desc = "A sturdy bit of plasteel that can be bolted onto any tool to protect it. Tough, but bulky."
 	icon_state = "plate"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 2) //steel to compensate for metal rods used in crafting
+	preloaded_reagents = list("iron" = 20)
 
 /obj/item/tool_upgrade/reinforcement/plating/New()
 	..()
@@ -74,6 +77,7 @@
 	desc = "A bent piece of metal that wraps around sensitive parts of a tool, protecting it from impacts, debris, and stray fingers. Could be added to the back of a gun to help stablize it as well."
 	icon_state = "guard"
 	matter = list(MATERIAL_PLASTEEL = 5)
+	preloaded_reagents = list("aluminum" = 9, "iron" = 9)
 	price_tag = 160
 
 /obj/item/tool_upgrade/reinforcement/guard/New()
@@ -97,6 +101,7 @@
 	desc = "A plasmablock is way more efficient to dissipate heat than classic heatsinks or waterblocks thanks to the tremendous heat-transfer capacity of liquid plasma. The fluid that is actively pumped through a radiator and cooled by fans. It greatly extends the lifespan of power tools or heat dissipation of energy weapons."
 	icon_state = "plasmablock"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2, MATERIAL_PLASMA = 1)
+	preloaded_reagents = list("iron" = 15, "plasticide" = 5, "plasma" = 3)
 
 /obj/item/tool_upgrade/reinforcement/plasmablock/New()
 	..()
@@ -122,6 +127,7 @@
 	desc = "A rubber mesh that can wrapped around sensitive parts of a tool to protecting them from impacts and debris."
 	icon_state = "rubbermesh"
 	matter = list(MATERIAL_PLASTIC = 3)
+	preloaded_reagents = list("plasticide" = 8)
 	price_tag = 60
 
 /obj/item/tool_upgrade/reinforcement/rubbermesh/New()
@@ -138,9 +144,10 @@
 //------------------------------------------------
 /obj/item/tool_upgrade/productivity/ergonomic_grip
 	name = "ergonomic grip"
-	desc = "A replacement grip for a tool which allows it to be more precisely controlled with one hand. Can be placed under a gun\'s barrel to reduce recoil. However, it also makes bracing impossible."
+	desc = "A replacement grip for a tool which allows it to be more precisely controlled with one hand. Can be placed under a gun's barrel to reduce recoil. However, it also makes bracing impossible."
 	icon_state = "ergonomic"
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 5)
+	preloaded_reagents = list("aluminum" = 9, "plasticide" = 3)
 	price_tag = 120
 
 /obj/item/tool_upgrade/productivity/ergonomic_grip/New()
@@ -162,6 +169,7 @@
 	desc = "A mechanical upgrade for wrenches and screwdrivers which allows the tool to only turn in one direction."
 	icon_state = "ratchet"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("iron" = 15, "plasticide" = 5)
 
 /obj/item/tool_upgrade/productivity/ratchet/New()
 	..()
@@ -177,6 +185,7 @@
 	desc = "Do red tools really work faster or is the effect purely psychological? Needless to say, you can't strip it off once applied. Ye'z boyz kin' put in on ya shootahz too!"
 	icon_state = "paint_red"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("acetone" = 15, "iron" = 5)
 	can_remove = FALSE
 	price_tag = 60
 
@@ -251,13 +260,14 @@
 	desc = "A canister of pure, compressed oxygen with adapters for mounting onto a welding tool. Used alongside fuel, it allows for higher burn temperatures."
 	icon_state = "oxyjet"
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("iron" = 15, "plasticide" = 5)
 	price_tag = 180
 
 /obj/item/tool_upgrade/productivity/oxyjet/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_WORKSPEED = 0.20,
+	UPGRADE_WORKSPEED = 0.25,
 	UPGRADE_FORCE_MULT = 1.15,
 	UPGRADE_DEGRADATION_MULT = 1.15,
 	UPGRADE_HEALTH_THRESHOLD = -10
@@ -271,6 +281,7 @@
 	desc = "A motor for power tools with a higher horsepower than usually expected. Significantly enhances productivity and lifespan, but more expensive to run and harder to control."
 	icon_state = "motor"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 4)
+	preloaded_reagents = list("iron" = 15, "oil"= 9)
 
 /obj/item/tool_upgrade/productivity/motor/New()
 	..()
@@ -286,7 +297,6 @@
 	)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL = 1.5,
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.2,
 		GUN_UPGRADE_PEN_MULT = 1.2,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.8,
@@ -306,6 +316,7 @@
 	name = "anti-staining paint"
 	desc = "Applying a thin coat of this paint on a tool prevents blood stains, dirt or dust to adhere to its surface. Everyone works better and faster with clean tools. Once applied, it can't ever be stripped."
 	icon_state = "antistaining"
+	preloaded_reagents = list("oil" = 5, "aluminum" = 5, "mercury" = 5)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_PLASMA = 3)
 	can_remove = FALSE
 	price_tag = 180
@@ -337,7 +348,7 @@
 	UPGRADE_FUELCOST_MULT = 1.25
 	)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.25,
+	GUN_UPGRADE_PEN_MULT = 1.25,
 	GUN_UPGRADE_CHARGECOST = 1.35
 	)
 	I.prefix = "boosted"
@@ -350,6 +361,7 @@
 	desc = "If the words \"safety regulations\" do not mean anything to you, you may consider installing this fine piece of technology on your tool. It injects small amounts of plasma in the fuel mix before combustion to greatly increase its power output, making all kinds of tasks easier to perform. If you're insane, you could attach it to an energy weapon's barrel."
 	icon_state = "injector"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_PLASMA = 2)
+	preloaded_reagents = list("iron" = 15, "plasticide" = 5, "plasma" = 3)
 	price_tag = 280
 
 /obj/item/tool_upgrade/productivity/injector/New()
@@ -363,9 +375,7 @@
 	UPGRADE_HEALTH_THRESHOLD = -10
 	)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 0.5,
 		GUN_UPGRADE_DAMAGE_BURN = 10,
-		GUN_UPGRADE_OFFSET = 5,
 		GUN_UPGRADE_RECOIL = 1.3,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.3
 		)
@@ -381,6 +391,7 @@
 	icon_state = "rocket_engine"
 	origin_tech = list(TECH_ENGINEERING = 3, TECH_POWER = 4)
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GOLD = 1)
+	preloaded_reagents = list("iron" = 15, "oil"= 9)
 
 /obj/item/tool_upgrade/productivity/rocket_engine/New()
 	..()
@@ -431,6 +442,7 @@
 	desc = "A small visible laser which can be strapped onto any tool, giving an accurate representation of its target. Helps improve precision."
 	icon_state = "laser_guide"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_URANIUM = 1)
+	preloaded_reagents = list("plasticide" = 3, "radium" = 5, "phosphorus" = 15)
 	price_tag = 90
 
 /obj/item/tool_upgrade/refinement/laserguide/New()
@@ -439,7 +451,7 @@
 	I.tool_upgrades = list(
 	UPGRADE_PRECISION = 10)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = 0.8,
+	GUN_UPGRADE_RECOIL = 0.9,
 	UPGRADE_BULK = 1
 	)
 	I.gun_loc_tag = GUN_SIGHT
@@ -449,9 +461,11 @@
 //Doesn't work onlarger things like crowbars and drills
 /obj/item/tool_upgrade/refinement/stabilized_grip
 	name = "gyrostabilized grip"
-	desc = "A fancy mechanical grip that partially floats around a tool, absorbing tremors and shocks. Allows precise work with a shaky hand."
+	desc = "A fancy mechanical grip that partially floats around a tool, absorbing tremors and shocks. Allows precise work with a shaky hand. \
+			Can also be applied to guns to slightly help with recoil control."
 	icon_state = "stabilizing"
 	matter = list(MATERIAL_PLASTIC = 3)
+	preloaded_reagents = list("plasticide" = 5)
 	price_tag = 30
 
 /obj/item/tool_upgrade/refinement/stabilized_grip/New()
@@ -462,6 +476,8 @@
 	UPGRADE_HEALTH_THRESHOLD = 10)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL = 0.8,
+		GUN_UPGRADE_PEN_MULT = 0.7,
+		GUN_UPGRADE_ONEHANDPENALTY = 0.3
 	)
 	I.gun_loc_tag = GUN_GRIP
 	I.required_qualities = list(QUALITY_CUTTING, QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_WEAVING, QUALITY_BONE_GRAFTING)
@@ -472,6 +488,7 @@
 	desc = "Magnetises tools used for handling small objects, reducing instances of dropping screws and bolts."
 	icon_state = "magnetic"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 2)
+	preloaded_reagents = list("iron" = 15)
 	price_tag = 100
 
 /obj/item/tool_upgrade/refinement/magbit/New()
@@ -483,28 +500,29 @@
 	I.required_qualities = list(QUALITY_SCREW_DRIVING, QUALITY_BOLT_TURNING, QUALITY_CLAMPING, QUALITY_BONE_SETTING, QUALITY_PULSING, QUALITY_SHOVELING, QUALITY_DIGGING)
 	I.prefix = "magnetic tipped"
 
-/obj/item/tool_upgrade/refinement/ported_barrel
+/obj/item/tool_upgrade/refinement/ported_barrel // Faster tool but more costly, stronger gun but more unwieldy
 	name = "composite barrel"
-	desc = "A barrel extension for a welding tool (or gun) which helps manage gas pressure and keep the torch (or barrel) steady. When attached to a gun it allows for greater recoil control and a smaller flash at the cost of stopping power."
+	desc = "A barrel extension for a welding tool (or gun) which increases gas pressure on either torch or gun. When attached to a gun it allows for greater stopping power at the cost of recoil control and firerate."
 	icon_state = "ported_barrel"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 2)
+	preloaded_reagents = list("aluminum" = 9, "iron" = 9)
 	price_tag = 100
 
 /obj/item/tool_upgrade/refinement/ported_barrel/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_PRECISION = 12,
-	UPGRADE_DEGRADATION_MULT = 1.15,
-	UPGRADE_BULK = 1,
-	UPGRADE_HEALTH_THRESHOLD = 10
-	)
+		UPGRADE_WORKSPEED = 0.35,
+		UPGRADE_POWERCOST_MULT = 1.05,
+		UPGRADE_FUELCOST_MULT = 1.05,
+		UPGRADE_DEGRADATION_MULT = 1.15,
+		UPGRADE_BULK = 1,
+		UPGRADE_HEALTH_THRESHOLD = -10)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.95,
-		GUN_UPGRADE_STEPDELAY_MULT = 0.95,
-		GUN_UPGRADE_MUZZLEFLASH = 0.8,
-		GUN_UPGRADE_RECOIL = 0.8,
-		GUN_UPGRADE_DAMAGE_MULT = 0.9,
+		GUN_UPGRADE_DAMAGE_MULT = 1.1, // Think of the guild's heavy barrel as a direct upgrade of this, as it's part of its recipe.
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
+		GUN_UPGRADE_STEPDELAY_MULT = 1.1,
+		GUN_UPGRADE_RECOIL = 1.2,
 		UPGRADE_BULK = 1
 		)
 	I.req_gun_tags = list(GUN_PROJECTILE)
@@ -512,21 +530,22 @@
 	I.required_qualities = list(QUALITY_WELDING)
 	I.prefix = "composite barreled"
 
-/obj/item/tool_upgrade/refinement/compensatedbarrel
+/obj/item/tool_upgrade/refinement/compensatedbarrel // More accurate tool but slower, faster gun but less hitting
 	name = "gravity compensated barrel"
 	desc = "A barrel extension for welding tools that integrates a miniaturized gravity generator that help keep the torch steady by compensating the weight of the tool. It can also be attached to guns both energy and projectile to offer greater recoil control at the cost of stopping power."
 	icon_state = "compensatedbarrel"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_GOLD = 1)
+	preloaded_reagents = list("aluminum" = 15, "plasticide" = 5, "iron" = 3)
 	price_tag = 175
 
 /obj/item/tool_upgrade/refinement/compensatedbarrel/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.tool_upgrades = list(
-	UPGRADE_PRECISION = 20,
-	UPGRADE_DEGRADATION_MULT = 1.15,
-	UPGRADE_POWERCOST_MULT = 1.05,
-	UPGRADE_FUELCOST_MULT = 1.05,
+	UPGRADE_PRECISION = 15,
+	UPGRADE_DEGRADATION_MULT = 0.90,
+	UPGRADE_WORKSPEED = -0.5,
+	UPGRADE_HEALTH_THRESHOLD = 10,
 	UPGRADE_BULK = 1
 	)
 	I.weapon_upgrades = list(
@@ -546,6 +565,7 @@
 	desc = "A ground-breaking innovation that dampens the vibration of a tool by emitting sound waves in a frequency nobody can hear. It does not make any sense but neither will you by installing that on your tool. Alternatively, it could fit a gun grip to lessen recoil."
 	icon_state = "vibcompensator"
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1, MATERIAL_GOLD = 1)
+	preloaded_reagents = list("aluminum" = 15, "plasticide" = 5, "iron" = 3)
 	price_tag = 120
 
 /obj/item/tool_upgrade/refinement/vibcompensator/New()
@@ -558,7 +578,8 @@
 	)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL = 0.5,
-		UPGRADE_BULK = 0.5
+		UPGRADE_BULK = 0.5,
+		GUN_UPGRADE_PEN_MULT = 0.7
 	)
 	I.gun_loc_tag = GUN_GRIP
 	I.required_qualities = list(QUALITY_CUTTING, QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING, QUALITY_WELDING ,QUALITY_PULSING, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_BONE_SETTING, QUALITY_LASER_CUTTING, QUALITY_BONE_GRAFTING)
@@ -575,6 +596,7 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 1)
 	can_remove = FALSE // To fix exploit of fitting large cells on tools then taking out the mod while conserving a large cell.
 	price_tag = 115
+	preloaded_reagents = list("iron" = 8, "plasticide" = 5)
 
 /obj/item/tool_upgrade/augment/cell_mount/New()
 	..()
@@ -595,6 +617,7 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 1)
 	can_remove = FALSE // To fix exploit of fitting large cells on tools then taking out the mod while conserving a large cell.
 	price_tag = 115
+	preloaded_reagents = list("iron" = 8, "plasticide" = 5)
 
 /obj/item/tool_upgrade/augment/cell_adapt/New()
 	..()
@@ -619,6 +642,7 @@
 	desc = "An auxiliary tank which stores 100 extra units of fuel at the cost of degradation."
 	icon_state = "canister"
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("aluminum" = 15, "plasticide" = 5, "plasma" = 3)
 	price_tag = 90
 
 /obj/item/tool_upgrade/augment/fuel_tank/New()
@@ -660,6 +684,7 @@
 	icon_state = "expand"
 	desc = "A bulky adapter which allows more modifications to be attached to the tool or gun. A bit fragile but you can compensate. Due to its complex design it cannot be removed once installed."
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 1)
+	preloaded_reagents = list("aluminum" = 9, "plasticide" = 5, "iron" = 9)
 	can_remove = FALSE
 	price_tag = 125
 
@@ -687,6 +712,7 @@
 	icon_state = "spike"
 	desc = "An array of sharp bits of steel, seemingly adapted for easy affixing to a tool. Would make it into a better weapon, but won't do much for productivity. Alternatively you could slap it on the end of a gun barrel as a ghetto bayonet at the cost of some accuracy."
 	matter = list(MATERIAL_STEEL = 2)
+	preloaded_reagents = list("iron" = 9)
 	price_tag = 10
 
 /obj/item/tool_upgrade/augment/spikes/New()
@@ -737,6 +763,7 @@
 	I.prefix = "sanctified"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
 
+/*
 /obj/item/tool_upgrade/augment/sanctifier_plus
 	name = "overclocked sanctifier"
 	icon_state = "sanctifier_plus"
@@ -765,6 +792,55 @@
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "over sanctified"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
+*/
+
+/obj/item/tool_upgrade/augment/holy_oils
+	name = "holy oils"
+	icon_state = "oils" //yes it's a recoloured teapot
+	desc = "Oils of unknown composition, used by Factorials to anoint both tools and weapons. Applied properly, they can render a tool more efficient - but require the user to take their time when using it."
+	matter = list(MATERIAL_BIOMATTER = 10)
+	price_tag = 20
+
+/obj/item/tool_upgrade/augment/holy_oils/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+	UPGRADE_SANCTIFY = TRUE,
+	UPGRADE_FORCE_MOD = 8,
+	UPGRADE_PRECISION = 10,
+	UPGRADE_HEALTH_THRESHOLD = 10,
+	UPGRADE_DEGRADATION_MULT = 0.8,
+	UPGRADE_WORKSPEED = -0.5
+	)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = 0.8,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
+	GUN_UPGRADE_MOVE_DELAY_MULT = 1.2,
+	GUN_UPGRADE_CHARGECOST = 0.8
+	)
+	I.gun_loc_tag = GUN_MECHANISM
+	I.prefix = "blessed"
+
+/obj/item/tool_upgrade/augment/crusader_seal
+	name = "righteous seal"
+	desc = "A runic seal that interfaces with a weapon in unclear ways, but which enhances its deadliness at the cost of heightened power drain. Often given as a reward to those who risk their safety in the name of the Absolute."
+	icon_state = "seal"
+	matter = list(MATERIAL_BIOMATTER = 3, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1, MATERIAL_GLASS = 1)
+	price_tag = 160
+
+/obj/item/tool_upgrade/augment/crusader_seal/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.tool_upgrades = list(
+		UPGRADE_FORCE_MULT = 1.1,
+		UPGRADE_FUELCOST_MULT = 1.25
+	)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_MULT = 1.1,
+		GUN_UPGRADE_CHARGECOST = 1.25,
+		UPGRADE_BULK = 0.5,
+		)
+	I.prefix = "righteous"
 
 /*
 /obj/item/tool_upgrade/augment/hammer_addon
@@ -791,6 +867,7 @@
 	desc = "This aural dampener is a cutting edge tool attachment which mostly nullifies sound waves within a tiny radius. It minimises the noise created during use, perfect for stealth operations."
 	icon_state = "dampener"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 1, MATERIAL_PLATINUM = 1)
+	preloaded_reagents = list("mercury" = 20, "lithium" = 15, "iron" = 3)
 	price_tag = 155
 
 /obj/item/tool_upgrade/augment/dampener/New()
@@ -807,10 +884,11 @@
 /obj/item/tool_upgrade/augment/ai_tool
 	name = "nanointegrated AI"
 	desc = "A forgotten Greyson Positronic tech. Due to its unique installation method of \"slapping it hard enough onto anything should do the trick\", it is highly sought after. \
-		A powerful AI will integrate itself into this tool with the aid of nanotechnology and improve it in every way possible."
+		A powerful AI will integrate itself into this tool with the aid of nanotechnology and improve it in every way possible. Once added its embeding into the object making it a permanent integration."
 	icon_state = "ai_tool"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 3, MATERIAL_PLATINUM = 3, MATERIAL_GOLD = 3, MATERIAL_DIAMOND = 1)
 	price_tag = 725
+	can_remove = FALSE
 
 /obj/item/tool_upgrade/augment/ai_tool/New()
 	..()
@@ -820,10 +898,11 @@
 	UPGRADE_PRECISION = 12,
 	UPGRADE_WORKSPEED = 3,
 	UPGRADE_HEALTH_THRESHOLD = -10,
+	UPGRADE_ALLOW_GREYON_MODS = TRUE,
 	)
 	I.weapon_upgrades = list(
+	GUN_UPGRADE_ALLOW_GREYON_MODS = TRUE,
 	GUN_UPGRADE_RECOIL = 0.8,
-	GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.1,
 	GUN_UPGRADE_DAMAGE_MULT = 1.1,
 	GUN_UPGRADE_PEN_MULT = 1.2,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
@@ -834,14 +913,17 @@
 	GUN_UPGRADE_OVERCHARGE_RATE = 1.2
 	)
 	I.prefix = "intelligent"
-	I.req_fuel_cell = REQ_FUEL_OR_CELL
+	I.req_fuel_cell = REQ_CELL
+	I.greyson_moding = TRUE
 
 /obj/item/tool_upgrade/augment/ai_tool_excelsior
 	name = "excelsior nanointegrated AI"
-	desc = "An attempt by the excelsior to copy the superior Greyson nano-AI for their weaponry. It isn't nearly as good, but its cheaper to produce and can fit any weapon, not just energy based, as it draws its power from excelsior teleporation technology."
+	desc = "An attempt by the excelsior to copy the superior Greyson nano-AI for their weaponry. It isn't nearly as good, but its cheaper to produce and can fit any tool, not just energy based, as it draws its power from excelsior teleporation technology.\
+	 Once added its embeding into the object making it a permanent integration."
 	icon_state = "ai_tool_excelsior"
 	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_PLASTEEL = 3, MATERIAL_GOLD = 3)
 	price_tag = 325 //freee markeetttt
+	can_remove = FALSE
 
 /obj/item/tool_upgrade/augment/ai_tool_excelsior/New()
 	..()
@@ -879,6 +961,8 @@
 	UPGRADE_DEGRADATION_MULT = 0.01,
 	UPGRADE_HEALTH_THRESHOLD = 10
 	)
+	I.greyson_moding = TRUE
+	I.req_fuel_cell = REQ_FUEL_OR_CELL
 	I.prefix = "self-repairing"
 
 /obj/item/tool_upgrade/augment/hydraulic

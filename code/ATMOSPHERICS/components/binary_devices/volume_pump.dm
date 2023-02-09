@@ -4,7 +4,7 @@
 	level = BELOW_PLATING_LEVEL
 
 	name = "high power gas pump"
-	desc = "A pump of twice the power of a standard gas pump."
+	desc = "A pump. Has double the power rating of the standard gas pump."
 
 	power_rating = 15000	//15000 W ~ 20 HP
 

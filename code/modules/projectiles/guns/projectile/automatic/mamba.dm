@@ -7,7 +7,7 @@
 	icon_state = "mamba"
 	item_state = "mamba"
 	icon = 'icons/obj/guns/projectile/mamba.dmi'
-	fire_sound = 'sound/weapons/guns/fire/sfrifle_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BACK
 	caliber = CAL_LRIFLE
@@ -16,8 +16,9 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.0
-	zoom_factors = list(0.4)
-	price_tag = 900
+	extra_damage_mult_scoped = 0.2
+	zoom_factors = list(0.8)
+	price_tag = 950
 	init_recoil = CARBINE_RECOIL(1)
 	folding_stock = TRUE
 	can_dual = FALSE //please god please please NO MORE NO MORE GOD, PLEASE
@@ -28,6 +29,7 @@
 		FULL_AUTO_300
 		)
 	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/mamba = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/mamba/update_icon()
 	..()
@@ -58,26 +60,6 @@
 	. = ..()
 	update_icon()
 
-//////////////////
-//6.5mm Viper DMR//
-//////////////////
-/obj/item/gun/projectile/automatic/mamba/viper
-	name = "\"Viper\" DMR"
-	desc = "A variant of the Nadezhda Marshal 6.5mm \"Mamba\" carbine, the \"Viper\" is sports an adjustable recoil compensating stock, a longer barrel and an integrated smart-scope. Perfect for both medium and long range engagements."
-	icon_state = "viper"
-	item_state = "viper"
-	matter = list(MATERIAL_PLASTEEL = 17, MATERIAL_PLASTIC = 9)
-	price_tag = 1000
-	damage_multiplier = 1.2
-	penetration_multiplier = 1.2
-	extra_damage_mult_scoped = 0.2
-	zoom_factors = list(0.8)
-	init_recoil = CARBINE_RECOIL(1.1)
-	folding_stock = FALSE
-	init_firemodes = list(
-		SEMI_AUTO_NODELAY
-		)
-
 /////////////////////////////////////////
 //7.62mm Copperhead w/ grenade launcher//
 /////////////////////////////////////////
@@ -87,14 +69,14 @@
 	icon_state = "copperhead"
 	item_state = "copperhead"
 	icon = 'icons/obj/guns/projectile/copperhead.dmi'
-	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/rifle.ogg'
 	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BACK
 	caliber = CAL_RIFLE
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
-	price_tag = 1000
+	price_tag = 1200
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
 	zoom_factors = list(0.4)
@@ -105,7 +87,7 @@
 		FULL_AUTO_300,
 		list(mode_name="fire 40mm grenade", mode_desc="Shoot the built in underbarrel grenade launcher",  burst=1, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
-
+	gun_parts = list(/obj/item/part/gun/frame/mamba = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 	var/obj/item/gun/projectile/underslung/launcher
 
 /obj/item/gun/projectile/automatic/mamba/copperhead/Initialize()
@@ -157,7 +139,7 @@
 	icon_state = "python"
 	item_state = "python"
 	icon = 'icons/obj/guns/projectile/python.dmi'
-	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/python.ogg'
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	caliber = CAL_RIFLE
@@ -174,7 +156,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SIGHT)
 	folding_stock = FALSE
 	init_firemodes = list(
-		list(mode_name="semi-automatic", mode_desc = "A semi-automatic firemode.", mode_type = /datum/firemode/automatic, fire_delay=15, icon="auto"
+		list(mode_name="semi-automatic", mode_desc = "A semi-automatic firemode.", mode_type = /datum/firemode/automatic, fire_delay=15, icon="semi"
 		))
 
 	wield_delay = 1.5 SECOND
@@ -182,3 +164,14 @@
 
 /obj/item/gun/projectile/automatic/mamba/python/Initialize()
 	. = ..()
+
+/obj/item/part/gun/frame/mamba
+	name = "Mamba frame"
+	desc = "An Mamba carbine frame. A sleek operator's dream."
+	icon_state = "frame_mamba"
+	matter = list(MATERIAL_PLASTEEL = 8)
+	result = /obj/item/gun/projectile/automatic/mamba
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
+	resultvars = list(/obj/item/gun/projectile/automatic/mamba, /obj/item/gun/projectile/automatic/mamba/copperhead)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/lrifle)

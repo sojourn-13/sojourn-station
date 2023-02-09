@@ -20,6 +20,7 @@
 	body_parts_covered = HEAD
 	attack_verb = list("bapped")
 	matter = list(MATERIAL_BIOMATTER = 1)
+	preloaded_reagents = list("woodpulp" = 3)
 
 	var/info		//What's actually written on the paper.
 	var/info_links	//A different version of the paper which includes html links at fields and EOF
@@ -38,6 +39,11 @@
 	var/const/deffont = "Verdana"
 	var/const/signfont = "Times New Roman"
 	var/const/crayonfont = "Comic Sans MS"
+
+/obj/item/paper/ui_host(mob/user)
+	if(istype(loc, /obj/structure/noticeboard))
+		return loc
+	return ..()
 
 /obj/item/paper/card
 	name = "blank card"
@@ -574,14 +580,14 @@
 /*
  * Premade paper
  */
-/obj/item/paper/german
-	language = LANGUAGE_GERMAN
+/obj/item/paper/euro
+	language = LANGUAGE_EURO
 
-/obj/item/paper/russian
+/obj/item/paper/slavic
 	language = LANGUAGE_CYRILLIC
 
-/obj/item/paper/warcrime
-	language = LANGUAGE_SERBIAN
+/obj/item/paper/illyrian
+	language = LANGUAGE_ILLYRIAN
 
 /obj/item/paper/jana
 	language = LANGUAGE_JANA
@@ -595,8 +601,8 @@
 /obj/item/paper/latin
 	language = LANGUAGE_LATIN
 
-/obj/item/paper/esperanto
-	language = LANGUAGE_ESPERANTO
+/obj/item/paper/romana
+	language = LANGUAGE_ROMANA
 
 /obj/item/paper/cult
 	language = LANGUAGE_CULT	//May god save your soul.
