@@ -76,7 +76,7 @@
 	phrase = "Dominus autem dirigat corda vestra in caritate Dei et patientia deus."
 	desc = "Recover from the ravages of wounds and pain."
 	cooldown = TRUE
-	cooldown_time = 15 MINUTES
+	cooldown_time = 5 MINUTES
 	power = 35 //Healing yourself is slightly easier than healing someone else
 	category = "Vitae"
 	nutri_cost = 50//high cost
