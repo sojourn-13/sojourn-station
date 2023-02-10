@@ -224,7 +224,7 @@
 			illegal = TRUE
 
 		if(legal_mechanism != frame_to_mechanism)
-			to_chat(user, SPAN_WARNING("The mechanism installed on \the [src] is too cheap to assemble this kind of high-grade gun!"))
+			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper mechanism for the componence's!"))
 			illegal = TRUE
 
 		if(legal_barrel != frame_to_barrel)
