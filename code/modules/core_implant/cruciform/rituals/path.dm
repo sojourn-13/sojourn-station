@@ -63,9 +63,9 @@
 	desc = "Heal every person who can see and hear you for a fair amount, even if they do not have a cruciform. This prayer uses alot of power and requires five minutes to pass before it can be used again."
 	cooldown = TRUE
 	power = 50
-	cooldown_time = 5 MINUTES
+	cooldown_time = 15 MINUTES
 	cooldown_category = "dhymn" //It shares a cooldown because it replaces divine hymn, not add atop it.
-	nutri_cost = 50//high cost
+	nutri_cost = 150//high cost
 	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/tessellate/heal_heathen_improved/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
@@ -347,7 +347,7 @@
 	desc = "A short litany that removes all pain, it is much stronger then the relief litany, but requires more power and has a five minute recharge time between uses."
 	power = 50
 	cooldown = TRUE
-	cooldown_time = 5 MINUTES
+	cooldown_time = 15 MINUTES
 	cooldown_category = "monopain"
 	ignore_stuttering = TRUE
 	nutri_cost = 50
@@ -361,8 +361,6 @@
 			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			H.vessel.remove_reagent("blood",blood_cost)
 	H.reagents.add_reagent("nepenthe", 10)
-	H.apply_effect(-200, AGONY, 0)
-	H.apply_effect(-200, HALLOSS, 0)
 	H.adjustBruteLoss(-10)
 	H.adjustFireLoss(-10)
 	H.adjustToxLoss(-10)
@@ -415,7 +413,7 @@
 	phrase = "Nolite iudicare, aut vos iudicabimini."
 	desc = "You impart a portion of your inner peace on another, gifting them with insight beyond what they are normally capable of. In doing so, you sacrifice some of your own. Requires ten minutes between uses."
 	cooldown = TRUE
-	cooldown_time = 10 MINUTES
+	cooldown_time = 30 MINUTES
 	cooldown_category = "inner_peace"
 	power = 90
 	nutri_cost = 25
@@ -452,9 +450,9 @@
 	desc = "A litany fashioned after the idea that body and mind can be a fixed point, resisting change in all ways. For a single minute, the speaker slows down drastically, but reduces all damage they \
 	may recieve by half, letting them remain as they are for longer."
 	cooldown = TRUE
-	cooldown_time = 10 MINUTES
+	cooldown_time = 30 MINUTES
 	cooldown_category = "bulwark_of_harmony"
-	effect_time = 1 MINUTES
+	effect_time = 5 MINUTES
 	power = 90
 	nutri_cost = 50
 	blood_cost = 50
@@ -542,7 +540,7 @@
 	phrase = "Fortitudo mea et laus mea Dominus, et sicut in omnibus divitiis."
 	desc = "Knocks over everybody without cruciform in your view range. Though the energy emitted is quite powerful, a vigilant person may resist it. This litany can only be used once every five minutes."
 	cooldown = TRUE
-	cooldown_time = 5 MINUTES
+	cooldown_time = 30 MINUTES
 	cooldown_category = "dflas"
 	power = 50
 	nutri_cost = 50
@@ -616,11 +614,11 @@
 /datum/ritual/cruciform/divisor/divisor_smite
 	name = "Divine Smite"
 	phrase = "Vides quod homines ex eo quod faciunt, non sola fide justificantur."
-	desc = "A short litany spoken in the middle of battle. Considered tricky to use, as it only lasts five seconds, but gives the speaker additional power and strength when swinging a melee weapon. Takes five minutes to recharge."
+	desc = "A short litany spoken in the middle of battle. Considered tricky to use, as it only lasts 30 seconds, but gives the speaker additional power and strength when swinging a melee weapon. Takes five minutes to recharge."
 	cooldown = TRUE
 	cooldown_time = 5 MINUTES
 	cooldown_category = "divisor_smite"
-	effect_time = 5 SECONDS
+	effect_time = 30 SECONDS
 	power = 30
 	nutri_cost = 50
 	blood_cost = 50
@@ -700,11 +698,11 @@
 	desc = "Use the energy in your cruciform to repair all mechanical parts on the bearer, be they synthetic limbs or organs."
 	phrase = "Sic invocamus Absoluta. Ergo omne quod facimus separabuntur."
 	cooldown = TRUE
-	cooldown_time = 15 MINUTES
+	cooldown_time = 10 MINUTES
 	cooldown_category = "repair"
 	power = 35
-	nutri_cost = 50
-	blood_cost = 50 //Aheal but not AOE, so little less bad
+	nutri_cost = 150
+	blood_cost = 80 //Aheal but not AOE, so little less bad
 
 /datum/ritual/cruciform/factorial/self_repair/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
@@ -714,11 +712,10 @@
 			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			user.vessel.remove_reagent("blood",blood_cost)
 	user.visible_message("<b><font color='red'>[user]'s cruciform glows before they suddenly collapse!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration, your cruciform withdrawing everything you have to empower your litany!</font><b>", "<b><font color='red'>You hear a thud!</font><b>")
-	user.AdjustSleeping(15)
 	set_personal_cooldown(user) //This needs at least some downside
 	for(var/obj/item/organ/augmentic in user) // Run this loop for every organ the user has
 		if(augmentic.nature == MODIFICATION_SILICON) // Are the organ made of metal?
-			augmentic.rejuvenate() // Repair the organ
+			augmentic.heal_damage(30, 30, TRUE)
 	to_chat(user, "Your mechanical organs knit themselves back together.")
 
 // Mass-Repair
@@ -727,11 +724,11 @@
 	desc = "Use the energy in your cruciform to repair all mechanical parts of those around you, be they synthetic limbs or organs."
 	phrase = "Nee tamen carnis denigrant noli haec possunt referri. Tu posse reincarnated - renascentes per voluntatem Dei Absoluta ferro."
 	cooldown = TRUE
-	cooldown_time = 40 MINUTES //5 minutes compared to 30 :raised_eyebrow:
+	cooldown_time = 30 MINUTES
 	cooldown_category = "repair"
 	power = 50
-	nutri_cost = 100
-	blood_cost = 75 //This is literally an Aheal, why does it cost less than actual heal ?
+	nutri_cost = 300
+	blood_cost = 125 //This is literally an Aheal, why does it cost less than actual heal ?
 
 /datum/ritual/cruciform/factorial/mass_repair/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	if(user.species?.reagent_tag != IS_SYNTHETIC)
@@ -741,13 +738,12 @@
 			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			user.vessel.remove_reagent("blood",blood_cost)
 	user.visible_message("<b><font color='red'>[user]'s cruciform glows before they suddenly collapse!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration, your cruciform withdrawing everything you have to empower your litany!</font><b>", "<b><font color='red'>You hear a thud!</font><b>")
-	user.AdjustSleeping(30)
 	set_personal_cooldown(user) //This needs at least some downside
 	for(var/mob/living/carbon/human/H in oview(user)) // Affect everyone the user can see.
 		var/synth = FALSE // It is true if at least one of their limbs or organ is synthetic.
 		for(var/obj/item/organ/augmentic in H) // Run this loop for every organ the person has
 			if(augmentic.nature == MODIFICATION_SILICON) // Are the organ made of metal?
-				augmentic.rejuvenate() // Repair the organ
+				augmentic.heal_damage(20, 20, TRUE)
 				to_chat(H, "Your [augmentic.name] repair itself!")
 				synth = TRUE // They have a prosthetic
 		if(synth) // Did they have any prosthetics?
@@ -759,7 +755,7 @@
 	desc = "Channels the power of your cruciform into an incorporeal omnitool."
 	power = 40
 	cooldown = TRUE
-	cooldown_time = 30 SECONDS
+	cooldown_time = 2 MINUTES
 	cooldown_category = "omnitool_litany"
 	success_message = "Your hand glows with holy light, and you feel more in tune with the machinery around you."
 
