@@ -66,6 +66,7 @@
 	icon_state = "[((x + y) ^ ~(x * y) + z) % 25]"
 	update_icon()
 	Initialize()
+	reset_plane_and_layer()
 
 /turf/simulated/floor/holofloor/beach
 	desc = "Uncomfortably gritty for a hologram."
