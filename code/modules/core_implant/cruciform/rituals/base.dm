@@ -327,7 +327,7 @@
 /datum/ritual/cruciform/base/recharge_others
 	name = "Empower"
 	phrase = "Potestas fidei communicanda est."
-	desc = "Help recharge another nearby disciple."
+	desc = "This ritual helps recharging the nearby disciple's cruciform."
 	power = 15
 	nutri_cost = 15
 	blood_cost = 15
