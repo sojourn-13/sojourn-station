@@ -112,7 +112,7 @@
 	power = 50
 	cooldown_time = 30 MINUTES
 	cooldown_category = "dcalculation" //Seperate cooldown since it stuns the user.
-	nutri_cost = 100
+	nutri_cost = 150
 	blood_cost = 50
 
 /datum/ritual/cruciform/tessellate/desperate_calculation/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
@@ -135,7 +135,6 @@
 			heal_other(participant)
 			add_effect(participant, FILTER_HOLY_GLOW, 25)
 		set_personal_cooldown(user)
-		user.AdjustSleeping(30)
 		return TRUE
 	else
 		fail("Your cruciform sings, alone, unto the void.", user, C)
@@ -557,12 +556,41 @@
 	log_and_message_admins("performed an ire litany")
 	for(var/mob/living/victim in view(user))
 		if(!victim.get_core_implant(/obj/item/implant/core_implant/cruciform))
-			if(prob(100 - (victim.stats.getStat(STAT_VIG) * 3)))
+			if(prob(100 - (victim.stats.getStat(STAT_VIG))))
 				to_chat(victim, SPAN_WARNING("You feel a blast of energy that knocks you down!"))
 				victim.Stun(3)
 				victim.Weaken(3)
 			else
 				to_chat(victim, SPAN_NOTICE("Your legs feel numb, but you managed to stay on your feet!"))
+	set_personal_cooldown(user)
+	return TRUE
+
+/datum/ritual/cruciform/divisor/echo_of_blasphemy
+	name = "Echo of Blasphemy"
+	phrase = "Id quod infra non pertinet."
+	desc = "Sets alight and burns anything around you without a cruciform. This litany can only be used once every minute."
+	cooldown = TRUE
+	cooldown_time = 1 MINUTES
+	cooldown_category = "flames_of_fate"
+	power = 5
+	nutri_cost = 15
+	blood_cost = 15
+
+/datum/ritual/cruciform/divisor/echo_of_blasphemy/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
+	playsound(user.loc, 'sound/effects/cascade.ogg', 65, 1)
+	log_and_message_admins("performed an echo_of_blasphemy")
+	for(var/mob/living/victim in oview(2))
+		if(!victim.get_core_implant(/obj/item/implant/core_implant/cruciform))
+			to_chat(victim, SPAN_WARNING("A blast of heat and embers hit you!"))
+			victim.adjust_fire_stacks(5)
+			victim.IgniteMob()
+			victim.adjustFireLoss(30)
 	set_personal_cooldown(user)
 	return TRUE
 
