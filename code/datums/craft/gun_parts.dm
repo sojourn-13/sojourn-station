@@ -228,7 +228,7 @@
 			illegal = TRUE
 
 		if(legal_barrel != frame_to_barrel)
-			to_chat(user, SPAN_WARNING("The barrel installed on \the [src] is too cheap to assemble this kind of high-grade gun!"))
+			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper barrel for the componence's!"))
 			illegal = TRUE
 
 		log_debug("Check Legal Marker 2")
