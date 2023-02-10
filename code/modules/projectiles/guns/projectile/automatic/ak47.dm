@@ -103,7 +103,7 @@
 //AK-47 base-frame
 /obj/item/part/gun/frame/saiga
 	name = "Saiga frame"
-	desc = "An Saiga shotgun frame. Based off the timeless AK design."
+	desc = "A Saiga shotgun frame. Based off the timeless AK design."
 	icon_state = "frame_ak"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/ak47/saiga

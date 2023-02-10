@@ -72,7 +72,7 @@
 	var/list/craft_options = list(
 		"ammunition" = materials_ammo,
 		"RPG shell" = materials_rocket,
-		".70 shell" = materials_rocket,
+		"19mm gyrojet rockets" = materials_rocket,
 		//"armor parts" = materials_armorpart, - Not implimented yet.
 //		"barrels" = "4 plasteel for small; 8 plasteel for large; 16 plasteel for heavy",
 //		"mechanisms" ="5 plasteel for small; 10 plasteel for large; 16 plasteel for heavy",

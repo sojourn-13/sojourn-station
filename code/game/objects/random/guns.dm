@@ -15,6 +15,7 @@
 				/obj/item/part/gun/frame/kalash = 0.5,
 				/obj/item/part/gun/frame/havelock = 0.5,
 				/obj/item/part/gun/frame/sixshot = 0.5,
+				/obj/item/part/gun/frame/luger = 0.5,
 				/obj/random/gun_parts/frames = 3,
 
 				/obj/item/gun/projectile/revolver/rev10/rex10 = 2,\
@@ -444,6 +445,7 @@
 	/obj/item/part/gun/frame/drozd = 4,
 	/obj/item/part/gun/frame/judge = 2,
 	/obj/item/part/gun/frame/grease = 5,
+	/obj/item/part/gun/frame/luger = 5,
 	//obj/item/part/gun/frame/pk = 1,
 	//obj/item/part/gun/frame/tk = 1,
 	/obj/item/part/gun/frame/luty = 6,
@@ -530,8 +532,9 @@
 	/obj/item/part/gun/frame/minstral = 4,
 	/obj/item/part/gun/frame/minotaur = 6,
 	/obj/item/part/gun/frame/tacticool = 8,
+	/obj/item/part/gun/frame/mateba = 1,
 	/obj/item/part/gun/frame/wayfarer = 1,
 	/obj/item/part/gun/frame/bull = 5,
-	/obj/item/part/gun/frame/pug = 7,
+	/obj/item/part/gun/frame/pug = 7
 	))
 

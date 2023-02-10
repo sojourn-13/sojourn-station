@@ -182,7 +182,7 @@
 
 /obj/item/part/gun/frame/sts
 	name = "STS rifle frame"
-	desc = "A STS rifle frame. Cheap, effective, and replacable."
+	desc = "An STS rifle frame. Cheap, effective, and replaceable."
 	icon_state = "frame_sts"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/sts/rifle
