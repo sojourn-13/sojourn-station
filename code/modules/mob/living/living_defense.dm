@@ -389,7 +389,7 @@
 	var/burn_temperature = fire_burn_temperature()
 	var/thermal_protection = get_heat_protection(burn_temperature)
 
-	if (thermal_protection < 1 && bodytemperature < burn_temperature)
+	if (thermal_protection < 1 && bodytemperature < burn_temperature && on_fire)
 		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
 		if(world.time >= next_onfire_brn)
 			next_onfire_brn = world.time + 50
