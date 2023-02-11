@@ -137,7 +137,7 @@
 	icon_base = "tk"
 	icon_state = "tk"
 	item_state = "tk"
-	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_STANMAG
+	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_RIFLE
 	caliber = CAL_LRIFLE
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.2
