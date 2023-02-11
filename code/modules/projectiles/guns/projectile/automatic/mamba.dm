@@ -12,7 +12,7 @@
 	slot_flags = SLOT_BACK
 	caliber = CAL_LRIFLE
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.0

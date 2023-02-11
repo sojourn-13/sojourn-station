@@ -13,7 +13,7 @@
 	item_state = "duty"
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_LRIFLE
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	load_method = SINGLE_CASING|SPEEDLOADER|MAGAZINE
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 25)
 	price_tag = 900
