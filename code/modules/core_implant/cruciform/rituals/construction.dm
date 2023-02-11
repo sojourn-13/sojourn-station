@@ -61,6 +61,8 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	phrase = "Dominus dedit, Dominus abstulit."
 	desc = "Mistakes are to be a lesson, but first we must correct it by deconstructing its form."
 	power = 40
+	nutri_cost = 10
+	blood_cost = 10
 
 /datum/ritual/cruciform/priest/acolyte/deconstruction/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C, list/targets)
 	if(!GLOB.nt_constructs) //Makes sure the list we curated earlier actually exists
