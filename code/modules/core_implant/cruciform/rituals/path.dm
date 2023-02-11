@@ -537,7 +537,7 @@
 /datum/ritual/cruciform/divisor/div_flash
 	name = "Ire"
 	phrase = "Fortitudo mea et laus mea Dominus, et sicut in omnibus divitiis."
-	desc = "Knocks over everybody without cruciform in your view range. Though the energy emitted is quite powerful, a vigilant person may resist it. This litany can only be used once every five minutes."
+	desc = "Knocks over everybody without cruciform in your view range. Though the energy emitted is quite powerful, a vigilant person may resist it. This litany can only be used once every 30 minutes."
 	cooldown = TRUE
 	cooldown_time = 30 MINUTES
 	cooldown_category = "dflas"
