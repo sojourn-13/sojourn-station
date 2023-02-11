@@ -111,7 +111,7 @@
 	cooldown_time = 2 MINUTES
 	power = 45
 	category = "Vitae"
-	nutri_cost = 120
+	nutri_cost = 60
 	blood_cost = 60
 
 /datum/ritual/cruciform/priest/heal_other/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
