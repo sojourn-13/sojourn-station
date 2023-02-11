@@ -364,7 +364,7 @@
 		if (!(T.Adjacent(get_turf(H))))
 			to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
 			return
-		to_chat(H, "<span class='info'>Your cruciform sings a small toon as it gets charged.</span>")
+		to_chat(H, "<span class='info'>Your cruciform sings a small tune as it gets charged.</span>")
 
 		CI.restore_power(10)
 
