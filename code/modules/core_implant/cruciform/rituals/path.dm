@@ -60,7 +60,7 @@
 /datum/ritual/cruciform/tessellate/heal_heathen_improved
 	name = "Healing Word"
 	phrase = "Pastor gregem suum pascet, sive sciens sive ignarus gubernandum."
-	desc = "Heal every person who can see and hear you for a fair amount, even if they do not have a cruciform. This prayer uses alot of power and requires five minutes to pass before it can be used again."
+	desc = "Heal every person who can see and hear you for a fair amount, even if they do not have a cruciform. This prayer uses alot of power and requires 15 minutes to pass before it can be used again."
 	cooldown = TRUE
 	power = 50
 	cooldown_time = 15 MINUTES
