@@ -66,6 +66,8 @@
 	icon_state = "[((x + y) ^ ~(x * y) + z) % 25]"
 	update_icon()
 	Initialize()
+	plane = -2
+	original_plane = -2
 	reset_plane_and_layer()
 
 /turf/simulated/floor/holofloor/beach
