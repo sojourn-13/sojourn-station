@@ -104,9 +104,9 @@
 		participant.updatehealth()
 
 /datum/ritual/cruciform/tessellate/desperate_calculation
-	name = "Martyr's Calculation"
+	name = "Desperate Calculation"
 	phrase = "Et consideremus quomodo ad dilectionem et ad bene operandum se invicem stimemus."
-	desc = "An immensely powerful healing litany that restores any who hear it around the speaker, however the strength of the litany requires so much that the body of the speaker is temporarily stunned. \
+	desc = "An immensely powerful healing litany that restores any who hear it around the speaker, however the strength of the litany requires so much that the body of the speaker is temporarily ravaged by hunger. \
 	Due to the strength of this hymn, it can only be used once every half hour."
 	cooldown = TRUE
 	power = 50
@@ -128,7 +128,7 @@
 			people_around.Add(H)
 
 	if(people_around.len > 0)
-		user.visible_message("<b><font color='red'>[user]'s cruciform glows before they suddenly collapse!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration, your cruciform withdrawing everything you have to empower your litany!</font><b>", "<b><font color='red'>You hear a thud!</font><b>")
+		user.visible_message("<b><font color='red'>[user]'s cruciform glows brightly!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration, your cruciform withdrawing a lot of power to empower your litany!</font><b>", "<b><font color='red'>You hear a small crackle!</font><b>")
 		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 		for(var/mob/living/carbon/human/participant in people_around)
 			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
@@ -765,7 +765,7 @@
 		else
 			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			user.vessel.remove_reagent("blood",blood_cost)
-	user.visible_message("<b><font color='red'>[user]'s cruciform glows before they suddenly collapse!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration, your cruciform withdrawing everything you have to empower your litany!</font><b>", "<b><font color='red'>You hear a thud!</font><b>")
+	user.visible_message("<b><font color='red'>[user]'s cruciform glows before brightly!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration!</font><b>", "<b><font color='red'>You hear a light ticking sound!</font><b>")
 	set_personal_cooldown(user) //This needs at least some downside
 	for(var/mob/living/carbon/human/H in oview(user)) // Affect everyone the user can see.
 		var/synth = FALSE // It is true if at least one of their limbs or organ is synthetic.
