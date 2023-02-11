@@ -32,6 +32,68 @@
 
 	add_hiddenprint(usr)
 
+//admin testing items.
+/obj/item/pen/crayon/crayon_mage // used in admin testing so I don't have to constantly var edit myself to be nearsighted
+	desc = "A admin only item! It gives nearsighted!"
+	name = "Crayon Magic Crayola"
+	icon = 'icons/obj/crayons.dmi'
+	icon_state = "crayonred"
+
+/obj/item/pen/crayon/crayon_mage/attack_self(mob/user)
+	if(user)
+		user.disabilities|=NEARSIGHTED
+
+/obj/structure/sink/basion/crayon //BLOOD FONT!
+	name = "blood basion"
+	desc = "A deep basin of polished stone that forever fills with gore."
+	icon_state = "BaptismFont_Water"
+	limited_reagents = FALSE
+	refill_rate = 200
+	reagent_id = "blood"
+
+/obj/structure/sink/basion/crayon/attack_hand(mob/living/carbon/human/user) //gives us bloody hands for writing spells.
+	if (istype(user))
+		add_fingerprint(user)
+		if (user.gloves)
+			return FALSE
+		var/taken = rand(3,5)
+		to_chat(user, SPAN_NOTICE("You get some blood on your hands."))
+		if (!user.blood_DNA)
+			user.blood_DNA = list()
+		user.blood_DNA |= blood_DNA.Copy()
+		user.bloody_hands += taken
+		user.hand_blood_color = "red"
+		user.update_inv_gloves(1)
+		user.verbs += /mob/living/carbon/human/proc/bloody_doodle
+
+//declaration of scroll base, this will have the vars ALL scrolls use and the blank icon
+//obj/item/scroll
+//declaration of scroll ready, This is the ready to go scroll. Sealed up and ready to kick ass. Needs proc for using when lit. Potentially needs process proc.
+//obj/item/scroll/sealed
+
+/*start of scroll based spells we use these to assing spells to the blank scroll before finishing it with bees wax.
+/obj/effect/decal/cleanable/crayon/attackby(obj/item/I, mob/living/carbon/human/M)
+	..()
+	if(istype(I, /obj/item/scroll) && !istype(I, /obj/item/scroll/sealed) && M.stats.getPerk(PERK_SCRIBE)) // we have to have the new perk for this.
+		if(M.disabilities&BLIND && is_rune && M.species?.reagent_tag != IS_SYNTHETIC) // we are BLIND for this. You wont be able to use normal rituals!
+
+			//Anti-Death check
+			if(M.maxHealth <= 30)
+				to_chat(M, "<span class='info'>You try to do as the book describes but your frail body condition physically prevents you from even mumbling a single word out of its pages.</span>")
+				return
+
+			var/datum/reagent/organic/blood/B = M.get_blood()
+			var/candle_amount = 0
+			to_chat(M, "<span class='info'>The smell of iron and burning paper fills the air.</span>")
+
+			for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) //Dont forget to clear your old work
+				if(spell.message == "scroll spell name here" && candle_amount >= 7)
+					babel_spell(M)
+					continue
+			return
+*/
+
+//start of book based spells
 /obj/effect/decal/cleanable/crayon/attackby(obj/item/I, mob/living/carbon/human/M)
 	..()
 	if(istype(I, /obj/item/oddity/common/book_unholy) || istype(I, /obj/item/oddity/common/book_omega))
@@ -101,8 +163,13 @@
 				if((spell.message == "Bees." || spell.message == "Bees!") && candle_amount >= 4)
 					bees_spell(M)
 					continue
+
+				if(spell.message == "Scribe" && candle_amount >= 7)
+					scribe_spell(M)
+					continue
 			return
 
+//start of ritual knife spells
 	if(istype(I, /obj/item/tool/knife/ritual) || istype(I, /obj/item/tool/knife/neotritual))
 		if(M.disabilities&NEARSIGHTED && is_rune && M.species?.reagent_tag != IS_SYNTHETIC)
 
@@ -146,10 +213,16 @@
 			if(spell.message == "Equalize." && candle_amount >= 6)
 				equalize_spell(M)
 				continue
+/* needs scrolls first
+			if(spell.message == "Scroll" && candle_amount >= 7)
+				scroll_spell(M)
+				continue
+*/
 			return
 		return
 	return
 
+//book spell procs
 /obj/effect/decal/cleanable/crayon/proc/babel_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.add_language(LANGUAGE_CULT)
@@ -158,26 +231,6 @@
 	M.health -= 20
 	B.remove_self(50)
 	M.unnatural_mutations.total_instability += 15
-	return
-
-/obj/effect/decal/cleanable/crayon/proc/recipe_spell(mob/living/carbon/human/M)
-	var/datum/reagent/organic/blood/B = M.get_blood()
-	for(var/obj/item/paper/P in oview(1)) // Must be on the spell circle
-		to_chat(M, "<span class='info'>A echoing sound of scribbling fills the air.</span>")
-		B.remove_self(20)
-		var/obj/item/alchemy/recipe_scroll/S = new /obj/item/alchemy/recipe_scroll
-		S.loc = P.loc
-		qdel(P)
-	return
-
-/obj/effect/decal/cleanable/crayon/proc/brew_spell(mob/living/carbon/human/M)
-	var/datum/reagent/organic/blood/B = M.get_blood()
-	M.maxHealth -= 25
-	M.health -= 25
-	B.remove_self(50)
-	M.metabolism_effects.nsa_bonus -= 25 //Works to balance out the NSA given from the perk. That way those who get it naturally have a bonus.
-	M.stats.addPerk(PERK_ALCHEMY)
-	to_chat(M, "<span class='warning'>Your mind expands with creations lost. Your body feels sick.</span>")
 	return
 
 /obj/effect/decal/cleanable/crayon/proc/ignorance_spell(mob/living/carbon/human/M)
@@ -304,6 +357,27 @@
 			bluespace_entropy(-5, get_turf(src), TRUE)
 	return
 
+/obj/effect/decal/cleanable/crayon/proc/brew_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	M.maxHealth -= 25
+	M.health -= 25
+	B.remove_self(50)
+	M.metabolism_effects.nsa_bonus -= 25 //Works to balance out the NSA given from the perk. That way those who get it naturally have a bonus.
+	M.stats.addPerk(PERK_ALCHEMY)
+	to_chat(M, "<span class='warning'>Your mind expands with creations lost. Your body feels sick.</span>")
+	return
+
+
+/obj/effect/decal/cleanable/crayon/proc/recipe_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	for(var/obj/item/paper/P in oview(1)) // Must be on the spell circle
+		to_chat(M, "<span class='info'>A echoing sound of scribbling fills the air.</span>")
+		B.remove_self(20)
+		var/obj/item/alchemy/recipe_scroll/S = new /obj/item/alchemy/recipe_scroll
+		S.loc = P.loc
+		qdel(P)
+	return
+
 /obj/effect/decal/cleanable/crayon/proc/bees_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.maxHealth -= 10
@@ -317,6 +391,16 @@
 			qdel(G)
 	return
 
+/obj/effect/decal/cleanable/crayon/proc/scribe_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	M.maxHealth -= 25
+	M.health -= 25
+	B.remove_self(100)
+	M.stats.addPerk(PERK_SCRIBE)
+	to_chat(M, "<span class='warning'>In a single moment your vision vanishes. The understanding of scrolls fills your mind.</span>")
+	return
+
+//ritual knife spell procs
 /obj/effect/decal/cleanable/crayon/proc/voice_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.add_language(LANGUAGE_OCCULT)
@@ -360,7 +444,7 @@
 
 /obj/effect/decal/cleanable/crayon/proc/cards_to_life_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	for(var/obj/item/card_carp/carpy in oview(1)) // would be broken if wider effect. Could activate thru walls.
+	for(var/obj/item/card_carp/carpy in oview(1))
 		to_chat(M, "<span class='warning'>The card rotates 90 degrees then begins to fold, twisting till it breaks open with a ripping sound.</span>")
 		B.remove_self(50)
 		var /monstermob = /mob/living/simple_animal/hostile/creature
@@ -411,7 +495,8 @@
 			return
 		//burrow
 		if(istype(carpy, /obj/item/card_carp/warren))
-			new /obj/structure/burrow(carpy.loc)
+			var/obj/structure/burrow/diggy_hole = new /obj/structure/burrow(carpy.loc)
+			diggy_hole.deepmaint_entry_point = TRUE
 			qdel(carpy)
 			return
 
@@ -433,6 +518,7 @@
 		target.maxHealth *= 0.2
 		target.health *= 0.2
 	return
+
 /obj/effect/decal/cleanable/crayon/proc/equalize_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 
@@ -470,3 +556,14 @@
 	else M.vessel.remove_reagent("blood", ((M.get_blood_volume() * 0.01) - bloodpercent) * M.species.blood_volume)
 	B.remove_self(min(20 * targets.len, 80))
 	return
+/* code for the scroll creation spell. Needs scrolls in first.
+/obj/effect/decal/cleanable/crayon/proc/scroll_spell(mob/living/carbon/human/M) //able to be cast by all. But only filled out by scribes.
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	for(var/mob/living/carbon/superior_animal/target in oview(1))
+		B.remove_self(50)
+		new /obj/item/scroll(src.loc)
+	for(var/mob/living/simple_animal/target in oview(1))
+		B.remove_self(50)
+		new /obj/item/scroll(src.loc)
+	return
+*/
