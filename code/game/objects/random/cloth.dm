@@ -368,6 +368,7 @@
 	return pickweight(list(/obj/item/clothing/glasses/eyepatch = 4,
 				/obj/item/clothing/glasses/binoclard_lenses = 2,
 				/obj/item/clothing/glasses/regular/gglasses = 2,
+				/obj/item/clothing/glasses/regular/hack_lens = 2,
 				/obj/item/clothing/glasses/hud/health = 2,
 				/obj/item/clothing/glasses/hud/security = 2,
 				/obj/item/clothing/glasses/sechud/tactical = 2,

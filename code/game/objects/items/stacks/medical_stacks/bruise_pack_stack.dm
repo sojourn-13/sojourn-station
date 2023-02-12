@@ -140,6 +140,7 @@
 	bio_requirement = 25
 	stacktype_alt = /obj/item/stack/medical/bruise_pack/advanced
 	disinfectant  = TRUE
+	fancy_icon = FALSE
 
 /obj/item/stack/medical/bruise_pack/advanced/large
 	name = "large advanced trauma kit"
@@ -159,7 +160,6 @@
 	consumable = TRUE
 	matter = list(MATERIAL_BIOMATTER = 2.5)
 	natural_remedy = TRUE
-	fancy_icon = FALSE
 	perk_required = TRUE
 	needed_perk = PERK_BUTCHER
 	bio_requirement = 10 // So simple a tribal can do it, still has a small check to use.
@@ -184,8 +184,8 @@
 	name = "non-sterile bandages"
 	singular_name = "non-sterile bandage"
 	desc = "Parts of cloth that can be wrapped around bloody stumps."
-	icon_state = "hm_brutepack"
-	fancy_icon = FALSE
+	icon_state = "makeshiftbandaid" //Ezoken#5894 made the sprites
+	fancy_icon = TRUE
 
 /obj/item/stack/medical/bruise_pack/soteria
 	name = "Soteria medical gauze"
