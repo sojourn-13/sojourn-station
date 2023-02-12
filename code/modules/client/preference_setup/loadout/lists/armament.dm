@@ -91,10 +91,6 @@
 	display_name = "katana \"Saya\" sheath"
 	path = /obj/item/clothing/accessory/holster/saber/saya
 
-/datum/gear/armament/holster/saber/machete
-	display_name = "machete scabbard"
-	path = /obj/item/clothing/accessory/holster/saber/machete
-
 /datum/gear/armament/holster/church
 	display_name = "Absolutist Sword Scabbard"
 	path = /obj/item/clothing/accessory/holster/saber/greatsword/churchprint
@@ -108,11 +104,6 @@
 /datum/gear/armament/cutlass
 	display_name = "cutlass"
 	path = /obj/item/tool/sword/saber/cutlass
-	cost = 3
-
-/datum/gear/armament/machete
-	display_name = "Machete"
-	path = /obj/item/tool/sword/machete
 	cost = 3
 
 /datum/gear/armament/cheap_melee
