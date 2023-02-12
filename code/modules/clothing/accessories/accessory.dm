@@ -531,9 +531,9 @@
 	icon_state = "tacpon_ghillie"
 
 /obj/item/clothing/accessory/tacticalponcho/limegreen
-	name = "lime green tactical poncho"
+	name = "cowboy tactical poncho"
 	desc = "A sleek lime green poncho."
-	icon_state = "tacpon_limegreen"
+	icon_state = "tacpon_cowboyponcho"
 
 /obj/item/clothing/accessory/colorponcho
 	name = "tactical poncho"
