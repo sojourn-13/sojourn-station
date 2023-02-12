@@ -544,3 +544,52 @@
 	armor_penetration = ARMOR_PEN_DEEP
 	price_tag = 500
 	matter = list(MATERIAL_STEEL = 22, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 4)
+
+//Shitty loadout weapons
+/obj/item/tool/cheap
+	name = "cheap sword"
+	desc = "A sword of acceptable quality, mass-produced by Lonestar. It's no work art, but it's sharp enough to get the job done."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "cheap_sword"
+	item_state = "cheap_sword"
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
+	sharp = TRUE
+	edge = TRUE
+	w_class = ITEM_SIZE_NORMAL
+	slot_flags = SLOT_BELT
+	worksound = WORKSOUND_HARD_SLASH
+	force = WEAPON_FORCE_ROBUST
+	armor_penetration = ARMOR_PEN_DEEP
+
+	throwforce = WEAPON_FORCE_NORMAL
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
+	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
+	w_class = ITEM_SIZE_NORMAL
+	price_tag = 100
+
+/obj/item/tool/cheap/axe
+	name = "cheap tomahawk"
+	desc = "A tomahawk of acceptable quality, mass-produced by Lonestar. Just expensive enough to be called tactical."
+	icon_state = "cheap_axe"
+	item_state = "cheap_axe"
+	attack_verb = list("attacked", "slashed", "chopped", "sliced", "torn", "ripped", "diced", "cut")
+
+/obj/item/tool/cheap/katana
+	name = "cheap katana"
+	desc = "A katana of acceptable quality, mass-produced by Lonestar. Easily their best-selling product from this lineup."
+	icon_state = "katana_old"
+	item_state = "katana"
+
+/obj/item/tool/cheap/spear
+	name = "cheap spear"
+	desc = "A spear of acceptable quality, mass-produced by Lonestar. Place sharp end towards enemy."
+	icon_state = "cheap_spear"
+	item_state = "cheap_spear"
+
+/obj/item/tool/cheap/saber
+	name = "cheap saber"
+	desc = "A spear of acceptable quality, mass-produced by Lonestar. Probably not fit for parrying, but why not give it a try?"
+	icon_state = "cheap_saber"
+	item_state = "cutlass"
