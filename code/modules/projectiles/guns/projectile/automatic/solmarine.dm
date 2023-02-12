@@ -154,8 +154,8 @@
 	desc = "A Solmarine carbine frame. For those who want to LARP 600 years in the past."
 	icon_state = "frame_sol"
 	matter = list(MATERIAL_PLASTEEL = 8)
-	result = /obj/item/gun/projectile/automatic/omnirifle/solmarine
-	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
+	result = /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
+	gripvars = list(/obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black)
 	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle/solmarine, /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
 	barrelvars = list(/obj/item/part/gun/barrel/srifle)
