@@ -13,8 +13,8 @@
 		else
 			new /obj/item/reagent_containers/food/snacks/openable/mre/alt(src)
 		new /obj/item/tool/knife/dagger(src)
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
+		new /obj/item/stack/medical/bruise_pack/advanced(src)
+		new /obj/item/stack/medical/ointment/advanced(src)
 	else if(prob(10)) //Welcome to the colony pack, heres yer pda, id, wallet, and a gun.
 		new /obj/item/oddity/common/old_pda(src)
 		new /obj/item/oddity/common/old_id(src)
@@ -34,10 +34,10 @@
 
 /obj/item/storage/box/vendor_lootbox/combat_basic_light/populate_contents()
 	if(prob(10)) //Medical man!
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
+		new /obj/item/stack/medical/bruise_pack/advanced(src)
+		new /obj/item/stack/medical/bruise_pack/advanced(src)
+		new /obj/item/stack/medical/ointment/advanced(src)
+		new /obj/item/stack/medical/ointment/advanced(src)
 		new /obj/item/storage/pill_bottle/dylovene(src)
 	else if(prob(10)) //Time to kick ass!
 		new /obj/item/clothing/gloves/thick/combat(src)
@@ -59,10 +59,10 @@
 
 /obj/item/storage/box/vendor_lootbox/combat_basic_medium/populate_contents()
 	if(prob(10))
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
+		new /obj/item/stack/medical/bruise_pack/advanced(src)
+		new /obj/item/stack/medical/bruise_pack/advanced(src)
+		new /obj/item/stack/medical/ointment/advanced(src)
+		new /obj/item/stack/medical/ointment/advanced(src)
 		new /obj/item/storage/pill_bottle/dylovene(src)
 	else if(prob(10))
 		new /obj/item/clothing/gloves/thick/combat(src)
@@ -84,10 +84,10 @@
 
 /obj/item/storage/box/vendor_lootbox/combat_basic_high/populate_contents()
 	if(prob(10))
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/bruise_pack(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
-		new /obj/item/stack/medical/advanced/ointment(src)
+		new /obj/item/stack/medical/bruise_pack/advanced(src)
+		new /obj/item/stack/medical/bruise_pack/advanced(src)
+		new /obj/item/stack/medical/ointment/advanced(src)
+		new /obj/item/stack/medical/ointment/advanced(src)
 		new /obj/item/storage/pill_bottle/dylovene(src)
 	else if(prob(10))
 		new /obj/item/clothing/gloves/thick/combat(src)

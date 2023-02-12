@@ -16,6 +16,8 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			continue
 		if(blueprint_type == /datum/nt_blueprint/weapons)
 			continue
+		if(blueprint_type == /datum/nt_blueprint/health_care)
+			continue
 		var/datum/nt_blueprint/pb = new blueprint_type()
 		list[pb.name] = pb
 	. = list
@@ -600,3 +602,42 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 		/obj/item/stack/material/silver = 5
 	)
 	build_time = 8 SECONDS
+
+//For making medical stuff
+
+/datum/nt_blueprint/health_care/nt_firstaid
+	name = "Absolutism Medkit"
+	build_path = /obj/item/storage/firstaid/nt
+	materials = list(
+		/obj/item/stack/material/biomatter = 105,
+		/obj/item/stack/material/plastic = 4,
+		/obj/item/stack/material/glass = 2,
+		/obj/item/stack/material/gold = 2,
+		/obj/item/stack/material/silver = 2
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/health_care/nt_ointment
+	name = "Absolutism Burnpack"
+	build_path = /obj/item/stack/medical/ointment/advanced/nt
+	materials = list(
+		/obj/item/stack/material/biomatter = 25,
+		/obj/item/stack/material/plastic = 2,
+		/obj/item/stack/material/glass = 1,
+		/obj/item/stack/material/gold = 1,
+		/obj/item/stack/material/silver = 1
+	)
+	build_time = 5 SECONDS
+
+/datum/nt_blueprint/health_care/nt_bruise_pack
+	name = "Absolutism Bruisepack"
+	build_path = /obj/item/stack/medical/bruise_pack/advanced/nt
+	materials = list(
+		/obj/item/stack/material/biomatter = 25,
+		/obj/item/stack/material/plastic = 2,
+		/obj/item/stack/material/glass = 1,
+		/obj/item/stack/material/gold = 1,
+		/obj/item/stack/material/silver = 1
+	)
+	build_time = 5 SECONDS
+
