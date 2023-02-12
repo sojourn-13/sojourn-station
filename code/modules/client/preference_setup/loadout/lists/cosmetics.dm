@@ -36,5 +36,5 @@
 	display_name = "Ear accesories"
 	sort_category = "Cosmetics"
 	path = /obj/item/clothing/head/pin/ear_pin
-	flags = GEAR_HAS_TYPE_SELECTION
+	flags = GEAR_HAS_TYPE_SELECTION | GEAR_HAS_COLOR_SELECTION
 	cost = 0
