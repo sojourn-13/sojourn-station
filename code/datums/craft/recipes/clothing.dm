@@ -177,7 +177,7 @@
 
 /datum/craft_recipe/clothing/heavy_scav
 	name = "scavenger plate armor"
-	result = /obj/item/clothing/suit/armor/heavy/riot/scav
+	result = /obj/item/clothing/suit/storage/scav_heavy
 	steps = list(
 		list(/obj/item/clothing/suit/storage/scavengerarmor, 1),
 		list(QUALITY_CUTTING, 15, 15), //Cut apart the armour to be remade
