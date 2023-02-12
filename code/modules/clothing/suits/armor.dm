@@ -557,6 +557,7 @@
 	icon_state = "riot_ironhammer"
 	item_state = "swat_suit"
 
+
 /*
  * Storage Types
  */
