@@ -184,7 +184,7 @@
 	name = "non-sterile bandages"
 	singular_name = "non-sterile bandage"
 	desc = "Parts of cloth that can be wrapped around bloody stumps."
-	icon_state = "makeshiftbandaid"
+	icon_state = "makeshiftbandaid" //Ezoken#5894 made the sprites
 	fancy_icon = TRUE
 
 /obj/item/stack/medical/bruise_pack/soteria
