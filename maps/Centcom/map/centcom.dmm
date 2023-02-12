@@ -3030,7 +3030,6 @@
 	},
 /obj/item/tool/hemostat,
 /obj/item/tool/scalpel,
-/obj/item/stack/medical/advanced/bruise_pack,
 /turf/simulated/floor/tiled/white/cargo,
 /area/shuttle/skipjack_area)
 "iH" = (
@@ -5030,7 +5029,6 @@
 /area/centcom/raider_base)
 "nD" = (
 /obj/structure/table/standard,
-/obj/item/stack/medical/advanced/bruise_pack,
 /obj/item/device/radio/intercom/syndicate{
 	dir = 8;
 	pixel_x = 22
@@ -5311,12 +5309,6 @@
 	icon_state = "freezerfloor"
 	},
 /area/wizard_station)
-"os" = (
-/obj/structure/largecrate/animal/cow,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
-	},
-/area/centcom/evac)
 "ot" = (
 /obj/machinery/gibber,
 /obj/effect/floor_decal/industrial/danger/full,
@@ -5382,18 +5374,6 @@
 	icon_state = "9,23"
 	},
 /area/centcom/evac)
-"oB" = (
-/obj/structure/largecrate/animal/bear,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
-	},
-/area/centcom/evac)
-"oC" = (
-/obj/structure/largecrate/animal/p_bear,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
-	},
-/area/centcom/evac)
 "oD" = (
 /mob/living/simple_animal/hostile/bioshock,
 /turf/simulated/floor/fixed/fgrass,
@@ -5401,30 +5381,6 @@
 "oE" = (
 /turf/simulated/floor/carpet/purcarpet,
 /area/centcom/raider_base)
-"oF" = (
-/obj/structure/largecrate/animal/chick,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
-	},
-/area/centcom/evac)
-"oG" = (
-/obj/structure/largecrate/animal/cat,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
-	},
-/area/centcom/evac)
-"oH" = (
-/obj/structure/largecrate/animal/goat,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
-	},
-/area/centcom/evac)
-"oI" = (
-/obj/structure/largecrate/animal/pig,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
-	},
-/area/centcom/evac)
 "oJ" = (
 /obj/effect/window_lwall_spawn/smartspawnplasma,
 /obj/structure/disposalpipe/segment{
@@ -5572,8 +5528,11 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/obj/item/storage/deferred/surgery,
 /obj/structure/table/glass,
+/obj/item/stack/medical/ointment/advanced/large{
+	pixel_y = 9
+	},
+/obj/item/stack/medical/bruise_pack/advanced/large,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "pN" = (
@@ -5863,13 +5822,6 @@
 /obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/tiled/white,
 /area/centcom/raider_base)
-"wm" = (
-/obj/machinery/power/nt_obelisk,
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/golden,
-/area/centcom/evac)
 "wx" = (
 /obj/structure/table/marble,
 /obj/item/reagent_containers/food/snacks/dough,
@@ -6510,10 +6462,6 @@
 /obj/item/tool/sword/crusader/nt_sword_truth,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
-"Kr" = (
-/obj/machinery/chemical_dispenser/beer,
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/centcom/evac)
 "Ks" = (
 /obj/structure/railing{
 	dir = 1
@@ -6794,13 +6742,6 @@
 /obj/item/computer_hardware/hard_drive/portable/design/excelsior,
 /obj/item/computer_hardware/hard_drive/portable/design/excelsior_weapons,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/centcom/evac)
-"QF" = (
-/obj/machinery/power/nt_obelisk,
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
 "QI" = (
 /obj/structure/table/woodentable,
@@ -15657,7 +15598,7 @@ dj
 dn
 cN
 pC
-wm
+pC
 pC
 cN
 dn
@@ -18081,7 +18022,7 @@ cN
 dn
 cN
 Qp
-QF
+Qp
 Qp
 cN
 dn
@@ -19095,7 +19036,7 @@ jf
 jy
 hZ
 aD
-os
+oh
 ho
 KR
 qH
@@ -19297,7 +19238,7 @@ dT
 dn
 dn
 dT
-os
+oh
 ho
 KR
 qH
@@ -19701,7 +19642,7 @@ dn
 ek
 dn
 dn
-oB
+oh
 ho
 KR
 qH
@@ -19903,7 +19844,7 @@ dU
 oi
 hA
 dn
-oC
+oh
 ho
 KR
 qH
@@ -20509,7 +20450,7 @@ dn
 dn
 dn
 dn
-os
+oh
 ho
 KR
 qH
@@ -20711,7 +20652,7 @@ oh
 oh
 oh
 dn
-os
+oh
 ho
 KR
 qH
@@ -20913,7 +20854,7 @@ oh
 oj
 hA
 dn
-os
+oh
 ho
 KR
 qH
@@ -21115,7 +21056,7 @@ oh
 oh
 oh
 dn
-os
+oh
 ho
 KR
 qH
@@ -21720,7 +21661,7 @@ aD
 dn
 dn
 dn
-Kr
+dn
 aD
 ho
 KR
@@ -22327,7 +22268,7 @@ dT
 dn
 dn
 dT
-oF
+oh
 ho
 KR
 qH
@@ -22529,7 +22470,7 @@ dn
 dn
 dn
 dn
-oG
+oh
 ho
 KR
 qH
@@ -22731,7 +22672,7 @@ oA
 dn
 dn
 dn
-oH
+oh
 ho
 KR
 qH
@@ -22933,7 +22874,7 @@ dn
 dn
 dn
 dn
-oI
+oh
 ho
 KR
 qH
