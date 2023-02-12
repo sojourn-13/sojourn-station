@@ -208,7 +208,7 @@
 					choice = input(user, "Which type of part do you want to craft?") as null|anything in list("Barrels", "Mechanisms")
 					switch(choice)
 						if("Barrels")
-							choice = input(user) as null|anything in list("9mm barrel", "10mm barrel", "6.5mm barrel", "caseless barrel", "7.62 barrel", "Shotgun barrel")
+							choice = input(user) as null|anything in list("9mm barrel", "10mm barrel", "6.5mm barrel", "caseless barrel", "7.62 barrel", "8.6mm barrel", "Shotgun barrel")
 							switch(choice)
 								if("9mm barrel")
 									required_resources = materials_sbarrel_steel
@@ -225,6 +225,9 @@
 								if("7.62mm barrel")
 									required_resources = materials_lbarrel_steel
 									items_to_spawn = list("" = /obj/item/part/gun/barrel/lrifle/steel)
+								if("8.6mm barrel")
+									required_resources = materials_lbarrel_steel
+									items_to_spawn = list("" = /obj/item/part/gun/barrel/hrifle/steel)
 								if("Shotgun barrel")
 									required_resources = materials_lbarrel_steel
 									items_to_spawn = list("" = /obj/item/part/gun/barrel/shotgun/steel)
