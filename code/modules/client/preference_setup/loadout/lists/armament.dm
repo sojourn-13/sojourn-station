@@ -115,6 +115,17 @@
 	path = /obj/item/tool/sword/machete
 	cost = 3
 
+/datum/gear/armament/cheap_melee
+	display_name = "cheap melee selection"
+	path = /obj/item/tool/cheap
+	cost = 3
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/armament/cheap_sheath
+	display_name = "generic scabbard"
+	path = /obj/item/clothing/accessory/holster/saber/machete/cheap
+	cost = 1
+
 /datum/gear/armament/holster/nt
 	display_name = "short sword"
 	path = /obj/item/tool/sword/nt/shortsword
