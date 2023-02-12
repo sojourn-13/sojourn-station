@@ -96,15 +96,11 @@
 	path = /obj/item/clothing/accessory/holster/saber/greatsword/churchprint
 	allowed_roles = list("Prime","Vector")
 
-/datum/gear/armament/makeshift/saber
+/datum/gear/armament/saber
 	display_name = "Decorative Saber"
 	path = /obj/item/tool/sword/saber
 	cost = 2
-
-/datum/gear/armament/cutlass
-	display_name = "cutlass"
-	path = /obj/item/tool/sword/saber/cutlass
-	cost = 3
+	allowed_roles = list("Premier","Steward","Blackshield Commander","Warrant Officer")
 
 /datum/gear/armament/cheap_melee
 	display_name = "cheap melee selection"
