@@ -125,9 +125,9 @@
 
 /obj/item/storage/firstaid/adv/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
@@ -188,7 +188,7 @@
 	new /obj/item/tool/scalpel(src)
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/tool/surgicaldrill(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
 
 /obj/item/storage/firstaid/surgery/traitor
 	name = "conspicuous surgery kit"
@@ -208,7 +208,7 @@
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/device/scanner/health(src)
 	new /obj/item/tool/surgicaldrill/adv(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/reagent_containers/syringe/stim/ultra_surgeon(src) // Antags don't come with the medical perk, this helps them make use of the ATK provided
 
@@ -232,7 +232,7 @@
 		/obj/item/reagent_containers/syringe,
 		/obj/item/storage/pill_bottle,
 		/obj/item/tool/medmultitool,
-		/obj/item/stack/medical/advanced/bruise_pack
+		/obj/item/stack/medical/bruise_pack/advanced
 		)
 
 /obj/item/storage/firstaid/surgery/combat/populate_contents()
@@ -246,7 +246,7 @@
 	new /obj/item/tool/surgicaldrill/adv(src)
 	new /obj/item/reagent_containers/syringe/stim/ultra_surgeon(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
 
 /obj/item/storage/firstaid/surgery/si
 	name = "advanced surgery kit"
@@ -270,7 +270,7 @@
 	new /obj/item/tool/tape_roll/bonegel/si(src)
 	new /obj/item/tool/saw/circular/medical/si(src)
 	new /obj/item/tool/surgicaldrill/adv/si(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
 
 /obj/item/storage/firstaid/ifak
 	name = "IFAK"
@@ -360,10 +360,10 @@
 
 /obj/item/storage/firstaid/nt/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack/nt(src)
-	new /obj/item/stack/medical/advanced/bruise_pack/nt(src)
-	new /obj/item/stack/medical/advanced/ointment/nt(src)
-	new /obj/item/stack/medical/advanced/ointment/nt(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/nt(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/nt(src)
+	new /obj/item/stack/medical/ointment/advanced/nt(src)
+	new /obj/item/stack/medical/ointment/advanced/nt(src)
 	new /obj/item/reagent_containers/syringe/large/antitoxin(src)
 	new /obj/item/reagent_containers/syringe/large/inaprovaline(src)
 
@@ -402,10 +402,10 @@
 
 /obj/item/storage/firstaid/soteria/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
 	new /obj/item/reagent_containers/syringe/tricordrazine(src)
@@ -434,10 +434,10 @@
 
 /obj/item/storage/firstaid/soteria/large/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
