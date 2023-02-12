@@ -79,7 +79,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	if(H && H.stats.getPerk(PERK_NEPOTISM))
 		nepotism += 0.3
 	if(H && H.stats.getPerk(PERK_DEBTOR))
-		nepotism -= 0.5
+		nepotism -= 0.2
 	set_nepotismMod(nepotism)
 	//set_nepotismMod(1)
 

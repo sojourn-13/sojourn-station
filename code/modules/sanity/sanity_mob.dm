@@ -160,7 +160,7 @@
 			breakdowns -= B
 
 /datum/sanity/proc/handle_Insight()
-	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.4 : 1) * (owner.stats.getPerk(PERK_COGENHANCE) ? 1.1 : 1))
+	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.4 : 1) * (owner.stats.getPerk(PERK_FAST_MIND) ? 1.3 : 1) * (owner.stats.getPerk(PERK_COGENHANCE) ? 1.1 : 1))
 	if(resting < max_resting && insight >= 100)
 		if(!rest_timer_active)//Prevent any exploits(timer is only active for one minute tops)
 			give_resting(1)

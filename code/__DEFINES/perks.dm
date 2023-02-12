@@ -87,6 +87,7 @@
 #define PERK_DIVERSE_CULTURE /datum/perk/linguist_for_humans
 //Exalt Human
 #define PERK_SPLICER /datum/perk/splicer
+#define PERK_FAST_MIND /datum/perk/fast_mind
 //Sablekyne
 #define PERK_LASTSTAND /datum/perk/laststand
 #define PERK_BONE /datum/perk/bone

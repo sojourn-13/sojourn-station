@@ -47,27 +47,29 @@
 	However, no life is perfect. Life as an Exalt is an expensive one, and low-income humans can't support. A combination of royalty fees for licensed genomes \
 	and costly maintenance leave even middle-class exalts paying huge sums of money, often taken directly from their paychecks. Exalts usually resemble \
 	especially handsome humans, but anything is possible with enough splicing."
-	num_alternate_languages = 2
+	num_alternate_languages = 3 //Extra language due to how long they live and how fast learners they are in general.
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
-	max_age = 200 //Effectively ageless, but human history is only so long.
-	hunger_factor = 1.1
+	max_age = 520 //Effectively ageless, but human history is only so long. Abhuman Adaptation was on 2139 and such was the Exalt creations AFAIK.
+	hunger_factor = 2.2 // Way bigger hunger due to their organs. Well you could say that their bodies has better efficiency in using nutrients but someone with a bigger brain and stronger muscles need more mass and nutrients.
+	taste_sensitivity = TASTE_HYPERSENSITIVE
+	total_health = 120
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
 
 	stat_modifiers = list(
-		STAT_BIO = 5,
-		STAT_COG = 5,
-		STAT_MEC = 5,
-		STAT_ROB = 5,
-		STAT_TGH = 5,
-		STAT_VIG = 5
+		STAT_BIO = 7, //Seven is too much? Compared to other species that get very well much game-changing perks, exalts need to have some sorta of dominance here.
+		STAT_COG = 7,
+		STAT_MEC = 7,
+		STAT_ROB = 7,
+		STAT_TGH = 7,
+		STAT_VIG = 7
 	)
 
-	darksight = 3
+	darksight = 4
 
-	perks = list(PERK_DEBTOR, PERK_SPLICER, PERK_DIVERSE_CULTURE)
+	perks = list(PERK_DEBTOR, PERK_SPLICER, PERK_DIVERSE_CULTURE, PERK_FAST_MIND,)
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/exalt,

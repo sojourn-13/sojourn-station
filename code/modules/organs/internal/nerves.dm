@@ -59,3 +59,5 @@
 	desc = "Tooled for quick movement and extra sensitive to poorness. This exalted organ is bigger and more complex than standard nerves.\
 	Likely worth more on the black market."
 	price_tag = 500
+	organ_efficiency = list(OP_NERVE = 200)
+	organ_efficiency_multiplier = 0.20

@@ -156,7 +156,7 @@
 	if(H && H.stats.getPerk(PERK_NEPOTISM))
 		nepotism += 0.3
 	if(H && H.stats.getPerk(PERK_DEBTOR))
-		nepotism -= 0.5
+		nepotism -= 0.2
 
 	var/money_amount = one_time_payment(nepotism)
 	var/datum/money_account/M = create_account(H.real_name, money_amount, null, department, wage, aster_guild_member)

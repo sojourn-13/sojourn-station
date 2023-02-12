@@ -34,3 +34,7 @@
 	name = "exalt liver"
 	desc = "A robust liver for filtering robust chemicals."
 	specific_organ_size = 1
+	organ_efficiency_multiplier = 0.10
+	blood_req_multiplier = 0.10
+	nutriment_req_multiplier = 0.10
+	oxygen_req_multiplier = 0.10

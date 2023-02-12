@@ -49,7 +49,7 @@
 	desc = "A dense set of Artisinal kidneys. Works twice as well as a common peasant's kidney.\
 	Likely worth more on the black market."
 	price_tag = 700
-	organ_efficiency = list(OP_KIDNEYS = 150)
+	organ_efficiency = list(OP_KIDNEYS = 200)
 
 /obj/item/organ/internal/kidney/right/exalt
 	name = "Exalt kidney"
@@ -57,4 +57,7 @@
 	desc = "A dense set of Artisinal kidneys. Works twice as well as a common peasant's kidney.\
 	Likely worth more on the black market."
 	price_tag = 700
-	organ_efficiency = list(OP_KIDNEYS = 150)
+	organ_efficiency = list(OP_KIDNEYS = 200)
+	blood_req_multiplier = 0.10
+	nutriment_req_multiplier = 0.10
+	oxygen_req_multiplier = 0.10

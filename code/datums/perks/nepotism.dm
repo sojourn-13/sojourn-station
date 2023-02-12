@@ -21,3 +21,9 @@
 /datum/perk/splicer/remove()
 	holder.unnatural_mutations.total_instability -= 20
 	..()
+
+/datum/perk/fast_mind
+	name = "Overwhelming Insight"
+	desc = "Your exalt nature is above the normal and even the humblest and weakest of the Exalts can prove it easily in moments of focus. Your inspiration is higher than normal."
+	active = FALSE
+	passivePerk = FALSE
