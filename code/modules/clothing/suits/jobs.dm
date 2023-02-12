@@ -312,7 +312,7 @@
 		/obj/item/tool/retractor,
 		/obj/item/tool/scalpel,
 		/obj/item/tool/tape_roll/bonegel,
-		/obj/item/stack/medical/advanced/bruise_pack
+		/obj/item/stack/medical/bruise_pack/advanced
 	)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	price_tag = 50

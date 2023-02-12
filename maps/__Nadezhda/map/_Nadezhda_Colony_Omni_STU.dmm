@@ -3285,7 +3285,7 @@
 "aHG" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/surgery,
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bruise_pack/advanced,
 /obj/machinery/camera/network/research{
 	dir = 8
 	},
@@ -52068,7 +52068,7 @@
 /area/nadezhda/crew_quarters/techshop)
 "kdS" = (
 /obj/structure/table/standard,
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bruise_pack/advanced,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1north)
@@ -64721,7 +64721,7 @@
 "myZ" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/surgery,
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bruise_pack/advanced,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "mzb" = (
