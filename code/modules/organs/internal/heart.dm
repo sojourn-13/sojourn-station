@@ -57,6 +57,4 @@
 	max_blood_storage = 200
 	specific_organ_size = 2.3
 	nutriment_req = 40
-	blood_req_multiplier = 0.10
-	nutriment_req_multiplier = 0.10
-	oxygen_req_multiplier = 0.10
+	organ_efficiency = list(OP_HEART = 200)

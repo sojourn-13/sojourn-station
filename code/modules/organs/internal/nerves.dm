@@ -60,4 +60,3 @@
 	Likely worth more on the black market."
 	price_tag = 500
 	organ_efficiency = list(OP_NERVE = 200)
-	organ_efficiency_multiplier = 0.20

@@ -32,3 +32,4 @@
 	name = "exalt muscle"
 	desc = "Used for carrying this colony. This muscle makes an Exalt stronger than normal.\
 	Likely worth more on the black market."
+	organ_efficiency = list(OP_MUSCLE = 200)

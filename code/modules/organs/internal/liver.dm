@@ -33,8 +33,5 @@
 /obj/item/organ/internal/liver/big/exalt
 	name = "exalt liver"
 	desc = "A robust liver for filtering robust chemicals."
-	specific_organ_size = 1
-	organ_efficiency_multiplier = 0.10
-	blood_req_multiplier = 0.10
-	nutriment_req_multiplier = 0.10
-	oxygen_req_multiplier = 0.10
+	specific_organ_size = 2
+	organ_efficiency = list(OP_LIVER = 200)

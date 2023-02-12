@@ -39,6 +39,4 @@
 	desc = "Augmented lungs for filtering out poor air, and the air of the poors.\
 	Likely worth more on the black market."
 	price_tag = 2250
-	blood_req_multiplier = 0.30
-	nutriment_req_multiplier = 0.10
-	oxygen_req_multiplier = 0.10
+	organ_efficiency = list(OP_LUNGS = 200)
