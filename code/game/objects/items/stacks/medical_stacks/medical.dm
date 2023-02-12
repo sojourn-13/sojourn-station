@@ -23,6 +23,7 @@
 	var/disinfectant  = FALSE
 	//checks if the person using **and** getting the healing is church
 	var/care_about_faith = FALSE
+	var/bounce_faith_healer_amount = 5
 
 	var/fancy_icon = FALSE //This var is for mulitable icon states that DONT relie on a overlay
 
@@ -189,6 +190,26 @@
 		return FALSE
 //	log_debug("check_faith_of_healer 1, ended = [user]")
 	return TRUE
+
+/obj/item/stack/medical/proc/check_for_healer_plus(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+	var/obj/item/implant/core_implant/cruciform/CI = user.get_core_implant(/obj/item/implant/core_implant/cruciform)
+
+//	log_debug("check_faith_of_healer 0, I have started user = [user]")
+	if(!CI || !CI.active || !CI.wearer)
+		return FALSE
+
+	if(CI.path == "tess" || CI.path == "omni")
+		return TRUE
+
+	//Redlight is prists only
+	if (CI.get_module(CRUCIFORM_REDLIGHT))
+		return TRUE
+
+	if (CI.get_module(CRUCIFORM_INQUISITOR))
+		return TRUE
+
+	return TRUE
+
 
 /obj/item/stack/medical/update_icon()
 	if(QDELETED(src)) //Checks if the item has been deleted

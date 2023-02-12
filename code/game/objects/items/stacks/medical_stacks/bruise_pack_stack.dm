@@ -55,6 +55,8 @@
 			if(care_about_faith && (holy_healer || holy_healing))
 				if(holy_healer)
 					healed_by_faith += heal_brute
+					if(check_for_healer_plus(user))
+						healed_by_faith += bounce_faith_healer_amount //5 extra if your a tessilate or preists
 				if(holy_healing)
 					healed_by_faith += heal_brute
 			for (var/datum/wound/W in affecting.wounds)
@@ -204,7 +206,7 @@
 	singular_name = "Absolutism Bruisepack"
 	desc = "An advanced bruisepack for severe injuries. Created by the will of God and made far easier to use than normal advanced kits."
 	icon_state = "nt_traumakit"
-	heal_brute = 5
+	heal_brute = 10
 	automatic_charge_overlays = FALSE
 	matter = list(MATERIAL_BIOMATTER = 5)
 	origin_tech = list(TECH_BIO = 4)
