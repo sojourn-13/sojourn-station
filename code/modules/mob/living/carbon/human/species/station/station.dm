@@ -51,8 +51,7 @@
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 520 //Effectively ageless, but human history is only so long. Abhuman Adaptation was on 2139 and such was the Exalt creations AFAIK.
-	hunger_factor = 2.2 // Way bigger hunger due to their organs. Well you could say that their bodies has better efficiency in using nutrients but someone with a bigger brain and stronger muscles need more mass and nutrients.
-	taste_sensitivity = TASTE_HYPERSENSITIVE
+	hunger_factor = 1.3 // Way bigger hunger due to their organs. Well you could say that their bodies has better efficiency in using nutrients but someone with a bigger brain and stronger muscles need more mass and nutrients.
 	total_health = 120
 
 	dark_color = "#ffffff"
