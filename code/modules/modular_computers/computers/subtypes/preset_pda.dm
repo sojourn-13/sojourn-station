@@ -138,6 +138,7 @@
 /obj/item/modular_computer/pda/club_worker/install_default_programs()
 	..()
 	hard_drive.store_file(new /datum/computer_file/program/drink_catalog())
+	hard_drive.store_file(new /datum/computer_file/program/cook_catalog())
 
 
 // PDA box

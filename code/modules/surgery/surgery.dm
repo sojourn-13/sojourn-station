@@ -102,7 +102,7 @@
 			return FALSE
 
 	if(status & ORGAN_SPLINTED)
-		to_chat(user, SPAN_WARNING("You need to remove the brace first!"))
+		to_chat(user, SPAN_WARNING("You need to remove the splints first!"))
 		return FALSE
 
 	if(!S.is_valid_target(src, target))
@@ -119,7 +119,7 @@
 			S.require_tool_message(user)
 		return FALSE
 
-	if (istype(tool,/obj/item/stack/medical/advanced/bruise_pack))
+	if (istype(tool,/obj/item/stack/medical/bruise_pack/advanced))
 		if (tool.icon_state == "traumakit" && (!(user.stats.getPerk(PERK_ADVANCED_MEDICAL) || user.stats.getPerk(PERK_SURGICAL_MASTER) || user.stats.getStat(STAT_BIO) >= 50)))
 			to_chat(user, SPAN_WARNING("You do not have the training to use an Advanced Trauma Kit in this way."))
 			return FALSE
@@ -150,7 +150,7 @@
 
 		//For if a user is doing 'surgery' on their own prosthetic bodypart
 		if(nature == MODIFICATION_SILICON)
-			difficulty_adjust = 80
+			difficulty_adjust = 60
 			time_adjust = 20
 
 		// ...unless you are a carrion

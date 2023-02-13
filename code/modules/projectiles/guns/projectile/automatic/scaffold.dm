@@ -26,6 +26,7 @@
 
 	wield_delay = 1.4 SECOND
 	wield_delay_factor = 0.4 // 40 vig for insta wield
+	gun_parts = list(/obj/item/part/gun = 2, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/clrifle = 1)
 
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE ,GUN_SCOPE, GUN_MAGWELL)
 	allow_greyson_mods = TRUE

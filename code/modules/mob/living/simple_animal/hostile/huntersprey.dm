@@ -12,8 +12,8 @@
 	break_stuff_probability = 95
 	attacktext = "mauled"
 	faction = "deathclaw"
-	maxHealth = 2200
-	health = 2200
+	maxHealth = 1000
+	health = 1000
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 	old_x = -16
@@ -348,8 +348,8 @@
 	break_stuff_probability = 95
 	attacktext = "kicked"
 	faction = "excelsior"
-	maxHealth = 2200
-	health = 2200
+	maxHealth = 1000
+	health = 1000
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	old_x = -16

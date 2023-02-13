@@ -386,7 +386,7 @@
 
 /datum/design/autolathe/gun/revolver_taser
 	name = "Seinemetall Defense GmbH - \"Zeus\" Stun Revolver"
-	build_path = /obj/item/gun/energy/taser
+	build_path = /obj/item/gun/energy/stunrevolver
 
 /datum/design/autolathe/gun/ion_pistol
 	name = "Seinemetall Defense GmbH - \"Aedes\" Ion Pistol"

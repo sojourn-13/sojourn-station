@@ -236,8 +236,10 @@
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "bh" = (
-/turf/space,
-/area/nadezhda/outside/forest/beast_cave_dark)
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/beast_cave_light)
 "bj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/small/lavarock2,
@@ -2043,8 +2045,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "ir" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/small/bushb2,
-/obj/structure/flora/big/bush2,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "is" = (
@@ -2102,12 +2103,10 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "iD" = (
-/obj/structure/railing{
-	anchored = 1;
-	dir = 4
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "iE" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /obj/effect/decal/cleanable/dirt,
@@ -2322,7 +2321,8 @@
 	reinforcement_security = 40
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/glass/bucket,
+/obj/structure/grille,
+/obj/structure/barricade,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "jt" = (
@@ -2330,9 +2330,6 @@
 /obj/structure/flora/big/bush2,
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
-"ju" = (
-/turf/simulated/wall/wood_old,
 /area/nadezhda/outside/forest/beast_cave_light)
 "jv" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2467,10 +2464,11 @@
 /turf/simulated/floor/beach/water/ocean,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "jU" = (
-/obj/structure/grille,
-/obj/structure/barricade,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/bear/mukwah,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark)
 "jV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/unpowered/simple/wood/saloon,
@@ -2478,8 +2476,10 @@
 /area/nadezhda/outside/forest/swamp_hut)
 "jW" = (
 /obj/effect/window_lwall_spawn,
+/obj/structure/curtain/black,
+/obj/structure/invislight,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/outside/forest/beast_cave_light)
+/area/nadezhda/outside/forest/swamp_hut)
 "jX" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/ausbushes/grassybush,
@@ -2616,11 +2616,6 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
-"kx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/unpowered/simple/wood/saloon,
-/turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/forest/beast_cave_light)
 "ky" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -2655,9 +2650,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/vending/hydroseeds,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/forest/swamp_hut)
-"kF" = (
-/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/swamp_hut)
 "kG" = (
 /obj/random/techpart/low_chance,
@@ -2908,6 +2900,7 @@
 "lz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
+/obj/machinery/light/small,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
 "lA" = (
@@ -5382,13 +5375,9 @@
 /turf/simulated/floor/carpet,
 /area/nadezhda/outside/forest/swamp_hut)
 "uA" = (
-/obj/structure/railing{
-	dir = 4;
-	icon_state = "reinforced_railing0";
-	reinforced = 1;
-	reinforcement_security = 40
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade,
+/obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "uB" = (
@@ -5438,6 +5427,7 @@
 /obj/item/reagent_containers/food/condiment/enzyme,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/food/condiment/sugar,
+/obj/machinery/light/small,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
 "uI" = (
@@ -5509,9 +5499,6 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
-"uQ" = (
-/turf/simulated/mineral/random/rogue,
-/area/nadezhda/outside/forest/swamp_hut)
 "uR" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/box/bottles,
@@ -5523,7 +5510,7 @@
 "uS" = (
 /obj/machinery/cryopod/dormitory,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
+/area/nadezhda/outside/forest/swamp_hut)
 "uT" = (
 /obj/structure/toilet{
 	dir = 4
@@ -5569,14 +5556,10 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
 "va" = (
-/obj/structure/railing{
-	dir = 1;
-	icon_state = "reinforced_railing0";
-	reinforced = 1;
-	reinforcement_security = 40
-	},
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/asteroid/grass,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood,
+/obj/item/remains/human,
+/turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/beast_cave_light)
 "vb" = (
 /obj/structure/flora/big/bush3,
@@ -5640,14 +5623,12 @@
 /turf/simulated/floor/carpet,
 /area/nadezhda/outside/forest/swamp_hut)
 "vm" = (
-/obj/structure/railing{
-	dir = 1;
-	icon_state = "reinforced_railing0";
-	reinforced = 1;
-	reinforcement_security = 40
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 8
 	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest/beast_cave_light)
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/swamp_hut)
 "vn" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
@@ -5743,6 +5724,13 @@
 /obj/random/cluster/roaches,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"wh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_light)
 "ww" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/big/bush2,
@@ -5787,6 +5775,10 @@
 "wQ" = (
 /obj/random/material_ore,
 /turf/simulated/floor/rock,
+/area/nadezhda/outside/forest/beast_cave_dark)
+"wS" = (
+/obj/random/oddity_guns,
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "wV" = (
 /obj/effect/spider/stickyweb,
@@ -5874,6 +5866,19 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/forest/beast_cave_dark)
+"xH" = (
+/obj/structure/railing{
+	dir = 4;
+	icon_state = "reinforced_railing0";
+	reinforced = 1;
+	reinforcement_security = 40
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/grille,
+/obj/structure/barricade,
+/obj/structure/railing,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_light)
 "xL" = (
 /mob/living/simple_animal/hostile/render,
 /turf/simulated/floor/rock/dark,
@@ -6154,6 +6159,12 @@
 "Bq" = (
 /obj/random/structures/low_chance,
 /turf/simulated/floor/beach/water/jungle,
+/area/nadezhda/outside/forest/beast_cave_light)
+"Bs" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/invislight,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/beast_cave_light)
 "By" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -6525,6 +6536,13 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
+"FG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/grille,
+/obj/structure/barricade,
+/obj/structure/railing,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_light)
 "FH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -6570,6 +6588,12 @@
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/rock5,
 /turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest/beast_cave_light)
+"Gr" = (
+/obj/structure/flora/big/bush2,
+/obj/structure/flora/small/bushb2,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/beast_cave_light)
 "Gs" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7062,6 +7086,15 @@
 	layer = 3.7
 	},
 /area/nadezhda/outside/forest/beast_cave_dark)
+"Mh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/small/bushb2,
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Mi" = (
 /obj/structure/flora/big/bush2,
 /obj/effect/overlay/water/top,
@@ -7758,6 +7791,12 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Uc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/remains/human,
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/wood/wild4,
+/area/nadezhda/outside/forest/beast_cave_light)
 "Ue" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/big/bush2,
@@ -8236,6 +8275,11 @@
 /mob/living/simple_animal/hostile/frog,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/beast_cave_light)
+"Zu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/outside/forest/swamp_hut)
 "Zx" = (
 /mob/living/simple_animal/hostile/tengstalker,
 /turf/simulated/floor/asteroid/grass/jungle,
@@ -8894,7 +8938,7 @@ rK
 rK
 rK
 rK
-bh
+rK
 rK
 rK
 rK
@@ -16775,7 +16819,7 @@ aj
 rK
 rK
 ap
-cc
+ag
 ag
 cr
 ct
@@ -16970,7 +17014,7 @@ rH
 rH
 ub
 ab
-sd
+BL
 sd
 sd
 sd
@@ -17172,13 +17216,13 @@ rH
 rH
 ub
 ac
-sd
+BL
 ag
 ag
 ag
 ak
 sd
-ag
+cc
 ag
 ag
 ct
@@ -17635,9 +17679,9 @@ gy
 gy
 gm
 dS
-dS
-dS
-hk
+Gr
+bt
+in
 iL
 bt
 dS
@@ -17837,7 +17881,7 @@ gy
 gB
 dS
 dS
-dS
+bt
 ir
 iC
 bt
@@ -17845,13 +17889,13 @@ in
 dS
 hk
 dS
-kF
-kF
-kF
-kF
-kF
-kF
-kF
+dS
+dS
+dS
+dS
+dS
+dS
+dS
 dS
 dS
 dS
@@ -18039,22 +18083,22 @@ hO
 gy
 dS
 dS
-ir
+in
 bt
 bt
 bt
-bt
-va
+FG
+fu
 et
-ju
 kI
 kI
 kI
 kI
-kF
-kF
-kF
-kF
+kI
+dS
+dS
+dS
+dS
 dS
 dS
 dS
@@ -18241,14 +18285,14 @@ gy
 gy
 dS
 dS
+js
+js
 uA
 js
-bt
-uA
-uA
-vm
+xH
+et
 kc
-kx
+jV
 kv
 vz
 kI
@@ -18256,12 +18300,12 @@ kI
 kI
 kI
 kI
-kF
-kF
-kF
-kF
-kF
-kF
+dS
+dS
+dS
+dS
+dS
+dS
 dS
 dS
 dS
@@ -18444,13 +18488,13 @@ gy
 gB
 dS
 fu
-eE
-jU
-iw
+et
+et
+et
 et
 iw
 jc
-ju
+kI
 kJ
 kv
 kI
@@ -18463,7 +18507,7 @@ kI
 kI
 kI
 kI
-kF
+dS
 dS
 dS
 dS
@@ -18665,7 +18709,7 @@ uX
 uR
 uW
 kI
-kF
+dS
 dS
 dS
 dS
@@ -18867,7 +18911,7 @@ uI
 OI
 vt
 kI
-kF
+dS
 dS
 dS
 dS
@@ -19069,7 +19113,7 @@ uS
 uZ
 uY
 kI
-kF
+dS
 dS
 dS
 dS
@@ -19260,7 +19304,7 @@ et
 kc
 jW
 kK
-kv
+Zu
 kI
 kI
 jV
@@ -19271,7 +19315,7 @@ kI
 kI
 kI
 kI
-kF
+dS
 dS
 dS
 dS
@@ -19460,10 +19504,10 @@ et
 eE
 et
 jc
-ju
+kI
 kV
 kv
-kv
+vm
 kv
 kv
 lz
@@ -19472,8 +19516,8 @@ uK
 uO
 uT
 kI
-kF
-kF
+dS
+dS
 dS
 dS
 dS
@@ -19657,12 +19701,12 @@ iq
 dS
 dS
 dS
-iD
-iD
+et
+et
 et
 et
 kc
-ju
+kI
 la
 kv
 kv
@@ -19674,8 +19718,8 @@ us
 uC
 uJ
 kI
-kF
-kF
+dS
+dS
 dS
 dS
 gB
@@ -19859,12 +19903,12 @@ dS
 dS
 dS
 el
-bt
-jr
+wh
+Mh
 et
 iw
 jc
-ju
+kI
 lb
 kv
 kv
@@ -19876,8 +19920,8 @@ uL
 uP
 uU
 kI
-uQ
-kF
+bn
+dS
 dS
 dS
 af
@@ -19947,13 +19991,13 @@ cC
 cC
 cC
 cC
-bL
-bL
-bL
-bL
-gr
-bF
-sd
+va
+eN
+eN
+eN
+Bs
+iD
+qK
 rU
 sy
 rZ
@@ -20066,7 +20110,7 @@ jG
 et
 et
 kd
-ju
+kI
 lm
 kv
 kv
@@ -20078,8 +20122,8 @@ kI
 kI
 kI
 kI
-uQ
-kF
+bn
+dS
 dS
 dS
 iJ
@@ -20157,7 +20201,7 @@ gr
 bF
 an
 sd
-tF
+rU
 se
 sy
 ag
@@ -20268,7 +20312,7 @@ jG
 et
 et
 kc
-ju
+kI
 kv
 lH
 us
@@ -20276,12 +20320,12 @@ us
 uy
 uH
 kI
-kF
-uQ
-uQ
-uQ
-uQ
-uQ
+dS
+bn
+bn
+bn
+bn
+bn
 UM
 bn
 iJ
@@ -20376,12 +20420,12 @@ qY
 rW
 tM
 gr
-bL
-bL
-bL
+Uc
+eN
+eN
 rz
-bL
-eU
+eN
+bh
 et
 et
 iw
@@ -20470,7 +20514,7 @@ bt
 et
 et
 jc
-ju
+kI
 lt
 lI
 lK
@@ -20478,12 +20522,12 @@ ut
 us
 uE
 kI
-kF
-kF
-kF
-uQ
-uQ
-uQ
+dS
+dS
+dS
+bn
+bn
+bn
 UM
 bn
 bn
@@ -20580,7 +20624,7 @@ bF
 gr
 bL
 bL
-rz
+bL
 bL
 bL
 et
@@ -20672,20 +20716,20 @@ jG
 et
 iw
 kd
-ju
-ju
-ju
+kI
+kI
+kI
 jW
 jW
 jW
-ju
-ju
+kI
+kI
 dS
 dS
 dS
-uQ
-uQ
-uQ
+bn
+bn
+bn
 UM
 bn
 mf
@@ -20780,7 +20824,7 @@ aK
 sd
 bF
 gr
-rz
+bL
 bL
 bL
 bL
@@ -22286,11 +22330,11 @@ it
 ja
 jG
 et
-ju
-ju
-ju
+kI
+kI
+kI
 lu
-ju
+kI
 jc
 af
 Hd
@@ -22488,11 +22532,11 @@ it
 iE
 jG
 et
-ju
+kI
 jY
 kB
 lv
-ju
+kI
 et
 dS
 iW
@@ -22694,7 +22738,7 @@ jV
 jZ
 kC
 lx
-ju
+kI
 dS
 dS
 af
@@ -22892,11 +22936,11 @@ it
 iE
 jI
 jJ
-ju
+kI
 lm
 kD
 kD
-ju
+kI
 dS
 dS
 dS
@@ -23094,11 +23138,11 @@ dS
 it
 it
 it
-ju
+kI
 kw
 kE
 ly
-ju
+kI
 dS
 dS
 dS
@@ -23296,11 +23340,11 @@ dS
 dS
 dS
 dS
-ju
-ju
-ju
-ju
-ju
+kI
+kI
+kI
+kI
+kI
 dS
 dS
 dS
@@ -23320,7 +23364,7 @@ sd
 nx
 aZ
 sm
-le
+rZ
 sv
 rH
 rH
@@ -23518,7 +23562,7 @@ sl
 rH
 rH
 rK
-jz
+sd
 lF
 sd
 rU
@@ -23719,13 +23763,13 @@ dS
 sl
 rH
 rK
-sj
+jU
 ki
 sr
 sd
 sd
 sA
-rU
+IR
 rK
 rH
 rH
@@ -28894,7 +28938,7 @@ rH
 rH
 rH
 LF
-sd
+wS
 xY
 Yt
 sy

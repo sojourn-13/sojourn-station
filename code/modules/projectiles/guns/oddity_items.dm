@@ -152,7 +152,6 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
 	force = WEAPON_FORCE_DANGEROUS
 	bolt_training = FALSE
-	proj_pve_damage_multiplier = 2.5 // This used to be its PVP damage modifier. Gun's meant to be good at PVE.
 	penetration_multiplier  = 2
 	max_shells = 1
 	price_tag = 2750
@@ -168,7 +167,6 @@
 	price_tag = 2000
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
 	damage_multiplier = 1.5
-	proj_pve_damage_multiplier = 1.5
 	icon = 'icons/obj/guns/projectile/clarissa.dmi'
 	icon_state = "clarissa"
 	item_state = "clarissa"
@@ -293,12 +291,11 @@
 	origin_tech = list(TECH_MAGNET = 10) //3500 points for rnd, eh its meant to stay in player hands not be deconned
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
 	price_tag = 2450
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	damage_multiplier = 1.5
-	proj_pve_damage_multiplier = 1.5
 	penetration_multiplier = 1.2 // So that it's good for PVE too
 	init_recoil = HANDGUN_RECOIL(0.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
@@ -318,7 +315,7 @@
 	projectile_type = /obj/item/projectile/beam/weak/pistol_35
 	charge_cost = 1000000000000000000000000000000000000
 	suitable_cell = null
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	can_dual = TRUE
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.2

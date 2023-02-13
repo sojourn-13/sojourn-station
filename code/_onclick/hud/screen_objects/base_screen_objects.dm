@@ -6,7 +6,7 @@
 	For more information, see the byond documentation on the screen_loc and screen vars.
 */
 /image/no_recolor
-	appearance_flags = RESET_COLOR
+	appearance_flags = RESET_COLOR|DEFAULT_APPEARANCE_FLAGS
 
 
 /obj/screen

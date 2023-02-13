@@ -1197,6 +1197,7 @@
 		speech_problem_flag = 1
 	return stuttering
 
+/* not being activated now, only gettign in the way of burn damage, in case of doubt look at any handle_fire above this
 /mob/living/carbon/human/handle_fire()
 	if(..())
 		return
@@ -1209,6 +1210,7 @@
 		if(world.time >= next_onfire_hal)
 			next_onfire_hal = world.time + 50
 			adjustHalLoss(fire_stacks*5 + 3) //adjusted to be lower. You need time to put yourself out. And each roll only removes 2.5 stacks.
+*/
 
 /mob/living/carbon/human/rejuvenate()
 	sanity.setLevel(sanity.max_level)

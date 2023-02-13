@@ -26,6 +26,8 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
 	bst.real_name = "Bluespace Technician"
 	bst.voice_name = "Bluespace Technician"
 	bst.h_style = "Crewcut"
+	if(usr.mind)
+		usr.mind.transfer_to(bst)
 
 	//Items
 	bst.equip_to_slot_or_del(new /obj/item/clothing/under/admin/bst(bst), slot_w_uniform)

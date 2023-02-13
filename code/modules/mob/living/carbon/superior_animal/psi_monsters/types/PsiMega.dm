@@ -6,8 +6,8 @@
 	icon_state = "crab3"
 	icon_living = "crab3"
 
-	maxHealth = 3000
-	health = 3000
+	maxHealth = 1400
+	health = 1400
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	melee_damage_lower = 50
 	melee_damage_upper = 60

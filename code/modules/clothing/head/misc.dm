@@ -456,3 +456,10 @@ obj/item/clothing/head/ribbon/red
 	icon_state = "tacponhood_ghillie"
 	item_state = "tacponhood_ghillie"
 	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/tacticalhood_color
+	name = "hood"
+	desc = "A tactical hood, in a color of your choice."
+	icon_state = "tacponhood_color"
+	item_state = "tacponhood_color"
+	flags_inv = HIDEEARS|BLOCKHAIR

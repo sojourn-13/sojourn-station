@@ -510,7 +510,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 
 
 		if ("tournament gangster") //gangster are supposed to fight each other. --rastaf0
-			M.equip_to_slot_or_del(new /obj/item/clothing/under/rank/inspector/suit(M), slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/clothing/under/rank/inspector(M), slot_w_uniform)
 			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/color/black(M), slot_shoes)
 
 			M.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/rank/insp_trench(M), slot_wear_suit)

@@ -283,7 +283,7 @@
 	desc = "A 30 round magazine marked for 6.5mm Carbine."
 	icon_state = "lrifle_long"
 	mag_type = MAGAZINE
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	caliber = "lrifle"
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_STEEL = 5)
@@ -330,7 +330,7 @@
 	desc = "A 20 round magazine marked for 6.5mm Carbine."
 	icon_state = "lrifle_short"
 	mag_type = MAGAZINE
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	caliber = "lrifle"
 	caliber = CAL_LRIFLE
 	matter = list(MATERIAL_STEEL = 5)
@@ -369,7 +369,7 @@
 	desc = "A 50 round drum magazine marked for 6.5mm Carbine."
 	icon_state = "lrifle_drum"
 	mag_type = MAGAZINE
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	w_class = ITEM_SIZE_NORMAL
 	caliber = "lrifle"
 	caliber = CAL_LRIFLE

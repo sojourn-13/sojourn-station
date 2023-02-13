@@ -64,11 +64,62 @@
 	icon_state = "preacher"
 	item_state = "w_suit"
 
+
+/obj/item/clothing/under/rank/preacher/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Preacher"] = "preacher"
+	options["Preacher Basic"] = "preacher_basic"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/rank/acolyte
 	desc = "Ceremonial garb of the Absolute's vectors."
 	name = "vector's vestments"
 	icon_state = "acolyte"
 	item_state = "acolyte"
+
+/obj/item/clothing/under/rank/acolyte/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Acolyte"] = "acolyte"
+	options["Acolyte Basic"] = "acolyte_basic"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/under/rank/church/sport
 	desc = "Smells like lilac."
@@ -82,12 +133,38 @@
 	icon_state = "church"
 	item_state = "church"
 
+/obj/item/clothing/under/rank/church/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Vestments"] = "church"
+	options["Vestments Basic"] = "church_basic"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You roll your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
 /obj/item/clothing/under/rank/church/toga
 	desc = "Smells like laurel wreath."
 	name = "church toga"
 	icon_state = "numerical_garbs_red"
 
-/obj/item/clothing/under/rank/church/toga/verb/toggle_style()
+/obj/item/clothing/under/rank/church/toga/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr

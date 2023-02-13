@@ -27,6 +27,17 @@
 
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.3 // 30 vig
+	gun_parts = list(/obj/item/part/gun/frame/grizzly = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/part/gun/barrel/shotgun = 1)
+
+/obj/item/part/gun/frame/grizzly
+	name = "Grizzly frame"
+	desc = "A Grizzly shotgun frame. A militiaman's favorite."
+	icon_state = "frame_shotgun"
+	result = /obj/item/gun/projectile/shotgun/pump
+	resultvars = list(/obj/item/gun/projectile/shotgun/pump)
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/shotgun
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
 
 /obj/item/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)

@@ -35,7 +35,7 @@
 		bio = 0,
 		rad = 0
 	)
-	
+
 /obj/item/clothing/suit/storage/rank/cargoclerk_jacket
 	name = "lonestar office jacket"
 	desc = "Stylish jacket lined for lonestar office workers. It seems have a little protection from physical harm."
@@ -234,28 +234,30 @@
 	armor_list = list(melee = 30, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
 	price_tag = 250
 
-/obj/item/clothing/suit/storage/rank/det_trench
-	name = "brown trenchcoat"
-	desc = "A rugged canvas trenchcoat, designed and created by TX Fabrication Corp. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
-	icon_state = "detective"
-	item_state = "det_suit"
-	blood_overlay_type = "coat"
-	body_parts_covered = UPPER_TORSO|ARMS
-	armor_list = list(
-		melee = 20,
-		bullet = 20,
-		energy = 20,
-		bomb = 0,
-		bio = 0,
-		rad = 0
-	)
-	price_tag = 125
+/obj/item/clothing/suit/storage/rank/insp_trench/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/clothing/suit/storage/rank/det_trench/grey
-	name = "grey trenchcoat"
-	desc = "A rugged canvas trenchcoat, designed and created by TX Fabrication Corp. The coat is externally impact resistant - perfect for your next act of autodefenestration!"
-	icon_state = "detective_grey"
-	item_state = "det_suit_grey"
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Rangercoat Default"] = "rangercoat"
+	options["Brown Trenchcoat"] = "detective"
+	options["Grey Trenchcoat"] = "detective_grey"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 //Engineering
 /obj/item/clothing/suit/storage/hazardvest
@@ -310,7 +312,7 @@
 		/obj/item/tool/retractor,
 		/obj/item/tool/scalpel,
 		/obj/item/tool/tape_roll/bonegel,
-		/obj/item/stack/medical/advanced/bruise_pack
+		/obj/item/stack/medical/bruise_pack/advanced
 	)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	price_tag = 50

@@ -1,7 +1,7 @@
 /atom
 	layer = TURF_LAYER
 	plane = GAME_PLANE
-	appearance_flags = TILE_BOUND|PIXEL_SCALE|LONG_GLIDE
+	appearance_flags = TILE_BOUND|PIXEL_SCALE|LONG_GLIDE|DEFAULT_APPEARANCE_FLAGS
 	var/level = ABOVE_PLATING_LEVEL
 	var/flags = 0
 	var/list/fingerprints

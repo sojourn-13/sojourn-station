@@ -6,8 +6,8 @@
 	icon_state = "excel_makarov"
 	stop_automated_movement_when_pulled = 1
 	wander = 0
-	maxHealth = 150 //About as much health as a normal person
-	health = 150
+	maxHealth = 100
+	health = 100
 
 	armor = list(melee = 60, bullet = 60, energy = 60, bomb = 75, bio = 100, rad = 90) //Legitmently their armor
 
@@ -17,7 +17,7 @@
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
-	projectilesound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	projectilesound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 16

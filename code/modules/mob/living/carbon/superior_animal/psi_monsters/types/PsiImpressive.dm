@@ -5,8 +5,8 @@
 	icon_state = "vargo"
 	icon_living = "vargo"
 
-	maxHealth = 1200
-	health = 1200
+	maxHealth = 800
+	health = 800
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	melee_damage_lower = 30
 	melee_damage_upper = 40

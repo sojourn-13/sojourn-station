@@ -1,0 +1,1510 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ae" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"ai" = (
+/obj/structure/flora/small/grassb3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"an" = (
+/obj/structure/flora/small/grassa2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"au" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"aH" = (
+/obj/structure/table/onestar,
+/obj/random/tool_upgrade,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"aX" = (
+/obj/structure/flora/small/grassb2,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"bD" = (
+/obj/structure/flora/small/grassb4,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"bG" = (
+/obj/machinery/door/airlock/glass,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"bK" = (
+/obj/structure/flora/small/busha1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"cB" = (
+/obj/structure/flora/small/grassb1,
+/obj/structure/flora/small/busha1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"es" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"fj" = (
+/obj/structure/flora/small/rock5,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"fu" = (
+/obj/item/storage/deferred/crate/cells,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"fT" = (
+/obj/structure/flora/small/grassb4,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"gn" = (
+/obj/random/mob/spiders/low_chance,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"gP" = (
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"he" = (
+/obj/structure/flora/big/bush3,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"hp" = (
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest)
+"hE" = (
+/obj/effect/floor_decal/industrial/hatch,
+/obj/random/structures,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"ip" = (
+/obj/structure/flora/big/bush1,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"iq" = (
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"jo" = (
+/obj/structure/flora/grass/green,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"li" = (
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"lp" = (
+/obj/item/storage/deferred/crate/tools,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"lw" = (
+/obj/structure/flora/small/grassb1,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"lz" = (
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"mv" = (
+/obj/structure/flora/big/rocks3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"ng" = (
+/turf/simulated/mineral,
+/area/nadezhda/outside/forest)
+"nk" = (
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"nA" = (
+/obj/structure/table/rack/shelf,
+/obj/item/stack/cable_coil/blue,
+/obj/item/stack/cable_coil/random,
+/obj/item/stack/cable_coil/random,
+/obj/item/stack/cable_coil/random,
+/obj/item/stack/cable_coil/random,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"nI" = (
+/obj/structure/table/onestar,
+/obj/item/paper_bin,
+/obj/item/pen/multi,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"oB" = (
+/obj/structure/flora/small/busha3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"oO" = (
+/obj/structure/table/rack/shelf,
+/obj/item/reagent_containers/glass/bottle/petrel,
+/obj/item/reagent_containers/glass/bottle/petrel,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"oY" = (
+/obj/structure/flora/small/grassb4,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"pg" = (
+/obj/structure/salvageable/autolathe,
+/obj/item/oddity/common/disk,
+/obj/item/stack/cable_coil/blue,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"st" = (
+/obj/effect/floor_decal/industrial/hatch,
+/obj/effect/decal/mecha_wreckage/ripley,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"sI" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"sN" = (
+/obj/structure/flora/big/rocks1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"tw" = (
+/obj/structure/flora/big/bush1,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"tH" = (
+/obj/structure/closet/toolcloset,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"uq" = (
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"us" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"uG" = (
+/obj/machinery/door/blast/shutters,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"uZ" = (
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"vk" = (
+/obj/machinery/porta_turret/prepper,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"vL" = (
+/obj/structure/flora/small/busha1,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"wE" = (
+/obj/structure/flora/small/grassb2,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"wG" = (
+/obj/structure/flora/small/rock3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"ys" = (
+/obj/structure/flora/big/bush1,
+/obj/random/flora/small_jungle_tree,
+/obj/effect/decal/cleanable/dirt,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"yG" = (
+/obj/structure/flora/rock/variant1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"zr" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"zs" = (
+/obj/structure/table/onestar,
+/obj/structure/salvageable/server,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"zE" = (
+/obj/structure/flora/small/grassb4,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"zM" = (
+/obj/random/flora/small_jungle_tree,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"Ar" = (
+/obj/machinery/mech_recharger,
+/obj/mecha/working/ripley/cargo_imported,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"AE" = (
+/obj/item/storage/deferred/crate/cells,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Cf" = (
+/obj/structure/flora/small/grassb4,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"Cs" = (
+/obj/structure/flora/small/grassb4,
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"Cu" = (
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 4
+	},
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Eg" = (
+/obj/structure/flora/small/grassb2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"ED" = (
+/obj/structure/table/onestar,
+/obj/random/tool/advanced,
+/obj/machinery/recharger,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"EO" = (
+/obj/structure/closet/crate/bin,
+/obj/item/stack/os_cash/random,
+/obj/item/oddity/common/paper_crumpled,
+/obj/item/oddity/common/blueprint,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Fn" = (
+/obj/structure/flora/small/grassb4,
+/obj/effect/decal/cleanable/dirt,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"Fw" = (
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Ga" = (
+/obj/structure/flora/small/grassb5,
+/obj/random/flora/jungle_tree,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"Gh" = (
+/obj/random/flora/jungle_tree,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"GB" = (
+/obj/machinery/porta_turret/prepper,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"GL" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"GR" = (
+/obj/structure/closet/secure_closet/rare_loot,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Hg" = (
+/obj/structure/flora/small/grassb3,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"HH" = (
+/obj/structure/table/rack/shelf,
+/obj/random/powercell/medium_safe_lonestar,
+/obj/random/powercell/medium_safe_lonestar,
+/obj/random/powercell/medium_safe_lonestar,
+/obj/random/powercell/medium_safe_lonestar,
+/obj/random/powercell/medium_safe_lonestar,
+/obj/random/powercell/small_safe_lonestar,
+/obj/random/powercell/small_safe_lonestar,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"HN" = (
+/obj/random/flora/jungle_tree,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"HQ" = (
+/obj/structure/flora/small/rock2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"Iz" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"IO" = (
+/obj/effect/floor_decal/industrial/hatch,
+/obj/effect/decal/mecha_wreckage/ripley/deathripley,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"IS" = (
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 4
+	},
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"JP" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Kd" = (
+/obj/structure/bookcase/manuals/engineering,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"LU" = (
+/obj/structure/flora/big/bush1,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"Mh" = (
+/obj/effect/floor_decal/industrial/hatch,
+/obj/random/structures/low_chance,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Nk" = (
+/obj/structure/flora/small/rock4,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"NH" = (
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"NR" = (
+/obj/structure/bed/chair/office/dark,
+/mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Pe" = (
+/obj/structure/flora/big/bush3,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"Po" = (
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/high;
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/obj/machinery/power/port_gen/pacman/diesel/anchored,
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 1;
+	icon_state = "railing0";
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Ps" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Pu" = (
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Qe" = (
+/obj/structure/flora/big/bush3,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"Rc" = (
+/obj/structure/flora/small/grassb5,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"Ry" = (
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"RE" = (
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Sw" = (
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Sy" = (
+/obj/structure/flora/small/grassb1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"Te" = (
+/obj/effect/floor_decal/industrial/hatch,
+/obj/effect/decal/mecha_wreckage/ripley/firefighter,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"TE" = (
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"TL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"Ub" = (
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"UI" = (
+/obj/random/flora/small_jungle_tree,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"Vg" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"Vm" = (
+/obj/structure/table/onestar,
+/obj/random/tool/advanced,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"VE" = (
+/obj/structure/flora/small/grassb2,
+/obj/random/flora/jungle_tree,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"VV" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"Wd" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"Wi" = (
+/obj/structure/table/rack/shelf,
+/obj/random/tool/advanced/always_spawn,
+/obj/random/tool/advanced/always_spawn,
+/obj/random/tool/advanced/always_spawn,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/tool,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Wu" = (
+/obj/structure/table/rack/shelf,
+/obj/random/powercell/large_safe_lonestar,
+/obj/random/powercell/large_safe_lonestar,
+/obj/random/powercell/large_safe_lonestar,
+/obj/random/powercell/large_safe_lonestar,
+/obj/random/powercell/large_safe_lonestar,
+/obj/random/powercell/small_safe_lonestar,
+/obj/random/powercell/small_safe_lonestar,
+/obj/random/powercell/small_safe_lonestar,
+/obj/item/tool_upgrade/augment/cell_mount,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"WA" = (
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"WD" = (
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"WY" = (
+/obj/structure/flora/small/grassb2,
+/obj/structure/flora/small/grassb4,
+/obj/structure/flora/small/grassb4,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"XP" = (
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+"Yj" = (
+/obj/random/toolbox,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Yy" = (
+/obj/structure/table/rack/shelf,
+/obj/random/tool/advanced/always_spawn,
+/obj/random/tool/advanced/always_spawn,
+/obj/random/tool/advanced/always_spawn,
+/obj/random/tool,
+/obj/random/tool,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/dungeon/outside/burned_outpost)
+"Zs" = (
+/obj/structure/flora/big/rocks2,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
+
+(1,1,1) = {"
+WD
+gP
+gP
+gP
+gP
+gP
+gP
+ng
+gP
+gP
+hp
+hp
+gP
+gP
+hp
+gP
+WD
+gP
+hp
+hp
+ng
+ng
+hp
+ng
+ng
+hp
+XP
+gP
+gP
+WD
+"}
+(2,1,1) = {"
+gP
+gP
+gP
+UI
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+XP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+XP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+"}
+(3,1,1) = {"
+Eg
+gP
+gP
+gP
+XP
+Ub
+Ub
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ub
+Ub
+GB
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+XP
+"}
+(4,1,1) = {"
+Eg
+Eg
+gP
+WD
+Ub
+Ub
+nk
+hE
+hE
+Mh
+Mh
+Mh
+Mh
+Mh
+Mh
+Yj
+pg
+Ub
+Ps
+Ps
+Ps
+Ps
+Ub
+Ub
+Ub
+Ps
+Ub
+Ub
+gP
+gP
+"}
+(5,1,1) = {"
+gP
+Eg
+gP
+Ub
+Ub
+uZ
+uZ
+lp
+lz
+NH
+lz
+lz
+lz
+lz
+lz
+JP
+Ar
+Ub
+Yy
+Wi
+Wi
+Yy
+TE
+zs
+aH
+nI
+Vm
+Ub
+zE
+zE
+"}
+(6,1,1) = {"
+gP
+gP
+gP
+Ub
+vk
+Pu
+Pu
+Pu
+Pu
+Sw
+Pu
+GL
+Pu
+Sw
+Pu
+Pu
+Pu
+uG
+uZ
+uZ
+uZ
+uZ
+zr
+li
+uq
+NR
+zs
+Ps
+gP
+HQ
+"}
+(7,1,1) = {"
+Wd
+XP
+gP
+Ps
+Fw
+Pu
+IS
+RE
+RE
+RE
+RE
+RE
+RE
+RE
+RE
+Pu
+Ry
+uG
+uZ
+es
+uZ
+nk
+uZ
+uZ
+uq
+uq
+ED
+Ps
+gP
+zE
+"}
+(8,1,1) = {"
+gP
+gP
+gP
+Ps
+fu
+Iz
+Mh
+Mh
+Mh
+Mh
+Mh
+Mh
+Mh
+IO
+st
+Pu
+Pu
+uG
+uZ
+uZ
+tH
+tH
+tH
+tH
+uZ
+uq
+Vm
+Ps
+gP
+gP
+"}
+(9,1,1) = {"
+gP
+gP
+Wd
+Ps
+uZ
+Pu
+lz
+lz
+lz
+WA
+lz
+lz
+lp
+lz
+lz
+Pu
+Sw
+uG
+uZ
+Fw
+tH
+tH
+tH
+tH
+uZ
+uq
+EO
+Ps
+gP
+WD
+"}
+(10,1,1) = {"
+WD
+gP
+gP
+Ps
+es
+Pu
+RE
+RE
+RE
+RE
+RE
+RE
+RE
+Cu
+RE
+Pu
+GR
+Ub
+ae
+uZ
+es
+uZ
+es
+Fw
+es
+uZ
+Kd
+Ps
+gP
+gP
+"}
+(11,1,1) = {"
+Zs
+gP
+gP
+Ps
+uZ
+Sw
+hE
+Mh
+Mh
+Mh
+Mh
+Mh
+hE
+Mh
+hE
+Pu
+GR
+Ub
+uZ
+uZ
+uZ
+uZ
+uZ
+uZ
+nk
+ae
+uZ
+Ps
+gP
+gP
+"}
+(12,1,1) = {"
+gP
+XP
+gP
+Ps
+nk
+Pu
+lz
+lz
+WA
+lz
+lz
+lz
+lz
+lz
+WA
+Sw
+sI
+Ub
+Wu
+HH
+nA
+oO
+Po
+uZ
+uZ
+uZ
+nk
+Ub
+gP
+gP
+"}
+(13,1,1) = {"
+gP
+gP
+sN
+Ps
+uZ
+Pu
+RE
+RE
+RE
+Cu
+RE
+RE
+RE
+RE
+RE
+GL
+Ub
+Ub
+Ps
+Ps
+Ps
+Ps
+Ub
+Ub
+bG
+Ps
+bG
+Ub
+gP
+gP
+"}
+(14,1,1) = {"
+gP
+gP
+gP
+Ps
+uZ
+Sw
+Te
+Mh
+Mh
+Mh
+hE
+Mh
+Mh
+Mh
+Mh
+Pu
+Ps
+GB
+gP
+gP
+gP
+an
+an
+gP
+gP
+an
+gP
+gP
+gP
+gP
+"}
+(15,1,1) = {"
+gP
+gP
+gP
+Ub
+vk
+Pu
+lp
+lz
+NH
+lz
+lz
+lz
+lz
+lz
+WA
+Pu
+Ps
+gP
+gP
+gP
+XP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+us
+"}
+(16,1,1) = {"
+gP
+gP
+gP
+Ub
+Ub
+Pu
+Pu
+Pu
+Sw
+Pu
+GL
+Pu
+Pu
+Pu
+AE
+Pu
+Ps
+gP
+gP
+gP
+gP
+gP
+zE
+zE
+Cs
+gP
+gP
+gP
+gP
+au
+"}
+(17,1,1) = {"
+gP
+gP
+oB
+gP
+Ub
+Ub
+Ub
+uZ
+nk
+uZ
+Pu
+Sw
+Pu
+Pu
+Pu
+Sw
+Ub
+gP
+WD
+gP
+gP
+HQ
+gP
+gP
+gP
+zE
+gP
+VV
+gP
+au
+"}
+(18,1,1) = {"
+gP
+gP
+gP
+XP
+gP
+GB
+Ub
+Ps
+Ps
+Ps
+uG
+uG
+uG
+Ps
+Ps
+Ps
+Ub
+gP
+gP
+gP
+gP
+gP
+jo
+gP
+gP
+gP
+VV
+VV
+Sy
+fT
+"}
+(19,1,1) = {"
+gP
+gP
+gP
+gP
+bK
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+Sy
+Sy
+gP
+gP
+gP
+gP
+XP
+VV
+VV
+Sy
+zE
+"}
+(20,1,1) = {"
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+WD
+gP
+gP
+gP
+gP
+gP
+gP
+wG
+gP
+gP
+Sy
+gP
+gP
+Sy
+Sy
+wG
+VV
+gP
+gP
+gP
+"}
+(21,1,1) = {"
+gP
+gP
+WD
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+XP
+gP
+gP
+gP
+gP
+gP
+cB
+gP
+gP
+VV
+VV
+gP
+gP
+iq
+Rc
+"}
+(22,1,1) = {"
+gP
+XP
+gP
+gP
+gP
+gP
+yG
+gP
+gP
+XP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+bK
+lw
+lw
+gP
+gP
+wG
+gP
+gP
+iq
+Ga
+"}
+(23,1,1) = {"
+gP
+gP
+gP
+gP
+sN
+gP
+gP
+gP
+gP
+gP
+gP
+HN
+iq
+iq
+WD
+LU
+au
+au
+ai
+XP
+gP
+zM
+lw
+iq
+gP
+WD
+gP
+gP
+iq
+Fn
+"}
+(24,1,1) = {"
+jo
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+iq
+iq
+iq
+iq
+iq
+Vg
+au
+us
+gP
+gP
+gP
+gP
+tw
+iq
+iq
+bK
+bD
+zM
+iq
+Fn
+"}
+(25,1,1) = {"
+gP
+gP
+gP
+gP
+gP
+XP
+gP
+gP
+gP
+HN
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+WD
+Zs
+Nk
+gP
+tw
+iq
+iq
+vL
+WY
+wE
+iq
+Cf
+"}
+(26,1,1) = {"
+bK
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+Qe
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+Pe
+gP
+gP
+gP
+iq
+iq
+iq
+iq
+oY
+iq
+UI
+au
+"}
+(27,1,1) = {"
+WD
+zM
+iq
+iq
+gP
+WD
+au
+ip
+Vg
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+au
+Gh
+gP
+gn
+fj
+iq
+zM
+iq
+VV
+iq
+gP
+mv
+"}
+(28,1,1) = {"
+iq
+iq
+iq
+iq
+iq
+UI
+au
+au
+ys
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+Vg
+he
+gP
+gP
+gP
+gP
+iq
+iq
+VV
+aX
+iq
+iq
+"}
+(29,1,1) = {"
+iq
+iq
+iq
+iq
+iq
+ip
+au
+au
+Vg
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+Vg
+ip
+ai
+Hg
+au
+WD
+gP
+gP
+VV
+VE
+iq
+iq
+"}
+(30,1,1) = {"
+iq
+iq
+iq
+iq
+iq
+au
+au
+au
+TL
+Vg
+HN
+iq
+iq
+iq
+iq
+iq
+iq
+iq
+Vg
+TL
+gP
+Hg
+Hg
+tw
+iq
+gP
+gP
+fj
+iq
+iq
+"}

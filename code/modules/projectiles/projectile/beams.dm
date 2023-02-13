@@ -24,7 +24,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	impact_type = /obj/effect/projectile/laser/impact
 
 	heat = 100
-	added_damage_laser_pve = 20
 
 /obj/item/projectile/beam/check_penetrate(var/atom/A) // For shields to actually block projectiles
 	if(istype(A, /obj/item/shield))
@@ -40,86 +39,69 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "charged laser"
 	armor_penetration = 30 //Good AP, its for slow firing weapon
 	eyeblur = 1
-	added_damage_laser_pve = 30
 
 /obj/item/projectile/beam/drone
 	damage_types = list(BURN = 15)
 	armor_penetration = 10 //Some AP
 	recoil = 2
-	added_damage_laser_pve = 15
 
 /obj/item/projectile/beam/pulse/drone
 	damage_types = list(BURN = 10)
 	armor_penetration = 5 //No AP we deal 30 damage in 3 shots
-	added_damage_laser_pve = 10
 
 /obj/item/projectile/beam/weak
 	damage_types = list(BURN = 16)
 	armor_penetration = 15 //Some AP
 	recoil = 2
-	added_damage_laser_pve = 16
 
 /obj/item/projectile/beam/weak/pistol_35
 	damage_types = list(BURN = 12)
-	added_damage_laser_pve = 12
 	recoil = 1
 
 /obj/item/projectile/beam/weak/light_rifle_257
 	damage_types = list(BURN = 13)
-	added_damage_laser_pve = 13
 
 /obj/item/projectile/beam/weak/rifle_75
 	damage_types = list(BURN = 22)
-	added_damage_laser_pve = 22
 	recoil = 4
 
 /obj/item/projectile/beam/weak/heavy_rifle_408
 	damage_types = list(BURN = 16)
-	added_damage_laser_pve = 16
 	recoil = 3
 
 /obj/item/projectile/beam/weak/magnum_40
 	damage_types = list(BURN = 20)
-	added_damage_laser_pve = 20
 	recoil = 3
 
 /obj/item/projectile/beam/weak/kurtz_50
 	damage_types = list(BURN = 40)
-	added_damage_laser_pve = 20
 	recoil = 5
 
 /obj/item/projectile/beam/weak/smg
 	damage_types = list(BURN = 10)
-	added_damage_laser_pve = 10
 
 /obj/item/projectile/beam/weak/smg/firestorm
 	damage_types = list(BURN = 10)
-	added_damage_laser_pve = 10
 	fire_stacks = 2 //So it doesn't become dumb fast
 
 /obj/item/projectile/beam/weak/lethal
 	damage_types = list(BURN = 20)
-	added_damage_laser_pve = 20
 	armor_penetration = 0 //cant have negitive armor sadly
 
 /obj/item/projectile/beam/weak/ap
 	damage_types = list(BURN = 15)
-	added_damage_laser_pve = 15
 	armor_penetration = 25
 
 /obj/item/projectile/beam/weak/ap/reaver
 	damage_types = list(BURN = 16.5)
-	added_damage_laser_pve = 16.5
 
 /obj/item/projectile/beam/shotgun
 	damage_types = list(BURN = 35) //Normal slugs deal 45
-	added_damage_laser_pve = 35
 	armor_penetration = 10
 	recoil = 2
 
 /obj/item/projectile/beam/shotgun/strong
 	damage_types = list(BURN = 54) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
-	added_damage_laser_pve = 54
 	armor_penetration = 10
 	eyeblur = 4
 	recoil = 4
@@ -129,20 +111,17 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	icon_state = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	damage_types = list(BURN = 0)
-	added_damage_laser_pve = 0
 	check_armour = ARMOR_ENERGY
 	eyeblur = 2
 
 /obj/item/projectile/beam/midlaser // Middle ground between better than stock but worse than heavy.
 	damage_types = list(BURN = 25)
-	added_damage_laser_pve = 25
 	armor_penetration = 25
 
 /obj/item/projectile/beam/heavylaser
 	name = "heavy laser"
 	icon_state = "heavylaser"
 	damage_types = list(BURN = 35)
-	added_damage_laser_pve = 35
 	armor_penetration = 25
 	eyeblur = 4
 	muzzle_type = /obj/effect/projectile/laser_heavy/muzzle
@@ -154,7 +133,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "x-ray beam"
 	icon_state = "xray"
 	damage_types = list(BURN = 25)
-	added_damage_laser_pve = 25
 	armor_penetration = 40
 	eyeblur = 4
 	recoil = 1
@@ -167,7 +145,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "pulse"
 	icon_state = "u_laser"
 	damage_types = list(BURN = 40)
-	added_damage_laser_pve = 40
 	armor_penetration = 25
 	eyeblur = 4
 	recoil = 3
@@ -183,7 +160,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/pulse/heavy
 	name = "heavy pulse"
 	damage_types = list(BURN = 50)
-	added_damage_laser_pve = 50
 	armor_penetration = 35
 	recoil = 5
 
@@ -200,7 +176,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "nuclear beam"
 	icon_state = "emitter"
 	damage_types = list(BURN = 40)
-	added_damage_laser_pve = 40
 	armor_penetration = 30 //Experimental and extremely rare but also self recharging so take it as you will
 	recoil = 7
 
@@ -221,7 +196,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "sniper beam"
 	icon_state = "xray"
 	damage_types = list(BURN = 50)
-	added_damage_laser_pve = 50
 	armor_penetration = 40
 	//stun = 3
 	//weaken = 3
@@ -239,7 +213,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	taser_effect = 1
 	agony = 30
 	damage_types = list(BURN = 1)
-	added_damage_laser_pve = 1
 
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
@@ -253,7 +226,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	taser_effect = 1
 	agony = 65 // Middle ground between an instant electrode stun and stunbeam
 	damage_types = list(BURN = 0) // Just in case, this is supposed to be 100% nonlethal
-	added_damage_laser_pve = 5
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
 	impact_type = /obj/effect/projectile/stun/impact
@@ -266,7 +238,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	icon_state = "stun"
 	agony = 5
 	damage_types = list(BURN = 10)
-	added_damage_laser_pve = 10
 	armor_penetration = 0
 	eyeblur = 0
 
@@ -279,7 +250,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "sin"
 	icon_state = "xray"
 	damage_types = list(TOX = 10)
-	added_damage_laser_pve = 10
 	armor_penetration = 0
 	eyeblur = 0
 	muzzle_type = /obj/effect/projectile/xray/muzzle
@@ -291,7 +261,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "grace"
 	icon_state = "xray"
 	damage_types = list(TOX = 0)//Shouldnt do anything but just in case its toxin
-	added_damage_laser_pve = 0
 	armor_penetration = 0
 	stun = 0
 	weaken = 0
@@ -327,7 +296,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/tesla
 	name = "lightning"
 	damage_types = list(BURN = 30)
-	added_damage_laser_pve = 30
 	armor_penetration = 10
 	hitscan = TRUE
 
@@ -341,14 +309,12 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 
 /obj/item/projectile/beam/tesla/shotgun/strong
 	damage_types = list(BURN = 45) // Default slug (/obj/item/projectile/bullet/shotgun) deal 54 damage
-	added_damage_laser_pve = 45
 	recoil = 5
 
 /obj/item/projectile/beam/infrared
 	name = "infrared radiation"
 	icon_state = "invisible"
 	damage_types = list(BURN = 15)
-	added_damage_laser_pve = 15
 	armor_penetration = 15 //less ap
 	eyeblur = 0
 	muzzle_type = null

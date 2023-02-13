@@ -4,8 +4,8 @@
 	icon_state = "tzantz"
 	meat_amount = 2
 	turns_per_move = 4
-	maxHealth = 115
-	health = 115
+	maxHealth = 100
+	health = 100
 	move_to_delay = 4
 	mob_size = MOB_MEDIUM
 	density = TRUE

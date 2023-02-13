@@ -77,7 +77,7 @@
 
 /obj/item/device/radio/headset/headset_sec
 	name = "marshal radio headset"
-	desc = "This is used by your mall cops. This has a small symbol denoting its built in back-up transmitter."
+	desc = "This is used by your mall cops. This has a small symbol denoting its built-in backup transmitter."
 	icon_state = "sec_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
@@ -85,25 +85,32 @@
 
 /obj/item/device/radio/headset/headset_sec/bowman		//Wearing a Marshal bowman aids against flashbangs. Same stats otherwise.
 	name = "marshal bowman headset"
-	desc = "This headset is a premium quality headset made for only true operators! Ignore.. the ten credit price tag and the rattling noise it makes when you shake it. This has a small symbol denoting its built in back-up transmitter"
+	desc = "This headset is a premium quality headset made for only true operators! Ignore.. the ten credit price tag and the rattling noise it makes when you shake it. This has a small symbol denoting its built-in backup transmitter"
 	icon_state = "sec_headset_bowman"
 	item_state = "headset"
 	adhoc_fallback = TRUE
 
 /obj/item/device/radio/headset/headset_blackshield
 	name = "blackshield radio headset"
-	desc = "This is used by the idiotic chimps with guns. This has a small symbol denoting its built in back-up transmitter."
+	desc = "This is used by the idiotic chimps with guns."
 	icon_state = "bs_headset"
 	item_state = "headset"
-	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/headset_bs
+
+/obj/item/device/radio/headset/headset_blackshield/corps
+	name = "corpsman radio headset"
+	ks2type = /obj/item/device/encryptionkey/headset_bs/corps
 
 /obj/item/device/radio/headset/headset_blackshield/bowman
 	name = "blackshield bowman headset"
-	desc = "This headset is a questionable quality headset made years ago for Sol cargo poilets its hard to ingore the rattling noise when ever you turn your head to fast. This has a small symbol denoting its built in back-up transmitter"
+	desc = "This headset of questionable quality was made years ago for Sol cargo pilots, it's hard to ingore the rattling noise whenever you turn your head too fast. This has a small symbol denoting its built-in backup transmitter."
 	icon_state = "bs_bowman_headset"
 	item_state = "bs_bowman_headset"
 	adhoc_fallback = TRUE
+
+/obj/item/device/radio/headset/headset_blackshield/bowman/corps
+	name = "corpsman bowman headset"
+	ks2type = /obj/item/device/encryptionkey/headset_bs/corps
 
 /obj/item/device/radio/headset/radiohat_blackshield // No longer a cap, a honest to god cap with a FUNCTIONAL headset. - Seb
 	name = "blackshield radio hat"
@@ -152,7 +159,7 @@
 	desc = "Made specifically for the roboticists who cannot decide between departments."
 	icon_state = "rob_headset"
 	item_state = "headset"
-	ks2type = /obj/item/device/encryptionkey/headset_moebius
+	ks2type = /obj/item/device/encryptionkey/headset_sci
 
 /obj/item/device/radio/headset/headset_med
 	name = "medical radio headset"
@@ -166,7 +173,7 @@
 	desc = "A sciency headset. Like usual."
 	icon_state = "com_headset"
 	item_state = "headset"
-	ks2type = /obj/item/device/encryptionkey/headset_moebius
+	ks2type = /obj/item/device/encryptionkey/headset_sci
 
 /obj/item/device/radio/headset/headset_com
 	name = "command radio headset"
@@ -203,7 +210,7 @@
 	icon_state = "com_headset"
 	item_state = "headset"
 	translate_binary = TRUE
-	ks2type = /obj/item/device/encryptionkey/heads/moebius
+	ks2type = /obj/item/device/encryptionkey/heads/rd
 
 /obj/item/device/radio/headset/heads/rd/recalculateChannels(var/setDescription = FALSE)
 	..(setDescription)
@@ -211,7 +218,7 @@
 
 /obj/item/device/radio/headset/heads/hos
 	name = "warrant officer headset"
-	desc = "The headset of the men who lock away your worthless lives. This has a small symbol denoting its built in back-up transmitter."
+	desc = "The headset of the men who lock away your worthless lives. This has a small symbol denoting its built-in backup transmitter."
 	icon_state = "wo_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
@@ -219,12 +226,12 @@
 
 /obj/item/device/radio/headset/heads/hos/bowman		//Wearing a Marshal bowman aids against flashbangs. Same stats otherwise.
 	name = "warrant officer bowman headset"
-	desc = "The headset of the men who lock away your worthless lives, in a comfortable bowman style.\nThis has a small symbol denoting its built in back-up transmitter."
+	desc = "The headset of the men who lock away your worthless lives, in a comfortable bowman style.\nThis has a small symbol denoting its built-in backup transmitter."
 	icon_state = "wo_headset_bowman"
 
 /obj/item/device/radio/headset/heads/bscom
 	name = "blackshield commander headset"
-	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built in back-up transmitter."
+	desc = "The headset of the men who protects your worthless lives. This has a small symbol denoting its built-in backup transmitter."
 	icon_state = "bscom_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
@@ -232,7 +239,7 @@
 
 /obj/item/device/radio/headset/heads/bscom/bowman
 	name = "blackshield commander bowman headset"
-	desc = "The headset of the men who protects your worthless lives, in a comfortable bowman style.\nThis has a small symbol denoting its built in back-up transmitter."
+	desc = "The headset of the men who protects your worthless lives, in a comfortable bowman style.\nThis has a small symbol denoting its built-in backup transmitter."
 	icon_state = "bs_bowman_headset"
 	item_state = "bs_bowman_headset"
 	adhoc_fallback = TRUE
@@ -289,7 +296,7 @@
 
 /obj/item/device/radio/headset/headset_pro
 	name = "prospector radio headset"
-	desc = "A headset used by the prospector thugs. This has a small symbol denoting its built in back-up transmitter."
+	desc = "A headset used by the prospector thugs. This has a small symbol denoting its built-in backup transmitter."
 	icon_state = "pro_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE
@@ -297,7 +304,7 @@
 
 /obj/item/device/radio/headset/heads/foreman
 	name = "foreman radio headset"
-	desc = "A headset used by the krumpiest git. This has a small symbol denoting its built in back-up transmitter."
+	desc = "A headset used by the krumpiest git. This has a small symbol denoting its built-in backup transmitter."
 	icon_state = "pro_headset"
 	item_state = "headset"
 	adhoc_fallback = TRUE

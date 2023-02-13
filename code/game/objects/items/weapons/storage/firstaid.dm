@@ -125,9 +125,9 @@
 
 /obj/item/storage/firstaid/adv/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
@@ -154,7 +154,9 @@
 	desc = "Contains tools for surgery. Has precise foam fitting for safe transport."
 	icon_state = "surgeon"
 	item_state = "firstaid-surgeon"
-	max_storage_space = 19
+	max_storage_space = null // We have to null storage space so that it has the exact number of slots defined on storage_slots.
+	storage_slots = 9 // Enough for the tools it holds, and not one more.
+	max_w_class = ITEM_SIZE_NORMAL // Average size of the tools it can hold.
 	matter = list(MATERIAL_PLASTIC = 10) //holds more
 	can_hold = list(
 		/obj/item/tool/bonesetter,
@@ -168,7 +170,13 @@
 		/obj/item/device/scanner,
 		/obj/item/storage/pill_bottle,
 		/obj/item/stack/medical,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/tool/medmultitool,
 		)
+
+// make_exact_fit() completely ruins the can_hold list,
+// and makes it not accept any of the items it does not come pre-populated with.
+// Please never use this proc on these containers.
 
 /obj/item/storage/firstaid/surgery/populate_contents()
 	if (empty) return
@@ -180,8 +188,14 @@
 	new /obj/item/tool/scalpel(src)
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/tool/surgicaldrill(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	make_exact_fit()
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+
+/obj/item/storage/firstaid/surgery/traitor
+	name = "conspicuous surgery kit"
+	icon_state = "surgeon_sus"
+	item_state = "combat_surgery_kit"
+	storage_slots = 12 // Fits all the tools it comes with
+	matter = list(MATERIAL_PLASTIC = 12) // More slots
 
 /obj/item/storage/firstaid/surgery/traitor/populate_contents()
 	if (empty) return
@@ -194,11 +208,45 @@
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/device/scanner/health(src)
 	new /obj/item/tool/surgicaldrill/adv(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
-	new /obj/item/storage/pill_bottle/prosurgeon(src)
-	make_exact_fit()
+	new /obj/item/reagent_containers/syringe/stim/ultra_surgeon(src) // Antags don't come with the medical perk, this helps them make use of the ATK provided
 
+/obj/item/storage/firstaid/surgery/combat
+	name = "combat surgery kit"
+	desc = "Contains tools for surgery. Has precise foam fitting for safe transport of highly advanced tools."
+	icon = 'icons/obj/storage/deferred.dmi'
+	icon_state = "combat_surgery_kit"
+	item_state = "combat_surgery_kit"
+	storage_slots = 10 // Enough for the tools it holds, 1 more slot than standard surgical kits, but less than Soteria made ones.
+	max_w_class = ITEM_SIZE_NORMAL
+	matter = list(MATERIAL_PLASTIC = 12) // More slots
+	can_hold = list(
+		/obj/item/tool/bonesetter,
+		/obj/item/tool/saw/circular,
+		/obj/item/tool/hemostat,
+		/obj/item/tool/retractor,
+		/obj/item/tool/scalpel,
+		/obj/item/tool/surgicaldrill,
+		/obj/item/tool/tape_roll/bonegel,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/storage/pill_bottle,
+		/obj/item/tool/medmultitool,
+		/obj/item/stack/medical/bruise_pack/advanced
+		)
+
+/obj/item/storage/firstaid/surgery/combat/populate_contents()
+	if (empty) return
+	new /obj/item/tool/scalpel/laser(src)
+	new /obj/item/tool/hemostat/adv(src)
+	new /obj/item/tool/retractor/adv(src)
+	new /obj/item/tool/bonesetter/adv(src)
+	new /obj/item/tool/tape_roll/bonegel(src)
+	new /obj/item/tool/saw/circular/medical(src)
+	new /obj/item/tool/surgicaldrill/adv(src)
+	new /obj/item/reagent_containers/syringe/stim/ultra_surgeon(src)
+	new /obj/item/storage/pill_bottle/tramadol(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
 
 /obj/item/storage/firstaid/surgery/si
 	name = "advanced surgery kit"
@@ -206,23 +254,23 @@
 	icon_state = "surgery_box_SI"
 	item_state = "combat_surgery_kit"
 	icon = 'icons/obj/storage/deferred.dmi'
-	max_storage_space = 19
+	storage_slots = 12 // All tools a full one would fit + pill bottle and syringe, in case they're needed.
 
 /obj/item/storage/firstaid/surgery/si/empty
 	empty = TRUE
 
 /obj/item/storage/firstaid/surgery/si/populate_contents()
 	if (empty) return
-	new /obj/item/tool/bonesetter/adv/si(src)
-	new /obj/item/tool/saw/circular/medical(src)
-	new /obj/item/tool/hemostat/adv/si(src)
-	new /obj/item/tool/retractor/adv/si(src)
 	new /obj/item/tool/scalpel/advanced/si(src)
 	new /obj/item/tool/scalpel/laser(src)
+	new /obj/item/tool/hemostat/adv/si(src)
+	new /obj/item/tool/retractor/adv/si(src)
+	new /obj/item/tool/bonesetter/adv/si(src)
 	new /obj/item/tool/cautery/adv/si(src)
 	new /obj/item/tool/tape_roll/bonegel/si(src)
+	new /obj/item/tool/saw/circular/medical/si(src)
 	new /obj/item/tool/surgicaldrill/adv/si(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
 
 /obj/item/storage/firstaid/ifak
 	name = "IFAK"
@@ -312,10 +360,10 @@
 
 /obj/item/storage/firstaid/nt/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack/nt(src)
-	new /obj/item/stack/medical/advanced/bruise_pack/nt(src)
-	new /obj/item/stack/medical/advanced/ointment/nt(src)
-	new /obj/item/stack/medical/advanced/ointment/nt(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/nt(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/nt(src)
+	new /obj/item/stack/medical/ointment/advanced/nt(src)
+	new /obj/item/stack/medical/ointment/advanced/nt(src)
 	new /obj/item/reagent_containers/syringe/large/antitoxin(src)
 	new /obj/item/reagent_containers/syringe/large/inaprovaline(src)
 
@@ -354,10 +402,10 @@
 
 /obj/item/storage/firstaid/soteria/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
 	new /obj/item/reagent_containers/syringe/tricordrazine(src)
@@ -386,10 +434,10 @@
 
 /obj/item/storage/firstaid/soteria/large/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)

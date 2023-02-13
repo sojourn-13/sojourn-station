@@ -58,7 +58,6 @@
 #define GUN_UPGRADE_OVERCHARGE_MAX "overcharge_max_mult"
 #define GUN_UPGRADE_OVERCHARGE_RATE "overcharge_rate_mult"
 #define GUN_UPGRADE_MELEE_DAMAGE "melee_damage"
-#define GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE "pve_proj_mult_damage"
 //Int additive
 #define GUN_UPGRADE_PAIN_MULT "pain_damage_plus"
 #define GUN_UPGRADE_MAGUP "magazine_addition"

@@ -101,7 +101,7 @@
 		return
 	..()
 
-/mob/living/silicon/ai/CtrlClickOn(var/atom/A)
+/mob/living/silicon/ai/CtrlClickOn(var/atom/A, params)
 	if(A.AICtrlClick(src))
 		return
 	..()

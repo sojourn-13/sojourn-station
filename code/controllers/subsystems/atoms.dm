@@ -29,7 +29,7 @@ SUBSYSTEM_DEF(atoms)
 	if(initialized == INITIALIZATION_INSSATOMS)
 		return
 
-	var/previous_state
+	var/previous_state = null
 	if(initialized != INITIALIZATION_INNEW_MAPLOAD)
 		previous_state = initialized
 		initialized = INITIALIZATION_INNEW_MAPLOAD
@@ -112,7 +112,7 @@ SUBSYSTEM_DEF(atoms)
 	else if(!A.initialized)
 		BadInitializeCalls[the_type] |= BAD_INIT_DIDNT_INIT
 	else
-		//LEGACY_SEND_SIGNAL(A,COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE)
+		//SEND_SIGNAL(A,COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE)
 		if(created_atoms && from_template && ispath(the_type, /atom/movable))//we only want to populate the list with movables
 			created_atoms += A.GetAllContents()
 

@@ -23,6 +23,7 @@
 	nutriment_req = 6
 	var/psi_points = 0         //How many points we have currently
 	var/max_psi_points = 0
+	var/burn
 	var/disabled = TRUE        //Whether or not the implant functions.
 	var/psi_point_cost
 	var/inhibited = FALSE      //Whether or not the organ has been inhibited by an external force

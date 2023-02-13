@@ -26,6 +26,7 @@
 
 	wield_delay = 0.5 SECOND
 	wield_delay_factor = 0.1 // 10 vig
+	gun_parts = list(/obj/item/part/gun/frame/grease = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 /obj/item/gun/projectile/automatic/greasegun/update_icon()
 	..()
@@ -41,3 +42,13 @@
 
 	icon_state = iconstring
 	item_state = itemstring
+
+/obj/item/part/gun/frame/grease
+	name = "Grease Gun frame"
+	desc = "A Grease Gun SMG frame. Cheap? Yes, but also effective."
+	icon_state = "frame_grease"
+	result = /obj/item/gun/projectile/automatic/greasegun
+	gripvars = list(/obj/item/part/gun/grip/black)
+	resultvars = list(/obj/item/gun/projectile/automatic/greasegun)
+	mechanismvar = /obj/item/part/gun/mechanism/smg
+	barrelvars = list(/obj/item/part/gun/barrel/pistol)
