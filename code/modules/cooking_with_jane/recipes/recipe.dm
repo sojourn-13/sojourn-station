@@ -127,12 +127,10 @@
 	cooking_container = PAN
 	product_type = /obj/item/reagent_containers/food/snacks/friedegg
 	step_builder = list(
-
 		CWJ_BEGIN_OPTION_CHAIN,
 		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=10, reagent_skip=TRUE),
 		list(CWJ_USE_STOVE_OPTIONAL, J_LO, 10 SECONDS),
 		CWJ_END_OPTION_CHAIN,
-
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/egg, qmod=0.5, exclude_reagents=list("blattedin")),
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
 		list(CWJ_ADD_REAGENT, "blackpepper", 1),
@@ -144,7 +142,6 @@
 	cooking_container = PAN
 	product_type = /obj/item/reagent_containers/food/snacks/popcorn
 	step_builder = list(
-
 		list(CWJ_ADD_PRODUCE, "corn", reagent_skip=TRUE),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "cornoil", 2),
@@ -156,7 +153,6 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/cookie
 	step_builder = list(
-
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 2),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
@@ -182,7 +178,6 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/eggplantparm
 	step_builder = list(
-
 		list(CWJ_ADD_PRODUCE, "eggplant", reagent_skip=TRUE),
 		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=3, reagent_skip=TRUE),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
