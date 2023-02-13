@@ -530,6 +530,11 @@
 	desc = "A highly tactical partial ghillie suit adjusted for the upper body, it only makes you look a little goofy when not lying down!"
 	icon_state = "tacpon_ghillie"
 
+/obj/item/clothing/accessory/tacticalponcho/limegreen
+	name = "cowboy tactical poncho"
+	desc = "A sleek lime green poncho."
+	icon_state = "tacpon_cowboyponcho"
+
 /obj/item/clothing/accessory/colorponcho
 	name = "tactical poncho"
 	desc = "A sleek poncho, now in any color of your choice!"
