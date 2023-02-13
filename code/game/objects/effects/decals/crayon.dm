@@ -33,65 +33,107 @@
 	add_hiddenprint(usr)
 
 //admin testing items.
-/obj/item/pen/crayon/crayon_mage // used in admin testing so I don't have to constantly var edit myself to be nearsighted
-	desc = "A admin only item! It gives nearsighted!"
-	name = "Crayon Magic Crayola"
-	icon = 'icons/obj/crayons.dmi'
-	icon_state = "crayonred"
+/obj/item/device/camera/crayon_mage // used in admin testing so I don't have to constantly var edit myself to be nearsighted
+	desc = "why is the light on the back?"
+	name = "camera"
+	pictures_left = 0
 
-/obj/item/pen/crayon/crayon_mage/attack_self(mob/user)
+/obj/item/device/camera/crayon_mage/attackby(obj/item/I as obj, mob/user as mob)
+	if(istype(I, /obj/item/device/camera_film))
+		to_chat(user, "<span class='warning'>Strange. The film seems to keep popping out.</span>")
+
+/obj/item/device/camera/crayon_mage/attack_self(mob/user)
 	if(user)
+		to_chat(user, "The camera goes off in your face!")
+		playsound(loc, pick('sound/items/polaroid1.ogg', 'sound/items/polaroid2.ogg'), 75, 1, -3)
 		user.disabilities|=NEARSIGHTED
 
 /obj/structure/sink/basion/crayon //BLOOD FONT!
 	name = "blood basion"
 	desc = "A deep basin of polished stone that forever fills with gore."
 	icon_state = "BaptismFont_Water"
+	density = 1
 	limited_reagents = FALSE
 	refill_rate = 200
 	reagent_id = "blood"
 
 /obj/structure/sink/basion/crayon/attack_hand(mob/living/carbon/human/user) //gives us bloody hands for writing spells.
 	if (istype(user))
-		add_fingerprint(user)
 		if (user.gloves)
 			return FALSE
-		var/taken = rand(3,5)
 		to_chat(user, SPAN_NOTICE("You get some blood on your hands."))
-		if (!user.blood_DNA)
-			user.blood_DNA = list()
-		user.blood_DNA |= blood_DNA.Copy()
-		user.bloody_hands += taken
+		user.bloody_hands += 5
 		user.hand_blood_color = "red"
 		user.update_inv_gloves(1)
 		user.verbs += /mob/living/carbon/human/proc/bloody_doodle
 
-//declaration of scroll base, this will have the vars ALL scrolls use and the blank icon
-//obj/item/scroll
-//declaration of scroll ready, This is the ready to go scroll. Sealed up and ready to kick ass. Needs proc for using when lit. Potentially needs process proc.
-//obj/item/scroll/sealed
+//scrolls allowing anyone to cast their effects by burning them.
+obj/item/scroll
+	name = "blank scroll"
+	desc = "A blank canvus in which to express yourself."
+	icon = 'icons/obj/scroll_bandange.dmi' //icons thanks to Ezoken#5894
+	icon_state = "Scrollstended"
+	w_class = ITEM_SIZE_BULKY
+	var/message = ""
 
-/*start of scroll based spells we use these to assing spells to the blank scroll before finishing it with bees wax.
-/obj/effect/decal/cleanable/crayon/attackby(obj/item/I, mob/living/carbon/human/M)
+//sealed scrolls are much smaller. They take wax to get tho.
+obj/item/scroll/sealed
+	name = "sealed scroll"
+	desc = "A scroll sealed up with something, or nothing. Only one way to find out!"
+	icon_state = "Scrollclosed"
+	w_class = ITEM_SIZE_SMALL
+
+obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 	..()
-	if(istype(I, /obj/item/scroll) && !istype(I, /obj/item/scroll/sealed) && M.stats.getPerk(PERK_SCRIBE)) // we have to have the new perk for this.
-		if(M.disabilities&BLIND && is_rune && M.species?.reagent_tag != IS_SYNTHETIC) // we are BLIND for this. You wont be able to use normal rituals!
+	if(QUALITY_WELDING in I.tool_qualities || istype(I, /obj/item/flame)) /*casts effects or just burns away if no spell works.
+		if(src.message == "Example Spell.")
+			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
+			example_spell(M) //I cast proc!
+			return //we don't cast every spell possible. Just the one on the scroll.
+		if we don't cast anything then we end up doing a normal burn. */
+		to_chat(M, "<span class='warning'>You ignite the scroll. It burns for a few moments before becoming ash.</span>")
+		ScrollBurn()
+		return
 
-			//Anti-Death check
-			if(M.maxHealth <= 30)
-				to_chat(M, "<span class='info'>You try to do as the book describes but your frail body condition physically prevents you from even mumbling a single word out of its pages.</span>")
-				return
-
-			var/datum/reagent/organic/blood/B = M.get_blood()
-			var/candle_amount = 0
-			to_chat(M, "<span class='info'>The smell of iron and burning paper fills the air.</span>")
-
-			for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) //Dont forget to clear your old work
-				if(spell.message == "scroll spell name here" && candle_amount >= 7)
-					babel_spell(M)
-					continue
+	if(istype(I, /obj/item/stack/wax) && !istype(I, /obj/item/scroll/sealed)) //seal the scroll
+		var/obj/item/stack/wax/W = I
+		if(W.amount <= 0) //a how the fuck check
 			return
-*/
+		W.amount -= 1
+		if(W.amount <= 0) //emergency delete check
+			qdel(W)
+		var/obj/item/scroll/sealed/wax_on = new /obj/item/scroll/sealed (src.loc)
+		wax_on.message = src.message
+		qdel(src)
+
+	if(istype(I, /obj/item/pen)) //temporary solution. Later will allow scribes to identify scrolls so I can add them into random generation.
+		var/txt = sanitize(input(M, "What would you like to label it as?", "Scroll Labeling", null)  as text, 128)
+		if(loc == M && M.stat == 0)
+			src.name = txt
+
+/obj/item/scroll/proc/ScrollBurn()
+	var/mob/living/M = loc
+	if(istype(M))
+		M.drop_from_inventory(src)
+	new /obj/effect/decal/cleanable/ash(get_turf(src))
+	qdel(src)
+
+/obj/item/storage/pouch/scroll //meant to take occult goodies and thats it.
+	name = "scroll bag"
+	desc = "Can hold various scrolls and books."
+	icon_state = "large_leather"
+	item_state = "large_leather"
+	w_class = ITEM_SIZE_BULKY
+	slot_flags = SLOT_BELT | SLOT_DENYPOCKET
+	max_w_class = ITEM_SIZE_SMALL
+	storage_slots = 7
+	max_storage_space = DEFAULT_NORMAL_STORAGE
+	can_hold = list(
+		/obj/item/scroll,
+		/obj/item/oddity/common/book_unholy,
+		/obj/item/oddity/common/book_omega,
+		/obj/item/card_carp,
+		/obj/item/device/camera_film)
 
 //start of book based spells
 /obj/effect/decal/cleanable/crayon/attackby(obj/item/I, mob/living/carbon/human/M)
@@ -116,6 +158,10 @@
 				candle_amount += 1
 
 			for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) //Dont forget to clear your old work
+				/*if(spell.message == "Example Spell." && candle_amount >= 0) //Used for testing mostly.
+					example_spell(M)
+					continue*/
+
 				if(spell.message == "Babel." && candle_amount >= 3)
 					babel_spell(M)
 					continue
@@ -164,7 +210,7 @@
 					bees_spell(M)
 					continue
 
-				if(spell.message == "Scribe" && candle_amount >= 7)
+				if(spell.message == "Scribe." && candle_amount >= 7)
 					scribe_spell(M)
 					continue
 			return
@@ -213,16 +259,56 @@
 			if(spell.message == "Equalize." && candle_amount >= 6)
 				equalize_spell(M)
 				continue
-/* needs scrolls first
-			if(spell.message == "Scroll" && candle_amount >= 7)
+
+			if(spell.message == "Scroll." && candle_amount >= 7)
 				scroll_spell(M)
 				continue
-*/
+			return
+
+//start of scroll based spells we use these to assign spells to the blank scroll before finishing it with bees wax.
+	if(istype(I, /obj/item/scroll) && !istype(I, /obj/item/scroll/sealed) && M.stats.getPerk(PERK_SCRIBE)) // we have to have the new perk for this.
+		if(M.disabilities&BLIND && is_rune && M.species?.reagent_tag != IS_SYNTHETIC) // we are BLIND for this. You wont be able to use normal rituals!
+
+			//Anti-Death check
+			if(M.maxHealth <= 30)
+				to_chat(M, "<span class='info'>You try to do as the book describes but your frail body condition physically prevents you from even mumbling a single word out of its pages.</span>")
+				return
+
+			var/candle_amount = 0
+			for(var/obj/item/flame/candle/mage_candle in oview(3)) // we don't light candles but we still do the check.
+				candle_amount += 1
+
+			to_chat(M, "<span class='info'>The smell of iron fills the air as the scroll is torn from your hand.</span>")
+
+			var/obj/item/scroll/S = new /obj/item/scroll(src.loc) //hard set a new scroll. Cause I don't trust players
+			M.drop_from_inventory(I)
+			qdel(I)
+
+			for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) //finds writing then consumes it and the rune.
+				if(spell.message && candle_amount >= 7)
+					S.message = spell.message
+					qdel(spell) // we consume the spell
+					S.name = "strange scroll"
+					if(S.message != "")
+						S.icon_state = "Scroll circle"
+						S.desc = "A scroll covered in various glyphs and runes."
+						qdel(src) //eat the rune, nom nom
+						return
+					else S.icon_state = "Scroll blood"
+					S.desc = "A scroll with a large rune on it."
+					qdel(src) // we consume the rune.
+					return
+				return
 			return
 		return
 	return
 
 //book spell procs
+/*/obj/effect/decal/cleanable/crayon/proc/example_spell(mob/living/carbon/human/M) //testing spell
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	B.remove_self(1)
+	log_and_message_admins("[M] has used the example spell! For testing purposes of course!")*/
+
 /obj/effect/decal/cleanable/crayon/proc/babel_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.add_language(LANGUAGE_CULT)
@@ -490,7 +576,7 @@
 		//nonmobs below this point
 		//turned it into a purse
 		if(istype(carpy, /obj/item/card_carp/rpelt) || istype(carpy, /obj/item/card_carp/dpelt) || istype(carpy, /obj/item/card_carp/pinepelt) || istype(carpy, /obj/item/card_carp/gpelt))
-			new /obj/item/storage/backpack/leather
+			new /obj/item/storage/pouch/scroll
 			qdel(carpy)
 			return
 		//burrow
@@ -504,19 +590,19 @@
 		new monstermob(carpy.loc)
 		qdel(carpy)
 
-	//take whatever we spawned and tone it WAAAAY back then make it friendly.
+	//tone back the power of the tamed beastie. The rest not so much.
 	for(var/mob/living/carbon/superior_animal/target in oview(1))
 		target.colony_friend = TRUE
 		target.friendly_to_colony = TRUE
 		target.faction = "Living Dead"
-		target.maxHealth *= 0.2
-		target.health *= 0.2
+		target.maxHealth = 5
+		target.health = 5
 	for(var/mob/living/simple_animal/target in oview(1))
 		target.colony_friend = TRUE
 		target.friendly_to_colony = TRUE
 		target.faction = "Living Dead"
-		target.maxHealth *= 0.2
-		target.health *= 0.2
+		target.maxHealth = 5
+		target.health = 5
 	return
 
 /obj/effect/decal/cleanable/crayon/proc/equalize_spell(mob/living/carbon/human/M)
@@ -556,14 +642,26 @@
 	else M.vessel.remove_reagent("blood", ((M.get_blood_volume() * 0.01) - bloodpercent) * M.species.blood_volume)
 	B.remove_self(min(20 * targets.len, 80))
 	return
-/* code for the scroll creation spell. Needs scrolls in first.
+
 /obj/effect/decal/cleanable/crayon/proc/scroll_spell(mob/living/carbon/human/M) //able to be cast by all. But only filled out by scribes.
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	for(var/mob/living/carbon/superior_animal/target in oview(1))
-		B.remove_self(50)
+		B.remove_self(100)
+		if(target.stat != DEAD) //has to be dead. Use Drain if you want to super kill things.
+			return
 		new /obj/item/scroll(src.loc)
+		qdel(target)
 	for(var/mob/living/simple_animal/target in oview(1))
-		B.remove_self(50)
+		B.remove_self(100)
+		if(target.stat != DEAD)
+			return
 		new /obj/item/scroll(src.loc)
+		qdel(target)
 	return
-*/
+
+//start of scroll spells here!
+/*obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	B.remove_self(1)
+	new /obj/item/scroll(M.loc)
+	src.ScrollBurn()*/

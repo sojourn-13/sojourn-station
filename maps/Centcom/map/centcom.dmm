@@ -5835,6 +5835,7 @@
 "vm" = (
 /obj/structure/table/woodentable,
 /obj/item/clothing/glasses/binoclard_lenses/dark,
+/obj/item/device/camera/crayon_mage,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "vB" = (
@@ -6493,6 +6494,10 @@
 "JL" = (
 /turf/simulated/wall/wood,
 /area/centcom/evac)
+"JN" = (
+/obj/item/storage/pouch/scroll,
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
 "JP" = (
 /obj/structure/flora/tree/jungle_small/variant5,
 /turf/simulated/floor/fixed/fgrass,
@@ -6577,6 +6582,7 @@
 "LO" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/fancy/crayons,
+/obj/item/soap/bluespase,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Mb" = (
@@ -6630,6 +6636,10 @@
 /obj/machinery/chemical_dispenser/soda,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/raider_base)
+"Nf" = (
+/obj/structure/sink/basion/crayon,
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
 "Np" = (
 /obj/structure/sign/departmentold/medical2,
 /turf/simulated/wall/r_wall,
@@ -6887,6 +6897,7 @@
 /area/centcom/evac)
 "Sv" = (
 /obj/structure/bookcase,
+/obj/item/scroll,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Sx" = (
@@ -19476,12 +19487,12 @@ qH
 qH
 KR
 ho
+JN
 MH
 MH
 MH
 MH
-MH
-MH
+Nf
 ho
 xg
 FM
