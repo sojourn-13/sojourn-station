@@ -12,6 +12,7 @@
 	var/strength = 0.05 // How much damage it deals per unit
 	reagent_type = "Toxin"
 	scannable = TRUE
+	nerve_system_accumulations = 35 //Baseline toxin is going to heck you up
 
 /datum/reagent/toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(strength)
@@ -40,6 +41,7 @@
 	reagent_state = LIQUID
 	color = "#CF3600"
 	strength = 0.6
+	nerve_system_accumulations = 45 //Plastic in blood or stomic is going to make you rather sick
 
 /datum/reagent/toxin/oil
 	name = "Oil"
@@ -49,6 +51,7 @@
 	reagent_state = LIQUID
 	color = "#0C0C0C"
 	common = TRUE //Identifiable on sight
+	nerve_system_accumulations = 15
 
 /datum/reagent/toxin/amatoxin
 	name = "Amatoxin"
@@ -73,7 +76,7 @@
 	strength = 0.1
 	overdose = REAGENTS_OVERDOSE/3
 	addiction_chance = 10
-	nerve_system_accumulations = 5
+	nerve_system_accumulations = 45 //Bad suishie
 	heating_point = 523
 	heating_products = list("toxin")
 	reagent_type = "Toxin/Stimulator"
@@ -111,6 +114,7 @@
 	color = "#9D14DB"
 	strength = 0.3
 	touch_met = 5
+	nerve_system_accumulations = 75 //Burning your insides
 
 /datum/reagent/toxin/plasma/touch_mob(mob/living/L, var/amount)
 	if(istype(L))
@@ -131,16 +135,17 @@
 /datum/reagent/toxin/cyanide //Fast and Lethal
 	name = "Cyanide"
 	id = "cyanide"
-	description = "A highly toxic chemical that prevents cellular respiration."
+	description = "A highly toxic chemical that prevents cellular respiration as it builds up. Has uses in helping treating nerve system overstimulation"
 	taste_mult = 0.6
 	reagent_state = LIQUID
 	color = "#CF3600"
 	strength = 0.2
 	metabolism = REM * 2
+	nerve_system_accumulations = -35 //Gives some use
 
 /datum/reagent/toxin/cyanide/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.adjustOxyLoss(2 * effect_multiplier)
+	M.adjustOxyLoss(2 * dose)
 	M.AdjustSleeping(1)
 
 /datum/reagent/toxin/potassium_chloride
@@ -152,6 +157,7 @@
 	color = "#FFFFFF"
 	strength = 0
 	overdose = REAGENTS_OVERDOSE
+	nerve_system_accumulations = 45
 
 /datum/reagent/toxin/potassium_chloride/overdose(mob/living/carbon/M, alien)
 	..()
@@ -174,6 +180,7 @@
 	color = "#FFFFFF"
 	strength = 0.1
 	overdose = 20
+	nerve_system_accumulations = 85
 
 /datum/reagent/toxin/potassium_chlorophoride/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -196,6 +203,7 @@
 	metabolism = REM
 	strength = 0.04
 	illegal = TRUE
+	nerve_system_accumulations = -50
 
 /datum/reagent/toxin/zombiepowder/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -222,6 +230,7 @@
 	strength = 0.01 // It's not THAT poisonous.
 	color = "#664330"
 	common = TRUE
+	nerve_system_accumulations = 30
 
 /datum/reagent/toxin/fertilizer/eznutrient
 	name = "EZ Nutrient"
@@ -234,6 +243,7 @@
 /datum/reagent/toxin/fertilizer/robustharvest
 	name = "Robust Harvest"
 	id = "robustharvest"
+	nerve_system_accumulations = 10
 
 /datum/reagent/toxin/plantbgone
 	name = "Plant-B-Gone"
@@ -243,6 +253,7 @@
 	reagent_state = LIQUID
 	color = "#49002E"
 	strength = 0.04
+	nerve_system_accumulations = 25
 
 /datum/reagent/toxin/plantbgone/touch_turf(turf/T)
 	if(istype(T, /turf/simulated/wall))
@@ -274,6 +285,7 @@
 	power = 10
 	meltdose = 4
 	illegal = TRUE
+	nerve_system_accumulations = 45
 
 
 /datum/reagent/toxin/lexorin
@@ -284,6 +296,7 @@
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	overdose = REAGENTS_OVERDOSE
+	nerve_system_accumulations = 30
 
 /datum/reagent/toxin/lexorin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.take_organ_damage(0.3 * effect_multiplier, 0)
@@ -298,6 +311,7 @@
 	taste_mult = 0.9
 	reagent_state = LIQUID
 	color = "#13BC5E"
+	nerve_system_accumulations = 70
 
 /datum/reagent/toxin/mutagen/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(33))
@@ -332,6 +346,7 @@
 	reagent_state = LIQUID
 	color = "#801E28"
 	illegal = TRUE
+	nerve_system_accumulations = 90
 
 /datum/reagent/medicine/slimejelly/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(10))
@@ -349,6 +364,7 @@
 	reagent_state = LIQUID
 	color = "#801E28"
 	illegal = TRUE
+	nerve_system_accumulations = 0
 
 /datum/reagent/medicine/pureslimejelly/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustToxLoss(rand(15,20) * effect_multiplier)
@@ -361,12 +377,13 @@
 /datum/reagent/medicine/soporific
 	name = "Soporific"
 	id = "stoxin"
-	description = "An effective hypnotic used to treat insomnia."
+	description = "An effective hypnotic used to treat insomnia. As well as nerve system overstimulation."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#009CA8"
 	metabolism = REM * 5
 	overdose = REAGENTS_OVERDOSE
+	nerve_system_accumulations = -50
 
 /datum/reagent/medicine/soporific/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	var/effective_dose = dose
@@ -390,13 +407,14 @@
 /datum/reagent/medicine/chloralhydrate
 	name = "Chloral Hydrate"
 	id = "chloralhydrate"
-	description = "A powerful sedative."
+	description = "A powerful sedative and affective nerve relaxant."
 	taste_description = "bitterness"
 	reagent_state = SOLID
 	color = "#000067"
 	metabolism = REM * 5
 	overdose = REAGENTS_OVERDOSE * 0.5
 	illegal = TRUE
+	nerve_system_accumulations = -90
 
 /datum/reagent/medicine/chloralhydrate/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	var/effective_dose = dose
@@ -438,6 +456,7 @@
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#13BC5E"
+	nerve_system_accumulations = 50
 
 /datum/reagent/toxin/slimetoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
@@ -453,6 +472,7 @@
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#13BC5E"
+	nerve_system_accumulations = 0
 
 /datum/reagent/toxin/aslimetoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // TODO: check if there's similar code anywhere else
 	if(HAS_TRANSFORMATION_MOVEMENT_HANDLER(M))
@@ -479,14 +499,6 @@
 		new_mob.key = M.key
 	qdel(M)
 
-/datum/reagent/other/xenomicrobes
-	name = "Xenomicrobes"
-	id = "xenomicrobes"
-	description = "Microbes with an entirely alien cellular structure."
-	taste_description = "sludge"
-	reagent_state = LIQUID
-	color = "#535E66"
-
 /datum/reagent/toxin/pararein
 	name = "Pararein"
 	id = "pararein"
@@ -496,7 +508,7 @@
 	color = "#a37d9c"
 	overdose = REAGENTS_OVERDOSE/3
 	addiction_chance = 0.01 //Will STILL likely always be addicting
-	nerve_system_accumulations = 10
+	nerve_system_accumulations = 15
 	metabolism = REM * 0.2 //but processes much faster than other toxins
 	strength = 0.3 //Rather lethal
 	heating_point = 523
@@ -517,7 +529,7 @@
 	color = "#acc107"
 	overdose = REAGENTS_OVERDOSE
 	addiction_chance = 10
-	nerve_system_accumulations = 5
+	nerve_system_accumulations = 15
 
 /datum/reagent/toxin/aranecolmin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_ANTITOX, 0.3)
@@ -693,7 +705,7 @@
 	color = "#a6b85b"
 	overdose = 16
 	addiction_chance = 30
-	nerve_system_accumulations = 4
+	nerve_system_accumulations = 10
 	heating_point = 573
 	heating_products = list("radium", "mercury", "lithium", "nutriment")
 
@@ -732,6 +744,7 @@
 	color = "#527f4f"
 	strength = 0.3
 	common = TRUE //Church should know if they actually have biomatter or something else.
+	nerve_system_accumulations = 50
 
 /datum/reagent/toxin/biomatter/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -765,7 +778,7 @@
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#ffb3b7"
-	nerve_system_accumulations = 5
+	nerve_system_accumulations = 30
 	addiction_chance = 10
 	scannable = TRUE
 	metabolism = REM/4
@@ -804,6 +817,7 @@
 	strength = 0.8
 	overdose = REAGENTS_OVERDOSE/2
 	illegal = TRUE
+	nerve_system_accumulations = 90
 
 /datum/reagent/toxin/combat/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -850,6 +864,7 @@
 	color = "#CF3600"
 	strength = 0.2
 	metabolism = REM * 2
+	nerve_system_accumulations = 30
 	var/agony_amount = 4
 
 /datum/reagent/toxin/wasp_toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)

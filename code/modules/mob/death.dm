@@ -111,6 +111,8 @@
 			H.DEADelize()
 	if(client)
 		kill_CH() //We dead... clear any prepared abilities...
+		to_chat(src,"<span class='deadsay'>[show_dead_message]</span>")
+		log_and_message_admins("[src] has died at [loc].")
 
 	timeofdeath = world.time
 	if (isanimal(src))
@@ -124,7 +126,6 @@
 	switch_from_living_to_dead_mob_list()
 	updateicon()
 	update_icons()
-	to_chat(src,"<span class='deadsay'>[show_dead_message]</span>")
 
 	if (spawned_from)
 		spawned_from.currently_spawned[type] -= src

@@ -3,8 +3,8 @@
 	name = "ameridian behemoth"
 	desc = "A weird creature made of ameridian. It is bigger, stronger and pack a harder punch than its brethen."
 	icon_state = "golem_ameridian_purple"
-	health = 400
-	maxHealth = 400
+	health = 200
+	maxHealth = 200
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	move_to_delay = 2

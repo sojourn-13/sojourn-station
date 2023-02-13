@@ -149,7 +149,7 @@ var/list/radiochannels = list(
 	"Engineering"	= ENG_FREQ,
 	"Security" 		= SEC_FREQ,
 	"Blackshield"   = BLS_FREQ,
-	"Marshal"      = MAR_FREQ,
+	"Marshal"       = MAR_FREQ,
 	"Special Ops" 	= DTH_FREQ,
 	"Mercenary" 	= SYND_FREQ,
 	"Supply" 		= SUP_FREQ,
@@ -203,6 +203,8 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, PRO_
 		return "sciradio"
 	if(frequency == MED_FREQ)
 		return "medradio"
+	if(frequency == MED_I_FREQ)
+		return "medaltradio"
 	if(frequency == SUP_FREQ) // cargo
 		return "supradio"
 	if(frequency == SRV_FREQ) // service
@@ -213,15 +215,6 @@ var/list/DEPT_FREQS = list(AI_FREQ, COMM_FREQ, ENG_FREQ, MED_FREQ, NT_FREQ, PRO_
 		return "proradio"
 	if(frequency in DEPT_FREQS)
 		return "deptradio"
-//Plasma tag radio colours are all the same.
-	if(frequency in PT_BT_FREQ)
-		return "syndradio"
-	if(frequency in PT_RT_FREQ)
-		return "syndradio"
-	if(frequency in PT_YT_FREQ)
-		return "syndradio"
-	if(frequency in PT_GT_FREQ)
-		return "syndradio"
 
 	return "radio"
 

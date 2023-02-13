@@ -196,10 +196,9 @@
 
 /obj/item/storage/box/bs_kit/pilgrim
 	name = "\improper Pilgrim Secondary Kit"
-	desc = "The standard Blackshield equipment kit containing a pilgrim revolver. A ballistic design by the church new testament arms division. A tricky choice, as a gift from the church it \
-	comes with a box of 10mm magnum caustic rounds which are poison rounds that cause a great deal of pain and toxin damage. A good choice of gunning down people and most animals. The internal design requires \
-	unloading each shot from the revolver individually but it boasts a underslung shotgun, five 20mm buckshot shells, and can have all nine chambers loaded at once using an ammobox. Some \
-	upgrade it into the pilgrim claw to enhance its melee damage."
+	desc = "The standard Blackshield equipment kit containing a Pilgrim revolver. A ballistic design by the Absolute's Old Testament arms division. A tricky choice, as a gift from the church it \
+	comes with a box of 10mm magnum caustic rounds which are poison rounds that cause a great deal of pain and toxin damage. A good choice for gunning down people and most animals. The internal design requires \
+	unloading each shot from the revolver individually but it boasts a underslung shotgun, five 20mm buckshot shells, and can have all nine chambers loaded at once using an ammobox."
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/lemant(src)
@@ -277,6 +276,14 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/militia(src)
+		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
+
+/obj/item/storage/box/bs_kit/militia_overcoat
+	name = "\improper Armored Overcoat Armor Kit"
+	desc = "An armor kit containg a militia overcoat and a ballistic helmet."
+
+	populate_contents()
+		new /obj/item/clothing/suit/storage/armor/militia_overcoat(src)
 		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
 
 /obj/item/storage/box/bs_kit/flak_armor

@@ -156,6 +156,7 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemArmor(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Plate Armor Kit" = /obj/item/storage/box/bs_kit/standard_armor,
+					"Armored Overcoat Kit" = /obj/item/storage/box/bs_kit/militia_overcoat,
 					"Flak Armor Kit" = /obj/item/storage/box/bs_kit/flak_armor,
 					"Ablative Armor Kit" = /obj/item/storage/box/bs_kit/laser_armor,
 					"Bullet-Proof Armor Kit" = /obj/item/storage/box/bs_kit/bullet_armor)
@@ -274,7 +275,7 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemRangerPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Spec-Op Kit" = /obj/item/storage/box/m_kit/specop,
-					"Armstrong Kit" = /obj/item/storage/box/m_kit/armstrong,
+					"Custer Kit" = /obj/item/storage/box/m_kit/custer,
 					"Peacekeeper Kit" = /obj/item/storage/box/m_kit/peacekeeper)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
@@ -325,7 +326,8 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemArmor(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					"Standard Visor" = /obj/item/storage/box/m_kit/standard_armor,
+					"Standard Plate" = /obj/item/storage/box/m_kit/standard_armor,
+					"Armored Overcoat" = /obj/item/storage/box/m_kit/armored_overcoat,
 					"Bullet-Proof Armor Kit" = /obj/item/storage/box/m_kit/bullet_proof,
 					"Ablative Armor Kit" = /obj/item/storage/box/m_kit/laser_armor,
 					"Riot Armor Kit" = /obj/item/storage/box/m_kit/riot)

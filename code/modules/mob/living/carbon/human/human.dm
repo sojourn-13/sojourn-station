@@ -754,6 +754,11 @@ var/list/rank_prefix = list(\
 
 		adjustNutrition(-40)
 		adjustToxLoss(-3)
+		if(src.ingested && src.ingested.reagent_list.len > 0) // If we have anything on our stomach...
+			for(var/datum/reagent/R in src.ingested.reagent_list)
+				if(R == src)
+					continue
+				src.ingested.remove_reagent(R.id, 10, 0) // ...We vomit some of it down!
 		//regen_slickness(-3)
 		//dodge_time = get_game_time()
 		//confidence = FALSE
@@ -1594,25 +1599,42 @@ var/list/rank_prefix = list(\
 
 		switch(burndamage)
 			if(1 to 10)
-				status += "numb"
+				status += "stinging"
 			if(10 to 40)
 				status += "blistered"
 			if(40 to INFINITY)
 				status += "peeling away"
 
-		if(org.is_stump())
-			status += "MISSING"
+		if(org.is_stump()) // You at least have a stump still
+			status += "just a stump"
+		//Sanity check. You should not be able to see this
+		// as the limb gets removed from the list of organs asked at the start of this proc
+		if(!org) // NO LIMB!
+			status += "<b>GONE!</b>"
 		if(org.status & ORGAN_MUTATED)
-			status += "weirdly shapen"
+			status += "misshapen"
 		if(org.nerve_struck == 2)
 			status += "torpid"
 		if(org.status & ORGAN_BROKEN)
 			status += "hurts when touched"
+		if(org.status & ORGAN_BLEEDING) // "Oh hey, I'm bleeding"
+			status += "<b>bleeding profusely</b>"
+		// Infections should be obvious to us as well
+		if(org.germ_level >= INFECTION_LEVEL_ONE && org.germ_level < INFECTION_LEVEL_TWO)
+			status += "<font color='90EE90'>greenishly discolored</font>" // Very light green
+		if(org.germ_level >= INFECTION_LEVEL_TWO && org.germ_level < INFECTION_LEVEL_THREE)
+			status += "<font color='00FF00'>oozing with pus</font>" // Lighter green
+		if(org.germ_level >= INFECTION_LEVEL_THREE && !(org.status & ORGAN_DEAD))
+			status += "<b><font color='407A18'>rotting away</font></b>" // Dark green and bolded, your organ is close to necropsy
 		if(org.status & ORGAN_DEAD)
-			status += "is bruised and necrotic"
+			status += "<b><font color='005500'>rotten</font></b>" // Necrotic
 		if(!org.is_usable())
 			status += "dangling uselessly"
-
+		for(var/obj/item/organ/internal/blood_vessel/BV in org.internal_organs)
+			if(BV.damage > 4) // Same as examine text, if our blood vessels are damaged beyond self-healing threshold...
+				status += "<font color='6533da'>swollen with black and blue spots</font>" // ...Let us see our bruises.
+		if(org.status & ORGAN_SPLINTED) // If our limb is splinted, tell us...
+			status += "<a href='?src=\ref[src];item=splints'>splinted</a>" // ...And let us remove the splints ourselves!
 		var/status_text = SPAN_NOTICE("OK")
 		if(status.len)
 			status_text = SPAN_WARNING(english_list(status))

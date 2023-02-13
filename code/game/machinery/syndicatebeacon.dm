@@ -25,7 +25,7 @@
 	var/dat = "<font color=#005500><i>Scanning [pick("retina pattern", "voice print", "fingerprints", "dna sequence")]...<br>Identity confirmed,<br></i></font>"
 	if(ishuman(user) || isAI(user))
 		if(is_special_character(user))
-			dat += "<font color=#07700><i>Operative record found. Greetings, Agent [user.name].</i></font><br>"
+			dat += "<font color=#007700><i>Operative record found. Greetings, Agent [user.name].</i></font><br>"
 		else if(charges < 1)
 			dat += "<TT>Connection severed.</TT><BR>"
 		else

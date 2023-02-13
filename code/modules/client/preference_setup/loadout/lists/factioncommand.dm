@@ -41,3 +41,11 @@
 	slot = slot_wear_suit
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Faction: Command"
+
+/datum/gear/factioncommand/captainturtleneck
+	display_name = "turtleneck, premier"
+	path = /obj/item/clothing/under/turtleneck/premier
+	allowed_roles = list("Premier")
+	slot = slot_w_uniform
+	sort_category = "Faction: Command"
+	cost = 0

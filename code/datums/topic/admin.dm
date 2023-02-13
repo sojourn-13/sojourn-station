@@ -254,7 +254,7 @@
 		if("corgi")
 			M.change_mob_type( /mob/living/simple_animal/corgi , null, null, delmob )
 		if("ian")
-			M.change_mob_type( /mob/living/simple_animal/corgi/Ian , null, null, delmob )
+			M.change_mob_type( /mob/living/simple_animal/corgi/fluff/Ian , null, null, delmob )
 		if("crab")
 			M.change_mob_type( /mob/living/simple_animal/crab , null, null, delmob )
 		if("coffee")
@@ -1520,7 +1520,7 @@
 						WANTED.backup_author = source.admincaster_signature                  //Submitted by
 						WANTED.is_admin_message = 1
 						news_network.wanted_issue = WANTED
-						for(var/obj/machinery/newscaster/NEWSCASTER in allCasters)
+						for(var/obj/machinery/newscaster/NEWSCASTER in GLOB.allCasters)
 							NEWSCASTER.newsAlert()
 							NEWSCASTER.update_icon()
 						source.admincaster_screen = 15
@@ -1536,7 +1536,7 @@
 			var/choice = alert("Please confirm Wanted Issue removal","Network Security Handler","Confirm","Cancel")
 			if(choice=="Confirm")
 				news_network.wanted_issue = null
-				for(var/obj/machinery/newscaster/NEWSCASTER in allCasters)
+				for(var/obj/machinery/newscaster/NEWSCASTER in GLOB.allCasters)
 					NEWSCASTER.update_icon()
 				source.admincaster_screen=17
 			source.access_news_network()

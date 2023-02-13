@@ -50,8 +50,8 @@
 	max_upgrades = 0 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
 
 /obj/item/tool/medmultitool
-	name = "Greyson Positronic medical multitool"
-	desc = "A compact Greyson Positronic medical multitool. It has all surgery tools and takes a medium cell in its handle.."
+	name = "Greyson Positronic medical omnitool"
+	desc = "A compact Greyson Positronic medical omnitool. It has all surgery tools and takes a medium cell in its handle."
 	icon_state = "medmulti"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)
 	flags = CONDUCT
@@ -66,9 +66,9 @@
 	allow_greyson_mods = TRUE
 
 /obj/item/tool/medmultitool/medimplant
-	name = "soteria medical omnitool"
+	name = "Soteria medical omnitool implant"
 	desc = "An all-in-one medical tool based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a medium power cell."
-	icon_state = "medimplant"
+	icon_state = "medmulti_sci"
 	matter = null
 	force = WEAPON_FORCE_PAINFUL
 	sharp = TRUE
@@ -87,9 +87,9 @@
 	max_upgrades = 1
 
 /obj/item/tool/medmultitool/medimplant/sci
-	name = "soteria medical omnitool"
+	name = "Soteria medical omnitool"
 	desc = "An all-in-one medical tool based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a small power cell. This one is a cheap copy of better versions."
-	icon_state = "medimplant_sci"
+	icon_state = "medimplant"
 	matter = null //Nope
 	degradation = 1
 	workspeed = 0.2 //SLOW
@@ -120,7 +120,7 @@
 	//matter = list(MATERIAL_BIOMATTER = 10) No
 
 /obj/item/tool/engimplant
-	name = "engineering omnitool"
+	name = "engineering omnitool implant"
 	desc = "An all-in-one engineering tool implant. Convenient to use and more effective than the basics, but much less efficient than customized or more specialized tools."
 	icon_state = "engimplant"
 	force = WEAPON_FORCE_DANGEROUS

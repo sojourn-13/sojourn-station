@@ -308,7 +308,7 @@
 	name = "Bomber"
 	desc = "This hovering cyborg emits a faint smell of welding fuel."
 	icon_state = "bomber"
-	density = 0
+	density = 1
 	speak_chance = 3
 	malfunction_chance = 1
 	speak_chance = 4

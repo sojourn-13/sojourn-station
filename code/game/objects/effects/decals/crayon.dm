@@ -89,6 +89,18 @@
 				if((spell.message == "The End." || spell.message == "The Beginning.") && candle_amount >= 1)
 					end_spell(M)
 					continue
+
+				if(spell.message == "Brew." && candle_amount >= 2)
+					brew_spell(M)
+					continue
+
+				if(spell.message == "Recipe." && candle_amount >= 1)
+					recipe_spell(M)
+					continue
+
+				if((spell.message == "Bees." || spell.message == "Bees!") && candle_amount >= 4)
+					bees_spell(M)
+					continue
 			return
 
 	if(istype(I, /obj/item/tool/knife/ritual) || istype(I, /obj/item/tool/knife/neotritual))
@@ -122,6 +134,18 @@
 			if(spell.message == "Drain." && candle_amount >= 5)
 				drain_spell(M, able_to_cast)
 				continue
+
+			if(spell.message == "Cards To Life." && candle_amount >= 3)
+				cards_to_life_spell(M)
+				continue
+
+			if(spell.message == "Cards." && candle_amount >= 3)
+				cards_spell(M)
+				continue
+
+			if(spell.message == "Equalize." && candle_amount >= 6)
+				equalize_spell(M)
+				continue
 			return
 		return
 	return
@@ -134,6 +158,26 @@
 	M.health -= 20
 	B.remove_self(50)
 	M.unnatural_mutations.total_instability += 15
+	return
+
+/obj/effect/decal/cleanable/crayon/proc/recipe_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	for(var/obj/item/paper/P in oview(1)) // Must be on the spell circle
+		to_chat(M, "<span class='info'>A echoing sound of scribbling fills the air.</span>")
+		B.remove_self(20)
+		var/obj/item/alchemy/recipe_scroll/S = new /obj/item/alchemy/recipe_scroll
+		S.loc = P.loc
+		qdel(P)
+	return
+
+/obj/effect/decal/cleanable/crayon/proc/brew_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	M.maxHealth -= 25
+	M.health -= 25
+	B.remove_self(50)
+	M.metabolism_effects.nsa_bonus -= 25 //Works to balance out the NSA given from the perk. That way those who get it naturally have a bonus.
+	M.stats.addPerk(PERK_ALCHEMY)
+	to_chat(M, "<span class='warning'>Your mind expands with creations lost. Your body feels sick.</span>")
 	return
 
 /obj/effect/decal/cleanable/crayon/proc/ignorance_spell(mob/living/carbon/human/M)
@@ -260,6 +304,18 @@
 			bluespace_entropy(-5, get_turf(src), TRUE)
 	return
 
+/obj/effect/decal/cleanable/crayon/proc/bees_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	M.maxHealth -= 10
+	M.health -= 10
+	to_chat(M, "<span class='info'>To make life from dyes, takes carbon...</span>")
+	for(var/obj/item/reagent_containers/food/snacks/grown/G in oview(5)) // Must be on the spell circle
+		to_chat(M, "<span class='info'>Distant voices call out from everywhere. NOT THE BEES!</span>")
+		B.remove_self(70)
+		if(G.name == "sunflower")
+			new /mob/living/carbon/superior_animal/vox/wasp(G.loc)
+			qdel(G)
+	return
 
 /obj/effect/decal/cleanable/crayon/proc/voice_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
@@ -292,4 +348,125 @@
 		B.remove_self(70)
 		lesser.dust()
 		return
+	return
+
+/obj/effect/decal/cleanable/crayon/proc/cards_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	to_chat(M, "<span class='warning'>A voice whispers infront you. Any foils?</span>")
+	for(var/obj/item/device/camera_film in oview(1)) // Must be on the spell circle
+		B.remove_self(15)
+		new /obj/random/card_carp(src.loc)
+	return
+
+/obj/effect/decal/cleanable/crayon/proc/cards_to_life_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	for(var/obj/item/card_carp/carpy in oview(1)) // would be broken if wider effect. Could activate thru walls.
+		to_chat(M, "<span class='warning'>The card rotates 90 degrees then begins to fold, twisting till it breaks open with a ripping sound.</span>")
+		B.remove_self(50)
+		var /monstermob = /mob/living/simple_animal/hostile/creature
+
+		//nonhostile mobs. The pets of the colony.
+		if(istype(carpy, /obj/item/card_carp/crab)) monstermob = /mob/living/simple_animal/crab
+		if(istype(carpy, /obj/item/card_carp/cat)) monstermob = /mob/living/simple_animal/cat
+		if(istype(carpy, /obj/item/card_carp/geck)) monstermob = /mob/living/simple_animal/lizard
+		if(istype(carpy, /obj/item/card_carp/goat)) monstermob = /mob/living/simple_animal/hostile/retaliate/goat
+		if(istype(carpy, /obj/item/card_carp/larva)) monstermob = /mob/living/simple_animal/light_geist
+		//corgi list
+		if(istype(carpy, /obj/item/card_carp/stunted_wolf) || istype(carpy, /obj/item/card_carp/coyote) ||istype(carpy, /obj/item/card_carp/wolf)) monstermob = /mob/living/simple_animal/corgi
+		//mice spawn below
+		if(istype(carpy, /obj/item/card_carp/ratking) || istype(carpy, /obj/item/card_carp/plaguerat) || istype(carpy, /obj/item/card_carp/kangaroorat) || istype(carpy, /obj/item/card_carp/chipmunk) || istype(carpy, /obj/item/card_carp/fieldmice)) monstermob = /mob/living/simple_animal/mouse
+		//retaliation and hostile mobs
+		if(istype(carpy, /obj/item/card_carp/croaker_lord)) monstermob = /mob/living/simple_animal/hostile/retaliate/croakerlord
+		if(istype(carpy, /obj/item/card_carp/lost_rabbit)) monstermob = /mob/living/simple_animal/hostile/diyaab
+		if(istype(carpy, /obj/item/card_carp/adder)) monstermob = /mob/living/simple_animal/hostile/snake
+		if(istype(carpy, /obj/item/card_carp/grizzly)) monstermob = /mob/living/simple_animal/hostile/bear
+		if(istype(carpy, /obj/item/card_carp/bat)) monstermob = /mob/living/simple_animal/hostile/scarybat
+		if(istype(carpy, /obj/item/card_carp/great_white)) monstermob = /mob/living/simple_animal/hostile/carp/greatwhite
+		//birbs
+		if(istype(carpy, /obj/item/card_carp/kingfisher) || istype(carpy, /obj/item/card_carp/sparrow) || istype(carpy, /obj/item/card_carp/turkey_vulture) || istype(carpy, /obj/item/card_carp/magpie)) monstermob = /mob/living/simple_animal/jungle_bird
+		//hostile tree
+		if(istype(carpy, /obj/item/card_carp/tree) || istype(carpy, /obj/item/card_carp/pinetree)) monstermob = /mob/living/simple_animal/hostile/tree
+		//mantis
+		if(istype(carpy, /obj/item/card_carp/manti) || istype(carpy, /obj/item/card_carp/manti_lord)) monstermob = /mob/living/simple_animal/tindalos
+
+		//superior mobs below
+		//roaches
+		if(istype(carpy, /obj/item/card_carp/pupa)) monstermob =  /mob/living/carbon/superior_animal/roach/roachling
+		if(istype(carpy, /obj/item/card_carp/cockroach)) monstermob = /mob/living/carbon/superior_animal/roach
+		if(istype(carpy, /obj/item/card_carp/stinkbug)) monstermob = /mob/living/carbon/superior_animal/roach/toxic
+		//termites for ants
+		if(istype(carpy, /obj/item/card_carp/ant)) monstermob = /mob/living/carbon/superior_animal/termite_no_despawn/iron
+		if(istype(carpy, /obj/item/card_carp/antqueen)) monstermob = /mob/living/carbon/superior_animal/termite_no_despawn/diamond
+		//superior beasties
+		if(istype(carpy, /obj/item/card_carp/wyrm)) monstermob = /mob/living/carbon/superior_animal/wurm/diamond
+		if(istype(carpy, /obj/item/card_carp/daus)) monstermob = /mob/living/carbon/superior_animal/genetics/fratellis //genetics beastie
+		//golem
+		if(istype(carpy, /obj/item/card_carp/rock) || istype(carpy, /obj/item/card_carp/bloodrock)) monstermob = /mob/living/carbon/superior_animal/ameridian_golem
+
+		//nonmobs below this point
+		//turned it into a purse
+		if(istype(carpy, /obj/item/card_carp/rpelt) || istype(carpy, /obj/item/card_carp/dpelt) || istype(carpy, /obj/item/card_carp/pinepelt) || istype(carpy, /obj/item/card_carp/gpelt))
+			new /obj/item/storage/backpack/leather
+			qdel(carpy)
+			return
+		//burrow
+		if(istype(carpy, /obj/item/card_carp/warren))
+			new /obj/structure/burrow(carpy.loc)
+			qdel(carpy)
+			return
+
+		//code that takes monstermob var and spawns whatever it was set too.
+		new monstermob(carpy.loc)
+		qdel(carpy)
+
+	//take whatever we spawned and tone it WAAAAY back then make it friendly.
+	for(var/mob/living/carbon/superior_animal/target in oview(1))
+		target.colony_friend = TRUE
+		target.friendly_to_colony = TRUE
+		target.faction = "Living Dead"
+		target.maxHealth *= 0.2
+		target.health *= 0.2
+	for(var/mob/living/simple_animal/target in oview(1))
+		target.colony_friend = TRUE
+		target.friendly_to_colony = TRUE
+		target.faction = "Living Dead"
+		target.maxHealth *= 0.2
+		target.health *= 0.2
+	return
+/obj/effect/decal/cleanable/crayon/proc/equalize_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+
+	//get percent of blood. Then pass it back into people. Thats total blood between all / by number of people.
+	var/bloodpercent = 0
+	var/bloodtotal = 0
+	var/list/targets = list()
+	//add the caster in first. They don't get included in the for loops.
+	targets += M
+	bloodtotal = M.get_blood_volume()
+
+	//We go thru all possible targets and set them to the list and gather our blood amount
+	for(var/mob/living/carbon/human/T in oview(3))
+		if(T.species?.reagent_tag != IS_SYNTHETIC)
+			targets += T
+			bloodtotal += T.get_blood_volume()
+	bloodpercent = ((bloodtotal / targets.len) * 0.01) // turn it into a decimal for later maths.
+
+	//emergency catch in case somehow we don't have vars we need.
+	if(!targets || !bloodpercent)
+		return
+
+	//Blood alteration of targets
+	for(var/mob/living/carbon/human/T in oview(3))
+		if(T.species?.reagent_tag != IS_SYNTHETIC)
+			if(T.get_blood_volume() >= (bloodpercent * T.species.blood_volume))
+				T.vessel.remove_reagent("blood", ((T.get_blood_volume() * 0.01) - bloodpercent) * T.species.blood_volume)
+			else T.vessel.add_reagent("blood", (bloodpercent - (T.get_blood_volume() * 0.01)) * T.species.blood_volume)
+			to_chat(T, "<span class='warning'>You feel extremly woozy and light headed for a second. It partially recovers.</span>")
+
+	//caster blood handling below
+	to_chat(M, "<span class='warning'>The sound of a heart beat fills the air around you.</span>")
+	if(M.get_blood_volume() < bloodpercent)
+		M.vessel.add_reagent("blood", (bloodpercent - (M.get_blood_volume() * 0.01)) * M.species.blood_volume)
+	else M.vessel.remove_reagent("blood", ((M.get_blood_volume() * 0.01) - bloodpercent) * M.species.blood_volume)
+	B.remove_self(min(20 * targets.len, 80))
 	return

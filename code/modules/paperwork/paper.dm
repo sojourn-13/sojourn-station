@@ -40,6 +40,11 @@
 	var/const/signfont = "Times New Roman"
 	var/const/crayonfont = "Comic Sans MS"
 
+/obj/item/paper/ui_host(mob/user)
+	if(istype(loc, /obj/structure/noticeboard))
+		return loc
+	return ..()
+
 /obj/item/paper/card
 	name = "blank card"
 	desc = "A gift card with space to write on the cover."

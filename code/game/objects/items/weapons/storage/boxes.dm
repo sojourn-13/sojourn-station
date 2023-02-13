@@ -199,7 +199,7 @@
 
 /obj/item/storage/box/advancedtraumakit/populate_contents()
 	for(var/i in 1 to 5)
-		new /obj/item/stack/medical/advanced/bruise_pack (src)
+		new /obj/item/stack/medical/bruise_pack/advanced (src)
 
 /obj/item/storage/box/advancedburnkit
 	name = "box of ABKs"
@@ -209,7 +209,7 @@
 
 /obj/item/storage/box/advancedburnkit/populate_contents()
 	for(var/i in 1 to 5)
-		new /obj/item/stack/medical/advanced/ointment (src)
+		new /obj/item/stack/medical/ointment/advanced (src)
 
 /obj/item/storage/box/gauzebulk
 	name = "box of gauze"
@@ -778,9 +778,8 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 	New()
 		..()
-		new /obj/item/clothing/under/rank/commander/service(src)
-		new /obj/item/clothing/suit/rank/commander/service(src)
-		new /obj/item/clothing/suit/rank/commander/dress(src)
+		new /obj/item/clothing/under/rank/commander_service(src)
+		new /obj/item/clothing/suit/rank/commander_service(src)
 		new /obj/item/clothing/head/rank/commanderdress(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)

@@ -732,3 +732,66 @@
 		return
 
 	disguise(clothing_choices[picked], usr)
+
+//********************
+//**Chameleon Accesory**
+//********************
+
+/obj/item/clothing/accessory/chameleon
+	name = "blue tie"
+	desc = "A neosilk clip-on tie with a blue design. It seems to have a dial on the backside."
+	icon_state = "bluetie"
+	item_state = "bluetie"
+	origin_tech = list(TECH_ILLEGAL = 3)
+	var/global/list/accessory_choices
+
+/obj/item/clothing/accessory/chameleon/disguise(newtype, mob/user)
+	if(!user || user.incapacitated())
+		return
+
+	var/obj/item/clothing/accessory/copy = new newtype(null)
+
+	desc = copy.desc
+	name = copy.name
+	icon = copy.icon
+	icon_state = copy.icon_state
+	item_state = copy.item_state
+	inv_overlay = copy.inv_overlay // So that it changes once worn on the inventory HUD
+	mob_overlay = copy.mob_overlay // Needed for the overlay appearance
+	body_parts_covered = copy.body_parts_covered
+	flags_inv = copy.flags_inv
+
+	item_icons = copy.item_icons.Copy()
+	item_state_slots = copy.item_state_slots.Copy()
+	update_wear_icon()
+
+	return copy
+
+/obj/item/clothing/accessory/chameleon/New()
+	..()
+	if(!accessory_choices)
+		var/blocked = list(src.type, null)
+		accessory_choices = generate_chameleon_choices(/obj/item/clothing/accessory, blocked)
+
+/obj/item/clothing/accessory/chameleon/Initialize(mapload, ...)
+	. = ..()
+	matter = list()
+	matter.Add(list(MATERIAL_PLASTIC = 2 * w_class))
+
+/obj/item/clothing/accessory/chameleon/verb/change(picked in accessory_choices)
+	set name = "Change Accessory Appearance"
+	set category = "Chameleon Items"
+	set src in usr
+
+	if(!ispath(accessory_choices[picked]))
+		return
+
+	disguise(accessory_choices[picked], usr)
+
+/obj/item/clothing/accessory/chameleon/emp_act(severity)
+	name = "blue tie"
+	desc = "A neosilk clip-on tie with a blue design. It seems to have a dial on the backside."
+	icon_state = "bluetie"
+	update_icon()
+	update_wear_icon()
+

@@ -31,7 +31,7 @@
 
 	var/datum/wires/alarm/wires
 
-	var/mode = AALARM_MODE_SCRUBBING
+	var/mode = AALARM_MODE_OFF
 	var/screen = AALARM_SCREEN_MAIN
 	var/area_uid
 	var/area/alarm_area
@@ -67,7 +67,7 @@
 	req_access = list(access_rd, access_atmospherics, access_engine_equip)
 	TLV["oxygen"] =			list(-1.0, -1.0,-1.0,-1.0) // Partial pressure, kpa
 	TLV["carbon dioxide"] = list(-1.0, -1.0,   5,  10) // Partial pressure, kpa
-	TLV["plasma"] =			list(-1.0, -1.0, 0.2, 0.5) // Partial pressure, kpa
+	TLV["plasma"] =			list(-1.0, -1.0, 0.01, 0.5) // Partial pressure, kpa
 	TLV["other"] =			list(-1.0, -1.0, 0.5, 1.0) // Partial pressure, kpa
 	TLV["pressure"] =		list(0, ONE_ATMOSPHERE * 0.10, ONE_ATMOSPHERE * 1.40, ONE_ATMOSPHERE * 1.60) /* kpa */
 	TLV["temperature"] =	list(20, 40, 140, 160) // K
@@ -112,7 +112,7 @@
 	// breathable air according to human/Life()
 	TLV["oxygen"] =			list(16, 19, 135, 140) // Partial pressure, kpa
 	TLV["carbon dioxide"] = list(-1.0, -1.0, 5, 10) // Partial pressure, kpa
-	TLV["plasma"] =			list(-1.0, -1.0, 0.2, 0.5) // Partial pressure, kpa
+	TLV["plasma"] =			list(-1.0, -1.0, 0.01, 0.5) // Partial pressure, kpa
 	TLV["other"] =			list(-1.0, -1.0, 0.5, 1.0) // Partial pressure, kpa
 	TLV["pressure"] =		list(ONE_ATMOSPHERE*0.80,ONE_ATMOSPHERE*0.90,ONE_ATMOSPHERE*1.10,ONE_ATMOSPHERE*1.20) /* kpa */
 	TLV["temperature"] =	list(T0C-26, T0C, T0C+40, T0C+66) // K
@@ -401,16 +401,19 @@
 		if(AALARM_MODE_SCRUBBING)
 			to_chat(usr, "Air Alarm mode changed to Filtering.")
 			for(var/device_id in alarm_area.air_scrub_names)
-				send_signal(device_id, list("power"= 0) )
+				send_signal(device_id, list("power"= 1, "scrubbing"= 1) )
 
 			for(var/device_id in alarm_area.air_vent_names)
-				send_signal(device_id, list("power"= 0) )
+				send_signal(device_id, list("power"= 1, "set_external_pressure"= "default") )
 
 		if(AALARM_MODE_PANIC, AALARM_MODE_CYCLE)
 			if(mode == AALARM_MODE_PANIC)
 				to_chat(usr, "Air Alarm mode changed to Panic.")
 				for(var/device_id in alarm_area.air_scrub_names)
 					send_signal(device_id, list("power"= 1, "panic_siphon"= 1) )
+
+				for(var/device_id in alarm_area.air_vent_names)
+					send_signal(device_id, list("power"= 0) )
 			else
 				to_chat(usr, "Air Alarm mode changed to Cycle.")
 				for(var/device_id in alarm_area.air_scrub_names)

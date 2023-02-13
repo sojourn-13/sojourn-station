@@ -292,9 +292,9 @@
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/job/cape/fo
-	name = "premier guard's cloak"
+	name = "steward's cloak"
 	icon_state = "focloak"
-	desc = "A blue cloak with red epaulette."
+	desc = "A blue cloak with red epaulettes."
 
 /obj/item/clothing/accessory/job/cape/meo
 	name = "research overseer's cloak"
@@ -1531,3 +1531,4 @@
 		var/t = input(user, "What would you like the label to say?", "Nametag")
 		if(t)
 			name = "nametag ([t])"
+

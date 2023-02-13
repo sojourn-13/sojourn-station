@@ -382,6 +382,9 @@
 	icon_state = "lrifle_c_l"
 	spent_icon = "lrifle_c_l-spent"
 
+/obj/item/ammo_casing/kurtz_50/prespawned
+	amount = 6
+
 /obj/item/ammo_casing/kurtz_50/rubber
 	desc = "A 12mm rubber bullet casing."
 	caliber = CAL_50
@@ -691,13 +694,24 @@
 	is_caseless = TRUE
 	w_class = ITEM_SIZE_NORMAL
 
+/obj/item/ammo_casing/rocket/scrap
+	name = "scrap rocket"
+	desc = "An old improvised rocket shell for the RPG-7 launcher. Has a tubular shape."
+	icon_state = "old_rocketshell"
+	projectile_type = /obj/item/projectile/bullet/rocket/scrap
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASMA = 2)
+
+/obj/item/ammo_casing/rocket/scrap/prespawned
+	amount = 1
+
 /obj/item/ammo_casing/rocket/emp
 	name = "PG-7EMP grenade"
 	desc = "A 40mm EMP/Flash warhead designed for the RPG-7 launcher. Has a tubular shape."
 	projectile_type = /obj/item/projectile/bullet/rocket/emp
 
 /obj/item/ammo_casing/a75
-	desc = "A .70 gyrojet casing."
+	name = "microjet casing"
+	desc = "A 19mm gyrojet rocket."
 	caliber = CAL_70
 	projectile_type = /obj/item/projectile/bullet/gyro
 
@@ -789,7 +803,7 @@
 
 /obj/item/ammo_casing/crossbow_bolts/fragment
 	name = "fragment crossbow bolt"
-	desc = "A finely made bolt designed for a crossbow with sharp shards of ores and rocks attached to the tip that brake apart inside the target."
+	desc = "A finely made bolt designed for a crossbow with sharp shards of ores and rocks attached to the tip that break apart inside the target."
 	icon_state = "bolt"
 	projectile_type = /obj/item/projectile/bullet/crossbow_bolt/lethal
 	matter = list(MATERIAL_STEEL = 1)

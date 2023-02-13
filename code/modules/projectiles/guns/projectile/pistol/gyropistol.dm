@@ -1,13 +1,13 @@
 /obj/item/gun/projectile/gyropistol
 	name = "SA GP \"Emperor \""
-	desc = "A bulky pistol designed to fire self-propelled rounds. Commonly referred to as the 'man-opener' by void wolves."
+	desc = "A bulky pistol designed to fire 19mm self-propelled explosive rockets. Commonly referred to as the 'man-opener' by Void Wolves."
 	icon = 'icons/obj/guns/projectile/gyropistol.dmi'
 	icon_state = "gyropistol"
 	item_state = "pistol"
 	caliber = CAL_70
-	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/ubgl.ogg'
 	can_dual = TRUE
-	origin_tech = list(TECH_COMBAT = 3)
+	origin_tech = list(TECH_COMBAT = 6)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	price_tag = 1500
 	ammo_type = "/obj/item/ammo_casing/a75"
@@ -27,7 +27,15 @@
 
 /obj/item/gun/projectile/gyropistol/update_icon()
 	..()
-	if(ammo_magazine)
-		icon_state = "gyropistolloaded"
-	else
-		icon_state = "gyropistol"
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if (ammo_magazine)
+		iconstring += "_mag"
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+

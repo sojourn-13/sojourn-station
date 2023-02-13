@@ -3,9 +3,9 @@
 /datum/surgery_step/fix_organ
 	target_organ_type = /obj/item/organ/internal
 	allowed_tools = list(
-		/obj/item/stack/medical/advanced/bruise_pack = 100,
+		/obj/item/stack/medical/bruise_pack/advanced = 100,
 		/obj/item/stack/medical/bruise_pack = 20,
-		/obj/item/stack/medical/advanced/bruise_pack/mending_ichor = 100,
+		/obj/item/stack/medical/bruise_pack/advanced/mending_ichor = 100,
 	)
 	requires_perk = TRUE
 	duration = 80
@@ -15,11 +15,11 @@
 
 /datum/surgery_step/fix_organ/proc/get_tool_name(obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
-	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack))
+	if (istype(tool, /obj/item/stack/medical/bruise_pack/advanced))
 		tool_name = "regenerative membrane"
 	if (istype(tool, /obj/item/stack/medical/bruise_pack))
 		tool_name = "the bandaid"
-	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack/mending_ichor))
+	if (istype(tool, /obj/item/stack/medical/bruise_pack/advanced/mending_ichor))
 		tool_name = "the mending ichor"
 	return tool_name
 

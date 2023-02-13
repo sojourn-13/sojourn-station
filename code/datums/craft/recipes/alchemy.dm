@@ -8,9 +8,9 @@
 	name = "Oil Burner"
 	result = /obj/item/tool/weldingtool/oil_burner
 	steps = list(
+		list(/obj/item/reagent_containers/glass/bottle/tincture, 1),
 		list(/obj/item/stack/rods, 1),
-		list(CRAFT_MATERIAL, 1, MATERIAL_SILK),
-		list(/obj/item/reagent_containers/glass/bottle/tincture, 1)
+		list(CRAFT_MATERIAL, 1, MATERIAL_SILK)
 	)
 
 /datum/craft_recipe/alchemy/oil_flask
@@ -61,6 +61,14 @@
 	steps = list(
 		list(/obj/item/stack/ore/glass, 1),
 		list(QUALITY_HEATING, 5, 28)
+	)
+
+/datum/craft_recipe/alchemy/pointy_bottle_alt
+	name = "Tincture Bottle (Welding)"
+	result = /obj/item/reagent_containers/glass/bottle/tincture
+	steps = list(
+		list(/obj/item/stack/ore/glass, 1),
+		list(QUALITY_WELDING, 5, 28)
 	)
 
 /datum/craft_recipe/alchemy/beaker

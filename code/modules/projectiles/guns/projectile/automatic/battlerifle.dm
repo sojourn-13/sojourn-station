@@ -37,6 +37,8 @@
 	wield_delay = 1.6 SECOND
 	wield_delay_factor = 0.5 // 50 vig to insta wield , heavy class battle rifle
 
+	gun_parts = list(/obj/item/part/gun/frame/omni = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/hrifle = 1)
+
 /obj/item/gun/projectile/automatic/omnirifle/update_icon()
 	..()
 
@@ -109,3 +111,16 @@
 		BURST_3_ROUND
 		)
 	serial_type = "H&S"
+
+	gun_parts = list(/obj/item/part/gun/frame/omni = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/hrifle = 1)
+
+/obj/item/part/gun/frame/omni
+	name = "Omnirifle frame"
+	desc = "An Omnirifle frame. The ex-war criminal's delight."
+	icon_state = "frame_omni"
+	matter = list(MATERIAL_PLASTEEL = 8)
+	result = /obj/item/gun/projectile/automatic/omnirifle
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
+	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle, /obj/item/gun/projectile/automatic/omnirifle/rds)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/hrifle)

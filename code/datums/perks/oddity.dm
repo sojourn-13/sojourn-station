@@ -219,7 +219,7 @@
 ///////////////////////////////////////
 
 /datum/perk/nt_oddity
-	gain_text = "The Absolute chose you to expand his will."
+	gain_text = "The Absolute chose you to expand its will."
 
 /datum/perk/nt_oddity/holy_light
 	name = "Holy Light"

@@ -98,8 +98,3 @@
 		MUTATION_UNBALANCED,
 		MUTATION_HONK,
 		MUTATION_SCREAMING)
-
-/mob/living/simple_animal/hostile/bioshock/testing
-	name = "Testshock"
-	desc = "Meant to only have the mutations being activly tested."
-	inherent_mutations = list()

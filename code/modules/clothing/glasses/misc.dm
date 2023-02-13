@@ -61,7 +61,7 @@
 	icon_state = "hudpatch"
 	item_state = "hudpatch"
 
-/obj/item/clothing/glasses/eyepatch/process_hud(var/mob/M)
+/obj/item/clothing/glasses/eyepatch/medpatch/process_hud(var/mob/M)
 	process_med_hud(M, 1)
 
 /obj/item/clothing/glasses/eyepatch/secpatch

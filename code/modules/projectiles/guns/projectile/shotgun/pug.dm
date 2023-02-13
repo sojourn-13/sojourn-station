@@ -20,6 +20,7 @@
 	damage_multiplier = 0.8
 	init_recoil = RIFLE_RECOIL(0.7)
 	serial_type = "SA"
+	gun_parts = list(/obj/item/part/gun/frame/pug = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/part/gun/barrel/shotgun = 1)
 
 	//while also preserving ability to shoot as fast as you can click and maintain recoil good enough
 	init_firemodes = list(
@@ -29,6 +30,16 @@
 
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.4 // 40 vig , after all its designed for CQC
+
+/obj/item/part/gun/frame/pug
+	name = "Pug frame"
+	desc = "A Pug shotgun frame. Specially designed to sweep streets and spaceship halls."
+	icon_state = "frame_pug"
+	result = /obj/item/gun/projectile/shotgun/pug
+	resultvars = list(/obj/item/gun/projectile/shotgun/pug)
+	gripvars = list(/obj/item/part/gun/grip/serb)
+	mechanismvar = /obj/item/part/gun/mechanism/shotgun
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
 
 /obj/item/gun/projectile/shotgun/pug/update_icon()
 	cut_overlays()

@@ -4,8 +4,8 @@
 	icon_state = "jager"
 
 	turns_per_move = 3
-	maxHealth = 35
-	health = 35
+	maxHealth = 30
+	health = 30
 	move_to_delay = 3.5
 
 	blattedin_revives_left = 2

@@ -29,6 +29,7 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.3 // Heavy smg , 30 vig to insta wield
+	gun_parts = list(/obj/item/part/gun/frame/thompson = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/magnum = 1)
 
 /obj/item/gun/projectile/automatic/thompson/update_icon()
 	..()
@@ -53,3 +54,14 @@
 /obj/item/gun/projectile/automatic/thompson/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/part/gun/frame/thompson
+	name = "Thompson frame"
+	desc = "A Thompson SMG frame. Just like in the gangster movies!"
+	icon_state = "frame_thompson"
+	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_STEEL = 4)
+	result = /obj/item/gun/projectile/automatic/thompson
+	resultvars = list(/obj/item/gun/projectile/automatic/thompson)
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/smg
+	barrelvars = list(/obj/item/part/gun/barrel/magnum)

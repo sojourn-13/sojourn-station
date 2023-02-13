@@ -614,6 +614,23 @@ ADMIN_VERB_ADD(/client/proc/perkadd, R_ADMIN, FALSE)
 	T.stats.addPerk(perkname)
 	message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(T)].", 1)
 
+/*
+ADMIN_VERB_ADD(/client/proc/perkbreakdown, R_ADMIN, FALSE)
+/client/proc/perkbreakdown(mob/living/carbon/T as mob in SSmobs.mob_list)
+	set category = "Fun"
+	set name = "Add Breakdown"
+	set desc = "Add a Breakdown to a person."
+	var/datum/breakdown/breakdown_name = input("What perk do you want to add?") as null|anything in subtypesof(/datum/breakdown/)
+	if (!breakdown_name)
+		return
+	if(QDELETED(T))
+		to_chat(usr, "Creature has been delete in the meantime.")
+		return
+	var/mob/living/carbon/human/ouch = T
+	ouch.sanity.breakdown_debug(breakdown_name)
+	message_admins("\blue [key_name_admin(usr)] gave the perk [breakdown_name] to [key_name(T)].", 1)
+*/
+
 ADMIN_VERB_ADD(/client/proc/playtimebypass, R_ADMIN|R_MOD|R_DEBUG, FALSE)
 /client/proc/playtimebypass(mob/T as mob in GLOB.player_list)
 	set category = "Fun"
