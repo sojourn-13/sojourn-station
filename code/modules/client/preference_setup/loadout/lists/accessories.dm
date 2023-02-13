@@ -11,9 +11,9 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/sash
-	display_name = "sash selection"
-	path = /obj/item/clothing/accessory/sash
-	flags = GEAR_HAS_TYPE_SELECTION
+	display_name = "colorable sash"
+	path = /obj/item/clothing/accessory/sash/color
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/dropstraps
 	display_name = "drop straps"
@@ -57,9 +57,9 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/shemagh
-	display_name = "shemagh selection"
-	path = /obj/item/clothing/accessory/shemagh
-	flags = GEAR_HAS_TYPE_SELECTION
+	display_name = "colorable shemagh"
+	path = /obj/item/clothing/accessory/shemagh/recolor
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/tie
 	display_name = "tie selection"
@@ -90,6 +90,16 @@
 	display_name = "tactical poncho hood selection"
 	path = /obj/item/clothing/head/tacticalhood
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/accessory/poncho_color
+	display_name = "colorable poncho selection"
+	path = /obj/item/clothing/accessory/colorponcho
+	flags = GEAR_HAS_TYPE_SELECTION | GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/accessory/ponchohood_color
+	display_name = "colorable poncho hood"
+	path = /obj/item/clothing/accessory/colorponcho
+	flags = GEAR_HAS_TYPE_SELECTION | GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/sweatervest
 	display_name = "sweater vest selection"

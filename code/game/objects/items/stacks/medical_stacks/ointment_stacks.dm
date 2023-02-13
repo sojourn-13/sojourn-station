@@ -118,6 +118,7 @@
 	bio_requirement = 25
 	stacktype_alt = /obj/item/stack/medical/ointment/advanced
 	disinfectant  = TRUE
+	fancy_icon = FALSE
 
 /obj/item/stack/medical/ointment/advanced/large
 	name = "large advanced burn kit"
