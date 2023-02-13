@@ -98,7 +98,7 @@
 
 /datum/gear/accessory/ponchohood_color
 	display_name = "colorable poncho hood"
-	path = /obj/item/clothing/accessory/colorponcho
+	path = /obj/item/clothing/head/tacticalhood_color
 	flags = GEAR_HAS_TYPE_SELECTION | GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/sweatervest
