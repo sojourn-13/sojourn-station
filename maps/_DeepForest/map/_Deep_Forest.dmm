@@ -698,7 +698,6 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cM" = (
-/obj/landmark/join/start/outsider,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
 "cN" = (
@@ -798,7 +797,6 @@
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "df" = (
 /obj/random/furniture/bedsheet,
-/obj/landmark/join/late/dormitory_outsider,
 /obj/structure/bed/padded,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
