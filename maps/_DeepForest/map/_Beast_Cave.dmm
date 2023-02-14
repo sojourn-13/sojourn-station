@@ -2900,7 +2900,8 @@
 "lz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/turf/simulated/wall/wood_old,
+/obj/machinery/light/small,
+/turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/swamp_hut)
 "lA" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3023,8 +3024,6 @@
 "lT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/obj/structure/bed/padded,
-/obj/landmark/join/late/dormitory_outsider,
 /turf/simulated/floor/carpet,
 /area/nadezhda/outside/forest/swamp_hut)
 "lU" = (
@@ -5924,10 +5923,6 @@
 /mob/living/simple_animal/hostile/tengbrute,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/beast_cave_light)
-"yn" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/wall/wood_old,
-/area/nadezhda/outside/forest/swamp_hut)
 "ys" = (
 /obj/structure/flora/big/bush2,
 /obj/random/flora/jungle_tree,
@@ -7411,11 +7406,6 @@
 	layer = 3.7
 	},
 /area/nadezhda/outside/forest/beast_cave_light)
-"Pz" = (
-/obj/structure/bed/padded,
-/obj/landmark/join/late/dormitory_outsider,
-/turf/simulated/floor/carpet,
-/area/nadezhda/outside/forest/swamp_hut)
 "PB" = (
 /obj/random/traps,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -18912,7 +18902,7 @@ jW
 kL
 kv
 kI
-Pz
+lU
 lU
 lU
 uF
@@ -19316,8 +19306,8 @@ jW
 kK
 Zu
 kI
-Pz
-lU
+kI
+jV
 kI
 kI
 kI
@@ -19517,9 +19507,9 @@ jc
 kI
 kV
 kv
-yn
-yn
-jV
+vm
+kv
+kv
 lz
 kI
 uK
@@ -19719,7 +19709,7 @@ kc
 kI
 la
 kv
-vm
+kv
 kv
 kv
 kv
