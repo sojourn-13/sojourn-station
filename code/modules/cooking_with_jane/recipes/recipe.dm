@@ -1059,7 +1059,7 @@
 	product_type = /obj/item/reagent_containers/food/snacks/cherrypie
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
-		list(CWJ_ADD_PRODUCE, "cherries", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "cherry", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_ADD_REAGENT, "sugar", 10),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
