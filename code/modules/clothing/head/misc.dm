@@ -66,6 +66,21 @@
 	icon_state = "hairflower_white"
 	name = "white flower pin"
 
+/*Ears Pins*/
+/obj/item/clothing/head/pin/ear_pin
+	name = "ear dangle"
+	icon_state = "ear_dangle"
+	desc = "Two small objects dangling on someone's ears. Probably some sorta of decoration."
+	slot_flags =  SLOT_EARS
+	body_parts_covered = 0
+
+/obj/item/clothing/head/pin/ear_pin/ear_stud
+	name = "ear stud"
+	icon_state = "ear_stud"
+	desc = "Two small objects dangling on someone's ears. Probably some sorta of decoration"
+	slot_flags =  SLOT_EARS
+	body_parts_covered = 0
+
 /*Hair Pins*/
 
 /obj/item/clothing/head/pin
