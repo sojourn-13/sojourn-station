@@ -785,8 +785,6 @@
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/forest/river_forest_light)
 "kN" = (
-/obj/machinery/cryopod/dormitory,
-/obj/landmark/join/start/outsider,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/hunter_cabin)
@@ -4408,7 +4406,6 @@
 /area/nadezhda/outside/forest/plains_farm)
 "Ux" = (
 /obj/structure/bed/padded,
-/obj/landmark/join/late/dormitory_outsider,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/hunter_cabin)
