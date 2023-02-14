@@ -59,7 +59,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, base=1),
 		list(CWJ_USE_OVEN, J_LO, 20 SECONDS)
 	)
-
+/*
 /datum/cooking_with_jane/recipe/chaosdonut
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/donut/chaos
@@ -71,7 +71,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 1, base=1),
 		list(CWJ_USE_OVEN, J_LO, 20 SECONDS)
 	)
-
+*/
 /datum/cooking_with_jane/recipe/poppypretzel
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/poppypretzel
