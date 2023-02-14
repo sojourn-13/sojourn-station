@@ -148,7 +148,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
 		list(CWJ_USE_STOVE, J_LO, 5 SECONDS)
 	)
-
+*/
 /datum/cooking_with_jane/recipe/cookie
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/cookie
@@ -161,7 +161,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/chocolatebar, qmod=0.5),
 		list(CWJ_USE_STOVE, J_LO, 5 SECONDS)
 	)
-*/
+
 /datum/cooking_with_jane/recipe/muffin
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/muffin
