@@ -161,12 +161,11 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/chocolatebar, qmod=0.5),
 		list(CWJ_USE_STOVE, J_LO, 5 SECONDS)
 	)
-
+*/
 /datum/cooking_with_jane/recipe/muffin
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/muffin
 	step_builder = list(
-
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
 		list(CWJ_ADD_REAGENT, "milk", 5),
 		list(CWJ_ADD_REAGENT, "sugar", 5),
@@ -190,7 +189,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
 		list(CWJ_USE_STOVE, J_HI, 30 SECONDS)
 	)
-*/
+
 /datum/cooking_with_jane/recipe/boiled_egg
 	cooking_container = POT
 	product_type = /obj/item/reagent_containers/food/snacks/boiledegg
