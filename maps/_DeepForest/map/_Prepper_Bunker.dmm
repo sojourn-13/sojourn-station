@@ -8383,7 +8383,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "Na" = (
-/obj/machinery/cryopod/dormitory,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Nd" = (

@@ -2661,7 +2661,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/colony/exposedsun/crashed_shop/workshop)
 "YL" = (
-/obj/machinery/cryopod/dormitory,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "YM" = (

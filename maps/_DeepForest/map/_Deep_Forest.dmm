@@ -720,7 +720,6 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "cR" = (
-/obj/machinery/cryopod/dormitory,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cS" = (
@@ -12265,7 +12264,6 @@
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "Xb" = (
-/obj/machinery/cryopod/dormitory,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
 "Xc" = (

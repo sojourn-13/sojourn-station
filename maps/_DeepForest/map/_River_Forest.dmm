@@ -785,7 +785,6 @@
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/forest/river_forest_light)
 "kN" = (
-/obj/machinery/cryopod/dormitory,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/hunter_cabin)
