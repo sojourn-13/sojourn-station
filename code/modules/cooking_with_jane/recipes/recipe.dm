@@ -137,7 +137,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
 		list(CWJ_USE_STOVE, J_LO, 15 SECONDS)
 	)
-
+/*
 /datum/cooking_with_jane/recipe/popcorn
 	cooking_container = PAN
 	product_type = /obj/item/reagent_containers/food/snacks/popcorn
@@ -190,7 +190,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
 		list(CWJ_USE_STOVE, J_HI, 30 SECONDS)
 	)
-
+*/
 /datum/cooking_with_jane/recipe/boiled_egg
 	cooking_container = POT
 	product_type = /obj/item/reagent_containers/food/snacks/boiledegg
