@@ -698,7 +698,6 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cM" = (
-/obj/landmark/join/start/outsider,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
 "cN" = (
@@ -721,7 +720,6 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "cR" = (
-/obj/machinery/cryopod/dormitory,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cS" = (
@@ -798,7 +796,6 @@
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "df" = (
 /obj/random/furniture/bedsheet,
-/obj/landmark/join/late/dormitory_outsider,
 /obj/structure/bed/padded,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
@@ -12267,7 +12264,6 @@
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "Xb" = (
-/obj/machinery/cryopod/dormitory,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
 "Xc" = (
