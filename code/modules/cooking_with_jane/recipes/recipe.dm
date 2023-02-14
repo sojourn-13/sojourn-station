@@ -110,7 +110,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "honey", 5, remain_percent=0.1 ,base=3, prod_desc="The pork was glazed with honey"),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "bbqsauce", 3, remain_percent=0.5 ,base=8, prod_desc="The pork was layered with BBQ sauce"),
 		CWJ_END_EXCLUSIVE_OPTIONS,
-		list(CWJ_USE_STOVE, J_MED, 30 SECONDS)
+		list(CWJ_USE_GRILL, J_MED, 30 SECONDS)
 	)
 
 /datum/cooking_with_jane/recipe/roastchicken
@@ -309,7 +309,8 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5)
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice, qmod=0.5),
+		list(CWJ_USE_GRILL, J_LO, 5 SECONDS)
 	)
 
 /datum/cooking_with_jane/recipe/toastedsandwich
@@ -317,7 +318,8 @@
 	product_type = /obj/item/reagent_containers/food/snacks/toastedsandwich
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sandwich, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5)
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/butterslice, qmod=0.5),
+		list(CWJ_USE_GRILL, J_LO, 15 SECONDS)
 	)
 
 /datum/cooking_with_jane/recipe/icing
@@ -816,7 +818,7 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawcutlet, qmod=0.5),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
-		list(CWJ_USE_STOVE, J_LO, 15 SECONDS)
+		list(CWJ_USE_GRILL, J_LO, 15 SECONDS)
 	)
 
 /datum/cooking_with_jane/recipe/cooked_meatball
