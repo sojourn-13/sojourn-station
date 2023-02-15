@@ -119,7 +119,7 @@
 			S.require_tool_message(user)
 		return FALSE
 
-	if (istype(tool,/obj/item/stack/medical/advanced/bruise_pack))
+	if (istype(tool,/obj/item/stack/medical/bruise_pack/advanced))
 		if (tool.icon_state == "traumakit" && (!(user.stats.getPerk(PERK_ADVANCED_MEDICAL) || user.stats.getPerk(PERK_SURGICAL_MASTER) || user.stats.getStat(STAT_BIO) >= 50)))
 			to_chat(user, SPAN_WARNING("You do not have the training to use an Advanced Trauma Kit in this way."))
 			return FALSE

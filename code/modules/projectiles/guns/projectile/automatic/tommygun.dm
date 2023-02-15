@@ -57,7 +57,7 @@
 
 /obj/item/part/gun/frame/thompson
 	name = "Thompson frame"
-	desc = "A Thompson SMG frame. Just like in the movies!"
+	desc = "A Thompson SMG frame. Just like in the gangster movies!"
 	icon_state = "frame_thompson"
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_STEEL = 4)
 	result = /obj/item/gun/projectile/automatic/thompson

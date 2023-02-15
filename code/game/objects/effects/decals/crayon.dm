@@ -97,6 +97,10 @@
 				if(spell.message == "Recipe." && candle_amount >= 1)
 					recipe_spell(M)
 					continue
+
+				if((spell.message == "Bees." || spell.message == "Bees!") && candle_amount >= 4)
+					bees_spell(M)
+					continue
 			return
 
 	if(istype(I, /obj/item/tool/knife/ritual) || istype(I, /obj/item/tool/knife/neotritual))
@@ -300,6 +304,18 @@
 			bluespace_entropy(-5, get_turf(src), TRUE)
 	return
 
+/obj/effect/decal/cleanable/crayon/proc/bees_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	M.maxHealth -= 10
+	M.health -= 10
+	to_chat(M, "<span class='info'>To make life from dyes, takes carbon...</span>")
+	for(var/obj/item/reagent_containers/food/snacks/grown/G in oview(5)) // Must be on the spell circle
+		to_chat(M, "<span class='info'>Distant voices call out from everywhere. NOT THE BEES!</span>")
+		B.remove_self(70)
+		if(G.name == "sunflower")
+			new /mob/living/carbon/superior_animal/vox/wasp(G.loc)
+			qdel(G)
+	return
 
 /obj/effect/decal/cleanable/crayon/proc/voice_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()

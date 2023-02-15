@@ -456,8 +456,8 @@
 	user.visible_message("<b><font color='red'>[user] vomits different colored slime onto the floor!</font><b>", "<b><font color='red'>You vomit out your healing ichors onto the floor!</font><b>", "<b><font color='red'>You hear a retching noise!</font><b>")
 	log_and_message_admins("used their [src] perk.")
 	playsound(usr.loc, 'sound/effects/blobattack.ogg', 50, 1)
-	new /obj/item/stack/medical/advanced/bruise_pack/mending_ichor(usr.loc)
-	new /obj/item/stack/medical/advanced/ointment/regenerative_ichor(usr.loc)
+	new /obj/item/stack/medical/bruise_pack/advanced/mending_ichor(usr.loc)
+	new /obj/item/stack/medical/ointment/advanced/regenerative_ichor(usr.loc)
 	new /obj/item/stack/ichor/purging_ichor(usr.loc)
 	return ..()
 
