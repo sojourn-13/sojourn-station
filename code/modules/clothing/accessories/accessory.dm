@@ -292,9 +292,9 @@
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/job/cape/fo
-	name = "premier guard's cloak"
+	name = "steward's cloak"
 	icon_state = "focloak"
-	desc = "A blue cloak with red epaulette."
+	desc = "A blue cloak with red epaulettes."
 
 /obj/item/clothing/accessory/job/cape/meo
 	name = "research overseer's cloak"
@@ -529,6 +529,22 @@
 	name = "ghillie poncho"
 	desc = "A highly tactical partial ghillie suit adjusted for the upper body, it only makes you look a little goofy when not lying down!"
 	icon_state = "tacpon_ghillie"
+
+/obj/item/clothing/accessory/tacticalponcho/limegreen
+	name = "cowboy tactical poncho"
+	desc = "A sleek lime green poncho."
+	icon_state = "tacpon_cowboyponcho"
+
+/obj/item/clothing/accessory/colorponcho
+	name = "tactical poncho"
+	desc = "A sleek poncho, now in any color of your choice!"
+	icon_state = "tacpon_color"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/colorponcho/ghillie
+	name = "ghillie poncho"
+	desc = "A ghillie poncho in a range of colors... which sort of defeats the point of a ghillie suit."
+	icon_state = "tacpon_color_g"
 
 /*Shirts*/
 /obj/item/clothing/accessory/hawaiian
@@ -950,6 +966,13 @@
 	item_state = "shemagh-yellow"
 
 //End of sprites by Michiyamenotehifunana and Occulist
+
+//Sprite below is a reshade of the above, not made by Michiyamenotehifunana and Occulist
+/obj/item/clothing/accessory/shemagh/recolor
+	name = "shemagh"
+	icon_state = "shemagh-color"
+	item_state = "shemagh-color"
+
 /*One-Off Stuff*/
 
 /obj/item/clothing/accessory/dropstraps
@@ -1506,6 +1529,12 @@
 	icon_state = "sash_purple"
 	item_state = "sash_purple"
 
+/obj/item/clothing/accessory/sash/color
+	name = "sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_color"
+	item_state = "sash_color"
+
 /obj/item/clothing/accessory/pin
 	name = "white badge"
 	desc = "A simple badge with a pin."
@@ -1531,3 +1560,4 @@
 		var/t = input(user, "What would you like the label to say?", "Nametag")
 		if(t)
 			name = "nametag ([t])"
+

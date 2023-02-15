@@ -21,6 +21,17 @@
 
 	wield_delay = 1 SECOND
 	wield_delay_factor = 0.4 // 40 vig
+	gun_parts = list(/obj/item/part/gun/frame/regulator = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/part/gun/barrel/shotgun = 1)
+
+/obj/item/part/gun/frame/regulator
+	name = "Regulator frame"
+	desc = "A Regulator shotgun frame. The gold standard for boarder repelling."
+	icon_state = "frame_regulator"
+	result = /obj/item/gun/projectile/shotgun/pump/combat
+	resultvars = list(/obj/item/gun/projectile/shotgun/pump/combat)
+	gripvars = list(/obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/shotgun
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
 
 /obj/item/gun/projectile/shotgun/pump/combat/sawn
 	name = "\"Regulator\" stakeout shotgun"

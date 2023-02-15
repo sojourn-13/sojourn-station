@@ -17,7 +17,7 @@
 		set name = "Start Alchemical Reaction"
 		set src in view(1)
 
-		if (usr.stat || usr.restrained() || anchored)
+		if (usr.stat || usr.restrained() || anchored || !usr.stats.getPerk(PERK_ALCHEMY))
 			return
 
 		if (!beaker)
@@ -87,3 +87,29 @@
 	amount_per_transfer_from_this = 1
 	possible_transfer_amounts = list(1,2,3)
 	reagent_flags = TRANSPARENT | NO_REACT // It's a stasis BIDON, shouldn't allow chems to react inside it.
+
+/obj/item/alchemy/recipe_scroll
+	name = "alchemy recipe"
+	desc = "A tatty paper written in a strange language."
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "scroll"
+
+/obj/item/alchemy/recipe_scroll/Initialize()
+	var/blurb = pick(list(
+		"Iron binds with tungsten, but needs to be recondensed with salt",
+		"Ammonia dissolves carbon - crystalize with salt",
+		"Water and carbon can be mixed with salt",
+		"Detox can be purified when mixed with viroputine and citalopram",
+		"Citalopram and purger bring out the purest essence of detox",
+		"Iron and silicon, ground into flakes, and enriched with sodiumchloride",
+		"Suspend salt in oil, and stir in iron shavings",
+		"Ground gold and salt, mixed into a tatonka's milk",
+		"Tatonka milk can be fortified with eggs and extra protein",
+		"Honey, ethanol and pure protien make an invigorating brew",
+		"Ethanol and milk, plus a dash of pepper",
+		"Fresh blood and pure gold can distill an elixir of health into its most potent form"))
+	desc = "[desc] It reads \"[blurb]\""
+
+/obj/item/alchemy/recipe_scroll/lodge
+	name = "hunters' recipe"
+	desc = "An old sheet of paper with a carefully-guarded Lodge recipe on it. There's a diagram showing some sort of symbol..."

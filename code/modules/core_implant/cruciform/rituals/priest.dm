@@ -76,7 +76,7 @@
 	phrase = "Dominus autem dirigat corda vestra in caritate Dei et patientia deus."
 	desc = "Recover from the ravages of wounds and pain."
 	cooldown = TRUE
-	cooldown_time = 300
+	cooldown_time = 5 MINUTES
 	power = 35 //Healing yourself is slightly easier than healing someone else
 	category = "Vitae"
 	nutri_cost = 50//high cost
@@ -108,11 +108,11 @@
 	phrase = "Venite ad me, omnes qui laboratis, et onerati estis et ego reficiam vos."
 	desc = "Heal another nearby disciple."
 	cooldown = TRUE
-	cooldown_time = 300
+	cooldown_time = 2 MINUTES
 	power = 45
 	category = "Vitae"
-	nutri_cost = 50
-	blood_cost = 50
+	nutri_cost = 60
+	blood_cost = 60
 
 /datum/ritual/cruciform/priest/heal_other/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
@@ -787,7 +787,7 @@
 /datum/ritual/cruciform/priest/accelerated_growth
 	name = "Accelerated growth"
 	phrase = "Plantae crescere in divinum lumen tua."
-	desc = "This litany boosts the growth of all plants in sight for about ten minutes."
+	desc = "This litany boosts the growth of all plants in sight for about 5 minutes."
 	cooldown = TRUE
 	cooldown_time = 5 MINUTES
 	effect_time = 5 MINUTES

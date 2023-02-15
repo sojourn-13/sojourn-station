@@ -79,8 +79,8 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "ao" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 6;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 6
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -166,6 +166,11 @@
 /obj/item/tool/fireaxe/woodsman,
 /obj/item/tool/fireaxe/woodsman,
 /turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"aM" = (
+/obj/structure/table/marble,
+/obj/machinery/cooking_with_jane/grill,
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "aN" = (
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -295,8 +300,8 @@
 	dir = 1
 	},
 /obj/structure/noticeboard{
-	pixel_y = 28;
-	layer = 3.5
+	layer = 3.5;
+	pixel_y = 28
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -312,9 +317,9 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "bu" = (
 /obj/machinery/button/remote/blast_door{
-	pixel_x = -24;
 	id = "huntercase";
-	name = "Display Case Shutters"
+	name = "Display Case Shutters";
+	pixel_x = -24
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -475,11 +480,12 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cr" = (
-/obj/effect/floor_decal/spline/fancy{
-	dir = 8;
-	color = "#6c3d26"
-	},
-/turf/simulated/floor/wood,
+/obj/structure/bookcase,
+/obj/item/alchemy/recipe_scroll/lodge,
+/obj/item/alchemy/recipe_scroll/lodge,
+/obj/item/alchemy/recipe_scroll/lodge,
+/obj/item/alchemy/recipe_scroll/lodge,
+/turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ct" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -831,8 +837,8 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "ec" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 4;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 4
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -961,8 +967,8 @@
 "eN" = (
 /obj/structure/table/woodentable,
 /obj/effect/floor_decal/spline/fancy{
-	dir = 8;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 8
 	},
 /obj/item/towel/random,
 /turf/simulated/floor/wood/wild2,
@@ -1033,8 +1039,8 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "fl" = (
 /obj/structure/sink/kitchen{
-	name = "utility sink";
 	dir = 4;
+	name = "utility sink";
 	pixel_x = -20
 	},
 /turf/simulated/floor/tiled/white,
@@ -1171,8 +1177,8 @@
 "ga" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/spline/fancy{
-	dir = 1;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 1
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -1235,8 +1241,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "gm" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 8;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -1294,8 +1300,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "gA" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 4;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge)
@@ -1433,18 +1439,18 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "hs" = (
 /obj/effect/floor_decal/border/stoneborder{
-	dir = 4;
 	color = "8f8f8f";
+	dir = 4;
 	pixel_y = 15
 	},
 /obj/effect/floor_decal/border/stoneborder{
-	dir = 4;
 	color = "8f8f8f";
+	dir = 4;
 	pixel_y = -16
 	},
 /obj/effect/floor_decal/border/stoneborder{
-	dir = 4;
-	color = "8f8f8f"
+	color = "8f8f8f";
+	dir = 4
 	},
 /obj/structure/railing/grey{
 	dir = 8
@@ -1461,8 +1467,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "hv" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 9;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 9
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -1719,8 +1725,8 @@
 "jC" = (
 /obj/structure/table/woodentable,
 /obj/effect/floor_decal/spline/fancy{
-	dir = 4;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 4
 	},
 /obj/item/towel/random,
 /turf/simulated/floor/wood/wild2,
@@ -1842,13 +1848,6 @@
 "kG" = (
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood/wild1,
-/area/nadezhda/outside/forest/hunting_lodge_dark)
-"kI" = (
-/obj/effect/floor_decal/spline/fancy{
-	color = "#6c3d26";
-	dir = 9
-	},
-/turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "kZ" = (
 /obj/structure/filingcabinet/chestdrawer,
@@ -1997,8 +1996,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/smes/buildable{
-	name = "simple power storage unit";
 	desc = "A overly simplified high-capacity superconducting magnetic energy storage (SMES) unit. It goes as far as to have big red arrows pointing to the switches, and indentations on the controles to allow even the blind or unable to read to set this SMES.";
+	name = "simple power storage unit";
 	skill_check = -30
 	},
 /turf/simulated/floor/tiled/dark,
@@ -2058,8 +2057,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "on" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 6;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 6
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2097,8 +2096,8 @@
 "oC" = (
 /obj/structure/table/bench/wooden,
 /obj/effect/floor_decal/spline/fancy{
-	dir = 6;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 6
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2117,8 +2116,8 @@
 /obj/item/soap/hunters,
 /obj/item/soap/hunters,
 /obj/effect/floor_decal/spline/fancy{
-	dir = 1;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 1
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2322,8 +2321,8 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/spline/fancy{
-	dir = 8;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2416,8 +2415,8 @@
 /obj/structure/table/woodentable,
 /obj/item/reagent_containers/food/snacks/chocolatecakeslice,
 /obj/effect/floor_decal/spline/fancy{
-	dir = 4;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 4
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2753,8 +2752,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "yh" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 8;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 8
 	},
 /obj/effect/floor_decal/spline/fancy{
 	color = "#6c3d26";
@@ -2788,8 +2787,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "yK" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 2;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 2
 	},
 /obj/effect/floor_decal/spline/fancy/corner{
 	color = "#8f8f8f";
@@ -2841,8 +2840,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "za" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 5;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 5
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2900,8 +2899,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "zW" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 10;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 10
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2928,8 +2927,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Ai" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 1;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 1
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -3002,8 +3001,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "BB" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 5;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 5
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -3058,8 +3057,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Cx" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 8;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 8
 	},
 /obj/effect/floor_decal/spline/fancy{
 	color = "#6c3d26";
@@ -3071,8 +3070,8 @@
 /obj/structure/table/woodentable,
 /obj/item/clothing/under/bathrobe,
 /obj/effect/floor_decal/spline/fancy{
-	dir = 1;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 1
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -3188,18 +3187,18 @@
 	icon_state = "grey_railing0"
 	},
 /obj/effect/floor_decal/border/stoneborder{
-	dir = 8;
 	color = "8f8f8f";
+	dir = 8;
 	pixel_y = 15
 	},
 /obj/effect/floor_decal/border/stoneborder{
-	dir = 8;
 	color = "8f8f8f";
+	dir = 8;
 	pixel_y = -16
 	},
 /obj/effect/floor_decal/border/stoneborder{
-	dir = 8;
-	color = "8f8f8f"
+	color = "8f8f8f";
+	dir = 8
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -3304,8 +3303,8 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "EM" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 9;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 9
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -3358,15 +3357,15 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "FF" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 8;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 8
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "FJ" = (
 /obj/effect/floor_decal/border/stoneborder{
-	dir = 1;
-	color = "8f8f8f"
+	color = "8f8f8f";
+	dir = 1
 	},
 /obj/structure/railing/grey,
 /turf/simulated/floor/asteroid/dirt,
@@ -3788,8 +3787,8 @@
 "ML" = (
 /obj/structure/closet,
 /obj/effect/floor_decal/spline/fancy{
-	dir = 1;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 1
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -3844,8 +3843,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "NV" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 2;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 2
 	},
 /obj/effect/floor_decal/spline/fancy/corner{
 	color = "#8f8f8f";
@@ -3914,8 +3913,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "OA" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 10;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 10
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -4022,6 +4021,11 @@
 /obj/structure/invislight,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Qo" = (
+/obj/structure/table/marble,
+/obj/machinery/cooking_with_jane/stove,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Qp" = (
 /obj/machinery/power/tracker,
 /obj/structure/cable,
@@ -4125,8 +4129,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Rt" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 8;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 8
 	},
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/wood,
@@ -4187,8 +4191,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "SF" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 4;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 4
 	},
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/wood,
@@ -4220,6 +4224,10 @@
 /obj/structure/railing,
 /turf/simulated/floor/asteroid/dirt/dark/plough,
 /area/nadezhda/outside/forest/hunting_lodge)
+"To" = (
+/obj/machinery/cooking_with_jane/oven,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Tv" = (
 /obj/machinery/seed_extractor,
 /turf/simulated/floor/tiled/dark/brown_platform,
@@ -4263,8 +4271,8 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Uv" = (
 /obj/effect/floor_decal/spline/fancy{
-	dir = 4;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -4447,8 +4455,8 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/spline/fancy{
-	dir = 4;
-	color = "#6c3d26"
+	color = "#6c3d26";
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -4456,8 +4464,8 @@
 /obj/structure/closet,
 /obj/machinery/light,
 /obj/effect/floor_decal/spline/fancy{
-	dir = 1;
-	color = "#8f8f8f"
+	color = "#8f8f8f";
+	dir = 1
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -4540,20 +4548,20 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical{
-	pixel_y = 9;
-	layer = 2.9
+	layer = 2.9;
+	pixel_y = 9
 	},
 /obj/item/storage/toolbox/electrical{
-	pixel_y = 9;
-	layer = 2.9
+	layer = 2.9;
+	pixel_y = 9
 	},
 /obj/item/storage/toolbox/electrical{
-	pixel_y = 9;
-	layer = 2.9
+	layer = 2.9;
+	pixel_y = 9
 	},
 /obj/item/storage/toolbox/electrical{
-	pixel_y = 9;
-	layer = 2.9
+	layer = 2.9;
+	pixel_y = 9
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -7858,8 +7866,8 @@ tz
 WQ
 ew
 bq
-bq
-bq
+bn
+bn
 bq
 bq
 sI
@@ -7937,7 +7945,7 @@ WQ
 fB
 bq
 ee
-bn
+aM
 bq
 Xq
 WQ
@@ -8015,7 +8023,7 @@ WQ
 iX
 bq
 UY
-xc
+To
 bq
 bq
 jv
@@ -8092,8 +8100,8 @@ tz
 WQ
 oZ
 bq
-bn
-bX
+xc
+Qo
 bq
 bq
 jv
@@ -8171,7 +8179,7 @@ WQ
 jn
 bq
 jF
-bn
+bX
 bq
 bq
 jv
@@ -8343,7 +8351,7 @@ gg
 Ae
 Cb
 Cb
-Xz
+cr
 Rl
 hb
 hb
@@ -11982,7 +11990,7 @@ ZD
 om
 WQ
 us
-kI
+EM
 Lx
 TX
 RR
@@ -12133,7 +12141,7 @@ tz
 WQ
 jj
 zs
-cr
+Lx
 TX
 jj
 WQ

@@ -415,7 +415,7 @@
 				dmult += Proj.supereffective_mult
 		damage *= dmult
 		if (!(Proj.testing))
-			damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj), post_pen_mult = Proj.post_penetration_dammult, added_damage_bullet_pve = Proj.added_damage_bullet_pve, added_damage_laser_pve = Proj.added_damage_laser_pve)
+			damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armour_pen = Proj.armor_penetration, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj), post_pen_mult = Proj.post_penetration_dammult)
 	return FALSE
 
 /mob/living/simple_animal/rejuvenate()
@@ -706,7 +706,7 @@
 		return
 	return ..()
 
-
+/*
 /mob/living/simple_animal/handle_fire()
 	return
 
@@ -714,9 +714,9 @@
 	return
 /mob/living/simple_animal/IgniteMob()
 	return
-/mob/living/simple_animal/ExtinguishMob()
+/mob/living/simple_animal/ExtinguishMob()		no simplmobs made of abestos anymore
 	return
-
+*/
 
 //I wanted to call this proc alert but it already exists.
 //Basically makes the mob pay attention to the world, resets sleep timers, awakens it from a sleeping state sometimes

@@ -399,8 +399,8 @@ var/global/list/robot_modules = list(
 	synths += medicine
 
 	var/obj/item/stack/nanopaste/N = new /obj/item/stack/nanopaste(src)
-	var/obj/item/stack/medical/advanced/bruise_pack/B = new /obj/item/stack/medical/advanced/bruise_pack(src)
-	var/obj/item/stack/medical/advanced/ointment/O = new /obj/item/stack/medical/advanced/ointment(src)
+	var/obj/item/stack/medical/bruise_pack/advanced/B = new /obj/item/stack/medical/bruise_pack/advanced(src)
+	var/obj/item/stack/medical/ointment/advanced/O = new /obj/item/stack/medical/ointment/advanced(src)
 	N.uses_charge = 1
 	N.charge_costs = list(1000)
 	N.synths = list(medicine)

@@ -39,7 +39,7 @@
 	name = "Tagilla"
 	desc = "A younger primal render, one that has yet to harden its scales, \
 	shed the baby fat, and grow its usual horns and claws. Unlike older ones it has yet to become as fantastically violent to everything, \
-	a trait that often gets it hunted by older renders to kill potential developing rivals. His older brother, Killa, is said to be a legendary render.\
+	a trait that often gets it hunted by older renders to kill potential developing rivals. His older brother, Killa, is said to be a legendary render. \
 	Something tells you he absolutely hates Blackshield."
 	colony_friend = TRUE
 	speed = 1

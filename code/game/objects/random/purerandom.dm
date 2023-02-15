@@ -83,6 +83,8 @@
 				/obj/item/tank/nitrogen = 2,
 				/obj/item/clothing/mask/balaclava = 2,
 				/obj/item/clothing/mask/gas = 2,
+				/obj/item/storage/wallet = 2,
+				/obj/item/storage/wallet/random = 1,
 				/obj/random/cloth/masks = 1,
 				/obj/random/cloth/under = 1,
 				/obj/random/cloth/head = 1,
@@ -132,6 +134,8 @@
 				/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 1,
 				/obj/item/flamethrower = 1,
 				/obj/random/gun_cheap = 1,
+				/obj/random/gun_parts/low = 1,
+				/obj/random/gun_parts/frames = 1,
 				//obj/item/clothing/accessory/badge/marshal = 0.1, //Antag item
 				/obj/item/stash_spawner = 12))
 

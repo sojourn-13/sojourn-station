@@ -36,6 +36,8 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY)
 
+	gun_parts = list(/obj/item/part/gun = 2, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/clrifle = 1)
+
 /obj/item/gun/projectile/automatic/survivalrifle/Initialize()
 	. = ..()
 	update_icon()

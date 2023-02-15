@@ -44,6 +44,7 @@
 
 /area/nadezhda/maintenance
 	is_maintenance = TRUE
+	ship_area = TRUE
 	flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
 	turf_initializer = new /datum/turf_initializer/maintenance()
@@ -145,14 +146,13 @@
 //Outside abandoned structures
 
 /area/nadezhda/dungeon/outside
-	is_maintenance = TRUE
+	is_maintenance = FALSE
 	flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
 	turf_initializer = new /datum/turf_initializer/maintenance()
 	ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
 	dynamic_lighting = FALSE
-	ship_area = FALSE
 	is_dungeon_lootable = TRUE
 
 
@@ -330,6 +330,7 @@
 	name = "Hunting Plains Cabin"
 	icon_state = "erisgreen"
 	requires_power = FALSE
+	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/forest/river_forest_dark
 	name = "Hunting Plains Caves"

@@ -41,7 +41,7 @@
 				to_chat(user, "<span class='notice'>You add a rod to \the [src].</span>")
 				var/mutable_appearance/rod_underlay = mutable_appearance('icons/obj/structures.dmi', "bonfire_rod")
 				rod_underlay.pixel_y = 16
-				rod_underlay.appearance_flags = RESET_COLOR|PIXEL_SCALE|TILE_BOUND
+				rod_underlay.appearance_flags = RESET_COLOR|PIXEL_SCALE|TILE_BOUND|DEFAULT_APPEARANCE_FLAGS
 				underlays += rod_underlay
 			if("Grill")
 				R.use(1)
@@ -157,13 +157,13 @@
 			if(501 to 1000)
 				state = "bonfire_hot"
 		var/image/I = image(icon, state)
-		I.appearance_flags = RESET_COLOR
+		I.appearance_flags = RESET_COLOR | DEFAULT_APPEARANCE_FLAGS
 		overlays += I
 		if(buckled_mob && fuel >= 5)
 			I = image(icon, "bonfire_intense")
 			I.pixel_y = 13
 			I.layer = MOB_LAYER + 0.1
-			I.appearance_flags = RESET_COLOR
+			I.appearance_flags = RESET_COLOR | DEFAULT_APPEARANCE_FLAGS
 			overlays += I
 		var/light_strength = max(clamp(fuel/10, 1, 7), 2)
 		set_light(light_strength, light_strength, "#FF9933")
@@ -171,7 +171,7 @@
 		set_light(0)
 	if(grill)
 		var/image/grille_image = image(icon, "bonfire_grill")
-		grille_image.appearance_flags = RESET_COLOR
+		grille_image.appearance_flags = RESET_COLOR | DEFAULT_APPEARANCE_FLAGS
 		overlays += grille_image
 
 /obj/structure/bonfire/post_buckle_mob(mob/living/M)

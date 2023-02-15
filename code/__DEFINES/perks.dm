@@ -183,3 +183,8 @@
 //Temporary drug perks
 #define PERK_ULTRASURGEON /datum/perk/drug/ultrasurgeon
 #define PERK_NJOY /datum/perk/njoy
+
+
+//cooldown perks
+#define PERK_COOLDOWN_REASON /datum/perk/cooldown/reason
+#define PERK_COOLDOWN_EXERTION /datum/perk/cooldown/exertion

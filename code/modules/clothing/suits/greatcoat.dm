@@ -1,43 +1,3 @@
-/obj/item/clothing/suit/storage/greatcoat/ihc
-	name = "warrant officer's greatcoat"
-	desc = "A durable greatcoat, designed for protecion and style."
-	icon_state = "ihc_coat"
-	item_state = "ihc_coat"
-	blood_overlay_type = "coat"
-	permeability_coefficient = 0.50
-	armor_list = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //Same as IH Commander standard coat
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
-	stiffness = LIGHT_STIFFNESS
-
-/obj/item/clothing/suit/storage/greatcoat/ihc/verb/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["WO Greatcoat"] = "ihc_coat"
-	options["WO Cloaked Greatcoat"] = "ihc_coat_cloak"
-	options["WO Blue Greatcoat"] = "ihc_coat_blue"
-	options["WO Blue Cloaked Greatcoat"] = "ihc_coat_cloak_blue"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
 
 /obj/item/clothing/suit/greatcoat/cap
 	name = "premier's greatcoat"
@@ -69,44 +29,6 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		item_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
-/obj/item/clothing/suit/storage/greatcoat/ihc/bmc
-	name = "blackshield commander's greatcoat"
-	desc = "A durable greatcoat, designed for protecion and style."
-	icon_state = "mc_coat"
-	item_state = "mc_coat"
-	blood_overlay_type = "coat"
-	permeability_coefficient = 0.50
-	armor_list = list(melee = 40, bullet = 40, energy = 30, bomb = 25, bio = 0, rad = 0) //It's a formal coat, meant to protect against assassination and little else.
-	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
-
-/obj/item/clothing/suit/storage/greatcoat/ihc/bmc/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["BC Cloaked Greatcoat"] = "mc_coat_cloak"
-	options["BC Greatcoat"] = "mc_coat"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
 		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
@@ -155,6 +77,49 @@
 	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
+
+/obj/item/clothing/suit/greatcoat/nt_wintercoat //Sprite recolour from a Civ13 open github skyrim hidden piece with a few change ups to match our pallet -Dongels
+	name = "absolutist wintercoat"
+	desc = "A comfortably warm, and thick decorated wintercoat for the Absolutist faith and its supporters. Keeping the faithfull warm in the jungle heat since 2652."
+	icon_state = "nt_wintercoat"
+	item_state = "nt_wintercoat"
+	blood_overlay_type = "coat"
+	permeability_coefficient = 0.50
+	armor_list = list( //thicker material so +5 boost (from base 10) to armor values, but lower rad/same bomb since not metal lined. Maybe add in minor slowdown if needed -Dongels
+		melee = 15,
+		bullet = 15,
+		energy = 15,
+		bomb = 10,
+		bio = 100,
+		rad = 50
+	)
+	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO
+	cold_protection = UPPER_TORSO|ARMS|LOWER_TORSO
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+
+/obj/item/clothing/suit/greatcoat/nt_wintercoat/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["wintercoat default"] = "nt_wintercoat"
+	options["wintercoat dark"] = "nt_wintercoat_dark"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/greatcoat/general
 	name = "grey greatcoat"

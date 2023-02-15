@@ -23,6 +23,17 @@
 
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
+	gun_parts = list(/obj/item/part/gun/frame/lamia = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/kurtz = 1)
+
+/obj/item/part/gun/frame/lamia
+	name = "Lamia frame"
+	desc = "An Lamia pistol frame. For a pocket sized hole puncher."
+	icon_state = "frame_lamia"
+	result = /obj/item/gun/projectile/lamia
+	resultvars = list(/obj/item/gun/projectile/lamia)
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = list(/obj/item/part/gun/barrel/kurtz)
 
 /obj/item/gun/projectile/lamia/update_icon()
 	..()
@@ -99,3 +110,14 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/avasarala_cock.ogg'
 	fire_sound 	= 'sound/weapons/guns/fire/avasarala_fire.ogg'
 	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/amnesty = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/kurtz = 1)
+
+/obj/item/part/gun/frame/amnesty
+	name = "Amnesty frame"
+	desc = "An Amnesty pistol frame. For a pocket sized hole puncher."
+	icon_state = "frame_lamia"
+	result = /obj/item/gun/projectile/lamia/amnesty
+	resultvars = list(/obj/item/gun/projectile/lamia/amnesty)
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = list(/obj/item/part/gun/barrel/kurtz)
