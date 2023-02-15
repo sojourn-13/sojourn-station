@@ -396,6 +396,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/grill/verb/toggle_burner_1() called to toggle burner 1")
 	#endif
+	(ishuman(usr) || isrobot(usr)(usr)) ? :return
 	handle_switch(usr, 1)
 
 /obj/machinery/cooking_with_jane/grill/verb/toggle_burner_2()
@@ -406,6 +407,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/grill/verb/toggle_burner_2() called to toggle burner 2")
 	#endif
+	(ishuman(usr) || isrobot(usr)(usr)) ? :return
 	handle_switch(usr, 2)
 
 /obj/machinery/cooking_with_jane/grill/verb/change_temperature_1()
@@ -416,6 +418,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/grill/verb/change_temperature_1() called to change temperature on 1")
 	#endif
+	(ishuman(usr) || isrobot(usr)(usr)) ? :return
 	handle_temperature(usr, 1)
 
 /obj/machinery/cooking_with_jane/grill/verb/change_temperature_2()
@@ -426,6 +429,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/grill/verb/change_temperature_2() called to change temperature on 2")
 	#endif
+	(ishuman(usr) || isrobot(usr)(usr)) ? :return
 	handle_temperature(usr, 2)
 
 /obj/machinery/cooking_with_jane/grill/verb/change_timer_1()
@@ -436,6 +440,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/grill/verb/change_timer_1() called to change timer on 1")
 	#endif
+	(ishuman(usr) || isrobot(usr)(usr)) ? :return
 	handle_timer(usr, 1)
 
 /obj/machinery/cooking_with_jane/grill/verb/change_timer_2()
@@ -446,6 +451,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/grill/verb/change_timer_2() called to change timer on 2")
 	#endif
+	(ishuman(usr) || isrobot(usr)(usr)) ? :return
 	handle_timer(usr, 2)
 
 

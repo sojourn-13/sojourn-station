@@ -355,6 +355,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/oven/verb/toggle_burner_1() called")
 	#endif
+	(ishuman(usr) || isrobot(usr)(usr)) ? :return
 	handle_switch(usr)
 
 
@@ -366,6 +367,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/oven/verb/change_temperature_1() called")
 	#endif
+	(ishuman(usr) || isrobot(usr)(usr)) ? :return
 	handle_temperature(usr)
 
 /obj/machinery/cooking_with_jane/oven/verb/change_timer()
@@ -376,6 +378,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/oven/verb/change_timer() called")
 	#endif
+	(ishuman(usr) || isrobot(usr)(usr)) ? :return
 	handle_timer(usr)
 
 /obj/machinery/cooking_with_jane/oven/verb/toggle_door()
@@ -386,4 +389,5 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/oven/verb/toggle_door() called")
 	#endif
+	(ishuman(usr) || isrobot(usr)(usr)) ? :return
 	handle_open(usr)
