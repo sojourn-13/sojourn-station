@@ -358,7 +358,7 @@
 /obj/machinery/cooking_with_jane/stove/verb/toggle_burner_1()
 	set src in view(1)
 	set name = "Stove burner 1 - Toggle"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Turn on a burner on the stove"
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/toggle_burner_1() called to toggle burner 1")
@@ -368,7 +368,7 @@
 /obj/machinery/cooking_with_jane/stove/verb/toggle_burner_2()
 	set src in view(1)
 	set name = "Stove burner 2 - Toggle"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Turn on a burner on the stove"
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/toggle_burner_2() called to toggle burner 2")
@@ -378,7 +378,7 @@
 /obj/machinery/cooking_with_jane/stove/verb/toggle_burner_3()
 	set src in view(1)
 	set name = "Stove burner 3 - Toggle"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Turn on a burner on the stove"
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/toggle_burner_3() called to toggle burner 3")
@@ -388,7 +388,7 @@
 /obj/machinery/cooking_with_jane/stove/verb/toggle_burner_4()
 	set src in view(1)
 	set name = "Stove burner 4 - Toggle"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Turn on a burner on the stove"
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/toggle_burner_4() called to toggle burner 4")
@@ -398,7 +398,7 @@
 /obj/machinery/cooking_with_jane/stove/verb/change_temperature_1()
 	set src in view(1)
 	set name = "Stove burner 1 - Set Temp"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Set a temperature for a burner."
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_temperature_1() called to change temperature on 1")
@@ -408,7 +408,7 @@
 /obj/machinery/cooking_with_jane/stove/verb/change_temperature_2()
 	set src in view(1)
 	set name = "Stove burner 2 - Set Temp"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Set a temperature for a burner."
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_temperature_2() called to change temperature on 2")
@@ -418,7 +418,7 @@
 /obj/machinery/cooking_with_jane/stove/verb/change_temperature_3()
 	set src in view(1)
 	set name = "Stove burner 3 - Set Temp"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Set a temperature for a burner."
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_temperature_3() called to change temperature on 3")
@@ -428,7 +428,7 @@
 /obj/machinery/cooking_with_jane/stove/verb/change_temperature_4()
 	set src in view(1)
 	set name = "Stove burner 4 - Set Temp"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Set a temperature for a burner."
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_temperature_4() called to change temperature on 4")
@@ -438,7 +438,7 @@
 /obj/machinery/cooking_with_jane/stove/verb/change_timer_1()
 	set src in view(1)
 	set name = "Stove burner 1 - Set Timer"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Set a timer for a burner."
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_timer_1() called to change timer on 1")
@@ -448,7 +448,7 @@
 /obj/machinery/cooking_with_jane/stove/verb/change_timer_2()
 	set src in view(1)
 	set name = "Stove burner 2 - Set Timer"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Set a timer for a burner."
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_timer_2() called to change timer on 2")
@@ -458,17 +458,17 @@
 /obj/machinery/cooking_with_jane/stove/verb/change_timer_3()
 	set src in view(1)
 	set name = "Stove burner 3 - Set Timer"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Set a timer for a burner."
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_timer_3() called to change timer on 3")
 	#endif
 	handle_timer(usr, 3)
-	
+
 /obj/machinery/cooking_with_jane/stove/verb/change_timer_4()
 	set src in view(1)
 	set name = "Stove burner 4 - Set Timer"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Set a timer for a burner."
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_timer_4() called to change timer on 4")

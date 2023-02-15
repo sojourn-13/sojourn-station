@@ -34,7 +34,7 @@
 
 	//if(on_fire)
 		//Do bad things if it is on fire.
-	
+
 	if(switches)
 		handle_cooking(null, FALSE)
 
@@ -54,7 +54,7 @@
 
 /obj/machinery/cooking_with_jane/oven/RefreshParts()
 	..()
-	
+
 	var/las_rating = 0
 	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
 		las_rating += M.rating
@@ -109,7 +109,7 @@
 /obj/machinery/cooking_with_jane/oven/attackby(var/obj/item/used_item, var/mob/user, params)
 	if(default_deconstruction(used_item, user))
 		return
-	
+
 	var/center_selected = getInput(params)
 
 	if(opened && center_selected)
@@ -350,7 +350,7 @@
 /obj/machinery/cooking_with_jane/oven/verb/toggle_burner()
 	set src in view(1)
 	set name = "Oven - Toggle"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Turn on the oven"
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/oven/verb/toggle_burner_1() called")
@@ -361,7 +361,7 @@
 /obj/machinery/cooking_with_jane/oven/verb/change_temperature()
 	set src in view(1)
 	set name = "Oven - Set Temp"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Set a temperature for the oven."
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/oven/verb/change_temperature_1() called")
@@ -371,7 +371,7 @@
 /obj/machinery/cooking_with_jane/oven/verb/change_timer()
 	set src in view(1)
 	set name = "Oven - Set Timer"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Set a timer for the oven."
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/oven/verb/change_timer() called")
@@ -381,7 +381,7 @@
 /obj/machinery/cooking_with_jane/oven/verb/toggle_door()
 	set src in view(1)
 	set name = "Oven - Open/Close door"
-	set category = "Cooking"
+	set category = "Object"
 	set desc = "Open/Close the door of the oven."
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/oven/verb/toggle_door() called")
