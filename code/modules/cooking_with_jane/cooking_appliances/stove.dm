@@ -363,7 +363,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/toggle_burner_1() called to toggle burner 1")
 	#endif
-	ishuman(usr) || isrobot(usr)(usr) ? :return
+	ishuman(usr) || isrobot(usr)? :return
 	handle_switch(usr, 1)
 
 /obj/machinery/cooking_with_jane/stove/verb/toggle_burner_2()
@@ -374,7 +374,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/toggle_burner_2() called to toggle burner 2")
 	#endif
-	ishuman(usr) || isrobot(usr)(usr) ? :return
+	ishuman(usr) || isrobot(usr)? :return
 	handle_switch(usr, 2)
 
 /obj/machinery/cooking_with_jane/stove/verb/toggle_burner_3()
@@ -385,7 +385,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/toggle_burner_3() called to toggle burner 3")
 	#endif
-	ishuman(usr) || isrobot(usr)(usr) ? :return
+	ishuman(usr) || isrobot(usr)? :return
 	handle_switch(usr, 3)
 
 /obj/machinery/cooking_with_jane/stove/verb/toggle_burner_4()
@@ -396,7 +396,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/toggle_burner_4() called to toggle burner 4")
 	#endif
-	ishuman(usr) || isrobot(usr)(usr) ? :return
+	ishuman(usr) || isrobot(usr)? :return
 	handle_switch(usr, 4)
 
 /obj/machinery/cooking_with_jane/stove/verb/change_temperature_1()
@@ -407,7 +407,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_temperature_1() called to change temperature on 1")
 	#endif
-	ishuman(usr) || isrobot(usr)(usr) ? :return
+	ishuman(usr) || isrobot(usr)? :return
 	handle_temperature(usr, 1)
 
 /obj/machinery/cooking_with_jane/stove/verb/change_temperature_2()
@@ -418,7 +418,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_temperature_2() called to change temperature on 2")
 	#endif
-	ishuman(usr) || isrobot(usr)(usr) ? :return
+	ishuman(usr) || isrobot(usr)? :return
 	handle_temperature(usr, 2)
 
 /obj/machinery/cooking_with_jane/stove/verb/change_temperature_3()
@@ -429,7 +429,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_temperature_3() called to change temperature on 3")
 	#endif
-	ishuman(usr) || isrobot(usr)(usr) ? :return
+	ishuman(usr) || isrobot(usr)? :return
 	handle_temperature(usr, 3)
 
 /obj/machinery/cooking_with_jane/stove/verb/change_temperature_4()
@@ -440,7 +440,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_temperature_4() called to change temperature on 4")
 	#endif
-	ishuman(usr) || isrobot(usr)(usr) ? :return
+	ishuman(usr) || isrobot(usr)? :return
 	handle_temperature(usr, 4)
 
 /obj/machinery/cooking_with_jane/stove/verb/change_timer_1()
@@ -451,7 +451,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_timer_1() called to change timer on 1")
 	#endif
-	ishuman(usr) || isrobot(usr)(usr) ? :return
+	ishuman(usr) || isrobot(usr)? :return
 	handle_timer(usr, 1)
 
 /obj/machinery/cooking_with_jane/stove/verb/change_timer_2()
@@ -462,7 +462,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_timer_2() called to change timer on 2")
 	#endif
-	ishuman(usr) || isrobot(usr)(usr) ? :return
+	ishuman(usr) || isrobot(usr)? :return
 	handle_timer(usr, 2)
 
 /obj/machinery/cooking_with_jane/stove/verb/change_timer_3()
@@ -473,7 +473,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_timer_3() called to change timer on 3")
 	#endif
-	ishuman(usr) || isrobot(usr)(usr) ? :return
+	ishuman(usr) || isrobot(usr)? :return
 	handle_timer(usr, 3)
 
 /obj/machinery/cooking_with_jane/stove/verb/change_timer_4()
@@ -484,7 +484,7 @@
 	#ifdef CWJ_DEBUG
 	log_debug("/cooking_with_jane/stove/verb/change_timer_4() called to change timer on 4")
 	#endif
-	ishuman(usr) || isrobot(usr)(usr) ? :return
+	ishuman(usr) || isrobot(usr)? :return
 	handle_timer(usr, 4)
 #undef ICON_SPLIT_X
 #undef ICON_SPLIT_Y
