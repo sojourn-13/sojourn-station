@@ -63,6 +63,14 @@
 		list(QUALITY_HEATING, 5, 28)
 	)
 
+/datum/craft_recipe/alchemy/pointy_bottle_alt
+	name = "Tincture Bottle (Welding)"
+	result = /obj/item/reagent_containers/glass/bottle/tincture
+	steps = list(
+		list(/obj/item/stack/ore/glass, 1),
+		list(QUALITY_WELDING, 5, 28)
+	)
+
 /datum/craft_recipe/alchemy/beaker
 	name = "Beaker"
 	result = /obj/item/reagent_containers/glass/beaker

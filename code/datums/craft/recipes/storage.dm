@@ -77,6 +77,30 @@
 	)
 	related_stats = list(STAT_COG)
 
+/datum/craft_recipe/storage/quiver
+	name = "arrows quiver"
+	result = /obj/item/storage/pouch/quiver
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/clothing, 1, "time" = 25),
+		list(QUALITY_CUTTING, 10, "time" = 10),
+		list(/obj/item/stack/cable_coil, 10, "time" = 5),
+		list(CRAFT_MATERIAL, 5, MATERIAL_CLOTH, 10),
+		list(QUALITY_ADHESIVE, 30)
+	)
+
+/datum/craft_recipe/storage/bolts
+	name = "crossbow bolts quiver"
+	result = /obj/item/storage/pouch/bolts
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/clothing, 1, "time" = 25),
+		list(QUALITY_CUTTING, 10, "time" = 10),
+		list(/obj/item/stack/cable_coil, 10, "time" = 5),
+		list(CRAFT_MATERIAL, 5, MATERIAL_CLOTH, 10),
+		list(QUALITY_ADHESIVE, 30)
+	)
+
 /datum/craft_recipe/storage/leather_backpack
 	name = "leather backpack"
 	result = /obj/item/storage/backpack/leather

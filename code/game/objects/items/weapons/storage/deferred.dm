@@ -107,7 +107,7 @@
 		/obj/item/tool/surgicaldrill/adv,
 		/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
 		/obj/item/storage/pill_bottle/tramadol,
-		/obj/item/stack/medical/advanced/bruise_pack
+		/obj/item/stack/medical/bruise_pack/advanced
 		)
 	can_hold = list(
 		/obj/item/tool/bonesetter,
@@ -119,7 +119,7 @@
 		/obj/item/tool/tape_roll/bonegel,
 		/obj/item/reagent_containers/syringe, //We hold any syringe.
 		/obj/item/storage/pill_bottle, //We hold pill bottles as well
-		/obj/item/stack/medical/advanced/bruise_pack
+		/obj/item/stack/medical/bruise_pack/advanced
 		)
 
 /obj/item/storage/deferred/meds

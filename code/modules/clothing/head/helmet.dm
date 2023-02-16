@@ -787,6 +787,38 @@
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/head/helmet/scav_heavy
+	name = "scavenger plate helmet"
+	desc = "A heavy helmet equipped with layers of metal and a reinforced glass visor, ideal for protection and headbutts. It even protects your eyes from welding flares!"
+	icon_state = "scav_heavy"
+	armor_list = list(melee = 40, bullet = 20, energy = 15, bomb = 35, bio = 0, rad = 0)
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	flash_protection = FLASH_PROTECTION_MODERATE
+	price_tag = 150
+
+/obj/item/clothing/head/helmet/scav_heavy/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["scavenger plate"] = "scav_heavy"
+	options["alt scavenger plate"] = "scav_heavy_alt" // Quad damage!
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] colors.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/armor/helmet/penance
 	name = "penance helmet"
 	desc = "An old iron-wrought helmet upon a chainmail coif. These were resurrected from the time of castle retinues to serve again upon the heads of terrified conscripts and penal soldiers in the battle of Krios when the surplus of kevlar dwindled to a luxury; now only a distant piece of trash on a disconnected world. Among Kriosians, wearing this is a sign of penance and military ritual. Among Men, it is poverty and desperation interchanged."
