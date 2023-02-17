@@ -370,7 +370,7 @@
 	icon_state = "technosuit"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 40, bullet = 40, energy = 35, bomb = 50, bio = 100, rad = 100)
+	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
 	max_upgrades = 2
 	extra_allowed = list(/obj/item/extinguisher,
 						 /obj/item/tool,
@@ -556,6 +556,7 @@
 	desc = "A suit of armor with heavy padding to protect against melee attacks. Looks like it might impair movement. This one is produced by Seinemetall Defense GmbH."
 	icon_state = "riot_ironhammer"
 	item_state = "swat_suit"
+
 
 /*
  * Storage Types

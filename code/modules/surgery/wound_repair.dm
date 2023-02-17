@@ -29,14 +29,14 @@
 // Brute Heal Surgery
 
 /datum/old_surgery_step/external/brute_heal
-	allowed_tools = list(/obj/item/stack/medical/advanced/bruise_pack = 100, /obj/item/stack/medical/advanced/bruise_pack/mending_ichor = 100)
+	allowed_tools = list(/obj/item/stack/medical/bruise_pack/advanced = 100, /obj/item/stack/medical/bruise_pack/advanced/mending_ichor = 100)
 	duration = 80
 
 /datum/old_surgery_step/external/brute_heal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
-	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack))
+	if (istype(tool, /obj/item/stack/medical/bruise_pack/advanced))
 		tool_name = "regenerative membrane"
-	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack/mending_ichor))
+	if (istype(tool, /obj/item/stack/medical/bruise_pack/advanced/mending_ichor))
 		tool_name = "mending ichor"
 
 	if (!hasorgans(target))
@@ -56,7 +56,7 @@
 
 /datum/old_surgery_step/external/brute_heal/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
-	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack))
+	if (istype(tool, /obj/item/stack/medical/bruise_pack/advanced))
 		tool_name = "regenerative membrane"
 
 	if (!hasorgans(target))
@@ -82,7 +82,7 @@
 	SPAN_WARNING("Your hand slips, smushing the inside of [target]'s [affected.name] with \the [tool]!"))
 	var/dam_amt = 2
 
-	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack))
+	if (istype(tool, /obj/item/stack/medical/bruise_pack/advanced))
 		target.adjustToxLoss(5)
 
 	else if (istype(tool, /obj/item/stack/medical/bruise_pack))
@@ -97,14 +97,14 @@
 // Burn Heal Surgery
 
 /datum/old_surgery_step/external/burn_heal
-	allowed_tools = list(/obj/item/stack/medical/advanced/ointment = 100, /obj/item/stack/medical/advanced/ointment/regenerative_ichor = 100)
+	allowed_tools = list(/obj/item/stack/medical/ointment/advanced = 100, /obj/item/stack/medical/ointment/advanced/regenerative_ichor = 100)
 	duration = 80
 
 /datum/old_surgery_step/external/burn_heal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
-	if (istype(tool, /obj/item/stack/medical/advanced/ointment))
+	if (istype(tool, /obj/item/stack/medical/ointment/advanced))
 		tool_name = "regenerative graft"
-	if (istype(tool, /obj/item/stack/medical/advanced/ointment/regenerative_ichor))
+	if (istype(tool, /obj/item/stack/medical/ointment/advanced/regenerative_ichor))
 		tool_name = "regenerative ichor"
 
 	if (!hasorgans(target))
@@ -125,7 +125,7 @@
 
 /datum/old_surgery_step/external/burn_heal/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
-	if (istype(tool, /obj/item/stack/medical/advanced/ointment))
+	if (istype(tool, /obj/item/stack/medical/ointment/advanced))
 		tool_name = "regenerative graft"
 
 	if (!hasorgans(target))

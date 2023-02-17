@@ -282,7 +282,7 @@
 // Medicine -----------------
 /datum/craft_recipe/lodge/blood_tongue
 	name = "Tatonka blood tongue"
-	result = /obj/item/stack/medical/advanced/bruise_pack/tatonka_tongue
+	result = /obj/item/stack/medical/bruise_pack/advanced/tatonka_tongue
 	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/animal_part/tatonka_tongue, 1, "time" = 20),
@@ -291,7 +291,7 @@
 
 /datum/craft_recipe/lodge/powder_pouch
 	name = "Tatonka powder pouch"
-	result = /obj/item/stack/medical/advanced/ointment/powder_pouch
+	result = /obj/item/stack/medical/ointment/advanced/powder_pouch
 	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 60),

@@ -199,7 +199,7 @@
 
 /obj/item/storage/box/advancedtraumakit/populate_contents()
 	for(var/i in 1 to 5)
-		new /obj/item/stack/medical/advanced/bruise_pack (src)
+		new /obj/item/stack/medical/bruise_pack/advanced (src)
 
 /obj/item/storage/box/advancedburnkit
 	name = "box of ABKs"
@@ -209,7 +209,7 @@
 
 /obj/item/storage/box/advancedburnkit/populate_contents()
 	for(var/i in 1 to 5)
-		new /obj/item/stack/medical/advanced/ointment (src)
+		new /obj/item/stack/medical/ointment/advanced (src)
 
 /obj/item/storage/box/gauzebulk
 	name = "box of gauze"

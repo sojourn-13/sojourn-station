@@ -62,6 +62,11 @@
 #define MUTATION_WURM_CRY /datum/genetics/mutation/wurm_cry
 #define MUTATION_SPARK_BREATH /datum/genetics/mutation/spark_breath
 #define MUTATION_FLAME_RETARDANT /datum/genetics/mutation/flame_retardant
+#define MUTATION_PHASE /datum/genetics/mutation/phasing
+#define MUTATION_NO_PRINTS /datum/genetics/mutation/disability/noprints
+#define MUTATION_NO_BREATHE /datum/genetics/mutation/disability/nobreathe
+#define MUTATION_HULK /datum/genetics/mutation/disability/hulk
+#define MUTATION_FRIENDLY /datum/genetics/mutation/friendly
 //^^^ All mutations!
 
 
