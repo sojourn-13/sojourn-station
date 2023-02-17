@@ -270,6 +270,7 @@
 /datum/perk/scribe/remove()
 	if(holder)
 		holder.sdisabilities&=BLIND
+	..()
 
 /datum/perk/bartender
 	name = "Bar Menu"
