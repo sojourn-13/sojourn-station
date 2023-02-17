@@ -1975,6 +1975,7 @@
 #include "code\modules\genetics\mutations\item_makers.dm"
 #include "code\modules\genetics\mutations\milk.dm"
 #include "code\modules\genetics\mutations\painless.dm"
+#include "code\modules\genetics\mutations\phasing.dm"
 #include "code\modules\genetics\mutations\poison_gas.dm"
 #include "code\modules\genetics\mutations\rad_protection.dm"
 #include "code\modules\genetics\mutations\rand_instability.dm"
