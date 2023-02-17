@@ -7,6 +7,26 @@
 	random_rotation = 0
 	var/is_rune = FALSE
 
+/obj/effect/decal/cleanable/crayon/mist
+	name = "strange rune"
+	desc = "A fine mist comes off this rune"
+	alpha = 150
+
+/obj/effect/decal/cleanable/crayon/mist/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	if(istype(mover, /obj/item/projectile/beam))
+		return FALSE
+	return TRUE
+
+/obj/effect/decal/cleanable/crayon/shimmer
+	name = "strange rune"
+	desc = "The air shimmers about this rune."
+	alpha = 150
+
+/obj/effect/decal/cleanable/crayon/shimmer/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	if(istype(mover, /obj/item/projectile) && !istype(mover, /obj/item/projectile/beam))
+		return FALSE
+	return TRUE
+
 /obj/effect/decal/cleanable/crayon/New(location,main = "#FFFFFF",shade = "#000000",type = "rune")
 	..()
 	loc = location
@@ -32,7 +52,7 @@
 
 	add_hiddenprint(usr)
 
-//admin testing items.
+//various items and doo-dads
 /obj/item/device/camera/crayon_mage // used in admin testing so I don't have to constantly var edit myself to be nearsighted
 	desc = "why is the light on the back?"
 	name = "camera"
@@ -73,6 +93,7 @@ obj/item/scroll
 	desc = "A blank canvus in which to express yourself."
 	icon = 'icons/obj/scroll_bandange.dmi' //icons thanks to Ezoken#5894
 	icon_state = "Scrollstended"
+	item_state = "crayon_scroll_open"
 	w_class = ITEM_SIZE_BULKY
 	var/message = ""
 
@@ -81,42 +102,8 @@ obj/item/scroll/sealed
 	name = "sealed scroll"
 	desc = "A scroll sealed up with something, or nothing. Only one way to find out!"
 	icon_state = "Scrollclosed"
+	item_state = "crayon_scroll_closed"
 	w_class = ITEM_SIZE_SMALL
-
-obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
-	..()
-	if(QUALITY_WELDING in I.tool_qualities || istype(I, /obj/item/flame)) /*casts effects or just burns away if no spell works.
-		if(src.message == "Example Spell.")
-			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
-			example_spell(M) //I cast proc!
-			return //we don't cast every spell possible. Just the one on the scroll.
-		if we don't cast anything then we end up doing a normal burn. */
-		to_chat(M, "<span class='warning'>You ignite the scroll. It burns for a few moments before becoming ash.</span>")
-		ScrollBurn()
-		return
-
-	if(istype(I, /obj/item/stack/wax) && !istype(I, /obj/item/scroll/sealed)) //seal the scroll
-		var/obj/item/stack/wax/W = I
-		if(W.amount <= 0) //a how the fuck check
-			return
-		W.amount -= 1
-		if(W.amount <= 0) //emergency delete check
-			qdel(W)
-		var/obj/item/scroll/sealed/wax_on = new /obj/item/scroll/sealed (src.loc)
-		wax_on.message = src.message
-		qdel(src)
-
-	if(istype(I, /obj/item/pen)) //temporary solution. Later will allow scribes to identify scrolls so I can add them into random generation.
-		var/txt = sanitize(input(M, "What would you like to label it as?", "Scroll Labeling", null)  as text, 128)
-		if(loc == M && M.stat == 0)
-			src.name = txt
-
-/obj/item/scroll/proc/ScrollBurn()
-	var/mob/living/M = loc
-	if(istype(M))
-		M.drop_from_inventory(src)
-	new /obj/effect/decal/cleanable/ash(get_turf(src))
-	qdel(src)
 
 /obj/item/storage/pouch/scroll //meant to take occult goodies and thats it.
 	name = "scroll bag"
@@ -134,6 +121,51 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 		/obj/item/oddity/common/book_omega,
 		/obj/item/card_carp,
 		/obj/item/device/camera_film)
+
+/obj/item/scroll/proc/ScrollBurn()
+	var/mob/living/M = loc
+	if(istype(M))
+		M.drop_from_inventory(src)
+	new /obj/effect/decal/cleanable/ash(get_turf(src))
+	qdel(src)
+
+//scroll spells
+obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
+	..()
+	if(istype(I, /obj/item/stack/wax) && !istype(I, /obj/item/scroll/sealed)) //seal the scroll
+		var/obj/item/stack/wax/W = I
+		if(W.amount < 1) //No you can't use part of the wax to seal the WHOLE scroll.
+			return
+		W.use(1)
+		var/obj/item/scroll/sealed/wax_on = new /obj/item/scroll/sealed (src.loc)
+		wax_on.message = src.message
+		qdel(src)
+
+	if(QUALITY_WELDING in I.tool_qualities || istype(I, /obj/item/flame)) //casts effects or just burns away if no spell works.
+/*		if(src.message == "Example Spell." && M.species?.reagent_tag != IS_SYNTHETIC)
+			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
+			example_spell(M) //I cast proc!
+			return */
+
+		if(src.message == "Mist." && M.species?.reagent_tag != IS_SYNTHETIC)
+			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
+			mist_spell(M)
+			return
+
+		if(src.message == "Shimmer." && M.species?.reagent_tag != IS_SYNTHETIC)
+			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
+			shimmer_spell(M)
+			return
+
+		if(src.message == "Smoke." && M.species?.reagent_tag != IS_SYNTHETIC)
+			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
+			smoke_spell(M)
+			return
+
+//if we don't cast anything then we end up doing a normal burn.
+		to_chat(M, "<span class='warning'>You ignite the scroll. It burns for a few moments before becoming ash.</span>")
+		ScrollBurn()
+		return
 
 //start of book based spells
 /obj/effect/decal/cleanable/crayon/attackby(obj/item/I, mob/living/carbon/human/M)
@@ -278,7 +310,7 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 			for(var/obj/item/flame/candle/mage_candle in oview(3)) // we don't light candles but we still do the check.
 				candle_amount += 1
 
-			to_chat(M, "<span class='info'>The smell of iron fills the air as the scroll is torn from your hand.</span>")
+			to_chat(M, "<span class='info'>The smell of iron fills the air as the scroll fumbles out of your hands.</span>")
 
 			var/obj/item/scroll/S = new /obj/item/scroll(src.loc) //hard set a new scroll. Cause I don't trust players
 			M.drop_from_inventory(I)
@@ -663,5 +695,39 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 /*obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	B.remove_self(1)
+	log_and_message_admins("[M] has used the example spell! For testing purposes of course!")
 	new /obj/item/scroll(M.loc)
-	src.ScrollBurn()*/
+	src.ScrollBurn() */
+
+/obj/item/scroll/proc/mist_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	B.remove_self(150)
+	new /obj/effect/decal/cleanable/crayon/mist(M.loc)
+	src.ScrollBurn()
+
+/obj/item/scroll/proc/shimmer_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	B.remove_self(150)
+	new /obj/effect/decal/cleanable/crayon/shimmer(M.loc)
+	src.ScrollBurn()
+
+/obj/item/scroll/proc/smoke_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	B.remove_self(50) //decently high just to protect server performance.
+	var/datum/effect/effect/system/smoke_spread/chem/smoke = new
+	var/datum/reagents/gas_storage = new /datum/reagents(100, src)
+	gas_storage.add_reagent("crayon_dust_red", 100) //CRAYON MAGIC
+	smoke.attach(src.loc)
+	smoke.set_up(gas_storage, 12, 0, M.loc)
+	spawn(0)
+		smoke.start()
+		sleep(10)
+		smoke.start()
+		sleep(10)
+		smoke.start()
+		sleep(10)
+		smoke.start()
+		sleep(10)
+		qdel(smoke)
+		qdel(gas_storage)
+	src.ScrollBurn()
