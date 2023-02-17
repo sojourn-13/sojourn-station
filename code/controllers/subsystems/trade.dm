@@ -343,8 +343,8 @@ SUBSYSTEM_DEF(trade)
 			invoice_contents_info += "<li>[AM.name]</li>"
 			qdel(AM)
 
-		var/credits_to_account = round(offer_price * 0.8)
-		var/credits_to_lonestar = round(offer_price * 0.2)
+		var/credits_to_account = round(offer_price * 0.2)
+		var/credits_to_lonestar = round(offer_price * 0.8)
 
 		create_log_entry("Special Offer", account.get_name(), invoice_contents_info, offer_price, TRUE, get_turf(beacon))
 
@@ -409,8 +409,8 @@ SUBSYSTEM_DEF(trade)
 					invoice_contents_info += "<li>[AM.name]</li>"
 					qdel(AM)
 
-				var/credits_to_account = round(offer_price * 0.8)
-				var/credits_to_lonestar = round(offer_price * 0.2)
+				var/credits_to_account = round(offer_price * 0.2)
+				var/credits_to_lonestar = round(offer_price * 0.8)
 
 				create_log_entry("Special Offer", account.get_name(), invoice_contents_info, offer_price, FALSE, get_turf(beacon))
 
@@ -541,8 +541,8 @@ SUBSYSTEM_DEF(trade)
 
 		var/datum/money_account/A = account
 		var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_LSS]
-		var/datum/transaction/TA = new(cost * 0.8, account.get_name(), "Sold item", station.name)
-		var/datum/transaction/T = new(cost * 0.2, lonestar_account.get_name(), "Sold item", TRADE_SYSTEM_IC_NAME)
+		var/datum/transaction/TA = new(cost * 0.2, account.get_name(), "Sold item", station.name)
+		var/datum/transaction/T = new(cost * 0.8, lonestar_account.get_name(), "Sold item", TRADE_SYSTEM_IC_NAME)
 		T.apply_to(lonestar_account)
 		TA.apply_to(A)
 		station.add_to_wealth(cost)
