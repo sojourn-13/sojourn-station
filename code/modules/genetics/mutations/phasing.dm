@@ -2,7 +2,7 @@
 	name = "Object Phasing"
 	key = "MUTATION_PHASE"
 	desc = "Allows one to phase trough solid objects, albeit slowly."
-	gain_text = "You can breath the smallest of flames! Cute."
+	gain_text = "It feels like your atoms are a little too far apart."
 	instability = 20
 
 /datum/genetics/mutation/phasing/onMobImplant()
