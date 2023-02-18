@@ -162,7 +162,7 @@
 			var/transfer_moles = min(environment.total_moles, environment.total_moles*MAX_SCRUBBER_FLOWRATE/environment.volume)
 			//group_multiplier gets divided out here
 			power_draw += scrub_gas(src, scrubbing_gas, environment, air_contents, transfer_moles, power_rating)
-					if(debug)
+			if(debug)
 				log_debug("Srub Gas: scrubbing gas [scrubbing_gas] - enviroment: [environment] - air contents: [air_contents] - transfer moles: [transfer_moles] - Power-rating: [power_rating]")
 
 		else //Just siphon all air
