@@ -2,7 +2,7 @@
  * Contains:
  *		Trooper
  *		Corpsman
- *		Squad Leader
+ *		Fire Team Leader
  *		Blackshield Commander
  */
 
