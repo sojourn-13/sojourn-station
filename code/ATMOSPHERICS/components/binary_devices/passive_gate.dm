@@ -41,6 +41,16 @@
 		add_underlay(T, node1, turn(dir, 180))
 		add_underlay(T, node2, dir)
 
+/obj/machinery/atmospherics/binary/passive_gate/on
+	use_power = IDLE_POWER_USE
+	icon_state = "map_on"
+
+/obj/machinery/atmospherics/binary/passive_gate/update_icon()
+	if(!powered())
+		icon_state = "off"
+	else
+		icon_state = "[use_power ? "on" : "off"]"
+
 /obj/machinery/atmospherics/binary/passive_gate/hide(var/i)
 	update_underlays()
 
