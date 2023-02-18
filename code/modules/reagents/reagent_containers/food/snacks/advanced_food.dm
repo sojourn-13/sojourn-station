@@ -59,7 +59,7 @@
 	update_icon()
 	if(throw_away_wrapper)
 		trash = null
-		new /obj/item/trash/os_wrapper(src.loc)
+		new /obj/item/trash/os_wrapper(get_turf(src))
 
 /obj/item/reagent_containers/food/snacks/openable/proc/open(mob/user)
 	desc = alt_desc
