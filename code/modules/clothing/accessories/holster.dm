@@ -190,8 +190,8 @@ Sword holsters
 	update_icon()
 
 /obj/item/clothing/accessory/holster/saber/militiasergeant
-	name = "blackshield squad leader's scabbard"
-	desc = "A brown leather Scabbard with silver lining, on it the emblem of Blackshield, This one is designed for the Squad leader's Saber."
+	name = "blackshield Fire Team Leader's scabbard"
+	desc = "A brown leather Scabbard with silver lining, on it the emblem of Blackshield, This one is designed for the Fire Team Leader's Saber."
 	icon_state = "saber_holster"
 	overlay_state = "saber"
 	slot = "utility"
