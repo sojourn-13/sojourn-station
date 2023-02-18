@@ -1,7 +1,7 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:31
 
-var/global/list/priority_air_alarms = list()
-var/global/list/minor_air_alarms = list()
+var/list/priority_air_alarms = list()
+var/list/minor_air_alarms = list()
 
 
 /obj/machinery/computer/atmos_alert
@@ -23,10 +23,10 @@ var/global/list/minor_air_alarms = list()
 /obj/machinery/computer/atmos_alert/attack_hand(mob/user)
 	if(..())
 		return
-	nano_ui_interact(user)
+	nano_ui_interact(user)  //now you respont to TGUI
 
-/obj/machinery/computer/atmos_alert/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	var/data[0]
+/obj/machinery/computer/atmos_alert/nano_ui_interact(mob/user, datum/tgui/ui)
+	/*var/data[0]          //sent and adapted into ui_data
 	var/major_alarms[0]
 	var/minor_alarms[0]
 
@@ -36,15 +36,29 @@ var/global/list/minor_air_alarms = list()
 	for(var/datum/alarm/alarm in atmosphere_alarm.minor_alarms(get_z(src)))
 		minor_alarms[++minor_alarms.len] = list("name" = sanitize(alarm.alarm_name()), "ref" = "\ref[alarm]")
 
-	data["priority_alarms"] = major_alarms
-	data["minor_alarms"] = minor_alarms
+	data["priority"] = major_alarms
+	data["minor"] = minor_alarms */
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key, "atmos_alert.tmpl", src.name, 500, 500)
-		ui.set_initial_data(data)
+		ui = new(user, src, "AtmosAlertConsole", name)
 		ui.open()
-		ui.set_auto_update(1)
+
+/obj/machinery/computer/atmos_alert/ui_data(mob/user)  //reminder that this is only ATMOS alarms, check station_alert for all alerts
+	var/data[0]
+	var/major_alarms[0]
+	var/minor_alarms[0]
+
+	for(var/datum/alarm/alarm in atmosphere_alarm.major_alarms(get_z(src)))
+		major_alarms[++major_alarms.len] = alarm.alarm_area()
+
+	for(var/datum/alarm/alarm in atmosphere_alarm.minor_alarms(get_z(src)))
+		minor_alarms[++minor_alarms.len] = alarm.alarm_area()
+
+	data["priority"] = major_alarms
+	data["minor"] = minor_alarms
+
+	return data
 
 /obj/machinery/computer/atmos_alert/update_icon()
 	if(!(stat & (NOPOWER|BROKEN)))
