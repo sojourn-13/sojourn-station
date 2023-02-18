@@ -138,6 +138,11 @@
 	desc = "A neosilk clip-on tie with a gaudy yellow design."
 	icon_state = "horribletie"
 
+/obj/item/clothing/accessory/tie/color
+	name = "tie"
+	desc = "A neosilk clip-on tie."
+	icon_state = "colortie"
+
 /*Stethoscope*/
 
 /obj/item/clothing/accessory/stethoscope
@@ -604,6 +609,83 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+//Shirt sprites below were ported from Aurora
+
+/obj/item/clothing/accessory/shirt
+	name = "shirt"
+	desc = "A plain, loose-fitting shirt."
+	icon_state = "shirt"
+
+/obj/item/clothing/accessory/shirt/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["roll down sleeves"] = ""
+	options["roll up sleeves"] = "_r"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You [choice] your shirt. Aloha!.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/accessory/shirt/crop
+	name = "crop top"
+	desc = "A loose-fitting crop top."
+	icon_state = "shirt_crop"
+
+/obj/item/clothing/accessory/shirt/dress
+	name = "dress shirt"
+	desc = "A plain button-up shirt."
+	icon_state = "dressshirt"
+
+/obj/item/clothing/accessory/shirt/dress_crop
+	name = "cropped dress shirt"
+	desc = "A cropped button-up shirt. In what context could this possibly be appropriate?"
+	icon_state = "dressshirt_crop"
+
+/obj/item/clothing/accessory/shirt/crop
+	name = "formal shirt"
+	desc = "A crisp dress shirt without buttons."
+	icon_state = "dressshirt_alt"
+
+/obj/item/clothing/accessory/shirt/v_neck
+	name = "v-neck dress shirt"
+	desc = "A plain button-up shirt with a sheer v-neck."
+	icon_state = "dressshirt_v"
+
+/*Sweaters*/
+//Sprites ported from Aurora
+
+/obj/item/clothing/accessory/sweater
+	name = "sweater"
+	desc = "A cosy sweater."
+	icon_state = "sweater"
+
+/obj/item/clothing/accessory/sweater/turtleneck
+	name = "turtleneck sweater"
+	desc = "A cosy sweater that covers your neck. What's so tactical about these, anyway?"
+	icon_state = "sweater_turtleneck"
+
+/obj/item/clothing/accessory/sweater/v_neck
+	name = "v-neck sweater"
+	desc = "A cosy sweater with a deep v-neck. How is this meant to keep you warm?."
+	icon_state = "sweater_v"
 
 /*Dusters*/
 
