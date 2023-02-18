@@ -170,6 +170,9 @@
 			var/transfer_moles = min(environment.total_moles, environment.total_moles*MAX_SIPHON_FLOWRATE/environment.volume)
 			//group_multiplier gets divided out here
 			power_draw += pump_gas(src, environment, air_contents, transfer_moles, power_rating)
+			if(debug)
+				log_debug("Pump Gas: environment [environment] - air contents: [air_contents] - transfer moless: [transfer_moles] - Power-rating: [power_rating]")
+
 		transfer_happened = TRUE
 
 	if(transfer_happened)
