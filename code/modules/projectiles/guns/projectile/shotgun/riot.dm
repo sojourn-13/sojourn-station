@@ -31,6 +31,7 @@
 
 	wield_delay = 0.9 SECOND
 	wield_delay_factor = 0.4 // 40 vig
+	gun_parts = list(/obj/item/part/gun/frame/opshot = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/part/gun/barrel/shotgun = 1)
 
 /obj/item/gun/projectile/automatic/riot_autoshotgun/robo
 	name = "intergrated \"State\" riot shotgun"
@@ -76,6 +77,17 @@
 
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.4 // 40 vig , after all its designed for CQC
+	gun_parts = list(/obj/item/part/gun/frame/opshot = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/part/gun/barrel/shotgun = 1)
+
+/obj/item/part/gun/frame/opshot
+	name = "Operator frame"
+	desc = "An Operator revolver frame. For the slickest of operators."
+	icon_state = "frame_gladstone"
+	result = /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/shotgun
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
+	resultvars = list(/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot, /obj/item/gun/projectile/automatic/riot_autoshotgun)
 
 /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot/update_icon()
 	..()

@@ -14,7 +14,7 @@
 	playtimerequired = 1200
 	wage = WAGE_COMMAND
 	ideal_character_age = 50
-	minimum_character_age = 30
+	minimum_character_age = 25
 	health_modifier = 5
 
 	disallow_species = list(FORM_UNBRANDED, FORM_SOTSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)

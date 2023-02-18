@@ -37,6 +37,8 @@
 
 	wield_delay = 2 SECOND
 	wield_delay_factor = 0.5 // 50 vig , excels are not as trained
+	gun_parts = list(/obj/item/part/gun/frame/maxim = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
 
 /obj/item/gun/projectile/automatic/maxim/NM_colony
 	name = "\"Oprichnik\" machine gun"
@@ -57,3 +59,13 @@
 		icon_state = initial(icon_state)
 		set_item_state()
 	return
+
+/obj/item/part/gun/frame/maxim
+	name = "Maxim frame"
+	desc = "A Maxim HMG frame. Whatever happens, we have got the Maxim gun and they have not."
+	icon_state = "frame_maxim"
+	result = /obj/item/gun/projectile/automatic/maxim
+	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/machinegun
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
+	resultvars = list(/obj/item/gun/projectile/automatic/maxim, /obj/item/gun/projectile/automatic/maxim/NM_colony)

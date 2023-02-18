@@ -285,19 +285,19 @@
 
 /datum/design/bioprinter/medical/advanced/bruise
 	name = "Advanced trauma kit"
-	build_path = /obj/item/stack/medical/advanced/bruise_pack
+	build_path = /obj/item/stack/medical/bruise_pack/advanced
 
 /datum/design/bioprinter/medical/advanced/ointment
 	name = "Advanced burn kit"
-	build_path = /obj/item/stack/medical/advanced/ointment
+	build_path = /obj/item/stack/medical/ointment/advanced
 
 /datum/design/bioprinter/medical/advanced/bruise/nt
 	name = "Absolutist trauma kit"
-	build_path = /obj/item/stack/medical/advanced/bruise_pack/nt
+	build_path = /obj/item/stack/medical/bruise_pack/advanced/nt
 
 /datum/design/bioprinter/medical/advanced/ointment/nt
 	name = "Absolutist burn kit"
-	build_path = /obj/item/stack/medical/advanced/ointment/nt
+	build_path = /obj/item/stack/medical/ointment/advanced/nt
 
 /datum/design/autolathe/firstaid/nt
 	name = "Absolutism Medkit"
@@ -377,6 +377,14 @@
 /datum/design/bioprinter/pouch/kniferig
 	name = "Throwing knives scabbard"
 	build_path = /obj/item/storage/pouch/kniferig
+
+/datum/design/bioprinter/pouch/quiver
+	name = "arrows quiver"
+	build_path = /obj/item/storage/pouch/quiver
+
+/datum/design/bioprinter/pouch/xbowquiver
+	name = "crossbow bolts quiver"
+	build_path = /obj/item/storage/pouch/bolts
 
 /datum/design/bioprinter/pouch/engineering_supply
 	name = "Engineering supplies pouch"

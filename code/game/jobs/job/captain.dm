@@ -18,7 +18,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	wage = WAGE_COMMAND
 
 	ideal_character_age = 50 // Old geezer captains ftw
-	minimum_character_age = 35
+	minimum_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/captain
 
 	perks = list(/datum/perk/sommelier)
@@ -84,7 +84,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	playtimerequired = 1200
 	wage = WAGE_COMMAND
 	ideal_character_age = 35
-	minimum_character_age = 30
+	minimum_character_age = 25
 
 	health_modifier = 5
 	description = "Стюард - верная правая рука Премьера. Служа личной охраной, следуйте за ним, куда бы он ни пошел.<br>\

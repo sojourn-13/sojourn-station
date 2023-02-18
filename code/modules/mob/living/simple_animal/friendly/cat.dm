@@ -207,7 +207,7 @@
 
 		else
 			if (prob(5))
-				var/msg5 = (pick("nuzzles [friend].",
+				var/msg5 = (pick("nuzzles [friend]",
 								   "brushes against [friend]",
 								   "rubs against [friend]",
 								   "purrs"))

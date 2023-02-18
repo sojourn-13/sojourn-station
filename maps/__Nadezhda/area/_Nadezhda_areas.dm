@@ -44,6 +44,7 @@
 
 /area/nadezhda/maintenance
 	is_maintenance = TRUE
+	ship_area = TRUE
 	flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
 	turf_initializer = new /datum/turf_initializer/maintenance()
@@ -122,6 +123,10 @@
 	name = "Underground Floor 2 South Maintenance"
 	icon_state = "erisgreen"
 
+/area/nadezhda/maintenance/surface_maints_1
+	name = "Surface North Maintenance"
+	icon_state = "erisyellow"
+
 /area/nadezhda/maintenance/cavehideout
 	name = "Abandoned Cave Shed"
 	icon_state = "section2deck2starboard"
@@ -141,14 +146,13 @@
 //Outside abandoned structures
 
 /area/nadezhda/dungeon/outside
-	is_maintenance = TRUE
+	is_maintenance = FALSE
 	flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
 	turf_initializer = new /datum/turf_initializer/maintenance()
 	ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
 	dynamic_lighting = FALSE
-	ship_area = FALSE
 	is_dungeon_lootable = TRUE
 
 
@@ -171,9 +175,10 @@
 	icon_state = "erisgreen"
 
 /area/nadezhda/dungeon/outside/hunter_cabin
-	name = "Hunter Cabin"
+	name = "Abandoned Hunter Cabin"
 	icon_state = "erisgreen"
-	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
+	dynamic_lighting = TRUE
+	requires_power = FALSE
 
 /area/nadezhda/dungeon/outside/campground
 	name = "Campground"
@@ -308,17 +313,32 @@
 	dynamic_lighting = TRUE
 	requires_power = FALSE
 
+/area/nadezhda/outside/forest/plains_farm
+	name = "Desolate Farmstead"
+	icon_state = "erisblue"
+	requires_power = FALSE
+
 /area/nadezhda/outside/forest/river_forest_light
-	name = "River Forest"
+	name = "Hunting Plains"
 	icon_state = "forest"
 
+/area/nadezhda/outside/forest/river_forest_lake
+	name = "Hunting Plains River"
+	icon_state = "hammerblue"
+
+/area/nadezhda/outside/forest/river_forest_cabin
+	name = "Hunting Plains Cabin"
+	icon_state = "erisgreen"
+	requires_power = FALSE
+	dynamic_lighting = TRUE
+
 /area/nadezhda/outside/forest/river_forest_dark
-	name = "River Forest"
+	name = "Hunting Plains Caves"
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/forest/river_forest_underground
-	name = "River Forest Underground"
+	name = "Hunting plains underground caves"
 	icon_state = "erisblue"
 	dynamic_lighting = TRUE
 
@@ -386,19 +406,19 @@
 	name = "Floor 1 Substation 3"
 
 /area/nadezhda/maintenance/substation/section3
-	name = "Floor 2 Substation 1"
+	name = "Floor 1 Substation 1"
 
 /area/nadezhda/maintenance/substation/section4
-	name = "Floor 2 Substation 2"
+	name = "Floor 1 Substation 2"
 
 /area/nadezhda/maintenance/substation/section5
-	name = "Floor 2 Substation 3"
+	name = "Floor 1 Substation 3"
 
 /area/nadezhda/maintenance/substation/section6
 	name = "Floor 2 Substation 4"
 
 /area/nadezhda/maintenance/substation/section7
-	name = "Floor 2 Substation 5"
+	name = "Floor 1 Substation 5"
 
 /area/nadezhda/maintenance/substation/bridge
 	name = "Bridge Substation"

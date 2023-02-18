@@ -97,6 +97,8 @@ List of powers in this page :
 						/obj/item/tool_upgrade/augment/ai_tool_excelsior,
 						/obj/item/tool_upgrade/augment/repair_nano,
 						/obj/item/tool_upgrade/augment/randomizer,
+						/obj/item/tool_upgrade/augment/holy_oils,
+						/obj/item/tool_upgrade/augment/crusader_seal,
 						/obj/item/tool_upgrade/artwork_tool_mod,
 						/obj/item/tool_upgrade/augment/sanctifier,	//Has biomatter, sadly nanites are not able to use that
 						/obj/item/tool_upgrade/armor/melee,

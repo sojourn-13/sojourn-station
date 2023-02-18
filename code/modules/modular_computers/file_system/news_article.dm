@@ -91,8 +91,9 @@
 	archived = 1
 
 /datum/computer_file/data/news_article/kros_news
-	filename = "Official Marshal communique"
+	filename = "Trouble in Sector N-1"
 	server_file_path = 'news_articles/kros_news.html'
+	archived = 1
 
 /datum/computer_file/data/news_article/kros_news_ii
 	filename = "Trouble in Sector N-2"
@@ -105,3 +106,20 @@
 /datum/computer_file/data/news_article/Mangos_Untitled_Stream
 	filename = "Mango's Untitled Stream #473"
 	server_file_path = 'news_articles/Mangos_Untitled_Stream.html'
+
+/datum/computer_file/data/news_article/The_month_in_recap
+	filename = "The month in recap!"
+	server_file_path = 'news_articles/The_month_in_recap.html'
+
+/datum/computer_file/data/news_article/Full_stop
+	filename = "Full stop"
+	server_file_path = 'news_articles/Full_stop.html'
+
+/datum/computer_file/data/news_article/An_odd_twist_of_fate
+	filename = "An odd twist of fate"
+	server_file_path = 'news_articles/An_odd_twist_of_fate.html'
+
+/datum/computer_file/data/news_article/Emily_chu
+	filename = "Emily Chu's Report"
+	server_file_path = 'news_articles/Emily_chu.html'
+

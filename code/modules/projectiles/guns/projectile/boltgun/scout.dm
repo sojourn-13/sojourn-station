@@ -1,5 +1,5 @@
 /obj/item/gun/projectile/boltgun/scout
-	name = "\"Scout\" heavy boltgun"
+	name = "\"Scout\" heavy bolt-action rifle"
 	desc = "Weapon for hunting, sniping, and competition shooting. Chambered in 8.6x70mm Heavy Rifle rounds, it packs the reach, the punch and the accuracy for every occasion, however saying it kicks like a mule would only be a plain understatement."
 	icon = 'icons/obj/guns/projectile/heavyboltgun.dmi'
 	icon_state = "boltgun"
@@ -26,10 +26,19 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.3 // 30 vig, little heavier than normal
+	gun_parts = list(/obj/item/part/gun/frame/scout = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/hrifle = 1)
 
+/obj/item/part/gun/frame/scout
+	name = "Scout frame"
+	desc = "A \"Scout\" heavy bolt-action rifle frame. For when you really want to put a hole in your target."
+	icon_state = "frame_scout"
+	resultvars = list(/obj/item/gun/projectile/boltgun/scout)
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/boltgun
+	barrelvars = list(/obj/item/part/gun/barrel/hrifle)
 
 /obj/item/gun/projectile/boltgun/sawn/scout
-	name = "\"obrez\" Scout heavy boltgun"
+	name = "\"obrez\" heavy bolt-action rifle"
 	desc = "A crudely mangled and sawn-down 8.6x70mm bolt action rifle. Rifle was fine."
 	icon = 'icons/obj/guns/projectile/sawnoff/heavyboltgun.dmi'
 	icon_state = "obrez"
@@ -42,3 +51,5 @@
 	saw_off = FALSE
 	slowdown_hold = FALSE
 	serial_type = "H&S"
+	gun_parts = list(/obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/hrifle = 1)
+

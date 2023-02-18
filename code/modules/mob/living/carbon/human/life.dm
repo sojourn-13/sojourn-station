@@ -81,6 +81,7 @@
 			total_blood_req = 0
 			total_oxygen_req = 0
 			total_nutriment_req = 0
+			germ_level += 1
 			for(var/obj/item/organ/internal/I in internal_organs)
 				if(BP_IS_ROBOTIC(I))
 					continue
@@ -1196,6 +1197,7 @@
 		speech_problem_flag = 1
 	return stuttering
 
+/* not being activated now, only gettign in the way of burn damage, in case of doubt look at any handle_fire above this
 /mob/living/carbon/human/handle_fire()
 	if(..())
 		return
@@ -1208,6 +1210,7 @@
 		if(world.time >= next_onfire_hal)
 			next_onfire_hal = world.time + 50
 			adjustHalLoss(fire_stacks*5 + 3) //adjusted to be lower. You need time to put yourself out. And each roll only removes 2.5 stacks.
+*/
 
 /mob/living/carbon/human/rejuvenate()
 	sanity.setLevel(sanity.max_level)

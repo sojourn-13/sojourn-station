@@ -95,7 +95,7 @@
 		new /obj/item/storage/pouch/ammo(src)
 
 //Ranger kits
-/obj/item/storage/box/m_kit/armstrong
+/obj/item/storage/box/m_kit/custer
 	name = "Custer Kit"
 	desc = "The standard Marshal box kit containing a Custer lever action rifle, a variant of the famous Armstrong repeating rifle chambered in 8.6mm."
 
@@ -131,6 +131,7 @@
 		new /obj/item/gun/energy/taser(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/m_kit/liberty
 	name = "Liberty Secondary Kit"
@@ -141,6 +142,7 @@
 		new /obj/item/ammo_magazine/magnum_40/rubber(src)
 		new /obj/item/ammo_magazine/magnum_40/rubber(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/m_kit/judiciary
 	name = "Judiciary Secondary Kit"
@@ -152,6 +154,7 @@
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 // Ranger secondary kits
 /obj/item/storage/box/m_kit/deckard
@@ -164,15 +167,17 @@
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/m_kit/zwang
 	name = "Zwang Secondary Kit"
-	desc = "The standard Marshal box kit containing a Lawbringer energy revolver. The cylander of this custom-designed revolver has been replaced with space for an energy cell."
+	desc = "The standard Marshal box kit containing a Zwang energy revolver. The cylinder of this custom-designed revolver has been replaced with space for a medium energy cell."
 
 	populate_contents()
 		new /obj/item/gun/energy/zwang(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/m_kit/judge
 	name = "Judge Secondary Kit"
@@ -181,6 +186,7 @@
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/judge(src)
 		new /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber(src)
+		new /obj/item/clothing/accessory/holster/hip(src)
 
 // Warrant Officer secondaries (from voucher)
 /obj/item/storage/box/m_kit/mateba
@@ -223,6 +229,15 @@
 		new /obj/item/clothing/suit/armor/platecarrier/ih(src)
 		new /obj/item/clothing/head/helmet/marshal_full(src)
 
+/obj/item/storage/box/m_kit/armored_overcoat
+	name = "\improper Armored Overcoat Armor Kit"
+	desc = "An armor kit containg a militia overcoat and a ballistic helmet."
+
+	populate_contents()
+		new /obj/item/clothing/suit/storage/armor/marshal_coat(src)
+		new /obj/item/clothing/head/helmet/marshal_full(src)
+
+
 /obj/item/storage/box/m_kit/bullet_proof
 	name = "Bullet Proof Kit"
 	desc = "An standard Marshal armor kit containing bullet proof armor and a helmet, perfect for dealing with hostile colonist and infiltrators, but bulky and slowing."
@@ -247,4 +262,4 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/heavy/riot/ironhammer(src)
-		new /obj/item/clothing/head/helmet/faceshield/riot(src)
+		new /obj/item/clothing/head/helmet/riot_hud(src)

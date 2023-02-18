@@ -37,7 +37,18 @@
 
 	wield_delay = 2 SECOND
 	wield_delay_factor = 0.6 // 60 vig, heavy as shit
+	gun_parts = list(/obj/item/part/gun/frame/heavysniper = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/antim = 1)
 
+/obj/item/part/gun/frame/heavysniper
+	name = "Anti-Material Rifle frame"
+	desc = "An AMR frame. For removing chunks of man and machine alike."
+	icon_state = "frame_amr"
+	resultvars = list(/obj/item/gun/projectile/boltgun/heavysniper)
+	gripvars = list(/obj/item/part/gun/grip/serb)
+	mechanismvar = /obj/item/part/gun/mechanism/boltgun
+	barrelvars = list(/obj/item/part/gun/barrel/antim)
+
+/* - Old comonents system. Updated with weapon pars system instead.
 
 /obj/item/weaponparts
 	var/part_color = ""
@@ -89,3 +100,4 @@
 				user.equip_to_slot_if_possible(HS, equip_slot)
 		qdel(W)
 		qdel(src)
+*/

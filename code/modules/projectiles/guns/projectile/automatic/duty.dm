@@ -13,14 +13,14 @@
 	item_state = "duty"
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_LRIFLE
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	load_method = SINGLE_CASING|SPEEDLOADER|MAGAZINE
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 25)
 	price_tag = 900
 	penetration_multiplier = 1.2
 	damage_multiplier = 1.2
 	init_recoil = CARBINE_RECOIL(1.0)
-	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
 	force = WEAPON_FORCE_ROBUST
 	gun_tags = list(GUN_PROJECTILE, GUN_BAYONET, GUN_SCOPE)
 	init_firemodes = list(
@@ -29,6 +29,7 @@
 		FULL_AUTO_200
 		)
 	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/strelki = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/duty/update_icon()
 	..()
@@ -48,8 +49,3 @@
 
 //SNOWFLAKE CODE
 //TODO make all projectile guns work like this with a flag
-
-
-
-
-

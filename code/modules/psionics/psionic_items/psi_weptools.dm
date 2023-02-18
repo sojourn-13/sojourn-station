@@ -57,7 +57,7 @@
 	desc = "A chainsaw forged from the mind of a psion, the blades glowing with the energy and heat of its psychic power. Though a saw, it cuts cleanly and leaves charring in its wake."
 	icon = 'icons/obj/psionic/occchain.dmi'
 	icon_state = "chainripper"
-	force = WEAPON_FORCE_DANGEROUS
+	force = WEAPON_FORCE_NORMAL
 	origin_tech = list()
 	matter = list()
 	tool_qualities = list(QUALITY_LASER_CUTTING = 42, QUALITY_SAWING = 23, QUALITY_CLAMPING = 6, QUALITY_CAUTERIZING = 8, QUALITY_RETRACTING = 22, QUALITY_BONE_SETTING = 19) //It's a surgical chainsaw
@@ -68,7 +68,7 @@
 	desc = "What looks to be a chainsaw for someone that only has seen the horror movies version of them. This one's teeth rather than being hard, glow with eerie psionic power, cauterizing even the cuts it causes through sheer burns."
 	icon = 'icons/obj/psionic/occchain.dmi'
 	icon_state = "chainripper"
-	force = WEAPON_FORCE_BRUTAL
+	force = 11 //WEAPON_FORCE_NORMAL + 1
 	damtype = BURN
 	tool_qualities = list(QUALITY_LASER_CUTTING = 50, QUALITY_SAWING = 45, QUALITY_CLAMPING = 10, QUALITY_CAUTERIZING = 10, QUALITY_RETRACTING = 25, QUALITY_BONE_SETTING = 20) //It's a surgical chainsaw
 	max_fuel = 246

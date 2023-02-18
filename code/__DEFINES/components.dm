@@ -58,6 +58,9 @@
 #define COMSIG_RITUAL "ritual"
 #define COMSIG_TRANSATION "transation"          //from transfer_funds()
 
+/// from datum ui_act (usr, action)
+#define COMSIG_UI_ACT "COMSIG_UI_ACT"
+
 // /datum/mecha signals
 #define COMSIG_HUD_DELETED "hud_deleted"
 
@@ -127,6 +130,8 @@
 
 //machinery
 #define COMSIG_AREA_APC_OPERATING "area_operating"  //from apc process()
+#define COMSIG_AREA_APC_DELETED "area_apc_gone"
+#define COMSIG_AREA_APC_POWER_CHANGE "area_apc_power_change"
 #define COMSING_DESTRUCTIVE_ANALIZER "destructive_analizer"
 #define COMSIG_TURRENT "create_turrent"
 
@@ -138,6 +143,7 @@
 #define COMSIG_REMOVE "uninstall"
 #define COMSIG_ITEM_DROPPED	"item_dropped"					//from  /obj/item/weapon/tool/attackby(): Called to remove an upgrade
 #define COMSIG_ITEM_PICKED "item_picked"
+#define COMSIG_ODDITY_USED "used_oddity"                    //from /datum/sanity/proc/oddity_stat_up(): called to notify the used oddity it was used.
 // /obj/item/clothing signals
 #define COMSIG_CLOTH_DROPPED "cloths_missing"
 #define COMSIG_CLOTH_EQUIPPED "cloths_recovered"

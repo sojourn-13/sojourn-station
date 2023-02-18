@@ -20,7 +20,7 @@
 	..()
 	return QDEL_HINT_QUEUE //just to be safe
 
-/obj/item/storage/hcases/proc/can_interact(mob/user)
+/obj/item/storage/hcases/can_interact(mob/user)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
 		return 1
 	if(istype(loc, /obj/item/storage))
@@ -161,7 +161,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/device/flash,
 		/obj/item/grenade,
 		/obj/item/reagent_containers/spray/pepper,
-		/obj/item/handcuffs
+		/obj/item/handcuffs,
+		/obj/item/part/gun
 		)
 
 /obj/item/storage/hcases/ammo/ih
@@ -177,6 +178,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
+	new /obj/item/clothing/accessory/badge/holo/wo(src)
 
 /obj/item/storage/hcases/ammo/ih/spec_officer
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -186,6 +188,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
+	new /obj/item/clothing/accessory/badge/holo/warden(src)
 
 
 /obj/item/storage/hcases/ammo/ih/ranger_officer
@@ -196,6 +199,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
+	new /obj/item/clothing/accessory/badge/holo/inspector(src)
 	new /obj/item/cell/small/high(src)
 
 /obj/item/storage/hcases/ammo/ih/marshal_officer
@@ -225,6 +229,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
+	new /obj/item/clothing/accessory/badge/holo/co(src)
 
 /obj/item/storage/hcases/ammo/blackmarket/serg
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -324,7 +329,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/tool_upgrade,
 		/obj/item/clothing/head/welding,
 		/obj/item/weldpack,
-		/obj/item/circuitboard
+		/obj/item/circuitboard,
+		/obj/item/part/gun
 		)
 
 /obj/item/storage/hcases/parts/scrap
@@ -372,11 +378,11 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/med/medical_job/populate_contents()
-	new /obj/item/stack/medical/advanced/bruise_pack/large(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment/large(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/large(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced/large(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
@@ -389,11 +395,11 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/med/medical_job_psyco/populate_contents()
-	new /obj/item/stack/medical/advanced/bruise_pack/large(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment/large(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/large(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced/large(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
@@ -409,11 +415,11 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/med/medical_job_cbo/populate_contents()
-	new /obj/item/stack/medical/advanced/bruise_pack/large(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment/large(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/large(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced/large(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
@@ -466,7 +472,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/airlock_electronics,
 		/obj/item/airalarm_electronics,
 		/obj/item/tool_upgrade,
-		/obj/item/cell
+		/obj/item/cell,
+		/obj/item/part/gun
 		)
 
 /obj/item/storage/hcases/engi/scrap

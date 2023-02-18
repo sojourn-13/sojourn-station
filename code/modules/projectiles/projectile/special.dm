@@ -20,7 +20,7 @@
 	return TRUE
 
 /obj/item/projectile/bullet/gyro
-	name = "explosive bolt"
+	name = "explosive microjet"
 	icon_state = "bolter"
 	damage_types = list(BRUTE = 50)
 	check_armour = ARMOR_BULLET
@@ -56,6 +56,12 @@
 		explosion(loc, 0, 1, 2, 4)
 		set_light(0)
 	return TRUE
+
+/obj/item/projectile/bullet/rocket/scrap
+	damage_types = list(BRUTE = 30)
+
+/obj/item/projectile/bullet/rocket/scrap/on_impact(atom/target)
+	explosion(target, 0, 0, 2, 3)
 
 /obj/item/projectile/bullet/rocket/emp
 	name = "EMP rocket"
@@ -379,6 +385,15 @@
 	nodamage = FALSE
 	stun = 2 //Horrors
 	weaken = 2 //Unspeakable
+
+/obj/item/projectile/tether/tail
+	name = "tail lash"
+	damage_types = list(BRUTE = 13)
+	armor_penetration = 35
+	nodamage = FALSE
+	stun = 2 //Horrors
+	weaken = 2 //Unspeakable
+
 
 /obj/item/projectile/tether/Initialize()
 	..()

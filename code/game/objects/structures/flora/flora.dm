@@ -35,23 +35,23 @@
 /obj/structure/flora/examine(mob/user)
 	..()
 	if(needs_to_maintain)
-		to_chat(user, "<span class='info'>This plant needs to be maintained a bit form time to time.</span>")
+		to_chat(user, "<span class='info'>This plant needs to be maintained a bit from time to time.</span>")
 	if(needs_to_be_deweeded)
-		to_chat(user, "<span class='info'>Other plants seem to have infected this plant.</span>")
+		to_chat(user, "<span class='info'>Weeds seem to have infested this plant.</span>")
 	if(needs_to_be_pest_b_goned)
-		to_chat(user, "<span class='info'>Small harmfull pests can be seen on the plant and in its pot.</span>")
+		to_chat(user, "<span class='info'>Small harmful pests can be seen on the plant and in its pot.</span>")
 	if(needs_to_be_watered)
 		to_chat(user, "<span class='info'>This plant looks rather dry and seems to need some LSS Plant Mineral Water.</span>")
 	if(remove_dead_weeds)
-		to_chat(user, "<span class='info'>This plant has some dead other plants inside it.</span>")
+		to_chat(user, "<span class='info'>This plant has some dead weeds mingling with it.</span>")
 	if(remove_dead_pets)
-		to_chat(user, "<span class='info'>This plant has some dead bugs inside, gross.</span>")
+		to_chat(user, "<span class='info'>This plant has some dead bugs on it, gross.</span>")
 
 /obj/structure/flora/attackby(obj/item/I, mob/user)
 	..()
 	if(needs_to_be_deweeded)
 		if(istype(I, /obj/item/plantspray/weeds) || istype(I, /obj/item/weedkiller))
-			to_chat(user, "<span class='info'>The invasive other plants wilt away.</span>")
+			to_chat(user, "<span class='info'>The invasive weeds wilt away.</span>")
 			needs_to_be_deweeded = FALSE
 			remove_dead_weeds = TRUE
 			if(ishuman(user))
@@ -67,7 +67,7 @@
 			return
 	if(remove_dead_weeds)
 		if(istype(I, /obj/item/tool/minihoe)  || istype(I, /obj/item/tool/scythe))
-			to_chat(user, "<span class='info'>The dead plants are no more.</span>")
+			to_chat(user, "<span class='info'>The weeds are no more.</span>")
 			remove_dead_weeds = FALSE
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user

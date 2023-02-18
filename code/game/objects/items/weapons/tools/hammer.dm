@@ -174,6 +174,14 @@
 	degradation = 5 //This one breaks REALLY fast
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
+/obj/item/tool/hammer/dumbbell
+	name = "dumbbell"
+	desc = "To get stronger with this thing, you need to regularly train for many a month. But to hammer a nail, or crack a skull..."
+	icon_state = "dumbbell"
+	item_state = "dumbbell"
+	tool_qualities = list(QUALITY_HAMMERING = 15)
+	matter = list(MATERIAL_STEEL = 5)
+
 /obj/item/tool/hammer/charge
 	name = "rocket hammer"
 	desc = "After many issues with scientists trying to hammer a nail, one bright individual wondered what could be achieved by attaching a stellar-grade ship engine to the back."

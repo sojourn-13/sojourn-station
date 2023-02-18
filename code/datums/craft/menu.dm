@@ -70,19 +70,23 @@
 	if(CR)
 		data["cur_item"] = list(
 			"name" = CR.name,
-			"icon" = getAtomCacheFilename(CR.result),
-			"ref"  = "\ref[CR]",
+			"icon" = SSassets.transport.get_asset_url(sanitizeFileName("[CR.result].png")),
+			"ref"  = "[REF(CR)]",
 			"desc" = CR.get_description(),
 			"batch" = CR.flags & CRAFT_BATCH
 		)
 	var/list/items = list()
 	for(var/datum/craft_recipe/recipe in SScraft.categories[curr_category])
 		items += list(list(
-			"name" = (recipe.name),
-			"ref" = "\ref[recipe]"
+			"name" = capitalize(recipe.name),
+			"ref" = "[REF(recipe)]"
 			))
 	data["items"] = items
 
+	var/datum/asset/craftIcons = get_asset_datum(/datum/asset/simple/craft)
+	var/datum/asset/materialIcons = get_asset_datum(/datum/asset/simple/materials)
+	if (craftIcons.send(user.client) || materialIcons.send(user.client))
+		user.client.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)

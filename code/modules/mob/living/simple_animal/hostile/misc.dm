@@ -315,6 +315,7 @@
 	bones_amount = 6
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/helldiver_tooth)
+	inherent_mutations = list(MUTATION_MKNEWAIFUHAIR)
 
 /mob/living/simple_animal/hostile/helldiver/FindTarget()
 	. = ..()

@@ -51,6 +51,12 @@
 			/obj/item/gun_upgrade/barrel/gauss,
 			/obj/item/gun_upgrade/muzzle/pain_maker, //Clearly so you can get those
 			/obj/item/gun_upgrade/scope/killer
+		),
+		"Sydnicate Gun Parts" = list (
+			/obj/item/part/gun/grip/rubber,
+			/obj/item/part/gun/barrel/hrifle,
+			/obj/item/part/gun/mechanism/machinegun,
+			/obj/item/part/gun/barrel/antim
 		)
 	)
 	offer_types = list(

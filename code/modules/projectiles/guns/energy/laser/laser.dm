@@ -94,7 +94,7 @@
 /obj/item/gun/energy/zwang
 	name = "\"Zwang\" energy revolver"
 	desc = "The \"Zwang\" is a law enforcer's best friend of a sidearm. Carrying both an extremely effective lethal and non-lethal firemode. \
-	Luckily it does not sacrifice style for effiency neither. The 'revolver' spins its cell while firing, mimicking that of a double-action to make use of multiple connection points."
+	Luckily, it does not sacrifice style for efficiency. The 'cylinder' spins its cell while firing, mimicking a double-action revolver mechanism to make use of multiple connection points."
 	icon = 'icons/obj/guns/energy/zwang.dmi'
 	icon_state = "zwang"
 	item_state = "zwang"
