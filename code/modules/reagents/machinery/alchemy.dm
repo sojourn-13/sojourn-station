@@ -91,8 +91,8 @@
 /obj/item/alchemy/recipe_scroll
 	name = "alchemy recipe"
 	desc = "A tatty paper written in a strange language."
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "scroll"
+	icon = 'icons/obj/scroll_bandange.dmi'
+	icon_state = "Scroll ink"
 
 /obj/item/alchemy/recipe_scroll/Initialize()
 	var/blurb = pick(list(

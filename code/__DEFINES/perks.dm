@@ -59,6 +59,7 @@
 #define PERK_SURGICAL_MASTER /datum/perk/surgical_master
 #define PERK_ADVANCED_MEDICAL /datum/perk/advanced_medical
 #define PERK_ALCHEMY /datum/perk/alchemist
+#define PERK_SCRIBE /datum/perk/scribe
 #define PERK_NERD /datum/perk/chemist
 #define PERK_ROBOTICS_EXPERT /datum/perk/robotics_expert
 #define PERK_ARTIST /datum/perk/job/artist
