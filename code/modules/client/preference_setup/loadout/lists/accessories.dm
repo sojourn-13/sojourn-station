@@ -72,12 +72,12 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/shirt
-	display_name = "shirt selection"
+	display_name = "colorable shirt selection"
 	path = /obj/item/clothing/accessory/shirt
 	flags = GEAR_HAS_TYPE_SELECTION | GEAR_HAS_COLOR_SELECTION
 
-/datum/gear/accessory/sweater
-	display_name = "sweater selection"
+/datum/gear/accessory/sweater_color
+	display_name = "colorable sweater selection"
 	path = /obj/item/clothing/accessory/sweater
 	flags = GEAR_HAS_TYPE_SELECTION | GEAR_HAS_COLOR_SELECTION
 
@@ -119,9 +119,9 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/accessory/waistcoat
-	display_name = "waistcoat selection"
-	path = /obj/item/clothing/accessory/waistcoat
-	flags = GEAR_HAS_TYPE_SELECTION
+	display_name = "colorable waistcoat selection"
+	path = /obj/item/clothing/accessory/waistcoat/color
+	flags = GEAR_HAS_TYPE_SELECTION | GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/blackshieldpatch
 	display_name = "blackshield arm patch"

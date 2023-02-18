@@ -19,10 +19,10 @@
 		on_removed()
 	return ..()
 
-/obj/item/clothing/accessory/proc/get_inv_overlay()
-	if(!inv_overlay)
+/obj/item/clothing/accessory/proc/get_inv_overlay(var/override = FALSE) //set override to TRUE if we want to force a new overlay
+	if(!inv_overlay || override)
 		if(!mob_overlay)
-			get_mob_overlay()
+			get_mob_overlay(override)
 
 		var/tmp_icon_state = "[overlay_state? "[overlay_state]" : "[icon_state]"]"
 		if(icon_override)
@@ -33,8 +33,8 @@
 			inv_overlay.color = color
 	return inv_overlay
 
-/obj/item/clothing/accessory/proc/get_mob_overlay()
-	if(!mob_overlay)
+/obj/item/clothing/accessory/proc/get_mob_overlay(var/override = FALSE) //set override to TRUE if we want to force a new overlay
+	if(!mob_overlay || override)
 		var/tmp_icon_state = "[overlay_state? "[overlay_state]" : "[icon_state]"]"
 		if(icon_override)
 			if("[tmp_icon_state]_mob" in icon_states(icon_override))
@@ -638,7 +638,9 @@
 		icon_state = base
 		item_state = base
 		item_state_slots = null
-		to_chat(M, "You [choice] your shirt. Aloha!.")
+		get_mob_overlay(TRUE)
+		get_inv_overlay(TRUE)
+		to_chat(M, "You adjust your shirt.")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
@@ -1430,6 +1432,20 @@
 	icon_state = "elegant_waistcoat"
 	item_state = "elegant_waistcoat"
 	overlay_state = "elegant_waistcoat"
+
+/obj/item/clothing/accessory/waistcoat/color
+	name = "waistcoat"
+	desc = "A classy waistcoat."
+	icon_state = "wcoat"
+	item_state = "wcoat"
+	overlay_state = ""
+
+/obj/item/clothing/accessory/waistcoat/color/alt
+	name = "suit vest"
+	desc = "A classy vest."
+	icon_state = "wcoat_alt"
+	item_state = ""
+	overlay_state = ""
 
 /* Attachable sweater vests for suits */
 
