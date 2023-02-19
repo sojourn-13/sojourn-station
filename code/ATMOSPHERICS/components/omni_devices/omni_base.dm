@@ -48,11 +48,11 @@
 
 /obj/machinery/atmospherics/omni/update_icon()
 	if(stat & NOPOWER)
-		copy_overlays(overlays_off, TRUE)
+		overlays = overlays_off
 	else if(error_check())
-		copy_overlays(overlays_error, TRUE)
+		overlays = overlays_error
 	else
-		copy_overlays(use_power ? (overlays_on) : (overlays_off), TRUE)
+		overlays = use_power ? (overlays_on) : (overlays_off)
 
 	underlays = underlays_current
 
