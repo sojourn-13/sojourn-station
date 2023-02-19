@@ -462,8 +462,8 @@
 	icon_state = "blackshieldcloak_camo"
 
 /obj/item/clothing/accessory/cape/sergeant_cape
-	name = "Fire Team Leader's mantle"
-	desc = "A shoulder-mantle made from black and silver fabric, denoting the position of a FTL. Allows for identification at a glance."
+	name = "Sergeants mantle"
+	desc = "A shoulder-mantlee made from black and silver fabric, denoting the position of Sergeant. Allows for identification at a glance."
 	icon_state = "half_sarg"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 

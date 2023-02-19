@@ -354,7 +354,7 @@
 	price_tag = 350
 
 /obj/item/tool/sword/saber/militiasergeant
-	name = "FTL's Saber"
+	name = "Sergeant's Saber"
 	desc = "An Saber made for the Senior Enlisted of Blackshield, Usually used for Ceremonial usage but can also be used in combat, Preferably used by a maniac who likes to charge into battle without helmet or armour."
 	icon_state = "cutlass"
 	item_state = "cutlass"
