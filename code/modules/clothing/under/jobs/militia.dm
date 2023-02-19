@@ -2,7 +2,7 @@
  * Contains:
  *		Trooper
  *		Corpsman
- *		Fire Team Leader
+ *		Sergeant
  *		Blackshield Commander
  */
 
@@ -359,8 +359,8 @@
  */
 
 /obj/item/clothing/under/rank/armorer/gorka
-	name = "Fire Team Leader's uniform"
-	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the pins of a Blackshield FTL."
+	name = "Sergeant's uniform"
+	desc = "A rugged set of vaguely slavic two-tone overwear, made with robust materials and wearing the pins of a Blackshield Sergeant."
 	icon_state = "gorka_ih"
 
 /obj/item/clothing/under/rank/armorer/gorka/verb/toggle_style()
