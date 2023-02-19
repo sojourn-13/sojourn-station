@@ -47,8 +47,8 @@
 	//Variables used for tool degradation
 	var/degradation = 0.8 //If nonzero, the health of the tool decreases by this amount after each tool operation
 	health = 0		// Health of a tool.
-	max_health = 500
-	var/health_threshold  = 40 // threshold in percent on which tool health stops dropping
+	max_health = 250
+	var/health_threshold  = 0 // threshold in percent on which tool health stops dropping
 	var/lastNearBreakMessage = 0 // used to show messages that tool is about to break
 
 	var/force_upgrade_mults = 1
@@ -119,7 +119,7 @@
 
 /obj/item/tool/proc/adjustToolHealth(amount, user)
 	health = min(max_health, max(max_health * (health_threshold/100), health + amount))
-	if(health == 0)
+	if(health <= 0)
 		breakTool()
 
 
