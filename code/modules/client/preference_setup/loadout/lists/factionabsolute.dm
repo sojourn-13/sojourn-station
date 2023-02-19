@@ -10,6 +10,11 @@
 	path = /obj/item/clothing/under/rank/church/robe
 	cost = 0
 
+/datum/gear/factionabsolute/ornate
+	display_name = "ornate robe"
+	path = /obj/item/clothing/under/rank/church/ornate
+	cost = 0
+
 /datum/gear/factionabsolute/jersey
 	display_name = "church overalls"
 	path = /obj/item/clothing/under/jersey
