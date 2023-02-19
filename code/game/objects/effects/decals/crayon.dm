@@ -162,6 +162,21 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 			smoke_spell(M)
 			return
 
+		if(src.message == "Oil." && M.species?.reagent_tag != IS_SYNTHETIC)
+			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
+			oil_spell(M)
+			return
+
+		if(src.message == "Floor Seal." && M.species?.reagent_tag != IS_SYNTHETIC)
+			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
+			floor_seal_spell(M)
+			return
+
+		if(src.message == "Light." && M.species?.reagent_tag != IS_SYNTHETIC)
+			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
+			light_spell(M)
+			return
+
 //if we don't cast anything then we end up doing a normal burn.
 		to_chat(M, "<span class='warning'>You ignite the scroll. It burns for a few moments before becoming ash.</span>")
 		ScrollBurn()
@@ -730,4 +745,32 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 		sleep(10)
 		qdel(smoke)
 		qdel(gas_storage)
+	src.ScrollBurn()
+
+/obj/item/scroll/proc/oil_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	B.remove_self(75)
+	new /obj/effect/decal/cleanable/liquid_fuel(M.loc,300, 1)
+	src.ScrollBurn()
+
+/obj/item/scroll/proc/floor_seal_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	B.remove_self(75)
+	for(var/obj/effect/decal/cleanable/liquid_fuel/fixy_juice in oview(3))
+		for(var/turf/simulated/floor/pot_hole in view(0, fixy_juice.loc))
+			pot_hole.health = pot_hole.maxHealth
+			pot_hole.broken = FALSE
+			pot_hole.burnt = FALSE
+			pot_hole.update_icon()
+		qdel(fixy_juice)
+	src.ScrollBurn()
+
+/obj/item/scroll/proc/light_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	var/obj/effect/decal/cleanable/crayon/light_rune = new /obj/effect/decal/cleanable/crayon(M.loc)
+	light_rune.set_light(5,4,"#FFFFFF")
+	light_rune.name = "glowing rune"
+	light_rune.desc = "A bright rune giving off vibrant light."
+	light_rune.color = "#FFFF00"
+	B.remove_self(50)
 	src.ScrollBurn()
