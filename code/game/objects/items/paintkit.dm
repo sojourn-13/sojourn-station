@@ -139,7 +139,7 @@
 /obj/item/device/kit/paint/ripley/syndieripley
 	name = "\"Syndie\" APLU customization kit"
 	new_name = "Syndicate APLU"
-	new_desc = "A painted in red APLU exosuit."
+	new_desc = "An APLU exosuit painted in Syndicate red."
 	new_icon = "syndieripley"
 
 /obj/item/device/kit/paint/ripley/titan
@@ -181,7 +181,7 @@
 /obj/item/device/kit/paint/ripley/flathead
 	name = "\"Flathead\" APLU customization kit"
 	new_name = "\"Flathead\" APLU"
-	new_desc = "A fancy APLU exosuit paint job which add a fanceir head to any ripley."
+	new_desc = "A fancy APLU exosuit paint job which adds a fancier head to any Ripley."
 	new_icon_file = 'icons/mecha/mecha40.dmi'
 	new_icon = "flathead"
 
@@ -268,7 +268,7 @@
 	name = "\"Cherubim\" Durand customization kit"
 	new_name = "Durand \"Cherubim\""
 	new_desc = "A Durand combat exosuit modeled after ancient Earth entertainment. Your heart goes doki-doki just looking at it."
-	new_icon = "old_durand"
+	new_icon = "seraph"
 
 /obj/item/device/kit/paint/durand/phazon
 	name = "\"Sypher\" Durand customization kit"
@@ -312,7 +312,7 @@
 	name = "\"Gaoler\" Gygax customization kit"
 	new_name = "Gygax \"Gaoler\""
 	new_desc = "A bulky silver Gygax exosuit. The extra armor appears to be painted on, but it's very shiny."
-	new_icon = "recitence"
+	new_icon = "reticence"
 
 /obj/item/device/kit/paint/gygax/classic
 	name = "\"Classic\" Gygax customization kit"
@@ -337,13 +337,13 @@
 /obj/item/device/kit/paint/phazon/plazmus
 	name = "\"Plazmus\" Phazon customization kit"
 	new_name = "Phazon \"Plazmus\""
-	new_desc = "A Phazon exosuit painted dark purple with a neon green trim. We cyberpunk now."
+	new_desc = "A Phazon exosuit painted dark purple with a neon green trim. Ability to curl into a ball not included."
 	new_icon = "plazmus"
 
 /obj/item/device/kit/paint/phazon/imperion
 	name = "\"Imperion\" Phazon customization kit"
 	new_name = "Phazon \"Imperion\""
-	new_desc = "A Phazon exosuit painted black with a pink neon trim. We dark cyberpunk now."
+	new_desc = "A Phazon exosuit painted black with a pink neon trim. RGB keyboard included on the inside."
 	new_icon = "imperion"
 
 /obj/item/device/kit/paint/phazon/janus
@@ -352,6 +352,7 @@
 	new_desc = "A Phazon exosuit painted with a gray gradient and multiple neon colored lighting. Is this cyberpunk enough?"
 	new_icon = "janus"
 
+// ADMINSPAWN ONLY
 /obj/item/device/kit/paint/phazon/skullmech
 	name = "\"Bone 'Ead\" Phazon customization kit"
 	new_name = "Phazon \"Bone 'Ead\""

@@ -381,7 +381,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	matter = list(MATERIAL_STEEL = 3)
 
 /obj/item/part/gun/mechanism/boltgun // fits better in this category despite not being a steel variant
-	name = "manual-action mechanism"
+	name = "bolt-action mechanism"
 	desc = "All the bits that makes the bullet go bang, slow and methodical."
 	icon_state = "mechanism_boltaction"
 	matter = list(MATERIAL_STEEL = 3)
