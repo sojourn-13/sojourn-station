@@ -31,13 +31,35 @@ Thus, the two variables affect pump operation are set in New():
 	var/max_pressure_setting = 15000	//kPa
 
 	var/frequency = 0
-	var/id = null
+	var/id
 	var/datum/radio_frequency/radio_connection
 
 /obj/machinery/atmospherics/binary/pump/New()
 	..()
 	air1.volume = ATMOS_DEFAULT_VOLUME_PUMP
 	air2.volume = ATMOS_DEFAULT_VOLUME_PUMP
+
+/obj/machinery/atmospherics/binary/pump/AltClick(mob/user)
+	if(user.incapacitated(INCAPACITATION_ALL) || isghost(user) || !user.IsAdvancedToolUser())
+		return FALSE
+	if(get_dist(user , src) > 1)
+		return FALSE
+	target_pressure = max_pressure_setting
+	visible_message("[user] sets the [src]'s pressure setting to the maximum.",
+		"You hear a LED panel being tapped and slid upon.", 6)
+	investigate_log("had its pressure changed to [target_pressure] by [key_name(user)]", "atmos")
+	update_icon()
+
+/obj/machinery/atmospherics/binary/pump/CtrlClick(mob/user)
+	if(user.incapacitated(INCAPACITATION_ALL) || isghost(user) || !user.IsAdvancedToolUser())
+		return FALSE
+	if(get_dist(user , src) > 1)
+		return FALSE
+	use_power = !use_power
+	visible_message("[user] turns [use_power ? "on" : "off"] \the [src]'s valve.",
+	"You hear a valve being turned.", 6)
+	investigate_log("had its power status changed to [use_power] by [key_name(user)]", "atmos")
+	update_icon()
 
 /obj/machinery/atmospherics/binary/pump/on
 	icon_state = "map_on"
@@ -226,12 +248,12 @@ Thus, the two variables affect pump operation are set in New():
 	if(!(QUALITY_BOLT_TURNING in I.tool_qualities))
 		return ..()
 	if (!(stat & NOPOWER) && use_power)
-		to_chat(user, SPAN_WARNING("You cannot unfasten this [src], turn it off first."))
+		to_chat(user, SPAN_WARNING("You cannot unwrench this [src], turn it off first."))
 		return 1
 	var/datum/gas_mixture/int_air = return_air()
 	var/datum/gas_mixture/env_air = loc.return_air()
 	if ((int_air.return_pressure()-env_air.return_pressure()) > 2*ONE_ATMOSPHERE)
-		to_chat(user, SPAN_WARNING("You cannot unfasten this [src], it is under too much pressure."))
+		to_chat(user, SPAN_WARNING("You cannot unwrench this [src], it too exerted due to internal pressure."))
 		add_fingerprint(user)
 		return 1
 	to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
@@ -239,7 +261,7 @@ Thus, the two variables affect pump operation are set in New():
 		user.visible_message( \
 			SPAN_NOTICE("\The [user] unfastens \the [src]."), \
 			SPAN_NOTICE("You have unfastened \the [src]."), \
-			"You hear ratcheting.")
+			"You hear ratchet.")
 		investigate_log("was unfastened by [key_name(user)]", "atmos")
 		new /obj/item/pipe(loc, make_from=src)
 		qdel(src)
