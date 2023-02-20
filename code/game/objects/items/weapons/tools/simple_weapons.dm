@@ -535,7 +535,7 @@
 
 /obj/item/tool/spear/hunter_halberd
 	name = "halberd"
-	desc = "A hand-crafted halberd with a red cloth wrapped around the base of the blade itself; "
+	desc = "A hand-crafted halberd with a red cloth wrapped around the base of the blade itself. A Hunter's signature melee weapon of choice."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "hunter_halberd"
 	item_state = "hunter_halberd"
@@ -574,6 +574,7 @@
 	desc = "A tomahawk of acceptable quality, mass-produced by Lonestar. Just expensive enough to be called tactical."
 	icon_state = "cheap_axe"
 	item_state = "cheap_axe"
+	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
 	attack_verb = list("attacked", "slashed", "chopped", "sliced", "torn", "ripped", "diced", "cut")
 
 /obj/item/tool/cheap/katana
@@ -587,6 +588,20 @@
 	desc = "A spear of acceptable quality, mass-produced by Lonestar. Place sharp end towards enemy."
 	icon_state = "cheap_spear"
 	item_state = "cheap_spear"
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = SLOT_BACK|SLOT_BELT
+	throwforce = WEAPON_FORCE_BRUTAL
+	throw_speed = 3
+	embed_mult = 1.5
+	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
+	tool_qualities = list(QUALITY_CUTTING = 15,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 10)
+	hitsound = 'sound/weapons/slice.ogg'
+	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "cheap_spear"
+		)
 
 /obj/item/tool/cheap/saber
 	name = "cheap saber"

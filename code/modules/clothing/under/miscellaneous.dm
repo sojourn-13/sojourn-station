@@ -685,7 +685,7 @@
 	name = "cyberpunk bartender outfit"
 	desc = "Time to mix drinks and change lives."
 	icon_state = "cba" // Cyberpunk Bartender Action
-	item_state = "waiter_skirt"
+	item_state = "cba"
 	price_tag = 50
 
 /obj/item/clothing/under/fancy_redish_suit

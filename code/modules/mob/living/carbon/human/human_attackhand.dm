@@ -179,9 +179,9 @@
 			if (H.stats.getStat(STAT_ROB) >= 80)
 				var softcap = H.stats.getStat(STAT_ROB) / 10
 				var newrob = (72 + softcap) / 10
-				stat_damage = 3 + max(0, newrob)
+				stat_damage = 3 + max(0, newrob) + H.punch_damage_increase // This makes knuckledusters actually work since NOTHING called this var, ever
 			else
-				stat_damage = 3 + max(0, (H.stats.getStat(STAT_ROB) / 10))
+				stat_damage = 3 + max(0, (H.stats.getStat(STAT_ROB) / 10)) + H.punch_damage_increase
 			var/limb_efficiency_multiplier = 1
 			var/block = 0
 			var/accurate = 0
