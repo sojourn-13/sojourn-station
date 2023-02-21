@@ -6,3 +6,4 @@
 #define RETURN_TO_SENDER /datum/task_master/task/return_to_sender
 #define REBOUND_CASE /datum/task_master/task/rebound_case
 #define DR_FLOOR /datum/task_master/task/dr_floor
+#define PROPER_SEALER /datum/task_master/task/proper_sealer
