@@ -196,7 +196,7 @@
 	Although your status is miserable, your knowledge of maintenance may lead you to some valuable salvage for some extra cash."
 
 	duties = "Clean blood, dirt, rubble and messes. Don't clean up crime scenes!<br>\
-		Conduct minor repairs and maintenance when guild adepts aren't available, aswell take care of te bar/kitchen/garden if nobody is there.<br>\
+		Conduct minor repairs and maintenance when guild adepts aren't available.<br>\
 		Restock Newscasters to at lest 15 prints.<br>\
 		Deploy traps on burrows and do your best to handle the ongoing roach and spider problem."
 
