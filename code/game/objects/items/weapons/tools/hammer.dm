@@ -186,7 +186,6 @@
 	max_upgrades = 3
 	armor_penetration = ARMOR_PEN_GRAZING
 	force = WEAPON_FORCE_PAINFUL
-	force_wielded = 1.3
 	w_class = ITEM_SIZE_HUGE
 
 /obj/item/tool/hammer/dumbbell

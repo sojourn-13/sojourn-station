@@ -143,12 +143,12 @@
 	name = "makeshift staff"
 	result = /obj/item/tool/hammer/makeshift_staff
 	steps = list(
-		list(/obj/item/stack/rods, 1),
+		list(/obj/item/stack/rods, 1, "time" = 10),
 		list(QUALITY_ADHESIVE, 10, "time" = 5),
 		list(/obj/item/stack/rods, 1),
-		list(QUALITY_ADHESIVE, 10, "time" = 5),
+		list(QUALITY_ADHESIVE, 10, "time" = 10),
 		list(/obj/item/stack/rods, 1),
-		list(QUALITY_ADHESIVE, 10, "time" = 5)
+		list(QUALITY_ADHESIVE, 10, "time" = 10)
 	)
 
 /datum/craft_recipe/weapon/junkblade
@@ -157,7 +157,7 @@
 	steps = list(
 		list(/obj/item/stack/rods, 2),
 		list(QUALITY_WELDING, 10, "time" = 30),
-		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL, "time" = 10),
 		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
@@ -167,7 +167,7 @@
 	steps = list(
 		list(/obj/item/stack/rods, 3),
 		list(QUALITY_WELDING, 10, "time" = 10),
-		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL, "time" = 10),
 		list(QUALITY_HAMMERING, 10, "time" = 10),
 		list(QUALITY_WELDING, 10, "time" = 10),
 		list(QUALITY_ADHESIVE, 10, "time" = 5)
@@ -177,8 +177,8 @@
 	name = "makeshift halberd"
 	result = /obj/item/tool/spear/makeshift_halberd
 	steps = list(
-		list(/obj/item/tool/hammer/makeshift_staff, 1),
-		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
+		list(/obj/item/tool/hammer/makeshift_staff, 1, "time" = 15),
+		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL, "time" = 10),
 		list(QUALITY_HAMMERING, 10, "time" = 10),
 		list(QUALITY_ADHESIVE, 10, "time" = 5)
 	)

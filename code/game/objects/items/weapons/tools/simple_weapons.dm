@@ -399,6 +399,8 @@
 			it is more like a large hunk of plasteel. \nA \
 			Foreman's weapon of choice when bashing is not enough; \
 			you have to cleave through the hordes to survive, and keep struggling."
+	icon_state = "renderslayer"
+	item_state = "renderslayer"
 	force = WEAPON_FORCE_BRUTAL + 2 // 35 damage
 	slot_flags = SLOT_BELT|SLOT_BACK
 	armor_penetration = ARMOR_PEN_MASSIVE // Sharp edge
@@ -407,6 +409,11 @@
 	origin_tech = list(TECH_COMBAT = 3)
 	attack_verb = list("attacked", "CLANG'd", "slashed", "sliced", "diced", "cut")
 	hitsound = 'sound/weapons/renderslash.ogg' // Not gonna CLANG this up for the sake of our ears, but snowflake attack sound.
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "renderslayer"
+		)
 
 /obj/item/tool/sword/machete
 	name = "machete"
