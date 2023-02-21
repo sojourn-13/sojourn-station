@@ -115,3 +115,14 @@
 	forwards_refence.stats.changeStat(STAT_VIV, (level + 2))
 	forwards_refence.max_nutrition += (level * 5) //405 level 1 -> 415 level 2 -> 430 level 3 ect ect
 	forwards_refence.vessel.maximum_volume  += 5 //Blood flow is being aided
+
+//Floor/Wallet Pill buff
+/datum/task_master/task/dr_floor
+	name = "Dr. Floor"
+	key = "DR_FLOOR"
+	desc = "Either do to drug withdraw, or hope, its hard to denie that this helps build up resistance."
+	gain_text = "Self prescription..."
+	level_threshholds = 5 //Tons of wallet/floor pills
+
+/datum/task_master/task/dr_floor/activate_affect()
+	forwards_refence.stats.changeStat(STAT_VIV, (level + 2))
