@@ -1053,18 +1053,20 @@
 
 
 /obj/machinery/power/apc/proc/can_use(mob/user, var/loud = 0) //used by attack_hand() and Topic()
+	if(is_admin(user) && isghost(user)) //admin abuse
+		return TRUE
 	if (user.stat)
 		to_chat(user, SPAN_WARNING("You must be conscious to use [src]!"))
-		return 0
+		return FALSE
 	if(!user.client)
-		return 0
+		return FALSE
 	if(inoperable())
-		return 0
+		return FALSE
 	if(!user.IsAdvancedToolUser())
-		return 0
+		return FALSE
 	if(user.restrained())
 		to_chat(user, SPAN_WARNING("You must have free hands to use [src]."))
-		return 0
+		return FALSE
 	if(user.lying)
 		to_chat(user, SPAN_WARNING("You must stand to use [src]!"))
 		return 0
