@@ -170,29 +170,33 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Chief Executive Officer"
-	difficulty = "Easy."
+	difficulty = "Medium."
 	selection_color = "#dddddd"
-	alt_titles = list("Custodian","Sanitation Technician")
+	alt_titles = list("Custodian","Sanitation Technician","Maintenance Technician","Lonestar Caretaker")
 	access = list(access_janitor, access_maint_tunnels, access_morgue, access_hydroponics, access_bar, access_kitchen)
 	wage = WAGE_PROFESSIONAL
-	health_modifier = 5
+	health_modifier = 15
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
 	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle, /datum/perk/neat) //Union has revoked their chemistry privileges
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
-		STAT_BIO = 10,
+		STAT_BIO = 15, //Butchering Corpses +5 more BIO
+		STAT_TGH = 10, //Golly they really need some better stats in general....
+		STAT_MEC = 15,  //They rather need some MEC stats to deal with... well.. literally everything as their job entails. 15 should suffice? Maybe less?
+		STAT_COG = 5,
+		STAT_VIG = 5
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/camera_monitor)
 	description = "The lowly Janitor, well paid but rarely respected, nevertheless provides a valuable service.<br>\
 	You will trundle around the colony, armed with your trusty janicart full of cleaning supplies, disposing of trash and pests.<br>\
-	Some minor maintenance also falls within your duties. Fix lights, correct broken vendors, replace floor tiles - ease the guild burden.<br>\
+	Some maintenance also falls within your duties. Fix lights, correct broken vendors, replace floor tiles - ease the guild burden.<br>\
 	Although your status is miserable, your knowledge of maintenance may lead you to some valuable salvage for some extra cash."
 
 	duties = "Clean blood, dirt, rubble and messes. Don't clean up crime scenes!<br>\
-		Conduct minor repairs and maintenance when guild adepts aren't available.<br>\
+		Conduct minor repairs and maintenance when guild adepts aren't available, aswell take care of te bar/kitchen/garden if nobody is there.<br>\
 		Restock Newscasters to at lest 15 prints.<br>\
 		Deploy traps on burrows and do your best to handle the ongoing roach and spider problem."
 

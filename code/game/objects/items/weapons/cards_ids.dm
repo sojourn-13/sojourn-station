@@ -419,7 +419,7 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/keys/janitor
 	name = "janitor keys"
 	desc = "A set of keys to open any door, can't open \"deadbolts\"."
-	w_class = ITEM_SIZE_BULKY //No hiding this
+	w_class = ITEM_SIZE_NORMAL // Why it was that big?
 	slot_flags = SLOT_BELT
 
 /obj/item/keys/lockpicks
