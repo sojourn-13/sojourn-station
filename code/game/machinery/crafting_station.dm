@@ -157,7 +157,7 @@
 					switch(choice)
 						if("Barrels")
 							required_resources = materials_sbarrel
-							choice = input(user) as null|anything in list("9mm barrel", "10mm barrel")
+							choice = input(user) as null|anything in list("9mm barrel", "10mm barrel", "12mm barrel")
 							switch(choice)
 								if("9mm barrel")
 									items_to_spawn = list("" = /obj/item/part/gun/barrel/pistol)
@@ -238,7 +238,7 @@
 									required_resources = materials_lbarrel_steel
 									items_to_spawn = list("" = /obj/item/part/gun/barrel/shotgun/steel)
 						if("Mechanisms")
-							choice = input(user) as null|anything in list("Pistol mechanism", "Revolver mechanism", "SMG mechanism", "Manual-action mechanism", "Self-loading mechanism", "Shotgun mechanism")
+							choice = input(user) as null|anything in list("Pistol mechanism", "Revolver mechanism", "SMG mechanism", "Bolt-action mechanism", "Self-loading mechanism", "Shotgun mechanism")
 							switch(choice)
 								if("Pistol mechanism")
 									required_resources = materials_smechanism_steel
@@ -260,7 +260,7 @@
 									items_to_spawn = list("" = /obj/item/part/gun/mechanism/shotgun/steel)
 
 				if("Grips")
-					choice = input(user) as null|anything in list("Plastic grip", "Bakelite grip", "Wooden grip") //"Rubber grip", "Excelsior grip",
+					choice = input(user) as null|anything in list("Bakelite grip", "Plastic grip", "Wooden grip") //"Rubber grip", "Excelsior grip",
 					switch(choice)
 						if("Bakelite grip")
 							required_resources = materials_pgrip

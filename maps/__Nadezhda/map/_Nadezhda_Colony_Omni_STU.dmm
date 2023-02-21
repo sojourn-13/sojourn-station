@@ -10360,7 +10360,8 @@
 "ccb" = (
 /obj/structure/railing{
 	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	tag = "icon-railing0 (EAST)";
+	reinforced = 1
 	},
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/wood/wild5,
@@ -28057,6 +28058,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "fxk" = (
 /obj/machinery/light,
+/obj/structure/lattice,
 /turf/simulated/open,
 /area/nadezhda/medical/reception)
 "fxq" = (
@@ -32635,6 +32637,9 @@
 "goF" = (
 /turf/simulated/floor/tiled/steel/danger,
 /area/mine/gulag)
+"goG" = (
+/turf/simulated/mineral,
+/area/nadezhda/crew_quarters/botanist)
 "goJ" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -69767,7 +69772,8 @@
 "nxR" = (
 /obj/structure/railing{
 	dir = 4;
-	tag = "icon-railing0 (EAST)"
+	tag = "icon-railing0 (EAST)";
+	reinforced = 1
 	},
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/crew_quarters/botanist)
@@ -79372,11 +79378,8 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "prK" = (
-/obj/machinery/camera/network/research{
-	dir = 4
-	},
-/turf/simulated/open,
-/area/nadezhda/medical/reception)
+/turf/simulated/wall/r_wall,
+/area/nadezhda/crew_quarters/botanist)
 "prM" = (
 /obj/machinery/chem_heater{
 	pixel_y = 4
@@ -83055,7 +83058,9 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "qeo" = (
 /obj/structure/lattice,
-/obj/machinery/light/floor,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/open,
 /area/nadezhda/medical/reception)
 "qep" = (
@@ -185971,11 +185976,11 @@ sFI
 sFI
 sFI
 sFI
-hSx
-hSx
-hSx
-hSx
-hSx
+sFI
+sFI
+sFI
+sFI
+sFI
 tYG
 tFQ
 pCw
@@ -186169,16 +186174,16 @@ sFI
 sFI
 sFI
 sFI
-hSx
-hSx
-hSx
-hSx
-hSx
-oNV
-oNV
-oNV
-hSx
-nUj
+sFI
+sFI
+xGi
+sFI
+sFI
+sFI
+sFI
+sFI
+sFI
+prK
 aBa
 aBa
 aBa
@@ -186369,27 +186374,27 @@ sFI
 sFI
 sFI
 sFI
-hSx
-hSx
-oNV
-oNV
-oNV
-oNV
-oNV
-oNV
-oNV
+xGi
+sFI
 oNV
 oNV
 dol
 oNV
 oNV
 oNV
+oNV
+oNV
+oNV
+pdB
+iuy
+iuy
+iuy
 nUj
 nUj
 nUj
-nUj
-nUj
-nUj
+prK
+goG
+goG
 iuG
 iuG
 iuG
@@ -186575,23 +186580,23 @@ dol
 oNV
 oNV
 oNV
-oNV
-oNV
-oNV
-oNV
-oNV
-oNV
-oNV
 dol
 oNV
 oNV
 oNV
 oNV
 oNV
-dol
 oNV
-oNV
+pdB
 iuy
+iuy
+iuy
+iuy
+iuy
+iuy
+cwr
+cwr
+prK
 nxR
 ccb
 ccb
@@ -186777,21 +186782,21 @@ dol
 oNV
 oNV
 oNV
-oNV
-oNV
-oNV
-oNV
-oNV
-oNV
-oNV
 dol
 oNV
 oNV
 oNV
 oNV
 oNV
-dol
 oNV
+pdB
+iuy
+iuy
+iuy
+iuy
+iuy
+iuy
+cwr
 oNV
 oNV
 oNV
@@ -186979,21 +186984,21 @@ dol
 oNV
 oNV
 oNV
-oNV
-oNV
-oNV
-oNV
-oNV
-oNV
-oNV
 dol
 oNV
 oNV
 oNV
 oNV
 oNV
-dol
 oNV
+pdB
+iuy
+iuy
+iuy
+iuy
+iuy
+iuy
+cwr
 oNV
 oNV
 oNV
@@ -187181,21 +187186,21 @@ dol
 oNV
 oNV
 oNV
-oNV
-oNV
-oNV
-oNV
-oNV
-oNV
-oNV
 dol
 oNV
 oNV
 oNV
 oNV
 oNV
-qFQ
 oNV
+pdB
+iuy
+iuy
+iuy
+iuy
+iuy
+iuy
+cwr
 oNV
 oNV
 oNV
@@ -187391,14 +187396,14 @@ dol
 dol
 qFQ
 pdB
+pdB
+pdB
+pdB
+pdB
+pdB
+pdB
+cwr
 qFQ
-dol
-dol
-dol
-dol
-dol
-dol
-dol
 dol
 dol
 dol
@@ -187576,7 +187581,7 @@ rAf
 sFI
 sFI
 sFI
-oNV
+sFI
 dol
 oNV
 oNV
@@ -187585,14 +187590,14 @@ dol
 oNV
 oNV
 oNV
-oNV
-oNV
-oNV
-oNV
-oNV
-oNV
-oNV
 dol
+oNV
+oNV
+oNV
+oNV
+oNV
+oNV
+qFQ
 oNV
 oNV
 oNV
@@ -187777,8 +187782,8 @@ rAf
 sFI
 sFI
 sFI
-oNV
-oNV
+sFI
+sFI
 dol
 oNV
 oNV
@@ -187787,7 +187792,7 @@ dol
 oNV
 oNV
 oNV
-oNV
+dol
 oNV
 oNV
 oNV
@@ -187978,9 +187983,9 @@ duh
 rAf
 sFI
 sFI
-oNV
-oNV
-oNV
+sFI
+sFI
+sFI
 dol
 oNV
 oNV
@@ -187989,7 +187994,7 @@ dol
 oNV
 oNV
 oNV
-oNV
+dol
 oNV
 oNV
 oNV
@@ -188182,7 +188187,7 @@ sFI
 sFI
 sFI
 sFI
-oNV
+sFI
 dol
 oNV
 oNV
@@ -188191,7 +188196,7 @@ dol
 oNV
 oNV
 oNV
-oNV
+dol
 oNV
 oNV
 oNV
@@ -188385,7 +188390,7 @@ rAf
 rAf
 rAf
 sFI
-sFI
+xGi
 sFI
 sFI
 sFI
@@ -188596,14 +188601,14 @@ aBA
 sri
 sri
 smu
-bPQ
-prK
+kRA
+kRA
 ipx
-bPQ
-bPQ
 bPQ
 anm
 bPQ
+bPQ
+ipx
 jQF
 hqX
 bpf
@@ -188798,14 +188803,14 @@ sri
 gFS
 ieM
 smu
-bPQ
-bPQ
+kRA
+kRA
 ipx
 bPQ
 bPQ
 bPQ
 bPQ
-bPQ
+ipx
 jQF
 jkx
 lZL
@@ -189000,8 +189005,8 @@ wwU
 sri
 phh
 smu
-bPQ
-bPQ
+kRA
+kRA
 qeo
 bPQ
 bPQ
@@ -189202,14 +189207,14 @@ sri
 sri
 sri
 smu
-bPQ
-bPQ
+kRA
+kRA
 ipx
 bPQ
 bPQ
 bPQ
 bPQ
-bPQ
+ipx
 jQF
 qFy
 gYl
@@ -189404,14 +189409,14 @@ dHF
 ouw
 smu
 ula
-bPQ
-bPQ
+kRA
+kRA
 ipx
 bPQ
 bPQ
 bPQ
 bPQ
-bPQ
+ipx
 jQF
 rkG
 enH
