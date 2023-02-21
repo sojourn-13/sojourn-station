@@ -2666,7 +2666,7 @@
 "aBa" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/unsimulated/mineral,
-/area/nadezhda/crew_quarters/botanist)
+/area/nadezhda/hallway/side/f2section1)
 "aBe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -63196,11 +63196,6 @@
 	},
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
-"mjA" = (
-/obj/structure/boulder,
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/crew_quarters/botanist)
 "mjF" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -71927,7 +71922,8 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/circuitlab)
 "nUj" = (
-/turf/unsimulated/mineral,
+/obj/item/stack/ore,
+/turf/simulated/floor/wood/wild5,
 /area/nadezhda/crew_quarters/botanist)
 "nUl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -77994,9 +77990,10 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "pdB" = (
-/obj/structure/lattice,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/hallway/side/f2section1)
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/crew_quarters/botanist)
 "pdU" = (
 /obj/structure/bed/chair/sofa/teal{
 	dir = 4
@@ -185789,7 +185786,7 @@ sFI
 sFI
 sFI
 hsp
-hsp
+pdB
 oSu
 sFI
 sFI
@@ -185991,7 +185988,7 @@ hsp
 hsp
 kdk
 hsp
-kyu
+pCw
 pCw
 pCw
 sFI
@@ -186183,16 +186180,16 @@ sFI
 sFI
 sFI
 sFI
-prK
+cwr
 aBa
 aBa
 aBa
-nUj
+iuy
+iuy
+iuy
 tBL
-mjA
-mjA
-pCw
-pCw
+kyu
+kyu
 hsp
 tFQ
 kyu
@@ -186385,20 +186382,20 @@ oNV
 oNV
 oNV
 oNV
-pdB
+cwr
 iuy
 iuy
 iuy
-nUj
-nUj
-nUj
-prK
+iuy
+iuy
+iuy
+cwr
 goG
 goG
 iuG
 iuG
 iuG
-ldO
+nUj
 sFI
 sFI
 sFI
@@ -186587,7 +186584,7 @@ oNV
 oNV
 oNV
 oNV
-pdB
+cwr
 iuy
 iuy
 iuy
@@ -186789,7 +186786,7 @@ oNV
 oNV
 oNV
 oNV
-pdB
+cwr
 iuy
 iuy
 iuy
@@ -186991,7 +186988,7 @@ oNV
 oNV
 oNV
 oNV
-pdB
+cwr
 iuy
 iuy
 iuy
@@ -187193,7 +187190,7 @@ oNV
 oNV
 oNV
 oNV
-pdB
+cwr
 iuy
 iuy
 iuy
@@ -187395,13 +187392,13 @@ dol
 dol
 dol
 qFQ
-pdB
-pdB
-pdB
-pdB
-pdB
-pdB
-pdB
+cwr
+cwr
+cwr
+cwr
+cwr
+cwr
+cwr
 cwr
 qFQ
 dol
