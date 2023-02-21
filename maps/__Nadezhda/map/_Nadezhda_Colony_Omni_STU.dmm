@@ -12717,7 +12717,7 @@
 /area/shuttle/rocinante_shuttle_area)
 "cAC" = (
 /obj/structure/table/woodentable,
-/obj/item/tool/hammer/foremansledge,
+/obj/item/gunbox/forehead,
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -28

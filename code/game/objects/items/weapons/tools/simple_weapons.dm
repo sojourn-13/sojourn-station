@@ -109,6 +109,24 @@
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 45
 
+/obj/item/tool/fireaxe/handmade
+	name = "makeshift axe"
+	desc = "A heavy plasteel blade affixed to a welded metal shaft, for close up carnage."
+	icon_state = "makeshift_axe"
+	item_state = "makeshift_axe"
+	wielded_icon = "makeshift_axe_wielded"
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 3)
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce = WEAPON_FORCE_NORMAL
+	armor_penetration = ARMOR_PEN_MODERATE
+	w_class = ITEM_SIZE_NORMAL
+	attack_verb = list("chopped", "torn", "cut", "cleaved", "slashed")
+	tool_qualities = list(QUALITY_CUTTING = 10)
+	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
+	embed_mult = 1.1
+	degradation = 1.5
+	max_upgrades = 5
+
 /obj/item/tool/minihoe
 	name = "mini hoe"
 	desc = "It's used for removing weeds or scratching your back."
@@ -361,6 +379,35 @@
 	armor_penetration = ARMOR_PEN_SHALLOW
 	price_tag = 325
 
+/obj/item/tool/sword/handmade
+	name = "junkblade"
+	desc = "Hack and slash!"
+	icon_state = "msword"
+	item_state = "msword"
+	slot_flags = SLOT_BELT|SLOT_BACK
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 2) // 2 rods, 5 plasteel
+	armor_penetration = ARMOR_PEN_MODERATE
+	tool_qualities = list(QUALITY_CUTTING = 15,  QUALITY_SAWING = 5)
+	degradation = 1.5 // Crappily made
+	max_upgrades = 5 // Handmade nature
+	price_tag = 100 // Made with plasteel
+
+/obj/item/tool/sword/foreman
+	name = "\"Render Slayer\" Greatsword"
+	desc = "This thing is too big to be called a sword. \
+			Too big, too thick, too heavy, and too rough, \
+			it is more like a large hunk of plasteel. \nA \
+			Foreman's weapon of choice when bashing is not enough; \
+			you have to cleave through the hordes to survive, and keep struggling."
+	force = WEAPON_FORCE_BRUTAL + 2 // 35 damage
+	slot_flags = SLOT_BELT|SLOT_BACK
+	armor_penetration = ARMOR_PEN_MASSIVE // Sharp edge
+	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 5)
+	w_class = ITEM_SIZE_BULKY
+	origin_tech = list(TECH_COMBAT = 3)
+	attack_verb = list("attacked", "CLANG'd", "slashed", "sliced", "diced", "cut")
+	hitsound = 'sound/weapons/renderslash.ogg' // Not gonna CLANG this up for the sake of our ears, but snowflake attack sound.
+
 /obj/item/tool/sword/machete
 	name = "machete"
 	desc = "An explorer's best friend and trust back up plan. Or primary plan for those who like to get in there personally."
@@ -532,6 +579,18 @@
 	..()
 	if(istype(target))
 		target.apply_effect(rand(5, 10), IRRADIATE)
+
+/obj/item/tool/spear/makeshift_halberd
+	name = "makeshift halberd"
+	desc = "Slap a heavy blade on some rods duct-taped together and call it a day."
+	icon_state = "makeshift_halberd"
+	item_state = "makeshift_halberd"
+	wielded_icon = "makeshift_halberd_wielded"
+	force = WEAPON_FORCE_ROBUST
+	throwforce = WEAPON_FORCE_NORMAL
+	armor_penetration = ARMOR_PEN_SHALLOW
+	tool_qualities = list(QUALITY_CUTTING = 10)
+	matter = list(MATERIAL_STEEL = 5)
 
 /obj/item/tool/spear/hunter_halberd
 	name = "halberd"
