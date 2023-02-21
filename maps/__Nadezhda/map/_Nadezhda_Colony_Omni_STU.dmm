@@ -2875,6 +2875,8 @@
 /obj/item/clothing/suit/storage/cargovest,
 /obj/item/clothing/head/rank/cargosoft,
 /obj/item/clothing/head/rank/cargosoft,
+/obj/item/clothing/head/helmet/handmade/scavengerhelmet,
+/obj/item/clothing/head/helmet/handmade/scavengerhelmet,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/crew_quarters/janitor)
 "aDp" = (
