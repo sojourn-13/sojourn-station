@@ -72046,8 +72046,8 @@
 	dir = 4
 	},
 /obj/structure/table/rack/shelf,
-/obj/item/tool/weldingtool,
-/obj/item/tool/weldingtool,
+/obj/item/tool/hammer/powered_hammer,
+/obj/item/tool/hammer/powered_hammer,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/crew_quarters/janitor)
 "nVN" = (
