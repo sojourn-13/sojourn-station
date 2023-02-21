@@ -22933,7 +22933,6 @@
 "eBI" = (
 /obj/structure/closet/crate,
 /obj/item/gun/energy/cog,
-/obj/item/gun/energy/cog,
 /obj/item/cell/medium/high,
 /obj/item/cell/medium/high,
 /obj/item/cell/medium/high,
@@ -96626,12 +96625,11 @@
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "sLK" = (
 /obj/structure/closet/crate,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
 /obj/item/ammo_magazine/ammobox/shotgun/buckshot,
 /obj/item/ammo_magazine/ammobox/shotgun/buckshot,
 /obj/item/ammo_magazine/ammobox/shotgun,
 /obj/item/ammo_magazine/ammobox/shotgun,
+/obj/item/gun/projectile/shotgun/doublebarrel,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/crew_quarters/janitor)
 "sLO" = (
