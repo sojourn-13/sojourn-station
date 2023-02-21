@@ -405,7 +405,7 @@
 	slot_flags = SLOT_BELT|SLOT_BACK
 	armor_penetration = ARMOR_PEN_MASSIVE // Sharp edge
 	effective_faction = "deathclaw" // Called like this for a reason
-	damage_mult = 1.5
+	damage_mult = 2
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 5)
 	w_class = ITEM_SIZE_BULKY
 	origin_tech = list(TECH_COMBAT = 3)
