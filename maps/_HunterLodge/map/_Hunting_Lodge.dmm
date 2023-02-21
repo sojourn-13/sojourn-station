@@ -167,6 +167,11 @@
 /obj/item/tool/fireaxe/woodsman,
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"aM" = (
+/obj/structure/table/marble,
+/obj/machinery/cooking_with_jane/grill,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "aN" = (
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -4016,6 +4021,11 @@
 /obj/structure/invislight,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Qo" = (
+/obj/structure/table/marble,
+/obj/machinery/cooking_with_jane/stove,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Qp" = (
 /obj/machinery/power/tracker,
 /obj/structure/cable,
@@ -4214,6 +4224,10 @@
 /obj/structure/railing,
 /turf/simulated/floor/asteroid/dirt/dark/plough,
 /area/nadezhda/outside/forest/hunting_lodge)
+"To" = (
+/obj/machinery/cooking_with_jane/oven,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "Tv" = (
 /obj/machinery/seed_extractor,
 /turf/simulated/floor/tiled/dark/brown_platform,
@@ -7852,8 +7866,8 @@ tz
 WQ
 ew
 bq
-bq
-bq
+bn
+bn
 bq
 bq
 sI
@@ -7931,7 +7945,7 @@ WQ
 fB
 bq
 ee
-bn
+aM
 bq
 Xq
 WQ
@@ -8009,7 +8023,7 @@ WQ
 iX
 bq
 UY
-xc
+To
 bq
 bq
 jv
@@ -8086,8 +8100,8 @@ tz
 WQ
 oZ
 bq
-bn
-bX
+xc
+Qo
 bq
 bq
 jv
@@ -8165,7 +8179,7 @@ WQ
 jn
 bq
 jF
-bn
+bX
 bq
 bq
 jv

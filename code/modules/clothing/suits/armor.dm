@@ -370,7 +370,7 @@
 	icon_state = "technosuit"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 40, bullet = 40, energy = 35, bomb = 50, bio = 100, rad = 100)
+	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
 	max_upgrades = 2
 	extra_allowed = list(/obj/item/extinguisher,
 						 /obj/item/tool,
@@ -618,7 +618,7 @@
 	icon_state = "forehead_armor"
 	item_state = "forehead_armor"
 	max_upgrades = 2 //Like all scav armor, this means investing into these will be better but buying gear will still be viable
-	matter = list(MATERIAL_PLASTEEL = 24, MATERIAL_PLASTIC = 35, MATERIAL_PLATINUM  = 4, MATERIAL_STEEL = 40) //worth stealing
+	matter = list(MATERIAL_PLASTEEL = 24, MATERIAL_PLASTIC = 25, MATERIAL_SILVER = 8,  MATERIAL_STEEL = 40) //worth stealing
 	price_tag = 1200
 	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
 	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
@@ -637,6 +637,31 @@
 	pockets.max_w_class = ITEM_SIZE_NORMAL		//fits two normal size items as its big pockets
 	pockets.max_storage_space = 8
 	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
+
+/obj/item/clothing/suit/storage/vest/scav/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard"] = "forehead_armor"
+	options["Rust"] = "forehead_rust"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 /obj/item/clothing/suit/armor/platecarrier
 	name = "plate carrier"
