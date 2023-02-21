@@ -6830,17 +6830,15 @@
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_y = 32
 	},
-/obj/effect/floor_decal/industrial/box/red/corners{
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/warningred{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/box/red/corners{
 	dir = 4
 	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/effect/floor_decal/industrial/box/red/corners,
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/crew_quarters/janitor)
@@ -23622,9 +23620,6 @@
 	},
 /area/shuttle/rocinante_shuttle_area)
 "eID" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /turf/simulated/wall,
 /area/nadezhda/crew_quarters/janitor)
 "eIF" = (
@@ -28141,16 +28136,16 @@
 /obj/structure/closet/wall_mounted/emcloset{
 	pixel_y = -32
 	},
-/obj/effect/floor_decal/industrial/box/red/corners{
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/box/red/corners{
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/box/white/corners{
 	dir = 4
 	},
-/obj/machinery/light{
+/obj/effect/floor_decal/industrial/box/white/corners{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -106942,6 +106937,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals_central6{
 	pixel_y = -10
 	},
+/obj/machinery/holoposter{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "uMF" = (
@@ -119134,10 +119132,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/pros/prep)
-"xdo" = (
-/obj/effect/window_lwall_spawn/smartspawnplasma,
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/crew_quarters/janitor)
 "xdr" = (
 /obj/structure/table/rack/shelf,
 /obj/random/lowkeyrandom,
@@ -144284,7 +144278,7 @@ qTV
 ufa
 bxO
 uMA
-xdo
+mOt
 aCO
 daF
 eID
