@@ -49,6 +49,12 @@
 	add_language(LANGUAGE_JANA)
 	add_language(LANGUAGE_CYRILLIC)
 	add_language(LANGUAGE_LATIN)
+	add_language(LANGUAGE_OPIFEXEE)
+	add_language(LANGUAGE_KRIOSAN)
+	add_language(LANGUAGE_AKULA)
+	add_language(LANGUAGE_MARQUA)
+	add_language(LANGUAGE_PLANT)
+	add_language(LANGUAGE_SYNTHETIC)
 	init_id()
 	init_subsystems()
 
