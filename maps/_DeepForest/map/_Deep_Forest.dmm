@@ -21,6 +21,19 @@
 "af" = (
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/nadezhda/outside/one_star)
+"ag" = (
+/obj/structure/lattice,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
+"ah" = (
+/obj/structure/plasticflaps,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "ai" = (
 /obj/structure/closet/onestar/tier1/special,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
@@ -611,6 +624,12 @@
 /mob/living/simple_animal/hostile/hivebot,
 /turf/unsimulated/mineral,
 /area/colony)
+"cu" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall27";
+	tag = "icon-cargoshwall27"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "cv" = (
 /obj/random/cloth/helmet/low_chance,
 /turf/simulated/floor/asteroid/dirt,
@@ -698,9 +717,11 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "cM" = (
-/obj/landmark/join/start/outsider,
-/turf/simulated/floor/wood/wild5,
-/area/asteroid/rogue)
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall30";
+	tag = "icon-cargoshwall30"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "cN" = (
 /obj/structure/catwalk,
 /obj/random/closet_tech,
@@ -2007,6 +2028,16 @@
 "hi" = (
 /turf/unsimulated/mineral,
 /area/asteroid/rogue)
+"hl" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/outsider)
+"hm" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall31";
+	tag = "icon-cargoshwall31"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "hn" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled,
@@ -2048,6 +2079,13 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/colony/exposedsun/pastgate)
+"hu" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall37";
+	tag = "icon-cargoshwall37"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/outsider)
 "hv" = (
 /turf/unsimulated/mineral/transition,
 /area/colony/exposedsun/pastgate)
@@ -2065,10 +2103,24 @@
 "hA" = (
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"hC" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "hD" = (
 /obj/structure/flora/big/bush1,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
+"hE" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall11";
+	tag = "icon-cargoshwall11"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "hF" = (
 /obj/structure/table/standard,
 /obj/item/oddity/common/old_radio,
@@ -2123,6 +2175,23 @@
 	},
 /turf/simulated/floor/tiled,
 /area/nadezhda/dungeon/outside/zoo)
+"hP" = (
+/obj/machinery/door/airlock/maintenance{
+	frequency = 1380;
+	icon_state = "door_closed";
+	id_tag = "supply_shuttle_hatch";
+	locked = 0;
+	name = "Shuttle Hatch";
+	req_access = list(50)
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "hQ" = (
 /obj/structure/flora/small/grassa4,
 /turf/unsimulated/wall/jungle,
@@ -2272,6 +2341,10 @@
 /obj/random/tool_upgrade/rare/low_chance,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/nadezhda/dungeon/outside/prepper)
+"iw" = (
+/obj/random/closet_wardrobe,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/outsider)
 "ix" = (
 /obj/structure/toilet{
 	dir = 4
@@ -2412,6 +2485,15 @@
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"iS" = (
+/obj/structure/lattice,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/wire_splicing,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "iT" = (
 /obj/structure/flora/small/busha3,
 /turf/simulated/floor/asteroid/dirt,
@@ -2787,6 +2869,13 @@
 "ke" = (
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/dungeon/outside/zoo)
+"kf" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall34";
+	tag = "icon-cargoshwall34"
+	},
+/turf/simulated/mineral/random/rogue,
+/area/colony/exposedsun/crashed_shop/outsider)
 "kg" = (
 /obj/item/trash/tastybread,
 /obj/item/trash/snack_bowl,
@@ -3242,6 +3331,11 @@
 /obj/random/cluster/roaches/low_chance,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/zoo)
+"lJ" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "lK" = (
 /obj/random/mob/roomba/mecha/low,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
@@ -3919,6 +4013,15 @@
 /obj/machinery/beehive,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/zoo)
+"of" = (
+/obj/machinery/cryopod{
+	dir = 4;
+	tag = "icon-cryopod_0 (EAST)"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,7"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "og" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
@@ -4194,6 +4297,19 @@
 /obj/machinery/door/airlock/multi_tile/glass,
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/dungeon/outside/zoo)
+"pe" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/machinery/light_construct/small{
+	dir = 8
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
+	},
+/obj/structure/cable,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "pf" = (
 /obj/item/stack/rods,
 /obj/item/material/shard,
@@ -5223,6 +5339,12 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
+"ta" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/outsider)
 "tc" = (
 /obj/structure/cable{
 	d2 = 4;
@@ -5944,6 +6066,15 @@
 "vH" = (
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
+"vI" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "vJ" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/grass,
@@ -5996,10 +6127,31 @@
 /obj/structure/flora/small/bushc3,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"vU" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall4";
+	tag = "icon-cargoshwall4"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "vV" = (
 /obj/random/traps,
 /turf/simulated/floor/wood/wild4,
 /area/asteroid/rogue)
+"vW" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
+"vY" = (
+/obj/item/mine_old{
+	layer = 2.6
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "wa" = (
 /obj/machinery/body_scanconsole,
 /turf/simulated/floor/tiled/white,
@@ -6025,6 +6177,12 @@
 /obj/random/mob/voidwolf/low_chance,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"wg" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall13";
+	tag = "icon-cargoshwall13"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "wh" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
@@ -6072,6 +6230,10 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"wn" = (
+/obj/machinery/cryopod,
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "wo" = (
 /obj/random/pack/junk_machine,
 /turf/simulated/floor/wood/wild5,
@@ -6550,6 +6712,13 @@
 /obj/random/structures/low_chance,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"xN" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall12";
+	tag = "icon-cargoshwall12"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "xO" = (
 /obj/effect/gibspawner/human,
 /obj/random/cloth/helmet,
@@ -6703,6 +6872,12 @@
 /obj/structure/flora/small/bushc2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"yq" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall10";
+	tag = "icon-cargoshwall10"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "yr" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -6850,6 +7025,26 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"yX" = (
+/obj/structure/barricade,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/outsider)
+"yY" = (
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/structure/railing,
+/obj/random/closet/low_chance,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "zc" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/random/traps,
@@ -6930,6 +7125,9 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"zt" = (
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "zu" = (
 /obj/structure/morgue,
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -6956,6 +7154,10 @@
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"zB" = (
+/obj/structure/boulder,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "zC" = (
 /obj/structure/flora/big/bush2,
 /obj/random/flora/small_jungle_tree,
@@ -7022,6 +7224,10 @@
 /obj/structure/flora/small/bushc2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"zT" = (
+/obj/random/mob/undergroundmob,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "zU" = (
 /obj/structure/mirror{
 	pixel_y = 30
@@ -7051,6 +7257,10 @@
 /obj/item/reagent_containers/syringe/spaceacillin,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"Ab" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/mineral/random/rogue,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Ac" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -7068,6 +7278,13 @@
 /obj/structure/flora/small/bushc2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"Ag" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall16";
+	tag = "icon-cargoshwall16"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Ah" = (
 /obj/structure/flora/small/bushb2,
 /turf/unsimulated/wall/jungle,
@@ -7099,6 +7316,15 @@
 /obj/structure/flora/small/bushc1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"Au" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Av" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/bushc2,
@@ -7140,11 +7366,26 @@
 /obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"AE" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall40";
+	tag = "icon-cargoshwall40"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/outsider)
 "AG" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"AH" = (
+/obj/structure/multiz/stairs/active/bottom{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "AI" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/unsimulated/wall/jungle,
@@ -7167,6 +7408,11 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
+"AN" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "AP" = (
 /obj/structure/flora/small/bushc2,
 /obj/structure/flora/small/busha2,
@@ -7210,6 +7456,10 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Bb" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Bc" = (
 /obj/structure/flora/big/rocks3,
 /obj/structure/flora/ausbushes/grassybush,
@@ -7230,6 +7480,13 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Bi" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall39";
+	tag = "icon-cargoshwall39"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Bj" = (
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/small/bushb3,
@@ -7242,14 +7499,28 @@
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Bm" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall19";
+	tag = "icon-cargoshwall19"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Bn" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Bo" = (
+/obj/structure/barricade,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Bp" = (
 /obj/random/flora/small_jungle_tree,
 /turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/meadow)
+"Br" = (
+/turf/simulated/open,
 /area/nadezhda/outside/meadow)
 "Bt" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -7298,6 +7569,10 @@
 /obj/structure/flora/small/busha2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"BF" = (
+/obj/structure/lattice,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "BH" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/small/busha1,
@@ -7320,6 +7595,10 @@
 /obj/structure/flora/small/bushb3,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"BO" = (
+/obj/machinery/cryopod/dormitory,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/outsider)
 "BQ" = (
 /obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/dirt,
@@ -7395,6 +7674,12 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Ch" = (
+/obj/machinery/floodlight,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Ci" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/busha1,
@@ -7415,6 +7700,20 @@
 /obj/structure/flora/big/bush1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Cm" = (
+/obj/structure/multiz/stairs/active/bottom{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Cn" = (
 /obj/structure/flora/small/grassb3,
 /obj/structure/flora/small/busha1,
@@ -7586,6 +7885,18 @@
 /obj/random/flora/small_jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"CY" = (
+/obj/structure/boulder,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
+"CZ" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall14";
+	tag = "icon-cargoshwall14"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Da" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
@@ -7663,6 +7974,10 @@
 /obj/structure/flora/small/bushb1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"Dq" = (
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Dr" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/big/bush1,
@@ -7730,6 +8045,13 @@
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"DG" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall35";
+	tag = "icon-cargoshwall35"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/outsider)
 "DH" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/big/bush3,
@@ -7836,6 +8158,16 @@
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Ef" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Eg" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/big/bush3,
@@ -7961,6 +8293,15 @@
 /obj/structure/flora/big/rocks1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"EI" = (
+/obj/structure/cryofeed{
+	dir = 4;
+	tag = "icon-cryo_rear (EAST)"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "3,7"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "EJ" = (
 /obj/random/traps,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -7984,6 +8325,12 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"EN" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall18";
+	tag = "icon-cargoshwall18"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "EO" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -8248,6 +8595,12 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/meadow)
+"FT" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall25";
+	tag = "icon-cargoshwall25"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "FU" = (
 /obj/structure/flora/small/rock4,
 /turf/simulated/floor/asteroid/grass,
@@ -8268,6 +8621,12 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/meadow)
+"FY" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall29";
+	tag = "icon-cargoshwall29"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "FZ" = (
 /obj/structure/flora/small/busha2,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -8338,6 +8697,12 @@
 /obj/structure/flora/rock/variant1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Gq" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall3";
+	tag = "icon-cargoshwall3"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Gr" = (
 /obj/structure/flora/small/busha2,
 /obj/effect/overlay/water,
@@ -8378,6 +8743,12 @@
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"GA" = (
+/obj/landmark/join/start/outsider,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "GB" = (
 /obj/effect/overlay/water/top,
 /obj/structure/flora/big/bush2,
@@ -8445,6 +8816,10 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/meadow)
+"GO" = (
+/obj/landmark/join/start/outsider,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "GP" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/asteroid/grass,
@@ -8453,6 +8828,17 @@
 /obj/structure/flora/rock,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"GR" = (
+/obj/structure/salvageable/data_os,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
+"GS" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall9";
+	tag = "icon-cargoshwall9"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "GT" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/simulated/floor/asteroid/grass,
@@ -8502,10 +8888,8 @@
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
 "Hd" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/small/busha2,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/outsider)
 "He" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt,
@@ -8744,11 +9128,41 @@
 /obj/structure/flora/small/busha3,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"Id" = (
+/obj/machinery/power/smes/buildable,
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Ig" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/busha2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Ii" = (
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/random/closet/low_chance,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
+"Ij" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Ik" = (
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/meadow)
@@ -8785,11 +9199,25 @@
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Iq" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall41";
+	tag = "icon-cargoshwall41"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Ir" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha3,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"Is" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall8";
+	tag = "icon-cargoshwall8"
+	},
+/turf/simulated/mineral/random/rogue,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Iu" = (
 /obj/random/closet/low_chance,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -8804,6 +9232,9 @@
 /obj/random/flora/small_jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"Iy" = (
+/turf/simulated/mineral/random/rogue,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Iz" = (
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/tiled/dark,
@@ -8834,11 +9265,19 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
+"IH" = (
+/obj/landmark/join/start/outsider,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/outsider)
 "II" = (
 /obj/random/flora/small_jungle_tree,
 /obj/structure/flora/small/busha2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"IJ" = (
+/obj/random/mob/undergroundmob/low_chance,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "IK" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/small/bushc1,
@@ -8854,6 +9293,15 @@
 /obj/structure/flora/big/bush1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"IN" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "IO" = (
 /obj/structure/flora/small/busha2,
 /obj/random/flora/small_jungle_tree,
@@ -9443,6 +9891,14 @@
 /obj/item/clothing/suit/armor/heavy,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"KV" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "KW" = (
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
@@ -9474,6 +9930,12 @@
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"Ld" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Le" = (
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
@@ -9597,6 +10059,11 @@
 /obj/item/toy/weapon/sword,
 /turf/simulated/floor/wood/wild1,
 /area/colony/exposedsun/pastgate)
+"Lw" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/salvageable/computer_os,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Ly" = (
 /obj/structure/catwalk,
 /obj/structure/extinguisher_cabinet{
@@ -9604,6 +10071,15 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"Lz" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "LA" = (
 /obj/structure/salvageable/implant_container,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -9644,6 +10120,14 @@
 	},
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"LJ" = (
+/obj/structure/cryofeed{
+	dir = 4;
+	tag = "icon-cryo_rear (EAST)"
+	},
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "LK" = (
 /obj/random/mob/tengolo/low_chance,
 /turf/simulated/floor/asteroid/grass,
@@ -9750,6 +10234,12 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"Mg" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall28";
+	tag = "icon-cargoshwall28"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Mh" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt,
@@ -9758,6 +10248,9 @@
 /obj/structure/flora/small/busha2,
 /turf/simulated/mineral/planet,
 /area/colony/exposedsun/pastgate)
+"Mj" = (
+/turf/simulated/shuttle/wall/cargo,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Ml" = (
 /obj/structure/flora/small/bushb2,
 /turf/simulated/mineral/planet,
@@ -9766,6 +10259,12 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star)
+"Mo" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/material/shard,
+/obj/structure/barricade,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Mp" = (
 /obj/item/toy/plushie/cat/siamese,
 /turf/simulated/floor/wood/wild1,
@@ -9793,6 +10292,20 @@
 /mob/living/simple_animal/hostile/republicon,
 /turf/unsimulated/mineral,
 /area/colony)
+"Mw" = (
+/obj/structure/railing{
+	dir = 8;
+	tag = "icon-railing0 (WEST)"
+	},
+/obj/item/device/lighting/glowstick/flare/torch,
+/obj/item/device/lighting/glowstick/flare/torch,
+/obj/structure/table/steel,
+/obj/item/device/lighting/glowstick/flare/torch,
+/obj/item/device/lighting/glowstick/flare/torch,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Mx" = (
 /obj/structure/table/onestar,
 /obj/structure/window/reinforced{
@@ -9813,6 +10326,11 @@
 /obj/random/powercell/low_chance,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
+"MA" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "MC" = (
 /obj/structure/closet/crate/secure/bin,
 /turf/simulated/floor/tiled/cafe,
@@ -9843,6 +10361,10 @@
 /obj/structure/salvageable/server,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"MH" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "MI" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/plating/under,
@@ -9856,6 +10378,9 @@
 /obj/random/junkfood/onlypizza,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
+"MM" = (
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "MN" = (
 /obj/structure/table/reinforced,
 /obj/item/tool/screwdriver,
@@ -9878,6 +10403,13 @@
 	},
 /turf/simulated/floor/carpet,
 /area/colony/exposedsun/pastgate)
+"MR" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "MS" = (
 /obj/structure/flora/small/busha1,
 /turf/simulated/mineral/planet,
@@ -9906,6 +10438,11 @@
 	},
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
+"MX" = (
+/obj/structure/multiz/ladder/up,
+/obj/structure/invislightsmall,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "MZ" = (
 /obj/structure/table/onestar,
 /obj/item/flame/lighter/zippo/black,
@@ -10011,6 +10548,14 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Nt" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall34";
+	tag = "icon-cargoshwall34"
+	},
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Nu" = (
 /obj/machinery/door/airlock/multi_tile/metal{
 	dir = 2;
@@ -10031,6 +10576,15 @@
 	},
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
+"Nw" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Nx" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/random/traps/low_chance,
@@ -10071,6 +10625,16 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper)
+"NE" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/wire_splicing,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "NF" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/mineral/planet,
@@ -10102,6 +10666,14 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/dungeon/outside/prepper)
+"NM" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/machinery/microwave/burnbarrel,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
+"NN" = (
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "NO" = (
 /obj/structure/table/onestar,
 /obj/random/tool/advanced/onestar/low_chance,
@@ -10211,6 +10783,11 @@
 /obj/random/mob/voidwolf/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Om" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/barricade,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "On" = (
 /obj/structure/table/onestar,
 /obj/structure/window/reinforced,
@@ -10236,6 +10813,24 @@
 /obj/structure/bed/chair/custom/onestar,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
+"Oq" = (
+/obj/structure/salvageable/console_broken_os{
+	dir = 8
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
+"Or" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall19";
+	tag = "icon-cargoshwall19"
+	},
+/turf/simulated/mineral/random/rogue,
+/area/colony/exposedsun/crashed_shop/outsider)
+"Os" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/random/closet_wardrobe/low_chance,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Ot" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -10249,6 +10844,9 @@
 /obj/item/folder/blue,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"Ox" = (
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Oy" = (
 /obj/structure/salvageable/data_os,
 /turf/simulated/floor/plating/under,
@@ -10301,6 +10899,10 @@
 /obj/structure/salvageable/implant_container_os,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"OL" = (
+/obj/machinery/microwave/burnbarrel,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "OM" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
@@ -10343,6 +10945,13 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/colony/exposedsun/pastgate)
+"OW" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall16";
+	tag = "icon-cargoshwall16"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/outsider)
 "OX" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/busha1,
@@ -10359,6 +10968,12 @@
 /obj/structure/reagent_dispensers/fueltank/huge/derelict,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
+"Pa" = (
+/obj/structure/salvageable/console_os{
+	dir = 8
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Pb" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
@@ -10403,6 +11018,13 @@
 /obj/item/paper/Court,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"Pm" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall36";
+	tag = "icon-cargoshwall36"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Pn" = (
 /obj/structure/table/onestar,
 /obj/item/tool/pickaxe/drill/onestar,
@@ -10412,6 +11034,12 @@
 /obj/random/pack/tech_loot/onestar,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
+"Po" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall6";
+	tag = "icon-cargoshwall6"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Pp" = (
 /obj/structure/table/onestar,
 /obj/item/storage/box/matches,
@@ -10483,10 +11111,26 @@
 /obj/item/folder/black,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
+"PB" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "3,7"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "PC" = (
 /obj/machinery/door/airlock/vault,
 /turf/simulated/floor/wood/wild1,
 /area/colony/exposedsun/pastgate)
+"PD" = (
+/obj/structure/multiz/stairs/active/bottom{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "PE" = (
 /obj/structure/salvageable/console_os,
 /obj/structure/window/reinforced{
@@ -10603,6 +11247,12 @@
 /obj/random/toolbox/low_chance,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"Qc" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "Qe" = (
 /obj/structure/flora/small/busha2,
 /obj/landmark/storyevent/midgame_stash_spawn,
@@ -10667,6 +11317,12 @@
 /obj/item/tool/crowbar,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
+"Qs" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall17";
+	tag = "icon-cargoshwall17"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Qv" = (
 /obj/random/mob/spiders,
 /turf/simulated/floor/wood/wild5,
@@ -10711,6 +11367,25 @@
 /obj/structure/salvageable/computer,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
+"QD" = (
+/obj/machinery/door/airlock/maintenance{
+	frequency = 1380;
+	icon_state = "door_closed";
+	id_tag = "supply_shuttle_hatch";
+	locked = 0;
+	name = "Shuttle Hatch";
+	req_access = list(50)
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
+"QE" = (
+/obj/structure/table/woodentable,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "QF" = (
 /obj/structure/table/onestar,
 /turf/simulated/floor/carpet,
@@ -10750,6 +11425,12 @@
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"QN" = (
+/obj/structure/cryofeed,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "QO" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/reagent_containers/syringe/drugs_recreational,
@@ -10770,6 +11451,12 @@
 /obj/random/medical,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"QR" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall7";
+	tag = "icon-cargoshwall7"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "QS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/mob/prepper,
@@ -10838,6 +11525,14 @@
 /obj/structure/salvageable/implant_container_os,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"Rf" = (
+/obj/structure/table/woodentable,
+/obj/item/device/lighting/glowstick/flare/torch,
+/obj/item/device/lighting/glowstick/flare/torch,
+/obj/item/device/lighting/glowstick/flare/torch,
+/obj/item/device/lighting/glowstick/flare/torch,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Rg" = (
 /obj/random/flora/jungle_tree,
 /turf/simulated/mineral/planet,
@@ -10907,6 +11602,19 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"Rt" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall23";
+	tag = "icon-cargoshwall23"
+	},
+/turf/simulated/mineral/random/rogue,
+/area/colony/exposedsun/crashed_shop/outsider)
+"Ru" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall32";
+	tag = "icon-cargoshwall32"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Rv" = (
 /obj/item/trash/cigbutt/fortressblue,
 /turf/simulated/floor/tiled/derelict,
@@ -10946,6 +11654,12 @@
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper)
+"RC" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall15";
+	tag = "icon-cargoshwall15"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "RD" = (
 /obj/machinery/door/airlock/glass,
 /turf/simulated/floor/wood/wild5,
@@ -11020,6 +11734,17 @@
 /obj/item/stock_parts/matter_bin/one_star,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
+"RQ" = (
+/obj/machinery/door/airlock/maintenance{
+	frequency = 1380;
+	icon_state = "door_closed";
+	id_tag = "supply_shuttle_hatch";
+	locked = 0;
+	name = "Shuttle Hatch";
+	req_access = list(50)
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "RR" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
@@ -11086,6 +11811,18 @@
 /obj/random/tool/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"Sg" = (
+/obj/machinery/embedded_controller/radio/simple_docking_controller{
+	frequency = 1380;
+	id_tag = "supply_shuttle";
+	pixel_x = 0;
+	pixel_y = 25;
+	req_one_access = list(13,31);
+	tag_door = "supply_shuttle_hatch"
+	},
+/obj/structure/barricade,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Sh" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/dungeon_gun_mods/low_chance,
@@ -11169,12 +11906,25 @@
 /obj/item/reagent_containers/food/drinks/milk,
 /turf/simulated/floor/tiled/cafe,
 /area/colony/exposedsun/pastgate)
+"Sw" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/material/shard,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
+"Sx" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,7"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Sy" = (
 /obj/structure/bed/chair/sofa/black/corner{
 	dir = 1
 	},
 /turf/simulated/floor/carpet,
 /area/colony/exposedsun/pastgate)
+"Sz" = (
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/outside/meadow)
 "SA" = (
 /obj/random/powercell/large_safe,
 /turf/simulated/floor/tiled,
@@ -11194,6 +11944,13 @@
 /obj/random/material,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
+"SF" = (
+/obj/landmark/join/start/outsider,
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "SG" = (
 /obj/structure/table/onestar,
 /obj/random/junkfood,
@@ -11280,6 +12037,10 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"SW" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "SX" = (
 /obj/random/junk,
 /obj/effect/decal/cleanable/dirt,
@@ -11425,6 +12186,13 @@
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"TD" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall26";
+	tag = "icon-cargoshwall26"
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "TG" = (
 /mob/living/simple_animal/hostile/hivebot{
 	health = 400
@@ -11449,6 +12217,12 @@
 /obj/structure/flora/big/bush3,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"TL" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall33";
+	tag = "icon-cargoshwall33"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "TM" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/big/bush2,
@@ -11492,6 +12266,14 @@
 /obj/random/mob/undergroundmob/low_chance,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
+"TV" = (
+/obj/landmark/join/late/dormitory_outsider,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/outsider)
 "TX" = (
 /obj/structure/table/onestar,
 /obj/item/tool/screwdriver/combi_driver/onestar,
@@ -11584,6 +12366,17 @@
 /obj/item/storage/box/syndie_kit/spy_sensor,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"Uq" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Ur" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/unsimulated/mineral,
@@ -11613,6 +12406,16 @@
 	},
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"Ux" = (
+/obj/structure/multiz/stairs/active/bottom{
+	dir = 4
+	},
+/obj/structure/railing,
+/obj/machinery/light_construct,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Uy" = (
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -11628,6 +12431,11 @@
 "UB" = (
 /obj/effect/overlay/wallrot,
 /turf/simulated/wall,
+/area/nadezhda/outside/meadow)
+"UC" = (
+/obj/landmark/join/start/outsider,
+/obj/structure/bed/chair,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "UD" = (
 /mob/living/carbon/superior_animal/robot/greyson/custodian/chef,
@@ -11739,6 +12547,14 @@
 /obj/random/pack/tech_loot/onestar,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
+"UT" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "UU" = (
 /obj/machinery/light{
 	dir = 8;
@@ -11772,16 +12588,39 @@
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper)
+"UY" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall38";
+	tag = "icon-cargoshwall38"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/outsider)
 "UZ" = (
 /obj/structure/table/onestar,
 /obj/random/powercell/low_chance,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
+"Va" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/wire_splicing,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Vb" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha2,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"Vd" = (
+/turf/simulated/shuttle/wall/cargo{
+	icon_state = "cargoshwall20";
+	tag = "icon-cargoshwall20"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Ve" = (
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -11809,6 +12648,9 @@
 	},
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/meadow)
+"Vi" = (
+/turf/simulated/wall/wood_old,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Vj" = (
 /obj/structure/salvageable/console_os{
 	dir = 1
@@ -11941,6 +12783,11 @@
 /obj/item/storage/box/syndie_kit/spy,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"VI" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/machinery/light_construct,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "VK" = (
 /obj/structure/table/onestar,
 /obj/random/junkfood,
@@ -11967,6 +12814,10 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"VP" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "VQ" = (
 /obj/structure/table/marble,
 /obj/item/storage/box/syringes,
@@ -12171,6 +13022,12 @@
 /obj/random/mob/prepper_boss_lowchance,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
+"WE" = (
+/obj/landmark/join/start/outsider,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "3,7"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "WG" = (
 /obj/effect/overlay/wallrot,
 /turf/simulated/wall,
@@ -12208,6 +13065,10 @@
 /obj/item/reagent_containers/food/drinks/mug/teacup,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"WN" = (
+/obj/machinery/floodlight,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "WO" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/mineral/planet,
@@ -12326,6 +13187,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"Xq" = (
+/obj/machinery/cryopod,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,7"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "Xr" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha1,
@@ -12412,6 +13279,11 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"XO" = (
+/obj/structure/multiz/stairs/active/bottom,
+/obj/structure/lattice,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "XP" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/box/syndie_kit/revolver,
@@ -12555,6 +13427,10 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Yq" = (
+/obj/structure/boulder,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Yr" = (
 /obj/structure/salvageable/data_os,
 /turf/simulated/floor/tiled/derelict,
@@ -12581,6 +13457,13 @@
 /obj/machinery/door/airlock/multi_tile/metal,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
+"Yv" = (
+/obj/structure/shuttle_part/cargo{
+	icon_state = "cargoshwall14";
+	tag = "icon-cargoshwall14"
+	},
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Yw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/closet/low_chance,
@@ -12642,6 +13525,21 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star)
+"YI" = (
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
+"YJ" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "YK" = (
 /obj/random/mob/nightmare,
 /turf/simulated/floor/wood/wild5,
@@ -12662,6 +13560,16 @@
 /obj/random/toolbox/low_chance,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"YO" = (
+/obj/structure/lattice,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "YP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/closet_maintloot,
@@ -12926,6 +13834,12 @@
 "ZX" = (
 /turf/simulated/floor/rock/manmade/concrete,
 /area/asteroid/rogue)
+"ZY" = (
+/obj/landmark/join/late/cryo/outsider,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,7"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "ZZ" = (
 /obj/structure/flora/small/trailrockb2,
 /obj/machinery/light/floor,
@@ -21251,7 +22165,7 @@ aV
 aV
 cE
 EX
-cM
+EX
 cJ
 cE
 aV
@@ -33117,7 +34031,7 @@ aV
 aV
 cE
 Xb
-cM
+EX
 cJ
 cE
 aV
@@ -42232,7 +43146,7 @@ aV
 aV
 aV
 cE
-cM
+EX
 EX
 EX
 AV
@@ -42705,7 +43619,7 @@ aV
 aV
 aV
 ER
-ER
+ES
 aV
 aV
 aV
@@ -43122,17 +44036,17 @@ aV
 aV
 aV
 aV
-aV
-ER
-aV
-aV
-aV
-aV
-aV
-ES
-aV
-aV
-aV
+Iy
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+VP
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -43330,20 +44244,20 @@ aV
 aV
 aV
 aV
-aV
-aV
-ER
-aV
-aV
-aV
-aV
-ER
-ES
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+NN
+Iy
+Iy
+Iy
+Iy
+NN
+VP
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -43539,21 +44453,21 @@ aV
 aV
 aV
 aV
-aV
-aV
-ER
-aV
-aV
-aV
-ER
-ER
-ET
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+VP
+Iy
+Iy
+Iy
+VP
+VP
+Ab
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -43747,23 +44661,23 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-ER
-aV
-aV
-aV
-ER
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+NN
+Iy
+NN
+VP
+VP
+Dq
+NN
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -43956,28 +44870,28 @@ aV
 aV
 aV
 aV
+Iy
+Iy
+Iy
+VP
+NN
+Dq
+Iy
+Iy
+Iy
+Iy
+NN
+NN
+Iy
+Iy
+kf
+Iy
+Iy
 aV
 aV
 aV
-ES
-aV
-aV
-ER
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
 aV
 aV
 aV
@@ -44166,28 +45080,28 @@ aV
 aV
 aV
 aV
-aV
-aV
-ES
-ER
-ER
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+VP
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+NN
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
-aV
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -44364,40 +45278,40 @@ aV
 aV
 aV
 aV
+Iy
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ER
-ES
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Dq
+VP
+VP
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+NN
+NN
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -44573,41 +45487,41 @@ AV
 ER
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ES
-ER
-ER
-aV
-ES
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+AN
+Dq
+VP
+Iy
+Ab
+Iy
+Iy
+Iy
+Iy
+Iy
+Dq
+NN
+Dq
+Ab
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -44782,42 +45696,42 @@ ER
 ER
 ER
 aV
-aV
-aV
-aV
-aV
-AV
-AV
-aV
-aV
-ER
-ES
-aV
-aV
-aV
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Bo
+Bo
+Iy
+Iy
+Dq
+VP
+hl
+Dq
+VP
+Iy
+Iy
+Iy
+Iy
+VP
+Hd
+VP
+Hd
+NN
+CY
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -44990,44 +45904,44 @@ aV
 ER
 aV
 ER
-Fn
-aV
-ER
-ER
-ER
-ER
-ER
-ES
-ES
-ES
-aV
-aV
-aV
-aV
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+vY
+Iy
+NN
+NN
+NN
+Dq
+Hd
+AN
+hl
+VP
+NN
+NN
+VP
+Dq
+VP
+Dq
+Iy
+Hd
+lJ
+CY
+VP
+NN
+VP
+VP
+Dq
+WN
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -45199,44 +46113,44 @@ ER
 ER
 aV
 aV
-ER
-ER
-ad
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+NN
+NN
+IJ
+Iy
+Iy
+Is
+GS
+xN
+CZ
+OW
+Bm
+Yv
+Ag
+Or
+Yq
+Rt
+TD
+Nt
+VP
+NN
+NN
+lJ
+VP
+NN
+NN
+NN
+Dq
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -45408,44 +46322,44 @@ ad
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ER
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+QR
+yq
+wg
+RC
+Qs
+Vd
+RC
+Qs
+Iy
+zB
+Iy
+cu
+DG
+hl
+Yq
+Hd
+NN
+Hd
+NN
+NN
+Dq
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -45617,43 +46531,43 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Po
+Id
+Ef
+Ij
+vI
+Ij
+vI
+pe
+zB
+SW
+zB
+Mg
+Pm
+Hd
+NN
+VP
+Hd
+VP
+NN
+VP
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -45827,41 +46741,41 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ES
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Gq
+GR
+MM
+PB
+EI
+WE
+EI
+WE
+LJ
+PB
+Os
+FY
+hu
+hl
+Hd
+VP
+Iy
+Iy
+Dq
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -46036,43 +46950,43 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ES
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+vU
+Sg
+BF
+Sx
+of
+ZY
+of
+ZY
+of
+Sx
+VI
+cM
+UY
+Dq
+hl
+NN
+NN
+Iy
+NN
+Dq
+Iy
+Dq
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -46246,42 +47160,42 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ES
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+zB
+Lw
+MM
+Sx
+Xq
+ZY
+wn
+ZY
+Xq
+SW
+zB
+Iy
+Iy
+Iy
+Dq
+Hd
+VP
+NN
+Dq
+NN
+NN
+Dq
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -46457,40 +47371,40 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ER
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+zB
+Sw
+MM
+YI
+QN
+GA
+QN
+GA
+QN
+YI
+SW
+cM
+Iy
+Dq
+hl
+VP
+Dq
+NN
+NN
+NN
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -46666,41 +47580,41 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ES
-ES
-ER
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Om
+iS
+vI
+vI
+UT
+MM
+MM
+MM
+MM
+MM
+cM
+UY
+hl
+NN
+NN
+lJ
+lJ
+NN
+Dq
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -46875,41 +47789,41 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ER
-ER
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-AV
-ER
-ER
-aV
-aV
-aV
-aV
+Iy
+Iy
+zB
+Sw
+MM
+MM
+Au
+Oq
+MM
+Pa
+MM
+MM
+RQ
+XO
+NN
+VP
+VP
+NN
+NN
+Dq
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Bo
+Ld
+MH
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -47084,41 +47998,41 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ER
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ER
-ER
-ER
-ER
-ER
-ER
-ER
-aV
-aV
-aV
-aV
+Iy
+Iy
+zB
+SW
+MM
+PD
+Cm
+Ii
+Mw
+yY
+AH
+Ux
+cM
+UY
+hl
+hl
+Dq
+NN
+Dq
+Iy
+Iy
+Iy
+Iy
+Iy
+NN
+VP
+NN
+NN
+NN
+NN
+NN
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -47293,41 +48207,41 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-bk
-aV
-aV
-aV
-aV
-aV
-aV
-ER
-kJ
-aV
-aV
-jj
-jj
-ER
-ER
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+zB
+Mo
+KV
+ag
+YJ
+MA
+MA
+MA
+MA
+hm
+Bi
+Hd
+VP
+Hd
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+VP
+zT
+Iy
+Iy
+zt
+zt
+NN
+NN
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -47502,41 +48416,41 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ER
-aV
-aV
-aV
-aV
-aV
-ER
-ER
-aV
-aV
-aV
-jj
-FM
-ER
-ER
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+zB
+SW
+zB
+YO
+Nw
+MA
+MA
+Ch
+Ru
+AE
+Hd
+VP
+VP
+Yq
+Iy
+Iy
+Iy
+Iy
+NN
+NN
+Iy
+Iy
+Iy
+zt
+MX
+NN
+NN
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -47711,41 +48625,41 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ES
-ES
-aV
-aV
-aV
-aV
-ER
-ER
-aV
-aV
-aV
-aV
-aV
-ER
-ER
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Mj
+hE
+Iy
+hP
+EN
+QD
+ah
+FT
+TL
+Iq
+Dq
+Hd
+VP
+VP
+NN
+Bo
+Iy
+NN
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+QE
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -47920,41 +48834,41 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ES
-ES
-aV
-aV
-aV
-aV
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-AV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+yX
+NE
+NN
+hl
+VP
+lJ
+AN
+NN
+NN
+Hd
+NN
+VP
+NN
+NN
+VP
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Bo
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -48129,41 +49043,41 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ER
-ER
-aV
-aV
-ER
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+vW
+Uq
+hC
+Dq
+VP
+NN
+NN
+NN
+VP
+CY
+NN
+lJ
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -48338,41 +49252,41 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ER
-ER
-ER
-ER
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Bo
+Va
+IN
+VP
+VP
+NN
+VP
+VP
+NN
+VP
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -48546,42 +49460,42 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Bo
+Lz
+NN
+VP
+CY
+NN
+VP
+VP
+lJ
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -48754,43 +49668,43 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+NM
+VP
+VP
+NN
+NN
+Dq
+VP
+NN
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -48963,42 +49877,42 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+MR
+VP
+lJ
+AN
+Iy
+Iy
+Dq
+VP
+Dq
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -49172,40 +50086,40 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Vi
+Vi
+Bb
+Vi
+Vi
+Vi
+Vi
+Bo
+Bo
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -49381,40 +50295,40 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Vi
+ta
+Ox
+Ox
+Rf
+iw
+Vi
+Iy
+VP
+Dq
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -49592,39 +50506,39 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Vi
+Ox
+IH
+Ox
+IH
+Ox
+Vi
+Iy
+Dq
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -49801,38 +50715,38 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Vi
+BO
+TV
+BO
+TV
+BO
+Vi
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -50010,38 +50924,38 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Vi
+Vi
+Vi
+Vi
+Vi
+Vi
+Vi
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -50219,38 +51133,38 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -50428,38 +51342,38 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -50639,28 +51553,28 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -50857,14 +51771,14 @@ aV
 aV
 aV
 aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
 aV
 aV
 aV
@@ -85977,7 +86891,7 @@ El
 CF
 hW
 hW
-hW
+SF
 hW
 Hk
 BL
@@ -86601,12 +87515,12 @@ hA
 CF
 CF
 hW
-hW
-hW
-hW
-hW
-hW
-hW
+Ae
+Ae
+Ae
+Ae
+Ae
+Ae
 hW
 Sk
 hA
@@ -86806,17 +87720,17 @@ hA
 hA
 hA
 hA
+Ms
 hW
 hW
-ir
-hW
-hW
-hW
-hW
-UQ
-hW
-Dh
-hW
+Ae
+Br
+Br
+Br
+Sz
+Br
+Sz
+Ae
 hW
 Ad
 hA
@@ -87015,18 +87929,18 @@ hA
 hA
 BL
 Eq
+OL
 hW
-hW
-hW
-hW
-hW
-ir
-hW
-hW
-hW
-hW
-hW
-hW
+Ae
+Br
+Br
+Br
+Br
+Br
+Br
+Sz
+Ae
+Ae
 Hq
 Hm
 hA
@@ -87224,19 +88138,19 @@ hA
 hA
 Ql
 CF
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
+Qc
+Ae
+Br
+Br
+Br
+Br
+Br
+Br
+Sz
+Sz
+Ae
+Sz
+Ae
 hW
 hW
 hW
@@ -87434,18 +88348,18 @@ BL
 Ql
 Eq
 hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
+Ae
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Sz
+Ae
 hW
 hW
 hW
@@ -87643,21 +88557,21 @@ BL
 zK
 hW
 vJ
-BJ
-hW
-hW
-Dh
-hW
-hW
-hW
-hW
-hW
-ir
-hW
+Ae
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Sz
+Ae
 hW
 BL
 BL
-zJ
 hA
 hA
 AU
@@ -87851,20 +88765,20 @@ Nd
 GU
 hW
 hW
+Ae
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Ae
 hW
 hW
-hW
-Dh
-hW
-hW
-Dh
-hW
-hW
-hW
-hW
-hW
-hW
-hA
 hA
 hA
 hA
@@ -88058,22 +88972,22 @@ hA
 hA
 Ql
 Cr
+UC
 hW
-hW
-hW
-hW
-hW
-hW
-BJ
-hW
-Dh
-Dh
-hW
-hW
-hW
+Ae
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Sz
+Ae
 hW
 Rg
-hA
 hA
 hA
 hA
@@ -88269,20 +89183,20 @@ Ek
 CF
 Eq
 hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-Dh
-hW
-hW
-hW
+Ae
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Sz
+Ae
 hW
 Ad
-hA
 hA
 hA
 hA
@@ -88478,20 +89392,20 @@ hA
 Bj
 GU
 hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-vJ
-hW
+Ae
+Br
+Br
+Br
+Br
+Br
+Br
+Br
+Sz
+Br
+Ae
 hW
 Sk
 Ad
-hA
 hA
 hA
 hA
@@ -88688,18 +89602,18 @@ BL
 Ql
 Eq
 hW
-ir
-hW
-hW
-hW
-hW
-ir
-hW
-hW
-hW
+Ae
+Br
+Br
+Br
+Br
+Br
+Br
+Sz
+Ae
+Ae
 Az
 Ad
-hA
 hA
 hA
 hA
@@ -88897,17 +89811,17 @@ hA
 Ql
 hW
 hW
+Ae
+Br
+Br
+Br
+Br
+Br
+Br
+Ae
+Ae
 hW
 hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hW
-hA
 hA
 hA
 hA
@@ -89106,20 +90020,20 @@ hA
 Ek
 Eq
 CF
-hW
-hW
-hW
-hW
-hW
-hW
-hW
+Ae
+Br
+Br
+Br
+Br
+Br
+Ae
+Ae
 hW
 hW
 Ws
 hA
 hA
 hA
-BL
 BL
 BL
 Ad
@@ -89314,14 +90228,15 @@ hA
 hA
 El
 Cr
-Cr
+Ae
+Br
+Ae
+Br
+Br
+Br
+Ae
+Ae
 hW
-BJ
-hW
-hW
-hW
-hW
-BJ
 hW
 hW
 Sk
@@ -89329,7 +90244,6 @@ hA
 hA
 BL
 hW
-ir
 hW
 Hz
 Sk
@@ -89524,11 +90438,12 @@ hA
 hA
 El
 Eq
-hW
-BJ
-hW
-vJ
-hW
+Ae
+Ae
+Ae
+Sz
+Sz
+Ae
 hW
 hW
 hW
@@ -89537,7 +90452,6 @@ Ad
 hA
 hA
 Az
-hW
 hW
 hW
 hW
@@ -89733,21 +90647,21 @@ zJ
 Ej
 El
 Eq
+Ae
+Br
+Sz
+Ae
+Ae
+Ae
 hW
 hW
-hW
-hW
-hW
-hW
-hW
-hW
+GO
 hA
 hA
 hA
 BL
 Az
 hW
-vJ
 hW
 hW
 hW
@@ -89943,10 +90857,11 @@ Et
 Ej
 hA
 Eq
-hW
-hW
-hW
-hW
+Ae
+Ae
+Br
+Br
+Ae
 hW
 hW
 hW
@@ -89954,7 +90869,6 @@ Rw
 hA
 hA
 Sk
-hW
 hW
 hW
 hW
@@ -90154,15 +91068,15 @@ GF
 hW
 hW
 GZ
-Da
+Ae
+Br
+Ae
 hW
-Dh
 hW
 hW
 Rw
 hA
 hA
-hW
 hW
 hW
 hW
@@ -90364,8 +91278,9 @@ MD
 hW
 hW
 hW
-Da
-Hd
+Ae
+Ae
+hW
 hW
 hW
 hA
@@ -90374,7 +91289,6 @@ hA
 hW
 hW
 ir
-hW
 hW
 hW
 hW
@@ -90578,9 +91492,9 @@ Da
 Da
 Da
 hW
+hW
 AU
 hA
-hW
 hW
 hW
 hW
@@ -90786,12 +91700,12 @@ hW
 hW
 hW
 Da
+hW
 Da
 hA
 hA
 Ad
 Az
-hW
 hW
 hW
 hW
@@ -90995,13 +91909,13 @@ zL
 hW
 ir
 hW
+Ae
 Da
 hA
 hA
 hA
 Az
 Az
-hW
 hW
 hW
 Ad
@@ -91204,13 +92118,13 @@ zL
 hW
 Da
 Da
+Br
 Da
 hA
 hA
 hA
 hA
 Ht
-hW
 hW
 Sk
 hA
@@ -91413,13 +92327,13 @@ zL
 Da
 Da
 Hi
+Ae
 Da
 Az
 Ad
 hA
 hA
 Sk
-hW
 hW
 Ad
 hA
@@ -91622,13 +92536,13 @@ zL
 zL
 hW
 Da
+hW
 Da
 hW
 Ad
 Ad
 BL
 Sk
-Df
 hW
 hA
 hA
@@ -91832,12 +92746,12 @@ zL
 hW
 hW
 hW
+hW
 Et
 hW
 Sk
 BL
 zK
-hW
 hW
 hA
 hA
