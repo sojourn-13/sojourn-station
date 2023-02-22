@@ -31,7 +31,7 @@
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.4 // 40 vig
 
-	gun_parts = list(/obj/item/part/gun/frame/minotaur = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/magnum = 1)
+	gun_parts = list(/obj/item/part/gun/frame/minotaur = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/magnum = 1)
 
 /obj/item/part/gun/frame/minotaur
 	name = "Minotaur frame"
@@ -39,7 +39,7 @@
 	icon_state = "frame_revolver"
 	result = /obj/item/gun/projectile/revolver
 	resultvars = list(/obj/item/gun/projectile/revolver)
-	gripvars = list(/obj/item/part/gun/grip/rubber)
+	gripvars = list(/obj/item/part/gun/grip/black)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
 	barrelvars = list(/obj/item/part/gun/barrel/magnum)
 

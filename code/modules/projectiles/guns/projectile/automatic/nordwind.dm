@@ -118,7 +118,7 @@
 	desc = "A Strelki rifle frame. The finest among hunters and operators alike, known for building cheap Strelki rifles or more expensive Duty rifles."
 	icon_state = "frame_orrifle"
 	result = /obj/item/gun/projectile/automatic/nordwind/strelki
-	gripvars = list(/obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/rubber)
+	gripvars = list(/obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/black)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
 	barrelvars = list(/obj/item/part/gun/barrel/lrifle, /obj/item/part/gun/barrel/srifle)
 	resultvars = list(/obj/item/gun/projectile/automatic/nordwind/strelki, /obj/item/gun/projectile/automatic/duty)
