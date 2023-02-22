@@ -64,7 +64,7 @@
 	armor_penetration = 15
 	leach_on_odds = 70
 	can_leach = TRUE
-	steal_odds = 50
+	steal_odds = 5
 	stat_to_steal = STAT_VIV
 	steal_amount = 1
 
