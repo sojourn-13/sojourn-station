@@ -57,8 +57,8 @@
 	max_shells = 8
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10)
 	price_tag = 1500
-	damage_multiplier = 0.85
-	penetration_multiplier = 0.85
+	damage_multiplier = 0.9
+	penetration_multiplier = 0.9
 	init_recoil = RIFLE_RECOIL(1.6)
 	serial_type = "AG"
 

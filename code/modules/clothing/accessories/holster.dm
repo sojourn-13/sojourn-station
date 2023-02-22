@@ -9,6 +9,7 @@
 	var/sound_in = 'sound/effects/holsterin.ogg'
 	var/sound_out = 'sound/effects/holsterout.ogg'
 	var/list/can_hold
+	var/list/cant_hold = new/list()
 
 /obj/item/clothing/accessory/holster/proc/holster(var/obj/item/I, var/mob/living/user)
 	if(holstered && istype(user))
@@ -19,7 +20,9 @@
 		if(!is_type_in_list(I,can_hold))
 			to_chat(user, "<span class='warning'>[I] won't fit in [src]!</span>")
 			return
-
+	if(cant_hold.len && is_type_in_list(I, cant_hold))
+		to_chat(usr, SPAN_NOTICE("[src] cannot sheathe [I]."))
+		return
 
 	else if (!(I.slot_flags & SLOT_HOLSTER))
 		to_chat(user, SPAN_WARNING("[I] won't fit in [src]!"))
@@ -269,7 +272,7 @@ Sword holsters
 	desc = "A sturdy black leather scabbard. For the survivalist in you."
 	icon_state = "machete_holster"
 	overlay_state = "machete"
-	can_hold = list(/obj/item/tool/sword/machete)
+	can_hold = list(/obj/item/tool/sword/machete, /obj/item/tool/sword/handmade)
 
 /obj/item/clothing/accessory/holster/saber/machete/update_icon()
 	..()
@@ -355,7 +358,8 @@ Sword holsters
 /obj/item/clothing/accessory/holster/saber/machete/cheap
 	name = "pleather scabbard"
 	desc = "A cheap sheath for cheap weapons. This probably isn't suitable for anything more valuable than mass-produced stuff."
-	can_hold = list(/obj/item/tool/cheap) // Only shitty swords.
+	can_hold = list(/obj/item/tool/cheap, /obj/item/tool/sword/handmade) // Only shitty swords.
+	cant_hold = list(/obj/item/tool/cheap/spear) // Can't sheathe a spear here!
 	icon_state = "cheap_holster"
 	overlay_state = "cheap"
 
