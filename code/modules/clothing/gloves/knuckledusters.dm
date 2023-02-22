@@ -41,7 +41,7 @@
 			they can scrap on the field, and throwing deadlier punches."
 	icon_state = "scav_gloves"
 	item_state = "scav_gloves"
-	punch_increase = 12
+	punch_increase = 8 //Armored so this should be weaker then the plasteel dust
 	armor_list = list(
 		melee = 35, // 10 more than combat, Plasteel reinforced
 		bullet = 15,
