@@ -27,7 +27,7 @@
 //available_power - the maximum amount of power that may be used when moving gas. If null then the transfer is not limited by power.
 /proc/pump_gas(var/obj/machinery/M, var/datum/gas_mixture/source, var/datum/gas_mixture/sink, var/transfer_moles = null, var/available_power = null)
 	if (source.total_moles < MINIMUM_MOLES_TO_PUMP) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	if (isnull(transfer_moles))
 		transfer_moles = source.total_moles
@@ -40,7 +40,7 @@
 		transfer_moles = min(transfer_moles, available_power / specific_power)
 
 	if (transfer_moles < MINIMUM_MOLES_TO_PUMP) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	//Update flow rate meter
 	if (istype(M, /obj/machinery/atmospherics))
@@ -59,7 +59,7 @@
 
 	var/datum/gas_mixture/removed = source.remove(transfer_moles)
 	if (!removed) //Just in case
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	var/power_draw = specific_power*transfer_moles
 
@@ -70,7 +70,7 @@
 //Gas 'pumping' proc for the case where the gas flow is passive and driven entirely by pressure differences (but still one-way).
 /proc/pump_gas_passive(var/obj/machinery/M, var/datum/gas_mixture/source, var/datum/gas_mixture/sink, var/transfer_moles = null)
 	if (source.total_moles < MINIMUM_MOLES_TO_PUMP) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	if (isnull(transfer_moles))
 		transfer_moles = source.total_moles
@@ -81,7 +81,7 @@
 	transfer_moles = min(transfer_moles, equalize_moles)
 
 	if (transfer_moles < MINIMUM_MOLES_TO_PUMP) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	//Update flow rate meter
 	if (istype(M, /obj/machinery/atmospherics))
@@ -96,7 +96,7 @@
 
 	var/datum/gas_mixture/removed = source.remove(transfer_moles)
 	if(!removed) //Just in case
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 	sink.merge(removed)
 
 	return 0
@@ -108,7 +108,7 @@
 //available_power - the maximum amount of power that may be used when scrubbing gas. If null then the scrubbing is not limited by power.
 /proc/scrub_gas(var/obj/machinery/M, var/list/filtering, var/datum/gas_mixture/source, var/datum/gas_mixture/sink, var/total_transfer_moles = null, var/available_power = null)
 	if (source.total_moles < MINIMUM_MOLES_TO_FILTER) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	filtering = filtering & source.gas	//only filter gasses that are actually there. DO NOT USE &=
 
@@ -124,7 +124,7 @@
 		total_filterable_moles += source.gas[g]
 
 	if (total_filterable_moles < MINIMUM_MOLES_TO_FILTER) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	//now that we know the total amount of filterable gas, we can calculate the amount of power needed to scrub one mole of gas
 	var/total_specific_power = 0		//the power required to remove one mole of filterable gas
@@ -143,7 +143,7 @@
 		total_transfer_moles = min(total_transfer_moles, available_power/total_specific_power)
 
 	if (total_transfer_moles < MINIMUM_MOLES_TO_FILTER) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	//Update flow rate var
 	if (istype(M, /obj/machinery/atmospherics))
@@ -179,7 +179,7 @@
 //available_power - the maximum amount of power that may be used when filtering gas. If null then the filtering is not limited by power.
 /proc/filter_gas(var/obj/machinery/M, var/list/filtering, var/datum/gas_mixture/source, var/datum/gas_mixture/sink_filtered, var/datum/gas_mixture/sink_clean, var/total_transfer_moles = null, var/available_power = null)
 	if (source.total_moles < MINIMUM_MOLES_TO_FILTER) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	filtering = filtering & source.gas	//only filter gasses that are actually there. DO NOT USE &=
 
@@ -212,7 +212,7 @@
 		total_transfer_moles = min(total_transfer_moles, available_power/total_specific_power)
 
 	if (total_transfer_moles < MINIMUM_MOLES_TO_FILTER) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	//Update flow rate var
 	if (istype(M, /obj/machinery/atmospherics))
@@ -224,7 +224,7 @@
 
 	var/datum/gas_mixture/removed = source.remove(total_transfer_moles)
 	if (!removed) //Just in case
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	var/filtered_power_used = 0		//power used to move filterable gas to sink_filtered
 	var/unfiltered_power_used = 0	//power used to move unfilterable gas to sink_clean
@@ -251,7 +251,7 @@
 //filter_gas can be removed and replaced with this proc if need be.
 /proc/filter_gas_multi(var/obj/machinery/M, var/list/filtering, var/datum/gas_mixture/source, var/datum/gas_mixture/sink_clean, var/total_transfer_moles = null, var/available_power = null)
 	if (source.total_moles < MINIMUM_MOLES_TO_FILTER) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	filtering = filtering & source.gas	//only filter gasses that are actually there. DO NOT USE &=
 
@@ -285,7 +285,7 @@
 		total_transfer_moles = min(total_transfer_moles, available_power/total_specific_power)
 
 	if (total_transfer_moles < MINIMUM_MOLES_TO_FILTER) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	//Update Flow Rate var
 	if (istype(M, /obj/machinery/atmospherics))
@@ -297,7 +297,7 @@
 
 	var/datum/gas_mixture/removed = source.remove(total_transfer_moles)
 	if (!removed) //Just in case
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	var/list/filtered_power_used = list()		//power used to move filterable gas to the filtered gas mixes
 	var/unfiltered_power_used = 0	//power used to move unfilterable gas to sink_clean
@@ -328,7 +328,7 @@
 //mix_sources maps input gas mixtures to mix ratios. The mix ratios MUST add up to 1.
 /proc/mix_gas(var/obj/machinery/M, var/list/mix_sources, var/datum/gas_mixture/sink, var/total_transfer_moles = null, var/available_power = null)
 	if (!mix_sources.len)
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	var/total_specific_power = 0	//the power needed to mix one mole of gas
 	var/total_mixing_moles = null	//the total amount of gas that can be mixed, given our mix ratios
@@ -337,7 +337,7 @@
 	var/list/source_specific_power = list()
 	for (var/datum/gas_mixture/source in mix_sources)
 		if (source.total_moles < MINIMUM_MOLES_TO_FILTER)
-			return -1	//either mix at the set ratios or mix no gas at all
+			return 0 //change it to -1 if a debug of this is needed	//either mix at the set ratios or mix no gas at all
 
 		var/mix_ratio = mix_sources[source]
 		if (!mix_ratio)
@@ -354,7 +354,7 @@
 		total_input_moles += source.total_moles
 
 	if (total_mixing_moles < MINIMUM_MOLES_TO_FILTER) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	if (isnull(total_transfer_moles))
 		total_transfer_moles = total_mixing_moles
@@ -366,7 +366,7 @@
 		total_transfer_moles = min(total_transfer_moles, available_power / total_specific_power)
 
 	if (total_transfer_moles < MINIMUM_MOLES_TO_FILTER) //if we cant transfer enough gas just stop to avoid further processing
-		return -1
+		return 0 //change it to -1 if a debug of this is needed
 
 	//Update flow rate var
 	if (istype(M, /obj/machinery/atmospherics))

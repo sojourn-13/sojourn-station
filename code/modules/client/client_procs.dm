@@ -174,9 +174,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if(filelength > UPLOAD_LIMIT_ADMIN)
 			to_chat(src, "<font color='red'>Error: AllowUpload(): File Upload too large. Upload Limit: [UPLOAD_LIMIT_ADMIN/1024]KiB.</font>")
 			return FALSE
-	if(filelength > UPLOAD_LIMIT)
-		to_chat(src, "<font color='red'>Error: AllowUpload(): File Upload too large. Upload Limit: [UPLOAD_LIMIT/1024]KiB.</font>")
-		return FALSE
+	else
+		if(filelength > UPLOAD_LIMIT)
+			to_chat(src, "<font color='red'>Error: AllowUpload(): File Upload too large. Upload Limit: [UPLOAD_LIMIT/1024]KiB.</font>")
+			return FALSE
 	return TRUE
 
 

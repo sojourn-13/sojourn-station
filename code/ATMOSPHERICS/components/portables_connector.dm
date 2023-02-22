@@ -2,7 +2,7 @@
 	icon = 'icons/atmos/connector.dmi'
 	icon_state = "map_connector"
 
-	name = "connector port"
+	name = "Connector Port"
 	desc = "For connecting portables devices related to atmospherics control."
 
 	dir = SOUTH
@@ -14,7 +14,7 @@
 
 	var/datum/pipe_network/network
 
-	var/on = 0
+	var/on = FALSE
 	use_power = NO_POWER_USE
 	level = BELOW_PLATING_LEVEL
 	layer = GAS_FILTER_LAYER
@@ -43,7 +43,7 @@
 	if(!on)
 		return
 	if(!connected_device)
-		on = 0
+		on = FALSE
 		return
 	if(network)
 		network.update = 1
@@ -135,14 +135,14 @@
 	if(!(QUALITY_BOLT_TURNING in I.tool_qualities))
 		return ..()
 	if (connected_device)
-		to_chat(user, SPAN_WARNING("You cannot unfasten \the [src], detach \the [connected_device] first."))
+		to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], dettach \the [connected_device] first."))
 		return 1
 	if (locate(/obj/machinery/portable_atmospherics, src.loc))
 		return 1
 	var/datum/gas_mixture/int_air = return_air()
 	var/datum/gas_mixture/env_air = loc.return_air()
 	if ((int_air.return_pressure()-env_air.return_pressure()) > 2*ONE_ATMOSPHERE)
-		to_chat(user, SPAN_WARNING("You cannot unfasten \the [src], it is under too much pressure."))
+		to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], it too exerted due to internal pressure."))
 		add_fingerprint(user)
 		return 1
 	to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
