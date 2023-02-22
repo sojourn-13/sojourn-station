@@ -18,6 +18,7 @@
 	death_spawn_gift = /obj/random/cluster/psi_monster/maggot_death_gasp
 	death_gasp = "<b><font size='3px'>The flesh behemoth heaves as its body crumbles, wriggling pus maggots bursting from its failing rotted bulk!</font></b>!"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+	armor_penetration = 15
 
 /mob/living/carbon/superior_animal/psi_monster/mind_gazer
 	name = "mind gazer"
@@ -34,6 +35,7 @@
 	healing_factor = 10
 	attacktext = "rammed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+	armor_penetration = 20
 
 /mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo
 	name = "ash wendigo"
@@ -54,6 +56,7 @@
 	light_color = COLOR_LIGHTING_RED_BRIGHT
 	attacktext = "clawed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+	armor_penetration = 50
 
 /mob/living/carbon/superior_animal/psi_monster/cerebral_crusher
 	name = "cerebral crusher"
@@ -72,6 +75,7 @@
 	healing_factor = 10
 	attacktext = "slammed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+	armor_penetration = 30
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly
 	name = "crimson jelly"
@@ -95,6 +99,7 @@
 	knockdown_odds = 15
 	armor = list(melee = 20, bullet = 10, energy = 5, bomb = 30, bio = 100, rad = 100)
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn)
+	armor_penetration = 50
 
 /mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror
 	name = "pitch horror"
@@ -107,6 +112,7 @@
 	health = 1250
 	knockdown_odds = 30
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn)
+	armor_penetration = 70
 
 // King's Court. Special named psi mobs with better stats and custom voice lines, they are spawned whenever the king of the hound journey.
 /mob/living/carbon/superior_animal/psi_monster/flesh_behemoth/baron
