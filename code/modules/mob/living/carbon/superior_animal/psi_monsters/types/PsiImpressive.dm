@@ -36,6 +36,11 @@
 	attacktext = "rammed"
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 	armor_penetration = 20
+	leach_on_odds = 30
+	can_leach = TRUE
+	steal_odds = 15
+	stat_to_steal = STAT_VIG
+	steal_amount = -4
 
 /mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo
 	name = "ash wendigo"

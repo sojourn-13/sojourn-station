@@ -85,7 +85,9 @@
 					Victim.adjustToxLoss(rand(2,4))
 				if(prob(steal_odds))
 					Victim.stats.changeStat(stat_to_steal, steal_amount)
-
+					var/health_addition_mod = steal_amount * -1 //So we became non-negtive
+					maxHealth += (30 * health_addition_mod)
+					health += (30 * health_addition_mod)
 
 
 			else

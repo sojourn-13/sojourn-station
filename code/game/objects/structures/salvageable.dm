@@ -609,6 +609,8 @@ obj/structure/salvageable/bliss/Initialize()
 	for(var/path in salvageable_parts)
 		if(prob(salvageable_parts[path]))
 			new path (loc)
+	if(occupant)
+		new occupant(src.loc)
 	return
 
 /obj/structure/salvageable/deepmaints_cryopod/Initialize()
@@ -628,8 +630,7 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/stock_parts/capacitor = 50,
 		/obj/item/trash/material/circuit = 60,
 		/obj/item/reagent_containers/glass/beaker = 40,
-		/obj/item/storage/freezer/medical/contains_teratomas = 50,
-		occupant = 100
+		/obj/item/storage/freezer/medical/contains_teratomas = 50
 	)
 
 	icon = 'icons/obj/cryogenics_split.dmi'
@@ -644,13 +645,6 @@ obj/structure/salvageable/bliss/Initialize()
 	I.layer = WALL_OBJ_LAYER
 	I.pixel_z = 32
 	add_overlay(I)
-
-	if(occupant)
-		var/image/pickle = image(occupant.icon, occupant.icon_state)
-		pickle.copy_overlays(occupant.overlays, TRUE)
-		pickle.pixel_z = 18
-		pickle.layer = WALL_OBJ_LAYER
-		add_overlay(pickle)
 
 	I = image(icon, "lid[on]")
 	I.layer = WALL_OBJ_LAYER

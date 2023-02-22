@@ -29,6 +29,11 @@
 	armor_penetration = 25
 	emote_see = list("begins to melt, blackened skin sloughing down its form until it pulls taut.", "howls, \"Birth, flesh, death, decay, birth, flesh, death, decay!\"", "howls in agony!")
 	turns_per_move = 10
+	leach_on_odds = 10
+	can_leach = TRUE
+	steal_odds = 50
+	stat_to_steal = STAT_COG
+	steal_amount = -3
 
 /mob/living/carbon/superior_animal/psi_monster/licker
 	name = "licker"
@@ -66,7 +71,7 @@
 	can_leach = TRUE
 	steal_odds = 5
 	stat_to_steal = STAT_VIV
-	steal_amount = 1
+	steal_amount = -1
 
 /mob/living/carbon/superior_animal/psi_monster/flesh_tower
 	name = "flesh tower"
