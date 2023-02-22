@@ -15,7 +15,7 @@
 	log = do_log
 	newscast = do_newscast
 
-/datum/announcement/priority/New(var/do_log = 1, var/new_sound = 'sound/misc/notice4.ogg', var/do_newscast = 0) // Leave that sound for alarms cleared please.
+/datum/announcement/priority/New(var/do_log = 1, var/new_sound = 'sound/misc/Alarm_Emergency_Meeting.ogg', var/do_newscast = 0) // Leave that sound for alarms cleared please.
 	..(do_log, new_sound, do_newscast)
 	title = "Priority Announcement"
 	announcement_type = "Priority Announcement"
