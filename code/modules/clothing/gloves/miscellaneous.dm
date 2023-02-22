@@ -82,7 +82,7 @@
 
 /obj/item/clothing/gloves/thick/ablasive
 	name = "ablative gloves"
-	desc = "A thick pair of gloves that excel at protecting the wearer against energy projectiles."
+	desc = "A thick pare of gloves that excels in protecting the wearer against energy projectiles."
 	armor_list = list(melee = 10, bullet = 10, energy = 70, bomb = 30, bio = 10, rad = 0)
 	icon_state = "ihscombat"
 	item_state = "ihscombat"
@@ -91,14 +91,14 @@
 
 /obj/item/clothing/gloves/thick/ablasive/militia
 	name = "militia ablative gloves"
-	desc = "A thick pair of gloves that excel at protecting the wearer against energy projectiles."
+	desc = "A thick pair of gloves that excels in protecting the wearer against energy projectiles."
 	armor_list = list(melee = 10, bullet = 10, energy = 60, bomb = 10, bio = 0, rad = 0)
 	icon_state = "bs_ablative"
 	item_state = "ihscombat"
 
 /obj/item/clothing/gloves/thick/ablasive/iron_lock_security
 	name = "outdated gloves"
-	desc = "A pair of \"Iron Lock Security\" ablative gloves with plates designed to absorb energy projectiles, even after all this time no one has been able to improve its design by Greyson Positronic."
+	desc = "An \"Iron Lock Security\" ablative gloves with plates designed to absorb energy projectiles, even after all this time no one has been able to improve its design by Greyson Positronic."
 
 /obj/item/clothing/gloves/thick/swat/militia
 	name = "militia bulletproof gloves"
@@ -109,7 +109,7 @@
 
 /obj/item/clothing/gloves/thick/swat/blackshield_corpsman
 	name = "corpsman combat gloves"
-	desc = "A pair of fire and impact-resistant corpsman combat gloves." // No lying, it's not anti-germs.
+	desc = "A pair of fire and impact-resistant corpsman combat gloves. This pair has an extra rubbery coating to help prevent germs."
 	icon_state = "corpsman_base_gloves"
 	item_state = "corpsman_base_gloves"
 	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 15, rad = 0)

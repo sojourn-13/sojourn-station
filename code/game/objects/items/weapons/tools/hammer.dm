@@ -174,20 +174,6 @@
 	degradation = 5 //This one breaks REALLY fast
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
-/obj/item/tool/hammer/makeshift_staff
-	name = "makeshift staff"
-	desc = "Three rods, some duct tape and a lot of bloodlust give you this."
-	icon = 'icons/obj/weapons.dmi'
-	icon_state = "makeshift_staff"
-	item_state = "makeshift_staff"
-	wielded_icon = "makeshift_staff_wielded"
-	tool_qualities = list(QUALITY_HAMMERING = 5)
-	matter = list(MATERIAL_STEEL = 3)
-	max_upgrades = 3
-	armor_penetration = ARMOR_PEN_GRAZING
-	force = WEAPON_FORCE_PAINFUL
-	w_class = ITEM_SIZE_HUGE
-
 /obj/item/tool/hammer/dumbbell
 	name = "dumbbell"
 	desc = "To get stronger with this thing, you need to regularly train for many a month. But to hammer a nail, or crack a skull..."

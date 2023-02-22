@@ -1,6 +1,5 @@
 /obj/item/tool/weldingtool
 	name = "welding tool"
-	desc = "A standard portable welding torch, for all your metalworking needs."
 	icon_state = "welder"
 	item_state = "welder"
 	flags = CONDUCT

@@ -44,11 +44,9 @@
 
 // Oh by the way this didn't work with old click code which is why clicking shit didn't spam you
 /atom/proc/attack_ghost(mob/observer/ghost/user as mob)
-	if(user.client)
-		if(check_rights_for(user.client, R_ADMIN)) // Are they allowed?
-			attack_ai(user)
+	if(user.client && user.client.inquisitive_ghost)
 		user.examinate(src)
-	return FALSE
+	return
 
 // ---------------------------------------
 // And here are some good things for free:

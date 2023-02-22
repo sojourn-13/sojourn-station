@@ -109,17 +109,6 @@
 		list(/obj/item/stack/cable_coil, 2)
 	)
 
-/datum/craft_recipe/clothing/scav_gloves
-	name = "scavenger gloves"
-	result = /obj/item/clothing/gloves/dusters/scav_gloves
-	icon_state = "armor_part"
-	steps = list(
-		list(/obj/item/clothing/gloves/thick/handmade, 1, "time" = 15), // Grab combat gloves
-		list(/obj/item/clothing/gloves/dusters/plasteel, 1, "time" = 15), // Attach knuckle dusters
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL), // Plate the armguards with extra plasteel...
-		list(QUALITY_WELDING, 10, 20) // ...And weld it in place!
-	)
-
 /datum/craft_recipe/clothing/combat_helmet
 	name = "combat helmet"
 	result = /obj/item/clothing/head/helmet/handmade

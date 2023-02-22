@@ -17,7 +17,6 @@
 	fire_verb = "spits"
 	see_in_dark = 10
 	armor_penetration = 15
-	density = 0 // Prevents friendly fire between themselves, projectiles will go over them, making them also harder to target.
 
 	fleshcolor = "#7C90B8"
 	bloodcolor = "#7C90B8"

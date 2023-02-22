@@ -562,28 +562,3 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		else
 			stamped = FALSE
 
-/obj/item/gunbox/forehead
-	name = "Foreman's melee weapon case"
-	desc = "A secure box containing the melee weapon of choice for Foremen."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "rifle_case" // Placeholder?
-
-/obj/item/gunbox/forehead/attack_self(mob/living/user)
-	..()
-	var/stamped
-	if(!stamped)
-		stamped = TRUE
-		var/list/options = list()
-		options["Foreman's Sledgehammer"] = list(/obj/item/tool/hammer/foremansledge)
-		options["\"Render Slayer\" Greatsword"] = list(/obj/item/tool/sword/foreman)
-		var/choice = input(user,"Which weapon will you take?") as null|anything in options
-		if(src && choice)
-			var/list/things_to_spawn = options[choice]
-			for(var/new_type in things_to_spawn)
-				var/atom/movable/AM = new new_type(get_turf(src))
-				if(istype(AM, /obj/item/gun/))
-					to_chat(user, "You have chosen \the [AM].")
-			qdel(src)
-		else
-			stamped = FALSE
-

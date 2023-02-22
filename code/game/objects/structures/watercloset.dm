@@ -469,7 +469,7 @@
 		return
 
 	if(amount_of_reagents < 40 && limited_reagents)
-		to_chat(user, SPAN_WARNING("The water pressure seems to low to wash with."))
+		to_chat(user, SPAN_WARNING("The water presser seems to low to wash with."))
 		return
 
 	if(busy)
@@ -511,7 +511,7 @@
 			if(limited_reagents)
 				amount_of_reagents -= amount_to_add
 		else
-			to_chat(user, SPAN_WARNING("The sink seems to be out of presure"))
+			to_chat(user, SPAN_WARNING("The sink seems to be out of presser"))
 		return 1
 
 	else if (istype(O, /obj/item/tool/baton))

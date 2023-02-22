@@ -342,7 +342,8 @@
 			A wooden club inscribed with several symbols of jana, though they make no sense put together. The wood is of unusual qualities and some lunatic hammered durasteel nails into \
 			it. Either the maker didn't know or didn't care about the value, it still ended up a supremely deadly weapon ... or hammer."
 	icon_state = "oni"
-	force = WEAPON_FORCE_BRUTAL
+	force_unwielded = WEAPON_FORCE_BRUTAL
+	force_wielded = WEAPON_FORCE_LETHAL
 	throwforce = WEAPON_FORCE_PAINFUL
 	w_class = ITEM_SIZE_NORMAL
 	armor_penetration = ARMOR_PEN_HALF

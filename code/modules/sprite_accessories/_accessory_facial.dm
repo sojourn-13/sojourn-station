@@ -65,10 +65,6 @@
 	name = "Broken Man"
 	icon_state = "facial_brokenman"
 
-/datum/sprite_accessory/facial_hair/gt
-	name = "Circle Beard" // Its true name, this is not a goatee.
-	icon_state = "gt"
-
 /datum/sprite_accessory/facial_hair/chinless
 	name = "Chinless Beard"
 	icon_state = "chinlessbeard"
@@ -76,10 +72,6 @@
 /datum/sprite_accessory/facial_hair/chinstrap
 	name = "Chinstrap"
 	icon_state = "chin"
-
-/datum/sprite_accessory/facial_hair/dali
-	name = "Dali Moustache"
-	icon_state = "dali"
 
 /datum/sprite_accessory/facial_hair/dwarf
 	name = "Dwarf Beard"
@@ -89,21 +81,13 @@
 	name = "Elvis Sideburns"
 	icon_state = "elvis"
 
-/datum/sprite_accessory/facial_hair/gp
+/datum/sprite_accessory/facial_hair/gt
 	name = "Goatee"
-	icon_state = "gp" // Goat patch, a true goatee
-
-/datum/sprite_accessory/facial_hair/guyfawkes
-	name = "Guy Fawkes"
-	icon_state = "vendetta"
+	icon_state = "gt"
 
 /datum/sprite_accessory/facial_hair/fullbeard
 	name = "Full Beard"
 	icon_state = "fullbeard"
-
-/datum/sprite_accessory/facial_hair/fb_ml
-	name = "Full Beard (Moustacheless)"
-	icon_state = "fullbeard_ml"
 
 /datum/sprite_accessory/facial_hair/croppedbeard
 	name = "Full Cropped Beard"
@@ -120,10 +104,6 @@
 /datum/sprite_accessory/facial_hair/longbeard
 	name = "Long Beard"
 	icon_state = "longbeard"
-
-/datum/sprite_accessory/facial_hair/lb_ml
-	name = "Long Beard (Moustacheless)"
-	icon_state = "longbeard_ml"
 
 /datum/sprite_accessory/facial_hair/lumberjack
 	name = "Lumberjack Beard"
@@ -148,10 +128,6 @@
 /datum/sprite_accessory/facial_hair/neckbeard
 	name = "Neckbeard"
 	icon_state = "neckbeard"
-
-/datum/sprite_accessory/facial_hair/robotnik // PRRRRRRRROMOTION!
-	name = "Robotnik Moustache"
-	icon_state = "mostachon"
 
 /datum/sprite_accessory/facial_hair/seadog
 	name = "Sea Dog Beard"

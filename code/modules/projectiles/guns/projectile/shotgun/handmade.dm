@@ -25,8 +25,8 @@
 	gun_parts = list(/obj/item/part/gun/frame/slideshot = 1, /obj/item/part/gun/grip/wood = 1 , /obj/item/part/gun/mechanism/shotgun/steel = 1, /obj/item/part/gun/barrel/shotgun/steel = 1)
 
 /obj/item/part/gun/frame/slideshot
-	name = "Homemade shotgun frame"
-	desc = "A homemade slide shotgun frame. Cobbled together from scrap metal, it can take either shotgun or 12mm cheap barrels."
+	name = "Homemade Kalash frame"
+	desc = "A homemade Kalash rifle frame. Cobbled together, but as good as new. Sort of."
 	icon_state = "frame_dshotgun"
 	matter = list(MATERIAL_STEEL = 8)
 	resultvars = list(/obj/item/gun/projectile/shotgun/slidebarrel)
