@@ -53,6 +53,9 @@
 		"gal'h'rfikk", "harfrandid", "mud'gib", "fuu", "ma'jin", "dedo", "ol'btoh", "n'ath", "reth", "sh'yro", "eth", \
 		"d'rekkathnor", "khari'd", "gual'te", "nikka", "nikt'o", "barada", "kla'atu", "barhah", "hra" ,"zar'garis")
 	shorthand = "CT"
+	partial_understanding = list(
+		LANGUAGE_SYNTHETIC = 100
+	)
 
 /datum/language/cult
 	name = LANGUAGE_OCCULT
