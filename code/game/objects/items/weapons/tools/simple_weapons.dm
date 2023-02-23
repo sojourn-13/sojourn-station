@@ -404,7 +404,7 @@
 	force = WEAPON_FORCE_BRUTAL + 2 // 35 damage
 	slot_flags = SLOT_BELT|SLOT_BACK
 	armor_penetration = ARMOR_PEN_MASSIVE // Sharp edge
-	effective_faction = "deathclaw" // Called like this for a reason
+	effective_faction = list("deathclaw") // Called like this for a reason
 	damage_mult = 2
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 5)
 	w_class = ITEM_SIZE_BULKY
