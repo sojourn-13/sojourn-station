@@ -2176,20 +2176,13 @@
 /turf/simulated/floor/tiled,
 /area/nadezhda/dungeon/outside/zoo)
 "hP" = (
-/obj/machinery/door/airlock/maintenance{
-	frequency = 1380;
-	icon_state = "door_closed";
-	id_tag = "supply_shuttle_hatch";
-	locked = 0;
-	name = "Shuttle Hatch";
-	req_access = list(50)
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
+/obj/machinery/door/airlock/maintenance,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
 "hQ" = (
@@ -7379,7 +7372,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "AH" = (
-/obj/structure/multiz/stairs/active/bottom{
+/obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
 	},
 /turf/simulated/shuttle/floor/mining{
@@ -7701,14 +7694,14 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "Cm" = (
-/obj/structure/multiz/stairs/active/bottom{
-	dir = 4
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
+	},
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 4
 	},
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
@@ -11121,11 +11114,11 @@
 /turf/simulated/floor/wood/wild1,
 /area/colony/exposedsun/pastgate)
 "PD" = (
-/obj/structure/multiz/stairs/active/bottom{
-	dir = 4
-	},
 /obj/structure/railing{
 	dir = 1
+	},
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 4
 	},
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
@@ -11368,14 +11361,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/dungeon/outside/prepper)
 "QD" = (
-/obj/machinery/door/airlock/maintenance{
-	frequency = 1380;
-	icon_state = "door_closed";
-	id_tag = "supply_shuttle_hatch";
-	locked = 0;
-	name = "Shuttle Hatch";
-	req_access = list(50)
-	},
+/obj/machinery/door/airlock/maintenance,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -11735,14 +11721,7 @@
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
 "RQ" = (
-/obj/machinery/door/airlock/maintenance{
-	frequency = 1380;
-	icon_state = "door_closed";
-	id_tag = "supply_shuttle_hatch";
-	locked = 0;
-	name = "Shuttle Hatch";
-	req_access = list(50)
-	},
+/obj/machinery/door/airlock/maintenance,
 /turf/simulated/shuttle/floor/mining,
 /area/colony/exposedsun/crashed_shop/outsider)
 "RR" = (
@@ -12407,11 +12386,11 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "Ux" = (
-/obj/structure/multiz/stairs/active/bottom{
-	dir = 4
-	},
 /obj/structure/railing,
 /obj/machinery/light_construct,
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 4
+	},
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -13280,8 +13259,14 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "XO" = (
-/obj/structure/multiz/stairs/active/bottom,
-/obj/structure/lattice,
+/obj/structure/multiz/stairs/enter/bottom,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing{
+	tag = "icon-railing0 (WEST)";
+	dir = 4
+	},
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/colony/exposedsun/crashed_shop/outsider)
 "XP" = (
