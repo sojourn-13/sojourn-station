@@ -20,12 +20,13 @@
 		if(!is_type_in_list(I,can_hold))
 			to_chat(user, "<span class='warning'>[I] won't fit in [src]!</span>")
 			return
-	if(cant_hold.len && is_type_in_list(I, cant_hold))
-		to_chat(usr, SPAN_NOTICE("[src] cannot sheathe [I]."))
-		return
 
 	else if (!(I.slot_flags & SLOT_HOLSTER))
 		to_chat(user, SPAN_WARNING("[I] won't fit in [src]!"))
+		return
+
+	if(cant_hold.len && is_type_in_list(I, cant_hold))
+		to_chat(usr, SPAN_NOTICE("[src] cannot sheathe [I]."))
 		return
 
 	holstered = I
