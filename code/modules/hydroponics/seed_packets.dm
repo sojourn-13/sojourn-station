@@ -104,6 +104,9 @@ var/global/list/plant_seed_sprites = list()
 /obj/item/seeds/mtearseed
 	seed_type = "mtear"
 
+/obj/item/seeds/brootseed
+	seed_type = "broot"
+
 /obj/item/seeds/berryseed
 	seed_type = "berries"
 

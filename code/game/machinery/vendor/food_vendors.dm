@@ -214,6 +214,7 @@
 					/obj/item/seeds/thaadra = 2,
 					/obj/item/seeds/gelthi = 2,
 					/obj/item/seeds/mtearseed = 2,
+					/obj/item/seeds/brootseed = 2,
 					/obj/item/seeds/shandseed = 2,
 					/obj/item/seeds/pineappleseed = 2,
 					)
