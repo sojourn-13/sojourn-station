@@ -137,7 +137,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
 		list(CWJ_USE_STOVE, J_LO, 15 SECONDS)
 	)
-/*
+
 /datum/cooking_with_jane/recipe/popcorn
 	cooking_container = PAN
 	product_type = /obj/item/reagent_containers/food/snacks/popcorn
@@ -148,7 +148,7 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
 		list(CWJ_USE_STOVE, J_LO, 5 SECONDS)
 	)
-*/
+
 /datum/cooking_with_jane/recipe/cookie
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/cookie

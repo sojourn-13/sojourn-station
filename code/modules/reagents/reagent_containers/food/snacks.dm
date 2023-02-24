@@ -766,14 +766,16 @@
 	nutriment_amt = 2
 	matter = list(MATERIAL_BIOMATTER = 2)
 	bitesize = 0.1 //this snack is supposed to be eating during looooong time. And this it not dinner food! --rastaf0
-	New()
-		..()
-		unpopped = rand(1,10)
-	On_Consume()
-		if(prob(unpopped))	//lol ...what's the point?
-			to_chat(usr, SPAN_WARNING("You bite down on an un-popped kernel!"))
-			unpopped = max(0, unpopped-1)
-		..()
+
+/obj/item/reagent_containers/food/snacks/popcorn/Initialize(mapload)
+	. = ..()
+	unpopped = rand(1,10)
+
+/obj/item/reagent_containers/food/snacks/popcorn/On_Consume()
+	if(prob(unpopped))	//lol ...what's the point?
+		to_chat(usr, SPAN_WARNING("You bite down on an un-popped kernel!"))
+		unpopped = max(0, unpopped-1)
+	..()
 
 /obj/item/reagent_containers/food/snacks/loadedbakedpotato
 	name = "loaded baked potato"
@@ -1265,13 +1267,14 @@
 	nutriment_amt = 5
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 9)
-	New()
-		..()
-		if(prob(10))
-			name = "exceptional plump helmet biscuit"
-			desc = "Microwave is taken by a fey mood! It has cooked an exceptional plump helmet biscuit!"
-			reagents.add_reagent("nutriment", 3)
-			reagents.add_reagent("tricordrazine", 5)
+
+/obj/item/reagent_containers/food/snacks/plumphelmetbiscuit/Initialize(mapload)
+	. = ..()
+	if(prob(10))
+		name = "exceptional plump helmet biscuit"
+	//	desc = "Microwave is taken by a fey mood! It has cooked an exceptional plump helmet biscuit!"
+		reagents.add_reagent("nutriment", 3)
+		reagents.add_reagent("tricordrazine", 5)
 
 /obj/item/reagent_containers/food/snacks/chawanmushi
 	name = "chawanmushi"

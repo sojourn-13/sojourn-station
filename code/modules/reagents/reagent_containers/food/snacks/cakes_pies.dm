@@ -406,14 +406,14 @@
 	nutriment_amt = 8
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 12)
-	New()
-		..()
-		if(prob(10))
-			sleep(10)
-			name = "exceptional plump pie"
-			desc = "Microwave is taken by a fey mood! It has cooked an exceptional plump pie!"
-			reagents.add_reagent("tricordrazine", 5)
-			matter = list(MATERIAL_BIOMATTER = 18)
+
+/obj/item/reagent_containers/food/snacks/plump_pie/Initialize(mapload)
+	. = ..()
+	if(prob(10))
+		name = "exceptional plump pie"
+		//desc = "Microwave is taken by a fey mood! It has cooked an exceptional plump pie!"
+		reagents.add_reagent("tricordrazine", 5)
+		matter = list(MATERIAL_BIOMATTER = 18)
 
 /obj/item/reagent_containers/food/snacks/xemeatpie
 	name = "xeno-pie"
