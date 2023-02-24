@@ -23,7 +23,7 @@
 
 /obj/item/part/gun/frame/tacticool
 	name = "Tacticool frame"
-	desc = "A Tacticool revolver frame. A device that can put holes in ships, let alone a person."
+	desc = "A Tacticool revolver frame. A device that can put holes in people as well as ship hulls."
 	icon_state = "frame_skydriver"
 	result = /obj/item/gun/projectile/revolver/tacticool_revolver
 	resultvars = list(/obj/item/gun/projectile/revolver/tacticool_revolver)

@@ -89,6 +89,13 @@
 		list(CRAFT_MATERIAL, 60, MATERIAL_AMERIDIAN, "time" = 25)
 	)
 
+/datum/craft_recipe/hair_pin
+	name = "hair pin"
+	result = /obj/item/clothing/head/pin
+	steps = list(
+		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL)
+	)
+
 // Consume!! Makes it's own tab. Not a big deal I guess.
 
 /datum/craft_recipe/consumer

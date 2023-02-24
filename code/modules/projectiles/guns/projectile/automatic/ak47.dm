@@ -39,8 +39,8 @@
 	icon_state = "frame_ak"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/ak47/sa
-	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black)
-	resultvars = list(/obj/item/gun/projectile/automatic/ak47, /obj/item/gun/projectile/automatic/ak47/sa, /obj/item/gun/projectile/automatic/ak47/NM_colony)
+	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
+	resultvars = list(/obj/item/gun/projectile/automatic/ak47, /obj/item/gun/projectile/automatic/ak47/sa, /obj/item/gun/projectile/automatic/ak47/NM_colony, /obj/item/gun/projectile/automatic/ak47/sa/tac)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
 	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
 
@@ -103,7 +103,7 @@
 //AK-47 base-frame
 /obj/item/part/gun/frame/saiga
 	name = "Saiga frame"
-	desc = "An Saiga shotgun frame. Based off the timeless AK design."
+	desc = "A Saiga shotgun frame. Based off the timeless AK design."
 	icon_state = "frame_ak"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/ak47/saiga
@@ -161,7 +161,7 @@
 	init_recoil = RIFLE_RECOIL(0.8)
 	saw_off = FALSE
 	serial_type = "SA"
-	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1, /obj/item/part/gun/barrel/shotgun = 1, /obj/item/part/gun/mechanism/shotgun = 1)
+	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	init_firemodes = list(
@@ -169,6 +169,7 @@
 		SEMI_AUTO_NODELAY,
 		list(mode_name="fire shotgun", mode_desc="Shoot the underbarrel shotgun",  burst=null, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
+	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 /obj/item/gun/projectile/automatic/ak47/sa/tac/Initialize()
 	. = ..()
@@ -237,7 +238,25 @@
 	price_tag = 500
 	serial_type = "INDEX"
 	serial_shown = FALSE
-	gun_parts = list(/obj/item/part/gun/frame/kalash = 1, /obj/item/part/gun/grip/black = 1 , /obj/item/part/gun/mechanism/autorifle/steel = 1, /obj/item/part/gun/barrel/lrifle/steel = 1)
+	gun_parts = list(/obj/item/part/gun/frame/kalash = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle/steel = 1, /obj/item/part/gun/barrel/lrifle/steel = 1)
+
+/obj/item/gun/projectile/automatic/ak47/makeshift/update_icon()
+	..()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(ammo_magazine)
+		add_overlay("_mag[ammo_magazine.max_ammo]")
+	else
+		cut_overlays()
+		return
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
 
 /obj/item/part/gun/frame/kalash
 	name = "Homemade Kalash frame"
@@ -247,4 +266,5 @@
 	resultvars = list(/obj/item/gun/projectile/automatic/ak47/makeshift)
 	gripvars = list(/obj/item/part/gun/grip/black)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle/steel
-	barrelvars = list(/obj/item/part/gun/barrel/lrifle/steel, /obj/item/part/gun/barrel/srifle/steel)
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle/steel, /obj/item/part/gun/barrel/srifle/steel)	//6.5mm or 7.62mm.
+	nra = FALSE		//This controls if the weapon checks for barrels or not. If you want a gun to have MULTIPLE calibers that it can be chambered in, put FALSE.

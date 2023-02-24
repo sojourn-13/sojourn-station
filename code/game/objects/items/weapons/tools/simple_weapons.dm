@@ -109,6 +109,24 @@
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 45
 
+/obj/item/tool/fireaxe/handmade
+	name = "makeshift axe"
+	desc = "A heavy plasteel blade affixed to a welded metal shaft, for close up carnage."
+	icon_state = "makeshift_axe"
+	item_state = "makeshift_axe"
+	wielded_icon = "makeshift_axe_wielded"
+	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 3)
+	force = WEAPON_FORCE_DANGEROUS
+	throwforce = WEAPON_FORCE_NORMAL
+	armor_penetration = ARMOR_PEN_MODERATE
+	w_class = ITEM_SIZE_NORMAL
+	attack_verb = list("chopped", "torn", "cut", "cleaved", "slashed")
+	tool_qualities = list(QUALITY_CUTTING = 10)
+	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
+	embed_mult = 1.1
+	degradation = 1.5
+	max_upgrades = 5
+
 /obj/item/tool/minihoe
 	name = "mini hoe"
 	desc = "It's used for removing weeds or scratching your back."
@@ -361,6 +379,44 @@
 	armor_penetration = ARMOR_PEN_SHALLOW
 	price_tag = 325
 
+/obj/item/tool/sword/handmade
+	name = "junkblade"
+	desc = "Hack and slash!"
+	icon_state = "msword"
+	item_state = "msword"
+	slot_flags = SLOT_BELT|SLOT_BACK
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 2) // 2 rods, 5 plasteel
+	armor_penetration = ARMOR_PEN_MODERATE
+	tool_qualities = list(QUALITY_CUTTING = 15,  QUALITY_SAWING = 5)
+	degradation = 1.5 // Crappily made
+	max_upgrades = 5 // Handmade nature
+	price_tag = 100 // Made with plasteel
+
+/obj/item/tool/sword/foreman
+	name = "\"Render Slayer\" Greatsword"
+	desc = "This thing is too big to be called a sword. \
+			Too big, too thick, too heavy, and too rough, \
+			it is more like a large hunk of plasteel. \nA \
+			Foreman's weapon of choice when bashing is not enough; \
+			you have to cleave through the hordes to survive, and keep struggling."
+	icon_state = "renderslayer"
+	item_state = "renderslayer"
+	force = WEAPON_FORCE_BRUTAL + 2 // 35 damage
+	slot_flags = SLOT_BELT|SLOT_BACK
+	armor_penetration = ARMOR_PEN_MASSIVE // Sharp edge
+	effective_faction = list("deathclaw") // Called like this for a reason
+	damage_mult = 2
+	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 5)
+	w_class = ITEM_SIZE_BULKY
+	origin_tech = list(TECH_COMBAT = 3)
+	attack_verb = list("attacked", "CLANG'd", "slashed", "sliced", "diced", "cut")
+	hitsound = 'sound/weapons/renderslash.ogg' // Not gonna CLANG this up for the sake of our ears, but snowflake attack sound.
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "renderslayer"
+		)
+
 /obj/item/tool/sword/machete
 	name = "machete"
 	desc = "An explorer's best friend and trust back up plan. Or primary plan for those who like to get in there personally."
@@ -533,9 +589,21 @@
 	if(istype(target))
 		target.apply_effect(rand(5, 10), IRRADIATE)
 
+/obj/item/tool/spear/makeshift_halberd
+	name = "makeshift halberd"
+	desc = "Slap a heavy blade on some rods duct-taped together and call it a day."
+	icon_state = "makeshift_halberd"
+	item_state = "makeshift_halberd"
+	wielded_icon = "makeshift_halberd_wielded"
+	force = WEAPON_FORCE_ROBUST
+	throwforce = WEAPON_FORCE_NORMAL
+	armor_penetration = ARMOR_PEN_SHALLOW
+	tool_qualities = list(QUALITY_CUTTING = 10)
+	matter = list(MATERIAL_STEEL = 5)
+
 /obj/item/tool/spear/hunter_halberd
 	name = "halberd"
-	desc = "A hand-crafted halberd with a red cloth wrapped around the base of the blade itself; "
+	desc = "A hand-crafted halberd with a red cloth wrapped around the base of the blade itself. A Hunter's signature melee weapon of choice."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "hunter_halberd"
 	item_state = "hunter_halberd"
@@ -544,3 +612,67 @@
 	armor_penetration = ARMOR_PEN_DEEP
 	price_tag = 500
 	matter = list(MATERIAL_STEEL = 22, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 4)
+
+//Shitty loadout weapons
+/obj/item/tool/cheap
+	name = "cheap sword"
+	desc = "A sword of acceptable quality, mass-produced by Lonestar. It's no work art, but it's sharp enough to get the job done."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "cheap_sword"
+	item_state = "cheap_sword"
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 5)
+	sharp = TRUE
+	edge = TRUE
+	w_class = ITEM_SIZE_NORMAL
+	slot_flags = SLOT_BELT
+	worksound = WORKSOUND_HARD_SLASH
+	force = WEAPON_FORCE_ROBUST
+	armor_penetration = ARMOR_PEN_DEEP
+
+	throwforce = WEAPON_FORCE_NORMAL
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
+	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
+	w_class = ITEM_SIZE_NORMAL
+	price_tag = 100
+
+/obj/item/tool/cheap/axe
+	name = "cheap tomahawk"
+	desc = "A tomahawk of acceptable quality, mass-produced by Lonestar. Just expensive enough to be called tactical."
+	icon_state = "cheap_axe"
+	item_state = "cheap_axe"
+	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
+	attack_verb = list("attacked", "slashed", "chopped", "sliced", "torn", "ripped", "diced", "cut")
+
+/obj/item/tool/cheap/katana
+	name = "cheap katana"
+	desc = "A katana of acceptable quality, mass-produced by Lonestar. Easily their best-selling product from this lineup."
+	icon_state = "katana_old"
+	item_state = "katana"
+
+/obj/item/tool/cheap/spear
+	name = "cheap spear"
+	desc = "A spear of acceptable quality, mass-produced by Lonestar. Place sharp end towards enemy."
+	icon_state = "cheap_spear"
+	item_state = "cheap_spear"
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = SLOT_BACK|SLOT_BELT
+	throwforce = WEAPON_FORCE_BRUTAL
+	throw_speed = 3
+	embed_mult = 1.5
+	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
+	tool_qualities = list(QUALITY_CUTTING = 15,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 10)
+	hitsound = 'sound/weapons/slice.ogg'
+	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "cheap_spear"
+		)
+
+/obj/item/tool/cheap/saber
+	name = "cheap saber"
+	desc = "A spear of acceptable quality, mass-produced by Lonestar. Probably not fit for parrying, but why not give it a try?"
+	icon_state = "cheap_saber"
+	item_state = "cutlass"

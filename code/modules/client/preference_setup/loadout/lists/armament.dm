@@ -91,29 +91,27 @@
 	display_name = "katana \"Saya\" sheath"
 	path = /obj/item/clothing/accessory/holster/saber/saya
 
-/datum/gear/armament/holster/saber/machete
-	display_name = "machete scabbard"
-	path = /obj/item/clothing/accessory/holster/saber/machete
-
 /datum/gear/armament/holster/church
 	display_name = "Absolutist Sword Scabbard"
 	path = /obj/item/clothing/accessory/holster/saber/greatsword/churchprint
 	allowed_roles = list("Prime","Vector")
 
-/datum/gear/armament/makeshift/saber
+/datum/gear/armament/saber
 	display_name = "Decorative Saber"
 	path = /obj/item/tool/sword/saber
 	cost = 2
+	allowed_roles = list("Premier","Steward","Blackshield Commander","Warrant Officer")
 
-/datum/gear/armament/cutlass
-	display_name = "cutlass"
-	path = /obj/item/tool/sword/saber/cutlass
+/datum/gear/armament/cheap_melee
+	display_name = "cheap melee selection"
+	path = /obj/item/tool/cheap
 	cost = 3
+	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/armament/machete
-	display_name = "Machete"
-	path = /obj/item/tool/sword/machete
-	cost = 3
+/datum/gear/armament/cheap_sheath
+	display_name = "generic scabbard"
+	path = /obj/item/clothing/accessory/holster/saber/machete/cheap
+	cost = 1
 
 /datum/gear/armament/holster/nt
 	display_name = "short sword"

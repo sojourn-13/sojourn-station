@@ -54,7 +54,7 @@
 
 /obj/item/part/gun/frame/specop
 	name = "Specop SMG frame"
-	desc = "An Spec-Op SMG frame. For the most talented urban assassin."
+	desc = "A Spec-Op SMG frame. For the most talented urban assassin."
 	icon_state = "frame_specop"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/specop

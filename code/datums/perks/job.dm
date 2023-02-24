@@ -258,6 +258,19 @@
 		holder.metabolism_effects.calculate_nsa()
 	..()
 
+/datum/perk/scribe
+	name = "Scribe"
+	desc = "Your ability to turn experiences into words knows no bounds. Paper at this point is hardly able to hold the power of your writing."
+
+/datum/perk/scribe/assign(mob/living/carbon/human/H)
+	..()
+	if(holder)
+		holder.sdisabilities|=BLIND
+
+/datum/perk/scribe/remove()
+	if(holder)
+		holder.sdisabilities&=BLIND
+	..()
 
 /datum/perk/bartender
 	name = "Bar Menu"

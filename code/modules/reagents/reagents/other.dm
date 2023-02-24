@@ -41,7 +41,8 @@
 
 /datum/reagent/other/crayon_dust/initialize_data(var/newdata)
 	..()
-	color = newdata
+	if(newdata)
+		color = newdata
 	return
 
 /datum/reagent/other/crayon_dust/mix_data(var/newdata, var/newamount)
@@ -139,7 +140,8 @@
 
 /datum/reagent/other/paint/initialize_data(var/newdata)
 	..()
-	color = newdata
+	if(newdata)
+		color = newdata
 	return
 
 /datum/reagent/other/paint/mix_data(var/newdata, var/newamount)

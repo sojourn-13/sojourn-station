@@ -17,8 +17,8 @@
 					/obj/item/device/scanner/health = 5,
 					/obj/item/reagent_containers/glass/beaker = 4,
 					/obj/item/reagent_containers/dropper = 2,
-					/obj/item/stack/medical/advanced/bruise_pack = 3,
-					/obj/item/stack/medical/advanced/ointment = 3,
+					/obj/item/stack/medical/bruise_pack/advanced = 3,
+					/obj/item/stack/medical/ointment/advanced = 3,
 					/obj/item/stack/medical/splint = 2)
 	contraband = list(/obj/item/reagent_containers/pill/tox = 3,
 						/obj/item/reagent_containers/pill/stox = 4,
@@ -100,10 +100,10 @@
 
 		/obj/item/stack/medical/bruise_pack = 6,
 		/obj/item/stack/medical/bruise_pack/soteria = 4,
-		/obj/item/stack/medical/advanced/bruise_pack = 2,
+		/obj/item/stack/medical/bruise_pack/advanced = 2,
 		/obj/item/stack/medical/ointment = 6,
 		/obj/item/stack/medical/ointment/soteria = 4,
-		/obj/item/stack/medical/advanced/ointment = 2,
+		/obj/item/stack/medical/ointment/advanced = 2,
 
 		/obj/item/stack/medical/splint = 20, //Legit dosnt heal, stacks on 1 cuz scam
 		/obj/item/stack/nanopaste = 4,
@@ -138,11 +138,11 @@
 
 		/obj/item/stack/medical/bruise_pack/handmade = 25,
 		/obj/item/stack/medical/bruise_pack = 50,
-		/obj/item/stack/medical/advanced/bruise_pack = 100,
+		/obj/item/stack/medical/bruise_pack/advanced = 100,
 		/obj/item/stack/medical/bruise_pack/soteria = 700,
 		/obj/item/stack/medical/ointment/handmade  = 25,
 		/obj/item/stack/medical/ointment = 35,
-		/obj/item/stack/medical/advanced/ointment = 100,
+		/obj/item/stack/medical/ointment/advanced = 100,
 		/obj/item/stack/medical/ointment/soteria = 700,
 		/obj/item/stack/medical/splint/improvised = 5,
 		/obj/item/stack/medical/splint = 10,

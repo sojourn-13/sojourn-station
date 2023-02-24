@@ -197,6 +197,12 @@
 	icon_state = "churchgrobe"
 	item_state = "churchgrobe"
 
+/obj/item/clothing/under/rank/church/ornate
+	desc = "A black-and-white robe with ornate golden decoration."
+	name = "ornate absolutist robe"
+	icon_state = "nt_ornate"
+	item_state = "nt_ornate"
+
 /obj/item/clothing/under/rank/chef
 	desc = "A pleasant yet practical suit for professional kitchen staff."
 	name = "chef's uniform"

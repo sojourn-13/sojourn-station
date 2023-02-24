@@ -21,7 +21,7 @@ var/global/datum/global_init/init = new ()
 	initialize_chemical_reactions()
 	initialize_mutation_recipes()
 
-	
+
 	// Set up roundstart seed list.
 	plant_controller = new()
 
@@ -104,6 +104,8 @@ var/game_id
 	//Emergency Fix
 	load_mods()
 	//end-emergency fix
+
+	TgsNew()
 
 	generate_body_modification_lists()
 
@@ -217,6 +219,8 @@ var/world_topic_spam_protect_time = world.timeofday
 	for(var/client/C in clients)
 		if(config.server)	//if you set a server location in config.txt, it sends you there instead of trying to reconnect to the same world address. -- NeoFite
 			C << link("byond://[config.server]")
+
+	TgsReboot()
 
 	#ifdef UNIT_TESTS
 	FinishTestRun()

@@ -378,11 +378,11 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/med/medical_job/populate_contents()
-	new /obj/item/stack/medical/advanced/bruise_pack/large(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment/large(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/large(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced/large(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
@@ -395,11 +395,11 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/med/medical_job_psyco/populate_contents()
-	new /obj/item/stack/medical/advanced/bruise_pack/large(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment/large(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/large(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced/large(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
@@ -415,11 +415,11 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/med/medical_job_cbo/populate_contents()
-	new /obj/item/stack/medical/advanced/bruise_pack/large(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment/large(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/large(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced/large(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
@@ -552,6 +552,31 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		options["Bullpip SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_35/hv,/obj/item/ammo_magazine/smg_35/hv)
 		options["Soteria \"Sprocket\" lasgun"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
 		var/choice = input(user,"Which gun will you take?") as null|anything in options
+		if(src && choice)
+			var/list/things_to_spawn = options[choice]
+			for(var/new_type in things_to_spawn)
+				var/atom/movable/AM = new new_type(get_turf(src))
+				if(istype(AM, /obj/item/gun/))
+					to_chat(user, "You have chosen \the [AM].")
+			qdel(src)
+		else
+			stamped = FALSE
+
+/obj/item/gunbox/forehead
+	name = "Foreman's melee weapon case"
+	desc = "A secure box containing the melee weapon of choice for Foremen."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "rifle_case" // Placeholder?
+
+/obj/item/gunbox/forehead/attack_self(mob/living/user)
+	..()
+	var/stamped
+	if(!stamped)
+		stamped = TRUE
+		var/list/options = list()
+		options["Foreman's Sledgehammer"] = list(/obj/item/tool/hammer/foremansledge)
+		options["\"Render Slayer\" Greatsword"] = list(/obj/item/tool/sword/foreman)
+		var/choice = input(user,"Which weapon will you take?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]
 			for(var/new_type in things_to_spawn)

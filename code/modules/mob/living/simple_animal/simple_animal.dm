@@ -706,7 +706,7 @@
 		return
 	return ..()
 
-
+/*
 /mob/living/simple_animal/handle_fire()
 	return
 
@@ -714,9 +714,9 @@
 	return
 /mob/living/simple_animal/IgniteMob()
 	return
-/mob/living/simple_animal/ExtinguishMob()
+/mob/living/simple_animal/ExtinguishMob()		no simplmobs made of abestos anymore
 	return
-
+*/
 
 //I wanted to call this proc alert but it already exists.
 //Basically makes the mob pay attention to the world, resets sleep timers, awakens it from a sleeping state sometimes

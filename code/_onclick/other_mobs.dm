@@ -45,6 +45,8 @@
 	// if((interaction_flags_atom & INTERACT_ATOM_REQUIRES_DEXTERITY) && !ISADVANCEDTOOLUSER(user))
 	// 	to_chat(user, span_warning("You don't have the dexterity to do this!"))
 	// 	return FALSE
+	if(is_admin(user) && isghost(user)) //admin abuse
+		return TRUE
 	// BANAID: advanced tool usrs can only interact uis
 	if(!user.IsAdvancedToolUser())
 		to_chat(user, span_warning("You don't have the dexterity to do this!"))

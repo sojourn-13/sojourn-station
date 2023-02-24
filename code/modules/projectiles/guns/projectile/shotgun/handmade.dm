@@ -22,3 +22,15 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.4 // 40 vig
+	gun_parts = list(/obj/item/part/gun/frame/slideshot = 1, /obj/item/part/gun/grip/wood = 1 , /obj/item/part/gun/mechanism/shotgun/steel = 1, /obj/item/part/gun/barrel/shotgun/steel = 1)
+
+/obj/item/part/gun/frame/slideshot
+	name = "Homemade shotgun frame"
+	desc = "A homemade slide shotgun frame. Cobbled together from scrap metal, it can take either shotgun or 12mm cheap barrels."
+	icon_state = "frame_dshotgun"
+	matter = list(MATERIAL_STEEL = 8)
+	resultvars = list(/obj/item/gun/projectile/shotgun/slidebarrel)
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/shotgun/steel
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun/steel, /obj/item/part/gun/barrel/kurtz/steel)	//shotgun or 12mm.
+	nra = FALSE		//This controls if the weapon checks for barrels or not. If you want a gun to have MULTIPLE calibers that it can be chambered in, put FALSE.
