@@ -595,6 +595,88 @@
 	affective_ap_range = 12 //Good rifling!
 	recoil = 35
 
+//Mech
+/obj/item/projectile/bullet/mech_coilgun //Industrial Coilgun
+	name = "coilgun round"
+	icon_state = null
+	damage_types = list(BRUTE = 26)
+	armor_penetration = 20
+	penetrating = 1
+
+	can_ricochet = FALSE
+	embed = FALSE //Goes right through
+	affective_damage_range = 9
+	affective_ap_range = 7
+
+	recoil = 2
+
+/obj/item/projectile/bullet/pellet/mech_flak //Flak Cannon
+	name = "flak shrapnel"
+	icon_state = "l_birdshot-4"
+	damage_types = list(BRUTE = 11)
+	armor_penetration = 22
+	penetrating = 0
+
+	pellets = 4			//number of pellets
+	range_step = 4		//projectile will lose a fragment each time it travels this distance.
+	base_spread = 15	//lower means the pellets spread more across body parts.
+	spread_step = 5	//higher means the pellets spread more across body parts with distance
+
+	can_ricochet = FALSE
+	embed = TRUE
+	sharp = FALSE
+
+	affective_damage_range = 8
+	affective_ap_range = 9 //Anti-Air
+	recoil = 2
+
+/obj/item/projectile/bullet/pellet/mech_flak/military //Scatter-Shot Autocannon
+	range_step = 8		//projectile will lose a fragment each time it travels this distance.
+	base_spread = 90	//lower means the pellets spread more across body parts.
+	spread_step = 1	//higher means the pellets spread more across body parts with distance
+
+	affective_damage_range = 11
+	affective_ap_range = 11  //Anti-Air
+
+/obj/item/projectile/bullet/mech_machinegun //Heavy Machinegun
+	name = "large caliber bullet"
+	icon_state = "bullet_heavy"
+	damage_types = list(BRUTE = 13)
+	armor_penetration = 15 //To keep it somewhat fair towards the handhelds considering it has higher ammo capacity
+	penetrating = 1
+
+	can_ricochet = TRUE
+
+	affective_damage_range = 6
+	affective_ap_range = 6 //Heavy blarge caliber meaning bit less range
+	recoil = 8
+
+/obj/item/projectile/bullet/mech_autocannon //Autocannon
+	name = "gigantic round"
+	icon_state = "slug"
+	damage_types = list(BRUTE = 56)
+	armor_penetration = 50 //Tally ho
+	penetrating = 3 //tank sized round
+
+	can_ricochet = FALSE
+
+	affective_damage_range = 8
+	affective_ap_range = 8 //Heavy blarge caliber meaning bit less range
+	recoil = 2
+
+/obj/item/projectile/bullet/mech_burstcannon //Burst-Fire Autocannon
+	name = "humongous round"
+	icon_state = "bullet_kurtz"
+	damage_types = list(BRUTE = 26)
+	armor_penetration = 43 //This fires 2 in a row so keep that in mind
+	penetrating = 3 //tank sized round
+
+	can_ricochet = FALSE
+
+	affective_damage_range = 10
+	affective_ap_range = 10 //Heavy blarge caliber meaning bit less range
+	recoil = 2
+
 //Shotguns
 //*********************************//
 
@@ -800,13 +882,6 @@
 	range_step = 2 //and at longer range
 	step_delay = 1.1 //we travel a bit slower
 	recoil = 13
-
-/obj/item/projectile/bullet/pellet/shotgun/flak //Devastating at point blank, but worthless past
-	name = "jagged shrapnel"
-	damage_types = list(BRUTE = 5.5) //Fired in bursts of three, for a total of 12 pellets at touch distances.
-	pellets = 3
-	agony = 0 //No.
-	recoil = 5
 
 //'Laser' buckshot. Effectively just burn buckshot used for the Abdication.
 /obj/item/projectile/bullet/pellet/shotgun/energy
