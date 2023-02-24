@@ -100,10 +100,11 @@
 	nutriment_desc = list("bun" = 2, "metal" = 3)
 	nutriment_amt = 2
 	matter = list(MATERIAL_BIOMATTER = 6)
-	New()
-		..()
-		if(prob(5))
-			reagents.add_reagent("nanites", 2)
+
+/obj/item/reagent_containers/food/snacks/roburger/Initialize(mapload)
+	. = ..()
+	if(prob(5))
+		reagents.add_reagent("nanites", 2)
 
 /obj/item/reagent_containers/food/snacks/roburgerbig
 	name = "roburger"
@@ -115,10 +116,10 @@
 	center_of_mass = list("x"=16, "y"=11)
 	matter = list(MATERIAL_BIOMATTER = 2)
 
-	New()
-		..()
-		reagents.add_reagent("nanites", 100)
-		bitesize = 0.1
+/obj/item/reagent_containers/food/snacks/roburgerbig/Initialize(mapload)
+	. = ..()
+	reagents.add_reagent("nanites", 100)
+	bitesize = 0.1
 
 /obj/item/reagent_containers/food/snacks/xenoburger
 	name = "xenoburger"
@@ -127,10 +128,11 @@
 	filling_color = "#43DE18"
 	center_of_mass = list("x"=16, "y"=11)
 	matter = list(MATERIAL_BIOMATTER = 13)
-	New()
-		..()
-		reagents.add_reagent("protein", 8)
-		bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/xenoburger/Initialize(mapload)
+	. = ..()
+	reagents.add_reagent("protein", 8)
+	bitesize = 2
 
 /obj/item/reagent_containers/food/snacks/clownburger
 	name = "clown burger"
