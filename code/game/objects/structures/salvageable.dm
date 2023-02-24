@@ -580,3 +580,77 @@ obj/structure/salvageable/bliss/Initialize()
 		/obj/item/trash/material/circuit = 60,
 		/obj/item/circuitboard/os_generator = 30
 	)
+
+
+// Deepmaints cryo pod
+
+
+/obj/structure/salvageable/deepmaints_cryopod
+	name = "locked cryopod"
+	desc = "A old cryo pod thats sealed shut. What wounders could be inside..."
+	icon = 'icons/obj/cryogenics.dmi' // map only
+	icon_state = "pod_preview"
+	salvageable_parts = list(
+		/obj/item/stock_parts/console_screen = 80,
+		/obj/item/stock_parts/micro_laser = 50,
+		/obj/item/stock_parts/micro_laser = 20,
+		/obj/item/scrap_lump = 40,
+		/obj/item/scrap_lump = 40,
+		/obj/item/stock_parts/capacitor = 50,
+		/obj/item/trash/material/circuit = 60,
+		/obj/item/reagent_containers/glass/beaker = 40,
+		/obj/item/storage/freezer/medical/contains_teratomas = 10
+	)
+	var/mob/occupant = null
+	var/on = FALSE
+
+/obj/structure/salvageable/deepmaints_cryopod/dismantle()
+	new /obj/machinery/constructable_frame/machine_frame/vertical (src.loc)
+	for(var/path in salvageable_parts)
+		if(prob(salvageable_parts[path]))
+			new path (loc)
+	if(occupant)
+		new occupant(src.loc)
+	return
+
+/obj/structure/salvageable/deepmaints_cryopod/Initialize()
+	. = ..()
+	if(prob(80))
+		occupant = pick(subtypesof(/mob/living/simple_animal/hostile/hivemind))
+
+	if(prob(40))
+		on = TRUE
+
+	salvageable_parts = list(
+		/obj/item/stock_parts/console_screen = 80,
+		/obj/item/stock_parts/micro_laser = 50,
+		/obj/item/stock_parts/micro_laser = 20,
+		/obj/item/scrap_lump = 40,
+		/obj/item/scrap_lump = 40,
+		/obj/item/stock_parts/capacitor = 50,
+		/obj/item/trash/material/circuit = 60,
+		/obj/item/reagent_containers/glass/beaker = 40,
+		/obj/item/storage/freezer/medical/contains_teratomas = 50
+	)
+
+	icon = 'icons/obj/cryogenics_split.dmi'
+	update_icon()
+
+/obj/structure/salvageable/deepmaints_cryopod/update_icon()
+	cut_overlays()
+	icon_state = "pod[on]"
+	var/image/I
+
+	I = image(icon, "pod[on]_top")
+	I.layer = WALL_OBJ_LAYER
+	I.pixel_z = 32
+	add_overlay(I)
+
+	I = image(icon, "lid[on]")
+	I.layer = WALL_OBJ_LAYER
+	add_overlay(I)
+
+	I = image(icon, "lid[on]_top")
+	I.layer = WALL_OBJ_LAYER
+	I.pixel_z = 32
+	add_overlay(I)

@@ -54,12 +54,8 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/deepmaint)
 "l" = (
-/obj/structure/railing{
-	tag = "icon-railing0 (WEST)";
-	icon_state = "railing0";
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/techmaint_cargo,
 /area/deepmaint)
 "m" = (
 /obj/structure/table/standard,
@@ -70,25 +66,8 @@
 /obj/random/psi_megafauna,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/deepmaint)
-"n" = (
-/obj/structure/railing{
-	tag = "icon-railing0 (EAST)";
-	icon_state = "railing0";
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
-/area/deepmaint)
 "o" = (
-/obj/structure/railing{
-	tag = "icon-railing0 (WEST)";
-	icon_state = "railing0";
-	dir = 8
-	},
-/obj/structure/railing,
-/turf/simulated/floor/plating/under,
-/area/deepmaint)
-"p" = (
-/obj/structure/railing,
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/plating/under,
 /area/deepmaint)
 "q" = (
@@ -99,13 +78,8 @@
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/deepmaint)
 "r" = (
-/obj/structure/railing,
-/obj/structure/railing{
-	tag = "icon-railing0 (EAST)";
-	icon_state = "railing0";
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/techmaint_perforated,
 /area/deepmaint)
 "t" = (
 /obj/random/cluster/psi_monster,
@@ -157,21 +131,21 @@ c
 c
 c
 c
-l
-o
+f
+f
 a
 j
 b
 "}
 (3,1,1) = {"
-b
+r
 c
 d
 f
 f
+o
 f
 f
-p
 a
 j
 b
@@ -187,7 +161,7 @@ h
 c
 w
 j
-b
+r
 "}
 (5,1,1) = {"
 b
@@ -200,20 +174,20 @@ i
 h
 a
 j
-b
+r
 "}
 (6,1,1) = {"
 b
 a
-f
+o
 c
 g
-j
+l
 j
 q
 t
 j
-b
+r
 "}
 (7,1,1) = {"
 b
@@ -226,7 +200,7 @@ m
 h
 a
 j
-b
+r
 "}
 (8,1,1) = {"
 b
@@ -239,7 +213,7 @@ h
 c
 a
 j
-b
+r
 "}
 (9,1,1) = {"
 b
@@ -247,22 +221,22 @@ c
 d
 f
 f
+o
 f
 f
-p
 a
 j
 b
 "}
 (10,1,1) = {"
-b
-c
-c
-c
-c
-c
-n
 r
+c
+c
+c
+c
+c
+f
+f
 a
 j
 b
