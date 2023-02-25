@@ -41,7 +41,8 @@
 #define LANGUAGE_AKULA "Akula"
 #define LANGUAGE_MARQUA "Marqua"
 #define LANGUAGE_PLANT "Native Plant"
-#define LANGUAGE_SYNTHETIC	"Technical Cant"
+#define LANGUAGE_SYNTHETIC "Technical Cant"
+#define LANGUAGE_MERP "Narad Pidgin"
 
 // Special / Antag langauges.
 #define LANGUAGE_MONKEY "Chimpanzee"

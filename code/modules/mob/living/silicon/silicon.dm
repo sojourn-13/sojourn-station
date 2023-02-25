@@ -55,6 +55,7 @@
 	add_language(LANGUAGE_MARQUA)
 	add_language(LANGUAGE_PLANT)
 	add_language(LANGUAGE_SYNTHETIC)
+	add_language(LANGUAGE_MERP)
 	init_id()
 	init_subsystems()
 
