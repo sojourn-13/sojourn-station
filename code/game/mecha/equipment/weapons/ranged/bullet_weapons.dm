@@ -1,13 +1,13 @@
 
 /*
  * Contains
- * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot
- * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/flak
- * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg
- * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/lmg/scrap
- * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flare
- * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/explosive
- * /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flashbang
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/flak
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/hmg
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/cannon/military
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/ultracannon
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot
  */
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic

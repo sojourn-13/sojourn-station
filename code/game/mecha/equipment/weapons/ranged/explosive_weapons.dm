@@ -79,12 +79,12 @@
 	projectile = /obj/item/longtom
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 20, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5, MATERIAL_URANIUM = 5)
 	ammo_type = null //Cannot reload it
-	missile_speed = 0.2 //Comically slow
+	missile_speed = 0.1 //Comically slow
 	fire_sound = 'sound/mecha/weapons/rocketlauncher.ogg'
 	projectiles_per_shot = 1
 	projectiles = 1
-	max_ammo = 1
-	projectile_energy_cost = 4000
+	max_ammo = 0
+	projectile_energy_cost = 1000000 //Wacky bandaid to make it unrearmable due to how missiles are coded for whatever reason
 	equip_cooldown = 60
 	required_type = list(/obj/mecha/combat)
 

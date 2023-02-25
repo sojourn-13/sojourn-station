@@ -648,7 +648,7 @@
 	can_ricochet = TRUE
 
 	affective_damage_range = 6
-	affective_ap_range = 6 //Heavy blarge caliber meaning bit less range
+	affective_ap_range = 6 //Blarge rifle caliber
 	recoil = 8
 
 /obj/item/projectile/bullet/mech_autocannon //Autocannon
@@ -674,7 +674,7 @@
 	can_ricochet = FALSE
 
 	affective_damage_range = 10
-	affective_ap_range = 10 //Heavy blarge caliber meaning bit less range
+	affective_ap_range = 10 //Heavy blarge caliber but not as much as regular
 	recoil = 2
 
 //Shotguns
