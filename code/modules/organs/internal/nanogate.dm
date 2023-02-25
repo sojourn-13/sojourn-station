@@ -32,11 +32,13 @@
 		/obj/item/organ/internal/nanogate/proc/create_nanobot,
 
 		// Upgrades of the user.
+		/obj/item/organ/internal/nanogate/proc/nanite_stats,
 		/obj/item/organ/internal/nanogate/proc/nanite_regen,
 		/obj/item/organ/internal/nanogate/proc/nanite_muscle,
 		/obj/item/organ/internal/nanogate/proc/nanite_armor,
 		/obj/item/organ/internal/nanogate/proc/nanite_chem,
-
+		/obj/item/organ/internal/nanogate/proc/nanite_food_storage,
+		/obj/item/organ/internal/nanogate/proc/nanite_metal_drinker,
 		// Rig Upgrades
 		/obj/item/organ/internal/nanogate/proc/nanite_rig
 
