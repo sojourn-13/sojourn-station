@@ -207,7 +207,7 @@
 	has_written_form = TRUE
 	partial_understanding = list(
 		LANGUAGE_COMMON = 10,
-		LANGUAGE_EURO = 10
+		LANGUAGE_EURO = 30
 	)
 	shorthand = "NP"
 	space_chance = 5
