@@ -17,7 +17,7 @@ List of powers in this page :
 	nano_point_cost = 7
 
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
-		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIMENT IMPOSSABLE FOR SYNTHETICS!\"")
+		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIGNMENT IMPOSSIBLE FOR SYNTHETICS!\"")
 		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_regen
 		return
 
@@ -70,7 +70,7 @@ List of powers in this page :
 	nano_point_cost = 1
 
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
-		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIMENT IMPOSSABLE FOR SYNTHETICS!\"")
+		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIGNMENT IMPOSSIBLE FOR SYNTHETICS!\"")
 		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_chem
 		return
 
@@ -178,7 +178,7 @@ List of powers in this page :
 /obj/item/organ/internal/nanogate/proc/nanite_stats()
 	set category = "Nanogate Powers"
 	set name = "Nanite Augment - Mindbanking (2)"
-	set desc = "Spend some of your nanites to increase your knowings."
+	set desc = "Spend some of your nanites to increase your knowledge."
 	nano_point_cost = 2
 
 	var/obj/item/choice = input(usr, "Which modification do you want?", "Stat Choice", null) as null|anything in ALL_STATS_TO_IMPRINT
@@ -191,11 +191,11 @@ List of powers in this page :
 /obj/item/organ/internal/nanogate/proc/nanite_food_storage()
 	set category = "Nanogate Powers"
 	set name = "Nanite Augment - Food Banking (1)"
-	set desc = "Spend some of your nanites allow you to store additional nutrition."
+	set desc = "Spend some of your nanites to allow the storage of additional nutrition on your body."
 	nano_point_cost = 1
 
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
-		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIMENT IMPOSSABLE FOR SYNTHETICS!\"")
+		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIGNMENT IMPOSSIBLE FOR SYNTHETICS!\"")
 		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_food_storage
 		return
 
@@ -207,11 +207,11 @@ List of powers in this page :
 /obj/item/organ/internal/nanogate/proc/nanite_metal_drinker()
 	set category = "Nanogate Powers"
 	set name = "Nanite Augment - Metal-Eater (2)"
-	set desc = "Spend some of your nanites allow you to allow you to drink basic metals for nutrition. Does not nullife any harmful effects of drinking said metal."
+	set desc = "Spend some of your nanites to allow you to drink basic metals for nutrition. Does not nullifies any harmful effects of drinking said metal."
 	nano_point_cost = 2
 
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
-		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIMENT IMPOSSABLE FOR SYNTHETICS!\"")
+		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIGNMENT IMPOSSIBLE FOR SYNTHETICS!\"")
 		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_metal_drinker
 		return
 
