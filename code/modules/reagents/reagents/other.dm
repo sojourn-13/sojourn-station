@@ -222,6 +222,14 @@
 	color = "#F7C430"
 	common = TRUE //People know what gold is at a glance.
 
+/datum/reagent/metal/gold/affect_ingest(var/mob/living/carbon/M, var/alien)
+	if(M.species.reagent_tag == IS_CHTMANT)
+		M.adjustToxLoss(0.01) //Small damage to Chtmants nothing too too lethal
+
+	if(M.stats.getPerk(PERK_NANITE_METAL_EATER))
+		M.add_chemical_effect(CE_BLOODCLOT, 0.2)
+		M.adjustNutrition(1.2) //King Midas!
+
 /datum/reagent/metal/silver
 	name = "Silver"
 	id = "silver"
@@ -229,6 +237,14 @@
 	taste_description = "expensive yet reasonable metal"
 	reagent_state = SOLID
 	color = "#D0D0D0"
+
+/datum/reagent/metal/gold/affect_ingest(var/mob/living/carbon/M, var/alien)
+	if(M.species.reagent_tag == IS_CHTMANT)
+		M.adjustToxLoss(0.01) //Small damage to Chtmants nothing too too lethal
+
+	if(M.stats.getPerk(PERK_NANITE_METAL_EATER))
+		M.add_chemical_effect(CE_BLOODCLOT, 0.2)
+		M.adjustNutrition(0.8) //used in a lot of crafting
 
 /datum/reagent/metal/uranium
 	name ="Uranium"
