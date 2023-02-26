@@ -82,11 +82,11 @@
 	ask_verb = "chirps"
 	exclaim_verb = "whistles loudly"
 	colour = "say_quote"
-	key = "6"
+	key = "t"
 	flags = NO_STUTTER
 	syllables = list("beep","beep","beep","beep","beep","boop","boop","boop","bop","bop","dee","dee","doo","doo","hiss","hss","buzz","buzz","bzz","ksssh","keey","wurr","wahh","tzzz")
 	space_chance = 10
-	shorthand = "EAL"
+	shorthand = "TC"
 	partial_understanding = list(
 		LANGUAGE_CULT = 50
 	)
