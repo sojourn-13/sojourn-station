@@ -2,7 +2,7 @@
 /obj/item/organ/internal/nanogate
 	name = "Nanogate"
 	max_damage = 60
-	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses."
+	desc = "Наногейт, созданный по чертежам опифексов. Он имплантируется прямо в месте соединения позвоночника с черепом и предоставляет широкий спектр возможностей использования нанитов."
 	organ_efficiency = list(BP_NANOGATE = 100)
 	parent_organ_base = BP_HEAD // It's at the base of the skull in the spine.
 	icon_state = "nanogate" //TODO: Replace this with a proper sprite.
@@ -46,8 +46,8 @@
 obj/item/organ/internal/nanogate/artificer
 	name = "Artificer Nanogate"
 	icon_state = "nanogate_art" //TODO: Replace this with a proper sprite. AG branded.
-	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses. This \
-	particular design is made by the Artificer Guild, able to store more nanites for additional uses."
+	desc = "Наногейт, созданный по чертежам опифексов. Он имплантируется прямо в месте соединения позвоночника с черепом и предоставляет широкий спектр возможностей использования нанитов. Эта \
+	особая конструкция сделана Гильдией Изобретателей, способна хранить больше нанитов для дополнительного использования."
 	nanite_points = 15
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_GOLD = 8, MATERIAL_SILVER = 9, MATERIAL_PLASTIC = 20, MATERIAL_GLASS = 15, MATERIAL_DIAMOND = 2)
 	origin_tech = list(TECH_ENGINEERING = 20, TECH_BIO = 10, TECH_DATA = 20)
@@ -56,8 +56,8 @@ obj/item/organ/internal/nanogate/artificer
 // Opifexes are the creator of the tech, they get a better one.
 /obj/item/organ/internal/nanogate/opifex
 	name = "Opifex Nanogate"
-	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses. This \
-	particular design is an opifex original and one of the best that can be found in the galaxy."
+	desc = "Наногейт, созданный по чертежам опифексов. Он имплантируется прямо в месте соединения позвоночника с черепом и предоставляет широкий спектр возможностей использования нанитов. Этот \
+	конкретный дизайн является опифексовым оригиналом и одним из лучших, которые можно найти в галактике."
 	icon_state = "nanogate_opi" //TODO: Replace this with a proper sprite. Opifex branded.
 	price_tag = 20000 // Better than the standard one.
 	nanite_points = 20
