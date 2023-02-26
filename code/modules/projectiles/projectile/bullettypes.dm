@@ -389,7 +389,7 @@
 	step_delay = 0.9
 	recoil = 2
 
-/obj/item/projectile/bullet/light_rifle_257/pepperball
+/obj/item/projectile/bullet/light_rifle_257/rubber/pepperball
 	name = "pepperball"
 	damage_types = list(BRUTE = 4)	//Pepperballs disipate upon impact. They'll sting like shit, but won't do much in a low-velocity round.
 	agony = 20
@@ -399,13 +399,13 @@
 	embed = FALSE
 	can_ricochet = FALSE	//breaks upon impact; impossible.
 
-/obj/item/projectile/bullet/light_rifle_257/pepperball/New()
+/obj/item/projectile/bullet/light_rifle_257/rubber/pepperball/New()
 	..()
 	if (!testing)
 		create_reagents(5)
 		reagents.add_reagent(spray, 5)
 
-/obj/item/projectile/bullet/light_rifle_257/pepperball/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/light_rifle_257/rubber/pepperball/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents && !testing)
