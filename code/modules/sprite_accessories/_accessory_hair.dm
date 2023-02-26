@@ -364,6 +364,10 @@
 	name = "Jessica"
 	icon_state = "jessica"
 
+/datum/sprite_accessory/hair/jill
+	name = "Jill"
+	icon_state = "jill"
+
 /datum/sprite_accessory/hair/joestar
 	name = "Joestar"
 	icon_state = "joestar"

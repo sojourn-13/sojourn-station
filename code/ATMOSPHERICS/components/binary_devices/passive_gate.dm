@@ -21,7 +21,7 @@
 	var/flowing = 0	//for icons - becomes zero if the valve closes itself due to regulation mode
 
 	var/frequency = 0
-	var/id = null
+	var/id
 	var/datum/radio_frequency/radio_connection
 
 /obj/machinery/atmospherics/binary/passive_gate/New()
@@ -50,7 +50,6 @@
 		icon_state = "off"
 	else
 		icon_state = "[use_power ? "on" : "off"]"
-
 
 /obj/machinery/atmospherics/binary/passive_gate/hide(var/i)
 	update_underlays()
@@ -275,7 +274,7 @@
 		user.visible_message( \
 			SPAN_NOTICE("\The [user] unfastens \the [src]."), \
 			SPAN_NOTICE("You have unfastened \the [src]."), \
-			"You hear ratcheting.")
+			"You hear ratchet.")
 		investigate_log("was unfastened by [key_name(user)]", "atmos")
 		new /obj/item/pipe(loc, make_from=src)
 		qdel(src)

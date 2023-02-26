@@ -2113,7 +2113,6 @@
 /area/colony/exposedsun/crashed_shop)
 "Pc" = (
 /obj/random/furniture/bedsheet,
-/obj/landmark/join/late/dormitory_outsider,
 /obj/structure/bed/padded,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2469,7 +2468,6 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/colony/exposedsun/crashed_shop)
 "Wa" = (
-/obj/landmark/join/start/outsider,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Wg" = (

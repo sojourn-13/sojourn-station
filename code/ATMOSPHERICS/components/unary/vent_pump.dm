@@ -15,7 +15,7 @@
 	desc = "Has a valve and pump attached to it"
 	use_power = NO_POWER_USE
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
-	power_rating = 12000			//12000 W ~ 16 HP
+	power_rating = 12000		//12000 W ~ 16 HP
 
 	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY //connects to regular and supply pipes
 
@@ -24,7 +24,7 @@
 
 	var/area/initial_loc
 	var/area_uid
-	var/id_tag = null
+	var/id_tag
 
 	var/pump_direction = 1 //0 = siphoning, 1 = releasing
 	var/expanded_range = FALSE
@@ -73,7 +73,7 @@
 
 /obj/machinery/atmospherics/unary/vent_pump/New()
 	..()
-	air_contents.volume = ATMOS_DEFAULT_VOLUME_PUMP
+	air_contents.volume = ATMOS_DEFAULT_VOLUME_PUMP * 2
 
 	initial_loc = get_area(loc)
 	area_uid = initial_loc.uid
@@ -155,7 +155,7 @@
 	if(!length(environments))
 		return 0
 
-	var/power_draw = 1 //Baindaid correction
+	var/power_draw = 0
 	var/transfer_happened = FALSE
 
 	for(var/e in environments)
@@ -174,28 +174,19 @@
 			if(pump_direction) //internal -> external
 				var/transfer_moles = calculate_transfer_moles(air_contents, environment, pressure_delta)
 				power_draw += pump_gas(src, air_contents, environment, transfer_moles, power_rating)
-				if(debug)
-					log_debug("Pump Gas internal -> external: environment [environment] - air contents: [air_contents] - transfer moless: [transfer_moles] - Power-rating: [power_rating]")
-
+				//if(debug)
+				//	log_debug("Pump Gas internal -> external: environment [environment] - air contents: [air_contents] - transfer moless: [transfer_moles] - Power-rating: [power_rating]")
 			else //external -> internal
 				var/transfer_moles = calculate_transfer_moles(environment, air_contents, pressure_delta, (network)? network.volume : 0)
 
 				//limit flow rate from turfs
 				transfer_moles = min(transfer_moles, environment.total_moles*air_contents.volume/environment.volume)	//group_multiplier gets divided out here
 				power_draw += pump_gas(src, environment, air_contents, transfer_moles, power_rating)
-				if(debug)
-					log_debug("Pump Gas external -> internal: environment [environment] - air contents: [air_contents] - transfer moless: [transfer_moles] - Power-rating: [power_rating]")
-
+				//if(debug)
+				//	log_debug("Pump Gas external -> internal: environment [environment] - air contents: [air_contents] - transfer moless: [transfer_moles] - Power-rating: [power_rating]")
 			transfer_happened = TRUE
 
-	if(0 > power_draw) //Stops negitives, baindaid correction
-		if(!has_errored)
-			log_to_dd("Error: Vent has had a negitive power draw - X:[src.x] Y:[src.y] Z:[src.z]")
-			has_errored = TRUE
-		power_draw = 0
-
 	if(transfer_happened)
-
 		last_power_draw = power_draw
 		use_power(power_draw)
 		if(network)
@@ -366,7 +357,7 @@
 					welded = 1
 					update_icon()
 				else
-					user.visible_message(SPAN_NOTICE("[user] unseals the vent."), SPAN_NOTICE("You unseal the vent."), "You hear welding.")
+					user.visible_message(SPAN_NOTICE("[user] unwelds the vent."), SPAN_NOTICE("You unweld the vent."), "You hear welding.")
 					welded = 0
 					update_icon()
 					return
@@ -376,7 +367,7 @@
 
 		if(QUALITY_BOLT_TURNING)
 			if (!(stat & NOPOWER) && use_power)
-				to_chat(user, SPAN_WARNING("You cannot unfasten \the [src], turn it off first."))
+				to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], turn it off first."))
 				return 1
 			var/turf/T = src.loc
 			if (node1 && node1.level==1 && isturf(T) && !T.is_plating())
@@ -385,7 +376,7 @@
 			var/datum/gas_mixture/int_air = return_air()
 			var/datum/gas_mixture/env_air = loc.return_air()
 			if ((int_air.return_pressure()-env_air.return_pressure()) > 2*ONE_ATMOSPHERE)
-				to_chat(user, SPAN_WARNING("You cannot unfasten \the [src], it is under too much pressure."))
+				to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], it is too exerted due to internal pressure."))
 				add_fingerprint(user)
 				return 1
 
@@ -409,9 +400,9 @@
 	if(..(user, 1))
 		to_chat(user, "A small gauge in the corner reads [round(last_flow_rate, 0.1)] L/s; [round(last_power_draw)] W")
 	else
-		to_chat(user, "You are too far away to read its gauge.")
+		to_chat(user, "You are too far away to read the gauge.")
 	if(welded)
-		to_chat(user, "It is welded shut.")
+		to_chat(user, "It seems welded shut.")
 
 /obj/machinery/atmospherics/unary/vent_pump/power_change()
 	var/old_stat = stat

@@ -179,6 +179,7 @@
 					/obj/item/seeds/bananaseed = 3,
 					/obj/item/seeds/berryseed = 3,
 					/obj/item/seeds/blueberryseed = 3,
+					/obj/item/seeds/brootseed = 2,
 					/obj/item/seeds/cabbageseed = 3,
 					/obj/item/seeds/carrotseed = 3,
 					/obj/item/seeds/chantermycelium = 3,

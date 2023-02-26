@@ -9,104 +9,23 @@
 /turf/simulated/wall,
 /area/deepmaint)
 "d" = (
+/obj/structure/salvageable/implant_container,
 /turf/simulated/floor/tiled/white/techfloor_grid,
-/area/deepmaint)
-"e" = (
-/obj/machinery/atmospherics/unary/freezer{
-	cooling = 1;
-	dir = 2;
-	set_temperature = 73
-	},
-/turf/simulated/floor/tiled/white/cargo,
 /area/deepmaint)
 "f" = (
 /turf/simulated/floor/tiled/white/panels,
 /area/deepmaint)
 "g" = (
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/manifold/visible{
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
-/area/deepmaint)
-"h" = (
-/obj/machinery/atmospherics/pipe/manifold/visible{
-	dir = 1
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/deepmaint)
-"i" = (
-/obj/machinery/atmospherics/pipe/manifold/visible{
-	dir = 1
-	},
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/deepmaint)
-"j" = (
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/manifold/visible{
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
+/obj/structure/salvageable/computer,
+/turf/simulated/floor/tiled/white/panels,
 /area/deepmaint)
 "k" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/glass/beaker/cryoxadone{
-	pixel_x = 7;
-	pixel_y = 1
-	},
-/obj/item/reagent_containers/glass/beaker/cryoxadone{
-	pixel_x = 0;
-	pixel_y = 0
-	},
-/obj/item/reagent_containers/glass/beaker/cryoxadone,
+/obj/structure/salvageable/personal,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/deepmaint)
 "l" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
-	},
+/obj/structure/salvageable/implant_container,
 /turf/simulated/floor/tiled/white/cargo,
-/area/deepmaint)
-"m" = (
-/obj/machinery/atmospherics/pipe/simple/visible,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/deepmaint)
-"n" = (
-/obj/machinery/atmospherics/unary/cryo_cell,
-/turf/simulated/floor/tiled/white/cargo,
-/area/deepmaint)
-"o" = (
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/visible{
-	tag = "icon-intact (NORTHEAST)";
-	icon_state = "intact";
-	dir = 5
-	},
-/turf/simulated/floor/plating/under,
-/area/deepmaint)
-"p" = (
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/manifold/visible,
-/turf/simulated/floor/plating/under,
-/area/deepmaint)
-"q" = (
-/obj/machinery/atmospherics/pipe/manifold/visible,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/deepmaint)
-"r" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	tag = "icon-intact (NORTHWEST)";
-	icon_state = "intact";
-	dir = 9
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
 /area/deepmaint)
 "s" = (
 /obj/structure/table/standard,
@@ -131,14 +50,13 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/deepmaint)
 "v" = (
-/obj/machinery/sleeper{
-	icon_state = "sleeper";
+/obj/machinery/sleeper/sarcophagus/random{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/deepmaint)
 "w" = (
-/obj/machinery/sleeper{
+/obj/machinery/sleeper/sarcophagus/random{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -147,6 +65,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/salvageable/implant_container,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/deepmaint)
 "y" = (
@@ -154,6 +73,7 @@
 	dir = 4;
 	pixel_y = 0
 	},
+/obj/structure/salvageable/implant_container,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/deepmaint)
 "z" = (
@@ -167,15 +87,21 @@
 /obj/random/pouch/low_chance,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/deepmaint)
+"B" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/white/cargo,
+/area/deepmaint)
 "N" = (
-/obj/structure/table/standard,
-/obj/random/pack/cloth,
-/obj/random/pack/cloth,
-/obj/random/pack/rare,
-/obj/random/firstaid/low_chance,
-/obj/random/medical/low_chance,
-/obj/random/medical_lowcost/low_chance,
-/turf/simulated/floor/tiled/white/gray_platform,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/deepmaint)
+"O" = (
+/obj/structure/salvageable/deepmaints_cryopod,
+/turf/simulated/floor/tiled/white/cargo,
+/area/deepmaint)
+"P" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/white/panels,
 /area/deepmaint)
 "S" = (
 /obj/structure/table/standard,
@@ -198,7 +124,7 @@ a
 a
 a
 a
-b
+B
 b
 b
 a
@@ -225,8 +151,8 @@ d
 x
 k
 c
-n
-o
+O
+P
 t
 t
 t
@@ -234,25 +160,25 @@ a
 "}
 (4,1,1) = {"
 a
-e
-g
-l
+B
+f
+S
 c
-n
-p
+O
+f
 t
 t
-t
+N
 a
 "}
 (5,1,1) = {"
 b
 A
-h
+f
 l
 c
-n
-p
+O
+f
 S
 w
 w
@@ -260,41 +186,41 @@ b
 "}
 (6,1,1) = {"
 b
-f
-i
-m
-m
-m
-q
+g
+P
 f
 f
+P
 f
+f
+f
+P
 b
 "}
 (7,1,1) = {"
 b
 T
-h
+f
 l
 c
-n
-q
-N
+O
+f
+S
 v
 v
 b
 "}
 (8,1,1) = {"
 a
-e
-j
-l
+B
+f
+S
 c
-n
-q
+O
+f
 t
 t
-t
+N
 a
 "}
 (9,1,1) = {"
@@ -303,8 +229,8 @@ d
 y
 k
 c
-n
-r
+O
+P
 t
 t
 t
@@ -328,7 +254,7 @@ a
 a
 a
 a
-b
+B
 b
 b
 a

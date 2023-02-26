@@ -330,6 +330,7 @@
 	name_plural = "Naramadi"
 	default_form = FORM_NARAMAD
 	obligate_form = TRUE
+	reagent_tag = IS_NARAMAD
 	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/tail)
 	num_alternate_languages = 0
 	name_language = null

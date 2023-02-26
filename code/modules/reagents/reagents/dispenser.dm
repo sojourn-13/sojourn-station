@@ -32,6 +32,11 @@
 	if(M.species.reagent_tag == IS_CHTMANT)
 		M.adjustToxLoss(0.01) //Small damage to Chtmants nothing too too lethal
 
+	if(M.stats.getPerk(PERK_NANITE_METAL_EATER))
+		M.add_chemical_effect(CE_BLOODCLOT, 0.2)
+		M.adjustNutrition(0.4) //Metal even with the perk isnt that filling
+
+
 /datum/reagent/metal/affect_blood(var/mob/living/carbon/M, var/alien)
 	if(M.species.reagent_tag == IS_CHTMANT)
 		M.adjustToxLoss(0.2)

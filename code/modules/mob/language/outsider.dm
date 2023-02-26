@@ -41,7 +41,7 @@
 	ask_verb = list("intones")
 	exclaim_verb = list("chants")
 	colour = "cult"
-	key = "f"
+	key = "c"
 	flags = RESTRICTED
 	space_chance = 100
 	has_written_form = TRUE		//I҉̵̴̢҉̶̸̴̵̸̷̷̴̷̷̶̷̴̵̡̨̡̢̧̨̧̡̛̛̛̛̛̀́̀́̀̀̕͘̕͜͢͢͢͜͜͢͜͢͡͞͠͠͠͝͠͡͠͠͞͠ ͜͢҉̴̷̵̨̧̢̛̛̛͝͏̧́̀́̀̕̕͘̕͘͜͢͠͡͏̴̸̶̴̧̛́́́͟͢͡͞͠͞͏̴̴̵̵̵̵̢̨̢̧͟͟͠͞͡͠͞͝͡ḉ̷̸̶̧̢̧̀́͟͢͟͟͢͜͠͡҉̢̛͟͏̷̶̸̡̡̨̡̛̛́͘͢͜͢͠͏̡̧̕͝͏̸̶́́̀͢͢͢͢͡͠͠ ͞͞͏̷̷̀̕͠҉͡͏̸̶̸̷̨̧̨̢̨̨̨́́̀̕̕͜͞͡͏͏̵̴̶̸̀́͟͠u̶̵̡̢̧̕͟͢͝͏̵̶҉̧҉̛͠͝͡҉̶̸̴̶̨̡̀́̀̀́̀͢͢͡͝͝͡͞͡
@@ -61,7 +61,7 @@
 	ask_verb = list("intones")
 	exclaim_verb = list("chants")
 	colour = "cult"
-	key = "y"
+	key = "z"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
 	has_written_form = FALSE	//Hiveminds don't get a written language.
@@ -69,7 +69,7 @@
 
 // Alien species languages.
 //TODO: Eventually organize these into another language .dm that isn't 'outsider'. Why did we decided to put languages here like this in the first place?
-
+//I was going to leave the exact same comment as above before i saw it. Why is it here?
 
 // Chtmant racial language. Lore: Roaches are a hivemind with a queen, so therefor they sport hivemind speek.
 /datum/language/chtmant
@@ -167,7 +167,7 @@
 	ask_verb = list("trills")
 	exclaim_verb = list("rythmically trills")
 	colour = "marqua"
-	key = "m"
+	key = "q"
 	flags = RESTRICTED
 	has_written_form = TRUE
 	partial_understanding = list(
@@ -189,3 +189,23 @@
 	colour = "plant"
 	key = "p"
 	has_written_form = FALSE //Hiveminds don't get a written language.
+
+
+//Naramad language. full credit to Yanniert for all of the details herein contained.
+/datum/language/merp
+	name = LANGUAGE_MERP
+	desc = "A crude pidgin tongue, not created by it's supposedly native speakers, but by their foreign overlords. Enforced as the only legal native language of the Naramadi people by the Federation as a means to unify the planet and make administrative work easier, while allowing them to keep a semblance of native culture."
+	speech_verb = list("says", "clicks")
+	ask_verb = list("chirps")
+	exclaim_verb = list("croaks")
+	flags = RESTRICTED
+	colour = "rough"
+	key = "n"
+	has_written_form = TRUE
+	partial_understanding = list(
+		LANGUAGE_COMMON = 10,
+		LANGUAGE_EURO = 10
+	)
+	shorthand = "NP"
+	space_chance = 5
+	syllables = list("Punainen", "Koira", "Tuolla", "Rikas", "syvä", "kivääri", "ulkomaalainen", "ihmisen", "sammakko", "taivaaseen", "Koti", "tilaa",  "sinä", "vastustamaton", "heimo", "klaani",  "kotitalous", "raha", "iso", "pieni", "sairaus", "ruokaa", "alkoholia", "kana", "asevelvollisuus", "alus", "joki", "saari", "ase", "veitsi", "juusto", "pää", "häntää", "taistelevat", "halaamalla", "ystävät", "ystävyys", "kansainyhteisö", "liitto", "aurinko", "missä", "mitä", "kun", "Miten", "siksi", "laulu", "kalastaa", "hämärä", "epäilyttävä", "luottamus", "kusipää", "paskiainen", "ääliö", "munata", "*!*")

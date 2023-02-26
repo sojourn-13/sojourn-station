@@ -179,7 +179,7 @@ var/global/list/big_deepmaint_room_templates = list()
 /obj/procedural/jp_DungeonGenerator/deepmaint/proc/populateCorridors()
 	var/niche_count = 20
 	var/try_count = niche_count * 7 //In case it somehow zig-zags all of the corridors and stucks in a loop
-	var/trap_count = 150
+	var/trap_count = 200
 	var/list/path_turfs_copy = path_turfs.Copy()
 	while(niche_count > 0 && try_count > 0)
 		try_count = try_count - 1
@@ -191,7 +191,7 @@ var/global/list/big_deepmaint_room_templates = list()
 		trap_count = trap_count - 1
 		var/turf/N = pick(path_turfs_copy)
 		path_turfs_copy -= N
-		if(prob(90))
+		if(prob(60))
 			new /obj/random/traps(N)
 		else
 			new /obj/random/mob/psi_monster(N)
