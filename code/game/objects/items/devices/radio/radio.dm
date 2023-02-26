@@ -51,6 +51,8 @@ var/global/list/default_medbay_channels = list(
 	var/subspace_transmission = 0
 	var/adhoc_fallback = FALSE
 	var/syndie = 0//Holder to see if it's a syndicate encrypted radio
+	var/list/transmit_levels  //List of z-levels it can transmit to without tcomms
+	var/multi_z_capable = TRUE //Whether it's able to transmit up/down in multi-Z areas
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
 	throw_speed = 2
@@ -92,6 +94,7 @@ var/global/list/default_medbay_channels = list(
 	if(frequency < RADIO_LOW_FREQ || frequency > RADIO_HIGH_FREQ)
 		frequency = sanitize_frequency(frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
 	set_frequency(frequency)
+	update_transmit_levels()
 
 	for (var/ch_name in channels)
 		secure_radio_connections[ch_name] = SSradio.add_object(src, radiochannels[ch_name],  RADIO_CHAT)
@@ -178,6 +181,22 @@ var/global/list/default_medbay_channels = list(
 		return wires.GetInteractWindow()
 	return
 
+/obj/item/device/radio/proc/update_transmit_levels() //Updating how far a radio can reach in multi-Z areas
+	var/turf/position = get_turf(src)
+	//Fetching own Z-level
+	var/z_level = position.z
+	transmit_levels = list(z_level)
+
+	if(multi_z_capable) //If multi z capable, also allow transmitting up/down
+		// UP
+		while(HasAbove(z_level++))
+			transmit_levels |= z_level
+
+		// Down
+		z_level = position.z
+		while(HasBelow(z_level--))
+			transmit_levels |= z_level
+	return transmit_levels
 
 /obj/item/device/radio/proc/text_sec_channel(var/chan_name, var/chan_stat)
 	var/list = !!(chan_stat&FREQ_LISTENING)!=0
@@ -422,9 +441,11 @@ var/global/list/default_medbay_channels = list(
 		else if(adhoc_fallback) //Fallback radio
 			to_chat(loc,"<span class='warning'>\The [src] pings as it falls back to local radio transmission.</span>")
 			subspace_transmission = FALSE
+
+			update_transmit_levels()
 			return Broadcast_Message(connection, M, voicemask, pick(M.speak_emote),
 					  src, message, displayname, jobname, real_name, M.voice_name,
-					  signal.transmission_method, signal.data["compression"], list(position.z), connection.frequency,verb,speaking)
+					  signal.transmission_method, signal.data["compression"], transmit_levels, connection.frequency,verb,speaking)
 
   /* ###### Intercoms and station-bounced radios ###### */
 
@@ -487,9 +508,10 @@ var/global/list/default_medbay_channels = list(
 	//THIS IS TEMPORARY. YEAH RIGHT. STATE OF SS13 DEVELOPMENT...
 	if(!connection)	return 0	//~Carn
 
+	update_transmit_levels()
 	return Broadcast_Message(connection, M, voicemask, pick(M.speak_emote),
 					  src, message, displayname, jobname, real_name, M.voice_name,
-					  filter_type, signal.data["compression"], list(position.z), connection.frequency,verb,speaking, speech_volume)
+					  filter_type, signal.data["compression"], transmit_levels, connection.frequency,verb,speaking, speech_volume)
 
 
 /obj/item/device/radio/hear_talk(mob/M as mob, msg, var/verb = "says", var/datum/language/speaking = null, speech_volume)

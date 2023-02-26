@@ -8,6 +8,7 @@
 	preloaded_reagents = list("silicon" = 15, "plasticide" = 9)
 	subspace_transmission = 1
 	canhear_range = 0 // can't hear headsets from very far away
+	multi_z_capable = FALSE
 
 	slot_flags = SLOT_EARS
 	body_parts_covered = EARS
