@@ -89,11 +89,11 @@ obj/item/organ/internal/nanogate/artificer
 	..()
 	switch (severity)
 		if(1)
-			owner.apply_effect(40, AGONY)
+			owner.apply_effect(40, HALLOSS)
 		if(2)
-			owner.apply_effect(30, AGONY)
+			owner.apply_effect(30, HALLOSS)
 		if(3)
-			owner.apply_effect(20, AGONY)
+			owner.apply_effect(20, HALLOSS)
 
 // If the organ goes below is theshold it dies. And does bad effects.
 /obj/item/organ/internal/nanogate/die()
@@ -103,5 +103,5 @@ obj/item/organ/internal/nanogate/artificer
 		var/list/listed_organs  = list("brain",OP_EYES,"heart")
 		targeted_organ = owner.random_organ_by_process(pick(listed_organs))
 		targeted_organ.damage += rand (5,10)
-		owner.apply_effect(60, AGONY)
+		owner.apply_effect(60, HALLOSS)
 		addtimer(CALLBACK(src, .proc/die), 1 MINUTES, TIMER_STOPPABLE)

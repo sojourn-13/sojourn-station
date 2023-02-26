@@ -874,6 +874,6 @@
 		if(H.species && (H.species.flags & (NO_PAIN)))
 			return
 
-		M.apply_effect(agony_amount, AGONY, 0)
+		M.apply_effect(agony_amount, HALLOSS, 0)
 		if(prob(5))
 			to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))
