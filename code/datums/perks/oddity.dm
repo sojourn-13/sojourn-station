@@ -329,3 +329,35 @@
 	if(holder)
 		holder.sanity.insight_gain_multiplier *= 2
 	..()
+
+//Temporary perks - Sanity Related
+/datum/perk/oddity/moralist
+	name = "Moralist"
+	desc = "A day may come when the courage of men fails, when we forsake our friends and break all bonds of fellowship. \
+			But it is not this day. This day you fight! \
+			Carry this fire with you - light the way for others."
+
+/datum/perk/oddity/nihilist
+	name = "Nihilist"
+	desc = 	"You simply ran out of fucks to give at some point in your life. \
+			This increases chance of positive breakdowns by 10% and negative breakdowns by 20%. Seeing someone die has a random effect on you: \
+			sometimes you won’t take any sanity loss and you can even gain back sanity, or get a boost to your cognition."
+	icon_state = "eye" //https://game-icons.net/1x1/lorc/tear-tracks.html
+
+/datum/perk/oddity/nihilist/assign(mob/living/carbon/human/H)
+	if(..())
+		holder.sanity.positive_prob += 10
+		holder.sanity.negative_prob += 20
+
+/datum/perk/oddity/nihilist/remove()
+	if(holder)
+		holder.sanity.positive_prob -= 10
+		holder.sanity.negative_prob -= 20
+		holder.stats.removeTempStat(STAT_COG, "Fate Nihilist")
+	..()
+
+/datum/perk/oddity/terrible_fate
+	name = "Terrible Fate"
+	desc = "You realize the painful truth of death. You don't want to die and despise death - dying is a unmistakable horror to you. \
+			Anyone who is around you at the moment of your death must roll a Vigilance sanity check. If they fail, their sanity will instantly be dropped to 0."
+	icon_state = "murder" // https://game-icons.net/1x1/delapouite/chalk-outline-murder.html

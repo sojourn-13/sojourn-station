@@ -149,12 +149,15 @@
 	set category = "Abilities"
 	src.mind_of_cloath()
 
+// Broken shit code that doesn't work with the Eris sanity system. Too lazy to fix this dumb Possum/R4 code vomit.
+/*
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/proc/mind_of_cloath(mob/M)
 	visible_message(SPAN_WARNING("\red [src] pierces the minds, blanking them in arcane knowledge!"))
 	for(M in living_mobs_in_view(5, src))
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			H.sanity.breakdown_fabric()
+*/
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/Bump(var/atom/obstacle)
 	.=..()

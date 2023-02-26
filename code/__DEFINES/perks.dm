@@ -23,6 +23,7 @@
 // oddity perks
 #define PERK_FAST_WALKER /datum/perk/oddity/fast_walker
 #define PERK_GUNSLINGER /datum/perk/oddity/gunslinger
+#define PERK_TERRIBLE_FATE /datum/perk/oddity/terrible_fate
 #define PERK_TOXIC_REVENGER /datum/perk/oddity/toxic_revenger
 #define PERK_BALLS_OF_PLASTEEL /datum/perk/oddity/balls_of_plasteel
 #define PERK_WEAK_MIND /datum/perk/oddity/weak_mind
@@ -189,3 +190,7 @@
 //cooldown perks
 #define PERK_COOLDOWN_REASON /datum/perk/cooldown/reason
 #define PERK_COOLDOWN_EXERTION /datum/perk/cooldown/exertion
+
+//Temporary sanity perks
+#define PERK_MORALIST /datum/perk/oddity/moralist
+#define PERK_NIHILIST /datum/perk/oddity/nihilist

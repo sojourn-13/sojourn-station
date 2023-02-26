@@ -3,7 +3,7 @@
 	reagent_type = "Drug"
 	scannable = TRUE
 
-	var/sanity_gain = 0.5
+	sanity_gain = 0.5
 
 /datum/reagent/drug/on_mob_add(mob/living/L)
 	..()

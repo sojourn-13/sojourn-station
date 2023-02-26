@@ -10,6 +10,7 @@
 	color = "#CF3600"
 	metabolism = REM * 0.05 // 0.01 by default. They last a while and slowly kill you.
 	var/strength = 0.05 // How much damage it deals per unit
+	var/sanityloss = 0
 	reagent_type = "Toxin"
 	scannable = TRUE
 	nerve_system_accumulations = 35 //Baseline toxin is going to heck you up
@@ -20,6 +21,9 @@
 		if(issmall(M))  // Small bodymass, more effect from lower volume.
 			multi *= 2
 		M.adjustToxLoss(strength * multi)
+		if(sanityloss && ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.sanity.onToxin(src, effect_multiplier)
 	M.add_chemical_effect(CE_TOXIN, 1)
 
 /datum/reagent/toxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)

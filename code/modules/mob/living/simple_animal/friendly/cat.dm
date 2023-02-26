@@ -308,6 +308,7 @@
 
 /mob/living/simple_animal/cat/runtime/New(loc)
 	..(loc)
+	stats.addPerk(PERK_TERRIBLE_FATE)
 	playsound(loc, 'sound/effects/teleport.ogg', 50, 1)
 
 /mob/living/simple_animal/cat/runtime/attackby(var/obj/item/O, var/mob/user)
