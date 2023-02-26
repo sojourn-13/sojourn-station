@@ -41,7 +41,7 @@
 	ask_verb = list("intones")
 	exclaim_verb = list("chants")
 	colour = "cult"
-	key = "f"
+	key = "c"
 	flags = RESTRICTED
 	space_chance = 100
 	has_written_form = TRUE		//I҉̵̴̢҉̶̸̴̵̸̷̷̴̷̷̶̷̴̵̡̨̡̢̧̨̧̡̛̛̛̛̛̀́̀́̀̀̕͘̕͜͢͢͢͜͜͢͜͢͡͞͠͠͠͝͠͡͠͠͞͠ ͜͢҉̴̷̵̨̧̢̛̛̛͝͏̧́̀́̀̕̕͘̕͘͜͢͠͡͏̴̸̶̴̧̛́́́͟͢͡͞͠͞͏̴̴̵̵̵̵̢̨̢̧͟͟͠͞͡͠͞͝͡ḉ̷̸̶̧̢̧̀́͟͢͟͟͢͜͠͡҉̢̛͟͏̷̶̸̡̡̨̡̛̛́͘͢͜͢͠͏̡̧̕͝͏̸̶́́̀͢͢͢͢͡͠͠ ͞͞͏̷̷̀̕͠҉͡͏̸̶̸̷̨̧̨̢̨̨̨́́̀̕̕͜͞͡͏͏̵̴̶̸̀́͟͠u̶̵̡̢̧̕͟͢͝͏̵̶҉̧҉̛͠͝͡҉̶̸̴̶̨̡̀́̀̀́̀͢͢͡͝͝͡͞͡
@@ -64,7 +64,7 @@
 	ask_verb = list("intones")
 	exclaim_verb = list("chants")
 	colour = "cult"
-	key = "y"
+	key = "z"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
 	has_written_form = FALSE	//Hiveminds don't get a written language.
@@ -170,7 +170,7 @@
 	ask_verb = list("trills")
 	exclaim_verb = list("rythmically trills")
 	colour = "marqua"
-	key = "m"
+	key = "q"
 	flags = RESTRICTED
 	has_written_form = TRUE
 	partial_understanding = list(
@@ -203,11 +203,11 @@
 	exclaim_verb = list("croaks")
 	flags = RESTRICTED
 	colour = "rough"
-	key = "s"
+	key = "n"
 	has_written_form = TRUE
 	partial_understanding = list(
 		LANGUAGE_COMMON = 10,
-		LANGUAGE_EURO = 30
+		LANGUAGE_EURO = 10
 	)
 	shorthand = "NP"
 	space_chance = 5
