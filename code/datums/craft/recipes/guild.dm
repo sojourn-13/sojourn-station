@@ -661,7 +661,7 @@
 	)
 
 /datum/craft_recipe/guild/heavy_barrel
-	name = "Heavy Forged Barrel"
+	name = "Heavy barrel"
 	result = /obj/item/gun_upgrade/barrel/bore
 	icon_state = "gun"
 	steps = list(
