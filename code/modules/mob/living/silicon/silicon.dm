@@ -55,7 +55,11 @@
 	add_language(LANGUAGE_MARQUA)
 	add_language(LANGUAGE_PLANT)
 	add_language(LANGUAGE_SYNTHETIC)
-	add_language(LANGUAGE_MERP)
+	add_language(LANGUAGE_MERP)MarQua speak is now ,q for mar'Qua
+Narad pidgin is now ,n for naramad
+Cult common is now C for cult
+Occult is now Occult Projection to make clear that it is not just a spoken language, key is now ,z for aztral projection or smth.
+Also moves technical cant to ,t for the sake of consistency with most other languages as well as changing its shorthand to TC
 	init_id()
 	init_subsystems()
 
