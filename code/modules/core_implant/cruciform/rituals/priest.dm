@@ -59,8 +59,7 @@
 		log_and_message_admins(" inflicted pain on [H] with penance litany")
 		to_chat(H, SPAN_DANGER("A wave of agony washes over you, the cruciform in your chest searing like a star for a few moments of eternity."))
 
-		H.apply_effect(50, AGONY, 0)
-		H.apply_effect(50, HALLOSS, 0)
+		H.adjustHalLoss(50)
 		var/datum/effect/effect/system/spark_spread/s = new
 		s.set_up(1, 1, H.loc)
 		s.start()

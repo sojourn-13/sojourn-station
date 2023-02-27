@@ -1,4 +1,4 @@
-#define ARMOR_AGONY_COEFFICIENT 0.3
+#define ARMOR_HALLOS_COEFFICIENT 0.4
 #define ARMOR_GDR_COEFFICIENT 0.1
 
 //This calculation replaces old run_armor_check in favor of more complex and better system
@@ -57,9 +57,6 @@
 		if(damagetype == HALLOSS)
 			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
 
-		if(damagetype == AGONY)
-			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
-
 		if(brute_armor_overpenetration > 0 && damagetype == BRUTE)
 			effective_damage += max(0,round(brute_armor_overpenetration))
 
@@ -107,10 +104,10 @@
 	//Here we split damage in two parts, where armor value will determine how much damage will get through
 	else
 		//Pain part of the damage, that simulates impact from armor absorbtion
-		//For balance purposes, it's lowered by ARMOR_AGONY_COEFFICIENT
+		//For balance purposes, it's lowered by ARMOR_HALLOS_COEFFICIENT
 		if(!(damagetype == HALLOSS ))
-			var/agony_gamage = round( ( effective_damage * armor_effectiveness * ARMOR_AGONY_COEFFICIENT * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)) / 100))
-			apply_effect(agony_gamage, AGONY)
+			var/agony_gamage = round( ( effective_damage * armor_effectiveness * ARMOR_HALLOS_COEFFICIENT * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)) / 100))
+			adjustHalLoss(agony_gamage)
 
 		//Actual part of the damage that passed through armor
 		var/actual_damage = round ( ( effective_damage * ( 100 - armor_effectiveness ) ) / 100 )

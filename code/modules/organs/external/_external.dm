@@ -289,11 +289,11 @@
 
 	switch (severity)
 		if (1)
-			take_damage(5)
+			take_damage(20)
 		if (2)
-			take_damage(3)
+			take_damage(10)
 		if (3)
-			take_damage(1)
+			take_damage(5)
 
 /obj/item/organ/external/attack_self(var/mob/user)
 	if(!contents.len)
