@@ -22,7 +22,7 @@
 /datum/reagent/medicine/inaprovaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // No more useless chem of leftover baycode with no inference on health due to pulse not affecting anything. - Seb
 	M.add_chemical_effect(CE_PULSE, 1)
 	M.add_chemical_effect(CE_STABLE) // Keeping these useless effects for the sake of RP.
-	M.add_chemical_effect(CE_PAINKILLER, 25 * effect_multiplier, TRUE)
+	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier)
 	M.adjustOxyLoss(-0.5 * effect_multiplier) // Should help stall for time against oxyloss killing you to heavy bloodloss or lung/heart damage until your eventual rescue, but won't heal it outright.
 	M.add_chemical_effect(CE_OXYGENATED, 1)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1) // Emergency stop bleeding, still lowest tier
@@ -383,7 +383,7 @@
 	nerve_system_accumulations = -10
 
 /datum/reagent/medicine/paracetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 50, TRUE)
+	M.add_chemical_effect(CE_PAINKILLER, 25)
 
 /datum/reagent/medicine/paracetamol/overdose(mob/living/carbon/M, alien)
 	..()
@@ -402,7 +402,7 @@
 	nerve_system_accumulations = 40
 
 /datum/reagent/medicine/tramadol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 130 , TRUE)
+	M.add_chemical_effect(CE_PAINKILLER, 50)
 
 /datum/reagent/medicine/tramadol/overdose(mob/living/carbon/M, alien)
 	..()
@@ -425,7 +425,7 @@
 	scannable = TRUE //Finnicky chem application, we need to know how much of it is on a system to prevent overdose.
 
 /datum/reagent/medicine/oxycodone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 200, TRUE)
+	M.add_chemical_effect(CE_PAINKILLER, 65)
 	M.druggy = max(M.druggy, 10)
 
 /datum/reagent/medicine/oxycodone/overdose(mob/living/carbon/M, alien)
@@ -486,7 +486,7 @@
 	nerve_system_accumulations = -15
 
 /datum/reagent/medicine/laudanum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 40) // ...yet this one is a buff, making it an acceptably low painkiller range while keeping a 50 difference between tiers like Tram-to-Para ratio - Seb
+	M.add_chemical_effect(CE_PAINKILLER, 20) // ...yet this one is a buff, making it an acceptably low painkiller range while keeping a 50 difference between tiers like Tram-to-Para ratio - Seb
 
 /datum/reagent/medicine/dexalinp/holy
 	name = "Helaxin Negative"

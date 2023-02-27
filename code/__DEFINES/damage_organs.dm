@@ -8,7 +8,6 @@
 #define HALLOSS		"halloss"
 #define BLAST		"blast"
 #define PSY			"psy"
-#define AGONY  		"agony"
 #define ELECTROCUTE	"electrocute"
 
 #define CUT		"cut"

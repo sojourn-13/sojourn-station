@@ -84,7 +84,7 @@
 	serial_type = "Sol Fed"
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
-	gun_parts = list(/obj/item/part/gun/frame/makarov = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol = 1)
+	gun_parts = list(/obj/item/part/gun/frame/makarov = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 /obj/item/part/gun/frame/makarov
 	name = "Makarov frame"
@@ -92,7 +92,7 @@
 	icon_state = "frame_makarov"
 	result = /obj/item/gun/projectile/makarov
 	resultvars = list(/obj/item/gun/projectile/makarov)
-	gripvars = list(/obj/item/part/gun/grip/black)
+	gripvars = list(/obj/item/part/gun/grip/serb)
 	mechanismvar = /obj/item/part/gun/mechanism/pistol
 	barrelvars = list(/obj/item/part/gun/barrel/pistol)
 

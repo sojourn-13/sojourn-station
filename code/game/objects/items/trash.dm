@@ -133,6 +133,7 @@
 /obj/item/trash/mre/alt
 	name = "mre"
 	icon_state = "wok"
+	matter = list(MATERIAL_CARDBOARD = 1)
 
 /obj/item/trash/mre_paste
 	name = "nutrient paste"
@@ -169,3 +170,29 @@
 	desc = "This used to hold icecream on it, it has even been licked clean!"
 	icon_state = "icecreambowl"
 	matter = list(MATERIAL_GLASS = 1) // It is, after all, made of glass
+
+/obj/item/trash/mre/os
+	name = "gray cardboard takeout container"
+	desc = "A generic takeout container made of cardboard. Trash."
+	icon_state= "os_wok"
+	matter = list(MATERIAL_CARDBOARD = 1)
+
+/obj/item/trash/os_wrapper
+	name = "plastic wrapper"
+	desc = "A thick plastic wrapper from something. Trash."
+	icon_state= "os_wrapper"
+
+/obj/item/trash/os_soypack
+	name = "used liquid pack"
+	desc = "A gray plastic liquid pack without any contents. Trash."
+	icon_state= "os_soy"
+
+/obj/item/trash/os_coco_wrapper
+	name = "candy wrapper"
+	desc = "A plastic wrapper for candy. Trash."
+	icon_state= "os_coco_wrapper"
+
+/obj/item/trash/os_paste_empty
+	name = "plastic tube"
+	desc = "A plastic tube devoid of contents. Trash."
+	icon_state= "os_paste_empty"

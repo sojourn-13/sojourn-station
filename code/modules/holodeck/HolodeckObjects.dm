@@ -68,7 +68,6 @@
 	Initialize()
 	plane = -2
 	original_plane = -2
-	reset_plane_and_layer()
 
 /turf/simulated/floor/holofloor/beach
 	desc = "Uncomfortably gritty for a hologram."

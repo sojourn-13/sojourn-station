@@ -34,6 +34,9 @@
 /area/colony/exposedsun/crashed_shop/workshop
 	icon_state = "erisyellow"
 
+/area/colony/exposedsun/crashed_shop/outsider
+	icon_state = "erisyellow"
+
 /area/nadezhda
 	ship_area = TRUE
 	icon_state = "erisyellow"

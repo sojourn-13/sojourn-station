@@ -31,12 +31,17 @@
 /obj/item/device/encryptionkey/headset_bs
 	name = "blackshield radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list("Blackshield" = 1)// "Marshal" = 1 removed do to blackshield being marshals illegal
+	channels = list("Blackshield" = 1)	//Marshal coms taken away due to abuse by regular troopers. Sergeant and CO have maintained theirs.
 
 /obj/item/device/encryptionkey/headset_bs/corps
 	name = "corpsman radio encryption key"
 	icon_state = "mil_cypherkey"
 	channels = list("Blackshield" = 1, "Medical(I)" = 1)
+
+/obj/item/device/encryptionkey/headset_bs/sergeant
+	name = "sergeant radio encryption key"
+	icon_state = "mil_cypherkey"	//Someone should give this a new sprite at some point and change this text when they do. I'm too lazy to. -Rebel0
+	channels = list("Blackshield" = 1, "Marshal" = 1)
 
 /obj/item/device/encryptionkey/headset_mar
 	name = "security radio encryption key"
@@ -118,7 +123,7 @@
 /obj/item/device/encryptionkey/heads/merchant
 	name = "lonestar executive radio encryption key"
 	icon_state = "qm_cypherkey"
-	channels = list("Supply" = 1, "Prospector" = 1, "Command" = 1, "Service" = 1)
+	channels = list("Supply" = 1, "Command" = 1, "Service" = 1)
 
 /obj/item/device/encryptionkey/heads/preacher
 	name = "prime's radio encryption key"
@@ -138,12 +143,12 @@
 /obj/item/device/encryptionkey/headset_pro
 	name = "prospector radio encryption key"
 	icon_state = "srv_cypherkey"
-	channels = list("Prospector" = 1, "Supply" = 1)
+	channels = list("Prospector" = 1)
 
 /obj/item/device/encryptionkey/heads/foreman
 	name = "prospector radio encryption key"
 	icon_state = "qm_cypherkey"
-	channels = list("Prospector" = 1, "Supply" = 1, "Command" = 1)
+	channels = list("Prospector" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/entertainment
 	name = "entertainment radio key"

@@ -3,6 +3,7 @@
 	desc = "A cloth curtain that can be parted and closed accordingly."
 	icon = 'icons/obj/curtain.dmi'
 	icon_state = "closed"
+	matter = list(MATERIAL_CLOTH = 8)
 	opacity = 1
 	density = 0
 	anchored = 1
@@ -25,6 +26,15 @@
 	toggle()
 	..()
 
+/obj/structure/curtain/attackby(obj/item/I, mob/user)
+	if(QUALITY_WIRE_CUTTING in I.tool_qualities)
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+			user.visible_message(SPAN_NOTICE("\The [user] dismantles \the [src]."),SPAN_NOTICE("You dismantle \the [src]."))
+			drop_materials(drop_location())
+			qdel(src)
+	else
+		return attack_hand(user)
+
 /obj/structure/curtain/proc/toggle()
 	opacity = !opacity
 	if(opacity)
@@ -44,6 +54,8 @@
 
 /obj/structure/curtain/medical
 	name = "plastic curtain"
+	desc = "A plastic curtain that can be parted and closed accordingly. Quite transparent."
+	matter = list(MATERIAL_PLASTIC = 8)
 	color = "#B8F5E3"
 	alpha = 200
 
@@ -57,6 +69,8 @@
 
 /obj/structure/curtain/open/shower
 	name = "shower curtain"
+	desc = "A plastic curtain that can be parted and closed accordingly. Quite transparent."
+	matter = list(MATERIAL_PLASTIC = 8)
 	color = "#ACD1E9"
 	alpha = 200
 

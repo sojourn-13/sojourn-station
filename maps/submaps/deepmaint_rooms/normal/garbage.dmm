@@ -124,6 +124,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/deepmaint)
 "u" = (
@@ -145,6 +146,22 @@
 /obj/random/cluster/psi_monster/low_chance,
 /turf/simulated/floor/plating/under,
 /area/deepmaint)
+"A" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/deepmaint)
+"F" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/deepmaint)
+"Q" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/deepmaint)
 
 (1,1,1) = {"
 a
@@ -155,7 +172,7 @@ a
 a
 a
 a
-a
+Q
 a
 a
 "}
@@ -195,7 +212,7 @@ j
 j
 n
 e
-b
+F
 a
 "}
 (5,1,1) = {"
@@ -239,7 +256,7 @@ a
 "}
 (8,1,1) = {"
 a
-b
+F
 e
 i
 l
@@ -260,7 +277,7 @@ e
 w
 m
 e
-u
+A
 a
 "}
 (10,1,1) = {"
@@ -282,7 +299,7 @@ d
 a
 a
 a
-a
+Q
 a
 a
 a

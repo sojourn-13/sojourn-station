@@ -177,7 +177,6 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 			light_spell(M)
 			return
 
-
 //if we don't cast anything then we end up doing a normal burn.
 		to_chat(M, "<span class='warning'>You ignite the scroll. It burns for a few moments before becoming ash.</span>")
 		ScrollBurn()
@@ -749,7 +748,6 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 		qdel(smoke)
 		qdel(gas_storage)
 	src.ScrollBurn()
-
 
 /obj/item/scroll/proc/oil_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()

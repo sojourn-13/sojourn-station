@@ -70,7 +70,7 @@ Treat your command officers with respect, and listen to their council. Try not t
 	title = "Steward"
 	flag = STEWARD
 	department = DEPARTMENT_COMMAND
-	head_position = TRUE
+	head_position = FALSE
 	aster_guild_member = TRUE
 	department_flag = COMMAND
 	faction = MAP_FACTION

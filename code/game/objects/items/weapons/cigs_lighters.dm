@@ -263,6 +263,16 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	type_butt = /obj/item/trash/cigbutt/ishimura
 	preloaded_reagents = list("nicotine" = 5, "ishispec" = 5)
 
+/obj/item/clothing/mask/smokable/cigarette/os
+	name = "\improper GP produced cigarette"
+	desc = "A inhouse made cigarette by GP."
+	icon_state = "cigoff"
+	icon_on = "cigon"
+	icon_off = "cigoff"
+	type_butt = /obj/item/trash/cigbutt/os
+	preloaded_reagents = list("nicotine" = 5)
+
+
 /obj/item/clothing/mask/smokable/cigarette/tannhauser
 	name = "\improper Tannhauser Gate cigarette"
 	icon_state = "tannhauseroff"
@@ -502,6 +512,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	slot_flags = SLOT_EARS
 	matter = list(MATERIAL_BIOMATTER = 1)
 	throwforce = 1
+
+/obj/item/trash/cigbutt/os
+	name = "\improper GP cigarette butt"
+	icon_state = "cigbutt"
 
 /obj/item/trash/cigbutt/ishimura
 	name = "\improper Ishimura Special cigarette butt"

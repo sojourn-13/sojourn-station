@@ -11,7 +11,7 @@
 
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
-	power_rating = 750			//750 W ~ 1 HP
+	power_rating = 7500			//7500 W ~ 10 HP
 
 	var/max_flow_rate = 200
 	var/set_flow_rate = 200

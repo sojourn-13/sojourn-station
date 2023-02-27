@@ -112,6 +112,8 @@
 			descriptors |= "hallucinogenic"
 		if(reagents.has_reagent("bicaridine"))
 			descriptors |= "medicinal"
+		if(reagents.has_reagent("sanguinum"))
+			descriptors |= "metallic"
 		if(reagents.has_reagent(MATERIAL_GOLD))
 			descriptors |= "shiny"
 		if(reagents.has_reagent("lube"))

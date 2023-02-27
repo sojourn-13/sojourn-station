@@ -161,7 +161,7 @@
 	init_recoil = RIFLE_RECOIL(0.8)
 	saw_off = FALSE
 	serial_type = "SA"
-	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1, /obj/item/part/gun/barrel/shotgun = 1, /obj/item/part/gun/mechanism/shotgun = 1)
+	gun_parts = list(/obj/item/part/gun/frame/ak47 = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	init_firemodes = list(

@@ -40,8 +40,8 @@
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 10, MATERIAL_PLASTIC = 10)
 	resultvars = list(/obj/item/gun/projectile/automatic/motherfucker)
 	gripvars = list(/obj/item/part/gun/grip/wood)
-	mechanismvar = /obj/item/part/gun/mechanism/shotgun // its effectively a shotgun
-	barrelvars = list(/obj/item/part/gun/barrel/pistol)
+	mechanismvar = /obj/item/part/gun/mechanism/shotgun // its effectively a shotgun // 5 plasteel into the mechanism
+	barrelvars = list(/obj/item/part/gun/barrel/pistol/steel) // Handmade gun, 2 steel barrel on a 20 steel crafting recipe
 
 /obj/item/gun/projectile/automatic/motherfucker/attack_self(mob/living/user)
 	if(world.time >= recentpumpmsg + 10)

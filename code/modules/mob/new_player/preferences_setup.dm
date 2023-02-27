@@ -197,6 +197,7 @@
 
 /datum/preferences/proc/dress_preview_mob(var/mob/living/carbon/human/mannequin, naked = FALSE)
 	var/update_icon = TRUE
+	var/list/leftover_to_equip = list()
 	copy_to(mannequin, TRUE)
 
 	if(!naked)
@@ -239,9 +240,18 @@
 					if(!permitted)
 						continue
 
+					if(G.slot == slot_accessory_buffer)
+						leftover_to_equip.Add(G) //Save accessories 'til last
+						update_icon = TRUE
+
 					if(G.slot && G.slot != slot_accessory_buffer && !(G.slot in loadout_taken_slots) && G.spawn_on_mob(mannequin, gear_list[gear_slot][G.display_name]))
 						loadout_taken_slots.Add(G.slot)
 						update_icon = TRUE
+
+			if(leftover_to_equip) //Equip accessories to the preview
+				var/obj/item/clothing/under/under = mannequin.w_uniform
+				for(var/datum/gear/thing in leftover_to_equip)
+					under.attach_accessory(null, thing.spawn_item(mannequin, gear_list[gear_slot][thing.display_name]))
 
 	if(update_icon)
 		mannequin.update_icons()
