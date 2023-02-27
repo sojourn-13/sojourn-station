@@ -1703,3 +1703,46 @@
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
 
 /////////////////
+
+/datum/seed/devil_string
+	name = "devil's string"
+	seed_name = "devil's seed"
+	display_name = "devil string"
+	chems = list("cordradaxon" = list(3,5),"bicaridine" = list(1,10,1),"quickclot" = list(1,10,1))
+
+/datum/seed/mint/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_MATURATION,2)
+	set_trait(TRAIT_PRODUCTION,23)
+	set_trait(TRAIT_YIELD,7)
+	set_trait(TRAIT_PRODUCT_ICON,"cinnamon")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#8B0000")
+	set_trait(TRAIT_PLANT_COLOUR,"#8B0000")
+	set_trait(TRAIT_PLANT_ICON,"alien4")
+	set_trait(TRAIT_IDEAL_HEAT, 195)
+	set_trait(TRAIT_IDEAL_LIGHT, 1)
+	set_trait(TRAIT_WATER_CONSUMPTION, 8)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.55)
+
+
+/datum/seed/blues_sling
+	name = "blues sling"
+	seed_name = "blue seed"
+	display_name = "blues slings"
+	chems = list("inaprovaline" = list(3,5),"respirodaxon" = list(1,10,1),"potassium_chloride" = list(1,10,1))
+
+/datum/seed/mint/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_MATURATION,4)
+	set_trait(TRAIT_PRODUCTION,12)
+	set_trait(TRAIT_YIELD,3)
+	set_trait(TRAIT_PRODUCT_ICON,"strawberry")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#8B0000")
+	set_trait(TRAIT_PLANT_COLOUR,"#8B0000")
+	set_trait(TRAIT_PLANT_ICON,"alien4")
+	set_trait(TRAIT_IDEAL_HEAT, 203)
+	set_trait(TRAIT_IDEAL_LIGHT, 5)
+	set_trait(TRAIT_WATER_CONSUMPTION, 8)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.55)

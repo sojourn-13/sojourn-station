@@ -87,7 +87,9 @@
 		/obj/item/seeds/towermycelium = 3,
 		/obj/item/seeds/watermelonseed = 3,
 		/obj/item/seeds/wheatseed = 3,
-		/obj/item/seeds/whitebeetseed = 3
+		/obj/item/seeds/whitebeetseed = 3,
+		/datum/seed/blues_sling = 1,
+		/datum/seed/devil_string = 1
 	)
 
 /obj/machinery/seed_storage/xenobotany
@@ -148,6 +150,8 @@
 		/obj/item/seeds/surik = 2,
 		/obj/item/seeds/telriis = 2,
 		/obj/item/seeds/thaadra = 2,
+		/datum/seed/blues_sling = 1,
+		/datum/seed/devil_string = 1,
 		/obj/item/seeds/random = 6
 	)
 
