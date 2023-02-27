@@ -216,7 +216,7 @@
 	restricted_to_species = list(
 		FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN,
 		FORM_AKULA, FORM_MARQUA, FORM_NARAMAD,
-		FORM_CINDAR)
+		FORM_CINDAR, FORM_UNBRANDED, FORM_FBP)
 
 	racial_implants = (/obj/item/organ_module/active/simple/wolverine)
 
