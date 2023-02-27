@@ -12,7 +12,7 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/freedom(src)
-		new /obj/item/ammo_magazine/smg_magnum_40/rubber(src)
+		new /obj/item/ammo_magazine/smg_magnum_40/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/storage/pouch/ammo(src)
@@ -31,7 +31,7 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/mamba(src)
-		new /obj/item/ammo_magazine/light_rifle_257/rubber(src)
+		new /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/light_rifle_257(src)
 		new /obj/item/ammo_magazine/light_rifle_257(src)
 		new /obj/item/storage/pouch/ammo(src)
@@ -55,7 +55,7 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot(src)
-		new /obj/item/ammo_magazine/speed_loader_shotgun/beanbag(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun/beanbag/pepperball(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/storage/pouch/tubular(src)
@@ -78,7 +78,7 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/riot_autoshotgun(src)
-		new /obj/item/ammo_casing/shotgun/beanbag/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/beanbag/pepperball/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/storage/pouch/tubular(src)
@@ -139,8 +139,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/colt/liberty(src)
-		new /obj/item/ammo_magazine/magnum_40/rubber(src)
-		new /obj/item/ammo_magazine/magnum_40/rubber(src)
+		new /obj/item/ammo_magazine/magnum_40/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/magnum_40/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
 		new /obj/item/clothing/accessory/holster/hip(src)
 
@@ -151,8 +151,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/judiciary(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
+		new /obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		new /obj/item/clothing/accessory/holster/hip(src)
 
@@ -163,10 +163,10 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/deckard(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/m_kit/zwang
@@ -195,9 +195,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/m_kit/galaxy
@@ -216,8 +216,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/lamia/amnesty(src)
-		new /obj/item/ammo_magazine/kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/kurtz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/kurtz_50(src)
 		new /obj/item/clothing/accessory/holster/hip(src)
 
 // Armor Kits
