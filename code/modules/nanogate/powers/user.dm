@@ -191,7 +191,7 @@ List of powers in this page :
 
 	var/stat = choices_stats[input(owner, "Which nanite chem do you want?", "Stats Choice", null) as null|anything in choices_stats]
 
-	if(choice && pay_power_cost(nano_point_cost))
+	if(stat && pay_power_cost(nano_point_cost))
 		to_chat(owner, "You permanently assign some of your nanites to be databanks.")
 		owner.stats.changeStat(stat, 5)
 
