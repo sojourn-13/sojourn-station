@@ -187,6 +187,7 @@ List of powers in this page :
 									"Robustness" = STAT_ROB,
 									"Toughness" = STAT_TGH,
 									"Vigilance" = STAT_VIG
+									)
 
 	var/stat = choices_stats[input(owner, "Which nanite chem do you want?", "Stats Choice", null) as null|anything in choices_stats]
 
