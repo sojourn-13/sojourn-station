@@ -245,7 +245,6 @@
 	item_state = "latex"
 	siemens_coefficient = 1.0 //thin latex gloves, much more conductive than fabric gloves (basically a capacitor for AC)
 	permeability_coefficient = 0.01
-	germ_level = 0
 	price_tag = 50
 
 /obj/item/clothing/gloves/latex/nitrile
@@ -261,7 +260,6 @@
 	item_state = "regal"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.01
-	germ_level = 0
 	price_tag = 300 // A relic!
 
 /obj/item/clothing/gloves/botanic_leather
@@ -307,5 +305,4 @@
 	armor_list = list(melee = 25, bullet = 5, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
-	germ_level = 0
 	price_tag = 50

@@ -137,52 +137,42 @@
 		var/obj/item/clothing/under/chameleon/G = chameleonitem
 		item_to_disguise = input("","Choose a disguise") in G.clothing_choices
 		loadout[1] = G.clothing_choices[item_to_disguise]
-		G.germ_level = 0
 	if(istype(currentitem, /obj/item/clothing/head))
 		var/obj/item/clothing/head/chameleon/G = chameleonitem
 		item_to_disguise = input("","Choose a disguise") in G.clothing_choices
 		loadout[2] = G.clothing_choices[item_to_disguise]
-		G.germ_level = 0
 	if(istype(currentitem, /obj/item/clothing/suit))
 		var/obj/item/clothing/suit/chameleon/G = chameleonitem
 		item_to_disguise = input("","Choose a disguise") in G.clothing_choices
 		loadout[3] = G.clothing_choices[item_to_disguise]
-		G.germ_level = 0
 	if(istype(currentitem, /obj/item/clothing/shoes))
 		var/obj/item/clothing/shoes/chameleon/G = chameleonitem
 		item_to_disguise = input("","Choose a disguise") in G.clothing_choices
 		loadout[4] = G.clothing_choices[item_to_disguise]
-		G.germ_level = 0
 	if(istype(currentitem, /obj/item/storage/backpack))
 		var/obj/item/storage/backpack/chameleon/G = chameleonitem
 		item_to_disguise = input("","Choose a disguise") in G.clothing_choices
 		loadout[5] = G.clothing_choices[item_to_disguise]
-		G.germ_level = 0
 	if(istype(currentitem, /obj/item/clothing/gloves))
 		var/obj/item/clothing/gloves/chameleon/G = chameleonitem
 		item_to_disguise = input("","Choose a disguise") in G.clothing_choices
 		loadout[6] = G.clothing_choices[item_to_disguise]
-		G.germ_level = 0
 	if(istype(currentitem, /obj/item/clothing/mask))
 		var/obj/item/clothing/mask/chameleon/G = chameleonitem
 		item_to_disguise = input("","Choose a disguise") in G.clothing_choices
 		loadout[7] = G.clothing_choices[item_to_disguise]
-		G.germ_level = 0
 	if(istype(currentitem, /obj/item/clothing/glasses))
 		var/obj/item/clothing/glasses/chameleon/G = chameleonitem
 		item_to_disguise = input("","Choose a disguise") in G.clothing_choices
 		loadout[8] = G.clothing_choices[item_to_disguise]
-		G.germ_level = 0
 	if(istype(currentitem, /obj/item/gun))
 		var/obj/item/gun/energy/chameleon/G = chameleonitem
 		item_to_disguise = input("","Choose a disguise") in G.gun_choices
 		loadout[9] = G.gun_choices[item_to_disguise]
-		G.germ_level = 0
 	if(istype(currentitem, /obj/item/device/radio/headset))
 		var/obj/item/device/radio/headset/chameleon/G = chameleonitem
 		item_to_disguise = input("","Choose a disguise") in G.clothing_choices
 		loadout[10] = G.clothing_choices[item_to_disguise]
-		G.germ_level = 0
 
 
 /obj/item/clothing/under/chameleon/proc/disguise_as_loadout(mob/user, loadout)

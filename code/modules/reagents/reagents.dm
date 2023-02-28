@@ -86,7 +86,7 @@
 				removed = CLAMP(metabolism * volume/(overdose/2) * M.get_blood_circulation()/100, metabolism * REAGENTS_MIN_EFFECT_MULTIPLIER, metabolism * REAGENTS_MAX_EFFECT_MULTIPLIER)
 			else
 				removed = CLAMP(metabolism * volume/(REAGENTS_OVERDOSE/2) * M.get_blood_circulation()/100, metabolism * REAGENTS_MIN_EFFECT_MULTIPLIER, metabolism * REAGENTS_MAX_EFFECT_MULTIPLIER)
-	removed = round(removed, 0.01)
+	removed = max(round(removed, 0.01), 0.01)
 	removed = min(removed, volume)
 
 	return removed
@@ -110,7 +110,7 @@
 				removed = CLAMP(metabolism * volume/(overdose/2) * consumer.get_blood_circulation()/100 * calculated_buff, metabolism * REAGENTS_MIN_EFFECT_MULTIPLIER, metabolism * REAGENTS_MAX_EFFECT_MULTIPLIER)
 			else
 				removed = CLAMP(metabolism * volume/(REAGENTS_OVERDOSE/2) * consumer.get_blood_circulation()/100 * calculated_buff, metabolism * REAGENTS_MIN_EFFECT_MULTIPLIER, metabolism * REAGENTS_MAX_EFFECT_MULTIPLIER)
-	removed = round(removed, 0.01)
+	removed = max(round(removed, 0.01), 0.01)
 	removed = min(removed, volume)
 
 	return removed
@@ -195,8 +195,20 @@
 	return
 
 /datum/reagent/proc/overdose(var/mob/living/carbon/M, var/alien) // Overdose effect. Doesn't happen instantly.
-	M.adjustToxLoss(REM)
+	M.add_chemical_effect(CE_TOXIN, dose / 4)
 	return
+
+/datum/reagent/proc/create_overdose_wound(obj/item/organ/internal/I, mob/user, datum/component/internal_wound/base_type, wound_descriptor = "poisoning", silent = FALSE)
+	if(!istype(I))
+		return
+	if(I.nature != initial(base_type.wound_nature))
+		return
+
+	var/wound_path = pick(subtypesof(base_type))
+	var/wound_name = "[name] [wound_descriptor]"
+	I.add_wound(wound_path, wound_name)
+	if(!silent && BP_IS_ORGANIC(I))
+		to_chat(user, SPAN_WARNING("You feel a sharp pain in your [I.parent.name]."))
 
 /datum/reagent/proc/initialize_data(var/newdata) // Called when the reagent is created.
 	if(!isnull(newdata))

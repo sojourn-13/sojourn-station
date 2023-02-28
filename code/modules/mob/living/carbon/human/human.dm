@@ -753,7 +753,6 @@ var/list/rank_prefix = list(\
 			location.add_vomit_floor(src, 1)
 
 		adjustNutrition(-40)
-		adjustToxLoss(-3)
 		if(src.ingested && src.ingested.reagent_list.len > 0) // If we have anything on our stomach...
 			for(var/datum/reagent/R in src.ingested.reagent_list)
 				if(R == src)
@@ -906,12 +905,6 @@ var/list/rank_prefix = list(\
 		remoteview_target = null
 		reset_view(0)
 
-/mob/living/carbon/human/proc/increase_germ_level(n)
-	if(gloves)
-		gloves.germ_level += n
-	else
-		germ_level += n
-
 /mob/living/carbon/human/revive()
 
 	if(species && !(species.flags & NO_BLOOD))
@@ -950,36 +943,7 @@ var/list/rank_prefix = list(\
 		src.custom_pain("You feel a stabbing pain in your chest!", 1)
 		L.bruise()
 
-/*
-/mob/living/carbon/human/verb/simulate()
-	set name = "sim"
-	set background = 1
 
-	var/damage = input("Wound damage","Wound damage") as num
-
-	var/germs = 0
-	var/tdamage = 0
-	var/ticks = 0
-	while (germs < 2501 && ticks < 100000 && round(damage/10)*20)
-		log_misc("VIRUS TESTING: [ticks] : germs [germs] tdamage [tdamage] prob [round(damage/10)*20]")
-		ticks++
-		if (prob(round(damage/10)*20))
-			germs++
-		if (germs == 100)
-			to_chat(world, "Reached stage 1 in [ticks] ticks")
-		if (germs > 100)
-			if (prob(10))
-				damage++
-				germs++
-		if (germs == 1000)
-			to_chat(world, "Reached stage 2 in [ticks] ticks")
-		if (germs > 1000)
-			damage++
-			germs++
-		if (germs == 2500)
-			to_chat(world, "Reached stage 3 in [ticks] ticks")
-	to_chat(world, "Mob took [tdamage] tox damage")
-*/
 //returns 1 if made bloody, returns 0 otherwise
 
 /mob/living/carbon/human/add_blood(mob/living/carbon/human/M as mob)
@@ -1007,12 +971,10 @@ var/list/rank_prefix = list(\
 	if(gloves)
 		if(gloves.clean_blood())
 			update_inv_gloves()
-		gloves.germ_level = 0
 	else
 		if(bloody_hands)
 			bloody_hands = 0
 			update_inv_gloves()
-		germ_level = 0
 
 	gunshot_residue = null
 
@@ -1064,13 +1026,13 @@ var/list/rank_prefix = list(\
 					to_chat(src, msg)
 				var/mob/living/carbon/human/H = organ.owner
 				if(!MOVING_DELIBERATELY(H))
-					organ.take_damage(rand(1,3), 0, 0)
+					organ.take_damage(3, BRUTE, organ.max_damage, 6.7, TRUE, TRUE)	// When the limb is at 60% of max health, internal organs start taking damage.
 					if(organ.setBleeding())
-						src.adjustToxLoss(rand(1,3))
+						organ.take_damage(3, TOX)
 					if(species.reagent_tag == IS_CHTMANT)
 						src.hallucination(30, 50)
 						src.adjustHalLoss(3)
-						src.adjustToxLoss(1)
+						organ.take_damage(1, TOX)
 
 
 /mob/living/carbon/human/verb/Toggle_Title()
@@ -1619,13 +1581,6 @@ var/list/rank_prefix = list(\
 			status += "hurts when touched"
 		if(org.status & ORGAN_BLEEDING) // "Oh hey, I'm bleeding"
 			status += "<b>bleeding profusely</b>"
-		// Infections should be obvious to us as well
-		if(org.germ_level >= INFECTION_LEVEL_ONE && org.germ_level < INFECTION_LEVEL_TWO)
-			status += "<font color='90EE90'>greenishly discolored</font>" // Very light green
-		if(org.germ_level >= INFECTION_LEVEL_TWO && org.germ_level < INFECTION_LEVEL_THREE)
-			status += "<font color='00FF00'>oozing with pus</font>" // Lighter green
-		if(org.germ_level >= INFECTION_LEVEL_THREE && !(org.status & ORGAN_DEAD))
-			status += "<b><font color='407A18'>rotting away</font></b>" // Dark green and bolded, your organ is close to necropsy
 		if(org.status & ORGAN_DEAD)
 			status += "<b><font color='005500'>rotten</font></b>" // Necrotic
 		if(!org.is_usable())
