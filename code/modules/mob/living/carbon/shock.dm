@@ -30,7 +30,6 @@
 
 	. = 0.9	* get_limb_damage() + 0.6 * oxyloss
 
-
 	//Constant Pain above 80% of the crit treshold gets converted to dynamic pain (hallos)
 	//Damage from the last tick gets saved as last_tick_pain and compared to current pain, if the current pain is larger hallos gets applied again
 	if(. > 0.8 * hard_crit_threshold)
