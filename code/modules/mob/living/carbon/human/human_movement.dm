@@ -50,7 +50,10 @@
 			tally += shoes.slowdown
 
 	//tally += min((shock_stage / 100) * 3, 3) //Scales from 0 to 3 over 0 to 100 shock stage
-	tally += min((get_dynamic_pain() - get_painkiller()) / 40, 3) // Scales from 0 to 3,
+	//Soj edit - Are painkillers dont just magically make us faster
+	var/pain_effecting = (get_dynamic_pain() - get_painkiller())
+	if(pain_effecting >= 1)
+		tally += min(pain_effecting / 40, 3) // Scales from 0 to 3,
 
 	//if(stats.getPerk(/datum/perk/timeismoney)?.is_active())
 		//tally -= 2
