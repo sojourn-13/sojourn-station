@@ -181,7 +181,14 @@ List of powers in this page :
 	set desc = "Spend some of your nanites to increase your knowledge."
 	nano_point_cost = 2
 
-	var/obj/item/choice = input(usr, "Which modification do you want?", "Stat Choice", null) as null|anything in ALL_STATS_TO_IMPRINT
+	var/list/choices_stats = list(	"Mechanical" = STAT_MEC,
+									"Cognition" = STAT_COG,
+									"Biology" = STAT_BIO,
+									"Robustness" = STAT_ROB,
+									"Toughness" = STAT_TGH,
+									"Vigilance" = STAT_VIG
+
+	var/stat = choices_stats[input(owner, "Which nanite chem do you want?", "Stats Choice", null) as null|anything in choices_stats]
 
 	if(choice && pay_power_cost(nano_point_cost))
 		to_chat(owner, "You permanently assign some of your nanites to be databanks.")
