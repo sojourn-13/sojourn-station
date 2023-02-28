@@ -17,9 +17,9 @@
 /datum/reagent/toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(strength)
 		var/multi = effect_multiplier
-		if(issmall(M))  // Small bodymass, more effect from lower volume.
+		/*if(issmall(M))  // Small bodymass, more effect from lower volume.
 			multi *= 2
-			H.sanity.onToxin(src, multi)
+			M.sanity.onToxin(src, multi)*/
 		M.add_chemical_effect(CE_TOXIN, multi * strength)
 
 /datum/reagent/toxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)

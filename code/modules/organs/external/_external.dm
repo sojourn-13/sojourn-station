@@ -216,10 +216,7 @@
 /obj/item/organ/external/proc/make_bones()
 	if(default_bone_type)
 		var/obj/item/organ/internal/bone
-		if(nature == MODIFICATION_SUPERIOR)
-			bone = new default_bone_type
-			bone.reinforce()
-		else if(nature < MODIFICATION_SILICON)
+		if(nature < MODIFICATION_SILICON)
 			bone = new default_bone_type
 		else
 			var/mecha_bone = text2path("[default_bone_type]/robotic")

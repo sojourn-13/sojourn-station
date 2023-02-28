@@ -75,8 +75,7 @@
 		if (blood_level > 1)
 			H.bloody_body(organ.owner, 0)
 
-	if(can_infect)
-		organ.spread_germs_from(user)
+
 	/* We don't use this right now.
 	if(can_infect && prob(5) && istype(organ, /obj/item/organ/internal))
 		var/obj/item/organ/internal/I = organ

@@ -147,14 +147,9 @@
 	holder.remove_reagent("amatoxin", 0.2 * effect_multiplier) // We hate the shitbirds
 
 
-/datum/reagent/medicine/dylovene/overdose(var/mob/living/carbon/M, var/alien)
+/datum/reagent/medicine/dylovene/overdose(mob/living/carbon/human/user, alien)
 	var/obj/item/organ/internal/blood_vessel/user_vessel = user.random_organ_by_process(OP_BLOOD_VESSEL)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		create_overdose_wound(user_vessel, user, /datum/component/internal_wound/organic/heavy_poisoning, "accumulation")
-	M.adjustToxLoss(2)
-	if(M.losebreath < 10)
-		M.losebreath++
+	create_overdose_wound(user_vessel, user, /datum/component/internal_wound/organic/heavy_poisoning, "accumulation")
 
 /datum/reagent/medicine/carthatoline
 	name = "Carthatoline"
@@ -289,7 +284,7 @@
 	M.add_chemical_effect(CE_ANTITOX, 1)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
 
-/datum/reagent/medicine/tricordrazine/overdose(var/mob/living/carbon/M, var/alien)
+/datum/reagent/medicine/tricordrazine/overdose(mob/living/carbon/human/user, alien)
 	var/obj/item/organ/internal/liver/user_liver = user.random_organ_by_process(OP_LIVER)
 	if(!user_liver)
 		return FALSE

@@ -22,8 +22,6 @@
 	 "Looks completely ruined.",
 	 "It is difficult to make out what this thing once was.",
 	 "A relic from a bygone age.")
-
-	germ_level = pick(80,110,160)
 	price_tag *= RAND_DECIMAL(0.1, 0.6) //Tank the price of it
 
 	//Deplete matter and matter_reagents
@@ -49,7 +47,6 @@
 	name = initial(name)
 	color = initial(color)
 	desc = initial(desc)
-	germ_level = initial(germ_level)
 	price_tag = initial(price_tag)
 	..()
 
