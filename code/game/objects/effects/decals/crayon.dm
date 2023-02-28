@@ -7,6 +7,33 @@
 	random_rotation = 0
 	var/is_rune = FALSE
 
+/obj/item/stack/thrown/crayons
+	name = "throwing crayons"
+	desc = "Sharpened crayons. Used till they have become the perfectly balanced weight for throwing."
+	icon = 'icons/obj/crayons.dmi'
+	icon_state = "crayonred"
+	item_state = "crayonred"
+	singular_name = "throwing crayon"
+	plural_name = "throwing crayons"
+	tool_qualities = list()
+	attack_verb = list("slashed", "stabbed", "marked", "cut")
+	matter = list()
+	max_amount = 6
+
+/obj/item/stack/thrown/crayons/launchAt(atom/target, mob/living/carbon/M)
+	var/hp_throwing_damage = ((200 - max(M.maxHealth, 30)) / 5) //the lower our health the more damage we do. At 60 hp we do about 28 damage. Maxes at 34.
+	throwforce = hp_throwing_damage
+	..()
+
+/obj/item/stack/thrown/crayons/update_icon()
+	if (icon_state == null)
+		icon_state = pickweight(list("crayonred" = 2,\
+				"crayonorange" = 2,\
+				"crayonyellow" = 2,\
+				"crayongreen" = 2,\
+				"crayonblue" = 2,\
+				"crayonpurple" = 2))
+
 /obj/effect/decal/cleanable/crayon/mist
 	name = "strange rune"
 	desc = "A fine mist comes off this rune"
@@ -175,6 +202,11 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 		if(src.message == "Light." && M.species?.reagent_tag != IS_SYNTHETIC)
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			light_spell(M)
+			return
+
+		if(src.message == "Mightier." && M.species?.reagent_tag != IS_SYNTHETIC)
+			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
+			mightier_spell(M)
 			return
 
 //if we don't cast anything then we end up doing a normal burn.
@@ -630,6 +662,9 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 		if(istype(carpy, /obj/item/card_carp/warren))
 			var/obj/structure/burrow/diggy_hole = new /obj/structure/burrow(carpy.loc)
 			diggy_hole.deepmaint_entry_point = TRUE
+			diggy_hole.isRevealed = TRUE
+			diggy_hole.isSealed = FALSE
+			diggy_hole.invisibility = 0
 			qdel(carpy)
 			return
 
@@ -761,6 +796,8 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 	B.remove_self(50)
 	for(var/obj/effect/decal/cleanable/liquid_fuel/fixy_juice in oview(7))
 		bluespace_entropy(1, get_turf(src), TRUE) //on a per juice basis
+		for(var/obj/structure/multiz/ladder/burrow_hole/scary_hole in view(0, fixy_juice.loc))
+			qdel(scary_hole)
 		for(var/turf/simulated/floor/pot_hole in view(0, fixy_juice.loc))
 			pot_hole.health = pot_hole.maxHealth
 			pot_hole.broken = FALSE
@@ -778,4 +815,21 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 	light_rune.color = "#FFFF00"
 	B.remove_self(20)
 	bluespace_entropy(20, get_turf(src), TRUE) //high entropy cost. Low blood cost.
+	src.ScrollBurn()
+
+/obj/item/scroll/proc/mightier_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	bluespace_entropy(10, get_turf(src), TRUE)
+	B.remove_self(50) //roughly 10 percent for each crayon.
+	var/obj/item/stack/thrown/crayons/needles = new /obj/item/stack/thrown/crayons(src.loc)
+	needles.icon_state = pickweight(list("crayonred" = 2,\
+				"crayonorange" = 2,\
+				"crayonyellow" = 2,\
+				"crayongreen" = 2,\
+				"crayonblue" = 2,\
+				"crayonpurple" = 2))
+	needles.item_state = needles.icon_state
+	if(M.get_inactive_hand() == src)
+		M.drop_from_inventory(src)
+		M.put_in_inactive_hand(needles)
 	src.ScrollBurn()
