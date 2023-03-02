@@ -34,6 +34,12 @@
 	matter = list(MATERIAL_STEEL = 1)
 	organ_efficiency = list(OP_EYES = 200)
 
+/obj/item/organ/internal/eyes/prosthetic/fbp
+	name = "advanced optical sensors"
+	desc = "A pair of advanced optical sensors, providing sight for synthetics."
+	price_tag = 200
+	var/flash_protection = FLASH_PROTECTION_MODERATE	//For welding
+
 /obj/item/organ/internal/eyes/proc/get_icon()
 	var/icon/eyes_icon = new/icon('icons/mob/human_face.dmi', "eye_l")
 	eyes_icon.Blend(icon('icons/mob/human_face.dmi', "eye_r"), ICON_OVERLAY)
