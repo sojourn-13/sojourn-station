@@ -219,8 +219,8 @@
 		log_debug("legal_mechanism refence == [legal_mechanism]")
 		log_debug("legal_barrel refence == [legal_barrel]")
 
-		if(legal_grip != frame_to_grip)
-			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper grip for the componence's!"))
+		if(legal_grip != frame_to_grip) // ATF check
+			to_chat(user, SPAN_WARNING("\the [src] dosnt have a proper grip for the componence's"))
 			illegal = TRUE
 
 		if(legal_mechanism != frame_to_mechanism)
@@ -381,7 +381,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	matter = list(MATERIAL_STEEL = 3)
 
 /obj/item/part/gun/mechanism/boltgun // fits better in this category despite not being a steel variant
-	name = "manual-action mechanism"
+	name = "bolt-action mechanism"
 	desc = "All the bits that makes the bullet go bang, slow and methodical."
 	icon_state = "mechanism_boltaction"
 	matter = list(MATERIAL_STEEL = 3)
@@ -439,7 +439,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 /obj/item/part/gun/barrel/clrifle
 	name = "10x24mm caseless barrel"
 	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 10x24mm caseless."
-	icon_state = "barrel_casless"
+	icon_state = "barrel_caseless"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	caliber = "10x24"
 	refence_for_legal = "clrifle"
@@ -462,7 +462,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 
 /obj/item/part/gun/barrel/shotgun
 	name = "shotgun barrel"
-	desc = "A gun barrel, which keeps the bullet (or bullets) going in the right direction. Chambered for 20mm cartriages."
+	desc = "A gun barrel, which keeps the bullet (or bullets) going in the right direction. Chambered for 20mm cartridges."
 	icon_state = "barrel_shotgun"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	caliber = CAL_SHOTGUN
@@ -522,6 +522,6 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 
 /obj/item/part/gun/barrel/shotgun/steel
 	name = "cheap shotgun barrel"
-	desc = "A gun barrel, which keeps the bullet (or bullets) going in the right direction. Chambered for 20mm cartriages. \
+	desc = "A gun barrel, which keeps the bullet (or bullets) going in the right direction. Chambered for 20mm cartridges. \
 			This one does not look as high quality."
 	matter = list(MATERIAL_STEEL = 2)

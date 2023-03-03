@@ -43,7 +43,7 @@
 /obj/item/gun/projectile/crossbow
 	name = "powered crossbow"
 	desc = "A 2557AD twist on an old classic. Pick up that can."
-	description_info = "Uses metal rods as ammunition. Insert a rod and use in hand to pull the string, then fire. To fire superheated rods instead, insert a Large powercell. To remove a drained powercell, use a Screwdriving tool."
+	description_info = "Uses metal rods as ammunition. Insert a rod and use in hand to pull the string, then fire. To fire superheated rods instead, insert a Large powercell. To remove a drained powercell, use a Bolt Turning tool."
 	icon = 'icons/obj/guns/launcher/crossbow-solid.dmi'
 	icon_state = "crossbow"
 	item_state = "crossbow-solid"
@@ -134,7 +134,7 @@
 			chambered = new /obj/item/ammo_casing/rod_bolt(src)
 			chambered.fingerprintslast = src.fingerprintslast
 			update_icon()
-			user.visible_message("[user] jams [R] into [src].","You jam [R] into [src].")
+			user.visible_message("[user] jams a [R] into [src].","You jam a [R] into [src].")
 			superheat_rod(user)
 
 
@@ -146,7 +146,7 @@
 		else
 			to_chat(user, SPAN_NOTICE("[src] already has a cell installed."))
 
-	else if(I.get_tool_type(user, list(QUALITY_SCREW_DRIVING), src))
+	else if(I.get_tool_type(user, list(QUALITY_BOLT_TURNING), src))
 		if(cell)
 			eject_item(cell, user)
 			cell = null

@@ -508,25 +508,31 @@
 /obj/item/tool/crowbar/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	tool_qualities = list(QUALITY_PRYING = 40, QUALITY_HAMMERING = 10) //We can dig but not that fast!
+	degradation = 0
 
 /obj/item/tool/wrench/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	tool_qualities = list(QUALITY_BOLT_TURNING = 40)
+	degradation = 0
 
 /obj/item/tool/screwdriver/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	//random_icon = FALSE
+	degradation = 0
 
 /obj/item/tool/multitool/robotic
 	icon = 'icons/obj/robot_items.dmi'
+	degradation = 0
 
 /obj/item/tool/wirecutters/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	tool_qualities = list(QUALITY_WIRE_CUTTING = 40, QUALITY_CUTTING = 30)
+	degradation = 0
 
 /obj/item/tool/weldingtool/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	switched_on_qualities = list(QUALITY_WELDING = 40, QUALITY_CAUTERIZING = 15, QUALITY_WIRE_CUTTING = 15)
+	degradation = 0
 
 /obj/item/tool/weldingtool/robotic/weaker
 	name = "small welder"
@@ -534,6 +540,7 @@
 	icon = 'icons/obj/robot_items.dmi'
 	switched_on_qualities = list(QUALITY_WELDING = 30, QUALITY_CAUTERIZING = 5)
 	max_fuel = 15 //cracks
+	degradation = 0
 
 /obj/item/tool/robotic_omni_surgery
 	name = "Surgery omni tool"

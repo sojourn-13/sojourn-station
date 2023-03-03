@@ -17,45 +17,6 @@
 	affective_ap_range = 3
 	recoil = 3
 
-/obj/item/projectile/bullet/pistol_35/rubber
-	name = "rubber bullet"
-	icon_state = "rubber"
-	damage_types = list(BRUTE = 4)
-	agony = 22
-	armor_penetration = 0
-	embed = FALSE
-	sharp = FALSE
-	recoil = 2
-
-/obj/item/projectile/bullet/pistol_35/rubber/soporific
-	name = "soporific coated rubber bullet"
-	damage_types = list(BRUTE = 0)
-	agony = 25
-	var/spray = "stoxin"
-
-/obj/item/projectile/bullet/pistol_35/rubber/soporific/New()
-	..()
-	if (!testing)
-		create_reagents(2)
-		reagents.add_reagent(spray, 2)
-
-/obj/item/projectile/bullet/pistol_35/rubber/soporific/on_hit(atom/target, def_zone = null)
-	if(isliving(target))
-		var/mob/living/L = target
-		if(istype(L) && L.reagents)
-			reagents.trans_to_mob(L, 2, CHEM_TOUCH, copy = FALSE)
-
-/obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
-	name = "soporific condensed plastic bullet"
-	agony = 30
-
-/obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo/on_hit(atom/target, def_zone = null)
-	if(isliving(target))
-		var/mob/living/L = target
-		if(istype(L) && L.reagents)
-			L.reagents.add_reagent("stoxin", 5)
-
-
 /obj/item/projectile/bullet/pistol_35/hv
 	damage_types = list(BRUTE = 10)
 	armor_penetration = 20
@@ -88,6 +49,71 @@
 	sharp = TRUE
 	step_delay = 0.65
 	recoil = 2
+
+/obj/item/projectile/bullet/pistol_35/rubber
+	name = "rubber bullet"
+	icon_state = "rubber"
+	damage_types = list(BRUTE = 10)
+	agony = 22
+	armor_penetration = 0
+	embed = FALSE	//Prob should have a chance to embed, but makes close to no sense to do this for 9mm at least.
+	sharp = FALSE
+	can_ricochet = TRUE
+	recoil = 2
+
+/obj/item/projectile/bullet/pistol_35/rubber/soporific
+	name = "soporific coated rubber bullet"
+	damage_types = list(BRUTE = 0)
+	agony = 25
+	var/spray = "stoxin"
+	can_ricochet = FALSE
+	armor_penetration = 0
+
+/obj/item/projectile/bullet/pistol_35/rubber/soporific/New()
+	..()
+	if (!testing)
+		create_reagents(2)
+		reagents.add_reagent(spray, 2)
+
+/obj/item/projectile/bullet/pistol_35/rubber/soporific/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents)
+			reagents.trans_to_mob(L, 2, CHEM_TOUCH, copy = FALSE)
+
+/obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
+	name = "soporific condensed plastic bullet"
+	agony = 30
+	can_ricochet = FALSE
+	armor_penetration = 0
+
+/obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents)
+			L.reagents.add_reagent("stoxin", 5)
+
+/obj/item/projectile/bullet/pistol_35/rubber/pepperball
+	name = "pepperball"
+	damage_types = list(BRUTE = 2)	//Pepperballs disipate upon impact. They'll sting like shit, but won't do much in a low-velocity round.
+	agony = 22
+	step_delay = 0.6 //a little slower than rubber rounds - these are just pepperspray balls
+	armor_penetration = 0
+	var/spray = "condensedcapsaicin"
+	embed = FALSE
+	can_ricochet = FALSE
+
+/obj/item/projectile/bullet/pistol_35/rubber/pepperball/New()
+	..()
+	if (!testing)
+		create_reagents(3)
+		reagents.add_reagent(spray, 3)
+
+/obj/item/projectile/bullet/pistol_35/rubber/pepperball/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents && !testing)
+			reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/pistol_35/scrap
 	damage_types = list(BRUTE = 12)
@@ -146,23 +172,40 @@
 	affective_ap_range = 4
 	recoil = 7
 
+/obj/item/projectile/bullet/magnum_40/lethal
+	name = "hollow-point bullet"
+	damage_types = list(BRUTE = 19)
+	agony = 11
+	armor_penetration = 0
+	post_penetration_dammult = 2
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = TRUE
+	sharp = TRUE
+	step_delay = 0.5
+	recoil = 5
+
 /obj/item/projectile/bullet/magnum_40/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 12)
+	damage_types = list(BRUTE = 14)	//Basically a lower-damage HP but with more agony damage to it. Technically LTL - but not really ideal for it. Crowd-suppression.
 	agony = 30
-	armor_penetration = 0
-	embed = FALSE
+	armor_penetration = 10
+	embed = TRUE	//If you shoot someone with a rubber, it will take out an eye - or require surgery if it's high-velocity. Anything over 9mm should, realistically, fuck you up.
 	sharp = FALSE
+	can_ricochet = TRUE
 	step_delay = 0.5
 	recoil = 4
 
 /obj/item/projectile/bullet/magnum_40/rubber/pepperball
 	name = "pepperball"
-	damage_types = list(brute = 0)
-	agony = 0
+	damage_types = list(BRUTE = 4)	//Pepperballs disipate upon impact. They'll sting like shit, but won't do much in a low-velocity round.
+	agony = 30
 	step_delay = 0.6 //a little slower than rubber rounds - these are just pepperspray balls
+	armor_penetration = 0
 	var/spray = "condensedcapsaicin"
+	embed = FALSE
+	can_ricochet = FALSE	//breaks upon impact; impossible.
 
 /obj/item/projectile/bullet/magnum_40/rubber/pepperball/New()
 	..()
@@ -180,7 +223,10 @@
 	name = "soporific coated rubber bullet"
 	damage_types = list(BRUTE = 0)
 	agony = 35
+	armor_penetration = 0
 	var/spray = "stoxin"
+	can_ricochet = FALSE
+	embed = FALSE
 
 /obj/item/projectile/bullet/magnum_40/rubber/soporific/New()
 	..()
@@ -193,19 +239,6 @@
 		var/mob/living/L = target
 		if(istype(L) && L.reagents && !testing)
 			reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
-
-/obj/item/projectile/bullet/magnum_40/lethal
-	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 19)
-	agony = 11
-	armor_penetration = 0
-	post_penetration_dammult = 2
-	penetrating = 0
-	can_ricochet = FALSE
-	embed = TRUE
-	sharp = TRUE
-	step_delay = 0.5
-	recoil = 5
 
 /obj/item/projectile/bullet/magnum_40/scrap
 	damage_types = list(BRUTE = 16)
@@ -242,13 +275,35 @@
 /obj/item/projectile/bullet/kurtz_50/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 13)
+	damage_types = list(BRUTE = 15)
 	agony = 35
 	check_armour = ARMOR_MELEE
-	armor_penetration = 0
+	armor_penetration = 10
 	can_ricochet = TRUE
-	step_delay = 0.75
+	step_delay = 0.7
 	recoil = 7
+
+/obj/item/projectile/bullet/kurtz_50/rubber/pepperball
+	name = "pepperball"
+	damage_types = list(BRUTE = 6)	//Pepperballs disipate upon impact. They'll sting like shit, but won't do much in a low-velocity round.
+	agony = 35
+	step_delay = 0.75 //a little slower than rubber rounds - these are just pepperspray balls
+	armor_penetration = 0
+	var/spray = "condensedcapsaicin"
+	embed = FALSE
+	can_ricochet = FALSE	//breaks upon impact; impossible.
+
+/obj/item/projectile/bullet/kurtz_50/rubber/pepperball/New()
+	..()
+	if (!testing)
+		create_reagents(8)
+		reagents.add_reagent(spray, 8)
+
+/obj/item/projectile/bullet/kurtz_50/rubber/pepperball/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents && !testing)
+			reagents.trans_to_mob(L, 8, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/kurtz_50/practice
 	name = "practice bullet"
@@ -324,15 +379,37 @@
 /obj/item/projectile/bullet/light_rifle_257/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 3)
+	damage_types = list(BRUTE = 10)
 	agony = 20
 	check_armour = ARMOR_MELEE
-	armor_penetration = 0
-	embed = FALSE
-	sharp = FALSE
+	armor_penetration = 10
+	embed = TRUE	//Imagine being shot with a high velocity .223/5.56 rubber bullet - that shit could easily kill you - or at least would act like a normal bullet.
+	sharp = TRUE	//There is no-way this round is not acting like a regular high-velocity round at this point.
 	can_ricochet = TRUE
 	step_delay = 0.9
 	recoil = 2
+
+/obj/item/projectile/bullet/light_rifle_257/rubber/pepperball
+	name = "pepperball"
+	damage_types = list(BRUTE = 4)	//Pepperballs disipate upon impact. They'll sting like shit, but won't do much in a low-velocity round.
+	agony = 20
+	step_delay = 1.0 //a little slower than rubber rounds - these are just pepperspray balls
+	armor_penetration = 0
+	var/spray = "condensedcapsaicin"
+	embed = FALSE
+	can_ricochet = FALSE	//breaks upon impact; impossible.
+
+/obj/item/projectile/bullet/light_rifle_257/rubber/pepperball/New()
+	..()
+	if (!testing)
+		create_reagents(5)
+		reagents.add_reagent(spray, 5)
+
+/obj/item/projectile/bullet/light_rifle_257/rubber/pepperball/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents && !testing)
+			reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
@@ -392,34 +469,15 @@
 /obj/item/projectile/bullet/rifle_75/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 7)
+	damage_types = list(BRUTE = 12)
 	agony = 26
 	check_armour = ARMOR_MELEE
-	armor_penetration = 0
-	embed = FALSE
-	sharp = FALSE
+	armor_penetration = 15
+	embed = TRUE	//literally imagine a 7.62 rubber bullet hitting you - holy shit.
+	sharp = TRUE	//there is literally no-fucking-way this would not act like a regular sharp round at this point.
 	can_ricochet = TRUE
 	step_delay = 0.9
 	recoil = 4
-
-/obj/item/projectile/bullet/rifle_75/rubber/soporific
-	name = "soporific coated rubber bullet"
-	damage_types = list(BRUTE = 6) // Minor damage from blunt trauma, it's meant to be LTL
-	agony = 30
-	var/spray = "stoxin"
-
-/obj/item/projectile/bullet/rifle_75/rubber/soporific/New()
-	..()
-	if (!testing)
-		create_reagents(1)
-		reagents.add_reagent(spray, 1)
-
-/obj/item/projectile/bullet/rifle_75/rubber/soporific/on_hit(atom/target, def_zone = null)
-	if(isliving(target))
-		var/mob/living/L = target
-		if(istype(L) && L.reagents && !testing)
-			reagents.trans_to_mob(L, 1, CHEM_TOUCH, copy = FALSE)
-
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
@@ -457,12 +515,12 @@
 /obj/item/projectile/bullet/heavy_rifle_408/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 13)
+	damage_types = list(BRUTE = 17)
+	armor_penetration = 20
 	agony = 32
 	check_armour = ARMOR_MELEE
-	armor_penetration = 0
-	embed = FALSE
-	sharp = FALSE
+	embed = TRUE	//imagine an effectively smaller .50 Cal marksman round hitting you. holy shit.
+	sharp = TRUE	//there is literally no-fucking-way this would not act like a regular sharp round at this point.
 	can_ricochet = TRUE
 	step_delay = 0.9
 	recoil = 8
@@ -595,6 +653,88 @@
 	affective_ap_range = 12 //Good rifling!
 	recoil = 35
 
+//Mech
+/obj/item/projectile/bullet/mech_coilgun //Industrial Coilgun
+	name = "coilgun round"
+	icon_state = null
+	damage_types = list(BRUTE = 26)
+	armor_penetration = 20
+	penetrating = 1
+
+	can_ricochet = FALSE
+	embed = FALSE //Goes right through
+	affective_damage_range = 9
+	affective_ap_range = 7
+
+	recoil = 2
+
+/obj/item/projectile/bullet/pellet/mech_flak //Flak Cannon
+	name = "flak shrapnel"
+	icon_state = "l_birdshot-4"
+	damage_types = list(BRUTE = 11)
+	armor_penetration = 22
+	penetrating = 0
+
+	pellets = 4			//number of pellets
+	range_step = 4		//projectile will lose a fragment each time it travels this distance.
+	base_spread = 15	//lower means the pellets spread more across body parts.
+	spread_step = 5	//higher means the pellets spread more across body parts with distance
+
+	can_ricochet = FALSE
+	embed = TRUE
+	sharp = FALSE
+
+	affective_damage_range = 8
+	affective_ap_range = 9 //Anti-Air
+	recoil = 2
+
+/obj/item/projectile/bullet/pellet/mech_flak/military //Scatter-Shot Autocannon
+	range_step = 8		//projectile will lose a fragment each time it travels this distance.
+	base_spread = 90	//lower means the pellets spread more across body parts.
+	spread_step = 1	//higher means the pellets spread more across body parts with distance
+
+	affective_damage_range = 11
+	affective_ap_range = 11  //Anti-Air
+
+/obj/item/projectile/bullet/mech_machinegun //Heavy Machinegun
+	name = "large caliber bullet"
+	icon_state = "bullet_heavy"
+	damage_types = list(BRUTE = 13)
+	armor_penetration = 15 //To keep it somewhat fair towards the handhelds considering it has higher ammo capacity
+	penetrating = 1
+
+	can_ricochet = TRUE
+
+	affective_damage_range = 6
+	affective_ap_range = 6 //Blarge rifle caliber
+	recoil = 8
+
+/obj/item/projectile/bullet/mech_autocannon //Autocannon
+	name = "gigantic round"
+	icon_state = "slug"
+	damage_types = list(BRUTE = 56)
+	armor_penetration = 50 //Tally ho
+	penetrating = 3 //tank sized round
+
+	can_ricochet = FALSE
+
+	affective_damage_range = 8
+	affective_ap_range = 8 //Heavy blarge caliber meaning bit less range
+	recoil = 2
+
+/obj/item/projectile/bullet/mech_burstcannon //Burst-Fire Autocannon
+	name = "humongous round"
+	icon_state = "bullet_kurtz"
+	damage_types = list(BRUTE = 26)
+	armor_penetration = 43 //This fires 2 in a row so keep that in mind
+	penetrating = 3 //tank sized round
+
+	can_ricochet = FALSE
+
+	affective_damage_range = 10
+	affective_ap_range = 10 //Heavy blarge caliber but not as much as regular
+	recoil = 2
+
 //Shotguns
 //*********************************//
 
@@ -632,6 +772,28 @@
 	affective_damage_range = 5
 	affective_ap_range = 2
 	recoil = 8
+
+/obj/item/projectile/bullet/shotgun/beanbag/pepperball
+	name = "pepperball slug"
+	damage_types = list(BRUTE = 6)	//Pepperballs disipate upon impact. They'll sting like shit, but won't do much in a low-velocity round.
+	agony = 50
+	step_delay = 2 //Slower than a beanbag due to it being STRONG as fuck.
+	armor_penetration = 0
+	var/spray = "condensedcapsaicin"
+	embed = FALSE
+	can_ricochet = FALSE	//breaks upon impact; impossible.
+
+/obj/item/projectile/bullet/shotgun/beanbag/pepperball/New()
+	..()
+	if (!testing)
+		create_reagents(10)
+		reagents.add_reagent(spray, 10)
+
+/obj/item/projectile/bullet/shotgun/beanbag/on_hit(atom/target, def_zone = null)
+	if(isliving(target))
+		var/mob/living/L = target
+		if(istype(L) && L.reagents && !testing)
+			reagents.trans_to_mob(L, 10, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/shotgun/beanbag/soporific
 	name = "soporific coated beanbag"
@@ -800,13 +962,6 @@
 	range_step = 2 //and at longer range
 	step_delay = 1.1 //we travel a bit slower
 	recoil = 13
-
-/obj/item/projectile/bullet/pellet/shotgun/flak //Devastating at point blank, but worthless past
-	name = "jagged shrapnel"
-	damage_types = list(BRUTE = 5.5) //Fired in bursts of three, for a total of 12 pellets at touch distances.
-	pellets = 3
-	agony = 0 //No.
-	recoil = 5
 
 //'Laser' buckshot. Effectively just burn buckshot used for the Abdication.
 /obj/item/projectile/bullet/pellet/shotgun/energy

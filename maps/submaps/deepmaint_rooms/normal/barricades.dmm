@@ -3,7 +3,7 @@
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/deepmaint)
 "b" = (
-/obj/structure/barricade,
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/deepmaint)
 "c" = (
@@ -86,6 +86,17 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/deepmaint)
+"y" = (
+/turf/simulated/floor/tiled/techmaint_panels,
+/area/deepmaint)
+"B" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
+/area/deepmaint)
+"T" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/deepmaint)
 "V" = (
 /obj/random/cluster/psi_monster/lower_chance,
 /turf/simulated/floor/tiled/techmaint,
@@ -95,17 +106,17 @@
 a
 a
 a
+B
 a
 a
 a
 a
 a
-a
-a
+B
 a
 "}
 (2,1,1) = {"
-b
+y
 c
 c
 c
@@ -115,10 +126,10 @@ c
 c
 c
 c
-b
+y
 "}
 (3,1,1) = {"
-b
+y
 c
 e
 e
@@ -128,7 +139,7 @@ e
 e
 e
 c
-b
+y
 "}
 (4,1,1) = {"
 b
@@ -144,7 +155,7 @@ n
 b
 "}
 (5,1,1) = {"
-b
+y
 c
 g
 h
@@ -154,10 +165,10 @@ i
 f
 m
 c
-b
+y
 "}
 (6,1,1) = {"
-b
+y
 c
 o
 f
@@ -167,20 +178,20 @@ i
 V
 p
 c
-b
+y
 "}
 (7,1,1) = {"
-b
+y
 c
 g
-f
+T
 i
 k
 i
 f
 m
 c
-b
+y
 "}
 (8,1,1) = {"
 b
@@ -196,7 +207,7 @@ d
 b
 "}
 (9,1,1) = {"
-b
+y
 c
 e
 e
@@ -206,10 +217,10 @@ e
 e
 e
 c
-b
+y
 "}
 (10,1,1) = {"
-b
+y
 c
 c
 c
@@ -219,18 +230,18 @@ c
 c
 c
 c
-b
+y
 "}
 (11,1,1) = {"
 a
 a
 a
 a
+B
 a
 a
 a
-a
-a
+B
 a
 a
 "}

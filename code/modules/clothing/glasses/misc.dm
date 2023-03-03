@@ -61,7 +61,7 @@
 	icon_state = "hudpatch"
 	item_state = "hudpatch"
 
-/obj/item/clothing/glasses/eyepatch/process_hud(var/mob/M)
+/obj/item/clothing/glasses/eyepatch/medpatch/process_hud(var/mob/M)
 	process_med_hud(M, 1)
 
 /obj/item/clothing/glasses/eyepatch/secpatch
@@ -113,6 +113,35 @@
 	desc = "Trendy glasses that correct and enhance vision."
 	icon_state = "hipster_glasses"
 	item_state = "hipster_glasses"
+
+/obj/item/clothing/glasses/regular/hack_lens
+	name = "hacker goggles"
+	desc = "A green fake hud deplay for tacticool operations, also correct and enhance vision."
+	icon_state = "hacker_glasses" //Sprite by Odio_el_Comino#2671
+	item_state = "hacker_glasses"
+
+/obj/item/clothing/glasses/regular/hack_lens/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Flip Down"] = "hacker_glasses"
+	options["Flip Up"] = "hacker_glasses_up"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/glasses/threedglasses
 	name = "3d glasses"

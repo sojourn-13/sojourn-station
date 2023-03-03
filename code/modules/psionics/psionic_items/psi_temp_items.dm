@@ -195,6 +195,7 @@
 	icon = 'icons/obj/guns/energy/kinetic_blaster.dmi'
 	icon_state = "kinetic"
 	item_state = "kinetic"
+	origin_tech = list()
 	fire_sound = 'sound/weapons/wave.ogg'
 	fire_sound_text = "kinetic blast"
 	max_upgrades = 0

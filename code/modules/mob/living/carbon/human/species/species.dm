@@ -413,3 +413,7 @@
 		H.add_language(LANGUAGE_MARQUA)
 	if(H.species.reagent_tag == IS_TREE)
 		H.add_language(LANGUAGE_PLANT)
+	if(H.species.reagent_tag == IS_SYNTHETIC)
+		H.add_language(LANGUAGE_SYNTHETIC)
+	if(H.species.reagent_tag == IS_NARAMAD)
+		H.add_language(LANGUAGE_MERP)

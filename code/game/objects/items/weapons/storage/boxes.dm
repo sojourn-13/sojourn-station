@@ -199,7 +199,7 @@
 
 /obj/item/storage/box/advancedtraumakit/populate_contents()
 	for(var/i in 1 to 5)
-		new /obj/item/stack/medical/advanced/bruise_pack (src)
+		new /obj/item/stack/medical/bruise_pack/advanced (src)
 
 /obj/item/storage/box/advancedburnkit
 	name = "box of ABKs"
@@ -209,7 +209,7 @@
 
 /obj/item/storage/box/advancedburnkit/populate_contents()
 	for(var/i in 1 to 5)
-		new /obj/item/stack/medical/advanced/ointment (src)
+		new /obj/item/stack/medical/ointment/advanced (src)
 
 /obj/item/storage/box/gauzebulk
 	name = "box of gauze"
@@ -257,7 +257,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	cant_hold = list(/obj/item)
 
-/obj/item/storage/box/bcarpetbulk/populate_contents()
+/obj/item/storage/box/carpetbulk/populate_contents()
 	for(var/i in 1 to 15)
 		new /obj/item/stack/tile/carpet(src)
 
@@ -267,9 +267,9 @@
 	w_class = ITEM_SIZE_NORMAL
 	cant_hold = list(/obj/item)
 
-/obj/item/storage/box/bluecarpetbulk/populate_contents()
+/obj/item/storage/box/bcarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
-		new /obj/item/stack/tile/carpet/bcarpet (src)
+		new /obj/item/stack/tile/carpet/bcarpet(src)
 
 /obj/item/storage/box/bluecarpetbulk
 	name = "Box of blue carpet"
@@ -279,7 +279,7 @@
 
 /obj/item/storage/box/bluecarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
-		new /obj/item/stack/tile/carpet/blucarpet (src)
+		new /obj/item/stack/tile/carpet/blucarpet(src)
 
 /obj/item/storage/box/turcarpetbulk
 	name = "Box of turqoise carpet"
@@ -289,7 +289,7 @@
 
 /obj/item/storage/box/turcarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
-		new /obj/item/stack/tile/carpet/turcarpet (src)
+		new /obj/item/stack/tile/carpet/turcarpet(src)
 
 /obj/item/storage/box/sbluecarpetbulk
 	name = "Box of silver carpet"
@@ -299,7 +299,7 @@
 
 /obj/item/storage/box/sbluecarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
-		new /obj/item/stack/tile/carpet/sblucarpet (src)
+		new /obj/item/stack/tile/carpet/sblucarpet(src)
 
 /obj/item/storage/box/purcarpetbulk
 	name = "Box of purple carpet"
@@ -309,7 +309,7 @@
 
 /obj/item/storage/box/purcarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
-		new /obj/item/stack/tile/carpet/purcarpet (src)
+		new /obj/item/stack/tile/carpet/purcarpet(src)
 
 /obj/item/storage/box/oracarpetbulk
 	name = "Box of orange carpet"
@@ -319,7 +319,7 @@
 
 /obj/item/storage/box/oracarpetbulk/populate_contents()
 	for(var/i in 1 to 15)
-		new /obj/item/stack/tile/carpet/oracarpet (src)
+		new /obj/item/stack/tile/carpet/oracarpet(src)
 
 /obj/item/storage/box/cardboardbulk
 	name = "Box of cardboard"
@@ -329,7 +329,7 @@
 
 /obj/item/storage/box/cardboardbulk/populate_contents()
 	for(var/i in 1 to 5)
-		new /obj/item/stack/material/cardboard (src)
+		new /obj/item/stack/material/cardboard(src)
 
 //End of hydro boxes
 

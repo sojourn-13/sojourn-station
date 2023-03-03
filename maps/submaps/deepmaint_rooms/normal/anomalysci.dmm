@@ -103,8 +103,22 @@
 /obj/random/material/low_chance,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
+"O" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/deepmaint)
+"P" = (
+/obj/item/stool,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/deepmaint)
+"S" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/dark/danger,
+/area/deepmaint)
 
 (1,1,1) = {"
+O
 a
 a
 a
@@ -114,8 +128,7 @@ a
 a
 a
 a
-a
-a
+O
 "}
 (2,1,1) = {"
 a
@@ -139,7 +152,7 @@ b
 c
 c
 m
-n
+P
 n
 a
 "}
@@ -147,7 +160,7 @@ a
 a
 b
 e
-g
+S
 g
 g
 i
@@ -199,7 +212,7 @@ a
 a
 b
 e
-g
+S
 g
 g
 i
@@ -217,7 +230,7 @@ b
 c
 c
 m
-n
+P
 n
 a
 "}
@@ -235,6 +248,7 @@ p
 a
 "}
 (11,1,1) = {"
+O
 a
 a
 a
@@ -244,6 +258,5 @@ a
 a
 a
 a
-a
-a
+O
 "}

@@ -8,7 +8,7 @@
 	item_state = "solmarine"
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 6)
 	w_class = ITEM_SIZE_BULKY
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	caliber = CAL_LRIFLE
 	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
 	price_tag = 1100
@@ -26,7 +26,7 @@
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	var/shotgun_haver = TRUE
-	gun_parts = list(/obj/item/part/gun/frame/solmarine = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/part/gun/barrel/srifle = 1)
+	gun_parts = list(/obj/item/part/gun/frame/solmarine = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/omnirifle/solmarine/Initialize()
 	. = ..()
@@ -151,11 +151,11 @@
 
 /obj/item/part/gun/frame/solmarine
 	name = "Solmarine frame"
-	desc = "An Solmarine carbine frame. For those who want to LARP 600 years in the past."
+	desc = "A Solmarine carbine frame. For those who want to LARP 600 years in the past."
 	icon_state = "frame_sol"
 	matter = list(MATERIAL_PLASTEEL = 8)
-	result = /obj/item/gun/projectile/automatic/omnirifle/solmarine
-	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
+	result = /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
+	gripvars = list(/obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black)
 	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle/solmarine, /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
 	barrelvars = list(/obj/item/part/gun/barrel/srifle)

@@ -21,8 +21,8 @@
 //Mech Caliber Defines
 #define CAL_MECH_MACHINEGUN 	"25mm"
 #define CAL_MECH_AUTOCANNON		"60mm HEAD"
-#define CAL_MECH_ULTRACANNON	"50mm HEAD"
-#define CAL_MECH_SHOTGUN		"30mm HEAD"
+#define CAL_MECH_ULTRACANNON	"30mm HEAD"
+#define CAL_MECH_SHOTGUN		"50mm HEAD"
 #define CAL_MECH_MISSILE		"6.2 Missile"
 
 //Gun loading types
@@ -35,16 +35,15 @@
 #define MAG_WELL_PISTOL		2
 #define MAG_WELL_H_PISTOL	4	//High cap Pistols
 #define MAG_WELL_SMG		8	//smgs
-#define MAG_WELL_RIFLE		16	//7.62mm mags / SBAW (essentially shotgun rifle magazine)
-#define MAG_WELL_STANMAG	32	//6.5mm standard
-#define MAG_WELL_BOX		64	//Lmgs with box mags
-#define MAG_WELL_PAN		128	//Lmgs with pan mags
-#define MAG_WELL_DART       256 //Dartgun mag
-#define MAG_WELL_HRIFLE		512 //8.6mm heavy rifle mags
-#define MAG_WELL_DRUM		1024 //Drum-fed i.e. shotguns
-#define MAG_WELL_PULSE		2048 //Mary sue ammo for the pulse rifle
-#define MAG_WELL_LSRIFLE	4096 //Mary sue ammo for the laser AK
-#define MAG_WELL_LINKED_BOX	8192 //Linked ammo boxes, for lmgs
+#define MAG_WELL_RIFLE		16	// 6.5mm & 7.62mm mags / SBAW (essentially shotgun rifle magazine)
+#define MAG_WELL_BOX		32	//Lmgs with box mags
+#define MAG_WELL_PAN		64	//Lmgs with pan mags
+#define MAG_WELL_DART       128 //Dartgun mag
+#define MAG_WELL_HRIFLE		256 //8.6mm heavy rifle mags
+#define MAG_WELL_DRUM		512 //Drum-fed i.e. shotguns
+#define MAG_WELL_PULSE		1024 //Mary sue ammo for the pulse rifle
+#define MAG_WELL_LSRIFLE	2048 //Mary sue ammo for the laser AK
+#define MAG_WELL_LINKED_BOX	4096 //Linked ammo boxes, for lmgs
 
 #define SLOT_BARREL "barrel"
 #define SLOT_GRIP "grip"

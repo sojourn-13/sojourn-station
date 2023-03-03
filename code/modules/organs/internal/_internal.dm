@@ -1,4 +1,5 @@
 /obj/item/organ/internal
+	max_damage = 100
 	var/list/owner_verbs = list()
 	var/list/organ_efficiency = list()	//Efficency of an organ, should become the most important variable
 	var/list/initial_owner_verbs = list()		// For refreshing when a mod is removed

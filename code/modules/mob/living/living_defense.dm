@@ -1,4 +1,4 @@
-#define ARMOR_AGONY_COEFFICIENT 0.3
+#define ARMOR_HALLOS_COEFFICIENT 0.4
 #define ARMOR_GDR_COEFFICIENT 0.1
 
 //This calculation replaces old run_armor_check in favor of more complex and better system
@@ -57,9 +57,6 @@
 		if(damagetype == HALLOSS)
 			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
 
-		if(damagetype == AGONY)
-			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
-
 		if(brute_armor_overpenetration > 0 && damagetype == BRUTE)
 			effective_damage += max(0,round(brute_armor_overpenetration))
 
@@ -107,10 +104,10 @@
 	//Here we split damage in two parts, where armor value will determine how much damage will get through
 	else
 		//Pain part of the damage, that simulates impact from armor absorbtion
-		//For balance purposes, it's lowered by ARMOR_AGONY_COEFFICIENT
+		//For balance purposes, it's lowered by ARMOR_HALLOS_COEFFICIENT
 		if(!(damagetype == HALLOSS ))
-			var/agony_gamage = round( ( effective_damage * armor_effectiveness * ARMOR_AGONY_COEFFICIENT * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)) / 100))
-			apply_effect(agony_gamage, AGONY)
+			var/agony_gamage = round( ( effective_damage * armor_effectiveness * ARMOR_HALLOS_COEFFICIENT * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)) / 100))
+			adjustHalLoss(agony_gamage)
 
 		//Actual part of the damage that passed through armor
 		var/actual_damage = round ( ( effective_damage * ( 100 - armor_effectiveness ) ) / 100 )
@@ -373,28 +370,27 @@
 		update_fire()
 
 /mob/living/proc/update_fire()
-	return
+	cut_overlay(image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing"))
+	if(on_fire)
+		add_overlay(image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing"))
 
 /mob/living/proc/adjust_fire_stacks(add_fire_stacks) //Adjusting the amount of fire_stacks we have on person
     fire_stacks = CLAMP(fire_stacks + add_fire_stacks, FIRE_MIN_STACKS, FIRE_MAX_STACKS)
 
-/mob/living/proc/handle_fire()
-	if(fire_stacks < 0)
-		fire_stacks = min(0, ++fire_stacks) //If we've doused ourselves in water to avoid fire, dry off slowly
+/mob/living/proc/handle_fire(flammable_gas, turf/location)
+	if(never_stimulate_air)
+		if (fire_stacks > 0)
+			ExtinguishMob() //We dont simulate air thus we dont simulate fire
+		return
 
-	if(!on_fire)
-		return 1
-	else if(fire_stacks <= 0)
-		ExtinguishMob() //Fire's been put out.
-		return 1
+	var/burn_temperature = fire_burn_temperature()
+	var/thermal_protection = get_heat_protection(burn_temperature)
 
-	var/datum/gas_mixture/G = loc.return_air() // Check if we're standing in an oxygenless environment
-	if(G.gas["oxygen"] < 1)
-		ExtinguishMob() //If there's no oxygen in the tile we're on, put out the fire
-		return 1
-
-	var/turf/location = get_turf(src)
-	location.hotspot_expose(fire_burn_temperature(), 50, 1)
+	if (thermal_protection < 1 && bodytemperature < burn_temperature && on_fire)
+		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
+		if(world.time >= next_onfire_brn)
+			next_onfire_brn = world.time + 50
+			adjustFireLoss(fire_stacks*5 + 3) //adjusted to be lower. You need time to put yourself out. And each roll only removes 2.5 stacks.
 
 /mob/living/fire_act()
 	adjust_fire_stacks(2)

@@ -296,7 +296,7 @@
 		return
 
 	if(!loaded_item && istype(I))															//If no loaded item and it's an item, Remove obj from user, set to busy,
-		if(istype(I, /obj/item/gun) || istype(I, /obj/item/clothing) || istype(I, /obj/item/ammo_magazine) || istype(I, /obj/item/ammo_kit))
+		if(istype(I, /obj/item/gun) || istype(I, /obj/item/clothing) || istype(I, /obj/item/ammo_magazine) || istype(I, /obj/item/ammo_kit)  || istype(I, /obj/item/part/gun))
 			if(user.unEquip(I, src))
 				busy = TRUE
 				loaded_item = I

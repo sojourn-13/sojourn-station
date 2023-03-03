@@ -797,7 +797,7 @@
 	if(wiresexposed && !isAI(user))
 		wires.Interact(user)
 
-	return nano_ui_interact(user)
+	return ui_interact(user) //routed to tgui, nano code partially commented out
 
 /obj/machinery/power/apc/proc/toggle_lock(mob/user)
 	if(emagged)
@@ -826,8 +826,9 @@
 	else
 		toggle_lock(user)
 
-/obj/machinery/power/apc/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	if(!user)
+/obj/machinery/power/apc/ui_interact(mob/user, datum/tgui/ui)
+	//this is nanoui stuff
+/*	if(!user)
 		return
 
 	var/list/data = list(
@@ -846,7 +847,7 @@
 		"powerChannels" = list(
 			list(
 				"title" = "Equipment",
-				"powerLoad" = lastused_equip,
+				"powerLoad" = round(lastused_equip),
 				"status" = equipment,
 				"topicParams" = list(
 					"auto" = list("eqp" = 3),
@@ -892,6 +893,144 @@
 
 /obj/machinery/power/apc/proc/report()
 	return "[area.name] : [equipment]/[lighting]/[environ] ([lastused_equip+lastused_light+lastused_environ]) : [cell? cell.percent() : "N/C"] ([charging])"
+*/
+	//now to put tgui
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Apc", name)
+		ui.open()
+
+/obj/machinery/power/apc/ui_data(mob/user)
+	var/list/data = list(
+		"locked" = (locked && !emagged) ? 1 : 0,
+		"failTime" = failure_timer * 2,
+		"isOperating" = operating,
+		"externalPower" = main_status,
+		"powerCellStatus" = cell ? cell.percent() : null,
+		"chargeMode" = chargemode,
+		"chargingStatus" = charging,
+		"totalLoad" = round(lastused_total),
+		"coverLocked" = coverlocked,
+		//"remoteAccess" = (user == remote_control_user),
+		"siliconUser" = issilicon(user),
+		//"malfStatus" = get_malf_status(user),
+		//"emergencyLights" = !emergency_lights,
+		//"nightshiftLights" = nightshift_lights,
+		//"disable_nightshift_toggle" = low_power_nightshift_lights,
+
+		"powerChannels" = list(
+			list(
+				"title" = "Equipment",
+				"powerLoad" = round(lastused_equip),
+				"status" = equipment,
+				"topicParams" = list(
+					"auto" = list("eqp" = 3),
+					"on" = list("eqp" = 2),
+					"off" = list("eqp" = 1),
+				)
+			),
+			list(
+				"title" = "Lighting",
+				"powerLoad" = round(lastused_light),
+				"status" = lighting,
+				"topicParams" = list(
+					"auto" = list("lgt" = 3),
+					"on" = list("lgt" = 2),
+					"off" = list("lgt" = 1),
+				)
+			),
+			list(
+				"title" = "Environment",
+				"powerLoad" = round(lastused_environ),
+				"status" = environ,
+				"topicParams" = list(
+					"auto" = list("env" = 3),
+					"on" = list("env" = 2),
+					"off" = list("env" = 1),
+				)
+			)
+		)
+	)
+	return data
+
+/obj/machinery/power/apc/ui_act(action, params)
+	. = ..()
+	if(. || !can_use(usr, 1) || (locked && !issilicon(usr) && !failure_timer && action != "toggle_nightshift"))
+		return
+	switch(action)
+		if("lock")
+			if (issilicon(usr))
+				var/permit = 0 // Malfunction variable. If AI hacks APC it can control it even without AI control wire.
+				var/mob/living/silicon/ai/AI = usr
+				var/mob/living/silicon/robot/robot = usr
+				if(hacker)
+					if(hacker == AI)
+						permit = 1
+					else if(istype(robot) && robot.connected_ai && robot.connected_ai == hacker) // Cyborgs can use APCs hacked by their AI
+						permit = 1
+
+				if(aidisabled && !permit)
+					if(usr == (AI || robot))
+						to_chat(usr, SPAN_DANGER("\The [src] have AI control disabled!"))
+					return FALSE
+			else
+				if (!in_range(src, usr) || !istype(loc, /turf))
+					return FALSE
+		if("cover")
+			coverlocked = !coverlocked
+			. = TRUE
+		if("breaker")
+			toggle_breaker(usr)
+			. = TRUE
+		//if("toggle_nightshift")  we don't have this
+		//	toggle_nightshift_lights(usr)
+		//	. = TRUE
+		if("charge")
+			chargemode = !chargemode
+			if(!chargemode)
+				charging = FALSE
+				update_icon()
+			. = TRUE
+		if("channel")
+			if(params["eqp"])
+				equipment = setsubsystem(text2num(params["eqp"]))
+				update_icon()
+				update()
+			else if(params["lgt"])
+				lighting = setsubsystem(text2num(params["lgt"]))
+				update_icon()
+				update()
+			else if(params["env"])
+				environ = setsubsystem(text2num(params["env"]))
+				update_icon()
+				update()
+			. = TRUE
+		if("overload")
+			if(issilicon(usr))
+				overload_lighting()
+				. = TRUE
+		//if("hack") 			malf is no longer a gamemode here
+		//	if(get_malf_status(usr))
+		//		malfhack(usr)
+		//if("occupy")
+		//	if(get_malf_status(usr))
+		//		malfoccupy(usr)
+		//if("deoccupy")
+		//	if(get_malf_status(usr))
+		//		malfvacate()
+		if("reboot")
+			failure_timer = 0
+			force_update = FALSE
+			update_icon()
+			update()
+		//if("emergency_lighting")		we don't have those
+		//	emergency_lights = !emergency_lights
+		//	for(var/obj/machinery/light/L in area)
+		//		if(!initial(L.no_low_power)) //If there was an override set on creation, keep that override
+		//			L.no_low_power = emergency_lights
+		//			INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light/, update), FALSE)
+		//		CHECK_TICK
+	return TRUE
 
 /obj/machinery/power/apc/proc/update()
 	if(operating && !shorted && !failure_timer)
@@ -914,18 +1053,20 @@
 
 
 /obj/machinery/power/apc/proc/can_use(mob/user, var/loud = 0) //used by attack_hand() and Topic()
+	if(is_admin(user) && isghost(user)) //admin abuse
+		return TRUE
 	if (user.stat)
 		to_chat(user, SPAN_WARNING("You must be conscious to use [src]!"))
-		return 0
+		return FALSE
 	if(!user.client)
-		return 0
+		return FALSE
 	if(inoperable())
-		return 0
+		return FALSE
 	if(!user.IsAdvancedToolUser())
-		return 0
+		return FALSE
 	if(user.restrained())
 		to_chat(user, SPAN_WARNING("You must have free hands to use [src]."))
-		return 0
+		return FALSE
 	if(user.lying)
 		to_chat(user, SPAN_WARNING("You must stand to use [src]!"))
 		return 0

@@ -197,11 +197,6 @@
 	justdropped = 0
 
 
-
-
-
-
-
 /*
 	//Definitions of gripper subtypes
 */
@@ -288,6 +283,7 @@
 		/obj/item/am_shielding_container,
 		/obj/item/organ,
 		/obj/item/organ_module,
+		/obj/item/modification/organ,
 		/obj/item/device/mmi,
 		/obj/item/tank,
 		/obj/item/reagent_containers/food/snacks/meat, //For grinding up roaches

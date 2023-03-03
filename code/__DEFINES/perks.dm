@@ -59,6 +59,7 @@
 #define PERK_SURGICAL_MASTER /datum/perk/surgical_master
 #define PERK_ADVANCED_MEDICAL /datum/perk/advanced_medical
 #define PERK_ALCHEMY /datum/perk/alchemist
+#define PERK_SCRIBE /datum/perk/scribe
 #define PERK_NERD /datum/perk/chemist
 #define PERK_ROBOTICS_EXPERT /datum/perk/robotics_expert
 #define PERK_ARTIST /datum/perk/job/artist
@@ -141,6 +142,7 @@
 #define PERK_NANITE_MUSCLE /datum/perk/nanite_muscle
 #define PERK_NANITE_ARMOR /datum/perk/nanite_armor
 #define PERK_NANITE_AMMO /datum/perk/nanite_ammo
+#define PERK_NANITE_METAL_EATER /datum/perk/nanite_metal_drinker
 
 // Imprinter Perks
 #define PERK_SMARTLINK /datum/perk/smartlink

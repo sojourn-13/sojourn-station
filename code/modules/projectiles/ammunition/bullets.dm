@@ -36,6 +36,13 @@
 	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber
 
+/obj/item/ammo_casing/pistol_35/rubber/pepperball
+	desc = "A 9mm pepper-ball projectile casing."
+	icon_state = "pistol_c_pepper"
+	spent_icon = "pistol_c_pepper-spent"
+	shell_color = "hp"
+	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber/pepperball
+
 /obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
 	desc = "A 9mm soporific condensed plastic shell."
 	icon_state = "pistol_c_r"
@@ -105,9 +112,10 @@
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber
 
 /obj/item/ammo_casing/magnum_40/rubber/pepperball
-	desc = "A 10mm Magnum pepper-spray projectile casing."
-	icon_state = "magnum_c_l"
-	is_caseless = TRUE
+	desc = "A 10mm Magnum pepper-ball projectile casing."
+	icon_state = "magnum_c_pepper"
+	spent_icon = "magnum_c_pepper-spent"
+	shell_color = "hp"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/pepperball
 
 /obj/item/ammo_casing/magnum_40/lethal
@@ -175,6 +183,13 @@
 	spent_icon = "srifle_c_r-spent"
 	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/rubber
+
+/obj/item/ammo_casing/light_rifle_257/rubber/pepperball
+	desc = "A 6.5mm pepper-ball projectile casing."
+	icon_state = "lrifle_c_pepper"
+	spent_icon = "lrifle_c_pepper-spent"
+	shell_color = "hp"
+	projectile_type = /obj/item/projectile/bullet/light_rifle_257/rubber/pepperball
 
 /obj/item/ammo_casing/light_rifle_257/scrap
 	desc = "An old 6.5mm rifle bullet casing."
@@ -393,6 +408,13 @@
 	icon_state = "lrifle_c_r"
 	spent_icon = "lrifle_c_r-spent"
 
+/obj/item/ammo_casing/kurtz_50/rubber/pepperball
+	desc = "A 12mm pepper-ball projectile casing."
+	icon_state = "lrifle_c_pepper"
+	spent_icon = "lrifle_c_pepper-spent"
+	shell_color = "hp"
+	projectile_type = /obj/item/projectile/bullet/kurtz_50/rubber/pepperball
+
 /obj/item/ammo_casing/kurtz_50/practice
 	desc = "A 12mm practice bullet casing."
 	caliber = CAL_50
@@ -530,6 +552,18 @@
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/beanbag/prespawned
+	amount = 5
+
+/obj/item/ammo_casing/shotgun/beanbag/pepperball
+	name = "beanbag shell"
+	desc = "A 20mm beanbag shell."
+	icon_state = "s-shell_pepper"
+	spent_icon = "s-shell_pepper-spent"
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag/pepperball
+	maxamount = 5
+
+/obj/item/ammo_casing/shotgun/beanbag/pepperball/prespawned
 	amount = 5
 
 /obj/item/ammo_casing/shotgun/beanbag/scrap

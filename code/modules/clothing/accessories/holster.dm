@@ -9,6 +9,7 @@
 	var/sound_in = 'sound/effects/holsterin.ogg'
 	var/sound_out = 'sound/effects/holsterout.ogg'
 	var/list/can_hold
+	var/list/cant_hold = new/list()
 
 /obj/item/clothing/accessory/holster/proc/holster(var/obj/item/I, var/mob/living/user)
 	if(holstered && istype(user))
@@ -20,9 +21,12 @@
 			to_chat(user, "<span class='warning'>[I] won't fit in [src]!</span>")
 			return
 
-
 	else if (!(I.slot_flags & SLOT_HOLSTER))
 		to_chat(user, SPAN_WARNING("[I] won't fit in [src]!"))
+		return
+
+	if(cant_hold.len && is_type_in_list(I, cant_hold))
+		to_chat(usr, SPAN_NOTICE("[src] cannot sheathe [I]."))
 		return
 
 	holstered = I
@@ -269,7 +273,7 @@ Sword holsters
 	desc = "A sturdy black leather scabbard. For the survivalist in you."
 	icon_state = "machete_holster"
 	overlay_state = "machete"
-	can_hold = list(/obj/item/tool/sword/machete)
+	can_hold = list(/obj/item/tool/sword/machete, /obj/item/tool/sword/handmade)
 
 /obj/item/clothing/accessory/holster/saber/machete/update_icon()
 	..()
@@ -337,7 +341,7 @@ Sword holsters
 	icon_state = "saya"
 	overlay_state = "saya"
 	slot = "utility"
-	can_hold = list(/obj/item/tool/sword/katana_makeshift, /obj/item/tool/sword/katana, /obj/item/material/sword/katana, /obj/item/tool/sword/katana/nano) // Only straight swords.
+	can_hold = list(/obj/item/tool/sword/katana_makeshift, /obj/item/tool/sword/katana, /obj/item/material/sword/katana, /obj/item/tool/sword/katana/nano, /obj/item/tool/cheap/katana) // Only straight swords.
 
 /obj/item/clothing/accessory/holster/saber/saya/update_icon()
 	..()
@@ -352,3 +356,16 @@ Sword holsters
 	holstered = new holstered_spawn
 	update_icon()
 
+/obj/item/clothing/accessory/holster/saber/machete/cheap
+	name = "pleather scabbard"
+	desc = "A cheap sheath for cheap weapons. This probably isn't suitable for anything more valuable than mass-produced stuff."
+	can_hold = list(/obj/item/tool/cheap, /obj/item/tool/sword/handmade) // Only shitty swords.
+	cant_hold = list(/obj/item/tool/cheap/spear) // Can't sheathe a spear here!
+	icon_state = "cheap_holster"
+	overlay_state = "cheap"
+
+/obj/item/clothing/accessory/holster/saber/machete/update_icon()
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/accessory/icon.dmi', "cheap_layer"))

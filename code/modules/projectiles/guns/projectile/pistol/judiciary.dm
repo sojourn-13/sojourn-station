@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/judiciary
 	name = "\"Judiciary\" pistol"
 	desc = "A common Nadezhda Marshal issue pistol chambered in 9mm. This pistol appears to be the workhorse of Marshals, a near staple found in pictures on nearly any recruiting ad. \
-			By the looks of the mag-loading mechanism this firearm is strangely able to take standard, high-cap and drum magazines! Truely a marval of engineering; even.. if it feels unsteady when holding the drum."
+			By the looks of the mag-loading mechanism this firearm is strangely able to take standard, high-cap and drum magazines! Truely a marvel of engineering; even... if it feels unsteady when holding the drum."
 	icon = 'icons/obj/guns/projectile/judiciary.dmi'
 	icon_state = "judiciary"
 	item_state = "judiciary"

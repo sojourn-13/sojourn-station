@@ -34,8 +34,8 @@
 	var/area/A = get_area(T)
 	//This means that we can over-stablize the entropy in an area to crazy levels to prevent local stuff with higher uses as a buffer/blanket
 	A.bluespace_entropy -= rand(15, 30)
-	update_icon()
 	is_on = FALSE
+	update_icon()
 	GLOB.bluespace_entropy -= rand(10, 15)
 
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer/attack_hand(mob/user as mob)

@@ -32,6 +32,11 @@
 	if(M.species.reagent_tag == IS_CHTMANT)
 		M.adjustToxLoss(0.01) //Small damage to Chtmants nothing too too lethal
 
+	if(M.stats.getPerk(PERK_NANITE_METAL_EATER))
+		M.add_chemical_effect(CE_BLOODCLOT, 0.2)
+		M.adjustNutrition(0.4) //Metal even with the perk isnt that filling
+
+
 /datum/reagent/metal/affect_blood(var/mob/living/carbon/M, var/alien)
 	if(M.species.reagent_tag == IS_CHTMANT)
 		M.adjustToxLoss(0.2)
@@ -138,7 +143,7 @@
 
 /datum/reagent/ethanol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustToxLoss(0.2 * toxicity * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
-	M.add_chemical_effect(CE_PAINKILLER, max(55-strength, 1))
+	M.add_chemical_effect(CE_PAINKILLER, max(35 - (strength / 2), 1))	//Vodka 32.5 painkiller, beer 15
 	LEGACY_SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
 	return
 

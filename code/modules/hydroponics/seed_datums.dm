@@ -1392,6 +1392,28 @@
 	set_trait(TRAIT_IDEAL_HEAT, 283)
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
 
+/datum/seed/broot
+	name = "broot"
+	seed_name = "blood root"
+	display_name = "blood root"
+	chems = list("nutriment" = list(1,10), "sanguinum" = list(3,5))
+	kitchen_tag = "broot"
+
+/datum/seed/broot/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_JUICY,1)
+	set_trait(TRAIT_MATURATION,5)
+	set_trait(TRAIT_PRODUCTION,4)
+	set_trait(TRAIT_YIELD,4)
+	set_trait(TRAIT_POTENCY,10)
+	set_trait(TRAIT_PRODUCT_ICON,"broot")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#FA1414")
+	set_trait(TRAIT_PLANT_COLOUR,"#F1F2E9")
+	set_trait(TRAIT_PLANT_ICON,"stalk4")
+	set_trait(TRAIT_IDEAL_HEAT, 283)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
 /datum/seed/telriis
 	name = "telriis"
 	seed_name = "Telriis grass"

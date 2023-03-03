@@ -50,6 +50,9 @@
 	icon_state = "scalpel_t5_SI"
 	use_power_cost = 0.1
 
+/obj/item/tool/scalpel/laser/si/robo
+	cell = /obj/item/cell/small/moebius/nuclear
+
 //A makeshift knife, for doing all manner of cutting and stabbing tasks in a half-assed manner
 /obj/item/tool/knife/shiv
 	name = "shiv"

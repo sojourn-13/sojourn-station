@@ -10,7 +10,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
 	price_tag = 850
 	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
@@ -87,7 +87,7 @@
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/automatic/sts/rifle/sawn
 
-	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
+	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -182,7 +182,7 @@
 
 /obj/item/part/gun/frame/sts
 	name = "STS rifle frame"
-	desc = "A STS rifle frame. Cheap, effective, and replacable."
+	desc = "An STS rifle frame. Cheap, effective, and replaceable."
 	icon_state = "frame_sts"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/sts/rifle
