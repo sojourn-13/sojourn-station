@@ -792,3 +792,9 @@
 	icon_state="bsposter22"
 	name = "xenobiology recruitment poster"
 	desc = "A poster calling for new science personnel to study alien beings."
+
+/obj/item/contraband/poster/placed/recruitment/blackshield
+	icon = 'icons/obj/contraband_large.dmi'
+	icon_state = "mrshield"
+	name = "Mr Shield Blackshield poster"
+	desc = "A poster reflecting Blackshield's recent viral mascot, Mr. Shield. Known broadcaster and philanthropist."

@@ -63,7 +63,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,15"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "aaR" = (
 /obj/structure/bed/psych{
 	desc = "It can be a bit noisy, but still serves well.";
@@ -141,6 +141,11 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"acb" = (
+/obj/structure/bedsheetbin,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "acf" = (
 /obj/structure/flora/pottedplant/small,
 /obj/structure/cable/green{
@@ -1347,7 +1352,7 @@
 "asx" = (
 /obj/structure/flora/small/bushb3,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "asL" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/door/window/southleft{
@@ -1598,12 +1603,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
+"avz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "avD" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "0,5"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "avF" = (
 /obj/item/modular_computer/console/preset/security/records{
 	dir = 1
@@ -1718,7 +1728,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushb1,
 /turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "awW" = (
 /obj/machinery/door/blast/regular/open{
 	id = "xenobio6";
@@ -1816,7 +1826,7 @@
 	icon_state = "3,9"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ayv" = (
 /obj/structure/table/rack/shelf,
 /obj/random/lowkeyrandom/low_chance,
@@ -2209,6 +2219,14 @@
 /obj/machinery/light,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
+"aCG" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/item/device/synthesized_instrument/guitar,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest)
 "aCI" = (
 /obj/structure/table/standard,
 /obj/random/medical/low_chance,
@@ -2322,10 +2340,10 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "aDX" = (
-/obj/structure/table/bench/standard,
 /obj/machinery/camera/network/medbay{
 	dir = 1
 	},
+/obj/item/stool,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/sleeper)
 "aEh" = (
@@ -2525,7 +2543,7 @@
 	icon_state = "5,17"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "aGa" = (
 /obj/structure/closet/secure_closet/personal/corpsman,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -2662,7 +2680,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,17"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "aHO" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -2916,7 +2934,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,2"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "aLT" = (
 /obj/machinery/power/port_gen/pacman/scrap/anchored,
 /obj/structure/cable/yellow,
@@ -3156,7 +3174,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "aOU" = (
 /obj/item/remains/deer,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -3751,7 +3769,7 @@
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "aYl" = (
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/inside_colony)
@@ -3785,7 +3803,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "4,12"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "aYx" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/light{
@@ -3900,6 +3918,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"bab" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest)
 "bae" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushb1,
@@ -3999,7 +4024,7 @@
 	icon_state = "3,0"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "bbr" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /obj/machinery/door/blast/regular{
@@ -4133,7 +4158,9 @@
 /obj/structure/low_wall,
 /mob/living/simple_animal/jungle_bird,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/security/maingate{
+	name = "\improper Outdoors - Pad"
+	})
 "bcy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -4226,7 +4253,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "14,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "bdK" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -4618,7 +4645,7 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "biP" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -4662,7 +4689,7 @@
 	icon_state = "7,19";
 	opacity = 0
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "bjb" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -5367,7 +5394,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "9,8"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "brW" = (
 /obj/structure/closet/secure_closet/freezer,
 /obj/random/junkfood,
@@ -5673,7 +5700,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,10"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "bvu" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
@@ -6070,7 +6097,7 @@
 	icon_state = "3,8"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "bAJ" = (
 /obj/structure/bed/chair/office/dark,
 /obj/landmark/join/start/rd,
@@ -6212,7 +6239,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "13,5"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "bCJ" = (
 /obj/structure/table/rack/shelf,
 /obj/random/gun_shotgun/low_chance,
@@ -6335,10 +6362,11 @@
 	dir = 1;
 	pixel_y = -32
 	},
+/obj/machinery/floodlight,
 /turf/simulated/shuttle/floor/science{
 	icon_state = "12,2"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "bEn" = (
 /obj/random/scrap/dense_weighted/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -6508,7 +6536,7 @@
 	icon_state = "1,7"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "bGJ" = (
 /obj/structure/catwalk,
 /obj/structure/railing{
@@ -6578,6 +6606,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/techshop)
+"bHP" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/random/closet/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "bHQ" = (
 /obj/machinery/door/unpowered/simple/wood/saloon{
 	name = "Church Foyer"
@@ -6592,7 +6630,7 @@
 	icon_state = "12,17"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "bHX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -6608,6 +6646,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"bIc" = (
+/obj/structure/table/woodentable,
+/obj/random/junkfood/low_chance,
+/obj/random/junkfood/rotten/low_chance,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "bIf" = (
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/maintenance{
@@ -6831,7 +6875,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "13,4"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "bKm" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -7644,7 +7688,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "11,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "bWe" = (
 /obj/structure/table/woodentable,
 /obj/machinery/microwave,
@@ -7857,6 +7901,10 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/steel/bar_light,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"bZg" = (
+/obj/random/closet_maintloot,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "bZi" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
@@ -7875,7 +7923,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,8"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "bZy" = (
 /obj/structure/flora/small/trailrockb5,
 /obj/structure/flora/small/trailrockb4,
@@ -8578,7 +8626,7 @@
 "cir" = (
 /mob/living/simple_animal/crab,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "cit" = (
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/plating/under,
@@ -8911,7 +8959,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "11,11"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "cmz" = (
 /obj/effect/floor_decal/industrial/danger/corner{
 	dir = 1
@@ -9196,7 +9244,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "10,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "cqH" = (
 /obj/machinery/light_switch{
 	dir = 8;
@@ -9539,11 +9587,11 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "cvg" = (
-/obj/structure/table/rack/shelf,
 /obj/machinery/camera/network/engineering{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel/danger,
+/obj/structure/closet/secure_closet/personal/engineering_personal,
+/turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "cvh" = (
 /obj/structure/scrap_cube,
@@ -9707,7 +9755,7 @@
 	icon_state = "14,9"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "cxr" = (
 /obj/structure/table/bench/steel,
 /obj/machinery/light/small,
@@ -9759,7 +9807,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "6,8"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "cyo" = (
 /mob/living/carbon/human/monkey,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -9784,7 +9832,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "4,9"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "cyz" = (
 /obj/machinery/camera/network/propis,
 /obj/structure/extinguisher_cabinet{
@@ -10181,7 +10229,7 @@
 /obj/effect/overlay/water/top,
 /mob/living/simple_animal/hostile/frog,
 /turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "cCQ" = (
 /obj/random/junk/low_chance,
 /turf/simulated/floor/tiled/techmaint,
@@ -10386,7 +10434,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,12"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "cFt" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/dirt,
@@ -10474,7 +10522,7 @@
 "cGc" = (
 /obj/structure/low_wall,
 /turf/simulated/floor/plating,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "cGg" = (
 /obj/structure/table/woodentable,
 /obj/item/device/lighting/toggleable/lamp,
@@ -10934,6 +10982,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "cMK" = (
 /obj/landmark/join/start/officer,
+/obj/item/stool,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security)
 "cMQ" = (
@@ -10973,7 +11022,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "13,3"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "cNd" = (
 /obj/item/stool/custom/bar_special,
 /obj/effect/floor_decal/spline/fancy,
@@ -11335,6 +11384,13 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/steel/bar_light,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"cQK" = (
+/obj/structure/boulder,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
+	},
+/area/asteroid/cave)
 "cQT" = (
 /obj/machinery/computer/general_air_control/large_tank_control{
 	dir = 1;
@@ -11398,6 +11454,13 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"cRE" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest)
 "cRH" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -11433,7 +11496,7 @@
 	icon_state = "4,0"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "cRS" = (
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_y = -32
@@ -11639,7 +11702,7 @@
 	icon_state = "14,10"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "cUH" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -11991,7 +12054,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/big/bush3,
 /turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "cYv" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "10,17"
@@ -12034,7 +12097,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "11,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "cZf" = (
 /obj/structure/bed/chair/sofa/teal/right{
 	dir = 4
@@ -12634,7 +12697,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "10,11"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "dhM" = (
 /obj/machinery/pile_ripper,
 /obj/structure/catwalk,
@@ -13726,7 +13789,7 @@
 "dvx" = (
 /obj/structure/flora/small/lavarock1,
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "dvB" = (
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/fnest)
@@ -13874,12 +13937,12 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "9,11"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "dxi" = (
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,0"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "dxj" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/mineral,
@@ -14028,6 +14091,10 @@
 /obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
+"dyx" = (
+/obj/machinery/door/unpowered/simple/wood,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "dyy" = (
 /obj/machinery/door/airlock/medical{
 	name = "Operating Theatre";
@@ -14171,7 +14238,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "7,12"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "dAP" = (
 /obj/structure/table/reinforced,
 /obj/item/stack/cable_coil/random,
@@ -14224,6 +14291,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"dBq" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/device/lighting/toggleable/lantern,
+/turf/simulated/floor/rock,
+/area/asteroid/cave)
 "dBz" = (
 /obj/item/toy/desk/dippingbird,
 /obj/structure/table/woodentable,
@@ -14255,7 +14327,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "2,3"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "dCe" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/big/bush3,
@@ -14397,6 +14469,14 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
+"dDY" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/organ/internal/nerve,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
+	},
+/area/asteroid/cave)
 "dEn" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -14482,7 +14562,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,14"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "dFc" = (
 /obj/machinery/alarm{
 	pixel_y = 32
@@ -14920,6 +15000,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/organ_lab)
+"dKd" = (
+/obj/structure/table/woodentable,
+/obj/random/junkfood/low_chance,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "dKg" = (
 /obj/item/trash/liquidfood,
 /obj/machinery/light/small{
@@ -14951,7 +15037,7 @@
 "dKA" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "dKC" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -15124,7 +15210,7 @@
 /obj/effect/overlay/water/top,
 /mob/living/simple_animal/crab,
 /turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "dMy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -15398,7 +15484,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "12,4"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "dPI" = (
 /obj/item/device/radio/beacon,
 /obj/structure/disposalpipe/sortjunction/wildcard/flipped{
@@ -15945,7 +16031,7 @@
 "dXq" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "dXr" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/part_replacer/mini,
@@ -15973,7 +16059,7 @@
 	icon_state = "15,4"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "dYc" = (
 /obj/structure/catwalk,
 /obj/machinery/light/small{
@@ -16101,7 +16187,7 @@
 	icon_state = "13,11"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "dZd" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -16126,11 +16212,11 @@
 	icon_state = "2,7"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "dZu" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "dZv" = (
 /obj/item/scrap_lump,
 /turf/simulated/floor/asteroid/dirt/burned,
@@ -16527,6 +16613,12 @@
 /obj/structure/flora/small/rock4,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
+"edZ" = (
+/obj/structure/table/woodentable,
+/obj/random/booze/low_chance,
+/obj/random/booze/low_chance,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "eeb" = (
 /obj/machinery/button/remote/airlock{
 	id = "shuttle_scav_bolts";
@@ -16564,7 +16656,7 @@
 	icon_state = "1,0"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "eeK" = (
 /obj/effect/floor_decal/industrial/arrows/red{
 	dir = 1
@@ -16688,7 +16780,7 @@
 	dir = 4
 	},
 /turf/simulated/shuttle/floor/science,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "efV" = (
 /obj/structure/sink{
 	dir = 8;
@@ -16762,7 +16854,7 @@
 	icon_state = "15,8"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "egJ" = (
 /obj/structure/table/gamblingtable,
 /obj/item/deck/cards,
@@ -16847,7 +16939,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ehB" = (
 /turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "ehM" = (
 /obj/effect/decal/cleanable/blood/oil,
 /obj/effect/decal/cleanable/dirt,
@@ -16880,7 +16972,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/security/maingate{
+	name = "\improper Outdoors - Pad"
+	})
 "eid" = (
 /obj/structure/flora/small/trailrockb4,
 /obj/structure/flora/small/trailrockb2,
@@ -16950,7 +17044,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "9,17"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "eiU" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
@@ -17350,7 +17444,7 @@
 	icon_state = "1,5"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "enQ" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/medical,
@@ -17534,11 +17628,13 @@
 	name = "Residential District Maintenance"
 	})
 "epC" = (
-/obj/machinery/floodlight,
+/obj/structure/table/reinforced,
+/obj/random/toolbox,
+/obj/random/toolbox,
 /turf/simulated/shuttle/floor/science{
-	icon_state = "10,3"
+	icon_state = "12,2"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "epH" = (
 /obj/machinery/light{
 	dir = 1
@@ -17812,7 +17908,7 @@
 	icon_state = "13,10"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "esf" = (
 /obj/item/reagent_containers/food/snacks/meatsteak{
 	name = "ian's dinner"
@@ -17941,7 +18037,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "14,4"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "etf" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -18270,7 +18366,7 @@
 /obj/structure/flora/small/lavarock1,
 /obj/structure/flora/small/lavarock2,
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "exA" = (
 /obj/effect/spider/stickyweb,
 /obj/random/contraband,
@@ -18407,7 +18503,7 @@
 "ezq" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "ezA" = (
 /obj/structure/catwalk,
 /obj/random/mob/spiders,
@@ -18654,7 +18750,7 @@
 	icon_state = "9,20"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "eDh" = (
 /obj/structure/closet/secure_closet/medicine,
 /obj/item/storage/fancy/vials,
@@ -18692,7 +18788,7 @@
 	icon_state = "10,19"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "eDv" = (
 /obj/random/mob/spiders,
 /obj/effect/spider/stickyweb,
@@ -18876,6 +18972,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/robotics)
+"eGw" = (
+/turf/simulated/wall/wood_barrel,
+/area/nadezhda/outside/forest)
 "eGz" = (
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/machinery/computer/robotics{
@@ -18906,7 +19005,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "5,7"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "eHq" = (
 /obj/structure/table/rack,
 /obj/item/towel,
@@ -19020,7 +19119,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "4,4"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "eJi" = (
 /obj/machinery/door/firedoor/multi_tile,
 /obj/effect/floor_decal/industrial/warningwhite,
@@ -19797,9 +19896,13 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
 "eQB" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/medical/sleeper)
+/obj/structure/bed/psych{
+	desc = "It can be a bit noisy, but still serves well.";
+	name = "old bed"
+	},
+/obj/structure/curtain/open/bed,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "eQJ" = (
 /obj/machinery/camera/network/research,
 /turf/simulated/floor/tiled/steel,
@@ -20454,7 +20557,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "4,15"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "eYP" = (
 /turf/simulated/shuttle/floor/mining,
 /area/turbolift/mountain/colony)
@@ -20696,7 +20799,9 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/security/maingate{
+	name = "\improper Outdoors - Pad"
+	})
 "fcu" = (
 /obj/structure/closet/cabinet,
 /obj/item/gun/projectile/shotgun/doublebarrel,
@@ -20719,7 +20824,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "11,4"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "fdo" = (
 /obj/item/organ/internal/kidney,
 /obj/item/organ/internal/kidney/left,
@@ -21244,7 +21349,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,3"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "fjC" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -21521,15 +21626,14 @@
 "fml" = (
 /obj/structure/filingcabinet{
 	density = 0;
-	pixel_y = 20
-	},
-/obj/structure/filingcabinet{
-	density = 0;
 	pixel_x = 10
 	},
 /obj/structure/filingcabinet{
 	density = 0;
 	pixel_x = -10
+	},
+/obj/structure/filingcabinet{
+	density = 0
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
@@ -21660,7 +21764,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "6,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "fnE" = (
 /obj/structure/railing,
 /obj/structure/railing{
@@ -22154,7 +22258,7 @@
 	icon_state = "15,5"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ftr" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -22208,7 +22312,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,14"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "fuk" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -22284,7 +22388,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "5,13"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "fvE" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -22867,7 +22971,7 @@
 "fCX" = (
 /obj/structure/flora/small/lavarock1,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "fDf" = (
 /obj/structure/flora/small/trailrockb2,
 /obj/random/cluster/termite_no_despawn/low_chance,
@@ -23068,7 +23172,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "2,4"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "fFJ" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -24189,7 +24293,7 @@
 	icon_state = "15,7"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "fUS" = (
 /obj/machinery/papershredder,
 /turf/simulated/floor/wood,
@@ -24292,6 +24396,12 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/inside_colony)
+"fWu" = (
+/obj/effect/damagedfloor/fire,
+/obj/effect/decal/cleanable/ash,
+/obj/machinery/microwave/burnbarrel,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest)
 "fWx" = (
 /obj/effect/floor_decal/industrial/danger/corner{
 	dir = 1
@@ -24442,7 +24552,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "5,10"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "fYE" = (
 /obj/structure/invislight,
 /turf/simulated/floor/tiled/steel,
@@ -25468,7 +25578,7 @@
 "gjL" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "gjM" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -25742,7 +25852,7 @@
 	icon_state = "1,3"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "gnC" = (
 /obj/machinery/light{
 	dir = 1
@@ -27237,6 +27347,10 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/xenobiology/xenoflora)
+"gGO" = (
+/obj/structure/barricade,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "gHd" = (
 /obj/machinery/vending/cola,
 /turf/simulated/floor/wood/wild5,
@@ -27348,6 +27462,16 @@
 /obj/machinery/recharge_station/upgraded_t_three,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
+"gIz" = (
+/obj/structure/lattice,
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/colony)
 "gIO" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
@@ -27508,7 +27632,7 @@
 	icon_state = "15,3"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "gLs" = (
 /obj/machinery/slotmachine,
 /obj/effect/decal/cleanable/dirt,
@@ -27710,7 +27834,7 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "gNV" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/light/small{
@@ -27928,7 +28052,7 @@
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "gQw" = (
 /obj/structure/table/steel,
 /obj/random/common_oddities/low_chance,
@@ -28069,7 +28193,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,5"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "gSu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -28431,7 +28555,7 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/small/lavarock2,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "gWo" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -29606,7 +29730,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,9"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "hlT" = (
 /obj/machinery/door/airlock/command{
 	name = "Server Room";
@@ -29666,7 +29790,14 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,7"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
+"hmx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/standard,
+/obj/random/junkfood/rotten/low_chance,
+/obj/random/junkfood/rotten/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "hmA" = (
 /obj/machinery/door/airlock/maintenance_common,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -29915,7 +30046,7 @@
 	icon_state = "11,17"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "hpQ" = (
 /obj/structure/catwalk,
 /obj/structure/railing,
@@ -30134,6 +30265,12 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
+"htk" = (
+/obj/structure/table/woodentable,
+/obj/random/booze,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "htn" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -30180,7 +30317,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "htM" = (
 /turf/simulated/shuttle/wall/escpod{
 	icon_state = "escpodwall19";
@@ -30465,7 +30602,7 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "hxH" = (
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "hxL" = (
 /obj/random/furniture/pottedplant,
 /obj/machinery/light{
@@ -30474,8 +30611,9 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/command/courtroom)
 "hxQ" = (
-/obj/structure/table/standard,
-/obj/item/computer_hardware/hard_drive/portable/design/engineering,
+/obj/structure/table/reinforced,
+/obj/random/material/low_chance,
+/obj/random/material/low_chance,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/workshop)
 "hxR" = (
@@ -30572,7 +30710,7 @@
 	icon_state = "13,9"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "hyw" = (
 /obj/effect/window_lwall_spawn,
 /turf/simulated/floor/plating/under,
@@ -31220,7 +31358,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "hFr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -31370,7 +31508,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "hGS" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
@@ -31526,7 +31664,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "10,8"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "hIp" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/computer_hardware/hard_drive/portable/design/security{
@@ -31895,7 +32033,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,9"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "hLL" = (
 /turf/simulated/wall/r_wall,
 /area/colony)
@@ -32114,11 +32252,11 @@
 "hPl" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "hPo" = (
 /obj/structure/flora/small/lavarock3,
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "hPu" = (
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/armory_blackshield)
@@ -32882,7 +33020,7 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "hYv" = (
 /obj/machinery/vending/boozeomat{
 	auto_price = 1
@@ -33226,7 +33364,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "11,2"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ibK" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -33832,7 +33970,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "10,14"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ijC" = (
 /obj/structure/table/woodentable,
 /obj/random/toy/mecha,
@@ -33967,12 +34105,12 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "5,5"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ikV" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/random/flora/small_jungle_tree,
 /turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "ile" = (
 /obj/item/modular_computer/console/preset/security/camera{
 	dir = 4
@@ -34515,7 +34653,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "2,2"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "irV" = (
 /obj/structure/table/steel,
 /obj/item/reagent_containers/food/drinks/dry_ramen,
@@ -35053,7 +35191,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "7,8"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "iyz" = (
 /mob/living/simple_animal/penguin{
 	desc = "The Blackshield's finest corporal, the only Blackshield personnel to not have a friendly fired incident.";
@@ -35101,6 +35239,10 @@
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
+"iyV" = (
+/obj/random/scrap/dense_weighted/low_chance,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "ize" = (
 /obj/structure/table/bench/steel,
 /obj/item/clothing/head/ushanka,
@@ -35120,7 +35262,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "10,5"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "izu" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/mineral,
@@ -35354,7 +35496,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "12,5"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "iCh" = (
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
@@ -35645,6 +35787,13 @@
 /obj/machinery/camera/network/command,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/panic_room)
+"iGS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/standard,
+/obj/random/junkfood/low_chance,
+/obj/random/junkfood/rotten/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "iHh" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
@@ -35728,7 +35877,7 @@
 	icon_state = "10,18";
 	opacity = 0
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "iHG" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -35926,7 +36075,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "6,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "iJM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -36159,7 +36308,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,16"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "iNu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -36480,7 +36629,7 @@
 	icon_state = "6,0"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "iRc" = (
 /obj/item/tool/wrench/improvised,
 /obj/effect/decal/cleanable/dirt,
@@ -36490,7 +36639,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "4,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "iRn" = (
 /obj/machinery/vending/snack,
 /obj/effect/decal/cleanable/dirt,
@@ -36628,7 +36777,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,5"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "iUc" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/rock5,
@@ -36970,7 +37119,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "5,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "iXG" = (
 /obj/machinery/turretid/stun{
 	check_synth = 1;
@@ -37106,7 +37255,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "10,2"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "iZR" = (
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/crew_quarters/hydroponics)
@@ -37355,7 +37504,7 @@
 "jcr" = (
 /obj/structure/flora/ausbushes/genericbush,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "jcs" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/closet/wall_mounted/emcloset{
@@ -37397,9 +37546,10 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "jcW" = (
-/obj/structure/table/rack/shelf,
-/turf/simulated/floor/tiled/steel/danger,
-/area/nadezhda/engineering/workshop)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "jde" = (
 /obj/structure/flora/small/grassa2,
 /turf/simulated/floor/asteroid/grass,
@@ -37758,6 +37908,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/command/teleporter)
+"jhC" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/security/maingate{
+	name = "\improper Outdoors - Pad"
+	})
 "jhG" = (
 /obj/machinery/door/airlock{
 	name = "Bathroom"
@@ -38136,7 +38292,7 @@
 "jlu" = (
 /mob/living/simple_animal/hostile/frog,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "jlC" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -38167,7 +38323,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,16"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "jlS" = (
 /obj/structure/catwalk,
 /obj/structure/table/steel_reinforced,
@@ -38190,7 +38346,7 @@
 "jmc" = (
 /obj/structure/flora/small/lavarock3,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "jme" = (
 /obj/machinery/atmospherics/valve/digital/open{
 	dir = 4;
@@ -38682,6 +38838,11 @@
 /obj/random/gun_energy_cheap/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
+"jrR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/scrap_cube,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "jrW" = (
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white/monofloor,
@@ -39257,7 +39418,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,11"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "jAk" = (
 /obj/machinery/lapvend,
 /obj/machinery/light{
@@ -39285,7 +39446,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "10,13"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "jAn" = (
 /obj/structure/nt_pedestal,
 /turf/simulated/floor/carpet/bcarpet,
@@ -39710,7 +39871,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,15"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "jFQ" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock,
@@ -40554,7 +40715,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "2,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "jPx" = (
 /obj/effect/floor_decal/industrial/box/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -40924,7 +41085,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,9"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "jTP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -41407,7 +41568,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/meeting_room)
 "kaF" = (
-/obj/structure/table/bench/standard,
+/obj/item/stool,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/sleeper)
 "kaI" = (
@@ -41814,7 +41975,7 @@
 	icon_state = "14,0"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "kfF" = (
 /obj/machinery/power/nt_obelisk,
 /obj/structure/sign/faction/neotheology_cross/gold{
@@ -42416,9 +42577,6 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "kmZ" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/alarm{
 	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
 	dir = 4;
@@ -42426,10 +42584,13 @@
 	pixel_x = -32;
 	req_one_access = list()
 	},
+/obj/structure/bed/chair{
+	dir = 1
+	},
 /turf/simulated/shuttle/floor/science{
 	icon_state = "5,14"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "knh" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/regular{
@@ -42747,7 +42908,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "9,4"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "kqD" = (
 /obj/machinery/light{
 	dir = 8
@@ -43123,6 +43284,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small,
+/obj/random/scrap/sparse_even/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "kvv" = (
@@ -43354,7 +43516,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,4"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "kyg" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -43979,7 +44141,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "13,7"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "kFR" = (
 /obj/structure/disposalpipe/junction{
 	dir = 4
@@ -44129,6 +44291,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/wall/wood_barrel,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"kJa" = (
+/obj/structure/flora/big/rocks1,
+/turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
 "kJg" = (
 /obj/structure/table/standard,
 /obj/item/clothing/under/cyber{
@@ -44177,6 +44343,10 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"kJP" = (
+/obj/item/mine/old/armed,
+/turf/simulated/floor/rock,
+/area/asteroid/cave)
 "kJV" = (
 /obj/machinery/microwave/burnbarrel,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -44194,7 +44364,7 @@
 	icon_state = "0,3"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "kKh" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/asteroid/grass,
@@ -44282,7 +44452,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/grassb1,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "kKT" = (
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/miningdock)
@@ -44465,7 +44635,7 @@
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/flora/small/bushb1,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "kOe" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -44679,7 +44849,7 @@
 	icon_state = "1,2"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "kQg" = (
 /obj/structure/catwalk,
 /obj/structure/bed/chair{
@@ -44899,8 +45069,11 @@
 /turf/simulated/wall,
 /area/nadezhda/crew_quarters/toilet/public)
 "kSY" = (
-/turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/medical/sleeper)
+/obj/effect/decal/cleanable/dirt,
+/obj/item/caution/cone,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "kTf" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
@@ -44959,6 +45132,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
+"kUg" = (
+/turf/space,
+/area/nadezhda/outside/forest)
 "kUi" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 1
@@ -44982,7 +45158,7 @@
 	icon_state = "14,8"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "kUp" = (
 /obj/structure/bed/chair/comfy/blue,
 /turf/simulated/floor/tiled/white/gray_perforated,
@@ -45695,7 +45871,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "4,8"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ldA" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -46063,6 +46239,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/nadezhda/security/detectives_office)
+"liC" = (
+/obj/structure/lattice,
+/obj/structure/catwalk,
+/obj/structure/catwalk,
+/turf/simulated/floor/fixed/hydrotile,
+/area/colony)
 "liI" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -46107,7 +46289,7 @@
 	icon_state = "16,6"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ljs" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -46250,7 +46432,7 @@
 	icon_state = "10,20"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "lma" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/mineral,
@@ -46385,7 +46567,7 @@
 "loh" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "lol" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	frequency = 1380;
@@ -46400,7 +46582,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "5,12"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "lor" = (
 /obj/structure/table/standard,
 /obj/machinery/microwave,
@@ -46511,7 +46693,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "13,2"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "lpx" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8;
@@ -46664,7 +46846,7 @@
 "lrc" = (
 /obj/structure/flora/small/lavarock1,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "lrf" = (
 /obj/structure/curtain/open,
 /obj/machinery/shower{
@@ -46878,6 +47060,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"luh" = (
+/obj/item/device/megaphone,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "lui" = (
 /obj/structure/toilet{
 	dir = 8
@@ -47028,7 +47215,7 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "lvI" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -47291,7 +47478,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "4,16"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "lzw" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
@@ -47299,7 +47486,7 @@
 "lzF" = (
 /mob/living/simple_animal/hostile/snake,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "lzO" = (
 /obj/structure/table/rack/shelf,
 /obj/item/stock_parts/capacitor/excelsior,
@@ -47858,7 +48045,7 @@
 	icon_state = "16,5"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "lGv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -47879,7 +48066,7 @@
 	icon_state = "5,0"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "lGy" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/medical/cryo)
@@ -47947,7 +48134,7 @@
 	icon_state = "6,20"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "lHF" = (
 /obj/machinery/door/airlock/security{
 	name = "Evidence Storage";
@@ -48254,12 +48441,12 @@
 	icon_state = "7,21"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "lKW" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "lKY" = (
 /mob/living/simple_animal/hostile/diyaab,
 /turf/unsimulated/wall/jungle,
@@ -48388,7 +48575,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "10,12"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "lMU" = (
 /obj/structure/table/rack,
 /obj/item/towel/random,
@@ -48813,7 +49000,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "10,10"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "lSC" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/carpet/bcarpet,
@@ -48997,6 +49184,10 @@
 "lUR" = (
 /obj/structure/flora/small/grassa1,
 /turf/unsimulated/wall/jungle,
+/area/nadezhda/outside/forest)
+"lUU" = (
+/obj/landmark/storyevent/midgame_stash_spawn,
+/turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest)
 "lUY" = (
 /obj/structure/table/rack,
@@ -49626,7 +49817,7 @@
 "mdx" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "mdA" = (
 /obj/effect/decal/cleanable/molten_item,
 /obj/effect/decal/cleanable/dirt,
@@ -49738,7 +49929,7 @@
 	icon_state = "8,19";
 	opacity = 0
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "meP" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -49783,7 +49974,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "meW" = (
 /obj/machinery/trade_beacon/sending,
 /obj/effect/floor_decal/industrial/outline/blue,
@@ -49977,7 +50168,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "4,14"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "mgE" = (
 /obj/structure/barricade,
 /obj/effect/decal/cleanable/dirt,
@@ -50123,7 +50314,7 @@
 	icon_state = "10,17";
 	opacity = 0
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "mhz" = (
 /obj/structure/flora/small/trailrockb1,
 /obj/structure/flora/small/trailrocka4,
@@ -50241,6 +50432,18 @@
 /obj/structure/table/steel_reinforced,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/item/device/radio/off{
+	pixel_y = 6
+	},
+/obj/item/device/radio/off{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/device/radio/off{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "mjK" = (
@@ -50345,13 +50548,8 @@
 "mkU" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /turf/simulated/floor/fixed/hydrotile,
-/area/nadezhda/engineering/engine_room)
+/area/colony)
 "mkW" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "12,23"
@@ -50481,6 +50679,13 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/crew_quarters/hydroponics)
+"mmq" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
+	},
+/area/asteroid/cave)
 "mmJ" = (
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/asteroid/grass,
@@ -50527,6 +50732,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
+"mmS" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/organ/internal/bone/l_arm,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
+	},
+/area/asteroid/cave)
 "mna" = (
 /obj/structure/flora/ausbushes/genericbush,
 /obj/structure/railing{
@@ -50722,7 +50935,12 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "10,15"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
+"mpP" = (
+/obj/structure/bed/chair,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest)
 "mpT" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -50839,7 +51057,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "9,12"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "mrE" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -50855,7 +51073,7 @@
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
 /turf/simulated/floor/beach/water/shallow,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "mrJ" = (
 /obj/random/furniture/pottedplant,
 /obj/machinery/light,
@@ -51264,8 +51482,8 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/command/panic_room)
 "mxv" = (
-/obj/structure/table/bench/standard,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stool,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/sleeper)
 "mxE" = (
@@ -51334,8 +51552,12 @@
 	pixel_y = 32;
 	req_access = list(3)
 	},
-/obj/landmark/join/start/supsec,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/filingcabinet{
+	density = 0;
+	pixel_y = 20
+	},
+/obj/landmark/join/start/supsec,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "myj" = (
@@ -51462,7 +51684,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "6,4"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "mzU" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -51824,7 +52046,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "mEn" = (
 /mob/living/simple_animal/corgi/puppy,
 /turf/simulated/floor/beach/sand,
@@ -51906,6 +52128,10 @@
 /obj/machinery/atmospherics/pipe/zpipe/up,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/bioreactor)
+"mFb" = (
+/obj/random/scrap/sparse_even,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "mFh" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -52239,7 +52465,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "6,10"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "mIu" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -52591,7 +52817,7 @@
 	icon_state = "12,0"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "mNe" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "15,22"
@@ -52765,7 +52991,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "14,5"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "mPl" = (
 /obj/random/mob/termite_no_despawn,
 /obj/effect/decal/cleanable/dirt,
@@ -53205,7 +53431,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "6,3"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "mVl" = (
 /obj/structure/closet/secure_closet/personal/patient,
 /obj/item/toy/plushie/therapy,
@@ -53419,7 +53645,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,13"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "mXH" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/big/rocks1,
@@ -53592,7 +53818,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "11,14"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "mZc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -53994,7 +54220,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "5,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ncH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -54129,7 +54355,7 @@
 /turf/simulated/shuttle/wall/science{
 	opacity = 0
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "neD" = (
 /obj/structure/table/rack/shelf,
 /obj/random/common_oddities/low_chance,
@@ -54288,7 +54514,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,2"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ngQ" = (
 /obj/structure/flora/small/busha1,
 /obj/random/flora/jungle_tree,
@@ -54298,7 +54524,7 @@
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/busha2,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "ngT" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8;
@@ -54352,7 +54578,7 @@
 "nhI" = (
 /obj/structure/flora/small/bushb1,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "nhN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -54471,7 +54697,7 @@
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "njk" = (
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "njn" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -54892,7 +55118,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "nnF" = (
 /obj/structure/sink{
 	density = 1;
@@ -54954,7 +55180,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "5,3"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "noP" = (
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance{
@@ -55269,7 +55495,7 @@
 	icon_state = "16,3"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "nsF" = (
 /obj/machinery/autolathe,
 /turf/simulated/shuttle/floor/mining{
@@ -55318,7 +55544,7 @@
 	},
 /obj/structure/cable/yellow,
 /turf/simulated/floor,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ntl" = (
 /obj/machinery/hologram/holopad,
 /obj/structure/cable{
@@ -55437,7 +55663,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "3,7"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "nuH" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
@@ -55611,7 +55837,7 @@
 	icon_state = "7,20"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "nxf" = (
 /obj/structure/bed/padded,
 /obj/random/lowkeyrandom,
@@ -55636,7 +55862,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,3"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "nxK" = (
 /mob/living/carbon/superior_animal/roach/nanite,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -55739,7 +55965,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,15"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "nyG" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Permanent Holding";
@@ -55908,7 +56134,7 @@
 	icon_state = "2,9"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "nAp" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack/shelf,
@@ -56212,7 +56438,7 @@
 "nDo" = (
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "nDp" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -56489,7 +56715,7 @@
 "nGh" = (
 /obj/structure/flora/small/grassb1,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "nGk" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -56947,7 +57173,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "3,3"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "nLi" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /obj/structure/disposalpipe/segment,
@@ -57300,7 +57526,7 @@
 /area/nadezhda/outside/inside_colony)
 "nPS" = (
 /turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "nPW" = (
 /obj/machinery/blackbox_recorder,
 /turf/simulated/floor/bluegrid{
@@ -57673,13 +57899,10 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "nUQ" = (
-/obj/structure/table/reinforced,
-/obj/random/toolbox,
-/obj/random/toolbox,
 /turf/simulated/shuttle/floor/science{
 	icon_state = "11,5"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "nUY" = (
 /obj/random/junk,
 /obj/effect/decal/cleanable/dirt,
@@ -57810,7 +58033,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,12"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "nWv" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 8;
@@ -57885,7 +58108,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "4,13"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "nXg" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "13,15"
@@ -58357,6 +58580,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/bridge)
+"oci" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/structure/curtain/open/shower,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest)
 "ocq" = (
 /obj/item/modular_computer/console/preset/engineering/alarms{
 	dir = 1
@@ -59492,7 +59723,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "7,4"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "opK" = (
 /obj/machinery/vending/weapon_machine{
 	categories = 3
@@ -59554,6 +59785,12 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_room)
+"oqo" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "oqq" = (
 /obj/structure/closet/secure_closet/personal/orderly,
 /obj/item/clothing/glasses/hud/health,
@@ -59752,6 +59989,10 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/organ_lab)
+"osU" = (
+/obj/random/scrap/moderate_weighted/low_chance,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "osV" = (
 /obj/machinery/reagentgrinder/advanced,
 /turf/simulated/floor/tiled/white/danger,
@@ -59970,7 +60211,7 @@
 "ovi" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "ovj" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/small/grassa2,
@@ -60478,7 +60719,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "4,10"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "oBw" = (
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -60869,7 +61110,10 @@
 /area/nadezhda/crew_quarters)
 "oGI" = (
 /obj/machinery/light,
-/obj/structure/closet/secure_closet/personal/engineering_personal,
+/obj/structure/table/rack/shelf,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/workshop)
 "oGO" = (
@@ -61992,6 +62236,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"oTM" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/random/cluster/roaches/low_chance,
+/turf/simulated/floor/beach/water/jungledeep{
+	desc = "Filthy, stinking bilge water.";
+	name = "murky water"
+	},
+/area/asteroid/cave)
 "oTN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -62097,11 +62351,11 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/prisoncells)
 "oVl" = (
-/obj/structure/table/rack/shelf,
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel/danger,
+/obj/structure/closet/secure_closet/personal/engineering_personal,
+/turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "oVn" = (
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -62510,6 +62764,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"oZF" = (
+/obj/structure/barricade,
+/turf/simulated/floor/rock,
+/area/asteroid/cave)
 "oZK" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -62519,9 +62777,14 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/prime)
 "oZO" = (
-/obj/structure/low_wall,
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/outside/lakeside)
+/turf/simulated/wall/wood,
+/area/nadezhda/outside/forest)
+"oZR" = (
+/obj/structure/table/woodentable,
+/obj/random/booze/low_chance,
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "oZU" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -62869,7 +63132,7 @@
 "peR" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "peS" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -63237,7 +63500,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,13"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "piV" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 1;
@@ -63875,13 +64138,25 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "prs" = (
-/obj/structure/closet/secure_closet/personal/engineering_personal,
+/obj/item/cell/large/high,
+/obj/item/cell/large/high,
+/obj/item/cell/large/high,
+/obj/item/cell/medium,
+/obj/item/cell/medium,
+/obj/item/cell/medium,
+/obj/item/cell/medium,
+/obj/item/cell/small,
+/obj/item/cell/small,
+/obj/item/cell/small,
+/obj/item/cell/small,
+/obj/item/cell/small,
 /obj/machinery/light_switch{
 	pixel_y = -32;
 	dir = 1
 	},
+/obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/workshop)
 "pry" = (
@@ -63897,7 +64172,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "7,17"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "prz" = (
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/fo)
@@ -64786,7 +65061,9 @@
 "pBw" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/security/maingate{
+	name = "\improper Outdoors - Pad"
+	})
 "pBy" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/flora/small/trailrocka2,
@@ -64811,7 +65088,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "6,5"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "pBO" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/dirt,
@@ -64921,7 +65198,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,10"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "pDc" = (
 /obj/structure/table/reinforced,
 /obj/machinery/slime_dye_vat{
@@ -65251,7 +65528,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,2"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "pHo" = (
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
@@ -65605,7 +65882,7 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/small/lavarock3,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "pLz" = (
 /obj/item/modular_computer/console/preset/engineering{
 	dir = 1
@@ -65954,6 +66231,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"pOR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "pOT" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -66100,7 +66382,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,8"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "pQW" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/regular{
@@ -66765,7 +67047,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,7"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "pYq" = (
 /obj/machinery/camera/xray/security,
 /turf/simulated/floor/plating/under,
@@ -67331,10 +67613,13 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "qfe" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
 /turf/simulated/shuttle/floor/science{
 	icon_state = "6,15"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "qff" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -67450,7 +67735,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "14,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "qhb" = (
 /obj/machinery/light_switch{
 	pixel_y = 32
@@ -67754,6 +68039,7 @@
 /area/nadezhda/crew_quarters/kitchen)
 "qkG" = (
 /obj/machinery/light/small,
+/obj/random/closet/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "qkJ" = (
@@ -67790,7 +68076,7 @@
 	icon_state = "1,8"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "qli" = (
 /obj/structure/flora/small/bushb2,
 /turf/unsimulated/wall/jungle,
@@ -67962,7 +68248,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,10"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "qni" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
@@ -68578,6 +68864,11 @@
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"quC" = (
+/obj/structure/flora/ausbushes/reedbush,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest)
 "quF" = (
 /turf/simulated/mineral,
 /area/nadezhda/command/crematorium)
@@ -68760,10 +69051,11 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "6,12"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "qwW" = (
 /obj/landmark/join/start/officer,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stool,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security)
 "qwX" = (
@@ -68973,7 +69265,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "3,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "qzl" = (
 /obj/structure/catwalk,
 /obj/random/mob/spiders,
@@ -69028,6 +69320,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/genetics)
+"qzU" = (
+/obj/structure/flora/small/busha2,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
 "qzV" = (
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = -32
@@ -69941,6 +70238,9 @@
 /obj/item/clothing/under/rank/brigservice,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/recruitment/blackshield{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "qKA" = (
@@ -69985,7 +70285,20 @@
 /turf/simulated/floor/tiled/steel,
 /area/shuttle/rocinante_shuttle_area)
 "qLk" = (
-/obj/structure/closet/secure_closet/personal/engineering_personal,
+/obj/item/stock_parts/subspace/analyzer,
+/obj/item/stock_parts/subspace/analyzer,
+/obj/item/stock_parts/subspace/analyzer,
+/obj/item/stock_parts/subspace/amplifier,
+/obj/item/stock_parts/subspace/amplifier,
+/obj/item/stock_parts/subspace/amplifier,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/subspace/filter,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/structure/table/rack/shelf,
 /obj/machinery/alarm{
 	pixel_y = -32;
 	dir = 1
@@ -70051,7 +70364,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "13,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "qMf" = (
 /obj/item/contraband/poster/placed/popculture/plasticsheep,
 /turf/simulated/wall,
@@ -70087,7 +70400,7 @@
 /obj/structure/flora/small/bushc1,
 /obj/structure/flora/big/bush2,
 /turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "qMx" = (
 /obj/machinery/light{
 	dir = 1
@@ -70354,7 +70667,7 @@
 /obj/structure/low_wall,
 /mob/living/simple_animal/jungle_bird,
 /turf/simulated/floor/plating,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "qQD" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -70553,7 +70866,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,7"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "qSV" = (
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -70708,7 +71021,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "14,7"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "qVv" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/cyan{
@@ -70932,7 +71245,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/big/bush2,
 /turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "qYN" = (
 /obj/machinery/light{
 	dir = 1
@@ -71344,7 +71657,7 @@
 	icon_state = "13,8"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rev" = (
 /obj/machinery/power/smes/buildable{
 	RCon_tag = "Substation - Cargo";
@@ -71388,7 +71701,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "6,11"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "reC" = (
 /obj/item/rig/hazmat/equipped,
 /obj/item/circuitboard/aicore{
@@ -71539,13 +71852,13 @@
 /obj/structure/flora/ausbushes/reedbush,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/dirt/mud,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "rfP" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "16,4"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rfU" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/machinery/light/small{
@@ -71660,7 +71973,7 @@
 	icon_state = "9,21"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rhg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -71784,7 +72097,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "3,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rir" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -71845,7 +72158,7 @@
 	icon_state = "9,19";
 	opacity = 0
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rjO" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 6;
@@ -71977,7 +72290,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "11,8"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rlu" = (
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -72088,7 +72401,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "14,3"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rmU" = (
 /obj/machinery/door/airlock/highsecurity{
 	id_tag = "panicRoom";
@@ -72353,7 +72666,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "rpR" = (
 /obj/machinery/door/airlock/glass_command{
 	name = "Bridge";
@@ -72434,7 +72747,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "2,5"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rrz" = (
 /obj/machinery/hologram/holopad{
 	name = "meeting room holopad one"
@@ -72469,7 +72782,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/security/maingate{
+	name = "\improper Outdoors - Pad"
+	})
 "rrT" = (
 /obj/structure/sink/kitchen{
 	dir = 4;
@@ -72536,7 +72851,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "12,3"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rsD" = (
 /obj/machinery/light/floor,
 /turf/simulated/floor/asteroid/grass,
@@ -72769,7 +73084,7 @@
 "rvq" = (
 /obj/structure/flora/small/bushc2,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "rvy" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
@@ -72806,7 +73121,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,0"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rvV" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -73114,10 +73429,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "ryY" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/machinery/camera/network/gate,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/lakeside)
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "rza" = (
 /obj/machinery/autolathe,
 /obj/structure/cable/green{
@@ -73353,7 +73666,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "11,10"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rCl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -73642,7 +73955,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "10,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rGk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -73762,8 +74075,9 @@
 /obj/structure/shuttle_part/science{
 	icon_state = "8,21"
 	},
+/obj/effect/shuttle_landmark/vasiliy_spacefort,
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rId" = (
 /obj/structure/flora/small/trailrockb5,
 /obj/effect/decal/cleanable/rubble,
@@ -73987,6 +74301,11 @@
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/atmos)
+"rKK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/caution/cone,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "rKU" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -74836,11 +75155,18 @@
 	icon_state = "13,12"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rVD" = (
 /obj/effect/step_trigger/surface_to_forest_1_B,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest)
+"rVL" = (
+/obj/structure/table/rack/shelf,
+/obj/item/rig/techno/equipped,
+/obj/item/rig/techno/equipped,
+/obj/item/rig/techno/equipped,
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/nadezhda/engineering/workshop)
 "rVM" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -75189,7 +75515,7 @@
 	icon_state = "15,1"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "rZl" = (
 /obj/machinery/recharge_station,
 /obj/machinery/light_switch{
@@ -75294,7 +75620,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "5,2"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "sai" = (
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -75638,7 +75964,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "sdz" = (
 /obj/machinery/hologram/holopad,
 /obj/structure/cable/green{
@@ -75682,7 +76008,7 @@
 "sdY" = (
 /obj/structure/flora/small/busha2,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "sdZ" = (
 /obj/structure/noticeboard/medical{
 	pixel_y = 32
@@ -75706,6 +76032,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
+"sek" = (
+/obj/random/scrap/sparse_weighted,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "sem" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/small/bushb1,
@@ -76741,7 +77071,24 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "srU" = (
-/obj/structure/closet/secure_closet/personal/engineering_personal,
+/obj/item/stock_parts/subspace/ansible,
+/obj/item/stock_parts/subspace/ansible,
+/obj/item/stock_parts/subspace/crystal,
+/obj/item/stock_parts/subspace/crystal,
+/obj/item/stock_parts/subspace/crystal,
+/obj/item/stock_parts/subspace/treatment,
+/obj/item/stock_parts/subspace/treatment,
+/obj/item/stock_parts/subspace/treatment,
+/obj/item/stock_parts/micro_laser,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/capacitor,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
+/obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/workshop)
 "ssb" = (
@@ -76855,11 +77202,10 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "stj" = (
-/obj/machinery/floodlight,
 /turf/simulated/shuttle/floor/science{
 	icon_state = "11,3"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "stI" = (
 /obj/effect/window_lwall_spawn,
 /obj/machinery/door/firedoor,
@@ -76912,7 +77258,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,3"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "sue" = (
 /obj/random/junkfood/rotten/low_chance,
 /obj/effect/floor_decal/spline/plain{
@@ -77085,7 +77431,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "svK" = (
 /obj/structure/flora/big/rocks3,
 /turf/simulated/floor/asteroid/grass,
@@ -77657,7 +78003,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "5,15"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "sBT" = (
 /obj/structure/table/marble,
 /obj/machinery/cooking_with_jane/stove,
@@ -78042,12 +78388,15 @@
 	},
 /obj/machinery/camera/network/security,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/recruitment/blackshield{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical_blackshield)
 "sGV" = (
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "sHb" = (
 /obj/structure/bed/chair/office/light,
 /obj/effect/decal/cleanable/dirt,
@@ -78360,7 +78709,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "5,4"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "sLK" = (
 /obj/effect/floor_decal/industrial/warningwhite{
 	dir = 8
@@ -78423,7 +78772,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "10,9"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "sMr" = (
 /obj/machinery/computer/telecomms/server{
 	dir = 8
@@ -78933,7 +79282,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "10,7"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "sSZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -78945,7 +79294,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "7,14"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "sTa" = (
 /obj/landmark/join/start/salvager,
 /obj/effect/decal/cleanable/dirt,
@@ -79268,7 +79617,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "10,4"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "sXF" = (
 /obj/effect/decal/cleanable/solid_biomass,
 /turf/simulated/floor/beach/water/jungledeep{
@@ -79384,7 +79733,7 @@
 /obj/structure/flora/small/bushb1,
 /obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "sYW" = (
 /obj/item/contraband/poster/placed/generic/tools{
 	pixel_y = 32
@@ -79509,7 +79858,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,13"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "sZU" = (
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
@@ -79549,7 +79898,7 @@
 	icon_state = "6,17";
 	opacity = 0
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "tam" = (
 /obj/machinery/light{
 	dir = 8
@@ -79712,11 +80061,11 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/rbreakroom)
 "tcw" = (
-/obj/machinery/computer/shuttle_control/explore/exploration_shuttle,
+/obj/machinery/computer/shuttle_control/multi/vasiliy,
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,18"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "tcE" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8;
@@ -79740,7 +80089,7 @@
 	icon_state = "4,17"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "tcJ" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -79758,7 +80107,7 @@
 	icon_state = "8,20"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "tdq" = (
 /obj/machinery/door/airlock/glass_mining{
 	name = "Cargo Front Desk";
@@ -80030,7 +80379,7 @@
 "tgG" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "tgU" = (
 /obj/structure/table/glass,
 /obj/item/folder/blue,
@@ -80692,7 +81041,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "6,13"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "tpD" = (
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1east)
@@ -80878,7 +81227,7 @@
 	icon_state = "15,6"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "trV" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha3,
@@ -81038,7 +81387,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "9,18"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "tun" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 10
@@ -81390,7 +81739,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "11,7"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "txz" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/structure/disposalpipe/segment{
@@ -81437,7 +81786,7 @@
 /obj/structure/flora/small/bushc1,
 /obj/random/flora/small_jungle_tree,
 /turf/unsimulated/wall/jungle,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "tyg" = (
 /obj/structure/table/standard,
 /obj/machinery/alarm{
@@ -81775,7 +82124,7 @@
 	icon_state = "15,0"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "tCk" = (
 /obj/structure/table/woodentable,
 /obj/item/device/camera_film,
@@ -81978,7 +82327,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "6,9"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "tEH" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/machinery/light/small{
@@ -82505,7 +82854,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "11,15"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "tKy" = (
 /obj/structure/table/reinforced,
 /obj/random/material_resources/low_chance,
@@ -82543,7 +82892,7 @@
 "tLe" = (
 /obj/structure/flora/small/bushc1,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "tLj" = (
 /obj/effect/step_trigger/colony_to_crash_2_B,
 /turf/simulated/floor/asteroid/dirt,
@@ -82717,7 +83066,7 @@
 	icon_state = "1,6"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "tMK" = (
 /mob/living/carbon/superior_animal/wurm/silver,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -82725,7 +83074,7 @@
 "tMW" = (
 /mob/living/simple_animal/goose,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "tMZ" = (
 /obj/random/toolbox,
 /obj/structure/table/rack/shelf,
@@ -82910,7 +83259,7 @@
 "tOE" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "tOG" = (
 /obj/item/contraband/poster/placed/advertisement/space_cola,
 /turf/simulated/wall,
@@ -83409,6 +83758,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/courtroom)
+"tTB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "tTH" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 9
@@ -83478,7 +83833,7 @@
 "tUo" = (
 /mob/living/simple_animal/hostile/snake,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "tUr" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/plating/under,
@@ -83571,7 +83926,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "9,14"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "tVT" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -83890,7 +84245,7 @@
 "tZz" = (
 /mob/living/simple_animal/crab,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "tZD" = (
 /obj/machinery/alarm{
 	pixel_x = -32;
@@ -83909,6 +84264,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
+"tZJ" = (
+/obj/structure/table/woodentable,
+/obj/random/junkfood/low_chance,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "tZL" = (
 /obj/machinery/camera/network/colony_underground{
 	dir = 4
@@ -84081,7 +84441,7 @@
 	icon_state = "1,4"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ubv" = (
 /obj/random/closet_tech/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -84196,7 +84556,7 @@
 	icon_state = "1,1"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ucR" = (
 /obj/structure/flora/ausbushes/pointybush,
 /obj/random/flora/small_jungle_tree,
@@ -84813,7 +85173,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "5,8"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "uii" = (
 /obj/structure/table/woodentable,
 /obj/random/cloth/belt/low_chance,
@@ -84984,7 +85344,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "6,14"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ukw" = (
 /obj/machinery/light,
 /obj/machinery/alarm{
@@ -85637,7 +85997,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,5"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "usR" = (
 /obj/structure/flora/small/trailrocka3,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -85865,7 +86225,7 @@
 	icon_state = "15,2"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "uwP" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/rock3,
@@ -86170,7 +86530,7 @@
 	icon_state = "2,8"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "uAD" = (
 /obj/structure/railing{
 	dir = 4
@@ -86234,6 +86594,10 @@
 	},
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/absolutism/bioreactor)
+"uBN" = (
+/obj/random/scrap/sparse_even/low_chance,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "uBQ" = (
 /obj/structure/table/steel,
 /obj/random/tool,
@@ -86607,7 +86971,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "2,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "uGU" = (
 /obj/effect/decal/cleanable/blood/oil,
 /obj/effect/floor_decal/steeldecal/steel_decals10{
@@ -86865,7 +87229,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "5,11"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "uJq" = (
 /obj/structure/table/woodentable,
 /obj/item/paper_bin{
@@ -87218,7 +87582,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "4,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "uMy" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/decal/cleanable/dirt,
@@ -87676,14 +88040,8 @@
 	name = "Science Expedition prep"
 	})
 "uRk" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/fixed/hydrotile,
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/space,
 /area/nadezhda/engineering/engine_room)
 "uRl" = (
 /turf/simulated/shuttle/wall/mining{
@@ -88220,7 +88578,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "11,12"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "uWM" = (
 /obj/machinery/camera/network/colony_underground{
 	dir = 8
@@ -88575,7 +88933,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "11,16"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "vcc" = (
 /obj/machinery/light,
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
@@ -88904,6 +89262,11 @@
 /obj/structure/flora/small/trailrocka3,
 /turf/simulated/floor/beach/sand/drywater,
 /area/nadezhda/crew_quarters)
+"vgc" = (
+/obj/structure/flora/small/busha2,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
 "vgm" = (
 /obj/structure/railing{
 	dir = 8
@@ -88935,7 +89298,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,7"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "vgL" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -89001,7 +89364,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "4,7"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "vhy" = (
 /obj/structure/bed/chair/office/dark,
 /obj/effect/decal/cleanable/blood,
@@ -89109,7 +89472,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "7,18"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "viL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -89344,7 +89707,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "11,9"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "vkX" = (
 /obj/structure/curtain/open/privacy,
 /obj/machinery/camera/network/medbay{
@@ -89928,7 +90291,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "4,5"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "vsC" = (
 /obj/structure/catwalk,
 /obj/structure/railing{
@@ -90347,7 +90710,7 @@
 	icon_state = "0,6"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "vwS" = (
 /obj/structure/table/reinforced,
 /obj/item/pen{
@@ -90495,7 +90858,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,10"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "vzq" = (
 /obj/structure/sign/faction/neotheology_cross{
 	pixel_y = 30
@@ -90768,7 +91131,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "5,9"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "vDb" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/rock5,
@@ -91344,6 +91707,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"vJX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/booze/low_chance,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "vKb" = (
 /obj/structure/bed/chair/sofa/black/right{
 	dir = 4
@@ -91378,7 +91747,7 @@
 	icon_state = "0,4"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "vKC" = (
 /obj/structure/disposaloutlet,
 /obj/structure/disposalpipe/trunk{
@@ -92021,7 +92390,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "6,7"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "vRA" = (
 /obj/item/modular_computer/console/preset/command,
 /turf/simulated/floor/tiled/dark,
@@ -92327,7 +92696,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,16"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "vUK" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 6
@@ -92473,6 +92842,13 @@
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"vWm" = (
+/obj/item/device/lighting/toggleable/lantern,
+/obj/item/device/lighting/toggleable/lantern,
+/obj/item/device/lighting/toggleable/lantern,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "vWC" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
@@ -92626,7 +93002,7 @@
 "vYA" = (
 /obj/structure/flora/small/lavarock2,
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "vYC" = (
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -92690,7 +93066,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "11,13"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "vZS" = (
 /obj/effect/floor_decal/industrial/warningwhite{
 	dir = 1
@@ -92789,6 +93165,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
+"waX" = (
+/obj/structure/boulder,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "wbe" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -92929,7 +93310,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "14,2"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "wcB" = (
 /obj/effect/decal/cleanable/blood/oil,
 /obj/effect/decal/cleanable/dirt,
@@ -93016,6 +93397,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/techshop)
+"wdD" = (
+/obj/item/reagent_containers/glass/bucket,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/nadezhda/outside/forest)
 "wdH" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -93129,7 +93515,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,9"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "wfa" = (
 /obj/structure/table/standard,
 /obj/item/clipboard,
@@ -93588,6 +93974,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"wkH" = (
+/obj/structure/lattice,
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/colony)
 "wlg" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -93853,6 +94249,12 @@
 "wnL" = (
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/genetics)
+"wnV" = (
+/obj/structure/table/woodentable,
+/obj/random/booze/low_chance,
+/obj/random/gun_handmade/low_chance,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/outside/forest)
 "wod" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/shuttle/floor/mining{
@@ -94019,7 +94421,7 @@
 	icon_state = "2,0"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "wpG" = (
 /turf/simulated/wall,
 /area/nadezhda/crew_quarters/dorm3)
@@ -94050,7 +94452,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,1"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "wqj" = (
 /obj/structure/multiz/stairs/active/bottom,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -94387,11 +94789,11 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/lakeside)
 "wtD" = (
-/obj/structure/table/rack/shelf,
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel/danger,
+/obj/structure/closet/secure_closet/personal/engineering_personal,
+/turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "wtK" = (
 /obj/structure/boulder,
@@ -94466,7 +94868,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,11"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "wuW" = (
 /obj/structure/bed/chair/wood{
 	dir = 1
@@ -94544,7 +94946,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "4,11"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "wvM" = (
 /obj/item/material/shard,
 /obj/effect/decal/cleanable/dirt,
@@ -94972,7 +95374,7 @@
 "wBY" = (
 /obj/landmark/mob/carpspawn,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "wCc" = (
 /obj/structure/sink{
 	dir = 4;
@@ -95301,7 +95703,7 @@
 "wGJ" = (
 /obj/random/mob/croaker/low_chance,
 /turf/simulated/floor/beach/sand,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "wGV" = (
 /obj/structure/bed/chair,
 /obj/effect/decal/cleanable/dirt,
@@ -95337,6 +95739,10 @@
 "wHi" = (
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
+"wHj" = (
+/obj/random/scrap/sparse_weighted/low_chance,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "wHs" = (
 /obj/machinery/computer/operating{
 	dir = 4;
@@ -95400,7 +95806,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "8,0"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "wIh" = (
 /obj/structure/railing{
 	dir = 8
@@ -95662,7 +96068,7 @@
 	icon_state = "13,0"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "wMq" = (
 /obj/machinery/light/floor,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -96019,7 +96425,7 @@
 	icon_state = "10,0"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "wSa" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
@@ -96484,6 +96890,10 @@
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"wXI" = (
+/obj/structure/closet/secure_closet/personal/engineering_personal,
+/turf/simulated/floor/tiled/steel/techfloor,
+/area/nadezhda/engineering/workshop)
 "wXJ" = (
 /obj/structure/flora/big/rocks2,
 /turf/simulated/floor/rock,
@@ -96704,7 +97114,7 @@
 "xaS" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "xaV" = (
 /obj/machinery/door/window/southright{
 	icon_state = "left";
@@ -96934,7 +97344,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,16"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "xfd" = (
 /obj/structure/salvageable/data,
 /turf/simulated/floor/tiled/dark/danger,
@@ -96982,7 +97392,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "6,2"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "xfM" = (
 /obj/structure/railing/grey{
 	dir = 8
@@ -96990,6 +97400,7 @@
 /obj/structure/railing/grey{
 	dir = 1
 	},
+/obj/random/junk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "xfQ" = (
@@ -97403,7 +97814,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "7,11"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "xkm" = (
 /obj/structure/table/steel,
 /obj/item/pen,
@@ -97667,7 +98078,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,16"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "xnK" = (
 /obj/effect/decal/cleanable/solid_biomass,
 /obj/effect/decal/cleanable/rubble,
@@ -97708,6 +98119,10 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
+"xoo" = (
+/obj/random/lowkeyrandom/low_chance,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest)
 "xos" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/bushb2,
@@ -98555,7 +98970,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/lakeside)
+/area/nadezhda/outside/pond)
 "xyL" = (
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
@@ -98700,7 +99115,7 @@
 	icon_state = "6,19"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "xAl" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -99450,7 +99865,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "5,16"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "xIG" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/dirt,
@@ -99507,7 +99922,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "10,16"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "xJy" = (
 /obj/structure/scrap/food/large,
 /obj/effect/decal/cleanable/dirt,
@@ -99943,7 +100358,7 @@
 "xPy" = (
 /mob/living/simple_animal/goose,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "xPB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/meter,
@@ -100634,7 +101049,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "13,6"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "xWO" = (
 /obj/machinery/suit_storage_unit/nt/custodian,
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -100895,7 +101310,7 @@
 	icon_state = "11,0"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "xZN" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /mob/living/simple_animal/hostile/retaliate/malf_drone,
@@ -101081,7 +101496,7 @@
 /turf/simulated/shuttle/wall/science{
 	icon_state = "6,16"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "ycd" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
@@ -101221,6 +101636,7 @@
 /obj/structure/table/standard,
 /obj/machinery/recharger,
 /obj/structure/disposalpipe/segment,
+/obj/item/computer_hardware/hard_drive/portable/design/engineering,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "yew" = (
@@ -101464,7 +101880,7 @@
 /turf/simulated/shuttle/floor/science{
 	icon_state = "4,3"
 	},
-/area/shuttle/research/station)
+/area/shuttle/vasiliy_shuttle_area)
 "yhK" = (
 /obj/structure/table/rack/shelf,
 /obj/random/pouch/low_chance,
@@ -101647,7 +102063,7 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/pond)
+/area/nadezhda/outside/lakeside)
 "ykA" = (
 /obj/structure/closet/secure_closet/xenoarchaeologist,
 /obj/machinery/light{
@@ -117187,9 +117603,9 @@ tly
 jjm
 mXu
 pAy
-eQB
-kSY
-kSY
+mxv
+kaF
+kaF
 qUI
 wzC
 hkK
@@ -157528,7 +157944,7 @@ uyF
 utf
 utf
 utf
-kLb
+utf
 utf
 lSS
 utf
@@ -157732,7 +158148,7 @@ utf
 utf
 kLb
 utf
-lSS
+utf
 utf
 kLb
 she
@@ -168639,14 +169055,14 @@ wuC
 xjL
 bUJ
 saK
-xOw
-xOw
-xOw
-xOw
-xOw
-xOw
-xOw
-xOw
+bZg
+iyV
+osU
+mFb
+bZg
+sek
+wHj
+osU
 mpm
 mpm
 mpm
@@ -169245,7 +169661,7 @@ wuC
 kGI
 bUJ
 saK
-erT
+bHP
 tFo
 xfM
 kvp
@@ -169449,8 +169865,8 @@ bUJ
 saK
 erT
 tFo
-xOw
-xOw
+wHj
+mFb
 mcl
 cZb
 cZb
@@ -169651,7 +170067,7 @@ bUJ
 bUJ
 erT
 tFo
-xOw
+fWY
 mcl
 mcl
 cZb
@@ -169853,7 +170269,7 @@ npT
 tMv
 jwo
 uko
-xOw
+uBN
 kUx
 cZb
 cZb
@@ -170055,7 +170471,7 @@ ubE
 jtG
 erT
 tFo
-xOw
+fWY
 kUx
 cZb
 cZb
@@ -170114,11 +170530,11 @@ ggO
 ggO
 ggO
 ggO
-jcW
+aTG
 oVl
 cvg
 wtD
-jcW
+wXI
 bpF
 bpF
 hjS
@@ -170257,7 +170673,7 @@ cZb
 mcl
 erT
 tFo
-xOw
+uBN
 kUx
 cZb
 cZb
@@ -170459,7 +170875,7 @@ noA
 vyU
 erT
 tFo
-xOw
+fWY
 mcl
 mcl
 mcl
@@ -170512,7 +170928,7 @@ kpn
 mur
 srU
 bpF
-aTG
+vVt
 siD
 nTn
 vJg
@@ -170714,7 +171130,7 @@ njP
 uUx
 qLk
 bpF
-vVt
+rVL
 siD
 wec
 jck
@@ -170873,7 +171289,7 @@ mcl
 iBY
 iBY
 bHX
-iBY
+jrR
 toT
 tkt
 xgR
@@ -171123,13 +171539,13 @@ siD
 kxf
 uZd
 bpF
-vyj
+bpF
 cqd
 ltG
 ltG
 mSi
 ePJ
-vyj
+bpF
 bpF
 aeN
 piS
@@ -171277,7 +171693,7 @@ mcl
 cPl
 iBY
 bHX
-iBY
+hmx
 kSX
 kSX
 nIO
@@ -171325,13 +171741,13 @@ rMw
 wec
 rvn
 bpF
-vyj
+bpF
 xro
 eYP
 eYP
 eYP
 xro
-vyj
+bpF
 bpF
 aIS
 duC
@@ -171479,7 +171895,7 @@ mcl
 kgw
 iBY
 bHX
-iBY
+iGS
 kSX
 kSX
 toT
@@ -171527,13 +171943,13 @@ vJg
 nkQ
 qdj
 bpF
-vyj
+bpF
 xro
 eYP
 eYP
 eYP
 xro
-vyj
+bpF
 bpF
 aCk
 wRJ
@@ -171729,13 +172145,13 @@ hvY
 dxc
 bpF
 bpF
-vyj
+bpF
 xro
 eYP
 eYP
 eYP
 xro
-vyj
+bpF
 bpF
 jbv
 diE
@@ -171931,13 +172347,13 @@ bpF
 bpF
 bpF
 vyj
-vyj
+bpF
 xXy
 eFz
 eFz
 eFz
 dIj
-vyj
+bpF
 bpF
 hrP
 hrP
@@ -172132,14 +172548,14 @@ cZb
 cZb
 tad
 cZb
-vVN
-vVN
-jLN
-vVN
-vVN
-vVN
-vVN
-vVN
+xEi
+hrP
+hrP
+uRk
+uRk
+uRk
+hrP
+hrP
 cZb
 cZb
 cZb
@@ -172285,8 +172701,8 @@ mcl
 mcl
 mcl
 mcl
-iBY
-iBY
+rKK
+pOR
 mcl
 cZb
 cZb
@@ -172335,13 +172751,13 @@ cZb
 tad
 cZb
 vVN
-lNB
-tra
-uCd
-uCd
-uCd
-uCd
-ptD
+vVN
+jLN
+vVN
+vVN
+vVN
+vVN
+vVN
 ptD
 vVN
 cZb
@@ -172487,9 +172903,9 @@ mcl
 mcl
 mcl
 mcl
-iBY
-iBY
-mcl
+tTB
+vJX
+kGl
 cZb
 cZb
 cZb
@@ -172538,7 +172954,7 @@ tad
 cZb
 vVN
 lNB
-bBk
+tra
 uCd
 uCd
 uCd
@@ -172689,9 +173105,9 @@ iKp
 jWI
 mcl
 mcl
-iBY
-iBY
-mcl
+pOR
+avz
+qIn
 cZb
 cZb
 cZb
@@ -172737,8 +173153,8 @@ cZb
 cZb
 cZb
 tad
-hrP
-lRi
+xEi
+vVN
 lNB
 bBk
 uCd
@@ -172892,7 +173308,7 @@ nXu
 mcl
 mcl
 iBY
-iBY
+kSY
 mcl
 cZb
 cZb
@@ -172939,8 +173355,8 @@ cZb
 cZb
 cZb
 tad
-cZb
-vVN
+hLL
+lRi
 lNB
 bBk
 uCd
@@ -173142,7 +173558,7 @@ cZb
 cZb
 tad
 cZb
-jLN
+vVN
 lNB
 bBk
 uCd
@@ -173344,11 +173760,11 @@ cZb
 cZb
 tad
 cZb
-rga
-vVN
-mkU
-dnd
-mOj
+jLN
+lNB
+bBk
+uCd
+uCd
 uCd
 uCd
 uCd
@@ -173546,11 +173962,11 @@ cZb
 cZb
 tad
 cZb
-cZb
-cZb
-cZb
-cZb
-uRk
+liC
+mkU
+gIz
+wkH
+mOj
 uCd
 uCd
 uCd
@@ -184028,7 +184444,7 @@ iPx
 gBD
 iPx
 gBD
-iPx
+kJP
 gBD
 gBD
 gBD
@@ -187052,7 +187468,7 @@ rYd
 gBD
 gBD
 gBD
-iPx
+kJP
 gBD
 gBD
 gBD
@@ -187857,7 +188273,7 @@ gBD
 gBD
 gBD
 gBD
-iPx
+kJP
 gBD
 qIy
 rYd
@@ -197059,26 +197475,26 @@ uTf
 tfW
 pQK
 oPz
-sQo
-qMG
-qMG
-qMG
-sQo
-sQo
-qMG
-sQo
-sQo
-sQo
-sQo
-sQo
-sQo
-qMG
-sQo
-qMG
-sQo
-dAb
-dAb
-dAb
+phr
+gsI
+gsI
+gsI
+phr
+phr
+gsI
+phr
+phr
+phr
+phr
+phr
+phr
+gsI
+phr
+gsI
+phr
+nDM
+nDM
+nDM
 ehB
 xkT
 iGL
@@ -197261,27 +197677,27 @@ nLS
 mfn
 cxU
 cxU
-sQo
-qMG
-qMG
-qMG
-qMG
-qMG
-qMG
-qMG
-sQo
-qMG
-qMG
-qMG
-qMG
-qMG
-qMG
-qMG
-sQo
-sQo
-pvn
-sQo
-sQo
+phr
+gsI
+gsI
+gsI
+gsI
+gsI
+gsI
+gsI
+phr
+gsI
+gsI
+gsI
+gsI
+gsI
+gsI
+gsI
+phr
+phr
+nCv
+phr
+phr
 tfW
 tfW
 xkT
@@ -197460,31 +197876,31 @@ kOj
 tfW
 sTh
 cxU
-qMG
-qMG
-qMG
-qMG
-qMG
-qMG
-rtu
-rtu
+gsI
+gsI
+gsI
+gsI
+gsI
+gsI
+eNc
+eNc
 vYA
-qMG
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-qMG
-qMG
-sQo
-sQo
-sQo
-sQo
-sQo
+gsI
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+gsI
+gsI
+phr
+phr
+phr
+phr
+phr
 oHv
 tfW
 cxU
@@ -197661,33 +198077,33 @@ kOj
 cXA
 uTf
 cGa
-qMG
-qMG
-qMG
-qMG
-qMG
-qMG
-qMG
-qMG
-qMG
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-qMG
-qMG
-iaO
-sQo
-sQo
+gsI
+gsI
+gsI
+gsI
+gsI
+gsI
+gsI
+gsI
+gsI
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+gsI
+gsI
+vqK
+phr
+phr
 sdY
-sQo
+phr
 tfW
 dHL
 kOj
@@ -197863,34 +198279,34 @@ kOj
 mHv
 uTf
 cGa
-qMG
-qMG
-qMG
-qMG
-qMG
+gsI
+gsI
+gsI
+gsI
+gsI
 nPS
 nPS
 nPS
-rtu
-rtu
-rtu
+eNc
+eNc
+eNc
 lKW
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-qMG
-qMG
-qMG
-sQo
-sQo
-sQo
-sQo
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+gsI
+gsI
+gsI
+phr
+phr
+phr
+phr
 tfW
 xkT
 kOj
@@ -198064,36 +198480,36 @@ tfW
 tfW
 cGa
 eDm
-qMG
-qMG
-qMG
-qMG
-qMG
+gsI
+gsI
+gsI
+gsI
+gsI
 nPS
 nPS
 ovi
 rfN
 gQu
 lKW
-vFL
+bZl
 lKW
 lKW
 lKW
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-qMG
-qMG
-qMG
-qMG
-iaO
-sQo
-sQo
-sQo
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+gsI
+gsI
+gsI
+gsI
+vqK
+phr
+phr
+phr
 xLr
 iGL
 kTO
@@ -198264,36 +198680,36 @@ tfW
 tfW
 iSI
 cGa
-sQo
-qMG
-qMG
-qMG
-qMG
-qMG
+phr
+gsI
+gsI
+gsI
+gsI
+gsI
 nPS
 nPS
 nPS
 mdx
 gQu
 lKW
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
 lKW
 lKW
-rtu
+eNc
 hPo
-rtu
-rtu
-rtu
-qMG
-qMG
-qMG
-qMG
-qMG
-sQo
-sQo
+eNc
+eNc
+eNc
+gsI
+gsI
+gsI
+gsI
+gsI
+phr
+phr
 nhI
 ngR
 tfW
@@ -198465,38 +198881,38 @@ tfW
 tfW
 tfW
 tfW
-sQo
-sQo
-qMG
-qMG
-qMG
-qMG
+phr
+phr
+gsI
+gsI
+gsI
+gsI
 nPS
 nPS
 nPS
 nPS
 gQu
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
 lKW
-rtu
+eNc
 vYA
-rtu
-rtu
-rtu
-qMG
+eNc
+eNc
+eNc
+gsI
 tUo
-qMG
-qMG
-qMG
-sQo
-sQo
+gsI
+gsI
+gsI
+phr
+phr
 sdY
 doW
 leW
@@ -198652,7 +199068,7 @@ kOj
 kOj
 tfW
 fqz
-tfW
+kOj
 tfW
 tfW
 tfW
@@ -198667,39 +199083,39 @@ tfW
 tfW
 tfW
 tfW
-sQo
-qMG
-qMG
-qMG
-xEI
+phr
+gsI
+gsI
+gsI
+wto
 nPS
 nPS
 nPS
 nPS
 mdx
 gQu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
 lKW
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-qMG
-qMG
-qMG
-sQo
-sQo
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+gsI
+gsI
+gsI
+phr
+phr
 egb
 dyw
 kTO
@@ -198853,13 +199269,13 @@ kOj
 kOj
 kOj
 fqz
-mHv
-tfW
-cXA
-tfW
-tfW
+xkT
+kOj
+iGL
 tfW
 tfW
+kOj
+kOj
 tfW
 kEV
 tfW
@@ -198869,39 +199285,39 @@ tfW
 tfW
 tfW
 tfW
-sQo
-qMG
-qMG
-qMG
-qMG
+phr
+gsI
+gsI
+gsI
+gsI
 nPS
 nPS
 nPS
 nPS
 mdx
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
 lKW
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-qMG
-qMG
-rrK
-sQo
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+gsI
+gsI
+ghV
+phr
 oHv
 uzy
 kTO
@@ -199056,11 +199472,11 @@ tfW
 cri
 ovO
 tfW
+kOj
 tfW
 tfW
 tfW
-tfW
-tfW
+kOj
 tfW
 tfW
 tfW
@@ -199071,38 +199487,38 @@ tfW
 xwr
 tfW
 tfW
-sQo
-qMG
-qMG
-qMG
-qMG
+phr
+gsI
+gsI
+gsI
+gsI
 nPS
 nPS
 nPS
 mdx
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
 cCP
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
 lKW
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-sQo
-qMG
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+phr
+gsI
 nhI
 tfW
 beW
@@ -199273,39 +199689,39 @@ tfW
 xwr
 tfW
 tfW
-sQo
-qMG
-qMG
-qMG
-qMG
+phr
+gsI
+gsI
+gsI
+gsI
 nPS
 nPS
 mdx
 gQu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 cCP
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-rtu
-qMG
+eNc
+eNc
+eNc
+eNc
+gsI
 xPy
-qMG
-qMG
-lwP
+gsI
+gsI
+sWe
 nhY
 tGU
 kTO
@@ -199475,38 +199891,38 @@ tfW
 xwr
 tfW
 tfW
-sQo
-qMG
-qMG
-qMG
-qMG
+phr
+gsI
+gsI
+gsI
+gsI
 nPS
 mdx
 gQu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-qMG
-qMG
+eNc
+eNc
+eNc
+gsI
+gsI
 cir
-qMG
-sQo
+gsI
+phr
 ykz
 vaP
 mLb
@@ -199677,39 +200093,39 @@ tfW
 oXf
 tfW
 kEV
-sQo
-qMG
-qMG
-qMG
-rtu
+phr
+gsI
+gsI
+gsI
+eNc
 nPS
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-xEI
-qMG
+eNc
+eNc
+eNc
+wto
+gsI
 jlu
-qMG
-sQo
-sQo
+gsI
+phr
+phr
 tfW
 vGI
 kTO
@@ -199879,39 +200295,39 @@ tfW
 tfW
 tfW
 tfW
-sQo
-qMG
-qMG
-rtu
-rtu
+phr
+gsI
+gsI
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-qMG
-qMG
-qMG
-qMG
-qMG
-lwP
+eNc
+eNc
+eNc
+gsI
+gsI
+gsI
+gsI
+gsI
+sWe
 vaP
 kOj
 kTO
@@ -200067,7 +200483,7 @@ cXA
 tfW
 rPI
 tfW
-tfW
+tiO
 txQ
 tfW
 tfW
@@ -200081,39 +200497,39 @@ tfW
 tfW
 tfW
 tfW
-sQo
-qMG
-qMG
-rtu
-rtu
+phr
+gsI
+gsI
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
 dMx
-vFL
-rtu
-rtu
-rtu
+bZl
+eNc
+eNc
+eNc
 wGJ
-rtu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+eNc
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-qMG
+eNc
+eNc
+eNc
+gsI
 jmc
-qMG
-qMG
-sQo
+gsI
+gsI
+phr
 vaP
 kOj
 kTO
@@ -200227,21 +200643,21 @@ pHc
 dsj
 dsj
 dsj
-gsI
-phr
-phr
-phr
-phr
-phr
+dsj
+nZe
+sQo
+sQo
+sQo
+sQo
 wBY
-phr
-cdL
-cdL
-lqH
+sQo
+rTq
+rTq
+kKd
 asx
-lqH
-lqH
-phr
+kKd
+kKd
+sQo
 asx
 gjL
 tfW
@@ -200266,9 +200682,9 @@ tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
+ucy
+xkT
+kOj
 tfW
 hgy
 tfW
@@ -200283,39 +200699,39 @@ tfW
 mHv
 tfW
 tfW
-sQo
-qMG
-qMG
-qMG
-rtu
+phr
+gsI
+gsI
+gsI
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-rtu
-emO
-ciR
-emO
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+eNc
+knY
+pVn
+knY
 hPo
-rtu
-vFL
-vFL
-vFL
-vFL
-vFL
+eNc
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
 lKW
-rtu
-rtu
-rtu
-qMG
-qMG
-qMG
-sQo
+eNc
+eNc
+eNc
+gsI
+gsI
+gsI
+phr
 oHv
 leW
 kTO
@@ -200430,22 +200846,22 @@ dis
 dis
 dis
 bcw
-gsI
-phr
-pVn
-sWe
-phr
-phr
-phr
+dsj
+sQo
+ciR
+lwP
+sQo
+sQo
+sQo
 nDo
 nDo
 nDo
-phr
-phr
-phr
-lqH
-pVn
-phr
+sQo
+sQo
+sQo
+kKd
+ciR
+sQo
 tfW
 cXA
 vUW
@@ -200460,22 +200876,22 @@ fqz
 tfW
 tfW
 tfW
+oZO
+oZO
+oZO
+oZO
+oZO
+oZO
 tfW
 tfW
 tfW
+kOj
+kOj
+kOj
+kOj
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+tiO
+tiO
 tfW
 tfW
 tfW
@@ -200486,38 +200902,38 @@ xwr
 tfW
 tfW
 tMW
-qMG
-qMG
-qMG
-rtu
+gsI
+gsI
+gsI
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-rtu
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+eNc
 hPl
-kKd
-kKd
+lqH
+lqH
 hPl
-rtu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+eNc
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-sQo
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+phr
 tfW
 xBt
 kTO
@@ -200631,20 +201047,20 @@ pHc
 xCz
 rUz
 lpa
-oZO
-gsI
-phr
-sWe
-qtA
-gsI
-gsI
+dis
+dsj
+sQo
+lwP
+wVD
+qMG
+qMG
 dXq
 dXq
 dXq
 dXq
 dXq
 dXq
-gsI
+qMG
 lrc
 fCX
 asx
@@ -200661,22 +201077,22 @@ fKa
 tfW
 tfW
 tfW
+oZO
+oZO
+eQB
+dKd
+acb
+eQB
+oZO
+oZO
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+ucy
+ucy
+kOj
+kOj
+tiO
 tfW
 kEV
 tfW
@@ -200687,38 +201103,38 @@ fqz
 tfW
 tfW
 tfW
-sQo
-qMG
-qMG
-qMG
-rtu
+phr
+gsI
+gsI
+gsI
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-rtu
-rTq
-rTq
-rTq
-rTq
-rtu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+eNc
+cdL
+cdL
+cdL
+cdL
+eNc
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
 tOE
 vaP
 jPM
@@ -200833,13 +201249,13 @@ pHc
 kdC
 pvU
 vol
-oZO
-gsI
-pVn
-qtA
+dis
+dsj
+ciR
+wVD
 dZu
-gsI
-gsI
+qMG
+qMG
 dXq
 dXq
 dXq
@@ -200848,7 +201264,7 @@ dXq
 dXq
 dXq
 dXq
-gsI
+qMG
 gjL
 tfW
 tfW
@@ -200863,22 +201279,22 @@ tfW
 tfW
 tfW
 tfW
+oZO
+tZJ
+ryY
+ryY
+ryY
+ryY
+wnV
+oZO
 tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+kOj
+ucy
+kOj
+kOj
 tfW
 tfW
 tfW
@@ -200889,39 +201305,39 @@ fqz
 tfW
 fRr
 tfW
-qMG
-qMG
-qMG
-qMG
-rtu
+gsI
+gsI
+gsI
+gsI
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
 dMx
-vFL
-qMG
+bZl
+gsI
 gNN
-lwP
+sWe
 pLq
-lwP
+sWe
 wGJ
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-sQo
-qMG
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+phr
+gsI
 nhY
 kOj
 kTO
@@ -201035,23 +201451,23 @@ iVo
 pIH
 pvU
 jlS
-oZO
-gsI
-phr
-gsI
+dis
+dsj
+sQo
+qMG
 dZu
-qtA
-sWe
-phr
+wVD
+lwP
+sQo
 nDo
 nDo
 nDo
-cdL
-cdL
-gsI
+rTq
+rTq
+qMG
 dXq
-gsI
-khp
+qMG
+doc
 tfW
 tfW
 fqz
@@ -201065,23 +201481,23 @@ ucR
 tfW
 tfW
 tfW
+oZO
+eQB
+ryY
+ryY
+ryY
+ryY
+eQB
+oZO
 tfW
 tfW
 tfW
+tiO
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+kOj
+ucy
+kOj
+xkT
 tfW
 tfW
 tfW
@@ -201091,39 +201507,39 @@ fqz
 tfW
 oPz
 tfW
-qMG
+gsI
 xPy
-qMG
-qMG
-rtu
+gsI
+gsI
+eNc
 lKW
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-qMG
-wVD
-lwP
-rrK
-lwP
-rtu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-sQo
-sQo
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+gsI
+qtA
+sWe
+ghV
+sWe
+eNc
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+phr
+phr
 nhY
 gzR
 kTO
@@ -201237,23 +201653,23 @@ iVo
 pIH
 pvU
 vol
-oZO
-gsI
-cdL
+dis
+dsj
+rTq
 dXq
 nnz
-sWe
-cdL
-phr
-phr
-phr
-phr
-phr
-cdL
-lqH
+lwP
+rTq
+sQo
+sQo
+sQo
+sQo
+sQo
+rTq
+kKd
 dXq
-gsI
-phr
+qMG
+sQo
 tfW
 fqz
 tfW
@@ -201267,23 +201683,23 @@ tfW
 tfW
 tfW
 tfW
+oZO
+edZ
+ryY
+luh
+vWm
+ryY
+oZR
+oZO
 tfW
 tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+xkT
+kOj
+kOj
+kOj
 tfW
 aff
 tfW
@@ -201293,38 +201709,38 @@ tfW
 tfW
 tfW
 cxU
-qMG
-qMG
-qMG
-rtu
-rtu
-rtu
+gsI
+gsI
+gsI
+eNc
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-qMG
-wVD
-lwP
-lwP
-rtu
-rtu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+gsI
+qtA
+sWe
+sWe
+eNc
+eNc
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-qMG
-qMG
-sQo
+eNc
+eNc
+eNc
+gsI
+gsI
+phr
 sdY
 ucy
 kOj
@@ -201439,23 +201855,23 @@ pHc
 qQP
 pvU
 jlS
-oZO
-gsI
+dis
+dsj
 tgG
 nnz
 nnz
-phr
-khp
-phr
-phr
-phr
-phr
-vqK
-phr
-phr
+sQo
+doc
+sQo
+sQo
+sQo
+sQo
+iaO
+sQo
+sQo
 dXq
-gsI
-phr
+qMG
+sQo
 tfW
 xzG
 tfW
@@ -201469,23 +201885,23 @@ fqz
 tfW
 tfW
 tfW
+oZO
+eQB
+ryY
+lUU
+oqo
+ryY
+eQB
+oZO
+tfW
+oPz
 tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+kOj
+kOj
+ucy
 tfW
 aff
 tfW
@@ -201495,39 +201911,39 @@ tkB
 tfW
 tfW
 tfW
-qMG
-qMG
-rtu
-rtu
-rtu
-rtu
+gsI
+gsI
+eNc
+eNc
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-qMG
-qMG
-qMG
-rtu
-rtu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+gsI
+gsI
+gsI
+eNc
+eNc
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-qMG
-qMG
-sQo
-sQo
+eNc
+eNc
+eNc
+gsI
+gsI
+phr
+phr
 dyw
 kOj
 kTO
@@ -201641,23 +202057,23 @@ pHc
 txk
 ovQ
 pfD
-oZO
-gsI
-gsI
+dis
+dsj
+qMG
 nnz
-gsI
-phr
-phr
-phr
-phr
-phr
-sWe
-phr
-phr
-phr
+qMG
+sQo
+sQo
+sQo
+sQo
+sQo
+lwP
+sQo
+sQo
+sQo
 dXq
-gsI
-phr
+qMG
+sQo
 tfW
 fqz
 xzG
@@ -201671,23 +202087,23 @@ fqz
 tfW
 tfW
 tfW
+oZO
+htk
+ryY
+ryY
+ryY
+ryY
+bIc
+oZO
 tfW
 tfW
 tfW
 tfW
 tfW
+tiO
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+kOj
 tfW
 aff
 tfW
@@ -201697,38 +202113,38 @@ tkB
 tfW
 tfW
 tfW
-sQo
-qMG
-rtu
-rtu
-rtu
-rtu
+phr
+gsI
+eNc
+eNc
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
 lKW
-rtu
-rtu
-qMG
-qMG
-rrK
+eNc
+eNc
+gsI
+gsI
+ghV
 kNR
 ucy
 kOj
@@ -201843,23 +202259,23 @@ pHc
 dis
 rME
 dis
-oZO
-gsI
+dis
+dsj
 dZu
 nnz
-gsI
-phr
-phr
-gsI
-eNc
-eNc
-sWe
-phr
-sWe
-phr
-gsI
-gsI
-phr
+qMG
+sQo
+sQo
+qMG
+rtu
+rtu
+lwP
+sQo
+lwP
+sQo
+qMG
+qMG
+sQo
 tfW
 tym
 fqz
@@ -201873,23 +202289,23 @@ fqz
 tfW
 tfW
 tfW
+oZO
+eQB
+ryY
+ryY
+ryY
+ryY
+eQB
+oZO
+tfW
+tfW
+oPz
 tfW
 tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+tiO
 tfW
 mHv
 hgy
@@ -201899,39 +202315,39 @@ tfW
 tfW
 kEV
 tfW
-sQo
-qMG
-rtu
-rtu
-rtu
+phr
+gsI
+eNc
+eNc
+eNc
 exp
-rtu
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-qMG
-qMG
-qMG
-sQo
+eNc
+eNc
+gsI
+gsI
+gsI
+phr
 kOj
 kOj
 kTO
@@ -202043,24 +202459,24 @@ knh
 uLL
 pHc
 kvg
-njk
+kvg
+jhC
+jhC
+jhC
 dZu
-dZu
-dZu
-dZu
-gsI
+qMG
 dXq
-phr
-phr
-eNc
-bZl
-bZl
-eNc
-lqH
-phr
-phr
+sQo
+sQo
+rtu
+vFL
+vFL
+rtu
+kKd
+sQo
+sQo
 dXq
-gsI
+qMG
 ezq
 tfW
 tym
@@ -202075,14 +202491,14 @@ gbc
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+oZO
+oZO
+oZO
+dyx
+dyx
+oZO
+oZO
+oZO
 tfW
 tfW
 tfW
@@ -202102,37 +202518,37 @@ tfW
 tfW
 tfW
 tZz
-qMG
-rtu
-rtu
-rtu
-rtu
-rtu
+gsI
+eNc
+eNc
+eNc
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
 lKW
-rtu
-rtu
-rtu
-sQo
-qMG
+eNc
+eNc
+eNc
+phr
+gsI
 nhI
 yeD
 kOj
@@ -202246,23 +202662,23 @@ uLL
 wlu
 xbV
 ehW
-njk
-njk
-njk
+kvg
+kvg
+kvg
 qQC
-gsI
+qMG
 dXq
-phr
-phr
-eNc
-bZl
-bZl
-bZl
-eNc
-pVn
-phr
+sQo
+sQo
+rtu
+vFL
+vFL
+vFL
+rtu
+ciR
+sQo
 dXq
-gsI
+qMG
 rvq
 tfW
 tym
@@ -202274,6 +202690,25 @@ cCH
 fqz
 tfW
 tfW
+oPz
+tfW
+tfW
+tfW
+tfW
+cGa
+cxU
+srv
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+cXA
+kOj
+tiO
 tfW
 tfW
 tfW
@@ -202284,58 +202719,39 @@ tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-qMG
-qMG
-qMG
-rtu
-rtu
-rtu
-rtu
+gsI
+gsI
+gsI
+eNc
+eNc
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
 cCP
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 cCP
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-sQo
+eNc
+eNc
+eNc
+phr
 peR
-sQo
-doc
+phr
+khp
 uzy
 kOj
 kTO
@@ -202448,23 +202864,23 @@ efk
 cFx
 cBy
 rrM
-dZu
-dZu
-dZu
+jhC
+jhC
+jhC
 cGc
-gsI
+qMG
 dXq
-phr
-cdL
-eNc
-bZl
-bZl
-bZl
-eNc
-gsI
-phr
+sQo
+rTq
+rtu
+vFL
+vFL
+vFL
+rtu
+qMG
+sQo
 dXq
-gsI
+qMG
 ezq
 tfW
 cXA
@@ -202478,22 +202894,22 @@ aff
 tfW
 tfW
 tfW
+cAF
 tfW
 tfW
 tfW
+srv
+srv
+tfW
+vcn
 tfW
 tfW
 tfW
+cGa
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+tiO
+kOj
 tfW
 tfW
 tfW
@@ -202505,38 +202921,38 @@ tfW
 tfW
 tfW
 cxU
-qMG
-qMG
-qMG
-rtu
-rtu
-rtu
-rtu
+gsI
+gsI
+gsI
+eNc
+eNc
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-sQo
-qMG
-sQo
+eNc
+eNc
+eNc
+phr
+gsI
+phr
 peR
 kOj
 kOj
@@ -202650,24 +203066,24 @@ elB
 cFx
 xbV
 ehW
-dZu
-dZu
-dZu
+jhC
+jhC
+jhC
 cGc
-gsI
+qMG
 dXq
-phr
-phr
-gsI
-eNc
-bZl
-bZl
-eNc
-knY
-phr
+sQo
+sQo
+qMG
+rtu
+vFL
+vFL
+rtu
+emO
+sQo
 dXq
-gsI
-phr
+qMG
+sQo
 tfW
 fqz
 bSm
@@ -202681,21 +203097,21 @@ tfW
 tfW
 tfW
 tfW
+cGa
+tfW
+tfW
+srv
+srv
+tfW
+tfW
+cGa
 tfW
 tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+kOj
+kOj
 tfW
 tfW
 tfW
@@ -202707,39 +203123,39 @@ tfW
 tfW
 tfW
 cxU
-qMG
-qMG
-sQo
-qMG
-rtu
-rtu
-rtu
+gsI
+gsI
+phr
+gsI
+eNc
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
 lKW
-rtu
-sQo
-sQo
-sQo
-qMG
-sQo
+eNc
+phr
+phr
+phr
+gsI
+phr
 uHi
 jBW
 kTO
@@ -202853,23 +203269,23 @@ rBu
 gQR
 ehW
 fcq
-dZu
-dZu
+jhC
+jhC
 qQC
-gsI
+qMG
 dXq
-phr
-phr
-gsI
-eNc
-bZl
-bZl
-bZl
-eNc
-pVn
+sQo
+sQo
+qMG
+rtu
+vFL
+vFL
+vFL
+rtu
+ciR
 dXq
-gsI
-phr
+qMG
+sQo
 tfW
 tym
 tym
@@ -202881,23 +203297,23 @@ tfW
 tfW
 tfW
 tfW
+vcn
 tfW
 tfW
 tfW
+srv
+srv
+srv
 tfW
 tfW
 tfW
+tiO
+kOj
+cXA
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+kOj
+siR
 tfW
 tfW
 tfW
@@ -202910,38 +203326,38 @@ tfW
 tfW
 tfW
 cir
-sQo
-sQo
-sQo
-qMG
-rtu
-rtu
-rtu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+phr
+phr
+phr
+gsI
+eNc
+eNc
+eNc
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-sQo
-rrK
-sQo
-qMG
-sQo
+eNc
+eNc
+phr
+ghV
+phr
+gsI
+phr
 kUQ
 jPM
 kTO
@@ -203053,24 +203469,24 @@ fNZ
 pHc
 tba
 lnW
-dZu
+jhC
 pBw
-njk
-njk
+kvg
+kvg
 dZu
 dZu
-gsI
-phr
-phr
-phr
-eNc
-bZl
-bZl
+qMG
+sQo
+sQo
+sQo
+rtu
+vFL
+vFL
 mrI
-eNc
-cdL
+rtu
+rTq
 dXq
-gsI
+qMG
 kKO
 tfW
 tfW
@@ -203085,6 +203501,21 @@ mHv
 tfW
 tfW
 tfW
+xoo
+cRE
+cRE
+srv
+srv
+tfW
+cAF
+tfW
+kJa
+kOj
+tfW
+tfW
+tfW
+kOj
+kOj
 tfW
 tfW
 tfW
@@ -203096,53 +203527,38 @@ tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-qMG
-sQo
-sQo
-qMG
-rtu
-rtu
-rtu
-rtu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-rtu
-rtu
-rtu
-rtu
-sQo
+gsI
+phr
+phr
+gsI
+eNc
+eNc
+eNc
+eNc
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+eNc
+eNc
+eNc
+eNc
+phr
 aYj
-iaO
+vqK
 tLe
 tHS
 kOj
@@ -203253,25 +203669,25 @@ pHc
 pHc
 fNZ
 pHc
-ryY
-gsI
+gkJ
+dsj
+jhC
+kvg
+dsj
+dsj
 dZu
-njk
-gsI
-gsI
 dZu
 dZu
-dZu
-phr
-phr
-phr
-eNc
-bZl
-bZl
-bZl
+sQo
+sQo
+sQo
+rtu
+vFL
+vFL
+vFL
 loh
-pVn
-gsI
+ciR
+qMG
 dXq
 nGh
 tfW
@@ -203287,6 +203703,11 @@ tfW
 tfW
 tfW
 tfW
+mpP
+srv
+srv
+srv
+srv
 tfW
 tfW
 tfW
@@ -203294,58 +203715,53 @@ tfW
 tfW
 tfW
 tfW
+tiO
+kOj
+kOj
+tiO
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+cXA
 tfW
 tfW
 tfW
 oHv
 tfW
 cxU
-sQo
-sQo
-sQo
-rtu
-rtu
-rtu
-rtu
+phr
+phr
+phr
+eNc
+eNc
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-doc
-sQo
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+khp
+phr
 tfW
 dyw
 kTO
@@ -203455,25 +203871,25 @@ aEv
 qHh
 unx
 jhN
-gsI
-gsI
+qMG
+qMG
 dZu
 njk
-phr
-sWe
+sQo
+lwP
 gWm
-gsI
+qMG
 dZu
-phr
-phr
-phr
-phr
-bZl
-bZl
-bZl
+sQo
+sQo
+sQo
+sQo
+vFL
+vFL
+vFL
 hYu
-pVn
-gsI
+ciR
+qMG
 dXq
 sGV
 tfW
@@ -203487,22 +203903,22 @@ vsS
 tfW
 tfW
 tfW
+vaP
+tfW
+mpP
+srv
+fWu
+srv
+srv
 tfW
 tfW
 tfW
 tfW
+nhY
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+kOj
 tfW
 tfW
 tym
@@ -203514,39 +203930,39 @@ tfW
 ncW
 oHv
 oPz
-cxU
-sQo
-sQo
-sQo
-qMG
-rtu
-rtu
+srv
+phr
+phr
+phr
+gsI
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-qMG
-qMG
-qMG
+eNc
+eNc
+eNc
+gsI
+gsI
+gsI
 peR
 tHS
 kOj
@@ -203657,25 +204073,25 @@ pHc
 pHc
 vRe
 oCe
-wto
+xEI
 njk
 biK
-lqH
-phr
-cdL
-sWe
-gsI
-gsI
-phr
-pVn
-cdL
-phr
-gsI
+kKd
+sQo
+rTq
+lwP
+qMG
+qMG
+sQo
+ciR
+rTq
+sQo
+qMG
 dKA
 hYu
-gsI
-phr
-gsI
+qMG
+sQo
+qMG
 dXq
 gjL
 tfW
@@ -203691,21 +204107,21 @@ tfW
 tfW
 tfW
 tfW
+mpP
+srv
+srv
+srv
+srv
+tfW
+oPz
 tfW
 tfW
 tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+cXA
+kOj
 tfW
 tfW
 tfW
@@ -203717,39 +204133,39 @@ cAF
 cAF
 tfW
 tfW
-sQo
-sQo
-qMG
-rtu
-rtu
+phr
+phr
+gsI
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-rtu
-sQo
-qMG
-sQo
+eNc
+eNc
+eNc
+eNc
+phr
+gsI
+phr
 tiO
 leW
 kTO
@@ -203862,22 +204278,22 @@ uIm
 xaS
 dZu
 njk
-lqH
-phr
-nDM
-phr
+kKd
+sQo
+dAb
+sQo
 dXq
-gsI
-phr
-pVn
-pVn
-phr
-lqH
-gsI
-gsI
-phr
-phr
-gsI
+qMG
+sQo
+ciR
+ciR
+sQo
+kKd
+qMG
+qMG
+sQo
+sQo
+qMG
 dXq
 gjL
 tfW
@@ -203893,21 +204309,21 @@ kEV
 tfW
 tfW
 tfW
+cxU
+bab
+aCG
+srv
+srv
+tfW
+tfW
+cXA
+tfW
+tfW
+cXA
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+kOj
 tfW
 kEV
 tfW
@@ -203916,42 +204332,42 @@ fqz
 tfW
 fqz
 tfW
+srv
 tfW
 tfW
-tfW
-sQo
-qMG
-qMG
-rtu
-rtu
+phr
+gsI
+gsI
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-qMG
-qMG
-qMG
-sQo
+eNc
+eNc
+eNc
+gsI
+gsI
+gsI
+phr
 nhY
 toz
 kTO
@@ -204061,25 +204477,25 @@ cPj
 tPQ
 maF
 oCe
-gsI
+qMG
 dZu
 njk
-phr
-phr
-phr
-pVn
+sQo
+sQo
+sQo
+ciR
 dXq
-gsI
-phr
-cdL
-pVn
-phr
-phr
-phr
-phr
-phr
-phr
-gsI
+qMG
+sQo
+rTq
+ciR
+sQo
+sQo
+sQo
+sQo
+sQo
+sQo
+qMG
 dXq
 xyC
 tfW
@@ -204096,63 +204512,63 @@ tfW
 tfW
 tfW
 tfW
+vaP
+srv
+srv
+srv
+tfW
+tfW
+tfW
+txQ
+tfW
+tfW
+cGa
+tfW
+tfW
+kOj
+tfW
+cXA
 tfW
 tfW
 tfW
 tfW
+cxU
+srv
+cxU
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-sQo
-qMG
-rtu
-rtu
-rtu
+phr
+gsI
+eNc
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-rtu
-rtu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+eNc
+eNc
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-rtu
-qMG
-sQo
+eNc
+eNc
+eNc
+eNc
+gsI
+phr
 nhI
 bae
 tHA
@@ -204263,26 +204679,26 @@ cPj
 onw
 dsj
 oCe
-gsI
+qMG
 dZu
-gsI
-phr
-phr
-phr
-phr
+qMG
+sQo
+sQo
+sQo
+sQo
 dXq
-gsI
-phr
-phr
-phr
-phr
-phr
-cdL
-cdL
-phr
-phr
-gsI
-gsI
+qMG
+sQo
+sQo
+sQo
+sQo
+sQo
+rTq
+rTq
+sQo
+sQo
+qMG
+qMG
 gjL
 tfW
 tfW
@@ -204295,6 +204711,13 @@ tfW
 mHv
 tfW
 tfW
+cGa
+tfW
+tfW
+tfW
+pCD
+srv
+srv
 tfW
 tfW
 tfW
@@ -204302,60 +204725,53 @@ tfW
 tfW
 tfW
 tfW
+oHv
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-lBH
-tfW
+ePQ
+cAF
 tfW
 mmJ
+cxU
+srv
+cxU
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-sQo
-qMG
-rtu
-rtu
-rtu
+phr
+gsI
+eNc
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-rtu
-rtu
-rtu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-rtu
-rtu
-rtu
-rtu
-rtu
-sQo
-sQo
-sQo
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+eNc
+eNc
+eNc
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+eNc
+eNc
+eNc
+eNc
+eNc
+phr
+phr
+phr
 vRj
 iGL
 kTO
@@ -204465,26 +204881,26 @@ cPj
 onw
 ykl
 oCe
-gsI
+qMG
 dZu
-gsI
-phr
-nDM
-phr
-phr
-gsI
-gsI
-knY
-phr
-phr
+qMG
+sQo
+dAb
+sQo
+sQo
+qMG
+qMG
+emO
+sQo
+sQo
 nDo
 nDo
 nDo
-phr
-phr
-gsI
+sQo
+sQo
+qMG
 dXq
-gsI
+qMG
 jcr
 tfW
 tfW
@@ -204502,6 +204918,18 @@ tfW
 tfW
 tfW
 tfW
+srv
+srv
+srv
+srv
+cxU
+vgc
+tfW
+tfW
+tfW
+cxU
+srv
+cxU
 tfW
 tfW
 tfW
@@ -204513,49 +204941,37 @@ tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-sQo
-qMG
-rtu
-rtu
-rtu
+phr
+gsI
+eNc
+eNc
+eNc
 lKW
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
-rtu
-rtu
-rtu
-rtu
-rtu
-vFL
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
+eNc
+eNc
+eNc
+eNc
+eNc
+bZl
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-rtu
-sQo
-sQo
+eNc
+eNc
+eNc
+eNc
+phr
+phr
 nhI
 sYS
 aUE
@@ -204667,27 +205083,27 @@ cPj
 onw
 dsj
 oCe
-gsI
+qMG
 dZu
 tgG
-phr
-phr
-phr
-phr
-qtA
-gsI
-gsI
-gsI
-gsI
-gsI
-gsI
-gsI
-gsI
-gsI
-gsI
+sQo
+sQo
+sQo
+sQo
+wVD
+qMG
+qMG
+qMG
+qMG
+qMG
+qMG
+qMG
+qMG
+qMG
+qMG
 dXq
-gsI
-phr
+qMG
+sQo
 tfW
 tfW
 mHv
@@ -204704,17 +205120,17 @@ tfW
 tfW
 tfW
 tfW
+srv
+srv
+srv
+cxU
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+ePQ
+cxU
+srv
+cxU
 tfW
 tfW
 vaP
@@ -204729,36 +205145,36 @@ tfW
 tfW
 tfW
 cxU
-rtu
-rtu
-rtu
-rtu
+eNc
+eNc
+eNc
+eNc
 lKW
-vFL
-vFL
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
+bZl
+bZl
 lKW
-rtu
-rtu
-rtu
-rtu
-rtu
-lKW
-lKW
-lKW
-vFL
+eNc
+eNc
+eNc
+eNc
+eNc
 lKW
 lKW
 lKW
-rtu
-rtu
-rtu
-rtu
-qMG
-sQo
-sQo
+bZl
+lKW
+lKW
+lKW
+eNc
+eNc
+eNc
+eNc
+gsI
+phr
+phr
 awV
 toz
 kOj
@@ -204869,27 +205285,27 @@ pHc
 onw
 dsj
 oCe
-gsI
+qMG
 dZu
 tgG
-cdL
-phr
-lqH
-phr
+rTq
+sQo
+kKd
+sQo
 gjL
-qtA
+wVD
 dXq
 dXq
 dXq
 dXq
 dXq
 dXq
-gsI
-gsI
-gsI
-gsI
-phr
-phr
+qMG
+qMG
+qMG
+qMG
+sQo
+sQo
 tfW
 aff
 tfW
@@ -204906,6 +205322,8 @@ tfW
 tfW
 tfW
 tfW
+srv
+srv
 tfW
 tfW
 tfW
@@ -204916,51 +205334,49 @@ tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
+cGa
 vaP
 vaP
 vaP
 vaP
 tfW
+cAF
 tfW
 tfW
 tfW
-tfW
-tfW
+cXA
 tfW
 cxU
-rtu
-rtu
-rtu
-rtu
+eNc
+eNc
+eNc
+eNc
 lKW
 lKW
-vFL
-vFL
-vFL
+bZl
+bZl
+bZl
 lKW
 lKW
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-lKW
-lKW
-lKW
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
 lKW
 lKW
 lKW
-rtu
+lKW
+lKW
+lKW
+eNc
 vYA
-rtu
-rtu
-qMG
-sQo
-sQo
+eNc
+eNc
+gsI
+phr
+phr
 txY
 toz
 kOj
@@ -205071,27 +205487,27 @@ pHc
 onw
 xIG
 oCe
-gsI
+qMG
 njk
-gsI
-phr
-phr
-phr
-khp
-phr
-phr
-phr
-phr
-phr
+qMG
+sQo
+sQo
+sQo
+doc
+sQo
+sQo
+sQo
+sQo
+sQo
 nDo
 nDo
 nDo
-phr
-phr
-phr
-phr
-khp
-phr
+sQo
+sQo
+sQo
+sQo
+doc
+sQo
 tfW
 txQ
 tfW
@@ -205104,23 +205520,23 @@ olX
 tfW
 kEV
 tfW
+oPz
+tfW
+vcn
+tfW
+srv
+srv
+eGw
+eGw
+qzU
+tfW
+tfW
+cXA
 tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+tiO
 tfW
 tfW
 tfW
@@ -205133,36 +205549,36 @@ tfW
 tfW
 tfW
 cxU
-qMG
-rtu
-rtu
-rtu
-rtu
+gsI
+eNc
+eNc
+eNc
+eNc
 lKW
 lKW
 lKW
 lKW
 lKW
-rtu
-rtu
-rtu
+eNc
+eNc
+eNc
 vYA
-rtu
-rtu
-rtu
-rtu
+eNc
+eNc
+eNc
+eNc
 lKW
 lKW
 lKW
 lKW
 lKW
-rtu
-rtu
-rtu
-qMG
-sQo
-sQo
-sQo
+eNc
+eNc
+eNc
+gsI
+phr
+phr
+phr
 ikV
 toz
 kOj
@@ -205273,98 +205689,98 @@ cPj
 onw
 dsj
 oCe
-gsI
+qMG
 dZu
-gsI
-phr
-phr
-phr
-phr
-phr
-phr
-phr
-phr
-phr
-phr
-phr
-phr
-phr
-phr
-phr
-phr
-pVn
-pVn
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-qMG
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-lKW
-lKW
-rtu
-rtu
-rtu
-qMG
-qMG
-rtu
-rtu
-rtu
-rtu
-rtu
-lKW
-lKW
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
 qMG
 sQo
-pvn
+sQo
+sQo
+sQo
+sQo
+sQo
+sQo
+sQo
+sQo
+sQo
+sQo
+sQo
+sQo
+sQo
+sQo
+sQo
+ciR
+ciR
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+srv
+srv
+eGw
+oci
+srv
+tfW
+cGa
+tfW
+tfW
+tfW
+ucy
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+gsI
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+lKW
+lKW
+eNc
+eNc
+eNc
+gsI
+gsI
+eNc
+eNc
+eNc
+eNc
+eNc
+lKW
+lKW
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+phr
+nCv
 cYn
 toz
 kOj
@@ -205475,27 +205891,27 @@ cPj
 onw
 dsj
 oCe
-gsI
+qMG
 dZu
-qtA
-sWe
-phr
-phr
-phr
-phr
-nDM
-phr
-cdL
-cdL
-phr
-phr
-phr
-phr
-phr
-phr
+wVD
+lwP
+sQo
+sQo
+sQo
+sQo
+dAb
+sQo
+rTq
+rTq
+sQo
+sQo
+sQo
+sQo
+sQo
+sQo
 rpP
-pVn
-phr
+ciR
+sQo
 tfW
 xzG
 tfW
@@ -205510,21 +205926,21 @@ tfW
 tfW
 tfW
 tfW
+cAF
+tfW
+srv
+srv
+tfW
+srv
+tym
 tfW
 tfW
+cGa
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+kOj
+kOj
+mHv
 tfW
 tfW
 tfW
@@ -205537,36 +205953,36 @@ tfW
 tfW
 tfW
 tfW
-qMG
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-qMG
-qMG
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-sQo
+gsI
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+gsI
+gsI
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+phr
 qYJ
 toz
 kOj
@@ -205677,27 +206093,27 @@ cPj
 onw
 dsj
 oCe
-gsI
+qMG
 dZu
-phr
-nCv
-phr
-phr
-pVn
-phr
-phr
-cdL
-cdL
-phr
-phr
-phr
-phr
+sQo
+pvn
+sQo
+sQo
+ciR
+sQo
+sQo
+rTq
+rTq
+sQo
+sQo
+sQo
+sQo
 aOO
-pVn
-pVn
-phr
-phr
-ghV
+ciR
+ciR
+sQo
+sQo
+rrK
 tfW
 fqz
 xzG
@@ -205711,6 +206127,22 @@ tfW
 tfW
 tfW
 tfW
+cGa
+tfW
+tfW
+srv
+srv
+tfW
+tfW
+tfW
+srv
+quC
+ucy
+mHv
+kOj
+kOj
+kOj
+tiO
 tfW
 tfW
 tfW
@@ -205723,52 +206155,36 @@ tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-qMG
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
-rtu
-sQo
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
+gsI
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
+eNc
+phr
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
 qMw
 toz
 kOj
@@ -205916,6 +206332,18 @@ tfW
 tfW
 tfW
 tfW
+srv
+srv
+eGw
+rPI
+srv
+wdD
+kOj
+kOj
+kOj
+kOj
+ucy
+kOj
 tfW
 tfW
 tfW
@@ -205929,48 +206357,36 @@ tfW
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-qMG
-qMG
-qMG
-rtu
+gsI
+gsI
+gsI
+eNc
 dvx
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-rtu
-sQo
-sQo
-sQo
-qMG
-rtu
-rtu
-rtu
-rtu
-sQo
-sQo
-sQo
-rtu
-rtu
-rtu
-rtu
-rtu
-qMG
-qMG
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+eNc
+phr
+phr
+phr
+gsI
+eNc
+eNc
+eNc
+eNc
+phr
+phr
+phr
+eNc
+eNc
+eNc
+eNc
+eNc
+gsI
+gsI
 mHv
 iny
 kOj
@@ -206114,21 +206530,21 @@ fqz
 bSm
 tfW
 tfW
+cXA
 tfW
 tfW
 tfW
+srv
+srv
+eGw
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+srv
+xkT
+kOj
+kOj
+kOj
+kOj
+ucy
 tfW
 tfW
 tfW
@@ -206143,35 +206559,35 @@ tfW
 tfW
 tfW
 tfW
-sQo
-sQo
-qMG
-qMG
-qMG
-qMG
-qMG
-sQo
-qMG
-qMG
-sQo
-sQo
-sQo
-sQo
-sQo
-sQo
-qMG
+phr
+phr
+gsI
+gsI
+gsI
+gsI
+gsI
+phr
+gsI
+gsI
+phr
+phr
+phr
+phr
+phr
+phr
+gsI
 tUo
-qMG
-sQo
-sQo
-sQo
-pvn
-sQo
-xEI
-qMG
-rtu
-qMG
-qMG
+gsI
+phr
+phr
+phr
+nCv
+phr
+wto
+gsI
+eNc
+gsI
+gsI
 cxU
 qCP
 uvl
@@ -206314,22 +206730,22 @@ cCH
 vFv
 uwP
 tfW
+cXA
+kOj
+kOj
 tfW
 tfW
 tfW
+srv
+srv
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+tiO
+kOj
+kOj
+kOj
+kOj
+ucy
 tfW
 tfW
 tfW
@@ -206346,34 +206762,34 @@ tfW
 tfW
 tfW
 tfW
-sQo
-sQo
-sQo
-qMG
-qMG
-qMG
-sQo
-sQo
-qMG
-qMG
-sQo
-sQo
-sQo
-sQo
+phr
+phr
+phr
+gsI
+gsI
+gsI
+phr
+phr
+gsI
+gsI
+phr
+phr
+phr
+phr
 lzF
-sQo
-sQo
-sQo
-sQo
-sQo
-sQo
-sQo
-sQo
-qMG
-qMG
-qMG
-qMG
-qMG
+phr
+phr
+phr
+phr
+phr
+phr
+phr
+phr
+gsI
+gsI
+gsI
+gsI
+gsI
 cxU
 fqz
 tiO
@@ -206517,20 +206933,20 @@ toz
 mZS
 txQ
 tfW
+kOj
+kOj
+cXA
 tfW
 tfW
+srv
+srv
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+kOj
+kOj
+kOj
+kOj
+ucy
 tfW
 tfW
 tfW
@@ -206719,20 +207135,20 @@ toz
 fqz
 tfW
 tfW
+kOj
+kOj
+kOj
 tfW
 tfW
+srv
+srv
 tfW
 tfW
+mHv
 tfW
+tiO
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+tiO
 tfW
 tfW
 tfW
@@ -206922,12 +207338,12 @@ cXA
 tfW
 tfW
 tfW
+kOj
+kOj
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
+srv
+srv
 tfW
 tfW
 tfW
@@ -207124,17 +207540,17 @@ aff
 tfW
 tfW
 tfW
+kOj
+kOj
+cXA
+tfW
+srv
+srv
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+tiO
+kOj
+kOj
 tfW
 tfW
 tfW
@@ -207330,13 +207746,13 @@ tfW
 tfW
 tfW
 tfW
+srv
+srv
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
-tfW
+kOj
+kOj
 tfW
 tfW
 tfW
@@ -207526,19 +207942,19 @@ xkT
 rqn
 fqz
 tfW
-srv
-srv
+tfW
+tfW
 wZp
 tfW
 tfW
 tfW
+srv
+srv
 tfW
-tfW
-tfW
-tfW
-tfW
-tfW
-tfW
+kOj
+kOj
+kOj
+cXA
 tfW
 nhY
 tfW
@@ -207728,18 +208144,18 @@ kOj
 tfW
 qCP
 bSm
-srv
-srv
+tfW
+tfW
 tfW
 tfW
 mHv
 tfW
-nhY
+srv
+srv
 tfW
-tfW
-tfW
-tfW
-tfW
+kOj
+kOj
+kOj
 tfW
 tfW
 tfW
@@ -207930,17 +208346,17 @@ kOj
 rqn
 fqz
 tfW
-srv
-srv
+tfW
+tfW
 tfW
 keX
 tiO
 tiO
-nhY
-keX
+srv
+srv
 tfW
-tfW
-tfW
+iGL
+kOj
 tfW
 aGD
 tfW
@@ -208132,18 +208548,18 @@ fYw
 rfB
 qCP
 sXm
-srv
-srv
+tfW
 cXA
 kOj
 kOj
 kOj
-tiO
-nhY
+tfW
+srv
+srv
 tfW
 tfW
 tfW
-tfW
+cXA
 tfW
 tfW
 tfW
@@ -208334,16 +208750,16 @@ toz
 rfB
 fqz
 tfW
-srv
-srv
+tfW
 xvh
 kOj
 kOj
 kOj
-kOj
-ucy
-lUx
 tfW
+srv
+srv
+tfW
+lUx
 tfW
 tfW
 tfW
@@ -208536,21 +208952,21 @@ toz
 qCP
 bii
 tfW
-srv
-srv
+tfW
 sem
 kOj
 kOj
 kOj
-kOj
-kOj
+tfW
+srv
+srv
+tfW
 kOj
 kOj
 mHv
 nQP
 tfW
 mmJ
-tfW
 tfW
 tfW
 tfW
@@ -208738,14 +209154,15 @@ heY
 pMr
 fqz
 iOK
-srv
-srv
+tfW
 cbI
 kOj
 kOj
 kOj
-kOj
-kOj
+tfW
+srv
+srv
+tfW
 kOj
 kOj
 tfW
@@ -208754,7 +209171,6 @@ vaP
 vaP
 vaP
 aGD
-tfW
 tfW
 tfW
 tfW
@@ -208940,14 +209356,15 @@ fqz
 aff
 tfW
 xBg
-srv
-srv
+tfW
 yeD
 kOj
 kOj
 kOj
-kOj
-kOj
+tfW
+srv
+srv
+tfW
 kOj
 kOj
 oSY
@@ -208956,7 +209373,6 @@ mHv
 tfW
 vaP
 vaP
-tfW
 tfW
 vaP
 tfW
@@ -209142,21 +209558,21 @@ vaP
 vaP
 tfW
 xBg
-srv
-srv
+tfW
 sem
 kOj
 kOj
 kOj
-kOj
-kOj
+tfW
+srv
+srv
+tfW
 kOj
 kOj
 tGU
 jBW
 kOj
 nbu
-tfW
 tfW
 tfW
 vaP
@@ -209344,14 +209760,15 @@ tfW
 hcI
 vaP
 sXm
-srv
-srv
+tfW
 tfW
 iGL
 kOj
 kOj
-kOj
-kOj
+tfW
+srv
+srv
+tfW
 kOj
 jBW
 jBW
@@ -209359,7 +209776,6 @@ rqn
 rqn
 lEK
 mXH
-olX
 olX
 tfW
 olX
@@ -209546,14 +209962,15 @@ olX
 tfW
 fWB
 cXA
-srv
-cxU
+tfW
 keX
 gUf
 jBW
 ucy
-jBW
-kOj
+tfW
+srv
+cxU
+tfW
 fTS
 qiP
 tfW
@@ -209561,7 +209978,6 @@ iGL
 kOj
 cZD
 olX
-tfW
 tfW
 tfW
 tfW
@@ -209748,13 +210164,13 @@ cxU
 cxU
 cxU
 cxU
+kUg
+cxU
+cxU
+cxU
+cxU
+cxU
 srv
-cxU
-cxU
-cxU
-cxU
-cxU
-cxU
 cxU
 cxU
 cxU
@@ -210843,9 +211259,9 @@ gBD
 gBD
 gBD
 gBD
-gBD
-gBD
-mcl
+qIy
+oZF
+mLO
 iBY
 tFo
 iBY
@@ -211043,11 +211459,11 @@ gBD
 gBD
 gBD
 gBD
-gBD
-gBD
-gBD
-gBD
-mcl
+qIy
+ukH
+ukH
+ukH
+gGO
 iBY
 tFo
 iBY
@@ -211244,13 +211660,13 @@ gBD
 gBD
 gBD
 gBD
-gBD
-gBD
-gBD
-gBD
-gBD
-mcl
-iBY
+mmq
+dBq
+ukH
+ukH
+qIy
+gGO
+jcW
 tFo
 iBY
 noA
@@ -211446,13 +211862,13 @@ gBD
 gBD
 gBD
 gBD
+mmq
+mmq
+ukH
+ukH
 gBD
-gBD
-gBD
-gBD
-gBD
-mcl
-iBY
+waX
+jcW
 tFo
 iBY
 noA
@@ -211647,9 +212063,9 @@ gBD
 gBD
 gBD
 gBD
-gBD
-gBD
-gBD
+cQK
+mmq
+cQK
 gBD
 gBD
 gBD
@@ -211847,10 +212263,10 @@ gBD
 gBD
 gBD
 gBD
-gBD
-gBD
-gBD
-gBD
+cQK
+mmq
+mmq
+mmq
 gBD
 gBD
 gBD
@@ -212049,10 +212465,10 @@ gBD
 gBD
 gBD
 gBD
-gBD
-gBD
-gBD
-gBD
+mmS
+oTM
+mmq
+cQK
 gBD
 gBD
 gBD
@@ -212251,9 +212667,9 @@ gBD
 gBD
 gBD
 gBD
-gBD
-gBD
-gBD
+cQK
+dDY
+cQK
 gBD
 gBD
 gBD
@@ -219200,7 +219616,7 @@ gBD
 gBD
 gBD
 gBD
-iPx
+kJP
 iPx
 iPx
 iYY

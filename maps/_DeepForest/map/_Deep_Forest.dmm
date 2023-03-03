@@ -263,7 +263,7 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "bh" = (
-/obj/effect/shuttle_landmark/mercshuttle_deepforest,
+/obj/effect/shuttle_landmark/vasiliy_deep_forest,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
 "bi" = (
