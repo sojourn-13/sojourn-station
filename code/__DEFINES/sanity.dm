@@ -1,5 +1,9 @@
 /* Unlike Eris we are using our ollld sanity syatem for drinks, food, and sancks. The reason why is - we have too much fucking food and drinks to sort through.
 Plus it would require me to get taste_tags working. So, for now until someone can be fucked to put the work in to our shit-codebase, it is staying like this. */
+GLOBAL_LIST_EMPTY(sanity_drinks)
+GLOBAL_LIST_EMPTY(sanity_non_alcoholic_drinks)
+GLOBAL_LIST_EMPTY(sanity_foods)
+
 
 //for drinks
 /proc/init_sanity_drinks()
