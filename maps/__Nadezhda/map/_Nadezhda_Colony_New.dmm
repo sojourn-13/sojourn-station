@@ -84208,7 +84208,6 @@
 "tZk" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/surgery,
-/obj/item/stack/medical/advanced/bruise_pack,
 /obj/machinery/camera/network/research{
 	dir = 8
 	},
