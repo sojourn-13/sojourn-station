@@ -251,12 +251,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/space)
-"bO" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/bluecorner,
-/area/space)
 "bP" = (
 /obj/structure/flora/pottedplant/redshoot,
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -597,15 +591,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/space)
-"dC" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
-/turf/simulated/floor/reinforced,
-/area/space)
 "dE" = (
 /obj/structure/table/rack,
 /obj/random/junk,
@@ -857,10 +842,6 @@
 "fq" = (
 /obj/machinery/porta_turret/prepper,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/space)
-"fv" = (
-/obj/item/clothing/accessory/armband/science,
-/turf/simulated/floor/reinforced,
 /area/space)
 "fy" = (
 /obj/structure/table/glass,
@@ -1372,7 +1353,6 @@
 	},
 /obj/item/tool/hemostat,
 /obj/item/tool/scalpel,
-/obj/item/stack/medical/advanced/bruise_pack,
 /turf/simulated/floor/tiled/white/cargo,
 /area/space)
 "js" = (
@@ -1417,15 +1397,6 @@
 /obj/machinery/recharger,
 /turf/simulated/floor/reinforced,
 /area/space)
-"jF" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
-/obj/structure/bed/chair/comfy/purp{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/space)
 "jG" = (
 /obj/machinery/conveyor_switch/oneway{
 	id = "minetocargo"
@@ -1433,11 +1404,6 @@
 /turf/simulated/floor/tiled/steel/panels,
 /area/space)
 "jJ" = (
-/obj/machinery/vending/assist{
-	contraband = null;
-	name = "AntagCorpVend";
-	products = list(/obj/item/device/assembly/prox_sensor=5,/obj/item/device/assembly/signaler=4,/obj/item/device/assembly/infra=4,/obj/item/device/assembly/prox_sensor=4,/obj/item/handcuffs=8,/obj/item/device/flash=4,/obj/item/cartridge/signal=4,/obj/item/clothing/glasses/sunglasses=4)
-	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -1474,7 +1440,6 @@
 "kd" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/purple,
-/obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/item/device/radio/intercom{
 	pixel_y = 24
 	},
@@ -1613,10 +1578,6 @@
 /area/space)
 "lg" = (
 /turf/simulated/floor/tiled/dark/golden,
-/area/space)
-"lh" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled/steel/panels,
 /area/space)
 "li" = (
 /obj/structure/table/rack/shelf,
@@ -1884,9 +1845,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/space)
 "mO" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 22
@@ -2728,11 +2686,8 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/space)
 "sS" = (
-/obj/item/device/radio/intercom/syndicate{
-	dir = 4;
-	pixel_x = -22
-	},
-/turf/simulated/floor/tiled/dark/cargo,
+/obj/map_data/space_dungeons,
+/turf/unsimulated/wall,
 /area/space)
 "sT" = (
 /obj/structure/boulder,
@@ -2793,7 +2748,6 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/obj/structure/uplink/mercenary,
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/techmaint,
 /area/space)
@@ -2884,11 +2838,6 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel,
-/area/space)
-"tZ" = (
-/obj/structure/closet/emcloset,
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled/steel/gray_platform,
 /area/space)
 "ub" = (
 /obj/machinery/suit_storage_unit/merc,
@@ -3045,10 +2994,6 @@
 /area/space)
 "va" = (
 /obj/machinery/light,
-/obj/item/device/radio/intercom/syndicate{
-	dir = 1;
-	pixel_y = -22
-	},
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/space)
@@ -3296,9 +3241,6 @@
 "wN" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/purple,
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/space)
 "wO" = (
@@ -3552,9 +3494,6 @@
 /turf/simulated/floor/tiled/steel/bar_light,
 /area/space)
 "yv" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
 /obj/machinery/button/remote/blast_door{
 	id = "CargoBooth2Lockdown";
 	name = "Cargo Booth Lockdown Control";
@@ -4063,12 +4002,6 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/space)
-"CH" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/bluecorner,
-/area/space)
 "CI" = (
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	req_access = list(150)
@@ -4263,7 +4196,6 @@
 /turf/simulated/floor/tiled/white,
 /area/space)
 "DJ" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/button/remote/blast_door{
 	id = "CargoBooth1Lockdown";
 	name = "Cargo Booth Lockdown Control";
@@ -4405,16 +4337,6 @@
 	},
 /turf/simulated/floor/tiled/steel/cargo,
 /area/space)
-"EE" = (
-/obj/item/device/radio/intercom{
-	dir = 8;
-	pixel_x = 22
-	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel,
-/area/space)
 "EL" = (
 /obj/machinery/sleeper/hyper{
 	dir = 4
@@ -4512,10 +4434,6 @@
 	name = "Cell";
 	req_access = list(150)
 	},
-/obj/item/device/radio/intercom/syndicate{
-	dir = 8;
-	pixel_x = 22
-	},
 /obj/effect/floor_decal/industrial/warningwhite/full,
 /turf/simulated/floor/reinforced,
 /area/space)
@@ -4534,10 +4452,6 @@
 	dir = 8;
 	icon_state = "tube1";
 	pixel_y = 0
-	},
-/obj/item/device/radio/intercom/syndicate{
-	dir = 4;
-	pixel_x = -22
 	},
 /obj/structure/bed/chair{
 	dir = 4
@@ -4669,19 +4583,8 @@
 	},
 /turf/space,
 /area/space)
-"Gt" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel,
-/area/space)
 "Gw" = (
 /obj/structure/table/standard,
-/obj/item/stack/medical/advanced/bruise_pack,
-/obj/item/device/radio/intercom/syndicate{
-	dir = 8;
-	pixel_x = 22
-	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/space)
 "Gx" = (
@@ -5083,7 +4986,6 @@
 /area/space)
 "Ju" = (
 /obj/structure/closet/emcloset,
-/obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -5210,12 +5112,6 @@
 	},
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/space)
-"Kp" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/panels,
 /area/space)
 "Kr" = (
 /obj/structure/table/standard,
@@ -5397,9 +5293,6 @@
 /obj/structure/table/reinforced,
 /obj/item/stack/cable_coil,
 /obj/item/stack/cable_coil,
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/steel,
 /area/space)
 "LS" = (
@@ -5505,9 +5398,6 @@
 "MP" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/steel,
 /area/space)
 "MQ" = (
@@ -6226,10 +6116,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/device/radio/intercom/syndicate{
-	dir = 8;
-	pixel_x = 22
-	},
 /turf/simulated/floor/tiled/white,
 /area/space)
 "RA" = (
@@ -6757,13 +6643,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/space)
-"Vn" = (
-/obj/item/device/radio/intercom/syndicate{
-	dir = 1;
-	pixel_y = -22
-	},
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/space)
 "Vp" = (
 /obj/machinery/firealarm{
 	pixel_y = 28
@@ -7147,12 +7026,6 @@
 /obj/structure/curtain/open/privacy,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/space)
-"XP" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel,
-/area/space)
 "XU" = (
 /obj/structure/closet,
 /obj/random/ammo,
@@ -7292,12 +7165,6 @@
 "YL" = (
 /obj/machinery/am_shielding,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/space)
-"YO" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/panels,
 /area/space)
 "YP" = (
 /obj/structure/reagent_dispensers/watertank/derelict,
@@ -7637,7 +7504,7 @@ Ht
 Ht
 Ht
 Ht
-Ht
+sS
 "}
 (2,1,1) = {"
 Ht
@@ -11952,7 +11819,7 @@ cE
 oY
 oY
 WQ
-Vn
+bV
 il
 tg
 bV
@@ -12768,7 +12635,7 @@ pu
 Yv
 il
 tk
-sS
+Yv
 Yv
 Yv
 BC
@@ -26372,7 +26239,7 @@ oh
 oh
 il
 ih
-EE
+Zs
 Di
 DJ
 IO
@@ -26383,7 +26250,7 @@ CN
 rf
 yv
 Di
-EE
+Zs
 gL
 Bh
 oh
@@ -26581,7 +26448,7 @@ uC
 CN
 CN
 CN
-Gt
+CN
 Bh
 Bh
 Bh
@@ -27179,7 +27046,7 @@ IA
 il
 eC
 CN
-XP
+CN
 CN
 CN
 Xi
@@ -28009,9 +27876,9 @@ TB
 CN
 uC
 ey
-lh
+Bl
 EV
-YO
+Bl
 FJ
 uC
 oh
@@ -29425,7 +29292,7 @@ uC
 Fb
 Bl
 Bl
-YO
+Bl
 Bl
 NF
 NZ
@@ -29627,7 +29494,7 @@ uC
 Fb
 jG
 Bl
-Kp
+Bl
 LY
 PG
 NZ
@@ -30024,7 +29891,7 @@ GY
 il
 oJ
 il
-tZ
+hE
 CN
 CN
 il
@@ -36492,7 +36359,7 @@ Qk
 uC
 cl
 kI
-jF
+Hu
 Hu
 SR
 il
@@ -38119,7 +37986,7 @@ il
 il
 il
 kN
-fv
+dk
 IX
 il
 oh
@@ -38306,7 +38173,7 @@ Qk
 il
 il
 ef
-CH
+mI
 Gq
 il
 hh
@@ -38508,7 +38375,7 @@ Qk
 il
 il
 mI
-bO
+mI
 Ls
 il
 oh
@@ -39725,7 +39592,7 @@ UK
 UK
 il
 gE
-dC
+xX
 Ff
 il
 CB
