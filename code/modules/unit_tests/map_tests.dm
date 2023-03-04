@@ -19,7 +19,8 @@
 		/area/nadezhda/quartermaster/mining_outside_doc,
 		/area/colony, /area/nadezhda/dungeon, /area/nadezhda/outside,
 		/area/nadezhda/crew_quarters/hydroponics/garden, /area/nadezhda/pros/shuttle,
-		/area/nadezhda/maintenance) //These are outside
+		/area/nadezhda/maintenance,
+		/area/nadezhda/crew_quarters/botanist)
 
 	var/static/list/exempt_from_apc = typesof(
 		/area/eris/engineering/construction,
@@ -27,7 +28,8 @@
 		/area/turbolift, /area/mine, /area/asteroid,
 		/area/nadezhda/quartermaster/mining_outside_doc,
 		/area/colony, /area/nadezhda/dungeon, /area/nadezhda/outside,
-		/area/nadezhda/maintenance)
+		/area/nadezhda/maintenance,
+		/area/nadezhda/crew_quarters/botanist)
 
 	for(var/area/A in GLOB.map_areas)
 		if((A.z in GLOB.maps_data.station_levels) && !(A.type in exempt_areas))
