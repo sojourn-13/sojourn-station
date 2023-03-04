@@ -77,8 +77,9 @@
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/update_icon()
 	..()
+	//small about of snowflake code for drums
 	if(contents.len)
-		icon_state = "[initial(icon_state)-72]"
+		icon_state = "[initial(icon_state)]-72"
 	else
 		icon_state = "[initial(icon_state)]"
 
