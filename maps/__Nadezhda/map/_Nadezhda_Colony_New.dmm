@@ -18570,6 +18570,13 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/crew_quarters/dorm1)
+"evd" = (
+/obj/machinery/sparker{
+	id = "tubine_sparker";
+	pixel_x = -32
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/engineering/atmos)
 "evj" = (
 /obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/tiled/dark/golden,
@@ -23978,6 +23985,14 @@
 /obj/random/junk/low_chance,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"fJk" = (
+/obj/machinery/button/remote/blast_door{
+	id = "turbineexit";
+	name = "remote VENT blast door-control";
+	pixel_y = 32
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/engineering/atmos)
 "fJt" = (
 /obj/machinery/door/blast/shutters{
 	id = "Skynet_launch";
@@ -45598,9 +45613,6 @@
 	dir = 10;
 	icon_state = "intact"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
@@ -47845,19 +47857,9 @@
 /obj/machinery/atmospherics/pipeturbine{
 	dir = 8
 	},
-/obj/structure/railing,
-/obj/structure/railing{
-	anchored = 1;
-	dir = 1;
-	icon_state = "railing0"
-	},
 /obj/structure/cable/cyan{
 	d2 = 8;
 	icon_state = "0-8"
-	},
-/obj/structure/railing{
-	anchored = 1;
-	dir = 4
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
@@ -49555,6 +49557,10 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/engineering/atmos)
@@ -61389,6 +61395,15 @@
 /obj/machinery/reagentgrinder/advanced,
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/medical/genetics)
+"osY" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/plating/under,
+/area/colony)
 "otc" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/westright{
@@ -71936,10 +71951,6 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters)
 "qMM" = (
-/obj/machinery/sparker{
-	id = "tubine_sparker";
-	pixel_x = -32
-	},
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 6;
 	icon_state = "intact"
@@ -73951,15 +73962,6 @@
 	dir = 4
 	},
 /obj/structure/cable/cyan,
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/railing{
-	anchored = 1;
-	dir = 1;
-	icon_state = "railing0"
-	},
 /obj/structure/cable/cyan{
 	d2 = 4;
 	icon_state = "0-4"
@@ -90040,6 +90042,10 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/hallway/surface/section1)
+"uSp" = (
+/obj/machinery/atmospherics/binary/circulator,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/engineering/atmos)
 "uSq" = (
 /obj/random/oddity_guns,
 /obj/random/scrap/dense_weighted,
@@ -90189,11 +90195,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4;
 	icon_state = "intact"
-	},
-/obj/machinery/button/remote/blast_door{
-	id = "turbineexit";
-	name = "remote VENT blast door-control";
-	pixel_y = 32
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/engineering/atmos)
@@ -91698,6 +91699,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
+"vln" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/turf/simulated/floor/plating/under,
+/area/colony)
 "vlr" = (
 /obj/structure/table/rack/shelf,
 /obj/random/lowkeyrandom/low_chance,
@@ -98591,6 +98601,13 @@
 "wSD" = (
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/campground)
+"wSR" = (
+/obj/machinery/power/generator,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/engineering/atmos)
 "wSS" = (
 /obj/structure/coatrack,
 /obj/effect/floor_decal/spline/wood{
@@ -139184,8 +139201,8 @@ vch
 vch
 vch
 tad
-tad
-tad
+hLL
+hLL
 wDx
 wDx
 wDx
@@ -139386,10 +139403,10 @@ vch
 vch
 cZb
 tad
-tad
-tad
-wDx
-jkS
+hLL
+vln
+qdj
+qdj
 qdj
 qdj
 qdj
@@ -139588,10 +139605,10 @@ vch
 cZb
 cZb
 tad
-tad
-tad
+hLL
+osY
 wDx
-lIU
+wDx
 wDx
 wDx
 wDx
@@ -139790,10 +139807,10 @@ vch
 cZb
 cZb
 tad
-tad
-tad
+hLL
+osY
 wDx
-lIU
+mra
 wDx
 aYf
 wUU
@@ -139992,10 +140009,10 @@ vch
 cZb
 cZb
 tad
-tad
-tad
+hLL
+osY
 wDx
-lIU
+mra
 wDx
 eOx
 boB
@@ -140194,10 +140211,10 @@ vch
 cZb
 cZb
 tad
-tad
-tad
+hLL
+osY
 wDx
-lIU
+mra
 wDx
 hcz
 gNH
@@ -140396,10 +140413,10 @@ cZb
 cZb
 cZb
 tad
-tad
-tad
+hLL
+osY
 wDx
-lIU
+mra
 wDx
 hcz
 rib
@@ -140598,10 +140615,10 @@ tad
 tad
 tad
 tad
-tad
-tad
+hLL
+osY
 wDx
-lIU
+mra
 wDx
 sQG
 lEk
@@ -140800,10 +140817,10 @@ tad
 tad
 tad
 tad
-tad
-wDx
-wDx
+hLL
 lIU
+wDx
+wDx
 wDx
 jSQ
 rib
@@ -141002,10 +141019,10 @@ cZb
 cZb
 cZb
 tad
-tad
+hLL
+lIU
 wDx
-jkS
-aEP
+wSR
 wDx
 biK
 wDx
@@ -141204,11 +141221,11 @@ cZb
 cZb
 cZb
 tad
-tad
-wDx
+hLL
 lIU
 wDx
-wDx
+vmd
+evd
 qWh
 vmd
 lmG
@@ -141406,10 +141423,10 @@ cZb
 cZb
 cZb
 tad
-tad
-wDx
+hLL
 lIU
 tGA
+vmd
 qMM
 xQh
 vmd
@@ -141608,10 +141625,10 @@ cZb
 cZb
 cZb
 tad
-tad
-wDx
+hLL
 lIU
 wDx
+fJk
 uTP
 rmu
 vVf
@@ -141810,10 +141827,10 @@ cZb
 cZb
 cZb
 tad
-tad
-wDx
+hLL
 lIU
 wDx
+uSp
 kMe
 lpR
 wSy
@@ -142012,10 +142029,10 @@ cZb
 cZb
 cZb
 tad
-tad
-wDx
+hLL
 lIU
 aPT
+uSp
 wkH
 lKx
 vmd
@@ -142214,9 +142231,9 @@ cZb
 cZb
 cZb
 tad
-tad
-wDx
+hLL
 lIU
+wDx
 wDx
 wDx
 oGI
@@ -142416,9 +142433,9 @@ cZb
 cZb
 cZb
 tad
-tad
-wDx
+hLL
 uTT
+qdj
 fHI
 wDx
 sHc
@@ -142618,7 +142635,7 @@ cZb
 cZb
 cZb
 tad
-tad
+hLL
 wDx
 wDx
 uTT
