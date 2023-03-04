@@ -344,9 +344,10 @@
 
 
 /obj/machinery/power/supermatter/proc/transfer_energy()
+	var/transfer_energy = power * POWER_FACTOR * COLLECTOR_TRANSFER_FACTOR
 	for(var/obj/machinery/power/rad_collector/R in GLOB.rad_collectors)
 		if (get_dist(R, src) <= 15) //Better than using orange() every process.
-			R.receive_pulse(energy)
+			R.receive_pulse(transfer_energy)
 
 
 /obj/machinery/power/supermatter/attackby(obj/item/W as obj, mob/living/user as mob)
