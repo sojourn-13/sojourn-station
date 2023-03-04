@@ -74409,7 +74409,7 @@
 /obj/structure/shuttle_part/science{
 	icon_state = "8,21"
 	},
-/obj/effect/shuttle_landmark/vasiliy_spacefort,
+/obj/effect/shuttle_landmark/vasiliy_home,
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "rId" = (
