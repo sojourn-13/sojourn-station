@@ -81,4 +81,3 @@
 /datum/gear/taperecorder
     display_name = "universal recorder"
     path = /obj/item/device/taperecorder
-	cost = 1
