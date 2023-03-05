@@ -120,8 +120,10 @@
 /obj/item/tool/proc/adjustToolHealth(amount, user)
 	health = min(max_health, max(max_health * (health_threshold/100), health + amount))
 	if(health <= 0)
-		breakTool()
-
+		breakTool(user)
+		return
+	if(max_health <= 0)
+		breakTool(user)
 
 //Ignite plasma around, if we need it
 /obj/item/tool/Process()
@@ -275,15 +277,8 @@
 //Editionaly, handle_failure proc will be called for a critical failure roll.
 /obj/item/proc/use_tool(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
 	if(health)//Low health on a tool increases failure chance. Scaling up as it breaks further.
-		if(health > max_health * 0.80)//100-80% is normal operation
-		else if(health > max_health * 0.40)
-			fail_chance += 5//80-40% is -5 precision
-		else if(health > max_health * 0.20)
-			fail_chance += 10//40-20% is -10 precision
-		else if(health > max_health * 0.10)
-			fail_chance += 20//20-10% is -20 precision
-		else
-			fail_chance += 40//below 10% is -40 precision. Good luck!
+		fail_chance += get_tool_health_modifer(user)
+
 	var/obj/item/tool/T
 	if(istool(src))
 		T = src
@@ -302,6 +297,29 @@
 			return FALSE
 		if(TOOL_USE_SUCCESS)
 			return TRUE
+
+/obj/item/proc/get_tool_health_modifer(mob/living/user)
+	var/fail_modifer = 0
+	if(health)//Low health on a tool increases failure chance. Scaling up as it breaks further.
+		if(health > max_health * 0.80)//100-80% is normal operation
+		else if(health > max_health * 0.20)
+			fail_modifer += 2//40-20% is -2 precision
+		else if(health > max_health * 0.10)
+			fail_modifer += 5//20-10% is -5 precision
+		else if(health > max_health * 0.05)
+			fail_modifer += 8//10-5% is -8 precision
+		else
+			fail_modifer += 10//below 5% is -10 precision. Good luck!
+
+	//If a hooman does this with a the tool_breaker tasks they get less odds of failer
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/task_level = H.learnt_tasks.get_task_mastery_level("TOOL_BREAKER")
+		if(task_level)
+			fail_modifer -= task_level
+
+
+	return fail_modifer
 
 //Use this proc if you want to handle all types of failure yourself. It used in surgery, for example, to deal damage to patient.
 /obj/item/proc/use_tool_extended(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
@@ -475,6 +493,11 @@
 	return TOOL_USE_SUCCESS
 
 /obj/item/tool/proc/breakTool(mob/user)
+
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/tool_breaker, "TOOL_BREAKER", skill_gained = 1, learner = H)
+
 	if(user)
 		to_chat(user, SPAN_DANGER("Your [src] broke!"))
 		new /obj/item/material/shard/shrapnel(user.loc)
@@ -958,7 +981,10 @@
 				user.visible_message(SPAN_NOTICE("[user] begins repairing \the [O] with the [src]!"))
 				//Toolception!
 				if(use_tool(user, T, 60, QUALITY_ADHESIVE, FAILCHANCE_EASY, STAT_MEC))
-					T.adjustToolHealth(T.max_health * 0.8 + (user.stats.getStat(STAT_MEC)/2)/100, user)
+					var/tool_repair = T.max_health * 0.8 + (user.stats.getStat(STAT_MEC)/2)/100
+					var/perma_health_loss = (tool_repair *= 0.02) //2%
+					T.max_health -= perma_health_loss
+					T.adjustToolHealth(tool_repair, user)
 					if(user.stats.getStat(STAT_MEC) > STAT_LEVEL_BASIC/2)
 						to_chat(user, SPAN_NOTICE("You knowledge in tools helped you repair it better."))
 					refresh_upgrades()
