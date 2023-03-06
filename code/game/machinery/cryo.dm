@@ -257,6 +257,8 @@
 			beaker.reagents.trans_to_mob(occupant, 1, CHEM_BLOOD)
 		if ((occupant.health == occupant.maxHealth) && autoeject == TRUE )
 			go_out()
+			on=!on
+			update_icons()
 
 /obj/machinery/atmospherics/unary/cryo_cell/proc/heat_gas_contents()
 	if(air_contents.total_moles < 1)
