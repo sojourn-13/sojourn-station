@@ -84,7 +84,7 @@ const CryoContent = (props, context) => {
           <LabeledList.Item label="Temperature">
             <AnimatedNumber value={data.cellTemperature} /> K
           </LabeledList.Item>
-          <LabeledList.Item label="Door">
+          <LabeledList.Item label="Eject">
             <Button
               icon={data.isOpen ? 'unlock' : 'lock'}
               onClick={() => act('door')}

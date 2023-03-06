@@ -186,9 +186,9 @@
 		to_chat(user, SPAN_WARNING("Access denied."))
 		return
 	usr.set_machine(src)
-	nano_ui_interact(user)
+	ui_interact(user) //routed to TGUI
 	return
-
+/*
 /obj/machinery/atmospherics/binary/passive_gate/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	if(stat & (BROKEN|NOPOWER))
 		return
@@ -256,7 +256,7 @@
 	src.update_icon()
 	src.add_fingerprint(usr)
 	return
-
+*/
 /obj/machinery/atmospherics/binary/passive_gate/attackby(var/obj/item/I, var/mob/user)
 	if(!(QUALITY_BOLT_TURNING in I.tool_qualities))
 		return ..()
@@ -278,6 +278,42 @@
 		investigate_log("was unfastened by [key_name(user)]", "atmos")
 		new /obj/item/pipe(loc, make_from=src)
 		qdel(src)
+
+/obj/machinery/atmospherics/binary/passive_gate/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "AtmosPump", name)
+		ui.open()
+
+/obj/machinery/atmospherics/binary/passive_gate/ui_data()
+	var/data = list()
+	data["on"] = unlocked
+	data["pressure"] = round(target_pressure)
+	data["max_pressure"] = round(max_pressure_setting)
+	return data
+
+/obj/machinery/atmospherics/binary/passive_gate/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	switch(action)
+		if("power")
+			unlocked = !unlocked
+			investigate_log("was [unlocked ? "disabled" : "enabled"] by [key_name(usr)]", "atmos")
+			. = TRUE
+		if("pressure")
+			var/pressure = params["pressure"]
+			if(pressure == "max")
+				pressure = max_pressure_setting
+				. = TRUE
+			else if(text2num(pressure) != null)
+				pressure = text2num(pressure)
+				. = TRUE
+			if(.)
+				target_pressure = clamp(pressure, 0, ONE_ATMOSPHERE*100)
+				investigate_log("had it's pressure changed to [target_pressure] by [key_name(usr)]", "atmos")
+	update_icon()
+
 
 #undef REGULATE_NONE
 #undef REGULATE_INPUT
