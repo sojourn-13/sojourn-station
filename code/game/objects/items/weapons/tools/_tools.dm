@@ -34,6 +34,7 @@
 	var/max_fuel = 0
 
 	var/mode = NOMODE //For various tool icon updates.
+	var/isbroken = FALSE
 
 	//Third type of resource, stock. A tool that uses physical objects (or itself) in order to work
 	//Currently used for tape roll
@@ -159,6 +160,9 @@
 	return cell
 
 /obj/item/tool/attackby(obj/item/C, mob/living/user)
+	if(isbroken)
+		to_chat(user, SPAN_NOTICE("This tool is broken and falling apart!"))
+		return
 	if(istype(C, suitable_cell) && !cell && insert_item(C, user))
 		src.cell = C
 		update_icon()
@@ -167,6 +171,9 @@
 
 //Turning it on/off
 /obj/item/tool/attack_self(mob/user)
+	if(isbroken)
+		to_chat(user, SPAN_NOTICE("This tool is broken and falling apart!"))
+		return
 	if(toggleable)
 		if(switched_on)
 			if(active_time)
@@ -494,21 +501,31 @@
 
 /obj/item/tool/proc/breakTool(mob/user)
 
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/tool_breaker, "TOOL_BREAKER", skill_gained = 1, learner = H)
+	if(isbroken)
+		var/T = get_turf(src)
+		log_debug("breakTool 1, I [src.name] am broken and was called more then once, or am sticking around illegal! [jumplink(T)] User:[src]")
+		return //We already ran through this once, if we stick around then thats a issue
+
+	isbroken = TRUE
 
 	if(user)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/tool_breaker, "TOOL_BREAKER", skill_gained = 1, learner = H)
+
 		to_chat(user, SPAN_DANGER("Your [src] broke!"))
 		new /obj/item/material/shard/shrapnel(user.loc)
-	else
-		new /obj/item/material/shard/shrapnel(get_turf(src))
+		playsound(get_turf(src), 'sound/effects/impacts/thud1.ogg', 50, 1 -3)
+		user.unEquip(src)
+		qdel(src)
+		return
+
+	new /obj/item/material/shard/shrapnel(get_turf(src))
 	if(istype(loc, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/AD = loc
 		AD.take_out_wedged_item()
 	playsound(get_turf(src), 'sound/effects/impacts/thud1.ogg', 50, 1 -3)
 	qdel(src)
-	return
 
 /******************************
 	/* Tool Failure */
@@ -891,6 +908,10 @@
 	SSnano.update_uis(src)
 
 /obj/item/tool/examine(mob/user)
+	if(isbroken)
+		to_chat(user, SPAN_NOTICE("This tool is broken and falling apart!"))
+		return
+
 	if(!..(user,2))
 		return
 
@@ -936,6 +957,9 @@
 
 //Recharge the fuel at fueltank, also explode if switched on
 /obj/item/tool/afterattack(obj/O, mob/user, proximity)
+	if(isbroken)
+		to_chat(user, SPAN_NOTICE("This tool is broken and falling apart!"))
+		return
 	if(use_fuel_cost)
 		if(!proximity) return
 		if((istype(O, /obj/structure/reagent_dispensers/fueltank) || istype(O, /obj/item/weldpack)) && get_dist(src,O) <= 1 && !has_quality(QUALITY_WELDING))
@@ -1039,6 +1063,9 @@
 
 
 /obj/item/tool/attack(mob/living/M, mob/living/user, var/target_zone)
+	if(isbroken)
+		to_chat(user, SPAN_NOTICE("This tool is broken and falling apart!"))
+		return
 	if((user.a_intent == I_HELP) && ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/external/S = H.organs_by_name[user.targeted_organ]
