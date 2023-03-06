@@ -258,7 +258,7 @@
 		if ((occupant.health == occupant.maxHealth) && autoeject == TRUE )
 			go_out()
 			on=!on
-			update_icons()
+			update_icon()
 
 /obj/machinery/atmospherics/unary/cryo_cell/proc/heat_gas_contents()
 	if(air_contents.total_moles < 1)
