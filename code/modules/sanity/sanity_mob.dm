@@ -40,6 +40,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 #define INSIGHT_DESIRE_ALCOHOL "alcohol"
 #define INSIGHT_DESIRE_SMOKING "smoking"
 #define INSIGHT_DESIRE_DRUGS "drugs"
+#define INSIGHT_DESIRE_DRINK_NONALCOHOL "nonalcoholic"
 
 
 #define EAT_COOLDOWN_MESSAGE 15 SECONDS
@@ -183,7 +184,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		for(var/mob/living/carbon/human/H in view(owner))
 			if(H.sanity.level > 60)
 				moralist_factor += 0.02
-	give_insight(INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier * moralist_factor * life_tick_modifier * GLOB.GLOBAL_INSIGHT_MOD)	//Style factor removed from here, we don't use style.
+	give_insight((INSIGHT_GAIN(level_change) * insight_passive_gain_multiplier * moralist_factor * life_tick_modifier * GLOB.GLOBAL_INSIGHT_MOD) * (owner.stats.getPerk(PERK_INSPIRED) ? 1.5 : 1) * (owner.stats.getPerk(PERK_NANOGATE) ? 0.4 : 1) * (owner.stats.getPerk(PERK_COGENHANCE) ? 1.1 : 1))
 	if(resting < max_resting && insight >= 100)
 		if(!rest_timer_active)//Prevent any exploits(timer is only active for one minute tops)
 			give_resting(1)
@@ -192,7 +193,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 			else
 				to_chat(owner, SPAN_NOTICE("You have gained insight.[resting ? " Now you need to rest and rethink your life choices." : " Your previous insight has been discarded, shifting your desires for new ones."]"))
 				pick_desires()
-			owner.playsound_local(get_turf(owner), 'sound/sanity/psychochimes.ogg', 100)
+				insight -= 100
+			owner.playsound_local(get_turf(owner), 'sound/sanity/level_up.ogg', 100)
 
 	var/obj/screen/sanity/hud = owner.HUDneed["sanity"]
 	hud?.update_icon()
@@ -222,8 +224,15 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	desires.Cut()
 	var/list/candidates = list(
 		INSIGHT_DESIRE_FOOD,
+		INSIGHT_DESIRE_FOOD,
+		INSIGHT_DESIRE_FOOD,
+		INSIGHT_DESIRE_ALCOHOL,
+		INSIGHT_DESIRE_ALCOHOL,
 		INSIGHT_DESIRE_ALCOHOL,
 		INSIGHT_DESIRE_SMOKING,
+		INSIGHT_DESIRE_DRINK_NONALCOHOL,
+		INSIGHT_DESIRE_DRINK_NONALCOHOL,
+		INSIGHT_DESIRE_DRUGS,
 		INSIGHT_DESIRE_DRUGS,
 	)
 
@@ -238,9 +247,17 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		var/list/potential_desires = list()
 		switch(desire)
 			if(INSIGHT_DESIRE_FOOD)
-				potential_desires = all_types_food.Copy()
+				potential_desires = GLOB.sanity_foods.Copy()
+				if(!potential_desires.len)
+					potential_desires = init_sanity_foods()
 			if(INSIGHT_DESIRE_ALCOHOL)
-				potential_desires = all_taste_drinks.Copy()
+				potential_desires = GLOB.sanity_drinks.Copy()
+				if(!potential_desires.len)
+					potential_desires = init_sanity_drinks()
+			if(INSIGHT_DESIRE_DRINK_NONALCOHOL)
+				potential_desires = GLOB.sanity_non_alcoholic_drinks.Copy()
+				if(!potential_desires.len)
+					potential_desires = init_sanity_sanity_non_alcoholic_drinks()
 			else
 				desires += desire
 				continue
@@ -322,6 +339,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 						I.perk = null
 
 				SEND_SIGNAL(O, COMSIG_ODDITY_USED)
+				owner.give_health_via_stats()
 				for(var/mob/living/carbon/human/H in viewers(owner))
 					SEND_SIGNAL(H, COMSIG_HUMAN_ODDITY_LEVEL_UP, owner, O)
 
@@ -334,9 +352,10 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 			var/list/stat_change = list()
 
 			var/stat_pool = resting * 15
+			owner.give_health_via_stats()
 			while(stat_pool > 0)
 				stat_pool--
-				LAZYAPLUS(stat_change, pick(ALL_STATS), 3)
+				LAZYAPLUS(stat_change, pick(ALL_STATS_FOR_LEVEL_UP), 3)
 
 			for(var/stat in stat_change)
 				owner.stats.changeStat(stat, stat_change[stat])

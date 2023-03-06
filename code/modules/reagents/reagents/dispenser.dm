@@ -185,7 +185,6 @@
 	if(halluci)
 		M.adjust_hallucination(halluci, halluci)
 
-	var/mob/living/carbon/human/H = M
 	apply_sanity_effect(M, effect_multiplier)
 	SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
 
