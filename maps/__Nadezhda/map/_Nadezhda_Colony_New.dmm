@@ -1608,10 +1608,15 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "avw" = (
-/obj/structure/catwalk,
-/obj/item/caution/cone,
-/turf/simulated/open,
-/area/nadezhda/maintenance/undergroundfloor1north)
+/obj/machinery/door/blast/shutters/glass{
+	name = "Fireplace  Cover"
+	},
+/obj/structure/bonfire/permanent,
+/obj/item/contraband/poster/placed/recruitment/blackshield{
+	pixel_y = 32
+	},
+/turf/simulated/floor/rock,
+/area/nadezhda/crew_quarters/dorm1)
 "avx" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
@@ -67646,14 +67651,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
-"pOm" = (
-/obj/effect/floor_decal/industrial/road/straight1,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/outside/inside_colony)
 "pOn" = (
 /obj/structure/railing{
 	dir = 8;
@@ -82484,9 +82481,11 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "tkV" = (
-/mob/living/simple_animal/hostile/render,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/render{
+	faction = "excelsior"
+	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "tkZ" = (
@@ -91706,9 +91705,13 @@
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
 "vln" = (
+/obj/effect/floor_decal/industrial/road/straight1,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel,
-/area/nadezhda/engineering/foyer)
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/rock/manmade/road,
+/area/nadezhda/outside/inside_colony)
 "vlr" = (
 /obj/structure/table/rack/shelf,
 /obj/random/lowkeyrandom/low_chance,
@@ -96505,6 +96508,10 @@
 	icon_state = "9,1"
 	},
 /area/shuttle/vasiliy_shuttle_area)
+"wpY" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/foyer)
 "wqj" = (
 /obj/structure/multiz/stairs/active/bottom,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -101546,16 +101553,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
-"xCW" = (
-/obj/machinery/door/blast/shutters/glass{
-	name = "Fireplace  Cover"
-	},
-/obj/structure/bonfire/permanent,
-/obj/item/contraband/poster/placed/recruitment/blackshield{
-	pixel_y = 32
-	},
-/turf/simulated/floor/rock,
-/area/nadezhda/crew_quarters/dorm1)
 "xCX" = (
 /obj/effect/decal/cleanable/cobweb2,
 /obj/effect/decal/cleanable/dirt,
@@ -159971,7 +159968,7 @@ utf
 utf
 utf
 kLb
-avw
+pnK
 bCo
 wCd
 lOO
@@ -160433,7 +160430,7 @@ hJi
 toi
 rIX
 onp
-xCW
+avw
 edw
 edw
 ybf
@@ -161179,7 +161176,7 @@ fgl
 giu
 wUF
 uyF
-she
+sJn
 utf
 utf
 kLb
@@ -171533,9 +171530,9 @@ kgu
 lUm
 nDv
 aNa
-vln
+wpY
 vtb
-vln
+wpY
 cef
 sLF
 ggO
@@ -204857,9 +204854,9 @@ rpk
 rpk
 rpk
 rpk
-pOm
+vln
 cgO
-pOm
+vln
 rpk
 rpk
 rpk
