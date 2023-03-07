@@ -1,6 +1,11 @@
 #define NEIGHBOR_REFRESH_TIME 100
 #define MIN_LIGHT_LIMIT 0.5
 
+//Small soj edit so they start the process loop
+/obj/effect/plant/Initialize(mapload)
+	. = ..()
+	Process()
+
 /obj/effect/plant/proc/get_cardinal_neighbors()
 	var/list/cardinal_neighbors = list()
 	for(var/check_dir in cardinal)
