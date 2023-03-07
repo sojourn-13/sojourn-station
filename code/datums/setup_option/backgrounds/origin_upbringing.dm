@@ -144,9 +144,12 @@
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/gifted
-	name = "Gifted"
+	name = "Gifted Nihilist"
 	desc = "You were a smart child, gifted in any particular area you wished to embark upon be it intellectual or physical. Unfortunately this approach made you a jack of all trades and severely  \
-	hampered your ability to master any one discipline. Sure, you're smart, but without the experience and discipline of practical application it doesn't help you as much as anyone could hope."
+	hampered your ability to master any one discipline. Sure, you're smart, but without the experience and discipline of practical application it doesn't help you as much as anyone could hope. \
+	The one issue you truly suffer is a nihlistic world view; you seem more effected by your surroundings than the normal person."
+
+	perks = list(PERK_NIHILIST)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,

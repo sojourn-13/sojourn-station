@@ -5,7 +5,7 @@
 	(or dishonest) citizen of the colony. One benefit at least of your raider life style is you got good at getting in and out quickly, regardless of any barriers in your way. Sadly your past is \
 	a known factor and while here on the frontier security can overlook a checkered past, your records should contain a detailed and accurate report of your history."
 
-	perks = list(/datum/perk/parkour, /datum/perk/chem_contraband)
+	perks = list(/datum/perk/parkour)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -104,6 +104,8 @@
 	desc = "The Solarian Federation is the largest industrial military complex in the galaxy, former members are extremely common be they conscripts of conquered empires or citizens seeking \
 	to serve their nation. Some individuals may come from their own planetary defense forces, serving as a combination of planetary guard and soldier. Military training has the benefit \
 	of physical conditioning and marksmanship training, but the stamping out of the individual makes most lose their creativity."
+
+	perks = list(PERK_SURVIVOR)
 
 	stat_modifiers = list(
 		STAT_ROB = 2,
