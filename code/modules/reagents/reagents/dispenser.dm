@@ -188,6 +188,10 @@
 	apply_sanity_effect(M, effect_multiplier)
 	SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
 
+	var/mob/living/carbon/human/H = M
+	if(istype(H))
+		H.sanity.onAlcohol(src, effect_multiplier)
+
 /datum/reagent/ethanol/touch_obj(var/obj/O)
 	if(istype(O, /obj/item/paper))
 		var/obj/item/paper/paperaffected = O

@@ -261,9 +261,11 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 			else
 				desires += desire
 				continue
-		if(potential_desires.len)
-			var/candidate = pick(potential_desires)
+		var/desire_count = 0
+		while(desire_count < 5)
+			var/candidate = pick_n_take(potential_desires)
 			desires += candidate
+			++desire_count
 	print_desires()
 
 /datum/sanity/proc/print_desires()
@@ -392,6 +394,16 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 /datum/sanity/proc/onShock(amount)
 	changeLevel(-SANITY_DAMAGE_SHOCK(amount, owner.stats.getStat(STAT_VIG)))
 
+/datum/sanity/proc/onAlcohol(datum/reagent/ethanol/E, multiplier)
+	changeLevel(E.sanity_gain_ingest * multiplier)
+	if(resting)
+		add_rest(E.type, 3 * multiplier)
+
+/datum/sanity/proc/onNonAlcohol(datum/reagent/drink/D, multiplier)
+	changeLevel(D.sanity_gain_ingest * multiplier)
+	if(resting)
+		add_rest(D.type, 3 * multiplier)
+
 /datum/sanity/proc/onDrug(datum/reagent/drug/R, multiplier)
 	changeLevel(R.sanity_gain * multiplier)
 	if(resting)
@@ -408,6 +420,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		var/datum/reagent/ethanol/fine_drink = E
 		sanity_gain *= (40 / (fine_drink.strength + 15))
 	changeLevel(sanity_gain * multiplier)
+
 	/*if(resting && E.taste_tag.len)
 		for(var/taste_tag in E.taste_tag)
 			if(multiplier <= 1 )
@@ -415,11 +428,13 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 			else
 				add_rest(taste_tag, 4 * multiplier/E.taste_tag.len)*/ //We don't use taste-tag code. I'm too lazy to impliment it, and Trilby would wand major changes if this system were implimented due to its simplicity.
 
-/datum/sanity/proc/onEat(obj/item/reagent_containers/food/snacks/snack, snack_sanity_gain, snack_sanity_message)
+/datum/sanity/proc/onEat(obj/item/reagent_containers/food/snacks/snack, snack_sanity_gain, snack_sanity_message, amount_eaten)
 	if(world.time > eat_time_message && snack_sanity_message)
 		eat_time_message = world.time + EAT_COOLDOWN_MESSAGE
 		to_chat(owner, "[snack_sanity_message]")
 	changeLevel(snack_sanity_gain)
+	if(snack.cooked && resting)
+		add_rest(snack.type, 20 * amount_eaten / snack.bitesize)
 	/*if(snack.cooked && resting && snack.taste_tag.len)
 		for(var/taste in snack.taste_tag)
 			add_rest(taste, snack_sanity_gain * 50/snack.taste_tag.len)*/

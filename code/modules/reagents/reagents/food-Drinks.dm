@@ -547,6 +547,10 @@
 	if(adj_temp < 0 && M.bodytemperature > 310)
 		M.bodytemperature = min(310, M.bodytemperature - (adj_temp * TEMPERATURE_DAMAGE_COEFFICIENT))
 
+	var/mob/living/carbon/human/H = M
+	if(istype(H))
+		H.sanity.onNonAlcohol(src, effect_multiplier)
+
 /datum/reagent/drink/energy_drink_monster
 	name = "Claw Energy Drink"
 	id = "energy_drink_monster"
