@@ -1088,7 +1088,7 @@ var/list/rank_prefix = list(\
 	data["sanity"] = sanity.level
 	data["sanity_max_level"] = sanity.max_level
 	data["insight"] = sanity.insight
-	data["desires"] = sanity.desires
+	data["desires"] = sanity.list_desires()
 	data["rest"] = sanity.resting
 	data["insight_rest"] = sanity.insight_rest
 

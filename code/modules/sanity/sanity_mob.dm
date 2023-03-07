@@ -64,7 +64,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/insight_rest = 0
 	var/max_insight_rest = 1
 	var/resting = 0
-	var/max_resting = 1
+	var/max_resting = INFINITY
 
 	var/rest_timer_active = FALSE
 	var/rest_timer_time
@@ -271,7 +271,27 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 /datum/sanity/proc/print_desires()
 	if(!resting)
 		return
-	to_chat(owner, SPAN_NOTICE("You desire [english_list(desires)]."))
+	var/list/desire_names = list()
+	for(var/desire in desires)
+		if(ispath(desire))
+			var/atom/A = desire
+			desire_names += initial(A.name)
+		else
+			desire_names += desire
+	to_chat(owner, SPAN_NOTICE("You desire [english_list(desire_names)]."))
+
+/datum/sanity/proc/list_desires()
+	if(!resting)
+		return
+	var/list/desire_names = list()
+	for(var/desire in desires)
+		if(ispath(desire))
+			var/atom/A = desire
+			desire_names += initial(A.name)
+		else
+			desire_names += desire
+	return "[english_list(desire_names)]"
+
 
 /datum/sanity/proc/add_rest(type, amount)
 	if(!(type in desires))
@@ -332,7 +352,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 				GET_COMPONENT_FROM(I, /datum/component/inspiration, O) // If it's a valid inspiration, it should have this component. If not, runtime
 				var/list/L = I.calculate_statistics()
 				for(var/stat in L)
-					var/stat_up = L[stat] * 2
+					var/stat_up = L[stat] * 2 * resting
+					resting = 0
 					to_chat(owner, SPAN_NOTICE("Your [stat] stat goes up by [stat_up]"))
 					owner.stats.changeStat(stat, stat_up)
 
@@ -349,11 +370,13 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 
 		if("Convert your fulfilled insight for later use")
 			owner.rest_points += 1 //yeah... that's it
+			//resting = 0 //Temp commited out do to balance
 
 		else //Cancelling or internalizing
 			var/list/stat_change = list()
 
 			var/stat_pool = resting * 15
+			resting = 0
 			owner.give_health_via_stats()
 			while(stat_pool > 0)
 				stat_pool--
@@ -363,8 +386,6 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 				owner.stats.changeStat(stat, stat_change[stat])
 
 	owner.pick_individual_objective()
-	resting = 0
-	insight = 0
 
 /datum/sanity/proc/onDamage(amount)
 	changeLevel(-SANITY_DAMAGE_HURT(amount, owner.stats.getStat(STAT_VIG)))

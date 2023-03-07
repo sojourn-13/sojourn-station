@@ -41,7 +41,9 @@
 
 /obj/item/reagent_containers/food/snacks/proc/get_sanity_gain(mob/living/carbon/eater) //sanity_gain per bite
 	var/current_nutriment = reagents.get_reagent_amount("nutriment")
-	var/nutriment_percent = current_nutriment/reagents.total_volume
+	var/nutriment_percent = 0
+	if(reagents.total_volume && current_nutriment)
+		nutriment_percent = current_nutriment/reagents.total_volume
 	var/nutriment_eaten = min(reagents.total_volume, bitesize) * nutriment_percent
 	var/base_sanity_gain_per_bite = nutriment_eaten * sanity_gain
 	var/message
