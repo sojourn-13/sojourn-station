@@ -19,6 +19,7 @@
 	var/external = FALSE
 	var/cruciform_resist = FALSE
 	var/is_metal = TRUE
+	var/scanner_hidden = FALSE
 
 	var/overlay_icon = "deathalarm"
 

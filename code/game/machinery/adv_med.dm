@@ -282,7 +282,7 @@
 	dat += text("[]\tToxicity: []</font><br>", ("<font color='[occ["toxloss"] < 60  ? "blue" : "red"]'>"), occ["toxloss"] ? occ["toxloss"] : "0")
 	dat += text("[]\tRadiation Level %: []</font><br>", ("<font color='[occ["rads"] < 10  ? "blue" : "red"]'>"), occ["rads"])
 	dat += text("[]\tApprox. Brain Damage %: []</font><br>", ("<font color='[occ["brainloss"] < 1  ? "blue" : "red"]'>"), occ["brainloss"])
-	dat += text("[]\tNeural System Accumulation: []/[]<br>", ("<font color='[occ["NSA"] < occ["NSA_threshold"]  ? "blue" : "red"]'>"), occ["NSA"], occ["NSA_threshold"])
+	dat += text("[]\tNeural System Accumulation: []/[]</font><br>", ("<font color='[occ["NSA"] < occ["NSA_threshold"]  ? "blue" : "red"]'>"), occ["NSA"], occ["NSA_threshold"])
 	dat += text("Paralysis Summary %: [] ([] seconds left!)<br>", occ["paralysis"], round(occ["paralysis"] / 4))
 	dat += text("Body Temperature: [occ["bodytemp"]-T0C]&deg;C ([occ["bodytemp"]*1.8-459.67]&deg;F)<br><HR>")
 
@@ -309,7 +309,45 @@
 		var/list/other_wounds = list()
 		var/significant = FALSE
 
-		dat += "<tr>"
+		for(var/obj/item/organ/internal/I in e.internal_organs) // I put this before the actual external organ
+			if(I.scanner_hidden) // so that I could set significant based on internal organ results.
+				continue
+
+			var/list/internal_wounds = list()
+			if(BP_IS_ASSISTED(I))
+				internal_wounds += "Assisted"
+			if(BP_IS_ROBOTIC(I))
+				internal_wounds += "Prosthetic"
+
+			var/total_brute_and_misc_damage = 0
+			var/total_burn_damage = 0
+
+			if(I.status & ORGAN_DEAD)
+				internal_wounds += "<font color='red'>Dead</font>"
+			else
+				if(I.rejecting)
+					internal_wounds += "being rejected"
+
+				var/list/internal_wound_comps = I.GetComponents(/datum/component/internal_wound)
+
+				for(var/datum/component/internal_wound/IW in internal_wound_comps)
+					var/severity = IW.severity
+					internal_wounds += "[IW.name] ([severity]/[IW.severity_max])"
+					if(istype(IW, /datum/component/internal_wound/organic/burn) || istype(IW, /datum/component/internal_wound/robotic/emp_burn))
+						total_burn_damage += severity
+					else
+						total_brute_and_misc_damage += severity
+
+			// Format internal wounds
+			var/internal_wounds_details
+			if(LAZYLEN(internal_wounds))
+				internal_wounds_details = jointext(internal_wounds, ",<br>")
+
+			if(internal_wounds_details)
+				significant = TRUE
+				dat += "<tr>"
+				dat += "<td>[I.name],<br><i>[e.name]</i></td><td>[total_burn_damage]</td><td>[total_brute_and_misc_damage]</td><td>[internal_wounds_details ? internal_wounds_details : "None"]</td><td></td>"
+				dat += "</tr>"
 
 		if(e.organ_tag == BP_CHEST && occ["lung_ruptured"])
 			other_wounds += "Lung ruptured"
@@ -332,54 +370,29 @@
 				if(is_type_in_list(I,known_implants))
 					var/obj/item/implant/device = I
 					other_wounds += "[device.get_scanner_name()] implanted"
+				else if(istype(I, /obj/item/material/shard/shrapnel))
+					other_wounds += "Embedded shrapnel"
+				else if(istype(I, /obj/item/implant))
+					var/obj/item/implant/device = I
+					if(!device.scanner_hidden)
+						unknown_body = TRUE
 				else
 					unknown_body = TRUE
 			if(unknown_body)
 				other_wounds += "Unknown body present"
-
-		if(!e.is_stump())
-			dat += "<td>[e.name]</td><td>[e.burn_dam]</td><td>[e.brute_dam]</td><td>[other_wounds.len ? jointext(other_wounds, ":") : "None"]</td>"
-		else
-			dat += "<td>[e.name]</td><td>-</td><td>-</td><td>Not Found</td>"
-		dat += "</tr>"
-
-	for(var/obj/item/organ/internal/I in occ["internal_organs"])
-		if(I.scanner_hidden)
-			continue
-
-		var/list/internal_wounds = list()
-		if(BP_IS_ASSISTED(I))
-			internal_wounds += "Assisted"
-		if(BP_IS_ROBOTIC(I))
-			internal_wounds += "Prosthetic"
-
-
-		var/total_brute_and_misc_damage = 0
-		var/total_burn_damage = 0
-
-		if(I.status & ORGAN_DEAD)
-			internal_wounds += "<font color='red'>Dead</font>"
-
-			var/list/internal_wound_comps = I.GetComponents(/datum/component/internal_wound)
-
-			for(var/datum/component/internal_wound/IW in internal_wound_comps)
-				var/severity = IW.severity
-				internal_wounds += "[IW.name] ([severity]/[IW.severity_max])"
-				if(istype(IW, /datum/component/internal_wound/organic/burn) || istype(IW, /datum/component/internal_wound/robotic/emp_burn))
-					total_burn_damage += severity
-				else
-					total_brute_and_misc_damage += severity
-
-		// Format internal wounds
-		var/internal_wounds_details
-		if(LAZYLEN(internal_wounds))
-			internal_wounds_details = jointext(internal_wounds, ",<br>")
-
-		if(internal_wounds_details)
+		if (e.is_stump() || e.burn_dam || e.brute_dam || other_wounds.len)
 			significant = TRUE
 			dat += "<tr>"
-			dat += "<td>[I.name],<br><i>[e.name]</i></td><td>[total_burn_damage]</td><td>[total_brute_and_misc_damage]</td><td>[internal_wounds_details ? internal_wounds_details : "None"]</td><td></td>"
-				dat += "</tr>"
+		if(!e.is_stump() && significant)
+			dat += "<td>[e.name]</td><td>[e.burn_dam]</td><td>[e.brute_dam]</td><td>[other_wounds.len ? jointext(other_wounds, ":") : "None"]</td>"
+		else if (significant)
+			dat += "<td>[e.name]</td><td>-</td><td>-</td><td>Not Found</td>"
+		else
+			continue
+		dat += "</tr>"
+
+
+	dat += "</table>"
 
 	var/list/species_organs = occ["species_organs"]
 	for(var/organ_name in species_organs)
