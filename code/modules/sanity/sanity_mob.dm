@@ -158,7 +158,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		if(A.sanity_damage) //If this thing is not nice to behold
 			. += SANITY_DAMAGE_VIEW(A.sanity_damage, vig, get_dist(owner, A))
 
-		if(owner.stats.getPerk(PERK_MORALIST) && ishuman(A)) //Moralists react negatively to people in distress
+		if(owner.stats.getPerk(PERK_IDEALIST) && ishuman(A)) //Moralists react negatively to people in distress
 			var/mob/living/carbon/human/H = A
 			if(H.sanity.level < 30 || H.health < 50)
 				. += SANITY_DAMAGE_VIEW(0.1, vig, get_dist(owner, A))
@@ -180,7 +180,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 /datum/sanity/proc/handle_Insight()
 	var/moralist_factor = 1
 	//var/style_factor = owner.get_style_factor()
-	if(owner.stats.getPerk(PERK_MORALIST))
+	if(owner.stats.getPerk(PERK_IDEALIST))
 		for(var/mob/living/carbon/human/H in view(owner))
 			if(H.sanity.level > 60)
 				moralist_factor += 0.02

@@ -37,12 +37,17 @@
 #define PERK_STRANGTH /datum/perk/oddity/strangth
 #define PERK_MIND_OF_MATTER /datum/perk/oddity/mind_of_matter
 #define PERK_IRON_WILL /datum/perk/oddity/iron_will
+#define PERK_SURVIVOR /datum/perk/oddity/survivor
+#define PERK_INSPIRING /datum/perk/oddity/inspiring
 
-//roundstart perks (job)
+//roundstart perks (job / backgrounds)
+#define PERK_NOBLE /datum/perk/noble
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
+#define PERK_IDEALIST /datum/perk/idealist
 #define PERK_LUNGS_OF_IRON /datum/perk/lungs_of_iron
 #define PERK_BLOOD_OF_LEAD /datum/perk/blood_of_lead
 #define PERK_SPACE_ASSHOLE /datum/perk/space_asshole
+#define PERK_NIHILIST /datum/perk/nihilist
 #define PERK_PARKOUR /datum/perk/parkour
 #define PERK_CHAINGUN_SMOKER /datum/perk/chaingun_smoker
 #define PERK_NIGHTCRAWLER /datum/perk/nightcrawler
@@ -190,7 +195,3 @@
 //cooldown perks
 #define PERK_COOLDOWN_REASON /datum/perk/cooldown/reason
 #define PERK_COOLDOWN_EXERTION /datum/perk/cooldown/exertion
-
-//Temporary sanity perks
-#define PERK_MORALIST /datum/perk/oddity/moralist
-#define PERK_NIHILIST /datum/perk/oddity/nihilist
