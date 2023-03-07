@@ -196,6 +196,39 @@
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "mindbreaker_w")
 	M.adjustToxLoss(-0.1) //Small toxins as your prossesing it out
 
+/datum/reagent/drug/mindwipe
+	name = "Mindwipe"
+	id = "mindwipe"
+	description = "Shocks the user's brain hard enough to make him forget about his quirks. Is ill-advised because of side effects"
+	taste_description = "bitter"
+	reagent_state = LIQUID
+	color = "#bfff00"
+	metabolism = REM * 0.5
+	overdose = REAGENTS_OVERDOSE
+	nerve_system_accumulations = 90
+	addiction_chance = 30
+
+/datum/reagent/drug/mindwipe/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.hallucination(50 * effect_multiplier, 50 * effect_multiplier)
+	M.druggy = max(M.druggy, 5 * effect_multiplier)
+	M.make_jittery(10 * effect_multiplier)
+	M.make_dizzy(10 * effect_multiplier)
+	M.confused = max(M.confused, 20 * effect_multiplier)
+	if(prob(5 * effect_multiplier) && isturf(M.loc) && !istype(M.loc, /turf/space) && M.canmove && !M.restrained())
+		step(M, pick(cardinal))
+	if(ishuman(M))
+		var/mob/living/carbon/human/affected = M
+		if(prob(5 * effect_multiplier))
+			for(var/datum/breakdown/B in affected.sanity.breakdowns)
+				if(B)
+					B.finished = TRUE
+					to_chat(M, SPAN_NOTICE("You feel that something eases the strain on your sanity. But at which price?"))
+
+/datum/reagent/drug/mindwipe/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "mindwipe_w")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "mindwipe_w")
+	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "mindwipe_w")
+
 /datum/reagent/drug/psi_juice
 	name = "Cerebrix"
 	id = "psi_juice"

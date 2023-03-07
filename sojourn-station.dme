@@ -1761,6 +1761,7 @@
 #include "code\modules\clothing\head\helmet.dm"
 #include "code\modules\clothing\head\hood.dm"
 #include "code\modules\clothing\head\jobs.dm"
+#include "code\modules\clothing\head\mindreader.dm"
 #include "code\modules\clothing\head\misc.dm"
 #include "code\modules\clothing\head\misc_special.dm"
 #include "code\modules\clothing\head\soft_caps.dm"
