@@ -3103,7 +3103,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "aNf" = (
 /obj/random/closet_tech/low_chance,
 /obj/machinery/light/small{
@@ -8410,7 +8410,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "ceB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/firedoor,
@@ -22345,7 +22345,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "foq" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 4
@@ -24887,7 +24887,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "fUU" = (
 /obj/structure/grille,
 /obj/effect/decal/cleanable/rubble,
@@ -31073,7 +31073,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "htu" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -31939,7 +31939,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "hCM" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -33362,7 +33362,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "hTR" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -38995,7 +38995,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "jiA" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/busha3,
@@ -49640,7 +49640,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "lLS" = (
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt/flood,
@@ -55591,7 +55591,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "nen" = (
 /obj/machinery/disposal,
 /obj/effect/floor_decal/industrial/box/red,
@@ -66281,7 +66281,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_perforated,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "pyR" = (
 /obj/structure/catwalk,
 /obj/structure/railing{
@@ -67646,6 +67646,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
+"pOm" = (
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/rock/manmade/road,
+/area/nadezhda/outside/inside_colony)
 "pOn" = (
 /obj/structure/railing{
 	dir = 8;
@@ -68143,7 +68151,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_perforated,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "pUr" = (
 /obj/structure/salvageable/computer{
 	pixel_y = 10
@@ -80392,7 +80400,7 @@
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "sLH" = (
 /obj/structure/flora/small/bushb3,
 /turf/simulated/floor/asteroid/dirt,
@@ -80801,7 +80809,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "sQm" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
@@ -83030,7 +83038,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "tss" = (
 /obj/structure/table/glass,
 /obj/machinery/photocopier/faxmachine{
@@ -91698,15 +91706,9 @@
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
 "vln" = (
-/obj/machinery/door/blast/shutters/glass{
-	name = "Fireplace  Cover"
-	},
-/obj/structure/bonfire/permanent,
-/obj/item/contraband/poster/placed/recruitment/blackshield{
-	pixel_y = 32
-	},
-/turf/simulated/floor/rock,
-/area/nadezhda/crew_quarters/dorm1)
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/engineering/foyer)
 "vlr" = (
 /obj/structure/table/rack/shelf,
 /obj/random/lowkeyrandom/low_chance,
@@ -92323,7 +92325,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals10,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "vte" = (
 /obj/structure/flora/small/trailrocka1,
 /turf/simulated/floor/rock,
@@ -99860,7 +99862,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/quartermaster/office)
+/area/nadezhda/engineering/foyer)
 "xjE" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/structure/cable/green{
@@ -101544,6 +101546,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
+"xCW" = (
+/obj/machinery/door/blast/shutters/glass{
+	name = "Fireplace  Cover"
+	},
+/obj/structure/bonfire/permanent,
+/obj/item/contraband/poster/placed/recruitment/blackshield{
+	pixel_y = 32
+	},
+/turf/simulated/floor/rock,
+/area/nadezhda/crew_quarters/dorm1)
 "xCX" = (
 /obj/effect/decal/cleanable/cobweb2,
 /obj/effect/decal/cleanable/dirt,
@@ -160421,7 +160433,7 @@ hJi
 toi
 rIX
 onp
-vln
+xCW
 edw
 edw
 ybf
@@ -171519,11 +171531,11 @@ ofP
 gdi
 kgu
 lUm
-ggO
+nDv
 aNa
-xBZ
+vln
 vtb
-xBZ
+vln
 cef
 sLF
 ggO
@@ -204441,9 +204453,9 @@ csA
 ckQ
 csA
 hKK
+hKK
 bXS
-bXS
-bXS
+hKK
 pxl
 pxl
 pxl
@@ -204845,9 +204857,9 @@ rpk
 rpk
 rpk
 rpk
+pOm
 cgO
-cgO
-cgO
+pOm
 rpk
 rpk
 rpk
