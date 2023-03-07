@@ -391,7 +391,7 @@
 
 /obj/machinery/power/solar_control/attack_hand(mob/user)
 	if(!..())
-		ui_interact(user)
+		ui_interact(user) //routed to TGUI
 /*
 /obj/machinery/power/solar_control/interact(mob/user)
 
