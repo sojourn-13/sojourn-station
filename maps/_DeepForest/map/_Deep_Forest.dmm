@@ -7444,6 +7444,12 @@
 /obj/random/gun_normal,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"AY" = (
+/obj/random/booze/low_chance,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,20"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "AZ" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/bushb2,
@@ -7564,6 +7570,7 @@
 /area/nadezhda/outside/meadow)
 "BF" = (
 /obj/structure/lattice,
+/obj/random/booze/low_chance,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
 "BH" = (
@@ -12062,6 +12069,10 @@
 	},
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"Tg" = (
+/obj/random/booze/low_chance,
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "Th" = (
 /obj/structure/flora/small/bushb2,
 /turf/simulated/mineral/planet,
@@ -47360,7 +47371,7 @@ Iy
 zB
 Sw
 MM
-YI
+AY
 QN
 GA
 QN
@@ -47987,7 +47998,7 @@ Iy
 Iy
 zB
 SW
-MM
+Tg
 PD
 Cm
 Ii

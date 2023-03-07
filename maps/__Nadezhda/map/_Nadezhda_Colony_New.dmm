@@ -32223,6 +32223,10 @@
 /area/nadezhda/security/tactical_blackshield)
 "hFX" = (
 /obj/effect/floor_decal/industrial/danger,
+/obj/item/reagent_containers/glass/bucket{
+	name = "suspicous bucket";
+	desc = "It's a bucket. It looks.. stained."
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/engineering/engine_waste)
 "hGl" = (
@@ -61396,14 +61400,8 @@
 /turf/simulated/floor/tiled/white/danger,
 /area/nadezhda/medical/genetics)
 "osY" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
-/area/colony)
+/turf/unsimulated/mineral,
+/area/nadezhda/engineering/atmos)
 "otc" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/westright{
@@ -91700,14 +91698,15 @@
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
 "vln" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
+/obj/machinery/door/blast/shutters/glass{
+	name = "Fireplace  Cover"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
+/obj/structure/bonfire/permanent,
+/obj/item/contraband/poster/placed/recruitment/blackshield{
+	pixel_y = 32
 	},
-/turf/simulated/floor/plating/under,
-/area/colony)
+/turf/simulated/floor/rock,
+/area/nadezhda/crew_quarters/dorm1)
 "vlr" = (
 /obj/structure/table/rack/shelf,
 /obj/random/lowkeyrandom/low_chance,
@@ -95424,8 +95423,11 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/techshop)
 "wdD" = (
-/obj/item/reagent_containers/glass/bucket,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/glass/bucket{
+	name = "suspicous bucket";
+	desc = "It's a bucket. It looks.. stained."
+	},
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest)
 "wdH" = (
@@ -139000,7 +139002,7 @@ vch
 vch
 tad
 tad
-tad
+osY
 tad
 tad
 tad
@@ -139201,8 +139203,8 @@ vch
 vch
 vch
 tad
-hLL
-hLL
+wDx
+wDx
 wDx
 wDx
 wDx
@@ -139403,8 +139405,8 @@ vch
 vch
 cZb
 tad
-hLL
-vln
+wDx
+jkS
 qdj
 qdj
 qdj
@@ -139605,8 +139607,8 @@ vch
 cZb
 cZb
 tad
-hLL
-osY
+wDx
+lIU
 wDx
 wDx
 wDx
@@ -139807,8 +139809,8 @@ vch
 cZb
 cZb
 tad
-hLL
-osY
+wDx
+lIU
 wDx
 mra
 wDx
@@ -140009,8 +140011,8 @@ vch
 cZb
 cZb
 tad
-hLL
-osY
+wDx
+lIU
 wDx
 mra
 wDx
@@ -140211,8 +140213,8 @@ vch
 cZb
 cZb
 tad
-hLL
-osY
+wDx
+lIU
 wDx
 mra
 wDx
@@ -140413,8 +140415,8 @@ cZb
 cZb
 cZb
 tad
-hLL
-osY
+wDx
+lIU
 wDx
 mra
 wDx
@@ -140615,8 +140617,8 @@ tad
 tad
 tad
 tad
-hLL
-osY
+wDx
+lIU
 wDx
 mra
 wDx
@@ -140817,7 +140819,7 @@ tad
 tad
 tad
 tad
-hLL
+wDx
 lIU
 wDx
 wDx
@@ -141019,7 +141021,7 @@ cZb
 cZb
 cZb
 tad
-hLL
+wDx
 lIU
 wDx
 wSR
@@ -141221,7 +141223,7 @@ cZb
 cZb
 cZb
 tad
-hLL
+wDx
 lIU
 wDx
 vmd
@@ -141423,7 +141425,7 @@ cZb
 cZb
 cZb
 tad
-hLL
+wDx
 lIU
 tGA
 vmd
@@ -141625,7 +141627,7 @@ cZb
 cZb
 cZb
 tad
-hLL
+wDx
 lIU
 wDx
 fJk
@@ -141827,7 +141829,7 @@ cZb
 cZb
 cZb
 tad
-hLL
+wDx
 lIU
 wDx
 uSp
@@ -142029,7 +142031,7 @@ cZb
 cZb
 cZb
 tad
-hLL
+wDx
 lIU
 aPT
 uSp
@@ -142231,7 +142233,7 @@ cZb
 cZb
 cZb
 tad
-hLL
+wDx
 lIU
 wDx
 wDx
@@ -142433,7 +142435,7 @@ cZb
 cZb
 cZb
 tad
-hLL
+wDx
 uTT
 qdj
 fHI
@@ -142635,7 +142637,7 @@ cZb
 cZb
 cZb
 tad
-hLL
+wDx
 wDx
 wDx
 uTT
@@ -160419,7 +160421,7 @@ hJi
 toi
 rIX
 onp
-nlp
+vln
 edw
 edw
 ybf
