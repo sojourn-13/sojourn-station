@@ -553,10 +553,6 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
-"ci" = (
-/obj/structure/reagent_dispensers/fueltank/huge/derelict,
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/dungeon/outside/safehouse)
 "cj" = (
 /obj/structure/catwalk,
 /obj/structure/table/steel_reinforced,
@@ -2097,6 +2093,16 @@
 "hv" = (
 /turf/unsimulated/mineral/transition,
 /area/colony/exposedsun/pastgate)
+"hw" = (
+/obj/structure/table/rack/shelf,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/random/gun_normal,
+/obj/random/melee/low_chance,
+/obj/random/ammo_lowcost,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/dungeon/outside/safehouse)
 "hx" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/ausbushes/grassybush,
@@ -2680,6 +2686,12 @@
 /obj/random/material_rare/low_chance,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"jr" = (
+/obj/machinery/door/airlock/sandstone{
+	name = "Generator Room"
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/dungeon/outside/safehouse)
 "jt" = (
 /obj/structure/grille/broken,
 /turf/simulated/floor/plating/under,
@@ -3174,12 +3186,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/dungeon/outside/prepper)
-"le" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/mop,
-/turf/simulated/floor/wood/wild1,
-/area/nadezhda/dungeon/outside/safehouse)
 "lf" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -3895,10 +3901,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/zoo)
-"nC" = (
-/obj/random/mob/voidwolf,
-/turf/simulated/floor/wood/wild5,
-/area/nadezhda/dungeon/outside/safehouse)
 "nD" = (
 /obj/machinery/door/window/southright,
 /obj/machinery/door/window/northleft,
@@ -5301,12 +5303,10 @@
 "sN" = (
 /turf/unsimulated/mineral,
 /area/nadezhda/dungeon/outside/monster_cave)
-"sO" = (
-/obj/structure/table/rack/shelf,
-/obj/random/contraband/low_chance,
-/obj/random/contraband/low_chance,
-/obj/random/common_oddities,
-/turf/simulated/floor/wood/wild1,
+"sP" = (
+/obj/machinery/light/small,
+/obj/random/tool/low_chance,
+/turf/simulated/floor/wood/wild3,
 /area/nadezhda/dungeon/outside/safehouse)
 "sQ" = (
 /obj/structure/flora/big/bush3,
@@ -5879,6 +5879,15 @@
 /obj/item/oddity/common/old_knife,
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"uR" = (
+/obj/structure/closet/crate/serbcrate,
+/obj/item/stack/material/steel/full,
+/obj/random/furniture/bedsheet,
+/obj/random/furniture/bedsheet,
+/obj/random/furniture/bedsheetdouble,
+/obj/random/furniture/bedsheetdouble,
+/turf/simulated/floor/carpet,
+/area/nadezhda/dungeon/outside/safehouse)
 "uS" = (
 /obj/item/remains/unathi,
 /obj/effect/decal/cleanable/blood,
@@ -6078,14 +6087,6 @@
 /obj/structure/flora/small/bushb1,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
-"vD" = (
-/obj/item/reagent_containers/food/condiment/peppermill,
-/obj/item/reagent_containers/food/condiment/saltshaker,
-/obj/structure/table/marble,
-/obj/random/rations,
-/obj/random/rations,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/dungeon/outside/safehouse)
 "vE" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/bushb1,
@@ -6167,6 +6168,11 @@
 /obj/random/mob/voidwolf/low_chance,
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"vR" = (
+/obj/structure/table/onestar,
+/obj/random/junkfood/low_chance,
+/turf/simulated/floor/carpet,
+/area/nadezhda/dungeon/outside/safehouse)
 "vS" = (
 /obj/structure/flora/small/bushc3,
 /turf/unsimulated/wall/jungle,
@@ -6190,6 +6196,12 @@
 /obj/structure/boulder,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/colony/exposedsun/crashed_shop/outsider)
+"vX" = (
+/obj/structure/table/onestar,
+/obj/random/gun_cheap/low_chance,
+/obj/random/firstaid/low_chance,
+/turf/simulated/floor/carpet,
+/area/nadezhda/dungeon/outside/safehouse)
 "vY" = (
 /obj/item/mine_old{
 	layer = 2.6
@@ -6878,6 +6890,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/dungeon/outside/prepper)
+"yj" = (
+/obj/structure/table/rack/shelf,
+/obj/item/circuitboard/apc,
+/obj/item/stack/cable_coil,
+/obj/item/tool/multitool/improvised,
+/obj/item/clothing/gloves/insulated,
+/obj/item/frame/apc,
+/obj/random/powercell/large_safe,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/random/tool_upgrade/low_chance,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/dungeon/outside/safehouse)
 "yk" = (
 /obj/random/structures,
 /obj/machinery/light,
@@ -6983,11 +7007,10 @@
 /obj/structure/flora/small/busha1,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
-"yF" = (
-/obj/structure/flora/big/bush1,
-/obj/structure/flora/ausbushes/grassybush,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
+"yE" = (
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/dungeon/outside/safehouse)
 "yG" = (
 /obj/structure/flora/small/grassb1,
 /turf/simulated/floor/asteroid/grass,
@@ -7139,6 +7162,13 @@
 /obj/item/scrap_lump,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
+"zi" = (
+/obj/structure/table/rack/shelf,
+/obj/random/contraband/low_chance,
+/obj/random/contraband/low_chance,
+/obj/random/common_oddities,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/dungeon/outside/safehouse)
 "zl" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/bushb1,
@@ -7226,11 +7256,6 @@
 /obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
-"zG" = (
-/obj/machinery/light/small,
-/obj/random/tool/low_chance,
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/dungeon/outside/safehouse)
 "zH" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/big/bush2,
@@ -7248,6 +7273,14 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"zM" = (
+/obj/machinery/door/airlock/vault{
+	id_tag = "safehousebolts";
+	name = "Safehouse"
+	},
+/obj/structure/invislight,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/dungeon/outside/safehouse)
 "zN" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush2,
@@ -7337,6 +7370,12 @@
 /obj/structure/flora/small/bushb2,
 /turf/unsimulated/wall/jungle,
 /area/colony/exposedsun/pastgate)
+"Ai" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/dungeon/outside/safehouse)
 "Aj" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/big/bush2,
@@ -7357,10 +7396,6 @@
 /area/nadezhda/outside/meadow)
 "An" = (
 /obj/structure/flora/small/bushc1,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
-"Ao" = (
-/obj/item/beartrap/armed,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "Ap" = (
@@ -7531,6 +7566,10 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Ba" = (
+/obj/structure/reagent_dispensers/fueltank/huge/derelict,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/dungeon/outside/safehouse)
 "Bb" = (
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood_old,
@@ -7681,10 +7720,6 @@
 /obj/structure/lattice,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
-"BG" = (
-/obj/random/mob/voidwolf/low_chance,
-/turf/simulated/floor/wood/wild5,
-/area/nadezhda/dungeon/outside/safehouse)
 "BH" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/small/busha1,
@@ -7734,11 +7769,6 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
-"BV" = (
-/obj/item/toy/plushie/cat/siamese,
-/mob/living/carbon/superior_animal/human/voidwolf,
-/turf/simulated/floor/wood/wild1,
-/area/nadezhda/dungeon/outside/safehouse)
 "BW" = (
 /obj/structure/flora/small/grassb1,
 /obj/structure/flora/small/busha1,
@@ -8185,22 +8215,15 @@
 /obj/structure/flora/small/busha3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
-"DL" = (
-/obj/structure/table/rack/shelf,
-/obj/item/circuitboard/apc,
-/obj/item/stack/cable_coil,
-/obj/item/tool/multitool/improvised,
-/obj/item/clothing/gloves/insulated,
-/obj/item/frame/apc,
-/obj/random/powercell/large_safe,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/random/tool_upgrade/low_chance,
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/dungeon/outside/safehouse)
 "DM" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/meadow)
+"DN" = (
+/obj/structure/flora/big/bush1,
+/obj/structure/flora/ausbushes/grassybush,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "DO" = (
 /obj/random/mob/roomba/range,
@@ -8429,12 +8452,6 @@
 /obj/random/traps,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
-"EK" = (
-/obj/structure/table/onestar,
-/obj/item/flame/lighter/zippo/black,
-/obj/random/cigarettes,
-/turf/simulated/floor/carpet,
-/area/nadezhda/dungeon/outside/safehouse)
 "EL" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/big/bush2,
@@ -8842,16 +8859,6 @@
 /obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
-"Gt" = (
-/obj/structure/table/rack/shelf,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/random/gun_normal,
-/obj/random/melee/low_chance,
-/obj/random/ammo_lowcost,
-/turf/simulated/floor/wood/wild1,
-/area/nadezhda/dungeon/outside/safehouse)
 "Gu" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/big/bush2{
@@ -9170,12 +9177,6 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/dungeon/outside/prepper)
-"HI" = (
-/obj/structure/table/standard,
-/obj/item/oddity/common/towel,
-/obj/item/soap/nanotrasen,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/dungeon/outside/safehouse)
 "HJ" = (
 /obj/structure/flora/small/bushc1,
 /obj/structure/flora/small/busha3,
@@ -9285,9 +9286,6 @@
 /obj/machinery/power/smes/buildable,
 /turf/simulated/shuttle/floor/mining,
 /area/colony/exposedsun/crashed_shop/outsider)
-"If" = (
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/dungeon/outside/safehouse)
 "Ig" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/busha2,
@@ -9404,6 +9402,11 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"IA" = (
+/obj/structure/table/rack/shelf,
+/obj/random/junkfood/onlypizza,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/safehouse)
 "IB" = (
 /obj/item/oddity/common/healthscanner,
 /turf/simulated/floor/tiled/white/panels,
@@ -10436,14 +10439,6 @@
 /obj/structure/barricade,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
-"Mq" = (
-/obj/machinery/door/airlock/vault{
-	id_tag = "safehousebolts";
-	name = "Safehouse"
-	},
-/obj/structure/invislight,
-/turf/simulated/floor/wood/wild5,
-/area/nadezhda/dungeon/outside/safehouse)
 "Mr" = (
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/carpet/bcarpet,
@@ -10459,6 +10454,14 @@
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"Mu" = (
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/structure/table/marble,
+/obj/random/rations,
+/obj/random/rations,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/dungeon/outside/safehouse)
 "Mv" = (
 /mob/living/simple_animal/hostile/republicon,
 /turf/unsimulated/mineral,
@@ -10541,6 +10544,11 @@
 /obj/random/junkfood/onlypizza,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
+"ML" = (
+/obj/structure/table/marble,
+/obj/random/junkfood,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/dungeon/outside/safehouse)
 "MM" = (
 /turf/simulated/shuttle/floor/mining,
 /area/colony/exposedsun/crashed_shop/outsider)
@@ -10561,11 +10569,6 @@
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
 "MP" = (
-/turf/simulated/floor/wood/wild5,
-/area/nadezhda/dungeon/outside/safehouse)
-"MQ" = (
-/obj/structure/table/marble,
-/obj/random/junkfood,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/safehouse)
 "MR" = (
@@ -10806,9 +10809,10 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star)
 "NH" = (
-/obj/structure/table/marble,
-/obj/random/junkfood/low_chance,
-/turf/simulated/floor/wood/wild5,
+/obj/structure/table/standard,
+/obj/item/oddity/common/towel,
+/obj/item/soap/nanotrasen,
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/safehouse)
 "NI" = (
 /obj/structure/bed/chair/sofa/black{
@@ -10891,6 +10895,10 @@
 	},
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"Ob" = (
+/obj/random/mob/voidwolf,
+/turf/simulated/floor/carpet,
+/area/nadezhda/dungeon/outside/safehouse)
 "Oc" = (
 /obj/item/trash/cigbutt/ishimura,
 /turf/simulated/floor/tiled/derelict,
@@ -10899,6 +10907,11 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/meadow)
+"Oe" = (
+/obj/structure/table/marble,
+/obj/random/junkfood/low_chance,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/dungeon/outside/safehouse)
 "Of" = (
 /obj/structure/sign/departmentold/medical1,
 /obj/structure/window/reinforced{
@@ -11195,11 +11208,6 @@
 /obj/random/oddity_guns,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
-"Pt" = (
-/obj/structure/flora/ausbushes/grassybush,
-/obj/structure/flora/big/bush1,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
 "Pu" = (
 /obj/machinery/door/airlock/multi_tile/metal{
 	locked = 1;
@@ -11360,12 +11368,6 @@
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
-"PZ" = (
-/obj/machinery/door/airlock/sandstone{
-	name = "Generator Room"
-	},
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/dungeon/outside/safehouse)
 "Qa" = (
 /obj/effect/floor_decal/industrial/loading/white,
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -11518,6 +11520,11 @@
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/colony/exposedsun/crashed_shop/outsider)
+"QF" = (
+/obj/structure/table/reinforced,
+/obj/random/credits/c5000,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/dungeon/outside/safehouse)
 "QG" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/mineral/planet,
@@ -11716,27 +11723,6 @@
 /mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
-"Rr" = (
-/obj/structure/closet/crate/serbcrate,
-/obj/item/bedsheet/hos{
-	folded = 1;
-	icon_state = "sheet-folded"
-	},
-/obj/item/bedsheet/hos{
-	folded = 1;
-	icon_state = "sheet-folded"
-	},
-/obj/item/bedsheet/hosdouble{
-	folded = 1;
-	icon_state = "sheet-folded"
-	},
-/obj/item/bedsheet/hosdouble{
-	folded = 1;
-	icon_state = "sheet-folded"
-	},
-/obj/item/stack/material/steel/full,
-/turf/simulated/floor/carpet,
-/area/nadezhda/dungeon/outside/safehouse)
 "Rs" = (
 /obj/item/stack/material/cardboard/random,
 /obj/item/stack/material/cardboard/random,
@@ -12046,6 +12032,11 @@
 	},
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/safehouse)
+"SC" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/big/bush1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "SD" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
@@ -12112,10 +12103,6 @@
 /obj/item/trash/cigbutt/toha,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
-"SQ" = (
-/obj/random/mob/voidwolf,
-/turf/simulated/floor/carpet,
-/area/nadezhda/dungeon/outside/safehouse)
 "SR" = (
 /obj/structure/bed/chair/custom/onestar{
 	dir = 1
@@ -12221,6 +12208,10 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
+"Tl" = (
+/obj/item/beartrap/armed,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "Tm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/steel_reinforced,
@@ -12854,11 +12845,6 @@
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star)
-"VB" = (
-/obj/structure/table/onestar,
-/obj/random/gun_cheap/low_chance,
-/turf/simulated/floor/carpet,
-/area/nadezhda/dungeon/outside/safehouse)
 "VC" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/box/syndie_kit/chameleon,
@@ -13036,6 +13022,11 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star)
+"Wi" = (
+/obj/item/toy/plushie/cat/siamese,
+/mob/living/carbon/superior_animal/human/voidwolf,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/dungeon/outside/safehouse)
 "Wj" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/cloth/armor/low_chance,
@@ -13393,9 +13384,10 @@
 /obj/machinery/door/airlock/highsecurity,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper)
-"XM" = (
+"XL" = (
 /obj/structure/table/onestar,
-/obj/random/junkfood/low_chance,
+/obj/item/flame/lighter/zippo/black,
+/obj/random/cigarettes,
 /turf/simulated/floor/carpet,
 /area/nadezhda/dungeon/outside/safehouse)
 "XN" = (
@@ -13481,6 +13473,9 @@
 /obj/random/junkfood,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
+"Yc" = (
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/dungeon/outside/safehouse)
 "Yd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -13936,10 +13931,9 @@
 /obj/structure/scrap/medical/large,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper)
-"ZR" = (
-/obj/structure/table/reinforced,
-/obj/random/credits/c5000,
-/turf/simulated/floor/wood/wild1,
+"ZS" = (
+/obj/random/mob/voidwolf/low_chance,
+/turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/safehouse)
 "ZT" = (
 /obj/structure/salvageable/console_os{
@@ -72285,12 +72279,12 @@ gf
 gf
 gf
 vL
-sO
-le
+zi
+Ai
 vL
 MP
 vL
-Rr
+uR
 BC
 Bd
 vL
@@ -72494,8 +72488,8 @@ gf
 gf
 gf
 vL
-Gt
-BV
+hw
+Wi
 za
 MP
 hf
@@ -72704,7 +72698,7 @@ gf
 gf
 vL
 Ap
-ZR
+QF
 vL
 MP
 vL
@@ -72915,7 +72909,7 @@ vL
 vL
 vL
 vL
-BG
+ZS
 vL
 vL
 vL
@@ -73328,11 +73322,11 @@ CC
 gf
 vL
 vy
-ci
+Ba
 vL
 TW
-EK
-XM
+XL
+vR
 MP
 zU
 Xt
@@ -73537,12 +73531,12 @@ CC
 gf
 vL
 tt
-zG
+sP
 vL
 VJ
 Qm
-VB
-nC
+vX
+yE
 zU
 Xt
 GD
@@ -73745,17 +73739,17 @@ Cp
 hA
 gf
 vL
-DL
-If
-PZ
-SQ
+yj
+Yc
+jr
+Ob
 BC
 BC
 MP
 zU
 Xt
 GD
-vD
+Mu
 vL
 fF
 "}
@@ -74163,14 +74157,14 @@ hA
 hA
 gf
 vL
-HI
+NH
 GD
 SB
 MP
 MP
-BG
+ZS
 TT
-MQ
+ML
 GD
 GD
 Xy
@@ -74379,7 +74373,7 @@ Mk
 Lv
 MP
 TT
-NH
+Oe
 Ar
 GD
 Xy
@@ -75004,7 +74998,7 @@ IU
 IU
 IU
 IU
-Mq
+zM
 IU
 IU
 IU
@@ -75217,7 +75211,7 @@ vJ
 zL
 DB
 IU
-WA
+IA
 GD
 vL
 fF
@@ -75426,7 +75420,7 @@ zL
 vJ
 Et
 IU
-WA
+GD
 TF
 vL
 fF
@@ -75636,7 +75630,7 @@ gf
 gf
 vL
 WA
-GD
+WA
 vL
 fF
 "}
@@ -75839,7 +75833,7 @@ hA
 hA
 hA
 hA
-Ao
+Tl
 gf
 gf
 fE
@@ -76884,7 +76878,7 @@ hW
 hW
 BL
 CC
-Pt
+SC
 gf
 fE
 fE
@@ -77092,7 +77086,7 @@ hW
 hW
 hW
 hW
-yF
+DN
 vJ
 gf
 fE
