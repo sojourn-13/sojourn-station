@@ -877,6 +877,8 @@
 	use_fuel_cost = initial(use_fuel_cost)
 	use_power_cost = initial(use_power_cost)
 	force = initial(force)
+	armor_penetration = initial(armor_penetration)
+	damtype = initial(damtype)
 	force_upgrade_mults = initial(force_upgrade_mults)
 	force_upgrade_mods = initial(force_upgrade_mods)
 
@@ -905,6 +907,10 @@
 	//Set the fuel volume, incase any mods altered our max fuel
 	if(reagents)
 		reagents.maximum_volume = max_fuel
+
+	if(alt_mode_active)
+		alt_mode_activeate_two()
+
 	SSnano.update_uis(src)
 
 /obj/item/tool/examine(mob/user)

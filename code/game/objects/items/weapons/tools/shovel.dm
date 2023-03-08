@@ -20,6 +20,14 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	price_tag = 15
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "moves their stance to no use the blade of their weapon"
+	alt_mode_lossrate = 0.9
+
+
 /obj/item/tool/shovel/improvised
 	name = "junk shovel"
 	desc = "A large but fragile tool for moving dirt and rock, made by hand. Has more than enough space for tool mods to make it better."

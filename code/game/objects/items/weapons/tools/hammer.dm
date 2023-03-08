@@ -16,6 +16,14 @@
 	damage_mult = 2
 	hitsound = 'sound/weapons/smash.ogg'
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "losses their grip on the handle of their weapon"
+	alt_mode_lossrate = 0.4
+
+
 /obj/item/tool/hammer/deadblow
 	name = "deadblow hammer"
 	desc = "Used for applying blunt force to a surface. This one has sand inside its plasteel head to help do strikes much more constantly in the same place with the same force well reducing trama onto soft surfaces."

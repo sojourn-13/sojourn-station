@@ -111,6 +111,14 @@
 	//Used for stashes
 	var/start_hidden = FALSE
 
+	var/has_alt_mode = FALSE
+	var/alt_mode_damagetype = HALLOSS
+	var/alt_mode_verbs = list("wack", "bash", "thump")
+	var/alt_mode_active = FALSE
+	var/alt_mode_toggle = ""
+	var/alt_mode_lossrate = 0.5
+	var/alt_mode_sharp = FALSE
+
 /obj/item/Initialize()
 
 	for (var/upgrade_typepath in initialized_upgrades)
@@ -123,6 +131,11 @@
 		armor = getArmor(arglist(armor_list))
 	else
 		armor = getArmor()
+
+
+	if(has_alt_mode)
+		verbs.Add(/obj/item/proc/verb_alt_mode_activeate)
+
 	. = ..()
 
 /obj/item/Destroy()
@@ -591,7 +604,9 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	return (..() + extra_bulk)
 
 /obj/item/proc/refresh_upgrades()
+	damtype = initial(damtype)
 	force = initial(force)
+	armor_penetration = initial(armor_penetration)
 	item_flags = initial(item_flags)
 	name = initial(name)
 	max_upgrades = initial(max_upgrades)
@@ -601,6 +616,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	prefixes = list()
 
 	extra_bulk = initial(extra_bulk)
+	flags = initial(flags)
 
 	//Now lets have each upgrade reapply its modifications
 	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
@@ -609,8 +625,36 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		name = "[prefix] [name]"
 	SSnano.update_uis(src)
 
+	if(alt_mode_active)
+		alt_mode_activeate_two()
+
 	return
 
 
 /obj/item/device
 	icon = 'icons/obj/device.dmi'
+
+//Soj cringe
+
+/obj/item/proc/verb_alt_mode_activeate()
+	set name = "Weapon: Toggle Alt Mode"
+	set category = "Object"
+	set src in usr
+
+	alt_mode_activeate_one(usr)
+
+/obj/item/proc/alt_mode_activeate_one(mob/user as mob)
+	alt_mode_active = !alt_mode_active
+	refresh_upgrades()
+	if(alt_mode_active)
+		visible_message(SPAN_DANGER("[user] [alt_mode_toggle]."))
+	else
+		visible_message(SPAN_DANGER("[user] beings to use their weapon in a more standerd way."))
+
+/obj/item/proc/alt_mode_activeate_two()
+	damtype = alt_mode_damagetype
+	force = force *= alt_mode_lossrate
+	armor_penetration = armor_penetration *= alt_mode_lossrate
+	attack_verb = alt_mode_verbs
+	sharp = alt_mode_sharp
+	flags |= NOBLOODY

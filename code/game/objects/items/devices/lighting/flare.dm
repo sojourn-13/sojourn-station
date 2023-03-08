@@ -36,7 +36,7 @@
 	. = ..()
 	if(.)
 		force = on_damage
-		damtype = "fire"
+		damtype = BURN
 
 /obj/item/device/lighting/glowstick/flare/update_icon()
 	cut_overlays()
