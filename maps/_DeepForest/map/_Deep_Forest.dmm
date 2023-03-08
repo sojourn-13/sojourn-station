@@ -2028,6 +2028,11 @@
 "hi" = (
 /turf/unsimulated/mineral,
 /area/asteroid/rogue)
+"hk" = (
+/obj/structure/barricade,
+/obj/structure/grille,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "hl" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/burned,
@@ -11745,6 +11750,12 @@
 /obj/structure/bed/chair/custom/onestar/red,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
+"RW" = (
+/obj/structure/flora/big/bush1,
+/obj/structure/barricade,
+/obj/structure/grille,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "RX" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
@@ -13264,8 +13275,8 @@
 	dir = 8
 	},
 /obj/structure/railing{
-	tag = "icon-railing0 (WEST)";
-	dir = 4
+	dir = 4;
+	tag = "icon-railing0 (WEST)"
 	},
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/colony/exposedsun/crashed_shop/outsider)
@@ -76939,8 +76950,8 @@ hW
 hW
 BJ
 hW
-Cp
-hA
+RW
+hk
 gf
 fE
 fE
