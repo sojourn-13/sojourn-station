@@ -79,7 +79,7 @@
 		</div>
 		<div class="item" style="display: table-cell; vertical-align: top; width: auto">
 			<div class="display">
-				<header><h3>Diagnostics</h3></header>
+				<header><h3>Diagnostics</h3></header> 
 				<article>
 					{{if data.diagnosed}}
 						<section>
@@ -106,7 +106,7 @@
 							</div>
 						</section>
 					{{else}}
-						<section>{{:helper.link('Diagnose', null, {'command' : 'diagnose'})}}</section>
+						<section>{{:helper.link('Diagnose', null, {'command' : 'diagnose'})}}</section> 
 					{{/if}}
 				</article>
 			</div>
@@ -140,7 +140,7 @@
 						<div class="content">{{:helper.link(condition.fix_name, null, {'command' : 'step', 'step' : condition.step, 'organ' : condition.organ})}}</div>
 					</section>
 					{{/for}}
-					</article>
+				</article>
 			</div>
 			{{/if}}
 		</div>

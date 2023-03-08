@@ -551,9 +551,9 @@ This function completely restores a damaged organ to perfect condition.
 	total_internal_health = 0
 	internal_wound_hal_dam = 0
 
-	SEND_SIGNAL(src, COMSIG_IORGAN_REFRESH_PARENT)
-	SEND_SIGNAL(src, COMSIG_IORGAN_APPLY)
-	SEND_SIGNAL(src, COMSIG_IORGAN_WOUND_COUNT)
+	LEGACY_SEND_SIGNAL(src, COMSIG_IORGAN_REFRESH_PARENT)
+	LEGACY_SEND_SIGNAL(src, COMSIG_IORGAN_APPLY)
+	LEGACY_SEND_SIGNAL(src, COMSIG_IORGAN_WOUND_COUNT)
 
 	// External wound handling
 	if(BP_IS_ROBOTIC(src)) //Robotic limbs don't heal or get worse.
@@ -762,15 +762,28 @@ This function completely restores a damaged organ to perfect condition.
 		bone.fracture()
 
 /obj/item/organ/external/proc/mend_fracture()
-	for(var/obj/item/organ/internal/bone in owner.internal_organs_by_efficiency[OP_BONE])
-		bone.mend()
+	var/list/list_of_bones = list()
+	if(owner)
+		list_of_bones = owner.internal_organs_by_efficiency[OP_BONE] & internal_organs
+	else
+		list_of_bones = internal_organs
+	for(var/obj/item/organ/internal/bone in list_of_bones)
+		if(bone.organ_efficiency[OP_BONE])
+			bone.mend()
 	return TRUE
 
 /obj/item/organ/external/proc/get_bone()
-	var/list/list_of_bones = owner.internal_organs_by_efficiency[OP_BONE] & internal_organs
+	var/list/list_of_bones = list()
+	if(owner)
+		list_of_bones = owner.internal_organs_by_efficiency[OP_BONE] & internal_organs
+	else
+		list_of_bones = internal_organs
 	if(LAZYLEN(list_of_bones))
-		var/obj/item/organ/internal/bone = pick(list_of_bones)
-		return bone
+		list_of_bones = shuffle(list_of_bones)
+		for(var/obj/item/organ/internal/bone in list_of_bones)
+			if(bone.organ_efficiency[OP_BONE])
+				return bone
+	return FALSE
 
 /obj/item/organ/external/proc/mutate()
 	if(BP_IS_ROBOTIC(src) || !LAZYLEN(internal_organs))

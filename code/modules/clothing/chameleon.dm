@@ -166,7 +166,6 @@ GLOBAL_LIST_INIT(chameleon_key_to_path, list(
 	update_icon()
 	update_wear_icon()
 
-
 /obj/item/clothing/under/chameleon/proc/set_loadout_slot(slot, loadout)
 	var/options = generate_chameleon_choices(GLOB.chameleon_key_to_path[slot])
 	var/obj/item/I = input("Available options", "Set appearance") in options

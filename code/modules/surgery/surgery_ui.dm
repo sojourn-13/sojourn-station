@@ -136,11 +136,11 @@
 
 				actions_list.Add(list(remove_action))
 
-				implant_data["actions"] = actions_list
+			implant_data["actions"] = actions_list
 
-				contents_list.Add(list(implant_data))
+			contents_list.Add(list(implant_data))
 
-			data["contents"] = contents_list
+		data["contents"] = contents_list
 
 	return data
 
@@ -229,7 +229,7 @@
 
 			var/datum/wound = locate(href_list["wound"])
 			if(wound)
-				SEND_SIGNAL(wound, COMSIG_ATTACKBY, I, user)
+				LEGACY_SEND_SIGNAL(wound, COMSIG_ATTACKBY, I, user)
 			return TRUE
 
 		if("view")
