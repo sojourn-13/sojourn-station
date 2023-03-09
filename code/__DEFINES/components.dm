@@ -4,6 +4,9 @@
 /// Arguments given here are packaged in a list and given to _SendSignal
 #define SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(target, ##arguments)) )
 
+//Simular to the above but this one is done by eris
+#define ERIS_SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(##arguments)) )
+
 /// Depreciated. Use SEND_SIGNAL instead. This only exists for compatability.
 #define LEGACY_SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(##arguments)) )
 
@@ -157,6 +160,22 @@
 
 //obj/item/gun signals
 #define COMSIG_GUN_POST_FIRE "gun_post_fire"	//from base of /obj/item/gun/proc/handle_post_fire(): (atom/target, pointblank, reflex)
+
+// Internal organ signals
+#define COMSIG_IORGAN_REFRESH_SELF "internal_organ_self_refresh"
+#define COMSIG_IORGAN_REFRESH_PARENT "internal_organ_parent_refresh"
+#define COMSIG_IORGAN_APPLY "internal_organ_apply_modifiers"
+#define COMSIG_IORGAN_ADD_WOUND "add_internal_wound"
+#define COMSIG_IORGAN_REMOVE_WOUND "remove_internal_wound"
+#define COMSIG_IORGAN_WOUND_COUNT "count_internal_wounds"
+
+// Internal wound signals
+#define COMSIG_IWOUND_EFFECTS "internal_wound_effects"
+#define COMSIG_IWOUND_LIMB_EFFECTS "internal_wound_limb_effects"
+#define COMSIG_IWOUND_FLAGS_ADD "internal_wound_flags_add"
+#define COMSIG_IWOUND_FLAGS_REMOVE "internal_wound_flags_remove"
+#define COMSIG_IWOUND_DAMAGE "internal_wound_damage"
+#define COMSIG_IWOUND_TREAT "internal_wound_autodoc"
 
 // ABERRANT signals
 #define COMSIG_ABERRANT_INPUT "aberrant_input"

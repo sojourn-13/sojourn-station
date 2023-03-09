@@ -35,7 +35,7 @@
 #define DAM_BIO       64 // Toxin damage that should be mitigated by biological (i.e. sterile) armor
 
 #define FIRE_DAMAGE_MODIFIER 0.0215 // Higher values result in more external fire damage to the skin. (default 0.0215)
-#define  AIR_DAMAGE_MODIFIER 2.025  // More means less damage from hot air scalding lungs, less = more damage. (default 2.025)
+#define	AIR_DAMAGE_MODIFIER 2.025  // More means less damage from hot air scalding lungs, less = more damage. (default 2.025)
 
 // Organ defines.
 #define ORGAN_CUT_AWAY		BITFLAG(0)  // The organ is in the process of being surgically removed.
@@ -49,6 +49,8 @@
 #define ORGAN_SABOTAGED		BITFLAG(8)  // The organ will explode if exposed to EMP, if prosthetic.
 #define ORGAN_BRITTLE		BITFLAG(9)  // The organ takes additional blunt damage. If robotic, cannot be repaired through normal means.
 #define ORGAN_DISLOCATED	BITFLAG(10) //The organ is dislocated and will cause pain until set back in place.
+#define ORGAN_INFECTED		BITFLAG(11)
+#define ORGAN_WOUNDED		BITFLAG(12)
 
 // Organ Properties
 #define ORGAN_PROP_PROSTHETIC	BITFLAG(0) // The organ is prosthetic. Changes numerous behaviors, search BP_IS_PROSTHETIC for checks.
@@ -86,14 +88,6 @@
 // Damage above this value must be repaired with surgery.
 #define ROBOLIMB_SELF_REPAIR_CAP 30
 
-//Germs and infections.
-#define GERM_LEVEL_AMBIENT  275 // Maximum germ level you can reach by standing still.
-#define GERM_LEVEL_MOVE_CAP 300 // Maximum germ level you can reach by running around.
-
-#define INFECTION_LEVEL_ONE   250
-#define INFECTION_LEVEL_TWO   500  // infections grow from ambient to two in ~5 minutes
-#define INFECTION_LEVEL_THREE 1000 // infections grow from two to three in ~10 minutes
-
 //Blood levels. These are percentages based on the species blood_volume
 #define BLOOD_VOLUME_SAFE_MODIFIER    45
 #define BLOOD_VOLUME_OKAY_MODIFIER    35
@@ -125,6 +119,42 @@
 #define BODYPART_GAS_INTAKE			(1<<3)
 
 #define ORGAN_RECOVERY_THRESHOLD (5 MINUTES)
+
+#define DROPLIMB_EDGE 0
+#define DROPLIMB_BLUNT 1
+#define DROPLIMB_BURN 2
+#define DROPLIMB_EDGE_BURN 3
+
+// INTERNAL ORGANS
+#define IORGAN_STANDARD_HEALTH 12
+#define IORGAN_SMALL_HEALTH 8
+#define IORGAN_SKELETAL_HEALTH 14
+#define IORGAN_MAX_HEALTH 14
+
+#define IORGAN_KIDNEY_TOX_RATIO 0.25
+#define IORGAN_LIVER_TOX_RATIO 0.75
+
+// INTERNAL WOUNDS
+#define TREATMENT_ITEM 1
+#define TREATMENT_TOOL 2
+#define TREATMENT_CHEM 3
+
+#define IWOUND_CAN_DAMAGE		(1<<0)
+#define IWOUND_PROGRESS			(1<<1)
+#define IWOUND_PROGRESS_DEATH	(1<<2)
+#define IWOUND_SPREAD			(1<<3)
+#define IWOUND_HALLUCINATE		(1<<4)
+
+#define IWOUND_INSIGNIFICANT_DAMAGE 0.05
+#define IWOUND_LIGHT_DAMAGE 0.1
+#define IWOUND_MEDIUM_DAMAGE 0.25
+#define IWOUND_HEAVY_DAMAGE 0.5
+
+#define IWOUND_1_MINUTE	30
+#define IWOUND_2_MINUTES 60
+#define IWOUND_3_MINUTES 90
+#define IWOUND_4_MINUTES 120
+#define IWOUND_5_MINUTES 150
 
 // Organ generation
 #define ORGAN_HAS_BONES			(1<<0)

@@ -111,6 +111,8 @@
 	//Used for stashes
 	var/start_hidden = FALSE
 
+	var/chameleon_type
+
 	var/has_alt_mode = FALSE
 	var/alt_mode_damagetype = HALLOSS
 	var/alt_mode_verbs = list("wack", "bash", "thump")
@@ -132,6 +134,8 @@
 	else
 		armor = getArmor()
 
+	if(chameleon_type)
+		verbs.Add(/obj/item/proc/set_chameleon_appearance)
 
 	if(has_alt_mode)
 		verbs.Add(/obj/item/proc/verb_alt_mode_activeate)
@@ -161,17 +165,26 @@
 
 /obj/item/ex_act(severity)
 	switch(severity)
-		if(1.0)
+		if(1)
 			qdel(src)
 			return
-		if(2.0)
+		if(2)
 			if(prob(50))
 				qdel(src)
 				return
-		if(3.0)
+		if(3)
 			if(prob(5))
 				qdel(src)
 				return
+
+/obj/item/emp_act(severity)
+	if(chameleon_type)
+		name = initial(name)
+		desc = initial(desc)
+		icon = initial(icon)
+		icon_state = initial(icon_state)
+		update_icon()
+		update_wear_icon()
 
 /obj/item/verb/move_to_top()
 	set name = "Move To Top"

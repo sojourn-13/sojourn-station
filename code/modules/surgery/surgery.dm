@@ -14,7 +14,7 @@
 	var/duration = 60
 	var/requires_perk = FALSE
 
-	// Can the step transfer germs?
+	// Can the step cause infection?
 	var/can_infect = FALSE
 	// How much blood this step can get on surgeon. 1 - hands, 2 - full body.
 	var/blood_level = 0
@@ -67,7 +67,7 @@
 	return
 
 // Stuff that happens both when the step succeeds and when it fails
-// Germ transfer and bloodying are handled here.
+// Infections and bloodying are handled here.
 /datum/surgery_step/proc/after_attempted_step(mob/living/user, obj/item/organ/organ, obj/item/tool, target)
 	if(blood_level && !BP_IS_ROBOTIC(organ) && organ.owner && ishuman(user) && prob(60))
 		var/mob/living/carbon/human/H = user
@@ -75,8 +75,12 @@
 		if (blood_level > 1)
 			H.bloody_body(organ.owner, 0)
 
-	if(can_infect)
-		organ.spread_germs_from(user)
+
+	/* We don't use this right now.
+	if(can_infect && prob(5) && istype(organ, /obj/item/organ/internal))
+		var/obj/item/organ/internal/I = organ
+		I.add_wound(pick(subtypesof(/datum/component/internal_wound/organic/infection)))
+	*/
 
 	if(inflict_agony)
 		var/strength = inflict_agony
