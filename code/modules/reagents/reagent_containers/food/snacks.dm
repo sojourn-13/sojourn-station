@@ -174,76 +174,76 @@
 /obj/item/reagent_containers/food/snacks/attack_self(mob/user as mob)
 	return
 
-/obj/item/reagent_containers/food/snacks/attack(mob/M as mob, mob/user as mob, def_zone)
+/obj/item/reagent_containers/food/snacks/attack(mob/mob as mob, mob/user as mob, def_zone)
 	if(!reagents.total_volume)
 		to_chat(user, SPAN_DANGER("None of [src] left!"))
 		user.drop_from_inventory(src)
 		qdel(src)
 		return 0
 
-	if(iscarbon(M))
+	if(iscarbon(mob))
 		//TODO: replace with standard_feed_mob() call.
-		var/mob/living/carbon/C = M
-		var/mob/living/carbon/human/H = M
+		var/mob/living/carbon/carbon = mob
+		var/mob/living/carbon/human/human = mob
 		var/fullness_modifier = 1
-		if(istype(H))
-			fullness_modifier = 100 / H.get_organ_efficiency(OP_STOMACH)
-		var/fullness = (C.nutrition + (C.reagents.get_reagent_amount("nutriment") * 25)) * fullness_modifier
-		if(C == user)								//If you're eating it yourself
-			if(istype(H))
-				if(!H.check_has_mouth())
-					to_chat(user, "Where do you intend to put \the [src]? You don't have a mouth!")
+		if(istype(human))
+			fullness_modifier = 100 / human.get_organ_efficiency(OP_STOMACH)
+		var/fullness = (carbon.nutrition + (carbon.reagents.get_reagent_amount("nutriment") * 25)) * fullness_modifier
+		if(carbon == user)								//If you're eating it yourself
+			if(istype(human))
+				if(!human.check_has_mouth())
+					to_chat(user, "You cannot eat \the [src] without a mouth.")
 					return
-				var/obj/item/blocked = H.check_mouth_coverage()
+				var/obj/item/blocked = human.check_mouth_coverage()
 				if(blocked)
 					to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
 					return
 
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //puts a limit on how fast people can eat/drink things
 			if (fullness <= 50)
-				to_chat(C, SPAN_DANGER("You hungrily chew out a piece of [src] and gobble it!"))
+				to_chat(carbon, SPAN_DANGER("You hungrily devour a piece of [src]."))
 			if (fullness > 50 && fullness <= 150)
-				to_chat(C, SPAN_NOTICE("You hungrily begin to eat [src]."))
+				to_chat(carbon, SPAN_NOTICE("You hungrily begin to eat [src]."))
 			if (fullness > 150 && fullness <= 350)
-				to_chat(C, SPAN_NOTICE("You take a bite of [src]."))
+				to_chat(carbon, SPAN_NOTICE("You take a bite of [src]."))
 			if (fullness > 350 && fullness <= 550)
-				to_chat(C, SPAN_NOTICE("You unwillingly chew a bit of [src]."))
+				to_chat(carbon, SPAN_NOTICE("You unwillingly chew a bit of [src]."))
 			if (fullness > 550)
-				to_chat(C, SPAN_DANGER("You cannot force any more of [src] to go down your throat."))
+				to_chat(carbon, SPAN_DANGER("You cannot force any more of [src] to go down your throat."))
 				return 0
 		else
-			if(!M.can_force_feed(user, src))
+			if(!mob.can_force_feed(user, src))
 				return
 
 			if (fullness <= 550)
-				user.visible_message(SPAN_DANGER("[user] attempts to feed [M] [src]."))
+				user.visible_message(SPAN_DANGER("[user] attempts to feed [mob] [src]."))
 			else
-				user.visible_message(SPAN_DANGER("[user] cannot force anymore of [src] down [M]'s throat."))
+				user.visible_message(SPAN_DANGER("[user] cannot force anymore of [src] down [mob]'s throat."))
 				return 0
 
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-			if(!do_mob(user, M)) return
+			if(!do_mob(user, mob)) return
 
-			M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been fed [src.name] by [user.name] ([user.ckey]) Reagents: [reagents.log_list()]</font>")
-			user.attack_log += text("\[[time_stamp()]\] <font color='red'>Fed [src.name] by [M.name] ([M.ckey]) Reagents: [reagents.log_list()]</font>")
-			msg_admin_attack("[key_name(user)] fed [key_name(M)] with [src.name] Reagents: [reagents.log_list()] (INTENT: [uppertext(user.a_intent)])")
+			mob.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been fed [src.name] by [user.name] ([user.ckey]) Reagents: [reagents.log_list()]</font>")
+			user.attack_log += text("\[[time_stamp()]\] <font color='red'>Fed [src.name] by [mob.name] ([mob.ckey]) Reagents: [reagents.log_list()]</font>")
+			msg_admin_attack("[key_name(user)] fed [key_name(mob)] with [src.name] Reagents: [reagents.log_list()] (INTENT: [uppertext(user.a_intent)])")
 
-			user.visible_message(SPAN_DANGER("[user] feeds [M] [src]."))
+			user.visible_message(SPAN_DANGER("[user] feeds [mob] [src]."))
 
 		if(reagents)			//Handle ingestion of the reagent.
-			playsound(M.loc,pick(M.eat_sounds), rand(10,50), 1)
+			playsound(mob.loc,pick(mob.eat_sounds), rand(10,50), 1)
 			if(reagents.total_volume)
 				var/amount_eaten = min(reagents.total_volume, bitesize)
-				reagents.trans_to_mob(M, amount_eaten, CHEM_INGEST)
-				var/list/sanity_vars = get_sanity_gain(M)
-				if(istype(H))
-					H.sanity.onEat(src, sanity_vars[1], sanity_vars[2], amount_eaten)
+				var/list/sanity_vars = get_sanity_gain(mob)
+				reagents.trans_to_mob(mob, amount_eaten, CHEM_INGEST)
+				if(istype(human))
+					human.sanity.onEat(src, sanity_vars[1], sanity_vars[2])
 				bitecount++
-				On_Consume(M, user)
+				On_Consume(mob, user)
 			return 1
 
-	else if (isanimal(M))
-		var/mob/living/simple_animal/SA = M
+	else if (isanimal(mob))
+		var/mob/living/simple_animal/SA = mob
 		SA.scan_interval = SA.min_scan_interval//Feeding an animal will make it suddenly care about food
 
 		var/m_bitesize = bitesize * SA.bite_factor//Modified bitesize based on creature size
@@ -252,6 +252,9 @@
 		if(reagents && SA.reagents)
 			m_bitesize = min(m_bitesize, reagents.total_volume)
 			//If the creature can't even stomach half a bite, then it eats nothing
+			//if (!SA.eat_from_hand)
+			//	to_chat(user, SPAN_WARNING("[mob] doesn't accept hand-feeding."))
+			//	return 0
 			if (!SA.can_eat() || ((user.reagents.maximum_volume - user.reagents.total_volume) < m_bitesize * 0.5))
 				amount_eaten = 0
 			else
@@ -260,18 +263,18 @@
 			return 0//The target creature can't eat
 
 		if (amount_eaten)
-			playsound(M.loc,pick(M.eat_sounds), rand(10,30), 1)
+			playsound(mob.loc,pick(mob.eat_sounds), rand(10,30), 1)
 			bitecount++
 			if (amount_eaten >= m_bitesize)
-				user.visible_message(SPAN_NOTICE("[user] feeds [src] to [M]."))
+				user.visible_message(SPAN_NOTICE("[user] feeds [src] to [mob]."))
 			else
-				user.visible_message(SPAN_NOTICE("[user] feeds [M] a tiny bit of [src]. <b>It looks full.</b>"))
-				if (!istype(M.loc, /turf))
-					to_chat(M, SPAN_NOTICE("[user] feeds you a tiny bit of [src]. <b>You feel pretty full!</b>"))
-			On_Consume(M, user)
+				user.visible_message(SPAN_NOTICE("[user] feeds [mob] a tiny bit of [src]. <b>It looks full.</b>"))
+				if (!istype(mob.loc, /turf))
+					to_chat(mob, SPAN_NOTICE("[user] feeds you a tiny bit of [src]. <b>You feel pretty full!</b>"))
+			On_Consume(mob, user)
 			return 1
 		else
-			to_chat(user, SPAN_WARNING("[M.name] can't stomach anymore food!"))
+			to_chat(user, SPAN_WARNING("[mob.name] can't stomach anymore food!"))
 
 	return 0
 
