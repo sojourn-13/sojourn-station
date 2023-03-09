@@ -44,7 +44,6 @@
 	holder.owner.adjustCloneLoss(-10)
 	holder.owner.adjustFireLoss(-25)
 	holder.owner.adjustOxyLoss(-45)
-	holder.owner.adjustToxLoss(-25)
 	holder.owner.reagents.add_reagent("tramadol", 5) // the way this works is silly as all fuck and should probably be fixed at some point
 	..()
 
