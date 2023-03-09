@@ -15,8 +15,9 @@
 		heart_process()
 	if(should_have_process(OP_LUNGS))
 		lung_process()
-	if(is_carrion(src))
-		carrion_process()
+	if(should_have_process(OP_STOMACH))
+		stomach_process()
+	carrion_process()
 
 /mob/living/carbon/human/proc/get_organ_efficiency(process_define)
 	var/list/process_list = internal_organs_by_efficiency[process_define]
@@ -26,7 +27,7 @@
 			var/obj/item/organ/internal/I = organ
 			effective_efficiency += I.get_process_efficiency(process_define)
 
-	return effective_efficiency
+	return effective_efficiency ? effective_efficiency : 1
 
 /mob/living/carbon/human/get_specific_organ_efficiency(process_define, parent_organ_tag)
 	var/effective_efficiency = 0
@@ -41,7 +42,7 @@
 			if(process_define in I.organ_efficiency)
 				effective_efficiency += I.get_process_efficiency(process_define)
 
-	return effective_efficiency
+	return effective_efficiency ? effective_efficiency : 1
 
 /mob/living/carbon/human/proc/eye_process()
 	var/eye_efficiency = get_organ_efficiency(OP_EYES)
@@ -61,11 +62,14 @@
 	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
 	var/toxin_damage = (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (kidneys_efficiency / 100) - kidney.damage
 
+	// Organ functions
+	// Blood regeneration if there is some space
+	regenerate_blood(0.2 + 2 * chem_effects[CE_BLOODRESTORE] * (kidneys_efficiency / 100))
+
 	// Bad stuff
 	if(kidneys_efficiency < BROKEN_2_EFFICIENCY)
 		if(toxin_strength > 0)
 			apply_damage(toxin_strength, TOX)	// If your kidneys aren't working, your body will start to take damage
-
 
 	if(toxin_damage > 0 && kidney)
 		kidney.take_damage(toxin_damage, TOX)
@@ -78,16 +82,16 @@
 
 	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
 	var/toxin_damage = (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (liver_efficiency / 100) - liver.damage
-	// Organ functions
-	// Blood regeneration if there is some space
-	regenerate_blood(0.1 + chem_effects[CE_BLOODRESTORE])
 
+	// Organ functions
 
 	// Bad stuff
 	// If you're not filtering well, you're in trouble. Ammonia buildup to toxic levels and damage from alcohol
 	if(liver_efficiency < BROKEN_2_EFFICIENCY)
 		if(alcohol_strength)
 			toxin_damage += 0.5 * max(2 - (liver_efficiency * 0.01), 0) * alcohol_strength
+		if(toxin_strength > 0)
+			apply_damage(toxin_strength, TOX)	// If your liver isn't working, your body will start to take damage
 
 	if(toxin_damage > 0 && liver)
 		liver.take_damage(toxin_damage, TOX)
@@ -157,28 +161,22 @@
 		adjustOxyLoss(20)
 		if(prob(15))
 			to_chat(src, SPAN_WARNING("You feel extremely [pick("dizzy","woosey","faint")]"))
-
 	else if(blood_volume < blood_bad)
 		eye_blurry = max(eye_blurry,6)
 		adjustOxyLoss(6)
 		if(prob(15))
 			to_chat(src, SPAN_WARNING("You feel very [pick("dizzy","woosey","faint")]"))
-
 	else if(blood_volume < blood_okay)
 		eye_blurry = max(eye_blurry,6)
 		adjustOxyLoss(4)
 		if(prob(15))
-			Paralyse(rand(1,3))
+			Weaken(rand(1,3))
 			to_chat(src, SPAN_WARNING("You feel very [pick("dizzy","woosey","faint")]"))
-
 	else if(blood_volume < blood_safe)
 		if(prob(1))
 			to_chat(src, SPAN_WARNING("You feel [pick("dizzy","woosey","faint")]"))
 		if(getOxyLoss() < 10)
 			adjustOxyLoss(2)
-
-	//Blood regeneration if there is *any* space
-	regenerate_blood(0.1 + chem_effects[CE_BLOODRESTORE])		// regenerate blood VERY slowly
 
 	// Blood loss or heart damage make you lose nutriments
 	if(blood_volume < blood_safe || heart_efficiency < BRUISED_2_EFFICIENCY)
@@ -202,18 +200,39 @@
 			for(i = 1; i <= 5; i++)	//gasps 5 times
 				spawn(i)
 					emote("gasp")
+
 		if(prob(2))
 			spawn emote("me", 1, "coughs up blood!")
 			drip_blood(10)
+
 		if(prob(4))
 			spawn emote("me", 1, "gasps for air!")
 			losebreath += 15
+
 		if(prob(15))
 			var/heavy_spot = pick("chest", "skin", "brain")
 			to_chat(src, SPAN_WARNING("Your [heavy_spot] feels too heavy for your body"))
 
-	if(internal_oxygen < (total_oxygen_req / 10))
-		adjustOxyLoss(6)
+	if(lung_efficiency < BROKEN_2_EFFICIENCY)
+		adjustOxyLoss(2)
+
+/mob/living/carbon/human/proc/stomach_process()
+	var/stomach_efficiency = get_organ_efficiency(OP_STOMACH)
+	max_nutrition = MOB_BASE_MAX_HUNGER * (stomach_efficiency / 100)
+	if(nutrition > 0 && stat != 2)
+		if(stomach_efficiency <= 0)
+			nutrition = 0
+		else
+			adjustNutrition(-(total_nutriment_req * (stomach_efficiency/100)))
+
+/* We dont have vore
+	if(stomach_efficiency <= 1)
+		for(var/mob/living/M in stomach_contents)
+			M.loc = loc
+			stomach_contents.Remove(M)
+			continue
+		ingested.trans_to_turf(get_turf(src))
+*/
 
 /mob/living/carbon/human/var/carrion_stored_chemicals = 0
 /mob/living/carbon/human/var/carrion_hunger = 0
@@ -224,7 +243,7 @@
 	if(vessel_efficiency)
 		carrion_stored_chemicals = min(carrion_stored_chemicals + (0.01 * vessel_efficiency), 0.5 * vessel_efficiency)
 
-	if(maw_efficiency && (world.time > (carrion_last_hunger + 2 MINUTES)))
+	if((maw_efficiency > 1 )&& (world.time > (carrion_last_hunger + 2 MINUTES)))
 		var/max_hunger = round(10 * (maw_efficiency / 100))
 		if(carrion_hunger < max_hunger)
 			carrion_hunger = min(carrion_hunger + (round(1* (maw_efficiency / 100))), max_hunger)
