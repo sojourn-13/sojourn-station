@@ -97,6 +97,12 @@
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 30
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_verbs = list("bashes", "beats", "clobbers")
+	alt_mode_sharp = FALSE
+	alt_mode_toggle = "flips the axe to its bord side"
+
 /obj/item/tool/fireaxe/militia_tomahawk
 	name = "blackshield tactical tomahawk"
 	desc = "For cutting, sawing, prying, and throwing at targets mid back-flip."
@@ -126,6 +132,11 @@
 	embed_mult = 1.1
 	degradation = 1.5
 	max_upgrades = 5
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_verbs = list("bashes", "beats", "clobbers")
+	alt_mode_sharp = FALSE
+	alt_mode_toggle = "flips the axe to its bord side"
 
 /obj/item/tool/minihoe
 	name = "mini hoe"
@@ -162,6 +173,12 @@
 		slot_back_str = "scythe0_back"
 		)
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_verbs = list("jabs", "prods", "wacks")
+	alt_mode_sharp = FALSE
+	alt_mode_toggle = "flips the scythe backwards to use as a blunt spear"
+	alt_mode_lossrate = 0.3
 
 //Flails
 /obj/item/tool/chainofcommand
@@ -180,6 +197,12 @@
 	max_upgrades = 2
 	tool_qualities = list(QUALITY_HAMMERING = 5)
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_verbs = list("flogged", "whipped", "lashed", "disciplined")
+	alt_mode_toggle = "losses their hand on the grip"
+	alt_mode_lossrate = 0.7
+
 /obj/item/tool/disciplinary_action
 	name = "Disciplinary Action"
 	desc = "A long whip of steel chains used by Blackshield for when someone acts out of line."
@@ -196,6 +219,11 @@
 	max_upgrades = 3
 	tool_qualities = list(QUALITY_HAMMERING = 5)
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_verbs = list("flogged", "whipped", "lashed", "disciplined")
+	alt_mode_toggle = "losses their hand on the grip"
+	alt_mode_lossrate = 0.7
 
 //Swords
 
@@ -221,6 +249,13 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 100
+
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "hilts", "blunts")
+	alt_mode_toggle = "uses the broadside of their weapon"
+	alt_mode_lossrate = 0.3
 
 /obj/item/tool/sword/katana
 	name = "katana"
@@ -266,6 +301,8 @@
 	switched_on_forcemult = 1.2 //40
 	price_tag = 800
 
+	has_alt_mode = FALSE
+
 /obj/item/tool/sword/katana/nano/turn_on(mob/user)
 	.=..()
 	if(.)
@@ -308,6 +345,8 @@
 	heat = 2250
 	glow_color = COLOR_ORANGE
 	//Stronger when turned on. Will emit heat, turn its damage type to burn and set targets on fire.
+
+	has_alt_mode = FALSE
 
 /obj/item/tool/sword/katana/firebrand/is_hot()
 	if(switched_on)
@@ -354,6 +393,12 @@
 	item_state = "saber"
 	armor_penetration = ARMOR_PEN_SHALLOW
 	price_tag = 400
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "moves their stance to no longer stab into their targets"
+	alt_mode_lossrate = 0.6
 
 /obj/item/tool/sword/saber/cutlass
 	name = "cutlass"
@@ -361,6 +406,8 @@
 	icon_state = "cutlass"
 	item_state = "cutlass"
 	price_tag = 300
+	alt_mode_verbs = list("bashes", "stunts", "hilts", "blunts")
+	alt_mode_toggle = "uses the broadside of their weapon"
 
 /obj/item/tool/sword/saber/militiacommander
 	name = "Officer's Saber"
@@ -546,6 +593,15 @@
 		slot_back_str = "spearglass0_back"
 		)
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "moves their stance to no longer stab into their targets"
+	alt_mode_lossrate = 0.4
+
+
+
 /obj/item/tool/spear/steel
 	name = "steel spear"
 	desc = "A steel spearhead welded to a crude metal shaft, made from two welded rods. It'll serve well enough."
@@ -636,6 +692,13 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 100
+
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "moves their stance to no use the blade of their weapon"
+	alt_mode_lossrate = 0.9 //Little loss so people can use these in real gimmics
 
 /obj/item/tool/cheap/axe
 	name = "cheap tomahawk"

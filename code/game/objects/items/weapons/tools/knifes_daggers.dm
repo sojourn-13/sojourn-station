@@ -23,6 +23,13 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	var/backstab_damage = 10
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "moves their stance to no use the blade of their weapon"
+	alt_mode_lossrate = 0.7
+
 /obj/item/tool/knife/resolve_attackby(atom/target, mob/user)
 	. = ..()
 	if(!(iscarbon(target) || isanimal(target)))
@@ -32,6 +39,8 @@
 	if(target.stat == DEAD)
 		return
 	if(user.dir != target.dir)
+		return
+	if(alt_mode_active)
 		return
 	var/mob/living/carbon/M = target
 	M.apply_damages(backstab_damage,0,0,0,0,0,user.targeted_organ)
