@@ -396,7 +396,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	changeLevel(-SANITY_DAMAGE_PSY(amount, owner.stats.getStat(STAT_VIG)))
 
 /datum/sanity/proc/onSeeDeath(mob/M)
-	if(ishuman(M))
+	var/mob/living/carbon/human/H
+	if(ishuman(H))
 		var/penalty = -SANITY_DAMAGE_DEATH(owner.stats.getStat(STAT_VIG))
 		if(owner.stats.getPerk(PERK_NIHILIST))
 			var/effect_prob = rand(1, 100)
