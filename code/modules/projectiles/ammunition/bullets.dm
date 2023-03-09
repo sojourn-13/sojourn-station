@@ -40,7 +40,7 @@
 	desc = "A 9mm pepper-ball projectile casing."
 	icon_state = "pistol_c_pepper"
 	spent_icon = "pistol_c_pepper-spent"
-	shell_color = "hp"
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber/pepperball
 
 /obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
@@ -115,7 +115,7 @@
 	desc = "A 10mm Magnum pepper-ball projectile casing."
 	icon_state = "magnum_c_pepper"
 	spent_icon = "magnum_c_pepper-spent"
-	shell_color = "hp"
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/pepperball
 
 /obj/item/ammo_casing/magnum_40/lethal
@@ -188,7 +188,7 @@
 	desc = "A 6.5mm pepper-ball projectile casing."
 	icon_state = "lrifle_c_pepper"
 	spent_icon = "lrifle_c_pepper-spent"
-	shell_color = "hp"
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/rubber/pepperball
 
 /obj/item/ammo_casing/light_rifle_257/scrap
@@ -412,7 +412,7 @@
 	desc = "A 12mm pepper-ball projectile casing."
 	icon_state = "lrifle_c_pepper"
 	spent_icon = "lrifle_c_pepper-spent"
-	shell_color = "hp"
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/kurtz_50/rubber/pepperball
 
 /obj/item/ammo_casing/kurtz_50/practice

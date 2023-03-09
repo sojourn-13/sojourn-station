@@ -1789,7 +1789,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_underground)
 "uA" = (
-/obj/effect/shuttle_landmark/mercshuttle_riverforest,
+/obj/effect/shuttle_landmark/vasiliy_river_forest,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
 "uC" = (

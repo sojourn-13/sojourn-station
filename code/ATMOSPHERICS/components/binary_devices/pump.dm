@@ -138,7 +138,7 @@ Thus, the two variables affect pump operation are set in New():
 	radio_connection.post_signal(src, signal, filter = RADIO_ATMOSIA)
 
 	return 1
-
+/*
 /obj/machinery/atmospherics/binary/pump/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	if(stat & (BROKEN|NOPOWER))
 		return
@@ -164,7 +164,7 @@ Thus, the two variables affect pump operation are set in New():
 		ui.set_initial_data(data)	// when the ui is first opened this is the data it will use
 		ui.open()					// open the new ui window
 		ui.set_auto_update(1)		// auto update every Master Controller tick
-
+*/
 /obj/machinery/atmospherics/binary/pump/atmos_init()
 	..()
 	if(frequency)
@@ -211,9 +211,9 @@ Thus, the two variables affect pump operation are set in New():
 		to_chat(user, SPAN_WARNING("Access denied."))
 		return
 	usr.set_machine(src)
-	nano_ui_interact(user)
+	ui_interact(user) //routed to TGUI
 	return
-
+/*
 /obj/machinery/atmospherics/binary/pump/Topic(href, href_list)
 	if(..()) return 1
 
@@ -237,7 +237,7 @@ Thus, the two variables affect pump operation are set in New():
 	src.add_fingerprint(usr)
 
 	src.update_icon()
-
+*/
 /obj/machinery/atmospherics/binary/pump/power_change()
 	var/old_stat = stat
 	..()
@@ -265,3 +265,39 @@ Thus, the two variables affect pump operation are set in New():
 		investigate_log("was unfastened by [key_name(user)]", "atmos")
 		new /obj/item/pipe(loc, make_from=src)
 		qdel(src)
+
+//tgui stuff
+/obj/machinery/atmospherics/binary/pump/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "AtmosPump", name)
+		ui.open()
+
+/obj/machinery/atmospherics/binary/pump/ui_data()
+	var/data = list()
+	data["on"] = use_power
+	data["pressure"] = round(target_pressure)
+	data["max_pressure"] = max_pressure_setting
+	return data
+
+/obj/machinery/atmospherics/binary/pump/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	switch(action)
+		if("power")
+			use_power = !use_power
+			investigate_log("was [use_power ? "disabled" : "enabled"] by a [key_name(usr)]", "atmos")
+			. = TRUE
+		if("pressure")
+			var/pressure = params["pressure"]
+			if(pressure == "max")
+				pressure = max_pressure_setting
+				. = TRUE
+			else if(text2num(pressure) != null)
+				pressure = text2num(pressure)
+				. = TRUE
+			if(.)
+				target_pressure = clamp(pressure, 0, max_pressure_setting)
+				investigate_log("had it's pressure changed to [target_pressure] by [key_name(usr)]", "atmos")
+	update_icon()

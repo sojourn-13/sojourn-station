@@ -94,7 +94,8 @@
 		maintenance = TRUE
 		break_open(TRUE)
 
-	if(prob(3))
+	var/turf/T = get_turf(src)
+	if(prob(3) && T.z == 2) //Bottom floor of maints only
 		deepmaint_entry_point = TRUE
 
 	if(deepmaint_entry_point) //so we can tell at a glace what is a deep maints borrow

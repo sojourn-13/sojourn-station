@@ -509,7 +509,7 @@
 		return
 
 	else
-		if(damtype == "brute")
+		if(damtype == BRUTE)
 			for(var/target_type in src.destroyable_obj)
 				if(istype(target, target_type) && hascall(target, "attackby"))
 					src.occupant_message("You hit [target].")

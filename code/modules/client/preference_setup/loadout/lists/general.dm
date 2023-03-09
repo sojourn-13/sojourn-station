@@ -78,3 +78,6 @@
     display_name = "photograph frame"
     path = /obj/item/toy/junk/photo_frame
 
+/datum/gear/taperecorder
+    display_name = "universal recorder"
+    path = /obj/item/device/taperecorder

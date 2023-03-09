@@ -73,7 +73,15 @@
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/pistol_35
 	max_ammo = 71
-	multiple_sprites = 1
+	multiple_sprites = FALSE //I guess?
+
+/obj/item/ammo_magazine/highcap_pistol_35/drum/update_icon()
+	..()
+	//small about of snowflake code for drums
+	if(contents.len)
+		icon_state = "[initial(icon_state)]-72"
+	else
+		icon_state = "[initial(icon_state)]"
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/rubber
 	name = "standard auto drum (rubber)"
@@ -435,7 +443,7 @@
 
 /obj/item/ammo_magazine/light_rifle_257_drum/rubber/pepperball
 	name = "carbine drum magazine (pepperball)"
-	icon_state = "lrifle_drum_r"
+	icon_state = "lrifle_drum_pep"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber/pepperball
 
 /obj/item/ammo_magazine/light_rifle_257_drum/lethal
