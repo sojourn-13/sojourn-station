@@ -11,6 +11,10 @@
 	min_bruised_damage = 4
 	min_broken_damage = 6
 
+/// Bones can be repaired after being destroyed. It's not ideal to have this here instead of in the parent (checking for bone efficiencies), but there are fewer corner cases this way.
+/obj/item/organ/internal/bone/die()
+	return
+
 obj/item/organ/internal/bone/add_initial_transforms()
 	. = ..()
 
