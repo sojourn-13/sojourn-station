@@ -171,6 +171,7 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemCorpsmanArmor(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Plate Armor Kit" = /obj/item/storage/box/bs_kit/standard_armor_corpsman,
+					"Armored Overcoat Kit" = /obj/item/storage/box/bs_kit/militia_overcoat, //We dont have a Corps-persons
 					"Flak Armor Kit" = /obj/item/storage/box/bs_kit/flak_armor,
 					"Ablative Armor Kit" = /obj/item/storage/box/bs_kit/laser_armor,
 					"Bullet-Proof Armor Kit" = /obj/item/storage/box/bs_kit/bullet_armor)

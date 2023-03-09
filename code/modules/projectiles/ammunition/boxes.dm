@@ -66,6 +66,12 @@
 	icon_state = "pistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
+/obj/item/ammo_magazine/ammobox/pistol_35/rubber/pepperball
+	name = "ammunition packet (9mm pepperball)"
+	desc = "A box of police grade 9mm pepperball type rounds; complete with CO2 cartriage casings."
+	icon_state = "pistol_pepper"
+	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
+
 /obj/item/ammo_magazine/ammobox/pistol_35/lethal
 	name = "ammunition packet (9mm hollow-point)"
 	desc = "A box of self-defense grade 9mm hollow-points."
@@ -141,8 +147,9 @@
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
 /obj/item/ammo_magazine/ammobox/magnum_40/rubber/pepperball
-	name = "ammunition packet (10mm Magnum pepperspray)"
-	desc = "A box of police grade 10mm Auto-Mag pepperspray type rounds."
+	name = "ammunition packet (10mm Magnum pepperball)"
+	desc = "A box of police grade 10mm pepperball type rounds; complete with CO2 cartraiges."
+	icon_state = "magnum_pepper"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
 
 /obj/item/ammo_magazine/ammobox/magnum_40/lethal
@@ -252,6 +259,12 @@
 	name = "ammunition packet (6.5mm Carbine rubber)"
 	icon_state = "lrifle_r"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber
+
+/obj/item/ammo_magazine/ammobox/light_rifle_257_small/rubber/pepperball
+	name = "ammunition packet (6.5mm Carbine pepperball)"
+	desc = "A box of police grade 6.5mm pepperball type rounds; complete with CO2 cartriage casings."
+	icon_state = "lrifle_pepper"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber/pepperball
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/lethal
 	name = "ammunition packet (6.5mm Carbine hollow-point)"
@@ -390,6 +403,12 @@
 	name = "ammunition box (12mm rubber)"
 	icon_state = "box50-rubber"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
+
+/obj/item/ammo_magazine/ammobox/kurtz_50/rubber/pepperball
+	name = "ammunition box (12mm pepperball)"
+	desc = "A box of police grade 12mm pepperball type rounds; complete with CO2 cartriage casings."
+	icon_state = "box50-pepper"
+	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber/pepperball
 
 /obj/item/ammo_magazine/ammobox/kurtz_50/practice
 	name = "ammunition box (12mm practice)"
@@ -651,6 +670,12 @@
 	name = "ammunition packet (20mm beanbags)"
 	icon_state = "bean"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+
+/obj/item/ammo_magazine/ammobox/shotgun/beanbags/pepperball
+	name = "ammunition packet (20mm pepperball)"
+	desc = "A box of police grade 20mm pepperball type rounds; complete with CO2 cartriage casings."
+	icon_state = "pepper"
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag/pepperball
 
 /obj/item/ammo_magazine/ammobox/shotgun/buckshot
 	name = "ammunition packet (20mm Buckshot)"

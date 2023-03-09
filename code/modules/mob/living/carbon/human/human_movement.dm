@@ -40,8 +40,6 @@
 	if(health_deficiency >= 40)
 		tally += (health_deficiency / 25)
 
-	if (!(species && (species.flags & NO_PAIN)))
-		if(halloss >= 10) tally += (halloss / 20) //halloss shouldn't slow you down if you can't even feel it
 	if(istype(buckled, /obj/structure/bed/chair/wheelchair))
 		//Not porting bay's silly organ checking code here
 		tally += 1 //Small slowdown so wheelchairs aren't turbospeed
@@ -51,7 +49,11 @@
 		if(shoes)
 			tally += shoes.slowdown
 
-	if(shock_stage >= 10) tally += 3
+	//tally += min((shock_stage / 100) * 3, 3) //Scales from 0 to 3 over 0 to 100 shock stage
+	//Soj edit - Are painkillers dont just magically make us faster
+	var/pain_effecting = (get_dynamic_pain() - get_painkiller())
+	if(pain_effecting >= 1)
+		tally += min(pain_effecting / 40, 3) // Scales from 0 to 3,
 
 	//if(stats.getPerk(/datum/perk/timeismoney)?.is_active())
 		//tally -= 2

@@ -41,7 +41,7 @@
 /obj/item/device/encryptionkey/headset_bs/sergeant
 	name = "sergeant radio encryption key"
 	icon_state = "mil_cypherkey"	//Someone should give this a new sprite at some point and change this text when they do. I'm too lazy to. -Rebel0
-	channels = list("Blackshiled" = 1, "Marshal" = 1)
+	channels = list("Blackshield" = 1, "Marshal" = 1)
 
 /obj/item/device/encryptionkey/headset_mar
 	name = "security radio encryption key"

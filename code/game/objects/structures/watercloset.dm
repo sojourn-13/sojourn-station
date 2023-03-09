@@ -290,8 +290,6 @@
 			var/remove_amount = M.touching.maximum_volume * M.reagent_permeability() //take off your suit first
 			M.touching.remove_any(remove_amount)
 
-		O.germ_level = max(O.germ_level -= soap_modifer * M.reagent_permeability(), 0)
-
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			var/washgloves = 1

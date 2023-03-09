@@ -10,10 +10,6 @@
 	price_tag = 800
 	w_class = ITEM_SIZE_SMALL
 
-//We got it covered in Process with more detailed thing
-/obj/item/organ/internal/liver/handle_regeneration()
-	return
-
 /obj/item/organ/internal/liver/prosthetic
 	name = "prosthetic liver"
 	desc = "A liver made of metal. Does the same job as a normal liver, and just as well."

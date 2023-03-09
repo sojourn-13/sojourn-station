@@ -8644,7 +8644,6 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "Tr" = (
 /obj/random/junk,
-/obj/landmark/join/late/dormitory_outsider,
 /obj/random/furniture/bedsheet,
 /obj/structure/bed/padded,
 /turf/simulated/floor/tiled/dark,
@@ -8880,7 +8879,6 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "YC" = (
-/obj/landmark/join/start/outsider,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "YO" = (

@@ -84,6 +84,10 @@
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/deepmaint)
+"v" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/white/panels,
+/area/deepmaint)
 "C" = (
 /obj/random/cluster/psi_monster/low_chance,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -101,6 +105,10 @@
 /obj/random/pouch/low_chance,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/deepmaint)
+"Q" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/deepmaint)
 
 (1,1,1) = {"
 a
@@ -109,14 +117,14 @@ a
 a
 a
 a
-a
+Q
 a
 a
 a
 a
 "}
 (2,1,1) = {"
-a
+Q
 h
 h
 a
@@ -149,7 +157,7 @@ g
 a
 i
 l
-m
+v
 o
 r
 a
@@ -214,13 +222,13 @@ a
 a
 i
 I
-m
+v
 h
 q
 a
 "}
 (10,1,1) = {"
-a
+Q
 h
 h
 a
@@ -239,7 +247,7 @@ a
 a
 a
 a
-a
+Q
 a
 a
 a

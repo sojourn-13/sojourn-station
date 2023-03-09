@@ -48,7 +48,7 @@
 	. = ..()
 	var/using_sci_goggles = FALSE
 	var/details_unlocked = FALSE
-	
+
 	if(ishuman(user))
 		// Goggles check
 		var/mob/living/carbon/human/H = user
@@ -221,6 +221,7 @@
 
 	update_color()
 
+	LEGACY_SEND_SIGNAL(src, COMSIG_IWOUND_EFFECTS)
 	LEGACY_SEND_SIGNAL(src, COMSIG_APPVAL, src)
 
 	update_name()
@@ -273,7 +274,7 @@
 	var/list/additional_input_info = list()
 	var/list/output_types = list()
 	var/list/additional_output_info = list()
-	
+
 	if(req_num_inputs)
 		var/list/inputs_sans_blacklist = list()
 		var/list/input_pool = list()

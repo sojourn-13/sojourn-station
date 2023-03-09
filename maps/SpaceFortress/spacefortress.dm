@@ -1,5 +1,6 @@
 //#include "map/spacefortress.dmm"
 //#include "map/blackstone_temple.dmm"
+//#include "map/space_dungeons.dmm"
 
 /obj/map_data/spacefortress
 	name = "Excelsior Fortress"
@@ -14,6 +15,13 @@
 	is_contact_level = FALSE
 	is_accessable_level = TRUE
 	height = 2
+
+/obj/map_data/space_dungeons
+	name = "Space Dungeons"
+	is_player_level = TRUE
+	is_contact_level = FALSE
+	is_accessable_level = TRUE
+	height = 1
 
 //MINING-1 // CLUSTER
 /obj/effect/overmap/sector/fortress

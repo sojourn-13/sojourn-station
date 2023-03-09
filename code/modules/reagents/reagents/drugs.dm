@@ -326,6 +326,7 @@
 	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
 		M.add_chemical_effect(CE_ANTITOX, 5)
 		M.heal_organ_damage(0.1, 0.1)
+		M.add_chemical_effect(CE_ONCOCIDAL, 0.5)	// STALKER reference
 
 /datum/reagent/drug/nicotine/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -340,7 +341,7 @@
 	if(prob(5))
 		M.emote("cough")
 	M.adjustOxyLoss(0.5)
-	M.adjustToxLoss(0.5)
+	M.adjustCloneLoss(0.5)
 
 /datum/reagent/drug/nicotineplus
 	name = "Fine Nicotine"

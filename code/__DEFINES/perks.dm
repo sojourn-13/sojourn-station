@@ -148,6 +148,7 @@
 #define PERK_NANITE_MUSCLE /datum/perk/nanite_muscle
 #define PERK_NANITE_ARMOR /datum/perk/nanite_armor
 #define PERK_NANITE_AMMO /datum/perk/nanite_ammo
+#define PERK_NANITE_METAL_EATER /datum/perk/nanite_metal_drinker
 
 // Imprinter Perks
 #define PERK_SMARTLINK /datum/perk/smartlink

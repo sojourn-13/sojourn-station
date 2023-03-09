@@ -173,8 +173,8 @@
 	trash = /obj/item/trash/os_coco_wrapper
 	bitten_icon_alt = FALSE
 
-/obj/item/reagent_containers/food/snacks/openable/candy/os/New()
-	..()
+/obj/item/reagent_containers/food/snacks/openable/candy/os/Initialize(mapload)
+	. = ..()
 	switch (pickweight(list("chocolate_milk" = 1,
 	"chocolate_grape" = 1,
 	"chocolate_chestnut" = 1,
@@ -252,8 +252,8 @@
 	can_warm = TRUE
 	throw_away_wrapper = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/os_meat/New()
-	..()
+/obj/item/reagent_containers/food/snacks/openable/os_meat/Initialize(mapload)
+	. = ..()
 	if(prob(50))
 		icon_state = "steak_green"
 		icon_pointer = "steak_green"
@@ -316,8 +316,8 @@
 	icon_state = "soylent_orange"
 	trash = /obj/item/trash/os_soypack
 
-/obj/item/reagent_containers/food/snacks/openable/os_soypack/New()
-	..()
+/obj/item/reagent_containers/food/snacks/openable/os_soypack/Initialize(mapload)
+	. = ..()
 	switch (pickweight(list("soylent_orange" = 1,
 	"soylent_fish" = 1,
 	"soylent_strawberry" = 1,

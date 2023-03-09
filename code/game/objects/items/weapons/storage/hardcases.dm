@@ -498,8 +498,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list() // Moved the Galaxy to secondary selection
-		options["Copperhead - assault rifle"] = list(/obj/item/gun/projectile/automatic/mamba/copperhead,/obj/item/ammo_magazine/rifle_75,/obj/item/ammo_magazine/rifle_75, /obj/item/ammo_magazine/rifle_75/rubber)
-		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags, /obj/item/ammo_magazine/ammobox/c10x24_small)
+		options["Mamba - assault rifle"] = list(/obj/item/gun/projectile/automatic/mamba,/obj/item/ammo_magazine/light_rifle_257,/obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball)
+		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags/pepperball, /obj/item/ammo_magazine/ammobox/c10x24_small)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]
@@ -552,6 +552,31 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		options["Bullpip SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_35/hv,/obj/item/ammo_magazine/smg_35/hv)
 		options["Soteria \"Sprocket\" lasgun"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
 		var/choice = input(user,"Which gun will you take?") as null|anything in options
+		if(src && choice)
+			var/list/things_to_spawn = options[choice]
+			for(var/new_type in things_to_spawn)
+				var/atom/movable/AM = new new_type(get_turf(src))
+				if(istype(AM, /obj/item/gun/))
+					to_chat(user, "You have chosen \the [AM].")
+			qdel(src)
+		else
+			stamped = FALSE
+
+/obj/item/gunbox/forehead
+	name = "Foreman's melee weapon case"
+	desc = "A secure box containing the melee weapon of choice for Foremen."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "rifle_case" // Placeholder?
+
+/obj/item/gunbox/forehead/attack_self(mob/living/user)
+	..()
+	var/stamped
+	if(!stamped)
+		stamped = TRUE
+		var/list/options = list()
+		options["Foreman's Sledgehammer"] = list(/obj/item/tool/hammer/foremansledge)
+		options["\"Render Slayer\" Greatsword"] = list(/obj/item/tool/sword/foreman)
+		var/choice = input(user,"Which weapon will you take?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]
 			for(var/new_type in things_to_spawn)

@@ -105,7 +105,7 @@
 	build_path = /obj/item/tool_upgrade/productivity/motor
 
 /datum/design/autolathe/part/ported_barrel
-	name = "Welder Ported Barrel"
+	name = "Composite Barrel"
 	build_path = /obj/item/tool_upgrade/refinement/ported_barrel
 
 /datum/design/autolathe/part/cell_mout

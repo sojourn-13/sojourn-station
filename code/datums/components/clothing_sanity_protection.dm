@@ -23,14 +23,14 @@
 	current_user = null
 
 // Remove any references to avoid hard dels
-/datum/component/clothing_sanity_protection/Destroy()
+/datum/component/clothing_sanity_protection/RemoveComponent()
 	if(current_user)
 		current_user.sanity.environment_cap_coeff /= environment_cap_buff
 		UnregisterSignal(current_user, COMSIG_CLOTH_DROPPED)
 		current_user = null
 	UnregisterSignal(parent, COMSIG_CLOTH_EQUIPPED)
 	var/atom/current_parent = parent
-	current_parent.description_info -=  "This item reduces sanity damage taken from environmental factors. \n"
+	current_parent.description_info = ""
 	..()
 
 
