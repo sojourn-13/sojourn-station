@@ -256,9 +256,9 @@
 	if(zoom)
 		zoom(user)
 	if(get_equip_slot() in unworn_slots)
-		SEND_SIGNAL(src, COMSIG_CLOTH_DROPPED, user)
+		LEGACY_SEND_SIGNAL(src, COMSIG_CLOTH_DROPPED, user)
 		if(user)
-			SEND_SIGNAL(user, COMSIG_CLOTH_DROPPED, src)
+			LEGACY_SEND_SIGNAL(user, COMSIG_CLOTH_DROPPED, src)
 
 
 //	Called before an item is picked up (loc is not yet changed)

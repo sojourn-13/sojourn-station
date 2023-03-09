@@ -129,6 +129,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	handle_breakdowns()
 	if(owner.stat == DEAD || owner.life_tick % life_tick_modifier || owner.in_stasis || (owner.species.lower_sanity_process && !owner.client))
 		return
+	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		return
 	var/affect = SANITY_PASSIVE_GAIN * sanity_passive_gain_multiplier
 	if(owner.stat) //If we're unconscious
 		changeLevel(affect)
@@ -146,7 +148,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 			rest_timer_active = FALSE
 			level_up()
 
-	SEND_SIGNAL(owner, COMSIG_HUMAN_SANITY, level)
+	LEGACY_SEND_SIGNAL(owner, COMSIG_HUMAN_SANITY, level)
 
 /datum/sanity/proc/handle_view()
 	. = 0
@@ -361,10 +363,10 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					if(owner.stats.addPerk(I.perk))
 						I.perk = null
 
-				SEND_SIGNAL(O, COMSIG_ODDITY_USED)
+				LEGACY_SEND_SIGNAL(O, COMSIG_ODDITY_USED)
 				owner.give_health_via_stats()
 				for(var/mob/living/carbon/human/H in viewers(owner))
-					SEND_SIGNAL(H, COMSIG_HUMAN_ODDITY_LEVEL_UP, owner, O)
+					LEGACY_SEND_SIGNAL(H, COMSIG_HUMAN_ODDITY_LEVEL_UP, owner, O)
 
 			else to_chat(owner, SPAN_NOTICE("Something really buggy just happened with your brain."))
 
@@ -529,7 +531,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		if(B.occur())
 			breakdowns += B
 			for(var/mob/living/carbon/human/H in viewers(owner))
-				SEND_SIGNAL(H, COMSIG_HUMAN_BREAKDOWN, owner, B)
+				LEGACY_SEND_SIGNAL(H, COMSIG_HUMAN_BREAKDOWN, owner, B)
 		return
 
 #undef SANITY_PASSIVE_GAIN
