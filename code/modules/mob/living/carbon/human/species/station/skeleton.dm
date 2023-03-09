@@ -21,6 +21,8 @@
 	heat_level_2 = INFINITY
 	heat_level_3 = INFINITY
 
+	lower_sanity_process = FALSE
+
 	hazard_high_pressure = INFINITY
 	warning_high_pressure = INFINITY
 	warning_low_pressure = -1

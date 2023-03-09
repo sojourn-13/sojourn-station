@@ -43,12 +43,15 @@
 	name = "Wealthy Upbringing"
 	desc = "You grew up with a silver spoon in your mouth all your life. Education, leisure time, and relaxation allowed you to indulge in scholarly pursuits to a degree, letting you pick up a few \
 	randomly useful facts about many things. A shame that easy living left you a bit naive and physically weak albeit healthier than most. Not to mention you never quite developed the sense of when \
-	danger is present. This certainly made switching to regular life a bit of a culture shock."
+	danger is present. This certainly made switching to regular life a bit of a culture shock. A major hangup is that filth is not something you particularly find appealing. Spoiled brat.. \
+	At least you've brought your heirloom with you. You should protect it well."
+
+	perks = list(PERK_NOBLE)
 
 	stat_modifiers = list(
 		STAT_ROB = -5,
 		STAT_TGH = -5, // Physically weak
-		STAT_VIG = -2, // Naivety from sheltered upbringing
+		STAT_VIG = -5, // Low-experience
 		STAT_BIO = 5,
 		STAT_MEC = 5,
 		STAT_COG = 5 // Education
@@ -141,9 +144,12 @@
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/gifted
-	name = "Gifted"
+	name = "Gifted Nihilist"
 	desc = "You were a smart child, gifted in any particular area you wished to embark upon be it intellectual or physical. Unfortunately this approach made you a jack of all trades and severely  \
-	hampered your ability to master any one discipline. Sure, you're smart, but without the experience and discipline of practical application it doesn't help you as much as anyone could hope."
+	hampered your ability to master any one discipline. Sure, you're smart, but without the experience and discipline of practical application it doesn't help you as much as anyone could hope. \
+	The one issue you truly suffer is a nihlistic world view; you seem more effected by your surroundings than the normal person."
+
+	perks = list(PERK_NIHILIST)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,

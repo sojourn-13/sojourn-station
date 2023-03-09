@@ -529,7 +529,7 @@
 	var/adj_drowsy = 0
 	var/adj_sleepy = 0
 	var/adj_temp = 0
-	var/sanity_gain_ingest = 0.5
+	sanity_gain_ingest = 0.5
 	reagent_type = "Drink"
 	common = TRUE //Most drinks are obviously identifiable
 

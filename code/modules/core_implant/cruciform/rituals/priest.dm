@@ -92,12 +92,12 @@
 		to_chat(H, SPAN_WARNING("You fail to cast the litany due to your non-organic body..."))
 		return FALSE
 	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain.</span>")
-	H.reagents.add_reagent("laudanum", 10)
-	H.adjustBruteLoss(-20)
-	H.adjustFireLoss(-20)
-	H.adjustToxLoss(-20)
-	H.adjustOxyLoss(-40)
-	H.adjustBrainLoss(-5)
+	H.reagents.add_reagent("laudanum", 5)
+	H.adjustBruteLoss(-15)
+	H.adjustFireLoss(-15)
+	H.adjustToxLoss(-15)
+	H.adjustOxyLoss(-20)
+	H.sanity.changeLevel(10)
 	H.updatehealth()
 	set_personal_cooldown(H)
 	return TRUE
@@ -105,7 +105,7 @@
 /datum/ritual/cruciform/priest/heal_other
 	name = "Succour"
 	phrase = "Venite ad me, omnes qui laboratis, et onerati estis et ego reficiam vos."
-	desc = "Heal another nearby disciple."
+	desc = "Restore the sanity of another nearby disciple."
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	power = 45
@@ -148,11 +148,7 @@
 			return
 		to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain.</span>")
 		H.reagents.add_reagent("laudanum", 5)
-		H.adjustBruteLoss(-20)
-		H.adjustFireLoss(-20)
-		H.adjustToxLoss(-20)
-		H.adjustOxyLoss(-40)
-		H.adjustBrainLoss(-5)
+		H.sanity.changeLevel(25)
 		H.updatehealth()
 		set_personal_cooldown(user)
 		return TRUE
@@ -197,9 +193,9 @@
 /datum/ritual/cruciform/priest/heal_heathen/proc/heal_other(mob/living/carbon/human/participant)
 		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain.</span>")
 		participant.reagents.add_reagent("laudanum", 5, "bicaridine", 5, "kelotane", 5)
-		participant.adjustToxLoss(-15)
-		participant.adjustOxyLoss(-30)
-		participant.adjustBrainLoss(-5)
+		participant.adjustToxLoss(-10)
+		participant.adjustOxyLoss(-20)
+		participant.sanity.changeLevel(15)
 		participant.updatehealth()
 
 /*
@@ -500,6 +496,7 @@
 				user.vessel.remove_reagent("blood",blood_cost)
 		CU.remove()
 		log_and_message_admins("removed upgrade from [C] cruciform with asacris litany")
+		user.sanity.changeLevel(-50)
 
 	return TRUE
 

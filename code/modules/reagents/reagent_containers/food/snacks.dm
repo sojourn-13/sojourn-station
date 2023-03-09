@@ -32,10 +32,63 @@
 	var/appraised = 0 //Has this piece of food been appraised? We can only do that once.
 	var/chef_buff_type = 0 //What type of buff does this have to it?
 
+	var/junk_food = FALSE //if TRUE, sanity gain per nutriment will be zero
+
 /obj/item/reagent_containers/food/snacks/Initialize()
 	. = ..()
 	if(nutriment_amt)
 		reagents.add_reagent("nutriment", nutriment_amt, nutriment_desc)
+
+/obj/item/reagent_containers/food/snacks/proc/get_sanity_gain(mob/living/carbon/eater) //sanity_gain per bite
+	var/current_nutriment = reagents.get_reagent_amount("nutriment")
+	var/nutriment_percent = 0
+	if(reagents.total_volume && current_nutriment)
+		nutriment_percent = current_nutriment/reagents.total_volume
+	var/nutriment_eaten = min(reagents.total_volume, bitesize) * nutriment_percent
+	var/base_sanity_gain_per_bite = nutriment_eaten * sanity_gain
+	var/message
+	if(!iscarbon(eater))
+		return  list(0, message)
+	if(eater.nutrition > eater.max_nutrition*0.95)
+		message = "You are satisfied and don't need to eat any more."
+		return  list(0, SPAN_WARNING(message))
+	if(!base_sanity_gain_per_bite)
+		message = "This food does not help calm your nerves."
+		return  list(0, SPAN_WARNING(message))
+	var/sanity_gain_per_bite = base_sanity_gain_per_bite
+	message = "This food helps you relax."
+	if(cooked)
+		sanity_gain_per_bite += base_sanity_gain_per_bite * 0.2
+	if(junk_food || !cooked)
+		message += " However, only healthy food will help you rest."
+		return  list(sanity_gain_per_bite, SPAN_NOTICE(message))
+	var/table = FALSE
+	var/companions = FALSE
+	var/view_death = FALSE
+	for(var/carbon in circleview(eater, 3))
+		if(istype(carbon, /obj/structure/table))
+			if(!in_range(carbon, eater) || table)
+				continue
+			table = TRUE
+			message += " Eating is more comfortable using a table."
+			sanity_gain_per_bite += base_sanity_gain_per_bite * 0.1
+
+		else if(ishuman(carbon))
+			var/mob/living/carbon/human/human = carbon
+			if(human == eater)
+				continue
+			if(is_dead(human))
+				view_death = TRUE
+			companions = TRUE
+	if(companions)
+		sanity_gain_per_bite += base_sanity_gain_per_bite * 0.3
+		message += " The food tastes much better in the company of others."
+		if(view_death && !eater.stats.getPerk(PERK_NIHILIST))
+			message = "Your gaze falls on the cadaver. Your food doesn't taste so good anymore."
+			sanity_gain_per_bite = 0
+			return list(sanity_gain_per_bite, SPAN_WARNING(message))
+
+	return list(sanity_gain_per_bite, SPAN_NOTICE(message))
 
 	//Placeholder for effect that trigger on eating that aren't tied to reagents.
 /obj/item/reagent_containers/food/snacks/proc/On_Consume(var/mob/eater, var/mob/feeder = null)
@@ -182,8 +235,9 @@
 			if(reagents.total_volume)
 				var/amount_eaten = min(reagents.total_volume, bitesize)
 				reagents.trans_to_mob(M, amount_eaten, CHEM_INGEST)
+				var/list/sanity_vars = get_sanity_gain(M)
 				if(istype(H))
-					H.sanity.onEat(src, amount_eaten)
+					H.sanity.onEat(src, sanity_vars[1], sanity_vars[2], amount_eaten)
 				bitecount++
 				On_Consume(M, user)
 			return 1

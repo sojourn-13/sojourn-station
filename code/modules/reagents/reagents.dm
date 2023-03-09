@@ -39,6 +39,8 @@
 	var/illegal = FALSE //Whether a substance is contraband or not. Marshal/BS should have training to ID these compounds.
 	var/color = "#000000"
 	var/color_weight = 1
+	var/sanity_gain_ingest = 0
+	var/sanity_gain = 0
 
 	var/glass_unique_appearance = FALSE
 
@@ -184,11 +186,19 @@
 	if(volume && holder)
 		remove_self(removed)
 
+/datum/reagent/proc/apply_sanity_effect(mob/living/carbon/human/H, effect_multiplier)
+	if(!ishuman(H))
+		return
+	else
+		H.sanity.onReagent(src, effect_multiplier)
+
 /datum/reagent/proc/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	return
 
 /datum/reagent/proc/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	affect_blood(M, alien, effect_multiplier * 0.8)	// some of chemicals lost in digestive process
+
+	apply_sanity_effect(M, effect_multiplier)
 	return
 
 /datum/reagent/proc/affect_touch(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
@@ -228,24 +238,27 @@
 	return null
 
 // Addiction
-/datum/reagent/proc/addiction_act_stage1(mob/living/carbon/M)
+/datum/reagent/proc/addiction_act_stage1(mob/living/carbon/human/M)
 	if(prob(30))
 		to_chat(M, SPAN_NOTICE("You feel like having some [name] right about now."))
 
-/datum/reagent/proc/addiction_act_stage2(mob/living/carbon/M)
+/datum/reagent/proc/addiction_act_stage2(mob/living/carbon/human/M)
 	if(prob(30))
 		to_chat(M, SPAN_NOTICE("You feel like you need [name]. You just can't get enough."))
 
-/datum/reagent/proc/addiction_act_stage3(mob/living/carbon/M)
+/datum/reagent/proc/addiction_act_stage3(mob/living/carbon/human/M)
 	if(prob(30))
 		to_chat(M, SPAN_DANGER("You have an intense craving for [name]."))
+		M.sanity.changeLevel(-5)
 
-/datum/reagent/proc/addiction_act_stage4(mob/living/carbon/M)
+/datum/reagent/proc/addiction_act_stage4(mob/living/carbon/human/M)
 	if(prob(30))
 		to_chat(M, SPAN_DANGER("You're not feeling good at all! You really need some [name]."))
+		M.sanity.changeLevel(-10)
 
-/datum/reagent/proc/addiction_end(mob/living/carbon/M)
+/datum/reagent/proc/addiction_end(mob/living/carbon/human/M)
 	to_chat(M, SPAN_NOTICE("You feel like you've gotten over your need for [name]."))
+	M.sanity.changeLevel(15)
 
 // Withdrawal
 /datum/reagent/proc/withdrawal_start(mob/living/carbon/M)
