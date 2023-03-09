@@ -16,6 +16,14 @@
 	damage_mult = 2
 	hitsound = 'sound/weapons/smash.ogg'
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "losses their grip on the handle of their weapon"
+	alt_mode_lossrate = 0.4
+
+
 /obj/item/tool/hammer/deadblow
 	name = "deadblow hammer"
 	desc = "Used for applying blunt force to a surface. This one has sand inside its plasteel head to help do strikes much more constantly in the same place with the same force well reducing trama onto soft surfaces."
@@ -173,6 +181,20 @@
 	price_tag = 20
 	degradation = 5 //This one breaks REALLY fast
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
+
+/obj/item/tool/hammer/makeshift_staff
+	name = "makeshift staff"
+	desc = "Three rods, some duct tape and a lot of bloodlust give you this."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "makeshift_staff"
+	item_state = "makeshift_staff"
+	wielded_icon = "makeshift_staff_wielded"
+	tool_qualities = list(QUALITY_HAMMERING = 5)
+	matter = list(MATERIAL_STEEL = 3)
+	max_upgrades = 3
+	armor_penetration = ARMOR_PEN_GRAZING
+	force = WEAPON_FORCE_PAINFUL
+	w_class = ITEM_SIZE_HUGE
 
 /obj/item/tool/hammer/dumbbell
 	name = "dumbbell"

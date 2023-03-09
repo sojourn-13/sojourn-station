@@ -113,7 +113,7 @@
 			/obj/item/tool/saw/circular/medical = custom_good_amount_range(list(1, 2)),
 			/obj/item/tool/hammer = custom_good_amount_range(list(1, 2)),
 			/obj/item/tool/surgicaldrill/adv = custom_good_amount_range(list(1, 2)),
-			/obj/item/bone_brace = custom_good_amount_range(list(1, 2))
+			/obj/item/modification/organ/internal/electromechanical/bone_braces = custom_good_amount_range(list(1, 2))
 		)
 	)
 

@@ -375,6 +375,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/reagent_containers/borghypo/medical(src)
 	src.modules += new /obj/item/tool/robotic_omni_surgery(src)
 	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //hardsuits.
+	src.modules += new /obj/item/tool/scalpel/laser/si/robo(src) //hardsuits.
 	src.modules += new /obj/item/gripper/chemistry(src)
 	src.modules += new /obj/item/reagent_containers/dropper/industrial(src)
 	src.modules += new /obj/item/reagent_containers/syringe(src)

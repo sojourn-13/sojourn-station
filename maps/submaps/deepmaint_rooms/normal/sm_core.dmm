@@ -18,6 +18,7 @@
 /area/deepmaint)
 "g" = (
 /obj/structure/catwalk,
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/plating/under,
 /area/deepmaint)
 "h" = (
@@ -59,6 +60,7 @@
 	},
 /area/deepmaint)
 "o" = (
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/reinforced{
 	name = "engine floor";
 	oxygen = 0

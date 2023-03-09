@@ -172,6 +172,7 @@
 		/obj/item/stack/medical,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/tool/medmultitool,
+		/obj/item/tool/tape_roll
 		)
 
 // make_exact_fit() completely ruins the can_hold list,
@@ -189,6 +190,7 @@
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/tool/surgicaldrill(src)
 	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/tool/tape_roll/fiber/medical(src)
 
 /obj/item/storage/firstaid/surgery/traitor
 	name = "conspicuous surgery kit"
@@ -210,6 +212,7 @@
 	new /obj/item/tool/surgicaldrill/adv(src)
 	new /obj/item/stack/medical/bruise_pack/advanced(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
+	new /obj/item/tool/tape_roll/fiber/medical(src)
 	new /obj/item/reagent_containers/syringe/stim/ultra_surgeon(src) // Antags don't come with the medical perk, this helps them make use of the ATK provided
 
 /obj/item/storage/firstaid/surgery/combat

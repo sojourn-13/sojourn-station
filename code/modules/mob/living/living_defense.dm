@@ -1,4 +1,4 @@
-#define ARMOR_AGONY_COEFFICIENT 0.3
+#define ARMOR_HALLOS_COEFFICIENT 0.4
 #define ARMOR_GDR_COEFFICIENT 0.1
 
 //This calculation replaces old run_armor_check in favor of more complex and better system
@@ -57,9 +57,6 @@
 		if(damagetype == HALLOSS)
 			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
 
-		if(damagetype == AGONY)
-			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
-
 		if(brute_armor_overpenetration > 0 && damagetype == BRUTE)
 			effective_damage += max(0,round(brute_armor_overpenetration))
 
@@ -71,7 +68,26 @@
 	else
 
 		if(damagetype == HALLOSS)
+			//First we get the nervs!
 			effective_damage = round(effective_damage * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)))
+			var/pain_armor = max(0, (src.getarmor(def_zone, "bullet") +  src.getarmor(def_zone, "melee") - armour_pen))//All brute over-pen checks bullet rather then melee for simple mobs to keep melee viable
+			var/pain_no_matter_what = (effective_damage * 0.15) //we deal 15% of are pain, this is to stop rubbers being *completely* uses with basic armor - Its not perfect in melee
+			effective_damage = max(pain_no_matter_what, (effective_damage - pain_armor))
+			if(ishuman(src))
+				var/mob/living/carbon/human/victim = src
+				if(prob(25 + (effective_damage * 2)))
+					if(!victim.stat && !(victim.has_shield()))
+						if(victim.headcheck(def_zone))
+							//Harder to score a stun but if you do it lasts a bit longer
+							if(prob(effective_damage))
+								visible_message(SPAN_DANGER("[src] [victim.form.knockout_message]"))
+								apply_effect(5, PARALYZE, getarmor(def_zone, ARMOR_MELEE) )
+						else
+							//Easier to score a stun but lasts less time
+							if(prob(effective_damage + 10))
+								visible_message(SPAN_DANGER("[src] has been knocked down!"))
+								apply_effect(1, WEAKEN, getarmor(def_zone, ARMOR_MELEE) )
+
 
 
 	if(effective_damage <= 0)
@@ -107,10 +123,10 @@
 	//Here we split damage in two parts, where armor value will determine how much damage will get through
 	else
 		//Pain part of the damage, that simulates impact from armor absorbtion
-		//For balance purposes, it's lowered by ARMOR_AGONY_COEFFICIENT
+		//For balance purposes, it's lowered by ARMOR_HALLOS_COEFFICIENT
 		if(!(damagetype == HALLOSS ))
-			var/agony_gamage = round( ( effective_damage * armor_effectiveness * ARMOR_AGONY_COEFFICIENT * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)) / 100))
-			apply_effect(agony_gamage, AGONY)
+			var/agony_gamage = round( ( effective_damage * armor_effectiveness * ARMOR_HALLOS_COEFFICIENT * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)) / 100))
+			adjustHalLoss(agony_gamage)
 
 		//Actual part of the damage that passed through armor
 		var/actual_damage = round ( ( effective_damage * ( 100 - armor_effectiveness ) ) / 100 )

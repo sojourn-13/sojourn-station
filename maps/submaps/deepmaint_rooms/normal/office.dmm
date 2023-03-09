@@ -91,10 +91,23 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/deepmaint)
+"u" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/deepmaint)
+"I" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/deepmaint)
+"S" = (
+/obj/structure/bed/chair/office/dark,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/deepmaint)
 
 (1,1,1) = {"
 a
-a
+I
 a
 a
 a
@@ -139,7 +152,7 @@ i
 l
 n
 r
-p
+S
 f
 d
 a
@@ -155,10 +168,10 @@ c
 c
 c
 c
-a
+I
 "}
 (6,1,1) = {"
-a
+I
 d
 e
 h
@@ -176,7 +189,7 @@ d
 f
 i
 l
-n
+u
 r
 p
 f
@@ -223,15 +236,15 @@ c
 a
 "}
 (11,1,1) = {"
+I
 a
 a
 a
 a
 a
+I
 a
 a
 a
-a
-a
-a
+I
 "}

@@ -93,6 +93,14 @@
 	var/respawn_mob_type = /obj/random/mob/psi_monster
 	var/affects_chaos = FALSE
 
+	var/leach_on_odds = 0
+	var/can_leach = FALSE
+	var/is_leaching = FALSE
+	var/steal_odds = 0
+	var/stat_to_steal = STAT_VIV
+	var/steal_amount = 1
+	var/mob/living/Victim = null
+
 
 /mob/living/carbon/superior_animal/psi_monster/New()
 	..()

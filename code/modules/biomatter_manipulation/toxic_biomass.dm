@@ -66,7 +66,7 @@
 
 /obj/effect/decal/cleanable/solid_biomass/aoe/Process()
 	for(var/mob/living/creature in living_mobs_in_view(1, src))
-		toxin_attack(creature, rand(4, 8))
+		toxin_attack(creature, rand(8, 16))
 
 
 /obj/effect/decal/cleanable/solid_biomass/attackby(var/obj/item/I, var/mob/user)

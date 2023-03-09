@@ -11,9 +11,6 @@
 	. = ..()
 
 	handle_viruses()
-	// Increase germ_level regularly
-	if(germ_level < GERM_LEVEL_AMBIENT && prob(30))	//if you're just standing there, you shouldn't get more germs beyond an ambient level
-		germ_level++
 
 /mob/living/carbon/Destroy()
 
@@ -63,9 +60,6 @@
 			reset_view(null)
 			is_watching = FALSE
 
-		// Moving around increases germ_level faster
-		if(germ_level < GERM_LEVEL_MOVE_CAP && prob(8))
-			germ_level++
 
 /mob/living/carbon/gib()
 	for(var/mob/M in src)

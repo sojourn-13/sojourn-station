@@ -127,7 +127,7 @@
 /datum/task_master/task/dr_floor/activate_affect()
 	forwards_refence.stats.changeStat(STAT_VIV, (level + 2))
 
-//For Shoveling AND THEN welding a crack
+//For Shoveling AND THEN welding/hammering a crack
 /datum/task_master/task/proper_sealer
 	name = "Proper Sealer"
 	key = "PROPER_SEALER"
@@ -138,3 +138,14 @@
 /datum/task_master/task/proper_sealer/activate_affect()
 	forwards_refence.stats.changeStat(STAT_MEC, (level + 1))
 	forwards_refence.stats.changeStat(STAT_TGH, (level + 1))
+
+//This happens every time a tool breaks on someone
+/datum/task_master/task/tool_breaker
+	name = "Tool Consumer"
+	key = "TOOL_BREAKER"
+	desc = "Sometimes things just break. At lest its a good learning experience..."
+	gain_text = "Oops."
+	level_threshholds = 2 //This unlike most stat is meant to be leveled up a bit to shine
+
+/datum/task_master/task/proper_sealer/activate_affect()
+	forwards_refence.stats.changeStat(STAT_MEC, (level + 1))

@@ -38,7 +38,7 @@
 
 /datum/reagent/organic/nutriment/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(!injectable)
-		M.adjustToxLoss(0.1 * effect_multiplier)
+		M.add_chemical_effect(CE_TOXIN, 5 * effect_multiplier)
 		return
 	affect_ingest(M, alien, effect_multiplier * 1.2)
 
@@ -395,7 +395,7 @@
 	common = TRUE //Identifiable by smell.
 
 /datum/reagent/organic/capsaicin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.adjustToxLoss(0.05 * effect_multiplier)
+	M.add_chemical_effect(CE_TOXIN, 0.25 * effect_multiplier)
 
 /datum/reagent/organic/capsaicin/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
@@ -406,7 +406,7 @@
 		if(prob(5) || dose == metabolism) //dose == metabolism is a very hacky way of forcing the message the first time this procs
 			to_chat(M, discomfort_message)
 	else
-		M.apply_effect(agony_amount, AGONY, 0)
+		M.adjustHalLoss(agony_amount)
 		if(prob(5))
 			M.custom_emote(2, "[pick("dry heaves!","coughs!","splutters!")]")
 			to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))
@@ -484,7 +484,7 @@
 	if(dose == metabolism)
 		to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))
 	else
-		M.apply_effect(4, AGONY, 0)
+		M.adjustHalLoss(4)
 		if(prob(5))
 			M.visible_message("<span class='warning'>[M] [pick("dry heaves!","coughs!","splutters!")]</span>", SPAN_DANGER("You feel like your insides are burning!"))
 	if(isslime(M))
@@ -534,7 +534,7 @@
 	common = TRUE //Most drinks are obviously identifiable
 
 /datum/reagent/drink/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.adjustToxLoss(0.2) // Probably not a good idea; not very deadly though
+	M.add_chemical_effect(CE_TOXIN, 0.25) // Probably not a good idea; not very deadly though
 	return
 
 /datum/reagent/drink/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
@@ -674,7 +674,7 @@
 
 /datum/reagent/drink/limejuice/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.adjustToxLoss(-0.05 * effect_multiplier)
+	M.add_chemical_effect(CE_TOXIN, -0.25 * effect_multiplier)
 
 /datum/reagent/drink/orangejuice
 	name = "Orange juice"
@@ -890,7 +890,7 @@
 
 /datum/reagent/drink/tea/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.adjustToxLoss(-0.05 * effect_multiplier)
+	M.add_chemical_effect(CE_TOXIN, -0.25 * effect_multiplier)
 
 /datum/reagent/drink/tea/icetea
 	name = "Iced Tea"
@@ -959,9 +959,9 @@
 		var/obj/item/organ/internal/kidney/K = H.random_organ_by_process(OP_KIDNEYS)
 		if(istype(K))
 			if(K.is_bruised())
-				M.adjustToxLoss(0.1)
+				M.add_chemical_effect(CE_TOXIN, 0.5)
 			else if(K.is_broken())
-				M.adjustToxLoss(0.3)
+				M.add_chemical_effect(CE_TOXIN, 1)
 	M.add_chemical_effect(CE_PULSE, 1)
 
 /datum/reagent/drink/coffee/overdose(mob/living/carbon/M, alien)
@@ -1440,7 +1440,7 @@
 	..()
 	M.adjustOxyLoss(-0.4 * effect_multiplier)
 	M.heal_organ_damage(0.2 * effect_multiplier, 0.2 * effect_multiplier)
-	M.adjustToxLoss(-0.2 * effect_multiplier)
+	M.add_chemical_effect(CE_TOXIN, -effect_multiplier)
 	if(M.dizziness)
 		M.dizziness = max(0, M.dizziness - 15 * effect_multiplier)
 	if(M.confused)
