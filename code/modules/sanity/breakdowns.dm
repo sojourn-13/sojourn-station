@@ -41,8 +41,10 @@
 
 /datum/breakdown/positive/stalwart/conclude()
 	holder.owner.adjustBruteLoss(-25)
+	holder.owner.adjustCloneLoss(-10)
 	holder.owner.adjustFireLoss(-25)
 	holder.owner.adjustOxyLoss(-45)
+	holder.owner.adjustToxLoss(-25)
 	holder.owner.reagents.add_reagent("tramadol", 5) // the way this works is silly as all fuck and should probably be fixed at some point
 	..()
 
@@ -103,12 +105,11 @@
 	start_messages = list(
 		"You feel invincible!",
 		"You are unstoppable, you are unbreakable!",
-		"You feel like a GOD!",
 		"You feel a rush of adrenaline in your veins. Nothing can hurt you now!",
-		"You've learned to brush off wounds that would kill lesser beings!"
+		"You've learned to brush off wounds that would kill lesser beings!",
 	)
 	end_messages = list(
-		"The last drop of adrenaline leaves your veins. You feel like a normal human now."
+		"The last drop of adrenaline leaves your veins. You feel like a normal human now.",
 	)
 
 /datum/breakdown/positive/determination/occur()
@@ -140,7 +141,7 @@
 	..()
 
 
-
+/* - Shit breakdown - disabled until it is reworked to be in specific circumstances.
 /datum/breakdown/negative/selfharm
 	name = "Self-harm"
 	duration = 1 MINUTES
@@ -207,8 +208,7 @@
 /datum/breakdown/negative/selfharm/conclude()
 	--holder.owner.suppress_communication
 	..()
-
-
+*/
 
 /datum/breakdown/negative/hysteric
 	name = "Hysteric"
@@ -254,7 +254,7 @@
 
 
 /datum/breakdown/negative/delusion
-	//name = "Delusion"
+	name = "Delusion"
 	duration = 1 MINUTES
 	restore_sanity_post = 50
 
@@ -351,13 +351,12 @@
 	insight_reward = 20
 	restore_sanity_post = 80
 
-	start_messages = list("You think this doesn’t feel real... But reality hurts! Ensure that you will feel again!")
+	start_messages = list("You think this doesn’t feel real... you have to make sure this is real! Get a jump from electrictiy!")
 	end_messages = list("You feel alive again.")
 	var/message_time = 0
-	var/messages = list("You want to receive an electric shock.",
-						"How does it feel to control the power of lightning? let's find out.",
-						"More, more, more, more you want more power. Take it in your hands.",
-						"Electricity belongs to everyone, why does machinery grab it?")
+	var/messages = list("You want to receive an electric shock to make sure you're really alive.",
+						"You think about a way to make sure this is real.. a shock, that's it!.",
+						"Pain is real, numbiness is false. I must.. feel!.")
 
 /datum/breakdown/common/power_hungry/can_occur()
 	if(holder.owner.species.siemens_coefficient > 0)
@@ -441,6 +440,7 @@
 	active_view = FALSE
 	time = world.time + cooldown
 
+/*
 /datum/breakdown/common/herald
 	name = "Herald"
 	restore_sanity_pre = 5
@@ -460,6 +460,7 @@
 		message_time = world.time + cooldown_message
 		var/chance = rand(1, 100)
 		holder.owner.say(chance <= 50 ? "[holder.pick_quote_20()]" : "[holder.pick_quote_40()]")
+*/
 
 /datum/breakdown/common/desire_for_chrome
 	name = "Desire for Chrome"
@@ -653,7 +654,7 @@
 
 
 /datum/breakdown/common/signs
-	//name = "Signs"
+	name = "Signs"
 	restore_sanity_post = 70
 	insight_reward = 5
 	var/message
