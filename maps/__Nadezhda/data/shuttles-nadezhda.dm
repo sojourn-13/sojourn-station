@@ -186,7 +186,7 @@
 	shuttle_area = /area/shuttle/rocinante_shuttle_area
 	current_location = "nav_rocinante_homebase"
 	landmark_transition = "nav_rocinante_transit"
-	destination_tags = list("nav_rocinante_homebase", "nav_rocinante_river", "nav_rocinante_swamp", "nav_rocinante_graysonfield") // "nav_skipjack_spacefortress" - lost, "nav_rocinante_forest" - for later
+	destination_tags = list("nav_rocinante_homebase", "nav_rocinante_river", "nav_rocinante_swamp", "nav_rocinante_graysonfield", "nav_rocinante_spacefort")
 
 /obj/effect/shuttle_landmark/rocinante_home
 	name = "The Rocinante Home Pad "
@@ -199,19 +199,7 @@
 	landmark_tag = "nav_rocinante_transit"
 	base_turf = /turf/space
 	autoset = TRUE
-/*
-/obj/effect/shuttle_landmark/rocinante_colony
-	name = "Rocinante Landing Zone"
-	landmark_tag = "nav_rocinante_colony"
-	base_turf = /turf/simulated/floor/asteroid/dirt
-	autoset = TRUE
 
-/obj/effect/shuttle_landmark/rocinante_deepforest
-	name = "Deep Forest Landing Zone"
-	landmark_tag = "nav_rocinante_forest"
-	base_turf = /turf/simulated/floor/asteroid/dirt
-	autoset = TRUE
-*/
 /obj/effect/shuttle_landmark/rocinante_riverforest
 	name = "River Forest Landing Zone"
 	landmark_tag = "nav_rocinante_river"
@@ -230,6 +218,12 @@
 	base_turf = /turf/simulated/floor/reinforced
 	autoset = TRUE
 
+/obj/effect/shuttle_landmark/rocinante_spacefort
+	name = "Local Space Station Dock"
+	landmark_tag = "nav_rocinante_spacefort"
+	base_turf = /turf/simulated/floor/reinforced
+	autoset = TRUE
+
 //Rocinante console
 /obj/machinery/computer/shuttle_control/multi/rocinante
 	name = "The Rocinante shuttle console"
@@ -239,6 +233,67 @@
 //Area code
 /area/shuttle/rocinante_shuttle_area
 	name = "The Rocinante Landing Pad"
+	icon_state = "shuttle"
+	requires_power = FALSE
+	dynamic_lighting = FALSE
+	base_turf = /turf/simulated/floor/reinforced
+
+//Marshal shuttle
+/datum/shuttle/autodock/multi/vasiliy
+	name = "The Vasiliy"
+	move_time = (7 MINUTES) / (1 SECOND)
+	shuttle_area = /area/shuttle/rocinante_shuttle_area
+	current_location = "nav_vasiliy_homebase"
+	landmark_transition = "nav_vasiliy_transit"
+	destination_tags = list("nav_vasiliy_homebase", "nav_vasiliy_deep_forest", "nav_vasiliy_swamps", "nav_vasiliy_river_forest")
+
+//, "nav_vasiliy_spacefort"
+
+/obj/effect/shuttle_landmark/vasiliy_home
+	name = "The Vasiliy Home Pad "
+	landmark_tag = "nav_vasiliy_homebase"
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/skipjack_station
+
+/obj/effect/shuttle_landmark/transit/vasiliy_transit
+	name = "In transit"
+	landmark_tag = "nav_vasiliy_transit"
+	base_turf = /turf/space
+	autoset = TRUE
+
+/obj/effect/shuttle_landmark/vasiliy_deep_forest
+	name = "Deep Forest Landing Zone"
+	landmark_tag = "nav_vasiliy_deep_forest"
+	base_turf = /turf/simulated/floor/reinforced
+	autoset = TRUE
+
+/obj/effect/shuttle_landmark/vasiliy_swamp_caves
+	name = "Swamps Landing Zone"
+	landmark_tag = "nav_vasiliy_swamps"
+	base_turf = /turf/simulated/floor/reinforced
+	autoset = TRUE
+
+/obj/effect/shuttle_landmark/vasiliy_river_forest
+	name = "River Forest Landing Zone"
+	landmark_tag = "nav_vasiliy_river_forest"
+	base_turf = /turf/simulated/floor/reinforced
+	autoset = TRUE
+
+/obj/effect/shuttle_landmark/vasiliy_spacefort
+	name = "Local Space Station Dock"
+	landmark_tag = "nav_vasiliy_spacefort"
+	base_turf = /turf/simulated/floor/reinforced
+	autoset = TRUE
+
+//Vasiliy console
+/obj/machinery/computer/shuttle_control/multi/vasiliy
+	name = "The Vasiliy shuttle console"
+	shuttle_tag = "The Vasiliy"
+	req_one_access = null
+
+//Area code
+/area/shuttle/vasiliy_shuttle_area
+	name = "The Vasiliy Landing Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
 	dynamic_lighting = FALSE

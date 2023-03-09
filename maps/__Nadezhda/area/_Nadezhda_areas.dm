@@ -407,29 +407,29 @@
 /area/nadezhda/maintenance/substation/engineering
 	name = "Engineering Substation"
 
-/area/nadezhda/maintenance/substation/section1
-	name = "Floor 1 Substation 1"
+/area/nadezhda/maintenance/substation/medical
+	name = "Medial Substation"
 
-/area/nadezhda/maintenance/substation/section2
-	name = "Floor 1 Substation 2"
+/area/nadezhda/maintenance/substation/science
+	name = "Science Substation"
 
-/area/nadezhda/maintenance/substation/section8
-	name = "Floor 1 Substation 3"
+/area/nadezhda/maintenance/substation/sec
+	name = "Marshal Substation"
 
-/area/nadezhda/maintenance/substation/section3
-	name = "Floor 1 Substation 1"
+/area/nadezhda/maintenance/substation/cargo
+	name = "Cargo Substation"
 
-/area/nadezhda/maintenance/substation/section4
-	name = "Floor 1 Substation 2"
+/area/nadezhda/maintenance/substation/servist
+	name = "Servist Substation"
 
-/area/nadezhda/maintenance/substation/section5
-	name = "Floor 1 Substation 3"
+/area/nadezhda/maintenance/substation/misc1
+	name = "MISC Substation 1"
 
-/area/nadezhda/maintenance/substation/section6
-	name = "Floor 2 Substation 4"
+/area/nadezhda/maintenance/substation/misc2
+	name = "MISC Substation 2"
 
-/area/nadezhda/maintenance/substation/section7
-	name = "Floor 1 Substation 5"
+/area/nadezhda/maintenance/substation/misc3
+	name = "MISC Substation 3"
 
 /area/nadezhda/maintenance/substation/bridge
 	name = "Bridge Substation"
