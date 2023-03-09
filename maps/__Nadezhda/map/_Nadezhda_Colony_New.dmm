@@ -10482,6 +10482,7 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/flora/big/rocks2,
 /obj/structure/flora/ausbushes/grassybush,
+/mob/living/simple_animal/crab/Coffee,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "cEA" = (
@@ -32711,6 +32712,7 @@
 /obj/structure/railing/grey{
 	dir = 1
 	},
+/obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "hKj" = (
@@ -44024,6 +44026,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai)
+"krs" = (
+/mob/living/simple_animal/frog/rare,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics)
 "krt" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
@@ -45349,7 +45355,7 @@
 /obj/machinery/camera/network/colony_underground{
 	dir = 8
 	},
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/crew_quarters/hydroponics)
 "kIG" = (
 /turf/simulated/shuttle/wall/escpod{
@@ -47332,6 +47338,13 @@
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/crew_quarters/kitchen)
+"lhU" = (
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/obj/structure/flora/rock/variant1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/crew_quarters/hydroponics)
 "lia" = (
 /obj/structure/barricade,
 /turf/simulated/floor/rock,
@@ -91431,7 +91444,7 @@
 /area/shuttle/rocinante_shuttle_area)
 "viC" = (
 /obj/structure/flora/small/grassb2,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/crew_quarters/hydroponics)
 "viE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -97521,6 +97534,10 @@
 "wCx" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/security/armory_blackshield)
+"wCB" = (
+/obj/structure/flora/ausbushes/reedbush,
+/turf/simulated/floor/beach/water/shallow,
+/area/nadezhda/crew_quarters/hydroponics)
 "wCC" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -163680,7 +163697,7 @@ kSd
 kSd
 kSd
 dkE
-kSd
+lhU
 sRU
 asL
 sRU
@@ -163878,8 +163895,8 @@ mAJ
 rny
 jVN
 xgH
-xgH
-xgH
+krs
+iZR
 qAj
 xgH
 jmk
@@ -164081,7 +164098,7 @@ aFV
 xgH
 qAj
 viC
-iZR
+wCB
 kIz
 xgH
 czM
