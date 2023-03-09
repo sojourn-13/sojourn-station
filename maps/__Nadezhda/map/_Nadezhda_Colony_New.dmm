@@ -14156,6 +14156,7 @@
 /area/nadezhda/rnd/lab)
 "dwX" = (
 /obj/structure/table/standard,
+/obj/item/oddity/blackbox_nanoforge,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "dwY" = (
