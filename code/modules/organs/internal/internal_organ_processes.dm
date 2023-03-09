@@ -17,7 +17,8 @@
 		lung_process()
 	if(should_have_process(OP_STOMACH))
 		stomach_process()
-	carrion_process()
+	if(is_carrion(src))
+		carrion_process()
 
 /mob/living/carbon/human/proc/get_organ_efficiency(process_define)
 	var/list/process_list = internal_organs_by_efficiency[process_define]
