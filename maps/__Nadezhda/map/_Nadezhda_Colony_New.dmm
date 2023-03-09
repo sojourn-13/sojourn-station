@@ -78856,10 +78856,13 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/hallway/surface/section1)
 "stb" = (
-/obj/structure/closet/secure_closet/medicine,
-/obj/random/medical/low_chance,
-/obj/random/medical/low_chance,
-/obj/item/soap,
+/obj/item/reagent_containers/blood/AMinus,
+/obj/item/reagent_containers/blood/APlus,
+/obj/item/reagent_containers/blood/BMinus,
+/obj/item/reagent_containers/blood/BPlus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OPlus,
+/obj/structure/closet/secure_closet/freezer/blood,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "stc" = (
