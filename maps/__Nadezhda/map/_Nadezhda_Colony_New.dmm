@@ -65295,6 +65295,7 @@
 	})
 "pnj" = (
 /obj/effect/floor_decal/industrial/outline,
+/obj/structure/medical_stand,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/medical/sleeper)
 "pnn" = (
