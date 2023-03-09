@@ -214,15 +214,17 @@
 		make_blood_vessels()
 
 /obj/item/organ/external/proc/make_bones()
-	if(default_bone_type)
-		var/obj/item/organ/internal/bone
-		if(nature < MODIFICATION_SILICON)
-			bone = new default_bone_type
-		else
-			var/mecha_bone = text2path("[default_bone_type]/robotic")
-			bone = new mecha_bone
+    if(default_bone_type)
+        var/obj/item/organ/internal/bone/bone
+        if(nature == MODIFICATION_SUPERIOR)
+            bone = new default_bone_type
+        else if(nature < MODIFICATION_SILICON)
+            bone = new default_bone_type
+        else
+            var/mecha_bone = text2path("[default_bone_type]/robotic")
+            bone = new mecha_bone
 
-		bone?.replaced(src)
+        bone?.replaced(src)
 
 /obj/item/organ/external/proc/make_nerves()
 	var/obj/item/organ/internal/nerve/nerve
