@@ -214,6 +214,14 @@
 	icon_state = "erisblue"
 	requires_power = 1
 
+/area/nadezhda/dungeon/outside/safehouse
+	name = "Abandoned Safehouse"
+	icon_state = "nadezhdagreen"
+	dynamic_lighting = TRUE
+	is_dungeon_lootable = FALSE
+	ambience = list('sound/ambience/ambigen1.ogg','sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambigen12.ogg','sound/ambience/ambigen14.ogg')
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
+
 //This is put here because the floors are seperated by power needs, the reason being if not powering 1 floor lags the server to hell and back. -Kaz
 /area/nadezhda/dungeon/outside/prepper/vault/floor1
 
