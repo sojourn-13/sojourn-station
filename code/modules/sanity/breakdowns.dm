@@ -163,7 +163,7 @@
 	if(!.)
 		return
 	if(init_update())
-		var/datum/gender/G = gender_datums[holder.owner.gender]
+		var/datum/gender/G = holder.owner.get_gender()
 		if(prob(50))
 			var/emote = pick(list(
 				"screams incoherently!",
