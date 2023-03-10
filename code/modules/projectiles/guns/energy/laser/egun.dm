@@ -98,7 +98,7 @@
 	icon_state = "ntpistol"
 	item_state = "ntpistol"
 	item_charge_meter = FALSE
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 1)
 	w_class = ITEM_SIZE_SMALL
 	projectile_type = /obj/item/projectile/beam
