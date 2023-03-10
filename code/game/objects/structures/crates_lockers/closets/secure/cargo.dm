@@ -185,7 +185,7 @@
 				new /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet(src)
 				new /obj/item/ammo_magazine/speed_loader_shotgun/empty(src)
 		if("SHORT_WILDCARDS")
-			if(prob(50))
+			if(prob(20))
 				new /obj/item/gun/projectile/automatic/vector(src)
 				new /obj/item/ammo_magazine/smg_magnum_40(src)
 				new /obj/item/ammo_magazine/smg_magnum_40(src)
