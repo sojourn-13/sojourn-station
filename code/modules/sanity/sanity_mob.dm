@@ -355,13 +355,14 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 				var/list/L = I.calculate_statistics()
 				for(var/stat in L)
 					var/stat_up = L[stat] * 2 * resting
-					resting = 0
 					to_chat(owner, SPAN_NOTICE("Your [stat] stat goes up by [stat_up]"))
 					owner.stats.changeStat(stat, stat_up)
 
 				if(I.perk)
 					if(owner.stats.addPerk(I.perk))
 						I.perk = null
+
+				resting = 0
 
 				LEGACY_SEND_SIGNAL(O, COMSIG_ODDITY_USED)
 				owner.give_health_via_stats()
