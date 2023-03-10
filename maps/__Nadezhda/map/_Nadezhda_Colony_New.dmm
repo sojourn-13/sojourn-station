@@ -28542,6 +28542,7 @@
 "gFn" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/steel/brown_platform,
 /area/nadezhda/pros/foreman)
 "gFq" = (
@@ -162111,8 +162112,8 @@ btQ
 umh
 pdf
 gan
-kpR
-kMG
+pnj
+pnj
 gan
 hMF
 vjl
@@ -163121,8 +163122,8 @@ btQ
 umh
 aOs
 vAy
-pnj
-pnj
+kpR
+kMG
 vAy
 hMF
 vjl
