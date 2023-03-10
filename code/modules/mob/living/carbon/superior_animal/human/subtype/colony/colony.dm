@@ -59,6 +59,8 @@
 	rounds_left = 10
 	mag_type = /obj/item/ammo_magazine/speed_loader_light_rifle_257/empty
 	mags_left = 3 //3+1
+	light_range = 5
+	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 
 /mob/living/carbon/superior_animal/human/colony_allie/ship_breaker_marks
 	name = "Shipbreaker Marksman"
@@ -74,6 +76,7 @@
 	melee_damage_upper = 10
 	egun = TRUE
 	suited_for_space = TRUE
+	projectiletype = /obj/item/projectile/beam
 
 //They are all waring space suits
 	breath_required_type = NONE
@@ -83,6 +86,8 @@
 
 	min_air_pressure = 0
 	min_bodytemperature = 0
+	light_range = 5
+	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 
 /mob/living/carbon/superior_animal/human/colony_allie/ship_breaker_marks/sword
 	name = "Shipbreaker Marksman"
@@ -96,6 +101,9 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 40
 	mags_left = 0 //0+1
+	projectiletype = /obj/item/projectile/beam
+	light_range = 5
+	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 
 /mob/living/carbon/superior_animal/human/colony_allie/lonestar_merc
 	name = "Lonestar Corporate Infantryman"
@@ -112,6 +120,9 @@
 	egun = TRUE
 	suited_for_space = TRUE
 	armor = list(melee = 50, bullet = 50, energy = 40, bomb = 30, bio = 100, rad = 50)
+	projectiletype = /obj/item/projectile/beam
+	light_range = 5
+	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 
 //They are all waring space suits
 	breath_required_type = NONE
@@ -137,6 +148,7 @@
 	mags_left = 0 //0+1
 	egun = TRUE
 	suited_for_space = TRUE
+	projectiletype = /obj/item/projectile/beam
 	armor = list(melee = 50, bullet = 50, energy = 40, bomb = 30, bio = 100, rad = 50)
 
 //They are all waring space suits
@@ -148,6 +160,8 @@
 	min_air_pressure = 0
 	min_bodytemperature = 0
 
+	light_range = 5
+	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 
 /mob/living/carbon/superior_animal/human/colony_allie/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
 	if(suited_for_space)
