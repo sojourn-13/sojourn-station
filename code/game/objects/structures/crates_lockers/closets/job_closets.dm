@@ -132,5 +132,6 @@
 	new /obj/item/clothing/suit/storage/neotheosports(src)
 	new /obj/item/cell/small(src)
 	new /obj/item/tool/knife/dagger/nt(src)
+	new /obj/item/gun/energy/ntpistol(src)
 	new /obj/item/clothing/head/helmet/acolyte(src)
 	new /obj/item/clothing/suit/armor/vest/acolyte(src)
