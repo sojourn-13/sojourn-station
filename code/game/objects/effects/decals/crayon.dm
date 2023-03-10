@@ -751,6 +751,7 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 			diggy_hole.isRevealed = TRUE
 			diggy_hole.isSealed = FALSE
 			diggy_hole.invisibility = 0
+			diggy_hole.collapse()
 			qdel(carpy)
 			return
 
