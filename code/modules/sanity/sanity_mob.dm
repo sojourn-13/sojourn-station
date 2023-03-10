@@ -457,7 +457,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		eat_time_message = world.time + EAT_COOLDOWN_MESSAGE
 		to_chat(owner, "[snack_sanity_message]")
 	changeLevel(snack_sanity_gain)
-	if(snack.cooked && resting)
+	if(resting) //snack.cooked removed do to it being quite unfun to need to eat uncooked food to level
 		add_rest(snack.type, 20 * amount_eaten / snack.bitesize)
 	/*if(snack.cooked && resting && snack.taste_tag.len)
 		for(var/taste in snack.taste_tag)
