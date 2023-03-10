@@ -473,5 +473,106 @@
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.adjustNutrition(-25)
 
-datum/reagent/drug/nosfernium/overdose(var/mob/living/carbon/human/M, var/alien)
+/datum/reagent/drug/nosfernium/overdose(var/mob/living/carbon/human/M, var/alien)
 	M.adjustBrainLoss(5) // This is meant to be lethal. If you survive this give your doctor a pat on the back.
+
+
+
+
+
+
+
+/datum/reagent/drug/crashdown
+	name = "Crashdown"
+	id = "crashdown"
+	description = "A basis for most of black market drugs. Doesnt do much on its own."
+	taste_description = "hangover"
+	reagent_state = LIQUID
+	color = "#e06270"
+	metabolism = REM * 0.5
+	overdose = REAGENTS_OVERDOSE/2
+	nerve_system_accumulations = 80
+	addiction_chance = 30
+
+/datum/reagent/drug/shark/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_NOPULSE, 1)
+
+/datum/reagent/drug/shark/withdrawal_act(mob/living/carbon/M)
+	M.add_chemical_effect(CE_SLOWDOWN, 1)
+	M.adjustNutrition(-25)
+
+/datum/reagent/drug/caustic_sepsis
+	name = "Caustic Sepsis"
+	id = "caustic_sepsis"
+	description = "A basis for most of black market drugs. Reeks akin to a rotting body."
+	taste_description = "rot"
+	reagent_state = LIQUID
+	color = "#e06270"
+	metabolism = REM * 0.5
+	overdose = REAGENTS_OVERDOSE/2
+	nerve_system_accumulations = 80
+	addiction_chance = 30
+
+/datum/reagent/drug/caustic_sepsis/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_NOPULSE, 1)
+
+/datum/reagent/drug/caustic_sepsis/withdrawal_act(mob/living/carbon/M)
+	M.add_chemical_effect(CE_SLOWDOWN, 1)
+	M.adjustNutrition(-25)
+
+/datum/reagent/drug/calofornium
+	name = "Calofornium"
+	id = "calofornium"
+	description = "A basis for several black market drugs. Used as a drug in poor communities."
+	taste_description = "burns"
+	reagent_state = LIQUID
+	color = "#e06270"
+	metabolism = REM * 0.5
+	overdose = REAGENTS_OVERDOSE/2
+	nerve_system_accumulations = 80
+	addiction_chance = 30
+
+/datum/reagent/drug/calofornium/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_NOPULSE, 1)
+
+/datum/reagent/drug/calofornium/withdrawal_act(mob/living/carbon/M)
+	M.add_chemical_effect(CE_SLOWDOWN, 1)
+	M.adjustNutrition(-25)
+
+/datum/reagent/drug/tonic_liquid
+	name = "Tonic Liquid"
+	id = "tonic_liquid"
+	description = "A basis for several black market drugs. Sometimes used for cooking."
+	taste_description = "burns"
+	reagent_state = LIQUID
+	color = "#e06270"
+	metabolism = REM * 0.5
+	overdose = REAGENTS_OVERDOSE/2
+	nerve_system_accumulations = 80
+	addiction_chance = 30
+
+/datum/reagent/drug/tonic_liquid/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_NOPULSE, 1)
+
+/datum/reagent/drug/tonic_liquid/withdrawal_act(mob/living/carbon/M)
+	M.add_chemical_effect(CE_SLOWDOWN, 1)
+	M.adjustNutrition(-25)
+
+/datum/reagent/drug/tonic_liquid
+	name = "Solar Eclipse"
+	id = "solar_eclipse"
+	description = "An advanced amphetamine developed by anti-sol organization. Turns the user into a death machine."
+	taste_description = "burns"
+	reagent_state = LIQUID
+	color = "#e06270"
+	metabolism = REM * 0.5
+	overdose = REAGENTS_OVERDOSE/2
+	nerve_system_accumulations = 80
+	addiction_chance = 30
+
+/datum/reagent/drug/calofornium/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_NOPULSE, 1)
+
+/datum/reagent/drug/calofornium/withdrawal_act(mob/living/carbon/M)
+	M.add_chemical_effect(CE_SLOWDOWN, 1)
+	M.adjustNutrition(-25)

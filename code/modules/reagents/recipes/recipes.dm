@@ -935,11 +935,44 @@
 	result_amount = 2
 	maximum_temperature = 12.7
 	minimum_temperature = 7.7
- 
+
 /datum/chemical_reaction/mindwipe
 	result = "mindwipe"
 	required_reagents = list("mindbreaker" = 1, "psilocybin" = 1, "sanguinum" = 1 , "anti_toxin" = 1, "ethanol" = 1)
 	result_amount = 5
+
+/datum/chemical_reaction/crashdown
+	result = "crashdown"
+	required_reagents = list("space_drugs" = 3, "inaprovaline" = 3, "carpotoxin" = 2)
+	result_amount = 2
+	minimum_temperature = 144
+	maximum_temperature = 245
+
+/datum/chemical_reaction/calofornium
+	result = "calofornium"
+	required_reagents = list("fertilizer" = 7, "ethanol" = 3, "nutrient" = 2, "sodium" = 1)
+	result_amount = 2
+	minimum_temperature = 30
+	maximum_temperature = 70
+
+/datum/chemical_reaction/caustic_sepsis
+	result = "caustic_sepsis"
+	required_reagents = list("sodawater" = 7, "sodium" = 2, "sodiumchloride" = 1)
+	result_amount = 2
+	minimum_temperature = 300
+	maximum_temperature = 400
+
+/datum/chemical_reaction/meth
+	result = null
+	required_reagents = list("crashdown" = 30, "calofornium" = 30, "caustic_sepsis" = 30, "silicon" = 10)
+	result_amount = 1
+	blacklist_containers = list(/mob, /obj/machinery/microwave)
+	mix_message = "The solution solidifies into a cerebrix inhaler!"
+
+/datum/chemical_reaction/meth/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/reagent_containers/hypospray/autoinjector/large/antisol(location)
 
 /* FBP "medicine" */
 

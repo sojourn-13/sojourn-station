@@ -303,3 +303,11 @@
 	item_state = "supeyrette"
 	baseline_sprite = "syrette"
 	preloaded_reagents = list()
+
+/obj/item/reagent_containers/hypospray/autoinjector/large/antisol
+	name = "solar eclipse syrette"
+	desc = "A large syrette filled to the brim with a highly sought after combat stimulant, amptly named Solar Eclipse due to its abundant use by anti-federation forces."
+	icon_state = "supeyrette" //still missing the icons from doll.
+	item_state = "supeyrette"
+	baseline_sprite = "syrette"
+	preloaded_reagents = list("solar_eclipse" = 10)
