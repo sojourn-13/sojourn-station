@@ -37,7 +37,7 @@
 
 	else if(chameleon_type)
 		matter = list(MATERIAL_PLASTIC = 2 * w_class)
-		origin_tech = list(TECH_COVERT = 3)
+		origin_tech = list(TECH_ILLEGAL = 3)
 	else
 		matter = list(MATERIAL_BIOMATTER = 5 * w_class)
 
