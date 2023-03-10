@@ -14,6 +14,7 @@
 	speed = -1
 	maxHealth = 125
 	health = 125
+	sanity_damage = 1
 
 	pixel_x = -16
 

@@ -68,6 +68,7 @@
 	name = "Poppy the Safety Possum"
 	desc = "It's an opossum, a small scavenging marsupial. It's wearing appropriate personal protective equipment, though."
 	icon_state = "poppy"
+	sanity_damage = -1
 
 	var/list/aaa_words = list(
 		"delaminat",

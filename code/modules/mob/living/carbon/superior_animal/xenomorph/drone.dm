@@ -32,6 +32,7 @@ var/datum/xenomorph/xenomorph_ai
 	deathmessage = "lets out a shrill scream as it dies!"
 	overkill_gib = 20
 	overkill_dust = 20
+	sanity_damage = 1
 
 	breath_required_type = NONE
 	breath_poison_type = NONE
