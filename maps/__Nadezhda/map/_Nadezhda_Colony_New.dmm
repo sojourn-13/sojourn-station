@@ -9594,6 +9594,10 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/medical/psych)
 "cqJ" = (
@@ -11320,6 +11324,10 @@
 "cLZ" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/orange,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/security/hut_cell1)
 "cMd" = (
@@ -12170,6 +12178,10 @@
 /obj/effect/floor_decal/industrial/box/red,
 /obj/structure/disposalpipe/trunk{
 	dir = 8
+	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/merchant)
@@ -18212,7 +18224,6 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
-/obj/structure/closet/wardrobe/militia,
 /obj/machinery/holoposter{
 	pixel_x = 32
 	},
@@ -18220,6 +18231,7 @@
 	dir = 4;
 	pixel_x = 8
 	},
+/obj/structure/closet/wardrobe/militia/accessory,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/barracks)
 "eod" = (
@@ -22699,6 +22711,10 @@
 /obj/machinery/recharge_station/upgraded_t_three,
 /obj/structure/closet/wall_mounted{
 	pixel_x = -32
+	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate{
@@ -27198,6 +27214,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"goR" = (
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
+	},
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/command/gmaster)
 "goX" = (
 /obj/random/furniture/pottedplant,
 /obj/effect/decal/cleanable/dirt,
@@ -55589,6 +55612,10 @@
 	dir = 1
 	},
 /obj/machinery/light,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "mPx" = (
@@ -77335,6 +77362,10 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_x = -32
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
 "rFS" = (
@@ -87927,6 +87958,10 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/cbo)
 "tXy" = (
@@ -91625,6 +91660,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
+"uMU" = (
+/obj/structure/catwalk,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/security/prisoncells)
 "uNa" = (
 /obj/structure/bed/psych{
 	desc = "It can be a bit noisy, but still serves well.";
@@ -94316,6 +94359,16 @@
 /obj/item/modular_computer/console/preset/engineering/alarms,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/bridge)
+"vrj" = (
+/obj/machinery/portable_atmospherics/hydroponics{
+	pixel_y = 4
+	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/nadezhda/security/prisoncells)
 "vrp" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -99164,6 +99217,10 @@
 /obj/structure/noticeboard/church{
 	pixel_x = 32
 	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
+	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
 "wuC" = (
@@ -101988,6 +102045,10 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "xgv" = (
 /obj/structure/closet/secure_closet/brig,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/security/prisoncells)
 "xgx" = (
@@ -102541,6 +102602,10 @@
 /area/nadezhda/maintenance/substation/servist)
 "xmD" = (
 /obj/random/furniture/pottedplant,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
 "xmH" = (
@@ -179652,7 +179717,7 @@ hqv
 dna
 dCG
 nyQ
-dCG
+goR
 hqv
 xrw
 xnw
@@ -199556,7 +199621,7 @@ kGg
 kGg
 kGg
 upZ
-uZs
+vrj
 uZs
 kGg
 kGg
@@ -202589,7 +202654,7 @@ djy
 djy
 pSR
 gYB
-gYB
+uMU
 uSy
 mET
 mdF
