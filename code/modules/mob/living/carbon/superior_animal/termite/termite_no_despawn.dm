@@ -9,6 +9,7 @@
 	speak_emote = list("clicks")
 	emote_see = list("rubs its legs")
 	speak_chance = 5
+	sanity_damage = 1
 
 	deathmessage = "splatters into a bloody mess."
 	attacktext = "chomped"

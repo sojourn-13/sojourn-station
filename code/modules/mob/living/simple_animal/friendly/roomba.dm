@@ -33,6 +33,7 @@
 	var/drop1 = /obj/item/scrap_lump
 	var/drop2 = null
 	var/cell_drop = null
+	sanity_damage = -2
 
 // For repairing damage to the synths.
 /mob/living/simple_animal/soteria_roomba/attackby(obj/item/W as obj, mob/user as mob)
