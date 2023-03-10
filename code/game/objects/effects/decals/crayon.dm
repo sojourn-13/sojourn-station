@@ -80,7 +80,78 @@
 	add_hiddenprint(usr)
 
 //various items and doo-dads
-/obj/item/device/camera/crayon_mage // used in admin testing so I don't have to constantly var edit myself to be nearsighted
+ //the pouch of wonderful single item sharing!
+/obj/item/crayon_pouch
+	name = "crayon pouch"
+	desc = "What seems to be a normal crayon box has turned into something far more strange."
+	icon = 'icons/obj/dice.dmi'
+	icon_state = "magicdicebag"
+	price_tag = 100
+	w_class = ITEM_SIZE_SMALL
+	matter = list(MATERIAL_BIOMATTER = 12)
+	attack_verb = list("pouched")
+
+	var/obj/item/storage/heldbag = null
+	var/master_bag = FALSE
+
+/obj/item/crayon_pouch/Initialize(mapload)
+	for(var/obj/item/crayon_pouch/linker in world)
+		heldbag = linker.heldbag
+	if(!heldbag && !master_bag)
+		heldbag = new /obj/item/storage/pouch/medium_generic/crayon_linker(src)
+		master_bag = TRUE
+
+/obj/item/crayon_pouch/attackby(obj/item/W as obj, mob/user as mob)
+	if(heldbag)
+		heldbag.refresh_all()
+		heldbag.close_all()
+		return heldbag.attackby(W, user)
+	else
+		to_chat(user, SPAN_WARNING("The crayon pouch refuses to open."))
+		return
+
+/obj/item/crayon_pouch/AltClick(mob/user)
+	if(!heldbag)
+		to_chat(user, SPAN_WARNING("The crayon pouch refuses to open."))
+		return
+	return heldbag.AltClick(user)
+
+/obj/item/crayon_pouch/attack_self(mob/user as mob)
+	if(!heldbag)
+		to_chat(user, SPAN_WARNING("The crayon box refuses to open."))
+		return
+	return heldbag.attack_self(user)
+
+/obj/item/crayon_pouch/throw_at(mob/user)
+	if(heldbag)
+		heldbag.close_all()
+	..()
+
+/obj/item/crayon_pouch/Destroy()
+	heldbag.close_all()
+	if(master_bag)
+		for(var/obj/item/crayon_pouch/linker in world)
+			linker.heldbag = null
+		master_bag = FALSE
+		qdel(heldbag)
+	else
+		heldbag = null
+	contents = null
+	. = ..()
+
+/obj/item/storage/pouch/medium_generic/crayon_linker //the special storage pouch that all the crayon pouches link to.
+
+/obj/item/storage/pouch/medium_generic/crayon_linker/storage_depth_turf()
+	return -1 //Were always going to be accessable throught dept as this is meant for nested items
+
+/obj/item/storage/pouch/medium_generic/crayon_linker/attack_self(mob/user as mob)
+	open(user)
+
+/obj/item/storage/pouch/medium_generic/crayon_linker/Adjacent()
+	return TRUE
+
+// used in admin testing so I don't have to constantly var edit myself to be nearsighted
+/obj/item/device/camera/crayon_mage
 	desc = "why is the light on the back?"
 	name = "camera"
 	pictures_left = 0
@@ -95,7 +166,8 @@
 		playsound(loc, pick('sound/items/polaroid1.ogg', 'sound/items/polaroid2.ogg'), 75, 1, -3)
 		user.disabilities|=NEARSIGHTED
 
-/obj/structure/sink/basion/crayon //BLOOD FONT!
+ //BLOOD FONT!
+/obj/structure/sink/basion/crayon
 	name = "blood basion"
 	desc = "A deep basin of polished stone that forever fills with gore."
 	icon_state = "BaptismFont_Water"
@@ -291,6 +363,10 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 
 				if(spell.message == "Scribe." && candle_amount >= 7)
 					scribe_spell(M)
+					continue
+
+				if(spell.message == "Pouch." && candle_amount >= 2)
+					pouch_spell(M)
 					continue
 			return
 
@@ -548,7 +624,7 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 	M.maxHealth -= 10
 	M.health -= 10
 	to_chat(M, "<span class='info'>To make life from dyes, takes carbon...</span>")
-	for(var/obj/item/reagent_containers/food/snacks/grown/G in oview(5)) // Must be on the spell circle
+	for(var/obj/item/reagent_containers/food/snacks/grown/G in oview(5))
 		to_chat(M, "<span class='info'>Distant voices call out from everywhere. NOT THE BEES!</span>")
 		B.remove_self(70)
 		if(G.name == "sunflower")
@@ -563,6 +639,16 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 	B.remove_self(100)
 	M.stats.addPerk(PERK_SCRIBE)
 	to_chat(M, "<span class='warning'>In a single moment your vision vanishes. The understanding of scrolls fills your mind.</span>")
+	return
+
+/obj/effect/decal/cleanable/crayon/proc/pouch_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	for(var/obj/item/storage/pill_bottle/dice/frodo in oview(1))
+		B.remove_self(50)
+		M.sanity.changeLevel(-50) //not always going to break you. But will tank your sanity.
+		to_chat(M, "<span class='warning'>The dice bag gives a loud pop.</span>")
+		new /obj/item/crayon_pouch(frodo.loc)
+		qdel(frodo)
 	return
 
 //ritual knife spell procs
