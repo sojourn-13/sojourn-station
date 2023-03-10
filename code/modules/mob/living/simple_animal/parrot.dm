@@ -780,6 +780,7 @@
 	mob_size = MOB_SMALL
 	faction = "pond"
 	speak_chance = 5
+	sanity_damage = -1
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken // You monster.
 	meat_amount = 2

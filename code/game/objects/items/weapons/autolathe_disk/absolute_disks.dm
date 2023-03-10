@@ -224,6 +224,16 @@
 		/datum/design/autolathe/cell/medium/high,
 	)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/nt_counselor
+	disk_name = "Absolute Armory - NT LP \"Serenity\""
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/ntpistol = 2,
+		/datum/design/autolathe/cell/small/high,
+	)
+	
 //for the EOTP
 /obj/item/computer_hardware/hard_drive/portable/design/nt/counselor
 	disk_name = "Absolute Armory - Counselor PDW E Plus"
@@ -234,6 +244,19 @@
 		/datum/design/autolathe/gun/taser,
 		/datum/design/autolathe/cell/medium/high,
 	)
+	
+/obj/item/computer_hardware/hard_drive/portable/design/nt/nt_counselor
+	disk_name = "Absolute Armory - NT LP \"Serenity\" Plus"
+	icon_state = "neotheology"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/ntpistol,
+		/datum/design/autolathe/cell/small/high,
+	)
+
+
+
 
 // ENERGY ARMS
 
@@ -602,6 +625,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 	designs = list(
 		/datum/design/autolathe/gun/energy_crossbow = 10,
 		/datum/design/autolathe/gun/large_energy_crossbow = 12,
+		/datum/design/autolathe/gun/ntpistol,
 		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/gun/pulse = 5,
 		/datum/design/autolathe/gun/pulse_destroyer = 8,
@@ -620,6 +644,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 	designs = list(
 		/datum/design/autolathe/gun/energy_crossbow = 10,
 		/datum/design/autolathe/gun/large_energy_crossbow = 12,
+		/datum/design/autolathe/gun/ntpistol,
 		/datum/design/autolathe/gun/pulse = 5,
 		/datum/design/autolathe/gun/pulse_destroyer = 8,
 		/datum/design/autolathe/gun/ionrifle = 3,

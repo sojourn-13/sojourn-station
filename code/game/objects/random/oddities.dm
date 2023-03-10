@@ -71,7 +71,7 @@
 				//Energy
 				/obj/item/gun/energy/sniperrifle/saint = 1,
 				//obj/item/gun/energy/lasersmg/inferno = 1,
-				/obj/item/gun/energy/ntpistol = 1,
+				/obj/item/gun/energy/ntpistol/mana = 1,
 				/obj/item/gun/energy/captain/zapper = 1,
 				/obj/item/gun/energy/xray/psychic_cannon = 1,
 				/obj/item/gun/energy/lasersmg/chaos_engine = 1,

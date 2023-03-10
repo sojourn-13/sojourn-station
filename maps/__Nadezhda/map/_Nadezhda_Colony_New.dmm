@@ -1654,15 +1654,21 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "avw" = (
-/obj/machinery/door/blast/shutters/glass{
-	name = "Fireplace  Cover"
+/obj/item/stock_parts/manipulator,
+/obj/item/circuitboard/vending,
+/obj/item/tool/screwdriver,
+/obj/item/stack/material/steel{
+	amount = 8
 	},
-/obj/structure/bonfire/permanent,
-/obj/item/contraband/poster/placed/recruitment/blackshield{
-	pixel_y = 32
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stack/cable_coil/white,
+/obj/structure/table/steel_reinforced,
+/obj/machinery/light{
+	dir = 4
 	},
-/turf/simulated/floor/rock,
-/area/nadezhda/crew_quarters/dorm1)
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/nadezhda/pros/prep)
 "avx" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
@@ -1836,6 +1842,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"axf" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/golden,
+/area/nadezhda/hallway/surface/section1)
 "axj" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -5056,8 +5076,7 @@
 /area/nadezhda/command/panic_room)
 "bkj" = (
 /obj/machinery/door/airlock/multi_tile/glass{
-	name = "Armory Airlock";
-	req_one_access = list(63)
+	name = "Armory Airlock"
 	},
 /obj/machinery/door/blast/regular{
 	id = "shop_armory_blast_door";
@@ -5212,6 +5231,11 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"bmO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/steel/golden,
+/area/nadezhda/hallway/surface/section1)
 "bna" = (
 /obj/item/modular_computer/console/preset/engineering/rcon,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -5311,6 +5335,8 @@
 /obj/random/dungeon_gun_ballistic,
 /obj/random/dungeon_gun_ballistic/low_chance,
 /obj/random/gun_cheap,
+/obj/random/gun_normal,
+/obj/random/gun_normal,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armoryshop)
 "boB" = (
@@ -8071,7 +8097,7 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "bWX" = (
-/obj/structure/salvageable/console_broken_os,
+/obj/structure/salvageable/personal,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "bXb" = (
@@ -8267,12 +8293,11 @@
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/nadezhda/security/armory_blackshield)
 "cag" = (
-/obj/machinery/disposal,
-/obj/effect/floor_decal/industrial/box/red,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel/golden,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/hallway/surface/section1)
 "cal" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8672,9 +8697,15 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/xenobiology)
 "cfU" = (
-/obj/structure/table/rack/shelf,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/pros/prep)
+/obj/machinery/door/unpowered/simple/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "cfV" = (
 /obj/landmark/join/start/assistant,
 /obj/effect/decal/cleanable/dirt,
@@ -9563,6 +9594,10 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/medical/psych)
 "cqJ" = (
@@ -11289,6 +11324,10 @@
 "cLZ" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/orange,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/security/hut_cell1)
 "cMd" = (
@@ -12084,6 +12123,10 @@
 	id = "spess";
 	pixel_x = 24
 	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	pixel_y = 32;
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done."
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters)
 "cUB" = (
@@ -12135,6 +12178,10 @@
 /obj/effect/floor_decal/industrial/box/red,
 /obj/structure/disposalpipe/trunk{
 	dir = 8
+	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/merchant)
@@ -14587,7 +14634,7 @@
 "dxZ" = (
 /obj/machinery/door/window/brigdoor/northleft{
 	dir = 4;
-	req_access = list(3)
+	req_access = list(0)
 	},
 /obj/machinery/door/window/brigdoor/northleft{
 	dir = 8;
@@ -16265,8 +16312,8 @@
 	name = "Residential District Maintenance"
 	})
 "dRr" = (
-/obj/vehicle/train/cargo/engine,
 /obj/effect/decal/cleanable/dirt,
+/obj/random/scrap/sparse_weighted,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "dRK" = (
@@ -17338,6 +17385,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
+"eey" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/roaches/low_chance,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "eez" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -18171,7 +18224,6 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/red,
-/obj/structure/closet/wardrobe/militia,
 /obj/machinery/holoposter{
 	pixel_x = 32
 	},
@@ -18179,6 +18231,7 @@
 	dir = 4;
 	pixel_x = 8
 	},
+/obj/structure/closet/wardrobe/militia/accessory,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/barracks)
 "eod" = (
@@ -18194,6 +18247,9 @@
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/atmospherics/unary/vent_pump,
 /obj/machinery/camera/network/engineering,
+/obj/machinery/computer/guestpass{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/foyer)
 "eoo" = (
@@ -19637,6 +19693,9 @@
 /obj/structure/catwalk,
 /obj/structure/barricade,
 /obj/structure/grille,
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "eEL" = (
@@ -20815,6 +20874,12 @@
 	},
 /obj/machinery/light_switch{
 	dir = 4;
+	pixel_x = -32;
+	pixel_y = -11
+	},
+/obj/machinery/computer/guestpass{
+	pixel_y = 3;
+	dir = 4;
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -21372,6 +21437,7 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/atmos)
 "eYt" = (
+/obj/structure/curtain/open/privacy,
 /turf/simulated/shuttle/wall/escpod{
 	icon_state = "escpodwall5";
 	opacity = 0
@@ -21581,6 +21647,21 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/crew_quarters/dorm1)
+"faT" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor/northright{
+	req_access = list(78);
+	dir = 4
+	},
+/obj/machinery/door/window/southright{
+	dir = 8
+	},
+/obj/machinery/door/blast/regular{
+	id = "ProspShop"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/pros/prep)
 "fbb" = (
 /obj/item/clothing/under/excelsior/bdu,
 /obj/item/clothing/under/excelsior/bdu,
@@ -22127,10 +22208,6 @@
 /obj/structure/closet/wall_mounted{
 	pixel_y = -32
 	},
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_y = -32
-	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/surgery)
 "fif" = (
@@ -22241,6 +22318,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
 "fjq" = (
+/obj/structure/curtain/open/privacy,
 /turf/simulated/shuttle/wall/escpod{
 	icon_state = "escpodwall6";
 	opacity = 0
@@ -22633,6 +22711,10 @@
 /obj/machinery/recharge_station/upgraded_t_three,
 /obj/structure/closet/wall_mounted{
 	pixel_x = -32
+	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate{
@@ -24495,6 +24577,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet/personal/salvager,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "fKa" = (
@@ -25660,6 +25745,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/medical/reception)
+"fYR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/wizard{
+	pixel_y = -32
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "fZb" = (
 /obj/item/storage/box/lights/mixed,
 /obj/item/storage/box/lights/tubes,
@@ -27122,6 +27214,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"goR" = (
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
+	},
+/turf/simulated/floor/carpet/oracarpet,
+/area/nadezhda/command/gmaster)
 "goX" = (
 /obj/random/furniture/pottedplant,
 /obj/effect/decal/cleanable/dirt,
@@ -28013,6 +28112,13 @@
 /obj/machinery/camera/network/colony_underground,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/crew_quarters/kitchen)
+"gzj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/guestpass{
+	pixel_y = -32
+	},
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/security/barracks)
 "gzo" = (
 /obj/effect/floor_decal/industrial/warningred,
 /obj/machinery/alarm{
@@ -28436,6 +28542,7 @@
 "gFn" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light,
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/steel/brown_platform,
 /area/nadezhda/pros/foreman)
 "gFq" = (
@@ -31283,6 +31390,8 @@
 /obj/random/gun_normal/always_spawn,
 /obj/random/gun_normal/always_spawn,
 /obj/random/gun_cheap,
+/obj/random/gun_fancy,
+/obj/random/gun_fancy,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armoryshop)
 "hpm" = (
@@ -32736,22 +32845,10 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "hFN" = (
-/obj/structure/table/rack,
-/obj/random/junkfood/low_chance{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/obj/random/junkfood/low_chance{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/obj/random/junkfood/low_chance{
-	pixel_x = -1;
-	pixel_y = 3
-	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/structure/closet/secure_closet/freezer/icebox,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical_blackshield)
 "hFX" = (
@@ -33911,6 +34008,9 @@
 /obj/machinery/camera/network/colony_underground,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/guestpass{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "hUo" = (
@@ -34216,12 +34316,15 @@
 	name = "\improper Outdoors - Pad"
 	})
 "hWW" = (
-/obj/machinery/vending/propis_loot_box,
 /obj/machinery/light/small{
-	dir = 4
+	dir = 1
 	},
+/obj/effect/floor_decal/industrial/arrows/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/golden,
-/area/nadezhda/pros/prep)
+/area/nadezhda/hallway/surface/section1)
 "hXc" = (
 /obj/structure/table/standard,
 /obj/random/lowkeyrandom,
@@ -34936,6 +35039,14 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/turret_protected/ai)
+"idi" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/golden,
+/area/nadezhda/hallway/surface/section1)
 "idj" = (
 /obj/structure/grille,
 /obj/structure/railing,
@@ -36836,6 +36947,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/guestpass{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/steel/monofloor{
 	dir = 4
 	},
@@ -38787,6 +38901,21 @@
 "iYY" = (
 /turf/unsimulated/mineral,
 /area/asteroid/cave)
+"iZb" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/computer/guestpass{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/absolutism/vectorrooms)
 "iZg" = (
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -39204,14 +39333,14 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
 "jdu" = (
-/obj/structure/table/rack/shelf,
-/obj/random/gun_normal/low_chance,
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+/obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
 	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/pros/prep)
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "jdz" = (
 /obj/structure/bed/chair/wood{
 	dir = 4;
@@ -40256,6 +40385,14 @@
 /obj/structure/flora/big/rocks3,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/dcave)
+"jow" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "joA" = (
 /obj/structure/railing{
 	dir = 8
@@ -43825,7 +43962,7 @@
 /area/nadezhda/command/crematorium)
 "kfI" = (
 /obj/structure/table/woodentable,
-/obj/item/tool/hammer/foremansledge,
+/obj/item/gunbox/forehead,
 /turf/simulated/floor/tiled/steel/brown_platform,
 /area/nadezhda/pros/foreman)
 "kfK" = (
@@ -46066,6 +46203,15 @@
 /obj/structure/flora/small/busha3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"kEW" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/steel/golden,
+/area/nadezhda/hallway/surface/section1)
 "kEZ" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -47903,6 +48049,11 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/reception)
+"lcW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/scrap/sparse_weighted,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "lcX" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -48453,6 +48604,14 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/crew_quarters)
+"lkm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	pixel_y = 32;
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done."
+	},
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/crew_quarters/dorm1)
 "lkK" = (
 /mob/living/simple_animal/pig{
 	desc = "This intelligent sow has strange, pointy ears.";
@@ -51118,6 +51277,11 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/gmaster)
+"lRQ" = (
+/obj/structure/table/rack/shelf,
+/obj/random/gun_normal/low_chance,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/pros/prep)
 "lRU" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -51215,6 +51379,10 @@
 	},
 /obj/machinery/door/window{
 	dir = 2
+	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	pixel_y = 32;
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done."
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/dorm2)
@@ -52084,9 +52252,12 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "mdF" = (
-/obj/machinery/door/unpowered/simple/wood,
-/turf/simulated/wall,
-/area/nadezhda/maintenance/undergroundfloor1east)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/guestpass{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/sechall)
 "mdJ" = (
 /obj/structure/flora/big/rocks3,
 /turf/simulated/mineral,
@@ -53201,6 +53372,9 @@
 /obj/effect/floor_decal/rust/mono_rusted1,
 /obj/random/cluster/termite_no_despawn/low_chance,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
@@ -53306,6 +53480,13 @@
 /obj/structure/closet/l3closet/virology,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
+"mqL" = (
+/obj/structure/catwalk,
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "mqO" = (
 /obj/structure/flora/big/rocks1,
 /turf/simulated/floor/asteroid/grass,
@@ -55432,6 +55613,10 @@
 	dir = 1
 	},
 /obj/machinery/light,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "mPx" = (
@@ -56271,6 +56456,11 @@
 "mZg" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/xenobiology/ameridian)
+"mZm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/largecrate/hoverpod,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "mZn" = (
 /obj/random/junk/low_chance,
 /obj/structure/railing{
@@ -56835,6 +57025,14 @@
 /obj/random/tool_upgrade/always,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
+"nfc" = (
+/obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/guestpass{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/sechall)
 "nfh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -57924,6 +58122,9 @@
 /area/nadezhda/maintenance/surface_maints_1)
 "nrv" = (
 /obj/machinery/disposal,
+/obj/item/contraband/poster/placed/generic/wizard{
+	pixel_y = -32
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "nrO" = (
@@ -58139,8 +58340,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ntP" = (
-/obj/structure/sign/warningnew/explosives,
-/turf/simulated/wall/r_wall,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/guestpass{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "ntS" = (
 /obj/structure/bed/chair,
@@ -59778,6 +59982,12 @@
 	icon_state = "2,3"
 	},
 /area/shuttle/rocinante_shuttle_area)
+"nLO" = (
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "nLS" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/bushc3,
@@ -60047,6 +60257,15 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/clownoffice)
+"nOL" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/guestpass{
+	dir = 8;
+	pixel_x = 24
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/command/bridge)
 "nOS" = (
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/engineering/engine_room)
@@ -60194,8 +60413,10 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/machinery/door/airlock/external,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/holy{
+	name = "Church"
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/absolutism/storage)
 "nRh" = (
@@ -63941,6 +64162,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/guestpass{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "oHU" = (
@@ -65063,6 +65287,13 @@
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"oUz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/junction{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/steel/golden,
+/area/nadezhda/hallway/surface/section1)
 "oUB" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -65193,6 +65424,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
+"oWf" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "oWg" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/flora/small/trailrocka1,
@@ -66646,6 +66887,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"pnP" = (
+/obj/random/junk/low_chance,
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1east)
 "pnW" = (
 /obj/structure/filingcabinet/filingcabinet,
 /obj/effect/decal/cleanable/dirt,
@@ -69281,6 +69529,21 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bookcase/guncase,
+/obj/random/gun_parts/frames/better_spawns,
+/obj/random/gun_parts/high_end,
+/obj/random/gun_parts/frames,
+/obj/random/gun_parts/low,
+/obj/random/gun_parts/low,
+/obj/random/gun_parts/low,
+/obj/random/gun_parts/low,
+/obj/random/gun_parts/low,
+/obj/item/tool/wirecutters/pliers,
+/obj/item/tool/saw,
+/obj/random/gun_parts/frames,
+/obj/random/gun_parts/frames,
+/obj/random/gun_parts/frames,
+/obj/random/gun_parts/frames,
+/obj/random/gun_parts/frames,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "pRD" = (
@@ -69539,6 +69802,10 @@
 /obj/item/clothing/accessory/holster/hip,
 /obj/item/storage/pouch/pistol_holster/cowboy,
 /obj/item/clothing/accessory/holster/hip,
+/obj/item/storage/pouch/ammo,
+/obj/item/storage/pouch/ammo,
+/obj/item/storage/pouch/ammo,
+/obj/item/storage/pouch/ammo,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armoryshop)
 "pUJ" = (
@@ -71917,6 +72184,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
+"qwl" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/random/flora/low_chance,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/inside_colony)
 "qwm" = (
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/absolutism/vectorrooms)
@@ -71965,6 +72237,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
+"qwF" = (
+/obj/structure/table/rack/shelf,
+/obj/item/stack/material/cardboard/random,
+/obj/random/material,
+/obj/random/material,
+/obj/random/material,
+/obj/random/material/low_chance,
+/obj/random/material/low_chance,
+/obj/random/material/low_chance,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/pros/prep)
 "qwT" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
@@ -73085,9 +73368,13 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "qIm" = (
-/obj/machinery/alarm{
+/obj/machinery/atm{
 	pixel_y = 32
 	},
+/obj/effect/floor_decal/industrial/arrows/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
 "qIn" = (
@@ -73246,6 +73533,13 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
+"qKW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/why{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "qLa" = (
 /obj/machinery/door/blast/regular/open{
 	id = "xenobio1";
@@ -73436,11 +73730,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
+"qNM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/guestpass{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/absolutism/vectorrooms)
 "qNO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bookcase/guncase,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"qNS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/scrap/sparse_weighted,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "qNW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -75161,6 +75467,9 @@
 	},
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/guestpass{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/foyer)
 "riD" = (
@@ -75318,6 +75627,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "rll" = (
+/obj/structure/curtain/open/privacy,
 /turf/simulated/shuttle/wall/escpod{
 	icon_state = "escpodwall23";
 	opacity = 0
@@ -75785,6 +76095,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/sleep/cryo2)
+"rqH" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/guestpass{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/lab)
 "rqY" = (
 /obj/random/structures,
 /obj/effect/decal/cleanable/dirt,
@@ -77043,6 +77363,10 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_x = -32
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
 "rFS" = (
@@ -77783,6 +78107,13 @@
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
 	})
+"rOu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "rOv" = (
 /obj/machinery/button/remote/blast_door{
 	id = "Cell 2b";
@@ -78873,6 +79204,11 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/crew_quarters/toilet/public)
 "sbj" = (
+/obj/machinery/disposal,
+/obj/effect/floor_decal/industrial/box/red,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
 "sbl" = (
@@ -79330,10 +79666,19 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/absolutism/vectorrooms)
 "sgt" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/pros/prep)
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "sgA" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -82144,6 +82489,10 @@
 /obj/structure/sign/warning/hazard_danger,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters)
+"sMX" = (
+/obj/machinery/vending/engineering,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/pros/prep)
 "sNh" = (
 /obj/item/clothing/suit/rank/chef/classic,
 /obj/effect/decal/cleanable/dirt,
@@ -82783,7 +83132,8 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/obj/machinery/vending/one_star/food,
+/turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/command/merchant)
 "sVb" = (
 /obj/structure/catwalk,
@@ -82910,6 +83260,7 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/panic_room)
 "sWT" = (
+/obj/structure/curtain/open/privacy,
 /turf/simulated/shuttle/wall/escpod{
 	icon_state = "escpodwall24";
 	opacity = 0
@@ -83249,7 +83600,6 @@
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -83262,6 +83612,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/holy{
+	name = "Church"
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/absolutism/storage)
 "tad" = (
@@ -86297,6 +86650,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"tJp" = (
+/obj/random/junk/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/scrap/sparse_weighted,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "tJq" = (
 /obj/item/modular_computer/console/preset/engineering/atmos{
 	dir = 8
@@ -86316,6 +86675,9 @@
 	dir = 8
 	},
 /obj/machinery/recharger,
+/obj/machinery/computer/guestpass{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "tJF" = (
@@ -86659,6 +87021,14 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/steel/bar_light,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"tNv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/alarm{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/steel/golden,
+/area/nadezhda/hallway/surface/section1)
 "tNB" = (
 /obj/structure/table/woodentable,
 /obj/item/folder,
@@ -87588,6 +87958,10 @@
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
 	dir = 1
+	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/cbo)
@@ -88872,6 +89246,19 @@
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
+"uki" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/why{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/rnd/lab)
 "ukl" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -88987,6 +89374,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/captain/quarters)
+"ulp" = (
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/maintenance/undergroundfloor1west)
 "ulq" = (
 /obj/machinery/door/blast/regular{
 	id = "shop_armory_blast_door";
@@ -89514,6 +89909,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/panic_room)
+"urD" = (
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "urR" = (
 /obj/effect/floor_decal/spline/wood{
 	icon_state = "spline_fancy_corner"
@@ -89704,6 +90107,9 @@
 /obj/structure/bed/chair/sofa/black/corner{
 	dir = 4;
 	icon_state = "sofaend_right"
+	},
+/obj/machinery/computer/guestpass{
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
@@ -90502,6 +90908,10 @@
 /obj/machinery/door/window{
 	dir = 2
 	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	pixel_y = 32;
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done."
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/dorm3)
 "uFH" = (
@@ -91251,6 +91661,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
+"uMU" = (
+/obj/structure/catwalk,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/security/prisoncells)
 "uNa" = (
 /obj/structure/bed/psych{
 	desc = "It can be a bit noisy, but still serves well.";
@@ -92025,6 +92443,10 @@
 /obj/item/gun_upgrade/mechanism/bikehorn,
 /obj/item/gun_upgrade/trigger/honker,
 /obj/item/gun_upgrade/trigger/honker,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	pixel_y = 32;
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done."
+	},
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/crew_quarters/clownoffice)
 "uUx" = (
@@ -93929,10 +94351,25 @@
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/lakeside)
+"vqM" = (
+/obj/structure/table/rack/shelf,
+/obj/random/gun_parts/frames,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/pros/prep)
 "vqN" = (
 /obj/item/modular_computer/console/preset/engineering/alarms,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/bridge)
+"vrj" = (
+/obj/machinery/portable_atmospherics/hydroponics{
+	pixel_y = 4
+	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/nadezhda/security/prisoncells)
 "vrp" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -98519,6 +98956,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/surgery)
 "wrd" = (
@@ -98597,6 +99038,12 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos/storage)
+"wrL" = (
+/obj/item/contraband/poster/placed/generic/walk{
+	pixel_y = -32
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/maintenance/undergroundfloor1west)
 "wrT" = (
 /obj/structure/lattice,
 /turf/simulated/wall/r_wall,
@@ -98770,6 +99217,10 @@
 	},
 /obj/structure/noticeboard/church{
 	pixel_x = 32
+	},
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
@@ -98951,6 +99402,10 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/machinery/computer/guestpass{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/hallway/surface/section1)
 "wwY" = (
@@ -99746,8 +100201,9 @@
 	name = "Residential District Maintenance"
 	})
 "wHw" = (
+/obj/machinery/vending/propis_loot_box,
 /obj/machinery/camera/network/colony_surface{
-	dir = 8
+	dir = 1
 	},
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
@@ -101590,6 +102046,10 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "xgv" = (
 /obj/structure/closet/secure_closet/brig,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/security/prisoncells)
 "xgx" = (
@@ -102143,6 +102603,10 @@
 /area/nadezhda/maintenance/substation/servist)
 "xmD" = (
 /obj/random/furniture/pottedplant,
+/obj/item/contraband/poster/placed/generic/no_erp{
+	desc = "This poster reminds the crew that Eroticism, unsanctioned Rituals and Pornography are bad and shouldnt be film or done.";
+	pixel_y = -32
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
 "xmH" = (
@@ -103212,6 +103676,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/hologram/holopad,
+/obj/machinery/computer/guestpass{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/hallway/surface/section1)
 "xzP" = (
@@ -104637,9 +105104,10 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
 "xQo" = (
-/obj/structure/disposalpipe/segment{
+/obj/effect/floor_decal/industrial/arrows/white{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
 "xQq" = (
@@ -107434,47 +107902,47 @@ tad
 tad
 tad
 tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
 cZb
+tad
+tad
 cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
 tad
 tad
 tad
@@ -107636,46 +108104,46 @@ tad
 tad
 tad
 tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+cZb
+cZb
+tad
+cZb
+tad
+tad
+tad
+cZb
+tad
 cZb
 cZb
 cZb
 cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
+tad
 tad
 tad
 tad
@@ -107838,13 +108306,13 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
+tad
+tad
+tad
+tad
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -107852,21 +108320,9 @@ cZb
 cZb
 vch
 cZb
+tad
 cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
+tad
 cZb
 cZb
 cZb
@@ -107880,6 +108336,18 @@ cZb
 cZb
 tad
 tad
+tad
+tad
+tad
+tad
+tad
+tad
+cZb
+tad
+tad
+tad
+tad
+cZb
 tad
 tad
 tad
@@ -108040,13 +108508,13 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
+tad
+tad
+tad
+tad
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -108080,9 +108548,9 @@ cZb
 cZb
 cZb
 cZb
-tad
-tad
-tad
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -108242,12 +108710,12 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
+tad
+tad
+tad
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -108282,50 +108750,6 @@ cZb
 cZb
 cZb
 cZb
-tad
-tad
-tad
-tad
-tad
-cZb
-cZb
-cZb
-tad
-tad
-tad
-tad
-tad
-tad
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
 cZb
 cZb
 cZb
@@ -108340,6 +108764,50 @@ tad
 tad
 tad
 tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+tad
+tad
+tad
+tad
+tad
+tad
 tad
 tad
 tad
@@ -108351,9 +108819,9 @@ tad
 tad
 tad
 cZb
-cZb
-cZb
-cZb
+tad
+tad
+tad
 tad
 tad
 tad
@@ -108444,51 +108912,51 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
 tad
 tad
 tad
 tad
 tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 cZb
 cZb
 cZb
@@ -108554,8 +109022,8 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
+tad
+tad
 tad
 tad
 tad
@@ -108646,11 +109114,11 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
-cZb
-cZb
+tad
+tad
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -108686,11 +109154,11 @@ cZb
 cZb
 cZb
 cZb
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
 cZb
 cZb
 cZb
@@ -108848,11 +109316,11 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
-cZb
-cZb
+tad
+tad
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -108888,11 +109356,11 @@ cZb
 cZb
 cZb
 cZb
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
 cZb
 cZb
 cZb
@@ -109050,10 +109518,10 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
-cZb
+tad
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -109090,13 +109558,13 @@ cZb
 cZb
 cZb
 cZb
-tad
-tad
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 cZb
 cZb
 cZb
@@ -109165,11 +109633,11 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
-cZb
-cZb
-cZb
+tad
+tad
+tad
+tad
+tad
 tad
 tad
 tad
@@ -109252,9 +109720,9 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -109292,13 +109760,13 @@ cZb
 cZb
 cZb
 cZb
-tad
-tad
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 cZb
 cZb
 cZb
@@ -109367,9 +109835,9 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
-cZb
+tad
+tad
+tad
 cZb
 cZb
 tad
@@ -109454,9 +109922,9 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -109494,13 +109962,13 @@ hoH
 toi
 toi
 cZb
-tad
-tad
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 cZb
 cZb
 cZb
@@ -109656,9 +110124,9 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -109696,10 +110164,10 @@ jxK
 grt
 toi
 toi
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
 cZb
 cZb
 cZb
@@ -109858,9 +110326,9 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -109900,7 +110368,7 @@ voK
 tQL
 wwo
 cZb
-tad
+cZb
 cZb
 cZb
 cZb
@@ -110060,9 +110528,9 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -110102,7 +110570,7 @@ voK
 qyc
 qyc
 toi
-tad
+cZb
 cZb
 cZb
 cZb
@@ -110262,9 +110730,9 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -110464,9 +110932,9 @@ tad
 tad
 tad
 tad
-cZb
-cZb
-cZb
+tad
+tad
+tad
 cZb
 cZb
 cZb
@@ -110666,8 +111134,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -110868,8 +111336,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -111070,8 +111538,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -111272,7 +111740,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -111474,7 +111942,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -111597,7 +112065,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 tad
 tad
 tad
@@ -111676,8 +112144,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -111799,7 +112267,7 @@ eEL
 eEL
 eEL
 cZb
-tad
+cZb
 tad
 tad
 tad
@@ -111878,8 +112346,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -112000,9 +112468,9 @@ sGq
 nXz
 gJk
 eEL
-tad
-tad
-tad
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -112080,8 +112548,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -112202,10 +112670,10 @@ cFv
 cFv
 cFv
 eEL
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -112282,8 +112750,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -112404,10 +112872,10 @@ cFv
 cFv
 cFv
 eEL
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -112484,8 +112952,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -112595,7 +113063,7 @@ bQx
 eEL
 xVK
 xVK
-xVK
+nLO
 eEL
 eEL
 kxW
@@ -112606,11 +113074,11 @@ eEL
 cFv
 suz
 eEL
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -112686,7 +113154,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -112808,13 +113276,13 @@ eEL
 cFv
 cFv
 eEL
-tad
-tad
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -112888,7 +113356,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -113010,14 +113478,14 @@ duZ
 cFv
 cFv
 eEL
-tad
-tad
-tad
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -113090,7 +113558,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -113213,14 +113681,14 @@ eBr
 eBr
 eEL
 cZb
-tad
-tad
-tad
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -113292,7 +113760,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -113415,15 +113883,15 @@ eEL
 eEL
 eEL
 cZb
-tad
-tad
-tad
-tad
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -113494,7 +113962,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 vch
 vch
@@ -113617,16 +114085,16 @@ eEL
 cZb
 cZb
 cZb
-tad
-tad
-tad
-tad
-tad
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -113696,7 +114164,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 vch
@@ -113826,10 +114294,10 @@ eEL
 eEL
 eEL
 eEL
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -114028,11 +114496,11 @@ dMR
 dMR
 okl
 eEL
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -114230,12 +114698,12 @@ cFp
 dTv
 okl
 eEL
-tad
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -114302,7 +114770,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 vch
 vch
@@ -114412,7 +114880,7 @@ acB
 nPc
 eEL
 xVK
-xVK
+nLO
 eEL
 lxJ
 lxJ
@@ -114432,13 +114900,13 @@ cFp
 cFp
 agd
 eEL
-tad
-tad
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -114504,7 +114972,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 vch
 vch
@@ -114634,13 +115102,13 @@ uII
 cFp
 mQk
 eEL
-tad
-tad
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -114706,7 +115174,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -114908,7 +115376,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -115110,7 +115578,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -115312,8 +115780,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -115514,8 +115982,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -115716,8 +116184,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -115958,7 +116426,7 @@ cZb
 cZb
 toi
 eRC
-jQp
+ulp
 toi
 cZb
 cZb
@@ -116322,7 +116790,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -116524,7 +116992,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -116726,7 +117194,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -116865,7 +117333,7 @@ inf
 eEL
 eEL
 cZb
-tad
+cZb
 tad
 tad
 tad
@@ -116928,7 +117396,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -117066,8 +117534,8 @@ kDv
 jAr
 eEL
 eEL
-tad
-tad
+cZb
+cZb
 tad
 tad
 tad
@@ -117130,7 +117598,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -117332,7 +117800,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -117471,7 +117939,7 @@ bNN
 viV
 viV
 cZb
-tad
+cZb
 tad
 tad
 tad
@@ -117534,8 +118002,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -117736,8 +118204,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 cZb
@@ -117938,8 +118406,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 cZb
 lTx
@@ -118140,8 +118608,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 lTx
 yda
@@ -118342,8 +118810,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 oij
 nxX
@@ -118544,8 +119012,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 oij
 nxX
@@ -118746,8 +119214,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 oij
 kAJ
@@ -118948,8 +119416,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 oij
 cjz
@@ -119083,7 +119551,7 @@ xll
 qZC
 eEL
 cZb
-tad
+cZb
 eEL
 xzz
 khV
@@ -119150,8 +119618,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 oij
 iEQ
@@ -119285,7 +119753,7 @@ xll
 qZC
 eEL
 cZb
-tad
+cZb
 cZb
 nCI
 ttn
@@ -119352,8 +119820,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 oij
 ddd
@@ -119487,7 +119955,7 @@ qZC
 qZC
 eEL
 cZb
-tad
+cZb
 cZb
 acB
 avJ
@@ -119554,8 +120022,8 @@ tad
 tad
 tad
 tad
-cZb
-cZb
+tad
+tad
 cZb
 oij
 agM
@@ -119689,8 +120157,8 @@ qZC
 qZC
 eEL
 cZb
-tad
-tad
+cZb
+cZb
 cZb
 eEL
 eEL
@@ -119756,7 +120224,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 oij
@@ -119891,9 +120359,9 @@ qZC
 tdu
 eEL
 cZb
-tad
-tad
-tad
+cZb
+cZb
+cZb
 eEL
 dQQ
 xVK
@@ -119958,7 +120426,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 oij
@@ -119985,7 +120453,7 @@ cZb
 cZb
 uyF
 cPt
-wXd
+rOu
 uyF
 cZb
 cZb
@@ -120095,7 +120563,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 qck
 qTm
@@ -120160,7 +120628,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 oij
@@ -120297,7 +120765,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 qck
 xVK
@@ -120362,7 +120830,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 oij
@@ -120499,7 +120967,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 fer
 kBu
@@ -120564,7 +121032,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 oij
@@ -120701,7 +121169,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 djv
 qZI
@@ -120766,7 +121234,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 oij
@@ -120903,7 +121371,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 djv
 cQB
@@ -121105,7 +121573,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 djv
 cQB
@@ -121170,7 +121638,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 oij
@@ -121307,7 +121775,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 dQQ
 fWK
@@ -121372,7 +121840,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 oij
@@ -121386,7 +121854,7 @@ cFh
 oBh
 flP
 iuB
-hpS
+fYR
 oij
 uyF
 uyF
@@ -121509,7 +121977,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 qri
 egr
@@ -121574,7 +122042,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 lTx
@@ -121711,7 +122179,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 dQQ
 cQB
@@ -121776,7 +122244,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 cZb
@@ -121913,7 +122381,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 dQQ
 nCY
@@ -122115,7 +122583,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 ouR
 ouR
@@ -122317,7 +122785,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 eEL
 eEL
@@ -122382,7 +122850,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 oij
@@ -122451,7 +122919,7 @@ rLm
 rLm
 kMD
 rLm
-nZB
+uki
 cFw
 raT
 dGD
@@ -122519,7 +122987,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 lhk
 bJF
@@ -122584,7 +123052,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 oij
@@ -122721,7 +123189,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 dQQ
 uAK
@@ -122786,7 +123254,7 @@ tad
 tad
 tad
 tad
-cZb
+tad
 cZb
 cZb
 arU
@@ -122923,7 +123391,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 lhk
 jLK
@@ -122988,8 +123456,8 @@ tad
 tad
 tad
 tad
-arU
-arU
+xhA
+xhA
 arU
 arU
 arU
@@ -123125,7 +123593,7 @@ eEL
 cZb
 cZb
 cZb
-tad
+cZb
 eEL
 eEL
 eEL
@@ -123190,8 +123658,8 @@ tad
 tad
 tad
 tad
-arU
-arU
+xhA
+xhA
 arU
 arU
 arU
@@ -123327,18 +123795,18 @@ eEL
 cZb
 cZb
 cZb
-tad
-tad
-tad
-tad
-tad
-tad
-tad
-tad
-tad
-tad
-tad
-tad
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
+cZb
 tad
 tad
 tad
@@ -123392,7 +123860,7 @@ tad
 tad
 tad
 tad
-arU
+xhA
 arU
 arU
 arU
@@ -123594,7 +124062,7 @@ tad
 tad
 tad
 tad
-arU
+xhA
 arU
 arU
 arU
@@ -123796,7 +124264,7 @@ tad
 tad
 tad
 tad
-arU
+xhA
 arU
 arU
 arU
@@ -123998,7 +124466,7 @@ tad
 tad
 tad
 tad
-arU
+xhA
 suR
 oSN
 aJq
@@ -124200,7 +124668,7 @@ tad
 tad
 tad
 tad
-arU
+xhA
 ueB
 igv
 cEQ
@@ -124402,7 +124870,7 @@ tad
 tad
 tad
 tad
-arU
+xhA
 mnV
 suy
 lyg
@@ -124534,7 +125002,7 @@ pjj
 vlx
 qZC
 usY
-usY
+eey
 qZC
 vlx
 qZC
@@ -124542,7 +125010,7 @@ qZC
 gyf
 qAA
 qZC
-hww
+dRr
 eEL
 cZb
 cZb
@@ -124604,7 +125072,7 @@ tad
 tad
 tad
 tad
-arU
+cZb
 xuK
 wJR
 lyg
@@ -124743,8 +125211,8 @@ pjj
 qZC
 qAA
 qZC
-qZC
-hww
+qNS
+dRr
 eEL
 cZb
 cZb
@@ -124806,7 +125274,7 @@ tad
 tad
 tad
 tad
-arU
+cZb
 hjq
 uur
 bsw
@@ -124945,7 +125413,7 @@ hyO
 qZC
 qZC
 kMK
-qZC
+qNS
 dRr
 eEL
 cZb
@@ -125008,7 +125476,7 @@ tad
 tad
 tad
 tad
-arU
+cZb
 wsd
 kRW
 fgl
@@ -125146,9 +125614,9 @@ eEL
 kPJ
 cQB
 cQB
-cQB
-chQ
-pjj
+lcW
+tJp
+mZm
 eEL
 cZb
 jIq
@@ -125210,7 +125678,7 @@ tad
 tad
 tad
 tad
-arU
+cZb
 arU
 vPz
 gaS
@@ -125412,7 +125880,7 @@ tad
 tad
 tad
 tad
-arU
+cZb
 arU
 arU
 xuK
@@ -125614,7 +126082,7 @@ tad
 tad
 tad
 tad
-arU
+cZb
 nuv
 tvV
 xGL
@@ -125816,7 +126284,7 @@ tad
 tad
 tad
 tad
-arU
+tad
 arU
 mnV
 xuK
@@ -126018,7 +126486,7 @@ tad
 tad
 tad
 tad
-arU
+tad
 gaS
 tKk
 lTx
@@ -126220,7 +126688,7 @@ tad
 tad
 tad
 tad
-arU
+xhA
 arU
 rvc
 lTx
@@ -126422,7 +126890,7 @@ tad
 tad
 tad
 tad
-arU
+xhA
 arU
 arU
 arU
@@ -126625,7 +127093,7 @@ tad
 tad
 tad
 xhA
-arU
+xhA
 xhA
 xhA
 xhA
@@ -128487,7 +128955,7 @@ hXc
 oKt
 eWl
 uyF
-uyZ
+qKW
 sWa
 sWa
 iOw
@@ -129949,7 +130417,7 @@ aOW
 mQv
 fWY
 xOw
-fWY
+pnP
 mcl
 iBY
 iBY
@@ -130279,9 +130747,9 @@ tad
 tad
 tad
 tad
-xhA
-xhA
-xhA
+tad
+tad
+arU
 uyF
 vhC
 akM
@@ -130481,9 +130949,9 @@ tad
 tad
 tad
 tad
-xhA
-xhA
-xhA
+tad
+tad
+arU
 uyF
 rwT
 qyO
@@ -130683,9 +131151,9 @@ tad
 tad
 tad
 tad
-xhA
-xhA
-xhA
+tad
+tad
+arU
 uyF
 npD
 uyZ
@@ -130887,7 +131355,7 @@ tad
 tad
 tad
 tad
-tad
+cZb
 uyF
 npW
 fbb
@@ -131089,7 +131557,7 @@ tad
 tad
 tad
 tad
-tad
+cZb
 cZb
 uyF
 uyF
@@ -131291,7 +131759,7 @@ tad
 tad
 tad
 tad
-tad
+cZb
 cZb
 cZb
 cZb
@@ -131612,7 +132080,7 @@ pEw
 xbR
 xbR
 xbR
-mdF
+rwU
 fXT
 fXT
 fXT
@@ -132016,7 +132484,7 @@ pEw
 xbR
 fWN
 xbR
-dOh
+rwU
 fXT
 fXT
 fXT
@@ -132146,7 +132614,7 @@ giu
 ccx
 wwP
 giu
-krV
+jow
 uyF
 uyF
 uyF
@@ -161644,8 +162112,8 @@ btQ
 umh
 pdf
 gan
-kpR
-kMG
+pnj
+pnj
 gan
 hMF
 vjl
@@ -162411,7 +162879,7 @@ utf
 utf
 utf
 kLb
-she
+mqL
 uyF
 cZb
 cZb
@@ -162465,7 +162933,7 @@ hJi
 toi
 rIX
 onp
-avw
+nlp
 edw
 edw
 ybf
@@ -162654,8 +163122,8 @@ btQ
 umh
 aOs
 vAy
-pnj
-pnj
+kpR
+kMG
 vAy
 hMF
 vjl
@@ -162700,7 +163168,7 @@ gnX
 lIu
 toi
 toi
-mBd
+wrL
 toi
 toi
 toi
@@ -162863,7 +163331,7 @@ jbu
 xmb
 dwK
 qUI
-jJp
+stb
 jJp
 jJp
 bbA
@@ -163450,7 +163918,7 @@ brG
 ghd
 gLz
 rHM
-bok
+rqH
 fws
 qFl
 sKs
@@ -163469,14 +163937,14 @@ bKC
 bKC
 gOx
 nRn
-fHD
+isb
 rxE
 fHD
 bbA
 rIX
 bvv
 onp
-uRa
+lkm
 uRa
 faM
 onp
@@ -167749,7 +168217,7 @@ tSJ
 hua
 hua
 hua
-sps
+oWf
 rWi
 cZb
 rWi
@@ -169551,7 +170019,7 @@ cZb
 cZb
 rWi
 muP
-cUl
+sgt
 rWi
 aXd
 pkI
@@ -169992,7 +170460,7 @@ rGX
 anl
 pJv
 rWi
-vAL
+cfU
 rWi
 rWi
 rWi
@@ -170100,7 +170568,7 @@ ueH
 kgH
 etn
 mId
-tUU
+nOL
 tUU
 tUU
 gSH
@@ -172429,7 +172897,7 @@ gof
 rWi
 wZE
 hua
-lbp
+urD
 rWi
 cZb
 cZb
@@ -173020,7 +173488,7 @@ rWi
 rWi
 rWi
 hua
-hua
+jdu
 rWi
 rWi
 sSE
@@ -176778,7 +177246,7 @@ vpF
 vpF
 vpF
 aBx
-hWc
+qNM
 oQj
 ofP
 sxH
@@ -176789,7 +177257,7 @@ lmf
 mjj
 ewE
 ofP
-kcK
+iZb
 mIx
 aBx
 aBx
@@ -179250,7 +179718,7 @@ hqv
 dna
 dCG
 nyQ
-dCG
+goR
 hqv
 xrw
 xnw
@@ -194713,7 +195181,7 @@ uyF
 uyF
 uyF
 cUq
-krV
+jow
 uyF
 uyF
 uyF
@@ -199154,7 +199622,7 @@ kGg
 kGg
 kGg
 upZ
-uZs
+vrj
 uZs
 kGg
 kGg
@@ -200794,7 +201262,7 @@ udR
 oml
 gRC
 qwc
-jgt
+nfc
 acV
 acV
 acV
@@ -202187,10 +202655,10 @@ djy
 djy
 pSR
 gYB
-gYB
+uMU
 uSy
 mET
-dje
+mdF
 qJG
 pJY
 uQS
@@ -204850,7 +205318,7 @@ dqa
 fEL
 fEL
 xja
-nuW
+tNv
 fYz
 dfI
 gmI
@@ -207038,7 +207506,7 @@ nQD
 nQD
 nQD
 dOV
-nQD
+gzj
 dYi
 wiK
 dIB
@@ -207071,7 +207539,7 @@ vhL
 wAk
 vRB
 vhL
-vhL
+idi
 hTh
 nJA
 vhL
@@ -207273,7 +207741,7 @@ otm
 qdr
 nXh
 iPg
-iPg
+axf
 gjP
 cMF
 xja
@@ -207473,10 +207941,10 @@ vhL
 kuS
 fZd
 lEA
-vhL
+kEW
 bAs
-vhL
-kuS
+oUz
+bmO
 thy
 gtV
 aya
@@ -208081,9 +208549,9 @@ gKs
 oxf
 lCF
 vlP
-vlP
-vlP
-vlP
+aLk
+faT
+aLk
 vlP
 vlP
 vlP
@@ -208284,7 +208752,7 @@ oev
 fLt
 vlP
 weq
-lkL
+kUX
 vIU
 vIU
 lkL
@@ -209902,8 +210370,8 @@ sTa
 jxx
 uxX
 mkr
-gBu
-sgt
+vqM
+gfW
 jxx
 gYU
 hJm
@@ -210099,13 +210567,13 @@ uoU
 oZX
 maJ
 vlP
-rBZ
+qwF
+sTa
 jxx
-fPX
-kUX
-kUX
-fPX
-kUX
+vqM
+vqM
+uxX
+gfW
 jxx
 cwC
 vSu
@@ -210301,14 +210769,14 @@ nly
 oZX
 owe
 vlP
-scH
-dIv
-sTa
+rBZ
 jxx
-gfW
-jxx
-cfU
-nnn
+fPX
+kUX
+kUX
+fPX
+kUX
+ntP
 cwC
 hJm
 hJm
@@ -210503,14 +210971,14 @@ kmz
 pne
 skC
 vlP
-vlP
-uxX
-jdu
-hqO
-tSM
-fXt
-tSM
-vlP
+scH
+dIv
+sTa
+jxx
+gBu
+jxx
+lRQ
+nnn
 cwC
 hJm
 hJm
@@ -210706,12 +211174,12 @@ skC
 skC
 vlP
 vlP
-vlP
-vlP
-vlP
-vlP
-ntP
-vlP
+sMX
+avw
+hqO
+tSM
+fXt
+tSM
 vlP
 cwC
 hJm
@@ -216000,7 +216468,7 @@ pFV
 pFV
 pFV
 pFV
-fLu
+pFV
 pFV
 igM
 nZe
@@ -216204,7 +216672,7 @@ pFV
 igM
 tyN
 pFV
-pfy
+qwl
 qdc
 kvg
 uoz
@@ -216605,7 +217073,7 @@ pFV
 mGO
 pFV
 pMh
-pFV
+qPl
 vbq
 pFV
 igM
@@ -216808,7 +217276,7 @@ igM
 pFV
 pFV
 pFV
-tlE
+pfy
 pFV
 pFV
 hys

@@ -263,6 +263,7 @@
 		if (!testing)
 			var/mob/living/carbon/human/M = target
 			M.confused += rand(5,8)
+			M.sanity_damage = 8
 
 /obj/item/projectile/chameleon
 	name = "bullet"
