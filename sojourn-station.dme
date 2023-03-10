@@ -2885,7 +2885,6 @@
 #include "code\modules\projectiles\guns\projectile\automatic\vintorez.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\anti_materiel_sniper.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\armstrong.dm"
-#include "code\modules\projectiles\guns\projectile\boltgun\baroque.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\flaregun.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\handmade.dm"
 #include "code\modules\projectiles\guns\projectile\boltgun\mares_leg.dm"

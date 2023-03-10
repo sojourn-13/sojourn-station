@@ -14,7 +14,7 @@
 	suitable_cell = /obj/item/cell/medium/neotheology
 	projectile_type = /obj/item/projectile/plasma/light
 	fire_delay = 10
-	charge_cost = 100 //10 shots with basic 15 with level 2
+	charge_cost = 125 //10 shots with basic 15 with level 2
 	init_recoil = HANDGUN_RECOIL(1)
 	price_tag = 900
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
