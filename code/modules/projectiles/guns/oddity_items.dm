@@ -65,7 +65,7 @@
 	add_fingerprint(user)
 	update_icon()
 
-/obj/item/gun/energy/ntpistol
+/obj/item/gun/energy/ntpistol/mana
 	name = "\"Mana from Heaven\" energy pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A black and blue version of the defunct \"Serenity\" energy pistol, somehow despite looking just like a repainted job it conserves power unusually well."
