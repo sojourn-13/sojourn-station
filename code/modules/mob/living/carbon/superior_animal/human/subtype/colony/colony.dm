@@ -54,7 +54,7 @@
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/bullet/light_rifle_257
 	projectilesound = 'sound/weapons/guns/fire/carbine.ogg'
-	limited_ammo = TRUE
+	limited_ammo = FALSE
 	mag_drop = TRUE
 	rounds_left = 10
 	mag_type = /obj/item/ammo_magazine/speed_loader_light_rifle_257/empty

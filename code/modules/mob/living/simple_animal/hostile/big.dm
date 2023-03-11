@@ -38,6 +38,7 @@
 	break_stuff_probability = 95
 	attacktext = "mauled"
 	faction = "deathclaw"
+	sanity_damage = 3
 
 	mob_size = MOB_LARGE
 
