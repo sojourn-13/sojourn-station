@@ -3385,6 +3385,7 @@
 #include "modular_sojourn\area_blurbs.dm"
 #include "modular_sojourn\lamp.dm"
 #include "modular_sojourn\pixelshift.dm"
+#include "modular_sojourn\power_puncher.dm"
 #include "modular_sojourn\shields.dm"
 #include "modular_sojourn\spaceleak.dm"
 #include "modular_sojourn\annomlies\equipable_annomlies.dm"
