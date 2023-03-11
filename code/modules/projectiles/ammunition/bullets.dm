@@ -487,14 +487,14 @@
 	amount = 5
 
 //// 17mm rolled shot ////
-/obj/item/ammo_casing/ball
-	name = "shell casing"
-	desc = "A 17mm rolled shot casing."
-	icon_state = "ball"
-	spent_icon = "ball-spent"
-	caliber = CAL_BALL
-	projectile_type = /obj/item/projectile/bullet/ball
-	maxamount = 5
+///obj/item/ammo_casing/ball
+//	name = "shell casing"
+//	desc = "A 17mm rolled shot casing."
+//	icon_state = "ball"
+//	spent_icon = "ball-spent"
+//	caliber = CAL_BALL
+//	projectile_type = /obj/item/projectile/bullet/ball
+//	maxamount = 5
 
 /obj/item/ammo_casing/ball/prespawned
 	amount = 4

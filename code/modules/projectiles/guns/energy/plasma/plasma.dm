@@ -15,7 +15,7 @@
 	projectile_type = /obj/item/projectile/beam
 	cell_type = /obj/item/cell/medium
 	sel_mode = 2
-	charge_cost = 20 //Gives us 40 shots per high medium-sized cell
+	charge_cost = 200 //3 shots out of a 600M
 	init_recoil = HANDGUN_RECOIL(1)
 	twohanded = TRUE
 	can_dual = FALSE
@@ -52,7 +52,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10, MATERIAL_URANIUM = 5)
 	sel_mode = 1
 	projectile_type = /obj/item/projectile/beam/pulse
-	charge_cost = 30 //Gives us 30 shots per high medium-sized cell
+	charge_cost = 300 //2 shots out of a 600M
 	fire_delay = 15
 	origin_tech = list(TECH_COMBAT = 4, TECH_PLASMA = 3)
 	damage_multiplier = 1
