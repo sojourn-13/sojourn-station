@@ -495,8 +495,38 @@
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/emergencyA
+	name = "Adept's emergency suit"
+	result = /obj/item/clothing/under/rank/engineer/emergencyA
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/clothing/under/rank/engineer, 1, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLATINUM, "time" = 30),//basically a bit of EVERY plating added to the craft
+		list(QUALITY_WELDING, 40, "time" = 30),
+		list(QUALITY_HAMMERING, 45, "time" = 40),
+		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_DRILLING, 40, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 30),
+		list(QUALITY_CUTTING, 30, "time" = 40),
+	)
+
+/datum/craft_recipe/guild/emergencyM
+	name = "Master's emergency suit"
+	result = /obj/item/clothing/under/rank/engineer/emergencyM
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/clothing/under/rank/exultant, 1, "time" = 20),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLATINUM, "time" = 30),//basically a bit of EVERY plating added to the craft
+		list(QUALITY_WELDING, 40, "time" = 30),
+		list(QUALITY_HAMMERING, 45, "time" = 40),
+		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_DRILLING, 40, "time" = 60),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 30),
+		list(QUALITY_CUTTING, 30, "time" = 40),
+	)
+
 /datum/craft_recipe/guild/webbing
-	name = "artificer guild web harness"
+	name = "Artificer Guild web harness"
 	icon_state = "clothing"
 	result = /obj/item/storage/belt/webbing/artificer
 	steps = list(
