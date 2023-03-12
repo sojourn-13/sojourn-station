@@ -79,13 +79,13 @@
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
 	cell_type = /obj/item/cell/small //can't recharge this one
 	sel_mode = 2
-	charge_cost = 12.5 // for 8 shots
+	charge_cost = 10 // for 10 shots
 	init_recoil = HANDGUN_RECOIL(0.1)
 	twohanded = FALSE
 	can_dual = TRUE
 	gun_tags = list(GUN_ENERGY)
-	damage_multiplier = 0.85
-	penetration_multiplier = 0.85
+	damage_multiplier = 0.6 		//those will need to be changed for future balance
+	penetration_multiplier = 1
 
 	init_firemodes = list(
 		list(mode_name="Stun", mode_desc="A weakening bolt of plasma that disables people", projectile_type=/obj/item/projectile/plasma/stun, fire_sound='sound/weapons/energy/marauder.ogg', fire_delay=2, icon="stun", projectile_color = "#0000FF"),
@@ -103,7 +103,7 @@
 	fire_sound = 'sound/weapons/energy/lasercannonfire.ogg'
 	projectile_type = /obj/item/projectile/plasma/heavy/super_heavy
 	cell_type = /obj/item/cell/medium
-	charge_cost = 200
+	charge_cost = 150
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 20, MATERIAL_SILVER = 5, MATERIAL_PLASMA = 10)
 	damage_multiplier = 1
 	twohanded = FALSE
