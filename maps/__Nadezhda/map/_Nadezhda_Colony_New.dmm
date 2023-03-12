@@ -10821,6 +10821,12 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"cFu" = (
+/obj/machinery/vending/cigarette,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "cFv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
@@ -15652,6 +15658,12 @@
 /obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
+"dJM" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "dJT" = (
 /obj/item/modular_computer/console/preset/command{
 	dir = 4;
@@ -27067,12 +27079,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
-"gnj" = (
-/obj/machinery/vending/dinnerware/cost,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "gnC" = (
 /obj/machinery/light{
 	dir = 1
@@ -48095,10 +48101,10 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/cbo)
 "ldg" = (
-/obj/effect/window_lwall_spawn/reinforced,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/low_wall,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/quartermaster/disposaldrop)
 "ldh" = (
@@ -55124,6 +55130,12 @@
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
+"mJo" = (
+/obj/machinery/vending/gamers,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "mJq" = (
 /obj/machinery/door/airlock/vault{
 	locked = 1;
@@ -57747,6 +57759,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/dungeon/outside/burned_outpost)
+"nmB" = (
+/obj/machinery/vending/dinnerware/cost,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "nmG" = (
 /obj/random/cluster/termite_no_despawn/low_chance,
 /turf/simulated/floor/asteroid/grass,
@@ -68148,12 +68166,6 @@
 /obj/machinery/computer/robotics,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
-"pBE" = (
-/obj/machinery/vending/gamers,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "pBF" = (
 /mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
 /obj/effect/decal/cleanable/dirt,
@@ -68739,6 +68751,11 @@
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
+"pIJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/engineering,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/hallway/surface/section1)
 "pJd" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -69565,12 +69582,6 @@
 /obj/random/gun_parts/frames,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
-"pRB" = (
-/obj/machinery/vending/cigarette,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "pRD" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -79704,12 +79715,6 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
-"sgu" = (
-/obj/machinery/vending/coffee,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "sgA" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -79814,11 +79819,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
-"shH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/engineering,
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/hallway/surface/section1)
 "shR" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -169665,10 +169665,10 @@ pkI
 pkI
 rWi
 rWi
-gnj
+nmB
 hua
 hua
-pBE
+mJo
 rWi
 oRY
 oRY
@@ -169867,10 +169867,10 @@ pkI
 pkI
 rWi
 rWi
-pRB
+cFu
 hua
 nTM
-sgu
+dJM
 rWi
 oRY
 kCK
@@ -213418,7 +213418,7 @@ qyw
 xja
 bqr
 kUL
-shH
+pIJ
 hZz
 xwi
 gbu
