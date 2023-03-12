@@ -75622,8 +75622,9 @@
 	},
 /obj/structure/cable/cyan,
 /obj/structure/cable/cyan{
+	d1 = 1;
 	d2 = 4;
-	icon_state = "0-4"
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
