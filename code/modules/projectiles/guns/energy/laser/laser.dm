@@ -24,7 +24,6 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.2 // 20 vig
-	charge_cost = 130
 
 /obj/item/gun/energy/laser/mounted
 	self_recharge = TRUE
