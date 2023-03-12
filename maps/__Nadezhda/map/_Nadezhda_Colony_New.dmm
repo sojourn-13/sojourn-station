@@ -3342,7 +3342,7 @@
 /area/nadezhda/engineering/workshop)
 "aPr" = (
 /obj/machinery/door/blast/regular{
-	id = "Cell 2b";
+	id = "Cell 3b";
 	name = "Cell 3"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -7075,6 +7075,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/medical)
 "bJn" = (
@@ -47319,7 +47323,7 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "kUf" = (
 /obj/machinery/button/remote/blast_door{
-	id = "Cell 2b";
+	id = "Cell 3b";
 	name = "Cell 3 Genpop";
 	pixel_x = -32
 	},
@@ -59629,6 +59633,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/bridge)
 "nHE" = (
@@ -69168,7 +69173,7 @@
 /area/nadezhda/rnd/lab)
 "pNt" = (
 /obj/machinery/door/window/brigdoor/westright{
-	id = "Cell 1";
+	id = "Cell 3";
 	name = "Cell 3";
 	req_access = list(2)
 	},
@@ -78806,7 +78811,7 @@
 /area/nadezhda/hallway/side/f2section1)
 "rXy" = (
 /obj/machinery/door_timer{
-	id = "Cell 2";
+	id = "Cell 3";
 	name = "Cell 3";
 	pixel_x = -32
 	},
