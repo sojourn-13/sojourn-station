@@ -70,7 +70,7 @@
 
 /datum/perk/alien_nerves/assign(mob/living/carbon/human/H)
 	..()
-	holder.metabolism_effects.addiction_chance_multiplier = 0
+	holder.metabolism_effects.addiction_chance_multiplier = -1
 	holder.metabolism_effects.nsa_bonus += 300
 	holder.metabolism_effects.calculate_nsa()
 

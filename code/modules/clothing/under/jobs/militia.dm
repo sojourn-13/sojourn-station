@@ -334,7 +334,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Blackshield Standard Colors"] = "bdubsstandard"
-	options["Blackshield Standard Colors Rolled Up"] = "bdustandard_rolled"
+	options["Blackshield Standard Colors Rolled Up"] = "bdubsstandard_rolled"
 	options["Blackshield Woodland Colors"] = "bdubsgreen"
 	options["Blackshield Woodland Colors Rolled Up"] = "bdubsgreen_rolled"
 	options["Blackshield Desert Colors"] = "bdubstan"

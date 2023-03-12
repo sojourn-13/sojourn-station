@@ -21,7 +21,7 @@
 	if(!user.incapacitated())
 		switch(open)
 			if (0)
-				flags_inv = BLOCKHEADHAIR|HIDEEARS
+				flags_inv = BLOCKHAIR|HIDEEARS
 				body_parts_covered = HEAD
 				icon_state = initial(icon_state) + "_open"
 				to_chat(user, "You put the balaclava away, revealing your face.")

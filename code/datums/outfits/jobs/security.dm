@@ -96,6 +96,7 @@
 	uniform = /obj/item/clothing/under/rank/security
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/sechud/tactical
+	head = /obj/item/clothing/head/seccap
 	gloves = /obj/item/clothing/gloves/stungloves
 	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/marshal_officer = 1)
 
