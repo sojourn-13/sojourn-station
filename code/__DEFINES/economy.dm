@@ -6,4 +6,4 @@
 #define WAGE_LABOUR			300 //The standard wage that most people get
 #define WAGE_LABOUR_HAZARD	350	//Hazard pay. For miners and IHOperatives
 #define WAGE_PROFESSIONAL	450	//The wage for educated professionals. Doctors, scientists, etc
-#define WAGE_COMMAND		550	//Wage paid to command staff, generally regardless of department
+#define WAGE_COMMAND		600	//Wage paid to command staff, generally regardless of department
