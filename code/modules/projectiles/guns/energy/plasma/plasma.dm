@@ -8,7 +8,7 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 7, MATERIAL_URANIUM = 8)
+	matter = list(MATERIAL_PLASTEEL = 17, MATERIAL_WOOD = 8, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 4)
 	price_tag = 2000
 	origin_tech = list(TECH_COMBAT = 3, TECH_PLASMA = 2)
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
@@ -49,7 +49,7 @@
 	desc = "An older \"Old Testament\" brand plasma rifle, developed in direct response to compete against the highly successful \"Cassad\" design. Reliable and capable of firing suppressive bursts of lower-temperature plasma."
 	icon = 'icons/obj/guns/energy/destroyer.dmi'
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10, MATERIAL_URANIUM = 5)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10, MATERIAL_URANIUM = 7)
 	sel_mode = 1
 	projectile_type = /obj/item/projectile/beam/pulse
 	charge_cost = 150 //4 shots out of a 600M
@@ -84,7 +84,7 @@
 	twohanded = FALSE
 	can_dual = TRUE
 	gun_tags = list(GUN_ENERGY)
-	damage_multiplier = 0.6 		//those will need to be changed for future balance
+	damage_multiplier = 0.6 		//no holdout belt strats anymore
 	penetration_multiplier = 1
 
 	init_firemodes = list(
