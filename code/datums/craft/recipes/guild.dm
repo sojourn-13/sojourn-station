@@ -670,7 +670,7 @@
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 40),
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 30),
-		list(QUALITY_BOLT_TURNING, 25, "time" = 90)
+		list(QUALITY_BOLT_TURNING, 25, "time" = 90),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 40),
