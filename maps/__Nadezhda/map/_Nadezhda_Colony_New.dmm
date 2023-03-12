@@ -10821,12 +10821,6 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
-"cFu" = (
-/obj/machinery/vending/cigarette,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "cFv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
@@ -14644,7 +14638,7 @@
 "dxZ" = (
 /obj/machinery/door/window/brigdoor/northleft{
 	dir = 4;
-	req_access = list(0)
+	req_access = list()
 	},
 /obj/machinery/door/window/brigdoor/northleft{
 	dir = 8;
@@ -14808,6 +14802,12 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
+"dzy" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "dzI" = (
 /obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/carpet,
@@ -15658,12 +15658,6 @@
 /obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
-"dJM" = (
-/obj/machinery/vending/coffee,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "dJT" = (
 /obj/item/modular_computer/console/preset/command{
 	dir = 4;
@@ -43477,6 +43471,12 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/absolutism/bioreactor)
+"jZJ" = (
+/obj/machinery/vending/dinnerware/cost,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "jZT" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/wall,
@@ -51171,6 +51171,12 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/crematorium)
+"lQm" = (
+/obj/machinery/vending/cigarette,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "lQn" = (
 /obj/random/scrap,
 /turf/simulated/floor/rock,
@@ -55130,12 +55136,6 @@
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
-"mJo" = (
-/obj/machinery/vending/gamers,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "mJq" = (
 /obj/machinery/door/airlock/vault{
 	locked = 1;
@@ -57759,12 +57759,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/dungeon/outside/burned_outpost)
-"nmB" = (
-/obj/machinery/vending/dinnerware/cost,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance{
-	name = "Residential District Maintenance"
-	})
 "nmG" = (
 /obj/random/cluster/termite_no_despawn/low_chance,
 /turf/simulated/floor/asteroid/grass,
@@ -58633,6 +58627,12 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
+"nxJ" = (
+/obj/machinery/vending/gamers,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "nxK" = (
 /mob/living/carbon/superior_animal/roach/nanite,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -68751,11 +68751,6 @@
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
-"pIJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/engineering,
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/hallway/surface/section1)
 "pJd" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -106371,6 +106366,11 @@
 /obj/structure/sign/departmentold/viro1,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/medical/surgery)
+"yez" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/engineering,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/hallway/surface/section1)
 "yeD" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/big/bush3,
@@ -169665,10 +169665,10 @@ pkI
 pkI
 rWi
 rWi
-nmB
+jZJ
 hua
 hua
-mJo
+nxJ
 rWi
 oRY
 oRY
@@ -169867,10 +169867,10 @@ pkI
 pkI
 rWi
 rWi
-cFu
+lQm
 hua
 nTM
-dJM
+dzy
 rWi
 oRY
 kCK
@@ -213418,7 +213418,7 @@ qyw
 xja
 bqr
 kUL
-pIJ
+yez
 hZz
 xwi
 gbu
