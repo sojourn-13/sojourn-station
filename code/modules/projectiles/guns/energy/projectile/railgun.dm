@@ -30,7 +30,6 @@
 	var/consume_cell = FALSE
 	price_tag = 2250
 	serial_type = "AG"
-	var/overheat_damage = 5
 
 	//Blacklisting now works!
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt = TRUE,
@@ -62,30 +61,6 @@
 				consume_cell = TRUE
 				to_chat(user, SPAN_NOTICE("You loosen the safety bolts and overclock the capacitor to unsafe levels, allowing the weapon to destroy empty cells for use as ammunition."))
 
-/obj/item/gun/energy/laser/railgun/Destroy()
-	STOP_PROCESSING(SSobj, src)
-	..()
-
-/obj/item/gun/energy/laser/railgun/Initialize()
-	..()
-	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE,  50,  60,  20, 0.01, 2)
-	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/ventEvent) //this sould just be a fluff message, proc can be anything
-	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheat) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
-	update_icon()
-	START_PROCESSING(SSobj, src)
-
-/obj/item/gun/energy/laser/railgun/examine(user)
-	. = ..()
-	to_chat(user, SPAN_NOTICE("Control-Click to manually vent this weapon's heat."))
-
-/obj/item/gun/energy/laser/railgun/proc/handleoverheat()
-	src.visible_message(SPAN_DANGER("\The [src] overheats, its exterior becoming blisteringly hot, burning skin down to the flesh!!"))
-	var/mob/living/L = loc
-	if(istype(L))
-		if(L.hand == L.l_hand) // Are we using the left arm?
-			L.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
-		else // If not then it must be the right arm.
-			L.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
 
 /obj/item/gun/energy/laser/railgun/pistol
 	name = "\"Myrmidon\" rail pistol"
