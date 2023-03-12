@@ -13114,6 +13114,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "dgi" = (
@@ -18981,6 +18982,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "evl" = (
@@ -19625,6 +19627,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/tool,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/hallway/surface/section1)
 "eDz" = (
@@ -22048,6 +22051,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "fhe" = (
@@ -27063,6 +27067,12 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
+"gnj" = (
+/obj/machinery/vending/dinnerware/cost,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "gnC" = (
 /obj/machinery/light{
 	dir = 1
@@ -33669,6 +33679,7 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/machinery/vending/dinnerware/cost,
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/bar)
 "hNV" = (
@@ -38754,6 +38765,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "iWC" = (
@@ -39608,6 +39620,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "jgt" = (
@@ -44597,6 +44610,7 @@
 	icon_state = "2-4"
 	},
 /obj/structure/catwalk,
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "kmZ" = (
@@ -47789,6 +47803,7 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk,
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "kZK" = (
@@ -53598,13 +53613,13 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/command/teleporter)
 "mse" = (
-/obj/machinery/vending/engineering,
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/alarm{
 	pixel_y = 32
 	},
+/obj/machinery/vending/dinnerware/cost,
 /turf/simulated/floor/tiled/steel/monofloor{
 	dir = 4
 	},
@@ -57683,6 +57698,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "nmc" = (
@@ -61357,6 +61373,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "obl" = (
@@ -64748,7 +64765,6 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/skyyard)
 "oOE" = (
@@ -68132,6 +68148,12 @@
 /obj/machinery/computer/robotics,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
+"pBE" = (
+/obj/machinery/vending/gamers,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "pBF" = (
 /mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
 /obj/effect/decal/cleanable/dirt,
@@ -69543,6 +69565,12 @@
 /obj/random/gun_parts/frames,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
+"pRB" = (
+/obj/machinery/vending/cigarette,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "pRD" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -69759,6 +69787,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "pUc" = (
@@ -70958,6 +70987,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/catwalk,
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "qiB" = (
@@ -71301,6 +71331,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/catwalk,
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "qmi" = (
@@ -76082,7 +76113,6 @@
 "rqu" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger,
-/obj/item/circuitboard/puncher,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "rqF" = (
@@ -78039,6 +78069,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "rNO" = (
@@ -79186,6 +79217,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "sbc" = (
@@ -79246,6 +79278,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "sbA" = (
@@ -79671,6 +79704,12 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"sgu" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance{
+	name = "Residential District Maintenance"
+	})
 "sgA" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -79775,6 +79814,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
+"shH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/engineering,
+/turf/simulated/floor/tiled/white/brown_perforated,
+/area/nadezhda/hallway/surface/section1)
 "shR" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -82921,6 +82965,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "sSn" = (
@@ -83138,6 +83183,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "sVj" = (
@@ -98783,6 +98829,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "wqf" = (
@@ -99155,6 +99202,7 @@
 	icon_state = "2-8"
 	},
 /obj/structure/catwalk,
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "wtD" = (
@@ -106619,6 +106667,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "yii" = (
@@ -169615,11 +169664,11 @@ pkI
 pkI
 pkI
 rWi
-cZb
 rWi
+gnj
 hua
 hua
-rWi
+pBE
 rWi
 oRY
 oRY
@@ -169817,11 +169866,11 @@ pkI
 pkI
 pkI
 rWi
-cZb
 rWi
+pRB
 hua
 nTM
-rWi
+sgu
 rWi
 oRY
 kCK
@@ -174383,13 +174432,13 @@ kvp
 mcl
 mcl
 mcl
-mpm
-mpm
+vpF
+vpF
 tJd
 tJd
 tJd
-mpm
-mpm
+vpF
+vpF
 wGX
 wGX
 lrX
@@ -174585,13 +174634,13 @@ mFb
 mcl
 cZb
 cZb
-mpm
+vpF
 dOx
 pHo
 pHo
 wIF
 cBw
-mpm
+vpF
 qiF
 jRC
 aCN
@@ -174787,13 +174836,13 @@ mcl
 mcl
 cZb
 cZb
-mpm
+vpF
 czA
 nSr
 nSr
 nSr
 czA
-mpm
+vpF
 vpF
 vpF
 vpF
@@ -174989,13 +175038,13 @@ kUx
 cZb
 cZb
 cZb
-mpm
+vpF
 czA
 nSr
 nSr
 nSr
 czA
-mpm
+vpF
 kSX
 kSX
 kSX
@@ -175191,13 +175240,13 @@ kUx
 cZb
 cZb
 cZb
-mpm
+vpF
 czA
 nSr
 nSr
 nSr
 czA
-mpm
+vpF
 kSX
 eZZ
 xxb
@@ -175393,13 +175442,13 @@ kUx
 cZb
 cZb
 cZb
-mpm
+vpF
 oJV
 sAK
 sAK
 sAK
 ubH
-mpm
+vpF
 kSX
 eHq
 wYd
@@ -175595,13 +175644,13 @@ mcl
 mcl
 mcl
 mcl
-mpm
-mpm
-mpm
-mpm
-mpm
-mpm
-mpm
+vpF
+vpF
+vpF
+vpF
+vpF
+vpF
+vpF
 tkt
 kxq
 gHO
@@ -175803,7 +175852,7 @@ czY
 czY
 gnL
 sVu
-toT
+kSX
 mnz
 alJ
 tqq
@@ -176005,7 +176054,7 @@ iBY
 iBY
 bHX
 jrR
-toT
+kSX
 tkt
 xgR
 vDZ
@@ -176207,7 +176256,7 @@ cqW
 iBY
 bHX
 rfK
-toT
+kSX
 kSX
 oAs
 kSX
@@ -176613,7 +176662,7 @@ bHX
 iGS
 kSX
 kSX
-toT
+kSX
 kSX
 kSX
 kSX
@@ -213369,7 +213418,7 @@ qyw
 xja
 bqr
 kUL
-kUL
+shH
 hZz
 xwi
 gbu
