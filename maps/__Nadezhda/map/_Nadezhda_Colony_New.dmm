@@ -6121,6 +6121,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"bxz" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "bxA" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/bushc1,
@@ -10678,6 +10686,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"cDR" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "cDV" = (
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment{
@@ -13094,7 +13110,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "dgi" = (
@@ -16979,6 +16994,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/engine_room)
+"dZL" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "dZP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -18951,7 +18971,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "evl" = (
@@ -22009,7 +22028,6 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "fhe" = (
@@ -23882,6 +23900,10 @@
 /area/nadezhda/hallway/surface/section1)
 "fCl" = (
 /obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "fCr" = (
@@ -37363,11 +37385,6 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "iHq" = (
-/obj/machinery/power/sensor{
-	light_range = 1;
-	name = "Powernet Sensor - Church Subgrid";
-	name_tag = "Church Subgrid"
-	},
 /obj/structure/cable/green,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -37376,6 +37393,11 @@
 	},
 /obj/machinery/camera/motion/security{
 	dir = 8
+	},
+/obj/machinery/power/sensor{
+	light_range = 1;
+	name = "Powernet Sensor - AI Subgrid";
+	name_tag = "AI Subgrid"
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -38672,7 +38694,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "iWC" = (
@@ -39526,7 +39547,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "jgt" = (
@@ -44517,7 +44537,6 @@
 	icon_state = "2-4"
 	},
 /obj/structure/catwalk,
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "kmZ" = (
@@ -47707,7 +47726,6 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk,
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "kZK" = (
@@ -57579,7 +57597,6 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "nmc" = (
@@ -58995,6 +59012,18 @@
 /obj/structure/flora/pottedplant/flower,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/crematorium)
+"nCF" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "nCI" = (
 /obj/structure/lattice,
 /obj/effect/spider/stickyweb,
@@ -61265,7 +61294,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "obl" = (
@@ -64655,6 +64683,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/skyyard)
 "oOE" = (
@@ -69663,7 +69692,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "pUc" = (
@@ -70844,7 +70872,6 @@
 	icon_state = "0-2"
 	},
 /obj/structure/catwalk,
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "qiB" = (
@@ -71188,7 +71215,6 @@
 	icon_state = "0-2"
 	},
 /obj/structure/catwalk,
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "qmi" = (
@@ -75958,6 +75984,8 @@
 "rqu" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger,
+/obj/item/device/psionic_catalyst/dull,
+/obj/item/circuitboard/puncher,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "rqF" = (
@@ -77909,7 +77937,6 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "rNO" = (
@@ -79051,7 +79078,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "sbc" = (
@@ -79112,7 +79138,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "sbA" = (
@@ -79288,6 +79313,15 @@
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/shuttle/surface_transport_lz)
+"sdm" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "sdp" = (
 /obj/machinery/light{
 	dir = 1
@@ -82780,7 +82814,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "sSn" = (
@@ -82998,7 +83031,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "sVj" = (
@@ -98621,7 +98653,6 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "wqf" = (
@@ -98994,7 +99025,6 @@
 	icon_state = "2-8"
 	},
 /obj/structure/catwalk,
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "wtD" = (
@@ -106445,7 +106475,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/random/traps/wire_splicing/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "yii" = (
@@ -214646,7 +214675,7 @@ kYf
 dgA
 gTl
 iJT
-fCl
+bxz
 veH
 mfN
 csA
@@ -214848,17 +214877,17 @@ mfN
 mfN
 eOg
 nzh
-fCl
-fCl
+nCF
+bxz
 lYc
-fCl
-fCl
-fCl
-fCl
-fCl
-fCl
-fCl
-fCl
+cDR
+sdm
+sdm
+sdm
+sdm
+sdm
+sdm
+dZL
 bFR
 dNQ
 giQ
@@ -216868,17 +216897,17 @@ mfN
 mfN
 eOg
 qxD
-fCl
+nCF
 fCl
 oRd
-fCl
-fCl
-fCl
-fCl
-fCl
-fCl
-fCl
-fCl
+cDR
+sdm
+sdm
+sdm
+sdm
+sdm
+sdm
+dZL
 qlb
 hom
 pqm

@@ -1,7 +1,6 @@
 //////////////////////////////
 //			Psionic Misc.
 //////////////////////////////
-// These are psion related items that are often singular and don't really have the scope for their own page. -Kaz
 /obj/item/psi_injector
 	name = "cerebrix inhaler"
 	desc = "A modified inhaler which delivers over-saturated cerebrix diluted in water before being aerosolized. Unlike a direct injection or drinking, this method prevents overdosing or nasty side \
