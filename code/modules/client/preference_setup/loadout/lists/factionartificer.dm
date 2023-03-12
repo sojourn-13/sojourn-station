@@ -78,14 +78,14 @@
 	sort_category = "Faction: Artificer"
 
 /datum/gear/factionartificer/emergencyM
-	display_name = "Emergency suit, for Guild Masters"
+	display_name = "Emergency suit, Guild Masters"
 	path = /obj/item/clothing/under/rank/engineer/emergencyM
 	allowed_roles = list("Guild Master")
 	slot = slot_w_uniform
 	sort_category = "Faction: Artificer"
 
 /datum/gear/factionartificer/emeregencyA
-	display_name = "Emeregency suit, for Adepts"
+	display_name = "Emeregency suit, Adepts"
 	path = /obj/item/clothing/under/rank/engineer/emergencyA
 	allowed_roles = list("Guild Master","Guild Adept")
 	slot = slot_w_uniform
