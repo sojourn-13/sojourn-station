@@ -858,13 +858,13 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	for(var/mob/living/carbon/superior_animal/greater in oview(1))
 		to_chat(M, "<span class='warning'>The sacrifice vanishes to dust before you. You feel an ominous warm wind envelop your form as you absorb its lifeforce unto your own.</span>")
-		if(able_to_cast) // Double the bonuses for superior animals, but also double the penalties
-			M.maxHealth += 2
-			M.health += 2
-			M.unnatural_mutations.total_instability += 2 //A soft cap
-			B.remove_self(70)
-			greater.dust()
-			M.sanity.changeLevel(-20)
+		if(able_to_cast)
+			M.maxHealth += 1
+			M.health += 1
+			M.unnatural_mutations.total_instability += 1 //A soft cap
+		B.remove_self(70)
+		greater.dust()
+		M.sanity.changeLevel(-20)
 		return
 
 	for(var/mob/living/simple_animal/lesser in oview(1))
@@ -873,9 +873,9 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 			M.maxHealth += 1
 			M.health += 1
 			M.unnatural_mutations.total_instability += 1 //A soft cap
-			B.remove_self(70)
-			lesser.dust()
-			M.sanity.changeLevel(-10)
+		B.remove_self(70)
+		lesser.dust()
+		M.sanity.changeLevel(-20)
 		return
 	return
 
