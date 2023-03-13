@@ -177,6 +177,11 @@
 	. = ..()
 	update_icon()
 
+/obj/item/storage/pouch/alchemy/slide_out_item(mob/living/carbon/human/user)
+	if(!open)
+		return
+	..()
+
 /obj/item/storage/pouch/alchemy/update_icon()
 	..()
 	cut_overlays()

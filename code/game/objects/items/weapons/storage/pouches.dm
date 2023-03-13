@@ -27,15 +27,18 @@
 
 /obj/item/storage/pouch/attack_hand(mob/living/carbon/human/user)
 	if(sliding_behavior && contents.len && (src in user))
-		var/obj/item/I = contents[contents.len]
-		if(istype(I))
-			hide_from(usr)
-			var/turf/T = get_turf(user)
-			remove_from_storage(I, T)
-			usr.put_in_hands(I)
-			add_fingerprint(user)
+		slide_out_item(user)
 	else
 		..()
+
+/obj/item/storage/pouch/proc/slide_out_item(mob/living/carbon/human/user)
+	var/obj/item/I = contents[contents.len]
+	if(istype(I))
+		hide_from(usr)
+		var/turf/T = get_turf(user)
+		remove_from_storage(I, T)
+		usr.put_in_hands(I)
+		add_fingerprint(user)
 
 /obj/item/storage/pouch/small_generic
 	name = "small generic pouch"
