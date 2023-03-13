@@ -663,7 +663,6 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 	GLOB.bluespace_hazard_threshold -= 1
 	bluespace_entropy(1, get_turf(src), TRUE)
 	B.remove_self(50)
-	M.sanity.breakdown(TRUE) //You have to be insain to do this
 	M.sanity.changeLevel(15)
 	playsound(loc, 'sound/effects/cascade.ogg') // Fitting.
 	log_and_message_admins("[M] has used the Flux spell, increasing the world's bluespace entropy")
