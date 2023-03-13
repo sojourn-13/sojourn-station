@@ -513,7 +513,7 @@
 	addiction_chance = 0.01 //Will STILL likely always be addicting
 	nerve_system_accumulations = 15
 	metabolism = REM * 0.2 //but processes much faster than other toxins
-	strength = 8 //Rather lethal
+	strength = 2
 	heating_point = 523
 	heating_products = list("toxin")
 
