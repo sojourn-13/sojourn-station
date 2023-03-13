@@ -37,6 +37,10 @@
 
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
 
+	if(!L)
+		usr.show_message("\blue You are not holding someone you can use this power on.")
+		return
+
 	if(L.psi_blocking >= 10)
 		owner.stun_effect_act(0, L.psi_blocking * 5, BP_HEAD)
 		owner.weakened = L.psi_blocking
@@ -44,24 +48,24 @@
 		return
 
 	if(pay_power_cost(psi_point_cost))
-		if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && L.sanity.level >= (L.sanity.max_level - 10))
-			psi_points = psi_points + 2
+		if(isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && L.sanity.level >= (L.sanity.max_level - 10))
+			psi_points += psi_point_cost //Refunds?
 			usr.visible_message(
 					"[usr] places a hand on [L], a soft hum raidates around them and quickly fades away",
 					"You place your hand upon [L], concentrating [L]'s thoughts... but their mind is already calm."
 					)
 			return
-		else if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && L.sanity.level < (L.sanity.max_level - 10))
+		else if(isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && L.sanity.level < (L.sanity.max_level - 10))
 			usr.visible_message(
 					"[usr] places a hand on [L], a soft hum raidates around them",
 					"You place your hand upon [L], calming [L]'s thoughts!"
 					)
 			playsound(src.loc,'sound/effects/telesci_ping.ogg', 25, 3)
-			L.sanity.level = L.sanity.level + 10 + (owner.stats.getStat(STAT_COG)/2)
+			L.sanity.changeLevel(10 + (owner.stats.getStat(STAT_COG)/2))
 			if(owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
-				L.sanity.level = L.sanity.level + 20
+				L.sanity.changeLevel(20)
 			if(owner.stats.getPerk(PERK_PSI_MANIA))
-				L.sanity.level = L.sanity.level + 10
+				L.sanity.changeLevel(10)
 		else
 			usr.show_message("\blue You are not holding someone you can use this power on.")
 
