@@ -258,49 +258,49 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 			return
 		W.use(1)
 		var/obj/item/scroll/sealed/wax_on = new /obj/item/scroll/sealed (src.loc)
-		wax_on.message = src.message
+		wax_on.message = message
 		qdel(src)
 
 	if(QUALITY_WELDING in I.tool_qualities || istype(I, /obj/item/flame)) //casts effects or just burns away if no spell works.
 
 		/*
-		if(src.message == "Example Spell." && M.species?.reagent_tag != IS_SYNTHETIC)
+		if(message == "Example Spell." && M.species?.reagent_tag != IS_SYNTHETIC)
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			example_spell(M) //I cast proc!
 			return
 		*/
 
-		if(src.message == "Mist." && M.species?.reagent_tag != IS_SYNTHETIC)
+		if(message == "Mist." && M.species?.reagent_tag != IS_SYNTHETIC)
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			mist_spell(M)
 			return
 
-		if(src.message == "Shimmer." && M.species?.reagent_tag != IS_SYNTHETIC)
+		if(message == "Shimmer." && M.species?.reagent_tag != IS_SYNTHETIC)
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			shimmer_spell(M)
 			return
 
-		if(src.message == "Smoke." && M.species?.reagent_tag != IS_SYNTHETIC)
+		if(message == "Smoke." && M.species?.reagent_tag != IS_SYNTHETIC)
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			smoke_spell(M)
 			return
 
-		if(src.message == "Oil." && M.species?.reagent_tag != IS_SYNTHETIC)
+		if(message == "Oil." && M.species?.reagent_tag != IS_SYNTHETIC)
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			oil_spell(M)
 			return
 
-		if(src.message == "Floor Seal." && M.species?.reagent_tag != IS_SYNTHETIC)
+		if(message == "Floor Seal." && M.species?.reagent_tag != IS_SYNTHETIC)
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			floor_seal_spell(M)
 			return
 
-		if(src.message == "Light." && M.species?.reagent_tag != IS_SYNTHETIC)
+		if(message == "Light." && M.species?.reagent_tag != IS_SYNTHETIC)
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			light_spell(M)
 			return
 
-		if(src.message == "Mightier." && M.species?.reagent_tag != IS_SYNTHETIC)
+		if(message == "Mightier." && M.species?.reagent_tag != IS_SYNTHETIC)
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			mightier_spell(M)
 			return
@@ -319,97 +319,97 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 			if(M.maxHealth <= 30)
 				to_chat(M, "<span class='info'>You try to do as the book describes but your frail body condition physically prevents you from even mumbling a single word out of its pages.</span>")
 				return
-		to_chat(M, "<span class='info'>The rune lights up in reaction to the book...</span>")
-		var/alchemist = FALSE
-		if(M.stats.getPerk(PERK_ALCHEMY))
-			alchemist = TRUE // We are an alchemist!
-		var/datum/reagent/organic/blood/B = M.get_blood()
-		var/candle_amount = 0
-		for(var/obj/item/flame/candle/mage_candle in oview(3))
-			if(!mage_candle.lit)
-				mage_candle.light(flavor_text = SPAN_NOTICE("\The [name] lights up."))
-				mage_candle.endless_burn = TRUE
-				B.remove_self(15)
-				M.sanity.changeLevel(-5)
-				to_chat(M, "<span class='info'>A candle is lit by forces unknown...</span>")
-			candle_amount += 1
+			to_chat(M, "<span class='info'>The rune lights up in reaction to the book...</span>")
+			var/alchemist = FALSE
+			if(M.stats.getPerk(PERK_ALCHEMY))
+				alchemist = TRUE // We are an alchemist!
+			var/datum/reagent/organic/blood/B = M.get_blood()
+			var/candle_amount = 0
+			for(var/obj/item/flame/candle/mage_candle in oview(3))
+				if(!mage_candle.lit)
+					mage_candle.light(flavor_text = SPAN_NOTICE("\The [name] lights up."))
+					mage_candle.endless_burn = TRUE
+					B.remove_self(15)
+					M.sanity.changeLevel(-5)
+					to_chat(M, "<span class='info'>A candle is lit by forces unknown...</span>")
+				candle_amount += 1
 
-		for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) // Don't forget to clear your old work!
+			for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) // Don't forget to clear your old work!
 
-			// Spell example
+				// Spell example
 
-			/*if(spell.message == "Example Spell." && candle_amount >= 0)
-				example_spell(M)
-				continue*/
+				/*if(spell.message == "Example Spell." && candle_amount >= 0)
+					example_spell(M)
+					continue*/
 
-			if(spell.message == "Babel." && candle_amount >= 3)
-				babel_spell(M)
-				continue
+				if(spell.message == "Babel." && candle_amount >= 3)
+					babel_spell(M)
+					continue
 
-			if(spell.message == "Ignorance." && candle_amount >= 1)
-				ignorance_spell(M)
-				continue
+				if(spell.message == "Ignorance." && candle_amount >= 1)
+					ignorance_spell(M)
+					continue
 
-			if(spell.message == "Flux." && candle_amount >= 1)
-				flux_spell(M)
-				continue
+				if(spell.message == "Flux." && candle_amount >= 1)
+					flux_spell(M)
+					continue
 
-			if(spell.message == "Negentropy." && candle_amount >= 1)
-				negentropy_spell(M)
-				continue
+				if(spell.message == "Negentropy." && candle_amount >= 1)
+					negentropy_spell(M)
+					continue
 
-			if(spell.message == "Life." && candle_amount >= 5)
-				life_spell(M)
-				continue
+				if(spell.message == "Life." && candle_amount >= 5)
+					life_spell(M)
+					continue
 
-			if((spell.message == "Madness." || spell.message == "Insanity.") && candle_amount >= 3)
-				madness_spell(M)
-				continue
+				if((spell.message == "Madness." || spell.message == "Insanity.") && candle_amount >= 3)
+					madness_spell(M)
+					continue
 
-			if(spell.message == "Sight." && candle_amount >= 3)
-				sight_spell(M)
-				continue
+				if(spell.message == "Sight." && candle_amount >= 3)
+					sight_spell(M)
+					continue
 
-			if(spell.message == "Paradox." && candle_amount >= 7)
-				paradox_spell(M)
-				continue
+				if(spell.message == "Paradox." && candle_amount >= 7)
+					paradox_spell(M)
+					continue
 
-			if((spell.message == "The End." || spell.message == "The Beginning.") && candle_amount >= 1)
-				end_spell(M)
-				continue
+				if((spell.message == "The End." || spell.message == "The Beginning.") && candle_amount >= 1)
+					end_spell(M)
+					continue
 
-			if(spell.message == "Brew." && candle_amount >= 2)
-				brew_spell(M)
-				continue
+				if(spell.message == "Brew." && candle_amount >= 2)
+					brew_spell(M)
+					continue
 
-			if(spell.message == "Recipe." && candle_amount >= 1)
-				recipe_spell(M, alchemist)
-				continue
+				if(spell.message == "Recipe." && candle_amount >= 1)
+					recipe_spell(M, alchemist)
+					continue
 
-			if((spell.message == "Bees." || spell.message == "Bees!") && candle_amount >= 4)
-				bees_spell(M)
-				continue
+				if((spell.message == "Bees." || spell.message == "Bees!") && candle_amount >= 4)
+					bees_spell(M)
+					continue
 
-			if(spell.message == "Scribe." && candle_amount >= 7)
-				scribe_spell(M)
-				continue
+				if(spell.message == "Scribe." && candle_amount >= 7)
+					scribe_spell(M)
+					continue
 
-			if(spell.message == "Pouch." && candle_amount >= 2)
-				pouch_spell(M)
-				continue
+				if(spell.message == "Pouch." && candle_amount >= 2)
+					pouch_spell(M)
+					continue
 
-			if(spell.message == "Awaken." && candle_amount >= 7)
-				awaken_spell(M)
-				continue
-			// Alchemy-specific rituals below
-			if(spell.message == "Satchel." && candle_amount >= 5)
-				satchel_spell(M, alchemist)
-				continue
-			/* WIP!!!
-			if(spell.message == "Transmute." && candle_amount >= 6)
-				transmutation_spell(M)
-				continue */
-		return
+				if(spell.message == "Awaken." && candle_amount >= 7)
+					awaken_spell(M)
+					continue
+				// Alchemy-specific rituals below
+				if(spell.message == "Satchel." && candle_amount >= 5)
+					satchel_spell(M, alchemist)
+					continue
+				/* WIP!!!
+				if(spell.message == "Transmute." && candle_amount >= 6)
+					transmutation_spell(M)
+					continue */
+			return
 
 // Ritual Knife spell procs
 	if(istype(I, /obj/item/tool/knife/ritual) || istype(I, /obj/item/tool/knife/neotritual))
@@ -419,56 +419,59 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 			if(M.maxHealth <= 30)
 				to_chat(M, "<span class='info'>Your hand is shaking, your concentration too shattered. The ritual cannot proceed with your constitution as frail as it is.</span>")
 				return
-		to_chat(M, "<span class='info'>The rune lights up in response to the touch of the ritual weapon...</span>")
-		var/able_to_cast = FALSE
-		for(var/datum/language/L in M.languages)
-			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
-				able_to_cast = TRUE // We can cast
+			to_chat(M, "<span class='info'>The rune lights up in response to the touch of the ritual weapon...</span>")
+			var/able_to_cast = FALSE
+			for(var/datum/language/L in M.languages)
+				if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
+					able_to_cast = TRUE // We can cast
 
-		var/datum/reagent/organic/blood/B = M.get_blood()
-		var/candle_amount = 0
-		for(var/obj/item/flame/candle/mage_candle in oview(3))
-			if(!mage_candle.lit)
-				mage_candle.light(flavor_text = SPAN_NOTICE("\The [name] lights up."))
-				mage_candle.endless_burn = TRUE
-				B.remove_self(15)
-				to_chat(M, "<span class='info'>A candle is lit by forces unknown...</span>")
-			candle_amount += 1
+			var/datum/reagent/organic/blood/B = M.get_blood()
+			var/candle_amount = 0
+			for(var/obj/item/flame/candle/mage_candle in oview(3))
+				if(!mage_candle.lit)
+					mage_candle.light(flavor_text = SPAN_NOTICE("\The [name] lights up."))
+					mage_candle.endless_burn = TRUE
+					B.remove_self(15)
+					to_chat(M, "<span class='info'>A candle is lit by forces unknown...</span>")
+				candle_amount += 1
 
-		for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) // Don't forget to clear your old work!
-			if(spell.message == "Voice." && candle_amount >= 3)
-				voice_spell(M)
-				continue
+			for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) // Don't forget to clear your old work!
+				if(spell.message == "Voice." && candle_amount >= 3)
+					voice_spell(M)
+					continue
 
-			if(spell.message == "Drain." && candle_amount >= 5)
-				drain_spell(M, able_to_cast)
-				continue
+				if(spell.message == "Drain." && candle_amount >= 5)
+					drain_spell(M, able_to_cast)
+					continue
 
-			if(spell.message == "Cards To Life." && candle_amount >= 3)
-				cards_to_life_spell(M)
-				continue
+				if(spell.message == "Cards To Life." && candle_amount >= 3)
+					cards_to_life_spell(M)
+					continue
 
-			if(spell.message == "Cards." && candle_amount >= 3)
-				cards_spell(M)
-				continue
+				if(spell.message == "Cards." && candle_amount >= 3)
+					cards_spell(M)
+					continue
 
-			if(spell.message == "Equalize." && candle_amount >= 6)
-				equalize_spell(M)
-				continue
+				if(spell.message == "Equalize." && candle_amount >= 6)
+					equalize_spell(M)
+					continue
 
-			if(spell.message == "Scroll." && candle_amount >= 7)
-				scroll_spell(M)
-				continue
-			if(spell.message == "Baptism." && candle_amount >= 7)
-				basin_spell(M)
-				continue
-			if(spell.message == "Ascension." && candle_amount >= 7)
-				ascension_spell(M)
-				continue
-			if(spell.message == "Veil." && candle_amount >= 5)
-				veil_spell(M)
-				continue
-			return
+				if(spell.message == "Scroll." && candle_amount >= 7)
+					scroll_spell(M)
+					continue
+
+				if(spell.message == "Baptism." && candle_amount >= 7)
+					basin_spell(M)
+					continue
+
+				if(spell.message == "Ascension." && candle_amount >= 7)
+					ascension_spell(M)
+					continue
+
+				if(spell.message == "Veil." && candle_amount >= 5)
+					veil_spell(M)
+					continue
+				return
 
 // Start of scroll based spells.
 // We use this proc to assign spells to the blank scroll by writing in blood the name of the spells we want inscribed on them
@@ -1105,7 +1108,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	B.remove_self(1)
 	log_and_message_admins("[M] has used the example spell! For testing purposes of course!")
 	new /obj/item/scroll(M.loc)
-	src.ScrollBurn()
+	ScrollBurn()
 */
 
 // Mist: Invokes a crayon mark that blocks laser projectiles, dissipating them.
@@ -1114,7 +1117,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	B.remove_self(100)
 	bluespace_entropy(20, get_turf(src), TRUE)
 	new /obj/effect/decal/cleanable/crayon/mist(M.loc)
-	src.ScrollBurn()
+	ScrollBurn()
 
 // Shimmer: Invokes a crayon mark that blocks both bullets and laser projectiles.
 /obj/item/scroll/proc/shimmer_spell(mob/living/carbon/human/M)
@@ -1122,7 +1125,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	B.remove_self(100)
 	bluespace_entropy(20, get_turf(src), TRUE)
 	new /obj/effect/decal/cleanable/crayon/shimmer(M.loc)
-	src.ScrollBurn()
+	ScrollBurn()
 
 // Smoke: Creates a smoke cloud centered around the caster
 /obj/item/scroll/proc/smoke_spell(mob/living/carbon/human/M)
@@ -1144,7 +1147,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		sleep(10)
 		qdel(smoke)
 		qdel(gas_storage)
-	src.ScrollBurn()
+	ScrollBurn()
 
 // Oil: Creates a pool of liquid fuel that can be burned to start a fire, or used with Floor Seal.
 /obj/item/scroll/proc/oil_spell(mob/living/carbon/human/M)
@@ -1152,7 +1155,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	B.remove_self(25)
 	bluespace_entropy(10, get_turf(src), TRUE)
 	new /obj/effect/decal/cleanable/liquid_fuel(M.loc,300, 1) //considered a trap cause you instant ignite yourself XD
-	src.ScrollBurn()
+	ScrollBurn()
 
 // Floor Seal: For every floor tile in sight that is covered by liquid fuel, this spell fixes them all.
 /obj/item/scroll/proc/floor_seal_spell(mob/living/carbon/human/M)
@@ -1168,7 +1171,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 			pot_hole.burnt = FALSE
 			pot_hole.update_icon()
 		qdel(fixy_juice)
-	src.ScrollBurn()
+	ScrollBurn()
 
 // Light: Creates a rune on the floor that gives off light.
 /obj/item/scroll/proc/light_spell(mob/living/carbon/human/M)
@@ -1180,7 +1183,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	light_rune.color = "#FFFF00"
 	B.remove_self(20)
 	bluespace_entropy(20, get_turf(src), TRUE) //high entropy cost. Low blood cost.
-	src.ScrollBurn()
+	ScrollBurn()
 
 // Mightier: Invokes throwing crayons whose strength gets higher the lower our max HP is.
 /obj/item/scroll/proc/mightier_spell(mob/living/carbon/human/M)
@@ -1198,4 +1201,4 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	if(M.get_inactive_hand() == src)
 		M.drop_from_inventory(src)
 		M.put_in_inactive_hand(needles)
-	src.ScrollBurn()
+	ScrollBurn()
