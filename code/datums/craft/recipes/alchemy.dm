@@ -170,7 +170,7 @@
 	steps = list(
 		list(/obj/item/reagent_containers/glass, 1),
 		list(/obj/item/reagent_containers/food/snacks/grown, 1), // Hydrogen from biomass
-		list(/obj/plant_spawner/grass, 1), // Nitrogen from plants
+		list(/obj/item/reagent_containers/food/snacks/grown, 1), // Nitrogen from plants (I hate plant code)
 		list(QUALITY_HEATING, 5, 10)
 	)
 
@@ -271,6 +271,7 @@
 	steps = list(
 		list(/obj/item/reagent_containers/glass, 1),
 		list(/obj/item/stack/ore, 1), // Leeching the sulfur from rocks
+		list(/obj/item/reagent_containers/food/snacks/egg, 1), // Not for luck! Extracting it from rotten eggs!
 		list(QUALITY_HEATING, 5, 10)
 	)
 

@@ -132,7 +132,7 @@
 // Throwing crayons, a ranged throwing type weapon that deals more damage the lower your max HP is, up to a cap.
 /obj/item/stack/thrown/crayons
 	name = "throwing crayons"
-	desc = "Sharpened crayons. Used till they have become the perfectly balanced weight for throwing."
+	desc = "Sharpened crayons. Used untill they have become the perfectly balanced weight for throwing."
 	icon = 'icons/obj/crayons.dmi'
 	icon_state = "crayonred"
 	item_state = "crayonred"
@@ -885,8 +885,8 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	to_chat(M, "<span class='warning'>A voice whispers in front of you: Any foils?</span>")
 	for(var/obj/item/device/camera_film in oview(1)) // Must be on the spell circle
-		B.remove_self(15)
-		new /obj/item/pack_card_carp(src.loc) // For its blood price this feels more fair.
+		B.remove_self(10)
+		new /obj/random/card_carp(src.loc)
 		M.sanity.changeLevel(-3)
 	return
 

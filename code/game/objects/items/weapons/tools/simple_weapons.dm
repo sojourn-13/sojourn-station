@@ -466,8 +466,8 @@
 
 /obj/item/tool/knife/ritual/blade
 	name = "awakened blade"
-	desc = "A sharp blade whose latent powers have fully awoken by the crayons' magic. \
-			Blood never washes from its edge, and yet it ever thirsts for more."
+	desc = "The last stage of ascension a ritual knife, its latent powers fully awoken by the crayons' magic. \
+			Suspiciously glowing runes are drawn on its surface that glow at random intervals."
 	icon_state = "crayon_blade"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 2, MATERIAL_DIAMOND = 1)
 	force = WEAPON_FORCE_ROBUST + 4 // 30 damage
