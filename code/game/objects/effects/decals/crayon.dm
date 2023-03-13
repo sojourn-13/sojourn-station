@@ -718,12 +718,12 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.maxHealth -= 10
 	M.health -= 10
-	B.remove_self(70)
-	M.sanity.changeLevel(4)
 	for(var/obj/item/reagent_containers/food/snacks/grown/G in oview(5))
 		if(G.name == "sunflower") // Apply all costs ONLY if the plant is the correct one!!!
 			to_chat(M, "<span class='info'>Distant voices scream in agony from every direction: NOT THE BEES!</span>")
 			new /mob/living/carbon/superior_animal/vox/wasp(G.loc)
+			B.remove_self(70)
+			M.sanity.changeLevel(4)
 			qdel(G)
 	return
 
