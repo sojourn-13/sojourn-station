@@ -215,8 +215,10 @@
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		return
 	M.adjustOxyLoss(-1.5 * effect_multiplier)
-	M.add_chemical_effect(CE_OXYGENATED, 1)
 	holder.remove_reagent("lexorin", 0.2 * effect_multiplier)
+	var/ce_to_add = 1 - M.chem_effects[CE_OXYGENATED]
+	if(ce_to_add > 0)
+		M.add_chemical_effect(CE_OXYGENATED, ce_to_add)
 
 /datum/reagent/medicine/dexalinp
 	name = "Dexalin Plus"
@@ -231,8 +233,10 @@
 
 /datum/reagent/medicine/dexalinp/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
 	M.adjustOxyLoss(-30 * effect_multiplier)
-	M.add_chemical_effect(CE_OXYGENATED, 2)
 	holder.remove_reagent("lexorin", 0.3 * effect_multiplier)
+	var/ce_to_add = 2 - M.chem_effects[CE_OXYGENATED]
+	if(ce_to_add > 0)
+		M.add_chemical_effect(CE_OXYGENATED, ce_to_add)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		//G for GUNS
