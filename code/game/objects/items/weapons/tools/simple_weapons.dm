@@ -108,8 +108,8 @@
 	desc = "For cutting, sawing, prying, and throwing at targets mid back-flip."
 	icon_state = "sec_tomahawk"
 	wielded_icon = "sec_tomahawk"
-	force = WEAPON_FORCE_DANGEROUS
-	throwforce = WEAPON_FORCE_BRUTAL
+	force = WEAPON_FORCE_ROBUST + 4 // Better than the cheap axe
+	throwforce = WEAPON_FORCE_LETHAL // Meant to be a throwing weapon
 	slot_flags = SLOT_BELT|SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 25, QUALITY_PRYING = 15)
 	w_class = ITEM_SIZE_NORMAL
@@ -464,6 +464,24 @@
 		slot_back_str = "renderslayer"
 		)
 
+/obj/item/tool/knife/ritual/blade
+	name = "awakened blade"
+	desc = "A sharp blade whose latent powers have fully awoken by the crayons' magic. \
+			Blood never washes from its edge, and yet it ever thirsts for more."
+	icon_state = "crayon_blade"
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 2, MATERIAL_DIAMOND = 1)
+	force = WEAPON_FORCE_ROBUST + 4 // 30 damage
+	armor_penetration = ARMOR_PEN_MASSIVE // More balanced than psi weapons with psi mania perk.
+	w_class = ITEM_SIZE_BULKY
+	max_upgrades = 2
+	slot_flags = SLOT_BELT|SLOT_BACK
+	hitsound = 'sound/weapons/renderslash.ogg' // Snowflake
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "crayon_blade"
+		)
+
 /obj/item/tool/sword/machete
 	name = "machete"
 	desc = "An explorer's best friend and trust back up plan. Or primary plan for those who like to get in there personally."
@@ -713,6 +731,8 @@
 	desc = "A katana of acceptable quality, mass-produced by Lonestar. Easily their best-selling product from this lineup."
 	icon_state = "katana_old"
 	item_state = "katana"
+	force = WEAPON_FORCE_DANGEROUS
+	armor_penetration = ARMOR_PEN_EXTREME
 
 /obj/item/tool/cheap/spear
 	name = "cheap spear"
@@ -736,6 +756,6 @@
 
 /obj/item/tool/cheap/saber
 	name = "cheap saber"
-	desc = "A spear of acceptable quality, mass-produced by Lonestar. Probably not fit for parrying, but why not give it a try?"
+	desc = "A saber of acceptable quality, mass-produced by Lonestar. Probably not fit for parrying, but why not give it a try?"
 	icon_state = "cheap_saber"
 	item_state = "cutlass"

@@ -8,8 +8,8 @@
 	question = "End Shift?"
 	time = 90
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
-	next_vote = 255 MINUTES //Minimum round length before it can be called for the first time
-	cooldown = 15 MINUTES //Cooldown is set to 15 mins as 1 hour is a bit much when things change so much in so little time + maxium 8 hour rounds means we should be a bit more forgiven.
+	next_vote = 300 MINUTES //Minimum round length before it can be called for the first time
+	cooldown = 30 MINUTES // Cooldown is set to 30 mins as people keep spamming roundend vote call
 
 	// Overriden by implementation of IsAdminOnly
 	//only_admin = TRUE
@@ -25,7 +25,7 @@
 	If you are dead, or just spawned, you get only 0.6 votes
 	If you are an antag or a head of staff, you get 1.2 votes
 */
-#define VOTE_WEIGHT_LOW	0.6
+#define VOTE_WEIGHT_LOW	0.3
 #define VOTE_WEIGHT_NORMAL	1
 #define VOTE_WEIGHT_HIGH	1.2 //To tie 2 dead votes but not over-rule 2 living
 #define MINIMUM_VOTE_LIFETIME	15 MINUTES

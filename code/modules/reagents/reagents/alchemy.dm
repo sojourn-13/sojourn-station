@@ -1,14 +1,15 @@
 /datum/reagent/iron_skin_brew
-	name = "Fe Na of NaCl"
+	name = "Ironskin draught"
 	id = "iron_skin_brew"
-	description = "A mix of metals and salts boiled into one another, said to be able to make people take more physical punishment, with the drawback of making your metallic coating more vulnerable to fire. It also makes breathing harder..."
+	description = "A mix of metals and salts boiled into one another, said to be able to make people take more physical punishment, \
+				   with the drawback of making your metallic coating more vulnerable to fire. It also makes breathing harder..."
 	taste_description = "salt of metal"
 	reagent_state = LIQUID
-	color = "#660000"
+	color = "#4e3f3f"
 	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.001 //Takes a long time to remove
-	overdose = 1
+	overdose = 3
 
 /datum/reagent/iron_skin_brew/overdose(mob/living/carbon/M, alien)
 	M.adjustCloneLoss(1) //The body breaks apart
@@ -17,17 +18,21 @@
 	M.adjustToxLoss(3) //Its metal...
 
 /datum/reagent/iron_skin_brew/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
-	return //We want to be drank
+	return // The chemical is meant to be ingested, but unless we do this, we'll get poisoned
 
 /datum/reagent/iron_skin_brew/on_mob_add(mob/living/L)
 	. = ..()
 	var/mob/living/carbon/human/ironskin = L
 	if(!ishuman(L))
-		return
+		if(ironskin.species.reagent_tag == IS_CHTMANT) // This turns skin into iron, Cht'mant get horribly tortured by it
+			ironskin.adjustToxLoss(0.4)
+			ironskin.paralysis = max(L.paralysis, 5)
+			ironskin.adjustCloneLoss(2)
+			return
 	ironskin.mob_bomb_defense += 25
 	ironskin.falls_mod -= 0.4
 	ironskin.brute_mod_perk -= 0.2
-	ironskin.burn_mod_perk += 0.4
+	ironskin.burn_mod_perk += 0.2
 	ironskin.oxy_mod_perk  += 2 //Iron casket
 
 /datum/reagent/iron_skin_brew/on_mob_delete(mob/living/L)
@@ -38,21 +43,21 @@
 	ironskin.mob_bomb_defense -= 25
 	ironskin.falls_mod += 0.4
 	ironskin.Paralyse(3)
-	ironskin.burn_mod_perk -= 0.4
+	ironskin.burn_mod_perk -= 0.2
 	ironskin.brute_mod_perk += 0.2
 	ironskin.oxy_mod_perk  -= 2
 
 /datum/reagent/toxin_draft
-	name = "Toxic Draft"
+	name = "Noxious Sludge"
 	id = "toxin_draft"
-	description = " A horrible brew that is toxic to almost all beings."
+	description = " A nefarious concoction toxic to all living beings."
 	taste_description = "bitter demise"
 	reagent_state = LIQUID
-	color = "#660000"
+	color = "#365f3f"
 	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.1
-	overdose = 1
+	overdose = 5
 
 /datum/reagent/toxin_draft/overdose(mob/living/carbon/M)
 	M.adjustToxLoss(5)
@@ -72,17 +77,20 @@
 	L.adjustToxLoss(20)
 	L.adjustCloneLoss(10)
 
+/datum/reagent/toxin_draft/affect_touch(mob/living/L)
+	on_mob_add(L)
+
 /datum/reagent/sight_dram
 	name = "Ocular Remedy"
 	id = "sight_dram"
 	description = "A mix of common compounds to repair sight."
 	taste_description = "charcoal"
 	reagent_state = LIQUID
-	color = "#660000"
+	color = "#629ac0"
 	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.1
-	overdose = 1
+	overdose = 3
 
 /datum/reagent/sight_dram/overdose(mob/living/carbon/M)
 	M.adjustToxLoss(5)
@@ -104,17 +112,17 @@
 /datum/reagent/lively_concoxion
 	name = "Ichor of Health"
 	id = "lively_concoxion"
-	description = "A jellie of blood said to make whomever eats this to have a more perfected body. Untill it proccesses out."
+	description = "Gelified blood that strengthens the body. Has an unpleasant aftereffect."
 	taste_description = "dry iron"
 	reagent_state = LIQUID
-	color = "#660000"
+	color = "#A10808"
 	scannable = FALSE
 	appear_in_default_catalog = FALSE
-	metabolism = 0.01 //We crash hard
-	overdose = 1
+	metabolism = 0.001 //Takes a long time to remove, mercy period to get to safety since it knocks you down horribly
+	overdose = 3
 
 /datum/reagent/lively_concoxion/overdose(mob/living/carbon/M)
-	M.adjustCloneLoss(1)
+	M.adjustCloneLoss(3)
 
 /datum/reagent/lively_concoxion/affect_blood(mob/living/carbon/M)
 	M.adjustToxLoss(3)
@@ -131,21 +139,22 @@
 	. = ..()
 	M.maxHealth -= 50
 	M.health -= 50
+	M.emote("gasp")
 	M.adjustOxyLoss(60)
 	M.Weaken(5)
 	M.silent = max(M.silent, 5)
 
 /datum/reagent/nervs
-	name = "Nervs"
+	name = "Nerevex"
 	id = "nervs"
 	description = "A unique mix that makes the users' brain able to withstand more chemical accumulation in their system."
 	taste_description = "shivers"
 	reagent_state = LIQUID
-	color = "#660000"
+	color = "#6c1079"
 	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.001
-	overdose = 1
+	overdose = 3
 
 /datum/reagent/nervs/overdose(mob/living/carbon/M)
 	M.adjustCloneLoss(1)
@@ -158,7 +167,7 @@
 
 /datum/reagent/nervs/on_mob_add(mob/living/carbon/M)
 	if(!M.metabolism_effects.nsa_chem_bonus)
-		M.metabolism_effects.nsa_chem_bonus *= 2
+		M.metabolism_effects.nsa_chem_bonus += 60 // 0 x 2 is still 0 Trilby...this makes it use the maximum value possible of Detox
 		M.metabolism_effects.calculate_nsa()
 
 /datum/reagent/nervs/on_mob_delete(mob/living/carbon/M)
@@ -169,16 +178,16 @@
 		C.metabolism_effects.calculate_nsa()
 
 /datum/reagent/harms
-	name = "Painful Powerders"
+	name = "Ch'alla Volkn"
 	id = "harms"
-	description = "A mix of solid sharp sands designed to cut down whoever they are thrown at." // POCKET SAND!
+	description = "A mix of solid sharp sands and metal designed to cut down whoever they are thrown at." // POCKET SAND!
 	taste_description = "bitter demise"
 	reagent_state = SOLID //for sake of simple
-	color = "#660000"
+	color = "#b9af1f"
 	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.1
-	overdose = 1
+	overdose = 5
 
 /datum/reagent/harms/overdose(mob/living/carbon/M)
 	M.adjustToxLoss(5)
@@ -196,17 +205,20 @@
 		return
 	L.damage_through_armor(20, BRUTE, attack_flag = ARMOR_BIO)
 
+/datum/reagent/harms/affect_touch(mob/living/L)
+	on_mob_add(L)
+
 /datum/reagent/burns
 	name = "Burning Oils"
 	id = "burns"
 	description = "Heated oils with fibers of iron and salt. While it's cold inside the glass, contact with skin, chitin or any dermis tissue makes its temperature violently react..."
 	taste_description = "liquid fire"
 	reagent_state = LIQUID //for sake of simple
-	color = "#660000"
+	color = "#642424"
 	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.1
-	overdose = 1
+	overdose = 5
 
 /datum/reagent/burns/overdose(mob/living/carbon/M)
 	M.adjustFireLoss(7)
@@ -221,20 +233,24 @@
 	. = ..()
 	if(!ishuman(L))
 		L.damage_through_armor(230, BURN, attack_flag = ARMOR_BIO)
+		L.adjust_fire_stacks(4)
+		L.IgniteMob()
 		return
 	L.damage_through_armor(20, BURN, attack_flag = ARMOR_BIO)
+	L.adjust_fire_stacks(2)
+	L.IgniteMob() // It reacts violently against flesh and chitin, so it ignites naturally in contact with it, and O2 in the atmosphere.
 
-/datum/reagent/mind_exspander
+/datum/reagent/mind_expander
 	name = "Mental Salts"
-	id = "mind_exspander"
-	description = "Salts mixed with gold and tatonka milk, said to help people think clearly on tasks form gardening to scribing."
-	taste_description = "smelling salts and exspensive metal"
+	id = "mind_expander"
+	description = "Salts mixed with gold and milk, said to help people think clearly on tasks from gardening to scribing."
+	taste_description = "smelling salts and expensive metal"
 	reagent_state = LIQUID //for sake of simple
-	color = "#660000"
+	color = "#915e12"
 	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.01
-	overdose = 1
+	overdose = 3
 
 /datum/reagent/mind_exspander/overdose(mob/living/carbon/M)
 	M.adjustCloneLoss(3)
@@ -249,14 +265,14 @@
 /datum/reagent/work_tonic
 	name = "Work Tonic"
 	id = "work_tonic"
-	description = "More of a gell then a tonic, this mix of hardy elemics makes the body able to do mechincal tasks with much more easy."
-	taste_description = "dry cheese and raw stake"
-	reagent_state = LIQUID //for sake of simple
-	color = "#660000"
+	description = "More of a gel then a tonic, this mix of hardy elements makes the body able to do mechanical tasks much more easily."
+	taste_description = "dry cheese and raw steak"
+	reagent_state = LIQUID
+	color = "#da710f"
 	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.01
-	overdose = 1
+	overdose = 3
 
 /datum/reagent/work_tonic/overdose(mob/living/carbon/M)
 	M.adjustCloneLoss(3)
@@ -267,60 +283,89 @@
 /datum/reagent/work_tonic/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_EXPERT, STIM_TIME, "work_tonic")
 
-/datum/reagent/combat_brew
-	name = "Combative Brew"
+/datum/reagent/ethanol/combat_brew
+	name = "Medvesila Brew"
 	id = "combat_brew"
-	description = "A frothy mix said to help the body withstand and deal more tramua forces to any foe."
-	taste_description = "sand with mint leafs"
-	reagent_state = LIQUID //for sake of simple
-	color = "#660000"
+	description = "A frothy mix said to help the body withstand and deal more trauma force to any foe."
+	taste_description = "meaty mead"
+	reagent_state = LIQUID
+	color = "#0d6fa8"
 	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.1
-	overdose = 1
+	glass_unique_appearance = FALSE
+	strength = 1 // STRONG
+	taste_mult = 2.5
+	glass_name = "Strange Liquor"
+	glass_desc = "Some sort of liquor with a very strong smell of...meat and honey? Are you sure this is safe to drink...?"
+	overdose = 6
 
-/datum/reagent/combat_brew/overdose(mob/living/carbon/M)
+/datum/reagent/ethanol/combat_brew/overdose(mob/living/carbon/M)
 	M.adjustCloneLoss(3)
 
-/datum/reagent/combat_brew/affect_blood(mob/living/carbon/M)
+/datum/reagent/ethanol/combat_brew/affect_blood(mob/living/carbon/M)
 	M.adjustToxLoss(2)
 
-/datum/reagent/combat_brew/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/ethanol/combat_brew/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	..()
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "combat_brew")
 	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "combat_brew")
 
-/datum/reagent/eye_lid
-	name = "Eye Closing Liquor"
+/datum/reagent/ethanol/eye_lid // It's a liquor
+	name = "Gwalch Liquor"
 	id = "eye_lid"
-	description = "A once offten use mix to help ingore the world around them."
+	description = "Highly distilled spirits oft imbibed in the past \
+				   by those that wished to shut their senses from the world and have focused eyes. \
+				   One must be careful not to overconsume more than a shot at a time."
 	taste_description = "red wine and stale cheese"
 	reagent_state = LIQUID //for sake of simple
-	color = "#660000"
+	color = "#b34404"
 	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 0.1
-	overdose = 1
+	glass_unique_appearance = FALSE
+	strength = 1 // STRONG
+	taste_mult = 2.5
+	glass_name = "Strange Liquor"
+	glass_desc = "Some sort of liquor with a very strong smell of...cheese and pepper? Are you sure this is safe to drink...?"
+	overdose = 6 // Meant to be poured on a shot glass, one unit more will wreck you
 
-/datum/reagent/eye_lid/overdose(mob/living/carbon/M)
+
+
+/datum/reagent/ethanol/eye_lid/overdose(mob/living/carbon/M)
 	M.adjustCloneLoss(3)
+	var/mob/living/carbon/human/H = M
+	var/obj/item/organ/internal/eyes/E = H.random_organ_by_process(OP_EYES) // Frying your eyes
+	if(E && istype(E))
+		if(dose < 10) // Two shots, worse effect
+			E.take_damage(1, 0)
+			H.eye_blurry = max(M.eye_blurry, 15)
+			H.eye_blind = max(M.eye_blind, 5)
+		else
+			E.take_damage(10, 0)
+			H.eye_blurry = max(M.eye_blurry, 25)
+			H.eye_blind = max(M.eye_blind, 10)
 
-/datum/reagent/eye_lid/affect_blood(mob/living/carbon/M)
+/datum/reagent/ethanol/eye_lid/affect_blood(mob/living/carbon/M)
 	M.adjustToxLoss(2)
 
-/datum/reagent/eye_lid/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+/datum/reagent/ethanol/eye_lid/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	..()
 	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, STIM_TIME, "eye_lid")
 
 /datum/reagent/red_heart
-	name = "Life Starter"
+	name = "Vitaurum"
 	id = "red_heart"
-	description = "A small red dropplet of gold. Said to bring back simple pets form the dead."
+	description = "A small droplet of red gold created by an alchemist \
+				   who could not cope with the loss of their familiar. \
+				   Said to have the power to revive beasts."
 	taste_description = "zapping away your taste buds"
 	reagent_state = LIQUID //for sake of simple
-	color = "#660000"
+	color = "#da4a12"
 	scannable = FALSE
 	appear_in_default_catalog = FALSE
 	metabolism = 1
-	overdose = 1
+	overdose = 2
 
 /datum/reagent/red_heart/overdose(mob/living/carbon/M)
 	M.adjustCloneLoss(3)
@@ -336,5 +381,5 @@
 	if(L.stat == DEAD) //Anti-cheat so you dont inject this into a mob to deal 80% damage
 		if(!ishuman(L))
 			L.revive()
-			L.adjustToxLoss(L.get_health() * 0.8) //takes away 80% health
+			L.adjustBruteLoss(L.get_health() * 0.8) //takes away 80% health
 			return

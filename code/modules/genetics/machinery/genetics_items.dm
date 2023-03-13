@@ -234,6 +234,7 @@ It also resets instability to 0 so bad things don't happen.
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_STEEL = 1, MATERIAL_URANIUM = 1)
 	origin_tech = list(TECH_MATERIAL = 2, TECH_MAGNET = 4, TECH_BIO = 6)
 	var/used = FALSE
+	var/datum/genetics/genetics_holder/held_mutations
 
 /obj/item/genetics/purger/attack(mob/living/target, mob/living/user)
 	if(!istype(target))
@@ -265,6 +266,7 @@ It also resets instability to 0 so bad things don't happen.
 		used = TRUE
 		to_chat(target, SPAN_NOTICE("You feel your body begin to stabilize, and your anomalous mutations leave you."))
 		target.unnatural_mutations.removeAllMutations()
+		target.unnatural_mutations.total_instability = 0 // Now it does reset instability to zero
 
 
 
