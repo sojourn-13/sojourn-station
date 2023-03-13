@@ -314,7 +314,7 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 /obj/effect/decal/cleanable/crayon/attackby(obj/item/I, mob/living/carbon/human/M)
 	..()
 	if(istype(I, /obj/item/oddity/common/book_unholy) || istype(I, /obj/item/oddity/common/book_omega))
-		if((M.disabilities&NEARSIGHTED || M.disabilities&BLIND) && is_rune && M.species?.reagent_tag != IS_SYNTHETIC)
+		if(M.disabilities&NEARSIGHTED && is_rune && M.species?.reagent_tag != IS_SYNTHETIC)
 			//Anti-Death check
 			if(M.maxHealth <= 30)
 				to_chat(M, "<span class='info'>You try to do as the book describes but your frail body condition physically prevents you from even mumbling a single word out of its pages.</span>")
