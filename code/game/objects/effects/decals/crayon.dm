@@ -413,7 +413,7 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 
 // Ritual Knife spell procs
 	if(istype(I, /obj/item/tool/knife/ritual) || istype(I, /obj/item/tool/knife/neotritual))
-		if((M.disabilities&NEARSIGHTED || M.disabilities&BLIND) && is_rune && M.species?.reagent_tag != IS_SYNTHETIC)
+		if(M.disabilities&NEARSIGHTED && is_rune && M.species?.reagent_tag != IS_SYNTHETIC)
 
 			//Anti-Death check
 			if(M.maxHealth <= 30)
