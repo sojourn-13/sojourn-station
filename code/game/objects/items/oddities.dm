@@ -202,7 +202,6 @@
 		STAT_ROB = 9,
 		STAT_VIG = 9
 	)
-	perk = /datum/perk/alchemist
 
 /obj/item/oddity/common/broken_key
 	name = "broken key"
@@ -449,7 +448,6 @@
 		STAT_COG = 6,
 		STAT_MEC = 9
 	)
-	perk = /datum/perk/scribe // The book will render you BLIND!
 
 /obj/item/oddity/common/photo_crime
 	name = "crime scene photo"
