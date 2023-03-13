@@ -31,6 +31,7 @@
 
 	owner_verbs = list(
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_healing,
+		/obj/item/organ/internal/psionic_tumor/proc/meditative_focus,
 		/obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_telepathy,
 		/obj/item/organ/internal/psionic_tumor/proc/telekineticprowress,
@@ -53,6 +54,7 @@
 	name = "cultured flesh"
 	owner_verbs = list(
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_healing,
+		/obj/item/organ/internal/psionic_tumor/proc/meditative_focus,
 		/obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_telepathy,
 		/obj/item/organ/internal/psionic_tumor/proc/telekineticprowress,
@@ -71,6 +73,7 @@
 		/obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster,
 		// Psych unique powers just for them. Do not add these to other lists. -Kaz
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_heal_other,
+		/obj/item/organ/internal/psionic_tumor/proc/meditative_focus_other,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_heal_brain,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_gift
 	)
