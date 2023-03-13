@@ -35,7 +35,7 @@
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	projectile_type = /obj/item/projectile/beam/pulse
 	sel_mode = 1
-	charge_cost = 90 //40 shots per high medium-sized cell
+	charge_cost = 90 // almost 7 shots out of a 600M due to DM rounding (6.666667)
 	init_recoil = CARBINE_RECOIL(0.3)
 	origin_tech = list(TECH_COMBAT = 7, TECH_PLASMA = 2)
 	price_tag = 2400
