@@ -5,6 +5,7 @@
 	layer = TURF_DECAL_LAYER
 	anchored = TRUE
 	random_rotation = 0
+	sanity_damage = 4
 	var/is_rune = FALSE
 
 // Mist rune, invoked by Scribe scrolls, doesn't allow laser beams to pass through it.
@@ -460,7 +461,7 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 					scroll_spell(M)
 					continue
 
-				if(spell.message == "Baptism." && candle_amount >= 7)
+				if(spell.message == "Fountain." && candle_amount >= 7)
 					basin_spell(M)
 					continue
 
@@ -585,6 +586,7 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 			M.maxHealth -= 25
 			M.health -= 25
 			B.remove_self(50)
+			M.sanity.changeLevel(-10)
 			return
 		return
 	return
@@ -643,12 +645,12 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 	for(var/datum/language/L in M.languages)
 		if(L.name == LANGUAGE_CULT)
 			M.remove_language(LANGUAGE_CULT)
-			M.maxHealth += 20 // Give us back our health too
-			M.health += 20
+			M.maxHealth += 5 // Give us a small amount of health back too
+			M.health += 5
 		if(L.name == LANGUAGE_OCCULT)
 			M.remove_language(LANGUAGE_OCCULT)
-			M.maxHealth += 20
-			M.health += 20
+			M.maxHealth += 5
+			M.health += 5
 	return
 
 // Flux: Causes additional bluespace entropy upon the world. Truly devilish.
@@ -715,13 +717,13 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 // Bees: NOT THE BEES!! Invokes a gigantic bee per funflower on a five-tiles radius around the spell circle
 /obj/effect/decal/cleanable/crayon/proc/bees_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	M.maxHealth -= 10
+	M.health -= 10
+	B.remove_self(70)
+	M.sanity.changeLevel(4)
 	for(var/obj/item/reagent_containers/food/snacks/grown/G in oview(5))
 		if(G.name == "sunflower") // Apply all costs ONLY if the plant is the correct one!!!
 			to_chat(M, "<span class='info'>Distant voices scream in agony from every direction: NOT THE BEES!</span>")
-			B.remove_self(70)
-			M.maxHealth -= 10 // Take away our health if we succesfully cast the spell!
-			M.health -= 10
-			M.sanity.changeLevel(4)
 			new /mob/living/carbon/superior_animal/vox/wasp(G.loc)
 			qdel(G)
 	return
@@ -746,11 +748,14 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 		if(H.stats.getPerk(PERK_ALCHEMY))
 			to_chat(M, SPAN_WARNING("The paths of the Scribe and the Alchemist are mutually exclusive."))
 			return
-		M.maxHealth -= 25
-		M.health -= 25
-		B.remove_self(100)
+		if(H.stats.getPerk(PERK_SCRIBE))
+			to_chat(M, SPAN_WARNING("You already are a scribe."))
+			return
 		M.stats.addPerk(PERK_SCRIBE)
 		M.sanity.changeLevel(20)
+		B.remove_self(100)
+		M.maxHealth -= 25
+		M.health -= 25
 		to_chat(M, "<span class='warning'>Your head throbs like a heartbeat, the sudden insight of knowledge on how to pen down your dissasociated thoughts into scrolls fogs your eyes, until you can see no more.</span>")
 		qdel(P)
 	return
@@ -1024,7 +1029,7 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 	B.remove_self(min(20 * targets.len, 80))
 	return
 
-// Baptism: High blood cost, to invoke a bloody basin in which to soak one's hands for writing in blood
+// Fountain: High blood cost, to invoke a bloody basin in which to soak one's hands for writing in blood
 // This makes it so that you don't need to gib additional creatures to write each time
 // TODO: MORE CRAYON CULT BASED FURNITURE, CHANDELIERS?
 /obj/effect/decal/cleanable/crayon/proc/basin_spell(mob/living/carbon/human/M)
