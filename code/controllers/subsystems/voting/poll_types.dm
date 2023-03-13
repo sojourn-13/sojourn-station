@@ -25,7 +25,7 @@
 	If you are dead, or just spawned, you get only 0.6 votes
 	If you are an antag or a head of staff, you get 1.2 votes
 */
-#define VOTE_WEIGHT_LOW	0.3
+#define VOTE_WEIGHT_LOW	0.6
 #define VOTE_WEIGHT_NORMAL	1
 #define VOTE_WEIGHT_HIGH	1.2 //To tie 2 dead votes but not over-rule 2 living
 #define MINIMUM_VOTE_LIFETIME	15 MINUTES
