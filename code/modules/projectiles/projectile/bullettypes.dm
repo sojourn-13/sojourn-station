@@ -424,6 +424,18 @@
 	step_delay = 0.6
 	recoil = 4
 
+/obj/item/projectile/bullet/light_rifle_257/incend
+	name = "incendiary bullet"
+	damage_types = list(BURN = 10) //We deal most of are damage with fire stacks
+	fire_stacks = 1
+	armor_penetration = 0
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = FALSE
+	sharp = FALSE
+	step_delay = 0.7
+	recoil = 5
+
 /obj/item/projectile/bullet/light_rifle_257/scrap
 	damage_types = list(BRUTE = 12)
 	armor_penetration = 7
@@ -483,7 +495,6 @@
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 15)
 	agony = 9
-	post_penetration_dammult = 2
 	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
@@ -491,6 +502,18 @@
 	sharp = TRUE
 	step_delay = 0.8
 	recoil = 6
+
+/obj/item/projectile/bullet/rifle_75/incend
+	name = "incendiary bullet"
+	damage_types = list(BURN = 12) //We deal most of are damage with fire stacks
+	fire_stacks = 2
+	armor_penetration = 0
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = FALSE
+	sharp = FALSE
+	step_delay = 0.8
+	recoil = 7
 
 /obj/item/projectile/bullet/rifle_75/scrap
 	damage_types = list(BRUTE = 14)
@@ -560,6 +583,18 @@
 	step_delay = 0.5
 	recoil = 10
 
+/obj/item/projectile/bullet/heavy_rifle_408/incend
+	name = "incendiary bullet"
+	damage_types = list(BURN = 15) //We deal most of are damage with fire stacks
+	fire_stacks = 3
+	armor_penetration = 0
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = FALSE
+	sharp = FALSE
+	step_delay = 0.8
+	recoil = 11
+
 /obj/item/projectile/bullet/heavy_rifle_408/scrap
 	damage_types = list(BRUTE = 15)
 	armor_penetration = 15 //half  of normal
@@ -623,6 +658,17 @@
 	affective_ap_range = 9
 	penetrating = -5
 	recoil = 20
+
+/obj/item/projectile/bullet/antim/incend
+	damage_types = list(BURN = 45)
+	embed = FALSE
+	fire_stacks = 5	//BURN, BABY! BUUURN!!
+	armor_penetration = 20
+	penetrating = 2
+	affective_damage_range = 10
+	affective_ap_range = 10
+	penetrating = -5
+	recoil = 40
 
 /obj/item/projectile/bullet/antim/scrap
 	damage_types = list(BRUTE = 41.5)

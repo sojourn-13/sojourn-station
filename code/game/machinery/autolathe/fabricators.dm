@@ -180,6 +180,7 @@
 			list(name="Grenade Shell EMP", cost=300, path=/obj/item/ammo_casing/grenade/emp),
 			list(name="14.5mm Anti-Materiel Red-Nose", cost=2400, path=/obj/item/ammo_casing/antim/lethal/prespawned),
 			list(name="14.5mm Anti-Materiel Off-Switch", cost=2400, path=/obj/item/ammo_casing/antim/ion/prespawned),
+			list(name="14.5mm Anti-Materiel Willy-Pete", cost=2400, path=/obj/item/ammo_casing/antim/incend/prespawned),
 		"9mm Ammo Packets",
 			list(name="Packet (9mm Auto)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35),
 			list(name="Packet (9mm Auto high-velocity)", cost=165, path=/obj/item/ammo_magazine/ammobox/pistol_35/hv),
