@@ -771,7 +771,7 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 			B.remove_self(100)
 			M.maxHealth -= 5
 			M.health -= 5
-			M.sanity.changeLevel(5)
+			M.sanity.changeLevel(-5)
 			qdel(knifey)
 		if(istype(knifey, /obj/item/tool/knife/ritual/sickle) && !istype(knifey, /obj/item/tool/knife/ritual/blade))
 			to_chat(M, "<span class='warning'>Your weapon twists its form, metal bending as if it were flesh with a sickening crunch as is ascends into its final form!</span>")
@@ -780,7 +780,7 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 			B.remove_self(100)
 			M.maxHealth -= 5
 			M.health -= 5
-			M.sanity.changeLevel(10)
+			M.sanity.changeLevel(-10)
 			qdel(knifey)
 	return
 
@@ -814,7 +814,7 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 				to_chat(M, "<span class='warning'>The pouch bends and twists its form, becoming a portable flask holder!</span>")
 				new /obj/item/storage/pouch/alchemy(poumch.loc)
 				B.remove_self(20)
-				M.sanity.changeLevel(5)
+				M.sanity.changeLevel(-5)
 				qdel(poumch)
 			else
 				to_chat(M, "<span class='warning'>Alchemy is non-recursive.</span>")
