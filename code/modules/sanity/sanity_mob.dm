@@ -213,7 +213,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		)
 		var/static/list/effects_30 = effects_40 + list(
 			.proc/effect_sound = 1,
-			.proc/effect_whisper = 25,
+			.proc/effect_quote = 25,
 		)
 		var/static/list/effects_20 = effects_30 + list(
 			.proc/effect_hallucination = 30
