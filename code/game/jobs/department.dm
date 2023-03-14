@@ -85,14 +85,14 @@
 /datum/department/moebius_medical
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
-	//30225 in 5 hours with full crew + nepotism
+	//0 in 5 hours with full crew + nepotism
 	account_initial_balance = 800 //Covers crew-cost. Rest should be made up for by medical fees and chem sales.
 	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/recovery_team","/datum/job/psychiatrist")
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
-	//24375 in 5 hours with full crew + nepotism
+	//0 in 5 hours with full crew + nepotism
 	account_initial_balance = 1200 //Sell posis and whatever else to make up for material cost.
 	jobs_in_department = list("/datum/job/rd","/datum/job/scientist","/datum/job/roboticist")
 
