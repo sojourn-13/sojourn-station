@@ -32,7 +32,7 @@
 /datum/poll/restart/proc/lower_minium()
 	minimum_win_percentage -= 0.1
 
-	if(MIN_WIN_PERCENTAGE <= 0.2)
+	if(minimum_win_percentage <= 0.2)
 		SSticker.shift_end(15 MINUTES)
 		for (var/mob/M as mob in SSmobs.mob_list)
 			to_chat(M, "<br><center><span class='danger'><b><font size=4>The round is ending do to exceeding 8 hours.</font></b><br></span></center><br>")
