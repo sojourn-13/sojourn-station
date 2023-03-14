@@ -1,7 +1,10 @@
-//Baseline portable generator. Has all the default handling. Not intended to be used on it's own (since it generates unlimited power).
+//The Pow! Uses damage taken to make power, can be moved around and store damage untill wired down
+//Drains power at a % so that higher values drain faster well low trickles stay, greate for setting up in low power areas or when you got a ton of ammo to spare
+
+
 /obj/machinery/power/puncher
 	name = "P.O.W"
-	desc = "An odd power generator designed to effectively turn any kinetic force it back into power at an increased rate do to trickery with its complex internals."
+	desc = "An odd power generator designed to effectively turn any kinetic force it back into power at an increased rate due to trickery with its complex internals."
 
 	circuit = /obj/item/circuitboard/puncher
 
@@ -41,6 +44,7 @@
 		/obj/item/stock_parts/subspace/crystal = 3,
 		/obj/item/stock_parts/subspace/amplifier = 2,
 		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/device/psionic_catalyst = 1,
 		/obj/item/stack/cable_coil = 30
 	)
 
