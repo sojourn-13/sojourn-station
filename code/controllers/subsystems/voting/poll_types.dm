@@ -39,9 +39,13 @@
 
 /datum/poll/restart/admin
 	non_admin = FALSE
-	name = "ADMIN: End Round"
+	name = "Supper Majority: End Round"
 	question = "End Shift?"
 	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round/admin)
+	minimum_win_percentage = 0.75
+	next_vote = 255 MINUTES //Minimum round length before it can be called for the first time
+	cooldown = 30 MINUTES //Cooldown is set to 30 mins as 1 hour is a bit much when things change so much in so little time + maxium 8 hour rounds means we should be a bit more forgiven.
+	only_admin = FALSE
 
 
 /*To prevent abuse and rule-by-salt, the evac vote weights each player's vote based on a few parameters
