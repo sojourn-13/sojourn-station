@@ -48,7 +48,7 @@
 	In future, we will implement largescale missions and research contracts to earn money, and then set it
 	to a much lower starting value
 	*/
-	account_initial_balance = 2000 //50k for emergencies, 7800 for the wages if both have nepotism to last 5 hour shift if it comes to it, shouldn't ever need any more.
+	account_initial_balance = 2000 //500 for emergencies, 0 for the wages if both have nepotism to last 5 hour shift if it comes to it, shouldn't ever need any more.
 	jobs_in_department = list("/datum/job/premier","/datum/job/pg")
 
 /*************
@@ -60,13 +60,13 @@
 	id = DEPARTMENT_SECURITY
 	//Without nepotism a full team 34300 in 5 hours
 	//With nepotism a full team 42250 in 5 hours
-	account_initial_balance = 2000 //Estimated 4k extra credits than what is required for wages on a full roster.
+	account_initial_balance = 2000 //Estimated 200 extra credits than what is required for wages on a full roster.
 	jobs_in_department = list("/datum/job/smc","/datum/job/swo","/datum/job/supsec","/datum/job/serg","/datum/job/inspector","/datum/job/medspec","/datum/job/trooper","/datum/job/officer")
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
-	account_initial_balance = 600 //17000 to cover some expenses but not that much
+	account_initial_balance = 600 //600 to cover some expenses but not that much
 	//Full team with nepotism in 5 hours is 15600
 	jobs_in_department = list("/datum/job/chief_engineer","/datum/job/technomancer")
 
@@ -93,14 +93,14 @@
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
 	//24375 in 5 hours with full crew + nepotism
-	account_initial_balance = 1200 //Covers wages of employees. Sell posis and whatever else to make up for material cost.
+	account_initial_balance = 1200 //Sell posis and whatever else to make up for material cost.
 	jobs_in_department = list("/datum/job/rd","/datum/job/scientist","/datum/job/roboticist")
 
 /datum/department/church
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
-	account_initial_balance = 500 //17000 to cover some expenses but not that much
-	//Full team with nepotism in 5 hours is 15600
+	account_initial_balance = 500 //500 to cover some expenses but not that much
+	//Full team with nepotism in 5 hours is who fucking cares
 	jobs_in_department = list ("/datum/job/chaplain","/datum/job/acolyte")
 
 /******************
@@ -118,14 +118,14 @@
 	if you manage to get this variable refferenced there you're a better man than me. godspeed
 	*/
 	//Note: LSS isnt accounted for wages when starting money as they have the easyest ways to make money
-	account_initial_balance = 0 //Has a lot of workers to pay - but their /entire/ job is literally to make money. Should cover the base nessessities of hourly payment.
+	account_initial_balance = 0 //their /entire/ job is literally to make money.
 	jobs_in_department = list("/datum/job/merchant","/datum/job/cargo_tech","/datum/job/mining")
 
 /datum/department/prospector
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
 	//Nep in 5 hours with full team is 10600
-	account_initial_balance = 500 //Starts with an even wage to cover payment-expenses. Their job is to make money and, thus, should not start with more money than needed.
+	account_initial_balance = 500 //Their job is to make money and, thus, should not start with more money than needed.
 	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro")
 
 /datum/department/independent
