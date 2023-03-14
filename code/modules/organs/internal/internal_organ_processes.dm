@@ -59,9 +59,10 @@
 	var/obj/item/organ/internal/kidney = random_organ_by_process(OP_KIDNEYS)
 	var/chem_toxicity = chem_effects[CE_ANTITOX] + chem_effects[CE_BLOODCLOT] + chem_effects[CE_SPEEDBOOST]
 	var/toxin_strength = chem_effects[CE_TOXIN] * IORGAN_KIDNEY_TOX_RATIO + chem_toxicity
+	var/toxin_damage = 0
 
 	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
-	var/toxin_damage = (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (kidneys_efficiency / 100) - kidney.damage
+	toxin_damage = (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (kidneys_efficiency / 100) - kidney.damage
 
 	// Organ functions
 	// Blood regeneration if there is some space
@@ -80,9 +81,10 @@
 	var/obj/item/organ/internal/liver = random_organ_by_process(OP_LIVER)
 	var/alcohol_strength = chem_effects[CE_ALCOHOL]
 	var/toxin_strength = chem_effects[CE_TOXIN] * IORGAN_LIVER_TOX_RATIO + chem_effects[CE_ALCOHOL_TOXIC]
+	var/toxin_damage = 0
 
 	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
-	var/toxin_damage = (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (liver_efficiency / 100) - liver.damage
+	toxin_damage = (toxin_strength / (stats.getPerk(PERK_BLOOD_OF_LEAD) ? 2 : 1)) - (liver_efficiency / 100) - liver.damage
 
 	// Organ functions
 
