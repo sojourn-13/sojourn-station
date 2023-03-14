@@ -3,7 +3,7 @@
 	role_text = "Carrion"
 	role_text_plural = "Carrions"
 	restricted_jobs = list("AI", "Robot")
-	protected_jobs = list(JOBS_SECURITY, JOBS_COMMAND)
+	protected_jobs = list(JOBS_SECURITY, JOBS_BLACKSHIELD, JOBS_COMMAND)
 	bantype = ROLE_BANTYPE_CARRION
 	welcome_text = "You are Carrion, a leftover from a failed experiment. You have come onto this colony to carry out your master plan, and no one can stop you.<br>\
 	Your body is ever changing. You should start out by evolving a chemical vessel to use your powers. A carrion maw can be a good way to earn evolution points. <br>\
