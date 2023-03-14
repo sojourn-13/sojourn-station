@@ -12,7 +12,7 @@
 	selection_color = "#c7b97b"
 	req_admin_notify = 1
 	playtimerequired = 1200
-	wage = WAGE_COMMAND
+	wage = WAGE_NONE
 	ideal_character_age = 50
 	minimum_character_age = 25
 	health_modifier = 5
@@ -74,7 +74,7 @@
 	supervisors = "the Guild Master"
 	difficulty = "Medium."
 	selection_color = "#d5c88f"
-	wage = WAGE_PROFESSIONAL
+	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer
 	alt_titles = list("Guild Trainee","Guild Electrician", "Guild Mechanical Engineer")
 	noob_name = "Guild Trainee"

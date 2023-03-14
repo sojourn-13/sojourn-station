@@ -22,7 +22,7 @@
 	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 
 
-	wage = WAGE_COMMAND //The church has deep pockets
+	wage = WAGE_NONE //The church has deep pockets
 	department_account_access = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/church/chaplain
 
@@ -76,7 +76,7 @@
 	difficulty = "Easy to Medium."
 	selection_color = "#ecd37d"
 	access = list(access_morgue, access_crematorium, access_maint_tunnels, access_nt_disciple)
-	wage = WAGE_PROFESSIONAL
+	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/church/acolyte
 	also_known_languages = list(LANGUAGE_LATIN = 100)
 	security_clearance = CLEARANCE_COMMON

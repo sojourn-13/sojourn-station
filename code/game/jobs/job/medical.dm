@@ -11,7 +11,7 @@
 	difficulty = "Stressful."
 	selection_color = "#94a87f"
 	req_admin_notify = 1
-	wage = WAGE_COMMAND
+	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/medical/cmo
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
@@ -70,7 +70,7 @@
 	supervisors = "the Chief Biolab Overseer"
 	difficulty = "Boring to Overwhelming."
 	selection_color = "#a8b69a"
-	wage = WAGE_PROFESSIONAL
+	wage = WAGE_NONE
 	minimum_character_age = 25
 	alt_titles = list("Soteria Medical Student"=/decl/hierarchy/outfit/job/medical/doctor/medStudent,"Soteria Nurse"=/decl/hierarchy/outfit/job/medical/doctor/medNurse, "Soteria Emergency Physician"=/decl/hierarchy/outfit/job/medical/doctor/medERPhys, "Soteria Surgeon"=/decl/hierarchy/outfit/job/medical/doctor/medSurgeon)
 	noob_name = "Soteria Medical Student"
@@ -120,7 +120,7 @@
 	supervisors = "the Chief Biolab Overseer"
 	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
-	wage = WAGE_PROFESSIONAL
+	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/medical/recovery_team
 	disallow_species = list(FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
@@ -173,7 +173,7 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	wage = WAGE_PROFESSIONAL
+	wage = WAGE_NONE
 	supervisors = "the Soteria Biolab Overseer"
 	difficulty = "Soul Crushing."
 	selection_color = "#a8b69a"

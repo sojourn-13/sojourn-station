@@ -11,7 +11,7 @@
 	difficulty = "Very Hard."
 	selection_color = "#97b0be"
 	req_admin_notify = 1
-	wage = WAGE_COMMAND
+	wage = WAGE_NONE
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
@@ -75,7 +75,7 @@
 	difficulty = "Very Hard."
 	selection_color = "#97b0be"
 	req_admin_notify = 1
-	wage = WAGE_COMMAND
+	wage = WAGE_NONE
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
@@ -139,7 +139,7 @@
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	department_account_access = TRUE
-	wage = WAGE_LABOUR_HAZARD
+	wage = WAGE_NONE
 	minimum_character_age = 25
 	playtimerequired = 1200
 	health_modifier = 20
@@ -197,7 +197,7 @@
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	department_account_access = TRUE
-	wage = WAGE_LABOUR_HAZARD
+	wage = WAGE_NONE
 	minimum_character_age = 25
 	playtimerequired = 1200
 	health_modifier = 20
@@ -252,7 +252,7 @@
 	noob_name = "Junior Ranger"
 	alt_titles = list("Junior Ranger","Detective","Forensics Specialist")
 	selection_color = "#a7bbc6"
-	wage = WAGE_PROFESSIONAL
+	wage = WAGE_NONE
 	playtimerequired = 1200
 	health_modifier = 5
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
@@ -311,7 +311,7 @@
 	noob_name = "Corpsman Cadet"
 	alt_titles = list("Corpsman Cadet", "Combat Medic")
 	selection_color = "#a7bbc6"
-	wage = WAGE_PROFESSIONAL
+	wage = WAGE_NONE
 	health_modifier = 5
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
@@ -367,7 +367,7 @@
 	noob_name = "Blackshield Cadet"
 	alt_titles = list("Blackshield Cadet")
 	selection_color = "#a7bbc6"
-	wage = WAGE_LABOUR_HAZARD
+	wage = WAGE_NONE
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
@@ -420,7 +420,7 @@
 	noob_name = "Junior Marshal Officer"
 	alt_titles = list("Junior Marshal Officer", "Marshal Civil Servant")
 	selection_color = "#a7bbc6"
-	wage = WAGE_LABOUR_HAZARD
+	wage = WAGE_NONE
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 

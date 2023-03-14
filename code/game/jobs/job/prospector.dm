@@ -11,7 +11,7 @@
 	difficulty = "Hard."
 	selection_color = "#97b0be"
 	req_admin_notify = 1
-	wage = WAGE_COMMAND
+	wage = WAGE_NONE
 	department_account_access = TRUE
 	health_modifier = 15
 
@@ -69,7 +69,7 @@
 	alt_titles = list("Sawbones", "Rookie Salvager")
 	alt_perks = list("Sawbones"=list(/datum/perk/medicalexpertise, /datum/perk/stalker), "Junk Technician"=list(/datum/perk/junkborn, /datum/perk/robotics_expert))
 	selection_color = "#a7bbc6"
-	wage = WAGE_LABOUR
+	wage = WAGE_NONE
 
 	disallow_species = list(FORM_BSSYNTH, FORM_NASHEF)
 	outfit_type = /decl/hierarchy/outfit/job/salv
@@ -118,7 +118,7 @@
 	noob_name = "Rookie Prospector"
 	alt_titles = list("Rookie Prospector", "Hired Muscle")
 	selection_color = "#a7bbc6"
-	wage = WAGE_LABOUR_DUMB
+	wage = WAGE_NONE
 
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 	outfit_type = /decl/hierarchy/outfit/job/pro

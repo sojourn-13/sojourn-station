@@ -12,7 +12,7 @@
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 3000
-	wage = WAGE_LABOUR_DUMB // Makes his own money via tips and selling drinks
+	wage = WAGE_NONE // Makes his own money via tips and selling drinks
 	health_modifier = -10
 	stat_modifiers = list(
 		STAT_ROB = 15,
@@ -51,7 +51,7 @@
 	health_modifier = -10
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 750
-	wage = WAGE_LABOUR_DUMB //They should get paid by making food.
+	wage = WAGE_NONE //They should get paid by making food.
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_TGH = 10,
@@ -90,7 +90,7 @@
 	health_modifier = -10
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
 	access = list(access_hydroponics, access_bar, access_kitchen)
-	wage = WAGE_LABOUR_DUMB //The gardener can make money selling his fruits to the church or to the chef and bartender.
+	wage = WAGE_NONE //The gardener can make money selling his fruits to the church or to the chef and bartender.
 
 	outfit_type = /decl/hierarchy/outfit/job/service/gardener
 	stat_modifiers = list(
@@ -129,7 +129,7 @@
 	selection_color = "#dddddd"
 	access = list(access_theatre)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/artist
-	wage = WAGE_LABOUR_DUMB	//Barely a retaining fee. Actor can busk for credits to keep themselves fed
+	wage = WAGE_NONE	//Barely a retaining fee. Actor can busk for credits to keep themselves fed
 	alt_titles = list("Artist","Clown","Entertainer","Mime")
 	stat_modifiers = list(
 		STAT_TGH = 20, //basically a punching bag, he can't robust anyone or shoot guns anyway
@@ -174,7 +174,7 @@
 	selection_color = "#dddddd"
 	alt_titles = list("Custodian","Sanitation Technician")
 	access = list(access_janitor, access_maint_tunnels, access_morgue, access_hydroponics, access_bar, access_kitchen)
-	wage = WAGE_PROFESSIONAL
+	wage = WAGE_NONE
 	health_modifier = 5
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 

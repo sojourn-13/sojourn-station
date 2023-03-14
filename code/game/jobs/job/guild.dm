@@ -12,7 +12,7 @@
 	supervisors = "the Nadezhda Council"
 	difficulty = "Medium."
 	selection_color = "#b3a68c"
-	wage = WAGE_COMMAND	//CEO now gets paid the money moola muh [redacted] -Kaz
+	wage = WAGE_NONE	//Fuck Jack P. Torres he is a omega cuck. <3 - IDK some furry
 	access = list(
 		access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_merchant, access_mining,
 		access_heads, access_mining_station, access_RC_announce, access_keycard_auth, access_sec_doors,
@@ -71,7 +71,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 	difficulty = "Easy."
 	alt_titles = list("Cargo Specialist", "Lonestar Sales Technician", "Lonestar Retail Assistant")
 	selection_color = "#c3b9a6"
-	wage = WAGE_LABOUR_DUMB
+	wage = WAGE_NONE
 	department_account_access = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
 
@@ -125,7 +125,7 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	difficulty = "Easy."
 	alt_titles = list("Lonestar Drill Technician", "Junior Lonestar Miner")
 	selection_color = "#c3b9a6"
-	wage = WAGE_LABOUR_HAZARD //The miners union is stubborn
+	wage = WAGE_NONE //The miners union is stubborn
 	health_modifier = 5
 
 	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH)
