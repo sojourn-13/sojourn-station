@@ -465,9 +465,28 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 			add_rest(taste, snack_sanity_gain * 50/snack.taste_tag.len)*/
 
 /datum/sanity/proc/onSmoke(obj/item/clothing/mask/smokable/S)
-	changeLevel(SANITY_GAIN_SMOKE * S.quality_multiplier)
+	var/smoking_change = SANITY_GAIN_SMOKE * S.quality_multiplier
+	var/smoking_allowed = FALSE
+	var/smoking_no = FALSE
+	for(var/obj/structure/sign/warning/nosmoking in oview(owner, 7))
+		smoking_no = TRUE
+	for(var/obj/structure/sign/warning/smoking in oview(owner, 7))
+		smoking_allowed = TRUE
+
+	if(smoking_no)
+		to_chat(owner, "It feels wrong to smoke in non-smoking areas!")
+		return
+
 	if(resting)
 		add_rest(INSIGHT_DESIRE_SMOKING, 0.4 * S.quality_multiplier)
+
+	if(smoking_allowed && !smoking_no)
+		changeLevel(1) //1+ for smoking in the correct area
+		if(ishuman(owner))
+			var/mob/living/carbon/human/H = owner
+			H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/proper_area_smoker, "PROPER_AREA_SMOKER", skill_gained = 0.1, learner = H)
+
+	changeLevel(smoking_change)
 
 /datum/sanity/proc/onSay()
 	if(world.time < say_time)
@@ -537,3 +556,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		return
 
 #undef SANITY_PASSIVE_GAIN
+
+
+//Soj Edit
+/datum/sanity/proc/change_max_level(amount)
+	max_level += amount
