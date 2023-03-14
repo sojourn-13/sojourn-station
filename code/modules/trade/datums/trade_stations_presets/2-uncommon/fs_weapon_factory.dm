@@ -28,6 +28,7 @@
 			/obj/item/ammo_magazine/heavy_rifle_408_drum = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_magazine/m12/pellet = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_casing/antim/lethal/prespawned = custom_good_amount_range(list(1, 10)),
+			/obj/item/ammo_casing/antim/incend/prespawned = custom_good_amount_range(list(1, 10)),
 
 			/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small,
 			/obj/item/ammo_magazine/ammobox/rifle_75_small,
