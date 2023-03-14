@@ -7,7 +7,6 @@
 #define VOTE_WEIGHT_NORMAL	1
 #define VOTE_WEIGHT_HIGH	1.2 //To tie 2 dead votes but not over-rule 2 living
 #define MINIMUM_VOTE_LIFETIME	15 MINUTES
-#define MIN_WIN_PERCENTAGE 0.6 //at the 4 hour round we need 60% Majority to end
 
 /datum/poll/restart
 	name = "End Round"
@@ -26,7 +25,7 @@
 	only_admin = TRUE
 
 	see_votes = FALSE //No swaying
-	minimum_win_percentage = MIN_WIN_PERCENTAGE
+	minimum_win_percentage = 0.6
 	var/non_admin = TRUE
 
 /datum/poll/restart/proc/lower_minium()
