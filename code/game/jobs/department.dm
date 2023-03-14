@@ -67,7 +67,7 @@
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
 	account_initial_balance = 600 //600 to cover some expenses but not that much
-	//Full team with nepotism in 5 hours is 15600
+	//Full team with nepotism in 5 hours is 0 credits
 	jobs_in_department = list("/datum/job/chief_engineer","/datum/job/technomancer")
 
 
