@@ -17,6 +17,7 @@
 		list(mode_name="ion shot", mode_desc="An iodizing shot to disable cells, electronics and cybernetics ", projectile_type=/obj/item/projectile/ion, fire_sound='sound/effects/supermatter.ogg', fire_delay = 25, icon="stun", projectile_color = "#ff7f24"),
 		)
 	serial_type = "SI"
+	charge_cost = 50
 
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
@@ -35,7 +36,7 @@
 	can_dual = TRUE
 	sel_mode = 1
 	suitable_cell = /obj/item/cell/small
-	charge_cost = 20
+	charge_cost = 50
 	damage_multiplier = 1
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 8, MATERIAL_PLASMA = 2, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 3)
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
