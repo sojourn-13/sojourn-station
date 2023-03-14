@@ -58,8 +58,8 @@
 /datum/department/ironhammer
 	name = "Marshal and Blackshield Division"
 	id = DEPARTMENT_SECURITY
-	//Without nepotism a full team 34300 in 5 hours
-	//With nepotism a full team 42250 in 5 hours
+	//Without nepotism a full team 0 in 5 hours
+	//With nepotism a full team 0 in 5 hours
 	account_initial_balance = 2000 //Estimated 200 extra credits than what is required for wages on a full roster.
 	jobs_in_department = list("/datum/job/smc","/datum/job/swo","/datum/job/supsec","/datum/job/serg","/datum/job/inspector","/datum/job/medspec","/datum/job/trooper","/datum/job/officer")
 
