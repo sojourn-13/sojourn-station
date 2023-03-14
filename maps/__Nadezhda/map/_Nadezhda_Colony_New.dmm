@@ -10618,7 +10618,7 @@
 /obj/effect/window_lwall_spawn/smartspawn,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/wall,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "cDc" = (
 /obj/structure/cable/cyan{
@@ -17378,7 +17378,7 @@
 /obj/effect/window_lwall_spawn/smartspawn,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/wall,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/quartermaster/miningdock)
 "eet" = (
 /obj/structure/bed/chair/office/dark{
