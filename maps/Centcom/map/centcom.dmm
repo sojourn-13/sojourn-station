@@ -5506,7 +5506,7 @@
 /area/centcom/evac)
 "pA" = (
 /obj/structure/table/woodentable,
-/obj/item/oddity/common/book_omega,
+/obj/item/oddity/common/book_omega/closed,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "pC" = (

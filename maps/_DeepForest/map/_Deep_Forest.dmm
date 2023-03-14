@@ -845,6 +845,7 @@
 /obj/item/reagent_containers/glass/bottle/acetone,
 /obj/item/reagent_containers/glass/bottle/iron,
 /obj/item/reagent_containers/glass/bottle/lithium,
+/obj/item/reagent_containers/glass/bottle/sugar,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "dh" = (
@@ -922,6 +923,7 @@
 /obj/item/reagent_containers/glass/bottle/acetone,
 /obj/item/reagent_containers/glass/bottle/iron,
 /obj/item/reagent_containers/glass/bottle/lithium,
+/obj/item/reagent_containers/glass/bottle/sugar,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "ds" = (

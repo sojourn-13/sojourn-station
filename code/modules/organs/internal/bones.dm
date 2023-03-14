@@ -66,6 +66,7 @@ obj/item/organ/internal/bone/add_initial_transforms()
 /obj/item/organ/internal/bone/head
 	name = "skull"
 	icon_state = "skull"
+	item_state = "yorick"
 	parent_organ_base = BP_HEAD
 
 /obj/item/organ/internal/bone/r_arm

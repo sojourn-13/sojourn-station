@@ -176,17 +176,31 @@
 		STAT_VIG = 7
 	)
 
-/obj/item/oddity/common/book_omega
+/obj/item/oddity/common/book_omega // Dummy parent for crayon magic purposes
+	oddity_stats = list(
+		STAT_BIO = 5,
+		STAT_ROB = 5,
+		STAT_VIG = 5
+	)
+
+/obj/item/oddity/common/book_omega/closed
 	name = "occult book"
 	desc = "Most of the stories in this book seem to be the ramblings of an insane cultist, but at least the stories are interesting. \
 			Some of the phrases are written in a language that makes sense at times, but becomes intelligible to you a second after. Something about candles around a magic circle on the floor...\
 			While this sounds like utter nonsense to you, you have a dreadful feeling that using this book in the runes described would have some sinister effect..."
 	icon_state = "book_eyes" // This sprite fits better an occult book, swapped with the observer one.
 	prob_perk = 15 //old wrighting with the madmans ink allows the mind to go a bit more wild then just a single paper
+
+/obj/item/oddity/common/book_omega/opened
+	name = "open occult book"
+	icon_state = "book_eyes_open"
+	item_state = "book_eyes_open" // Yes, it HAS spooky on-hand sprites!
+	desc = "The book floats open in your hands, infinite forbidden knowledge and non-euclidean geometry contained within at your disposal. \
+			The anomaly has been strengthened in its odd nature by forces unknown, but is still perfectly functional for your rituals..."
 	oddity_stats = list(
-		STAT_BIO = 5,
-		STAT_ROB = 5,
-		STAT_VIG = 5
+		STAT_BIO = 9,
+		STAT_ROB = 9,
+		STAT_VIG = 9
 	)
 
 /obj/item/oddity/common/broken_key
@@ -410,15 +424,29 @@
 		STAT_COG = 6
 	)
 
-/obj/item/oddity/common/book_unholy
+/obj/item/oddity/common/book_unholy // Parent so that we can benefit from rituals
+
+/obj/item/oddity/common/book_unholy/closed
 	name = "unholy book"
-	desc = "The writings inside describe some strange rituals whose price is always paid in blood. Some pages have been torn out or smudged to illegibility, but what little you can make out tells you that \"...to be able to see beyond the veil, the enchanter will need to be half blind...\". \
+	desc = "The writings inside describe some strange rituals whose price is always paid in blood. Some pages have been torn out or smudged to illegibility, \
+			but what little you can make out tells you that \"...to be able to see beyond the veil, the caster will need to be half blind...\". \
 			While this sounds like utter nonsense to you, you have a dreadful feeling that using this book in the runes described would have some sinister effect..."
 	icon_state = "book_skull"
 	prob_perk = 80 //Cult around this gives it great power
 	oddity_stats = list(
 		STAT_COG = 3,
 		STAT_MEC = 7
+	)
+
+/obj/item/oddity/common/book_unholy/opened
+	name = "awakened unholy book"
+	desc = "The book floats open in your hands, infinite forbidden knowledge and non-euclidean geometry contained within at your disposal. \
+			The anomaly has been strengthened in its odd nature by forces unknown, but is still perfectly functional for your rituals..."
+	icon_state = "book_skull_open"
+	item_state = "book_skull_open"
+	oddity_stats = list(
+		STAT_COG = 6,
+		STAT_MEC = 9
 	)
 
 /obj/item/oddity/common/photo_crime
@@ -642,7 +670,7 @@
 	. = ..()
 	if(!iscarbon(user) || !issilicon(user))
 		return//Prevents ghosts form making a runtime
-	if(!user.stats?.getPerk(PERK_SI_SCI) || !usr.stat_check(STAT_COG, 90)) //got to be smarts
+	if(!user.stats?.getPerk(PERK_SI_SCI) || !usr.stat_check(STAT_COG, 60)) //got to be smarts
 		to_chat(usr, SPAN_WARNING("This tool is far too complex for you to comprehend how to even use it. The data and formulas displayed look like complete alien gibberish."))
 		return
 	var/area/my_area = get_area(src)
@@ -745,7 +773,8 @@
 
 /obj/item/oddity/ls/manual
 	name = "Specialist Manual"
-	desc = "A rugged, somewhat poor compilation of notes and pages from a variety of books and manuals. The first few pages feature information ranging from how to make a molotov cocktail to how to hotwire a shuttle."
+	desc = "A rugged, somewhat poor compilation of notes and pages from a variety of books and manuals. \
+			The first few pages feature information ranging from how to make a molotov cocktail to how to hotwire a mech."
 	icon_state = "manual"
 	oddity_stats = list(
 		STAT_COG = 2,

@@ -1036,7 +1036,7 @@
 
 /datum/reagent/drink/coffee/freddo_espresso
 	name = "Freddo Espresso"
-	id = "freddp_espresso"
+	id = "freddo_espresso"
 	description = "Espresso with ice cubes poured over ice."
 	taste_description = "cold and refreshing bitter coffee"
 	color = "#664300d3" // rgb: 102, 67, 0
@@ -3020,6 +3020,7 @@
 	id = "antidepressant"
 	description = "A Bright red cocktail, chill as an empty chimney, yet bright and soothing as a smile. Non-alcoholic. A soul lightener, you can't stay sad at the taste of this."
 	taste_description = "a sweet, smooth mix of fruits and joy"
+	sanity_gain_ingest = 1
 	glass_unique_appearance = TRUE
 	glass_icon_state = "antidepresant"
 	glass_name = "Antidepressant"

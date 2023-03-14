@@ -337,7 +337,7 @@
 
 /obj/machinery/vending/serbomat
 	name = "From Serbia with love"
-	desc = "A old world strange vender for some reason still operational."
+	desc = "A strange old world vending machine, for some reason it is still operational."
 	icon_state = "serbomat"
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
 	products = list(

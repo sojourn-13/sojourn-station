@@ -18102,6 +18102,7 @@
 /obj/structure/bookcase{
 	name = "bookcase (Non-Fiction)"
 	},
+/obj/item/oddity/common/book_unholy/closed,
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "emX" = (
@@ -24097,7 +24098,7 @@
 /obj/structure/bookcase{
 	name = "bookcase (Non-Fiction)"
 	},
-/obj/item/oddity/common/book_omega,
+/obj/item/oddity/common/book_omega/closed,
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "fEt" = (
@@ -31215,7 +31216,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "hob" = (
 /obj/structure/bookcase,
-/obj/item/oddity/common/book_unholy,
+/obj/item/oddity/common/book_unholy/closed,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "hoe" = (
@@ -37327,7 +37328,7 @@
 /obj/item/clothing/under/suit_jacket/black,
 /obj/item/clothing/head/costume/job/nun,
 /obj/structure/closet/cabinet,
-/obj/item/oddity/common/book_omega,
+/obj/item/oddity/common/book_omega/closed,
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
@@ -52267,7 +52268,7 @@
 /obj/item/flame/candle{
 	pixel_y = 20
 	},
-/obj/item/oddity/common/book_omega,
+/obj/item/oddity/common/book_omega/closed,
 /obj/effect/decal/cleanable/crayon,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
@@ -72554,6 +72555,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
+"qBm" = (
+/obj/structure/table/woodentable,
+/obj/item/oddity/common/book_unholy/closed,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "qBv" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -76231,7 +76237,7 @@
 /area/nadezhda/command/courtroom)
 "rtG" = (
 /obj/structure/bookcase,
-/obj/item/oddity/common/book_omega,
+/obj/item/oddity/common/book_omega/closed,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "rtH" = (
@@ -100786,7 +100792,7 @@
 /obj/structure/bookcase{
 	name = "bookcase (Reference)"
 	},
-/obj/item/oddity/common/book_unholy,
+/obj/item/oddity/common/book_unholy/closed,
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "wRO" = (
@@ -120485,7 +120491,7 @@ hpS
 tqM
 hpS
 sEr
-ssq
+qBm
 hpS
 cpg
 nxX
@@ -120879,7 +120885,7 @@ tad
 cZb
 cZb
 oij
-mmL
+hob
 hpS
 rtG
 oij
@@ -157544,7 +157550,7 @@ tVT
 tVT
 tVT
 tVT
-wne
+wwo
 cZb
 cZb
 wwo
