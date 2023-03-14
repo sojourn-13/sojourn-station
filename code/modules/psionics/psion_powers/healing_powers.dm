@@ -81,7 +81,7 @@
 
 	if(pay_power_cost(psi_point_cost))
 		if(owner.sanity.level >= (owner.sanity.max_level - 10))
-			psi_points = psi_point_cost
+			psi_points += psi_point_cost
 			owner.visible_message(
 			"[owner] fidgets uncomfortably.",
 			"Your mind is assured."
