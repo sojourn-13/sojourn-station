@@ -108,10 +108,10 @@
 #undef MINIMUM_VOTE_LIFETIME
 
 /datum/poll/restart/IsAdminOnly()
-	if(config.allow_vote_restart)
-		return FALSE
-	else
+	if(only_admin) //config.allow_vote_restart
 		return TRUE
+	else
+		return FALSE
 
 
 /datum/vote_choice/restart
