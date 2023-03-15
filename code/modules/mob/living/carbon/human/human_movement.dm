@@ -55,7 +55,7 @@
 	if(pain_effecting >= 1)
 		tally += min(pain_effecting / 40, 3) // Scales from 0 to 3,
 
-	//if(stats.getPerk(/datum/perk/timeismoney)?.is_active())
+	//if(stats.getPerk(PERK_TIMEISMONEY)?.is_active())
 		//tally -= 2
 
 	if (bodytemperature < 283.222)

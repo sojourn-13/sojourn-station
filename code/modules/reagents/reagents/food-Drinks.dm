@@ -2770,7 +2770,7 @@
 
 /datum/reagent/ethanol/atomic_vodka/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	if(!M.stats.getTempStat(STAT_TGH, "atomvodka") && M.stats.getPerk(/datum/perk/sommelier))
+	if(!M.stats.getTempStat(STAT_TGH, "atomvodka") && M.stats.getPerk(PERK_SOMELLIER))
 		M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 10 MINUTES, "atomvodka")
 
 /datum/reagent/ethanol/specialwhiskey // Previously unobtainable, bar spawns with a keg full of it, and you can't order more. A luxury drink!

@@ -20213,6 +20213,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/nosmoking/small{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/organ_lab)
 "eLr" = (
@@ -40779,6 +40782,13 @@
 /obj/item/storage/briefcase,
 /obj/random/toy/plushie,
 /obj/structure/closet/secure_closet/reinforced/engineering_chief,
+/obj/machinery/button/windowtint{
+	dir = 8;
+	id = "GM";
+	pixel_x = 22;
+	pixel_y = 9;
+	range = 6
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/gmaster)
 "jsl" = (
@@ -92533,6 +92543,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"uUn" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "uUq" = (
 /obj/machinery/autolathe,
 /obj/machinery/light_switch{
@@ -94591,9 +94614,18 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/absolutism/vectorrooms)
 "vsm" = (
-/obj/structure/sign/warning/nosmoking/small,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/medical/organ_lab)
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/crew_quarters/hydroponics/garden)
 "vsB" = (
 /obj/structure/table/standard,
 /obj/machinery/power/apc{
@@ -164277,7 +164309,7 @@ nMZ
 dKb
 fWM
 nMZ
-vsm
+nMZ
 qUI
 qUI
 qUI
@@ -164684,7 +164716,7 @@ niV
 fSc
 nMZ
 nMZ
-vsm
+nMZ
 nMZ
 kEu
 rIX
@@ -215178,7 +215210,7 @@ nCF
 bxz
 lYc
 cDR
-sdm
+vsm
 sdm
 sdm
 sdm
@@ -217198,7 +217230,7 @@ nCF
 fCl
 oRd
 cDR
-sdm
+uUn
 sdm
 sdm
 sdm

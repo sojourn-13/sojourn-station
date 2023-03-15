@@ -21,12 +21,12 @@ var/list/disciples = list()
 /obj/item/implant/core_implant/cruciform/install(mob/living/target, organ, mob/user)
 	. = ..()
 	if(.)
-		target.stats.addPerk(/datum/perk/sanityboost)
-		target.stats.addPerk(/datum/perk/unfinished_delivery)
+		target.stats.addPerk(PERK_SANITYBOOST)
+		target.stats.addPerk(PERK_UNFINISHED_DELIVERY)
 
 /obj/item/implant/core_implant/cruciform/uninstall()
-	wearer.stats.removePerk(/datum/perk/sanityboost)
-	wearer.stats.addPerk(/datum/perk/unfinished_delivery)
+	wearer.stats.removePerk(PERK_SANITYBOOST)
+	wearer.stats.addPerk(PERK_UNFINISHED_DELIVERY)
 	return ..()
 
 /obj/item/implant/core_implant/cruciform/get_mob_overlay(gender, form)
@@ -98,7 +98,7 @@ var/list/disciples = list()
 		remove_cyber()
 	if(wearer && wearer.stat == DEAD || wearer.is_mannequin) //If were dead or a mannequin we do not actively process are cruciform
 		deactivate()
-	if(wearer && wearer.stats && wearer.stats.getPerk(/datum/perk/channeling) && round(world.time) % 5 == 0)
+	if(wearer && wearer.stats && wearer.stats.getPerk(PERK_CHANNELING) && round(world.time) % 5 == 0)
 		power_regen -= channeling_boost  // Removing the previous channeling boost since the number of disciples may have changed
 		//wearer.visible_message(SPAN_DANGER("Old [channeling_boost]"))
 		channeling_boost = 0.2 * disciples.len  // Proportional to the number of cruciformed people on board

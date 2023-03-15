@@ -472,9 +472,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/smoking_allowed = FALSE
 	var/smoking_no = FALSE
 	for(var/obj/structure/sign/warning/nosmoking/dont in oview(owner, 7))
-		
+
 		smoking_no = TRUE
-	for(var/obj/structure/sign/warning/smoking/do in oview(owner, 7))
+	for(var/obj/structure/sign/warning/smoking/undont in oview(owner, 7))
 		smoking_allowed = TRUE
 
 	if(smoking_no && !owner.stats.getPerk(PERK_CHAINGUN_SMOKER))
@@ -499,11 +499,15 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	changeLevel(SANITY_GAIN_SAY)
 
 /datum/sanity/proc/changeLevel(amount)
+	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		return
 	if(sanity_invulnerability && amount < 0)
 		return
 	updateLevel(level + amount)
 
 /datum/sanity/proc/setLevel(amount)
+	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		return
 	if(sanity_invulnerability)
 		restoreLevel(amount)
 		return
@@ -515,6 +519,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	updateLevel(amount)
 
 /datum/sanity/proc/updateLevel(new_level)
+	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		return
 	new_level = CLAMP(new_level, 0, max_level)
 	level_change += abs(new_level - level)
 	level = new_level
