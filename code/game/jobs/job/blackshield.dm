@@ -35,10 +35,10 @@
 		STAT_VIG = 40,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete,
-				 /datum/perk/job/blackshield_conditioning,
-				 /datum/perk/job/bolt_reflect,
-				 /datum/perk/chem_contraband)
+	perks = list(PERK_ASS_OF_CONCRETE,
+				 PERK_BLACKSHIELD_CONDITIONING,
+				 PERK_BOLT_REFLECT,
+				 PERK_CHEM_CONTRABAND)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -60,6 +60,7 @@
 	name = "Blackshield Commander"
 	icon_state = "player-blue-officer"
 	join_tag = /datum/job/smc
+
 
 /datum/job/serg
 	title = "Sergeant"
@@ -93,7 +94,7 @@
 		STAT_VIG = 25,
 	)
 
-	perks = list(/datum/perk/job/bolt_reflect, /datum/perk/job/blackshield_conditioning, /datum/perk/chem_contraband)
+	perks = list(PERK_BLACKSHIELD_CONDITIONING, PERK_BOLT_REFLECT, PERK_CHEM_CONTRABAND)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -146,7 +147,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/job/blackshield_conditioning)
+	perks = list(PERK_MEDICAL_EXPERT, PERK_BLACKSHIELD_CONDITIONING)
 				// /datum/perk/chemist -Thanos Voice: "I'm sorry little one..."
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -190,7 +191,7 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
-	perks = list(/datum/perk/job/bolt_reflect, /datum/perk/job/blackshield_conditioning, /datum/perk/chem_contraband)
+	perks = list(PERK_BLACKSHIELD_CONDITIONING, PERK_BOLT_REFLECT, PERK_CHEM_CONTRABAND)
 
 	access = list(
 		access_security, access_eva,
