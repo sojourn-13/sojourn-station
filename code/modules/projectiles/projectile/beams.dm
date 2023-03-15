@@ -5,7 +5,7 @@ Beams also can pass through glass and are hitscan, thus making them great agains
 In pvp they also have more lasting damages, such as infections, pain form burns, and nerve damage.
 */
 /obj/item/projectile/beam
-	name = "laser"
+	name = "Laser"
 	icon_state = "laser"
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/laser_searwall.ogg'
@@ -36,7 +36,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	return 0
 
 /obj/item/projectile/beam/musket
-	name = "charged laser"
+	name = "Musket laser"
 	armor_penetration = 30 //Good AP, its for slow firing weapon
 	eyeblur = 1
 
