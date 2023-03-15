@@ -421,6 +421,8 @@
 	SEND_SIGNAL(src, COMSIG_APPVAL, src)
 	SEND_SIGNAL(src, COMSIG_IWOUND_FLAGS_ADD)
 
+	refresh_damage()
+
 	for(var/prefix in prefixes)
 		name = "[prefix] [name]"
 
