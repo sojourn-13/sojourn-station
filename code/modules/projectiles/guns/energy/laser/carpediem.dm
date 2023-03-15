@@ -11,7 +11,7 @@
 	w_class = ITEM_SIZE_BULKY
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_WOOD = 10, MATERIAL_GLASS = 3, MATERIAL_SILVER = 3, MATERIAL_GOLD = 3, MATERIAL_BIOMATTER = 15)
 	projectile_type = /obj/item/projectile/beam/musket
-	fire_delay = 100 //the original weapon used to have a charge mode, to make it a zero sum, the delay had to be adjsuted
+	fire_delay = 70 //the original weapon used to have a charge mode, to make it a zero sum, the delay had to be adjsuted
 	charge_cost = 150 // 4 shots on a 600M
 	init_recoil = CARBINE_RECOIL(1)
 	price_tag = 1000 //got to keep in mind material costs
