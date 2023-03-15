@@ -357,7 +357,7 @@
 	name = "Anomaly Hunter"
 	desc = "Special training from senior Prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examining an oddity that has become an anomaly, you can tell what its greater boon or curse may be."
 
-/datum/perk/market_prof
+PERK_MARKET_PROF
 	name = "Market Professional"
 	desc = "You've become an excellent appraiser of goods over the years. Just by looking at the item, you can know how much it would sell for in today's market rates."
 
@@ -587,7 +587,7 @@
 	var/npc_name = input(M, "Choose your name: ", "Superstar Name", "VIP") as text
 	if(src && npc_name)
 		M.real_name = npc_name
-		M.stats.removePerk(/datum/perk/true_name)
+		M.stats.removePerk(PERK_TRUE_NAME)
 	anti_cheat = FALSE
 	return TRUE
 

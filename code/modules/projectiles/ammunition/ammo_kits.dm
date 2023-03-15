@@ -33,9 +33,9 @@
 	var/material_points = 15 + extra_material_points // 10 steel and 5 cardboard
 
 	if(user.stats)
-		if(user.stats.getPerk(/datum/perk/handyman))
+		if(user.stats.getPerk(PERK_HANDYMAN))
 			material_points += 11
-		if(user.stats.getPerk(/datum/perk/gunsmith))
+		if(user.stats.getPerk(PERK_GUNSMITH))
 			material_points += 11
 		switch(user.stats.getStat(STAT_MEC))
 			if(STAT_LEVEL_BASIC to STAT_LEVEL_ADEPT)

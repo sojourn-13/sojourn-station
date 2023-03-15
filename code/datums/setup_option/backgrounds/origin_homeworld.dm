@@ -9,7 +9,7 @@
 	natural remedies, and as such you instinctively know your way around plants."
 
 	restricted_to_species = list(FORM_MYCUS, FORM_FOLKEN)
-	perks = list(/datum/perk/greenthumb)
+	perks = list(PERK_GREENTHUMB)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -50,7 +50,7 @@
 	weaker on average."
 
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_KRIOSAN, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_CHTMANT)
-	perks = list(/datum/perk/greenthumb, /datum/perk/herbivore)
+	perks = list(PERK_GREENTHUMB, PERK_HERBIVORE)
 
 	stat_modifiers = list(
 		STAT_ROB = -5,
@@ -72,7 +72,7 @@
 	highly adept swimmers, and usually very business minded. Due to an intense need to keep food clean and healthy for consumption, many of those from Aqua Fria treat cleaning their work spaces \
 	and their equipment as second nature."
 
-	perks = list(/datum/perk/neat)
+	perks = list(PERK_NEAT)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -92,7 +92,7 @@
 	are very secretive about where Kurilskaya is actually located. A benefit of living in a dangerous world is you knew how not to draw attention to yourself, taking care so often to keep yourself \
 	quiet that its become second nature to you now."
 
-	perks = list(/datum/perk/quiet_as_mouse)
+	perks = list(PERK_QUIET_AS_MOUSE)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -151,7 +151,7 @@
 	This adaptation, coupled with working the diamond mines, have made them physically tough but comparably weak to people of other home-worlds."
 
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
-	perks = list(/datum/perk/chaingun_smoker)
+	perks = list(PERK_CHAINGUN_SMOKER)
 
 	stat_modifiers = list(
 		STAT_ROB = -5,
@@ -171,7 +171,7 @@
 	evolved to resist most forms of toxins."
 
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT)
-	perks = list(/datum/perk/blood_of_lead)
+	perks = list(PERK_BLOOD_OF_LEAD)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -190,7 +190,7 @@
 	Sol system. However, most are still commonly human or abhuman even with the numerous exceptions. As a result of the clean living, free of pollution, drugs, or heavily processed foods \
 	your body is healthy but can't handle as many drugs as other people and you find yourself getting addicted slightly easier."
 
-	perks = list(/datum/perk/solborn)
+	perks = list(PERK_SOLBORN)
 
 	stat_modifiers = list(
 		STAT_ROB = 3,
