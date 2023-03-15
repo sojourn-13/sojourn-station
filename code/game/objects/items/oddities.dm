@@ -471,7 +471,7 @@
 		STAT_ROB = 12
 	)
 	price_tag = 2000 //Its a good tie for a collector
-	perk = /datum/perk/sure_step //Insainly rare and ok stats, but really its the perk. In Disco-E this perk would save you so much making this the perfect joke
+	perk = PERK_SURE_STEP //Insainly rare and ok stats, but really its the perk. In Disco-E this perk would save you so much making this the perfect joke
 
 //Non-Spawn
 //Odditys that are event only or spawned in on map gen
@@ -488,7 +488,7 @@
 		STAT_ROB = 8,
 		STAT_VIG = 8
 	)
-	perk = /datum/perk/oddity/gunslinger
+	perk = PERK_GUNSLINGER
 
 /obj/item/oddity/broken_necklace
 	name = "Broken necklace"
@@ -579,7 +579,7 @@
 		STAT_COG = 15,
 		STAT_MEC = 15
 	)
-	perk = /datum/perk/guild/blackbox_insight
+	perk = PERK_BLACKBOX_INSIGHT
 
 /obj/item/oddity/bath
 	name = "Lonestar Smelling Salts"
@@ -592,7 +592,7 @@
 		STAT_VIG = 8
 	)
 	price_tag = 1000
-	perk = /datum/perk/oddity/failing_mind //You sure will get brain damage if you get anywhere near this
+	perk = PERK_FAILING_MIND //You sure will get brain damage if you get anywhere near this
 
 //A randomized oddity with random stats, meant for artist job project
 /obj/item/oddity/artwork
@@ -630,7 +630,7 @@
 		STAT_ROB = 12
 	)
 	price_tag = 8000
-	perk = /datum/perk/nt_oddity/holy_light
+	perk = PERK_HOLY_LIGHT
 
 /obj/item/oddity/nt/pyramid
 	name = "Pyramid"
@@ -640,7 +640,7 @@
 		STAT_TGH = 16
 	)
 	price_tag = 8000
-	perk = /datum/perk/oddity/strangth
+	perk = PERK_STRANGTH
 
 /obj/item/oddity/chimeric_fang_trophy
 	name = "Chimera Fang Trophy"
@@ -652,7 +652,7 @@
 		STAT_BIO = 8
 	)
 	price_tag = 800 //Its a good trophy for a collector
-	perk = /datum/perk/oddity/harden
+	perk = PERK_HARDEN
 
 /obj/item/oddity/si_bluespace_scanner
 	name = "Bluespace Tuning Device"
@@ -664,7 +664,7 @@
 		STAT_COG = 2, //trash stats for mass-printed trash
 		STAT_MEC = 2
 	)
-	perk = /datum/perk/oddity/sharp_mind //TODO: fix /datum/perk/bluespace
+	perk = PERK_SHARP_MIND //TODO: fix /datum/perk/bluespace
 
 /obj/item/oddity/si_bluespace_scanner/examine(mob/living/user, distance)
 	. = ..()
@@ -690,7 +690,7 @@
 		STAT_VIG = 6
 	)
 	price_tag = 3200 //So we have a reason for stealing it
-	perk = /datum/perk/codespeak
+	perk = PERK_CODESPEAK
 
 /obj/item/oddity/chem_book
 	name = "Chemistry Reference Table"
@@ -700,7 +700,7 @@
 		STAT_BIO = 6
 	)
 	price_tag = 3200 //So we have a reason for stealing it
-	perk = /datum/perk/chemist
+	perk = PERK_CHEMIST
 
 //Lonestar
 //Oddities that are only orderable through Lonestar cargo

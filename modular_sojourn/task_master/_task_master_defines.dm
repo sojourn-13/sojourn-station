@@ -8,3 +8,4 @@
 #define DR_FLOOR /datum/task_master/task/dr_floor
 #define PROPER_SEALER /datum/task_master/task/proper_sealer
 #define TOOL_BREAKER /datum/task_master/task/tool_breaker
+#define PROPER_AREA_SMOKER /datum/task_master/task/proper_area_smoker

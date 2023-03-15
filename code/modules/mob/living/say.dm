@@ -128,7 +128,7 @@ var/list/channel_to_radio_key = new
 		if(stat == DEAD)
 			return say_dead(message)
 		else if(last_symbol=="@")
-			if(src.stats.getPerk(/datum/perk/codespeak))
+			if(src.stats.getPerk(PERK_CODESPEAK))
 				return
 			else
 				to_chat(src, "You don't know the codes, pal.")

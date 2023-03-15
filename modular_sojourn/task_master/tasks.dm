@@ -52,7 +52,7 @@
 	//log_debug("[forwards_refence] Has gained additonal insight.")
 	forwards_refence.sanity.give_insight(level + 3)
 	forwards_refence.sanity.give_insight_rest(level + 3)
-	forwards_refence.sanity.resting += level
+//	forwards_refence.sanity.resting += level //This was to powerful
 
 
 /datum/task_master/task/clay_thumb
@@ -149,3 +149,13 @@
 
 /datum/task_master/task/proper_sealer/activate_affect()
 	forwards_refence.stats.changeStat(STAT_MEC, (level + 1))
+
+/datum/task_master/task/proper_area_smoker
+	name = "Smoking Area"
+	key = "PROPER_AREA_SMOKER"
+	desc = "Do to smoking in the proper area helps make you feel more connected to the community."
+	gain_text = "Smoking in a proper area is rather soothing."
+	level_threshholds = 10
+
+/datum/task_master/task/proper_area_smoker/activate_affect()
+	forwards_refence.sanity.change_max_level(level)

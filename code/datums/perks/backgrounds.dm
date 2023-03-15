@@ -60,7 +60,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	var/choice = input(M,"Which language do you know?","Linguist Choice") as null|anything in options
 	if(src && choice)
 		M.add_language(choice)
-		M.stats.removePerk(/datum/perk/linguist)
+		M.stats.removePerk(PERK_LINGUIST)
 	anti_cheat = FALSE
 	return TRUE
 
