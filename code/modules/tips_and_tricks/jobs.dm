@@ -8,7 +8,7 @@
     tipText = "As a premier, you function as an internal affairs agent, lawyer, and mediator."
 
 /tipsAndTricks/jobs/ironhammer_theft
-    jobs_list = list(/datum/job/smc, /datum/job/swo, /datum/job/supsec, /datum/job/inspector, /datum/job/medspec, /datum/job/trooper, /datum/job/officer, /datum/job/serg)
+    jobs_list = list(/datum/job/swo, /datum/job/officer)
     tipText = "As a member of security, you have broad access to chase criminals. This does not mean you can take anything you have access to. Taking things from other departments is theft!"
 
 /tipsAndTricks/jobs/plants_are_dieing_gardener
@@ -247,7 +247,7 @@
     tipText = "As an AI you can remotely control drone shells."
 
 /tipsAndTricks/jobs/pda_paper_scanner
-    jobs_list = list(/datum/job/premier, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/smc, /datum/job/pg, /datum/job/rd)
+    jobs_list = list(/datum/job/premier, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/pg, /datum/job/rd)
     tipText = "Your PDA has an integrated paper scanner and printer."
 
 /tipsAndTricks/jobs/aiCanBeMoved
