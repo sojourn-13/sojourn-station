@@ -472,9 +472,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/smoking_allowed = FALSE
 	var/smoking_no = FALSE
 	for(var/obj/structure/sign/warning/nosmoking/dont in oview(owner, 7))
-		
+
 		smoking_no = TRUE
-	for(var/obj/structure/sign/warning/smoking/do in oview(owner, 7))
+	for(var/obj/structure/sign/warning/smoking/undont in oview(owner, 7))
 		smoking_allowed = TRUE
 
 	if(smoking_no && !owner.stats.getPerk(PERK_CHAINGUN_SMOKER))
