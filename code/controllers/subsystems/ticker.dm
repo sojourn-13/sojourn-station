@@ -265,6 +265,7 @@ SUBSYSTEM_DEF(ticker)
 	//Holiday Round-start stuff	~Carn
 	Holiday_Game_Start()
 
+	toggle_ooc_game_start()
 	for(var/mob/new_player/N in SSmobs.mob_list)
 		N.new_player_panel_proc()
 
@@ -557,6 +558,8 @@ SUBSYSTEM_DEF(ticker)
 	scoreboard()//scores
 	//Ask the event manager to print round end information
 	SSevent.RoundEnd()
+	//Toggle OOC back on
+	toggle_ooc_game_end()
 
 	//Print a list of antagonists to the server log
 	var/list/total_antagonists = list()
@@ -602,3 +605,16 @@ SUBSYSTEM_DEF(ticker)
 		if(GAME_STATE_PLAYING)
 			Master.SetRunLevel(RUNLEVEL_GAME)
 		if(GAME_STATE_FINISHED)
+
+
+//SOJ edits
+
+/datum/controller/subsystem/ticker/proc/toggle_ooc_game_start()
+	if (config.ooc_allowed)
+		to_chat(world, "<B>The OOC channel has been globally disabled do to roundstart!</B>")
+		config.ooc_allowed = !(config.ooc_allowed)
+
+/datum/controller/subsystem/ticker/proc/toggle_ooc_game_end()
+	if (!config.ooc_allowed)
+		to_chat(world, "<B>The OOC channel has been globally enabled do to round end!</B>")
+		config.ooc_allowed = !(config.ooc_allowed)
