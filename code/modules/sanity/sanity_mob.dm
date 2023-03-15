@@ -353,8 +353,11 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 
 				GET_COMPONENT_FROM(I, /datum/component/inspiration, O) // If it's a valid inspiration, it should have this component. If not, runtime
 				var/list/L = I.calculate_statistics()
+				var/resting_times = resting
+				if(resting_times <= 0)
+					resting_times = 1
 				for(var/stat in L)
-					var/stat_up = L[stat] * 2 * resting
+					var/stat_up = L[stat] * 2 * resting_times
 					to_chat(owner, SPAN_NOTICE("Your [stat] stat goes up by [stat_up]"))
 					owner.stats.changeStat(stat, stat_up)
 

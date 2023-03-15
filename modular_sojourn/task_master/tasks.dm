@@ -52,7 +52,7 @@
 	//log_debug("[forwards_refence] Has gained additonal insight.")
 	forwards_refence.sanity.give_insight(level + 3)
 	forwards_refence.sanity.give_insight_rest(level + 3)
-	forwards_refence.sanity.resting += level
+//	forwards_refence.sanity.resting += level //This was to powerful
 
 
 /datum/task_master/task/clay_thumb
