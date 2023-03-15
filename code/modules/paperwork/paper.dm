@@ -125,7 +125,7 @@
 	return TRUE
 
 /obj/item/paper/update_icon()
-	if (icon_state == "paper_talisman")
+	if (icon_state == "paper_talisman" || icon_state == "Scroll ink") // For Alchemy related stuff
 		return
 	else if (info)
 		icon_state = "paper_words"

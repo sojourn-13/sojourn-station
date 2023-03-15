@@ -280,6 +280,8 @@
 	name = "CA Energy Weapons Crate"
 	contains = list(/obj/item/gun/energy/laser,
 				/obj/item/gun/energy/laser,
+				/obj/item/gun/energy/ntpistol,
+				/obj/item/gun/energy/ntpistol,
 				/obj/item/gun/energy/taser,
 				/obj/item/gun/energy/taser)
 	cost = 4000

@@ -27,3 +27,4 @@
 	melee_damage_lower = 0
 	melee_damage_upper = 0
 	friendly_to_colony = TRUE
+	sanity_damage = -3

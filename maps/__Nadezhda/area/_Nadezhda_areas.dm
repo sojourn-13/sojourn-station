@@ -214,6 +214,14 @@
 	icon_state = "erisblue"
 	requires_power = 1
 
+/area/nadezhda/dungeon/outside/safehouse
+	name = "Abandoned Safehouse"
+	icon_state = "nadezhdagreen"
+	dynamic_lighting = TRUE
+	is_dungeon_lootable = FALSE
+	ambience = list('sound/ambience/ambigen1.ogg','sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambigen12.ogg','sound/ambience/ambigen14.ogg')
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
+
 //This is put here because the floors are seperated by power needs, the reason being if not powering 1 floor lags the server to hell and back. -Kaz
 /area/nadezhda/dungeon/outside/prepper/vault/floor1
 
@@ -399,29 +407,29 @@
 /area/nadezhda/maintenance/substation/engineering
 	name = "Engineering Substation"
 
-/area/nadezhda/maintenance/substation/section1
-	name = "Floor 1 Substation 1"
+/area/nadezhda/maintenance/substation/medical
+	name = "Medial Substation"
 
-/area/nadezhda/maintenance/substation/section2
-	name = "Floor 1 Substation 2"
+/area/nadezhda/maintenance/substation/science
+	name = "Science Substation"
 
-/area/nadezhda/maintenance/substation/section8
-	name = "Floor 1 Substation 3"
+/area/nadezhda/maintenance/substation/sec
+	name = "Marshal Substation"
 
-/area/nadezhda/maintenance/substation/section3
-	name = "Floor 1 Substation 1"
+/area/nadezhda/maintenance/substation/cargo
+	name = "Cargo Substation"
 
-/area/nadezhda/maintenance/substation/section4
-	name = "Floor 1 Substation 2"
+/area/nadezhda/maintenance/substation/servist
+	name = "Servist Substation"
 
-/area/nadezhda/maintenance/substation/section5
-	name = "Floor 1 Substation 3"
+/area/nadezhda/maintenance/substation/misc1
+	name = "MISC Substation 1"
 
-/area/nadezhda/maintenance/substation/section6
-	name = "Floor 2 Substation 4"
+/area/nadezhda/maintenance/substation/misc2
+	name = "MISC Substation 2"
 
-/area/nadezhda/maintenance/substation/section7
-	name = "Floor 1 Substation 5"
+/area/nadezhda/maintenance/substation/misc3
+	name = "MISC Substation 3"
 
 /area/nadezhda/maintenance/substation/bridge
 	name = "Bridge Substation"

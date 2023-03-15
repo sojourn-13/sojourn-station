@@ -34,7 +34,7 @@
 		STAT_TGH = 10,
 	)
 
-	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling
+	perks = list(PERK_NEAT, PERK_GREENTHUMB, /datum/perk/channeling
 		//, /datum/perk/chemist -Thanos Voice: "A small price to pay for salvation."
 	)
 
@@ -95,7 +95,7 @@
 		CRUCIFORM_PRIEST
 	)
 
-	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling)
+	perks = list(PERK_NEAT, PERK_GREENTHUMB, PERK_CHANNELING)
 
 	description = "Вектор служит Прайму и, в более широком смысле, церкви как последователь Веры.<br>\
 	Священные обязанности по эксплуатации биореактора и управлению биомассой для церковных машин являются вашим главным приоритетом.<br>\

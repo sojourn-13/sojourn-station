@@ -35,10 +35,10 @@
 		STAT_VIG = 40,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete,
-				 /datum/perk/job/blackshield_conditioning,
-				 /datum/perk/job/bolt_reflect,
-				 /datum/perk/chem_contraband)
+	perks = list(PERK_ASS_OF_CONCRETE,
+				 PERK_BLACKSHIELD_CONDITIONING,
+				 PERK_BOLT_REFLECT,
+				 PERK_CHEM_CONTRABAND)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -100,10 +100,10 @@
 		STAT_VIG = 30,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete,
-				 /datum/perk/codespeak,
-				 /datum/perk/chem_contraband,
-				 /datum/perk/gunsmith)
+	perks = list(PERK_ASS_OF_CONCRETE,
+				 PERK_CODESPEAK,
+				 PERK_CHEM_CONTRABAND,
+				 PERK_GUNSMITH)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -163,7 +163,7 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	perks = list(/datum/perk/market_prof,
+	perks = list(PERK_MARKET_PROF,
 				 /datum/perk/codespeak,
 				 /datum/perk/chem_contraband,
 				 /datum/perk/gunsmith)
@@ -218,7 +218,7 @@
 		STAT_VIG = 25,
 	)
 
-	perks = list(/datum/perk/job/bolt_reflect, /datum/perk/job/blackshield_conditioning, /datum/perk/chem_contraband)
+	perks = list(PERK_BLACKSHIELD_CONDITIONING, PERK_BOLT_REFLECT, PERK_CHEM_CONTRABAND)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -267,9 +267,9 @@
 		access_medical_suits
 	)
 
-	perks = list(/datum/perk/ear_of_quicksilver,
-				 /datum/perk/codespeak,
-				 /datum/perk/chem_contraband)
+	perks = list(PERK_EAR_OF_QUICKSILVER,
+				 PERK_CODESPEAK,
+				 PERK_CHEM_CONTRABAND)
 
 	stat_modifiers = list(
 		STAT_BIO = 15,
@@ -330,7 +330,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/job/blackshield_conditioning)
+	perks = list(PERK_MEDICAL_EXPERT, PERK_BLACKSHIELD_CONDITIONING)
 				// /datum/perk/chemist -Thanos Voice: "I'm sorry little one..."
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -374,7 +374,7 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
-	perks = list(/datum/perk/job/bolt_reflect, /datum/perk/job/blackshield_conditioning, /datum/perk/chem_contraband)
+	perks = list(PERK_BLACKSHIELD_CONDITIONING, PERK_BOLT_REFLECT, PERK_CHEM_CONTRABAND)
 
 	access = list(
 		access_security, access_eva,
@@ -439,7 +439,7 @@
 		STAT_VIG = 20,
 	)
 
-	perks = list(/datum/perk/codespeak, /datum/perk/chem_contraband)
+	perks = list(PERK_CODESPEAK, PERK_CHEM_CONTRABAND)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)

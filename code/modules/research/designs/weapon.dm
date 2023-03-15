@@ -420,7 +420,7 @@
 	sort_string = "TAAAS"
 
 /datum/design/research/item/weapon/toolmod/portedbarrel
-	name = "Ported Barrel"
+	name = "Composite Barrel"
 	build_path = /obj/item/tool_upgrade/refinement/ported_barrel
 	sort_string = "TAAAT"
 

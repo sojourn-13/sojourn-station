@@ -14,6 +14,9 @@
 /tipsAndTricks/gameplay/fightBlob_two
     tipText = "Блобы удивительно слабы к взрывателям и дымовым гранатам. Используйте их в случаях, когда блобы захватывают колонию."
 
+/tipsAndTricks/gameplay/maskProtections
+    tipText = "Balaclavas, surgical masks, and other masks provide a buff to your sanity protection. Perfect for operators, thieves, and people afraid of disease!."
+
 /tipsAndTricks/gameplay/fuhrerRoachReinforcement
     tipText = "Таракан 'Фюрер' может вызвать целый батальон тараканов на подкрепление. Если ты услышишь его крик, БЕГИ!"
 

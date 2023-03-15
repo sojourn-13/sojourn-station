@@ -97,13 +97,19 @@
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 30
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_verbs = list("bashes", "beats", "clobbers")
+	alt_mode_sharp = FALSE
+	alt_mode_toggle = "flips the axe to its bord side"
+
 /obj/item/tool/fireaxe/militia_tomahawk
 	name = "blackshield tactical tomahawk"
 	desc = "For cutting, sawing, prying, and throwing at targets mid back-flip."
 	icon_state = "sec_tomahawk"
 	wielded_icon = "sec_tomahawk"
-	force = WEAPON_FORCE_DANGEROUS
-	throwforce = WEAPON_FORCE_BRUTAL
+	force = WEAPON_FORCE_ROBUST + 4 // Better than the cheap axe
+	throwforce = WEAPON_FORCE_LETHAL // Meant to be a throwing weapon
 	slot_flags = SLOT_BELT|SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 25, QUALITY_PRYING = 15)
 	w_class = ITEM_SIZE_NORMAL
@@ -126,6 +132,11 @@
 	embed_mult = 1.1
 	degradation = 1.5
 	max_upgrades = 5
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_verbs = list("bashes", "beats", "clobbers")
+	alt_mode_sharp = FALSE
+	alt_mode_toggle = "flips the axe to its bord side"
 
 /obj/item/tool/minihoe
 	name = "mini hoe"
@@ -162,6 +173,12 @@
 		slot_back_str = "scythe0_back"
 		)
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_verbs = list("jabs", "prods", "wacks")
+	alt_mode_sharp = FALSE
+	alt_mode_toggle = "flips the scythe backwards to use as a blunt spear"
+	alt_mode_lossrate = 0.3
 
 //Flails
 /obj/item/tool/chainofcommand
@@ -180,6 +197,12 @@
 	max_upgrades = 2
 	tool_qualities = list(QUALITY_HAMMERING = 5)
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_verbs = list("flogged", "whipped", "lashed", "disciplined")
+	alt_mode_toggle = "losses their hand on the grip"
+	alt_mode_lossrate = 0.7
+
 /obj/item/tool/disciplinary_action
 	name = "Disciplinary Action"
 	desc = "A long whip of steel chains used by Blackshield for when someone acts out of line."
@@ -196,6 +219,11 @@
 	max_upgrades = 3
 	tool_qualities = list(QUALITY_HAMMERING = 5)
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_verbs = list("flogged", "whipped", "lashed", "disciplined")
+	alt_mode_toggle = "losses their hand on the grip"
+	alt_mode_lossrate = 0.7
 
 //Swords
 
@@ -221,6 +249,13 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 100
+
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "hilts", "blunts")
+	alt_mode_toggle = "uses the broadside of their weapon"
+	alt_mode_lossrate = 0.3
 
 /obj/item/tool/sword/katana
 	name = "katana"
@@ -266,6 +301,8 @@
 	switched_on_forcemult = 1.2 //40
 	price_tag = 800
 
+	has_alt_mode = FALSE
+
 /obj/item/tool/sword/katana/nano/turn_on(mob/user)
 	.=..()
 	if(.)
@@ -308,6 +345,8 @@
 	heat = 2250
 	glow_color = COLOR_ORANGE
 	//Stronger when turned on. Will emit heat, turn its damage type to burn and set targets on fire.
+
+	has_alt_mode = FALSE
 
 /obj/item/tool/sword/katana/firebrand/is_hot()
 	if(switched_on)
@@ -354,6 +393,12 @@
 	item_state = "saber"
 	armor_penetration = ARMOR_PEN_SHALLOW
 	price_tag = 400
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "moves their stance to no longer stab into their targets"
+	alt_mode_lossrate = 0.6
 
 /obj/item/tool/sword/saber/cutlass
 	name = "cutlass"
@@ -361,6 +406,8 @@
 	icon_state = "cutlass"
 	item_state = "cutlass"
 	price_tag = 300
+	alt_mode_verbs = list("bashes", "stunts", "hilts", "blunts")
+	alt_mode_toggle = "uses the broadside of their weapon"
 
 /obj/item/tool/sword/saber/militiacommander
 	name = "Officer's Saber"
@@ -415,6 +462,24 @@
 		slot_back_str = 'icons/inventory/back/mob.dmi')
 	item_state_slots = list(
 		slot_back_str = "renderslayer"
+		)
+
+/obj/item/tool/knife/ritual/blade
+	name = "awakened blade"
+	desc = "The last stage of ascension a ritual knife, its latent powers fully awoken by the crayons' magic. \
+			Suspiciously glowing runes are drawn on its surface that glow at random intervals."
+	icon_state = "crayon_blade"
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 2, MATERIAL_DIAMOND = 1)
+	force = WEAPON_FORCE_ROBUST + 4 // 30 damage
+	armor_penetration = ARMOR_PEN_MASSIVE // More balanced than psi weapons with psi mania perk.
+	w_class = ITEM_SIZE_BULKY
+	max_upgrades = 2
+	slot_flags = SLOT_BELT|SLOT_BACK
+	hitsound = 'sound/weapons/renderslash.ogg' // Snowflake
+	item_icons = list(
+		slot_back_str = 'icons/inventory/back/mob.dmi')
+	item_state_slots = list(
+		slot_back_str = "crayon_blade"
 		)
 
 /obj/item/tool/sword/machete
@@ -546,6 +611,15 @@
 		slot_back_str = "spearglass0_back"
 		)
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "moves their stance to no longer stab into their targets"
+	alt_mode_lossrate = 0.4
+
+
+
 /obj/item/tool/spear/steel
 	name = "steel spear"
 	desc = "A steel spearhead welded to a crude metal shaft, made from two welded rods. It'll serve well enough."
@@ -637,6 +711,13 @@
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 100
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "moves their stance to no use the blade of their weapon"
+	alt_mode_lossrate = 0.9 //Little loss so people can use these in real gimmics
+
 /obj/item/tool/cheap/axe
 	name = "cheap tomahawk"
 	desc = "A tomahawk of acceptable quality, mass-produced by Lonestar. Just expensive enough to be called tactical."
@@ -650,6 +731,8 @@
 	desc = "A katana of acceptable quality, mass-produced by Lonestar. Easily their best-selling product from this lineup."
 	icon_state = "katana_old"
 	item_state = "katana"
+	force = WEAPON_FORCE_DANGEROUS
+	armor_penetration = ARMOR_PEN_EXTREME
 
 /obj/item/tool/cheap/spear
 	name = "cheap spear"
@@ -673,6 +756,6 @@
 
 /obj/item/tool/cheap/saber
 	name = "cheap saber"
-	desc = "A spear of acceptable quality, mass-produced by Lonestar. Probably not fit for parrying, but why not give it a try?"
+	desc = "A saber of acceptable quality, mass-produced by Lonestar. Probably not fit for parrying, but why not give it a try?"
 	icon_state = "cheap_saber"
 	item_state = "cutlass"

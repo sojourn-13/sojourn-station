@@ -9,7 +9,7 @@
 	reagent_type = "General"
 
 /datum/reagent/acetone/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	M.adjustToxLoss(effect_multiplier * 0.3)
+	M.add_chemical_effect(CE_TOXIN, 1.5 * effect_multiplier)
 
 /datum/reagent/acetone/touch_obj(var/obj/O)	//I copied this wholesale from ethanol and could likely be converted into a shared proc. ~Techhead
 	if(istype(O, /obj/item/paper))
@@ -27,6 +27,9 @@
 
 /datum/reagent/metal
 	reagent_type = "Metal"
+
+/datum/reagent/metal/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_MECH_REPAIR, 0.05)	// Makes metals useful and stackable for FBPs
 
 /datum/reagent/metal/affect_ingest(var/mob/living/carbon/M, var/alien)
 	if(M.species.reagent_tag == IS_CHTMANT)
@@ -64,7 +67,7 @@
 	common = TRUE //Identifiable by smell
 
 /datum/reagent/toxin/ammonia/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	M.adjustToxLoss(effect_multiplier * 0.15)
+	M.add_chemical_effect(CE_TOXIN, 0.7 * effect_multiplier)
 
 /datum/reagent/carbon
 	name = "Carbon"
@@ -121,7 +124,7 @@
 	var/adj_temp = 0
 	var/targ_temp = 310
 	var/halluci = 0
-	var/sanity_gain_ingest = 0.5
+	sanity_gain_ingest = 0.5
 	common = TRUE //All alchoholic reagents can be ID'd pretty easily
 
 	glass_icon_state = "glass_clear"
@@ -142,8 +145,9 @@
 	LEGACY_SEND_SIGNAL(L, COMSIG_CARBON_HAPPY, src, MOB_DELETE_DRUG)
 
 /datum/reagent/ethanol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.adjustToxLoss(0.2 * toxicity * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
-	M.add_chemical_effect(CE_PAINKILLER, max(55-strength, 1))
+	M.add_chemical_effect(CE_TOXIN, toxicity * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
+	M.add_chemical_effect(CE_PAINKILLER, (dose + 1) * 6.25)
+	M.add_chemical_effect(CE_ONCOCIDAL, 0.5)	// STALKER reference
 	LEGACY_SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
 	return
 
@@ -190,6 +194,9 @@
 	if(halluci)
 		M.adjust_hallucination(halluci, halluci)
 
+	apply_sanity_effect(M, effect_multiplier)
+	LEGACY_SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
+
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
 		H.sanity.onAlcohol(src, effect_multiplier)
@@ -219,11 +226,11 @@
 	touch_met = 5
 
 /datum/reagent/toxin/hydrazine/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	M.adjustToxLoss(0.4 * effect_multiplier)
+	M.add_chemical_effect(CE_TOXIN, 2 * effect_multiplier)
 
 /datum/reagent/toxin/hydrazine/affect_touch(var/mob/living/carbon/M, var/alien, var/effect_multiplier) // Hydrazine is both toxic and flammable.
 	M.adjust_fire_stacks(0.4 / 12)
-	M.adjustToxLoss(0.2 * effect_multiplier)
+	M.add_chemical_effect(CE_TOXIN, effect_multiplier)
 
 /datum/reagent/toxin/hydrazine/touch_turf(turf/T)
 	new /obj/effect/decal/cleanable/liquid_fuel(T, volume)
@@ -344,6 +351,9 @@
 	var/power = 5
 	var/meltdose = 10 // How much is needed to melt
 	reagent_type = "Acid"
+
+/datum/reagent/acid/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_MECH_ACID, 0.2 * power)
 
 /datum/reagent/acid/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	M.take_organ_damage(0, (issmall(M) ? effect_multiplier * 2: effect_multiplier * power * 2))

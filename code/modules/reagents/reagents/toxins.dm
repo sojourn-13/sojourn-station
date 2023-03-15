@@ -9,7 +9,8 @@
 	reagent_state = LIQUID
 	color = "#CF3600"
 	metabolism = REM * 0.05 // 0.01 by default. They last a while and slowly kill you.
-	var/strength = 0.05 // How much damage it deals per unit
+	var/sanityloss = 0
+	var/strength = 1		// Base CE_TOXIN magnitude, multiplied by effect multiplier
 	reagent_type = "Toxin"
 	scannable = TRUE
 	nerve_system_accumulations = 35 //Baseline toxin is going to heck you up
@@ -17,10 +18,15 @@
 /datum/reagent/toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(strength)
 		var/multi = effect_multiplier
-		if(issmall(M))  // Small bodymass, more effect from lower volume.
+		/*if(issmall(M))  // Small bodymass, more effect from lower volume.
 			multi *= 2
 		M.adjustToxLoss(strength * multi)
-	M.add_chemical_effect(CE_TOXIN, 1)
+		if(sanityloss && ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.sanity.onToxin(src, effect_multiplier)
+			M.sanity.onToxin(src, multi)*/
+		M.add_chemical_effect(CE_TOXIN, multi * strength)
+
 
 /datum/reagent/toxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(ishuman(M))
@@ -31,7 +37,7 @@
 
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
-		M.adjustToxLoss(strength * issmall(M) ? 2 : 1)
+		M.add_chemical_effect(CE_TOXIN, strength * dose / 4)
 
 /datum/reagent/toxin/plasticide
 	name = "Plasticide"
@@ -40,7 +46,7 @@
 	taste_description = "plastic"
 	reagent_state = LIQUID
 	color = "#CF3600"
-	strength = 0.6
+	strength = 6
 	nerve_system_accumulations = 45 //Plastic in blood or stomic is going to make you rather sick
 
 /datum/reagent/toxin/oil
@@ -60,7 +66,7 @@
 	taste_description = "mushroom"
 	reagent_state = LIQUID
 	color = "#792300"
-	strength = 0.1
+	strength = 1
 	metabolism = REM * 0.1 // Make it not last forever
 	nerve_system_accumulations = 60
 	heating_point = 523
@@ -73,7 +79,7 @@
 	taste_description = "fish"
 	reagent_state = LIQUID
 	color = "#003333"
-	strength = 0.1
+	strength = 1
 	overdose = REAGENTS_OVERDOSE/3
 	addiction_chance = 10
 	nerve_system_accumulations = 45 //Bad suishie
@@ -82,11 +88,7 @@
 	reagent_type = "Toxin/Stimulator"
 
 /datum/reagent/toxin/carpotoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
-		if(istype(L))
-			L.take_damage(strength * effect_multiplier, 0)
+	..()
 	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_BASIC, STIM_TIME, "carpotoxin")
 
 /datum/reagent/toxin/carpotoxin/withdrawal_act(mob/living/carbon/M)
@@ -99,9 +101,9 @@
 		M.adjustBrainLoss(2)
 	if(strength)
 		if(issmall(M))
-			M.adjustToxLoss(strength)
+			M.add_chemical_effect(CE_TOXIN, strength)
 		else
-			M.adjustToxLoss(strength)
+			M.add_chemical_effect(CE_TOXIN, strength)
 
 ///datum/reagent/toxin/blattedin is defined in blattedin.dm
 
@@ -112,7 +114,7 @@
 	taste_mult = 1.5
 	reagent_state = LIQUID
 	color = "#9D14DB"
-	strength = 0.3
+	strength = 3
 	touch_met = 5
 	nerve_system_accumulations = 75 //Burning your insides
 
@@ -139,7 +141,7 @@
 	taste_mult = 0.6
 	reagent_state = LIQUID
 	color = "#CF3600"
-	strength = 0.2
+	strength = 2
 	metabolism = REM * 2
 	nerve_system_accumulations = -35 //Gives some use
 
@@ -178,7 +180,7 @@
 	taste_description = "salt"
 	reagent_state = SOLID
 	color = "#FFFFFF"
-	strength = 0.1
+	strength = 1
 	overdose = 20
 	nerve_system_accumulations = 85
 
@@ -201,7 +203,7 @@
 	reagent_state = SOLID
 	color = "#669900"
 	metabolism = REM
-	strength = 0.04
+	strength = 0.4
 	illegal = TRUE
 	nerve_system_accumulations = -50
 
@@ -227,7 +229,7 @@
 	taste_description = "plant food"
 	taste_mult = 0.5
 	reagent_state = LIQUID
-	strength = 0.01 // It's not THAT poisonous.
+	strength = 0.1 // It's not THAT poisonous.
 	color = "#664330"
 	common = TRUE
 	nerve_system_accumulations = 30
@@ -252,7 +254,7 @@
 	taste_mult = 1
 	reagent_state = LIQUID
 	color = "#49002E"
-	strength = 0.04
+	strength = 0.4
 	nerve_system_accumulations = 25
 
 /datum/reagent/toxin/plantbgone/touch_turf(turf/T)
@@ -351,7 +353,7 @@
 /datum/reagent/medicine/slimejelly/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(10))
 		to_chat(M, SPAN_DANGER("Your insides are burning!"))
-		M.adjustToxLoss(rand(10, 30) * effect_multiplier)
+		M.add_chemical_effect(CE_TOXIN, rand(10, 30) * effect_multiplier)
 	else if(prob(40))
 		M.heal_organ_damage(2.5 * effect_multiplier, 0)
 
@@ -431,7 +433,7 @@
 		M.sleeping = max(M.sleeping, 30)
 
 	if(effective_dose > 1)
-		M.adjustToxLoss(effect_multiplier * 0.1)
+		M.add_chemical_effect(CE_TOXIN, effect_multiplier)
 
 /datum/reagent/medicine/chloralhydrate/beer2 //disguised as normal beer for use by emagged brobots
 	name = "Beer"
@@ -510,7 +512,7 @@
 	addiction_chance = 0.01 //Will STILL likely always be addicting
 	nerve_system_accumulations = 15
 	metabolism = REM * 0.2 //but processes much faster than other toxins
-	strength = 0.3 //Rather lethal
+	strength = 8 //Rather lethal
 	heating_point = 523
 	heating_products = list("toxin")
 
@@ -530,25 +532,16 @@
 	overdose = REAGENTS_OVERDOSE
 	addiction_chance = 10
 	nerve_system_accumulations = 15
+	strength = 1
 
 /datum/reagent/toxin/aranecolmin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_ANTITOX, 0.3)
-	if(M.bloodstr)
-		for(var/current in M.bloodstr.reagent_list)
-			var/datum/reagent/toxin/pararein/R = current
-			if(istype(R))
-				R.metabolism = initial(R.metabolism) * 3
-				break
-
-/datum/reagent/toxin/aranecolmin/on_mob_delete(mob/living/carbon/M)
 	..()
-	if(istype(M))
-		if(M.bloodstr)
-			for(var/current in M.bloodstr.reagent_list)
-				var/datum/reagent/toxin/pararein/R = current
-				if(istype(R))
-					R.metabolism = initial(R.metabolism)
-					break
+	M.add_chemical_effect(CE_PAINKILLER, 15)
+	if(M.bloodstr && M.bloodstr.has_reagent("pararein"))
+		if(prob(5))
+			to_chat(M, SPAN_WARNING("The blood in your veins burns beneath your flesh!"))
+			if(LAZYLEN(M.internal_organs))	// Check needed because spiders can inject this into roaches
+				create_overdose_wound(pick(M.internal_organs), M, /datum/component/internal_wound/organic/heavy_poisoning, "rot", TRUE)
 
 /datum/reagent/toxin/diplopterum
 	name = "Diplopterum"
@@ -558,7 +551,7 @@
 	reagent_state = LIQUID
 	color = "#c9bed2"
 	overdose = 16
-	strength = 0.1
+	strength = 1
 	addiction_chance = 10
 	nerve_system_accumulations = 5
 	heating_point = 573
@@ -582,15 +575,11 @@
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "diplopterum_w")
 
 /datum/reagent/toxin/diplopterum/overdose(mob/living/carbon/M, alien)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
-		if(istype(L))
-			L.take_damage(strength, 0)
+	var/od_toxicity = (dose / 2) * strength
 	if(issmall(M))
-		M.adjustToxLoss(strength * 2)
+		M.add_chemical_effect(CE_TOXIN, od_toxicity * 2)
 	else
-		M.adjustToxLoss(strength)
+		M.add_chemical_effect(CE_TOXIN, od_toxicity)
 
 /datum/reagent/toxin/seligitillin
 	name = "Seligitillin"
@@ -626,10 +615,10 @@
 	var/mob/living/carbon/human/H = M
 	var/obj/item/organ/internal/heart/S = H.random_organ_by_process(OP_HEART)
 	if(istype(S))
-		S.take_damage(2, 0)
+		S.take_damage(dose/2, FALSE, TOX)
 	var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 	if(istype(L))
-		L.take_damage(3, 0)
+		L.take_damage(dose/2, FALSE, TOX)
 
 /datum/reagent/toxin/starkellin
 	name = "Starkellin"
@@ -670,7 +659,7 @@
 	overdose = 16
 	addiction_chance = 20
 	nerve_system_accumulations = 5
-	strength = 0.2
+	strength = 1
 	heating_point = 573
 	heating_products = list("radium", "mercury", "sugar", "nutriment")
 	reagent_type = "Toxin/Stimulator"
@@ -742,7 +731,7 @@
 	taste_description = "vomit"
 	reagent_state = LIQUID
 	color = "#527f4f"
-	strength = 0.3
+	strength = 0.25
 	common = TRUE //Church should know if they actually have biomatter or something else.
 	nerve_system_accumulations = 50
 
@@ -874,6 +863,6 @@
 		if(H.species && (H.species.flags & (NO_PAIN)))
 			return
 
-		M.apply_effect(agony_amount, AGONY, 0)
+		M.apply_effect(agony_amount, HALLOSS, 0)
 		if(prob(5))
 			to_chat(M, SPAN_DANGER("You feel like your insides are burning!"))

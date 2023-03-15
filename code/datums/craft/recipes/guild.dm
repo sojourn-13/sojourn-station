@@ -496,7 +496,7 @@
 	)
 
 /datum/craft_recipe/guild/webbing
-	name = "artificer guild web harness"
+	name = "Artificer Guild web harness"
 	icon_state = "clothing"
 	result = /obj/item/storage/belt/webbing/artificer
 	steps = list(
@@ -661,11 +661,16 @@
 	)
 
 /datum/craft_recipe/guild/heavy_barrel
-	name = "Heavy Forged Barrel"
+	name = "Heavy barrel"
 	result = /obj/item/gun_upgrade/barrel/bore
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/gun_upgrade/barrel/forged, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 20, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 30),
+		list(QUALITY_BOLT_TURNING, 25, "time" = 90),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 40),

@@ -38,7 +38,7 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 
-	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning)
+	perks = list(PERK_STALKER, PERK_PROSPECTOR_CONDITIONING)
 
 	description = "Бригадир командует старателями, группой независимых сборщиков, ищущих удачу в руинах и мусоре. <br>\
     Ваша задача - вести вашу команду в опасные местности и забрать всё ценное, что не прибито гвоздями - и гвозди тоже!<br>\
@@ -67,7 +67,7 @@
 	difficulty = "Medium."
 	noob_name = "Rookie Salvager"
 	alt_titles = list("Sawbones", "Rookie Salvager")
-	alt_perks = list("Sawbones"=list(/datum/perk/medicalexpertise, /datum/perk/stalker), "Junk Technician"=list(/datum/perk/junkborn, /datum/perk/robotics_expert))
+	alt_perks = list("Sawbones"=list(PERK_MEDICAL_EXPERT, PERK_STALKER), "Junk Technician"=list(PERK_JUNKBORN, PERK_ROBOTICS_EXPERT))
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR
 
@@ -88,8 +88,7 @@
 		STAT_VIG = 10,
 		STAT_ROB = 10
 	)
-
-	perks = list(/datum/perk/junkborn, /datum/perk/stalker)
+	perks = list(PERK_JUNKBORN, PERK_STALKER)
 
 	description = "Спасатель это неформальный обученный специалист, работающий как инженер и доктор.<br>\
     Ваша основная роль - полевой медик. Лечите и стабилизируйте раненных в тылу боя, и эвакуируйте критически раненных.<br>\
@@ -135,7 +134,7 @@
 		STAT_COG = 10
 	)
 
-	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning)
+	perks = list(PERK_STALKER, PERK_PROSPECTOR_CONDITIONING)
 
 	description = "Старатель служит как вышибала у Бригадира/Начальника Цеха, находясь в иерархии где-то между живым щитом и чистильщиком от тараканов.<br>\
     Ваша работа держать Спасателей и всех рядом с вами под защитой, сражаясь и идя первым в опасные места. <br>\

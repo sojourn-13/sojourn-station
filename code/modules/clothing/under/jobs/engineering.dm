@@ -117,3 +117,30 @@
 		rad = 100 //Rad proof
 	)
 
+/obj/item/clothing/under/rank/engineer/emergencyA
+	desc = "A state of the art Artificier suit, made to endure harsher conditions than the average jumpsuit."
+	name = "Adept's emergency suit"
+	icon_state = "GA uniform"
+	item_state = "GA uniform"
+	armor_list = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 10
+	)
+
+/obj/item/clothing/under/rank/engineer/emergencyM
+	desc = "A state of the art Artificier suit, made to endure harsher conditions than the average jumpsuit. This one is made for Guild Masters"
+	name = "Adept's emergency suit"
+	icon_state = "GM uniform"
+	item_state = "GM uniform"
+	armor_list = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 30
+	)

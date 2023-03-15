@@ -40,13 +40,13 @@
 "aS" = (
 /obj/structure/bookcase,
 /obj/item/oddity/common/book_eyes,
-/obj/item/oddity/common/book_omega,
+/obj/item/oddity/common/book_omega/closed,
 /obj/item/oddity/common/paper_bundle,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "aZ" = (
 /obj/structure/bookcase,
-/obj/item/oddity/common/book_omega,
+/obj/item/oddity/common/book_omega/closed,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "bn" = (
@@ -814,8 +814,8 @@
 /area/nadezhda/outside/meadow)
 "DL" = (
 /obj/structure/bookcase,
-/obj/item/oddity/common/book_omega,
-/obj/item/oddity/common/book_omega,
+/obj/item/oddity/common/book_omega/closed,
+/obj/item/oddity/common/book_omega/closed,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "DS" = (
@@ -1085,8 +1085,8 @@
 "LZ" = (
 /obj/structure/bookcase,
 /obj/item/oddity/common/book_bible,
-/obj/item/oddity/common/book_omega,
-/obj/item/oddity/common/book_unholy,
+/obj/item/oddity/common/book_omega/closed,
+/obj/item/oddity/common/book_unholy/closed,
 /obj/item/oddity/common/paper_crumpled,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
@@ -1324,7 +1324,7 @@
 /obj/structure/bookcase,
 /obj/item/oddity/common/book_eyes,
 /obj/item/book/ritual,
-/obj/item/oddity/common/book_unholy,
+/obj/item/oddity/common/book_unholy/closed,
 /obj/item/oddity/common/paper_crumpled,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
@@ -1348,7 +1348,7 @@
 "UG" = (
 /obj/structure/bookcase,
 /obj/item/oddity/common/book_bible,
-/obj/item/oddity/common/book_unholy,
+/obj/item/oddity/common/book_unholy/closed,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "UJ" = (
@@ -1431,7 +1431,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/asteroid/rogue)
 "XC" = (
-/obj/item/oddity/common/book_unholy,
+/obj/item/oddity/common/book_unholy/closed,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "XU" = (

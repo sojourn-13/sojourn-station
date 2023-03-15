@@ -39,6 +39,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	fire_verb = "spits"
 	see_in_dark = 10
 	cant_gib = TRUE
+	sanity_damage = 1
 
 	destroy_surroundings = TRUE
 

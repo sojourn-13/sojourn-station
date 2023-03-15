@@ -275,7 +275,7 @@
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "bc" = (
-/obj/item/oddity/common/book_omega,
+/obj/item/oddity/common/book_omega/closed,
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)

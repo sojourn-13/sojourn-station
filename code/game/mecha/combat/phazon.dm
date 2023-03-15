@@ -68,11 +68,11 @@
 	var/new_damtype = alert(src.occupant,"Melee Damage Type",null,"Brute","Fire","Toxic")
 	switch(new_damtype)
 		if("Brute")
-			damtype = "brute"
+			damtype = BRUTE
 		if("Fire")
-			damtype = "fire"
+			damtype = BURN
 		if("Toxic")
-			damtype = "tox"
+			damtype = TOX
 	src.occupant_message("Melee damage type switched to [new_damtype ]")
 	return
 

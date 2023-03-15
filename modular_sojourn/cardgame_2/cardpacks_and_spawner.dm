@@ -57,7 +57,7 @@
 				/obj/item/card_carp/manti_lord = 4,
 				/obj/item/card_carp/mole_man = 6,
 				/obj/item/card_carp/magpie = 7,
-				/obj/item/card_carp/great_white = 2,
+				/obj/item/card_carp/great_white = 4,
 				/obj/item/card_carp/lost_rabbit = 6,
 				/obj/item/card_carp/geck = 1,
 				/obj/item/card_carp/mothman = 2,

@@ -703,7 +703,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(
@@ -753,7 +753,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(
@@ -812,7 +812,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(
@@ -875,7 +875,7 @@
 	has_process = list(    // which required-process checks are conducted and defalut organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(
@@ -935,7 +935,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(
@@ -996,7 +996,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(
@@ -1056,7 +1056,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(

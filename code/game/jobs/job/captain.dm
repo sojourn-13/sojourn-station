@@ -21,7 +21,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	minimum_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/captain
 
-	perks = list(/datum/perk/sommelier)
+	perks = list(PERK_SOMELLIER)
 
 	description = "Премьер-министр является главным посредником самой колонии, выступая в качестве доверенного советника среди своих сотрудников.<br>\
 Вам доверен контроль над банковскими аккаунтами колонии, и вы также можете контролировать доступ внутри колонии.<br>\
@@ -100,7 +100,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
 	outfit_type = /decl/hierarchy/outfit/job/hop
 
-	perks = list(/datum/perk/sommelier)
+	perks = list(PERK_SOMELLIER)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/card_mod,

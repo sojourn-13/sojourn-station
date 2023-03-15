@@ -1,6 +1,8 @@
+#define GAS_MASK_SANITY_COEFF_BUFF 1.7
+
 /obj/item/clothing/mask/gas
 	name = "gas mask"
-	desc = "A face-covering mask that can be connected to an air supply. Filters harmful gases from the air."
+	desc = "A face-covering mask that can be connected to an air supply. Filters harmful gases from the air along with most of the horrid smells."
 	icon_state = "gas_mask"
 	item_flags = BLOCK_GAS_SMOKE_EFFECT | AIRTIGHT
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
@@ -23,6 +25,10 @@
 	price_tag = 20
 	muffle_voice = FALSE
 	var/is_alts = TRUE
+
+/obj/item/clothing/mask/gas/New()
+	..()
+	AddComponent(/datum/component/clothing_sanity_protection, GAS_MASK_SANITY_COEFF_BUFF)
 
 /obj/item/clothing/mask/gas/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/tool/screwdriver))

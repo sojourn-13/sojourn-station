@@ -20,7 +20,7 @@
 		STAT_VIG = 15,
 	)
 
-	perks = list(/datum/perk/market_prof, /datum/perk/bartender)
+	perks = list(PERK_MARKET_PROF, /datum/perk/bartender)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender //Re-using this.
 	description = "Бармен управляет баром колонии, предлагая колонистам напитки и развлечения.<br>\
@@ -58,7 +58,7 @@
 		STAT_BIO = 10, // They need it to butcher animals without hurting themselves.
 	)
 
-	perks = list(/datum/perk/market_prof, /datum/perk/bartender, /datum/perk/foodappraise)
+	perks = list(PERK_MARKET_PROF, /datum/perk/bartender, /datum/perk/foodappraise)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/waiter
 	description = "Шеф-повар работает на кухне, следя за тем, чтобы колония оставалась сытой и энергичной.<br>\
@@ -99,7 +99,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/market_prof, /datum/perk/greenthumb, /datum/perk/bartender)
+	perks = list(PERK_MARKET_PROF, /datum/perk/greenthumb, /datum/perk/bartender)
 
 	description = "Садовник занимается гидропоникой - использует семена, инструменты и удобрения для выращивания обильных урожаев.<br>\
 	Более талантливые садоводы могут заняться скотоводством. В ваших загонах содержится несколько кур и корова. Более экзотические животные могут быть приобретены в качестве импортного груза.<br>\
@@ -140,7 +140,7 @@
 	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 
-	perks = list(/datum/perk/market_prof, PERK_ARTIST, /datum/perk/stalker)
+	perks = list(PERK_MARKET_PROF, PERK_ARTIST, /datum/perk/stalker)
 	software_on_spawn = list(///datum/computer_file/program/supply,
 							 ///datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/scanner,
@@ -178,7 +178,7 @@
 	health_modifier = 5
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
-	perks = list(/datum/perk/market_prof, /datum/perk/job/jingle_jangle, /datum/perk/neat) //Union has revoked their chemistry privileges
+	perks = list(PERK_MARKET_PROF, /datum/perk/job/jingle_jangle, /datum/perk/neat) //Union has revoked their chemistry privileges
 
 	stat_modifiers = list(
 		STAT_ROB = 10,

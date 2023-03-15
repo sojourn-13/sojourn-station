@@ -1,7 +1,6 @@
 /obj/item/organ
 	name = "organ"
 	icon = 'icons/obj/surgery.dmi'
-	germ_level = 0
 
 	// Strings.
 	var/surgery_name					// A special name that replaces item name in surgery messages
@@ -97,7 +96,7 @@
 		species = all_species[new_dna.species]
 
 /obj/item/organ/proc/die()
-	if(BP_IS_ROBOTIC(src))
+	if(BP_IS_ROBOTIC(src) || status & ORGAN_DEAD)
 		return
 	damage = max_damage
 	status |= ORGAN_DEAD
@@ -137,6 +136,10 @@
 	if(loc != owner)
 		owner = null
 
+	//check if we've hit max_damage
+	if(damage >= max_damage)
+		die()
+
 	//dead already, no need for more processing
 	if(status & ORGAN_DEAD)
 		return
@@ -144,9 +147,7 @@
 	if(is_in_stasis())
 		return
 
-	//Process infections
-	if (BP_IS_ROBOTIC(src) || (owner && owner.species && (owner.species.flags & IS_PLANT)))
-		germ_level = 0
+	if(BP_IS_ROBOTIC(src))
 		return
 
 	if(!owner)
@@ -155,53 +156,16 @@
 			if(B && prob(40))
 				reagents.remove_reagent("blood",0.1)
 				blood_splatter(src,B,1)
-		if(config.organs_decay) damage += rand(1,3)
-		if(damage >= max_damage)
-			damage = max_damage
-		germ_level += rand(2,6)
-		if(germ_level >= INFECTION_LEVEL_TWO)
-			germ_level += rand(2,6)
-		if(germ_level >= INFECTION_LEVEL_THREE)
-			die()
-
-	else if(owner && owner.bodytemperature >= 170)	//cryo stops germs from moving and doing their bad stuffs
-		//** Handle antibiotics and curing infections
-		handle_antibiotics()
+		if(config.organs_decay)
+			if(prob(5))
+				take_damage(12, TOX)	// Will cause toxin accumulation wounds
+	else
 		handle_rejection()
-		handle_germ_effects()
-
-	//check if we've hit max_damage
-	if(damage >= max_damage)
-		die()
 
 /obj/item/organ/examine(mob/user)
 	..(user)
 	if(status & ORGAN_DEAD)
 		to_chat(user, SPAN_NOTICE("The decay has set in."))
-
-/obj/item/organ/proc/handle_germ_effects()
-	//** Handle the effects of infections
-	var/antibiotics = owner.reagents.get_reagent_by_type(/datum/reagent/medicine/spaceacillin)
-
-	if(germ_level > 0 && germ_level < INFECTION_LEVEL_ONE/2 && prob(30))
-		germ_level--
-
-	if(germ_level >= INFECTION_LEVEL_ONE/2)
-		//aiming for germ level to go from ambient to INFECTION_LEVEL_TWO in an average of 15 minutes
-		if(antibiotics <= 1 && prob(round(germ_level/6))) //Make Spaceacillin autoinjectors not useless after using 1 unit out of 5 they have.
-			germ_level++
-
-	if(germ_level >= INFECTION_LEVEL_ONE)
-		var/fever_temperature = (owner.species.heat_level_1 - owner.species.body_temperature - 5)* min(germ_level/INFECTION_LEVEL_TWO, 1) + owner.species.body_temperature
-		owner.bodytemperature += between(0, (fever_temperature - T20C)/BODYTEMP_COLD_DIVISOR + 1, fever_temperature - owner.bodytemperature)
-
-	if(germ_level >= INFECTION_LEVEL_TWO)
-		//spread germs
-		if(parent && antibiotics <= 5 && parent.germ_level < germ_level && ( parent.germ_level < INFECTION_LEVEL_ONE*2 || prob(30) ))
-			parent.germ_level++
-
-		if(prob(3))	//about once every 30 seconds
-			take_damage(1,silent=prob(30))
 
 /obj/item/organ/proc/handle_rejection()
 	// Process unsuitable transplants. TODO: consider some kind of
@@ -213,16 +177,7 @@
 		else
 			rejecting++ //Rejection severity increases over time.
 			if(rejecting % 10 == 0) //Only fire every ten rejection ticks.
-				switch(rejecting)
-					if(1 to 50)
-						germ_level++
-					if(51 to 200)
-						germ_level += rand(1,2)
-					if(201 to 500)
-						germ_level += rand(2,3)
-					if(501 to INFINITY)
-						germ_level += rand(3,5)
-						owner.reagents.add_reagent("toxin", rand(1,2))
+				take_damage(round(rejecting / 50), TOX)		// Will cause toxin accumulation wounds
 
 /obj/item/organ/proc/receive_chem(chemical as obj)
 	return FALSE
@@ -239,22 +194,6 @@
 /obj/item/organ/proc/is_broken()
 	return (damage >= min_broken_damage || (status & ORGAN_CUT_AWAY) || (status & ORGAN_BROKEN))
 
-//Germs
-/obj/item/organ/proc/handle_antibiotics()
-	var/antibiotics = 0
-	if(owner)
-		antibiotics = owner.reagents.get_reagent_by_type(/datum/reagent/medicine/spaceacillin)
-
-	if (!germ_level || antibiotics <= 5)
-		return
-
-	if (germ_level < INFECTION_LEVEL_ONE)
-		germ_level = 0	//cure instantly
-	else if (germ_level < INFECTION_LEVEL_TWO)
-		germ_level -= 6	//at germ_level == 500, this should cure the infection in a minute
-	else
-		germ_level -= 3 // Let's speed this up since it takes forever.
-
 //Adds autopsy data for used_weapon.
 /obj/item/organ/proc/add_autopsy_data(used_weapon, damage)
 	var/datum/autopsy_data/W = autopsy_data[used_weapon]
@@ -268,15 +207,11 @@
 	W.time_inflicted = world.time
 
 //Note: external organs have their own version of this proc
-/obj/item/organ/proc/take_damage(amount, silent=0)
-	/*if(BP_IS_ROBOTIC(src))
-		damage = between(0, damage + (amount * 0.8), max_damage)
-	else
-		damage = between(0, damage + amount, max_damage)*/
-
-	//only show this if the organ is not robotic
-	if(owner && parent && amount > 0 && !silent)
-		owner.custom_pain("Something inside your [parent.name] hurts a lot.", 1)
+/obj/item/organ/proc/take_damage(amount, damage_type, wounding_multiplier = 1, silent)
+	if(!BP_IS_ROBOTIC(src))
+		//only show this if the organ is not robotic
+		if(owner && parent && amount > 0 && !silent)
+			owner.custom_pain("Something inside your [parent.name] hurts a lot.", 1)
 
 /obj/item/organ/proc/bruise()
 	damage = max(damage, min_bruised_damage)
@@ -289,19 +224,19 @@
 	if(parent && BP_IS_ROBOTIC(parent))
 		switch (severity)
 			if(1)
-				take_damage(40) //Deals half the organs damage
+				take_damage(40, BURN) //Deals half the organs damage
 			if(2)
-				take_damage(30)
+				take_damage(30, BURN)
 			if(3)
-				take_damage(20)
+				take_damage(20, BURN)
 	else
 		switch (severity)
 			if(1)
-				take_damage(25) //Deals half the organs damage
+				take_damage(25, BURN) //Deals half the organs damage
 			if(2)
-				take_damage(20)
+				take_damage(20, BURN)
 			if(3)
-				take_damage(10)
+				take_damage(10, BURN)
 
 
 // Gets the limb this organ is located in, if any
@@ -400,4 +335,4 @@
 	return TRUE
 
 /obj/item/organ/proc/is_usable()
-	return !(status & (ORGAN_CUT_AWAY|ORGAN_MUTATED|ORGAN_DEAD))
+	return !(status & (ORGAN_CUT_AWAY|ORGAN_DEAD))

@@ -38,6 +38,13 @@
 	var/durability = 200
 	var/can_block_proj = TRUE
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "steadys their shield for wide bashing"
+	alt_mode_lossrate = 0.4
+
 /obj/item/shield/proc/breakShield(mob/user)
 	if(user)
 		to_chat(user, SPAN_DANGER("Your [src] broke!"))
@@ -655,6 +662,7 @@
 	var/picked_by_human = FALSE
 	var/mob/living/carbon/human/picking_human
 	can_block_proj = FALSE
+	has_alt_mode = FALSE
 
 /obj/item/shield/parrying/handle_shield(mob/user)
 	. = ..()

@@ -533,7 +533,7 @@
 			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			user.vessel.remove_reagent("blood",blood_cost)
 	set_personal_cooldown(user)
-
+/*
 /datum/ritual/cruciform/divisor/div_flash
 	name = "Ire"
 	phrase = "Fortitudo mea et laus mea Dominus, et sicut in omnibus divitiis."
@@ -564,7 +564,7 @@
 				to_chat(victim, SPAN_NOTICE("Your legs feel numb, but you managed to stay on your feet!"))
 	set_personal_cooldown(user)
 	return TRUE
-
+*/
 /datum/ritual/cruciform/divisor/echo_of_blasphemy
 	name = "Echo of Blasphemy"
 	phrase = "Id quod infra non pertinet."

@@ -1088,13 +1088,3 @@
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
 	mouse_opacity = MOUSE_OPACITY_ICON
-
-/obj/structure/flora/church_rock/Initialize(mapload) //When its mapped in
-	..()
-	pixel_x = -45
-	pixel_y = null
-
-/obj/structure/flora/church_rock/New() //If an admin spawns it in
-	..()
-	pixel_x = -45
-	pixel_y = null

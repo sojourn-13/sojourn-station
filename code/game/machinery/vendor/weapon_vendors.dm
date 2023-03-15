@@ -179,15 +179,15 @@
 					/obj/item/device/flash = 8,
 					/obj/item/gun/projectile/boltgun/flare_gun = 2,
 					/obj/item/reagent_containers/spray/pepper = 8,
-					/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber = 8,
-					/obj/item/ammo_magazine/pistol_35/rubber = 8,
-					/obj/item/ammo_magazine/highcap_pistol_35/rubber = 8,
-					/obj/item/ammo_magazine/smg_35/rubber = 8,
-					/obj/item/ammo_magazine/magnum_40/rubber = 8,
-					/obj/item/ammo_magazine/speed_loader_magnum_40/rubber = 6,
-					/obj/item/ammo_magazine/kurtz_50/rubber = 6,
-					/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber = 6,
-					/obj/item/ammo_magazine/light_rifle_257_short/rubber = 8,
+					/obj/item/ammo_magazine/ammobox/light_rifle_257_small/rubber/pepperball = 8,
+					/obj/item/ammo_magazine/pistol_35/rubber/pepperball = 8,
+					/obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball = 8,
+					/obj/item/ammo_magazine/smg_35/rubber/pepperball = 8,
+					/obj/item/ammo_magazine/magnum_40/rubber/pepperball = 8,
+					/obj/item/ammo_magazine/speed_loader_magnum_40/rubber/pepperball = 6,
+					/obj/item/ammo_magazine/kurtz_50/rubber/pepperball = 6,
+					/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball = 6,
+					/obj/item/ammo_magazine/light_rifle_257_short/rubber/pepperball = 8,
 					/obj/item/ammo_magazine/rifle_75/rubber = 8,
 					/obj/item/ammo_magazine/heavy_rifle_408/rubber = 8,
 					/obj/item/ammo_magazine/ammobox/shotgun/beanbags = 2,
@@ -245,6 +245,7 @@
 					/obj/item/grenade/chem_grenade/cleaner/nt_cleaner = 5,
 					/obj/item/tool/knife/dagger/nt = 3,
 					/obj/item/tool/sword/nt = 3,
+					/obj/item/gun/energy/ntpistol = 3,
 					/obj/item/computer_hardware/hard_drive/portable/design/guns/lemant = 2,
 					/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58 = 2,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 2,
@@ -289,6 +290,7 @@
 					/obj/item/grenade/chem_grenade/cleaner/nt_cleaner = 50,
 					/obj/item/tool/knife/dagger/nt = 50,
 					/obj/item/tool/sword/nt = 100,
+					/obj/item/gun/energy/ntpistol = 120,
 					/obj/item/computer_hardware/hard_drive/portable/design/guns/lemant = 600,
 					/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58 = 550,
 					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 950,
@@ -335,7 +337,7 @@
 
 /obj/machinery/vending/serbomat
 	name = "From Serbia with love"
-	desc = "A old world strange vender for some reason still operational."
+	desc = "A strange old world vending machine, for some reason it is still operational."
 	icon_state = "serbomat"
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
 	products = list(

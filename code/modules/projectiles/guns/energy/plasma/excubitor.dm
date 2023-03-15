@@ -15,7 +15,7 @@
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_MASSIVE
 	fire_delay = 10
-	charge_cost = 100 //10 shots with basic 15 with level 2
+	charge_cost = 60 // 10 shots out of a 600M
 	init_recoil = HANDGUN_RECOIL(1)
 	price_tag = 1500
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)

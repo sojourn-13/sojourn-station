@@ -4,9 +4,9 @@
 ////////////////
 
 /*
-Smartlink/Smartgun - Half of what the kriosan Instinctual Skill (/datum/perk/exceptional_aim \ PERK_PERFECT_SHOT) does, nothing more nothing less. | Incompatible with said perk it's based off on
-Cognitive Enhancer - Grants 30 cognition and 0.1 (mar'qua have 0.5) bonus to inspiration gain (/datum/perk/inspired \ PERK_INSPIRED) | Incompatible with said mar'qua perk
-Chemical Neutralizer - Reduces addiction chance all the way down to 0.1 and increases max NSA by flat 10 (solborn still negates these) does stack with Prospector perk (/datum/perk/job/prospector_conditioning)| Incompatible with Drug Addict (/datum/perk/addict \ PERK_ADDICT)
+Smartlink/Smartgun - Half of what the kriosan Instinctual Skill (PERK_PERFECT_SHOT) does, nothing more nothing less. | Incompatible with said perk it's based off on
+Cognitive Enhancer - Grants 30 cognition and 0.1 (mar'qua have 0.5) bonus to inspiration gain (PERK_INSPIRED) | Incompatible with said mar'qua perk
+Chemical Neutralizer - Reduces addiction chance all the way down to 0.1 and increases max NSA by flat 10 (solborn still negates these) does stack with Prospector perk (PERK_PROSPECTOR_CONDITIONING)| Incompatible with Drug Addict (PERK_ADDICT)
 */
 
 /datum/perk/smartlink //Think smartgun from Cyberpunk 2020

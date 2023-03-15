@@ -8,18 +8,18 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 7, MATERIAL_URANIUM = 8)
+	matter = list(MATERIAL_PLASTEEL = 17, MATERIAL_WOOD = 8, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 4)
 	price_tag = 2000
 	origin_tech = list(TECH_COMBAT = 3, TECH_PLASMA = 2)
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	projectile_type = /obj/item/projectile/beam
 	cell_type = /obj/item/cell/medium
 	sel_mode = 2
-	charge_cost = 20 //Gives us 40 shots per high medium-sized cell
+	charge_cost = 100 //6 shots out of a 600M
 	init_recoil = HANDGUN_RECOIL(1)
 	twohanded = TRUE
 	can_dual = FALSE
-	damage_multiplier = 0.9
+	damage_multiplier = 1.2
 	init_firemodes = list(
 		list(mode_name="destroy", mode_desc="An armor-stripping plasma round", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
 		list(mode_name="incinerate", mode_desc="A relatively heavy shot of super-heated plasma that creates a fireball on impact", projectile_type=/obj/item/projectile/plasma/aoe/heat, fire_sound='sound/effects/supermatter.ogg', charge_cost=160, fire_delay=25, icon="kill", projectile_color = "#FF0000"),
@@ -49,13 +49,13 @@
 	desc = "An older \"Old Testament\" brand plasma rifle, developed in direct response to compete against the highly successful \"Cassad\" design. Reliable and capable of firing suppressive bursts of lower-temperature plasma."
 	icon = 'icons/obj/guns/energy/destroyer.dmi'
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10, MATERIAL_URANIUM = 5)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10, MATERIAL_URANIUM = 7)
 	sel_mode = 1
 	projectile_type = /obj/item/projectile/beam/pulse
-	charge_cost = 30 //Gives us 30 shots per high medium-sized cell
+	charge_cost = 150 //4 shots out of a 600M
 	fire_delay = 15
 	origin_tech = list(TECH_COMBAT = 4, TECH_PLASMA = 3)
-	damage_multiplier = 1
+	damage_multiplier = 1.3
 	init_firemodes = list(
 		list(mode_name="armor penetrating", mode_desc="An armor-stripping plasma round", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/pulse.ogg', fire_delay=15, icon="kill", projectile_color = "#FFFF00"),
 		list(mode_name="rapid fire", mode_desc="Quick firing normal plasma bolts", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/pulse.ogg', fire_delay=5, icon="destroy", projectile_color = "#FF0000", recoil_buildup=3),
@@ -79,11 +79,13 @@
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
 	cell_type = /obj/item/cell/small //can't recharge this one
 	sel_mode = 2
-	charge_cost = 12.5 // for 8 shots
+	charge_cost = 10 // for 10 shots
 	init_recoil = HANDGUN_RECOIL(0.1)
 	twohanded = FALSE
 	can_dual = TRUE
 	gun_tags = list(GUN_ENERGY)
+	damage_multiplier = 0.6 		//no holdout belt strats anymore
+	penetration_multiplier = 1
 
 	init_firemodes = list(
 		list(mode_name="Stun", mode_desc="A weakening bolt of plasma that disables people", projectile_type=/obj/item/projectile/plasma/stun, fire_sound='sound/weapons/energy/marauder.ogg', fire_delay=2, icon="stun", projectile_color = "#0000FF"),
@@ -101,7 +103,7 @@
 	fire_sound = 'sound/weapons/energy/lasercannonfire.ogg'
 	projectile_type = /obj/item/projectile/plasma/heavy/super_heavy
 	cell_type = /obj/item/cell/medium
-	charge_cost = 100
+	charge_cost = 150
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 20, MATERIAL_SILVER = 5, MATERIAL_PLASMA = 10)
 	damage_multiplier = 1
 	twohanded = FALSE

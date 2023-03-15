@@ -33,7 +33,7 @@
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci, /datum/perk/chemist)
+	perks = list(PERK_SURGICAL_MASTER, PERK_ROBOTICS_EXPERT, PERK_SI_SCI, PERK_CHEMIST)
 
 	// TODO: enable after baymed
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -84,7 +84,7 @@
 		access_genetics, access_medical_suits
 	)
 
-	perks = list(/datum/perk/si_sci, /datum/perk/chemist) //We do hydro?
+	perks = list(PERK_SI_SCI, PERK_CHEMIST) //We do hydro?
 
 	stat_modifiers = list(
 		STAT_MEC = 20,
@@ -140,7 +140,7 @@
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci)
+	perks = list(PERK_SURGICAL_MASTER, PERK_ROBOTICS_EXPERT, PERK_SI_SCI)
 
 	description = "Робототехник - это специализированный ученый с напряженной рабочей нагрузкой, который находится на передовой услуг Сотерии.<br>\
 	Вы должны поддерживать и модернизировать армию синтетиков, которые поддерживают колонию в рабочем состоянии, а также время от времени создавать новые.<br>\
