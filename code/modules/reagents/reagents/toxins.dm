@@ -25,8 +25,7 @@
 			var/mob/living/carbon/human/H = M
 			H.sanity.onToxin(src, effect_multiplier)
 			M.sanity.onToxin(src, multi)*/
-		M.add_chemical_effect(CE_TOXIN, multi * strength)
-
+		M.add_chemical_effect(CE_TOXIN, strength)
 
 /datum/reagent/toxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(ishuman(M))
