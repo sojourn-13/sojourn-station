@@ -473,7 +473,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	for(var/obj/structure/sign/warning/smoking in oview(owner, 7))
 		smoking_allowed = TRUE
 
-	if(smoking_no)
+	if(smoking_no && !owner.stats.getPerk(PERK_CHAINGUN_SMOKER))
 		to_chat(owner, "It feels wrong to smoke in non-smoking areas!")
 		return
 
