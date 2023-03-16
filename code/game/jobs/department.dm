@@ -124,7 +124,7 @@
 /datum/department/prospector
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
-	//Nep in 5 hours with full team is 10600
+	//With only the Foreman currently being paid, after 8 hours, it totals to 4800 of payment, leaving an ample 1700 left.
 	account_initial_balance = 6500 //With how Prospectors no longer get paid, they no longer need such an inflated department balance
 	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro")
 
