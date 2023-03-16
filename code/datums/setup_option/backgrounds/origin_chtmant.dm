@@ -45,7 +45,7 @@
 
 /datum/category_item/setup_option/background/ethnicity/chtmantra
 	name = "Ra Caste"
-	desc = "Ra are the warriors and sentries of the hives. Numbering in the hundreds they would tower over Ru�s and even \
+	desc = "Ra are the warriors and sentries of the hives. Numbering in the hundreds they would tower over Ru's and even \
 			most workers, the Ro. Their bodies were highly adapted for combat and they know only loyalty unto death for the good of \
 			the hive. Due to this, and the existence of the Ru, they often heavily lack any cognitive thinking skills and would \
 			rely on winning battles by sheer weight of numbers or pure attrition. The severe lack of intelligence they exhibit also bars them from most medical roles and all of science, engineering, and command roles."
