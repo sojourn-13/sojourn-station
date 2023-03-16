@@ -23,14 +23,19 @@
 	if(needs_to_maintain)
 		if(prob(25))
 			needs_to_be_deweeded = TRUE
+			sanity_damage += 0.004
 		if(prob(25))
 			needs_to_be_pest_b_goned = TRUE
+			sanity_damage += 0.004
 		if(prob(25))
 			needs_to_be_watered = TRUE
+			sanity_damage += 0.004
 		if(prob(10))
 			remove_dead_weeds = TRUE
+			sanity_damage += 0.004
 		if(prob(10))
 			remove_dead_pets = TRUE
+			sanity_damage += 0.004
 
 /obj/structure/flora/examine(mob/user)
 	..()
@@ -54,6 +59,7 @@
 			to_chat(user, "<span class='info'>The invasive weeds wilt away.</span>")
 			needs_to_be_deweeded = FALSE
 			remove_dead_weeds = TRUE
+			sanity_damage -= 0.004
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 2, learner = H)
@@ -61,6 +67,7 @@
 		if(istype(I, /obj/item/tool/minihoe))
 			to_chat(user, "<span class='info'>You remove the invasive plants.</span>")
 			needs_to_be_deweeded = FALSE
+			sanity_damage -= 0.004
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
@@ -69,6 +76,7 @@
 		if(istype(I, /obj/item/tool/minihoe)  || istype(I, /obj/item/tool/scythe))
 			to_chat(user, "<span class='info'>The weeds are no more.</span>")
 			remove_dead_weeds = FALSE
+			sanity_damage -= 0.004
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
@@ -78,6 +86,7 @@
 			to_chat(user, "<span class='info'>The harmful pests slowly die out.</span>")
 			needs_to_be_pest_b_goned = FALSE
 			remove_dead_pets = TRUE
+			sanity_damage -= 0.004
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
@@ -86,6 +95,7 @@
 		if(istype(I, /obj/item/tool/shovel))
 			to_chat(user, "<span class='info'>The dead pests are no more.</span>")
 			remove_dead_pets = FALSE
+			sanity_damage -= 0.004
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
@@ -94,6 +104,7 @@
 		if(istype(I, /obj/item/plantspray/water))
 			to_chat(user, "<span class='info'>The water rejuvenates the plants.</span>")
 			needs_to_be_watered = FALSE
+			sanity_damage -= 0.004
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 3, learner = H)

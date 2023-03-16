@@ -93,10 +93,13 @@
 		if(has_extinguisher)
 			if(istype(has_extinguisher, /obj/item/extinguisher/mini))
 				icon_state = "extinguisher_closed_mini"
+				sanity_damage = -0.1
 			else
 				icon_state = "extinguisher_closed_full"
+				sanity_damage = -0.2
 		else
 			icon_state = "extinguisher_closed"
+			sanity_damage = 0
 		return
 	if(has_extinguisher)
 		if(istype(has_extinguisher, /obj/item/extinguisher/mini))
@@ -105,3 +108,4 @@
 			icon_state = "extinguisher_full"
 	else
 		icon_state = "extinguisher_empty"
+		sanity_damage = 0.1
