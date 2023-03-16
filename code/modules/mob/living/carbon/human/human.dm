@@ -933,7 +933,7 @@ var/list/rank_prefix = list(\
 	..()
 
 /mob/living/carbon/human/add_blood(mob/living/carbon/human/M)
-	if(!..())0e08cb51 (removed legacy lung rupture, pulse fix)
+	if(!..())
 		return 0
 	//if this blood isn't already in the list, add it
 	if(istype(M))
