@@ -87,6 +87,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/list/datum/breakdown/breakdowns = list()
 
 	var/eat_time_message = 0
+	var/smoking_message = 51 //Used as a cooldown, agv smoke has around 250~ puffs
 
 	var/life_tick_modifier = 2	//How often is the onLife() triggered and by how much are the effects multiplied
 
@@ -478,7 +479,10 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		smoking_allowed = TRUE
 
 	if(smoking_no && !owner.stats.getPerk(PERK_CHAINGUN_SMOKER))
-		to_chat(owner, "It feels wrong to smoke in non-smoking areas!")
+		smoking_message += 1
+		if(smoking_message >= 50)
+			to_chat(owner, "Smoking in a non-smoking zone isn't resting the nerves!")
+			smoking_message = -1 //takes 51 puffs before we get a new warning about smoking in a non-smoker zone
 		return
 
 	if(resting)
