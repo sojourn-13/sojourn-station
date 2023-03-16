@@ -8,7 +8,7 @@
 	start_discovered = TRUE
 	uid = "moe_basic"
 	spawn_always = TRUE
-	markup = UNIQUE_GOODS
+	markup = COMMON_GOODS
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0

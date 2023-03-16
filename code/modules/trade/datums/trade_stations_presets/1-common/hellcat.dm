@@ -6,7 +6,7 @@
 	tree_x = 0.82
 	tree_y = 0.9
 	start_discovered = TRUE
-	markup = COMMON_GOODS * 1.5
+	markup = COMMON_GOODS
 	uid = "guns_basic"
 	offer_limit = 20
 	base_income = 1600

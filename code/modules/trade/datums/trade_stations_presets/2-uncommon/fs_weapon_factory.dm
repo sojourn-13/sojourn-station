@@ -1,7 +1,7 @@
 /datum/trade_station/fs_factory
 	name_pool = list("XSMS 'Kaida'" = "Xanaroth Syndicate Manufacturing Station 'Kaida'. \"Well if it isn't our favorite trade partner, we got some side deals just for you!\"")
 	spawn_always = TRUE
-	markup = RARE_GOODS		// dept-specific stuff should be more expensive for guild
+	markup = COMMON_GOODS		// dept-specific stuff should be more expensive for guild
 	uid = "fs_guns"
 	tree_x = 0.82
 	tree_y = 0.7

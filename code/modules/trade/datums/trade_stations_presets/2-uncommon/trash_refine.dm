@@ -7,7 +7,7 @@
 	tree_y = 0.8
 	start_discovered = FALSE
 	spawn_always = TRUE
-	markup = UNCOMMON_GOODS
+	markup = WHOLESALE_GOODS
 	offer_limit = 20
 	base_income = 0
 	wealth = 0

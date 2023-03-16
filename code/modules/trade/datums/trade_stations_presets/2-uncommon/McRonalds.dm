@@ -6,7 +6,7 @@
 	tree_x = 0.5
 	tree_y = 0.6
 	spawn_always = TRUE
-	markup = UNCOMMON_GOODS
+	markup = COMMON_GOODS
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000

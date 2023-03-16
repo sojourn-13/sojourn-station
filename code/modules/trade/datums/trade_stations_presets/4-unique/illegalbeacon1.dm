@@ -6,7 +6,7 @@
 	tree_x = 0.62
 	tree_y = 0.5
 	spawn_always = TRUE
-	markup = RARE_GOODS
+	markup = UNCOMMON_GOODS
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0

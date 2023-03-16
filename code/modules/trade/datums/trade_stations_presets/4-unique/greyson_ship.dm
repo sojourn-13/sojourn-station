@@ -5,7 +5,7 @@
 	tree_y = 0.7
 	start_discovered = FALSE
 	spawn_always = TRUE
-	markup = UNIQUE_GOODS
+	markup = RARE_GOODS
 	recommendations_needed = 2
 	hidden_inv_threshold = 2000
 	recommendation_threshold = 4000
