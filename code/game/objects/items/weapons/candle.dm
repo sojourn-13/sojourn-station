@@ -8,6 +8,7 @@
 	light_color = COLOR_LIGHTING_ORANGE_DARK
 	var/wax = 2000
 	var/endless_burn = FALSE
+	var/lit_sanity_damage = -0.5
 
 /obj/item/flame/candle/New()
 	wax = rand(800, 1000) // Enough for 27-33 minutes. 30 minutes on average.
@@ -53,13 +54,14 @@
 
 
 /obj/item/flame/candle/proc/light(flavor_text = SPAN_NOTICE("\The [usr] lights the [name]."))
-	if(!src.lit)
-		src.lit = 1
+	if(!lit)
+		lit = 1
 		//src.damtype = "fire"
 		for(var/mob/O in viewers(usr, null))
 			O.show_message(flavor_text, 1)
 		set_light(CANDLE_LUM)
 		START_PROCESSING(SSobj, src)
+		sanity_damage = lit_sanity_damage
 
 
 /obj/item/flame/candle/Process()
@@ -82,6 +84,7 @@
 		lit = 0
 		update_icon()
 		set_light(0)
+		sanity_damage = 0
 
 /obj/item/flame/candle/eternal
 	name = "eternal candle"
@@ -89,6 +92,7 @@
 	icon_state = "candle_eternal"
 	light_color = COLOR_LIGHTING_CYAN_BRIGHT
 	endless_burn = TRUE
+	lit_sanity_damage = -1
 
 /obj/item/flame/candle/eternal/update_icon()
 	var/i
