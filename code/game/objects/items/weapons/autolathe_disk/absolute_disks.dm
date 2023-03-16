@@ -86,23 +86,6 @@
 	icon_state = "neotheology_testament_u"
 	license = -1
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioaugment
-	disk_name = "Strange Disk"
-	desc = "Now,where did this come from?"
-	icon_state = "onestar"
-
-	license = -1
-	designs = list(
-		/datum/design/bioprinter/bioimplant/osurgical,
-		/datum/design/bioprinter/bioimplant/oengineering,
-		/datum/design/bioprinter/bioimplant/oscythe,
-		/datum/design/bioprinter/bioimplant/oarmor,
-		/datum/design/bioprinter/bioimplant/omuscle,
-		/datum/design/research/item/mechfab/modules/hud/welder_bio,
-		/datum/design/research/item/mechfab/modules/hud/night_bio,
-		/datum/design/research/item/mechfab/modules/hud/thermal_bio
-	)
-
 // Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
 /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public
 	disk_name = "Church of Absolute Basic Bioprinter Pack"
