@@ -332,7 +332,6 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 					mage_candle.endless_burn = TRUE
 					B.remove_self(15)
 					M.sanity.changeLevel(-5)
-					mage_candle.lit_sanity_damage = 0.5 //Flips this to be a bad thing, its burning magically!!!
 					to_chat(M, "<span class='info'>A candle is lit by forces unknown...</span>")
 				candle_amount += 1
 
