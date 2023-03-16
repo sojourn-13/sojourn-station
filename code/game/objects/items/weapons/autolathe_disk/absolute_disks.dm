@@ -86,11 +86,6 @@
 	icon_state = "neotheology_testament_u"
 	license = -1
 
-/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public
-	disk_name = "Church of Absolute Basic Bioprinter Pack"
-	icon_state = "neotheology_testament_u"
-	license = -1
-
 /obj/item/computer_hardware/hard_drive/portable/design/nt_bioaugment
 	disk_name = "Strange Disk"
 	desc = "Now,where did this come from?"
