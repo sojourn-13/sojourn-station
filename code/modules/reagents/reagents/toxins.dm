@@ -17,7 +17,7 @@
 
 /datum/reagent/toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(strength)
-		var/multi = effect_multiplier
+		//var/multi = effect_multiplier
 		/*if(issmall(M))  // Small bodymass, more effect from lower volume.
 			multi *= 2
 		M.adjustToxLoss(strength * multi)
