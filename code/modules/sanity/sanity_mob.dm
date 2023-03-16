@@ -481,7 +481,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	if(smoking_no && !owner.stats.getPerk(PERK_CHAINGUN_SMOKER))
 		smoking_message += 1
 		if(smoking_message >= 50)
-			to_chat(owner, "Smoking in a non-smoking zone isn't resting the nerves!")
+			to_chat(owner, "Smoking in a non-smoking zone does not rest my nerves!")
 			smoking_message = -1 //takes 51 puffs before we get a new warning about smoking in a non-smoker zone
 		return
 
