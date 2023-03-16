@@ -10,13 +10,11 @@
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list()
-		options["Vinculum"] = list(/obj/item/clothing/head/helmet/path, /obj/item/clothing/suit/armor/vest/path)
-		options["Divisor"] = list(/obj/item/clothing/head/helmet/path/divisor, /obj/item/clothing/suit/armor/vest/path/divisor)
-		options["Tessellate - Nun"] = list(/obj/item/clothing/head/helmet/path/tessallate, /obj/item/clothing/suit/armor/vest/path/tessallate)
-		options["Tessellate - Plague"] = list(/obj/item/clothing/head/helmet/path/tessallate_m, /obj/item/clothing/suit/armor/vest/path/tessallate_m)
-		options["Lemniscate"] = list(/obj/item/clothing/head/helmet/path/lemniscate, /obj/item/clothing/suit/armor/vest/path/lemniscate)
-		options["Monomial"] = list(/obj/item/clothing/head/helmet/path/monomial, /obj/item/clothing/suit/armor/vest/path/monomial)
-		options["Factorial"] = list(/obj/item/clothing/head/helmet/path/factorial, /obj/item/clothing/suit/armor/vest/path/factorial)
+		options["Divisor"] = list(/obj/item/clothing/head/helmet/path/divisor, /obj/item/clothing/head/helmet/path/divisor2, /obj/item/clothing/suit/armor/vest/path/divisor, /obj/item/clothing/suit/armor/vest/path/divisor2)
+		options["Tessellate"] = list(/obj/item/clothing/head/helmet/path/tessallate, /obj/item/clothing/head/helmet/path/tessallate2, /obj/item/clothing/suit/armor/vest/path/tessallate, /obj/item/clothing/suit/armor/vest/path/tessallate2)
+		options["Lemniscate"] = list(/obj/item/clothing/head/helmet/path/lemniscate, /obj/item/clothing/head/helmet/path/lemniscate2, /obj/item/clothing/suit/armor/vest/path/lemniscate, /obj/item/clothing/suit/armor/vest/path/lemniscate2)
+		options["Monomial"] = list(/obj/item/clothing/head/helmet/path/monomial, /obj/item/clothing/head/helmet/path/monomial2, /obj/item/clothing/suit/armor/vest/path/monomial, /obj/item/clothing/suit/armor/vest/path/monomial2)
+		options["Factorial"] = list(/obj/item/clothing/head/helmet/path/factorial, /obj/item/clothing/head/helmet/path/factorial2, /obj/item/clothing/suit/armor/vest/path/factorial, /obj/item/clothing/suit/armor/vest/path/factorial2)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]

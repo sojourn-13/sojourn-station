@@ -267,7 +267,7 @@
 	desc = "The armour of the church arms forces of old - coming from the now extinct military of New Byzantine, this was an armour of pure efficiency in forms of springsteel. The inner layers has plates of biomatter-infused steel and chainmail, together with shoulder protection that elevates to protect the neck and fix it with the helmet of the same design. The garbs has been coloured red - rather than purple - to let it know who wears it is an Nadezdha's vector. This armor has been glorified by the church, as the people who once wears it was efficient warriors who battled the most powerful empire toe-to-toe, as it was vilified by Solfed propaganda, considered lunatics that know no pain or remorse."
 	icon_state = "divisor_guardsmen_armor"
 
-/obj/item/clothing/suit/armor/vest/path/divisor1
+/obj/item/clothing/suit/armor/vest/path/divisor2
 	name = "Divisor Plate Armor"
 	desc = "The Nadezdha's church arm forces received proper armour made out of flexible, biomatter-imbued spring steel plates which provides protection which rivals kevlar all around while being cheaper to produce out of the bioprinter. The plate ensures no space for weapons to slide and reach an weak point while the enlarged faulds ensures free movement. The design came as an more ceremonial, less intimidating battle suit that differs from the old New Byzantine Guardsmen armor."
 	icon_state = "divisor_plate_armor"
@@ -277,7 +277,7 @@
 	desc = "The Tessellate Riding Habit is an mixture of an well protective, efficient gambeson with inner chainmail that ensures the protection of it's user. Made by Nadezdha's church arms forces, it's the perfect mixture of an ceremonial garb and protective armor to the point of even not seemingly being protective at first. These armours has been made at first for an women-only healing sect - until it spread across all genders and anyone under the rite of Tessellate."
 	icon_state = "tessellate_riding_habit"
 
-/obj/item/clothing/suit/armor/vest/path/tessallate1
+/obj/item/clothing/suit/armor/vest/path/tessallate2
 	name = "Tessellate Doctor Garbs"
 	desc = "The garbs of old design set by the church during their years as an small presence in New Byzantine. The Doctors provided free medical care in an world where medical care was absent or absurdly costy, and work safety was all but a dream in risky mining operations to collect materials for the now almost forgotten technology of durasteel. The Tessellate Doctors was an major point for the survival of the church as a whole as during the war against Solfed as many civilians, ecclesiastical members and normal New Byzantine military would be deeply wounded by the constant, almost unstoppable bombing of cities and infrastructures."
 	icon_state = "tessellate_doctor_garbs"

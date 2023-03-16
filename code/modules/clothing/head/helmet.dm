@@ -319,7 +319,7 @@
 
 /obj/item/clothing/head/helmet/path/lemniscate2
 	name = "Lemniscate Grenadier Hat"
-	desc = "The fancy yet protective hat of the Lemniscate ecclesiastical members of New Byzantine, painted red and with new golden lines that lets an cruciform visible on it's middle. There is engraving which says, "The death of heros can never be fully repaid, yet their sacrifice shall be honored for an eternity." well visible both on the front and on the back. It honors the fallen ones and their sacrifice during the war against Solfed."
+	desc = "The fancy yet protective hat of the Lemniscate ecclesiastical members of New Byzantine, painted red and with new golden lines that lets an cruciform visible on it's middle. There is engraving which says, 'The death of heros can never be fully repaid, yet their sacrifice shall be honored for an eternity.' well visible both on the front and on the back. It honors the fallen ones and their sacrifice during the war against Solfed."
 	icon_state = "lemniscate_grenadier_bearskin"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
