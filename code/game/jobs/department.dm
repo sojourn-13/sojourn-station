@@ -125,7 +125,7 @@
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
 	//Nep in 5 hours with full team is 10600
-	account_initial_balance = 5000 //Starts with an even wage to cover payment-expenses. Their job is to make money and, thus, should not start with more money than needed.
+	account_initial_balance = 6500 //Starts with an even wage to cover payment-expenses. Their job is to make money and, thus, should not start with more money than needed.
 	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro")
 
 /datum/department/independent
