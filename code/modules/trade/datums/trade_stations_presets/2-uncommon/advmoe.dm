@@ -42,17 +42,7 @@
 			/obj/item/computer_hardware/hard_drive/portable/design/surgery = good_data("back alley organs disk", list(1, 2), 1200),
 			/obj/item/computer_hardware/hard_drive/portable/research_points= good_data("research data disk", list(1, 2), 2000),
 			/obj/item/organ_module/active/simple/armshield,
-			/obj/item/organ_module/active/simple/armsmg,
-			/obj/item/organ_module/active/simple/armshield,
-			/obj/item/organ_module/active/simple/engineer,
-			/obj/item/organ_module/active/hud/med,
-			/obj/item/organ_module/active/hud/sec,
-			/obj/item/organ_module/active/hud/night,
-			/obj/item/organ_module/active/hud/thermal,
-			/obj/item/organ_module/active/hud/welder,
-			/obj/item/organ_module/active/multitool,
-			/obj/item/organ_module/active/simple/surgical,
-			/obj/item/organ_module/active/simple/taser
+			/obj/item/organ_module/active/simple/armsmg
 		),
 		"Autoinjectors II" = list(
 			// Autoinjectors defined in hypospray.dm
