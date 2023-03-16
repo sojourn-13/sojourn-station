@@ -86,7 +86,6 @@
 	icon_state = "neotheology_testament_u"
 	license = -1
 
-// Same as the other NT disk, minus the medical designs. Spawns in public access bioprinters.
 /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public
 	disk_name = "Church of Absolute Basic Bioprinter Pack"
 	icon_state = "neotheology_testament_u"
