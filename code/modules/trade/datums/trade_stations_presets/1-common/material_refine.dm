@@ -8,7 +8,7 @@
 	uid = "materials"
 	tree_x = 0.1
 	tree_y = 0.9
-	markup = RARE_GOODS
+	markup = COMMON_GOODS
 	base_income = 0		// Needs ore to refine
 	wealth = 0
 	offer_limit = 30
