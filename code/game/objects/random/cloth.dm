@@ -234,7 +234,8 @@
 				/obj/item/clothing/head/helmet/space/void/odst/blue = 1,
 				/obj/item/clothing/head/helmet/space/void/odst/orange = 1,
 				/obj/item/clothing/head/helmet/space/void/SCAF = 1,
-				/obj/item/clothing/head/helmet/night_vision_helm = 0.5,))
+				/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg = 1,
+				/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal = 0.3,))
 
 /obj/random/cloth/helmet/low_chance
 	name = "low chance random helmet"
