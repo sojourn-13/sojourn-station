@@ -107,11 +107,13 @@
 		. += SPAN_WARNING("Warning: Blood Level ERROR: --% --cl.</span> <span class='notice'>Type: ERROR")
 		. += span("highlight", "Subject's pulse: <font color='red'>-- bpm.</font>")
 		return
+	
+	var/mob/living/carbon/human/H = M
 
 	var/fake_oxy = max(rand(1, 40), M.getOxyLoss(), (300 - (M.getFireLoss() + M.getBruteLoss())))
 	var/tox_content = M.chem_effects[CE_TOXIN] + M.chem_effects[CE_ALCOHOL_TOXIC]
 	var/OX = M.getOxyLoss() > 50 	? 	"<b>[M.getOxyLoss()]</b>" 		: M.getOxyLoss()
-	var/TX = tox_content > 8		?	"<b>[tox_content]</b>"			: (tox_content ? tox_content : "0")
+	var/TX = tox_content			?	"<b>[tox_content]</b>"			: (tox_content ? tox_content : "0")
 	var/BR = M.getBruteLoss() > 50 	? 	"<b>[M.getBruteLoss()]</b>" 	: M.getBruteLoss()
 	var/BU = M.getFireLoss() > 50 	? 	"<b>[M.getFireLoss()]</b>" 		: M.getFireLoss()
 
@@ -120,12 +122,29 @@
 	var/NSA = round(M.metabolism_effects.get_nsa(), 1)
 	var/NSA_MAX = round(M.metabolism_effects.nsa_threshold, 1)
 
+	var/organ_health
+	var/organ_damage
+	var/limb_health
+	var/limb_damage
+
+	for(var/obj/item/organ/external/E in H.organs)
+		organ_health += E.total_internal_health
+		organ_damage += E.severity_internal_wounds
+		limb_health += E.max_damage
+		limb_damage += max(E.brute_dam, E.burn_dam)
+
+	var/crit_health = (H.health / H.maxHealth) * 100
+	var/external_health = (1 - (limb_health ? limb_damage / limb_health : 0)) * 100
+	var/internal_health = (1 - (organ_health ? organ_damage / organ_health : 0)) * 100
+
+	var/percentage_health = round(min(crit_health, external_health, internal_health))
+
 	if(M.status_flags & FAKEDEATH)
 		OX = fake_oxy > 50 			? 	"<b>[fake_oxy]</b>" 			: fake_oxy
 		dat += "<h2>Analyzing Results for [M]:</h2>"
 		dat += span("highlight", "Overall Status: dead")
 	else
-		dat += span("highlight", "Analyzing Results for [M]:\n\t Overall Status: [M.stat > 1 ? "dead" : "[round(M.health/M.maxHealth*100)]% healthy"]")
+		dat += span("highlight", "Analyzing Results for [M]:\n\t Overall Status: [M.stat > 1 ? "dead" : "[percentage_health]% healthy"]")
 	dat += span("highlight", "    Key: <font color='#0080ff'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='red'>Brute</font>/<font color='#FFA500'>Burns</font>")
 	dat += span("highlight", "    Damage Specifics: <font color='#0080ff'>[OX]</font> - <font color='green'>[TX]</font> - <font color='red'>[BR]</font> - <font color='#FFA500'>[BU]</font>")
 	if(M.bodytemperature >= 313.15) // 40º C / 104 F = fever
@@ -143,10 +162,8 @@
 
 	if(M.tod && (M.stat == DEAD || (M.status_flags & FAKEDEATH)))
 		dat += span("highlight", "Time of Death: [M.tod]")
-	if(ishuman(M) && mode == 1)
-		var/mob/living/carbon/human/H = M
+	if(mode == 1)
 		var/list/damaged = H.get_damaged_organs(1, 1)
-		dat += "<hr>"
 		dat += span("highlight", "Localized Damage:")
 		if(length(damaged) > 0)
 			for(var/obj/item/organ/external/org in damaged)
@@ -155,9 +172,9 @@
 				var/internal_wound_severity = org.severity_internal_wounds
 
 				if(internal_wound_severity > 0)
-					if(internal_wound_severity < 5)
+					if(internal_wound_severity < 4)
 						internal_wound_severity = "Light"
-					else if(internal_wound_severity < 8)
+					else if(internal_wound_severity < 7)
 						internal_wound_severity = "Moderate"
 					else
 						internal_wound_severity = "Severe"
@@ -222,18 +239,16 @@
 		dat += SPAN_WARNING("Severe brain damage detected. Subject likely to have a traumatic brain injury.")
 	else if (M.getBrainLoss() >= 10)
 		dat += SPAN_WARNING("Significant brain damage detected. Subject may have had a concussion.")
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
 
-		if(H.vessel)
-			var/blood_volume = H.vessel.get_reagent_amount("blood")
-			var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
-			var/blood_type = H.dna.b_type
-			if((blood_percent <= H.total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER) && (blood_percent > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER))
-				dat += "<font color='red'>Warning: Blood Level LOW: [blood_percent]% [blood_volume]cl.</font> <span class='highlight'>Type: [blood_type]</span>"
-			else if(blood_percent <= H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
-				dat += "<font color='red'><i>Warning: Blood Level CRITICAL: [blood_percent]% [blood_volume]cl.</i></font> <span class='highlight'>Type: [blood_type]</span>"
-			else
-				dat += span("highlight", "Blood Level Normal: [blood_percent]% [blood_volume]cl. Type: [blood_type]")
-		dat += "<span class='highlight'>Subject's pulse: <font color='[H.pulse() == PULSE_THREADY || H.pulse() == PULSE_NONE ? "red" : "#0080ff"]'>[H.get_pulse(GETPULSE_TOOL)] bpm.</font></span>"
+	if(H.vessel)
+		var/blood_volume = H.vessel.get_reagent_amount("blood")
+		var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
+		var/blood_type = H.dna.b_type
+		if((blood_percent <= H.total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER) && (blood_percent > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER))
+			dat += "<font color='red'>Warning: Blood Level LOW: [blood_percent]% [blood_volume]cl.</font> <span class='highlight'>Type: [blood_type]</span>"
+		else if(blood_percent <= H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
+			dat += "<font color='red'><i>Warning: Blood Level CRITICAL: [blood_percent]% [blood_volume]cl.</i></font> <span class='highlight'>Type: [blood_type]</span>"
+		else
+			dat += span("highlight", "Blood Level Normal: [blood_percent]% [blood_volume]cl. Type: [blood_type]")
+	dat += "<span class='highlight'>Subject's pulse: <font color='[H.pulse() == PULSE_THREADY || H.pulse() == PULSE_NONE ? "red" : "#0080ff"]'>[H.get_pulse(GETPULSE_TOOL)] bpm.</font></span>"
 	. = jointext(dat, "<br>")
