@@ -1005,3 +1005,19 @@
 		list(QUALITY_SAWING, 60),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)
+
+/datum/craft_recipe/guild/tankette
+	name = "Basiliscus Tankette V2 Chassis"
+	result = /obj/item/mecha_parts/chassis/tank
+	steps = list(
+		list(CRAFT_MATERIAL, 60, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 40),
+		list(QUALITY_SAWING, 60),
+		list(CRAFT_MATERIAL, 120, MATERIAL_STEEL),
+		list(QUALITY_WELDING, 40),
+		list(QUALITY_SAWING, 60),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 10, MATERIAL_SILVER),
+		list(QUALITY_WELDING, 40),
+		list(QUALITY_HAMMERING, 40)
+	)

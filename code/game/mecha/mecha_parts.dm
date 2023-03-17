@@ -355,3 +355,11 @@
 	origin_tech = list(TECH_DATA = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	matter = list(MATERIAL_STEEL = 12)
 	price_tag = 800
+
+//Tankette / Guild Church coop
+/obj/item/mecha_parts/chassis/tank
+	name = "Tank Chassis"
+	desc = "The chassis for a Basiliscus tankette, get a vector to put the rest together."
+	icon_state = "basiliscus"
+	matter = list(MATERIAL_PLASTEEL = 30)
+	price_tag = 800

@@ -249,3 +249,7 @@
 /obj/effect/decal/mecha_wreckage/dreadnought/hephaestus
 	name = "wreckage of a fancy mech"
 	icon_state = "hephaestus-broken"
+
+/obj/effect/decal/mecha_wreckage/tank
+	name = "wreckage of a tankette"
+	icon_state = "basiliscus-broken"

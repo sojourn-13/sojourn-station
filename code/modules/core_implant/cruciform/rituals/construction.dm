@@ -641,3 +641,16 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	)
 	build_time = 5 SECONDS
 
+//Church tank
+/datum/nt_blueprint/tank
+	name = "Basiliscus Tankette V2"
+	build_path = /obj/mecha/combat/basiliscus
+	materials = list(
+		/obj/item/mecha_parts/chassis/tank = 1,
+		/obj/item/tool_upgrade/productivity/oxyjet = 1,
+		/obj/item/weldpack/canister = 1,
+		/obj/item/implant/core_implant/cruciform = 1,
+		/obj/item/stack/material/biomatter = 120,
+		/obj/item/stack/material/gold = 20,
+	)
+	build_time = 5 SECONDS
