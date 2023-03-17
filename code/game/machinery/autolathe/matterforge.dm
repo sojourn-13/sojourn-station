@@ -603,10 +603,10 @@
 
 //here we have the conversion rates of the forge, unless an exploit is found, those should not be touched if possible
 /obj/machinery/matter_nanoforge/proc/matter_assoc_list()
-	lst[MATERIAL_IRON] = 0.30			//somehow someone thought iron is worth more than steel, don't be that person in the future
+	lst[MATERIAL_IRON] = 0.30			//"a kilogram of steel"
 	lst[MATERIAL_GLASS] = 0.45			//as long as guild is not mass producing sand...
 	lst[MATERIAL_RGLASS] = 0.70
-	lst[MATERIAL_STEEL] = 0.50
+	lst[MATERIAL_STEEL] = 0.50			//why mixing a kilogram of steel and onde of feathers be worse than it's source?
 	lst[MATERIAL_PLASMAGLASS] = 0.70	//better off using it on crafts or to repair specific windows
 	lst[MATERIAL_RPLASMAGLASS] = 0.90 	//but why?
 	lst[MATERIAL_DIAMOND] = 1.20 		//who actually does that?
@@ -616,7 +616,7 @@
 	lst[MATERIAL_SILVER] = 0.70			//while guild has no problem obtaining, using as fuel for the forge is still not reccomended
 	lst[MATERIAL_PLASTEEL] = 0.70		//hard to happen, Guild needs it far more for crafts
 	lst[MATERIAL_DURASTEEL] = 2.55		//good luck finding a sheet of this
-	lst[MATERIAL_PLASTIC] = 0.45		//can't be better than steel, or you import from LS for infinite matter due to price differences
+	lst[MATERIAL_PLASTIC] = 0.45		//"a kilogram of feathers"
 	lst[MATERIAL_TRITIUM] = 1			//only exists if guild mines it themselves
 	lst[MATERIAL_PLATINUM] = 1
 	lst[MATERIAL_MHYDROGEN] = 1			//only exists if guild mines it themselves
@@ -631,7 +631,7 @@
 	lst[MATERIAL_COMPRESSED_MATTER] = 1 //we make this!
 	lst[MATERIAL_RSCRAP] = 0.75			//now guild has a reason to make refined scrap
 	lst[MATERIAL_AMERIDIAN] = 1.5		//so ameridian is useful to guild now?
-
+	lst[MATERIAL_BIOMATTER] = 0.2		//church makes so much of it
 /obj/machinery/matter_nanoforge/proc/check_user(mob/user)
 	if(user.stats?.getPerk(PERK_HANDYMAN))
 		return TRUE
