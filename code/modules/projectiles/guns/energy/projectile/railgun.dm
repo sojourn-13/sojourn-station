@@ -1,10 +1,11 @@
+// Houses the master railgun file to standardize it for all guns & not have issues with overheating.
 /obj/item/gun/energy/laser/railgun
-	name = "\"Reductor\" rail rifle"
-	desc = "\"Artificer's Guild\" brand rail gun. This gun features a sleek and deadly design with the capability for lethal and non-lethal firing modes. A competant engineer can also overclock it using a wrench, \
-	consuming the cell within for an extra bullet or a powerful explosive round."
-	icon = 'icons/obj/guns/energy/railgun.dmi'
-	icon_state = "railgun"
-	item_state = "railgun"
+	name = "Debug Railgun Path"
+	desc = "You should not be seeing this. Report this as a bug report."
+	icon = 'icons/obj/guns/energy/railpistol.dmi'
+	icon_state = "railpistol"
+	item_state = "railpistol"
+	suitable_cell = /obj/item/cell/large
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/railgun.ogg'
 	item_charge_meter = TRUE
@@ -14,53 +15,10 @@
 	twohanded = TRUE
 	flags = CONDUCT
 	slot_flags = SLOT_BACK
-	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
 	charge_cost = 500
-	gun_tags = list(GUN_PROJECTILE, GUN_ENERGY, GUN_SCOPE)
-	suitable_cell = /obj/item/cell/large
+	var/consume_cell = FALSE
 	fire_delay = 14 //Slow, on par with a shotgun pump then fire
 	init_recoil = RIFLE_RECOIL(1)
-	damage_multiplier = 1
-	init_firemodes = list(
-		list(mode_name="slug", mode_desc="fires a large metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
-		list(mode_name="non-lethal", mode_desc="fires a rubber pellet at light speed", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
-		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/grenade, charge_cost=30000, icon="grenade")
-	)
-	var/consume_cell = FALSE
-	price_tag = 2250
-	serial_type = "AG"
-
-	//Blacklisting now works!
-	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt = TRUE,
-							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
-
-/obj/item/gun/energy/laser/railgun/consume_next_projectile()
-	if(!cell) return null
-	if(!ispath(projectile_type)) return null
-	if(consume_cell && !cell.checked_use(charge_cost))
-		visible_message(SPAN_WARNING("\The [cell] of \the [src] burns out!"))
-		qdel(cell)
-		cell = null
-		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
-		new /obj/effect/decal/cleanable/ash(get_turf(src))
-		return new projectile_type(src)
-	else if(!consume_cell && !cell.checked_use(charge_cost))
-		return null
-	else
-		return new projectile_type(src)
-
-/obj/item/gun/energy/laser/railgun/attackby(obj/item/I, mob/user)
-	..()
-	if(I.has_quality(QUALITY_BOLT_TURNING))
-		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
-			if(consume_cell)
-				consume_cell = FALSE
-				to_chat(user, SPAN_NOTICE("You secure the safety bolts and tune down the capacitor to safe levels, preventing the weapon from destroying empty cells for use as ammuniton."))
-			else
-				consume_cell = TRUE
-				to_chat(user, SPAN_NOTICE("You loosen the safety bolts and overclock the capacitor to unsafe levels, allowing the weapon to destroy empty cells for use as ammunition."))
-
 
 /obj/item/gun/energy/laser/railgun/pistol
 	name = "\"Myrmidon\" rail pistol"
@@ -167,6 +125,97 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	allow_greyson_mods = TRUE
 
+//Re-wrote this to be it's own standalone gun to prevent cooling issues.
+/obj/item/gun/energy/laser/railgun/railrifle
+	name = "\"Reductor\" rail rifle"
+	desc = "\"Artificer's Guild\" brand rail gun. This gun features a sleek and deadly design with the capability for lethal and non-lethal firing modes. A competant engineer can also overclock it using a wrench, \
+	consuming the cell within for an extra bullet or a powerful explosive round."
+	icon = 'icons/obj/guns/energy/railgun.dmi'
+	icon_state = "railgun"
+	item_state = "railgun"
+	slot_flags = SLOT_BACK
+	origin_tech = list(TECH_COMBAT = 4, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10)
+	charge_cost = 500
+	gun_tags = list(GUN_PROJECTILE, GUN_ENERGY, GUN_SCOPE)
+	suitable_cell = /obj/item/cell/large
+	fire_delay = 14 //Slow, on par with a shotgun pump then fire
+	init_recoil = RIFLE_RECOIL(1)
+	damage_multiplier = 1
+	init_firemodes = list(
+		list(mode_name="slug", mode_desc="fires a large metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
+		list(mode_name="non-lethal", mode_desc="fires a rubber pellet at light speed", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
+		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/grenade, charge_cost=30000, icon="grenade")
+	)
+	consume_cell = FALSE
+	price_tag = 2250
+	serial_type = "AG"
+	var/overheat_damage = 25
+
+	//Blacklisting now works!
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt = TRUE,
+							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
+
+/obj/item/gun/energy/laser/railgun/railrifle/consume_next_projectile(mob/user)
+	if(!cell)
+		return null
+	var/datum/component/heat/H = GetComponent(/datum/component/heat)
+	H.tickHeat()
+	if(H.currentHeat > H.heatThresholdSpecial )
+		to_chat(user, "\The [src] is currently overheating!")
+		handleoverheatreductor()
+	if(!ispath(projectile_type))
+		return null
+	if(consume_cell && !cell.checked_use(charge_cost))
+		visible_message(SPAN_WARNING("\The [cell] of \the [src] burns out!"))
+		qdel(cell)
+		cell = null
+		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
+		new /obj/effect/decal/cleanable/ash(get_turf(src))
+		return new projectile_type(src)
+	else if(!consume_cell && !cell.checked_use(charge_cost))
+		return null
+	else
+		return new projectile_type(src)
+
+/obj/item/gun/energy/laser/railgun/railrifle/attackby(obj/item/I, mob/user)
+	..()
+	if(I.has_quality(QUALITY_BOLT_TURNING))
+		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
+			if(consume_cell)
+				consume_cell = FALSE
+				to_chat(user, SPAN_NOTICE("You secure the safety bolts and tune down the capacitor to safe levels, preventing the weapon from destroying empty cells for use as ammuniton."))
+			else
+				consume_cell = TRUE
+				to_chat(user, SPAN_NOTICE("You loosen the safety bolts and overclock the capacitor to unsafe levels, allowing the weapon to destroy empty cells for use as ammunition."))
+
+/obj/item/gun/energy/laser/railgun/railrifle/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	..()
+
+/obj/item/gun/energy/laser/railgun/railrifle/Initialize()
+	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE, 50, 60, 5, 0.01, 2)
+	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/venteventreductor) //this sould just be a fluff message, proc can be anything
+	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheatreductor) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
+	START_PROCESSING(SSobj, src)
+	..()
+
+/obj/item/gun/energy/laser/railgun/railrifle/examine(user)
+	. = ..()
+	to_chat(user, SPAN_NOTICE("Control-Click to manually vent this weapon's heat."))
+
+/obj/item/gun/energy/laser/railgun/railrifle/proc/handleoverheatreductor()
+	src.visible_message(SPAN_DANGER("\The [src] overheats, its exterior becoming blisteringly hot, burning skin down to the flesh!!"))
+	var/mob/living/L = loc
+	if(istype(L))
+		if(L.hand == L.l_hand) // Are we using the left arm?
+			L.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
+		else // If not then it must be the right arm.
+			L.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
+
+/obj/item/gun/energy/laser/railgun/railrifle/proc/venteventreductor()
+	src.visible_message("\The [src]'s vents open valves atop of the exterior coil mounts, cooling itself down.")
+	playsound(usr.loc, 'sound/weapons/guns/interact/gauss_vent.ogg', 50, 1)
 
 //Gauss-rifle type, snowflake launcher mixed with rail rifle and hydrogen gun code. Consumes matter-stack and cell charge to fire. - Rebel0
 /obj/item/gun/energy/laser/railgun/gauss
@@ -181,7 +230,7 @@
 	w_class = ITEM_SIZE_HUGE
 	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_SILVER = 10, MATERIAL_GOLD = 8, MATERIAL_PLATINUM = 4)
 	charge_cost = 750
-	fire_delay = 30
+	fire_delay = 20
 	init_recoil = HMG_RECOIL(1)
 	zoom_factors = list(1.8)
 	extra_damage_mult_scoped = 0.4

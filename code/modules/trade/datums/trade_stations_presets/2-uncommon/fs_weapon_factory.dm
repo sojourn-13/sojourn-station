@@ -84,7 +84,7 @@
 	)
 
 	offer_types = list(
-		/obj/item/gun/energy/laser/railgun= offer_data("\"Reductor\" rail rifle", 3500, 1),
+		/obj/item/gun/energy/laser/railgun/railrifle= offer_data("\"Reductor\" rail rifle", 3500, 1),
 		/obj/item/gun_upgrade/mechanism/overshooter = offer_data("overshooter", 400, 2),
 		/obj/item/gun_upgrade/mechanism/weintraub = offer_data("\"Hurricane\" full auto kit", 450, 3),
 		/obj/item/gun_upgrade/trigger/dangerzone = offer_data("\"Dangerzone\" trigger", 250, 3),
