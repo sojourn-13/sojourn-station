@@ -1028,11 +1028,10 @@ var/list/rank_prefix = list(\
 				if(!MOVING_DELIBERATELY(H))
 					organ.take_damage(3, BRUTE, organ.max_damage, 6.7, TRUE, TRUE)	// When the limb is at 60% of max health, internal organs start taking damage.
 					if(organ.setBleeding())
-						organ.take_damage(3, TOX)
+						organ.take_damage(2, BRUTE) //Extra 2 damage
 					if(species.reagent_tag == IS_CHTMANT)
-						src.hallucination(30, 50)
-						src.adjustHalLoss(3)
-						organ.take_damage(1, TOX)
+						hallucination(30, 50)
+						adjustHalLoss(3)
 
 /mob/living/carbon/human/verb/browse_sanity()
 	set name		= "Show sanity"

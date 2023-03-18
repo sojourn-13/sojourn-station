@@ -30,11 +30,10 @@
 	if(pay_power_cost(psi_point_cost))
 		if(!owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
 			owner.nutrition = 400
-			owner.adjustToxLoss(15)
+			owner.adjustToxLoss(1)
 			owner.drip_blood(54)
 		else
 			owner.nutrition = 400
-			owner.adjustToxLoss(7.5)
 			owner.drip_blood(26)
 		to_chat(owner, "You feel sick and woozy, a sudden full sensation in your gut almost making you want to vomit.")
 

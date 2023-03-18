@@ -93,10 +93,10 @@
 	overdose = 3
 
 /datum/reagent/sight_dram/overdose(mob/living/carbon/M)
-	M.adjustToxLoss(5)
+	M.adjustToxLoss(2)
 
 /datum/reagent/sight_dram/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(10) //DONT INJECT IT
+	M.adjustToxLoss(5) //DONT INJECT IT
 
 /datum/reagent/sight_dram/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.eye_blurry = max(M.eye_blurry - (5 * effect_multiplier), 0)
@@ -125,7 +125,7 @@
 	M.adjustCloneLoss(3)
 
 /datum/reagent/lively_concoxion/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(3)
+	M.adjustToxLoss(1)
 
 /datum/reagent/lively_concoxion/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	return
@@ -160,7 +160,7 @@
 	M.adjustCloneLoss(1)
 
 /datum/reagent/nervs/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(3)
+	M.adjustToxLoss(1)
 
 /datum/reagent/nervs/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	return
@@ -256,7 +256,7 @@
 	M.adjustCloneLoss(3)
 
 /datum/reagent/mind_exspander/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(2)
+	M.adjustToxLoss(1)
 
 /datum/reagent/mind_exspander/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "mind_exspander")
@@ -278,7 +278,7 @@
 	M.adjustCloneLoss(3)
 
 /datum/reagent/work_tonic/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(2)
+	M.adjustToxLoss(1)
 
 /datum/reagent/work_tonic/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_EXPERT, STIM_TIME, "work_tonic")
@@ -304,7 +304,7 @@
 	M.adjustCloneLoss(3)
 
 /datum/reagent/ethanol/combat_brew/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(2)
+	M.adjustToxLoss(1)
 
 /datum/reagent/ethanol/combat_brew/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -347,7 +347,7 @@
 			H.eye_blind = max(M.eye_blind, 10)
 
 /datum/reagent/ethanol/eye_lid/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(2)
+	M.adjustToxLoss(1)
 
 /datum/reagent/ethanol/eye_lid/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -371,7 +371,7 @@
 	M.adjustCloneLoss(3)
 
 /datum/reagent/red_heart/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(20)
+	M.adjustToxLoss(3)
 
 /datum/reagent/red_heart/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	return
