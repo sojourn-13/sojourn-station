@@ -177,7 +177,7 @@
 
 /obj/item/clothing/glasses/powered/nightvision_helmet
 	name = "night vision goggles"
-	desc = "A pair of night vision goggles stuck to your helmet, has a small battery inside."
+	desc = "A pair of night vision goggles stuck to your helmet, has a slot for a medium battery inside."
 	icon_state = "bulletproof_ironhammer_goggles"
 	item_state = null
 	off_state = "bulletproof_ironhammer_goggles"
@@ -186,6 +186,8 @@
 	darkness_view = 7
 	see_invisible = SEE_INVISIBLE_NOLIGHTING
 	flags = ABSTRACT
+	suitable_cell = /obj/item/cell/medium
+	spawn_with_cell = FALSE
 
 	tick_cost = 1
 
