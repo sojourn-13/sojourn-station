@@ -1,7 +1,7 @@
 // Houses the master railgun file to standardize it for all guns & not have issues with overheating.
 /obj/item/gun/energy/laser/railgun
 	name = "Prototype Railgun"
-	desc = "You should not be seeing this. Report this as a bug report."
+	desc = "Older designs of the Reductor rail rifle, mixed with scrapped together assets and 3d printed parts, likely not meant to ever really fire but more of a proof of concept that more modern guns are based on. "
 	icon = 'icons/obj/guns/energy/railpistol.dmi'
 	icon_state = "railpistol"
 	item_state = "railpistol"
