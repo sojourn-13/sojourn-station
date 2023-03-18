@@ -64,7 +64,7 @@
 
 /mob/living/carbon/superior_animal/human/colony_allie/ship_breaker_marks
 	name = "Shipbreaker Marksman"
-	desc = "A Prospector Shipbreaker Scout Armed with a Cog lasgun, The gun seems modified to shoot on burst mode to deal the double of hits to the Enemy, he seems to be an Veteran Vatgrown Fighter."
+	desc = "A Prospector Shipbreaker Scout Armed with a Cog laser carbine, The gun seems modified to shoot on burst mode to deal the double of hits to the Enemy, he seems to be an Veteran Vatgrown Fighter."
 	icon_state = "Shipbreakercg"
 	icon_dead = "Shipbreakercg_dead"
 	rapid = 1

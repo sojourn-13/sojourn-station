@@ -1,5 +1,5 @@
 /obj/item/gun/projectile/gyropistol
-	name = "SA GP \"Emperor \""
+	name = "SA GP \"Novichok\""
 	desc = "A bulky pistol designed to fire 19mm self-propelled explosive rockets. Commonly referred to as the 'man-opener' by Void Wolves."
 	icon = 'icons/obj/guns/projectile/gyropistol.dmi'
 	icon_state = "gyropistol"

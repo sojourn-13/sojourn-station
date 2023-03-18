@@ -1,5 +1,5 @@
 /obj/item/gun/energy/plasma/antebellum
-	name = "\"Antebellum\" Blunderbuss lasgun"
+	name = "\"Antebellum\" laser blunderbuss"
 	icon = 'icons/obj/guns/energy/antebellum.dmi'
 	icon_state = "antebellum"
 	item_state = null	//so the human update icon uses the icon_state instead.
