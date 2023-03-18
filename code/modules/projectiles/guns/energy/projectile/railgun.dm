@@ -1,6 +1,6 @@
 // Houses the master railgun file to standardize it for all guns & not have issues with overheating.
 /obj/item/gun/energy/laser/railgun
-	name = "Debug Railgun Path"
+	name = "Prototype Railgun"
 	desc = "You should not be seeing this. Report this as a bug report."
 	icon = 'icons/obj/guns/energy/railpistol.dmi'
 	icon_state = "railpistol"
