@@ -10,7 +10,7 @@
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3000
 	stations_recommended = list("trapper")
 	recommendations_needed = 1
 	offer_limit = 30

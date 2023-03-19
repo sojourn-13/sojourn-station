@@ -12,7 +12,7 @@
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 1000
 	stations_recommended = list("fs_guns", "illegal2")
 	forced_overmap_zone = list(
 		list(15, 20),

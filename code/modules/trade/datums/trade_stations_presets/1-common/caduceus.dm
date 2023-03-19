@@ -13,7 +13,7 @@
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 2000
 	stations_recommended = list("moe_adv")
 	forced_overmap_zone = list(
 		list(20, 22),

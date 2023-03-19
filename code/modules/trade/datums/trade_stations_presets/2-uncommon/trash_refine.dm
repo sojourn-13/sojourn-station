@@ -12,7 +12,7 @@
 	base_income = 0
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3000
 	stations_recommended = list("junker")
 	recommendations_needed = 1
 	inventory = list(
