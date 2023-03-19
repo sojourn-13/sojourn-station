@@ -15,6 +15,16 @@
 /obj/item/organ/internal/kidney/right
 	icon_state = "kidney_right"
 
+/obj/item/organ/internal/kidney/left/plant
+	name = "kidney bean"
+	desc = "A green mushy bean that produces plant liquids"
+	icon_state = "kidney_left_plant"
+
+/obj/item/organ/internal/kidney/right/plant
+	name = "kidney bean"
+	desc = "A green mushy bean that produces plant liquids"
+	icon_state = "kidney_right_plant"
+
 /obj/item/organ/internal/kidney/left/cindarite
 	name = "cindarite kidney"
 	icon_state = "kidney_left_cindar"
