@@ -13,12 +13,12 @@
 		return
 	if (HUDtech.Find("flash"))
 		flick("e_flash", HUDtech["flash"])
-	if(duration)
+	if(duration || drop_items)
 		Weaken(duration, drop_items)
-		if(doblind)
-			eye_blind += duration
-		if(doblurry)
-			eye_blurry += duration
+	if(doblind)
+		eye_blind += duration
+	if(doblurry)
+		eye_blurry += duration
 
 //mob verbs are faster than object verbs. See above.
 /mob/living/pointed(atom/A as mob|obj|turf in view())
