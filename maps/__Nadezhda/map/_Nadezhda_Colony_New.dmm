@@ -29468,7 +29468,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/complant_teleporter,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "gQz" = (
@@ -76113,7 +76112,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/security/barracks)
 "roL" = (
-/obj/machinery/porta_turret/excelsior/preloaded,
+/mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "roQ" = (
