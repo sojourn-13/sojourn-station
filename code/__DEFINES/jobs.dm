@@ -22,7 +22,7 @@
 #define DEPARTMENT_MEDICAL	"Soteria Institute: Medical Department"
 #define DEPARTMENT_ENGINEERING	"Artificer Guild"
 #define DEPARTMENT_SCIENCE	"Soteria Institute: Research Department"
-#define DEPARTMENT_SECURITY "Nadezha Marshals"
+#define DEPARTMENT_SECURITY "Nadezhda Marshals"
 #define DEPARTMENT_BLACKSHIELD "Blackshield Militia"
 #define DEPARTMENT_LSS "Lonestar Employment Sector"
 #define DEPARTMENT_CIVILIAN	"Contractors"
