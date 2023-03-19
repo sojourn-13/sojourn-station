@@ -131,7 +131,6 @@
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/storage/belt/security(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
-	new /obj/item/clothing/suit/storage/vest/ironhammer(src)
 	new /obj/item/device/holowarrant(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/glasses/sechud(src)
@@ -143,7 +142,6 @@
 	new /obj/item/clipboard(src)
 	new /obj/item/device/camera(src)
 	new /obj/item/device/t_scanner/advanced(src)
-	new /obj/item/clothing/head/helmet/marshal_full(src)
 
 /obj/structure/closet/secure_closet/personal/detective
 	name = "ranger's locker"
@@ -235,6 +233,18 @@
 	new /obj/item/storage/box/anti_photons(src)
 	new /obj/item/storage/box/emp_grenade_shells(src)
 	new /obj/item/storage/box/emp_grenade_shells(src)
+
+/obj/structure/closet/secure_closet/armory_ltl_shotgun
+	name = "LTL shotgun ammunition locker"
+	req_access = list(access_security)
+	icon_state = "sec"
+
+/obj/structure/closet/secure_closet/armory_ltl_shotgun/populate_contents()
+	new /obj/item/ammo_magazine/ammobox/shotgun/beanbags(src)
+	new /obj/item/ammo_magazine/ammobox/shotgun/beanbags(src)
+	new /obj/item/ammo_magazine/ammobox/shotgun/flashshells(src)
+	new /obj/item/ammo_magazine/ammobox/shotgun/flash(src)
+	new /obj/item/ammo_magazine/ammobox/shotgun/stunshells(src)
 
 /obj/structure/closet/crate/secure/weapon/amr
 	name = "antimateriel rifle crate"

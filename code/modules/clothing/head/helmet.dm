@@ -896,6 +896,13 @@
 	body_parts_covered = HEAD|FACE|EARS
 	siemens_coefficient = 1
 
+/obj/item/clothing/head/helmet/marshal
+	name = "marshal helmet"
+	desc = "Standard operator gear. Protects the head from impacts. Painted in marshal colors and features an eye shield"
+	icon_state = "helmet_ironhammer"
+	icon_state = "helmet_ironhammer"
+	armor_list = list(melee = 30, bullet = 30,energy = 25, bomb = 25, bio = 70, rad = 0)
+	body_parts_covered = HEAD|EYES|EARS
 
 /obj/item/clothing/head/helmet/marshal_full
 	name = "marshal full helmet"

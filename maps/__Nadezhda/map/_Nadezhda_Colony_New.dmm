@@ -14381,19 +14381,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "duU" = (
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
-/obj/item/shield/riot,
 /obj/structure/table/rack,
-/obj/item/tool/baton,
-/obj/item/tool/baton,
-/obj/item/tool/baton,
-/obj/item/tool/baton,
-/obj/item/tool/baton,
-/obj/item/tool/baton,
+/obj/item/clothing/gloves/stungloves,
+/obj/item/clothing/gloves/stungloves,
+/obj/item/clothing/gloves/stungloves,
+/obj/item/clothing/gloves/stungloves,
+/obj/item/clothing/gloves/stungloves,
+/obj/item/clothing/gloves/stungloves,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "duZ" = (
@@ -24528,17 +24522,6 @@
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/inside_colony)
-"fIl" = (
-/obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot,
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot{
-	pixel_y = -8
-	},
-/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot{
-	pixel_y = 8
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/security/tactical)
 "fIp" = (
 /obj/structure/flora/small/trailrockb2,
 /obj/structure/flora/small/trailrockb5,
@@ -33203,6 +33186,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "hIw" = (
@@ -36112,19 +36096,15 @@
 	name = "Residential District Maintenance"
 	})
 "ioU" = (
-/obj/structure/table/rack,
-/obj/item/clothing/gloves/stungloves,
-/obj/item/clothing/gloves/stungloves,
-/obj/item/clothing/gloves/stungloves,
-/obj/item/clothing/gloves/stungloves,
-/obj/item/clothing/gloves/stungloves,
-/obj/item/clothing/gloves/stungloves,
-/obj/item/melee/classic_baton,
-/obj/item/melee/classic_baton,
-/obj/item/melee/classic_baton,
-/obj/item/melee/classic_baton,
-/obj/item/melee/classic_baton,
-/obj/item/melee/classic_baton,
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/head/helmet/laserproof/marshal,
+/obj/item/clothing/head/helmet/laserproof/marshal,
+/obj/item/clothing/head/helmet/laserproof/marshal,
+/obj/item/clothing/head/helmet/laserproof/marshal,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "ioZ" = (
@@ -42477,7 +42457,11 @@
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/organ_lab)
 "jNe" = (
-/obj/machinery/suit_storage_unit/security,
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/suit/space/void/security,
+/obj/item/clothing/suit/space/void/security,
+/obj/item/clothing/suit/space/void/security,
+/obj/item/clothing/suit/space/void/security,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "jNg" = (
@@ -56225,14 +56209,15 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "mWP" = (
-/obj/structure/closet{
-	name = "LTL shotgun shells"
-	},
-/obj/item/ammo_magazine/ammobox/shotgun/beanbags,
-/obj/item/ammo_magazine/ammobox/shotgun/beanbags,
-/obj/item/ammo_magazine/ammobox/shotgun/flashshells,
-/obj/item/ammo_magazine/ammobox/shotgun/stunshells,
-/obj/item/ammo_magazine/ammobox/shotgun/flash,
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "mWQ" = (
@@ -56407,11 +56392,15 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/absolutism/bioreactor)
 "mYg" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/space/void/security,
-/obj/item/clothing/suit/space/void/security,
-/obj/item/clothing/suit/space/void/security,
-/obj/item/clothing/suit/space/void/security,
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/head/helmet/riot_hud,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "mYn" = (
@@ -58379,7 +58368,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	id = "Sec Armory";
-	name = "Tyrant Throne"
+	name = "Emergency Armory"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -65966,7 +65955,7 @@
 /obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
 /obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo,
 /obj/structure/reagent_dispensers/peppertank{
-	pixel_y = 27
+	pixel_y = 30
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/tactical)
@@ -69549,6 +69538,11 @@
 /area/nadezhda/quartermaster/office)
 "pPR" = (
 /obj/structure/table/standard,
+/obj/item/storage/box/teargas{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/storage/box/flashbangs,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/tactical)
 "pQb" = (
@@ -76349,15 +76343,19 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "rsi" = (
-/obj/item/storage/box/teargas{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/storage/box/flashbangs,
-/obj/structure/table/rack/shelf,
-/obj/item/grenade/chem_grenade/metalfoam,
-/obj/item/grenade/chem_grenade/metalfoam,
-/obj/item/grenade/chem_grenade/metalfoam,
+/obj/structure/table/rack,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/melee/classic_baton,
+/obj/item/melee/classic_baton,
+/obj/item/melee/classic_baton,
+/obj/item/melee/classic_baton,
+/obj/item/melee/classic_baton,
+/obj/item/melee/classic_baton,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "rss" = (
@@ -77064,14 +77062,14 @@
 /area/nadezhda/maintenance/substation/bridge)
 "rzP" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
-/obj/item/clothing/head/helmet/riot_hud,
+/obj/item/clothing/suit/armor/vest/ironhammer,
+/obj/item/clothing/suit/armor/vest/ironhammer,
+/obj/item/clothing/suit/armor/vest/ironhammer,
+/obj/item/clothing/suit/armor/vest/ironhammer,
+/obj/item/clothing/head/helmet/marshal,
+/obj/item/clothing/head/helmet/marshal,
+/obj/item/clothing/head/helmet/marshal,
+/obj/item/clothing/head/helmet/marshal,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "rzS" = (
@@ -81543,21 +81541,6 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "szQ" = (
-/obj/item/clothing/suit/armor/platecarrier/ih,
-/obj/item/clothing/suit/armor/platecarrier/ih,
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/head/helmet,
-/obj/item/clothing/head/helmet,
-/obj/item/clothing/head/helmet,
-/obj/item/clothing/head/helmet,
-/obj/item/clothing/suit/armor/vest/ironhammer,
-/obj/item/clothing/suit/armor/vest/ironhammer,
-/obj/item/clothing/suit/armor/vest/ironhammer,
-/obj/item/clothing/suit/armor/vest/ironhammer,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/suit/armor/vest/security,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "szU" = (
@@ -89195,16 +89178,15 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "uhJ" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
-/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
-/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
-/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
-/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
-/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
-/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
-/obj/item/clothing/head/helmet/laserproof/iron_lock_security,
 /obj/machinery/camera/network/security,
+/obj/structure/table/rack,
+/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot{
+	pixel_y = -8
+	},
+/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot,
+/obj/item/gun/projectile/automatic/riot_autoshotgun/opshot{
+	pixel_y = 8
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "uhP" = (
@@ -93181,18 +93163,16 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/maintenance/substation/cargo)
 "vbU" = (
-/obj/item/storage/box/teargas{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/storage/box/flashbangs,
-/obj/structure/table/rack/shelf,
-/obj/item/grenade/chem_grenade/metalfoam,
-/obj/item/grenade/chem_grenade/metalfoam,
-/obj/item/grenade/chem_grenade/metalfoam,
 /obj/machinery/camera/network/security{
 	dir = 1
 	},
+/obj/structure/table/rack,
+/obj/item/tool/baton,
+/obj/item/tool/baton,
+/obj/item/tool/baton,
+/obj/item/tool/baton,
+/obj/item/tool/baton,
+/obj/item/tool/baton,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "vbY" = (
@@ -101355,6 +101335,12 @@
 	pixel_x = -6;
 	pixel_y = -4
 	},
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
+/obj/item/grenade/chem_grenade/metalfoam,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/tactical)
 "wUM" = (
@@ -102324,15 +102310,7 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/genetics)
 "xhg" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/bulletproof/ironhammer,
-/obj/item/clothing/suit/armor/bulletproof/ironhammer,
-/obj/item/clothing/suit/armor/bulletproof/ironhammer,
-/obj/item/clothing/suit/armor/bulletproof/ironhammer,
-/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
-/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
-/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
-/obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
+/obj/structure/closet/secure_closet/armory_ltl_shotgun,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "xhi" = (
@@ -198402,7 +198380,7 @@ ajp
 uhJ
 jDr
 szQ
-fIl
+szQ
 iYU
 fRq
 fRq

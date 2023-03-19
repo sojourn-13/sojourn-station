@@ -424,12 +424,13 @@
 	slowdown = 0.6 // Heavier since it now covers more of the body
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer
+	name = "marshal bulletproof suit"
 	desc = "A bulky vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage produced by Seinemetall Defense GmbH."
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 	slowdown = 0.6 // Heavier since it now covers more of the body
 	icon_state = "bulletproof_ironhammer"
-	item_state = "bulletproof_fullbody"
+	item_state = "bulletproof_ironhammer"
 
 /obj/item/clothing/suit/armor/laserproof
 	name = "reflective armor vest"
