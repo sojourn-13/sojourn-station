@@ -56,7 +56,6 @@
 				/obj/item/clothing/suit/armor/flackvest  = 5,
 				/obj/item/clothing/suit/armor/flackvest/tan = 5,
 				/obj/item/clothing/suit/armor/flackvest/green  = 5,
-				/obj/item/clothing/suit/armor/vest/detective  = 10,
 				/obj/item/clothing/suit/armor/vest/handmade = 20,
 				/obj/item/clothing/suit/space/void/SCAF = 1,
 				/obj/item/clothing/suit/storage/vest/merc = 1,

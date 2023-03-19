@@ -157,14 +157,3 @@
 		/obj/item/stock_parts/manipulator = 4
 	)
 */
-/obj/item/circuitboard/blackshield_teleporter
-	name = "circuit board blackshield teleporter"
-	build_name = ""
-	build_path = /obj/machinery/blackshield_teleporter
-	board_type = "machine"
-	origin_tech = list(TECH_DATA = 2, TECH_BLUESPACE = 2)
-	req_components = list(
-		/obj/item/stock_parts/manipulator = 2,
-		/obj/item/cell/large = 1,
-		/obj/item/stock_parts/subspace/crystal = 1
-	)

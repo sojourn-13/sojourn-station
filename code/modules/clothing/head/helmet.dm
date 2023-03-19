@@ -949,9 +949,9 @@
 	flags_inv = HIDEEARS|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	armor_list = list(
-		melee = 75,
-		bullet = 30,
-		energy = 30,
+		melee = 60,
+		bullet = 25,
+		energy = 25,
 		bomb = 25,
 		bio = 0,
 		rad = 0

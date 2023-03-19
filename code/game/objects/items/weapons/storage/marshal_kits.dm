@@ -226,7 +226,7 @@
 	desc = "An standard Marshal armor kit with a plate carrier and visor helmet."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/platecarrier/ih(src)
+		new /obj/item/clothing/suit/armor/vest/ironhammer(src)
 		new /obj/item/clothing/head/helmet/marshal_full(src)
 
 /obj/item/storage/box/m_kit/armored_overcoat

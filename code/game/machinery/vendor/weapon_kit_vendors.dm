@@ -328,10 +328,10 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemArmor(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Standard Plate" = /obj/item/storage/box/m_kit/standard_armor,
-					"Armored Overcoat" = /obj/item/storage/box/m_kit/armored_overcoat,
+					"Riot Armor Kit" = /obj/item/storage/box/m_kit/riot,
 					"Bullet-Proof Armor Kit" = /obj/item/storage/box/m_kit/bullet_proof,
-					"Ablative Armor Kit" = /obj/item/storage/box/m_kit/laser_armor,
-					"Riot Armor Kit" = /obj/item/storage/box/m_kit/riot)
+					"Ablative Armor Kit" = /obj/item/storage/box/m_kit/laser_armor
+					)
 	var/selection = items[input(redeemer, "Pick your armor", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)

@@ -59,11 +59,6 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
-/obj/item/clothing/suit/armor/vest/detective
-	name = "ranger armor vest"
-	desc = "An armored vest with a ranger's badge on it."
-	icon_state = "armor_detective"
-
 /obj/item/clothing/suit/armor/vest/ironhammer
 	name = "security armor vest"
 	desc = "An armored vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations."

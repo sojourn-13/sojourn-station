@@ -153,7 +153,6 @@
 
 /obj/structure/closet/secure_closet/personal/detective/populate_contents()
 	new /obj/item/clothing/under/rank/inspector(src)
-	new /obj/item/clothing/suit/storage/rank/insp_trench(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/head/rank/inspector(src)
@@ -163,7 +162,6 @@
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/storage/belt/security(src)
 	new /obj/item/device/holowarrant(src)
-	new /obj/item/clothing/suit/armor/vest/detective(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
 	new /obj/item/clothing/glasses/sechud(src)
 	new /obj/item/taperoll/police(src)
@@ -175,7 +173,7 @@
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/voucher/marshal/rangerprimary(src)
 	new /obj/item/voucher/marshal/rangersecondary(src)
-	new /obj/item/voucher/marshal/armor(src)
+	new /obj/item/storage/box/m_kit/armored_overcoat(src)
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections locker"
@@ -211,3 +209,37 @@
 	new /obj/item/clothing/suit/costume/job/judge(src)
 	new /obj/item/clothing/head/costume/history/powdered(src)
 	new /obj/item/storage/briefcase(src)
+
+/obj/structure/closet/secure_closet/armory_explosive
+	name = "high explosive grenades locker"
+	req_access = list(access_security)
+	icon_state = "sec"
+
+/obj/structure/closet/secure_closet/armory_explosive/populate_contents()
+	new /obj/item/storage/box/blast_grenade_shells(src)
+	new /obj/item/storage/box/blast_grenade_shells(src)
+	new /obj/item/storage/box/blast_grenade_shells(src)
+	new /obj/item/storage/box/frag_grenade_shells(src)
+	new /obj/item/storage/box/frag_grenade_shells(src)
+	new /obj/item/storage/box/frag_grenade_shells(src)
+
+/obj/structure/closet/secure_closet/armory_ltl_emp
+	name = "LTL / EMP grenades locker"
+	req_access = list(access_security)
+	icon_state = "sec"
+
+/obj/structure/closet/secure_closet/armory_ltl_emp/populate_contents()
+	new /obj/item/storage/box/baton_rounds(src)
+	new /obj/item/storage/box/baton_rounds(src)
+	new /obj/item/storage/box/anti_photons(src)
+	new /obj/item/storage/box/anti_photons(src)
+	new /obj/item/storage/box/emp_grenade_shells(src)
+	new /obj/item/storage/box/emp_grenade_shells(src)
+
+/obj/structure/closet/crate/secure/weapon/amr
+	name = "antimateriel rifle crate"
+	desc = "A secure weapons crate."
+	icon_state = "weaponcrate"
+
+/obj/structure/closet/crate/secure/weapon/amr/populate_contents()
+	new /obj/item/storage/box/syndie_kit/antimaterial_rifle(src)
