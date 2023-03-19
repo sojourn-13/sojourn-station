@@ -702,7 +702,6 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/triage_blackshield)
 "aiT" = (
@@ -1399,7 +1398,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "asp" = (
 /obj/machinery/door/blast/regular{
-	id = "shop_armory_blast_door";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -1719,7 +1718,7 @@
 	dir = 1
 	},
 /obj/machinery/button/remote/blast_door{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Blast Doors";
 	pixel_y = -32;
 	req_access = list(3)
@@ -2851,6 +2850,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/tactical_blackshield)
+"aIv" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/armoryshop)
 "aIy" = (
 /obj/structure/barricade,
 /obj/structure/grille,
@@ -9091,11 +9098,11 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/clownoffice)
 "cjW" = (
-/obj/machinery/autolathe/loaded,
 /obj/machinery/holoposter{
 	pixel_x = -32
 	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "cjZ" = (
 /obj/machinery/door/airlock/mining{
@@ -12016,7 +12023,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /obj/machinery/door/firedoor,
@@ -22081,8 +22088,6 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "fgT" = (
@@ -22733,7 +22738,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/triage_blackshield)
 "fmB" = (
@@ -22814,10 +22818,10 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/storage/primary)
 "fng" = (
-/obj/structure/closet/secure_closet/warden,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/machinery/autolathe/loaded,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "fnq" = (
@@ -25893,8 +25897,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "fZy" = (
@@ -31134,7 +31136,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "hle" = (
@@ -39471,7 +39472,6 @@
 /turf/simulated/floor/fixed/hydrotile,
 /area/turret_protected/ai_upload)
 "jdO" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/triage_blackshield)
 "jdU" = (
@@ -49316,6 +49316,10 @@
 	dir = 4;
 	pixel_x = -32
 	},
+/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/marshal,
+/obj/item/computer_hardware/hard_drive/portable/design/gun_parts/marshal{
+	license = -1
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "lsH" = (
@@ -50754,16 +50758,10 @@
 /obj/item/gun/energy/stunrevolver,
 /obj/item/gun/energy/stunrevolver,
 /obj/machinery/button/remote/blast_door{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Blast Doors";
 	pixel_y = 32;
 	req_access = list(3)
-	},
-/obj/machinery/button/remote/blast_door{
-	id = "shop_armory_blast_door";
-	name = "Shop Front Door";
-	pixel_x = 32;
-	req_access = list(69)
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
@@ -53399,7 +53397,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/triage_blackshield)
 "moy" = (
@@ -54198,7 +54195,7 @@
 /area/nadezhda/outside/inside_colony)
 "myM" = (
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
 /obj/machinery/door/airlock/security{
@@ -62702,8 +62699,6 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ooH" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/computer_hardware/hard_drive/portable/design/gun_parts/marshal,
-/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/marshal,
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -32
@@ -63507,6 +63502,16 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"oys" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/nadezhda/security/triage_blackshield)
 "oyv" = (
 /obj/structure/table/standard,
 /obj/item/clothing/head/helmet/visor/cyberpunkgoggle{
@@ -66933,6 +66938,11 @@
 /obj/random/structures/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"pmb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/secure_closet/warden,
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/armory)
 "pmc" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt,
@@ -69952,7 +69962,11 @@
 /obj/item/storage/pouch/ammo,
 /obj/item/storage/pouch/ammo,
 /obj/item/storage/pouch/ammo,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/obj/machinery/atm{
+	dir = 8;
+	pixel_x = -30
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "pUJ" = (
 /obj/structure/flora/ausbushes/leafybush,
@@ -74582,6 +74596,16 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"qXg" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/armory)
 "qXp" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -85044,7 +85068,7 @@
 	dir = 8
 	},
 /obj/machinery/button/remote/blast_door{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Blast Doors";
 	pixel_y = 32;
 	req_access = list(3)
@@ -86305,6 +86329,20 @@
 	temperature = 80
 	},
 /area/nadezhda/command/tcommsat/computer)
+"tEC" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/armory)
 "tEF" = (
 /obj/machinery/alarm{
 	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
@@ -99440,10 +99478,9 @@
 	dir = 1
 	},
 /obj/machinery/light_switch{
-	pixel_y = 32
+	pixel_y = 32;
+	pixel_x = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armory)
 "wve" = (
@@ -102454,7 +102491,6 @@
 	dir = 8;
 	pixel_x = 32
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/triage_blackshield)
 "xjn" = (
@@ -203873,7 +203909,7 @@ uqs
 jgt
 fEL
 tqw
-sLS
+pmb
 mEs
 lsz
 jco
@@ -204656,7 +204692,7 @@ xsC
 hkk
 mou
 aiR
-pGy
+eZl
 tih
 sMB
 mET
@@ -204683,7 +204719,7 @@ bUK
 sLS
 sLS
 omw
-sLS
+mxE
 oQC
 vus
 fEL
@@ -204851,9 +204887,9 @@ gBD
 xsC
 oKB
 buN
-iJM
-iJM
-iJM
+oys
+oys
+oys
 bLS
 fmz
 knM
@@ -204885,7 +204921,7 @@ dMA
 biU
 fgE
 fZw
-fhH
+qXg
 otD
 fhH
 ntn
@@ -205053,9 +205089,9 @@ gBD
 xsC
 uDg
 dyl
-pGy
-pGy
-pGy
+eZl
+eZl
+eZl
 xjh
 jdO
 lGv
@@ -205084,10 +205120,10 @@ mXq
 mZB
 fEL
 vWP
-sLS
-hGF
-sLS
-sLS
+mxE
+tEC
+mxE
+mxE
 sjt
 mxE
 fEL
@@ -205895,7 +205931,7 @@ aQV
 myh
 uyQ
 hkX
-slM
+aIv
 slM
 hIE
 aQV

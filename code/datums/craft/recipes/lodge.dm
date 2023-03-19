@@ -7,10 +7,10 @@
 // Weaponry -----------------
 /datum/craft_recipe/lodge/crossbow_bolts
 	name = "Crossbow Bolts"
-	result = /obj/item/ammo_casing/crossbow_bolts
+	result = /obj/item/ammo_casing/crossbow_bolts/bulk
 	time = 0
 	steps = list(
-		list(/obj/item/stack/rods, 1)
+		list(/obj/item/stack/rods, 5)
 	)
 	flags = CRAFT_BATCH
 
@@ -18,7 +18,7 @@
 	name = "Fragment Crossbow Bolt"
 	result = /obj/item/ammo_casing/crossbow_bolts/fragment/bulk
 	steps = list(
-		list(/obj/item/stack/rods, 10),
+		list(/obj/item/stack/rods, 5),
 		list(/obj/item/stack/ore, 1)
 	)
 
@@ -27,7 +27,7 @@
 	result = /obj/item/ammo_casing/crossbow_bolts/speed/bulk
 	time = 0
 	steps = list(
-		list(/obj/item/stack/rods, 10),
+		list(/obj/item/stack/rods, 5),
 		list(CRAFT_MATERIAL, 1, MATERIAL_BONE, "time" = 1), //Takes a second
 		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 1) //Takes a second
 	)

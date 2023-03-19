@@ -711,7 +711,6 @@
 		"dermaline_amount" = H.reagents.get_reagent_amount("dermaline"),
 		"blood_amount" = round((H.vessel.get_reagent_amount("blood") / H.species.blood_volume)*100),
 		"disabilities" = H.sdisabilities,
-		"lung_ruptured" = H.is_lung_ruptured(),
 		"external_organs" = H.organs.Copy(),
 		"internal_organs" = H.internal_organs.Copy(),
 		"species_organs" = H.species.has_process, //Just pass a reference for this, it shouldn't ever be modified outside of the datum.
@@ -772,8 +771,6 @@
 		for(var/datum/wound/W in e.wounds) if(W.internal)
 			other_wounds += "Internal bleeding"
 			break
-		if(e.organ_tag == BP_CHEST && occ["lung_ruptured"])
-			other_wounds += "Lung ruptured"
 		if(e.status & ORGAN_SPLINTED)
 			other_wounds += "Splinted"
 		if(e.status & ORGAN_BLEEDING)

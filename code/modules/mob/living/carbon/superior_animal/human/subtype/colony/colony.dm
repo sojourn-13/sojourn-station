@@ -104,7 +104,7 @@
 	projectiletype = /obj/item/projectile/beam
 	light_range = 5
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
-
+/*
 /mob/living/carbon/superior_animal/human/colony_allie/lonestar_merc
 	name = "Lonestar Corporate Infantryman"
 	desc = "A private vatborn from lonestar, Well paid and Geared this veteran soldier is armed with a Laser Carbine ready to anihilate any threat to the Corporation, He Seems To be an Veteran Fighter."
@@ -162,7 +162,7 @@
 
 	light_range = 5
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
-
+*/
 /mob/living/carbon/superior_animal/human/colony_allie/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
 	if(suited_for_space)
 		return
