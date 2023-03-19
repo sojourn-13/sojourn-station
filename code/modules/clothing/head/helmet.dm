@@ -941,6 +941,7 @@
  * Special helmets with HUDs
  */
 
+//Security
 /obj/item/clothing/head/helmet/riot_hud
 	name = "marshal riot helmet"
 	desc = "Standard-issue marshal helmet with a basic HUD and targeting system included, produced by Seinemetall Defense GmbH after more classic riot helmets were not able to handle the day to day riots."
@@ -957,6 +958,8 @@
 	)
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	flash_protection = FLASH_PROTECTION_MODERATE
+	var/last_toggle = 0
+	var/toggle_delay = 2 SECONDS
 	action_button_name = "Toggle Security Hud"
 	var/obj/item/clothing/glasses/hud/security/hud
 	price_tag = 300
@@ -972,7 +975,7 @@
 	toggle()
 
 /obj/item/clothing/head/helmet/riot_hud/verb/toggle()
-	set name = "Toggle Security Hud"
+	set name = "Toggle Riot HUD"
 	set desc = "Shows you jobs and criminal statuses"
 	set category = "Object"
 	var/mob/user = loc
@@ -981,15 +984,23 @@
 	if(user.get_equipped_item(slot_head) != src)
 		return
 	if(hud in src)
-		if(user.equip_to_slot_if_possible(hud, slot_glasses))
-			to_chat(user, "You enable security hud on [src].")
+		if(user.equip_to_slot_if_possible(hud, slot_glasses) && world.time > last_toggle)
+			to_chat(user, "You flip down [src] HUD goggles with a high-pitched whine.")
+			last_toggle = world.time + toggle_delay
+			hud.toggle(user, TRUE)
 			update_icon()
+		else
+			to_chat(user, "You are wearing something which is in the way or trying to flip the googles too fast!")
 	else
-		if(ismob(hud.loc))
+		if(ismob(hud.loc) && world.time > last_toggle)
+			last_toggle = world.time + toggle_delay
 			var/mob/hud_loc = hud.loc
 			hud_loc.drop_from_inventory(hud, src)
-			to_chat(user, "You disable security hud on [src].")
-		hud.forceMove(src)
+			hud.toggle(user, TRUE)
+			to_chat(user, "You flip up [src] HUD goggles, turning them off.")
+			hud.forceMove(src)
+		else
+			to_chat(user, "You can't pull off the goggles so fast!")
 		update_icon()
 	usr.update_action_buttons()
 
@@ -1013,38 +1024,33 @@
 	update_wear_icon()
 	..()
 
-/obj/item/clothing/head/helmet/night_vision_helm
-	name = "thermo-nightvision helmet"
-	desc = "Written on the side is a garbled mess complaining about the alphabet-soup boys shooting the owners tannerite stuffed dog. Comes with a built in nuclear cell labeled 'fuck your roads'. An observant eye would notice the electrical equipment on this would be valued in the thousands while the helmet costs roughly twenty credits."
-	icon_state = "nhelm"
-	body_parts_covered = HEAD|FACE|EARS
-	armor_list = list(
-		melee = 20,
-		bullet = 20,
-		energy = 15,
-		bomb = 25,
-		bio = 0,
-		rad = 0
-	) //Low protection since it gives night vision with no battery.
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	flash_protection = FLASH_PROTECTION_MODERATE
-	action_button_name = "Toggle Thermal Night-Vision HUD"
-	var/obj/item/clothing/glasses/hud/security/jensenshades/hud
-	price_tag = 2000
+//Nightvision
+/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg
+	name = "marshal tactical ballistic helmet"
+	desc = "A bulletproof security helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
+			Comes with inbuilt nightvision HUD."
+	icon_state = "bulletproof_ironhammer"
+	body_parts_covered = HEAD | EARS
+	flags_inv = NONE
+	action_button_name = "Toggle Night Vision"
+	var/obj/item/clothing/glasses/powered/nightvision_helmet/hud
+	var/last_toggle = 0
+	var/toggle_delay = 2 SECONDS
+	price_tag = 600
 
-/obj/item/clothing/head/helmet/night_vision_helm/New()
+/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg/New()
 	..()
 	hud = new(src)
 	hud.canremove = FALSE
 
-/obj/item/clothing/head/helmet/night_vision_helm/ui_action_click()
+/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg/ui_action_click()
 	if(..())
 		return TRUE
 	toggle()
 
-/obj/item/clothing/head/helmet/night_vision_helm/verb/toggle()
-	set name = "Toggle Thermal Night-Vision HUD"
-	set desc = "Lets you see in the dark and look tacticool."
+/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg/verb/toggle()
+	set name = "Toggle Night Vision HUD"
+	set desc = "Allows you to see in the dark."
 	set category = "Object"
 	var/mob/user = loc
 	if(usr.stat || user.restrained())
@@ -1052,36 +1058,120 @@
 	if(user.get_equipped_item(slot_head) != src)
 		return
 	if(hud in src)
-		if(user.equip_to_slot_if_possible(hud, slot_glasses))
-			to_chat(user, "You enable the thermal night-vision HUD on [src].")
+		if(user.equip_to_slot_if_possible(hud, slot_glasses) && world.time > last_toggle)
+			to_chat(user, "You flip down [src] night vision goggles with a high-pitched whine.")
+			last_toggle = world.time + toggle_delay
+			hud.toggle(user, TRUE)
 			update_icon()
+		else
+			to_chat(user, "You are wearing something which is in the way or trying to flip the googles too fast!")
 	else
-		if(ismob(hud.loc))
+		if(ismob(hud.loc) && world.time > last_toggle)
+			last_toggle = world.time + toggle_delay
 			var/mob/hud_loc = hud.loc
 			hud_loc.drop_from_inventory(hud, src)
-			to_chat(user, "You disable the thermal night-vision HUD on [src].")
-		hud.forceMove(src)
+			hud.toggle(user, TRUE)
+			to_chat(user, "You flip up [src] night vision goggles, turning them off.")
+			hud.forceMove(src)
+		else
+			to_chat(user, "You can't pull off the goggles so fast!")
 		update_icon()
 	usr.update_action_buttons()
 
-/obj/item/clothing/head/helmet/night_vision_helm/dropped(usr)
+/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg/dropped(usr)
 	..()
 	if(hud.loc != src)
 		if(ismob(hud.loc))
 			var/mob/hud_loc = hud.loc
 			hud_loc.drop_from_inventory(hud, src)
-			to_chat(hud_loc, "[hud] automatically retract in [src].")
+			to_chat(hud_loc, "[hud] automaticly retract in [src].")
 		hud.forceMove(src)
 		update_icon()
 
-/obj/item/clothing/head/helmet/night_vision_helm/update_icon()
+/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg/update_icon()
 	if(hud in src)
-		icon_state = "nhelm_up"
+		icon_state = "bulletproof_ironhammer"
+		set_light(0, 0)
 	else
-		icon_state = "nhelm"
+		icon_state = "bulletproof_ironhammer_on"
+		set_light(1, 1, COLOR_LIGHTING_GREEN_MACHINERY)
 	update_wear_icon()
 	..()
 
+//Thermal
+/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal
+	name = "marshal thermo-nightvision helmet"
+	desc = "A bulletproof security helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
+			Comes with inbuilt thermal imaging HUD."
+	icon_state = "bulletproof_ironhammer_thermal"
+	body_parts_covered = HEAD|EARS
+	action_button_name = "Toggle Thermal Night Vision HUD"
+	var/last_toggle = 0
+	var/toggle_delay = 2 SECONDS
+	var/obj/item/clothing/glasses/powered/thermal_helmet/hud
+	price_tag = 2000
+
+/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal/New()
+	..()
+	hud = new(src)
+	hud.canremove = FALSE
+
+/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal/ui_action_click()
+	if(..())
+		return TRUE
+	toggle()
+
+/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal/verb/toggle()
+	set name = "Toggle Thermal Night Vision HUD"
+	set desc = "Allows you to see in the dark."
+	set category = "Object"
+	var/mob/user = loc
+	if(usr.stat || user.restrained())
+		return
+	if(user.get_equipped_item(slot_head) != src)
+		return
+	if(hud in src)
+		if(user.equip_to_slot_if_possible(hud, slot_glasses) && world.time > last_toggle)
+			to_chat(user, "You flip down [src] thermal imaging goggles with a high-pitched whine.")
+			last_toggle = world.time + toggle_delay
+			hud.toggle(user, TRUE)
+			update_icon()
+		else
+			to_chat(user, "You are wearing something which is in the way or trying to flip the googles too fast!")
+	else
+		if(ismob(hud.loc) && world.time > last_toggle)
+			last_toggle = world.time + toggle_delay
+			var/mob/hud_loc = hud.loc
+			hud_loc.drop_from_inventory(hud, src)
+			hud.toggle(user, TRUE)
+			to_chat(user, "You flip up [src] thermal imaging goggles, turning them off.")
+			hud.forceMove(src)
+		else
+			to_chat(user, "You can't pull off the goggles so fast!")
+		update_icon()
+	usr.update_action_buttons()
+
+/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal/dropped(usr)
+	..()
+	if(hud.loc != src)
+		if(ismob(hud.loc))
+			var/mob/hud_loc = hud.loc
+			hud_loc.drop_from_inventory(hud, src)
+			to_chat(hud_loc, "[hud] automaticly retract in [src].")
+		hud.forceMove(src)
+		update_icon()
+
+/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal/update_icon()
+	if(hud in src)
+		icon_state = "bulletproof_ironhammer_thermal"
+		set_light(0, 0)
+	else
+		icon_state = "bulletproof_ironhammer_thermal_on"
+		set_light(1, 1, COLOR_LIGHTING_RED_BRIGHT)
+	update_wear_icon()
+	..()
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/item/clothing/head/helmet/steelpot
 	name = "steelpot helmet"
