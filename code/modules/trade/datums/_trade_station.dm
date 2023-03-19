@@ -23,7 +23,7 @@
 
 	var/markup = WHOLESALE_GOODS
 	var/markdown = 0.95				 // Default markdown is 20% - SoJ edit they get less markdown. Editted by Ali for testing to 5%.
-	var/favour_purchase_ratio = 0.5  // For every credit we gain half a favour point
+	var/favour_purchase_ratio = 0.25  // 4 credits = 1 favour
 
 
 	var/list/inventory = list()
