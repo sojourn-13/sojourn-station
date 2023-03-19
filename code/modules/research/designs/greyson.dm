@@ -4,7 +4,7 @@
 	category = CAT_WEAPON
 
 /datum/design/research/item/greyson/cog_sawn
-	name = "GP \"Pinion\" laser carbine"
+	name = "GP \"Pinion\" laser pistol"
 	build_path = /obj/item/gun/energy/cog/sawn
 	category = CAT_WEAPON
 

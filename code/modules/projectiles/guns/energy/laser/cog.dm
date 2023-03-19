@@ -104,9 +104,9 @@
 	update_icon()
 
 /obj/item/gun/energy/cog/sawn
-	name = " \"Pinion\" laser carbine"
+	name = " \"Pinion\" laser pistol"
 	icon = 'icons/obj/guns/energy/obrez_retro.dmi'
-	desc = "Nicknamed the 'Coglet', The \"Pinion\" laser carbine is the result of advanced AI conforming the Cog to meet the demand of mercurial gun laws. Concessions have been made, but by excluding the stock and much of the focusing lens, the weapon just barely squeezes into a standard-issue holster."
+	desc = "Nicknamed the 'Coglet', The \"Pinion\" laser pistol is the result of advanced AI conforming the Cog to meet the demand of mercurial gun laws. Concessions have been made, but by excluding the stock and much of the focusing lens, the weapon just barely squeezes into a standard-issue holster."
 	icon_state = "shorty"
 	item_state = "shorty"
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
