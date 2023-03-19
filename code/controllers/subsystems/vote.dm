@@ -48,7 +48,7 @@ SUBSYSTEM_DEF(vote)
 	addtimer(CALLBACK(src, /datum/controller/subsystem/vote/proc/recall_vote), 240 MINUTES)
 
 /datum/controller/subsystem/vote/proc/recall_vote()
-	if(active_vote) //No sneaky attempt to stop the recall vote
+	if(SSvote.active_vote) //No sneaky attempt to stop the recall vote
 		stop_vote()
 	start_vote(/datum/poll/restart)
 
