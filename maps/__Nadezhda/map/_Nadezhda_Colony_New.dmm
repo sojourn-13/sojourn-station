@@ -73062,6 +73062,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/command/courtroom)
 "qEA" = (
+/obj/machinery/blackshield_teleporter,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)
 "qEE" = (
