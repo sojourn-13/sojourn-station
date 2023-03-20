@@ -76,7 +76,7 @@
 	..()
 	if(loc != holder) // We're no longer in the psionic's hand.
 		sleep(4)
-		visible_message("The [src.name] flickers away into nothingness.")
+		visible_message("The [src.name] flickers away as the fire fades into nothingness")
 		STOP_PROCESSING(SSobj, src)
 		qdel(src)
 		return
