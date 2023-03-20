@@ -229,12 +229,13 @@
 				/obj/item/clothing/head/helmet/faceshield/altyn/black = 2,
 				/obj/item/clothing/head/helmet/faceshield/altyn/maska = 2,
 				/obj/item/clothing/head/helmet/mercenary = 2,
+				/obj/item/clothing/head/helmet/bulletproof = 2,
 				/obj/item/clothing/head/helmet/space/void/odst/red = 1,
 				/obj/item/clothing/head/helmet/space/void/odst/blue = 1,
 				/obj/item/clothing/head/helmet/space/void/odst/orange = 1,
 				/obj/item/clothing/head/helmet/space/void/SCAF = 1,
-				/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg = 1,
-				/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal = 0.3,))
+				/obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg = 1,
+				/obj/item/clothing/head/helmet/bulletproof/ironhammer_thermal = 0.3,))
 
 /obj/random/cloth/helmet/low_chance
 	name = "low chance random helmet"

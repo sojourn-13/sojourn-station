@@ -244,7 +244,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/bulletproof/ironhammer(src)
-		new /obj/item/clothing/head/armor/bulletproof/ironhammer_nvg(src)
+		new /obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg(src)
 
 /obj/item/storage/box/m_kit/laser_armor
 	name = "Ablative Armor Kit"
