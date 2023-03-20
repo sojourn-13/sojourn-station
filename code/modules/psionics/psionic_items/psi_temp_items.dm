@@ -61,7 +61,7 @@
 		return
 
 /obj/item/flame/pyrokinetic_spark/proc/burn_out()
-		visible_message("The [src.name] flickers away from your hand into nothingness.")
+		visible_message("The [src.name] shudders away from your hand like it was nothing.")
 		STOP_PROCESSING(SSobj, src)
 		qdel(src)
 		return
