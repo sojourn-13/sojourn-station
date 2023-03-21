@@ -200,7 +200,7 @@
 //Weapons ------------------------
 /datum/craft_recipe/guild/railgunrifle
 	name = "reductor rail rifle"
-	result = /obj/item/gun/energy/laser/railgun
+	result = /obj/item/gun/energy/laser/railgun/railrifle
 	icon_state = "gun"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
