@@ -2,7 +2,7 @@
 	category = /datum/uplink_category/void_wolf
 
 /datum/uplink_item/item/void_wolf/cog
-	name = "\"Cog\" lasgun"
+	name = "\"Cog\" laser carbine"
 	item_cost = 3
 	path = /obj/item/gun/energy/cog
 

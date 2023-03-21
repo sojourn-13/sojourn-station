@@ -37,8 +37,8 @@
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/gear_lasgun
-	name = "\improper Gear Lasgun Kit"
-	desc = "The standard Marshal box kit containing a modified Cog lasgun that also fires stun beams. For the economic officer."
+	name = "\improper Gear Laser Carbine Kit"
+	desc = "The standard Marshal box kit containing a modified Cog laser carbine that also fires stun beams. For the economic officer."
 
 	populate_contents()
 		new /obj/item/gun/energy/cog/gear(src)
