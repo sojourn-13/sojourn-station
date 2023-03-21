@@ -23,8 +23,8 @@
 /obj/item/clothing/gloves/insulated
 	desc = "A pair of gloves which protect the wearer from electric shocks."
 	name = "insulated gloves"
-	icon_state = "yellow"
-	item_state = "yellow"
+	icon_state = "insuls" // Sprites by Ezoken/Dromkii
+	item_state = "insuls"
 	armor_list = list(melee = 0, bullet = 0, energy = 15, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
@@ -33,6 +33,7 @@
 /obj/item/clothing/gloves/insulated/cheap                          //Cheap Chinese Crap
 	desc = "A pair of cheaply-made insulated gloves. Not known for reliability."
 	name = "budget insulated gloves"
+	icon_state = "yellow" // Old stuff, old icon
 	siemens_coefficient = 1			//Set to a default of 1, gets overridden in New()
 	permeability_coefficient = 0.05
 	price_tag = 50
@@ -188,6 +189,18 @@
 	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	price_tag = 250
+
+// Fireproof and insulated, with a bit of rad protection. Guild only.
+/obj/item/clothing/gloves/thick/guild
+	name = "artificer's work gloves"
+	desc = "A pair of sturdy gloves in Artificer Guild's colors. \
+			Insulated and fireproof, they are designed to help protect its user through any task."
+	icon_state = "guild_insuls" // Sprites by Ezoken/Dromkii
+	item_state = "guild_insuls"
+	armor_list = list(melee = 5, bullet = 0, energy = 10, bomb = 10, bio = 15, rad = 20)
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
+	price_tag = 500
 
 
 /obj/item/clothing/gloves/thick/hunter

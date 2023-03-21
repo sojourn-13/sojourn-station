@@ -4,7 +4,7 @@
 	l_ear = /obj/item/device/radio/headset/headset_eng
 	r_ear = /obj/item/tool/screwdriver
 	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/insulated
+	gloves = /obj/item/clothing/gloves/thick/guild
 	suit = /obj/item/clothing/suit/storage/hazardvest
 	pda_slot = slot_l_store
 	r_pocket = /obj/item/device/t_scanner
