@@ -51,18 +51,14 @@
 				/obj/item/clothing/suit/armor/vest/ironhammer  = 10,
 				/obj/item/clothing/suit/storage/vest = 5,
 				/obj/item/clothing/suit/armor/platecarrier  = 10,
-				/obj/item/clothing/suit/armor/platecarrier/green  = 10,
-				/obj/item/clothing/suit/armor/platecarrier/tan  = 10,
-				/obj/item/clothing/suit/armor/flackvest  = 5,
-				/obj/item/clothing/suit/armor/flackvest/tan = 5,
-				/obj/item/clothing/suit/armor/flackvest/green  = 5,
+				/obj/item/clothing/suit/armor/flakvest  = 5,
 				/obj/item/clothing/suit/armor/vest/handmade = 20,
 				/obj/item/clothing/suit/space/void/SCAF = 1,
 				/obj/item/clothing/suit/storage/vest/merc = 1,
 				/obj/item/clothing/suit/space/void/odst/red = 1,
 				/obj/item/clothing/suit/space/void/odst/blue = 1,
 				/obj/item/clothing/suit/space/void/odst/orange = 1,
-				/obj/item/clothing/suit/armor/vest/security = 20))
+				/obj/item/clothing/suit/armor/vest = 20))
 
 /obj/random/cloth/armor/low_chance
 	name = "low chance random armor"
@@ -218,15 +214,11 @@
 	return pickweight(list(/obj/item/clothing/head/helmet = 5,
 				/obj/item/clothing/head/helmet/faceshield/riot = 5,
 				/obj/item/clothing/head/helmet/ballistic = 5,
-				/obj/item/clothing/head/helmet/ballistic/green = 5,
-				/obj/item/clothing/head/helmet/ballistic/tan = 5,
 				/obj/item/clothing/head/helmet/laserproof = 2,
 				/obj/item/clothing/head/helmet/handmade = 5,
 				/obj/item/clothing/head/helmet/steelpot = 8,
 				/obj/item/clothing/head/helmet/generic_full = 5,
 				/obj/item/clothing/head/helmet/faceshield/altyn = 2,
-				/obj/item/clothing/head/helmet/faceshield/altyn/brown = 2,
-				/obj/item/clothing/head/helmet/faceshield/altyn/black = 2,
 				/obj/item/clothing/head/helmet/faceshield/altyn/maska = 2,
 				/obj/item/clothing/head/helmet/mercenary = 2,
 				/obj/item/clothing/head/helmet/bulletproof = 2,
@@ -297,22 +289,6 @@
 	name = "low chance random head"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-/obj/random/cloth/bikehelms
-	name = "random biker helmet"
-	desc = "random colored biker helmet"
-	icon_state = "armor-grey"
-
-/obj/random/cloth/bikehelms/item_to_spawn()
-	return pickweight(list(/obj/item/clothing/head/helmet/biker = 1,
-				/obj/item/clothing/head/helmet/biker/white = 1,
-				/obj/item/clothing/head/helmet/biker/red = 1,
-				/obj/item/clothing/head/helmet/biker/green = 1,
-				/obj/item/clothing/head/helmet/biker/blue = 1,
-				/obj/item/clothing/head/helmet/biker/purple = 1,
-				/obj/item/clothing/head/helmet/biker/pink = 1,
-				/obj/item/clothing/head/helmet/biker/yellow = 1,
-				/obj/item/clothing/head/helmet/biker/football = 1))
 
 /obj/random/cloth/bikehelms/low_chance
 	name = "low chance random biker helmet"
