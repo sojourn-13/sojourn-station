@@ -22,7 +22,7 @@
 	var/list/name_pool = list()
 
 	var/markup = WHOLESALE_GOODS
-	var/markdown = 0.95				 // Default markdown is 20% - SoJ edit they get less markdown. Editted by Ali for testing to 5%.
+	var/markdown = 0.8				 // Default markdown is 20% - SoJ edit they get less markdown.
 	var/favour_purchase_ratio = 0.25  // 4 credits = 1 favour
 
 
