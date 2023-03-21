@@ -21,6 +21,22 @@
 	sort_category = "Faction: Artificer"
 	slot = slot_glasses
 
+/datum/gear/factionartificer/guild_gasmask
+	display_name = "Artificer's industrial gas mask"
+	allowed_roles = list(JOBS_ENGINEERING)
+	path = /obj/item/clothing/mask/gas/artificer
+	sort_category = "Faction: Artificer"
+	slot = slot_wear_mask
+	cost = 2
+
+/datum/gear/factionartificer/guild_rebreather
+	display_name = "Artificer's rebreather"
+	allowed_roles = list(JOBS_ENGINEERING)
+	path = /obj/item/clothing/mask/gas/guild_rebreather
+	sort_category = "Faction: Artificer"
+	slot = slot_wear_mask
+	cost = 2
+
 /datum/gear/factionartificer/normal_skirt
 	display_name = "plain skirt, artificer"
 	path = /obj/item/clothing/under/rank/engineer/skirt
@@ -38,6 +54,13 @@
 /datum/gear/factionartificer/jumpsuit_padded
 	display_name = "padded jumpsuit, artificer"
 	path = /obj/item/clothing/under/rank/engineer/padded
+	allowed_roles = list("Guild Master","Guild Adept")
+	slot = slot_w_uniform
+	sort_category = "Faction: Artificer"
+
+/datum/gear/factionartificer/jumpsuit_alt
+	display_name = "Artificer's orange uniform"
+	path = /obj/item/clothing/under/rank/engineer_alt
 	allowed_roles = list("Guild Master","Guild Adept")
 	slot = slot_w_uniform
 	sort_category = "Faction: Artificer"
@@ -85,7 +108,7 @@
 	sort_category = "Faction: Artificer"
 
 /datum/gear/factionartificer/emeregencyA
-	display_name = "Emeregency suit, Adepts"
+	display_name = "Emergency suit, Adepts"
 	path = /obj/item/clothing/under/rank/engineer/emergencyA
 	allowed_roles = list("Guild Master","Guild Adept")
 	slot = slot_w_uniform

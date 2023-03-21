@@ -69,6 +69,48 @@
 		rad = 10
 	)
 
+/obj/item/clothing/under/rank/engineer_alt
+	name = "adept's orange uniform"
+	desc = "An Artificer Adept uniform featuring a white shirt with orange sleeves and pants. It has minor radiation shielding."
+	icon_state = "adept_alt" // Sprites by Ezoken/Dromkii
+	item_state = "engi_suit"
+	armor_list = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 10
+	)
+
+/obj/item/clothing/under/rank/engineer_alt/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Long sleeves"] = ""
+	options["Rolled sleeves"] = "_rolled"
+	options["Shirt down"] = "_pants"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You decided to wear your uniform in the [choice] style.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/under/rank/engineer/skirt/alt
 	desc = "A yellow engineering skirt worn by Guild Adepts. It has minor radiation shielding and some decorative padding."
 	name = "adept's padded skirt"
