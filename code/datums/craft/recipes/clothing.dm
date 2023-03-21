@@ -527,7 +527,6 @@
 		list(/obj/item/clothing/gloves/thick/swat, 1, "time" = 30),
 		list(QUALITY_CUTTING, 15, 30),
 		list(/obj/item/clothing/gloves/insulated, 1, "time" = 30),
-		list(/obj/item/clothing/gloves/insulated, 1, "time" = 30),
 		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC), //So if we use buget we have a reason to think its really shock proof
 		list(QUALITY_WELDING, 10, "time" = 30), //melt down things
