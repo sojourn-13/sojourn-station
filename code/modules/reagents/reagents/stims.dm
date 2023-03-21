@@ -608,7 +608,6 @@
 			//Stablizating
 			L.heal_organ_damage(30, 30)
 			L.adjustOxyLoss(-50)
-			L.adjustToxLoss(-50)
 
 			L.emote("gasp")
 			L.Weaken(rand(10,25))

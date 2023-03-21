@@ -89,7 +89,6 @@
 					damage_healed = martyr.damage_healed / get_dist(src, H)
 					H.adjustFireLoss(-damage_healed)
 					H.adjustBruteLoss(-damage_healed)
-					H.adjustToxLoss(-damage_healed)
 					to_chat(H, SPAN_DANGER("You are get healed by radiance!"))
 
 			qdel(martyr)

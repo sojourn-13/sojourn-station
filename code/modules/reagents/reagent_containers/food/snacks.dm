@@ -154,7 +154,6 @@
 				if(9)
 					if(eater.stats)
 						var/mob/living/carbon/M = eater
-						M.adjustToxLoss(-((8 + (M.getToxLoss() * 0.1)) * 1))
 						M.heal_organ_damage(14, 14)
 
 

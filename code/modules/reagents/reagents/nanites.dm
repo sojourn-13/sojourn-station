@@ -26,7 +26,7 @@
 		B.remove_self(volume * NANOBOTS_BLOOD_DRAIN)
 		if(M.species.reagent_tag == IS_CHTMANT)
 			B.remove_self(volume * NANOBOTS_HEAVY_BLOOD_DRAIN) //If we are a Chtmant we lose more
-			M.adjustToxLoss(0.1) //We also take toxin damage
+			M.add_chemical_effect(CE_TOXIN, 0.1) //We also take toxin damage
 
 /datum/reagent/nanites/proc/will_occur(mob/living/carbon/M, alien, var/location)
 	if(location == CHEM_BLOOD)
@@ -148,7 +148,7 @@
 		M.add_chemical_effect(CE_TOXIN, -((1 + (M.chem_effects[CE_TOXIN] * 0.03)) * effect_multiplier))
 		M.adjustOxyLoss(-(1 + (M.getOxyLoss() * 0.03)) * effect_multiplier)
 	if(!M.species.reagent_tag == IS_CHTMANT) //If we are a Chtmant we dont heal are toxloss from nanites
-		M.adjustToxLoss(-((1 + (M.getToxLoss() * 0.03)) * effect_multiplier))
+		M.add_chemical_effect(CE_TOXIN, -((1 + (M.chem_effects[CE_TOXIN] * 0.03)) * effect_multiplier))
 
 
 /*Oxyrush - Removes oxygen damage from the target*/

@@ -30,7 +30,6 @@
 	if(pay_power_cost(psi_point_cost))
 		if(!owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
 			owner.nutrition = 400
-			owner.adjustToxLoss(1)
 			owner.drip_blood(54)
 		else
 			owner.nutrition = 400

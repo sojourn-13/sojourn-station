@@ -104,7 +104,6 @@
 		H.adjustBruteLoss(-heal_rate)
 		H.adjustFireLoss(-heal_rate)
 		H.adjustOxyLoss(-heal_rate)
-		H.adjustToxLoss(-heal_rate)
 		if (prob(5))
 			to_chat(H, "<span class='alium'>You feel a soothing sensation come over you...</span>")
 		return 1
