@@ -104,6 +104,8 @@
 				return 0
 			else
 				var/damage_received = CLAMP(damage * (CLAMP(100-user.stats.getStat(STAT_TGH)/2,0,100) / 100) - user.stats.getStat(STAT_TGH)/5,1,100)
+				if(damage_recieved <= 0)
+					damage_received = 1 //Alawys small amount of damage
 				if(istype(attacker, /mob/living/carbon/superior_animal/roach/))
 					adjustShieldDurability(-(damage_received/6))
 				else if(istype(attacker, /mob/living/carbon/superior_animal/giant_spider/))
