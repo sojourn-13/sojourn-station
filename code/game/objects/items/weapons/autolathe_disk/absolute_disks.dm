@@ -34,7 +34,6 @@
 		/datum/design/bioprinter/belt/security/neotheology,
 		/datum/design/bioprinter/nt_clothes/church_uniform,
 		/datum/design/bioprinter/nt_clothes/acolyte_uniform,
-		/datum/design/bioprinter/nt_clothes/sports_uniform,
 		/datum/design/bioprinter/nt_clothes/sports_jacket,
 		/datum/design/bioprinter/sling,
 		/datum/design/bioprinter/botanic_leather,

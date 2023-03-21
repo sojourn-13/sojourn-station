@@ -169,10 +169,6 @@
 	name = "Vector Garment"
 	build_path = /obj/item/clothing/under/rank/acolyte
 
-/datum/design/bioprinter/nt_clothes/sports_uniform
-	name = "Sport Clothes"
-	build_path = /obj/item/clothing/under/rank/church/sport
-
 /datum/design/bioprinter/nt_clothes/church_uniform
 	name = "Church Garment"
 	build_path = /obj/item/clothing/under/rank/church

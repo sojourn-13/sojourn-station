@@ -147,7 +147,6 @@
 				/obj/item/clothing/under/suit_jacket/blazer = 5,
 				/obj/item/clothing/under/pj/blue = 5,
 				/obj/item/clothing/under/color/brown = 5,
-				/obj/item/clothing/under/rank/captain/formal = 2,
 				/obj/item/clothing/under/color/grey = 5,
 				/obj/item/clothing/under/color/grey = 5,
 				/obj/item/clothing/under/color/red = 5,

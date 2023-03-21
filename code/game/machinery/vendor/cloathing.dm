@@ -521,8 +521,6 @@
 				/obj/item/clothing/mask/costume/kinky/sexy_clown = 5,
 				/obj/item/clothing/mask/costume/kinky/sexy_mime = 5,
 				/obj/item/clothing/suit/storage/toggle/labcoat/poofy = 3,
-				/obj/item/clothing/under/rank/engineer/skirt = 5,
-				/obj/item/clothing/under/rank/engineer/skirt/alt = 5,
 				/obj/item/clothing/mask/muzzle = 5,
 				/obj/item/clothing/glasses/blindfold = 5,
 				/obj/item/handcuffs/fuzzy = 5,
@@ -559,8 +557,6 @@
 				/obj/item/clothing/mask/costume/kinky/sexy_clown = 100,
 				/obj/item/clothing/mask/costume/kinky/sexy_mime = 100,
 				/obj/item/clothing/suit/storage/toggle/labcoat/poofy = 200,
-				/obj/item/clothing/under/rank/engineer/skirt = 125, //has rad shielding
-				/obj/item/clothing/under/rank/engineer/skirt/alt = 125,
 				/obj/item/clothing/mask/muzzle = 100,
 				/obj/item/clothing/glasses/blindfold = 100,
 				/obj/item/handcuffs/fuzzy = 100,
