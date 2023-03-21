@@ -153,7 +153,7 @@
 	resultvars = list(/obj/item/gun/projectile/automatic/lmg/tk, /obj/item/gun/projectile/automatic/lmg/heroic)
 	gripvars = list(/obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black )
 	mechanismvar = /obj/item/part/gun/mechanism/machinegun
-	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/lrifle)
+	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/lrifle)
 
 /obj/item/gun/projectile/automatic/lmg/tk/update_icon()
 //	..() We are rather different than other guns and lmgs.
