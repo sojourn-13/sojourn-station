@@ -99571,6 +99571,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/roach/golden/blattin,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/foyer)
 "wxb" = (
