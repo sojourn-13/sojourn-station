@@ -1500,13 +1500,9 @@
 	pixel_y = 30
 	},
 /obj/structure/table/woodentable,
-/obj/item/ammo_magazine/ammobox/laser_223/ap,
-/obj/item/ammo_magazine/ammobox/laser_223,
-/obj/item/ammo_magazine/rifle_223,
-/obj/item/ammo_magazine/rifle_223,
-/obj/item/ammo_magazine/rifle_223,
-/obj/item/ammo_magazine/ammobox/laser_223/lethal,
-/obj/item/ammo_magazine/ammobox/laser_223,
+/obj/item/ammo_magazine/rifle_75_short/lethal,
+/obj/item/ammo_magazine/rifle_75_short/lethal,
+/obj/item/ammo_magazine/rifle_75_short/lethal,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "Iu" = (
