@@ -90,6 +90,7 @@
 	price_tag = 350
 	siemens_coefficient = 0
 
+
 /obj/item/clothing/gloves/thick/ablasive
 	name = "ablative gloves"
 	desc = "A thick pair of gloves that excel at protecting the wearer against energy projectiles."
@@ -198,6 +199,7 @@
 	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	price_tag = 250
+
 
 /obj/item/clothing/gloves/thick/hunter
 	desc = "Tough, tight fitting and reinforced with bone this pair of leather gloves blend a perfect compromise between durability and comfort thanks to the different materials used."
