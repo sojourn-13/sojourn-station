@@ -8,17 +8,24 @@
 	var/total_burn  = 0
 	var/total_brute = 0
 	var/total_internal = 0
+	var/unhealth_factor = 0
 
 	for(var/obj/item/organ/external/O in organs)
 		if(O.vital)
 			total_brute += O.brute_dam
 			total_burn  += O.burn_dam
 			total_internal += O.severity_internal_wounds
+		else
+			//If your lim is damaged and its not vital its 2 damage to 1 health loss
+			//This is to help simulate shock as well as help balance out issues with imortal beings
+			unhealth_factor += (O.brute_dam * 0.5)
+			unhealth_factor  += (O.burn_dam * 0.5)
+			unhealth_factor += (O.severity_internal_wounds * 0.5)
 
 
 	var/oxy_l = ((species.flags & NO_BREATHE) ? 0 : getOxyLoss())
 
-	health = maxHealth - oxy_l - total_burn - total_brute - total_internal
+	health = maxHealth - oxy_l - total_burn - total_brute - total_internal - unhealth_factor
 	LEGACY_SEND_SIGNAL(src, COMSIG_HUMAN_HEALTH, health)
 	return
 
