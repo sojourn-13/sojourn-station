@@ -24129,7 +24129,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "eMJ" = (
-/obj/machinery/blackshield_teleporter,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)
 "eMK" = (
