@@ -520,6 +520,20 @@
 		list(QUALITY_CUTTING, 15, 30),
 	)
 
+/datum/craft_recipe/clothing/swat_yellow
+	name = "insulated combat gloves"
+	result = /obj/item/clothing/gloves/thick/swat/insulated
+	steps = list(
+		list(/obj/item/clothing/gloves/thick/swat, 1, "time" = 30),
+		list(QUALITY_CUTTING, 15, 30),
+		list(/obj/item/clothing/gloves/insulated, 1, "time" = 30),
+		list(/obj/item/clothing/gloves/insulated, 1, "time" = 30),
+		list(QUALITY_CUTTING, 15, 30),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC), //So if we use buget we have a reason to think its really shock proof
+		list(QUALITY_WELDING, 10, "time" = 30), //melt down things
+		list(QUALITY_HAMMERING, 15, 10) //Harden into shape
+	)
+
 // Nuckle Dusters and melee based things
 
 /datum/craft_recipe/clothing/dusters

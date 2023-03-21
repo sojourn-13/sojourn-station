@@ -63,7 +63,7 @@
 	head = /obj/item/clothing/head/rank/inspector
 	uniform = /obj/item/clothing/under/rank/inspector
 	suit = /obj/item/clothing/suit/storage/rank/insp_trench
-	head = /obj/item/clothing/head/fedora/brown
+	head = /obj/item/clothing/head/investigator
 	gloves = /obj/item/clothing/gloves/stungloves
 	l_pocket = /obj/item/device/flash
 	shoes = /obj/item/clothing/shoes/reinforced

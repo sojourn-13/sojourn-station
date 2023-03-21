@@ -964,6 +964,13 @@
 	body_parts_covered = HEAD|FACE|EARS
 	siemens_coefficient = 1
 
+/obj/item/clothing/head/helmet/marshal
+	name = "marshal helmet"
+	desc = "Standard operator gear. Protects the head from impacts. Painted in marshal colors and features an eye shield"
+	icon_state = "helmet_ironhammer"
+	icon_state = "helmet_ironhammer"
+	armor_list = list(melee = 30, bullet = 30,energy = 25, bomb = 25, bio = 70, rad = 0)
+	body_parts_covered = HEAD|EYES|EARS
 
 /obj/item/clothing/head/helmet/marshal_full
 	name = "marshal full helmet"
@@ -985,6 +992,22 @@
 		set_light(0, 0)
 	update_wear_icon()
 	..()
+
+/obj/item/clothing/head/helmet/bulletproof
+	name = "bulletproof helmet"
+	desc = "A bulletproof security helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
+	icon_state = "bulletproof"
+	body_parts_covered = HEAD | EARS | FACE
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	armor_list = list(
+		melee = 25,
+		bullet = 60,
+		energy = 25,
+		bomb = 10,
+		bio = 0,
+		rad = 0
+	)
+	price_tag = 250
 
 /obj/item/clothing/head/helmet/warrant_officer
 	name = "warrant officer full helmet"
@@ -1017,9 +1040,9 @@
 	flags_inv = HIDEEARS|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	armor_list = list(
-		melee = 75,
-		bullet = 30,
-		energy = 30,
+		melee = 60,
+		bullet = 25,
+		energy = 25,
 		bomb = 25,
 		bio = 0,
 		rad = 0
@@ -1093,8 +1116,8 @@
 	..()
 
 //Nightvision
-/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg
-	name = "marshal tactical ballistic helmet"
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg
+	name = "marshal tactical bulletproof helmet"
 	desc = "A bulletproof security helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
 			Comes with inbuilt nightvision HUD."
 	icon_state = "bulletproof_ironhammer"
@@ -1106,17 +1129,17 @@
 	var/toggle_delay = 2 SECONDS
 	price_tag = 600
 
-/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg/New()
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg/New()
 	..()
 	hud = new(src)
 	hud.canremove = FALSE
 
-/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg/ui_action_click()
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg/ui_action_click()
 	if(..())
 		return TRUE
 	toggle()
 
-/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg/verb/toggle()
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg/verb/toggle()
 	set name = "Toggle Night Vision HUD"
 	set desc = "Allows you to see in the dark."
 	set category = "Object"
@@ -1146,7 +1169,7 @@
 		update_icon()
 	usr.update_action_buttons()
 
-/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg/dropped(usr)
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg/dropped(usr)
 	..()
 	if(hud.loc != src)
 		if(ismob(hud.loc))
@@ -1156,7 +1179,7 @@
 		hud.forceMove(src)
 		update_icon()
 
-/obj/item/clothing/head/armor/bulletproof/ironhammer_nvg/update_icon()
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg/update_icon()
 	if(hud in src)
 		icon_state = "bulletproof_ironhammer"
 		set_light(0, 0)
@@ -1167,29 +1190,30 @@
 	..()
 
 //Thermal
-/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_thermal
 	name = "marshal thermo-nightvision helmet"
 	desc = "A bulletproof security helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
 			Comes with inbuilt thermal imaging HUD."
 	icon_state = "bulletproof_ironhammer_thermal"
 	body_parts_covered = HEAD|EARS
+	flags_inv = NONE
 	action_button_name = "Toggle Thermal Night Vision HUD"
 	var/last_toggle = 0
 	var/toggle_delay = 2 SECONDS
 	var/obj/item/clothing/glasses/powered/thermal_helmet/hud
 	price_tag = 2000
 
-/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal/New()
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_thermal/New()
 	..()
 	hud = new(src)
 	hud.canremove = FALSE
 
-/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal/ui_action_click()
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_thermal/ui_action_click()
 	if(..())
 		return TRUE
 	toggle()
 
-/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal/verb/toggle()
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_thermal/verb/toggle()
 	set name = "Toggle Thermal Night Vision HUD"
 	set desc = "Allows you to see in the dark."
 	set category = "Object"
@@ -1219,7 +1243,7 @@
 		update_icon()
 	usr.update_action_buttons()
 
-/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal/dropped(usr)
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_thermal/dropped(usr)
 	..()
 	if(hud.loc != src)
 		if(ismob(hud.loc))
@@ -1229,7 +1253,7 @@
 		hud.forceMove(src)
 		update_icon()
 
-/obj/item/clothing/head/armor/bulletproof/ironhammer_thermal/update_icon()
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_thermal/update_icon()
 	if(hud in src)
 		icon_state = "bulletproof_ironhammer_thermal"
 		set_light(0, 0)

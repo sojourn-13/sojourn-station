@@ -260,6 +260,22 @@
 	icon_state = "bane"
 	is_alts = FALSE
 
+/obj/item/clothing/mask/gas/artificer
+	name = "artificer's gas mask"
+	desc = "An industrial gas mask bearing the colors of the artificer's guild."
+	icon_state = "gas_guild" // Sprites by Ezoken/Dromkii
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 60, rad = 80)
+	is_alts = FALSE
+
+/obj/item/clothing/mask/gas/guild_rebreather
+	name = "artificer's rebreather"
+	desc = "An industrial gas mask bearing the colors of the artificer's guild."
+	icon_state = "bane_guild" // Sprites by Ezoken/Dromkii
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 30, rad = 40) // Half coverage, half bonuses.
+	flags_inv = BLOCKFACEHAIR
+	body_parts_covered = FACE
+	is_alts = FALSE
+
 /obj/item/clothing/mask/gas/opifex
 	name = "opifex gas mask"
 	desc = "An archaic gas mask used commonly by opifex to filter out oxygen and other biohazards. They'll slowly die without wearing this, as will any other race that dons this mask."
