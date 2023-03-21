@@ -20,7 +20,6 @@
 	new /obj/item/ammo_magazine/kurtz_50/rubber(src)
 	new /obj/item/ammo_magazine/kurtz_50/rubber(src)
 	new /obj/item/storage/pouch/baton_holster/telebaton(src)
-	new /obj/item/clothing/under/rank/captain/formal(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
 
 /obj/structure/closet/secure_closet/reinforced/hop

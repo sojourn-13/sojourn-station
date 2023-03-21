@@ -93,7 +93,6 @@
 		new /obj/item/storage/backpack/satchel/industrial(src)
 	new /obj/item/storage/toolbox/mechanical(src)
 	new /obj/item/clothing/under/rank/engineer(src)
-	new /obj/item/clothing/under/rank/engineer_alt(src)
 	new /obj/item/clothing/head/hardhat(src)
 	new /obj/item/clothing/head/welding(src)
 	new /obj/item/clothing/gloves/insulated(src)

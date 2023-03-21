@@ -37,34 +37,6 @@
 	slot = slot_wear_mask
 	cost = 2
 
-/datum/gear/factionartificer/normal_skirt
-	display_name = "plain skirt, artificer"
-	path = /obj/item/clothing/under/rank/engineer/skirt
-	allowed_roles = list("Guild Master","Guild Adept")
-	slot = slot_w_uniform
-	sort_category = "Faction: Artificer"
-
-/datum/gear/factionartificer/padded_skirt
-	display_name = "padded skirt, artificer"
-	path = /obj/item/clothing/under/rank/engineer/skirt/alt
-	allowed_roles = list("Guild Master","Guild Adept")
-	slot = slot_w_uniform
-	sort_category = "Faction: Artificer"
-
-/datum/gear/factionartificer/jumpsuit_padded
-	display_name = "padded jumpsuit, artificer"
-	path = /obj/item/clothing/under/rank/engineer/padded
-	allowed_roles = list("Guild Master","Guild Adept")
-	slot = slot_w_uniform
-	sort_category = "Faction: Artificer"
-
-/datum/gear/factionartificer/jumpsuit_alt
-	display_name = "Artificer's orange uniform"
-	path = /obj/item/clothing/under/rank/engineer_alt
-	allowed_roles = list("Guild Master","Guild Adept")
-	slot = slot_w_uniform
-	sort_category = "Faction: Artificer"
-
 /datum/gear/factionartificer/cloaktechnomancer
 	display_name = "cloak, artificer"
 	path = /obj/item/clothing/accessory/job/cape/technomancer
@@ -79,13 +51,6 @@
 	slot = slot_wear_suit
 	sort_category = "Faction: Artificer"
 
-/datum/gear/factionartificer/gm_skirt
-	display_name = "skirt, guild master"
-	path = /obj/item/clothing/under/rank/exultant/skirt
-	allowed_roles = list("Guild Master")
-	slot = slot_w_uniform
-	sort_category = "Faction: Artificer"
-
 /datum/gear/factionartificer/snowsuittechno
 	display_name = "snowsuit, artificer"
 	path = /obj/item/clothing/suit/storage/snowsuit/engineering
@@ -98,18 +63,4 @@
 	path = /obj/item/clothing/shoes/winter/engineering
 	allowed_roles = list("Guild Master","Guild Adept")
 	slot = slot_shoes
-	sort_category = "Faction: Artificer"
-
-/datum/gear/factionartificer/emergencyM
-	display_name = "Emergency suit, Guild Masters"
-	path = /obj/item/clothing/under/rank/engineer/emergencyM
-	allowed_roles = list("Guild Master")
-	slot = slot_w_uniform
-	sort_category = "Faction: Artificer"
-
-/datum/gear/factionartificer/emeregencyA
-	display_name = "Emergency suit, Adepts"
-	path = /obj/item/clothing/under/rank/engineer/emergencyA
-	allowed_roles = list("Guild Master","Guild Adept")
-	slot = slot_w_uniform
 	sort_category = "Faction: Artificer"
