@@ -1132,7 +1132,7 @@
 	action_button_name = "Toggle Thermal Night Vision HUD"
 	var/last_toggle = 0
 	var/toggle_delay = 2 SECONDS
-	var/obj/item/clothing/glasses/powered/thermal_helmet/hud
+	var/obj/item/clothing/glasses/powered/thermal/thermal_helmet/hud
 	price_tag = 2000
 
 /obj/item/clothing/head/helmet/bulletproof/ironhammer_thermal/New()

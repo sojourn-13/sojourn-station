@@ -71,7 +71,7 @@
 	icon_state = "thermalimplants"
 	item_state = "syringe_kit"
 
-/obj/item/clothing/glasses/powered/thermal_helmet
+/obj/item/clothing/glasses/powered/thermal/thermal_helmet
 	name = "thermal imaging goggles"
 	desc = "A pair of thermal goggles stuck to your helmet, has a slot for a medium battery inside."
 	icon_state = "bulletproof_ironhammer_goggles_thermal"
@@ -87,6 +87,6 @@
 
 	tick_cost = 1
 
-/obj/item/clothing/glasses/powered/thermal_helmet/Initialize()
+/obj/item/clothing/glasses/powered/thermal/thermal_helmet/Initialize()
 	. = ..()
 	screenOverlay = global_hud.thermal
