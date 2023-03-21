@@ -80,6 +80,17 @@
 	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	price_tag = 150
 
+/obj/item/clothing/gloves/thick/swat/insulated
+	name = "insulated combat gloves"
+	desc = "A pair of fire and impact-resistant security combat gloves. \
+	These have added insulated gloves sacerficing some of its protection to be better suited to deal with eletrical work under less then ideal cases."
+	icon_state = "combat_yellow"
+	item_state = "combat_yellow"
+	armor_list = list(melee = 15, bullet = 15, energy = 10, bomb = 0, bio = 0, rad = 0)
+	price_tag = 350
+	siemens_coefficient = 0
+
+
 /obj/item/clothing/gloves/thick/ablasive
 	name = "ablative gloves"
 	desc = "A thick pair of gloves that excel at protecting the wearer against energy projectiles."

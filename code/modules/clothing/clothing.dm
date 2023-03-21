@@ -639,6 +639,7 @@ BLIND     // can't see anything
 	blacklisted_allowed = list(
 		/obj/item/tool/knife/psionic_blade,
 		/obj/item/tool/hammer/telekinetic_fist,
+		/obj/item/flame/pyrokinetic_spark,
 		/obj/item/tool/psionic_omnitool,
 		/obj/item/shield/riot/crusader/psionic,
 		/obj/item/gun/kinetic_blaster

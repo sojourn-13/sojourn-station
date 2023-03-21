@@ -1,16 +1,24 @@
 //Updates the mob's health from organs and mob damage variables
 /mob/living/carbon/human/updatehealth()
-
 	if(status_flags & GODMODE)
 		health = maxHealth
 		stat = CONSCIOUS
 		return
 
-	var/brain_damage = getBrainLoss()
-	var/oxygen_level = (species.flags & NO_BREATHE) ? 0 : oxyloss
-	var/lethal_damage = max(brain_damage, oxygen_level)
+	var/total_burn  = 0
+	var/total_brute = 0
+	var/total_internal = 0
 
-	health = maxHealth - lethal_damage
+	for(var/obj/item/organ/external/O in organs)
+		if(O.vital)
+			total_brute += O.brute_dam
+			total_burn  += O.burn_dam
+			total_internal += O.severity_internal_wounds
+
+
+	var/oxy_l = ((species.flags & NO_BREATHE) ? 0 : getOxyLoss())
+
+	health = maxHealth - oxy_l - total_burn - total_brute - total_internal
 	LEGACY_SEND_SIGNAL(src, COMSIG_HUMAN_HEALTH, health)
 	return
 
@@ -167,6 +175,8 @@
 	return ..()
 
 /mob/living/carbon/human/adjustOxyLoss(amount)
+	if(in_stasis && amount > 0)		// Stasis prevents oxy loss
+		return
 	if(species.flags & NO_BREATHE)
 		oxyloss = 0
 	else

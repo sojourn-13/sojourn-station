@@ -70,3 +70,23 @@
 	desc = "A set of implantable lenses designed to augment your vision."
 	icon_state = "thermalimplants"
 	item_state = "syringe_kit"
+
+/obj/item/clothing/glasses/powered/thermal_helmet
+	name = "thermal imaging goggles"
+	desc = "A pair of thermal goggles stuck to your helmet, has a slot for a medium battery inside."
+	icon_state = "bulletproof_ironhammer_goggles_thermal"
+	item_state = null
+	off_state = "bulletproof_ironhammer_goggles_thermal"
+	action_button_name = null
+	toggleable = FALSE
+	darkness_view = 7
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	flags = ABSTRACT
+	suitable_cell = /obj/item/cell/medium
+	spawn_with_cell = FALSE
+
+	tick_cost = 1
+
+/obj/item/clothing/glasses/powered/thermal_helmet/Initialize()
+	. = ..()
+	screenOverlay = global_hud.thermal

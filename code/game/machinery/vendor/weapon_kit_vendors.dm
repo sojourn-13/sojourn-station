@@ -249,7 +249,7 @@
 					"Breacher-hammer Kit" = /obj/item/storage/box/m_kit/breacher,
 					"Operator Kit" = /obj/item/storage/box/m_kit/opshotkit,
 					"Mamba Kit" = /obj/item/storage/box/m_kit/mamba,
-					"Gear Lasgun Kit" = /obj/item/storage/box/m_kit/gear_lasgun)
+					"Gear Laser Carbine Kit" = /obj/item/storage/box/m_kit/gear_lasgun)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
@@ -263,7 +263,7 @@
 					"Spec-Op Kit" = /obj/item/storage/box/m_kit/specop,
 					"State Auto-Shotgun Kit" = /obj/item/storage/box/m_kit/state_auto,
 					"Copperhead Kit" = /obj/item/storage/box/m_kit/copperhead,
-					"Gear Lasgun Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
+					"Gear Laser Carbine Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
 					"Sunrise Las-SMG Kit" = /obj/item/storage/box/m_kit/typewriter)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
@@ -328,10 +328,10 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemArmor(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Standard Plate" = /obj/item/storage/box/m_kit/standard_armor,
-					"Armored Overcoat" = /obj/item/storage/box/m_kit/armored_overcoat,
+					"Riot Armor Kit" = /obj/item/storage/box/m_kit/riot,
 					"Bullet-Proof Armor Kit" = /obj/item/storage/box/m_kit/bullet_proof,
-					"Ablative Armor Kit" = /obj/item/storage/box/m_kit/laser_armor,
-					"Riot Armor Kit" = /obj/item/storage/box/m_kit/riot)
+					"Ablative Armor Kit" = /obj/item/storage/box/m_kit/laser_armor
+					)
 	var/selection = items[input(redeemer, "Pick your armor", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)

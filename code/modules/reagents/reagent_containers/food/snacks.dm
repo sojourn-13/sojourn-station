@@ -1459,7 +1459,7 @@
 
 /obj/item/reagent_containers/food/snacks/icecream
 	name = "icecream"
-	desc = "A luxurious yet simple iced cream, the most refreshing dessert after a trip through the humid Amethian jungle."
+	desc = "A luxurious yet simple iced cream, the most refreshing dessert after a trip through the humid Amethian forest."
 	icon_state = "vanillaicecream"
 	trash = /obj/item/trash/icecreambowl
 	bitesize = 3
