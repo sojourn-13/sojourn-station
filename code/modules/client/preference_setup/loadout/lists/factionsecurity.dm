@@ -6,6 +6,18 @@
 	sort_category = "Faction: Security"
 	cost = 0
 
+/datum/gear/factionsecurity/snowsuitsecurity
+	display_name = "snowsuit, security"
+	path = /obj/item/clothing/suit/storage/snowsuit/security
+	slot = slot_wear_suit
+	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/winterbootssecurity
+	display_name = "winter boots, security"
+	path = /obj/item/clothing/shoes/winter/security
+	slot = slot_shoes
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/ironhammer_wintercoat //it's just a generic marshal plate carrier coat with no added coverage -Dongels
 	display_name = "security armored coat"
 	path = /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat
@@ -76,40 +88,6 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/turtleneck
-	display_name = "marshal turtleneck"
-	path = /obj/item/clothing/under/rank/security/turtleneck
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/juniormarshal
-	display_name = "Junior Marshals uniform"
-	path = /obj/item/clothing/under/rank/security/cadet
-	allowed_roles = list("Marshal Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/jumpskirtoperative
-	display_name = "jumpskirt, operative"
-	path = /obj/item/clothing/under/rank/security/skirt
-	allowed_roles = list("Ranger","Marshal Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/jumpskirtwarden
-	display_name = "jumpskirt, supply specialist"
-	path = /obj/item/clothing/under/rank/warden/skirt
-	allowed_roles = list("Supply Specialist")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/jumpskirtcommander
-	display_name = "jumpskirt, commander"
-	path = /obj/item/clothing/under/rank/ih_commander/skirt
-	allowed_roles = list("Warrant Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
 /datum/gear/factionsecurity/security
 	display_name = "security HUD"
 	path = /obj/item/clothing/glasses/hud/security
@@ -120,29 +98,17 @@
 	path = /obj/item/clothing/glasses/eyepatch/secpatch
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/security_tact
-	display_name = "tactical security HUD"
-	path = /obj/item/clothing/glasses/sechud/tactical
-	sort_category = "Faction: Security"
-	cost = 2 //has flash protection
-
 /datum/gear/factionsecurity/secglasses
 	display_name = "HUD Glasses"
 	path = /obj/item/clothing/glasses/sechud
 	sort_category = "Faction: Security"
 	cost = 2 //has flash protection
 
-/datum/gear/factionsecurity/snowsuitsecurity
-	display_name = "snowsuit, security"
-	path = /obj/item/clothing/suit/storage/snowsuit/security
-	slot = slot_wear_suit
+/datum/gear/factionsecurity/security_tact
+	display_name = "tactical security HUD"
+	path = /obj/item/clothing/glasses/sechud/tactical
 	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/winterbootssecurity
-	display_name = "winter boots, security"
-	path = /obj/item/clothing/shoes/winter/security
-	slot = slot_shoes
-	sort_category = "Faction: Security"
+	cost = 2 //has flash protection
 
 /datum/gear/factionsecurity/armoredcossackcoat
 	display_name = "jaeger hussar coat"

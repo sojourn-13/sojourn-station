@@ -87,15 +87,9 @@
 	allowed_roles = list("Corpsman","Blackshield Trooper")
 	slot = slot_w_uniform
 
-/datum/gear/factionblackshield/jumpskirtmedspec
-	display_name = "jumpskirt, medical specialist"
-	path = /obj/item/clothing/under/rank/medspec/skirt
-	allowed_roles = list("Corpsman")
-	slot = slot_w_uniform
-
 /datum/gear/factionblackshield/fatigueselection
 	display_name = "fatigue selection"
-	path = /obj/item/clothing/under/rank/fatigues/
+	path = /obj/item/clothing/under/rank/fatigues
 	slot = slot_w_uniform
 	flags = GEAR_HAS_TYPE_SELECTION
 
