@@ -35,28 +35,28 @@
 			/obj/machinery/floodlight
 			),
 		"Refined Materials" = list(
-			/obj/item/stack/material/plastic/full = good_data("plastic sheets (x120)", list(4, 5), 720),
-			/obj/item/stack/material/cardboard/full = good_data("cardboard sheets (x120)", list(2, 5), 720),
-			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5), 720),
-			/obj/item/stack/material/plasteel/full = good_data("plasteel sheets (x120)", list(2, 3), 2880),
-			/obj/item/stack/material/wood/full = good_data("wood planks (x120)", list(2, 5), 360),
-			/obj/item/stack/material/glass/full = good_data("glass sheets (x120)", list(2, 5), 720),
-			/obj/item/stack/material/plasma/full = good_data("plasma sheets (x120)", list(1, 2), 3600),
-			/obj/item/stack/material/glass/plasmaglass/full = good_data("borosilicate glass sheets (x120)", list(3, 5), 3600)
+			/obj/item/stack/material/plastic/full = good_data("plastic sheets (x120)", list(4, 5), 360),
+			/obj/item/stack/material/cardboard/full = good_data("cardboard sheets (x120)", list(2, 5), 540),
+			/obj/item/stack/material/steel/full = good_data("steel sheets (x120)", list(3, 5), 360),
+			/obj/item/stack/material/plasteel/full = good_data("plasteel sheets (x120)", list(2, 3), 1680),
+			/obj/item/stack/material/wood/full = good_data("wood planks (x120)", list(2, 5), 180),
+			/obj/item/stack/material/glass/full = good_data("glass sheets (x120)", list(2, 5), 360),
+			/obj/item/stack/material/plasma/full = good_data("plasma sheets (x120)", list(1, 2), 1680),
+			/obj/item/stack/material/glass/plasmaglass/full = good_data("borosilicate glass sheets (x120)", list(3, 5), 1440)
 		)
 	)
 
 	hidden_inventory = list(
 		"Refined Material Stacks" = list(
 			/obj/item/stack/material/iron/full = good_data("iron ingots (x120)", list(1, 2), 360),
-			/obj/item/stack/material/silver/full = good_data("silver ingots (x120)", list(1, 2), 1800),
-			/obj/item/stack/material/gold/full = good_data("gold ingots (x120)", list(1, 2), 3600),
-			/obj/item/stack/material/diamond/full = good_data("diamond sheets (x120)", list(1, 2), 9000),
-			/obj/item/stack/material/platinum/full = good_data("platinum sheets (x120)", list(1, 2), 7200),
-			/obj/item/stack/material/osmium/full = good_data("osmium ingots (x120)", list(1, 21), 4320),
-			/obj/item/stack/material/mhydrogen/full = good_data("metallic hydrogen sheets (x120)", list(1, 2), 10800),
-			/obj/item/stack/material/tritium/full = good_data("tritium ingots (x120)", list(1, 2), 7200),
-			/obj/item/stack/material/uranium/full = good_data("uranium sheets (x120)", list(1, 2), 3600)
+			/obj/item/stack/material/silver/full = good_data("silver ingots (x120)", list(1, 2), 1050),
+			/obj/item/stack/material/gold/full = good_data("gold ingots (x120)", list(1, 2), 2100),
+			/obj/item/stack/material/diamond/full = good_data("diamond sheets (x120)", list(1, 2), 7000),
+			/obj/item/stack/material/platinum/full = good_data("platinum sheets (x120)", list(1, 2), 5350),
+			/obj/item/stack/material/osmium/full = good_data("osmium ingots (x120)", list(1, 21), 2880),
+			/obj/item/stack/material/mhydrogen/full = good_data("metallic hydrogen sheets (x120)", list(1, 2), 3000),
+			/obj/item/stack/material/tritium/full = good_data("tritium ingots (x120)", list(1, 2), 3000),
+			/obj/item/stack/material/uranium/full = good_data("uranium sheets (x120)", list(1, 2), 2100)
 		)
 	)
 
