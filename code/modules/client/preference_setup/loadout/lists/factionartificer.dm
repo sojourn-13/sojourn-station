@@ -8,7 +8,6 @@
 
 /datum/gear/factionartificer/berettechno
 	display_name = "beret, artificer"
-	allowed_roles = list("Guild Master","Guild Adept")
 	path = /obj/item/clothing/head/rank/engineering
 	sort_category = "Faction: Artificer"
 	slot = slot_head
@@ -22,7 +21,7 @@
 	slot = slot_glasses
 
 /datum/gear/factionartificer/guild_gasmask
-	display_name = "Artificer's industrial gas mask"
+	display_name = "Artificer industrial gas mask"
 	allowed_roles = list(JOBS_ENGINEERING)
 	path = /obj/item/clothing/mask/gas/artificer
 	sort_category = "Faction: Artificer"
@@ -30,7 +29,7 @@
 	cost = 2
 
 /datum/gear/factionartificer/guild_rebreather
-	display_name = "Artificer's rebreather"
+	display_name = "Artificer rebreather"
 	allowed_roles = list(JOBS_ENGINEERING)
 	path = /obj/item/clothing/mask/gas/guild_rebreather
 	sort_category = "Faction: Artificer"
