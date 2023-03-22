@@ -68,10 +68,10 @@
 	options["Adept Jumpskirt"] = "artificer_apprentice_skirt"
 	options["Adept Jumpskirt Padded"] = "artificer_jumpskirt_adept"
 
-	options["High Visiablity Jumpsuit"] = "GA uniform" // Sprites by Ezoken/Dromkii
-	options["High Visiablity Two Piece"] = "adept_alt" // Sprites by Ezoken/Dromkii
-	options["High Visiablity Rolled sleeves"] = "adept_alt_rolled" // Sprites by Ezoken/Dromkii
-	options["High Visiablity Shirt down"] = "adept_alt_pants" // Sprites by Ezoken/Dromkii
+	options["High Visiability Jumpsuit"] = "GA uniform" // Sprites by Ezoken/Dromkii
+	options["High Visiability Two Piece"] = "adept_alt" // Sprites by Ezoken/Dromkii
+	options["High Visiability Rolled sleeves"] = "adept_alt_rolled" // Sprites by Ezoken/Dromkii
+	options["High Visiability Shirt down"] = "adept_alt_pants" // Sprites by Ezoken/Dromkii
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
