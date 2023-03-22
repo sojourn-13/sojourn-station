@@ -390,7 +390,6 @@
 		host.adjustFireLoss(-10)
 		host.adjustCloneLoss(-10)
 		host.adjustOxyLoss(-10)
-		host.adjustToxLoss(-10)
 		all_damage = host.getBruteLoss() + host.getFireLoss() + host.getCloneLoss() + host.getOxyLoss() + host.getToxLoss()
 
 	host.stat = UNCONSCIOUS

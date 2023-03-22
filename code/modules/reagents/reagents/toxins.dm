@@ -27,12 +27,6 @@
 			M.sanity.onToxin(src, multi)*/
 		M.add_chemical_effect(CE_TOXIN, strength)
 
-/datum/reagent/toxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	if(ishuman(M))
-		if(M.stats.getPerk(PERK_SNACKIVORE))
-			M.adjustToxLoss(-((0.6 + (M.getToxLoss() * 0.05)) * effect_multiplier))
-
-	return ..()
 
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
@@ -569,7 +563,7 @@
 		M.adjustOxyLoss(-1.5 * effect_multiplier)
 		M.add_chemical_effect(CE_OXYGENATED, 1)
 		holder.remove_reagent("lexorin", 0.2 * effect_multiplier)
-		M.adjustToxLoss(-0.1)
+		M.add_chemical_effect(CE_TOXIN, -0.1)
 		return
 
 /datum/reagent/toxin/diplopterum/withdrawal_act(mob/living/carbon/M)
@@ -644,7 +638,7 @@
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		M.heal_organ_damage(0.6 * effect_multiplier, 0, 5 * effect_multiplier)
 		M.add_chemical_effect(CE_BLOODCLOT, 0.15)
-		M.adjustToxLoss(-0.1)
+		M.add_chemical_effect(CE_TOXIN, -0.1)
 		return
 
 /datum/reagent/toxin/starkellin/withdrawal_act(mob/living/carbon/M)
@@ -675,8 +669,8 @@
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
 		M.adjust_hallucination(-0.9 * effect_multiplier)
-		M.adjustToxLoss(-((0.4 + (M.getToxLoss() * 0.05)) * effect_multiplier))
-		M.add_chemical_effect(CE_ANTITOX, 1)
+		M.add_chemical_effect(CE_TOXIN, 4)
+		M.add_chemical_effect(CE_ANTITOX, 2)
 		holder.remove_reagent("pararein", 0.4 * effect_multiplier)
 		return
 

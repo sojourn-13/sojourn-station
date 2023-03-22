@@ -473,7 +473,7 @@
 	H.adjustOxyLoss(-defib_oxygain())
 
 	if(H.isSynthetic())
-		H.adjustToxLoss(-H.getToxLoss())
+		H.setToxLoss(0)
 
 	H.apply_damage(burn_damage_amt, BURN, BP_TORSO)
 
