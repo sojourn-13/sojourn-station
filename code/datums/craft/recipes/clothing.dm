@@ -24,26 +24,6 @@
 		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
-/datum/craft_recipe/clothing/armorvest_black
-	name = "handmade black armor vest"
-	result = /obj/item/clothing/suit/armor/vest/handmade_black
-	steps = list(
-		list(/obj/item/clothing/suit/storage/hazardvest_black, 1, "time" = 30),
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL),
-		list(/obj/item/stack/cable_coil, 4)
-	)
-
-/datum/craft_recipe/clothing/armorvest_black/full
-	name = "handmade full black armor vest"
-	result = /obj/item/clothing/suit/armor/vest/handmade_black/full
-	steps = list(
-		list(/obj/item/clothing/suit/armor/vest/handmade_black, 1, "time" = 30),
-		list(/obj/item/clothing/under, 1),
-		list(QUALITY_CUTTING, 15, 30),
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(QUALITY_ADHESIVE, 15, 30)
-	)
-
 /datum/craft_recipe/clothing/balaclava
 	name = "balaclava"
 	result = /obj/item/clothing/mask/balaclava
@@ -248,22 +228,10 @@
 ****************************/
 
 /datum/craft_recipe/clothing/fullbodyarmor
-	name = "generic full body armor"
+	name = "full body armor"
 	result = /obj/item/clothing/suit/armor/vest/full
 	steps = list(
 		list(/obj/item/clothing/suit/armor/vest, 1, "time" = 30), //TODO: a better way to do this, every children of armor/vest will be eligible for crafting this one...
-		list(/obj/item/clothing/under, 1),
-		list(QUALITY_CUTTING, 15, 30),
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One sheet per limb
-		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTIC),
-		list(QUALITY_ADHESIVE, 15, 30)
-	)
-
-/datum/craft_recipe/clothing/securityfull
-	name = "full body security armor"
-	result = /obj/item/clothing/suit/armor/vest/security/full
-	steps = list(
-		list(/obj/item/clothing/suit/armor/vest/security, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
 		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One sheet per limb
@@ -282,36 +250,11 @@
 		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
-/datum/craft_recipe/clothing/iambulletproof
-	name = "bulletproof suit"
-	result = /obj/item/clothing/suit/armor/bulletproof/full
-	steps = list(
-		list(/obj/item/clothing/suit/armor/bulletproof/, 1, "time" = 30),
-		list(/obj/item/clothing/under, 1),
-		list(QUALITY_CUTTING, 15, 30),
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
-		list(QUALITY_WELDING, 15, 30),
-		list(QUALITY_ADHESIVE, 15, 30)
-	)
 /datum/craft_recipe/clothing/platecarrier
 	name = "full body plate carrier"
 	result = /obj/item/clothing/suit/armor/platecarrier/full
 	steps = list(
 		list(/obj/item/clothing/suit/armor/platecarrier, 1, "time" = 30),
-		list(/obj/item/clothing/under, 1),
-		list(QUALITY_CUTTING, 15, 30),
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
-		list(QUALITY_WELDING, 15, 30),
-		list(QUALITY_ADHESIVE, 15, 30)
-	)
-
-/datum/craft_recipe/clothing/platecarrier_ms
-	name = "full body marshal plate carrier"
-	result = /obj/item/clothing/suit/armor/platecarrier/ih/full
-	steps = list(
-		list(/obj/item/clothing/suit/armor/platecarrier/ih, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
 		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
@@ -334,7 +277,7 @@
 	)
 
 /datum/craft_recipe/clothing/corpsmenplate
-	name = "Corpsman full body plate carrier"
+	name = "corpsman full body plate carrier"
 	result = /obj/item/clothing/suit/armor/platecarrier/corpsman/full
 	steps = list(
 		list(/obj/item/clothing/suit/armor/platecarrier/corpsman, 1, "time" = 30),
@@ -346,67 +289,27 @@
 		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
-/datum/craft_recipe/clothing/doomguy // Closest you'll get next to a SCAF suit
-	name = "full body green plate carrier"
-	result = /obj/item/clothing/suit/armor/platecarrier/green/full
+/datum/craft_recipe/clothing/iambulletproof
+	name = "bulletproof suit"
+	result = /obj/item/clothing/suit/armor/bulletproof/full
 	steps = list(
-		list(/obj/item/clothing/suit/armor/platecarrier/green, 1, "time" = 30),
+		list(/obj/item/clothing/suit/armor/bulletproof/, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
 		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
-		list(QUALITY_WELDING, 15, 30),
-		list(QUALITY_ADHESIVE, 15, 30)
-	)
-
-/datum/craft_recipe/clothing/afghan // Just don't tell mom...
-	name = "full body tan plate carrier"
-	result = /obj/item/clothing/suit/armor/platecarrier/tan/full
-	steps = list(
-		list(/obj/item/clothing/suit/armor/platecarrier/tan, 1, "time" = 30),
-		list(/obj/item/clothing/under, 1),
-		list(QUALITY_CUTTING, 15, 30),
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
 		list(QUALITY_WELDING, 15, 30),
 		list(QUALITY_ADHESIVE, 15, 30)
 	)
 
 /datum/craft_recipe/clothing/fullmetalflaket
 	name = "full body flak vest"
-	result = /obj/item/clothing/suit/armor/flackvest/full
+	result = /obj/item/clothing/suit/armor/flakvest/full
 	steps = list(
-		list(/obj/item/clothing/suit/armor/flackvest, 1, "time" = 30),
+		list(/obj/item/clothing/suit/armor/flakvest, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
 		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
-		list(QUALITY_WELDING, 15, 30),
-		list(QUALITY_ADHESIVE, 15, 30)
-	)
-
-/datum/craft_recipe/clothing/fullmetalflaket_tan
-	name = "full body tan flak vest"
-	result = /obj/item/clothing/suit/armor/flackvest/tan/full
-	steps = list(
-		list(/obj/item/clothing/suit/armor/flackvest/tan, 1, "time" = 30),
-		list(/obj/item/clothing/under, 1),
-		list(QUALITY_CUTTING, 15, 30),
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
-		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
-		list(QUALITY_WELDING, 15, 30),
-		list(QUALITY_ADHESIVE, 15, 30)
-	)
-
-/datum/craft_recipe/clothing/flakgreen
-	name = "full body green flak vest"
-	result = /obj/item/clothing/suit/armor/flackvest/green/full
-	steps = list(
-		list(/obj/item/clothing/suit/armor/flackvest, 1, "time" = 30),
-		list(/obj/item/clothing/under, 1),
-		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL),
 		list(QUALITY_WELDING, 15, 30),
@@ -415,9 +318,9 @@
 
 /datum/craft_recipe/clothing/flak_bs
 	name = "blackshield full flak vest"
-	result = /obj/item/clothing/suit/armor/flackvest/militia/full
+	result = /obj/item/clothing/suit/armor/flakvest/militia/full
 	steps = list(
-		list(/obj/item/clothing/suit/armor/flackvest/militia, 1, "time" = 30),
+		list(/obj/item/clothing/suit/armor/flakvest/militia, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
 		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL), // One metal per limb
@@ -428,9 +331,9 @@
 
 /datum/craft_recipe/clothing/commanderflak
 	name = "blackshield commander's full flak vest"
-	result = /obj/item/clothing/suit/armor/flackvest/commander/full
+	result = /obj/item/clothing/suit/armor/flakvest/commander/full
 	steps = list(
-		list(/obj/item/clothing/suit/armor/flackvest/commander, 1, "time" = 30),
+		list(/obj/item/clothing/suit/armor/flakvest/commander, 1, "time" = 30),
 		list(/obj/item/clothing/under, 1),
 		list(QUALITY_CUTTING, 15, 30),
 		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL),
@@ -439,7 +342,7 @@
 		list(QUALITY_ADHESIVE, 15, 30)
 	)
 /datum/craft_recipe/clothing/woplate
-	name = "Warrant Officer's full advanced plate carrier"
+	name = "warrant officer's full advanced plate carrier"
 	result =  /obj/item/clothing/suit/armor/platecarrier/hos/full
 	steps = list(
 		list(/obj/item/clothing/suit/armor/platecarrier/hos, 1, "time" = 30),

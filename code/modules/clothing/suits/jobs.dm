@@ -270,15 +270,29 @@
 	body_parts_covered = UPPER_TORSO
 	price_tag = 50
 
-/obj/item/clothing/suit/storage/hazardvest_black
-	name = "black hazard vest"
-	desc = "A high-visibility vest used in work zones. This one is in stylish black."
-	icon_state = "hazard_black"
-	item_state = "hazard_nlack"
-	blood_overlay_type = "armor"
-	extra_allowed = list(/obj/item/tool)
-	body_parts_covered = UPPER_TORSO
-	price_tag = 50
+/obj/item/clothing/suit/storage/hazardvest/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Orange"] = "hazard"
+	options["Black"] =  "hazard_black"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 //Roboticist
 /obj/item/clothing/suit/storage/rank/robotech_jacket
