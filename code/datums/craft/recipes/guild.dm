@@ -497,7 +497,7 @@
 
 /datum/craft_recipe/guild/swat_yellow
 	name = "Artificers insulated gloves"
-	result = /obj/item/clothing/gloves/dusters/insulated_guild
+	result = /obj/item/clothing/gloves/insulated/guild
 	steps = list(
 		list(/obj/item/clothing/gloves/thick, 1, "time" = 15),
 		list(QUALITY_CUTTING, 15, 10),
