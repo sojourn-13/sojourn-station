@@ -46,17 +46,17 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/part/mechanism/pistol,
 		/datum/design/autolathe/part/mechanism/revolver,
 		/datum/design/autolathe/part/mechanism/shotgun,
-		/datum/design/autolathe/part/mechanism/autorifle = 2,
+		/datum/design/autolathe/part/mechanism/autorifle = 1,
 		/datum/design/autolathe/part/mechanism/smg,
-		/datum/design/autolathe/part/mechanism/machinegun = 2,
+		/datum/design/autolathe/part/mechanism/machinegun = 1,
 		/datum/design/autolathe/part/barrel/pistol,
 		/datum/design/autolathe/part/barrel/magnum,
-		/datum/design/autolathe/part/barrel/kurtz = 2,
-		/datum/design/autolathe/part/barrel/carbine = 2,
-		/datum/design/autolathe/part/barrel/rifle = 2,
-		/datum/design/autolathe/part/barrel/heavy = 2,
+		/datum/design/autolathe/part/barrel/kurtz = 1,
+		/datum/design/autolathe/part/barrel/carbine = 1,
+		/datum/design/autolathe/part/barrel/rifle = 1,
+		/datum/design/autolathe/part/barrel/heavy = 1,
 		/datum/design/autolathe/part/barrel/shotgun,
-		/datum/design/autolathe/part/barrel/amr = 4,
+		/datum/design/autolathe/part/barrel/amr = 5,
 	)
 
 // Bootleg-gun production stuff. Found in loot-piles, can be bought by LSS for a slightly inflated price.
@@ -133,5 +133,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/gun_frame/mamba,
 		/datum/design/autolathe/gun_frame/specop,
 		/datum/design/autolathe/gun_frame/dp,
-		/datum/design/autolathe/gun_frame/opshot
+		/datum/design/autolathe/gun_frame/opshot,
+		/datum/design/autolathe/gun_frame/takeshi,
+		/datum/design/autolathe/gun_frame/omni
 	)

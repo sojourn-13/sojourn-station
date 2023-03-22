@@ -3345,6 +3345,7 @@
 /obj/structure/table/rack/shelf,
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/mechanical,
+/obj/item/circuitboard/diesel,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "iY" = (
@@ -9178,7 +9179,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/mine/hallway)
 "MR" = (
-/obj/machinery/artifact_scanpad,
+/obj/machinery/psionic_harvester,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfour)
 "MT" = (
@@ -9529,10 +9530,6 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/nadezhda/rnd/mixing)
-"VY" = (
-/obj/machinery/artifact_analyser,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/rnd/anomalisolfour)
 "Wh" = (
 /obj/machinery/atmospherics/binary/pump/high_power,
 /turf/simulated/floor/tiled/white/techfloor_grid,
@@ -9604,8 +9601,6 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/mixing)
 "Yj" = (
-/obj/structure/table/standard,
-/obj/item/device/lighting/toggleable/lamp,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfour)
 "Ym" = (
@@ -11492,7 +11487,7 @@ hs
 hs
 hs
 jF
-VY
+Yj
 BR
 Cf
 kG

@@ -224,7 +224,7 @@
 
 /datum/reagent/metal/gold/affect_ingest(var/mob/living/carbon/M, var/alien)
 	if(M.species.reagent_tag == IS_CHTMANT)
-		M.adjustToxLoss(0.01) //Small damage to Chtmants nothing too too lethal
+		M.add_chemical_effect(CE_TOXIN, 0.1) //Small damage to Chtmants nothing too too lethal
 
 	if(M.stats.getPerk(PERK_NANITE_METAL_EATER))
 		M.add_chemical_effect(CE_BLOODCLOT, 0.2)
@@ -240,7 +240,7 @@
 
 /datum/reagent/metal/gold/affect_ingest(var/mob/living/carbon/M, var/alien)
 	if(M.species.reagent_tag == IS_CHTMANT)
-		M.adjustToxLoss(0.01) //Small damage to Chtmants nothing too too lethal
+		M.add_chemical_effect(CE_TOXIN, 0.1) //Small damage to Chtmants nothing too too lethal
 
 	if(M.stats.getPerk(PERK_NANITE_METAL_EATER))
 		M.add_chemical_effect(CE_BLOODCLOT, 0.2)

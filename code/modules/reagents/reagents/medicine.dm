@@ -75,7 +75,7 @@
 
 /datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.heal_organ_damage(9 * removed, 0)
-	M.adjustToxLoss(-3 * removed)
+	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
 
 /datum/reagent/medicine/meralyne
 	name = "Meralyne"
@@ -161,7 +161,7 @@
 	nerve_system_accumulations = -10
 
 /datum/reagent/medicine/carthatoline/affect_blood(var/mob/living/carbon/M, var/alien, effect_multiplier, var/removed = REM)
-	M.adjustToxLoss(-6 * removed)
+	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
@@ -215,8 +215,10 @@
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		return
 	M.adjustOxyLoss(-1.5 * effect_multiplier)
-	M.add_chemical_effect(CE_OXYGENATED, 1)
 	holder.remove_reagent("lexorin", 0.2 * effect_multiplier)
+	var/ce_to_add = 1 - M.chem_effects[CE_OXYGENATED]
+	if(ce_to_add > 0)
+		M.add_chemical_effect(CE_OXYGENATED, ce_to_add)
 
 /datum/reagent/medicine/dexalinp
 	name = "Dexalin Plus"
@@ -231,8 +233,10 @@
 
 /datum/reagent/medicine/dexalinp/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
 	M.adjustOxyLoss(-30 * effect_multiplier)
-	M.add_chemical_effect(CE_OXYGENATED, 2)
 	holder.remove_reagent("lexorin", 0.3 * effect_multiplier)
+	var/ce_to_add = 2 - M.chem_effects[CE_OXYGENATED]
+	if(ce_to_add > 0)
+		M.add_chemical_effect(CE_OXYGENATED, ce_to_add)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		//G for GUNS
@@ -1258,13 +1262,13 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/tangu_extract/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustOxyLoss(-1.2 * effect_multiplier)
 	M.heal_organ_damage(0.6 * effect_multiplier, 0.6 * effect_multiplier)
-	M.adjustToxLoss(-0.6 * effect_multiplier)
+	M.add_chemical_effect(CE_TOXIN, -0.6 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.2)
 	M.adjustHalLoss(-1)
 
 /datum/reagent/medicine/tangu_extract/overdose(var/mob/living/carbon/M, var/alien)
 	. = ..()
-	M.adjustToxLoss(5)
+	M.add_chemical_effect(CE_TOXIN, 5)
 	M.adjustBrainLoss(1)
 	if(M.losebreath < 15)
 		M.losebreath++

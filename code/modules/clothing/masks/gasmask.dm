@@ -260,6 +260,22 @@
 	icon_state = "bane"
 	is_alts = FALSE
 
+/obj/item/clothing/mask/gas/artificer
+	name = "artificer's gas mask"
+	desc = "An industrial gas mask bearing the colors of the artificer's guild."
+	icon_state = "gas_guild" // Sprites by Ezoken/Dromkii
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 60, rad = 80)
+	is_alts = FALSE
+
+/obj/item/clothing/mask/gas/guild_rebreather
+	name = "artificer's rebreather"
+	desc = "An industrial gas mask bearing the colors of the artificer's guild."
+	icon_state = "bane_guild" // Sprites by Ezoken/Dromkii
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 30, rad = 40) // Half coverage, half bonuses.
+	flags_inv = BLOCKFACEHAIR
+	body_parts_covered = FACE
+	is_alts = FALSE
+
 /obj/item/clothing/mask/gas/opifex
 	name = "opifex gas mask"
 	desc = "An archaic gas mask used commonly by opifex to filter out oxygen and other biohazards. They'll slowly die without wearing this, as will any other race that dons this mask."
@@ -321,3 +337,33 @@
 	filtered.update_values()
 
 	return filtered
+
+/obj/item/clothing/mask/gas/bigguy/sleekguy
+	name = "sleek grey rebreather"
+	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user." // take that Lonestar, no longer will you have a monopoly on cool facewear -Mus
+	icon_state = "srebreath"
+
+/obj/item/clothing/mask/gas/bigguy/sleekblueguy
+	name = "sleek blue rebreather"
+	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one is blue and has a Soteria Medical marking"
+	icon_state = "srebreath_blue"
+
+/obj/item/clothing/mask/gas/bigguy/sleekgoldguy
+	name = "sleek gold rebreather"
+	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one is gold and has a Lonestar marking."
+	icon_state = "srebreath_gold"
+
+/obj/item/clothing/mask/gas/bigguy/sleekorangeguy
+	name = "sleek orange rebreather"
+	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one is orange and has a Guild marking."
+	icon_state = "srebreath_orange"
+
+/obj/item/clothing/mask/gas/bigguy/sleekmarshalguy
+	name = "sleek marshal rebreather"
+	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one carries the Marshal colors and has thicker filters."
+	icon_state = "srebreath_marshal"
+
+/obj/item/clothing/mask/gas/bigguy/sleekpurpleguy
+	name = "sleek purple rebreather"
+	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one is purple and has a Soteria Research marking."
+	icon_state = "srebreath_purple"

@@ -150,10 +150,10 @@
 	desc = "A Takeshi LMG frame. A fine-oiled machine of war and death."
 	icon_state = "frame_mg"
 	result = /obj/item/gun/projectile/automatic/lmg/tk
-	resultvars = list(/obj/item/gun/projectile/automatic/lmg/tk)
-	gripvars = list(/obj/item/part/gun/grip/rubber)
+	resultvars = list(/obj/item/gun/projectile/automatic/lmg/tk, /obj/item/gun/projectile/automatic/lmg/heroic)
+	gripvars = list(/obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black )
 	mechanismvar = /obj/item/part/gun/mechanism/machinegun
-	barrelvars = list(/obj/item/part/gun/barrel/srifle)
+	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/lrifle)
 
 /obj/item/gun/projectile/automatic/lmg/tk/update_icon()
 //	..() We are rather different than other guns and lmgs.
@@ -209,7 +209,7 @@
 		BURST_8_ROUND,
 		FULL_AUTO_600 // Meant to be a supressive fire GPMG
 		)
-	gun_parts = list(/obj/item/part/gun = 3, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
+	gun_parts = list(/obj/item/part/gun/frame/tk = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 // Even more special than the Takeshi so we have to do this all over again instead of being a Takeshi child
 /obj/item/gun/projectile/automatic/lmg/heroic/update_icon()

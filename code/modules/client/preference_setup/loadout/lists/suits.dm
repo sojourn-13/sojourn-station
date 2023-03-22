@@ -49,10 +49,6 @@
 	display_name = "hazard vest"
 	path = /obj/item/clothing/suit/storage/hazardvest
 
-/datum/gear/suit/hazard_vest_black
-	display_name = "black hazard vest"
-	path = /obj/item/clothing/suit/storage/hazardvest_black
-
 /datum/gear/suit/hoodies
 	display_name = "hoodie selection"
 	path = /obj/item/clothing/suit/storage/toggle/hoodie

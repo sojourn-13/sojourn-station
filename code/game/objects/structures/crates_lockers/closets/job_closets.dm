@@ -27,7 +27,6 @@
 	new /obj/item/clothing/accessory/waistcoat(src)
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/shoes/color/black(src)
-	new /obj/item/clothing/under/rank/bartender/skirt(src)
 
 /*
  * Chef
@@ -40,7 +39,7 @@
 /obj/structure/closet/chefcloset/populate_contents()
 	new /obj/item/clothing/under/costume/job/waiter(src)
 	new /obj/item/clothing/under/costume/job/waiter(src)
-	new /obj/item/clothing/under/waiter/skirt(src)
+	new /obj/item/clothing/under/rank/bartender(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/storage/box/mousetraps(src)
@@ -128,7 +127,6 @@
 	new /obj/item/clothing/mask/gas/germanmask(src)
 	new /obj/item/device/radio/headset/church(src)
 	new /obj/item/clothing/gloves/thick(src)
-	new /obj/item/clothing/under/rank/church/sport(src)
 	new /obj/item/clothing/suit/storage/neotheosports(src)
 	new /obj/item/cell/small(src)
 	new /obj/item/tool/knife/dagger/nt(src)

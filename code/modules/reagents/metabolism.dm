@@ -140,7 +140,6 @@
 
 	if(nsa_amount < nsa_threshold*1.5)
 		return
-	parent.adjustToxLoss(1)
 	parent.eye_blurry = max(parent.eye_blurry, 3)
 
 	if(nsa_amount < nsa_threshold*1.6)

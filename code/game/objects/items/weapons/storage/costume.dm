@@ -529,7 +529,7 @@
 /obj/item/storage/box/costume/randoarmy/populate_contents()
 	new /obj/item/clothing/under/pants/black/outlaw(src)
 	new /obj/item/clothing/suit/storage/toggle/leather/denimjacket/outlaw(src)
-	new /obj/item/clothing/head/helmet/biker/football(src)
+	new /obj/item/clothing/head/helmet/biker(src)
 	new /obj/item/clothing/shoes/reinforced(src)
 	new /obj/item/clothing/gloves/dusters(src)
 

@@ -17,7 +17,7 @@
 
 /datum/reagent/toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(strength)
-		var/multi = effect_multiplier
+		//var/multi = effect_multiplier
 		/*if(issmall(M))  // Small bodymass, more effect from lower volume.
 			multi *= 2
 		M.adjustToxLoss(strength * multi)
@@ -25,15 +25,8 @@
 			var/mob/living/carbon/human/H = M
 			H.sanity.onToxin(src, effect_multiplier)
 			M.sanity.onToxin(src, multi)*/
-		M.add_chemical_effect(CE_TOXIN, multi * strength)
+		M.add_chemical_effect(CE_TOXIN, strength)
 
-
-/datum/reagent/toxin/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
-	if(ishuman(M))
-		if(M.stats.getPerk(PERK_SNACKIVORE))
-			M.adjustToxLoss(-((0.6 + (M.getToxLoss() * 0.05)) * effect_multiplier))
-
-	return ..()
 
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
@@ -297,6 +290,7 @@
 	taste_description = "acid"
 	reagent_state = LIQUID
 	color = "#C8A5DC"
+	metabolism = REM * 2.5
 	overdose = REAGENTS_OVERDOSE
 	nerve_system_accumulations = 30
 
@@ -512,7 +506,7 @@
 	addiction_chance = 0.01 //Will STILL likely always be addicting
 	nerve_system_accumulations = 15
 	metabolism = REM * 0.2 //but processes much faster than other toxins
-	strength = 8 //Rather lethal
+	strength = 2
 	heating_point = 523
 	heating_products = list("toxin")
 
@@ -534,14 +528,18 @@
 	nerve_system_accumulations = 15
 	strength = 1
 
+/datum/reagent/toxin/aranecolmin/on_mob_add(mob/living/L)
+	. = ..()
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
+		if(LAZYLEN(C.internal_organs) && C.bloodstr && C.bloodstr.has_reagent("pararein"))
+			var/obj/item/organ/internal/I = pick(C.internal_organs)
+			to_chat(C, "Something burns inside your [I.parent.name]...")
+			create_overdose_wound(I, C, /datum/component/internal_wound/organic/heavy_poisoning, "rot", TRUE)
+
 /datum/reagent/toxin/aranecolmin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.add_chemical_effect(CE_PAINKILLER, 15)
-	if(M.bloodstr && M.bloodstr.has_reagent("pararein"))
-		if(prob(5))
-			to_chat(M, SPAN_WARNING("The blood in your veins burns beneath your flesh!"))
-			if(LAZYLEN(M.internal_organs))	// Check needed because spiders can inject this into roaches
-				create_overdose_wound(pick(M.internal_organs), M, /datum/component/internal_wound/organic/heavy_poisoning, "rot", TRUE)
 
 /datum/reagent/toxin/diplopterum
 	name = "Diplopterum"
@@ -565,7 +563,7 @@
 		M.adjustOxyLoss(-1.5 * effect_multiplier)
 		M.add_chemical_effect(CE_OXYGENATED, 1)
 		holder.remove_reagent("lexorin", 0.2 * effect_multiplier)
-		M.adjustToxLoss(-0.1)
+		M.add_chemical_effect(CE_TOXIN, -0.1)
 		return
 
 /datum/reagent/toxin/diplopterum/withdrawal_act(mob/living/carbon/M)
@@ -640,7 +638,7 @@
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		M.heal_organ_damage(0.6 * effect_multiplier, 0, 5 * effect_multiplier)
 		M.add_chemical_effect(CE_BLOODCLOT, 0.15)
-		M.adjustToxLoss(-0.1)
+		M.add_chemical_effect(CE_TOXIN, -0.1)
 		return
 
 /datum/reagent/toxin/starkellin/withdrawal_act(mob/living/carbon/M)
@@ -671,8 +669,8 @@
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
 		M.adjust_hallucination(-0.9 * effect_multiplier)
-		M.adjustToxLoss(-((0.4 + (M.getToxLoss() * 0.05)) * effect_multiplier))
-		M.add_chemical_effect(CE_ANTITOX, 1)
+		M.add_chemical_effect(CE_TOXIN, 4)
+		M.add_chemical_effect(CE_ANTITOX, 2)
 		holder.remove_reagent("pararein", 0.4 * effect_multiplier)
 		return
 

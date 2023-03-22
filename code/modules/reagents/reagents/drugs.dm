@@ -63,7 +63,7 @@
 	glass_desc = "A suspect looking solo cup of a sleeping agent mixed with soda water to be drinkable."
 
 /datum/reagent/drug/lean/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.adjustToxLoss(2) //a strong toxin when injected
+	M.add_chemical_effect(CE_TOXIN, 2)
 	..()
 
 /datum/reagent/drug/lean/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
@@ -103,7 +103,7 @@
 	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier, TRUE)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "serotrotium")
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "serotrotium")
-	M.adjustToxLoss(-0.5)
+	M.add_chemical_effect(CE_ANTITOX, 0.5)
 	..()
 
 
@@ -125,7 +125,7 @@
 	M.add_chemical_effect(CE_PAINKILLER, 25 * effect_multiplier, TRUE)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "cryptobiolin")
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "cryptobiolin")
-	M.adjustToxLoss(-0.5)
+	M.add_chemical_effect(CE_ANTITOX, 0.5)
 	..()
 
 
@@ -194,7 +194,7 @@
 /datum/reagent/drug/mindbreaker/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "mindbreaker_w")
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "mindbreaker_w")
-	M.adjustToxLoss(-0.1) //Small toxins as your prossesing it out
+	M.add_chemical_effect(CE_ANTITOX, 0.1)
 
 /datum/reagent/drug/mindwipe
 	name = "Mindwipe"
@@ -375,7 +375,7 @@
 	if(prob(5))
 		M.emote("cough")
 	M.adjustOxyLoss(1)
-	M.adjustToxLoss(1)
+	M.add_chemical_effect(CE_TOXIN, 1)
 
 /datum/reagent/drug/hyperzine
 	name = "Hyperzine"

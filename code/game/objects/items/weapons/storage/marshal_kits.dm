@@ -37,8 +37,8 @@
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/gear_lasgun
-	name = "\improper Gear Lasgun Kit"
-	desc = "The standard Marshal box kit containing a modified Cog lasgun that also fires stun beams. For the economic officer."
+	name = "\improper Gear Laser Carbine Kit"
+	desc = "The standard Marshal box kit containing a modified Cog laser carbine that also fires stun beams. For the economic officer."
 
 	populate_contents()
 		new /obj/item/gun/energy/cog/gear(src)
@@ -223,15 +223,15 @@
 // Armor Kits
 /obj/item/storage/box/m_kit/standard_armor
 	name = "Standard Visor Armor Kit"
-	desc = "An standard Marshal armor kit with a plate carrier and visor helmet."
+	desc = "A standard Marshal armor kit with a plate carrier and visor helmet."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/platecarrier/ih(src)
-		new /obj/item/clothing/head/helmet/marshal_full(src)
+		new /obj/item/clothing/suit/armor/vest/ironhammer(src)
+		new /obj/item/clothing/head/helmet/marshal(src)
 
 /obj/item/storage/box/m_kit/armored_overcoat
 	name = "\improper Armored Overcoat Armor Kit"
-	desc = "An armor kit containg a militia overcoat and a ballistic helmet."
+	desc = "An armor kit containg an armored overcoat and a full helmet."
 
 	populate_contents()
 		new /obj/item/clothing/suit/storage/armor/marshal_coat(src)
@@ -240,15 +240,15 @@
 
 /obj/item/storage/box/m_kit/bullet_proof
 	name = "Bullet Proof Kit"
-	desc = "An standard Marshal armor kit containing bullet proof armor and a helmet, perfect for dealing with hostile colonist and infiltrators, but bulky and slowing."
+	desc = "A standard Marshal armor kit containing bullet proof armor and a helmet with tacked on nightvision, perfect for dealing with hostile colonist and infiltrators, but bulky and slowing."
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/bulletproof/ironhammer(src)
-		new /obj/item/clothing/head/helmet/faceshield/altyn/ironhammer(src)
+		new /obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg(src)
 
 /obj/item/storage/box/m_kit/laser_armor
 	name = "Ablative Armor Kit"
-	desc = "An standard Marshal armor kit containing a full ablative marshal branded suit for countering laser weaponry."
+	desc = "A standard Marshal armor kit containing a full ablative marshal branded suit for countering laser weaponry."
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/vest/ablative/ironhammer(src)

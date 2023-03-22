@@ -3,7 +3,7 @@
 #include "map/_Greyson_Field_Office.dmm"
 #include "map/_Prepper_Bunker.dmm"
 #include "map/_River_Forest.dmm"
-#include "map/_River_To_Swamp.dmm"
+#include "map/_River_To_Colony.dmm"
 
 /obj/map_data/nadezda_f
 	name = "Deep Forest"
@@ -55,6 +55,6 @@
 	is_contact_level = FALSE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
-	height = 5
+	height = 3
 	generate_asteroid = TRUE
 	digsites = "WAR"

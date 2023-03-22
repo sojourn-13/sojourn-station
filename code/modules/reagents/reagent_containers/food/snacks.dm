@@ -154,7 +154,6 @@
 				if(9)
 					if(eater.stats)
 						var/mob/living/carbon/M = eater
-						M.adjustToxLoss(-((8 + (M.getToxLoss() * 0.1)) * 1))
 						M.heal_organ_damage(14, 14)
 
 
@@ -1460,7 +1459,7 @@
 
 /obj/item/reagent_containers/food/snacks/icecream
 	name = "icecream"
-	desc = "A luxurious yet simple iced cream, the most refreshing dessert after a trip through the humid Amethian jungle."
+	desc = "A luxurious yet simple iced cream, the most refreshing dessert after a trip through the humid Amethian forest."
 	icon_state = "vanillaicecream"
 	trash = /obj/item/trash/icecreambowl
 	bitesize = 3

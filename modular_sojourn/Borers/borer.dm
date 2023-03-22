@@ -371,7 +371,7 @@
 			to_chat(host, SPAN_NOTICE("Congratulations! You've reached Evolution Level 5, new abilities are now available."))
 		else
 			to_chat(src, SPAN_NOTICE("Congratulations! You've reached Evolution Level 5, new abilities are now available."))
-		produced_reagents |= list("violence", "steady", "bouncer", "prosurgeon", "cherry drops", "machine binding ritual")
+		produced_reagents |= list("violence", "steady", "bouncer", "prosurgeon", "cherry drops", "greaser")
 		abilities_in_host |= list(/mob/living/simple_animal/borer/proc/jumpstart)
 		if(host && !controlling)
 			verbs += /mob/living/simple_animal/borer/proc/jumpstart

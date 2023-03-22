@@ -276,7 +276,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/militia(src)
-		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
+		new /obj/item/clothing/head/helmet/ballistic/militia/full(src)
 
 /obj/item/storage/box/bs_kit/militia_overcoat
 	name = "\improper Armored Overcoat Armor Kit"
@@ -284,15 +284,15 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/storage/armor/militia_overcoat(src)
-		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
+		new /obj/item/clothing/head/helmet/ballistic/militia/full(src)
 
 /obj/item/storage/box/bs_kit/flak_armor
 	name = "\improper Flak Armor Kit"
-	desc = "An armor kit containing a blackshield flack vest and ballistic helmet."
+	desc = "An armor kit containing a blackshield flak vest and an altyn."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/flackvest/militia(src)
-		new /obj/item/clothing/head/helmet/ballistic/shieldfull(src)
+		new /obj/item/clothing/suit/armor/flakvest/militia(src)
+		new /obj/item/clothing/head/helmet/faceshield/altyn/milisha(src)
 
 /obj/item/storage/box/bs_kit/bullet_armor
 	name = "\improper Bullet Armor Kit"
@@ -318,7 +318,7 @@
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/corpsman(src)
-		new /obj/item/clothing/head/helmet/ballistic/shieldfull/corpsman(src)
+		new /obj/item/clothing/head/helmet/ballistic/militia/full/corpsman(src)
 
 /obj/item/gunbox/commanding_officer //credit goes to Hestia both for the idea of loadout gun box and for the code, and sprite.
 	name = "\improper CO equipment kit"

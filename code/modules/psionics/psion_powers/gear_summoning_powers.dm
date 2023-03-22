@@ -32,6 +32,21 @@
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		usr.put_in_active_hand(tool)
 
+/obj/item/organ/internal/psionic_tumor/proc/pyrokinetic_spark()
+	set category = "Psionic powers"
+	set name = "Pyrokinetic Spark (1)"
+	set desc = "Expend a single point of your psi essence to create a tiny flickering fire in your hand that will shine light and ignite combustible materials, can be thrown but will extinguish quickly."
+	psi_point_cost = 1
+
+	if(pay_power_cost(psi_point_cost))
+		var/obj/item/flame/pyrokinetic_spark/flame = new /obj/item/flame/pyrokinetic_spark(src, owner)
+		owner.visible_message(
+			"[owner] raises their arm, electricity crackling before a small flame juts from their hand!",
+			"You feel the rush of electric essence shocking your arm lightly before a small flame forms in your hand!"
+			)
+		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+		usr.put_in_active_hand(flame)
+
 /obj/item/organ/internal/psionic_tumor/proc/psionic_knife()
 	set category = "Psionic powers"
 	set name = "Psychic Blade (1)"
