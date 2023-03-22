@@ -1,7 +1,7 @@
 #include "map/_Deep_Forest.dmm"
 #include "map/_Beast_Cave.dmm"
 #include "map/_Greyson_Field_Office.dmm"
-#include "map/_Prepper_Bunker.dmm"
+//#include "map/_Prepper_Bunker.dmm"
 #include "map/_River_Forest.dmm"
 #include "map/_River_To_Colony.dmm"
 
@@ -29,9 +29,9 @@
 	is_contact_level = FALSE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
-	height = 3
+	height = 2
 
-/obj/map_data/the_vault
+/obj/map_data/the_vault //No longer currently used
 	name = "Bunker Vault"
 	is_player_level = TRUE
 	is_contact_level = FALSE
