@@ -37,9 +37,7 @@
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
 		item_state = options[choice]
-		item_state_slots = list(
-		slot_w_uniform = options[choice]
-		)
+		item_state_slots = null
 		to_chat(M, "You adjust your [choice].")
 		update_icon()
 		update_wear_icon()
@@ -71,9 +69,7 @@
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
 		item_state = options[choice]
-		item_state_slots = list(
-		slot_w_uniform = options[choice]
-		)
+		item_state_slots = null
 		to_chat(M, "You adjust your [choice].")
 		update_icon()
 		update_wear_icon()
@@ -121,9 +117,7 @@
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
 		item_state = options[choice]
-		item_state_slots = list(
-		slot_w_uniform = options[choice]
-		)
+		item_state_slots = null
 		to_chat(M, "You roll your [choice].")
 		update_icon()
 		update_wear_icon()
@@ -154,9 +148,7 @@
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
 		item_state = options[choice]
-		item_state_slots = list(
-		slot_w_uniform = options[choice]
-		)
+		item_state_slots = null
 		to_chat(M, "You roll your [choice].")
 		update_icon()
 		update_wear_icon()
@@ -191,9 +183,7 @@
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
 		item_state = options[choice]
-		item_state_slots = list(
-		slot_w_uniform = options[choice]
-		)
+		item_state_slots = null
 		to_chat(M, "You roll your [choice].")
 		update_icon()
 		update_wear_icon()
@@ -263,9 +253,7 @@
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
 		item_state = options[choice]
-		item_state_slots = list(
-		slot_w_uniform = options[choice]
-		)
+		item_state_slots = null
 		to_chat(M, "You adjust your [choice].")
 		update_icon()
 		update_wear_icon()
