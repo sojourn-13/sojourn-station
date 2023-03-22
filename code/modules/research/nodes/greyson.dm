@@ -14,7 +14,7 @@
 	unlocks_designs = list(/datum/design/research/item/greyson/cog)
 
 /datum/technology/GP_Cog_alt
-	name = "Greyson Positronic Alternative Lasgun Designs"
+	name = "Greyson Positronic Alternative Laser Carbine Designs"
 	desc = "Further changes made to the already successful Cog design."
 	tech_type = RESEARCH_GREYSON
 

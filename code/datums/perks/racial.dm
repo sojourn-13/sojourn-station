@@ -168,7 +168,7 @@
 	var/choice = input(M,"Which language do you know?","Linguist Choice") as null|anything in options
 	if(src && choice)
 		M.add_language(choice)
-		M.stats.removePerk(/datum/perk/linguist_for_humans)
+		M.stats.removePerk(PERK_DIVERSE_CULTURE)
 	anti_cheat = FALSE
 	return TRUE
 

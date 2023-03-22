@@ -481,10 +481,9 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "cr" = (
 /obj/structure/bookcase,
-/obj/item/alchemy/recipe_scroll/lodge,
-/obj/item/alchemy/recipe_scroll/lodge,
-/obj/item/alchemy/recipe_scroll/lodge,
-/obj/item/alchemy/recipe_scroll/lodge,
+/obj/item/book/manual/barman_recipes,
+/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/wiki/chef_recipes,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ct" = (

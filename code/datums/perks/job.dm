@@ -587,7 +587,7 @@
 	var/npc_name = input(M, "Choose your name: ", "Superstar Name", "VIP") as text
 	if(src && npc_name)
 		M.real_name = npc_name
-		M.stats.removePerk(/datum/perk/true_name)
+		M.stats.removePerk(PERK_TRUE_NAME)
 	anti_cheat = FALSE
 	return TRUE
 

@@ -7,7 +7,7 @@
 
 	restricted_to_species = list(FORM_CHTMANT)
 	allow_modifications = FALSE
-	perks = list(/datum/perk/scuttlebug, /datum/perk/repair_goo)
+	perks = list(PERK_SCUTTLEBUG, PERK_REPAIR_GOO)
 
 	stat_modifiers = list(
 		STAT_ROB = 4,
@@ -30,7 +30,7 @@
 	restricted_depts = SECURITY
 
 	allow_modifications = FALSE
-	perks = list(/datum/perk/ichor)
+	perks = list(PERK_ICHOR)
 	racial_implants = (/obj/item/organ_module/active/simple/surgical/cht_mant)
 	restricted_jobs = list(/datum/job/pro)
 
@@ -55,7 +55,7 @@
 	restricted_depts = SCIENCE | ENGINEERING
 	restricted_jobs = list(/datum/job/cmo, /datum/job/rd, /datum/job/smc, /datum/job/swo, /datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/premier, /datum/job/pg, /datum/job/chief_engineer, /datum/job/chaplain, /datum/job/merchant)
 
-	perks = list(/datum/perk/chitinarmor)
+	perks = list(PERK_CHITINARMOR)
 	racial_implants = (/obj/item/organ_module/active/simple/cht_mant_claws)
 
 	stat_modifiers = list(
@@ -76,7 +76,7 @@
 	given you the ability to generate webs like a spider."
 
 	restricted_to_species = list(FORM_CHTMANT)
-	perks = list(/datum/perk/spiderfriend, /datum/perk/webmaker)
+	perks = list(PERK_SPIDER_FRIEND, PERK_WEBMAKER)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,

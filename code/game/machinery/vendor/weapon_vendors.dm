@@ -228,7 +228,6 @@
 					/obj/item/clothing/suit/storage/toggle/absolutehoodie = 5,
 					/obj/item/clothing/suit/greatcoat/absolutecoat= 5,
 					/obj/item/clothing/suit/hooded/absolutecloak = 5,
-					/obj/item/clothing/under/rank/church/sport = 5,
 					/obj/item/clothing/under/rank/church = 5,
 					/obj/item/clothing/under/rank/acolyte = 5,
 					/obj/item/clothing/suit/storage/numericalgarb = 3,
@@ -274,7 +273,6 @@
 					/obj/item/clothing/suit/greatcoat/absolutecoat= 45,
 					/obj/item/clothing/suit/hooded/absolutecloak = 35,
 					/obj/item/clothing/under/rank/acolyte = 25,
-					/obj/item/clothing/under/rank/church/sport = 15,
 					/obj/item/clothing/under/rank/church = 15,
 					/obj/item/clothing/suit/storage/numericalgarb = 65,
 					/obj/item/clothing/head/numerical_hat = 40,
@@ -337,7 +335,7 @@
 
 /obj/machinery/vending/serbomat
 	name = "From Serbia with love"
-	desc = "A old world strange vender for some reason still operational."
+	desc = "A strange old world vending machine, for some reason it is still operational."
 	icon_state = "serbomat"
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
 	products = list(

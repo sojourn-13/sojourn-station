@@ -131,7 +131,7 @@
 	new /obj/item/device/radio/headset/headset_med(src)
 	new /obj/item/taperoll/medical(src)
 	new /obj/item/storage/belt/medical/emt(src)
-	new /obj/item/clothing/suit/storage/hazardvest_black(src)
+	new /obj/item/clothing/suit/storage/hazardvest(src)
 	new /obj/item/tool/baton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/pouch/medical_supply(src)

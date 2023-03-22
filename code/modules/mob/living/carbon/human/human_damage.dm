@@ -1,16 +1,31 @@
 //Updates the mob's health from organs and mob damage variables
 /mob/living/carbon/human/updatehealth()
-
 	if(status_flags & GODMODE)
 		health = maxHealth
 		stat = CONSCIOUS
 		return
 
-	var/brain_damage = getBrainLoss()
-	var/oxygen_level = (species.flags & NO_BREATHE) ? 0 : oxyloss
-	var/lethal_damage = max(brain_damage, oxygen_level)
+	var/total_burn  = 0
+	var/total_brute = 0
+	var/total_internal = 0
+	var/unhealth_factor = 0
 
-	health = maxHealth - lethal_damage
+	for(var/obj/item/organ/external/O in organs)
+		if(O.vital)
+			total_brute += O.brute_dam
+			total_burn  += O.burn_dam
+			total_internal += O.severity_internal_wounds
+		else
+			//If your lim is damaged and its not vital its 2 damage to 1 health loss
+			//This is to help simulate shock as well as help balance out issues with imortal beings
+			unhealth_factor += (O.brute_dam * 0.5)
+			unhealth_factor  += (O.burn_dam * 0.5)
+			unhealth_factor += (O.severity_internal_wounds * 0.5)
+
+
+	var/oxy_l = ((species.flags & NO_BREATHE) ? 0 : getOxyLoss())
+
+	health = maxHealth - oxy_l - total_burn - total_brute - total_internal - unhealth_factor
 	LEGACY_SEND_SIGNAL(src, COMSIG_HUMAN_HEALTH, health)
 	return
 
@@ -167,6 +182,8 @@
 	return ..()
 
 /mob/living/carbon/human/adjustOxyLoss(amount)
+	if(in_stasis && amount > 0)		// Stasis prevents oxy loss
+		return
 	if(species.flags & NO_BREATHE)
 		oxyloss = 0
 	else
@@ -324,7 +341,12 @@ This function restores all organs.
 
 	//visible_message("Hit debug. [damage] | [damagetype] | [def_zone] | [blocked] | [sharp] | [used_weapon]")
 
+	//Order of operations here, we dont want to even try and check synths past this point
+	if(species?.reagent_tag != IS_SYNTHETIC && damagetype == TOX)
+		return
+
 	//Handle other types of damage
+
 	if(damagetype != BRUTE && damagetype != BURN)
 		if(damagetype == HALLOSS && !(species && (species.flags & NO_PAIN)))
 			if(!stat && (damage > 25 && prob(20)) || (damage > 50 && prob(60)))

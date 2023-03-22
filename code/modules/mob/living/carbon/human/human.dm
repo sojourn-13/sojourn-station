@@ -111,10 +111,11 @@
 			stat(null, "Suit charge: [cell_status]")
 
 		var/chemvessel_efficiency = get_organ_efficiency(OP_CHEMICALS)
-		if(chemvessel_efficiency)
+		if(chemvessel_efficiency > 1)
 			stat("Chemical Storage", "[carrion_stored_chemicals]/[round(0.5 * chemvessel_efficiency)]")
+
 		var/maw_efficiency = get_organ_efficiency(OP_MAW)
-		if(maw_efficiency > 0)
+		if(maw_efficiency > 1)
 			stat("Gnawing hunger", "[carrion_hunger]/[round(maw_efficiency/10)]")
 
 		var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
@@ -931,22 +932,8 @@ var/list/rank_prefix = list(\
 
 	..()
 
-/mob/living/carbon/human/proc/is_lung_ruptured()
-	var/obj/item/organ/internal/lungs/L = random_organ_by_process(OP_LUNGS)
-	return L && L.is_bruised()
-
-/mob/living/carbon/human/proc/rupture_lung()
-	var/obj/item/organ/internal/lungs/L = random_organ_by_process(OP_LUNGS)
-
-	if(L && !L.is_bruised())
-		src.custom_pain("You feel a stabbing pain in your chest!", 1)
-		L.bruise()
-
-
-//returns 1 if made bloody, returns 0 otherwise
-
-/mob/living/carbon/human/add_blood(mob/living/carbon/human/M as mob)
-	if (!..())
+/mob/living/carbon/human/add_blood(mob/living/carbon/human/M)
+	if(!..())
 		return 0
 	//if this blood isn't already in the list, add it
 	if(istype(M))
@@ -1027,11 +1014,10 @@ var/list/rank_prefix = list(\
 				if(!MOVING_DELIBERATELY(H))
 					organ.take_damage(3, BRUTE, organ.max_damage, 6.7, TRUE, TRUE)	// When the limb is at 60% of max health, internal organs start taking damage.
 					if(organ.setBleeding())
-						organ.take_damage(3, TOX)
+						organ.take_damage(2, BRUTE) //Extra 2 damage
 					if(species.reagent_tag == IS_CHTMANT)
-						src.hallucination(30, 50)
-						src.adjustHalLoss(3)
-						organ.take_damage(1, TOX)
+						hallucination(30, 50)
+						adjustHalLoss(3)
 
 /mob/living/carbon/human/verb/browse_sanity()
 	set name		= "Show sanity"
@@ -1512,7 +1498,7 @@ var/list/rank_prefix = list(\
 //			output for machines^	^^^^^^^output for people^^^^^^^^^
 
 /mob/living/carbon/human/proc/pulse()
-	if(!(organ_list_by_process(OP_HEART).len))
+	if(stat == DEAD || !(organ_list_by_process(OP_HEART).len))
 		return PULSE_NONE
 	else
 		return pulse

@@ -98,7 +98,7 @@
 			M.adjustNutrition(nutriment_factor * 10)
 			M.adjustOxyLoss(-0.3 * effect_multiplier)
 			M.heal_organ_damage(0.1 * effect_multiplier, 0.1 * effect_multiplier)
-			M.adjustToxLoss(-0.1 * effect_multiplier)
+			M.add_chemical_effect(CE_TOXIN, 1)
 			M.add_chemical_effect(CE_BLOODCLOT, 0.1)
 
 	return ..()
@@ -122,7 +122,7 @@
 
 /datum/reagent/organic/nutriment/honey/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
-	M.adjustToxLoss(-0.05 * effect_multiplier)
+	M.add_chemical_effect(CE_ANTITOX, 0.5)
 
 /datum/reagent/organic/nutriment/flour
 	name = "flour"
@@ -1036,7 +1036,7 @@
 
 /datum/reagent/drink/coffee/freddo_espresso
 	name = "Freddo Espresso"
-	id = "freddp_espresso"
+	id = "freddo_espresso"
 	description = "Espresso with ice cubes poured over ice."
 	taste_description = "cold and refreshing bitter coffee"
 	color = "#664300d3" // rgb: 102, 67, 0
@@ -1168,7 +1168,7 @@
 				M.add_chemical_effect(CE_NOPULSE, 1)
 		M.add_chemical_effect(CE_SPEEDBOOST, 0.6) // Fry_consumes_100_cups_of_coffee.gif
 		M.make_jittery(40) // Except he's not calm!
-		M.adjustToxLoss(0.1) // An alternative to getting irradiated, nobody wants that.
+		M.add_chemical_effect(CE_TOXIN, 0.1) // An alternative to getting irradiated, nobody wants that.
 
 
 
@@ -1817,7 +1817,7 @@
 /datum/reagent/ethanol/ntcahors/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
 	M.adjust_hallucination(-0.9 * effect_multiplier)
-	M.adjustToxLoss(-((0.4 + (M.getToxLoss() * 0.05)) * effect_multiplier))
+	M.add_chemical_effect(CE_TOXIN, -2.5 * effect_multiplier)
 
 // Cocktails
 
@@ -2494,7 +2494,7 @@
 /datum/reagent/ethanol/pwine/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
 	if(dose > 30)
-		M.adjustToxLoss(0.2 * effect_multiplier)
+		M.add_chemical_effect(CE_TOXIN, 0.2 * effect_multiplier)
 	if(dose > 60 && ishuman(M) && prob(5))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/heart/L = H.random_organ_by_process(OP_HEART)
@@ -2770,7 +2770,7 @@
 
 /datum/reagent/ethanol/atomic_vodka/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	if(!M.stats.getTempStat(STAT_TGH, "atomvodka") && M.stats.getPerk(/datum/perk/sommelier))
+	if(!M.stats.getTempStat(STAT_TGH, "atomvodka") && M.stats.getPerk(PERK_SOMELLIER))
 		M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 10 MINUTES, "atomvodka")
 
 /datum/reagent/ethanol/specialwhiskey // Previously unobtainable, bar spawns with a keg full of it, and you can't order more. A luxury drink!
@@ -2952,7 +2952,7 @@
 	..()
 	M.nutrition = max(M.nutrition - 1 * effect_multiplier, 0) //Since it's a digestif it allows you to be less "full" by making you hungry!
 	if(dose > 10)
-		M.adjustToxLoss(0.2 * effect_multiplier) //Toxic! Don't drink alone! May this be a reminder!
+		M.add_chemical_effect(CE_TOXIN, 0.2* effect_multiplier) //Toxic! Don't drink alone! May this be a reminder!
 	if(dose > 60 && ishuman(M) && prob(5))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER) // This will destroy your liver, don't do it!
@@ -3020,6 +3020,7 @@
 	id = "antidepressant"
 	description = "A Bright red cocktail, chill as an empty chimney, yet bright and soothing as a smile. Non-alcoholic. A soul lightener, you can't stay sad at the taste of this."
 	taste_description = "a sweet, smooth mix of fruits and joy"
+	sanity_gain_ingest = 1
 	glass_unique_appearance = TRUE
 	glass_icon_state = "antidepresant"
 	glass_name = "Antidepressant"

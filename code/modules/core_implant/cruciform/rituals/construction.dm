@@ -568,7 +568,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 /datum/nt_blueprint/weapons
 
 /datum/nt_blueprint/weapons/antebellum
-	name = "\"Antebellum\" Blunderbuss lasgun"
+	name = "\"Antebellum\" laser blunderbuss"
 	build_path = /obj/item/gun/energy/plasma/antebellum
 	materials = list(
 		/obj/item/stack/material/plasteel = 10,
@@ -580,7 +580,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	build_time = 3 SECONDS
 
 /datum/nt_blueprint/weapons/carpediem
-	name = "\"Carpediem\" lasgun"
+	name = "\"Carpediem\" laser musket"
 	build_path = /obj/item/gun/energy/carpediem
 	materials = list(
 		/obj/item/stack/material/plasteel = 5,

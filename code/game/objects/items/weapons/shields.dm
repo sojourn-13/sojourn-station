@@ -42,7 +42,7 @@
 	alt_mode_damagetype = HALLOSS
 	alt_mode_sharp = FALSE
 	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
-	alt_mode_toggle = "steadys their shield for wide bashing"
+	alt_mode_toggle = "steadies their shield for wide bashing"
 	alt_mode_lossrate = 0.4
 
 /obj/item/shield/proc/breakShield(mob/user)
@@ -104,7 +104,16 @@
 				return 0
 			else
 				var/damage_received = CLAMP(damage * (CLAMP(100-user.stats.getStat(STAT_TGH)/2,0,100) / 100) - user.stats.getStat(STAT_TGH)/5,1,100)
-				adjustShieldDurability(-damage_received)
+				if(damage_received <= 0)
+					damage_received = 1 //Alawys small amount of damage
+				if(istype(attacker, /mob/living/carbon/superior_animal/roach/))
+					adjustShieldDurability(-(damage_received/6))
+				else if(istype(attacker, /mob/living/carbon/superior_animal/giant_spider/))
+					adjustShieldDurability(-(damage_received/2))
+				else if(istype(attacker, /mob/living/carbon/superior_animal/termite_no_despawn/))
+					adjustShieldDurability(-(damage_received/2))
+				else
+					adjustShieldDurability(-damage_received)
 				defender.adjustHalLoss(damage_received)
 				defender.visible_message(SPAN_DANGER("\The [defender] blocks [attack_text] with \the [src]!"))
 				return 1

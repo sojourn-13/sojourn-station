@@ -8,7 +8,7 @@
 
 	restricted_to_species = list(FORM_AKULA)
 
-	perks = list(/datum/perk/chem_contraband)
+	perks = list(PERK_CHEM_CONTRABAND)
 
 	stat_modifiers = list(
 		STAT_ROB = 10,

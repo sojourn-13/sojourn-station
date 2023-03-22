@@ -9,9 +9,17 @@
 	snacker = TRUE
 	clone_difficulty = CLONE_EASY
 	can_burrow = FALSE
+	faction = "neutral"
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
 	inherent_mutations = list()
+	sanity_damage = 0 //they are peaceful thus not damaging sanity
+
+/mob/living/carbon/superior_animal/roach/golden/blattin
+	name = "Adept Blattin"
+	desc = "Adept Blattin is a golden roach, an special and harmless breed that was made by soteria to be pets and in general help with the trash problem without being a nuisance to the colony. \
+	But this one was adopted by the guild and being called 'Adept Blattin'. \
+	A valuable member of the Artificer's Guild."
 
 /obj/item/roach_egg/gold
 	name = "roach egg"

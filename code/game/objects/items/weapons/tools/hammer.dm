@@ -20,7 +20,7 @@
 	alt_mode_damagetype = HALLOSS
 	alt_mode_sharp = FALSE
 	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
-	alt_mode_toggle = "losses their grip on the handle of their weapon"
+	alt_mode_toggle = "loosens their grip on the handle of their weapon"
 	alt_mode_lossrate = 0.4
 
 

@@ -405,7 +405,7 @@ SUBSYSTEM_DEF(ticker)
 			SSticker.minds |= player.mind
 
 /datum/controller/subsystem/ticker/proc/generate_contracts(count)
-	var/list/candidates = (subtypesof(/datum/antag_contract) - typesof(/datum/antag_contract/excel)- typesof(/datum/antag_contract/blackshield))
+	var/list/candidates = (subtypesof(/datum/antag_contract) - typesof(/datum/antag_contract/excel) - typesof(/datum/antag_contract/blackshield))
 	while(count--)
 		while(candidates.len)
 			var/contract_type = pick(candidates)
@@ -435,6 +435,7 @@ SUBSYSTEM_DEF(ticker)
 			break
 
 ///datum/controller/subsystem/ticker/proc/blackshield_check()
+
 //	addtimer(CALLBACK(src, .proc/blackshield_check), 3 MINUTES)
 
 /datum/controller/subsystem/ticker/proc/generate_excel_contracts(count)

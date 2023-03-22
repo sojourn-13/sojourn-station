@@ -30,6 +30,21 @@
 	permeability_coefficient = 0.05
 	price_tag = 200
 
+/obj/item/clothing/gloves/insulated/guild
+	name = "Artificers insulated gloves"
+	desc = "A pare of insulated gloves woven into a thicker fire restant pare."
+	icon_state = "guild_yellow"
+	item_state = "guild_yellow"
+	armor_list = list(melee = 20, bullet = 15, energy = 15, bomb = 10, bio = 100, rad = 100)
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
+	price_tag = 500
+	cold_protection = ARMS
+	min_cold_protection_temperature = GLOVES_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = ARMS
+	max_heat_protection_temperature = GLOVES_MAX_HEAT_PROTECTION_TEMPERATURE
+
+
 /obj/item/clothing/gloves/insulated/cheap                          //Cheap Chinese Crap
 	desc = "A pair of cheaply-made insulated gloves. Not known for reliability."
 	name = "budget insulated gloves"
@@ -79,6 +94,17 @@
 	item_state = "ihscombat"
 	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	price_tag = 150
+
+/obj/item/clothing/gloves/thick/swat/insulated
+	name = "insulated combat gloves"
+	desc = "A pair of fire and impact-resistant security combat gloves. \
+	These have added insulated gloves sacerficing some of its protection to be better suited to deal with eletrical work under less then ideal cases."
+	icon_state = "combat_yellow"
+	item_state = "combat_yellow"
+	armor_list = list(melee = 15, bullet = 15, energy = 10, bomb = 0, bio = 0, rad = 0)
+	price_tag = 350
+	siemens_coefficient = 0
+
 
 /obj/item/clothing/gloves/thick/ablasive
 	name = "ablative gloves"

@@ -33,7 +33,6 @@
 	new /obj/item/tool/knife/neotritual(src)
 	new /obj/item/clothing/suit/armor/vest/prime(src)
 	new /obj/item/clothing/head/helmet/prime(src)
-	new /obj/item/clothing/under/rank/church/sport(src)
 	new /obj/item/clothing/suit/storage/neotheosports(src)
 	new /obj/item/shield_projector/rectangle/church_personal(src)
 	new /obj/item/gun/matter/holybook/staff(src)

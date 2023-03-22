@@ -187,7 +187,7 @@
 
 							if(!(M.organ_list_by_process(OP_LUNGS).len) || M.losebreath)
 								sound += " and no respiration"
-							else if(M.is_lung_ruptured() || M.getOxyLoss() > 50)
+							else if(M.getOxyLoss() > 50)
 								sound += " and [pick("wheezing","gurgling")] sounds"
 							else
 								sound += " and healthy respiration"
@@ -286,7 +286,7 @@
 
 /obj/item/clothing/accessory/cape/prospie
 	name = "prospector mantle"
-	desc = "A rough mantle of salvaged hydrophobic materials typically worn around one's shoulders. While some may wear it for style, others prefer its use as decent camouflage on the humid amethian jungle."
+	desc = "A rough mantle of salvaged hydrophobic materials typically worn around one's shoulders. While some may wear it for style, others prefer its use as decent camouflage in the humid amethian forest."
 	icon_state = "prospie_cape"
 
 // Head of Departments

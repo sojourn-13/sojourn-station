@@ -289,7 +289,7 @@
 	return pickweight(list(
 				/obj/item/gun/energy/xray = 2,
 				/obj/item/gun/energy/sniperrifle = 2,
-				/obj/item/gun/energy/laser/railgun = 1,
+				/obj/item/gun/energy/laser/railgun/railrifle = 1,
 				/obj/item/gun/energy/laser/railgun/pistol = 1,
 				/obj/item/gun/energy/plasma/auretian = 1,
 				/obj/item/gun/energy/centurio = 2,

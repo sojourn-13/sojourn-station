@@ -54,7 +54,8 @@
 			/obj/item/tool/hatchet,
 			/obj/item/tool/minihoe,
 			/obj/item/device/scanner/plant,
-			/obj/item/clothing/gloves/botanic_leather
+			/obj/item/clothing/gloves/botanic_leather,
+			/obj/machinery/portable_atmospherics/hydroponics
 		),
 		"Custodial Supply" = list(
 			/obj/item/reagent_containers/glass/bucket,
