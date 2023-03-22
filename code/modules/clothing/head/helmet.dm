@@ -1072,7 +1072,7 @@
 		if(user.equip_to_slot_if_possible(hud, slot_glasses) && world.time > last_toggle)
 			to_chat(user, "You flip down [src] HUD goggles with a high-pitched whine.")
 			last_toggle = world.time + toggle_delay
-			hud.toggle(user, TRUE)
+			hud.toggle(user, TRUE)//Turns the goggles on
 			update_icon()
 		else
 			to_chat(user, "You are wearing something which is in the way or trying to flip the googles too fast!")
@@ -1081,7 +1081,7 @@
 			last_toggle = world.time + toggle_delay
 			var/mob/hud_loc = hud.loc
 			hud_loc.drop_from_inventory(hud, src)
-			hud.toggle(user, TRUE)
+			hud.toggle(user, FALSE)//Turns the goggles off so they won't drain power while retracted
 			to_chat(user, "You flip up [src] HUD goggles, turning them off.")
 			hud.forceMove(src)
 		else
@@ -1155,7 +1155,7 @@
 			last_toggle = world.time + toggle_delay
 			var/mob/hud_loc = hud.loc
 			hud_loc.drop_from_inventory(hud, src)
-			hud.toggle(user, TRUE)
+			hud.toggle(user, FALSE)
 			to_chat(user, "You flip up [src] night vision goggles, turning them off.")
 			hud.forceMove(src)
 		else
@@ -1229,7 +1229,7 @@
 			last_toggle = world.time + toggle_delay
 			var/mob/hud_loc = hud.loc
 			hud_loc.drop_from_inventory(hud, src)
-			hud.toggle(user, TRUE)
+			hud.toggle(user, FALSE)
 			to_chat(user, "You flip up [src] thermal imaging goggles, turning them off.")
 			hud.forceMove(src)
 		else
