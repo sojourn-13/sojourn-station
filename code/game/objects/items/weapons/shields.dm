@@ -42,7 +42,7 @@
 	alt_mode_damagetype = HALLOSS
 	alt_mode_sharp = FALSE
 	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
-	alt_mode_toggle = "steadys their shield for wide bashing"
+	alt_mode_toggle = "steadies their shield for wide bashing"
 	alt_mode_lossrate = 0.4
 
 /obj/item/shield/proc/breakShield(mob/user)
