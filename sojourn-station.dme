@@ -459,6 +459,7 @@
 #include "code\datums\outfits\antagonist\mercenary.dm"
 #include "code\datums\outfits\equipment\backpacks.dm"
 #include "code\datums\outfits\jobs\_defines.dm"
+#include "code\datums\outfits\jobs\blackshield.dm"
 #include "code\datums\outfits\jobs\church.dm"
 #include "code\datums\outfits\jobs\civilian.dm"
 #include "code\datums\outfits\jobs\command.dm"

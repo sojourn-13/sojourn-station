@@ -182,6 +182,32 @@
 	desc = "It's a very robust backpack."
 	icon_state = "backpack_security"
 
+/obj/item/storage/backpack/clown
+	name = "Giggles von Honkerton"
+	desc = "It's a backpack made by Honk! Co."
+	icon_state = "backpack_clown"
+
+/obj/item/storage/backpack/leather
+	name = "leather backpack"
+	desc = "A backpack made of leather"
+	icon_state = "backpack_leather"
+
+//Faction-specific backpacks
+/obj/item/storage/backpack/ironhammer
+	name = "operator's backpack"
+	desc = "Done in a complementing shade for security forces, a staple for military contractors everywhere."
+	icon_state = "backpack_ironhammer"
+
+/obj/item/storage/backpack/neotheology
+	name = "cruciform backpack"
+	desc = "For carrying all your holy needs."
+	icon_state = "backpack_neotheology"
+
+/obj/item/storage/backpack/leather/security
+	name = "leather backpack"
+	desc = "A backpack made of leather"
+	icon_state = "backpack_leather_security"
+
 /obj/item/storage/backpack/militia
 	name = "blackshield backpack"
 	desc = "A robust military backpack with crudely added IFF stripes of the Blackshield."
@@ -211,35 +237,9 @@
 		return 1
 
 /obj/item/storage/backpack/corpsman
-	name = "Corpsman backpack"
+	name = "corpsman backpack"
 	desc = "A robust military backpack with medical liverly."
 	icon_state = "backpack_corps"
-
-/obj/item/storage/backpack/clown
-	name = "Giggles von Honkerton"
-	desc = "It's a backpack made by Honk! Co."
-	icon_state = "backpack_clown"
-
-/obj/item/storage/backpack/leather
-	name = "leather backpack"
-	desc = "A backpack made of leather"
-	icon_state = "backpack_leather"
-
-//Faction-specific backpacks
-/obj/item/storage/backpack/ironhammer
-	name = "operator's backpack"
-	desc = "Done in a complementing shade for security forces, a staple for military contractors everywhere."
-	icon_state = "backpack_ironhammer"
-
-/obj/item/storage/backpack/neotheology
-	name = "cruciform backpack"
-	desc = "For carrying all your holy needs."
-	icon_state = "backpack_neotheology"
-
-/obj/item/storage/backpack/leather/security
-	name = "leather backpack"
-	desc = "A backpack made of leather"
-	icon_state = "backpack_leather_security"
 
 //Used by mercenaries
 /obj/item/storage/backpack/military
@@ -305,8 +305,13 @@
 //Faction-specific backsports
 /obj/item/storage/backpack/sport/ironhammer
 	name = "operator's sport backpack"
-	desc = "Done in a complementing shade for Ironhammer Security forces. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
+	desc = "Done in a complementing shade for Nadezhda security forces. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
 	icon_state = "backsport_ironhammer"
+
+/obj/item/storage/backpack/sport/militia
+	name = "operator's sport backpack"
+	desc = "Done in a complementing shade for Nadezhda security forces. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
+	icon_state = "backsport_militia"
 
 /obj/item/storage/backpack/sport/neotheology
 	name = "cruciform sport backpack"
@@ -398,6 +403,11 @@
 	name = "operator's satchel"
 	desc = "Done in a complementing shade for Nadezhda security forces, for the itinerant military contractor."
 	icon_state = "satchel_ironhammer"
+
+/obj/item/storage/backpack/satchel/militia
+	name = "blackshield satchel"
+	desc = "Done in a complementing shade for Nadezhda security forces, for the itinerant military contractor."
+	icon_state = "satchel_militia"
 
 /obj/item/storage/backpack/satchel/neotheology
 	name = "cruciform satchel"

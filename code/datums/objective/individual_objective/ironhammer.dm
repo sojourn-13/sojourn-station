@@ -29,7 +29,7 @@
 */
 /datum/individual_objective/time_to_action
 	name = "Time for Action"
-	req_department = list(DEPARTMENT_SECURITY)
+	req_department = list(DEPARTMENT_SECURITY, DEPARTMENT_BLACKSHIELD)
 	units_requested = 20
 
 /datum/individual_objective/time_to_action/assign()
@@ -98,7 +98,7 @@
 */
 /datum/individual_objective/guard
 	name = "Guard"
-	req_department = list(DEPARTMENT_SECURITY)
+	req_department = list(DEPARTMENT_SECURITY, DEPARTMENT_BLACKSHIELD)
 	var/area/target_area
 
 /datum/individual_objective/guard/assign()

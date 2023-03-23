@@ -19,7 +19,7 @@
 	health_modifier = 25
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
-	outfit_type = /decl/hierarchy/outfit/job/security/smc
+	outfit_type = /decl/hierarchy/outfit/job/blackshield/smc
 
 	access = list(
 		access_security, access_eva, access_sec_doors, access_brig, access_armory, access_medspec,
@@ -80,7 +80,7 @@
 	health_modifier = 20
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
-	outfit_type = /decl/hierarchy/outfit/job/security/serg
+	outfit_type = /decl/hierarchy/outfit/job/blackshield/serg
 
 	access = list(
 		access_security, access_medspec, access_engine, access_mailsorting,
@@ -133,7 +133,7 @@
 	health_modifier = 5
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
-	outfit_type = /decl/hierarchy/outfit/job/security/medspec
+	outfit_type = /decl/hierarchy/outfit/job/blackshield/medspec
 
 	access = list(
 		access_security, access_sec_doors, access_medspec, access_morgue, access_maint_tunnels,
@@ -189,7 +189,7 @@
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
-	outfit_type = /decl/hierarchy/outfit/job/security/troop
+	outfit_type = /decl/hierarchy/outfit/job/blackshield/troop
 
 	perks = list(PERK_BLACKSHIELD_CONDITIONING, PERK_BOLT_REFLECT, PERK_CHEM_CONTRABAND)
 

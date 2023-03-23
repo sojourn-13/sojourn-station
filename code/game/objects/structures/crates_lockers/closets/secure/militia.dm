@@ -148,7 +148,7 @@
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
 	if(prob(35))
-		new /obj/item/storage/backpack/militia(src)
+		new /obj/item/storage/backpack/corpsman(src)
 	else
 		new /obj/item/storage/backpack/military(src)
 
