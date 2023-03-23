@@ -325,6 +325,10 @@
 /obj/random/toolbox,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"hW" = (
+/obj/machinery/power/port_gen/pacman/diesel,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/colony/exposedsun/crashed_shop)
 "hX" = (
 /obj/item/stack/rods/random,
 /obj/structure/reagent_dispensers/fueltank/derelict,
@@ -5869,7 +5873,7 @@ uh
 fp
 Uq
 Uq
-Uq
+hW
 HM
 UA
 fp
