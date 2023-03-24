@@ -75,7 +75,7 @@
 	new /obj/item/storage/belt/medical/(src)
 	new /obj/item/clothing/suit/storage/surgical_apron(src)
 	new /obj/item/clothing/glasses/hud/health(src)
-	new /obj/item/clothing/acessory/stethoscope(src)
+	new /obj/item/clothing/accessory/stethoscope(src)
 
 /obj/structure/closet/secure_closet/personal/paramedic
 	name = "Soteria Field Doctor's locker"
@@ -114,7 +114,7 @@
 	new /obj/item/clothing/suit/storage/hazardvest(src)
 	new /obj/item/storage/pouch/medical_supply(src)
 	new /obj/item/bodybag/cryobag(src)
-	new /obj/item/clothing/acessory/stethoscope(src)
+	new /obj/item/clothing/accessory/stethoscope(src)
 	new /obj/item/clothing/glasses/hud/health(src)
 
 /obj/structure/closet/secure_closet/personal/orderly
