@@ -196,7 +196,10 @@
 			return SM
 
 /datum/stat/proc/changeValue(affect)
-	value = value + affect
+	if(value + affect > STAT_VALUE_MAXIMUM)
+		value = STAT_VALUE_MAXIMUM
+	else
+		value = value + affect
 
 /datum/stat/proc/getValue(pure = FALSE)
 	if(pure)
@@ -212,7 +215,10 @@
 			. += SM.value
 
 /datum/stat/proc/setValue(value)
-	src.value = value
+	if(value > STAT_VALUE_MAXIMUM)
+		src.value = STAT_VALUE_MAXIMUM
+	else
+		src.value = value
 
 /datum/stat/productivity
 	name = STAT_MEC
