@@ -361,7 +361,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					var/stat_up = L[stat] * 2 * resting_times
 					if((owner.stats.getStat(stat)) >= STAT_VALUE_MAXIMUM)
 						stat_up = 0
-						to_chat(owner, SPAN_NOTICE("Your [stat] can not be raised any higher with simple trinkets..."))
+						to_chat(owner, SPAN_NOTICE("You feel that you can't grow anymore better for today in [stat] with oddities"))
 					else
 						to_chat(owner, SPAN_NOTICE("Your [stat] stat goes up by [stat_up]"))
 						owner.stats.changeStat_withcap(stat, stat_up)
