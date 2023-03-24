@@ -90,6 +90,7 @@
 	new /obj/item/ammo_magazine/ammobox/pistol_35(src)
 	new /obj/item/ammo_magazine/ammobox/pistol_35/rubber(src)
 	new /obj/item/stack/os_cash/random(src)
+	new /obj/item/direct_line(src)
 
 //Prospector gear, you'll notice it is immensely heavily randomized, this is intentional to add some replayibility to prospector starts.
 //To anyone editing this, I advise using if statements over switch to better have control of what loot spawns, it rolls each in order of success so you can better set the odds.
