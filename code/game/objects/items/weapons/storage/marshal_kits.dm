@@ -243,7 +243,7 @@
 	desc = "A standard Marshal armor kit containing bullet proof armor and a helmet with tacked on nightvision, perfect for dealing with hostile colonist and infiltrators, but bulky and slowing."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/bulletproof/ironhammer(src)
+		new /obj/item/clothing/suit/armor/bulletproof/full/ironhammer(src)
 		new /obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg(src)
 
 /obj/item/storage/box/m_kit/laser_armor

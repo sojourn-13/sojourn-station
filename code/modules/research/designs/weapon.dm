@@ -83,17 +83,6 @@
 	build_path = /obj/item/bluespace_harpoon
 	category = "Bluespace Telecoms"
 
-/datum/design/research/item/clothing/soteriaarmorchest
-	name = "'Mark II' environmental protection suit"
-	desc = "For working in hazardous environments. While its built for most environments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
-	Unlike its superior, it offers significantly less armor but it is made out of basic steel, making it a cheaper, easier alternative to build."
-	build_path = /obj/item/clothing/suit/armor/vest/soteriasuit
-
-/datum/design/research/item/clothing/soteriaarmorhead
-	name = "'Mark II' environmental protection helmet"
-	desc = "You feel like this helmet is cheap, for some reason."
-	build_path = /obj/item/clothing/head/helmet/soteriasuit
-
 /datum/design/research/item/clothing/paramedic_armor
 	name = "Paramedic armor"
 	build_path = /obj/item/clothing/suit/armor/paramedic

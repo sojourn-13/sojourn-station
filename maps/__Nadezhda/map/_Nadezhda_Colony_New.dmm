@@ -56154,10 +56154,10 @@
 /area/nadezhda/engineering/atmos)
 "mWP" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/bulletproof/ironhammer,
-/obj/item/clothing/suit/armor/bulletproof/ironhammer,
-/obj/item/clothing/suit/armor/bulletproof/ironhammer,
-/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/full/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/full/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/full/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/full/ironhammer,
 /obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
 /obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,
 /obj/item/clothing/head/helmet/faceshield/altyn/ironhammer,

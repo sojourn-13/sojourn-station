@@ -188,8 +188,8 @@
 		list(/obj/item/rig, 1, "time" = 20), // Any rig as base
 		list(/obj/item/clothing, 1, "time" = 30),
 		list(/obj/item/storage/belt, 1, "time" = 30),
-		list(/obj/item/clothing/suit/armor/vest/soteriasuit, 1, "time" = 30),
-		list(/obj/item/clothing/head/helmet/soteriasuit, 1, "time" = 30),
+		list(/obj/item/clothing/suit/armor/vest/technomancersuit, 1, "time" = 30),//Now cooperate with guild young scientist
+		list(/obj/item/clothing/head/helmet/technomancersuit, 1, "time" = 30),
 		list(/obj/item/stock_parts/scanning_module/phasic, 1, "time" = 30),
 		list(/obj/item/robot_parts/robot_component/camera, 1, "time" = 30),
 		list(/obj/item/robot_parts/robot_component/diagnosis_unit, 1, "time" = 30),

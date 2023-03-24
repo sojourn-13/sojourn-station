@@ -240,7 +240,7 @@
 			step_message = "The maintenance panel is closed. The drone needs to be outfitted with a Mark II environmental protection suit." // Next step
 
 	// Step 18, Add the armor
-	if((istype(W, /obj/item/clothing/suit/armor/vest/soteriasuit)) && (build_step == 17))
+	if((istype(W, /datum/craft_recipe/guild/robotmelee)) && (build_step == 17)) //Cooperate with guild young chum
 		build_step++ // Go to the next assembly part.
 		user.visible_message(
 			SPAN_NOTICE("[user] outfits the [src] with the [W.name]."),

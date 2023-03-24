@@ -164,7 +164,7 @@
 
 /obj/item/storage/box/sword_drone_kit
 	name = "Custom Sword Drone Fabrication Kit"
-	desc = "Everything to make your own Soteria-brand Sword Drone! Tools not included."
+	desc = "Almost everything to make your own Soteria-brand Sword Drone! Tools and Armor not included."
 
 /obj/item/storage/box/sword_drone_kit/populate_contents()
 	new /obj/item/bot_part/sword_part/main_frame(src)
@@ -178,12 +178,11 @@
 	new /obj/item/cell/large/moebius(src)
 	new /obj/item/bot_part/control(src)
 	new /obj/item/stack/cable_coil(src, 10, "red")
-	new /obj/item/clothing/suit/armor/vest/soteriasuit(src)
 	new /obj/item/tool_upgrade/productivity/red_paint(src)
 
 /obj/item/storage/box/mantis_drone_kit
 	name = "Custom Mantis Drone Fabrication Kit"
-	desc = "Everything to make your own Soteria-brand Mantis Drone! Tools not included."
+	desc = "Almost everything to make your own Soteria-brand Mantis Drone! Tools and Armor not included."
 
 /obj/item/storage/box/mantis_drone_kit/populate_contents()
 	new /obj/item/bot_part/mantis_part/main_frame(src)
@@ -198,5 +197,4 @@
 	new /obj/item/cell/large/moebius(src)
 	new /obj/item/bot_part/control(src)
 	new /obj/item/stack/cable_coil(src, 10, "red")
-	new /obj/item/clothing/suit/armor/vest/soteriasuit(src)
 	new /obj/item/tool_upgrade/productivity/red_paint(src)

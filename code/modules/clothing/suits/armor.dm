@@ -33,10 +33,10 @@
 	item_state = "armor"
 	blood_overlay_type = "armor"
 	armor_list = list(
-		melee = 35,
-		bullet = 35,
-		energy = 35,
-		bomb = 10,
+		melee = 25,
+		bullet = 25,
+		energy = 25,
+		bomb = 5,
 		bio = 0,
 		rad = 0
 	)
@@ -101,10 +101,10 @@
 	desc = "An armored vest of dubious quality. Provides decent protection against physical damage, for a piece of crap."
 	icon_state = "armor_handmade"
 	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 15,
-		bomb = 10,
+		melee = 15, //Literally piece of scrap tied to a hazard vest
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
 		bio = 0,
 		rad = 0
 	)
@@ -140,14 +140,6 @@
 	item_state = "armor_handmade_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
-	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 15,
-		bomb = 10,
-		bio = 0,
-		rad = 0
-	) // No gaining stats, just coverage!
 
 /obj/item/clothing/suit/armor/vest/handmade/full/toggle_style()
 	set name = "Adjust Style"
@@ -395,7 +387,8 @@
 	icon_state = "technosuit"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
+	armor_list = list(melee = 40, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100) //Expensive
+	stiffness = MEDIUM_STIFFNESS
 	max_upgrades = 2
 	extra_allowed = list(/obj/item/extinguisher,
 						 /obj/item/tool,
@@ -406,31 +399,10 @@
 						 /obj/item/taperoll/engineering,
 						 /obj/item/storage/toolbox)
 	flags_inv = HIDEJUMPSUIT
-
-//Soteria
-/obj/item/clothing/suit/armor/vest/soteriasuit
-	name = "'Mark II' environmental protection suit"
-	desc = "For working in hazardous environments. While its built for most environments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
-	Unlike its superior variant, it offers significantly less armor but it is made out of basic steel, making it a cheaper, easier alternative to build while also being easier to modify."
-	icon_state = "armor_engineering"
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	max_upgrades = 2
-	armor_list = list(melee = 35, bullet = 25, energy = 25, bomb = 30, bio = 50, rad = 50)
-	extra_allowed = list(/obj/item/extinguisher,
-						 /obj/item/tool,
-						 /obj/item/tool_upgrade,
-						 /obj/item/stack/cable_coil,
-						 /obj/item/device/t_scanner,
-						 /obj/item/device/scanner/gas,
-						 /obj/item/taperoll/engineering,
-						 /obj/item/storage/toolbox)
-	flags_inv = HIDEJUMPSUIT
-	matter = list(MATERIAL_STEEL = 40)
 
 /*
- * Specilized Armors
- */
+ * Specilized Armors *
+*/
 
 //Bulletproof
 /obj/item/clothing/suit/armor/bulletproof
@@ -439,11 +411,13 @@
 	icon_state = "bulletproof"
 	item_state = "armor"
 	blood_overlay_type = "armor"
-	slowdown = 0.5
+	slowdown = 0.2
+	stiffness = LIGHT_STIFFNESS
+	max_upgrades = 0
 	armor_list = list(
-		melee = 25,
-		bullet = 60,
-		energy = 25,
+		melee = 30,
+		bullet = 65,
+		energy = 5,
 		bomb = 10,
 		bio = 0,
 		rad = 0
@@ -456,19 +430,16 @@
 	icon_state = "bulletproof_fullbody"
 	item_state = "bulletproof_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
-	slowdown = 0.6 // Heavier since it now covers more of the body
+	stiffness = MEDIUM_STIFFNESS
+	slowdown = 0.3 // Heavier since it now covers more of the body
 
-/obj/item/clothing/suit/armor/bulletproof/ironhammer
+/obj/item/clothing/suit/armor/bulletproof/full/ironhammer
 	name = "marshal bulletproof suit"
 	desc = "A bulky vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage produced by Seinemetall Defense GmbH."
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
-	slowdown = 0.6 // Heavier since it now covers more of the body
 	icon_state = "bulletproof_ironhammer"
 	item_state = "bulletproof_ironhammer"
 
-/obj/item/clothing/suit/armor/bulletproof/ironhammer/militia
+/obj/item/clothing/suit/armor/bulletproof/full/ironhammer/militia
 	name = "blackshield bulletproof suit"
 	desc = "A set of vest, shoulder guards and leg guards that excel at protecting against high-velocity, solid projectiles. \
 			This particular set seems to have been taken straight from the armory of some low-budget P.D.F or Reserve force, repainted in \
@@ -478,25 +449,12 @@
 
 //Ablatives / Laserproof
 
-/obj/item/clothing/suit/armor/vest/iron_lock_security
-	name = "outdated ablative vest"
-	desc = "An \"Iron Lock Security\" ablative vest with plates designed to absorb rather than reflect energy projectiles. Produced by Greyson Positronic."
-	icon_state = "northtech"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 5)
-	armor_list = list(
-		melee = 15,
-		bullet = 15,
-		energy = 50,
-		bomb = 0,
-		bio = 0,
-		rad = 0
-	)
-
 /obj/item/clothing/suit/armor/vest/ablative
 	name = "ablative vest"
 	desc = "An ablative vest with plates designed to absorb rather than reflect energy projectiles."
 	icon_state = "northtech"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 10)
+	max_upgrades = 0
 	armor_list = list(
 		melee = 15,
 		bullet = 15,
@@ -510,6 +468,20 @@
 	icon_state = "ablative_ironhammer"
 	item_state = "ablative_ironhammer"
 
+/obj/item/clothing/suit/armor/vest/iron_lock_security
+	name = "outdated ablative vest"
+	desc = "An \"Iron Lock Security\" ablative vest with plates designed to absorb rather than reflect energy projectiles. Produced by Greyson Positronic."
+	icon_state = "northtech"
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 5)
+	max_upgrades = 0
+	armor_list = list(
+		melee = 15,
+		bullet = 15,
+		energy = 50,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
 
 /obj/item/clothing/suit/armor/laserproof
 	name = "reflective armor vest"
@@ -517,6 +489,8 @@
 	icon_state = "ablative"
 	item_state = "ablative"
 	blood_overlay_type = "armor"
+	var/reflect_percentage = 40
+	max_upgrades = 0
 	slowdown = 0.5
 	armor_list = list(
 		melee = 25,
@@ -533,7 +507,7 @@
 	if(istype(damage_source, /obj/item/projectile/energy) || istype(damage_source, /obj/item/projectile/beam))
 		var/obj/item/projectile/P = damage_source
 
-		var/reflectchance = 40 - round(damage/3)
+		var/reflectchance = reflect_percentage - round(damage/3)
 		if(!(def_zone in list(BP_CHEST, BP_GROIN)))
 			reflectchance /= 2
 		if(P.starting && prob(reflectchance))
@@ -553,6 +527,7 @@
 	name = "soteria reflective armor vest"
 	desc = "A Soteria branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets but can be modified more."
 	icon_state = "ablative_ironhammer"
+	reflect_percentage = 55
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 15)
 	armor_list = list(
 		melee = 20,
@@ -562,7 +537,6 @@
 		bio = 0,
 		rad = 0
 	)
-	max_upgrades = 2
 	siemens_coefficient = 0
 	price_tag = 650
 
@@ -585,6 +559,9 @@
 	blood_overlay_type = "armor"
 	price_tag = 250
 	slowdown = 0.5
+
+	max_upgrades = 0
+
 	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/flakvest/verb/toggle_style()

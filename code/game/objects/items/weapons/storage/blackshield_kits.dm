@@ -299,7 +299,7 @@
 	desc = "An armor kit containing a kevlar reinforced suit and ballistic helmet."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/bulletproof/ironhammer/militia(src)
+		new /obj/item/clothing/suit/armor/bulletproof/full/ironhammer/militia(src)
 		new /obj/item/clothing/head/helmet/ballistic/bulletproof/militia(src)
 		new /obj/item/clothing/gloves/thick/swat/militia(src)
 

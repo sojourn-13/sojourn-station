@@ -229,6 +229,8 @@
 #define LIGHT_STIFFNESS 0.5
 #define MEDIUM_STIFFNESS 1
 #define HEAVY_STIFFNESS 1.5
+#define EXTREME_STIFFNESS 2
+#define UNBEARABLE_STIFFNESS 2.5
 
 //Slowdown for suits - unused but eris put it here
 #define LIGHT_SLOWDOWN 0.1
