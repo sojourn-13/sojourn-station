@@ -74850,12 +74850,12 @@
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/riot/ironhammer,
+/obj/item/clothing/suit/armor/riot/ironhammer,
+/obj/item/clothing/suit/armor/riot/ironhammer,
+/obj/item/clothing/suit/armor/riot/ironhammer,
+/obj/item/clothing/suit/armor/riot/ironhammer,
+/obj/item/clothing/suit/armor/riot/ironhammer,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/tactical)
 "ouI" = (

@@ -28,7 +28,7 @@
 	name = OUTFIT_JOB_NAME("Blackshield - Blackshield Commander")
 	l_ear = /obj/item/device/radio/headset/heads/bscom
 	uniform = /obj/item/clothing/under/rank/commander
-	suit = /obj/item/clothing/suit/armor/commander/militia
+	suit = /obj/item/clothing/suit/armor/commander
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/stungloves
 	glasses = /obj/item/clothing/glasses/ballistic

@@ -5536,7 +5536,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "PL" = (
 /obj/structure/table/onestar,
-/obj/item/clothing/suit/armor/vest/iron_lock_security,
+/obj/item/clothing/suit/armor/vest/ablative/iron_lock_security,
 /obj/item/ammo_magazine/ammobox/pistol_35/scrap,
 /obj/item/storage/pouch/pistol_holster,
 /obj/item/gun/projectile/giskard,

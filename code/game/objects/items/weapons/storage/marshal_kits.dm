@@ -261,5 +261,5 @@
 	desc = "An standard Marshal armor kit containing riot armor and a riot helmet, perfect for dealing with hostile fauna and anyone in melee, but bulky and slowing."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/heavy/riot/ironhammer(src)
+		new /obj/item/clothing/suit/armor/riot/ironhammer(src)
 		new /obj/item/clothing/head/helmet/riot_hud(src)

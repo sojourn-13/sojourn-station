@@ -17,7 +17,7 @@
 	inventory = list(
 		"Armor" = list(
 			/obj/item/clothing/head/helmet/faceshield/riot = custom_good_amount_range(list(3, 5)),
-			/obj/item/clothing/suit/armor/heavy/riot = custom_good_amount_range(list(3, 5)),
+			/obj/item/clothing/suit/armor/riot = custom_good_amount_range(list(3, 5)),
 			/obj/item/clothing/suit/armor/bulletproof = custom_good_amount_range(list(3, 5)),
 			/obj/item/clothing/head/helmet = custom_good_amount_range(list(3, 5)),
 			/obj/item/clothing/suit/armor/laserproof = custom_good_amount_range(list(1, 5)),

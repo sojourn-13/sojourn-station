@@ -55,7 +55,7 @@
 			/obj/item/clothing/gloves/thick/ablasive/iron_lock_security = good_data("ILS Ablasive Gloves", list(-100, -50), 475),
 			/obj/item/clothing/shoes/ablasive/iron_lock_security = good_data("ILS Ablasive Shoes", list(-100, -50), 475),
 			/obj/item/clothing/head/helmet/laserproof/iron_lock_security = good_data("ILS Ablasive Helmet", list(-100, -50), 475),
-			/obj/item/clothing/suit/armor/vest/iron_lock_security = good_data("ILS Ablasive Vest", list(-100, -50), 475)
+			/obj/item/clothing/suit/armor/vest/ablative/iron_lock_security = good_data("ILS Ablasive Vest", list(-100, -50), 475)
 		),
 		"Gongju mo zu" = list(
 			/obj/item/tool_upgrade/augment/holding_tank = custom_good_nameprice("GP Welder Fule Holding Tank", list(-100, -50)),

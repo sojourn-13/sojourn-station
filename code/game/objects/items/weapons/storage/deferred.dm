@@ -297,7 +297,7 @@
 	/obj/item/clothing/gloves/thick/ablasive/iron_lock_security  = 1,
 	/obj/item/clothing/head/soft/iron_lock_security = 1,
 	/obj/item/clothing/head/helmet/laserproof/iron_lock_security = 1,
-	/obj/item/clothing/suit/armor/vest/iron_lock_security = 1,
+	/obj/item/clothing/suit/armor/vest/ablative/iron_lock_security = 1,
 	/obj/item/clothing/under/iron_lock_security = 1)
 
 /obj/item/storage/deferred/crate/exc_gear

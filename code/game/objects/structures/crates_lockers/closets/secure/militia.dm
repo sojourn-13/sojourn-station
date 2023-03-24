@@ -12,7 +12,7 @@
 	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/clothing/suit/armor/flakvest/commander(src)
-	new /obj/item/clothing/suit/armor/commander/militia(src)
+	new /obj/item/clothing/suit/armor/commander(src)
 	new /obj/item/clothing/accessory/halfcape(src)
 	new /obj/item/clothing/under/rank/commander(src)
 	new /obj/item/storage/belt/webbing(src)

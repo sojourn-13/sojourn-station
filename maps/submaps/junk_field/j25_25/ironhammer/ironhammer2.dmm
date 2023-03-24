@@ -81,8 +81,8 @@
 /area/template_noop)
 "fy" = (
 /obj/structure/table/rack,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/riot/ironhammer,
+/obj/item/clothing/suit/armor/riot/ironhammer,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /obj/item/clothing/head/helmet/faceshield/riot,
 /turf/simulated/floor/tiled/dark/cargo,

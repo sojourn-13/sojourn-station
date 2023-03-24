@@ -8587,7 +8587,7 @@
 	pixel_x = -10;
 	pixel_y = -18
 	},
-/obj/item/clothing/suit/armor/vest/iron_lock_security,
+/obj/item/clothing/suit/armor/vest/ablative/iron_lock_security,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "jJQ" = (
@@ -18736,7 +18736,7 @@
 	pixel_x = -10;
 	pixel_y = -18
 	},
-/obj/item/clothing/suit/armor/vest/iron_lock_security,
+/obj/item/clothing/suit/armor/vest/ablative/iron_lock_security,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "uGO" = (

@@ -80,11 +80,11 @@
 					/obj/item/handcuffs,
 					/obj/item/handcuffs,
 					/obj/item/clothing/head/helmet/faceshield/riot,
-					/obj/item/clothing/suit/armor/heavy/riot,
+					/obj/item/clothing/suit/armor/riot,
 					/obj/item/clothing/head/helmet/faceshield/riot,
-					/obj/item/clothing/suit/armor/heavy/riot,
+					/obj/item/clothing/suit/armor/riot,
 					/obj/item/clothing/head/helmet/faceshield/riot,
-					/obj/item/clothing/suit/armor/heavy/riot)
+					/obj/item/clothing/suit/armor/riot)
 	cost = 4880
 	containertype = /obj/structure/closet/crate/secure
 	crate_name = "Marshal riot gear crate"

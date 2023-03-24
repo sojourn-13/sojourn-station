@@ -25,7 +25,7 @@
 /datum/export/gear/riot_armor
 	cost = 500
 	unit_name = "riot armor suit"
-	export_types = list(/obj/item/clothing/suit/armor/heavy/riot)
+	export_types = list(/obj/item/clothing/suit/armor/riot)
 
 /datum/export/gear/bulletproof_armor
 	cost = 500

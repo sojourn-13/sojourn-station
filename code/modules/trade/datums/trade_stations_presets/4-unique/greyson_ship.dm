@@ -28,7 +28,7 @@
 			/obj/item/clothing/gloves/thick/ablasive/iron_lock_security = custom_good_name("ILS Ablasive Gloves"),
 			/obj/item/clothing/shoes/ablasive/iron_lock_security = custom_good_name("ILS Ablasive Shoes"),
 			/obj/item/clothing/head/helmet/laserproof/iron_lock_security = custom_good_name("ILS Ablasive Helmet"),
-			/obj/item/clothing/suit/armor/vest/iron_lock_security = custom_good_name("ILS Ablasive Vest")
+			/obj/item/clothing/suit/armor/vest/ablative/iron_lock_security = custom_good_name("ILS Ablasive Vest")
 		),
 		"Chilun" = list(
 			/obj/item/gun/energy/cog = custom_good_name("GP Cog")

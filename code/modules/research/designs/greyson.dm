@@ -33,7 +33,7 @@
 
 /datum/design/research/item/greyson/iron_lock_security_armor
 	name = "Greyson Positronic Ablative Vest"
-	build_path = /obj/item/clothing/suit/armor/vest/iron_lock_security
+	build_path = /obj/item/clothing/suit/armor/vest/ablative/iron_lock_security
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 10) //So its costs more for being RnD printed
 	category = CAT_CLOTHING
 

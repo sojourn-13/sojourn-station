@@ -5,7 +5,7 @@
 
 /datum/design/autolathe/clothing/iron_lock_security_armor
 	name = "Greyson Positronic Ablative Vest"
-	build_path = /obj/item/clothing/suit/armor/vest/iron_lock_security
+	build_path = /obj/item/clothing/suit/armor/vest/ablative/iron_lock_security
 
 /datum/design/autolathe/clothing/iron_lock_security_helmet
 	name = "Greyson Positronic Ablative Helmet"

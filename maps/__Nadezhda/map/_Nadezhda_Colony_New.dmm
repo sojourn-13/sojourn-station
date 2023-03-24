@@ -56337,10 +56337,10 @@
 /area/nadezhda/absolutism/bioreactor)
 "mYg" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
-/obj/item/clothing/suit/armor/heavy/riot/ironhammer,
+/obj/item/clothing/suit/armor/riot/ironhammer,
+/obj/item/clothing/suit/armor/riot/ironhammer,
+/obj/item/clothing/suit/armor/riot/ironhammer,
+/obj/item/clothing/suit/armor/riot/ironhammer,
 /obj/item/clothing/head/helmet/riot_hud,
 /obj/item/clothing/head/helmet/riot_hud,
 /obj/item/clothing/head/helmet/riot_hud,
