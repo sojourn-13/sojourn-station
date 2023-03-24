@@ -789,16 +789,16 @@ No more of that.
 /*
 		if("Call in a Favour")
 			if(credits_to_fund >= 1000) //Random number 1k seems fair?
-				var/list/stations_list_for_fund = list()
-				for(var/stations_to_fund in list_of_stations)
+				var/list/stations_list_for_favour = list()
+				for(var/stations_to_favour in list_of_stations)
 					var/datum/trade_station/O = stations_to_fund
-					stations_list_for_fund[initial(O.name)] = stations_to_fund
+					stations_list_for_favour += O
 
-				if(!stations_list_for_fund)
+				if(!stations_list_for_favour)
 					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say ''I'm prepared to close this deal quickly.'' and then the line goes silent. Seems like their is no stations willing to trade with the colony."))
 					return
 
-				var/datum/trade_station/station_choice = input(user, "What Station do you want to force sales with you?") as null|anything in list(stations_list_for_fund)
+				var/datum/trade_station/station_choice = input(user, "What Station do you want to force sales with you?") as null|anything in stations_list_for_favour
 				if(!station_choice)	// user can cancel
 					to_chat(user, SPAN_NOTICE("You quickly hang up the phone."))
 					return
