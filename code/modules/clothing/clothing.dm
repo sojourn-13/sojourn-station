@@ -26,6 +26,11 @@
 /obj/item/clothing/Initialize(mapload, ...)
 	. = ..()
 
+	var/list/init_accessories = accessories
+	accessories = list()
+	for (var/path in init_accessories)
+		attach_accessory(null, new path (src))
+
 	var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/clothing_info
 	action.owner = src
 	if(!hud_actions)
