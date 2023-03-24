@@ -92,7 +92,7 @@
 							/datum/design/research/item/part/smes_coil/super_io,
 							/datum/design/research/item/part/smes_coil/super_capacity,
 							/datum/design/research/circuit/tesla_turret)
-/*
+
 /datum/technology/solar_power
 	name = "Basic Power Generation"
 	desc = "Solar panels control, PACMAN MK1."
@@ -161,7 +161,7 @@
 	cost = 1500
 
 	//unlocks_designs = list()"fusion_core_control", "fusion_fuel_compressor", "fusion_fuel_control", "gyrotron_control", "fusion_core", "fusion_injector", "gyrotron")
-*/
+
 /datum/technology/omega_power
 	name = "Fusion Based Power"
 	desc = "The last steps into packing in power into a cell."
@@ -173,7 +173,7 @@
 
 	required_technologies = list(
 									/datum/technology/super_power,
-									//datum/technology/fusion_power_generation,
+									/datum/technology/fusion_power_generation,
 									/datum/technology/energy_distribution
 								)
 
