@@ -67,6 +67,7 @@
 		new /obj/item/oddity/common/old_pda(src)
 	if(prob(15))
 		new /obj/item/oddity/common/old_radio(src)
+	new /obj/item/clothing/accessory/armband/cargo(src)
 
 /obj/structure/closet/secure_closet/reinforced/quartermaster
 	name = "chief executive officer's locker"

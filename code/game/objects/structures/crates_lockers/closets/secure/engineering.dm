@@ -35,6 +35,10 @@
 		new /obj/item/tool_upgrade/augment/repair_nano(src)
 	else
 		new /obj/item/tool_upgrade/augment/randomizer(src)
+	new /obj/item/clothing/glasses/powered/meson(src)
+	new /obj/item/hand_labeler(src)
+	new /obj/item/storage/briefcase(src)
+	new /obj/item/storage/lunchbox(src)
 
 /obj/structure/closet/secure_closet/engineering_electrical
 	name = "electrical supplies"
