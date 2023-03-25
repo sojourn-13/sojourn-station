@@ -93,7 +93,7 @@
 	casingtype = /obj/item/ammo_casing/shotgun/spent
 
 	rapid_fire_shooting_amount = 2 //KER-BLAM!!
-
+	rapid = TRUE
 	comfy_range = 4
 	ranged_cooldown = 2
 	projectiletype = /obj/item/projectile/bullet/shotgun
