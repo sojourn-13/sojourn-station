@@ -74,12 +74,15 @@
 	new /obj/item/storage/belt/medical/emt(src)
 	new /obj/item/storage/belt/medical/(src)
 	new /obj/item/clothing/suit/storage/surgical_apron(src)
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/clothing/accessory/stethoscope(src)
 
 /obj/structure/closet/secure_closet/personal/paramedic
 	name = "Soteria Field Doctor's locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_medical_equip)
 	icon_state = "med"
+
 
 /obj/structure/closet/secure_closet/personal/paramedic/populate_contents()
 	if(prob(50))
@@ -110,12 +113,16 @@
 	new /obj/item/storage/belt/medical/emt(src)
 	new /obj/item/clothing/suit/storage/hazardvest(src)
 	new /obj/item/storage/pouch/medical_supply(src)
+	new /obj/item/bodybag/cryobag(src)
+	new /obj/item/clothing/accessory/stethoscope(src)
+	new /obj/item/clothing/glasses/hud/health(src)
 
 /obj/structure/closet/secure_closet/personal/orderly
 	name = "soteria Lifeline Technician locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_orderly)
 	icon_state = "traumateam"
+
 
 /obj/structure/closet/secure_closet/personal/orderly/populate_contents()
 	if(prob(50))
@@ -136,6 +143,8 @@
 	new /obj/item/storage/pouch/baton_holster(src)
 	new /obj/item/storage/pouch/medical_supply(src)
 	new /obj/item/storage/hcases/med(src)
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/clothing/suit/storage/toggle/labcoat/medspec(src)
 
 /obj/structure/closet/secure_closet/reinforced/CMO
 	name = "Soteria Biolab Overseer's locker"
