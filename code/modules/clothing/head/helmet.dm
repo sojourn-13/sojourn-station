@@ -433,43 +433,6 @@
 	..()
 
 //Church
-/obj/item/clothing/head/helmet/botanist
-	name = "botanist hood"
-	desc = "Don't want anything getting in your eyes."
-	icon_state = "botanist"
-	action_button_name = "Toggle Helmet Light"
-	light_overlay = "helmet_light"
-	brightness_on = 4
-	armor_list = list(melee = 30, bullet = 20, energy = 20, bomb = 25, bio = 100, rad = 80)
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
-	body_parts_covered = HEAD|FACE|EARS
-	obscuration = LIGHT_OBSCURATION
-
-/obj/item/clothing/head/helmet/botanist/verb/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["botanist default"] = "botanist"
-	options["cosine men yoroi lens"] = "cosine_men_yoroi"
-	options["cosine men yoroi lensless"] = "cosine_men_yoroi_switched"
-	options["cosine men yoroi round lens"] = "cosine_men_yoroi_weeaboomode"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
 /obj/item/clothing/head/helmet/acolyte
 	name = "vector hood"
 	desc = "Even the most devout deserve head protection."
@@ -501,6 +464,10 @@
 	options["lemniscate helmet"] = "lemniscate_helmet"
 	options["divisor helmet"] = "divisor_helmet"
 	options["monomial helmet"] = "monomial_helmet"
+	options["botanist default"] = "botanist"
+	options["cosine men yoroi lens"] = "cosine_men_yoroi"
+	options["cosine men yoroi lensless"] = "cosine_men_yoroi_switched"
+	options["cosine men yoroi round lens"] = "cosine_men_yoroi_weeaboomode"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

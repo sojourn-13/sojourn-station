@@ -24283,7 +24283,6 @@
 	name = "Science Expedition prep"
 	})
 "tcu" = (
-/obj/structure/closet/secure_closet/personal/agrolyte,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/storage)
 "teh" = (

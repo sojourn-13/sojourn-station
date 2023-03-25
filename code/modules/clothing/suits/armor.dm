@@ -188,24 +188,25 @@
 	desc = "An armored winter coat with vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations. You're pretty sure the coat is just thick enough to keep warm, and that's all. Why you would want that on a planet like Amethyn is beyond thought."
 	icon_state = "coatsecurity_long"
 
-////////////
+//Lonestar
+/obj/item/clothing/suit/armor/vest/handmade/lonestar
+	name = "lonestar hazard vest"
+	desc = "A Lonestar hazard vest in grey and orange to be used in work zones."
+	icon_state = "cargovest"
+	item_state = "hazard"
+	blood_overlay_type = "armor"
+	extra_allowed = list(/obj/item/tool)
+	armor_list = list(
+		melee = 10,
+		bullet = 10,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+)
 
-/*
- * Factions
-*/
-
-//Church
-/obj/item/clothing/suit/armor/vest/botanist
-	name = "botanist attire"
-	desc = "Every rose has its thorns."
-	icon_state = "botanist"
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 20, bio = 100, rad = 80)
-	flags_inv = HIDEJUMPSUIT
-
-/obj/item/clothing/suit/armor/vest/botanist/toggle_style()
-	set name = "Adjust Style"
+/obj/item/clothing/suit/armor/vest/handmade/lonestar/toggle_style()
+	set name = "Adjust style"
 	set category = "Object"
 	set src in usr
 
@@ -214,18 +215,37 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["botanist default"] = "botanist"
-	options["cosine brigantine armor"] = "cosine_brigantine_armor"
+	options["standard"] = ""
+	options["alt style"] = "_color"
 
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+	var/choice = input(M,"How would you like to wear your vest?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You alter your [choice].")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+/obj/item/clothing/suit/armor/vest/custodian
+	name = "custodian armor"
+	desc = "Someone's gotta clean this mess. While this armor is technically church property, Lonestar custodians often use it on loan to protect themselves from the colonies various dangerous pests."
+	icon_state = "custodian"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
+	flags_inv = HIDEJUMPSUIT
+
+////////////
+
+/*
+ * Factions
+*/
 
 /obj/item/clothing/suit/armor/vest/acolyte
 	name = "vector armor"
@@ -258,6 +278,8 @@
 	options["vinculum dress garbs"] = "vinculum_cassock"
 	options["tessellate plague garbs"] = "tessellate_plague_garbs"
 	options["tessellate dark plague garbs"] = "tessellate_plague_garbs_dark"
+	options["botanist default"] = "botanist"
+	options["cosine brigantine armor"] = "cosine_brigantine_armor"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -301,38 +323,6 @@
 	options["rosaria default"] = "rosaria_armor"
 	options["rosaria alt"] = "rosaria_alt_armor"
 
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
-/obj/item/clothing/suit/armor/vest/custodian
-	name = "custodian armor"
-	desc = "Someone's gotta clean this mess. While this armor is technically church property, Lonestar custodians often use it on loan to protect themselves from the colonies various dangerous pests."
-	icon_state = "custodian"
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
-	flags_inv = HIDEJUMPSUIT
-
-/obj/item/clothing/suit/armor/vest/custodian/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["custodian default"] = "custodian"
-	options["sine armor robes"] = "sine_armor_robes"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

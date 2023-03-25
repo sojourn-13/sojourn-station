@@ -16,7 +16,7 @@
 /decl/hierarchy/outfit/job/cargo/cargo_tech
 	name = OUTFIT_JOB_NAME("Lonestar - Cargo Technician")
 	uniform = /obj/item/clothing/under/rank/cargotech
-	suit = /obj/item/clothing/suit/storage/cargovest
+	suit = /obj/item/clothing/suit/armor/vest/handmade/lonestar
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/rank/cargosoft
 	belt = /obj/item/storage/belt/utility/full
@@ -25,7 +25,7 @@
 /decl/hierarchy/outfit/job/cargo/mining
 	name = OUTFIT_JOB_NAME("Lonestar - Lonestar Miner")
 	uniform = /obj/item/clothing/under/rank/miner
-	suit = /obj/item/clothing/suit/storage/cargovest
+	suit = /obj/item/clothing/suit/armor/vest/handmade/lonestar
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/rank/cargosoft
 	pda_type = /obj/item/modular_computer/pda/science/science

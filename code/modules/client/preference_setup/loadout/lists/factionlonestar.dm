@@ -69,10 +69,10 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Lonestar"
 	cost = 0
-	
+
 /datum/gear/factionlonestar/cargovest
 	display_name = "lonestar hazard vest"
-	path = /obj/item/clothing/suit/storage/cargovest
+	path = /obj/item/clothing/suit/armor/vest/handmade/lonestar
 	allowed_roles = list("Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor")
 	slot = slot_wear_suit
 	sort_category = "Faction: Lonestar"
@@ -85,7 +85,7 @@
 	slot = slot_head
 	sort_category = "Faction: Lonestar"
 	cost = 0
-	
+
 /datum/gear/factionlonestar/cargoclerk
 	display_name = "lonestar office uniform"
 	path = /obj/item/clothing/under/rank/cargoclerk
@@ -93,7 +93,7 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Lonestar"
 	cost = 0
-	
+
 /datum/gear/factionlonestar/cargoclerkjacket
 	display_name = "lonestar office jacket"
 	path = /obj/item/clothing/suit/storage/rank/cargoclerk_jacket
@@ -101,7 +101,7 @@
 	slot = slot_wear_suit
 	sort_category = "Faction: Lonestar"
 	cost = 0
-	
+
 /datum/gear/factionlonestar/miner
 	display_name = "lonestar miner uniform"
 	path = /obj/item/clothing/under/rank/miner

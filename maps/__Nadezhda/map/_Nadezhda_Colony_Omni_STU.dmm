@@ -59690,7 +59690,6 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/robotics)
 "lze" = (
-/obj/structure/closet/secure_closet/personal/agrolyte,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/storage)
 "lzf" = (
@@ -86329,7 +86328,6 @@
 	name = "\improper Clinic"
 	})
 "qKJ" = (
-/obj/structure/closet/secure_closet/personal/agrolyte,
 /obj/structure/sign/faction/neotheology_cross{
 	pixel_x = -32
 	},

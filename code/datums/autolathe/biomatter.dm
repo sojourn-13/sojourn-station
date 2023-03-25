@@ -133,10 +133,6 @@
 	name = "Vector Armor"
 	build_path = /obj/item/clothing/suit/armor/vest/acolyte
 
-/datum/design/bioprinter/nt_clothes/agrolyte_armor
-	name = "Agrolyte Armor"
-	build_path = /obj/item/clothing/suit/armor/vest/botanist
-
 /datum/design/bioprinter/nt_clothes/custodian_armor
 	name = "Custodian Armor"
 	build_path = /obj/item/clothing/suit/armor/vest/custodian
@@ -148,10 +144,6 @@
 /datum/design/bioprinter/nt_clothes/acolyte_armor_helm
 	name = "Vector Helmet"
 	build_path = /obj/item/clothing/head/helmet/acolyte
-
-/datum/design/bioprinter/nt_clothes/agrolyte_armor_helm
-	name = "Agrolyte Helmet"
-	build_path = /obj/item/clothing/head/helmet/botanist
 
 /datum/design/bioprinter/nt_clothes/custodian_armor_helm
 	name = "Custodian Helmet"

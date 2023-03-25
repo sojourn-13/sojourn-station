@@ -71475,7 +71475,6 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
 "qtt" = (
-/obj/structure/closet/secure_closet/personal/agrolyte,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/storage)
 "qtv" = (
@@ -81073,7 +81072,6 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/miningdock)
 "sCh" = (
-/obj/structure/closet/secure_closet/personal/agrolyte,
 /obj/structure/sign/faction/neotheology_cross{
 	pixel_x = -32
 	},
