@@ -68,7 +68,7 @@
 	if(default_part_replacement(B, user))
 		return
 
-	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
+	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_EXPERT) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
@@ -317,7 +317,7 @@
 	if(inoperable())
 		return
 
-	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_BASIC) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
+	if(!user.stats?.getPerk(PERK_NERD) && !user.stats?.getPerk(PERK_MEDICAL_EXPERT) && !usr.stat_check(STAT_BIO, STAT_LEVEL_EXPERT) && !simple_machinery && !usr.stat_check(STAT_COG, 30)) //Are we missing the perk AND to low on bio? Needs 15 bio so 30 to bypass
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 

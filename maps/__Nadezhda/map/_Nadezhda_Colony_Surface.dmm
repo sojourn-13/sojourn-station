@@ -1815,8 +1815,8 @@
 /area/shuttle/surface_transport_lz)
 "aeu" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/flackvest/militia,
-/obj/item/clothing/suit/armor/flackvest/militia,
+/obj/item/clothing/suit/armor/flakvest/militia,
+/obj/item/clothing/suit/armor/flakvest/militia,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/tactical_blackshield)
 "aev" = (
@@ -8101,34 +8101,6 @@
 	pixel_x = 6;
 	pixel_y = -4
 	},
-/obj/item/clothing/suit/armor/platecarrier/tan{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/armor/platecarrier/green{
-	pixel_x = -6;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/armor/platecarrier/green{
-	pixel_x = -6;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/armor/platecarrier/green{
-	pixel_x = -6;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/armor/platecarrier/tan{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/armor/platecarrier/tan{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/armor/platecarrier/tan{
-	pixel_x = 6;
-	pixel_y = 6
-	},
 /obj/item/clothing/suit/armor/platecarrier/militia{
 	pixel_x = -6;
 	pixel_y = 6
@@ -13978,11 +13950,11 @@
 	pixel_x = -8;
 	pixel_y = -6
 	},
-/obj/item/clothing/head/helmet/ballistic/tan{
+/obj/item/clothing/head/helmet/ballistic{
 	pixel_x = 4;
 	pixel_y = -8
 	},
-/obj/item/clothing/head/helmet/ballistic/tan{
+/obj/item/clothing/head/helmet/ballistic{
 	pixel_x = 4;
 	pixel_y = -8
 	},
@@ -14021,11 +13993,11 @@
 	pixel_x = 0;
 	pixel_y = 4
 	},
-/obj/item/clothing/head/helmet/ballistic/tan{
+/obj/item/clothing/head/helmet/ballistic{
 	pixel_x = 4;
 	pixel_y = -8
 	},
-/obj/item/clothing/head/helmet/ballistic/tan{
+/obj/item/clothing/head/helmet/ballistic{
 	pixel_x = 4;
 	pixel_y = -8
 	},

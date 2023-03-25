@@ -288,6 +288,11 @@ obj/item/clothing/head/ribbon/red
 	icon_state = "feather_trilby"
 	desc = "A dark blue felt fedora with a classy white feather."
 
+/obj/item/clothing/head/investigator //to prevent it being under loadout
+	name = "investigator fedora"
+	icon_state = "investigator"
+	desc = "A soft brown fedora belonging to a man of law."
+
 /*Misc*/
 
 /obj/item/clothing/head/rank/centcom

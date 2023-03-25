@@ -15,32 +15,7 @@
 	item_state = "r_suit"
 	siemens_coefficient = 0.8
 
-/obj/item/clothing/head/rank/warden
-	name = "supply specialist's helmet"
-	desc = "A distinctive red military helmet signifying a supply specialist rank."
-	icon_state = "policehelm"
-	body_parts_covered = 0
-
-/obj/item/clothing/under/rank/warden/skirt
-	name = "supply specialist's jumpskirt"
-	desc = "It's made of a slightly sturdier material than standard jumpskirts, to allow for more robust protection. It has the words \"Supply Specialist\" written on the shoulders."
-	icon_state = "warden_skirt"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-
-/obj/item/clothing/under/rank/security
-	name = "marshal officer's jumpsuit"
-	desc = "A durable officer's jumpsuit, designed to provide moderate combat protection."
-	icon_state = "security"
-	item_state = "ba_suit"
-	siemens_coefficient = 0.8
-
-/obj/item/clothing/under/rank/security/cadet
-	name = "Junior Marshal's jumpsuit"
-	desc = "A durable jumpsuit for fresh-faced Junior Officers, designed to provide moderate combat protection."
-	icon_state = "seccadet"
-	item_state = "seccadet"
-
-/obj/item/clothing/under/rank/security/cadet/verb/toggle_style()
+/obj/item/clothing/under/rank/warden/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -50,7 +25,49 @@
 
 	var/mob/M = usr
 	var/list/options = list()
+	options["specialist jumpsuit"] = "warden"
+	options["specialist jumpskirt"] = "warden_skirt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/rank/warden
+	name = "supply specialist's helmet"
+	desc = "A distinctive red military helmet signifying a supply specialist rank."
+	icon_state = "policehelm"
+	body_parts_covered = 0
+
+/obj/item/clothing/under/rank/security
+	name = "marshal officer's jumpsuit"
+	desc = "A durable officer's jumpsuit, designed to provide moderate combat protection."
+	icon_state = "security"
+	item_state = "ba_suit"
+	siemens_coefficient = 0.8
+
+/obj/item/clothing/under/rank/security/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["officer default"] = "security"
+	options["officer jumpskirt"] = "security_skirt"
+	options["officer turtleneck"] = "securityrturtle"
 	options["cadet default"] = "seccadet"
+	options["cadet jumpskirt"] = "cadet"
 	options["cadet alt"] = "seccadetalt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -58,35 +75,12 @@
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
 		item_state = options[choice]
+		item_state_slots = null
 		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
-
-/obj/item/clothing/under/rank/security/skirt
-	name = "marshal officer's jumpskirt"
-	desc = "A durable officer's jumpsuit, designed to provide moderate combat protection."
-	icon_state = "security_skirt"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
-
-/obj/item/clothing/under/rank/security/turtleneck
-	name = "Marshal officers turtleneck"
-	desc = "Military style turtleneck, made of a slightly sturdier material than standard jumpsuits, to allow for robust protection"
-	icon_state = "securityrturtle"
-
-/obj/item/clothing/under/rank/medspec
-	name = "militia corpmen's jumpsuit"
-	desc = "A durable corpsman's jumpsuit, designed to provide moderate combat protection."
-	icon_state = "medspec"
-	item_state = "ba_suit"
-	siemens_coefficient = 0.8
-
-/obj/item/clothing/under/rank/medspec/skirt
-	name = "militia corpmen's jumpskirt"
-	desc = "It's made of a slightly sturdier material than standard jumpskirts, to allow for robust protection. It has the words \"Corpsman\" written on the shoulders."
-	icon_state = "medspec_skirt"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/under/tactical
 	name = "tactical turtleneck"
@@ -157,6 +151,7 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		item_state_slots = null
 		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
@@ -201,6 +196,7 @@
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
+		item_state_slots = null
 		to_chat(M, "You adjusted your attire's style into [choice] mode.")
 		update_icon()
 		update_wear_icon()
@@ -218,11 +214,30 @@
 	item_state = "r_suit"
 	siemens_coefficient = 0.8
 
-/obj/item/clothing/under/rank/ih_commander/skirt
-	name = "warrant officer's jumpskirt"
-	desc = "It's a jumpskirt worn by those few with the dedication to achieve the position of \"Warrant Officer\". It has additional armor to protect the wearer."
-	icon_state = "hos_skirt"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+/obj/item/clothing/under/rank/ih_commander/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["wo jumpsuit"] = "hos"
+	options["wo jumpskirt"] = "hos_skirt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/rank/commander
 	name = "warrant officer's Hat"
@@ -236,12 +251,6 @@
 	desc = "The hat of the blackshield commander. Has a scent of napalm. Smells like victory."
 	icon_state = "hoshat"
 	body_parts_covered = 0
-	siemens_coefficient = 0.6
-
-/obj/item/clothing/head/rank/commander/dermal
-	name = "dermal armor Patch"
-	desc = "You're not quite sure how you manage to take it on and off, but it implants nicely in your head."
-	icon_state = "dermal"
 	siemens_coefficient = 0.6
 
 //Jensen cosplay gear
@@ -259,13 +268,3 @@
 	flags_inv = 0
 	body_parts_covered = UPPER_TORSO|ARMS
 
-/*
- * Navy uniforms
- */
-
-/obj/item/clothing/under/rank/cadet
-	name = "marshal cadet's jumpskirt"
-	desc = "It's a sailor's uniform used for cadets in training, though more frequently in acts of hazing."
-	icon_state = "cadet"
-	item_state = "cadet"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS

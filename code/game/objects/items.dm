@@ -666,7 +666,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	if(alt_mode_active)
 		visible_message(SPAN_DANGER("[user] [alt_mode_toggle]."))
 	else
-		visible_message(SPAN_DANGER("[user] beings to use their weapon in a more standerd way."))
+		visible_message(SPAN_DANGER("[user] beings to use their weapon in a more standard way."))
 
 /obj/item/proc/alt_mode_activeate_two()
 	damtype = alt_mode_damagetype

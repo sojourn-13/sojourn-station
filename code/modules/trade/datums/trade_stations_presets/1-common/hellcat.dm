@@ -59,13 +59,9 @@
 		"Armor" = list(
 			/obj/item/clothing/head/helmet/faceshield/riot,
 			/obj/item/clothing/suit/armor/vest,
-			/obj/item/clothing/suit/armor/vest/security,
-			/obj/item/clothing/suit/armor/vest/detective,
+			/obj/item/clothing/suit/armor/vest/ironhammer,
 			/obj/item/clothing/suit/storage/vest,
 			/obj/item/clothing/head/armor/helmet/tanker,
-			/obj/item/clothing/head/armor/helmet/tanker/green,
-			/obj/item/clothing/head/armor/helmet/tanker/brown,
-			/obj/item/clothing/head/armor/helmet/tanker/gray,
 			/obj/item/clothing/suit/armor/bulletproof,
 			/obj/item/clothing/suit/armor/laserproof
 		)

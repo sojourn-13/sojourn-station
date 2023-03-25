@@ -101,7 +101,7 @@
 	alt_mode_damagetype = HALLOSS
 	alt_mode_verbs = list("bashes", "beats", "clobbers")
 	alt_mode_sharp = FALSE
-	alt_mode_toggle = "flips the axe to its bord side"
+	alt_mode_toggle = "flips the axe to its broad side"
 
 /obj/item/tool/fireaxe/militia_tomahawk
 	name = "blackshield tactical tomahawk"
@@ -136,7 +136,7 @@
 	alt_mode_damagetype = HALLOSS
 	alt_mode_verbs = list("bashes", "beats", "clobbers")
 	alt_mode_sharp = FALSE
-	alt_mode_toggle = "flips the axe to its bord side"
+	alt_mode_toggle = "flips the axe to its broad side"
 
 /obj/item/tool/minihoe
 	name = "mini hoe"
@@ -200,7 +200,7 @@
 	has_alt_mode = TRUE
 	alt_mode_damagetype = HALLOSS
 	alt_mode_verbs = list("flogged", "whipped", "lashed", "disciplined")
-	alt_mode_toggle = "losses their hand on the grip"
+	alt_mode_toggle = "loosens their hand on the grip"
 	alt_mode_lossrate = 0.7
 
 /obj/item/tool/disciplinary_action
@@ -222,7 +222,7 @@
 	has_alt_mode = TRUE
 	alt_mode_damagetype = HALLOSS
 	alt_mode_verbs = list("flogged", "whipped", "lashed", "disciplined")
-	alt_mode_toggle = "losses their hand on the grip"
+	alt_mode_toggle = "loosens their hand on the grip"
 	alt_mode_lossrate = 0.7
 
 //Swords
@@ -254,7 +254,7 @@
 	alt_mode_damagetype = HALLOSS
 	alt_mode_sharp = FALSE
 	alt_mode_verbs = list("bashes", "stunts", "hilts", "blunts")
-	alt_mode_toggle = "uses the broadside of their weapon"
+	alt_mode_toggle = "uses the broad side of their weapon"
 	alt_mode_lossrate = 0.3
 
 /obj/item/tool/sword/katana
@@ -397,7 +397,7 @@
 	alt_mode_damagetype = HALLOSS
 	alt_mode_sharp = FALSE
 	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
-	alt_mode_toggle = "moves their stance to no longer stab into their targets"
+	alt_mode_toggle = "switches their stance to avoid using the blade of their weapon"
 	alt_mode_lossrate = 0.6
 
 /obj/item/tool/sword/saber/cutlass
@@ -407,7 +407,7 @@
 	item_state = "cutlass"
 	price_tag = 300
 	alt_mode_verbs = list("bashes", "stunts", "hilts", "blunts")
-	alt_mode_toggle = "uses the broadside of their weapon"
+	alt_mode_toggle = "uses the broad side of their weapon"
 
 /obj/item/tool/sword/saber/militiacommander
 	name = "Officer's Saber"
@@ -561,6 +561,13 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	price_tag = 300
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "adjusts their grip to strike lightly"
+	alt_mode_lossrate = 0.9
+
 /obj/item/tool/power_fist/turn_on(mob/user)
 	if (cell && cell.charge > 0)
 		item_state = "[initial(item_state)]_on"
@@ -615,7 +622,7 @@
 	alt_mode_damagetype = HALLOSS
 	alt_mode_sharp = FALSE
 	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
-	alt_mode_toggle = "moves their stance to no longer stab into their targets"
+	alt_mode_toggle = "switches their stance to strike at targets with the shaft"
 	alt_mode_lossrate = 0.4
 
 
@@ -715,7 +722,7 @@
 	alt_mode_damagetype = HALLOSS
 	alt_mode_sharp = FALSE
 	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
-	alt_mode_toggle = "moves their stance to no use the blade of their weapon"
+	alt_mode_toggle = "switches their stance to avoid using the blade of their weapon"
 	alt_mode_lossrate = 0.9 //Little loss so people can use these in real gimmics
 
 /obj/item/tool/cheap/axe
@@ -753,6 +760,8 @@
 	item_state_slots = list(
 		slot_back_str = "cheap_spear"
 		)
+	alt_mode_toggle = "switches their stance to strike at targets with the shaft"
+	alt_mode_lossrate = 0.4
 
 /obj/item/tool/cheap/saber
 	name = "cheap saber"

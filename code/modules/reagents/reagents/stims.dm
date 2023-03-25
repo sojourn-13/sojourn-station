@@ -4,9 +4,9 @@
 	constant_metabolism = TRUE
 	reagent_type = "Stimulator"
 
-/datum/reagent/stim/mbr
-	name = "Machine binding ritual"
-	id = "machine binding ritual"
+/datum/reagent/stim/greaser
+	name = "Greaser"
+	id = "greaser"
 	description = "A ethanol based stimulator. Used as pick me up for engineers and technicians."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
@@ -15,15 +15,15 @@
 	addiction_chance = 20
 	nerve_system_accumulations = 15
 
-/datum/reagent/stim/mbr/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_BASIC, STIM_TIME, "mbr")
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "mbr")
+/datum/reagent/stim/greaser/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_BASIC, STIM_TIME, "greaser")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "greaser")
 
-/datum/reagent/stim/mbr/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "mbr_w")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "mbr_w")
+/datum/reagent/stim/greaser/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "greaser_w")
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "greaser_w")
 
-/datum/reagent/stim/mbr/overdose(mob/living/carbon/M, alien)
+/datum/reagent/stim/greaser/overdose(mob/living/carbon/M, alien)
 	if(prob(5))
 		M.vomit()
 	if(ishuman(M) && prob(80 - (60 * (1 - M.stats.getMult(STAT_TGH)))))
@@ -197,9 +197,9 @@
 		create_overdose_wound(I, M, /datum/component/internal_wound/organic/heavy_poisoning)
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 
-/datum/reagent/stim/machine_spirit
-	name = "Machine Spirit"
-	id = "machine spirit"
+/datum/reagent/stim/greasy_lard
+	name = "Greasy Lard"
+	id = "greasy lard"
 	description = "Potent ethanol based stimulator. Used by engineers and technicians to gain an edge when working with machines."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
@@ -208,17 +208,17 @@
 	nerve_system_accumulations = 30
 	addiction_chance = 30
 
-/datum/reagent/stim/machine_spirit/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_ADEPT, STIM_TIME, "machine_spirit")
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "machine_spirit")
-	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "machine_spirit")
+/datum/reagent/stim/greasy_lard/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_ADEPT, STIM_TIME, "greasy_lard")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "greasy_lard")
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "greasy_lard")
 
-/datum/reagent/stim/machine_spirit/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "machineSpirit_w")
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "machineSpirit_w")
-	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "machineSpirit_w")
+/datum/reagent/stim/greasy_lard/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "greasy_lard_w")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "greasy_lard_w")
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "greasy_lard_w")
 
-/datum/reagent/stim/machine_spirit/overdose(mob/living/carbon/M, alien)
+/datum/reagent/stim/greasy_lard/overdose(mob/living/carbon/M, alien)
 	if(prob(5))
 		M.vomit()
 	if(ishuman(M) && prob(80 - (60 * (1 - M.stats.getMult(STAT_TGH)))))
@@ -608,7 +608,6 @@
 			//Stablizating
 			L.heal_organ_damage(30, 30)
 			L.adjustOxyLoss(-50)
-			L.adjustToxLoss(-50)
 
 			L.emote("gasp")
 			L.Weaken(rand(10,25))

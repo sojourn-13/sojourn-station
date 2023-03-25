@@ -15,7 +15,7 @@
 	M.adjustCloneLoss(1) //The body breaks apart
 
 /datum/reagent/iron_skin_brew/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.adjustToxLoss(3) //Its metal...
+	M.add_chemical_effect(CE_TOXIN, 3)
 
 /datum/reagent/iron_skin_brew/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	return // The chemical is meant to be ingested, but unless we do this, we'll get poisoned
@@ -25,7 +25,7 @@
 	var/mob/living/carbon/human/ironskin = L
 	if(!ishuman(L))
 		if(ironskin.species.reagent_tag == IS_CHTMANT) // This turns skin into iron, Cht'mant get horribly tortured by it
-			ironskin.adjustToxLoss(0.4)
+			ironskin.add_chemical_effect(CE_TOXIN, 0.4)
 			ironskin.paralysis = max(L.paralysis, 5)
 			ironskin.adjustCloneLoss(2)
 			return
@@ -60,13 +60,13 @@
 	overdose = 5
 
 /datum/reagent/toxin_draft/overdose(mob/living/carbon/M)
-	M.adjustToxLoss(5)
+	M.add_chemical_effect(CE_TOXIN, 5)
 
 /datum/reagent/toxin_draft/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(1)
+	M.add_chemical_effect(CE_TOXIN, 1)
 
 /datum/reagent/toxin_draft/affect_ingest(mob/living/carbon/M)
-	M.adjustToxLoss(3)
+	M.add_chemical_effect(CE_TOXIN, 3)
 
 /datum/reagent/toxin_draft/on_mob_add(mob/living/L)
 	. = ..()
@@ -74,7 +74,7 @@
 		L.adjustToxLoss(180)
 		L.adjustCloneLoss(120)
 		return
-	L.adjustToxLoss(20)
+	L.adjustFireLoss(20)
 	L.adjustCloneLoss(10)
 
 /datum/reagent/toxin_draft/affect_touch(mob/living/L)
@@ -93,10 +93,10 @@
 	overdose = 3
 
 /datum/reagent/sight_dram/overdose(mob/living/carbon/M)
-	M.adjustToxLoss(5)
+	M.add_chemical_effect(CE_TOXIN, 2)
 
 /datum/reagent/sight_dram/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(10) //DONT INJECT IT
+	M.add_chemical_effect(CE_TOXIN, 5) //DONT INJECT IT
 
 /datum/reagent/sight_dram/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.eye_blurry = max(M.eye_blurry - (5 * effect_multiplier), 0)
@@ -125,7 +125,7 @@
 	M.adjustCloneLoss(3)
 
 /datum/reagent/lively_concoxion/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(3)
+	M.add_chemical_effect(CE_TOXIN, 1)
 
 /datum/reagent/lively_concoxion/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	return
@@ -160,7 +160,7 @@
 	M.adjustCloneLoss(1)
 
 /datum/reagent/nervs/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(3)
+	M.add_chemical_effect(CE_TOXIN, 1)
 
 /datum/reagent/nervs/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	return
@@ -190,13 +190,13 @@
 	overdose = 5
 
 /datum/reagent/harms/overdose(mob/living/carbon/M)
-	M.adjustToxLoss(5)
+	M.add_chemical_effect(CE_TOXIN, 5)
 
 /datum/reagent/harms/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(1)
+	M.add_chemical_effect(CE_TOXIN, 1)
 
 /datum/reagent/harms/affect_ingest(mob/living/carbon/M)
-	M.adjustToxLoss(3)
+	M.add_chemical_effect(CE_TOXIN, 3)
 
 /datum/reagent/harms/on_mob_add(mob/living/L)
 	. = ..()
@@ -256,7 +256,7 @@
 	M.adjustCloneLoss(3)
 
 /datum/reagent/mind_exspander/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(2)
+	M.add_chemical_effect(CE_TOXIN, 1)
 
 /datum/reagent/mind_exspander/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "mind_exspander")
@@ -278,7 +278,7 @@
 	M.adjustCloneLoss(3)
 
 /datum/reagent/work_tonic/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(2)
+	M.add_chemical_effect(CE_TOXIN, 1)
 
 /datum/reagent/work_tonic/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_EXPERT, STIM_TIME, "work_tonic")
@@ -304,7 +304,7 @@
 	M.adjustCloneLoss(3)
 
 /datum/reagent/ethanol/combat_brew/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(2)
+	M.add_chemical_effect(CE_TOXIN, 1)
 
 /datum/reagent/ethanol/combat_brew/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -347,7 +347,7 @@
 			H.eye_blind = max(M.eye_blind, 10)
 
 /datum/reagent/ethanol/eye_lid/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(2)
+	M.add_chemical_effect(CE_TOXIN, 1)
 
 /datum/reagent/ethanol/eye_lid/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -371,7 +371,7 @@
 	M.adjustCloneLoss(3)
 
 /datum/reagent/red_heart/affect_blood(mob/living/carbon/M)
-	M.adjustToxLoss(20)
+	M.add_chemical_effect(CE_TOXIN, 3)
 
 /datum/reagent/red_heart/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	return

@@ -5461,7 +5461,7 @@
 "uL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/woodentable,
-/obj/item/clothing/suit/armor/flackvest/green,
+/obj/item/clothing/suit/armor/flakvest,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
 "uM" = (

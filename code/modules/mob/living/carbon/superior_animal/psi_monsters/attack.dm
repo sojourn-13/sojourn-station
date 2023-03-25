@@ -82,7 +82,7 @@
 				Victim.adjustFireLoss(rand(5,6))
 				Victim.adjustCloneLoss(rand(1,2))
 				if(Victim.health <= 0)
-					Victim.adjustToxLoss(rand(2,4))
+					Victim.adjustCloneLoss(rand(1,2))
 				if(prob(steal_odds))
 					Victim.stats.changeStat(stat_to_steal, steal_amount)
 					var/health_addition_mod = steal_amount * -1 //So we became non-negtive
@@ -101,7 +101,6 @@
 
 			adjustBruteLoss(-16)
 			adjustFireLoss(-16)
-			adjustToxLoss(-16)
 			updatehealth()
 			if(Victim)
 				Victim.updatehealth()

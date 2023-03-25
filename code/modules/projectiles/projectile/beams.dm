@@ -276,7 +276,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		if(isliving(target))
 			var/mob/living/L = target
 			L.adjustOxyLoss(-5)
-			L.adjustToxLoss(-3)
 			L.adjustBruteLoss(-3)
 			L.adjustFireLoss(-3)
 
@@ -289,7 +288,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		if(isliving(target))
 			var/mob/living/L = target
 			L.adjustOxyLoss(-4)
-			L.adjustToxLoss(-2)
 			L.adjustBruteLoss(-2)
 			L.adjustFireLoss(-2)
 

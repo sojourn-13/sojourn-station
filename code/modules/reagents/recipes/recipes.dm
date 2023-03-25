@@ -631,23 +631,23 @@
 	required_reagents = list("hydrazine" = 2, "carbon" = 2, "ammonia" = 2)
 	result_amount = 6
 
-/datum/chemical_reaction/mbr
-	result = "machine binding ritual"
+/datum/chemical_reaction/greaser
+	result = "greaser"
 	required_reagents = list("coffee" = 2, "diplopterum" = 1, "sugar" = 1, "ethanol" = 1)
 	result_amount = 5
 	maximum_temperature = 343
 	minimum_temperature = 323
 
-/datum/chemical_reaction/machine_spirit
-	result = "machine spirit"
-	required_reagents = list("machine binding ritual" = 1, "tramadol" = 1, "blattedin" = 1)
+/datum/chemical_reaction/lard
+	result = "greasy lard"
+	required_reagents = list("greaser" = 1, "tramadol" = 1, "blattedin" = 1)
 	result_amount = 3
 	maximum_temperature = 318
 	minimum_temperature = 308
 
 /datum/chemical_reaction/party_drops
 	result = "party drops"
-	required_reagents = list("grape drops" = 1, "machine spirit" = 1, "ultrasurgeon" = 1)
+	required_reagents = list("grape drops" = 1, "greasy lard" = 1, "ultrasurgeon" = 1)
 	catalysts = list("honey" = 1)
 	result_amount = 3
 
@@ -935,7 +935,7 @@
 	result_amount = 2
 	maximum_temperature = 12.7
 	minimum_temperature = 7.7
- 
+
 /datum/chemical_reaction/mindwipe
 	result = "mindwipe"
 	required_reagents = list("mindbreaker" = 1, "psilocybin" = 1, "sanguinum" = 1 , "anti_toxin" = 1, "ethanol" = 1)
