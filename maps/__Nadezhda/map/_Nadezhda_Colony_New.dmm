@@ -20976,8 +20976,6 @@
 /area/nadezhda/outside/forest)
 "eUW" = (
 /obj/structure/closet/secure_closet/personal/doctor,
-/obj/item/clothing/glasses/hud/health,
-/obj/item/clothing/accessory/stethoscope,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/medical/sleeper)
 "eVj" = (
@@ -38483,8 +38481,6 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "iVu" = (
 /obj/structure/closet/secure_closet/personal/doctor,
-/obj/item/clothing/glasses/hud/health,
-/obj/item/clothing/accessory/stethoscope,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -40478,10 +40474,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "jsj" = (
-/obj/item/storage/lunchbox,
-/obj/item/hand_labeler,
-/obj/item/storage/briefcase,
-/obj/random/toy/plushie,
 /obj/structure/closet/secure_closet/reinforced/engineering_chief,
 /obj/machinery/button/windowtint{
 	dir = 8;
@@ -53617,9 +53609,6 @@
 /area/nadezhda/security/armory)
 "mxG" = (
 /obj/structure/closet/secure_closet/personal/paramedic,
-/obj/item/clothing/glasses/hud/health,
-/obj/item/clothing/accessory/stethoscope,
-/obj/item/bodybag/cryobag,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/medical/sleeper)
 "mxO" = (
@@ -62248,8 +62237,6 @@
 /area/nadezhda/outside/forest)
 "oqq" = (
 /obj/structure/closet/secure_closet/personal/orderly,
-/obj/item/clothing/glasses/hud/health,
-/obj/item/clothing/suit/storage/toggle/labcoat/medspec,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -74538,19 +74525,10 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "reC" = (
-/obj/item/rig/hazmat/equipped,
-/obj/item/circuitboard/aicore{
-	pixel_x = -2;
-	pixel_y = 4
-	},
-/obj/item/circuitboard/teleporter,
-/obj/item/device/aicard,
 /obj/structure/closet/secure_closet/reinforced/RD,
-/obj/item/computer_hardware/hard_drive/portable/design/genetics_kit,
 /obj/structure/noticeboard/research{
 	pixel_y = -32
 	},
-/obj/item/tool/hydrogen_sword,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "reF" = (
@@ -88402,8 +88380,6 @@
 /area/shuttle/rocinante_shuttle_area)
 "uhw" = (
 /obj/structure/closet/secure_closet/personal/orderly,
-/obj/item/clothing/glasses/hud/health,
-/obj/item/clothing/suit/storage/toggle/labcoat/medspec,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/medical/sleeper)
 "uhB" = (

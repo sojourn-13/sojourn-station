@@ -549,6 +549,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/autolathe/gun/plasma/martyr,
 		/datum/design/autolathe/gun/plasma/excubitor,
 		//armor
+		/datum/design/bioprinter/nt_clothes/armor_kit,
 		/datum/design/bioprinter/nt_clothes/acolyte_armor_helm,
 		/datum/design/bioprinter/nt_clothes/acolyte_armor,
 		/datum/design/bioprinter/nt_clothes/agrolyte_armor_helm,
