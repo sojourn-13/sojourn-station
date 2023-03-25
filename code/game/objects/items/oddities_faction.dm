@@ -732,7 +732,7 @@ No more of that.
 
 /obj/item/direct_line
 	name = "direct phone line"
-	desc = "A powerful direct callline to local ships in the area, as well as having a slot to charge the phone with cashcards to directly fund a station of the CEO's choice."
+	desc = "A powerful direct hotline to local ships in the area, as well as having a slot to charge the phone with cashcards to directly fund a station of the CEO's choice."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "phone"
 	flags = CONDUCT
@@ -742,7 +742,7 @@ No more of that.
 	throw_range = 4
 	w_class = ITEM_SIZE_SMALL
 	price_tag = 4000
-	attack_verb = list("cold calls", "freezes assets")
+	attack_verb = list("liquidates", "divests", "outsources", "lays off", "downsizes")
 	hitsound = 'sound/weapons/ring.ogg'
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 4)
 	preloaded_reagents = list("plasticide" = 20, "copper" = 6, "silicon" = 10)
@@ -774,10 +774,10 @@ No more of that.
 					stations_list_for_fund += O
 
 				if(!stations_list_for_fund)
-					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say ''I'm prepared to close this deal quickly.'' and then the line goes silent. Seems like their is no stations willing to trade with the colony."))
+					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say \"I'm prepared to close this deal quickly\", followed by a silent dial tone. Seems like there are no stations willing to trade with the colony."))
 					return
 
-				var/datum/trade_station/station_choice = input(user, "What Station do you want to force sales with you?") as null|anything in stations_list_for_fund
+				var/datum/trade_station/station_choice = input(user, "What Station do you want to force sales with?") as null|anything in stations_list_for_fund
 				if(!station_choice)	// user can cancel
 					to_chat(user, SPAN_NOTICE("You quickly hang up the phone."))
 					return
@@ -785,7 +785,7 @@ No more of that.
 				to_chat(user, SPAN_NOTICE("Before you work out a deal to transfer the funding you hear ''[pick("You rang?","I was planning on running into you.","This caller always collects.","I'm one smooth operator.","I always make my calls direct.")]'' and then the line goes silent, as the counter on the side for funding slowly ticks down..."))
 				credits_to_fund = 0
 			else
-				to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say ''I'm prepared to close this deal quickly.'' and then the line goes silent. Its likely do to the phone not having any money to fund to a station."))
+				to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say \"Sorry, we cannot give credit. Call back when you're a little mmm.... richer.\" followed by a silent dial tone. It's likely due to the phone not having enough money to directly fund a station."))
 /*
 		if("Call in a Favour")
 			if(credits_to_fund >= 1000) //Random number 1k seems fair?
@@ -821,7 +821,7 @@ No more of that.
 					stations_list_for_phone += O
 
 				if(!stations_list_for_phone)
-					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say ''I'm prepared to close this deal quickly.'' and then the line goes silent. Looks like they are not in any mood to do more Aggressive Sales Market"))
+					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say /"I'm prepared to close this deal quickly./" followed by a silent dial tone. Looks like they are not in any mood to do more Aggressive Sales Market."))
 					return
 
 				var/station_choice = input(user, "What Station do you want to force sales with you?") as null|anything in stations_list_for_phone
@@ -833,7 +833,7 @@ No more of that.
 				unlocks_left -= 1
 				anti_cheat = FALSE
 			else
-				to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say ''I'm prepared to close this deal quickly.'' and then the line goes silent. Looks like they are not in any mood to do more Aggressive Sales Market"))
+				to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say /"I'm prepared to close this deal quickly./" followed by a silent dial tone. Looks like they are not in any mood to do more Aggressive Sales Market."))
 
 
 		else
@@ -844,7 +844,7 @@ No more of that.
 	if(istype(I, /obj/item/spacecash/ewallet))
 		var/obj/item/spacecash/ewallet/C = I
 		if(C.worth <= 0)
-			to_chat(user, SPAN_NOTICE("When you try to transfer the ewallet you hear on the line ''I'm prepared to close this deal quickly.'' and then the line goes silent..."))
+			to_chat(user, SPAN_NOTICE("When you try to transfer the e-wallet funds to the line, you hear \"Sorry, we cannot give credit. Call back when you're a little mmm.... richer.\" followed by a silent dial tone. It's likely due to not having enough funds on it..."))
 		else
 			to_chat(user, SPAN_NOTICE("When you try to transfer the ewallet you hear on the line ''[pick("Surprised to hear from me?","I was planning on running into you.","I have some costly items for you today.","I'm one smooth operator.","I'm going to cause a ringing sensation.")]'' and then the line goes silent, as the counter on the side for funding slowly ticks up..."))
 			credits_to_fund += C.worth
