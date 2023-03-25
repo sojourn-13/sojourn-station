@@ -88,14 +88,6 @@
 /obj/machinery/ntnet_relay,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/mine/power)
-"aq" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/wall/r_wall,
-/area/mine/power)
 "ar" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid,
@@ -1064,31 +1056,13 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/wall/r_wall,
 /area/mine/power)
 "dl" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/door/airlock/maintenance_cargo{
 	req_access = list(48)
 	},
 /turf/simulated/floor/plating,
-/area/mine/power)
-"dm" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/wall/r_wall,
 /area/mine/power)
 "dn" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
@@ -1274,10 +1248,6 @@
 "dM" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow,
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/mine/power)
 "dN" = (
@@ -1430,15 +1400,7 @@
 	},
 /area/nadezhda/rnd/outpostgeneral)
 "en" = (
-/obj/machinery/power/port_gen/pacman,
 /obj/structure/catwalk,
-/obj/structure/cable,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	pixel_y = 0
-	},
 /turf/simulated/floor/plating/under,
 /area/mine/power)
 "eo" = (
@@ -2720,14 +2682,6 @@
 /obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
-"hA" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/wall/r_wall,
-/area/mine/power)
 "hB" = (
 /obj/structure/table/rack/shelf,
 /obj/random/science/low_chance,
@@ -2959,18 +2913,9 @@
 	output_level_max = 250000;
 	outputting = 2
 	},
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "if" = (
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "ig" = (
@@ -3011,55 +2956,13 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "im" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/rnd/outpostmachineroom)
-"in" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 4;
-	icon_state = "danger";
-	tag = "icon-danger (EAST)"
-	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/white/golden,
-/area/nadezhda/rnd/outpostmachineroom)
-"io" = (
-/obj/machinery/portable_atmospherics/canister/air,
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "ip" = (
 /obj/machinery/power/terminal{
@@ -3071,19 +2974,15 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/obj/structure/catwalk,
 /obj/structure/cable/yellow{
 	d2 = 8;
+	dir = 1;
 	icon_state = "0-8"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "iq" = (
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -3224,6 +3123,11 @@
 	name = "Machine Room";
 	req_access = list(5)
 	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/rnd/outpostmachineroom)
 "iH" = (
@@ -3236,36 +3140,9 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
-"iI" = (
-/obj/machinery/portable_atmospherics/canister/air,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/rnd/outpostmachineroom)
 "iJ" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/space_heater,
 /turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/rnd/outpostmachineroom)
-"iK" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 4;
-	icon_state = "danger";
-	tag = "icon-danger (EAST)"
-	},
-/turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
 "iL" = (
 /turf/simulated/floor/tiled/white/gray_platform,
@@ -3345,7 +3222,6 @@
 /obj/structure/table/rack/shelf,
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/mechanical,
-/obj/item/circuitboard/diesel,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "iY" = (
@@ -3356,9 +3232,9 @@
 	dir = 6
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -3689,12 +3565,17 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "jO" = (
-/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "jP" = (
@@ -3702,21 +3583,6 @@
 	dir = 4;
 	icon_state = "danger";
 	tag = "icon-danger (EAST)"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -3727,12 +3593,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/catwalk,
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "jR" = (
@@ -3756,7 +3622,6 @@
 	name = "Powernet Sensor - Research Outpost";
 	name_tag = "Research Outpost Subgrid"
 	},
-/obj/structure/catwalk,
 /obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
@@ -3766,6 +3631,7 @@
 	icon_state = "0-8"
 	},
 /obj/structure/cable/yellow,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "jT" = (
@@ -6593,14 +6459,6 @@
 /obj/structure/bed/padded,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolone)
-"qh" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/rnd/outpostmachineroom)
 "qi" = (
 /obj/machinery/door/airlock/science{
 	name = "Anomaly Research";
@@ -7925,21 +7783,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
-"tA" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/rnd/outpostmachineroom)
 "tC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/yellow{
-	d1 = 4;
+	d1 = 1;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -8086,13 +7936,11 @@
 /turf/simulated/floor/asteroid,
 /area/mine/prep)
 "ue" = (
-/obj/machinery/power/port_gen/pacman/diesel,
-/obj/structure/catwalk,
-/obj/structure/cable,
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 8
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/mine/power)
 "uf" = (
@@ -12085,10 +11933,10 @@ hs
 hw
 hE
 hN
-io
-qh
-qh
-tA
+hV
+hs
+hs
+hs
 jB
 hs
 hs
@@ -12287,7 +12135,7 @@ hs
 hx
 hF
 hO
-iI
+hV
 hs
 ie
 ip
@@ -12895,9 +12743,9 @@ ic
 il
 jm
 hs
-in
 jP
-iK
+jP
+jP
 iZ
 jn
 ih
@@ -35598,8 +35446,8 @@ bg
 bg
 bg
 bg
-aq
-hA
+bg
+bg
 bg
 bg
 eP
@@ -36204,7 +36052,7 @@ bg
 an
 cg
 cM
-dm
+bg
 en
 ue
 hX
