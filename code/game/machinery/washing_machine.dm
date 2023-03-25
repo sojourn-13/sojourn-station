@@ -45,8 +45,8 @@
 		var/obj/O = A
 		if(istype(A, /obj/item))
 			var/obj/item/I = A
-			I.contaminated = 0
-			I.overlays -= contamination_overlay
+			I.decontaminate()
+
 		O.make_young()
 
 /obj/machinery/washing_machine/Process()
