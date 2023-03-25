@@ -357,19 +357,6 @@
 /***********************
 * 	Outsider crafts
 ************************/
-
-/datum/craft_recipe/clothing/woodenarmor
-	name = "wooden armor"
-	result = /obj/item/clothing/suit/armor/vest/handmadewooden
-	icon_state = "woodworking"
-	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
-		list(QUALITY_SAWING, 10, 60),
-		list(CRAFT_MATERIAL, 2, MATERIAL_STEEL),
-		list(/obj/item/stack/material/cloth, 2, time = 30),
-		list(QUALITY_CUTTING, 10, 30)
-	)
-
 /datum/craft_recipe/clothing/tac_clothes
 	name = "tactical baggy rags"
 	result = /obj/item/clothing/under/outcast

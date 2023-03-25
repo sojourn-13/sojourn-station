@@ -187,6 +187,7 @@
 	name = "security armored coat"
 	desc = "An armored winter coat with vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations. You're pretty sure the coat is just thick enough to keep warm, and that's all. Why you would want that on a planet like Amethyn is beyond thought."
 	icon_state = "coatsecurity_long"
+	stiffness = LIGHT_STIFFNESS
 
 //Lonestar
 /obj/item/clothing/suit/armor/vest/handmade/lonestar
@@ -195,7 +196,6 @@
 	icon_state = "cargovest"
 	item_state = "hazard"
 	blood_overlay_type = "armor"
-	extra_allowed = list(/obj/item/tool)
 	armor_list = list(
 		melee = 10,
 		bullet = 10,
@@ -238,206 +238,7 @@
 	icon_state = "custodian"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
-	flags_inv = HIDEJUMPSUIT
-
-////////////
-
-/*
- * Factions
-*/
-
-/obj/item/clothing/suit/armor/vest/acolyte
-	name = "vector armor"
-	desc = "Worn, heavy, steadfast in the name of God."
-	icon_state = "acolyte"
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
-	flags_inv = HIDEJUMPSUIT
-
-/obj/item/clothing/suit/armor/vest/acolyte/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["vector default"] = "acolyte"
-	options["tangent plate armor"] = "tangent_plate_armor"
-	options["greater heart armor"] = "greater_heart"
-	options["lemniscate armor"] = "lemniscate_armor"
-	options["factorial armor"] = "factorial_armor"
-	options["monomial armor"] = "monomial_armor"
-	options["divisor armor"] = "divisor_armor"
-	options["tessellate armor"] = "tessellate_armor"
-	options["vector breastplate"] = "absolute_breast"
-	options["vinculum dress garbs"] = "vinculum_cassock"
-	options["tessellate plague garbs"] = "tessellate_plague_garbs"
-	options["tessellate dark plague garbs"] = "tessellate_plague_garbs_dark"
-	options["botanist default"] = "botanist"
-	options["cosine brigantine armor"] = "cosine_brigantine_armor"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
-/obj/item/clothing/suit/armor/vest/path //No path ?
-	name = "vinculum cassock"
-	desc = "A heavy Cassock meant for the Vectors that possess no vows. This sturdy armor is made entirely out of biomatter and have no metal inner layer, but at the same time this sturdy armor is the thickest of any other armor made out of cloth, even thicker than a gambeson. But this armor is often used for rituals more than it is using for fighting, keeping the defensive properties only for emergencies."
-	icon_state = "vinculum_cassock"
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
-	flags_inv = HIDEJUMPSUIT
-
-/obj/item/clothing/suit/armor/vest/path/divisor
-	name = "Divisor's Guardsmen Armor"
-	desc = "The armour of the church arms forces of old - coming from the now extinct military of New Byzantine, this was an armour of pure efficiency in forms of springsteel. The inner layers has plates of biomatter-infused steel and chainmail, together with shoulder protection that elevates to protect the neck and fix it with the helmet of the same design. The garbs has been coloured red - rather than purple - to let it know who wears it is an Nadezdha's vector. This armor has been glorified by the church, as the people who once wears it was efficient warriors who battled the most powerful empire toe-to-toe, as it was vilified by Solfed propaganda, considered lunatics that know no pain or remorse."
-	icon_state = "divisor_guardsmen_armor"
-
-/obj/item/clothing/suit/armor/vest/path/divisor2
-	name = "Divisor Plate Armor"
-	desc = "The Nadezdha's church arm forces received proper armour made out of flexible, biomatter-imbued spring steel plates which provides protection which rivals kevlar all around while being cheaper to produce out of the bioprinter. The plate ensures no space for weapons to slide and reach an weak point while the enlarged faulds ensures free movement. The design came as an more ceremonial, less intimidating battle suit that differs from the old New Byzantine Guardsmen armor."
-	icon_state = "divisor_plate_armor"
-
-/obj/item/clothing/suit/armor/vest/path/tessallate
-	name = "Tessellate Riding Habit"
-	desc = "The Tessellate Riding Habit is an mixture of an well protective, efficient gambeson with inner chainmail that ensures the protection of it's user. Made by Nadezdha's church arms forces, it's the perfect mixture of an ceremonial garb and protective armor to the point of even not seemingly being protective at first. These armours has been made at first for an women-only healing sect - until it spread across all genders and anyone under the rite of Tessellate."
-	icon_state = "tessellate_riding_habit"
-
-/obj/item/clothing/suit/armor/vest/path/tessallate2
-	name = "Tessellate Doctor Garbs"
-	desc = "The garbs of old design set by the church during their years as an small presence in New Byzantine. The Doctors provided free medical care in an world where medical care was absent or absurdly costy, and work safety was all but a dream in risky mining operations to collect materials for the now almost forgotten technology of durasteel. The Tessellate Doctors was an major point for the survival of the church as a whole as during the war against Solfed as many civilians, ecclesiastical members and normal New Byzantine military would be deeply wounded by the constant, almost unstoppable bombing of cities and infrastructures."
-	icon_state = "tessellate_doctor_garbs"
-
-/obj/item/clothing/suit/armor/vest/path/lemniscate
-	name = "Lemniscate Garbs"
-	desc = "The well suited lemniscates garbs of new, made for the highest quality ceremonies by looking absurdly fancy. The biomatter silk is of highest quality and absurdly smooth to the touch to the point of almost making the soul cry. It's protective values are quite close to the design of an pourpoint with inner chainmail with golden ridges and lines that only reinforces it's fanciness value. The garbs extends towards almost all the body and ensures the protection of it's user while being loose fitting, allowing air to circulate, preventing sweat from evaporating too quickly and slowing dehydration in hot, dry hair. This allows many Lemniscates to not struggle as much while walking on an desert."
-	icon_state = "lemniscate_garbs"
-
-/obj/item/clothing/suit/armor/vest/path/lemniscate2
-	name = "Lemniscate Caftan"
-	desc = "As much as these before purple, now red fancy Caftans may show an degree of authority and ceremonial nature, the ecclesiastical and people that lived the wars of New Byzantine only knows sacrifice and famine. During severe attacks where the cities became all but rubble, Lemniscates ensured the mental well being and protection of the weak, the children and the old- in all bunkers and metros, many Lemniscates overworked themselves to gather food and drinks for their troops and civilians, many times killed by cold blood by Solfed machinegun and Solfed's scorched earth tactics. Stories of lemniscates being shot yet still coming back to the bunkers with the same amount of holes as swiss cheese, successfully delivering buckets of water and bread before dying from bloodloss or total organ failure was not unheard of."
-	icon_state = "lemniscate_caftan"
-
-/obj/item/clothing/suit/armor/vest/path/monomial
-	name = "Monomial Kasaya"
-	desc = "Kasaya are robes used by the Monks and Nuns of the church of the absolute, and most of the time used by hermits during their path towards the unknown. Used by the Devotees, it was once made for the ones that wanted to let clear their vows of poverty, being made with discarded fabric instead of biomatter. But with how the colony is a dangerous place, the Monomials needed to make do with the new reinforced biomatter cloth ordered by the Church while going on the upper colonies, yet this armor still respects the monomial vows by keeping one arm unprotected, while the other make do by reinforcing the armor rate in double."
-	icon_state = "monomial_kasaya"
-
-/obj/item/clothing/suit/armor/vest/path/monomial2
-	name = "Monomial Gusoku"
-	desc = "An old, repainted red armor piece with minor plates overlapping on the shoulders, waist and legs, with an large plate protecting the chest and belly. During times of extreme necessity of manpower during the Solfed war, many hermits and civilians took arms and made their own armor out of trash and steel from construction beams from the cities with nothing but welding tools and hammers after the outcome of Solfed bombings as certain people of the monomial path trained the population martial prowess when wall executions of civilians became common place for anyone with minimal relation to the church - the time where the population either died by starvation by Solfed's scorched earth tactics, or accepted Church's delivered biomatter meat, bread and water."
-	icon_state = "monomial_gusoku"
-
-/obj/item/clothing/suit/armor/vest/path/factorial
-	name = "Factorial powergarb"
-	desc = "Powergarbs are curious things made by the Nadezdha's church arms forces that are by no means made out of circuits, but rather have golem foundations. Such curious technology that almost only the church possess with great variety beyond xenobiology, what explains the EMP-Immune nature of the powergarbs even if, in fact, the lightweight clamping arms behind them are alive and are actually living golems that consented into becoming the protection of a Factorial. Well trained factorials are able to use such arms to lift themselves out of the ground for better combat support - but until now, only ERT forces are able to do such a thing."
-	icon_state = "factorial_powergarb"
-
-/obj/item/clothing/suit/armor/vest/path/factorial2
-	name = "Factorial Vesselcrew Armor"
-	desc = "The well protective against impact armor that suits better to protect the user from broken bones after receiving large, pressuring impacts against Freighter or Scout vessels. There's overlapping layers of various thin wedges of biomatter-infused steel with smaller springs just under it. There's an large plate protecting vital organs on the chest and an thick garb protecting the rest of the legs. The Vesselcrew are now an completely extinct fighters and engineers of New-Byzantine that fighted Solfed reinforcements in space with nothing but weaponised cargo ships that, even while extremely understaffed and in extreme technological disadvantage, managed to push off solfed vessels with surprise tactics and absurdly fast speed. They managed to make an difference in the war but was exterminated when the actual, powerful fleet of ships came - which they sacrificed themselves to give time for Augustine and many church members to leave New Byzantine before the portion of the planet would be glassed in radioactive explosions by Solfed."
-	icon_state = "factorial_vesselcrew_armor"
-
-/obj/item/clothing/suit/armor/vest/rosaria
-	name = "rosaria armor"
-	desc = "The Rosaria protects."
-	icon_state = "rosaria_armor"
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
-	flags_inv = HIDEJUMPSUIT
-	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
-
-/obj/item/clothing/suit/armor/vest/rosaria/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["rosaria default"] = "rosaria_armor"
-	options["rosaria alt"] = "rosaria_alt_armor"
-
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
-/obj/item/clothing/suit/armor/vest/prime
-	name = "prime armor"
-	desc = "Trust in god, but keep your armor on."
-	icon_state = "prime"
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
-	flags_inv = HIDEJUMPSUIT
-	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
-
-/obj/item/clothing/suit/armor/vest/prime/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["prime dark"] = "prime"
-	options["prime royal"] = "prime_alt"
-	options["prime saint"] = "prime_saint"
-	options["prime paladin"] = "prime_paladin"
-	options["prime paladin alt"] = "prime_paladin_alt"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
-//Guild
-/obj/item/clothing/suit/armor/vest/technomancersuit
-	name = "'Mark V' environmental protection suit"
-	desc = "For working in hazardous environments. While it is built for most environments, one of those is not space. As a tradeoff, it can be modified more."
-	icon_state = "technosuit"
-	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 40, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100) //Expensive
-	stiffness = MEDIUM_STIFFNESS
-	max_upgrades = 2
-	extra_allowed = list(/obj/item/extinguisher,
-						 /obj/item/tool,
-						 /obj/item/tool_upgrade,
-						 /obj/item/stack/cable_coil,
-						 /obj/item/device/t_scanner,
-						 /obj/item/device/scanner/gas,
-						 /obj/item/taperoll/engineering,
-						 /obj/item/storage/toolbox)
+	armor_list = list(melee = 30, bullet = 0, energy = 0, bomb = 0, bio = 100, rad = 80) //Traaaash but does the job it's supposed to
 	flags_inv = HIDEJUMPSUIT
 
 /*
@@ -662,6 +463,112 @@
 	icon_state = "platecarrier_ih_fullbody"
 	item_state = "platecarrier_ih_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+
+/*
+ * Storage Types
+ */
+
+/obj/item/clothing/suit/storage/vest
+	name = "webbed armor"
+	desc = "An armored vest used for day-to-day operations. This one has various pouches and straps attached."
+	icon_state = "webvest"
+	price_tag = 250 //Normal vest is worth 200, this one is worth 250 because it also has storage space
+	armor_list = list(
+		melee = 15,
+		bullet = 30,
+		energy = 0,
+		bomb = 5,
+		bio = 0,
+		rad = 0
+	)
+
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS|THICKMATERIAL
+
+	cold_protection = UPPER_TORSO|LOWER_TORSO
+	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = UPPER_TORSO|LOWER_TORSO
+	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
+	siemens_coefficient = 0.6
+
+/obj/item/clothing/suit/storage/vest/ironhammer
+	name = "webbed operator armor"
+	desc = "An armored vest that protects against some damage. This one has been done in Nadezhda Marshal colors and has various pouches and straps attached."
+	icon_state = "webvest_ironhammer"
+
+//Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
+/obj/item/clothing/suit/storage/vest/merc
+	name = "heavy armor vest"
+	desc = "A high-quality armor vest in a fetching tan. It is surprisingly flexible and light, even with the added webbing and armor plating."
+	icon_state = "mercwebvest"
+	item_state = "mercwebvest"
+	max_upgrades = 0 //No upgrading this one
+	stiffness = MEDIUM_STIFFNESS
+	price_tag = 300
+	armor_list = list(
+		melee = 55,
+		bullet = 55,
+		energy = 55,
+		bomb = 45,
+		bio = 0,
+		rad = 0
+	)//Specshul Mercenary Suit
+
+//Has some armor and but is a mix of the scav suit and a webbing
+/obj/item/clothing/suit/storage/vest/scav
+	name = "armored rig"
+	desc = "A simple plate carrier modified for personal use, additional pouches have been attached to its front, \
+	with matching knee and arm pads to protect limbs without hindering movement. \
+	Opening the plate pouch would reveal a sheet of some Greyson alloy, welded and forced into shape for the vest, \
+	far lighter and offering more protection than it's more common ceramic counterparts. \
+	Due to its jury-rigged yet robust design, it's able to take more armor plates than a standard heavy vest."
+	icon_state = "forehead_armor"
+	item_state = "forehead_armor"
+	max_upgrades = 2 //Like all scav armor, this means investing into these will be better but buying gear will still be viable
+	matter = list(MATERIAL_PLASTEEL = 24, MATERIAL_PLASTIC = 25, MATERIAL_SILVER = 8,  MATERIAL_STEEL = 40) //worth stealing
+	price_tag = 1200
+	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
+	armor_list = list(
+		melee = 40,
+		bullet = 35,
+		energy = 40,
+		bomb = 35,
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/suit/storage/vest/scav/New()
+	..()
+	pockets = new/obj/item/storage/internal(src)
+	pockets.storage_slots = 2	//two slots
+	pockets.max_w_class = ITEM_SIZE_NORMAL		//fits two normal size items as its big pockets
+	pockets.max_storage_space = 8
+	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
+
+/obj/item/clothing/suit/storage/vest/scav/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard"] = "forehead_armor"
+	options["Rust"] = "forehead_rust"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /*
  * Armored Coats *
@@ -1118,160 +1025,7 @@
 	stiffness = LIGHT_STIFFNESS
 	armor_list = list(melee = 15, bullet = 45, energy = 0, bomb = 70, bio = 0, rad = 0)
 
-/*
- * Heavy Armor Types
- */
-
-/obj/item/clothing/suit/armor/heavy
-	name = "heavy armor"
-	desc = "A heavily armored suit that protects against moderate damage."
-	icon_state = "heavy"
-	item_state = "swat_suit"
-	w_class = ITEM_SIZE_BULKY
-	gas_transfer_coefficient = 0.9
-	permeability_coefficient = 0.9
-	siemens_coefficient = 0.5
-	item_flags = THICKMATERIAL|DRAG_AND_DROP_UNEQUIP|COVER_PREVENT_MANIPULATION|EQUIP_SOUNDS
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	slowdown = 0.9
-	max_upgrades = 2
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-	armor_list = list(
-		melee = 40,
-		bullet = 35,
-		energy = 40,
-		bomb = 30,
-		bio = 0,
-		rad = 0
-	)
-	equip_delay = 2 SECONDS
-	price_tag = 125
-
-/obj/item/clothing/suit/armor/heavy/red
-	name = "Thunderdome suit (red)"
-	desc = "Reddish armor."
-	icon_state = "tdred"
-	item_state = "tdred"
-	siemens_coefficient = 1
-
-/obj/item/clothing/suit/armor/heavy/green
-	name = "Thunderdome suit (green)"
-	desc = "Pukish armor."
-	icon_state = "tdgreen"
-	item_state = "tdgreen"
-	siemens_coefficient = 1
-
-
-/*
- * Storage Types
- */
-/obj/item/clothing/suit/storage/vest
-	name = "webbed armor"
-	desc = "An armored vest used for day-to-day operations. This one has various pouches and straps attached."
-	icon_state = "webvest"
-	price_tag = 250 //Normal vest is worth 200, this one is worth 250 because it also has storage space
-	armor_list = list(
-		melee = 15,
-		bullet = 30,
-		energy = 0,
-		bomb = 5,
-		bio = 0,
-		rad = 0
-	)
-
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS|THICKMATERIAL
-
-	cold_protection = UPPER_TORSO|LOWER_TORSO
-	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
-	heat_protection = UPPER_TORSO|LOWER_TORSO
-	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
-	siemens_coefficient = 0.6
-
-/obj/item/clothing/suit/storage/vest/ironhammer
-	name = "webbed operator armor"
-	desc = "An armored vest that protects against some damage. This one has been done in Nadezhda Marshal colors and has various pouches and straps attached."
-	icon_state = "webvest_ironhammer"
-
-//Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
-/obj/item/clothing/suit/storage/vest/merc
-	name = "heavy armor vest"
-	desc = "A high-quality armor vest in a fetching tan. It is surprisingly flexible and light, even with the added webbing and armor plating."
-	icon_state = "mercwebvest"
-	item_state = "mercwebvest"
-	max_upgrades = 0 //No upgrading this one
-	tool_qualities = list()
-	price_tag = 300
-	armor_list = list(
-		melee = 55,
-		bullet = 55,
-		energy = 55,
-		bomb = 45,
-		bio = 0,
-		rad = 0
-	)
-
-//Has some armor and but is a mix of the scav suit and a webbing
-/obj/item/clothing/suit/storage/vest/scav
-	name = "armored rig"
-	desc = "A simple plate carrier modified for personal use, additional pouches have been attached to its front, \
-	with matching knee and arm pads to protect limbs without hindering movement. \
-	Opening the plate pouch would reveal a sheet of some Greyson alloy, welded and forced into shape for the vest, \
-	far lighter and offering more protection than it's more common ceramic counterparts. \
-	Due to its jury-rigged yet robust design, it's able to take more armor plates than a standard heavy vest."
-	icon_state = "forehead_armor"
-	item_state = "forehead_armor"
-	max_upgrades = 2 //Like all scav armor, this means investing into these will be better but buying gear will still be viable
-	matter = list(MATERIAL_PLASTEEL = 24, MATERIAL_PLASTIC = 25, MATERIAL_SILVER = 8,  MATERIAL_STEEL = 40) //worth stealing
-	price_tag = 1200
-	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
-	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
-	armor_list = list(
-		melee = 40,
-		bullet = 35,
-		energy = 40,
-		bomb = 35,
-		bio = 0,
-		rad = 0
-	)
-
-/obj/item/clothing/suit/storage/vest/scav/New()
-	..()
-	pockets = new/obj/item/storage/internal(src)
-	pockets.storage_slots = 2	//two slots
-	pockets.max_w_class = ITEM_SIZE_NORMAL		//fits two normal size items as its big pockets
-	pockets.max_storage_space = 8
-	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
-
-/obj/item/clothing/suit/storage/vest/scav/verb/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["Standard"] = "forehead_armor"
-	options["Rust"] = "forehead_rust"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
-/*
- * Reactive Armor
- */
+//Reactive Armor
 //When the wearer gets hit, this armor will teleport the user a short distance away (to safety or to more danger, no one knows. That's the fun of it!)
 /obj/item/clothing/suit/armor/reactive
 	name = "reactive teleport armor"
@@ -1323,97 +1077,14 @@
 	src.item_state = "reactiveoff"
 	..()
 
-/// Hunting Lodge Armor
-
-/obj/item/clothing/suit/armor/hunter
-	name = "hunter armor"
-	desc = "A lightly armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
-	icon_state = "hunter_armor"
-	item_state = "hunter_armor"
-	blood_overlay_type = "armor"
-	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 20,
-		bomb = 10,
-		bio = 0,
-		rad = 0 )
-	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
-	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
-
-/obj/item/clothing/suit/armor/hunter/bone
-	name = "hunter armor"
-	desc = "A lightly armored breastplate with bone-reinforcements of animal ribs and skulls accompanied by knee-guards from an unknown animal, \
-	supplied by the local hunting-lodge. It appears to be rather crudely self made. \ "
-	icon_state = "hunter_armor_bone"
-	item_state = "hunter_armor_bone"
-	blood_overlay_type = "armor"
-	armor_list = list(
-		melee = 45,
-		bullet = 25,
-		energy = 25,
-		bomb = 10,
-		bio = 0,
-		rad = 0)
-
-/obj/item/clothing/suit/armor/hunter/reinforced
-	name = "hunter armor"
-	desc = "A heavily armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made with steel plating functioning as make-shift kevlar plates."
-	icon_state = "hunter_armor_reinforced"
-	item_state = "hunter_armor_reinforced"
-	blood_overlay_type = "armor"
-	armor_list = list(
-		melee = 30,
-		bullet = 45,
-		energy = 25,
-		bomb = 10,
-		bio = 0,
-		rad = 0)
-
-/obj/item/clothing/suit/armor/hunter/leather
-	name = "hunter armor"
-	desc = "A lightly armored breastplate, leather sleeves, and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made, yet the extra leather reinforcement is not \
-	only stylish but aids greatly is dispersing laser and plasma shots."
-	icon_state = "hunter_armor_leather"
-	item_state = "hunter_armor_leather"
-	blood_overlay_type = "armor"
-	armor_list = list(
-		melee = 30,
-		bullet = 25,
-		energy = 45,
-		bomb = 10,
-		bio = 0,
-		rad = 0)
-
-/obj/item/clothing/suit/armor/vest/handmadewooden
-	name = "wooden armor"
-	desc = "A series of planks held into a relatively torso shaped form by cloth tied around the shoulders and waist. Then further padded with more cloth along the inside."
-	icon_state = "hm_woodvest"
-	item_state = "hm_woodvest"
-	armor_list = list(
-		melee = 25, //It's made of mostly wood and cloth, shittiest armor in the game easily, but does have bio and rad, giving it a rare but still possible boost over handmade. -Kaz
-		bullet = 15, // Justifying keeping somewhat decent values on bullet just because I changed the recipe to include steel. - Seb
-		energy = 10, // It's mostly made of wood, it will char easily.
-		bomb = 10,
-		bio = 25,
-		rad = 25
-	)
-	price_tag = 50
-	stiffness = LIGHT_STIFFNESS
-
+//Soteria Lifeline Technician
 /obj/item/clothing/suit/armor/paramedic
 	name = "advanced paramedic armor"
 	desc = "Lightweight and moderately armored suit meant to be used to rush into danger to save lives. Has a built in Acceleration, that when active gives a speed boost to save people faster."
 	icon_state = "trauma_team"
 	item_state = "trauma_team"
-	matter = list(
-		MATERIAL_PLASTEEL = 10,
-		MATERIAL_STEEL = 5,
-		MATERIAL_PLASTIC = 5,
-		MATERIAL_PLATINUM = 3,
-		MATERIAL_URANIUM = 4,
-		MATERIAL_SILVER = 2
-		)
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 5, MATERIAL_PLATINUM = 3, MATERIAL_URANIUM = 4, MATERIAL_SILVER = 2)
+
 	armor_list = list(
 		melee = 30,
 		bullet = 30,
@@ -1470,3 +1141,290 @@
 			speed_boost_ready = TRUE
 			if(user.head && istype(user.head, matching_helmet))
 				to_chat(usr, SPAN_WARNING("[user.head] beeps: 'Capacitors have been recharged.'"))
+
+/*
+ * Heavy Armor Types
+ */
+
+/obj/item/clothing/suit/armor/heavy
+	name = "heavy armor"
+	desc = "A heavily armored suit that protects against moderate damage."
+	icon_state = "heavy"
+	item_state = "swat_suit"
+	w_class = ITEM_SIZE_BULKY
+	gas_transfer_coefficient = 0.9
+	permeability_coefficient = 0.9
+	siemens_coefficient = 0.5
+	item_flags = THICKMATERIAL|DRAG_AND_DROP_UNEQUIP|COVER_PREVENT_MANIPULATION|EQUIP_SOUNDS
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	slowdown = 0.9
+	max_upgrades = 2
+	stiffness = HEAVY_STIFFNESS
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	armor_list = list(
+		melee = 40,
+		bullet = 35,
+		energy = 40,
+		bomb = 30,
+		bio = 0,
+		rad = 0
+	)
+	equip_delay = 2 SECONDS
+	price_tag = 125
+
+/obj/item/clothing/suit/armor/heavy/red
+	name = "Thunderdome suit (red)"
+	desc = "Reddish armor."
+	icon_state = "tdred"
+	item_state = "tdred"
+	siemens_coefficient = 1
+
+/obj/item/clothing/suit/armor/heavy/green
+	name = "Thunderdome suit (green)"
+	desc = "Pukish armor."
+	icon_state = "tdgreen"
+	item_state = "tdgreen"
+	siemens_coefficient = 1
+
+/*
+ * Factions
+*/
+
+/obj/item/clothing/suit/armor/vest/acolyte
+	name = "vector armor"
+	desc = "Worn, heavy, steadfast in the name of God."
+	icon_state = "acolyte"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	stiffness = MEDIUM_STIFFNESS
+	armor_list = list(melee = 40, bullet = 0, energy = 20, bomb = 20, bio = 100, rad = 80)
+	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/armor/vest/acolyte/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["vector default"] = "acolyte"
+	options["tangent plate armor"] = "tangent_plate_armor"
+	options["greater heart armor"] = "greater_heart"
+	options["lemniscate armor"] = "lemniscate_armor"
+	options["factorial armor"] = "factorial_armor"
+	options["monomial armor"] = "monomial_armor"
+	options["divisor armor"] = "divisor_armor"
+	options["tessellate armor"] = "tessellate_armor"
+	options["vector breastplate"] = "absolute_breast"
+	options["vinculum dress garbs"] = "vinculum_cassock"
+	options["tessellate plague garbs"] = "tessellate_plague_garbs"
+	options["tessellate dark plague garbs"] = "tessellate_plague_garbs_dark"
+	options["botanist default"] = "botanist"
+	options["cosine brigantine armor"] = "cosine_brigantine_armor"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/armor/vest/path //No path ?
+	name = "vinculum cassock"
+	desc = "A heavy Cassock meant for the Vectors that possess no vows. This sturdy armor is made entirely out of biomatter and have no metal inner layer, but at the same time this sturdy armor is the thickest of any other armor made out of cloth, even thicker than a gambeson. But this armor is often used for rituals more than it is using for fighting, keeping the defensive properties only for emergencies."
+	icon_state = "vinculum_cassock"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	stiffness = MEDIUM_STIFFNESS
+	armor_list = list(melee = 40, bullet = 0, energy = 20, bomb = 20, bio = 100, rad = 80)
+	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/armor/vest/path/divisor
+	name = "Divisor's Guardsmen Armor"
+	desc = "The armour of the church arms forces of old - coming from the now extinct military of New Byzantine, this was an armour of pure efficiency in forms of springsteel. The inner layers has plates of biomatter-infused steel and chainmail, together with shoulder protection that elevates to protect the neck and fix it with the helmet of the same design. The garbs has been coloured red - rather than purple - to let it know who wears it is an Nadezdha's vector. This armor has been glorified by the church, as the people who once wears it was efficient warriors who battled the most powerful empire toe-to-toe, as it was vilified by Solfed propaganda, considered lunatics that know no pain or remorse."
+	icon_state = "divisor_guardsmen_armor"
+
+/obj/item/clothing/suit/armor/vest/path/divisor2
+	name = "Divisor Plate Armor"
+	desc = "The Nadezdha's church arm forces received proper armour made out of flexible, biomatter-imbued spring steel plates which provides protection which rivals kevlar all around while being cheaper to produce out of the bioprinter. The plate ensures no space for weapons to slide and reach an weak point while the enlarged faulds ensures free movement. The design came as an more ceremonial, less intimidating battle suit that differs from the old New Byzantine Guardsmen armor."
+	icon_state = "divisor_plate_armor"
+
+/obj/item/clothing/suit/armor/vest/path/tessallate
+	name = "Tessellate Riding Habit"
+	desc = "The Tessellate Riding Habit is an mixture of an well protective, efficient gambeson with inner chainmail that ensures the protection of it's user. Made by Nadezdha's church arms forces, it's the perfect mixture of an ceremonial garb and protective armor to the point of even not seemingly being protective at first. These armours has been made at first for an women-only healing sect - until it spread across all genders and anyone under the rite of Tessellate."
+	icon_state = "tessellate_riding_habit"
+
+/obj/item/clothing/suit/armor/vest/path/tessallate2
+	name = "Tessellate Doctor Garbs"
+	desc = "The garbs of old design set by the church during their years as an small presence in New Byzantine. The Doctors provided free medical care in an world where medical care was absent or absurdly costy, and work safety was all but a dream in risky mining operations to collect materials for the now almost forgotten technology of durasteel. The Tessellate Doctors was an major point for the survival of the church as a whole as during the war against Solfed as many civilians, ecclesiastical members and normal New Byzantine military would be deeply wounded by the constant, almost unstoppable bombing of cities and infrastructures."
+	icon_state = "tessellate_doctor_garbs"
+
+/obj/item/clothing/suit/armor/vest/path/lemniscate
+	name = "Lemniscate Garbs"
+	desc = "The well suited lemniscates garbs of new, made for the highest quality ceremonies by looking absurdly fancy. The biomatter silk is of highest quality and absurdly smooth to the touch to the point of almost making the soul cry. It's protective values are quite close to the design of an pourpoint with inner chainmail with golden ridges and lines that only reinforces it's fanciness value. The garbs extends towards almost all the body and ensures the protection of it's user while being loose fitting, allowing air to circulate, preventing sweat from evaporating too quickly and slowing dehydration in hot, dry hair. This allows many Lemniscates to not struggle as much while walking on an desert."
+	icon_state = "lemniscate_garbs"
+
+/obj/item/clothing/suit/armor/vest/path/lemniscate2
+	name = "Lemniscate Caftan"
+	desc = "As much as these before purple, now red fancy Caftans may show an degree of authority and ceremonial nature, the ecclesiastical and people that lived the wars of New Byzantine only knows sacrifice and famine. During severe attacks where the cities became all but rubble, Lemniscates ensured the mental well being and protection of the weak, the children and the old- in all bunkers and metros, many Lemniscates overworked themselves to gather food and drinks for their troops and civilians, many times killed by cold blood by Solfed machinegun and Solfed's scorched earth tactics. Stories of lemniscates being shot yet still coming back to the bunkers with the same amount of holes as swiss cheese, successfully delivering buckets of water and bread before dying from bloodloss or total organ failure was not unheard of."
+	icon_state = "lemniscate_caftan"
+
+/obj/item/clothing/suit/armor/vest/path/monomial
+	name = "Monomial Kasaya"
+	desc = "Kasaya are robes used by the Monks and Nuns of the church of the absolute, and most of the time used by hermits during their path towards the unknown. Used by the Devotees, it was once made for the ones that wanted to let clear their vows of poverty, being made with discarded fabric instead of biomatter. But with how the colony is a dangerous place, the Monomials needed to make do with the new reinforced biomatter cloth ordered by the Church while going on the upper colonies, yet this armor still respects the monomial vows by keeping one arm unprotected, while the other make do by reinforcing the armor rate in double."
+	icon_state = "monomial_kasaya"
+
+/obj/item/clothing/suit/armor/vest/path/monomial2
+	name = "Monomial Gusoku"
+	desc = "An old, repainted red armor piece with minor plates overlapping on the shoulders, waist and legs, with an large plate protecting the chest and belly. During times of extreme necessity of manpower during the Solfed war, many hermits and civilians took arms and made their own armor out of trash and steel from construction beams from the cities with nothing but welding tools and hammers after the outcome of Solfed bombings as certain people of the monomial path trained the population martial prowess when wall executions of civilians became common place for anyone with minimal relation to the church - the time where the population either died by starvation by Solfed's scorched earth tactics, or accepted Church's delivered biomatter meat, bread and water."
+	icon_state = "monomial_gusoku"
+
+/obj/item/clothing/suit/armor/vest/path/factorial
+	name = "Factorial powergarb"
+	desc = "Powergarbs are curious things made by the Nadezdha's church arms forces that are by no means made out of circuits, but rather have golem foundations. Such curious technology that almost only the church possess with great variety beyond xenobiology, what explains the EMP-Immune nature of the powergarbs even if, in fact, the lightweight clamping arms behind them are alive and are actually living golems that consented into becoming the protection of a Factorial. Well trained factorials are able to use such arms to lift themselves out of the ground for better combat support - but until now, only ERT forces are able to do such a thing."
+	icon_state = "factorial_powergarb"
+
+/obj/item/clothing/suit/armor/vest/path/factorial2
+	name = "Factorial Vesselcrew Armor"
+	desc = "The well protective against impact armor that suits better to protect the user from broken bones after receiving large, pressuring impacts against Freighter or Scout vessels. There's overlapping layers of various thin wedges of biomatter-infused steel with smaller springs just under it. There's an large plate protecting vital organs on the chest and an thick garb protecting the rest of the legs. The Vesselcrew are now an completely extinct fighters and engineers of New-Byzantine that fighted Solfed reinforcements in space with nothing but weaponised cargo ships that, even while extremely understaffed and in extreme technological disadvantage, managed to push off solfed vessels with surprise tactics and absurdly fast speed. They managed to make an difference in the war but was exterminated when the actual, powerful fleet of ships came - which they sacrificed themselves to give time for Augustine and many church members to leave New Byzantine before the portion of the planet would be glassed in radioactive explosions by Solfed."
+	icon_state = "factorial_vesselcrew_armor"
+
+/obj/item/clothing/suit/armor/vest/rosaria
+	name = "rosaria armor"
+	desc = "The Rosaria protects."
+	icon_state = "rosaria_armor"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	stiffness = MEDIUM_STIFFNESS
+	armor_list = list(melee = 60, bullet = 20, energy = 20, bomb = 50, bio = 100, rad = 100) //So people actually ever print this, hate the Rigsuit when this exists right there all juicy - Lamasmaster
+	flags_inv = HIDEJUMPSUIT
+	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
+
+/obj/item/clothing/suit/armor/vest/rosaria/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["rosaria default"] = "rosaria_armor"
+	options["rosaria alt"] = "rosaria_alt_armor"
+
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/armor/vest/prime
+	name = "prime armor"
+	desc = "Trust in god, but keep your armor on."
+	icon_state = "prime"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 10, bio = 100, rad = 100)
+	max_upgrades = 0
+	stiffness = LIGHT_STIFFNESS
+	flags_inv = HIDEJUMPSUIT
+	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
+
+/obj/item/clothing/suit/armor/vest/prime/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["prime dark"] = "prime"
+	options["prime royal"] = "prime_alt"
+	options["prime saint"] = "prime_saint"
+	options["prime paladin"] = "prime_paladin"
+	options["prime paladin alt"] = "prime_paladin_alt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+//Guild
+/obj/item/clothing/suit/armor/vest/technomancersuit
+	name = "'Mark V' environmental protection suit"
+	desc = "For working in hazardous environments. While it is built for most environments, one of those is not space. As a tradeoff, it can be modified more."
+	icon_state = "technosuit"
+	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	armor_list = list(melee = 40, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100) //Expensive
+	stiffness = MEDIUM_STIFFNESS
+	max_upgrades = 2
+	extra_allowed = list(/obj/item/extinguisher,
+						 /obj/item/tool,
+						 /obj/item/tool_upgrade,
+						 /obj/item/stack/cable_coil,
+						 /obj/item/device/t_scanner,
+						 /obj/item/device/scanner/gas,
+						 /obj/item/taperoll/engineering,
+						 /obj/item/storage/toolbox)
+	flags_inv = HIDEJUMPSUIT
+
+/// Hunting Lodge Armor
+
+/obj/item/clothing/suit/armor/hunter
+	name = "hunter armor"
+	desc = "A lightly armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made."
+	icon_state = "hunter_armor"
+	item_state = "hunter_armor"
+	blood_overlay_type = "armor"
+	armor_list = list(melee = 20, bullet = 0, energy = 20, bomb = 0, bio = 0, rad = 0)
+	stiffness = LIGHT_STIFFNESS
+	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
+
+/obj/item/clothing/suit/armor/hunter/bone
+	name = "hunter armor"
+	desc = "A lightly armored breastplate with bone-reinforcements of animal ribs and skulls accompanied by knee-guards from an unknown animal, \
+	supplied by the local hunting-lodge. It appears to be rather crudely self made. \ "
+	icon_state = "hunter_armor_bone"
+	item_state = "hunter_armor_bone"
+	blood_overlay_type = "armor"
+	armor_list = list(melee = 50, bullet = 0, energy = 30, bomb = 0, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/armor/hunter/reinforced
+	name = "hunter armor"
+	desc = "A heavily armored breastplate and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made with steel plating functioning as make-shift kevlar plates."
+	icon_state = "hunter_armor_reinforced"
+	item_state = "hunter_armor_reinforced"
+	blood_overlay_type = "armor"
+	armor_list = list(melee = 30, bullet = 50, energy = 0, bomb = 0, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/armor/hunter/leather
+	name = "hunter armor"
+	desc = "A lightly armored breastplate, leather sleeves, and knee-guards supplied by the local hunting-lodge. It appears to be rather crudely self made, yet the extra leather reinforcement is not \
+	only stylish but aids greatly is dispersing laser and plasma shots."
+	icon_state = "hunter_armor_leather"
+	item_state = "hunter_armor_leather"
+	blood_overlay_type = "armor"
+	armor_list = list(melee = 30, bullet = 0, energy = 50, bomb = 0, bio = 0, rad = 0)
