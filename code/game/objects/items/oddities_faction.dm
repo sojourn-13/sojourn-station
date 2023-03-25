@@ -821,7 +821,7 @@ No more of that.
 					stations_list_for_phone += O
 
 				if(!stations_list_for_phone)
-					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say /"I'm prepared to close this deal quickly./" followed by a silent dial tone. Looks like they are not in any mood to do more Aggressive Sales Market."))
+					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say \"I'm prepared to close this deal quickly.\" followed by a silent dial tone. Looks like they are not in any mood to do more Aggressive Sales Market."))
 					return
 
 				var/station_choice = input(user, "What Station do you want to force sales with you?") as null|anything in stations_list_for_phone
