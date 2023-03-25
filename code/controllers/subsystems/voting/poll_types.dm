@@ -3,6 +3,12 @@
 ///////////////////VOTES//////////////////////
 //////////////////////////////////////////////
 
+/*To prevent abuse and rule-by-salt, the evac vote weights each player's vote based on a few parameters
+	If you are alive and have been for a while, then you have the normal 1 vote
+	If you are dead, or just spawned, you get only 0.6 votes
+	If you are an antag or a head of staff, you get 1.2 votes
+*/
+
 #define VOTE_WEIGHT_LOW	0.6
 #define VOTE_WEIGHT_NORMAL	1
 #define VOTE_WEIGHT_HIGH	1.2 //To tie 2 dead votes but not over-rule 2 living
@@ -40,18 +46,11 @@
 	non_admin = FALSE
 	name = "Supper Majority: End Round"
 	question = "End Shift?"
-	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round/admin)
+	choice_types = list(/datum/vote_choice/restart, /datum/vote_choice/countinue_round)
 	minimum_win_percentage = 0.75
 	next_vote = 255 MINUTES //Minimum round length before it can be called for the first time
 	cooldown = 30 MINUTES //Cooldown is set to 30 mins as 1 hour is a bit much when things change so much in so little time + maxium 8 hour rounds means we should be a bit more forgiven.
 	only_admin = FALSE
-
-
-/*To prevent abuse and rule-by-salt, the evac vote weights each player's vote based on a few parameters
-	If you are alive and have been for a while, then you have the normal 1 vote
-	If you are dead, or just spawned, you get only 0.6 votes
-	If you are an antag or a head of staff, you get 1.2 votes
-*/
 
 /datum/poll/restart/get_vote_power(var/client/C)
 	if (!istype(C))
@@ -93,14 +92,8 @@
 /datum/poll/restart/on_end()
 	if(non_admin)
 		lower_minium()
-
-		addtimer(CALLBACK(src, /datum/poll/restart/proc/recall_vote), 60 MINUTES)
+		SSvote.recall_vote_loop()
 	..()
-
-/datum/poll/restart/proc/recall_vote()
-	SSvote.start_vote(/datum/poll/restart)
-
-
 
 #undef VOTE_WEIGHT_LOW
 #undef VOTE_WEIGHT_NORMAL
@@ -122,10 +115,6 @@
 
 /datum/vote_choice/countinue_round
 	text = "Continue Shift"
-
-/datum/vote_choice/countinue_round/admin
-	text = "Continue Shift"
-
 
 /*********************
 	Storyteller
