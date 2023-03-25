@@ -833,7 +833,7 @@ No more of that.
 				unlocks_left -= 1
 				anti_cheat = FALSE
 			else
-				to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say /"I'm prepared to close this deal quickly./" followed by a silent dial tone. Looks like they are not in any mood to do more Aggressive Sales Market."))
+				to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say \"I'm prepared to close this deal quickly.\" followed by a silent dial tone. Looks like they are not in any mood to do more Aggressive Sales Market."))
 
 
 		else
