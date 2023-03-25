@@ -46,7 +46,6 @@
 		if(istype(A, /obj/item))
 			var/obj/item/I = A
 			I.decontaminate()
-
 		O.make_young()
 
 /obj/machinery/washing_machine/Process()
