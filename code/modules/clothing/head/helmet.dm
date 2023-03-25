@@ -289,27 +289,61 @@
 
 /obj/item/clothing/head/helmet/path/divisor
 	name = "Divisor Plate Greathelm"
-	desc = "An great helm with large red wings with latin engravings that lets it know the user is an enlightened Vector with it's vibrant colours. The openings of the helmet are an lie - there is biomatter-imbued, temperate silica glass that does not create shards when broken by harm, avoiding potential ways to be blinded while keeping the eyes protected from dust."
+	desc = "An great helm with large red wings with latin engravings that lets it know the user is an enlightened Vector with it's vibrant colours."
 	icon_state = "divisor_plate_greathelm"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
-/obj/item/clothing/head/helmet/path/divisor2
-	name = "Divisor's Guardsmen Helmet"
-	desc = "AThe armour of the church arms force of old. It's an efficiently made armour previously made only to be used by humans - now adjusted to fit all races with it's flexible biomatter properties. The helmet allows that the force of impact of a bullet or laser would be transferred towards the entirety of the equipment, what'd ensured the survival of guardsmen from New Byzantine during the invasion of Solfed until it was conquered by nuclear power by the year 2643."
-	icon_state = "divisor_guardsmen_helmet"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+/obj/item/clothing/head/helmet/path/divisor/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Divisor Plate Greathelm"] = "divisor_plate_greathelm"
+	options["Divisor's Guardsmen Helmet"] = "divisor_guardsmen_helmet"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/path/tessallate
 	name = "Tessellate Veil"
-	desc = "The Tesselate Veil keeps the user's face protected from the sun and sweat while performing surgeries or healing to avoid such problems from causing issues, and the same goes to avoid hair from falling into open wounds. It is possible to keep the eyes completely veiled with metal layer - so the tessellate shall guide itself with faith alone."
+	desc = "The Tesselate Veil keeps the user's face protected from the sun and sweat while performing their duty."
 	icon_state = "tessellate_veil"
 	flags_inv = BLOCKHAIR
 
-/obj/item/clothing/head/helmet/path/tessallate2
-	name = "Tessellate Headgear"
-	desc = "The rather curious hat of old design set by the church during their years as an small presence in New Byzantine. The doctors received this mask to perform surgeries in very dangerous areas away from the eyes of authority, many times in places which toxic waste from mining operations was common if not everywhere. Ever after the Church became an strong political entity the masks was still being used entirely because of the population's respect for the doctors - the masks an symbol of their presence."
-	icon_state = "tessellate_maskheadgear"
-	flags_inv = BLOCKHAIR
+/obj/item/clothing/head/helmet/path/tessallate/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Tessellate Veil"] = "tessellate_veil"
+	options["Tessellate Headgear"] = "tessellate_maskheadgear"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/path/lemniscate
 	name = "Lemniscate Hat"
@@ -317,35 +351,87 @@
 	icon_state = "lemniscate_hat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
-/obj/item/clothing/head/helmet/path/lemniscate2
-	name = "Lemniscate Grenadier Hat"
-	desc = "The fancy yet protective hat of the Lemniscate ecclesiastical members of New Byzantine, painted red and with new golden lines that lets an cruciform visible on it's middle. There is engraving which says, 'The death of heros can never be fully repaid, yet their sacrifice shall be honored for an eternity.' well visible both on the front and on the back. It honors the fallen ones and their sacrifice during the war against Solfed."
-	icon_state = "lemniscate_grenadier_bearskin"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+/obj/item/clothing/head/helmet/path/lemniscate/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Lemniscate Hat"] = "tessellate_veil"
+	options["Lemniscate Grenadier Hat"] = "lemniscate_grenadier_bearskin"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 /obj/item/clothing/head/helmet/path/monomial
 	name = "Monomial Kabuto"
-	desc = "An old helmet piece with minor plates overlapping and keeping the skull of it's user completely secure from damage. It allows attacks to glance down and spread the impact across the entire helmet instead of only one point, providing the capacity of survival of whoever keeps it on it's head. There is an rather demonic mask with angry expression well visible for intimidation tactics. The mask seems to be staring at the viewer's soul. At second glance, it becomes possible to notice the helmet was bend into shape with welding tool and hammers alone."
+	desc = "An old helmet piece with minor plates overlapping and keeping the skull of it's user completely secure from damage. It allows attacks to glance down and spread the impact across the entire helmet instead of only one point, providing the capacity of survival of whoever keeps it on it's head."
 	icon_state = "monomial_kabuto"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
-/obj/item/clothing/head/helmet/path/monomial2
-	name = "Monomial Ajirogasa"
-	desc = "Ajirogasa was before made with shaven bamboo or wood, used to protect the eyes from the sun. Now it's a sturdy helmet made out of secrets, that somehow folds the steel like straw in a manner that science still gags to understand. For years one could tell it was possible to sharpen the edges just to use these Ajirogasa as a throwing weapon, probably some kind of running gag that only hermits understands"
-	icon_state = "monomial_ajirogasa"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+/obj/item/clothing/head/helmet/path/monomial/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Monomial Kabuto"] = "monomial_kabuto"
+	options["Monomial Ajirogasa"] = "monomial_ajirogasa"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/path/factorial
 	name = "Factorial Powerhood"
-	desc = "The Powerhoods are essentially the hollow facial structure of an golem that consented into becoming part of an factorial, always on watch and protecting the factorial, communicating with the factorial itself and providing guidance and vice-versa as some type of mutualism almost as if the Factorial armor itself possess an AI. Any time the helmet is removed from the user's face, the golem falls into an coma until it is equipped once again."
+	desc = "An indespensable headwear of any combat behicle operator, well used by the mechanics who served under the banner of the New Byzantine and even to this day, it's design is used for pilots."
 	icon_state = "factorial_powerhood"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 
-/obj/item/clothing/head/helmet/path/factorial2
-	name = "Factorial Vesselcrew skullcap"
-	desc = "An indespensable headwear of any combat behicle operator, well used by the mechanics who served under the banner of the New Byzantine and even to this day, it's design is used for pilots. Their protection is reliable to protect effectively the user's skull without letting too much force to be spread towards the user's neck, avoiding permanent injuries or death. After the extermination of the Mechanics after their sacrifice, the newly formed Factorials took to themselves to continue their glorious lineage out of honour."
-	icon_state = "factorial_vesselcrew_shlemofon"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+/obj/item/clothing/head/helmet/path/factorial/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Factorial Powerhood"] = "factorial_powerhood"
+	options["Factorial Vesselcrew skullcap"] = "factorial_vesselcrew_shlemofon"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your helmet's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/rosaria
 	name = "rosaria great helm"
