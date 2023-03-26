@@ -49628,7 +49628,6 @@
 "pox" = (
 /obj/structure/table/rack,
 /obj/random/rig_module/low_chance,
-/obj/item/rig/light/hacker/steward,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/fo)
 "poG" = (

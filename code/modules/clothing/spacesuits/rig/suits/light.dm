@@ -37,68 +37,6 @@
 /obj/item/clothing/head/helmet/space/rig/light
 	name = "hood"
 
-/obj/item/rig/light/ultra_light
-	name = "SI 'Proto-Spacer' control module"
-	desc = "An ultra light, unarmoured rig suit. The precursor to the Soteria retainer model, quite lacking in armor and EMP protection but capable of fitting hardsuit modules."
-	icon_state = "hacker_rig"
-	suit_type = "light suit"
-	armor_list = list(
-		melee = 10,
-		bullet = 5,
-		energy = 0,
-		bomb = 25,
-		bio = 100,
-		rad = 45
-	)
-	emp_protection = 0
-	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10) //Costly!
-
-	chest_type = /obj/item/clothing/suit/space/rig/light/ultra_light
-	helm_type =  /obj/item/clothing/head/helmet/space/rig/light/ultra_light
-	boot_type =  /obj/item/clothing/shoes/magboots/rig/light/ultra_light
-	glove_type = /obj/item/clothing/gloves/rig/light/ultra_light
-
-/obj/item/clothing/suit/space/rig/light/ultra_light
-	name = "SI 'Spacer' suit"
-
-/obj/item/clothing/gloves/rig/light/ultra_light
-	name = "SI 'Spacer' gloves"
-
-/obj/item/clothing/shoes/magboots/rig/light/ultra_light
-	name = "SI 'Spacer' shoes"
-
-/obj/item/clothing/head/helmet/space/rig/light/ultra_light
-	name = "SI 'Spacer' hood"
-	flags_inv = 0
-
-/obj/item/rig/light/hacker/steward
-	name = "SI 'Retainer' control module"
-	desc = "A Soteria Institute modification of the traditional light rig built for equal parts utility and defense."
-	armor_list = list(
-		melee = 30,
-		bullet = 25,
-		energy = 30,
-		bomb = 30,
-		bio = 100,
-		rad = 30
-	)
-	emp_protection = 20
-	seal_delay = 5
-	icon_state = "hacker_rig"
-	req_access = list(access_hop)
-
-	initial_modules = list(
-		/obj/item/rig_module/mounted/taser,
-		/obj/item/rig_module/device/flash,
-		/obj/item/rig_module/vision/medhud,
-		/obj/item/rig_module/device/healthscanner,
-		/obj/item/rig_module/modular_injector/medical,
-		/obj/item/rig_module/ai_container,
-		/obj/item/rig_module/storage
-		)
-
-
-
 /obj/item/rig/light/hacker
 	name = "cybersuit control module"
 	suit_type = "cyber"
