@@ -19,6 +19,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES|EARS
 	item_flags = COVER_PREVENT_MANIPULATION
+	obscuration = HEAVY_OBSCURATION
 	siemens_coefficient = 0.9
 	price_tag = 50
 
@@ -42,6 +43,7 @@
 		rad = 25
 	)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
+	stiffness = UNBEARABLE_STIFFNESS
 	siemens_coefficient = 0.9
 	price_tag = 100
 

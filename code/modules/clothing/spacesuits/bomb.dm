@@ -36,9 +36,10 @@
 		rad = 90
 	)
 	tool_qualities = list(QUALITY_ARMOR = 100)
-	max_upgrades = 3
+	max_upgrades = 0
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
+	stiffness = UNBEARABLE_STIFFNESS
 	siemens_coefficient = 0
 	equip_delay = 10 SECONDS
 	price_tag = 300

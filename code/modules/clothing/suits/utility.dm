@@ -33,6 +33,7 @@
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	stiffness = UNBEARABLE_STIFFNESS
 	price_tag = 50
 
 
@@ -90,4 +91,5 @@
 		rad = 100
 	)
 	flags_inv = HIDEJUMPSUIT|HIDETAIL
+	stiffness = UNBEARABLE_STIFFNESS
 	price_tag = 100
