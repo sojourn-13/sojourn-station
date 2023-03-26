@@ -199,7 +199,7 @@
 	armor_list = list(melee = 10, bullet = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/vest/handmade/lonestar/toggle_style()
-	set name = "Adjust style"
+	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
 

@@ -552,8 +552,6 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/bioprinter/nt_clothes/armor_kit,
 		/datum/design/bioprinter/nt_clothes/acolyte_armor_helm,
 		/datum/design/bioprinter/nt_clothes/acolyte_armor,
-		/datum/design/bioprinter/nt_clothes/agrolyte_armor_helm,
-		/datum/design/bioprinter/nt_clothes/agrolyte_armor,
 		/datum/design/bioprinter/nt_clothes/custodian_armor_helm,
 		/datum/design/bioprinter/nt_clothes/custodian_armor,
 		/datum/design/bioprinter/nt_clothes/rosaria_armor_helm,
