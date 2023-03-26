@@ -3401,7 +3401,7 @@
 /obj/item/clothing/suit/armor/flakvest,
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/head/helmet/faceshield/altyn,
-/obj/item/clothing/head/helmet/faceshield/altyn/maska,
+/obj/item/clothing/head/helmet/faceshield/altyn,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "ahx" = (
@@ -13327,7 +13327,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/item/clothing/head/helmet/steelpot,
+/obj/item/clothing/head/helmet/ballistic,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "azs" = (

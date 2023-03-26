@@ -333,7 +333,7 @@
 /obj/item/clothing/suit/armor/flakvest/militia,
 /obj/item/clothing/suit/armor/flakvest,
 /obj/item/clothing/head/helmet/faceshield/altyn,
-/obj/item/clothing/head/helmet/faceshield/altyn/maska,
+/obj/item/clothing/head/helmet/faceshield/altyn,
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory)
@@ -3642,7 +3642,7 @@
 	})
 "aic" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/head/helmet/faceshield/altyn/maska{
+/obj/item/clothing/head/helmet/faceshield/altyn{
 	pixel_x = -8;
 	pixel_y = -6
 	},
@@ -3654,11 +3654,11 @@
 	pixel_x = 4;
 	pixel_y = -8
 	},
-/obj/item/clothing/head/helmet/steelpot{
+/obj/item/clothing/head/helmet/ballistic{
 	pixel_x = 0;
 	pixel_y = 4
 	},
-/obj/item/clothing/head/helmet/steelpot{
+/obj/item/clothing/head/helmet/ballistic{
 	pixel_x = 0;
 	pixel_y = 4
 	},

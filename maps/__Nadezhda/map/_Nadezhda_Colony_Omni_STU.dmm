@@ -105631,7 +105631,7 @@
 	pixel_x = -8;
 	pixel_y = 13
 	},
-/obj/item/clothing/head/helmet/faceshield/altyn/maska{
+/obj/item/clothing/head/helmet/faceshield/altyn{
 	pixel_x = -8;
 	pixel_y = -6
 	},
@@ -119982,7 +119982,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/item/clothing/head/helmet/steelpot,
+/obj/item/clothing/head/helmet/ballistic,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "xkP" = (

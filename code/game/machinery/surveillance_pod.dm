@@ -16,8 +16,7 @@
 	)
 
 	var/list/compatible_helmets = list(
-	/obj/item/clothing/head/helmet/visor/cyberpunkgoggle,
-	/obj/item/clothing/head/helmet/visor/cyberpunkgoggle/armored
+	/obj/item/clothing/head/helmet/visor/cyberpunkgoggle
 	)
 
 //	var/list/compatible_glasses = list()

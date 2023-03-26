@@ -268,7 +268,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
 	/obj/item/clothing/suit/armor/flakvest = 1,
-	/obj/item/clothing/head/helmet/faceshield/altyn/maska = 1,
+	/obj/item/clothing/head/helmet/faceshield/altyn = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,
@@ -282,7 +282,7 @@
 	/obj/item/clothing/under/serbiansuit = 1,
 	/obj/item/clothing/head/soft/green2soft = 1,
 	/obj/item/clothing/suit/armor/flakvest = 1,
-	/obj/item/clothing/head/helmet/steelpot = 1,
+	/obj/item/clothing/head/helmet/ballistic = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,
 	/obj/item/storage/fancy/cigarettes = 1)

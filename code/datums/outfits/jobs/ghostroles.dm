@@ -16,7 +16,7 @@
 /decl/hierarchy/outfit/scavenger
 	name = "Scavenger"
 	uniform = /obj/item/clothing/under/genericb
-	head = /obj/item/clothing/head/helmet/steelpot
+	head = /obj/item/clothing/head/helmet/ballistic
 	shoes = /obj/item/clothing/shoes/color/black
 	suit = /obj/item/clothing/suit/armor/flakvest
 	suit_store = /obj/item/gun/projectile/boltgun

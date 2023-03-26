@@ -50,18 +50,6 @@
 		list(QUALITY_CUTTING, 10, 60)
 	)
 
-// Masacre poor bucket, but gain some better protection. Cut bigger holes for eyes, drill small ones for some air.
-/datum/craft_recipe/clothing/cheap_greathelm
-	name = "bucket-helm"
-	result = /obj/item/clothing/head/helmet/handmade/greathelm
-	steps = list(
-		list(/obj/item/reagent_containers/glass/bucket, 1, "time" = 30),
-		list(QUALITY_CUTTING, 15, 120),
-		list(QUALITY_DRILLING, 10, 60),
-		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL),
-		list(/obj/item/stack/cable_coil, 4)
-	)
-
 /datum/craft_recipe/clothing/cardborg_helmet
 	name = "cardborg helmet"
 	result = /obj/item/clothing/head/costume/halloween/cardborg
@@ -155,7 +143,7 @@
 	)
 
 /datum/craft_recipe/clothing/scavengerhelmet
-	name = "Scavenger Helmet"
+	name = "scavenger Helmet"
 	result = /obj/item/clothing/head/helmet/handmade/scavengerhelmet
 	steps = list(
 		list(/obj/item/clothing/head/helmet/handmade, 1), // Take your average combat helm

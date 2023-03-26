@@ -196,14 +196,7 @@
 	icon_state = "cargovest"
 	item_state = "hazard"
 	blood_overlay_type = "armor"
-	armor_list = list(
-		melee = 10,
-		bullet = 10,
-		energy = 0,
-		bomb = 0,
-		bio = 0,
-		rad = 0
-)
+	armor_list = list(melee = 10, bullet = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/vest/handmade/lonestar/toggle_style()
 	set name = "Adjust style"
@@ -529,14 +522,7 @@
 	price_tag = 1200
 	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
 	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
-	armor_list = list(
-		melee = 40,
-		bullet = 35,
-		energy = 40,
-		bomb = 35,
-		bio = 0,
-		rad = 0
-	)
+	armor_list = list(melee = 40, bullet = 35, energy = 40, bomb = 35, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/storage/vest/scav/New()
 	..()
@@ -711,14 +697,7 @@
 	slowdown = 0.3
 	max_upgrades = 0
 	stiffness = MEDIUM_STIFFNESS
-	armor_list = list(
-		melee = 65,
-		bullet = 20,
-		energy = 0,
-		bomb = 25,
-		bio = 0,
-		rad = 0
-	)
+	armor_list = list(melee = 65, bullet = 20, energy = 0, bomb = 25, bio = 0, rad = 0)
 	price_tag = 250
 
 /obj/item/clothing/suit/armor/riot/ironhammer
@@ -737,14 +716,7 @@
 	slowdown = 0.2
 	stiffness = LIGHT_STIFFNESS
 	max_upgrades = 0
-	armor_list = list(
-		melee = 30,
-		bullet = 65,
-		energy = 5,
-		bomb = 10,
-		bio = 0,
-		rad = 0
-	)
+	armor_list = list(melee = 30, bullet = 65, energy = 5, bomb = 10, bio = 0, rad = 0)
 	price_tag = 250
 
 /obj/item/clothing/suit/armor/bulletproof/full
@@ -780,14 +752,7 @@
 	slowdown = 0.2
 	stiffness = LIGHT_STIFFNESS
 	max_upgrades = 0
-	armor_list = list(
-		melee = 10,
-		bullet = 25,
-		energy = 65,
-		bomb = 10,
-		bio = 0,
-		rad = 0
-	)
+	armor_list = list(melee = 10, bullet = 25, energy = 65, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/vest/ablative/ironhammer
 	icon_state = "ablative_ironhammer"
@@ -808,14 +773,7 @@
 	desc = "An \"Iron Lock Security\" ablative vest with plates designed to absorb rather than reflect energy projectiles. Produced by Greyson Positronic."
 	icon_state = "northtech"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 5)
-	armor_list = list(
-		melee = 15,
-		bullet = 15,
-		energy = 50,
-		bomb = 0,
-		bio = 0,
-		rad = 0
-	)
+	armor_list = list(melee = 15, bullet = 15, energy = 50, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/laserproof
 	name = "reflective armor vest"
@@ -827,14 +785,7 @@
 	max_upgrades = 0
 	slowdown = 0.3
 	stiffness = MEDIUM_STIFFNESS //Pgood
-	armor_list = list(
-		melee = 25,
-		bullet = 25,
-		energy = 60,
-		bomb = 0,
-		bio = 0,
-		rad = 0
-	)
+	armor_list = list(melee = 25,bullet = 25, energy = 60, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0
 	price_tag = 325
 

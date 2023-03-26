@@ -58510,7 +58510,7 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
 "cOs" = (
-/obj/item/clothing/head/helmet/steelpot,
+/obj/item/clothing/head/helmet/ballistic,
 /obj/effect/decal/cleanable/blood,
 /obj/random/gun_energy_cheap/low_chance,
 /turf/simulated/floor/tiled/techmaint_perforated,
@@ -62736,7 +62736,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/item/clothing/head/helmet/steelpot,
+/obj/item/clothing/head/helmet/ballistic,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/hideout)
 "cYt" = (

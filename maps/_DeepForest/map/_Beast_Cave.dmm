@@ -6432,7 +6432,7 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "EO" = (
 /obj/item/ammo_magazine/ammobox/rifle_75_small/hv,
-/obj/item/clothing/head/helmet/faceshield/altyn/maska,
+/obj/item/clothing/head/helmet/faceshield/altyn,
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/beast_cave_dark)
 "EQ" = (
