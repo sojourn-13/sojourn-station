@@ -1,10 +1,10 @@
 // The Ameridian Knight rig suit, handmade by Soteria roboticists and Soteria's answer to the Church's Crusader Armor
 /obj/item/rig/ameridian_knight
-	name = "Ameridian Knight suit control module"
+	name = "ameridian Knight suit control module"
 	suit_type = "ameridian knight"
 	desc = "An armored, knight-like suit designed by Soteria's best roboticists and powered by an ameridian core."
 	icon_state = "ameridian_knight_rig"
-	armor_list = list(melee = 80, bullet = 80, energy = 80, bomb = 70, bio = 100, rad = 100)
+	armor_list = list(melee = 80, bullet = 80, energy = 80, bomb = 70, bio = 100, rad = 100) //Best armor overall in the game, try saying otherwise and I will smack you - Lamasmaster
 	slowdown = 0 // Lot of stuff used in its construction that justify not having any slowdown while active
 	offline_slowdown = 5 // Very heavy and the suit isn't helping while offline
 	offline_vision_restriction = 2

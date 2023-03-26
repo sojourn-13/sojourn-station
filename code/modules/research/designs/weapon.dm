@@ -91,6 +91,10 @@
 	name = "Advanced paramedic helmet"
 	build_path = /obj/item/clothing/head/helmet/faceshield/paramedic
 
+/datum/design/research/item/clothing/recovery_rig
+	name = "Recovery Suit"
+	build_path = /obj/item/rig/recovery_suit
+
 /datum/design/research/item/clothing/armor_laserproof
 	name = "Reflector armor vest"
 	desc = "Laser reflective armor."

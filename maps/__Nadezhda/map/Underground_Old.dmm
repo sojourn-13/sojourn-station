@@ -74124,7 +74124,6 @@
 /turf/simulated/floor/tiled/steel/cargo,
 /area/nadezhda/crew_quarters/janitor)
 "dyD" = (
-/obj/machinery/suit_storage_unit/nt/custodian,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/janitor)
 "dyE" = (
@@ -74134,7 +74133,6 @@
 /obj/machinery/firealarm{
 	pixel_y = 27
 	},
-/obj/machinery/suit_storage_unit/nt/custodian,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/janitor)
 "dyF" = (

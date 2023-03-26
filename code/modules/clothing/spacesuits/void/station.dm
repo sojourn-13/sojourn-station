@@ -189,7 +189,7 @@
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/mining
 
-//CEO Rig
+//CEO Rig - This is not what a RIG is I will snap your toes
 /obj/item/clothing/head/helmet/space/void/goldilocks
 	name = "Goldilocks Gilded Helmet"
 	desc = "A helmet designed to look good while watching people you paid to do your work for you. Not the best for personal protection, but lightweight."

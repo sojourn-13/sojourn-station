@@ -70930,7 +70930,6 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
 "nJa" = (
-/obj/machinery/suit_storage_unit/nt/custodian,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/janitor)
 "nJj" = (
@@ -91993,7 +91992,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "rOa" = (
-/obj/machinery/suit_storage_unit/nt/custodian,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/janitor)
 "rOh" = (

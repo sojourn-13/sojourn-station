@@ -433,7 +433,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/med/medical_job_trama/populate_contents()
-	new /obj/item/gearbox/traumatizedteam(src)
 	new /obj/item/gunbox/traumatizedteam(src) // Moved the weapon selection to here
 	new /obj/item/cell/medium/moebius/high(src) // Keeping the cell as a "second mag" for the Abnegate
 	new /obj/item/clothing/suit/straight_jacket(src)
@@ -501,31 +500,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		options["Mamba - assault rifle"] = list(/obj/item/gun/projectile/automatic/mamba,/obj/item/ammo_magazine/light_rifle_257,/obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball)
 		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags/pepperball, /obj/item/ammo_magazine/ammobox/c10x24_small)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
-		if(src && choice)
-			var/list/things_to_spawn = options[choice]
-			for(var/new_type in things_to_spawn)
-				var/atom/movable/AM = new new_type(get_turf(src))
-				if(istype(AM, /obj/item/gun/))
-					to_chat(user, "You have chosen \the [AM].")
-			qdel(src)
-		else
-			stamped = FALSE
-
-/obj/item/gearbox/traumatizedteam
-	name = "Lifeline Technician's equipment kit"
-	desc = "A secure box containing the heavy duty protective gear of the Soteria Lifeline Technicians."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "secure"
-
-/obj/item/gearbox/traumatizedteam/attack_self(mob/living/user)
-	..()
-	var/stamped
-	if(!stamped)
-		stamped = TRUE
-		var/list/options = list()
-		options["Recovery Team RIG"] = list(/obj/item/rig/recovery_suit/equipped)
-		options["Advanced Paramedic Armor"] = list(/obj/item/clothing/suit/armor/paramedic,/obj/item/clothing/head/helmet/faceshield/paramedic)
-		var/choice = input(user,"Which armor will you take?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]
 			for(var/new_type in things_to_spawn)

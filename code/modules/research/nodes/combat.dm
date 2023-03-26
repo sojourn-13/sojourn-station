@@ -293,10 +293,12 @@
 	cost = 750
 
 	unlocks_designs = list(
+							/datum/design/research/item/clothing/paramedic_armor,
+							/datum/design/research/item/clothing/paramedic_helmet,
 							/datum/design/research/item/clothing/medarmor,
 							/datum/design/research/item/clothing/rig_cheap,
 							/datum/design/research/item/clothing/tinfoil
-							 )
+							)
 
 /datum/technology/advanced_armor
 	name = "Advanced Armor Designs"
@@ -312,11 +314,10 @@
 	cost = 3750
 
 	unlocks_designs = list(
-							/datum/design/research/item/clothing/armor_laserproof,
-							/datum/design/research/item/clothing/paramedic_armor,
-							/datum/design/research/item/clothing/paramedic_helmet,
-							/datum/design/research/item/clothing/rig_advhazmat
-							)
+						/datum/design/research/item/clothing/armor_laserproof,
+						/datum/design/research/item/clothing/rig_advhazmat,
+						/datum/design/research/item/clothing/recovery_rig
+						)
 
 /datum/technology/advanced_unstable_plasma_weapons
 	name = "Advanced Plasma Weapon Designs"

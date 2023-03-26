@@ -13,7 +13,7 @@
 		rad = 25
 	)
 	emp_protection = 10
-	slowdown = 0
+	slowdown = -0.3
 	obscuration = 0
 	item_flags = STOPPRESSUREDAMAGE | THICKMATERIAL | DRAG_AND_DROP_UNEQUIP | EQUIP_SOUNDS
 	offline_slowdown = 0
@@ -50,7 +50,6 @@
 		bio = 100,
 		rad = 45
 	)
-	slowdown = -0.2 //We speed up the user at cost of horrable armor
 	emp_protection = 0
 	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10) //Costly!
 
@@ -157,7 +156,6 @@
 		rad = 25
 	)
 	emp_protection = 40 //change this to 30 if too high.
-	slowdown = 0
 
 	chest_type = /obj/item/clothing/suit/space/rig/light/ninja
 	glove_type = /obj/item/clothing/gloves/rig/light/ninja

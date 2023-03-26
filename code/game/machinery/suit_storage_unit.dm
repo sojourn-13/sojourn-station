@@ -485,25 +485,14 @@
 	SUIT_TYPE = /obj/item/clothing/suit/radiation
 	HELMET_TYPE = /obj/item/clothing/head/radiation
 
-/obj/machinery/suit_storage_unit/nt
-	SUIT_TYPE = /obj/item/clothing/suit/space/void/acolyte
-
-/obj/machinery/suit_storage_unit/nt/agrolyte
-	SUIT_TYPE = /obj/item/clothing/suit/space/void/agrolyte
-
-/obj/machinery/suit_storage_unit/nt/custodian
-	SUIT_TYPE = /obj/item/clothing/suit/space/void/custodian
-
 /obj/machinery/suit_storage_unit/mining
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/mining
 
 /obj/machinery/suit_storage_unit/excelsior
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/excelsior
 
-
 /obj/machinery/suit_storage_unit/merc
 	overlay_color = "#D04044"
 	SUIT_TYPE = /obj/item/clothing/suit/space/void/merc
 	HELMET_TYPE = /obj/item/clothing/head/helmet/space/void/merc
 	MASK_TYPE = /obj/item/clothing/mask/gas/tactical
-

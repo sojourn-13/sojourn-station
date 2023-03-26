@@ -8823,9 +8823,6 @@
 /obj/structure/reagent_dispensers/bidon/protein_can/si,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/genetics)
-"chh" = (
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/crew_quarters/janitor)
 "chz" = (
 /obj/landmark/join/start/medspec,
 /turf/simulated/floor/tiled/white/cyancorner,
@@ -79054,7 +79051,6 @@
 	},
 /area/nadezhda/maintenance/undergroundfloor1north)
 "sfc" = (
-/obj/machinery/suit_storage_unit/nt/custodian,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/janitor)
 "sfk" = (
@@ -104974,7 +104970,9 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "xWO" = (
-/obj/machinery/suit_storage_unit/nt/custodian,
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/suit/armor/vest/custodian,
+/obj/item/clothing/head/helmet/custodian,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/janitor)
 "xXa" = (
@@ -166209,7 +166207,7 @@ vrt
 bjV
 fiy
 nfk
-chh
+sfc
 dnz
 uNL
 pow
@@ -166408,10 +166406,10 @@ gSu
 hua
 pow
 xWO
-chh
+sfc
 qtK
 qvW
-chh
+sfc
 dnz
 tew
 pow
@@ -166609,7 +166607,7 @@ tMC
 gSu
 hua
 pow
-sfc
+xWO
 dba
 qtK
 orG

@@ -8579,7 +8579,6 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
 "arp" = (
-/obj/machinery/suit_storage_unit/nt/custodian,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/janitor)
 "arq" = (
@@ -61364,7 +61363,6 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "wRp" = (
-/obj/machinery/suit_storage_unit/nt/custodian,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/janitor)
 "wRZ" = (

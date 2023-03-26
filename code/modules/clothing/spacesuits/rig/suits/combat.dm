@@ -14,13 +14,13 @@
 		bio = 100,
 		rad = 50
 	)
-	slowdown = 0.3
+	slowdown = -0.1
 	drain = 4
 	offline_slowdown = 3
 	offline_vision_restriction = 1
 	stiffness = 0
 	obscuration = 0
-	max_upgrades = 1
+	max_upgrades = 0
 	helm_type = /obj/item/clothing/head/helmet/space/rig/combat
 
 
@@ -53,21 +53,21 @@
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/storage
 		)
+
 //blacksheild
 /obj/item/rig/combat/blackshield
-	name = "Blackshield Ops control module"
+	name = "blackshield operative control module"
 	desc = "A Blackshield RIG module that has been tailored for CQC. Due to its plating, it's slightly bulkier than normal standard security hardsuits."
 	icon_state = "blackshield_rig"
 	suit_type = "light suit"
 	armor_list = list(
 		melee = 60,
-		bullet = 55,
-		energy = 40,
+		bullet = 45,
+		energy = 20,
 		bomb = 50,
 		bio = 100,
 		rad = 50
 	)
-	slowdown = 0.5 //So we have a reason to not use it
 	drain = 25
 	offline_slowdown = 3
 	offline_vision_restriction = 1
@@ -99,9 +99,9 @@
 	name = "blackshield hazard hood"
 	desc = "A hazard hood modded to help against CQC combat."
 	armor_list = list(
-		melee = 65,
-		bullet = 55,
-		energy = 40,
+		melee = 60,
+		bullet = 45,
+		energy = 20,
 		bomb = 50,
 		bio = 100,
 		rad = 50
@@ -113,19 +113,10 @@
 	The Tau Cross shining brightly upon its shoulder, it offers moderate combat protection against many a type of threat to the Absolute."
 	icon_state = "hussar_rig" //Rig modula by Gundam Tanaka#9565
 	suit_type = "hussar rig"
-	armor_list = list(
-		melee = 50,
-		bullet = 45,
-		energy = 30,
-		bomb = 50,
-		bio = 100,
-		rad = 50
-	)
-	slowdown = 0.3
+
 	drain = 4
 	offline_slowdown = 3
 	offline_vision_restriction = 1
-	max_upgrades = 1
 	chest_type = /obj/item/clothing/suit/space/rig/combat/knight
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/combat/knight
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/combat/knight
@@ -154,7 +145,7 @@
 	light_overlay = "helmet_light_dual"
 	armor_list = list(
 		melee = 50,
-		bullet = 40,
+		bullet = 45,
 		energy = 30,
 		bomb = 50,
 		bio = 100,

@@ -130,6 +130,8 @@
 	else
 		new /obj/item/storage/backpack/satchel/medical(src)
 	new /obj/item/clothing/under/rank/paramedic(src) // Not a surgery-oriented job, they don't need scrubs.
+	new /obj/item/clothing/suit/armor/paramedic(src)
+	new /obj/item/clothing/head/helmet/faceshield/paramedic(src)
 	new /obj/item/device/lighting/toggleable/flashlight(src)
 	new /obj/item/device/radio(src)
 	new /obj/item/tool/crowbar(src)
