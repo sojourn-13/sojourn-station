@@ -49,39 +49,6 @@
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
 
-//Removed do to gun bloat and balance
-/*
-/obj/item/gun/projectile/revolver/lemant/claw
-	name = "\"Pilgrim Claw\" magnum revolver"
-	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds nine 10mm rounds and one single action underslung 20mm shell. \
-	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually. \
-	Someone added a spike to the grip, allowing it to function as a rather deadly knife when pistol whipping, handy given how long it takes to reload."
-	icon = 'icons/obj/guns/projectile/lemant_claw.dmi'
-	icon_state = "lemant_claw"
-	item_state = "lemant_claw"
-	force = WEAPON_FORCE_PAINFUL // Up from 10, essentially a knife but harder to mod. -Kaz
-	init_recoil = HANDGUN_RECOIL(0.6)//Addded weight, better control. -Kaz
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_BAYONET)
-	price_tag = 475 // Still an upgrade.
-
-/obj/item/gun/projectile/revolver/lemant/uppercut
-	name = "\"Pilgrim Hero\" kurtz revolver"
-	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds six 12mm rounds and one single action underslung 20mm shell. \
-	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstaking to reload since it requires removing each spent shell individually. \
-	This model is a conversion, known as the pilgrim hero, its caliber is converted to 12mm but it loses ammo capacity due to the larger shells and lacks the \
-	physical weight to give it better recoil control compared to other revolvers in its weight class. Underslung still works at least."
-	icon = 'icons/obj/guns/projectile/lemant_hero.dmi'
-	icon_state = "lemant_hero"
-	item_state = "lemant_hero"
-	caliber = CAL_50
-	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
-	max_shells = 6
-	price_tag = 500
-	init_recoil = HANDGUN_RECOIL(1.3)// Massive recoil due to being a kurtz revolver without the weight to compensate for the blast. -Kaz
-	wield_delay = 0.6 SECOND
-	wield_delay_factor = 0.6 // 60 vig
-*/
 //Defined here, may be used elsewhere but for now its only used here. -Kaz
 /obj/item/gun/projectile/underslung_shotgun
 	name = "underslung shotgun"
