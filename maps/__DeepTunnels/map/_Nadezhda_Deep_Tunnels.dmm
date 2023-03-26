@@ -2877,6 +2877,10 @@
 	output_level_max = 250000;
 	outputting = 2
 	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "if" = (
@@ -2919,12 +2923,12 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "im" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "ip" = (
@@ -3511,17 +3515,17 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
 "jO" = (
+/obj/structure/catwalk,
 /obj/structure/cable/yellow{
-	d1 = 1;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "4-8"
 	},
-/obj/structure/cable/yellow{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "jP" = (
@@ -3538,12 +3542,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/yellow{
+/obj/structure/catwalk,
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "jR" = (
@@ -3558,24 +3562,25 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/rnd/outpostmachineroom)
-"jS" = (
 /obj/machinery/power/sensor{
 	long_range = 1;
 	name = "Powernet Sensor - Research Outpost";
 	name_tag = "Research Outpost Subgrid"
 	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/cable/yellow,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/rnd/outpostmachineroom)
+"jS" = (
 /obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "jT" = (
@@ -7472,11 +7477,6 @@
 /obj/machinery/camera/network/engineering{
 	dir = 1
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "ti" = (
@@ -7603,6 +7603,11 @@
 "tz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
 "tC" = (
@@ -7650,11 +7655,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/white/golden,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -8270,11 +8270,6 @@
 /area/nadezhda/rnd/outpostgeneral)
 "yi" = (
 /obj/machinery/artifact_scanpad,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
 "ys" = (
@@ -8639,14 +8634,6 @@
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/beach/water/swamp,
 /area/nadezhda/rnd/mixing)
-"IF" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/rnd/anomalisolfive)
 "IH" = (
 /turf/simulated/floor/asteroid,
 /area/nadezhda/rnd/mixing)
@@ -8814,25 +8801,12 @@
 /area/nadezhda/rnd/anomalisolfour)
 "MT" = (
 /obj/machinery/artifact_analyser,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
 "MY" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/nadezhda/rnd/outpostgeneral)
-"Oc" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/rnd/anomalisolfive)
 "Ol" = (
 /obj/structure/catwalk,
 /obj/structure/window/reinforced/plasma{
@@ -9006,11 +8980,6 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/anomalisolfive)
@@ -11912,7 +11881,7 @@ ip
 iH
 jR
 iX
-IF
+jG
 MT
 Yp
 kj
@@ -12114,7 +12083,7 @@ jO
 jQ
 jS
 th
-Oc
+jG
 jG
 jG
 jG
@@ -12311,8 +12280,8 @@ hH
 hH
 iY
 iG
-tC
 tz
+tC
 tD
 tF
 tG
