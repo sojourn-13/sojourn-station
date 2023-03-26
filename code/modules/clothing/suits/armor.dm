@@ -1194,59 +1194,148 @@
 	icon_state = "vinculum_cassock"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	stiffness = MEDIUM_STIFFNESS
 	armor_list = list(melee = 40, bullet = 0, energy = 20, bomb = 20, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/vest/path/divisor
-	name = "Divisor's Guardsmen Armor"
-	desc = "The armour of the church arms forces of old - coming from the now extinct military of New Byzantine, this was an armour of pure efficiency in forms of springsteel. The inner layers has plates of biomatter-infused steel and chainmail, together with shoulder protection that elevates to protect the neck and fix it with the helmet of the same design. The garbs has been coloured red - rather than purple - to let it know who wears it is an Nadezdha's vector. This armor has been glorified by the church, as the people who once wears it was efficient warriors who battled the most powerful empire toe-to-toe, as it was vilified by Solfed propaganda, considered lunatics that know no pain or remorse."
+	name = "divisor's guardsmen armor"
+	desc = "The armour of the church arms forces of old - coming from the now extinct military of New Byzantine. The inner layers has plates of biomatter-infused steel and chainmail, together with shoulder protection that elevates to protect the neck and fix it with the helmet of the same design."
 	icon_state = "divisor_guardsmen_armor"
 
-/obj/item/clothing/suit/armor/vest/path/divisor2
-	name = "Divisor Plate Armor"
-	desc = "The Nadezdha's church arm forces received proper armour made out of flexible, biomatter-imbued spring steel plates which provides protection which rivals kevlar all around while being cheaper to produce out of the bioprinter. The plate ensures no space for weapons to slide and reach an weak point while the enlarged faulds ensures free movement. The design came as an more ceremonial, less intimidating battle suit that differs from the old New Byzantine Guardsmen armor."
-	icon_state = "divisor_plate_armor"
+/obj/item/clothing/suit/armor/vest/path/divisor/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Divisor's Guardsmen Armor"] = "divisor_guardsmen_armor"
+	options["Divisor Plate Armor"] = "divisor_plate_armor"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/armor/vest/path/tessallate
-	name = "Tessellate Riding Habit"
-	desc = "The Tessellate Riding Habit is an mixture of an well protective, efficient gambeson with inner chainmail that ensures the protection of it's user. Made by Nadezdha's church arms forces, it's the perfect mixture of an ceremonial garb and protective armor to the point of even not seemingly being protective at first. These armours has been made at first for an women-only healing sect - until it spread across all genders and anyone under the rite of Tessellate."
+	name = "tessellate riding habit"
+	desc = "The Tessellate Habit is an mixture of an well protective, efficient gambeson with inner chainmail that ensures the protection of it's user."
 	icon_state = "tessellate_riding_habit"
 
-/obj/item/clothing/suit/armor/vest/path/tessallate2
-	name = "Tessellate Doctor Garbs"
-	desc = "The garbs of old design set by the church during their years as an small presence in New Byzantine. The Doctors provided free medical care in an world where medical care was absent or absurdly costy, and work safety was all but a dream in risky mining operations to collect materials for the now almost forgotten technology of durasteel. The Tessellate Doctors was an major point for the survival of the church as a whole as during the war against Solfed as many civilians, ecclesiastical members and normal New Byzantine military would be deeply wounded by the constant, almost unstoppable bombing of cities and infrastructures."
-	icon_state = "tessellate_doctor_garbs"
+/obj/item/clothing/suit/armor/vest/path/tessallate/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Tessellate Riding Habit"] = "tessellate_riding_habit"
+	options["Tessellate Doctor Garbs"] = "tessellate_doctor_garbs"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/armor/vest/path/lemniscate
-	name = "Lemniscate Garbs"
-	desc = "The well suited lemniscates garbs of new, made for the highest quality ceremonies by looking absurdly fancy. The biomatter silk is of highest quality and absurdly smooth to the touch to the point of almost making the soul cry. It's protective values are quite close to the design of an pourpoint with inner chainmail with golden ridges and lines that only reinforces it's fanciness value. The garbs extends towards almost all the body and ensures the protection of it's user while being loose fitting, allowing air to circulate, preventing sweat from evaporating too quickly and slowing dehydration in hot, dry hair. This allows many Lemniscates to not struggle as much while walking on an desert."
+	name = "lemniscate garbs"
+	desc = "The well suited lemniscates garbs of new, made for the highest quality ceremonies by looking absurdly fancy.  It's protective values are quite close to the design of an pourpoint with inner chainmail with golden ridges and lines that only reinforces it's fanciness value."
 	icon_state = "lemniscate_garbs"
 
-/obj/item/clothing/suit/armor/vest/path/lemniscate2
-	name = "Lemniscate Caftan"
-	desc = "As much as these before purple, now red fancy Caftans may show an degree of authority and ceremonial nature, the ecclesiastical and people that lived the wars of New Byzantine only knows sacrifice and famine. During severe attacks where the cities became all but rubble, Lemniscates ensured the mental well being and protection of the weak, the children and the old- in all bunkers and metros, many Lemniscates overworked themselves to gather food and drinks for their troops and civilians, many times killed by cold blood by Solfed machinegun and Solfed's scorched earth tactics. Stories of lemniscates being shot yet still coming back to the bunkers with the same amount of holes as swiss cheese, successfully delivering buckets of water and bread before dying from bloodloss or total organ failure was not unheard of."
-	icon_state = "lemniscate_caftan"
+/obj/item/clothing/suit/armor/vest/path/lemniscate/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Lemniscate Garbs"] = "lemniscate_garbs"
+	options["Lemniscate Caftan"] = "lemniscate_caftan"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/armor/vest/path/monomial
-	name = "Monomial Kasaya"
-	desc = "Kasaya are robes used by the Monks and Nuns of the church of the absolute, and most of the time used by hermits during their path towards the unknown. Used by the Devotees, it was once made for the ones that wanted to let clear their vows of poverty, being made with discarded fabric instead of biomatter. But with how the colony is a dangerous place, the Monomials needed to make do with the new reinforced biomatter cloth ordered by the Church while going on the upper colonies, yet this armor still respects the monomial vows by keeping one arm unprotected, while the other make do by reinforcing the armor rate in double."
+	name = "monomial kasaya"
+	desc = "An old design of armor, often repainted, pieced together with minor plates overlapping on the shoulders, waist and legs, with an large plate protecting the chest and belly."
 	icon_state = "monomial_kasaya"
 
-/obj/item/clothing/suit/armor/vest/path/monomial2
-	name = "Monomial Gusoku"
-	desc = "An old, repainted red armor piece with minor plates overlapping on the shoulders, waist and legs, with an large plate protecting the chest and belly. During times of extreme necessity of manpower during the Solfed war, many hermits and civilians took arms and made their own armor out of trash and steel from construction beams from the cities with nothing but welding tools and hammers after the outcome of Solfed bombings as certain people of the monomial path trained the population martial prowess when wall executions of civilians became common place for anyone with minimal relation to the church - the time where the population either died by starvation by Solfed's scorched earth tactics, or accepted Church's delivered biomatter meat, bread and water."
-	icon_state = "monomial_gusoku"
+/obj/item/clothing/suit/armor/vest/path/monomial/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Monomial Kasaya"] = "monomial_kasaya"
+	options["Monomial Gusoku"] = "monomial_gusoku"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/armor/vest/path/factorial
-	name = "Factorial powergarb"
-	desc = "Powergarbs are curious things made by the Nadezdha's church arms forces that are by no means made out of circuits, but rather have golem foundations. Such curious technology that almost only the church possess with great variety beyond xenobiology, what explains the EMP-Immune nature of the powergarbs even if, in fact, the lightweight clamping arms behind them are alive and are actually living golems that consented into becoming the protection of a Factorial. Well trained factorials are able to use such arms to lift themselves out of the ground for better combat support - but until now, only ERT forces are able to do such a thing."
+	name = "factorial powergarb"
+	desc = "A Factorial's best protection well working their duties on the colony and back in its day on New Byzantine, tends to have different attachments for a more personalized garb."
 	icon_state = "factorial_powergarb"
 
-/obj/item/clothing/suit/armor/vest/path/factorial2
-	name = "Factorial Vesselcrew Armor"
-	desc = "The well protective against impact armor that suits better to protect the user from broken bones after receiving large, pressuring impacts against Freighter or Scout vessels. There's overlapping layers of various thin wedges of biomatter-infused steel with smaller springs just under it. There's an large plate protecting vital organs on the chest and an thick garb protecting the rest of the legs. The Vesselcrew are now an completely extinct fighters and engineers of New-Byzantine that fighted Solfed reinforcements in space with nothing but weaponised cargo ships that, even while extremely understaffed and in extreme technological disadvantage, managed to push off solfed vessels with surprise tactics and absurdly fast speed. They managed to make an difference in the war but was exterminated when the actual, powerful fleet of ships came - which they sacrificed themselves to give time for Augustine and many church members to leave New Byzantine before the portion of the planet would be glassed in radioactive explosions by Solfed."
-	icon_state = "factorial_vesselcrew_armor"
+/obj/item/clothing/suit/armor/vest/path/factorial/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Factorial powergarb"] = "factorial_powergarb"
+	options["Factorial Vesselcrew Armor"] = "factorial_vesselcrew_armor"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/armor/vest/rosaria
 	name = "rosaria armor"
