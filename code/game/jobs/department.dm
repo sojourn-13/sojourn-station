@@ -48,7 +48,7 @@
 	In future, we will implement largescale missions and research contracts to earn money, and then set it
 	to a much lower starting value
 	*/
-	account_initial_balance = 50000 //Emergency / Discression funding. 50k acceptable; used to cover costs of other departments as needed by the Premier / Steward. Consider reducing by 10-20k if too much.
+	account_initial_balance = 57800 //50k for emergencies, 7800 for the wages if both have nepotism to last 5 hour shift if it comes to it, shouldn't ever need any more.
 	jobs_in_department = list("/datum/job/premier","/datum/job/pg")
 
 /*************
@@ -58,19 +58,16 @@
 /datum/department/ironhammer
 	name = "Marshal and Blackshield Division"
 	id = DEPARTMENT_SECURITY
-	//This is balanced around full team in 6 hours with nepitism
-	//Without nepitsm a full team 27000 in 6 hours
-	//With nepitsm a full team 35100 in 6 hours
-	account_initial_balance = 40000 //Estimated 5k extra credits than what is required for wages on a full roster.
+	//Without nepotism a full team 34300 in 5 hours
+	//With nepotism a full team 42250 in 5 hours
+	account_initial_balance = 46000 //Estimated 4k extra credits than what is required for wages on a full roster.
 	jobs_in_department = list("/datum/job/smc","/datum/job/swo","/datum/job/supsec","/datum/job/serg","/datum/job/inspector","/datum/job/medspec","/datum/job/trooper","/datum/job/officer")
-
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
-	account_initial_balance = 14000 //Few extra thousand credits than needed for wages, covers material cost. Any extra money should be aquired through sales.
-	//Full team with nepitsm in 6 hours is 11900
-	//A full crew GM + 4 adpets is 1700 an hour, takes 10~ hours to drain the department funds
+	account_initial_balance = 17000 //17000 to cover some expenses but not that much
+	//Full team with nepotism in 5 hours is 15600
 	jobs_in_department = list("/datum/job/chief_engineer","/datum/job/technomancer")
 
 
@@ -88,25 +85,22 @@
 /datum/department/moebius_medical
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
-	//18600 in 6 hours with full crew
-	//24180 in 6 hours with full crew + nep
-	account_initial_balance = 24200 //Covers crew-cost. Rest should be made up for by medical fees and chem sales.
+	//30225 in 5 hours with full crew + nepotism
+	account_initial_balance = 30250 //Covers crew-cost. Rest should be made up for by medical fees and chem sales.
 	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/recovery_team","/datum/job/psychiatrist")
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
-	//15000 in 6 hours with full crew
-	//19500 in 6 hours with full crew + nepitism
-	account_initial_balance = 20000 //Covers basic fees of employees. Sell posis and whatever else to make up for material cost.
+	//24375 in 5 hours with full crew + nepotism
+	account_initial_balance = 24500 //Covers wages of employees. Sell posis and whatever else to make up for material cost.
 	jobs_in_department = list("/datum/job/rd","/datum/job/scientist","/datum/job/roboticist")
 
 /datum/department/church
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
-	//9600 in 6 hours with full crew
-	//12480 with all nep in 6 hours
-	account_initial_balance = 12500 //Covers base wages. Biomatter, farm, solars, trash beacon - fully self-sufficent. Sell things for more money.
+	account_initial_balance = 17000 //17000 to cover some expenses but not that much
+	//Full team with nepotism in 5 hours is 15600
 	jobs_in_department = list ("/datum/job/chaplain","/datum/job/acolyte")
 
 /******************
@@ -124,16 +118,14 @@
 	if you manage to get this variable refferenced there you're a better man than me. godspeed
 	*/
 	//Note: LSS isnt accounted for wages when starting money as they have the easyest ways to make money
-	account_initial_balance = 17000 //Has a lot of workers to pay - but their /entire/ job is literally to make money. Should cover the base nessessities of hourly payment.
+	account_initial_balance = 18200 //Has a lot of workers to pay - but their /entire/ job is literally to make money. Should cover the base nessessities of hourly payment.
 	jobs_in_department = list("/datum/job/merchant","/datum/job/cargo_tech","/datum/job/mining")
 
 /datum/department/prospector
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
-	//Full team in 6 hours is 6600
-	//Full team with Nep in 6 hours is 6600
-	//Nep in 6 hours with full team is 8580
-	account_initial_balance = 8500 //Starts with an even wage to cover payment-expenses. Their job is to make money and, thus, should not start with more money than needed.
+	//With only the Foreman currently being paid, after 8 hours, it totals to 4800 of payment, leaving an ample 1700 left.
+	account_initial_balance = 6500 //With how Prospectors no longer get paid, they no longer need such an inflated department balance
 	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro")
 
 /datum/department/independent

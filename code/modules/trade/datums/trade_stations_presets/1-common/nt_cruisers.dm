@@ -54,7 +54,8 @@
 			/obj/item/tool/hatchet,
 			/obj/item/tool/minihoe,
 			/obj/item/device/scanner/plant,
-			/obj/item/clothing/gloves/botanic_leather
+			/obj/item/clothing/gloves/botanic_leather,
+			/obj/machinery/portable_atmospherics/hydroponics
 		),
 		"Custodial Supply" = list(
 			/obj/item/reagent_containers/glass/bucket,
@@ -75,6 +76,7 @@
 		),
 		"Energy Weapons" = list(
 			/obj/item/gun/energy/taser,
+			/obj/item/gun/energy/ntpistol,
 			/obj/item/gun/energy/laser = custom_good_amount_range(list(1, 5)),
 			/obj/item/gun/energy/ionrifle = custom_good_amount_range(list(1, 4)),
 			/obj/item/gun/energy/sniperrifle = custom_good_amount_range(list(-8, 1)),

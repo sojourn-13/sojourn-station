@@ -296,9 +296,8 @@
 	original = target
 	def_zone = target_zone
 
-	spawn()
-		setup_trajectory(curloc, targloc, x_offset, y_offset, angle_offset) //plot the initial trajectory
-		Process()
+	setup_trajectory(curloc, targloc, x_offset, y_offset, angle_offset) //plot the initial trajectory
+	Process()
 
 	return FALSE
 

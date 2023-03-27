@@ -236,6 +236,51 @@
 	item_state = null
 	w_class = ITEM_SIZE_TINY
 
+/obj/item/clothing/glasses/crayon_blindfold
+	name = "tineidae blindfold"
+	desc = "A blindfold worn by priests and priestesses of the Papilionis Order to ritualistically cover their eyes. \
+			They attune with their user, allowing a greater range of perception."
+	icon_state = "crayon_blindfold"
+	tint = TINT_BLIND // For non-cultists
+	obscuration = MEDIUM_OBSCURATION // Still hard to aim a gun with a literal blindfold
+	flash_protection = FLASH_PROTECTION_MAJOR // By all intents and purposes, a blindfold
+	var/sight_modifier = FALSE
+	var/sight_bonus = FALSE
+
+/obj/item/clothing/glasses/crayon_blindfold/equipped(var/mob/M)
+	.=..()
+	update_blindfold(M)
+
+/obj/item/clothing/glasses/crayon_blindfold/dropped(var/mob/M)
+	.=..()
+	update_blindfold(M)
+
+/obj/item/clothing/glasses/crayon_blindfold/proc/update_blindfold(mob/living/carbon/human/user)
+	if(istype(user))
+		if(user.glasses == src && !sight_modifier)
+			for(var/datum/language/L in user.languages) // Give bonuses only to cultists that are nearsighted/blinded
+				if((L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT) && (user.disabilities&NEARSIGHTED || user.disabilities&BLIND))
+					user.additional_darksight += 1
+					prescription = 1
+					darkness_view = 7
+					tint = TINT_NONE
+					sight_modifier = TRUE
+					sight_bonus = TRUE
+				else
+					prescription = 0
+					darkness_view = 0
+					tint = TINT_BLIND
+					sight_modifier = TRUE
+					sight_bonus = TRUE
+		if(sight_bonus && !(user.glasses == src)) // We back to our initial stats in case it gets picked up by noncultists
+			user.additional_darksight -= 1
+			prescription = 0
+			darkness_view = 0
+			tint = TINT_BLIND
+			sight_modifier = FALSE
+			sight_bonus = FALSE
+
+
 /obj/item/clothing/glasses/ballistic
 	name = "ballistic goggles"
 	desc = "Protects the eyes from sudden flashes, debris, and light shrapnel."

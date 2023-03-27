@@ -604,8 +604,11 @@
 		OP_HEART =    /obj/item/organ/internal/heart/plant,
 		OP_STOMACH =  /obj/item/organ/internal/stomach/plant,
 		OP_LUNGS =    /obj/item/organ/internal/lungs/plant,
+		OP_LIVER =    /obj/item/organ/internal/liver/plant,
 		BP_BRAIN =    /obj/item/organ/internal/brain/plant,
-		OP_EYES =     /obj/item/organ/internal/eyes
+		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left/plant,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/plant,
+		OP_EYES =     /obj/item/organ/internal/eyes/plant
 		)
 
 	perks = list(PERK_FOLKEN_HEALING)
@@ -653,7 +656,11 @@
 		OP_HEART =    /obj/item/organ/internal/heart/plant,
 		OP_STOMACH =  /obj/item/organ/internal/stomach/plant,
 		BP_BRAIN =    /obj/item/organ/internal/brain/plant,
-		OP_EYES =     /obj/item/organ/internal/eyes
+		OP_EYES =     /obj/item/organ/internal/eyes,
+		OP_LUNGS =    /obj/item/organ/internal/lungs,
+		OP_LIVER =    /obj/item/organ/internal/liver,
+		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right,
 		)
 
 	perks = list(PERK_DARK_HEAL)
@@ -703,7 +710,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(
@@ -753,7 +760,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(
@@ -812,7 +819,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(
@@ -875,7 +882,7 @@
 	has_process = list(    // which required-process checks are conducted and defalut organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(
@@ -935,7 +942,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(
@@ -996,7 +1003,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(
@@ -1056,7 +1063,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
 	heat_discomfort_strings = list(

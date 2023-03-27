@@ -34,8 +34,9 @@
 					continue
 				//if our target has hazard protection, apply damage based on the protection percentage.
 				var/hazard_protection = victim.getarmor(null, "bio")
-				var/damage = CLONE_DAMAGE_PER_TICK - (CLONE_DAMAGE_PER_TICK * (hazard_protection/100))
-				victim.apply_damage(damage, CLONE, used_weapon = "Biological")
+				var/damage = BIOREACTOR_DAMAGE_PER_TICK - (BIOREACTOR_DAMAGE_PER_TICK * (hazard_protection/100))
+				victim.apply_damage(damage, BRUTE, used_weapon = "Biological")
+				victim.adjustOxyLoss(BIOREACTOR_DAMAGE_PER_TICK / 2)	// Snowflake shit, but we need the mob to die within a reasonable time frame
 
 				if(prob(10))
 					playsound(loc, 'sound/effects/bubbles.ogg', 45, 1)

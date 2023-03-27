@@ -538,7 +538,6 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 /datum/antag_contract/excel/propaganda/can_place()
 	return ..() && targets.len
 
-
 // Blackshield contracts
 
 /datum/antag_contract/blackshield

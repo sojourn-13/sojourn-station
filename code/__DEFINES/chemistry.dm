@@ -48,27 +48,36 @@
 #define IS_OPIFEX 9
 #define IS_NARAMAD 10
 
-#define CE_STABLE "stable" // Inaprovaline
-#define CE_ANTIBIOTIC "antibiotic" // Spaceacilin
-#define CE_BLOODRESTORE "bloodrestore" // Iron/nutriment
-#define CE_PAINKILLER "painkiller"
-#define CE_ALCOHOL "alcohol" // Liver filtering
-#define CE_ALCOHOL_TOXIC "alcotoxic" // Liver damage
-#define CE_SPEEDBOOST "gofast" // Makes you go faster
-#define CE_SLOWDOWN "goslower" // Makes you go slower
-#define CE_PULSE      "xcardic" // increases or decreases heart rate
-#define CE_NOPULSE    "heartstop" // stops heartbeat
-#define CE_MIND    		 "mindbending"  // Stabilizes or wrecks mind. Used for hallucinations
-#define CE_ANTITOX       "antitox"      // Dylovene
-#define CE_TOXIN         "toxins"       // Generic toxins, stops autoheal.
-#define CE_SPEECH_VOLUME     "speach_volume"    // speech volume multiplier , default volume is integer and equals 2
-#define CE_BLOODCLOT 	"bloodclot"	// Promote healing but thickens blood, slows and stops bleeding (range 0 - 1)
-#define CE_OXYGENATED    "oxygen"       // Dexalin.
-#define CE_PURGER "purger"	//Purger
-#define CE_NOWITHDRAW "no_withdrawal"
-#define CE_VOICEMIMIC "voice_mimic"
-#define CE_DYNAMICFINGERS "dynfingers"
-#define CE_DARKSIGHT "darksight"	//Vision methods built into a mob.
+#define CE_STABLE			"stable" // Inaprovaline
+#define CE_ANTIBIOTIC		"antibiotic" // Spaceacilin
+#define CE_BLOODRESTORE		"bloodrestore" // Iron/nutriment
+#define CE_PAINKILLER		"painkiller"
+#define CE_ALCOHOL			"alcohol" // Liver filtering
+#define CE_ALCOHOL_TOXIC	"alcotoxic" // Liver damage
+#define CE_SPEEDBOOST 		"gofast" // Makes you go faster
+#define CE_SLOWDOWN 		"goslower" // Makes you go slower
+#define CE_PULSE      		"xcardic" // increases or decreases heart rate
+#define CE_NOPULSE    		"heartstop" // stops heartbeat
+#define CE_MIND    		 	"mindbending"  // Stabilizes or wrecks mind. Used for hallucinations
+#define CE_ANTITOX       	"antitox"      // Dylovene
+#define CE_TOXIN         	"toxins"       // Generic toxins, stops autoheal.
+#define CE_SPEECH_VOLUME	"speach_volume"    // speech volume multiplier , default volume is integer and equals 2
+#define CE_BLOODCLOT		"bloodclot"	// Promote healing but thickens blood, slows and stops bleeding (range 0 - 1)
+#define CE_OXYGENATED		"oxygen"       // Dexalin.
+#define CE_PURGER			"purger"	//Purger
+#define CE_NOWITHDRAW		"no_withdrawal"
+#define CE_VOICEMIMIC		"voice_mimic"
+#define CE_DYNAMICFINGERS	"dynfingers"
+#define CE_BONE_MEND		"bone mending"   	// Ossisine
+#define CE_ONCOCIDAL        "anticancer"
+#define CE_DARKSIGHT 		"darksight"	//Vision methods built into a mob.
+
+// Chem effects for robotic/assisted organs
+#define CE_MECH_STABLE 		"cooling"
+#define CE_MECH_ACID 		"acid"
+#define CE_MECH_LUBE		"lubrication"       // Unused
+#define CE_MECH_REPAIR 		"nanite repair"     // Repair damage
+#define CE_MECH_REPLENISH 	"nanite replenish"  // Replenish fluid, unused
 
 // Reagent specific heat is not yet implemented, this is here for compatibility reasons
 #define SPECIFIC_HEAT_DEFAULT			200

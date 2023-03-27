@@ -473,7 +473,7 @@
 	H.adjustOxyLoss(-defib_oxygain())
 
 	if(H.isSynthetic())
-		H.adjustToxLoss(-H.getToxLoss())
+		H.setToxLoss(0)
 
 	H.apply_damage(burn_damage_amt, BURN, BP_TORSO)
 
@@ -550,7 +550,7 @@
 	M.updatehealth()
 	apply_brain_damage(M, deadtime)
 
-	if(!M.stats.getPerk(/datum/perk/rezsickness))
+	if(!M.stats.getPerk(PERK_REZ_SICKNESS))
 		var/rngStatRemoved
 		switch(M.stats.getStat(STAT_MEC))
 			if(0 to 40)
@@ -622,16 +622,16 @@
 	if(!advanced_pads)
 		switch(M.stats.getStat(STAT_TGH))
 			if(-200 to 40)
-				M.stats.addPerk(/datum/perk/rezsickness/severe/fatal)
+				M.stats.addPerk(PERK_REZ_SICKNESS_FATAL)
 				log_and_message_admins("Added fatal rez sickness to [M].")
 			if(40 to 60)
-				M.stats.addPerk(/datum/perk/rezsickness/severe)
+				M.stats.addPerk(PERK_REZ_SICKNESS_SEVERE)
 				log_and_message_admins("Added severe rez sickness to [M].")
 			if(60 to INFINITY)
-				M.stats.addPerk(/datum/perk/rezsickness)
+				M.stats.addPerk(PERK_REZ_SICKNESS)
 				log_and_message_admins("Added mild rez sickness to [M].")
 	else
-		M.stats.addPerk(/datum/perk/rezsickness)
+		M.stats.addPerk(PERK_REZ_SICKNESS)
 		log_and_message_admins("Added mild rez sickness to [M].")
 
 /obj/item/shockpaddles/proc/apply_brain_damage(mob/living/carbon/human/H, var/deadtime)

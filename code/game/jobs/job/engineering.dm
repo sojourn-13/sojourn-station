@@ -55,7 +55,7 @@
 	Стремитесь защитить права своих Адептов, а также их безопасность и здоровье.<br>\
 	Проводите свои собственные ремонтные работы и проекты по мере необходимости - особенно при нехватке персонала. "
 
-	perks = list(/datum/perk/inspiration, /datum/perk/handyman)
+	perks = list(PERK_INSPIRATION, PERK_HANDYMAN)
 
 /obj/landmark/join/start/chief_engineer
 	name = "Guild Master"
@@ -112,7 +112,7 @@
 	Отвечайте на сигналы бедствия и латайте бреши в стенах.<br>\
 	Поддерживайте питание каждой части колонии, насыщайте ее кислородом и сделайте все чтобы с технической точки зрения колония была работоспособна."
 
-	perks = list(/datum/perk/inspiration, /datum/perk/handyman)
+	perks = list(PERK_INSPIRATION, PERK_HANDYMAN)
 
 /obj/landmark/join/start/technomancer
 	name = "Guild Adept"

@@ -390,7 +390,6 @@
 		host.adjustFireLoss(-10)
 		host.adjustCloneLoss(-10)
 		host.adjustOxyLoss(-10)
-		host.adjustToxLoss(-10)
 		all_damage = host.getBruteLoss() + host.getFireLoss() + host.getCloneLoss() + host.getOxyLoss() + host.getToxLoss()
 
 	host.stat = UNCONSCIOUS
@@ -711,7 +710,6 @@
 		"dermaline_amount" = H.reagents.get_reagent_amount("dermaline"),
 		"blood_amount" = round((H.vessel.get_reagent_amount("blood") / H.species.blood_volume)*100),
 		"disabilities" = H.sdisabilities,
-		"lung_ruptured" = H.is_lung_ruptured(),
 		"external_organs" = H.organs.Copy(),
 		"internal_organs" = H.internal_organs.Copy(),
 		"species_organs" = H.species.has_process, //Just pass a reference for this, it shouldn't ever be modified outside of the datum.
@@ -772,8 +770,6 @@
 		for(var/datum/wound/W in e.wounds) if(W.internal)
 			other_wounds += "Internal bleeding"
 			break
-		if(e.organ_tag == BP_CHEST && occ["lung_ruptured"])
-			other_wounds += "Lung ruptured"
 		if(e.status & ORGAN_SPLINTED)
 			other_wounds += "Splinted"
 		if(e.status & ORGAN_BLEEDING)
@@ -785,22 +781,6 @@
 		if(e.open)
 			other_wounds += "Open"
 
-		switch (e.germ_level)
-			if (0 to INFECTION_LEVEL_ONE - 1) //in the case of no infection, do nothing.
-			if (INFECTION_LEVEL_ONE to INFECTION_LEVEL_ONE + 200)
-				other_wounds += "Mild Infection"
-			if (INFECTION_LEVEL_ONE + 200 to INFECTION_LEVEL_ONE + 300)
-				other_wounds += "Mild Infection+"
-			if (INFECTION_LEVEL_ONE + 300 to INFECTION_LEVEL_ONE + 400)
-				other_wounds += "Mild Infection++"
-			if (INFECTION_LEVEL_TWO to INFECTION_LEVEL_TWO + 200)
-				other_wounds += "Acute Infection"
-			if (INFECTION_LEVEL_TWO + 200 to INFECTION_LEVEL_TWO + 300)
-				other_wounds += "Acute Infection+"
-			if (INFECTION_LEVEL_TWO + 300 to INFECTION_LEVEL_TWO + 400)
-				other_wounds += "Acute Infection++"
-			if (INFECTION_LEVEL_THREE to INFINITY)
-				other_wounds += "Septic"
 		if(e.rejecting)
 			other_wounds += "being rejected"
 		var/known_implants = list() //You know nothing, jon sno
@@ -836,23 +816,6 @@
 			if(B.parent.status & ORGAN_BROKEN)
 				other_wounds += "[B.broken_description]"
 
-		var/infection = "None"
-		switch (I.germ_level)
-			if (0 to INFECTION_LEVEL_ONE - 1) //in the case of no infection, do nothing.
-			if (1 to INFECTION_LEVEL_ONE + 200)
-				infection = "Mild Infection"
-			if (INFECTION_LEVEL_ONE + 200 to INFECTION_LEVEL_ONE + 300)
-				infection = "Mild Infection+"
-			if (INFECTION_LEVEL_ONE + 300 to INFECTION_LEVEL_ONE + 400)
-				infection = "Mild Infection++"
-			if (INFECTION_LEVEL_TWO to INFECTION_LEVEL_TWO + 200)
-				infection = "Acute Infection"
-			if (INFECTION_LEVEL_TWO + 200 to INFECTION_LEVEL_TWO + 300)
-				infection = "Acute Infection+"
-			if (INFECTION_LEVEL_TWO + 300 to INFINITY)
-				infection = "Acute Infection++"
-		if(I.rejecting)
-			infection += "being rejected"
 		dat += "<tr>"
 		dat += "<td>[I.name]</td><td>N/A</td><td>[I.damage]</td><td>[other_wounds.len ? jointext(other_wounds, ":") : "None"]</td><td></td>"
 		dat += "</tr>"

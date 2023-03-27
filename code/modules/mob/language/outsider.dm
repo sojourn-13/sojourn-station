@@ -45,13 +45,13 @@
 	flags = RESTRICTED
 	space_chance = 100
 	has_written_form = TRUE		//I҉̵̴̢҉̶̸̴̵̸̷̷̴̷̷̶̷̴̵̡̨̡̢̧̨̧̡̛̛̛̛̛̀́̀́̀̀̕͘̕͜͢͢͢͜͜͢͜͢͡͞͠͠͠͝͠͡͠͠͞͠ ͜͢҉̴̷̵̨̧̢̛̛̛͝͏̧́̀́̀̕̕͘̕͘͜͢͠͡͏̴̸̶̴̧̛́́́͟͢͡͞͠͞͏̴̴̵̵̵̵̢̨̢̧͟͟͠͞͡͠͞͝͡ḉ̷̸̶̧̢̧̀́͟͢͟͟͢͜͠͡҉̢̛͟͏̷̶̸̡̡̨̡̛̛́͘͢͜͢͠͏̡̧̕͝͏̸̶́́̀͢͢͢͢͡͠͠ ͞͞͏̷̷̀̕͠҉͡͏̸̶̸̷̨̧̨̢̨̨̨́́̀̕̕͜͞͡͏͏̵̴̶̸̀́͟͠u̶̵̡̢̧̕͟͢͝͏̵̶҉̧҉̛͠͝͡҉̶̸̴̶̨̡̀́̀̀́̀͢͢͡͝͝͡͞͡
-	syllables = list("ire","ego","nahlizet","certum","veri","jatkaa","mgar","balaq", "karazet", "geeri", \
-		"orkan", "allaq", "sas'so", "c'arta", "forbici", "tarem", "n'ath", "reth", "sh'yro", "eth", "d'raggathnor", \
-		"mah'weyh", "pleggh", "at", "e'ntrath", "tok-lyr", "rqa'nap", "g'lt-ulotf", "ta'gh", "fara'qha", "fel", "d'amar det", \
-		"yu'gular", "faras", "desdae", "havas", "mithum", "javara", "umathar", "uf'kal", "thenar", "rash'tla", \
-		"sektath", "mal'zua", "zasan", "therium", "viortia", "kla'atu", "barada", "nikt'o", "fwe'sh", "mah", "erl", "nyag", "r'ya", \
-		"gal'h'rfikk", "harfrandid", "mud'gib", "fuu", "ma'jin", "dedo", "ol'btoh", "n'ath", "reth", "sh'yro", "eth", \
-		"d'rekkathnor", "khari'd", "gual'te", "nikka", "nikt'o", "barada", "kla'atu", "barhah", "hra" ,"zar'garis")
+	syllables = list("phlegethor","kadishtu","nahlizet","naf'lthagn","fhtagn","jatkaa","mgar","balaq", "karazet", "exim’ha", \
+		"shatruex", "crunatus", "sas'so", "c'arta", "forbici", "cruonita", "n'ath", "reth", "sh'yro", "eth", "d'raggathnor", \
+		"mah'weyh", "pleggh", "at", "e'ntrath", "tok-lyr", "rqa'nap", "g'lt-ulotf", "ta'gh", "fara'qha", "pretaanluxis", "lokemundux", \
+		"yu'gular", "faras", "ngah", "havas", "stragarana", "stragarana", "umathar", "uf'kal", "maranax", "rash'tla", \
+		"sektath", "mal'zua", "zasan", "malax", "viortia", "kla'atu", "barada", "nikt'o", "fwe'sh", "mah", "erl", "nyag", "r'ya", \
+		"gal'h'rfikk", "harfrandid", "syha'h", "pretiacruento", "invisux", "dedo", "ol'btoh", "n'ath", "reth", "sh'yro", "eth", \
+		"crudux", "khari'd", "gual'te", "cruo", "nikt'o", "barada", "kla'atu", "barhah", "hra" ,"zar'garis")
 	shorthand = "CT"
 
 /datum/language/cult

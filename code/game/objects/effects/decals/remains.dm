@@ -4,9 +4,11 @@
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "remains"
 	anchored = 0
+	sanity_damage = 1
 
 /obj/item/remains/human
 	desc = "They look like human remains. Some poor soul expired here, a million miles from home."
+	sanity_damage = 5
 
 /obj/item/remains/xeno
 	desc = "They look like the remains of something... alien. They have a strange aura about them."
@@ -51,6 +53,7 @@
 	desc = "Looks like the remains of a small rodent. It doesn't squeak anymore."
 	icon = 'icons/mob/mobs-mouse.dmi'
 	icon_state = "skeleton"
+	sanity_damage = 0
 
 /obj/item/remains/lizard
 	desc = "They look like the remains of a small reptile."

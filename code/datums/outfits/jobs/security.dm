@@ -63,7 +63,7 @@
 	head = /obj/item/clothing/head/rank/inspector
 	uniform = /obj/item/clothing/under/rank/inspector
 	suit = /obj/item/clothing/suit/storage/rank/insp_trench
-	head = /obj/item/clothing/head/fedora/brown
+	head = /obj/item/clothing/head/investigator
 	gloves = /obj/item/clothing/gloves/stungloves
 	l_pocket = /obj/item/device/flash
 	shoes = /obj/item/clothing/shoes/reinforced
@@ -96,6 +96,7 @@
 	uniform = /obj/item/clothing/under/rank/security
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/sechud/tactical
+	head = /obj/item/clothing/head/seccap
 	gloves = /obj/item/clothing/gloves/stungloves
 	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/marshal_officer = 1)
 

@@ -5,6 +5,7 @@
 	icon_state = "plant-26"
 	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 	needs_to_maintain = TRUE
+	sanity_damage = -0.02
 
 /obj/structure/flora/pottedplant
 	name = "potted plant"
@@ -12,6 +13,7 @@
 	icon = 'icons/obj/plants.dmi'
 	icon_state = "plant-01"
 	needs_to_maintain = TRUE
+	sanity_damage = -0.02
 
 /obj/structure/flora/pottedplant/large
 	name = "large potted plant"
@@ -255,6 +257,7 @@
 	light_power = 0.6
 	light_color = "#B5A642" //Brass-y
 	needs_to_maintain = FALSE
+	sanity_damage = -0.03 //Rare and looks nice
 
 /obj/structure/flora/pottedplant/bush_ball
 	name = "potted bush ball"

@@ -109,18 +109,8 @@
 	path = /obj/item/clothing/head/ranger
 
 /datum/gear/head/tanker_helmet/color_presets
-	display_name = "tanker helmet, color presets"
+	display_name = "tanker/rugby helmet"
 	path = /obj/item/clothing/head/armor/helmet/tanker
-
-/datum/gear/head/tanker_helmet/color_presets/New()
-	..()
-	var/tanker_helmet = list(
-		"Black"		=	/obj/item/clothing/head/armor/helmet/tanker,
-		"Green"		=	/obj/item/clothing/head/armor/helmet/tanker/green,
-		"Brown"		=	/obj/item/clothing/head/armor/helmet/tanker/brown,
-		"Gray"		=	/obj/item/clothing/head/armor/helmet/tanker/gray,
-	)
-	gear_tweaks += new /datum/gear_tweak/path(tanker_helmet)
 
 /datum/gear/head/ribbon
 	display_name = "hair ribbon selection"

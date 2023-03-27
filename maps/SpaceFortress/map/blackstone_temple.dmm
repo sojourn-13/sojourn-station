@@ -417,8 +417,8 @@
 /area/outpost/abandoned_fortress)
 "lB" = (
 /obj/structure/bookcase,
-/obj/item/oddity/common/book_omega,
-/obj/item/oddity/common/book_omega,
+/obj/item/oddity/common/book_omega/closed,
+/obj/item/oddity/common/book_omega/closed,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "lC" = (
@@ -705,7 +705,7 @@
 /area/outpost/abandoned_fortress)
 "ta" = (
 /obj/structure/bookcase,
-/obj/item/oddity/common/book_omega,
+/obj/item/oddity/common/book_omega/closed,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "tb" = (
@@ -858,7 +858,7 @@
 "yN" = (
 /obj/structure/bookcase,
 /obj/item/oddity/common/book_bible,
-/obj/item/oddity/common/book_unholy,
+/obj/item/oddity/common/book_unholy/closed,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/outpost/abandoned_fortress)
 "zd" = (

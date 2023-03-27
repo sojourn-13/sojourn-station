@@ -31,6 +31,10 @@
 	new /obj/item/device/ore_sonar(src)
 	new /obj/item/ammo_magazine/speed_loader_shotgun/empty(src)
 	new /obj/item/clothing/accessory/job/cape/mining(src) // ROCK AND STONE, BRUDDAH!
+	new /obj/item/gun/projectile/shotgun/pump(src)
+	new /obj/item/ammo_magazine/ammobox/shotgun/buckshot(src)
+	new /obj/item/ammo_magazine/ammobox/shotgun/buckshot(src)
+	new /obj/item/storage/firstaid/ifak(src)
 
 /******************************Lantern*******************************/
 

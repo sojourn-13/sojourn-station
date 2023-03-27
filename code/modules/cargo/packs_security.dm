@@ -135,7 +135,7 @@
 					/obj/item/ammo_magazine/ammobox/pistol_35,
 					/obj/item/ammo_magazine/ammobox/pistol_35,
 					/obj/item/clothing/head/helmet/faceshield/altyn,
-					/obj/item/clothing/suit/armor/flackvest/full,
+					/obj/item/clothing/suit/armor/flakvest/full,
 					/obj/item/grenade/flashbang,
 					/obj/item/grenade/flashbang)
 	cost = 900
@@ -280,6 +280,8 @@
 	name = "CA Energy Weapons Crate"
 	contains = list(/obj/item/gun/energy/laser,
 				/obj/item/gun/energy/laser,
+				/obj/item/gun/energy/ntpistol,
+				/obj/item/gun/energy/ntpistol,
 				/obj/item/gun/energy/taser,
 				/obj/item/gun/energy/taser)
 	cost = 4000

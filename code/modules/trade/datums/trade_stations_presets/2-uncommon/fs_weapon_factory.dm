@@ -28,6 +28,7 @@
 			/obj/item/ammo_magazine/heavy_rifle_408_drum = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_magazine/m12/pellet = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_casing/antim/lethal/prespawned = custom_good_amount_range(list(1, 10)),
+			/obj/item/ammo_casing/antim/incend/prespawned = custom_good_amount_range(list(1, 10)),
 
 			/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small,
 			/obj/item/ammo_magazine/ammobox/rifle_75_small,
@@ -69,6 +70,7 @@
 		"High End Laser Guns" = list(
 			/obj/item/gun/energy/firestorm,
 			/obj/item/gun/energy/xray,
+			/obj/item/gun/energy/mindflayer,
 			/obj/item/gun/energy/lasercore,
 			/obj/item/gun/energy/pulse/cassad
 		),
@@ -82,7 +84,7 @@
 	)
 
 	offer_types = list(
-		/obj/item/gun/energy/laser/railgun= offer_data("\"Reductor\" rail rifle", 3500, 1),
+		/obj/item/gun/energy/laser/railgun/railrifle= offer_data("\"Reductor\" rail rifle", 3500, 1),
 		/obj/item/gun_upgrade/mechanism/overshooter = offer_data("overshooter", 400, 2),
 		/obj/item/gun_upgrade/mechanism/weintraub = offer_data("\"Hurricane\" full auto kit", 450, 3),
 		/obj/item/gun_upgrade/trigger/dangerzone = offer_data("\"Dangerzone\" trigger", 250, 3),

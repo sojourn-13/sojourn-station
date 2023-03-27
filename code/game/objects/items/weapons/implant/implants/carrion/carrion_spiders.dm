@@ -24,6 +24,7 @@
 	var/mob/living/carbon/human/owner_mob
 
 	is_metal = FALSE
+	scanner_hidden = TRUE
 
 /obj/item/implant/carrion_spider/New()
 	. = ..()

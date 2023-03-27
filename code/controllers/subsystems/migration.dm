@@ -387,6 +387,7 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 	while (i < plantspread_burrows_num && sorted.len)
 		var/obj/structure/burrow/C = sorted[1] //Grab the first element
 		sorted.Cut(1,2)//And remove it from the list
+		var/turf/simulated/T = get_turf(C)
 
 
 		//It already has plants, no good
@@ -400,6 +401,10 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 
 		//Chance to reject it anyways to make plant spreading less predictable
 		if (prob(60))
+			continue
+
+		//We don't want maintshrooms to spread into places that are too bright
+		if (B.plant.type == /datum/seed/mushroom/maintshroom && T.get_lumcount() > 0.5)
 			continue
 
 		//If it has no plants yet, it should be okay to send things to it

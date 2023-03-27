@@ -144,6 +144,9 @@
 	visible_message(SPAN_WARNING("\red [src] flicks its tail and wings!"))
 	loaded_ammo = 3
 
+// Broken code that doesn't work with the Eris sanity system.
+/*
+
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/verb/mind_of_cloathverb()
 	set name = "Rune Chat"
 	set category = "Abilities"
@@ -155,6 +158,7 @@
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			H.sanity.breakdown_fabric()
+*/
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/Bump(var/atom/obstacle)
 	.=..()

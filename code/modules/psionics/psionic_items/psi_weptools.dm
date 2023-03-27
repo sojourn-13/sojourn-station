@@ -185,7 +185,7 @@
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
-	charge_cost = 50
+	charge_cost = 120
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
@@ -198,9 +198,9 @@
 /obj/item/gun/energy/plasma/cassad/cult/deepmaints
 	name = "\"Blue Moon\" psi-plasma rifle"
 	desc = "A Cassad-sytle plasma rifle ready to take on any battle, this one crafted out of base violent thought alone has more unique ways of holding a cell's charge known only to the person that had thought of it."
-	charge_cost = 25
-	damage_multiplier = 1
-	penetration_multiplier = 1
+	charge_cost = 120
+	damage_multiplier = 1.1
+	penetration_multiplier = 1.1
 
 /obj/item/gun/energy/plasma/auretian/cult
 	name = "\"Meteoroid\" psi-energy pistol"
@@ -214,6 +214,7 @@
 	damage_multiplier = 0.8
 	penetration_multiplier = 0.8
 	serial_shown = FALSE
+	charge_cost = 50
 
 /obj/item/gun/energy/plasma/auretian/cult/deepmaints
 	name = "\"Tektite\" psi-energy pistol"

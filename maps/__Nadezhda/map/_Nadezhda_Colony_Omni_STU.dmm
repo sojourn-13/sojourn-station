@@ -24129,7 +24129,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "eMJ" = (
-/obj/machinery/blackshield_teleporter,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)
 "eMK" = (
@@ -40689,7 +40688,7 @@
 /area/nadezhda/engineering/atmos/storage)
 "hSw" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/vest/handmade_black/full,
+/obj/item/clothing/suit/armor/vest/handmade/full,
 /obj/item/material/baseballbat,
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/wood/wild2,
@@ -44379,8 +44378,8 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "iFf" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/flackvest/militia,
-/obj/item/clothing/suit/armor/flackvest/militia,
+/obj/item/clothing/suit/armor/flakvest/militia,
+/obj/item/clothing/suit/armor/flakvest/militia,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)
 "iFk" = (
@@ -57319,10 +57318,10 @@
 /obj/random/medical/low_chance,
 /obj/random/medical/low_chance,
 /obj/effect/floor_decal/industrial/warningred,
-/obj/item/reagent_containers/syringe/stim/machine_spirit{
+/obj/item/reagent_containers/syringe/stim/greasy_lard{
 	pixel_x = 10
 	},
-/obj/item/reagent_containers/syringe/stim/machine_spirit{
+/obj/item/reagent_containers/syringe/stim/greasy_lard{
 	pixel_x = 10
 	},
 /obj/item/reagent_containers/syringe/stim/ultra_surgeon,
@@ -58619,8 +58618,8 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/absolutism/bioreactor)
 "lnW" = (
-/obj/item/clothing/suit/armor/platecarrier/ih,
-/obj/item/clothing/suit/armor/platecarrier/ih,
+/obj/item/clothing/suit/armor/platecarrier,
+/obj/item/clothing/suit/armor/platecarrier,
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/head/helmet,
 /obj/item/clothing/head/helmet,
@@ -58630,10 +58629,6 @@
 /obj/item/clothing/suit/armor/vest/ironhammer,
 /obj/item/clothing/suit/armor/vest/ironhammer,
 /obj/item/clothing/suit/armor/vest/ironhammer,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/suit/armor/vest/security,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security)
 "lnY" = (
@@ -71979,10 +71974,10 @@
 	dir = 1
 	},
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/flackvest/marshal/full,
-/obj/item/clothing/suit/armor/flackvest/marshal/full,
-/obj/item/clothing/suit/armor/flackvest/marshal/full,
-/obj/item/clothing/suit/armor/flackvest/marshal/full,
+/obj/item/clothing/suit/armor/flakvest/marshal/full,
+/obj/item/clothing/suit/armor/flakvest/marshal/full,
+/obj/item/clothing/suit/armor/flakvest/marshal/full,
+/obj/item/clothing/suit/armor/flakvest/marshal/full,
 /obj/item/clothing/head/helmet/riot_hud,
 /obj/item/clothing/head/helmet/riot_hud,
 /obj/item/clothing/head/helmet/riot_hud,
@@ -105626,11 +105621,11 @@
 /area/nadezhda/engineering/workshop)
 "uzN" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/head/helmet/ballistic/tan{
+/obj/item/clothing/head/helmet/ballistic{
 	pixel_x = 4;
 	pixel_y = -8
 	},
-/obj/item/clothing/head/helmet/ballistic/tan{
+/obj/item/clothing/head/helmet/ballistic{
 	pixel_x = 4;
 	pixel_y = -8
 	},
@@ -105657,11 +105652,11 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/clothing/head/helmet/ballistic/tan{
+/obj/item/clothing/head/helmet/ballistic{
 	pixel_x = 4;
 	pixel_y = -8
 	},
-/obj/item/clothing/head/helmet/ballistic/tan{
+/obj/item/clothing/head/helmet/ballistic{
 	pixel_x = 4;
 	pixel_y = -8
 	},
@@ -121745,10 +121740,6 @@
 	pixel_x = 6;
 	pixel_y = -4
 	},
-/obj/item/clothing/suit/armor/platecarrier/tan{
-	pixel_x = 6;
-	pixel_y = 6
-	},
 /obj/item/clothing/suit/armor/platecarrier/green{
 	pixel_x = -6;
 	pixel_y = -4
@@ -121760,18 +121751,6 @@
 /obj/item/clothing/suit/armor/platecarrier/green{
 	pixel_x = -6;
 	pixel_y = -4
-	},
-/obj/item/clothing/suit/armor/platecarrier/tan{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/armor/platecarrier/tan{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/armor/platecarrier/tan{
-	pixel_x = 6;
-	pixel_y = 6
 	},
 /obj/item/clothing/suit/armor/platecarrier/militia{
 	pixel_x = -6;

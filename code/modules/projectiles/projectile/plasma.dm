@@ -186,7 +186,7 @@
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/ric4.ogg'
 	damage_types = list(BRUTE = 54)
-	armor_penetration = 50
+	armor_penetration = 65
 	check_armour = ARMOR_BULLET
 	affective_damage_range = 16
 	affective_ap_range = 16

@@ -256,7 +256,7 @@
 	name = "Emo Fringe"
 	icon_state = "emofringe"
 
-/datum/sprite_accessory/hair/fag
+/datum/sprite_accessory/hair/flow
 	name = "Flow"
 	icon_state = "flowhair"
 

@@ -25,6 +25,7 @@
 		/obj/item/seeds/bluespacetomatoseed
 	)
 	var/entropy_value = 8
+	sanity_damage = 1 //Looks nice!
 
 /obj/structure/bs_crystal_structure/New()
 	..()

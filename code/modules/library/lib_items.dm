@@ -35,7 +35,7 @@
 	/obj/item/paper,
 	/obj/item/paper_bundle,
 	/obj/item/photo,
-	/obj/item/alchemy/recipe_scroll,
+	/obj/item/paper/alchemy_recipes,
 	/obj/item/scroll
 	)
 	var/hex_code_for_ui_backround = "#C4A484"
@@ -106,7 +106,7 @@
 			O.loc = src
 			update_icon()
 	if(istype(O, /obj/item/pen))
-		var/newname = sanitizeSafe(input("What would you like to title this bookshelf?"), MAX_NAME_LEN)
+		var/newname = sanitizeSafe(input("What would you like to title?"), MAX_NAME_LEN)
 		if(!newname)
 			return
 		else
@@ -221,6 +221,36 @@
 		..()
 		new /obj/item/book/manual/research_and_development(src)
 		update_icon()
+
+
+/obj/structure/bookcase/guncase
+	name = "gunparts locker"
+	desc = "A metal locker unit that can store, gun parts, ammo and tools related to gunsmithing. As well as gun storage such as pouches or cases."
+	icon_state = "gunpart_locker"
+	hex_code_for_ui_backround = "#897E75"
+	allowed_book_items = list(
+	/obj/item/part/gun,
+	/obj/item/tool_upgrade,
+	/obj/item/gun_upgrade,
+	/obj/item/tool/screwdriver,
+	/obj/item/tool/wirecutters,
+	/obj/item/tool/crowbar,
+	/obj/item/tool/hammer,
+	/obj/item/tool/saw,
+	/obj/item/ammo_magazine,
+	/obj/item/ammo_casing,
+	/obj/item/reagent_containers/spray/vvd40,
+	/obj/item/reagent_containers/glass/beaker,
+	/obj/item/storage/backpack/guncase,
+	/obj/item/clothing/accessory/holster,
+	/obj/item/storage/pouch/baton_holster,
+	/obj/item/storage/pouch/ammo,
+	/obj/item/ammo_kit
+	)
+
+
+/obj/structure/bookcase/guncase/update_icon()
+	return
 
 
 /*
