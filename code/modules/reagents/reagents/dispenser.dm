@@ -156,6 +156,7 @@
 
 	M.add_chemical_effect(CE_ALCOHOL, 1)
 
+
 //Tough people can drink a lot
 	var/tolerance = max(5, strength + (M.stats.getStat(STAT_TGH) * 0.5)) //TGH scaling is 50%
 
@@ -200,6 +201,9 @@
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
 		H.sanity.onAlcohol(src, effect_multiplier)
+		if(H.frost > 0)
+			H.frost -= 1
+
 
 /datum/reagent/ethanol/touch_obj(var/obj/O)
 	if(istype(O, /obj/item/paper))

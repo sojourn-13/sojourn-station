@@ -124,3 +124,11 @@
 
 
 	var/added_movedelay = 0 //Used for humans only
+
+	//Lib edits
+	var/frost = 0
+	var/frost_emote
+	var/frost_emote_cooldown = 49
+	var/frost_warnings
+	var/frost_warnings_cooldown = 49
+	var/max_frost = 1200 //were out of 1.2k so are values are a bit inflated

@@ -304,7 +304,10 @@
 /datum/reagent/organic/nutriment/hot_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.bodytemperature += 1.5 * TEMPERATURE_DAMAGE_COEFFICIENT
-
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.frost > 0)
+			H.frost -= 5
 
 /datum/reagent/organic/nutriment/hell_ramen
 	name = "Hell Ramen"
@@ -319,6 +322,10 @@
 /datum/reagent/organic/nutriment/hell_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.bodytemperature += 5 * TEMPERATURE_DAMAGE_COEFFICIENT
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.frost > 0)
+			H.frost -= 8
 
 /datum/reagent/organic/nothing
 	name = "Nothing"
@@ -379,6 +386,11 @@
 	if(isslime(M))
 		M.bodytemperature = max(M.bodytemperature - rand(10,20), 0)
 	holder.remove_reagent("capsaicin", 5)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.frost > 0)
+			H.frost += 2
+
 
 /datum/reagent/organic/capsaicin
 	name = "Capsaicin Oil"
@@ -400,6 +412,8 @@
 /datum/reagent/organic/capsaicin/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
+		if(H.frost > 0)
+			H.frost -= 1
 		if(H.species && (H.species.flags & (NO_PAIN)))
 			return
 	if(dose < agony_dose)
@@ -441,6 +455,8 @@
 		protection = list(H.head, H.glasses, H.wear_mask)
 		if(H.species && (H.species.flags & NO_PAIN))
 			no_pain = 1 //TODO: living-level can_feel_pain() proc
+		if(H.frost > 0)
+			H.frost -= 2
 	else
 		protection = list(M.wear_mask)
 
