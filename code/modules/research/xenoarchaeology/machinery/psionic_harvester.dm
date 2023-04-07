@@ -15,7 +15,7 @@
 
 /obj/machinery/psionic_harvester/attack_hand(var/mob/user as mob)
 	current_artifact = check_artifacts()
-	if(current_artifact)
+	if(current_artifact && !processing)
 		current_artifact.forceMove(src) // Move the artifact into the machine. the '?.' prevent runtimes
 		ping("Artifact detected. Processing...")
 		processing = TRUE
@@ -24,7 +24,7 @@
 // Check around the machine for viable artifacts and return the first viable one.
 /obj/machinery/psionic_harvester/proc/check_artifacts()
 	if(current_artifact) // Do we already have an artifact inside?
-		return
+		return current_artifact
 
 	for(var/obj/machinery/artifact/A in orange(1, src)) // Check the 8 tiles around us.
 		if(A.psi_power) // Does the artifact hold a psionic power?
