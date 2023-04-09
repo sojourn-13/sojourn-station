@@ -216,6 +216,7 @@
 	default_type = /obj/item/organ/external/slime
 	default_bone_type = /obj/item/organ/internal/bone/slime
 	vital = FALSE
+	functions = BODYPART_REAGENT_INTAKE
 
 /datum/organ_description/arm/left/slime
 	default_type = /obj/item/organ/external/slime

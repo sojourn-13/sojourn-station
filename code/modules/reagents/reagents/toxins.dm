@@ -25,7 +25,12 @@
 			var/mob/living/carbon/human/H = M
 			H.sanity.onToxin(src, effect_multiplier)
 			M.sanity.onToxin(src, multi)*/
-		M.add_chemical_effect(CE_TOXIN, strength + dose / 2)
+		if(M.species?.reagent_tag == IS_SLIME)
+			M.adjustNutrition(strength)
+			M.heal_organ_damage(0.1 * strength, 0.1 * strength)
+			M.add_chemical_effect(CE_ANTITOX, 0.3)
+		else
+			M.add_chemical_effect(CE_TOXIN, strength + dose / 2)
 
 /datum/reagent/toxin/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	if(strength)
@@ -33,7 +38,12 @@
 
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
-		M.add_chemical_effect(CE_TOXIN, strength * dose / 4)
+		if(M.species?.reagent_tag == IS_SLIME)
+			M.adjustNutrition(strength / 2)
+			M.heal_organ_damage(0.05 * strength, 0.05 * strength)
+			M.add_chemical_effect(CE_ANTITOX, 0.1)
+		else
+			M.add_chemical_effect(CE_TOXIN, strength * dose / 4)
 
 /datum/reagent/toxin/wormwood
 	name = "Wormwood"

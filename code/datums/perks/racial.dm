@@ -625,64 +625,37 @@
 	passivePerk = TRUE
 
 ///////////////////////////////////// Slime perks
-/datum/perk/speed_boost
-	name = "Gelatinous speed"
-	desc = "Increase your speed for a short amount of time."
-	var/cooldown = 10 MINUTES
-	passivePerk = FALSE
-	var/nutrition_cost = 100
-
-/datum/perk/speed_boost/activate()
-	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("TODO Error Message"))
-		return FALSE
-	cooldown_time = world.time + cooldown
-
-	holder.nutrition -= nutrition_cost
-	// TODO : Add Speedy Chemical Injection here -R4d6
-
-/datum/perk/limb_regen
+/datum/perk/racial/limb_regen
 	name = "Gelatinous Regeneration"
-	desc = "Spend nutrition in exchange of regenerating your limbs"
+	desc = "Spend nutrition to regenerate lost limbs, albeit without fully fixing your injuries."
 	var/cooldown = 30 MINUTES
 	passivePerk = FALSE
-	var/nutrition_cost = 500 // I don't know if nutrition even goes that high, but that's Possum's problem. -R4d6
-	var/list/limbs = list(BP_HEAD, BP_GROIN, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+	var/nutrition_cost = 300
 
-/datum/perk/limb_regen/activate()
+/datum/perk/racial/limb_regen/activate()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("TODO Error Message"))
+		to_chat(usr, SPAN_NOTICE("You can't regenerate again so soon!"))
 		return FALSE
 	cooldown_time = world.time + cooldown
 	holder.nutrition -= nutrition_cost
-	holder.restore_all_organs() // Function located in 'code/modules/mob/living/carbon/human/human_damage.dm' Line 334. I couldn't find anything better for regenerating missing limbs and I'm too tired to try and code it in, so it will have to do. -R4d6
+	for(var/obj/item/organ/external/current_organ in holder.organs) //grab the current brute/burn of the limb, then re-apply half of it after rejuvenating OR subtract ten, whichever is lower
+		var/old_brute = current_organ.brute_dam
+		var/old_burn = current_organ.burn_dam
+		if(!(current_organ == BP_HEAD))
+			current_organ.replaced()
+		current_organ.rejuvenate()
+		current_organ.brute_dam = max(0, min((old_brute / 2), (old_brute - 10)))
+		current_organ.burn_dam = max(0, min((old_burn / 2), (old_burn - 10)))
 
-/datum/perk/slime_stat_boost
-	name = "Gelatinous Stat Boost"
-	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
-	var/cooldown = 15 MINUTES
-	passivePerk = FALSE
-	var/nutrition_cost = 100
-	var/list/stats_to_boost = list() // Which stats we boost
-	var/amount_to_boost = 90 // How much the stats are boosted
-	var/duration = 0.5 MINUTES // How long the stats are boosted for
+/datum/perk/racial/slime_metabolism
+	name = "Gelatinous Biology"
+	desc = "Your abnormal biology allows you to benefit from most toxins - however, many antitoxins are outright harmful to you." //This perk doesn't actually cause the slime-specific chem metabolism effects
+	passivePerk = TRUE
 
-/datum/perk/slime_stat_boost/activate()
-	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("TODO Error Message"))
-		return FALSE
-	cooldown_time = world.time + cooldown
-	holder.nutrition -= nutrition_cost
-	for(var/I in stats_to_boost)
-		holder.stats.addTempStat(I, amount_to_boost, duration, "Slime Biology")
+/datum/perk/racial/slime_metabolism/assign(mob/living/carbon/human/H)
+	..()
+	holder.toxin_mod_perk -= 0.5
 
-/datum/perk/slime_stat_boost/mental
-	name = "Gelatinous Mental Stat Boost"
-	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
-	stats_to_boost = list(STAT_BIO, STAT_MEC, STAT_COG)
-
-/datum/perk/slime_stat_boost/physical
-	name = "Gelatinous Physical Stat Boost"
-	desc = "Spend nutrition in exchange of \[INSERT DESCRIPTION HERE\]"
-	stats_to_boost = list(STAT_ROB, STAT_TGH, STAT_VIG)
-
+/datum/perk/racial/slime_metabolism/better_toxins/remove()
+	holder.toxin_mod_perk += 0.5
+	..()

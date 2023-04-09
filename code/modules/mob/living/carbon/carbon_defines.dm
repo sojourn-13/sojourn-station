@@ -29,6 +29,9 @@
 	var/datum/metabolism_effects/metabolism_effects = null
 	var/losebreath = 0 //if we failed to breathe last tick
 
+	var/always_blood = FALSE //Do we always process reagents as though we have blood?
+	var/always_ingest = FALSE //Do we always process reagents as though we have a stomach?
+
 	var/coughedtime = null
 	var/lastpuke = 0
 
@@ -43,4 +46,3 @@
 
 	var/movement_hunger_factors = 1
 	//TODO: move to brain
-

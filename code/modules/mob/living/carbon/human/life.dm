@@ -795,6 +795,8 @@
 	return min(1,.)
 
 /mob/living/carbon/human/handle_chemicals_in_body()
+	always_ingest = species.always_ingest
+	always_blood = species.always_blood
 	if(in_stasis)
 		return
 

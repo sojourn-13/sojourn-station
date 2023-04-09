@@ -53,7 +53,7 @@
 
 /obj/item/storage/backpack/proc/worn_check(var/no_message = FALSE)
 	var/mob/living/L = loc
-	if(istype(L, /mob/living/carbon/human) && L:species:reagent_tag == IS_SLIME) // Slimes don't have joints.
+	if(istype(L, /mob/living/carbon/human))
 		// TODO, special messages
 		return TRUE
 

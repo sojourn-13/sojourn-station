@@ -29,7 +29,9 @@
 
 	var/mob_size	= MOB_MEDIUM
 	var/virus_immune
-	var/blood_volume = 560                               // Initial blood volume.
+	var/blood_volume = 560
+	var/always_blood = FALSE 						 // Can we process reagents without blood?
+	var/always_ingest = FALSE 		                               // Initial blood volume.
 	var/hunger_factor = DEFAULT_HUNGER_FACTOR            // Multiplier for hunger.
 	var/taste_sensitivity = TASTE_NORMAL                 // How sensitive the species is to minute tastes.
 	var/show_ssd = "fast asleep"

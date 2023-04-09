@@ -152,10 +152,12 @@
 #define PERK_FOLKEN_HEALING /datum/perk/folken_healing
 #define PERK_FOLKEN_HEALING_YOUNG /datum/perk/folken_healing/young
 //Slime
-#define PERK_LIMB_REGEN /datum/perk/limb_regen
-#define PERK_MIND_BOOST /datum/perk/slime_stat_boost/mental
-#define PERK_BODY_BOOST /datum/perk/slime_stat_boost/physical
-#define PERK_SPEED /datum/perk/speed_boost
+#define PERK_LIMB_REGEN /datum/perk/racial/limb_regen
+#define PERK_SLIMEBODY /datum/perk/racial/slime_metabolism
+
+//////////////
+//Core Perks//
+//////////////
 
 // Psionic perks
 #define PERK_PSION /datum/perk/psion
