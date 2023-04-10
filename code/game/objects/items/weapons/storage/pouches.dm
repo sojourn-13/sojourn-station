@@ -27,15 +27,18 @@
 
 /obj/item/storage/pouch/attack_hand(mob/living/carbon/human/user)
 	if(sliding_behavior && contents.len && (src in user))
-		var/obj/item/I = contents[contents.len]
-		if(istype(I))
-			hide_from(usr)
-			var/turf/T = get_turf(user)
-			remove_from_storage(I, T)
-			usr.put_in_hands(I)
-			add_fingerprint(user)
+		slide_out_item(user)
 	else
 		..()
+
+/obj/item/storage/pouch/proc/slide_out_item(mob/living/carbon/human/user)
+	var/obj/item/I = contents[contents.len]
+	if(istype(I))
+		hide_from(usr)
+		var/turf/T = get_turf(user)
+		remove_from_storage(I, T)
+		usr.put_in_hands(I)
+		add_fingerprint(user)
 
 /obj/item/storage/pouch/small_generic
 	name = "small generic pouch"
@@ -272,7 +275,7 @@
 
 /obj/item/storage/pouch/grow_a_gun
 	name = "H&S Grow A Gun"
-	desc = "A bag of dehydrated guns, just add water to grow them into a ready to use slot-o-matic. There are several warnings to not eat the dehydrated guns inside, and to keep away from kids unless hydrated."
+	desc = "A bag of dehydrated guns, just add water to grow them into a ready to use Slaught-o-Matic. There are several warnings to not eat the dehydrated guns inside, and to keep away from kids unless hydrated."
 	icon_state = "grow"
 	item_state = "grow"
 	matter = list(MATERIAL_PLASTIC = 1)
@@ -418,6 +421,77 @@
 	cut_overlays()
 	if(contents.len)
 		add_overlay(image('icons/inventory/pockets/icon.dmi', "knife_[contents.len]"))
+
+/obj/item/storage/pouch/quiver
+	name = "arrows quiver"
+	desc = "A quiver that can hold many types of arrows for quick drawing. Ideal for the aspiring or veteran hunter."
+	icon_state = "quiver"
+	item_state = "quiver"
+	price_tag = 50
+	slot_flags = SLOT_BELT | SLOT_DENYPOCKET
+	matter = list(MATERIAL_BIOMATTER = 10)
+	storage_slots = 4 // 12 arrows
+	w_class = ITEM_SIZE_NORMAL
+	max_w_class = ITEM_SIZE_NORMAL
+	sliding_behavior = TRUE // It is by default a quickdraw quiver
+
+	can_hold = list(
+		/obj/item/ammo_casing/arrow,
+		/obj/item/ammo_casing/arrow/bulk, // Just in case...
+		/obj/item/ammo_casing/arrow/hunting,
+		/obj/item/ammo_casing/arrow/hunting/bulk,
+		/obj/item/ammo_casing/arrow/hunting/heavy,
+		/obj/item/ammo_casing/arrow/hunting/heavy/bulk,
+		/obj/item/ammo_casing/arrow/broadhead,
+		/obj/item/ammo_casing/arrow/serrated,
+		/obj/item/ammo_casing/arrow/reagent,
+		/obj/item/ammo_casing/arrow/reagent/hypo,
+		/obj/item/ammo_casing/arrow/practice,
+		/obj/item/ammo_casing/arrow/practice/bulk,
+		/obj/item/ammo_casing/arrow/empty_payload,
+		/obj/item/ammo_casing/arrow/empty_payload/bulk,
+		/obj/item/ammo_casing/arrow/explosive,
+		/obj/item/ammo_casing/arrow/explosive/emp,
+		/obj/item/ammo_casing/arrow/explosive/flashbang,
+		/obj/item/ammo_casing/arrow/explosive/heatwave,
+		/obj/item/ammo_casing/arrow/explosive/smoke,
+		/obj/item/ammo_casing/arrow/explosive/frag,
+		/obj/item/ammo_casing/arrow/explosive/frag/sting)
+
+/obj/item/storage/pouch/quiver/update_icon()
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/pockets/icon.dmi', "arrows"))
+
+/obj/item/storage/pouch/bolts
+	name = "crossbow quiver"
+	desc = "A quiver that can hold many types of crossbow bolts. Quickdrawing and reloading made easier for ye olde siege enthusiast."
+	icon_state = "quiver_crossbow"
+	item_state = "quiver_crossbow"
+	price_tag = 50
+	slot_flags = SLOT_BELT | SLOT_DENYPOCKET
+	matter = list(MATERIAL_BIOMATTER = 15) // Can hold a full stack of rods.
+	storage_slots = 4
+	w_class = ITEM_SIZE_NORMAL
+	max_w_class = ITEM_SIZE_BULKY // Just in case a full stack won't fit.
+	sliding_behavior = TRUE // Quickdraw!
+
+	can_hold = list(
+		/obj/item/stack/rods,
+		/obj/item/ammo_casing/rod_bolt, // Just in case...
+		/obj/item/ammo_casing/crossbow_bolts,
+		/obj/item/ammo_casing/crossbow_bolts/bulk,
+		/obj/item/ammo_casing/crossbow_bolts/fragment,
+		/obj/item/ammo_casing/crossbow_bolts/fragment/bulk,
+		/obj/item/ammo_casing/crossbow_bolts/speed,
+		/obj/item/ammo_casing/crossbow_bolts/speed/bulk)
+
+/obj/item/storage/pouch/bolts/update_icon()
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/pockets/icon.dmi', "bolts"))
 
 /obj/item/storage/pouch/baton_holster
 	name = "baton sheath"

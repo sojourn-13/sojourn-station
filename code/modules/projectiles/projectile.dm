@@ -123,9 +123,6 @@
 
 	var/recoil = 0
 
-	var/added_damage_bullet_pve = 0 //Added damage against mobs, checks bullet armor
-	var/added_damage_laser_pve  = 0 //Added damage against mobs, checks enegery armor
-
 /obj/item/projectile/New()
 
 	penetration_holder = new /datum/penetration_holder
@@ -153,12 +150,6 @@
 		val += damage_types[i]
 	return val
 
-/obj/item/projectile/proc/get_total_damage_pve()
-	var/val = 0
-	val += added_damage_bullet_pve
-	val += added_damage_laser_pve
-	return val
-
 
 /obj/item/projectile/proc/is_halloss()
 	for(var/i in damage_types)
@@ -182,10 +173,6 @@
 
 /obj/item/projectile/multiply_projectile_agony(newmult)
 	agony = initial(agony) * newmult
-
-/obj/item/projectile/multiply_pve_damage(newmult)
-	added_damage_bullet_pve = initial(added_damage_bullet_pve) * newmult
-	added_damage_laser_pve  = initial(added_damage_laser_pve) * newmult
 
 /obj/item/projectile/add_fire_stacks(newmult)
 	fire_stacks = initial(fire_stacks) + newmult
@@ -309,9 +296,8 @@
 	original = target
 	def_zone = target_zone
 
-	spawn()
-		setup_trajectory(curloc, targloc, x_offset, y_offset, angle_offset) //plot the initial trajectory
-		Process()
+	setup_trajectory(curloc, targloc, x_offset, y_offset, angle_offset) //plot the initial trajectory
+	Process()
 
 	return FALSE
 

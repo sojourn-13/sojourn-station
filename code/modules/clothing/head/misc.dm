@@ -66,6 +66,21 @@
 	icon_state = "hairflower_white"
 	name = "white flower pin"
 
+/*Ears Pins*/
+/obj/item/clothing/head/pin/ear_pin
+	name = "ear dangle"
+	icon_state = "ear_dangle"
+	desc = "Two small objects dangling on someone's ears. Probably some sorta of decoration."
+	slot_flags =  SLOT_EARS
+	body_parts_covered = 0
+
+/obj/item/clothing/head/pin/ear_pin/ear_stud
+	name = "ear stud"
+	icon_state = "ear_stud"
+	desc = "Two small objects dangling on someone's ears. Probably some sorta of decoration"
+	slot_flags =  SLOT_EARS
+	body_parts_covered = 0
+
 /*Hair Pins*/
 
 /obj/item/clothing/head/pin
@@ -74,6 +89,30 @@
 	desc = "A small metal hair pin."
 	slot_flags = SLOT_HEAD | SLOT_EARS
 	body_parts_covered = 0
+
+/obj/item/clothing/head/pin/attackby(var/obj/item/W, var/mob/user) //happy valentines day Gidgit
+	//do checks for what we were hit by and what kind of pin we turn into.
+	var/obj/item/reagent_containers/food/snacks/grown/G = W
+	if(G.seed && G.name == "poppy")
+		new /obj/item/clothing/head/hairflower(src.loc)
+		user.drop_from_inventory(W)
+		qdel(W)
+		qdel(src)
+	if(G.seed && G.name == "harebell")
+		new /obj/item/clothing/head/hairflower/violet(src.loc)
+		user.drop_from_inventory(W)
+		qdel(W)
+		qdel(src)
+	if(G.seed && G.name == "sunflower")
+		new /obj/item/clothing/head/hairflower/yellow(src.loc)
+		user.drop_from_inventory(W)
+		qdel(W)
+		qdel(src)
+	if(G.seed && G.name == "grass")
+		new /obj/item/clothing/head/pin/clover(src.loc)
+		user.drop_from_inventory(W)
+		qdel(W)
+		qdel(src)
 
 /obj/item/clothing/head/pin/butterfly
 	name = "blue butterfly pin"
@@ -249,6 +288,11 @@ obj/item/clothing/head/ribbon/red
 	icon_state = "feather_trilby"
 	desc = "A dark blue felt fedora with a classy white feather."
 
+/obj/item/clothing/head/investigator //to prevent it being under loadout
+	name = "investigator fedora"
+	icon_state = "investigator"
+	desc = "A soft brown fedora belonging to a man of law."
+
 /*Misc*/
 
 /obj/item/clothing/head/rank/centcom
@@ -281,7 +325,7 @@ obj/item/clothing/head/ribbon/red
 
 /obj/item/clothing/head/numerical_hat
 	name = "numerical hat"
-	icon_state = "numerical_hat"
+	icon_state = "numerical_hat_red"
 	desc = "A tall hat for nurmerical of the faith. Can be turned inside out to turn form red to gray or gray to red"
 	armor_list = list( //same as the garb
 		melee = 10,
@@ -302,8 +346,8 @@ obj/item/clothing/head/ribbon/red
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Red Hat"] = "numerical_hat"
-	options["Gray Hat"] = "numerical_hatgrey"
+	options["Red Hat"] = "numerical_hat_red"
+	options["Gray Hat"] = "numerical_hat_dark"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -455,4 +499,11 @@ obj/item/clothing/head/ribbon/red
 	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
 	icon_state = "tacponhood_ghillie"
 	item_state = "tacponhood_ghillie"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/tacticalhood_color
+	name = "hood"
+	desc = "A tactical hood, in a color of your choice."
+	icon_state = "tacponhood_color"
+	item_state = "tacponhood_color"
 	flags_inv = HIDEEARS|BLOCKHAIR

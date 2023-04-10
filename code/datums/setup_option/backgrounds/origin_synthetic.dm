@@ -30,11 +30,11 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 15,
+		STAT_TGH = 5,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 15,
-		STAT_COG = 0
+		STAT_COG = 10
 	)
 
 /datum/category_item/setup_option/background/ethnicity/sot_synth_combat
@@ -49,9 +49,9 @@
 	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_VIG = 15,
+		STAT_ROB = 20,
+		STAT_TGH = 5,
+		STAT_VIG = 20,
 		STAT_BIO = 0,
 		STAT_MEC = -5,
 		STAT_COG = -5
@@ -89,12 +89,12 @@
 	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 20,
-		STAT_VIG = 0,
+		STAT_ROB = 10,
+		STAT_TGH = 0,
+		STAT_VIG = 5,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 15
+		STAT_COG = 20
 	)
 
 /datum/category_item/setup_option/background/ethnicity/ag_synth_mine
@@ -114,11 +114,11 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 20,
-		STAT_TGH = 10,
+		STAT_TGH = 0,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
-		STAT_MEC = 10,
-		STAT_COG = 0
+		STAT_MEC = 15,
+		STAT_COG = 5
 	)
 
 /datum/category_item/setup_option/background/ethnicity/blackshield_security
@@ -132,9 +132,9 @@
 	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_VIG = 15,
+		STAT_ROB = 20,
+		STAT_TGH = 5,
+		STAT_VIG = 20,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -152,9 +152,9 @@
 	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 20,
-		STAT_VIG = 0,
+		STAT_ROB = 30,
+		STAT_TGH = 10,
+		STAT_VIG = 5,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -171,9 +171,9 @@
 	restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 20,
-		STAT_VIG = 20,
+		STAT_ROB = 10,
+		STAT_TGH = 10,
+		STAT_VIG = 30,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -210,9 +210,9 @@
 
 	//Compared to the soteria combat model and blackshield synths you get 20 armor across the body vs. 30/35 respectively, so what you lack in natural defense is made up in offense. -Kaz
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 20,
-		STAT_VIG = 20,
+		STAT_ROB = 25,
+		STAT_TGH = 10,
+		STAT_VIG = 25,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -231,11 +231,11 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
-		STAT_TGH = 10,
+		STAT_TGH = 0,
 		STAT_VIG = 10,
-		STAT_BIO = 0, //Given 10 bio racially.
+		STAT_BIO = 5, //Given 10 bio racially.
 		STAT_MEC = 10,
-		STAT_COG = 10
+		STAT_COG = 15
 	)
 
 // FBP's lack a base racial bonus, what you see here is all they get.
@@ -250,11 +250,11 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
-		STAT_TGH = 15,
+		STAT_TGH = 0,
 		STAT_VIG = 15,
-		STAT_BIO = 15,
-		STAT_MEC = 15,
-		STAT_COG = 15
+		STAT_BIO = 20,
+		STAT_MEC = 20,
+		STAT_COG = 20
 	)
 
 /datum/category_item/setup_option/background/ethnicity/full_body_prosthetic_fighter
@@ -268,9 +268,9 @@
 	restricted_to_species = list(FORM_FBP, FORM_UNBRANDED)
 
 	stat_modifiers = list(
-		STAT_ROB = 25, // No inbuilt weapons.
-		STAT_TGH = 25,
-		STAT_VIG = 25,
+		STAT_ROB = 32, // No inbuilt weapons.
+		STAT_TGH = 10,
+		STAT_VIG = 32,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0

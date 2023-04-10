@@ -7,8 +7,8 @@
 	icon_dead = "praetorian_dead"
 	icon_rest = "praetorian_stunned"
 
-	maxHealth = 1600
-	health = 1600
+	maxHealth = 800
+	health = 800
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 
@@ -36,8 +36,8 @@
 	icon_dead = "queen_dead"
 	icon_rest = "queen_stunned"
 	status_flags = 0
-	maxHealth = 3000
-	health = 3000
+	maxHealth = 1500
+	health = 1500
 	poison_per_bite = 10
 
 	armor = list(melee = 40, bullet = 45, energy = 15, bomb = 30, bio = 100, rad = 100)

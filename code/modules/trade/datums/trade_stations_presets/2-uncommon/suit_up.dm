@@ -25,7 +25,7 @@
 			/obj/item/clothing/gloves/thick/ablasive = custom_good_amount_range(list(1, 5)),
 			/obj/item/clothing/head/helmet/laserproof = custom_good_amount_range(list(1, 5)),
 			/obj/item/clothing/head/helmet/faceshield/altyn = custom_good_amount_range(list(1, 5)),
-			/obj/item/clothing/suit/armor/flackvest/full = custom_good_amount_range(list(1, 5))
+			/obj/item/clothing/suit/armor/flakvest/full = custom_good_amount_range(list(1, 5))
 		),
 		"Voidsuits" = list(
 			/obj/item/clothing/suit/space/void,

@@ -40,6 +40,11 @@
 	var/const/signfont = "Times New Roman"
 	var/const/crayonfont = "Comic Sans MS"
 
+/obj/item/paper/ui_host(mob/user)
+	if(istype(loc, /obj/structure/noticeboard))
+		return loc
+	return ..()
+
 /obj/item/paper/card
 	name = "blank card"
 	desc = "A gift card with space to write on the cover."
@@ -120,7 +125,7 @@
 	return TRUE
 
 /obj/item/paper/update_icon()
-	if (icon_state == "paper_talisman")
+	if (icon_state == "paper_talisman" || icon_state == "Scroll ink") // For Alchemy related stuff
 		return
 	else if (info)
 		icon_state = "paper_words"

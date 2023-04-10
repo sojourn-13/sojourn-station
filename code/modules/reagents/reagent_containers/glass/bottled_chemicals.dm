@@ -35,6 +35,12 @@
 	icon_state = "bottle"
 	preloaded_reagents = list("sodium" = 60)
 
+/obj/item/reagent_containers/glass/bottle/sugar
+	name = "sugar bottle"
+	desc = "A small bottle. Contains sugar."
+	icon_state = "bottle"
+	preloaded_reagents = list("sugar" = 60)
+
 /obj/item/reagent_containers/glass/bottle/potassium
 	name = "potassium bottle"
 	desc = "A small bottle. Contains potassium."

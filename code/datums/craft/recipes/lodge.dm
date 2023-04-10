@@ -7,10 +7,10 @@
 // Weaponry -----------------
 /datum/craft_recipe/lodge/crossbow_bolts
 	name = "Crossbow Bolts"
-	result = /obj/item/ammo_casing/crossbow_bolts
+	result = /obj/item/ammo_casing/crossbow_bolts/bulk
 	time = 0
 	steps = list(
-		list(/obj/item/stack/rods, 1)
+		list(/obj/item/stack/rods, 5)
 	)
 	flags = CRAFT_BATCH
 
@@ -18,7 +18,7 @@
 	name = "Fragment Crossbow Bolt"
 	result = /obj/item/ammo_casing/crossbow_bolts/fragment/bulk
 	steps = list(
-		list(/obj/item/stack/rods, 10),
+		list(/obj/item/stack/rods, 5),
 		list(/obj/item/stack/ore, 1)
 	)
 
@@ -27,7 +27,7 @@
 	result = /obj/item/ammo_casing/crossbow_bolts/speed/bulk
 	time = 0
 	steps = list(
-		list(/obj/item/stack/rods, 10),
+		list(/obj/item/stack/rods, 5),
 		list(CRAFT_MATERIAL, 1, MATERIAL_BONE, "time" = 1), //Takes a second
 		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 1) //Takes a second
 	)
@@ -51,7 +51,7 @@
 		list(CRAFT_MATERIAL, 3, MATERIAL_BONE, "time" = 1), //Takes a second
 		list(/obj/item/reagent_containers/food/snacks/grown, 3, "time" = 1) //Takes a second
 	)
-
+/*
 /datum/craft_recipe/lodge/baroqe
 	name = "Baroque Bone Rifle"
 	result = /obj/item/gun/projectile/boltgun/baroque
@@ -65,7 +65,7 @@
 		list(QUALITY_SCREW_DRIVING, 30, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
 	)
-
+*/
 /datum/craft_recipe/lodge/hunter_crossbow
 	name = "Lodge Hunting Crossbow"
 	result = /obj/item/gun/projectile/shotgun/pump/hunter_crossbow
@@ -282,7 +282,7 @@
 // Medicine -----------------
 /datum/craft_recipe/lodge/blood_tongue
 	name = "Tatonka blood tongue"
-	result = /obj/item/stack/medical/advanced/bruise_pack/tatonka_tongue
+	result = /obj/item/stack/medical/bruise_pack/advanced/tatonka_tongue
 	icon_state = "clothing"
 	steps = list(
 		list(/obj/item/animal_part/tatonka_tongue, 1, "time" = 20),
@@ -291,7 +291,7 @@
 
 /datum/craft_recipe/lodge/powder_pouch
 	name = "Tatonka powder pouch"
-	result = /obj/item/stack/medical/advanced/ointment/powder_pouch
+	result = /obj/item/stack/medical/ointment/advanced/powder_pouch
 	icon_state = "clothing"
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_LEATHER, "time" = 60),

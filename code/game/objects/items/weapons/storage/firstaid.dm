@@ -125,9 +125,9 @@
 
 /obj/item/storage/firstaid/adv/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
@@ -155,7 +155,7 @@
 	icon_state = "surgeon"
 	item_state = "firstaid-surgeon"
 	max_storage_space = null // We have to null storage space so that it has the exact number of slots defined on storage_slots.
-	storage_slots = 9 // Enough for the tools it holds, and not one more.
+	storage_slots = 10 // Enough for the tools it holds, and not one more.
 	max_w_class = ITEM_SIZE_NORMAL // Average size of the tools it can hold.
 	matter = list(MATERIAL_PLASTIC = 10) //holds more
 	can_hold = list(
@@ -172,6 +172,7 @@
 		/obj/item/stack/medical,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/tool/medmultitool,
+		/obj/item/tool/tape_roll
 		)
 
 // make_exact_fit() completely ruins the can_hold list,
@@ -188,13 +189,14 @@
 	new /obj/item/tool/scalpel(src)
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/tool/surgicaldrill(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/tool/tape_roll/fiber/medical(src)
 
 /obj/item/storage/firstaid/surgery/traitor
 	name = "conspicuous surgery kit"
 	icon_state = "surgeon_sus"
 	item_state = "combat_surgery_kit"
-	storage_slots = 12 // Fits all the tools it comes with
+	storage_slots = 13 // Fits all the tools it comes with
 	matter = list(MATERIAL_PLASTIC = 12) // More slots
 
 /obj/item/storage/firstaid/surgery/traitor/populate_contents()
@@ -208,8 +210,9 @@
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/device/scanner/health(src)
 	new /obj/item/tool/surgicaldrill/adv(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
+	new /obj/item/tool/tape_roll/fiber/medical(src)
 	new /obj/item/reagent_containers/syringe/stim/ultra_surgeon(src) // Antags don't come with the medical perk, this helps them make use of the ATK provided
 
 /obj/item/storage/firstaid/surgery/combat
@@ -218,7 +221,7 @@
 	icon = 'icons/obj/storage/deferred.dmi'
 	icon_state = "combat_surgery_kit"
 	item_state = "combat_surgery_kit"
-	storage_slots = 10 // Enough for the tools it holds, 1 more slot than standard surgical kits, but less than Soteria made ones.
+	storage_slots = 11 // Enough for the tools it holds, 1 more slot than standard surgical kits, but less than Soteria made ones.
 	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_PLASTIC = 12) // More slots
 	can_hold = list(
@@ -232,7 +235,7 @@
 		/obj/item/reagent_containers/syringe,
 		/obj/item/storage/pill_bottle,
 		/obj/item/tool/medmultitool,
-		/obj/item/stack/medical/advanced/bruise_pack
+		/obj/item/stack/medical/bruise_pack/advanced
 		)
 
 /obj/item/storage/firstaid/surgery/combat/populate_contents()
@@ -246,7 +249,7 @@
 	new /obj/item/tool/surgicaldrill/adv(src)
 	new /obj/item/reagent_containers/syringe/stim/ultra_surgeon(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
 
 /obj/item/storage/firstaid/surgery/si
 	name = "advanced surgery kit"
@@ -254,7 +257,7 @@
 	icon_state = "surgery_box_SI"
 	item_state = "combat_surgery_kit"
 	icon = 'icons/obj/storage/deferred.dmi'
-	storage_slots = 12 // All tools a full one would fit + pill bottle and syringe, in case they're needed.
+	storage_slots = 13 // All tools a full one would fit + pill bottle and syringe, in case they're needed.
 
 /obj/item/storage/firstaid/surgery/si/empty
 	empty = TRUE
@@ -270,7 +273,7 @@
 	new /obj/item/tool/tape_roll/bonegel/si(src)
 	new /obj/item/tool/saw/circular/medical/si(src)
 	new /obj/item/tool/surgicaldrill/adv/si(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
 
 /obj/item/storage/firstaid/ifak
 	name = "IFAK"
@@ -360,10 +363,10 @@
 
 /obj/item/storage/firstaid/nt/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack/nt(src)
-	new /obj/item/stack/medical/advanced/bruise_pack/nt(src)
-	new /obj/item/stack/medical/advanced/ointment/nt(src)
-	new /obj/item/stack/medical/advanced/ointment/nt(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/nt(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/nt(src)
+	new /obj/item/stack/medical/ointment/advanced/nt(src)
+	new /obj/item/stack/medical/ointment/advanced/nt(src)
 	new /obj/item/reagent_containers/syringe/large/antitoxin(src)
 	new /obj/item/reagent_containers/syringe/large/inaprovaline(src)
 
@@ -402,10 +405,10 @@
 
 /obj/item/storage/firstaid/soteria/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
 	new /obj/item/reagent_containers/syringe/tricordrazine(src)
@@ -434,10 +437,10 @@
 
 /obj/item/storage/firstaid/soteria/large/populate_contents()
 	if (empty) return
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/storage/pill_bottle/tramadol(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)

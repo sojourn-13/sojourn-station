@@ -5,8 +5,8 @@
 	icon_state = "q-hound"
 	icon_living = "q-hound"
 	icon = 'icons/mob/mobs-monster.dmi'
-	maxHealth = 400
-	health = 400
+	maxHealth = 200
+	health = 200
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	melee_damage_lower = 20
 	melee_damage_upper = 30
@@ -144,6 +144,9 @@
 	visible_message(SPAN_WARNING("\red [src] flicks its tail and wings!"))
 	loaded_ammo = 3
 
+// Broken code that doesn't work with the Eris sanity system.
+/*
+
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/verb/mind_of_cloathverb()
 	set name = "Rune Chat"
 	set category = "Abilities"
@@ -155,6 +158,7 @@
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			H.sanity.breakdown_fabric()
+*/
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/Bump(var/atom/obstacle)
 	.=..()

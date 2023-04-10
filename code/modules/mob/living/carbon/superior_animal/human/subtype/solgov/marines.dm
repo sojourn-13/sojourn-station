@@ -6,8 +6,8 @@
 	icon_dead = "solfed_trooper_dead"
 	stop_automated_movement_when_pulled = 1
 	wander = 0
-	maxHealth = 150 //About as much health as a normal person
-	health = 150
+	maxHealth = 100
+	health = 100
 
 	armor = list(melee = 50, bullet = 50, energy = 45, bomb = 50, bio = 100, rad = 100)
 
@@ -57,7 +57,17 @@
 	faction = "solfed" //Temp measure to allow Excel turrets and the sort to be used alongside them. Apply faction if wanted for different events.
 
 /mob/living/carbon/superior_animal/human/marine/doTargetMessage()
+	. = ..()
+
 	visible_emote("grunts, \"[pick("In my sights!","Come get some!","Seperatist scumbags!", "Frontier Fucks!", "Hoorah!", "Put your hands up!")]")
+	playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1, -3)
+
+/mob/living/carbon/superior_animal/human/marine/death()
+	if(prob(50))
+		playsound(loc, 'sound/death_gasps/marine1.ogg', 80)
+	else
+		playsound(loc, 'sound/death_gasps/marine2.ogg', 80)
+	. = ..()
 
 /mob/living/carbon/superior_animal/human/marine/shield
 	name = "Sol-Fed Commando"
@@ -86,7 +96,9 @@
 	melee_damage_upper = 20
 
 /mob/living/carbon/superior_animal/human/marine/shield/doTargetMessage()
+	. = ..()
 	visible_emote("grunts, \"[pick("Come get me!","A human shield only costs one life!","Hoorah, mother-fucker!", "Colonial dicks!", "Can't hit me!", "Level 3 plates, bitch!","BANG-BANG-BANG Mother-fucker!")]")
+	playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1, -3)
 
 /mob/living/carbon/superior_animal/human/marine/shotgun
 	name = "Sol-Fed Heavy Commando"
@@ -109,8 +121,9 @@
 	melee_damage_upper = 25
 
 /mob/living/carbon/superior_animal/human/marine/shotgun/doTargetMessage()
+	. = ..()
 	visible_emote("grunts, \"[pick("You WISH I use buckshot!","Time for some shotgun-surgery!","I got a slug with your name on it!", "Ker-chunk, baby!", "Hoorah!", "I ain't firin' blanks!", "Come get me, little man!")]")
-
+	playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1, -3)
 
 /mob/living/carbon/superior_animal/human/marine/specialist
 	name = "Sol-Fed Combat Specialist"
@@ -118,8 +131,8 @@
 	icon_state = "solfed_trooper_specialist"
 	icon_dead = "solfed_trooper_specialist_dead"
 
-	maxHealth = 125 //Less health than a noraml person.
-	health = 125
+	maxHealth = 75 //Less health than a noraml person.
+	health = 75
 
 	casingtype = null
 
@@ -131,7 +144,9 @@
 	mag_drop = FALSE
 
 /mob/living/carbon/superior_animal/human/marine/specialist/doTargetMessage()
+	. = ..()
 	visible_emote("grunts, \"[pick("Frag out!","I've got a present for you!","Incoming!", "Danger close!", "Grenade out!", "Prepare for a closed-casket, asshole!", "Ain't gonna be much left of you!", "I love a fine red mist!")]")
+	playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1, -3)
 
 /mob/living/carbon/superior_animal/human/marine/specialist/death()
 	..()
@@ -146,8 +161,8 @@
 	icon_state = "solfed_trooper_heavy"
 	icon_dead = "solfed_trooper_heavy_dead"
 
-	maxHealth = 175 //More than a normal person.
-	health = 175
+	maxHealth = 125 //More than a normal person.
+	health = 125
 
 	comfy_range = 6
 	rapid = TRUE
@@ -159,7 +174,9 @@
 	mag_drop = FALSE
 
 /mob/living/carbon/superior_animal/human/marine/heavy/doTargetMessage()
+	. = ..()
 	visible_emote("grunts, \"[pick("This machine kills commies!","Come get some!","Fuckin' blast em'!", "I got a round with your name on it!", "Just die already!", "Hah-haaa, you're fuckin' done!", "Make war, not love!")]")
+	playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1, -3)
 
 /mob/living/carbon/superior_animal/human/marine/sniper
 	name = "Sol-Fed Sniper"
@@ -167,8 +184,8 @@
 	icon_state = "solfed_trooper_sniper"
 	icon_dead = "solfed_trooper_sniper_dead"
 
-	maxHealth = 100 //Less health than a noraml person.
-	health = 100
+	maxHealth = 75 //Less health than a noraml person.
+	health = 75
 
 	armor = list(melee = 25, bullet = 40, energy = 35, bomb = 20, bio = 100, rad = 100)
 
@@ -181,4 +198,6 @@
 	projectilesound = 'sound/weapons/guns/fire/heavy_fire.ogg'
 
 /mob/living/carbon/superior_animal/human/marine/sniper/doTargetMessage()
+	. = ..()
 	visible_emote("grunts, \"[pick("All lined up.","In my sights.","One shot, one kill.", "Bingo, target spotted.", "Hoo-fuckin'-rah.", "Get fucked, dickweed.")]")
+	playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1, -3)

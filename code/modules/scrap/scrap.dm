@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 /obj/structure/scrap
 	name = "scrap pile"
 	desc = "A pile of industrial debris."
-	appearance_flags = TILE_BOUND
+	appearance_flags = TILE_BOUND | DEFAULT_APPEARANCE_FLAGS
 	anchored = TRUE
 	opacity = FALSE
 	density = FALSE
@@ -20,6 +20,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/material,
 		/obj/item/stack/rods/random,
 		/obj/item/material/shard,
+		/obj/random/gun_parts,
 		/obj/random/junk/nondense = 2,
 		/obj/random/pack/rare = 0.4
 	)
@@ -32,7 +33,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	var/obj/big_item
 	var/list/ways = list("pokes around in", "searches", "scours", "digs through", "rummages through", "goes through","picks through")
 	var/beacon = FALSE // If this junk pile is getting pulled by the junk beacon or not.
-	sanity_damage = 0.1
+	//sanity_damage = 0.1	// no fuck you that's dumb
 	var/rare_item_chance = 33
 	var/rare_item = FALSE
 
@@ -120,6 +121,11 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	for(var/obj/item/loot in contents)
 		if(prob(66))
 			loot.make_old()
+		if(istype(loot, /obj/item/reagent_containers/food/snacks))
+			var/obj/item/reagent_containers/food/snacks/S = loot
+			S.junk_food = TRUE
+			if(prob(20))
+				S.reagents.add_reagent("toxin", rand(2, 5))
 
 	loot = new(src)
 	loot.max_w_class = ITEM_SIZE_HUGE
@@ -395,12 +401,13 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/pack/gun_loot = 8,
 		/obj/random/powercell,
 		/obj/random/mecha_equipment = 2,
-		/obj/item/toy/weapon/crossbow,
 		/obj/item/material/shard,
 		/obj/item/stack/material/steel/random,
 		/obj/item/stack/material/plasteel/random = 0.6,
 		/obj/random/junk/nondense,
-		/obj/random/pack/rare = 0.3
+		/obj/random/pack/rare = 0.3,
+		/obj/random/gun_parts/frames = 1,
+		/obj/random/gun_parts = 2
 	)
 
 /obj/structure/scrap/science
@@ -426,6 +433,8 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	parts_icon = 'icons/obj/structures/scrap/cloth.dmi'
 	loot_list = list(/obj/random/pack/cloth,
 		/obj/random/pack/rare = 0.2,
+		/obj/random/gun_parts/frames = 0.2,
+		/obj/random/gun_parts = 0.5,
 		/obj/item/storage/wallet = 0.2,
 		/obj/item/storage/wallet/random = 0.1)
 

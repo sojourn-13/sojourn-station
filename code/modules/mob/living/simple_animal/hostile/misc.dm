@@ -84,6 +84,7 @@
 	icon_dead = "yithian_dead"
 	density = 0
 	mob_size = 2
+	sanity_damage = -1
 
 /mob/living/simple_animal/tindalos
 	name = "tindalos"
@@ -93,6 +94,7 @@
 	icon_dead = "tindalos_dead"
 	density = 0
 	mob_size = 1.5
+	sanity_damage = -1
 
 /mob/living/simple_animal/schlorgo
 	name = "schlorgo"
@@ -106,6 +108,7 @@
 	mob_size = 2
 	//Schlorgo is a fucking mess
 	inherent_mutations = list(MUTATION_DWARFISM, MUTATION_NO_PAIN, MUTATION_UNBALANCED, MUTATION_IMBECILE, MUTATION_TOURETTES)
+	sanity_damage = -1
 
 /mob/living/simple_animal/hostile/snake
 	name = "viper"
@@ -177,6 +180,7 @@
 	var/attack_reagent = "toxin"
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
+	sanity_damage = -1
 
 /mob/living/simple_animal/hostile/tengbrute
 	name = "tengolo brute"
@@ -305,6 +309,7 @@
 	meat_amount = 2 // Undomesticated, and underfed compared to a lodge cerberus, thus less meat.
 	mob_size = 5
 	resistance = 10
+	sanity_damage = -1
 	//Feed to lead
 	hunger_enabled = 1//If set to 0, a creature ignores hunger
 	metabolic_factor = 0.5//A multiplier on how fast nutrition is lost. used to tweak the rates on a per-animal basis
@@ -315,6 +320,7 @@
 	bones_amount = 6
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/helldiver_tooth)
+	inherent_mutations = list(MUTATION_MKNEWAIFUHAIR)
 
 /mob/living/simple_animal/hostile/helldiver/FindTarget()
 	. = ..()

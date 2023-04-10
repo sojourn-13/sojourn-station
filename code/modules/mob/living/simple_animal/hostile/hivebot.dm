@@ -4,8 +4,8 @@
 	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "melee"
 	icon_dead = "melee_broken"
-	health = 60
-	maxHealth = 60
+	health = 50
+	maxHealth = 50
 	melee_damage_lower = 5
 	melee_damage_upper = 13
 	attacktext = "sawed"
@@ -34,6 +34,7 @@
 	needs_environment = FALSE
 	armor = list(melee = 15, bullet = 5, energy = 20, bomb = 25, bio = 100, rad = 25)
 	cant_gib = TRUE
+	sanity_damage = 1
 
 /mob/living/simple_animal/hostile/hivebot/emp_act(severity)
 	..()
@@ -71,14 +72,15 @@
 	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "republicon"
 	icon_dead = "republicon_dead"
-	health = 150
-	maxHealth = 150
+	health = 75
+	maxHealth = 75
 	melee_damage_lower = 15
 	melee_damage_upper = 25
 	attacktext = "clawed"
 	projectilesound = 'sound/weapons/energy/Laser.ogg'
 	projectiletype = /obj/item/projectile/beam //This basiclly nulls armor + deals 20 damage
 	faction = "hivebot"
+	sanity_damage = 1
 
 	//Death and harvest vars
 	meat_amount = 3
@@ -134,6 +136,7 @@
 	emote_see = list("sharpens its knives carefully.", "shudders and shakes for a moment!", "gushes red ichor!")
 	deathmessage = "collapses into a pile of scrap!"
 	speak_chance = 5
+	sanity_damage = 1
 
 	friendly_to_colony = FALSE
 
@@ -147,8 +150,8 @@
 	armor = list(melee = 15, bullet = 10, energy = 20, bomb = 25, bio = 0, rad = 25)
 
 
-	health = 900
-	maxHealth = 900
+	health = 450
+	maxHealth = 450
 	attacktext = "sliced"
 	faction = "hivebot"
 	viewRange = 14

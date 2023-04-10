@@ -58,6 +58,12 @@
 	S.changeValue(Value)
 	LEGACY_SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
 
+/datum/stat_holder/proc/changeStat_withcap(statName, Value)
+	var/datum/stat/S = stat_list[statName]
+	S.changeValue_withcap(Value)
+	LEGACY_SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
+
+
 /datum/stat_holder/proc/setStat(statName, Value)
 	var/datum/stat/S = stat_list[statName]
 	S.setValue(Value)
@@ -198,6 +204,16 @@
 /datum/stat/proc/changeValue(affect)
 	value = value + affect
 
+/datum/stat/proc/changeValue_withcap(affect)
+	if(value > STAT_VALUE_MAXIMUM)
+		return
+
+	if(value + affect > STAT_VALUE_MAXIMUM)
+		value = STAT_VALUE_MAXIMUM
+	else
+		value = value + affect
+
+
 /datum/stat/proc/getValue(pure = FALSE)
 	if(pure)
 		return value
@@ -213,6 +229,13 @@
 
 /datum/stat/proc/setValue(value)
 	src.value = value
+
+//Unused but might be good for later additions
+/datum/stat/proc/setValue_withcap(value)
+	if(value > STAT_VALUE_MAXIMUM)
+		src.value = STAT_VALUE_MAXIMUM
+	else
+		src.value = value
 
 /datum/stat/productivity
 	name = STAT_MEC

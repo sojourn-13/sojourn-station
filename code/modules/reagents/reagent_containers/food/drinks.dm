@@ -195,6 +195,14 @@
 	else
 		icon_state = "cup"
 
+/obj/item/reagent_containers/food/drinks/os_coffee
+	name = "Hot Black Water"
+	desc = "A bottle of likely coffee..."
+	icon_state = "oscoffee"
+	center_of_mass = list("x"=15, "y"=10)
+	base_icon = "oscup"
+	preloaded_reagents = list("coffee" = 30)
+
 /obj/item/reagent_containers/food/drinks/ice
 	name = "Northern Freeze"
 	desc = "A frosty cup of ice. Do not chew."

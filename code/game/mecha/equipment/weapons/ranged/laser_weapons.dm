@@ -36,53 +36,68 @@
 	fire_sound = 'sound/mecha/weapons/ion.ogg'
 	price_tag = 300
 
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ppc
+	equip_cooldown = 40 //this is fine.
+	name = "\improper PHM \"Twilight\" snub-nosed particle projector cannon"
+	desc = "A bastardized PPC having most of it's barrel cut down and safeties overidden for easier use by smaller mechs. It emits a strong discharge of plasma looking akin to arc of electricity, capable of scrambling electronics in small radius."
+	icon_state = "mecha_ppc"
+	energy_drain = 500 //VERY strong, expensive to fire!
+	projectile = /obj/item/projectile/ppc
+	fire_sound = 'sound/mecha/weapons/ppc.ogg'
+	price_tag = 300
+	required_type = list(/obj/mecha/combat)
+
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser
 	equip_cooldown = 5
 	name = "\improper MHM \"Immolator\" mining laser"
-	desc = "A right arm of the free world, classic mining laser with safeties overriden meaning it won't mine much besides hard metal off those unfortunate at the end of it."
+	desc = "A heavy duty mining laser with safeties overriden meaning it won't mine much besides hard metal off those unfortunate at the end of it."
 	icon_state = "mecha_laser"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_SILVER  = 10)
 	energy_drain = 30
 	projectile = /obj/item/projectile/beam
 	fire_sound = 'sound/mecha/weapons/laser.ogg'
+	deviation = 3
+	fire_cooldown = 3
 	price_tag = 400
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy
 	equip_cooldown = 10
-	name = "\improper MHM-MS \"Solaris\" laser cannon" //Minerva Heavy Manufacturing - Milispec
-	desc = "A symbol of oppression to many from colonists on the rim to pirates to even citizens of Sol herself, high-powered military laser used everywhere from vehicles to even spacecraft."
-	icon_state = "mecha_laser"
+	name = "\improper MHM-MS \"Solaris\" heavy laser cannon" //Minerva Heavy Manufacturing - Milispec
+	desc = "A heavy mech laser in use by most professional mercenary groups despite it's dated design, packs a massive punch for it's size while not draining much power."
+	icon_state = "mecha_laser_mil"
 	matter = list(MATERIAL_STEEL = 25, MATERIAL_PLASTEEL = 15, MATERIAL_SILVER  =10)
 	energy_drain = 100
 	projectile = /obj/item/projectile/beam/heavylaser
 	fire_sound = 'sound/mecha/weapons/laser_military.ogg'
+	deviation = 2
+	fire_cooldown = 2
 	required_type = list(/obj/mecha/combat)
 	price_tag = 500
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy/auto
 	equip_cooldown = 5
-	name = "\improper MHM-MS \"Scorcher\" multi-laser cannon"
-	desc = "An answer to any uprising from any foolish milita, delivers scarily accurate salvo of laser beams towards a direction of pilots choosing."
+	name = "\improper MHM-MS \"Scorcher\" pulse laser cannon"
+	desc = "A heavy mech laser restructured to 'pulse' instead of delivering a constant beam making it much more energy intensive but perfect for dealing with multiple targets."
 	icon_state = "mecha_auto_laser"
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 1)
 	energy_drain = 250 //less efficient than its constituent parts but more punchy per burst
 	projectile = /obj/item/projectile/beam/heavylaser
-	projectiles = 8
-	projectiles_per_shot = 2
-	fire_cooldown = 5 //so we dont fire all our beams at the exact same instant. Remember! We track once a target is clicked!
+	projectiles = 9
+	projectiles_per_shot = 3
+	fire_cooldown = 4 //so we dont fire all our beams at the exact same instant. Remember! We track once a target is clicked!
 	required_type = list(/obj/mecha/combat)
 	fire_sound = 'sound/mecha/weapons/laser_multi.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/pulse
 	equip_cooldown = 30 //this is fine.
 	name = "\improper PHM \"MPL-3 MK2\" pulse cannon"
-	desc = "A remnant of bygone age even in it's full glory, unlike it's infantry version it features a burst mode with lack of any EMP elements."
+	desc = "A heavy experimental cannon built in mind with pulsing unlike it's predecesor leading to it being more energy efficient and faster firing."
 	icon_state = "mecha_pulse"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_URANIUM  =5)
 	projectiles = 6
 	projectiles_per_shot = 3
 	deviation = 3
-	fire_cooldown = 4
+	fire_cooldown = 3
 	energy_drain = 150 //more expensive than a heavy, less than a multi-las, highly advanced laser!
 	origin_tech = list(TECH_MATERIAL = 3, TECH_COMBAT = 6, TECH_POWER = 4)
 	projectile = /obj/item/projectile/beam/pulse/heavy

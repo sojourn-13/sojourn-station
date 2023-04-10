@@ -16,6 +16,8 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			continue
 		if(blueprint_type == /datum/nt_blueprint/weapons)
 			continue
+		if(blueprint_type == /datum/nt_blueprint/health_care)
+			continue
 		var/datum/nt_blueprint/pb = new blueprint_type()
 		list[pb.name] = pb
 	. = list
@@ -61,6 +63,8 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	phrase = "Dominus dedit, Dominus abstulit."
 	desc = "Mistakes are to be a lesson, but first we must correct it by deconstructing its form."
 	power = 40
+	nutri_cost = 10
+	blood_cost = 10
 
 /datum/ritual/cruciform/priest/acolyte/deconstruction/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C, list/targets)
 	if(!GLOB.nt_constructs) //Makes sure the list we curated earlier actually exists
@@ -87,6 +91,11 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 
 	if(!do_after(user, 5 SECONDS, target_turf)) //"Sit still" timer
 		fail("You feel something is judging you upon your impatience",user,C,targets)
+		effect.failure()
+		return
+
+	if(QDELETED(reclaimed) || reclaimed.loc != target_turf)
+		fail("It's no longer there.", user, C, targets)
 		effect.failure()
 		return
 
@@ -564,7 +573,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 /datum/nt_blueprint/weapons
 
 /datum/nt_blueprint/weapons/antebellum
-	name = "\"Antebellum\" Blunderbuss lasgun"
+	name = "\"Antebellum\" laser blunderbuss"
 	build_path = /obj/item/gun/energy/plasma/antebellum
 	materials = list(
 		/obj/item/stack/material/plasteel = 10,
@@ -576,7 +585,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	build_time = 3 SECONDS
 
 /datum/nt_blueprint/weapons/carpediem
-	name = "\"Carpediem\" lasgun"
+	name = "\"Carpediem\" laser musket"
 	build_path = /obj/item/gun/energy/carpediem
 	materials = list(
 		/obj/item/stack/material/plasteel = 5,
@@ -598,3 +607,42 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 		/obj/item/stack/material/silver = 5
 	)
 	build_time = 8 SECONDS
+
+//For making medical stuff
+
+/datum/nt_blueprint/health_care/nt_firstaid
+	name = "Absolutism Medkit"
+	build_path = /obj/item/storage/firstaid/nt
+	materials = list(
+		/obj/item/stack/material/biomatter = 105,
+		/obj/item/stack/material/plastic = 4,
+		/obj/item/stack/material/glass = 2,
+		/obj/item/stack/material/gold = 2,
+		/obj/item/stack/material/silver = 2
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/health_care/nt_ointment
+	name = "Absolutism Burnpack"
+	build_path = /obj/item/stack/medical/ointment/advanced/nt
+	materials = list(
+		/obj/item/stack/material/biomatter = 25,
+		/obj/item/stack/material/plastic = 2,
+		/obj/item/stack/material/glass = 1,
+		/obj/item/stack/material/gold = 1,
+		/obj/item/stack/material/silver = 1
+	)
+	build_time = 5 SECONDS
+
+/datum/nt_blueprint/health_care/nt_bruise_pack
+	name = "Absolutism Bruisepack"
+	build_path = /obj/item/stack/medical/bruise_pack/advanced/nt
+	materials = list(
+		/obj/item/stack/material/biomatter = 25,
+		/obj/item/stack/material/plastic = 2,
+		/obj/item/stack/material/glass = 1,
+		/obj/item/stack/material/gold = 1,
+		/obj/item/stack/material/silver = 1
+	)
+	build_time = 5 SECONDS
+

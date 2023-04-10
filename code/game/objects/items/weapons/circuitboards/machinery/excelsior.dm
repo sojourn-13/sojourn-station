@@ -157,6 +157,7 @@
 		/obj/item/stock_parts/manipulator = 4
 	)
 */
+
 /obj/item/circuitboard/blackshield_teleporter
 	name = "circuit board blackshield teleporter"
 	build_name = ""

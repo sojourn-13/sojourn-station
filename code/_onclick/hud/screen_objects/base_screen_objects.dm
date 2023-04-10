@@ -6,7 +6,7 @@
 	For more information, see the byond documentation on the screen_loc and screen vars.
 */
 /image/no_recolor
-	appearance_flags = RESET_COLOR
+	appearance_flags = RESET_COLOR|DEFAULT_APPEARANCE_FLAGS
 
 
 /obj/screen
@@ -455,10 +455,14 @@
 	add_overlay( ovrls["sanity0"])
 
 /obj/screen/sanity/Click()
-	var/mob/living/carbon/human/H = parentmob
-	if(!istype(H))
+	if(!..())
 		return
+	if(!ishuman(parentmob))
+		return FALSE
+	var/mob/living/carbon/human/H = parentmob
+	H.nano_ui_interact(H)
 	H.sanity.print_desires()
+	return	TRUE
 
 //--------------------------------------------------sanity end---------------------------------------------------------
 //--------------------------------------------------nsa---------------------------------------------------------

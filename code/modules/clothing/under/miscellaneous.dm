@@ -681,6 +681,13 @@
 	price_tag = 45
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
+/obj/item/clothing/under/dress/casual/jill
+	name = "cyberpunk bartender outfit"
+	desc = "Time to mix drinks and change lives."
+	icon_state = "cba" // Cyberpunk Bartender Action
+	item_state = "cba"
+	price_tag = 50
+
 /obj/item/clothing/under/fancy_redish_suit
 	name = "expensive brown suit"
 	desc = "A brown suit with a white undershirt and tie, its higher value comes form its likeness to being worn by many movie stars form Sol movies. Its also just well made."

@@ -116,6 +116,17 @@
 		BURST_8_ROUND,
 		FULL_AUTO_300
 		)
+	gun_parts = list(/obj/item/part/gun/frame/pk = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
+/obj/item/part/gun/frame/pk
+	name = "Pulemyot Kalashnikova frame"
+	desc = "A Pulemyot Kalashnikova LMG frame. A violent and beautiful spark of the past."
+	icon_state = "frame_pk"
+	result = /obj/item/gun/projectile/automatic/lmg/pk
+	resultvars = list(/obj/item/gun/projectile/automatic/lmg/pk)
+	gripvars = list(/obj/item/part/gun/grip/serb)
+	mechanismvar = /obj/item/part/gun/mechanism/machinegun
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
 
 //This should be in its own file...
 /obj/item/gun/projectile/automatic/lmg/tk
@@ -126,12 +137,23 @@
 	icon_base = "tk"
 	icon_state = "tk"
 	item_state = "tk"
-	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_STANMAG
+	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_RIFLE
 	caliber = CAL_LRIFLE
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.2
 	init_recoil = LMG_RECOIL(0.8)
 	serial_type = "SD GmbH"
+	gun_parts = list(/obj/item/part/gun/frame/tk = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/srifle = 1)
+
+/obj/item/part/gun/frame/tk
+	name = "Takeshi frame"
+	desc = "A Takeshi LMG frame. A fine-oiled machine of war and death."
+	icon_state = "frame_mg"
+	result = /obj/item/gun/projectile/automatic/lmg/tk
+	resultvars = list(/obj/item/gun/projectile/automatic/lmg/tk, /obj/item/gun/projectile/automatic/lmg/heroic)
+	gripvars = list(/obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black )
+	mechanismvar = /obj/item/part/gun/mechanism/machinegun
+	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/lrifle)
 
 /obj/item/gun/projectile/automatic/lmg/tk/update_icon()
 //	..() We are rather different than other guns and lmgs.
@@ -187,6 +209,7 @@
 		BURST_8_ROUND,
 		FULL_AUTO_600 // Meant to be a supressive fire GPMG
 		)
+	gun_parts = list(/obj/item/part/gun/frame/tk = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 // Even more special than the Takeshi so we have to do this all over again instead of being a Takeshi child
 /obj/item/gun/projectile/automatic/lmg/heroic/update_icon()

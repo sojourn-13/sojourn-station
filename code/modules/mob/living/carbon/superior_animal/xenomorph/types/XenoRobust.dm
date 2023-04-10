@@ -7,8 +7,8 @@
 	icon_dead = "warrior_dead"
 	icon_rest = "warrior_stunned"
 
-	maxHealth = 80
-	health = 80
+	maxHealth = 60
+	health = 60
 	flash_resistances = 8 //Weak xeno dies to like 3 hits of most things, lets not make it to easy
 	melee_damage_lower = 20
 	melee_damage_upper = 25
@@ -22,8 +22,8 @@
 	icon_dead = "defender_dead"
 	icon_rest = "defender_stunned"
 	flash_resistances = 3 //Meant to be a weaker tank let them weakly tank
-	maxHealth = 200
-	health = 200
+	maxHealth = 140
+	health = 140
 
 /mob/living/carbon/superior_animal/xenomorph/warrior/shrike
 	name = "shrike"
@@ -103,8 +103,8 @@ var/datum/xenomorph/xeno_morph_ai
 	icon_dead = "bull_dead"
 	icon_rest = "bull_stunned"
 
-	maxHealth = 120
-	health = 120
+	maxHealth = 100
+	health = 100
 	attack_sound = list('sound/xenomorph/alien_bite1.ogg', 'sound/xenomorph/alien_bite2.ogg')
 	melee_damage_lower = 20
 	melee_damage_upper = 25
@@ -119,8 +119,8 @@ var/datum/xenomorph/xeno_morph_ai
 	icon_rest = "boiler_stunned"
 	deathmessage = "explodes violently as it dies!"
 
-	maxHealth = 60
-	health = 60
+	maxHealth = 50
+	health = 50
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	flash_resistances = 0

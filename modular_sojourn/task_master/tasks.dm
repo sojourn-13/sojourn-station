@@ -52,7 +52,7 @@
 	//log_debug("[forwards_refence] Has gained additonal insight.")
 	forwards_refence.sanity.give_insight(level + 3)
 	forwards_refence.sanity.give_insight_rest(level + 3)
-	forwards_refence.sanity.resting += level
+//	forwards_refence.sanity.resting += level //This was to powerful
 
 
 /datum/task_master/task/clay_thumb
@@ -115,3 +115,47 @@
 	forwards_refence.stats.changeStat(STAT_VIV, (level + 2))
 	forwards_refence.max_nutrition += (level * 5) //405 level 1 -> 415 level 2 -> 430 level 3 ect ect
 	forwards_refence.vessel.maximum_volume  += 5 //Blood flow is being aided
+
+//Floor/Wallet Pill buff
+/datum/task_master/task/dr_floor
+	name = "Dr. Floor"
+	key = "DR_FLOOR"
+	desc = "Either do to drug withdraw, or hope, its hard to denie that this helps build up resistance."
+	gain_text = "Self prescription..."
+	level_threshholds = 5 //Tons of wallet/floor pills
+
+/datum/task_master/task/dr_floor/activate_affect()
+	forwards_refence.stats.changeStat(STAT_VIV, (level + 2))
+
+//For Shoveling AND THEN welding/hammering a crack
+/datum/task_master/task/proper_sealer
+	name = "Proper Sealer"
+	key = "PROPER_SEALER"
+	desc = "Taking the hardway on sealing up borrows leaves tougher hands and more knowings on how to repair."
+	gain_text = "Making the colony a safer place sure is fulfilling work."
+	level_threshholds = 5 //Theirs so many borrows...
+
+/datum/task_master/task/proper_sealer/activate_affect()
+	forwards_refence.stats.changeStat(STAT_MEC, (level + 1))
+	forwards_refence.stats.changeStat(STAT_TGH, (level + 1))
+
+//This happens every time a tool breaks on someone
+/datum/task_master/task/tool_breaker
+	name = "Tool Consumer"
+	key = "TOOL_BREAKER"
+	desc = "Sometimes things just break. At lest its a good learning experience..."
+	gain_text = "Oops."
+	level_threshholds = 2 //This unlike most stat is meant to be leveled up a bit to shine
+
+/datum/task_master/task/proper_sealer/activate_affect()
+	forwards_refence.stats.changeStat(STAT_MEC, (level + 1))
+
+/datum/task_master/task/proper_area_smoker
+	name = "Smoking Area"
+	key = "PROPER_AREA_SMOKER"
+	desc = "Do to smoking in the proper area helps make you feel more connected to the community."
+	gain_text = "Smoking in a proper area is rather soothing."
+	level_threshholds = 10
+
+/datum/task_master/task/proper_area_smoker/activate_affect()
+	forwards_refence.sanity.change_max_level(level)

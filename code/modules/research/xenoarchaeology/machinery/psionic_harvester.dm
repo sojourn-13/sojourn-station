@@ -1,13 +1,13 @@
 /obj/machinery/psionic_harvester
 	name = "psionic harvester"
-	desc = ""
-	icon = 'icons/obj/virology.dmi'
-	icon_state = "incubator"	//incubator_on
+	desc = "A Soteria built processing machine capable of breaking down an artifact and compacting it's anomalous psionic energies."
+	icon = 'icons/obj/xenoarchaeology.dmi'
+	icon_state = "psionic_harvester"
 	anchored = 1
 	density = 1
-	idle_power_usage = 0
-	active_power_usage = 0
-	use_power = NO_POWER_USE
+	idle_power_usage = 20
+	active_power_usage = 300
+	use_power = IDLE_POWER_USE
 	var/obj/machinery/artifact/current_artifact
 	var/obj/machinery/artifact_scanpad/owned_scanner = null
 	var/processing = FALSE
@@ -15,16 +15,16 @@
 
 /obj/machinery/psionic_harvester/attack_hand(var/mob/user as mob)
 	current_artifact = check_artifacts()
-	if(current_artifact)
+	if(current_artifact && !processing)
 		current_artifact.forceMove(src) // Move the artifact into the machine. the '?.' prevent runtimes
-		ping("Psionic Artifact located. Processing...")
+		ping("Artifact detected. Processing...")
 		processing = TRUE
 		progress = initial(progress) // Reset the progress on the artifact
 
 // Check around the machine for viable artifacts and return the first viable one.
 /obj/machinery/psionic_harvester/proc/check_artifacts()
 	if(current_artifact) // Do we already have an artifact inside?
-		return
+		return current_artifact
 
 	for(var/obj/machinery/artifact/A in orange(1, src)) // Check the 8 tiles around us.
 		if(A.psi_power) // Does the artifact hold a psionic power?

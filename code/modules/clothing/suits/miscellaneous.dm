@@ -364,6 +364,44 @@ obj/item/clothing/suit/fluff/miko
 		usr.update_action_buttons()
 		return 1
 
+/obj/item/clothing/suit/storage/scav_heavy
+	name = "scavenger plate armor"
+	desc = "A set of scavenger armor with additional armour plating installed. Though the haphazardly-made plates are heavy and don't exactly excel against projectiles, they shrug off melee attacks nicely."
+	icon_state = "scav_heavy"
+	item_state = "scav_heavy"
+	armor_list = list(
+		melee = 50, //A bit worse than riot armour
+		bullet = 25,
+		energy = 25,
+		bomb = 25,
+		bio = 0,
+		rad = 0
+	)
+	slowdown = 0.9
+
+/obj/item/clothing/suit/storage/scav_heavy/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["scavenger plate"] = "scav_heavy"
+	options["alt scavenger plate"] = "scav_heavy_alt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/storage/triad
 	name = "triad jacket"//RUINER reference
 	desc = "A well armoured trench coat. The label on the inside claims it comes from somewhere dangerous."
@@ -418,8 +456,8 @@ obj/item/clothing/suit/fluff/miko
 /obj/item/clothing/suit/storage/numericalgarb
 	name = "numerical garb"
 	desc = "A padded cloak meant for numerical, made to be biomatter resistant. The cloak is reversible, with its switchable colors being red and grey."
-	icon_state = "numericalgarb"
-	item_state = "numericalgarb"
+	icon_state = "field_numerical"
+	item_state = "field_numerical"
 	armor_list = list(
 		melee = 10,
 		bullet = 0, //well armored its not going to help a bullet
@@ -441,8 +479,8 @@ obj/item/clothing/suit/fluff/miko
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Red Garb"] = "numericalgarb"
-	options["Gray Garb"] = "numericalgarbgrey"
+	options["Red Garb"] = "field_numerical"
+	options["Gray Garb"] = "field_numerical_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

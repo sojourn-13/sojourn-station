@@ -21,6 +21,12 @@ var/global/datum/global_init/init = new ()
 	initialize_chemical_reactions()
 	initialize_mutation_recipes()
 
+
+	// Set up roundstart seed list.
+	plant_controller = new()
+
+	initialize_cooking_recipes()
+
 	qdel(src) //we're done
 
 /datum/global_init/Destroy()
@@ -99,14 +105,15 @@ var/game_id
 	load_mods()
 	//end-emergency fix
 
+	TgsNew()
+
 	generate_body_modification_lists()
 
 	update_status()
 
 	. = ..()
 
-	// Set up roundstart seed list.
-	plant_controller = new()
+
 
 	// This is kinda important. Set up details of what the hell things are made of.
 	populate_material_list()
@@ -212,6 +219,8 @@ var/world_topic_spam_protect_time = world.timeofday
 	for(var/client/C in clients)
 		if(config.server)	//if you set a server location in config.txt, it sends you there instead of trying to reconnect to the same world address. -- NeoFite
 			C << link("byond://[config.server]")
+
+	TgsReboot()
 
 	#ifdef UNIT_TESTS
 	FinishTestRun()

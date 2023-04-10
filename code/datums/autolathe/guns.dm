@@ -386,7 +386,7 @@
 
 /datum/design/autolathe/gun/revolver_taser
 	name = "Seinemetall Defense GmbH - \"Zeus\" Stun Revolver"
-	build_path = /obj/item/gun/energy/taser
+	build_path = /obj/item/gun/energy/stunrevolver
 
 /datum/design/autolathe/gun/ion_pistol
 	name = "Seinemetall Defense GmbH - \"Aedes\" Ion Pistol"
@@ -403,6 +403,10 @@
 /datum/design/autolathe/gun/energygun_martin
 	name = "H&S PDW E \"Martin\""
 	build_path = /obj/item/gun/energy/gun/martin
+	
+/datum/design/autolathe/gun/ntpistol
+	name = "NT LP \"Serenity\""
+	build_path = /obj/item/gun/energy/ntpistol
 
 /datum/design/autolathe/gun/lasercore
 	name = "H&S PDW \"Laser Core\""

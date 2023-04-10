@@ -129,6 +129,12 @@
 	build_path = /obj/item/storage/belt/champion
 	materials = list(MATERIAL_BIOMATTER = 50)
 
+// This separates regular clothes designs from NT clothes designs //
+/datum/design/bioprinter/nt_clothes/armor_kit
+	name = "Armor Bundle"
+	build_path = /obj/item/gunbox/church
+	materials = list(MATERIAL_BIOMATTER = 20)
+
 /datum/design/bioprinter/nt_clothes/acolyte_armor
 	name = "Vector Armor"
 	build_path = /obj/item/clothing/suit/armor/vest/acolyte
@@ -168,10 +174,6 @@
 /datum/design/bioprinter/nt_clothes/acolyte_uniform
 	name = "Vector Garment"
 	build_path = /obj/item/clothing/under/rank/acolyte
-
-/datum/design/bioprinter/nt_clothes/sports_uniform
-	name = "Sport Clothes"
-	build_path = /obj/item/clothing/under/rank/church/sport
 
 /datum/design/bioprinter/nt_clothes/church_uniform
 	name = "Church Garment"
@@ -285,19 +287,19 @@
 
 /datum/design/bioprinter/medical/advanced/bruise
 	name = "Advanced trauma kit"
-	build_path = /obj/item/stack/medical/advanced/bruise_pack
+	build_path = /obj/item/stack/medical/bruise_pack/advanced
 
 /datum/design/bioprinter/medical/advanced/ointment
 	name = "Advanced burn kit"
-	build_path = /obj/item/stack/medical/advanced/ointment
+	build_path = /obj/item/stack/medical/ointment/advanced
 
 /datum/design/bioprinter/medical/advanced/bruise/nt
 	name = "Absolutist trauma kit"
-	build_path = /obj/item/stack/medical/advanced/bruise_pack/nt
+	build_path = /obj/item/stack/medical/bruise_pack/advanced/nt
 
 /datum/design/bioprinter/medical/advanced/ointment/nt
 	name = "Absolutist burn kit"
-	build_path = /obj/item/stack/medical/advanced/ointment/nt
+	build_path = /obj/item/stack/medical/ointment/advanced/nt
 
 /datum/design/autolathe/firstaid/nt
 	name = "Absolutism Medkit"
@@ -377,6 +379,14 @@
 /datum/design/bioprinter/pouch/kniferig
 	name = "Throwing knives scabbard"
 	build_path = /obj/item/storage/pouch/kniferig
+
+/datum/design/bioprinter/pouch/quiver
+	name = "arrows quiver"
+	build_path = /obj/item/storage/pouch/quiver
+
+/datum/design/bioprinter/pouch/xbowquiver
+	name = "crossbow bolts quiver"
+	build_path = /obj/item/storage/pouch/bolts
 
 /datum/design/bioprinter/pouch/engineering_supply
 	name = "Engineering supplies pouch"

@@ -5461,7 +5461,7 @@
 "uL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/woodentable,
-/obj/item/clothing/suit/armor/flackvest/green,
+/obj/item/clothing/suit/armor/flakvest,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/swamp_hut)
 "uM" = (
@@ -5618,7 +5618,6 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "vl" = (
 /obj/random/furniture/bedsheet,
-/obj/landmark/join/late/dormitory_outsider,
 /obj/structure/bed/padded,
 /turf/simulated/floor/carpet,
 /area/nadezhda/outside/forest/swamp_hut)
@@ -5656,7 +5655,6 @@
 /area/nadezhda/outside/forest/beast_cave_light)
 "vr" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/landmark/join/start/outsider,
 /obj/structure/bed/chair/custom/wood{
 	dir = 8
 	},

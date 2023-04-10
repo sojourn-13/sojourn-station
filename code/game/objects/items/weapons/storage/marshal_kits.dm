@@ -12,7 +12,7 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/freedom(src)
-		new /obj/item/ammo_magazine/smg_magnum_40/rubber(src)
+		new /obj/item/ammo_magazine/smg_magnum_40/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/storage/pouch/ammo(src)
@@ -31,14 +31,14 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/mamba(src)
-		new /obj/item/ammo_magazine/light_rifle_257/rubber(src)
+		new /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/light_rifle_257(src)
 		new /obj/item/ammo_magazine/light_rifle_257(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/gear_lasgun
-	name = "\improper Gear Lasgun Kit"
-	desc = "The standard Marshal box kit containing a modified Cog lasgun that also fires stun beams. For the economic officer."
+	name = "\improper Gear Laser Carbine Kit"
+	desc = "The standard Marshal box kit containing a modified Cog laser carbine that also fires stun beams. For the economic officer."
 
 	populate_contents()
 		new /obj/item/gun/energy/cog/gear(src)
@@ -55,7 +55,7 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/riot_autoshotgun/opshot(src)
-		new /obj/item/ammo_magazine/speed_loader_shotgun/beanbag(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun/beanbag/pepperball(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/storage/pouch/tubular(src)
@@ -78,7 +78,7 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/riot_autoshotgun(src)
-		new /obj/item/ammo_casing/shotgun/beanbag/prespawned(src)
+		new /obj/item/ammo_casing/shotgun/beanbag/pepperball/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/storage/pouch/tubular(src)
@@ -139,8 +139,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/colt/liberty(src)
-		new /obj/item/ammo_magazine/magnum_40/rubber(src)
-		new /obj/item/ammo_magazine/magnum_40/rubber(src)
+		new /obj/item/ammo_magazine/magnum_40/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/magnum_40/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
 		new /obj/item/clothing/accessory/holster/hip(src)
 
@@ -151,8 +151,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/judiciary(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
+		new /obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
 		new /obj/item/clothing/accessory/holster/hip(src)
 
@@ -163,10 +163,10 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/deckard(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/m_kit/zwang
@@ -195,9 +195,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		new /obj/item/clothing/accessory/holster/hip(src)
 
 /obj/item/storage/box/m_kit/galaxy
@@ -216,22 +216,22 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/lamia/amnesty(src)
-		new /obj/item/ammo_magazine/kurtz_50/rubber(src)
-		new /obj/item/ammo_magazine/kurtz_50/rubber(src)
+		new /obj/item/ammo_magazine/kurtz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/kurtz_50(src)
 		new /obj/item/clothing/accessory/holster/hip(src)
 
 // Armor Kits
 /obj/item/storage/box/m_kit/standard_armor
 	name = "Standard Visor Armor Kit"
-	desc = "An standard Marshal armor kit with a plate carrier and visor helmet."
+	desc = "A standard Marshal armor kit with a plate carrier and visor helmet."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/platecarrier/ih(src)
-		new /obj/item/clothing/head/helmet/marshal_full(src)
+		new /obj/item/clothing/suit/armor/vest/ironhammer(src)
+		new /obj/item/clothing/head/helmet/marshal(src)
 
 /obj/item/storage/box/m_kit/armored_overcoat
 	name = "\improper Armored Overcoat Armor Kit"
-	desc = "An armor kit containg a militia overcoat and a ballistic helmet."
+	desc = "An armor kit containg an armored overcoat and a full helmet."
 
 	populate_contents()
 		new /obj/item/clothing/suit/storage/armor/marshal_coat(src)
@@ -240,15 +240,15 @@
 
 /obj/item/storage/box/m_kit/bullet_proof
 	name = "Bullet Proof Kit"
-	desc = "An standard Marshal armor kit containing bullet proof armor and a helmet, perfect for dealing with hostile colonist and infiltrators, but bulky and slowing."
+	desc = "A standard Marshal armor kit containing bullet proof armor and a helmet with tacked on nightvision, perfect for dealing with hostile colonist and infiltrators, but bulky and slowing."
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/bulletproof/ironhammer(src)
-		new /obj/item/clothing/head/helmet/faceshield/altyn/ironhammer(src)
+		new /obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg(src)
 
 /obj/item/storage/box/m_kit/laser_armor
 	name = "Ablative Armor Kit"
-	desc = "An standard Marshal armor kit containing a full ablative marshal branded suit for countering laser weaponry."
+	desc = "A standard Marshal armor kit containing a full ablative marshal branded suit for countering laser weaponry."
 
 	populate_contents()
 		new /obj/item/clothing/suit/armor/vest/ablative/ironhammer(src)

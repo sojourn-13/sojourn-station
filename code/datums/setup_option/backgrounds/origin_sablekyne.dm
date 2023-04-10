@@ -44,7 +44,7 @@
 
 	restricted_to_species = list(FORM_SABLEKYNE)
 
-	perks = list(/datum/perk/addict)
+	perks = list(PERK_ADDICT)
 
 	stat_modifiers = list(
 		STAT_ROB = -10,

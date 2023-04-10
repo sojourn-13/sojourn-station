@@ -6,8 +6,8 @@
 	icon_dead = "kriosan_troop_scout_dead"
 	stop_automated_movement_when_pulled = 1
 	wander = 0
-	maxHealth = 150 //About as much health as a normal person
-	health = 150
+	maxHealth = 100
+	health = 100
 
 	armor = list(melee = 50, bullet = 50, energy = 45, bomb = 50, bio = 100, rad = 100)
 

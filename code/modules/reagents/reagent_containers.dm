@@ -19,10 +19,12 @@
 		amount_per_transfer_from_this = N
 
 /obj/item/reagent_containers/Initialize()
+	cut_overlays()
 	create_reagents(volume)
 	. = ..() // This creates initial reagents
 	if(!possible_transfer_amounts)
 		src.verbs -= /obj/item/reagent_containers/verb/set_APTFT
+	update_icon()
 
 
 /obj/item/reagent_containers/attack_self(mob/user as mob)
@@ -181,6 +183,10 @@
 			return FALSE
 
 	if(!is_drainable())
+		#ifdef CWJ_DEBUG
+		log_debug("reagent_containers/standard_pour_into()- Container not drainable!")
+		#endif
+
 		is_closed_message(user)
 		return FALSE
 

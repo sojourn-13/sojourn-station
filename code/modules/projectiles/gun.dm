@@ -53,6 +53,8 @@
 	var/braced = FALSE //for gun_brace proc.
 	var/braceable = 1 //can the gun be used for gun_brace proc, modifies recoil. If the gun has foregrip mod installed, it's not braceable. Bipod mod increases value by 1.
 
+	var/list/gun_parts = list(/obj/item/part/gun = 1 ,/obj/item/stack/material/steel = 4)
+
 	var/muzzle_flash = 3
 	var/dual_wielding
 	var/can_dual = FALSE // Controls whether guns can be dual-wielded (firing two at once).
@@ -110,7 +112,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/twohanded = FALSE //If TRUE, gun can only be fired when wileded
 	var/recentwield = 0 // to prevent spammage
 	var/proj_step_multiplier = 1
-	var/proj_pve_damage_multiplier = 1 //Damage against mobs that are not player multiplier
 	var/list/proj_damage_adjust = list() //What additional damage do we give to the bullet. Type(string) -> Amount(int), damage is divided for pellets
 
 	var/eject_animatio = FALSE //Only currenly in bolt guns. Check boltgun.dm for more information on this
@@ -401,6 +402,24 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			serial_shown = FALSE
 			return FALSE
 
+	if(I.get_tool_quality(QUALITY_WIRE_CUTTING))
+		if(!gun_parts)
+			to_chat(user, SPAN_NOTICE("You can't dismantle [src] as it has no gun parts! How strange..."))
+			return FALSE
+
+		user.visible_message(SPAN_NOTICE("[user] begins breaking apart [src]."), SPAN_WARNING("You begin breaking apart [src] for gun parts."))
+		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			user.visible_message(SPAN_NOTICE("[user] breaks [src] apart for gun parts!"), SPAN_NOTICE("You break [src] apart for gun parts."))
+			for(var/target_item in gun_parts)
+				var/amount = gun_parts[target_item]
+				while(amount)
+					if(ispath(target_item, /obj/item/part/gun/frame))
+						var/obj/item/part/gun/frame/F = new target_item(get_turf(src))
+						F.serial_type = serial_type
+					else
+						new target_item(get_turf(src))
+					amount--
+			qdel(src)
 
 /obj/item/gun/proc/dna_check(user)
 	if(dna_compare_samples)
@@ -472,8 +491,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 		if(multiply_pve_damage)
 			projectile.multiply_pve_damage(multiply_pve_damage)
-
-		projectile.multiply_pve_damage(proj_pve_damage_multiplier)
 
 		if(fire_stacks)
 			projectile.add_fire_stacks(fire_stacks)
@@ -726,7 +743,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			user.death()
 		else
 			to_chat(user, SPAN_NOTICE("Ow..."))
-			user.apply_effect(110,AGONY,0)
+			user.adjustHalLoss(110)
 		qdel(in_chamber)
 		mouthshoot = FALSE
 		return
@@ -1002,7 +1019,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/nano_ui_data(mob/user)
 	var/list/data = list()
 	data["damage_multiplier"] = damage_multiplier
-	data["multiply_pve_damage"] = proj_pve_damage_multiplier
 	data["pierce_multiplier"] = pierce_multiplier
 	data["penetration_multiplier"] = penetration_multiplier
 	data["proj_agony_multiplier"] = proj_agony_multiplier
@@ -1083,7 +1099,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/data = list()
 	data["projectile_name"] = P.name
 	data["projectile_damage"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()
-	data["projectile_damage_pve"] = (P.get_total_damage() * damage_multiplier) + (P.get_total_damage_pve() * proj_pve_damage_multiplier) + get_total_damage_adjust() + (P.agony * proj_agony_multiplier)
+	data["projectile_damage_pve"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust() + (P.agony * proj_agony_multiplier)
 	data["projectile_AP"] = P.armor_penetration * penetration_multiplier
 	data["projectile_pain"] = P.agony * proj_agony_multiplier
 	data["projectile_recoil"] = P.recoil
@@ -1097,7 +1113,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	pierce_multiplier = initial(pierce_multiplier)
 	proj_step_multiplier = initial(proj_step_multiplier)
 	proj_agony_multiplier = initial(proj_agony_multiplier)
-	proj_pve_damage_multiplier = initial(proj_pve_damage_multiplier)
 	extra_damage_mult_scoped = initial(extra_damage_mult_scoped)
 	scoped_offset_reduction  = initial(scoped_offset_reduction)
 	fire_delay = initial(fire_delay)

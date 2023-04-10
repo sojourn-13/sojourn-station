@@ -1,7 +1,7 @@
 /atom
 	layer = TURF_LAYER
 	plane = GAME_PLANE
-	appearance_flags = TILE_BOUND|PIXEL_SCALE|LONG_GLIDE
+	appearance_flags = TILE_BOUND|PIXEL_SCALE|LONG_GLIDE|DEFAULT_APPEARANCE_FLAGS
 	var/level = ABOVE_PLATING_LEVEL
 	var/flags = 0
 	var/list/fingerprints
@@ -13,7 +13,6 @@
 	var/last_bumped = 0
 	var/pass_flags = 0
 	var/throwpass = 0
-	var/germ_level = GERM_LEVEL_AMBIENT // The higher the germ level, the more germ on the atom.
 	var/simulated = TRUE //filter for actions - used by lighting overlays
 	var/fluorescent // Shows up under a UV light.
 	var/allow_spin = TRUE
@@ -508,8 +507,8 @@ its easier to just keep the beam vertical.
 				else
 					to_chat(user, SPAN_DANGER("It's empty."))
 
-	if(ishuman(user) && user.stats && user.stats.getPerk(/datum/perk/greenthumb))
-		var/datum/perk/greenthumb/P = user.stats.getPerk(/datum/perk/greenthumb)
+	if(ishuman(user) && user.stats && user.stats.getPerk(PERK_GREENTHUMB))
+		var/datum/perk/greenthumb/P = user.stats.getPerk(PERK_GREENTHUMB)
 		var/obj/item/I = P.virtual_scanner
 		I.afterattack(src, user, get_dist(src, user) <= 1)
 
@@ -739,7 +738,6 @@ its easier to just keep the beam vertical.
 	if(!simulated)
 		return
 	fluorescent = 0
-	src.germ_level = 0
 	if(istype(blood_DNA, /list))
 		blood_DNA = null
 		return TRUE

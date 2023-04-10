@@ -59,8 +59,7 @@
 		log_and_message_admins(" inflicted pain on [H] with penance litany")
 		to_chat(H, SPAN_DANGER("A wave of agony washes over you, the cruciform in your chest searing like a star for a few moments of eternity."))
 
-		H.apply_effect(50, AGONY, 0)
-		H.apply_effect(50, HALLOSS, 0)
+		H.adjustHalLoss(50)
 		var/datum/effect/effect/system/spark_spread/s = new
 		s.set_up(1, 1, H.loc)
 		s.start()
@@ -76,7 +75,7 @@
 	phrase = "Dominus autem dirigat corda vestra in caritate Dei et patientia deus."
 	desc = "Recover from the ravages of wounds and pain."
 	cooldown = TRUE
-	cooldown_time = 300
+	cooldown_time = 5 MINUTES
 	power = 35 //Healing yourself is slightly easier than healing someone else
 	category = "Vitae"
 	nutri_cost = 50//high cost
@@ -93,12 +92,11 @@
 		to_chat(H, SPAN_WARNING("You fail to cast the litany due to your non-organic body..."))
 		return FALSE
 	to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain.</span>")
-	H.reagents.add_reagent("laudanum", 10)
-	H.adjustBruteLoss(-20)
-	H.adjustFireLoss(-20)
-	H.adjustToxLoss(-20)
-	H.adjustOxyLoss(-40)
-	H.adjustBrainLoss(-5)
+	H.reagents.add_reagent("laudanum", 5)
+	H.adjustBruteLoss(-15)
+	H.adjustFireLoss(-15)
+	H.adjustOxyLoss(-20)
+	H.sanity.changeLevel(10)
 	H.updatehealth()
 	set_personal_cooldown(H)
 	return TRUE
@@ -106,13 +104,13 @@
 /datum/ritual/cruciform/priest/heal_other
 	name = "Succour"
 	phrase = "Venite ad me, omnes qui laboratis, et onerati estis et ego reficiam vos."
-	desc = "Heal another nearby disciple."
+	desc = "Restore the sanity of another nearby disciple."
 	cooldown = TRUE
-	cooldown_time = 300
+	cooldown_time = 2 MINUTES
 	power = 45
 	category = "Vitae"
-	nutri_cost = 50
-	blood_cost = 50
+	nutri_cost = 60
+	blood_cost = 60
 
 /datum/ritual/cruciform/priest/heal_other/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
@@ -149,11 +147,7 @@
 			return
 		to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain.</span>")
 		H.reagents.add_reagent("laudanum", 5)
-		H.adjustBruteLoss(-20)
-		H.adjustFireLoss(-20)
-		H.adjustToxLoss(-20)
-		H.adjustOxyLoss(-40)
-		H.adjustBrainLoss(-5)
+		H.sanity.changeLevel(25)
 		H.updatehealth()
 		set_personal_cooldown(user)
 		return TRUE
@@ -198,9 +192,8 @@
 /datum/ritual/cruciform/priest/heal_heathen/proc/heal_other(mob/living/carbon/human/participant)
 		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain.</span>")
 		participant.reagents.add_reagent("laudanum", 5, "bicaridine", 5, "kelotane", 5)
-		participant.adjustToxLoss(-15)
-		participant.adjustOxyLoss(-30)
-		participant.adjustBrainLoss(-5)
+		participant.adjustOxyLoss(-20)
+		participant.sanity.changeLevel(15)
 		participant.updatehealth()
 
 /*
@@ -501,6 +494,7 @@
 				user.vessel.remove_reagent("blood",blood_cost)
 		CU.remove()
 		log_and_message_admins("removed upgrade from [C] cruciform with asacris litany")
+		user.sanity.changeLevel(-50)
 
 	return TRUE
 
@@ -787,7 +781,7 @@
 /datum/ritual/cruciform/priest/accelerated_growth
 	name = "Accelerated growth"
 	phrase = "Plantae crescere in divinum lumen tua."
-	desc = "This litany boosts the growth of all plants in sight for about ten minutes."
+	desc = "This litany boosts the growth of all plants in sight for about 5 minutes."
 	cooldown = TRUE
 	cooldown_time = 5 MINUTES
 	effect_time = 5 MINUTES

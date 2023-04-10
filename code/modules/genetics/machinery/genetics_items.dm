@@ -234,6 +234,7 @@ It also resets instability to 0 so bad things don't happen.
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_STEEL = 1, MATERIAL_URANIUM = 1)
 	origin_tech = list(TECH_MATERIAL = 2, TECH_MAGNET = 4, TECH_BIO = 6)
 	var/used = FALSE
+	var/datum/genetics/genetics_holder/held_mutations
 
 /obj/item/genetics/purger/attack(mob/living/target, mob/living/user)
 	if(!istype(target))
@@ -265,6 +266,7 @@ It also resets instability to 0 so bad things don't happen.
 		used = TRUE
 		to_chat(target, SPAN_NOTICE("You feel your body begin to stabilize, and your anomalous mutations leave you."))
 		target.unnatural_mutations.removeAllMutations()
+		target.unnatural_mutations.total_instability = 0 // Now it does reset instability to zero
 
 
 
@@ -601,6 +603,11 @@ Neglects to mention where to find its pieces.
 		"The Hyperion mutation can enhance cloned organs, like the Blood Vessels.",
 		"The Hyperion mutation can enhance cloned organs, like the Nerves.",
 		"The Hyperion mutation can enhance cloned organs, like the Muscles.",
+		"Mixed with a cloking mutation, the Hyperion mutation can be combined to cause phasing.",
+		"A greater cloaking mutation can be irradiated to cause phasing.",
+		"The DNA of a golden roach can be combined with an imbecile mutation to make a mutagen that enforces docility.",
+		"The barotrauma mutation can be irradiated to make a strain that removes a need for breathing.",
+		"The Bald mutation, combined with the Gigantism mutation, result in a Hulk mutation.",
 		"Flesh sacs can be achieved through irradiated human DNA- if you're a bad person.",
 		"Flesh sacs can be achieved through irradiated vatgrown DNA- if you're a morally ambiguous person.",
 		"Flesh sacs can be achieved through irradiated monkey DNA with only limited moral quandaries!",

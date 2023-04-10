@@ -133,12 +133,12 @@
 	new /obj/item/clothing/suit/chameleon(src)
 	new /obj/item/clothing/shoes/chameleon(src)
 	new /obj/item/storage/backpack/chameleon(src)
-	new /obj/item/storage/backpack/satchel/chameleon(src)
 	new /obj/item/clothing/gloves/chameleon(src)
 	new /obj/item/clothing/mask/chameleon(src)
 	new /obj/item/clothing/glasses/chameleon(src)
 	new /obj/item/device/radio/headset/chameleon(src)
 	new /obj/item/gun/energy/chameleon(src)
+	new /obj/item/clothing/accessory/chameleon(src)
 
 /obj/item/storage/box/syndie_kit/clerical
 	name = "clerical kit"
@@ -252,10 +252,10 @@
 	w_class = ITEM_SIZE_HUGE
 
 /obj/item/storage/box/syndie_kit/antimaterial_rifle/populate_contents()
-	new /obj/item/ammo_casing/antim(src)
-	new /obj/item/weaponparts/heavysniper/stock(src)
-	new /obj/item/weaponparts/heavysniper/receiver(src)
-	new /obj/item/weaponparts/heavysniper/barrel(src)
+	new /obj/item/part/gun/frame/heavysniper(src)
+	new /obj/item/part/gun/grip/serb(src)
+	new /obj/item/part/gun/mechanism/boltgun(src)
+	new /obj/item/part/gun/barrel/antim(src)
 
 /obj/item/storage/box/syndie_kit/toxin
 	name = "toxin kit"

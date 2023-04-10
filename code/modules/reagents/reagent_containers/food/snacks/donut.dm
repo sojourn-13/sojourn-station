@@ -14,14 +14,15 @@
 	bitesize = 3
 	nutriment_amt = 1
 	preloaded_reagents = list("sprinkles" = 1, "preservatives" = 2)
-	New()
-		..()
-		if(prob(30))
-			src.icon_state = "donut2"
-			src.overlay_state = "box-donut2"
-			src.name = "frosted donut"
-			reagents.add_reagent("sprinkles", 2)
-			center_of_mass = list("x"=19, "y"=16)
+
+/obj/item/reagent_containers/food/snacks/donut/normal/Initialize(mapload)
+	. = ..()
+	if(prob(30))
+		icon_state = "donut2"
+		overlay_state = "box-donut2"
+		name = "frosted donut"
+		reagents.add_reagent("sprinkles", 2)
+		center_of_mass = list("x"=19, "y"=16)
 
 /obj/item/reagent_containers/food/snacks/donut/chaos
 	name = "chaos donut"
@@ -32,35 +33,36 @@
 	bitesize = 10
 	preloaded_reagents = list("sprinkles" = 1, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 12)
-	New()
-		..()
-		var/chaosselect = pick(1,2,3,4,5,6,7,8,9,10)
-		switch(chaosselect)
-			if(1)
-				reagents.add_reagent("nutriment", 3)
-			if(2)
-				reagents.add_reagent("capsaicin", 3)
-			if(3)
-				reagents.add_reagent("frostoil", 3)
-			if(4)
-				reagents.add_reagent("sprinkles", 3)
-			if(5)
-				reagents.add_reagent("plasma", 3)
-			if(6)
-				reagents.add_reagent("coco", 3)
-			if(7)
-				reagents.add_reagent("slimejelly", 3)
-			if(8)
-				reagents.add_reagent("banana", 3)
-			if(9)
-				reagents.add_reagent("berryjuice", 3)
-			if(10)
-				reagents.add_reagent("tricordrazine", 3)
-		if(prob(30))
-			src.icon_state = "donut2"
-			src.overlay_state = "box-donut2"
-			src.name = "Frosted Chaos Donut"
-			reagents.add_reagent("sprinkles", 2)
+
+/obj/item/reagent_containers/food/snacks/donut/chaos/Initialize(mapload)
+	. = ..()
+	var/chaosselect = pick(1,2,3,4,5,6,7,8,9,10)
+	switch(chaosselect)
+		if(1)
+			reagents.add_reagent("nutriment", 3)
+		if(2)
+			reagents.add_reagent("capsaicin", 3)
+		if(3)
+			reagents.add_reagent("frostoil", 3)
+		if(4)
+			reagents.add_reagent("sprinkles", 3)
+		if(5)
+			reagents.add_reagent("plasma", 3)
+		if(6)
+			reagents.add_reagent("coco", 3)
+		if(7)
+			reagents.add_reagent("slimejelly", 3)
+		if(8)
+			reagents.add_reagent("banana", 3)
+		if(9)
+			reagents.add_reagent("berryjuice", 3)
+		if(10)
+			reagents.add_reagent("tricordrazine", 3)
+	if(prob(30))
+		icon_state = "donut2"
+		overlay_state = "box-donut2"
+		name = "Frosted Chaos Donut"
+		reagents.add_reagent("sprinkles", 2)
 
 
 /obj/item/reagent_containers/food/snacks/donut/jelly
@@ -73,13 +75,14 @@
 	bitesize = 5
 	preloaded_reagents = list("sprinkles" = 1, "berryjuice" = 5, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 4)
-	New()
-		..()
-		if(prob(30))
-			src.icon_state = "jdonut2"
-			src.overlay_state = "box-donut2"
-			src.name = "Frosted Jelly Donut"
-			reagents.add_reagent("sprinkles", 2)
+
+/obj/item/reagent_containers/food/snacks/donut/slimejelly/Initialize(mapload)
+	. = ..()
+	if(prob(30))
+		icon_state = "jdonut2"
+		overlay_state = "box-donut2"
+		name = "Frosted Jelly Donut"
+		reagents.add_reagent("sprinkles", 2)
 
 /obj/item/reagent_containers/food/snacks/donut/slimejelly
 	name = "jelly donut"
@@ -91,13 +94,14 @@
 	bitesize = 5
 	preloaded_reagents = list("sprinkles" = 1, "slimejelly" = 5, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 4)
-	New()
-		..()
-		if(prob(30))
-			src.icon_state = "jdonut2"
-			src.overlay_state = "box-donut2"
-			src.name = "Frosted Jelly Donut"
-			reagents.add_reagent("sprinkles", 2)
+
+/obj/item/reagent_containers/food/snacks/donut/slimejelly/Initialize(mapload)
+	. = ..()
+	if(prob(30))
+		icon_state = "jdonut2"
+		overlay_state = "box-donut2"
+		name = "Frosted Jelly Donut"
+		reagents.add_reagent("sprinkles", 2)
 
 /obj/item/reagent_containers/food/snacks/donut/cherryjelly
 	name = "jelly donut"
@@ -109,13 +113,14 @@
 	nutriment_amt = 1
 	preloaded_reagents = list("sprinkles" = 1, "cherryjelly" = 5, "preservatives" = 2)
 	matter = list(MATERIAL_BIOMATTER = 4)
-	New()
-		..()
-		if(prob(30))
-			src.icon_state = "jdonut2"
-			src.overlay_state = "box-donut2"
-			src.name = "Frosted Jelly Donut"
-			reagents.add_reagent("sprinkles", 2)
+
+/obj/item/reagent_containers/food/snacks/donut/cherryjelly/Initialize(mapload)
+	. = ..()
+	if(prob(30))
+		icon_state = "jdonut2"
+		overlay_state = "box-donut2"
+		name = "Frosted Jelly Donut"
+		reagents.add_reagent("sprinkles", 2)
 
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff

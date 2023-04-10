@@ -10,7 +10,7 @@ var/list/disciples = list()
 	implant_type = /obj/item/implant/core_implant/cruciform
 	layer = ABOVE_MOB_LAYER
 	access = list(access_crematorium)
-	power = 60
+	power = 0
 	max_power = 60
 	power_regen = 0.5
 	price_tag = 10000
@@ -21,12 +21,12 @@ var/list/disciples = list()
 /obj/item/implant/core_implant/cruciform/install(mob/living/target, organ, mob/user)
 	. = ..()
 	if(.)
-		target.stats.addPerk(/datum/perk/sanityboost)
-		target.stats.addPerk(/datum/perk/unfinished_delivery)
+		target.stats.addPerk(PERK_SANITYBOOST)
+		target.stats.addPerk(PERK_UNFINISHED_DELIVERY)
 
 /obj/item/implant/core_implant/cruciform/uninstall()
-	wearer.stats.removePerk(/datum/perk/sanityboost)
-	wearer.stats.addPerk(/datum/perk/unfinished_delivery)
+	wearer.stats.removePerk(PERK_SANITYBOOST)
+	wearer.stats.addPerk(PERK_UNFINISHED_DELIVERY)
 	return ..()
 
 /obj/item/implant/core_implant/cruciform/get_mob_overlay(gender, form)
@@ -98,7 +98,7 @@ var/list/disciples = list()
 		remove_cyber()
 	if(wearer && wearer.stat == DEAD || wearer.is_mannequin) //If were dead or a mannequin we do not actively process are cruciform
 		deactivate()
-	if(wearer && wearer.stats && wearer.stats.getPerk(/datum/perk/channeling) && round(world.time) % 5 == 0)
+	if(wearer && wearer.stats && wearer.stats.getPerk(PERK_CHANNELING) && round(world.time) % 5 == 0)
 		power_regen -= channeling_boost  // Removing the previous channeling boost since the number of disciples may have changed
 		//wearer.visible_message(SPAN_DANGER("Old [channeling_boost]"))
 		channeling_boost = 0.2 * disciples.len  // Proportional to the number of cruciformed people on board
@@ -230,7 +230,7 @@ var/list/disciples = list()
 	icon_state = "cruciform_blue"
 	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
 	implant_type = /obj/item/implant/core_implant/cruciform/tessellate
-	power = 60
+	power = 0
 	max_power = 60
 	power_regen = 0.8
 	path = "tess"
@@ -241,7 +241,7 @@ var/list/disciples = list()
 	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
 	implant_type = /obj/item/implant/core_implant/cruciform/lemniscate
 	//access = list(access_nt_disciple) //So they can try and recuit people - Correction people just cant stop abusing everything ever.
-	power = 50
+	power = 0
 	max_power = 50
 	power_regen = 1
 	path = "lemn"
@@ -251,7 +251,7 @@ var/list/disciples = list()
 	icon_state = "cruciform_yellow"
 	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
 	implant_type = /obj/item/implant/core_implant/cruciform/monomial
-	power = 90
+	power = 0
 	max_power = 90
 	power_regen = 0.2
 	path = "mono"
@@ -261,7 +261,7 @@ var/list/disciples = list()
 	icon_state = "cruciform_orange"
 	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
 	implant_type = /obj/item/implant/core_implant/cruciform/divisor
-	power = 50
+	power = 0
 	max_power = 50
 	power_regen = 0.4
 	path = "divi"
@@ -271,7 +271,7 @@ var/list/disciples = list()
 	icon_state = "cruciform_cyan"
 	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
 	implant_type = /obj/item/implant/core_implant/cruciform/factorial
-	power = 50
+	power = 0
 	max_power = 50
 	power_regen = 0.4
 	path = "fact"
@@ -281,7 +281,7 @@ var/list/disciples = list()
 	icon_state = "cruciform_omni"
 	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
 	implant_type = /obj/item/implant/core_implant/cruciform/omni
-	power = 200
+	power = 0
 	max_power = 200
 	power_regen = 1
 	path = "omni"

@@ -365,8 +365,8 @@ var/list/gear_datums = list()
 	var/atom/placed_in = H.equip_to_storage(item)
 	if(placed_in)
 		to_chat(H, "<span class='notice'>Placing \the [item] in your [placed_in.name]!</span>")
-	else if(H.equip_to_appropriate_slot(item))
-		to_chat(H, "<span class='notice'>Placing \the [item] in your inventory!</span>")
+//	else if(H.equip_to_appropriate_slot(item))
+//		to_chat(H, "<span class='notice'>Placing \the [item] in your inventory!</span>") //Seemingly always puts items into the void
 	else if(H.put_in_hands(item))
 		to_chat(H, "<span class='notice'>Placing \the [item] in your hands!</span>")
 	else

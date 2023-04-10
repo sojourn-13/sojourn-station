@@ -12,8 +12,9 @@
 	response_disarm = "pushes"
 	response_harm = "hits"
 	speed = -1
-	maxHealth = 250
-	health = 250
+	maxHealth = 125
+	health = 125
+	sanity_damage = 1
 
 	pixel_x = -16
 

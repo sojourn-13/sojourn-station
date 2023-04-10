@@ -13,8 +13,8 @@
 	phaser = FALSE
 	psionic_respawn = FALSE
 
-	maxHealth = 2000
-	health = 2000
+	maxHealth = 1000
+	health = 1000
 
 	//Good stats baseline in case admins dont edit these
 	armor = list(melee = 60, bullet = 30, energy = 30, bomb = 20, bio = 50, rad = 100, agony = 100)
@@ -29,6 +29,7 @@
 	can_burrow = FALSE
 	melee_damage_lower = 15
 	melee_damage_upper = 25
+	armor_penetration = 50
 	ranged = TRUE
 
 	pixel_x = 0
@@ -59,6 +60,7 @@
 		knockdown_odds = 50
 		melee_damage_lower = 30
 		melee_damage_upper = 35
+		armor_penetration = 60
 		transform_ed = TRUE
 		projectiletype = /obj/item/projectile/tether/lash
 		for(var/mob/living/target in targets_in_range(in_hear_range = TRUE))

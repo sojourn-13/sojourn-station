@@ -560,11 +560,6 @@
 		if(desc)
 			to_chat(user, desc)
 
-//		if(ishuman(user) && user.stats && user.stats.getPerk(/datum/perk/greenthumb))
-//			var/datum/perk/greenthumb/P = user.stats.getPerk(/datum/perk/greenthumb) SoJ edit, we dont have the code here
-//			P.virtual_scanner.afterattack(src, user, get_dist(src, user) <= 1)
-
-
 		LEGACY_SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
 	else
 		. = ..()

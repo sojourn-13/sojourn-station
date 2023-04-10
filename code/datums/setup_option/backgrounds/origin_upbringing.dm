@@ -43,12 +43,15 @@
 	name = "Wealthy Upbringing"
 	desc = "You grew up with a silver spoon in your mouth all your life. Education, leisure time, and relaxation allowed you to indulge in scholarly pursuits to a degree, letting you pick up a few \
 	randomly useful facts about many things. A shame that easy living left you a bit naive and physically weak albeit healthier than most. Not to mention you never quite developed the sense of when \
-	danger is present. This certainly made switching to regular life a bit of a culture shock."
+	danger is present. This certainly made switching to regular life a bit of a culture shock. A major hangup is that filth is not something you particularly find appealing. Spoiled brat.. \
+	At least you've brought your heirloom with you. You should protect it well."
+
+	perks = list(PERK_NOBLE)
 
 	stat_modifiers = list(
 		STAT_ROB = -5,
 		STAT_TGH = -5, // Physically weak
-		STAT_VIG = -2, // Naivety from sheltered upbringing
+		STAT_VIG = -5, // Low-experience
 		STAT_BIO = 5,
 		STAT_MEC = 5,
 		STAT_COG = 5 // Education
@@ -60,7 +63,7 @@
 	meaning after the destruction of your home-world. Or maybe it wasn't your homeworld that was destroyed, maybe it was just your way of life. Regardless, you've left a burned bridge behind you and \
 	can no longer go back. Your rough life has hardened you against the worst possible situations."
 
-	perks = list(/datum/perk/space_asshole)
+	perks = list(PERK_SPACE_ASSHOLE)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -77,7 +80,7 @@
 	in both your knowledge of English, your secondary or native language - and your tertiary! Being tri-lingual has its upsides, making you an adept trader of sorts. Though its downside is that you may \
 	have not studied as hard as some others have in other subjects."
 
-	perks = list(/datum/perk/linguist)
+	perks = list(PERK_LINGUIST)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -94,7 +97,7 @@
 	and made you extra paranoid, which can be a good thing when evading the law. Your experience with your own body has also let you learn a few medical tricks over the years, along with a tolerance \
 	to most drugs so you can inject more varied amounts than others."
 
-	perks = list(/datum/perk/addict)
+	perks = list(PERK_ADDICT)
 	restricted_to_species = list(FORM_HUMAN, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CHTMANT, FORM_CINDAR)
 
 	stat_modifiers = list(
@@ -112,7 +115,7 @@
 	desc = "Your entire life has been a series of unlucky and often self-inflicted accidents, you spent enough time hurting yourself due to your own clumsiness that you've built up a more \
 	pain tolerance than most of common folks, meaning that due to this clumsiness problem, you've become quite tough and a little stronger too. A shame, this doesn't stop you from time to time failing even the most basic tasks at times. In fact, you find some tasks that require precision damn near impossible, and even handling or using guns is a dangerous prospect. Due to this problem, you have a terrible perception around the area around you."
 
-	perks = list(/datum/perk/klutz)
+	perks = list(PERK_KLUTZ)
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
@@ -129,7 +132,7 @@
 	or you lived in an area where light wasn't a feasible resource due to economic, biological, or local reasons. Whatever the specifics, you've gotten highly adapted to finding your way through the \
 	dark, your pupils widening faster to better take in your surroundings. This quick adaptation however, has led you to become more photosensitive to sudden bright lights and flashes."
 
-	perks = list(/datum/perk/nightcrawler)
+	perks = list(PERK_NIGHTCRAWLER)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -141,9 +144,12 @@
 	)
 
 /datum/category_item/setup_option/background/bckgrnd/gifted
-	name = "Gifted"
+	name = "Gifted Nihilist"
 	desc = "You were a smart child, gifted in any particular area you wished to embark upon be it intellectual or physical. Unfortunately this approach made you a jack of all trades and severely  \
-	hampered your ability to master any one discipline. Sure, you're smart, but without the experience and discipline of practical application it doesn't help you as much as anyone could hope."
+	hampered your ability to master any one discipline. Sure, you're smart, but without the experience and discipline of practical application it doesn't help you as much as anyone could hope. \
+	The one issue you truly suffer is a nihlistic world view; you seem more effected by your surroundings than the normal person."
+
+	perks = list(PERK_NIHILIST)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -177,7 +183,7 @@
 	no matter the scenario you cannot be left in turmoil for long. You always find contentment, you always find peace. As such, should you ever become a psion, you're mind is perfectly adapted \
 	to make the most of the essence from which your powers are called, granting you three additional uses of your abilities."
 
-	perks = list(/datum/perk/psi_harmony)
+	perks = list(PERK_PSI_HARMONY)
 
 	stat_modifiers = list(
 		STAT_ROB = -2,
@@ -195,7 +201,7 @@
 	but the ultimate authority from which all authority is granted. This bedlam has changed how your mind works and, should you ever become a psion, has made you the perfect example of what \
 	a destructive mind can do. You always deal the maximum level of destruction when using your psionic powers which scale with your body and mind."
 
-	perks = list(/datum/perk/psi_mania)
+	perks = list(PERK_PSI_MANIA)
 
 	stat_modifiers = list(
 		STAT_ROB = 2,

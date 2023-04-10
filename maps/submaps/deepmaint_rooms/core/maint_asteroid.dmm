@@ -273,6 +273,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/deepmaint)
 "bg" = (
@@ -286,9 +287,35 @@
 "bi" = (
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/deepmaint)
+"bw" = (
+/obj/random/material_ore,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/asteroid,
+/area/deepmaint)
+"hO" = (
+/obj/random/junk,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/plating,
+/area/deepmaint)
+"ji" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/plating/under,
+/area/deepmaint)
 "kT" = (
 /obj/random/cluster/psi_monster/low_chance,
 /turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"on" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/deepmaint)
+"so" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/carpet,
+/area/deepmaint)
+"zh" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/asteroid,
 /area/deepmaint)
 "EB" = (
 /obj/structure/table/woodentable,
@@ -297,6 +324,10 @@
 /obj/item/seeds/ambrosiavulgarisseed,
 /obj/random/psi_megafauna,
 /turf/simulated/floor/asteroid,
+/area/deepmaint)
+"Ir" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/plating,
 /area/deepmaint)
 "UE" = (
 /obj/random/cluster/psi_monster/low_chance,
@@ -309,14 +340,7 @@ aa
 ab
 aa
 ab
-aa
-aa
-aa
-aa
-ab
-aa
-aa
-ab
+Ir
 aa
 aa
 aa
@@ -324,6 +348,13 @@ ab
 aa
 aa
 ab
+aa
+Ir
+aa
+ab
+aa
+aa
+hO
 aa
 "}
 (2,1,1) = {"
@@ -373,7 +404,7 @@ af
 ab
 "}
 (4,1,1) = {"
-aa
+Ir
 ag
 ah
 ah
@@ -468,7 +499,7 @@ aa
 ad
 ah
 ak
-an
+ji
 ak
 au
 aA
@@ -479,7 +510,7 @@ aD
 aN
 ak
 aW
-ba
+so
 bd
 ak
 ah
@@ -553,7 +584,7 @@ bf
 bb
 af
 af
-bi
+on
 bi
 "}
 (12,1,1) = {"
@@ -606,7 +637,7 @@ bh
 ab
 ag
 ah
-af
+zh
 af
 af
 af
@@ -658,7 +689,7 @@ ah
 ah
 ah
 af
-af
+zh
 af
 af
 af
@@ -720,7 +751,7 @@ ai
 (19,1,1) = {"
 aa
 aa
-ad
+bw
 ad
 at
 ad
@@ -760,7 +791,7 @@ bg
 aR
 bg
 aI
-ab
+hO
 aa
 "}
 (21,1,1) = {"

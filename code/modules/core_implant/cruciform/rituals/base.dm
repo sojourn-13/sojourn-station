@@ -29,8 +29,6 @@
 			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			H.vessel.remove_reagent("blood",blood_cost)
 	H.reagents.add_reagent("laudanum", 10)
-	H.apply_effect(-30, AGONY, 0)
-	H.apply_effect(-30, HALLOSS, 0)
 	H.updatehealth()
 	return TRUE
 
@@ -38,11 +36,11 @@
 	name = "Soul Hunger"
 	phrase = "Panem nostrum cotidianum da nobis hodie."
 	desc = "Litany of pilgrims that helps better withstand hunger."
-	power = 50
+	power = 20
 
 /datum/ritual/cruciform/base/soul_hunger/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
-	H.nutrition += 100
-	H.adjustToxLoss(10)
+	H.nutrition += 50
+	H.adjustFireLoss(5)
 	return TRUE
 
 /datum/ritual/cruciform/base/glow_book
@@ -72,12 +70,15 @@
 			SPAN_NOTICE("The ritual book [H] is holding begins to emit light."),
 			SPAN_NOTICE("The ritual book you're holding begins to glow brightly.")
 		)
-		spawn(6000) M.set_light(0)
+		addtimer(CALLBACK(M, /obj/item/book/ritual/cruciform/proc/glowient), 6000)
 		successful = TRUE
 		set_personal_cooldown(H)
 	else
 		to_chat(H, SPAN_DANGER("You need to be holding a ritual book to perfom this rite."))
 	return successful
+
+/obj/item/book/ritual/cruciform/proc/glowient()
+	set_light(0)
 
 /datum/ritual/cruciform/base/flare
 	name = "Holy Light"
@@ -146,7 +147,7 @@
 		else
 			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			H.vessel.remove_reagent("blood",blood_cost)
-	log_and_message_admins("performed reveal litany")
+	log_and_message_admins("[H.real_name] performed reveal litany")
 	if(prob(5)) //Additional fail chance that hidded from user
 		to_chat(H, SPAN_NOTICE("There is nothing there. You feel safe."))
 		return TRUE
@@ -242,6 +243,8 @@
 	phrase = "Deum benedicite mihi voluntas in suum donum."
 	desc = "This litany will command a cruciform upgrade to attach to follower's cruciform. They must lie on an altar with the upgrade near them."
 	power = 20
+	nutri_cost = 10//low cost
+	blood_cost = 10//low cost
 
 /datum/ritual/cruciform/base/install_upgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/mob/living/carbon/human/H = get_victim(user)
@@ -293,6 +296,8 @@
 	phrase = "Deus meus ut quid habebant affectus."
 	desc = "This litany will command a cruciform upgrade to detach from a cruciform."
 	power = 20
+	nutri_cost = 10//low cost
+	blood_cost = 10//low cost
 
 /datum/ritual/cruciform/base/uninstall_upgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/mob/living/carbon/human/H = get_victim(user)
@@ -316,3 +321,51 @@
 		return FALSE
 
 	return TRUE
+
+//Give powah
+
+/datum/ritual/cruciform/base/recharge_others
+	name = "Empower"
+	phrase = "Potestas fidei communicanda est."
+	desc = "This ritual helps recharging the nearby disciple's cruciform."
+	power = 15
+	nutri_cost = 15
+	blood_cost = 15
+	ignore_stuttering = TRUE
+
+/datum/ritual/cruciform/base/recharge_others/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
+
+	if(!CI || !CI.active || !CI.wearer)
+		fail("Cruciform not found.", user, C)
+		return FALSE
+
+	var/mob/living/carbon/human/H = CI.wearer
+
+	if(!istype(H))
+		fail("Target not found.",user,C,targets)
+		return FALSE
+
+	//Checking turfs allows this to be done in unusual circumstances, like if both are inside the same mecha
+	var/turf/T = get_turf(user)
+	if (!(T.Adjacent(get_turf(H))))
+		to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
+		return
+
+	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of succor")
+	if(user.species?.reagent_tag != IS_SYNTHETIC)
+		if(user.nutrition >= nutri_cost)
+			user.nutrition -= nutri_cost
+		else
+			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
+			user.vessel.remove_reagent("blood",blood_cost)
+	if (do_after(user, 40, H, TRUE))
+		T = get_turf(user)
+		if (!(T.Adjacent(get_turf(H))))
+			to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
+			return
+		to_chat(H, "<span class='info'>Your cruciform sings a small tune as it gets charged.</span>")
+
+		CI.restore_power(10)
+
+		return TRUE

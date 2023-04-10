@@ -65,7 +65,7 @@
 	add_fingerprint(user)
 	update_icon()
 
-/obj/item/gun/energy/ntpistol
+/obj/item/gun/energy/ntpistol/mana
 	name = "\"Mana from Heaven\" energy pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
 	A black and blue version of the defunct \"Serenity\" energy pistol, somehow despite looking just like a repainted job it conserves power unusually well."
@@ -152,7 +152,6 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
 	force = WEAPON_FORCE_DANGEROUS
 	bolt_training = FALSE
-	proj_pve_damage_multiplier = 2.5 // This used to be its PVP damage modifier. Gun's meant to be good at PVE.
 	penetration_multiplier  = 2
 	max_shells = 1
 	price_tag = 2750
@@ -168,7 +167,6 @@
 	price_tag = 2000
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
 	damage_multiplier = 1.5
-	proj_pve_damage_multiplier = 1.5
 	icon = 'icons/obj/guns/projectile/clarissa.dmi'
 	icon_state = "clarissa"
 	item_state = "clarissa"
@@ -298,7 +296,6 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	damage_multiplier = 1.5
-	proj_pve_damage_multiplier = 1.5
 	penetration_multiplier = 1.2 // So that it's good for PVE too
 	init_recoil = HANDGUN_RECOIL(0.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
@@ -345,8 +342,7 @@
 			A wooden club inscribed with several symbols of jana, though they make no sense put together. The wood is of unusual qualities and some lunatic hammered durasteel nails into \
 			it. Either the maker didn't know or didn't care about the value, it still ended up a supremely deadly weapon ... or hammer."
 	icon_state = "oni"
-	force_unwielded = WEAPON_FORCE_BRUTAL
-	force_wielded = WEAPON_FORCE_LETHAL
+	force = WEAPON_FORCE_BRUTAL
 	throwforce = WEAPON_FORCE_PAINFUL
 	w_class = ITEM_SIZE_NORMAL
 	armor_penetration = ARMOR_PEN_HALF

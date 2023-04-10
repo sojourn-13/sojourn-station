@@ -13,7 +13,7 @@
 	item_state = "duty"
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_LRIFLE
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	load_method = SINGLE_CASING|SPEEDLOADER|MAGAZINE
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 25)
 	price_tag = 900
@@ -29,6 +29,7 @@
 		FULL_AUTO_200
 		)
 	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/strelki = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/duty/update_icon()
 	..()
@@ -48,8 +49,3 @@
 
 //SNOWFLAKE CODE
 //TODO make all projectile guns work like this with a flag
-
-
-
-
-

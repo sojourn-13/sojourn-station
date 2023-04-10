@@ -8,6 +8,7 @@
 	preloaded_reagents = list("silicon" = 15, "plasticide" = 9)
 	subspace_transmission = 1
 	canhear_range = 0 // can't hear headsets from very far away
+	multi_z_capable = FALSE
 
 	slot_flags = SLOT_EARS
 	body_parts_covered = EARS
@@ -101,6 +102,10 @@
 	name = "corpsman radio headset"
 	ks2type = /obj/item/device/encryptionkey/headset_bs/corps
 
+/obj/item/device/radio/headset/headset_blackshield/sergeant
+	name = "sergeant radio headset"
+	ks2type = /obj/item/device/encryptionkey/headset_bs/sergeant
+
 /obj/item/device/radio/headset/headset_blackshield/bowman
 	name = "blackshield bowman headset"
 	desc = "This headset of questionable quality was made years ago for Sol cargo pilots, it's hard to ingore the rattling noise whenever you turn your head too fast. This has a small symbol denoting its built-in backup transmitter."
@@ -109,8 +114,12 @@
 	adhoc_fallback = TRUE
 
 /obj/item/device/radio/headset/headset_blackshield/bowman/corps
-	name = "corspman bowman headset"
+	name = "corpsman bowman headset"
 	ks2type = /obj/item/device/encryptionkey/headset_bs/corps
+
+/obj/item/device/radio/headset/headset_blackshield/bowman/sergeant
+	name = "sergeant bowman headset"
+	ks2type = /obj/item/device/encryptionkey/headset_bs/sergeant
 
 /obj/item/device/radio/headset/radiohat_blackshield // No longer a cap, a honest to god cap with a FUNCTIONAL headset. - Seb
 	name = "blackshield radio hat"

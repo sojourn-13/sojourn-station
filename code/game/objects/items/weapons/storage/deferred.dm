@@ -107,7 +107,7 @@
 		/obj/item/tool/surgicaldrill/adv,
 		/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
 		/obj/item/storage/pill_bottle/tramadol,
-		/obj/item/stack/medical/advanced/bruise_pack
+		/obj/item/stack/medical/bruise_pack/advanced
 		)
 	can_hold = list(
 		/obj/item/tool/bonesetter,
@@ -119,7 +119,7 @@
 		/obj/item/tool/tape_roll/bonegel,
 		/obj/item/reagent_containers/syringe, //We hold any syringe.
 		/obj/item/storage/pill_bottle, //We hold pill bottles as well
-		/obj/item/stack/medical/advanced/bruise_pack
+		/obj/item/stack/medical/bruise_pack/advanced
 		)
 
 /obj/item/storage/deferred/meds
@@ -229,7 +229,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
 	/obj/item/clothing/head/soft/green2soft = 1,
-	/obj/item/clothing/suit/armor/platecarrier/green = 1,
+	/obj/item/clothing/suit/armor/platecarrier = 1,
 	/obj/item/clothing/head/helmet/faceshield/altyn = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
@@ -242,8 +242,8 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit/brown = 1,
 	/obj/item/clothing/head/soft/tan2soft = 1,
-	/obj/item/clothing/suit/armor/platecarrier/tan = 1,
-	/obj/item/clothing/head/helmet/faceshield/altyn/brown = 1,
+	/obj/item/clothing/suit/armor/platecarrier = 1,
+	/obj/item/clothing/head/helmet/faceshield/altyn = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1)
@@ -255,7 +255,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit/black = 1,
 	/obj/item/clothing/suit/armor/platecarrier = 1,
-	/obj/item/clothing/head/helmet/faceshield/altyn/black = 1,
+	/obj/item/clothing/head/helmet/faceshield/altyn = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,
@@ -267,7 +267,7 @@
 	icon_state = "serbcrate_deferred_worn"
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
-	/obj/item/clothing/suit/armor/flackvest/green = 1,
+	/obj/item/clothing/suit/armor/flakvest = 1,
 	/obj/item/clothing/head/helmet/faceshield/altyn/maska = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
@@ -281,7 +281,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
 	/obj/item/clothing/head/soft/green2soft = 1,
-	/obj/item/clothing/suit/armor/flackvest = 1,
+	/obj/item/clothing/suit/armor/flakvest = 1,
 	/obj/item/clothing/head/helmet/steelpot = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,
@@ -334,10 +334,10 @@
 	desc = "A small collection of autolathe disks"
 	initial_contents = list(/obj/random/lathe_disk = 7)
 
-///obj/item/storage/deferred/gun_parts
-//	name = "gun part box"
-//	desc = "Uppers, lowers, and everything in between"
-//	initial_contents = list(/obj/spawner/gun_parts = 7)
+obj/item/storage/deferred/gun_parts
+	name = "gun part box"
+	desc = "Uppers, lowers, and everything in between"
+	initial_contents = list(/obj/random/gun_parts = 7)
 
 /obj/item/storage/deferred/powercells
 	name = "powercell box"

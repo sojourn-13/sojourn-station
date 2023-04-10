@@ -12,7 +12,7 @@
 	slot_flags = SLOT_BACK
 	caliber = CAL_LRIFLE
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.0
@@ -29,6 +29,7 @@
 		FULL_AUTO_300
 		)
 	serial_type = "NM"
+	gun_parts = list(/obj/item/part/gun/frame/mamba = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/mamba/update_icon()
 	..()
@@ -86,7 +87,7 @@
 		FULL_AUTO_300,
 		list(mode_name="fire 40mm grenade", mode_desc="Shoot the built in underbarrel grenade launcher",  burst=1, fire_delay=null, move_delay=null,  icon="grenade", use_launcher=1)
 		)
-
+	gun_parts = list(/obj/item/part/gun/frame/mamba = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 	var/obj/item/gun/projectile/underslung/launcher
 
 /obj/item/gun/projectile/automatic/mamba/copperhead/Initialize()
@@ -163,3 +164,14 @@
 
 /obj/item/gun/projectile/automatic/mamba/python/Initialize()
 	. = ..()
+
+/obj/item/part/gun/frame/mamba
+	name = "Mamba frame"
+	desc = "An Mamba carbine frame. A sleek operator's dream."
+	icon_state = "frame_mamba"
+	matter = list(MATERIAL_PLASTEEL = 8)
+	result = /obj/item/gun/projectile/automatic/mamba
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
+	resultvars = list(/obj/item/gun/projectile/automatic/mamba, /obj/item/gun/projectile/automatic/mamba/copperhead)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/lrifle)

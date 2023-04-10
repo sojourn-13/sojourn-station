@@ -1,4 +1,4 @@
-#define ARMOR_AGONY_COEFFICIENT 0.3
+#define ARMOR_HALLOS_COEFFICIENT 0.4
 #define ARMOR_GDR_COEFFICIENT 0.1
 
 //This calculation replaces old run_armor_check in favor of more complex and better system
@@ -14,9 +14,7 @@
 	used_weapon				= null,
 	sharp					= FALSE,
 	edge					= FALSE,
-	post_pen_mult			= 1,
-	added_damage_bullet_pve	= 0,
-	added_damage_laser_pve	= 0
+	post_pen_mult			= 1
 	)
 
 	if(damage == 0)
@@ -55,13 +53,8 @@
 		//message_admins("burns_armor_overpenetration = [burns_armor_overpenetration]!")
 
 		//message_admins("effective_damage = [effective_damage]!")
-		//message_admins("added_damage_bullet_pve = [added_damage_bullet_pve]!")
-		//message_admins("added_damage_laser_pve = [added_damage_laser_pve]!")
 
 		if(damagetype == HALLOSS)
-			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
-
-		if(damagetype == AGONY)
 			effective_damage =  max(0,round(effective_damage - mob_agony_armor))
 
 		if(brute_armor_overpenetration > 0 && damagetype == BRUTE)
@@ -70,20 +63,31 @@
 		if(burns_armor_overpenetration > 0 && damagetype == BURN)
 			effective_damage += max(0,round(burns_armor_overpenetration))
 
-		//This is why we cut are armor, otherwise we would be checking base armor 2 times for reduction
-		if(added_damage_bullet_pve)
-			effective_damage += max(0,round(added_damage_bullet_pve - mob_brute_armor))
-
-		if(added_damage_laser_pve)
-			effective_damage += max(0,round(added_damage_laser_pve - mob_laser_armor))
-
-
 		//message_admins("post math effective_damage = [effective_damage]!")
 
 	else
 
 		if(damagetype == HALLOSS)
+			//First we get the nervs!
 			effective_damage = round(effective_damage * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)))
+			var/pain_armor = max(0, (src.getarmor(def_zone, "bullet") +  src.getarmor(def_zone, "melee") - armour_pen))//All brute over-pen checks bullet rather then melee for simple mobs to keep melee viable
+			var/pain_no_matter_what = (effective_damage * 0.15) //we deal 15% of are pain, this is to stop rubbers being *completely* uses with basic armor - Its not perfect in melee
+			effective_damage = max(pain_no_matter_what, (effective_damage - pain_armor))
+			if(ishuman(src))
+				var/mob/living/carbon/human/victim = src
+				if(prob(25 + (effective_damage * 2)))
+					if(!victim.stat && !(victim.has_shield()))
+						if(victim.headcheck(def_zone))
+							//Harder to score a stun but if you do it lasts a bit longer
+							if(prob(effective_damage))
+								visible_message(SPAN_DANGER("[src] [victim.form.knockout_message]"))
+								apply_effect(5, PARALYZE, getarmor(def_zone, ARMOR_MELEE) )
+						else
+							//Easier to score a stun but lasts less time
+							if(prob(effective_damage + 10))
+								visible_message(SPAN_DANGER("[src] has been knocked down!"))
+								apply_effect(1, WEAKEN, getarmor(def_zone, ARMOR_MELEE) )
+
 
 
 	if(effective_damage <= 0)
@@ -119,10 +123,10 @@
 	//Here we split damage in two parts, where armor value will determine how much damage will get through
 	else
 		//Pain part of the damage, that simulates impact from armor absorbtion
-		//For balance purposes, it's lowered by ARMOR_AGONY_COEFFICIENT
+		//For balance purposes, it's lowered by ARMOR_HALLOS_COEFFICIENT
 		if(!(damagetype == HALLOSS ))
-			var/agony_gamage = round( ( effective_damage * armor_effectiveness * ARMOR_AGONY_COEFFICIENT * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)) / 100))
-			apply_effect(agony_gamage, AGONY)
+			var/agony_gamage = round( ( effective_damage * armor_effectiveness * ARMOR_HALLOS_COEFFICIENT * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)) / 100))
+			adjustHalLoss(agony_gamage)
 
 		//Actual part of the damage that passed through armor
 		var/actual_damage = round ( ( effective_damage * ( 100 - armor_effectiveness ) ) / 100 )
@@ -189,7 +193,7 @@
 					dmult += P.supereffective_mult
 			damage *= dmult
 			if (!(P.testing))
-				damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult, added_damage_bullet_pve = P.added_damage_bullet_pve, added_damage_laser_pve = P.added_damage_laser_pve)
+				damage_through_armor(damage, damage_type, def_zone, P.check_armour, armour_pen = P.armor_penetration, used_weapon = P, sharp=is_sharp(P), edge=has_edge(P), post_pen_mult = P.post_penetration_dammult)
 
 
 	if(P.agony > 0 && istype(P,/obj/item/projectile/bullet))
@@ -385,28 +389,27 @@
 		update_fire()
 
 /mob/living/proc/update_fire()
-	return
+	cut_overlay(image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing"))
+	if(on_fire)
+		add_overlay(image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing"))
 
 /mob/living/proc/adjust_fire_stacks(add_fire_stacks) //Adjusting the amount of fire_stacks we have on person
     fire_stacks = CLAMP(fire_stacks + add_fire_stacks, FIRE_MIN_STACKS, FIRE_MAX_STACKS)
 
-/mob/living/proc/handle_fire()
-	if(fire_stacks < 0)
-		fire_stacks = min(0, ++fire_stacks) //If we've doused ourselves in water to avoid fire, dry off slowly
+/mob/living/proc/handle_fire(flammable_gas, turf/location)
+	if(never_stimulate_air)
+		if (fire_stacks > 0)
+			ExtinguishMob() //We dont simulate air thus we dont simulate fire
+		return
 
-	if(!on_fire)
-		return 1
-	else if(fire_stacks <= 0)
-		ExtinguishMob() //Fire's been put out.
-		return 1
+	var/burn_temperature = fire_burn_temperature()
+	var/thermal_protection = get_heat_protection(burn_temperature)
 
-	var/datum/gas_mixture/G = loc.return_air() // Check if we're standing in an oxygenless environment
-	if(G.gas["oxygen"] < 1)
-		ExtinguishMob() //If there's no oxygen in the tile we're on, put out the fire
-		return 1
-
-	var/turf/location = get_turf(src)
-	location.hotspot_expose(fire_burn_temperature(), 50, 1)
+	if (thermal_protection < 1 && bodytemperature < burn_temperature && on_fire)
+		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
+		if(world.time >= next_onfire_brn)
+			next_onfire_brn = world.time + 50
+			adjustFireLoss(fire_stacks*5 + 3) //adjusted to be lower. You need time to put yourself out. And each roll only removes 2.5 stacks.
 
 /mob/living/fire_act()
 	adjust_fire_stacks(2)

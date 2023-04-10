@@ -38,6 +38,11 @@
 			/obj/item/reagent_containers/hypospray/autoinjector/drugs = custom_good_amount_range(list(5, 10)),
 			/obj/item/reagent_containers/hypospray/autoinjector/quickhealbrute = custom_good_amount_range(list(5, 10)),
 			/obj/item/reagent_containers/hypospray/autoinjector/quickhealburn = custom_good_amount_range(list(5, 10))
+		),
+		"Imprinters" = list(
+			/obj/item/device/hardware_imprinter/smartlink,
+			/obj/item/device/hardware_imprinter/cogenhance,
+			/obj/item/device/hardware_imprinter/chemneutral
 		)
 	)
 	hidden_inventory = list(
@@ -51,6 +56,12 @@
 			/obj/item/gun_upgrade/barrel/gauss,
 			/obj/item/gun_upgrade/muzzle/pain_maker, //Clearly so you can get those
 			/obj/item/gun_upgrade/scope/killer
+		),
+		"Sydnicate Gun Parts" = list (
+			/obj/item/part/gun/grip/rubber,
+			/obj/item/part/gun/barrel/hrifle,
+			/obj/item/part/gun/mechanism/machinegun,
+			/obj/item/part/gun/barrel/antim
 		)
 	)
 	offer_types = list(

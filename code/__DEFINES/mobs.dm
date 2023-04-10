@@ -12,11 +12,12 @@
 #define REBUILDING_ORGANS	BITFLAG(5)
 #define PASSEMOTES			BITFLAG(6)	// Mob has a holder inside of it that need to see emotes.
 #define BLEEDOUT			BITFLAG(7)
-#define GODMODE				BITFLAG(8)
-#define FAKEDEATH			BITFLAG(9)	// Replaces stuff like changeling.changeling_fakedeath.
-#define NO_ANTAG_MOB		BITFLAG(10)	// Players are restricted from gaining antag roles when occupying this mob
-#define XENO_HOST			BITFLAG(11)	// Tracks whether we're gonna be a baby alien's mummy.
-#define ENABLE_AI			BITFLAG(12)	// Regardless of player control, the mob is using AI.
+#define HARDCRIT			BITFLAG(8)
+#define GODMODE				BITFLAG(9)
+#define FAKEDEATH			BITFLAG(10)	// Replaces stuff like changeling.changeling_fakedeath.
+#define NO_ANTAG_MOB		BITFLAG(11)	// Players are restricted from gaining antag roles when occupying this mob
+#define XENO_HOST			BITFLAG(12)	// Tracks whether we're gonna be a baby alien's mummy.
+#define ENABLE_AI			BITFLAG(13)	// Regardless of player control, the mob is using AI.
 
 #define BORGMESON		BITFLAG(0)
 #define BORGTHERM		BITFLAG(1)
@@ -364,9 +365,9 @@
 
 // Termite defines
 
-#define TERMITE_HEALTH_LOW 25
-#define TERMITE_HEALTH_MED 50
-#define TERMITE_HEALTH_HIGH 75
+#define TERMITE_HEALTH_LOW 20
+#define TERMITE_HEALTH_MED 45
+#define TERMITE_HEALTH_HIGH 70
 #define TERMITE_HEALTH_ULTRA 100
 
 #define TERMITE_DMG_LOW 15

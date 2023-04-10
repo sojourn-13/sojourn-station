@@ -7,7 +7,7 @@
 
 	duration = 80
 
-/datum/surgery_step/robotic/fix_organ/require_tool_message(mob/living/user)
+/datum/surgery_step/fix_organ/require_tool_message(mob/living/user)
 	to_chat(user, SPAN_WARNING("You need a tool capable of [required_tool_quality] or some nanopaste to complete this step."))
 
 /datum/surgery_step/robotic/fix_organ/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/tool)
@@ -34,7 +34,7 @@
 		SPAN_WARNING("[user]'s hand slips, damaging the mechanisms of [organ.get_surgery_name()] with [tool]!"),
 		SPAN_WARNING("Your hand slips, damaging the mechanisms of [organ.get_surgery_name()] with [tool]!")
 	)
-	organ.take_damage(rand(3,5), 0)
+	organ.take_damage(rand(5,15), 0)
 
 
 

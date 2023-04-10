@@ -36,6 +36,13 @@
 	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber
 
+/obj/item/ammo_casing/pistol_35/rubber/pepperball
+	desc = "A 9mm pepper-ball projectile casing."
+	icon_state = "pistol_c_pepper"
+	spent_icon = "pistol_c_pepper-spent"
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber/pepperball
+
 /obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
 	desc = "A 9mm soporific condensed plastic shell."
 	icon_state = "pistol_c_r"
@@ -105,9 +112,10 @@
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber
 
 /obj/item/ammo_casing/magnum_40/rubber/pepperball
-	desc = "A 10mm Magnum pepper-spray projectile casing."
-	icon_state = "magnum_c_l"
-	is_caseless = TRUE
+	desc = "A 10mm Magnum pepper-ball projectile casing."
+	icon_state = "magnum_c_pepper"
+	spent_icon = "magnum_c_pepper-spent"
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/pepperball
 
 /obj/item/ammo_casing/magnum_40/lethal
@@ -176,6 +184,13 @@
 	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/rubber
 
+/obj/item/ammo_casing/light_rifle_257/rubber/pepperball
+	desc = "A 6.5mm pepper-ball projectile casing."
+	icon_state = "lrifle_c_pepper"
+	spent_icon = "lrifle_c_pepper-spent"
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/light_rifle_257/rubber/pepperball
+
 /obj/item/ammo_casing/light_rifle_257/scrap
 	desc = "An old 6.5mm rifle bullet casing."
 	icon_state = "srifle_c_s"
@@ -190,6 +205,14 @@
 	desc = "A 6.5mm hollow-point bullet casing."
 	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/lethal
+
+/obj/item/ammo_casing/light_rifle_257/incend
+	desc = "A 6.5mm incendiary bullet casing."
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/light_rifle_257/incend
+
+/obj/item/ammo_casing/light_rifle_257/incend/prespawned
+	amount = 10
 
 /obj/item/ammo_casing/light_rifle_257/laser
 	desc = "A 6.5mm laser casing."
@@ -233,6 +256,14 @@
 	desc = "A 7.62mm hollow-point bullet casing."
 	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/rifle_75/lethal
+
+/obj/item/ammo_casing/rifle_75/incend
+	desc = "A 7.62mm incendiary bullet casing."
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/rifle_75/incend
+
+/obj/item/ammo_casing/rifle_75/incend/prespawned
+	amount = 10
 
 /obj/item/ammo_casing/rifle_75/scrap
 	desc = "An old 7.62mm bullet casing."
@@ -286,6 +317,14 @@
 /obj/item/ammo_casing/heavy_rifle_408/lethal
 	desc = "A 8.6mm bullet casing."
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/lethal
+
+/obj/item/ammo_casing/heavy_rifle_408/incend
+	desc = "A 8.6mm incendiary bullet casing."
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/incend
+
+/obj/item/ammo_casing/heavy_rifle_408/incend/prespawned
+	amount = 10
 
 /obj/item/ammo_casing/heavy_rifle_408/scrap
 	desc = "An old 8.6mm rifle bullet casing."
@@ -393,6 +432,13 @@
 	icon_state = "lrifle_c_r"
 	spent_icon = "lrifle_c_r-spent"
 
+/obj/item/ammo_casing/kurtz_50/rubber/pepperball
+	desc = "A 12mm pepper-ball projectile casing."
+	icon_state = "lrifle_c_pepper"
+	spent_icon = "lrifle_c_pepper-spent"
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/kurtz_50/rubber/pepperball
+
 /obj/item/ammo_casing/kurtz_50/practice
 	desc = "A 12mm practice bullet casing."
 	caliber = CAL_50
@@ -464,15 +510,24 @@
 /obj/item/ammo_casing/antim/ion/prespawned
 	amount = 5
 
+/obj/item/ammo_casing/antim/incend
+	desc = "\"Willy Pete\" shell casing"
+	shell_color = "atmr_red"
+	spent_icon = "atmr_red-spent"
+	projectile_type = /obj/item/projectile/bullet/antim/incend
+
+/obj/item/ammo_casing/antim/incend/prespawned
+	amount = 5
+
 //// 17mm rolled shot ////
-/obj/item/ammo_casing/ball
-	name = "shell casing"
-	desc = "A 17mm rolled shot casing."
-	icon_state = "ball"
-	spent_icon = "ball-spent"
-	caliber = CAL_BALL
-	projectile_type = /obj/item/projectile/bullet/ball
-	maxamount = 5
+///obj/item/ammo_casing/ball
+//	name = "shell casing"
+//	desc = "A 17mm rolled shot casing."
+//	icon_state = "ball"
+//	spent_icon = "ball-spent"
+//	caliber = CAL_BALL
+//	projectile_type = /obj/item/projectile/bullet/ball
+//	maxamount = 5
 
 /obj/item/ammo_casing/ball/prespawned
 	amount = 4
@@ -530,6 +585,18 @@
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/beanbag/prespawned
+	amount = 5
+
+/obj/item/ammo_casing/shotgun/beanbag/pepperball
+	name = "beanbag shell"
+	desc = "A 20mm beanbag shell."
+	icon_state = "s-shell_pepper"
+	spent_icon = "s-shell_pepper-spent"
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag/pepperball
+	maxamount = 5
+
+/obj/item/ammo_casing/shotgun/beanbag/pepperball/prespawned
 	amount = 5
 
 /obj/item/ammo_casing/shotgun/beanbag/scrap
@@ -693,6 +760,16 @@
 	reload_delay = 15
 	is_caseless = TRUE
 	w_class = ITEM_SIZE_NORMAL
+
+/obj/item/ammo_casing/rocket/scrap
+	name = "scrap rocket"
+	desc = "An old improvised rocket shell for the RPG-7 launcher. Has a tubular shape."
+	icon_state = "old_rocketshell"
+	projectile_type = /obj/item/projectile/bullet/rocket/scrap
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASMA = 2)
+
+/obj/item/ammo_casing/rocket/scrap/prespawned
+	amount = 1
 
 /obj/item/ammo_casing/rocket/emp
 	name = "PG-7EMP grenade"

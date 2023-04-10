@@ -5,7 +5,8 @@
 
 /turf/simulated/floor/holofloor
 	thermal_conductivity = 0
-	plane = PLANE_SPACE
+	plane = -2
+	original_plane = -2
 	layer = SPACE_LAYER
 
 /turf/simulated/floor/holofloor/attackby(obj/item/W as obj, mob/user as mob)
@@ -65,6 +66,8 @@
 	icon_state = "[((x + y) ^ ~(x * y) + z) % 25]"
 	update_icon()
 	Initialize()
+	plane = -2
+	original_plane = -2
 
 /turf/simulated/floor/holofloor/beach
 	desc = "Uncomfortably gritty for a hologram."

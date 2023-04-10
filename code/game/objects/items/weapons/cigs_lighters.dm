@@ -82,7 +82,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	lit = 0
 	burnt = 1
 	tool_qualities = list()
-	damtype = "brute"
+	damtype = BURN
 	icon_state = "match_burnt"
 	item_state = "cigoff"
 	name = "burnt match"
@@ -146,7 +146,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/smokable/proc/light(var/flavor_text = "[usr] lights the [name].")
 	if(!src.lit)
 		src.lit = 1
-		damtype = "fire"
+		damtype = BURN
 		if(reagents.get_reagent_amount("plasma")) // the plasma explodes when exposed to fire
 			var/datum/effect/effect/system/reagents_explosion/e = new()
 			e.set_up(round(reagents.get_reagent_amount("plasma") / 2.5, 1), get_turf(src), 0, 0)
@@ -262,6 +262,16 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "ishimuraoff"
 	type_butt = /obj/item/trash/cigbutt/ishimura
 	preloaded_reagents = list("nicotine" = 5, "ishispec" = 5)
+
+/obj/item/clothing/mask/smokable/cigarette/os
+	name = "\improper GP produced cigarette"
+	desc = "A inhouse made cigarette by GP."
+	icon_state = "cigoff"
+	icon_on = "cigon"
+	icon_off = "cigoff"
+	type_butt = /obj/item/trash/cigbutt/os
+	preloaded_reagents = list("nicotine" = 5)
+
 
 /obj/item/clothing/mask/smokable/cigarette/tannhauser
 	name = "\improper Tannhauser Gate cigarette"
@@ -503,6 +513,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	matter = list(MATERIAL_BIOMATTER = 1)
 	throwforce = 1
 
+/obj/item/trash/cigbutt/os
+	name = "\improper GP cigarette butt"
+	icon_state = "cigbutt"
+
 /obj/item/trash/cigbutt/ishimura
 	name = "\improper Ishimura Special cigarette butt"
 	icon_state = "ishimurabutt"
@@ -613,7 +627,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/smokable/pipe/light(var/flavor_text = "[usr] lights the [name].")
 	if(!src.lit && src.smoketime)
 		src.lit = 1
-		damtype = "fire"
+		damtype = BURN
 		icon_state = icon_on
 		item_state = icon_on
 		var/turf/T = get_turf(src)

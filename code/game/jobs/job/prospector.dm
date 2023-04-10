@@ -38,7 +38,7 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 
-	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning)
+	perks = list(PERK_STALKER, PERK_PROSPECTOR_CONDITIONING)
 
 	description = "The foreman leads the prospectors, a group of independent scavengers seeking fortune from ruins and scrap.<br>\
 	Your goal is to lead your team into hostile locations and take everything of value that isn't nailed down - and the nails too!<br>\
@@ -61,15 +61,16 @@
 	department = DEPARTMENT_PROSPECTOR
 	department_flag = PROSPECTORS
 	faction = MAP_FACTION
-	total_positions = 2
+	total_positions = 3
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
 	noob_name = "Rookie Salvager"
 	alt_titles = list("Sawbones", "Rookie Salvager")
-	alt_perks = list("Sawbones"=list(/datum/perk/medicalexpertise, /datum/perk/stalker), "Junk Technician"=list(/datum/perk/junkborn, /datum/perk/robotics_expert))
+	alt_perks = list("Sawbones"=list(PERK_MEDICAL_EXPERT, PERK_STALKER), "Junk Technician"=list(PERK_JUNKBORN, PERK_ROBOTICS_EXPERT))
 	selection_color = "#a7bbc6"
-	wage = WAGE_LABOUR
+	initial_balance = 500	//Should be enough to get by with basic meds, tools, and food round-start.
+	wage = WAGE_NONE
 
 	disallow_species = list(FORM_BSSYNTH, FORM_NASHEF)
 	outfit_type = /decl/hierarchy/outfit/job/salv
@@ -88,8 +89,7 @@
 		STAT_VIG = 10,
 		STAT_ROB = 10
 	)
-
-	perks = list(/datum/perk/junkborn, /datum/perk/stalker)
+	perks = list(PERK_JUNKBORN, PERK_STALKER)
 
 	description = "The Salvager is an informally trained specialist for the prospectors who functions as both an engineer and a doctor.<br>\
 	Your primary role is that of a field medic. Treat and stabilize the wounded on the combat backlines, and evacuate the critically injured.<br>\
@@ -111,14 +111,15 @@
 	department = DEPARTMENT_PROSPECTOR
 	department_flag = PROSPECTORS
 	faction = MAP_FACTION
-	total_positions = 2
+	total_positions = 3
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
 	noob_name = "Rookie Prospector"
 	alt_titles = list("Rookie Prospector", "Hired Muscle")
 	selection_color = "#a7bbc6"
-	wage = WAGE_LABOUR_DUMB
+	initial_balance = 500	//Should be enough to get by with basic meds, tools, and food round start.
+	wage = WAGE_NONE
 
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 	outfit_type = /decl/hierarchy/outfit/job/pro
@@ -135,7 +136,7 @@
 		STAT_COG = 10
 	)
 
-	perks = list(/datum/perk/stalker, /datum/perk/job/prospector_conditioning)
+	perks = list(PERK_STALKER, PERK_PROSPECTOR_CONDITIONING)
 
 	description = "The Prospector serves as hired muscle to the Foreman, positioned somewhere between meat shield and exterminator.<br>\
 	Your job is to keep the Salvagers and anyone else with you protected, handling the fighting and being the first to enter dangerous areas. <br>\

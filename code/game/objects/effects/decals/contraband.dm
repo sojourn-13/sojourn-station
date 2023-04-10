@@ -700,6 +700,11 @@
 	name = "Winter Is Coming"
 	desc = "On the poster is a frighteningly large wolf, he warns: \"Only YOU can keep the station from freezing during planetary occultation!\""
 
+/obj/item/contraband/poster/placed/popculture/gilld_chese
+	icon_state = "gilld_chese"
+	name = "gilld chese"
+	desc = "This is a poster of a small cat being fed a Deluxe Toasted Sandwich, one of the Artificers Guild's best culinary innovations on the use of Petrol Pumps."
+
 /*Pinups*/
 /obj/item/contraband/poster/placed/pinup/cindy
 	icon_state="bsposter8"
@@ -787,3 +792,9 @@
 	icon_state="bsposter22"
 	name = "xenobiology recruitment poster"
 	desc = "A poster calling for new science personnel to study alien beings."
+
+/obj/item/contraband/poster/placed/recruitment/blackshield
+	icon = 'icons/obj/contraband_large.dmi'
+	icon_state = "mrshield"
+	name = "Mr Shield Blackshield poster"
+	desc = "A poster reflecting Blackshield's recent viral mascot, Mr. Shield. Known broadcaster and philanthropist."

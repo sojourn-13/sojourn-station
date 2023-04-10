@@ -30,6 +30,21 @@
 	permeability_coefficient = 0.05
 	price_tag = 200
 
+/obj/item/clothing/gloves/insulated/guild
+	name = "Artificers insulated gloves"
+	desc = "A pare of insulated gloves woven into a thicker fire restant pare."
+	icon_state = "guild_yellow"
+	item_state = "guild_yellow"
+	armor_list = list(melee = 20, bullet = 15, energy = 15, bomb = 10, bio = 100, rad = 100)
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
+	price_tag = 500
+	cold_protection = ARMS
+	min_cold_protection_temperature = GLOVES_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = ARMS
+	max_heat_protection_temperature = GLOVES_MAX_HEAT_PROTECTION_TEMPERATURE
+
+
 /obj/item/clothing/gloves/insulated/cheap                          //Cheap Chinese Crap
 	desc = "A pair of cheaply-made insulated gloves. Not known for reliability."
 	name = "budget insulated gloves"
@@ -80,9 +95,20 @@
 	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 0, rad = 0)
 	price_tag = 150
 
+/obj/item/clothing/gloves/thick/swat/insulated
+	name = "insulated combat gloves"
+	desc = "A pair of fire and impact-resistant security combat gloves. \
+	These have added insulated gloves sacerficing some of its protection to be better suited to deal with eletrical work under less then ideal cases."
+	icon_state = "combat_yellow"
+	item_state = "combat_yellow"
+	armor_list = list(melee = 15, bullet = 15, energy = 10, bomb = 0, bio = 0, rad = 0)
+	price_tag = 350
+	siemens_coefficient = 0
+
+
 /obj/item/clothing/gloves/thick/ablasive
 	name = "ablative gloves"
-	desc = "A thick pare of gloves that excels in protecting the wearer against energy projectiles."
+	desc = "A thick pair of gloves that excel at protecting the wearer against energy projectiles."
 	armor_list = list(melee = 10, bullet = 10, energy = 70, bomb = 30, bio = 10, rad = 0)
 	icon_state = "ihscombat"
 	item_state = "ihscombat"
@@ -91,14 +117,14 @@
 
 /obj/item/clothing/gloves/thick/ablasive/militia
 	name = "militia ablative gloves"
-	desc = "A thick pair of gloves that excels in protecting the wearer against energy projectiles."
+	desc = "A thick pair of gloves that excel at protecting the wearer against energy projectiles."
 	armor_list = list(melee = 10, bullet = 10, energy = 60, bomb = 10, bio = 0, rad = 0)
 	icon_state = "bs_ablative"
 	item_state = "ihscombat"
 
 /obj/item/clothing/gloves/thick/ablasive/iron_lock_security
 	name = "outdated gloves"
-	desc = "An \"Iron Lock Security\" ablative gloves with plates designed to absorb energy projectiles, even after all this time no one has been able to improve its design by Greyson Positronic."
+	desc = "A pair of \"Iron Lock Security\" ablative gloves with plates designed to absorb energy projectiles, even after all this time no one has been able to improve its design by Greyson Positronic."
 
 /obj/item/clothing/gloves/thick/swat/militia
 	name = "militia bulletproof gloves"
@@ -109,7 +135,7 @@
 
 /obj/item/clothing/gloves/thick/swat/blackshield_corpsman
 	name = "corpsman combat gloves"
-	desc = "A pair of fire and impact-resistant corpsman combat gloves. This pair has an extra rubbery coating to help prevent germs."
+	desc = "A pair of fire and impact-resistant corpsman combat gloves." // No lying, it's not anti-germs.
 	icon_state = "corpsman_base_gloves"
 	item_state = "corpsman_base_gloves"
 	armor_list = list(melee = 25, bullet = 20, energy = 20, bomb = 0, bio = 15, rad = 0)
@@ -245,7 +271,6 @@
 	item_state = "latex"
 	siemens_coefficient = 1.0 //thin latex gloves, much more conductive than fabric gloves (basically a capacitor for AC)
 	permeability_coefficient = 0.01
-	germ_level = 0
 	price_tag = 50
 
 /obj/item/clothing/gloves/latex/nitrile
@@ -261,7 +286,6 @@
 	item_state = "regal"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.01
-	germ_level = 0
 	price_tag = 300 // A relic!
 
 /obj/item/clothing/gloves/botanic_leather
@@ -307,5 +331,4 @@
 	armor_list = list(melee = 25, bullet = 5, energy = 20, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
-	germ_level = 0
 	price_tag = 50

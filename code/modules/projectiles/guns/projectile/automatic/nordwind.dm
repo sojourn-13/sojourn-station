@@ -32,11 +32,22 @@
 
 	wield_delay = 1.5 SECOND
 	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class rifle
+	gun_parts = list(/obj/item/part/gun/frame/nord = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
+/obj/item/part/gun/frame/nord
+	name = "Wind-series frame"
+	desc = "A generic -Wind series rifle frame. Simply use a drill-bit or a buffer to your desired caliber!"
+	icon_state = "frame_wind"
+	result = /obj/item/gun/projectile/automatic/nordwind
+	gripvars = list(/obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle, /obj/item/part/gun/barrel/srifle)
+	resultvars = list(/obj/item/gun/projectile/automatic/nordwind, /obj/item/gun/projectile/automatic/ostwind)
 
 /obj/item/gun/projectile/automatic/nordwind/strelki
 	name = "\"Strelki\" precision rifle"
-	desc = "A Strelki precision rifle, an inexpensive rifle of desent quality made by Hunt Inc.\
-			Its mostly wooden design and its usage of 7.62mm rounds make it the ideal weapon for a hunter tired of a crude boltaction. The frontier's favorite sniper!"
+	desc = "A Strelki precision rifle, an inexpensive rifle of decent quality made by Hunt Inc.\
+			Its mostly wooden design and its usage of 7.62mm rounds make it the ideal weapon for a hunter tired of a crude bolt action. The frontier's favorite sniper!"
 	icon = 'icons/obj/guns/projectile/strelki.dmi'
 	icon_state = "strelki"
 	item_state = "strelki"
@@ -61,6 +72,7 @@
 
 	wield_delay = 1.3 SECOND
 	wield_delay_factor = 0.3 // 30 vig to insta wield , not heavy class but not light
+	gun_parts = list(/obj/item/part/gun/frame/strelki = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 /obj/item/gun/projectile/automatic/nordwind/update_icon()
 	..()
@@ -100,3 +112,13 @@
 
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.2 // 20 vig to insta wield, sawn
+
+/obj/item/part/gun/frame/strelki
+	name = "Strelki frame"
+	desc = "A Strelki rifle frame. The finest among hunters and operators alike, known for building cheap Strelki rifles or more expensive Duty rifles."
+	icon_state = "frame_orrifle"
+	result = /obj/item/gun/projectile/automatic/nordwind/strelki
+	gripvars = list(/obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle, /obj/item/part/gun/barrel/srifle)
+	resultvars = list(/obj/item/gun/projectile/automatic/nordwind/strelki, /obj/item/gun/projectile/automatic/duty)

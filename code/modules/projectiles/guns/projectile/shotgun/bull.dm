@@ -34,6 +34,17 @@
 
 	wield_delay = 0.9 SECOND
 	wield_delay_factor = 0.2 // 40 vig
+	gun_parts = list(/obj/item/part/gun/frame/bull = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/part/gun/barrel/shotgun = 1)
+
+/obj/item/part/gun/frame/bull
+	name = "Bull frame"
+	desc = "A Bull shotgun frame. Double-barrel and pump action, through a miracle of engineering."
+	icon_state = "frame_bull"
+	result = /obj/item/gun/projectile/shotgun/bull
+	resultvars = list(/obj/item/gun/projectile/shotgun/bull)
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/shotgun
+	barrelvars = list(/obj/item/part/gun/barrel/shotgun)
 
 /obj/item/gun/projectile/shotgun/bull/bison
 	name = "\"Bison\" shotgun"
@@ -46,8 +57,8 @@
 	max_shells = 8
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10)
 	price_tag = 1500
-	damage_multiplier = 0.85
-	penetration_multiplier = 0.85
+	damage_multiplier = 0.9
+	penetration_multiplier = 0.9
 	init_recoil = RIFLE_RECOIL(1.6)
 	serial_type = "AG"
 

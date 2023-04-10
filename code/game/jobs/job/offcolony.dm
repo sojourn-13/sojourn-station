@@ -15,7 +15,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunt_master
 	health_modifier = 15
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
+	perks = list(PERK_BUTCHER, PERK_MASTER_HERBALIST, PERK_GREENTHUMB)
 	access = list(access_huntmaster, access_hunter)
 
 	stat_modifiers = list(
@@ -57,7 +57,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
 	health_modifier = 10
 
-	perks = list(/datum/perk/job/butcher)
+	perks = list(PERK_BUTCHER)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
@@ -99,7 +99,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/herbalist
 	health_modifier = 5
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
+	perks = list(PERK_BUTCHER, PERK_MASTER_HERBALIST, PERK_GREENTHUMB)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
@@ -124,8 +124,8 @@
 
 /datum/job/outsider
 	title = "Outsider"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 10
+	spawn_positions = 10
 	flag = OUTSIDER
 	faction = MAP_FACTION
 	department = DEPARTMENT_INDEPENDENT

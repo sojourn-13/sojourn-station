@@ -75,7 +75,6 @@
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	price_tag = 1500 // Very rare, very well made
 	damage_multiplier = 1.3 // Not as good as the Deckard in penetration for balance purposes, still quite good.
-	proj_pve_damage_multiplier = 1.3 // TODO: At some point we will have to add this var to every single firearm (except Marshals' since they're meant for PVP) after the PVP/PVE damage split, since they made lead-based firearms suck...
 	init_recoil = HANDGUN_RECOIL(0.5) // Takes no mods that assist with recoil.
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig, heavy gun
@@ -87,6 +86,17 @@
 							  /obj/item/tool_upgrade/productivity/ergonomic_grip = TRUE,
 							  /obj/item/tool_upgrade/refinement/ported_barrel = TRUE,)
 	zoom_factors = list()
+	gun_parts = list(/obj/item/part/gun/frame/mateba = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/kurtz = 1)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	serial_type = "SD GmbH"
+
+/obj/item/part/gun/frame/mateba
+	name = "Mateba frame"
+	desc = "A \"Mateba\" autorevolver frame. A specialized, recoil-absorbing revolver frame for a potent firearm chambered in 12mm."
+	icon_state = "frame_mateba"
+	result = /obj/item/gun/projectile/revolver/rev10/mateba
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
+	barrelvars = list(/obj/item/part/gun/barrel/kurtz)
+	resultvars = list(/obj/item/gun/projectile/revolver/rev10/mateba)
 

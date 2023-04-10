@@ -62,6 +62,9 @@
 
 	var/deepmaint_entry_point = FALSE //Will this burrow turn into a deep maint entry point upon getting collapsed?
 
+	//Soj edit
+	var/dug_out = FALSE
+
 /obj/structure/burrow/New(var/loc, turf/anchor)
 	.=..()
 	GLOB.all_burrows.Add(src)
@@ -91,7 +94,8 @@
 		maintenance = TRUE
 		break_open(TRUE)
 
-	if(prob(3))
+	var/turf/T = get_turf(src)
+	if(prob(3) && T.z == 2) //Bottom floor of maints only
 		deepmaint_entry_point = TRUE
 
 	if(deepmaint_entry_point) //so we can tell at a glace what is a deep maints borrow
@@ -494,96 +498,120 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	if(!isRevealed)
 		return
 	if(isSealed)
-		if (I.has_quality(QUALITY_WELDING))
-			user.visible_message("[user] attempts to weld [src] with \the [I]", "You start welding [src] with \the [I]")
-			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC) && isSealed)
-				user.visible_message("[user] welds [src] with \the [I].", "You weld [src] with \the [I].")
-				if(recieving)
-					if(prob(33))
-						qdel(src)
-					else	// false welding, critters will create new cracks
-						invisibility = 101
-						spawn(rand(3,10) SECONDS)
-							if(isSealed)
-								audio('sound/effects/impacts/thud_break.ogg', 100)
-								spawn_rubble(loc, 1, 100)//And make some rubble
-								invisibility = 0
-				else
-					qdel(src)
-		if (I.has_quality(QUALITY_HAMMERING))
-			user.visible_message("[user] starts hammering [src] with \the [I]", "You start hammering out [src] with \the [I]")
-			if(I.use_tool(user, src, WORKTIME_DELAYED, QUALITY_HAMMERING, FAILCHANCE_NORMAL, required_stat = STAT_ROB) && isSealed) //You are quite literally hammering the floor, slow and tedious
-				user.visible_message("[user] seals [src] with \the [I].", "You seal [src] with \the [I].")
-				if(recieving)
-					if(prob(33))
-						qdel(src)
-					else	// false hammering, critters will create new cracks
-						invisibility = 101
-						spawn(rand(3,10) SECONDS)
-							if(isSealed)
-								audio('sound/effects/impacts/thud_break.ogg', 100)
-								spawn_rubble(loc, 1, 100)//And make some rubble
-								invisibility = 0
-				else
-					qdel(src)
+		crack_removal(I, user)
 	else
-		if(istype(I, /obj/item/stack/material) && I.get_material_name() == MATERIAL_STEEL)
-			var/obj/item/stack/G = I
-
-			user.visible_message("[user] starts covering [src] with the [I]", "You start covering [src] with \the [I]")
-			if(do_after(user, 20, src))
-				if (G.use(1))
-					playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
-					collapse(clean = TRUE)
-					return
-
-
-		if (I.has_quality(QUALITY_DIGGING) && !isSealed)
-			user.visible_message("[user] starts breaking and collapsing [src] with \the [I]", "You start breaking and collapsing [src] with \the [I]")
-
-			//Attempting to collapse a burrow may trigger reinforcements.
-			//Not immediate so they will take some time to arrive.
-			//Enough time to finish one attempt at breaking the burrow.
-			//If you succeed, then the reinforcements won't come
-			if (prob(5))
-				distress()
-
-			//We record the time to prevent exploits of starting and quickly cancelling
-			var/start = world.time
-			var/target_time = WORKTIME_FAST+ 2*health
-
-			if (I.use_tool(user, src, target_time, QUALITY_DIGGING, health * 0.66, list(STAT_MEC, STAT_ROB), forced_sound = WORKSOUND_PICKAXE))
-				//On success, the hole is destroyed!
-				new /obj/random/scrap/sparse_weighted(get_turf(user))
-				user.visible_message("[user] collapses [src] with \the [I] and dumps trash which was in the way.", "You collapse [src] with \the [I] and dump trash which was in the way.")
-
-				collapse()
-			else
-				var/duration = world.time - start
-				if (duration < 10) //Digging less than a second does nothing
-					return
-
-				spawn_rubble(loc, 1, 100)
-
-				if (I.get_tool_quality(QUALITY_DIGGING) > 30)
-					to_chat(user, SPAN_NOTICE("\The [src] crumbles a bit. Keep trying and you'll collapse it eventually")) // What dictates which one of these sentences is picked besides digging quality over thirty without a pick()? - Seb
-				else
-					to_chat(user, SPAN_NOTICE("This isn't working very well. Perhaps you should get a better digging tool?"))
-
-				//On failure, the hole takes some damage based on the digging quality of the tool.
-				//This will make things much easier next time
-				var/time_mult = 1
-
-				if (duration < target_time)
-					//If they spent less than the full time attempting the work, then the reduction is reduced
-					//A multiplier is based on 85% of the time spent working,
-					time_mult = (duration / target_time) * 0.85
-				health -= (I.get_tool_quality(QUALITY_DIGGING)*time_mult)
-
-			return
-
+		burrow_removal(I, user)
 
 	. = ..()
+
+//Trys to remove the bulk of the burrow
+/obj/structure/burrow/proc/burrow_removal(obj/item/I, mob/user)
+	if(istype(I, /obj/item/stack/material) && I.get_material_name() == MATERIAL_STEEL)
+		var/obj/item/stack/G = I
+
+		user.visible_message("[user] starts covering [src] with the [I]", "You start covering [src] with \the [I]")
+		if(do_after(user, 20, src))
+			if(G.use(1))
+				playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+				collapse(clean = TRUE)
+				dug_out = FALSE
+
+	if(!I.has_quality(QUALITY_DIGGING) && isSealed)
+		return
+	user.visible_message("[user] starts breaking and collapsing [src] with \the [I]", "You start breaking and collapsing [src] with \the [I]")
+
+	//Attempting to collapse a burrow may trigger reinforcements.
+	//Not immediate so they will take some time to arrive.
+	//Enough time to finish one attempt at breaking the burrow.
+	//If you succeed, then the reinforcements won't come
+	if (prob(5))
+		distress()
+
+	//We record the time to prevent exploits of starting and quickly cancelling
+	var/start = world.time
+	var/target_time = WORKTIME_FAST+ 2*health
+
+	if (I.use_tool(user, src, target_time, QUALITY_DIGGING, health * 0.66, list(STAT_MEC, STAT_ROB), forced_sound = WORKSOUND_PICKAXE))
+		//On success, the hole is destroyed!
+		new /obj/random/scrap/sparse_weighted(get_turf(user))
+		user.visible_message("[user] collapses [src] with \the [I] and dumps trash which was in the way.", "You collapse [src] with \the [I] and dump trash which was in the way.")
+
+		collapse()
+		dug_out = TRUE //Soj edit
+		return
+
+	var/duration = world.time - start
+	if (duration < 10) //Digging less than a second does nothing
+		return
+
+	spawn_rubble(loc, 1, 100)
+
+	if (I.get_tool_quality(QUALITY_DIGGING) < 30)
+		to_chat(user, SPAN_NOTICE("This isn't working very well. Perhaps you should get a better digging tool?"))
+
+	to_chat(user, SPAN_NOTICE("\The [src] crumbles a bit. Keep trying and you'll collapse it eventually"))
+
+	//On failure, the hole takes some damage based on the digging quality of the tool.
+	//This will make things much easier next time
+	var/time_mult = 1
+
+	if (duration < target_time)
+		//If they spent less than the full time attempting the work, then the reduction is reduced
+		//A multiplier is based on 85% of the time spent working,
+		time_mult = (duration / target_time) * 0.85
+	health -= (I.get_tool_quality(QUALITY_DIGGING)*time_mult)
+
+
+//Seal up cracks in a borrow.
+/obj/structure/burrow/proc/crack_removal(obj/item/I, mob/user)
+	//Safty check
+	if(!isRevealed)
+		return
+
+	var/success = FALSE
+	var/list/usable_qualities = list()
+	usable_qualities.Add(QUALITY_WELDING)
+	usable_qualities.Add(QUALITY_HAMMERING)
+
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	switch(tool_type)
+		if(QUALITY_WELDING)
+			user.visible_message("[user] attempts to weld [src] with \the [I]", "You start welding [src] with \the [I]")
+			if(!I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC) && isSealed)
+				return
+			user.visible_message("[user] welds [src] with \the [I].", "You weld [src] with \the [I].")
+			success = TRUE
+			if(recieving && !prob(33))
+				//false welding, critters will create new cracks
+				invisibility = 101
+				addtimer(CALLBACK(src, .proc/false_removal), rand(3,10)SECONDS)
+			else
+				qdel(src)
+
+		if(QUALITY_HAMMERING)
+			user.visible_message("[user] starts hammering [src] with \the [I]", "You start hammering out [src] with \the [I]")
+			if(!I.use_tool(user, src, WORKTIME_DELAYED, QUALITY_HAMMERING, FAILCHANCE_NORMAL, required_stat = STAT_ROB) && isSealed) //You are quite literally hammering the floor, slow and tedious
+				return
+			user.visible_message("[user] seals [src] with \the [I].", "You seal [src] with \the [I].")
+			success = TRUE
+			if(recieving && !prob(33))
+				//false hammering, critters will create new cracks
+				invisibility = 101
+				addtimer(CALLBACK(src, .proc/false_removal), rand(3,10)SECONDS)
+			else
+				qdel(src)
+
+	//Soj Edit
+	if(ishuman(user) && dug_out && success)
+		var/mob/living/carbon/human/H = user
+		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/proper_sealer, "PROPER_SEALER", skill_gained = 1, learner = H)
+
+/obj/structure/burrow/proc/false_removal()
+	invisibility = 101
+	if(isSealed)
+		audio('sound/effects/impacts/thud_break.ogg', 100)
+		spawn_rubble(loc, 1, 100)//And make some rubble
+		invisibility = 0
 
 //Collapses the burrow, making cracks instead
 /obj/structure/burrow/proc/collapse(var/clean = FALSE)

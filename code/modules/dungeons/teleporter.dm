@@ -177,13 +177,13 @@
 
 		if (ishuman(O))
 			var/mob/living/carbon/human/H = O
-			H.flash(8, FALSE , FALSE , FALSE, 8)
+			H.flash(FALSE, FALSE , FALSE , FALSE, 8)
 
 		else
 			if(!O.blinded)
 				if (istype(O,/mob/living/silicon/ai))
 					return
-				O.flash(8, FALSE, FALSE ,FALSE)
+				O.flash(FALSE, FALSE, FALSE ,FALSE)
 
 		sleep(1)
 

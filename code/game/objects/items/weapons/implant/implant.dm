@@ -19,6 +19,7 @@
 	var/external = FALSE
 	var/cruciform_resist = FALSE
 	var/is_metal = TRUE
+	var/scanner_hidden = FALSE
 
 	var/overlay_icon = "deathalarm"
 
@@ -118,8 +119,8 @@
 
 /obj/item/implant/proc/meltdown()	//breaks it down, making implant unrecongizible
 	to_chat(wearer, "<span class='warning'>You feel something melting inside [part ? "your [part.name]" : "you"]!</span>")
-	if (part)
-		part.take_damage(burn = 15, used_weapon = "Electronics meltdown")
+	if(part)
+		part.take_damage(15, BURN, used_weapon = "Electronics meltdown")
 	else
 		var/mob/living/M = wearer
 		M.apply_damage(15,BURN)

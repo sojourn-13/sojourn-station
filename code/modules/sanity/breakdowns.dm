@@ -1,3 +1,5 @@
+#define BREAKDOWN_ALERT_COOLDOWN rand(45 SECONDS, 90 SECONDS)
+
 /datum/breakdown/positive
 	start_message_span = "bold notice"
 	icon_state = "positive"
@@ -8,7 +10,7 @@
 	restore_sanity_pre = 25
 	icon_state = "negative"
 	breakdown_sound = 'sound/sanity/insane.ogg'
-
+	is_negative = TRUE
 
 /datum/breakdown/common
 	start_message_span = "danger"
@@ -42,7 +44,6 @@
 	holder.owner.adjustCloneLoss(-10)
 	holder.owner.adjustFireLoss(-25)
 	holder.owner.adjustOxyLoss(-45)
-	holder.owner.adjustToxLoss(-25)
 	holder.owner.reagents.add_reagent("tramadol", 5) // the way this works is silly as all fuck and should probably be fixed at some point
 	..()
 
@@ -103,12 +104,11 @@
 	start_messages = list(
 		"You feel invincible!",
 		"You are unstoppable, you are unbreakable!",
-		"You feel like a GOD!",
 		"You feel a rush of adrenaline in your veins. Nothing can hurt you now!",
-		"You've learned to brush off wounds that would kill lesser beings!"
+		"You've learned to brush off wounds that would kill lesser beings!",
 	)
 	end_messages = list(
-		"The last drop of adrenaline leaves your veins. You feel like a normal human now."
+		"The last drop of adrenaline leaves your veins. You feel like a normal human now.",
 	)
 
 /datum/breakdown/positive/determination/occur()
@@ -136,14 +136,15 @@
 
 /datum/breakdown/positive/lesson/conclude()
 	for(var/stat in ALL_STATS_FOR_LEVEL_UP)
-		holder.owner.stats.changeStat(stat, rand(5,10))
+		holder.owner.stats.changeStat(stat, rand(1,3))
 	..()
 
 
-
+/* - Shit breakdown - disabled until it is reworked to be in specific circumstances.
 /datum/breakdown/negative/selfharm
 	name = "Self-harm"
 	duration = 1 MINUTES
+	delay = 30 SECONDS
 	restore_sanity_post = 70
 
 	start_messages = list(
@@ -161,83 +162,86 @@
 	. = ..()
 	if(!.)
 		return
-	var/datum/gender/G = holder.owner.get_gender()
-	if(prob(50))
-		var/emote = pick(list(
-			"screams incoherently!",
-			"bites [G.his] tongue and mutters under [G.his] breath.",
-			"utters muffled curses.",
-			"grumbles.",
-			"screams with soulful agony!",
-			"stares at the floor."
-		))
-		holder.owner.custom_emote(message=emote)
-	else if(!holder.owner.incapacitated())
-		var/obj/item/W = holder.owner.get_active_hand()
-		if(W)
-			W.attack(holder.owner, holder.owner, ran_zone())
-		else
-			var/damage_eyes = prob(40)
-			if(damage_eyes)
-				for(var/obj/item/protection in list(holder.owner.head, holder.owner.wear_mask, holder.owner.glasses))
-					if(protection && (protection.body_parts_covered & EYES))
-						damage_eyes = FALSE
-						break
-			if(damage_eyes)
-				holder.owner.visible_message(SPAN_DANGER("[holder.owner] scratches at [G.his] eyes!"))
-				var/obj/item/organ/internal/eyes/eyes = holder.owner.random_organ_by_process(OP_EYES)
-				eyes.take_damage(rand(1,2), 1)
+	if(init_update())
+		var/datum/gender/G = holder.owner.get_gender()
+		if(prob(50))
+			var/emote = pick(list(
+				"screams incoherently!",
+				"bites [G.his] tongue and mutters under [G.his] breath.",
+				"utters muffled curses.",
+				"grumbles.",
+				"screams with soulful agony!",
+				"stares at the floor."
+			))
+			holder.owner.custom_emote(message=emote)
+		else if(!holder.owner.incapacitated())
+			var/obj/item/W = holder.owner.get_active_hand()
+			if(W)
+				W.attack(holder.owner, holder.owner, ran_zone())
 			else
-				holder.owner.visible_message(SPAN_DANGER(pick(list(
-					"[holder.owner] tries to end [G.his] misery!",
-					"[holder.owner] tries to peel [G.his] own skin off!",
-					"[holder.owner] bites [G.his] own limbs uncontrollably!"
-				))))
-				var/list/obj/item/organ/external/parts = holder.owner.get_damageable_organs()
-				if(parts.len)
-					holder.owner.damage_through_armor(rand(2,4), def_zone = pick(parts))
+				var/damage_eyes = prob(40)
+				if(damage_eyes)
+					for(var/obj/item/protection in list(holder.owner.head, holder.owner.wear_mask, holder.owner.glasses))
+						if(protection && (protection.body_parts_covered & EYES))
+							damage_eyes = FALSE
+							break
+				if(damage_eyes)
+					holder.owner.visible_message(SPAN_DANGER("[holder.owner] scratches at [G.his] eyes!"))
+					var/obj/item/organ/internal/eyes/eyes = holder.owner.random_organ_by_process(OP_EYES)
+					eyes.take_damage(rand(1,10), TRUE, BRUTE, TRUE, TRUE)
+				else
+					holder.owner.visible_message(SPAN_DANGER(pick(list(
+						"[holder.owner] tries to end [G.his] misery!",
+						"[holder.owner] tries to peel [G.his] own skin off!",
+						"[holder.owner] bites [G.his] own limbs uncontrollably!"
+					))))
+					var/list/obj/item/organ/external/parts = holder.owner.get_damageable_organs()
+					if(parts.len)
+						holder.owner.damage_through_armor(rand(2,4), def_zone = pick(parts))
 
 /datum/breakdown/negative/selfharm/occur()
-	++holder.owner.suppress_communication
+	spawn(delay)
+		++holder.owner.suppress_communication
 	return ..()
 
 /datum/breakdown/negative/selfharm/conclude()
 	--holder.owner.suppress_communication
 	..()
-
-
+*/
 
 /datum/breakdown/negative/hysteric
 	name = "Hysteric"
 	duration = 1.5 MINUTES
+	delay = 60 SECONDS
 	restore_sanity_post = 50
 
 	start_messages = list(
 		"You get overwhelmed and start to panic!",
 		"You're inconsolably terrified!",
 		"You can't choke back the tears anymore!",
-		"The hair on your nape stands on end! The fear sends you into a frenzy!",
 		"It's too much! You freak out and lose control!"
 	)
 	end_messages = list(
-		"You calm down as your feelings subside. You feel horribly embarassed!"
+		"You calm down as your feelings subside. You feel horribly embarrassed!"
 	)
 
 /datum/breakdown/negative/hysteric/update()
 	. = ..()
 	if(!.)
-		return
-	holder.owner.Weaken(3)
-	holder.owner.Stun(3)
-	if(prob(50))
-		holder.owner.emote("scream")
-	else
-		holder.owner.emote("cry")
+		return FALSE
+	if(init_update())
+		holder.owner.Weaken(3)
+		holder.owner.Stun(3)
+		if(prob(50))
+			holder.owner.emote("scream")
+		else
+			holder.owner.emote("cry")
 
 /datum/breakdown/negative/hysteric/occur()
-	holder.owner.SetWeakened(4)
-	holder.owner.SetStunned(4)
-	++holder.owner.suppress_communication
+	spawn(delay)
+		holder.owner.SetWeakened(4)
+		holder.owner.SetStunned(4)
+		++holder.owner.suppress_communication
 	return ..()
 
 /datum/breakdown/negative/hysteric/conclude()
@@ -248,9 +252,8 @@
 
 
 
-
 /datum/breakdown/negative/delusion
-	//name = "Delusion"
+	name = "Delusion"
 	duration = 1 MINUTES
 	restore_sanity_post = 50
 
@@ -268,7 +271,7 @@
 /datum/breakdown/negative/delusion/update()
 	. = ..()
 	if(!.)
-		return
+		return	FALSE
 	if(prob(10))
 		var/power = rand(9,27)
 		holder.owner.playsound_local(holder.owner, 'sound/effects/explosionfar.ogg', 100, 1, round(power*2,1) )
@@ -321,7 +324,6 @@
 	holder.owner.client?.images |= images
 
 
-
 /datum/breakdown/negative/spiral
 	name = "Downward-spiral"
 	duration = 0
@@ -329,7 +331,7 @@
 
 	start_messages = list(
 		"You feel like there is no point in any of this!",
-		"You brain refuses to comprehend any of this!",
+		"Your brain refuses to comprehend any of this!",
 		"You feel like you don't want to continue whatever you're doing!",
 		"You feel like your best days are gone forever!",
 		"You feel it. You know it. There is no turning back!"
@@ -342,75 +344,265 @@
 	..()
 
 
-/*
-#define OBSESSION_COOLDOWN rand(30 SECONDS, 120 SECONDS)
+/datum/breakdown/common/power_hungry
+	name = "Power Hungry"
+	duration = 15 MINUTES
+	insight_reward = 20
+	restore_sanity_post = 80
 
+	start_messages = list("You think this doesn’t feel real... you have to make sure this is real! Get a jump from electrictiy!")
+	end_messages = list("You feel alive again.")
+	var/message_time = 0
+	var/messages = list("You want to receive an electric shock to make sure you're really alive.",
+						"You think about a way to make sure this is real.. a shock, that's it!.",
+						"Pain is real, numbiness is false. I must.. feel!.")
+
+/datum/breakdown/common/power_hungry/can_occur()
+	if(holder.owner.species.siemens_coefficient > 0)
+		return TRUE
+	return FALSE
+
+/datum/breakdown/common/power_hungry/occur()
+	RegisterSignal(holder.owner, COMSIG_CARBON_ELECTROCTE, .proc/check_shock)
+	RegisterSignal(holder.owner, COMSIG_LIVING_STUN_EFFECT, .proc/check_shock)
+	return ..()
+
+/datum/breakdown/common/power_hungry/update()
+	. = ..()
+	if(!.)
+		return FALSE
+	if(world.time >= message_time)
+		message_time = world.time + BREAKDOWN_ALERT_COOLDOWN
+		to_chat(holder.owner, SPAN_NOTICE(pick(messages)))
+
+/datum/breakdown/common/power_hungry/conclude()
+	UnregisterSignal(holder.owner, COMSIG_CARBON_ELECTROCTE)
+	UnregisterSignal(holder.owner, COMSIG_LIVING_STUN_EFFECT)
+	..()
+
+/datum/breakdown/common/power_hungry/proc/check_shock()
+	finished = TRUE
+
+#define ACTVIEW_ONE TRUE
+#define ACTVIEW_BOTH 2
+
+/datum/breakdown/negative/glassification
+	name = "Glassification"
+	duration = 2 MINUTES
+	restore_sanity_post = 40
+	var/time
+	var/cooldown = 20 SECONDS
+	var/time_view = 1 SECONDS
+	var/active_view = FALSE
+	var/mob/living/carbon/human/target
+	start_messages = list("You start to see through everything. Your mind expands.")
+	end_messages = list("The world has returned to normal ... right?")
+
+/datum/breakdown/negative/glassification/can_occur()
+	var/list/candidates = (GLOB.player_list & GLOB.living_mob_list & GLOB.human_mob_list) - holder.owner
+	if(candidates.len)
+		return TRUE
+	return FALSE
+
+/datum/breakdown/negative/glassification/update()
+	if(world.time < time)
+		return TRUE
+	if(active_view) //Just in case the callback doesn't catch
+		reset_views()
+		return TRUE
+	. = ..()
+	if(!.)
+		return FALSE
+	var/list/targets = (GLOB.player_list & GLOB.living_mob_list & GLOB.human_mob_list) - holder.owner
+	if(targets.len)
+		target = pick(targets)
+		holder.owner.remoteviewer = TRUE
+		holder.owner.set_remoteview(target)
+		to_chat(holder.owner, SPAN_WARNING("It seems as if you are looking through someone else's eyes."))
+		active_view = ACTVIEW_ONE
+		if(target.sanity.level < 50)
+			target.remoteviewer = TRUE
+			target.set_remoteview(holder.owner)
+			to_chat(target, SPAN_WARNING("It seems as if you are looking through someone else's eyes."))
+			active_view = ACTVIEW_BOTH
+		target.sanity.changeLevel(-rand(5,10)) //This phenomena will prove taxing on the viewed regardless
+		addtimer(CALLBACK(src, .proc/reset_views, TRUE), time_view)
+		time = world.time + time_view
+
+/datum/breakdown/negative/glassification/proc/reset_views()
+	holder.owner.set_remoteview()
+	holder.owner.remoteviewer = FALSE
+	if(active_view == ACTVIEW_BOTH)
+		target.set_remoteview()
+		target.remoteviewer = FALSE
+	target = null
+	active_view = FALSE
+	time = world.time + cooldown
+
+/*
+/datum/breakdown/common/herald
+	name = "Herald"
+	restore_sanity_pre = 5
+	restore_sanity_post = 45
+	duration = 5 MINUTES
+	start_messages = list("You've seen the abyss too long, and now forbidden knowledge haunts you.")
+	end_messages = list("You feel like you've forgotten something important. But this comforts you.")
+	var/message_time = 0
+	var/cooldown_message = 10 SECONDS
+
+
+/datum/breakdown/common/herald/update()
+	. = ..()
+	if(!.)
+		return FALSE
+	if(world.time >= message_time)
+		message_time = world.time + cooldown_message
+		var/chance = rand(1, 100)
+		holder.owner.say(chance <= 50 ? "[holder.pick_quote_20()]" : "[holder.pick_quote_40()]")
+*/
+
+/datum/breakdown/common/desire_for_chrome
+	name = "Desire for Chrome"
+	insight_reward = 30
+	restore_sanity_post = 60
+	start_messages = list("Flesh is weak, you are disgusted by the weakness of your own body.")
+	end_messages = list("Nothing like a mechanical upgrade to feel like new.")
+
+
+/datum/breakdown/common/desire_for_chrome/can_occur()
+	for(var/obj/item/organ/external/Ex in holder.owner.organs)
+		if(!BP_IS_ROBOTIC(Ex))
+			return TRUE
+	return FALSE
+
+/datum/breakdown/common/desire_for_chrome/occur()
+	RegisterSignal(holder.owner, COMSIG_HUMAN_ROBOTIC_MODIFICATION, .proc/check_organ)
+	return ..()
+
+/datum/breakdown/common/desire_for_chrome/conclude()
+	UnregisterSignal(holder.owner, COMSIG_HUMAN_ROBOTIC_MODIFICATION)
+	..()
+
+/datum/breakdown/common/desire_for_chrome/proc/check_organ()
+	finished = TRUE
+
+
+/datum/breakdown/common/false_nostalgy
+	name = "False Nostalgy"
+	duration = 10 MINUTES
+	insight_reward = 10
+	restore_sanity_post = 50
+	var/message_time = 0
+	var/area/target
+	var/messages
+	end_messages = list("Just like you remembered it.")
+
+/datum/breakdown/common/false_nostalgy/occur()
+	var/list/candidates = ship_areas.Copy()
+	message_time = world.time + BREAKDOWN_ALERT_COOLDOWN
+	for(var/area/A in candidates)
+		if(A.is_maintenance)
+			candidates -= A
+			continue
+	target = pick(candidates)
+	messages = list("Remember your last time in [target], those were the days",
+					"You feel like you’re drawn to [target] because you were always happy there. Right..?",
+					"When you are in [target] you feel like home... You want to feel like home.",
+					"[target] reminds you of the hunt.")
+
+	to_chat(holder.owner, SPAN_NOTICE(pick(messages)))
+	return ..()
+
+/datum/breakdown/common/false_nostalgy/update()
+	. = ..()
+	if(!.)
+		return FALSE
+	if(get_area(holder.owner) == target)
+		finished = TRUE
+		conclude()
+		return FALSE
+	if(world.time >= message_time)
+		message_time = world.time + BREAKDOWN_ALERT_COOLDOWN
+		to_chat(holder.owner, SPAN_NOTICE(pick(messages)))
+
+/datum/breakdown/common/new_heights
+	name = "New Heights"
+	duration = 10 MINUTES
+	insight_reward = 25
+	restore_sanity_post = 80
+	start_messages = list("This no longer suffices. You turned stale and gray. You need more! Reach for a new horizon!")
+	end_messages = list("You have lost the desire to go further.")
+	var/message_time = 0
+	var/messages = list("You want to test your endurance, what better way to do it than consuming drugs?",
+						"It doesn't matter if they judge you, they miss out on the pleasure of drugs.",
+						"Drugs are life, drugs are love, they are never enough.",
+						"A little more, a little more, you would pay anything to consume a little more.")
+
+/datum/breakdown/common/new_heights/update()
+	. = ..()
+	if(!.)
+		return FALSE
+	if(holder.owner.metabolism_effects.nsa_current >= 100)
+		finished = TRUE
+		conclude()
+		return FALSE
+	if(world.time >= message_time)
+		message_time = world.time + BREAKDOWN_ALERT_COOLDOWN
+		to_chat(holder.owner, SPAN_NOTICE(pick(messages)))
+
+/* Soj Edit, dont be a creep
 /datum/breakdown/common/obsession
 	name = "Obsession"
-	var/obj/item/target
-	var/objectname
+	insight_reward = 20
+	restore_sanity_post = 70
+	var/mob/living/carbon/human/target
 	var/message_time = 0
+	var/obsession_time = 3 MINUTES
+	var/last_time
+	var/delta_time
 
-	start_messages = list(
-		"You hear a sickening, raspy voice in your head. It requires one small task of you...",
-		"Your mind is impaled with the sickening need to hold something.",
-		"Your mind whispers one of its secrets to you - but you need a token to access its true treasures...",
-		"You feel like the old saying is true - the key to true power is real...",
-		"You feel under constant pressure, but there is a way to ease the pain..."
-	)
+
 	end_messages = list(
 		"You feel at ease again, suddenly."
 	)
 
 /datum/breakdown/common/obsession/can_occur()
 	var/list/candidates = (GLOB.player_list & GLOB.living_mob_list & GLOB.human_mob_list) - holder.owner
-	candidates = shuffle(candidates)
-	while(candidates.len)
-		var/mob/living/carbon/human/H = pick(candidates)
-		candidates.Remove(H)
-		var/list/contents = H.get_contents()
-		target = locate(/obj/item/oddity) in contents
-		if(!target)
-			target = pick(H.organs - H.organs_by_name[BP_CHEST])
-
-		if(target)
-			objectname = "[H.real_name]'s [target.name]"
-			break
-	return !!target
+	if(candidates.len)
+		target = pick(candidates)
+		start_messages = list("[target.name] knows the way out. [target.name] is hiding something. [target.name] is the key! [target.name] is yours!")
+		return TRUE
+	return FALSE
 
 /datum/breakdown/common/obsession/update()
 	. = ..()
 	if(!.)
-		return
+		return FALSE
 	if(QDELETED(target))
-		to_chat(holder.owner, SPAN_WARNING("\The [objectname] is lost!"))
+		to_chat(holder.owner, SPAN_WARNING("[target.name] is lost!"))
+		finished = TRUE
 		conclude()
 		return FALSE
-	if(target.loc == holder.owner)
-		var/message = pick(list(
-			"Your mind convulses in the ecstasy. The sacred [objectname] is now yours!",
-			"You feel the warmth of the [objectname] in your head.",
-			"You suffered so long to achieve greatness! The sacred [objectname] is now yours. Only yours."
-		))
-		to_chat(holder.owner, SPAN_NOTICE(message))
-		holder.restoreLevel(70)
-		conclude()
-		return FALSE
-	if(world.time >= message_time)
-		message_time = world.time + OBSESSION_COOLDOWN
-		var/message = pick(list(
-			"You knew it. The [objectname] will ease your journey to the stars.",
-			"You look all around, but the only thing you can see is the [objectname].",
-			"Your thoughts are all about the [objectname].",
-			"You imagine how you will pour your hands into the still warm [objectname].",
-			"Vivid imagery of the [objectname] fills your brain.",
-			"You know it. It is the key to your salvation. [capitalize(objectname)]. [capitalize(objectname)]. [capitalize(objectname)]!",
-			"The voice within you demands only one thing: the [objectname].",
-			"It hurts you to keep pretending that your life without the [objectname] has meaning.",
-			"Your mind whispers to you with the only words in its silent throat: [objectname].",
-			"You know that only salvation from your sins is [objectname]."
-		))
-		to_chat(holder.owner, SPAN_NOTICE(message))
+	if(target in view(holder.owner))
+		delta_time += abs(world.time - last_time)
+		last_time = world.time
+		holder.owner.whisper_say("[target.name]")
+		if(delta_time >= obsession_time)
+			finished = TRUE
+			conclude()
+			return FALSE
+	else
+		last_time = world.time
+		if(world.time >= message_time)
+			message_time = world.time + BREAKDOWN_ALERT_COOLDOWN
+			var/message = pick(list("[target.name] knows the way out.",
+									"[target.name] is hiding something.",
+									"[target.name] is the key!",
+									"[target.name] smells good.",
+									"you want to be close to [target.name].",
+									"Seeing [target.name] makes you happy."
+									))
+			to_chat(holder.owner, SPAN_NOTICE(message))
 
 /datum/breakdown/common/obsession/occur()
 	for(var/stat in ALL_STATS)
@@ -461,8 +653,9 @@
 
 
 /datum/breakdown/common/signs
-	//name = "Signs"
+	name = "Signs"
 	restore_sanity_post = 70
+	insight_reward = 5
 	var/message
 
 	start_messages = list(

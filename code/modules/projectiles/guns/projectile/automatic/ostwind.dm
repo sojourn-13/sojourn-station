@@ -10,7 +10,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1)
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	auto_eject = 1
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 1750
@@ -32,6 +32,7 @@
 		BURST_3_ROUND
 		)
 	serial_type = "SD GmbH"
+	gun_parts = list(/obj/item/part/gun/frame/nord = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/ostwind/update_icon()
 	..()

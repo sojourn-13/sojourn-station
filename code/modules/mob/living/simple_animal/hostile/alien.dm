@@ -32,6 +32,7 @@
 	status_flags = CANPUSH
 	minbodytemp = 0
 	heat_damage_per_tick = 20
+	sanity_damage = 2
 
 
 /mob/living/simple_animal/hostile/alien/drone
@@ -68,6 +69,7 @@
 	projectilesound = 'sound/weapons/pierce.ogg'
 	rapid = 1
 	status_flags = 0
+	sanity_damage = 4
 
 /mob/living/simple_animal/hostile/alien/queen/large
 	name = "alien empress"
