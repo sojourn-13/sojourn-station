@@ -8475,16 +8475,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/dungeon/outside/safehouse)
 "jkl" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/dropper{
-	pixel_y = -4
-	},
-/obj/item/storage/box/syringes{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/beakers,
-/obj/item/reagent_containers/glass/beaker/large,
+/obj/machinery/chemical_dispenser,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "jkn" = (
@@ -13721,17 +13712,8 @@
 /turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/dungeon/outside/zoo)
 "oRl" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/dropper{
-	pixel_y = -4
-	},
-/obj/item/storage/box/syringes{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/beakers,
-/obj/item/reagent_containers/glass/beaker/large,
 /obj/machinery/light/small,
+/obj/machinery/chemical_dispenser,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "oRA" = (
@@ -20900,6 +20882,22 @@
 /obj/structure/table/standard,
 /obj/item/device/scanner/mass_spectrometer/adv,
 /obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/dropper{
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/dropper{
+	pixel_y = -4
+	},
+/obj/item/storage/box/beakers,
+/obj/item/storage/box/beakers,
+/obj/item/storage/box/syringes{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/syringes{
+	pixel_x = 3;
+	pixel_y = 3
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "wsZ" = (
