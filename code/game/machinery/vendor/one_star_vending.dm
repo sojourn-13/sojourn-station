@@ -1,6 +1,6 @@
 /obj/machinery/vending/one_star
-	name = "One Star Vendor"
-	desc = "A vendor of the One Star variety typical made by GP."
+	name = "Greyson Positronic Vendor"
+	desc = "A holographic vendor made by Greyson Positronic."
 	icon = 'icons/obj/machines/one_star/vending.dmi'
 	icon_state = "vendor_guns"
 	icon_vend = "vendor_printing"
@@ -31,7 +31,7 @@
 		)
 
 /obj/machinery/vending/one_star/food
-	desc = "A vendor of the One Star variety typical made by GP. This one sells food variety."
+	desc = "A holographic vendor made by Greyson Positronic. This one sells a variety of food."
 	product_slogans = "It's a Vending Machine!;We all eat lunch from a Vending Machine!"
 	product_ads = "You must be the new guy!;Hows is your child doing?;Real Meals!;Some people say its not real food but many quite like and many think you will to!"
 
@@ -64,5 +64,5 @@
 		)
 
 /obj/machinery/vending/one_star/health
-	desc = "A vendor of the One Star variety typical made by GP. This one sells medical paraphernalia of the GP variety."
+	desc = "A holographic vendor made by Greyson Positronic. This one sells medical paraphernalia of the GP variety."
 	icon_state = "vendor_health"
