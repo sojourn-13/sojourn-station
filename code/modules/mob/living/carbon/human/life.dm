@@ -254,26 +254,12 @@
 	radiation = CLAMP(radiation,0,100)
 	var/damage = rand(0,0) //We start doing no serious damage,
 
-	if (radiation > 0)
-		radiation -= 1 * RADIATION_SPEED_COEFFICIENT //and rads slowly start to go down
-		if(prob(1)) //very low chance per tic but does happen
-			to_chat(src, SPAN_WARNING("Saliva floods from under your tongue as you're overcome with a terrible nausea."))
-			vomit()
-		if(prob(5))
-			take_overall_damage(0,rand(2,4), used_weapon = "Radiation Burns")
-			to_chat(src, SPAN_WARNING("Your skin suddenly feels warm and begins to redden."))
-
-	if (radiation > 30)
+	if (radiation)
 		radiation -= 1 * RADIATION_SPEED_COEFFICIENT
-		if(prob(5)) //a chance exists now for serious bad times.
-			damage = rand(2,4)
-			to_chat(src, SPAN_WARNING("You suddenly have a metallic taste in your mouth..."))
 
-		if (radiation > 60)
-			if(prob(50))
-				damage = rand(2,4)
-				radiation -= 1 * RADIATION_SPEED_COEFFICIENT
-			if(prob(5))
+		if (radiation > 50)
+			radiation -= 1 * RADIATION_SPEED_COEFFICIENT
+			if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT))
 				radiation -= 5 * RADIATION_SPEED_COEFFICIENT
 				to_chat(src, SPAN_WARNING("You feel weak."))
 				take_overall_damage(0,rand(0,2), used_weapon = "Radiation Burns")
@@ -509,40 +495,56 @@
 	breath.update_values()
 	return !failed_breath
 
+//this proc handles breathable gas temeperature
 /mob/living/carbon/human/proc/handle_temperature_effects(datum/gas_mixture/breath)
 	if(!species)
 		return
 	// Hot air hurts :( :(
-	if((breath.temperature < species.cold_level_1 || breath.temperature > species.heat_level_1) && !(COLD_RESISTANCE in mutations))
-		var/damage = 0
-		if(breath.temperature <= species.cold_level_1)
+	if((breath.temperature < species.lower_breath_t || breath.temperature > species.upper_breath_t) && !(COLD_RESISTANCE in mutations))
+		var/oof = 0
+		if(breath.temperature <= species.lower_breath_t)
 			if(prob(20))
-				to_chat(src, SPAN_DANGER("You feel your face freezing and icicles forming in your lungs!"))
+				to_chat(src, SPAN_DANGER("You feel icicles forming in your lungs!"))
 
-			switch(breath.temperature)
-				if(species.cold_level_3 to species.cold_level_2)
-					damage = COLD_GAS_DAMAGE_LEVEL_3
-				if(species.cold_level_2 to species.cold_level_1)
-					damage = COLD_GAS_DAMAGE_LEVEL_2
-				else
-					damage = COLD_GAS_DAMAGE_LEVEL_1
+			if(breath.temperature <= (species.lower_breath_t - 40))
+				oof += COLD_GAS_DAMAGE_LEVEL_3
+				frost += COLD_GAS_DAMAGE_LEVEL_3
+			else if(breath.temperature <= (species.lower_breath_t - 20))
+				oof += COLD_GAS_DAMAGE_LEVEL_2
+				frost += COLD_GAS_DAMAGE_LEVEL_2
+			else
+				oof += COLD_GAS_DAMAGE_LEVEL_1
+				frost += COLD_GAS_DAMAGE_LEVEL_1
 
-			apply_damage(damage, BURN, BP_HEAD, used_weapon = "Excessive Cold")
+            //apply_damage(damage, BURN, OP_LUNGS, used_weapon = "Artic Inhalation") this is here case someone figures out how to give lung damage and show up on authopsy
 			fire_alert = FIRE_ALERT_COLD
-		else if(breath.temperature >= species.heat_level_1)
+			if(oof >= 8)
+				var/obj/item/organ/internal/L = random_organ_by_process(OP_LUNGS)
+				if(L && istype(L))
+					L.take_damage(oof,BURN)
+					oof = 0
+
+		else if(breath.temperature >= species.upper_breath_t)
 			if(prob(20))
-				to_chat(src, SPAN_DANGER("You feel your face burning and a searing heat in your lungs!"))
+				to_chat(src, SPAN_DANGER("You feel a searing heat in your lungs!"))
 
-			switch(breath.temperature)
-				if(species.heat_level_1 to species.heat_level_2)
-					damage = HEAT_GAS_DAMAGE_LEVEL_1
-				if(species.heat_level_2 to species.heat_level_3)
-					damage = HEAT_GAS_DAMAGE_LEVEL_2
-				else
-					damage = HEAT_GAS_DAMAGE_LEVEL_3
+			if(breath.temperature >= (species.upper_breath_t - 40))
+				oof += HEAT_GAS_DAMAGE_LEVEL_3
+				frost -= HEAT_GAS_DAMAGE_LEVEL_3
+			else if(breath.temperature >= (species.upper_breath_t - 20))
+				oof += HEAT_GAS_DAMAGE_LEVEL_2
+				frost -= HEAT_GAS_DAMAGE_LEVEL_2
+			else
+				oof += HEAT_GAS_DAMAGE_LEVEL_1
+				frost -= HEAT_GAS_DAMAGE_LEVEL_1
 
-			apply_damage(damage, BURN, BP_HEAD, used_weapon = "Excessive Heat")
+			//apply_damage(damage, BURN, OP_LUNGS, used_weapon = "Excessive Heat") this is here case someone figures out how to give lung damage and show up on authopsy
 			fire_alert = FIRE_ALERT_HOT
+			if(oof >= 8)
+				var/obj/item/organ/internal/L = random_organ_by_process(OP_LUNGS)
+				if(L && istype(L))
+					L.take_damage(oof,BURN)
+					oof = 0
 
 		//breathing in hot/cold air also heats/cools you a bit
 		var/temp_adj = breath.temperature - bodytemperature
@@ -646,7 +648,20 @@
 				if(species.cold_level_3 to species.cold_level_2)
 					burn_dam = COLD_DAMAGE_LEVEL_2
 				if(species.cold_level_2 to species.cold_level_1)
+					frost += COLD_DAMAGE_LEVEL_3
+			fire_alert = max(fire_alert, FIRE_ALERT_COLD)
+		else
+			var/burn_dam = 0
+			switch(bodytemperature)
+				if(species.cold_level_1 to species.cold_level_2)
+					burn_dam = COLD_DAMAGE_LEVEL_1
+					frost += COLD_DAMAGE_LEVEL_1
+				if(species.cold_level_2 to species.cold_level_3)
+					burn_dam = COLD_DAMAGE_LEVEL_2
+					frost += COLD_DAMAGE_LEVEL_2
+				if(species.cold_level_3 to -(INFINITY))
 					burn_dam = COLD_DAMAGE_LEVEL_3
+					frost += COLD_DAMAGE_LEVEL_3
 			take_overall_damage(burn=burn_dam, used_weapon = "Low Body Temperature")
 			fire_alert = max(fire_alert, FIRE_ALERT_COLD)
 
