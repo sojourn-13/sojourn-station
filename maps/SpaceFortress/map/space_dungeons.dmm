@@ -141,6 +141,11 @@
 /obj/random/powercell/small_safe,
 /turf/simulated/floor/tiled/steel/brown_platform,
 /area/outpost/abandoned_fortress/powered)
+"aK" = (
+/obj/structure/lattice,
+/obj/structure/lattice,
+/turf/space,
+/area/space)
 "aL" = (
 /turf/simulated/floor/wood,
 /area/awaymission/spacebattle/syndicate7)
@@ -215,6 +220,10 @@
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
+"bh" = (
+/obj/effect/floor_decal/industrial/outline,
+/turf/simulated/floor/tiled/dark/danger,
+/area/space)
 "bi" = (
 /obj/machinery/autolathe/loaded,
 /turf/simulated/floor/tiled/dark/golden,
@@ -795,6 +804,7 @@
 /area/outpost/abandoned_fortress/powered)
 "dS" = (
 /obj/structure/closet/secure_closet/rare_loot,
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/awaymission/spacebattle/syndicate2)
 "dV" = (
@@ -1198,6 +1208,10 @@
 /obj/random/rations,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
+"gc" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/space,
+/area/space)
 "gd" = (
 /obj/machinery/light_switch{
 	pixel_y = 28
@@ -1219,6 +1233,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/tiled/white,
 /area/outpost/abandoned_fortress/powered)
+"gh" = (
+/obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/space)
 "gk" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/gray_perforated,
@@ -1341,6 +1362,10 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/outpost/abandoned_fortress/powered)
+"gN" = (
+/obj/machinery/complant_teleporter,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/space)
 "gO" = (
 /obj/effect/floor_decal/industrial/hatch,
 /obj/machinery/bodyscanner,
@@ -1397,6 +1422,11 @@
 /obj/machinery/suit_storage_unit/excelsior,
 /turf/simulated/floor/tiled/techmaint,
 /area/awaymission/spacebattle/syndicate7)
+"he" = (
+/obj/effect/floor_decal/industrial/botleft,
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/space)
 "hf" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible,
@@ -1521,6 +1551,10 @@
 /obj/effect/floor_decal/industrial/warningwhite,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/awaymission/spacebattle/syndicate7)
+"hW" = (
+/mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught,
+/turf/space,
+/area/space)
 "hX" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -1605,6 +1639,10 @@
 /obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
+"iz" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
 "iA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 10
@@ -1908,6 +1946,12 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating/under,
+/area/space)
+"kc" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/space)
 "kd" = (
 /obj/structure/bed/padded,
@@ -2318,6 +2362,10 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/outpost/abandoned_fortress/powered)
+"md" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/space)
 "mf" = (
 /obj/item/bluespace_dust,
 /turf/space,
@@ -2535,6 +2583,9 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
+"nd" = (
+/turf/simulated/floor/tiled/dark/danger,
+/area/space)
 "ne" = (
 /obj/machinery/power/smes/magical,
 /obj/structure/cable{
@@ -2994,6 +3045,10 @@
 /obj/structure/salvageable/computer_os,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/space)
+"po" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/plating/under,
+/area/space)
 "pp" = (
 /obj/effect/floor_decal/industrial/hatch,
 /obj/machinery/suit_storage_unit/excelsior,
@@ -3058,6 +3113,13 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
+"pG" = (
+/obj/machinery/light/floor,
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/space)
+"pH" = (
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/space)
 "pI" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /obj/structure/disposalpipe/segment,
@@ -3154,6 +3216,10 @@
 /obj/structure/flora/pottedplant/clockcult,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
+"qc" = (
+/obj/structure/reagent_dispensers/watertank/derelict,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/space)
 "qf" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/tiled/white/violetcorener,
@@ -3621,6 +3687,10 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/outpost/abandoned_fortress/powered)
+"sM" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/cafe,
+/area/awaymission/spacebattle/syndicate2)
 "sN" = (
 /obj/effect/floor_decal/industrial/loading/white{
 	dir = 1
@@ -3953,6 +4023,14 @@
 "uk" = (
 /turf/simulated/wall/r_wall,
 /area/awaymission/spacebattle/syndicate2)
+"ul" = (
+/obj/machinery/airlock_sensor{
+	frequency = 1331;
+	id_tag = "vox_east_sensor";
+	pixel_x = -25
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/space)
 "um" = (
 /obj/structure/table/standard,
 /obj/item/device/lighting/toggleable/lamp,
@@ -4076,6 +4154,11 @@
 /mob/living/carbon/superior_animal/human/prisoner,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/outpost/abandoned_fortress/powered)
+"uN" = (
+/obj/machinery/washing_machine,
+/obj/effect/floor_decal/industrial/hatch,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/space)
 "uP" = (
 /obj/machinery/atmospherics/pipe/tank/air{
 	dir = 4;
@@ -4305,6 +4388,10 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/awaymission/spacebattle/syndicate1)
+"vS" = (
+/obj/machinery/smartfridge/drying_rack,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/space)
 "vV" = (
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
 /turf/simulated/floor/rock,
@@ -4829,6 +4916,10 @@
 /obj/item/material/shard/plasma,
 /turf/simulated/floor/rock,
 /area/space)
+"ys" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating/under,
+/area/space)
 "yt" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/plating/under,
@@ -5068,6 +5159,9 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
+"zC" = (
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/space)
 "zD" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -5240,6 +5334,10 @@
 /obj/random/gun_cheap,
 /turf/simulated/floor/reinforced,
 /area/outpost/abandoned_fortress/powered)
+"AD" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/reinforced,
+/area/space)
 "AE" = (
 /obj/structure/table/glass,
 /obj/random/medical/low_chance,
@@ -5333,6 +5431,10 @@
 "Bl" = (
 /turf/simulated/floor/tiled/steel/panels,
 /area/outpost/abandoned_fortress/powered)
+"Bn" = (
+/obj/machinery/seed_extractor,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/space)
 "Bo" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
@@ -5449,6 +5551,10 @@
 /mob/living/carbon/superior_animal/human/prisoner/melee,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
+"Cb" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/space)
 "Cd" = (
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl,
@@ -5639,6 +5745,16 @@
 /obj/machinery/vending/tool,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/outpost/abandoned_fortress/powered)
+"CV" = (
+/obj/machinery/door/airlock/hatch{
+	frequency = 1331;
+	icon_state = "door_closed";
+	id_tag = "vox_northeast_lock";
+	locked = 0;
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
 "CX" = (
 /obj/structure/railing,
 /obj/structure/railing{
@@ -5978,6 +6094,11 @@
 /obj/structure/table/bench/steel,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
+"EA" = (
+/obj/random/techpart/low_chance,
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/cafe,
+/area/awaymission/spacebattle/syndicate2)
 "EB" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/multi_tile/metal{
@@ -5985,6 +6106,10 @@
 	},
 /turf/simulated/floor/tiled/steel/cargo,
 /area/outpost/abandoned_fortress/powered)
+"EC" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/space)
 "EG" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/tiled/steel/cargo,
@@ -6399,6 +6524,19 @@
 /obj/machinery/vending/printomat,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
+"GL" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	frequency = 1331;
+	id_tag = "vox_east_vent"
+	},
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1331;
+	master_tag = "vox_east_control";
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/space)
 "GN" = (
 /obj/random/scrap,
 /obj/machinery/light/small{
@@ -6470,6 +6608,19 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
+"Hn" = (
+/obj/machinery/door/airlock/hatch{
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
+"Ho" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/space)
 "Hp" = (
 /turf/simulated/mineral,
 /area/awaymission/spacebattle/syndicate7)
@@ -6502,6 +6653,10 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
+"Hz" = (
+/mob/living/carbon/superior_animal/human/excelsior,
+/turf/space,
+/area/space)
 "HA" = (
 /obj/machinery/light{
 	dir = 8
@@ -6985,6 +7140,16 @@
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/gray_perforated,
+/area/space)
+"JJ" = (
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1331;
+	master_tag = "vox_east_control";
+	pixel_x = 22
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
+/turf/simulated/floor/tiled/dark/danger,
 /area/space)
 "JL" = (
 /obj/structure/catwalk,
@@ -7636,6 +7801,10 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/awaymission/spacebattle/syndicate7)
+"Nb" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/reinforced,
+/area/awaymission/spacebattle/syndicate2)
 "Nc" = (
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/reinforced,
@@ -7678,6 +7847,10 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
+"Np" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/space)
 "Nq" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating/under,
@@ -7950,6 +8123,10 @@
 /obj/machinery/door/airlock/maintenance_interior,
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate2)
+"OD" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
+/turf/simulated/floor/tiled/dark/danger,
+/area/space)
 "OE" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -8118,6 +8295,11 @@
 /obj/machinery/door/window/northright,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/outpost/abandoned_fortress/powered)
+"Pv" = (
+/obj/random/mob/carp,
+/obj/structure/lattice,
+/turf/space,
+/area/space)
 "Pw" = (
 /obj/random/material_ore,
 /obj/random/material_ore,
@@ -8229,6 +8411,12 @@
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/awaymission/spacebattle/syndicate7)
+"PV" = (
+/obj/structure/reagent_dispensers/watertank,
+/obj/item/mop,
+/obj/effect/floor_decal/industrial/hatch,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/space)
 "PX" = (
 /obj/landmark/corpse/antagonist/pirate,
 /turf/simulated/floor/tiled/steel,
@@ -8319,6 +8507,17 @@
 /obj/structure/shuttle/engine/propulsion,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/awaymission/spacebattle/syndicate7)
+"Qt" = (
+/obj/machinery/door/airlock/hatch{
+	frequency = 1331;
+	icon_state = "door_closed";
+	id_tag = "vox_southeast_lock";
+	locked = 0;
+	req_access = newlist()
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
 "Qw" = (
 /obj/structure/closet,
 /obj/item/melee/energy/sword/pirate,
@@ -8382,6 +8581,11 @@
 "QJ" = (
 /turf/simulated/floor/tiled/white,
 /area/outpost/abandoned_fortress/powered)
+"QM" = (
+/obj/effect/floor_decal/industrial/botright,
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/space)
 "QO" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/plating/under,
@@ -8479,6 +8683,15 @@
 /mob/living/carbon/superior_animal/human/prisoner/melee,
 /turf/simulated/floor/plating/under,
 /area/outpost/abandoned_fortress/powered)
+"Rk" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/mob/living/carbon/superior_animal/human/marine/shield,
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/awaymission/spacebattle/syndicate7)
 "Rl" = (
 /obj/effect/floor_decal/spline/fancy,
 /obj/effect/floor_decal/steeldecal/steel_decals10{
@@ -8673,6 +8886,10 @@
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/awaymission/spacebattle/syndicate1)
+"Sj" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/space)
 "Sl" = (
 /obj/machinery/light{
 	dir = 4
@@ -9252,6 +9469,10 @@
 /obj/machinery/smartfridge/drying_rack,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/awaymission/spacebattle/syndicate1)
+"UQ" = (
+/mob/living/carbon/superior_animal/human/xiang,
+/turf/simulated/floor/tiled/dark/danger,
+/area/space)
 "UR" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/white/cargo,
@@ -9495,6 +9716,13 @@
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/awaymission/spacebattle/syndicate1)
+"Wq" = (
+/obj/item/bedsheet,
+/obj/structure/bed,
+/obj/structure/curtain/open/bed,
+/obj/item/toy/plushie/cat/grey,
+/turf/simulated/floor/carpet/turcarpet,
+/area/space)
 "Ws" = (
 /obj/structure/closet/secure_closet/injection,
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -9726,6 +9954,10 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/awaymission/spacebattle/syndicate1)
+"Xt" = (
+/obj/machinery/complant_teleporter,
+/turf/simulated/floor/rock,
+/area/space)
 "Xu" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Fortress Airlock"
@@ -9997,6 +10229,16 @@
 /obj/machinery/am_shielding,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
+"YM" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/item/bedsheet,
+/obj/structure/bed,
+/obj/structure/curtain/open/bed,
+/obj/item/oddity/common/teddy,
+/turf/simulated/floor/carpet/sblucarpet,
+/area/space)
 "YO" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /turf/simulated/floor/tiled/white/cargo,
@@ -10048,6 +10290,15 @@
 "Zc" = (
 /mob/living/carbon/superior_animal/human/xiang,
 /turf/simulated/floor/tiled/dark/gray_platform,
+/area/space)
+"Ze" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1331;
+	id_tag = "vox_east_vent"
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/space)
 "Zg" = (
 /obj/structure/sink/kitchen{
@@ -12772,6 +13023,7 @@ oh
 oh
 oh
 oh
+kn
 oh
 oh
 oh
@@ -12782,8 +13034,7 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
 oh
 oh
 oh
@@ -12972,8 +13223,8 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -13182,15 +13433,15 @@ oh
 oh
 oh
 oh
+kn
 oh
 oh
 oh
 oh
 oh
 oh
-oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -13391,14 +13642,14 @@ oh
 oh
 oh
 oh
+kn
+kn
 oh
 oh
 oh
 oh
 oh
-oh
-oh
-oh
+kn
 oh
 oh
 oh
@@ -13577,6 +13828,7 @@ oh
 oh
 oh
 oh
+kn
 oh
 oh
 oh
@@ -13597,8 +13849,7 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
 oh
 oh
 oh
@@ -14383,7 +14634,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -14539,7 +14790,7 @@ oh
 oh
 oh
 oh
-oh
+Hz
 oh
 oh
 oh
@@ -14574,6 +14825,7 @@ oh
 bY
 oh
 oh
+kn
 oh
 oh
 oh
@@ -14581,9 +14833,8 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -14770,6 +15021,10 @@ XI
 fp
 XI
 oh
+kn
+oh
+oh
+kn
 oh
 oh
 oh
@@ -14778,11 +15033,7 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
+kn
 oh
 oh
 oh
@@ -15014,7 +15265,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 XI
@@ -15172,7 +15423,7 @@ XI
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 xf
@@ -15777,7 +16028,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -15967,6 +16218,8 @@ oh
 oh
 oh
 oh
+kn
+kn
 oh
 oh
 oh
@@ -15977,9 +16230,7 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
+kn
 oh
 oh
 xf
@@ -16181,7 +16432,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -16232,7 +16483,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -16374,14 +16625,14 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
+kn
+kn
+kn
 oh
 bY
 oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -16428,7 +16679,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -16560,11 +16811,13 @@ oh
 oh
 oh
 oh
+kn
 oh
 oh
 oh
 oh
 oh
+kn
 oh
 oh
 oh
@@ -16580,6 +16833,8 @@ oh
 oh
 oh
 oh
+kn
+kn
 oh
 oh
 oh
@@ -16632,14 +16887,10 @@ oh
 oh
 oh
 oh
+kn
+kn
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+kn
 oh
 oh
 oh
@@ -16735,8 +16986,8 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -16762,14 +17013,21 @@ oh
 oh
 oh
 oh
+kn
 oh
 oh
 oh
 oh
+kn
+kn
 oh
 oh
 oh
 oh
+kn
+kn
+kn
+kn
 oh
 oh
 oh
@@ -16834,14 +17092,7 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+kn
 oh
 oh
 oh
@@ -16931,20 +17182,20 @@ oh
 oh
 oh
 oh
+kn
+kn
+oh
+oh
+oh
+kn
+oh
+kn
+kn
 oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+kn
 oh
 oh
 oh
@@ -16964,30 +17215,30 @@ oh
 oh
 oh
 oh
+kn
+kn
+kn
+kn
+oh
+kn
+kn
+oh
+oh
+oh
+oh
+kn
+kn
+kn
+kn
 oh
 oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+kn
+kn
+kn
+kn
 oh
 oh
 oh
@@ -17121,6 +17372,7 @@ oh
 oh
 oh
 oh
+kn
 oh
 oh
 oh
@@ -17132,6 +17384,8 @@ oh
 oh
 oh
 oh
+kn
+kn
 oh
 oh
 oh
@@ -17140,11 +17394,8 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -17166,13 +17417,13 @@ oh
 oh
 oh
 oh
+kn
+kn
+kn
+kn
 oh
-oh
-oh
-oh
-oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -17220,18 +17471,18 @@ oh
 oh
 oh
 oh
+kn
+aK
 oh
 oh
 oh
+kn
+kn
+kn
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+kn
+kn
+kn
 oh
 oh
 oh
@@ -17314,7 +17565,7 @@ dk
 xX
 dk
 YR
-wh
+Nb
 su
 Nc
 ed
@@ -17330,6 +17581,10 @@ oh
 oh
 oh
 oh
+kn
+kn
+kn
+kn
 oh
 oh
 oh
@@ -17366,6 +17621,8 @@ oh
 oh
 oh
 oh
+kn
+kn
 oh
 oh
 oh
@@ -17414,13 +17671,7 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+kn
 oh
 oh
 oh
@@ -17532,34 +17783,10 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-mf
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+kn
+kn
+kn
+kn
 oh
 oh
 oh
@@ -17569,6 +17796,30 @@ oh
 oh
 oh
 oh
+oh
+oh
+oh
+oh
+oh
+oh
+oh
+oh
+kn
+oh
+oh
+oh
+oh
+oh
+oh
+oh
+oh
+oh
+mf
+oh
+kn
+kn
+kn
+kn
 oh
 oh
 oh
@@ -17734,10 +17985,10 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
+kn
+kn
+kn
+kn
 oh
 oh
 oh
@@ -17756,6 +18007,7 @@ kn
 oh
 oh
 oh
+kn
 oh
 oh
 oh
@@ -17766,11 +18018,10 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
+kn
+kn
+kn
+kn
 oh
 oh
 oh
@@ -17912,7 +18163,7 @@ kC
 il
 cA
 dk
-dk
+AD
 dk
 eQ
 il
@@ -17936,15 +18187,15 @@ oh
 oh
 oh
 oh
+aK
+kn
+kn
+kn
 oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
+kn
 oh
 oh
 oh
@@ -17964,6 +18215,7 @@ oh
 oh
 oh
 oh
+kn
 oh
 oh
 oh
@@ -18019,9 +18271,8 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
+kn
+kn
 oh
 oh
 il
@@ -18042,6 +18293,7 @@ oh
 oh
 oh
 oh
+kn
 oh
 oh
 oh
@@ -18051,8 +18303,7 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
 oh
 oh
 oh
@@ -18119,9 +18370,9 @@ ky
 Rg
 il
 Zg
-pB
+sM
 Ba
-KU
+EA
 Yd
 il
 il
@@ -18132,11 +18383,11 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
+kn
+aK
+aK
+kn
+kn
 oh
 oh
 oh
@@ -18204,6 +18455,7 @@ oh
 oh
 oh
 oh
+Hz
 oh
 oh
 oh
@@ -18221,8 +18473,7 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
 oh
 oh
 il
@@ -18334,9 +18585,9 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
+kn
+aK
+kn
 oh
 oh
 oh
@@ -18446,6 +18697,7 @@ oh
 oh
 oh
 oh
+kn
 oh
 oh
 oh
@@ -18454,8 +18706,7 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
 oh
 oh
 oh
@@ -18505,7 +18756,7 @@ Pa
 yr
 Qo
 Uv
-Uv
+Np
 SC
 dk
 oh
@@ -18532,7 +18783,10 @@ oh
 oh
 oh
 oh
-Jq
+VT
+kn
+kn
+aK
 oh
 oh
 oh
@@ -18624,11 +18878,8 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
+kn
+kn
 El
 ZW
 vQ
@@ -18707,7 +18958,7 @@ Pa
 sT
 Dj
 Ap
-jp
+Sj
 vK
 dk
 Ya
@@ -18731,6 +18982,11 @@ il
 il
 Xc
 oh
+kn
+kn
+kn
+kn
+kn
 oh
 oh
 oh
@@ -18781,12 +19037,7 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
+Hz
 oh
 oh
 oh
@@ -19135,10 +19386,10 @@ il
 Xc
 VR
 oh
+kn
 oh
 oh
-oh
-oh
+kn
 oh
 oh
 oh
@@ -19217,11 +19468,11 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
+XI
+XI
+XI
+XI
+XI
 oh
 oh
 oh
@@ -19263,7 +19514,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -19311,9 +19562,9 @@ XI
 FV
 ll
 an
+gN
 Uv
-Uv
-Uv
+Np
 SC
 Ya
 Qo
@@ -19325,7 +19576,7 @@ Qo
 Dn
 il
 XU
-dk
+AD
 Rg
 KQ
 Rg
@@ -19418,12 +19669,12 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
+XI
+XI
+XI
+Pa
+Pa
+XI
 oh
 oh
 oh
@@ -19533,7 +19784,7 @@ NU
 Kl
 il
 Yx
-Ip
+EC
 Ip
 dV
 dW
@@ -19574,7 +19825,7 @@ oh
 oh
 oh
 oh
-oh
+Hz
 oh
 oh
 oh
@@ -19608,6 +19859,7 @@ oh
 oh
 oh
 oh
+Hz
 oh
 oh
 oh
@@ -19619,14 +19871,13 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+XI
+Pa
+Pa
+Pa
+Pa
+XI
+nd
 oh
 oh
 oh
@@ -19725,7 +19976,7 @@ il
 Ed
 uH
 oh
-Qo
+po
 Ph
 il
 MX
@@ -19735,7 +19986,7 @@ Rg
 Rg
 il
 Zx
-nr
+Cb
 KM
 il
 Sc
@@ -19821,14 +20072,14 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+XI
+XI
+sT
+Pa
+Pa
+Pa
+sT
+nd
 oh
 oh
 oh
@@ -19867,7 +20118,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -19932,7 +20183,7 @@ GS
 il
 ks
 eQ
-dk
+AD
 dk
 lJ
 il
@@ -19960,7 +20211,7 @@ oh
 oh
 XI
 Pa
-XI
+Xt
 Pa
 Pa
 Pa
@@ -19994,6 +20245,7 @@ oh
 oh
 oh
 oh
+Hz
 oh
 oh
 oh
@@ -20022,16 +20274,15 @@ oh
 oh
 oh
 oh
+XI
+Pa
+Pa
+Pa
+Pa
+Pa
+XI
+Hn
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-bY
 oh
 oh
 oh
@@ -20067,8 +20318,8 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -20223,20 +20474,20 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+XI
+XI
+sT
+Pa
+Pa
+Pa
+Pa
+Pa
+Pa
+nd
+il
+il
+il
+il
 oh
 oh
 oh
@@ -20272,7 +20523,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -20425,20 +20676,20 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-bY
-oh
-oh
+XI
+Pa
+Pa
+Pa
+Pa
+Pa
+Pa
+Pa
+XI
+nd
+Hn
+zC
+zC
+YM
 oh
 oh
 oh
@@ -20627,20 +20878,20 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+XI
+Pa
+Pa
+Pa
+Pa
+Pa
+Pa
+XI
+XI
+il
+il
+kc
+zC
+zC
 oh
 oh
 oh
@@ -20735,7 +20986,7 @@ il
 il
 il
 oh
-oh
+gc
 oh
 Xc
 hm
@@ -20829,20 +21080,20 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-bY
-oh
+XI
+Pa
+Pa
+Pa
+Pa
+Pa
+XI
+XI
+kn
+vS
+ys
+PV
+uN
+Wq
 oh
 oh
 oh
@@ -20876,8 +21127,8 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -21031,20 +21282,20 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+XI
+XI
+Pa
+Pa
+Pa
+Pa
+XI
+kn
+aK
+Bn
+ys
+ys
+ys
+il
 oh
 oh
 oh
@@ -21078,8 +21329,8 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -21234,19 +21485,19 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+XI
+XI
+XI
+XI
+sT
+XI
+kn
+aK
+qc
+iz
+he
+he
+il
 oh
 oh
 oh
@@ -21280,8 +21531,8 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -21439,16 +21690,16 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+XI
+kn
+kn
+kn
+kn
+pH
+pH
+pG
+pH
+Hn
 oh
 oh
 oh
@@ -21642,15 +21893,15 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+kn
+kn
+kn
+kn
+md
+iz
+QM
+QM
+il
 oh
 oh
 oh
@@ -21842,17 +22093,17 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+kn
+aK
+aK
+il
+ul
+Ze
+il
+bh
+nd
+bh
+UQ
 oh
 oh
 oh
@@ -22044,17 +22295,17 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+kn
+kn
+il
+il
+GL
+gh
+Qt
+JJ
+Ho
+OD
+OD
 oh
 oh
 oh
@@ -22246,18 +22497,18 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+il
+il
+il
+il
+il
+il
+il
+il
+il
+Hd
+Hd
+il
 oh
 oh
 oh
@@ -22448,18 +22699,18 @@ oh
 oh
 oh
 oh
+CV
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-bY
-oh
-oh
-oh
-oh
+il
+il
+Mo
+sn
+yK
+Kj
+Kj
+eo
 oh
 oh
 oh
@@ -22495,8 +22746,8 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -22650,18 +22901,18 @@ oh
 oh
 oh
 oh
+CV
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+il
+il
+Rd
+rx
+rx
+Kj
+Zc
+eo
 oh
 oh
 oh
@@ -22697,8 +22948,8 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -22783,7 +23034,7 @@ oh
 oh
 oh
 oh
-oh
+Hz
 oh
 oh
 oh
@@ -22852,18 +23103,18 @@ oh
 oh
 oh
 oh
+il
 oh
 oh
 oh
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
+il
+il
+il
+il
+EN
+EN
+il
 oh
 oh
 oh
@@ -22899,8 +23150,8 @@ oh
 oh
 oh
 oh
-oh
-oh
+kn
+kn
 oh
 oh
 oh
@@ -23060,7 +23311,6 @@ oh
 oh
 oh
 oh
-bY
 oh
 oh
 oh
@@ -23102,7 +23352,8 @@ oh
 oh
 oh
 oh
-bY
+kn
+Pv
 oh
 oh
 oh
@@ -23202,7 +23453,7 @@ oh
 oh
 oh
 oh
-oh
+Hz
 oh
 oh
 oh
@@ -23264,9 +23515,9 @@ oh
 oh
 oh
 oh
-oh
-oh
-oh
+yK
+il
+il
 oh
 oh
 oh
@@ -23464,10 +23715,10 @@ oh
 oh
 oh
 oh
-bY
 oh
 oh
-oh
+il
+il
 oh
 oh
 oh
@@ -24425,7 +24676,7 @@ oh
 oh
 oh
 oh
-oh
+Hz
 oh
 oh
 oh
@@ -25040,7 +25291,7 @@ oh
 oh
 oh
 oh
-oh
+hW
 XI
 XI
 XI
@@ -25930,7 +26181,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 XI
@@ -26064,7 +26315,7 @@ oh
 oh
 oh
 oh
-oh
+Hz
 oh
 oh
 oh
@@ -26938,7 +27189,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -27140,7 +27391,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -27342,7 +27593,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -27544,7 +27795,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -28054,7 +28305,7 @@ Pa
 XI
 Pa
 Pa
-XI
+aZ
 oh
 oh
 oh
@@ -28554,7 +28805,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -28756,7 +29007,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -28958,7 +29209,7 @@ oh
 oh
 oh
 oh
-oh
+kn
 oh
 oh
 oh
@@ -29495,7 +29746,7 @@ oh
 oh
 oh
 XI
-XI
+to
 Pa
 Pa
 Pa
@@ -30092,7 +30343,7 @@ XI
 XI
 XI
 XI
-XI
+to
 Pa
 XI
 oh
@@ -30295,7 +30546,7 @@ Pa
 Pa
 Pa
 Pa
-XI
+to
 XI
 XI
 oh
@@ -31112,7 +31363,7 @@ oh
 oh
 oh
 XI
-XI
+to
 Pa
 Pa
 Pa
@@ -32096,7 +32347,7 @@ uW
 Co
 Co
 Co
-GR
+AZ
 GR
 SV
 il
@@ -32297,7 +32548,7 @@ Co
 il
 Co
 FM
-kf
+Rk
 Uj
 DT
 tc
@@ -32326,7 +32577,7 @@ oh
 oh
 XI
 XI
-XI
+to
 Pa
 Pa
 Pa
@@ -32519,7 +32770,7 @@ oh
 oh
 oh
 Pa
-XI
+to
 oh
 oh
 oh
@@ -33513,8 +33764,8 @@ Pa
 Pa
 Pa
 Pa
+aZ
 XI
-XI
 oh
 oh
 oh
@@ -33529,7 +33780,7 @@ oh
 oh
 oh
 oh
-XI
+to
 XI
 oh
 oh
@@ -36745,7 +36996,7 @@ Pa
 Pa
 Pa
 Pa
-XI
+aZ
 oh
 oh
 oh
@@ -37553,7 +37804,7 @@ Pa
 Pa
 XI
 Pa
-XI
+aZ
 oh
 oh
 oh
