@@ -141,11 +141,6 @@
 /obj/random/powercell/small_safe,
 /turf/simulated/floor/tiled/steel/brown_platform,
 /area/outpost/abandoned_fortress/powered)
-"aK" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/space,
-/area/space)
 "aL" = (
 /turf/simulated/floor/wood,
 /area/awaymission/spacebattle/syndicate7)
@@ -220,10 +215,6 @@
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
-"bh" = (
-/obj/effect/floor_decal/industrial/outline,
-/turf/simulated/floor/tiled/dark/danger,
-/area/space)
 "bi" = (
 /obj/machinery/autolathe/loaded,
 /turf/simulated/floor/tiled/dark/golden,
@@ -424,6 +415,19 @@
 /obj/landmark/corpse/security/prisonguard,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
+"ch" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	frequency = 1331;
+	id_tag = "vox_east_vent"
+	},
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1331;
+	master_tag = "vox_east_control";
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/space)
 "cj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 5
@@ -538,6 +542,12 @@
 	tag = "icon-cargoshwall3"
 	},
 /area/outpost/abandoned_fortress/powered)
+"cC" = (
+/obj/machinery/door/airlock/hatch{
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
 "cE" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -628,6 +638,9 @@
 /obj/machinery/door/airlock/vault,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/outpost/abandoned_fortress/powered)
+"df" = (
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/space)
 "dh" = (
 /obj/machinery/shower{
 	pixel_y = 32
@@ -774,6 +787,10 @@
 /obj/machinery/atmospherics/unary/vent_pump/high_volume,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
+"dK" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/reinforced,
+/area/space)
 "dL" = (
 /obj/machinery/door/airlock/science,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -1055,6 +1072,10 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/hull,
 /area/outpost/abandoned_fortress/powered)
+"ff" = (
+/obj/effect/floor_decal/industrial/outline,
+/turf/simulated/floor/tiled/dark/danger,
+/area/space)
 "fg" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/drinkingglasses{
@@ -1127,6 +1148,10 @@
 /obj/effect/window_lwall_spawn/plasma,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
+"fI" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
 "fK" = (
 /obj/structure/flora/pottedplant/bush_tall,
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -1208,10 +1233,6 @@
 /obj/random/rations,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
-"gc" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
-/turf/space,
-/area/space)
 "gd" = (
 /obj/machinery/light_switch{
 	pixel_y = 28
@@ -1233,11 +1254,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/tiled/white,
 /area/outpost/abandoned_fortress/powered)
-"gh" = (
-/obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
-	dir = 4
-	},
+"gj" = (
+/obj/structure/table/woodentable,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/space)
 "gk" = (
@@ -1256,6 +1274,13 @@
 /obj/item/modular_computer/console,
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate1)
+"go" = (
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion_r";
+	dir = 8
+	},
+/turf/space,
+/area/space)
 "gp" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -1362,10 +1387,6 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/outpost/abandoned_fortress/powered)
-"gN" = (
-/obj/machinery/complant_teleporter,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/space)
 "gO" = (
 /obj/effect/floor_decal/industrial/hatch,
 /obj/machinery/bodyscanner,
@@ -1375,8 +1396,7 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/outpost/abandoned_fortress/powered)
 "gP" = (
-/obj/structure/bs_crystal_structure,
-/turf/simulated/floor/rock,
+/turf/simulated/floor/tiled/dark/danger,
 /area/space)
 "gS" = (
 /obj/structure/salvageable/computer_os,
@@ -1422,10 +1442,9 @@
 /obj/machinery/suit_storage_unit/excelsior,
 /turf/simulated/floor/tiled/techmaint,
 /area/awaymission/spacebattle/syndicate7)
-"he" = (
-/obj/effect/floor_decal/industrial/botleft,
-/obj/machinery/recharge_station,
-/turf/simulated/floor/tiled/steel/brown_platform,
+"hc" = (
+/mob/living/carbon/superior_animal/human/xiang,
+/turf/simulated/floor/tiled/dark/danger,
 /area/space)
 "hf" = (
 /obj/machinery/meter,
@@ -1462,10 +1481,26 @@
 /mob/living/carbon/superior_animal/human/prisoner/melee,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/outpost/abandoned_fortress/powered)
+"ht" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/mob/living/carbon/superior_animal/human/marine/shield,
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/awaymission/spacebattle/syndicate7)
 "hw" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/outpost/abandoned_fortress/powered)
+"hy" = (
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion_r";
+	dir = 4
+	},
+/turf/space,
+/area/space)
 "hz" = (
 /turf/simulated/shuttle/wall/cargo{
 	icon_state = "cargoshwall2";
@@ -1551,10 +1586,6 @@
 /obj/effect/floor_decal/industrial/warningwhite,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/awaymission/spacebattle/syndicate7)
-"hW" = (
-/mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught,
-/turf/space,
-/area/space)
 "hX" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -1601,6 +1632,10 @@
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/reinforced,
 /area/outpost/abandoned_fortress/powered)
+"in" = (
+/mob/living/simple_animal/hostile/carp/shark,
+/turf/space,
+/area/space)
 "io" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 1
@@ -1639,10 +1674,6 @@
 /obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
-"iz" = (
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/tiled/techmaint_cargo,
-/area/space)
 "iA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 10
@@ -1680,6 +1711,9 @@
 /mob/living/carbon/superior_animal/human/marine/shotgun,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/awaymission/spacebattle/syndicate7)
+"iH" = (
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
 "iK" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
@@ -1715,6 +1749,11 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/outpost/abandoned_fortress/powered)
+"iQ" = (
+/mob/living/simple_animal/hostile/carp/shark,
+/mob/living/simple_animal/hostile/carp/shark,
+/turf/simulated/floor/rock,
+/area/space)
 "iR" = (
 /mob/living/carbon/superior_animal/human/prisoner,
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -1845,6 +1884,11 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
+"jt" = (
+/obj/effect/floor_decal/industrial/botleft,
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/space)
 "ju" = (
 /obj/item/storage/box/solution_trays,
 /obj/structure/table/rack/shelf,
@@ -1946,12 +1990,6 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating/under,
-/area/space)
-"kc" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/space)
 "kd" = (
 /obj/structure/bed/padded,
@@ -2304,6 +2342,12 @@
 /obj/machinery/light,
 /turf/simulated/floor/reinforced,
 /area/space)
+"lK" = (
+/obj/structure/shuttle/engine/heater,
+/obj/structure/shuttle/engine/heater,
+/obj/structure/shuttle/engine/heater,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/space)
 "lL" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/light{
@@ -2353,6 +2397,11 @@
 /obj/machinery/door/airlock/research,
 /turf/simulated/floor/tiled/white/cargo,
 /area/outpost/abandoned_fortress/powered)
+"lZ" = (
+/obj/structure/lattice,
+/obj/structure/lattice,
+/turf/space,
+/area/space)
 "mc" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -2362,10 +2411,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/outpost/abandoned_fortress/powered)
-"md" = (
-/obj/structure/table/woodentable,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/space)
 "mf" = (
 /obj/item/bluespace_dust,
 /turf/space,
@@ -2432,6 +2477,10 @@
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
+"my" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/space)
 "mz" = (
 /obj/structure/sign/department/morgue,
 /turf/simulated/wall/r_wall,
@@ -2448,6 +2497,10 @@
 /obj/landmark/corpse/engineer,
 /turf/simulated/floor/plating/under,
 /area/outpost/abandoned_fortress/powered)
+"mE" = (
+/mob/living/simple_animal/hostile/megafauna/excelsior_cosmonaught,
+/turf/space,
+/area/space)
 "mF" = (
 /obj/structure/table/woodentable,
 /obj/item/clothing/accessory/necklace/dogtags,
@@ -2583,7 +2636,11 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
-"nd" = (
+"nc" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/space)
 "ne" = (
@@ -2921,6 +2978,10 @@
 /mob/living/carbon/superior_animal/human/xiang,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/awaymission/spacebattle/syndicate1)
+"oO" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/plating/under,
+/area/space)
 "oP" = (
 /obj/structure/table/rack/shelf,
 /obj/random/prothesis/one_star,
@@ -3045,10 +3106,6 @@
 /obj/structure/salvageable/computer_os,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/space)
-"po" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
-/turf/simulated/floor/plating/under,
-/area/space)
 "pp" = (
 /obj/effect/floor_decal/industrial/hatch,
 /obj/machinery/suit_storage_unit/excelsior,
@@ -3113,12 +3170,12 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
-"pG" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/steel/brown_perforated,
-/area/space)
 "pH" = (
-/turf/simulated/floor/tiled/steel/brown_perforated,
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion_r";
+	dir = 4
+	},
+/turf/simulated/floor/plating/under,
 /area/space)
 "pI" = (
 /obj/effect/window_lwall_spawn/smartspawn,
@@ -3216,10 +3273,6 @@
 /obj/structure/flora/pottedplant/clockcult,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
-"qc" = (
-/obj/structure/reagent_dispensers/watertank/derelict,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/space)
 "qf" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/tiled/white/violetcorener,
@@ -3462,6 +3515,10 @@
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/space)
+"ry" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/space)
 "rz" = (
 /mob/living/carbon/superior_animal/human/marine,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -3687,10 +3744,6 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/outpost/abandoned_fortress/powered)
-"sM" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
-/turf/simulated/floor/tiled/cafe,
-/area/awaymission/spacebattle/syndicate2)
 "sN" = (
 /obj/effect/floor_decal/industrial/loading/white{
 	dir = 1
@@ -3811,6 +3864,11 @@
 /obj/machinery/porta_turret/excelsior/preloaded,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/awaymission/spacebattle/syndicate7)
+"th" = (
+/obj/machinery/washing_machine,
+/obj/effect/floor_decal/industrial/hatch,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/space)
 "ti" = (
 /obj/structure/shuttle/engine/propulsion,
 /turf/simulated/floor/plating/under,
@@ -3913,6 +3971,12 @@
 /mob/living/carbon/superior_animal/human/prisoner/melee,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
+"tJ" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/space,
+/area/space)
 "tL" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/rock,
@@ -4023,14 +4087,6 @@
 "uk" = (
 /turf/simulated/wall/r_wall,
 /area/awaymission/spacebattle/syndicate2)
-"ul" = (
-/obj/machinery/airlock_sensor{
-	frequency = 1331;
-	id_tag = "vox_east_sensor";
-	pixel_x = -25
-	},
-/turf/simulated/floor/tiled/dark/cargo,
-/area/space)
 "um" = (
 /obj/structure/table/standard,
 /obj/item/device/lighting/toggleable/lamp,
@@ -4154,11 +4210,6 @@
 /mob/living/carbon/superior_animal/human/prisoner,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/outpost/abandoned_fortress/powered)
-"uN" = (
-/obj/machinery/washing_machine,
-/obj/effect/floor_decal/industrial/hatch,
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/space)
 "uP" = (
 /obj/machinery/atmospherics/pipe/tank/air{
 	dir = 4;
@@ -4263,6 +4314,13 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/awaymission/spacebattle/syndicate7)
+"vg" = (
+/obj/item/bedsheet,
+/obj/structure/bed,
+/obj/structure/curtain/open/bed,
+/obj/item/toy/plushie/cat/grey,
+/turf/simulated/floor/carpet/turcarpet,
+/area/space)
 "vk" = (
 /obj/random/scrap,
 /turf/simulated/floor/tiled/techmaint,
@@ -4388,10 +4446,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/awaymission/spacebattle/syndicate1)
-"vS" = (
-/obj/machinery/smartfridge/drying_rack,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/space)
 "vV" = (
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech,
 /turf/simulated/floor/rock,
@@ -4523,6 +4577,16 @@
 /obj/item/storage/firstaid/regular,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/outpost/abandoned_fortress/powered)
+"wy" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
+/turf/simulated/floor/tiled/dark/danger,
+/area/space)
+"wA" = (
+/obj/structure/reagent_dispensers/watertank,
+/obj/item/mop,
+/obj/effect/floor_decal/industrial/hatch,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/space)
 "wB" = (
 /obj/structure/disposalpipe/broken{
 	dir = 1
@@ -4912,13 +4976,14 @@
 /obj/structure/sign/department/bridge,
 /turf/simulated/wall/r_wall,
 /area/awaymission/spacebattle/syndicate7)
+"yn" = (
+/obj/random/mob/carp,
+/obj/structure/lattice,
+/turf/space,
+/area/space)
 "yr" = (
 /obj/item/material/shard/plasma,
 /turf/simulated/floor/rock,
-/area/space)
-"ys" = (
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating/under,
 /area/space)
 "yt" = (
 /obj/effect/window_lwall_spawn/smartspawn,
@@ -5159,9 +5224,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
-"zC" = (
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/space)
 "zD" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -5198,6 +5260,11 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
+"zM" = (
+/obj/effect/floor_decal/industrial/botright,
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/space)
 "zO" = (
 /mob/living/carbon/superior_animal/human/prisoner/melee,
 /turf/simulated/shuttle/floor/mining{
@@ -5255,6 +5322,10 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate7)
+"zW" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/space,
+/area/space)
 "Aa" = (
 /obj/item/ammo_casing/shotgun/spent,
 /turf/simulated/floor/tiled/white/cargo,
@@ -5287,6 +5358,11 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/awaymission/spacebattle/syndicate7)
+"Ar" = (
+/obj/structure/lattice,
+/obj/structure/lattice,
+/turf/simulated/floor/plating/under,
+/area/space)
 "As" = (
 /obj/structure/table/rack/shelf,
 /obj/structure/disposalpipe/segment,
@@ -5294,6 +5370,10 @@
 /obj/item/soap,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
+"At" = (
+/obj/machinery/smartfridge/drying_rack,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/space)
 "Av" = (
 /obj/item/storage/deferred/crate/tools,
 /turf/simulated/shuttle/floor/mining,
@@ -5334,10 +5414,6 @@
 /obj/random/gun_cheap,
 /turf/simulated/floor/reinforced,
 /area/outpost/abandoned_fortress/powered)
-"AD" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
-/turf/simulated/floor/reinforced,
-/area/space)
 "AE" = (
 /obj/structure/table/glass,
 /obj/random/medical/low_chance,
@@ -5379,6 +5455,16 @@
 /area/awaymission/spacebattle/syndicate7)
 "AR" = (
 /turf/simulated/floor/tiled/techmaint,
+/area/space)
+"AT" = (
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1331;
+	master_tag = "vox_east_control";
+	pixel_x = 22
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
+/turf/space,
 /area/space)
 "AY" = (
 /obj/structure/shuttle_part/cargo{
@@ -5431,10 +5517,6 @@
 "Bl" = (
 /turf/simulated/floor/tiled/steel/panels,
 /area/outpost/abandoned_fortress/powered)
-"Bn" = (
-/obj/machinery/seed_extractor,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/space)
 "Bo" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
@@ -5551,10 +5633,6 @@
 /mob/living/carbon/superior_animal/human/prisoner/melee,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
-"Cb" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
-/turf/simulated/floor/tiled/white/techfloor_grid,
-/area/space)
 "Cd" = (
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl,
@@ -5745,16 +5823,10 @@
 /obj/machinery/vending/tool,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/outpost/abandoned_fortress/powered)
-"CV" = (
-/obj/machinery/door/airlock/hatch{
-	frequency = 1331;
-	icon_state = "door_closed";
-	id_tag = "vox_northeast_lock";
-	locked = 0;
-	req_access = newlist()
-	},
-/turf/simulated/floor/tiled/techmaint_cargo,
-/area/space)
+"CT" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/reinforced,
+/area/awaymission/spacebattle/syndicate2)
 "CX" = (
 /obj/structure/railing,
 /obj/structure/railing{
@@ -5895,6 +5967,10 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/hull,
 /area/outpost/abandoned_fortress/powered)
+"Dy" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating/under,
+/area/space)
 "Dz" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -6094,11 +6170,6 @@
 /obj/structure/table/bench/steel,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
-"EA" = (
-/obj/random/techpart/low_chance,
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
-/turf/simulated/floor/tiled/cafe,
-/area/awaymission/spacebattle/syndicate2)
 "EB" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/multi_tile/metal{
@@ -6106,10 +6177,6 @@
 	},
 /turf/simulated/floor/tiled/steel/cargo,
 /area/outpost/abandoned_fortress/powered)
-"EC" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
-/turf/simulated/floor/tiled/dark/brown_platform,
-/area/space)
 "EG" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/tiled/steel/cargo,
@@ -6524,19 +6591,6 @@
 /obj/machinery/vending/printomat,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
-"GL" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1331;
-	id_tag = "vox_east_vent"
-	},
-/obj/machinery/access_button{
-	command = "cycle_exterior";
-	frequency = 1331;
-	master_tag = "vox_east_control";
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled/dark/cargo,
-/area/space)
 "GN" = (
 /obj/random/scrap,
 /obj/machinery/light/small{
@@ -6571,6 +6625,16 @@
 	},
 /turf/simulated/floor/tiled/dark/panels,
 /area/awaymission/spacebattle/syndicate7)
+"GX" = (
+/obj/machinery/door/airlock/hatch{
+	frequency = 1331;
+	icon_state = "door_closed";
+	id_tag = "vox_northeast_lock";
+	locked = 0;
+	req_access = newlist()
+	},
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
 "GY" = (
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/space)
@@ -6608,19 +6672,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
-"Hn" = (
-/obj/machinery/door/airlock/hatch{
-	req_access = newlist()
-	},
-/turf/simulated/floor/tiled/techmaint_cargo,
-/area/space)
-"Ho" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/space)
 "Hp" = (
 /turf/simulated/mineral,
 /area/awaymission/spacebattle/syndicate7)
@@ -6653,10 +6704,6 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
-"Hz" = (
-/mob/living/carbon/superior_animal/human/excelsior,
-/turf/space,
-/area/space)
 "HA" = (
 /obj/machinery/light{
 	dir = 8
@@ -6830,6 +6877,10 @@
 /obj/item/deck/cards,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/awaymission/spacebattle/syndicate2)
+"Iv" = (
+/obj/machinery/seed_extractor,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/space)
 "Ix" = (
 /obj/structure/closet/secure_closet/rare_loot,
 /obj/machinery/light/small{
@@ -7102,6 +7153,16 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/outpost/abandoned_fortress/powered)
+"Jy" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/item/bedsheet,
+/obj/structure/bed,
+/obj/structure/curtain/open/bed,
+/obj/item/oddity/common/teddy,
+/turf/simulated/floor/carpet/sblucarpet,
+/area/space)
 "Jz" = (
 /obj/structure/table/rack/shelf,
 /obj/random/lathe_disk/ammo,
@@ -7121,6 +7182,10 @@
 /obj/machinery/atmospherics/pipe/simple/visible,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/awaymission/spacebattle/syndicate7)
+"JE" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/cafe,
+/area/awaymission/spacebattle/syndicate2)
 "JH" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Fortress Airlock"
@@ -7140,16 +7205,6 @@
 	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/gray_perforated,
-/area/space)
-"JJ" = (
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1331;
-	master_tag = "vox_east_control";
-	pixel_x = 22
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
-/turf/simulated/floor/tiled/dark/danger,
 /area/space)
 "JL" = (
 /obj/structure/catwalk,
@@ -7351,6 +7406,10 @@
 	tag = "icon-cargoshwall40"
 	},
 /turf/space,
+/area/space)
+"KC" = (
+/obj/machinery/light/floor,
+/turf/simulated/floor/tiled/steel/brown_perforated,
 /area/space)
 "KD" = (
 /obj/machinery/conveyor/south{
@@ -7681,6 +7740,13 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/awaymission/spacebattle/syndicate7)
+"Mm" = (
+/obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/space)
 "Mo" = (
 /obj/structure/closet/coffin/spawnercorpse,
 /obj/effect/floor_decal/industrial/outline,
@@ -7801,10 +7867,6 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/awaymission/spacebattle/syndicate7)
-"Nb" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
-/turf/simulated/floor/reinforced,
-/area/awaymission/spacebattle/syndicate2)
 "Nc" = (
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/reinforced,
@@ -7836,6 +7898,10 @@
 /mob/living/carbon/superior_animal/human/excelsior/excel_ak,
 /turf/simulated/floor/tiled/dark/danger,
 /area/awaymission/spacebattle/syndicate7)
+"Nk" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/space)
 "Nl" = (
 /turf/simulated/floor/carpet/purcarpet,
 /area/outpost/abandoned_fortress/powered)
@@ -7847,10 +7913,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
-"Np" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/space)
 "Nq" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating/under,
@@ -8067,6 +8129,9 @@
 	tag = "icon-cargoshwall24"
 	},
 /area/outpost/abandoned_fortress/powered)
+"Os" = (
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/space)
 "Ot" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/medical,
@@ -8123,10 +8188,6 @@
 /obj/machinery/door/airlock/maintenance_interior,
 /turf/simulated/floor/reinforced,
 /area/awaymission/spacebattle/syndicate2)
-"OD" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
-/turf/simulated/floor/tiled/dark/danger,
-/area/space)
 "OE" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -8295,11 +8356,6 @@
 /obj/machinery/door/window/northright,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/outpost/abandoned_fortress/powered)
-"Pv" = (
-/obj/random/mob/carp,
-/obj/structure/lattice,
-/turf/space,
-/area/space)
 "Pw" = (
 /obj/random/material_ore,
 /obj/random/material_ore,
@@ -8361,6 +8417,10 @@
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged,
 /turf/simulated/floor/plating/under,
 /area/space)
+"PL" = (
+/obj/machinery/complant_teleporter,
+/turf/simulated/floor/rock,
+/area/space)
 "PN" = (
 /obj/machinery/portable_atmospherics/canister/plasma,
 /obj/item/tank/plasma,
@@ -8411,12 +8471,6 @@
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/awaymission/spacebattle/syndicate7)
-"PV" = (
-/obj/structure/reagent_dispensers/watertank,
-/obj/item/mop,
-/obj/effect/floor_decal/industrial/hatch,
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/space)
 "PX" = (
 /obj/landmark/corpse/antagonist/pirate,
 /turf/simulated/floor/tiled/steel,
@@ -8507,17 +8561,6 @@
 /obj/structure/shuttle/engine/propulsion,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/awaymission/spacebattle/syndicate7)
-"Qt" = (
-/obj/machinery/door/airlock/hatch{
-	frequency = 1331;
-	icon_state = "door_closed";
-	id_tag = "vox_southeast_lock";
-	locked = 0;
-	req_access = newlist()
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
-/turf/simulated/floor/tiled/techmaint_cargo,
-/area/space)
 "Qw" = (
 /obj/structure/closet,
 /obj/item/melee/energy/sword/pirate,
@@ -8582,9 +8625,8 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/abandoned_fortress/powered)
 "QM" = (
-/obj/effect/floor_decal/industrial/botright,
-/obj/machinery/recharge_station,
-/turf/simulated/floor/tiled/steel/brown_platform,
+/obj/structure/reagent_dispensers/watertank/derelict,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/space)
 "QO" = (
 /obj/effect/decal/cleanable/blood,
@@ -8683,15 +8725,6 @@
 /mob/living/carbon/superior_animal/human/prisoner/melee,
 /turf/simulated/floor/plating/under,
 /area/outpost/abandoned_fortress/powered)
-"Rk" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_y = 0
-	},
-/mob/living/carbon/superior_animal/human/marine/shield,
-/turf/simulated/floor/tiled/dark/bluecorner,
-/area/awaymission/spacebattle/syndicate7)
 "Rl" = (
 /obj/effect/floor_decal/spline/fancy,
 /obj/effect/floor_decal/steeldecal/steel_decals10{
@@ -8886,10 +8919,6 @@
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/awaymission/spacebattle/syndicate1)
-"Sj" = (
-/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
-/turf/simulated/floor/tiled/dark/monofloor,
-/area/space)
 "Sl" = (
 /obj/machinery/light{
 	dir = 4
@@ -9159,6 +9188,13 @@
 /mob/living/carbon/superior_animal/human/voidwolf/ranged,
 /turf/simulated/floor/rock,
 /area/space)
+"Tw" = (
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion_r";
+	dir = 1
+	},
+/turf/space,
+/area/space)
 "Ty" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -9166,6 +9202,10 @@
 	},
 /turf/space,
 /area/outpost/abandoned_fortress/powered)
+"Tz" = (
+/obj/machinery/complant_teleporter,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/space)
 "TA" = (
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/reinforced,
@@ -9469,10 +9509,6 @@
 /obj/machinery/smartfridge/drying_rack,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/awaymission/spacebattle/syndicate1)
-"UQ" = (
-/mob/living/carbon/superior_animal/human/xiang,
-/turf/simulated/floor/tiled/dark/danger,
-/area/space)
 "UR" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/white/cargo,
@@ -9570,6 +9606,10 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/awaymission/spacebattle/syndicate7)
+"Vx" = (
+/mob/living/carbon/superior_animal/human/excelsior,
+/turf/space,
+/area/space)
 "Vy" = (
 /obj/machinery/door/airlock/research,
 /turf/simulated/floor/tiled/white/techfloor_grid,
@@ -9587,6 +9627,17 @@
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/outpost/abandoned_fortress/powered)
+"VC" = (
+/obj/machinery/door/airlock/hatch{
+	frequency = 1331;
+	icon_state = "door_closed";
+	id_tag = "vox_southeast_lock";
+	locked = 0;
+	req_access = newlist()
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
+/turf/simulated/floor/tiled/techmaint_cargo,
+/area/space)
 "VG" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/dark/danger,
@@ -9658,6 +9709,15 @@
 /mob/living/carbon/superior_animal/human/prisoner/melee,
 /turf/simulated/shuttle/floor/mining,
 /area/outpost/abandoned_fortress/powered)
+"VZ" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4;
+	frequency = 1331;
+	id_tag = "vox_east_vent"
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/space)
 "Wa" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/random/closet,
@@ -9712,17 +9772,18 @@
 /obj/machinery/vending/assist,
 /turf/simulated/floor/tiled/white/cargo,
 /area/outpost/abandoned_fortress/powered)
+"Wn" = (
+/obj/machinery/airlock_sensor{
+	frequency = 1331;
+	id_tag = "vox_east_sensor";
+	pixel_x = -25
+	},
+/turf/space,
+/area/space)
 "Wp" = (
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/awaymission/spacebattle/syndicate1)
-"Wq" = (
-/obj/item/bedsheet,
-/obj/structure/bed,
-/obj/structure/curtain/open/bed,
-/obj/item/toy/plushie/cat/grey,
-/turf/simulated/floor/carpet/turcarpet,
-/area/space)
 "Ws" = (
 /obj/structure/closet/secure_closet/injection,
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -9845,6 +9906,11 @@
 /obj/machinery/door/blast/regular/open,
 /turf/simulated/floor/reinforced,
 /area/outpost/abandoned_fortress/powered)
+"WW" = (
+/obj/structure/shuttle/engine/heater,
+/obj/structure/shuttle/engine/heater,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/space)
 "WY" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -9954,10 +10020,6 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/awaymission/spacebattle/syndicate1)
-"Xt" = (
-/obj/machinery/complant_teleporter,
-/turf/simulated/floor/rock,
-/area/space)
 "Xu" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Fortress Airlock"
@@ -10044,6 +10106,11 @@
 /mob/living/carbon/superior_animal/human/marine/shotgun,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
+"XN" = (
+/obj/random/techpart/low_chance,
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/cafe,
+/area/awaymission/spacebattle/syndicate2)
 "XO" = (
 /obj/machinery/light{
 	dir = 4
@@ -10229,16 +10296,6 @@
 /obj/machinery/am_shielding,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/awaymission/spacebattle/syndicate7)
-"YM" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/item/bedsheet,
-/obj/structure/bed,
-/obj/structure/curtain/open/bed,
-/obj/item/oddity/common/teddy,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/space)
 "YO" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /turf/simulated/floor/tiled/white/cargo,
@@ -10290,15 +10347,6 @@
 "Zc" = (
 /mob/living/carbon/superior_animal/human/xiang,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/space)
-"Ze" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 4;
-	frequency = 1331;
-	id_tag = "vox_east_vent"
-	},
-/obj/machinery/light/small,
-/turf/simulated/floor/tiled/dark/cargo,
 /area/space)
 "Zg" = (
 /obj/structure/sink/kitchen{
@@ -10384,6 +10432,10 @@
 /obj/random/junk/nondense,
 /turf/simulated/floor/plating/under,
 /area/outpost/abandoned_fortress/powered)
+"ZA" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/space)
 "ZB" = (
 /obj/structure/multiz/stairs/enter,
 /obj/structure/railing/grey{
@@ -12187,7 +12239,7 @@ bY
 oh
 oh
 oh
-oh
+in
 oh
 oh
 oh
@@ -12999,7 +13051,7 @@ Pa
 XI
 fp
 oh
-XI
+iQ
 XI
 XI
 XI
@@ -13404,7 +13456,7 @@ Pa
 XI
 Pa
 Pa
-gP
+XI
 Pa
 Pa
 Pa
@@ -14001,9 +14053,6 @@ oh
 XI
 Pa
 Pa
-gP
-NS
-XI
 XI
 NS
 XI
@@ -14011,7 +14060,10 @@ XI
 NS
 XI
 XI
-gP
+NS
+XI
+XI
+XI
 Pa
 Pa
 XI
@@ -14790,7 +14842,7 @@ oh
 oh
 oh
 oh
-Hz
+Vx
 oh
 oh
 oh
@@ -17472,7 +17524,7 @@ oh
 oh
 oh
 kn
-aK
+lZ
 oh
 oh
 oh
@@ -17565,7 +17617,7 @@ dk
 xX
 dk
 YR
-Nb
+CT
 su
 Nc
 ed
@@ -18163,7 +18215,7 @@ kC
 il
 cA
 dk
-AD
+dK
 dk
 eQ
 il
@@ -18187,7 +18239,7 @@ oh
 oh
 oh
 oh
-aK
+lZ
 kn
 kn
 kn
@@ -18370,9 +18422,9 @@ ky
 Rg
 il
 Zg
-sM
+JE
 Ba
-EA
+XN
 Yd
 il
 il
@@ -18384,8 +18436,8 @@ oh
 oh
 oh
 kn
-aK
-aK
+lZ
+lZ
 kn
 kn
 oh
@@ -18455,7 +18507,7 @@ oh
 oh
 oh
 oh
-Hz
+Vx
 oh
 oh
 oh
@@ -18586,7 +18638,7 @@ oh
 oh
 oh
 kn
-aK
+lZ
 kn
 oh
 oh
@@ -18756,7 +18808,7 @@ Pa
 yr
 Qo
 Uv
-Np
+Nk
 SC
 dk
 oh
@@ -18786,7 +18838,7 @@ oh
 VT
 kn
 kn
-aK
+lZ
 oh
 oh
 oh
@@ -18958,7 +19010,7 @@ Pa
 sT
 Dj
 Ap
-Sj
+my
 vK
 dk
 Ya
@@ -19037,7 +19089,7 @@ oh
 oh
 oh
 oh
-Hz
+Vx
 oh
 oh
 oh
@@ -19562,9 +19614,9 @@ XI
 FV
 ll
 an
-gN
+Tz
 Uv
-Np
+Nk
 SC
 Ya
 Qo
@@ -19576,7 +19628,7 @@ Qo
 Dn
 il
 XU
-AD
+dK
 Rg
 KQ
 Rg
@@ -19784,7 +19836,7 @@ NU
 Kl
 il
 Yx
-EC
+ry
 Ip
 dV
 dW
@@ -19825,7 +19877,7 @@ oh
 oh
 oh
 oh
-Hz
+Vx
 oh
 oh
 oh
@@ -19859,7 +19911,7 @@ oh
 oh
 oh
 oh
-Hz
+Vx
 oh
 oh
 oh
@@ -19877,7 +19929,7 @@ Pa
 Pa
 Pa
 XI
-nd
+gP
 oh
 oh
 oh
@@ -19976,7 +20028,7 @@ il
 Ed
 uH
 oh
-po
+oO
 Ph
 il
 MX
@@ -19986,7 +20038,7 @@ Rg
 Rg
 il
 Zx
-Cb
+ZA
 KM
 il
 Sc
@@ -20079,7 +20131,7 @@ Pa
 Pa
 Pa
 sT
-nd
+gP
 oh
 oh
 oh
@@ -20183,7 +20235,7 @@ GS
 il
 ks
 eQ
-AD
+dK
 dk
 lJ
 il
@@ -20211,7 +20263,7 @@ oh
 oh
 XI
 Pa
-Xt
+PL
 Pa
 Pa
 Pa
@@ -20245,7 +20297,7 @@ oh
 oh
 oh
 oh
-Hz
+Vx
 oh
 oh
 oh
@@ -20281,7 +20333,7 @@ Pa
 Pa
 Pa
 XI
-Hn
+cC
 oh
 oh
 oh
@@ -20483,13 +20535,13 @@ Pa
 Pa
 Pa
 Pa
-nd
+gP
 il
 il
 il
 il
-oh
-oh
+kn
+iW
 oh
 oh
 oh
@@ -20685,13 +20737,13 @@ Pa
 Pa
 Pa
 XI
-nd
-Hn
-zC
-zC
-YM
-oh
-oh
+gP
+cC
+Os
+Os
+Jy
+iW
+kn
 oh
 oh
 oh
@@ -20889,11 +20941,11 @@ XI
 XI
 il
 il
-kc
-zC
-zC
-oh
-oh
+tJ
+Os
+kn
+iW
+kn
 oh
 oh
 oh
@@ -20986,7 +21038,7 @@ il
 il
 il
 oh
-gc
+zW
 oh
 Xc
 hm
@@ -21089,12 +21141,12 @@ Pa
 XI
 XI
 kn
-vS
-ys
-PV
-uN
-Wq
-oh
+At
+Dy
+wA
+th
+vg
+lZ
 oh
 oh
 oh
@@ -21290,16 +21342,16 @@ Pa
 Pa
 XI
 kn
-aK
-Bn
-ys
-ys
-ys
-il
+lZ
+Iv
+Dy
+Dy
+iW
+kn
 oh
-oh
-oh
-oh
+Ar
+kn
+hy
 oh
 oh
 oh
@@ -21492,15 +21544,15 @@ XI
 sT
 XI
 kn
-aK
-qc
-iz
-he
-he
-il
+lZ
+QM
+fI
+jt
+jt
+kn
+lZ
 oh
-oh
-oh
+eo
 oh
 oh
 oh
@@ -21695,15 +21747,15 @@ kn
 kn
 kn
 kn
-pH
-pH
-pG
-pH
-Hn
+kn
+df
+KC
+df
+iH
 oh
-oh
-oh
-oh
+Qo
+eo
+Tw
 oh
 oh
 oh
@@ -21897,17 +21949,17 @@ kn
 kn
 kn
 kn
-md
-iz
-QM
-QM
+gj
+fI
+zM
+zM
 il
+Qo
+lK
+pH
 oh
 oh
-oh
-oh
-oh
-oh
+go
 oh
 oh
 il
@@ -22094,18 +22146,18 @@ oh
 oh
 oh
 kn
-aK
-aK
+lZ
+lZ
 il
-ul
-Ze
+Wn
+VZ
 il
-bh
-nd
-bh
-UQ
+ff
 oh
-oh
+ff
+hc
+Qo
+WW
 oh
 oh
 oh
@@ -22299,16 +22351,16 @@ kn
 kn
 il
 il
-GL
-gh
-Qt
-JJ
-Ho
-OD
-OD
+ch
+Mm
+VC
+AT
+nc
+wy
+wy
 oh
 oh
-oh
+Qo
 oh
 oh
 oh
@@ -22511,7 +22563,7 @@ Hd
 il
 oh
 oh
-oh
+go
 oh
 oh
 oh
@@ -22699,7 +22751,7 @@ oh
 oh
 oh
 oh
-CV
+GX
 oh
 oh
 oh
@@ -22708,7 +22760,7 @@ il
 Mo
 sn
 yK
-Kj
+oh
 Kj
 eo
 oh
@@ -22901,16 +22953,16 @@ oh
 oh
 oh
 oh
-CV
+oh
 oh
 oh
 oh
 il
 il
 Rd
-rx
-rx
-Kj
+oh
+oh
+oh
 Zc
 eo
 oh
@@ -23034,7 +23086,7 @@ oh
 oh
 oh
 oh
-Hz
+Vx
 oh
 oh
 oh
@@ -23353,7 +23405,7 @@ oh
 oh
 oh
 kn
-Pv
+yn
 oh
 oh
 oh
@@ -23453,7 +23505,7 @@ oh
 oh
 oh
 oh
-Hz
+Vx
 oh
 oh
 oh
@@ -24676,7 +24728,7 @@ oh
 oh
 oh
 oh
-Hz
+Vx
 oh
 oh
 oh
@@ -25291,7 +25343,7 @@ oh
 oh
 oh
 oh
-hW
+mE
 XI
 XI
 XI
@@ -26315,7 +26367,7 @@ oh
 oh
 oh
 oh
-Hz
+Vx
 oh
 oh
 oh
@@ -32548,7 +32600,7 @@ Co
 il
 Co
 FM
-Rk
+ht
 Uj
 DT
 tc
