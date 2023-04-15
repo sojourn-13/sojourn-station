@@ -66,7 +66,7 @@
 	shuttle_area = /area/shuttle/skipjack_area
 	current_location = "nav_skipjack_homebase"
 	landmark_transition = "nav_skipjack_transit"
-	destination_tags = list("nav_skipjack_homebase", "nav_skipjack_colony", "nav_skipjack_forest", "nav_skipjack_river", "nav_skipjack_spacefortress")  was lost
+	destination_tags = list("nav_skipjack_homebase", "nav_skipjack_colony", "nav_skipjack_forest", "nav_skipjack_river")  was lost
 
 /obj/effect/shuttle_landmark/skipjack_home
 	name = "Skipjack Homebase"
