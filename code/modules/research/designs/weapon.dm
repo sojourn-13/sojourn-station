@@ -177,7 +177,7 @@
 	materials = list(MATERIAL_STEEL = 15)
 	
 /datum/design/research/item/ammo/pistol/rubber
-	name = "Pistol Magazine 9mm (Rubber)
+	name = "Pistol Magazine 9mm (Rubber)"
 	desc = "A magazine for pistols, chambered for 9mm rubber"
 	build_path = /obj/item/ammo_magazine/pistol_35/rubber
 	materials = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 3)
