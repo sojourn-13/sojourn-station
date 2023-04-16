@@ -13,7 +13,7 @@
 
 	unlocks_designs = list(/datum/design/research/item/clothing/security,
 							/datum/design/research/item/weapon/clarissa,
-							/datum/design/research/item/ammo/pistol)
+							/datum/design/research/item/ammo/pistol/empty)
 
 // TO ADD: synth flashes?
 /datum/technology/basic_nonlethal
@@ -154,6 +154,7 @@
 	cost = 1500
 
 	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade,
+							/datum/design/research/item/ammo/pistol,
 							/datum/design/research/item/ammo/smg_mag,
 							/datum/design/research/item/ammo/pistol_laser,
 							/datum/design/research/item/ammo/magum_laser,
@@ -214,7 +215,6 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/c20r,
-							/datum/design/research/item/ammo/pistol/lethal,
 							/datum/design/research/item/ammo/smg_mag/lethal,
 							/datum/design/research/item/ammo/smg_mag/rubber,
 							/datum/design/research/item/weapon/katana,
