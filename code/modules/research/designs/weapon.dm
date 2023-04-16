@@ -164,23 +164,23 @@
 	name_category = "ammunition"
 	category = "Ammo"
 	
-/datum/design/research/item/ammo/pistol
-	name = "Pistol Magazine 9mm (Empty) "
-	desc = "A magazine for pistols, chambered for 9mm"
-	build_path = /obj/item/ammo_magazine/pistol_35
-	materials = list(MATERIAL_STEEL = 5)
+/datum/design/research/item/ammo/pistol/empty
+	name = "Pistol Magazine 9mm (Empty)"
+	desc = "An empty magazine for pistols, chambered for 9mm"
+	build_path = /obj/item/ammo_magazine/pistol_35/empty
+	materials = list(MATERIAL_STEEL = 3)
 	
-/datum/design/research/item/ammo/pistol/lethal
+/datum/design/research/item/ammo/pistol
 	name = "Pistol Magazine 9mm"
 	desc = "A magazine for pistols, chambered for 9mm"
-	build_path = /obj/item/ammo_magazine/pistol_35/lethal
-	materials = list(MATERIAL_STEEL = 15)
+	build_path = /obj/item/ammo_magazine/pistol_35
+	materials = list(MATERIAL_STEEL = 8)
 	
 /datum/design/research/item/ammo/pistol/rubber
 	name = "Pistol Magazine 9mm (Rubber)"
 	desc = "A magazine for pistols, chambered for 9mm rubber"
 	build_path = /obj/item/ammo_magazine/pistol_35/rubber
-	materials = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 3)
+	materials = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 3)
 
 /datum/design/research/item/ammo/smg_mag
 	name = "SMG Magazine 9mm (Empty) "
