@@ -214,14 +214,13 @@
 
 	unlocks_designs = list(
 							/datum/design/research/item/weapon/c20r,
-							/datum/design/research/item/ammo/pistol/lethal
+							/datum/design/research/item/ammo/pistol/lethal,
 							/datum/design/research/item/ammo/smg_mag/lethal,
 							/datum/design/research/item/ammo/smg_mag/rubber,
 							/datum/design/research/item/weapon/katana,
 							/datum/design/research/item/ammo/rifle_75,
 							/datum/design/research/item/ammo/light_rifle_257,
-							/datum/design/research/item/ammo/kurtz_laser
-						)
+							/datum/design/research/item/ammo/kurtz_laser)
 
 /datum/technology/exotic_gunmods
 	name = "Experimental Gunmods"
