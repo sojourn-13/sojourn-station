@@ -445,6 +445,7 @@
 	pixel_x = -28
 	},
 /obj/structure/cable,
+/obj/item/circuitboard/apc,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
 "aAE" = (
@@ -567,7 +568,7 @@
 "aIS" = (
 /obj/item/trash/mre/os,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "aIV" = (
 /obj/item/device/lighting/toggleable/lantern,
 /obj/effect/decal/cleanable/rubble,
@@ -1366,7 +1367,7 @@
 "bFw" = (
 /obj/item/ammo_magazine/rifle_75/empty,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "bFW" = (
 /obj/item/stool,
 /turf/simulated/floor/carpet/turcarpet,
@@ -1416,7 +1417,7 @@
 "bJE" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "bJG" = (
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
@@ -1528,7 +1529,7 @@
 "bPn" = (
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "bPz" = (
 /obj/item/trash/syndi_cakes,
 /obj/effect/decal/cleanable/dirt,
@@ -2243,7 +2244,7 @@
 "cxi" = (
 /obj/item/ammo_casing/shotgun/spent,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "cxy" = (
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/derelict,
@@ -2847,6 +2848,12 @@
 /area/nadezhda/outside/one_star)
 "dcL" = (
 /obj/random/booze/low_chance,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "5,20"
 	},
@@ -3442,7 +3449,7 @@
 "dKe" = (
 /obj/structure/bookcase,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "dKD" = (
 /obj/random/cluster/roaches/low_chance,
 /turf/simulated/floor/asteroid/grass,
@@ -3470,7 +3477,7 @@
 	pixel_y = 4
 	},
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "dMv" = (
 /obj/machinery/porta_turret/prepper{
 	check_access = 0;
@@ -4237,7 +4244,7 @@
 /obj/random/ammo_lowcost/low_chance,
 /obj/random/ammo_lowcost/low_chance,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "eHE" = (
 /obj/structure/boulder,
 /obj/random/spider_trap_burrowing/low_chance,
@@ -4613,10 +4620,16 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "feK" = (
-/obj/structure/flora/small/busha1,
-/obj/structure/invislight,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "5,7"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "feT" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/busha2,
@@ -5528,6 +5541,9 @@
 /obj/structure/table/steel,
 /obj/item/device/lighting/glowstick/flare/torch,
 /obj/item/device/lighting/glowstick/flare/torch,
+/obj/item/stack/cable_coil,
+/obj/item/stack/cable_coil,
+/obj/item/tool/multitool/improvised,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -5942,7 +5958,20 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "gCB" = (
-/obj/random/booze/low_chance,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/shuttle/floor/mining,
 /area/colony/exposedsun/crashed_shop/outsider)
 "gCC" = (
@@ -6029,7 +6058,7 @@
 "gJo" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/wall/wood_old,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "gJs" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/tiled/dark,
@@ -6808,7 +6837,7 @@
 "hyZ" = (
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "hzS" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
@@ -8397,7 +8426,7 @@
 /obj/item/trash/mre,
 /obj/item/material/kitchen/utensil/spoon/mre,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "jhV" = (
 /obj/structure/table/standard,
 /obj/item/stack/medical/bruise_pack,
@@ -8474,16 +8503,23 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/dungeon/outside/safehouse)
+"jki" = (
+/obj/structure/table/steel,
+/obj/item/stack/rods,
+/obj/item/stack/rods,
+/obj/item/stack/cable_coil,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "jkl" = (
 /obj/structure/table/standard,
-/obj/item/reagent_containers/dropper{
-	pixel_y = -4
-	},
 /obj/item/storage/box/syringes{
 	pixel_x = 3;
 	pixel_y = 3
 	},
 /obj/item/storage/box/beakers,
+/obj/item/reagent_containers/dropper{
+	pixel_y = -4
+	},
 /obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
@@ -9729,6 +9765,10 @@
 "kGE" = (
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/nadezhda/dungeon/outside/prepper)
+"kGM" = (
+/obj/machinery/floodlight,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "kHq" = (
 /mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper,
 /turf/simulated/floor/carpet/bcarpet,
@@ -9766,6 +9806,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
+"kIV" = (
+/obj/structure/bed/psych{
+	desc = "It can be a bit noisy, but still serves well.";
+	name = "old bed"
+	},
+/obj/structure/bed/psych{
+	desc = "It can be a bit noisy, but still serves well.";
+	name = "old bed"
+	},
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "kJv" = (
 /obj/item/reagent_containers/glass/bottle/petrel,
 /turf/simulated/floor/tiled/dark,
@@ -10342,7 +10393,7 @@
 /obj/structure/bookcase,
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "lur" = (
 /obj/item/trash/semki,
 /obj/effect/decal/cleanable/dirt,
@@ -10674,7 +10725,7 @@
 "lLH" = (
 /obj/structure/bed,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "lLS" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/small/busha2,
@@ -11380,6 +11431,14 @@
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"mBs" = (
+/obj/structure/table/steel,
+/obj/item/stack/material/steel,
+/obj/item/stack/material/steel,
+/obj/item/stack/material/steel,
+/obj/item/stack/material/steel,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "mBB" = (
 /obj/effect/step_trigger/vault_bunker_2A,
 /turf/simulated/floor/tiled/dark/danger,
@@ -11967,7 +12026,7 @@
 /obj/structure/flora/small/busha1,
 /obj/item/trash/mre_candy,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "mZu" = (
 /obj/structure/table/onestar,
 /obj/random/junkfood,
@@ -12190,6 +12249,20 @@
 /obj/item/plastique,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
+"nlq" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/shuttle/floor/mining,
+/area/colony/exposedsun/crashed_shop/outsider)
 "nlr" = (
 /obj/structure/flora/big/bush3,
 /obj/random/flora/jungle_tree,
@@ -12286,7 +12359,7 @@
 /obj/item/gun/projectile/shotgun/pump/combat,
 /obj/effect/decal/cleanable/filth,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "npR" = (
 /obj/structure/table/standard,
 /obj/random/rations,
@@ -12492,6 +12565,12 @@
 /obj/random/scrap/sparse_even,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"nBZ" = (
+/obj/item/storage/firstaid/surgery/traitor,
+/obj/item/storage/firstaid/surgery/traitor,
+/obj/structure/table/steel,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "nCt" = (
 /obj/effect/decal/cleanable/blood/oil/streak,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
@@ -13373,7 +13452,7 @@
 "oBM" = (
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "oBT" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/effect/decal/cleanable/blood/gibs,
@@ -13721,17 +13800,17 @@
 /turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/dungeon/outside/zoo)
 "oRl" = (
+/obj/machinery/light/small,
 /obj/structure/table/standard,
-/obj/item/reagent_containers/dropper{
-	pixel_y = -4
-	},
 /obj/item/storage/box/syringes{
 	pixel_x = 3;
 	pixel_y = 3
 	},
 /obj/item/storage/box/beakers,
+/obj/item/reagent_containers/dropper{
+	pixel_y = -4
+	},
 /obj/item/reagent_containers/glass/beaker/large,
-/obj/machinery/light/small,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "oRA" = (
@@ -14237,6 +14316,14 @@
 /obj/structure/flora/small/busha2,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
+"pqM" = (
+/obj/structure/bed/psych{
+	desc = "It can be a bit noisy, but still serves well.";
+	name = "old bed"
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "pre" = (
 /obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor/asteroid/dirt,
@@ -14515,6 +14602,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"pHX" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "3,7"
+	},
+/area/colony/exposedsun/crashed_shop/outsider)
 "pIe" = (
 /obj/effect/decal/mecha_wreckage/ripley,
 /obj/item/material/shard/shrapnel/scrap,
@@ -15864,11 +15962,12 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "qUA" = (
 /obj/structure/lattice,
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/structure/wire_splicing,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
 "qUX" = (
@@ -15953,7 +16052,7 @@
 /obj/item/trash/mre_paste,
 /obj/effect/decal/cleanable/filth,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "rab" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -16707,9 +16806,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "rQF" = (
-/obj/structure/flora/small/busha1,
-/turf/simulated/wall/wood_old,
-/area/nadezhda/outside/meadow)
+/obj/machinery/chem_master,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "rQJ" = (
 /obj/random/powercell,
 /turf/simulated/floor/tiled/dark,
@@ -16790,6 +16889,10 @@
 /obj/random/closet_maintloot,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
+"rUV" = (
+/obj/structure/medical_stand,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "rVT" = (
 /obj/machinery/door/blast/regular{
 	id = "prepper room A"
@@ -16824,7 +16927,7 @@
 /obj/structure/bed/double,
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "rXE" = (
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
@@ -16872,6 +16975,14 @@
 /obj/effect/window_lwall_spawn/smartspawn/onestar,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
+"saY" = (
+/obj/structure/table/steel,
+/obj/item/storage/box/beakers,
+/obj/item/reagent_containers/dropper,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/modular_computer/tablet/lease/preset/chemistry,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "sbn" = (
 /obj/structure/table/reinforced,
 /obj/random/credits/c5000,
@@ -17030,7 +17141,7 @@
 /obj/structure/flora/small/bushc1,
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "siS" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -17210,6 +17321,15 @@
 	},
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
+"stb" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/port_gen/pacman/diesel/anchored,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "stz" = (
 /obj/random/traps,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -17465,6 +17585,10 @@
 /obj/structure/cable/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"sJb" = (
+/obj/structure/table/steel,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "sJn" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/mineral/planet,
@@ -17737,10 +17861,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "sZV" = (
-/obj/structure/flora/small/bushb2,
-/obj/structure/flora/small/bushb2,
-/turf/simulated/floor/asteroid/grass,
-/area/colony/exposedsun/pastgate)
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "tah" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/wood,
@@ -18265,6 +18388,10 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"tEy" = (
+/obj/machinery/chemical_dispenser,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "tEI" = (
 /obj/structure/railing/grey{
 	dir = 1;
@@ -18890,6 +19017,12 @@
 "unD" = (
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/zoo)
+"unH" = (
+/obj/item/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
+/obj/structure/table/steel,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "unP" = (
 /obj/item/modular_computer/console/preset/civilian/professional{
 	dir = 1
@@ -19051,6 +19184,12 @@
 /obj/item/storage/box/syndie_kit/hpistol,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"uxl" = (
+/obj/structure/table/steel,
+/obj/item/stack/material/steel,
+/obj/item/stack/material/steel,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "uxN" = (
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
@@ -19120,6 +19259,11 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"uBf" = (
+/obj/structure/table/steel,
+/obj/item/flame/lighter/zippo,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "uBg" = (
 /obj/structure/table,
 /obj/item/material/shard,
@@ -19746,9 +19890,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "vgW" = (
-/obj/effect/decal/cleanable/filth,
-/turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/obj/structure/bed/psych{
+	desc = "It can be a bit noisy, but still serves well.";
+	name = "old bed"
+	},
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "vhj" = (
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
@@ -20188,7 +20335,7 @@
 "vEk" = (
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "vEx" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -21085,7 +21232,19 @@
 /obj/item/trash/mre_paste,
 /obj/effect/decal/cleanable/filth,
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
+"wFf" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/structure/reagent_dispensers/fueltank/huge/derelict,
+/obj/item/reagent_containers/glass/bottle/petrel,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop/outsider)
 "wFq" = (
 /obj/structure/table/onestar,
 /obj/structure/window/reinforced{
@@ -21293,6 +21452,10 @@
 /obj/random/mob/roaches/low_chance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"wPb" = (
+/obj/structure/closet/secure_closet/freezer/blood,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "wPh" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
@@ -21369,6 +21532,10 @@
 /obj/structure/salvageable/data_os,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
+"wUP" = (
+/obj/structure/flora/small/bushc1,
+/turf/simulated/floor/asteroid/grass,
+/area/colony/exposedsun/pastgate)
 "wVw" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -21468,6 +21635,11 @@
 /obj/structure/bed/chair/custom/onestar/red,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/asteroid/rogue)
+"xai" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "xbq" = (
 /obj/random/lathe_disk,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
@@ -21728,7 +21900,7 @@
 	pixel_x = 8
 	},
 /turf/simulated/floor/wood/wild5,
-/area/nadezhda/outside/meadow)
+/area/colony/exposedsun/pastgate)
 "xmn" = (
 /obj/structure/table/standard,
 /obj/random/medical,
@@ -22557,6 +22729,10 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"ykd" = (
+/obj/structure/barricade,
+/turf/simulated/floor/wood/wild4,
+/area/colony/exposedsun/crashed_shop/outsider)
 "ykI" = (
 /obj/structure/table/woodentable,
 /obj/random/firstaid,
@@ -55273,7 +55449,7 @@ daI
 urB
 uih
 wRZ
-cUn
+gCB
 asp
 cUn
 asp
@@ -55482,7 +55658,7 @@ daI
 dSP
 fRZ
 aSc
-wJD
+pHX
 bvg
 gNT
 bvg
@@ -55691,7 +55867,7 @@ daI
 hTj
 ybe
 xFK
-umJ
+feK
 sBS
 btt
 sBS
@@ -55900,7 +56076,7 @@ daI
 oUc
 jVg
 aSc
-umJ
+feK
 aeh
 btt
 wOi
@@ -56318,7 +56494,7 @@ daI
 daI
 kSw
 qUA
-asp
+nlq
 asp
 dzF
 aSc
@@ -56526,7 +56702,7 @@ qbU
 daI
 daI
 oUc
-jXk
+wFf
 aSc
 aSc
 ofC
@@ -56735,8 +56911,8 @@ qbU
 daI
 daI
 oUc
-qwo
-gCB
+stb
+aSc
 gCP
 vOU
 qCB
@@ -57780,11 +57956,11 @@ qbU
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
+oFE
+oFE
+oFE
+oFE
+oFE
 xUf
 nCV
 hUP
@@ -57989,13 +58165,13 @@ qbU
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-jWe
+oFE
+wPb
+qpz
+qpz
+qpz
+qpz
+qpz
 hGJ
 ahb
 cfa
@@ -58198,15 +58374,15 @@ daI
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-jWe
+oFE
+saY
+uBf
+sZV
+qpz
+sZV
+qpz
+qpz
+sZV
 dTu
 mCD
 cfa
@@ -58407,15 +58583,15 @@ daI
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+oFE
+tEy
+sZV
+qpz
+mBs
+jki
+qpz
+qpz
+qpz
 epc
 cfa
 cfa
@@ -58616,15 +58792,15 @@ daI
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+oFE
+rQF
+sJb
+qpz
+kGM
+uxl
+qpz
+sZV
+qpz
 gBg
 cfa
 gHa
@@ -58825,15 +59001,15 @@ daI
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+oFE
+qpz
+qpz
+qpz
+qpz
+sZV
+xai
+qpz
+ykd
 oFE
 oFE
 fMZ
@@ -59034,15 +59210,15 @@ daI
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+oFE
+vgW
+qpz
+qpz
+qpz
+qpz
+sZV
+qpz
+vgW
 oFE
 txD
 vUg
@@ -59243,15 +59419,15 @@ qbU
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+oFE
+pqM
+unH
+nBZ
+pqM
+vgW
+vgW
+rUV
+kIV
 oFE
 vUg
 uDd
@@ -59452,15 +59628,15 @@ qbU
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+oFE
+oFE
+oFE
+oFE
+oFE
+oFE
+oFE
+oFE
+oFE
 oFE
 csd
 drx
@@ -79149,17 +79325,17 @@ hRL
 hRL
 hRL
 hpi
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
 naj
 naj
 naj
@@ -79358,17 +79534,17 @@ hRL
 rBW
 rBW
 fiZ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
 naj
 naj
 naj
@@ -79567,17 +79743,17 @@ hRL
 hRL
 rBW
 fiZ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
 naj
 naj
 naj
@@ -79778,32 +79954,32 @@ hRL
 rBW
 hqX
 naj
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-sZV
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+lcK
 hRL
 hRL
 hRL
@@ -79987,32 +80163,32 @@ hRL
 rBW
 rBW
 hqX
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
+naj
 naj
 naj
 naj
 naj
 qxe
 qxe
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-smi
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+uoJ
 hRL
 hRL
 afB
@@ -80196,32 +80372,32 @@ hRL
 hRL
 hRL
 qxe
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
+naj
 naj
 naj
 fiZ
 naj
 fps
 qxe
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-smi
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+uoJ
 hRL
 nBv
 hRL
@@ -80405,11 +80581,11 @@ hRL
 hRL
 hqX
 qxe
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
+naj
 naj
 naj
 rBW
@@ -80418,19 +80594,19 @@ hRL
 ngf
 naj
 naj
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
 iVK
 hRL
 hRL
@@ -80614,10 +80790,10 @@ hRL
 hRL
 lLf
 naj
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 naj
 naj
 rqD
@@ -80631,15 +80807,15 @@ naj
 naj
 naj
 naj
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
 rBW
 hRL
 hRL
@@ -80823,10 +80999,10 @@ hRL
 rBW
 lLf
 naj
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 naj
 hdj
 rBW
@@ -80840,15 +81016,15 @@ naj
 naj
 naj
 naj
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
 fiZ
 rBW
 hRL
@@ -81030,10 +81206,10 @@ hRL
 hRL
 hRL
 rBW
-iue
-gbQ
-gbQ
-gbQ
+fiZ
+naj
+naj
+naj
 naj
 naj
 hdj
@@ -81049,15 +81225,15 @@ hpi
 hpi
 naj
 naj
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
+naj
 naj
 rBW
 hRL
@@ -81239,10 +81415,10 @@ hRL
 hRL
 rBW
 wiA
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 naj
 naj
 hpi
@@ -81262,11 +81438,11 @@ naj
 naj
 naj
 naj
-gbQ
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
+naj
 naj
 naj
 naj
@@ -81448,10 +81624,10 @@ hRL
 pLT
 rBW
 rBW
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 naj
 naj
 qxe
@@ -81474,8 +81650,8 @@ hpi
 rqD
 naj
 naj
-gbQ
-gbQ
+naj
+naj
 naj
 naj
 naj
@@ -81657,10 +81833,10 @@ hRL
 qxe
 naj
 naj
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 naj
 naj
 hRL
@@ -81683,9 +81859,9 @@ rBW
 rBW
 fiZ
 naj
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
 naj
 naj
 hRL
@@ -81866,10 +82042,10 @@ rBW
 hpi
 naj
 naj
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 naj
 qxe
 qxe
@@ -81892,9 +82068,9 @@ hRL
 hRL
 fiZ
 naj
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
 naj
 hdj
 hRL
@@ -82075,10 +82251,10 @@ hRL
 rBW
 fiZ
 naj
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 naj
 qxe
 uoJ
@@ -82101,8 +82277,8 @@ qxe
 hRL
 rBW
 fiZ
-gbQ
-gbQ
+naj
+naj
 naj
 hdj
 ngf
@@ -82284,10 +82460,10 @@ hRL
 rBW
 fiZ
 naj
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 naj
 naj
 ngf
@@ -82310,9 +82486,9 @@ qxe
 hRL
 hRL
 rqD
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
 hdj
 hRL
 hRL
@@ -82493,10 +82669,10 @@ hRL
 hRL
 rBW
 fiZ
-gbQ
-tml
-tml
-tml
+naj
+qxe
+qxe
+qxe
 naj
 rqD
 hRL
@@ -82702,10 +82878,10 @@ hRL
 hRL
 hRL
 hpi
-tml
-tml
-tml
-tml
+qxe
+qxe
+qxe
+qxe
 qxe
 hRL
 hRL
@@ -82911,10 +83087,10 @@ hRL
 hRL
 wiA
 qxe
-tml
-tml
-tml
-tml
+qxe
+qxe
+qxe
+qxe
 qxe
 mxA
 hRL
@@ -83120,10 +83296,10 @@ hRL
 afB
 usG
 tjz
-tml
-tml
-tml
-tml
+qxe
+qxe
+qxe
+qxe
 vpk
 mxA
 hRL
@@ -83329,10 +83505,10 @@ hRL
 iVK
 ecz
 qxe
-tml
-tml
-gbQ
-gbQ
+qxe
+qxe
+naj
+naj
 fiZ
 hRL
 hRL
@@ -83538,10 +83714,10 @@ hRL
 usG
 ecz
 naj
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 ecz
 hRL
 afB
@@ -83747,10 +83923,10 @@ hRL
 ecz
 naj
 naj
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 cuP
 rBW
 hRL
@@ -83956,10 +84132,10 @@ hRL
 hqX
 naj
 naj
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 fiZ
 krI
 rBW
@@ -84165,10 +84341,10 @@ mxA
 ecz
 naj
 naj
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 naj
 hpi
 hRL
@@ -84374,10 +84550,10 @@ hRL
 cuP
 naj
 naj
-gbQ
-gbQ
-gbQ
-gbQ
+naj
+naj
+naj
+naj
 naj
 naj
 qxe
@@ -89589,12 +89765,12 @@ naj
 naj
 naj
 naj
-uwz
+iNs
 rXi
-vgW
+bXS
 gJo
-uwz
-uwz
+iNs
+iNs
 eGW
 iNs
 kFl
@@ -89798,13 +89974,13 @@ naj
 naj
 naj
 naj
-uwz
-uwz
-tMk
-feK
+iNs
+iNs
+oTQ
+xkG
 xlw
-uwz
-rQF
+iNs
+mfE
 iNs
 aFP
 oDF
@@ -90008,12 +90184,12 @@ rFd
 rqD
 rFd
 fwV
-uwz
-uwz
+iNs
+iNs
 lud
 bJE
-uwz
-uwz
+iNs
+iNs
 oco
 oJe
 aFP
@@ -90221,8 +90397,8 @@ owl
 naj
 rqD
 eOY
-uwz
-dei
+iNs
+wfm
 aFP
 eBV
 aeW
@@ -90431,7 +90607,7 @@ nXw
 hRL
 eOY
 eOY
-hRL
+aFP
 aFP
 wfm
 oyr
@@ -91060,16 +91236,16 @@ qxe
 hRL
 eOY
 naj
-uwz
+iNs
 mZe
-hRL
-bZQ
+aFP
+qiU
 aIS
 cxi
 hyZ
 bFw
 wEV
-uwz
+iNs
 naj
 hRL
 hRL
@@ -91269,16 +91445,16 @@ qxe
 hRL
 qht
 naj
-uwz
+iNs
 vEk
-bZQ
-uwz
+qiU
+iNs
 lLH
 npN
-uwz
+iNs
 dMc
 qZZ
-uwz
+iNs
 naj
 sBG
 hRL
@@ -91478,15 +91654,15 @@ hRL
 hRL
 tMk
 naj
-uwz
+iNs
 jhJ
-bZQ
-uwz
-uwz
+qiU
+iNs
+iNs
 oBM
-uwz
-uwz
-uwz
+iNs
+iNs
+iNs
 gnV
 pwa
 hRL
@@ -91687,14 +91863,14 @@ rBW
 fon
 tMk
 eOY
-uwz
+iNs
 bPn
-bZQ
+qiU
 dKe
-uwz
-vgW
-tMk
-uwz
+iNs
+bXS
+oTQ
+iNs
 naj
 hvb
 sBG
@@ -91896,14 +92072,14 @@ hRL
 hRL
 iqE
 gWu
-uwz
-uwz
-uwz
-uwz
-rQF
-nXw
+iNs
+iNs
+iNs
+iNs
+mfE
+wUP
 siK
-uwz
+iNs
 hvb
 hvb
 hRL
@@ -92109,10 +92285,10 @@ xXY
 rFd
 ecz
 naj
-uwz
-uwz
-uwz
-uwz
+iNs
+iNs
+iNs
+iNs
 hNY
 hRL
 hRL

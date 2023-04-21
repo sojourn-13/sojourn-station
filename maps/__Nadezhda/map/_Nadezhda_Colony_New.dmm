@@ -1016,8 +1016,6 @@
 /obj/random/material_rare/low_chance,
 /obj/random/material_rare/low_chance,
 /obj/random/material_rare/low_chance,
-/obj/random/credits/c10000,
-/obj/random/credits/c10000,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/security/nuke_storage)
 "amK" = (
@@ -2881,7 +2879,7 @@
 	req_access = list(78)
 	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/pros/prep)
+/area/nadezhda/outside/inside_colony)
 "aIQ" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
@@ -27892,7 +27890,6 @@
 /area/colony)
 "gwK" = (
 /obj/structure/bed/double,
-/obj/item/bedsheet/hosdouble,
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/nadezhda/crew_quarters/botanist)
 "gwV" = (
@@ -53898,6 +53895,11 @@
 	icon_state = "12,22"
 	},
 /area/shuttle/rocinante_shuttle_area)
+"mzC" = (
+/obj/random/credits/c10000,
+/obj/random/credits/c10000,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/security/nuke_storage)
 "mzF" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -171123,7 +171125,7 @@ imo
 iHD
 iHD
 iHD
-iHD
+mzC
 iHD
 iHD
 cZb
