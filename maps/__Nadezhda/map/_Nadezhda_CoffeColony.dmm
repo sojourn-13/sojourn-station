@@ -2003,13 +2003,13 @@
 /area/nadezhda/crew_quarters/kitchen)
 "ayL" = (
 /obj/structure/catwalk,
+/obj/machinery/camera/network/gate{
+	dir = 10
+	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/camera/network/security{
-	dir = 1
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
@@ -2526,7 +2526,7 @@
 /turf/simulated/floor/tiled/dark/panels,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "aEv" = (
-/obj/machinery/camera/network/security{
+/obj/machinery/camera/network/gate{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/cargo,
@@ -4006,8 +4006,8 @@
 	name = "Residential District Maintenance"
 	})
 "aYN" = (
-/obj/machinery/camera/network/security{
-	dir = 1
+/obj/machinery/camera/network/gate{
+	dir = 10
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate{
@@ -4675,7 +4675,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/machinery/camera/network/security,
+/obj/machinery/camera/network/gate,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -6602,9 +6602,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/medical{
-	name = "Showers"
-	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
 "bDQ" = (
@@ -6729,8 +6726,8 @@
 /area/nadezhda/crew_quarters/kitchen)
 "bFA" = (
 /obj/structure/flora/small/rock2,
-/obj/machinery/camera/network/security{
-	dir = 1
+/obj/machinery/camera/network/gate{
+	dir = 10
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate{
@@ -8607,13 +8604,8 @@
 /area/nadezhda/engineering/foyer)
 "ceB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/glass_medical{
-	id_tag = "medbay exit";
-	name = "Medbay Equipment;
-	req_access = newlist();
-	req_one_access = list(5,45)
-	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
 "ceE" = (
@@ -10499,14 +10491,6 @@
 "cCj" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/shutters{
-	density = 0;
-	dir = 2;
-	icon_state = "shutter0";
-	id = "lonestar_disposals";
-	name = "Lonestar Disposals";
-	opacity = 0
-	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/quartermaster/disposaldrop)
 "cCl" = (
@@ -11762,14 +11746,6 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/shutters{
-	density = 0;
-	dir = 2;
-	icon_state = "shutter0";
-	id = "lonestar_lobbydoor";
-	name = "Lonestar Office";
-	opacity = 0
-	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/office)
 "cQg" = (
@@ -22242,7 +22218,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/network/security,
+/obj/machinery/camera/network/gate,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -22606,7 +22582,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "lonestar_lobby";
+	id = "guild_lobby";
 	name = "Office Shutters";
 	opacity = 0
 	},
@@ -23740,7 +23716,8 @@
 /area/nadezhda/medical/virology)
 "fAq" = (
 /obj/structure/table/rack,
-/obj/item/clothing/suit/space/void/medical/equipped,
+/obj/item/clothing/mask/breath,
+/obj/item/rig/medical/equipped,
 /obj/item/clothing/suit/space/void/medical/equipped,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/cryo)
@@ -24103,13 +24080,11 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "fFg" = (
+/obj/machinery/door/unpowered/simple/wood/saloon,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/multi_tile/glass{
-	name = "Bar"
-	},
-/obj/machinery/door/firedoor/multi_tile,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
 "fFj" = (
@@ -26775,7 +26750,7 @@
 /area/nadezhda/engineering/workshop)
 "gkJ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/obj/machinery/camera/network/security,
+/obj/machinery/camera/network/gate,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -26805,18 +26780,11 @@
 	},
 /area/nadezhda/hallway/main/stairwell)
 "gll" = (
-/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/unpowered/simple/wood/saloon,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/shutters{
-	density = 0;
-	dir = 2;
-	icon_state = "shutter0";
-	id = "lonestar_lobby";
-	name = "Lonestar Office";
-	opacity = 0
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/quartermaster/office)
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/crew_quarters/bar)
 "glv" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -28085,8 +28053,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "gAa" = (
-/obj/machinery/camera/network/security{
-	dir = 1
+/obj/machinery/camera/network/gate{
+	dir = 10
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/security/maingate{
@@ -30986,11 +30954,12 @@
 /area/nadezhda/crew_quarters/bar)
 "hlw" = (
 /obj/structure/table/rack,
+/obj/item/clothing/mask/breath,
 /obj/item/rig/medical/equipped,
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/item/rig/medical/equipped,
+/obj/item/clothing/suit/space/void/medical/equipped,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/cryo)
 "hlG" = (
@@ -32860,7 +32829,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "lonestar_lobby";
+	id = "guild_lobby";
 	name = "Office Shutters";
 	opacity = 0
 	},
@@ -34634,10 +34603,10 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "iaA" = (
 /obj/structure/bed,
-/obj/item/bedsheet/orange,
-/obj/machinery/camera/network/security{
+/obj/machinery/camera/network/gate{
 	dir = 8
 	},
+/obj/item/bedsheet/orange,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -35470,7 +35439,7 @@
 /turf/simulated/open,
 /area/nadezhda/engineering/engine_waste)
 "iko" = (
-/obj/machinery/camera/network/security{
+/obj/machinery/camera/network/gate{
 	dir = 4
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -36255,10 +36224,10 @@
 /area/nadezhda/security/prisoncells)
 "itD" = (
 /obj/effect/floor_decal/industrial/hatch,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/network/security{
+/obj/machinery/camera/network/gate{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -38145,7 +38114,7 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "lonestar_lobby";
+	id = "guild_lobby";
 	name = "Office Shutters";
 	opacity = 0
 	},
@@ -39718,13 +39687,8 @@
 /area/nadezhda/outside/dcave)
 "jjm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/glass_medical{
-	id_tag = "medbay exit";
-	name = "Medbay Equipment;
-	req_access = newlist();
-	req_one_access = list(5,45)
-	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
 "jjq" = (
@@ -41129,12 +41093,6 @@
 /obj/machinery/light_switch{
 	pixel_y = 32
 	},
-/obj/machinery/button/remote/blast_door{
-	id = "lonestar_disposals";
-	name = "Lonestar Disposals shutter control";
-	pixel_y = 22;
-	req_one_access = list(50,48,26)
-	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/quartermaster/disposaldrop)
 "jAm" = (
@@ -41755,6 +41713,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/crew_quarters/kitchen)
 "jHK" = (
+/obj/machinery/button/remote/blast_door{
+	id = "lonestar_lobby";
+	name = "Lonestar Lobby shutter control";
+	pixel_y = 32
+	},
 /obj/structure/table/standard,
 /obj/item/paper_bin{
 	pixel_y = 3
@@ -41772,20 +41735,6 @@
 /obj/item/stamp,
 /obj/machinery/light{
 	dir = 1
-	},
-/obj/machinery/button/remote/blast_door{
-	id = "lonestar_lobbydoor";
-	name = "Lonestar Door shutter control";
-	pixel_y = 32;
-	pixel_x = 10;
-	req_one_access = list(50,48,26)
-	},
-/obj/machinery/button/remote/blast_door{
-	id = "lonestar_desk";
-	name = "Lonestar Desk shutter control";
-	pixel_y = 32;
-	pixel_x = -10;
-	req_one_access = list(50,48,26)
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
@@ -43585,8 +43534,8 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
+/obj/machinery/camera/network/gate,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/network/security,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -45336,9 +45285,6 @@
 	pixel_x = 32
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/medical{
-	name = "Showers"
-	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
 "kxf" = (
@@ -51246,8 +51192,8 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "lUn" = (
-/obj/machinery/camera/network/security{
-	dir = 1
+/obj/machinery/camera/network/gate{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/outside/inside_colony)
@@ -51393,15 +51339,13 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/security/tactical_blackshield)
 "lVY" = (
+/obj/machinery/door/unpowered/simple/wood/saloon,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/multi_tile/glass{
-	name = "Bar"
-	},
-/obj/machinery/door/firedoor/multi_tile,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
 "lWd" = (
@@ -52571,14 +52515,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/blast/shutters{
-	density = 0;
-	dir = 2;
-	icon_state = "shutter0";
-	id = "lonestar_disposals";
-	name = "Lonestar Disposals";
-	opacity = 0
-	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/disposaldrop)
 "mjE" = (
@@ -54835,8 +54771,8 @@
 /turf/simulated/floor/reinforced/nitrogen,
 /area/nadezhda/engineering/atmos)
 "mKM" = (
-/obj/machinery/camera/network/security{
-	dir = 1
+/obj/machinery/camera/network/gate{
+	dir = 10
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/security/maingate{
@@ -62308,12 +62244,18 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/clothing/suit/armor/paramedic,
+/obj/item/clothing/head/helmet/faceshield/paramedic,
+/obj/item/gun/energy/cog/gear,
 /obj/item/storage/pouch/tubular,
+/obj/item/gun/energy/stunrevolver,
 /obj/item/clothing/accessory/holster/hip,
 /obj/item/cell/medium/moebius,
 /obj/item/cell/medium/moebius,
 /obj/item/cell/medium/moebius,
-/obj/item/rig_module/storage,
+/obj/item/cell/small/moebius,
+/obj/item/cell/small/moebius,
+/obj/item/storage/firstaid/soteria/large,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/medical/sleeper)
 "oqt" = (
@@ -64168,7 +64110,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/camera/network/security{
+/obj/machinery/camera/network/gate{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -78579,7 +78521,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "rZN" = (
-/obj/machinery/camera/network/security,
+/obj/machinery/camera/network/gate,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -82400,7 +82342,7 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "sSx" = (
-/obj/machinery/camera/network/security,
+/obj/machinery/camera/network/gate,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "sSB" = (
@@ -83283,14 +83225,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/shutters{
-	density = 0;
-	dir = 2;
-	icon_state = "shutter0";
-	id = "lonestar_lobbydoor";
-	name = "Lonestar Office";
-	opacity = 0
-	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/office)
 "tdr" = (
@@ -88458,12 +88392,18 @@
 /area/shuttle/rocinante_shuttle_area)
 "uhw" = (
 /obj/structure/closet/secure_closet/personal/orderly,
+/obj/item/clothing/suit/armor/paramedic,
+/obj/item/clothing/head/helmet/faceshield/paramedic,
+/obj/item/gun/energy/cog/gear,
 /obj/item/storage/pouch/tubular,
+/obj/item/gun/energy/stunrevolver,
 /obj/item/clothing/accessory/holster/hip,
 /obj/item/cell/medium/moebius,
 /obj/item/cell/medium/moebius,
 /obj/item/cell/medium/moebius,
-/obj/item/rig_module/storage,
+/obj/item/cell/small/moebius,
+/obj/item/cell/small/moebius,
+/obj/item/storage/firstaid/soteria/large,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/medical/sleeper)
 "uhB" = (
@@ -88775,15 +88715,11 @@
 	density = 0;
 	dir = 2;
 	icon_state = "shutter0";
-	id = "lonestar_lobby";
+	id = "guild_lobby";
 	name = "Office Shutters";
 	opacity = 0
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/window/eastleft{
-	req_access = list(10);
-	name = "Guild Lobby"
-	},
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/engineering/foyer)
 "ulb" = (
@@ -92860,7 +92796,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/machinery/camera/network/security,
+/obj/machinery/camera/network/gate,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -99325,12 +99261,10 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "wDH" = (
+/obj/machinery/door/unpowered/simple/wood/saloon,
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/glass{
-	name = "Bar"
-	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
 "wDM" = (
@@ -101833,14 +101767,6 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/shutters{
-	density = 0;
-	dir = 2;
-	icon_state = "shutter0";
-	id = "lonestar_lobby";
-	name = "Lonestar Office";
-	opacity = 0
-	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/quartermaster/office)
 "xkR" = (
@@ -104444,6 +104370,7 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/engineering/atmos)
 "xQl" = (
+/obj/machinery/door/unpowered/simple/wood/saloon,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -104453,9 +104380,6 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/glass{
-	name = "Bar"
-	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
 "xQo" = (
@@ -170324,7 +170248,7 @@ gwo
 jre
 mln
 bbM
-hht
+gll
 hht
 hht
 oTN
@@ -170338,7 +170262,7 @@ hht
 hht
 hht
 xIh
-xIh
+wDH
 ilF
 vAG
 xsP
@@ -172168,7 +172092,7 @@ eoz
 cKz
 xIT
 arG
-gll
+kGy
 eSp
 seP
 ged
@@ -172774,7 +172698,7 @@ lSx
 fHf
 xBZ
 xBZ
-gll
+kGy
 jKq
 xBZ
 lfZ
