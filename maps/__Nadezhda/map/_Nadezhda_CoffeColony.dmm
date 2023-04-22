@@ -10508,7 +10508,7 @@
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/shutters{
-	id = s;
+	id = "lonestar_disposals";
 	layer = 3.3;
 	name = "Lonestar Disposals"
 	},
@@ -41777,7 +41777,8 @@
 	pixel_y = 24;
 	pixel_x = 8;
 	name = "Door Shutters";
-	id = "lonestar_door"
+	id = "lonestar_door";
+	req_one_access = list(50,48,26)
 	},
 /obj/machinery/button/remote/blast_door{
 	name = "Desk Shutters";
@@ -87334,7 +87335,8 @@
 /obj/machinery/button/remote/blast_door{
 	pixel_x = 24;
 	name = "Disposals";
-	id = "lonestar_disposals"
+	id = "lonestar_disposals";
+	req_one_access = list(50,48,26)
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/disposaldrop)
@@ -105490,7 +105492,8 @@
 	name = "Door Shutters";
 	id = "lonestar_door";
 	pixel_y = -12;
-	pixel_x = 24
+	pixel_x = 24;
+	req_one_access = list(50,48,26)
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
