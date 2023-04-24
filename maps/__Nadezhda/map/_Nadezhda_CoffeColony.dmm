@@ -2003,13 +2003,13 @@
 /area/nadezhda/crew_quarters/kitchen)
 "ayL" = (
 /obj/structure/catwalk,
-/obj/machinery/camera/network/gate{
-	dir = 10
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/camera/network/security{
+	dir = 1
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
@@ -2526,7 +2526,7 @@
 /turf/simulated/floor/tiled/dark/panels,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "aEv" = (
-/obj/machinery/camera/network/gate{
+/obj/machinery/camera/network/security{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/cargo,
@@ -4006,8 +4006,8 @@
 	name = "Residential District Maintenance"
 	})
 "aYN" = (
-/obj/machinery/camera/network/gate{
-	dir = 10
+/obj/machinery/camera/network/security{
+	dir = 1
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate{
@@ -4659,14 +4659,14 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "bfU" = (
-/obj/machinery/door/airlock/vault{
-	locked = 1;
-	req_access = list(1e+012)
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	req_access = list(16);
+	name = "AI Core"
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/turret_protected/ai)
@@ -4682,7 +4682,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/machinery/camera/network/gate,
+/obj/machinery/camera/network/security,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -6736,8 +6736,8 @@
 /area/nadezhda/crew_quarters/kitchen)
 "bFA" = (
 /obj/structure/flora/small/rock2,
-/obj/machinery/camera/network/gate{
-	dir = 10
+/obj/machinery/camera/network/security{
+	dir = 1
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate{
@@ -9525,6 +9525,11 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"cpQ" = (
+/obj/structure/table/woodentable,
+/obj/item/toy/plushie/corgi/girly,
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/nadezhda/pros/foreman)
 "cpU" = (
 /obj/effect/floor_decal/corner_techfloor_grid/diagonal,
 /obj/machinery/light/small{
@@ -20982,6 +20987,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/courtroom)
+"eUO" = (
+/obj/machinery/camera/network/colony_surface{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/shuttle/surface_transport_lz)
 "eUP" = (
 /obj/machinery/light{
 	dir = 8
@@ -22244,8 +22255,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/network/gate,
 /obj/machinery/porta_turret/gate,
+/obj/machinery/camera/network/security,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -26780,7 +26791,7 @@
 /area/nadezhda/engineering/workshop)
 "gkJ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/obj/machinery/camera/network/gate,
+/obj/machinery/camera/network/security,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -28090,8 +28101,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "gAa" = (
-/obj/machinery/camera/network/gate{
-	dir = 10
+/obj/machinery/camera/network/security{
+	dir = 1
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/security/maingate{
@@ -30216,6 +30227,13 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/crew_quarters/bar)
+"hca" = (
+/obj/structure/catwalk,
+/obj/machinery/camera/network/colony_surface{
+	dir = 4
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/pros/shuttle)
 "hcb" = (
 /obj/item/material/shard,
 /turf/simulated/floor/beach/water/jungledeep{
@@ -34641,10 +34659,10 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "iaA" = (
 /obj/structure/bed,
-/obj/machinery/camera/network/gate{
+/obj/item/bedsheet/orange,
+/obj/machinery/camera/network/security{
 	dir = 8
 	},
-/obj/item/bedsheet/orange,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -35477,7 +35495,7 @@
 /turf/simulated/open,
 /area/nadezhda/engineering/engine_waste)
 "iko" = (
-/obj/machinery/camera/network/gate{
+/obj/machinery/camera/network/security{
 	dir = 4
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -36262,10 +36280,10 @@
 /area/nadezhda/security/prisoncells)
 "itD" = (
 /obj/effect/floor_decal/industrial/hatch,
-/obj/machinery/camera/network/gate{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/security{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -43584,8 +43602,8 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/obj/machinery/camera/network/gate,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/security,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -44958,10 +44976,10 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ksX" = (
-/obj/structure/railing{
-	dir = 4
+/obj/machinery/camera/network/colony_surface{
+	dir = 8
 	},
-/turf/simulated/mineral,
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/inside_colony)
 "ksZ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -51256,8 +51274,8 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "lUn" = (
-/obj/machinery/camera/network/gate{
-	dir = 10
+/obj/machinery/camera/network/security{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/outside/inside_colony)
@@ -54842,8 +54860,8 @@
 /turf/simulated/floor/reinforced/nitrogen,
 /area/nadezhda/engineering/atmos)
 "mKM" = (
-/obj/machinery/camera/network/gate{
-	dir = 10
+/obj/machinery/camera/network/security{
+	dir = 1
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/security/maingate{
@@ -64188,7 +64206,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/camera/network/gate{
+/obj/machinery/camera/network/security{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -70071,6 +70089,10 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/steel/bar_light,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"qbT" = (
+/obj/structure/invislight,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/outside/inside_colony)
 "qbV" = (
 /obj/structure/invislight,
 /turf/simulated/mineral,
@@ -74665,14 +74687,14 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/psych)
 "reT" = (
-/obj/machinery/door/airlock/vault{
-	locked = 1;
-	req_access = list(1e+012)
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	req_access = list(16);
+	name = "AI Core"
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -78617,7 +78639,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "rZN" = (
-/obj/machinery/camera/network/gate,
+/obj/machinery/camera/network/security,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -80601,11 +80623,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "swd" = (
-/obj/machinery/door/airlock/medical{
-	name = "Showers"
+/obj/machinery/camera/network/colony_surface{
+	dir = 1
 	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/medical/sleeper)
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/inside_colony)
 "swf" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -81469,6 +81491,14 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"sFV" = (
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/security{
+	dir = 8
+	},
+/turf/simulated/floor/rock/manmade/road,
+/area/nadezhda/outside/inside_colony)
 "sGj" = (
 /obj/effect/decal/mecha_wreckage/ripley{
 	oldified = 1
@@ -82444,7 +82474,7 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "sSx" = (
-/obj/machinery/camera/network/gate,
+/obj/machinery/camera/network/security,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "sSB" = (
@@ -87693,6 +87723,9 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/machinery/camera/network/engineering{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/cargo)
 "uag" = (
@@ -89827,6 +89860,10 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"uyE" = (
+/obj/machinery/camera/network/colony_surface,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/inside_colony)
 "uyF" = (
 /turf/simulated/wall,
 /area/nadezhda/maintenance/undergroundfloor1north)
@@ -92890,7 +92927,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/machinery/camera/network/gate,
+/obj/machinery/camera/network/security,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/security/maingate{
 	name = "\improper Outdoors - Pad"
@@ -121507,7 +121544,7 @@ rfV
 mxv
 kaF
 aDX
-swd
+qUI
 lfJ
 hkK
 dMv
@@ -192213,7 +192250,7 @@ pFV
 pFV
 rIK
 mYG
-aYN
+dsj
 pHc
 vYx
 kvg
@@ -194218,7 +194255,7 @@ fFO
 fFO
 fFO
 fFO
-fFO
+ksX
 fFO
 hPj
 mGO
@@ -198026,26 +198063,26 @@ gBD
 gBD
 iYY
 aYl
-aYl
-vvA
-vvA
-spF
-spF
-spF
-spF
-spF
-spF
-spF
-spF
-spF
-spF
-ksX
-ksX
-ksX
-ksX
-ksX
-csA
-csA
+cwC
+qbT
+qbT
+cwC
+cwC
+cwC
+cwC
+cwC
+cwC
+cwC
+cwC
+cwC
+cwC
+cwC
+cwC
+cwC
+cwC
+cwC
+cwC
+cwC
 ckQ
 ckQ
 sLP
@@ -198228,10 +198265,11 @@ gBD
 gBD
 iYY
 aYl
-spF
+cwC
 fMO
 xtc
 xtc
+hca
 xtc
 xtc
 xtc
@@ -198246,8 +198284,7 @@ xtc
 xtc
 xtc
 xtc
-xtc
-xtc
+hca
 xtc
 xtc
 xtc
@@ -198430,7 +198467,7 @@ gBD
 gBD
 iYY
 aYl
-spF
+cwC
 xtc
 itd
 gSP
@@ -198632,7 +198669,7 @@ gBD
 gBD
 iYY
 aYl
-spF
+cwC
 xtc
 itd
 uBB
@@ -198834,7 +198871,7 @@ qJJ
 qJJ
 qJJ
 qJJ
-spF
+cwC
 xtc
 itd
 uBB
@@ -199036,7 +199073,7 @@ yeS
 oyV
 sbx
 qJJ
-spF
+cwC
 xtc
 itd
 mJd
@@ -199238,7 +199275,7 @@ nau
 jOb
 jVq
 qJJ
-spF
+cwC
 xtc
 itd
 brc
@@ -199440,7 +199477,7 @@ kDc
 jOb
 hAB
 qJJ
-spF
+cwC
 xtc
 itd
 uBB
@@ -199642,7 +199679,7 @@ xEo
 jOb
 kAb
 qJJ
-spF
+cwC
 xtc
 itd
 uBB
@@ -199844,7 +199881,7 @@ nau
 jOb
 lcJ
 qJJ
-spF
+cwC
 xtc
 itd
 uBB
@@ -200046,7 +200083,7 @@ ckE
 hvN
 rgy
 qJJ
-spF
+cwC
 xtc
 itd
 uBB
@@ -200248,7 +200285,7 @@ rid
 ptZ
 mHg
 qJJ
-spF
+cwC
 xtc
 itd
 uBB
@@ -203895,7 +203932,7 @@ hJm
 nYl
 xHD
 pWa
-uFH
+eUO
 ccY
 stX
 gEv
@@ -207359,7 +207396,7 @@ vGK
 vGK
 vGK
 vGK
-vlm
+sFV
 vGK
 hzA
 uLL
@@ -210543,7 +210580,7 @@ cMF
 xja
 hYM
 enw
-fnA
+cpQ
 tUf
 skC
 skC
@@ -213804,9 +213841,9 @@ pFV
 pFV
 mGO
 bXS
-bXS
-pFV
-pFV
+swd
+cwC
+uyE
 pFV
 pfy
 mGO
