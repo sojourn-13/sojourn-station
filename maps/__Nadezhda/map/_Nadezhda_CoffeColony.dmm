@@ -105898,7 +105898,7 @@
 /obj/machinery/door/window{
 	dir = 1;
 	name = "AI Core Door";
-	req_access = list(16)s
+	req_access = list(16)
 	},
 /obj/structure/cable/green{
 	d1 = 1;
