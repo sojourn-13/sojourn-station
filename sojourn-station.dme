@@ -6,6 +6,8 @@
 // BEGIN_PREFERENCES
 #define DEBUG
 // END_PREFERENCES
+#include "tgs_dmapi\tgs.dm"
+#include "tgs_dmapi\tgs\includes.dm"
 // BEGIN_INCLUDE
 #include "code\_compile_options.dm"
 #include "code\_debugger.dm"
@@ -3411,6 +3413,4 @@
 #include "modular_sojourn\task_master\human_helper.dm"
 #include "modular_sojourn\task_master\task_helpers.dm"
 #include "modular_sojourn\task_master\tasks.dm"
-#include "tgs_dmapi\tgs.dm"
-#include "tgs_dmapi\tgs\includes.dm"
 // END_INCLUDE
