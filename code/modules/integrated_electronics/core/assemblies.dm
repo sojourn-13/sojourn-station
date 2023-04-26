@@ -972,17 +972,17 @@
 	desc = "A case for building medium-sized electronics. This one resembles some type of medical apparatus."
 
 // need sprites for this.
-// /obj/item/device/electronic_assembly/medium/gun
-// 	name = "type-e electronic mechanism"
-// 	icon_state = "setup_medium_gun"
-// 	item_state = "circuitgun"
-// 	desc = "A case for building medium-sized electronics. This one resembles a gun, or some type of tool, if you're feeling optimistic. It can fire guns and throw items while the user is holding it."
-// 	slot_flags = SLOT_BELT|SLOT_HOLSTER
-// 	item_icons = list(
-// 		icon_l_hand = 'icons/mob/onmob/items/lefthand_guns.dmi',
-// 		icon_r_hand = 'icons/mob/onmob/items/righthand_guns.dmi'
-// 		)
-// 	can_fire_equipped = TRUE
+ /obj/item/device/electronic_assembly/medium/gun
+ 	name = "type-e electronic mechanism"
+ 	icon_state = "setup_medium_gun"
+ 	item_state = "circuitgun"
+ 	desc = "A case for building medium-sized electronics. This one resembles a gun, or some type of tool, if you're feeling optimistic. It can fire guns and throw items while the user is holding it."
+ 	slot_flags = SLOT_BELT|SLOT_HOLSTER
+ 	item_icons = list(
+ 		icon_l_hand = 'icons/mob/items/lefthand_guns.dmi',
+ 		icon_r_hand = 'icons/mob/items/righthand_guns.dmi'
+ 		)
+ 	can_fire_equipped = TRUE
 
 /obj/item/device/electronic_assembly/medium/radio
 	name = "type-f electronic mechanism"
