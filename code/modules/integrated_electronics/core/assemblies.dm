@@ -972,7 +972,7 @@
 	desc = "A case for building medium-sized electronics. This one resembles some type of medical apparatus."
 
 // need sprites for this.
- /obj/item/device/electronic_assembly/medium/gun
+/obj/item/device/electronic_assembly/medium/gun
  	name = "type-e electronic mechanism"
  	icon_state = "setup_medium_gun"
  	item_state = "circuitgun"
