@@ -151,6 +151,13 @@
 	name = "Fluffdragon Tail"
 	desc = ""
 	icon_state = "fluffdragon"
+	
+/datum/sprite_accessory/tail/fluffdragon_alt
+	name = "Fluffdragon Alt Tail"
+	desc = ""
+	icon_state = "fluffdragon_alt"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/foxdown
 	name = "Fox Tail, Downwards"
@@ -272,6 +279,13 @@
 	desc = ""
 	icon_state = "otie"
 	ani_state = "otie_w"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+	
+/datum/sprite_accessory/tail/raccoon
+	name = "Racoon Tail"
+	desc = ""
+	icon_state = "raccoon"
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
