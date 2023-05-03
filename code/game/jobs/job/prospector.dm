@@ -70,7 +70,7 @@
 	alt_perks = list("Sawbones"=list(PERK_MEDICAL_EXPERT, PERK_STALKER), "Junk Technician"=list(PERK_JUNKBORN, PERK_ROBOTICS_EXPERT))
 	selection_color = "#a7bbc6"
 	initial_balance = 500	//Should be enough to get by with basic meds, tools, and food round-start.
-	wage = WAGE_NONE
+	wage = WAGE_LABOUR
 
 	disallow_species = list(FORM_BSSYNTH, FORM_NASHEF)
 	outfit_type = /decl/hierarchy/outfit/job/salv
@@ -119,7 +119,7 @@
 	alt_titles = list("Rookie Prospector", "Hired Muscle")
 	selection_color = "#a7bbc6"
 	initial_balance = 500	//Should be enough to get by with basic meds, tools, and food round start.
-	wage = WAGE_NONE
+	wage = WAGE_LABOUR
 
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 	outfit_type = /decl/hierarchy/outfit/job/pro
