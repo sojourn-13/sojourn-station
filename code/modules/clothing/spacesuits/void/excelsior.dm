@@ -6,11 +6,12 @@
 
 	//The excelsior armors cost small amounts of rare materials that they can teleport in.
 	//This means they can either build up materials over time, or make it go faster by scavenging rare mats
+	//The general focus of the low ish armor stat is that they should rely more on their tools than strait up combat. They got the toys(shields/turrets/traps) to take the hits for 'em afterall
 	matter = list(
 		MATERIAL_PLASTIC = 5,
 		MATERIAL_GLASS = 10,
 		MATERIAL_PLASTEEL = 25,
-		MATERIAL_GOLD = 10
+		MATERIAL_GOLD = 10,
 		MATERIAL_SILVER = 10
 	)
 
@@ -50,7 +51,7 @@
 	matter = list(
 		MATERIAL_PLASTIC = 10,
 		MATERIAL_STEEL = 20,
-		MATERIAL_PLASTEEL = 50
+		MATERIAL_PLASTEEL = 50,
 		MATERIAL_GOLD = 20,
 		MATERIAL_SILVER = 20
 	)
