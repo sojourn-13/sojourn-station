@@ -6,7 +6,7 @@
 	tree_y = 0.8
 	base_income = 1600
 	wealth = 0
-	markup = UNCOMMON_GOODS
+	markup = COMMON_GOODS
 	hidden_inv_threshold = 32000
 	start_discovered = TRUE
 	spawn_always = TRUE
