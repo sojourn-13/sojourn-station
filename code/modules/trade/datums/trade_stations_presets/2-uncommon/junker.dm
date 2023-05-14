@@ -7,7 +7,7 @@
 	tree_y = 0.7
 	recommendations_needed = 1
 	spawn_always = TRUE
-	markup = UNCOMMON_GOODS
+	markup = COMMON_GOODS
 	base_income = 3200
 	wealth = -48000		// REALLY good gear so were in det
 	hidden_inv_threshold = 32000
