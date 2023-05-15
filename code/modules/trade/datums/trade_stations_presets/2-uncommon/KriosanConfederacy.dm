@@ -10,7 +10,7 @@
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
-	markup = COMMON_GOODS * 1.5
+	markup = COMMON_GOODS
 	hidden_inv_threshold = 32000
 	start_discovered = TRUE //WE KNOW WERE ARE OVERHOUNDS ARE
 	spawn_always = TRUE //Were right next door

@@ -221,8 +221,14 @@ SUBSYSTEM_DEF(trade)
 
 /datum/controller/subsystem/trade/proc/get_sell_price(path, datum/trade_station/station, price)
 	var/selling_price = round(get_new_cost(path) * station.markdown)
+	var/buying_price = get_import_cost(path, station)
+
 	if(selling_price <= 0)
 		selling_price = price * station.markdown
+
+	if(selling_price > buying_price)
+		selling_price -= selling_price * station.markdown
+
 	. = selling_price
 
 /datum/controller/subsystem/trade/proc/get_import_cost(path, datum/trade_station/station)
@@ -545,7 +551,7 @@ SUBSYSTEM_DEF(trade)
 		var/datum/transaction/T = new(cost * 0.2, lonestar_account.get_name(), "Sold item", TRADE_SYSTEM_IC_NAME)
 		T.apply_to(lonestar_account)
 		TA.apply_to(A)
-		station.add_to_wealth(cost)
+		//station.add_to_wealth(cost) We dont want to take or give wealth for balance
 
 /datum/controller/subsystem/trade/proc/export(obj/machinery/trade_beacon/sending/senderBeacon)
 	if(QDELETED(senderBeacon) || !istype(senderBeacon))
