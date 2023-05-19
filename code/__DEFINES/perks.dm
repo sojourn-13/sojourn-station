@@ -222,7 +222,16 @@
 #define PERK_ULTRASURGEON /datum/perk/drug/ultrasurgeon
 #define PERK_NJOY /datum/perk/njoy
 
+//Temporary lecture perks
+#define PERK_SCORCHING_SHELL /datum/perk/lecture/scorching_shell
 
-//cooldown perks
+//Task Perks
+#define PERK_FORCEFUL_REJECTION /datum/perk/forceful_rejection
+
+//////////////////
+//Cooldown perks//
+//////////////////
+
+//Exertion Perks
 #define PERK_COOLDOWN_REASON /datum/perk/cooldown/reason
 #define PERK_COOLDOWN_EXERTION /datum/perk/cooldown/exertion
