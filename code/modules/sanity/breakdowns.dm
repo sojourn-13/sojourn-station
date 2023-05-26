@@ -122,7 +122,7 @@
 
 
 /datum/breakdown/positive/lesson
-	name = "A Lesson Learnt"
+	name = "A Lesson Learned"
 	duration = 0
 	restore_sanity_post = 100
 
@@ -209,7 +209,7 @@
 	..()
 */
 
-/datum/breakdown/negative/hysteric
+/*/datum/breakdown/negative/hysteric //Very VERY bad breakdown that essentially makes you not be able to control yourself
 	name = "Hysteric"
 	duration = 1.5 MINUTES
 	delay = 60 SECONDS
@@ -250,7 +250,7 @@
 	--holder.owner.suppress_communication
 	..()
 
-
+*/
 
 /datum/breakdown/negative/delusion
 	name = "Delusion"
