@@ -206,6 +206,8 @@
 /datum/spawnpoint/cryo/starboard
 /datum/spawnpoint/cryo/elevator
 
+//Outsider Cyrogenics
+/datum/spawnpoint/cryo/outsider
 
 /**********************
 	DORMITORY SPAWNING

@@ -14,6 +14,7 @@
 	emote_see = list("undulates quietly")
 	leather_amount = 0
 	bones_amount = 0
+	sanity_damage = 1
 
 	armor = list(melee = 50, bullet = 80, energy = 10, bomb = 25, bio = 100, rad = 100) //Were basiclly ballastic jell
 

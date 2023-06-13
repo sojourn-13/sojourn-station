@@ -7,12 +7,12 @@
 	tree_x = 0.26
 	tree_y = 0.8
 	spawn_always = TRUE
-	markup = RARE_GOODS
+	markup = UNCOMMON_GOODS
 	offer_limit = 1
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3000
 	stations_recommended = list("trapper", "bluespace")
 	recommendations_needed = 1
 	inventory = list(
@@ -41,7 +41,8 @@
 		"Upgraded Organs" = list(
 			/obj/item/computer_hardware/hard_drive/portable/design/surgery = good_data("back alley organs disk", list(1, 2), 1200),
 			/obj/item/computer_hardware/hard_drive/portable/research_points= good_data("research data disk", list(1, 2), 2000),
-			/obj/item/organ_module/active/simple/armshield
+			/obj/item/organ_module/active/simple/armshield,
+			/obj/item/organ_module/active/simple/armsmg
 		),
 		"Autoinjectors II" = list(
 			// Autoinjectors defined in hypospray.dm

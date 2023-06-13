@@ -14,6 +14,9 @@
 /tipsAndTricks/gameplay/fightBlob_two
     tipText = "Blobs are shockingly weak to flashbangs, and smoke grenade. Make good use of them in cases were a blob is overrunning the colony."
 
+/tipsAndTricks/gameplay/maskProtections
+    tipText = "Balaclavas, surgical masks, and other masks provide a buff to your sanity protection. Perfect for operators, thieves, and people afraid of disease!."
+
 /tipsAndTricks/gameplay/fuhrerRoachReinforcement
     tipText = "The Fuhrer roach can call for an entire battalion of reinforcement roaches. If you hear it scream, RUN!"
 

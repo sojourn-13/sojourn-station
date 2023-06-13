@@ -95,8 +95,7 @@
 	desc = "Used to treat those nasty burns. Unlike regular ointments this one has a Soteria logo on it, its formula massively improved by including toxin-purging sterilizing crystals."
 	icon_state = "sr_ointment"
 	preloaded_reagents = list("dermaline" = 5, "sterilizine" = 10)
-	heal_burn = 20
-	heal_toxin = 10
+	heal_burn = 25
 	amount = 8
 	max_amount = 8
 

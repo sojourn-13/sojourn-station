@@ -129,6 +129,12 @@
 	build_path = /obj/item/storage/belt/champion
 	materials = list(MATERIAL_BIOMATTER = 50)
 
+// This separates regular clothes designs from NT clothes designs //
+/datum/design/bioprinter/nt_clothes/armor_kit
+	name = "Armor Bundle"
+	build_path = /obj/item/gunbox/church
+	materials = list(MATERIAL_BIOMATTER = 20)
+
 /datum/design/bioprinter/nt_clothes/acolyte_armor
 	name = "Vector Armor"
 	build_path = /obj/item/clothing/suit/armor/vest/acolyte
@@ -168,10 +174,6 @@
 /datum/design/bioprinter/nt_clothes/acolyte_uniform
 	name = "Vector Garment"
 	build_path = /obj/item/clothing/under/rank/acolyte
-
-/datum/design/bioprinter/nt_clothes/sports_uniform
-	name = "Sport Clothes"
-	build_path = /obj/item/clothing/under/rank/church/sport
 
 /datum/design/bioprinter/nt_clothes/church_uniform
 	name = "Church Garment"

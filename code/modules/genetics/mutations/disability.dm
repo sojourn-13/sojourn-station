@@ -84,3 +84,29 @@
 	desc="Changes the shape of your eyes, worsening your vision comprehensively."
 	gain_text="Your eyes feel weird..."
 	disability=NEARSIGHTED
+
+/datum/genetics/mutation/disability/noprints
+	name = "Smooth Fingertips"
+	key = "MUTATION_NO_PRINTS"
+	desc = "Causes finger friction ridges to disappear, essentially removing the fingerprint pattern."
+	gain_text="Your fingertips lose their texture..."
+	instability = 5
+	mutation = mFingerprints
+
+/datum/genetics/mutation/disability/nobreathe
+	name = "Anomalous Air Supply"
+	key = "MUTATION_NO_BREATHE"
+	desc = "Removes the need for oxygen."
+	gain_text="Your lungs feel a little minty..."
+	instability = 5
+	mutation = mNobreath
+
+/datum/genetics/mutation/disability/hulk
+	name = "H.U.L.K."
+	key = "MUTATION_HULK"
+	desc = "Heavy, Uncontrolled Lifting & Kinetics. May have undesired effects on the mind."
+	gain_text="You feel... Powerful..."
+	instability = 80
+	mutation = HULK
+
+

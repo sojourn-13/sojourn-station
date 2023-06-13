@@ -176,6 +176,7 @@
 
 /obj/random/gun_energy_cheap/item_to_spawn()
 	return pickweight(list(/obj/item/gun/energy/gun/martin = 2,\
+				/obj/item/gun/energy/ntpistol = 2,\
 				/obj/item/gun/energy/gun = 2,\
 				/obj/item/gun/energy/cog = 1,\
 				/obj/item/gun/energy/lasercore = 0.5,\
@@ -288,7 +289,7 @@
 	return pickweight(list(
 				/obj/item/gun/energy/xray = 2,
 				/obj/item/gun/energy/sniperrifle = 2,
-				/obj/item/gun/energy/laser/railgun = 1,
+				/obj/item/gun/energy/laser/railgun/railrifle = 1,
 				/obj/item/gun/energy/laser/railgun/pistol = 1,
 				/obj/item/gun/energy/plasma/auretian = 1,
 				/obj/item/gun/energy/centurio = 2,
@@ -372,39 +373,39 @@
 	icon_state = "gun-black"
 
 /obj/random/gun_parts/item_to_spawn()
-	return pickweight(list(/obj/item/part/gun/barrel/pistol/steel = 5,
-	/obj/item/part/gun/barrel/magnum/steel = 5,
-	/obj/item/part/gun/barrel/shotgun/steel = 5,
-	/obj/item/part/gun/barrel/srifle/steel = 4,
-	/obj/item/part/gun/barrel/lrifle/steel = 4,
-	/obj/item/part/gun/barrel/clrifle/steel = 3,
-	/obj/item/part/gun/barrel/kurtz/steel = 1.5,
-	/obj/item/part/gun/barrel/hrifle/steel = 1,
-	/obj/item/part/gun/barrel/pistol = 3,
-	/obj/item/part/gun/barrel/magnum = 3,
-	/obj/item/part/gun/barrel/kurtz = 0.5,
-	/obj/item/part/gun/barrel/srifle = 1,
-	/obj/item/part/gun/barrel/clrifle = 0.5,
-	/obj/item/part/gun/barrel/lrifle = 1,
-	/obj/item/part/gun/barrel/shotgun = 1,
-	/obj/item/part/gun/barrel/hrifle = 0.1,
+	return pickweight(list(/obj/item/part/gun/barrel/pistol/steel = 3,
+	/obj/item/part/gun/barrel/magnum/steel = 3,
+	/obj/item/part/gun/barrel/shotgun/steel = 1,
+	/obj/item/part/gun/barrel/srifle/steel = 1,
+	/obj/item/part/gun/barrel/lrifle/steel = 1,
+	/obj/item/part/gun/barrel/clrifle/steel = 0.5,
+	/obj/item/part/gun/barrel/kurtz/steel = 0.5,
+	/obj/item/part/gun/barrel/hrifle/steel = 0.1,
+	/obj/item/part/gun/barrel/pistol = 5,
+	/obj/item/part/gun/barrel/magnum = 5,
+	/obj/item/part/gun/barrel/kurtz = 1.5,
+	/obj/item/part/gun/barrel/srifle = 4,
+	/obj/item/part/gun/barrel/clrifle = 3,
+	/obj/item/part/gun/barrel/lrifle = 4,
+	/obj/item/part/gun/barrel/shotgun = 4,
+	/obj/item/part/gun/barrel/hrifle = 1,
 	/obj/item/part/gun/grip/wood = 5,
 	/obj/item/part/gun/grip/black = 3,
 	/obj/item/part/gun/grip/serb = 2,
 	/obj/item/part/gun/grip/rubber = 1,
 	/obj/item/part/gun/grip/excel = 0.5,
-	/obj/item/part/gun/mechanism/pistol/steel = 4,
-	/obj/item/part/gun/mechanism/revolver/steel = 4,
+	/obj/item/part/gun/mechanism/pistol/steel = 2.5,
+	/obj/item/part/gun/mechanism/revolver/steel = 2,
 	/obj/item/part/gun/mechanism/boltgun = 4,
-	/obj/item/part/gun/mechanism/shotgun/steel = 3,
-	/obj/item/part/gun/mechanism/smg/steel = 3,
-	/obj/item/part/gun/mechanism/autorifle/steel = 2,
-	/obj/item/part/gun/mechanism/pistol = 2.5,
-	/obj/item/part/gun/mechanism/revolver = 2,
-	/obj/item/part/gun/mechanism/shotgun = 2,
-	/obj/item/part/gun/mechanism/smg = 1,
+	/obj/item/part/gun/mechanism/shotgun/steel = 2,
+	/obj/item/part/gun/mechanism/smg/steel = 1,
+	/obj/item/part/gun/mechanism/autorifle/steel = 0.1,
+	/obj/item/part/gun/mechanism/pistol = 4,
+	/obj/item/part/gun/mechanism/revolver = 4,
+	/obj/item/part/gun/mechanism/shotgun = 3,
+	/obj/item/part/gun/mechanism/smg = 3,
 	/obj/item/part/gun/mechanism/autorifle = 0.5,
-	/obj/item/part/gun/mechanism/machinegun = 0.1,
+	/obj/item/part/gun/mechanism/machinegun = 2,
 	/obj/random/gun_parts/frames = 2,
 	/obj/random/gun_parts/high_end = 1
 	))

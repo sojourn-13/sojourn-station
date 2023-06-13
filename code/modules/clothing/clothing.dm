@@ -26,18 +26,25 @@
 /obj/item/clothing/Initialize(mapload, ...)
 	. = ..()
 
+	var/list/init_accessories = accessories
+	accessories = list()
+	for (var/path in init_accessories)
+		attach_accessory(null, new path (src))
+
 	var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/clothing_info
 	action.owner = src
-	if(!islist(hud_actions)) hud_actions = list()
+	if(!hud_actions)
+		hud_actions = list()
 	hud_actions += action
 
 	if(matter)
 		return
 
-	else if(!matter)
-		matter = list()
-
-	matter.Add(list(MATERIAL_BIOMATTER = 5 * w_class))    // based of item size
+	else if(chameleon_type)
+		matter = list(MATERIAL_PLASTIC = 2 * w_class)
+		origin_tech = list(TECH_ILLEGAL = 3)
+	else
+		matter = list(MATERIAL_BIOMATTER = 5 * w_class)
 
 /obj/item/clothing/Destroy()
 	for(var/obj/item/clothing/accessory/A in accessories)
@@ -637,6 +644,7 @@ BLIND     // can't see anything
 	blacklisted_allowed = list(
 		/obj/item/tool/knife/psionic_blade,
 		/obj/item/tool/hammer/telekinetic_fist,
+		/obj/item/flame/pyrokinetic_spark,
 		/obj/item/tool/psionic_omnitool,
 		/obj/item/shield/riot/crusader/psionic,
 		/obj/item/gun/kinetic_blaster

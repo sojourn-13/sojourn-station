@@ -1,6 +1,42 @@
 /datum/perk/oddity
 	gain_text = "You feel different. Exposure to oddities has changed you. Now you can't go back."
 
+/datum/perk/oddity/survivor
+	name = "Survivor"
+	desc = "After seeing the death of many acquaintances and friends, witnessing death doesn't shock you as much as before. \
+			Halves sanity loss from seeing people die."
+	//icon_state = "survivor" // https://game-icons.net/1x1/lorc/one-eyed.html
+
+/datum/perk/oddity/survivor/assign(mob/living/carbon/human/H)
+	if(..())
+		holder.sanity.death_view_multiplier *= 0.5
+
+/datum/perk/oddity/survivor/remove()
+	if(holder)
+		holder.sanity.death_view_multiplier *= 2
+	..()
+
+/datum/perk/oddity/inspiring
+	name = "Inspiring Presence"
+	desc = "You know just what to say to people and are able to inspire the best - or even worst - in others. \
+			People around you regain their sanity quicker."
+	//icon_state = "inspiration"
+
+/datum/perk/oddity/inspiring/assign(mob/living/carbon/human/H)
+	if(..())
+		holder.sanity_damage -= 2
+
+/datum/perk/oddity/inspiring/remove()
+	if(holder)
+		holder.sanity_damage += 2
+	..()
+
+/datum/perk/oddity/terrible_fate
+	name = "Terrible Fate"
+	desc = "You realize the painful truth of death. You don't want to die and despise death - dying is a unmistakable horror to you. \
+			Anyone who is around you at the moment of your death must roll a Vigilance sanity check. If they fail, their sanity will instantly be dropped to 0."
+	icon_state = "murder" // https://game-icons.net/1x1/delapouite/chalk-outline-murder.html
+
 /datum/perk/oddity/toxic_revenger
 	name = "Fungal Host"
 	desc = "A small hostile fungal spores were on the oddity, hijacking your lungs and forcing them to emit toxins harmful to everyone around you every half hour. It will be a long time before your body can fight this off..."
@@ -329,3 +365,4 @@
 	if(holder)
 		holder.sanity.insight_gain_multiplier *= 2
 	..()
+

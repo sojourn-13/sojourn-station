@@ -1,3 +1,6 @@
+/*
+ * Baseline Armor
+ */
 
 /obj/item/clothing/suit/armor
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -22,6 +25,7 @@
 /*
  * Vests
  */
+
 /obj/item/clothing/suit/armor/vest
 	name = "armor vest"
 	desc = "An armored vest that protects against some damage. Not designed for serious operations."
@@ -37,6 +41,29 @@
 		rad = 0
 	)
 
+/obj/item/clothing/suit/armor/vest/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Baseline"] = "armor"
+	options["Security"] = "armor_security"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/armor/vest/full
 	name = "full body armor"
 	desc = "A generic armor vest, but with shoulderpads and kneepads included to cover all parts of the body. Not designed for serious operations."
@@ -46,46 +73,28 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
-/obj/item/clothing/suit/armor/vest/security
-	name = "security armor"
-	icon_state = "armor_security"
-	desc = "A tactical armor vest that protects against some damage. Not designed for serious operations."
+/obj/item/clothing/suit/armor/vest/full/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/clothing/suit/armor/vest/security/full
-	name = "full body security armor"
-	desc = "A tactical armor vest, but with shoulderpads and kneepads included to cover all parts of the body. Not designed for serious operations."
-	icon_state = "armor_security_fullbody"
-	item_state = "armor_security_fullbody"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
+	if(!isliving(loc))
+		return
 
-/obj/item/clothing/suit/armor/vest/detective
-	name = "ranger armor vest"
-	desc = "An armored vest with a ranger's badge on it."
-	icon_state = "armor_detective"
+	var/mob/M = usr
+	var/list/options = list()
+	options["Baseline"] = "armor_fullbody"
+	options["Security"] = "armor_security_fullbody"
 
-/obj/item/clothing/suit/armor/vest/ironhammer
-	name = "security armor vest"
-	desc = "An armored vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations."
-	icon_state = "armor_ironhammer"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
-/obj/item/clothing/suit/armor/vest/ironhammer_wintercoat //pieced together thanks to Rebel's Supply spec coat - Dongels
-	name = "security armored coat"
-	desc = "An armored winter coat with vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations. You're pretty sure the coat is just thick enough to keep warm, and that's all. Why you would want that on a sweaty jungle planet is beyond thought."
-	icon_state = "coatsecurity_long"
-
-/obj/item/clothing/suit/storage/vest/ironhammer
-	name = "webbed operator armor"
-	desc = "An armored vest that protects against some damage. This one has been done in Ironhammer Security colors and has various pouches and straps attached."
-	icon_state = "webvest_ironhammer"
-
-/obj/item/clothing/suit/armor/vest/ironhammer/full
-	name = "marshal tactical unit armor"
-	desc = "An armored vest painted in Marshals colors. This one has shoulderpads and kneepads included to protect all parts of the body."
-	icon_state = "armor_ih_fullbody"
-	item_state = "armor_ih_fullbody"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/armor/vest/handmade
 	name = "handmade armor vest"
@@ -100,6 +109,29 @@
 		rad = 0
 	)
 	price_tag = 150
+
+/obj/item/clothing/suit/armor/vest/handmade/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Orange"] = "armor_handmade"
+	options["Black"] = "hm_armorvest_black"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/armor/vest/handmade/full
 	name = "full handmade armor vest"
@@ -117,68 +149,60 @@
 		rad = 0
 	) // No gaining stats, just coverage!
 
-/obj/item/clothing/suit/armor/vest/handmade_black
-	name = "handmade black armor vest"
-	desc = "An armored vest of dubious quality. Provides decent protection against physical damage, for a piece of crap. This one is black."
-	icon_state = "hm_armorvest_black"
-	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 15,
-		bomb = 10,
-		bio = 0,
-		rad = 0
-	)
-	price_tag = 150
+/obj/item/clothing/suit/armor/vest/handmade/full/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/clothing/suit/armor/vest/handmade_black/full
-	name = "full handmade black armor vest"
-	desc = "An armored vest of dubious quality. This one has had metal sheets attached to the shoulders and knees to be used as makeshift shoulderpads and kneepads. It also comes in black."
-	icon_state = "hm_armorvest_black_full"
-	item_state = "hm_armorvest_black_full"
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Orange"] = "armor_handmade_fullbody"
+	options["Black"] = "hm_armorvest_black_full"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+////////////
+
+/*
+ * Faction Vests
+*/
+
+/obj/item/clothing/suit/armor/vest/ironhammer
+	name = "marshal armor vest"
+	desc = "An armored vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations."
+	icon_state = "armor_ironhammer"
+
+/obj/item/clothing/suit/armor/vest/ironhammer/full
+	name = "marshal tactical unit armor"
+	desc = "An armored vest painted in Marshals colors. This one has shoulderpads and kneepads included to protect all parts of the body."
+	icon_state = "armor_ih_fullbody"
+	item_state = "armor_ih_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = MEDIUM_STIFFNESS
-	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 15,
-		bomb = 10,
-		bio = 0,
-		rad = 0
-	) // No gaining stats, just coverage!
+	stiffness = LIGHT_STIFFNESS
 
-/obj/item/clothing/suit/armor/vest/iron_lock_security
-	name = "outdated ablative vest"
-	desc = "An \"Iron Lock Security\" ablative vest with plates designed to absorb rather than reflect energy projectiles. Produced by Greyson Positronic."
-	icon_state = "northtech"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 5)
-	armor_list = list(
-		melee = 15,
-		bullet = 15,
-		energy = 50,
-		bomb = 0,
-		bio = 0,
-		rad = 0
-	)
+/obj/item/clothing/suit/armor/vest/ironhammer_wintercoat //pieced together thanks to Rebel's Supply spec coat - Dongels
+	name = "security armored coat"
+	desc = "An armored winter coat with vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations. You're pretty sure the coat is just thick enough to keep warm, and that's all. Why you would want that on a planet like Amethyn is beyond thought."
+	icon_state = "coatsecurity_long"
 
-/obj/item/clothing/suit/armor/vest/ablative
-	name = "ablative vest"
-	desc = "An ablative vest with plates designed to absorb rather than reflect energy projectiles."
-	icon_state = "northtech"
-	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 10)
-	armor_list = list(
-		melee = 15,
-		bullet = 15,
-		energy = 60,
-		bomb = 0,
-		bio = 0,
-		rad = 0
-	)
+////////////
 
-/obj/item/clothing/suit/armor/vest/ablative/ironhammer
-	icon_state = "ablative_ironhammer"
-	item_state = "ablative_ironhammer"
+/*
+ * Factions
+*/
 
+//Church
 /obj/item/clothing/suit/armor/vest/botanist
 	name = "botanist attire"
 	desc = "Every rose has its thorns."
@@ -188,7 +212,7 @@
 	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 20, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
-/obj/item/clothing/suit/armor/vest/botanist/verb/toggle_style()
+/obj/item/clothing/suit/armor/vest/botanist/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -220,7 +244,7 @@
 	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
-/obj/item/clothing/suit/armor/vest/acolyte/verb/toggle_style()
+/obj/item/clothing/suit/armor/vest/acolyte/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -262,6 +286,146 @@
 	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
+/obj/item/clothing/suit/armor/vest/path/divisor
+	name = "Divisor's Guardsmen Armor"
+	desc = "The armour of the church arms forces of old - coming from the now extinct military of New Byzantine. The inner layers has plates of biomatter-infused steel and chainmail, together with shoulder protection that elevates to protect the neck and fix it with the helmet of the same design."
+	icon_state = "divisor_guardsmen_armor"
+
+/obj/item/clothing/suit/armor/vest/path/divisor/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Divisor's Guardsmen Armor"] = "divisor_guardsmen_armor"
+	options["Divisor Plate Armor"] = "divisor_plate_armor"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/armor/vest/path/tessallate
+	name = "Tessellate Riding Habit"
+	desc = "The Tessellate Habit is an mixture of an well protective, efficient gambeson with inner chainmail that ensures the protection of it's user."
+	icon_state = "tessellate_riding_habit"
+
+/obj/item/clothing/suit/armor/vest/path/tessallate/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Tessellate Riding Habit"] = "tessellate_riding_habit"
+	options["Tessellate Doctor Garbs"] = "tessellate_doctor_garbs"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/armor/vest/path/lemniscate
+	name = "Lemniscate Garbs"
+	desc = "The well suited lemniscates garbs of new, made for the highest quality ceremonies by looking absurdly fancy.  It's protective values are quite close to the design of an pourpoint with inner chainmail with golden ridges and lines that only reinforces it's fanciness value."
+	icon_state = "lemniscate_garbs"
+
+/obj/item/clothing/suit/armor/vest/path/lemniscate/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Lemniscate Garbs"] = "lemniscate_garbs"
+	options["Lemniscate Caftan"] = "lemniscate_caftan"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/armor/vest/path/monomial
+	name = "Monomial Kasaya"
+	desc = "An old design of armor, often repainted, pieced together with minor plates overlapping on the shoulders, waist and legs, with an large plate protecting the chest and belly."
+	icon_state = "monomial_kasaya"
+
+/obj/item/clothing/suit/armor/vest/path/monomial/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Monomial Kasaya"] = "monomial_kasaya"
+	options["Monomial Gusoku"] = "monomial_gusoku"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/armor/vest/path/factorial
+	name = "Factorial powergarb"
+	desc = "A Factorial's best protection well working their duties on the colony and back in its day on New Byzantine, tends to have different attachments for a more personalized garb."
+	icon_state = "factorial_powergarb"
+
+/obj/item/clothing/suit/armor/vest/path/factorial/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Factorial powergarb"] = "factorial_powergarb"
+	options["Factorial Vesselcrew Armor"] = "factorial_vesselcrew_armor"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/armor/vest/rosaria
 	name = "rosaria armor"
 	desc = "The Rosaria protects."
@@ -272,7 +436,7 @@
 	flags_inv = HIDEJUMPSUIT
 	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
-/obj/item/clothing/suit/armor/vest/rosaria/verb/toggle_style()
+/obj/item/clothing/suit/armor/vest/rosaria/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -305,7 +469,7 @@
 	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
-/obj/item/clothing/suit/armor/vest/custodian/verb/toggle_style()
+/obj/item/clothing/suit/armor/vest/custodian/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -338,7 +502,7 @@
 	flags_inv = HIDEJUMPSUIT
 	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
-/obj/item/clothing/suit/armor/vest/prime/verb/toggle_style()
+/obj/item/clothing/suit/armor/vest/prime/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -364,13 +528,14 @@
 		usr.update_action_buttons()
 		return 1
 
+//Guild
 /obj/item/clothing/suit/armor/vest/technomancersuit
 	name = "'Mark V' environmental protection suit"
 	desc = "For working in hazardous environments. While it is built for most environments, one of those is not space. As a tradeoff, it can be modified more."
 	icon_state = "technosuit"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	armor_list = list(melee = 40, bullet = 40, energy = 35, bomb = 50, bio = 100, rad = 100)
+	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
 	max_upgrades = 2
 	extra_allowed = list(/obj/item/extinguisher,
 						 /obj/item/tool,
@@ -382,6 +547,7 @@
 						 /obj/item/storage/toolbox)
 	flags_inv = HIDEJUMPSUIT
 
+//Soteria
 /obj/item/clothing/suit/armor/vest/soteriasuit
 	name = "'Mark II' environmental protection suit"
 	desc = "For working in hazardous environments. While its built for most environments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
@@ -402,6 +568,11 @@
 	flags_inv = HIDEJUMPSUIT
 	matter = list(MATERIAL_STEEL = 40)
 
+/*
+ * Specilized Armors
+ */
+
+//Bulletproof
 /obj/item/clothing/suit/armor/bulletproof
 	name = "bulletproof vest"
 	desc = "A vest that excels in protecting the wearer against high-velocity solid projectiles."
@@ -429,12 +600,56 @@
 	slowdown = 0.6 // Heavier since it now covers more of the body
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer
+	name = "marshal bulletproof suit"
 	desc = "A bulky vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage produced by Seinemetall Defense GmbH."
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 	slowdown = 0.6 // Heavier since it now covers more of the body
 	icon_state = "bulletproof_ironhammer"
-	item_state = "bulletproof_fullbody"
+	item_state = "bulletproof_ironhammer"
+
+/obj/item/clothing/suit/armor/bulletproof/ironhammer/militia
+	name = "blackshield bulletproof suit"
+	desc = "A set of vest, shoulder guards and leg guards that excel at protecting against high-velocity, solid projectiles. \
+			This particular set seems to have been taken straight from the armory of some low-budget P.D.F or Reserve force, repainted in \
+			Blackshield colors and given their I.F.F markings."
+	icon_state = "bulletproof_bs"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+
+//Ablatives / Laserproof
+
+/obj/item/clothing/suit/armor/vest/iron_lock_security
+	name = "outdated ablative vest"
+	desc = "An \"Iron Lock Security\" ablative vest with plates designed to absorb rather than reflect energy projectiles. Produced by Greyson Positronic."
+	icon_state = "northtech"
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 5)
+	armor_list = list(
+		melee = 15,
+		bullet = 15,
+		energy = 50,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/suit/armor/vest/ablative
+	name = "ablative vest"
+	desc = "An ablative vest with plates designed to absorb rather than reflect energy projectiles."
+	icon_state = "northtech"
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 10)
+	armor_list = list(
+		melee = 15,
+		bullet = 15,
+		energy = 60,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer
+	icon_state = "ablative_ironhammer"
+	item_state = "ablative_ironhammer"
+
 
 /obj/item/clothing/suit/armor/laserproof
 	name = "reflective armor vest"
@@ -490,6 +705,181 @@
 	max_upgrades = 2
 	siemens_coefficient = 0
 	price_tag = 650
+
+/obj/item/clothing/suit/armor/vest/ablative/militia
+	name = "blackshield ablative plate"
+	desc = "An outdated set of ablative armor, utilizing advanced materials to absorb rather than reflect energy projeciles and painted in Blackshield's colors. \
+			A distinctive set of equipment, the MK-II 'Energy Defense Gear' sold more for its distinctive, and some would say 'flashy' \
+			appearance than its capabilities. Despite its bad reputation as a tax-payer credit sink, it serves as a fairly adequate piece of gear."
+	icon_state = "ablative_bs"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
+	slowdown = 0.5
+	armor_list = list(melee = 25, bullet = 25, energy = 60, bomb = 10, bio = 0, rad = 0)
+
+//Flak Vests
+/obj/item/clothing/suit/armor/flakvest
+	name = "flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel."
+	icon_state = "flakvest"
+	item_state = "flakvest"
+	blood_overlay_type = "armor"
+	price_tag = 250
+	slowdown = 0.5
+	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/armor/flakvest/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Baseline"] = "flakvest"
+	options["Green"] = "flakvest_green"
+	options["Tan"] = "flakvest_tan"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/armor/flakvest/full // Sic.
+	name = "full body flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations, it protects well against explosives and shrapnel. This set has had kneepads and shoulderpads attached for more protection."
+	icon_state = "flakvest_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	stiffness = LIGHT_STIFFNESS
+	slowdown = 0.6 // Bulkier due to protecting more
+	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0) // Again, in case it doesn't inherit
+
+/obj/item/clothing/suit/armor/flakvest/full/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Baseline"] = "flakvest_fullbody"
+	options["Green"] = "flakvest_green_fullbody"
+	options["Tan"] = "flakvest_tan_fullbody"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/armor/flakvest/militia
+	name = "blackshield flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
+			This one is marked with the distinct IFF stripes of the Blackshield."
+	icon_state = "flakvest_mil"
+	item_state = "flakvest_mil"
+
+/obj/item/clothing/suit/armor/flakvest/militia/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "flakvest_mil"
+	options["Woodlands Blackshield Combat"] = "flakvest_green_mil"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/armor/flakvest/militia/full
+	name = "blackshield full flak vest"
+	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
+			This one is marked with the distinct IFF stripes of the Blackshield, and offers additional coverage through shoulderpads and kneepads."
+	icon_state = "flakvest_mil_fullbody"
+	item_state = "flakvest_mil_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	slowdown = 0.6 // Bulkier due to protecting more
+	stiffness = LIGHT_STIFFNESS
+
+/obj/item/clothing/suit/armor/flakvest/militia/full/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Blackshield Colours"] = "flakvest_mil_fullbody"
+	options["Woodlands Blackshield Combat"] = "flakvest_green_mil_fullbody"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/armor/flakvest/commander
+	name = "commander's flak vest"
+	desc = "An armored, padded vest that's seen many long tours and is suited for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. Smells of napalm and the sea."
+	icon_state = "flakvest_mil"
+	item_state = "flakvest_mil"
+	blood_overlay_type = "armor"
+	slowdown = 0.2
+	armor_list = list(melee = 45, bullet = 50, energy = 30, bomb = 50, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/armor/flakvest/commander/full
+	name = "commander's full body flak vest"
+	desc = "An armored, padded vest that's seen many long tours and is suited for heavy-duty operations. \
+			Heavy and bulky, it protects well against explosive and shrapnel. Smells of napalm and the sea. \
+			This model adds shoulder and thighs protection through additional layers of protective armor." // Thighington simps rejoice. - Seb
+	icon_state = "commander_mil_fullbody"
+	item_state = "commander_mil_fullbody"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	slowdown = 0.3 // Bulkier due to protecting more
+	stiffness = LIGHT_STIFFNESS
+	armor_list = list(
+		melee = 45,
+		bullet = 50,
+		energy = 30,
+		bomb = 50,
+		bio = 0,
+		rad = 0
+		)
+
+
 /*
  * Heavy Armor Types
  */
@@ -555,7 +945,7 @@
 	name = "marshal riot suit"
 	desc = "A suit of armor with heavy padding to protect against melee attacks. Looks like it might impair movement. This one is produced by Seinemetall Defense GmbH."
 	icon_state = "riot_ironhammer"
-	item_state = "swat_suit"
+	item_state = "riot_ironhammer"
 
 
 /*
@@ -618,7 +1008,7 @@
 	icon_state = "forehead_armor"
 	item_state = "forehead_armor"
 	max_upgrades = 2 //Like all scav armor, this means investing into these will be better but buying gear will still be viable
-	matter = list(MATERIAL_PLASTEEL = 24, MATERIAL_PLASTIC = 35, MATERIAL_PLATINUM  = 4, MATERIAL_STEEL = 40) //worth stealing
+	matter = list(MATERIAL_PLASTEEL = 24, MATERIAL_PLASTIC = 25, MATERIAL_SILVER = 8,  MATERIAL_STEEL = 40) //worth stealing
 	price_tag = 1200
 	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
 	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
@@ -638,6 +1028,31 @@
 	pockets.max_storage_space = 8
 	pockets.cant_hold |= list(/obj/item/tool_upgrade/armor) //Prevents a bug
 
+/obj/item/clothing/suit/storage/vest/scav/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard"] = "forehead_armor"
+	options["Rust"] = "forehead_rust"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
 /obj/item/clothing/suit/armor/platecarrier
 	name = "plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes."
@@ -645,6 +1060,32 @@
 	item_state = "platecarrier"
 	blood_overlay_type = "armor"
 	armor_list = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/armor/platecarrier/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Baseline"] = "platecarrier"
+	options["Security"] = "platecarrier_ih"
+	options["Green"] = "platecarrier_green"
+	options["Tan"] = "platecarrier_tan"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/armor/platecarrier/full
 	name = "full body plate carrier"
@@ -655,20 +1096,31 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
-//Marshal armor
-/obj/item/clothing/suit/armor/platecarrier/ih
-	name = "plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, in Marshals colors."
-	icon_state = "platecarrier_ih"
-	item_state = "platecarrier_ih"
+/obj/item/clothing/suit/armor/platecarrier/full/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/clothing/suit/armor/platecarrier/ih/full
-	name = "full body plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, in Marshals colors. It has been improved by adding shoulderpads and kneepads for additional coverage."
-	icon_state = "platecarrier_ih_fullbody"
-	item_state = "platecarrier_ih_fullbody"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Baseline"] = "platecarrier_fullbody"
+	options["Security"] = "platecarrier_ih_fullbody"
+	options["Green"] = "platecarrier_green_fullbody"
+	options["Tan"] = "platecarrier_tan_fullbody"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 //Blackshield armor
 /obj/item/clothing/suit/armor/platecarrier/militia
@@ -677,7 +1129,7 @@
 	icon_state = "platecarrier_mil"
 	item_state = "platecarrier_mil"
 
-/obj/item/clothing/suit/armor/platecarrier/militia/verb/toggle_style()
+/obj/item/clothing/suit/armor/platecarrier/militia/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -737,13 +1189,13 @@
 		return 1
 
 /obj/item/clothing/suit/armor/platecarrier/corpsman
-	name = "Corpsman plate carrier"
+	name = "corpsman plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with Corpsman livery and has a stain resistant coating."
 	icon_state = "platecarrier_corpsman"
 	item_state = "platecarrier_corpsman"
 	armor_list = list(melee = 35, bullet = 45, energy = 20, bomb = 10, bio = 20, rad = 0)
 
-/obj/item/clothing/suit/armor/platecarrier/corpsman/verb/toggle_style()
+/obj/item/clothing/suit/armor/platecarrier/corpsman/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -769,7 +1221,7 @@
 		return 1
 
 /obj/item/clothing/suit/armor/platecarrier/corpsman/full
-	name = "Corpsman full body plate carrier"
+	name = "corpsman full body plate carrier"
 	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one is marked with corpsman livery and has a stain resistant coating as well as additional shoulderpads and kneepads for added protection."
 	icon_state = "platecarrier_corpsman_fullbody"
 	item_state = "platecarrier_corpsman_fullbody"
@@ -802,53 +1254,6 @@
 		usr.update_action_buttons()
 		return 1
 
-/obj/item/clothing/suit/armor/bulletproof/ironhammer/militia
-	name = "Blackshield bulletproof suit"
-	desc = "A set of vest, shoulder guards and leg guards that excel at protecting against high-velocity, solid projectiles. \
-			This particular set seems to have been taken straight from the armory of some low-budget P.D.F or Reserve force, repainted in \
-			Blackshield colors and given their I.F.F markings."
-	icon_state = "bulletproof_bs"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
-
-
-/obj/item/clothing/suit/armor/vest/ablative/militia
-	name = "Blackshield ablative plate"
-	desc = "An outdated set of ablative armor, utilizing advanced materials to absorb rather than reflect energy projeciles and painted in Blackshield's colors. \
-			A distinctive set of equipment, the MK-II 'Energy Defense Gear' sold more for its distinctive, and some would say 'flashy' \
-			appearance than its capabilities. Despite its bad reputation as a tax-payer credit sink, it serves as a fairly adequate piece of gear."
-	icon_state = "ablative_bs"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
-	slowdown = 0.5
-	armor_list = list(melee = 25, bullet = 25, energy = 60, bomb = 10, bio = 0, rad = 0)
-
-/obj/item/clothing/suit/armor/platecarrier/green
-	name = "green plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one suits wooded areas well."
-	icon_state = "platecarrier_green"
-	item_state = "platecarrier_green"
-
-/obj/item/clothing/suit/armor/platecarrier/green/full
-	name = "full body green plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one suits wooded areas well. Has increased coverage due to the prescence of shoulderpads and kneepads."
-	icon_state = "platecarrier_green_fullbody"
-	item_state = "platecarrier_green_fullbody"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
-
-/obj/item/clothing/suit/armor/platecarrier/tan
-	name = "tan plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one suits endless desert warfare well."
-	icon_state = "platecarrier_tan"
-	item_state = "platecarrier_tan"
-
-/obj/item/clothing/suit/armor/platecarrier/tan/full
-	name = "full body tan plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one suits endless desert warfare well. Has increased coverage due to the prescence of shoulderpads and kneepads."
-	icon_state = "platecarrier_tan_fullbody"
-	item_state = "platecarrier_tan_fullbody"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
-
 /obj/item/clothing/suit/armor/platecarrier/hos
 	name = "advanced plate carrier"
 	desc = "An armored vest carrying military grade trauma plates and advanced ballistic meshes."
@@ -865,155 +1270,9 @@
 	item_state = "platecarrier_ih_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
-/obj/item/clothing/suit/armor/flackvest
-	name = "flak vest"
-	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel."
-	icon_state = "flakvest"
-	item_state = "flakvest"
-	blood_overlay_type = "armor"
-	price_tag = 250
-	slowdown = 0.5
-	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0)
-
-/obj/item/clothing/suit/armor/flackvest/full // Sic.
-	name = "full body flak vest"
-	desc = "An armored, padded vest meant for heavy-duty operations, it protects well against explosives and shrapnel. This set has had kneepads and shoulderpads attached for more protection."
-	icon_state = "flakvest_fullbody"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
-	slowdown = 0.6 // Bulkier due to protecting more
-	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0) // Again, in case it doesn't inherit
-
-/obj/item/clothing/suit/armor/flackvest/tan
-	name = "flak tan vest"
-	icon_state = "flakvest_tan"
-
-/obj/item/clothing/suit/armor/flackvest/tan/full
-	name = "full body tan flak vest"
-	icon_state = "flakvest_tan_fullbody"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	stiffness = LIGHT_STIFFNESS
-	slowdown = 0.6 // Bulkier due to protecting more
-
-/obj/item/clothing/suit/armor/flackvest/militia
-	name = "blackshield flak vest"
-	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
-			This one is marked with the distinct IFF stripes of the Blackshield."
-	icon_state = "flakvest_mil"
-	item_state = "flakvest_mil"
-
-/obj/item/clothing/suit/armor/flackvest/militia/verb/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["Blackshield Colours"] = "flakvest_mil"
-	options["Woodlands Blackshield Combat"] = "flakvest_green_mil"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
-/obj/item/clothing/suit/armor/flackvest/militia/full
-	name = "blackshield full flak vest"
-	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
-			This one is marked with the distinct IFF stripes of the Blackshield, and offers additional coverage through shoulderpads and kneepads."
-	icon_state = "flakvest_mil_fullbody"
-	item_state = "flakvest_mil_fullbody"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	slowdown = 0.6 // Bulkier due to protecting more
-	stiffness = LIGHT_STIFFNESS
-
-/obj/item/clothing/suit/armor/flackvest/militia/full/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["Blackshield Colours"] = "flakvest_mil_fullbody"
-	options["Woodlands Blackshield Combat"] = "flakvest_green_mil_fullbody"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
-
-
-/obj/item/clothing/suit/armor/flackvest/green
-	name = "flak vest"
-	desc = "An armored, padded vest meant for heavy-duty operations.\
-			Some folks are born made to wave the flag."
-	icon_state = "flakvest_green"
-	item_state = "flakvest_green"
-
-/obj/item/clothing/suit/armor/flackvest/green/full
-	name = "full body green flak vest"
-	desc = "An armored, padded vest meant for heavy-duty operations.\
-			Some folks are born made to wave the flag. And wear stylish kneepads and shoulderpads."
-	icon_state = "flakvest_green"
-	item_state = "flakvest_green"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	slowdown = 0.6 // Bulkier due to protecting more
-	stiffness = LIGHT_STIFFNESS
-
-/obj/item/clothing/suit/armor/flackvest/commander
-	name = "commander's flak vest"
-	desc = "An armored, padded vest that's seen many long tours and is suited for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. Smells of napalm and the sea."
-	icon_state = "flakvest_mil"
-	item_state = "flakvest_mil"
-	blood_overlay_type = "armor"
-	slowdown = 0.2
-	armor_list = list(melee = 45, bullet = 50, energy = 30, bomb = 50, bio = 0, rad = 0)
-
-/obj/item/clothing/suit/armor/flackvest/commander/full
-	name = "commander's full body flak vest"
-	desc = "An armored, padded vest that's seen many long tours and is suited for heavy-duty operations. \
-			Heavy and bulky, it protects well against explosive and shrapnel. Smells of napalm and the sea. \
-			This model adds shoulder and thighs protection through additional layers of protective armor." // Thighington simps rejoice. - Seb
-	icon_state = "commander_mil_fullbody"
-	item_state = "commander_mil_fullbody"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	slowdown = 0.3 // Bulkier due to protecting more
-	stiffness = LIGHT_STIFFNESS
-	armor_list = list(
-		melee = 45,
-		bullet = 50,
-		energy = 30,
-		bomb = 50,
-		bio = 0,
-		rad = 0
-		)
-
-/obj/item/clothing/suit/armor/flackvest/marshal/full
-	name = "marshal full flak vest"
-	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
-			This one sports Marshal matte-grey finish along with a few stamped pieces of visible metal and cloth indicating its production numnber and tours of service."
-	icon_state = "flakvest_ironhammer"
-	item_state = "flakvest_ironhammer"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	slowdown = 0.6 // Bulkier due to protecting more
+/*
+// Coats
+*/
 
 /obj/item/clothing/suit/armor/hos
 	name = "armored coat"

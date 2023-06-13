@@ -18,6 +18,7 @@
 	var/mob/living/Leader = null // AI variable - tells the slime to follow this person
 	var/holding_still = 0 // AI variable, cooloff-ish for how long it's going to stay in one place
 	var/list/speech_buffer = list() // Last phrase said near it and person who said it
+	sanity_damage = -2
 
 /mob/living/simple_animal/slime/New()
 	..()
@@ -94,7 +95,7 @@
 		if(stat == DEAD)
 			return say_dead(message)
 		else if(last_symbol=="@")
-			if(src.stats.getPerk(/datum/perk/codespeak))
+			if(src.stats.getPerk(PERK_CODESPEAK))
 				return
 			else
 				to_chat(src, "You don't know the codes, pal.")

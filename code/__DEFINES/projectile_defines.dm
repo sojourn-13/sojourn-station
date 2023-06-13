@@ -5,7 +5,7 @@
 #define CAL_RIFLE "7.62mm rifle"
 #define CAL_HRIFLE "8.6mm heavy rifle"
 #define CAL_ANTIM "14.5mm Anti Materiel"
-#define CAL_BALL "17mm rolled shot"
+//#define CAL_BALL "17mm rolled shot"
 #define CAL_SHOTGUN "Shotgun Shell"
 #define CAL_50	"12mm heavy pistol"
 #define CAL_70 "19mm explosive"
@@ -21,8 +21,8 @@
 //Mech Caliber Defines
 #define CAL_MECH_MACHINEGUN 	"25mm"
 #define CAL_MECH_AUTOCANNON		"60mm HEAD"
-#define CAL_MECH_ULTRACANNON	"50mm HEAD"
-#define CAL_MECH_SHOTGUN		"30mm HEAD"
+#define CAL_MECH_ULTRACANNON	"30mm HEAD"
+#define CAL_MECH_SHOTGUN		"50mm HEAD"
 #define CAL_MECH_MISSILE		"6.2 Missile"
 
 //Gun loading types

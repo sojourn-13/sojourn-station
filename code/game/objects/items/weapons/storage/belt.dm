@@ -187,6 +187,7 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
+		/obj/item/gun/energy/ntpistol,
 		/obj/item/device/binoculars
 	)
 
@@ -364,7 +365,7 @@
 		/obj/item/reagent_containers/food/snacks,
 		/obj/item/reagent_containers/food/drinks,
 		/obj/item/device/binoculars, // By popular demand. - Seb
-		/obj/item/tool/baton/mini
+		/obj/item/tool/baton //So it can actually hold both sizes of batons like it used to.
 	)
 
 /obj/item/storage/belt/holding
@@ -459,6 +460,7 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
+		/obj/item/gun/energy/ntpistol,
 		/obj/item/device/binoculars
 	)
 

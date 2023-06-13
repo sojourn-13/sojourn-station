@@ -18,7 +18,7 @@
 	uniform = /obj/item/clothing/under/genericb
 	head = /obj/item/clothing/head/helmet/steelpot
 	shoes = /obj/item/clothing/shoes/color/black
-	suit = /obj/item/clothing/suit/armor/flackvest
+	suit = /obj/item/clothing/suit/armor/flakvest
 	suit_store = /obj/item/gun/projectile/boltgun
 	back = /obj/item/storage/backpack/satchel
 	r_pocket = /obj/item/ammo_magazine/speed_loader_rifle_75
@@ -47,7 +47,7 @@
 	name = "Marshal Agent"
 	l_ear  =/obj/item/device/radio/headset/heads/hos
 	uniform = /obj/item/clothing/under/rank/ih_commander
-	suit = /obj/item/clothing/suit/armor/platecarrier/ih
+	suit = /obj/item/clothing/suit/armor/platecarrier
 	suit_store = /obj/item/gun/projectile/automatic/mamba/copperhead
 	r_pocket = /obj/item/clothing/accessory/badge/marshal
 	l_pocket = /obj/item/card/id/secert
@@ -64,7 +64,7 @@
 	l_ear = /obj/item/device/radio/headset/heads/ce
 	head = /obj/item/clothing/head/firefighter/guild_emergency
 	uniform = /obj/item/clothing/under/rank/engineer/adv_master
-	suit = /obj/item/clothing/suit/storage/hazardvest_black
+	suit = /obj/item/clothing/suit/storage/hazardvest
 	r_pocket = /obj/item/device/t_scanner/advanced
 	pda_type = /obj/item/modular_computer/pda/heads/ce
 	belt = /obj/item/storage/belt/webbing/artificer/ert
@@ -110,7 +110,7 @@
 	l_ear  =/obj/item/device/radio/headset
 	head = /obj/item/clothing/head/helmet/generic_full
 	uniform = /obj/item/clothing/under/kriosansuit
-	suit = /obj/item/clothing/suit/armor/flackvest/full
+	suit = /obj/item/clothing/suit/armor/flakvest/full
 	r_pocket = /obj/item/storage/firstaid/ifak
 	belt = /obj/item/storage/belt/webbing
 	gloves = /obj/item/clothing/gloves/thick/brown

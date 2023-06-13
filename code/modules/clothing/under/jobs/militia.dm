@@ -314,8 +314,36 @@
 	item_state = "gorka_ih_med_b"
 	permeability_coefficient = 0.50
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
-
 	siemens_coefficient = 0.9
+
+/obj/item/clothing/under/rank/corpsman/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["medical corpsman's uniform"] = "gorka_ih_med_b"
+	options["militia corpsman's jumpsuit"] = "medspec"
+	options["militia corpsman's jumpskirt"] = "medspec_skirt"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = list(
+			slot_back_str = options[choice]
+			)
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 /obj/item/clothing/under/rank/bdu/trooper
 	name = "Blackshield BDU"
@@ -334,7 +362,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Blackshield Standard Colors"] = "bdubsstandard"
-	options["Blackshield Standard Colors Rolled Up"] = "bdustandard_rolled"
+	options["Blackshield Standard Colors Rolled Up"] = "bdubsstandard_rolled"
 	options["Blackshield Woodland Colors"] = "bdubsgreen"
 	options["Blackshield Woodland Colors Rolled Up"] = "bdubsgreen_rolled"
 	options["Blackshield Desert Colors"] = "bdubstan"

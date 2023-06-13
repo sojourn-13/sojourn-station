@@ -11,7 +11,6 @@
 		update_progression()
 		adjustBruteLoss(-1)
 		adjustFireLoss(-1)
-		adjustToxLoss(-1)
 		adjustOxyLoss(-1)
 
 // Maybe not the -best- place but it's semiappropriate and fitting.

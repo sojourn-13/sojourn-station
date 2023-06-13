@@ -57,7 +57,7 @@
 	s.set_up(1, 1, M.loc)
 	s.start()
 
-	M.apply_effect(50, AGONY, 0)
+	M.adjustHalLoss(50)
 
 	return TRUE
 
@@ -125,7 +125,6 @@
 	H.add_chemical_effect(CE_PAINKILLER, 20)
 	H.adjustBruteLoss(-30)
 	H.adjustFireLoss(-30)
-	H.adjustToxLoss(-40)
 	H.adjustOxyLoss(-40)
 	H.updatehealth()
 	set_personal_cooldown(H)
@@ -174,9 +173,7 @@
 		to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
 		H.add_chemical_effect(CE_PAINKILLER, 20)
 		H.adjustBruteLoss(-30)
-		H.adjustFireLoss(-30)
-		H.adjustToxLoss(-40)
-		H.adjustOxyLoss(-40)
+		H.adjustFireLoss(-30)\
 		H.updatehealth()
 		set_personal_cooldown(user)
 		return TRUE

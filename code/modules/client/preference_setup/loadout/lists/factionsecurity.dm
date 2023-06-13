@@ -125,20 +125,6 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/turtleneck
-	display_name = "Marshal turtleneck"
-	path = /obj/item/clothing/under/rank/security/turtleneck
-	allowed_roles = list("Warrant Officer","Supply Specialist","Ranger","Marshal Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/juniormarshal
-	display_name = "Junior Marshals uniform"
-	path = /obj/item/clothing/under/rank/security/cadet
-	allowed_roles = list("Warrant Officer","Supply Specialist","Ranger","Marshal Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
 /datum/gear/factionsecurity/gorka_ih
 	display_name = "gorka jacket, security"
 	path = /obj/item/clothing/suit/gorka/toggle/gorka_ih
@@ -206,34 +192,6 @@
 	display_name = "uniform, cadet"
 	path = /obj/item/clothing/under/rank/trooper/cadet
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/jumpskirtcommander
-	display_name = "jumpskirt, commander"
-	path = /obj/item/clothing/under/rank/ih_commander/skirt
-	allowed_roles = list("Warrant Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/jumpskirtmedspec
-	display_name = "jumpskirt, medical specialist"
-	path = /obj/item/clothing/under/rank/medspec/skirt
-	allowed_roles = list("Corpsman")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/jumpskirtoperative
-	display_name = "jumpskirt, operative"
-	path = /obj/item/clothing/under/rank/security/skirt
-	allowed_roles = list("Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/jumpskirtwarden
-	display_name = "jumpskirt, supply specialist"
-	path = /obj/item/clothing/under/rank/warden/skirt
-	allowed_roles = list("Supply Specialist")
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 

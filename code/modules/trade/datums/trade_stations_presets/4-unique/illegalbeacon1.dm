@@ -6,12 +6,12 @@
 	tree_x = 0.62
 	tree_y = 0.5
 	spawn_always = TRUE
-	markup = RARE_GOODS
+	markup = UNCOMMON_GOODS
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3500
 	stations_recommended = list("illegal2")
 	recommendations_needed = 3
 	inventory = list(
@@ -38,6 +38,11 @@
 			/obj/item/reagent_containers/hypospray/autoinjector/drugs = custom_good_amount_range(list(5, 10)),
 			/obj/item/reagent_containers/hypospray/autoinjector/quickhealbrute = custom_good_amount_range(list(5, 10)),
 			/obj/item/reagent_containers/hypospray/autoinjector/quickhealburn = custom_good_amount_range(list(5, 10))
+		),
+		"Imprinters" = list(
+			/obj/item/device/hardware_imprinter/smartlink,
+			/obj/item/device/hardware_imprinter/cogenhance,
+			/obj/item/device/hardware_imprinter/chemneutral
 		)
 	)
 	hidden_inventory = list(

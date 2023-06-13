@@ -6,6 +6,7 @@
 	anchored = 1
 	reagent_flags = OPENCONTAINER
 	volume = 100
+	price_tag = 150 //Mostly just to have a price for the beacon, but I guess you could sell them if you were REALLY desperate?
 
 	blue_ink_tk_blocker = TRUE //Removes bugs with teleportion
 

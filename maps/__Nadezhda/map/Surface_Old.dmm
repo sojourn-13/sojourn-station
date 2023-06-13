@@ -330,8 +330,8 @@
 	name = "Security Barracks"
 	})
 "aaS" = (
-/obj/item/clothing/suit/armor/flackvest/militia,
-/obj/item/clothing/suit/armor/flackvest/green,
+/obj/item/clothing/suit/armor/flakvest/militia,
+/obj/item/clothing/suit/armor/flakvest,
 /obj/item/clothing/head/helmet/faceshield/altyn,
 /obj/item/clothing/head/helmet/faceshield/altyn/maska,
 /obj/structure/table/rack/shelf,
@@ -863,8 +863,8 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/pond)
 "acc" = (
-/obj/item/clothing/suit/armor/platecarrier/ih,
-/obj/item/clothing/suit/armor/platecarrier/ih,
+/obj/item/clothing/suit/armor/platecarrier,
+/obj/item/clothing/suit/armor/platecarrier,
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/head/helmet,
 /obj/item/clothing/head/helmet,
@@ -3458,10 +3458,6 @@
 /area/nadezhda/pros/proelav)
 "ahF" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/suit/armor/platecarrier/green{
-	pixel_x = -6;
-	pixel_y = -4
-	},
 /obj/item/clothing/suit/armor/platecarrier/militia{
 	pixel_x = -6;
 	pixel_y = 6
@@ -3472,14 +3468,6 @@
 	},
 /obj/item/clothing/suit/armor/platecarrier/corpsman{
 	pixel_x = 6;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/armor/platecarrier/tan{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/armor/platecarrier/green{
-	pixel_x = -6;
 	pixel_y = -4
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -3658,11 +3646,11 @@
 	pixel_x = -8;
 	pixel_y = -6
 	},
-/obj/item/clothing/head/helmet/ballistic/tan{
+/obj/item/clothing/head/helmet/ballistic{
 	pixel_x = 4;
 	pixel_y = -8
 	},
-/obj/item/clothing/head/helmet/ballistic/tan{
+/obj/item/clothing/head/helmet/ballistic{
 	pixel_x = 4;
 	pixel_y = -8
 	},

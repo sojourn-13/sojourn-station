@@ -27,7 +27,7 @@
 	needs_environment = FALSE
 
 	break_stuff_probability = 4
-
+	inherent_mutations = list(MUTATION_EPILEPSY, MUTATION_DEAF, MUTATION_BAROTRAUMA)
 	faction = "carp"
 
 /mob/living/simple_animal/hostile/carp/baby

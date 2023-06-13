@@ -6,13 +6,13 @@
 	tree_x = 0.82
 	tree_y = 0.9
 	start_discovered = TRUE
-	markup = COMMON_GOODS * 1.5
+	markup = COMMON_GOODS
 	uid = "guns_basic"
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 1000
 	stations_recommended = list("fs_guns", "illegal2")
 	forced_overmap_zone = list(
 		list(15, 20),
@@ -59,13 +59,9 @@
 		"Armor" = list(
 			/obj/item/clothing/head/helmet/faceshield/riot,
 			/obj/item/clothing/suit/armor/vest,
-			/obj/item/clothing/suit/armor/vest/security,
-			/obj/item/clothing/suit/armor/vest/detective,
+			/obj/item/clothing/suit/armor/vest/ironhammer,
 			/obj/item/clothing/suit/storage/vest,
 			/obj/item/clothing/head/armor/helmet/tanker,
-			/obj/item/clothing/head/armor/helmet/tanker/green,
-			/obj/item/clothing/head/armor/helmet/tanker/brown,
-			/obj/item/clothing/head/armor/helmet/tanker/gray,
 			/obj/item/clothing/suit/armor/bulletproof,
 			/obj/item/clothing/suit/armor/laserproof
 		)

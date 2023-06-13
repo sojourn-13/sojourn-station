@@ -93,8 +93,8 @@
 		matter_count += " [materials_stored[material]] [material]"
 
 	//Lazy temppermit fix for the above
-	to_chat(user, SPAN_NOTICE("Materials required to craft barrels: 4 plasteel for small; 8 plasteel for large; 16 plasteel for heavy."))
-	to_chat(user, SPAN_NOTICE("Materials required to craft mechanisms: 5 plasteel for small; 10 plasteel for large; 16 plasteel for heavy."))
+	to_chat(user, SPAN_NOTICE("Materials required to craft barrels: 4 plasteel for small; 8 plasteel for large."))
+	to_chat(user, SPAN_NOTICE("Materials required to craft mechanisms: 5 plasteel for small; 10 plasteel for large."))
 	to_chat(user, SPAN_NOTICE("Materials required to craft cheap barrels: 4 steel for small; 8 steel for large."))
 	to_chat(user, SPAN_NOTICE("Materials required to craft cheap mechanisms: 5 steel for small; 10 steel for large."))
 	to_chat(user, SPAN_NOTICE("Materials required to craft grips: 6 plastic or 6 wood."))
@@ -150,19 +150,22 @@
 			items_to_spawn = list("" = /obj/item/ammo_casing/a75)
 
 		if("Gun parts")
-			choice = input(user, "Which type of part do you want to craft?") as null|anything in list("Small parts", "Large parts", /*"Heavy parts"*/, "Cheap parts", "Grips")
+			choice = input(user, "Which type of part do you want to craft?") as null|anything in list("Small arms", "Long arms", /*"Heavy parts"*/"Cheap parts", "Grips")
 			switch(choice)
-				if("Small parts")
+				if("Small arms")
 					choice = input(user, "Which type of part do you want to craft?") as null|anything in list("Barrels", "Mechanisms")
 					switch(choice)
 						if("Barrels")
 							required_resources = materials_sbarrel
-							choice = input(user) as null|anything in list(".35 barrel", ".40 barrel")
+							choice = input(user) as null|anything in list("9mm barrel", "10mm barrel", "12mm barrel")
 							switch(choice)
 								if("9mm barrel")
 									items_to_spawn = list("" = /obj/item/part/gun/barrel/pistol)
 								if("10mm barrel")
 									items_to_spawn = list("" = /obj/item/part/gun/barrel/magnum)
+								if("12mm barrel")
+									required_resources = materials_lbarrel // Double the cost, making Marshals more efficient
+									items_to_spawn = list("" = /obj/item/part/gun/barrel/kurtz)
 						if("Mechanisms")
 							required_resources = materials_smechanism
 							choice = input(user) as null|anything in list("Pistol mechanism", "Revolver mechanism", "SMG mechanism")
@@ -174,7 +177,7 @@
 								if("SMG mechanism")
 									items_to_spawn = list("" = /obj/item/part/gun/mechanism/smg)
 
-				if("Large parts")
+				if("Long arms")
 					choice = input(user, "Which type of part do you want to craft?") as null|anything in list("Barrels", "Mechanisms")
 					switch(choice)
 						if("Barrels")
@@ -208,7 +211,7 @@
 					choice = input(user, "Which type of part do you want to craft?") as null|anything in list("Barrels", "Mechanisms")
 					switch(choice)
 						if("Barrels")
-							choice = input(user) as null|anything in list("9mm barrel", "10mm barrel", "6.5mm barrel", "caseless barrel", "7.62 barrel", "8.6mm barrel", "Shotgun barrel")
+							choice = input(user) as null|anything in list("9mm barrel", "10mm barrel", "12mm barrel", "6.5mm barrel", "caseless barrel", "7.62mm barrel", "8.6mm barrel", "Shotgun barrel")
 							switch(choice)
 								if("9mm barrel")
 									required_resources = materials_sbarrel_steel
@@ -216,6 +219,9 @@
 								if("10mm barrel")
 									required_resources = materials_sbarrel_steel
 									items_to_spawn = list("" = /obj/item/part/gun/barrel/magnum/steel)
+								if("12mm barrel")
+									required_resources = materials_lbarrel_steel
+									items_to_spawn = list("" = /obj/item/part/gun/barrel/kurtz/steel)
 								if("6.5mm barrel")
 									required_resources = materials_lbarrel_steel
 									items_to_spawn = list("" = /obj/item/part/gun/barrel/srifle/steel)
@@ -232,7 +238,7 @@
 									required_resources = materials_lbarrel_steel
 									items_to_spawn = list("" = /obj/item/part/gun/barrel/shotgun/steel)
 						if("Mechanisms")
-							choice = input(user) as null|anything in list("Pistol mechanism", "Revolver mechanism", "SMG mechanism", "Manual-action mechanism", "Self-loading mechanism", "Shotgun mechanism")
+							choice = input(user) as null|anything in list("Pistol mechanism", "Revolver mechanism", "SMG mechanism", "Bolt-action mechanism", "Self-loading mechanism", "Shotgun mechanism")
 							switch(choice)
 								if("Pistol mechanism")
 									required_resources = materials_smechanism_steel
@@ -243,7 +249,7 @@
 								if("SMG mechanism")
 									required_resources = materials_smechanism_steel
 									items_to_spawn = list("" = /obj/item/part/gun/mechanism/smg/steel)
-								if("Manual-action mechanism")
+								if("Bolt-action mechanism")
 									required_resources = materials_lmechanism_steel
 									items_to_spawn = list("" = /obj/item/part/gun/mechanism/boltgun)
 								if("Self-loading mechanism")
@@ -254,14 +260,14 @@
 									items_to_spawn = list("" = /obj/item/part/gun/mechanism/shotgun/steel)
 
 				if("Grips")
-					choice = input(user) as null|anything in list("Plastic grip", "Bakelite grip", "Wooden grip") //"Rubber grip", "Excelsior grip",
+					choice = input(user) as null|anything in list("Bakelite grip", "Plastic grip", "Wooden grip") //"Rubber grip", "Excelsior grip",
 					switch(choice)
-						if("Plastic grip")
-							required_resources = materials_pgrip
-							items_to_spawn = list("" = /obj/item/part/gun/grip/black)
 						if("Bakelite grip")
 							required_resources = materials_pgrip
 							items_to_spawn = list("" = /obj/item/part/gun/grip/serb)
+						if("Plastic grip")
+							required_resources = materials_pgrip
+							items_to_spawn = list("" = /obj/item/part/gun/grip/black)
 						if("Wooden grip")
 							required_resources = materials_wgrip
 							items_to_spawn = list("" = /obj/item/part/gun/grip/wood)

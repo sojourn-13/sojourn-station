@@ -28,6 +28,47 @@
 		else
 			usr.show_message("\blue You are not holding someone you can use this power on.")
 
+
+/obj/item/organ/internal/psionic_tumor/proc/meditative_focus_other()
+	set category = "Psionic powers"
+	set name = "Psionic Tranquility (2)"
+	set desc = "Expend two psi points of your psi essence to calm the mind of another person you are grappling and restore their sanity."
+	psi_point_cost = 2
+
+	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
+
+	if(!L)
+		usr.show_message("\blue You are not holding someone you can use this power on.")
+		return
+
+	if(L.psi_blocking >= 10)
+		owner.stun_effect_act(0, L.psi_blocking * 5, BP_HEAD)
+		owner.weakened = L.psi_blocking
+		usr.show_message(SPAN_DANGER("Your head pulsates with pain as your mind bashes against an unbreakable barrier!"))
+		return
+
+	if(pay_power_cost(psi_point_cost))
+		if(isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && L.sanity.level >= (L.sanity.max_level - 10))
+			psi_points += psi_point_cost //Refunds?
+			usr.visible_message(
+					"[usr] places a hand on [L], a soft hum raidates around them and quickly fades away",
+					"You place your hand upon [L], concentrating [L]'s thoughts... but their mind is already calm."
+					)
+			return
+		else if(isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && L.sanity.level < (L.sanity.max_level - 10))
+			usr.visible_message(
+					"[usr] places a hand on [L], a soft hum raidates around them",
+					"You place your hand upon [L], calming [L]'s thoughts!"
+					)
+			playsound(src.loc,'sound/effects/telesci_ping.ogg', 25, 3)
+			L.sanity.changeLevel(10 + (owner.stats.getStat(STAT_COG)/2))
+			if(owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
+				L.sanity.changeLevel(20)
+			if(owner.stats.getPerk(PERK_PSI_MANIA))
+				L.sanity.changeLevel(10)
+		else
+			usr.show_message("\blue You are not holding someone you can use this power on.")
+
 /obj/item/organ/internal/psionic_tumor/proc/psionic_heal_brain()
 	set category = "Psionic powers"
 	set name = "Cerebral Regeneration (3)"

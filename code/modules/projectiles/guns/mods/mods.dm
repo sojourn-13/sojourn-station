@@ -548,22 +548,6 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_BARREL
 
-//We don't use sanity damage and sanity damaging effects, but I'm keeping this commented out in case we some day do.
-// Add psy damage to your weapon
-/obj/item/gun_upgrade/mechanism/psionic_catalyst
-	name = "Moebius \"Mastermind\" psionic catalyst"
-	desc = "This controversial device greatly amplifies the natural psionic ability of the user and allows them to project their will into the world. Before the development of the Psi Amp, psionic disciplines were mostly detectable only in a lab environment."
-	icon_state = "psionic_catalyst"
-	matter = list(MATERIAL_SILVER = 3, MATERIAL_PLASTEEL = 3, MATERIAL_URANIUM = 3)
-
-/obj/item/gun_upgrade/mechanism/psionic_catalyst/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-	GUN_UPGRADE_DAMAGE_PSY = 0.4)
-	I.prefix = "psionic"
-	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.gun_loc_tag = GUN_MECHANISM
 */
 /* //The handholder rail and its consequences have been a disaster for Sojournkind.
 /obj/item/gun_upgrade/mechanism/gun_rail
@@ -588,6 +572,24 @@
 	I.unique_removal = TRUE
 	I.unique_removal_type = GUN_SCOPE
 */
+//We don't use sanity damage and sanity damaging effects, but I'm keeping this commented out in case we some day do.
+// Add psy damage to your weapon
+
+/obj/item/gun_upgrade/mechanism/psionic_catalyst
+	name = "Moebius \"Mastermind\" psionic catalyst"
+	desc = "This controversial device greatly amplifies the natural psionic ability of the user and allows them to project their will into the world. Before the development of the Psi Amp, psionic disciplines were mostly detectable only in a lab environment."
+	icon_state = "psionic_catalyst"
+	matter = list(MATERIAL_SILVER = 3, MATERIAL_PLASTEEL = 3, MATERIAL_URANIUM = 3)
+
+/obj/item/gun_upgrade/mechanism/psionic_catalyst/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_DAMAGE_PSY = 0.4)
+	I.prefix = "psionic"
+	I.req_gun_tags = list(GUN_PROJECTILE)
+	I.gun_loc_tag = GUN_MECHANISM
+
 /obj/item/gun_upgrade/mechanism/greyson_master_catalyst
 	name = "Greyson \"Master Unmaker\" infuser"
 	desc = "One of the rarest and most powerful weapon modifications ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."

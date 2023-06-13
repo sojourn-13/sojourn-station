@@ -45,6 +45,16 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	name = "20mm operator - frame"
 	build_path = /obj/item/part/gun/frame/opshot
 
+/datum/design/autolathe/gun_frame/takeshi
+	name = "6.5mm takeshi - frame"
+	build_path = /obj/item/part/gun/frame/tk
+
+//Blackshield guns.
+
+/datum/design/autolathe/gun_frame/omni
+	name = "8.6mm omni - frame"
+	build_path = /obj/item/part/gun/frame/omni
+
 // Retail section - low-end guns for LSS to order gun-frame disks for. Allows more guns per-disk at a cheaper overall price, realistically.
 /datum/design/autolathe/gun_frame/colt
 	name = "Colt M1911 - frame"
