@@ -87,7 +87,7 @@
 			addtimer(CALLBACK(src, .proc/regen_points), (10 MINUTES - cognitive_potential MINUTES))
 
 		if(psi_points < max_psi_points)
-			psi_points += 1
+			psi_points = max_psi_points // Solvult said I could :)
 
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
 	..()
