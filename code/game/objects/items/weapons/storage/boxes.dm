@@ -92,9 +92,9 @@
 	qdel(src)
 
 /obj/item/storage/box/survival/populate_contents()
-	new /obj/item/clothing/mask/breath(src)
-	new /obj/item/tank/emergency_oxygen(src)
+	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
+	new /obj/item/storage/box/matches(src)
 	if(prob(50))
 		new /obj/item/reagent_containers/food/snacks/openable/mre(src)
 	else
