@@ -1,3 +1,5 @@
+#define NORMAL_MASK_SANITY_COEFF_BUFF 1.3
+
 /obj/item/clothing/mask/muzzle
 	name = "muzzle"
 	desc = "To stop that awful noise."
@@ -55,6 +57,10 @@
 		rad = 0
 	)
 	price_tag = 10
+
+/obj/item/clothing/mask/surgical/New()
+	..()
+	AddComponent(/datum/component/clothing_sanity_protection, NORMAL_MASK_SANITY_COEFF_BUFF)
 
 //Alt race masks here
 /obj/item/clothing/mask/surgical/kriosan

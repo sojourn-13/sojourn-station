@@ -27,15 +27,18 @@
 
 /obj/item/storage/pouch/attack_hand(mob/living/carbon/human/user)
 	if(sliding_behavior && contents.len && (src in user))
-		var/obj/item/I = contents[contents.len]
-		if(istype(I))
-			hide_from(usr)
-			var/turf/T = get_turf(user)
-			remove_from_storage(I, T)
-			usr.put_in_hands(I)
-			add_fingerprint(user)
+		slide_out_item(user)
 	else
 		..()
+
+/obj/item/storage/pouch/proc/slide_out_item(mob/living/carbon/human/user)
+	var/obj/item/I = contents[contents.len]
+	if(istype(I))
+		hide_from(usr)
+		var/turf/T = get_turf(user)
+		remove_from_storage(I, T)
+		usr.put_in_hands(I)
+		add_fingerprint(user)
 
 /obj/item/storage/pouch/small_generic
 	name = "small generic pouch"
@@ -272,7 +275,7 @@
 
 /obj/item/storage/pouch/grow_a_gun
 	name = "H&S Grow A Gun"
-	desc = "A bag of dehydrated guns, just add water to grow them into a ready to use slot-o-matic. There are several warnings to not eat the dehydrated guns inside, and to keep away from kids unless hydrated."
+	desc = "A bag of dehydrated guns, just add water to grow them into a ready to use Slaught-o-Matic. There are several warnings to not eat the dehydrated guns inside, and to keep away from kids unless hydrated."
 	icon_state = "grow"
 	item_state = "grow"
 	matter = list(MATERIAL_PLASTIC = 1)

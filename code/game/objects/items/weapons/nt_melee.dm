@@ -87,6 +87,7 @@
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 2)
+	has_alt_mode = FALSE
 
 /obj/item/tool/sword/nt/scourge/attack_self(mob/user)
 	if(extended)
@@ -186,6 +187,7 @@
 	var/glowing = FALSE
 	sharp = FALSE
 	embed_mult = 0
+	has_alt_mode = FALSE
 
 /obj/item/tool/sword/nt/flanged/attack_self(mob/user)
 	var/mob/living/carbon/human/theuser = user
@@ -279,6 +281,7 @@
 		else
 			user_cruci.use_power(faith_cost)
 	..()
+
 /obj/item/shield/riot/nt
 	name = "shield"
 	desc = "A saintly looking shield, let the God protect you. \

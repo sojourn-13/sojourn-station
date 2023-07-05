@@ -32,6 +32,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/flare
 	name = "\improper BNI Flare Launcher"
+	desc = "An ubiquitous mining flare launcher used everywhere you can think of, from space to under water."
 	icon_state = "mecha_flaregun"
 	projectile = /obj/item/device/lighting/glowstick/flare
 	fire_sound = 'sound/weapons/tablehit1.ogg'
@@ -49,37 +50,46 @@
 	..()
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/explosive
-	name = "\improper SRM-6 missile rack"
-	desc = "A rack of short range missiles with minimal targetting assistance, capable of firing six per burst without overheating it's mech."
+	name = "\improper ATM-9 missile rack"
+	desc = "A rack of advanced tactical missiles lacking proper targetting computers onboard to cheapen their production. Fires in salvos of three and can do so as many times before having to be refitted."
 	icon_state = "mecha_missilerack"
 	projectile = /obj/item/missile
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_SILVER = 5)
-	missile_speed = 3
-	missile_range = 10 //Short range
+	missile_speed = 2
 	fire_sound = 'sound/mecha/weapons/rocketlauncher.ogg'
-	projectiles = 6
+	projectiles = 9
+	max_ammo = 9
+	missile_speed = 2
+	missile_range = 15 //Medium
+	projectiles_per_shot = 3
+	fire_cooldown = 2
 	projectile_energy_cost = 2000
 	equip_cooldown = 60
+	required_type = list(/obj/mecha/combat)
 
 /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/explosive/Fire(atom/movable/AM, atom/target)
 	var/obj/item/missile/M = AM
 	M.primed = 1
 	..()
 
-/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/medium
-	name = "\improper MRM-8 missile rack"
-	desc = "A rack of medium range missiles with targetting assistance, capable of firing eight per burst without overheating it's mech."
-	icon_state = "mecha_missilerack_mrm"
-	projectile = /obj/item/missile
-	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10, MATERIAL_SILVER = 5)
-	missile_speed = 2
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/long
+	name = "\improper \"Arrowhead\" S1 Long Tom missile launcher"
+	desc = "A singular massive bunker-buster missile strapped into a single use pod to be mountable onto a mech. Capable of leveling any building at cost of extremely slow speed and massive strain on it's platform."
+	icon_state = "mecha_tom"
+	projectile = /obj/item/longtom
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 20, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5, MATERIAL_URANIUM = 5)
+	ammo_type = null //Cannot reload it
+	missile_speed = 0.1 //Comically slow
 	fire_sound = 'sound/mecha/weapons/rocketlauncher.ogg'
-	projectiles = 8
-	projectile_energy_cost = 2000
+	projectiles_per_shot = 1
+	projectiles = 1
+	max_ammo = 0
+	projectile_energy_cost = 1000000 //Wacky bandaid to make it unrearmable due to how missiles are coded for whatever reason
 	equip_cooldown = 60
+	required_type = list(/obj/mecha/combat)
 
-/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/medium/Fire(atom/movable/AM, atom/target)
-	var/obj/item/missile/M = AM
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/missile_rack/long/Fire(atom/movable/AM, atom/target)
+	var/obj/item/longtom/M = AM
 	M.primed = 1
 	..()
 

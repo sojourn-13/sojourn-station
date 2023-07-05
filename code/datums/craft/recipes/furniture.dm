@@ -25,6 +25,48 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD)
 	)
 
+// Curtains
+
+/datum/craft_recipe/furniture/curtains
+	name = "Curtains (white)"
+	result = /obj/structure/curtain
+	time = 30
+	steps = list(
+		list(CRAFT_MATERIAL, 8, MATERIAL_CLOTH)
+	)
+
+/datum/craft_recipe/furniture/curtainsbed
+	name = "Curtains (bed)"
+	result = /obj/structure/curtain/open/bed
+	time = 30
+	steps = list(
+		list(CRAFT_MATERIAL, 8, MATERIAL_CLOTH)
+	)
+
+/datum/craft_recipe/furniture/curtains_b
+	name = "Curtains (black)"
+	result = /obj/structure/curtain/black
+	time = 30
+	steps = list(
+		list(CRAFT_MATERIAL, 8, MATERIAL_CLOTH)
+	)
+
+/datum/craft_recipe/furniture/curtains_p
+	name = "Curtains (plastic)"
+	result = /obj/structure/curtain/medical
+	time = 30
+	steps = list(
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTIC)
+	)
+
+/datum/craft_recipe/furniture/curtains_r
+	name = "Curtains (red)"
+	result = /obj/structure/curtain/red
+	time = 30
+	steps = list(
+		list(CRAFT_MATERIAL, 8, MATERIAL_CLOTH)
+	)
+
 /datum/craft_recipe/furniture/table
 	name = "table frame"
 	result = /obj/structure/table

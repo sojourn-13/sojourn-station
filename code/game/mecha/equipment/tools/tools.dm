@@ -1000,7 +1000,7 @@
 
 
 
-//This is pretty much just for the death-ripley so that it is harmless
+//This is pretty much just for the death-ripley so that it is harmless / MY BROTHER IN CHRIST IT DOES 90 DAMAGE WHAT DO YOU MEAN
 /obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
 	name = "\improper KILL CLAMP"
 	icon_state = "mecha_clamp"

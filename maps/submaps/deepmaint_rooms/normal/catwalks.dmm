@@ -327,6 +327,15 @@
 /obj/random/dungeon_gun_ballistic/low_chance,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/deepmaint)
+"Q" = (
+/obj/structure/catwalk,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/plating/under,
+/area/deepmaint)
+"Y" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/deepmaint)
 "Z" = (
 /obj/structure/table/standard,
 /obj/random/pack/rare/low_chance,
@@ -349,7 +358,7 @@ b
 a
 "}
 (2,1,1) = {"
-a
+Q
 c
 g
 a
@@ -372,7 +381,7 @@ x
 a
 C
 F
-a
+Q
 "}
 (4,1,1) = {"
 a
@@ -382,7 +391,7 @@ k
 a
 a
 y
-a
+Q
 D
 G
 a
@@ -407,7 +416,7 @@ i
 a
 o
 t
-z
+Y
 a
 C
 F
@@ -434,7 +443,7 @@ k
 a
 a
 y
-a
+Q
 C
 F
 a
@@ -450,10 +459,10 @@ x
 a
 D
 G
-a
+Q
 "}
 (10,1,1) = {"
-a
+Q
 f
 j
 a

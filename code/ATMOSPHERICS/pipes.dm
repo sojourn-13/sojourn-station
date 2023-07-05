@@ -1,8 +1,5 @@
 /obj/machinery/atmospherics/pipe
 
-	/// Used for destroying meter references
-	var/obj/machinery/meter/attached_meter
-
 	var/datum/gas_mixture/air_temporary // used when reconstructing a pipeline that broke
 	var/datum/pipeline/parent
 	var/volume = 0
@@ -13,7 +10,7 @@
 	var/alert_pressure = 80*ONE_ATMOSPHERE
 		//minimum pressure before check_pressure(...) should be called
 
-	can_buckle = 1
+	can_buckle = TRUE
 	buckle_require_restraints = 1
 	buckle_lying = -1
 
@@ -65,35 +62,13 @@
 
 	return parent.return_network(reference)
 
-/*/obj/machinery/atmospherics/pipe/proc/pipeline_check()
-	if (QDELETED(src) || QDESTROYING(src))
-		return FALSE
-
-	if (!parent)
-		parent = new /datum/pipeline()
-		parent.build_pipeline(src)*/
-
 /obj/machinery/atmospherics/pipe/Destroy()
-
 	QDEL_NULL(parent)
 	if(air_temporary)
 		loc.assume_air(air_temporary)
 		QDEL_NULL(air_temporary)
 
-	if (attached_meter)
-		attached_meter.target = null
-		attached_meter = null
-
-	if(node1)
-		node1.disconnect(src)
-		node1 = null
-	if(node2)
-		node2.disconnect(src)
-		node2 = null
-
 	. = ..()
-
-	return QDEL_HINT_QUEUE
 
 /obj/machinery/atmospherics/pipe/attackby(obj/item/I, mob/user)
 	if (istype(src, /obj/machinery/atmospherics/pipe/tank))
@@ -112,15 +87,16 @@
 		var/datum/gas_mixture/int_air = return_air()
 		var/datum/gas_mixture/env_air = loc.return_air()
 		if ((int_air.return_pressure()-env_air.return_pressure()) > 4*ONE_ATMOSPHERE)
-			to_chat(user, SPAN_WARNING("You cannot unfasten \the [src], it is under too much pressure."))
+			to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], it is too exerted due to internal pressure."))
 			add_fingerprint(user)
 			return 1
+
 		to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
 		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_MEC))
 			user.visible_message( \
 				SPAN_NOTICE("\The [user] unfastens \the [src]."), \
 				SPAN_NOTICE("You have unfastened \the [src]."), \
-				"You hear a ratcheting.")
+				"You hear a ratchet.")
 			investigate_log("was unfastened by [key_name(user)]", "atmos")
 			new /obj/item/pipe(loc, make_from=src)
 			for (var/obj/machinery/meter/meter in T)
@@ -327,12 +303,12 @@
 	if(reference == node1)
 		if(istype(node1, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-	node1 = null
+		node1 = null
 
 	if(reference == node2)
 		if(istype(node2, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-	node2 = null
+		node2 = null
 
 	update_icon()
 
@@ -344,8 +320,8 @@
 	layer = GAS_PIPE_VISIBLE_LAYER
 
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers
-	name = "scrubber pipe"
-	desc = "A one meter section of scrubber pipe"
+	name = "Scrubbers pipe"
+	desc = "A one meter section of scrubbers pipe"
 	icon_state = "intact-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -353,7 +329,7 @@
 	color = PIPE_COLOR_RED
 
 /obj/machinery/atmospherics/pipe/simple/visible/supply
-	name = "air supply pipe"
+	name = "Air supply pipe"
 	desc = "A one meter section of supply pipe"
 	icon_state = "intact-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
@@ -386,8 +362,8 @@
 	alpha = 128		//set for the benefit of mapping - this is reset to opaque when the pipe is spawned in game
 
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers
-	name = "scrubber pipe"
-	desc = "A one meter section of scrubber pipe"
+	name = "Scrubbers pipe"
+	desc = "A one meter section of scrubbers pipe"
 	icon_state = "intact-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -395,7 +371,7 @@
 	color = PIPE_COLOR_RED
 
 /obj/machinery/atmospherics/pipe/simple/hidden/supply
-	name = "air supply pipe"
+	name = "Air supply pipe"
 	desc = "A one meter section of supply pipe"
 	icon_state = "intact-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
@@ -438,7 +414,7 @@
 	icon = 'icons/atmos/manifold.dmi'
 	icon_state = ""
 	name = "pipe manifold"
-	desc = "A manifold of regular pipes"
+	desc = "A manifold composed of regular pipes"
 
 	volume = ATMOS_DEFAULT_VOLUME_PIPE * 1.5
 
@@ -493,17 +469,17 @@
 	if(reference == node1)
 		if(istype(node1, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-	node1 = null
+		node1 = null
 
 	if(reference == node2)
 		if(istype(node2, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-	node2 = null
+		node2 = null
 
 	if(reference == node3)
 		if(istype(node3, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-	node3 = null
+		node3 = null
 
 	update_icon()
 
@@ -610,8 +586,8 @@
 	level = ABOVE_PLATING_LEVEL
 
 /obj/machinery/atmospherics/pipe/manifold/visible/scrubbers
-	name="Scrubber pipe manifold"
-	desc = "A manifold of scrubber pipes"
+	name="Scrubbers pipe manifold"
+	desc = "A manifold composed of scrubbers pipes"
 	icon_state = "map-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -620,7 +596,7 @@
 
 /obj/machinery/atmospherics/pipe/manifold/visible/supply
 	name="Air supply pipe manifold"
-	desc = "A manifold of supply pipes"
+	desc = "A manifold composed of supply pipes"
 	icon_state = "map-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -652,8 +628,8 @@
 	alpha = 128		//set for the benefit of mapping - this is reset to opaque when the pipe is spawned in game
 
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers
-	name="Scrubber pipe manifold"
-	desc = "A manifold of scrubbers pipes"
+	name="Scrubbers pipe manifold"
+	desc = "A manifold composed of scrubbers pipes"
 	icon_state = "map-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -662,7 +638,7 @@
 
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply
 	name="Air supply pipe manifold"
-	desc = "A manifold of supply pipes"
+	desc = "A manifold composed of supply pipes"
 	icon_state = "map-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -734,22 +710,22 @@
 	if(reference == node1)
 		if(istype(node1, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-	node1 = null
+		node1 = null
 
 	if(reference == node2)
 		if(istype(node2, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-	node2 = null
+		node2 = null
 
 	if(reference == node3)
 		if(istype(node3, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-	node3 = null
+		node3 = null
 
 	if(reference == node4)
 		if(istype(node4, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-	node4 = null
+		node4 = null
 
 	update_icon()
 
@@ -866,8 +842,8 @@
 	level = ABOVE_PLATING_LEVEL
 
 /obj/machinery/atmospherics/pipe/manifold4w/visible/scrubbers
-	name="4-way scrubber pipe manifold"
-	desc = "A manifold of scrubber pipes"
+	name="4-way scrubbers pipe manifold"
+	desc = "A manifold composed of scrubbers pipes"
 	icon_state = "map_4way-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -876,7 +852,7 @@
 
 /obj/machinery/atmospherics/pipe/manifold4w/visible/supply
 	name="4-way air supply pipe manifold"
-	desc = "A manifold of supply pipes"
+	desc = "A manifold composed of supply pipes"
 	icon_state = "map_4way-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -907,8 +883,8 @@
 	alpha = 128		//set for the benefit of mapping - this is reset to opaque when the pipe is spawned in game
 
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers
-	name="4-way scrubber pipe manifold"
-	desc = "A manifold of scrubber pipes"
+	name="4-way scrubbers pipe manifold"
+	desc = "A manifold composed of scrubbers pipes"
 	icon_state = "map_4way-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -917,7 +893,7 @@
 
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply
 	name="4-way air supply pipe manifold"
-	desc = "A manifold of supply pipes"
+	desc = "A manifold composed of supply pipes"
 	icon_state = "map_4way-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	layer = GAS_PIPE_VISIBLE_LAYER
@@ -944,7 +920,7 @@
 
 /obj/machinery/atmospherics/pipe/cap
 	name = "pipe endcap"
-	desc = "A pipe sealing end"
+	desc = "An endcap for pipes"
 	icon = 'icons/atmos/pipes.dmi'
 	icon_state = ""
 	level = ABOVE_PLATING_LEVEL
@@ -984,7 +960,7 @@
 	if(reference == node)
 		if(istype(node, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-	node = null
+		node = null
 
 	update_icon()
 
@@ -1021,16 +997,16 @@
 	icon_state = "cap"
 
 /obj/machinery/atmospherics/pipe/cap/visible/scrubbers
-	name = "scrubber pipe end cap"
-	desc = "A sealing end for scrubber pipes"
+	name = "scrubbers pipe endcap"
+	desc = "An endcap for scrubbers pipes"
 	icon_state = "cap-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	icon_connect_type = "-scrubbers"
 	color = PIPE_COLOR_RED
 
 /obj/machinery/atmospherics/pipe/cap/visible/supply
-	name = "supply pipe end cap"
-	desc = "A sealing end for supply pipes"
+	name = "supply pipe endcap"
+	desc = "An endcap for supply pipes"
 	icon_state = "cap-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	icon_connect_type = "-supply"
@@ -1042,16 +1018,16 @@
 	alpha = 128
 
 /obj/machinery/atmospherics/pipe/cap/hidden/scrubbers
-	name = "scrubber pipe end cap"
-	desc = "A sealing end for scrubbers pipes"
+	name = "scrubbers pipe endcap"
+	desc = "An endcap for scrubbers pipes"
 	icon_state = "cap-f-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	icon_connect_type = "-scrubbers"
 	color = PIPE_COLOR_RED
 
 /obj/machinery/atmospherics/pipe/cap/hidden/supply
-	name = "supply pipe end cap"
-	desc = "An sealing end for supply pipes"
+	name = "supply pipe endcap"
+	desc = "An endcap for supply pipes"
 	icon_state = "cap-f-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	icon_connect_type = "-supply"
@@ -1062,7 +1038,7 @@
 	icon = 'icons/atmos/tank.dmi'
 	icon_state = "air_map"
 
-	name = "pressure tank"
+	name = "Pressure Tank"
 	desc = "A large vessel containing pressurized gas."
 
 	volume = 10000 //in liters, 1 meters by 1 meters by 2 meters ~tweaked it a little to simulate a pressure tank without needing to recode them yet
@@ -1071,7 +1047,7 @@
 	level = BELOW_PLATING_LEVEL
 	dir = SOUTH
 	initialize_directions = SOUTH
-	density = 1
+	density = TRUE
 	layer = ABOVE_WINDOW_LAYER
 
 /obj/machinery/atmospherics/pipe/tank/New()
@@ -1088,8 +1064,6 @@
 /obj/machinery/atmospherics/pipe/tank/Destroy()
 	if(node1)
 		node1.disconnect(src)
-
-	node1 = null
 
 	. = ..()
 
@@ -1122,7 +1096,7 @@
 	if(reference == node1)
 		if(istype(node1, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-	node1 = null
+		node1 = null
 
 	update_underlays()
 
@@ -1133,7 +1107,7 @@
 		return
 
 /obj/machinery/atmospherics/pipe/tank/air
-	name = "pressure tank (Air)"
+	name = "Pressure Tank (Air)"
 	icon_state = "air_map"
 
 /obj/machinery/atmospherics/pipe/tank/air/New()
@@ -1149,7 +1123,7 @@
 	icon_state = "air"
 
 /obj/machinery/atmospherics/pipe/tank/oxygen
-	name = "pressure tank (O2)"
+	name = "Pressure Tank (Oxygen)"
 	icon_state = "o2_map"
 
 /obj/machinery/atmospherics/pipe/tank/oxygen/New()
@@ -1163,7 +1137,7 @@
 	icon_state = "o2"
 
 /obj/machinery/atmospherics/pipe/tank/nitrogen
-	name = "pressure tank (N2)"
+	name = "Pressure Tank (Nitrogen)"
 	icon_state = "n2_map"
 
 /obj/machinery/atmospherics/pipe/tank/nitrogen/New()
@@ -1177,7 +1151,7 @@
 	icon_state = "n2"
 
 /obj/machinery/atmospherics/pipe/tank/carbon_dioxide
-	name = "pressure tank (CO2)"
+	name = "Pressure Tank (Carbon Dioxide)"
 	icon_state = "co2_map"
 
 /obj/machinery/atmospherics/pipe/tank/carbon_dioxide/New()
@@ -1191,7 +1165,8 @@
 	icon_state = "co2"
 
 /obj/machinery/atmospherics/pipe/tank/plasma
-	name = "pressure tank (Plasma)"
+	name = "Pressure Tank (Plasma)"
+	description_antag = "Will blind people if they do not wear face-covering gear"
 	icon_state = "plasma_map"
 
 /obj/machinery/atmospherics/pipe/tank/plasma/New()
@@ -1205,7 +1180,7 @@
 	icon_state = "plasma"
 
 /obj/machinery/atmospherics/pipe/tank/nitrous_oxide
-	name = "pressure tank (N2O)"
+	name = "Pressure Tank (Nitrous Oxide)"
 	icon_state = "n2o_map"
 
 /obj/machinery/atmospherics/pipe/tank/nitrous_oxide/New()
@@ -1222,7 +1197,7 @@
 	icon = 'icons/obj/atmospherics/pipe_vent.dmi'
 	icon_state = "intact"
 
-	name = "vent"
+	name = "Vent"
 	desc = "A large air vent"
 
 	level = BELOW_PLATING_LEVEL
@@ -1240,7 +1215,7 @@
 	..()
 
 /obj/machinery/atmospherics/pipe/vent/high_volume
-	name = "large vent"
+	name = "Larger vent"
 	volume = 1000
 
 /obj/machinery/atmospherics/pipe/vent/Process()
@@ -1257,8 +1232,6 @@
 /obj/machinery/atmospherics/pipe/vent/Destroy()
 	if(node1)
 		node1.disconnect(src)
-
-	node1 = null
 
 	. = ..()
 
@@ -1289,7 +1262,7 @@
 	if(reference == node1)
 		if(istype(node1, /obj/machinery/atmospherics/pipe))
 			qdel(parent)
-	node1 = null
+		node1 = null
 
 	update_icon()
 
@@ -1304,8 +1277,8 @@
 
 
 /obj/machinery/atmospherics/pipe/simple/visible/universal
-	name="universal pipe adapter"
-	desc = "An adapter for regular, supply and scrubber pipes"
+	name="Universal pipe adapter"
+	desc = "An adapter for regular, supply and scrubbers pipes"
 	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY|CONNECT_TYPE_SCRUBBER
 	icon_state = "map_universal"
 
@@ -1341,8 +1314,8 @@
 
 
 /obj/machinery/atmospherics/pipe/simple/hidden/universal
-	name="universal pipe adapter"
-	desc = "An adapter for regular, supply and scrubber pipes"
+	name="Universal pipe adapter"
+	desc = "An adapter for regular, supply and scrubbers pipes"
 	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY|CONNECT_TYPE_SCRUBBER
 	icon_state = "map_universal"
 

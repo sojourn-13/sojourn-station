@@ -90,3 +90,27 @@
 		add_overlay("taser_pdwu")
 	else
 		add_overlay("lazer_pdwu")
+		
+/obj/item/gun/energy/ntpistol
+	name = "\"Serenity\" energy pistol"
+	desc = "\"New Testament\" brand laser pistol. Small and easily concealable, it's still a reasonable punch for a laser weapon. Refurbished after numerous copyright allegations."
+	icon = 'icons/obj/guns/energy/ntpistol.dmi'
+	icon_state = "ntpistol"
+	item_state = "ntpistol"
+	item_charge_meter = FALSE
+	fire_sound = 'sound/weapons/energy/Laser.ogg'
+	origin_tech = list(TECH_COMBAT = 2, TECH_MAGNET = 1)
+	w_class = ITEM_SIZE_SMALL
+	projectile_type = /obj/item/projectile/beam
+	charge_cost = 50
+	can_dual = TRUE
+	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_WOOD = 4, MATERIAL_SILVER = 2)
+	price_tag = 200
+	init_firemodes = list(
+		LETHAL,
+		WEAPON_CHARGE
+	)
+	twohanded = FALSE
+	suitable_cell = /obj/item/cell/small
+	cell_type = /obj/item/cell/small
+	serial_type = "Absolute"

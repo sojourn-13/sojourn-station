@@ -3,7 +3,7 @@
 	reagent_type = "Drug"
 	scannable = TRUE
 
-	var/sanity_gain = 0.5
+	sanity_gain = 0.5
 
 /datum/reagent/drug/on_mob_add(mob/living/L)
 	..()
@@ -63,7 +63,7 @@
 	glass_desc = "A suspect looking solo cup of a sleeping agent mixed with soda water to be drinkable."
 
 /datum/reagent/drug/lean/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.adjustToxLoss(2) //a strong toxin when injected
+	M.add_chemical_effect(CE_TOXIN, 2)
 	..()
 
 /datum/reagent/drug/lean/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
@@ -103,7 +103,7 @@
 	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier, TRUE)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "serotrotium")
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "serotrotium")
-	M.adjustToxLoss(-0.5)
+	M.add_chemical_effect(CE_ANTITOX, 0.5)
 	..()
 
 
@@ -125,7 +125,7 @@
 	M.add_chemical_effect(CE_PAINKILLER, 25 * effect_multiplier, TRUE)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "cryptobiolin")
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "cryptobiolin")
-	M.adjustToxLoss(-0.5)
+	M.add_chemical_effect(CE_ANTITOX, 0.5)
 	..()
 
 
@@ -194,7 +194,40 @@
 /datum/reagent/drug/mindbreaker/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "mindbreaker_w")
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "mindbreaker_w")
-	M.adjustToxLoss(-0.1) //Small toxins as your prossesing it out
+	M.add_chemical_effect(CE_ANTITOX, 0.1)
+
+/datum/reagent/drug/mindwipe
+	name = "Mindwipe"
+	id = "mindwipe"
+	description = "Shocks the user's brain hard enough to make him forget about his quirks. Is ill-advised because of side effects"
+	taste_description = "bitter"
+	reagent_state = LIQUID
+	color = "#bfff00"
+	metabolism = REM * 0.5
+	overdose = REAGENTS_OVERDOSE
+	nerve_system_accumulations = 90
+	addiction_chance = 30
+
+/datum/reagent/drug/mindwipe/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.hallucination(50 * effect_multiplier, 50 * effect_multiplier)
+	M.druggy = max(M.druggy, 5 * effect_multiplier)
+	M.make_jittery(10 * effect_multiplier)
+	M.make_dizzy(10 * effect_multiplier)
+	M.confused = max(M.confused, 20 * effect_multiplier)
+	if(prob(5 * effect_multiplier) && isturf(M.loc) && !istype(M.loc, /turf/space) && M.canmove && !M.restrained())
+		step(M, pick(cardinal))
+	if(ishuman(M))
+		var/mob/living/carbon/human/affected = M
+		if(prob(5 * effect_multiplier))
+			for(var/datum/breakdown/B in affected.sanity.breakdowns)
+				if(B)
+					B.finished = TRUE
+					to_chat(M, SPAN_NOTICE("You feel that something eases the strain on your sanity. But at which price?"))
+
+/datum/reagent/drug/mindwipe/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "mindwipe_w")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "mindwipe_w")
+	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "mindwipe_w")
 
 /datum/reagent/drug/psi_juice
 	name = "Cerebrix"
@@ -293,6 +326,7 @@
 	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
 		M.add_chemical_effect(CE_ANTITOX, 5)
 		M.heal_organ_damage(0.1, 0.1)
+		M.add_chemical_effect(CE_ONCOCIDAL, 0.5)	// STALKER reference
 
 /datum/reagent/drug/nicotine/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
@@ -307,7 +341,7 @@
 	if(prob(5))
 		M.emote("cough")
 	M.adjustOxyLoss(0.5)
-	M.adjustToxLoss(0.5)
+	M.adjustCloneLoss(0.5)
 
 /datum/reagent/drug/nicotineplus
 	name = "Fine Nicotine"
@@ -341,7 +375,7 @@
 	if(prob(5))
 		M.emote("cough")
 	M.adjustOxyLoss(1)
-	M.adjustToxLoss(1)
+	M.add_chemical_effect(CE_TOXIN, 1)
 
 /datum/reagent/drug/hyperzine
 	name = "Hyperzine"

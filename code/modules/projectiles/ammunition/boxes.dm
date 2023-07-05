@@ -66,6 +66,12 @@
 	icon_state = "pistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
+/obj/item/ammo_magazine/ammobox/pistol_35/rubber/pepperball
+	name = "ammunition packet (9mm pepperball)"
+	desc = "A box of police grade 9mm pepperball type rounds; complete with CO2 cartriage casings."
+	icon_state = "pistol_pepper"
+	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
+
 /obj/item/ammo_magazine/ammobox/pistol_35/lethal
 	name = "ammunition packet (9mm hollow-point)"
 	desc = "A box of self-defense grade 9mm hollow-points."
@@ -141,8 +147,9 @@
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
 /obj/item/ammo_magazine/ammobox/magnum_40/rubber/pepperball
-	name = "ammunition packet (10mm Magnum pepperspray)"
-	desc = "A box of police grade 10mm Auto-Mag pepperspray type rounds."
+	name = "ammunition packet (10mm Magnum pepperball)"
+	desc = "A box of police grade 10mm pepperball type rounds; complete with CO2 cartraiges."
+	icon_state = "magnum_pepper"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
 
 /obj/item/ammo_magazine/ammobox/magnum_40/lethal
@@ -253,10 +260,21 @@
 	icon_state = "lrifle_r"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber
 
+/obj/item/ammo_magazine/ammobox/light_rifle_257_small/rubber/pepperball
+	name = "ammunition packet (6.5mm Carbine pepperball)"
+	desc = "A box of police grade 6.5mm pepperball type rounds; complete with CO2 cartriage casings."
+	icon_state = "lrifle_pepper"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber/pepperball
+
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/lethal
 	name = "ammunition packet (6.5mm Carbine hollow-point)"
 	icon_state = "lrifle_l"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
+
+/obj/item/ammo_magazine/ammobox/light_rifle_257_small/incend
+	name = "ammunition packet (6.5mm Carbine incendiary)"
+	icon_state = "lrifle_l"
+	ammo_type = /obj/item/ammo_casing/light_rifle_257/incend
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257_small/laser
 	name = "ammunition packet (6.5mm Carbine laser)"
@@ -345,6 +363,11 @@
 	icon_state = "rifle_l"
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
+/obj/item/ammo_magazine/ammobox/rifle_75_small/incend
+	name = "ammunition packet (7.62mm Rifle incendiary)"
+	icon_state = "rifle_l"
+	ammo_type = /obj/item/ammo_casing/rifle_75/incend
+
 /obj/item/ammo_magazine/ammobox/rifle_75_small/scrap
 	name = "ammunition packet (old 7.62mm Rifle)"
 	icon_state = "srifle_s"
@@ -391,6 +414,12 @@
 	icon_state = "box50-rubber"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
 
+/obj/item/ammo_magazine/ammobox/kurtz_50/rubber/pepperball
+	name = "ammunition box (12mm pepperball)"
+	desc = "A box of police grade 12mm pepperball type rounds; complete with CO2 cartriage casings."
+	icon_state = "box50-pepper"
+	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber/pepperball
+
 /obj/item/ammo_magazine/ammobox/kurtz_50/practice
 	name = "ammunition box (12mm practice)"
 	icon_state = "box50-practice"
@@ -433,6 +462,15 @@
 	ammo_type = /obj/item/ammo_casing/antim
 	max_ammo = 15
 
+/obj/item/ammo_magazine/ammobox/antim_small/incend
+	name = "ammunition packet (14.5mm Incendiary)"
+	icon_state = "60-06sm"
+	matter = list(MATERIAL_CARDBOARD = 1)
+	caliber = CAL_ANTIM
+	w_class = ITEM_SIZE_NORMAL
+	ammo_type = /obj/item/ammo_casing/antim/incend
+	max_ammo = 15
+
 /obj/item/ammo_magazine/ammobox/antim/scrap
 	name = "ammunition box (old 14.5mm Anti Materiel)"
 	icon_state = "antim_s"
@@ -441,15 +479,15 @@
 
 //// 17.7mm rolled shot ////
 
-/obj/item/ammo_magazine/ammobox/ball
-	name = "ammunition box (17.7mm rolled shot)"
-	icon_state = "antim"
-	desc = "A box of 17.7mm rolled shot."
-	matter = list(MATERIAL_STEEL = 5)
-	w_class = ITEM_SIZE_BULKY
-	caliber = CAL_BALL
-	ammo_type = /obj/item/ammo_casing/ball
-	max_ammo = 30
+///obj/item/ammo_magazine/ammobox/ball
+//	name = "ammunition box (17.7mm rolled shot)"
+//	icon_state = "antim"
+//	desc = "A box of 17.7mm rolled shot."
+//	matter = list(MATERIAL_STEEL = 5)
+//	w_class = ITEM_SIZE_BULKY
+//	caliber = CAL_BALL
+//	ammo_type = /obj/item/ammo_casing/ball
+//	max_ammo = 30
 
 //// 8.6mm Heavy Rifle ////
 
@@ -485,6 +523,12 @@
 	icon_state = "hrifle_l"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 10mm hollow-tipped full-caliber."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
+
+/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/incend
+	name = "ammunition packet (8.6mm incendiary)"
+	icon_state = "hrifle_l"
+	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 10mm incendiary full-caliber."
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/incend
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
 	name = "ammunition packet (8.6mm laser)"
@@ -651,6 +695,12 @@
 	name = "ammunition packet (20mm beanbags)"
 	icon_state = "bean"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+
+/obj/item/ammo_magazine/ammobox/shotgun/beanbags/pepperball
+	name = "ammunition packet (20mm pepperball)"
+	desc = "A box of police grade 20mm pepperball type rounds; complete with CO2 cartriage casings."
+	icon_state = "pepper"
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag/pepperball
 
 /obj/item/ammo_magazine/ammobox/shotgun/buckshot
 	name = "ammunition packet (20mm Buckshot)"

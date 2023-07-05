@@ -12,7 +12,8 @@
 	cost = 0
 
 	unlocks_designs = list(/datum/design/research/item/clothing/security,
-							/datum/design/research/item/weapon/clarissa)
+							/datum/design/research/item/weapon/clarissa,
+							/datum/design/research/item/ammo/pistol/empty)
 
 // TO ADD: synth flashes?
 /datum/technology/basic_nonlethal
@@ -29,7 +30,8 @@
 	cost = 375
 
 	unlocks_designs = list(/datum/design/research/item/flash,
-						   /datum/design/research/item/weapon/weapon_upgrade/auto_eject_no_removal)
+						   /datum/design/research/item/weapon/weapon_upgrade/auto_eject_no_removal,
+						   /datum/design/research/item/ammo/pistol/rubber)
 
 
 
@@ -152,6 +154,7 @@
 	cost = 1500
 
 	unlocks_designs = list(/datum/design/research/item/weapon/large_grenade,
+							/datum/design/research/item/ammo/pistol,
 							/datum/design/research/item/ammo/smg_mag,
 							/datum/design/research/item/ammo/pistol_laser,
 							/datum/design/research/item/ammo/magum_laser,
@@ -217,8 +220,7 @@
 							/datum/design/research/item/weapon/katana,
 							/datum/design/research/item/ammo/rifle_75,
 							/datum/design/research/item/ammo/light_rifle_257,
-							/datum/design/research/item/ammo/kurtz_laser
-						)
+							/datum/design/research/item/ammo/kurtz_laser)
 
 /datum/technology/exotic_gunmods
 	name = "Experimental Gunmods"

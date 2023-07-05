@@ -98,7 +98,6 @@
 		participant.reagents.add_reagent("laudanum", 10)
 		participant.adjustBruteLoss(-20)
 		participant.adjustFireLoss(-20)
-		participant.adjustToxLoss(-20)
 		participant.adjustOxyLoss(-40)
 		participant.adjustBrainLoss(-5)
 		participant.updatehealth()
@@ -145,7 +144,6 @@
 		participant.reagents.add_reagent("laudanum", 10)
 		participant.adjustBruteLoss(-40)
 		participant.adjustFireLoss(-40)
-		participant.adjustToxLoss(-40)
 		participant.adjustOxyLoss(-80)
 		participant.adjustBrainLoss(-10)
 		participant.updatehealth()
@@ -362,7 +360,6 @@
 	H.reagents.add_reagent("nepenthe", 10)
 	H.adjustBruteLoss(-10)
 	H.adjustFireLoss(-10)
-	H.adjustToxLoss(-10)
 	H.adjustOxyLoss(-20)
 	H.adjustBrainLoss(-5)
 	H.updatehealth()
@@ -533,7 +530,7 @@
 			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
 			user.vessel.remove_reagent("blood",blood_cost)
 	set_personal_cooldown(user)
-
+/*
 /datum/ritual/cruciform/divisor/div_flash
 	name = "Ire"
 	phrase = "Fortitudo mea et laus mea Dominus, et sicut in omnibus divitiis."
@@ -564,7 +561,7 @@
 				to_chat(victim, SPAN_NOTICE("Your legs feel numb, but you managed to stay on your feet!"))
 	set_personal_cooldown(user)
 	return TRUE
-
+*/
 /datum/ritual/cruciform/divisor/echo_of_blasphemy
 	name = "Echo of Blasphemy"
 	phrase = "Id quod infra non pertinet."

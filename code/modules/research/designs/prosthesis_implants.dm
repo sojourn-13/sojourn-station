@@ -21,8 +21,8 @@
 
 // Bone Reinforcement
 /datum/design/research/item/mechfab/prosthesis/bone_brace
-	build_path =/obj/item/bone_brace
-	name = "Bone Brace"
+	build_path = /obj/item/modification/organ/internal/electromechanical/bone_braces
+	name = "Bone Braces"
 
 //Upgraded prosthesis ========================
 /datum/design/research/item/mechfab/prosthesis_moebius

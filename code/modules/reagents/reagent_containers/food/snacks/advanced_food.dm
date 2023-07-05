@@ -22,6 +22,7 @@
 	var/throw_away_wrapper = FALSE
 	var/icon_pointer = null
 	matter = list(MATERIAL_BIOMATTER = 6)
+	junk_food = TRUE
 
 /obj/item/reagent_containers/food/snacks/openable/update_icon()
 	..()
@@ -149,6 +150,7 @@
 	trash = /obj/item/trash/mre_candy
 	nutriment_desc = list("sweetness" = 1, "chocolate" = 3)
 	preloaded_reagents = list("sugar" = 3, "coco" = 2)
+	junk_food = FALSE //Helps with morale
 
 /obj/item/reagent_containers/food/snacks/openable/candy/shokoladka
 	desc = "Shokoladka branded non-melting military chocolate."
@@ -171,8 +173,8 @@
 	trash = /obj/item/trash/os_coco_wrapper
 	bitten_icon_alt = FALSE
 
-/obj/item/reagent_containers/food/snacks/openable/candy/os/New()
-	..()
+/obj/item/reagent_containers/food/snacks/openable/candy/os/Initialize(mapload)
+	. = ..()
 	switch (pickweight(list("chocolate_milk" = 1,
 	"chocolate_grape" = 1,
 	"chocolate_chestnut" = 1,
@@ -250,8 +252,8 @@
 	can_warm = TRUE
 	throw_away_wrapper = TRUE
 
-/obj/item/reagent_containers/food/snacks/openable/os_meat/New()
-	..()
+/obj/item/reagent_containers/food/snacks/openable/os_meat/Initialize(mapload)
+	. = ..()
 	if(prob(50))
 		icon_state = "steak_green"
 		icon_pointer = "steak_green"
@@ -314,8 +316,8 @@
 	icon_state = "soylent_orange"
 	trash = /obj/item/trash/os_soypack
 
-/obj/item/reagent_containers/food/snacks/openable/os_soypack/New()
-	..()
+/obj/item/reagent_containers/food/snacks/openable/os_soypack/Initialize(mapload)
+	. = ..()
 	switch (pickweight(list("soylent_orange" = 1,
 	"soylent_fish" = 1,
 	"soylent_strawberry" = 1,
@@ -386,6 +388,7 @@
 	nutriment_amt = 3
 	preloaded_reagents = list("hyperzine" = 2, "paracetamol" = 3)
 	matter = list(MATERIAL_BIOMATTER = 3)
+	junk_food = TRUE
 
 /obj/item/reagent_containers/food/snacks/os_paste
 	name = "GP nutrient paste"
@@ -398,6 +401,7 @@
 	nutriment_amt = 3
 	preloaded_reagents = list("kelotane" = 3, "sugar" = 2)
 	matter = list(MATERIAL_BIOMATTER = 3)
+	junk_food = TRUE
 
 /obj/item/reagent_containers/food/snacks/canned_peaches
 	name = "canned peaches"
@@ -410,6 +414,7 @@
 	nutriment_amt = 3
 	preloaded_reagents = list("sugar" = 2)
 	matter = list(MATERIAL_BIOMATTER = 9)
+	junk_food = TRUE
 
 /obj/item/reagent_containers/food/snacks/mre_cracker
 	name = "enriched cracker"
@@ -422,5 +427,6 @@
 	nutriment_amt = 1
 	preloaded_reagents = list("dexalinp" = 1, "nicotine" = 1)
 	matter = list(MATERIAL_BIOMATTER = 2)
+	junk_food = TRUE
 
 

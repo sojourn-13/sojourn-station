@@ -89,13 +89,17 @@
 */
 
 /mob/living/carbon/superior_animal/handle_chemicals_in_body()
-	if(reagents && !reagent_immune)
+	if(reagent_immune)
+		return FALSE
+	if(reagents)
 		chem_effects.Cut()
 		analgesic = 0
 
-		if(touching) touching.metabolize()
-		if(ingested) ingested.metabolize()
-		if(bloodstr) bloodstr.metabolize()
+		//If a mob dosnt have one of these then something is wrong with that mob!
+		touching.metabolize()
+		ingested.metabolize()
+		bloodstr.metabolize()
+
 		metabolism_effects.process()
 
 		if(CE_PAINKILLER in chem_effects)

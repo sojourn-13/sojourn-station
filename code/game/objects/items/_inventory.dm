@@ -65,9 +65,10 @@
 	if(wielded)
 		unwield(user)
 	/* Removing this until we can make better use of these signals - Hex
+	Re-enabling so we can use these signals for sanity-clothing checks. If it turns out to be as laggy as implied, it can be re-disabled. - Rebel0 */
 	LEGACY_SEND_SIGNAL(user, COMSIG_CLOTH_EQUIPPED, src) // Theres instances in which its usefull to keep track of it both on the user and individually
-	LEGACY_SEND_SIGNAL(src, COMSIG_CLOTH_EQUIPPED)
-	*/
+	LEGACY_SEND_SIGNAL(src, COMSIG_CLOTH_EQUIPPED, user)
+
 
 /obj/item/proc/dropped(mob/user)
 	if(zoom) //binoculars, scope, etc

@@ -52,6 +52,18 @@
 			suit.accessories -= A
 			update_inv_w_uniform()
 			return
+		else
+			var/obj/item/located_item = locate(slot_to_strip) in src
+			if (istype(located_item, /obj/item/underwear))
+				var/obj/item/underwear/UW = located_item
+				visible_message(
+					SPAN_DANGER("\The [user] starts trying to remove \the [src]'s [UW.name]!"),
+					SPAN_WARNING("You start trying to remove \the [src]'s [UW.name]!")
+				)
+				if (UW.DelayedRemoveUnderwear(user, src))
+					admin_attack_log(user, src, "Stripped \an [UW] from \the [src].", "Was stripped of \an [UW] from \the [src].", "stripped \an [UW] from \the [src] of")
+					user.put_in_active_hand(UW)
+				return
 
 	// Are we placing or stripping?
 	var/stripping

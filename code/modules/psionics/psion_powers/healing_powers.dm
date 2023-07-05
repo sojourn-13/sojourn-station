@@ -30,11 +30,9 @@
 	if(pay_power_cost(psi_point_cost))
 		if(!owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
 			owner.nutrition = 400
-			owner.adjustToxLoss(15)
 			owner.drip_blood(54)
 		else
 			owner.nutrition = 400
-			owner.adjustToxLoss(7.5)
 			owner.drip_blood(26)
 		to_chat(owner, "You feel sick and woozy, a sudden full sensation in your gut almost making you want to vomit.")
 
@@ -71,3 +69,30 @@
 			to_chat(owner, SPAN_NOTICE("You don't crave for [R.name] anymore."))
 			owner.metabolism_effects.addiction_list.Remove(R)
 			qdel(R)
+
+// Heals sanity
+/obj/item/organ/internal/psionic_tumor/proc/meditative_focus()
+	set category = "Psionic powers"
+	set name = "Meditative Focus (2)"
+	set desc = "Expend two psi points of your psi essence to focus your mind and increase your sanity."
+	psi_point_cost = 2
+
+	if(pay_power_cost(psi_point_cost))
+		if(owner.sanity.level >= (owner.sanity.max_level - 10))
+			psi_points += psi_point_cost
+			owner.visible_message(
+			"[owner] fidgets uncomfortably.",
+			"Your mind is assured."
+			)
+			return
+		else if(owner.sanity.level < (owner.sanity.max_level - 10))
+			owner.sanity.changeLevel(5 + (owner.stats.getStat(STAT_COG)/2))
+			if(owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
+				owner.sanity.changeLevel(10)
+			if(owner.stats.getPerk(PERK_PSI_MANIA))
+				owner.sanity.changeLevel(5)
+			playsound(owner.loc,'sound/effects/telesci_ping.ogg', 25, 1)
+			owner.visible_message(
+				"[owner]'s head lowers for a concentrated moment.",
+				"A second turns to eternity, your mind assures its place in the universe"
+				)

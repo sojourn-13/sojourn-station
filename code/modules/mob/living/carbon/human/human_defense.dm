@@ -256,27 +256,19 @@ meteor_act
 
 	if(effective_force > 10 || effective_force >= 5 && prob(33))
 		forcesay(hit_appends)	//forcesay checks stat already
-	if((I.damtype == BRUTE || I.damtype == HALLOSS) && prob(25 + (effective_force * 2)))
-		if(!stat && !(has_shield()))
-			if(headcheck(hit_zone))
-				//Harder to score a stun but if you do it lasts a bit longer
-				if(prob(effective_force))
-					visible_message(SPAN_DANGER("[src] [form.knockout_message]"))
-					apply_effect(20, PARALYZE, getarmor(hit_zone, ARMOR_MELEE) )
-			else
-				//Easier to score a stun but lasts less time
-				if(prob(effective_force + 10))
-					visible_message(SPAN_DANGER("[src] has been knocked down!"))
-					apply_effect(6, WEAKEN, getarmor(hit_zone, ARMOR_MELEE) )
 
 		//Apply blood
-		if(!((I.flags & NOBLOODY)||(I.item_flags & NOBLOODY)))
+		if(!((I.flags & NOBLOODY)||(I.item_flags & NOBLOODY)) && src.species?.reagent_tag != IS_SYNTHETIC)
 			I.add_blood(src)
 
-		if(prob(33 + I.sharp * 10))
+		if(prob(33 + I.sharp * 10) && src.species?.reagent_tag != IS_SYNTHETIC)
 			var/turf/location = loc
-			if(istype(location, /turf/simulated))
+			if(istype(location, /turf/simulated) && I.damtype == BRUTE)
 				location.add_blood(src)
+				drip_blood(3)
+			else
+				spawn emote("me", 1, "coughs up blood!")
+				drip_blood(5)
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				if(get_dist(H, src) <= 1) //people with TK won't get smeared with blood

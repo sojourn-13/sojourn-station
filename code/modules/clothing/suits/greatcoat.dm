@@ -80,7 +80,7 @@
 
 /obj/item/clothing/suit/greatcoat/nt_wintercoat //Sprite recolour from a Civ13 open github skyrim hidden piece with a few change ups to match our pallet -Dongels
 	name = "absolutist wintercoat"
-	desc = "A comfortably warm, and thick decorated wintercoat for the Absolutist faith and its supporters. Keeping the faithfull warm in the jungle heat since 2652."
+	desc = "A comfortably warm, and thick decorated wintercoat for the Absolutist faith and its supporters. Keeping the faithfull warm in the Amethyn heat since 2652."
 	icon_state = "nt_wintercoat"
 	item_state = "nt_wintercoat"
 	blood_overlay_type = "coat"
@@ -183,7 +183,7 @@
 
 /obj/item/clothing/suit/greatcoat/cossackcoat
 	name = "jaeger riding coat"
-	desc = "A traditional riding coat often worn by Jaegers, typically inherited or tailored as an expensive practical gift. The design is murder in the humid jungle, but is a time-honored and comfortable jacket for irregulars who served on Krios, where they dressed like woodsmen in their ambush patrols on Sol-Fed regulars in the cold forests and swamps of home."
+	desc = "A traditional riding coat often worn by Jaegers, typically inherited or tailored as an expensive practical gift. The design is murder in the humid Amethyn forests, but is a time-honored and comfortable jacket for irregulars who served on Krios, where they dressed like woodsmen in their ambush patrols on Sol-Fed regulars in the cold forests and swamps of home."
 	icon_state = "cossackcoat"
 	item_state = "cossackcoat"
 	blood_overlay_type = "coat"

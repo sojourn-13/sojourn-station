@@ -263,6 +263,7 @@
 		if (!testing)
 			var/mob/living/carbon/human/M = target
 			M.confused += rand(5,8)
+			M.sanity_damage = 8
 
 /obj/item/projectile/chameleon
 	name = "bullet"
@@ -486,3 +487,23 @@
 	muzzle_type = /obj/effect/projectile/laser_blue/muzzle
 	tracer_type = /obj/effect/projectile/laser_blue/tracer
 	impact_type = /obj/effect/projectile/laser_blue/impact
+
+//PPC
+/obj/item/projectile/ppc
+	name = "plasma discharge bolt"
+	icon_state = "ice_1"
+	damage_types = list(BURN = 47)
+	armor_penetration = 50
+	check_armour = ARMOR_ENERGY
+	recoil = 8
+
+	muzzle_type = /obj/effect/projectile/tesla/muzzle
+	tracer_type = /obj/effect/projectile/tesla/tracer
+	impact_type = /obj/effect/projectile/tesla/impact
+
+/obj/item/projectile/ppc/on_impact(atom/target)
+	if (!testing)
+		empulse(target, 0, 1)
+		electrocute_mob(target, 1)
+		new/obj/effect/sparks(target.loc)
+	return TRUE

@@ -1,7 +1,7 @@
 //Contains: Engineering department jumpsuits
 /obj/item/clothing/under/rank/exultant
-	desc = "A blue-yellow engineering jumpsuit worn by Guild Masters. It has good radiation shielding."
 	name = "guild master's jumpsuit"
+	desc = "A blue-yellow engineering jumpsuit worn by Guild Masters. It has good radiation shielding."
 	icon_state = "chiefengineer"
 	item_state = "g_suit"
 	armor_list = list(
@@ -13,19 +13,31 @@
 		rad = 30
 	)
 
-/obj/item/clothing/under/rank/exultant/skirt
-	desc = "A blue-yellow engineering skirt worn by Guild Masters. It has good radiation shielding."
-	name = "guild master's skirt"
-	icon_state = "artificer_jumpskirt_master"
-	item_state = "artificer_jumpskirt_master"
-	armor_list = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 0,
-		rad = 30
-	)
+/obj/item/clothing/under/rank/exultant/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["GM jumpsuit"] = "chiefengineer"
+	options["GM jumpskirt"] = "artificer_jumpskirt_master"
+	options["GM High Visiblity Jumpsuit"] = "GM uniform" // Sprites by Ezoken/Dromkii
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You adjust your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/under/rank/engineer
 	desc = "A yellow engineering jumpsuit worn by Guild Adepts. It has minor radiation shielding."
@@ -41,47 +53,36 @@
 		rad = 10
 	)
 
-/obj/item/clothing/under/rank/engineer/padded
-	desc = "A yellow engineering jumpsuit worn by Guild Adepts. It has minor radiation shielding and some decorative padding."
-	name = "adept's jumpsuit"
-	icon_state = "artificer_armored_jumpsuit"
-	item_state = "artificer_armored_jumpsuit"
-	armor_list = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 0,
-		rad = 10
-	)
+/obj/item/clothing/under/rank/engineer/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/clothing/under/rank/engineer/skirt
-	desc = "A yellow engineering skirt worn by Guild Adepts. It has minor radiation shielding."
-	name = "adept's skirt"
-	icon_state = "artificer_apprentice_skirt"
-	item_state = "artificer_apprentice_skirt"
-	armor_list = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 0,
-		rad = 10
-	)
+	if(!isliving(loc))
+		return
 
-/obj/item/clothing/under/rank/engineer/skirt/alt
-	desc = "A yellow engineering skirt worn by Guild Adepts. It has minor radiation shielding and some decorative padding."
-	name = "adept's padded skirt"
-	icon_state = "artificer_jumpskirt_adept"
-	item_state = "artificer_jumpskirt_adept"
-	armor_list = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 0,
-		rad = 10
-	)
+	var/mob/M = usr
+	var/list/options = list()
+	options["Adept Jumpsuit"] = "engine"
+	options["Adept Jumpsuit Padded"] = "artificer_armored_jumpsuit"
+	options["Adept Jumpskirt"] = "artificer_apprentice_skirt"
+	options["Adept Jumpskirt Padded"] = "artificer_jumpskirt_adept"
+	options["High Visiblity Jumpsuit"] = "GA uniform" // Sprites by Ezoken/Dromkii
+	options["High Visiblity Two Piece"] = "adept_alt" // Sprites by Ezoken/Dromkii
+	options["High Visiblity Rolled sleeves"] = "adept_alt_rolled" // Sprites by Ezoken/Dromkii
+	options["High Visiblity Shirt down"] = "adept_alt_pants" // Sprites by Ezoken/Dromkii
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You adjust your [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/under/rank/roboticist
 	desc = "An orange and tan Soteria jumpsuit designed for mechanical work."
@@ -116,4 +117,3 @@
 		bio = 70,
 		rad = 100 //Rad proof
 	)
-

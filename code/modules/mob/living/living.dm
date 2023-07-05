@@ -13,12 +13,12 @@
 		return
 	if (HUDtech.Find("flash"))
 		flick("e_flash", HUDtech["flash"])
-	if(duration)
+	if(duration || drop_items)
 		Weaken(duration, drop_items)
-		if(doblind)
-			eye_blind += duration
-		if(doblurry)
-			eye_blurry += duration
+	if(doblind)
+		eye_blind += duration
+	if(doblurry)
+		eye_blurry += duration
 
 //mob verbs are faster than object verbs. See above.
 /mob/living/pointed(atom/A as mob|obj|turf in view())
@@ -171,9 +171,9 @@ default behaviour is:
 
 /mob/living/verb/succumb()
 	set hidden = TRUE
-	if ((src.health < 0 && src.health > (5-src.maxHealth))) // Health below Zero but above 5-away-from-death, as before, but variable
-		src.adjustOxyLoss(src.health + src.maxHealth * 2) // Deal 2x health in OxyLoss damage, as before but variable.
-		src.health = src.maxHealth - src.getOxyLoss() - src.getToxLoss() - src.getFireLoss() - src.getBruteLoss()
+	if (health < 0) // Health below Zero but above 5-away-from-death, as before, but variable
+		adjustOxyLoss(health + maxHealth * 2) // Deal 2x health in OxyLoss damage, as before but variable.
+		health = -maxHealth
 		to_chat(src, "\blue You have given up life and succumbed to death.")
 
 
@@ -202,7 +202,7 @@ default behaviour is:
 	var/extradam = 0	//added to when organ is at max dam
 	for(var/obj/item/organ/external/affecting in organs)
 		//TODO: fix the extradam stuff. Or, ebtter yet...rewrite this entire proc ~Carn
-		if(affecting.take_damage(0, divided_damage+extradam))
+		if(affecting.take_damage(divided_damage+extradam, BURN))
 			UpdateDamageIcon()
 	updatehealth()
 	return TRUE
