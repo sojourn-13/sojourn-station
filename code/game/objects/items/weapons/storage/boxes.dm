@@ -94,7 +94,8 @@
 /obj/item/storage/box/survival/populate_contents()
 	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
-	new /obj/item/storage/box/matches(src)
+	new /obj/item/device/lighting/toggleable/flashlight(src)
+	new /obj/item/cell/small(src)
 	if(prob(50))
 		new /obj/item/reagent_containers/food/snacks/openable/mre(src)
 	else
@@ -108,7 +109,9 @@
 		new /obj/item/reagent_containers/food/snacks/openable/mre(src)
 	else
 		new /obj/item/reagent_containers/food/snacks/openable/mre/alt(src)
-	new /obj/item/device/lighting/glowstick/yellow(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/device/lighting/toggleable/flashlight(src)
+	new /obj/item/cell/small(src)
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
