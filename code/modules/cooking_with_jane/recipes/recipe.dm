@@ -57,7 +57,52 @@
 		//Cook on a stove, at medium temperature, for 30 seconds
 		list(CWJ_USE_STOVE, J_MED, 30 SECONDS)
 	)
+/datum/cooking_with_jane/recipe/tortilla
+	cooking_container = OVEN
+	product_type = /obj/item/reagent_containers/food/snacks/tortilla
+	product_count = 3
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/flatdoughslice),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/flatdoughslice),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/flatdoughslice),
+		list(CWJ_USE_OVEN, J_HI, 5 SECONDS)
+	)
 
+/datum/cooking_with_jane/recipe/taco
+	cooking_container = PAN
+	product_type = /obj/item/reagent_containers/food/snacks/taco
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/tortilla),
+		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
+		list(CWJ_ADD_REAGENT, "cornoil", 1),
+		list(CWJ_ADD_PRODUCE, "corn"),
+		list(CWJ_ADD_PRODUCE, "cabbage"),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge),
+		list(CWJ_USE_STOVE, J_LO, 15 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/sausage
+	cooking_container = GRILL
+	product_type = /obj/item/reagent_containers/food/snacks/sausage
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawmeatball),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawbacon),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1),
+		list(CWJ_USE_GRILL, J_LO, 10 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/hotdog
+	cooking_container = GRILL
+	product_type = /obj/item/reagent_containers/food/snacks/hotdog
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sausage),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, base=1),
+		list(CWJ_USE_GRILL, J_LO, 10 SECONDS)
+	)
 
 /datum/cooking_with_jane/recipe/chickensteak
 	cooking_container = OVEN
@@ -164,6 +209,20 @@
 		list(CWJ_ADD_ITEM_OPTIONAL, /obj/item/reagent_containers/food/snacks/butterslice, base=10),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
+		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/bread_meat
+	cooking_container = OVEN
+	product_type = /obj/item/reagent_containers/food/snacks/sliceable/meatbread
+	recipe_guide = "Put dough in an oven, bake for 30 seconds on medium."
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/meat),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -486,7 +545,6 @@
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "blackpepper", 1),
 		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/dough, qmod=0.5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
@@ -510,7 +568,6 @@
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/doughslice, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1),
 		list(CWJ_USE_OVEN, J_HI, 5 SECONDS)
 	)
 
@@ -520,7 +577,6 @@
 	product_count = 3
 	step_builder = list(
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/flatdough, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1),
 		list(CWJ_USE_OVEN, J_HI, 5 SECONDS)
 	)
 
@@ -746,7 +802,7 @@
 	cooking_container = POT
 	product_type = /obj/item/reagent_containers/food/snacks/wishsoup
 	step_builder = list(
-		list(CWJ_ADD_REAGENT, "water", 20),
+		list(CWJ_ADD_REAGENT, "water", 40),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
 		list(CWJ_USE_STOVE, J_LO, 5 SECONDS)
 	)
@@ -905,6 +961,18 @@
 
 //Ingreds
 
+/datum/cooking_with_jane/recipe/chocolatebar
+	cooking_container = POT
+	product_type = /obj/item/reagent_containers/food/snacks/chocolatebar
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "water", 5),
+		list(CWJ_ADD_REAGENT, "milk", 5),
+		list(CWJ_ADD_REAGENT, "sugar", 15),
+		list(CWJ_ADD_REAGENT, "coco", 10),
+		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
+		list(CWJ_USE_STOVE, J_LO, 30 SECONDS)
+	)
+
 /datum/cooking_with_jane/recipe/cooked_cutlet
 	cooking_container = GRILL
 	product_type = /obj/item/reagent_containers/food/snacks/cutlet
@@ -913,6 +981,15 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
 		list(CWJ_USE_GRILL, J_LO, 15 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/raw_meatball
+	cooking_container = BOWL
+	product_type = /obj/item/reagent_containers/food/snacks/rawmeatball
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawcutlet),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice),
 	)
 
 /datum/cooking_with_jane/recipe/cooked_meatball
@@ -941,12 +1018,11 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/sliceable/plaincake
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/butterstick, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/butterstick),
 		list(CWJ_ADD_REAGENT, "sugar", 15),
 		list(CWJ_ADD_REAGENT, "flour", 15),
 		list(CWJ_ADD_REAGENT, "milk", 5),
 		list(CWJ_ADD_REAGENT, "egg", 9),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -954,11 +1030,12 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/sliceable/carrotcake
 	step_builder = list(
-		list(CWJ_ADD_PRODUCE, "carrot", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "carrot", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "carrot", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/plaincake, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/butterstick),
+		list(CWJ_ADD_REAGENT, "sugar", 15),
+		list(CWJ_ADD_REAGENT, "flour", 15),
+		list(CWJ_ADD_REAGENT, "milk", 5),
+		list(CWJ_ADD_REAGENT, "egg", 9),
+		list(CWJ_ADD_PRODUCE, "carrot"),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -966,20 +1043,25 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/sliceable/cheesecake
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/plaincake, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
-		list(CWJ_USE_STOVE, J_MED, 30 SECONDS)
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/butterstick),
+		list(CWJ_ADD_REAGENT, "sugar", 15),
+		list(CWJ_ADD_REAGENT, "flour", 15),
+		list(CWJ_ADD_REAGENT, "milk", 5),
+		list(CWJ_ADD_REAGENT, "egg", 9),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge, reagent_skip=TRUE),
+		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
 /datum/cooking_with_jane/recipe/orangecake
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/sliceable/orangecake
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/plaincake, qmod=0.5),
-		list(CWJ_ADD_PRODUCE, "orange", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/butterstick),
+		list(CWJ_ADD_REAGENT, "sugar", 15),
+		list(CWJ_ADD_REAGENT, "flour", 15),
+		list(CWJ_ADD_REAGENT, "milk", 5),
+		list(CWJ_ADD_REAGENT, "egg", 9),
+		list(CWJ_ADD_PRODUCE, "orange", reagent_skip=TRUE),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -987,9 +1069,12 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/sliceable/limecake
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/plaincake, qmod=0.5),
-		list(CWJ_ADD_PRODUCE, "lime", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/butterstick),
+		list(CWJ_ADD_REAGENT, "sugar", 15),
+		list(CWJ_ADD_REAGENT, "flour", 15),
+		list(CWJ_ADD_REAGENT, "milk", 5),
+		list(CWJ_ADD_REAGENT, "egg", 9),
+		list(CWJ_ADD_PRODUCE, "lime", reagent_skip=TRUE),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -997,9 +1082,12 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/sliceable/lemoncake
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/plaincake, qmod=0.5),
-		list(CWJ_ADD_PRODUCE, "lemon", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/butterstick),
+		list(CWJ_ADD_REAGENT, "sugar", 15),
+		list(CWJ_ADD_REAGENT, "flour", 15),
+		list(CWJ_ADD_REAGENT, "milk", 5),
+		list(CWJ_ADD_REAGENT, "egg", 9),
+		list(CWJ_ADD_PRODUCE, "lemon"),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -1007,10 +1095,11 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/sliceable/chocolatecake
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/plaincake, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/chocolatebar, qmod=0.5),
+		list(CWJ_ADD_REAGENT, "sugar", 15),
+		list(CWJ_ADD_REAGENT, "flour", 15),
+		list(CWJ_ADD_REAGENT, "milk", 5),
+		list(CWJ_ADD_REAGENT, "egg", 9),
 		list(CWJ_ADD_REAGENT, "coco", 5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 5),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -1018,10 +1107,11 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/sliceable/applecake
 	step_builder = list(
-		list(CWJ_ADD_PRODUCE, "apple", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_PRODUCE, "apple", qmod=0.2, reagent_skip=TRUE),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/plaincake, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 1, base=1),
+		list(CWJ_ADD_REAGENT, "sugar", 15),
+		list(CWJ_ADD_REAGENT, "flour", 15),
+		list(CWJ_ADD_REAGENT, "milk", 5),
+		list(CWJ_ADD_REAGENT, "egg", 9),
+		list(CWJ_ADD_PRODUCE, "apple"),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -1029,13 +1119,12 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/sliceable/brownie
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/butterstick, qmod=0.5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/butterstick),
 		list(CWJ_ADD_REAGENT, "sugar", 15),
 		list(CWJ_ADD_REAGENT, "coco", 10),
 		list(CWJ_ADD_REAGENT, "milk", 5),
 		list(CWJ_ADD_REAGENT, "egg", 9),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/chocolatebar, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 5),
+		list(CWJ_ADD_REAGENT, "cornoil", 3),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -1043,9 +1132,8 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/sliceable/birthdaycake
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/plaincake, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/clothing/head/costume/misc/cake, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 5),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/plaincake),
+		list(CWJ_ADD_ITEM, /obj/item/clothing/head/costume/misc/cake),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
@@ -1053,10 +1141,11 @@
 	cooking_container = OVEN
 	product_type = /obj/item/reagent_containers/food/snacks/sliceable/braincake
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/plaincake, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/organ/internal/brain, qmod=0.5),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sliceable/butterstick, qmod=0.5),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "woodpulp", 5),
+		list(CWJ_ADD_REAGENT, "sugar", 15),
+		list(CWJ_ADD_REAGENT, "flour", 15),
+		list(CWJ_ADD_REAGENT, "milk", 5),
+		list(CWJ_ADD_REAGENT, "egg", 9),
+		list(CWJ_ADD_ITEM, /obj/item/organ/internal/brain),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
