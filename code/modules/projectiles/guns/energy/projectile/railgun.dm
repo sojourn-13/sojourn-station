@@ -247,7 +247,7 @@
 
 	var/max_stored_matter = 6
 	var/stored_matter = 0
-	var/matter_type = MATERIAL_RSCRAP
+	var/matter_type = "refined scrap pieces"
 
 	var/projectile_cost = 1
 	var/overheat_damage = 25
@@ -268,9 +268,9 @@
 	..()
 /obj/item/gun/energy/laser/railgun/gauss/attackby(obj/item/I, mob/user)
 
-	if(!istype(I,/obj/item/stack/material))
+	if(!istype(I,/obj/item/stack))
 		..()
-	var/obj/item/stack/material/refined_scrap/M = I
+	var/obj/item/stack/M = I
 	if(istype(M) && M.name == matter_type)
 		var/amount = min(M.get_amount(), round(max_stored_matter - stored_matter))
 		if(M.use(amount))

@@ -470,7 +470,6 @@
 	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
 	var/overlay_detail
 	has_resources = 1
-	var/mudpit = 0
 
 /turf/simulated/floor/asteroid/New()
 	..()

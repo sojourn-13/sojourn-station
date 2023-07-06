@@ -68,7 +68,7 @@
 	result = /obj/machinery/button/windowtint
 	time = WORKTIME_NORMAL
 	steps = list(
-		list(/obj/item/stack/material/plastic, 3)
+		list(/obj/item/device/assembly/signaler)
 		)
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
 	related_stats = list(STAT_MEC)
