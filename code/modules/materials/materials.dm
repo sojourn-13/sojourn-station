@@ -681,7 +681,8 @@ var/list/name_to_material
 	name = MATERIAL_SILK
 	stack_origin_tech = list(TECH_MATERIAL = 2)
 	stack_type = /obj/item/stack/material/silk
-	composite_material = list(MATERIAL_BIOMATTER = 1) //So we have a vaule to more then one faction
+
+	 //So we have a vaule to more then one faction
 	door_icon_base = "wood"
 	ignition_point = T0C+232
 	melting_point = T0C+300
@@ -828,7 +829,10 @@ var/list/name_to_material
 
 /material/refined_scrap
 	name = MATERIAL_RSCRAP
-	stack_type = /obj/item/stack/sheet/refined_scrap
+	stack_type = /obj/item/stack/material/refined_scrap
+	composite_material = list(MATERIAL_STEEL = 1)
+	stack_origin_tech = list(TECH_MATERIAL = 2)
+	weight = 30
 	icon_colour = "B7410E"
 	sheet_singular_name = "piece"
 	sheet_plural_name = "pieces"

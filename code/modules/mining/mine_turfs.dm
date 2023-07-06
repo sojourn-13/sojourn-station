@@ -470,6 +470,7 @@
 	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
 	var/overlay_detail
 	has_resources = 1
+	var/mudpit = 0
 
 /turf/simulated/floor/asteroid/New()
 	..()
@@ -495,8 +496,9 @@
 /turf/simulated/floor/asteroid/attackby(obj/item/I, mob/user)
 
 	if(QUALITY_DIGGING in I.tool_qualities)
-		if (dug)
-			to_chat(user, SPAN_WARNING("This area has already been dug"))
+		if (dug && I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_DIGGING, FAILCHANCE_EASY, required_stat = STAT_ROB))
+			visible_message(SPAN_WARNING("[user] starts digging deep!"))
+			new /obj/structure/pit(src)
 			return
 		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_DIGGING, FAILCHANCE_EASY, required_stat = STAT_ROB))
 			to_chat(user, SPAN_NOTICE("You dug a hole."))

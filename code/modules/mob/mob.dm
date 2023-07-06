@@ -294,6 +294,8 @@
 	set name = "Point To"
 	set category = "Object"
 
+	usr.visible_message("<b>[src]</b> points to [A]")
+
 	if(istype(A, /obj/effect/decal/point))
 		return FALSE
 

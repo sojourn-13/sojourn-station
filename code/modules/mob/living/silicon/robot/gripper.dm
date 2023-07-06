@@ -351,5 +351,5 @@
 
 	can_hold = list(
 		/obj/item/stack/material,
-		/obj/item/stack/sheet/refined_scrap
+		/obj/item/stack/material/refined_scrap
 		)

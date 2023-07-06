@@ -268,9 +268,9 @@
 	..()
 /obj/item/gun/energy/laser/railgun/gauss/attackby(obj/item/I, mob/user)
 
-	if(!istype(I,/obj/item/stack/sheet))
+	if(!istype(I,/obj/item/stack/material))
 		..()
-	var/obj/item/stack/sheet/M = I
+	var/obj/item/stack/material/refined_scrap/M = I
 	if(istype(M) && M.name == matter_type)
 		var/amount = min(M.get_amount(), round(max_stored_matter - stored_matter))
 		if(M.use(amount))
