@@ -79,7 +79,7 @@
 		list(CWJ_ADD_PRODUCE, "cabbage"),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cutlet),
 		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge),
-		list(CWJ_USE_STOVE, J_LO, 15 SECONDS)
+		list(CWJ_USE_STOVE, J_MED, 15 SECONDS)
 	)
 
 /datum/cooking_with_jane/recipe/sausage
@@ -91,17 +91,26 @@
 		list(CWJ_ADD_REAGENT_OPTIONAL, "cornoil", 1, base=1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1, base=1),
 		list(CWJ_ADD_REAGENT_OPTIONAL, "blackpepper", 1, base=1),
-		list(CWJ_USE_GRILL, J_LO, 10 SECONDS)
+		list(CWJ_USE_GRILL, J_MED, 10 SECONDS)
 	)
 
-/datum/cooking_with_jane/recipe/hotdog
-	cooking_container = GRILL
-	product_type = /obj/item/reagent_containers/food/snacks/hotdog
+/datum/cooking_with_jane/recipe/fries
+	cooking_container = PAN
+	product_type = /obj/item/reagent_containers/food/snacks/fries
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/bun),
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/sausage),
-		list(CWJ_ADD_REAGENT_OPTIONAL, "ketchup", 1, base=1),
-		list(CWJ_USE_GRILL, J_LO, 10 SECONDS)
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/rawsticks),
+		list(CWJ_ADD_REAGENT, "cornoil", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sodiumchloride", 1),
+		list(CWJ_USE_STOVE, J_HI, 15 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/cheesyfries
+	cooking_container = PAN
+	product_type = /obj/item/reagent_containers/food/snacks/cheesyfries
+	step_builder = list(
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/fries),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/cheesewedge),
+		list(CWJ_USE_STOVE, J_LO, 15 SECONDS)
 	)
 
 /datum/cooking_with_jane/recipe/chickensteak
@@ -480,7 +489,7 @@
 	reagent_id = "glaze"
 	reagent_amount = 30
 	description = "A dollop of basic icing!"
-	recipe_guide = "Add 30 units of sugar. Add 30 units of water. Cook on a stove set to 'Low' for 30 seconds."
+	recipe_guide = "Icing will need to be poured into a container after cooking."
 	step_builder = list(
 		list(CWJ_ADD_REAGENT, "sugar", 30),
 		list(CWJ_ADD_REAGENT, "water", 30),
