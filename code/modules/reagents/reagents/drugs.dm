@@ -338,8 +338,8 @@
 
 /datum/reagent/drug/nicotine/withdrawal_act(mob/living/carbon/M)
 	M.add_chemical_effect(CE_SLOWDOWN, 0.5) //sluggish
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_NOVICE, STIM_TIME, "tobacco")
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_NOVICE, STIM_TIME, "tobacco")
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "tobacco")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "tobacco")
 
 /datum/reagent/drug/nicotine/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
@@ -357,7 +357,8 @@
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0 // Note: NEVER make nicotine actually addictive. EVER.
+	addiction_chance = 1 // Note: NEVER make nicotine actually addictive. EVER. //Why? It's based.
+	sanity_gain = 0.8
 	nerve_system_accumulations = 15
 
 /datum/reagent/drug/nicotineplus/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // If you inject fine nicotine
@@ -374,6 +375,11 @@
 	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
 		M.add_chemical_effect(CE_ANTITOX, 10)
 		M.heal_organ_damage(0.2, 0.2)
+
+/datum/reagent/drug/nicotineplus/withdrawal_act(mob/living/carbon/M)
+	M.add_chemical_effect(CE_SLOWDOWN, 0.5) //sluggish
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_NOVICE, STIM_TIME, "nicotineplus")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_NOVICE, STIM_TIME, "nicotineplus")
 
 /datum/reagent/drug/nicotineplus/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
