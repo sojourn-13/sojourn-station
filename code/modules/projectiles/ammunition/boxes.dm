@@ -479,15 +479,15 @@
 
 //// 17.7mm rolled shot ////
 
-///obj/item/ammo_magazine/ammobox/ball
-//	name = "ammunition box (17.7mm rolled shot)"
-//	icon_state = "antim"
-//	desc = "A box of 17.7mm rolled shot."
-//	matter = list(MATERIAL_STEEL = 5)
-//	w_class = ITEM_SIZE_BULKY
-//	caliber = CAL_BALL
-//	ammo_type = /obj/item/ammo_casing/ball
-//	max_ammo = 30
+/obj/item/ammo_magazine/ammobox/ball
+	name = "ammunition box (17.7mm rolled shot)"
+	icon_state = "antim"
+	desc = "A box of 17.7mm rolled shot."
+	matter = list(MATERIAL_STEEL = 5)
+	w_class = ITEM_SIZE_BULKY
+	caliber = CAL_BALL
+	ammo_type = /obj/item/ammo_casing/ball
+	max_ammo = 30
 
 //// 8.6mm Heavy Rifle ////
 
