@@ -530,10 +530,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	if(!colony_allied_turret && !L.colony_friend) //If were not allied to the colony we dont attack anything thats against the colony
 		return TURRET_NOT_TARGET
 
-	if(!colony_allied_turret && L.colony_friend) //If were not allied with the colony we attack them and their pets
-		return TURRET_SECONDARY_TARGET
-
-	if(colony_allied_turret && !L.colony_friend) //If were allied with the colony and we attack things that are not are pets
+	if(colony_allied_turret ^ L.colony_friend) //If were allied with the colony and we attack things that are not are pets
 		return TURRET_SECONDARY_TARGET
 
 	if(issilicon(L))
