@@ -494,7 +494,6 @@ default behaviour is:
 	if (buckled)
 		return
 
-	if(!ishuman(src))
 		// Anything that observes us moving, try to activate.
 	if(!ishuman(src))
 		for(var/mob/living/M in oviewers(world.view))
