@@ -1128,7 +1128,7 @@
 /obj/item/projectile/bullet/reusable/rod_bolt/rcd
 	name = "flashforged rod"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 5) //This is multiplied by tension when fired, so it's actually 25 damage. Slightly worse, but it's faster and has higher AP.
+	damage_types = list(BRUTE = 10) //nerfed damage because the arrows are reclaimable
 	armor_penetration = 30
 	step_delay = 0.6
 	embed = FALSE
@@ -1141,7 +1141,7 @@
 /obj/item/projectile/bullet/reusable/rod_bolt/rcd/superhot
 	name = "flashforged superheated rod"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 5, BURN = 2.5) //This is multiplied by tension when fired, so it's actually 57.5 damage. Slightly worse, but it's faster and has higher AP.
+	damage_types = list(BRUTE = 22, BURN = 11) //better than myrm because it takes both compressed matter and cell charge
 	armor_penetration = 30
 	step_delay = 0.2
 	embed = TRUE

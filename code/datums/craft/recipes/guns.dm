@@ -283,18 +283,6 @@
 		list(QUALITY_ADHESIVE, 15, 70)
 	)
 
-/datum/craft_recipe/gun/rxd
-	name = "RXD - rapid crossbow device"
-	result = /obj/item/gun/projectile/crossbow/RCD
-	steps = list(
-		list(/obj/item/rcd, 1, "time" = 30),
-		list(QUALITY_SCREW_DRIVING, 10, 30),
-		list(QUALITY_SAWING, 10, "time" = 60),
-		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD), //same as the old crossbow frame
-		list(QUALITY_WELDING, 10, "time" = 30),
-		list(/obj/item/stack/cable_coil, 2, "time" = 10)
-	)
-
 /datum/craft_recipe/gun/bow
 	name = "simple bow"
 	result = /obj/item/gun/projectile/bow

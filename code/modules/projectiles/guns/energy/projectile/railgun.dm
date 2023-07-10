@@ -324,3 +324,79 @@
 			L.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
 		else // If not then it must be the right arm.
 			L.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
+
+
+//Rapid crossbow device, weird evil merge of the crossbow and bat'ko, attempted to be ballistic myrmidon
+/obj/item/gun/energy/laser/railgun/RXD
+	name = "rapid crossbow device"
+	desc = "A hacked together RCD turns an innocent construction tool into the penultimate 'deconstruction' tool. Flashforges projectiles using matter units. Really more of a pistol rather than crossbow"
+	icon = 'icons/obj/guns/launcher/rxb.dmi'
+	icon_state = "rxb"
+	fire_sound = 'sound/weapons/rail.ogg' // Basically a downgraded myrmidon.
+	charge_cost = 0 //flashforged bolts don't consume battery, only compressed matter
+	fire_delay = 7 //same as myrm
+	force = WEAPON_FORCE_NORMAL
+	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	init_recoil = RIFLE_RECOIL(0.8)
+	w_class = ITEM_SIZE_NORMAL
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASMA = 10, MATERIAL_URANIUM = 10)
+	gun_tags = list(GUN_PROJECTILE, GUN_ENERGY)
+	twohanded = FALSE
+	var/stored_matter = 0
+	var/max_stored_matter = 60
+	var/matter_type = MATERIAL_COMPRESSED_MATTER
+	var/projectile_cost = 5
+	suitable_cell = /obj/item/cell/medium
+	serial_type = AG
+	init_firemodes = list(
+		list(mode_name="Flashforged bolt", mode_desc="fires a printed bolt", projectile_type=/obj/item/projectile/bullet/reusable/rod_bolt/rcd, icon="kill"),
+		list(mode_name="Overheat", mode_desc="fires a superheated bolt", projectile_type=/obj/item/projectile/bullet/reusable/rod_bolt/rcd/superhot, charge_cost=100, icon="grenade"),
+	)
+
+/obj/item/gun/energy/laser/railgun/RXD/attackby(obj/item/W as obj, mob/user as mob)
+	var/obj/item/stack/material/M = W
+	if(istype(M) && M.material.name == MATERIAL_COMPRESSED_MATTER)
+		var/amount = min(M.get_amount(), round(max_stored_matter - stored_matter))
+		if(M.use(amount) && stored_matter < max_stored_matter)
+			stored_matter += amount
+			playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+			to_chat(user, "<span class='notice'>You load [amount] [matter_type] into \the [src].</span>. The RXD now holds [stored_matter]/[max_stored_matter] [matter_type].")
+			update_icon()	//Updates the ammo counter
+		if (M.use(amount) && stored_matter >= max_stored_matter)
+			to_chat(user, "<span class='notice'>The RXD is full.")
+	else
+		..()
+	if(istype(W, /obj/item/arrow/rcd))
+		var/obj/item/arrow/rcd/A = W
+		if((stored_matter + 5) > max_stored_matter)
+			to_chat(user, "<span class='notice'>Unable to reclaim flashforged bolt. The RXD can't hold that many additional matter-units.</span>")
+			return
+		stored_matter += 3 //even guild tech is not ideal
+		qdel(A)
+		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
+		to_chat(user, "<span class='notice'>Flashforged bolt reclaimed. The RXD now holds [stored_matter]/[max_stored_matter] matter-units.</span>")
+		update_icon()
+		return
+
+/obj/item/gun/energy/laser/railgun/RXD/consume_next_projectile(mob/user)
+	if(stored_matter < projectile_cost) return null
+	if(!cell) return null
+	if(!ispath(projectile_type)) return null
+	if(!cell.checked_use(charge_cost)) return null
+	stored_matter -= projectile_cost
+	return new projectile_type(src)
+
+/obj/item/gun/energy/laser/railgun/RXD/update_icon()
+	cut_overlays()
+	var/ratio = 0
+	if(stored_matter < projectile_cost)
+		ratio = 0
+	else
+		ratio = stored_matter / max_stored_matter
+		ratio = max(round(ratio, 0.25) * 100, 25)
+	add_overlay("rxb-[ratio]")
+
+
+/obj/item/gun/energy/laser/railgun/RXD/examine(mob/user)
+	..()
+	to_chat(user, "It currently holds [stored_matter]/[max_stored_matter] matter-units.")

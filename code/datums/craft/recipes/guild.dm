@@ -1020,3 +1020,15 @@
 		list(QUALITY_SAWING, 60),
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)
+
+/datum/craft_recipe/gun/rxd
+	name = "RXD - rapid crossbow device"
+	result = /obj/item/gun/energy/laser/railgun/RXD
+	steps = list(
+		list(/obj/item/rcd, 1, "time" = 30),
+		list(QUALITY_SCREW_DRIVING, 10, 30),
+		list(QUALITY_SAWING, 10, "time" = 60),
+		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD), //same as the old crossbow frame
+		list(QUALITY_WELDING, 10, "time" = 30),
+		list(/obj/item/stack/cable_coil, 2, "time" = 10)
+	)
