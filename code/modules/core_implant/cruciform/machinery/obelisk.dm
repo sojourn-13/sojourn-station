@@ -80,7 +80,7 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 					burrow.obelisk_around = any2ref(src)
 
 	if(active)
-		var/list/affected_mobs = SSmobs.mob_living_by_zlevel[(get_turf(src)).z]
+		var/list/affected_mobs = oview(area_radius, src)
 		var/to_fire = max_targets
 		for(var/mob/living/A in affected_mobs)
 			if(!(get_dist(src, A) <= area_radius))

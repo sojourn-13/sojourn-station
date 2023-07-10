@@ -25,7 +25,8 @@
 /mob/living/proc/try_activate_ai()
 	if(AI_inactive)
 		activate_ai()
-
+// Here lies the superior_animal lag. Rest in peace, you spaghetti code
+/* // IF YOU USE THIS I WILL CUT YOUR FUCKING TOES OFF.
 /mob/living/proc/check_surrounding_area(var/dist = 7)
 	if(faction == "neutral")
 		return TRUE
@@ -48,3 +49,4 @@
 				return TRUE
 
 	return FALSE
+*/

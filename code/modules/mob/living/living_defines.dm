@@ -11,7 +11,7 @@
 	var/death_threshold = HEALTH_THRESHOLD_SOFTCRIT
 
 	var/life_cycles_before_sleep = 60
-	var/life_cycles_before_scan = 360
+	var/life_cycles_before_scan = 120
 
 	var/stasis = FALSE
 	var/AI_inactive = FALSE

@@ -1031,6 +1031,12 @@
 
 	. = ..()
 
+	// stupid fucking, dumb snowflake robot code.
+	if(!isAI(src))
+		for(var/mob/living/M in oviewers(world.view, src))
+			if(!(M.stat < DEAD) && M.faction != faction)// TIME KOMPRESSION
+				M.try_activate_ai()
+
 	if(module)
 		if(HasTrait(CYBORG_TRAIT_CLEANING_WALK))
 			var/turf/tile = loc
