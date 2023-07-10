@@ -16,6 +16,7 @@
 #define CAL_GRENADE "grenade"
 #define CAL_FLARE "flare shell"
 #define CAL_CROSSBOW "bolt"
+#define CAL_RXBOW "flashforged bolt"
 #define CAL_ARROW "arrow"
 
 //Mech Caliber Defines
