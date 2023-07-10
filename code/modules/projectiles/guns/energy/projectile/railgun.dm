@@ -347,7 +347,7 @@
 	var/matter_type = MATERIAL_COMPRESSED_MATTER
 	var/projectile_cost = 5
 	suitable_cell = /obj/item/cell/medium
-	serial_type = AG
+	serial_type = "AG"
 	init_firemodes = list(
 		list(mode_name="Flashforged bolt", mode_desc="fires a printed bolt", projectile_type=/obj/item/projectile/bullet/reusable/rod_bolt/rcd, icon="kill"),
 		list(mode_name="Overheat", mode_desc="fires a superheated bolt", projectile_type=/obj/item/projectile/bullet/reusable/rod_bolt/rcd/superhot, charge_cost=100, icon="grenade"),
