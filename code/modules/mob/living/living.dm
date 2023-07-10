@@ -496,8 +496,9 @@ default behaviour is:
 
 	if(!ishuman(src))
 		// Anything that observes us moving, try to activate.
-		for(var/mob/living/M in oviewers(world.view, src))
-			if(!(M.stat < DEAD) && M.faction != faction)// TIME KOMPRESSION
+	if(!ishuman(src))
+		for(var/mob/living/M in oviewers(world.view))
+			if(!(is_dead(M)) && !(M.faction == faction))// TIME KOMPRESSION
 				M.try_activate_ai()
 
 	if (restrained())

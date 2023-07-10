@@ -48,6 +48,10 @@
 	//TODO: seperate this out
 	// update the current life tick, can be used to e.g. only do something every 4 ticks
 	life_tick++
+	if(client && life_tick%5)
+		for(var/mob/living/M in oviewers(world.view, client.mob))
+			if(!(is_dead(M)) && !(M.faction == src.faction) && (M.AI_inactive == 1))
+				M.AI_inactive = 0
 
 	// This is not an ideal place for this but it will do for now.
 	if(wearing_rig && wearing_rig.offline)
