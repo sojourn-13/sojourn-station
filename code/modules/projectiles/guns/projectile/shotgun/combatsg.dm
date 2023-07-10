@@ -38,6 +38,7 @@
 	desc = "Designed for close encounters, the Regulator is widely regarded as a weapon of choice for protecting against boarders. \
 	Without its stock, it's much more compact, but much harder to use. Can hold up to 6+1 20mm shells in its tube magazine."
 	icon = 'icons/obj/guns/projectile/sawnoff/cshotgun.dmi'
+	gun_parts = list(/obj/item/part/gun/frame/regulator = 1, /obj/item/stack/material/plastic = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)
 	icon_state = "short"
 	item_state = "short"
 	w_class = ITEM_SIZE_BULKY

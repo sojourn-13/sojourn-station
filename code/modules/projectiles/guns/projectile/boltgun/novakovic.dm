@@ -24,5 +24,5 @@
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_WOOD = 4)
 	saw_off = FALSE
 	serial_type = "Hunt Inc."
-	gun_parts = list(/obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/lrifle/steel = 1)
+	gun_parts = list(/obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/stack/material/steel = 2)
 
