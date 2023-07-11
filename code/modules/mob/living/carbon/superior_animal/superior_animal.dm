@@ -589,7 +589,7 @@
 		handle_regular_status_updates() // we should probably still do this even if we're dead or something
 		ticks_processed = 0
 
-	if (!weakened || !AI_inactive) // OR...
+	if (!weakened && !AI_inactive)
 		handle_ai()
 
 		if(speak_chance && prob(speak_chance))
