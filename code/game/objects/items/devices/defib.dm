@@ -374,7 +374,7 @@
 	if(!H.should_have_process(OP_HEART))
 		return FALSE
 
-	var/obj/item/organ/internal/heart/heart = H.random_organ_by_process(OP_HEART)
+	var/obj/item/organ/internal/vital/heart/heart = H.random_organ_by_process(OP_HEART)
 	if(!heart)
 		return TRUE
 
@@ -639,7 +639,7 @@
 
 	if(!H.should_have_process(BP_BRAIN)) return //no brain
 
-	var/obj/item/organ/internal/brain/brain = H.random_organ_by_process(BP_BRAIN)
+	var/obj/item/organ/internal/vital/brain/brain = H.random_organ_by_process(BP_BRAIN)
 	if(!brain) return //no brain
 
 	var/brain_damage = CLAMP((deadtime - DEFIB_TIME_LOSS)/(DEFIB_TIME_LIMIT - DEFIB_TIME_LOSS)*brain.max_damage, H.getBrainLoss(), brain.max_damage)

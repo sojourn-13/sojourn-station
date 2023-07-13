@@ -22556,7 +22556,7 @@
 "fdo" = (
 /obj/item/organ/internal/kidney,
 /obj/item/organ/internal/kidney/left,
-/obj/item/organ/internal/lungs,
+/obj/item/organ/internal/vital/lungs,
 /obj/item/storage/freezer,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_platform,
