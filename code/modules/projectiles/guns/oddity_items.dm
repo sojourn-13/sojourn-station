@@ -39,7 +39,7 @@
 	slot_flags = SLOT_BACK
 	caliber = CAL_SHOTGUN
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 10)
-	max_shells = 1
+	max_shells = 2
 	damage_multiplier = 2
 	penetration_multiplier = 2
 	init_recoil = RIFLE_RECOIL(4)
