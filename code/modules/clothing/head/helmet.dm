@@ -595,7 +595,7 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Lemniscate Hat"] = "tessellate_veil"
+	options["Lemniscate Hat"] = "lemniscate_hat"
 	options["Lemniscate Grenadier Hat"] = "lemniscate_grenadier_bearskin"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
