@@ -8,6 +8,7 @@
 	var/stat_used = STAT_VIG //STAT_TGH, STAT_ROB, STAT_VIG, STAT_COG, STAT_MEC, STAT_BIO
 	var/mob/living/carbon/human/occupant
 	var/unlocked = FALSE
+	var/last_stats = 0
 
 	density = TRUE
 	anchored = TRUE
@@ -16,6 +17,10 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 60
 	active_power_usage = 400
+
+/obj/machinery/gym/examine(mob/user)
+	..()
+	to_chat(user, "<span class='info'>Last User Score Was: [last_stats]</span>")
 
 /obj/machinery/gym/robustness
 	name = "Interim Resistive Exercise Device"
@@ -30,6 +35,24 @@
 	icon_state = "toughness"
 
 	stat_used = STAT_TGH
+
+/obj/machinery/gym/cognition
+	name = "Crazy Jakes Puzzel Box"
+	desc = "A 4D puzzel box designed to test your mind in every way known to humanity, shockingly it's party mode has been made into party games for decades."
+	icon_state = "cognition"
+	stat_used = STAT_COG
+
+/obj/machinery/gym/bio
+	name = "Dr. Terry Advanced Advenctures"
+	desc = "A seemingly endless quest of medical misshaps and common to avdanced misstakes, well its boring for a lot of people, it has a cult following leading to it being rather successful in most locations."
+	icon_state = "bio"
+	stat_used = STAT_BIO
+
+/obj/machinery/gym/mec
+	name = "Shapers Of Atoms"
+	desc = "An informational game found in many schools teaching things from welding to fine crafting of delicate items with rare materals. Shockingly this collection of knowlage is still update and maintained making it a invaulable resource for any up and coming crafter"
+	icon_state = "mec"
+	stat_used = STAT_MEC
 
 /obj/machinery/gym/power_change()
 	..()
@@ -65,9 +88,10 @@
 
 		else
 			to_chat(occupant, SPAN_NOTICE("You did become stronger, you think... But not permanently. Perhaps you need to rest first?"))
+			occupant.stats.addTempStat(stat_used, 15, 10 MINUTES, "Improved Guns[generate_gun_serial(pick(3,4,5,6,7,8))]") //This is so that we properly add are temp stats - reuses gun serial code for easy, and the joke
 			occupant.stats.addTempStat(stat_used, 15, 10 MINUTES)
 			occupant.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/gym_goer, "GYM_GOER", skill_gained = 1, learner = occupant)
-
+			last_stats = occupant.stats.getStat(stat_used,pure = TRUE)
 
 		occupant.stats.addPerk(PERK_COOLDOWN_EXERTION)
 		unlocked = FALSE
@@ -134,6 +158,33 @@
 		occupant_image.overlays = occupant.overlays
 		add_overlay (occupant_image)
 		icon_state = "vigilance_active"
+
+/obj/machinery/gym/cognition/update_icon() // Vigilance animation
+	cut_overlays()
+	icon_state = (stat & (NOPOWER|BROKEN)) ? "cognition_off" : "cognition"
+	if(occupant)
+		var/image/occupant_image = image(occupant.icon, loc, occupant.icon_state, 4, NORTH)
+		occupant_image.overlays = occupant.overlays
+		add_overlay (occupant_image)
+		icon_state = "cognition_active"
+
+/obj/machinery/gym/bio/update_icon() // Vigilance animation
+	cut_overlays()
+	icon_state = (stat & (NOPOWER|BROKEN)) ? "bio_off" : "bio"
+	if(occupant)
+		var/image/occupant_image = image(occupant.icon, loc, occupant.icon_state, 4, NORTH)
+		occupant_image.overlays = occupant.overlays
+		add_overlay (occupant_image)
+		icon_state = "bio_active"
+
+/obj/machinery/gym/mec/update_icon() // Vigilance animation
+	cut_overlays()
+	icon_state = (stat & (NOPOWER|BROKEN)) ? "mec_off" : "mec"
+	if(occupant)
+		var/image/occupant_image = image(occupant.icon, loc, occupant.icon_state, 4, NORTH)
+		occupant_image.overlays = occupant.overlays
+		add_overlay (occupant_image)
+		icon_state = "mec_active"
 
 /obj/machinery/gym/toughness/update_icon() // Toughness animation
 	cut_overlays()
