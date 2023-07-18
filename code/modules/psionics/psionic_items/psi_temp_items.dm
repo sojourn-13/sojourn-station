@@ -161,6 +161,7 @@
 	origin_tech = list()
 	matter = list()
 	degradation = 0 // Can't degrade
+	embed_mult = 0 //Shouldn't embed, it's not real.
 	workspeed = 0.8
 	use_power_cost = 0 // Don't use power
 	max_upgrades = 0 // Can't upgrade it

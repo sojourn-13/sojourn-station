@@ -54,6 +54,8 @@
 	safety = FALSE
 	twohanded = TRUE
 	load_method = SINGLE_CASING
+	caliber = CAL_CROSSBOW
+	handle_casings = HOLD_CASINGS
 	max_shells = 1
 	ammo_type = /obj/item/ammo_casing/rod_bolt
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
@@ -194,6 +196,7 @@
 	icon_state = "rxb"
 	fire_sound = 'sound/weapons/rail.ogg' // Basically a downgraded myrmidon.
 	slot_flags = null
+	caliber = CAL_RXBOW
 	draw_time = 7.5
 	superheat_cost = 150 //guild design, more efficient or something
 	var/stored_matter = 0
