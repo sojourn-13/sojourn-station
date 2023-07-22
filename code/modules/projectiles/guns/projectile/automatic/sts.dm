@@ -116,6 +116,7 @@
 		)
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.2 // 20 vig for insta wield
+	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield
 	name = "\"STS PARA\" Blackshield rifle"
@@ -179,6 +180,8 @@
 		)
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.2 // 20 vig for insta wield
+	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
+
 
 /obj/item/part/gun/frame/sts
 	name = "STS rifle frame"
