@@ -17,7 +17,7 @@
 /obj/item/organ/internal/bone/die()
 	return
 
-/obj/item/organ/internal/bone/take_damage()
+/obj/item/organ/internal/bone/take_damage(silent = FALSE)
 	if(damage > (min_broken_damage * ORGAN_HEALTH_MULTIPLIER) && !(status & ORGAN_BROKEN))
 		fracture()
 	. = ..()
