@@ -491,6 +491,24 @@
 	step_delay = 0.9
 	recoil = 4
 
+/obj/item/projectile/bullet/rifle_75/rubber/soporific
+    name = "soporific coated rubber bullet"
+    damage_types = list(BRUTE = 4) // Minor damage from blunt trauma, it's meant to be LTL
+    agony = 30
+    var/spray = "stoxin"
+
+/obj/item/projectile/bullet/rifle_75/rubber/soporific/New()
+    ..()
+    if (!testing)
+        create_reagents(1)
+        reagents.add_reagent(spray, 1)
+
+/obj/item/projectile/bullet/rifle_75/rubber/soporific/on_hit(atom/target, def_zone = null)
+    if(isliving(target))
+        var/mob/living/L = target
+        if(istype(L) && L.reagents && !testing)
+            reagents.trans_to_mob(L, 1, CHEM_TOUCH, copy = FALSE)
+
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 15)
