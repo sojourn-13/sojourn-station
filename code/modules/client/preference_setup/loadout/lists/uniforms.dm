@@ -148,7 +148,7 @@
     display_name = "leisure suits"
     path = /obj/item/clothing/under/leisure
 
-/datum/gear/uniform/leisure/New()
+/datum/gear/uniform/leisure/New() //Don't do this. Use GEAR_HAS_TYPE_SELECTION unless the items you want selectable don't share the same valid parent.
 	..()
 	var/leisure = list(
 		"Brown Jacket"			=	/obj/item/clothing/under/leisure,
@@ -161,7 +161,7 @@
     display_name = "stylish suits"
     path = /obj/item/clothing/under/white
 
-/datum/gear/uniform/stylish_suits/New()
+/datum/gear/uniform/stylish_suits/New() //Like so.
 	..()
 	var/stylish = list(
 		"Ivory Suit"				=	/obj/item/clothing/under/white,
@@ -173,19 +173,9 @@
 	gear_tweaks += new /datum/gear_tweak/path(stylish)
 
 /datum/gear/uniform/dress
-    display_name = "dresses"
-    path = /obj/item/clothing/under/dress
-
-/datum/gear/uniform/dress/New()
-	..()
-	var/dress = list(
-		"Gray Dress"			=	/obj/item/clothing/under/dress,
-		"Blue Dress"			=	/obj/item/clothing/under/dress/blue,
-		"Red Dress"				=	/obj/item/clothing/under/dress/red,
-		"White Dress" 			=	/obj/item/clothing/under/dress/white,
-		"Black Dress" 			=	/obj/item/clothing/under/dress/black
-	)
-	gear_tweaks += new /datum/gear_tweak/path(dress)
+	display_name = "dress selection"
+	path = /obj/item/clothing/under/plaid
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/cyber
 	display_name = "augmented jumpsuit"
