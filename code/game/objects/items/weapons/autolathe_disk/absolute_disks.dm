@@ -123,7 +123,7 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 4
 		)
 
-//Church shotgun
+//Thorn and Rose Pack - both 10mm and 9mm
 /obj/item/computer_hardware/hard_drive/portable/design/nt/mk58
 	disk_name = "Absolute Armory - Thorn and Rose Handgun Pack Plus"
 	icon_state = "neotheology"
@@ -160,11 +160,10 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		/datum/design/autolathe/ammo/shotgun_pellet = 2,
 		/datum/design/autolathe/ammo/shotgun = 2,
-		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 3,
-		/datum/design/autolathe/ammo/shotgun_biomatter = 5
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 3
 		)
 
-//Church shotgun
+//Church Revolver
 /obj/item/computer_hardware/hard_drive/portable/design/nt/lemant
 	disk_name = "Absolute Armory - .40/20mm Pilgrim revolver Plus"
 	icon_state = "neotheology"
@@ -181,8 +180,7 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		/datum/design/autolathe/ammo/shotgun_pellet = 2,
 		/datum/design/autolathe/ammo/shotgun = 2,
-		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2,
-		/datum/design/autolathe/ammo/shotgun_biomatter = 3
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2
 		)
 
 //Church shotgun
