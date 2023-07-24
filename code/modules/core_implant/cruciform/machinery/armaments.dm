@@ -201,6 +201,12 @@
 	min_cost = 20
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/plasma_shells
 
+/datum/armament/item/disk/caustic_rounds
+	name = "Disk - Caustic Ammo"
+	cost = 20
+	min_cost = 10
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt_caustic_rounds
+
 /datum/armament/item/disk/themis
 	name = "Disk - Themis"
 	cost = 35

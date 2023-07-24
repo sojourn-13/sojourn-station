@@ -45,6 +45,11 @@
 	build_path = /obj/item/ammo_casing/shotgun/plasma_heavy/prespawned
 	materials = list(MATERIAL_STEEL = 6, MATERIAL_SILVER = 2, MATERIAL_GOLD = 2, MATERIAL_URANIUM = 2)
 
+/datum/design/autolathe/ammo/shotgun_biomatter
+	name = "shotgun shells box (caustic)"
+	build_path = /obj/item/ammo_magazine/ammobox/shotgun/biomatter
+	materials = list(MATERIAL_BIOMATTER = 120) //Double the cost of magnum rounds, i guess? It works.
+
 /datum/design/autolathe/ammo/shotgun_he
 	name = "20mm shells (HEFI)"
 	build_path = /obj/item/ammo_casing/shotgun/payload/prespawned

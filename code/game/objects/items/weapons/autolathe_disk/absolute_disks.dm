@@ -161,6 +161,7 @@
 		/datum/design/autolathe/ammo/shotgun_pellet = 2,
 		/datum/design/autolathe/ammo/shotgun = 2,
 		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 3,
+		/datum/design/autolathe/ammo/shotgun_biomatter = 5
 		)
 
 //Church shotgun
@@ -181,6 +182,7 @@
 		/datum/design/autolathe/ammo/shotgun_pellet = 2,
 		/datum/design/autolathe/ammo/shotgun = 2,
 		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2,
+		/datum/design/autolathe/ammo/shotgun_biomatter = 3
 		)
 
 //Church shotgun
@@ -194,6 +196,7 @@
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_illumination,
+		/datum/design/autolathe/ammo/shotgun_biomatter = 5
 		)
 
 //for the EOTP
@@ -209,6 +212,7 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		/datum/design/autolathe/ammo/shotgun_box = 3,
 		/datum/design/autolathe/ammo/shotgun_pellet_box = 3,
+		/datum/design/autolathe/ammo/shotgun_biomatter = 3
 		)
 
 // ENERGY SMALL ARMS
@@ -702,3 +706,16 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/bioprinter/nt_cells/small,
 		/datum/design/bioprinter/nt_cells/small/plasma = 2
 		)
+
+//for the EOTP
+
+/obj/item/computer_hardware/hard_drive/portable/design/nt_caustic_rounds
+	disk_name = "Absolute Armory - Caustic Ammunition Pack"
+	desc = "A rare and expensive disk containing designs for biomatter based caseless ballistic rounds."
+	icon_state = "neotheology"
+	license = 20
+	designs = list(
+		/datum/design/autolathe/ammo/shotgun_biomatter = 4,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2,
+		/datum/design/autolathe/ammo/pistol_ammobox_biomatter
+	)
