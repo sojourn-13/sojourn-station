@@ -32,12 +32,7 @@
 
 /datum/gear/uniform/dress
 	display_name = "dress selection"
-	path = /obj/item/clothing/under/plaid
-	flags = GEAR_HAS_TYPE_SELECTION
-
-/datum/gear/uniform/casualdress
-	display_name = "casual dress selection"
-	path = /obj/item/clothing/under/dress/casual
+	path = /obj/item/clothing/under/dress/
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/gorkajumpsuit
@@ -171,11 +166,6 @@
 		"Charcoal Suit"				=	/obj/item/clothing/under/black,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(stylish)
-
-/datum/gear/uniform/dress
-	display_name = "dress selection"
-	path = /obj/item/clothing/under/plaid
-	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/uniform/cyber
 	display_name = "augmented jumpsuit"
