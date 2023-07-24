@@ -226,8 +226,22 @@
 	path = /obj/item/clothing/under/rank/fatigues/
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_w_uniform
-	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/fatigueselection/New() //Like so.
+	..()
+	var/fatigues = list(
+		"Green Fatigues"				=	/obj/item/clothing/under/rank/fatigues/green,
+		"Navy Fatigues"			=	/obj/item/clothing/under/rank/fatigues/navy,
+		"Grey Fatigues"			=	/obj/item/clothing/under/rank/fatigues/grey,
+		"Camo Fatigues"				=	/obj/item/clothing/under/rank/fatigues/camo,
+		"Tan Fatigues"				=	/obj/item/clothing/under/rank/fatigues/tan,
+		"Alt Grey Fatigues"				=	/obj/item/clothing/under/rank/fatigues/kav,
+		"Alt Green Fatigues"				=	/obj/item/clothing/under/rank/fatigues/kav/green,
+		"Alt Tan Fatigues"				=	/obj/item/clothing/under/rank/fatigues/kav/tan,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(fatigues)
+
 
 /datum/gear/factionsecurity/fatiguecoverselection
 	display_name = "fatigue cover selection"

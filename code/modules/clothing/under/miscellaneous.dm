@@ -595,49 +595,49 @@
 	price_tag = 45
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
-/obj/item/clothing/under/dress/casual/blackdress
+/obj/item/clothing/under/dress/blackdress
 	name = "cocktail dress"
 	desc = "A flattering black cocktail dress."
 	icon_state = "blackdress"
 	item_state = "blackdress"
 	price_tag = 45
 
-/obj/item/clothing/under/dress/casual/blackdressalt
+/obj/item/clothing/under/dress/blackdressalt
 	name = "skater dress"
 	desc = "A lovely black skater dress"
 	icon_state = "blackdress2"
 	item_state = "blackdress2"
 	price_tag = 45
 
-/obj/item/clothing/under/dress/casual/flowerdress
+/obj/item/clothing/under/dress/flowerdress
 	name = "flower pattern dress"
 	desc = "A rather loud, flower patterned dress. Aloha!"
 	icon_state = "flower_dress"
 	item_state = "flower_dress"
 	price_tag = 45
 
-/obj/item/clothing/under/dress/casual/sweptdress
+/obj/item/clothing/under/dress/sweptdress
 	name = "red swept dress"
 	desc = "A simple, asymmetrical red dress and belt. Perfect for a night on the town!"
 	icon_state = "red_swept_dress"
 	item_state = "red_swept_dress"
 	price_tag = 45
 
-/obj/item/clothing/under/dress/casual/sevillanadress
+/obj/item/clothing/under/dress/sevillanadress
 	name = "Sevillana dress"
 	desc = "A traditional garb from an ancient nation of old terra."
 	icon_state = "flamenco"
 	item_state = "flamenco"
 	price_tag = 45
 
-/obj/item/clothing/under/dress/casual/westernbustle
+/obj/item/clothing/under/dress/westernbustle
 	name = "western barmaids dress"
 	desc = "For those saloon workers who spend more time behind the counters than under them"
 	icon_state = "westernbustle"
 	item_state = "westernbustle"
 	price_tag = 45
 
-/obj/item/clothing/under/dress/casual/casual/lilac
+/obj/item/clothing/under/dress/lilac
 	name = "lilac dress"
 	desc = "A simple, lilac dress."
 	icon_state = "lilacdress"
@@ -645,35 +645,35 @@
 	price_tag = 45
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
-/obj/item/clothing/under/dress/casual/bluedress
+/obj/item/clothing/under/dress/bluedress
 	name = "blue dress"
 	desc = "A comfortable, breezy blue summer dress."
 	icon_state = "bluedress"
 	item_state = "bluedress"
 	price_tag = 45
 
-/obj/item/clothing/under/dress/casual/rattydress
+/obj/item/clothing/under/dress/rattydress
 	name = "skimpy black dress"
 	desc = "A short black dress, skimpy enough to qualify as a tank-top for many"
 	icon_state = "rattydress"
 	item_state = "rattydress"
 	price_tag = 45
 
-/obj/item/clothing/under/dress/casual/littleblackdress
+/obj/item/clothing/under/dress/littleblackdress
 	name = "little black dress"
 	desc = "A short cut, black cocktail dress. Considered a must have by the out of touch for at least 500 years!"
 	icon_state = "littleblackdress"
 	item_state = "littleblackdress"
 	price_tag = 45
 
-/obj/item/clothing/under/dress/casual/pinkdress
+/obj/item/clothing/under/dress/pinkdress
 	name = "pink skirt"
 	desc = "A simple pink skirt."
 	icon_state = "pinktutu"
 	item_state = "pinktutu"
 	price_tag = 45
 
-/obj/item/clothing/under/dress/casual/barmaid
+/obj/item/clothing/under/dress/barmaid
 	name = "fantasy bartender outfit"
 	desc = "The bar standard for a thousand years!"
 	icon_state = "bartender"
@@ -681,7 +681,7 @@
 	price_tag = 45
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
-/obj/item/clothing/under/dress/casual/jill
+/obj/item/clothing/under/dress/jill
 	name = "cyberpunk bartender outfit"
 	desc = "Time to mix drinks and change lives."
 	icon_state = "cba" // Cyberpunk Bartender Action
