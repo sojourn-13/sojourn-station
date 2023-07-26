@@ -717,6 +717,19 @@
 /obj/item/ammo_casing/shotgun/plasma_heavy/prespawned
 	amount = 5
 
+/obj/item/ammo_casing/shotgun/biomatter
+	name = "shotgun slug"
+	desc = "A New Testament paper cartridge with caustic sabot, in 20mm. Designed for deep-impact delivery of caustic biomass, \
+	in a caseless fashion. The cartridge is made of a form of wax paper, designed to burn away and leave nothing to eject after being fired."
+	icon_state = "s-shell_caustic"
+	is_caseless = TRUE
+	caliber = CAL_SHOTGUN
+	projectile_type = /obj/item/projectile/bullet/shotgun/biomatter
+	maxamount = 5
+
+/obj/item/ammo_casing/shotgun/biomatter/prespawned
+	amount = 5
+
 
 //Can stun in one hit if aimed at the head, but
 //is blocked by clothing that stops tasers and is vulnerable to EMP

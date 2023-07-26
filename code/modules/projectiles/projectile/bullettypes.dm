@@ -896,6 +896,20 @@
 	affective_ap_range = 4
 	recoil = 4
 
+/obj/item/projectile/bullet/shotgun/biomatter //Unique niche round. High AP, Low damage, high agony. Good for mob crunching, or AP LTL uses
+	name = "biomatter slug"
+	damage_types = list(BURN = 10) // Thin little piece of biomass designed to defeat armor but not really large enough to cause super serious injuries.
+	agony = 40 // BURNS SO BAD
+	armor_penetration = 40 //high velocity
+	penetrating = 0
+	can_ricochet = FALSE
+	embed = FALSE
+	sharp = FALSE
+	step_delay = 0.95 //slightly slower than a slug
+	check_armour = ARMOR_BIO //duh.
+	recoil = 6 //much less damage than slug, much less recoil.
+
+
 //Railgun
 /obj/item/projectile/bullet/shotgun/railgun
 	nocap_structures = TRUE
