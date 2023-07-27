@@ -78,13 +78,13 @@
 
 		max_psi_points = round(clamp((owner.stats.getStat(STAT_COG) * 0.1), 1, 30)) + psi_max_bonus
 
-		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) * 0.2), 0, 5))
+		cognitive_potential = round(clamp((owner.stats.getStat(STAT_COG) * 0.5), 0, 3))
 
 
 		if(owner.stats.getPerk(PERK_PSI_GRACE))
-			addtimer(CALLBACK(src, .proc/regen_points), (10 MINUTES - cognitive_potential MINUTES) * 0.5)
+			addtimer(CALLBACK(src, .proc/regen_points), (5 MINUTES - cognitive_potential MINUTES) * 0.5)
 		else
-			addtimer(CALLBACK(src, .proc/regen_points), (10 MINUTES - cognitive_potential MINUTES))
+			addtimer(CALLBACK(src, .proc/regen_points), (5 MINUTES - cognitive_potential MINUTES))
 
 		if(psi_points < max_psi_points)
 			psi_points += 1

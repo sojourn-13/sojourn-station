@@ -325,8 +325,8 @@ obj/item/clothing/head/ribbon/red
 
 /obj/item/clothing/head/numerical_hat
 	name = "numerical hat"
-	icon_state = "numerical_hat_red"
-	desc = "A tall hat for nurmerical of the faith. Can be turned inside out to turn form red to gray or gray to red"
+	icon_state = "field_numerical_hat"
+	desc = "A tall hat for nurmerical of the faith. Can be turned inside out to turn form red to purple or purple to red"
 	armor_list = list( //same as the garb
 		melee = 10,
 		bullet = 0,
@@ -346,8 +346,8 @@ obj/item/clothing/head/ribbon/red
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Red Hat"] = "numerical_hat_red"
-	options["Gray Hat"] = "numerical_hat_dark"
+	options["Red Hat"] = "field_numerical_hat"
+	options["Purple Hat"] = "field_numerical_hat_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

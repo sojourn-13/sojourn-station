@@ -153,13 +153,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/kaiserburger
 
-/datum/recipe/hotdog
-	items = list(
-		/obj/item/reagent_containers/food/snacks/bun,
-		/obj/item/reagent_containers/food/snacks/sausage
-	)
-	result = /obj/item/reagent_containers/food/snacks/hotdog
-
 /datum/recipe/donkpocket
 	items = list(
 		/obj/item/reagent_containers/food/snacks/dough,
@@ -184,20 +177,6 @@
 		if(being_cooked && !being_cooked.warm)
 			warm_up(being_cooked)
 		return being_cooked
-
-/datum/recipe/meatbread
-	items = list(
-		/obj/item/reagent_containers/food/snacks/dough,
-		/obj/item/reagent_containers/food/snacks/dough,
-		/obj/item/reagent_containers/food/snacks/dough,
-		/obj/item/reagent_containers/food/snacks/meat,
-		/obj/item/reagent_containers/food/snacks/meat,
-		/obj/item/reagent_containers/food/snacks/meat,
-		/obj/item/reagent_containers/food/snacks/cheesewedge,
-		/obj/item/reagent_containers/food/snacks/cheesewedge,
-		/obj/item/reagent_containers/food/snacks/cheesewedge,
-	)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/meatbread
 
 /datum/recipe/syntibread
 	items = list(
@@ -286,12 +265,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/sliceable/tofubread
 
-/datum/recipe/cheesyfries
-	items = list(
-		/obj/item/reagent_containers/food/snacks/fries,
-		/obj/item/reagent_containers/food/snacks/cheesewedge,
-	)
-	result = /obj/item/reagent_containers/food/snacks/cheesyfries
+
 
 /datum/recipe/cubancarp
 	fruit = list("chili" = 1)
@@ -416,7 +390,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/superbiteburger
 
-
 /datum/recipe/slimeburger
 	reagents = list("slimejelly" = 5)
 	items = list(
@@ -480,27 +453,9 @@
 // bs12 food port stuff
 //////////////////////////////////////////
 
-/datum/recipe/taco
-	reagents = list("flour" = 5)
-	fruit = list("corn" = 1, "cabbage" = 1)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/cutlet,
-		/obj/item/reagent_containers/food/snacks/cheesewedge
-	)
-	result = /obj/item/reagent_containers/food/snacks/taco
-
-/datum/recipe/fries
-	reagents = list("cornoil" = 1)
-	items = list(
-		/obj/item/reagent_containers/food/snacks/rawsticks
-	)
-	result = /obj/item/reagent_containers/food/snacks/fries
-
 /datum/recipe/mint
 	reagents = list("sugar" = 5, "frostoil" = 5)
 	result = /obj/item/reagent_containers/food/snacks/mint
-
-
 
 //Roach cubes
 

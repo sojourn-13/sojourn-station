@@ -37,8 +37,9 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 
 /obj/item/projectile/beam/musket
 	name = "Musket laser"
-	armor_penetration = 30 //Good AP, its for slow firing weapon
+	armor_penetration = 40 //Good AP, its for slow firing weapon
 	eyeblur = 1
+	damage_types = list(BURN = 25) //According to Rain Chule recommendation
 
 /obj/item/projectile/beam/drone
 	damage_types = list(BURN = 15)

@@ -245,7 +245,19 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 
 	playsound(src, 'sound/effects/impacts/beartrap_shut.ogg', 10, 1,-2,-2)//Fairly quiet snapping sound
 
+	if (user == buckled_mob)
+		to_chat(user, SPAN_NOTICE("Freeing yourself is very difficult. Perhaps you should call for help?"))
+
 	if (difficulty)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H
+			if(!H.stats.getPerk(PERK_NO_OBSUCATION))
+				to_chat(H, SPAN_NOTICE("You failed to release the trap. There was a [round(100 - difficulty)]% chance of success"))
+			else
+				to_chat(H, SPAN_NOTICE("You failed to release the trap. There was a [difficulty]% chance of failer"))
+		else
+			to_chat(user, SPAN_NOTICE("You failed to release the trap. There was a [round(100 - difficulty)]% chance of success"))
+
 		to_chat(user, SPAN_NOTICE("You failed to release the trap. There was a [round(100 - difficulty)]% chance of success"))
 		if (user == buckled_mob)
 			to_chat(user, SPAN_NOTICE("Freeing yourself is very difficult. Perhaps you should call for help?"))
