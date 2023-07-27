@@ -455,7 +455,7 @@ obj/item/clothing/suit/fluff/miko
 
 /obj/item/clothing/suit/storage/numericalgarb
 	name = "numerical garb"
-	desc = "A padded cloak meant for numerical, made to be biomatter resistant. The cloak is reversible, with its switchable colors being red and grey."
+	desc = "A padded cloak meant for numerical, made to be biomatter resistant. The cloak is reversible, with its switchable colors being red and purple."
 	icon_state = "field_numerical"
 	item_state = "field_numerical"
 	armor_list = list(
@@ -480,7 +480,7 @@ obj/item/clothing/suit/fluff/miko
 	var/mob/M = usr
 	var/list/options = list()
 	options["Red Garb"] = "field_numerical"
-	options["Gray Garb"] = "field_numerical_alt"
+	options["Purple Garb"] = "field_numerical_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

@@ -707,6 +707,14 @@
 	icon_state = "buckshot"
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 
+/obj/item/ammo_magazine/ammobox/shotgun/biomatter
+	name = "ammunition packet (20mm Biomatter Slug)"
+	icon_state = "caustic"
+	desc = "A luxurious wooden box with a bevelled lid, filled to the brim with acrid-smelling paper cartridges, intended for use in a 20mm shotgun. \
+			The lid is kept on with a fine silken ribbon tied around the top. The ammunition inside is 20mm caustic sabot, \
+			an armour-piercing delivery system for painful acids designed to debilitate your target."
+	ammo_type = /obj/item/ammo_casing/shotgun/biomatter
+
 //used in mapping only cases
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells
 	name = "signaling ammunition packet (20mm Illumination)"

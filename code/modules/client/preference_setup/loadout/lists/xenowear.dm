@@ -43,7 +43,7 @@
 	cost = 0
 
 /datum/gear/xenowear/opifexnotmask
-	display_name = "opifex gas synthetizer"
+	display_name = "opifex gas synthesizer"
 	path = /obj/item/clothing/mask/opifex_no_mask
 	slot = slot_wear_mask
 	sort_category = "Xenowear"

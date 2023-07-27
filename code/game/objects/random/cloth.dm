@@ -175,7 +175,7 @@
 				/obj/item/clothing/under/color/purple = 5,
 				/obj/item/clothing/under/costume/misc/rainbowjumpsuit = 5,
 				/obj/item/clothing/under/pj = 5,
-				/obj/item/clothing/under/plaid/properblue = 5,
+				/obj/item/clothing/under/dress/properblue = 5,
 				/obj/item/clothing/under/suit_jacket/red = 5,
 				/obj/item/clothing/under/suit_jacket = 5,
 				/obj/item/clothing/under/turtleneck = 5,

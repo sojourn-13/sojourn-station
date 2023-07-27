@@ -18,7 +18,7 @@
 	if(occupied)
 		to_chat(user, SPAN_DANGER("\The [src] already has something on it, finish collecting its meat first!"))
 		return FALSE
-	if(state != GRAB_KILL)
+	if(state != GRAB_NECK)
 		to_chat(user, SPAN_NOTICE("You need to grab \the [target] by the neck!"))
 		return FALSE
 	if(istype(target, /mob/living/carbon/human))

@@ -56,7 +56,7 @@
 	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 4)
 	saw_off = FALSE
 	bolt_training = FALSE //Training didnt cover obrez
-	gun_parts = list(/obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/part/gun/barrel/lrifle = 1)
+	gun_parts = list(/obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/boltgun = 1, /obj/item/stack/material/plasteel = 2)
 
 /obj/item/gun/projectile/boltgun/sawn/true //used for the Kardashev-Mosin, so we dont cheat crafting menus
 
