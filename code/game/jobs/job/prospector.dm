@@ -19,7 +19,7 @@
 
 
 	outfit_type = /decl/hierarchy/outfit/job/foreman
-	playtimerequired = 1200
+	playtimerequired = 600
 	access = list(
 		access_prospector, access_foreman, access_external_airlocks, access_eva, access_heads, access_sec_doors,
 		access_RC_announce, access_keycard_auth, access_maint_tunnels, access_medical_suits //for locating scav team dead bodies

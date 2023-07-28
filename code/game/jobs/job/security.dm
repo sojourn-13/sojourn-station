@@ -15,7 +15,7 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
-	playtimerequired = 2500
+	playtimerequired = 1200
 	health_modifier = 25
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
@@ -79,7 +79,7 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
-	playtimerequired = 2500
+	playtimerequired = 1200
 	health_modifier = 25
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
@@ -141,7 +141,7 @@
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
-	playtimerequired = 1200
+	playtimerequired = 600
 	health_modifier = 20
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
@@ -200,7 +200,7 @@
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
-	playtimerequired = 1200
+	playtimerequired = 600
 	health_modifier = 20
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
@@ -254,7 +254,6 @@
 	alt_titles = list("Junior Ranger","Detective","Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
-	playtimerequired = 1200
 	health_modifier = 5
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 

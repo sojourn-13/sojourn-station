@@ -81,7 +81,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	difficulty = "Hard."
 	selection_color = "#ddddff"
 	req_admin_notify = 1
-	playtimerequired = 1200
+	playtimerequired = 600
 	wage = WAGE_COMMAND
 	ideal_character_age = 35
 	minimum_character_age = 25
