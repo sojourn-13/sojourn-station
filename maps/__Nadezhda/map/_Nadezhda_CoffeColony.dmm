@@ -11930,7 +11930,8 @@
 	dir = 2
 	},
 /obj/machinery/door/airlock/sandstone{
-	name = "Dormitory"
+	name = "Dormitory";
+	id_tag = "D4A"
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/dorm4)
@@ -19217,6 +19218,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/research)
+"epL" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/snack,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/crew_quarters)
 "epP" = (
 /obj/random/cluster/tengolo,
 /turf/simulated/floor/asteroid/dirt,
@@ -20298,6 +20307,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/techshop)
 "eAV" = (
@@ -28840,7 +28850,7 @@
 /area/nadezhda/rnd/lab)
 "gtc" = (
 /obj/machinery/button/remote/airlock{
-	id = "D2A";
+	id = "D3A";
 	name = "Door Bolt Control";
 	pixel_y = 23;
 	specialfunctions = 4
@@ -44031,7 +44041,8 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/sandstone{
-	name = "Dormitory"
+	name = "Dormitory";
+	id_tag = "D1A"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/dorm1)
@@ -44593,6 +44604,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/techshop)
 "jRe" = (
@@ -54159,7 +54171,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/sandstone{
-	name = "Dormitory"
+	name = "Dormitory";
+	id_tag = "CR1"
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/podrooms)
@@ -56540,7 +56553,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "mBl" = (
 /obj/machinery/button/remote/airlock{
-	id = "D1A";
+	id = "D2A";
 	name = "Door Bolt Control";
 	pixel_y = 23;
 	specialfunctions = 4
@@ -63800,7 +63813,8 @@
 	dir = 2
 	},
 /obj/machinery/door/airlock/sandstone{
-	name = "Dormitory"
+	name = "Dormitory";
+	id_tag = "D3A"
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/dorm3)
@@ -71878,6 +71892,17 @@
 "pMx" = (
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/xenobiology)
+"pMG" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/tool,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/rbreakroom)
 "pMS" = (
 /obj/structure/table/reinforced,
 /obj/item/device/scanner/price,
@@ -84921,6 +84946,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+/obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "sDC" = (
@@ -86539,6 +86565,7 @@
 /obj/machinery/camera/network/medbay{
 	dir = 1
 	},
+/obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "sXs" = (
@@ -91948,7 +91975,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/sandstone{
-	name = "Dormitory"
+	name = "Dormitory";
+	id_tag = "CR2"
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/podrooms2)
@@ -100491,7 +100519,6 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/command/bridge)
 "vTr" = (
-/obj/random/furniture/pottedplant,
 /obj/machinery/vending/wallmed/lobby{
 	pixel_y = -32
 	},
@@ -103043,7 +103070,8 @@
 	dir = 2
 	},
 /obj/machinery/door/airlock/sandstone{
-	name = "Dormitory"
+	name = "Dormitory";
+	id_tag = "D2A"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/dorm2)
@@ -165691,7 +165719,7 @@ vcs
 kCD
 xtF
 pff
-aVR
+pMG
 ufq
 nug
 jbo
@@ -167756,7 +167784,7 @@ onp
 vxO
 rnP
 nWv
-ajH
+epL
 ajH
 iZH
 usB
