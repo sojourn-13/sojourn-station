@@ -3896,11 +3896,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
-"Oi" = (
-/obj/structure/invislight,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/forest/hunting_lodge)
 "Oj" = (
 /obj/structure/bed/chair/sofa/brown/right{
 	dir = 8
@@ -6311,7 +6306,7 @@ LK
 co
 tU
 ax
-Oi
+QZ
 dY
 jj
 jj
