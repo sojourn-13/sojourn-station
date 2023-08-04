@@ -423,3 +423,64 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL)
 	)
+
+
+// Nuckle Dusters
+
+/datum/craft_recipe/weapon/dusters
+	name = "steel knuckle dusters"
+	result = /obj/item/clothing/gloves/dusters
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL), //Grab some steel
+		list(QUALITY_WELDING, 10, "time" = 30), //Weld it into basic form
+		list(QUALITY_HAMMERING, 15, 10) //Harden into shape
+	)
+
+/datum/craft_recipe/weapon/dusters/silver
+	name = "silver knuckle dusters"
+	result = /obj/item/clothing/gloves/dusters/silver
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_SILVER), //Grab some silver
+		list(QUALITY_WELDING, 10, "time" = 30), //Weld it into basic form
+		list(QUALITY_HAMMERING, 15, 10) //Harden into shape
+	)
+
+/datum/craft_recipe/weapon/dusters/plasteel
+	name = "plasteel knuckle dusters"
+	result = /obj/item/clothing/gloves/dusters/plasteel
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL), //Grab some plasteel
+		list(QUALITY_WELDING, 10, "time" = 30), //Weld it into basic form
+		list(QUALITY_HAMMERING, 15, 10) //Harden into shape
+	)
+
+/datum/craft_recipe/weapon/dusters/gold
+	name = "golden knuckle dusters"
+	result = /obj/item/clothing/gloves/dusters/gold
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_GOLD), //Grab some gold
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLATINUM), //Grab some platinum as well
+		list(QUALITY_WELDING, 10, "time" = 30), //Weld it into basic form
+		list(QUALITY_HAMMERING, 15, 10) //Harden into shape
+	)
+
+/datum/craft_recipe/weapon/dusters/platinum
+	name = "spiked platinum knuckle dusters"
+	result = /obj/item/clothing/gloves/dusters/platinum
+	steps = list(
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLATINUM), //Grab some platinum
+		list(QUALITY_WELDING, 10, "time" = 30), //Weld it into basic form
+		list(QUALITY_HAMMERING, 15, 10), //Harden into shape
+		list(/obj/item/tool_upgrade/augment/spikes, 1, "time" = 10) //Put 'spiked' in the name
+	)
+
+/datum/craft_recipe/weapon/dusters/gloves
+	name = "weighted knuckle gloves"
+	result = /obj/item/clothing/gloves/dusters/gloves
+	steps = list(
+		list(/obj/item/clothing/gloves/dusters, 1, "time" = 5), //Tear up the gloves
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL), //Grab some plasteel
+		list(QUALITY_HAMMERING, 15, 10), //Harden into powder
+		list(QUALITY_HAMMERING, 15, 10), //Harden into FINE powder
+		list(/obj/item/stack/medical/bruise_pack/handmade, 2, "time" = 10) //Cover the holes up
+	)

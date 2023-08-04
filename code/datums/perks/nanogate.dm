@@ -148,6 +148,7 @@
 						/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap,
 						/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv,
 						/obj/item/ammo_magazine/ammobox/shotgun/flashshells, //holds 70 shells, its a map item not meant to be common
+						/obj/item/ammo_magazine/ammobox/shotgun/biomatter,
 						/obj/item/ammo_magazine/ammobox/shotgun/payload,
 						/obj/item/ammo_magazine/ammobox/shotgun/incendiary,
 						/obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag,
