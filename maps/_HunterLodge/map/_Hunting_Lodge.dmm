@@ -276,6 +276,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "bn" = (
 /obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "bo" = (
@@ -704,11 +705,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "dx" = (
-/obj/machinery/portable_atmospherics/hydroponics/soil,
-/obj/structure/railing,
-/obj/item/tool/scythe,
-/turf/simulated/floor/asteroid/dirt/dark/plough,
-/area/nadezhda/outside/forest/hunting_lodge)
+/obj/structure/table/rack/shelf,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/plate,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "dz" = (
 /obj/structure/table/rack/shelf,
 /obj/random/lowkeyrandom/low_chance,
@@ -843,7 +845,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ee" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/food/drinks/bottle/wine,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "eg" = (
@@ -1879,6 +1881,11 @@
 /obj/item/clothing/gloves/thick/hunter,
 /obj/item/storage/belt/hunter,
 /turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
+"lC" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
+/turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "lR" = (
 /obj/effect/floor_decal/border/stoneborder/corner{
@@ -3825,6 +3832,11 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
+"NI" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl,
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "NO" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
 /turf/simulated/floor/asteroid/grass,
@@ -3883,6 +3895,11 @@
 "Oe" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Oi" = (
+/obj/structure/invislight,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Oj" = (
 /obj/structure/bed/chair/sofa/brown/right{
@@ -4594,8 +4611,8 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "Zr" = (
 /obj/structure/table/marble,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/board,
 /obj/item/tool/knife/butch,
-/obj/random/knife,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Zy" = (
@@ -6294,7 +6311,7 @@ LK
 co
 tU
 ax
-QZ
+Oi
 dY
 jj
 jj
@@ -7710,7 +7727,7 @@ WQ
 WQ
 SW
 PK
-bq
+dx
 rx
 hy
 WQ
@@ -7865,7 +7882,7 @@ tz
 WQ
 ew
 bq
-bn
+lC
 bn
 bq
 bq
@@ -8181,7 +8198,7 @@ jF
 bX
 bq
 bq
-jv
+NI
 jj
 ur
 ux
@@ -8259,7 +8276,7 @@ bq
 bq
 bq
 bq
-jv
+NI
 jj
 ur
 Rz
@@ -9538,7 +9555,7 @@ ab
 ab
 ab
 ab
-dx
+cV
 bb
 jj
 jj
@@ -10590,7 +10607,7 @@ QK
 jj
 jj
 Xt
-wq
+jj
 jj
 jj
 jj
