@@ -21,7 +21,25 @@ var/list/department_radio_keys = list(
 	"1" = "Plasmatag B",
 	"2" = "Plasmatag R",
 	"3" = "Plasmatag Y",
-	"4" = "Plasmatag G"
+	"4" = "Plasmatag G",
+	"к" = "right ear",
+	"д" = "left ear",
+	"ш" = "intercom",
+	"р" = "department",
+	"с" = "Command",
+	"т" = "Science",
+	"ь" = "Medical",
+	"о" = "Medical(I)",
+	"у" = "Engineering",
+	"ы" = "Marshal",
+	"и" = "Blackshield",
+	"ц" = "whisper",
+	"н" = "Mercenary",
+	"г" = "Supply",
+	"м" = "Service",
+	"з" = "AI Private",
+	"е" = "Church",
+	"л" = "Prospector"
 )
 
 
