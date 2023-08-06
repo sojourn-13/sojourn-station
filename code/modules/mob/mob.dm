@@ -1206,12 +1206,7 @@ mob/proc/yank_out_object()
 	var/table_header = "<th>Stat Name<th>Stat Value"
 	var/list/S = list()
 	for(var/TS in ALL_STATS)
-		var/points = user.stats.getStat(TS,pure = TRUE)
-		if(!user.stats.getPerk(PERK_NO_OBSUCATION))
-			S += "<td>[TS]<td> [statPointsToLevel(points)]"
-		else
-			S += "<td>[TS]<td> [points] ([statPointsToLevel(points)])"
-
+		S += "<td>[TS]<td>[getStatStats(TS)]"
 	var/data = {"
 		[additionalcss]
 		[user == src ? "Your stats:" : "[name]'s stats"]<br>
