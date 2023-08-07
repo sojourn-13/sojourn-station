@@ -14,7 +14,7 @@
 	slot_flags = SLOT_OCLOTHING
 	matter = list()
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS //It has gloves, hood, and shoes for the rest of them
-	slowdown = 0 //3,75% speed up! //No! Don't put it on every single item
+	slowdown = -0.09 //with all three pieces figures out to 1.36 speed bonus, which is fairly high but also this shit is rare.
 	armor_list = list(
 		melee = 30,
 		bullet = 25,
@@ -56,7 +56,7 @@
 	desc = "This is a hard hood made of dark fabric material. It is decorated with bronze slabs and has a strange ribbed texture. The crystal on its front part pulsates unusually as soon as the object is on the psion's head. A haze of hidden knowledge covers your face from unnecessary glances."
 	slot_flags = SLOT_HEAD
 	matter = list()
-	//slowdown = -0.375 //3,75% speed up!
+	slowdown = -0.09
 	armor_list = list(
 		melee = 30,
 		bullet = 25,
@@ -101,6 +101,7 @@
 	item_state = "gloves"
 	icon_state = "gloves"
 	icon_override = 'icons/obj/psionic/occLmob.dmi'
+	slowdown = -0.09
 	slot_flags = SLOT_GLOVES
 	item_flags = THICKMATERIAL
 	siemens_coefficient = 1 //Insulated!
@@ -146,7 +147,7 @@
 	icon_override = 'icons/obj/psionic/occLmob.dmi'
 	slot_flags = SLOT_FEET
 	matter = list()
-	slowdown = -1.375 //3,75% speed up! No! Wrong! no shoes is slowdown 1, 0.375 is slower than having shoes on! You need to use -1 plus whatever arbitrary amount of extra speed, and only on shoes.
+	slowdown = -1.09 //3,75% speed up! No! Wrong! Humans are +1 slowdown by default so that you are slower without shoes, this is why shoes have -1 slowdown. Needs to have -1 slowdown as BASE
 	can_hold_knife = 1
 	armor_list = list(
 		melee = 25,
