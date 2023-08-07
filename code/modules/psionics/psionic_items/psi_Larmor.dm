@@ -14,7 +14,7 @@
 	slot_flags = SLOT_OCLOTHING
 	matter = list()
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS //It has gloves, hood, and shoes for the rest of them
-	slowdown = -0.375 //3,75% speed up!
+	slowdown = 0 //3,75% speed up! //No! Don't put it on every single item
 	armor_list = list(
 		melee = 30,
 		bullet = 25,
@@ -55,10 +55,8 @@
 	icon_override = 'icons/obj/psionic/occLmob.dmi'
 	desc = "This is a hard hood made of dark fabric material. It is decorated with bronze slabs and has a strange ribbed texture. The crystal on its front part pulsates unusually as soon as the object is on the psion's head. A haze of hidden knowledge covers your face from unnecessary glances."
 	slot_flags = SLOT_HEAD
-	flags_inv = BLOCKHAIR|BLOCKHEADHAIR|FLEXIBLEMATERIAL
-	item_flags = BLOCKHAIR|BLOCKHEADHAIR|FLEXIBLEMATERIAL
 	matter = list()
-	slowdown = -0.375 //3,75% speed up!
+	//slowdown = -0.375 //3,75% speed up!
 	armor_list = list(
 		melee = 30,
 		bullet = 25,
@@ -148,7 +146,7 @@
 	icon_override = 'icons/obj/psionic/occLmob.dmi'
 	slot_flags = SLOT_FEET
 	matter = list()
-	slowdown = -0.375 //3,75% speed up!
+	slowdown = -1.375 //3,75% speed up! No! Wrong! no shoes is slowdown 1, 0.375 is slower than having shoes on! You need to use -1 plus whatever arbitrary amount of extra speed, and only on shoes.
 	can_hold_knife = 1
 	armor_list = list(
 		melee = 25,
