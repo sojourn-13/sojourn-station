@@ -637,8 +637,8 @@
 
 //// 14.5×114mm Anti-Materiel Rifle Rounds ////
 /obj/item/projectile/bullet/antim
-	damage_types = list(BRUTE = 60)
-	armor_penetration = 100
+	damage_types = list(BRUTE = 80)
+	armor_penetration = 200
 	nocap_structures = TRUE
 	//stun = 5
 	//weaken = 10
@@ -649,7 +649,7 @@
 	recoil = 40
 
 /obj/item/projectile/bullet/antim/lethal
-	damage_types = list(BRUTE = 45)
+	damage_types = list(BRUTE = 60)
 	embed = TRUE
 	armor_penetration = 60
 	agony = 100
@@ -671,7 +671,7 @@
 	recoil = 40
 
 /obj/item/projectile/bullet/antim/scrap
-	damage_types = list(BRUTE = 41.5)
+	damage_types = list(BRUTE = 45)
 	armor_penetration = 50
 	affective_damage_range = 8
 	affective_ap_range = 8
