@@ -509,7 +509,7 @@
 			if(limited_reagents)
 				amount_of_reagents -= amount_to_add
 		else
-			to_chat(user, SPAN_WARNING("The sink seems to be out of presure"))
+			to_chat(user, SPAN_WARNING("The sink seems to be out of pressure"))
 		return 1
 
 	else if (istype(O, /obj/item/tool/baton))

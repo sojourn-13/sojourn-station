@@ -357,10 +357,9 @@
 	return mod_data
 
 /obj/item/organ/internal/rejuvenate()
-	refresh_organ_stats()
+	status = null
 	for(var/datum/component/comp as anything in GetComponents(/datum/component))
 		istype(comp, /datum/component/internal_wound) ? remove_wound(comp) : qdel(comp)
-	apply_modifiers()
 
 // Organ eating
 /obj/item/organ/internal/proc/prepare_eat()

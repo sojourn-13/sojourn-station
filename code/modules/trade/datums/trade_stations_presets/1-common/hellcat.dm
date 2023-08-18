@@ -6,13 +6,13 @@
 	tree_x = 0.82
 	tree_y = 0.9
 	start_discovered = TRUE
-	markup = COMMON_GOODS * 1.5
+	markup = COMMON_GOODS
 	uid = "guns_basic"
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 1000
 	stations_recommended = list("fs_guns", "illegal2")
 	forced_overmap_zone = list(
 		list(15, 20),

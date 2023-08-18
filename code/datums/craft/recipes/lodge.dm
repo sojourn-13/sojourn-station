@@ -51,7 +51,7 @@
 		list(CRAFT_MATERIAL, 3, MATERIAL_BONE, "time" = 1), //Takes a second
 		list(/obj/item/reagent_containers/food/snacks/grown, 3, "time" = 1) //Takes a second
 	)
-/*
+
 /datum/craft_recipe/lodge/baroqe
 	name = "Baroque Bone Rifle"
 	result = /obj/item/gun/projectile/boltgun/baroque
@@ -65,7 +65,7 @@
 		list(QUALITY_SCREW_DRIVING, 30, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
 	)
-*/
+
 /datum/craft_recipe/lodge/hunter_crossbow
 	name = "Lodge Hunting Crossbow"
 	result = /obj/item/gun/projectile/shotgun/pump/hunter_crossbow

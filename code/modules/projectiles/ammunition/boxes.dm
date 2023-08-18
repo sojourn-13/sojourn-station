@@ -479,15 +479,15 @@
 
 //// 17.7mm rolled shot ////
 
-///obj/item/ammo_magazine/ammobox/ball
-//	name = "ammunition box (17.7mm rolled shot)"
-//	icon_state = "antim"
-//	desc = "A box of 17.7mm rolled shot."
-//	matter = list(MATERIAL_STEEL = 5)
-//	w_class = ITEM_SIZE_BULKY
-//	caliber = CAL_BALL
-//	ammo_type = /obj/item/ammo_casing/ball
-//	max_ammo = 30
+/obj/item/ammo_magazine/ammobox/ball
+	name = "ammunition box (17.7mm rolled shot)"
+	icon_state = "antim"
+	desc = "A box of 17.7mm rolled shot."
+	matter = list(MATERIAL_STEEL = 5)
+	w_class = ITEM_SIZE_BULKY
+	caliber = CAL_BALL
+	ammo_type = /obj/item/ammo_casing/ball
+	max_ammo = 30
 
 //// 8.6mm Heavy Rifle ////
 
@@ -706,6 +706,14 @@
 	name = "ammunition packet (20mm Buckshot)"
 	icon_state = "buckshot"
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
+
+/obj/item/ammo_magazine/ammobox/shotgun/biomatter
+	name = "ammunition packet (20mm Biomatter Slug)"
+	icon_state = "caustic"
+	desc = "A luxurious wooden box with a bevelled lid, filled to the brim with acrid-smelling paper cartridges, intended for use in a 20mm shotgun. \
+			The lid is kept on with a fine silken ribbon tied around the top. The ammunition inside is 20mm caustic sabot, \
+			an armour-piercing delivery system for painful acids designed to debilitate your target."
+	ammo_type = /obj/item/ammo_casing/shotgun/biomatter
 
 //used in mapping only cases
 /obj/item/ammo_magazine/ammobox/shotgun/flashshells

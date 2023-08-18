@@ -143,6 +143,7 @@
 	icon = 'icons/obj/psionic/occgun.dmi'
 	icon_state = "eclipse"
 	origin_tech = list()
+	psigun = 1
 	matter = list()
 	price_tag = 0
 	damage_multiplier = 0.9
@@ -153,6 +154,7 @@
 /obj/item/gun/projectile/automatic/sts/rifle/cult/deepmaints
 	name = "\"Aster\" psi-rifle"
 	desc = "A rather perfect copy of an STS-30 made form either pure willpower or a desperate need for survival."
+	psigun = 1
 	damage_multiplier = 1
 	penetration_multiplier = 1
 
@@ -162,6 +164,7 @@
 	Was it a joke, an insult, or a yearning for something lost? Whatever the case, this weapon is slightly less deadly than the one it mocks."
 	icon = 'icons/obj/psionic/occvalk.dmi'
 	icon_state = "moonrise"
+	psigun = 1
 	origin_tech = list()
 	matter = list()
 	damage_multiplier = 0.9
@@ -172,6 +175,7 @@
 /obj/item/gun/energy/laser/cult/deepmaints
 	name = "\"Moonset\" psi-laser rifle"
 	desc = "A perfected copy of the Lightfall laser rifle at first glance, this empty husk of a weapon is willed into reality to fire condensed projectiles of sheer willpower from the psyche of its mindsmith, rather than relying on any internal components to do it for them."
+	psigun = 1
 	damage_multiplier = 1
 	penetration_multiplier = 1
 	projectile_color = "#BF40BF"
@@ -182,6 +186,7 @@
 	outside the Soteria or Church. Perhaps its popularity is what imprinted it in the memory of the psion that made it?"
 	icon = 'icons/obj/psionic/occcassad.dmi'
 	icon_state = "manumission"
+	psigun = 1
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
@@ -199,6 +204,7 @@
 	name = "\"Blue Moon\" psi-plasma rifle"
 	desc = "A Cassad-sytle plasma rifle ready to take on any battle, this one crafted out of base violent thought alone has more unique ways of holding a cell's charge known only to the person that had thought of it."
 	charge_cost = 120
+	psigun = 1
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.1
 
@@ -208,6 +214,7 @@
 	yet this copy isn't anywhere near what machine lathes can produce. Is it a cheap imitation? A copy of what yearned to be greater? Perhaps it is but flattery."
 	icon = 'icons/obj/guns/energy/psi_brigador.dmi'
 	icon_state = "brigador"
+	psigun = 1
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
@@ -221,6 +228,7 @@
 	desc = "An energy-styled handgun willed into reality from the mind of someone looking to improve just about everything about it. Whether they meant to or not, they made a perfected copy of the SI Auretian."
 	icon = 'icons/obj/guns/energy/psi_brigador.dmi'
 	icon_state = "brigador"
+	psigun = 1
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
@@ -232,6 +240,7 @@
 	name = "\"Super Nova\" psi-submachine gun"
 	desc = "A ballistic weapon forged from the mind of a psion who shaped an oddity into a weapon. One wonders how and why this weapon came to be. Perhaps that is the point?"
 	icon = 'icons/obj/guns/projectile/greasegun_psi.dmi'
+	psigun = 1
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
@@ -243,6 +252,7 @@
 	name = "\"Star Pepper\" psi-submachine gun"
 	desc = "A grease-gun mind-copy willed into reality with the concept of spraying and praying to hope kill whatever threat happens to be around you. In a sense, a reloadable Slaught-o-Matic conjured out of one's mind."
 	icon = 'icons/obj/guns/projectile/greasegun_psi.dmi'
+	psigun = 1
 	damage_multiplier = 1
 	penetration_multiplier = 1.2
 

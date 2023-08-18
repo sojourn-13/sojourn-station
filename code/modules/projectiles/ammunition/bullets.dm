@@ -520,14 +520,14 @@
 	amount = 5
 
 //// 17mm rolled shot ////
-///obj/item/ammo_casing/ball
-//	name = "shell casing"
-//	desc = "A 17mm rolled shot casing."
-//	icon_state = "ball"
-//	spent_icon = "ball-spent"
-//	caliber = CAL_BALL
-//	projectile_type = /obj/item/projectile/bullet/ball
-//	maxamount = 5
+/obj/item/ammo_casing/ball
+	name = "shell casing"
+	desc = "A 17mm rolled shot casing."
+	icon_state = "ball"
+	spent_icon = "ball-spent"
+	caliber = CAL_BALL
+	projectile_type = /obj/item/projectile/bullet/ball
+	maxamount = 5
 
 /obj/item/ammo_casing/ball/prespawned
 	amount = 4
@@ -715,6 +715,19 @@
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/plasma_heavy/prespawned
+	amount = 5
+
+/obj/item/ammo_casing/shotgun/biomatter
+	name = "shotgun slug"
+	desc = "A New Testament paper cartridge with caustic sabot, in 20mm. Designed for deep-impact delivery of caustic biomass, \
+	in a caseless fashion. The cartridge is made of a form of wax paper, designed to burn away and leave nothing to eject after being fired."
+	icon_state = "s-shell_caustic"
+	is_caseless = TRUE
+	caliber = CAL_SHOTGUN
+	projectile_type = /obj/item/projectile/bullet/shotgun/biomatter
+	maxamount = 5
+
+/obj/item/ammo_casing/shotgun/biomatter/prespawned
 	amount = 5
 
 

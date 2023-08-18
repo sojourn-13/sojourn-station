@@ -331,8 +331,8 @@
 			for(var/i=1 to (slices_num-slices_lost))
 				var/obj/slice = new slice_path (src.loc)
 				reagents.trans_to_obj(slice, reagents_per_slice)
-				if(istype(slice_path, /obj/item/reagent_containers/food/snacks))
-					slice_path?:food_quality = src.food_quality
+				if(istype(slice, /obj/item/reagent_containers/food/snacks))
+					slice?:food_quality = src.food_quality
 			qdel(src)
 			return
 
@@ -846,8 +846,8 @@
 	cooked = TRUE
 
 /obj/item/reagent_containers/food/snacks/fries
-	name = "space fries"
-	desc = "AKA: French Fries, Freedom Fries, etc."
+	name = "fries"
+	desc = "The golden standard in side dishes"
 	icon_state = "fries"
 	trash = /obj/item/trash/plate
 	filling_color = "#EDDD00"
@@ -883,7 +883,7 @@
 
 /obj/item/reagent_containers/food/snacks/cheesyfries
 	name = "cheesy fries"
-	desc = "Fries. Covered in cheese. Duh."
+	desc = "Fries sticking in gooey melted cheese"
 	icon_state = "cheesyfries"
 	trash = /obj/item/trash/plate
 	filling_color = "#EDDD00"
@@ -1618,6 +1618,13 @@
 		to_chat(user, "You flatten the dough.")
 		qdel(src)
 
+// Dough slice + rolling pin = flat dough slice
+/obj/item/reagent_containers/food/snacks/doughslice/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W,/obj/item/material/kitchen/rollingpin))
+		new /obj/item/reagent_containers/food/snacks/flatdoughslice(src)
+		to_chat(user, "You flatten the dough slice.")
+		qdel(src)
+
 // slicable into 3xdoughslices
 /obj/item/reagent_containers/food/snacks/sliceable/flatdough
 	name = "flat dough"
@@ -1635,6 +1642,19 @@
 	desc = "A building block of an impressive dish."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "doughslice"
+	slice_path = /obj/item/reagent_containers/food/snacks/spagetti
+	slices_num = 1
+	bitesize = 2
+	center_of_mass = list("x"=17, "y"=19)
+	nutriment_desc = list("dough" = 1)
+	nutriment_amt = 1
+	matter = list(MATERIAL_BIOMATTER = 2)
+
+/obj/item/reagent_containers/food/snacks/flatdoughslice
+	name = "flat dough slice"
+	desc = "A flattened building block of an impressive dish."
+	icon = 'icons/obj/food_ingredients.dmi'
+	icon_state = "flatdoughslice"
 	slice_path = /obj/item/reagent_containers/food/snacks/spagetti
 	slices_num = 1
 	bitesize = 2
@@ -1718,6 +1738,17 @@
 	bitesize = 3
 	nutriment_amt = 6
 	nutriment_desc = list("crunchy pastry" = 5, "buttery goodness" = 5)
+
+/obj/item/reagent_containers/food/snacks/tortilla
+	name = "tortilla"
+	desc = "The foldable possiblites are endless, as long as it's less than seven folds."
+	icon_state = "tortilla"
+	bitesize = 2
+	center_of_mass = list("x"=21, "y"=12)
+	nutriment_desc = list("taco shell" = 2)
+	nutriment_amt = 2
+	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/reagent_containers/food/snacks/taco
 	name = "taco"

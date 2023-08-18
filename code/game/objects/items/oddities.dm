@@ -666,19 +666,13 @@
 	)
 	perk = PERK_SHARP_MIND //TODO: fix /datum/perk/bluespace
 
-/obj/item/oddity/si_bluespace_scanner/examine(mob/living/user, distance)
-	. = ..()
-	if(!iscarbon(user) || !issilicon(user))
-		return//Prevents ghosts form making a runtime
-	if(!user.stats?.getPerk(PERK_SI_SCI) || !usr.stat_check(STAT_COG, 60)) //got to be smarts
-		to_chat(usr, SPAN_WARNING("This tool is far too complex for you to comprehend how to even use it. The data and formulas displayed look like complete alien gibberish."))
-		return
+/obj/item/oddity/si_bluespace_scanner/attack_self(mob/user as mob)
 	var/area/my_area = get_area(src)
 	if(my_area.bluespace_entropy)
-		to_chat(user, SPAN_NOTICE("The Tuning Device measures bluespace entropy in this room to be [my_area.bluespace_entropy] zeframs.")) // Considering Bluespace Entropy the same as Subspace Distortion, and not making the reference more obvious than it is.
+		to_chat(user, SPAN_NOTICE("The Nullifier's scanner is detecting bluespace entropy in this room to be [my_area.bluespace_entropy] zeframs."))
 
 	if(GLOB.bluespace_entropy)
-		to_chat(user, SPAN_NOTICE("The long-range scanner notifies of stellar discrepancy at [GLOB.bluespace_entropy] zeframs of bluespace entropy on the planet."))
+		to_chat(user, SPAN_NOTICE("The Nullifier's global scanner notifies of stellar discrepancy at [GLOB.bluespace_entropy] zeframs of bluespace entropy on the planet."))
 
 // Considering the vast amount of references in code, a Zefram being a unit of measurement for Bluespace Entropy fits, while not being directly a Cochrane. - Seb
 

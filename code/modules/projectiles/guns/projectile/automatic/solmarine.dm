@@ -84,6 +84,7 @@
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 3)
+	gun_parts = list(/obj/item/part/gun/frame/solmarine = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 	can_dual = TRUE
 	init_recoil = CARBINE_RECOIL(1.2)
 	init_firemodes = list(

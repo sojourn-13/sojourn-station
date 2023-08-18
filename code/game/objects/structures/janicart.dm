@@ -56,6 +56,7 @@
 					mybucket.reagents.trans_to_obj(I, 5)	//
 					to_chat(user, "<span class='notice'>You wet [I] in [mybucket].</span>")
 					playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+					update_icon()
 			else
 				to_chat(user, "<span class='notice'>[I] can't absorb anymore liquid!</span>")
 		else
