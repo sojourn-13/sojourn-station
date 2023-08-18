@@ -5223,7 +5223,7 @@
 "bjP" = (
 /obj/effect/floor_decal/spline/wood,
 /obj/structure/railing/grey,
-/obj/structure/bed/chair/sofa/brown{
+/obj/structure/bed/chair/sofa/beige{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/sblucarpet,
@@ -14090,14 +14090,14 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "dmf" = (
-/obj/structure/bed/chair/sofa/beige/right{
-	dir = 8
-	},
 /obj/effect/floor_decal/spline/wood{
 	dir = 1
 	},
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
+	},
+/obj/structure/bed/chair/sofa/beige/right{
+	dir = 8
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
@@ -18387,11 +18387,11 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "ehN" = (
-/obj/structure/bed/chair/sofa/beige/right{
-	dir = 8
-	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/bed/chair/sofa/beige/right{
+	dir = 8
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
@@ -30226,11 +30226,11 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_room)
 "gOS" = (
+/obj/effect/floor_decal/spline/wood,
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/sofa/beige/left{
 	dir = 8
 	},
-/obj/effect/floor_decal/spline/wood,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
 "gOT" = (
@@ -32166,12 +32166,12 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical)
 "hlv" = (
-/obj/structure/bed/chair/sofa/beige/left{
-	dir = 8
-	},
 /obj/effect/floor_decal/spline/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/grey,
+/obj/structure/bed/chair/sofa/beige/left{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
 "hlw" = (
@@ -36050,13 +36050,13 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "ibb" = (
-/obj/structure/bed/chair/sofa/beige/right{
-	dir = 4
-	},
 /obj/effect/floor_decal/spline/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/spline/wood{
 	dir = 10
+	},
+/obj/structure/bed/chair/sofa/beige/right{
+	dir = 4
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
@@ -57657,9 +57657,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "mUH" = (
-/obj/structure/bed/chair/sofa/beige/left{
-	dir = 4
-	},
 /obj/structure/railing/grey{
 	dir = 8
 	},
@@ -57671,6 +57668,9 @@
 	},
 /obj/effect/floor_decal/spline/wood{
 	dir = 9
+	},
+/obj/structure/bed/chair/sofa/beige/left{
+	dir = 4
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
@@ -61407,15 +61407,15 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
 "nHn" = (
-/obj/structure/bed/chair/sofa/beige/left{
-	dir = 4
-	},
 /obj/structure/window/reinforced{
 	dir = 8;
 	pixel_x = -3
 	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/bed/chair/sofa/beige/left{
+	dir = 4
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
@@ -72579,9 +72579,6 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "qbs" = (
-/obj/structure/bed/chair/sofa/beige/right{
-	dir = 4
-	},
 /obj/structure/railing/grey{
 	dir = 8
 	},
@@ -72592,6 +72589,9 @@
 /obj/effect/decal/cleanable/dirt,
 /mob/living/carbon/human/monkey/punpun,
 /obj/structure/railing/grey,
+/obj/structure/bed/chair/sofa/beige/right{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
 "qbx" = (
@@ -78700,14 +78700,14 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "rtV" = (
-/obj/structure/bed/chair/sofa/beige/right{
-	dir = 8
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
 /obj/effect/floor_decal/spline/wood{
 	dir = 1
+	},
+/obj/structure/bed/chair/sofa/beige/right{
+	dir = 8
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
@@ -108583,7 +108583,7 @@
 	dir = 4
 	},
 /obj/structure/railing/grey,
-/obj/structure/bed/chair/sofa/brown/corner{
+/obj/structure/bed/chair/sofa/beige/corner{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/sblucarpet,
