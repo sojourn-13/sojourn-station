@@ -5226,6 +5226,7 @@
 "bjP" = (
 /obj/effect/floor_decal/spline/wood,
 /obj/structure/railing/grey,
+/obj/machinery/atmospherics/unary/vent_pump,
 /obj/structure/bed/chair/sofa/beige{
 	dir = 1
 	},
@@ -18711,6 +18712,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = -32
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/box/red/corners,
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/bar)
@@ -67764,6 +67772,9 @@
 /obj/structure/bed/chair/custom/wood/wings{
 	dir = 4
 	},
+/obj/structure/sign/painting/paintingtemple{
+	pixel_y = 32
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
 "oYH" = (
@@ -93389,6 +93400,13 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"uEj" = (
+/obj/structure/table/woodentable,
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/sblucarpet,
+/area/nadezhda/crew_quarters/bar)
 "uEq" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -101254,6 +101272,9 @@
 "wls" = (
 /obj/effect/decal/cleanable/generic,
 /obj/structure/table/marble,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
 "wlt" = (
@@ -175294,7 +175315,7 @@ stI
 eVm
 xFW
 qSM
-abn
+uEj
 bjP
 txD
 hyr
