@@ -49285,7 +49285,7 @@
 	dir = 1;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous Oxide","waste_sensor"="Gas Mix Tank")
+	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon  Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous  Oxide","waste_sensor"="Gas  Mix  Tank")
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
@@ -49720,7 +49720,7 @@
 	dir = 8;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous Oxide","waste_sensor"="Gas Mix Tank")
+	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon  Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous  Oxide","waste_sensor"="Gas  Mix  Tank")
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
@@ -52215,14 +52215,6 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
-"lJN" = (
-/obj/effect/floor_decal/spline/wood{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/window_lwall_spawn,
-/turf/simulated/floor/wood,
-/area/nadezhda/crew_quarters/bar)
 "lJP" = (
 /obj/machinery/door/airlock/multi_tile/metal/mait{
 	name = "Lost Outpost"
@@ -75862,10 +75854,6 @@
 /obj/structure/flora/small/bushc3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/hallway/main/stairwell)
-"qLd" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood,
-/area/nadezhda/hallway/surface/section1)
 "qLf" = (
 /obj/machinery/firealarm{
 	pixel_y = 32
@@ -166469,7 +166457,7 @@ vZT
 rCa
 xjN
 vZT
-qLd
+xjN
 lXF
 jtW
 ioC
@@ -174514,8 +174502,8 @@ hyr
 lOj
 qlZ
 xXV
-lJN
-lJN
+stI
+stI
 cWm
 cPd
 oJC
