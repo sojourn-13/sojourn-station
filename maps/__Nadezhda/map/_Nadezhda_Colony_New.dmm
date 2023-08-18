@@ -43821,9 +43821,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/crew_quarters)
-"jMU" = (
-/turf/simulated/wall/r_wall,
-/area/nadezhda/absolutism/chapel)
 "jMZ" = (
 /obj/structure/sink{
 	pixel_y = -22
@@ -44592,10 +44589,9 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/command/courtroom)
 "jVF" = (
-/obj/effect/window_lwall_spawn/smartspawn/church,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn,
+/obj/effect/window_lwall_spawn/smartspawn/church,
 /turf/simulated/floor/plating,
 /area/nadezhda/absolutism/chapel)
 "jVN" = (
@@ -178343,7 +178339,7 @@ ofP
 tpO
 tpO
 ofP
-jMU
+ofP
 lQw
 nGY
 jEl
