@@ -21147,7 +21147,8 @@
 	dir = 4
 	},
 /obj/machinery/camera/network/colony_surface{
-	dir = 4
+	dir = 4;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
@@ -24101,6 +24102,21 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
+"fnZ" = (
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/camera/network/colony_surface{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/inside_colony)
 "foa" = (
 /obj/item/clothing/head/costume/history/piratecap,
 /obj/item/clothing/head/costume/history/piratecap,
@@ -67585,7 +67601,8 @@
 	tag = "icon-railing0 (EAST)"
 	},
 /obj/machinery/camera/network/colony_surface{
-	dir = 8
+	dir = 8;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
@@ -91377,7 +91394,8 @@
 	pixel_y = 5
 	},
 /obj/machinery/camera/network/colony_surface{
-	dir = 8
+	dir = 8;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
@@ -211608,7 +211626,7 @@ rWI
 fot
 uya
 dfQ
-cih
+fnZ
 cih
 cih
 wao
