@@ -98,6 +98,7 @@
 					"Mosin Kit" = /obj/item/storage/box/bs_kit/mosin,
 					"Duty Kit" = /obj/item/storage/box/bs_kit/duty,
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
+					"Triage Kit" = /obj/item/storage/box/bs_kit/triage,
 					"Ekaterina SMG Kit" = /obj/item/storage/box/bs_kit/ekaterina,
 					"Drozd SMG Kit" = /obj/item/storage/box/bs_kit/drozd,
 					"Bounty Kit" = /obj/item/storage/box/bs_kit/bounty)

@@ -208,6 +208,9 @@
 	new /obj/item/clothing/under/rank/bdu/marshal(src)
 	new /obj/item/clothing/under/rank/bdu/marshal(src)
 	new /obj/item/clothing/under/rank/bdu/marshal(src)
+	new /obj/item/clothing/mask/balaclava(src)
+	new /obj/item/clothing/mask/balaclava(src)
+	new /obj/item/clothing/mask/balaclava(src)
 
 /obj/structure/closet/wardrobe/militia
 	name = "blackshield wardrobe"
@@ -266,6 +269,9 @@
 	new /obj/item/clothing/accessory/job/cape/blackshield/tan(src)
 	new /obj/item/clothing/accessory/job/cape/blackshield/camo(src)
 	new /obj/item/clothing/accessory/job/cape/blackshield/camo(src)
+	new /obj/item/clothing/mask/balaclava(src)
+	new /obj/item/clothing/mask/balaclava(src)
+	new /obj/item/clothing/mask/balaclava(src)
 	new /obj/item/clothing/glasses/ballistic(src)
 	new /obj/item/clothing/glasses/ballistic(src)
 	new /obj/item/clothing/glasses/ballistic(src)
