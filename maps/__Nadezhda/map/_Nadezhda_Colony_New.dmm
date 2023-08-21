@@ -4263,11 +4263,6 @@
 "aZC" = (
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
-"aZE" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/inside_colony)
 "aZF" = (
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 8
@@ -6965,9 +6960,12 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/engine_room)
 "bDX" = (
-/obj/structure/flora/ausbushes/grassybush,
-/obj/structure/flora/bush,
-/turf/simulated/floor/asteroid/dirt/dust,
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/flora/small/rock3,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
 "bEa" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -21646,10 +21644,6 @@
 /obj/machinery/power/nt_obelisk,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/crew_quarters/hydroponics/garden)
-"eOh" = (
-/obj/structure/flora/ausbushes/sunnybush,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/inside_colony)
 "eOn" = (
 /obj/random/scrap/dense_weighted/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -50621,6 +50615,7 @@
 	dir = 1;
 	tag = "icon-railing0 (NORTH)"
 	},
+/obj/structure/flora/small/rock3,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/inside_colony)
 "llw" = (
@@ -76361,10 +76356,6 @@
 "qIn" = (
 /turf/simulated/mineral,
 /area/nadezhda/maintenance/undergroundfloor1east)
-"qIo" = (
-/obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/inside_colony)
 "qIq" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/asteroid/grass,
@@ -95742,10 +95733,6 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"uRf" = (
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/inside_colony)
 "uRh" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -204536,7 +204523,7 @@ itd
 cxs
 rHw
 qkP
-uRf
+bXS
 bXS
 bXS
 bXS
@@ -205344,7 +205331,7 @@ xtO
 nye
 cyl
 juK
-cXf
+bXS
 bXS
 pFV
 amK
@@ -205545,8 +205532,8 @@ bXS
 bXS
 bXS
 bXS
-cXf
-eOh
+bXS
+bXS
 bXS
 pFV
 pFV
@@ -205731,13 +205718,6 @@ suh
 iqL
 iqL
 iqL
-bDX
-oTk
-yiS
-cXf
-yiS
-bXS
-uXT
 bXS
 bXS
 bXS
@@ -205747,9 +205727,16 @@ bXS
 bXS
 bXS
 bXS
-uXT
-qIo
-aZE
+bXS
+bXS
+bXS
+bXS
+bXS
+bXS
+fPa
+bXS
+bXS
+bXS
 pFV
 uoM
 nZe
@@ -205948,7 +205935,7 @@ cIN
 cIN
 cIN
 aQq
-aQq
+bDX
 aQq
 aQq
 aQq
