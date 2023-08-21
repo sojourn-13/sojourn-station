@@ -65744,11 +65744,6 @@
 	})
 "ovz" = (
 /obj/structure/catwalk,
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
