@@ -4782,6 +4782,11 @@
 /obj/structure/flora/big/bush3,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
+"beZ" = (
+/obj/structure/flora/big/bush2,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/inside_colony)
 "bfb" = (
 /obj/structure/table/rack/shelf,
 /obj/item/cell/large/high,
@@ -4838,6 +4843,11 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/sechall)
+"bfx" = (
+/obj/structure/flora/big/bush2,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/inside_colony)
 "bfy" = (
 /turf/simulated/wall,
 /area/nadezhda/crew_quarters/podrooms)
@@ -5925,8 +5935,13 @@
 "brC" = (
 /obj/structure/catwalk,
 /obj/structure/invislight,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/rnd/circuitlab{
+	name = "Science Expedition prep"
+	})
 "brE" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -6510,6 +6525,11 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"byg" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/boulder,
+/turf/simulated/floor/rock,
+/area/nadezhda/outside/inside_colony)
 "byk" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "16,20"
@@ -21122,10 +21142,14 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "eJy" = (
-/obj/structure/flora/bush,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/camera/network/colony_surface{
+	dir = 4
+	},
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
 "eJA" = (
 /obj/structure/disposalpipe/segment,
@@ -21627,6 +21651,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"eNS" = (
+/obj/random/flora/low_chance,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/inside_colony)
 "eNU" = (
 /obj/structure/flora/rock/variant1{
 	desc = "A dull and sturdy rock. Looks kind of suspicious"
@@ -29624,9 +29653,12 @@
 	name = "Residential District Maintenance"
 	})
 "gAS" = (
-/obj/structure/catwalk,
-/turf/unsimulated/mineral,
-/area/asteroid/cave)
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/machinery/camera/network/colony_surface{
+	dir = 8
+	},
+/turf/simulated/floor/rock/manmade/road,
+/area/nadezhda/outside/inside_colony)
 "gBg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -47108,7 +47140,6 @@
 /obj/item/mecha_parts/part/durand_left_arm{
 	pixel_x = -5
 	},
-/obj/item/tool/screwdriver/combi_driver,
 /turf/simulated/floor/plating,
 /area/nadezhda/pros/shuttle)
 "ktA" = (
@@ -53570,6 +53601,10 @@
 	dir = 8
 	},
 /obj/structure/invislight,
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#0892d0"
+	},
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/inside_colony)
 "lTS" = (
@@ -68283,6 +68318,7 @@
 "oXN" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/big/rocks3,
+/obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/inside_colony)
 "oXO" = (
@@ -69305,7 +69341,6 @@
 /obj/structure/closet/crate,
 /obj/effect/floor_decal/industrial/box/red,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/trash/peachcan,
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
 "pju" = (
@@ -91337,10 +91372,15 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/disposaldrop)
 "tWw" = (
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/turf/unsimulated/mineral,
-/area/asteroid/cave)
+/obj/effect/floor_decal/industrial/road{
+	dir = 1;
+	pixel_y = 5
+	},
+/obj/machinery/camera/network/colony_surface{
+	dir = 8
+	},
+/turf/simulated/floor/rock/manmade/road,
+/area/nadezhda/outside/inside_colony)
 "tWx" = (
 /obj/structure/sink{
 	dir = 1;
@@ -99842,7 +99882,9 @@
 	name = "\improper OUT OF ORDER"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/rnd/circuitlab{
+	name = "Science Expedition prep"
+	})
 "vLg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -109515,7 +109557,9 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/rnd/circuitlab{
+	name = "Science Expedition prep"
+	})
 "xQP" = (
 /obj/structure/flora/small/trailrockb5,
 /turf/simulated/floor/rock,
@@ -199865,14 +199909,14 @@ fFO
 fFO
 fFO
 pFV
-pFV
-pFV
-pFV
-pFV
-pFV
-pFV
-pFV
-pFV
+rIK
+rIK
+rIK
+rIK
+rIK
+rIK
+rIK
+rIK
 pFV
 pFV
 bXS
@@ -200066,15 +200110,15 @@ cLp
 cLp
 fFO
 fFO
-fFO
-pFV
+cLp
+rIK
 vrW
-pFV
+vrW
 pvI
 spa
-pFV
+rIK
 qEE
-pFV
+rIK
 pFV
 bXS
 bXS
@@ -200268,13 +200312,13 @@ spF
 fFO
 spF
 spF
-fFO
+cLp
+rIK
+vrW
+vrW
 pFV
 pFV
-pFV
-pFV
-pFV
-pFV
+rIK
 pFV
 pFV
 pFV
@@ -200470,12 +200514,12 @@ spF
 spF
 spF
 spF
-fFO
+cLp
 rIK
-rIK
-rIK
-rIK
-rIK
+pFV
+pFV
+pFV
+pFV
 rIK
 rIK
 rIK
@@ -200672,12 +200716,12 @@ spF
 spF
 spF
 oBP
-cLp
-pFV
-eJy
-eJy
-pFV
-pFV
+fFO
+rIK
+rIK
+rIK
+rIK
+rIK
 rIK
 rIK
 rIK
@@ -200876,11 +200920,11 @@ spF
 fFO
 rIK
 pFV
-eJy
-eJy
-qPl
-pFV
 rIK
+rIK
+eNS
+rIK
+pFV
 pFV
 pFV
 pFV
@@ -201050,7 +201094,7 @@ cZc
 xZK
 cKc
 uSy
-tWw
+iYY
 xtc
 xtc
 xtc
@@ -201083,8 +201127,8 @@ tdw
 tdw
 tdw
 vdj
-rIK
-rIK
+pFV
+pFV
 pFV
 bXS
 cXf
@@ -201252,8 +201296,8 @@ hGR
 mMZ
 cKc
 uSy
-gAS
-itd
+iYY
+xtc
 gSP
 qlM
 eUw
@@ -201285,8 +201329,8 @@ qlM
 qlM
 vRM
 rHw
-rIK
-rIK
+pFV
+pFV
 pFV
 bXS
 cXf
@@ -201454,8 +201498,8 @@ qLW
 wMl
 cKc
 uSy
-gAS
-itd
+iYY
+xtc
 uBB
 itd
 itd
@@ -201656,8 +201700,8 @@ qgC
 kfD
 cKc
 uSy
-gAS
-itd
+iYY
+xtc
 uBB
 itd
 itd
@@ -201858,8 +201902,8 @@ rZj
 tCi
 lKk
 uSy
-gAS
-itd
+iYY
+xtc
 mJd
 itd
 itd
@@ -202060,8 +202104,8 @@ soO
 rRv
 cKc
 uSy
-gAS
-itd
+iYY
+xtc
 brc
 itd
 itd
@@ -202262,8 +202306,8 @@ cKc
 cKc
 cKc
 uSy
-gAS
-itd
+iYY
+xtc
 uBB
 itd
 itd
@@ -202464,8 +202508,8 @@ uSy
 eCl
 eCl
 uSy
-gAS
-itd
+iYY
+xtc
 uBB
 itd
 itd
@@ -202666,8 +202710,8 @@ iYY
 iYY
 iYY
 iYY
-gAS
-itd
+iYY
+xtc
 uBB
 itd
 itd
@@ -202869,7 +202913,7 @@ iYY
 iYY
 iYY
 xtc
-itd
+xtc
 uBB
 itd
 itd
@@ -203466,8 +203510,8 @@ gBD
 gBD
 gBD
 gBD
-iYY
-iYY
+gBD
+gBD
 iYY
 iYY
 iYY
@@ -203669,8 +203713,8 @@ gBD
 gBD
 gBD
 iYY
-iYY
-iYY
+gBD
+gBD
 iYY
 iYY
 iYY
@@ -203872,8 +203916,8 @@ qJJ
 qJJ
 qJJ
 qJJ
-iYY
-iYY
+gBD
+gBD
 iYY
 iYY
 iYY
@@ -204075,7 +204119,7 @@ oyV
 sbx
 qJJ
 iYY
-iYY
+gBD
 iYY
 iYY
 iYY
@@ -204277,7 +204321,7 @@ jOb
 jVq
 qJJ
 iYY
-iYY
+gBD
 iYY
 iYY
 iYY
@@ -204479,8 +204523,8 @@ jOb
 hAB
 qJJ
 iYY
-iYY
-iYY
+gBD
+gBD
 iYY
 iYY
 pHb
@@ -204681,8 +204725,8 @@ jOb
 kAb
 qJJ
 iYY
-iYY
-iYY
+gBD
+gBD
 iYY
 iYY
 pHb
@@ -204883,9 +204927,9 @@ jOb
 lcJ
 qJJ
 iYY
-iYY
-iYY
-iYY
+gBD
+gBD
+gBD
 iYY
 pHb
 xtc
@@ -205085,10 +205129,10 @@ hvN
 rgy
 qJJ
 iYY
-iYY
-iYY
-iYY
-iYY
+qIy
+qIy
+gBD
+gBD
 pHb
 xtc
 vtr
@@ -205286,11 +205330,11 @@ rid
 ptZ
 mHg
 qJJ
-iYY
-iYY
-iYY
-iYY
-iYY
+gBD
+qIy
+qIy
+qIy
+gBD
 pHb
 tkn
 cLs
@@ -205488,8 +205532,8 @@ sZz
 nyv
 qJJ
 qJJ
-pHb
-rIK
+qJJ
+byg
 hcX
 pvI
 pFV
@@ -206296,7 +206340,7 @@ uRi
 uRi
 uRi
 qJJ
-pHb
+qJJ
 hJm
 mEU
 frR
@@ -206498,7 +206542,7 @@ uRi
 uRi
 uRi
 dic
-pHb
+qJJ
 hJm
 mEU
 frR
@@ -206700,7 +206744,7 @@ wmB
 wmB
 wmB
 uKC
-pHb
+qJJ
 drA
 mEU
 frR
@@ -206902,7 +206946,7 @@ wmB
 wmB
 wmB
 uKC
-pHb
+qJJ
 hJm
 mEU
 frR
@@ -207104,7 +207148,7 @@ wmB
 wmB
 wmB
 uKC
-pHb
+qJJ
 rVQ
 pDV
 nKB
@@ -207121,7 +207165,7 @@ rJT
 rJT
 rJT
 rJT
-rJT
+eJy
 ovS
 pNi
 rPn
@@ -207306,7 +207350,7 @@ cce
 cce
 cce
 lCH
-pHb
+qJJ
 toQ
 hIn
 bRK
@@ -207508,7 +207552,7 @@ qJJ
 qJJ
 qJJ
 qJJ
-pHb
+qJJ
 toQ
 hIn
 bRK
@@ -207715,7 +207759,7 @@ toQ
 hIn
 bRK
 srr
-srr
+gAS
 vGK
 vGK
 vGK
@@ -210967,7 +211011,7 @@ pNi
 cMQ
 cwC
 pWV
-unY
+tWw
 eJm
 bTl
 bTl
@@ -212995,10 +213039,10 @@ fFO
 bXS
 pFV
 pFV
+pMh
 pFV
 pFV
-pFV
-pFV
+spa
 pFV
 pFV
 vrW
@@ -213200,11 +213244,11 @@ fLu
 pFV
 hcX
 pFV
-vrW
-nCJ
+pFV
+rIK
 rIK
 pFV
-pFV
+pfy
 xGe
 pNi
 lNk
@@ -213399,14 +213443,14 @@ fFO
 fFO
 rIK
 pFV
+pfy
+hGC
+rIK
+pMh
+vrW
+rIK
 pFV
-rIK
-rIK
-rIK
-rIK
-rIK
-pFV
-pFV
+pMh
 fLu
 bXS
 mKM
@@ -213603,10 +213647,10 @@ rIK
 vrW
 tWW
 uXF
+pFV
 rIK
 rIK
-rIK
-hcX
+pFV
 eCL
 pFV
 igM
@@ -213804,13 +213848,13 @@ fFO
 rIK
 svK
 tWW
-rIK
 pFV
 pFV
-hcX
+gcR
+pfy
 eCL
 rIK
-pFV
+mGO
 pFV
 bXS
 kvg
@@ -214007,11 +214051,11 @@ rIK
 pFV
 rIK
 fLu
-pFV
+spa
 hcX
 pFV
-pFV
-pFV
+pMh
+mGO
 rIK
 nCJ
 bXS
@@ -214205,16 +214249,16 @@ pFV
 fFO
 fFO
 fFO
-pFV
+igM
 vrW
 pFV
 hcX
 pFV
 pFV
+pFV
+pFV
 rIK
-hcX
 rIK
-nCJ
 pFV
 bXS
 bXS
@@ -214408,7 +214452,7 @@ bXS
 fFO
 fFO
 fFO
-pFV
+igM
 nPL
 fFO
 jFt
@@ -214605,7 +214649,7 @@ svK
 fFO
 fFO
 fFO
-pFV
+igM
 pFV
 nPL
 cLp
@@ -214617,7 +214661,7 @@ bXS
 fFO
 pFV
 pFV
-pFV
+gcR
 pFV
 pFV
 vrW
@@ -214805,7 +214849,7 @@ pFV
 rIK
 pFV
 pFV
-pFV
+igM
 pFV
 fFO
 fFO
@@ -215004,15 +215048,15 @@ ksX
 ksX
 pFV
 fLu
+mGO
+pFV
+igM
 pFV
 pFV
-xGe
-pFV
-xGe
 xGe
 pFV
 rIK
-pFV
+mGO
 fFO
 bXS
 hcX
@@ -215207,13 +215251,13 @@ ksX
 fFO
 pFV
 rIK
+igM
 pFV
 pFV
 pFV
 pFV
 pFV
-pFV
-pFV
+beZ
 fFO
 fFO
 hcX
@@ -215411,8 +215455,8 @@ pFV
 pFV
 pFV
 pFV
-pFV
-xGe
+mGO
+pMh
 pFV
 pFV
 fFO
@@ -215612,11 +215656,11 @@ bXS
 rIK
 fLu
 pFV
+pMh
 pFV
 pFV
 pFV
-pFV
-pFV
+spa
 fFO
 eWu
 oNP
@@ -215625,7 +215669,7 @@ dGU
 oNP
 hcX
 uxZ
-pFV
+mGO
 pFV
 pFV
 pFV
@@ -215814,8 +215858,8 @@ fFO
 pFV
 pFV
 pFV
-xGe
-pFV
+mGO
+igM
 pFV
 pFV
 xGe
@@ -215826,7 +215870,7 @@ oNP
 vRF
 oNP
 fLu
-pFV
+mGO
 fFO
 pFV
 pFV
@@ -216014,13 +216058,13 @@ ksX
 ksX
 fFO
 pFV
+vrW
 pFV
 pFV
-pFV
-pFV
+igM
 pFV
 fLu
-pFV
+igM
 fKS
 eWu
 oNP
@@ -216218,11 +216262,11 @@ tlE
 rIK
 pFV
 pFV
-pFV
-xGe
-pFV
+pMh
 pFV
 pFV
+pFV
+bfx
 bXS
 pFV
 hDd
@@ -216420,9 +216464,9 @@ mGO
 hcX
 pFV
 pFV
+mGO
 pFV
-pFV
-pFV
+pMh
 pFV
 pFV
 fFO
@@ -216621,8 +216665,8 @@ ksX
 fFO
 pFV
 xGe
-pFV
-pFV
+vrW
+igM
 pFV
 pFV
 pFV
@@ -216841,7 +216885,7 @@ pFV
 pFV
 fLu
 pFV
-pFV
+igM
 pFV
 rIK
 mYG
@@ -217027,7 +217071,7 @@ mGO
 pfy
 pFV
 mGO
-hcX
+pFV
 pfy
 pFV
 oLb
@@ -217228,7 +217272,7 @@ bXS
 pFV
 fLu
 pfy
-xGe
+pFV
 pFV
 tBq
 vbq
@@ -217650,7 +217694,7 @@ pFV
 pFV
 pFV
 pFV
-pFV
+gcR
 fFO
 nZe
 kvg
@@ -217846,13 +217890,13 @@ pfy
 pFV
 fLu
 pFV
+igM
 pFV
 pFV
+gcR
+igM
 pFV
-pFV
-pFV
-pFV
-pFV
+igM
 rIK
 nZe
 kvg
@@ -218047,9 +218091,9 @@ pFV
 tBq
 pFV
 pFV
+igM
 pFV
-pFV
-pFV
+gcR
 pFV
 pFV
 pFV
@@ -219048,12 +219092,12 @@ bXS
 pFV
 pFV
 pFV
+igM
 pFV
 pFV
 pFV
 pFV
-pFV
-pFV
+igM
 pFV
 pFV
 pFV
@@ -219459,7 +219503,7 @@ qPl
 pFV
 pFV
 pFV
-pFV
+igM
 pFV
 pFV
 pFV
@@ -219657,7 +219701,7 @@ pFV
 pFV
 pFV
 pFV
-pFV
+igM
 pFV
 pFV
 pFV
@@ -219866,7 +219910,7 @@ pfy
 pFV
 pFV
 fFO
-pFV
+igM
 pFV
 pFV
 rIK
