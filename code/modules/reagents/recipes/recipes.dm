@@ -322,7 +322,12 @@
 /datum/chemical_reaction/space_cleaner
 	result = "cleaner"
 	required_reagents = list("ammonia" = 1, "water" = 1)
-	result_amount = 2
+	result_amount = 3
+
+/datum/chemical_reaction/space_cleanest
+	result = "cleaner"
+	required_reagents = list("cleaner" = 1, "water" = 1)
+	result_amount = 3
 
 /datum/chemical_reaction/plantbgone
 	result = "plantbgone"
