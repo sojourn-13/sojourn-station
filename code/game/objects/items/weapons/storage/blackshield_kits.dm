@@ -145,6 +145,18 @@
 		new /obj/item/ammo_magazine/smg_35(src)
 		new /obj/item/storage/pouch/ammo(src)
 
+/obj/item/storage/box/bs_kit/triage
+	name = "\improper Triage Kit"
+	desc = "A box containing a standard issue Triage Smg issued uniquely to corpsmen. Boasting a compact frame, low rate of fire but decent stopping power to deal with armored threats."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/triage(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_magnum_40(src)
+
 
 /obj/item/storage/box/bs_kit/bounty
 	name = "\improper Bounty Primary Kit"
