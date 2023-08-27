@@ -589,7 +589,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		playsound(user, fire_sound_silenced, 15, 1, -3)
 	else
 		playsound(user, fire_sound, 60, 1)
-
+/*
 		if(reflex)
 			user.visible_message(
 				"<span class='reflex_shoot'><b>\The [user] fires \the [src][pointblank ? " point blank at \the [target]":""] by reflex!</b></span>",
@@ -602,7 +602,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				SPAN_WARNING("You fire \the [src]!"),
 				"You hear a [fire_sound_text]!"
 				)
-
+*/
 		if(muzzle_flash)
 			set_light(muzzle_flash)
 

@@ -344,6 +344,7 @@
 	//armor
 	new /obj/item/clothing/suit/storage/scavengerarmor(src)
 	new /obj/item/clothing/head/helmet/handmade/scavengerhelmet(src)
+	new /obj/item/clothing/gloves/thick/combat(src)
 	//longarms
 	switch(main_weapon_cache)
 		if("SMG")
