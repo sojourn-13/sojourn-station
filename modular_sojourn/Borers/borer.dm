@@ -206,8 +206,8 @@
 			if(prob(host.brainloss/20))
 				host.say("*[pick(list("blink","blink_r","choke","aflap","drool","twitch","twitch_s","gasp"))]")
 
-	for(var/mob/living/L in oviewers(8)) //Sucks to put this here, but otherwise mobs will ignore them
-		L.try_activate_ai()
+//	for(var/mob/living/L in oviewers(8)) //Sucks to put this here, but otherwise mobs will ignore them
+//		L.try_activate_ai()
 
 /mob/living/simple_animal/borer/Stat()
 	. = ..()

@@ -153,7 +153,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 
 /datum/sanity/proc/handle_view()
 	. = 0
-	activate_mobs_in_range(owner, SANITY_MOB_DISTANCE_ACTIVATION)
+	activate_mobs_in_range(owner, world.view)
 	if(sanity_invulnerability)//Sorry, but that needed to be added here :C
 		return
 	var/vig = owner.stats.getStat(STAT_VIG)

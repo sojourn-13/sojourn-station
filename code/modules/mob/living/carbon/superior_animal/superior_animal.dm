@@ -429,7 +429,7 @@
 			patience = patience_initial
 		// This block controls our attack/range logic
 		var/atom/targetted = targetted_mob
-		if (!(targetted_mob.check_if_alive(TRUE)))
+		if (!(targetted_mob?.check_if_alive(TRUE)))
 			loseTarget()
 			return
 		if (lost_sight)
@@ -564,20 +564,18 @@
 
 /mob/living/carbon/superior_animal/Life()
 	ticks_processed++
-	handle_regular_hud_updates()
+	if(client)// Was always calling, but requires client to do anything. So, cull it here.
+		handle_hud_icons()
+		handle_vision()
+
 	if(!reagent_immune)
 		handle_chemicals_in_body() //not under ai_inactive, because of shit like blattedin
 
-	// is this optimal? no. do i like this? no. if i could, would i rip it up and make it better? yes.
-	// but this is eriscode. i cant make a clean change on fucking anything. i am so goddamn tired of trying
-	// to optimize this mess, taht at this point, im willing to just shove all this shit in here. and you know what?
-	// this isnt even that bad. im disgusted by this too, and by god, i beg of whoever the hell is reading this,
-	// MAKE THIS BETTER. we have SO many goddamn superior mobs that this shit NEEDS to be optimal but i am a goddamn
-	// sophmore in college about to get a goddamn job so im pretty tired of workin on this shit.
 	if(!(ticks_processed%3))
 		if (!AI_inactive)
 			handle_status_effects()
 			update_lying_buckled_and_verb_status()
+
 		if(!never_stimulate_air)
 			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
 			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
@@ -591,22 +589,18 @@
 		handle_regular_status_updates() // we should probably still do this even if we're dead or something
 		ticks_processed = 0
 
-	if (!weakened)
+	if (!weakened || !AI_inactive) // OR...
+		handle_ai()
 
-		if(!AI_inactive) //we dont need to handle ai if we're disabled
-			handle_ai()
-			//Speaking
 
-			if(speak_chance && prob(speak_chance))
-				visible_emote(emote_see)
+		if(speak_chance && prob(speak_chance))
+			visible_emote(emote_see)
 
-			if (following)
-				if (!target_mob) // Are we following someone and not attacking something?
-					if (stat != DEAD)
-						SSmove_manager.move_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
-			else if (!target_mob && last_followed)
-				SSmove_manager.stop_looping(src)
-				last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
+		if(following && !target_mob && stat != DEAD) // AND...
+			SSmove_manager.move_to(src, following, follow_distance, move_to_delay)
+		else if (!target_mob && last_followed)
+			SSmove_manager.stop_looping(src)
+			last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
 	if(life_cycles_before_sleep)
 		life_cycles_before_sleep--
@@ -617,10 +611,17 @@
 	if(life_cycles_before_scan)
 		life_cycles_before_scan--
 		return FALSE
-	if(check_surrounding_area(viewRange))
-		activate_ai()
-		life_cycles_before_scan = initial(life_cycles_before_scan)/6 //So it doesn't fall asleep just to wake up the next tick
-		return TRUE
+	if(AI_inactive)
+//		for(var/mob/M in oview(src))
+//			if(!(M.stat < DEAD) && M.faction == ("neutral"||"station"||"CEV Eris") && M.faction != faction)// TIME KOMPRESSION
+//				activate_ai()
+//				life_cycles_before_scan = initial(life_cycles_before_scan)/6
+//				return TRUE
+		for(var/obj/mecha/potential_mech in oview(src)) // I hate mech code
+			if(potential_mech.get_mob())
+				activate_ai()
+				life_cycles_before_scan = initial(life_cycles_before_scan)/6
+				return TRUE
 	life_cycles_before_scan = initial(life_cycles_before_scan)
 	return FALSE
 
