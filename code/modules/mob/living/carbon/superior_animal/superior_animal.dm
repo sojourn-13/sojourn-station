@@ -563,6 +563,8 @@
 	*/
 
 /mob/living/carbon/superior_animal/Life()
+	. = ..()
+	
 	ticks_processed++
 	if(client)// Was always calling, but requires client to do anything. So, cull it here.
 		handle_hud_icons()
@@ -602,6 +604,9 @@
 			SSmove_manager.stop_looping(src)
 			last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
+/*	life_cycles_before_sleep and life_cycles_before_scan are already handled on /mob/living/Life()
+	So, why is any of this even here?
+
 	if(life_cycles_before_sleep)
 		life_cycles_before_sleep--
 		return TRUE
@@ -624,6 +629,7 @@
 				return TRUE
 	life_cycles_before_scan = initial(life_cycles_before_scan)
 	return FALSE
+*/
 
 /**
  *  Handles telegraphing attacks, and attack delays. It does not handle the attacks themselves.
@@ -636,6 +642,7 @@
  *	cast_beam-Boolean. If true, a beam will be cast from src to targetted_mob as a visual telegraph.
  *	atom/movable/targetted-The target of the telegraphs.
 **/
+
 /mob/living/carbon/superior_animal/proc/prepareAttackPrecursor(attack_type, telegraph = TRUE, cast_beam = TRUE, var/atom/movable/targetted)
 	if (check_if_alive()) //sanity
 		var/time_to_expire
