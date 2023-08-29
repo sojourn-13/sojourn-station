@@ -98862,7 +98862,7 @@
 	name = "Bartender's room";
 	req_access = list(25)
 	},
-/turf/space,
+/turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
 "vfe" = (
 /obj/effect/decal/cleanable/dirt,
