@@ -5096,13 +5096,11 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory)
 "bhc" = (
-/obj/effect/floor_decal/industrial/danger,
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/hydroponics{
-	pixel_y = 4
-	},
-/turf/simulated/floor/tiled/steel,
-/area/nadezhda/rnd/xenobiology/xenoflora)
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/nadezhda/security/nuke_storage{
+	name = "\improper Clinic"
+	})
 "bhd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -5160,6 +5158,7 @@
 /area/nadezhda/crew_quarters)
 "bhX" = (
 /obj/machinery/atmospherics/unary/vent_pump,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -7334,7 +7333,7 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/hallway/surface/section1)
 "bGl" = (
-/obj/structure/filingcabinet/chestdrawer,
+/obj/machinery/portable_atmospherics/canister,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "bGt" = (
@@ -8532,6 +8531,9 @@
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/reagent_containers/glass/bucket,
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "bVo" = (
@@ -9671,6 +9673,7 @@
 /obj/effect/floor_decal/industrial/loading/white{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -11184,6 +11187,7 @@
 /obj/item/bodybag/cryobag,
 /obj/item/roller,
 /obj/item/roller,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -13671,10 +13675,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "dbE" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 8;
-	name = "Clearing Pump"
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
@@ -13688,6 +13688,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "dbG" = (
@@ -14223,12 +14226,8 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "dib" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = -2;
-	pixel_y = 5
-	},
 /obj/machinery/light/small,
+/obj/machinery/atmospherics/portables_connector,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "dic" = (
@@ -16106,6 +16105,11 @@
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -17402,7 +17406,8 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "dQN" = (
-/obj/machinery/portable_atmospherics/powered/scrubber,
+/obj/machinery/atmospherics/binary/pump,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "dQQ" = (
@@ -18442,6 +18447,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -18567,6 +18573,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "edN" = (
 /obj/machinery/optable,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -20988,6 +20995,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -21033,8 +21041,9 @@
 /obj/machinery/power/port_gen/pacman/camp{
 	anchored = 1
 	},
-/obj/structure/cable/orange{
-	dir = 8
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor,
 /area/shuttle/rocinante_shuttle_area)
@@ -22273,7 +22282,10 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest)
 "eQJ" = (
-/obj/machinery/camera/network/research,
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "eQP" = (
@@ -22542,6 +22554,7 @@
 	dir = 4;
 	pixel_x = -10
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/fitness)
 "eUV" = (
@@ -22953,6 +22966,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "eYl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -23810,12 +23829,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
-/obj/structure/cable/orange{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "5,20"
@@ -25779,8 +25799,7 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/quartermaster/miningdock)
 "fDO" = (
-/obj/machinery/portable_atmospherics/canister,
-/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "fDR" = (
@@ -31853,14 +31872,10 @@
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/chapel)
 "gUM" = (
-/obj/structure/table/standard,
-/obj/item/honey_frame,
-/obj/item/honey_frame,
-/obj/item/honey_frame,
-/obj/item/bee_pack,
-/obj/item/bee_smoker,
-/obj/item/beehive_assembly,
-/turf/simulated/floor/tiled/steel/techfloor_grid,
+/obj/machinery/atmospherics/unary/heater{
+	icon_state = "heater"
+	},
+/turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "gUX" = (
 /obj/item/modular_computer/console/preset/security/records{
@@ -32691,6 +32706,9 @@
 /area/nadezhda/crew_quarters/botanist)
 "heP" = (
 /obj/effect/floor_decal/industrial/loading/white,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -34175,6 +34193,7 @@
 /area/nadezhda/pros/shuttle)
 "hwY" = (
 /obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -35175,6 +35194,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -36017,11 +36039,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/obj/structure/cable/orange{
-	dir = 4
-	},
-/obj/structure/cable/orange{
-	dir = 8
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "5,20"
@@ -36312,6 +36333,7 @@
 	name = "Bartender's room";
 	req_access = list(25)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "hUL" = (
@@ -39154,10 +39176,20 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/sleeper)
 "ixb" = (
+/obj/structure/table/standard,
+/obj/item/honey_frame,
+/obj/item/honey_frame,
+/obj/item/honey_frame,
+/obj/item/bee_pack,
+/obj/item/bee_smoker,
+/obj/item/beehive_assembly,
 /obj/machinery/camera/network/research{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techmaint,
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "ixf" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -40587,8 +40619,11 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/courtroom)
 "iNO" = (
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/rnd/xenobiology/xenoflora)
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/security/nuke_storage{
+	name = "\improper Clinic"
+	})
 "iNP" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -40605,15 +40640,12 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/research)
 "iOa" = (
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/hydroponics{
-	pixel_y = 4
-	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/steel,
-/area/nadezhda/rnd/xenobiology/xenoflora)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/nadezhda/security/nuke_storage{
+	name = "\improper Clinic"
+	})
 "iOe" = (
 /obj/structure/sign/security/showers,
 /turf/simulated/wall,
@@ -40667,10 +40699,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "iOV" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 8;
-	name = "Input Connector"
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -43760,6 +43788,9 @@
 	req_one_access = list()
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume,
+/obj/machinery/camera/network/mining{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/rocinante_shuttle_area)
 "jwK" = (
@@ -43855,10 +43886,8 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "jxY" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold4w/visible,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "jyb" = (
@@ -44189,6 +44218,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/fitness)
 "jCR" = (
@@ -48164,6 +48194,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -48910,7 +48941,6 @@
 /area/nadezhda/command/captain/quarters)
 "kBp" = (
 /obj/machinery/optable,
-/obj/machinery/camera/network/mining,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/shuttle/rocinante_shuttle_area)
 "kBq" = (
@@ -50056,12 +50086,13 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "kPx" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/rnd/xenobiology/xenoflora)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/nadezhda/security/nuke_storage{
+	name = "\improper Clinic"
+	})
 "kPI" = (
 /obj/random/closet_tech/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -50345,6 +50376,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "kTf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -53675,6 +53708,19 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/bioreactor)
+"lGP" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/xenobiology/xenoflora)
 "lGV" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 1
@@ -53951,6 +53997,15 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
+"lJX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/nadezhda/security/nuke_storage{
+	name = "\improper Clinic"
+	})
 "lJZ" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -54306,6 +54361,7 @@
 	pixel_y = 22;
 	pixel_x = -4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -55810,9 +55866,15 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "mfs" = (
-/obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/rnd/xenobiology/xenoflora)
+/obj/machinery/vending/wallmed/lobby{
+	pixel_y = -32
+	},
+/obj/effect/floor_decal/industrial/arrows/white,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/security/nuke_storage{
+	name = "\improper Clinic"
+	})
 "mft" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
@@ -56613,6 +56675,7 @@
 /obj/item/storage/firstaid/surgery,
 /obj/item/reagent_containers/spray/sterilizine,
 /obj/item/clothing/accessory/stethoscope,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -58270,6 +58333,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -59660,11 +59725,9 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "mVT" = (
-/obj/machinery/atmospherics/unary/heater{
-	dir = 8;
-	icon_state = "heater"
-	},
 /obj/machinery/light/small,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "mWf" = (
@@ -61311,6 +61374,16 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/pros/foreman)
+"nlF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/unary/freezer{
+	icon_state = "freezer_1";
+	power_setting = 20;
+	set_temperature = 73;
+	use_power = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/xenobiology/xenoflora)
 "nlI" = (
 /obj/machinery/atmospherics/binary/pump/high_power/on{
 	dir = 8;
@@ -65076,6 +65149,9 @@
 "oah" = (
 /obj/structure/table/standard,
 /obj/item/storage/firstaid/regular,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -67038,6 +67114,8 @@
 	pixel_y = -32
 	},
 /obj/effect/floor_decal/industrial/arrows/white,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -68941,6 +69019,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -71215,14 +71295,16 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "ppf" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 8;
-	name = "Input Connector"
-	},
 /obj/structure/closet/wall_mounted/emcloset{
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 4
+	},
+/obj/machinery/camera/network/research{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "ppk" = (
@@ -73016,11 +73098,8 @@
 /turf/simulated/floor/reinforced/oxygen,
 /area/nadezhda/engineering/atmos)
 "pJj" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel,
+/obj/machinery/atmospherics/pipe/simple/visible,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "pJk" = (
 /obj/machinery/door/airlock/command{
@@ -73655,11 +73734,9 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "pPl" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 5;
-	tag = "icon-intact (NORTHEAST)"
-	},
-/turf/simulated/floor/tiled/techmaint,
+/obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "pPt" = (
 /obj/random/junk/low_chance,
@@ -75867,6 +75944,7 @@
 /obj/item/clothing/head/surgery,
 /obj/item/clothing/mask/surgical,
 /obj/item/clothing/suit/storage/surgical_apron,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -76397,9 +76475,6 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "quP" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -76712,6 +76787,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/blue,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -78027,6 +78103,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -79077,6 +79154,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -79160,6 +79238,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/fitness)
 "qZx" = (
@@ -80111,11 +80190,11 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "rjO" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 6;
-	tag = "icon-intact (SOUTHEAST)"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 1
+	},
+/obj/machinery/meter,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "rjQ" = (
@@ -80469,6 +80548,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "rnK" = (
 /obj/structure/medical_stand,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -82631,7 +82711,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/danger{
-	dir = 5
+	dir = 1
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
@@ -85024,7 +85104,6 @@
 	name = "North APC";
 	pixel_y = 28
 	},
-/obj/structure/cable/orange,
 /obj/structure/cable/orange{
 	dir = 1
 	},
@@ -88919,6 +88998,7 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -89279,12 +89359,17 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "thV" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 6;
-	tag = "icon-intact (SOUTHEAST)"
-	},
 /obj/item/device/radio/intercom{
 	pixel_y = 25
+	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/obj/item/pen{
+	pixel_x = -1;
+	pixel_y = 3
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology/xenoflora)
@@ -90043,6 +90128,7 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -93776,6 +93862,9 @@
 	})
 "ucm" = (
 /obj/item/caution/cone,
+/obj/machinery/alarm{
+	pixel_y = 32
+	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "ucn" = (
@@ -95891,6 +95980,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/fitness)
 "uzR" = (
@@ -98862,6 +98952,7 @@
 	name = "Bartender's room";
 	req_access = list(25)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
 "vfe" = (
@@ -99774,9 +99865,9 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/command/gmaster)
 "vog" = (
-/obj/machinery/atmospherics/pipe/manifold4w/visible,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/valve,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "voj" = (
@@ -100571,14 +100662,10 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "vwS" = (
-/obj/structure/table/reinforced,
-/obj/item/pen{
-	pixel_x = -1;
-	pixel_y = 3
-	},
 /obj/structure/noticeboard/research{
 	pixel_y = -32
 	},
+/obj/machinery/atmospherics/portables_connector,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "vwY" = (
@@ -104086,6 +104173,7 @@
 /area/nadezhda/hallway/surface/section1)
 "wkf" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/fitness)
 "wkp" = (
@@ -105582,6 +105670,11 @@
 	dir = 4;
 	pixel_x = -22
 	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -105607,6 +105700,19 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"wAz" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/rnd/xenobiology/xenoflora)
 "wAH" = (
 /obj/random/booze/low_chance,
 /obj/random/booze/low_chance,
@@ -108224,6 +108330,15 @@
 	dir = 1;
 	pixel_y = -32
 	},
+/obj/machinery/portable_atmospherics/hydroponics{
+	pixel_y = 4
+	},
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "xhA" = (
@@ -108480,11 +108595,8 @@
 	name = "Residential District Maintenance"
 	})
 "xkn" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 8;
-	name = "Input Connector"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/valve,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "xko" = (
@@ -109733,6 +109845,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/security/nuke_storage{
 	name = "\improper Clinic"
@@ -110412,14 +110525,10 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/dorm1)
 "xFF" = (
-/obj/machinery/atmospherics/unary/freezer{
-	cooling = 1;
-	dir = 8;
-	set_temperature = 0
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "xFM" = (
@@ -110489,20 +110598,9 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "xGr" = (
-/obj/machinery/atmospherics/pipe/manifold4w/visible,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techmaint,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/glass,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "xGy" = (
 /obj/random/cluster/spiders,
@@ -113081,6 +113179,7 @@
 /obj/machinery/camera/network/colony_surface{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/fitness)
 "ykk" = (
@@ -165409,8 +165508,8 @@ lWn
 bqA
 qBg
 pIe
-pIe
-iSW
+xGr
+pPl
 qBg
 xuu
 sFI
@@ -165602,7 +165701,7 @@ cZb
 cZb
 qBg
 lBV
-iNO
+wFz
 jjy
 qBg
 tNC
@@ -165611,8 +165710,8 @@ lWn
 omq
 pIe
 gUM
-bhc
 aQl
+xkn
 vFp
 qBg
 vuO
@@ -165804,7 +165903,7 @@ cZb
 cZb
 qBg
 kVJ
-iNO
+wFz
 bFZ
 wcP
 qBg
@@ -165812,9 +165911,9 @@ kPO
 lWn
 ggs
 pIe
-puy
-iOa
+nlF
 qPL
+xkn
 vFp
 fbS
 sFI
@@ -166006,9 +166105,9 @@ cZb
 cZb
 qBg
 fDO
-kPx
 wFz
 wFz
+puy
 puy
 puy
 lWn
@@ -166210,15 +166309,15 @@ qBg
 fDO
 dbE
 lxE
-lxE
-emd
+lGP
+wAz
 emd
 quP
 dib
-qBg
+pIe
 eQJ
 jxY
-pJj
+xkn
 xhy
 qBg
 sFI
@@ -166410,18 +166509,18 @@ cZb
 cZb
 qBg
 thV
-xGr
-pPl
+iOV
+wFz
 ixb
 bVm
 bGl
-mfs
+bGl
 vwS
-qBg
+pJj
 dQN
 ppf
 xkn
-dQN
+rLW
 qBg
 sFI
 bQk
@@ -215884,7 +215983,7 @@ xyS
 jPr
 oQi
 cjo
-eYl
+iOa
 ouJ
 hcQ
 cxw
@@ -216081,12 +216180,12 @@ oDV
 hRP
 hcQ
 lOI
-eYl
+iOa
 qoY
 hcQ
 eDp
-eYl
-eYl
+iOa
+kPx
 kTf
 hcQ
 bGh
@@ -216287,9 +216386,9 @@ ovf
 ovf
 hcQ
 ecj
-eYl
-eYl
-ouJ
+lJX
+iOa
+mfs
 hcQ
 cxw
 ebz
@@ -216487,9 +216586,9 @@ hcQ
 qBM
 kTf
 kTf
-kTf
+iNO
 mGz
-eYl
+iOa
 heP
 hTw
 hcQ
@@ -216687,12 +216786,12 @@ wYN
 hhW
 hcQ
 laF
-eYl
-eYl
-eYl
+iOa
+bhc
+kPx
 qLp
-eYl
-eYl
+kPx
+kPx
 eKL
 hcQ
 caY
@@ -216889,12 +216988,12 @@ eTd
 hXM
 hcQ
 rOs
-eYl
-eYl
+kPx
+iOa
 bhX
 ktW
 dCX
-eYl
+iOa
 qYk
 hcQ
 hGG
@@ -217095,7 +217194,7 @@ hwY
 hwY
 hwY
 hGO
-kTf
+iNO
 rnK
 cBA
 hcQ
