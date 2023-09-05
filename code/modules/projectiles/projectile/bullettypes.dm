@@ -693,7 +693,7 @@
 	nocap_structures = TRUE
 	damage_types = list(BRUTE = 40) //Grab me musket as the founding fathers intended
 	armor_penetration = 50 //no longer a little jank, much like other older rifles it falters in terms of AP while still having enough to really smash through armor.
-	supereffective_mult = 5 //we do 40 damage base, up to 200 with supereffective.
+	supereffective_mult = 6 //we do 40 damage base, up to 240 with supereffective - plus AP bonus, plus agony bonus, about the same 350~ as before
 	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE) //We are great at fighting living things(other than people, for balance reasons) but not so much robots.
 	agony = 60
 	penetrating = 2
