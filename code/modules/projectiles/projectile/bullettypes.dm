@@ -692,12 +692,15 @@
 /obj/item/projectile/bullet/ball
 	nocap_structures = TRUE
 	damage_types = list(BRUTE = 40) //Grab me musket as the founding fathers intended
-	armor_penetration = 250 //It's a little jenk, but this makes it super effective against mobs while only middle against players given its slow shot pattern. -Kaz
+	armor_penetration = 50 //no longer a little jank, much like other older rifles it falters in terms of AP while still having enough to really smash through armor.
+	supereffective_mult = 5 //we do 40 damage base, up to 200 with supereffective.
+	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE) //We are great at fighting living things(other than people, for balance reasons) but not so much robots.
 	agony = 60
 	penetrating = 2
 	hitscan = TRUE //It's a bullet, but its hitscan as its only used by snipers.
+	embed = FALSE //Blow a golf ball sized hole through the first man, he's dead on the spot - No embeds, tears through
 	affective_damage_range = 12
-	affective_ap_range = 12 //Good rifling!
+	affective_ap_range = 12 //Good rifling! //wait, what? It's a smoothbore. Whatever ~_~
 	recoil = 35
 
 //Mech
