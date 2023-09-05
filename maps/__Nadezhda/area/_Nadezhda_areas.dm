@@ -152,6 +152,7 @@
 	is_maintenance = TRUE
 	flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
+	ship_area = FALSE
 	turf_initializer = new /datum/turf_initializer/maintenance()
 	ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK

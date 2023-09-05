@@ -46,7 +46,7 @@
 
 	log_and_message_admins("Active Hivemind combative players number is [active_players].")
 	if(GLOB.hive_data_bool["pop_lock"])
-		if(active_players < 15)
+		if(active_players < 0)
 			log_and_message_admins("Hivemind failed to spawn as their was less then 15 active players exspected to combat the hivemind.")
 			kill()
 			return
