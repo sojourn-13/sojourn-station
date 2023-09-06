@@ -1660,7 +1660,7 @@
 			name = "nametag ([t])"
 
 //Snowflake badge for the samurai jacket
-.
+
 /obj/item/clothing/accessory/logo
 	name = "gang logo"
 	desc = ""
