@@ -34,6 +34,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Premier's Hat"] = "captain"
+	options["Premier's old Hat"] = "captain-old"
 	options["Premier's Cap"] = "capcap"
 	options["Parade Hat"] = "officercap"
 
@@ -142,8 +143,33 @@
 //Security
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"
-	desc = "A navy blue marshal beret."
+	desc = "A stylish beret, this one has markings of the Marshals."
 	icon_state = "policeberet"
+
+/obj/item/clothing/head/rank/ironhammer/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Officer beret"] = "policeberet"
+	options["Officer beret alt"] = "syndberet"
+	options["Officer beret alt 2"] = "syndberet2"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/rank/commander
 	name = "warrant officer beret"

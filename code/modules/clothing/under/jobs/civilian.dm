@@ -62,6 +62,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["premier's uniform"] = "captain"
+	options["premier's old uniform"] = "captain-old"
 	options["premier's formal uniform"] = "captain_formal"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options

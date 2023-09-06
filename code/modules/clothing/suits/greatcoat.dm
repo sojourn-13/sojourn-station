@@ -22,9 +22,9 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Premier Cloaked Greatcoat"] = "cap_coat_cloak"
 	options["Premier Greatcoat"] = "cap_coat"
-
+	options["Premier old Greatcoat"] = "cap_coat-old"
+	options["Premiers old Cloaked Greatcoat"] = "cap_coat_cloak-old"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
