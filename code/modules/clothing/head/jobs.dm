@@ -68,6 +68,36 @@
 	desc = "Useful for hiding disdainful eyes from the godless masses."
 	icon_state = "church_hat"
 
+/obj/item/clothing/head/preacher/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Primes hat"] = "church_hat"
+	options["Primes visor"] = "nt_visor"
+	options["Primes trihat"] = "nt_trihat" //credit to Près de l'oiseau on Eris for all of these!
+	options["Primes visored trihat"] = "nt_trihat_visor"
+	options["Primes mitre"] = "nt_papalhat"
+	options["Primes visored mitre"] = "nt_papalhat_visor"
+	options["Primes illuminant mitre"] = "nt_papalhat_illuminati"
+	options["Primes visored habit"] = "nt_habithat_visor"
+	options["Primes masked habit"] = "nt_habithat_mask"
+	options["Primes hood"] = "nt_robe_hood"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 //Mime
 /obj/item/clothing/head/beret
 	name = "red beret"
