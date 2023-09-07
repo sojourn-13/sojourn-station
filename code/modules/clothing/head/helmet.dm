@@ -422,6 +422,36 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 100, rad = 0)
 
+/obj/item/clothing/head/helmet/warrant_officer/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard wo fullhelm"] = ""
+	options["Tan fullhelm"] = "-hat"
+	options["Green fullhelm"] = "-cap"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You adjust to the [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
+
+/*
 /obj/item/clothing/head/helmet/warrant_officer/update_icon()
 	if(on)
 		icon_state = "ironhammer_wo_full_on"
@@ -431,7 +461,7 @@
 		set_light(0, 0)
 	update_wear_icon()
 	..()
-
+*/ //good job forgetting to actually put a verb to turn the light on, fella. Im not fixing this for now as it may be worth it to give the WOs fancy big boy helmet something more interesting.
 //Church
 /obj/item/clothing/head/helmet/botanist
 	name = "botanist hood"
