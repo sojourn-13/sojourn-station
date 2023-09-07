@@ -15,7 +15,7 @@
 
 /obj/item/clothing/head/rank/captain
 	name = "premier's hat"
-	icon_state = "captain"
+	icon_state = "captain"  //Sprites from Eris
 	desc = "It's good being the king."
 	item_state_slots = list(
 		slot_l_hand_str = "caphat",
@@ -157,8 +157,8 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Officer beret"] = "policeberet"
-	options["Officer beret alt"] = "syndberet"
-	options["Officer beret alt 2"] = "syndberet2"
+	options["Officer beret alt"] = "syndberet" //credits to Eris for the sprite
+	options["Officer beret alt 2"] = "syndberet2" //credits to Eris for the sprite
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

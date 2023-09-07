@@ -27,7 +27,7 @@
 	var/list/options = list()
 	options["specialist jumpsuit"] = "warden"
 	options["specialist jumpskirt"] = "warden_skirt"
-	options["Specialist formalwear"] = "warden_formal"
+	options["Specialist formalwear"] = "warden_formal" //credits to Eris for the sprite - slightly modified for our uses
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -66,7 +66,7 @@
 	var/list/options = list()
 	options["officer default"] = "security"
 	options["officer jumpskirt"] = "security_skirt"
-	options["officer formal"] = "ih_formal"
+	options["officer formal"] = "ih_formal" //credits to Eris for the sprite
 	options["officer turtleneck"] = "securityrturtle"
 	options["cadet default"] = "seccadet"
 	options["cadet jumpskirt"] = "cadet"
@@ -228,7 +228,7 @@
 	var/list/options = list()
 	options["wo jumpsuit"] = "hos"
 	options["wo jumpskirt"] = "hos_skirt"
-	options["wo formalwear"] = "hos_formal"
+	options["wo formalwear"] = "hos_formal" //credits to Eris for the original sprite - slightly modified for our uses
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

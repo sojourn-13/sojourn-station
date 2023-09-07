@@ -157,7 +157,7 @@
 	brightness_on = 6 //luminosity when on
 	light_overlay = "hardhat_light"
 
-	icon_state = "mining_helmet"
+	icon_state = "mining_helmet" //Credit for sprites go to Près de l'oiseau over at Eris
 	item_state = "mining_helmet"
 	item_state_slots = list(
 		slot_l_hand_str = "mining_helm",
@@ -176,7 +176,7 @@
 /obj/item/clothing/suit/space/void/mining
 	name = "mining voidsuit"
 	desc = "A special suit that protects against hazardous, low pressure environments. Has reinforced plating."
-	item_state = "miner_suit"
+	item_state = "miner_suit" //Credit for sprites go to Près de l'oiseau over at Eris
 	icon_state = "miner_suit"
 	slowdown = 0.35
 	armor_list = list(

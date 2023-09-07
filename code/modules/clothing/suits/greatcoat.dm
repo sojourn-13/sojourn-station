@@ -2,7 +2,7 @@
 /obj/item/clothing/suit/greatcoat/cap
 	name = "premier's greatcoat"
 	desc = "A green greatcoat. Makes you feel like the leader you are supposed to be."
-	icon_state = "cap_coat"
+	icon_state = "cap_coat"  //Sprites from Eris
 	item_state = "cap_coat"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50

@@ -69,7 +69,7 @@
 
 //Upgraded version of the above, found rarely in greyson loot.
 /obj/item/clothing/head/helmet/space/os/combat
-	name = "greyson 'zhengdou' hardsuit helm"
+	name = "greyson 'zhengdou' hardsuit helm" //Credit for sprites go to Près de l'oiseau over at Eris
 	icon_state = "os_hardsuit_helm"
 	item_state = "os_hardsuit_helm"
 	desc = "A combat rated hard-suit helmet produced by GP. Despite its age, the sleek suit still stands up against its more modern counterparts."
@@ -86,7 +86,7 @@
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/suit/space/os/combat
-	name = "greyson 'zhengdou' hardsuit"
+	name = "greyson 'zhengdou' hardsuit" //Credit for sprites go to Près de l'oiseau over at Eris
 	icon_state = "os_hardsuit"
 	item_state = "os_hardsuit"
 	desc = "A combat rated hard-suit produced by GP. Despite its age, the sleek suit still stands up against its more modern counterparts and is surprisingly comfortable!"

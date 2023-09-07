@@ -1205,7 +1205,7 @@ obj/item/clothing/suit/sweater/blue
 /obj/item/clothing/suit/storage/solo
 	name = "punk jacket"
 	desc = "Authentic leather for an authentic punk."
-	icon_state = "punk_highlight"
+	icon_state = "punk_highlight" //credits to Eris for the sprites
 
 /obj/item/clothing/suit/storage/leather_jacket/punk/New(loc, jacket_type = "punk_highlight", logo_type, is_natural_spawn = TRUE)
 	..()

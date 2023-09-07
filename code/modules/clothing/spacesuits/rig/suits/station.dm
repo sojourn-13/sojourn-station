@@ -28,7 +28,7 @@
 ****************************************/
 /obj/item/rig/industrial
 	name = "industrial suit control module"
-	suit_type = "industrial hardsuit"
+	suit_type = "industrial hardsuit" //Credit for sprites go to Près de l'oiseau over at Eris
 	desc = "A heavy, powerful rig used by construction crews and mining corporations."
 	icon_state = "engineering_rig"
 	armor_list = list(

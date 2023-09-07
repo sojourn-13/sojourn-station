@@ -48,7 +48,7 @@
 /obj/item/clothing/under/rank/captain //Alright, technically not a 'civilian' but its better then giving a .dm file for a single define.
 	desc = "An authoritative green uniform with gold flair denoting the rank of Premier."
 	name = "premier's uniform"
-	icon_state = "captain"
+	icon_state = "captain"  //Sprites from Eris
 	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/captain/verb/toggle_style()
