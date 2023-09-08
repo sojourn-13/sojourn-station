@@ -1,6 +1,6 @@
 /datum/job/foreigner
 	title = "Visitor"
-	flag = ASSISTANT
+	flag = VISITOR
 	department = DEPARTMENT_CIVILIAN
 	department_flag = CIVILIAN
 	faction = MAP_FACTION

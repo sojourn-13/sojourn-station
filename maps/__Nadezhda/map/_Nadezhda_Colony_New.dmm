@@ -13865,12 +13865,6 @@
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/inside_colony)
-"dfV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/landmark/join/start/foreigner,
-/turf/simulated/floor/tiled/white/gray_perforated,
-/area/nadezhda/crew_quarters/sleep/cryo2)
 "dgi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment{
@@ -23223,7 +23217,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/landmark/join/start/foreigner,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "fgl" = (
@@ -175421,7 +175414,7 @@ vMU
 oeR
 fgj
 rqF
-dfV
+rqF
 llJ
 kFn
 kFn
