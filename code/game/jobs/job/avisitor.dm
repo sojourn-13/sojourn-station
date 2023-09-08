@@ -34,4 +34,3 @@ Regardless of what your reasons may be, remember that you are a guest in this pl
 	name = "Visitor"
 	icon_state = "player-grey"
 	join_tag = /datum/job/foreigner
-
