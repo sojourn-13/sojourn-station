@@ -2996,6 +2996,7 @@
 /area/nadezhda/pros/prep)
 "aIM" = (
 /obj/item/stool/padded,
+/obj/landmark/join/start/foreigner,
 /turf/simulated/floor/wood,
 /area/nadezhda/pros/shuttle)
 "aIQ" = (
@@ -13864,6 +13865,12 @@
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/inside_colony)
+"dfV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/foreigner,
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/crew_quarters/sleep/cryo2)
 "dgi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment{
@@ -18607,6 +18614,7 @@
 /area/nadezhda/command/fo)
 "egN" = (
 /obj/structure/bed/chair/comfy/brown,
+/obj/landmark/join/start/foreigner,
 /turf/simulated/floor/wood,
 /area/nadezhda/pros/shuttle)
 "egP" = (
@@ -23215,6 +23223,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/foreigner,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "fgl" = (
@@ -98412,6 +98421,7 @@
 /obj/structure/bed/chair/comfy/brown{
 	dir = 4
 	},
+/obj/landmark/join/start/foreigner,
 /turf/simulated/floor/wood,
 /area/nadezhda/pros/shuttle)
 "vuO" = (
@@ -175411,7 +175421,7 @@ vMU
 oeR
 fgj
 rqF
-rqF
+dfV
 llJ
 kFn
 kFn
