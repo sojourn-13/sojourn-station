@@ -61,7 +61,8 @@
 		/mob/living/simple_animal/borer/proc/write_mind,
 		/mob/living/simple_animal/borer/proc/release_host,
 		/mob/living/carbon/human/proc/psychic_whisper,
-		/mob/living/simple_animal/borer/proc/reproduce
+		/mob/living/simple_animal/borer/proc/reproduce,
+		/mob/living/simple_animal/borer/proc/sample_blood
 	)
 
 	// Abilities borer can use when controlling the host
@@ -80,7 +81,6 @@
 		"hyperzine", "tramadol", "space_drugs"
 		)
 
-	//Eclipse-added vars
 	simplemob_bonus_enabled = FALSE		//No borer simplemob damage for you.
 
 /mob/living/simple_animal/borer/roundstart
