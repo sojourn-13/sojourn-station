@@ -28,7 +28,7 @@
 ****************************************/
 /obj/item/rig/industrial
 	name = "industrial suit control module"
-	suit_type = "industrial hardsuit"
+	suit_type = "industrial hardsuit" //Credit for sprites go to Près de l'oiseau over at Eris
 	desc = "A heavy, powerful rig used by construction crews and mining corporations."
 	icon_state = "engineering_rig"
 	armor_list = list(
@@ -446,10 +446,10 @@ Technomancer RIG
 		/obj/item/rig_module/mounted/taser
 		)
 /obj/item/rig/hazard/steward
-	name = "hazard hardsuit control module"
-	suit_type = "hazard hardsuit"
-	desc = "A modification of the traditional hazard rig built for equal parts utility and defense. Marked with a seal of two Armstrong rifles crossing each other in a X at the base of the neck."
-	icon_state = "hazard_rig"
+	name = "stewards hardsuit control module"
+	desc = "A modification of the traditional combat rig built for equal parts utility and defense. Marked with a seal of two Armstrong rifles crossing each other in a X at the base of the neck."
+	icon_state = "security_rig"
+	suit_type = "combat hardsuit"
 	armor_list = list(
 		melee = 40,
 		bullet = 40,
