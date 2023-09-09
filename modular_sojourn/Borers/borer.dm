@@ -1,8 +1,8 @@
 #define BORER_EXP_LEVEL_1 20
 #define BORER_EXP_LEVEL_2 40
 #define BORER_EXP_LEVEL_3 80
-#define BORER_EXP_LEVEL_4 100 //Eclipse Edit: Reduced cost further
-#define BORER_EXP_LEVEL_5 120 //Eclipse Edit: Reduced cost further
+#define BORER_EXP_LEVEL_4 100 
+#define BORER_EXP_LEVEL_5 120
 /mob/living/simple_animal/borer
 	name = "cortical borer"
 	real_name = "cortical borer"
@@ -49,7 +49,7 @@
 		/mob/living/proc/ventcrawl,
 		/mob/living/proc/hide,
 		/mob/living/simple_animal/borer/proc/paralyze_victim,
-		/mob/living/carbon/human/proc/psychic_whisper, //Eclipse Edit: Added in from controlling host only
+		/mob/living/carbon/human/proc/psychic_whisper,
 		/mob/living/simple_animal/borer/proc/infest
 		)
 
@@ -60,7 +60,7 @@
 		/mob/living/simple_animal/borer/proc/read_mind,
 		/mob/living/simple_animal/borer/proc/write_mind,
 		/mob/living/simple_animal/borer/proc/release_host,
-		/mob/living/carbon/human/proc/psychic_whisper, //Eclipse Edit: Added in from controlling host only
+		/mob/living/carbon/human/proc/psychic_whisper,
 		/mob/living/simple_animal/borer/proc/reproduce
 	)
 
