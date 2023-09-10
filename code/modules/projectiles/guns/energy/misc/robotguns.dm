@@ -16,14 +16,14 @@
 	init_firemodes = list(
 		list(mode_name="beanbag", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag, fire_sound = 'sound/weapons/guns/fire/shotgun_combat.ogg', fire_delay=25, icon="stun"),
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/shotgun, fire_sound='sound/weapons/guns/fire/shotgun_combat.ogg', fire_delay=10, icon="kill"),
-		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun, fire_sound='sound/weapons/guns/fire/shotgun_combat.ogg'', fire_delay=10, icon="kill"),
-		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/shotgun/incendiary, fire_sound='sound/weapons/guns/fire/shotgun_combat.ogg'', fire_delay=10, icon="kill"),
+		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun, fire_sound='sound/weapons/guns/fire/shotgun_combat.ogg', fire_delay=10, icon="kill"),
+		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/shotgun/incendiary, fire_sound='sound/weapons/guns/fire/shotgun_combat.ogg', fire_delay=10, icon="kill")
 	)
 	serial_type = "SD GmbH"
 
 /obj/item/gun/energy/glock
 	name = "\"Sky\" pistol"
-	desc = "The Seinemetall Defense GmbH sky pistol, a weapon bearing a close resemblance to the traditional police high grade glock
+	desc = "The Seinemetall Defense GmbH sky pistol, a weapon bearing a close resemblance to the traditional police high grade glock"
 	icon = 'icons/obj/guns/projectile/glock.dmi'
 	icon_state = "glock"
 	item_state = "glock"
@@ -34,7 +34,7 @@
 	init_firemodes = list(
 		list(mode_name="rubber bullet", projectile_type=/obj/item/projectile/bullet/pistol_35/rubber, fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=25, icon="stun"),
 		list(mode_name="normal round", projectile_type=/obj/item/projectile/bullet/shotgun, fire_sound='sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=10, icon="kill"),
-	)
+		)
 
 /obj/item/gun/energy/smg
 	icon = 'icons/obj/guns/projectile/armsmg.dmi'
