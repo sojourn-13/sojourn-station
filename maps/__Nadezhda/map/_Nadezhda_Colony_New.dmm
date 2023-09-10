@@ -3382,8 +3382,8 @@
 "aNS" = (
 /obj/structure/salvageable/computer,
 /obj/random/structures,
-/mob/living/simple_animal/hostile/mimic,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/mimic,
 /turf/simulated/floor/tiled/dark/panels,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "aNU" = (
@@ -5451,7 +5451,7 @@
 	name = "Mixed Air Supply Control";
 	output_tag = "air_out";
 	pressure_setting = 2000;
-	sensors = list("air_sensor"="Tank")
+	sensors = list("air_sensor" = "Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -5491,7 +5491,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/crew_quarters/bar)
+/area/nadezhda/hallway/side/f2section1)
 "bmp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -5679,8 +5679,8 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/command/merchant)
 "boT" = (
-/mob/living/simple_animal/hostile/bear/excelsior,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/bear/excelsior,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "boU" = (
@@ -7320,6 +7320,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
 "bHV" = (
@@ -9430,9 +9431,9 @@
 /area/nadezhda/absolutism/bioreactor)
 "chF" = (
 /obj/effect/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /mob/living/carbon/superior_animal/roach/roachling,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "chI" = (
@@ -10794,7 +10795,6 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "cyo" = (
-/mob/living/carbon/human/monkey,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
@@ -10803,6 +10803,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/human/monkey,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/medical/virology)
 "cyq" = (
@@ -12522,8 +12523,8 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical_blackshield)
 "cQu" = (
-/mob/living/simple_animal/chicken,
 /obj/structure/flora/big/rocks2,
+/mob/living/simple_animal/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "cQA" = (
@@ -12558,7 +12559,7 @@
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
 	output_tag = "o2_out";
-	sensors = list("o2_sensor"="Tank")
+	sensors = list("o2_sensor" = "Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -13646,7 +13647,6 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/mob/living/simple_animal/corgi/E_N,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -13654,6 +13654,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/corgi/E_N,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/rnd/robotics)
 "den" = (
@@ -14360,9 +14361,9 @@
 "dmz" = (
 /obj/effect/spider/stickyweb,
 /obj/structure/grille/broken,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /mob/living/carbon/superior_animal/roach/roachling,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "dmC" = (
@@ -18517,8 +18518,8 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "egr" = (
-/mob/living/carbon/superior_animal/giant_spider/nurse,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/giant_spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "egv" = (
@@ -18634,7 +18635,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/chapel,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/crew_quarters/bar)
+/area/nadezhda/hallway/side/f2section1)
 "eht" = (
 /obj/machinery/atmospherics/unary/vent_pump,
 /obj/effect/decal/cleanable/dirt,
@@ -18733,8 +18734,8 @@
 /area/nadezhda/absolutism/storage)
 "eiM" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/roach/roachling,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/roach/roachling,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "eiN" = (
@@ -18974,7 +18975,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/crew_quarters/bar)
+/area/nadezhda/hallway/side/f2section1)
 "ema" = (
 /obj/structure/sink{
 	density = 1;
@@ -19597,8 +19598,8 @@
 /area/nadezhda/crew_quarters)
 "erk" = (
 /obj/structure/catwalk,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/giant_spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "erv" = (
@@ -22551,6 +22552,13 @@
 /obj/random/structures,
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"eXE" = (
+/obj/machinery/door/airlock{
+	id_tag = "toilet23";
+	name = "Toilet"
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/crew_quarters/toilet/public)
 "eXH" = (
 /obj/structure/cable/yellow{
 	d2 = 4;
@@ -28342,6 +28350,7 @@
 	name = "Kitchen";
 	req_access = list(28)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/nadezhda/crew_quarters/kitchen)
 "glW" = (
@@ -29747,7 +29756,7 @@
 	input_tag = "n2_in";
 	name = "Nitrogen Supply Control";
 	output_tag = "n2_out";
-	sensors = list("n2_sensor"="Tank")
+	sensors = list("n2_sensor" = "Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -29764,7 +29773,10 @@
 	},
 /area/nadezhda/maintenance/undergroundfloor1south)
 "gCP" = (
-/turf/simulated/wall,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/machinery/disposal,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/pool)
 "gCY" = (
@@ -34116,10 +34128,6 @@
 	},
 /turf/simulated/floor/reinforced/plasma,
 /area/nadezhda/engineering/atmos)
-"hCB" = (
-/turf/simulated/wall,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/crew_quarters/pool)
 "hCL" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -38996,7 +39004,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/grey,
 /obj/structure/flora/ausbushes/palebush,
 /turf/simulated/floor/beach/water/shallow,
@@ -41842,8 +41849,8 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "jkO" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/roach/roachling,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/roach/roachling,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "jkS" = (
@@ -46123,6 +46130,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/chapel)
+"khK" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 2;
+	icon_state = "shutter0";
+	id = "lonestar_lobby";
+	name = "Office Shutters";
+	opacity = 0
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/quartermaster/office)
 "khP" = (
 /obj/structure/table/standard,
 /obj/machinery/light,
@@ -46259,8 +46279,8 @@
 "kjE" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/giant_spider/nurse,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "kjH" = (
@@ -47399,10 +47419,10 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "kwl" = (
-/mob/living/simple_animal/cat/fluff/Runtime,
 /obj/structure/bed/chair/sofa/black/right{
 	dir = 4
 	},
+/mob/living/simple_animal/cat/fluff/Runtime,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
 "kwp" = (
@@ -48408,9 +48428,9 @@
 /area/nadezhda/outside/forest)
 "kIM" = (
 /obj/effect/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /mob/living/carbon/superior_animal/roach/roachling,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "kIN" = (
@@ -49767,7 +49787,7 @@
 	dir = 1;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon  Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous  Oxide","waste_sensor"="Gas  Mix  Tank")
+	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon  Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous  Oxide", "waste_sensor" = "Gas  Mix  Tank")
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
@@ -50202,7 +50222,7 @@
 	dir = 8;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon  Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous  Oxide","waste_sensor"="Gas  Mix  Tank")
+	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon  Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous  Oxide", "waste_sensor" = "Gas  Mix  Tank")
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
@@ -50443,6 +50463,13 @@
 	icon_state = "16,19"
 	},
 /area/shuttle/rocinante_shuttle_area)
+"liu" = (
+/obj/machinery/door/airlock{
+	id_tag = "toilet12";
+	name = "Unisex Restrooms"
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/crew_quarters/toilet/public)
 "liv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
@@ -52759,6 +52786,7 @@
 	name = "Church Foyer"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
 "lKF" = (
@@ -55598,8 +55626,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "mqt" = (
-/mob/living/simple_animal/hostile/bear/excelsior,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/bear/excelsior,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "mqw" = (
@@ -55905,6 +55933,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
 "mul" = (
@@ -57263,11 +57292,11 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "mIS" = (
-/mob/living/simple_animal/chicken,
 /obj/structure/railing{
 	dir = 8;
 	tag = "icon-railing0 (WEST)"
 	},
+/mob/living/simple_animal/chicken,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
@@ -58959,8 +58988,8 @@
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "nba" = (
-/mob/living/simple_animal/chicken,
 /obj/structure/sink/puddle,
+/mob/living/simple_animal/chicken,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/inside_colony)
 "nbi" = (
@@ -62119,13 +62148,14 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals10,
-/obj/machinery/button/remote/blast_door{
-	id = "toilet3";
-	name = "privacy lock";
-	pixel_x = 25
-	},
 /obj/structure/toilet{
 	dir = 8
+	},
+/obj/machinery/button/remote/airlock{
+	id = "toilet13";
+	name = "Door Bolt Control";
+	pixel_x = 25;
+	specialfunctions = 4
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/crew_quarters/toilet/public)
@@ -65886,10 +65916,10 @@
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "oxd" = (
+/obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/lizard{
 	name = "Slippy"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/crew_quarters)
 "oxf" = (
@@ -66138,7 +66168,7 @@
 	})
 "oAs" = (
 /obj/machinery/door/airlock{
-	id_tag = "toilet3";
+	id_tag = "toilet11";
 	name = "Unisex Restrooms"
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
@@ -67211,6 +67241,7 @@
 /area/nadezhda/medical/genetics)
 "oLt" = (
 /obj/machinery/door/airlock{
+	id_tag = "toilet21";
 	name = "Toilet"
 	},
 /turf/simulated/floor/tiled/white,
@@ -67491,7 +67522,7 @@
 	input_tag = "tox_in";
 	name = "Plasma Supply Control";
 	output_tag = "tox_out";
-	sensors = list("tox_sensor"="Tank")
+	sensors = list("tox_sensor" = "Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -69003,10 +69034,10 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/command/courtroom)
 "pgk" = (
-/mob/living/simple_animal/soteria_roomba,
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
 	},
+/mob/living/simple_animal/soteria_roomba,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "pgu" = (
@@ -69845,8 +69876,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/absolutism/storage)
 "ppG" = (
-/mob/living/carbon/superior_animal/roach/nanite,
 /obj/effect/floor_decal/spline/plain,
+/mob/living/carbon/superior_animal/roach/nanite,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
 	name = "murky water"
@@ -70285,8 +70316,8 @@
 "puM" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/mob/living/simple_animal/hostile/jelly,
 /obj/effect/decal/cleanable/rubble,
+/mob/living/simple_animal/hostile/jelly,
 /turf/simulated/floor/beach/water/jungledeep{
 	desc = "Filthy, stinking bilge water.";
 	name = "murky water"
@@ -70917,8 +70948,8 @@
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "pBF" = (
-/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/robot/greyson/roomba/boomba,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "pBI" = (
@@ -71462,13 +71493,14 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals10,
 /obj/landmark/storyevent/hidden_vent_antag,
-/obj/machinery/button/remote/blast_door{
-	id = "toilet2";
-	name = "privacy lock";
-	pixel_x = 25
-	},
 /obj/structure/toilet{
 	dir = 8
+	},
+/obj/machinery/button/remote/airlock{
+	id = "toilet12";
+	name = "Door Bolt Control";
+	pixel_x = 25;
+	specialfunctions = 4
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/crew_quarters/toilet/public)
@@ -72855,7 +72887,7 @@
 /obj/item/reagent_containers/glass/beaker{
 	pixel_x = 1;
 	pixel_y = 3;
-	preloaded_reagents = list("plasma"=30)
+	preloaded_reagents = list("plasma" = 30)
 	},
 /obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -73285,11 +73317,11 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/human/monkey/punpun,
 /obj/structure/railing/grey,
 /obj/structure/bed/chair/sofa/beige/right{
 	dir = 4
 	},
+/mob/living/carbon/human/monkey/punpun,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
 "qbx" = (
@@ -73561,9 +73593,9 @@
 /area/nadezhda/rnd/docking)
 "qeD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/disposal,
-/obj/structure/disposalpipe/trunk{
-	dir = 2
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/pool)
@@ -73807,8 +73839,8 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/bar)
 "qhS" = (
-/mob/living/simple_animal/frog,
 /obj/effect/decal/cleanable/rubble,
+/mob/living/simple_animal/frog,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "qij" = (
@@ -79170,7 +79202,6 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
 "rqU" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
 	dir = 4
@@ -81572,9 +81603,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/merchant)
-"rSY" = (
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/crew_quarters/bar)
 "rTe" = (
 /turf/simulated/mineral,
 /area/nadezhda/outside/forest)
@@ -81898,6 +81926,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "rXp" = (
@@ -84290,10 +84319,10 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
 "svP" = (
+/obj/structure/flora/ausbushes/grassybush,
 /mob/living/simple_animal/cow{
 	name = "Betsy"
 	},
-/obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
 "svQ" = (
@@ -84456,6 +84485,12 @@
 	},
 /obj/structure/toilet{
 	dir = 8
+	},
+/obj/machinery/button/remote/airlock{
+	id = "toilet21";
+	name = "Door Bolt Control";
+	pixel_x = 25;
+	specialfunctions = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/toilet/public)
@@ -86163,6 +86198,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
+"sQY" = (
+/obj/machinery/door/airlock{
+	id_tag = "toilet13";
+	name = "Unisex Restrooms"
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/crew_quarters/toilet/public)
 "sRi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -87037,6 +87079,13 @@
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"tbf" = (
+/obj/machinery/door/airlock{
+	id_tag = "toilet22";
+	name = "Toilet"
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/crew_quarters/toilet/public)
 "tbh" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
@@ -88848,7 +88897,7 @@
 	input_tag = "n2o_in";
 	name = "Nitrous Oxide Supply Control";
 	output_tag = "n2o_out";
-	sensors = list("n2o_sensor"="Tank")
+	sensors = list("n2o_sensor" = "Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -88918,7 +88967,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/grey,
 /obj/structure/flora/small/trailrocka4,
 /turf/simulated/floor/beach/water/shallow,
@@ -89601,7 +89649,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
 	dir = 8
@@ -90003,7 +90050,7 @@
 	input_tag = "waste_in";
 	name = "Gas Mix Tank Control";
 	output_tag = "waste_out";
-	sensors = list("waste_sensor"="Tank")
+	sensors = list("waste_sensor" = "Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -91044,8 +91091,8 @@
 /area/nadezhda/hallway/side/f2section1)
 "tTb" = (
 /obj/effect/spider/stickyweb,
-/mob/living/carbon/superior_animal/giant_spider/nurse,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/giant_spider/nurse,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "tTc" = (
@@ -92968,13 +93015,14 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals10,
-/obj/machinery/button/remote/blast_door{
-	id = "toilet1";
-	name = "privacy lock";
-	pixel_x = 25
-	},
 /obj/structure/toilet{
 	dir = 8
+	},
+/obj/machinery/button/remote/airlock{
+	id = "toilet11";
+	name = "Door Bolt Control";
+	pixel_x = 25;
+	specialfunctions = 4
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/crew_quarters/toilet/public)
@@ -97044,10 +97092,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
-"vga" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/crew_quarters/bar)
 "vgc" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -98433,7 +98477,7 @@
 /obj/machinery/reagentgrinder/portable,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/glass/beaker{
-	preloaded_reagents = list("plasma"=30)
+	preloaded_reagents = list("plasma" = 30)
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
@@ -98555,15 +98599,15 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "vvV" = (
-/mob/living/simple_animal/cat{
-	name = "Mr Snuggles"
-	},
 /obj/structure/bed/chair/sofa/black/corner{
 	dir = 4;
 	icon_state = "sofaend_left"
 	},
 /obj/effect/floor_decal/spline/wood{
 	dir = 8
+	},
+/mob/living/simple_animal/cat{
+	name = "Mr Snuggles"
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters)
@@ -98922,7 +98966,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/junction{
-	dir = 4
+	dir = 8;
+	icon_state = "pipe-j2"
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
@@ -102556,6 +102601,24 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/command/courtroom)
+"wpb" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals10{
+	dir = 10
+	},
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/machinery/button/remote/airlock{
+	id = "toilet22";
+	name = "Door Bolt Control";
+	pixel_x = 25;
+	specialfunctions = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/crew_quarters/toilet/public)
 "wpd" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -104797,6 +104860,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"wOM" = (
+/obj/effect/floor_decal/spline/wood,
+/obj/machinery/light/small,
+/turf/simulated/floor/wood/wild3,
+/area/nadezhda/crew_quarters)
 "wOV" = (
 /obj/structure/flora/small/trailrockb4,
 /turf/simulated/floor/rock,
@@ -106104,7 +106172,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/grey,
 /obj/structure/flora/small/lavarock2,
 /turf/simulated/floor/beach/water/shallow,
@@ -106661,6 +106728,14 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 2;
+	icon_state = "shutter0";
+	id = "lonestar_lobby";
+	name = "Office Shutters";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/quartermaster/office)
 "xkQ" = (
@@ -107064,6 +107139,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
 "xpY" = (
@@ -107881,7 +107957,7 @@
 	input_tag = "co2_in";
 	name = "Carbon Dioxide Supply Control";
 	output_tag = "co2_out";
-	sensors = list("co2_sensor"="Tank")
+	sensors = list("co2_sensor" = "Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -109155,7 +109231,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/grey,
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/beach/water/shallow,
@@ -111010,6 +111085,24 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/bridge)
+"yhT" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals10{
+	dir = 10
+	},
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/machinery/button/remote/airlock{
+	id = "toilet23";
+	name = "Door Bolt Control";
+	pixel_x = 25;
+	specialfunctions = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/crew_quarters/toilet/public)
 "yii" = (
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/outside/inside_colony)
@@ -163921,7 +164014,7 @@ cRJ
 qrA
 fmH
 wJb
-atw
+wOM
 htd
 ewW
 xSi
@@ -165941,7 +166034,7 @@ sEO
 cGk
 xqU
 dLV
-gJB
+rAx
 wpG
 siO
 wPD
@@ -171195,7 +171288,7 @@ sOi
 sOi
 sOi
 sOi
-hCB
+jYM
 jYM
 jYM
 jYM
@@ -175797,9 +175890,9 @@ gpP
 nol
 cOU
 blY
-vga
+whU
 elY
-rSY
+wHi
 bbM
 hGK
 cVH
@@ -175999,9 +176092,9 @@ gpP
 nol
 jFJ
 ehp
-vga
-vga
-rSY
+whU
+whU
+wHi
 bbM
 mln
 qvS
@@ -177225,7 +177318,7 @@ eoz
 cKz
 xIT
 arG
-kGy
+khK
 eSp
 seP
 ged
@@ -177831,7 +177924,7 @@ lSx
 fHf
 xBZ
 xBZ
-kGy
+khK
 jKq
 xBZ
 lfZ
@@ -180620,9 +180713,9 @@ bHX
 rfK
 kSX
 kSX
-oAs
+sQY
 kSX
-oAs
+liu
 kSX
 oAs
 kSX
@@ -217154,9 +217247,9 @@ gBD
 gBD
 gBD
 toT
-oLt
+eXE
 toT
-oLt
+tbf
 toT
 oLt
 toT
@@ -217356,9 +217449,9 @@ gBD
 gBD
 gBD
 toT
-sxq
+yhT
 toT
-sxq
+wpb
 toT
 sxq
 toT
@@ -217558,12 +217651,12 @@ gBD
 gBD
 gBD
 toT
-oGo
-oGo
-oGo
-oGo
-oGo
-oGo
+toT
+toT
+toT
+toT
+toT
+toT
 rcy
 rnX
 wSa
