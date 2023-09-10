@@ -2839,6 +2839,7 @@
 #include "code\modules\projectiles\guns\energy\pulse\ionrifle.dm"
 #include "code\modules\projectiles\guns\energy\tesla\tesla_gun.dm"
 #include "code\modules\projectiles\guns\energy\tesla\tesla_shotgun.dm"
+#include "code\modules\projectiles\guns\energy\misc\robotguns.dm"
 #include "code\modules\projectiles\guns\launcher\crossbow.dm"
 #include "code\modules\projectiles\guns\launcher\makeshift.dm"
 #include "code\modules\projectiles\guns\launcher\pneumatic.dm"
