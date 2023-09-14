@@ -49,7 +49,7 @@
 		/mob/living/proc/ventcrawl,
 		/mob/living/proc/hide,
 		/mob/living/simple_animal/borer/proc/paralyze_victim,
-		/mob/living/carbon/human/proc/psychic_whisper,
+		/mob/living/carbon/human/proc/commune,
 		/mob/living/simple_animal/borer/proc/infest
 		)
 
@@ -60,7 +60,7 @@
 		/mob/living/simple_animal/borer/proc/read_mind,
 		/mob/living/simple_animal/borer/proc/write_mind,
 		/mob/living/simple_animal/borer/proc/release_host,
-		/mob/living/carbon/human/proc/psychic_whisper,
+		/mob/living/carbon/human/proc/commune,
 		/mob/living/simple_animal/borer/proc/reproduce,
 		/mob/living/simple_animal/borer/proc/sample_blood
 	)
@@ -80,8 +80,6 @@
 		"bicaridine", "kelotane", "dexalin", "anti_toxin",
 		"hyperzine", "tramadol", "space_drugs"
 		)
-
-	simplemob_bonus_enabled = FALSE		//No borer simplemob damage for you.
 
 /mob/living/simple_animal/borer/roundstart
 	roundstart = 1
