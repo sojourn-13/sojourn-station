@@ -1,5 +1,5 @@
 //Brain slug proc for voluntary removal of control.
-/mob/living/proc/release_control()
+/mob/living/carbon/proc/release_control()
 
 	set category = "Abilities"
 	set name = "Release Control"
