@@ -138,9 +138,9 @@
 
 /obj/item/part/gun/frame/omni
 	name = "Omnirifle frame"
-	desc = "An Omnirifle frame. The ex-war criminal's delight."
+	desc = "An Omnirifle frame. The ex-war criminal's delight. Includes advanced mechanisms not often seen in more 'common' arms."
 	icon_state = "frame_omni"
-	matter = list(MATERIAL_PLASTEEL = 8)
+	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_OSMIUM = 6)
 	result = /obj/item/gun/projectile/automatic/omnirifle
 	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
 	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle, /obj/item/gun/projectile/automatic/omnirifle/rds)
