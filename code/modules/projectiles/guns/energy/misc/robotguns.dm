@@ -22,8 +22,8 @@
 	serial_type = "SD GmbH"
 
 /obj/item/gun/energy/glock
-	name = "\"Sky\" pistol"
-	desc = "The Seinemetall Defense GmbH sky pistol, a weapon bearing a close resemblance to the traditional police high grade glock"
+	name = "\"Disabler\" pistol"
+	desc = "A standardised ammunition-synthesising pistol superficially resembling the traditional Glock."
 	icon = 'icons/obj/guns/projectile/glock.dmi'
 	icon_state = "glock"
 	item_state = "glock"
@@ -33,7 +33,7 @@
 	self_recharge = 1
 	init_firemodes = list(
 		list(mode_name="rubber bullet", projectile_type=/obj/item/projectile/bullet/pistol_35/rubber, fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=25, icon="stun"),
-		list(mode_name="normal round", projectile_type=/obj/item/projectile/bullet/shotgun, fire_sound='sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=10, icon="kill"),
+		list(mode_name="normal round", projectile_type=/obj/item/projectile/bullet/pistol_35, fire_sound='sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=10, icon="kill"),
 		)
 
 /obj/item/gun/energy/smg
