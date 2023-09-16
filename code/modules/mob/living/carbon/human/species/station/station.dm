@@ -1106,7 +1106,7 @@
 	spawn_flags = IS_RESTRICTED
 
 /datum/species/slime
-	name = "Slime"
+	name = SPECIES_SLIME
 	name_plural = "slimes"
 
 	default_form = FORM_SLIME
@@ -1163,6 +1163,9 @@
 	)
 
 	perks = list(PERK_LIMB_REGEN, PERK_SLIMEBODY)
+
+/datum/species/slime/get_bodytype()
+	return "Slime"
 
 /*/datum/species/slime/handle_death(var/mob/living/carbon/human/H)
 	spawn(1)

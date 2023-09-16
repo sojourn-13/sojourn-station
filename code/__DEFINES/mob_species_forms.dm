@@ -23,6 +23,7 @@
 #define SPECIES_ZORREN_FLAT		"Dog"
 #define SPECIES_ZORREN_HIGH		"Wolf"
 #define SPECIES_STATIONXENO     "Xenomorph Hybrid"
+#define SPECIES_SLIME			"Slime"
 #define SPECIES_CUSTOM			"Custom Species"
 
 // Monkey and alien monkeys.
