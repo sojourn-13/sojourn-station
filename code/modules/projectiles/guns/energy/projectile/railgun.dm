@@ -179,7 +179,7 @@
 	else
 		return new projectile_type(src)
 
-/obj/item/gun/energy/laser/railgun/railrifle/attackby(obj/item/I, mob/user)
+/obj/item/gun/energy/laser/railgun/attackby(obj/item/I, mob/user)
 	..()
 	if(I.has_quality(QUALITY_BOLT_TURNING))
 		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
