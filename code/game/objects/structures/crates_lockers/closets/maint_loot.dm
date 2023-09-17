@@ -22,7 +22,6 @@
 	new /obj/random/pack/cloth/low_chance(src)
 	new /obj/random/pack/gun_loot/low_chance(src)
 	new /obj/random/pouch/hardcase_scrap/low_chance(src)
-	new /obj/random/cluster/roaches/lower_chance(src)
 	new /obj/random/gun_parts/low(src)
 	if(prob(20))
 		new /obj/random/gun_parts/frames(src)
@@ -46,7 +45,6 @@
 	new /obj/random/pouch/hardcase_scrap(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
-	new /obj/random/cluster/roaches/lower_chance(src)
 	if(prob(30))
 		new /obj/random/gun_parts/frames(src)
 
@@ -76,7 +74,6 @@
 	new /obj/random/pouch/hardcase_scrap/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
 	new /obj/random/pack/tech_loot/low_chance(src)
-	new /obj/random/cluster/roaches/lower_chance(src)
 	if(prob(20))
 		new /obj/random/gun_parts/frames(src)
 
@@ -108,7 +105,6 @@
 	new /obj/random/medical/low_chance(src)
 	new /obj/random/medical/low_chance(src)
 	new /obj/random/pouch/hardcase_scrap/low_chance(src)
-	new /obj/random/cluster/roaches/lower_chance(src)
 	new /obj/random/gun_parts/low(src)
 	new /obj/random/gun_parts/low(src)
 	new /obj/random/gun_parts/frames(src)
@@ -137,7 +133,6 @@
 	new /obj/random/medical/low_chance(src)
 	new /obj/random/medical/low_chance(src)
 	new /obj/random/pouch/hardcase_scrap/low_chance(src)
-	new /obj/random/cluster/roaches/lower_chance(src)
 
 /obj/structure/closet/secure_closet/rare_loot
 	name = "\improper sealed military supply closet"
@@ -156,7 +151,6 @@
 	new /obj/random/pack/gun_loot(src)
 	new /obj/random/pack/gun_loot(src)
 	new /obj/random/pouch/hardcase_scrap/low_chance(src)
-	new /obj/random/cluster/roaches/lower_chance(src)
 	new /obj/random/gun_parts(src)
 	new /obj/random/gun_parts(src)
 	new /obj/random/gun_parts/low(src)
@@ -187,7 +181,6 @@
 	new /obj/random/rations(src)
 	new /obj/random/rations(src)
 	new /obj/random/pouch/hardcase_scrap/low_chance(src)
-	new /obj/random/cluster/roaches(src)
 	if(prob(30))
 		new /obj/random/gun_parts/frames(src)
 
@@ -204,6 +197,5 @@
 	new /obj/random/rations(src)
 	new /obj/random/rations(src)
 	new /obj/random/rations(src)
-	new /obj/random/cluster/roaches/beacon(src)
 	if(prob(15))
 		new /obj/random/gun_parts/frames(src)

@@ -20,11 +20,20 @@
 	build_path = /obj/item/gun/energy/cog/sprocket
 	category = CAT_WEAPON
 
-
 /datum/design/research/item/greyson/abnegate
 	name = "\"SST Abnegate\" handgun"
 	build_path = /obj/item/gun/energy/sst
 	category = CAT_WEAPON
+
+/datum/design/research/item/greyson/systemcost
+    name = "\"SST System Cost\" light machinegun"
+    build_path = /obj/item/gun/energy/sst/systemcost
+    category = CAT_WEAPON
+
+/datum/design/research/item/greyson/formatbound
+    name = "\"SST Format Bound\" handgun"
+    build_path = /obj/item/gun/energy/sst/formatbound
+    category = CAT_WEAPON
 
 /datum/design/research/item/greyson/humility
 	name = "\"SST Humility\" shotgun"
