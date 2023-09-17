@@ -17,13 +17,13 @@
 		list(mode_name="beanbag", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag, fire_sound = 'sound/weapons/guns/fire/shotgun_combat.ogg', fire_delay=25, icon="stun"),
 		list(mode_name="slug", projectile_type=/obj/item/projectile/bullet/shotgun, fire_sound='sound/weapons/guns/fire/shotgun_combat.ogg', fire_delay=10, icon="kill"),
 		list(mode_name="buckshot", projectile_type=/obj/item/projectile/bullet/pellet/shotgun, fire_sound='sound/weapons/guns/fire/shotgun_combat.ogg', fire_delay=10, icon="kill"),
-		list(mode_name="incendiary", projectile_type=/obj/item/projectile/bullet/shotgun/incendiary, fire_sound='sound/weapons/guns/fire/shotgun_combat.ogg', fire_delay=10, icon="kill")
+		list(mode_name="pepperball", /obj/item/projectile/bullet/shotgun/beanbag/pepperball, fire_sound='sound/weapons/guns/fire/shotgun_combat.ogg', fire_delay=10, icon="stun")
 	)
 	serial_type = "SD GmbH"
 
 /obj/item/gun/energy/glock
 	name = "\"Disabler\" pistol"
-	desc = "A standardised ammunition-synthesising pistol superficially resembling the traditional Glock."
+	desc = "A standardised ammunition-synthesising pistol superficially resembling an ancient pistol."
 	icon = 'icons/obj/guns/projectile/glock.dmi'
 	icon_state = "glock"
 	item_state = "glock"
