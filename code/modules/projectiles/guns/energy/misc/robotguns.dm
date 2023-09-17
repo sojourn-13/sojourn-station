@@ -4,7 +4,7 @@
 	name = "intergrated \"State\" riot shotgun"
 	desc = "A Seinemetall Defense GmbH riot auto action shotgun, its uncommonly seen deployed in most police operation due to the success of the \"stolen\" \"Regulator\" design. \
 	This particular shotgun has been redesigned many times, never quite reaching a standard everyone was happy with, with some lauding it as confusing for a shotgun. \
-	Holds up to six 20mm shells in a tube magazine."
+	This variant has been designed to flash-synthesise ammunition from an onboard cell, for Synthetic use."
 	icon = 'icons/obj/robot_items.dmi'
 	icon_state = "riot_shotgun"
 	item_state = "riot_shotgun"
