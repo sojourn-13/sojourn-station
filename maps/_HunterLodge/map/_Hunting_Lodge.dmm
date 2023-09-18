@@ -443,7 +443,9 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "co" = (
 /obj/structure/cable/yellow{
-	icon_state = "6-8"
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -513,10 +515,12 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "cK" = (
 /obj/structure/cable/yellow{
-	icon_state = "2-9"
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-6"
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -649,10 +653,16 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/hunting_lodge)
 "dv" = (
-/obj/structure/extinguisher_cabinet{
+/obj/machinery/power/apc{
+	name = "South APC";
 	pixel_y = -28
 	},
-/obj/effect/floor_decal/industrial/warningred,
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "dw" = (
@@ -1948,6 +1958,11 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "nt" = (
 /obj/effect/floor_decal/industrial/outline/red,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "nu" = (
@@ -2776,7 +2791,9 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "yA" = (
 /obj/structure/cable/yellow{
-	icon_state = "1-5"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -2803,10 +2820,14 @@
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "yL" = (
+/obj/structure/invislight,
 /obj/structure/cable{
-	icon_state = "1-10"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/wall/wood,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "yP" = (
 /obj/structure/bed/chair/custom/onestar/red{
@@ -2891,10 +2912,10 @@
 /turf/simulated/wall/wood_barrel,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "zG" = (
-/obj/machinery/door/unpowered/simple/wood,
 /obj/structure/cable/yellow{
-	icon_state = "4-10"
+	icon_state = "4-8"
 	},
+/obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "zK" = (
@@ -2930,12 +2951,14 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "zY" = (
+/obj/machinery/power/solar,
+/obj/structure/cable,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/wall/wood,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Ae" = (
 /obj/effect/floor_decal/border/carpet/black{
@@ -2996,12 +3019,8 @@
 	dir = 4;
 	icon_state = "term"
 	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2";
-	pixel_y = 0
-	},
 /obj/machinery/power/solar_control,
+/obj/structure/cable,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Bq" = (
@@ -3418,24 +3437,22 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Gc" = (
 /obj/structure/table/woodentable,
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/large/high;
-	dir = 4;
-	name = "East APC";
-	pixel_x = 28;
-	pixel_y = 0
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-10"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-10"
-	},
 /obj/item/stack/material/wood/random{
 	rand_max = 50;
 	rand_min = 30
 	},
 /obj/item/tool/fireaxe/woodsman,
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 28
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Gz" = (
@@ -3717,13 +3734,15 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Lw" = (
-/obj/machinery/power/solar,
+/obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	icon_state = "1-8"
 	},
-/obj/structure/cable,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Lx" = (
@@ -3744,13 +3763,13 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge)
 "LK" = (
+/obj/effect/window_lwall_spawn/reinforced,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/tiled/dark/panels,
 /area/nadezhda/outside/forest/hunting_lodge)
 "LN" = (
 /obj/structure/table/woodentable,
@@ -4319,7 +4338,9 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "TY" = (
 /obj/structure/cable/yellow{
-	icon_state = "2-5"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -4373,7 +4394,10 @@
 	anchored = 1
 	},
 /obj/effect/floor_decal/industrial/box,
-/obj/structure/cable,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "UI" = (
@@ -4590,12 +4614,6 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "Yh" = (
 /obj/structure/table/woodentable,
-/obj/structure/cable{
-	icon_state = "2-9"
-	},
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
 /obj/machinery/recharger,
 /obj/machinery/light{
 	dir = 4
@@ -6059,7 +6077,7 @@ oc
 VK
 VK
 VK
-tU
+Lw
 TY
 vv
 RE
@@ -6446,9 +6464,9 @@ iB
 yY
 iB
 tj
-dP
-AA
-XL
+zY
+yL
+LK
 AL
 cK
 yA
@@ -6602,11 +6620,11 @@ iB
 yY
 iB
 tj
-Lw
-LK
-zY
-zY
-yL
+dP
+ay
+RE
+RE
+RE
 RE
 RE
 RE
