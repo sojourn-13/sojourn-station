@@ -178,6 +178,10 @@
 /datum/gear/suit/akira
 	display_name = "red jacket"
 	path = /obj/item/clothing/suit/storage/akira
+
+/datum/gear/suit/solo
+	display_name ="punk jacket"
+	path = /obj/item/clothing/suit/storage/solo
 /*
 /datum/gear/suit/radhat
 	display_name = "radiation hood"

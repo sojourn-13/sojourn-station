@@ -957,6 +957,7 @@
 	desc = "An armored vest used for day-to-day operations. This one has various pouches and straps attached."
 	icon_state = "webvest"
 	price_tag = 250 //Normal vest is worth 200, this one is worth 250 because it also has storage space
+	tool_qualities = list(QUALITY_ARMOR = 100) //every armor should have this. Just give it 'no upgrades' if it isnt supposed to have them lol
 	armor_list = list(
 		melee = 20,
 		bullet = 30,

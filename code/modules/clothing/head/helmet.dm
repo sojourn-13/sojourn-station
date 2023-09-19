@@ -420,6 +420,8 @@
 	item_state = "ironhammer_wo_full"
 	flash_protection = FLASH_PROTECTION_MODERATE
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	action_button_name = "Toggle Headlamp" //Excellent job forgetting the verb, Friend.
+	brightness_on = 4
 	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 100, rad = 0)
 
 /obj/item/clothing/head/helmet/warrant_officer/update_icon()
