@@ -20,6 +20,7 @@
 		list(mode_name="pepperball", /obj/item/projectile/bullet/shotgun/beanbag/pepperball, fire_sound='sound/weapons/guns/fire/shotgun_combat.ogg', fire_delay=10, icon="stun")
 	)
 	serial_type = "SD GmbH"
+	charge_meter = FALSE
 
 /obj/item/gun/energy/glock
 	name = "\"Disabler\" pistol"
@@ -35,6 +36,7 @@
 		list(mode_name="rubber bullet", projectile_type=/obj/item/projectile/bullet/pistol_35/rubber, fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=25, icon="stun"),
 		list(mode_name="normal round", projectile_type=/obj/item/projectile/bullet/pistol_35, fire_sound='sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=10, icon="kill"),
 		)
+	charge_meter = FALSE
 
 /obj/item/gun/energy/smg
 	icon = 'icons/obj/guns/projectile/armsmg.dmi'
@@ -50,6 +52,7 @@
 	damage_multiplier = 0.7
 	penetration_multiplier = 0.7
 	init_recoil = HANDGUN_RECOIL(0.4) //Hard to control accurately in most cases.
+	charge_meter = FALSE
 
 /obj/item/gun/energy/smg/blackshield
 	init_recoil = HANDGUN_RECOIL(0.2) //Unless you've got built-in targetting software.
