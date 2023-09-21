@@ -11,7 +11,7 @@
 	suitable_cell = /obj/item/cell/medium
 	modifystate = null
 	force = WEAPON_FORCE_PAINFUL
-	charge_cost = 600
+	charge_cost = 200
 	self_recharge = 1
 	init_firemodes = list(
 		list(mode_name="beanbag", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag, fire_sound = 'sound/weapons/guns/fire/shotgun_combat.ogg', fire_delay=25, icon="stun"),
