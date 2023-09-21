@@ -292,7 +292,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/energy/glock(src)
+	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/melee/energy/sword(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
@@ -393,7 +393,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/energy/glock(src)
+	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/reagent_containers/spray/acid(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
@@ -511,7 +511,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/energy/glock(src)
+	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/tool/baton/robot(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(80000)
@@ -747,7 +747,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/energy/glock(src)
+	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/reagent_containers/spray/lube(src)
 
 	if(R.icon_state == "mekajani")
@@ -984,7 +984,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/storage/part_replacer(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/projectile/makarov/moebius/auto_eject(src)
+	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
 
