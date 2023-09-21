@@ -53,6 +53,11 @@
 	penetration_multiplier = 0.7
 	init_recoil = HANDGUN_RECOIL(0.4) //Hard to control accurately in most cases.
 	charge_meter = FALSE
+	init_firemodes = list(
+		FULL_AUTO_300_NOLOSS,
+		BURST_3_ROUND_NOLOSS,
+		SEMI_AUTO_NODELAY
+		)
 
 /obj/item/gun/energy/smg/blackshield
 	init_recoil = HANDGUN_RECOIL(0.2) //Unless you've got built-in targetting software.
