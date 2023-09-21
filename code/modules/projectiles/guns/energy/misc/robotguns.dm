@@ -22,7 +22,7 @@
 	serial_type = "SD GmbH"
 	charge_meter = FALSE
 
-/obj/item/gun/energy/glock
+/obj/item/gun/energy/borg/pistol
 	name = "\"Disabler\" pistol"
 	desc = "A standardised ammunition-synthesising pistol superficially resembling an ancient pistol."
 	icon = 'icons/obj/guns/projectile/glock.dmi'
