@@ -21,7 +21,7 @@
 	var/stored_matter = 0
 	var/working = 0
 	var/mode = 1
-	var/list/modes = list("Floor & Walls","Low wall","Window","Grille","Airlock","Machine Frame","Computer Frame","Deconstruct")
+	var/list/modes = list("Floor & Walls","Low wall","Window","reinforced window","electrochromic window","Grille","Airlock","Machine Frame","Computer Frame","Deconstruct")
 	var/canRwall = 0
 	var/disabled = 0
 	var/construction_speed = 1 //RCD's workspeed based on the device, divides by said value
@@ -138,6 +138,24 @@
 				build_cost =  2
 
 		if(4)
+			if(gotSpace)
+				return 0
+			if(gotFloor)
+				build_type = "reinforced window"
+				build_object = /obj/structure/window/reinforced/full
+				build_delay = 30 / construction_speed
+				build_cost =  3
+
+		if(5)
+			if(gotSpace)
+				return 0
+			if(gotFloor)
+				build_type = "electrochromic window"
+				build_object = /obj/structure/window/reinforced/polarized/full
+				build_delay = 30 / construction_speed
+				build_cost =  3
+
+		if(6)
 			if(gotBlocked)
 				return 0
 			if(gotSpace)
@@ -152,7 +170,7 @@
 				build_delay = 30 / construction_speed
 				build_cost =  2
 
-		if(5)
+		if(7)
 			if(gotBlocked)
 				return 0
 			if(gotSpace)
@@ -167,7 +185,7 @@
 				build_delay = 40 / construction_speed
 				build_object = /obj/machinery/door/airlock
 
-		if(6)
+		if(8)
 			if(gotBlocked)
 				return 0
 			if(gotSpace)
@@ -182,7 +200,7 @@
 				build_delay = 40
 				build_object = /obj/machinery/constructable_frame/machine_frame
 
-		if(7)
+		if(9)
 			if(gotBlocked)
 				return 0
 			if(gotSpace)
@@ -197,7 +215,7 @@
 				build_delay = 40 / construction_speed
 				build_object = /obj/structure/computerframe
 
-		if(8)
+		if(10)
 			build_type =  "deconstruct"
 			if(gotFloor)
 				build_cost =  5 - construction_efficiency
@@ -223,7 +241,7 @@
 				build_delay = 50 / construction_speed
 			else if(istype(T,/obj/structure/computerframe))
 				build_cost =  10 - construction_efficiency
-				build_delay = 50 / construction_speed		
+				build_delay = 50 / construction_speed
 			else
 				build_type =  ""
 	if(!build_type)

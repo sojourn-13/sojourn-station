@@ -83,7 +83,7 @@
 	if (istype(I, /obj/item/scrap_lump))
 		qdel(I)
 		ping()
-		new /obj/item/stack/sheet/refined_scrap(loc)
+		new /obj/item/stack/material/refined_scrap(loc)
 		return
 	if (istype(I, /obj/item/reagent_containers/food/snacks/sandwich))
 		qdel(I)
