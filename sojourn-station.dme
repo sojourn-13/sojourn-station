@@ -717,6 +717,7 @@
 #include "code\game\jobs\wages.dm"
 #include "code\game\jobs\whitelist.dm"
 #include "code\game\jobs\job\assistant.dm"
+#include "code\game\jobs\job\avisitor.dm"
 #include "code\game\jobs\job\captain.dm"
 #include "code\game\jobs\job\church.dm"
 #include "code\game\jobs\job\civilian.dm"

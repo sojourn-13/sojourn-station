@@ -2996,6 +2996,7 @@
 /area/nadezhda/pros/prep)
 "aIM" = (
 /obj/item/stool/padded,
+/obj/landmark/join/start/foreigner,
 /turf/simulated/floor/wood,
 /area/nadezhda/pros/shuttle)
 "aIQ" = (
@@ -18612,6 +18613,7 @@
 /area/nadezhda/command/fo)
 "egN" = (
 /obj/structure/bed/chair/comfy/brown,
+/obj/landmark/join/start/foreigner,
 /turf/simulated/floor/wood,
 /area/nadezhda/pros/shuttle)
 "egP" = (
@@ -98457,6 +98459,7 @@
 /obj/structure/bed/chair/comfy/brown{
 	dir = 4
 	},
+/obj/landmark/join/start/foreigner,
 /turf/simulated/floor/wood,
 /area/nadezhda/pros/shuttle)
 "vuO" = (
