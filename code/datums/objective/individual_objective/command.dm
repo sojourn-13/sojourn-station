@@ -43,7 +43,7 @@
 */
 
 /datum/individual_objective/bluecross
-	name = "Mantal Pice"
+	name = "Mental Piece"
 	req_department = list(DEPARTMENT_COMMAND)
 	var/obj/item/target
 
@@ -54,5 +54,5 @@
 /datum/individual_objective/bluecross/assign()
 	..()
 	target = pick_bluecross_candidates()
-	desc = "Sometimes having a tricket is just nice. Acquire a [target.name] if possable..."
+	desc = "Sometimes having a trinket is just nice. Acquire a [target.name] if possable..."
 	RegisterSignal(mind_holder, COMSING_HUMAN_EQUITP, .proc/task_completed)

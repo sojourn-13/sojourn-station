@@ -1687,7 +1687,7 @@
 /turf/simulated/floor/rock/alt,
 /area/nadezhda/outside/forest/river_forest_light)
 "ts" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /obj/item/stack/material/cardboard/random,
 /obj/item/reagent_containers/glass/beaker/vial/random/toxin,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -1720,7 +1720,7 @@
 /area/nadezhda/outside/forest/river_forest_lake)
 "tK" = (
 /obj/random/scrap,
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/river_forest_lake)
 "tO" = (
@@ -1872,7 +1872,7 @@
 /turf/simulated/floor/rock/grey,
 /area/nadezhda/outside/forest/river_forest_underground)
 "vk" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /obj/item/towel/random,
 /obj/item/device/lighting/glowstick/random,
 /turf/simulated/floor/beach/water/shallow,
@@ -1913,7 +1913,7 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/forest/river_forest_dark)
 "vB" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /obj/item/stack/material/cardboard/random,
 /obj/item/reagent_containers/glass/beaker/vial/random/toxin,
 /turf/simulated/floor/beach/water/shallow,
@@ -2231,7 +2231,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/plains_farm)
 "ym" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /obj/random/cluster/roaches,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/river_forest_lake)
@@ -2439,7 +2439,7 @@
 /area/nadezhda/outside/forest/river_forest_cabin)
 "zX" = (
 /obj/random/scrap,
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /obj/random/booze,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/river_forest_lake)
@@ -3013,7 +3013,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
 "Fz" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/river_forest_lake)
 "FE" = (
@@ -3097,7 +3097,7 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest/river_forest_underground)
 "Gt" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/forest/river_forest_light)
 "Gu" = (
@@ -3587,7 +3587,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_underground)
 "LM" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /obj/item/stack/material/wood/random,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/river_forest_lake)
@@ -3615,7 +3615,7 @@
 "LX" = (
 /obj/random/scrap,
 /obj/random/junk/cigbutt,
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/river_forest_lake)
 "Mb" = (
@@ -4185,7 +4185,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "Ss" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /obj/item/oddity/common/broken_glass,
 /obj/random/circuitboard,
 /turf/simulated/floor/beach/water/shallow,
@@ -4468,7 +4468,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
 "UY" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /obj/structure/flora/ausbushes/reedbush,
 /obj/item/reagent_containers/glass/beaker/vial/random/toxin,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -4709,7 +4709,7 @@
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/outside/forest/river_forest_light)
 "Xr" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /obj/item/stack/material/wood/random,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/river_forest_lake)
@@ -4790,7 +4790,7 @@
 "Yc" = (
 /obj/random/scrap,
 /obj/random/rig_module/rare,
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/outside/forest/river_forest_lake)
 "Yg" = (

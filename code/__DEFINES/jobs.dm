@@ -5,7 +5,7 @@
 #define JOBS_MEDICAL "Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Lifeline Technician"
 #define JOBS_SCIENCE "Chief Research Overseer","Soteria Scientist","Soteria Roboticist"
 #define JOBS_LSS "Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor","Artist"
-#define JOBS_CIVILIAN "Colonist"
+#define JOBS_CIVILIAN "Colonist", "Visitor"
 #define JOBS_CHURCH "Prime", "Vector"
 #define JOBS_PROSPECTOR "Foreman","Salvager","Prospector"
 #define JOBS_NONHUMAN "AI","Robot","pAI"
@@ -26,7 +26,7 @@
 #define DEPARTMENT_CIVILIAN	"Contractors"
 #define DEPARTMENT_CHURCH	"Church of Absolute"
 #define DEPARTMENT_PROSPECTOR "Prospectors"
-#define DEPARTMENT_INDEPENDENT "Contractors"
+#define DEPARTMENT_INDEPENDENT "Independant"
 
 #define DEPARTMENT_GREYSON "Greyson Positronic"
 
