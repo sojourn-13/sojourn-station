@@ -2236,6 +2236,12 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/remote/blast_door{
+	name = "Marshals Maitenance";
+	id = "MarshMaint";
+	pixel_x = 24;
+	pixel_y = -8
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "azR" = (
@@ -45351,6 +45357,12 @@
 	name = "murky water"
 	},
 /area/nadezhda/maintenance/undergroundfloor1north)
+"jNZ" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/visible,
+/turf/simulated/floor/plating,
+/area/nadezhda/rnd/xenobiology/xenoflora)
 "jOa" = (
 /obj/machinery/microwave/burnbarrel,
 /turf/simulated/floor/rock,
@@ -48736,7 +48748,7 @@
 /obj/machinery/door/blast/shutters{
 	id = "MarshMaint";
 	name = "Marshals Maitenance";
-	dir = 4
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/tactical)
@@ -60327,6 +60339,13 @@
 /obj/structure/sink/puddle,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/outside/inside_colony)
+"nbd" = (
+/obj/structure/table/reinforced,
+/obj/structure/noticeboard/research{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/rnd/xenobiology/xenoflora)
 "nbi" = (
 /mob/living/carbon/human/monkey,
 /turf/simulated/floor/asteroid/grass,
@@ -71517,7 +71536,8 @@
 "psn" = (
 /obj/machinery/door/window/eastleft,
 /obj/machinery/door/window/brigdoor/westright{
-	req_access = list(63)
+	req_access = list(63);
+	pixel_x = 2
 	},
 /obj/structure/table/steel_reinforced,
 /obj/machinery/door/blast/shutters{
@@ -73099,7 +73119,9 @@
 /area/nadezhda/engineering/atmos)
 "pJj" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
-/turf/simulated/wall/r_wall,
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "pJk" = (
 /obj/machinery/door/airlock/command{
@@ -100662,9 +100684,6 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "vwS" = (
-/obj/structure/noticeboard/research{
-	pixel_y = -32
-	},
 /obj/machinery/atmospherics/portables_connector,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
@@ -166104,7 +166123,7 @@ uyF
 cZb
 cZb
 qBg
-fDO
+nbd
 wFz
 wFz
 puy
@@ -166314,7 +166333,7 @@ wAz
 emd
 quP
 dib
-pIe
+jNZ
 eQJ
 jxY
 xkn
@@ -172532,7 +172551,7 @@ cZb
 cZb
 cZb
 cZb
-cZb
+wCx
 wCx
 qUU
 imM
@@ -172734,7 +172753,7 @@ cZb
 cZb
 cZb
 cZb
-cZb
+wCx
 wCx
 xuF
 imM
@@ -172936,7 +172955,7 @@ cZb
 cZb
 cZb
 cZb
-cZb
+wCx
 wCx
 gUz
 imM
@@ -173138,7 +173157,7 @@ cZb
 cZb
 cZb
 cZb
-cZb
+wCx
 wCx
 jGo
 wEz
@@ -173339,8 +173358,8 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
+wCx
+wCx
 wCx
 wCx
 wCx
@@ -173541,7 +173560,7 @@ cZb
 cZb
 cZb
 cZb
-cZb
+wCx
 wCx
 wCx
 wCx
@@ -173742,8 +173761,8 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
+wCx
+wCx
 wCx
 fvs
 bfO
@@ -173944,8 +173963,8 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
+wCx
+wCx
 wCx
 jpE
 bfO
@@ -174146,8 +174165,8 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
+wCx
+wCx
 wCx
 wCx
 ljL
@@ -174348,8 +174367,8 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
+wCx
+wCx
 wCx
 jpE
 bfO
@@ -174550,8 +174569,8 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
+wCx
+wCx
 wCx
 fvs
 bfO
@@ -174752,10 +174771,10 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
 wCx
 wCx
+wCx
+vKq
 vKq
 waj
 uCY
@@ -174955,8 +174974,6 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
 wCx
 wCx
 wCx
@@ -174966,7 +174983,9 @@ wCx
 wCx
 wCx
 wCx
-egP
+wCx
+wCx
+wCx
 wMZ
 wMZ
 cnC
@@ -175157,18 +175176,18 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-bUJ
-bUJ
-bUJ
-bUJ
-bUJ
+wCx
+wCx
+wCx
+wCx
+wCx
+wCx
+wCx
+wCx
+wCx
+wCx
+wCx
+wCx
 lRa
 twA
 hgf
@@ -175361,12 +175380,12 @@ cZb
 cZb
 cZb
 cZb
-cZb
-cZb
-cZb
-cZb
-cZb
-bUJ
+wCx
+wCx
+wCx
+wCx
+wCx
+wCx
 miN
 bCL
 bpn
@@ -203044,13 +203063,13 @@ giu
 uyF
 uyF
 uyF
-uyF
+fgl
 ajp
 ajp
 kzd
 ajp
 ajp
-vhT
+ajp
 gBD
 gBD
 gBD
@@ -203246,13 +203265,13 @@ giu
 uyF
 gBD
 gBD
-gBD
+wTF
 ajp
 jQm
 fZU
 biu
 ajp
-gBD
+ajp
 gBD
 gBD
 gBD
@@ -203446,18 +203465,18 @@ uyF
 tjs
 uyF
 uyF
-gBD
-gBD
-gBD
+ajp
+ajp
+ajp
 ajp
 rUb
 fZU
 hkV
 ajp
-gBD
-gBD
-gBD
-gBD
+ajp
+ajp
+ajp
+ajp
 uSy
 tvw
 rRv
@@ -203647,7 +203666,7 @@ bVq
 pfr
 pnL
 qCS
-uyF
+fgl
 ajp
 ajp
 ajp
@@ -203659,7 +203678,7 @@ ajp
 ajp
 ajp
 ajp
-gBD
+ajp
 uSy
 tvw
 rRv
@@ -203849,7 +203868,7 @@ aiT
 cOv
 wkv
 kaI
-uyF
+fgl
 ajp
 rpL
 qCv
@@ -203861,7 +203880,7 @@ qfU
 qCv
 lnp
 ajp
-gBD
+ajp
 uSy
 vZg
 rRv
@@ -204051,7 +204070,7 @@ brY
 wLL
 jPg
 kaI
-uyF
+fgl
 ajp
 opK
 rUb
@@ -204063,7 +204082,7 @@ qfU
 rUb
 lnp
 ajp
-gBD
+ajp
 uSy
 tvw
 rRv
@@ -204253,7 +204272,7 @@ kTC
 uyF
 kTC
 uyF
-uyF
+fgl
 ajp
 gkW
 cII
@@ -204265,7 +204284,7 @@ rUb
 pXb
 wHe
 ajp
-gBD
+ajp
 uSy
 ung
 rJX
@@ -204455,7 +204474,7 @@ tQF
 pBR
 tQF
 uyF
-arU
+fgl
 ajp
 jNe
 rUb
@@ -204467,7 +204486,7 @@ fOX
 rUb
 duU
 ajp
-gBD
+ajp
 uSy
 uSy
 uSy
@@ -204657,7 +204676,7 @@ uyF
 uyF
 uyF
 uyF
-arU
+fgl
 ajp
 uhJ
 jDr
@@ -204669,7 +204688,7 @@ fRq
 jDr
 vbU
 ajp
-gBD
+ajp
 gBD
 gBD
 gBD
@@ -204683,11 +204702,11 @@ uSy
 piY
 miY
 uSy
-gBD
-gBD
-gBD
-gBD
-gBD
+iYY
+iYY
+iYY
+iYY
+iYY
 iYY
 iYY
 iYY
@@ -204859,7 +204878,7 @@ gBD
 gBD
 gBD
 gBD
-gBD
+ajp
 ajp
 xhg
 rUb
@@ -204885,17 +204904,17 @@ uSy
 piY
 dje
 uSy
+iYY
 gBD
 gBD
 gBD
 gBD
 gBD
-iYY
-iYY
-iYY
-iYY
-iYY
-iYY
+gBD
+gBD
+gBD
+gBD
+gBD
 iYY
 pHb
 brC
@@ -205061,7 +205080,7 @@ gBD
 gBD
 gBD
 gBD
-gBD
+ajp
 ajp
 iQc
 fLC
@@ -205087,18 +205106,18 @@ uSy
 piY
 jgt
 uSy
-gBD
-gBD
-gBD
-gBD
-gBD
-iYY
-iYY
-iYY
-sDV
-sDV
 iYY
 gBD
+gBD
+gBD
+gBD
+gBD
+gBD
+gBD
+qbV
+qbV
+gBD
+iYY
 pHb
 brC
 itd
@@ -205263,7 +205282,7 @@ gBD
 gBD
 gBD
 gBD
-gBD
+ajp
 ajp
 oZZ
 wcn
@@ -205289,17 +205308,17 @@ uSy
 piY
 dje
 uSy
+iYY
 gBD
 gBD
 gBD
 gBD
 gBD
-iYY
-iYY
-iYY
-iYY
-iYY
-iYY
+gBD
+gBD
+gBD
+gBD
+gBD
 iYY
 pHb
 xtc
@@ -205465,7 +205484,7 @@ gBD
 gBD
 gBD
 gBD
-gBD
+ajp
 ajp
 ien
 wcn
@@ -205491,17 +205510,17 @@ uSy
 piY
 dje
 uSy
+iYY
 gBD
 gBD
 gBD
 gBD
 gBD
-iYY
-iYY
-iYY
-iYY
-iYY
-iYY
+gBD
+gBD
+gBD
+gBD
+gBD
 iYY
 pHb
 xtc
@@ -205667,7 +205686,7 @@ gBD
 gBD
 gBD
 gBD
-gBD
+ajp
 ajp
 hYF
 awJ
@@ -205693,17 +205712,17 @@ uSy
 coS
 xPt
 uSy
-gBD
-gBD
-gBD
-gBD
-gBD
-iYY
 iYY
 gBD
-iYY
-iYY
-iYY
+gBD
+gBD
+gBD
+gBD
+gBD
+gBD
+gBD
+gBD
+gBD
 iYY
 pHb
 xtc
@@ -205869,7 +205888,7 @@ kGg
 gBD
 gBD
 gBD
-gBD
+ajp
 ajp
 krX
 krX
@@ -205904,8 +205923,8 @@ qJJ
 qJJ
 gBD
 gBD
-iYY
-iYY
+gBD
+gBD
 iYY
 pHb
 xtc
@@ -206104,10 +206123,10 @@ yeS
 oyV
 sbx
 qJJ
-iYY
 gBD
-iYY
-iYY
+gBD
+gBD
+gBD
 iYY
 pHb
 xtc
@@ -206306,10 +206325,10 @@ nau
 jOb
 jVq
 qJJ
-iYY
 gBD
-iYY
-iYY
+gBD
+gBD
+gBD
 iYY
 pHb
 xtc
@@ -206508,10 +206527,10 @@ kDc
 jOb
 hAB
 qJJ
-iYY
 gBD
 gBD
-iYY
+gBD
+gBD
 iYY
 pHb
 xtc
@@ -206710,10 +206729,10 @@ xEo
 jOb
 kAb
 qJJ
-iYY
 gBD
 gBD
-iYY
+gBD
+gBD
 iYY
 pHb
 wBj
@@ -206912,7 +206931,7 @@ nau
 jOb
 lcJ
 qJJ
-iYY
+gBD
 gBD
 gBD
 gBD
@@ -207114,11 +207133,11 @@ ckE
 hvN
 rgy
 qJJ
+gBD
+qIy
+qIy
+gBD
 iYY
-qIy
-qIy
-gBD
-gBD
 pHb
 xtc
 itd
@@ -207320,7 +207339,7 @@ gBD
 qIy
 qIy
 qIy
-gBD
+iYY
 pHb
 xtc
 itd
