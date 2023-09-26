@@ -96,6 +96,7 @@
 	desc = "This is used by the idiotic chimps with guns."
 	icon_state = "bs_headset"
 	item_state = "headset"
+	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/headset_bs
 
 /obj/item/device/radio/headset/headset_blackshield/corps
