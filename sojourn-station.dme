@@ -2821,6 +2821,7 @@
 #include "code\modules\projectiles\guns\energy\misc\lasertag.dm"
 #include "code\modules\projectiles\guns\energy\misc\mindflayer.dm"
 #include "code\modules\projectiles\guns\energy\misc\misc.dm"
+#include "code\modules\projectiles\guns\energy\misc\robotguns.dm"
 #include "code\modules\projectiles\guns\energy\misc\slimegun.dm"
 #include "code\modules\projectiles\guns\energy\misc\sonic_emitter.dm"
 #include "code\modules\projectiles\guns\energy\misc\temperature.dm"

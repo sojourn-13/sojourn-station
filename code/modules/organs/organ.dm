@@ -183,6 +183,7 @@
 	return FALSE
 
 /obj/item/organ/proc/rejuvenate()
+	status = NONE //Added in status reset so that aheal works on the organs.
 	damage = 0
 
 /obj/item/organ/proc/is_damaged()
