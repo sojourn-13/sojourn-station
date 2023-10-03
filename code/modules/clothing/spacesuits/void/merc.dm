@@ -171,6 +171,7 @@
 	name = "blood-red voidsuit"
 	desc = "An advanced suit that protects against injuries during special operations. This version is additionally reinforced against melee attacks."
 	item_state = "syndie_voidsuit"
+	slowdown = 0.5 //decent armor, decent slowdown
 	armor_list = list(
 		melee = 50,
 		bullet = 40,
