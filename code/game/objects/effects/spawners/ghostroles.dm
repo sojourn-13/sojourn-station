@@ -161,7 +161,7 @@
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/engi_ert
 	ghost_role_perks = list(PERK_INSPIRATION, PERK_HANDYMAN, PERK_SURE_STEP, PERK_TRUE_NAME)
-	short_desc = "You are Medical Emergency Personnel."
+	short_desc = "You are Engineering Emergency Personnel."
 	flavour_text = "Something has happend to the upper colony to warrent your deployment, you are a engineer first, repair the problem, law breakers are not in your juristiction."
 	assignedrole = "Guild Emergency Personnel"
 	title = "Guild Emergency Personnel"
