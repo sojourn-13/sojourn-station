@@ -107,10 +107,13 @@
 				/obj/item/part/gun/frame/thompson = 0.5,
 				/obj/item/part/gun/frame/ak47 = 0.5,
 				/obj/item/part/gun/frame/sts = 0.5,
+				/obj/item/gun/projectile/automatic/sts/rifle/heavy/sawn = 1,\
 				/obj/item/part/gun/frame/solmarine = 0.5,
 				/obj/random/gun_parts/frames = 1,
 
 				/obj/item/gun/projectile/automatic/greasegun = 1,\
+				/obj/item/gun/projectile/automatic/mac = 1,\
+				/obj/item/gun/projectile/automatic/mac/croon = 0.7,\
 				/obj/item/gun/projectile/automatic/duty = 1,\
 				/obj/item/ammo_kit = 0.8,
 				/obj/item/gun/projectile/automatic/sts/rifle/sawn = 1,\
@@ -256,6 +259,7 @@
 				/obj/item/part/gun/frame/pug = 0.5,
 				/obj/item/part/gun/frame/saiga = 0.5,
 				/obj/item/part/gun/frame/solmarine = 0.5,
+				/obj/item/gun/projectile/automatic/sts/rifle/heavy = 2,
 				/obj/item/part/gun/frame/c20r = 0.5,
 				/obj/item/part/gun/frame/omni = 0.5,
 				/obj/item/part/gun/frame/ak47 = 0.5,
@@ -267,6 +271,7 @@
 				/obj/item/gun/projectile/automatic/lmg/pk = 3,
 				/obj/item/gun/projectile/automatic/dp = 2,
 				/obj/item/gun/projectile/automatic/bastard = 2,
+				/obj/item/gun/projectile/automatic/sts/rifle/blackshield = 2,
 				/obj/item/gun/projectile/automatic/ak47/sa/tac = 1,
 				/obj/item/gun/projectile/shotgun/pump/combat = 3,
 				/obj/item/gun/projectile/shotgun/pug = 2,

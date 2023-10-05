@@ -210,6 +210,18 @@
 	name = "SolFed CAR 6.5x39mm \"Solarian\""
 	build_path = /obj/item/gun/projectile/automatic/omnirifle/solmarine
 
+/datum/design/autolathe/gun/bulldog
+	name = "Seinemetall Defense GmbH CAR 6.5x39mm \"Bulldog\""
+	build_path = /obj/item/gun/projectile/automatic/bulldog
+
+/datum/design/autolathe/gun/bulldog_rds
+	name = "Seinemetall Defense GmbH CAR 6.5x39mm \"Bulldog\" Dot Sight"
+	build_path = /obj/item/gun/projectile/automatic/bulldog/rds
+
+/datum/design/autolathe/gun/pitbull
+	name = "H&S AR 6.5x39mm \"Pitbull\""
+	build_path = /obj/item/gun/projectile/automatic/pitbull
+
 /datum/design/autolathe/gun/ostwind
 	name = "Seinemetall Defense GmbH AR 6.5x39mm \"Ostwind\""
 	build_path = /obj/item/gun/projectile/automatic/ostwind
@@ -324,6 +336,10 @@
 	name = "H&S SR 8.6x70mm \"Scout\""
 	build_path = /obj/item/gun/projectile/boltgun/scout
 
+/datum/design/autolathe/gun/sts40
+	name = "SA BR - 8.6x70mm \"STS-40\""
+	build_path = /obj/item/gun/projectile/automatic/sts/rifle/heavy
+
 /datum/design/autolathe/gun/custer
 	name = "H&S 8.6x70mm \"Custer\""
 	build_path = /obj/item/gun/projectile/boltgun/lever/custer
@@ -403,7 +419,7 @@
 /datum/design/autolathe/gun/energygun_martin
 	name = "H&S PDW E \"Martin\""
 	build_path = /obj/item/gun/energy/gun/martin
-	
+
 /datum/design/autolathe/gun/ntpistol
 	name = "NT LP \"Serenity\""
 	build_path = /obj/item/gun/energy/ntpistol

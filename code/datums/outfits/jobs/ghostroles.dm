@@ -48,7 +48,7 @@
 	l_ear  =/obj/item/device/radio/headset/heads/hos
 	uniform = /obj/item/clothing/under/rank/ih_commander
 	suit = /obj/item/clothing/suit/armor/platecarrier
-	suit_store = /obj/item/gun/projectile/automatic/mamba/copperhead
+	suit_store = /obj/item/gun/projectile/automatic/pitbull
 	r_pocket = /obj/item/clothing/accessory/badge/marshal
 	l_pocket = /obj/item/card/id/secert
 	gloves = /obj/item/clothing/gloves/stungloves
@@ -57,7 +57,7 @@
 	belt = /obj/item/storage/belt/security/tactical/marshalert
 	head = /obj/item/clothing/head/seccap
 	back = /obj/item/storage/backpack/security
-	backpack_contents = list(/obj/item/ammo_magazine/rifle_75 = 5, /obj/item/ammo_magazine/rifle_75/highvelocity = 3, /obj/item/ammo_casing/grenade/flash = 2, /obj/item/ammo_casing/grenade/blast = 2 )
+	backpack_contents = list(/obj/item/ammo_magazine/light_rifle_257_drum = 3, /obj/item/ammo_magazine/light_rifle_257_drum/highvelocity = 2, /obj/item/ammo_casing/grenade/flash = 2, /obj/item/ammo_casing/grenade/blast = 2 )
 
 /decl/hierarchy/outfit/engi_ert
 	name = "Guild Emergency Personnel"
