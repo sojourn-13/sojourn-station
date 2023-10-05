@@ -23,7 +23,7 @@
 	zoom_factors = list(0.2)
 	gun_parts = null
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
-	serial_type = "H&S"
+	serial_type = "Sol Fed"
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
