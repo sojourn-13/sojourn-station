@@ -225,7 +225,6 @@
 	name = "STS rifle frame"
 	desc = "An STS rifle frame. Cheap, effective, and replaceable."
 	icon_state = "frame_sts"
-	nra = FALSE
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/sts/rifle
 	gripvars = list(/obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/rubber)
