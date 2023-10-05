@@ -2870,6 +2870,7 @@
 #include "code\modules\projectiles\guns\projectile\automatic\lmg.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\luger.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\luty.dm"
+#include "code\modules\projectiles\guns\projectile\automatic\mac.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\mamba.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\maxim.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\motherfucker.dm"
