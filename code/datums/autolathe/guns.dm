@@ -219,7 +219,7 @@
 	build_path = /obj/item/gun/projectile/automatic/bulldog/rds
 
 /datum/design/autolathe/gun/pitbull
-	name = "H&S AR 6.5x39mm \"Pitbull\""
+	name = "SolFed AR 6.5x39mm \"Pitbull\""
 	build_path = /obj/item/gun/projectile/automatic/pitbull
 
 /datum/design/autolathe/gun/ostwind
