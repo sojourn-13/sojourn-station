@@ -468,7 +468,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/pitbull
 	disk_name = "H&S - 6.5mm Pitbull Carbine"
-	icon_state = "frozenstar"
+	icon_state = "solfed"
 
 	license = 16
 	designs = list(
