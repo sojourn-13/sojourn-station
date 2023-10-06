@@ -306,7 +306,7 @@
 		return
 	if(processing)
 		to_chat(user, SPAN_NOTICE("\The [src] is currently processing."))
-	else if(!istype(I, /obj/item/stack/material) && !istype(I, /obj/item/stack/sheet/refined_scrap))
+	else if(!istype(I, /obj/item/stack/material) && !istype(I, /obj/item/stack/material/refined_scrap))
 		to_chat(user, SPAN_NOTICE("You cannot put this in \the [src]."))
 	else
 		var/i = 0

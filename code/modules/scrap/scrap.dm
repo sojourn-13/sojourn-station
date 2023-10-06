@@ -305,7 +305,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		O = new O(get_turf(src))
 		visible_message("<span class='notice'><span style='color:orange'>\A rare [O.name] is found beneath the [src]!</span>")
 	else if(rare_item && prob(50))
-		new /obj/item/stack/sheet/refined_scrap/random(src.loc)
+		new /obj/item/stack/material/refined_scrap/random(src.loc)
 		visible_message("<span class='notice'><span style='color:orange'>A pile of refined scrap is found beneath the [src]!</span>")
 	qdel(src)
 

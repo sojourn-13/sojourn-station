@@ -9,7 +9,7 @@
 	price_tag = 780 //Quite costly
 
 /obj/item/organ_module/active/simple/armsmg/blackshield
-	holding_type = /obj/item/gun/projectile/automatic/armsmg/blackshield
+	holding_type = /obj/item/gun/energy/smg/blackshield
 
 /obj/item/organ_module/active/simple/implant_bolt_lance
 	name = "'Shooting Star' implanted bolt lance"

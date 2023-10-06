@@ -278,7 +278,7 @@
 /obj/item/storage/box/costume/nekomaid/populate_contents()
 	new /obj/item/clothing/head/costume/animal/kitty(src)
 	new /obj/item/clothing/head/costume/animal/rabbitears(src)
-	new /obj/item/clothing/under/plaid/maid(src)
+	new /obj/item/clothing/under/dress/maid(src)
 
 /obj/item/storage/box/costume/nurse
 	name = "nurse costume kit"

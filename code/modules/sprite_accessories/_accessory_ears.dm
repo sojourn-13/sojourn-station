@@ -194,6 +194,12 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/cowcalt
+	name = "Cow Horns Alt"
+	icon_state = "cowearshcalt"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/cow_nohorns
 	name = "Cow Horns, Cut"
 	desc = ""

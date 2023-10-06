@@ -41,28 +41,6 @@
 		rad = 0
 	)
 
-/obj/item/clothing/suit/armor/vest/verb/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["Baseline"] = "armor"
-	options["Security"] = "armor_security"
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
 
 /obj/item/clothing/suit/armor/vest/full
 	name = "full body armor"
@@ -73,7 +51,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
-/obj/item/clothing/suit/armor/vest/full/toggle_style()
+/obj/item/clothing/suit/armor/vest/full/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -110,7 +88,7 @@
 	)
 	price_tag = 150
 
-/obj/item/clothing/suit/armor/vest/handmade/toggle_style()
+/obj/item/clothing/suit/armor/vest/handmade/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -212,7 +190,7 @@
 	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 20, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
-/obj/item/clothing/suit/armor/vest/botanist/toggle_style()
+/obj/item/clothing/suit/armor/vest/botanist/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -244,7 +222,7 @@
 	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
-/obj/item/clothing/suit/armor/vest/acolyte/toggle_style()
+/obj/item/clothing/suit/armor/vest/acolyte/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -291,7 +269,7 @@
 	desc = "The armour of the church arms forces of old - coming from the now extinct military of New Byzantine. The inner layers has plates of biomatter-infused steel and chainmail, together with shoulder protection that elevates to protect the neck and fix it with the helmet of the same design."
 	icon_state = "divisor_guardsmen_armor"
 
-/obj/item/clothing/suit/armor/vest/path/divisor/toggle_style()
+/obj/item/clothing/suit/armor/vest/path/divisor/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -319,7 +297,7 @@
 	desc = "The Tessellate Habit is an mixture of an well protective, efficient gambeson with inner chainmail that ensures the protection of it's user."
 	icon_state = "tessellate_riding_habit"
 
-/obj/item/clothing/suit/armor/vest/path/tessallate/toggle_style()
+/obj/item/clothing/suit/armor/vest/path/tessallate/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -347,7 +325,7 @@
 	desc = "The well suited lemniscates garbs of new, made for the highest quality ceremonies by looking absurdly fancy.  It's protective values are quite close to the design of an pourpoint with inner chainmail with golden ridges and lines that only reinforces it's fanciness value."
 	icon_state = "lemniscate_garbs"
 
-/obj/item/clothing/suit/armor/vest/path/lemniscate/toggle_style()
+/obj/item/clothing/suit/armor/vest/path/lemniscate/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -375,7 +353,7 @@
 	desc = "An old design of armor, often repainted, pieced together with minor plates overlapping on the shoulders, waist and legs, with an large plate protecting the chest and belly."
 	icon_state = "monomial_kasaya"
 
-/obj/item/clothing/suit/armor/vest/path/monomial/toggle_style()
+/obj/item/clothing/suit/armor/vest/path/monomial/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -403,7 +381,7 @@
 	desc = "A Factorial's best protection well working their duties on the colony and back in its day on New Byzantine, tends to have different attachments for a more personalized garb."
 	icon_state = "factorial_powergarb"
 
-/obj/item/clothing/suit/armor/vest/path/factorial/toggle_style()
+/obj/item/clothing/suit/armor/vest/path/factorial/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -436,7 +414,7 @@
 	flags_inv = HIDEJUMPSUIT
 	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
-/obj/item/clothing/suit/armor/vest/rosaria/toggle_style()
+/obj/item/clothing/suit/armor/vest/rosaria/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -469,7 +447,7 @@
 	armor_list = list(melee = 30, bullet = 30, energy = 25, bomb = 25, bio = 100, rad = 80)
 	flags_inv = HIDEJUMPSUIT
 
-/obj/item/clothing/suit/armor/vest/custodian/toggle_style()
+/obj/item/clothing/suit/armor/vest/custodian/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -502,7 +480,7 @@
 	flags_inv = HIDEJUMPSUIT
 	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
-/obj/item/clothing/suit/armor/vest/prime/toggle_style()
+/obj/item/clothing/suit/armor/vest/prime/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -860,6 +838,29 @@
 	slowdown = 0.2
 	armor_list = list(melee = 45, bullet = 50, energy = 30, bomb = 50, bio = 0, rad = 0)
 
+
+/obj/item/clothing/suit/armor/flakvest/commander/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/armor/flakvest/commander/full
 	name = "commander's full body flak vest"
 	desc = "An armored, padded vest that's seen many long tours and is suited for heavy-duty operations. \
@@ -956,6 +957,7 @@
 	desc = "An armored vest used for day-to-day operations. This one has various pouches and straps attached."
 	icon_state = "webvest"
 	price_tag = 250 //Normal vest is worth 200, this one is worth 250 because it also has storage space
+	tool_qualities = list(QUALITY_ARMOR = 100) //every armor should have this. Just give it 'no upgrades' if it isnt supposed to have them lol
 	armor_list = list(
 		melee = 20,
 		bullet = 30,
@@ -1263,12 +1265,66 @@
 	slowdown = 0.15
 	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 0, rad = 0)
 
+/obj/item/clothing/suit/armor/platecarrier/hos/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Baseline"] = "platecarrier"
+	options["Security"] = "platecarrier_ih"
+	options["Green"] = "platecarrier_green"
+	options["Tan"] = "platecarrier_tan"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
 /obj/item/clothing/suit/armor/platecarrier/hos/full
 	name = "advanced plate carrier"
 	desc = "An armored vest carrying military grade trauma plates and advanced ballistic meshes.This set has a set of equally advanced arm and leg-guards added for increased overall protection."
 	icon_state = "platecarrier_ih_fullbody"
 	item_state = "platecarrier_ih_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+
+
+/obj/item/clothing/suit/armor/platecarrier/hos/full/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Baseline"] = "platecarrier_fullbody"
+	options["Security"] = "platecarrier_ih_fullbody"
+	options["Green"] = "platecarrier_green_fullbody"
+	options["Tan"] = "platecarrier_tan_fullbody"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /*
 // Coats

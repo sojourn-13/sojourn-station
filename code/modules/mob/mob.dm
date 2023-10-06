@@ -299,6 +299,8 @@
 
 	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/_pointed, A))
 
+	usr.visible_message("<b>[src]</b> points to [A]")
+
 /// possibly delayed verb that finishes the pointing process starting in [/mob/verb/pointed()].
 /// either called immediately or in the tick after pointed() was called, as per the [DEFAULT_QUEUE_OR_CALL_VERB()] macro
 /mob/proc/_pointed(atom/pointing_at)
@@ -1206,7 +1208,12 @@ mob/proc/yank_out_object()
 	var/table_header = "<th>Stat Name<th>Stat Value"
 	var/list/S = list()
 	for(var/TS in ALL_STATS)
-		S += "<td>[TS]<td>[getStatStats(TS)]"
+		var/points = user.stats.getStat(TS,pure = TRUE)
+		if(!user.stats.getPerk(PERK_NO_OBSUCATION))
+			S += "<td>[TS]<td> [statPointsToLevel(points)]"
+		else
+			S += "<td>[TS]<td> [points] ([statPointsToLevel(points)])"
+
 	var/data = {"
 		[additionalcss]
 		[user == src ? "Your stats:" : "[name]'s stats"]<br>

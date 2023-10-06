@@ -209,3 +209,10 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	holder.metabolism_effects.nsa_bonus -= 20
 	holder.metabolism_effects.calculate_nsa()
 	..()
+
+/datum/perk/no_obsucation
+	name = "Exact Values"
+	desc = "Unlike most people you can fully visualize your own stats, owing to your greater grasp of the concepts. \
+	This is in addition to knowing exactly how likely you were to fail after failing some tasks. \
+	This ability does not extend to medical matters, wounds or similar. "
+	icon_state = "obsucation_ranking"

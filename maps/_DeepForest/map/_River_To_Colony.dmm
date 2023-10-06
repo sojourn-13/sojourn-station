@@ -951,7 +951,7 @@
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "wq" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/colony/exposedsun/crashed_shop)
 "ws" = (
@@ -1053,7 +1053,7 @@
 /turf/unsimulated/mask,
 /area/colony/exposedsun/crashed_shop)
 "ze" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
 "zf" = (
@@ -1407,7 +1407,7 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
 "GM" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /turf/simulated/floor/rock,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "GN" = (
@@ -1634,7 +1634,7 @@
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "Lk" = (
 /obj/item/scrap_lump,
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "Lp" = (
@@ -1659,7 +1659,7 @@
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
 "LF" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "LG" = (
@@ -2295,7 +2295,7 @@
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
 "Yg" = (
-/obj/item/stack/sheet/refined_scrap/random,
+/obj/item/stack/material/refined_scrap/random,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "Yr" = (

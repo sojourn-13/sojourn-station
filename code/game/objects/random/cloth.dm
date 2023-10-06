@@ -175,7 +175,7 @@
 				/obj/item/clothing/under/color/purple = 5,
 				/obj/item/clothing/under/costume/misc/rainbowjumpsuit = 5,
 				/obj/item/clothing/under/pj = 5,
-				/obj/item/clothing/under/plaid/properblue = 5,
+				/obj/item/clothing/under/dress/properblue = 5,
 				/obj/item/clothing/under/suit_jacket/red = 5,
 				/obj/item/clothing/under/suit_jacket = 5,
 				/obj/item/clothing/under/turtleneck = 5,
@@ -504,4 +504,6 @@
 				/obj/item/clothing/suit/greatcoat/os = 4,
 				/obj/item/clothing/head/os_cap = 4,
 				/obj/item/clothing/head/helmet/space/os = 8,
-				/obj/item/clothing/suit/space/os = 8))
+				/obj/item/clothing/head/helmet/space/os/combat = 1,
+				/obj/item/clothing/suit/space/os = 8,
+				/obj/item/clothing/suit/space/os/combat = 1))

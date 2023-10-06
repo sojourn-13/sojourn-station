@@ -61,6 +61,7 @@
 	var/active_zoom_factor = 1 //Index of currently selected zoom factor
 	var/list/zoom_factors = list()//How much to scope in when using weapon,
 	var/list/initial_zoom_factors = list()
+	var/psigun = 0
 /*
 
 NOTE: For the sake of standardizing guns and extra vision range, here's a general guideline for zooming factor.
@@ -403,9 +404,13 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			return FALSE
 
 	if(I.get_tool_quality(QUALITY_WIRE_CUTTING))
-		if(!gun_parts)
+		if(psigun)
 			to_chat(user, SPAN_NOTICE("You can't dismantle [src] as it has no gun parts! How strange..."))
 			return FALSE
+		if(!gun_parts)
+			to_chat(user, SPAN_NOTICE("You can't dismantle [src], it is far too complicated!"))
+			return FALSE
+
 
 		user.visible_message(SPAN_NOTICE("[user] begins breaking apart [src]."), SPAN_WARNING("You begin breaking apart [src] for gun parts."))
 		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
@@ -584,7 +589,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		playsound(user, fire_sound_silenced, 15, 1, -3)
 	else
 		playsound(user, fire_sound, 60, 1)
-
+/*
 		if(reflex)
 			user.visible_message(
 				"<span class='reflex_shoot'><b>\The [user] fires \the [src][pointblank ? " point blank at \the [target]":""] by reflex!</b></span>",
@@ -597,7 +602,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				SPAN_WARNING("You fire \the [src]!"),
 				"You hear a [fire_sound_text]!"
 				)
-
+*/
 		if(muzzle_flash)
 			set_light(muzzle_flash)
 

@@ -56,6 +56,11 @@
 	path = /obj/item/clothing/accessory/scarf/
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/accessory/shemaghbase
+	display_name = "shemagh"
+	path = /obj/item/clothing/accessory/shemagh
+	flags = GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/accessory/shemagh
 	display_name = "colorable shemagh"
 	path = /obj/item/clothing/accessory/shemagh/recolor
