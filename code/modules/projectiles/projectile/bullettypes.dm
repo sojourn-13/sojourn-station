@@ -1053,6 +1053,7 @@
 	icon_state = "l_birdshot-1"
 	damage_types = list(BURN = 11.5) //slightly less than buck, but FAR more painful
 	armor_penetration = 15 //heated shot melt armor.
+	post_penetration_dammult = 1.5 //this is probably gonna need to be tuned back, but we'll see.
 	embed = FALSE
 	can_ricochet = FALSE
 	sharp = FALSE
