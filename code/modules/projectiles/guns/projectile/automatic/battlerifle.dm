@@ -15,7 +15,7 @@
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_DIAMOND = 3)
 	price_tag = 1500
 	penetration_multiplier = 1.0
 	damage_multiplier = 1.0
@@ -71,7 +71,7 @@
 	icon = 'icons/obj/guns/projectile/DMR.dmi'
 	icon_state = "DMR"
 	item_state = "DMR"
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10, MATERIAL_DIAMOND = 3)
 	mag_well = MAG_WELL_HRIFLE
 	gun_parts = null
 	price_tag = 2000
@@ -99,7 +99,7 @@
 	icon = 'icons/obj/guns/projectile/Osprey.dmi'
 	icon_state = "osprey"
 	item_state = "osprey"
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 10)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 10, MATERIAL_DIAMOND = 3)
 	mag_well = MAG_WELL_HRIFLE
 	price_tag = 2000
 	init_recoil = RIFLE_RECOIL(0.7)
@@ -120,7 +120,7 @@
 	icon = 'icons/obj/guns/projectile/Warthog.dmi'
 	icon_state = "warthog"
 	item_state = "warthog"
-	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_DIAMOND = 3)
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	price_tag = 1750
 	penetration_multiplier = 1.2
@@ -138,9 +138,9 @@
 
 /obj/item/part/gun/frame/omni
 	name = "Omnirifle frame"
-	desc = "An Omnirifle frame. The ex-war criminal's delight."
+	desc = "An Omnirifle frame. The ex-war criminal's delight. Includes advanced mechanisms not often seen in more 'common' arms."
 	icon_state = "frame_omni"
-	matter = list(MATERIAL_PLASTEEL = 8)
+	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_DIAMOND = 3)
 	result = /obj/item/gun/projectile/automatic/omnirifle
 	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
 	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle, /obj/item/gun/projectile/automatic/omnirifle/rds)
