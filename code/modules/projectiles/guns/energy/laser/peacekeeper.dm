@@ -1,7 +1,7 @@
 /obj/item/gun/energy/peacekeeper
 	name = "\"Peacekeeper\" energy shotgun"
 	desc = "The \"Peacekeeper\" enegry shotgun is a Marshal made weapon, specializing in blasting high-powered electrodes from its cell's charge.\
-	Despite appearing to be made in a hurry the gun is incredibly versitile, though it risks burning its cell out on lethal firemodes."
+	Despite appearing to be made in a hurry the gun is incredibly versitile."
 	icon = 'icons/obj/guns/energy/peacekeeper.dmi'
 	icon_state = "peacekeeper"
 	item_state = "peacekeeper"
@@ -13,7 +13,7 @@
 	cell_type = /obj/item/cell/medium
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_STEEL = 8, MATERIAL_WOOD = 10, MATERIAL_SILVER = 4)
-	fire_delay = 20
+	fire_delay = 15
 	init_recoil = CARBINE_RECOIL(1)
 	damage_multiplier = 1
 	penetration_multiplier = 0.7
