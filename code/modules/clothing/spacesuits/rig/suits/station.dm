@@ -411,6 +411,29 @@ Technomancer RIG
 		/obj/item/rig_module/storage/expanded/tt
 		)
 
+/obj/item/rig/light/ultra_light/cmo
+	name = "SI 'Medtek' control module"
+	desc = "An upgraded and somewhat customized soteria 'retainer' RIGsuit. Though superficially and aesthetically similar this suit has undergone a series of upgrades so as to improve its utility \
+	for Soterias resident overworked Chief of Medicine. Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
+	armor_list = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 100,
+		rad = 20
+	)
+	slowdown = -0.3 //we get a bit more speed than the baseline recovery rig as this is a unique item with exactly 0 armor. This is for zipping around medical, rather than getting in the weeds
+
+	initial_modules = list(
+		/obj/item/rig_module/modular_injector/combat,
+		/obj/item/rig_module/modular_injector/medical,
+		/obj/item/rig_module/device/healthscanner,
+		/obj/item/rig_module/vision/medhud,
+		/obj/item/rig_module/storage/expanded/tt
+		)
+
+
 /***************************************
 	Hazard Suit
 ****************************************/
