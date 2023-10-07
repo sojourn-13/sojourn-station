@@ -57,14 +57,3 @@ It also has more matterals then it takes to craft as a way to have a sunk cost.
 		return null
 	else
 		return new projectile_type(src)
-
-/obj/item/gun/energy/laser/railgun/abdicator/attackby(obj/item/I, mob/user)
-	..()
-	if(I.has_quality(QUALITY_BOLT_TURNING))
-		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
-			if(consume_cell)
-				consume_cell = FALSE
-				to_chat(user, SPAN_NOTICE("You secure the safety bolts and tune down the capacitor to safe levels, preventing the weapon from destroying empty cells for use as ammuniton."))
-			else
-				consume_cell = TRUE
-				to_chat(user, SPAN_NOTICE("You loosen the safety bolts and overclock the capacitor to unsafe levels, allowing the weapon to destroy empty cells for use as ammunition."))
