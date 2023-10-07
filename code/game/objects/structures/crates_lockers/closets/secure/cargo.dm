@@ -164,7 +164,7 @@
 				new /obj/item/ammo_magazine/smg_35(src)
 				new /obj/item/ammo_magazine/smg_35(src)
 			else
-				new /obj/item/gun/projectile/automatic/greasegun(src)
+				new /obj/item/gun/projectile/automatic/mac(src)
 				new /obj/item/ammo_magazine/smg_35(src)
 				new /obj/item/ammo_magazine/smg_35(src)
 		if("WILDCARDS")
