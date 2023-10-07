@@ -26,6 +26,7 @@ It also has more matterals then it takes to craft as a way to have a sunk cost.
 	fire_delay = 20
 	charge_cost = 150
 	iinit_recoil = CARBINE_RECOIL(1)
+	fire_delay = 5
 	damage_multiplier = 1 //already quite a bit lethal and dangerous with the burn damage and 'close range spray'.
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE) //essentially a scattershot reductor.
