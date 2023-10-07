@@ -25,7 +25,7 @@ It also has more matterals then it takes to craft as a way to have a sunk cost.
 	origin_tech = list(TECH_COMBAT = 6, TECH_MAGNET = 8, TECH_ENGINEERING = 8) //With how hard it is to make? High value.
 	fire_delay = 20
 	charge_cost = 150
-	iinit_recoil = CARBINE_RECOIL(1)
+	init_recoil = CARBINE_RECOIL(1)
 	damage_multiplier = 1 //already quite a bit lethal and dangerous with the burn damage and 'close range spray'.
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE) //essentially a scattershot reductor.
@@ -39,6 +39,32 @@ It also has more matterals then it takes to craft as a way to have a sunk cost.
 		list(mode_name="flare shell", mode_desc="fires an illuminating flare of variable colors", projectile_type=/obj/item/projectile/bullet/flare/choas, charge_cost=100, icon="grenade"),
 		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/rocket/railgun, charge_cost=30000, icon="grenade")
 	)
-
+	var/consume_cell = FALSE
 	twohanded = TRUE
 	serial_type = "AG"
+
+/obj/item/gun/energy/laser/railgun/abdicator/consume_next_projectile()
+	if(!cell) return null
+	if(!ispath(projectile_type)) return null
+	if(consume_cell && !cell.checked_use(charge_cost))
+		visible_message(SPAN_WARNING("\The [cell] of \the [src] burns out!"))
+		qdel(cell)
+		cell = null
+		playsound(loc, 'sound/weapons/Egloves.ogg', 50, 1, -1)
+		new /obj/effect/decal/cleanable/ash(get_turf(src))
+		return new projectile_type(src)
+	else if(!consume_cell && !cell.checked_use(charge_cost))
+		return null
+	else
+		return new projectile_type(src)
+
+/obj/item/gun/energy/laser/railgun/abdicator/attackby(obj/item/I, mob/user)
+	..()
+	if(I.has_quality(QUALITY_BOLT_TURNING))
+		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
+			if(consume_cell)
+				consume_cell = FALSE
+				to_chat(user, SPAN_NOTICE("You secure the safety bolts and tune down the capacitor to safe levels, preventing the weapon from destroying empty cells for use as ammuniton."))
+			else
+				consume_cell = TRUE
+				to_chat(user, SPAN_NOTICE("You loosen the safety bolts and overclock the capacitor to unsafe levels, allowing the weapon to destroy empty cells for use as ammunition."))
