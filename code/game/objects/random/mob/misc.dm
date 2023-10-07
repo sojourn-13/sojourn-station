@@ -82,6 +82,27 @@
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 60
 
+/obj/random/mob/excelsior
+	name = "random excelsior" //about a 50/50 chance to have a corpse, or an excel agent
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/excelsior/item_to_spawn()
+	return pickweight(list(
+		/obj/landmark/corpse/excelsior = 10,
+		/mob/living/carbon/superior_animal/human/excelsior = 2,
+		/mob/living/carbon/superior_animal/human/excelsior/excel_ppsh = 2,
+		/mob/living/carbon/superior_animal/human/excelsior/excel_ak = 2,
+		/mob/living/carbon/superior_animal/human/excelsior/excel_vintorez = 2,
+		/mob/living/carbon/superior_animal/human/excelsior/excel_drozd = 2
+		))
+
+
+/obj/random/mob/excelsior/low_chance
+	name = "low chance random excelsior"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 60
+
 //psionic monsters
 /obj/random/mob/psi_monster
 	name = "random psi_monster"
