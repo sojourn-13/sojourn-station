@@ -21,7 +21,7 @@
 	name = "voidsuit"
 	icon_state = "void"
 	item_state = "void"
-	desc = "A high-tech dark red space suit."
+	desc = "A high-tech dark red space suit." //not that high tech apparently. This is legacy stuff so should be avoided being messed with too
 	slowdown = 1
 	armor_list = list(
 		melee = 30,

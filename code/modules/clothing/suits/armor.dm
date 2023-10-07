@@ -557,7 +557,7 @@
 	icon_state = "bulletproof"
 	item_state = "armor"
 	blood_overlay_type = "armor"
-	slowdown = 0.5
+	slowdown = 0.15
 	armor_list = list(
 		melee = 25,
 		bullet = 60,
@@ -575,14 +575,14 @@
 	item_state = "bulletproof_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
-	slowdown = 0.6 // Heavier since it now covers more of the body
+	slowdown = 0.20 // Heavier since it now covers more of the body //actually who thought this was acceptable? .6 on specialized gear is ridiculous.
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer
 	name = "marshal bulletproof suit"
 	desc = "A bulky vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage produced by Seinemetall Defense GmbH."
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
-	slowdown = 0.6 // Heavier since it now covers more of the body
+	slowdown = 0.2 // Heavier since it now covers more of the body
 	icon_state = "bulletproof_ironhammer"
 	item_state = "bulletproof_ironhammer"
 
@@ -635,7 +635,7 @@
 	icon_state = "ablative"
 	item_state = "ablative"
 	blood_overlay_type = "armor"
-	slowdown = 0.5
+	slowdown = 0.2 //it's reflective gear...there's no reason for it to be so heavy.
 	armor_list = list(
 		melee = 25,
 		bullet = 25,
@@ -691,7 +691,7 @@
 			appearance than its capabilities. Despite its bad reputation as a tax-payer credit sink, it serves as a fairly adequate piece of gear."
 	icon_state = "ablative_bs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
-	slowdown = 0.5
+	slowdown = 0.2
 	armor_list = list(melee = 25, bullet = 25, energy = 60, bomb = 10, bio = 0, rad = 0)
 
 //Flak Vests
@@ -702,7 +702,7 @@
 	item_state = "flakvest"
 	blood_overlay_type = "armor"
 	price_tag = 250
-	slowdown = 0.5
+	slowdown = 0.2
 	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/flakvest/verb/toggle_style()
@@ -736,7 +736,7 @@
 	icon_state = "flakvest_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
-	slowdown = 0.6 // Bulkier due to protecting more
+	slowdown = 0.3 // Bulkier due to protecting more
 	armor_list = list(melee = 40, bullet = 40, energy = 20, bomb = 50, bio = 0, rad = 0) // Again, in case it doesn't inherit
 
 /obj/item/clothing/suit/armor/flakvest/full/toggle_style()
@@ -802,7 +802,7 @@
 	icon_state = "flakvest_mil_fullbody"
 	item_state = "flakvest_mil_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	slowdown = 0.6 // Bulkier due to protecting more
+	slowdown = 0.3 // Bulkier due to protecting more
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/flakvest/militia/full/toggle_style()
@@ -830,12 +830,12 @@
 		return 1
 
 /obj/item/clothing/suit/armor/flakvest/commander
-	name = "commander's flak vest"
+	name = "advanced flak vest"
 	desc = "An armored, padded vest that's seen many long tours and is suited for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. Smells of napalm and the sea."
 	icon_state = "flakvest_mil"
 	item_state = "flakvest_mil"
 	blood_overlay_type = "armor"
-	slowdown = 0.2
+	slowdown = 0.1 //faster than standard due to being fancier.
 	armor_list = list(melee = 45, bullet = 50, energy = 30, bomb = 50, bio = 0, rad = 0)
 
 
@@ -862,14 +862,14 @@
 		return 1
 
 /obj/item/clothing/suit/armor/flakvest/commander/full
-	name = "commander's full body flak vest"
+	name = "advanced full body flak vest" //
 	desc = "An armored, padded vest that's seen many long tours and is suited for heavy-duty operations. \
 			Heavy and bulky, it protects well against explosive and shrapnel. Smells of napalm and the sea. \
 			This model adds shoulder and thighs protection through additional layers of protective armor." // Thighington simps rejoice. - Seb
 	icon_state = "commander_mil_fullbody"
 	item_state = "commander_mil_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	slowdown = 0.3 // Bulkier due to protecting more
+	slowdown = 0.2 // Bulkier due to protecting more
 	stiffness = LIGHT_STIFFNESS
 	armor_list = list(
 		melee = 45,
@@ -897,14 +897,14 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	slowdown = 0.9
+	slowdown = 0.45 //.9 slowdown for such middling armor is not great.
 	max_upgrades = 2
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	armor_list = list(
-		melee = 40,
-		bullet = 35,
-		energy = 40,
-		bomb = 30,
+		melee = 50,
+		bullet = 45,
+		energy = 50,
+		bomb = 40,
 		bio = 0,
 		rad = 0
 	)
@@ -1262,7 +1262,7 @@
 	icon_state = "platecarrier_ih"
 	item_state = "platecarrier_ih"
 	blood_overlay_type = "armor"
-	slowdown = 0.15
+	slowdown = 0.10
 	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/platecarrier/hos/toggle_style()
@@ -1297,6 +1297,7 @@
 	desc = "An armored vest carrying military grade trauma plates and advanced ballistic meshes.This set has a set of equally advanced arm and leg-guards added for increased overall protection."
 	icon_state = "platecarrier_ih_fullbody"
 	item_state = "platecarrier_ih_fullbody"
+	slowdown = 0.15 //bit surprised this wasn't here, but okay
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 

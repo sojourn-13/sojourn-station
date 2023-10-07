@@ -45,9 +45,9 @@
 
 /decl/hierarchy/outfit/marshal_ert
 	name = "Marshal Agent"
-	l_ear  =/obj/item/device/radio/headset/heads/hos
+	l_ear  =/obj/item/device/radio/headset/heads/hos/bowman
 	uniform = /obj/item/clothing/under/rank/ih_commander
-	suit = /obj/item/clothing/suit/armor/platecarrier
+	suit = /obj/item/clothing/suit/armor/vest/ironhammer/full
 	suit_store = /obj/item/gun/projectile/automatic/mamba/copperhead
 	r_pocket = /obj/item/clothing/accessory/badge/marshal
 	l_pocket = /obj/item/card/id/secert
@@ -55,14 +55,31 @@
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	shoes = /obj/item/clothing/shoes/jackboots
 	belt = /obj/item/storage/belt/security/tactical/marshalert
-	head = /obj/item/clothing/head/seccap
+	head = /obj/item/clothing/head/soft/sarge2soft
 	back = /obj/item/storage/backpack/security
-	backpack_contents = list(/obj/item/ammo_magazine/rifle_75 = 5, /obj/item/ammo_magazine/rifle_75/highvelocity = 3, /obj/item/ammo_casing/grenade/flash = 2, /obj/item/ammo_casing/grenade/blast = 2 )
+	backpack_contents = list(/obj/item/ammo_magazine/rifle_75_drum = 3, /obj/item/ammo_magazine/rifle_75_drum/highvelocity = 2, /obj/item/ammo_casing/grenade/flash = 2, /obj/item/ammo_casing/grenade/blast = 2, /obj/item/modular_computer/tablet/lease/preset/command = 1 )
+
+/decl/hierarchy/outfit/blackshield_ert
+	name = "Blackshield Specialist"
+	l_ear  =/obj/item/device/radio/headset/heads/bscom/bowman
+	mask = /obj/item/clothing/mask/gas/blackshield_gasmask
+	uniform = /obj/item/clothing/under/rank/commander
+	suit_store = /obj/item/gun/projectile/automatic/omnirifle/rds
+	r_pocket = /obj/item/clothing/accessory/badge/marshal
+	l_pocket = /obj/item/card/id/secert
+	gloves = /obj/item/clothing/gloves/thick/swat/blackshield
+	glasses = /obj/item/clothing/glasses/sechud/tactical
+	shoes = /obj/item/clothing/shoes/swat
+	belt = /obj/item/storage/belt/security/tactical/shieldert
+	back = /obj/item/storage/backpack/duffelbag
+	backpack_contents = list(/obj/item/ammo_magazine/heavy_rifle_408_drum = 3, /obj/item/ammo_magazine/heavy_rifle_408_drum/slap = 2, /obj/item/ammo_magazine/heavy_rifle_408_drum/incend = 2, /obj/item/modular_computer/tablet/lease/preset/command = 1, /obj/item/storage/pouch/ammo = 1, /obj/item/clothing/suit/space/void/SCAF/blackshield = 1 )
+
 
 /decl/hierarchy/outfit/engi_ert
 	name = "Guild Emergency Personnel"
 	l_ear = /obj/item/device/radio/headset/heads/ce
 	head = /obj/item/clothing/head/firefighter/guild_emergency
+	mask = /obj/item/clothing/mask/gas/artificer
 	uniform = /obj/item/clothing/under/rank/engineer/adv_master
 	suit = /obj/item/clothing/suit/storage/hazardvest
 	r_pocket = /obj/item/device/t_scanner/advanced
@@ -70,8 +87,8 @@
 	belt = /obj/item/storage/belt/webbing/artificer/ert
 	glasses = /obj/item/clothing/glasses/powered/meson
 	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/insulated
-	back = /obj/item/storage/backpack/satchel
+	gloves = /obj/item/clothing/gloves/insulated/guild
+	back = /obj/item/storage/backpack/industrial
 	backpack_contents = list(/obj/item/rcd/industrial = 1, \
 							/obj/item/stack/material/compressed_matter/full = 1, \
 							/obj/item/stack/material/glass/plasmarglass/full = 1, \
@@ -88,13 +105,12 @@
 	name = "Auditor"
 	l_ear = /obj/item/device/radio/headset/headset_com
 	head = /obj/item/clothing/head/helmet/technomancersuit //Looks good enuff and has good armor I guess
-	uniform = /obj/item/clothing/under/suit_jacket/black
-	suit = /obj/item/clothing/suit/storage/hazardvest
+	uniform = /obj/item/clothing/under/suit_jacket/executive
+	suit = /obj/item/clothing/suit/storage/cargovest
 	r_pocket = /obj/item/device/t_scanner/advanced
 	pda_type = /obj/item/modular_computer/pda/heads
-	glasses = /obj/item/clothing/glasses/regular
-	shoes = /obj/item/clothing/shoes/color/black
-	gloves = /obj/item/clothing/gloves/color/white
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	shoes = /obj/item/clothing/shoes/laceup
 	back = /obj/item/storage/backpack/satchel
 	backpack_contents = list(/obj/item/paper = 2,
 							/obj/item/clipboard = 1,
