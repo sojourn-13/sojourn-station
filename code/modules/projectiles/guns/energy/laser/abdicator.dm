@@ -39,7 +39,7 @@ It also has more matterals then it takes to craft as a way to have a sunk cost.
 		list(mode_name="flare shell", mode_desc="fires an illuminating flare of variable colors", projectile_type=/obj/item/projectile/bullet/flare/choas, charge_cost=100, icon="grenade"),
 		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/rocket/railgun, charge_cost=30000, icon="grenade")
 	)
-	var/consume_cell = FALSE
+	consume_cell = FALSE
 	twohanded = TRUE
 	serial_type = "AG"
 
