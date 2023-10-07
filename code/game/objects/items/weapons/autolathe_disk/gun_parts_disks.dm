@@ -134,6 +134,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/gun_frame/specop,
 		/datum/design/autolathe/gun_frame/dp,
 		/datum/design/autolathe/gun_frame/opshot,
+		/datum/design/autolathe/gun_frame/wind,
 		/datum/design/autolathe/gun_frame/takeshi,
 		/datum/design/autolathe/gun_frame/omni
 	)

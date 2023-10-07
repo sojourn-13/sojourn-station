@@ -12,7 +12,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	auto_eject = 1
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_DIAMOND = 2)
 	price_tag = 1750
 	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'

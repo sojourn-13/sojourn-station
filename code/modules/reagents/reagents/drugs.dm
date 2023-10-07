@@ -429,6 +429,43 @@
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.add_chemical_effect(CE_PULSE, 1)
 
+/datum/reagent/drug/nanoblood
+	name = "Nanoblood"
+	id = "nanoblood"
+	description =  "A highly dangerous and highly advanced Erythropoiesis-stimulant. Typically reserved for high-end paramedic services or military hospitals - any instance where the \
+	low LD-50 and difficulty of synthesis can be considered acceptable in the face of its rapid effectiveness even in low doses. Must be stored at temperatures not significantly higher\
+	than the human body."
+	taste_description = "copper and batteries"
+	reagent_state = LIQUID
+	metabolism = REM
+	overdose = REAGENTS_OVERDOSE/10
+	color = "#8a0303"
+
+/datum/reagent/drug/nanoblood/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_BLOODRESTORE, 4.5 * effect_multiplier)
+
+/datum/reagent/drug/nanoblood/overdose(var/mob/living/carbon/M, var/alien)
+	M.add_side_effect("Headache", 11) //hypertension
+	M.add_chemical_effect(CE_PULSE, 2)
+	M.adjustCloneLoss(6) //rapidly growing cancer, it was nice knowing you friend.
+
+
+/datum/reagent/drug/nanobad
+	name = "Ruined Nanoblood"
+	id = "nanobad"
+	taste_description = "rotting copper"
+	reagent_state = LIQUID
+	metabolism = REM
+	overdose = REAGENTS_OVERDOSE/10
+	color = "#8a0303"
+	description = "A highly dangerous and highly advanced Erythropoiesis-stimulant that has been improperly stored. Generally identifiable by an off-color, if it has not been kept in incorrect\
+	 conditions for too long it will likely still work albeit notably less potently, though side effects are highly likely."
+
+/datum/reagent/drug/nanobad/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_BLOODRESTORE, 3 * effect_multiplier)
+	M.add_side_effect("Headache", 6)
+	M.adjustCloneLoss(2) //less rapid cancer, still not good perhaps?
+
 /datum/reagent/drug/sanguinum
 	name = "Sanguinum"
 	id = "sanguinum"
