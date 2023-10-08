@@ -46382,8 +46382,7 @@
 /obj/machinery/power/apc{
 	locked = 0;
 	name = "South APC";
-	pixel_y = -28;
-	operating = 0
+	pixel_y = -28
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -65767,8 +65766,7 @@
 /obj/machinery/power/apc{
 	locked = 0;
 	name = "South APC";
-	pixel_y = -28;
-	operating = 0
+	pixel_y = -28
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
@@ -106632,8 +106630,7 @@
 /obj/machinery/power/apc{
 	locked = 0;
 	name = "South APC";
-	pixel_y = -28;
-	operating = 0
+	pixel_y = -28
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/crew_quarters/sleep/bedrooms)
