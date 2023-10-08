@@ -46926,8 +46926,11 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/server)
 "kcC" = (
-/obj/landmark/corpse/commander,
-/obj/random/oddity_guns,
+/mob/living/carbon/human/skeleton{
+	bruteloss = 200;
+	faction = "stalker"
+	},
+/obj/item/device/radio/headset/heads/hop,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "kcK" = (
@@ -62588,6 +62591,16 @@
 /obj/item/scrap_lump,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/engineering/engine_waste)
+"nwq" = (
+/obj/item/organ/internal/bone/head{
+	pixel_y = -5
+	},
+/obj/item/clothing/head/rank/first_officer{
+	pixel_y = 9;
+	pixel_x = -3
+	},
+/turf/simulated/floor/rock,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "nwr" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/bushc1,
@@ -63937,6 +63950,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "nJw" = (
 /obj/structure/catwalk,
+/obj/structure/barricade,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "nJA" = (
@@ -99424,7 +99438,8 @@
 /area/nadezhda/absolutism/bioreactor)
 "vcV" = (
 /obj/effect/decal/cleanable/rubble,
-/obj/landmark/corpse/hobo,
+/obj/random/oddity_guns,
+/obj/item/organ/internal/bone/l_arm,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "vcW" = (
@@ -110973,6 +110988,15 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/engineering/engine_waste)
+"xzQ" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/organ/internal/bone/chest{
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/obj/item/clothing/under/rank/assistant,
+/turf/simulated/floor/rock,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "xzV" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/random/spider_trap_burrowing/low_chance,
@@ -132448,7 +132472,7 @@ arU
 arU
 nhz
 kcC
-kXs
+vcV
 arU
 xhA
 arU
@@ -132650,7 +132674,7 @@ arU
 arU
 arU
 arU
-xuK
+nwq
 xKd
 xhA
 xhA
@@ -132841,7 +132865,7 @@ xhA
 arU
 dRV
 xuK
-vcV
+kXs
 puJ
 arU
 qqQ
@@ -133045,7 +133069,7 @@ arU
 lTx
 xuK
 xuK
-kXs
+xzQ
 xuK
 vkZ
 xuK
