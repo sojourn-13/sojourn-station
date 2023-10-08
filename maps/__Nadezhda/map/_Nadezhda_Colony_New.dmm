@@ -3269,8 +3269,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -3671,8 +3670,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -5957,8 +5955,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
@@ -10426,8 +10423,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -13515,8 +13511,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -15049,8 +15044,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -23077,8 +23071,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -29065,8 +29058,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -32535,8 +32527,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -40532,8 +40523,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -40954,6 +40944,14 @@
 /obj/machinery/r_n_d/destructive_analyzer,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/research)
+"iNX" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
+	},
+/turf/simulated/wall/r_wall,
+/area/turret_protected/ai)
 "iOa" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/hydroponics{
@@ -44129,8 +44127,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -44619,8 +44616,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -44691,8 +44687,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -53639,8 +53634,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -64034,8 +64028,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
@@ -65057,8 +65050,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
@@ -65735,8 +65727,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -68988,8 +68979,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -71553,8 +71543,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -79074,8 +79063,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -79747,8 +79735,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -82883,8 +82870,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -85689,8 +85675,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/orange,
 /obj/structure/cable/orange{
@@ -85785,8 +85770,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/effect/decal/mecha_wreckage/hoverpod,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -87112,8 +87096,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -87446,8 +87429,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -87752,8 +87734,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -92776,8 +92757,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/command/teleporter)
@@ -93719,8 +93699,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -100890,8 +100869,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable{
 	d2 = 8;
@@ -105180,8 +105158,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 2;
@@ -109790,8 +109767,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -110691,8 +110667,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/structure/cable/green{
 	d2 = 4;
@@ -110915,8 +110890,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/storage/primary)
@@ -113262,8 +113236,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
-	pixel_y = 28;
-	operating = 0
+	pixel_y = 28
 	},
 /obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/white,
@@ -129121,7 +129094,7 @@ cZb
 tad
 yfl
 tiQ
-yfl
+iNX
 iIt
 rMK
 aoE
