@@ -515,7 +515,6 @@
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "pararein")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "pararein")
 	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "pararein")
-	M.add_chemical_effect(CE_TOXIN, strength)
 
 /datum/reagent/toxin/aranecolmin
 	name = "Aranecolmin"
