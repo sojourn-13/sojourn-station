@@ -782,6 +782,11 @@
 /obj/random/lowkeyrandom/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
+"aOF" = (
+/obj/machinery/porta_turret/excelsior/preloaded,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/asteroid/rogue)
 "aOP" = (
 /obj/structure/cable/yellow{
 	d2 = 2;
@@ -893,6 +898,11 @@
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"aXQ" = (
+/obj/random/junk,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/asteroid/rogue)
 "aYf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/standard{
@@ -942,6 +952,7 @@
 "bam" = (
 /obj/machinery/recharger,
 /obj/structure/table/standard,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/asteroid/rogue)
 "baC" = (
@@ -2642,6 +2653,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "cDT" = (
 /obj/random/dungeon_ammo/low_chance,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/asteroid/rogue)
 "cEk" = (
@@ -3129,6 +3141,11 @@
 /obj/structure/closet/secure_closet/anesthetics,
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/zoo)
+"cZS" = (
+/obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/asteroid/rogue)
 "dae" = (
 /obj/random/mob/nightmare,
 /turf/simulated/floor/wood/wild5,
@@ -3461,6 +3478,7 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/asteroid/rogue)
 "duC" = (
@@ -10119,6 +10137,12 @@
 /obj/structure/grille,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
+"jXa" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/filth,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/asteroid/rogue)
 "jXk" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/item/material/shard,
@@ -12916,6 +12940,11 @@
 /obj/item/stool/padded,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"mKd" = (
+/obj/effect/decal/cleanable/filth,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/asteroid/rogue)
 "mKm" = (
 /obj/effect/step_trigger/vault_bunker_1A,
 /turf/simulated/floor/tiled/dark,
@@ -13228,6 +13257,11 @@
 /obj/machinery/door/airlock,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"mWP" = (
+/obj/random/dungeon_gun_ballistic,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/asteroid/rogue)
 "mWT" = (
 /obj/structure/table/rack/shelf,
 /obj/random/booze/low_chance,
@@ -13806,6 +13840,7 @@
 /area/nadezhda/outside/one_star)
 "nxU" = (
 /obj/item/towel,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/asteroid/rogue)
 "nxY" = (
@@ -13855,6 +13890,11 @@
 /obj/structure/flora/small/bushb3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"nAW" = (
+/obj/effect/decal/cleanable/filth,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/asteroid/rogue)
 "nBv" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/grass,
@@ -14544,6 +14584,7 @@
 /area/nadezhda/outside/one_star)
 "olN" = (
 /obj/item/part/gun/frame/vintorez,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/asteroid/rogue)
 "omd" = (
@@ -14774,6 +14815,11 @@
 	},
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/colony/exposedsun/crashed_shop/outsider)
+"oxg" = (
+/obj/structure/barricade,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/asteroid/rogue)
 "oxj" = (
 /obj/machinery/light{
 	dir = 1
@@ -15062,6 +15108,11 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
+"oJL" = (
+/obj/structure/table/bench/standard,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/asteroid/rogue)
 "oKr" = (
 /obj/structure/sign/departmentold/medical2,
 /turf/simulated/wall/r_wall,
@@ -15223,6 +15274,11 @@
 /obj/structure/flora/rock/variant2,
 /turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/dungeon/outside/zoo)
+"oRj" = (
+/obj/machinery/washing_machine,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/asteroid/rogue)
 "oRl" = (
 /obj/machinery/light/small,
 /obj/structure/table/standard,
@@ -15643,6 +15699,12 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star)
+"pky" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_drozd,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/asteroid/rogue)
 "pkC" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/busha1,
@@ -17113,6 +17175,12 @@
 /obj/structure/barricade,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"qxH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/dungeon_ammo/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/asteroid/rogue)
 "qxJ" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -17650,6 +17718,11 @@
 "qVj" = (
 /turf/simulated/mineral/random/rogue,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"qVz" = (
+/mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/asteroid/rogue)
 "qWt" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/simulated/floor/asteroid/grass,
@@ -18644,6 +18717,7 @@
 /obj/item/mine/excelsior,
 /obj/item/trash/material/metal,
 /obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/asteroid/rogue)
 "rWf" = (
@@ -19018,6 +19092,7 @@
 "snc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/peachcan,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/asteroid/rogue)
 "snd" = (
@@ -19849,6 +19924,7 @@
 "tgr" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/bag/trash,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/asteroid/rogue)
 "tgL" = (
@@ -20733,6 +20809,19 @@
 /obj/random/rations,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"uao" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/obj/random/closet_tech/low_chance,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/asteroid/rogue)
 "uaW" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -20850,6 +20939,9 @@
 /area/nadezhda/dungeon/outside/safehouse)
 "ufe" = (
 /obj/machinery/clonepod,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/asteroid/rogue)
 "ufg" = (
@@ -20910,6 +21002,9 @@
 "ugC" = (
 /obj/structure/fireaxecabinet{
 	pixel_y = 30
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/asteroid/rogue)
@@ -22964,6 +23059,11 @@
 /obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"wdn" = (
+/obj/effect/decal/cleanable/ash,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/asteroid/rogue)
 "wdt" = (
 /obj/random/closet,
 /turf/simulated/floor/tiled/dark,
@@ -23927,6 +24027,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "xcF" = (
 /obj/item/trash/mre_paste,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/asteroid/rogue)
 "xdH" = (
@@ -49804,8 +49905,8 @@ coU
 rKz
 amr
 hgL
-jgj
-jgj
+aXQ
+aXQ
 qmN
 oFk
 qjc
@@ -50225,7 +50326,7 @@ lTl
 pHI
 hgL
 xQf
-hgL
+pHI
 jva
 hgL
 pHI
@@ -50434,13 +50535,13 @@ vJM
 ggb
 hgL
 jnq
-hgL
-hgL
-hgL
+pHI
+pHI
+pHI
 hgL
 jnq
 hgL
-hgL
+pHI
 hgL
 wvJ
 rKz
@@ -50645,10 +50746,10 @@ ojC
 hgL
 sUx
 hgL
-hgL
+pHI
 syk
 hgL
-hgL
+pHI
 hgL
 hgL
 wvJ
@@ -51065,7 +51166,7 @@ gqN
 hgL
 hgL
 tgr
-hgL
+pHI
 hgL
 hgL
 jva
@@ -51277,7 +51378,7 @@ hgL
 aNV
 dpI
 hgL
-utC
+oxg
 hgL
 rKz
 jgj
@@ -52319,7 +52420,7 @@ oNj
 oNj
 oNj
 oNj
-oNj
+bRP
 cvA
 oNj
 aFi
@@ -52528,7 +52629,7 @@ edP
 thh
 iiZ
 kBY
-xCX
+mKd
 uhF
 bRP
 aFi
@@ -53794,7 +53895,7 @@ jgj
 dpI
 hgL
 kzu
-hgL
+yhY
 rKz
 coU
 coU
@@ -54198,7 +54299,7 @@ mNA
 mNA
 mNA
 oNj
-aWi
+ucC
 mNA
 mNA
 szl
@@ -54406,11 +54507,11 @@ nJu
 aFi
 oNj
 szl
+bRP
+bRP
 oNj
-oNj
-oNj
-jfz
-oNj
+cZS
+bRP
 qcp
 bvs
 snd
@@ -54620,7 +54721,7 @@ oNj
 oNj
 oPF
 oNj
-oNj
+bRP
 nJu
 mUI
 hBa
@@ -55673,7 +55774,7 @@ rKz
 oel
 bRP
 snd
-oNj
+bRP
 vBH
 afk
 rKz
@@ -55882,7 +55983,7 @@ tQp
 bRP
 bRP
 oNj
-oNj
+bRP
 snd
 oNj
 rKz
@@ -57546,7 +57647,7 @@ jrF
 woR
 vnE
 rKz
-sNe
+aOF
 oNj
 oNj
 kts
@@ -57966,7 +58067,7 @@ uyY
 uea
 rKz
 oNj
-oNj
+bRP
 rKz
 eHy
 vbn
@@ -58168,13 +58269,13 @@ hgL
 pHI
 hYL
 rKz
-jgj
+aXQ
 dHR
 fyp
 pHI
 vQG
 rKz
-oNj
+bRP
 oNj
 wZW
 tFv
@@ -58378,7 +58479,7 @@ hgL
 hgL
 tCZ
 hgL
-dpI
+nAW
 hgL
 hgL
 ubp
@@ -58587,7 +58688,7 @@ hgL
 kdd
 rKz
 ugC
-hgL
+pHI
 cDT
 hgL
 ubp
@@ -58797,7 +58898,7 @@ yhY
 rKz
 fQG
 jnq
-hgL
+pHI
 hgL
 ima
 rKz
@@ -58806,7 +58907,7 @@ xEH
 rKz
 rKz
 rKz
-rKz
+mED
 rKz
 nGW
 rKz
@@ -59006,14 +59107,14 @@ pHI
 lrx
 oNj
 oNj
-oNj
+bRP
 fET
 bRP
 hDc
 oNj
 oNj
-oNj
-oNj
+bRP
+bRP
 uhF
 cqX
 oNj
@@ -59221,7 +59322,7 @@ oNj
 bRP
 bRP
 snc
-kNe
+qxH
 oNj
 xCX
 oNj
@@ -59630,14 +59731,14 @@ bMw
 xCH
 fDD
 shr
-shr
+uao
 gyS
 rKz
 bRR
 srx
-oNj
+bRP
 dup
-sNe
+aOF
 oNj
 lMF
 lMF
@@ -59846,7 +59947,7 @@ oNj
 kaq
 oNj
 jfz
-bRP
+xav
 xcF
 oNj
 aWi
@@ -60056,10 +60157,10 @@ rdH
 oNj
 bRP
 bRP
+bRP
+wdn
 oNj
-dez
-oNj
-oNj
+bRP
 bRP
 jlL
 laf
@@ -60265,10 +60366,10 @@ qTm
 rKz
 oNj
 nPm
-rKz
+mED
 sDd
 hBa
-oNj
+bRP
 oNj
 bRP
 xav
@@ -60463,7 +60564,7 @@ coU
 coU
 eci
 gFS
-gid
+oJL
 hgL
 dpI
 iDM
@@ -60475,8 +60576,8 @@ uJW
 cam
 snd
 rKz
-sDd
-oNj
+oRj
+bRP
 oNj
 jfz
 bRP
@@ -60672,8 +60773,8 @@ coU
 coU
 rKz
 wEw
-hgL
-hgL
+pHI
+pHI
 kdd
 pHI
 pHI
@@ -60685,11 +60786,11 @@ hOw
 qvg
 rKz
 ngB
-oNj
-ucC
+bRP
+pky
 olN
-oNj
-oNj
+bRP
+bRP
 rAJ
 lMF
 rKz
@@ -61929,10 +62030,10 @@ wvJ
 jnq
 dpI
 hgL
-ouu
+mWP
 rVZ
-hgL
-iDM
+pHI
+jXa
 sXz
 hgL
 hcu
@@ -62137,8 +62238,8 @@ mED
 jsO
 hgL
 hgL
-hox
-hgL
+qVz
+pHI
 ugr
 jnq
 reX
