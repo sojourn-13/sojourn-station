@@ -40944,14 +40944,6 @@
 /obj/machinery/r_n_d/destructive_analyzer,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/research)
-"iNX" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/turf/simulated/wall/r_wall,
-/area/turret_protected/ai)
 "iOa" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/hydroponics{
@@ -129094,7 +129086,7 @@ cZb
 tad
 yfl
 tiQ
-iNX
+yfl
 iIt
 rMK
 aoE
