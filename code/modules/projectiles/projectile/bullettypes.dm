@@ -1068,18 +1068,18 @@
 	damage_types = list(BRUTE = 15)
 	agony = 5
 	knockback = 1
-	fire_stacks = 2
+	fire_stacks = 1
 	armor_penetration = 10
 	nocap_structures = TRUE
 	check_armour = ARMOR_BOMB
 	sharp = TRUE
 	edge = TRUE
 	step_delay = 0.9
-	recoil = 50 //value suggested by Grongo, the most common user of these. Also roughly the same value as the grenade launchers.
+	recoil = 30
 
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
 	if (!testing)
-		explosion(target, 0, 0, 2)
+		explosion(target, 0, 0, 1)
 	return TRUE
 
 //Miscellaneous
