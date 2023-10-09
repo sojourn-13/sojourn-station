@@ -23,7 +23,7 @@ Has ability of every roach.
 	knockdown_odds = 10
 	melee_damage_lower = 20
 	melee_damage_upper = 35
-	move_to_delay = 8
+	move_to_delay = 4 //we're fast despite our size, many legs move us quick! otherwise, it's too easy to kite us.
 	mob_size =  3  // The same as Hivemind Tyrant
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
@@ -46,7 +46,7 @@ Has ability of every roach.
 	special_parts = list(/obj/item/animal_part/kingly_pheromone_gland)
 	ranged = TRUE // RUN, COWARD!
 	limited_ammo = TRUE //Do we run out of ammo?
-	rounds_left = 2 //We get 2 shots then go for melee, this makes us a threat
+	rounds_left = 2 //We get 2 shots then go for melee, this makes us a threat Nnnnope.
 	projectiletype = /obj/item/projectile/roach_spit/large
 	fire_verb = "spits glowing bile"
 
