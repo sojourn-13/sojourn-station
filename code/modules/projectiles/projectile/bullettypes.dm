@@ -1075,11 +1075,11 @@
 	sharp = TRUE
 	edge = TRUE
 	step_delay = 0.9
-	recoil = 25
+	recoil = 50 //value suggested by Grongo, the most common user of these. Also roughly the same value as the grenade launchers.
 
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
 	if (!testing)
-		explosion(target, 0, 0, 3)
+		explosion(target, 0, 0, 2)
 	return TRUE
 
 //Miscellaneous
