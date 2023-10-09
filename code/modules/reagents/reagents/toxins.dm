@@ -25,7 +25,7 @@
 			var/mob/living/carbon/human/H = M
 			H.sanity.onToxin(src, effect_multiplier)
 			M.sanity.onToxin(src, multi)*/
-		M.add_chemical_effect(CE_TOXIN, strength)
+		M.add_chemical_effect(CE_TOXIN, strength + dose / 2)
 
 
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
@@ -506,7 +506,7 @@
 	addiction_chance = 0.01 //Will STILL likely always be addicting
 	nerve_system_accumulations = 15
 	metabolism = REM * 0.1 //sticks around a bit longer
-	strength = 6 //maybe this does enough?
+	strength = 6
 	heating_point = 523
 	heating_products = list("toxin")
 
