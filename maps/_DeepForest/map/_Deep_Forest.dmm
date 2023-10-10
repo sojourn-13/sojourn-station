@@ -1789,8 +1789,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/machinery/power/port_gen/pacman/diesel/anchored,
-/turf/simulated/floor/tiled/dark/brown_perforated,
+/turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
@@ -2188,6 +2187,7 @@
 "chw" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -4474,6 +4474,16 @@
 /obj/random/medical,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"ehe" = (
+/obj/random/junk,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "ehh" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -6976,12 +6986,6 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "gyS" = (
 /obj/structure/cable,
-/obj/item/circuitboard/apc,
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28
-	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -14150,6 +14154,14 @@
 /obj/structure/flora/rock,
 /turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/dungeon/outside/zoo)
+"ngA" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "ngB" = (
 /obj/machinery/light{
 	dir = 1
@@ -14279,6 +14291,13 @@
 /obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"nlD" = (
+/obj/machinery/power/apc/inactive,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "nlG" = (
 /obj/structure/reagent_dispensers/fueltank/huge/derelict,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -17452,6 +17471,13 @@
 	},
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"pTI" = (
+/obj/machinery/light,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "pTP" = (
 /obj/item/trash/material/circuit,
 /obj/effect/decal/cleanable/dirt,
@@ -51669,7 +51695,7 @@ wSZ
 gfM
 aLI
 wSZ
-wSZ
+pTI
 xtV
 coU
 coU
@@ -52505,7 +52531,7 @@ avp
 jgj
 pHI
 hgL
-yhY
+hgL
 xtV
 coU
 coU
@@ -52708,13 +52734,13 @@ hgL
 oxg
 hgL
 xtV
-jgj
+ehe
 qjc
 hgL
 hgL
 owt
 hgL
-vJM
+ngA
 xtV
 coU
 coU
@@ -61053,7 +61079,7 @@ nxY
 coU
 coU
 coU
-xtV
+nlD
 bMw
 xCH
 fDD
