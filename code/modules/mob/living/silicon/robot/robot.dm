@@ -35,11 +35,11 @@
 //Icon stuff
 
 	var/icontype 				//Persistent icontype tracking allows for cleaner icon updates
+	var/tall_sprites			//Same as above but for tall borgs
 	var/list/module_sprites = list() 		//Used to store the associations between sprite names and sprite index.
 	var/icon_selected = 1		//If icon selection has been completed yet
 
 	var/default_icon_point = 'icons/mob/robots.dmi' //For when want to reset are borg
-	var/reset_icon = TRUE
 
 	var/allow_resting = FALSE    // Fluff action for borgs with resting icons
 	var/actively_resting = FALSE // Are we currently resting?
@@ -283,7 +283,10 @@
 	QDEL_NULL(cell)
 	return ..()
 
-/mob/living/silicon/robot/proc/set_module_sprites(var/list/new_sprites)
+/mob/living/silicon/robot/proc/set_module_sprites(var/list/new_sprites, var/list/new_tall_sprites)
+	if(new_tall_sprites && new_tall_sprites.len)
+		tall_sprites = new_tall_sprites.Copy()
+
 	if(new_sprites && new_sprites.len)
 		module_sprites = new_sprites.Copy()
 		//Custom_sprite check and entry
@@ -296,8 +299,6 @@
 				icontype = "Custom"
 			else
 				icontype = module_sprites[1]
-				if(reset_icon)
-					icon = 'icons/mob/robots.dmi'
 				to_chat(src, SPAN_WARNING("Custom Sprite Sheet does not contain a valid icon_state for [ckey]-[modtype]"))
 		else
 			icontype = module_sprites[1]
@@ -873,9 +874,6 @@
 	return FALSE
 
 /mob/living/silicon/robot/updateicon()
-	if(reset_icon)
-		icon = default_icon_point
-		reset_icon = FALSE //We reset this so we dont consantly reset are icon as a default type
 	overlays.Cut()
 	if(stat == CONSCIOUS && !actively_resting)
 		overlays += "eyes-[module_sprites[icontype]]"
@@ -1136,6 +1134,7 @@
 		return choose_icon()
 
 	icon_selected = 1 //MEW
+	post_icon_giving()
 
 	verbs -= /mob/living/silicon/robot/proc/choose_icon
 
@@ -1304,3 +1303,37 @@
 	else
 		actively_resting = TRUE
 	updateicon()
+
+/mob/living/silicon/robot/proc/post_icon_giving()
+
+	var/tall_borg = FALSE
+
+	for(var/sprite in tall_sprites)
+		if(sprite == icon_state)
+			icon = 'icons/mob/robot_tall/medical.dmi'
+			allow_resting = TRUE
+			has_wreck_sprite = TRUE
+			tall_borg = TRUE
+
+	if(tall_borg)
+		switch(modtype)
+			if("Medical")
+				icon = 'icons/mob/robot_tall/medical.dmi'
+
+			if("Engineering")
+				icon = 'icons/mob/robot_tall/engi.dmi'
+
+			if("Security")
+				icon = 'icons/mob/robot_tall/sec.dmi'
+
+			if("Service")
+				icon = 'icons/mob/robot_tall/server.dmi'
+
+			if("Miner")
+				icon = 'icons/mob/robot_tall/mining.dmi'
+
+			if("Research")
+				icon = 'icons/mob/robot_tall/science.dmi'
+
+			if("Custodial")
+				icon = 'icons/mob/robot_tall/science.dmi'

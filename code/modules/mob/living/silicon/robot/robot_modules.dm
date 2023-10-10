@@ -37,6 +37,7 @@ var/global/list/robot_modules = list(
 					LANGUAGE_JIVE = 0
 					)
 	var/sprites = list()
+	var/tall_sprites = list()
 	var/can_be_pushed = 1
 	var/no_slip = 0
 	var/list/modules = list()
@@ -102,7 +103,7 @@ var/global/list/robot_modules = list(
 	for(var/name in stat_modifiers)
 		R.stats.changeStat(name, stat_modifiers[name])
 
-	R.set_module_sprites(sprites)
+	R.set_module_sprites(sprites, tall_sprites)
 	R.icon_selected = 0
 	spawn() // For future coders , this "corrupts" the USR reference, so for good practice ,don't make the proc use USR if its called with a spawn.
 		R.choose_icon() //Choose icon recurses and blocks new from completing, so spawn it off
@@ -351,6 +352,15 @@ var/global/list/robot_modules = list(
 				"Tall Male" = "mmekamed"
 				)
 
+	tall_sprites = list(
+				"mekamed",
+				"mekamed_alt",
+				"k4tmed",
+				"k4tmed_alt1",
+				"fmekamed",
+				"mmekamed"
+				)
+
 	desc = "A versatile medical droid, equipped with all the tools necessary for surgery, chemistry, and \
 	 general patient treatments. Medical has a vast array of items, but this comes at a hefty cost. \
 	 The medical module is essentially shackled to the medbay and can't afford to stray too far. \
@@ -430,39 +440,9 @@ var/global/list/robot_modules = list(
 	R.stats.addPerk(PERK_ADVANCED_MEDICAL)
 	R.stats.addPerk(PERK_SI_SCI)
 
-	switch(R.icon_state)
-		if("mekamed")
-			R.icon = 'icons/mob/robot_tall/medical.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekamed_alt")
-			R.icon = 'icons/mob/robot_tall/medical.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tmed")
-			R.icon = 'icons/mob/robot_tall/medical.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tmed_alt1")
-			R.icon = 'icons/mob/robot_tall/medical.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("fmekamed")
-			R.icon = 'icons/mob/robot_tall/medical.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mmekamed")
-			R.icon = 'icons/mob/robot_tall/medical.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-
 	..(R)
+
+
 
 /obj/item/robot_module/medical/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	var/obj/item/reagent_containers/syringe/S = locate() in src.modules
@@ -514,6 +494,20 @@ var/global/list/robot_modules = list(
 					"Tall Crate Pusher" = "fmekacargo",
 					"Tall Crate Pusher Alt" = "mmekacargo"
 					)
+
+	tall_sprites = list(
+				"mekacargo",
+				"mekacargo_alt",
+				"mekaengi",
+				"k4tengi",
+				"fmekaeng",
+				"mmekaeng",
+				"k4tcargo",
+				"k4tcargo_alt1",
+				"fmekacargo",
+				"mmekacargo"
+				)
+
 	health = 240 //Slightly above average
 	speed_factor = 1.4 //Slightly above average
 	power_efficiency = 0.9 //Slightly below average
@@ -620,65 +614,6 @@ var/global/list/robot_modules = list(
 	R.stats.addPerk(PERK_HANDYMAN)
 	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
 	R.stats.addPerk(PERK_SI_SCI)
-
-
-	switch(R.icon_state)
-		if("mekacargo")
-			R.icon = 'icons/mob/robot_tall/engi.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekaengi")
-			R.icon = 'icons/mob/robot_tall/engi.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tengi")
-			R.icon = 'icons/mob/robot_tall/engi.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tengi_alt1")
-			R.icon = 'icons/mob/robot_tall/engi.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("fmekaeng")
-			R.icon = 'icons/mob/robot_tall/engi.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mmekaeng")
-			R.icon = 'icons/mob/robot_tall/engi.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekacargo_alt")
-			R.icon = 'icons/mob/robot_tall/engi.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tcargo")
-			R.icon = 'icons/mob/robot_tall/engi.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tcargo_alt1")
-			R.icon = 'icons/mob/robot_tall/engi.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("fmekacargo")
-			R.icon = 'icons/mob/robot_tall/engi.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mmekacargo")
-			R.icon = 'icons/mob/robot_tall/engi.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-
 	..(R)
 
 
@@ -754,6 +689,17 @@ var/global/list/robot_modules = list(
 					"Contractor Riot Stopper" = "mmekasyndi"
 				)
 
+	tall_sprites = list(
+					"mekasyndi",
+					"mekasec",
+					"k4tsec",
+					"k4tsyndi",
+					"mmekasec",
+					"mekasyndi_foxtrot",
+					"fmekasyndi",
+					"mmekasyndi"
+				)
+
 /obj/item/robot_module/security/general/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/device/scanner/price(src)
@@ -782,56 +728,6 @@ var/global/list/robot_modules = list(
 	R.stats.addPerk(PERK_PARKOUR)
 
 	R.stats.addPerk(PERK_SI_SCI)
-
-	switch(R.icon_state)
-		if("mekasyndi")
-			R.icon = 'icons/mob/robot_tall/sec.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekasyndi")
-			R.icon = 'icons/mob/robot_tall/sec.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekasec")
-			R.icon = 'icons/mob/robot_tall/sec.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("fmekasec")
-			R.icon = 'icons/mob/robot_tall/sec.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tsec")
-			R.icon = 'icons/mob/robot_tall/sec.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mmekasec")
-			R.icon = 'icons/mob/robot_tall/sec.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekasyndi_foxtrot")
-			R.icon = 'icons/mob/robot_tall/sec.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tsyndi")
-			R.icon = 'icons/mob/robot_tall/sec.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mmekasyndi")
-			R.icon = 'icons/mob/robot_tall/sec.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-
-
-
 
 	..(R)
 
@@ -879,6 +775,19 @@ var/global/list/robot_modules = list(
 					"Tall Maid" = "fmekajani",
 					"Tall Maid Alt" = "mmekajani"
 					)
+
+	tall_sprites = list(
+					"mekajani",
+					"mekajani_alt",
+					"fmekapeace",
+					"mmekapeace",
+					"k4tpeace",
+					"k4tjani",
+					"k4tjani_alt1",
+					"fmekajani",
+					"mmekajani"
+				)
+
 	health = 250 //Bulky
 	speed_factor = 1.45 //Fast
 	power_efficiency = 0.8 //Poor
@@ -920,53 +829,6 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/reagent_containers/spray/lube(src)
 
-	switch(R.icon_state)
-		if("mekajani")
-			R.icon = 'icons/mob/robot_tall/janitor.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tpeace")
-			R.icon = 'icons/mob/robot_tall/janitor.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("fmekapeace")
-			R.icon = 'icons/mob/robot_tall/janitor.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mmekapeace")
-			R.icon = 'icons/mob/robot_tall/janitor.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekajani_alt")
-			R.icon = 'icons/mob/robot_tall/janitor.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tjani")
-			R.icon = 'icons/mob/robot_tall/janitor.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tjani_alt1")
-			R.icon = 'icons/mob/robot_tall/janitor.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("fmekajani")
-			R.icon = 'icons/mob/robot_tall/janitor.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mmekajani")
-			R.icon = 'icons/mob/robot_tall/janitor.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-
 	//Silent cleaners
 	R.stats.addPerk(PERK_QUIET_AS_MOUSE)
 	R.stats.addPerk(PERK_SI_SCI)
@@ -1007,6 +869,18 @@ var/global/list/robot_modules = list(
 					"Tall Tanker Maid" = "k4tserve_alt2",
 					"Tall Female Maid" = "fmekaserv",
 					"Tall Male Maid" = "mmekaserv"
+				)
+
+	tall_sprites = list(
+					"mekaserve",
+					"mekaserve_alt",
+					"mekaserve_hopper",
+					"mekaserve_ringleader",
+					"k4tserve",
+					"k4tserve_alt1",
+					"k4tserve_alt2",
+					"fmekaserv",
+					"mmekaserv"
 				)
 
 	health = 130 //fragile
@@ -1075,53 +949,6 @@ var/global/list/robot_modules = list(
 	R.stats.addPerk(PERK_MARKET_PROF)
 	R.stats.addPerk(PERK_SI_SCI)
 
-	switch(R.icon_state)
-		if("mekaserve")
-			R.icon = 'icons/mob/robot_tall/server.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekaserve_alt")
-			R.icon = 'icons/mob/robot_tall/server.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekaserve_hopper")
-			R.icon = 'icons/mob/robot_tall/server.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekaserve_ringleader")
-			R.icon = 'icons/mob/robot_tall/server.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tserve")
-			R.icon = 'icons/mob/robot_tall/server.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tserve_alt1")
-			R.icon = 'icons/mob/robot_tall/server.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tserve_alt2")
-			R.icon = 'icons/mob/robot_tall/server.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("fmekaserv")
-			R.icon = 'icons/mob/robot_tall/server.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mmekaserv")
-			R.icon = 'icons/mob/robot_tall/server.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-
 	..(R)
 
 /obj/item/robot_module/service/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -1153,6 +980,17 @@ var/global/list/robot_modules = list(
 					"Tall Tanker" = "k4tmine",
 					"Tall Tanker Alt" = "k4tmine_alt1"
 				)
+
+
+	tall_sprites = list(
+					"mekamine",
+					"mekamine_alt",
+					"fmekamine",
+					"mmekamine",
+					"k4tmine",
+					"k4tmine_alt1"
+				)
+
 	health = 250 //Pretty tough
 	speed_factor = 1.2 //meh
 	power_efficiency = 1.5 //Best efficiency
@@ -1197,38 +1035,6 @@ var/global/list/robot_modules = list(
 	R.stats.addPerk(PERK_MARKET_PROF)
 	R.stats.addPerk(PERK_SI_SCI)
 
-	switch(R.icon_state)
-		if("mekamine")
-			R.icon = 'icons/mob/robot_tall/mining.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekamine_alt")
-			R.icon = 'icons/mob/robot_tall/mining.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("fmekamine")
-			R.icon = 'icons/mob/robot_tall/mining.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mmekamine")
-			R.icon = 'icons/mob/robot_tall/mining.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tmine")
-			R.icon = 'icons/mob/robot_tall/mining.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tmine_alt1")
-			R.icon = 'icons/mob/robot_tall/mining.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-
 
 	..(R)
 
@@ -1250,6 +1056,16 @@ var/global/list/robot_modules = list(
 					"Tall  Tanker" = "k4tninja",
 					"Tall  Female" = "fmekaninja",
 					"Tall  Male" = "mmekaninja"
+					)
+
+	tall_sprites = list(
+					"mekapeace",
+					"Tmekapeace_alt",
+					"mekaninja",
+					"mekaninj_alt",
+					"k4tninja",
+					"fmekaninja",
+					"mmekaninja"
 					)
 
 	health = 160 //Weak
@@ -1311,43 +1127,6 @@ var/global/list/robot_modules = list(
 	R.stats.addPerk(PERK_SURGICAL_MASTER)
 	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
 	R.stats.addPerk(PERK_SI_SCI)
-
-	switch(R.icon_state)
-		if("mekapeace")
-			R.icon = 'icons/mob/robot_tall/science.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekapeace_alt")
-			R.icon = 'icons/mob/robot_tall/science.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekaninja")
-			R.icon = 'icons/mob/robot_tall/science.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mekaninj_alt")
-			R.icon = 'icons/mob/robot_tall/science.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("k4tninja")
-			R.icon = 'icons/mob/robot_tall/science.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("fmekaninja")
-			R.icon = 'icons/mob/robot_tall/science.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
-		if("mmekaninja")
-			R.icon = 'icons/mob/robot_tall/science.dmi'
-			R.reset_icon = FALSE
-			R.allow_resting = TRUE
-			R.has_wreck_sprite = TRUE
 
 	..(R)
 
