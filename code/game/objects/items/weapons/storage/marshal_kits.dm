@@ -222,20 +222,29 @@
 
 // Armor Kits
 /obj/item/storage/box/m_kit/standard_armor
-	name = "Standard Visor Armor Kit"
+	name = "Standard Full-Armor Kit"
 	desc = "A standard Marshal armor kit with a plate carrier and visor helmet."
 
 	populate_contents()
-		new /obj/item/clothing/suit/armor/vest/ironhammer(src)
-		new /obj/item/clothing/head/helmet/marshal(src)
+		new /obj/item/clothing/suit/armor/vest/ironhammer/full(src)
+		new /obj/item/clothing/head/helmet/marshal_full(src)
+
+/obj/item/storage/box/m_kit/webbing_armor
+	name = "Standard Vebbing Armor Kit"
+	desc = "A standard Marshal armor kit with a webbing vest and full helmet."
+
+	populate_contents()
+		new /obj/item/clothing/suit/storage/vest/ironhammer(src)
+		new /obj/item/clothing/head/helmet/marshal_full(src)
+
 
 /obj/item/storage/box/m_kit/armored_overcoat
 	name = "\improper Armored Overcoat Armor Kit"
-	desc = "An armor kit containg an armored overcoat and a full helmet."
+	desc = "An armor kit containg an armored overcoat and a helmet."
 
 	populate_contents()
 		new /obj/item/clothing/suit/storage/armor/marshal_coat(src)
-		new /obj/item/clothing/head/helmet/marshal_full(src)
+		new /obj/item/clothing/head/helmet/marshal(src)
 
 
 /obj/item/storage/box/m_kit/bullet_proof

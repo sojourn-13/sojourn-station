@@ -327,7 +327,9 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemArmor(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					"Standard Plate" = /obj/item/storage/box/m_kit/standard_armor,
+					"Standard Full Plate" = /obj/item/storage/box/m_kit/standard_armor,
+					"Webbing Standard Plate" = /obj/item/storage/box/m_kit/webbing_armor,
+					"Greatcoat" = /obj/item/storage/box/m_kit/armored_overcoat,
 					"Riot Armor Kit" = /obj/item/storage/box/m_kit/riot,
 					"Bullet-Proof Armor Kit" = /obj/item/storage/box/m_kit/bullet_proof,
 					"Ablative Armor Kit" = /obj/item/storage/box/m_kit/laser_armor
