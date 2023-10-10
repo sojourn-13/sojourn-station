@@ -37,11 +37,14 @@
 	var/icontype 				//Persistent icontype tracking allows for cleaner icon updates
 	var/list/module_sprites = list() 		//Used to store the associations between sprite names and sprite index.
 	var/icon_selected = 1		//If icon selection has been completed yet
-	var/reset_icon_folder_draw = TRUE
-	var/icon_alt_director = 'icons/mob/robots.dmi'
-	var/has_resting_icon = FALSE //Used for wide-bots and feline type bots were we have fancy resting icons
-	var/has_family_guy_death_pose = FALSE
-	var/resting_icon_mode = FALSE
+
+	var/default_icon_point = 'icons/mob/robots.dmi' //For when want to reset are borg
+	var/reset_icon = TRUE
+
+	var/allow_resting = FALSE    // Fluff action for borgs with resting icons
+	var/actively_resting = FALSE // Are we currently resting?
+	var/has_wreck_sprite = FALSE // Alt death icon
+
 
 //Hud stuff
 
@@ -293,11 +296,8 @@
 				icontype = "Custom"
 			else
 				icontype = module_sprites[1]
-				if(reset_icon_folder_draw)
+				if(reset_icon)
 					icon = 'icons/mob/robots.dmi'
-					reset_icon_folder_draw = 'icons/mob/robots.dmi'
-				else
-					icon = icon_alt_director
 				to_chat(src, SPAN_WARNING("Custom Sprite Sheet does not contain a valid icon_state for [ckey]-[modtype]"))
 		else
 			icontype = module_sprites[1]
@@ -873,23 +873,21 @@
 	return FALSE
 
 /mob/living/silicon/robot/updateicon()
-	icon = icon_alt_director
-	if(reset_icon_folder_draw)
-		icon = 'icons/mob/robots.dmi'
-		icon_alt_director = 'icons/mob/robots.dmi'
-		reset_icon_folder_draw = FALSE //We reset this so we dont consantly reset are icon as a default type
+	if(reset_icon)
+		icon = default_icon_point
+		reset_icon = FALSE //We reset this so we dont consantly reset are icon as a default type
 	overlays.Cut()
-	if(stat == CONSCIOUS && !resting_icon_mode)
+	if(stat == CONSCIOUS && !actively_resting)
 		overlays += "eyes-[module_sprites[icontype]]"
 
-	if(stat == DEAD && has_family_guy_death_pose)
+	if(stat == DEAD && has_wreck_sprite)
 		icon_state = "[module_sprites[icontype]]-wreck"
 
-	if(lights_on && !resting_icon_mode)
+	if(lights_on && !actively_resting)
 		overlays += "[module_sprites[icontype]]_l"
 
-	if(has_resting_icon && stat == CONSCIOUS)
-		if(resting_icon_mode && !opened)
+	if(allow_resting && stat == CONSCIOUS)
+		if(actively_resting && !opened)
 			icon_state = "[module_sprites[icontype]]-rest"
 		else
 			icon_state = "[module_sprites[icontype]]"
@@ -1141,44 +1139,7 @@
 
 	verbs -= /mob/living/silicon/robot/proc/choose_icon
 
-	//This is a big section of if checks for the different types, sadly I have no idea how to do this in any other way... - Trilby
-	if(icon_state == "mekapeace")
-		icon_alt_director = 'icons/mob/robot_tall/science.dmi'
-		reset_icon_folder_draw = FALSE
-		has_resting_icon = TRUE
-		has_family_guy_death_pose = TRUE
-
-	if(icon_state == "mekamine")
-		icon_alt_director = 'icons/mob/robot_tall/mining.dmi'
-		reset_icon_folder_draw = FALSE
-		has_resting_icon = TRUE
-		has_family_guy_death_pose = TRUE
-
-	if(icon_state == "mekaserve" || icon_state == "mekaserve_alt")
-		icon_alt_director = 'icons/mob/robot_tall/server.dmi'
-		reset_icon_folder_draw = FALSE
-		has_resting_icon = TRUE
-		has_family_guy_death_pose = TRUE
-
-	if(icon_state == "mekajani")
-		icon_alt_director = 'icons/mob/robot_tall/janitor.dmi'
-		reset_icon_folder_draw = FALSE
-		has_resting_icon = TRUE
-		has_family_guy_death_pose = TRUE
-
-	if(icon_state == "mekacargo")
-		icon_alt_director = 'icons/mob/robot_tall/cargo.dmi'
-		reset_icon_folder_draw = FALSE
-		has_resting_icon = TRUE
-		has_family_guy_death_pose = TRUE
-
-	if(icon_state == "mekamed")
-		icon_alt_director = 'icons/mob/robot_tall/medical.dmi'
-		reset_icon_folder_draw = FALSE
-		has_resting_icon = TRUE
-		has_family_guy_death_pose = TRUE
-
-	if(has_resting_icon)
+	if(allow_resting)
 		verbs += /mob/living/silicon/robot/verb/resting_icon_mode
 
 	to_chat(src, "Your icon has been set. You now require a module reset to change it.")
@@ -1338,8 +1299,8 @@
 		to_chat(src, "You can not go into a resting icon mode well your pannel is open!.")
 		return
 
-	if(resting_icon_mode)
-		resting_icon_mode = FALSE
+	if(actively_resting)
+		actively_resting = FALSE
 	else
-		resting_icon_mode = TRUE
+		actively_resting = TRUE
 	updateicon()

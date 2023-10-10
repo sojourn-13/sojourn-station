@@ -43,7 +43,6 @@
 	R.updatename("Default")
 
 	R.icon = 'icons/mob/robots.dmi'
-	R.icon_alt_director = 'icons/mob/robots.dmi'
 	R.pixel_x = 0
 	R.old_x = 0
 	R.default_pixel_x = 0
