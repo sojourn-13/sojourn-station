@@ -18,12 +18,12 @@ Has ability of every roach.
 
 	var/datum/reagents/gas_sac
 
-	armor = list(melee = 30, bullet = 25, energy = 10, bomb = 50, bio = 20, rad = 100, agony = 0)
+	armor = list(melee = 40, bullet = 35, energy = 25, bomb = 50, bio = 20, rad = 100, agony = 0)
 
 	knockdown_odds = 10
 	melee_damage_lower = 20
 	melee_damage_upper = 35
-	move_to_delay = 4 //we're fast despite our size, many legs move us quick! otherwise, it's too easy to kite us.
+	move_to_delay = 4.5 //we're fast despite our size, many legs move us quick! otherwise, it's too easy to kite us.
 	mob_size =  3  // The same as Hivemind Tyrant
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
