@@ -506,7 +506,7 @@
 	addiction_chance = 0.01 //Will STILL likely always be addicting
 	nerve_system_accumulations = 15
 	metabolism = REM * 0.2 //back to old
-	strength = 6
+	strength = 3
 	heating_point = 523
 	heating_products = list("toxin")
 
