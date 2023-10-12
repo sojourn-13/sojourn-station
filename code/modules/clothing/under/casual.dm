@@ -353,6 +353,11 @@
 	icon_state = "blackturtle"
 	item_state = "blackturtle"
 
+/obj/item/clothing/under/turtleneck/syndicate
+	name = "syndicate turtleneck"
+	desc = "A stylish and practical grey turtleneck matched with a pair of combat cargopants. Well beloved by the Xanoranth syndicate who are more than happy to sell them to their many friends and allies."
+	icon_state = "syndsuit"
+
 //Role:premier-turtlenecks
 
 /obj/item/clothing/under/turtleneck/premier

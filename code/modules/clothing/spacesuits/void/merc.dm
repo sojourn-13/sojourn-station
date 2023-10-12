@@ -30,6 +30,8 @@
 	var/list/options = list()
 	options["Standard"] = "scaf"
 	options["Cat eared"] = "skat"
+	options["Heavy"] = "scafalt2" //original sprites by- Apparently Rebel?
+	options["Commando"] = "scafalt" //it really does look like the Commandos headgear. Same credit as alt2
 
 	var/choice = input(M,"What kind of helmet style do you want to switch to?","Adjust style") as null|anything in options
 

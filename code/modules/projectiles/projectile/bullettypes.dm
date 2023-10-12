@@ -13,16 +13,16 @@
 	step_delay = 0.65
 	can_ricochet = TRUE
 
-	affective_damage_range = 5
-	affective_ap_range = 5
+	affective_damage_range = 4
+	affective_ap_range = 4
 	recoil = 3
 
 /obj/item/projectile/bullet/pistol_35/hv
 	damage_types = list(BRUTE = 10)
 	armor_penetration = 20
 	step_delay = 0.5
-	affective_damage_range = 6
-	affective_ap_range = 6
+	affective_damage_range = 5
+	affective_ap_range = 5
 	can_ricochet = TRUE
 	recoil = 5
 
@@ -147,8 +147,8 @@
 	can_ricochet = TRUE
 	step_delay = 0.4
 
-	affective_damage_range = 6
-	affective_ap_range = 6
+	affective_damage_range = 4
+	affective_ap_range = 4
 	recoil = 5
 
 /obj/item/projectile/bullet/magnum_40/practice
@@ -168,8 +168,8 @@
 	penetrating = 1
 	step_delay = 0.25
 	nocap_structures = TRUE //Door breaching
-	affective_damage_range = 7
-	affective_ap_range = 7
+	affective_damage_range = 5
+	affective_ap_range = 5
 	recoil = 7
 
 /obj/item/projectile/bullet/magnum_40/lethal
@@ -243,8 +243,8 @@
 /obj/item/projectile/bullet/magnum_40/scrap
 	damage_types = list(BRUTE = 16)
 	armor_penetration = 5
-	affective_damage_range = 1
-	affective_ap_range = 1
+	affective_damage_range = 3
+	affective_ap_range = 3
 	recoil = 4
 
 /obj/item/projectile/bullet/magnum_40/biomatter
@@ -268,8 +268,8 @@
 	can_ricochet = TRUE
 	embed = TRUE
 	step_delay = 0.65
-	affective_damage_range = 7
-	affective_ap_range = 7
+	affective_damage_range = 5
+	affective_ap_range = 5
 	recoil = 12
 
 /obj/item/projectile/bullet/kurtz_50/rubber
@@ -333,8 +333,8 @@
 	penetrating = 2
 	can_ricochet = FALSE
 	step_delay = 0.45
-	affective_damage_range = 7
-	affective_ap_range = 7
+	affective_damage_range = 6
+	affective_ap_range = 6
 	nocap_structures = TRUE //We can breach doors rather well
 	recoil = 14
 
@@ -1068,18 +1068,18 @@
 	damage_types = list(BRUTE = 15)
 	agony = 5
 	knockback = 1
-	fire_stacks = 2
+	fire_stacks = 1
 	armor_penetration = 10
 	nocap_structures = TRUE
 	check_armour = ARMOR_BOMB
 	sharp = TRUE
 	edge = TRUE
 	step_delay = 0.9
-	recoil = 25
+	recoil = 30
 
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
 	if (!testing)
-		explosion(target, 0, 0, 3)
+		explosion(target, 0, 0, 1)
 	return TRUE
 
 //Miscellaneous

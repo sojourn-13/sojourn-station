@@ -101,7 +101,7 @@
 /obj/item/ammo_magazine/highcap_pistol_35/drum/lethal
 	name = "standard auto drum (hollow-point)"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
-	icon_state = "ldru_l"
+	icon_state = "ldrum_l"
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/hv
 	name = "standard auto drum (high-velocity)"
