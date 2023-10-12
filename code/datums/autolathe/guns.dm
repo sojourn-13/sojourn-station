@@ -172,6 +172,10 @@
 	name = "SA SG \"Pug\""
 	build_path = /obj/item/gun/projectile/shotgun/pug
 
+/datum/design/autolathe/gun/gladstone
+	name = "H&S SG \"Gladstone\""
+	build_path = /obj/item/gun/projectile/shotgun/pump/gladstone
+
 /datum/design/autolathe/gun/riot_shotgun
 	name = "Seinemetall Defense GmbH SG \"State\""
 	build_path = /obj/item/gun/projectile/automatic/riot_autoshotgun
