@@ -168,6 +168,10 @@
 	name = "OT SG \"Regulator\""
 	build_path = /obj/item/gun/projectile/shotgun/pump/combat
 
+/datum/design/autolathe/gun/gladstone
+	name = "H&S SG \"Gladstone\""
+	build_path = /obj/item/gun/projectile/shotgun/pump/gladstone
+
 /datum/design/autolathe/gun/pug
 	name = "SA SG \"Pug\""
 	build_path = /obj/item/gun/projectile/shotgun/pug
