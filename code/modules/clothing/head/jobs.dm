@@ -105,6 +105,35 @@
 	icon_state = "beret"
 	body_parts_covered = 0
 
+obj/item/clothing/head/beret/syndicate
+	name = "syndicate beret"
+	desc = "A stylish and comfortable beret, popular amongst members of the Xanoranth syndicate and their many clients."
+	icon_state = "syndberet"
+
+obj/item/clothing/head/beret/syndicate/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Xanoranth Beret"] = "syndberet" //credits to Eris for the sprite
+	options["Xanoranth Beret alt"] = "syndberet2" //credits to Eris for the sprite
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/head/beret/artist
 	name = "Feathered Beret"
 	desc = "Fit for artists, frenchmen, and eccentric military officers across the cosmos."
@@ -175,31 +204,6 @@
 	name = "marshal beret"
 	desc = "A stylish beret, this one has markings of the Marshals."
 	icon_state = "policeberet"
-
-/obj/item/clothing/head/rank/ironhammer/verb/toggle_style()
-	set name = "Adjust Style"
-	set category = "Object"
-	set src in usr
-
-	if(!isliving(loc))
-		return
-
-	var/mob/M = usr
-	var/list/options = list()
-	options["Officer beret"] = "policeberet"
-	options["Officer beret alt"] = "syndberet" //credits to Eris for the sprite
-	options["Officer beret alt 2"] = "syndberet2" //credits to Eris for the sprite
-
-	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
-
-	if(src && choice && !M.incapacitated() && Adjacent(M))
-		icon_state = options[choice]
-		item_state = options[choice]
-		to_chat(M, "You adjusted your attire's style into [choice] mode.")
-		update_icon()
-		update_wear_icon()
-		usr.update_action_buttons()
-		return 1
 
 /obj/item/clothing/head/rank/commander
 	name = "warrant officer beret"

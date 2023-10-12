@@ -251,18 +251,32 @@
 	radiation = CLAMP(radiation,0,100)
 
 	if (radiation)
-		var/damage = 0
+		var/damage = rand(0,3)
 		radiation -= 1 * RADIATION_SPEED_COEFFICIENT
 		if(prob(25))
-			damage = 1
+			damage = rand(4,8)
+
+		if (radiation > 25)
+			if(prob(50))
+				damage = rand(4,8)
+				radiation -= 1 * RADIATION_SPEED_COEFFICIENT
+			if(prob(5))
+				radiation -= 5 * RADIATION_SPEED_COEFFICIENT
+				to_chat(src, SPAN_WARNING("You feel weak."))
+				take_overall_damage(0,rand(0,4), used_weapon = "Radiation Burns")
+				Weaken(3)
+				if(!lying)
+					emote("collapse")
 
 		if (radiation > 50)
-			damage = 1
-			radiation -= 1 * RADIATION_SPEED_COEFFICIENT
-			if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT))
+			if(prob(50))
+				damage = rand(4,8)
+				radiation -= 1 * RADIATION_SPEED_COEFFICIENT
+			if(prob(10))
 				radiation -= 5 * RADIATION_SPEED_COEFFICIENT
 				to_chat(src, SPAN_WARNING("You feel weak."))
 				Weaken(3)
+				take_overall_damage(0,rand(4,8), used_weapon = "Radiation Burns")
 				if(!lying)
 					emote("collapse")
 			if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT) && species.get_bodytype() == "Human") //apes go bald
@@ -274,9 +288,9 @@
 
 		if (radiation > 75)
 			radiation -= 1 * RADIATION_SPEED_COEFFICIENT
-			damage = 3
-			if(prob(5))
-				take_overall_damage(0, 5 * RADIATION_SPEED_COEFFICIENT, used_weapon = "Radiation Burns")
+			damage = rand(4,12)
+			if(prob(20))
+				take_overall_damage(0,rand(6,10), used_weapon = "Radiation Burns")
 			if(prob(1))
 				to_chat(src, SPAN_WARNING("You feel strange!"))
 				var/obj/item/organ/external/E = pick(organs)
@@ -287,7 +301,7 @@
 			damage *= species.radiation_mod
 			if(organs.len)
 				var/obj/item/organ/external/O = pick(organs)
-				O.take_damage(damage * RADIATION_SPEED_COEFFICIENT, TOX, silent = TRUE)
+				O.take_damage(damage, CLONE, silent = TRUE)
 				if(istype(O))
 					O.add_autopsy_data("Radiation Poisoning", damage)
 
