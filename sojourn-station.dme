@@ -2942,6 +2942,7 @@
 #include "code\modules\projectiles\guns\projectile\shotgun\bull.dm"
 #include "code\modules\projectiles\guns\projectile\shotgun\combatsg.dm"
 #include "code\modules\projectiles\guns\projectile\shotgun\doublebarrel.dm"
+#include "code\modules\projectiles\guns\projectile\shotgun\gladstone.dm"
 #include "code\modules\projectiles\guns\projectile\shotgun\handmade.dm"
 #include "code\modules\projectiles\guns\projectile\shotgun\hunter_crossbow.dm"
 #include "code\modules\projectiles\guns\projectile\shotgun\pug.dm"
