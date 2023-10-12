@@ -411,6 +411,18 @@
 		/datum/design/autolathe/ammo/sbaw_empty = 0, //So we can handload new mags
 		)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/gladstone
+	disk_name = "H&S - 20mm Gladstone Shotgun"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/gladstone = 3,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
+		/datum/design/autolathe/ammo/shotgun_illumination,
+		)
+
 /obj/item/computer_hardware/hard_drive/portable/design/guns/state
 	disk_name = "Seinemetall Defense GmbH - 20mm State Auto Shotgun"
 	desc = "Known as the state, an odd shotgun, often redesigned every few years in a way few people are fully happy with."
