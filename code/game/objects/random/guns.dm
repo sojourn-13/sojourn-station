@@ -56,6 +56,7 @@
 	return pickweight(list(/obj/item/part/gun/frame/grizzly = 0.5,
 				/obj/item/part/gun/frame/sixshot = 0.5,
 				/obj/item/part/gun/frame/regulator = 0.5,
+				/obj/item/part/gun/frame/gladstone = 0.5,
 				/obj/item/part/gun/frame/grease = 0.5,
 				/obj/item/part/gun/frame/basilisk = 0.5,
 				/obj/item/part/gun/frame/sts = 0.5,
@@ -77,6 +78,7 @@
 				/obj/item/gun/projectile/revolver/sixshot = 1,\
 				/obj/item/gun/projectile/boltgun/lever = 1.5,\
 				/obj/item/gun/projectile/automatic/greasegun = 0.1,\
+				/obj/item/gun/projectile/shotgun/pump/gladstone = 0.5,\
 				/obj/item/gun/projectile/colt = 2,\
 				/obj/item/gun/projectile/revolver = 2,\
 				/obj/item/gun/projectile/boltgun = 0.5,\
@@ -101,6 +103,7 @@
 				/obj/item/part/gun/frame/makarov = 0.5,
 				/obj/item/part/gun/frame/hornet = 0.5,
 				/obj/item/part/gun/frame/regulator = 0.5,
+				/obj/item/part/gun/frame/gladstone = 0.5,
 				/obj/item/part/gun/frame/pug = 0.5,
 				/obj/item/part/gun/frame/saiga = 0.5,
 				/obj/item/part/gun/frame/strelki = 0.5,
@@ -226,6 +229,7 @@
 	return pickweight(list(/obj/item/part/gun/frame/sixshot = 0.5,
 				/obj/item/part/gun/frame/grizzly = 0.5,
 				/obj/item/part/gun/frame/regulator = 0.5,
+				/obj/item/part/gun/frame/gladstone = 0.5,
 				/obj/item/part/gun/frame/bull = 0.5,
 				/obj/item/part/gun/frame/pug = 0.5,
 
@@ -235,6 +239,7 @@
 				/obj/item/gun/projectile/shotgun/bull = 0.3,\
 				/obj/item/gun/projectile/shotgun/doublebarrel/sawn = 2,\
 				/obj/item/gun/projectile/shotgun/pump/combat/sawn = 1,\
+				/obj/item/gun/projectile/shotgun/pump/gladstone/sawn = 1,\
 				/obj/item/gun/projectile/shotgun/pug = 0.3,\
 				/obj/item/gun/projectile/revolver/sixshot = 0.7))
 
