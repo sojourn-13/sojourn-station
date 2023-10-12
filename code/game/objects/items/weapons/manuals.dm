@@ -871,10 +871,128 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 				<h3>As a last resort</h3>
 				If all else fails in a case of cyborg-related emergency, there may be only one option. Using a Robotics Control console, you may have to remotely detonate the cyborg.
 				<h3>WARNING:</h3> Do not detonate a borg without an explicit reason for doing so. Cyborgs are expensive pieces of company equipment, and you may be punished for detonating them without reason.
-
 				</body>
 			</html>
 		"}
+
+/obj/item/book/manual/robotics_catalogue
+	name = "Soteria Cyborg Catalogue 2652"
+	icon_state = "book_robotics"
+	author = "Maeve Cinaed"
+	title = "Soteria Cyborg Catalogue 2652"
+
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 21px; margin: 15px 0px 5px;}
+				h2 {font-size: 18px; margin: 15px 0px 5px;}
+				h3 {font-size: 15px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+
+				<h1>Cyborg Product Catalogue</h1>
+
+				<h2>Chapters</h2>
+
+				<ol>
+					<li><a href="#Foreword">Foreword</a></li>
+					<li><a href="#Generic">Generic Models</a></li>
+					<li><a href="#Zeng-Hu">Zeng-Hu models</a></li>
+					<li><a href="#Bishop">Bishop Models</a></li>
+					<li><a href="#Xion">Xion Models</a></li>
+					<li><a href="#Miss M">Miss M. models</a></li>
+					<li><a href="#TallBorgs">MekaNika Mekanoid models</a></li>
+					<li><a href="#K4t">Mekanika K4t Models</a></li>
+					<li><a href="#Pirate">Iron Lords 'Customized' Models</a></li>
+				</ol>
+
+
+				<h2><a name="Foreward">Authors Note</h2>
+				<p>"Hello! Thank you for picking this handy little guide up, dear reader. this piece has been a pet project
+				that i've worked on for quite some time, I'm very happy to	finally be able to place it in the hands,
+				claws, paws and grippers of my fellow Mechanists, Roboticists, Augmenticists- and any one else who
+				may be curious about the range of bots available from the Soteria Robotics Division. Piece of this
+				book have been copied from the sadly obsolete but none the less interesting 'Soteria Mechanists Handbook',
+				as well as 'SFPD - Identifying Illicit Machines, A comprehensive guide.' as well as a variety of other,
+				smaller manuals, handbooks and product-catalogues. While I have done my best to ensure the information
+				contained within is accurate much of it may be or become incorrect or outdated. A special thanks to my
+				Dear Friend, Patience Constance of the Iron Lords for her help filling in the blanks regarding
+				their line of customized MekaNIKA bots - provided to Nadehzda by our wonderful friends with the
+				Xanoranth Syndicate." - Dr. Cinead, Soteria Robotics Division.
+
+				<h2><a name="Generic"> Chassis that Respect the Users Freedom</h2>
+				<center><img src="https://sojourn13.space/w/images/5/58/Generic.png"></img></center>
+				<p>Far from being single-origin, these 'standard' frames encompass a wide variety of open source,
+				unclaimed or otherwise "freely" available frames. These frames come from sources ranging to hobbyist
+				collectives to long-since-deprecated trade claims abandoned to the public domain by their
+				corporate owners.
+
+				<h2><a name="Zeng-Hu"> 'Teknotik' - Style and Substance</h2>
+				<center><img src="https://sojourn13.space/w/images/e/ee/Zenhgu.png"></img></center>
+				<p>Another truly old but no-less respected line from the Giant of Medical Miracles and Horrors both. Where some lines
+				fixated on pure pragmatism Zeng-Hured no expense on the appearance of these bots. From Sleek humanoid frames to
+				high-speed flying drones these bots were top of the shelf for decades before finally being displaced by Greyson's
+				own. In the modern era, a flying drone or a cyborg that fits in a roughly human-shaped package are old news easily
+				reproducable(and more modularly at that.), still; these designs are a personal favorite of this author as a reminder
+				that even heights of technology once viewed as science-fiction may one day be looked back on as tragically quaint.
+
+				<h2><a name="Bishop"> 'Droid' - Timeless Classics</h2>
+				<center><img src="https://sojourn13.space/w/images/f/f0/Bishop.png"></img></center>
+				<p>A positively venerable line, Bishop long stood as giants of the cybernetics and robotics field,	shoulder to
+				shoulder with the likes of Zeng-Hu and early Greyson Positronics. While their interest in the field of robotics
+				waned during the halcyon days of Greyson Positronics these frames remains utterly ubiquitous classics.
+
+				<h2><a name="Xion"> 'Eclectic' - Timeless Classics</h2>
+				<center><img src="https://sojourn13.space/w/images/6/63/Xion.png"></img></center>
+				<p>Not one cohesive line, but instead a small number of designs from little known manufacturing company 'Xion'. Once a
+				pioneer in the field of automated recursive repair solutions, Xion has never once allowed the galaxy to forget that
+				they designed the first ever repair drone - A claim supported by little more than a resemblance in their more modern
+				designs. With a preference for such nimble, spidery bots their abject failure to dislodge Zeng-Hu from their position
+				as the premier creators of automated flying machines should not go without saying - Though some will claim preference
+				for 'eyebot' style drones these bots were sadly an economic failure in their time.
+
+				<h2><a name="Miss M"> Manmade horrors never looked so friendly</h2>
+				<center><img src="https://sojourn13.space/w/images/0/0f/Miss_M.png"></img></center>
+				<p>A now dated line from the long-since defunct 'Missus Machining', the Miss M. line of cyborgs was marketed both
+				towards wealthy individuals with an eye for retro aesthetics and poorer corps without the ability to
+				procure higher end 'Customer Friendly' units. It should not go unsaid that despite the companies
+				attempts to put a friendly face on Cyborgs, they were ultimately forced	to shutter permanently following a slew
+				of accusations that the brains in their units were unethically sourced.
+
+
+				<h2><a name="Tallborgs">'tallbot' - Towering Metal Friends</h2>
+				<center><img src="https://sojourn13.space/w/images/8/86/Mekanika.png"></img></center>
+				<p>Affectionately known as 'TallBorgs', these units while wildly varying in both module and appearance
+				have proven to be quite popular both for their utility and shockingly low price, owing to their
+				pedigree as products of MekaNIKA(One of the few non-megacorp bulk producers of cyborg frames and,
+				a corp with surprisingly 'customer-first' product policy.).
+
+				<h2><a name="MekaNIKA ">'K4T' -Silicon Gentle Giants</h2>
+				<center><img src="https://sojourn13.space/w/images/f/f5/K4T.png"></img></center>
+				<p>Amid concerns that their 'tallbot' Mekanoids "appeared too flimsy" come the K4T line. Where Tallbots
+				are svelte and graceful, K4Tbots are notably broader in appearance - It bears noting that despite
+				appearances, these walking tanks do not perform notably better or worse than their slimmer "siblings".
+				Instead, theirs is a design meant to impress and awe far more than it is to serve as the walking-exosuit
+				they nominally resemble. After all, a well programmed borg can already serve as more than a match for
+				an equivilent human.
+
+				<h2><a name="Pirate">'Homebrew' - From our friends among the Stars</h2>
+				<center><img src="https://sojourn13.space/w/images/b/bf/SYNDIE.png"></img></center>
+				<p>"I must admit, I was initially not sure /how/ to describe these units when word came to me that a deal had
+				been made with the Iron Lords- brokered by the Xanoranth Syndicate, resulting in our obtaining quite a few
+				of these uniquely modified frames. Like most frames, these are style over substance meant to mesh neatly with
+				the 'modules' the user has available. This comes with the caveat that in addition to the frame-designs, Xanoranth
+				have provided a number of fully operational units who have been run through Soterias rigorous process of integration."
+				</body>
+			</html>
+		"}
+
+
 
 
 /obj/item/book/manual/security_space_law
