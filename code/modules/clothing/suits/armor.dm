@@ -980,6 +980,15 @@
 	name = "webbed operator armor"
 	desc = "An armored vest that protects against some damage. This one has been done in Nadezhda Marshal colors and has various pouches and straps attached."
 	icon_state = "webvest_ironhammer"
+	slowdown = 0.1
+	armor_list = list(
+		melee = 35,
+		bullet = 35,
+		energy = 35,
+		bomb = 10,
+		bio = 0,
+		rad = 0
+	) //we get the same armor as a regular marshal vest, but a bit of slowdown and limited coverage.
 
 //Provides the protection of a merc voidsuit, but only covers the chest/groin, and also takes up a suit slot. In exchange it has no slowdown and provides storage.
 /obj/item/clothing/suit/storage/vest/merc
@@ -1438,6 +1447,31 @@
 	armor_list = list(melee = 35, bullet = 30, energy = 20, bomb = 10, bio = 0, rad = 0)
 	icon_state = "marshal_coat"
 	item_state = "marshal_coat"
+
+/obj/item/clothing/suit/storage/armor/marshal_coat/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard greatcoat"] = "marshal_coat"
+	options["Armored service coat"] = "jacket_ironhammer"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/suit/storage/armor/marshal_coat_ss
 	name = "supply specialist's jacket"

@@ -105,14 +105,14 @@
 
 /obj/item/tool/fireaxe/militia_tomahawk
 	name = "blackshield tactical tomahawk"
-	desc = "For cutting, sawing, prying, and throwing at targets mid back-flip."
+	desc = "For cutting, sawing, prying, and throwing at targets mid back-flip. Surprisingly portable!"
 	icon_state = "sec_tomahawk"
 	wielded_icon = "sec_tomahawk"
 	force = WEAPON_FORCE_ROBUST + 4 // Better than the cheap axe
 	throwforce = WEAPON_FORCE_LETHAL // Meant to be a throwing weapon
 	slot_flags = SLOT_BELT|SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 25, QUALITY_PRYING = 15)
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL //just let the shield have their webbing-portable tomahawk.
 	price_tag = 45
 
 /obj/item/tool/fireaxe/handmade

@@ -23,11 +23,12 @@
 	extra_damage_mult_scoped = 0.4
 	penetration_multiplier = 1.2
 	damage_multiplier = 1
+	max_upgrades = 3
 	init_recoil = CARBINE_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 	init_firemodes = list(
-		FULL_AUTO_300,
+		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
