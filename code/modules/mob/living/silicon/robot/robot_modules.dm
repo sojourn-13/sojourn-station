@@ -699,15 +699,18 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/security/defense/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/hud/sec(src)
-	src.modules += new /obj/item/tool/sword/machete(src)
-	src.modules += new /obj/item/gun/energy/bsrifle(src)
+	src.modules += new /obj/item/tool/hammer/ironhammer(src) //breaching!
+	src.modules += new /obj/item/gun/energy/bsrifle(src) //Clearing! Comes prepared to do warcrimes via incendiary rounds
 	src.modules += new /obj/item/gripper/ammo(src)
+	src.modules += new /obj/item/shield_projector/rectangle/soteria_personal(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
+	src.modules += new /obj/item/tool/robotic_omni_sec(src) //borrows and the like.
+	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //cracks and the like.
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
-	src.emag += new /obj/item/gun/energy/laser/mounted/cyborg(src)
+	src.emag += new /obj/item/gun/projectile/shotgun/pump/china(src)
 
 	//We are stronk so we get less no knockdowns
 	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
@@ -724,18 +727,6 @@ var/global/list/robot_modules = list(
 		T.update_icon()
 	else
 		T.charge_tick = 0
-
-	if(R.HasTrait(CYBORG_TRAIT_EMAGGED))
-		var/obj/item/gun/energy/laser/mounted/cyborg/L = locate() in src.modules
-		if(L.cell.charge < L.cell.maxcharge)
-			L.cell.give(T.charge_cost * amount)
-			L.update_icon()
-		else
-			L.charge_tick = 0
-
-	var/obj/item/tool/baton/robot/B = locate() in src.modules
-	if(B && B.cell)
-		B.cell.give(amount)
 
 
 /obj/item/robot_module/security/enforcement
