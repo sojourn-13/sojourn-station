@@ -163,8 +163,8 @@
 /datum/category_item/setup_option/background/ethnicity/blackshield_ranged
 	name = "Ballistic Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This model is designed for ranged engagements. \
-	Ballistic positronics are slightly less sturdy than their CQC and non-lethal counterparts, but still have a sturdy chassis and AI-guided targeting systems to aid in shooting. \
-	In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and sturdy combatants. This model comes with an implanted .35 smg in the right arm."
+	Ranged positronics are slightly less sturdy than their CQC and non-lethal counterparts, but still have a sturdy chassis and AI-guided targeting systems to aid in shooting. \
+	In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and sturdy combatants. This model comes with an implanted smg in the right arm."
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armsmg/blackshield)

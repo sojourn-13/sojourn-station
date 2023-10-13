@@ -20,7 +20,8 @@
 	. = ..()
 	is_on = TRUE
 	update_icon()
-	addtimer(CALLBACK(src, .proc/lower_entropy), 10 MINUTES, TIMER_STOPPABLE)
+	var/turf/T = get_turf(src)
+	addtimer(CALLBACK(src, .proc/lower_entropy, T), 10 MINUTES, TIMER_STOPPABLE)
 
 /obj/machinery/telesci_inhibitor/nt_bluespace_seer/examine(mob/living/user, distance)
 	var/area/my_area = get_area(src)
@@ -43,6 +44,9 @@
 		to_chat(user, SPAN_NOTICE("Nullifer scanner is current on and working."))
 	else
 		to_chat(user, SPAN_NOTICE("You activate the the Nullifer allowing it to silently start up."))
+		is_on = TRUE
+		var/turf/T = get_turf(src)
+		addtimer(CALLBACK(src, .proc/lower_entropy, T), 10 MINUTES, TIMER_STOPPABLE)
 		update_icon()
 	return
 

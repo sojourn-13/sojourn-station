@@ -8,7 +8,7 @@
 	icon = 'icons/obj/robot_items.dmi'
 	icon_state = "riot_shotgun"
 	item_state = "riot_shotgun"
-	suitable_cell = /obj/item/cell/medium
+	cell_type = /obj/item/cell/medium/greyson
 	modifystate = null
 	force = WEAPON_FORCE_PAINFUL
 	charge_cost = 200
@@ -28,13 +28,13 @@
 	icon = 'icons/obj/guns/projectile/glock.dmi'
 	icon_state = "glock"
 	item_state = "glock"
-	suitable_cell = /obj/item/cell/small
+	cell_type = /obj/item/cell/medium/greyson
 	modifystate = null
 	charge_cost = 100
 	self_recharge = 1
 	init_firemodes = list(
 		list(mode_name="rubber bullet", projectile_type=/obj/item/projectile/bullet/pistol_35/rubber, fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=25, icon="stun"),
-		list(mode_name="normal round", projectile_type=/obj/item/projectile/bullet/pistol_35, fire_sound='sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=10, icon="kill"),
+		list(mode_name="Hollowpoint round", projectile_type=/obj/item/projectile/bullet/pistol_35/lethal, fire_sound='sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=10, icon="kill"),
 		)
 	charge_meter = FALSE
 
@@ -44,7 +44,7 @@
 	item_state = null
 	name = "embedded energy SMG"
 	desc = "An energy-based SMG deployed from your arm. A favoured hidden weapon."
-	suitable_cell = /obj/item/cell/medium
+	cell_type = /obj/item/cell/medium/greyson
 	charge_cost = 25
 	self_recharge = 1
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
@@ -61,3 +61,4 @@
 
 /obj/item/gun/energy/smg/blackshield
 	init_recoil = HANDGUN_RECOIL(0.2) //Unless you've got built-in targetting software.
+	cell_type = /obj/item/cell/medium/hyper //we're not Soteria produced, so we don't get a Soteria cell.
