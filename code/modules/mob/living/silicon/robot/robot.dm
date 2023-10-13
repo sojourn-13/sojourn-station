@@ -1336,4 +1336,4 @@
 				icon = 'icons/mob/robot_tall/science.dmi'
 
 			if("Custodial")
-				icon = 'icons/mob/robot_tall/science.dmi'
+				icon = 'icons/mob/robot_tall/janitor.dmi'
