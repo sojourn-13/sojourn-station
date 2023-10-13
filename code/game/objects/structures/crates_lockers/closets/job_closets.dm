@@ -86,7 +86,7 @@
 	new /obj/item/holyvacuum(src)
 	new /obj/item/clothing/accessory/job/cape/service(src) // Boobles! - Seb
 	new /obj/item/tool/pickaxe(src) //helps with burrows! decent enough for minor pest control as well
-	new /obj/item/tool/hammer (src) //cracks! To go along side that pickaxe
+	new /obj/item/tool/hammer(src) //cracks! To go along side that pickaxe
 
 /obj/structure/closet/custodial
 	name = "church custodial closet"
