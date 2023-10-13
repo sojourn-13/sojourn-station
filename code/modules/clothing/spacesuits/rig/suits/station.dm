@@ -37,7 +37,7 @@
 		energy = 10,
 		bomb = 25,
 		bio = 100,
-		rad = 90
+		rad = 100
 	)
 	slowdown = 0.3
 	drain = 3

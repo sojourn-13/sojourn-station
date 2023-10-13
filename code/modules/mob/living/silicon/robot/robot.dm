@@ -1323,7 +1323,10 @@
 			if("Engineering")
 				icon = 'icons/mob/robot_tall/engi.dmi'
 
-			if("Security")
+			if("Enforcement")
+				icon = 'icons/mob/robot_tall/sec.dmi'
+
+			if("Defense")
 				icon = 'icons/mob/robot_tall/sec.dmi'
 
 			if("Service")

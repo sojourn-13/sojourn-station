@@ -5,10 +5,11 @@ var/global/list/robot_modules = list(
 	"Miner" 					= /obj/item/robot_module/miner,
 //	"Rescue" 					= /obj/item/robot_module/medical/rescue, Removed and condensed to medical verson - todo, admin only
 	"Medical" 					= /obj/item/robot_module/medical/general,
-	"Security" 					= /obj/item/robot_module/security/general,
-	"Engineering"					= /obj/item/robot_module/engineering/general,
-//	"Construction"					= /obj/item/robot_module/engineering/construction, Removed and condensed into contruction - todo, admin only
-	"Custodial" 					= /obj/item/robot_module/custodial,
+	"Enforcement" 				= /obj/item/robot_module/security/enforcement,
+	"Defense" 					= /obj/item/robot_module/security/defense,
+	"Engineering"				= /obj/item/robot_module/engineering/general,
+//	"Construction"				= /obj/item/robot_module/engineering/construction, Removed and condensed into contruction - todo, admin only
+	"Custodial" 				= /obj/item/robot_module/custodial,
 	//"Combat" 					= /obj/item/robot_module/combat,
 	)
 
@@ -649,12 +650,98 @@ var/global/list/robot_modules = list(
 							 /obj/item/borg/upgrade/jetpack,
 							 /obj/item/borg/upgrade/bigknife)
 
+/obj/item/robot_module/security/defense
+	health = 180 //Kinda light! We're meant for rapid response
+	speed_factor = 1.45 //pretty fast!
+	power_efficiency = 0.95 //We're dangerous, but generally can't stray too far from our chargers!
+
+	desc = "Focused on protecting the colony from great threats! Ensure a rapid response to any  major threats, leave little stuff to the humans and enforcement bots \
+	heavily armed, though lightly armored security unit."
+
+	stat_modifiers = list(
+		STAT_VIG = 60,
+		STAT_TGH = 60,
+		STAT_BIO = 25,
+		STAT_COG = 120
+	)
+
+/obj/item/robot_module/security/defense
+	sprites = list(
+					"Bloodhound" = "syndie_bloodhound",
+					"Treadhound" = "syndie_treadhound",
+					"Precision" = "syndi-medi",
+					"Heavy" = "syndi-heavy",
+					"Artillery" = "spidersyndi",
+					"Miss" = "missm_syndie",
+					"Contractor RedShell" = "mekasyndi",
+					"Contractor RedShell Alt" = "mekasec",
+					"Contractor Tanker" = "k4tsec",
+					"Contractor Tanker Alt" = "k4tsyndi",
+					"Contractor Tactical" = "fmekasec",
+					"Contractor Tactical Alt" = "mmekasec",
+					"Contractor Foxtrot" = "mekasyndi_foxtrot",
+					"Contractor Traffic Light" = "fmekasyndi",
+					"Contractor Riot Stopper" = "mmekasyndi"
+				)
+
+	tall_sprites = list(
+
+					"mekasyndi",
+					"mekasec",
+					"k4tsec",
+					"k4tsyndi",
+					"mmekasec",
+					"mekasyndi_foxtrot",
+					"fmekasyndi",
+					"mmekasyndi"
+				)
+
+/obj/item/robot_module/security/defense/New(var/mob/living/silicon/robot/R)
+	src.modules += new /obj/item/device/flash(src)
+	src.modules += new /obj/item/borg/sight/hud/sec(src)
+	src.modules += new /obj/item/tool/sword/machete(src)
+	src.modules += new /obj/item/gun/energy/bsrifle(src)
+	src.modules += new /obj/item/gripper/ammo(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
+	src.modules += new /obj/item/device/gps(src)
+	src.emag += new /obj/item/gun/energy/laser/mounted/cyborg(src)
+
+	//We are stronk so we get less no knockdowns
+	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
+
+	R.stats.addPerk(PERK_SI_SCI)
+
+	..(R)
+
+/obj/item/robot_module/security/defense/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+	..()
+	var/obj/item/gun/energy/bsrifle/T = locate() in src.modules
+	if(T.cell.charge < T.cell.maxcharge)
+		T.cell.give(T.charge_cost * amount)
+		T.update_icon()
+	else
+		T.charge_tick = 0
+
+	if(R.HasTrait(CYBORG_TRAIT_EMAGGED))
+		var/obj/item/gun/energy/laser/mounted/cyborg/L = locate() in src.modules
+		if(L.cell.charge < L.cell.maxcharge)
+			L.cell.give(T.charge_cost * amount)
+			L.update_icon()
+		else
+			L.charge_tick = 0
+
+	var/obj/item/tool/baton/robot/B = locate() in src.modules
+	if(B && B.cell)
+		B.cell.give(amount)
+
+
+/obj/item/robot_module/security/enforcement
 	health = 320 //Very tanky!
 	speed_factor = 1.15 //Kinda slow
 	power_efficiency = 1.55 //Decent, we are meant to be going out and learing spiders
 
-	desc = "Focused on keeping the peace and fighting off threats to the colony, the security module is a \
-	heavily armored, though lightly armed battle unit."
+	desc = "Focused on keeping the peace and ensuring colony law is maintained, the enforcement module is a \
+	heavily armored, though lightly armed security unit."
 
 	stat_modifiers = list(
 		STAT_ROB = 60,
@@ -664,7 +751,7 @@ var/global/list/robot_modules = list(
 		STAT_MEC = 35 //weldering cracks
 	)
 
-/obj/item/robot_module/security/general
+/obj/item/robot_module/security/enforcement
 	sprites = list(
 					"Basic" = "robotsecy",
 					"Sleek" = "sleeksecurity",
@@ -698,7 +785,7 @@ var/global/list/robot_modules = list(
 					"mmekasyndi"
 				)
 
-/obj/item/robot_module/security/general/New(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/security/enforcement/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/borg/sight/hud/sec(src)
@@ -727,7 +814,7 @@ var/global/list/robot_modules = list(
 
 	..(R)
 
-/obj/item/robot_module/security/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
+/obj/item/robot_module/security/enforcement/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
 	var/obj/item/gun/energy/taser/mounted/cyborg/T = locate() in src.modules
 	if(T.cell.charge < T.cell.maxcharge)
@@ -1047,21 +1134,11 @@ var/global/list/robot_modules = list(
 					"Miss" = "missm_med",
 					"Tall Felinal" = "mekapeace",
 					"Tall Felinal Alt" = "mekapeace_alt",
-					"Tall " = "mekaninja",
-					"Tall  Alt" = "mekaninj_alt",
-					"Tall  Tanker" = "k4tninja",
-					"Tall  Female" = "fmekaninja",
-					"Tall  Male" = "mmekaninja"
 					)
 
 	tall_sprites = list(
 					"mekapeace",
-					"Tmekapeace_alt",
-					"mekaninja",
-					"mekaninj_alt",
-					"k4tninja",
-					"fmekaninja",
-					"mmekaninja"
+					"Tmekapeace_alt"
 					)
 
 	health = 160 //Weak

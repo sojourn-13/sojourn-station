@@ -22,6 +22,28 @@
 	serial_type = "SD GmbH"
 	charge_meter = FALSE
 
+/obj/item/gun/energy/bsrifle
+	name = "integrated \"STS PARA\" Blackshield rifle"
+	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. \
+	The lightweight polymer, skeletal stock, and shortened barrel make this weapon much lighter than the standard STS with modified receivers and gas block for better recoil control. \
+	This variant has been designed to flash-synthesise ammunition from an onboard cell, for Synthetic use. "
+	icon = 'icons/obj/guns/projectile/sts35.dmi'
+	icon_state = "stspara"
+	item_state = "stspara"
+	damage_multiplier = 1.3 //Well oiled
+	cell_type = /obj/item/cell/medium/greyson
+	modifystate = null
+	force = WEAPON_FORCE_PAINFUL
+	charge_cost = 80 //about 20 rounds per full charge
+	self_recharge = 1
+	charge_meter = FALSE
+	init_firemodes = list(
+		list(mode_name="Standard Burst", projectile_type=/obj/item/projectile/bullet/rifle_75, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2  , icon="burst", damage_mult_add = -0.2),
+		list(mode_name="Hollowpoint Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/lethal, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2  , icon="burst", damage_mult_add = -0.2),
+		list(mode_name="Incendiary Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/incend, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2, fire_delay = 20  , icon="burst", damage_mult_add = -0.2),
+		)
+
+
 /obj/item/gun/energy/borg/pistol
 	name = "\"Disabler\" pistol"
 	desc = "A standardised ammunition-synthesising pistol superficially resembling an ancient pistol."
