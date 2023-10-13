@@ -178,11 +178,13 @@
 	health_modifier = 5
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
-	perks = list(PERK_MARKET_PROF, /datum/perk/job/jingle_jangle, /datum/perk/neat) //Union has revoked their chemistry privileges
+	perks = list(PERK_MARKET_PROF, /datum/perk/job/jingle_jangle, /datum/perk/neat, /datum/perk/sure_step) //Union has revoked their chemistry privileges
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_BIO = 10,
+		STAT_VIG = 20,
+		STAT_THG = 20,
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/camera_monitor)
