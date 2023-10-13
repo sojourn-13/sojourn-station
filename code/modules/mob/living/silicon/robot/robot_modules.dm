@@ -1138,7 +1138,7 @@ var/global/list/robot_modules = list(
 
 	tall_sprites = list(
 					"mekapeace",
-					"Tmekapeace_alt"
+					"mekapeace_alt"
 					)
 
 	health = 160 //Weak
