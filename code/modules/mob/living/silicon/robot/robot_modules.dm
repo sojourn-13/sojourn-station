@@ -1130,11 +1130,21 @@ var/global/list/robot_modules = list(
 					"Miss" = "missm_med",
 					"Tall Felinal" = "mekapeace",
 					"Tall Felinal Alt" = "mekapeace_alt",
+					"Tall " = "mekaninja",
+					"Tall  Alt" = "mekaninj_alt",
+					"Tall  Tanker" = "k4tninja",
+					"Tall  Female" = "fmekaninja",
+					"Tall  Male" = "mmekaninja"
 					)
 
 	tall_sprites = list(
 					"mekapeace",
-					"mekapeace_alt"
+					"Tmekapeace_alt",
+					"mekaninja",
+					"mekaninj_alt",
+					"k4tninja",
+					"fmekaninja",
+					"mmekaninja"
 					)
 
 	health = 160 //Weak
