@@ -382,7 +382,7 @@
 	take place over an area, such as flashbangs or explosions."
 	shield_health = 200
 	max_shield_health = 200
-	shield_regen_amount = 15
+	shield_regen_amount = 5
 	size_x = 1
 	size_y = 1
 
