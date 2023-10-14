@@ -43,6 +43,24 @@
 		list(mode_name="Incendiary Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/incend, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2, fire_delay = 20  , icon="burst", damage_mult_add = -0.2),
 		)
 
+/obj/item/gun/energy/dazzlation //the last gun you'll ever need.
+	name = "integrated \"Dazlation\" light pistol"
+	icon = 'icons/obj/guns/projectile/flaregun.dmi'
+	icon_state = "flaregun"
+	item_state = "pistol"
+	fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg'
+	cell_type = /obj/item/cell/small/greyson
+	charge_cost = 200 //2 shots per 'charge'
+	proj_step_multiplier = 0.5
+	self_recharge = 1
+	charge_meter = FALSE
+
+	init_firemodes = list(
+		list(mode_name="Red Flare", /obj/item/projectile/bullet/flare, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', icon="grenade"),
+		list(mode_name="Green Flare", /obj/item/projectile/bullet/flare/green, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', icon="grenade"),
+		list(mode_name="Blue Flare", /obj/item/projectile/bullet/flare/blue, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20  , icon="grenade"),
+		list(mode_name="Random Flare", /obj/item/projectile/bullet/flare/choas, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20  , icon="grenade")
+		)
 
 /obj/item/gun/energy/borg/pistol
 	name = "\"Disabler\" pistol"
