@@ -74,8 +74,9 @@
 	charge_cost = 100
 	self_recharge = 1
 	init_firemodes = list(
-		list(mode_name="rubber bullet", projectile_type=/obj/item/projectile/bullet/pistol_35/rubber, fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=25, icon="stun"),
-		list(mode_name="Hollowpoint round", projectile_type=/obj/item/projectile/bullet/pistol_35/lethal, fire_sound='sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=10, icon="kill"),
+		list(mode_name="rubber bullet", projectile_type=/obj/item/projectile/bullet/pistol_35/rubber, fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=10
+		, icon="stun"),
+		list(mode_name="Hollowpoint round", projectile_type=/obj/item/projectile/bullet/pistol_35/lethal, fire_sound='sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=5, icon="kill"),
 		)
 	charge_meter = FALSE
 
@@ -89,7 +90,7 @@
 	charge_cost = 25
 	self_recharge = 1
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
-	projectile_type = /obj/item/projectile/beam
+	projectile_type = /obj/item/projectile/bullet/pistol_35
 	damage_multiplier = 0.7
 	penetration_multiplier = 0.7
 	init_recoil = HANDGUN_RECOIL(0.4) //Hard to control accurately in most cases.
