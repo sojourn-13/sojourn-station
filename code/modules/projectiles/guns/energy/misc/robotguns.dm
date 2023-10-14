@@ -23,20 +23,20 @@
 	charge_meter = FALSE
 
 /obj/item/gun/energy/bsrifle
-	name = "integrated \"STS PARA\" Blackshield rifle"
-	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. \
-	The lightweight polymer, skeletal stock, and shortened barrel make this weapon much lighter than the standard STS with modified receivers and gas block for better recoil control. \
-	This variant has been designed to flash-synthesise ammunition from an onboard cell, for Synthetic use. "
-	icon = 'icons/obj/guns/projectile/sts35.dmi'
-	icon_state = "stspara"
-	item_state = "stspara"
-	damage_multiplier = 1.3 //Well oiled
+	name = "integrated \"STS\" Burst rifle"
+	desc = "A lightweight modified variant of the STS-PARA that has been modified to serve as the main-arm for a combat bot, much of its comfort features have been\
+	removed in order to maximize space for an integral flash-synthesizer hooked directly to its power, keeping it flush with ammo, so long as the power holds."
+	icon = 'icons/obj/robot_items.dmi'
+	icon_state = "security_rifle"
+	item_state = "security_rifle"
+	damage_multiplier = 1.2 //all firemodes are -0.2 so this should go down to 1.0
 	cell_type = /obj/item/cell/medium/greyson
 	modifystate = null
 	force = WEAPON_FORCE_PAINFUL
 	charge_cost = 80 //about 20 rounds per full charge
 	self_recharge = 1
-	charge_meter = FALSE
+	charge_meter = TRUE
+	serial_type = "NM"
 	init_firemodes = list(
 		list(mode_name="Standard Burst", projectile_type=/obj/item/projectile/bullet/rifle_75, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 ,fire_delay = 10, icon="burst", damage_mult_add = -0.2),
 		list(mode_name="Hollowpoint Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/lethal, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 , fire_delay = 10,  icon="burst", damage_mult_add = -0.2),
@@ -56,10 +56,10 @@
 	charge_meter = FALSE
 
 	init_firemodes = list(
-		list(mode_name="Red Flare", /obj/item/projectile/bullet/flare, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', icon="grenade"),
-		list(mode_name="Green Flare", /obj/item/projectile/bullet/flare/green, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', icon="grenade"),
-		list(mode_name="Blue Flare", /obj/item/projectile/bullet/flare/blue, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20  , icon="grenade"),
-		list(mode_name="Random Flare", /obj/item/projectile/bullet/flare/choas, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20  , icon="grenade")
+		list(mode_name="Red Flare", projectile_type=/obj/item/projectile/bullet/flare, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20 , icon="grenade"),
+		list(mode_name="Green Flare", projectile_type=/obj/item/projectile/bullet/flare/green, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20 , icon="grenade"),
+		list(mode_name="Blue Flare", projectile_type=/obj/item/projectile/bullet/flare/blue, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20  , icon="grenade"),
+		list(mode_name="Random Flare", projectile_type=/obj/item/projectile/bullet/flare/choas, fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg', fire_delay = 20  , icon="grenade")
 		)
 
 /obj/item/gun/energy/borg/pistol

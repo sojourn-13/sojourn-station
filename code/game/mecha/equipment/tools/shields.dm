@@ -377,8 +377,8 @@
 /obj/item/shield_projector/rectangle/borg_personal
 	name = "integrated combat shield projector"
 	description_info = "A small integral shield emitter designed for use by synthetics. Smaller and more cheaply made, it is notably less efficient than higher end models,\
-	its integration into a borgs powernet allows for quicker recharge times. Persona Shields allow projectiles to leave from inside but blocks projectiles from outside.  \
-	Everything else can pass through the shield freely, including other people and thrown objects. The shield also cannot block certain effects which \
+	Persona Shields allow projectiles to leave from inside but blocks projectiles from outside.  Everything else can pass through the shield freely, \
+	including other people and thrown objects. The shield also cannot block certain effects which \
 	take place over an area, such as flashbangs or explosions."
 	shield_health = 200
 	max_shield_health = 200
