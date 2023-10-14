@@ -662,7 +662,7 @@ var/global/list/robot_modules = list(
 		STAT_VIG = 60,
 		STAT_TGH = 60,
 		STAT_BIO = 25,
-		STAT_COG = 120
+		STAT_COG = 120,
 		STAT_MEC = 35 //weldering cracks
 	)
 
