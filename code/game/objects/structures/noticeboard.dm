@@ -136,6 +136,21 @@
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
+	P = new()
+	P.name = "Memo:Smart Engagement"
+	P.info = "<h3>Dear Colleagues of the Marshal and Blackshield Departments,</h1><br>\
+				<small>I would like to remind you of and re-emphasize the golden rule of extended combat (the three REs):<ol>\
+				<li> REtreat</li>\
+				<li>REgroup</li>\
+				<li>REengage</li>\
+				</ol><br>\
+				While it may be tempting to attempt defeat the opposing force in one swift decisive skirmish, it's often impossible to do so with better equipped (and organised) hostile elements as recent experiences have shown us. <br><br>\
+				Focus on surviving and putting the pressure on the enemy instead of blind suicide charges. <br><br> \
+				<i>C.Mallory</i></small>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
 /obj/structure/noticeboard/blackshield
 	name = "Blackshield bulletin board"
 	desc = "A board containing vital notices and official memos for the Blackshield Militia"
@@ -157,6 +172,22 @@
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P
+
+	P = new()
+	P.name = "Memo:Smart Engagement"
+	P.info = "<h3>Dear Colleagues of the Marshal and Blackshield Departments,</h1><br>\
+				<small>I would like to remind you of and re-emphasize the golden rule of extended combat (the three REs):<ol>\
+				<li> REtreat</li>\
+				<li>REgroup</li>\
+				<li>REengage</li>\
+				</ol><br>\
+				While it may be tempting to attempt defeat the opposing force in one swift decisive skirmish, it's often impossible to do so with better equipped (and organised) hostile elements as recent experiences have shown us. <br><br>\
+				Focus on surviving and putting the pressure on the enemy instead of blind suicide charges. <br><br> \
+				<i>C.Mallory</i></small>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
 
 /obj/structure/noticeboard/medical
 	name = "Medical bulletin board"
