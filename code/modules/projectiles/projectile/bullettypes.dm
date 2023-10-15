@@ -1113,7 +1113,8 @@
 	icon_state = "bolt"
 	damage_types = list(BRUTE = 23.5)
 	agony = 29
-	armor_penetration = 5
+	armor_penetration = 0
+	post_penetration_dammult = 2
 	step_delay = 0.9
 	recoil = 1
 
