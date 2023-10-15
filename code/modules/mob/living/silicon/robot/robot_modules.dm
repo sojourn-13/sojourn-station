@@ -905,7 +905,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/energy/borg/pistol(src)
+	src.modules += new /obj/item/gun/energy/smg(src) //superior arms due to janitor union /s. But really, this is because they're more likely to have to do fighting while roaming around cleaning
 	src.emag += new /obj/item/reagent_containers/spray/lube(src)
 
 	//Silent cleaners
