@@ -697,6 +697,7 @@
 	icon = 'icons/obj/machines/buttons.dmi'
 	icon_state = "launcher0"
 	desc = "A remote control switch for polarized windows."
+	matter = list(MATERIAL_PLASTIC = 1)
 	var/range = 7
 
 /obj/machinery/button/windowtint/attack_hand(mob/user as mob)
@@ -724,6 +725,16 @@
 
 /obj/machinery/button/windowtint/update_icon()
 	icon_state = "light[active]"
+
+/obj/machinery/button/windowtint/attackby(obj/item/I, mob/user)
+	if(QUALITY_PRYING in I.tool_qualities)
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_PRYING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+			user.visible_message(SPAN_NOTICE("\The [user] dismantles \the [src]."),SPAN_NOTICE("You dismantle \the [src]."))
+			drop_materials(drop_location())
+			qdel(src)
+	else
+		return attack_hand(user)
+
 
 
 //Fulltile windows can only exist ontop of a low wall

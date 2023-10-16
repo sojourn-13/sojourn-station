@@ -411,6 +411,18 @@
 		/datum/design/autolathe/ammo/sbaw_empty = 0, //So we can handload new mags
 		)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/gladstone
+	disk_name = "H&S - 20mm Gladstone Shotgun"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/gladstone = 3,
+		/datum/design/autolathe/ammo/shotgun_beanbag,
+		/datum/design/autolathe/ammo/shotgun_blanks = 0,
+		/datum/design/autolathe/ammo/shotgun_illumination,
+		)
+
 /obj/item/computer_hardware/hard_drive/portable/design/guns/state
 	disk_name = "Seinemetall Defense GmbH - 20mm State Auto Shotgun"
 	desc = "Known as the state, an odd shotgun, often redesigned every few years in a way few people are fully happy with."
@@ -464,6 +476,43 @@
 	)
 
 // 6.5mm carbines
+
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/pitbull
+	disk_name = "SolFed  - 6.5mm Pitbull Carbine"
+	icon_state = "solfed"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/pitbull = 6,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
+	)
+
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/bulldog
+	disk_name = "Seinemetall Defense GmbH - 6.5mm Bulldog Carbine"
+	icon_state = "frozenstar"
+
+	license = 16
+	designs = list(
+		/datum/design/autolathe/gun/bulldog = 6,
+		/datum/design/autolathe/gun/bulldog_rds = 7,
+		/datum/design/autolathe/ammo/lrifle_short_practice = 0,
+		/datum/design/autolathe/ammo/lrifle_short_rubber,
+		/datum/design/autolathe/ammo/lrifle_short,
+		/datum/design/autolathe/ammo/lrifle_short_lethal = 2,
+		/datum/design/autolathe/ammo/lrifle_practice = 1,
+		/datum/design/autolathe/ammo/lrifle_rubber = 2,
+		/datum/design/autolathe/ammo/lrifle = 2,
+		/datum/design/autolathe/ammo/lrifle_lethal = 4,
+	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/guns/sol
 	disk_name = "H&S - 6.5mm \"Solarian\" Carbine"

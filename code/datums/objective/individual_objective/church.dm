@@ -1,4 +1,4 @@
-/*
+
 /datum/individual_objective/bad_technology
 	name = "Heretical Technology"
 	limited_antag = TRUE
@@ -27,7 +27,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, SWORD_OF_TRUTH_OF_DESTRUCTION)
 	..()
-
+/*
 /datum/individual_objective/convert
 	name = "Convert"
 	limited_antag = TRUE

@@ -66,3 +66,39 @@
 		rad = 25
 	)
 	siemens_coefficient = 0.6
+
+//Upgraded version of the above, found rarely in greyson loot.
+/obj/item/clothing/head/helmet/space/void/greyson
+	name = "greyson 'zhengdou' hardsuit helm" //Credit for sprites go to Près de l'oiseau over at Eris
+	icon_state = "os_hardsuit_helm"
+	item_state = "os_hardsuit_helm"
+	desc = "A combat rated hard-suit helmet produced by GP. Despite its age, the sleek suit still stands up against its more modern counterparts."
+	flash_protection = FLASH_PROTECTION_MODERATE
+	tint = TINT_NONE
+	armor_list = list(
+		melee = 40,
+		bullet = 45,
+		energy = 45,
+		bomb = 45,
+		bio = 100,
+		rad =  25
+	)
+	siemens_coefficient = 0.6
+
+/obj/item/clothing/suit/space/void/greyson
+	name = "greyson 'zhengdou' hardsuit" //Credit for sprites go to Près de l'oiseau over at Eris
+	icon_state = "os_hardsuit"
+	item_state = "os_hardsuit"
+	desc = "A combat rated hard-suit produced by GP. Despite its age, the sleek suit still stands up against its more modern counterparts and is surprisingly comfortable!"
+	w_class = ITEM_SIZE_BULKY
+	slowdown = 0
+	helmet = /obj/item/clothing/head/helmet/space/void/greyson
+	armor_list = list(
+		melee = 40,
+		bullet = 50,
+		energy = 50,
+		bomb = 45,
+		bio = 100,
+		rad = 25
+	)
+	siemens_coefficient = 0.6

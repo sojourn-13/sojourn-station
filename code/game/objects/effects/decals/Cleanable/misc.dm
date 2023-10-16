@@ -32,6 +32,13 @@
 			to_chat(l, SPAN_WARNING("Your skin itches."))
 		l.apply_effect(2, IRRADIATE)
 
+/obj/effect/decal/cleanable/greenglow/bile/Process()
+	. = ..()
+	for(var/mob/living/carbon/l in range(4))
+		if(prob(25))
+			to_chat(src, SPAN_WARNING("The air begins to feel warm."))
+		l.apply_effect(1, IRRADIATE)
+
 /obj/effect/decal/cleanable/dirt
 	name = "dirt"
 	desc = "Someone should clean that up."
@@ -134,6 +141,11 @@
 	light_range = 2
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "greenglow"
+
+/obj/effect/decal/cleanable/greenglow/bile
+	name = "glowing bile"
+	desc = "A small puddle of glowing green bile, it utterly reeks. Just being near it makes you feel a bit warmer."
+
 
 /obj/effect/decal/cleanable/slimecorpse // Slimepeople remains
 	name = "runny slime pool"

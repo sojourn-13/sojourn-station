@@ -30,6 +30,8 @@
 	var/list/options = list()
 	options["Standard"] = "scaf"
 	options["Cat eared"] = "skat"
+	options["Heavy"] = "scafalt2" //original sprites by- Apparently Rebel?
+	options["Commando"] = "scafalt" //it really does look like the Commandos headgear. Same credit as alt2
 
 	var/choice = input(M,"What kind of helmet style do you want to switch to?","Adjust style") as null|anything in options
 
@@ -171,6 +173,7 @@
 	name = "blood-red voidsuit"
 	desc = "An advanced suit that protects against injuries during special operations. This version is additionally reinforced against melee attacks."
 	item_state = "syndie_voidsuit"
+	slowdown = 0.5 //decent armor, decent slowdown
 	armor_list = list(
 		melee = 50,
 		bullet = 40,

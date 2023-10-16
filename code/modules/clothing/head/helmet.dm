@@ -386,11 +386,36 @@
 //Marshals
 /obj/item/clothing/head/helmet/marshal
 	name = "marshal helmet"
-	desc = "Standard operator gear. Protects the head from impacts. Painted in marshal colors and features an eye shield"
-	icon_state = "helmet_ironhammer"
-	icon_state = "helmet_ironhammer"
+	desc = "Standard operator gear. Protects the head from impacts. Painted in marshal colors."
+	icon_state = "helmet"
+	icon_state = "helmet"
 	armor_list = list(melee = 30, bullet = 30,energy = 25, bomb = 25, bio = 70, rad = 0)
-	body_parts_covered = HEAD|EYES|EARS
+	body_parts_covered = HEAD|EARS
+
+/obj/item/clothing/head/helmet/marshal/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard helmet"] = "helmet"
+	options["visored helmet"] = "helmet_ironhammer"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/helmet/marshal_full
 	name = "marshal full helmet"
@@ -420,6 +445,8 @@
 	item_state = "ironhammer_wo_full"
 	flash_protection = FLASH_PROTECTION_MODERATE
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	action_button_name = "Toggle Headlamp" //Excellent job forgetting the verb, Friend.
+	brightness_on = 4
 	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 100, rad = 0)
 
 /obj/item/clothing/head/helmet/warrant_officer/update_icon()

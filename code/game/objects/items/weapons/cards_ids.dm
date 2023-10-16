@@ -408,6 +408,10 @@ var/const/NO_EMAG_ACT = -50
 	icon_state = "id_lodge"
 	desc = "A bird skull hanging from a leather thong, carved by the hunting lodge and given to members to display name and rank. A small chip inside allows it to be used like any other access badge, encoded with the users biometrics."
 
+/obj/item/card/id/visitor
+	icon_state = "guest"
+	desc = "An official guest pass issued by the Nadehzda colony. This one bears the mark of Nadezhda customs and has no listed expiry date."
+
 //Keys
 /obj/item/keys
 	name = "skeleton key"

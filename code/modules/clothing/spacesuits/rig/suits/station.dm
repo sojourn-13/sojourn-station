@@ -28,7 +28,7 @@
 ****************************************/
 /obj/item/rig/industrial
 	name = "industrial suit control module"
-	suit_type = "industrial hardsuit"
+	suit_type = "industrial hardsuit" //Credit for sprites go to Près de l'oiseau over at Eris
 	desc = "A heavy, powerful rig used by construction crews and mining corporations."
 	icon_state = "engineering_rig"
 	armor_list = list(
@@ -411,6 +411,29 @@ Technomancer RIG
 		/obj/item/rig_module/storage/expanded/tt
 		)
 
+/obj/item/rig/light/ultra_light/cmo
+	name = "SI 'Medtek' control module"
+	desc = "An upgraded and somewhat customized soteria 'retainer' RIGsuit. Though superficially and aesthetically similar this suit has undergone a series of upgrades so as to improve its utility \
+	for Soterias resident overworked Chief of Medicine. Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
+	armor_list = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 100,
+		rad = 20
+	)
+	slowdown = -0.3 //we get a bit more speed than the baseline recovery rig as this is a unique item with exactly 0 armor. This is for zipping around medical, rather than getting in the weeds
+
+	initial_modules = list(
+		/obj/item/rig_module/modular_injector/combat,
+		/obj/item/rig_module/modular_injector/medical,
+		/obj/item/rig_module/device/healthscanner,
+		/obj/item/rig_module/vision/medhud,
+		/obj/item/rig_module/storage/expanded/tt
+		)
+
+
 /***************************************
 	Hazard Suit
 ****************************************/
@@ -446,10 +469,10 @@ Technomancer RIG
 		/obj/item/rig_module/mounted/taser
 		)
 /obj/item/rig/hazard/steward
-	name = "hazard hardsuit control module"
-	suit_type = "hazard hardsuit"
-	desc = "A modification of the traditional hazard rig built for equal parts utility and defense. Marked with a seal of two Armstrong rifles crossing each other in a X at the base of the neck."
-	icon_state = "hazard_rig"
+	name = "stewards hardsuit control module"
+	desc = "A modification of the traditional combat rig built for equal parts utility and defense. Marked with a seal of two Armstrong rifles crossing each other in a X at the base of the neck."
+	icon_state = "security_rig"
+	suit_type = "combat hardsuit"
 	armor_list = list(
 		melee = 40,
 		bullet = 40,

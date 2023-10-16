@@ -120,7 +120,7 @@
 	init_firemodes = list(
 		list(mode_name="Buckshot", mode_desc="Fires a buckshot synth-shell", projectile_type=/obj/item/projectile/bullet/pellet/shotgun, charge_cost=100, icon="kill"),
 		list(mode_name="Beanbag", mode_desc="Fires a beanbag synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag, charge_cost=25, icon="stun"),
-		list(mode_name="Blast", mode_desc="Fires a slug synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun, charge_cost=null, icon="destroy"),
+		list(mode_name="Blast", mode_desc="Fires a slug synth-shell", projectile_type=/obj/item/projectile/bullet/shotgun, charge_cost=50, icon="destroy"),
 	)
 	serial_type = "GP"
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY, GUN_SCOPE)
@@ -179,7 +179,7 @@
 	else
 		return new projectile_type(src)
 
-/obj/item/gun/energy/laser/railgun/railrifle/attackby(obj/item/I, mob/user)
+/obj/item/gun/energy/laser/railgun/attackby(obj/item/I, mob/user)
 	..()
 	if(I.has_quality(QUALITY_BOLT_TURNING))
 		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
@@ -248,7 +248,7 @@
 
 	var/max_stored_matter = 6
 	var/stored_matter = 0
-	var/matter_type = MATERIAL_RSCRAP
+	var/matter_type = "refined scrap pieces"
 
 	var/projectile_cost = 1
 	var/overheat_damage = 25
@@ -269,9 +269,9 @@
 	..()
 /obj/item/gun/energy/laser/railgun/gauss/attackby(obj/item/I, mob/user)
 
-	if(!istype(I,/obj/item/stack/sheet))
+	if(!istype(I,/obj/item/stack))
 		..()
-	var/obj/item/stack/sheet/M = I
+	var/obj/item/stack/M = I
 	if(istype(M) && M.name == matter_type)
 		var/amount = min(M.get_amount(), round(max_stored_matter - stored_matter))
 		if(M.use(amount))

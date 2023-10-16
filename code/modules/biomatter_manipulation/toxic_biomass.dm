@@ -2,10 +2,10 @@
 
 
 //toxin attack proc, it's used for attacking people with checking their armor
-/proc/toxin_attack(mob/living/victim, var/damage = rand(2, 4))
+/proc/toxin_attack(mob/living/carbon/victim, var/damage = rand(10, 12))
 	if(istype(victim))
 		var/hazard_protection = 100 - victim.getarmor(null, ARMOR_BIO)
-		victim.apply_damage(max(0, damage * hazard_protection / 100 * victim.reagent_permeability()), TOX)
+		victim.apply_damage(max(0, damage * hazard_protection / 100 * victim.reagent_permeability()), BURN)
 
 //this proc spill some biomass on the floor
 //dirs_to_spread - list with dirs where biomass should expand after creation
@@ -39,9 +39,10 @@
 	anchored = TRUE
 	layer = TURF_LAYER + 0.6
 
-/obj/effect/decal/cleanable/solid_biomass/Crossed(mob/living/M as mob|obj)
+/obj/effect/decal/cleanable/solid_biomass/Crossed(mob/M)
 	for(M in living_mobs_in_view(1, src))
-		toxin_attack(M, rand(4, 8))
+		toxin_attack(M, rand(10, 20))
+		.=..()
 
 /obj/effect/decal/cleanable/solid_biomass/Initialize()
 	. = ..()
@@ -66,7 +67,7 @@
 
 /obj/effect/decal/cleanable/solid_biomass/aoe/Process()
 	for(var/mob/living/creature in living_mobs_in_view(1, src))
-		toxin_attack(creature, rand(8, 16))
+		toxin_attack(creature, rand(4, 8))
 
 
 /obj/effect/decal/cleanable/solid_biomass/attackby(var/obj/item/I, var/mob/user)
@@ -74,5 +75,5 @@
 		to_chat(user, SPAN_NOTICE("You started removing this [src]. U-ugh. Disgusting..."))
 		if(do_after(user, 3 SECONDS, src))
 			to_chat(user, SPAN_NOTICE("You removed [src]."))
-			toxin_attack(user, rand(25, 40))
+			toxin_attack(user, rand(12, 20))
 			qdel(src)

@@ -299,6 +299,8 @@
 
 	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/_pointed, A))
 
+	usr.visible_message("<b>[src]</b> points to [A]")
+
 /// possibly delayed verb that finishes the pointing process starting in [/mob/verb/pointed()].
 /// either called immediately or in the tick after pointed() was called, as per the [DEFAULT_QUEUE_OR_CALL_VERB()] macro
 /mob/proc/_pointed(atom/pointing_at)

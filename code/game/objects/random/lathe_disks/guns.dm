@@ -119,6 +119,7 @@
 
 /obj/random/lathe_disk/rifle/item_to_spawn()
 	return pickweight(list(
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/bulldog = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/sol = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/ostwind = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/pulse_rifle = 1,
@@ -127,6 +128,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/python = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/copperhead = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/luger = 3,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/bulldog = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/blackshield/duty = 1,
 				/obj/item/computer_hardware/hard_drive/portable/design/strelki = 3,))
 
@@ -175,6 +177,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/protector = 3,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/lenar = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/china = 4,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/pitbull = 2,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/antebellum = 1))
 
 /obj/random/lathe_disk/shotgun
@@ -191,6 +194,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/doublebarrel = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/grizzly = 7,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/regulator = 4,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/gladstone = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/lemant = 2, //Has a built in shotgun, so low odds but still here
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/state = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/pug = 3,

@@ -828,7 +828,10 @@ var/list/name_to_material
 
 /material/refined_scrap
 	name = MATERIAL_RSCRAP
-	stack_type = /obj/item/stack/sheet/refined_scrap
+	stack_type = /obj/item/stack/material/refined_scrap
+	composite_material = list(MATERIAL_STEEL = 1)
+	stack_origin_tech = list(TECH_MATERIAL = 2)
+	weight = 30
 	icon_colour = "B7410E"
-	sheet_singular_name = "piece"
+	sheet_singular_name = "pieces"
 	sheet_plural_name = "pieces"

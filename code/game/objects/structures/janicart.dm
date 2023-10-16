@@ -8,6 +8,7 @@
 	density = 1
 	reagent_flags = OPENCONTAINER
 	climbable = TRUE
+	health = 100
 	//copypaste sorry
 	var/amount_per_transfer_from_this = 5 //shit I dunno, adding this so syringes stop runtime erroring. --NeoFite
 	var/obj/item/storage/bag/trash/mybag	= null
@@ -16,17 +17,13 @@
 	var/obj/item/device/lightreplacer/myreplacer = null
 	var/obj/structure/mopbucket/mybucket = null
 	var/has_items = FALSE
-	var/dismantled = TRUE
+	var/dismantled = FALSE
 	var/signs = 0	//maximum capacity hardcoded below
 
 
 
 /obj/structure/janitorialcart/Destroy()
-	QDEL_NULL(mybag)
-	QDEL_NULL(mymop)
-	QDEL_NULL(myspray)
-	QDEL_NULL(myreplacer)
-	QDEL_NULL(mybucket)
+	spill(100)
 	return ..()
 
 /obj/structure/janitorialcart/examine(mob/user)
@@ -290,9 +287,61 @@
 
 
 /obj/structure/janitorialcart/ex_act(severity)
-	spill(100 / severity)
+	var obj/destroy = FALSE
+	var obj/healthreduction = 0
+
+	if (severity == 1)
+		destroy = TRUE
+	else if (severity == 2)
+		if (prob(50))
+			destroy = TRUE
+		else
+			healthreduction = 99
+	else if (severity == 3)
+		if (prob(5))
+			destroy = TRUE
+		else
+			healthreduction = 50
+
+	if (destroy)
+		if (mymop)
+			mymop.ex_act(severity + 1)
+		if (myspray)
+			myspray.ex_act(severity + 1)
+		if (myreplacer)
+			myreplacer.ex_act(severity + 1)
+		if (mybucket)
+			mybucket.ex_act(severity + 1)
+		if (signs)
+			for (var/obj/item/caution/Sign in src)
+				Sign.ex_act(severity + 1)
+		if (mybag)
+			mybag.ex_act(severity + 1)
+
+		spill(100 / severity)
+
+		qdel(src)
+	else
+		health -= healthreduction
+
 	..()
 
+
+/obj/structure/janitorialcart/proc/damage(var/damage)
+	health -= damage
+	if(health <= 0)
+		qdel(src)
+
+/obj/structure/janitorialcart/bullet_act(var/obj/item/projectile/Proj)
+	var/proj_damage = Proj.get_structure_damage()
+	if(!proj_damage)
+		return
+
+	..()
+	if (!(Proj.testing))
+		damage(proj_damage)
+
+	return
 
 
 

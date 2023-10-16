@@ -118,6 +118,44 @@
 	wield_delay_factor = 0.2 // 20 vig for insta wield
 	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 
+/obj/item/gun/projectile/automatic/sts/rifle/heavy
+	name = "\"STS\" heavy rifle"
+	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. If we have to go alone, we'll go alone with pride."
+	icon = 'icons/obj/guns/projectile/sts40.dmi'
+	icon_state = "sts"
+	item_state = "sts"
+	w_class = ITEM_SIZE_HUGE
+	caliber = CAL_HRIFLE
+	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
+	price_tag = 1500
+	penetration_multiplier = 1.1
+	damage_multiplier = 1.1
+	init_recoil = RIFLE_RECOIL(1.7)
+	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	cocked_sound = 'sound/weapons/guns/interact/batrifle_cock.ogg'
+	saw_off = TRUE
+	sawn = /obj/item/gun/projectile/automatic/sts/rifle/heavy/sawn
+	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/hrifle = 1)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+		)
+
+/obj/item/gun/projectile/automatic/sts/rifle/heavy/sawn
+	name = "sawn down \"STS\" heavy rifle"
+	desc = "A rugged STS-40. Uses 8.6x70mm heavy rifle rounds. This one has been shortened as much as possible while still able to function."
+	icon = 'icons/obj/guns/projectile/sawnoff/sts40.dmi'
+	icon_state = "sts"
+	item_state = "sts"
+	price_tag = 1125
+	w_class = ITEM_SIZE_BULKY
+	penetration_multiplier = 0.8
+	damage_multiplier = 1
+	gun_parts = list(/obj/item/part/gun/frame/sts = 1, /obj/item/stack/material/plastic = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
+	init_recoil = RIFLE_RECOIL(1.8)
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 4)
+	saw_off = FALSE
+
+
 /obj/item/gun/projectile/automatic/sts/rifle/blackshield
 	name = "\"STS PARA\" Blackshield rifle"
 	desc = "A lightweight modified variant of the STS-30 that takes 7.62mm rounds, shedding wartime wood for modern plastic polymer. \
@@ -190,6 +228,6 @@
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/sts/rifle
 	gripvars = list(/obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/rubber)
-	resultvars = list(/obj/item/gun/projectile/automatic/sts/rifle, /obj/item/gun/projectile/automatic/sts/rifle/blackshield)
+	resultvars = list(/obj/item/gun/projectile/automatic/sts/rifle, /obj/item/gun/projectile/automatic/sts/rifle/heavy)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
-	barrelvars = list(/obj/item/part/gun/barrel/lrifle)
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle, /obj/item/part/gun/barrel/hrifle)

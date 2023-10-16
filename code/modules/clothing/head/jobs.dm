@@ -15,7 +15,7 @@
 
 /obj/item/clothing/head/rank/captain
 	name = "premier's hat"
-	icon_state = "captain"
+	icon_state = "captain"  //Sprites from Eris
 	desc = "It's good being the king."
 	item_state_slots = list(
 		slot_l_hand_str = "caphat",
@@ -34,6 +34,7 @@
 	var/mob/M = usr
 	var/list/options = list()
 	options["Premier's Hat"] = "captain"
+	options["Premier's old Hat"] = "captain-old"
 	options["Premier's Cap"] = "capcap"
 	options["Parade Hat"] = "officercap"
 
@@ -67,12 +68,71 @@
 	desc = "Useful for hiding disdainful eyes from the godless masses."
 	icon_state = "church_hat"
 
+/obj/item/clothing/head/preacher/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Primes hat"] = "church_hat"
+	options["Primes visor"] = "nt_visor"
+	options["Primes trihat"] = "nt_trihat" //credit to Près de l'oiseau on Eris for all of these!
+	options["Primes visored trihat"] = "nt_trihat_visor"
+	options["Primes mitre"] = "nt_papalhat"
+	options["Primes visored mitre"] = "nt_papalhat_visor"
+	options["Primes illuminant mitre"] = "nt_papalhat_illuminati"
+	options["Primes visored habit"] = "nt_habithat_visor"
+	options["Primes masked habit"] = "nt_habithat_mask"
+	options["Primes hood"] = "nt_robe_hood"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 //Mime
 /obj/item/clothing/head/beret
 	name = "red beret"
 	desc = "A formidable red beret."
 	icon_state = "beret"
 	body_parts_covered = 0
+
+obj/item/clothing/head/beret/syndicate
+	name = "syndicate beret"
+	desc = "A stylish and comfortable beret, popular amongst members of the Xanoranth syndicate and their many clients."
+	icon_state = "syndberet"
+
+obj/item/clothing/head/beret/syndicate/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Xanoranth Beret"] = "syndberet" //credits to Eris for the sprite
+	options["Xanoranth Beret alt"] = "syndberet2" //credits to Eris for the sprite
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/beret/artist
 	name = "Feathered Beret"
@@ -142,7 +202,7 @@
 //Security
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"
-	desc = "A navy blue marshal beret."
+	desc = "A stylish beret, this one has markings of the Marshals."
 	icon_state = "policeberet"
 
 /obj/item/clothing/head/rank/commander

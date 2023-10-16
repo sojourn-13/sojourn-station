@@ -101,7 +101,7 @@
 /obj/item/ammo_magazine/highcap_pistol_35/drum/lethal
 	name = "standard auto drum (hollow-point)"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
-	icon_state = "ldru_l"
+	icon_state = "ldrum_l"
 
 /obj/item/ammo_magazine/highcap_pistol_35/drum/hv
 	name = "standard auto drum (high-velocity)"
@@ -738,7 +738,7 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/heavy_rifle_408_drum
-	name = "heavy rifle drum magazine"
+	name = "heavy rifle drum magazine (ball)"
 	icon_state = "hdrum"
 	desc = "A 36 round drum magazine marked for 8.6x70mm Heavy Rifle."
 	origin_tech = list(TECH_COMBAT = 2)
@@ -750,6 +750,26 @@
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
 	max_ammo = 36
 	multiple_sprites = 1
+
+/obj/item/ammo_magazine/heavy_rifle_408_drum/lethal
+	name = "heavy rifle drum magazine (hollow-tip)"
+	icon_state = "hdrumhp"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
+
+/obj/item/ammo_magazine/heavy_rifle_408_drum/rubber
+	name = "heavy rifle drum magazine (baton)"
+	icon_state = "hdrumltl"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
+
+/obj/item/ammo_magazine/heavy_rifle_408_drum/slap
+	name = "heavy rifle drum magazine (SLAP)"
+	icon_state = "hdrumhv"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/hv
+
+/obj/item/ammo_magazine/heavy_rifle_408_drum/incend
+	name = "heavy rifle drum magazine (incendiary)"
+	icon_state = "hdrumincend"
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/incend
 
 /obj/item/ammo_magazine/heavy_rifle_408_drum/empty
 	name = "heavy rifle magazine"

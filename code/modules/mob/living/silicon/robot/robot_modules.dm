@@ -37,6 +37,7 @@ var/global/list/robot_modules = list(
 					LANGUAGE_JIVE = 0
 					)
 	var/sprites = list()
+	var/tall_sprites = list()
 	var/can_be_pushed = 1
 	var/no_slip = 0
 	var/list/modules = list()
@@ -102,7 +103,7 @@ var/global/list/robot_modules = list(
 	for(var/name in stat_modifiers)
 		R.stats.changeStat(name, stat_modifiers[name])
 
-	R.set_module_sprites(sprites)
+	R.set_module_sprites(sprites, tall_sprites)
 	R.icon_selected = 0
 	spawn() // For future coders , this "corrupts" the USR reference, so for good practice ,don't make the proc use USR if its called with a spawn.
 		R.choose_icon() //Choose icon recurses and blocks new from completing, so spawn it off
@@ -154,8 +155,6 @@ var/global/list/robot_modules = list(
 	R.pixel_y = initial(pixel_y)
 	R.icon = icon('icons/mob/robots.dmi')
 	R.default_pixel_x = initial(pixel_x)
-	R.has_resting_icon = FALSE
-	R.has_family_guy_death_pose = FALSE
 	R.has_given_emaged_gifts = FALSE
 
 	R.set_module_sprites(list("Default" = "robot"))
@@ -292,7 +291,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/projectile/makarov/moebius/auto_eject(src)
+	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/melee/energy/sword(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
@@ -346,6 +345,20 @@ var/global/list/robot_modules = list(
 				"Miss" = "missm_med",
 				"Medical Junkbot" = "qualified_doctor",
 				"Tall Felinal" = "mekamed",
+				"Tall Felinal Alt" = "mekamed_alt",
+				"Tall Tanker" = "k4tmed",
+				"Tall Tanker Alt" = "k4tmed_alt1",
+				"Tall Female" = "fmekamed",
+				"Tall Male" = "mmekamed"
+				)
+
+	tall_sprites = list(
+				"mekamed",
+				"mekamed_alt",
+				"k4tmed",
+				"k4tmed_alt1",
+				"fmekamed",
+				"mmekamed"
 				)
 
 	desc = "A versatile medical droid, equipped with all the tools necessary for surgery, chemistry, and \
@@ -393,7 +406,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/projectile/makarov/moebius/auto_eject(src)
+	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/reagent_containers/spray/acid(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
@@ -428,6 +441,8 @@ var/global/list/robot_modules = list(
 	R.stats.addPerk(PERK_SI_SCI)
 
 	..(R)
+
+
 
 /obj/item/robot_module/medical/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	var/obj/item/reagent_containers/syringe/S = locate() in src.modules
@@ -468,8 +483,31 @@ var/global/list/robot_modules = list(
 					"Plated" = "ceborg",
 					"Heavy" = "heavyeng",
 					"Miss" = "missm_eng",
-					"Tall Felinal" = "mekacargo"
+					"Tall Felinal" = "mekacargo",
+					"Tall Felinal Alt" = "mekacargo_alt",
+					"Tall Hazard" = "mekaengi",
+					"Tall Tanker" = "k4tengi",
+					"Tall Female" = "fmekaeng",
+					"Tall Male" = "mmekaeng",
+					"Tall Porter" = "k4tcargo",
+					"Tall Porter Alt" = "k4tcargo_alt1",
+					"Tall Crate Pusher" = "fmekacargo",
+					"Tall Crate Pusher Alt" = "mmekacargo"
 					)
+
+	tall_sprites = list(
+				"mekacargo",
+				"mekacargo_alt",
+				"mekaengi",
+				"k4tengi",
+				"fmekaeng",
+				"mmekaeng",
+				"k4tcargo",
+				"k4tcargo_alt1",
+				"fmekacargo",
+				"mmekacargo"
+				)
+
 	health = 240 //Slightly above average
 	speed_factor = 1.4 //Slightly above average
 	power_efficiency = 0.9 //Slightly below average
@@ -511,7 +549,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/projectile/makarov/moebius/auto_eject(src)
+	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/tool/baton/robot(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(80000)
@@ -576,7 +614,6 @@ var/global/list/robot_modules = list(
 	R.stats.addPerk(PERK_HANDYMAN)
 	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
 	R.stats.addPerk(PERK_SI_SCI)
-
 	..(R)
 
 
@@ -640,7 +677,27 @@ var/global/list/robot_modules = list(
 					"Classic" = "secborg",
 					"Spider" = "spidersec",
 					"Heavy" = "heavysec",
-					"Miss" = "missm_security"
+					"Miss" = "missm_security",
+					"Contractor RedShell" = "mekasyndi",
+					"Contractor RedShell Alt" = "mekasec",
+					"Contractor Tanker" = "k4tsec",
+					"Contractor Tanker Alt" = "k4tsyndi",
+					"Contractor Tactical" = "fmekasec",
+					"Contractor Tactical Alt" = "mmekasec",
+					"Contractor Foxtrot" = "mekasyndi_foxtrot",
+					"Contractor Traffic Light" = "fmekasyndi",
+					"Contractor Riot Stopper" = "mmekasyndi"
+				)
+
+	tall_sprites = list(
+					"mekasyndi",
+					"mekasec",
+					"k4tsec",
+					"k4tsyndi",
+					"mmekasec",
+					"mekasyndi_foxtrot",
+					"fmekasyndi",
+					"mmekasyndi"
 				)
 
 /obj/item/robot_module/security/general/New(var/mob/living/silicon/robot/R)
@@ -654,7 +711,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //cracks and the like.
 	src.modules += new /obj/item/tool/knife/tacknife(src)
 	src.modules += new /obj/item/taperoll/police(src)
-	src.modules += new /obj/item/gun/projectile/automatic/riot_autoshotgun/robo(src)
+	src.modules += new /obj/item/gun/energy/riot_autoshotgun(src)
 	src.modules += new /obj/item/gripper/ammo(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
@@ -671,6 +728,7 @@ var/global/list/robot_modules = list(
 	R.stats.addPerk(PERK_PARKOUR)
 
 	R.stats.addPerk(PERK_SI_SCI)
+
 	..(R)
 
 /obj/item/robot_module/security/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -707,8 +765,29 @@ var/global/list/robot_modules = list(
 					"Sleek" = "sleekjanitor",
 					"Maid" = "maidbot",
 					"Miss" = "missm_janitor",
-					"Tall Felinal" = "mekajani"
+					"Tall Felinal" = "mekajani",
+					"Tall Felinal Alt" = "mekajani_alt",
+					"Tall Dedicated" = "fmekapeace",
+					"Tall Dedicated Alt" = "mmekapeace",
+					"Tall Dedicated Tanker" = "k4tpeace",
+					"Tall Tanker" = "k4tjani",
+					"Tall Tanker Alt" = "k4tjani_alt1",
+					"Tall Maid" = "fmekajani",
+					"Tall Maid Alt" = "mmekajani"
 					)
+
+	tall_sprites = list(
+					"mekajani",
+					"mekajani_alt",
+					"fmekapeace",
+					"mmekapeace",
+					"k4tpeace",
+					"k4tjani",
+					"k4tjani_alt1",
+					"fmekajani",
+					"mmekajani"
+				)
+
 	health = 250 //Bulky
 	speed_factor = 1.45 //Fast
 	power_efficiency = 0.8 //Poor
@@ -747,14 +826,8 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/projectile/automatic/c20r/sci(src)
+	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/reagent_containers/spray/lube(src)
-
-	if(R.icon_state == "mekajani")
-		R.icon_alt_director = 'icons/mob/robot_tall/janitor.dmi'
-		R.reset_icon_folder_draw = FALSE
-	else
-		R.reset_icon_folder_draw = TRUE
 
 	//Silent cleaners
 	R.stats.addPerk(PERK_QUIET_AS_MOUSE)
@@ -788,8 +861,27 @@ var/global/list/robot_modules = list(
 					"Maid" = "maidbot",
 					"Miss" = "missm_service",
 					"Tall Felinal" = "mekaserve",
-					"Tall Felinal Maid" = "mekaserve_alt"
-				  	)
+					"Tall Felinal Maid" = "mekaserve_alt",
+					"Tall Hopper" = "mekaserve_hopper",
+					"Tall Ringleader" = "mekaserve_ringleader",
+					"Tall Tanker" = "k4tserve",
+					"Tall k4tserve Alt" = "k4tserve_alt1",
+					"Tall Tanker Maid" = "k4tserve_alt2",
+					"Tall Female Maid" = "fmekaserv",
+					"Tall Male Maid" = "mmekaserv"
+				)
+
+	tall_sprites = list(
+					"mekaserve",
+					"mekaserve_alt",
+					"mekaserve_hopper",
+					"mekaserve_ringleader",
+					"k4tserve",
+					"k4tserve_alt1",
+					"k4tserve_alt2",
+					"fmekaserv",
+					"mmekaserv"
+				)
 
 	health = 130 //fragile
 	speed_factor = 1.5 //Quick
@@ -881,8 +973,24 @@ var/global/list/robot_modules = list(
 					"Heavy" = "heavymine",
 					"Spider" = "spidermining",
 					"Miss" = "missm_miner",
-					"Tall Felinal" = "mekamine"
+					"Tall Felinal" = "mekamine",
+					"Tall Felinal Alt" = "mekamine_alt",
+					"Tall Female Feline" = "fmekamine",
+					"Tall Male Feline" = "mmekamine",
+					"Tall Tanker" = "k4tmine",
+					"Tall Tanker Alt" = "k4tmine_alt1"
 				)
+
+
+	tall_sprites = list(
+					"mekamine",
+					"mekamine_alt",
+					"fmekamine",
+					"mmekamine",
+					"k4tmine",
+					"k4tmine_alt1"
+				)
+
 	health = 250 //Pretty tough
 	speed_factor = 1.2 //meh
 	power_efficiency = 1.5 //Best efficiency
@@ -913,7 +1021,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/miner(src)
 	src.modules += new /obj/item/device/scanner/mining(src)
 	src.modules += new /obj/item/device/t_scanner(src)
-	src.modules += new /obj/item/gun/projectile/automatic/riot_autoshotgun/robo/single_shot(src)
+	src.modules += new /obj/item/gun/energy/riot_autoshotgun(src)
 	src.modules += new /obj/item/gripper/ammo(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/scanner/price(src)
@@ -926,6 +1034,7 @@ var/global/list/robot_modules = list(
 	//Seller so quite and knowing the deal!
 	R.stats.addPerk(PERK_MARKET_PROF)
 	R.stats.addPerk(PERK_SI_SCI)
+
 
 	..(R)
 
@@ -940,7 +1049,23 @@ var/global/list/robot_modules = list(
 					"Sleek" = "sleekscience",
 					"Heavy" = "heavysci",
 					"Miss" = "missm_med",
-					"Tall Felinal" = "mekapeace"
+					"Tall Felinal" = "mekapeace",
+					"Tall Felinal Alt" = "mekapeace_alt",
+					"Tall " = "mekaninja",
+					"Tall  Alt" = "mekaninj_alt",
+					"Tall  Tanker" = "k4tninja",
+					"Tall  Female" = "fmekaninja",
+					"Tall  Male" = "mmekaninja"
+					)
+
+	tall_sprites = list(
+					"mekapeace",
+					"Tmekapeace_alt",
+					"mekaninja",
+					"mekaninj_alt",
+					"k4tninja",
+					"fmekaninja",
+					"mmekaninja"
 					)
 
 	health = 160 //Weak
@@ -984,7 +1109,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/storage/part_replacer(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gun/projectile/makarov/moebius/auto_eject(src)
+	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
 

@@ -12,7 +12,7 @@
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_RIFLE
 	auto_eject = 1
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_DIAMOND = 2)
 	price_tag = 1750
 	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
@@ -23,11 +23,12 @@
 	extra_damage_mult_scoped = 0.4
 	penetration_multiplier = 1.2
 	damage_multiplier = 1
+	max_upgrades = 3
 	init_recoil = CARBINE_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 
 	init_firemodes = list(
-		FULL_AUTO_300,
+		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
