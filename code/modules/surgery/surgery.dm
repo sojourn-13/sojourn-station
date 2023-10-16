@@ -160,7 +160,7 @@
 
 	if(user.stats.getPerk(PERK_SCUTTLEBUG || PERK_ICHOR || PERK_CHITINARMOR))
 		difficulty_adjust += -80 //We feel no pain, and are pretty used to working on ourselves due to metal paranoia. Still slightly worse than letting someone else do, due to limited ability to see inside
-		time_adjust = -30
+		time_adjust += -30
 
 		// ...unless you are a carrion
 		// It makes sense that carrions have a way of making their flesh cooperate
