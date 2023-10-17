@@ -518,7 +518,7 @@ var/global/list/robot_modules = list(
 
 	stat_modifiers = list(
 		STAT_COG = 120,
-		STAT_MEC = 40,
+		STAT_MEC = 60,
 		STAT_BIO = 25
 	)
 

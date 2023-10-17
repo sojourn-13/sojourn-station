@@ -29,7 +29,8 @@
 		/obj/item/tool_upgrade,
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
-		/obj/item/stack/tile //Repair floors yay
+		/obj/item/stack/tile, //Repair floors yay
+		/obj/item/oddity/blackbox_nanoforge
 		)
 
 	var/obj/item/wrapped = null // Item currently being held.
