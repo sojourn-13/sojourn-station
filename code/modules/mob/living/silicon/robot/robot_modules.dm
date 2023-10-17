@@ -540,6 +540,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/device/floor_painter(src)
 	src.modules += new /obj/item/inflatable_dispenser(src)
+	src.modules += new /obj/item/storage/part_replacer/mini(src)
 	src.modules += new /obj/item/reagent_containers/glass/bucket(src)
 	src.modules += new /obj/item/reagent_containers/spray/krag_b_gone(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
