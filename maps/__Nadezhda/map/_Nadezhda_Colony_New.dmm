@@ -14669,8 +14669,8 @@
 /area/nadezhda/absolutism/chapel)
 "dkh" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/xenomorph,
-/turf/simulated/floor/tiled/techmaint,
+/obj/effect/decal/cleanable/blood/gibs/xeno,
+/turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "dkt" = (
 /obj/effect/decal/cleanable/generic,
@@ -23209,7 +23209,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "eXB" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/xenomorph,
+/obj/random/cluster/xenomorphs,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "eXE" = (
@@ -45046,6 +45046,11 @@
 /obj/effect/damagedfloor/fire,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/nadezhda/dungeon/outside/burned_outpost)
+"jFS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/dungeon_gun_ballistic,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "jFT" = (
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
@@ -54411,6 +54416,13 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/sechall)
+"lKm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/rack/shelf,
+/obj/random/medical_lowcost/low_chance,
+/obj/effect/decal/cleanable/blood/gibs/xeno,
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "lKx" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -69546,6 +69558,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"oPm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/mob/xenomorphs,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "oPo" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -70769,6 +70786,11 @@
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
+"pcn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/xenomorphs,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "pct" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
@@ -74327,8 +74349,8 @@
 /area/nadezhda/absolutism/chapel)
 "pOY" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/xenomorph/spitter,
-/turf/simulated/floor/tiled/techmaint_perforated,
+/obj/effect/decal/cleanable/blood/gibs/xeno,
+/turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "pPb" = (
 /obj/random/scrap/sparse_even/low_chance,
@@ -118685,10 +118707,10 @@ qZC
 pjj
 pjj
 pjj
-pOY
+pjj
 pjj
 hgE
-pjj
+jFS
 uru
 eEL
 cZb
@@ -118888,7 +118910,7 @@ gnm
 noN
 gnm
 iGH
-gnm
+lKm
 qAK
 gnm
 qZC
@@ -119090,8 +119112,8 @@ eXB
 pjj
 pjj
 pjj
-pjj
-pjj
+dkh
+eXB
 pjj
 pjj
 qZC
@@ -119494,7 +119516,7 @@ pjj
 pjj
 pjj
 pjj
-eXB
+pjj
 pjj
 pjj
 pjj
@@ -119899,9 +119921,9 @@ pjj
 pjj
 pjj
 pjj
-pOY
 pjj
-qZC
+pjj
+pcn
 eEL
 cZb
 cZb
@@ -120298,7 +120320,7 @@ cZb
 cZb
 eEL
 qZC
-qZC
+pOY
 qZC
 qZC
 pjj
@@ -120701,7 +120723,7 @@ cZb
 cZb
 cZb
 eEL
-qZC
+oPm
 qZC
 uyS
 uyS
@@ -120903,7 +120925,7 @@ cZb
 cZb
 eEL
 eEL
-dkh
+qZC
 jsu
 qZC
 rSo
@@ -121107,7 +121129,7 @@ eEL
 xhC
 cFp
 qZC
-qZC
+oPm
 rSo
 auL
 oAo
