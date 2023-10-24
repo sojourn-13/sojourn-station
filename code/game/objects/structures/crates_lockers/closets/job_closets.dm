@@ -81,10 +81,12 @@
 	new /obj/item/clothing/shoes/galoshes(src)
 	new /obj/item/mop(src)
 	new /obj/item/soap/deluxe(src)
-	new /obj/item/storage/pouch/small_generic(src) // Because I feel like poor janitor gets it bad.
+	new /obj/item/storage/pouch/small_generic/purple(src) // These pouches never get used! Why not give them to are jani boys?
 	new /obj/item/newspaper_stack(src)
 	new /obj/item/holyvacuum(src)
 	new /obj/item/clothing/accessory/job/cape/service(src) // Boobles! - Seb
+	new /obj/item/tool/pickaxe(src) //helps with burrows! decent enough for minor pest control as well
+	new /obj/item/tool/hammer(src) //cracks! To go along side that pickaxe
 
 /obj/structure/closet/custodial
 	name = "church custodial closet"
