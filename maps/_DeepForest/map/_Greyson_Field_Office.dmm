@@ -9,10 +9,6 @@
 /obj/random/booze/low_chance,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_outside)
-"ad" = (
-/obj/structure/closet/onestar/tier3/special,
-/turf/unsimulated/mineral,
-/area/nadezhda/outside/one_star/fo_outside)
 "ae" = (
 /obj/structure/table/onestar,
 /obj/random/oddity_guns,
@@ -85,14 +81,7 @@
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_outside)
 "az" = (
-/obj/structure/toilet{
-	dir = 8
-	},
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 8
-	},
-/obj/item/remains/human,
+/obj/item/trash/material/metal,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
 "aA" = (
@@ -435,10 +424,6 @@
 /obj/effect/decal/cleanable/blood/xeno,
 /obj/item/trash/material/metal,
 /turf/simulated/floor/reinforced,
-/area/nadezhda/outside/one_star/fo_outside)
-"cS" = (
-/obj/structure/girder/displaced,
-/turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
 "cT" = (
 /obj/structure/bed/chair/custom/onestar{
@@ -841,12 +826,6 @@
 /mob/living/carbon/superior_animal/robot/greyson/synthetic,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/nadezhda/outside/one_star/fo_internal)
-"fI" = (
-/obj/machinery/door/airlock{
-	name = "Bathroom"
-	},
-/turf/simulated/floor/tiled/derelict/red_white_edges,
-/area/nadezhda/outside/one_star/fo_outside)
 "fJ" = (
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/white/cargo,
@@ -909,14 +888,6 @@
 /obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
-"gc" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12
-	},
-/obj/item/material/shard/shrapnel/scrap,
-/turf/simulated/floor/tiled/derelict,
-/area/nadezhda/outside/one_star/fo_outside)
 "gd" = (
 /obj/structure/table/rack/shelf,
 /obj/random/powercell,
@@ -2627,13 +2598,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_outside)
-"sr" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12
-	},
-/turf/simulated/floor/tiled/derelict,
-/area/nadezhda/outside/one_star/fo_outside)
 "st" = (
 /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/plasma,
 /turf/simulated/floor/asteroid/grass,
@@ -2656,12 +2620,6 @@
 "sE" = (
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/one_star/fo_internal)
-"sG" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/obj/structure/girder,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/one_star/fo_outside)
 "sO" = (
 /obj/item/stack/material/plasma/random,
 /obj/item/stack/material/silver/random,
@@ -3083,10 +3041,6 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "vH" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12
-	},
 /obj/item/scrap_lump,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
@@ -3796,10 +3750,10 @@
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_outside)
 "Ap" = (
-/obj/machinery/door/airlock{
-	name = "Bathroom"
-	},
-/turf/simulated/floor/tiled/derelict,
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate,
+/obj/random/medical,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
 "Aq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4375,8 +4329,8 @@
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/outside/one_star/fo_internal)
 "EQ" = (
-/obj/structure/lattice,
-/turf/simulated/floor/asteroid/grass,
+/obj/effect/decal/mecha_wreckage/ripley,
+/turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
 "ES" = (
 /obj/machinery/door/blast/shutters,
@@ -4952,9 +4906,9 @@
 /turf/simulated/floor/tiled/steel/cargo,
 /area/nadezhda/outside/one_star/fo_internal)
 "IV" = (
-/obj/structure/lattice,
-/obj/structure/girder,
-/turf/simulated/floor/asteroid/grass,
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/structure/closet/crate/secure/loot,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
 "IW" = (
 /obj/item/trash/mre/os,
@@ -5748,10 +5702,6 @@
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "Ob" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12
-	},
 /obj/item/remains/human,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
@@ -6546,14 +6496,6 @@
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/one_star/fo_outside)
-"TU" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12
-	},
-/obj/item/trash/material/metal,
-/turf/simulated/floor/tiled/derelict,
-/area/nadezhda/outside/one_star/fo_outside)
 "TV" = (
 /obj/structure/table/onestar,
 /obj/item/storage/firstaid/surgery,
@@ -6783,16 +6725,6 @@
 "Vy" = (
 /obj/structure/sign/departmentold/medical1,
 /turf/simulated/wall/untinted/onestar_reinforced,
-/area/nadezhda/outside/one_star/fo_outside)
-"VA" = (
-/obj/structure/toilet{
-	dir = 8
-	},
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 8
-	},
-/turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
 "VB" = (
 /obj/structure/bed/chair/custom/onestar/red{
@@ -12964,7 +12896,7 @@ no
 Ju
 Qu
 ZT
-EQ
+PN
 qc
 nT
 nT
@@ -18565,7 +18497,7 @@ no
 no
 wK
 ZT
-EQ
+PN
 ZT
 Qu
 Qu
@@ -18717,7 +18649,7 @@ wK
 Mf
 wK
 ZT
-EQ
+PN
 ZT
 Qu
 Qu
@@ -23460,12 +23392,12 @@ no
 Qu
 Qu
 ZT
-IV
-EQ
-EQ
-EQ
-EQ
-IV
+PN
+PN
+PN
+PN
+PN
+PN
 ZT
 Qu
 xW
@@ -23612,12 +23544,12 @@ no
 Qu
 Qu
 ZT
-sG
-EQ
-EQ
-EQ
-EQ
-IV
+PN
+PN
+PN
+PN
+PN
+PN
 ZT
 Qu
 wc
@@ -24949,7 +24881,7 @@ XR
 Gh
 wK
 ZT
-EQ
+PN
 ZT
 Qu
 Qu
@@ -25101,7 +25033,7 @@ wK
 wK
 wK
 ZT
-EQ
+PN
 ZT
 Qu
 Qu
@@ -43397,7 +43329,7 @@ qn
 qn
 qn
 qn
-ad
+qn
 qn
 qn
 qn
@@ -44001,7 +43933,7 @@ Lh
 WX
 nT
 fC
-qn
+fC
 qn
 qn
 qn
@@ -44143,7 +44075,7 @@ wV
 qn
 qn
 qn
-qn
+fC
 fC
 fC
 Lh
@@ -44294,7 +44226,7 @@ wV
 wV
 qn
 qn
-qn
+fC
 fC
 ae
 fC
@@ -44445,7 +44377,7 @@ wV
 wV
 wV
 qn
-qn
+fC
 fC
 jB
 nT
@@ -44460,7 +44392,7 @@ tY
 hz
 xq
 fC
-qn
+fC
 qn
 qn
 qn
@@ -45661,7 +45593,7 @@ wV
 wV
 wV
 qn
-qn
+fC
 fC
 zH
 nT
@@ -45676,7 +45608,7 @@ tY
 hz
 nT
 fC
-qn
+fC
 qn
 qn
 qn
@@ -45814,7 +45746,7 @@ wV
 wV
 qn
 qn
-qn
+fC
 fC
 zH
 fC
@@ -45967,7 +45899,7 @@ wV
 qn
 qn
 qn
-qn
+fC
 fC
 fC
 KQ
@@ -46129,7 +46061,7 @@ nT
 ro
 rG
 fC
-qn
+fC
 qn
 qn
 qn
@@ -46273,14 +46205,14 @@ qn
 qn
 qn
 qn
-qn
+fC
 fC
 fC
 wt
 wt
 fC
 fC
-qn
+fC
 qn
 qn
 qn
@@ -48248,7 +48180,7 @@ qn
 qn
 Pr
 Oq
-sr
+XF
 Ob
 Ka
 fC
@@ -48403,7 +48335,7 @@ Oq
 Tc
 XF
 XF
-fI
+iw
 gJ
 gJ
 iw
@@ -48550,11 +48482,11 @@ wV
 wV
 qn
 qn
-Ap
-fC
-Ap
-fC
-Ap
+Sd
+XF
+XF
+XF
+XF
 fC
 ut
 ut
@@ -48703,10 +48635,10 @@ wV
 qn
 qn
 qn
-fC
-VA
-fC
-az
+EQ
+XF
+XF
+Ob
 fC
 ut
 ut
@@ -48854,11 +48786,11 @@ wV
 wV
 qn
 fC
-fC
-fC
-Sd
-fC
-cS
+XF
+XF
+XF
+XF
+XF
 fC
 ut
 ut
@@ -49007,9 +48939,9 @@ wV
 qn
 fC
 XO
-gc
+Aa
 vH
-sr
+XF
 Ka
 fC
 ut
@@ -49159,11 +49091,11 @@ wV
 qn
 qn
 Ok
-Pr
+Oq
 Oq
 XF
 XF
-fI
+iw
 ut
 ut
 iw
@@ -49312,9 +49244,9 @@ qn
 qn
 qn
 qn
-Ap
-fC
-Ap
+az
+XF
+XF
 fC
 ut
 ut
@@ -49464,9 +49396,9 @@ qn
 qn
 qn
 qn
-VA
-fC
-VA
+Aa
+Vh
+XF
 fC
 ut
 ut
@@ -49614,11 +49546,11 @@ wV
 wV
 qn
 fC
-Sd
-fC
-fC
-fC
-fC
+XF
+XF
+Ob
+XF
+XF
 fC
 ut
 ut
@@ -49767,9 +49699,9 @@ wV
 qn
 fC
 AK
-TU
-Ob
-sr
+Ap
+Ap
+XF
 Ka
 fC
 ut
@@ -49918,12 +49850,12 @@ wV
 wV
 qn
 Sd
-Aa
 XF
-Vh
+Ap
+Ap
 XF
 XF
-fI
+iw
 gJ
 gJ
 iw
@@ -50070,11 +50002,11 @@ wV
 wV
 qn
 fC
-Ap
-fC
-Ap
-fC
-Ap
+XF
+XF
+XF
+XF
+XF
 fC
 ut
 ut
@@ -50222,11 +50154,11 @@ wV
 wV
 qn
 fC
-VA
-fC
-VA
-fC
-VA
+XF
+Ap
+Ap
+XF
+XF
 fC
 ut
 ut
@@ -50374,11 +50306,11 @@ wV
 wV
 qn
 fC
-fC
-fC
-fC
-fC
-fC
+XF
+Ap
+Ap
+XF
+XF
 fC
 ut
 ut
@@ -50527,9 +50459,9 @@ wV
 qn
 fC
 IC
-sr
-sr
-sr
+XF
+XF
+XF
 Ka
 fC
 ut
@@ -50679,11 +50611,11 @@ wV
 qn
 fC
 XF
+IV
+Ap
 XF
 XF
-XF
-XF
-fI
+iw
 ut
 ut
 iw
@@ -50830,11 +50762,11 @@ wV
 wV
 qn
 fC
+XF
 Ap
-fC
 Ap
-fC
-Ap
+XF
+XF
 fC
 DL
 ut
@@ -50982,11 +50914,11 @@ wV
 wV
 qn
 fC
-VA
-fC
-VA
-fC
-VA
+XF
+XF
+XF
+XF
+fB
 fC
 ut
 ut
