@@ -20,7 +20,7 @@
 	fire_delay = 14 //Slow, on par with a shotgun pump then fire
 	init_recoil = RIFLE_RECOIL(1)
 
-/obj/item/gun/energy/laser/railgun/pistol
+/obj/item/gun/energy/laser/railgun/pistoli
 	name = "\"Myrmidon\" rail pistol"
 	desc = "\"Artificer's Guild\" brand rail pistol. This gun features a sleek and deadly design with the capability for lethal and non-lethal firing modes. A competant engineer can also overclock it using a wrench, \
 	consuming the cell within for an extra bullet or a powerful explosive round. For the law abiding engineer because rifles are too hard to hide."

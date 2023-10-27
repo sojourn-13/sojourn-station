@@ -107,7 +107,7 @@
 
 /obj/item/ammo_magazine/ammobox/pistol_35/large/rubber
 	name = "ammunition box (9mm rubber)"
-	desc = "A large box of police grade 9mm rubber rounds. Has a proper non-lethal certification on the lable."
+	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. Has a proper non-lethal certification. Still some light warnings about trauma inflicted on targets."
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 	icon_state = "pistol_large_rubber"
 
@@ -417,7 +417,7 @@
 
 /obj/item/ammo_magazine/ammobox/kurtz_50/rubber
 	name = "ammunition box (12mm rubber)"
-	"Gun ammunition stored in a shiny new box. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done."
+	desc = "A box of 7.62mm rifle ammunition. 180ct, deforming traumatic rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
 	icon_state = "box50-rubber"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
 
