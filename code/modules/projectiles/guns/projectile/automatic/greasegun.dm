@@ -19,7 +19,7 @@
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
 	init_firemodes = list(
-		FULL_AUTO_300_NOLOSS,
+		FULL_AUTO_600_NOLOSS,
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "Sol Fed"

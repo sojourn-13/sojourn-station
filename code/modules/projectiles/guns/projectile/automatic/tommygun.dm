@@ -21,7 +21,7 @@
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE)
 	init_firemodes = list(
-		FULL_AUTO_300_NOLOSS,
+		FULL_AUTO_600_NOLOSS,
 		BURST_3_ROUND_NOLOSS,
 		BURST_5_ROUND_NOLOSS
 		)

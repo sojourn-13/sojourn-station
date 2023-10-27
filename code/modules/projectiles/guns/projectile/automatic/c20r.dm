@@ -28,7 +28,7 @@
 	gun_parts = list(/obj/item/part/gun/frame/c20r = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 	init_firemodes = list(
-		FULL_AUTO_200_NOLOSS,
+		FULL_AUTO_300_NOLOSS,
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND_NOLOSS
 		)
