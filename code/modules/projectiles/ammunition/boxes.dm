@@ -63,7 +63,7 @@
 
 /obj/item/ammo_magazine/ammobox/pistol_35/rubber
 	name = "ammunition packet (9mm rubber)"
-	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. Has a proper non-lethal certification. Still some light warnings about trauma inflicted on targets. "
+	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. Has a proper less-than-lethal certification. Still some light warnings about trauma inflicted on targets. "
 	icon_state = "pistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
@@ -93,7 +93,7 @@
 // 9mm BIG BAWKS
 /obj/item/ammo_magazine/ammobox/pistol_35/large
 	name = "ammunition box (9mm)"
-	desc = "A large box of police grade 9mm. Has a proper non-lethal certification on the lable."
+	desc = "A large box of police grade 9mm. Has a proper less-than-lethal certification on the label."
 	matter = list(MATERIAL_STEEL = 15)
 	w_class = ITEM_SIZE_BULKY
 	max_ammo = 200
@@ -107,7 +107,7 @@
 
 /obj/item/ammo_magazine/ammobox/pistol_35/large/rubber
 	name = "ammunition box (9mm rubber)"
-	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. Has a proper non-lethal certification. Still some light warnings about trauma inflicted on targets."
+	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. Has a proper less-than-lethal certification. Still some light warnings about trauma inflicted on targets."
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 	icon_state = "pistol_large_rubber"
 
@@ -417,7 +417,7 @@
 
 /obj/item/ammo_magazine/ammobox/kurtz_50/rubber
 	name = "ammunition box (12mm rubber)"
-	desc = "A box of 7.62mm rifle ammunition. 180ct, deforming traumatic rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
+	desc = "A box of 7.62mm rifle ammunition. 180ct, deforming impact rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
 	icon_state = "box50-rubber"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
 
@@ -510,7 +510,7 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber
 	name = "ammunition packet (8.6mm rubber)"
 	icon_state = "hrifle_r"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 120ct, 8mm deforming traumatic rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
+	desc = "A box of 8.6x70mm heavy rifle ammunition. 120ct, 8mm deforming impact rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/practice
@@ -586,7 +586,7 @@
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber
 	name = "ammunition box (8.6mm rubber)"
 	icon_state = "boxhrifle-rubber"
-	desc = "A box of 8.6x70mm heavy rifle ammunition. 120ct, 8mm deforming traumatic rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
+	desc = "A box of 8.6x70mm heavy rifle ammunition. 120ct, 8mm deforming impact rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber/update_icon()
