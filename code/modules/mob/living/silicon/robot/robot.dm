@@ -1326,6 +1326,9 @@
 			if("Security")
 				icon = 'icons/mob/robot_tall/sec.dmi'
 
+			if("Defense")
+				icon = 'icons/mob/robot_tall/sec.dmi'
+
 			if("Service")
 				icon = 'icons/mob/robot_tall/server.dmi'
 
@@ -1336,4 +1339,4 @@
 				icon = 'icons/mob/robot_tall/science.dmi'
 
 			if("Custodial")
-				icon = 'icons/mob/robot_tall/science.dmi'
+				icon = 'icons/mob/robot_tall/janitor.dmi'

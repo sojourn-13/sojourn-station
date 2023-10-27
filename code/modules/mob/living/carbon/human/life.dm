@@ -250,10 +250,10 @@
 
 	radiation = CLAMP(radiation,0,100)
 
-	if (radiation)
+	if (radiation> 10)
 		var/damage = rand(0,3)
 		radiation -= 1 * RADIATION_SPEED_COEFFICIENT
-		if(prob(25))
+		if(prob(5))
 			damage = rand(4,8)
 
 		if (radiation > 25)

@@ -24,7 +24,8 @@
 	Those with this organ must maintain purity of their bodies, any implants, cruciforms, or synthetic limbs will be violently and painfully rejected while this organ exists in the body."
 	implant_organ_type = "psionic tumor"
 	restricted_jobs = list(
-		/datum/job/outsider //Psions are only available to colonist or allies.
+		/datum/job/cyborg, //To stop people auto dropping these
+		/datum/job/ai
 		)
 	allow_modifications = FALSE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
@@ -58,7 +59,8 @@
 	desc = "A custom built nanogate designed from the far superior opifex blueprints. It is implanted right where the spine meets the skull and provides a wide variety of nanite based uses."
 	implant_organ_type = "nanogate"
 	restricted_jobs = list(
-		/datum/job/outsider // Nanogates are only available to colonist or allies.
+		/datum/job/cyborg, //To stop people auto dropping these
+		/datum/job/ai
 		)
 	allow_modifications = TRUE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_AGSYNTH)
@@ -91,7 +93,6 @@
 	particular design is an opifex original and one of the best that can be found in the galaxy."
 	implant_organ_type = "opifex nanogate"
 	restricted_jobs = list(
-		/datum/job/outsider, // Nanogates are only available to colonist or allies.
 		/datum/job/cyborg, //To stop people auto dropping these
 		/datum/job/ai
 		)

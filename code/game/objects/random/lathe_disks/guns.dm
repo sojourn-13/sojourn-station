@@ -194,6 +194,7 @@
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/doublebarrel = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/grizzly = 7,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/regulator = 4,
+				/obj/item/computer_hardware/hard_drive/portable/design/guns/gladstone = 5,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/lemant = 2, //Has a built in shotgun, so low odds but still here
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/state = 4,
 				/obj/item/computer_hardware/hard_drive/portable/design/guns/pug = 3,

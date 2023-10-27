@@ -996,7 +996,10 @@
 "fi" = (
 /obj/machinery/light,
 /obj/structure/table/woodentable,
-/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/projectile/shotgun/pump/gladstone/queen{
+	pixel_y = 3;
+	pixel_x = 5
+	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "fj" = (

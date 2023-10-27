@@ -374,6 +374,18 @@
 	S.dir = new_dir
 	active_shields += S
 
+/obj/item/shield_projector/rectangle/borg_personal
+	name = "integrated combat shield projector"
+	description_info = "A small integral shield emitter designed for use by synthetics. Smaller and more cheaply made, it is notably less efficient than higher end models,\
+	Persona Shields allow projectiles to leave from inside but blocks projectiles from outside.  Everything else can pass through the shield freely, \
+	including other people and thrown objects. The shield also cannot block certain effects which \
+	take place over an area, such as flashbangs or explosions."
+	shield_health = 200
+	max_shield_health = 200
+	shield_regen_amount = 5
+	size_x = 1
+	size_y = 1
+
 // A shortcut for admins to spawn in to put into simple animals or other things where it needs to reactivate automatically.
 /obj/item/shield_projector/rectangle/automatic
 	always_on = TRUE
