@@ -30,6 +30,10 @@
 	path = /obj/item/clothing/under/cheongsam
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/uniform/ashigaru
+	display_name = "ashigaru"
+	path = /obj/item/clothing/under/ashigaru
+
 /datum/gear/uniform/dress
 	display_name = "dress selection"
 	path = /obj/item/clothing/under/dress/
@@ -129,6 +133,11 @@
 	display_name = "swimsuit selection"
 	path = /obj/item/clothing/under/swimsuit
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/swimsuitrisque
+	display_name = "daring swimsuit"
+	path = /obj/item/clothing/under/swimsuit_c
+	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/uniform/texansuit
 	display_name = "ivory texan suit"

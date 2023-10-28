@@ -98,6 +98,11 @@
 	display_name = "purple miko dress"
 	path = /obj/item/clothing/suit/fluff/miko
 
+/datum/gear/suit/gownrisque
+	display_name = "daring gown"
+	path = /obj/item/clothing/suit/gownrisque
+	flags = GEAR_HAS_COLOR_SELECTION | GEAR_HAS_TYPE_SELECTION
+
 /datum/gear/suit/labcoat
 	display_name = "labcoat"
 	path = /obj/item/clothing/suit/storage/toggle/labcoat

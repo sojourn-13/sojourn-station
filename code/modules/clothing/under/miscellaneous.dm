@@ -681,6 +681,12 @@
 	price_tag = 45
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
+/obj/item/clothing/under/dress/barmaid/alt
+	name = "fantasy barmaids outfit"
+	desc = "The bar standard for a thousand years! Yarr"
+	icon_state = "barmaid_but_better"
+	item_state = "barmaid_but_better"
+
 /obj/item/clothing/under/dress/jill
 	name = "cyberpunk bartender outfit"
 	desc = "Time to mix drinks and change lives."
@@ -813,3 +819,63 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+/obj/item/clothing/under/ashigaru
+	name = "Ashigaru"
+	desc = "A lightly armored apron designed as a homage to jana foot soldiers."
+	icon_state = "ashigaru"
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+
+/*Swimsuit*/
+
+/obj/item/clothing/under/swimsuit
+	name = "white swimsuit"
+	desc = "A white swimsuit perfect for the pool."
+	icon_state = "swim_white"
+	siemens_coefficient = 1
+	body_parts_covered = 0
+
+/obj/item/clothing/under/swimsuit/black
+	name = "black swimsuit"
+	desc = "A black swimsuit perfect for the pool."
+	icon_state = "swim_black"
+
+/obj/item/clothing/under/swimsuit/blue
+	name = "blue swimsuit"
+	desc = "A blue swimsuit perfect for the pool."
+	icon_state = "swim_blue"
+
+/obj/item/clothing/under/swimsuit/earth
+	name = "earth swimsuit"
+	desc = "A earth swimsuit perfect for the pool."
+	icon_state = "swim_earth"
+
+/obj/item/clothing/under/swimsuit/green
+	name = "green swimsuit"
+	desc = "A green swimsuit perfect for the pool."
+	icon_state = "swim_green"
+
+/obj/item/clothing/under/swimsuit/purple
+	name = "purple swimsuit"
+	desc = "A purple swimsuit perfect for the pool."
+	icon_state = "swim_purp"
+
+/obj/item/clothing/under/swimsuit/red
+	name = "red swimsuit"
+	desc = "A red swimsuit perfect for the pool."
+	icon_state = "swim_red"
+
+/obj/item/clothing/under/swimsuit/striped
+	name = "striped swimsuit"
+	desc = "A striped swimsuit perfect for the pool."
+	icon_state = "swim_striped"
+
+/obj/item/clothing/under/swimsuit/ntswimsuit
+	name = "Absolutist swimsuit"
+	desc = "A fine, white and gold trim swimsuit produced and often worn by those of the faith"
+	icon_state = "swim_nt"
+
+/obj/item/clothing/under/swimsuit_c
+	name = "Skimpy swimsuit"
+	desc = "An absolutely scandalous swimsuit that scarcely covers anything. Fit for only the bravest beach-goers."
+	icon_state = "swim_risque"
