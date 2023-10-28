@@ -1109,6 +1109,11 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/one_star/fo_outside)
+"hv" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/mob/living/carbon/superior_animal/xenomorph/runner,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "hz" = (
 /obj/structure/salvageable/computer_os,
 /turf/simulated/floor/reinforced,
@@ -4513,6 +4518,14 @@
 /obj/random/junkfood/rotten,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
+"Gc" = (
+/obj/machinery/light/floor{
+	dir = 4;
+	pixel_x = -5
+	},
+/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "Gf" = (
 /obj/structure/railing{
 	dir = 8
@@ -5214,7 +5227,6 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "KX" = (
 /obj/item/material/shard/shrapnel/scrap,
-/obj/structure/door_assembly,
 /obj/item/trash/material/metal,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
@@ -5787,7 +5799,6 @@
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "OK" = (
-/obj/random/oddity_guns,
 /obj/item/stack/material/steel/random,
 /obj/structure/toilet,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
@@ -6090,6 +6101,11 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "QM" = (
 /obj/machinery/door/airlock,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
+"QN" = (
+/obj/item/remains/human,
+/mob/living/carbon/superior_animal/xenomorph/runner/ravager,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
 "QO" = (
@@ -44231,7 +44247,7 @@ fC
 ae
 fC
 WX
-nT
+Vn
 Lh
 WX
 gg
@@ -44695,7 +44711,7 @@ QY
 xL
 PO
 Vn
-rG
+dY
 fC
 qn
 qn
@@ -44990,7 +45006,7 @@ fC
 fC
 fC
 fC
-nT
+Nl
 Ye
 nT
 nT
@@ -45142,15 +45158,15 @@ AU
 WD
 WD
 fC
-Nl
 nT
 nT
+Vn
 Zu
 nT
 Ye
 tY
 hz
-nT
+Vn
 rG
 fC
 qn
@@ -45290,20 +45306,20 @@ wV
 wV
 qn
 fC
-KQ
+QN
 nT
 mP
-QY
+QM
 nT
 nT
 KQ
 nT
 nT
-nT
+QY
 KX
 mP
-yl
-rG
+hv
+dY
 fC
 qn
 qn
@@ -46817,7 +46833,7 @@ tY
 nT
 nT
 rZ
-wt
+Gc
 nT
 nT
 tY
@@ -48483,7 +48499,7 @@ wV
 qn
 qn
 Sd
-XF
+Vh
 XF
 XF
 XF
@@ -49397,7 +49413,7 @@ qn
 qn
 qn
 Aa
-Vh
+XF
 XF
 fC
 ut
@@ -50459,7 +50475,7 @@ wV
 qn
 fC
 IC
-XF
+Vh
 XF
 XF
 Ka
