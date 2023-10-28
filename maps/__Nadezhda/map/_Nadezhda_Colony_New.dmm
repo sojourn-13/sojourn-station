@@ -21710,7 +21710,7 @@
 	},
 /obj/machinery/camera/network/colony_surface{
 	dir = 4;
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha    Wall    Colony")
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
@@ -51235,7 +51235,7 @@
 	dir = 1;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon    Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous    Oxide", "waste_sensor" = "Gas    Mix    Tank")
+	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon        Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous        Oxide", "waste_sensor" = "Gas        Mix        Tank")
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
@@ -51675,7 +51675,7 @@
 	dir = 8;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon    Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous    Oxide", "waste_sensor" = "Gas    Mix    Tank")
+	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon        Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous        Oxide", "waste_sensor" = "Gas        Mix        Tank")
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
@@ -69420,7 +69420,7 @@
 	},
 /obj/machinery/camera/network/colony_surface{
 	dir = 8;
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha    Wall    Colony")
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
@@ -93838,7 +93838,7 @@
 	},
 /obj/machinery/camera/network/colony_surface{
 	dir = 8;
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha    Wall    Colony")
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
