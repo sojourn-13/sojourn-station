@@ -133,6 +133,14 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"ahL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/gun/projectile/automatic/nordwind/strelki/sawn,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "ahW" = (
 /obj/random/junk,
 /obj/random/junk,
@@ -218,6 +226,10 @@
 "amQ" = (
 /obj/random/junk,
 /obj/random/junk,
+/obj/item/clothing/head/helmet/bulletproof,
+/obj/random/boxes/low_chance,
+/obj/random/gun_cheap/low_chance,
+/obj/random/melee/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -271,6 +283,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"ape" = (
+/obj/random/dungeon_armor_mods/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "apW" = (
 /obj/random/mob/voidwolf/low_chance,
 /turf/simulated/floor/tiled/white,
@@ -685,6 +704,14 @@
 /obj/random/structures,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"aIM" = (
+/obj/random/junk,
+/obj/random/melee/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "aIS" = (
 /obj/item/trash/mre/os,
 /turf/simulated/floor/wood/wild5,
@@ -778,6 +805,8 @@
 /obj/random/ammo/low_chance,
 /obj/random/ammo/low_chance,
 /obj/item/ammo_magazine/ammobox/antim_small,
+/obj/random/gun_cheap/low_chance,
+/obj/random/gun_cheap/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -949,6 +978,7 @@
 "aVm" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/item/clothing/glasses/welding/superior/shades,
+/obj/item/tool/multitool/uplink,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -1030,6 +1060,12 @@
 /obj/machinery/recharger,
 /obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
+/obj/random/melee,
+/obj/random/material/low_chance,
+/obj/random/material/low_chance,
+/obj/random/material/low_chance,
+/obj/random/material/low_chance,
+/obj/random/pouch/hardcase/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -1244,6 +1280,16 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"bly" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/mech_recharger,
+/obj/random/mecha/damaged/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "blC" = (
 /obj/item/bananapeel,
 /turf/simulated/floor/tiled/dark/brown_platform,
@@ -1258,7 +1304,6 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/dungeon/outside/safehouse)
 "bmh" = (
-/obj/item/mine/excelsior,
 /obj/item/trash/mre/alt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
@@ -1524,6 +1569,17 @@
 /obj/random/mob/prepper_boss_lowchance,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"bwE" = (
+/obj/random/junk,
+/obj/random/junk,
+/obj/item/clothing/suit/armor/platecarrier,
+/obj/item/clothing/suit/chameleon,
+/obj/random/closet_maintloot,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "bwH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/filth,
@@ -1661,10 +1717,8 @@
 /turf/simulated/floor/wood/wild5,
 /area/colony/exposedsun/pastgate)
 "bFR" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
 /obj/item/trash/mre_shokoladka,
+/obj/item/mine/armed,
 /turf/simulated/floor/rock/dark,
 /area/asteroid/rogue)
 "bFW" = (
@@ -1803,6 +1857,11 @@
 /obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault{
@@ -1955,13 +2014,13 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/asteroid/rogue)
 "bTz" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/rock/manmade/ruin2,
-/area/asteroid/rogue)
+/obj/effect/decal/cleanable/dirt,
+/obj/item/mine/armed,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "bTH" = (
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/plating/under,
@@ -2138,6 +2197,15 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
+"cco" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/bananapeel,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "ccK" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /turf/simulated/floor/tiled/cafe,
@@ -2186,6 +2254,14 @@
 /obj/machinery/reagentgrinder,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/dungeon/outside/zoo)
+"cgh" = (
+/obj/random/junk,
+/obj/random/gun_parts/low,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "cgw" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/small/bushb3,
@@ -2454,10 +2530,8 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "cqX" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
 /obj/item/trash/mre,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -2470,9 +2544,6 @@
 /area/nadezhda/dungeon/outside/monster_cave)
 "crF" = (
 /obj/item/trash/tray,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -2566,6 +2637,11 @@
 /obj/structure/table/standard,
 /obj/random/medical,
 /obj/random/medical,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical_lowcost,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -2865,6 +2941,11 @@
 "cEZ" = (
 /obj/structure/table/standard,
 /obj/random/medical/low_chance,
+/obj/random/gun_cheap/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical_lowcost,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -3015,6 +3096,10 @@
 /obj/structure/table/standard,
 /obj/random/medical/low_chance,
 /obj/machinery/light,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical_lowcost,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -3041,6 +3126,11 @@
 /obj/structure/table/standard,
 /obj/random/medical,
 /obj/item/computer_hardware/hard_drive/portable/design/medical/advanced,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical_lowcost,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -3197,7 +3287,7 @@
 /area/nadezhda/outside/meadow)
 "cTi" = (
 /obj/machinery/door/airlock,
-/obj/item/mine/excelsior,
+/obj/item/mine/armed,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -3392,6 +3482,11 @@
 /obj/random/medical,
 /obj/random/medical,
 /obj/item/storage/firstaid,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical_lowcost,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -3542,9 +3637,7 @@
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
 "djA" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
+/obj/item/mine/armed,
 /turf/simulated/floor/rock/dark,
 /area/asteroid/rogue)
 "djP" = (
@@ -4305,6 +4398,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/random/gun_parts/low,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -4987,6 +5081,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"eAc" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/obj/item/tool_upgrade/armor/bullet,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "eAm" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/white/panels,
@@ -5012,6 +5115,9 @@
 /obj/structure/table/rack,
 /obj/effect/decal/cleanable/filth,
 /obj/item/gun_upgrade/trigger/boom,
+/obj/random/cloth/armor/low_chance,
+/obj/random/cloth/helmet/low_chance,
+/obj/item/storage/box/syndie_kit/imp_uplink,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -5051,6 +5157,13 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"eFP" = (
+/obj/random/pouch/hardcase/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "eGG" = (
 /obj/machinery/door/airlock/multi_tile/metal,
 /obj/effect/decal/cleanable/liquid_fuel,
@@ -5058,9 +5171,10 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper)
 "eGQ" = (
-/obj/item/mine/excelsior,
-/obj/item/trash/material/metal,
-/turf/simulated/floor/tiled/dark/brown_perforated,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing,
+/obj/item/mine/armed,
+/turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
@@ -5135,6 +5249,15 @@
 	icon_state = "9,23"
 	},
 /area/colony/exposedsun/crashed_shop/outsider)
+"eLD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/closet,
+/obj/random/melee/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "eLI" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/microwave,
@@ -5268,15 +5391,10 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/meadow)
 "eVr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
-/turf/simulated/floor/tiled/dark/brown_platform,
-/area/nadezhda/dungeon/outside/prepper/vault{
-	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
-	name = "Abandoned Bunker"
-	})
+/obj/random/junkfood,
+/obj/item/mine/armed,
+/turf/simulated/floor/rock/dark,
+/area/asteroid/rogue)
 "eVM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/scrap/sparse_even,
@@ -5450,6 +5568,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/filth,
 /obj/effect/decal/cleanable/filth,
+/obj/random/gun_parts/low,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -5652,6 +5771,16 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/dungeon/outside/zoo)
+"fmc" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cloth/glasses/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "fmd" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/wall/r_wall,
@@ -5753,11 +5882,9 @@
 	name = "Abandoned Bunker"
 	})
 "fsd" = (
-/obj/machinery/door/airlock/centcom,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/random/closet,
+/obj/random/pouch/hardcase/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
@@ -5835,6 +5962,15 @@
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
+"fvE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/junk,
+/obj/random/gun_parts/low,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "fvS" = (
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/asteroid/rogue)
@@ -5934,6 +6070,15 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
+"fBt" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/obj/random/cloth/belt/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "fBw" = (
 /obj/random/closet_maintloot,
 /turf/simulated/floor/tiled/dark,
@@ -6121,6 +6266,16 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/meadow)
+"fIb" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/random/gun_combat/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "fJf" = (
 /obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor/asteroid/dirt,
@@ -6161,9 +6316,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "fLB" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
 /obj/item/trash/mre,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
@@ -6268,8 +6420,17 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"fQu" = (
+/obj/effect/decal/cleanable/ash,
+/obj/item/mine/armed,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "fQG" = (
 /obj/item/trash/os_coco_wrapper,
+/obj/random/gun_parts/low,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -6436,6 +6597,7 @@
 "fWQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/random_milsupply,
+/obj/item/tool_upgrade/armor/bullet,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -6529,6 +6691,16 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/outside/meadow)
+"gcp" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cloth/armor/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "gcw" = (
 /obj/item/mine_old{
 	layer = 2.6
@@ -7061,6 +7233,16 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/prepper)
+"gAf" = (
+/obj/random/closet,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/melee/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "gAg" = (
 /obj/random/lowkeyrandom,
 /turf/simulated/floor/tiled/dark,
@@ -7241,11 +7423,9 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/safehouse)
 "gIS" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
-/obj/machinery/door/airlock,
-/turf/simulated/floor/tiled/dark,
+/obj/structure/scrap_cube,
+/obj/random/pouch/hardcase/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
@@ -7271,6 +7451,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"gLy" = (
+/obj/structure/scrap_cube,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/uplink/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "gLJ" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/glass/bucket,
@@ -7624,6 +7813,16 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"hcF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/junk,
+/obj/random/closet,
+/obj/random/melee/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "hcG" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall19";
@@ -7648,6 +7847,13 @@
 /obj/structure/flora/small/bushb2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"hdo" = (
+/obj/random/gun_parts/low,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "hdO" = (
 /obj/structure/railing/grey{
 	dir = 1
@@ -7683,6 +7889,14 @@
 /obj/structure/flora/small/bushc3,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"heK" = (
+/obj/random/closet,
+/obj/random/pouch/hardcase/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "hfl" = (
 /obj/random/cloth/armor,
 /obj/random/gun_energy_cheap/low_chance,
@@ -7729,9 +7943,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "hjc" = (
 /obj/machinery/door/unpowered/simple/wood,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
+/obj/item/mine/armed,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -7928,6 +8140,13 @@
 /area/nadezhda/outside/one_star)
 "hox" = (
 /mob/living/carbon/superior_animal/human/excelsior/excel_ak,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
+"hoF" = (
+/obj/item/ammo_magazine/ammobox/rifle_75/lethal,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -8147,20 +8366,21 @@
 "hAV" = (
 /obj/structure/table/standard,
 /obj/random/medical,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical_lowcost,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
 "hBa" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
-/turf/simulated/floor/tiled/dark/brown_platform,
-/area/nadezhda/dungeon/outside/prepper/vault{
-	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
-	name = "Abandoned Bunker"
-	})
+/obj/structure/boulder,
+/obj/item/mine/armed,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/asteroid/rogue)
 "hBX" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
@@ -8304,6 +8524,7 @@
 /obj/structure/scrap_cube,
 /obj/effect/decal/cleanable/filth,
 /obj/effect/decal/cleanable/filth,
+/obj/random/pouch/hardcase/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -8379,6 +8600,8 @@
 "hOg" = (
 /obj/structure/table/standard,
 /obj/random/surgery_tool/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -8521,6 +8744,13 @@
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"hTF" = (
+/obj/random/gun_parts/low,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "hTZ" = (
 /obj/machinery/light{
 	dir = 8;
@@ -8579,6 +8809,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"hXM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/pouch/hardcase/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "hXN" = (
 /obj/random/oddity_guns,
 /turf/simulated/floor/asteroid/dirt,
@@ -8795,6 +9033,7 @@
 /obj/item/gun/projectile/makarov/preloaded,
 /obj/item/ammo_magazine/pistol_35/lethal,
 /obj/item/ammo_casing,
+/obj/random/cigarettes,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -8835,7 +9074,6 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "iiZ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/mine/excelsior,
 /obj/item/trash/candy/proteinbar,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
@@ -8975,6 +9213,14 @@
 /obj/random/cloth/armor,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"ipS" = (
+/obj/random/junk,
+/obj/random/boxes/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "iqh" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/firstaid/combat,
@@ -9139,6 +9385,14 @@
 /obj/item/storage/box/donkpockets,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"iwU" = (
+/obj/random/closet,
+/obj/random/melee/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "iwV" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/bushb1,
@@ -9380,6 +9634,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet,
 /obj/item/gun/projectile/boltgun,
+/obj/random/cloth/armor/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -9644,9 +9899,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
 "iWS" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
 /obj/item/trash/pistachios,
 /turf/simulated/floor/rock/dark,
 /area/asteroid/rogue)
@@ -9878,7 +10130,9 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/safehouse)
 "jfz" = (
-/obj/effect/decal/cleanable/generic,
+/obj/random/closet,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -9926,6 +10180,7 @@
 "jgN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/bananapeel,
+/obj/item/mine/armed,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -10112,6 +10367,8 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
 	},
+/obj/random/boxes/low_chance,
+/obj/random/melee/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -10124,7 +10381,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "jlL" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized,
-/turf/simulated/floor/tiled/dark/brown_platform,
+/turf/space,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
@@ -10209,6 +10466,17 @@
 /obj/machinery/power/port_gen/pacman/scrap,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"jpT" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cloth/belt/low_chance,
+/obj/random/melee/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "jqD" = (
 /obj/structure/table/standard,
 /obj/item/oddity/common/old_radio,
@@ -10327,6 +10595,13 @@
 /obj/item/oddity/common/book_bible,
 /turf/simulated/floor/wood,
 /area/nadezhda/dungeon/outside/prepper)
+"jyM" = (
+/obj/random/pouch/hardcase,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "jyY" = (
 /obj/structure/closet/crate/hydroponics,
 /obj/item/tool/shovel/spade,
@@ -10595,6 +10870,14 @@
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"jNt" = (
+/obj/effect/decal/cleanable/liquid_fuel,
+/obj/random/gun_combat/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "jND" = (
 /obj/structure/closet/crate/serbcrate,
 /obj/item/rig_module/device/drill,
@@ -10909,10 +11192,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "kdd" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
-/turf/simulated/floor/tiled/dark/brown_perforated,
+/obj/machinery/light,
+/obj/random/pouch/hardcase,
+/turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
@@ -10984,6 +11266,7 @@
 /area/nadezhda/dungeon/outside/zoo)
 "kfA" = (
 /obj/machinery/door/airlock/centcom,
+/obj/item/mine/armed,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -11064,6 +11347,7 @@
 "kjp" = (
 /obj/item/implanter/excelsior/broken,
 /obj/structure/table/rack,
+/obj/random/lathe_disk/advanced/excelsior,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -11257,6 +11541,7 @@
 /obj/structure/table/marble,
 /obj/item/storage/pouch/ammo,
 /obj/random/contraband,
+/obj/random/pouch/hardcase,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -11520,11 +11805,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "kEO" = (
-/obj/machinery/door/airlock,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/decal/cleanable/filth,
+/obj/random/pouch/hardcase/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
@@ -11866,6 +12149,14 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"kVv" = (
+/obj/structure/scrap_cube,
+/obj/random/uplink/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "kVE" = (
 /mob/living/carbon/superior_animal/xenomorph{
 	name = "Greg";
@@ -12070,6 +12361,8 @@
 /obj/structure/table/standard,
 /obj/item/computer_hardware/hard_drive/portable/design/guns/ex_vintorez,
 /obj/item/book/manual/nonfiction/thescienceofright,
+/obj/random/gun_fancy/low_chance,
+/obj/random/gun_fancy/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -12241,9 +12534,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
 "loq" = (
 /obj/landmark/corpse/excelsior,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
+/obj/item/mine/armed,
 /turf/simulated/floor/rock/dark,
 /area/asteroid/rogue)
 "loD" = (
@@ -12294,9 +12585,9 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
 "lrx" = (
-/obj/machinery/door/airlock,
-/obj/item/mine/excelsior,
-/turf/simulated/floor/tiled/dark/brown_platform,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/mine/armed,
+/turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
@@ -12531,8 +12822,8 @@
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
 "lEJ" = (
-/obj/item/mine/excelsior,
 /obj/effect/decal/cleanable/generic,
+/obj/item/mine/armed,
 /turf/simulated/floor/rock/manmade/ruin2,
 /area/asteroid/rogue)
 "lEN" = (
@@ -12786,6 +13077,13 @@
 /obj/item/gun/projectile/boltgun/heavysniper,
 /obj/item/gun/projectile/automatic/vintorez/NM_colony,
 /obj/structure/closet/crate,
+/obj/item/gun/projectile/automatic/ak47,
+/obj/random/gun_cheap/low_chance,
+/obj/random/gun_cheap/low_chance,
+/obj/random/gun_combat/low_chance,
+/obj/random/gun_combat/low_chance,
+/obj/random/gun_combat/low_chance,
+/obj/random/gun_combat/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -13035,6 +13333,14 @@
 /obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/techmaint_cargo,
 /area/nadezhda/dungeon/outside/zoo)
+"mbY" = (
+/obj/random/junk,
+/obj/random/closet_maintloot,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "mey" = (
 /obj/random/scrap/sparse_even,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -13325,6 +13631,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"mqX" = (
+/obj/machinery/light,
+/obj/item/mine/armed,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "mqZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/standard,
@@ -13471,6 +13785,7 @@
 	dir = 1
 	},
 /obj/structure/closet/random_milsupply,
+/obj/item/grenade/flashbang,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -14148,6 +14463,14 @@
 /obj/item/trash/mre_candy,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
+"mZo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/dungeon_armor_mods/low_chance,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "mZu" = (
 /obj/structure/table/onestar,
 /obj/random/junkfood,
@@ -14398,6 +14721,7 @@
 /area/asteroid/rogue)
 "nld" = (
 /obj/structure/scrap,
+/obj/random/pouch/hardcase,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -14430,8 +14754,9 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "nlD" = (
-/obj/machinery/power/apc/hyper,
-/turf/simulated/wall/r_wall,
+/obj/random/dungeon_ammo/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
@@ -14635,6 +14960,7 @@
 /obj/structure/table/marble,
 /obj/item/gun/projectile/automatic/ak47,
 /obj/random/contraband,
+/obj/item/gun/projectile/automatic/ppsh/NM_colony,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -15210,7 +15536,8 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/dungeon/outside/zoo)
 "nZp" = (
-/obj/item/gun/projectile/boltgun,
+/obj/random/cloth/armor,
+/obj/random/cloth/helmet,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -15358,6 +15685,7 @@
 "ofK" = (
 /obj/machinery/door/airlock/centcom,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/mine/armed,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -15468,7 +15796,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
 "ojC" = (
-/obj/item/mine/excelsior,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/pouch/hardcase,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -15646,6 +15975,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "osM" = (
 /obj/effect/decal/cleanable/liquid_fuel,
+/obj/random/pouch/hardcase,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -15742,15 +16072,9 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "owt" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/brown_perforated,
-/area/nadezhda/dungeon/outside/prepper/vault{
-	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
-	name = "Abandoned Bunker"
-	})
+/obj/item/mine/armed,
+/turf/simulated/floor/rock/manmade/ruin2,
+/area/asteroid/rogue)
 "owF" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -16431,9 +16755,9 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
 "oWB" = (
-/obj/random/mecha/damaged/low_chance,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/mech_recharger,
+/obj/random/mecha,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -16750,6 +17074,7 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
+/obj/random/uplink/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -17072,6 +17397,14 @@
 /obj/item/gun/projectile/revolver/wayfarer,
 /obj/item/gun/projectile/revolver/wayfarer,
 /obj/structure/closet/crate,
+/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony,
+/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony,
+/obj/random/gun_cheap/low_chance,
+/obj/random/gun_cheap/low_chance,
+/obj/random/gun_combat/low_chance,
+/obj/random/gun_combat/low_chance,
+/obj/random/gun_combat/low_chance,
+/obj/random/gun_combat/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -17175,9 +17508,8 @@
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "pFf" = (
-/obj/item/mine/excelsior,
-/obj/item/trash/liquidfood,
-/turf/simulated/floor/tiled/dark/brown_perforated,
+/obj/item/mine/armed,
+/turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
@@ -17374,6 +17706,7 @@
 "pMm" = (
 /mob/living/carbon/superior_animal/human/excelsior,
 /obj/random/dungeon_ammo/low_chance,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -17538,6 +17871,14 @@
 	},
 /turf/simulated/floor/asteroid/grass/dry,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"pRo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/gun_parts/low,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "pRE" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -17802,7 +18143,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
 "qcp" = (
-/obj/item/mine/excelsior,
 /obj/item/trash/plate,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_platform,
@@ -17902,6 +18242,8 @@
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/drozd/NM_colony,
 /obj/item/gun/projectile/automatic/drozd/NM_colony,
+/obj/random/cloth/armor/low_chance,
+/obj/random/cloth/helmet/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -17918,6 +18260,8 @@
 /obj/random/ammo/shotgun/low_chance,
 /obj/random/ammo_fancy,
 /obj/random/ammo_fancy,
+/obj/random/gun_cheap/low_chance,
+/obj/random/gun_cheap/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -18513,6 +18857,8 @@
 "qHe" = (
 /obj/structure/table/standard,
 /obj/random/surgery_tool,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -18687,6 +19033,9 @@
 "qPt" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/drozd/NM_colony,
+/obj/random/cloth/armor/low_chance,
+/obj/random/cloth/helmet/low_chance,
+/obj/random/gun_combat/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -18776,7 +19125,6 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/obj/item/mine/excelsior,
 /obj/machinery/door/airlock,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault{
@@ -19459,9 +19807,6 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
 "rAJ" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/pistachios,
 /turf/simulated/floor/tiled/dark/brown_platform,
@@ -19815,6 +20160,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/random/gun_parts,
 /obj/item/gun_upgrade/barrel/faulty,
+/obj/item/grenade/frag,
+/obj/item/grenade/frag,
+/obj/random/melee/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -19872,7 +20220,6 @@
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "rVZ" = (
-/obj/item/mine/excelsior,
 /obj/item/trash/material/metal,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
@@ -19885,9 +20232,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/filth,
 /obj/random/junk,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -20039,6 +20383,7 @@
 "sdu" = (
 /obj/effect/decal/cleanable/filth,
 /obj/random/dungeon_ammo/low_chance,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -20389,6 +20734,8 @@
 "ssO" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/vintorez,
+/obj/random/cloth/armor/low_chance,
+/obj/random/cloth/helmet/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -20411,9 +20758,14 @@
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
 "stv" = (
-/obj/item/mine/excelsior,
-/turf/simulated/floor/asteroid/dirt/dark,
-/area/asteroid/rogue)
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/material/metal,
+/obj/item/mine/armed,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "stz" = (
 /obj/random/traps,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -20713,6 +21065,14 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
+"sHB" = (
+/obj/random/closet,
+/obj/random/melee/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "sIW" = (
 /obj/machinery/power/smes/buildable,
 /obj/structure/cable/yellow,
@@ -20954,10 +21314,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "sUx" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid{
-	pixel_x = -8;
-	pixel_y = 8
-	},
+/obj/random/medical_lowcost,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -21033,10 +21390,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "sZH" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
-/obj/item/trash/liquidfood,
+/obj/random/pouch/hardcase,
+/obj/random/pouch/hardcase,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -21331,9 +21686,18 @@
 /obj/item/frame/apc,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"tnh" = (
+/obj/random/junk,
+/obj/random/closet_maintloot,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "tnz" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/item/trash/icecreambowl,
+/obj/item/mine/armed,
 /turf/simulated/floor/rock/dark,
 /area/asteroid/rogue)
 "tnY" = (
@@ -21527,6 +21891,8 @@
 /obj/random/surgery_tool/low_chance,
 /obj/item/tool/saw/circular/medical,
 /obj/structure/table/standard,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -21709,6 +22075,18 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"tFS" = (
+/obj/structure/table/standard,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical/low_chance,
+/obj/random/medical_lowcost,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "tFU" = (
 /obj/structure/flora/small/busha2,
 /obj/item/mine/armed,
@@ -21886,6 +22264,15 @@
 	},
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
+"tPN" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/obj/random/gun_combat/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "tQf" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/busha3,
@@ -22018,6 +22405,7 @@
 /obj/item/implantcase/excelsior/broken,
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/ak47/NM_colony,
+/obj/random/lathe_disk/advanced/excelsior,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -22223,11 +22611,12 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/item/tool/sword/saber,
 /obj/effect/decal/cleanable/blood,
-/obj/landmark/corpse/chef,
 /mob/living/carbon/superior_animal/giant_spider/tarantula/burrowing,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/clothing/head/costume/history/jester/court,
+/obj/item/remains/human,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -22531,6 +22920,14 @@
 	tag = "icon-cargoshwall6"
 	},
 /area/colony/exposedsun/crashed_shop/outsider)
+"urD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/gun_parts/low,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "usA" = (
 /obj/structure/railing/grey{
 	dir = 1;
@@ -23019,6 +23416,15 @@
 /obj/random/traps,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"uOi" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/obj/random/cloth/armor/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "uOw" = (
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/suit/space/void/engineering,
@@ -23231,6 +23637,7 @@
 /obj/random/dungeon_ammo/low_chance,
 /obj/random/dungeon_ammo/low_chance,
 /obj/random/closet_maintloot,
+/obj/landmark/storyevent/midgame_stash_spawn,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
 "uWM" = (
@@ -23454,6 +23861,13 @@
 /obj/item/clothing/suit/armor/heavy,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/asteroid/rogue)
+"vic" = (
+/obj/random/gun_combat/low_chance,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "vih" = (
 /obj/structure/table/glass,
 /obj/random/rations,
@@ -23673,7 +24087,7 @@
 /area/nadezhda/outside/meadow)
 "vqZ" = (
 /obj/machinery/door/airlock/centcom,
-/obj/item/mine/excelsior,
+/obj/item/mine/armed,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -23969,6 +24383,17 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/colony/exposedsun/crashed_shop/outsider)
+"vGD" = (
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
 "vHs" = (
 /obj/landmark/corpse/excelsior,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -24063,6 +24488,7 @@
 "vLG" = (
 /obj/item/trash/mre/alt,
 /obj/effect/decal/cleanable/rubble,
+/obj/item/mine/armed,
 /turf/simulated/floor/rock/dark,
 /area/asteroid/rogue)
 "vLX" = (
@@ -24149,6 +24575,7 @@
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
 "vPo" = (
 /obj/structure/table/reinforced,
+/obj/random/gun_parts/low,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -24619,6 +25046,10 @@
 /obj/structure/table/rack,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/glasses/powered/night,
+/obj/random/cloth/armor/low_chance,
+/obj/random/cloth/helmet/low_chance,
+/obj/random/cloth/glasses/low_chance,
+/obj/random/gun_combat/low_chance,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -24720,10 +25151,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "wsa" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
-/obj/random/junk,
+/obj/machinery/door/airlock,
+/obj/item/mine/armed,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -24823,6 +25252,11 @@
 "wvi" = (
 /obj/structure/table/rack,
 /obj/item/gun/energy/stunrevolver,
+/obj/random/cloth/armor/low_chance,
+/obj/random/cloth/helmet/low_chance,
+/obj/random/cloth/glasses/low_chance,
+/obj/random/gun_combat/low_chance,
+/obj/random/medical,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -25617,6 +26051,8 @@
 /obj/structure/table/woodentable,
 /obj/item/clothing/under/excelsior/officer,
 /obj/item/clothing/head/exceslior/excelsior_officer,
+/obj/item/tool_upgrade/armor/melee,
+/obj/item/tool_upgrade/armor/melee,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -26358,6 +26794,8 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
+/obj/structure/flora/pottedplant/decorative,
+/obj/random/closet_maintloot,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -26386,6 +26824,7 @@
 "xSJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/sosjerky,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -26405,6 +26844,7 @@
 /obj/item/bedsheet,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/random/cloth/belt/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -26617,6 +27057,13 @@
 "ydw" = (
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/dungeon/outside/prepper/vault{
+	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
+	name = "Abandoned Bunker"
+	})
+"ydI" = (
+/obj/item/mine/armed,
+/turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
@@ -47888,7 +48335,7 @@ qbU
 qbU
 dpk
 ldM
-ldM
+eVr
 qbU
 dpk
 qbU
@@ -48730,7 +49177,7 @@ qbU
 qbU
 qbU
 uVX
-djA
+uVX
 qbU
 qbU
 qbU
@@ -50395,7 +50842,7 @@ qbU
 qbU
 qbU
 cKr
-bTz
+cKr
 iFU
 coU
 coU
@@ -50605,7 +51052,7 @@ qbU
 iFU
 baC
 wRP
-iFU
+owt
 coU
 coU
 coU
@@ -51230,7 +51677,7 @@ xtV
 xtV
 aHN
 pdh
-fsd
+kfA
 kfA
 pdh
 aHN
@@ -51859,8 +52306,8 @@ xQf
 pHI
 jva
 hgL
-pHI
-pFf
+lrx
+avp
 hgL
 dnC
 hgL
@@ -52272,7 +52719,7 @@ xtV
 wvJ
 hgL
 hgL
-ojC
+hgL
 hgL
 sUx
 hgL
@@ -52915,7 +53362,7 @@ ehe
 qjc
 hgL
 hgL
-owt
+mZo
 hgL
 ngA
 xtV
@@ -53117,13 +53564,13 @@ hgL
 jcD
 utC
 hgL
-pHI
+lrx
 rLO
 xtV
-eGQ
+byy
 hgL
 wtC
-pHI
+ojC
 dpI
 vHs
 axV
@@ -53316,7 +53763,7 @@ coU
 xtV
 aHN
 szl
-szl
+wsa
 aHN
 aHN
 aHN
@@ -53536,7 +53983,7 @@ jQS
 nQY
 oNj
 oNj
-oNj
+hTF
 xtV
 cEx
 dpI
@@ -53735,7 +54182,7 @@ xtV
 hOw
 aDy
 thh
-oNj
+pFf
 snd
 dGD
 nJu
@@ -53749,7 +54196,7 @@ jio
 xtV
 gjj
 fLB
-hgL
+ape
 jgj
 hgL
 hgL
@@ -53948,7 +54395,7 @@ oNj
 aWi
 oNj
 oNj
-oNj
+hTF
 oNj
 bRP
 cvA
@@ -53960,7 +54407,7 @@ ufe
 pHI
 pHI
 hgL
-sZH
+avp
 pHI
 chw
 xtV
@@ -54151,7 +54598,7 @@ coU
 coU
 xtV
 snd
-snd
+cgh
 snd
 oNj
 snd
@@ -54161,7 +54608,7 @@ iiZ
 kBY
 mKd
 uhF
-bRP
+bTz
 aFi
 nJu
 xtV
@@ -54574,21 +55021,21 @@ nPJ
 azg
 kLe
 aHN
-sJY
+snd
 opq
 aHN
-azg
+gcp
 fyX
 rgT
 jmx
-rgT
+fBt
 cGo
 aHN
 cUA
 rRO
 qPt
 qgn
-kdd
+hgL
 utC
 xtV
 coU
@@ -54786,14 +55233,14 @@ aHN
 kZp
 blC
 hwy
-rgT
+eAc
 oNj
-azg
+fmc
 oNj
-rgT
+tPN
 snd
 aHN
-hgL
+hoF
 dpI
 pHI
 utC
@@ -55003,7 +55450,7 @@ oNj
 snd
 aHN
 iAz
-hgL
+sXz
 hgL
 hgL
 pHI
@@ -55201,14 +55648,14 @@ tIm
 rgT
 oNj
 aHN
-wsa
+snd
 bRP
 aHN
 uOI
-oNj
+jyM
 rgT
 bRP
-azg
+jpT
 kSE
 aHN
 iAz
@@ -55216,7 +55663,7 @@ hgL
 dnC
 qjc
 rWf
-jgj
+tnh
 xtV
 coU
 coU
@@ -55410,14 +55857,14 @@ tIm
 iHb
 qvg
 aHN
-oNj
+pFf
 bRP
 aHN
-rgT
+fBt
+pFf
+tPN
 oNj
-rgT
-oNj
-rgT
+uOi
 qio
 aHN
 vsV
@@ -56034,19 +56481,19 @@ xtV
 dKT
 oNj
 nJu
-aFi
+fvE
 oNj
-szl
+wsa
 bRP
 bRP
 oNj
 cZS
-hva
+eGQ
 qcp
 bvs
 snd
 oNj
-szl
+wsa
 oNj
 oNj
 aHN
@@ -56055,8 +56502,8 @@ iDM
 hgL
 xtV
 ugY
-stv
-jkn
+euc
+hBa
 jkn
 qbU
 iII
@@ -56254,10 +56701,10 @@ oNj
 hva
 nJu
 mUI
-hBa
+oNj
 szl
 snd
-aFi
+hcF
 aHN
 qts
 hgL
@@ -56470,7 +56917,7 @@ qvg
 aHN
 nZp
 iDM
-ima
+eLD
 xtV
 coU
 coU
@@ -56664,9 +57111,9 @@ ksu
 nuW
 bRP
 aHN
-oNj
+pFf
 pmY
-oNj
+vic
 ice
 aHN
 oNj
@@ -56874,16 +57321,16 @@ hQX
 opq
 hwy
 hOw
-osM
+jNt
 oNj
 kfH
 aHN
-laf
+fIb
 beH
-oNj
-opq
+pFf
+kdd
 hwy
-oNj
+oPF
 oNj
 aHN
 kAK
@@ -57089,13 +57536,13 @@ cEA
 aHN
 oXO
 qvM
-bRP
+ahL
 cEA
 aHN
 iey
 qGH
 oNj
-xCX
+kEO
 oNj
 oNj
 xtV
@@ -57303,7 +57750,7 @@ xtV
 xtV
 oel
 bRP
-sJY
+snd
 hva
 vBH
 afk
@@ -57502,14 +57949,14 @@ ctv
 hAV
 sNe
 cEZ
-cEZ
+tFS
 cLV
 oKr
 fXg
 ydw
-oNj
-oNj
-kEO
+bRP
+bTz
+tQp
 bRP
 hva
 oNj
@@ -57710,21 +58157,21 @@ oNj
 oNj
 xCX
 bRP
-eVr
+bRP
 oNj
 oNj
 szl
 oNj
 crF
 oNj
-hBa
-tQp
+bRP
+cTi
 snd
 oNj
 thh
 snd
 bRP
-amQ
+bwE
 xtV
 qbU
 coU
@@ -57915,14 +58362,14 @@ xtV
 hOg
 kfS
 ceR
-oNj
+pFf
 oNj
 oNj
 aho
 oNj
 xav
 oNj
-szl
+wsa
 bRP
 kNe
 oNj
@@ -58135,10 +58582,10 @@ xtV
 jlf
 oNj
 bRP
-bRP
+pRo
 xtV
 xRl
-snd
+mbY
 axL
 igW
 lPa
@@ -58341,10 +58788,10 @@ oNj
 nhe
 opq
 tCZ
-snd
+ipS
 kaq
 bRP
-hBa
+oNj
 xtV
 xtV
 xtV
@@ -58553,13 +59000,13 @@ xtV
 amQ
 bRP
 uWM
-bRR
+nlD
 xtV
 kBi
 pZG
-jgj
-jgj
-ckM
+aIM
+aIM
+bly
 oWB
 xtV
 qbU
@@ -58761,7 +59208,7 @@ izA
 xtV
 ufW
 bRP
-oNj
+bRP
 sdu
 cTi
 hgL
@@ -59178,15 +59625,15 @@ woR
 vnE
 xtV
 aOF
-oNj
-oNj
+bRP
+pRo
 kts
 xtV
 lNk
 nYl
 lQj
 pAv
-hgL
+sZH
 tTP
 xtV
 qbU
@@ -59387,7 +59834,7 @@ xtV
 xtV
 xtV
 xtV
-oNj
+pRo
 nxU
 xtV
 xtV
@@ -60005,14 +60452,14 @@ coU
 xtV
 kjp
 hox
-hgL
+ydI
 hgL
 tCZ
 hgL
 nAW
 hgL
 hgL
-ubp
+fsd
 xtV
 snd
 oNj
@@ -60215,13 +60662,13 @@ xtV
 kjp
 hgL
 hgL
-kdd
+hgL
 xtV
 ugC
 pHI
 cDT
 hgL
-ubp
+iwU
 xtV
 laf
 hDc
@@ -60424,15 +60871,15 @@ xtV
 tWQ
 hgL
 pHI
-yhY
+mqX
 xtV
 fQG
 jnq
-pHI
+lrx
 hgL
 ima
 xtV
-lrx
+szl
 xEH
 xtV
 xtV
@@ -60634,7 +61081,7 @@ lgv
 hgL
 hgL
 pHI
-lrx
+szl
 oNj
 oNj
 bRP
@@ -60644,13 +61091,13 @@ hDc
 oNj
 oNj
 bRP
-jgN
-uhF
+cco
+dbE
 cqX
+bRP
 oNj
-oNj
-oNj
-sNe
+bRP
+aOF
 xtV
 coU
 coU
@@ -60841,7 +61288,7 @@ coU
 xtV
 jkv
 gid
-kdd
+hgL
 pZG
 xtV
 laf
@@ -60853,11 +61300,11 @@ bRP
 bRP
 snc
 qxH
-oNj
-xCX
-oNj
-oNj
-oNj
+pRo
+mKd
+bTz
+bRP
+bRP
 xSJ
 lIh
 xtV
@@ -61067,8 +61514,8 @@ xtV
 xtV
 mED
 oNj
-oNj
-bRR
+bRP
+nlD
 xtV
 coU
 coU
@@ -61256,7 +61703,7 @@ nxY
 coU
 coU
 coU
-nlD
+xtV
 bMw
 xCH
 fDD
@@ -61269,15 +61716,15 @@ srx
 bRP
 dup
 aOF
-oNj
-lMF
-lMF
-lMF
+bRP
+jfz
+gAf
+sHB
 syp
 jlL
 oNj
 oNj
-dez
+wdn
 xtV
 coU
 coU
@@ -61471,7 +61918,7 @@ pHI
 pHI
 pHI
 cLU
-hgL
+ydI
 xtV
 oNj
 kaq
@@ -61479,7 +61926,7 @@ oNj
 aqi
 xav
 xcF
-oNj
+bRP
 aWi
 oNj
 xav
@@ -61676,7 +62123,7 @@ coU
 coU
 tCZ
 rEF
-aGn
+fQu
 hgL
 pHI
 pHI
@@ -61685,7 +62132,7 @@ cjK
 mng
 rdH
 oNj
-bRP
+bTz
 bRP
 bRP
 wdn
@@ -61891,14 +62338,14 @@ dnC
 hgL
 hgL
 xtV
-gIS
+tQp
 qTm
 xtV
 oNj
 nPm
 mED
 sDd
-hBa
+oNj
 bRP
 oNj
 bRP
@@ -62100,16 +62547,16 @@ dpI
 iDM
 hgL
 blx
-hgL
+ydI
 hgL
 uJW
 cam
 snd
 xtV
 oRj
-bRP
+pRo
 oNj
-jfz
+cZS
 jgN
 oNj
 xCX
@@ -62304,9 +62751,9 @@ coU
 xtV
 wEw
 pHI
-pHI
-kdd
-pHI
+lrx
+hgL
+urD
 pHI
 iDM
 hgL
@@ -62530,7 +62977,7 @@ kNe
 oNj
 oNj
 cEk
-lMF
+heK
 lMF
 xtV
 bZw
@@ -62946,7 +63393,7 @@ ssP
 hyA
 mOu
 bsR
-hgL
+eFP
 wvJ
 vHs
 jjD
@@ -63137,7 +63584,7 @@ nxY
 coU
 coU
 coU
-xtV
+vGD
 umz
 pHI
 hgL
@@ -63147,10 +63594,10 @@ hgL
 ssP
 dnC
 hgL
+lrx
+hgL
+hgL
 pHI
-hgL
-hgL
-owt
 hgL
 xNJ
 pHI
@@ -63350,7 +63797,7 @@ xtV
 vsV
 hgL
 hgL
-hgL
+hdo
 pHI
 pnU
 sEk
@@ -63776,7 +64223,7 @@ reX
 qjc
 sEk
 hgL
-hgL
+hdo
 pHI
 fcX
 jnq
@@ -63976,7 +64423,7 @@ coU
 xtV
 gHH
 wvJ
-gHH
+kVv
 ljm
 wvJ
 gHH
@@ -63984,7 +64431,7 @@ wnh
 kQA
 xiC
 pBg
-knp
+stv
 llF
 pBg
 xBs
@@ -64202,8 +64649,8 @@ gHH
 wvJ
 wvJ
 srt
-kQA
-gHH
+gLy
+gIS
 xtV
 coU
 coU
@@ -64394,13 +64841,13 @@ coU
 xtV
 nCC
 hgL
-pHI
+lrx
 ssP
 dpI
 pHI
 nGT
 pHI
-owt
+pHI
 iDM
 nuB
 dnC
@@ -64408,8 +64855,8 @@ dnC
 hgL
 ouu
 exc
-hgL
-pHI
+ydI
+hXM
 scg
 ckM
 rww
