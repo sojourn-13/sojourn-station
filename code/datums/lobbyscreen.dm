@@ -32,7 +32,7 @@
 /datum/lobbyscreen/enroute
 	image_file = 'icons/title_screens/transit.png'
 	possibleMusic = list(
-		'sound/music/lobby/transit.ogg' = 100,
+		'sound/music/lobby/ultra_deep_field.ogg' = 100,
 		'sound/music/lobby/Duke_Gneiss-Phoron_Industry.ogg' = 10,
 		'sound/music/lobby/Duke_Gneiss-Phoron_Leak.ogg' = 10,
 	)
