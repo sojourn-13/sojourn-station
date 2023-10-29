@@ -280,7 +280,7 @@
 				/obj/item/gun/projectile/automatic/ak47/sa/tac = 1,
 				/obj/item/gun/projectile/shotgun/pump/combat = 3,
 				/obj/item/gun/projectile/shotgun/pug = 2,
-				/obj/item/gun/projectile/gyropistol = 1,
+				///obj/item/gun/projectile/gyropistol = 1,
 				/obj/item/gun/projectile/automatic/omnirifle/solmarine = 2,
 				/obj/item/gun/projectile/automatic/omnirifle = 1,
 				/obj/item/gun/projectile/automatic/c20r = 3,
