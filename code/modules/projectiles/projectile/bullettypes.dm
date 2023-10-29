@@ -1079,7 +1079,7 @@
 
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
 	if (!testing)
-		explosion(target, 0, 0, 1)
+		explosion(target, 0, 0, 2)
 	return TRUE
 
 //Miscellaneous
