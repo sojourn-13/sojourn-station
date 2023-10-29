@@ -26015,10 +26015,8 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
 "fCM" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
 /obj/effect/decal/cleanable/rubble,
+/obj/random/traps,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "fCP" = (
@@ -60949,9 +60947,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/captain/quarters)
 "nes" = (
-/obj/item/mine/excelsior{
-	armed = 1
-	},
+/obj/random/traps,
 /turf/simulated/floor/rock,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "net" = (

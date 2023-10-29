@@ -622,7 +622,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	if(!wielded)
 		unwielded_recoil = recoil.getRating(RECOIL_ONEHAND)
-
+/*
 	if(unwielded_recoil)
 		switch(recoil.getRating(RECOIL_ONEHAND_LEVEL))
 			if(0.6 to 0.8)
@@ -648,7 +648,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				to_chat(user, SPAN_WARNING("You have trouble keeping \the [src] on target while carrying it!"))
 			if(1.2 to INFINITY)
 				to_chat(user, SPAN_WARNING("You struggle to keep \the [src] on target while carrying it!"))
-
+*/
 	user.handle_recoil(src, (base_recoil + brace_recoil + unwielded_recoil) * P.recoil)
 
 /obj/item/gun/proc/process_point_blank(var/obj/item/projectile/P, mob/user, atom/target)
