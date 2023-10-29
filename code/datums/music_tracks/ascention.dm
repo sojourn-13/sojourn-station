@@ -52,7 +52,7 @@
 	artist = "Duke Gneiss"
 	title = "Phoron Leak"
 	album = "Ascention"
-	song = 'sound/music/lobby/Duke_Gneiss-Proron_Leak.ogg'
+	song = 'sound/music/lobby/Duke_Gneiss-Phoron_Leak.ogg'
 	url = "https://soundcloud.com/dukegneiss/phoron-leak"
 
 /music_track/runner //Track 20
