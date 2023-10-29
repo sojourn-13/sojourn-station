@@ -13,8 +13,8 @@
 		return
 	var/mob/living/carbon/human/human_holder = container.holder
 	//Bigger
-	old_size = human_holder.scale_effect
-	human_holder.scale_effect = -40
+	old_size = human_holder.size_multiplier
+	human_holder.size_multiplier = RESIZE_POCKET_PRINCE
 	human_holder.update_icons()
 
 	//Weaker
@@ -34,7 +34,7 @@
 		return
 	var/mob/living/carbon/human/human_holder = container.holder
 	//Smaller
-	human_holder.scale_effect = old_size
+	human_holder.size_multiplier = old_size
 	human_holder.update_icons()
 
 	//Weaker
