@@ -149,13 +149,18 @@
 
 	// Self-surgery increases failure chance
 	if(owner && user == owner)
-		difficulty_adjust = 80 // Godlike status required for surgery, in preparation for hardcap of stats at 120
+		difficulty_adjust = 70 // Godlike status required for surgery. Good luck keeping hands steady.
 		time_adjust = 40
 
 		//For if a user is doing 'surgery' on their own prosthetic bodypart
 		if(nature == MODIFICATION_SILICON)
-			difficulty_adjust = 60
-			time_adjust = 20
+			difficulty_adjust = 70 //this is VERY complicated work to do with perfect sightlines and ergonomics - let alone without these.
+			time_adjust = 40
+
+
+	if(user.stats.getPerk(PERK_SCUTTLEBUG || PERK_ICHOR || PERK_CHITINARMOR))
+		difficulty_adjust += -60 //We feel no pain, and are pretty used to working on ourselves due to metal paranoia. Still slightly worse than letting someone else do, due to limited ability to see inside
+		time_adjust += -30
 
 		// ...unless you are a carrion
 		// It makes sense that carrions have a way of making their flesh cooperate
