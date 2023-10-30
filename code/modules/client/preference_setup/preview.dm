@@ -12,6 +12,7 @@ datum/preferences/proc/update_preview_icon(var/naked = FALSE)
 	if (generating_preview)
 		return
 	generating_preview = TRUE
+
 	mannequin = get_mannequin(client_ckey)
 	mannequin.delete_inventory(TRUE)
 	preview_icon = icon('icons/effects/96x64.dmi', bgstate)
