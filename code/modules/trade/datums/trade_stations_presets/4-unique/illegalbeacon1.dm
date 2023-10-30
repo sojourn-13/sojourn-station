@@ -67,8 +67,8 @@
 	offer_types = list(
 		/obj/item/organ/internal/kidney = offer_data("kidney", 800, 2),
 		/obj/item/organ/internal/liver/big = offer_data("big liver", 1200, 1),
-		/obj/item/organ/internal/heart/huge = offer_data("six-chambered heart", 2000, 1),
-		/obj/item/organ/internal/lungs/long = offer_data("long lungs", 1650, 1),
+		/obj/item/organ/internal/vital/heart/huge = offer_data("six-chambered heart", 2000, 1),
+		/obj/item/organ/internal/vital/lungs/long = offer_data("long lungs", 1650, 1),
 		/obj/item/organ/internal/nerve/sensitive_nerve  = offer_data("sensitive nerve", 2650, 1),
 		/obj/item/organ/internal/blood_vessel/extensive   = offer_data("extensive blood vessels", 2650, 1)
 	)

@@ -21,7 +21,7 @@
 	poison_type = null
 
 	has_process = list(
-		BP_BRAIN = /obj/item/organ/internal/brain/golem
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/golem
 		)
 
 /datum/species/golem/handle_post_spawn(var/mob/living/carbon/human/H)

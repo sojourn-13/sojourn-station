@@ -193,7 +193,7 @@
 /datum/reagent/medicine/cordradaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/removed = REM)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_HEART)
+		var/obj/item/organ/internal/vital/heart/C = H.random_organ_by_process(OP_HEART)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(C))
 				return
@@ -262,7 +262,7 @@
 /datum/reagent/medicine/respirodaxon/affect_blood(var/mob/living/carbon/M, var/alien, var/removed = REM)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/lungs/L = H.random_organ_by_process(OP_LUNGS)
+		var/obj/item/organ/internal/vital/lungs/L = H.random_organ_by_process(OP_LUNGS)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(L))
 				return

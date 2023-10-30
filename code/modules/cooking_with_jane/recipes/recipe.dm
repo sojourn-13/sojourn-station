@@ -1154,7 +1154,7 @@
 		list(CWJ_ADD_REAGENT, "flour", 15),
 		list(CWJ_ADD_REAGENT, "milk", 5),
 		list(CWJ_ADD_REAGENT, "egg", 9),
-		list(CWJ_ADD_ITEM, /obj/item/organ/internal/brain),
+		list(CWJ_ADD_ITEM, /obj/item/organ/internal/vital/brain),
 		list(CWJ_USE_OVEN, J_MED, 30 SECONDS)
 	)
 
