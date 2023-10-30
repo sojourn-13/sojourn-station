@@ -2621,10 +2621,28 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "wd" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/boltgun/lever,
-/obj/item/ammo_magazine/ammobox/magnum_40,
-/obj/item/ammo_magazine/ammobox/magnum_40,
-/obj/item/ammo_magazine/ammobox/magnum_40,
+/obj/item/ammo_magazine/ammobox/magnum_40{
+	pixel_y = 10;
+	pixel_x = -7
+	},
+/obj/item/ammo_magazine/ammobox/magnum_40{
+	pixel_y = 10
+	},
+/obj/item/ammo_magazine/ammobox/magnum_40{
+	pixel_y = 10;
+	pixel_x = 6
+	},
+/obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv{
+	pixel_y = 4
+	},
+/obj/item/ammo_magazine/ammobox/shotgun/buckshot{
+	pixel_y = -3;
+	pixel_x = 2
+	},
+/obj/item/ammo_magazine/ammobox/shotgun{
+	pixel_x = -3;
+	pixel_y = -3
+	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "wg" = (
@@ -2669,8 +2687,12 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "wM" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/boltgun/light,
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv,
+/obj/item/gun/projectile/boltgun/light{
+	pixel_y = 7
+	},
+/obj/item/gun/projectile/boltgun/lever{
+	pixel_y = -2
+	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "wS" = (
