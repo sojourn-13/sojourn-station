@@ -51,7 +51,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
-		/obj/item/rig_module/storage
+		//obj/item/rig_module/storage
 		)
 //blacksheild
 /obj/item/rig/combat/blackshield
@@ -80,7 +80,7 @@
 /obj/item/rig/combat/blackshield/equipped
 	initial_modules = list(
 		/obj/item/rig_module/mounted,
-		/obj/item/rig_module/storage,
+		//obj/item/rig_module/storage,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/mounted/egun,
 		/obj/item/rig_module/vision/sechud
@@ -133,7 +133,7 @@
 
 /obj/item/rig/combat/knight/equipped
 	initial_modules = list(
-		/obj/item/rig_module/storage,
+		//obj/item/rig_module/storage,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/held/shield

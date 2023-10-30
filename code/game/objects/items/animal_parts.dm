@@ -89,6 +89,14 @@
 	item_state = "nightstalker_tooth"
 	price_tag = 600
 
+/obj/item/animal_part/carp_fang
+	name = "mephitic fang"
+	desc = "The venom gland and fang from a particularly large carp. Some claim that such highly concentrated venom can be processed into a tincture used to treat internal injury albeit at the cost of ingesting carpotoxin."
+	icon_state = "carp_tooth"
+	item_state = "carp_tooth"
+	price_tag = 300
+
+
 //start of the dok hunter arc
 /obj/item/animal_part/croaker_tongue
 	name = "croaker lord tongue"

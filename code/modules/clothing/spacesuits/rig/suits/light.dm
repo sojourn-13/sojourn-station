@@ -95,7 +95,7 @@
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/modular_injector/medical,
 		/obj/item/rig_module/ai_container,
-		/obj/item/rig_module/storage
+		//obj/item/rig_module/storage
 		)
 
 

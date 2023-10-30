@@ -203,7 +203,7 @@
 	if(electrified != 0)
 		if(shock(user)) //Handles removing charge from the cell, as well. No need to do that here.
 			return
-
+/*
 	//If the rig has a storage module, we can attempt to access it
 	if (storage && (is_worn() || is_held()))
 		//This will return false if we're done, or true to tell us to keep going and call parent attackhand
@@ -225,7 +225,7 @@
 	if (storage && storage.handle_mousedrop(usr, over_object))
 		return TRUE
 	return ..()
-
+*/
 /obj/item/rig/emag_act(var/remaining_charges, var/mob/user)
 	if(!subverted)
 		req_access.Cut()

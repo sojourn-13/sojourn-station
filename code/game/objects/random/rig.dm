@@ -90,7 +90,7 @@
 /obj/random/rig_module/item_to_spawn()
 	return pickweight(list(
 	//Storage
-	/obj/item/rig_module/storage = 12, //Made much more common
+	//obj/item/rig_module/storage = 12, //Made much more common
 
 	//Computer
 	/obj/item/rig_module/ai_container = 5,
@@ -155,7 +155,7 @@
 /obj/random/rig_module/rare/item_to_spawn()
 	return pickweight(list(
 	//Storage
-	/obj/item/rig_module/storage = 1,
+	//obj/item/rig_module/storage = 1,
 
 	/obj/item/rig_module/electrowarfare_suite = 1,
 

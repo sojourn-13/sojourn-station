@@ -635,24 +635,51 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	scannable = TRUE
 	nerve_system_accumulations = 30
 
-/datum/reagent/medicine/peridaxon/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
+/datum/reagent/medicine/peridaxon/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		return
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-
-		for(var/obj/item/organ/I in H.internal_organs)
+		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Peridaxon shouldn't heal brain or bones
+		for(var/obj/item/organ/I in organs_sans_brain_and_bones)
 			var/list/current_wounds = I.GetComponents(/datum/component/internal_wound)
-			if(LAZYLEN(current_wounds) && !BP_IS_ROBOTIC(I)) //Peridaxon heals only non-robotic organs
+			if(LAZYLEN(current_wounds) && !BP_IS_ROBOTIC(I) && prob(75)) //Peridaxon heals only non-robotic organs
 				LEGACY_SEND_SIGNAL(I, COMSIG_IORGAN_REMOVE_WOUND, pick(current_wounds))
 
 /datum/reagent/medicine/peridaxon/overdose(mob/living/carbon/M, alien)
 	. = ..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/list/organs_sans_brain = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN]
-		if(LAZYLEN(organs_sans_brain))
-			create_overdose_wound(pick(organs_sans_brain), H, /datum/component/internal_wound/organic/heavy_poisoning)
+		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Since it doesn't heal brain/bones it shouldn't damage them too
+		if(LAZYLEN(organs_sans_brain_and_bones))
+			create_overdose_wound(pick(organs_sans_brain_and_bones), H, /datum/component/internal_wound/organic/heavy_poisoning)
+
+/datum/reagent/medicine/ctincture
+	name = "Carpotoxin Tincture"
+	id = "ctincture"
+	description = "An ill advised tincture created from highly concentrated carpotoxin, poppy-seed and strong grain alcohol. Tastes about as good as it smells."
+	taste_description = "gasoline and lakewater"
+	color = "#0064C8"
+	metabolism = REM * 1.25
+	overdose = 6 //this is highly concentrated poison.
+	scannable = 1
+
+/datum/reagent/medicine/ctincture/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	if(ishuman(M))
+		M.stats.addTempStat(STAT_VIG, STAT_LEVEL_BASIC, STIM_TIME, "carpotoxin")
+		M.add_chemical_effect(CE_TOXIN, dose)
+		var/mob/living/carbon/human/H = M
+		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Peridaxon shouldn't heal brain or bones
+		for(var/obj/item/organ/I in organs_sans_brain_and_bones)
+			var/list/current_wounds = I.GetComponents(/datum/component/internal_wound)
+			if(LAZYLEN(current_wounds) && !BP_IS_ROBOTIC(I) && prob(37)) //about half as effective as peridaxon
+				LEGACY_SEND_SIGNAL(I, COMSIG_IORGAN_REMOVE_WOUND, pick(current_wounds))
+
+/datum/reagent/medicine/ctincture/overdose(mob/living/carbon/M, alien)
+	if(prob(80))
+		M.adjustBrainLoss(4)
+		M.add_chemical_effect(CE_TOXIN, dose*2)
+
 
 /datum/reagent/medicine/ryetalyn
 	name = "Ryetalyn"

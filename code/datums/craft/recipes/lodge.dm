@@ -329,6 +329,18 @@
 		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
 
+/datum/craft_recipe/lodge/carp_juice
+	name = "Carp-Fang Mince"
+	result = /obj/item/reagent_containers/glass/bottle/carp_slurry
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
+		list(/obj/item/animal_part/carp_fang, 1, "time" = 20),
+		list(/obj/item/seeds/poppyseed, 1, "time" = 20),
+		list(QUALITY_HAMMERING, 15, "time" = 40)
+	)
+
+
 // Misc. --------------------
 
 /datum/craft_recipe/lodge/soap
