@@ -407,6 +407,24 @@
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "heavy"
 
+/obj/item/gun_upgrade/mechanism/froggeytensioner
+	name = "high tension bowstring"
+	desc = "A collection of pulleys, mounting screws and an impressively powerful bowstring of animal sinew for installing onto a bow. Makes it harder to draw back, but more powerful."
+	icon_state = "winder_kit"
+	price_tag = 500
+
+/obj/item/gun_upgrade/mechanism/froggeytensioner/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_BRUTE = 0.25,
+		GUN_UPGRADE_OVERCHARGE_MAX = 1.25,
+		GUN_UPGRADE_OVERCHARGE_RATE = 0.7
+		)
+	I.req_gun_tags = list(ARROW_FIRING)
+	I.gun_loc_tag = GUN_MECHANISM
+	I.prefix = "overstrung"
+
 /obj/item/gun_upgrade/mechanism/detensioner
 	name = "compound pulley kit"
 	desc = "A set of compound pulleys, cables and mounting screws for installing onto a bow. Makes it significantly easier to draw back, but less powerful."
