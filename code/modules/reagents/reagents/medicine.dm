@@ -1344,3 +1344,5 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	description = "An all-purpose antiviral agent derived from tahca horns crushed into a blood mixed extract."
 	constant_metabolism = TRUE
 	nerve_system_accumulations = 0
+
+//Tisanes. these chems are found in special teas made via the kitchen, giving more healing at a slower rate than just eating the plant itself
