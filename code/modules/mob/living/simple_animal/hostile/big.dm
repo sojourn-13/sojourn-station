@@ -380,7 +380,7 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 	maxHealth = 550
-	health = 3550
+	health = 550
 	vision_range = 8
 	aggro_vision_range = 16
 	move_to_delay = 1

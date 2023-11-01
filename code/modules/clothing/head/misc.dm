@@ -13,15 +13,7 @@
 /obj/item/clothing/head/laurel
 	name = "Laurel wreath"
 	icon_state = "laurel"
-	desc = "A round wreath made of connected branches and leaves of the bay laurel." /* It's a Laurel, it's not bio resistant.
-	armor_list = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 100, //drip
-		rad = 0
-	) */
+	desc = "A round wreath made of connected branches and leaves of the bay laurel."
 	slot_flags = SLOT_HEAD | SLOT_EARS
 	body_parts_covered = 0
 

@@ -1901,7 +1901,7 @@
 
 /obj/item/reagent_containers/food/snacks/tear_tisane
 	name = "sun tear tisane"
-	desc = "A somewhat concentrated decoction of sun tears. A pleasantly sweet tea, it does a better job at aiding the healing of burns than simply chewing the tears raw.."
+	desc = "A somewhat concentrated decoction of sun tears. A pleasantly sweet tea, it does a better job at aiding the healing of burns than simply chewing the tears raw."
 	icon_state = "tear_tisane"
 	nutriment_desc = list("honeyed tea" = 1)
 	nutriment_amt = 3 //honey
@@ -1912,7 +1912,7 @@
 
 /obj/item/reagent_containers/food/snacks/mercy_tisane
 	name = "mercys hand tisane"
-	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, but it does a better job of purging toxins than eating sun tears raw. "
+	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, but it does a better job of purging toxins than eating sun tears raw."
 	icon_state = "mercy_tisane"
 	nutriment_desc = list("tart tea" = 1)
 	nutriment_amt = 1
@@ -1923,7 +1923,7 @@
 
 /obj/item/reagent_containers/food/snacks/vale_tisane
 	name = "vale bush tisane"
-	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, and it leaves your mouth tingling- still, it functions as a more effective analgesic and vasodilator than simply chewing the tears themselves.."
+	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, and it leaves your mouth tingling. Still, it functions as a more effective analgesic and vasodilator than simply chewing the tears themselves."
 	icon_state = "vale_tisane"
 	nutriment_desc = list("acetic tea" = 1)
 	nutriment_amt = 1
