@@ -196,3 +196,9 @@
 	name = "plastic tube"
 	desc = "A plastic tube devoid of contents. Trash."
 	icon_state= "os_paste_empty"
+
+/obj/item/trash/teacup
+	name = "teacup"
+	desc = "A dirty, empty teacup. Trash."
+	icon_state = "teacup"
+	matter = list(MATERIAL_GLASS = 1) // It is, after all, made of glass

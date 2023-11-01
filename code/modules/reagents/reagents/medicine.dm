@@ -792,6 +792,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	metabolism = REM * 0.05 //Infections are already a pain in the neck to treat, this should ease having to re-dose every time above the 5u threshold.
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
+	affects_dead = TRUE //mostly so folks can deal with corpses caused by massive infection.
 	nerve_system_accumulations = -5
 
 /datum/reagent/medicine/spaceacillin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
@@ -1346,3 +1347,139 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	nerve_system_accumulations = 0
 
 //Tisanes. these chems are found in special teas made via the kitchen, giving more healing at a slower rate than just eating the plant itself
+/datum/reagent/medicine/poppy_tea
+	name = "poppy tisane"
+	id = "p_tea"
+	description = "A spiced herbal tea of poppy. Not entirely pleasant tasting, but it does a decent job of delivering the healing elements of poppys more effectively"
+	taste_description = "bitter spiced tea"
+	appear_in_default_catalog = TRUE
+	taste_mult = 3
+	reagent_state = LIQUID
+	color = "#BF0000"
+	overdose = REAGENTS_OVERDOSE * 0.50
+	scannable = FALSE
+	appear_in_default_catalog = FALSE
+	metabolism = REM
+	nerve_system_accumulations = 22 // we're about 50% more effective
+
+/datum/reagent/medicine/ptisane/affect_ingest(mob/living/carbon/M, alien, effect_multiplier) //it's tea, not medicine.
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		M.heal_organ_damage(0.22 * effect_multiplier, 0, 5 * effect_multiplier)
+		return
+	M.heal_organ_damage(0.6 * effect_multiplier, 0, 5 * effect_multiplier)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.15)
+
+/datum/reagent/medicine/ptisane/overdose(mob/living/carbon/M, alien)
+	M.add_chemical_effect(CE_TOXIN, dose / 4)
+	to_chat(M, SPAN_WARNING("Your stomach groans and aches, you feel as though you might vomit"))
+	if(prob(10 * dose))
+		M.vomit()
+
+/datum/reagent/medicine/tear_tea
+	name = "sun tear tisane"
+	id = "st_tea"
+	description = "A spiced herbal tea of sun tears. Not entirely pleasant tasting, but it does a decent job of delivering the healing elements more effectively"
+	taste_description = "sour spiced tea"
+	reagent_state = LIQUID
+	color = "#FFA800"
+	overdose = REAGENTS_OVERDOSE * 0.75
+	scannable = FALSE
+	appear_in_default_catalog = FALSE
+	metabolism = REM
+	nerve_system_accumulations = 15
+
+/datum/reagent/medicine/tear_tea/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
+	M.heal_organ_damage(0, 1.2 * effect_multiplier, 0, 3 * effect_multiplier)
+
+/datum/reagent/medicine/tear_tea/overdose(mob/living/carbon/M, alien)
+	M.add_chemical_effect(CE_TOXIN, dose / 4)
+	to_chat(M, SPAN_WARNING("Your stomach groans and aches, you feel as though you might vomit"))
+	if(prob(10 * dose))
+		M.vomit()
+
+/datum/reagent/medicine/hand_tea
+	name = "Mercys hand tisane"
+	id = "mh_tea"
+	description = "A spiced herbal tea of mercys hand. Not entirely pleasant tasting, but it does a decent job of delivering the healing elements more effectively"
+	taste_description = "acetic spiced tea"
+	reagent_state = LIQUID
+	color = "#00A000"
+	scannable = FALSE
+	appear_in_default_catalog = FALSE
+	metabolism = REM
+	overdose = REAGENTS_OVERDOSE * 0.50
+	nerve_system_accumulations = 0
+
+/datum/reagent/medicine/hand_tea/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
+	M.adjust_hallucination(-0.9 * effect_multiplier)
+	M.add_chemical_effect(CE_ANTITOX, 4)
+	holder.remove_reagent("pararein", 0.8 * effect_multiplier)
+	holder.remove_reagent("carpotoxin", 0.4 * effect_multiplier) // Fish recipes no longer contain carpotoxin, but good in cases of poisoning.
+	holder.remove_reagent("toxin", 0.4 * effect_multiplier)
+	holder.remove_reagent("blattedin", 0.4 * effect_multiplier) // Massive complains about its slow metabolization rate + poisoning actually working, plus dylo originally purged it, so I'm bringing it back. - Seb
+	holder.remove_reagent("wasp_toxin", 0.2 * effect_multiplier)
+	holder.remove_reagent("amatoxin", 0.2 * effect_multiplier) // We hate the shitbirds
+	M.heal_organ_damage(0.15 * effect_multiplier, 0, 5 * effect_multiplier) //To encourage using poppy tea for brute, we're less good at that
+	M.add_chemical_effect(CE_BLOODCLOT, 0.15)
+
+/datum/reagent/medicine/hand_tea/overdose(mob/living/carbon/M, alien, effect_multiplier)
+	to_chat(M, SPAN_WARNING("Your stomach groans and aches, you feel as though you might vomit"))
+	M.add_chemical_effect(CE_TOXIN, dose / 4)
+	if(prob(10 * dose))
+		M.vomit()
+
+/datum/reagent/medicine/vale_tea
+	name = "Vale bush tisane"
+	id = "vb_tea"
+	description = "A spiced herbal tea of vale bush. Not entirely pleasant tasting, but it does a decent job of delivering the healing elements more effectively."
+	taste_description = "potent spiced tea"
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+	overdose = 45
+	scannable = FALSE
+	appear_in_default_catalog = FALSE
+	metabolism = REM
+	nerve_system_accumulations = -10
+
+/datum/reagent/medicine/vale_tea/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_PAINKILLER, 40)
+	M.adjustOxyLoss(-2.5 * effect_multiplier)
+	holder.remove_reagent("lexorin", 0.2 * effect_multiplier)
+	var/ce_to_add = 1 - M.chem_effects[CE_OXYGENATED]
+	if(ce_to_add > 0)
+		M.add_chemical_effect(CE_OXYGENATED, ce_to_add)
+
+/datum/reagent/medicine/vale_tea/overdose(mob/living/carbon/M, alien)
+	..()
+	M.druggy = max(M.druggy, 2)
+	M.add_chemical_effect(CE_TOXIN, dose / 4)
+	to_chat(M, SPAN_WARNING("Your stomach groans and aches, you feel as though you might vomit"))
+	if(prob(10 * dose))
+		M.vomit()
+
+/datum/reagent/medicine/plump_tea //lmao
+	name = "Plump helmet tisane"
+	id = "ph_tea"
+	description = "A spiced herbal tea of plump helmets. Entirely unpleasant tasting, but it does a decent job of delivering the healing elements more effectively."
+	taste_description = "bitter spiced mushrooms"
+	reagent_state = LIQUID
+	color = "#C1C1C1"
+	metabolism = REM * 0.05
+	overdose = REAGENTS_OVERDOSE * 0.50
+	scannable = FALSE
+	appear_in_default_catalog = FALSE
+	metabolism = REM
+	nerve_system_accumulations = -5
+
+/datum/reagent/medicine/plump_tea/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier) //uniquely, this means that there's now a way  to ingest your antibiotic
+	M.add_chemical_effect(CE_ANTIBIOTIC, 7)
+	M.add_chemical_effect(CE_ANTITOX, 2)
+
+/datum/reagent/medicine/plump_tea/overdose(mob/living/carbon/M, alien)
+	M.add_chemical_effect(CE_TOXIN, dose / 4)
+	to_chat(M, SPAN_WARNING("Your stomach groans and aches, you feel as though you might vomit"))
+	if(prob(10 * dose))
+		M.vomit()

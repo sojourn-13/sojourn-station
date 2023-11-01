@@ -349,7 +349,7 @@
 	steps = list(
 		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
 		list(/obj/item/animal_part/carp_fang, 1, "time" = 20),
-		list(/obj/item/seeds/poppyseed, 1, "time" = 20),
+		list(/obj/item/reagent_containers/food/snacks/poppy_tisane, 1, "time" = 20),
 		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
 

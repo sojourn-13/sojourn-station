@@ -99,13 +99,13 @@ var/global/list/plant_seed_sprites = list()
 	seed_type = "cabbage"
 
 /obj/item/seeds/shandseed
-	seed_type = "shand"
+	seed_type = "mercy's hand"
 
 /obj/item/seeds/mtearseed
-	seed_type = "mtear"
+	seed_type = "sun tear"
 
 /obj/item/seeds/brootseed
-	seed_type = "broot"
+	seed_type = "blood root"
 
 /obj/item/seeds/berryseed
 	seed_type = "berries"
@@ -281,7 +281,7 @@ var/global/list/plant_seed_sprites = list()
 	seed_type = "gelthi"
 
 /obj/item/seeds/vale
-	seed_type = "vale"
+	seed_type = "vale bush"
 
 /obj/item/seeds/surik
 	seed_type = "surik"
