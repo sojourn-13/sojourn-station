@@ -326,6 +326,9 @@
 	if (deadtime > DEFIB_TIME_LIMIT && !H.isSynthetic())
 		return "buzzes: \"Resuscitation failed - Excessive neural degeneration. Further attempts futile.\""
 
+	if(H.getBrainLoss() >= 200)
+		return "buzzes: \"Resuscitation failed - Massive neural damage. Further attempts futile.\""
+
 	H.updatehealth()
 
 	if(H.isSynthetic())
