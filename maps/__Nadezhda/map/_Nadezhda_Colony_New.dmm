@@ -2998,11 +2998,6 @@
 /obj/machinery/disposal/deliveryChute{
 	name = "trash chute"
 	},
-/obj/machinery/door/window/brigdoor{
-	dir = 2;
-	name = "chute windoor";
-	req_access = newlist()
-	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -8515,6 +8510,7 @@
 /obj/machinery/conveyor/north{
 	id = "scrapbeaconCon"
 	},
+/obj/structure/plasticflaps,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "bUb" = (
@@ -65713,11 +65709,6 @@
 /obj/machinery/disposal/deliveryChute{
 	name = "plant chute"
 	},
-/obj/machinery/door/window/brigdoor{
-	dir = 2;
-	name = "chute windoor";
-	req_access = list(70)
-	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -90755,6 +90746,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor/north{
+	id = "churchgardenCon"
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "toz" = (
@@ -91272,6 +91266,7 @@
 	icon_state = "pipe-c"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/plasticflaps,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "tvb" = (
@@ -102647,6 +102642,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor/north{
+	id = "scrapbeaconCon"
+	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "vJR" = (
