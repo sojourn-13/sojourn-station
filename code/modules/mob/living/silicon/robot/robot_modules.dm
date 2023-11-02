@@ -1110,6 +1110,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
+	src.modules += new /obj/item/device/ore_sonar(src)
 	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
 
 	//Seller so quite and knowing the deal!
