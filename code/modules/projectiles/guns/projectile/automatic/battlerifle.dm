@@ -165,7 +165,7 @@
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 15, MATERIAL_DIAMOND = 10)
 	gun_parts = null
-	price_tag = 3000
+	price_tag = 2000
 	penetration_multiplier = 1.1
 	damage_multiplier = 1.3 //better than the saigini but no full auto
 	zoom_factors = list(0.4)

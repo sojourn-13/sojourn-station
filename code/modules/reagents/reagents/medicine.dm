@@ -775,6 +775,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	name = "Arithrazine"
 	id = "arithrazine"
 	description = "Arithrazine is an unstable medication used for the most extreme cases of radiation poisoning."
+	affects_dead = TRUE
 	reagent_state = LIQUID
 	color = "#008000"
 	metabolism = REM * 0.25
