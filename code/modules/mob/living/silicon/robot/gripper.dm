@@ -312,7 +312,7 @@
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/clothing/mask/smokable/cigarette,
-		///obj/item/reagent_containers/cooking_container //PArt of cooking overhaul, not yet ported
+		/obj/item/reagent_containers/cooking_with_jane/cooking_container
 		)
 
 /obj/item/gripper/ammo //Used to boxes, ammo and shells
