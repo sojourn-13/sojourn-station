@@ -13,6 +13,8 @@
 		/datum/design/autolathe/gun/sol = 3,
 		/datum/design/autolathe/gun/omnirifle = 4,
 		/datum/design/autolathe/gun/rds_omnicarbine = 5,
+		//shotgun
+		/datum/design/autolathe/gun/hustler = 5,
 		//machinegun
 		/datum/design/autolathe/gun/heroic = 5,
 		//grenade launcher

@@ -204,6 +204,10 @@
 	name = "NM 20mm \"Bounty\""
 	build_path = /obj/item/gun/projectile/boltgun/lever/shotgun/bounty
 
+/datum/design/autolathe/gun/hustler
+	name = "NM 20mm \"Hustler\""
+	build_path = /obj/item/gun/projectile/automatic/omnirifle/hustler
+
 //C A R B I N E S
 
 /datum/design/autolathe/gun/bastard
