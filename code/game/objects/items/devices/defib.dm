@@ -321,10 +321,14 @@
 	return null
 
 /obj/item/shockpaddles/proc/can_revive(mob/living/carbon/human/H) //This is checked right before attempting to revive
-
 	var/deadtime = world.time - H.timeofdeath
 	if (deadtime > DEFIB_TIME_LIMIT && !H.isSynthetic())
 		return "buzzes: \"Resuscitation failed - Excessive neural degeneration. Further attempts futile.\""
+
+	var/obj/item/organ/internal/brain/brain = H.random_organ_by_process(BP_BRAIN)
+	if(brain.status&ORGAN_DEAD && !H.isSynthetic()) //no revive if past the timer *or* if your brain is dead, dead.
+		return "buzzes: \"Resuscitation failed - Neural death detected. Further attempts futile.\""
+
 
 	H.updatehealth()
 
