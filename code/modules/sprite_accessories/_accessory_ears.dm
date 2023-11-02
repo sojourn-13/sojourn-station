@@ -531,14 +531,14 @@
 	icon_state = "wolf"
 	colored_layers = 2
 	blend = ICON_MULTIPLY
-/*
+
 /datum/sprite_accessory/ears/wolfhc_tall
 	name = "Wolf Ears Taller"
 	desc = ""
 	icon_state = "bigwolf"
 	colored_layers = 3
 	blend = ICON_MULTIPLY
-*/
+
 /datum/sprite_accessory/ears/axolotl
 	name = "Axolotl Gills"
 	desc = ""
