@@ -593,6 +593,12 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/alkysine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustBrainLoss(-(3 + (M.getBrainLoss() * 0.05)) * effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 10 * effect_multiplier, TRUE)
+	var/mob/living/carbon/human/H = M
+	var/obj/item/organ/internal/E = H.random_organ_by_process(BP_BRAIN)
+	if(E && istype(E))
+		var/list/current_wounds = E.GetComponents(/datum/component/internal_wound)
+		if(LAZYLEN(current_wounds) && prob(10))
+			LEGACY_SEND_SIGNAL(E, COMSIG_IORGAN_REMOVE_WOUND, pick(current_wounds))
 
 /datum/reagent/medicine/imidazoline
 	name = "Imidazoline"
