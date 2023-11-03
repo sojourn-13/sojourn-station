@@ -18,6 +18,15 @@ GLOBAL_DATUM_INIT(opacity_set_event, /decl/observ/opacity_set, new)
 * Opacity Handling *
 *******************/
 
+/atom/proc/set_opacity(new_opacity)
+	if(new_opacity != opacity)
+		var/old_opacity = opacity
+		opacity = new_opacity
+		GLOB.opacity_set_event.raise_event(src, old_opacity, new_opacity)
+		return TRUE
+	else
+		return FALSE
+
 /turf/ChangeTurf()
 	var/old_opacity = opacity
 	. = ..()

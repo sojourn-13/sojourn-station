@@ -2083,7 +2083,6 @@
 #include "code\modules\lighting\lighting_setup.dm"
 #include "code\modules\lighting\lighting_source.dm"
 #include "code\modules\lighting\lighting_turf.dm"
-#include "code\modules\lighting\~lighting_undefs.dm"
 #include "code\modules\maint_expeditions\adms.dm"
 #include "code\modules\maps\dmm_suite.dm"
 #include "code\modules\maps\swapmaps.dm"

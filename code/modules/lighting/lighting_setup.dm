@@ -1,4 +1,10 @@
 // Create lighting over-lays on all turfs with dynamic lighting in areas with dynamic lighting.
+/proc/set_all_areas_to_dark()
+	for(var/area/A in all_areas)
+		if(!A.dynamic_lighting && !A.force_full_lighting)
+			//A.dynamic_lighting = TRUE
+			A.set_dynamic_lighting()
+
 /proc/create_all_lighting_overlays()
 	for(var/area/A in all_areas)
 		if(!A.dynamic_lighting)

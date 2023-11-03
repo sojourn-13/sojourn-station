@@ -75,6 +75,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	has_gravity = FALSE
 	flags = AREA_FLAG_EXTERNAL
 	ambience = list('sound/ambience/ambispace.ogg')
+	force_full_lighting = TRUE
 	vessel = null
 
 area/space/atmosalert()

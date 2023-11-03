@@ -22,6 +22,7 @@
 	var/static_equip
 	var/static_light = 0
 	var/static_environ
+	var/force_full_lighting = FALSE
 
 /**
  * Called when an area loads
