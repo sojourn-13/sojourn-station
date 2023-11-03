@@ -149,7 +149,7 @@
 
 /obj/item/gun/projectile/automatic/omnirifle/hustler
 	name = "\"Hustler\" breacher shotgun"
-	desc = "The poor mans SBAW, this brick of a gun is cobbled together by Marshal Gunsmiths with far too much time and far too few matching omni-rifle mechanisms and frames.\
+	desc = "The breacher special, this brick of a gun is cobbled together by Marshal Gunsmiths with far too much time and far too few matching omni-rifle mechanisms and frames.\
 	Not entirely a novel design, hackjobs such as this were common in the worst theatres during The Harrowing; Where logistic complications and the reality of war necessitated\
 	pushing the  famously durable and versatile omni-frame to its absolute limits. While many of those designs would turn out to be ineffective, impractical or deadly for the user \
 	this one has worked out surprisingly well. The added weight and barrel length add stability and accuracy often lacking from other firearms chambered in the famously wiley 20mm \
