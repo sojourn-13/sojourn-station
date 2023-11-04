@@ -28,6 +28,7 @@
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.3 // 30 vig
 	gun_parts = list(/obj/item/part/gun/frame/grizzly = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/part/gun/barrel/shotgun = 1)
+	alt_plus_one_loading = TRUE //sideload edit
 
 /obj/item/part/gun/frame/grizzly
 	name = "Grizzly frame"
@@ -56,6 +57,8 @@
 	if(chambered)//We have a shell in the chamber
 		chambered.forceMove(newloc) //Eject casing
 		chambered = null
+
+	side_loading(M)
 
 	if(loaded.len)
 		var/obj/item/ammo_casing/AC = loaded[1] //load next casing.
