@@ -73,6 +73,7 @@
 	offline_slowdown = 3
 	offline_vision_restriction = 1
 	max_upgrades = 0 //60 armor no plating
+	initial_modules = list(/obj/item/rig_module/maneuvering_jets) //junkfield recovery
 	chest_type = /obj/item/clothing/suit/space/rig/combat/blackshield
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/combat/blackshield
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/combat/blackshield
@@ -80,13 +81,13 @@
 
 /obj/item/rig/combat/blackshield/equipped
 	initial_modules = list(
+		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/mounted,
 		/obj/item/rig_module/storage,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/mounted/egun,
 		/obj/item/rig_module/vision/sechud
 		)
-
 /obj/item/clothing/suit/space/rig/combat/blackshield
 	name = "blackshield hazard suit"
 

@@ -150,7 +150,7 @@ Advanced Voidsuit: Guild Master
 		/obj/item/rcd
 	)
 
-	max_upgrades = 1
+	max_upgrades = 2
 
 	req_access = list(access_ce)
 	req_one_access = list()
