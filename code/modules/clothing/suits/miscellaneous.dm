@@ -228,7 +228,7 @@ obj/item/clothing/suit/fluff/miko
 
 /obj/item/clothing/suit/sling
 	name = "universal sling"
-	desc = "A generic universal equipment sling for whatever you could need on your back."
+	desc = "A generic universal equipment sling for whatever you could need on your back. More versatile then other choices just don't expect it to protect you from anything."
 	icon_state = "universal_sling"
 	extra_allowed = list(
 	/obj/item/storage/firstaid,
