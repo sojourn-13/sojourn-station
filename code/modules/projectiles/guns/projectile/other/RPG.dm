@@ -21,7 +21,7 @@
 	init_recoil = HANDGUN_RECOIL(3)
 	bulletinsert_sound = 'sound/weapons/guns/interact/china_lake_reload.ogg'
 	twohanded = TRUE
-	gun_tags = list(GUN_SCOPE)
+	gun_tags = list(GUN_SCOPE, GUN_PROJECTILE)
 	allow_racking = FALSE
 	auto_rack = TRUE //so if we get loaded were good
 	serial_type = "SA"
