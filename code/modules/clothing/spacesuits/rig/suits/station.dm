@@ -85,6 +85,7 @@
 		bio = 100,
 		rad = 100
 	)
+	seal_delay = 20
 	slowdown = 0
 	offline_slowdown = 1
 	offline_vision_restriction = 1
@@ -128,6 +129,7 @@ Advanced Voidsuit: Guild Master
 		bio = 100,
 		rad = 100
 	)
+	seal_delay = 15
 	slowdown = 0
 	stiffness = 0
 	obscuration = 0
@@ -148,7 +150,7 @@ Advanced Voidsuit: Guild Master
 		/obj/item/rcd
 	)
 
-	max_upgrades = 1
+	max_upgrades = 2
 
 	req_access = list(access_ce)
 	req_one_access = list()
@@ -170,7 +172,7 @@ Advanced Voidsuit: Guild Master
 /obj/item/clothing/shoes/magboots/rig/ce
 	name = "advanced magboots"
 	desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer."
-	mag_slow = 1
+	mag_slow = 0
 
 /***************************************
 Technomancer RIG
@@ -331,6 +333,7 @@ Technomancer RIG
 
 /obj/item/clothing/head/helmet/space/rig/advhazmat
 	name = "Advanced AMI void helm"
+	camera_networks = list(NETWORK_RESEARCH)
 
 /***************************************
 	Medical
@@ -386,6 +389,7 @@ Technomancer RIG
 		bio = 100,
 		rad = 100
 	)
+	seal_delay = 15 //quick deploy for quick recovery
 	slowdown = 0
 	stiffness = MEDIUM_STIFFNESS
 	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
@@ -423,6 +427,9 @@ Technomancer RIG
 		bio = 100,
 		rad = 20
 	)
+	req_access = list(access_cmo)
+	airtight = 0
+	seal_delay = 4 //built for speed
 	slowdown = -0.3 //we get a bit more speed than the baseline recovery rig as this is a unique item with exactly 0 armor. This is for zipping around medical, rather than getting in the weeds
 
 	initial_modules = list(

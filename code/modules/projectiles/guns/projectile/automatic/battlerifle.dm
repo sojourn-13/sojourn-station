@@ -171,7 +171,6 @@
 	zoom_factors = list(0.4)
 	fire_delay = 12
 	init_recoil = RIFLE_RECOIL(1.0) //less recoil than others, because we're so slow to fire/move
-	slowdown_hold = 1 //big boy gun, extra heavy.
 	fire_sound = 'sound/weapons/guns/fire/sbaw.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
