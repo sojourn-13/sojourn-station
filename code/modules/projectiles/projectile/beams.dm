@@ -189,7 +189,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	var/mob/living/carbon/human/H = M
 	if(ishuman(target))
 		if(istype(target, /mob/living/carbon/))
-			H.apply_effect(30,IRRADIATE)//woop woop ass blast USA woop woop
+			H.apply_effect(20,IRRADIATE)//woop woop ass blast USA woop woop
 	else
 		return 1
 
