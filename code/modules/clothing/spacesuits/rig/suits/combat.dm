@@ -12,7 +12,7 @@
 		energy = 30,
 		bomb = 50,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)
 	slowdown = 0.3
 	drain = 4
@@ -39,6 +39,7 @@
 //Ironhammer rig suit
 /obj/item/clothing/head/helmet/space/rig/combat/ironhammer
 	light_overlay = "sec_light"
+	camera_networks = list(NETWORK_SECURITY)
 
 /obj/item/rig/combat/ironhammer
 	name = "security hardsuit control module"
@@ -65,7 +66,7 @@
 		energy = 40,
 		bomb = 50,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)
 	slowdown = 0.5 //So we have a reason to not use it
 	drain = 25
@@ -98,14 +99,16 @@
 /obj/item/clothing/head/helmet/space/rig/combat/blackshield
 	name = "blackshield hazard hood"
 	desc = "A hazard hood modded to help against CQC combat."
+	camera_networks = list(NETWORK_SECURITY)
 	armor_list = list(
 		melee = 65,
 		bullet = 55,
 		energy = 40,
 		bomb = 50,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)
+
 
 /obj/item/rig/combat/knight
 	name = "hussar hardsuit control module"
@@ -119,7 +122,7 @@
 		energy = 30,
 		bomb = 50,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)
 	slowdown = 0.3
 	drain = 4
@@ -158,5 +161,5 @@
 		energy = 30,
 		bomb = 50,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)

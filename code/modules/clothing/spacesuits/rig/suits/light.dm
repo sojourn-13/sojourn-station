@@ -10,8 +10,9 @@
 		energy = 20,
 		bomb = 25,
 		bio = 100,
-		rad = 25
+		rad = 100
 	)
+	seal_delay = 20
 	emp_protection = 10
 	slowdown = 0
 	obscuration = 0
@@ -50,6 +51,8 @@
 		bio = 100,
 		rad = 45
 	)
+	airtight = 0
+	seal_delay = 5
 	slowdown = -0.2 //We speed up the user at cost of horrable armor
 	emp_protection = 0
 	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10) //Costly!
@@ -71,6 +74,7 @@
 /obj/item/clothing/head/helmet/space/rig/light/ultra_light
 	name = "SI 'Spacer' hood"
 	flags_inv = 0
+	camera_networks = list(NETWORK_RESEARCH)
 
 /obj/item/rig/light/hacker/steward
 	name = "SI 'Retainer' control module"
@@ -81,9 +85,10 @@
 		energy = 30,
 		bomb = 30,
 		bio = 100,
-		rad = 30
+		rad = 100
 	)
 	emp_protection = 20
+	airtight = 0
 	seal_delay = 5
 	icon_state = "hacker_rig"
 	req_access = list(access_hop)
@@ -116,15 +121,6 @@
 	glove_type = /obj/item/clothing/gloves/lightrig/hacker
 	boot_type = /obj/item/clothing/shoes/lightrig/hacker
 
-	initial_modules = list(
-		/obj/item/rig_module/ai_container,
-		/obj/item/rig_module/power_sink,
-		/obj/item/rig_module/datajack,
-		/obj/item/rig_module/electrowarfare_suite,
-		/obj/item/rig_module/voice,
-		/obj/item/rig_module/vision,
-		)
-
 //The cybersuit is not space-proof. It does however, have good siemens_coefficient values
 /obj/item/clothing/head/lightrig/hacker
 	name = "HUD"
@@ -143,6 +139,18 @@
 	overslot = 1
 	siemens_coefficient = 0
 
+
+
+/obj/item/rig/light/hacker/equipped
+		initial_modules = list(
+		/obj/item/rig_module/ai_container,
+		/obj/item/rig_module/power_sink,
+		/obj/item/rig_module/datajack,
+		/obj/item/rig_module/electrowarfare_suite,
+		/obj/item/rig_module/voice,
+		/obj/item/rig_module/vision,
+		)
+
 /obj/item/rig/light/ninja
 	name = "ominous suit control module"
 	suit_type = "ominous"
@@ -154,8 +162,9 @@
 		energy = 20,
 		bomb = 25,
 		bio = 100,
-		rad = 25
+		rad = 100
 	)
+	seal_delay = 15
 	emp_protection = 40 //change this to 30 if too high.
 	slowdown = 0
 

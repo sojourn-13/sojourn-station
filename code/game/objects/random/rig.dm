@@ -13,6 +13,8 @@
 	/obj/item/rig/light = 20,
 	/obj/item/rig/industrial = 20,
 	/obj/item/rig/industrial/equipped = 10,
+	/obj/item/rig/light/hacker = 20,
+	/obj/item/rig/light/hacker/equipped = 1, //has numerous rare modules including power sink and omni hud rare treat
 
 	//Head of staff
 	//obj/item/rig/ce = 10,
