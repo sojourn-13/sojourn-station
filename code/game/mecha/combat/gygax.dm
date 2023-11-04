@@ -52,6 +52,8 @@
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/melee_weapon/shockmaul
 	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ppc
+	ME.attach(src)
 	return
 
 
