@@ -85,7 +85,7 @@
 		energy = 30,
 		bomb = 30,
 		bio = 100,
-		rad = 100
+		rad = 80
 	)
 	emp_protection = 20
 	airtight = 0
@@ -110,7 +110,14 @@
 	suit_type = "cyber"
 	desc = "An advanced powered armour suit with many cyberwarfare enhancements. Comes with built-in insulated gloves for safely tampering with electronics."
 	icon_state = "hacker_rig"
-
+	armor_list = list(
+		melee = 25,
+		bullet = 20,
+		energy = 20,
+		bomb = 25,
+		bio = 100,
+		rad = 80
+	)
 	req_access = list(access_syndicate)
 
 	airtight = 0
