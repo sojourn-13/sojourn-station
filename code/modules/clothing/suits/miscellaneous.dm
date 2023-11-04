@@ -230,6 +230,15 @@ obj/item/clothing/suit/fluff/miko
 	name = "universal sling"
 	desc = "A generic universal equipment sling for whatever you could need on your back."
 	icon_state = "universal_sling"
+	extra_allowed = list(
+	/obj/item/storage/firstaid,
+	/obj/item/storage/lockbox,
+	/obj/item/storage/part_replacer,
+	/obj/item/storage/secure,
+	/obj/item/storage/toolbox,
+	/obj/item/storage/briefcase,
+	/obj/item/material,
+	/obj/item/device)
 
 /obj/item/clothing/suit/storage/punkvest
 	name = "punk vest"
