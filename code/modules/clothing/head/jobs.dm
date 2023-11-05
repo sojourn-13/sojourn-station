@@ -505,6 +505,12 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 	icon_state = "navyutility"
 	item_state = "navyutility"
 
+/obj/item/clothing/head/rank/fatigue/tan
+	name = "tan utility cover"
+	desc = "A tan camo cover, fit for a soldier. The markings of a removed patch linger."
+	icon_state = "tanutility"
+	item_state = "tanutility"
+
 /obj/item/clothing/head/rank/divisor
 	name = "divisor cap"
 	desc = "A styled black divisor cap for showing everyone you are so steadfast in the name of god you don't need a helmet."

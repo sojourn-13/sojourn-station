@@ -60,6 +60,10 @@
 	path = /obj/item/clothing/head/cowboy
 	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/head/headscarf
+	display_name = "headscarf"
+	path = /obj/item/clothing/head/headscarf
+
 /datum/gear/head/fedora
 	display_name = "fedora selection"
 	path = /obj/item/clothing/head/fedora
