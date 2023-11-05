@@ -470,7 +470,7 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 /obj/item/clothing/head/headscarf
 	name = "headscarf"
 	desc = "A patterned bolt of synth-cloth tied here and there that sits comfortably around the head. Excellent for keeping sand from your face - if you weren't in a temperate forest, that is."
-	icon_state = "headscarf"
+	icon_state = "zhan_scarf"
 
 /obj/item/clothing/head/exceslior/excelsior_officer
 	name = "excelsior officer cap"
