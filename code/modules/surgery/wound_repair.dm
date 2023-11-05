@@ -165,6 +165,9 @@
 
 /datum/old_surgery_step/external/tox_heal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
+	var/advanced_medical = user.stats.getPerk(PERK_ADVANCED_MEDICAL)
+	var/needs_regeneration = world.time - target.timeofdeath > DEFIB_TIME_LIMIT
+
 	if (istype(tool, /obj/item/stack/nanopaste))
 		tool_name = "nanite swarm"
 	if (istype(tool, /obj/item/stack/ichor/purging_ichor))
@@ -178,9 +181,18 @@
 		to_chat(user, SPAN_WARNING("[tool_name] has no more uses left."))
 		return
 
-	if (target.getToxLoss() >= 0 || world.time - target.timeofdeath > DEFIB_TIME_LIMIT)
+	if ((target.getToxLoss() >= 0 || needs_regeneration) && !advanced_medical)
+		user.visible_message(SPAN_NOTICE("[user] stares at the [tool_name], seemingly at a loss for how to proceed. Perhaps brain surgery is beyond her ken.") )
+		return
+
+	if ((needs_regeneration) && tool.amount <= 5)
+		to_chat(user, SPAN_WARNING("[tool_name] doesn't have enough uses to fully repair neural degredation."))
+		return
+
+	if (target.getToxLoss() >= 0 || needs_regeneration)
 		user.visible_message(SPAN_NOTICE("[user] begins filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \
 		SPAN_NOTICE("You begin to filter out any toxins to [target]'s body and repair any neural degradation with the [tool_name].") )
+
 
 	target.custom_pain("The pain in your [affected.name] is living hell!",1)
 	..()
@@ -194,17 +206,16 @@
 		return
 
 	var/needs_regeneration = world.time - target.timeofdeath > DEFIB_TIME_LIMIT
-	if (target.getToxLoss() >= 0 || needs_regeneration)
+	var/advanced_medical = user.stats.getPerk(PERK_ADVANCED_MEDICAL)
+	if ((target.getToxLoss() >= 0 || needs_regeneration) && advanced_medical)
 		var/heal_amount = -40 // Same total heal per full stack as before
-		var/advanced_medical = user.stats.getPerk(PERK_ADVANCED_MEDICAL)
-		if(advanced_medical)
-			heal_amount -= calculate_expert_surgery_bonus(user) * 2
 		user.visible_message(SPAN_NOTICE("[user] finishes [advanced_medical ? "expertly" : ""] filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \
 		SPAN_NOTICE("You finish filtering out any toxins to [target]'s body and repairing any neural degradation with the [tool_name].") )
-		if((needs_regeneration || target.getToxLoss() > 0) && tool.use(1))
+		if((needs_regeneration || target.getToxLoss() > 0) && tool.use(5))
 			target.adjustToxLoss(heal_amount)
 			target.timeofdeath = 99999999
-
+			target.stats.addPerk(PERK_FSYNDROME)
+			tool.use(5)
 
 /datum/old_surgery_step/external/tox_heal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 

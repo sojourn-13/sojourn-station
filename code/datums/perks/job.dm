@@ -342,6 +342,20 @@
 	if(holder.buckled)
 		cooldown_time -= 2 SECONDS
 
+/datum/perk/fsyndrome
+	name = "Flatline Syndrome"
+	desc = "Whether on purpose or on accident you've spent a truly extended period of time with no pulse. The miracles of modern medicine have brought you back, but only barely. Your constition fails you and unlike the more common forms of rez-sickness, it's going to take more than a powernap to walk this one off."
+
+/datum/perk/fsyndrome/assign(mob/living/carbon/human/H)
+	..()
+	holder.brute_mod_perk += 0.5
+	holder.burn_mod_perk += 0.5
+	holder.oxy_mod_perk += 0.5
+	holder.toxin_mod_perk += 0.5
+	holder.stats.changeStat(STAT_ROB, -40)
+	holder.stats.changeStat(STAT_TGH, -40)
+	holder.stats.changeStat(STAT_VIG, -40)
+
 /datum/perk/handyman
 	name = "Handyman"
 	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the most efficient way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."

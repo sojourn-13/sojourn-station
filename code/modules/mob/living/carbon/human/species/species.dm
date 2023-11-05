@@ -93,7 +93,7 @@
 
 	var/list/perks = list()
 
-	var/heat_discomfort_level = 330                   // Aesthetic messages about feeling warm.
+	var/heat_discomfort_level = 311                    // Aesthetic messages about feeling warm. Fever temps.
 	var/cold_discomfort_level = 270                   // Aesthetic messages about feeling chilly.
 	var/list/heat_discomfort_strings = list(
 		"You feel sweat drip down your neck.",
