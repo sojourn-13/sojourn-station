@@ -394,13 +394,13 @@
 	if(ammo_magazine)
 		to_chat(user, "It has \a [ammo_magazine] loaded.")
 	to_chat(user, "Has [get_ammo()] round\s remaining.")
-	return
 
 	//Sideloading Lib changes
 	if(perk_plusone_eligible)
 		if(ishuman(user))
 			if(user.stats.getPerk(PERK_SIDE_LOADING))
 				to_chat(user, SPAN_NOTICE("[name] is eligible for sideloading.")) // Feedback that we can do this
+	return
 
 /obj/item/gun/projectile/proc/get_ammo()
 	var/bullets = 0
