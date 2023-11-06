@@ -98,11 +98,11 @@
 	cooking_container = PAN
 	product_type = /obj/item/reagent_containers/food/snacks/frenchtoast
 	step_builder = list(
-		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice
-		list(CWJ_ADD_REAGENT, "milk", 5)
-		list(CWJ_ADD_REAGENT, "egg", 3)
-		list(CWJ_ADD_REAGENT_OPTIONAL, "cinnamonpowder", 1)
-		list(CWJ_ADD_REAGENT_OPTIONAL, "sugar", 1)
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/breadslice),
+		list(CWJ_ADD_REAGENT, "milk", 5),
+		list(CWJ_ADD_REAGENT, "egg", 3),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "cinnamonpowder", 1),
+		list(CWJ_ADD_REAGENT_OPTIONAL, "sugar", 1),
 		list(CWJ_USE_STOVE, J_HI, 15 SECONDS)
 	)
 
