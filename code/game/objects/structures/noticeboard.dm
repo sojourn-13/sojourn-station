@@ -151,6 +151,21 @@
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
+	P = new()
+	P.name = "Wanted:Jack Terran"
+	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
+				<h2>Latest wanted issues</h2>\
+				</center>\
+				<hr>\
+				<b>NAME:</b> <i>Jack Terran</i><br>\
+				<b>DESCRIPTION:</b><i>Tall, well built male. Long ginger hair at time of writing. Fair complexion</i><br>\
+				<b>CRIMES:</b><i>Murder, three counts. Misleading an Investigator, one count. Sparking a manhunt, one count. </i><br>\
+				<b>NOTES:</b><i>As a former Prospector Mister Terran has demonstrated an extreme level of danger and willingness to use violence on personnelle who pursue him. Given the high threat posed by the fugitive, Security Personnel are recommended to not engage without highly favorable conditions or backup. </i>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
+
 /obj/structure/noticeboard/blackshield
 	name = "Blackshield bulletin board"
 	desc = "A board containing vital notices and official memos for the Blackshield Militia"
@@ -188,6 +203,19 @@
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
+	P = new()
+	P.name = "Wanted:Jack Terran"
+	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
+				<h2>Latest wanted issues</h2>\
+				</center>\
+				<hr>\
+				<b>NAME:</b> <i>Jack Terran</i><br>\
+				<b>DESCRIPTION:</b><i>Tall, well built male. Long ginger hair at time of writing. Fair complexion</i><br>\
+				<b>CRIMES:</b><i>Murder, three counts. Misleading an Investigator, one count. Sparking a manhunt, one count. </i><br>\
+				<b>NOTES:</b><i>As a former Prospector Mister Terran has demonstrated an extreme level of danger and willingness to use violence on personnelle who pursue him. Given the high threat posed by the fugitive, Security Personnel are recommended to not engage without highly favorable conditions or backup. </i>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
 
 /obj/structure/noticeboard/medical
 	name = "Medical bulletin board"
