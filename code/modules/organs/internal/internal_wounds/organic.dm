@@ -225,6 +225,7 @@
 	characteristic_flag = IWOUND_CAN_DAMAGE|IWOUND_PROGRESS|IWOUND_PROGRESS_DEATH|IWOUND_SPREAD
 	severity = 0
 	severity_max = IORGAN_MAX_HEALTH
+	progression_threshold = IWOUND_8_MINUTES
 	hal_damage = IWOUND_LIGHT_DAMAGE
 	spread_threshold = IORGAN_SMALL_HEALTH
 	status_flag = ORGAN_WOUNDED|ORGAN_INFECTED

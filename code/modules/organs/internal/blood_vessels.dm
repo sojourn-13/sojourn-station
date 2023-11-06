@@ -3,6 +3,9 @@
 	icon_state = "blood_vessel"
 	organ_efficiency = list(OP_BLOOD_VESSEL= 100)
 	price_tag = 100
+	max_damage = IORGAN_SMALL_HEALTH
+	min_bruised_damage = IORGAN_SMALL_BRUISE
+	min_broken_damage = IORGAN_SMALL_BREAK
 	max_damage = 8
 	min_bruised_damage = 2
 	min_broken_damage = 4

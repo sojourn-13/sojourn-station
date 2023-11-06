@@ -27,7 +27,7 @@
 /datum/recipe/brainburger
 	items = list(
 		/obj/item/reagent_containers/food/snacks/bun,
-		/obj/item/organ/internal/brain
+		/obj/item/organ/internal/vital/brain
 	)
 	result = /obj/item/reagent_containers/food/snacks/brainburger
 

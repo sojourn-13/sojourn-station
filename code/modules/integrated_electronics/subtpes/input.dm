@@ -1308,7 +1308,7 @@
 	if(!istype(H)) //Invalid input
 		return
 	if(H.Adjacent(get_turf(src))) // Like normal analysers, it can't be used at range.
-		var/obj/item/organ/internal/brain/brain = H.random_organ_by_process(BP_BRAIN)
+		var/obj/item/organ/internal/vital/brain/brain = H.random_organ_by_process(BP_BRAIN)
 		set_pin_data(IC_OUTPUT, 1, (brain && H.stat != DEAD))
 		set_pin_data(IC_OUTPUT, 2, text2num(H.get_pulse(GETPULSE_TOOL)))
 		set_pin_data(IC_OUTPUT, 3, (H.stat == 0))
@@ -1351,7 +1351,7 @@
 	if(!istype(H)) //Invalid input
 		return
 	if(H in view(get_turf(src))) // Like medbot's analyzer it can be used in range..
-		var/obj/item/organ/internal/brain/brain = H.random_organ_by_process(BP_BRAIN)
+		var/obj/item/organ/internal/vital/brain/brain = H.random_organ_by_process(BP_BRAIN)
 		set_pin_data(IC_OUTPUT, 1, (brain && H.stat != DEAD))
 		set_pin_data(IC_OUTPUT, 2, (H.stat == 0))
 		set_pin_data(IC_OUTPUT, 3, H.getBruteLoss())

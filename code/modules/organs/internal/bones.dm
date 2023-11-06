@@ -8,12 +8,19 @@
 	var/broken_description = ""
 	var/reinforced = FALSE
 	max_damage = IORGAN_SKELETAL_HEALTH
+	min_bruised_damage = IORGAN_SMALL_BRUISE
+	min_broken_damage = IORGAN_SMALL_BREAK
 	min_bruised_damage = 4
 	min_broken_damage = 6
 
 /// Bones can be repaired after being destroyed. It's not ideal to have this here instead of in the parent (checking for bone efficiencies), but there are fewer corner cases this way.
 /obj/item/organ/internal/bone/die()
 	return
+
+/obj/item/organ/internal/bone/take_damage(silent = FALSE)
+	if(damage > (min_broken_damage * ORGAN_HEALTH_MULTIPLIER) && !(status & ORGAN_BROKEN))
+		fracture()
+	. = ..()
 
 obj/item/organ/internal/bone/add_initial_transforms()
 	. = ..()

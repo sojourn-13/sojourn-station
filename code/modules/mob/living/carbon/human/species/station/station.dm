@@ -80,13 +80,13 @@
 	)
 
 	has_process = list(    // which required-organ checks are conducted.
-		OP_HEART        = /obj/item/organ/internal/heart/huge/exalt,
-		OP_LUNGS        = /obj/item/organ/internal/lungs/long/exalt,
+		OP_HEART        = /obj/item/organ/internal/vital/heart/huge/exalt,
+		OP_LUNGS        = /obj/item/organ/internal/vital/lungs/long/exalt,
 		OP_STOMACH      = /obj/item/organ/internal/stomach/improved/exalt,
 		OP_LIVER        = /obj/item/organ/internal/liver/big/exalt,
 		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney/left/exalt,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/exalt,
-		BP_BRAIN        = /obj/item/organ/internal/brain,
+		BP_BRAIN        = /obj/item/organ/internal/vital/brain,
 		OP_APPENDIX     = /obj/item/organ/internal/appendix,
 		OP_EYES         = /obj/item/organ/internal/eyes
 	)
@@ -212,13 +212,13 @@
 	)
 
 	has_process = list(    // which required-organ checks are conducted.
-		OP_HEART        = /obj/item/organ/internal/heart,
-		OP_LUNGS        = /obj/item/organ/internal/lungs,
+		OP_HEART        = /obj/item/organ/internal/vital/heart,
+		OP_LUNGS        = /obj/item/organ/internal/vital/lungs,
 		OP_STOMACH      = /obj/item/organ/internal/stomach,
 		OP_LIVER        = /obj/item/organ/internal/liver,
 		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney,
-		BP_BRAIN        = /obj/item/organ/internal/brain,
+		BP_BRAIN        = /obj/item/organ/internal/vital/brain,
 		OP_APPENDIX     = /obj/item/organ/internal/appendix,
 		OP_EYES         = /obj/item/organ/internal/eyes/marqua
 	)
@@ -558,13 +558,13 @@
 		)
 
 	has_process = list(    // which required-organ checks are conducted.
-		OP_HEART =    /obj/item/organ/internal/heart,
-		OP_LUNGS =    /obj/item/organ/internal/lungs,
+		OP_HEART =    /obj/item/organ/internal/vital/heart,
+		OP_LUNGS =    /obj/item/organ/internal/vital/lungs,
 		OP_STOMACH =  /obj/item/organ/internal/stomach,
 		OP_LIVER =    /obj/item/organ/internal/liver,
 		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left/cindarite,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/cindarite,
-		BP_BRAIN =    /obj/item/organ/internal/brain,
+		BP_BRAIN =    /obj/item/organ/internal/vital/brain,
 		OP_APPENDIX = /obj/item/organ/internal/appendix,
 		OP_EYES =     /obj/item/organ/internal/eyes
 		)
@@ -617,11 +617,11 @@
 	light_color = "#93eb9e"
 
 	has_process = list(    // which required-organ checks are conducted.
-		OP_HEART =    /obj/item/organ/internal/heart/plant,
+		OP_HEART =    /obj/item/organ/internal/vital/heart/plant,
 		OP_STOMACH =  /obj/item/organ/internal/stomach/plant,
-		OP_LUNGS =    /obj/item/organ/internal/lungs/plant,
+		OP_LUNGS =    /obj/item/organ/internal/vital/lungs/plant,
 		OP_LIVER =    /obj/item/organ/internal/liver/plant,
-		BP_BRAIN =    /obj/item/organ/internal/brain/plant,
+		BP_BRAIN =    /obj/item/organ/internal/vital/brain/plant,
 		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left/plant,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/plant,
 		OP_EYES =     /obj/item/organ/internal/eyes/plant
@@ -669,11 +669,11 @@
 	light_color = "#49754f"
 
 	has_process = list(    // which required-organ checks are conducted.
-		OP_HEART =    /obj/item/organ/internal/heart/plant,
+		OP_HEART =    /obj/item/organ/internal/vital/heart/plant,
 		OP_STOMACH =  /obj/item/organ/internal/stomach/plant,
-		BP_BRAIN =    /obj/item/organ/internal/brain/plant,
+		BP_BRAIN =    /obj/item/organ/internal/vital/brain/plant,
 		OP_EYES =     /obj/item/organ/internal/eyes,
-		OP_LUNGS =    /obj/item/organ/internal/lungs,
+		OP_LUNGS =    /obj/item/organ/internal/vital/lungs,
 		OP_LIVER =    /obj/item/organ/internal/liver,
 		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right,
@@ -725,7 +725,7 @@
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -775,7 +775,7 @@
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -834,7 +834,7 @@
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -897,7 +897,7 @@
 
 	has_process = list(    // which required-process checks are conducted and defalut organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -957,7 +957,7 @@
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -1018,7 +1018,7 @@
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -1078,7 +1078,7 @@
 
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
-		BP_BRAIN = /obj/item/organ/internal/brain/synthetic,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -1122,7 +1122,7 @@
 	oxy_mod = 0
 
 	has_process = list(
-		BP_BRAIN = /obj/item/organ/internal/brain/slime
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/slime
 		)
 
 	breath_type = null
