@@ -13,6 +13,8 @@
 	/obj/item/rig/light = 20,
 	/obj/item/rig/industrial = 20,
 	/obj/item/rig/industrial/equipped = 10,
+	/obj/item/rig/light/hacker = 20,
+	/obj/item/rig/light/hacker/equipped = 1, //has numerous rare modules including power sink and omni hud rare treat
 
 	//Head of staff
 	//obj/item/rig/ce = 10,
@@ -90,7 +92,7 @@
 /obj/random/rig_module/item_to_spawn()
 	return pickweight(list(
 	//Storage
-	/obj/item/rig_module/storage = 12, //Made much more common
+	//obj/item/rig_module/storage = 12, //Made much more common
 
 	//Computer
 	/obj/item/rig_module/ai_container = 5,
@@ -155,7 +157,7 @@
 /obj/random/rig_module/rare/item_to_spawn()
 	return pickweight(list(
 	//Storage
-	/obj/item/rig_module/storage = 1,
+	//obj/item/rig_module/storage = 1,
 
 	/obj/item/rig_module/electrowarfare_suite = 1,
 

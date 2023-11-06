@@ -56,6 +56,7 @@
 
 	health = 75
 	maxHealth = 75
+	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 	harm_intent_damage = 5
 	melee_damage_lower = 20
@@ -75,7 +76,8 @@
 
 	health = 200
 	maxHealth = 200
-	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	has_special_parts = TRUE
+	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/carp_fang)
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_EPILEPSY, MUTATION_DEAF, MUTATION_BAROTRAUMA)
@@ -88,8 +90,8 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "megacarp"
 	icon_dead = "megacarp_dead"
-	maxHealth = 230
-	health = 230
+	maxHealth = 345 //WHITE WHALE
+	health = 345
 	//attack_same = 1 We no longer attack are yonger less rare of breeds
 	speed = 1
 	meat_amount = 10
@@ -98,12 +100,13 @@
 	old_y = -16
 	pixel_y = -16
 	leather_amount = 10 //The amount of leather sheets dropped.
-	bones_amount = 10 //The amount of bone sheets dropped.
+	bones_amount = 10 //The amount of bone sheets dropped.//Thanks Captain Obvious.
 	mob_size = MOB_LARGE
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_EPILEPSY, MUTATION_DEAF, MUTATION_BAROTRAUMA)
+	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,
-						 /obj/item/animal_part/wolf_tooth,
-						 /obj/item/animal_part/wolf_tooth)
+						 /obj/item/animal_part/carp_fang,
+						 /obj/item/animal_part/carp_fang) //HOLY GRAIL
 
 	armor = list(melee = 25, bullet = 10, energy = 65, bomb = 25, bio = 100, rad = 25) //Lasers dont work on scales
 

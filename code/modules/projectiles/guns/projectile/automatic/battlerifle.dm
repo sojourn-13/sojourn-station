@@ -146,3 +146,41 @@
 	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle, /obj/item/gun/projectile/automatic/omnirifle/rds)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
 	barrelvars = list(/obj/item/part/gun/barrel/hrifle)
+
+/obj/item/gun/projectile/automatic/omnirifle/hustler
+	name = "\"Hustler\" breacher shotgun"
+	desc = "The breacher special, this brick of a gun is cobbled together by Marshal Gunsmiths with far too much time and far too few matching omni-rifle mechanisms and frames.\
+	Not entirely a novel design, hackjobs such as this were common in the worst theatres during The Harrowing; Where logistic complications and the reality of war necessitated\
+	pushing the  famously durable and versatile omni-frame to its absolute limits. While many of those designs would turn out to be ineffective, impractical or deadly for the user \
+	this one has worked out surprisingly well. The added weight and barrel length add stability and accuracy often lacking from other firearms chambered in the famously wiley 20mm \
+	allowing for a steady stream of heavy-caliber slugs to be thrown downrange albeit at the cost of weight and flexibility."
+	icon = 'icons/obj/guns/projectile/Hustler.dmi'
+	icon_state = "hustler"
+	item_state = "hustler"
+	w_class = ITEM_SIZE_HUGE
+	force = WEAPON_FORCE_PAINFUL
+	caliber = CAL_SHOTGUN
+	slot_flags = SLOT_BACK
+	load_method = SINGLE_CASING|MAGAZINE
+	mag_well = MAG_WELL_RIFLE
+	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 15, MATERIAL_DIAMOND = 10)
+	gun_parts = null
+	price_tag = 2000
+	penetration_multiplier = 1.1
+	damage_multiplier = 1.3 //better than the saigini but no full auto
+	zoom_factors = list(0.4)
+	fire_delay = 12
+	init_recoil = RIFLE_RECOIL(1.0) //less recoil than others, because we're so slow to fire/move
+	fire_sound = 'sound/weapons/guns/fire/sbaw.ogg'
+	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.ogg'
+	max_upgrades = 3//Starts good but less modifiable
+	blacklist_upgrades = list(
+							/obj/item/tool_upgrade/augment/expansion = TRUE,
+							  )
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+		)
+
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SIGHT)

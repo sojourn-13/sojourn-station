@@ -215,7 +215,10 @@
 	leather_amount = 0 //No actual skin
 	bones_amount = 30 //Lots of bone-like chitin
 	has_special_parts = TRUE
+	has_rare_parts = TRUE
 	special_parts = list(/obj/item/animal_part/stalker_chitin)
+	rare_parts = list(/obj/item/animal_part/stalker_spur)
+
 	mob_size = MOB_LARGE
 	armor = list(melee = 15, bullet = 30, energy = 35, bomb = 5, bio = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_COUGHING, MUTATION_NERVOUSNESS, MUTATION_CLOAKING)
@@ -322,8 +325,8 @@
 	icon_dead = "hellpig_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 45
-	maxHealth = 550
-	health = 550
+	maxHealth = 750
+	health = 750
 	move_to_delay = 4
 	turns_per_move = 4
 	vision_range = 16
@@ -342,7 +345,7 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/hell_hide)
 	mob_size = MOB_LARGE
-	armor = list(melee = 15, bullet = 10, energy = 20, bomb = 5, bio = 10, rad = 25)
+	armor = list(melee = 25, bullet = 10, energy = 20, bomb = 5, bio = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_BLINDNESS, MUTATION_NO_PAIN, MUTATION_HYPERION, MUTATION_BLOOD_BANK)
 
 /mob/living/simple_animal/hostile/hell_pig/wendigo
@@ -354,14 +357,14 @@
 	icon_dead = "wendigo_dead"
 	melee_damage_lower = 25
 	melee_damage_upper = 35
-	maxHealth = 400
-	health = 400
+	maxHealth = 600
+	health = 600
 	move_to_delay = 2
 	turns_per_move = 6
 	speak_emote = list("snarls!", "jerks erratically.")
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/cannibal_tooth)
-	armor = list(melee = 25, bullet = 20, energy = 0, bomb = 5, bio = 10, rad = 25)
+	armor = list(melee = 35, bullet = 20, energy = 0, bomb = 5, bio = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE, MUTATION_HYPERION)
 
 
@@ -376,8 +379,8 @@
 	icon_dead = "slepnir_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	maxHealth = 350
-	health = 350
+	maxHealth = 550
+	health = 550
 	vision_range = 8
 	aggro_vision_range = 16
 	move_to_delay = 1
@@ -385,5 +388,5 @@
 	speak_emote = list("stomps its hooves!", "whinnies!")
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/slepnir_hoof,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
-	armor = list(melee = 5, bullet = 10, energy = 10, bomb = 5, bio = 10, rad = 25)
+	armor = list(melee = 25, bullet = 10, energy = 10, bomb = 5, bio = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE, MUTATION_HYPERION, MUTATION_BLOOD_BANK)

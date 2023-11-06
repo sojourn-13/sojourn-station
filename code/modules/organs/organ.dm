@@ -209,9 +209,12 @@
 
 //Note: external organs have their own version of this proc
 /obj/item/organ/proc/take_damage(amount, damage_type, wounding_multiplier = 1, silent)
-	if(!BP_IS_ROBOTIC(src))
-		//only show this if the organ is not robotic
-		if(owner && parent && amount > 0 && !silent)
+	if(!BP_IS_ROBOTIC(src)) //only show this if the organ is not robotic
+
+		if(owner && parent && amount > 0 && !silent && (owner.status_flags && ORGAN_INFECTED)) //a little bit of warning that an infection is doing damage inside you.
+			owner.custom_pain("Something inside your [parent.name] feels tender and painful.", 1)
+
+		if(owner && parent && amount > 0 && !silent && !(owner.status_flags && ORGAN_INFECTED))
 			owner.custom_pain("Something inside your [parent.name] hurts a lot.", 1)
 
 /obj/item/organ/emp_act(severity)

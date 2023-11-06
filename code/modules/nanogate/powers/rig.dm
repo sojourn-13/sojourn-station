@@ -27,13 +27,13 @@ List of powers in this page :
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig
 
 			// Add the nanite rig verbs at activation
-			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
+			//verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
 			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
 			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
 			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
 
 			//Add to owner_verbs so it can be removed properly should the need arise.
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
+			//owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
@@ -58,17 +58,17 @@ List of powers in this page :
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_opifex
 
 			// Add the nanite rig verbs at activation
-			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
+			//verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
 			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
 			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
 			verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
 
 			//Add to owner_verbs so it can be removed properly should the need arise.
-			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
+			//owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_laser
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_autodoc
 			owner_verbs += /obj/item/organ/internal/nanogate/proc/nanite_rig_eva
-
+/*
 // Give the nanite rig a storage module
 /obj/item/organ/internal/nanogate/proc/nanite_rig_storage()
 	set category = "Nanogate Powers"
@@ -84,7 +84,7 @@ List of powers in this page :
 		nanite_rig.install(new /obj/item/rig_module/storage)
 		to_chat(owner, "Your spine hurt as the nanites start to work on making a storage module.")
 		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_rig_storage
-
+*/
 // Give the nanite rig a Laser Cannon
 /obj/item/organ/internal/nanogate/proc/nanite_rig_laser()
 	set category = "Nanogate Powers"

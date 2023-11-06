@@ -14,14 +14,6 @@
 	name = "Laurel wreath"
 	icon_state = "laurel"
 	desc = "A round wreath made of connected branches and leaves of the bay laurel."
-	armor_list = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 100, //drip
-		rad = 0
-	)
 	slot_flags = SLOT_HEAD | SLOT_EARS
 	body_parts_covered = 0
 
@@ -387,6 +379,98 @@ obj/item/clothing/head/ribbon/red
 	name = "rice hat"
 	desc = "A hat made out of straw, designed to keep the sun from hurting your face."
 	icon_state = "rice_hat"
+
+/obj/item/clothing/head/jingasa
+	name = "jingasa"
+	desc = "A sturdy metal cap designed to protect the head from weather and falling objects."
+	icon_state = "jingasa"
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+
+/obj/item/clothing/head/headband
+	name = "headband"
+	desc = "A simple cloth headband intended to help keep ones hair neat and orderly."
+	icon_state = "headband_colorless"
+
+/obj/item/clothing/head/strawhat
+	name = "straw hat"
+	desc = "A plain old straw hat for keeping the sun out of ones eyes. A red band is all that keeps this old thing in one piece."
+	icon_state = "small_strawhat"
+
+/obj/item/clothing/head/strawhat/big
+	name = "wide straw hat"
+	desc = "A great big straw hat. Its size and durable make will keep ones eyes safe for a thousand sunny days."
+	icon_state = "large_strawhat"
+
+/obj/item/clothing/head/sunhat
+	name = "yellow sunhat"
+	desc = "A wide brimmed, feminine hat. Perfect for those warm Amethyn summers."
+	icon_state = "sunhat"
+
+/obj/item/clothing/head/sunhat/white
+	name = "white sunhat"
+	desc = "A wide brimmed, feminine hat. Perfect for those warm Amethyn summers."
+	icon_state = "sunhat_white"
+
+/obj/item/clothing/head/sunhat/shade
+	name = "shadehat"
+	desc = "A wide brimmed shadecap. A bit witchy, but it'll do the job."
+	icon_state = "shadehat"
+
+/obj/item/clothing/head/sunhat/blackshade
+	name = "black shadehat"
+	desc = "A wide brimmed shadecap. A bit gothic, but it'll do the job."
+	icon_state = "shadehat_black"
+
+obj/item/clothing/head/sunhat/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["standard"] = ""
+	options["lopsided"] = "_lopsided"
+	var/choice = input(M,"What do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You adjust your hat to a [choice] style.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/tiara
+	name = "tiara"
+	desc = "A simple, metal tiara."
+	icon_state = "tiara"
+
+/obj/item/clothing/head/voidhelm
+	name = "kin voidhelm"
+	desc = "An old, battered voidhelmet. Its original source unknown and its seals long since worn out - still, it makes for a decent helmet, if nothing else is available."
+	icon_state = "kin_voidhelm"
+	armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0) //if the absolute greatcoat can have these stats, so can this.
+	item_flags = THICKMATERIAL
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	obscuration = MEDIUM_OBSCURATION
+
+/obj/item/clothing/head/headdress
+	name = "headdress"
+	desc = "A simple, ornamental headdress."
+	icon_state = "headress"
+
+/obj/item/clothing/head/headscarf
+	name = "headscarf"
+	desc = "A patterned bolt of synth-cloth tied here and there that sits comfortably around the head. Excellent for keeping sand from your face - if you weren't in a temperate forest, that is."
+	icon_state = "zhan_scarf"
 
 /obj/item/clothing/head/exceslior/excelsior_officer
 	name = "excelsior officer cap"

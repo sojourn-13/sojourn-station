@@ -2272,6 +2272,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\ameridian\ameridian_golem.dm"
 #include "code\modules\mob\living\carbon\superior_animal\ameridian\ameridian_runtling.dm"
 #include "code\modules\mob\living\carbon\superior_animal\ameridian\ameridian_shooter.dm"
+#include "code\modules\mob\living\carbon\superior_animal\animals\farwa.dm"
 #include "code\modules\mob\living\carbon\superior_animal\drone\ai.dm"
 #include "code\modules\mob\living\carbon\superior_animal\drone\handmade_drone.dm"
 #include "code\modules\mob\living\carbon\superior_animal\drone\life.dm"

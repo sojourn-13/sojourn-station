@@ -204,6 +204,10 @@
 	name = "NM 20mm \"Bounty\""
 	build_path = /obj/item/gun/projectile/boltgun/lever/shotgun/bounty
 
+/datum/design/autolathe/gun/hustler
+	name = "NM 20mm \"Hustler\""
+	build_path = /obj/item/gun/projectile/automatic/omnirifle/hustler
+
 //C A R B I N E S
 
 /datum/design/autolathe/gun/bastard
@@ -284,6 +288,10 @@
 /datum/design/autolathe/gun/strelki
 	name = "BR  7.62x39mm \"strelki\""
 	build_path = /obj/item/gun/projectile/automatic/nordwind/strelki
+
+/datum/design/autolathe/gun/watchtower
+	name = "BR \"Watchtower\" DMR - 7.62x39mm"
+	build_path = /obj/item/gun/projectile/automatic/nordwind/watchtower
 
 /datum/design/autolathe/gun/heroic
 	name = "NM 7.62x39mm \"Heroic\" LMG"
@@ -381,7 +389,7 @@
 	build_path = /obj/item/gun/projectile/boltgun/flare_gun
 
 /datum/design/autolathe/gun/specop
-	name = "NM 10mm Caseless \"Spec-Op\" SMG"
+	name = "NM 10mm Caseless \"Spec-Op\" Compact Carbine"
 	build_path = /obj/item/gun/projectile/automatic/specop
 
 //L A U N C H E R S

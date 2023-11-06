@@ -107,7 +107,7 @@
 // broken limbs - at the time of writing, only the ninja suit, but
 // I can see it being useful for other suits as we expand them. ~ Z
 // The actual splinting occurs in /obj/item/organ/external/proc/fracture()
-/obj/item/clothing/suit/space/proc/check_limb_support(var/mob/living/carbon/human/user)
+/obj/item/clothing/suit/space/proc/check_limb_support(mob/living/carbon/human/user)
 
 	// If this isn't set, then we don't need to care.
 	if(!supporting_limbs || !supporting_limbs.len)

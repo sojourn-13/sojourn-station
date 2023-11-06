@@ -490,7 +490,7 @@
 	required_tech_levels = list(RESEARCH_ENGINEERING = 10)
 	cost = 1875
 
-	unlocks_designs = list(	/datum/design/research/item/storage,
+	unlocks_designs = list(	//datum/design/research/item/storage,
 							/datum/design/research/item/ai_container,
 							/datum/design/research/item/rigjets,
 							/datum/design/research/item/riggrapple,

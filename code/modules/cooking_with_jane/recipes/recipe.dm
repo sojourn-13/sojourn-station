@@ -1455,3 +1455,65 @@
 		list(CWJ_ADD_PRODUCE, "pineapple", qmod=0.2, reagent_skip=TRUE),
 		list(CWJ_USE_OVEN, J_MED, 35 SECONDS)
 	)
+
+//stinky herbal tea
+
+/datum/cooking_with_jane/recipe/poppy_tisane
+	cooking_container = POT
+	product_type = /obj/item/reagent_containers/food/snacks/poppy_tisane
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "water", 10),
+		list(CWJ_ADD_PRODUCE, "poppies", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "poppies", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "poppies", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "cinnamon", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_USE_STOVE, J_LO, 60 SECONDS) //A bit long, this is a bottleneck to mass producing better medicine but has its own advantages.
+	)
+
+/datum/cooking_with_jane/recipe/tear_tisane
+	cooking_container = POT
+	product_type = /obj/item/reagent_containers/food/snacks/tear_tisane
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "water", 10),
+		list(CWJ_ADD_PRODUCE, "sun tear", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "sun tear", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "sun tear", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "cinnamon", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_USE_STOVE, J_LO, 60 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/mercy_tisane
+	cooking_container = POT
+	product_type = /obj/item/reagent_containers/food/snacks/mercy_tisane
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "water", 10),
+		list(CWJ_ADD_PRODUCE, "mercy's hand", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "mercy's hand", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "mercy's hand", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "cinnamon", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_USE_STOVE, J_LO, 60 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/vale_tisane
+	cooking_container = POT
+	product_type = /obj/item/reagent_containers/food/snacks/vale_tisane
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "water", 10),
+		list(CWJ_ADD_PRODUCE, "vale bush", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "vale bush", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "vale bush", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "cinnamon", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_USE_STOVE, J_LO, 60 SECONDS)
+	)
+
+/datum/cooking_with_jane/recipe/helmet_tisane
+	cooking_container = POT
+	product_type = /obj/item/reagent_containers/food/snacks/helmet_tisane
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "water", 10),
+		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "plumphelmet", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_ADD_PRODUCE, "cinnamon", qmod=0.2, reagent_skip=TRUE),
+		list(CWJ_USE_STOVE, J_LO, 60 SECONDS)
+	)

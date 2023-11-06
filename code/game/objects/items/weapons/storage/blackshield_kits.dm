@@ -39,17 +39,17 @@
 		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
 		new /obj/item/storage/pouch/ammo(src)
 
-/obj/item/storage/box/bs_kit/roe
-	name = "\improper Roe Primary Kit"
-	desc = "The standard Blackshield equipment kit containing a Roe bolt action rifle, kitted with an enhanced scope. A highly accurate sniper rifle used by hunters galaxy wide for hunting medium sized game."
+/obj/item/storage/box/bs_kit/watchtower
+	name = "\improper DMR watchtower Kit"
+	desc = "The standard Blackshield equipment kit containing an Watchtower DMR, a longer range rifle simular to the Strelki but with much better recoil controle at the cost of penitration power and scope range."
 
 	populate_contents()
-		new /obj/item/gun/projectile/boltgun/light(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
-		new /obj/item/ammo_magazine/speed_loader_light_rifle_257(src)
+		new /obj/item/gun/projectile/automatic/nordwind/watchtower(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
+		new /obj/item/ammo_magazine/rifle_75_short(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/bs_kit/duty
@@ -345,7 +345,7 @@
 		stamped = TRUE
 		var/list/options = list()
 		options["\"Longarm\" - marksman rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped,/obj/item/ammo_magazine/heavy_rifle_408/lethal,/obj/item/ammo_magazine/heavy_rifle_408/lethal, /obj/item/ammo_magazine/heavy_rifle_408/lethal)
-		options["\"Buffalo\" - automatic shotgun"] = list(/obj/item/gun/projectile/automatic/buff_autoshotgun, /obj/item/ammo_magazine/speed_loader_shotgun, /obj/item/ammo_magazine/speed_loader_shotgun/pellet)
+		options["\"Hustler\" - Breacher Shotgun"] = list(/obj/item/gun/projectile/automatic/omnirifle/hustler, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]

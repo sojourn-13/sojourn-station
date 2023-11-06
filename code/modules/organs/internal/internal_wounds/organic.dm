@@ -222,7 +222,7 @@
 // Infection 2.0. This will spread to other organs in your body if untreated. Progresses until death.
 /datum/component/internal_wound/organic/infection
 	treatments_chem = list(CE_ANTIBIOTIC = 5)
-	characteristic_flag = IWOUND_CAN_DAMAGE|IWOUND_PROGRESS|IWOUND_PROGRESS_DEATH|IWOUND_SPREAD
+	characteristic_flag = IWOUND_CAN_DAMAGE|IWOUND_PROGRESS |IWOUND_SPREAD
 	severity = 0
 	severity_max = IORGAN_MAX_HEALTH
 	progression_threshold = IWOUND_8_MINUTES

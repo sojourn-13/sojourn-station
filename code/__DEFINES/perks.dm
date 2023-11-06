@@ -40,6 +40,7 @@
 #define PERK_SURVIVOR /datum/perk/oddity/survivor
 #define PERK_INSPIRING /datum/perk/oddity/inspiring
 #define PERK_HOLY_LIGHT /datum/perk/nt_oddity/holy_light
+#define PERK_SIDE_LOADING /datum/perk/oddity/side_loading
 
 //roundstart perks (job / backgrounds)
 #define PERK_NOBLE /datum/perk/noble
@@ -210,7 +211,8 @@
 							   PERK_SHARP_MIND, \
 							   PERK_STRANGTH, \
 							   PERK_IRON_WILL, \
-							   PERK_SNACKIVORE)
+							   PERK_SNACKIVORE, \
+							   PERK_SIDE_LOADING )
 
 //Temporary drug perks
 #define PERK_ULTRASURGEON /datum/perk/drug/ultrasurgeon

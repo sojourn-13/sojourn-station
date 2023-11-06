@@ -12,7 +12,7 @@
 		energy = 30,
 		bomb = 50,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)
 	slowdown = 0.3
 	drain = 4
@@ -39,6 +39,7 @@
 //Ironhammer rig suit
 /obj/item/clothing/head/helmet/space/rig/combat/ironhammer
 	light_overlay = "sec_light"
+	camera_networks = list(NETWORK_SECURITY)
 
 /obj/item/rig/combat/ironhammer
 	name = "security hardsuit control module"
@@ -51,7 +52,7 @@
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
-		/obj/item/rig_module/storage
+		//obj/item/rig_module/storage
 		)
 //blacksheild
 /obj/item/rig/combat/blackshield
@@ -65,13 +66,14 @@
 		energy = 40,
 		bomb = 50,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)
 	slowdown = 0.5 //So we have a reason to not use it
 	drain = 25
 	offline_slowdown = 3
 	offline_vision_restriction = 1
 	max_upgrades = 0 //60 armor no plating
+	initial_modules = list(/obj/item/rig_module/maneuvering_jets) //junkfield recovery
 	chest_type = /obj/item/clothing/suit/space/rig/combat/blackshield
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/combat/blackshield
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/combat/blackshield
@@ -79,8 +81,9 @@
 
 /obj/item/rig/combat/blackshield/equipped
 	initial_modules = list(
+		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/mounted,
-		/obj/item/rig_module/storage,
+		//obj/item/rig_module/storage,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/mounted/egun,
 		/obj/item/rig_module/vision/sechud
@@ -98,13 +101,14 @@
 /obj/item/clothing/head/helmet/space/rig/combat/blackshield
 	name = "blackshield hazard hood"
 	desc = "A hazard hood modded to help against CQC combat."
+	camera_networks = list(NETWORK_SECURITY)
 	armor_list = list(
 		melee = 65,
 		bullet = 55,
 		energy = 40,
 		bomb = 50,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)
 
 /obj/item/rig/combat/knight
@@ -119,7 +123,7 @@
 		energy = 30,
 		bomb = 50,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)
 	slowdown = 0.3
 	drain = 4
@@ -133,7 +137,7 @@
 
 /obj/item/rig/combat/knight/equipped
 	initial_modules = list(
-		/obj/item/rig_module/storage,
+		//obj/item/rig_module/storage,
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/held/shield
@@ -158,5 +162,5 @@
 		energy = 30,
 		bomb = 50,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)

@@ -410,6 +410,11 @@
 		if(world.time >= next_onfire_brn)
 			next_onfire_brn = world.time + 50
 			adjustFireLoss(fire_stacks*5 + 3) //adjusted to be lower. You need time to put yourself out. And each roll only removes 2.5 stacks.
+			if(prob(25) && fire_stacks > 0) //over time the fire will slowly burn itself out. This is meant to be decently slow so as to not make fire much less dangerous as its purpose is to prevent issues when mobs hit tens of thousands of fireloss.
+				adjust_fire_stacks(-1)
+			if(fire_stacks == 0)
+				ExtinguishMob()
+
 
 /mob/living/fire_act()
 	adjust_fire_stacks(2)

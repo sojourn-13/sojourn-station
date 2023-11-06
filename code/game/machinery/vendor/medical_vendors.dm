@@ -120,6 +120,7 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 4,
 		/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 8,
 		/obj/item/reagent_containers/hypospray/autoinjector/tramadol = 4,
+		/obj/item/reagent_containers/hypospray/autoinjector/antirad = 4,
 
 		/obj/item/implantcase/death_alarm = 4,
 		/obj/item/implanter = 4,
@@ -160,6 +161,7 @@
 		/obj/item/reagent_containers/hypospray/autoinjector/bicaridine = 250,
 		/obj/item/reagent_containers/hypospray/autoinjector/dexalin = 200,
 		/obj/item/reagent_containers/hypospray/autoinjector/tramadol = 500,
+		/obj/item/reagent_containers/hypospray/autoinjector/antirad = 400,
 
 		/obj/item/implantcase/death_alarm = 25,
 		/obj/item/implanter = 25,

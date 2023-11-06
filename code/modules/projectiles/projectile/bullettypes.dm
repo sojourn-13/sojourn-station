@@ -1079,7 +1079,7 @@
 
 /obj/item/projectile/bullet/shotgun/payload/on_impact(atom/target)
 	if (!testing)
-		explosion(target, 0, 0, 1)
+		explosion(target, 0, 0, 2)
 	return TRUE
 
 //Miscellaneous
@@ -1103,6 +1103,8 @@
 	damage_types = list(BRUTE = 22.5)
 	armor_penetration = 15
 	knockback = 0 //Bug doups hits
+	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE)
+	supereffective_mult = 1.5
 	step_delay = 0.9
 	affective_damage_range = 7
 	affective_ap_range = 7
@@ -1115,6 +1117,8 @@
 	agony = 29
 	armor_penetration = 0
 	post_penetration_dammult = 2
+	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE)
+	supereffective_mult = 1.5
 	step_delay = 0.9
 	recoil = 1
 
@@ -1125,6 +1129,8 @@
 	armor_penetration = 55
 	penetrating = 3
 	hitscan = TRUE
+	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE)
+	supereffective_mult = 1.5
 	affective_damage_range = 9
 	affective_ap_range = 9
 	nocap_structures = TRUE //Can do well againt walls and doors

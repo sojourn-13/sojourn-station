@@ -85,14 +85,14 @@
 	category = "RIG"
 
 //MISC and odds and sods for hardsuits/rigs
-
+/*
 /datum/design/research/item/storage
 	name = "hardsuit integrated storage"
 	desc = "A storage case that has been integrated into a hardsuit."
 	build_path = /obj/item/rig_module/storage
 	materials = list(MATERIAL_STEEL = 45, MATERIAL_PLASTIC = 25)
 	category = "RIG"
-
+*/
 /datum/design/research/item/ai_container
 	name = "hardsuit integrated AI container"
 	desc = "A storage case for AI units that has been integrated into a hardsuit."

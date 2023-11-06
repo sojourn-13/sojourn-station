@@ -45,6 +45,7 @@
 	step_energy_drain = 1
 	opacity = 0
 	lights_power = 60
+	health = 750
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley/deathripley
 	price_tag = 7000
 

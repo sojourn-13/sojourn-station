@@ -31,6 +31,8 @@
 	var/bolt_training = TRUE
 	eject_animatio = TRUE //we infact have bullet animations
 	allow_racking = FALSE
+	perk_plusone_eligible = TRUE //Lib sideload port - this and the one below.
+	alt_plus_one_loading = TRUE
 	serial_type = "Hunter Inc"
 
 	wield_delay = 0.3 SECOND
@@ -130,6 +132,7 @@
 					print_string = "You work the bolt open, ejecting [B]!"
 					B.forceMove(get_turf(src))
 					loaded -= B
+		side_loading(user)
 
 		to_chat(user, SPAN_NOTICE(print_string))
 	else

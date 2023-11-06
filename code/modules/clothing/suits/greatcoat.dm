@@ -85,6 +85,7 @@
 	item_state = "nt_wintercoat"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
+	stiffness = LIGHT_STIFFNESS
 	armor_list = list( //thicker material so +5 boost (from base 10) to armor values, but lower rad/same bomb since not metal lined. Maybe add in minor slowdown if needed -Dongels
 		melee = 15,
 		bullet = 15,

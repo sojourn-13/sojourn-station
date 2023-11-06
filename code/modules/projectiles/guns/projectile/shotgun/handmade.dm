@@ -48,6 +48,7 @@
 		playsound(src.loc, 'sound/weapons/guns/interact/batrifle_magout.ogg', 75, 1)
 		to_chat(user, SPAN_NOTICE("You pull the barrel open."))
 		unload_ammo(user, allow_dump=1)
+		side_loading(user)
 	else
 		playsound(src.loc, 'sound/weapons/guns/interact/lmg_cock.ogg', 75, 1)
 		to_chat(user, SPAN_NOTICE("You slide the barrel closed."))
