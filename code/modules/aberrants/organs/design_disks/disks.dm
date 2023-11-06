@@ -40,7 +40,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma
 	disk_name = "Oh My Guts! Bespoke Teratomas"
-	license = 10
+	license = 20
 	designs = list(
 		/datum/design/organ/teratoma/special/chemical_effect,
 		/datum/design/organ/teratoma/special/stat_boost,
@@ -68,7 +68,7 @@
 
 /obj/item/computer_hardware/hard_drive/portable/design/omg/teratoma_rare
 	disk_name = "Oh My Guts! Artisanal Teratomas"
-	license = 10
+	license = 20
 	designs = list(
 		/datum/design/organ/scaffold/rare,
 		/datum/design/organ/teratoma/output/reagents_blood_medicine_intermediate,

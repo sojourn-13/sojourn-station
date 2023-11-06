@@ -724,6 +724,17 @@
 	matter = list(MATERIAL_BIOMATTER = 6)
 	cooked = TRUE
 
+/obj/item/reagent_containers/food/snacks/frenchtoast
+	name = "french toast"
+	desc =  "A slice of bread soaked in a beaten egg mixture. Tastes like home"
+	icon_state = "frenchtoast"
+	trash = /obj/item/trash/plate
+	filling_color = "#fab82a"
+	nutriment_desc = list("sweetness" = 4, "egg" = 3, "home" = 1)
+	nutriment_amt = 8
+	bitesize = 3
+	matter = list(MATERIAL_BIOMATTER = 7)
+
 /obj/item/reagent_containers/food/snacks/eggplantparm
 	name = "eggplant parmigiana"
 	desc = "The only good recipe for eggplant."

@@ -123,3 +123,6 @@
 	filename = "Emily Chu's Report"
 	server_file_path = 'news_articles/Emily_chu.html'
 
+/datum/computer_file/data/news_article/wanted_issue_terran
+	filename = "WANTED ISSUE - JACK TERRAN."
+	server_file_path = 'news_articles/wanted_issue_terran.html'

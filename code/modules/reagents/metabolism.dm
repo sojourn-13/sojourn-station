@@ -156,7 +156,7 @@
 		return
 	if(ishuman(parent))
 		var/mob/living/carbon/human/H = parent
-		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_HEART)
+		var/obj/item/organ/internal/vital/heart/C = H.random_organ_by_process(OP_HEART)
 		if(H && istype(H))
 			C.take_damage(0.5, FALSE)
 

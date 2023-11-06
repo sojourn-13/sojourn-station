@@ -1,4 +1,4 @@
-/*Sojourn's main lobby music - organized into one file for simplicity and easy creditation. 
+/*Sojourn's main lobby music - organized into one file for simplicity and easy creditation.
 Various copyright free songs found using Free Music Archives, protected under cc 3.0.*/
 
 /music_track/almostthere
@@ -30,11 +30,6 @@ Various copyright free songs found using Free Music Archives, protected under cc
     title = "Dos Lagos"
     song = 'sound/music/lobby/Nctrnm-Dos_Lagos.ogg'
     url = "https://freemusicarchive.org/music/40nctrnm4/Dos_Lagos_-_Single/NctrnmDosLagos111Eb/"
-
-//I have no idea where we got this track from. Someone plug this in when you find out - I don't know why we've had this nearly two years with no creditation.
-/music_track/transit
-    song = 'sound/music/lobby/transit.ogg'
-
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
