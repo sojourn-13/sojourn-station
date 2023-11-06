@@ -83,7 +83,7 @@
 		access_external_airlocks, access_construction, access_atmospherics
 	)
 
-	disallow_species = list(FORM_BSSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 
 
 	stat_modifiers = list(

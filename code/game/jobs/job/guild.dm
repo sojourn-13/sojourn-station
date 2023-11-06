@@ -128,7 +128,7 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	wage = WAGE_LABOUR_HAZARD //The miners union is stubborn
 	health_modifier = 5
 
-	disallow_species = list(FORM_BSSYNTH,)
+	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/mining
 
 	description = "The Miner is a professional resource procurer, acquiring valuable minerals for Lonestar Shipping Solutions.<br>\
