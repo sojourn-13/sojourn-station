@@ -729,7 +729,7 @@
 	desc =  "A slice of bread soaked in a beaten egg mixture. Tastes like home"
 	icon_state = "frenchtoast"
 	trash = /obj/item/trash/plate
-	fillinf_color = "#fab82a"
+	filling_color = "#fab82a"
 	nutriment_desc = list("sweetness" = 4, "egg" = 3, "home" = 1)
 	nutriment_amt = 8
 	bitesize = 3
