@@ -19,7 +19,7 @@
 	access = list(
 		access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors
 	)
-	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 
 
 	wage = WAGE_COMMAND //The church has deep pockets
@@ -88,7 +88,7 @@
 	STAT_VIG = 10,
 	STAT_TGH = 5,
 	)
-	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 
 	core_upgrades = list(
 		CRUCIFORM_PRIEST

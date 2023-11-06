@@ -314,7 +314,7 @@
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_AGSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/medspec
 
