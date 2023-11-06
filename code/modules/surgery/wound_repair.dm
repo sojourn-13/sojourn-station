@@ -207,15 +207,17 @@
 
 	var/needs_regeneration = world.time - target.timeofdeath > DEFIB_TIME_LIMIT
 	var/advanced_medical = user.stats.getPerk(PERK_ADVANCED_MEDICAL)
+	var/obj/item/organ/internal/vital/brain/B
 	if ((target.getToxLoss() >= 0 || needs_regeneration) && advanced_medical)
 		var/heal_amount = -40 // Same total heal per full stack as before
 		user.visible_message(SPAN_NOTICE("[user] finishes [advanced_medical ? "expertly" : ""] filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \
 		SPAN_NOTICE("You finish filtering out any toxins to [target]'s body and repairing any neural degradation with the [tool_name].") )
-		if((needs_regeneration || target.getToxLoss() > 0) && tool.use(5))
+		if((needs_regeneration || target.getToxLoss() > 0) && tool.use(5) && !target.stats?.getPerk(PERK_FSYNDROME))
 			target.adjustToxLoss(heal_amount)
 			target.timeofdeath = 99999999
 			target.stats.addPerk(PERK_FSYNDROME)
-			tool.use(5)
+			B.rejuvenate()
+			tool.amount = 0
 
 /datum/old_surgery_step/external/tox_heal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 
