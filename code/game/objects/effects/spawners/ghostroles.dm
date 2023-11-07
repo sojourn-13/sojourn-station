@@ -90,6 +90,8 @@
 		STAT_COG = 10
 	)
 
+//colony 'ert' spawners.
+
 /obj/effect/mob_spawn/human/si_medical_ert
 	name = "deployment sleeper"
 	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in SI medical equipment."

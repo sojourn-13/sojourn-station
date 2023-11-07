@@ -218,9 +218,9 @@
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
-	desc = "These are often used by highly trained SWAT Members."
-	icon_state = "swat"
-	armor_list = list(melee = 80, bullet = 60, energy = 40, bomb = 50, bio = 10, rad = 0)
+	desc = "An oldie but a goodie. This helmet was often the last thing seen by those so foolish as to draw the attention of the Solarian Frontier enforcement corps. Judging by the dents, it didn't save its last wearer, but perhaps you'll fare better?"
+	icon_state = "swathelm"
+	armor_list = list(melee = 55, bullet = 55, energy = 55, bomb = 55, bio = 0, rad = 0)
 	flags_inv = HIDEEARS|HIDEEYES
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE

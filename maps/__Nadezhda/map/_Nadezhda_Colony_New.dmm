@@ -4584,11 +4584,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "bbJ" = (
-/obj/item/rig/combat/blackshield/equipped,
 /obj/structure/table/woodentable,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/rig/combat/ert/co/equipped,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/smc/quarters)
 "bbM" = (
@@ -8827,8 +8827,6 @@
 /area/nadezhda/security/triage_blackshield)
 "bWq" = (
 /obj/item/device/lighting/toggleable/lamp,
-/obj/item/paper_bin,
-/obj/item/pen/multi,
 /obj/structure/table/woodentable,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/swo/quarters)
@@ -22053,6 +22051,7 @@
 /obj/item/book/manual/wiki/security_ironparagraphs,
 /obj/item/stamp/hos,
 /obj/structure/table/woodentable,
+/obj/item/rig/combat/ert/co/wo/equipped,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
 "eMM" = (

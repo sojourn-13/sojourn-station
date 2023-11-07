@@ -205,3 +205,15 @@
 
 /datum/card_state/dd_SortValue()
 	return name
+
+/obj/item/card/id/syndicate/ert
+	name = "operative id card"
+	desc = "A specialized ID for the appointed operatives of the high council."
+	registered_name = "Agent"
+	assignment = "Agent"
+	icon_state = "hc_all-access"
+	group = "golden"
+
+/obj/item/card/id/secert/New()
+	access = get_all_station_access()
+	..()
