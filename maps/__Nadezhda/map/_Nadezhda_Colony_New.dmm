@@ -41812,6 +41812,7 @@
 /obj/machinery/vending/plushies{
 	pixel_x = -28
 	},
+/obj/machinery/vending/greyson_colony_ally,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
 "iWO" = (
