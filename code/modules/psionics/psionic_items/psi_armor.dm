@@ -126,7 +126,7 @@
 	icon_state = "gloves"
 	icon_override = 'icons/obj/psionic/occmob.dmi'
 	slot_flags = SLOT_GLOVES
-	siemens_coefficient = 1 //Insulated!
+	siemens_coefficient = 0 //Insulated!
 	matter = list()
 	armor_list = list(
 		melee = 35,
