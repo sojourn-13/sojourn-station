@@ -894,6 +894,9 @@
 /obj/effect/decal/cleanable/ash,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"aOW" = (
+/turf/unsimulated/mineral,
+/area/colony/exposedsun/crashed_shop/outsider)
 "aPu" = (
 /obj/structure/closet/crate/serbcrate,
 /obj/item/tool/pickaxe/jackhammer/onestar,
@@ -4775,6 +4778,9 @@
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
+"emH" = (
+/turf/simulated/floor/asteroid/grass,
+/area/colony/exposedsun/crashed_shop/outsider)
 "emO" = (
 /obj/structure/table/rack/shelf,
 /obj/random/gun_shotgun,
@@ -5213,6 +5219,10 @@
 /obj/structure/flora/big/bush1,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"eIi" = (
+/obj/structure/reagent_dispensers/watertank/huge,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "eID" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
@@ -6233,6 +6243,10 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"fGT" = (
+/obj/structure/barricade,
+/turf/simulated/mineral/random/rogue,
+/area/colony/exposedsun/crashed_shop/outsider)
 "fHd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/filth,
@@ -6888,6 +6902,10 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"gkI" = (
+/obj/structure/boulder,
+/turf/simulated/mineral/random/rogue,
+/area/colony/exposedsun/crashed_shop/outsider)
 "gkM" = (
 /obj/structure/sign/neon/beer,
 /turf/simulated/wall/r_wall,
@@ -9929,6 +9947,10 @@
 /obj/item/oddity/common/towel,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"iYh" = (
+/obj/machinery/seed_extractor,
+/turf/simulated/floor/asteroid/grass,
+/area/colony/exposedsun/crashed_shop/outsider)
 "iYq" = (
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/white/panels,
@@ -10989,6 +11011,10 @@
 /obj/item/storage/toolbox/emergency,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/one_star)
+"jTu" = (
+/obj/structure/closet/crate,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "jTE" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/machinery/light/small{
@@ -12488,6 +12514,9 @@
 /obj/item/device/radio/uplink,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"lky" = (
+/turf/simulated/floor/asteroid/dirt/dark/plough,
+/area/nadezhda/outside/meadow)
 "lkD" = (
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
@@ -13436,6 +13465,15 @@
 /obj/structure/boulder,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"miA" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/turf/simulated/floor/asteroid/grass,
+/area/colony/exposedsun/crashed_shop/outsider)
 "miU" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/dirt,
@@ -16452,6 +16490,11 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/wood/wild5,
 /area/colony/exposedsun/pastgate)
+"oLA" = (
+/obj/structure/closet/crate,
+/obj/item/coin/silver,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "oLC" = (
 /obj/random/common_oddities,
 /obj/random/mob/prepper,
@@ -22766,6 +22809,12 @@
 /obj/machinery/light,
 /turf/simulated/floor/carpet,
 /area/nadezhda/dungeon/outside/safehouse)
+"ukH" = (
+/obj/structure/closet/crate,
+/obj/item/tool/scythe,
+/obj/item/tool/scythe,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "ulg" = (
 /obj/structure/table/onestar,
 /obj/structure/window/reinforced{
@@ -24338,6 +24387,10 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"vEg" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/turf/simulated/floor/asteroid/grass,
+/area/colony/exposedsun/crashed_shop/outsider)
 "vEk" = (
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/asteroid/grass,
@@ -24428,6 +24481,10 @@
 /obj/item/material/shard/shrapnel/scrap,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"vIQ" = (
+/obj/machinery/vending/hydronutrients,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "vIV" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/ammo,
@@ -25447,6 +25504,10 @@
 /obj/item/reagent_containers/glass/bottle/petrel,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop/outsider)
+"wFl" = (
+/obj/machinery/seed_storage/garden,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "wFq" = (
 /obj/structure/table/onestar,
 /obj/structure/window/reinforced{
@@ -25730,6 +25791,15 @@
 /mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
+"wTl" = (
+/obj/structure/closet/crate,
+/obj/item/storage/bag/produce,
+/obj/item/storage/bag/produce,
+/obj/item/storage/bag/produce,
+/obj/item/storage/bag/produce,
+/obj/item/storage/bag/produce,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/colony/exposedsun/crashed_shop/outsider)
 "wTy" = (
 /obj/item/mine_old,
 /turf/simulated/floor/tiled/techmaint,
@@ -56989,21 +57059,21 @@ rel
 aiR
 qbU
 qbU
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
+coU
+coU
+coU
+coU
+coU
+coU
+coU
+coU
+coU
+coU
+coU
+coU
+coU
+coU
+coU
 qbU
 qbU
 qbU
@@ -57212,7 +57282,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -57421,7 +57491,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -57630,7 +57700,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -57839,7 +57909,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -58048,7 +58118,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -58257,7 +58327,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -58466,7 +58536,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -58675,7 +58745,7 @@ daI
 qbU
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -58884,7 +58954,7 @@ daI
 daI
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -59093,7 +59163,7 @@ daI
 daI
 daI
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -59302,7 +59372,7 @@ daI
 daI
 daI
 daI
-qbU
+coU
 qbU
 qbU
 qbU
@@ -59511,7 +59581,7 @@ daI
 daI
 daI
 daI
-qbU
+coU
 qbU
 qbU
 qbU
@@ -59720,7 +59790,7 @@ daI
 daI
 daI
 daI
-qbU
+coU
 qbU
 qbU
 qbU
@@ -59918,7 +59988,7 @@ mCD
 cfa
 mCD
 daI
-daI
+aOW
 daI
 daI
 daI
@@ -59929,7 +59999,7 @@ daI
 daI
 daI
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -60127,7 +60197,7 @@ nja
 mCD
 daI
 daI
-daI
+aOW
 daI
 daI
 daI
@@ -60138,7 +60208,7 @@ daI
 daI
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -60336,6 +60406,7 @@ mCD
 nja
 daI
 nja
+aOW
 daI
 daI
 daI
@@ -60344,10 +60415,9 @@ daI
 daI
 daI
 daI
-daI
-daI
-daI
-qbU
+aOW
+aOW
+coU
 qbU
 qbU
 qbU
@@ -60545,6 +60615,7 @@ nja
 mCD
 mCD
 nja
+aOW
 daI
 daI
 daI
@@ -60553,8 +60624,7 @@ daI
 daI
 daI
 daI
-daI
-daI
+aOW
 daI
 qbU
 qbU
@@ -60753,6 +60823,8 @@ mCD
 mCD
 mCD
 mCD
+aOW
+aOW
 daI
 daI
 daI
@@ -60761,9 +60833,7 @@ daI
 daI
 daI
 daI
-daI
-daI
-daI
+aOW
 daI
 qbU
 qbU
@@ -60961,18 +61031,18 @@ gHa
 gHa
 mCD
 nja
+aOW
 daI
 daI
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+aOW
+aOW
+aOW
+aOW
+aOW
+aOW
 daI
 daI
 qbU
@@ -61169,18 +61239,18 @@ cfa
 mCD
 mCD
 nja
+aOW
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
+aOW
+aOW
+aOW
+aOW
+aOW
 jWe
 sEK
 jhf
-daI
+aOW
 daI
 daI
 daI
@@ -61377,11 +61447,11 @@ vGA
 nja
 mCD
 nja
+aOW
 daI
 daI
 daI
-daI
-daI
+aOW
 mCD
 cfa
 mCD
@@ -61389,7 +61459,7 @@ mCD
 mCD
 mCD
 mCD
-daI
+aOW
 daI
 daI
 daI
@@ -61585,11 +61655,11 @@ aZN
 cfa
 aZN
 mCD
+aOW
 daI
 daI
 daI
-daI
-daI
+aOW
 cfa
 fyx
 daI
@@ -61794,10 +61864,10 @@ aZN
 cfa
 cfa
 aoz
+aOW
+aOW
 daI
-daI
-daI
-daI
+aOW
 mCD
 mCD
 daI
@@ -61807,7 +61877,7 @@ qpz
 tmO
 mCD
 mCD
-daI
+aOW
 daI
 daI
 daI
@@ -62005,7 +62075,7 @@ cfa
 cfa
 mCD
 jWe
-daI
+aOW
 mCD
 mCD
 daI
@@ -62016,7 +62086,7 @@ daI
 bFj
 mCD
 daI
-daI
+aOW
 daI
 daI
 daI
@@ -62225,7 +62295,7 @@ daI
 daI
 jWe
 daI
-daI
+aOW
 daI
 daI
 daI
@@ -62434,7 +62504,7 @@ daI
 daI
 daI
 daI
-daI
+aOW
 daI
 daI
 daI
@@ -62637,13 +62707,13 @@ daI
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+aOW
+aOW
+aOW
+aOW
+aOW
+aOW
+aOW
 daI
 daI
 daI
@@ -62846,13 +62916,13 @@ daI
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+aOW
+vEg
+vEg
+vEg
+vEg
+vEg
+aOW
 daI
 daI
 daI
@@ -63055,13 +63125,13 @@ daI
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+aOW
+emH
+emH
+emH
+emH
+emH
+aOW
 daI
 daI
 daI
@@ -63264,13 +63334,13 @@ daI
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+aOW
+vEg
+emH
+emH
+emH
+aOW
+aOW
 daI
 daI
 qbU
@@ -63467,18 +63537,18 @@ oFE
 oFE
 oFE
 oFE
-jWe
-jWe
+mCD
+fGT
 daI
 daI
+aOW
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+aOW
+vEg
+emH
+emH
+emH
+aOW
 daI
 qbU
 qbU
@@ -63676,18 +63746,18 @@ vUg
 sYB
 mbB
 oFE
-daI
-cfa
-nja
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+mCD
+oMD
+gkI
+aOW
+jTu
+aOW
+aOW
+vEg
+emH
+emH
+emH
+aOW
 daI
 qbU
 qbU
@@ -63885,19 +63955,19 @@ vUg
 uDd
 vUg
 oFE
-daI
-nja
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+mCD
+gkI
+aOW
+jTu
+mCD
+emH
+emH
+emH
+emH
+emH
+emH
+aOW
+aOW
 daI
 qbU
 qbU
@@ -64094,19 +64164,19 @@ csd
 drx
 csd
 oFE
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+mCD
+aOW
+jTu
+mCD
+mCD
+mCD
+emH
+emH
+emH
+emH
+mCD
+iYh
+aOW
 qbU
 qbU
 qbU
@@ -64303,19 +64373,19 @@ oFE
 oFE
 oFE
 oFE
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+mCD
+mCD
+mCD
+mCD
+mCD
+mCD
+mCD
+mCD
+mCD
+mCD
+mCD
+mCD
+aOW
 qbU
 qbU
 qbU
@@ -64512,19 +64582,19 @@ daI
 daI
 daI
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+mCD
+aOW
+emH
+emH
+mCD
+mCD
+mCD
+mCD
+aOW
+eIi
+wFl
+vIQ
+aOW
 qbU
 qbU
 qbU
@@ -64721,19 +64791,19 @@ daI
 daI
 daI
 daI
+aOW
 daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
-daI
+aOW
+aOW
+oLA
+ukH
+wTl
+miA
+aOW
+aOW
+aOW
+aOW
+aOW
 qbU
 qbU
 qbU
@@ -64930,19 +65000,19 @@ daI
 daI
 daI
 daI
+aOW
 daI
 daI
 daI
-daI
-daI
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
-qbU
+aOW
+coU
+coU
+coU
+coU
+coU
+coU
+coU
+coU
 qbU
 qbU
 qbU
@@ -65139,7 +65209,7 @@ daI
 daI
 daI
 daI
-qbU
+coU
 qbU
 qbU
 qbU
@@ -65348,7 +65418,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -65557,7 +65627,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -65766,7 +65836,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -65975,7 +66045,7 @@ qbU
 qbU
 qbU
 qbU
-qbU
+coU
 qbU
 qbU
 qbU
@@ -92965,7 +93035,7 @@ hRL
 hRL
 hRL
 auW
-naj
+lky
 naj
 kFl
 ehY
