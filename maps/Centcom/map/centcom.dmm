@@ -7907,6 +7907,10 @@
 /obj/structure/reagent_dispensers/fueltank/huge,
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
+"Rl" = (
+/obj/structure/mirror/antag,
+/turf/simulated/wall/r_wall,
+/area/centcom/evac)
 "Rp" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/cafe,
@@ -18723,7 +18727,7 @@ Wz
 dn
 dn
 qn
-ho
+Rl
 Gc
 xJ
 VF
