@@ -34,7 +34,11 @@
 
 /obj/item/stamp/hos2
 	name = "blackshield commander's rubber stamp"
-	icon_state = "stamp-hos"
+	icon_state = "stamp-bsc"
+
+/obj/item/stamp/warden
+	name = "supply specialist's rubber stamp"
+	icon_state = "stamp-spec"
 
 /obj/item/stamp/ce
 	name = "guild master's rubber stamp"
@@ -69,6 +73,33 @@
 /obj/item/stamp/fr
 	name = "foreman's stamp"
 	icon_state = "stamp-fr"
+
+/obj/item/stamp/cc
+	name = "high council secretary's stamp"
+	desc = "A specialized stamp only found in the offices of high ranking officials. How did you get ahold of this?"
+	icon_state = "stamp-circle"
+	stamp_flags = STAMP_ADMIN
+
+/obj/item/stamp/cc/nm
+	name = "marshal official's stamp"
+
+/obj/item/stamp/cc/bs
+	name = "blackshield official's stamp"
+
+/obj/item/stamp/cc/chunch
+	name = "church of the absolute official's seal"
+
+/obj/item/stamp/cc/prosp
+	name = "prospector's official mark"
+
+/obj/item/stamp/cc/si
+	name = "soteria's official seal"
+
+/obj/item/stamp/cc/ls
+	name = "lonestar official's stamp"
+
+/obj/item/stamp/cc/guilg
+	name = "artificers guild official's stamp"
 
 // Syndicate stamp to forge documents.
 /obj/item/stamp/chameleon/attack_self(mob/user as mob)

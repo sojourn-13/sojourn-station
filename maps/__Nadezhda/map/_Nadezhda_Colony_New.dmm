@@ -9952,8 +9952,13 @@
 	pixel_x = -32
 	},
 /obj/structure/table/steel_reinforced,
-/obj/random/rig_module/rare/low_chance,
-/obj/random/rig_module/rare/low_chance,
+/obj/item/stamp/warden{
+	pixel_y = 12;
+	pixel_x = 1
+	},
+/obj/item/paper_bin{
+	pixel_y = -3
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "cjZ" = (
@@ -66357,6 +66362,7 @@
 /obj/item/folder/blue,
 /obj/item/paper/monitorkey,
 /obj/item/storage/box/ids,
+/obj/item/storage/box/headsets,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/captain/quarters)
 "ogQ" = (
@@ -74876,6 +74882,8 @@
 	dir = 8;
 	pixel_x = -30
 	},
+/obj/random/rig_module/rare/low_chance,
+/obj/random/rig_module/rare/low_chance,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "pUJ" = (
@@ -80302,6 +80310,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 8
 	},
+/obj/item/storage/box/headsets,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/hallway/surface/section1)
 "rdj" = (
