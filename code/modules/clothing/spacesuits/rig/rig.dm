@@ -841,7 +841,7 @@
 	var/list/valid_modules = list()
 	var/list/damaged_modules = list()
 	for(var/obj/item/rig_module/module in installed_modules)
-		if(module.damage < 2)
+		if(module.damage < 0) //Testing some changes for RIG module's being too whimpy - Dongels [RIG change 2023-11-06] 2 -> 0//
 			valid_modules |= module
 			if(module.damage > 0)
 				damaged_modules |= module
