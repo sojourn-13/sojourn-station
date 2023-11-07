@@ -88,13 +88,6 @@
 
 	products = list(
 		/obj/item/clothing/mask/smokable/cigarette/os = 6,
-		/obj/item/reagent_containers/food/drinks/os_coffee = 6,
-		/obj/item/reagent_containers/food/snacks/openable/os_soypack = 6,
-		/obj/item/reagent_containers/food/snacks/openable/os_bun = 6,
-		/obj/item/reagent_containers/food/snacks/openable/os_meat = 6,
-		/obj/item/reagent_containers/food/snacks/openable/mre/os = 6,
-		/obj/item/reagent_containers/food/snacks/os_paste = 3,
-		/obj/item/clothing/head/helmet/space/os = 5,
 		/obj/item/clothing/suit/space/os = 5,
 		/obj/item/clothing/suit/greatcoat/os = 10,
 		/obj/item/clothing/under/os_jumpsuit = 10,
@@ -105,17 +98,11 @@
 
 	prices = list(
 		/obj/item/clothing/mask/smokable/cigarette/os = 5,
-		/obj/item/reagent_containers/food/drinks/os_coffee = 15,
-		/obj/item/reagent_containers/food/snacks/openable/os_soypack = 50,
-		/obj/item/reagent_containers/food/snacks/openable/os_bun = 25,
-		/obj/item/reagent_containers/food/snacks/openable/os_meat = 35,
-		/obj/item/reagent_containers/food/snacks/openable/mre/os = 70,
-		/obj/item/reagent_containers/food/snacks/os_paste = 85,
-		/obj/item/clothing/head/helmet/space/os = 150,
-		/obj/item/clothing/suit/space/os = 120,
+		/obj/item/clothing/head/helmet/space/os = 350,
+		/obj/item/clothing/suit/space/os = 220,
 		/obj/item/clothing/suit/greatcoat/os = 60,
 		/obj/item/clothing/under/os_jumpsuit = 20,
 		/obj/item/clothing/under/os_jumpsuit/bdu = 40,
 		/obj/item/clothing/under/iron_lock_security = 60,
-		/obj/item/clothing/head/os_cap = 10,
+		/obj/item/clothing/head/os_cap = 75,
 		)
