@@ -1686,7 +1686,7 @@
 //"ERT" gear.
 /obj/item/clothing/suit/storage/vest/swat
 	name = "\improper SWAT armor"
-	desc = "An older suit of unassisted SWAT armor often issued by poorer SolFed Enforcement Corps departments to their swat teams. Despite its age, it shows the quality of its make being both light and incredibly strong. This particular set bears a "
+	desc = "An older suit of unassisted SWAT armor often issued by poorer SolFed Enforcement Corps departments to their swat teams. Despite its age, it shows the quality of its make being both light and incredibly strong. This particular set bears the markings N.C on its back."
 	icon_state = "swatarmor"
 	item_state = "swatarmor"
 	max_upgrades = 0 //No upgrading this one
