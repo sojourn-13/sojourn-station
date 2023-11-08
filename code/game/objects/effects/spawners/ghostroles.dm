@@ -198,7 +198,7 @@
 		STAT_COG = 65
 	)
 
-/obj/effect/mob_spawn/human/research_ert
+/obj/effect/mob_spawn/human/sri_ert
 	name = "deployment sleeper"
 	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a member of the SRI Ethics committee."
 	mob_name = "a human"

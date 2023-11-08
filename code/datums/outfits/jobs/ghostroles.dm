@@ -147,6 +147,7 @@
 	name = "Underboss"
 	l_ear  =/obj/item/device/radio/headset/heads/foreman
 	uniform = /obj/item/clothing/under/top/crewtopplain
+	suit = /obj/item/clothing/suit/storage/vest/merc
 	gloves = /obj/item/clothing/gloves/thick/combat
 	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/syndigaloshes
