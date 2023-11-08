@@ -5504,7 +5504,7 @@
 /obj/structure/table/rack/shelf,
 /obj/item/storage/belt/security/tactical/marshalert,
 /obj/item/clothing/gloves/thick/swat/blackshield,
-/obj/item/tool/shovel/combat,
+/obj/item/clothing/under/rank/bdu/marshal,
 /obj/item/clothing/glasses/sechud/tactical,
 /obj/item/storage/pouch/medium_generic,
 /obj/item/storage/backpack/military,
@@ -5717,18 +5717,6 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/centcom/raider_base)
-"rt" = (
-/obj/structure/table/rack/shelf,
-/obj/item/storage/belt/security/tactical/marshalert,
-/obj/item/clothing/gloves/thick/swat/blackshield,
-/obj/item/clothing/under/rank/bdu/marshal,
-/obj/item/tool/shovel/combat,
-/obj/item/clothing/glasses/sechud/tactical,
-/obj/item/storage/pouch/medium_generic,
-/obj/item/storage/backpack/military,
-/obj/item/storage/pouch/medium_generic,
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/centcom/evac)
 "rw" = (
 /obj/structure/railing{
 	dir = 8
@@ -5812,15 +5800,17 @@
 /area/centcom/evac)
 "sr" = (
 /obj/structure/table/rack/shelf,
-/obj/item/gun/energy/sunrise,
-/obj/item/gun/energy/sunrise{
-	pixel_y = -5
+/obj/item/gun/energy/lasercore{
+	pixel_y = 2
 	},
-/obj/item/gun/energy/sunrise{
-	pixel_y = 4
+/obj/item/gun/energy/lasercore{
+	pixel_y = 8
 	},
-/obj/item/gun/energy/sunrise{
-	pixel_y = 9
+/obj/item/gun/energy/lasercannon{
+	pixel_y = -4
+	},
+/obj/item/gun/energy/lasercannon{
+	pixel_y = -9
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
@@ -5933,10 +5923,6 @@
 	},
 /turf/simulated/floor/beach/sand,
 /area/centcom/evac)
-"tv" = (
-/obj/effect/floor_decal/industrial/warningred,
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/centcom/evac)
 "ty" = (
 /obj/structure/table/glass,
 /obj/item/storage/box/beakers,
@@ -5958,12 +5944,6 @@
 	},
 /turf/space/transit/north/shuttlespace_ns5,
 /area/space)
-"tL" = (
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/centcom/evac)
 "tM" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/fixed/fgrass,
@@ -6004,8 +5984,30 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
 "ui" = (
-/obj/structure/sign/atmos/atmos_o2,
-/turf/simulated/wall/r_wall,
+/obj/structure/table/rack/shelf,
+/obj/item/rig/combat/blackshield{
+	pixel_y = 4;
+	pixel_x = 7
+	},
+/obj/item/rig/combat/ironhammer{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/rig/combat/blackshield{
+	pixel_x = 7
+	},
+/obj/item/rig/combat/blackshield{
+	pixel_x = 7;
+	pixel_y = -4
+	},
+/obj/item/rig/combat/ironhammer{
+	pixel_x = -6
+	},
+/obj/item/rig/combat/ironhammer{
+	pixel_x = -6;
+	pixel_y = -6
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "uo" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -6871,6 +6873,29 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "Es" = (
+/obj/effect/floor_decal/industrial/warningred,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
+"Ev" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/gray_platform,
+/area/centcom/merc_base)
+"Ew" = (
+/turf/simulated/floor/tiled/dark/panels,
+/area/centcom/evac)
+"EB" = (
+/obj/structure/reagent_dispensers/watertank/huge,
+/turf/simulated/floor/tiled/dark/golden,
+/area/centcom/evac)
+"EI" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/blucarpet,
+/area/centcom/raider_base)
+"EJ" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/frag_grenade_shells{
 	pixel_x = -11;
@@ -6914,51 +6939,6 @@
 	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/centcom/evac)
-"Ev" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/centcom/merc_base)
-"Ew" = (
-/turf/simulated/floor/tiled/dark/panels,
-/area/centcom/evac)
-"EB" = (
-/obj/structure/reagent_dispensers/watertank/huge,
-/turf/simulated/floor/tiled/dark/golden,
-/area/centcom/evac)
-"EI" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/carpet/blucarpet,
-/area/centcom/raider_base)
-"EJ" = (
-/obj/structure/table/rack/shelf,
-/obj/item/rig/combat/blackshield{
-	pixel_y = 4;
-	pixel_x = 7
-	},
-/obj/item/rig/combat/ironhammer{
-	pixel_x = -6;
-	pixel_y = 4
-	},
-/obj/item/rig/combat/blackshield{
-	pixel_x = 7
-	},
-/obj/item/rig/combat/blackshield{
-	pixel_x = 7;
-	pixel_y = -4
-	},
-/obj/item/rig/combat/ironhammer{
-	pixel_x = -6
-	},
-/obj/item/rig/combat/ironhammer{
-	pixel_x = -6;
-	pixel_y = -6
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "EM" = (
 /obj/structure/flora/small/grassa2,
@@ -7871,6 +7851,7 @@
 /obj/item/storage/belt/security/tactical/marshalert,
 /obj/item/clothing/gloves/thick/swat/blackshield,
 /obj/item/clothing/under/rank/bdu/marshal,
+/obj/item/tool/shovel/combat,
 /obj/item/clothing/glasses/sechud/tactical,
 /obj/item/storage/pouch/medium_generic,
 /obj/item/storage/backpack/military,
@@ -8017,20 +7998,10 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/centcom/evac)
 "Pk" = (
-/obj/structure/table/rack/shelf,
-/obj/item/gun/energy/lasercore{
-	pixel_y = 2
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
 	},
-/obj/item/gun/energy/lasercore{
-	pixel_y = 8
-	},
-/obj/item/gun/energy/lasercannon{
-	pixel_y = -4
-	},
-/obj/item/gun/energy/lasercannon{
-	pixel_y = -9
-	},
-/turf/simulated/floor/tiled/dark/techfloor_grid,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "Pt" = (
 /turf/simulated/mineral,
@@ -8040,8 +8011,15 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "Px" = (
-/obj/structure/sign/atmos/atmos_n2,
-/turf/simulated/wall/r_wall,
+/obj/structure/table/rack/shelf,
+/obj/item/storage/belt/security/tactical/marshalert,
+/obj/item/clothing/gloves/thick/swat/blackshield,
+/obj/item/tool/shovel/combat,
+/obj/item/clothing/glasses/sechud/tactical,
+/obj/item/storage/pouch/medium_generic,
+/obj/item/storage/backpack/military,
+/obj/item/storage/pouch/medium_generic,
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "Py" = (
 /turf/simulated/floor/tiled/dark/cyancorner,
@@ -8386,6 +8364,20 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/carpet/gaycarpet,
 /area/centcom/raider_base)
+"Tw" = (
+/obj/structure/table/rack/shelf,
+/obj/item/gun/energy/sunrise,
+/obj/item/gun/energy/sunrise{
+	pixel_y = -5
+	},
+/obj/item/gun/energy/sunrise{
+	pixel_y = 4
+	},
+/obj/item/gun/energy/sunrise{
+	pixel_y = 9
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/centcom/evac)
 "Tz" = (
 /obj/machinery/light/floor/built{
 	dir = 8
@@ -8396,7 +8388,9 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/centcom/raider_base)
 "TB" = (
-/obj/effect/floor_decal/industrial/warningred,
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "TC" = (
@@ -8899,10 +8893,8 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/agentoffice)
 "ZM" = (
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/obj/effect/floor_decal/industrial/warningred,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "ZT" = (
 /obj/structure/table/steel,
@@ -19119,7 +19111,7 @@ qH
 KR
 KR
 ho
-rt
+Oj
 pi
 aD
 tm
@@ -19321,7 +19313,7 @@ qH
 qH
 KR
 ho
-Oj
+pf
 aD
 aD
 tm
@@ -19523,11 +19515,11 @@ qH
 qH
 KR
 ho
-pf
+Px
 aD
 aD
 Ko
-EJ
+ui
 aD
 aD
 dn
@@ -20543,10 +20535,10 @@ aD
 GR
 ho
 qs
-tL
-cK
-cK
 TB
+cK
+cK
+ZM
 Ka
 ho
 EX
@@ -20744,12 +20736,12 @@ aD
 aD
 SM
 ho
-ZM
+Pk
 aD
 aD
 aD
 aD
-ZM
+Pk
 xD
 sd
 FM
@@ -20944,7 +20936,7 @@ cK
 Yd
 wJ
 aD
-tv
+Es
 VP
 aD
 aD
@@ -21140,8 +21132,8 @@ KR
 KR
 KR
 ho
-Pk
 sr
+Tw
 Ja
 uw
 aD
@@ -21153,7 +21145,7 @@ cK
 Bv
 KC
 cK
-Es
+EJ
 ho
 xg
 FM
@@ -22545,7 +22537,7 @@ qH
 qH
 qH
 KR
-Px
+ho
 Dn
 Dn
 sm
@@ -23151,7 +23143,7 @@ qH
 qH
 qH
 KR
-ui
+ho
 KI
 KI
 sm
