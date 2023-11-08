@@ -45,4 +45,4 @@
 		victim.apply_damage(max(0, damage * hazard_protection / 100 * victim.reagent_permeability()), CLONE)
 		if(ishuman(victim))
 			var/mob/living/carbon/human/H = victim
-			H.sanity.breakdown(TRUE)
+			H.sanity.breakdown()
