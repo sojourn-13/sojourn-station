@@ -42,7 +42,7 @@
 							/obj/item/gun_upgrade/trigger/dnalock = 1, /obj/item/gun_upgrade/muzzle/silencer = 1, /obj/item/bodybag/cryobag = 2, \
 							/obj/item/storage/firstaid/blackshield/large = 1, /obj/item/storage/firstaid/surgery/si = 1, /obj/item/roller/compact  = 1, /obj/item/device/defib_kit/compact/combat/adv/loaded = 1)
 	id_slot = slot_wear_id
-	id_type =  /obj/item/card/id/syndicate/ert
+	id_type =  /obj/item/card/id/syndicate/ert/medical_ert
 
 /decl/hierarchy/outfit/marshal_ert
 	name = "Marshal Agent"
@@ -51,7 +51,6 @@
 	suit = /obj/item/clothing/suit/armor/vest/ironhammer/full
 	suit_store = /obj/item/gun/projectile/automatic/mamba/copperhead
 	r_pocket = /obj/item/clothing/accessory/badge/marshal
-	l_pocket = /obj/item/card/id/secert
 	gloves = /obj/item/clothing/gloves/stungloves
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -60,7 +59,7 @@
 	back = /obj/item/storage/backpack/security
 	backpack_contents = list(/obj/item/ammo_magazine/rifle_75_drum = 3, /obj/item/ammo_magazine/rifle_75_drum/highvelocity = 2, /obj/item/ammo_casing/grenade/flash = 2, /obj/item/ammo_casing/grenade/blast = 2, /obj/item/modular_computer/tablet/lease/preset/command = 1 )
 	id_slot = slot_wear_id
-	id_type =  /obj/item/card/id/syndicate/ert
+	id_type =  /obj/item/card/id/syndicate/ert/aa/marshal_ert
 
 /decl/hierarchy/outfit/blackshield_ert
 	name = "Blackshield Specialist"
@@ -69,7 +68,6 @@
 	uniform = /obj/item/clothing/under/rank/commander
 	//suit_store = /obj/item/gun/projectile/automatic/omnirifle/rds
 	r_pocket = /obj/item/clothing/accessory/badge/marshal
-	l_pocket = /obj/item/card/id/secert
 	gloves = /obj/item/clothing/gloves/thick/swat/blackshield
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	shoes = /obj/item/clothing/shoes/swat
@@ -77,7 +75,7 @@
 	back = /obj/item/storage/backpack/militia
 	backpack_contents = list(/obj/item/modular_computer/tablet/lease/preset/command = 1, /obj/item/storage/pouch/ammo = 1)
 	id_slot = slot_wear_id
-	id_type =  /obj/item/card/id/syndicate/ert
+	id_type =  /obj/item/card/id/syndicate/ert/aa/blackshield_ert
 
 /decl/hierarchy/outfit/engi_ert
 	name = "Guild Emergency Personnel"
@@ -104,7 +102,7 @@
 							/obj/item/modular_computer/tablet/lease/preset/command = 1,\
 							/obj/item/extinguisher/mini = 1)
 	id_slot = slot_wear_id
-	id_type =  /obj/item/card/id/syndicate/ert
+	id_type =  /obj/item/card/id/syndicate/ert/aa/guild_ert
 
 /decl/hierarchy/outfit/lss_ert
 	name = "Auditor"
@@ -117,15 +115,48 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	shoes = /obj/item/clothing/shoes/laceup
 	back = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/paper = 2,
+	backpack_contents = list(/obj/item/paper_bin  = 1,
 							/obj/item/clipboard = 1,
 							/obj/item/device/taperecorder = 1,
 							/obj/item/pen/multi = 1,
 							/obj/item/reagent_containers/glass/paint/red = 1, //For the papers, in case they want to make a paper red with red link to REALY show that they mean something
 							/obj/item/modular_computer/tablet/lease/preset/command = 1)
 	id_slot = slot_wear_id
-	id_type =  /obj/item/card/id/syndicate/ert
+	id_type =  /obj/item/card/id/syndicate/ert/aa/auditor_ert
 
+/decl/hierarchy/outfit/sri_ert
+	name = "Ethics Committee investigator"
+	l_ear = /obj/item/device/radio/headset/heads/rd
+	mask = /obj/item/clothing/mask/gas
+	uniform = /obj/item/clothing/under/suit_jacket/executive //we're basically an SI IAA
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
+	pda_type = /obj/item/modular_computer/pda/heads/rd
+	shoes = /obj/item/clothing/shoes/laceup
+	back = /obj/item/storage/backpack/satchel/purple/scientist
+	gloves = /obj/item/clothing/gloves/latex
+	backpack_contents = list(
+							/obj/item/clipboard = 1,
+							/obj/item/device/taperecorder = 1,
+							/obj/item/pen/multi = 1,
+							/obj/item/paper_bin = 1,
+							/obj/item/modular_computer/tablet/lease/preset/command = 1)
+	id_slot = slot_wear_id
+	id_type =  /obj/item/card/id/syndicate/ert/research_ert
+
+/decl/hierarchy/outfit/prospector_ert //criminy
+	name = "Underboss"
+	l_ear  =/obj/item/device/radio/headset/heads/foreman
+	uniform = /obj/item/clothing/under/top/crewtopplain
+	gloves = /obj/item/clothing/gloves/thick/combat
+	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/syndigaloshes
+	belt = /obj/item/storage/belt/webbing/artificer/ert //We come ready to fight OR break and enter
+	back = /obj/item/storage/backpack/satchel
+	r_pocket = /obj/item/clothing/accessory/holster/leg
+	l_pocket = /obj/item/storage/pouch/ammo
+	backpack_contents = list(/obj/item/modular_computer/tablet/lease/preset/command = 1, /obj/item/gun/projectile/silvereye = 1, /obj/item/ammo_magazine/kurtz_50/hv = 5, /obj/item/clothing/head/helmet/mercenary = 1, /obj/item/clothing/mask/gas  = 1)
+	id_slot = slot_wear_id
+	id_type =  /obj/item/card/id/syndicate/ert/prospector_ert
 
 /decl/hierarchy/outfit/doggo
 	name = "Kriosan trooper"

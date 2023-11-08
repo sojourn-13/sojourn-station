@@ -209,6 +209,7 @@ var/const/NO_EMAG_ACT = -50
 	access = list(access_syndicate, access_external_airlocks)
 	group = "centcom"
 
+/* obsolete, now using the syndie card as base for ease of use.
 /obj/item/card/id/medical_command
 	name = "Medical ID card"
 	desc = "An ID straight from the SI Medical Divisions."
@@ -239,6 +240,18 @@ var/const/NO_EMAG_ACT = -50
 	access = get_all_station_access()
 	..()
 
+/obj/item/card/id/secert
+	name = "Marshal ID card"
+	desc = "An ID straight from the Nadezhda Marshals"
+	registered_name = "Marshal Agent"
+	assignment = "Marshal Agent"
+	icon_state = "id_hos_all-access"
+	group = "golden"
+
+/obj/item/card/id/secert/New()
+	access = get_all_station_access()
+	..()
+*/
 
 /obj/item/card/id/captains_spare
 	name = "premier's spare ID"
@@ -345,18 +358,6 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/hos
 	group = "secblue"
 	icon_state = "id_hos"
-
-/obj/item/card/id/secert
-	name = "Marshal ID card"
-	desc = "An ID straight from the Nadezhda Marshals"
-	registered_name = "Marshal Agent"
-	assignment = "Marshal Agent"
-	icon_state = "id_hos_all-access"
-	group = "golden"
-
-/obj/item/card/id/secert/New()
-	access = get_all_station_access()
-	..()
 
 /obj/item/card/id/hop
 	icon_state = "id_hop"

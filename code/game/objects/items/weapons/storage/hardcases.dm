@@ -587,3 +587,65 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		else
 			stamped = FALSE
 
+// ERT / Agent kits. These mostly hold imprinters to grant stats / perks that said operative should have without having to manually tweak.
+//Agents already start with the stats perks if spawned via _ert spawners however these are maintained for convenience if making agents via spawn_character + select_outfit.
+
+/obj/item/storage/hcases/ert
+	name = "imprinter hard case" // 2 stats +50 3 stats +25.
+	desc = "A hardcase containing a number of advanced mental imprinters."
+	can_hold = list(/obj/item/device/mental_imprinter/agent)
+
+/obj/item/storage/hcases/ert/populate_contents()
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+
+/obj/item/storage/hcases/ert/marshal
+	name = "marshals imprinter hard case"
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the Nadezhda Marshals."
+	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
+
+/obj/item/storage/hcases/ert/marshal/populate_contents()
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/hardware_imprinter/smartlink(src)
+	new /obj/item/device/hardware_imprinter/spaceasshole(src)
+	new /obj/item/device/hardware_imprinter/codlang(src)
+	new /obj/item/device/hardware_imprinter/contraband(src)
+
+/obj/item/storage/hcases/ert/blackshield
+	name = "blackshield imprinter hard case"
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the Nadezhda Blackshield Militia."
+	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
+
+/obj/item/storage/hcases/ert/marshal/populate_contents()
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/hardware_imprinter/boltraining(src)
+	new /obj/item/device/hardware_imprinter/spaceasshole(src)
+	new /obj/item/device/hardware_imprinter/conditioning(src)
+	new /obj/item/device/hardware_imprinter/contraband(src)
+
+/obj/item/storage/hcases/ert/medical
+	name = "medical imprinter hard case"
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the SRI medical division."
+	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
+
+/obj/item/storage/hcases/ert/medical/populate_contents()
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/hardware_imprinter/medexpert(src)
+	new /obj/item/device/hardware_imprinter/medadept(src)
+	new /obj/item/device/hardware_imprinter/chemist(src)
+	new /obj/item/device/hardware_imprinter/science(src)
