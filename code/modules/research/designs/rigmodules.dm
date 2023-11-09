@@ -85,14 +85,35 @@
 	category = "RIG"
 
 //MISC and odds and sods for hardsuits/rigs
-/*
+
 /datum/design/research/item/storage
-	name = "hardsuit integrated storage"
+	name = "hardsuit storage system"
 	desc = "A storage case that has been integrated into a hardsuit."
 	build_path = /obj/item/rig_module/storage
 	materials = list(MATERIAL_STEEL = 45, MATERIAL_PLASTIC = 25)
 	category = "RIG"
-*/
+
+/datum/design/research/item/storagemed
+	name = "hardsuit medical storage system"
+	desc = "A system of various storage solutions for a RIG. This one is designed for medicine."
+	build_path = /obj/item/rig_module/storage/med
+	materials = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 15)
+	category = "RIG"
+
+/datum/design/research/item/storagetac
+	name = "hardsuit tactical  storage system"
+	desc = "A system of various storage solutions for a RIG. This one is designed for munitions."
+	build_path = /obj/item/rig_module/storage/combat
+	materials = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 15)
+	category = "RIG"
+
+/datum/design/research/item/storageengi
+	name = "hardsuit engineering  storage system"
+	desc = "A system of various storage solutions for a RIG. This one is designed for tools.."
+	build_path = /obj/item/rig_module/storage/engi
+	materials = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 15)
+	category = "RIG"
+
 /datum/design/research/item/ai_container
 	name = "hardsuit integrated AI container"
 	desc = "A storage case for AI units that has been integrated into a hardsuit."

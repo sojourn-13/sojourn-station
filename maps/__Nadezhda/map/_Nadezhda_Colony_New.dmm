@@ -4347,9 +4347,13 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/bcave)
 "aZn" = (
-/obj/item/device/radio/beacon,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/shuttle/surface_transport_lz)
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/device/radio/beacon/bacon,
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/sechall)
 "aZp" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -40682,6 +40686,11 @@
 "iJb" = (
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
+"iJc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/device/radio/beacon/bacon,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/quartermaster/office)
 "iJe" = (
 /obj/structure/table/bench/steel,
 /obj/effect/decal/cleanable/dirt,
@@ -57480,7 +57489,6 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/inside_colony)
 "mrz" = (
-/obj/item/device/radio/beacon,
 /turf/simulated/shuttle/floor/science{
 	icon_state = "9,12"
 	},
@@ -70548,6 +70556,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "oZF" = (
 /obj/structure/barricade,
+/obj/item/device/radio/beacon/bacon,
 /turf/simulated/floor/rock,
 /area/asteroid/cave)
 "oZK" = (
@@ -74531,6 +74540,7 @@
 /area/nadezhda/outside/forest)
 "pQN" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
+/obj/item/device/radio/beacon/bacon,
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,8"
 	},
@@ -85970,6 +85980,10 @@
 /obj/random/scrap/sparse_weighted,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"sno" = (
+/obj/item/device/radio/beacon/bacon,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/shuttle/surface_transport_lz)
 "sns" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -94731,6 +94745,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/device/radio/beacon/bacon,
 /turf/simulated/floor/tiled/steel/monofloor{
 	dir = 4
 	},
@@ -111999,6 +112014,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"xGM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/device/radio/beacon/bacon,
+/turf/simulated/floor/tiled/white/gray_perforated,
+/area/nadezhda/command/panic_room)
 "xGP" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
 /obj/effect/decal/cleanable/dirt,
@@ -173355,7 +173375,7 @@ mUz
 xST
 qaZ
 olE
-olE
+xGM
 olE
 olE
 hIk
@@ -181277,7 +181297,7 @@ grl
 ofU
 oix
 pPK
-xBZ
+iJc
 dYZ
 lSx
 fHf
@@ -212572,7 +212592,7 @@ hJm
 pyA
 rFh
 gEs
-aZn
+uFH
 uvX
 gZR
 pyD
@@ -212774,7 +212794,7 @@ hJm
 nYl
 fIV
 wiC
-uFH
+sno
 brO
 mRW
 gEv
@@ -214362,7 +214382,7 @@ fKO
 fPC
 fPC
 fPC
-nqF
+aZn
 dje
 fPC
 bkj
