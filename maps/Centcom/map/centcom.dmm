@@ -5457,8 +5457,32 @@
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oV" = (
-/obj/machinery/vending/style,
-/turf/simulated/floor/tiled/techmaint_perforated,
+/obj/structure/table/rack/shelf,
+/obj/item/gun/projectile/rpg,
+/obj/item/gun/projectile/rpg{
+	pixel_y = -12
+	},
+/obj/item/gun/projectile/rpg{
+	pixel_y = -6
+	},
+/obj/item/gun/projectile/rpg{
+	pixel_y = 7
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/westleft,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "oW" = (
 /obj/machinery/door/blast/regular/open{
@@ -5501,15 +5525,16 @@
 /area/centcom/evac)
 "pf" = (
 /obj/structure/table/rack/shelf,
-/obj/item/clothing/glasses/powered/night{
-	pixel_y = 11
+/obj/item/clothing/glasses/powered/thermal,
+/obj/item/clothing/glasses/powered/thermal,
+/obj/item/clothing/glasses/powered/thermal{
+	pixel_y = -6
 	},
-/obj/item/clothing/glasses/powered/night{
+/obj/item/clothing/glasses/powered/thermal{
 	pixel_y = 5
 	},
-/obj/item/clothing/glasses/powered/night,
-/obj/item/clothing/glasses/powered/night{
-	pixel_y = -7
+/obj/item/clothing/glasses/powered/thermal{
+	pixel_y = 10
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
@@ -5582,6 +5607,15 @@
 /obj/structure/table/glass,
 /obj/item/storage/firstaid/soteria/large,
 /obj/item/storage/firstaid/soteria/large,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/centcom/evac)
+"pM" = (
+/obj/structure/table/rack/shelf,
+/obj/item/tool/shovel/combat,
+/obj/item/tool/shovel/combat,
+/obj/item/tool/shovel/combat,
+/obj/item/tool/shovel/combat,
+/obj/item/tool/shovel/combat,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "pN" = (
@@ -5806,30 +5840,8 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "sr" = (
-/obj/structure/table/rack/shelf,
-/obj/item/rig/combat/blackshield{
-	pixel_y = 4;
-	pixel_x = 7
-	},
-/obj/item/rig/combat/ironhammer{
-	pixel_x = -6;
-	pixel_y = 4
-	},
-/obj/item/rig/combat/blackshield{
-	pixel_x = 7
-	},
-/obj/item/rig/combat/blackshield{
-	pixel_x = 7;
-	pixel_y = -4
-	},
-/obj/item/rig/combat/ironhammer{
-	pixel_x = -6
-	},
-/obj/item/rig/combat/ironhammer{
-	pixel_x = -6;
-	pixel_y = -6
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/obj/machinery/vending/drip,
+/turf/simulated/floor/tiled/techmaint_perforated,
 /area/centcom/evac)
 "sv" = (
 /obj/effect/floor_decal/industrial/box,
@@ -5842,9 +5854,53 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/agentoffice)
+"sF" = (
+/obj/item/contraband/poster/placed/generic/firesafety,
+/turf/simulated/wall/r_wall,
+/area/centcom/evac)
 "sI" = (
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/dark/golden,
+/area/centcom/evac)
+"sQ" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/frag_grenade_shells{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/obj/item/storage/box/flash_grenade_shells{
+	pixel_x = -7
+	},
+/obj/item/storage/box/emp_grenade_shells{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/storage/box/blast_grenade_shells{
+	pixel_x = 6
+	},
+/obj/item/storage/box/blast_grenade_shells{
+	pixel_x = 6
+	},
+/obj/item/storage/box/flash_grenade_shells{
+	pixel_x = -7
+	},
+/obj/item/storage/box/frag_grenade_shells{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/obj/item/storage/box/emp_grenade_shells{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/door/window/westleft,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "sU" = (
 /obj/machinery/vending/fitness,
@@ -5890,15 +5946,12 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "tk" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/structure/table/rack/shelf,
-/obj/item/storage/backpack/military,
-/obj/item/storage/backpack/military,
-/obj/item/storage/backpack/military,
-/obj/item/storage/backpack/military,
-/obj/item/storage/backpack/military,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/centcom/evac)
+/obj/item/contraband/poster/placed/generic/ue_no{
+	pixel_y = 2;
+	pixel_x = 29
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/centcom/agentoffice)
 "tl" = (
 /obj/machinery/account_database{
 	dir = 4
@@ -5972,6 +6025,10 @@
 	},
 /turf/space/transit/north/shuttlespace_ns5,
 /area/space)
+"tL" = (
+/obj/machinery/vending/marshal_kit,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/centcom/evac)
 "tM" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/fixed/fgrass,
@@ -6012,10 +6069,8 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
 "ui" = (
-/obj/structure/table/marble,
-/obj/item/reagent_containers/food/snacks/sandwich,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate,
-/turf/simulated/floor/tiled/cafe,
+/obj/effect/floor_decal/industrial/warningred,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "uo" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -6168,6 +6223,28 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
+"vI" = (
+/obj/item/flamethrower/full,
+/obj/item/flamethrower/full,
+/obj/structure/table/rack/shelf,
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	pixel_x = -3
+	},
+/obj/machinery/door/window/eastright,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/centcom/evac)
 "vJ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/pipedispenser/disposal,
@@ -6223,10 +6300,6 @@
 /obj/effect/floor_decal/border/carpet/green,
 /turf/simulated/floor/carpet/turcarpet,
 /area/centcom/agentoffice)
-"wm" = (
-/obj/machinery/door/airlock/multi_tile/metal,
-/turf/simulated/floor/tiled/dark/cyancorner,
-/area/centcom/evac)
 "wx" = (
 /obj/structure/table/marble,
 /obj/item/reagent_containers/food/snacks/dough,
@@ -6306,32 +6379,6 @@
 	pixel_y = 5
 	},
 /turf/simulated/floor/wood,
-/area/centcom/evac)
-"xM" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/accessory/halfcape/corpsman{
-	pixel_y = 1;
-	pixel_x = 4
-	},
-/obj/item/clothing/accessory/halfcape/corpsman{
-	pixel_y = 8;
-	pixel_x = 4
-	},
-/obj/item/storage/belt/medical/emt{
-	pixel_y = -2
-	},
-/obj/item/storage/belt/medical/emt{
-	pixel_y = -8
-	},
-/obj/item/clothing/glasses/ballistic/med{
-	pixel_y = 12;
-	pixel_x = -5
-	},
-/obj/item/clothing/glasses/ballistic/med{
-	pixel_y = 7;
-	pixel_x = -5
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "xO" = (
 /obj/structure/railing{
@@ -6526,6 +6573,10 @@
 /obj/random/junkfood,
 /turf/simulated/floor/carpet/blucarpet,
 /area/centcom/raider_base)
+"Ao" = (
+/obj/machinery/door/airlock/multi_tile/metal,
+/turf/simulated/floor/tiled/dark/cyancorner,
+/area/centcom/evac)
 "AA" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -6558,12 +6609,6 @@
 "AU" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/simulated/floor/tiled/cafe,
-/area/centcom/evac)
-"AW" = (
-/obj/machinery/newscaster{
-	pixel_y = 29
-	},
-/turf/simulated/floor/tiled/dark/cyancorner,
 /area/centcom/evac)
 "AY" = (
 /obj/structure/table/rack/shelf,
@@ -6680,6 +6725,15 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/tiled/steel/gray_perforated,
+/area/centcom/evac)
+"BS" = (
+/obj/effect/floor_decal/industrial/warningred,
+/obj/structure/sign/warning/nosmoking/small{
+	dir = 4;
+	pixel_y = 3;
+	pixel_x = -41
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "BU" = (
 /obj/machinery/door/firedoor,
@@ -6889,29 +6943,6 @@
 /obj/machinery/door/airlock/centcom,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
-"Dv" = (
-/obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/grenade/lenar,
-/obj/item/gun/projectile/grenade/lenar{
-	pixel_y = -4
-	},
-/obj/item/gun/projectile/grenade/lenar{
-	pixel_y = 7
-	},
-/obj/item/gun/projectile/grenade/lenar{
-	pixel_y = 4
-	},
-/obj/effect/floor_decal/industrial/warningred,
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
-	},
-/obj/structure/sign/warning/caution/small2{
-	dir = 8;
-	pixel_y = 18;
-	pixel_x = 35
-	},
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/centcom/evac)
 "DG" = (
 /obj/item/book/ritual/cruciform,
 /obj/item/book/ritual/cruciform,
@@ -6945,8 +6976,8 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "Es" = (
-/obj/item/contraband/poster/placed/generic/firesafety,
-/turf/simulated/wall/r_wall,
+/obj/machinery/vending/style,
+/turf/simulated/floor/tiled/techmaint_perforated,
 /area/centcom/evac)
 "Ev" = (
 /obj/machinery/light{
@@ -6968,13 +6999,30 @@
 /turf/simulated/floor/carpet/blucarpet,
 /area/centcom/raider_base)
 "EJ" = (
-/obj/effect/floor_decal/industrial/warningred,
-/obj/structure/sign/warning/nosmoking/small{
-	dir = 4;
-	pixel_y = 3;
-	pixel_x = -41
+/obj/structure/table/rack/shelf,
+/obj/item/rig/combat/blackshield{
+	pixel_y = 4;
+	pixel_x = 7
 	},
-/turf/simulated/floor/tiled/dark/techfloor_grid,
+/obj/item/rig/combat/ironhammer{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/rig/combat/blackshield{
+	pixel_x = 7
+	},
+/obj/item/rig/combat/blackshield{
+	pixel_x = 7;
+	pixel_y = -4
+	},
+/obj/item/rig/combat/ironhammer{
+	pixel_x = -6
+	},
+/obj/item/rig/combat/ironhammer{
+	pixel_x = -6;
+	pixel_y = -6
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "EM" = (
 /obj/structure/flora/small/grassa2,
@@ -7016,16 +7064,21 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/shuttle/skipjack_area)
 "Fh" = (
-/obj/item/flamethrower/full,
-/obj/item/flamethrower/full,
 /obj/structure/table/rack/shelf,
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 1
+/obj/item/clothing/gloves/thick/swat/blackshield,
+/obj/item/clothing/gloves/thick/swat/blackshield{
+	pixel_y = 5
 	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
+/obj/item/clothing/gloves/thick/swat/blackshield{
+	pixel_y = 10
 	},
-/turf/simulated/floor/tiled/dark/techfloor_grid,
+/obj/item/clothing/gloves/thick/swat/blackshield_corpsman{
+	pixel_y = -4
+	},
+/obj/item/clothing/gloves/thick/swat/blackshield_corpsman{
+	pixel_y = -8
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "Fk" = (
 /obj/machinery/door/unpowered/simple/wood,
@@ -7290,6 +7343,41 @@
 /obj/effect/shuttle_landmark/transit/vasiliy_transit,
 /turf/space/transit/north/shuttlespace_ns5,
 /area/space)
+"HN" = (
+/obj/item/gun/flamethrower,
+/obj/item/gun/flamethrower{
+	pixel_y = 8
+	},
+/obj/item/weldpack/canister/flamethrower{
+	pixel_y = -5;
+	pixel_x = -6
+	},
+/obj/item/weldpack/canister/flamethrower{
+	pixel_y = -5;
+	pixel_x = 8
+	},
+/obj/structure/table/rack/shelf,
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warningred,
+/obj/structure/sign/warning/caution/small2{
+	dir = 4;
+	pixel_y = 17;
+	pixel_x = -32
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	pixel_x = -3
+	},
+/obj/machinery/door/window/eastright,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/centcom/evac)
 "HQ" = (
 /obj/structure/table/rack/shelf,
 /obj/item/stack/material/steel/full,
@@ -7308,68 +7396,25 @@
 /obj/effect/floor_decal/industrial/road/warning1,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
-"Ic" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
+"HZ" = (
+/obj/effect/floor_decal/industrial/outline,
 /obj/structure/table/rack/shelf,
-/obj/structure/window/reinforced,
-/obj/item/ammo_casing/rocket{
-	pixel_y = -7
-	},
-/obj/item/ammo_casing/rocket{
-	pixel_y = -7
-	},
-/obj/item/ammo_casing/rocket{
-	pixel_y = -7
-	},
-/obj/item/ammo_casing/rocket{
-	pixel_y = -7
-	},
-/obj/item/ammo_casing/rocket{
-	pixel_y = -7
-	},
-/obj/item/ammo_casing/rocket{
-	pixel_y = -7
-	},
-/obj/item/ammo_casing/rocket{
-	pixel_y = -1
-	},
-/obj/item/ammo_casing/rocket{
-	pixel_y = -4
-	},
-/obj/item/ammo_casing/rocket{
-	pixel_y = -10
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 9
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 9
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 9
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 9
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 9
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 8
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 5
-	},
-/obj/item/ammo_casing/rocket/emp{
-	pixel_y = 2
-	},
-/obj/machinery/door/window/westleft,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/obj/item/storage/belt/security/tactical/marshalert,
+/obj/item/storage/belt/security/tactical/marshalert,
+/obj/item/storage/belt/security/tactical/marshalert,
+/obj/item/storage/belt/security/tactical/marshalert,
+/obj/item/storage/belt/security/tactical/marshalert,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/centcom/evac)
+"Ic" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/table/rack/shelf,
+/obj/item/storage/backpack/military,
+/obj/item/storage/backpack/military,
+/obj/item/storage/backpack/military,
+/obj/item/storage/backpack/military,
+/obj/item/storage/backpack/military,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "Id" = (
 /obj/random/closet_wardrobe,
@@ -7736,15 +7781,6 @@
 /obj/item/organ/internal/bone/head,
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/agentoffice)
-"LJ" = (
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 1
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -24
-	},
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/centcom/evac)
 "LL" = (
 /obj/machinery/light{
 	dir = 8
@@ -7800,13 +7836,6 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/turcarpet,
-/area/centcom/agentoffice)
-"My" = (
-/obj/item/contraband/poster/placed/generic/ue_no{
-	pixel_y = 2;
-	pixel_x = 29
-	},
-/turf/simulated/floor/tiled/dark/golden,
 /area/centcom/agentoffice)
 "MC" = (
 /obj/effect/step_trigger/thrower{
@@ -7872,26 +7901,6 @@
 "Nf" = (
 /obj/structure/sink/basion/crayon,
 /turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
-"Nk" = (
-/obj/structure/table/rack/shelf,
-/obj/item/gun/projectile/rpg,
-/obj/item/gun/projectile/rpg{
-	pixel_y = -12
-	},
-/obj/item/gun/projectile/rpg{
-	pixel_y = -6
-	},
-/obj/item/gun/projectile/rpg{
-	pixel_y = 7
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "Np" = (
 /obj/structure/sign/departmentold/medical2,
@@ -7980,21 +7989,10 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/centcom/raider_base)
 "Oj" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/gloves/thick/swat/blackshield,
-/obj/item/clothing/gloves/thick/swat/blackshield{
-	pixel_y = 5
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
 	},
-/obj/item/clothing/gloves/thick/swat/blackshield{
-	pixel_y = 10
-	},
-/obj/item/clothing/gloves/thick/swat/blackshield_corpsman{
-	pixel_y = -4
-	},
-/obj/item/clothing/gloves/thick/swat/blackshield_corpsman{
-	pixel_y = -8
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
 "Ok" = (
 /obj/structure/table/rack/shelf,
@@ -8137,52 +8135,29 @@
 /area/centcom/evac)
 "Pk" = (
 /obj/structure/table/rack/shelf,
-/obj/item/tool/shovel/combat,
-/obj/item/tool/shovel/combat,
-/obj/item/tool/shovel/combat,
-/obj/item/tool/shovel/combat,
-/obj/item/tool/shovel/combat,
+/obj/item/clothing/accessory/halfcape/corpsman{
+	pixel_y = 1;
+	pixel_x = 4
+	},
+/obj/item/clothing/accessory/halfcape/corpsman{
+	pixel_y = 8;
+	pixel_x = 4
+	},
+/obj/item/storage/belt/medical/emt{
+	pixel_y = -2
+	},
+/obj/item/storage/belt/medical/emt{
+	pixel_y = -8
+	},
+/obj/item/clothing/glasses/ballistic/med{
+	pixel_y = 12;
+	pixel_x = -5
+	},
+/obj/item/clothing/glasses/ballistic/med{
+	pixel_y = 7;
+	pixel_x = -5
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/centcom/evac)
-"Pm" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/frag_grenade_shells{
-	pixel_x = -7;
-	pixel_y = 6
-	},
-/obj/item/storage/box/flash_grenade_shells{
-	pixel_x = -7
-	},
-/obj/item/storage/box/emp_grenade_shells{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/obj/item/storage/box/blast_grenade_shells{
-	pixel_x = 6
-	},
-/obj/item/storage/box/blast_grenade_shells{
-	pixel_x = 6
-	},
-/obj/item/storage/box/flash_grenade_shells{
-	pixel_x = -7
-	},
-/obj/item/storage/box/frag_grenade_shells{
-	pixel_x = -7;
-	pixel_y = 6
-	},
-/obj/item/storage/box/emp_grenade_shells{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/door/window/westleft,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "Pt" = (
 /turf/simulated/mineral,
@@ -8192,10 +8167,35 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "Px" = (
-/obj/item/contraband/poster/placed/generic/state_laws{
-	pixel_y = 32
+/obj/structure/table/rack/shelf,
+/obj/item/gun/projectile/grenade/lenar,
+/obj/item/gun/projectile/grenade/lenar{
+	pixel_y = -4
 	},
-/turf/simulated/floor/carpet,
+/obj/item/gun/projectile/grenade/lenar{
+	pixel_y = 7
+	},
+/obj/item/gun/projectile/grenade/lenar{
+	pixel_y = 4
+	},
+/obj/effect/floor_decal/industrial/warningred,
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/obj/structure/sign/warning/caution/small2{
+	dir = 8;
+	pixel_y = 18;
+	pixel_x = 35
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/westleft,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "Py" = (
 /turf/simulated/floor/tiled/dark/cyancorner,
@@ -8248,12 +8248,6 @@
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/white/cargo,
 /area/centcom/raider_base)
-"PY" = (
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/gray_perforated,
-/area/centcom/evac)
 "PZ" = (
 /turf/simulated/floor/tiled/steel/brown_platform,
 /area/centcom/evac)
@@ -8360,21 +8354,6 @@
 /obj/machinery/door/window/westleft,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
-"QJ" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/structure/table/rack/shelf,
-/obj/item/storage/pouch/medium_generic,
-/obj/item/storage/pouch/medium_generic,
-/obj/item/storage/pouch/medium_generic,
-/obj/item/storage/pouch/medium_generic,
-/obj/item/storage/pouch/medium_generic,
-/obj/item/storage/pouch/medium_generic,
-/obj/item/storage/pouch/medium_generic,
-/obj/item/storage/pouch/medium_generic,
-/obj/item/storage/pouch/medium_generic,
-/obj/item/storage/pouch/medium_generic,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/centcom/evac)
 "QK" = (
 /obj/structure/table/standard,
 /obj/random/material_resources,
@@ -8392,8 +8371,13 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/centcom/raider_base)
 "QL" = (
-/obj/machinery/vending/marshal_kit,
-/turf/simulated/floor/tiled/dark/gray_platform,
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -24
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "QN" = (
 /obj/structure/flora/pottedplant/orientaltree,
@@ -8448,26 +8432,74 @@
 /obj/structure/lattice,
 /turf/space,
 /area/space)
-"RP" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/glasses/powered/thermal,
-/obj/item/clothing/glasses/powered/thermal,
-/obj/item/clothing/glasses/powered/thermal{
-	pixel_y = -6
-	},
-/obj/item/clothing/glasses/powered/thermal{
-	pixel_y = 5
-	},
-/obj/item/clothing/glasses/powered/thermal{
-	pixel_y = 10
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/centcom/evac)
 "RU" = (
 /obj/machinery/teleport/hub,
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/panels,
 /area/centcom/raider_base)
+"Sa" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/table/rack/shelf,
+/obj/structure/window/reinforced,
+/obj/item/ammo_casing/rocket{
+	pixel_y = -7
+	},
+/obj/item/ammo_casing/rocket{
+	pixel_y = -7
+	},
+/obj/item/ammo_casing/rocket{
+	pixel_y = -7
+	},
+/obj/item/ammo_casing/rocket{
+	pixel_y = -7
+	},
+/obj/item/ammo_casing/rocket{
+	pixel_y = -7
+	},
+/obj/item/ammo_casing/rocket{
+	pixel_y = -7
+	},
+/obj/item/ammo_casing/rocket{
+	pixel_y = -1
+	},
+/obj/item/ammo_casing/rocket{
+	pixel_y = -4
+	},
+/obj/item/ammo_casing/rocket{
+	pixel_y = -10
+	},
+/obj/item/ammo_casing/rocket/emp{
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/rocket/emp{
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/rocket/emp{
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/rocket/emp{
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/rocket/emp{
+	pixel_y = 9
+	},
+/obj/item/ammo_casing/rocket/emp{
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/rocket/emp{
+	pixel_y = 5
+	},
+/obj/item/ammo_casing/rocket/emp{
+	pixel_y = 2
+	},
+/obj/machinery/door/window/westleft,
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/centcom/evac)
 "Sb" = (
 /obj/item/device/scanner/health,
 /obj/structure/table/woodentable,
@@ -8500,6 +8532,20 @@
 /obj/structure/table/rack/shelf,
 /obj/item/cell/small/moebius/nuclear,
 /turf/simulated/floor/tiled/dark/golden,
+/area/centcom/evac)
+"Sz" = (
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/glasses/powered/night{
+	pixel_y = 11
+	},
+/obj/item/clothing/glasses/powered/night{
+	pixel_y = 5
+	},
+/obj/item/clothing/glasses/powered/night,
+/obj/item/clothing/glasses/powered/night{
+	pixel_y = -7
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "SJ" = (
 /obj/machinery/light{
@@ -8574,6 +8620,12 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/carpet/gaycarpet,
 /area/centcom/raider_base)
+"Tv" = (
+/obj/machinery/newscaster{
+	pixel_y = 29
+	},
+/turf/simulated/floor/tiled/dark/cyancorner,
+/area/centcom/evac)
 "Tz" = (
 /obj/machinery/light/floor/built{
 	dir = 8
@@ -8584,8 +8636,18 @@
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/centcom/raider_base)
 "TB" = (
-/obj/effect/floor_decal/industrial/warningred,
-/turf/simulated/floor/tiled/dark/gray_perforated,
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/glasses/sechud/tactical,
+/obj/item/clothing/glasses/sechud/tactical{
+	pixel_y = -6
+	},
+/obj/item/clothing/glasses/sechud/tactical{
+	pixel_y = 6
+	},
+/obj/item/clothing/glasses/sechud/tactical{
+	pixel_y = 11
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "TC" = (
 /obj/machinery/vending/dinnerware,
@@ -8613,16 +8675,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/centcom/raider_base)
-"TT" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/structure/table/rack/shelf,
-/obj/item/storage/belt/security/tactical/marshalert,
-/obj/item/storage/belt/security/tactical/marshalert,
-/obj/item/storage/belt/security/tactical/marshalert,
-/obj/item/storage/belt/security/tactical/marshalert,
-/obj/item/storage/belt/security/tactical/marshalert,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/centcom/evac)
 "TW" = (
 /obj/structure/bed,
 /obj/item/bedsheet/orange,
@@ -8789,6 +8841,21 @@
 /obj/machinery/computer/arcade,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/centcom/raider_base)
+"Wv" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/table/rack/shelf,
+/obj/item/storage/pouch/medium_generic,
+/obj/item/storage/pouch/medium_generic,
+/obj/item/storage/pouch/medium_generic,
+/obj/item/storage/pouch/medium_generic,
+/obj/item/storage/pouch/medium_generic,
+/obj/item/storage/pouch/medium_generic,
+/obj/item/storage/pouch/medium_generic,
+/obj/item/storage/pouch/medium_generic,
+/obj/item/storage/pouch/medium_generic,
+/obj/item/storage/pouch/medium_generic,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/centcom/evac)
 "Wy" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/dark/golden,
@@ -8856,10 +8923,6 @@
 	pixel_y = 4
 	},
 /turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
-"Xf" = (
-/obj/machinery/vending/drip,
-/turf/simulated/floor/tiled/techmaint_perforated,
 /area/centcom/evac)
 "Xl" = (
 /obj/structure/table/woodentable,
@@ -8938,6 +9001,12 @@
 /obj/structure/flora/small/grassa1,
 /turf/simulated/floor/fixed/fgrass,
 /area/centcom/evac)
+"Yf" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/food/snacks/sandwich,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate,
+/turf/simulated/floor/tiled/cafe,
+/area/centcom/evac)
 "Yk" = (
 /obj/machinery/microwave,
 /obj/structure/table/reinforced,
@@ -8988,20 +9057,6 @@
 "Yw" = (
 /obj/machinery/vending/powermat,
 /turf/simulated/floor/tiled/dark/golden,
-/area/centcom/evac)
-"YB" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/glasses/sechud/tactical,
-/obj/item/clothing/glasses/sechud/tactical{
-	pixel_y = -6
-	},
-/obj/item/clothing/glasses/sechud/tactical{
-	pixel_y = 6
-	},
-/obj/item/clothing/glasses/sechud/tactical{
-	pixel_y = 11
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "YD" = (
 /obj/machinery/cryopod{
@@ -9110,29 +9165,10 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/agentoffice)
 "ZM" = (
-/obj/item/gun/flamethrower,
-/obj/item/gun/flamethrower{
-	pixel_y = 8
+/obj/item/contraband/poster/placed/generic/state_laws{
+	pixel_y = 32
 	},
-/obj/item/weldpack/canister/flamethrower{
-	pixel_y = -5;
-	pixel_x = -6
-	},
-/obj/item/weldpack/canister/flamethrower{
-	pixel_y = -5;
-	pixel_x = 8
-	},
-/obj/structure/table/rack/shelf,
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/warningred,
-/obj/structure/sign/warning/caution/small2{
-	dir = 4;
-	pixel_y = 17;
-	pixel_x = -32
-	},
-/turf/simulated/floor/tiled/dark/techfloor_grid,
+/turf/simulated/floor/carpet,
 /area/centcom/evac)
 "ZT" = (
 /obj/structure/table/steel,
@@ -19349,10 +19385,10 @@ KR
 KR
 KR
 ho
-pf
+Sz
 pi
 aD
-xM
+Pk
 Wz
 dn
 dn
@@ -19551,7 +19587,7 @@ ho
 ho
 ho
 ho
-RP
+pf
 aD
 aD
 tm
@@ -19753,11 +19789,11 @@ pU
 pU
 pU
 ho
-YB
+TB
 aD
 aD
 Ko
-sr
+EJ
 aD
 aD
 dn
@@ -20164,7 +20200,7 @@ dn
 dn
 aD
 aD
-Oj
+Fh
 ho
 ZK
 Br
@@ -20359,7 +20395,7 @@ aD
 aD
 aD
 ho
-QL
+tL
 dn
 VH
 NN
@@ -20370,7 +20406,7 @@ sh
 ho
 PJ
 BQ
-My
+tk
 sB
 ZU
 LE
@@ -20557,9 +20593,9 @@ qH
 KR
 ho
 ho
-QJ
-tk
-TT
+Wv
+Ic
+HZ
 ho
 ho
 Zy
@@ -20568,7 +20604,7 @@ vR
 De
 aD
 aD
-Pk
+pM
 ho
 ho
 ho
@@ -20773,10 +20809,10 @@ aD
 GR
 ho
 qs
-LJ
-Fh
-ZM
-EJ
+QL
+vI
+HN
+BS
 Ka
 ho
 cN
@@ -20974,12 +21010,12 @@ aD
 aD
 SM
 ho
-PY
+Oj
 aD
 aD
 aD
 aD
-PY
+Oj
 xD
 cN
 aD
@@ -21174,7 +21210,7 @@ cK
 Yd
 wJ
 aD
-TB
+ui
 VP
 dn
 aD
@@ -21379,11 +21415,11 @@ aD
 dn
 ho
 QI
-Ic
-Nk
-Dv
+Sa
+oV
+Px
 cK
-Pm
+sQ
 ho
 cN
 FM
@@ -23398,7 +23434,7 @@ xl
 aD
 dn
 ho
-Px
+ZM
 JF
 Ij
 SX
@@ -23797,7 +23833,7 @@ Bx
 Bx
 Bx
 OG
-Es
+sF
 aD
 aD
 dn
@@ -24414,7 +24450,7 @@ Py
 Py
 Py
 Py
-wm
+Ao
 FM
 FM
 FM
@@ -24610,7 +24646,7 @@ aD
 aD
 dn
 ho
-AW
+Tv
 Py
 Py
 Py
@@ -24619,7 +24655,7 @@ Py
 Py
 FM
 FM
-ui
+Yf
 wx
 UC
 UC
@@ -25615,7 +25651,7 @@ KR
 KR
 KR
 ho
-Xf
+sr
 aD
 aD
 dn
@@ -25817,7 +25853,7 @@ qH
 qH
 ab
 ho
-oV
+Es
 aD
 aD
 aD
