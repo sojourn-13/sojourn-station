@@ -272,7 +272,8 @@
 			if(prob(50))
 				damage = rand(4,8)
 				radiation -= 1 * RADIATION_SPEED_COEFFICIENT
-				to_chat(src, SPAN_WARNING("You suddenly have a metallic taste in your mouth..."))
+				if(prob(25)) //no need to give the message *Every* time
+					to_chat(src, SPAN_WARNING("You suddenly have a metallic taste in your mouth..."))
 			if(prob(10))
 				radiation -= 5 * RADIATION_SPEED_COEFFICIENT
 				to_chat(src, SPAN_WARNING("You feel weak."))
@@ -290,10 +291,12 @@
 		if (radiation > 75)
 			radiation -= 1 * RADIATION_SPEED_COEFFICIENT
 			damage = rand(4,12)
-			to_chat(src, SPAN_WARNING("Your gums begin to bleed and the taste of copper fills your mouth."))
+			if(prob(25))
+				to_chat(src, SPAN_WARNING("Your gums begin to bleed and the taste of copper fills your mouth."))
 			if(prob(20))
 				take_overall_damage(0,rand(3,5), used_weapon = "Radiation Burns")
-				to_chat(src, SPAN_WARNING("Your skin prickles and burns, it feels like you've been sat under a heatlamp."))
+				if(prob(25))
+					to_chat(src, SPAN_WARNING("Your skin prickles and burns, it feels like you've been sat under a heatlamp."))
 			if(prob(1))
 				to_chat(src, SPAN_WARNING("You feel strange!"))
 				var/obj/item/organ/external/E = pick(organs)
