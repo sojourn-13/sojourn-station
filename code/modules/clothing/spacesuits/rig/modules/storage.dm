@@ -8,7 +8,7 @@
 	price_tag = 100
 
 	var/obj/item/storage/internal/container = null
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_HUGE
 
 	//The default iconstate is actually really perfect for this, it looks like a reinforced box
 	//Duplicate specify it here incase it gets changed in the parent in future
