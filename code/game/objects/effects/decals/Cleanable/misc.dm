@@ -37,7 +37,7 @@
 	for(var/mob/living/carbon/l in range(4))
 		if(prob(25))
 			to_chat(src, SPAN_WARNING("The air begins to feel warm."))
-		l.apply_effect(1, IRRADIATE)
+		l.apply_effect(0.5, IRRADIATE) //we spit out THREE of these.
 
 /obj/effect/decal/cleanable/dirt
 	name = "dirt"

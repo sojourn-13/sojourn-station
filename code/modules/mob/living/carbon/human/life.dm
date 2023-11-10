@@ -263,7 +263,7 @@
 			if(prob(5))
 				radiation -= 5 * RADIATION_SPEED_COEFFICIENT
 				to_chat(src, SPAN_WARNING("You feel weak."))
-				take_overall_damage(0,rand(0,4), used_weapon = "Radiation Burns")
+				take_overall_damage(0,rand(0,2), used_weapon = "Radiation Burns")
 				Weaken(3)
 				if(!lying)
 					emote("collapse")
@@ -272,11 +272,12 @@
 			if(prob(50))
 				damage = rand(4,8)
 				radiation -= 1 * RADIATION_SPEED_COEFFICIENT
+				to_chat(src, SPAN_WARNING("You suddenly have a metallic taste in your mouth..."))
 			if(prob(10))
 				radiation -= 5 * RADIATION_SPEED_COEFFICIENT
 				to_chat(src, SPAN_WARNING("You feel weak."))
 				Weaken(3)
-				take_overall_damage(0,rand(4,8), used_weapon = "Radiation Burns")
+				take_overall_damage(0,rand(2,4), used_weapon = "Radiation Burns")
 				if(!lying)
 					emote("collapse")
 			if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT) && species.get_bodytype() == "Human") //apes go bald
@@ -289,8 +290,10 @@
 		if (radiation > 75)
 			radiation -= 1 * RADIATION_SPEED_COEFFICIENT
 			damage = rand(4,12)
+			to_chat(src, SPAN_WARNING("Your gums begin to bleed and the taste of copper fills your mouth."))
 			if(prob(20))
-				take_overall_damage(0,rand(6,10), used_weapon = "Radiation Burns")
+				take_overall_damage(0,rand(3,5), used_weapon = "Radiation Burns")
+				to_chat(src, SPAN_WARNING("Your skin prickles and burns, it feels like you've been sat under a heatlamp."))
 			if(prob(1))
 				to_chat(src, SPAN_WARNING("You feel strange!"))
 				var/obj/item/organ/external/E = pick(organs)
