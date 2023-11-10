@@ -230,7 +230,8 @@
 		/obj/item/photo,
 		/obj/item/spacecash,
 		/obj/item/coin,
-		/obj/item/device/toner
+		/obj/item/device/toner,
+		/obj/item/computer_hardware/hard_drive/portable/design
 		)
 
 /obj/item/gripper/research //A general usage gripper, used for toxins/robotics/xenobio/etc
@@ -311,7 +312,7 @@
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/clothing/mask/smokable/cigarette,
-		///obj/item/reagent_containers/cooking_container //PArt of cooking overhaul, not yet ported
+		///obj/item/reagent_containers/cooking_with_jane/cooking_container //currently not working with cooking with jane. Primary issue being grippers trying to put themselfs into cooking containers rather then picking them up.
 		)
 
 /obj/item/gripper/ammo //Used to boxes, ammo and shells

@@ -1006,6 +1006,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/device/synthesized_instrument/synthesizer(src)
+	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/stamp/chameleon(src)
 	src.emag += new /obj/item/pen/chameleon(src)
 	..(R)
@@ -1109,6 +1110,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
+	src.modules += new /obj/item/device/ore_sonar(src)
 	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
 
 	//Seller so quite and knowing the deal!
