@@ -1766,6 +1766,9 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/item/card/id/engie{
+	desc = "A card used to provide ID and determine access across the colony.This one looks a bit old....the access codes are likely no longer valid"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "auP" = (
@@ -7524,6 +7527,11 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
+"bHR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/acid,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "bHV" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "12,17"
@@ -33479,6 +33487,11 @@
 /obj/machinery/body_scanconsole,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/triage_blackshield)
+"hkl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/organ/internal/bone/groin,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "hko" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -68149,8 +68162,11 @@
 /obj/structure/bed/chair{
 	dir = 1
 	},
-/obj/landmark/corpse/engineer,
 /obj/effect/decal/cleanable/blood,
+/obj/item/clothing/head/hardhat{
+	pixel_y = 15
+	},
+/obj/item/organ/internal/bone/head,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "oAr" = (
@@ -106729,6 +106745,11 @@
 /obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
+"wzT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/organ/internal/bone/l_leg,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1south)
 "wzV" = (
 /obj/structure/disposaloutlet{
 	dir = 4
@@ -120957,9 +120978,9 @@ jsu
 qZC
 rSo
 jSl
-qZC
-qZC
-qZC
+bHR
+wzT
+oPm
 xpO
 eEL
 cZb
@@ -121161,7 +121182,7 @@ rSo
 auL
 oAo
 jsu
-qZC
+hkl
 kcl
 eEL
 cZb
