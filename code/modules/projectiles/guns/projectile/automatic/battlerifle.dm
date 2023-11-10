@@ -17,8 +17,8 @@
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_DIAMOND = 3)
 	price_tag = 1500
-	penetration_multiplier = 1.0
-	damage_multiplier = 1.0
+	penetration_multiplier = 1.1
+	damage_multiplier = 1.2
 	zoom_factors = list(0.4)
 	init_recoil = RIFLE_RECOIL(1.0)
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
@@ -30,7 +30,7 @@
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 
 	init_firemodes = list(
-	FULL_AUTO_200,
+	FULL_AUTO_300,
 	SEMI_AUTO_NODELAY
 	)
 	serial_type = "Sol Fed"
@@ -129,7 +129,6 @@
 	zoom_factors = list(0.4)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		FULL_AUTO_200,
 		BURST_3_ROUND
 		)
 	serial_type = "H&S"
