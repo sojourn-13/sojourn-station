@@ -363,6 +363,11 @@
 	desc = "A roll of treated canvas used for wrapping claws or paws."
 	icon_state = "leg-wrap2"
 
+/obj/item/clothing/shoes/bugsocks
+    name = "insect socks"
+    desc = "An extra durable set of extremely small and grippy socks. Usually used by the cht'mant to protect their oddly shaped nubs. Much more preferable to standard shoes if not very protective."
+    icon_state = "chtman_grippys"
+
 /*Winter Boots*/
 
 /obj/item/clothing/shoes/winter

@@ -87,7 +87,7 @@
 	init_recoil = HANDGUN_RECOIL(0.1)
 	zoom_factors = list(0.5)
 	silenced = TRUE
-	penetration_multiplier = 1 // Assuming the silencer turns bullets into subsonic ammo, it has less velocity and thus less penetration.
+	//penetration_multiplier = 1 // Assuming the silencer turns bullets into subsonic ammo, it has less velocity and thus less penetration. //bzzt, no. We got rid of suppressors reducing pen/damage. Leaving for postereity
 	price_tag = 1400
 	fire_sound_silenced = 'sound/weapons/guns/fire/vintorez.ogg'
 	serial_type = "Sol Fed"
