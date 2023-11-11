@@ -210,12 +210,6 @@
 	name = "plating"
 	},
 /area/space)
-"aP" = (
-/obj/structure/table/woodentable,
-/obj/item/device/camera_film,
-/obj/item/pack_card_carp,
-/turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
 "aQ" = (
 /obj/machinery/conveyor/east{
 	id = "QMLoad"
@@ -5541,11 +5535,6 @@
 /obj/machinery/vending/cola,
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
-"pA" = (
-/obj/structure/table/woodentable,
-/obj/item/oddity/common/book_omega/closed,
-/turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
 "pC" = (
 /obj/structure/railing{
 	dir = 4
@@ -5630,11 +5619,6 @@
 "qO" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/golden,
-/area/centcom/evac)
-"qS" = (
-/obj/structure/table/woodentable,
-/obj/item/tool/knife/ritual,
-/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "qY" = (
 /obj/machinery/light{
@@ -5973,12 +5957,6 @@
 	},
 /turf/simulated/floor/tiled/dark/panels,
 /area/centcom/raider_base)
-"vm" = (
-/obj/structure/table/woodentable,
-/obj/item/clothing/glasses/binoclard_lenses/dark,
-/obj/item/device/camera/crayon_mage,
-/turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
 "vB" = (
 /obj/structure/railing,
 /turf/simulated/floor/tiled/dark/golden,
@@ -6146,10 +6124,6 @@
 "yC" = (
 /obj/machinery/cooking_with_jane/oven,
 /turf/simulated/floor/tiled/cafe,
-/area/centcom/evac)
-"yL" = (
-/obj/item/flame/candle,
-/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "yN" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -6427,11 +6401,6 @@
 /obj/item/clothing/mask/gas/cha,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/centcom/merc_base)
-"CW" = (
-/obj/item/flame/candle,
-/obj/item/flame/candle,
-/turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
 "CX" = (
 /obj/item/modular_computer/console{
 	dir = 4
@@ -6909,10 +6878,6 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
-"Jx" = (
-/obj/effect/decal/cleanable/crayon,
-/turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
 "JG" = (
 /obj/machinery/biogenerator,
 /turf/simulated/floor/tiled/dark/cargo,
@@ -6923,10 +6888,6 @@
 /area/centcom/merc_base)
 "JL" = (
 /turf/simulated/wall/wood,
-/area/centcom/evac)
-"JN" = (
-/obj/item/storage/pouch/scroll,
-/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "JP" = (
 /obj/structure/flora/tree/jungle_small/variant5,
@@ -7041,12 +7002,6 @@
 /obj/item/organ/internal/bone/head,
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
-"LO" = (
-/obj/structure/table/woodentable,
-/obj/item/storage/fancy/crayons,
-/obj/item/soap/bluespase,
-/turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
 "Mb" = (
 /obj/structure/table/marble,
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
@@ -7125,10 +7080,6 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/centcom/merc_base)
-"Nf" = (
-/obj/structure/sink/basion/crayon,
-/turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
 "Np" = (
 /obj/structure/sign/departmentold/medical2,
 /turf/simulated/wall/r_wall,
@@ -7475,13 +7426,6 @@
 /obj/structure/flora/small/grassa5,
 /turf/simulated/floor/fixed/fgrass,
 /area/centcom/evac)
-"Rw" = (
-/obj/structure/table/woodentable,
-/obj/item/paper_bin{
-	pixel_y = 4
-	},
-/turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
 "Ry" = (
 /obj/structure/table/standard,
 /obj/random/booze,
@@ -7506,11 +7450,6 @@
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/panels,
 /area/centcom/raider_base)
-"Sb" = (
-/obj/item/device/scanner/health,
-/obj/structure/table/woodentable,
-/turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
 "Si" = (
 /obj/structure/catwalk,
 /turf/space,
@@ -7522,11 +7461,6 @@
 "Ss" = (
 /obj/machinery/door/airlock/multi_tile/glass,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/centcom/evac)
-"Sv" = (
-/obj/structure/bookcase,
-/obj/item/scroll,
-/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Sx" = (
 /obj/machinery/light/small,
@@ -7558,12 +7492,6 @@
 /obj/item/melee/toolbox_maul,
 /obj/structure/table/rack/shelf,
 /turf/simulated/floor/tiled/dark/golden,
-/area/centcom/evac)
-"SX" = (
-/obj/structure/table/woodentable,
-/obj/item/storage/fancy/candle_box,
-/obj/item/storage/fancy/candle_box,
-/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "SZ" = (
 /obj/structure/bed/chair/office/light,
@@ -7790,10 +7718,6 @@
 /obj/random/firstaid,
 /turf/simulated/floor/tiled/white/cargo,
 /area/centcom/raider_base)
-"WE" = (
-/obj/structure/bed/chair/wood,
-/turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
 "WF" = (
 /obj/structure/table/rack,
 /obj/item/storage/deferred/crate/tools,
@@ -19437,7 +19361,7 @@ xp
 ho
 ho
 ho
-TR
+ho
 ho
 ho
 ho
@@ -19637,12 +19561,12 @@ MJ
 aD
 GR
 ho
-qS
-pA
-MH
-MH
-Rw
-Sb
+KR
+KR
+KR
+KR
+KR
+KR
 ho
 EX
 FM
@@ -19839,12 +19763,12 @@ aD
 aD
 SM
 ho
-LO
-EJ
-MH
-MH
-WE
-vm
+KR
+qH
+qH
+qH
+qH
+KR
 xD
 sd
 FM
@@ -20041,12 +19965,12 @@ wJ
 aD
 SM
 ho
-SX
-MH
-MH
-MH
-MH
-aP
+KR
+qH
+qH
+qH
+qH
+KR
 ho
 EX
 FM
@@ -20243,12 +20167,12 @@ aD
 Es
 Oj
 ho
-JN
-MH
-MH
-MH
-MH
-Nf
+KR
+qH
+qH
+qH
+qH
+KR
 ho
 xg
 FM
@@ -20445,12 +20369,12 @@ ho
 ho
 ho
 ho
-yL
-yL
-MH
-MH
-MH
-Sv
+KR
+qH
+qH
+qH
+qH
+KR
 ho
 AU
 FM
@@ -20646,13 +20570,13 @@ KR
 KR
 KR
 KR
-ho
-yL
-Jx
-MH
-MH
-MH
-Sv
+KR
+KR
+qH
+qH
+qH
+qH
+KR
 ho
 CP
 FM
@@ -20847,14 +20771,14 @@ qH
 qH
 qH
 qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
 KR
-ho
-yL
-yL
-MH
-MH
-MH
-Sv
 ho
 xI
 FM
@@ -21049,14 +20973,14 @@ qH
 qH
 qH
 qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
 KR
-ho
-MH
-MH
-MH
-MH
-MH
-MH
 ho
 yl
 FM
@@ -21251,14 +21175,14 @@ qH
 qH
 qH
 qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
 KR
-ho
-MH
-MH
-MH
-MH
-MH
-MH
 ho
 yC
 FM
@@ -21453,14 +21377,14 @@ qH
 qH
 qH
 qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
 KR
-ho
-MH
-MH
-MH
-MH
-MH
-MH
 ho
 Ja
 FM
@@ -21655,14 +21579,14 @@ qH
 qH
 qH
 qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
 KR
-ho
-yL
-yL
-MH
-MH
-MH
-MH
 ho
 oK
 FM
@@ -21857,14 +21781,14 @@ qH
 qH
 qH
 qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
 KR
-ho
-CW
-Jx
-MH
-MH
-MH
-MH
 ho
 oT
 FM
@@ -22059,14 +21983,14 @@ qH
 qH
 qH
 qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
 KR
-ho
-yL
-yL
-MH
-MH
-MH
-MH
 ho
 oU
 FM
@@ -22261,14 +22185,14 @@ qH
 qH
 qH
 qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
 KR
-ho
-MH
-MH
-MH
-MH
-MH
-MH
 ho
 oS
 FM
@@ -22463,14 +22387,14 @@ qH
 qH
 qH
 qH
+qH
+qH
+qH
+qH
+qH
+qH
+qH
 KR
-ho
-ho
-ho
-ho
-ho
-ho
-ho
 ho
 FM
 FM
@@ -22665,13 +22589,13 @@ qH
 qH
 qH
 qH
-KR
-KR
-KR
-KR
-KR
-KR
-KR
+qH
+qH
+qH
+qH
+qH
+qH
+qH
 KR
 ho
 FM

@@ -35,8 +35,7 @@
 	/obj/item/paper,
 	/obj/item/paper_bundle,
 	/obj/item/photo,
-	/obj/item/paper/alchemy_recipes,
-	/obj/item/scroll
+	/obj/item/paper/alchemy_recipes
 	)
 	var/hex_code_for_ui_backround = "#C4A484"
 
