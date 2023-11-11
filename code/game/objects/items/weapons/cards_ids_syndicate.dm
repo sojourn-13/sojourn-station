@@ -8,7 +8,7 @@
 
 /obj/item/card/id/syndicate/New(mob/user as mob)
 	..()
-	access = syndicate_access.Copy()
+	access += syndicate_access.Copy()
 
 /obj/item/card/id/syndicate/Destroy()
 	unset_registered_user(registered_user)
