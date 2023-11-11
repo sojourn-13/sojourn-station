@@ -7527,11 +7527,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
-"bHR" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/acid,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/maintenance/undergroundfloor1south)
 "bHV" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "12,17"
@@ -120978,7 +120973,7 @@ jsu
 qZC
 rSo
 jSl
-bHR
+qZC
 wzT
 oPm
 xpO
