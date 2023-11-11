@@ -71,6 +71,7 @@
 	if(!proximity) return
 	if(istype(target,/turf/simulated/floor))
 		var/drawtype = input("Choose what you'd like to draw.", "Crayon scribbles") in list("graffiti","rune","letter","arrow")
+		var/link_to_rune = FALSE
 		switch(drawtype)
 			if("letter")
 				drawtype = input("Choose the letter.", "Crayon scribbles") in list("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
@@ -79,11 +80,15 @@
 				to_chat(user, "You start drawing graffiti on the [target.name].")
 			if("rune")
 				to_chat(user, "You start drawing a rune on the [target.name].")
+				link_to_rune = TRUE
 			if("arrow")
 				drawtype = input("Choose the arrow.", "Crayon scribbles") in list("left", "right", "up", "down")
 				to_chat(user, "You start drawing an arrow on the [target.name].")
 		if(instant || do_after(user, 50))
-			new /obj/effect/decal/cleanable/crayon(target,colour,shadeColour,drawtype)
+			//This looks bad do to needing to cross-reference 2 paths thare are related
+			var/obj/effect/decal/cleanable/crayon/drawing_to_spawn = new /obj/effect/decal/cleanable/crayon(target,colour,shadeColour,drawtype)
+			if(link_to_rune)
+				drawing_to_spawn.follow_crayon = src
 			to_chat(user, "You finish drawing.")
 			target.add_fingerprint(user)		// Adds their fingerprints to the floor the crayon is drawn on.
 			if(uses)
