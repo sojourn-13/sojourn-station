@@ -28792,11 +28792,11 @@
 /area/nadezhda/storage/primary)
 "ghr" = (
 /obj/structure/table/standard,
-/obj/item/storage/firstaid/surgery/combat,
-/obj/item/storage/firstaid/surgery/combat,
 /obj/machinery/camera/network/security{
 	dir = 4
 	},
+/obj/item/storage/firstaid/surgery,
+/obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/triage_blackshield)
 "ghs" = (
@@ -71508,8 +71508,6 @@
 	},
 /obj/item/roller,
 /obj/item/roller,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
 /obj/item/storage/freezer,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/triage_blackshield)
