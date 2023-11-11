@@ -6,7 +6,12 @@
 	anchored = TRUE
 	random_rotation = 0
 	sanity_damage = 4
+	var/obj/item/pen/crayon/follow_crayon
 	var/is_rune = FALSE
+
+/obj/effect/decal/cleanable/crayon/Destroy()
+	follow_crayon = null
+	..()
 
 // Mist rune, invoked by Scribe scrolls, doesn't allow laser beams to pass through it.
 /obj/effect/decal/cleanable/crayon/mist
@@ -321,6 +326,11 @@ obj/item/scroll/attackby(obj/item/I, mob/living/carbon/human/M)
 				to_chat(M, "<span class='info'>You try to do as the book describes but your frail body condition physically prevents you from even mumbling a single word out of its pages.</span>")
 				return
 			to_chat(M, "<span class='info'>The rune lights up in reaction to the book...</span>")
+			if(follow_crayon)
+				var/old_desc = "[I.desc]"
+				follow_crayon.desc = "[old_desc] The strange energies of this planet seem to have infused it with more signicance than before."
+				desc = "A rune drawn in empowered crayon wax."
+				follow_crayon = null
 			var/alchemist = FALSE
 			if(M.stats.getPerk(PERK_ALCHEMY))
 				alchemist = TRUE // We are an alchemist!
