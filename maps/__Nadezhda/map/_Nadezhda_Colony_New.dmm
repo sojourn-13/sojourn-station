@@ -1757,9 +1757,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "auL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/standard,
@@ -2181,7 +2179,8 @@
 "ayL" = (
 /obj/structure/catwalk,
 /obj/machinery/camera/network/gate{
-	dir = 10
+	dir = 10;
+	network = list("Nadzedha Wall Colony")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -2738,12 +2737,11 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "aEv" = (
 /obj/machinery/camera/network/gate{
-	dir = 8
+	dir = 8;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "aEw" = (
 /obj/effect/floor_decal/spline/wood,
 /obj/structure/disposalpipe/segment{
@@ -3087,6 +3085,9 @@
 /obj/machinery/door/airlock/mining{
 	name = "Prospector Prep";
 	req_access = list(78)
+	},
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
@@ -4293,12 +4294,11 @@
 	})
 "aYN" = (
 /obj/machinery/camera/network/gate{
-	dir = 10
+	dir = 10;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "aYO" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/wall/r_wall,
@@ -4643,9 +4643,7 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "bcd" = (
 /obj/structure/barricade,
 /obj/structure/boulder,
@@ -4684,9 +4682,7 @@
 /obj/structure/low_wall,
 /mob/living/simple_animal/jungle_bird,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "bcy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -4702,6 +4698,12 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating/under,
+/area/nadezhda/absolutism/storage)
+"bcI" = (
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/storage)
 "bcM" = (
 /obj/structure/invislight,
@@ -5053,11 +5055,11 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/machinery/camera/network/gate,
+/obj/machinery/camera/network/gate{
+	network = list("Nadzedha Wall Colony")
+	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "bge" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -6099,6 +6101,9 @@
 /obj/structure/invislight,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/circuitlab{
@@ -7325,12 +7330,11 @@
 "bFA" = (
 /obj/structure/flora/small/rock2,
 /obj/machinery/camera/network/gate{
-	dir = 10
+	dir = 10;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "bFG" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -7429,9 +7433,7 @@
 "bGt" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "bGx" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "1,7"
@@ -7733,9 +7735,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "bJu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -7762,9 +7762,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "bJO" = (
 /obj/machinery/atmospherics/pipe/simple/visible/universal,
 /obj/structure/railing{
@@ -8087,9 +8085,7 @@
 "bNm" = (
 /obj/machinery/porta_turret/gate,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "bNv" = (
 /obj/structure/table/marble,
 /obj/machinery/microwave,
@@ -9829,9 +9825,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "cir" = (
 /mob/living/simple_animal/crab,
 /turf/simulated/floor/asteroid/dirt,
@@ -10229,6 +10223,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "cmD" = (
@@ -10544,9 +10541,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "cqL" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
@@ -10625,9 +10620,7 @@
 "crH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "crI" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/beach/water/jungledeep{
@@ -10833,9 +10826,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "cuA" = (
 /obj/structure/closet/wall_mounted/emcloset/escape_pods{
 	pixel_y = 32
@@ -11405,9 +11396,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "cBA" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/box/bodybags{
@@ -11465,9 +11454,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "cBN" = (
 /turf/simulated/floor/wood,
 /area/nadezhda/crew_quarters/dorm1)
@@ -11586,6 +11573,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/circuitlab{
 	name = "Science Expedition prep"
@@ -11834,9 +11824,7 @@
 /obj/effect/floor_decal/industrial/road/warning2,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "cFB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/mecha_wreckage/ripley{
@@ -12782,9 +12770,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "cPl" = (
 /obj/random/closet_tech/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -13408,6 +13394,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 2;
+	icon_state = "shutter0";
+	id = "marshals_shutters";
+	name = "Lockdown Shutters";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/sechall)
 "cWe" = (
@@ -13423,9 +13417,7 @@
 "cWf" = (
 /obj/random/junk/low_chance,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "cWh" = (
 /obj/structure/closet/wall_mounted/emcloset{
 	pixel_x = 32
@@ -13676,9 +13668,7 @@
 	},
 /obj/effect/floor_decal/industrial/box/white/corners,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "cYh" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -14539,9 +14529,7 @@
 "dis" = (
 /obj/structure/low_wall,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "diB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -15352,9 +15340,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "dsj" = (
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "dsn" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -17929,9 +17915,7 @@
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "dTD" = (
 /obj/machinery/door/airlock/external{
 	name = "Terminal Lounge"
@@ -18685,9 +18669,7 @@
 	name = "WARNING: ELECTRIC FENCE"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "ebN" = (
 /obj/structure/closet/secure_closet/xenoarchaeologist,
 /obj/structure/window/reinforced{
@@ -18993,9 +18975,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "efm" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
@@ -19057,6 +19037,19 @@
 	},
 /turf/simulated/shuttle/floor/science,
 /area/shuttle/vasiliy_shuttle_area)
+"efS" = (
+/obj/machinery/door/airlock/glass_research{
+	name = "Expedition prep";
+	req_access = list(5)
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/rnd/circuitlab{
+	name = "Science Expedition prep"
+	})
 "efV" = (
 /obj/structure/sink{
 	dir = 8;
@@ -19265,9 +19258,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "eid" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
 /turf/simulated/floor/wood/wild1,
@@ -19510,9 +19501,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "elH" = (
 /obj/structure/table/rack,
 /obj/random/pack/rare/low_chance,
@@ -21032,9 +21021,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "eAp" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -21636,9 +21623,7 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "eIG" = (
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "eIH" = (
 /obj/machinery/shower{
 	dir = 4
@@ -22500,6 +22485,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
@@ -23887,6 +23875,14 @@
 	},
 /turf/simulated/floor/asteroid,
 /area/nadezhda/rnd/xenobiology/ameridian)
+"fge" = (
+/obj/structure/catwalk,
+/obj/structure/invislight,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/inside_colony)
 "fgi" = (
 /obj/structure/scrap/medical/large,
 /obj/effect/decal/cleanable/rubble,
@@ -24250,11 +24246,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/network/gate,
+/obj/machinery/camera/network/gate{
+	network = list("Nadzedha Wall Colony")
+	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "fjo" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -24387,9 +24383,7 @@
 	name = "perimeter fence"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "fkx" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/big/rocks1,
@@ -24480,9 +24474,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "flH" = (
 /turf/simulated/floor/wood,
 /area/nadezhda/security/barracks)
@@ -24674,9 +24666,7 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "fnd" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -25530,11 +25520,11 @@
 /area/nadezhda/security/armoryshop)
 "fwG" = (
 /obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/armory)
 "fwN" = (
@@ -25656,9 +25646,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/machinery/microwave,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "fyw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -26348,9 +26336,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "fFO" = (
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/inside_colony)
@@ -26756,6 +26742,14 @@
 /obj/machinery/door/firedoor/multi_tile,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 2;
+	icon_state = "shutter0";
+	id = "marshals_shutters";
+	name = "Lockdown Shutters";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/sechall)
 "fKS" = (
@@ -27028,9 +27022,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "fOl" = (
 /obj/structure/ore_box,
 /obj/effect/decal/cleanable/dirt,
@@ -27197,6 +27189,9 @@
 /area/nadezhda/crew_quarters/podrooms2)
 "fQS" = (
 /obj/structure/invislight,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/inside_colony)
 "fQV" = (
@@ -27477,9 +27472,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "fUe" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -27824,6 +27817,9 @@
 /area/shuttle/vasiliy_shuttle_area)
 "fYE" = (
 /obj/structure/invislight,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/outside/inside_colony)
 "fYH" = (
@@ -28143,7 +28139,9 @@
 	pixel_y = 32;
 	req_access = list(69)
 	},
-/obj/machinery/camera/motion,
+/obj/machinery/camera/motion{
+	network = list("Security")
+	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/security/armory)
 "gbZ" = (
@@ -28874,9 +28872,7 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "giu" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
@@ -29085,11 +29081,11 @@
 /area/nadezhda/engineering/workshop)
 "gkJ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/obj/machinery/camera/network/gate,
+/obj/machinery/camera/network/gate{
+	network = list("Nadzedha Wall Colony")
+	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "gkM" = (
 /obj/structure/table/woodentable,
 /obj/random/toy/plushie_onlycat,
@@ -29247,6 +29243,9 @@
 "gmI" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/hallway/surface/section1)
 "gmJ" = (
@@ -29603,9 +29602,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "gqf" = (
 /turf/simulated/wall,
 /area/nadezhda/rnd/docking)
@@ -29872,9 +29869,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "gta" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -30503,12 +30498,11 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "gAa" = (
 /obj/machinery/camera/network/gate{
-	dir = 10
+	dir = 10;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "gAf" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/simulated/floor/wood/wild5,
@@ -30758,9 +30752,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "gDT" = (
 /obj/machinery/light{
 	dir = 4
@@ -31775,9 +31767,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "gQS" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -31959,9 +31949,7 @@
 	name = "WARNING: ELECTRIC FENCE"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "gSV" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -32046,9 +32034,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "gTE" = (
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/tiled/cafe,
@@ -32139,9 +32125,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "gUw" = (
 /obj/structure/railing{
 	dir = 1;
@@ -32453,9 +32437,7 @@
 /area/nadezhda/security/tactical_blackshield)
 "gXV" = (
 /turf/simulated/mineral,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "gYm" = (
 /obj/structure/table/rack/shelf,
 /obj/random/common_oddities/low_chance,
@@ -32507,6 +32489,9 @@
 	req_access = list(78)
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "gYW" = (
@@ -33688,9 +33673,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "hmr" = (
 /obj/structure/railing/grey{
 	dir = 8
@@ -34443,9 +34426,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "hvF" = (
 /obj/structure/railing{
 	dir = 4
@@ -34718,9 +34699,7 @@
 "hys" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "hyt" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "13,9"
@@ -34848,9 +34827,7 @@
 /obj/effect/floor_decal/industrial/road/curvebig4,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "hzI" = (
 /obj/structure/railing{
 	dir = 4;
@@ -35215,9 +35192,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "hDd" = (
 /obj/structure/flora/small/rock3,
 /obj/structure/flora/big/rocks3,
@@ -36598,9 +36573,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "hSF" = (
 /obj/effect/floor_decal/industrial/stand_clear/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -36882,9 +36855,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "hVm" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating/under,
@@ -37059,9 +37030,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "hWW" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -37524,9 +37493,7 @@
 	},
 /obj/item/bedsheet/orange,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "iaF" = (
 /mob/living/simple_animal/hostile/jelly/bloat,
 /turf/simulated/floor/asteroid/dirt/flood,
@@ -38424,12 +38391,11 @@
 /area/nadezhda/engineering/engine_waste)
 "iko" = (
 /obj/machinery/camera/network/gate{
-	dir = 4
+	dir = 4;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "ikp" = (
 /obj/structure/flora/big/bush3,
 /obj/random/mob/render/low_chance,
@@ -38477,9 +38443,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "ikT" = (
 /obj/machinery/atmospherics/pipe/tank/air,
 /turf/simulated/shuttle/floor/science{
@@ -38777,9 +38741,7 @@
 "inu" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "iny" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushb1,
@@ -38825,9 +38787,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "inU" = (
 /obj/structure/catwalk,
 /obj/structure/railing{
@@ -39317,13 +39277,12 @@
 "itD" = (
 /obj/effect/floor_decal/industrial/hatch,
 /obj/machinery/camera/network/gate{
-	dir = 8
+	dir = 8;
+	network = list("Nadzedha Wall Colony")
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "itG" = (
 /obj/effect/floor_decal/industrial/road,
 /obj/effect/floor_decal/industrial/loading{
@@ -39352,9 +39311,7 @@
 "itU" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "iud" = (
 /obj/structure/bookcase,
 /obj/item/book/manual/fiction/warandpeace,
@@ -39561,9 +39518,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "iwq" = (
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,11"
@@ -39616,9 +39571,7 @@
 "iwT" = (
 /obj/machinery/porta_turret/gate,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "iwU" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -41696,9 +41649,7 @@
 "iVo" = (
 /obj/structure/multiz/stairs/enter,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "iVq" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
@@ -42008,9 +41959,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "iZo" = (
 /obj/machinery/computer/mecha,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -42177,9 +42126,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "jbd" = (
 /obj/structure/table/rack/shelf,
 /obj/effect/spider/stickyweb,
@@ -42333,6 +42280,9 @@
 /obj/structure/invislight,
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
@@ -42585,9 +42535,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "jfm" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -42781,9 +42729,7 @@
 "jhC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "jhG" = (
 /obj/machinery/door/airlock{
 	name = "Bathroom"
@@ -42831,9 +42777,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "jhO" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/box/explosive{
@@ -43205,9 +43149,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/structure/railing,
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "jlX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -43256,9 +43198,7 @@
 	},
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "jmo" = (
 /obj/structure/table/rack,
 /obj/item/circuitboard/robotics{
@@ -43796,9 +43736,7 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "jrD" = (
 /obj/machinery/suit_storage_unit/standard_unit,
 /turf/simulated/floor/tiled/steel/gray_perforated,
@@ -44947,6 +44885,9 @@
 "jEX" = (
 /obj/structure/catwalk,
 /obj/structure/invislight,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "jEY" = (
@@ -45187,9 +45128,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "jHE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -45937,9 +45876,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "jPr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -46673,9 +46610,7 @@
 /obj/effect/floor_decal/industrial/box/white/corners,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "jYa" = (
 /obj/structure/flora/small/grassb5,
 /turf/simulated/floor/asteroid/dirt,
@@ -47167,12 +47102,12 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/obj/machinery/camera/network/gate,
+/obj/machinery/camera/network/gate{
+	network = list("Nadzedha Wall Colony")
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "kdD" = (
 /obj/effect/window_lwall_spawn/smartspawn/church,
 /obj/machinery/door/blast/regular/open{
@@ -47671,9 +47606,7 @@
 "kii" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "kim" = (
 /obj/machinery/door/unpowered/simple/wood/saloon{
 	name = "Campground"
@@ -48039,9 +47972,7 @@
 /area/nadezhda/pros/shuttle)
 "kmE" = (
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "kmM" = (
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/dirt,
@@ -48078,9 +48009,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "kni" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/random/flora/jungle_tree,
@@ -48513,9 +48442,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "krL" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -48822,9 +48749,7 @@
 /area/nadezhda/security/armory)
 "kvg" = (
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "kvh" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -49482,9 +49407,7 @@
 "kCh" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "kCn" = (
 /obj/machinery/conveyor/east{
 	dir = 2;
@@ -49921,9 +49844,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "kGR" = (
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/rock,
@@ -51231,9 +51152,7 @@
 "kXG" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "kXH" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
@@ -52430,9 +52349,7 @@
 "lnW" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "lnX" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/grassb4,
@@ -52540,9 +52457,7 @@
 	tag = "icon-railing0 (WEST)"
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "lpb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -53977,9 +53892,7 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "lFQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -54658,9 +54571,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "lNk" = (
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "lNo" = (
 /obj/structure/showcase/sign2{
 	density = 0;
@@ -54668,9 +54579,7 @@
 	name = "WARNING: ELECTRIC FENCE"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "lNB" = (
 /obj/effect/floor_decal/industrial/inputgate,
 /turf/simulated/floor/fixed/hydrotile,
@@ -54886,9 +54795,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "lPQ" = (
 /obj/structure/closet/wall_mounted{
 	pixel_x = -32
@@ -55338,7 +55245,8 @@
 /area/nadezhda/hallway/side/f2section1)
 "lUn" = (
 /obj/machinery/camera/network/gate{
-	dir = 10
+	dir = 10;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/outside/inside_colony)
@@ -55892,9 +55800,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "maJ" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/box/donkpockets,
@@ -55911,9 +55817,7 @@
 /obj/item/modular_computer/console/preset/security/camera,
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "maQ" = (
 /obj/item/modular_computer/console/preset/security/records,
 /obj/structure/extinguisher_cabinet{
@@ -56294,9 +56198,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "mfj" = (
 /obj/structure/closet/random_milsupply,
 /obj/random/contraband,
@@ -58894,9 +58796,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "mGO" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
@@ -59156,9 +59056,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "mJq" = (
 /obj/machinery/door/airlock/vault{
 	locked = 1;
@@ -59235,12 +59133,11 @@
 /area/nadezhda/engineering/atmos)
 "mKM" = (
 /obj/machinery/camera/network/gate{
-	dir = 10
+	dir = 10;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "mKQ" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1;
@@ -59779,9 +59676,7 @@
 "mPR" = (
 /obj/structure/flora/big/rocks3,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "mPT" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/effect/decal/cleanable/dirt,
@@ -60487,9 +60382,7 @@
 "mYG" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "mYI" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/big/bush2,
@@ -60609,9 +60502,7 @@
 "mZt" = (
 /obj/structure/flora/small/trailrocka1,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "mZu" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -61580,9 +61471,7 @@
 /obj/effect/floor_decal/industrial/hatch,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "njI" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/plating,
@@ -62480,9 +62369,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "ntm" = (
 /obj/machinery/computer/robotics,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
@@ -62859,9 +62746,7 @@
 	name = "perimeter fence"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "nxp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/shuttle/floor/science{
@@ -62983,9 +62868,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "nyz" = (
 /obj/effect/decal/cleanable/filth,
 /obj/random/scrap/sparse_even,
@@ -63524,9 +63407,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "nDv" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/engineering/foyer)
@@ -64958,9 +64839,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "nSN" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -65039,9 +64918,7 @@
 	},
 /obj/structure/railing,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "nTw" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -65509,9 +65386,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "nYf" = (
 /obj/structure/table/steel,
 /obj/random/knife/low_chance,
@@ -65626,9 +65501,7 @@
 /area/nadezhda/outside/forest)
 "nZe" = (
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "nZl" = (
 /obj/random/junk/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -67015,9 +66888,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "ony" = (
 /obj/random/closet/low_chance,
 /obj/effect/decal/cleanable/rubble,
@@ -67796,9 +67667,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "ovS" = (
 /obj/structure/multiz/stairs/enter/bottom,
 /obj/structure/railing{
@@ -68018,9 +67887,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "oyD" = (
 /obj/machinery/floor_light,
 /obj/structure/window/reinforced{
@@ -68380,9 +68247,7 @@
 	name = "perimeter fence"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "oCf" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -68668,9 +68533,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "oFL" = (
 /obj/effect/floor_decal/industrial/arrows{
 	dir = 4
@@ -68711,9 +68574,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "oGm" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -68923,9 +68784,7 @@
 /obj/random/flora/small_jungle_tree,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "oIK" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atm{
@@ -69005,9 +68864,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "oJu" = (
 /obj/effect/floor_decal/steeldecal/steel_decals10,
 /obj/structure/noticeboard/research{
@@ -69294,12 +69151,11 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/network/gate{
-	dir = 4
+	dir = 4;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "oLI" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -69937,9 +69793,7 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "oTe" = (
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/maintenance/undergroundfloor1west)
@@ -70659,6 +70513,9 @@
 /obj/machinery/door/unpowered/simple/wood/saloon{
 	name = "Crematorium"
 	},
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/crematorium)
 "paI" = (
@@ -71004,9 +70861,7 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "peQ" = (
 /obj/machinery/door/airlock{
 	name = "Unisex Restrooms"
@@ -71083,9 +70938,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "pfU" = (
 /obj/effect/floor_decal/industrial/loading/white{
 	dir = 1
@@ -71170,9 +71023,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "pgw" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -71560,9 +71411,7 @@
 /obj/effect/floor_decal/industrial/outline,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "pkC" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 1
@@ -72085,9 +71934,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "pre" = (
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/maintenance{
@@ -72572,9 +72419,7 @@
 "pvU" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "pvV" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -73097,9 +72942,7 @@
 "pBO" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "pBR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/wall,
@@ -73564,9 +73407,7 @@
 /area/nadezhda/pros/shuttle)
 "pHc" = (
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "pHl" = (
 /obj/machinery/camera/network/security{
 	dir = 1
@@ -73700,9 +73541,7 @@
 "pIH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "pJd" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -74024,9 +73863,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "pMb" = (
 /obj/machinery/door/firedoor/multi_tile{
 	dir = 1
@@ -74492,9 +74329,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "pQe" = (
 /obj/structure/flora/small/grassb4,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -75750,9 +75585,7 @@
 "qdc" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "qdj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -75855,9 +75688,7 @@
 /obj/effect/floor_decal/industrial/road/warning4,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "qeo" = (
 /obj/structure/table/woodentable,
 /obj/machinery/keycard_auth,
@@ -76202,9 +76033,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "qiP" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/bushb2,
@@ -76894,9 +76723,7 @@
 "qpO" = (
 /obj/structure/flora/pottedplant/water_root,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "qpR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -77934,9 +77761,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "qBg" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/xenobiology/xenoflora)
@@ -78561,9 +78386,7 @@
 	req_access = list(1)
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "qHj" = (
 /obj/machinery/disease2/isolator,
 /obj/structure/reagent_dispensers/virusfood{
@@ -78685,9 +78508,7 @@
 /obj/item/storage/box/donkpockets,
 /obj/item/storage/box/donkpockets,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "qIj" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -78699,9 +78520,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "qIk" = (
 /obj/structure/bookcase{
 	name = "bookcase (Reports)"
@@ -78815,9 +78634,7 @@
 /obj/machinery/body_scanconsole,
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "qJT" = (
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/warningred{
@@ -79360,9 +79177,7 @@
 /obj/structure/bed/chair,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "qQV" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/floor_decal/industrial/box/white,
@@ -79775,9 +79590,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "qWh" = (
 /obj/machinery/atmospherics/binary/pump/high_power/on{
 	dir = 8;
@@ -81661,9 +81474,7 @@
 /obj/machinery/door/window/northleft,
 /obj/machinery/door/window/eastright,
 /turf/simulated/floor/tiled/techmaint_perforated,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "rrl" = (
 /obj/structure/flora/big/bush3,
 /turf/simulated/mineral,
@@ -81714,9 +81525,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "rrT" = (
 /obj/structure/sink/kitchen{
 	dir = 4;
@@ -82540,9 +82349,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "rBi" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -82572,9 +82379,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "rBD" = (
 /obj/structure/table/glass,
 /obj/item/storage/firstaid/toxin,
@@ -83455,6 +83260,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/hallway/surface/section1)
 "rLW" = (
@@ -83534,9 +83342,7 @@
 /obj/structure/low_wall,
 /mob/living/simple_animal/jungle_bird,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "rMJ" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
@@ -84175,9 +83981,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "rUE" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
@@ -84742,11 +84546,11 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "rZN" = (
-/obj/machinery/camera/network/gate,
+/obj/machinery/camera/network/gate{
+	network = list("Nadzedha Wall Colony")
+	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "rZO" = (
 /obj/effect/floor_decal/industrial/danger,
 /obj/effect/floor_decal/industrial/danger{
@@ -84814,11 +84618,11 @@
 /area/nadezhda/quartermaster/disposaldrop)
 "sat" = (
 /obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
-	id = "Armoury";
+	id = "Armory";
 	name = "Armory Shop"
 	},
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory)
 "sax" = (
@@ -85656,9 +85460,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "sjG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -86049,9 +85851,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "snY" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -86132,9 +85932,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "soO" = (
 /obj/machinery/light/floor,
 /turf/simulated/floor/reinforced,
@@ -86270,9 +86068,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "sqi" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/big/bush1,
@@ -86748,9 +86544,7 @@
 /obj/item/device/camera,
 /obj/item/device/binoculars,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "suy" = (
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/maintenance/undergroundfloor1north)
@@ -87299,9 +87093,7 @@
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "szM" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized{
 	id = "surgery"
@@ -88094,6 +87886,15 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
+"sIV" = (
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/machinery/camera/network/colony_surface{
+	dir = 8;
+	network = list("Nadzedha Wall Colony")
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/rock/manmade/road,
+/area/nadezhda/outside/inside_colony)
 "sJf" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -88922,7 +88723,9 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "sSx" = (
-/obj/machinery/camera/network/gate,
+/obj/machinery/camera/network/gate{
+	network = list("Nadzedha Wall Colony")
+	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest)
 "sSB" = (
@@ -89701,9 +89504,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "tbc" = (
 /obj/effect/decal/cleanable/solid_biomass,
 /obj/effect/floor_decal/spline/plain{
@@ -90043,6 +89844,14 @@
 /area/nadezhda/security{
 	name = "Security Training"
 	})
+"tfl" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/hallway/surface/section1)
 "tfm" = (
 /turf/simulated/wall/church,
 /area/nadezhda/command/crematorium)
@@ -90404,9 +90213,7 @@
 "tjB" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "tjF" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -91588,9 +91395,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "txl" = (
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 1
@@ -91623,9 +91428,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "txD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -93351,9 +93154,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "tPc" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -93498,9 +93299,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "tPS" = (
 /obj/structure/catwalk,
 /obj/structure/filingcabinet/filingcabinet,
@@ -93667,9 +93466,7 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/machinery/porta_turret/gate,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "tRJ" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 1;
@@ -93726,9 +93523,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "tSH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/conveyor_switch{
@@ -95483,9 +95278,7 @@
 "ukf" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "uki" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -95673,9 +95466,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "ulO" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -95852,9 +95643,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "uny" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -95957,9 +95746,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "uoE" = (
 /obj/structure/flora/small/trailrockb5,
 /turf/simulated/mineral,
@@ -97566,9 +97353,7 @@
 	name = "WARNING: ELECTRIC FENCE"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "uIn" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -97957,9 +97742,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "uLP" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/mineral,
@@ -98265,9 +98048,7 @@
 /obj/random/junkfood/low_chance,
 /obj/item/device/camera_film,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "uOd" = (
 /obj/machinery/atmospherics/pipe/manifold4w/visible/red,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -98685,9 +98466,7 @@
 	dir = 3
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "uRZ" = (
 /obj/effect/decal/cleanable/blood/oil,
 /obj/structure/cable/green{
@@ -99746,9 +99525,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "vdu" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8
@@ -100043,9 +99820,7 @@
 	},
 /obj/machinery/camera/network/gate,
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "vhj" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -100339,9 +100114,7 @@
 /obj/machinery/bodyscanner,
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "vju" = (
 /obj/structure/table/bench/wooden,
 /obj/item/contraband/poster/placed/generic/no_erp{
@@ -100656,9 +100429,7 @@
 /obj/structure/catwalk,
 /obj/structure/railing,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "vmA" = (
 /obj/structure/table/standard{
 	name = "plastic table frame"
@@ -100787,9 +100558,7 @@
 	},
 /obj/structure/toilet,
 /turf/simulated/floor/tiled/techmaint_panels,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "vof" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
@@ -100814,9 +100583,7 @@
 /obj/structure/catwalk,
 /obj/structure/railing,
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "voq" = (
 /obj/item/modular_computer/console/preset/engineering{
 	dir = 8
@@ -101420,6 +101187,14 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 4;
+	icon_state = "shutter0";
+	id = "marshals_shutters";
+	name = "Lockdown Shutters";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/sechall)
 "vvv" = (
@@ -102189,9 +101964,7 @@
 "vEp" = (
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "vEr" = (
 /obj/machinery/atmospherics/unary/vent_pump,
 /obj/effect/decal/cleanable/dirt,
@@ -102614,9 +102387,7 @@
 /obj/effect/floor_decal/industrial/road/curvebig3,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "vJq" = (
 /obj/effect/floor_decal/industrial/warningwhite{
 	dir = 4
@@ -103356,9 +103127,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "vRi" = (
 /obj/machinery/door/airlock/multi_tile/metal,
 /obj/effect/floor_decal/industrial/stand_clear/red,
@@ -104172,9 +103941,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "vYA" = (
 /obj/structure/flora/small/lavarock2,
 /turf/simulated/floor/beach/sand,
@@ -104188,9 +103955,7 @@
 	})
 "vYD" = (
 /turf/unsimulated/mineral,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "vYG" = (
 /obj/structure/bed/chair/custom/bar_special{
 	dir = 4
@@ -104420,9 +104185,7 @@
 	pixel_y = 2
 	},
 /turf/simulated/floor/tiled/techmaint_panels,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "wbl" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
@@ -104841,9 +104604,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "wfQ" = (
 /obj/structure/cable/ender{
 	id = "mountain to engineering";
@@ -105189,9 +104950,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "wjT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -105376,9 +105135,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "wlx" = (
 /obj/machinery/power/port_gen/pacman/camp,
 /turf/simulated/floor/plating/under,
@@ -106380,9 +106137,7 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "wvt" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -106398,9 +106153,7 @@
 "wvy" = (
 /obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "wvz" = (
 /obj/machinery/door/airlock/multi_tile/metal{
 	dir = 2;
@@ -106970,9 +106723,7 @@
 "wCk" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "wCl" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
@@ -108891,9 +108642,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "wYA" = (
 /obj/structure/table/reinforced,
 /obj/item/device/radio,
@@ -109180,9 +108929,7 @@
 /obj/effect/floor_decal/industrial/hatch,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "xbW" = (
 /turf/simulated/floor/wood,
 /area/nadezhda/command/gmaster)
@@ -109253,6 +109000,11 @@
 	id = "ProspShop"
 	},
 /obj/machinery/door/firedoor,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor/northright{
+	req_access = list(78)
+	},
+/obj/machinery/door/window/southright,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/pros/prep)
 "xdV" = (
@@ -109568,9 +109320,7 @@
 	name = "WARNING: ELECTRIC FENCE"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "xgZ" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
@@ -110426,6 +110176,14 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 4;
+	icon_state = "shutter0";
+	id = "marshals_shutters";
+	name = "Lockdown Shutters";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/sechall)
 "xqT" = (
@@ -111326,13 +111084,11 @@
 	},
 /obj/machinery/door/airlock/glass_security{
 	name = "Security Post";
-	req_access = list(1)
+	req_access = "1"
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "xAd" = (
 /obj/structure/grille,
 /obj/structure/railing,
@@ -111416,9 +111172,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "xBd" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
@@ -111505,9 +111259,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "xBx" = (
 /obj/item/pen{
 	pixel_x = -1;
@@ -111658,9 +111410,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "xCG" = (
 /obj/structure/table/glass,
 /obj/random/junkfood,
@@ -112194,9 +111944,7 @@
 "xIG" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "xIL" = (
 /obj/structure/salvageable/computer,
 /obj/structure/table/steel,
@@ -112926,6 +112674,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/blast/regular/open{
+	id = "Colony Lockdown"
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/circuitlab{
 	name = "Science Expedition prep"
@@ -113123,9 +112874,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "xSr" = (
 /obj/structure/bed/chair/comfy/teal{
 	dir = 4
@@ -113347,9 +113096,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "xVk" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
@@ -114637,9 +114384,7 @@
 "ykl" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "ykv" = (
 /obj/structure/catwalk,
 /obj/structure/railing{
@@ -114740,9 +114485,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
-	name = "\improper Outdoors - Pad"
-	})
+/area/nadezhda/security/maingate)
 "ylO" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/small/lavarock1,
@@ -209564,7 +209307,7 @@ hOa
 fAN
 fAN
 fAN
-nyv
+efS
 brC
 hJm
 mEU
@@ -215868,7 +215611,7 @@ vGK
 vGK
 vGK
 vGK
-vlm
+sIV
 vGK
 hzA
 uLL
@@ -220261,7 +220004,7 @@ sle
 cMF
 kcQ
 dfI
-gtV
+tfl
 dsr
 kvx
 kvx
@@ -220463,7 +220206,7 @@ sle
 cMF
 kcQ
 dfI
-gtV
+tfl
 dsr
 kvx
 uit
@@ -220665,7 +220408,7 @@ mBc
 thy
 kcQ
 dfI
-gtV
+tfl
 dsr
 kvx
 uit
@@ -220867,7 +220610,7 @@ hZz
 dfI
 kcQ
 dfI
-gtV
+tfl
 dsr
 kvx
 kvx
@@ -222698,7 +222441,7 @@ xQA
 sgo
 byG
 aBx
-vSu
+fge
 jct
 yjc
 wZK
@@ -227155,7 +226898,7 @@ ksM
 swN
 qtq
 dIT
-kYj
+bcI
 tiz
 nEt
 mfN
@@ -227357,7 +227100,7 @@ swN
 swN
 buO
 chX
-kYj
+bcI
 tiz
 nEt
 mfN
