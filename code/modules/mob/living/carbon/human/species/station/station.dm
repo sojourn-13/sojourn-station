@@ -726,6 +726,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/vital/brain,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/prosthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -776,7 +777,8 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/vital/brain,
-		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
+		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/prosthetic
 		)
 
 	heat_discomfort_strings = list(
@@ -835,6 +837,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/prosthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -898,6 +901,7 @@
 	has_process = list(    // which required-process checks are conducted and defalut organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/prosthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -958,6 +962,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/prosthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
@@ -1019,6 +1024,7 @@
 	has_process = list(    // which required-process checks are conducted and default organs for them.
 		OP_CELL = /obj/item/organ/internal/cell,
 		BP_BRAIN = /obj/item/organ/internal/vital/brain/synthetic,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/prosthetic,
 		OP_EYES = /obj/item/organ/internal/eyes/prosthetic/fbp
 		)
 
