@@ -149,7 +149,7 @@
 	icon_state = "agentbadge"
 	badge_string = "Special Agent"
 
-/obj/item/clothing/accessory/badge/marshal
+/obj/item/clothing/accessory/badge/militiaagent
 	name = "blackshield specialist's badge"
 	desc = "A leather-backed gold badge displaying the crest of the Brigadier and Provost Marshal, signifying the wearer as an agent of both, carrying the full authority over both organizations."
 	icon_state = "agentbadge"
