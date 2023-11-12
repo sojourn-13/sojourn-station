@@ -235,6 +235,9 @@
 	if(in_stasis)
 		return
 
+	if(stat == DEAD)
+		return
+
 	if(getFireLoss())
 		if((COLD_RESISTANCE in mutations) || (prob(1)))
 			heal_organ_damage(0,1)
