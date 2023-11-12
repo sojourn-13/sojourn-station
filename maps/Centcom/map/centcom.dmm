@@ -6048,6 +6048,13 @@
 /obj/structure/flora/small/grassa4,
 /turf/simulated/floor/fixed/fgrass,
 /area/centcom/evac)
+"ud" = (
+/obj/machinery/disposal,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/centcom/evac)
 "ue" = (
 /obj/structure/bed/chair/wood,
 /turf/simulated/floor/wood/wild1,
@@ -6273,6 +6280,7 @@
 /obj/item/gun/projectile/automatic/omnirifle/hustler{
 	pixel_y = -8
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "vU" = (
@@ -6318,12 +6326,20 @@
 /obj/effect/floor_decal/industrial/caution/red,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
+"wM" = (
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
 "wS" = (
 /obj/structure/table/woodentable,
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/item/stamp/cc/chunch,
 /turf/simulated/floor/carpet/bcarpet,
+/area/centcom/evac)
+"wX" = (
+/obj/structure/disposalpipe/segment,
+/turf/simulated/wall/r_wall,
 /area/centcom/evac)
 "wY" = (
 /obj/structure/table/woodentable,
@@ -6915,6 +6931,7 @@
 /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony{
 	pixel_y = 6
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "Dj" = (
@@ -7141,6 +7158,13 @@
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/agentoffice)
+"Gd" = (
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
+/turf/space,
+/area/space)
 "Gf" = (
 /obj/structure/flora/small/grassb4,
 /turf/simulated/floor/fixed/fgrass,
@@ -7407,6 +7431,7 @@
 /obj/item/storage/belt/security/tactical/marshalert,
 /obj/item/storage/belt/security/tactical/marshalert,
 /obj/item/storage/belt/security/tactical/marshalert,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "Ic" = (
@@ -7417,6 +7442,7 @@
 /obj/item/storage/backpack/military,
 /obj/item/storage/backpack/military,
 /obj/item/storage/backpack/military,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "Id" = (
@@ -7714,6 +7740,7 @@
 /obj/item/gun/energy/plasma/destroyer{
 	pixel_y = 7
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "La" = (
@@ -7818,6 +7845,10 @@
 /obj/effect/floor_decal/industrial/warningwhite/full,
 /turf/simulated/floor/carpet/turcarpet,
 /area/centcom/raider_base)
+"Mh" = (
+/obj/structure/disposalpipe/segment,
+/turf/unsimulated/wall,
+/area/centcom/evac)
 "Mj" = (
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -8853,6 +8884,7 @@
 /obj/item/storage/pouch/medium_generic,
 /obj/item/storage/pouch/medium_generic,
 /obj/item/storage/pouch/medium_generic,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "Wy" = (
@@ -9143,6 +9175,7 @@
 /obj/item/gun/projectile/shotgun/pump/swat{
 	pixel_y = 11
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "ZF" = (
@@ -20588,22 +20621,22 @@ qH
 qH
 qH
 qH
-qH
-KR
-ho
-ho
+Gd
+Mh
+wX
+wX
 Wv
 Ic
 HZ
-ho
-ho
+wX
+wX
 Zy
 KT
 vR
 De
-aD
-aD
-pM
+wM
+wM
+ud
 ho
 ho
 ho
@@ -21411,7 +21444,7 @@ Ja
 uw
 aD
 aD
-dn
+pM
 ho
 QI
 Sa
