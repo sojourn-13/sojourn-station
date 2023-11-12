@@ -1072,7 +1072,7 @@
 /obj/structure/invislight,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/hallway/surface/section1)
 "amh" = (
 /obj/effect/decal/mecha_wreckage/ripley,
 /turf/simulated/floor/tiled/techmaint_perforated,
@@ -23882,7 +23882,7 @@
 	id = "Colony Lockdown"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/absolutism/vectorrooms)
 "fgi" = (
 /obj/structure/scrap/medical/large,
 /obj/effect/decal/cleanable/rubble,
@@ -27193,7 +27193,7 @@
 	id = "Colony Lockdown"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/hallway/surface/section1)
 "fQV" = (
 /obj/effect/decal/cleanable/cobweb2,
 /obj/effect/decal/cleanable/dirt,
@@ -27821,7 +27821,7 @@
 	id = "Colony Lockdown"
 	},
 /turf/simulated/floor/tiled/steel,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/hallway/surface/section1)
 "fYH" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/blast/regular{
@@ -42285,7 +42285,7 @@
 	id = "Colony Lockdown"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/absolutism/vectorrooms)
 "jcx" = (
 /obj/structure/catwalk,
 /obj/structure/cable/cyan{
@@ -45025,7 +45025,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/crew_quarters/hydroponics/garden)
+/area/nadezhda/absolutism/vectorrooms)
 "jGb" = (
 /obj/structure/shuttle_part/mining{
 	icon_state = "10,0"
@@ -49182,7 +49182,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/hallway/surface/section1)
 "kzn" = (
 /obj/structure/grille,
 /obj/structure/barricade,
@@ -76062,7 +76062,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/hallway/surface/section1)
 "qjb" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -107253,13 +107253,24 @@
 	},
 /area/turbolift/ElevatorOne/underground)
 "wIK" = (
+/obj/structure/catwalk,
+/obj/structure/invislight,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /obj/machinery/door/blast/regular/open{
 	id = "Colony Lockdown"
 	},
-/obj/machinery/door/airlock/external,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/crew_quarters/hydroponics/garden)
+/turf/simulated/floor/plating/under,
+/area/nadezhda/absolutism/vectorrooms)
 "wIQ" = (
 /obj/structure/table/standard,
 /obj/random/pack/tech_loot,
@@ -109884,7 +109895,7 @@
 /obj/structure/invislight,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/hallway/surface/section1)
 "xmZ" = (
 /obj/structure/table/standard,
 /obj/structure/cable/cyan{
@@ -211130,7 +211141,7 @@ xja
 xja
 rLR
 fQS
-cwC
+xja
 cwC
 rIK
 hcX
@@ -211332,7 +211343,7 @@ xja
 xja
 bWj
 nkm
-cwC
+xja
 spF
 tvJ
 rIK
@@ -211534,7 +211545,7 @@ wkc
 dfI
 fYz
 dfI
-cwC
+xja
 spF
 aQq
 aQq
@@ -212141,7 +212152,7 @@ dfI
 fYz
 dfI
 xja
-cwC
+xja
 hJm
 hJm
 nYl
@@ -212747,7 +212758,7 @@ uXK
 nlc
 xja
 xja
-cwC
+xja
 gAL
 hJm
 nYl
@@ -213353,7 +213364,7 @@ nuW
 fYz
 dfI
 xja
-cwC
+xja
 hJm
 hJm
 pyA
@@ -214571,7 +214582,7 @@ xja
 xja
 xja
 xja
-cwC
+xja
 xQE
 csA
 jmW
@@ -215177,7 +215188,7 @@ jEs
 hlP
 xmf
 xja
-cwC
+xja
 mru
 cfj
 cfj
@@ -215379,7 +215390,7 @@ xja
 haC
 xzJ
 xja
-cwC
+xja
 qYF
 tXF
 jTs
@@ -215985,7 +215996,7 @@ gtV
 yaF
 mGT
 xja
-cwC
+xja
 gej
 ovs
 cum
@@ -216182,12 +216193,12 @@ aLk
 vlP
 vlP
 vlP
-cwC
-cwC
-cwC
-cwC
-cwC
-cwC
+xja
+xja
+xja
+xja
+xja
+xja
 hJm
 hJm
 lgB
@@ -222443,7 +222454,7 @@ byG
 aBx
 fge
 jct
-yjc
+aBx
 wZK
 bSt
 vjP
@@ -222645,7 +222656,7 @@ hCl
 aBx
 vsi
 xEQ
-yjc
+aBx
 ggg
 gBT
 vjP
@@ -224663,9 +224674,9 @@ qor
 rvy
 xmD
 aBx
-wIK
+vsi
 jFT
-yjc
+aBx
 tRD
 gBT
 vjP
@@ -224865,9 +224876,9 @@ gUm
 rvy
 rvy
 aBx
-jEX
-ePN
-yjc
+fge
+wIK
+aBx
 wZK
 bSt
 vjP
