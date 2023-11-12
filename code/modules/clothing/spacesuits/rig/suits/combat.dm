@@ -162,7 +162,7 @@
 	desc = "A heavy duty RIG that any true sons and daughters of Sol(or terrorist, for that matter.) would instantly recognize as a slightly older style of tactical armor, often issued by system defense fleets for anti-piracy operations. Despite its age, it still smells brand new."
 	icon_state = "ert_rig"
 	suit_type = "combat hardsuit"
-	req_access = list(access_cent_specops)
+	req_access = list(access_hos)
 	armor_list = list(
 		melee = 50,
 		bullet = 65,

@@ -5656,6 +5656,9 @@
 /obj/item/storage/pouch/tubular,
 /obj/item/storage/pouch/tubular,
 /obj/item/storage/pouch/tubular,
+/obj/structure/mirror/antag{
+	pixel_y = -33
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
 "qr" = (
@@ -7742,10 +7745,6 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/gray_platform,
-/area/centcom/evac)
-"Lq" = (
-/obj/structure/mirror/antag,
-/turf/simulated/wall/r_wall,
 /area/centcom/evac)
 "Ls" = (
 /obj/effect/decal/cleanable/rubble,
@@ -19393,7 +19392,7 @@ Wz
 dn
 dn
 qn
-Lq
+ho
 Gc
 xJ
 VF
