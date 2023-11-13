@@ -68,7 +68,7 @@
 	mask = /obj/item/clothing/mask/gas/blackshield_gasmask
 	uniform = /obj/item/clothing/under/rank/commander
 	//suit_store = /obj/item/gun/projectile/automatic/omnirifle/rds
-	r_pocket = /obj/item/clothing/accessory/badge/marshal
+	r_pocket = /obj/item/clothing/accessory/badge/militiaagent
 	gloves = /obj/item/clothing/gloves/thick/swat/blackshield
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	shoes = /obj/item/clothing/shoes/swat
