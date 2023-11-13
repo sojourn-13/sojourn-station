@@ -88,9 +88,6 @@
 	if(is_drainable())
 		if(ishuman(usr))
 			var/mob/living/carbon/human/H = usr
-			if(!H.check_has_mouth())
-				to_chat(H, "Where do you intend to put \the [src]? You don't have a mouth!")
-				return
 			var/obj/item/blocked = H.check_mouth_coverage()
 			if(blocked)
 				to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
