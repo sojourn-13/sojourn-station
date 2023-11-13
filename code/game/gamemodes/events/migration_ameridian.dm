@@ -52,7 +52,7 @@
 	var/announcement = ""
 	if(!deep_forests)
 		if(severity == EVENT_LEVEL_MAJOR)
-			announcement = "Massive growth of Ameridian has been detected outside station walls, please stand-by."
+			announcement = "Massive growth of Ameridian has been detected past the colony perimeter, please stand-by."
 		else
 			announcement = "Ameridian [spawned_ameridian.len == 1 ? "growth has" : "growths have"] been detected the deep forest."
 	else
