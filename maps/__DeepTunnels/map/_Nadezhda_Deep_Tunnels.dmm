@@ -2359,6 +2359,9 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
+/obj/item/storage/firstaid/radiation{
+	pixel_x = -10
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/mine/medical)
 "gM" = (

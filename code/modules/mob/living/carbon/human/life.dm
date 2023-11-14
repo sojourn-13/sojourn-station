@@ -252,16 +252,26 @@
 			gene.OnMobLife(src)
 
 	radiation = CLAMP(radiation,0,100)
+	var/damage = rand(0,0) //We start doing no serious damage,
 
-	if (radiation> 10)
-		var/damage = rand(0,3)
-		radiation -= 1 * RADIATION_SPEED_COEFFICIENT
+	if (radiation > 0)
+		radiation -= 1 * RADIATION_SPEED_COEFFICIENT //and rads slowly start to go down
+		if(prob(1)) //very low chance per tic but does happen
+			to_chat(src, SPAN_WARNING("Saliva floods from under your tongue as you're overcome with a terrible nausea."))
+			vomit()
 		if(prob(5))
-			damage = rand(4,8)
+			take_overall_damage(0,rand(2,4), used_weapon = "Radiation Burns")
+			to_chat(src, SPAN_WARNING("Your skin suddenly feels warm and begins to redden."))
 
-		if (radiation > 25)
+	if (radiation > 30)
+		radiation -= 1 * RADIATION_SPEED_COEFFICIENT
+		if(prob(5)) //a chance exists now for serious bad times.
+			damage = rand(2,4)
+			to_chat(src, SPAN_WARNING("You suddenly have a metallic taste in your mouth..."))
+
+		if (radiation > 60)
 			if(prob(50))
-				damage = rand(4,8)
+				damage = rand(2,4)
 				radiation -= 1 * RADIATION_SPEED_COEFFICIENT
 			if(prob(5))
 				radiation -= 5 * RADIATION_SPEED_COEFFICIENT
@@ -271,9 +281,9 @@
 				if(!lying)
 					emote("collapse")
 
-		if (radiation > 50)
+		if (radiation > 80)
 			if(prob(50))
-				damage = rand(4,8)
+				damage = rand(2,4)
 				radiation -= 1 * RADIATION_SPEED_COEFFICIENT
 				if(prob(25)) //no need to give the message *Every* time
 					to_chat(src, SPAN_WARNING("You suddenly have a metallic taste in your mouth..."))
@@ -291,9 +301,9 @@
 					f_style = "Shaved"
 					update_hair()
 
-		if (radiation > 75)
+		if (radiation > 95)
 			radiation -= 1 * RADIATION_SPEED_COEFFICIENT
-			damage = rand(4,12)
+			damage = rand(4,8) //IT'S SO JOEVER
 			if(prob(25))
 				to_chat(src, SPAN_WARNING("Your gums begin to bleed and the taste of copper fills your mouth."))
 			if(prob(20))
