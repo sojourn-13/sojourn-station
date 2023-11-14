@@ -55,8 +55,8 @@
 
 /mob/living/carbon/superior_animal/giant_spider/plasma/UnarmedAttack(var/atom/A, var/proximity)
 	. = ..()
-	src.gib()
 	explosion(src.loc, 0,1,3)
+	src.gib()
 
 //fortress spiders are tanks, not any faster but can knock enemies down and take a few more hits.
 /mob/living/carbon/superior_animal/giant_spider/tarantula
