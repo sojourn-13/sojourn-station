@@ -52,6 +52,14 @@
 	name = "SA HG 10mm \"Lamia\""
 	build_path = /obj/item/gun/projectile/ladon
 
+/datum/design/autolathe/gun/ladon_hs
+	name = "H&S HG 10mm \"Porton\""
+	build_path = /obj/item/gun/projectile/ladon/hs
+
+/datum/design/autolathe/gun/ladon_sa
+	name = "Seinemetall Defense GmbH HG 10mm \"Sigia\""
+	build_path = /obj/item/gun/projectile/ladon/sa
+
 /datum/design/autolathe/gun/rafale
 	name = "Seinemetall Defense GmbH SHG 10mm \"Rafale\""
 	build_path = /obj/item/gun/projectile/silenced
@@ -253,6 +261,10 @@
 /datum/design/autolathe/gun/mamba
 	name = "NM 6.5x39mm \"Mamba\" carbine"
 	build_path = /obj/item/gun/projectile/automatic/mamba
+
+/datum/design/autolathe/gun/bren
+	name = "\"Kalashnabren\" LMG"
+	build_path = /obj/item/gun/projectile/automatic/bren
 
 ///R I F L E S
 //7 . 6 2 m m

@@ -144,7 +144,7 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemCOSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Mateba Kit" = /obj/item/storage/box/bs_kit/mateba,
-					"Argos Kit" = /obj/item/storage/box/bs_kit/argos,
+					"Argos Kit" = /obj/item/storage/box/bs_kit/gemini,
 					"Spider Rose Kit" = /obj/item/storage/box/bs_kit/spider)
 	var/selection = items[input(redeemer, "Pick your side-arm kit", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
