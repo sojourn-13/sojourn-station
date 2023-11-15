@@ -12,9 +12,10 @@
 	w_class = ITEM_SIZE_HUGE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 25, MATERIAL_GLASS = 15, MATERIAL_SILVER = 5, MATERIAL_GOLD = 3)
 	projectile_type = /obj/item/projectile/beam/drone
-	init_recoil = CARBINE_RECOIL(2)
-	charge_cost = 20 //this needs to be better then a lasblender
-	damage_multiplier = 1 //REALLY bad beam inside but can be upgraded to be a normal laser lmg!
+	init_recoil = CARBINE_RECOIL(1)
+	charge_cost = 25
+	damage_multiplier = 1.2 //Kinda bad beam inside but can be upgraded to be a normal laser lmg!
+	armor_penetration = 1.1
 	init_offset = 3
 	price_tag = 2000
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
