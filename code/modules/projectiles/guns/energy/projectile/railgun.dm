@@ -159,11 +159,14 @@
 /obj/item/gun/energy/laser/railgun/railrifle/consume_next_projectile(mob/user)
 	if(!cell)
 		return null
-//	var/datum/component/heat/H = GetComponent(/datum/component/heat) //commented out for now I wont remove the code incase someones willing to fix it. Currently does no damage to the user for overheating. -Benl8561
-//	H.tickHeat()
-//	if(H.currentHeat > H.heatThresholdSpecial )
-//		to_chat(user, "\The [src] is currently overheating!")
-//		handleoverheatreductor()
+//commented out for now I wont remove the code incase someones willing to fix it. Currently does no damage to the user for overheating. -Benl8561
+/**
+	var/datum/component/heat/H = GetComponent(/datum/component/heat)
+	H.tickHeat()
+	if(H.currentHeat > H.heatThresholdSpecial )
+		to_chat(user, "\The [src] is currently overheating!")
+		handleoverheatreductor()
+**/
 	if(!ispath(projectile_type))
 		return null
 	if(consume_cell && !cell.checked_use(charge_cost))
@@ -188,35 +191,35 @@
 			else
 				consume_cell = TRUE
 				to_chat(user, SPAN_NOTICE("You loosen the safety bolts and overclock the capacitor to unsafe levels, allowing the weapon to destroy empty cells for use as ammunition."))
-
+/**
 /obj/item/gun/energy/laser/railgun/railrifle/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	..()
 
-///obj/item/gun/energy/laser/railgun/railrifle/Initialize()
-//	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE, 50, 60, 5, 0.01, 2)
-//	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/venteventreductor) //this sould just be a fluff message, proc can be anything
-//	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheatreductor) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
-//	START_PROCESSING(SSobj, src)
-//	..()
+/obj/item/gun/energy/laser/railgun/railrifle/Initialize()
+	AddComponent(/datum/component/heat, COMSIG_CLICK_CTRL, TRUE, 50, 60, 5, 0.01, 2)
+	RegisterSignal(src, COMSIG_HEAT_VENT, .proc/venteventreductor) //this sould just be a fluff message, proc can be anything
+	RegisterSignal(src, COMSIG_HEAT_OVERHEAT, .proc/handleoverheatreductor) //this can damge the user/melt the gun/whatever. this will never proc as the gun cannot fire above the special heat threshold and the special heat threshold should be smaller than the overheat threshold
+	START_PROCESSING(SSobj, src)
+	..()
 
-///obj/item/gun/energy/laser/railgun/railrifle/examine(user)
-//	. = ..()
-//	to_chat(user, SPAN_NOTICE("Control-Click to manually vent this weapon's heat."))
+/obj/item/gun/energy/laser/railgun/railrifle/examine(user)
+	. = ..()
+	to_chat(user, SPAN_NOTICE("Control-Click to manually vent this weapon's heat."))
 
-///obj/item/gun/energy/laser/railgun/railrifle/proc/handleoverheatreductor()
-//	src.visible_message(SPAN_DANGER("\The [src] overheats, its exterior becoming blisteringly hot, burning skin down to the flesh!!"))
-//	var/mob/living/L = loc
-//	if(istype(L))
-//		if(L.hand == L.l_hand) // Are we using the left arm?
-//			L.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
-//		else // If not then it must be the right arm.
-//			L.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
+/obj/item/gun/energy/laser/railgun/railrifle/proc/handleoverheatreductor()
+	src.visible_message(SPAN_DANGER("\The [src] overheats, its exterior becoming blisteringly hot, burning skin down to the flesh!!"))
+	var/mob/living/L = loc
+	if(istype(L))
+		if(L.hand == L.l_hand) // Are we using the left arm?
+			L.apply_damage(overheat_damage, BURN, def_zone = BP_L_ARM)
+		else // If not then it must be the right arm.
+			L.apply_damage(overheat_damage, BURN, def_zone = BP_R_ARM)
 
-///obj/item/gun/energy/laser/railgun/railrifle/proc/venteventreductor()
-//	src.visible_message("\The [src]'s vents open valves atop of the exterior coil mounts, cooling itself down.")
-//	playsound(usr.loc, 'sound/weapons/guns/interact/gauss_vent.ogg', 50, 1)
-
+/obj/item/gun/energy/laser/railgun/railrifle/proc/venteventreductor()
+	src.visible_message("\The [src]'s vents open valves atop of the exterior coil mounts, cooling itself down.")
+	playsound(usr.loc, 'sound/weapons/guns/interact/gauss_vent.ogg', 50, 1)
+*/
 //Gauss-rifle type, snowflake launcher mixed with rail rifle and hydrogen gun code. Consumes matter-stack and cell charge to fire. - Rebel0
 /obj/item/gun/energy/laser/railgun/gauss
 	name = "\"Bat'ko\" gauss rifle"
