@@ -8576,19 +8576,25 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/command/tcommsat/computer)
 "bUK" = (
-/obj/structure/table/steel_reinforced,
-/obj/item/stock_parts/manipulator,
-/obj/item/circuitboard/vending,
-/obj/item/tool/screwdriver,
-/obj/item/stack/material/steel{
-	amount = 8
+/obj/structure/window/reinforced{
+	dir = 4;
+	pixel_x = -1
 	},
-/obj/item/stock_parts/console_screen,
-/obj/item/stock_parts/matter_bin,
-/obj/item/stack/cable_coil/blue,
-/obj/item/device/eftpos{
-	eftpos_name = "Marshal EFTPOS scanner"
+/obj/structure/window/reinforced{
+	dir = 8;
+	pixel_x = -3;
+	pixel_y = 1
 	},
+/obj/structure/table/rack/shelf,
+/obj/machinery/door/window/westright{
+	dir = 2;
+	name = "Specialized armors";
+	req_access = list(3)
+	},
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer,
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg,
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "bUO" = (
@@ -35773,6 +35779,19 @@
 	},
 /obj/structure/cable/green,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel_reinforced,
+/obj/item/device/eftpos{
+	eftpos_name = "Marshal EFTPOS scanner"
+	},
+/obj/item/stock_parts/matter_bin,
+/obj/item/stack/cable_coil/blue,
+/obj/item/stock_parts/console_screen,
+/obj/item/stack/material/steel{
+	amount = 8
+	},
+/obj/item/tool/screwdriver,
+/obj/item/circuitboard/vending,
+/obj/item/stock_parts/manipulator,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "hIF" = (
@@ -54288,6 +54307,12 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/southleft{
+	dir = 8;
+	name = "Energy weapons";
+	req_access = list(3)
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "lJP" = (
@@ -61289,6 +61314,15 @@
 /obj/structure/table/rack/shelf,
 /obj/item/ammo_magazine/ammobox/light_rifle_257/rubber,
 /obj/item/gun/projectile/automatic/lmg/tk,
+/obj/structure/window/reinforced{
+	dir = 8;
+	pixel_x = -3
+	},
+/obj/machinery/door/window/westright{
+	dir = 1;
+	name = "designated marksman rifle";
+	req_access = list(3)
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "nho" = (
@@ -80527,6 +80561,13 @@
 "rgw" = (
 /obj/structure/table/rack/shelf,
 /obj/item/gun/projectile/grenade/lenar,
+/obj/structure/window/reinforced{
+	dir = 8;
+	pixel_x = -3
+	},
+/obj/machinery/door/window/westright{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "rgy" = (
@@ -101778,7 +101819,8 @@
 	req_access = list(3)
 	},
 /obj/structure/window/reinforced{
-	dir = 1
+	dir = 1;
+	pixel_y = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
@@ -102485,7 +102527,21 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/command/courtroom)
 "vKq" = (
-/obj/machinery/flasher/portable,
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/head/helmet/ballistic/bulletproof/militia{
+	pixel_y = 10
+	},
+/obj/item/clothing/head/helmet/ballistic/bulletproof/militia{
+	pixel_y = 10
+	},
+/obj/item/clothing/suit/armor/bulletproof/ironhammer/militia,
+/obj/item/clothing/suit/armor/bulletproof/ironhammer/militia,
+/obj/item/clothing/gloves/thick/swat/militia{
+	pixel_y = -9
+	},
+/obj/item/clothing/gloves/thick/swat/militia{
+	pixel_y = -9
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "vKr" = (
@@ -103813,6 +103869,14 @@
 /obj/item/gun/projectile/judiciary,
 /obj/item/gun/projectile/colt/liberty,
 /obj/item/gun/projectile/judiciary,
+/obj/structure/window/reinforced{
+	dir = 8;
+	pixel_x = -1
+	},
+/obj/machinery/door/window/southleft{
+	name = "Sidearms";
+	req_access = list(3)
+	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "vWS" = (
@@ -110420,7 +110484,20 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/pros/shuttle)
 "xtg" = (
-/obj/machinery/suit_storage_unit/security,
+/obj/structure/table/rack/shelf,
+/obj/machinery/door/window/westright{
+	dir = 2;
+	name = "Specialized armors";
+	req_access = list(3)
+	},
+/obj/item/clothing/gloves/thick/ablasive,
+/obj/item/clothing/gloves/thick/ablasive,
+/obj/item/clothing/shoes/ablasive,
+/obj/item/clothing/shoes/ablasive,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/suit/armor/vest/ablative/ironhammer,
+/obj/item/clothing/head/helmet/laserproof/marshal,
+/obj/item/clothing/head/helmet/laserproof/marshal,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "xty" = (
@@ -111962,6 +112039,24 @@
 	icon_state = "5,16"
 	},
 /area/shuttle/vasiliy_shuttle_area)
+"xIB" = (
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/suit/armor/vest/ablative/militia,
+/obj/item/clothing/suit/armor/vest/ablative/militia,
+/obj/item/clothing/gloves/thick/ablasive/militia{
+	pixel_y = -6
+	},
+/obj/item/clothing/head/helmet/laserproof/militia{
+	pixel_y = 10
+	},
+/obj/item/clothing/head/helmet/laserproof/militia{
+	pixel_y = 10
+	},
+/obj/item/clothing/gloves/thick/ablasive/militia{
+	pixel_y = -6
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/security/armory_blackshield)
 "xIG" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/dirt,
@@ -175758,7 +175853,7 @@ cZb
 cZb
 cZb
 wCx
-fvs
+xIB
 bfO
 bfO
 bfO
