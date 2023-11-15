@@ -26,6 +26,7 @@
 	)
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 	serial_type = "Absolute"
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/plasma/mounted
 	self_recharge = TRUE
@@ -61,6 +62,7 @@
 		list(mode_name="CLEANSE", mode_desc="Cleanse the filth", mode_type = /datum/firemode/automatic, projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/vaporize.ogg', fire_delay=4, charge_cost=35, icon="burst", projectile_color = "#00AAFF"),
 	)
 	init_recoil = LMG_RECOIL(1)
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/plasma/martyr // or should it be  Zealot
 	name = "\"Martyr\" holdout pistol"

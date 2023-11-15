@@ -199,6 +199,7 @@
 		list(mode_name="Pulse", mode_desc="A plasma round configured to explode violently on impact, and cause a pulse of EMP", projectile_type=/obj/item/projectile/plasma/aoe/ion, fire_sound='sound/weapons/energy/taser.ogg', burst=1, fire_delay=12, charge_cost=200, icon="stun", projectile_color = "#00FFFF")
 	)
 	serial_shown = FALSE
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/plasma/cassad/cult/deepmaints
 	name = "\"Blue Moon\" psi-plasma rifle"
@@ -208,6 +209,8 @@
 		list(mode_name="Melt", mode_desc="A reliable plasma round, for stripping away armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/burn.ogg', burst=1, fire_delay = 9, charge_cost=25, icon="kill", projectile_color = "#00AAFF"),
 		list(mode_name="Pulse", mode_desc="A plasma round configured to explode violently on impact, and cause a pulse of EMP", projectile_type=/obj/item/projectile/plasma/aoe/ion, fire_sound='sound/weapons/energy/taser.ogg', burst=1, fire_delay=12, charge_cost=150, icon="stun", projectile_color = "#00FFFF")
 	)
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
+
 /obj/item/gun/energy/plasma/auretian/cult
 	name = "\"Meteoroid\" psi-energy pistol"
 	desc = "An energy weapon forged from the mind of a psion who shaped an oddity into a weapon. The iconic auretian is a weapon that the Soteria employs often and frequently among its staff, \

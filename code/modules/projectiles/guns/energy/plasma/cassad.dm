@@ -23,6 +23,7 @@
 	twohanded = TRUE
 	can_dual = FALSE
 	serial_type = "H&S"
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 
 /obj/item/gun/energy/pulse/cassad/marqua
