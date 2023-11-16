@@ -1681,3 +1681,23 @@
 			speed_boost_ready = TRUE
 			if(user.head && istype(user.head, matching_helmet))
 				to_chat(usr, SPAN_WARNING("[user.head] beeps: 'Capacitors have been recharged.'"))
+
+
+//"ERT" gear.
+/obj/item/clothing/suit/storage/vest/swat
+	name = "\improper SWAT armor"
+	desc = "An older suit of unassisted SWAT armor often issued by poorer SolFed Enforcement Corps departments to their swat teams. Despite its age, it shows the quality of its make being both light and incredibly strong. This particular set bears the markings N.C on its back."
+	icon_state = "swatarmor"
+	item_state = "swatarmor"
+	max_upgrades = 0 //No upgrading this one
+	tool_qualities = list()
+	armor_list = list(
+		melee = 55,
+		bullet = 55,
+		energy = 55,
+		bomb = 60,
+		bio = 0,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO

@@ -132,6 +132,23 @@
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
 
+/obj/item/storage/firstaid/radiation
+	name = "radiation first-aid kit"
+	desc = "It's a basic first aid kit for handling radiation exposure."
+	icon_state = "radfirstaid"
+
+/obj/item/storage/firstaid/radiation/empty
+	empty = TRUE
+
+/obj/item/storage/firstaid/radiation/populate_contents()
+	if (empty) return
+	new /obj/item/reagent_containers/hypospray/autoinjector/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/antirad(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/device/scanner/health(src)
+
 /obj/item/storage/firstaid/combat
 	name = "combat medical kit"
 	desc = "Contains advanced medical treatments."

@@ -43,10 +43,6 @@
 	var/obj/item/clothing/head/helmet/helmet = /obj/item/clothing/head/helmet/space/void   // Deployable helmet, if any.
 	var/obj/item/tank/tank = null              // Deployable tank, if any.
 
-	valid_accessory_slots = list()
-	restricted_accessory_slots = list()
-
-
 /obj/item/clothing/suit/space/void/Initialize()
 	if(boots && ispath(boots))
 		boots = new boots(src)

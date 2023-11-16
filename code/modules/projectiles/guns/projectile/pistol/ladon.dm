@@ -18,6 +18,7 @@
 	auto_eject = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	serial_type = "SD GmbH"
+	gun_parts = null
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.4 // 40 vig
@@ -31,3 +32,21 @@
 		icon_state = initial(icon_state) + "_empty"
 	else
 		icon_state = initial(icon_state) + "_full"
+
+/obj/item/gun/projectile/ladon/hs
+	name = "\"Porton\" magnum pistol"
+	desc = "A popular commercial variant of Mk-68 \"Ladon\" produced by \"H&S\". Often found in self defence and private guards. Uses 10mm Auto-Mag rounds."
+	icon_state = "ladon"
+	item_state = "ladon"
+	damage_multiplier = 1
+	init_recoil = HANDGUN_RECOIL(1.2)
+	serial_type = "H&S"
+
+/obj/item/gun/projectile/ladon/sa
+	name = "\"Sigia\" magnum pistol"
+	desc = "A significant reinforcement of Mk-68 \"Ladon\". Uses 10mm Auto-Mag rounds. This one has a Scarborough Arms rollmark on the frame and no other markings."
+	icon_state = "sigia"
+	item_state = "sigia"
+	damage_multiplier = 1.1
+	init_recoil = HANDGUN_RECOIL(1.1)
+	serial_type = "SA"

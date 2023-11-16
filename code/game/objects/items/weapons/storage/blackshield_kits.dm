@@ -20,7 +20,7 @@
 		new /obj/item/gun/projectile/colt/ten(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
 		new /obj/item/clothing/suit/armor/platecarrier/militia(src)
 		new /obj/item/clothing/head/helmet/ballistic/militia(src)
 		new /obj/item/storage/pouch/ammo(src)
@@ -192,7 +192,7 @@
 		new /obj/item/gun/projectile/colt/ten(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
 
 /obj/item/storage/box/bs_kit/rex10
 	name = "\improper Cowboy Secondary Kit"
@@ -204,7 +204,7 @@
 		new /obj/item/ammo_magazine/speed_loader_pistol_35/hv(src)
 		new /obj/item/ammo_magazine/speed_loader_pistol_35/hv(src)
 		new /obj/item/ammo_magazine/ammobox/pistol_35/hv(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
 
 /obj/item/storage/box/bs_kit/pilgrim
 	name = "\improper Pilgrim Secondary Kit"
@@ -216,7 +216,7 @@
 		new /obj/item/gun/projectile/revolver/lemant(src)
 		new /obj/item/ammo_magazine/ammobox/magnum_40/biomatter(src)
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
 
 /obj/item/storage/box/bs_kit/makarov
 	name = "\improper Makarov Secondary Kit"
@@ -226,7 +226,7 @@
 		new /obj/item/gun/projectile/makarov(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src) //Highcaps
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
 
 /obj/item/storage/box/bs_kit/martin
 	name = "\improper Martin Secondary Kit"
@@ -236,7 +236,7 @@
 		new /obj/item/gun/energy/gun/martin(src)
 		new /obj/item/cell/small/high(src)
 		new /obj/item/cell/small/high(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
 
 /obj/item/storage/box/bs_kit/sawn_shotgun
 	name = "\improper Sawn-Down Double Barrel Secondary Kit"
@@ -247,7 +247,7 @@
 		new /obj/item/gun/projectile/shotgun/doublebarrel/sawn(src)
 		new /obj/item/ammo_casing/shotgun/prespawned(src)
 		new /obj/item/ammo_casing/shotgun/pellet/prespawned(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
 
 // Commander's secondary weapons.
 
@@ -259,7 +259,7 @@
 		new /obj/item/gun/energy/gun(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
 
 /obj/item/storage/box/bs_kit/mateba
 	name = "\improper Mateba Secondary Kit"
@@ -269,17 +269,17 @@
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
 
-/obj/item/storage/box/bs_kit/argos
-	name = "\"Argos\" Secondary Kit"
+/obj/item/storage/box/bs_kit/gemini
+	name = "\"Gemini\" Secondary Kit"
 	desc = "A kit containing a highly specialized 12mm pistol with smart-linked optics and stabilizers."
 
 	populate_contents()
-		new /obj/item/gun/projectile/lamia/scoped(src)
+		new /obj/item/gun/projectile/lamia/gemini(src)
 		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
 		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/leg(src)
 
 // Armor Kits
 /obj/item/storage/box/bs_kit/standard_armor

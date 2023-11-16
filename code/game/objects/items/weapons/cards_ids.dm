@@ -209,37 +209,6 @@ var/const/NO_EMAG_ACT = -50
 	access = list(access_syndicate, access_external_airlocks)
 	group = "centcom"
 
-/obj/item/card/id/medical_command
-	name = "Medical ID card"
-	desc = "An ID straight from the SI Medical Divisions."
-	registered_name = "Medical ERT"
-	assignment = "SI Medical ERT"
-	access = list(access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
-		access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
-		access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels,
-		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits)
-
-/obj/item/card/id/guild_command
-	name = "Guild AA ID card"
-	desc = "An ID card with all access as the guild uses several backdoors and emergency access commands to bypass most access requirements."
-	registered_name = "Guild ERT"
-	assignment = "Guild ERT"
-
-/obj/item/card/id/guild_command/New()
-	access = get_all_station_access()
-	..()
-
-/obj/item/card/id/lss_command
-	name = "LSS Auditor ID card"
-	desc = "An ID card that is for top down, with access to check out and inspect anything anyware at a moments time."
-	registered_name = "LSS Auditor"
-	assignment = "LSS Auditor"
-
-/obj/item/card/id/lss_command/New()
-	access = get_all_station_access()
-	..()
-
-
 /obj/item/card/id/captains_spare
 	name = "premier's spare ID"
 	desc = "A golden and pompous spare ID, for when a new premier is elected or in the shameful case an existing one lost his original badge. The most stolen item on the colony."
@@ -345,18 +314,6 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/hos
 	group = "secblue"
 	icon_state = "id_hos"
-
-/obj/item/card/id/secert
-	name = "Marshal ID card"
-	desc = "An ID straight from the Nadezhda Marshals"
-	registered_name = "Marshal Agent"
-	assignment = "Marshal Agent"
-	icon_state = "id_hos_all-access"
-	group = "golden"
-
-/obj/item/card/id/secert/New()
-	access = get_all_station_access()
-	..()
 
 /obj/item/card/id/hop
 	icon_state = "id_hop"

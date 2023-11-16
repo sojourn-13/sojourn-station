@@ -190,9 +190,6 @@
 		var/fullness = (carbon.nutrition + (carbon.reagents.get_reagent_amount("nutriment") * 25)) * fullness_modifier
 		if(carbon == user)								//If you're eating it yourself
 			if(istype(human))
-				if(!human.check_has_mouth())
-					to_chat(user, "You cannot eat \the [src] without a mouth.")
-					return
 				var/obj/item/blocked = human.check_mouth_coverage()
 				if(blocked)
 					to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))

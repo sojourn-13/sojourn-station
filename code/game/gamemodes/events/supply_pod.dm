@@ -8,7 +8,7 @@
 	including quite a few rares
 
 :TODO: Make this target the jungle not the colony
-
+*/
 /datum/storyevent/supply_pod
 	id = "supply_pod"
 	name = "supply pod"
@@ -18,7 +18,7 @@
 
 	tags = list(TAG_DESTRUCTIVE, TAG_POSITIVE, TAG_COMBAT, TAG_EXTERNAL)
 
-*/
+
 ///////////////////////////////////////////////////////
 /datum/event/supply_pod
 	var/turf/epicentre = null
@@ -45,7 +45,7 @@
 		if (attempts <= 0)
 			done = TRUE
 
-		var/area/A = random_ship_area(TRUE, TRUE, TRUE)
+		var/area/A = locate(/area/nadezhda/outside/meadow) in world
 		if (!A)
 			//Something is horribly wrong
 			kill()
@@ -98,22 +98,19 @@
 /datum/event/supply_pod/proc/add_guardians()
 	var/list/possible_mobs = list(/mob/living/simple_animal/hostile/hivebot,
 	/mob/living/simple_animal/hostile/scarybat,
-	/mob/living/simple_animal/mouse,
-	/obj/random/slime/rainbow,
 	/obj/random/mob/spiders,
 	/obj/random/mob/roaches,
-	/mob/living/simple_animal/hostile/samak,
-	/mob/living/simple_animal/hostile/bear,
-	/mob/living/simple_animal/hostile/carp,
-	/mob/living/simple_animal/hostile/creature,
-	/mob/living/simple_animal/hostile/carp/pike
+	/obj/random/mob/carp,
+	/obj/random/mob/voidwolf,
+	/obj/random/mob/excelsior,
+	/obj/random/mob/roomba
 	)
 
 	//It may not contain mobs, or it may be a clown car full of horrors that spill forth like boiling oil
 	while (prob(80))
 		var/newtype = pick(possible_mobs)
 
-		var/num = rand(2,6)
+		var/num = rand(2,8)
 		for (var/i = 0; i < num;i++)
 			pod_contents.Add(newtype)
 

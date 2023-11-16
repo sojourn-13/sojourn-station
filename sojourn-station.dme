@@ -2863,6 +2863,7 @@
 #include "code\modules\projectiles\guns\projectile\automatic\bastard.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\battlerifle.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\bond.dm"
+#include "code\modules\projectiles\guns\projectile\automatic\bren.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\bulldog.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\c20r.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\chaingun.dm"

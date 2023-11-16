@@ -13,9 +13,7 @@
 	if(status[1] == HUMAN_EATING_NO_ISSUE)
 		return 1
 	if(feedback)
-		if(status[1] == HUMAN_EATING_NO_MOUTH)
-			to_chat(src, "Where do you intend to put \the [food]? You don't have a mouth!")
-		else if(status[1] == HUMAN_EATING_BLOCKED_MOUTH)
+		if(status[1] == HUMAN_EATING_BLOCKED_MOUTH)
 			to_chat(src, SPAN_WARNING("\The [status[2]] is in the way!"))
 	return 0
 
@@ -48,9 +46,7 @@
 	if(status[1] == HUMAN_EATING_NO_ISSUE)
 		return 1
 	if(feedback)
-		if(status[1] == HUMAN_EATING_NO_MOUTH)
-			to_chat(feeder, "Where do you intend to put \the [food]? \The [src] doesn't have a mouth!")
-		else if(status[1] == HUMAN_EATING_BLOCKED_MOUTH)
+		if(status[1] == HUMAN_EATING_BLOCKED_MOUTH)
 			to_chat(feeder, SPAN_WARNING("\The [status[2]] is in the way!"))
 	return 0
 
