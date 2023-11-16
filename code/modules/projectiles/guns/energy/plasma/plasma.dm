@@ -15,7 +15,7 @@
 	projectile_type = /obj/item/projectile/beam
 	cell_type = /obj/item/cell/medium
 	sel_mode = 2
-	charge_cost = 15 //Gives us 40 shots per low-tier medium-sized cell
+	charge_cost = 20 //Gives us 50 shots per medium Spark cell
 	init_recoil = RIFLE_RECOIL(1)
 	twohanded = TRUE
 	can_dual = FALSE
@@ -56,12 +56,11 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_PLASMA = 3)
 	fire_delay = 20
 	charge_cost = 200
-
+	init_recoil = LMG_RECOIL(2)
 	init_firemodes = list(
 		list(mode_name="DISINTEGRATE", mode_desc="Removes heresy from sight", projectile_type=/obj/item/projectile/plasma/aoe/heat/strong, fire_sound='sound/weapons/energy/incinerate.ogg', fire_delay=20, charge_cost=200, icon="destroy", projectile_color = "#ff1212"),
 		list(mode_name="CLEANSE", mode_desc="Cleanse the filth", mode_type = /datum/firemode/automatic, projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/vaporize.ogg', fire_delay=4, charge_cost=35, icon="burst", projectile_color = "#00AAFF"),
 	)
-	init_recoil = LMG_RECOIL(1)
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/plasma/martyr // or should it be  Zealot
