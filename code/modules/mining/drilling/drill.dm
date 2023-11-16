@@ -11,6 +11,8 @@
 /obj/machinery/mining/drill
 	name = "mining drill head"
 	desc = "An enormous drill."
+	description_info = "The Seismic Stimulator can set the minimum termite aggression for any mining operation, overriden by the local seismic activity if it is higher. \
+	This machine's micro laser, matter bin, capacitor and scanning module can be upgraded to enhance the harvest rate, capacity, power efficiency and range, respectively."
 	icon_state = "mining_drill"
 	circuit = /obj/item/circuitboard/miningdrill
 	var/braces_needed = 2
@@ -46,7 +48,13 @@
 	//Flags
 	var/need_update_field = 0
 	var/need_player_check = 0
+	var/need_new_harvest = TRUE
 
+	// Used to manually stimulate termite waves
+	var/seismic_stimulation = 1
+
+	//The turf being harvested
+	var/turf/simulated/harvesting
 
 /obj/machinery/mining/drill/Destroy()
 	for(var/obj/machinery/mining/brace/b in supports)
@@ -100,7 +108,9 @@
 		system_error("resources depleted")
 		return
 
-	var/turf/simulated/harvesting = pick(resource_field)
+	if(need_new_harvest) //Do we have no target tile, or our target tile ran out?
+		harvesting = pick(resource_field) //Get a new tile
+		need_new_harvest = FALSE //Set the flag to false to prevent grabbing tiles until we've run out
 
 	//remove emty trufs
 	while(resource_field.len && !harvesting.resources)
@@ -146,10 +156,11 @@
 				var/oretype = ore_types[metal]
 				new oretype(src)
 
-	if(!found_resource)
+	if(!found_resource) //no resources found?
 		harvesting.has_resources = FALSE
 		harvesting.resources = null
 		resource_field -= harvesting
+		need_new_harvest = TRUE //set this flag to TRUE to call for a new tile next dig_ore()
 
 /obj/machinery/mining/drill/attackby(obj/item/I, mob/user as mob)
 
@@ -204,7 +215,7 @@
 
 	if (panel_open && cell)
 		to_chat(user, "You take out \the [cell].")
-		cell.loc = get_turf(user)
+		user.put_in_hands(cell)
 		component_parts -= cell
 		cell = null
 		return
@@ -236,7 +247,8 @@
 /obj/machinery/mining/drill/proc/toggle_drilling_combat(mob/user as mob)
 	if(active)
 		var/turf/simulated/T = get_turf(loc)
-		TC = new /datum/termite_controller(location=T, seismic=T.seismic_activity, drill=src)
+		var/seismic_score = max(T.seismic_activity, seismic_stimulation) //Pick the highest seismic score between the drill's and the turf's
+		TC = new /datum/termite_controller(location=T, seismic=seismic_score, drill=src)
 		visible_message(SPAN_NOTICE("\The [src] lurches downwards, grinding noisily."))
 		need_update_field = 1
 		if(!soul)
@@ -274,11 +286,11 @@
 
 	for(var/obj/item/stock_parts/P in component_parts)
 		if(istype(P, /obj/item/stock_parts/micro_laser))
-			harvest_speed = P.rating
+			harvest_speed = 2 * P.rating
 		if(istype(P, /obj/item/stock_parts/matter_bin))
 			capacity = 200 * P.rating
 		if(istype(P, /obj/item/stock_parts/capacitor))
-			charge_use -= 8 * (P.rating - harvest_speed)
+			charge_use -= 8 * (P.rating - (harvest_speed / 2))
 			charge_use = max(charge_use, 0)
 		if(istype(P, /obj/item/stock_parts/scanning_module))
 			radius = RADIUS + P.rating
@@ -378,6 +390,26 @@
 		to_chat(user, "<span class='danger'>\The [src] looks seriously damaged!</span>")
 	else if(health < max_health * 0.75)
 		to_chat(user, "\The [src] shows signs of damage!")
+	to_chat(usr, SPAN_NOTICE("The seismic stimulator is set to [seismic_stimulation]."))
+
+
+/obj/machinery/mining/drill/verb/configure_seismic()
+	set name = "Configure Seismic Stimulator"
+	set category = "Object"
+	set src in oview(1)
+
+	if(usr.stat)
+		return
+
+	var/list/seismic_scores = list(1,2,3,4,5,6)
+	var/selection = input(usr, "Set the minimum seismic activity to?", "Seismic Activity") as null|anything in seismic_scores
+
+	if(!selection)
+		to_chat(usr, SPAN_NOTICE("You leave the stimulator alone."))
+		return
+
+	seismic_stimulation = selection
+	to_chat(usr, SPAN_NOTICE("You set the stimulator to [selection]."))
 
 /obj/machinery/mining/drill/verb/unload()
 	set name = "Unload Drill"

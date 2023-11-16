@@ -21,7 +21,7 @@
 	caliber = CAL_HRIFLE
 	tac_reloads = FALSE
 	penetration_multiplier = 0.85
-	damage_multiplier = 1
+	damage_multiplier = 1.2
 	slowdown = 0.15
 	matter = list(MATERIAL_PLASTEEL = 50, MATERIAL_PLASTIC = 20)
 	price_tag = 2500
@@ -32,7 +32,7 @@
 	twohanded = TRUE
 	zoom_factors = list(0.4)
 	slowdown_hold = 1 //Heavy massive gun, slow down
-	init_recoil = HMG_RECOIL(1.3)
+	init_recoil = HMG_RECOIL(0.9)
 	blacklist_upgrades = list(/obj/item/tool_upgrade/refinement/stabilized_grip = TRUE,
 							  /obj/item/tool_upgrade/refinement/laserguide = TRUE) // Can't upgrade what it already has built in.
 	init_firemodes = list(

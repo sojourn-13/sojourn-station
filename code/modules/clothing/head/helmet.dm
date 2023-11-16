@@ -218,9 +218,9 @@
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
-	desc = "These are often used by highly trained SWAT Members."
-	icon_state = "swat"
-	armor_list = list(melee = 80, bullet = 60, energy = 40, bomb = 50, bio = 10, rad = 0)
+	desc = "An oldie but a goodie. This helmet was often the last thing seen by those so foolish as to draw the attention of the Solarian Frontier enforcement corps. Judging by the dents, it didn't save its last wearer, but perhaps you'll fare better?"
+	icon_state = "swathelm"
+	armor_list = list(melee = 55, bullet = 55, energy = 55, bomb = 55, bio = 0, rad = 0)
 	flags_inv = HIDEEARS|HIDEEYES
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
@@ -427,6 +427,34 @@
 	body_parts_covered = HEAD|FACE|EARS
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4
+
+/obj/item/clothing/head/helmet/marshal_full/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard fullhelm"] = ""
+	options["xeno fullhelm"] = "_a"
+	options["xeno fullhelm extended"] = "_k"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You adjust to the [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 /obj/item/clothing/head/helmet/marshal_full/update_icon()
 	if(on)

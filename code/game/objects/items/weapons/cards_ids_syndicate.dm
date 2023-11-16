@@ -8,7 +8,7 @@
 
 /obj/item/card/id/syndicate/New(mob/user as mob)
 	..()
-	access = syndicate_access.Copy()
+	access += syndicate_access.Copy()
 
 /obj/item/card/id/syndicate/Destroy()
 	unset_registered_user(registered_user)
@@ -205,3 +205,80 @@
 
 /datum/card_state/dd_SortValue()
 	return name
+
+//Admin custom role stuff for agents, operatives, etc.
+/obj/item/card/id/syndicate/ert
+	name = "operative id card"
+	desc = "A specialized ID for the appointed operatives of the high council."
+	registered_name = "Agent"
+	assignment = "Agent"
+	icon_state = "centcom_all-access"
+	group = "golden"
+
+/obj/item/card/id/syndicate/ert/aa
+	name = "all access operative id card"
+	desc = "A specialized all access ID for the appointed operatives of the high council."
+	registered_name = "Agent"
+	assignment = "Agent"
+	icon_state = "hc_all-access"
+
+/obj/item/card/id/syndicate/ert/aa/New()
+	access = get_all_station_access()
+	..()
+
+/obj/item/card/id/syndicate/ert/aa/marshal_ert
+	name = "Marshal Agent's ID card"
+	desc = "A specialized all access ID issued to agents of the Provost Marshal and the Nadezhda Marshals."
+	registered_name = "Special Agent"
+	assignment = "Special Agent"
+
+/obj/item/card/id/syndicate/ert/aa/blackshield_ert
+	name = "Blackshield Specialist's ID card"
+	desc = "A specialized all access ID issued to agents of the Brigadier and Blackshield Militia."
+	registered_name = "Specialist"
+	assignment = "Specialist"
+
+/obj/item/card/id/syndicate/ert/aa/guild_ert
+	name = "Guild AA ID card"
+	desc = "An ID card with all access as the guild uses several backdoors and emergency access commands to bypass most access requirements."
+	registered_name = "Guild ERT"
+	assignment = "Guild ERT"
+
+/obj/item/card/id/syndicate/ert/aa/auditor_ert
+	name = "LSS Auditor ID card"
+	desc = "An ID card that is for top down, with access to check out and inspect anything anyware at a moments time."
+	registered_name = "LSS Auditor"
+	assignment = "LSS Auditor"
+
+/obj/item/card/id/syndicate/ert/medical_ert
+	name = "Medical ID card"
+	desc = "An ID straight from the SI Medical Divisions."
+	registered_name = "Medical ERT"
+	assignment = "SI Medical ERT"
+	access = list(access_moebius, access_medical_equip, access_morgue, access_genetics, access_heads,
+		access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
+		access_keycard_auth, access_sec_doors, access_psychiatrist, access_eva, access_maint_tunnels,
+		access_external_airlocks, access_paramedic, access_research_equipment, access_medical_suits)
+
+/obj/item/card/id/syndicate/ert/research_ert
+	name = "SRI ID card"
+	desc = "An ID straight from the SI Ethics Committee. Wait, they have an ethics commitee?"
+	registered_name = "Ethics Commitee Agent"
+	assignment = "Ethics Commitee Agent"
+	access = list(
+		access_rd, access_heads, access_tox, access_genetics, access_morgue,
+		access_tox_storage, access_teleporter, access_sec_doors,
+		access_moebius, access_medical_equip, access_chemistry, access_virology, access_surgery, access_psychiatrist,
+		access_robotics, access_xenobiology, access_ai_upload, access_tech_storage, access_eva, access_external_airlocks, access_medical_suits,
+		access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network, access_maint_tunnels, access_research_equipment
+	) //Same as RD
+
+/obj/item/card/id/syndicate/ert/prospector_ert
+	name = "Prospector Underboss ID card"
+	desc = "An ID straight from Boss Hogg, or at least from his dictation PAI. "
+	registered_name = "Underboss"
+	assignment = "Prospectors Underboss"
+	access = list(
+		access_prospector, access_foreman, access_external_airlocks, access_eva, access_heads, access_sec_doors,
+		access_RC_announce, access_keycard_auth, access_maint_tunnels, access_medical_suits
+	) //same as foreman, ofc.

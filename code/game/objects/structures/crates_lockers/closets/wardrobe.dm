@@ -195,22 +195,18 @@
 /obj/structure/closet/wardrobe/job/sec/populate_contents()
 	new /obj/item/clothing/under/rank/security(src)
 	new /obj/item/clothing/under/rank/security(src)
-	new /obj/item/clothing/under/rank/security(src)
-	new /obj/item/clothing/head/seccap(src)
 	new /obj/item/clothing/head/seccap(src)
 	new /obj/item/clothing/head/seccap(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/shoes/jackboots(src)
-	new /obj/item/clothing/shoes/jackboots(src)
-	new /obj/item/clothing/head/rank/ironhammer(src)
 	new /obj/item/clothing/head/rank/ironhammer(src)
 	new /obj/item/clothing/head/rank/ironhammer(src)
 	new /obj/item/clothing/under/rank/bdu/marshal(src)
 	new /obj/item/clothing/under/rank/bdu/marshal(src)
-	new /obj/item/clothing/under/rank/bdu/marshal(src)
 	new /obj/item/clothing/mask/balaclava(src)
 	new /obj/item/clothing/mask/balaclava(src)
-	new /obj/item/clothing/mask/balaclava(src)
+	new /obj/item/clothing/suit/storage/armor/marshal_coat(src)
+	new /obj/item/clothing/suit/storage/armor/marshal_coat(src)
 
 /obj/structure/closet/wardrobe/militia
 	name = "blackshield wardrobe"
@@ -391,15 +387,17 @@
 /obj/structure/closet/wardrobe/misc/tactical
 	name = "tactical equipment"
 	icon_door = "black"
+	desc = "A dingey old locker full of old SolFed SWAT gear."
 
 /obj/structure/closet/wardrobe/misc/tactical/populate_contents()
-	new /obj/item/clothing/under/tactical(src)
-	new /obj/item/clothing/suit/armor/heavy(src)
+	new /obj/item/clothing/under/turtleneck/tacticalgreen(src)
+	new /obj/item/clothing/suit/storage/vest/swat(src)
+	new /obj/item/clothing/head/helmet/swat(src)
 	new /obj/item/clothing/mask/balaclava/tactical(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
-	new /obj/item/storage/belt/security(src)
-	new /obj/item/clothing/shoes/jackboots(src)
-	new /obj/item/clothing/gloves/thick(src)
+	new /obj/item/storage/belt/security/tactical(src)
+	new /obj/item/clothing/shoes/swat(src)
+	new /obj/item/clothing/gloves/thick/swat(src)
 
 /obj/structure/closet/wardrobe/misc/prison
 	name = "prison wardrobe"

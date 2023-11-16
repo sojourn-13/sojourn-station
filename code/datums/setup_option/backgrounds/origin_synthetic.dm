@@ -113,7 +113,7 @@
 //-0Loss Stats +15Gained Stat
 
 	stat_modifiers = list(
-		STAT_ROB = 20,
+		STAT_ROB = 25,
 		STAT_TGH = 0,
 		STAT_VIG = 0,
 		STAT_BIO = 0,

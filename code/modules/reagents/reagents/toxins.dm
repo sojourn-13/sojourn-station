@@ -27,6 +27,9 @@
 			M.sanity.onToxin(src, multi)*/
 		M.add_chemical_effect(CE_TOXIN, strength + dose / 2)
 
+/datum/reagent/toxin/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	if(strength)
+		M.add_chemical_effect(CE_TOXIN, strength + dose / 3)
 
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
@@ -97,6 +100,26 @@
 			M.add_chemical_effect(CE_TOXIN, strength)
 		else
 			M.add_chemical_effect(CE_TOXIN, strength)
+
+/datum/reagent/toxin/carpotoxin/gland
+	name = "Carpotoxin Gland Mince"
+	id = "carpogland-mince"
+	description = "A mince made by grinding the fang and gland of particularly large carp with poppy seeds."
+	taste_description = "fish and bits of teeth"
+	reagent_state = SOLID
+	color = "#6C8681"
+	strength = 2
+	heating_point = 365
+	heating_products = list("toxin","protein", "concentrated-carpotoxin")
+
+/datum/reagent/toxin/carpotoxin/concentrated
+	name = "Conccentrated Carpotoxin"
+	id = "concentrated-carpotoxin"
+	description = "A deadly neurotoxin produced by the dreaded space carp. This sample appears particularly vibrant and has poppy seeds throughout. Smells like a swift death."
+	taste_description = "acrid lakewater"
+	reagent_state = LIQUID
+	strength = 6
+	color = "#016363"
 
 ///datum/reagent/toxin/blattedin is defined in blattedin.dm
 

@@ -32,16 +32,18 @@
 	uniform = /obj/item/clothing/under/rank/moebius_biolab_officer
 	suit = /obj/item/clothing/suit/armor/paramedic
 	r_pocket = /obj/item/device/lighting/toggleable/flashlight/pen
+	l_pocket = /obj/item/modular_computer/tablet/moebius/preset
 	pda_type = /obj/item/modular_computer/pda/heads/cmo
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	belt = /obj/item/storage/belt/medical
 	glasses = /obj/item/clothing/glasses/hud/health
 	shoes = /obj/item/clothing/shoes/reinforced/medical
-	back = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1, /obj/item/modular_computer/tablet/moebius/preset = 1, /obj/item/gun/projectile/automatic/c20r/sci/preloaded = 1, \
+	back = /obj/item/storage/backpack/satchel/medical
+	backpack_contents = list(/obj/item/storage/firstaid/soteria = 1, /obj/item/gun/projectile/automatic/c20r/sci/preloaded = 1, \
 							/obj/item/gun_upgrade/trigger/dnalock = 1, /obj/item/gun_upgrade/muzzle/silencer = 1, /obj/item/bodybag/cryobag = 2, \
 							/obj/item/storage/firstaid/blackshield/large = 1, /obj/item/storage/firstaid/surgery/si = 1, /obj/item/roller/compact  = 1, /obj/item/device/defib_kit/compact/combat/adv/loaded = 1)
-	l_pocket = /obj/item/card/id/medical_command
+	id_slot = slot_wear_id
+	id_type =  /obj/item/card/id/syndicate/ert/medical_ert
 
 /decl/hierarchy/outfit/marshal_ert
 	name = "Marshal Agent"
@@ -50,7 +52,6 @@
 	suit = /obj/item/clothing/suit/armor/vest/ironhammer/full
 	suit_store = /obj/item/gun/projectile/automatic/mamba/copperhead
 	r_pocket = /obj/item/clothing/accessory/badge/marshal
-	l_pocket = /obj/item/card/id/secert
 	gloves = /obj/item/clothing/gloves/stungloves
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -58,22 +59,24 @@
 	head = /obj/item/clothing/head/soft/sarge2soft
 	back = /obj/item/storage/backpack/security
 	backpack_contents = list(/obj/item/ammo_magazine/rifle_75_drum = 3, /obj/item/ammo_magazine/rifle_75_drum/highvelocity = 2, /obj/item/ammo_casing/grenade/flash = 2, /obj/item/ammo_casing/grenade/blast = 2, /obj/item/modular_computer/tablet/lease/preset/command = 1 )
+	id_slot = slot_wear_id
+	id_type =  /obj/item/card/id/syndicate/ert/aa/marshal_ert
 
 /decl/hierarchy/outfit/blackshield_ert
 	name = "Blackshield Specialist"
 	l_ear  =/obj/item/device/radio/headset/heads/bscom/bowman
 	mask = /obj/item/clothing/mask/gas/blackshield_gasmask
 	uniform = /obj/item/clothing/under/rank/commander
-	suit_store = /obj/item/gun/projectile/automatic/omnirifle/rds
-	r_pocket = /obj/item/clothing/accessory/badge/marshal
-	l_pocket = /obj/item/card/id/secert
+	//suit_store = /obj/item/gun/projectile/automatic/omnirifle/rds
+	r_pocket = /obj/item/clothing/accessory/badge/militiaagent
 	gloves = /obj/item/clothing/gloves/thick/swat/blackshield
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	shoes = /obj/item/clothing/shoes/swat
 	belt = /obj/item/storage/belt/security/tactical/shieldert
-	back = /obj/item/storage/backpack/duffelbag
-	backpack_contents = list(/obj/item/ammo_magazine/heavy_rifle_408_drum = 3, /obj/item/ammo_magazine/heavy_rifle_408_drum/slap = 2, /obj/item/ammo_magazine/heavy_rifle_408_drum/incend = 2, /obj/item/modular_computer/tablet/lease/preset/command = 1, /obj/item/storage/pouch/ammo = 1, /obj/item/clothing/suit/space/void/SCAF/blackshield = 1 )
-
+	back = /obj/item/storage/backpack/militia
+	backpack_contents = list(/obj/item/modular_computer/tablet/lease/preset/command = 1, /obj/item/storage/pouch/ammo = 1)
+	id_slot = slot_wear_id
+	id_type =  /obj/item/card/id/syndicate/ert/aa/blackshield_ert
 
 /decl/hierarchy/outfit/engi_ert
 	name = "Guild Emergency Personnel"
@@ -99,7 +102,8 @@
 							/obj/item/rpd = 1, \
 							/obj/item/modular_computer/tablet/lease/preset/command = 1,\
 							/obj/item/extinguisher/mini = 1)
-	l_pocket = /obj/item/card/id/guild_command
+	id_slot = slot_wear_id
+	id_type =  /obj/item/card/id/syndicate/ert/aa/guild_ert
 
 /decl/hierarchy/outfit/lss_ert
 	name = "Auditor"
@@ -112,14 +116,49 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	shoes = /obj/item/clothing/shoes/laceup
 	back = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/paper = 2,
+	backpack_contents = list(/obj/item/paper_bin  = 1,
 							/obj/item/clipboard = 1,
 							/obj/item/device/taperecorder = 1,
 							/obj/item/pen/multi = 1,
 							/obj/item/reagent_containers/glass/paint/red = 1, //For the papers, in case they want to make a paper red with red link to REALY show that they mean something
 							/obj/item/modular_computer/tablet/lease/preset/command = 1)
-	l_pocket = /obj/item/card/id/lss_command
+	id_slot = slot_wear_id
+	id_type =  /obj/item/card/id/syndicate/ert/aa/auditor_ert
 
+/decl/hierarchy/outfit/sri_ert
+	name = "Ethics Committee investigator"
+	l_ear = /obj/item/device/radio/headset/heads/rd
+	mask = /obj/item/clothing/mask/gas
+	uniform = /obj/item/clothing/under/suit_jacket/executive //we're basically an SI IAA
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat/science
+	pda_type = /obj/item/modular_computer/pda/heads/rd
+	shoes = /obj/item/clothing/shoes/laceup
+	back = /obj/item/storage/backpack/satchel/purple/scientist
+	gloves = /obj/item/clothing/gloves/latex
+	backpack_contents = list(
+							/obj/item/clipboard = 1,
+							/obj/item/device/taperecorder = 1,
+							/obj/item/pen/multi = 1,
+							/obj/item/paper_bin = 1,
+							/obj/item/modular_computer/tablet/lease/preset/command = 1)
+	id_slot = slot_wear_id
+	id_type =  /obj/item/card/id/syndicate/ert/research_ert
+
+/decl/hierarchy/outfit/prospector_ert //criminy
+	name = "Underboss"
+	l_ear  =/obj/item/device/radio/headset/heads/foreman
+	uniform = /obj/item/clothing/under/top/crewtopplain
+	suit = /obj/item/clothing/suit/storage/vest/merc
+	gloves = /obj/item/clothing/gloves/thick/combat
+	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/syndigaloshes
+	belt = /obj/item/storage/belt/webbing/artificer/ert //We come ready to fight OR break and enter
+	back = /obj/item/storage/backpack/satchel
+	r_pocket = /obj/item/clothing/accessory/holster/leg
+	l_pocket = /obj/item/storage/pouch/ammo
+	backpack_contents = list(/obj/item/modular_computer/tablet/lease/preset/command = 1, /obj/item/gun/projectile/silvereye = 1, /obj/item/ammo_magazine/kurtz_50/hv = 5, /obj/item/clothing/head/helmet/mercenary = 1, /obj/item/clothing/mask/gas  = 1)
+	id_slot = slot_wear_id
+	id_type =  /obj/item/card/id/syndicate/ert/prospector_ert
 
 /decl/hierarchy/outfit/doggo
 	name = "Kriosan trooper"

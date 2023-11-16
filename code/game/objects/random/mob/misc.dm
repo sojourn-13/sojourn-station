@@ -298,9 +298,9 @@
 	return pickweight(list(/mob/living/simple_animal/hostile/tengbrute = 20,
 		/mob/living/simple_animal/hostile/tengstalker = 10,
 		/mob/living/simple_animal/hostile/tengcharge = 20,
-		/mob/living/simple_animal/hostile/hell_pig = 1,
-		/mob/living/simple_animal/hostile/hell_pig/slepnir = 1,
-		/mob/living/simple_animal/hostile/hell_pig/wendigo = 1
+		/mob/living/simple_animal/hostile/hell_pig = 2,
+		/mob/living/simple_animal/hostile/hell_pig/slepnir = 2,
+		/mob/living/simple_animal/hostile/hell_pig/wendigo = 2
 		))
 
 /obj/random/mob/tengolo/low_chance

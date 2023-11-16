@@ -84,6 +84,7 @@
 	var/trans = reagents.trans_to_mob(M, amount_per_transfer_from_this, CHEM_BLOOD)
 	admin_inject_log(user, M, src, contained, trans)
 	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))
+	injtime = 0 //This -could- be abused but only in such narrow circumstances and with such meager payoff that it's fine. it's fine.
 	return
 
 /obj/item/reagent_containers/hypospray/verb/empty()

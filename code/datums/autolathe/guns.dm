@@ -52,6 +52,14 @@
 	name = "SA HG 10mm \"Lamia\""
 	build_path = /obj/item/gun/projectile/ladon
 
+/datum/design/autolathe/gun/ladon_hs
+	name = "H&S HG 10mm \"Porton\""
+	build_path = /obj/item/gun/projectile/ladon/hs
+
+/datum/design/autolathe/gun/ladon_sa
+	name = "Seinemetall Defense GmbH HG 10mm \"Sigia\""
+	build_path = /obj/item/gun/projectile/ladon/sa
+
 /datum/design/autolathe/gun/rafale
 	name = "Seinemetall Defense GmbH SHG 10mm \"Rafale\""
 	build_path = /obj/item/gun/projectile/silenced
@@ -204,6 +212,10 @@
 	name = "NM 20mm \"Bounty\""
 	build_path = /obj/item/gun/projectile/boltgun/lever/shotgun/bounty
 
+/datum/design/autolathe/gun/hustler
+	name = "NM 20mm \"Hustler\""
+	build_path = /obj/item/gun/projectile/automatic/omnirifle/hustler
+
 //C A R B I N E S
 
 /datum/design/autolathe/gun/bastard
@@ -250,6 +262,10 @@
 	name = "NM 6.5x39mm \"Mamba\" carbine"
 	build_path = /obj/item/gun/projectile/automatic/mamba
 
+/datum/design/autolathe/gun/bren
+	name = "\"Kalashnabren\" LMG"
+	build_path = /obj/item/gun/projectile/automatic/bren
+
 ///R I F L E S
 //7 . 6 2 m m
 
@@ -284,6 +300,10 @@
 /datum/design/autolathe/gun/strelki
 	name = "BR  7.62x39mm \"strelki\""
 	build_path = /obj/item/gun/projectile/automatic/nordwind/strelki
+
+/datum/design/autolathe/gun/watchtower
+	name = "BR \"Watchtower\" DMR - 7.62x39mm"
+	build_path = /obj/item/gun/projectile/automatic/nordwind/watchtower
 
 /datum/design/autolathe/gun/heroic
 	name = "NM 7.62x39mm \"Heroic\" LMG"
@@ -381,7 +401,7 @@
 	build_path = /obj/item/gun/projectile/boltgun/flare_gun
 
 /datum/design/autolathe/gun/specop
-	name = "NM 10mm Caseless \"Spec-Op\" SMG"
+	name = "NM 10mm Caseless \"Spec-Op\" Compact Carbine"
 	build_path = /obj/item/gun/projectile/automatic/specop
 
 //L A U N C H E R S

@@ -176,7 +176,7 @@
 	name = "Bandage Shirt"
 	icon_state = "bandage_shirt"
 	has_color = TRUE
-	
+
 /datum/category_item/underwear/undershirt/midriffkeyhole
 	name = "Midriff keyhole Shirt"
 	icon_state = "midriffkeyhole"
@@ -185,23 +185,73 @@
 	name = "Cropped Tank Top, feminine, v-neck"
 	icon_state = "tanktop_cropped_vneck"
 	has_color = TRUE
-	
+
 /datum/category_item/underwear/undershirt/tanktop_midriff
 	name = "Tanktop, midriff"
 	icon_state = "tank_midriff"
 	has_color = TRUE
-	
+
 /datum/category_item/underwear/undershirt/cropped_tanktop_midriff
 	name = "Cropped Tanktop, midriff"
 	icon_state = "tank_midriff_short"
 	has_color = TRUE
-	
+
 /datum/category_item/underwear/undershirt/blouse_fem
 	name = "Blouse, feminine"
 	icon_state = "blouse_fem"
 	has_color = TRUE
-	
-/datum/category_item/underwear/undershirt/sweater
-	name = "Sweater"
-	icon_state = "sweater"
+
+/datum/category_item/underwear/undershirt/shorttank
+	name = "Tanktop, short"
+	icon_state = "short_tanktop"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/turtleneck
+	name = "Turtleneck"
+	icon_state = "c_turtleneck"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/turtleneckshrt
+	name = "Turtleneck, shortsleeve"
+	icon_state = "c_shortslv_turtle"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_crop
+	name = "Cropped top"
+	icon_state = "c_crop_top"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_cropslvless
+	name = "Cropped top, Sleeveless"
+	icon_state = "c_slvless_crop_top"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_tank
+	name = "Tanktop, fitted"
+	icon_state = "c_tanktop"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_tankcrp
+	name = "Tanktop, cropped"
+	icon_state = "c_crop_tanktop"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_tankshrt
+	name = "Tanktop, short crop"
+	icon_state = "c_short_crop_tanktop"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_keyhole
+	name = "Sweater, keyhole"
+	icon_state = "c_keyhole_sweater"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_vneckswtr
+	name = "Sweater, V-neck"
+	icon_state = "c_vnecksweater"
+	has_color = TRUE
+
+/datum/category_item/underwear/undershirt/c_barmaid
+	name = "Blouse, barmaid"
+	icon_state = "barmaid_lite"
 	has_color = TRUE

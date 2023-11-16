@@ -504,7 +504,7 @@
 	armor_penetration = ARMOR_PEN_SHALLOW
 	w_class = ITEM_SIZE_BULKY
 	effective_faction = list("tengo", "tengolo_berserker", "xenomorph") // Which faction the cleaver is effective against.
-	damage_mult = 2 // The damage multiplier the cleaver get when attacking that faction.
+	damage_mult = 2.5 // The damage multiplier the cleaver get when attacking that faction.
 	price_tag = 200
 	item_icons = list(
 		slot_back_str = 'icons/obj/weapons-blades.dmi')
@@ -523,7 +523,9 @@
 	slot_flags = SLOT_BELT | SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_SAWING = 20) //Very sharp blade, serrated back
 	force = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_penetration = ARMOR_PEN_DEEP // same as other, cheaper swords.
+	effective_faction = list("wurm", "roach", "spider", "vox_tribe", "russian", "tengo", "tengolo_berserker", "xenomorph", "stalker") // This is the janky solution but works.
+	damage_mult = 2 //We are better for hunting, worse for "real fights"
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 500
 
@@ -534,7 +536,7 @@
 	icon_state = "gauntlet"
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_SAWING = 20) //Cuts people down just like trees.
 	force = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_penetration = ARMOR_PEN_HALF //same pen as a dagger. This is a fairly rare weapon that require fighting on of the more dangerous mobs.
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 5)
 	attack_verb = list("clawed", "scratched", "lacerated", "slashed")
@@ -691,6 +693,8 @@
 	wielded_icon = "hunter_halberd_wielded"
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_DEEP
+	effective_faction = list("wurm", "roach", "spider", "vox_tribe", "russian", "tengo", "tengolo_berserker", "xenomorph", "stalker") // This is the janky solution but works.
+	damage_mult = 2 //We are better for hunting, worse for "real fights"
 	price_tag = 500
 	matter = list(MATERIAL_STEEL = 22, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 4)
 
