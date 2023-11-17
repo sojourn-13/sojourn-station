@@ -204,6 +204,8 @@
 /obj/item/gun/energy/plasma/cassad/cult/deepmaints
 	name = "\"Blue Moon\" psi-plasma rifle"
 	desc = "A Cassad-sytle plasma rifle ready to take on any battle, this one crafted out of base violent thought alone has more unique ways of holding a cell's charge known only to the person that had thought of it."
+	damage_multiplier = 1
+	penetration_multiplier = 1
 	psigun = 1
 	init_firemodes = list(
 		list(mode_name="Melt", mode_desc="A reliable plasma round, for stripping away armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/burn.ogg', burst=1, fire_delay = 9, charge_cost=25, icon="kill", projectile_color = "#BF40BF"),
