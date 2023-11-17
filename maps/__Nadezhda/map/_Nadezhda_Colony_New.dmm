@@ -90671,10 +90671,10 @@
 	name = "Residential District Maintenance"
 	})
 "tnD" = (
-/obj/structure/table/reinforced,
 /obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo,
 /obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
 /obj/random/lathe_disk/advanced/low_chance,
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/fo)
 "tnG" = (
@@ -114124,7 +114124,6 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "yej" = (
-/obj/machinery/recharger,
 /obj/structure/disposalpipe/segment,
 /obj/item/computer_hardware/hard_drive/portable/design/engineering,
 /obj/machinery/smartfridge/disk,
@@ -217807,8 +217806,8 @@ qXu
 rYM
 nfq
 vlP
-wSv
 ngA
+wSv
 dBM
 oAK
 ayn
@@ -218011,7 +218010,7 @@ kfI
 vlP
 dzs
 sTa
-kUX
+rUW
 rug
 kgr
 kUX
