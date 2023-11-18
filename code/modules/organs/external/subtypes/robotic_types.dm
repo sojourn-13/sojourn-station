@@ -377,7 +377,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "A robotic limb crafted from metallic hydrogen and gold"
 	force_icon = 'icons/mob/human_races/cyberlimbs/nashef-agunabi.dmi'
 	model = "nashef-agunabi"
-	armor_list = list(melee = 20, bullet = 20, energy = 35, bomb = 30, bio = 0, rad = 100)
+	armor_list = list(melee = 20, bullet = 20, energy = 35, bomb = 30, bio = 100, rad = 100)
 	matter = list(MATERIAL_HYDROGEN = 5, MATERIAL_GOLD = 4, MATERIAL_PLATINUM = 2)
 	max_damage = 70
 	min_broken_damage = 50
