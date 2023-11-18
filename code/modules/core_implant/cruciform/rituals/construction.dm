@@ -579,7 +579,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 		/obj/item/stack/material/plasteel = 10,
 		/obj/item/stack/material/wood = 15,
 		/obj/item/stack/material/biomatter = 20,
-		/obj/item/stack/material/gold = 2,
+		/obj/item/stack/material/gold = 1,
 		/obj/item/stack/material/silver = 2
 	)
 	build_time = 3 SECONDS
@@ -600,7 +600,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	name = "\"Concillium\" las-machinegun"
 	build_path = /obj/item/gun/energy/concillium
 	materials = list(
-		/obj/item/stack/material/plasteel = 30,
+		/obj/item/stack/material/plasteel = 40,
 		/obj/item/stack/material/wood = 25,
 		/obj/item/stack/material/glass = 15,
 		/obj/item/stack/material/gold = 3,
