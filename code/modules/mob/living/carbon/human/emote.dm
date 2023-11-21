@@ -61,13 +61,13 @@
 				use_sound = 'sound/machines/synth_no.ogg'
 			else if(act == "rcough")
 				display_msg = "emits a robotic cough"
-				if(get_sex() == FEMALE)
+				if(identifying_gender == "female")
 					use_sound = pick('sound/effects/mob_effects/f_machine_cougha.ogg','sound/effects/mob_effects/f_machine_coughb.ogg')
 				else
 					use_sound = pick('sound/effects/mob_effects/m_machine_cougha.ogg','sound/effects/mob_effects/m_machine_coughb.ogg', 'sound/effects/mob_effects/m_machine_coughc.ogg')
 			else if(act == "rsneeze")
 				display_msg = "emits a robotic sneeze"
-				if(get_sex() == FEMALE)
+				if(identifying_gender == "female")
 					use_sound = 'sound/effects/mob_effects/machine_sneeze.ogg'
 				else
 					use_sound = 'sound/effects/mob_effects/f_machine_sneeze.ogg'
@@ -261,7 +261,7 @@
 				if (!muzzled)
 					message = "chuckles."
 					m_type = 2
-					if(get_sex() == FEMALE)
+					if(identifying_gender == "female")
 						switch(pick("1", "2"))
 							if("1")
 								playsound(src, 'sound/effects/mob_effects/f_chuckle.ogg', 70)
@@ -300,7 +300,7 @@
 				if (!muzzled)
 					message = "coughs!"
 					m_type = 2
-					if(get_sex() == FEMALE)
+					if(identifying_gender == "female")
 						switch(pick("1", "2"))
 							if("1")
 								playsound(src, 'sound/effects/mob_effects/f_cougha.ogg', 70)
@@ -326,7 +326,7 @@
 				if (!muzzled)
 					message = "awkwardly clears [identifying_gender == "male" ? "his" : identifying_gender == "female" ? "her" : "their"] throat."
 					m_type = 2
-					if(get_sex() == FEMALE)
+					if(identifying_gender == "female")
 						switch(pick("1", "2"))
 							if("1")
 								playsound(src, 'sound/effects/mob_effects/throat_f.ogg', 70)
@@ -366,7 +366,7 @@
 				if (!muzzled)
 					message = "gasps!"
 					m_type = 2
-					if(get_sex() == FEMALE)
+					if(identifying_gender == "female")
 						switch(pick("1", "2", "3"))
 							if("1")
 								playsound(loc, 'sound/effects/mob_effects/gasp_f1.ogg', 80, 1)
@@ -402,7 +402,7 @@
 				if (!muzzled)
 					message = "giggles."
 					m_type = 2
-					if(get_sex() == FEMALE)
+					if(identifying_gender == "female")
 						switch(pick("1", "2"))
 							if("1")
 								playsound(src, 'sound/effects/mob_effects/f_giggle.ogg', 70)
@@ -489,7 +489,7 @@
 				if (!muzzled)
 					message = "sighs."
 					m_type = 2
-					if(get_sex() == FEMALE)
+					if(identifying_gender == "female")
 						playsound(loc, 'sound/effects/mob_effects/f_sigh.ogg', 70)
 					else
 						playsound(loc, 'sound/effects/mob_effects/m_sigh.ogg', 70)
@@ -505,7 +505,7 @@
 				if (!muzzled)
 					message = "laughs."
 					m_type = 2
-					if(get_sex() == FEMALE)
+					if(identifying_gender == "female")
 						switch(pick("1", "2", "3"))
 							if("1")
 								playsound(src, 'sound/voice/f_laugh.ogg', 70)
@@ -561,7 +561,7 @@
 			else
 				message = "moans!"
 				m_type = 2
-				if(get_sex() == FEMALE)
+				if(identifying_gender == "female")
 					switch(pick("1", "2", "3"))
 						if("1")
 							playsound(loc, 'sound/effects/mob_effects/moan_f1.ogg', 40)
@@ -661,7 +661,7 @@
 				if (!muzzled)
 					message = "sneezes."
 					m_type = 2
-					if(get_sex() == FEMALE)
+					if(identifying_gender == "female")
 						playsound(loc, 'sound/effects/mob_effects/f_sneeze.ogg', 70)
 					else
 						playsound(loc, 'sound/effects/mob_effects/sneeze.ogg', 70)
@@ -677,7 +677,7 @@
 				if (!muzzled)
 					message = "sniffs."
 					m_type = 2
-					if(get_sex() == FEMALE)
+					if(identifying_gender == "female")
 						playsound(loc, 'sound/effects/mob_effects/f_sniff.ogg', 70)
 					else
 						playsound(loc, 'sound/effects/mob_effects/m_sniff.ogg', 70)
@@ -693,7 +693,7 @@
 				if (!muzzled)
 					message = "snores."
 					m_type = 2
-					if(get_sex() == FEMALE)
+					if(identifying_gender == "female")
 						playsound(loc, 'sound/effects/mob_effects/f_snore.ogg', 70)
 					else
 						playsound(loc, 'sound/effects/mob_effects/m_snore.ogg', 70)
@@ -732,7 +732,7 @@
 		if ("yawn")
 			if (!muzzled)
 				message = "yawns."
-				if(get_sex() == FEMALE)
+				if(identifying_gender == "female")
 					m_type = 2
 					playsound(loc, 'sound/effects/mob_effects/yawn_f.ogg', 70)
 				else
@@ -807,7 +807,7 @@
 					m_type = 2
 					if(prob(1))
 						playsound(loc, 'sound/voice/wilhelm_scream.ogg', 80, 1)
-					else if(get_sex() == FEMALE)
+					else if(identifying_gender == "female")
 						switch(pick("1", "2", "3"))
 							if("1")
 								playsound(loc, 'sound/voice/femalescream_1.ogg', 80, 1)
@@ -837,7 +837,7 @@
 				if (!muzzled)
 					message = "<span class='danger'>screams in agony!</span>"
 					m_type = 2
-					if(get_sex() == FEMALE)
+					if(identifying_gender == "female")
 						switch(pick("1", "2"))
 							if("1")
 								playsound(loc, 'sound/voice/femalescream_2.ogg', 80, 1)
@@ -853,21 +853,20 @@
 					message = "<span class='danger'>makes a very loud noise, squirming around!</span>"
 					m_type = 2
 
-		if("urah") //Emoting will NOT give you the perk's bonuses, but anyone who knows the emote can at least use it for flavor value.
-			if (miming)
-				message = "acts out a battlecry!"
-				m_type = 1
-			else if (!muzzled)
+
+		if ("urah") //Emoting will NOT give you the perk's bonuses, but anyone who knows the emote can at least use it for flavor value.
+			if (!muzzled)
+				cloud_emote = "cloud-scream"
 				message = "releases a heroic roar, inspiring everyone around [identifying_gender == "male" ? "him" : identifying_gender == "female" ? "her" : "themselves"]! URA!"
-				m_type = 2
-				if(get_sex() == MALE)
-					playsound(loc, 'sound/voice/ura.ogg', 80, 1) //URAH!!!
-				else if(get_sex() == FEMALE || PLURAL || NEUTER)
-					playsound(loc, 'sound/voice/f_warcry.ogg', 100) // Less cringe scream, FORWARD!!
-			else
-				message = "makes a very loud noise."
-				m_type = 2
-			cloud_emote = "cloud-scream"
+				if(identifying_gender == "female")
+					m_type = 2
+					playsound(loc, 'sound/voice/f_warcry.ogg', 80, 30)
+				else
+					m_type = 2
+					playsound(loc, 'sound/voice/ura.ogg', 80, 1)
+				if(miming)
+					message = "acts out a battlecry!"
+					m_type = 1
 
 		if("crack")
 			if(!restrained())
