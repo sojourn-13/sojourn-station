@@ -220,7 +220,6 @@
 	dir = 1
 	},
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_y = -32
@@ -1683,7 +1682,8 @@
 	output_attempt = 1;
 	output_level = 200000;
 	output_level_max = 250000;
-	outputting = 2
+	outputting = 2;
+	input_level = 750000
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -5090,10 +5090,11 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "bgX" = (
-/obj/effect/decal/cleanable/generic,
-/obj/structure/table/marble,
-/turf/simulated/floor/wood/wild3,
-/area/nadezhda/crew_quarters/bar)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/repair_station,
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/rnd/robotics)
 "bgZ" = (
 /obj/structure/catwalk,
 /obj/machinery/light{
@@ -16625,7 +16626,8 @@
 	output_attempt = 1;
 	output_level = 200000;
 	output_level_max = 250000;
-	outputting = 2
+	outputting = 2;
+	input_level = 750000
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -23485,7 +23487,7 @@
 	RCon_tag = "Telecommunications";
 	charge = 2.5e+006;
 	input_attempt = 1;
-	input_level = 250000;
+	input_level = 750000;
 	output_attempt = 1;
 	output_level = 250000
 	},
@@ -27420,6 +27422,13 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"fWG" = (
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/nadezhda/security/armory_blackshield)
 "fWH" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/fernybush,
@@ -29668,10 +29677,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
 /obj/item/reagent_containers/food/condiment/enzyme,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl,
+/obj/item/material/kitchen/rollingpin,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "gul" = (
@@ -37868,6 +37877,7 @@
 /obj/structure/table/marble,
 /obj/machinery/cooking_with_jane/grill,
 /obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "ijr" = (
@@ -41450,7 +41460,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/flour,
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/board,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "iYP" = (
@@ -55803,7 +55813,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "meU" = (
 /obj/machinery/power/smes/buildable{
-	RCon_tag = "Hulk Mining Barge";
+	RCon_tag = "Vasiliy Dokuchaev";
 	charge = 1.5e+007;
 	cur_coils = 3;
 	input_attempt = 1;
@@ -59504,6 +59514,13 @@
 	pixel_y = -22
 	},
 /obj/machinery/chemical_dispenser,
+/obj/machinery/button/remote/blast_door{
+	id = "Chem";
+	name = "Chemistry shutter control";
+	pixel_y = 6;
+	pixel_x = 24;
+	req_access = list(33)
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "mTn" = (
@@ -59582,6 +59599,10 @@
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/suit/space/void/odst/corps,
 /obj/item/clothing/suit/space/void/odst/corps,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/armory_blackshield)
 "mTZ" = (
@@ -62324,8 +62345,11 @@
 "nwf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cooking_with_jane/cooking_container/board,
 /obj/machinery/light,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
+/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
 "nwj" = (
@@ -63275,7 +63299,7 @@
 	RCon_tag = "Substation - Medical";
 	charge = 5e+006;
 	input_attempt = 1;
-	input_level = 200000;
+	input_level = 750000;
 	inputting = 2;
 	output_attempt = 1;
 	output_level = 200000;
@@ -68478,11 +68502,6 @@
 /obj/item/storage/box/beakers,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/machinery/light/small,
-/obj/machinery/button/remote/blast_door{
-	id = "Chem";
-	name = "Chemistry shutter control";
-	pixel_y = -37
-	},
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
@@ -76193,7 +76212,8 @@
 	output_attempt = 1;
 	output_level = 200000;
 	output_level_max = 250000;
-	outputting = 2
+	outputting = 2;
+	input_level = 750000
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/plating,
@@ -79666,7 +79686,8 @@
 	output_attempt = 1;
 	output_level = 200000;
 	output_level_max = 250000;
-	outputting = 2
+	outputting = 2;
+	input_level = 750000
 	},
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -82335,7 +82356,6 @@
 /area/nadezhda/security/barracks)
 "rHX" = (
 /obj/structure/table/marble,
-/obj/item/material/kitchen/rollingpin,
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/cookingoil,
@@ -84020,7 +84040,8 @@
 	output_attempt = 1;
 	output_level = 200000;
 	output_level_max = 250000;
-	outputting = 2
+	outputting = 2;
+	input_level = 750000
 	},
 /obj/structure/cable/cyan{
 	d2 = 4;
@@ -94812,7 +94833,8 @@
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/engineering/foyer)
 "ulb" = (
-/obj/machinery/repair_station,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/robotics)
 "ulj" = (
@@ -108752,7 +108774,7 @@
 "xlv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/remote/blast_door{
-	id = "buffet2";
+	id = "kitchen access";
 	name = "kitchen access";
 	pixel_x = 30;
 	req_access = list(25)
@@ -167550,7 +167572,7 @@ hDX
 oxA
 oxA
 oxA
-oxA
+ulb
 dPU
 lSL
 vIr
@@ -167748,7 +167770,7 @@ oxA
 dYj
 xLD
 oxA
-hDX
+bgX
 hOh
 xaw
 qBP
@@ -173766,7 +173788,7 @@ wCx
 wCx
 wCx
 fvs
-bfO
+fWG
 dHo
 iHr
 kqD
@@ -176040,7 +176062,7 @@ guj
 bLm
 fzr
 xAD
-bgX
+kju
 xAD
 xAD
 xva
