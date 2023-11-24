@@ -55,7 +55,7 @@
 	item_state = "helmet"
 	icon = 'icons/obj/psionic/occHicon.dmi'
 	icon_override = 'icons/obj/psionic/occHmob.dmi'
-	desc = "This is a massive helmet with a large and durable visor, looking through which you see the world through the veil of nothingness itself. You are detached from reality and it cannot harm you. You control reality, not it controls you. \
+	desc = "This is a massive helmet with a large and durable visor, looking through which you see the world through the veil of nothingness itself. You are detached from reality and it cannot harm you. You control reality, it doesn't control you. \
 	This is a very good defense, but maintaining it requires constant concentration."
 	slot_flags = SLOT_HEAD
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION|BLOCK_GAS_SMOKE_EFFECT
