@@ -272,6 +272,14 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	type_butt = /obj/item/trash/cigbutt/os
 	preloaded_reagents = list("nicotine" = 5)
 
+/obj/item/clothing/mask/smokable/cigarette/os/nova
+	name = "\improper Greyson Star Traders produced cigarette"
+	desc = "A inhouse made cigarette by Greyson Star Traders. It has a very unique aroma, hard to describe but its honestly not awful, you can see that it is actually somehow packed with care? Why robots would mass produce cigars with care?"
+	icon_state = "cigoff"
+	icon_on = "cigon"
+	icon_off = "cigoff"
+	type_butt = /obj/item/trash/cigbutt/os
+	preloaded_reagents = list("nicotine" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/tannhauser
 	name = "\improper Tannhauser Gate cigarette"

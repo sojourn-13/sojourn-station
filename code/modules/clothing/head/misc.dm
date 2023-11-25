@@ -517,6 +517,20 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 		rad = 25
 	)
 
+/obj/item/clothing/head/os_cap/nova
+	name = "Greyson Star Trader Cap"
+	desc = "A flat brim cap made for the colony office workers to keep out light out of their heads, weirdly enough it smells like if you just buyed it out of the vendor, it smells like cinnamon."
+	icon_state = "os_cap"
+	item_state = "os_cap"
+	armor_list = list(
+		melee = 0,
+		bullet = 0,
+		energy = 5,
+		bomb = 0,
+		bio = 5,
+		rad = 5
+	)
+
 /*
  * Ushanka
  */

@@ -66,3 +66,44 @@
 /obj/machinery/vending/one_star/health
 	desc = "A holographic vendor made by Greyson Positronic. This one sells medical paraphernalia of the GP variety."
 	icon_state = "vendor_health"
+
+
+//Based off a event that the colony helped a distress signal from the greyson. Mostly fluff and cosmetic
+
+/obj/machinery/vending/greyson_colony_ally
+	name = "Greyson Star Traders Vending Machine"
+	desc = "A holographic vendor made by a unknown Greyson Positronic sub-brand that owns a trading vessel, that said vessel constantly trades with lonestar and in a effort of good will by the mainframe GSTPMF Nova Greyson they have given this vendor to the colony containing greyson goods... This one sells a variety of items."
+	product_slogans = "It's a Vending Machine! Well... we think you might enjoy it?; Again thank you for saving one of our representatives! The GSTPMF Nova Greyson sends her regards to the colony."
+	product_ads = "We thank your colony for saving our Representative in the past! We hope to make more deals for tomorrow!;Hows are you doing? Hope you have a wonderful day!;We really do hope the colony fares well! Contact us anytime soon!;Some people really want to see the world shine! As do us!"
+	icon = 'icons/obj/machines/one_star/vending.dmi'
+	icon_state = "vendor_items"
+	icon_vend = "vendor_printing"
+	vendor_department = DEPARTMENT_GREYSON
+
+/obj/machinery/vending/greyson_colony_ally/Initialize()
+	. = ..()
+	set_light(1.4, 1, COLOR_LIGHTING_CYAN_BRIGHT)
+	earnings_account = department_accounts[DEPARTMENT_GREYSON]
+
+
+	products = list(
+		/obj/item/clothing/mask/smokable/cigarette/os/nova = 25,
+		/obj/item/clothing/head/helmet/space/os/nova = 15,
+		/obj/item/clothing/suit/space/os/nova = 15,
+		/obj/item/clothing/suit/greatcoat/os = 10,
+		/obj/item/clothing/under/os_jumpsuit/nova = 10,
+		/obj/item/clothing/under/os_jumpsuit/bdu/nova = 10,
+		/obj/item/clothing/under/iron_lock_security = 10,
+		/obj/item/clothing/head/os_cap/nova = 10,
+ 		)
+
+	prices = list(
+		/obj/item/clothing/mask/smokable/cigarette/os/nova = 5,
+		/obj/item/clothing/head/helmet/space/os/nova = 85,
+		/obj/item/clothing/suit/space/os/nova = 120,
+		/obj/item/clothing/suit/greatcoat/os/nova = 70,
+		/obj/item/clothing/under/os_jumpsuit/nova = 25,
+		/obj/item/clothing/under/os_jumpsuit/bdu/nova = 35,
+		/obj/item/clothing/under/iron_lock_security = 70,
+		/obj/item/clothing/head/os_cap/nova = 45,
+		)
