@@ -121,6 +121,8 @@
 		/datum/design/autolathe/part/cable_coil,
 		/datum/design/autolathe/container/hcase_parts,
 		/datum/design/autolathe/container/hcase_engi,
+		/datum/design/autolathe/circuit/smartfridge,
+		/datum/design/autolathe/circuit/smartfridge/disk,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/logistics

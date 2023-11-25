@@ -232,12 +232,18 @@
 	return
 
 
+/*******************
+*   Disk Storage
+********************/
+/obj/machinery/smartfridge/disk
+	name = "\improper Disk Storage"
+	desc = "For catalouging the tech you have acquired."
 
 
-
-
-
-
+/obj/machinery/smartfridge/disk/accept_check(var/obj/item/O as obj)
+	if(istype(O,/obj/item/computer_hardware/hard_drive/portable))
+		return 1
+	return 0
 
 
 
