@@ -104,7 +104,7 @@
 	slowdown = -0.09
 	slot_flags = SLOT_GLOVES
 	item_flags = THICKMATERIAL
-	siemens_coefficient = 1 //Insulated!
+	siemens_coefficient = 0 //Insulated!
 	matter = list()
 	armor_list = list(
 		melee = 30,
