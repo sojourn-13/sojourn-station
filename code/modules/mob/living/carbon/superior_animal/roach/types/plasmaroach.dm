@@ -17,5 +17,5 @@
 
 /mob/living/carbon/superior_animal/roach/plasmaroach/UnarmedAttack(atom/A, proximity)
 	. = ..()
-	gib()
 	explosion(loc, 0,1,2) //slightly weaker radius than a plasma spider, still hurts like a bitch
+	gib()

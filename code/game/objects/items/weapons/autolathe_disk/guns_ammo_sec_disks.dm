@@ -249,6 +249,32 @@
 		/datum/design/autolathe/ammo/magnum_lethal = 2,
 		)
 
+/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon
+	disk_name = "H&S - 10mm Auto-Mag Porton Handgun"
+	icon_state = "frozenstar"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/ladon_hs = 3,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
+		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal = 2,
+		)
+
+/obj/item/computer_hardware/hard_drive/portable/design/guns/ladon/sa
+	disk_name = "SA - 10mm Auto-Mag Sigia Handgun"
+	icon_state = "sa"
+
+	license = 8
+	designs = list(
+		/datum/design/autolathe/gun/ladon_sa = 3,
+		/datum/design/autolathe/ammo/magnum_practice = 0,
+		/datum/design/autolathe/ammo/magnum_rubber,
+		/datum/design/autolathe/ammo/magnum,
+		/datum/design/autolathe/ammo/magnum_lethal = 2,
+		)
+
 /obj/item/computer_hardware/hard_drive/portable/design/guns/colt/ten
 	disk_name = "H&S - 10mm Auto-Mag Delta Elite"
 	icon_state = "frozenstar"

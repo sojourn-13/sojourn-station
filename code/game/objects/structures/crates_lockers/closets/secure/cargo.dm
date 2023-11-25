@@ -170,9 +170,9 @@
 		if("WILDCARDS")
 			//why prospies have to stay in the past?
 			if(prob(50))
-				new /obj/item/gun/projectile/boltgun/lever/shotgun(src)
-				new /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet(src)
-				new /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet(src)
+				new /obj/item/gun/projectile/automatic/bren(src)
+				new /obj/item/ammo_magazine/light_rifle_257(src)
+				new /obj/item/ammo_magazine/light_rifle_257(src)
 			else
 				new /obj/item/gun/projectile/automatic/nordwind/strelki(src)
 				new /obj/item/ammo_magazine/rifle_75(src)
@@ -224,9 +224,9 @@
 	switch(side_arm_cache)
 		if("PISTOL")
 			if(prob(50))
-				new /obj/item/gun/projectile/giskard(src)
-				new /obj/item/ammo_magazine/highcap_pistol_35(src)
-				new /obj/item/ammo_magazine/highcap_pistol_35(src)
+				new /obj/item/gun/projectile/ladon/sa(src)
+				new /obj/item/ammo_magazine/magnum_40(src)
+				new /obj/item/ammo_magazine/magnum_40(src)
 			else
 				new /obj/item/gun/projectile/mk58(src)
 				new /obj/item/ammo_magazine/highcap_pistol_35(src)

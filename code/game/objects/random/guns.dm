@@ -25,6 +25,7 @@
 				/obj/item/ammo_kit = 3,\
 				/obj/item/gun/projectile/giskard = 1,\
 				/obj/item/gun/projectile/automatic/luger = 0.5,\
+				/obj/item/gun/projectile/ladon/sa = 0.5,  \
 				/obj/item/gun/projectile/boltgun/sa = 2,\
 				/obj/item/gun/projectile/shotgun/pump = 0.1,\
 				/obj/item/gun/projectile/revolver/sixshot/sawn = 0.5,\
@@ -74,6 +75,8 @@
 				/obj/item/gun/projectile/revolver/rev10 = 0.3,\
 				/obj/item/gun/projectile/basilisk = 0.5,\
 				/obj/item/gun/projectile/ladon = 0.5,\
+				/obj/item/gun/projectile/ladon/sa = 1.0,\
+				/obj/item/gun/projectile/ladon/hs = 0.5,\
 				/obj/item/gun/projectile/automatic/nordwind/strelki = 0.3,\
 				/obj/item/gun/projectile/revolver/sixshot = 1,\
 				/obj/item/gun/projectile/boltgun/lever = 1.5,\
@@ -121,7 +124,8 @@
 				/obj/item/ammo_kit = 0.8,
 				/obj/item/gun/projectile/automatic/sts/rifle/sawn = 1,\
 				/obj/item/gun/projectile/automatic/omnirifle/solmarine = 1,\
-				/obj/item/gun/projectile/automatic/thompson = 0.5,
+				/obj/item/gun/projectile/automatic/thompson = 0.5,\
+				/obj/item/gun/projectile/automatic/bren = 0.5,\
 				/obj/item/gun/projectile/automatic/ak47/sa/sawn = 1,\
 				/obj/item/gun/projectile/makarov = 1,\
 				/obj/item/gun/projectile/shotgun/pug = 0.5,
@@ -275,6 +279,7 @@
 				/obj/item/gun/projectile/automatic/chaingun = 1,
 				/obj/item/gun/projectile/automatic/lmg/pk = 3,
 				/obj/item/gun/projectile/automatic/dp = 2,
+				/obj/item/gun/projectile/automatic/bren = 1.5,
 				/obj/item/gun/projectile/automatic/bastard = 2,
 				/obj/item/gun/projectile/automatic/sts/rifle/blackshield = 2,
 				/obj/item/gun/projectile/automatic/ak47/sa/tac = 1,

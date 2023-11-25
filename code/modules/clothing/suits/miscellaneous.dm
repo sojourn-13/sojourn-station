@@ -178,23 +178,17 @@ obj/item/clothing/suit/gownrisque/alt
 
 /obj/item/clothing/suit/sling
 	name = "universal sling"
-	desc = "A generic universal equipment sling for whatever you could need on your back."
+	desc = "A generic universal equipment sling for whatever you could need on your back. More versatile then other choices just don't expect it to protect you from anything."
 	icon_state = "universal_sling"
-	allowed = list (/obj/item/gun,
-	/obj/item/device,
-	/obj/item/material,
-	/obj/item/storage/pouch,
-	/obj/item/storage/box,
+	extra_allowed = list(
 	/obj/item/storage/firstaid,
 	/obj/item/storage/lockbox,
 	/obj/item/storage/part_replacer,
 	/obj/item/storage/secure,
 	/obj/item/storage/toolbox,
 	/obj/item/storage/briefcase,
-	/obj/item/tank,
-	/obj/item/ammo_magazine,
-	/obj/item/ammo_magazine/ammobox/
-	)
+	/obj/item/material,
+	/obj/item/device)
 
 /obj/item/clothing/suit/storage/punkvest
 	name = "punk vest"

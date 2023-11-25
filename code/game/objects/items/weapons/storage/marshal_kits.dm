@@ -131,7 +131,7 @@
 		new /obj/item/gun/energy/taser(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/liberty
 	name = "Liberty Secondary Kit"
@@ -142,7 +142,7 @@
 		new /obj/item/ammo_magazine/magnum_40/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/magnum_40/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/judiciary
 	name = "Judiciary Secondary Kit"
@@ -154,7 +154,7 @@
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/highcap_pistol_35(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/armpit(src)
 
 // Ranger secondary kits
 /obj/item/storage/box/m_kit/deckard
@@ -167,7 +167,7 @@
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/zwang
 	name = "Zwang Secondary Kit"
@@ -177,7 +177,7 @@
 		new /obj/item/gun/energy/zwang(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/judge
 	name = "Judge Secondary Kit"
@@ -186,7 +186,7 @@
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/judge(src)
 		new /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/armpit(src)
 
 // Warrant Officer secondaries (from voucher)
 /obj/item/storage/box/m_kit/mateba
@@ -198,7 +198,7 @@
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/galaxy
 	name = "\"Galaxy\" Plasma Pistol Kit"
@@ -208,7 +208,7 @@
 		new /obj/item/gun/energy/glock(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/amnesty
 	name = "\"Amnesty\" Heavy Pistol Kit"
@@ -218,7 +218,7 @@
 		new /obj/item/gun/projectile/lamia/amnesty(src)
 		new /obj/item/ammo_magazine/kurtz_50/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/kurtz_50(src)
-		new /obj/item/clothing/accessory/holster/hip(src)
+		new /obj/item/clothing/accessory/holster/armpit(src)
 
 // Armor Kits
 /obj/item/storage/box/m_kit/standard_armor

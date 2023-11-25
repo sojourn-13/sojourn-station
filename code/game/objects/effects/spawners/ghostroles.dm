@@ -90,6 +90,8 @@
 		STAT_COG = 10
 	)
 
+//colony 'ert' spawners.
+
 /obj/effect/mob_spawn/human/si_medical_ert
 	name = "deployment sleeper"
 	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in SI medical equipment."
@@ -139,7 +141,7 @@
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/blackshield_ert
-	ghost_role_perks = list(PERK_ASS_OF_CONCRETE, PERK_SMARTLINK, PERK_CODESPEAK, PERK_BLACKSHIELD_CONDITIONING, PERK_TRUE_NAME)
+	ghost_role_perks = list(PERK_ASS_OF_CONCRETE, PERK_BOLT_REFLECT, PERK_CODESPEAK, PERK_BLACKSHIELD_CONDITIONING, PERK_TRUE_NAME)
 	short_desc = "You are a Blackshield Agent."
 	flavour_text = "Something has happend to the upper colony to warrant your deployment. Assess the situation and resolve it swiftly."
 	assignedrole = "Blackshield Specialist"
@@ -194,6 +196,50 @@
 		STAT_MEC = 45,
 		STAT_VIG = 45,
 		STAT_COG = 65
+	)
+
+/obj/effect/mob_spawn/human/sri_ert
+	name = "deployment sleeper"
+	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a member of the SRI Ethics committee."
+	mob_name = "a human"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/sri_ert
+	ghost_role_perks = list(PERK_SURGICAL_MASTER, PERK_ROBOTICS_EXPERT, PERK_SI_SCI, PERK_CHEMIST, PERK_TRUE_NAME)
+	short_desc = "You are a member of the Soteria Ethics Committee."
+	flavour_text = "An accusation has been made against the Soteria Research Institute that besmirches our good name and committment to progress and the betterment of science. \
+	Identify the source of the issue and recommend resolutions if a member of Soteria is found to not acted in the best interests of the institutes mission."
+	assignedrole = "SRI Ethics Committee investigator"
+	title = "SRI Ethics Committee investigator"
+	stat_modifiers = list(
+		STAT_ROB = 20,
+		STAT_TGH = 15,
+		STAT_BIO = 40,
+		STAT_MEC = 50,
+		STAT_VIG = 20,
+		STAT_COG = 75
+	)
+
+/obj/effect/mob_spawn/human/prospector_ert
+	name = "deployment sleeper"
+	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a Prospector."
+	mob_name = "a human"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/prospector_ert
+	ghost_role_perks = list(PERK_STALKER, PERK_PROSPECTOR_CONDITIONING, PERK_SURE_STEP, PERK_TRUE_NAME)
+	short_desc = "You are an Underboss."
+	flavour_text = "The big boss has sent you to the upper levels to sort something out. Get it handled and be fast. Avoid drawing unnecessary attention to your presence \
+	or mission."
+	assignedrole = "Prospector Underboss"
+	title = "Prospector Underboss"
+	stat_modifiers = list(
+		STAT_ROB = 45,
+		STAT_TGH = 45,
+		STAT_BIO = 15,
+		STAT_MEC = 15,
+		STAT_VIG = 45,
+		STAT_COG = 5 //Hoggs smartest prospector
 	)
 
 

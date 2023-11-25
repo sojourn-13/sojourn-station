@@ -48,6 +48,8 @@
 			tally += wear_suit.slowdown
 		if(shoes)
 			tally += shoes.slowdown
+		if(back)
+			tally += back.slowdown
 
 	//tally += min((shock_stage / 100) * 3, 3) //Scales from 0 to 3 over 0 to 100 shock stage
 	//Soj edit - Are painkillers dont just magically make us faster

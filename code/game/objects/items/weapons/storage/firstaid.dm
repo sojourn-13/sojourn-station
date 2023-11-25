@@ -132,6 +132,23 @@
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
 
+/obj/item/storage/firstaid/radiation
+	name = "radiation first-aid kit"
+	desc = "It's a basic first aid kit for handling radiation exposure."
+	icon_state = "radfirstaid"
+
+/obj/item/storage/firstaid/radiation/empty
+	empty = TRUE
+
+/obj/item/storage/firstaid/radiation/populate_contents()
+	if (empty) return
+	new /obj/item/reagent_containers/hypospray/autoinjector/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/antirad(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/device/scanner/health(src)
+
 /obj/item/storage/firstaid/combat
 	name = "combat medical kit"
 	desc = "Contains advanced medical treatments."
@@ -231,6 +248,7 @@
 		/obj/item/tool/retractor,
 		/obj/item/tool/scalpel,
 		/obj/item/tool/surgicaldrill,
+		/obj/item/tool/tape_roll/fiber/medical,
 		/obj/item/tool/tape_roll/bonegel,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/storage/pill_bottle,
@@ -244,6 +262,7 @@
 	new /obj/item/tool/hemostat/adv(src)
 	new /obj/item/tool/retractor/adv(src)
 	new /obj/item/tool/bonesetter/adv(src)
+	new /obj/item/tool/tape_roll/fiber/medical(src)
 	new /obj/item/tool/tape_roll/bonegel(src)
 	new /obj/item/tool/saw/circular/medical(src)
 	new /obj/item/tool/surgicaldrill/adv(src)
@@ -269,6 +288,7 @@
 	new /obj/item/tool/hemostat/adv/si(src)
 	new /obj/item/tool/retractor/adv/si(src)
 	new /obj/item/tool/bonesetter/adv/si(src)
+	new /obj/item/tool/tape_roll/fiber/medical(src)
 	new /obj/item/tool/cautery/adv/si(src)
 	new /obj/item/tool/tape_roll/bonegel/si(src)
 	new /obj/item/tool/saw/circular/medical/si(src)
