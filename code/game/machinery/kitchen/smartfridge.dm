@@ -238,7 +238,7 @@
 /obj/machinery/smartfridge/disk
 	name = "\improper Disk Storage"
 	desc = "For catalouging the tech you have acquired."
-	density = 0
+	density = FALSE
 	icon_state = "disktoaster"
 	icon_on = "disktoster"
 	icon_off = "disktoaster-off"
