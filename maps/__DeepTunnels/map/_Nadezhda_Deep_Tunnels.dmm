@@ -1525,6 +1525,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/random/lathe_disk,
 /obj/item/tool/wrench,
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/mine/processing)
 "eG" = (
@@ -3378,6 +3379,7 @@
 /area/nadezhda/rnd/outpoststorage)
 "js" = (
 /obj/structure/table/standard,
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/outpoststorage)
 "jt" = (

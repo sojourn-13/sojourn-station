@@ -238,6 +238,13 @@
 /obj/machinery/smartfridge/disk
 	name = "\improper Disk Storage"
 	desc = "For catalouging the tech you have acquired."
+	idle_power_usage = 5
+	active_power_usage = 5 //not a ''fridge'' just holds disk. Some lil lights to power and thats all.
+	density = FALSE
+	icon_state = "disktoaster"
+	icon_on = "disktoster"
+	icon_off = "disktoaster-off"
+	icon_panel = "disktoaster-panel"
 
 
 /obj/machinery/smartfridge/disk/accept_check(var/obj/item/O as obj)

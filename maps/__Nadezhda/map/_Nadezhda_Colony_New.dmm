@@ -15786,6 +15786,7 @@
 /area/nadezhda/rnd/lab)
 "dwX" = (
 /obj/structure/table/standard,
+/obj/machinery/recharger,
 /obj/item/oddity/blackbox_nanoforge,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
@@ -17345,6 +17346,7 @@
 "dMM" = (
 /obj/structure/table/standard,
 /obj/item/storage/freezer,
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/organ_lab)
 "dMP" = (
@@ -19389,7 +19391,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "ejB" = (
-/obj/machinery/smartfridge/disk,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "ejE" = (
@@ -35756,6 +35759,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/smartfridge/disk,
+/obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "hIw" = (
@@ -45371,6 +45375,7 @@
 /area/shuttle/rocinante_shuttle_area)
 "jJu" = (
 /obj/structure/table/steel,
+/obj/machinery/smartfridge/disk,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -52205,6 +52210,7 @@
 /obj/item/computer_hardware/hard_drive/portable/design/misc,
 /obj/item/computer_hardware/hard_drive/portable/design/misc,
 /obj/machinery/smartfridge/disk,
+/obj/structure/table/marble,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/storage/primary)
 "llz" = (
@@ -52804,6 +52810,7 @@
 /obj/item/computer_hardware/hard_drive/portable/design/gun_parts/marshal{
 	license = -1
 	},
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "lsH" = (
@@ -57521,6 +57528,9 @@
 /obj/item/computer_hardware/hard_drive/portable/design/logistics,
 /obj/item/computer_hardware/hard_drive/portable/design/misc,
 /obj/machinery/smartfridge/disk,
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
 "msD" = (
@@ -61256,6 +61266,7 @@
 /obj/random/lathe_disk,
 /obj/random/lathe_disk,
 /obj/machinery/smartfridge/disk,
+/obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "ngJ" = (
@@ -70510,6 +70521,7 @@
 	pixel_y = 30
 	},
 /obj/machinery/smartfridge/disk,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/tactical)
 "paa" = (
@@ -74722,6 +74734,7 @@
 	pixel_x = -6
 	},
 /obj/machinery/smartfridge/disk,
+/obj/structure/table/woodentable,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/bioreactor)
 "pUc" = (
@@ -90565,6 +90578,7 @@
 /obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
 /obj/random/lathe_disk/advanced/low_chance,
 /obj/machinery/smartfridge/disk,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/fo)
 "tnG" = (
@@ -101849,14 +101863,14 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "vCu" = (
-/obj/structure/table/rack/shelf,
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
-/obj/item/reagent_containers/glass/beaker/large,
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/table/reinforced,
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/research)
 "vCx" = (
@@ -114033,6 +114047,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/item/computer_hardware/hard_drive/portable/design/engineering,
 /obj/machinery/smartfridge/disk,
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "yew" = (
@@ -171858,7 +171873,7 @@ wpL
 xXf
 gLz
 npe
-glv
+ejB
 hKX
 umk
 glv
@@ -172063,7 +172078,7 @@ brG
 hDX
 umk
 umk
-ejB
+glv
 brG
 brG
 glv
