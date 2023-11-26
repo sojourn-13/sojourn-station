@@ -238,6 +238,11 @@
 /obj/machinery/smartfridge/disk
 	name = "\improper Disk Storage"
 	desc = "For catalouging the tech you have acquired."
+	density = 0
+	icon_state = "disktoaster"
+	icon_on = "disktoster"
+	icon_off = "disktoaster-off"
+	icon_panel = "disktoaster-panel"
 
 
 /obj/machinery/smartfridge/disk/accept_check(var/obj/item/O as obj)

@@ -3306,6 +3306,7 @@
 "DU" = (
 /obj/structure/table/reinforced,
 /obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Ed" = (
