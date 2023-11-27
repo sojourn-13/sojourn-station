@@ -405,6 +405,13 @@
 	desc = ""
 	icon_state = "tigresstail"
 
+/datum/sprite_accessory/tail/unathi
+	name = "Unathi Tail"
+	desc = ""
+	icon_state = "sogtail"
+	colored_layers = 1
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/tail/vulp_new
 	name = "Vulpkanin Tail"
 	desc = ""

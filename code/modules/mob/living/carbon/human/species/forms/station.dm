@@ -81,6 +81,11 @@
 	base = 'icons/mob/human_races/r_tgsharp_white.dmi'
 	deform = 'icons/mob/human_races/r_def_tgsharp_white.dmi'
 
+/datum/species_form/lizard/baylike
+	name = FORM_LIZARD_BAYLIKE
+	base = 'icons/mob/human_races/r_baylike_white.dmi'
+	deform = 'icons/mob/human_races/r_def_baylike_white.dmi'
+
 /datum/species_form/vulpine
 	playable = TRUE
 	name = FORM_VULPINE

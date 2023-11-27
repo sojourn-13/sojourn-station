@@ -206,9 +206,9 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			pref.species_form = new_form
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	else if(href_list["select_form_variant"])
-		var/datum/species_form/old_base = GLOB.playable_species_form_list[href_list["select_variant"]]
+		var/datum/species_form/old_base = GLOB.playable_species_form_list[href_list["select_form_variant"]]
 		if(istype(old_base))
-			var/new_form = input(user, "Choose your character's form:", CHARACTER_PREFERENCE_INPUT_TITLE, href_list["select_variant"]) as null|anything in old_base.variants
+			var/new_form = input(user, "Choose your character's form:", CHARACTER_PREFERENCE_INPUT_TITLE, href_list["select_form_variant"]) as null|anything in old_base.variants
 			if(new_form && CanUseTopic(user))
 				pref.species_form = new_form
 				return TOPIC_REFRESH_UPDATE_PREVIEW

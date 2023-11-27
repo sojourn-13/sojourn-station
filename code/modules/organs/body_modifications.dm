@@ -340,3 +340,15 @@ var/global/list/modifications_types = list(
 	var/obj/item/organ/internal/eyes/heterohromia/E = new(holder,organ_type,color)
 	E.second_color = color
 	return E
+
+/datum/body_modification/organ/unathi_eyes
+	name = "Unathi eyes"
+	short_name = "M: Unathi eyes"
+	id = "unathi_eyes"
+	desc = "Eyes from the unathi species."
+	replace_limb = /obj/item/organ/internal/eyes/unathi
+
+/datum/body_modification/organ/unathi_eyes/get_mob_icon(organ, body_build, color, gender, datum/species_form/species_form)
+	var/icon/I = new('icons/mob/human_races/unathi.dmi', "una_eyes")
+	I.Blend(color, ICON_ADD)
+	return I

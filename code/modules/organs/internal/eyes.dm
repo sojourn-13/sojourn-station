@@ -111,3 +111,13 @@
 
 	return eyes_icon
 
+/obj/item/organ/internal/eyes/unathi
+	name = "unathi eyeballs"
+	desc = "A pair of unathi eyeballs."
+	icon_state = "una_eyes"
+	cache_key = "una_eyes"
+
+/obj/item/organ/internal/eyes/unathi/get_icon()
+	var/icon/eyes_icon = icon('icons/mob/human_races/unathi.dmi', icon_state)
+	eyes_icon.Blend(BP_IS_ROBOTIC(src) ? robo_color : eyes_color, ICON_ADD)
+	return eyes_icon

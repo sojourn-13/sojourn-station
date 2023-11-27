@@ -3219,6 +3219,7 @@
 #include "code\modules\sprite_accessories\_accessory_skin.dm"
 #include "code\modules\sprite_accessories\_accessory_tail.dm"
 #include "code\modules\sprite_accessories\_accessory_wings.dm"
+#include "code\modules\sprite_accessories\accessory_unathi.dm"
 #include "code\modules\stashes\stash_datum.dm"
 #include "code\modules\stashes\stash_items.dm"
 #include "code\modules\stashes\stash_spawner.dm"
