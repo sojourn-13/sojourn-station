@@ -254,15 +254,6 @@
 		return 1
 	return 0
 
-/obj/machinery/smartfridge/disk/update_icon()
-	cut_overlays()
-	if(stat & (BROKEN|NOPOWER))
-		icon_state = icon_off
-	else
-		icon_state = icon_on
-
-	if(panel_open && icon_panel)
-		add_overlay(image(icon, icon_panel))
 
 
 /obj/machinery/smartfridge/New()
