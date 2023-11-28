@@ -242,17 +242,27 @@
 	active_power_usage = 5 //not a ''fridge'' just holds disk. Some lil lights to power and thats all.
 	density = FALSE
 	icon_state = "disktoaster"
+	icon_fill10 = "disktoaster"
+	icon_fill20 = "disktoaster"
+	icon_fill30 = "disktoaster"
 	icon_on = "disktoster"
 	icon_off = "disktoaster-off"
 	icon_panel = "disktoaster-panel"
-
 
 /obj/machinery/smartfridge/disk/accept_check(var/obj/item/O as obj)
 	if(istype(O,/obj/item/computer_hardware/hard_drive/portable))
 		return 1
 	return 0
 
+/obj/machinery/smartfridge/disk/update_icon()
+	cut_overlays()
+	if(stat & (BROKEN|NOPOWER))
+		icon_state = icon_off
+	else
+		icon_state = icon_on
 
+	if(panel_open && icon_panel)
+		add_overlay(image(icon, icon_panel))
 
 
 /obj/machinery/smartfridge/New()
