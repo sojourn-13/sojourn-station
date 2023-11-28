@@ -25,6 +25,6 @@
 	var/list/species_allowed = list(SPECIES_HUMAN)	// Restrict some styles to specific species
 	var/colored_layers = 1							// Whether or not the accessory can be affected by colouration.
 	var/extra_overlay								// If the second layer and up should have a different sprite.
-	var/blend = ICON_ADD
+	var/blend = ICON_ADD|DEFAULT_APPEARANCE_FLAGS
 	// Ckey of person allowed to use this, if defined, unused
 	var/list/ckeys_allowed = null
