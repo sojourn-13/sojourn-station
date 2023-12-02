@@ -141,13 +141,13 @@
 	icon = 'icons/obj/bioreactor_misc.dmi'
 	icon_state = "biomatter_tank_medium"
 	amount_per_transfer_from_this = 50
-	volume = 400
+	volume = 750
 
 
 /obj/structure/reagent_dispensers/biomatter/large
 	name = "large biomatter canister"
 	icon_state = "biomatter_tank_large"
-	volume = 800
+	volume = 1000
 
 
 /obj/effect/overlay/bioreactor_solution
