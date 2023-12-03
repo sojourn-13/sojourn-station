@@ -29,9 +29,9 @@
 	toggleable = TRUE
 	tool_qualities = list(QUALITY_DIGGING = 10, QUALITY_PRYING = 10, QUALITY_CUTTING = 5) // So it still shares its switch off quality despite not yet being used.
 	switched_off_qualities = list(QUALITY_DIGGING = 10, QUALITY_PRYING = 10, QUALITY_CUTTING = 5)
-	switched_on_qualities = list(QUALITY_DIGGING = 30, QUALITY_WELDING = 10)
+	switched_on_qualities = list(QUALITY_DIGGING = 60, QUALITY_WELDING = 10)
 	suitable_cell = /obj/item/cell/medium/high
-	use_power_cost = 1.1
+	use_power_cost = 1.5
 	passive_power_cost = 0.01
 	glow_color = COLOR_BLUE_LIGHT
 
@@ -41,7 +41,7 @@
 	var/obj/item/gun/energy/plasma/installation = /obj/item/gun/energy/plasma	// The inbuilt gun. Store as path to initialize a new gun on creation.
 	var/projectile			// Holder for bullettype
 	var/shot_sound 			// What sound should play when the gun fires
-	var/reqpower = 10		// Power needed to shoot
+	var/reqpower = 40		// Power needed to shoot
 
 /obj/item/tool/karl/New()
 	. = ..()
