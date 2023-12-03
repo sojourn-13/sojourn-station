@@ -706,8 +706,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_OFFSET = 0.9,
-		GUN_UPGRADE_ZOOM = 1 // 8 extra tiles of vision
+		GUN_UPGRADE_OFFSET = 0.5,
+		GUN_UPGRADE_ZOOM = 0.5 // 3 extra tiles of vision
 		)
 	I.gun_loc_tag = GUN_SCOPE
 	I.req_gun_tags = list(GUN_SCOPE)
