@@ -6,10 +6,12 @@
 	icon = 'icons/obj/karl_mining.dmi'
 	icon_state = "karl_axe"
 	item_state = "karl_axe"
+	degradation = 0.3
+	max_health = 1500
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 2500
 	matter = list(MATERIAL_STEEL = 6)
-	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
+	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 4)
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
 	hitsound = 'sound/weapons/heavyslash.ogg'
 
@@ -29,7 +31,7 @@
 	switched_off_qualities = list(QUALITY_DIGGING = 10, QUALITY_PRYING = 10, QUALITY_CUTTING = 5)
 	switched_on_qualities = list(QUALITY_DIGGING = 30, QUALITY_WELDING = 10)
 	suitable_cell = /obj/item/cell/medium/high
-	use_power_cost = 1.5
+	use_power_cost = 1.1
 	passive_power_cost = 0.01
 	glow_color = COLOR_BLUE_LIGHT
 
@@ -166,9 +168,6 @@
 	// Launching projectile
 	var/obj/item/projectile/A = new projectile(loc)
 	playsound(loc, shot_sound, 75, 1)
-
-	// Burn because it's a plasma shot (installation gun)
-	A.damage_types[BURN] = dmg
 
 	// Shooting Code
 	A.launch(target, def_zone)
