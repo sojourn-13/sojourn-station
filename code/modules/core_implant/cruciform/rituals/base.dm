@@ -40,7 +40,7 @@
 
 /datum/ritual/cruciform/base/soul_hunger/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
 	H.nutrition += 50
-	H.adjustFireLoss(5)
+	H.adjustToxLoss(10)
 	return TRUE
 
 /datum/ritual/cruciform/base/glow_book
