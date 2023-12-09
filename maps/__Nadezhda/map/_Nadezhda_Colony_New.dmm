@@ -114360,7 +114360,7 @@
 /turf/simulated/floor/tiled/steel/bar_light,
 /area/turret_protected/ai)
 "ygI" = (
-/obj/machinery/light/floor/built,
+/obj/machinery/light/floor,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/atmos)
 "ygR" = (
@@ -149036,7 +149036,7 @@ viL
 buB
 wDx
 sRx
-ksJ
+ygI
 qun
 exW
 exW
@@ -149238,7 +149238,7 @@ acC
 eMy
 wDx
 ksJ
-ygI
+ksJ
 qun
 uSR
 uSR
