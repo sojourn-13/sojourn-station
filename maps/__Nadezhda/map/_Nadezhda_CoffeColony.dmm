@@ -4143,13 +4143,6 @@
 /obj/structure/bed/chair{
 	dir = 1
 	},
-/obj/machinery/alarm{
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
-	dir = 8;
-	name = "no-access needed alarm";
-	pixel_x = 27;
-	req_one_access = list()
-	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
 "aXQ" = (
@@ -13608,6 +13601,16 @@
 	pixel_y = -32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_x = -32
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/box/red/corners,
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "cZN" = (
@@ -13624,16 +13627,9 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/atmos)
 "cZU" = (
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/ore_box,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "dak" = (
@@ -18318,6 +18314,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/research{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "ebC" = (
@@ -23348,7 +23347,6 @@
 "fdo" = (
 /obj/item/organ/internal/kidney,
 /obj/item/organ/internal/kidney/left,
-/obj/item/organ/internal/lungs,
 /obj/item/storage/freezer,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -24555,16 +24553,6 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/atmos)
 "foD" = (
-/obj/structure/closet/wall_mounted/firecloset{
-	pixel_x = -32
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/box/red/corners,
-/obj/effect/floor_decal/industrial/box/red/corners{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
@@ -26282,6 +26270,10 @@
 /obj/structure/table/steel,
 /obj/machinery/camera/network/mining{
 	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -32
 	},
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
@@ -31848,13 +31840,6 @@
 "gUq" = (
 /obj/machinery/light{
 	dir = 8
-	},
-/obj/machinery/alarm{
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
-	dir = 4;
-	name = "no-access needed alarm";
-	pixel_x = -32;
-	req_one_access = list()
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/rocinante_shuttle_area)
@@ -42087,6 +42072,14 @@
 /obj/structure/flora/big/rocks2,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/inside_colony)
+"jeG" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/secure_closet/xenoarchaeologist,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/docking)
 "jeJ" = (
 /obj/effect/floor_decal/industrial/warningwhite{
 	dir = 8
@@ -52179,6 +52172,17 @@
 /obj/random/junk/low_chance,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"lpc" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/docking)
 "lpd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/easel,
@@ -69732,14 +69736,8 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/inside_colony)
 "oXc" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/decal/cleanable/dirt,
+/obj/landmark/machinery/output,
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "oXe" = (
@@ -70820,6 +70818,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"pjk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/docking)
 "pju" = (
 /obj/random/structures/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -84566,6 +84577,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"seC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/docking)
 "seL" = (
 /obj/structure/catwalk,
 /obj/structure/railing{
@@ -90213,6 +90230,13 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
+"trM" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/docking)
 "trV" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha3,
@@ -90730,11 +90754,6 @@
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "txd" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -100939,15 +100958,9 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/tcommsat/computer)
 "vAq" = (
-/obj/machinery/alarm{
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
-	dir = 4;
-	name = "no-access needed alarm";
-	pixel_x = -32;
-	req_one_access = list()
-	},
-/turf/simulated/shuttle/floor/mining,
-/area/shuttle/rocinante_shuttle_area)
+/obj/machinery/mineral/processing_unit,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/docking)
 "vAx" = (
 /obj/machinery/light/floor,
 /obj/structure/table/bar_special,
@@ -101844,7 +101857,7 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "vKt" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/autolathe/loaded,
+/obj/machinery/autolathe/industrial,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
 "vKz" = (
@@ -104542,6 +104555,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/miningdock)
+"wnF" = (
+/obj/machinery/mineral/processing_unit_console{
+	pixel_x = -28
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/docking)
 "wnI" = (
 /obj/machinery/firealarm{
 	pixel_y = 32
@@ -109273,9 +109293,7 @@
 	name = "Science Expedition prep"
 	})
 "xss" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
@@ -110682,6 +110700,13 @@
 	name = "murky water"
 	},
 /area/nadezhda/maintenance/undergroundfloor1west)
+"xHm" = (
+/obj/landmark/machinery/input,
+/obj/effect/floor_decal/industrial/arrows/white{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/docking)
 "xHt" = (
 /obj/machinery/vending/drip,
 /turf/simulated/floor/tiled/steel/monofloor{
@@ -112889,11 +112914,8 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "yfL" = (
-/obj/machinery/camera/network/research{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/violetcorener,
+/obj/structure/sign/departmentold/mining,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/docking)
 "yfR" = (
 /obj/structure/disposalpipe/segment,
@@ -163749,10 +163771,10 @@ cIc
 iri
 nim
 fvy
-toi
-toi
-toi
-toi
+gco
+gco
+gco
+gco
 tVT
 tVT
 ork
@@ -163951,11 +163973,11 @@ jjs
 coy
 ebP
 nim
-toi
-cZb
-cZb
-toi
-toi
+gco
+xHm
+wnF
+gco
+gco
 wlq
 tVT
 fPH
@@ -164153,12 +164175,12 @@ toi
 ksk
 daI
 daI
-toi
-cZb
-cZb
-cZb
-toi
-toi
+gco
+vAq
+xss
+jeG
+gco
+gco
 tVT
 tVT
 tVT
@@ -164355,13 +164377,13 @@ toi
 toi
 toi
 toi
-toi
-cZb
-cZb
-cZb
-cZb
-toi
-toi
+gco
+oXc
+xss
+seC
+cZU
+gco
+gco
 toi
 toi
 toi
@@ -164556,12 +164578,12 @@ rLm
 rLm
 rLm
 rLm
-rLm
 gco
-gco
-gco
-gco
-gco
+yfL
+foD
+xss
+xss
+cZU
 gco
 gco
 gco
@@ -164758,11 +164780,11 @@ kTu
 kTu
 lTv
 kTu
-kTu
+pjk
 ebB
-cZU
-yfL
-xss
+foD
+foD
+foD
 foD
 tjF
 dWk
@@ -164960,11 +164982,11 @@ iQj
 aFJ
 gta
 gta
-gta
+lpc
 txd
-oXc
 tEs
 tEs
+trM
 tEs
 tEs
 feP
@@ -208805,13 +208827,13 @@ cvx
 hPW
 jpf
 fVe
-vAq
+gwD
 czF
 gUq
 fIY
 hJI
 czF
-vAq
+gwD
 sgM
 eFN
 alo
