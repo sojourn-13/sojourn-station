@@ -1066,6 +1066,14 @@
 				playsound(loc, 'sound/voice/merp.ogg', 50, 1, -1)
 			else
 				message = "makes a strange noise."
+		if ("trill")
+			m_type = 2
+			cloud_emote = "cloud-love"
+			if(!muzzled)
+				message = "trills softly."
+				playsound(loc, 'sound/voice/trill.ogg', 50, 1, -1) // Copyright CC BY-NC 3.0 Arnaud Coutancier (freesound.org) for the source audio.
+			else
+				message = "makes a strange noise."
 		if ("bark")
 			m_type = 2
 			cloud_emote = "cloud-scream"
