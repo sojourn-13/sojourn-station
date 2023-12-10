@@ -69827,8 +69827,10 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/inside_colony)
 "oXc" = (
-/obj/landmark/machinery/output,
-/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/floor_decal/industrial/arrows/white{
+	dir = 8
+	},
+/obj/landmark/machinery/input,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "oXe" = (
@@ -110881,10 +110883,8 @@
 	},
 /area/nadezhda/maintenance/undergroundfloor1west)
 "xHm" = (
-/obj/landmark/machinery/input,
-/obj/effect/floor_decal/industrial/arrows/white{
-	dir = 4
-	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/landmark/machinery/output,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
 "xHt" = (
