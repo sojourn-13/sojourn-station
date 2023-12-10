@@ -38,7 +38,7 @@
 /tipsAndTricks/jobs/drillllls
     jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
     tipText = "The massive drills mine deep into the ground on the tile its drilling, upgrading it will increase its AOE to more tiles."
-*/
+
 /tipsAndTricks/jobs/diggyhole
     jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
     tipText = "Саму землю можно перекопать лопатой, чтобы получить больше руды, это, скорее всего, даст вам камни, которые можно отбивать молотком для получения большего количества осколков руды."
