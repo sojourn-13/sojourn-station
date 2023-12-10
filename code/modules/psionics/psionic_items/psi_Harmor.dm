@@ -13,7 +13,7 @@
 	This is a very good defense, but maintaining it requires constant concentration."
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_OCLOTHING
-	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
 	matter = list()
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS //It has gloves, hood, and shoes for the rest of them
 	slowdown = 2.25 //Slightly faster than the red suit. Maybe do it at 2?
@@ -55,10 +55,10 @@
 	item_state = "helmet"
 	icon = 'icons/obj/psionic/occHicon.dmi'
 	icon_override = 'icons/obj/psionic/occHmob.dmi'
-	desc = "This is a massive helmet with a large and durable visor, looking through which you see the world through the veil of nothingness itself. You are detached from reality and it cannot harm you. You control reality, not it controls you. \
+	desc = "This is a massive helmet with a large and durable visor, looking through which you see the world through the veil of nothingness itself. You are detached from reality and it cannot harm you. You control reality, it doesn't control you. \
 	This is a very good defense, but maintaining it requires constant concentration."
 	slot_flags = SLOT_HEAD
-	item_flags = THICKMATERIAL|BLOCK_GAS_SMOKE_EFFECT|LIGHT_OBSCURATION
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION|BLOCK_GAS_SMOKE_EFFECT
 	matter = list()
 	armor_list = list(
 		melee = 60,
@@ -106,7 +106,7 @@
 	icon_override = 'icons/obj/psionic/occHmob.dmi'
 	slot_flags = SLOT_GLOVES
 	item_flags = THICKMATERIAL
-	siemens_coefficient = 1 //Insulated!
+	siemens_coefficient = 0 //Insulated!
 	matter = list()
 	armor_list = list(
 		melee = 60,

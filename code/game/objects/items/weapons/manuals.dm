@@ -168,6 +168,219 @@
 
 		"}
 
+/obj/item/book/manualshield_generator_guide
+	name = "Artificers Guild Shield Operating Guide"
+	icon_state = "book_shield"
+	author = "Jeanne Petite"
+	title = "Adv-Shield Generator Manual"
+
+/obj/item/book/manualshield_generator_guide/New()
+	..()
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 21px; margin: 15px 0px 5px;}
+				h2 {font-size: 18px; margin: 15px 0px 5px;}
+				h3 {font-size: 13px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+
+				<h1>Operating Manual for Mk 1 Prototype Advanced Shield Generator.</h1>
+
+				<h2>Chapters</h2>
+
+				<ol>
+                  	<li><a href="#Foreward">Foreward</a></li>
+					<li><a href="#Preface">Preface</a></li>
+					<li><a href="#Setup">Shield Setup & upgrades Ch.1</a></li>
+					<li><a href="#Upgrades">Shield Setup & upgrades Ch.2</a></li>
+					<li><a href="#Maintenance">Powering the Generator.</a></li>
+				</ol>
+
+				<h2><a name="Foreward">Foreward</h2><br>
+					<h3>This document is offered in its full, unedited form having been found amongst the many unfiled documents within the Guilds primary offices. Though densely written and at times containing error, it is believed that in this form it shall serve more use than if pared back or otherwise modified from its writers original form. This document shall not be taken as overriding any procedure, instead supplementing knowledge and S.O.P regarding the Shield Generator. Any questions, concerns or similar regarding this document should be directed to the office of Grandmaster Tacitus O'conner - Guildmaster <i>Zivka Tomic</i> </h3><br>
+
+
+				<h2><a name="Preface">Preface</h2><br>
+
+The Shield Generator Room is a new asset of the colony, put together by Aenethia Fletcher, consisting of a variety of equipment relying on the various colony factions in order to perform at it's best.<br><br>
+
+In this document, you will find a comprehensive method on learning to use the Shield Generator room, it's do's and don'ts, and suggestions on what best to do with it in case of emergency -if it's needed.<br><br>
+
+Regardless of faction personnel, or personal preferences, or social bounds, this equipment is designed to perform at it's best when the whole of the factions comes together in their effort to defend our Home.<br><br>
+
+While the bubble shield is an asset of immense defensive potential, the best defense remains a good offense, and a good offense relies on our abilities to keep our fighters alive and weaponized.<br><br>
+
+At best, this equipment is to be treated as *a* -not the- non-fighter/non-medical option, for both Adepts and Scientists trying to participate during an emergency ;<br><br>
+
+In fact, not all threats need the bubble shield, and it's activation, and use of it's various settings, is a decision that should rely solely on the /concerned/ command staff, starting with the Blackshield Commander and Warrant Officer.<br><br>
+
+Extraordinary events involving -but not limited to- meteor rain, bluespace, radiation storms, solar flares, or even orbital bombardment, might require a more educated approach from either Artificer or Soteria Science personel.<br><br>
+
+Typically, while the Shield Generator relies on a massive engineering effort to power it,
+it's up to Soteria Science personel to be best educated on which settings might be more advisable during a given situation,
+the final decision must swiftly be made however, and is of course, always up to the Blackshield Commander and Warrant Officer.<br><br>
+
+The truth is, most situations won't be needing the shield at all ; it's important to correctly determine if it's even necessary to use it.<br>
+Namely, amongst a variety of threats, it certainly won't stop Excelsior Infiltrators, or Giant Spider burrowing, or Hivemind Infestations.<br><br>
+
+As always, in the end, it's all up to the the all-important cooperation between medical teams from Soteria and the Church, remaining the<br> strong arm of the colony that's keeping up with our Marshals/Blackshields and Prospectors.<br><br>
+
+
+				<h2><a name="Setup">Shield Setup & upgrades Ch.1</h2><br>
+Upon shift-start, or upon re-assembly, the shield generator must be wrenched down.<br>
+Moving it is possible, but doing so, even one single tile, will permanently remove it's ability to receive charge, regardless of if it's being wrenched down over a powered wire node or not.<br>
+As a result of this technical limitation, special attention must be put into correctly building it over a powered wire node, then immediately wrenching it in place.<br><br>
+
+However, if you've respected that very important step, then charged the generator, it is possible to then wrench it up and move the generator around.<br><br>
+
+NOTE: This action is strictly forbidden with the one generator from the Shield generator room.<br>
+Instead, if you need a generator to use elsewhere, seek the components and boards for a new one at Soteria Science.<br><br>
+
+In case of emergency such as a code <b>RED</b>, at a Blackshield Commander or Warrant Officer's decision -or their obligatory joined vote- the furnished shield generator may be moved/reassembled somewhere else within the colony infrastructure,
+assuming there is an effort from active Artificers to keep up with the new engineering effort to power the generator in a new location within the colony.<br>
+This change must be temporary, and for the express purpose of defending said colony infrastructure.<br><br>
+
+If that happens, the Low Council may choose to inform the High Council upon exiting the emergency situation -or during it- , and the shield generator must be returned without delay to it's original location with it's attributed equipment - ready for use as normal and intended.<br><br>
+A situation where a threat was problematic enough to heavily rely on the shield generator should raise valid concerns that the High Council <br><br>
+
+
+With that said ; the generator offers a variety of tactical decisions if used in the field.<br>
+Once charged, you can activate it elsewhere at will, as it will keep it's given charge.<br>
+This allows to then redeploy a bubble shield at any point in time, anywhere, at the cost of losing the ability to recharge it, once it's been moved even by one tile.<br>
+Once activated, the bubble will not move regardless of the generator's position.<br>
+It's possible to move the generator outside of the bubble without consequences.<br><br>
+
+Turning the generator off takes 60 seconds. The bubble remains active during that time.<br>
+Using the emergency shutdown is an option, but will drain the generator.<br><br>
+
+Once it's de-activated, the generator must reboot for an additional 60 seconds.<br><br>
+
+The generator is assembled from :
+<li>-The shield generator board
+<li>-A console screen
+<li>-A capacitor
+<li>-A micro-laser
+<li>-A SMES coil<br><br>
+
+Upgrading the capacitor and laser is an important task that relies on the guild.<br><br>
+
+<li>T3 parts obtained at Soteria -a super capacitor and a ultra-powered laser- should be the bare minimum.<br><br>
+
+<li>T4, known as Greyson parts, are obtained trough salvage at the Greyson base -ask prospectors-, or at the space junk field, or at Soteria, if they are performing well on research and are given some platinum.<br><br>
+
+<li>T5 parts, known as forged (a forged capacitor and a forged laser) are the best options, obtained trough Artificer craft, but they need T3 parts from Soteria for crafting, power tools, and some materials.<br><br>
+
+Upgrading the machine parts tremendously influences the performance of the shield, and should be a top priority in case of a situation where the shield is used.<br>
+While very modest, T3 remains an immense step over the T1 furnished.<br><br>
+
+
+The type of the SMES coil is equally important, and it's choice comes from a lot of careful consideration.<br>
+Those coils are furnished with the equipment however, so you won't have to worry about obtaining them, instead only replacing the one in the generator on shift start.<br><br>
+
+There are 3 types of SMES coils, known as the Basic, the Transmission and the Capacity.<br><br>
+
+Each coil allows for an increased amount of energy stored.<br><br>
+
+It's easy to assume the transmission coil would let the shield refill it's power faster, but that is a misconception ;<br>
+The type of the coil does not affect the speed at which the generator can receive charge.<br><br>
+
+To put it simply,<br>
+<li>-The bubble shield's integrity relies directly on how full is the generator.
+<li>-The Transmission coil has the lowest maximum charge.
+<li>-The current setup of the generator room + two upgraded SMES units was designed to favor a coil with the lowest maximum.<br><br>
+
+This means that like using a smaller glass, it's easier and faster to refill it to 100%.<br>
+This allows to keep the bubble's integrity as high as possible (100%) by having it constantly refilling from the 2 shield SMES units.<br><br>
+
+When nearing 10% integrity, the bubble will start having giant gaps and holes.<br>
+For this reason, keeping the generator at a low maximum is the design decision that was originally put together, with a transmission coil the maximum is 500MJ.<br><br>
+
+This is where the two SMES units come in.<br>
+A SMES can hold 5 different coils.<br>
+Each of them are intended to be assembled with 2 capacitance and 3 transmission coils.<br><br>
+
+More SMES units may be put together if the engineering effort and power production is well above base expectations.<br>
+This allows to store enormous amounts of power right next to the generator, able to keep the bubble extremely resistant trough constantly dumping power into it - no power will be wasted if the generator is already full, so you can (and should) keep the SMES's output turned on and maximized at all times.<br><br>
+
+The total amount of punition the bubble can take remains quite considerable even with 500MJ.<br>
+For future reference, the 100% integrity given from using a transmission coil already permits to block several of the the highest toxins assemblies possible with relative ease - and it's extremely rapid to recharge with the 2 SMES units.<br>
+Testing with 2 or 3 of the most powerful bombs Soteria can make, barely damaged the integrity to 85% - which was instantly refilled trough the performance of the built-in SMES's.<br><br>
+
+
+The generator should be constructed with a TRANSMISSION coil, but it can be given a much higher maximum stored power if you use a capacitance coil.<br>
+It's total holding power becomes absurdly high however, so good luck going even above 5% integrity - effectively rendering the generator useless.<br><br>
+
+A different setup isn't out of the question, from competent engineering personnel,
+assuming that care is still being put into a bubble shield that can remain at 100% integrity trough rigorous assault.<br><br>
+
+
+
+				<h2><a name="Upgrades">Shield Setup & upgrades Ch.2</h2><br>
+Once the generator is upgraded, fitted with a transmission coil, and wrenched in it's spot, max out the 2 SMES's output and leave that on.<br>
+The SMES's input however is up to your decision on how much you wish to drain from the colony grid.<br><br>
+
+
+Set the shield's radius to 85, to properly cover the whole colony wall.<br>
+The bubble shield will correctly cover not only the wall, but a full circle around the surface facility, projecting even trough the rock and tunnels preset on both sides of the wall.<br>
+You also have to turn on the generator's input, which should be set to limitless by typing in 0.<br>
+Doing so will leave it to drain from the two SMES units without limits, until it's full.<br>
+Once the generator is full, it's input should be left unlimited, as no power will be wasted, instead simply keeping stored with the SMES's with nowhere to go.<br><br>
+
+To give you an idea of how much power a SMES can hold, know that the guild's engine SMES is built with one single basic coil, wich then distributes into each substations - who also are fitted with one single basic coil.<br>
+The performance of a handful of SMES units with a single basic coil is more than enough to handle the colony grid ;<br><br>
+
+A SMES unit with even one single capacitance coil will be able to contain a tremendous amount of power, but charge/discharge slowly.<br>
+A Transmission coil will hold much less, but paired with a capacitance, it easily reaches the potency of several colony grids - for several shifts.<br><br>
+
+From there, having 2 SMES units with not 1 capacitance + 1 transmission, but 2 capacitance + 3 transmission, holds the potency of a truly massive power hold, with the ability to dump it out extremely easily back out to the generator.<br>
+With this in mind, consider that the Shield's equipment is furnished with 2 SMES units with a total of 4 capacitance and 6 transmission ;
+it's still possible to fill them up with ease if you follow the detailed list of power sources accounted within the end of this text.<br><br>
+
+This is designed to easily withstand even the most brutal attacks from whatever is out there, including planetary bombardment.<br>
+The only condition is to really /really/ store a lot of power in advance, which means a cooperative effort from the various factions, in particular the Guild, the Soteria Institute, Lonestar, and the Church of the Absolute.<br><br>
+
+Hypothetically, in case of an attack with nuclear warheads, the generator should instead be fitted with a capacitance coil, wich would then require a gargantuan amount of power in order to reach acceptable levels of integrity.<br>
+For obvious reasons, this has not been tested, neither really discussed given the already extremely high performance of the current design.<br><br>
+
+The only live testing has been done with a handful of Toxins assemblies, with more than satisfying results.<br>
+Still, trying more isn't out of the question, in the future.<br><br>
+
+
+It's not out of the question to connect the shield's reserves to the colony by simply hotwiring their output back to the grid.<br>
+However, doing so is an extremely special, temporary decision that should only be a temporary fix, first decided by the Guild Master, if without one, Artificers Adepts,<br><br>
+at the all-important condition that this is during an emergency, were the grid, the substations, and engine SMES are all completely drained or destroyed, with no means to use the solars / hydroelectric dam again during that emergency.<br>
+Having the shield generator backed, charged, with available reserves from it's assigned SMES units, should remain the main concern at all times - it should never, under any circumstances, be allowed to fully drain itself into the colony grid for whatever reason.<br><br>
+
+
+Indeed, hotwiring the generator to the colony grid is an option, but that has little to no real application and is in fact, a bad idea.<br>
+What really matters is to have the upgraded SMES's able to store large amounts of power and dump it directly into the shield generator, not the grid.<br>
+Going against this design decision is an option but really not recommended.<br><br>
+
+For the same reason, maxxing the SMES's input and draining as much as possible from the colony grid is a terrible idea that can and will earn you legal charges namely sabotage, terrorism.<br>
+The SoP article about this is quite explicit, you are warned on what not to do. Take this seriously, this equipment is expensive.<br>
+Taking any equipment such as the generator, the wrench, the furnished coils, the RCON console, or anything from the SMES units, out of the Generator room, even for a brief moment, for no valid reason, also is grounds for grand theft, sabotage, terrorism, etc.<br><br>
+
+				<h2><a name="Maintenance">Powering the Generator</h2>
+There are a variety of ways to power the colony, and with it, the shield.<br>
+It's worth going over that topic in detail, since it could make a difference in case of emergency.<br><br>
+Engineering alone will have their solars, the Soteria solars, then the hydroelectric dam, their 8 diesel generators, a selection of various generators of different kinds, the turbine in atmospherics, and whatever else engine they can put together using a TEG and circulators, maybe even a supermatter in rare occasions.<br><br>
+Soteria can build a wide variety of generators depending on nearly any available resources ; mining can offer large amounts of plasma for PACMAN's or fuel tanks for more Diesels ;<br>
+Built in numbers, each individual CAMPMAN while modest, will be running on planks of wood and prove quite efficient. Harvests from the surface trees or the xenoflora lab for mass production, or order at cargo.<br><br>
+On T3, Diesels, PACMANS, CAMPMANS and the likes of them, will have their performance significantly increased, without burning their fuel any faster.<br>
+Optimally, with a bunch of platinum and wood, Soteria can put together a group of CAMPMAN's running on T4 Greyson parts - and upgrade the guild's diesels by the same occasion.<br><br>
+The church has an extremely powerful biogenerator, running on their big golden canisters of biomass, but only if they've been producing them from the junk beacon, which takes some time and effort.<br><br>
+Diesels, PACMANS, CAMPMANS and the rest of them are assembled from a board printer at Soteria, one matter bin, one micro-laser, and one capacitor.<br>
+Their power output relies on the tier of the capacitor and laser, but the matter bin only affects the amount of fuel placed in before needing to be refilled - which remains more important than one might think at first, if you don't want to be constantly babysitting a room full of generators during an emergency situation.<br><br>
+On top of the solars and the hydroelectric dam, one of the most reliable, easy and rapid way to get a lot of power quickly on shift start, with no time-sinking preparation or special effort nor costly resources, is to upgrade the 8 diesels in the guild with T3 and to turn them on.
+The guild has a lot of fuel tanks in storage, and more can be ordered for rather cheap at cargo - this should be the default strategy if there is an emergency on shift start with too little time to make anything fancy.<br><br>				</body>
+			</html>
+		"}
 
 /obj/item/book/manual/engineering_singularity_safety
 	name = "Singularity Safety in Special Circumstances"
@@ -658,10 +871,128 @@
 				<h3>As a last resort</h3>
 				If all else fails in a case of cyborg-related emergency, there may be only one option. Using a Robotics Control console, you may have to remotely detonate the cyborg.
 				<h3>WARNING:</h3> Do not detonate a borg without an explicit reason for doing so. Cyborgs are expensive pieces of company equipment, and you may be punished for detonating them without reason.
-
 				</body>
 			</html>
 		"}
+
+/obj/item/book/manual/robotics_catalogue
+	name = "Soteria Cyborg Catalogue 2652"
+	icon_state = "book_robotics"
+	author = "Maeve Cinaed"
+	title = "Soteria Cyborg Catalogue 2652"
+
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 21px; margin: 15px 0px 5px;}
+				h2 {font-size: 18px; margin: 15px 0px 5px;}
+				h3 {font-size: 15px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+
+				<h1>Cyborg Product Catalogue</h1>
+
+				<h2>Chapters</h2>
+
+				<ol>
+					<li><a href="#Foreword">Foreword</a></li>
+					<li><a href="#Generic">Generic Models</a></li>
+					<li><a href="#Zeng-Hu">Zeng-Hu models</a></li>
+					<li><a href="#Bishop">Bishop Models</a></li>
+					<li><a href="#Xion">Xion Models</a></li>
+					<li><a href="#Miss M">Miss M. models</a></li>
+					<li><a href="#TallBorgs">MekaNika Mekanoid models</a></li>
+					<li><a href="#K4t">Mekanika K4t Models</a></li>
+					<li><a href="#Pirate">Iron Lords 'Customized' Models</a></li>
+				</ol>
+
+
+				<h2><a name="Foreward">Authors Note</h2>
+				<p>"Hello! Thank you for picking this handy little guide up, dear reader. this piece has been a pet project
+				that i've worked on for quite some time, I'm very happy to	finally be able to place it in the hands,
+				claws, paws and grippers of my fellow Mechanists, Roboticists, Augmenticists- and any one else who
+				may be curious about the range of bots available from the Soteria Robotics Division. Piece of this
+				book have been copied from the sadly obsolete but none the less interesting 'Soteria Mechanists Handbook',
+				as well as 'SFPD - Identifying Illicit Machines, A comprehensive guide.' as well as a variety of other,
+				smaller manuals, handbooks and product-catalogues. While I have done my best to ensure the information
+				contained within is accurate much of it may be or become incorrect or outdated. A special thanks to my
+				Dear Friend, Patience Constance of the Iron Lords for her help filling in the blanks regarding
+				their line of customized MekaNIKA bots - provided to Nadehzda by our wonderful friends with the
+				Xanoranth Syndicate." - Dr. Cinead, Soteria Robotics Division.
+
+				<h2><a name="Generic"> Chassis that Respect the Users Freedom</h2>
+				<center><img src="https://sojourn13.space/w/images/5/58/Generic.png"></img></center>
+				<p>Far from being single-origin, these 'standard' frames encompass a wide variety of open source,
+				unclaimed or otherwise "freely" available frames. These frames come from sources ranging to hobbyist
+				collectives to long-since-deprecated trade claims abandoned to the public domain by their
+				corporate owners.
+
+				<h2><a name="Zeng-Hu"> 'Teknotik' - Style and Substance</h2>
+				<center><img src="https://sojourn13.space/w/images/e/ee/Zenhgu.png"></img></center>
+				<p>Another truly old but no-less respected line from the Giant of Medical Miracles and Horrors both. Where some lines
+				fixated on pure pragmatism Zeng-Hured no expense on the appearance of these bots. From Sleek humanoid frames to
+				high-speed flying drones these bots were top of the shelf for decades before finally being displaced by Greyson's
+				own. In the modern era, a flying drone or a cyborg that fits in a roughly human-shaped package are old news easily
+				reproducable(and more modularly at that.), still; these designs are a personal favorite of this author as a reminder
+				that even heights of technology once viewed as science-fiction may one day be looked back on as tragically quaint.
+
+				<h2><a name="Bishop"> 'Droid' - Timeless Classics</h2>
+				<center><img src="https://sojourn13.space/w/images/f/f0/Bishop.png"></img></center>
+				<p>A positively venerable line, Bishop long stood as giants of the cybernetics and robotics field,	shoulder to
+				shoulder with the likes of Zeng-Hu and early Greyson Positronics. While their interest in the field of robotics
+				waned during the halcyon days of Greyson Positronics these frames remains utterly ubiquitous classics.
+
+				<h2><a name="Xion"> 'Eclectic' - Timeless Classics</h2>
+				<center><img src="https://sojourn13.space/w/images/6/63/Xion.png"></img></center>
+				<p>Not one cohesive line, but instead a small number of designs from little known manufacturing company 'Xion'. Once a
+				pioneer in the field of automated recursive repair solutions, Xion has never once allowed the galaxy to forget that
+				they designed the first ever repair drone - A claim supported by little more than a resemblance in their more modern
+				designs. With a preference for such nimble, spidery bots their abject failure to dislodge Zeng-Hu from their position
+				as the premier creators of automated flying machines should not go without saying - Though some will claim preference
+				for 'eyebot' style drones these bots were sadly an economic failure in their time.
+
+				<h2><a name="Miss M"> Manmade horrors never looked so friendly</h2>
+				<center><img src="https://sojourn13.space/w/images/0/0f/Miss_M.png"></img></center>
+				<p>A now dated line from the long-since defunct 'Missus Machining', the Miss M. line of cyborgs was marketed both
+				towards wealthy individuals with an eye for retro aesthetics and poorer corps without the ability to
+				procure higher end 'Customer Friendly' units. It should not go unsaid that despite the companies
+				attempts to put a friendly face on Cyborgs, they were ultimately forced	to shutter permanently following a slew
+				of accusations that the brains in their units were unethically sourced.
+
+
+				<h2><a name="Tallborgs">'tallbot' - Towering Metal Friends</h2>
+				<center><img src="https://sojourn13.space/w/images/8/86/Mekanika.png"></img></center>
+				<p>Affectionately known as 'TallBorgs', these units while wildly varying in both module and appearance
+				have proven to be quite popular both for their utility and shockingly low price, owing to their
+				pedigree as products of MekaNIKA(One of the few non-megacorp bulk producers of cyborg frames and,
+				a corp with surprisingly 'customer-first' product policy.).
+
+				<h2><a name="MekaNIKA ">'K4T' -Silicon Gentle Giants</h2>
+				<center><img src="https://sojourn13.space/w/images/f/f5/K4T.png"></img></center>
+				<p>Amid concerns that their 'tallbot' Mekanoids "appeared too flimsy" come the K4T line. Where Tallbots
+				are svelte and graceful, K4Tbots are notably broader in appearance - It bears noting that despite
+				appearances, these walking tanks do not perform notably better or worse than their slimmer "siblings".
+				Instead, theirs is a design meant to impress and awe far more than it is to serve as the walking-exosuit
+				they nominally resemble. After all, a well programmed borg can already serve as more than a match for
+				an equivilent human.
+
+				<h2><a name="Pirate">'Homebrew' - From our friends among the Stars</h2>
+				<center><img src="https://sojourn13.space/w/images/b/bf/SYNDIE.png"></img></center>
+				<p>"I must admit, I was initially not sure /how/ to describe these units when word came to me that a deal had
+				been made with the Iron Lords- brokered by the Xanoranth Syndicate, resulting in our obtaining quite a few
+				of these uniquely modified frames. Like most frames, these are style over substance meant to mesh neatly with
+				the 'modules' the user has available. This comes with the caveat that in addition to the frame-designs, Xanoranth
+				have provided a number of fully operational units who have been run through Soterias rigorous process of integration."
+				</body>
+			</html>
+		"}
+
+
 
 
 /obj/item/book/manual/security_space_law

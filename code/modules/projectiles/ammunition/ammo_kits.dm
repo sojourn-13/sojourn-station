@@ -138,10 +138,10 @@
 			"2 points: blue flare x1" = list(2, /obj/item/ammo_casing/flare/blue),
 			"2 points: green flare x1" = list(2, /obj/item/ammo_casing/flare/green)
 			),
-		//CAL_BALL = list(
-		//	"1 point, 4 ammo: 17mm ball ammo pile" = list(1, /obj/item/ammo_casing/ball/prespawned),
-		//	"15 points, 30 ammo: 17mm ball ammo box" = list(15, /obj/item/ammo_magazine/ammobox/ball)
-		//	),
+		CAL_BALL = list(
+			"1 point, 4 ammo: 17mm ball ammo pile" = list(1, /obj/item/ammo_casing/ball/prespawned),
+			"15 points, 30 ammo: 17mm ball ammo box" = list(15, /obj/item/ammo_magazine/ammobox/ball)
+			),
 		CAL_70 = list(
 			"26 points: EMPTY 19mm Gyrojet magazine" = list(26, /obj/item/ammo_magazine/a75/empty)
 			)

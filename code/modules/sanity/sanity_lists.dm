@@ -185,8 +185,8 @@
 
 /datum/sanity/proc/pick_emote_40()
 	var/static/list/emotes = list(
-		"gaze into the distance.",
-		"furrow a brow",
+		"gazes into the distance.",
+		"furrows a brow",
 		"shivers a moment.",
 		"crosses arms."
 	)

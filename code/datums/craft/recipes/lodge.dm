@@ -51,21 +51,22 @@
 		list(CRAFT_MATERIAL, 3, MATERIAL_BONE, "time" = 1), //Takes a second
 		list(/obj/item/reagent_containers/food/snacks/grown, 3, "time" = 1) //Takes a second
 	)
-/*
+
 /datum/craft_recipe/lodge/baroqe
 	name = "Baroque Bone Rifle"
 	result = /obj/item/gun/projectile/boltgun/baroque
 	icon_state = "gun"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_BONE, "time" = 60),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 20),
+		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 20),
+		list(/obj/item/animal_part/stalker_spur, 1, "time" = 20),
 		list(QUALITY_CUTTING, 30, "time" = 40),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(QUALITY_WELDING, 30, "time" = 60),
 		list(QUALITY_SCREW_DRIVING, 30, "time" = 60),
 		list(QUALITY_BOLT_TURNING, 30, "time" = 40)
 	)
-*/
+
 /datum/craft_recipe/lodge/hunter_crossbow
 	name = "Lodge Hunting Crossbow"
 	result = /obj/item/gun/projectile/shotgun/pump/hunter_crossbow
@@ -100,6 +101,18 @@
 		list(QUALITY_CUTTING, 30, "time" = 40),
 		list(CRAFT_MATERIAL, 2, MATERIAL_CLOTH, "time" = 1),
 		list(QUALITY_WIRE_CUTTING, 30, "time" = 40)
+	)
+
+/datum/craft_recipe/lodge/tensioner //less good than the lodge equivilent and requires drops from a Croaker lord, still a handy thing for murdering the hell outta anything you see.
+	name =  "croaker sinew bowstring"
+	result = /obj/item/gun_upgrade/mechanism/froggeytensioner
+	steps = list(
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 20, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(/obj/item/animal_part/croaker_tongue, "time" = 30),
+		list(QUALITY_WIRE_CUTTING, 25, "time" = 90)
 	)
 
 /datum/craft_recipe/lodge/hunting_halberd
@@ -171,11 +184,11 @@
 	result = /obj/item/tool/sword/huntingclaw
 	icon_state = "woodworking"
 	steps = list(
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 30),
+		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_WELDING, 15, "time" = 60),
 		list(QUALITY_HAMMERING, 15, "time" = 60),
-		list(CRAFT_MATERIAL, 4, MATERIAL_STEEL, "time" = 30),
-		list(QUALITY_WELDING, 15, "time" = 60),
+		list(/obj/item/animal_part/sarg_horn, "time" = 60),,
+		list(QUALITY_CUTTING, 15, "time" = 60),
 		list(CRAFT_MATERIAL, 2, MATERIAL_WOOD, "time" = 30),
 		list(QUALITY_CUTTING, 15, "time" = 40),
 		list(QUALITY_WIRE_CUTTING, 10, "time" = 40)
@@ -328,6 +341,18 @@
 		list(/obj/item/animal_part/tahca_antler, 1, "time" = 20),
 		list(QUALITY_HAMMERING, 15, "time" = 40)
 	)
+
+/datum/craft_recipe/lodge/carp_juice
+	name = "Carp-Fang Mince"
+	result = /obj/item/reagent_containers/glass/bottle/carp_slurry
+	icon_state = "clothing"
+	steps = list(
+		list(/obj/item/reagent_containers/glass/bottle, 1, "time" = 20),
+		list(/obj/item/animal_part/carp_fang, 1, "time" = 20),
+		list(/obj/item/reagent_containers/food/snacks/poppy_tisane, 1, "time" = 20),
+		list(QUALITY_HAMMERING, 15, "time" = 40)
+	)
+
 
 // Misc. --------------------
 

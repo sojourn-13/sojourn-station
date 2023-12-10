@@ -63,6 +63,17 @@
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
 	related_stats = list(STAT_MEC)
 
+/datum/craft_recipe/appliance/tint_button
+	name = "window tint controller"
+	result = /obj/machinery/button/windowtint
+	time = WORKTIME_NORMAL
+	steps = list(
+		list(/obj/item/device/assembly/signaler, 1)
+		)
+	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
+	related_stats = list(STAT_MEC)
+
+
 //You get some article of clothing and shred it with a blade to make a mophead. Add in some metal rods for a handle
 /datum/craft_recipe/appliance/mop
 	name = "mop"

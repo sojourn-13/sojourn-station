@@ -69,6 +69,11 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 	cost = 0
 
+/datum/gear/utility/cyborgbook
+	display_name = "S.R.I Cyborg Catalogue"
+	path = /obj/item/book/manual/robotics_catalogue
+	cost = 0
+
 /datum/gear/utility/advancedlaptop
 	display_name = "laptop, advanced"
 	path = /obj/item/modular_computer/laptop/preset/custom_loadout/advanced/golden

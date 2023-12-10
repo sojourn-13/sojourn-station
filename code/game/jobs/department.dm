@@ -54,7 +54,7 @@
 /*************
 	Retainers
 **************/
-//These departments are paid out of ship funding
+//These departments are paid out of colony funding
 /datum/department/ironhammer
 	name = "Marshal and Blackshield Division"
 	id = DEPARTMENT_SECURITY
@@ -131,7 +131,7 @@
 /datum/department/independent
 	name = "Independent Allied Factions"
 	id = DEPARTMENT_INDEPENDENT
-	jobs_in_department = list("/datum/job/off_colony_hunt_master","/datum/job/off_colony_hunter","/datum/job/off_colony_herbalist","/datum/job/outsider","/datum/job/assistant")
+	jobs_in_department = list("/datum/job/off_colony_hunt_master","/datum/job/off_colony_hunter","/datum/job/off_colony_herbalist","/datum/job/outsider","/datum/job/assistant","/datum/job/foreigner")
 
 /datum/department/greyson_positronic
 	name = "Greyson Positronic"

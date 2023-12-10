@@ -15,10 +15,10 @@
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_DIAMOND = 3)
 	price_tag = 1500
-	penetration_multiplier = 1.0
-	damage_multiplier = 1.0
+	penetration_multiplier = 1.1
+	damage_multiplier = 1.2
 	zoom_factors = list(0.4)
 	init_recoil = RIFLE_RECOIL(1.0)
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
@@ -30,7 +30,7 @@
 	auto_eject_sound = 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 
 	init_firemodes = list(
-	FULL_AUTO_200,
+	FULL_AUTO_300,
 	SEMI_AUTO_NODELAY
 	)
 	serial_type = "Sol Fed"
@@ -71,8 +71,9 @@
 	icon = 'icons/obj/guns/projectile/DMR.dmi'
 	icon_state = "DMR"
 	item_state = "DMR"
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 10, MATERIAL_DIAMOND = 3)
 	mag_well = MAG_WELL_HRIFLE
+	gun_parts = null
 	price_tag = 2000
 	damage_multiplier = 1.2
 	auto_eject = 1
@@ -89,6 +90,27 @@
 		)
 	serial_type = "H&S"
 
+/obj/item/gun/projectile/automatic/omnirifle/scoped/fancy
+	name = "\"Osprey\" precision rifle"
+	desc = "Classic, elegant sporting rifle based on proven military technology. \
+		 A police model of the venerable M13A1 Special Purpose Rifle manufactured on Earth by Seinemetall Defense GmbH for both sportsmen and counter-terror agents, it fires a variety of utility and specialized munitions. \
+		 Chambered in 8.6x70mm, its gaping bore allows virtually any imaginable payload, however the recoil and magazine suffer for it. \
+		 This example is fitted with an high-zoom optic, elegant wood furnishing, and is limited to semiautomatic."
+	icon = 'icons/obj/guns/projectile/Osprey.dmi'
+	icon_state = "osprey"
+	item_state = "osprey"
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 10, MATERIAL_DIAMOND = 3)
+	mag_well = MAG_WELL_HRIFLE
+	price_tag = 2000
+	init_recoil = RIFLE_RECOIL(0.7)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+		)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
+	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
+	serial_type = "SD GmbH"
+
+
 /obj/item/gun/projectile/automatic/omnirifle/rds
 	name = "\"Warthog\" advanced rifle"
 	desc = "A heavy second-line rifle manufactured by H&S, as well as number of state arsenals. Designed for close range encounters and support fire. \
@@ -98,7 +120,7 @@
 	icon = 'icons/obj/guns/projectile/Warthog.dmi'
 	icon_state = "warthog"
 	item_state = "warthog"
-	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_DIAMOND = 3)
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	price_tag = 1750
 	penetration_multiplier = 1.2
@@ -107,7 +129,6 @@
 	zoom_factors = list(0.4)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		FULL_AUTO_200,
 		BURST_3_ROUND
 		)
 	serial_type = "H&S"
@@ -116,11 +137,49 @@
 
 /obj/item/part/gun/frame/omni
 	name = "Omnirifle frame"
-	desc = "An Omnirifle frame. The ex-war criminal's delight."
+	desc = "An Omnirifle frame. The ex-war criminal's delight. Includes advanced mechanisms not often seen in more 'common' arms."
 	icon_state = "frame_omni"
-	matter = list(MATERIAL_PLASTEEL = 8)
+	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_DIAMOND = 3)
 	result = /obj/item/gun/projectile/automatic/omnirifle
 	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
 	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle, /obj/item/gun/projectile/automatic/omnirifle/rds)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
 	barrelvars = list(/obj/item/part/gun/barrel/hrifle)
+
+/obj/item/gun/projectile/automatic/omnirifle/hustler
+	name = "\"Hustler\" breacher shotgun"
+	desc = "The breacher special, this brick of a gun is cobbled together by Marshal Gunsmiths with far too much time and far too few matching omni-rifle mechanisms and frames.\
+	Not entirely a novel design, hackjobs such as this were common in the worst theatres during The Harrowing; Where logistic complications and the reality of war necessitated\
+	pushing the  famously durable and versatile omni-frame to its absolute limits. While many of those designs would turn out to be ineffective, impractical or deadly for the user \
+	this one has worked out surprisingly well. The added weight and barrel length add stability and accuracy often lacking from other firearms chambered in the famously wiley 20mm \
+	allowing for a steady stream of heavy-caliber slugs to be thrown downrange albeit at the cost of weight and flexibility."
+	icon = 'icons/obj/guns/projectile/Hustler.dmi'
+	icon_state = "hustler"
+	item_state = "hustler"
+	w_class = ITEM_SIZE_HUGE
+	force = WEAPON_FORCE_PAINFUL
+	caliber = CAL_SHOTGUN
+	slot_flags = SLOT_BACK
+	load_method = SINGLE_CASING|MAGAZINE
+	mag_well = MAG_WELL_RIFLE
+	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 15, MATERIAL_DIAMOND = 10)
+	gun_parts = null
+	price_tag = 2000
+	penetration_multiplier = 1.1
+	damage_multiplier = 1.3 //better than the saigini but no full auto
+	zoom_factors = list(0.4)
+	fire_delay = 12
+	init_recoil = RIFLE_RECOIL(1.0) //less recoil than others, because we're so slow to fire/move
+	fire_sound = 'sound/weapons/guns/fire/sbaw.ogg'
+	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.ogg'
+	max_upgrades = 3//Starts good but less modifiable
+	blacklist_upgrades = list(
+							/obj/item/tool_upgrade/augment/expansion = TRUE,
+							  )
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+		)
+
+	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL, GUN_SIGHT)

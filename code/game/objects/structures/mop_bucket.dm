@@ -20,3 +20,4 @@
 	cut_overlays()
 	if(reagents.total_volume >= 1)
 		add_overlay("water_mopbucket")
+	update_icon()

@@ -629,7 +629,7 @@
 	lst[MATERIAL_BONE] = 0.20
 	lst[MATERIAL_TITANIUM] = 0.80		//only exists if guild mines it themselves
 	lst[MATERIAL_COMPRESSED_MATTER] = 1 //we make this!
-//	lst[MATERIAL_RSCRAP] = 0.75			//now guild has a reason to make refined scrap {does not work, snowflake material code}
+	lst[MATERIAL_RSCRAP] = 0.75			//now guild has a reason to make refined scrap {does not work, snowflake material code}
 	lst[MATERIAL_AMERIDIAN] = 0.90			//so ameridian is useful to guild now?
 //	lst[MATERIAL_BIOMATTER] = 0.2		//church makes so much of it {does not work, snowflake material code}
 /obj/machinery/matter_nanoforge/proc/check_user(mob/user)

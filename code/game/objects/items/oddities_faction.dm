@@ -764,6 +764,11 @@ No more of that.
 		return
 
 	var/choice = input(user, "What do you want to call in?") as null|anything in list("Funding Operations","Aggressive Sales Market") //,"Call in a Favour"
+
+	if(anti_cheat)
+		to_chat(user, "The line is busy with other deals, wait your turn.")
+		return
+
 	switch(choice)
 
 		if("Funding Operations")
@@ -821,6 +826,10 @@ No more of that.
 					stations_list_for_phone += O
 
 				if(!stations_list_for_phone)
+					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say \"I'm prepared to close this deal quickly.\" followed by a silent dial tone. Looks like they are not in any mood to do more Aggressive Sales Market."))
+					return
+
+				if(!unlocks_left)
 					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say \"I'm prepared to close this deal quickly.\" followed by a silent dial tone. Looks like they are not in any mood to do more Aggressive Sales Market."))
 					return
 

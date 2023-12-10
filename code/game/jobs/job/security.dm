@@ -209,7 +209,8 @@
 	access = list(
 		access_security, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
-		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen
+		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen,
+		access_medical_equip, access_surgery, access_medical_suits
 	)
 
 	stat_modifiers = list(
@@ -314,7 +315,7 @@
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_AGSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/medspec
 

@@ -135,7 +135,7 @@
 
 /datum/design/research/item/mecha/weapon/sonic
 	name = "mech-mounted sonic emitter"
-	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/sonic
+	build_path = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/sonic
 
 //Explosives
 

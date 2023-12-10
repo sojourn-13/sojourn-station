@@ -189,6 +189,12 @@
 	min_cost = 10
 	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/lightfall
 
+/datum/armament/item/disk/caustic_rounds
+	name = "Disk - Caustic Ammo"
+	cost = 20
+	min_cost = 10
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt_caustic_rounds
+
 /datum/armament/item/disk/nukes
 	name = "Disk - Holy Grenades"
 	cost = 25

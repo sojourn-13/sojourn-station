@@ -27,12 +27,11 @@
 			Due to the physical weakness of the Ru caste they are barred from taking roles as security, as their importance to their relative hive structure makes them far more suited in other roles.."
 
 	restricted_to_species = list(FORM_CHTMANT)
-	restricted_depts = SECURITY
 
 	allow_modifications = FALSE
 	perks = list(PERK_ICHOR)
 	racial_implants = (/obj/item/organ_module/active/simple/surgical/cht_mant)
-	restricted_jobs = list(/datum/job/pro)
+	restricted_jobs = list(/datum/job/pro,/datum/job/smc,/datum/job/swo, /datum/job/supsec, /datum/job/serg, /datum/job/inspector, /datum/job/trooper, /datum/job/officer)
 
 	stat_modifiers = list(
 		STAT_ROB = -8,
@@ -45,7 +44,7 @@
 
 /datum/category_item/setup_option/background/ethnicity/chtmantra
 	name = "Ra Caste"
-	desc = "Ra are the warriors and sentries of the hives. Numbering in the hundreds they would tower over Ru’s and even \
+	desc = "Ra are the warriors and sentries of the hives. Numbering in the hundreds they would tower over Ruï¿½s and even \
 			most workers, the Ro. Their bodies were highly adapted for combat and they know only loyalty unto death for the good of \
 			the hive. Due to this, and the existence of the Ru, they often heavily lack any cognitive thinking skills and would \
 			rely on winning battles by sheer weight of numbers or pure attrition. The severe lack of intelligence they exhibit also bars them from most medical roles and all of science, engineering, and command roles."

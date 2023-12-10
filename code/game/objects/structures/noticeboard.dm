@@ -136,6 +136,36 @@
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
+	P = new()
+	P.name = "Memo:Smart Engagement"
+	P.info = "<h3>Dear Colleagues of the Marshal and Blackshield Departments,</h1><br>\
+				<small>I would like to remind you of and re-emphasize the golden rule of extended combat (the three REs):<ol>\
+				<li> REtreat</li>\
+				<li>REgroup</li>\
+				<li>REengage</li>\
+				</ol><br>\
+				While it may be tempting to attempt defeat the opposing force in one swift decisive skirmish, it's often impossible to do so with better equipped (and organised) hostile elements as recent experiences have shown us. <br><br>\
+				Focus on surviving and putting the pressure on the enemy instead of blind suicide charges. <br><br> \
+				<i>C.Mallory</i></small>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
+	P = new()
+	P.name = "Wanted:Jack Terran"
+	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
+				<h2>Latest wanted issues</h2>\
+				</center>\
+				<hr>\
+				<b>NAME:</b> <i>Jack Terran</i><br>\
+				<b>DESCRIPTION:</b><i>Tall, well built male. Long ginger hair at time of writing. Fair complexion</i><br>\
+				<b>CRIMES:</b><i>Murder, three counts. Misleading an Investigator, one count. Sparking a manhunt, one count. </i><br>\
+				<b>NOTES:</b><i>As a former Prospector Mister Terran has demonstrated an extreme level of danger and willingness to use violence on personnelle who pursue him. Given the high threat posed by the fugitive, Security Personnel are recommended to not engage without highly favorable conditions or backup. </i>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
+
 /obj/structure/noticeboard/blackshield
 	name = "Blackshield bulletin board"
 	desc = "A board containing vital notices and official memos for the Blackshield Militia"
@@ -153,7 +183,36 @@
 	P = new()
 	P.name = "Memo RE: Gate procedure"
 	P.info = "<br>This is a firm reminder to all Blackshield Personnel to draw their attention to the Gate Operations section of S.O.P, <b>particularly</b> the section detailing proper bolting of the gate when present and \
-	<b><i>UNBOLTING</b></i> of the gate when NOT present. The next trooper to get a fax sent because he left the foreman bolted outside is going to be scrubbing the latrines with his toothbrust - Sgt Dansen"
+	<b><i>UNBOLTING</b></i> of the gate in a <b><i>TIMELY</b></i> fashion that means within not more than five m The next trooper to get a fax sent because he left the foreman bolted outside is going to be scrubbing the latrines with his toothbrust - Sgt Dansen"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
+	P = new()
+	P.name = "Memo:Smart Engagement"
+	P.info = "<h3>Dear Colleagues of the Marshal and Blackshield Departments,</h1><br>\
+				<small>I would like to remind you of and re-emphasize the golden rule of extended combat (the three REs):<ol>\
+				<li> REtreat</li>\
+				<li>REgroup</li>\
+				<li>REengage</li>\
+				</ol><br>\
+				While it may be tempting to attempt defeat the opposing force in one swift decisive skirmish, it's often impossible to do so with better equipped (and organised) hostile elements as recent experiences have shown us. <br><br>\
+				Focus on surviving and putting the pressure on the enemy instead of blind suicide charges. <br><br> \
+				<i>C.Mallory</i></small>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
+	P = new()
+	P.name = "Wanted:Jack Terran"
+	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
+				<h2>Latest wanted issues</h2>\
+				</center>\
+				<hr>\
+				<b>NAME:</b> <i>Jack Terran</i><br>\
+				<b>DESCRIPTION:</b><i>Tall, well built male. Long ginger hair at time of writing. Fair complexion</i><br>\
+				<b>CRIMES:</b><i>Murder, three counts. Misleading an Investigator, one count. Sparking a manhunt, one count. </i><br>\
+				<b>NOTES:</b><i>As a former Prospector Mister Terran has demonstrated an extreme level of danger and willingness to use violence on personnelle who pursue him. Given the high threat posed by the fugitive, Security Personnel are recommended to not engage without highly favorable conditions or backup. </i>"
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P

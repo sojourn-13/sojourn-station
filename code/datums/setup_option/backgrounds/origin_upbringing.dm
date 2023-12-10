@@ -234,3 +234,15 @@
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
+
+/datum/category_item/setup_option/background/bckgrnd/true_data
+	name = "Introspective"
+	desc = "Do to being more in-tune with what you are and whats around you things that were once hidden behind probability or guessing are shown to you as factual odds."
+	perks = list(PERK_NO_OBSUCATION)
+
+	stat_modifiers = list(
+		STAT_VIG = 5,
+		STAT_MEC = -5,
+		STAT_COG = 5,
+		STAT_VIV = -5
+	)

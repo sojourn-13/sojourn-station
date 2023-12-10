@@ -569,11 +569,13 @@ obj/structure/cable/proc/cableColor(var/colorC)
 			var/robotics_expert = user.stats.getPerk(PERK_ROBOTICS_EXPERT)
 			if(S.burn_dam < ROBOLIMB_SELF_REPAIR_CAP || robotics_expert)
 				var/repair_amount = 15
+				H.UpdateDamageIcon()
 				if(robotics_expert)
 					repair_amount = user.stats.getStat(STAT_MEC)
 				S.heal_damage(0,repair_amount,TRUE)
 				user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 				user.visible_message(SPAN_DANGER("\The [user] [robotics_expert ? "expertly" : ""] patches some damaged wiring on \the [M]'s [S.name] with \the [src]."))
+				H.UpdateDamageIcon()
 			else if(S.open != 2)
 				to_chat(user, SPAN_DANGER("The damage is far too severe to patch over externally."))
 			return 1

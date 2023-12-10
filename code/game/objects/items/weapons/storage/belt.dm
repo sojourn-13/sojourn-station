@@ -412,10 +412,10 @@
 /obj/item/storage/belt/security/tactical/marshalert/populate_contents()
 	new /obj/item/tool/shovel/combat(src)
 	new /obj/item/gun/energy/gun/martin(src)
-	new /obj/item/cell/small(src)
-	new /obj/item/cell/small(src)
+	new /obj/item/cell/small/hyper(src)
+	new /obj/item/cell/small/hyper(src)
 	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
-	new /obj/item/cell/medium/high(src)
+	new /obj/item/cell/medium/hyper(src)
 	new /obj/item/handcuffs(src)
 	new /obj/item/handcuffs(src)
 	new /obj/item/device/taperecorder(src)
@@ -426,6 +426,26 @@
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/grenade/chem_grenade/teargas(src)
 	new /obj/item/grenade/frag/stinger(src)
+
+/obj/item/storage/belt/security/tactical/shieldert
+
+/obj/item/storage/belt/security/tactical/shieldert/populate_contents()
+	new /obj/item/tool/shovel/combat(src)
+	new /obj/item/gun/energy/gun/martin(src)
+	new /obj/item/cell/small/hyper(src)
+	new /obj/item/cell/small/hyper(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/cell/medium/high(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/device/taperecorder(src)
+	new /obj/item/device/camera(src)
+	new /obj/item/grenade/flashbang(src) //we're so past caring about contraband.
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/clothing/glasses/powered/thermal(src)
+	new /obj/item/clothing/glasses/powered/night(src)
 
 /obj/item/storage/belt/security/tactical/opifex
 	name = "opifex tactical belt"

@@ -10,7 +10,7 @@
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
-	markup = COMMON_GOODS * 1.5
+	markup = COMMON_GOODS
 	hidden_inv_threshold = 32000
 	start_discovered = TRUE //WE KNOW WERE ARE OVERHOUNDS ARE
 	spawn_always = TRUE //Were right next door
@@ -74,7 +74,7 @@
 		/obj/item/animal_part/tahca_antler = offer_data("tahca antler", 1250, 10),
 		/obj/item/animal_part/wolf_tooth = offer_data("pristine animal fang", 400, 10),
 		/obj/item/gun/projectile/shotgun/pump/hunter_crossbow = offer_data("hunter crossbow", 2500, 3),
-//		/obj/item/gun/projectile/boltgun/baroque = offer_data("hunter baroque", 4500, 1),
+		/obj/item/gun/projectile/boltgun/baroque = offer_data("hunter baroque", 4500, 1),
 		/obj/item/tool/spear/hunter_halberd = offer_data("hunter halberd", 1300, 2),
 		/obj/item/tool/gauntlet = offer_data("render gauntlet", 2800, 2),
 		/obj/item/tool/fireaxe/woodsman = offer_data("woodsman axe", 900, 3),

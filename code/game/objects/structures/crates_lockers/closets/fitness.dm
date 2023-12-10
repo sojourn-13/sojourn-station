@@ -18,6 +18,9 @@
 	new /obj/item/clothing/mask/snorkel(src)
 	new /obj/item/clothing/shoes/swimmingfins(src)
 	new /obj/item/clothing/shoes/swimmingfins(src)
+	new /obj/item/towel(src)
+	new /obj/item/towel(src)
+	new /obj/item/towel(src)
 
 /obj/structure/closet/boxinggloves
 	name = "boxing gloves"

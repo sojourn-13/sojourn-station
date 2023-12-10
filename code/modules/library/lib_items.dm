@@ -212,6 +212,7 @@
 		new /obj/item/book/manual/wiki/engineering_hacking(src)
 		new /obj/item/book/manual/wiki/engineering_atmos(src)
 		new /obj/item/book/manual/evaguide(src)
+		new /obj/item/book/manualshield_generator_guide(src)
 		update_icon()
 
 /obj/structure/bookcase/manuals/research_and_development

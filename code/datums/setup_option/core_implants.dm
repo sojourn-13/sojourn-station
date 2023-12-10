@@ -16,7 +16,7 @@
 		)
 	allowed_depts = CHURCH
 	allow_modifications = TRUE
-	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CINDAR, FORM_CHURCHSYNTH)
+	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_OPIFEX, FORM_CINDAR, FORM_CHURCHSYNTH, FORM_UNBRANDED, FORM_FBP)
 
 /datum/category_item/setup_option/core_implant/psionic_tumor
 	name = "Psionic Organ"
@@ -24,7 +24,8 @@
 	Обладатели этого органа должны поддерживать чистоту своего тела, любые имплантаты, крестоформы или синтетические конечности будут жестоко и болезненно отторгаться, пока этот орган существует в теле."
 	implant_organ_type = "psionic tumor"
 	restricted_jobs = list(
-		/datum/job/outsider //Psions are only available to colonist or allies.
+		/datum/job/cyborg, //To stop people auto dropping these
+		/datum/job/ai
 		)
 	allow_modifications = FALSE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
@@ -59,7 +60,8 @@
 	desc = "Наногейт, созданный на заказ по превосходным чертежам опифексов. Он имплантируется прямо в месте соединения позвоночника с черепом и предоставляет широкий спектр возможностей использования нанитов."
 	implant_organ_type = "nanogate"
 	restricted_jobs = list(
-		/datum/job/outsider // Nanogates are only available to colonist or allies.
+		/datum/job/cyborg, //To stop people auto dropping these
+		/datum/job/ai
 		)
 	allow_modifications = TRUE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_AGSYNTH)
@@ -92,7 +94,6 @@
 	конкретный дизайн является опифексовым оригиналом и одним из лучших, которые можно сыскать в галактике."
 	implant_organ_type = "opifex nanogate"
 	restricted_jobs = list(
-		/datum/job/outsider, // Nanogates are only available to colonist or allies.
 		/datum/job/cyborg, //To stop people auto dropping these
 		/datum/job/ai
 		)

@@ -18,13 +18,14 @@
 	price_tag = 900
 	penetration_multiplier = 1.2
 	init_recoil = SMG_RECOIL(0.6)
+	gun_parts = null //she's a delicate, complicated lil flower. Don't try to pull her apart.
 	fire_sound_silenced = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SCOPE, GUN_SILENCABLE)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND_NOLOSS,
 		BURST_3_ROUND_NOLOSS,
-		FULL_AUTO_300_NOLOSS
+		FULL_AUTO_600_NOLOSS
 		)
 	serial_type = "NM"
 

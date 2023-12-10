@@ -207,6 +207,12 @@
 	icon_state = "bottle"
 	preloaded_reagents = list("tahcacillin" = 60)
 
+/obj/item/reagent_containers/glass/bottle/carp_slurry
+	name = "carpotoxin gland-mince bottle"
+	desc = "A small bottle. Contains a carps venom gland, fang and some poppy seed. May be prepared into a tincture by simmering the slurry, straining off the detritus and mixing with a strong grain alcohol."
+	icon_state = "bottle"
+	preloaded_reagents = list("carpogland-mince" = 3)
+
 //viroputine chems (These mix with themselves and do weird effects)
 /obj/item/reagent_containers/glass/bottle/nosfernium
 	name = "nosfernium bottle"

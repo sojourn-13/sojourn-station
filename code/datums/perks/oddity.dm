@@ -250,6 +250,24 @@
 	holder.health -= 20
 	..()
 
+/datum/perk/oddity/side_loading
+	name = "Side Loading"
+	desc = "Guns that can be side-loaded will tell you when examined. \
+	When onehanding most some guns, you will automatically reload them if in your offhand you hold additional shells."
+	gain_text = "Reloading with a simple mind is almost second nature..."
+	lose_text = "The reloading from the side is more complicated..."
+	icon_state = "plus_one" // https://game-icons.net/1x1/lorc/gears.html
+
+/datum/perk/oddity/side_loading/assign(mob/living/carbon/human/H)
+	..()
+	holder.stats.changeStat(STAT_COG, -5)
+	holder.stats.changeStat(STAT_VIG, 5)
+
+/datum/perk/oddity/side_loading/remove()
+	holder.stats.changeStat(STAT_COG, 5)
+	holder.stats.changeStat(STAT_VIG, -5)
+	..()
+
 ///////////////////////////////////////
 //////// JOB ODDITYS PERKS ////////////
 ///////////////////////////////////////

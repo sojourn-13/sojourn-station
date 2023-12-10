@@ -123,7 +123,7 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 4
 		)
 
-//Church shotgun
+//Thorn and Rose Pack - both 10mm and 9mm
 /obj/item/computer_hardware/hard_drive/portable/design/nt/mk58
 	disk_name = "Absolute Armory - Thorn and Rose Handgun Pack Plus"
 	icon_state = "neotheology"
@@ -160,10 +160,10 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		/datum/design/autolathe/ammo/shotgun_pellet = 2,
 		/datum/design/autolathe/ammo/shotgun = 2,
-		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 3,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 3
 		)
 
-//Church shotgun
+//Church Revolver
 /obj/item/computer_hardware/hard_drive/portable/design/nt/lemant
 	disk_name = "Absolute Armory - .40/20mm Pilgrim revolver Plus"
 	icon_state = "neotheology"
@@ -180,7 +180,7 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		/datum/design/autolathe/ammo/shotgun_pellet = 2,
 		/datum/design/autolathe/ammo/shotgun = 2,
-		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2
 		)
 
 //Church shotgun
@@ -194,6 +194,7 @@
 		/datum/design/autolathe/ammo/shotgun_beanbag,
 		/datum/design/autolathe/ammo/shotgun_blanks = 0,
 		/datum/design/autolathe/ammo/shotgun_illumination,
+		/datum/design/autolathe/ammo/shotgun_biomatter = 5
 		)
 
 //for the EOTP
@@ -209,6 +210,7 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		/datum/design/autolathe/ammo/shotgun_box = 3,
 		/datum/design/autolathe/ammo/shotgun_pellet_box = 3,
+		/datum/design/autolathe/ammo/shotgun_biomatter = 3
 		)
 
 // ENERGY SMALL ARMS
@@ -702,3 +704,16 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/concillium
 		/datum/design/bioprinter/nt_cells/small,
 		/datum/design/bioprinter/nt_cells/small/plasma = 2
 		)
+
+//for the EOTP
+
+/obj/item/computer_hardware/hard_drive/portable/design/nt_caustic_rounds
+	disk_name = "Absolute Armory - Caustic Ammunition Pack"
+	desc = "A rare and expensive disk containing designs for biomatter based caseless ballistic rounds."
+	icon_state = "neotheology"
+	license = 20
+	designs = list(
+		/datum/design/autolathe/ammo/shotgun_biomatter = 4,
+		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2,
+		/datum/design/autolathe/ammo/pistol_ammobox_biomatter
+	)

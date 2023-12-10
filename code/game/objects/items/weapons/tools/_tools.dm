@@ -480,6 +480,10 @@
 		fail_chance = 0
 
 	if(fail_chance >= 100)
+		if(!user.stats.getPerk(PERK_NO_OBSUCATION))
+			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! Considering your skills and this tool, it is impossible."))
+		else
+			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! The odds of succes are [fail_chance], this is infact impossible."))
 		to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! Considering your skills and this tool, it is impossible."))
 		return TOOL_USE_FAIL
 	if(prob(fail_chance))
@@ -494,6 +498,11 @@
 			chanceMessage = "small"
 		else if(fail_chance < 95)
 			chanceMessage = "tiny"
+
+		if(!user.stats.getPerk(PERK_NO_OBSUCATION))
+			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [chanceMessage] chance to succeed."))
+		else
+			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [fail_chance]% chance to fail."))
 		to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [chanceMessage] chance to succeed."))
 		return TOOL_USE_FAIL
 
@@ -1085,11 +1094,13 @@
 				if(S.brute_dam < ROBOLIMB_SELF_REPAIR_CAP || robotics_expert)
 					if(use_tool(user, H, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 						var/repair_amount = 15
+						M.UpdateDamageIcon()
 						if(robotics_expert)
 							repair_amount = user.stats.getStat(STAT_MEC)
 						S.heal_damage(repair_amount,0,TRUE)
 						user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 						user.visible_message(SPAN_NOTICE("\The [user] [robotics_expert ? "expertly" : ""] patches some dents on \the [H]'s [S.name] with \the [src]."))
+						M.UpdateDamageIcon()
 						return 1
 				else if(S.open != 2)
 					to_chat(user, SPAN_DANGER("The damage is far too severe to patch over externally."))

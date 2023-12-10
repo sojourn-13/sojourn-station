@@ -183,6 +183,8 @@
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_BIO = 10,
+		STAT_VIG = 20,
+		STAT_TGH = 20,
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/camera_monitor)

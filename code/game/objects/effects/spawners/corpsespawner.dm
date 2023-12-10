@@ -272,19 +272,19 @@
 	// corpseidaccess = "Captain"  // No reason for them to have all access on Eris
 
 /obj/landmark/corpse/commander
-	name = "Commander"
+	name = "Steward"
 	corpseuniform = /obj/item/clothing/under/rank/first_officer
-	corpsesuit = /obj/item/clothing/suit/armor/bulletproof
-	corpseradio = /obj/item/device/radio/headset/heads/captain
-	corpseglasses = /obj/item/clothing/glasses/eyepatch
+	corpsesuit = /obj/item/clothing/suit/armor/platecarrier
+	corpseradio = /obj/item/device/radio/headset/heads/hop
+	corpseglasses = /obj/item/clothing/glasses/sunglasses
 	corpsemask = /obj/item/clothing/mask/smokable/cigarette/cigar/cohiba
-	corpsehelmet = /obj/item/clothing/head/centhat
-	corpsegloves = /obj/item/clothing/gloves
+	corpsehelmet = /obj/item/clothing/head/rank/first_officer
+	corpsegloves = /obj/item/clothing/gloves/thick/combat
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpsepocket1 = /obj/item/flame/lighter/zippo
 	corpseid = 1
-	corpseidjob = "Commander"
-	// corpseidaccess = "Captain"  // No reason for them to have all access on Eris
+	corpseidjob = "Steward"
+	// corpseidaccess = "Captain"  // No reason for them to have all access, access codes are deprecated
 
 
 /obj/landmark/corpse/generic/clown

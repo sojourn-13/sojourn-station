@@ -90,6 +90,7 @@
 	new /obj/item/computer_hardware/hard_drive/portable/design/exotic_ammo(src)
 	new /obj/item/computer_hardware/hard_drive/portable/design/security/marshal_ammo(src)
 	new /obj/item/device/radio/headset/headset_sec/bowman(src)
+	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/clothing/glasses/sechud/tactical(src)
 	new /obj/item/clothing/glasses/sechud(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
@@ -170,7 +171,7 @@
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/voucher/marshal/rangerprimary(src)
 	new /obj/item/voucher/marshal/rangersecondary(src)
-	new /obj/item/storage/box/m_kit/armored_overcoat(src)
+	new /obj/item/voucher/marshal/armor(src)
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections locker"

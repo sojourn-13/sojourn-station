@@ -107,7 +107,7 @@
 		. += SPAN_WARNING("Warning: Blood Level ERROR: --% --cl.</span> <span class='notice'>Type: ERROR")
 		. += span("highlight", "Subject's pulse: <font color='red'>-- bpm.</font>")
 		return
-	
+
 	var/mob/living/carbon/human/H = M
 
 	var/fake_oxy = max(rand(1, 40), M.getOxyLoss(), (300 - (M.getFireLoss() + M.getBruteLoss())))
@@ -181,13 +181,14 @@
 				else
 					internal_wound_severity = null
 
-				dat += text("<span class='highlight'>     [][]:  [] - [] - [] [] []</span>",
+				dat += text("<span class='highlight'>     [][]: [] -  [] - [] - [] [] []</span>",
 				capitalize(org.name),
 				(BP_IS_ROBOTIC(org)) ? "(Cybernetic)" : "",
 				"<font color='red'>[brute_health ? brute_health : "0"] / [org.max_damage]</font>",
 				"<font color='#FFA500'>[burn_health ? burn_health : "0"] / [org.max_damage]</font>",
 				(org.status & ORGAN_BLEEDING) ? "<font color='red'>\[Bleeding\]</font>" : "",
 				(org.status & ORGAN_BROKEN && !(org.status & ORGAN_SPLINTED)) ? "<font color='red'>\[Broken\]</font>" : "",
+				(org.status & ORGAN_INFECTED) ? "<font color='green'>\[Infected\]</font>" : "",
 				internal_wound_severity ? "<font color='red'>\[[internal_wound_severity] Organ Wounds\]</font>" : "")
 		else
 			dat += span("highlight", "Limbs are OK.")

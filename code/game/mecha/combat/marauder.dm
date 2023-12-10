@@ -6,7 +6,7 @@
 	step_in = 3
 	step_energy_drain = 3
 	price_tag = 25000 //Rare spawns + uncraftable
-	health = 1000
+	health = 1500
 	deflect_chance = 25
 	damage_absorption = list("brute"=0.5,"fire"=0.7,"bullet"=0.45,"energy"=0.7,"bomb"=0.7)
 	max_temperature = 60000
@@ -161,7 +161,7 @@
 	initial_icon = "seraph"
 	step_in = 2
 	step_energy_drain = 1
-	health = 1200
+	health = 1800
 	wreckage = /obj/effect/decal/mecha_wreckage/seraph
 	internal_damage_threshold = 20
 	force = 55

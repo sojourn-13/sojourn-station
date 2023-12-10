@@ -82,6 +82,27 @@
 	icon_state = "hostilemob-brown-low"
 	spawn_nothing_percentage = 60
 
+/obj/random/mob/excelsior
+	name = "random excelsior" //about a 50/50 chance to have a corpse, or an excel agent
+	icon_state = "hostilemob-brown"
+	alpha = 128
+
+/obj/random/mob/excelsior/item_to_spawn()
+	return pickweight(list(
+		/obj/landmark/corpse/excelsior = 10,
+		/mob/living/carbon/superior_animal/human/excelsior = 2,
+		/mob/living/carbon/superior_animal/human/excelsior/excel_ppsh = 2,
+		/mob/living/carbon/superior_animal/human/excelsior/excel_ak = 2,
+		/mob/living/carbon/superior_animal/human/excelsior/excel_vintorez = 2,
+		/mob/living/carbon/superior_animal/human/excelsior/excel_drozd = 2
+		))
+
+
+/obj/random/mob/excelsior/low_chance
+	name = "low chance random excelsior"
+	icon_state = "hostilemob-brown-low"
+	spawn_nothing_percentage = 60
+
 //psionic monsters
 /obj/random/mob/psi_monster
 	name = "random psi_monster"
@@ -106,7 +127,6 @@
 				/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo = 4,
 				/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher = 4,
 				/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly = 2,
-				/mob/living/carbon/superior_animal/psi_monster/wasonce/crimson_jelly/pitch_horror = 1,
 				))
 
 /obj/random/mob/psi_monster_mega_fauna
@@ -278,9 +298,9 @@
 	return pickweight(list(/mob/living/simple_animal/hostile/tengbrute = 20,
 		/mob/living/simple_animal/hostile/tengstalker = 10,
 		/mob/living/simple_animal/hostile/tengcharge = 20,
-		/mob/living/simple_animal/hostile/hell_pig = 1,
-		/mob/living/simple_animal/hostile/hell_pig/slepnir = 1,
-		/mob/living/simple_animal/hostile/hell_pig/wendigo = 1
+		/mob/living/simple_animal/hostile/hell_pig = 2,
+		/mob/living/simple_animal/hostile/hell_pig/slepnir = 2,
+		/mob/living/simple_animal/hostile/hell_pig/wendigo = 2
 		))
 
 /obj/random/mob/tengolo/low_chance

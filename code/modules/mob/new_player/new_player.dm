@@ -118,7 +118,8 @@
 						return
 				var/datum/preferences/records_check = client.prefs.get_records()
 				if(!records_check)
-					if(alert(src,"Are you sure you wish to spawn without records? Our rules require them!. \
+					if(alert(src,"Are you sure you wish to spawn without records? Our rules require them colonist roles. \
+								Visitors, Hunters and Outsiders are excluded and may ignore this warning. \
 								If not, go to the Backround section of Setup Character and set Records. \
 								Our records templates and requirement specifics can be found at: https://sojourn13.space/wiki/Example_Paperwork#Character_Records", \
 								"Player Setup", "Yes", "No") == "No")

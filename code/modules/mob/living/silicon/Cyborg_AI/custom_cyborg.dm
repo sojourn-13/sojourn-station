@@ -1,9 +1,8 @@
 /mob/living/silicon/robot/drone/borg
 	name = "Modified Drone"
 	real_name = "Custom Drone"
-	icon = 'icons/mob/robots.dmi'
+	icon = 'icons/mob/robot_tall/cargo.dmi'
 	icon_state = "mekacargo"
-	icon_alt_director = 'icons/mob/robot_tall/cargo.dmi'
 
 	maxHealth = 400
 	health = 400

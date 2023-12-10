@@ -37,8 +37,8 @@
 
 /tipsAndTricks/jobs/drillllls
     jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
-    tipText = "Массивные сверла глубоко проникают в землю на том тайле, который они сверлят, модернизация увеличит их радиус до большего количества плиток."
-
+    tipText = "The massive drills mine deep into the ground on the tile its drilling, upgrading it will increase its AOE to more tiles."
+*/
 /tipsAndTricks/jobs/diggyhole
     jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
     tipText = "Саму землю можно перекопать лопатой, чтобы получить больше руды, это, скорее всего, даст вам камни, которые можно отбивать молотком для получения большего количества осколков руды."
@@ -77,7 +77,7 @@
 
 /tipsAndTricks/jobs/captain_leader
     jobs_list = list(/datum/job/premier)
-    tipText = "К советам мудрого человека всегда прислушиваются, потому что мудрый человек никогда не даст плохого совета."
+    tipText = "A wise man's advise is always listened to, because a wise man will never give bad advice."
 
 /tipsAndTricks/jobs/captain_free_access
     jobs_list = list(/datum/job/premier)
@@ -141,6 +141,10 @@
 /tipsAndTricks/jobs/theBlackBox
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
     tipText = "Nano Forge может быть оснащен любой странностью, которая повышает знания в области механики, а также является Аномалией. В черном ящике Nano Forge всегда будет аномалия."
+
+/tipsAndTricks/jobs/matterforgesnstuff
+    jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
+    tipText = "The NanoForge and Bullet Fabricator can both utilize refined scrap as a highly efficient source of matter."
 
 /tipsAndTricks/jobs/bullet_fab
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)

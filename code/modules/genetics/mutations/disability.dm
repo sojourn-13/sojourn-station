@@ -99,7 +99,25 @@
 	desc = "Removes the need for oxygen."
 	gain_text="Your lungs feel a little minty..."
 	instability = 5
-	mutation = mNobreath
+	var/existed_prior = FALSE
+
+/datum/genetics/mutation/disability/nobreathe/onMobImplant()
+	if(!istype(container.holder,/mob/living/carbon))
+		return
+	var/mob/living/carbon/target = container.holder
+	if(!(target.species.flags & NO_BREATHE))
+		target.species.flags |= NO_BREATHE
+	else
+		existed_prior = TRUE
+
+/datum/genetics/mutation/disability/nobreathe/onMobRemove()
+	if(!istype(container.holder,/mob/living/carbon))
+		return
+	if(existed_prior)
+		return
+	var/mob/living/carbon/target = container.holder
+	target.species.flags &= ~NO_BREATHE
+
 
 /datum/genetics/mutation/disability/hulk
 	name = "H.U.L.K."

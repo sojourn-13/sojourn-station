@@ -35,6 +35,11 @@
 	var/cell_drop = null
 	sanity_damage = -2
 
+/mob/living/simple_animal/soteria_roomba/medical
+	name = "Hibikleaner Morikroomba"
+	desc = "An orange roomba that someone seems to have attached fox ears to along with a name tag. Its servos whine slightly as it cleans."
+	icon_state = "roomba_SI_fox"
+
 // For repairing damage to the synths.
 /mob/living/simple_animal/soteria_roomba/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/T // Define the tool variable early on to avoid compilation problem and to allow us to use tool-unique variables

@@ -25,8 +25,11 @@
 			var/mob/living/carbon/human/H = M
 			H.sanity.onToxin(src, effect_multiplier)
 			M.sanity.onToxin(src, multi)*/
-		M.add_chemical_effect(CE_TOXIN, strength)
+		M.add_chemical_effect(CE_TOXIN, strength + dose / 2)
 
+/datum/reagent/toxin/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	if(strength)
+		M.add_chemical_effect(CE_TOXIN, strength + dose / 3)
 
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
@@ -97,6 +100,26 @@
 			M.add_chemical_effect(CE_TOXIN, strength)
 		else
 			M.add_chemical_effect(CE_TOXIN, strength)
+
+/datum/reagent/toxin/carpotoxin/gland
+	name = "Carpotoxin Gland Mince"
+	id = "carpogland-mince"
+	description = "A mince made by grinding the fang and gland of particularly large carp with poppy seeds."
+	taste_description = "fish and bits of teeth"
+	reagent_state = SOLID
+	color = "#6C8681"
+	strength = 2
+	heating_point = 365
+	heating_products = list("toxin","protein", "concentrated-carpotoxin")
+
+/datum/reagent/toxin/carpotoxin/concentrated
+	name = "Conccentrated Carpotoxin"
+	id = "concentrated-carpotoxin"
+	description = "A deadly neurotoxin produced by the dreaded space carp. This sample appears particularly vibrant and has poppy seeds throughout. Smells like a swift death."
+	taste_description = "acrid lakewater"
+	reagent_state = LIQUID
+	strength = 6
+	color = "#016363"
 
 ///datum/reagent/toxin/blattedin is defined in blattedin.dm
 
@@ -505,8 +528,8 @@
 	overdose = REAGENTS_OVERDOSE/3
 	addiction_chance = 0.01 //Will STILL likely always be addicting
 	nerve_system_accumulations = 15
-	metabolism = REM * 0.2 //but processes much faster than other toxins
-	strength = 2
+	metabolism = REM * 0.2 //back to old
+	strength = 3
 	heating_point = 523
 	heating_products = list("toxin")
 
@@ -611,7 +634,7 @@
 	if(!ishuman(M))
 		return
 	var/mob/living/carbon/human/H = M
-	var/obj/item/organ/internal/heart/S = H.random_organ_by_process(OP_HEART)
+	var/obj/item/organ/internal/vital/heart/S = H.random_organ_by_process(OP_HEART)
 	if(istype(S))
 		S.take_damage(dose/2, FALSE, TOX)
 	var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)

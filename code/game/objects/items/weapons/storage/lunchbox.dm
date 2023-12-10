@@ -14,7 +14,9 @@
 	attack_verb = "lunched"
 	price_tag = 5
 	can_hold = list(
-		/obj/item/reagent_containers/food
+		/obj/item/reagent_containers/food,
+		/obj/item/material/kitchen/utensil,
+		/obj/item/tool/knife
 		)
 
 /obj/item/storage/lunchbox/rainbow

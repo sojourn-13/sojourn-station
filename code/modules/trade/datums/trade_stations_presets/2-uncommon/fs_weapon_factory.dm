@@ -1,7 +1,7 @@
 /datum/trade_station/fs_factory
 	name_pool = list("XSMS 'Kaida'" = "Xanaroth Syndicate Manufacturing Station 'Kaida'. \"Well if it isn't our favorite trade partner, we got some side deals just for you!\"")
 	spawn_always = TRUE
-	markup = RARE_GOODS		// dept-specific stuff should be more expensive for guild
+	markup = COMMON_GOODS		// dept-specific stuff should be more expensive for guild
 	uid = "fs_guns"
 	tree_x = 0.82
 	tree_y = 0.7
@@ -9,15 +9,17 @@
 	base_income = 0
 	wealth = 0
 //	secret_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3000
 	stations_recommended = list("illegal1")
 	recommendations_needed = 1
 	inventory = list(
 		"Projectiles" = list(
 			/obj/item/gun/projectile/automatic/c20r,
 			/obj/item/gun/projectile/automatic/sts/rifle,
+			/obj/item/gun/projectile/automatic/pitbull,
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa = good_data("Mosin boltaction rifle", list(1, 5), 500),
+			/obj/item/gun/projectile/shotgun/pump/gladstone,
 			/obj/item/gun/projectile/shotgun/bull,
 			/obj/item/gun/projectile/shotgun/pug,
 			/obj/item/gun/projectile/shotgun/pump = good_data("Grizzly shotgun", list(1, 5), 700),

@@ -32,6 +32,7 @@
 	/obj/item/gun/projectile/automatic/greasegun = 2,
 	//Shotgun
 	/obj/item/gun/projectile/boltgun/lever = 2,
+	/obj/item/gun/projectile/shotgun/pump/gladstone = 2,
 	/obj/item/gun/projectile/shotgun/pump/china = 2,
 	//Ammo
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 3,
@@ -110,6 +111,7 @@
 	/obj/item/gun/projectile/automatic/greasegun = 800,
 	//Shotgun
 	/obj/item/gun/projectile/boltgun/lever = 650,
+	/obj/item/gun/projectile/shotgun/pump/gladstone = 850,
 	/obj/item/gun/projectile/shotgun/pump/china = 1750,
 	//Ammo
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 20,

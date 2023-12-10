@@ -175,7 +175,7 @@
 				/obj/item/clothing/under/color/purple = 5,
 				/obj/item/clothing/under/costume/misc/rainbowjumpsuit = 5,
 				/obj/item/clothing/under/pj = 5,
-				/obj/item/clothing/under/plaid/properblue = 5,
+				/obj/item/clothing/under/dress/properblue = 5,
 				/obj/item/clothing/under/suit_jacket/red = 5,
 				/obj/item/clothing/under/suit_jacket = 5,
 				/obj/item/clothing/under/turtleneck = 5,
@@ -504,4 +504,14 @@
 				/obj/item/clothing/suit/greatcoat/os = 4,
 				/obj/item/clothing/head/os_cap = 4,
 				/obj/item/clothing/head/helmet/space/os = 8,
-				/obj/item/clothing/suit/space/os = 8))
+				/obj/item/clothing/suit/space/os = 8,
+				/obj/item/clothing/suit/space/void/greyson = 1))
+
+/obj/random/cloth/assault/reaver
+	name = "low chance Reaver Assault Armor"
+	desc = "Low chance reaver assault armor spawn. Intended for use on Reavers."
+	icon_state = "armor-grey-low"
+	spawn_nothing_percentage = 97 //about a 1/3 chance on a normal round of obtaining this
+
+/obj/random/cloth/assault/reaver/item_to_spawn()
+	return pickweight(list(/obj/item/clothing/suit/space/void/assault/void_wolf))

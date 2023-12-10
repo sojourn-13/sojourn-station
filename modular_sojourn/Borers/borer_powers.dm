@@ -126,13 +126,9 @@
 
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			var/obj/item/organ/I = H.random_organ_by_process(BP_BRAIN)
-			if(!I) // No brain organ, so the borer moves in and replaces it permanently.
-				replace_brain()
-			else
-				// If they're in normally, implant removal can get them out.
-				var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
-				head.implants += src
+			// If they're in normally, implant removal can get them out.
+			var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
+			head.implants += src //Removed the brain eating/replacing proc reference.
 
 /*
 /mob/living/simple_animal/borer/verb/devour_brain()
@@ -158,7 +154,7 @@
 
 	to_chat(src, "<span class = 'danger'>It only takes a few moments to render the dead host brain down into a nutrient-rich slurry...</span>")
 	replace_brain()
-*/
+
 
 // BRAIN WORM ZOMBIES AAAAH.
 /mob/living/simple_animal/borer/proc/replace_brain()
@@ -207,7 +203,7 @@
 		H.computer_id = s2h_id
 
 	if(!H.lastKnownIP)
-		H.lastKnownIP = s2h_ip
+		H.lastKnownIP = s2h_ip*/
 
 /mob/living/simple_animal/borer/proc/secrete_chemicals()
 	set category = "Abilities"
@@ -398,9 +394,8 @@
 	host.SetStunned(10)
 	host.SetWeakened(10)
 	host.SetParalysis(10)
-	if(H == host)
-		H.restore_blood()
-		H.fixblood()
+	host.restore_blood()
+	host.fixblood()
 	host.update_lying_buckled_and_verb_status()
 	chemicals -= 500
 
@@ -448,8 +443,8 @@
 			to_chat(src, SPAN_NOTICE("You learned [english_list(copied_languages)]."))
 
 		to_chat(host, SPAN_DANGER("Your head spins, your memories thrown in disarray!"))
-		H.adjustBrainLoss(copied_amount * 4)
-		H?.sanity.onPsyDamage(copied_amount * 4)
+		host.adjustBrainLoss(copied_amount * 4)
+		host?.sanity.onPsyDamage(copied_amount * 4)
 
 		host.make_dizzy(copied_amount * 4)
 		host.confused = max(host.confused, copied_amount * 4)
@@ -496,7 +491,7 @@
 
 		to_chat(host, SPAN_DANGER("Your head spins as new information fills your mind!"))
 		host.adjustBrainLoss(copied_amount * 2)
-		H?.sanity.onPsyDamage(copied_amount * 2)
+		host?.sanity.onPsyDamage(copied_amount * 2)
 
 		host.make_dizzy(copied_amount * 2)
 		host.confused = max(host.confused, copied_amount * 2)

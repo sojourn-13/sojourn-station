@@ -117,7 +117,7 @@
 	required_type = list(/obj/mecha/combat)
 	price_tag = 1300 //state of the art
 
-/obj/item/mecha_parts/mecha_equipment/ranged_weapon/sonic
+/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/sonic
 	equip_cooldown = 15
 	name = "mech-mounted sonic emitter"
 	desc = "An upscaled version of the handheld sonic emitter, designed to be mounted on an exosuit. Being bigger, it is more efficient than the handheld version, packing a bigger punch for less power."

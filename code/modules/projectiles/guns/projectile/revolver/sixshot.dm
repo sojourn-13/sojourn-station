@@ -71,5 +71,5 @@
 
 	wield_delay = 0.8 SECOND
 	wield_delay_factor = 0.6 // 60 vig
-	gun_parts = list( /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/shotgun = 1)
+	gun_parts = list( /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/stack/material/plasteel = 2)
 

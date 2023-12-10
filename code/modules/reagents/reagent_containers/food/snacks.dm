@@ -190,9 +190,6 @@
 		var/fullness = (carbon.nutrition + (carbon.reagents.get_reagent_amount("nutriment") * 25)) * fullness_modifier
 		if(carbon == user)								//If you're eating it yourself
 			if(istype(human))
-				if(!human.check_has_mouth())
-					to_chat(user, "You cannot eat \the [src] without a mouth.")
-					return
 				var/obj/item/blocked = human.check_mouth_coverage()
 				if(blocked)
 					to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
@@ -724,6 +721,17 @@
 	matter = list(MATERIAL_BIOMATTER = 6)
 	cooked = TRUE
 
+/obj/item/reagent_containers/food/snacks/frenchtoast
+	name = "french toast"
+	desc =  "A slice of bread soaked in a beaten egg mixture. Tastes like home"
+	icon_state = "frenchtoast"
+	trash = /obj/item/trash/plate
+	filling_color = "#fab82a"
+	nutriment_desc = list("sweetness" = 4, "egg" = 3, "home" = 1)
+	nutriment_amt = 8
+	bitesize = 3
+	matter = list(MATERIAL_BIOMATTER = 7)
+
 /obj/item/reagent_containers/food/snacks/eggplantparm
 	name = "eggplant parmigiana"
 	desc = "The only good recipe for eggplant."
@@ -846,8 +854,8 @@
 	cooked = TRUE
 
 /obj/item/reagent_containers/food/snacks/fries
-	name = "space fries"
-	desc = "AKA: French Fries, Freedom Fries, etc."
+	name = "fries"
+	desc = "The golden standard in side dishes"
 	icon_state = "fries"
 	trash = /obj/item/trash/plate
 	filling_color = "#EDDD00"
@@ -883,7 +891,7 @@
 
 /obj/item/reagent_containers/food/snacks/cheesyfries
 	name = "cheesy fries"
-	desc = "Fries. Covered in cheese. Duh."
+	desc = "Fries sticking in gooey melted cheese"
 	icon_state = "cheesyfries"
 	trash = /obj/item/trash/plate
 	filling_color = "#EDDD00"
@@ -1618,6 +1626,13 @@
 		to_chat(user, "You flatten the dough.")
 		qdel(src)
 
+// Dough slice + rolling pin = flat dough slice
+/obj/item/reagent_containers/food/snacks/doughslice/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W,/obj/item/material/kitchen/rollingpin))
+		new /obj/item/reagent_containers/food/snacks/flatdoughslice(src)
+		to_chat(user, "You flatten the dough slice.")
+		qdel(src)
+
 // slicable into 3xdoughslices
 /obj/item/reagent_containers/food/snacks/sliceable/flatdough
 	name = "flat dough"
@@ -1635,6 +1650,19 @@
 	desc = "A building block of an impressive dish."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "doughslice"
+	slice_path = /obj/item/reagent_containers/food/snacks/spagetti
+	slices_num = 1
+	bitesize = 2
+	center_of_mass = list("x"=17, "y"=19)
+	nutriment_desc = list("dough" = 1)
+	nutriment_amt = 1
+	matter = list(MATERIAL_BIOMATTER = 2)
+
+/obj/item/reagent_containers/food/snacks/flatdoughslice
+	name = "flat dough slice"
+	desc = "A flattened building block of an impressive dish."
+	icon = 'icons/obj/food_ingredients.dmi'
+	icon_state = "flatdoughslice"
 	slice_path = /obj/item/reagent_containers/food/snacks/spagetti
 	slices_num = 1
 	bitesize = 2
@@ -1718,6 +1746,17 @@
 	bitesize = 3
 	nutriment_amt = 6
 	nutriment_desc = list("crunchy pastry" = 5, "buttery goodness" = 5)
+
+/obj/item/reagent_containers/food/snacks/tortilla
+	name = "tortilla"
+	desc = "The foldable possiblites are endless, as long as it's less than seven folds."
+	icon_state = "tortilla"
+	bitesize = 2
+	center_of_mass = list("x"=21, "y"=12)
+	nutriment_desc = list("taco shell" = 2)
+	nutriment_amt = 2
+	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/reagent_containers/food/snacks/taco
 	name = "taco"
@@ -1855,3 +1894,59 @@
 	nutriment_amt = 5
 	matter = list(MATERIAL_BIOMATTER = 15)
 
+//Tisanes
+
+/obj/item/reagent_containers/food/snacks/poppy_tisane
+	name = "poppy flower tisane"
+	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, but it is more effective at aiding the healing of trauma than simply eating raw poppyflower."
+	icon_state = "poppy_tisane"
+	nutriment_desc = list("bitter tea" = 1)
+	nutriment_amt = 1 //a lil bit from the leaves and plant solids.
+	bitesize = 5
+	preloaded_reagents = list("p_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/tear_tisane
+	name = "sun tear tisane"
+	desc = "A somewhat concentrated decoction of sun tears. A pleasantly sweet tea, it does a better job at aiding the healing of burns than simply chewing the tears raw."
+	icon_state = "tear_tisane"
+	nutriment_desc = list("honeyed tea" = 1)
+	nutriment_amt = 3 //honey
+	bitesize = 5
+	preloaded_reagents = list("st_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/mercy_tisane
+	name = "mercys hand tisane"
+	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, but it does a better job of purging toxins than eating sun tears raw."
+	icon_state = "mercy_tisane"
+	nutriment_desc = list("tart tea" = 1)
+	nutriment_amt = 1
+	bitesize = 5
+	preloaded_reagents = list("mh_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/vale_tisane
+	name = "vale bush tisane"
+	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, and it leaves your mouth tingling. Still, it functions as a more effective analgesic and vasodilator than simply chewing the tears themselves."
+	icon_state = "vale_tisane"
+	nutriment_desc = list("acetic tea" = 1)
+	nutriment_amt = 1
+	bitesize = 5
+	preloaded_reagents = list("vb_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/helmet_tisane
+	name = "plump helmet tisane"
+	desc = "A somewhat concentrated decoction of poppy flower. Horribly bitter, but if you can choke back the tea you'll find that it's a far more effective antibiotic than raw plump helmets."
+	icon_state = "helmet_tisane"
+	nutriment_desc = list("bitter tea" = 1)
+	nutriment_amt = 1
+	bitesize = 5
+	preloaded_reagents = list("ph_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE

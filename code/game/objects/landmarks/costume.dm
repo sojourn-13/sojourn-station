@@ -24,7 +24,7 @@
 	new /obj/item/clothing/shoes/jackboots(src.loc)
 
 /obj/landmark/costume/nyangirl/New()
-	new /obj/item/clothing/under/plaid/properblue(src.loc)
+	new /obj/item/clothing/under/dress/properblue(src.loc)
 	new /obj/item/clothing/head/costume/animal/kitty(src.loc)
 
 /obj/landmark/costume/maid/New()
@@ -37,7 +37,7 @@
 	new /obj/item/clothing/head/tophat(src.loc)
 
 /obj/landmark/costume/highlander/New()
-	new /obj/item/clothing/under/plaid/kilt(src.loc)
+	new /obj/item/clothing/under/dress/kilt(src.loc)
 	new /obj/item/clothing/head/beret(src.loc)
 
 /obj/landmark/costume/prig/New()

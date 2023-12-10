@@ -19,7 +19,7 @@ var/station_date = ""
 var/next_station_date_change = 1 DAYS
 
 #define station_adjusted_time(time) time2text(time + station_time_in_ticks, "hh:mm")
-#define worldtime2stationtime(time) time2text(roundstart_hour HOURS + time, "hh:mm")
+#define worldtime2stationtime(time) time2text(roundstart_hour HOURS + time - round_start_time, "hh:mm")
 #define roundduration2text_in_ticks (round_start_time ? world.time - round_start_time : 0)
 #define station_time_in_ticks (roundstart_hour HOURS + roundduration2text_in_ticks)
 

@@ -22,12 +22,12 @@
 /obj/item/organ/external/head/take_damage(amount, damage_type, armor_divisor = 1, wounding_multiplier = 1, sharp, edge, used_weapon = null, list/forbidden_limbs = list(), silent)
 	. = ..()
 	if(. && !disfigured)
-		if(amount > 40)
+		if(amount > 25)
 			if(damage_type == BRUTE && prob(50))
 				disfigure("brute")
-		else
-			if (damage_type == BURN)
-				disfigure("burn")
+			else
+				if (damage_type == BURN)
+					disfigure("burn")
 
 /obj/item/organ/external/head/get_conditions()
 	var/list/conditions_list = ..()
