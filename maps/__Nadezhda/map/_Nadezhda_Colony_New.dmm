@@ -3578,9 +3578,9 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest)
 "aOV" = (
-/obj/machinery/vending/wallmed,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/crew_quarters/sleep/bedrooms)
+/obj/machinery/camera/network/engineering,
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/engineering/atmos)
 "aOW" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
@@ -13394,6 +13394,9 @@
 	dir = 8;
 	pixel_x = 32
 	},
+/obj/item/reagent_containers/food/snacks/meatsteak{
+	name = "ian's dinner"
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/captain)
 "cVZ" = (
@@ -16290,11 +16293,6 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/medical/psych)
 "dBA" = (
-/obj/machinery/button/remote/blast_door{
-	id = "turbineexit";
-	name = "remote VENT blast door-control";
-	pixel_y = -32
-	},
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 8;
@@ -17998,7 +17996,6 @@
 /area/nadezhda/command/captain/quarters)
 "dUd" = (
 /obj/structure/bed/chair/office/dark,
-/mob/living/simple_animal/parrot/Poly,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/command/gmaster)
 "dUk" = (
@@ -20309,9 +20306,6 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "esf" = (
-/obj/item/reagent_containers/food/snacks/meatsteak{
-	name = "ian's dinner"
-	},
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = -32
 	},
@@ -26664,14 +26658,6 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/outside/inside_colony)
-"fJk" = (
-/obj/machinery/button/remote/blast_door{
-	id = "turbineexit";
-	name = "remote VENT blast door-control";
-	pixel_y = 32
-	},
-/turf/simulated/floor/reinforced,
-/area/nadezhda/engineering/atmos)
 "fJt" = (
 /obj/machinery/door/blast/shutters{
 	id = "Skynet_launch";
@@ -47570,6 +47556,10 @@
 /obj/effect/floor_decal/spline/wood{
 	dir = 5
 	},
+/obj/machinery/vending/wallmed{
+	name = "Emergency NanoMed";
+	pixel_y = 32
+	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "khh" = (
@@ -54699,9 +54689,14 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "lNV" = (
-/obj/machinery/vending/wallmed,
-/turf/simulated/wall,
-/area/nadezhda/crew_quarters)
+/obj/machinery/button/remote/blast_door{
+	id = "turbineexit";
+	name = "turbine cooling maintance hatch DO NOT PRESS";
+	pixel_y = 32;
+	req_one_access = list(11)
+	},
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/nadezhda/command/gmaster)
 "lOa" = (
 /obj/structure/table/steel,
 /obj/random/junkfood/rotten/low_chance,
@@ -81290,6 +81285,10 @@
 	dir = 1;
 	icon_state = "spline_fancy_corner"
 	},
+/obj/item/reagent_containers/food/snacks/stewedsoymeat{
+	desc = "Purrfect for any feline dinning!";
+	name = "Runtime's wet food"
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cbo)
 "rny" = (
@@ -101695,6 +101694,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/wallmed{
+	name = "Emergency NanoMed";
+	pixel_y = 32
+	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "vyY" = (
@@ -105840,6 +105843,10 @@
 "wqx" = (
 /obj/structure/table/woodentable,
 /obj/machinery/recharger,
+/mob/living/simple_animal/parrot/Poly,
+/obj/item/reagent_containers/food/snacks/cracker,
+/obj/item/reagent_containers/food/snacks/cracker,
+/obj/item/reagent_containers/food/snacks/cracker,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/gmaster)
 "wqz" = (
@@ -108087,11 +108094,6 @@
 "wPL" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
-	},
-/obj/machinery/button/remote/blast_door{
-	id = "turbineexit";
-	name = "remote VENT blast door-control";
-	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
@@ -148429,7 +148431,7 @@ cHX
 kWh
 tTN
 wDx
-ksJ
+aOV
 ygI
 wTD
 cNa
@@ -152038,7 +152040,7 @@ tad
 wDx
 lIU
 wDx
-fJk
+vmd
 uTP
 rmu
 vVf
@@ -169226,7 +169228,7 @@ lkf
 kVK
 pYs
 xhw
-aOV
+kal
 khg
 enF
 hcV
@@ -170244,7 +170246,7 @@ jtW
 jtW
 sqp
 sqp
-lNV
+sqp
 vyW
 cwO
 atw
@@ -188424,7 +188426,7 @@ xJE
 ajj
 jsj
 hqv
-otQ
+lNV
 vof
 qyT
 lMY
