@@ -29,7 +29,7 @@
 	toggleable = TRUE
 	tool_qualities = list(QUALITY_DIGGING = 25, QUALITY_PRYING = 15, QUALITY_CUTTING = 15) // So it still shares its switch off quality despite not yet being used.
 	switched_off_qualities = list(QUALITY_DIGGING = 25, QUALITY_PRYING = 15, QUALITY_CUTTING = 15)
-	switched_on_qualities = list(QUALITY_DIGGING = 60, QUALITY_WELDING = 10, QUALITY_PRYING = 5, QUALITY_CUTTING = 15)
+	switched_on_qualities = list(QUALITY_DIGGING = 45, QUALITY_WELDING = 10, QUALITY_PRYING = 5, QUALITY_CUTTING = 15)
 	suitable_cell = /obj/item/cell/medium/high
 	use_power_cost = 1.7
 	passive_power_cost = 0.09
