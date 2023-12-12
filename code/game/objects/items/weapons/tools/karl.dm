@@ -1,19 +1,19 @@
 /obj/item/tool/karl
-	name = "K.A.R.L"
-	desc = "Kinetic Acceleration Reconfigurable Lodebreaker. Rock and stone to the bone, miner!"
+	name = "K.A.S.M.T"
+	desc = "The K.A.S.M.T is a dual-purpose tool, combining a rugged mining axe with a high-powered energy gun. Its sturdy steel build and sharp edges effortlessly carve through tough materials. With a swift switch, it transforms into a precision plasma gun, boasting a dangerous energy blade and a futuristic plasma-powered punch. Versatile, durable, and adaptable, it's the ultimate companion for miners and defenders alike. It has an inbuilt hand-crank and yes miners its a feature to you crank the gun like crazy. It has an 'R' on the side of it."
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
 	icon = 'icons/obj/karl_mining.dmi'
 	icon_state = "karl_axe"
 	item_state = "karl_axe"
-	degradation = 0.3
-	max_health = 1500
+	degradation = 0.5
+	max_health = 340
 	w_class = ITEM_SIZE_BULKY
-	price_tag = 2500
-	matter = list(MATERIAL_STEEL = 6)
+	price_tag = 1700
+	matter = list(MATERIAL_STEEL = 35, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 5)
 	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 4)
-	attack_verb = list("hit", "pierced", "sliced", "attacked")
-	hitsound = 'sound/weapons/heavyslash.ogg'
+	attack_verb += list("swung", "hacked", "struck", "blasted", "fired", "zapped", "discharged", "cut", "cleaved", "pierced")
+	hitsound = 'sound/weapons/blunthit.ogg'
 
 	// Damage related
 	force = WEAPON_FORCE_DANGEROUS
@@ -21,27 +21,27 @@
 	throwforce = WEAPON_FORCE_NORMAL
 	sharp = TRUE
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE // Drills and picks are made for getting through hard materials
-	embed_mult = 1.2 // Digs deep
+	embed_mult = 1.4 // Digs deep
 
 	// Spawn and value related
 
 	// Turn on-off related
 	toggleable = TRUE
-	tool_qualities = list(QUALITY_DIGGING = 10, QUALITY_PRYING = 10, QUALITY_CUTTING = 5) // So it still shares its switch off quality despite not yet being used.
-	switched_off_qualities = list(QUALITY_DIGGING = 10, QUALITY_PRYING = 10, QUALITY_CUTTING = 5)
-	switched_on_qualities = list(QUALITY_DIGGING = 60, QUALITY_WELDING = 10)
+	tool_qualities = list(QUALITY_DIGGING = 25, QUALITY_PRYING = 15, QUALITY_CUTTING = 15) // So it still shares its switch off quality despite not yet being used.
+	switched_off_qualities = list(QUALITY_DIGGING = 25, QUALITY_PRYING = 15, QUALITY_CUTTING = 15)
+	switched_on_qualities = list(QUALITY_DIGGING = 60, QUALITY_WELDING = 10, QUALITY_PRYING = 5, QUALITY_CUTTING = 15)
 	suitable_cell = /obj/item/cell/medium/high
-	use_power_cost = 1.5
-	passive_power_cost = 0.01
+	use_power_cost = 1.7
+	passive_power_cost = 0.09
 	glow_color = COLOR_BLUE_LIGHT
 
 	// Gun-mode related
-	action_button_name = "Switch K.A.R.L Mode"
+	action_button_name = "Switch K.A.S.M.T Mode"
 	var/gunmode = FALSE  // TRUE when KARL is in gun mode
 	var/obj/item/gun/energy/plasma/installation = /obj/item/gun/energy/plasma	// The inbuilt gun. Store as path to initialize a new gun on creation.
 	var/projectile			// Holder for bullettype
 	var/shot_sound 			// What sound should play when the gun fires
-	var/reqpower = 40		// Power needed to shoot
+	var/reqpower = 80		// Power needed to shoot
 
 /obj/item/tool/karl/New()
 	. = ..()
