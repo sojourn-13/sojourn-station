@@ -26658,6 +26658,17 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/outside/inside_colony)
+"fJk" = (
+/obj/machinery/door/airlock/external{
+	name = "Terminal Lounge"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/pros/shuttle)
 "fJt" = (
 /obj/machinery/door/blast/shutters{
 	id = "Skynet_launch";
@@ -209184,7 +209195,7 @@ pHb
 pHb
 pHb
 pHb
-dTD
+fJk
 dTD
 pHb
 kgI
