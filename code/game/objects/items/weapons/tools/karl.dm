@@ -12,7 +12,7 @@
 	price_tag = 1700
 	matter = list(MATERIAL_STEEL = 35, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 5)
 	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 4)
-	attack_verb += list("swung", "hacked", "struck", "blasted", "fired", "zapped", "discharged", "cut", "cleaved", "pierced")
+	attack_verb = list("swung", "hacked", "struck", "blasted", "fired", "zapped", "discharged", "cut", "cleaved", "pierced")
 	hitsound = 'sound/weapons/blunthit.ogg'
 
 	// Damage related
