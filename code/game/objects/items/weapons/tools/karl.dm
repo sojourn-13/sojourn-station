@@ -1,5 +1,5 @@
 /obj/item/tool/karl
-	name = "KASMT Mining Tool"
+	name = "KASMT 'Karl' Mining Tool"
 	desc = "The Kinetic Acceleration Modular Swappable  Tool is a dual-purpose tool, combining a rugged mining axe with a high-powered energy gun. Its sturdy steel build and sharp edges effortlessly carve through tough materials. With a swift switch, it transforms into a precision plasma gun, boasting a dangerous energy blade and a futuristic plasma-powered punch. Versatile, durable, and adaptable, it's the ultimate companion for miners and defenders alike. It has an inbuilt hand-crank and yes miners its a feature to you crank the gun like crazy. It has an 'R' on the side of it."
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
