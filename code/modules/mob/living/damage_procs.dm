@@ -51,7 +51,7 @@
 
 
 
-/mob/living/proc/apply_effects(stun = 0, weaken = 0, paralyze = 0, irradiate = 0, stutter = 0, eyeblur = 0, drowsy = 0, agony = 0, armor_value = 0)
+/mob/living/proc/apply_effect(stun = 0, weaken = 0, paralyze = 0, irradiate = 0, stutter = 0, eyeblur = 0, drowsy = 0, agony = 0, armor_value = 0)
 	activate_ai()
 
 	if(!effect)
