@@ -1,6 +1,6 @@
 /obj/item/tool/karl
-	name = "K.A.S.M.T"
-	desc = "The K.A.S.M.T is a dual-purpose tool, combining a rugged mining axe with a high-powered energy gun. Its sturdy steel build and sharp edges effortlessly carve through tough materials. With a swift switch, it transforms into a precision plasma gun, boasting a dangerous energy blade and a futuristic plasma-powered punch. Versatile, durable, and adaptable, it's the ultimate companion for miners and defenders alike. It has an inbuilt hand-crank and yes miners its a feature to you crank the gun like crazy. It has an 'R' on the side of it."
+	name = "KASMT Mining Tool"
+	desc = "The Kinetic Acceleration Modular Swappable  Tool is a dual-purpose tool, combining a rugged mining axe with a high-powered energy gun. Its sturdy steel build and sharp edges effortlessly carve through tough materials. With a swift switch, it transforms into a precision plasma gun, boasting a dangerous energy blade and a futuristic plasma-powered punch. Versatile, durable, and adaptable, it's the ultimate companion for miners and defenders alike. It has an inbuilt hand-crank and yes miners its a feature to you crank the gun like crazy. It has an 'R' on the side of it."
 	flags = CONDUCT
 	slot_flags = SLOT_BELT
 	icon = 'icons/obj/karl_mining.dmi'
@@ -10,7 +10,7 @@
 	max_health = 340
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 1700
-	matter = list(MATERIAL_STEEL = 35, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 5)
+	matter = list(MATERIAL_STEEL = 35, MATERIAL_PLASTIC = 15, MATERIAL_GLASS = 5, MATERIAL_PLASTEEL = 20)
 	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 4)
 	attack_verb = list("swung", "hacked", "struck", "blasted", "fired", "zapped", "discharged", "cut", "cleaved", "pierced")
 	hitsound = 'sound/weapons/blunthit.ogg'
