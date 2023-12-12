@@ -63,6 +63,7 @@
 	icon_state = "torch"
 	light_color = COLOR_LIGHTING_ORANGE_MACHINERY
 	max_fuel = 1750 // Below glowstick, more than a flare
+	damtype = BRUTE // Torch is unable to burn webs unlit
 	on_damage = 15 // Mediocre weapon when turned on
 	produce_heat = 2000 // Burns brighter than flare
 	turn_on_sound = 'sound/effects/torch_on.ogg'
@@ -77,6 +78,7 @@
 
 /obj/item/device/lighting/glowstick/flare/torch/burn_out()
 	STOP_PROCESSING(SSobj, src)
+	damtype = BRUTE //returns torch to not able to burn webs
 	on = FALSE
 	update_icon()
 	if(ismob(loc))
@@ -92,18 +94,22 @@
 /obj/item/device/lighting/glowstick/flare/torch/update_icon()
 	cut_overlays()
 	if(!fuel)
+		damtype = BRUTE//returns torch to not able to burn webs
 		icon_state = "[initial(icon_state)]_burned"
 		set_light(0)
 	else if(on)
+		damtype = BURN //allows torch to burn webs while lit
 		icon_state = "[initial(icon_state)]_on"
 		set_light(brightness_on)
 	else
+		damtype = BRUTE//returns torch to not able to burn webs
 		icon_state = initial(icon_state)
 		set_light(0)
 	update_wear_icon()
 
 /obj/item/device/lighting/glowstick/flare/torch/proc/extinguishTorch()
 	STOP_PROCESSING(SSobj, src)
+	damtype = BRUTE //returns torch to not able to burn webs
 	on = FALSE
 	fuel -= 50 // We lose a bit of fuel every time we force it to extinguish early.
 	update_icon()

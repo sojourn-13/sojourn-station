@@ -228,3 +228,16 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 	stiffness = LIGHT_STIFFNESS
+
+/obj/item/clothing/suit/greatcoat/os/nova
+	name = "Greyson Star Traders greatcoat"
+	desc = "A thick, heavy coat for workers that really enjoys paperwork."
+	icon_state = "os_overcoat"
+	item_state = "os_overcoat"
+	blood_overlay_type = "coat"
+	armor_list = list(melee = 5, bullet = 5, energy = 15, bomb = 0, bio = 0, rad = 25)
+	body_parts_covered = UPPER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+	stiffness = LIGHT_STIFFNESS

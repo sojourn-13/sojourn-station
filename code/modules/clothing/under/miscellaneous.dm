@@ -323,6 +323,17 @@
 		usr.update_action_buttons()
 		return 1
 
+
+/obj/item/clothing/under/os_jumpsuit/bdu/nova
+	name = "Greyson Star Traders Battle Dress Uniform"
+	desc = "A Battle Dress Uniform produced by Greyson Star Traders based of the actual Greyson Positronics, for their more style oriented personnel"
+	icon_state = "bdugreyson"
+
+/obj/item/clothing/under/os_jumpsuit/nova
+	name = "Greyson Star Traders jumpsuit"
+	desc = "An uniform that was produced by Greyson Star Traders, cleaning to enginering this over engineered suit was used. Surprisingly the suit senors still work. Perfect for a dangerous colony in middle of fucking nowhere!"
+	icon_state = "os_jumpsuit"
+
 //Excelsior
 /obj/item/clothing/under/excelsior
 	name = "white excelsior jumpsuit"

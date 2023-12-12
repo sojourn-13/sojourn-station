@@ -8,7 +8,7 @@
 	item_state = "mamba"
 	icon = 'icons/obj/guns/projectile/mamba.dmi'
 	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BACK
 	caliber = CAL_LRIFLE
 	load_method = SINGLE_CASING|MAGAZINE
@@ -70,7 +70,7 @@
 	item_state = "copperhead"
 	icon = 'icons/obj/guns/projectile/copperhead.dmi'
 	fire_sound = 'sound/weapons/guns/fire/rifle.ogg'
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	caliber = CAL_RIFLE
 	load_method = SINGLE_CASING|MAGAZINE

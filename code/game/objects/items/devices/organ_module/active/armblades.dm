@@ -5,6 +5,7 @@
 	icon_state = "armblade"
 	item_state = null
 	worksound = WORKSOUND_HARD_SLASH
+	hitsound = 'sound/weapons/heavyslash.ogg'
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_WEAK
 	w_class = ITEM_SIZE_SMALL

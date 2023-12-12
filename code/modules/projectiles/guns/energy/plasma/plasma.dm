@@ -15,17 +15,18 @@
 	projectile_type = /obj/item/projectile/beam
 	cell_type = /obj/item/cell/medium
 	sel_mode = 2
-	charge_cost = 100 //6 shots out of a 600M
-	init_recoil = HANDGUN_RECOIL(1)
+	charge_cost = 20 //Gives us 50 shots per medium Spark cell
+	init_recoil = RIFLE_RECOIL(1)
 	twohanded = TRUE
 	can_dual = FALSE
-	damage_multiplier = 1.2
 	init_firemodes = list(
-		list(mode_name="destroy", mode_desc="An armor-stripping plasma round", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/pulse.ogg', fire_delay=14, icon="destroy", projectile_color = "#FFFFFF"),
-		list(mode_name="incinerate", mode_desc="A relatively heavy shot of super-heated plasma that creates a fireball on impact", projectile_type=/obj/item/projectile/plasma/aoe/heat, fire_sound='sound/effects/supermatter.ogg', charge_cost=160, fire_delay=25, icon="kill", projectile_color = "#FF0000"),
+		list(mode_name="Burn", mode_desc="A relatively light plasma round", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/melt.ogg', burst=1, fire_delay=4, charge_cost=15, icon="kill", projectile_color = "#0088ff"),
+		list(mode_name="Sear", mode_desc="A three-round burst of light plasma rounds.", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/melt.ogg', burst=3, fire_delay=12, burst_delay=1, charge_cost=15, icon="burst", projectile_color = "#0088ff"),
+		list(mode_name="INCINERATE", mode_desc=" relatively heavy shot of super-heated plasma that creates a fireball on impact", projectile_type=/obj/item/projectile/plasma/aoe/heat, fire_sound='sound/weapons/energy/incinerate.ogg', burst=1, fire_delay=20, charge_cost=90, icon="destroy", projectile_color = "#FFFFFF"),
 	)
 	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
 	serial_type = "Absolute"
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/plasma/mounted
 	self_recharge = TRUE
@@ -52,14 +53,15 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10, MATERIAL_URANIUM = 7)
 	sel_mode = 1
 	projectile_type = /obj/item/projectile/beam/pulse
-	charge_cost = 150 //4 shots out of a 600M
-	fire_delay = 15
 	origin_tech = list(TECH_COMBAT = 4, TECH_PLASMA = 3)
-	damage_multiplier = 1.3
+	fire_delay = 20
+	charge_cost = 200
+	init_recoil = LMG_RECOIL(2)
 	init_firemodes = list(
-		list(mode_name="armor penetrating", mode_desc="An armor-stripping plasma round", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/pulse.ogg', fire_delay=15, icon="kill", projectile_color = "#FFFF00"),
-		list(mode_name="rapid fire", mode_desc="Quick firing normal plasma bolts", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/pulse.ogg', fire_delay=5, icon="destroy", projectile_color = "#FF0000", recoil_buildup=3),
+		list(mode_name="DISINTEGRATE", mode_desc="Removes heresy from sight", projectile_type=/obj/item/projectile/plasma/aoe/heat/strong, fire_sound='sound/weapons/energy/incinerate.ogg', fire_delay=20, charge_cost=200, icon="destroy", projectile_color = "#ff1212"),
+		list(mode_name="CLEANSE", mode_desc="Cleanse the filth", mode_type = /datum/firemode/automatic, projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/vaporize.ogg', fire_delay=4, charge_cost=35, icon="burst", projectile_color = "#00AAFF"),
 	)
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/plasma/martyr // or should it be  Zealot
 	name = "\"Martyr\" holdout pistol"

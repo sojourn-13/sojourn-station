@@ -5604,7 +5604,7 @@
 	name = "Mixed Air Supply Control";
 	output_tag = "air_out";
 	pressure_setting = 2000;
-	sensors = list("air_sensor" = "Tank")
+	sensors = list("air_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -12953,7 +12953,7 @@
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
 	output_tag = "o2_out";
-	sensors = list("o2_sensor" = "Tank")
+	sensors = list("o2_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -15786,6 +15786,7 @@
 /area/nadezhda/rnd/lab)
 "dwX" = (
 /obj/structure/table/standard,
+/obj/machinery/recharger,
 /obj/item/oddity/blackbox_nanoforge,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
@@ -17345,6 +17346,7 @@
 "dMM" = (
 /obj/structure/table/standard,
 /obj/item/storage/freezer,
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/organ_lab)
 "dMP" = (
@@ -19388,6 +19390,11 @@
 /obj/structure/closet/secure_closet/rare_loot,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"ejB" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/beaker/large,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/research)
 "ejE" = (
 /obj/structure/catwalk,
 /obj/structure/railing,
@@ -30663,7 +30670,7 @@
 	input_tag = "n2_in";
 	name = "Nitrogen Supply Control";
 	output_tag = "n2_out";
-	sensors = list("n2_sensor" = "Tank")
+	sensors = list("n2_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -35743,7 +35750,6 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "hIp" = (
-/obj/structure/table/steel_reinforced,
 /obj/item/computer_hardware/hard_drive/portable/design/security{
 	pixel_x = 7
 	},
@@ -35752,6 +35758,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/smartfridge/disk,
+/obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "hIw" = (
@@ -41803,6 +41811,7 @@
 /obj/machinery/vending/plushies{
 	pixel_x = -28
 	},
+/obj/machinery/vending/greyson_colony_ally,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
 "iWO" = (
@@ -45366,6 +45375,7 @@
 /area/shuttle/rocinante_shuttle_area)
 "jJu" = (
 /obj/structure/table/steel,
+/obj/machinery/smartfridge/disk,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -51317,7 +51327,7 @@
 	dir = 1;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon        Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous        Oxide", "waste_sensor" = "Gas        Mix        Tank")
+	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon        Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous        Oxide","waste_sensor"="Gas        Mix        Tank")
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
@@ -51757,7 +51767,7 @@
 	dir = 8;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon        Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous        Oxide", "waste_sensor" = "Gas        Mix        Tank")
+	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon        Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous        Oxide","waste_sensor"="Gas        Mix        Tank")
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
@@ -52197,9 +52207,10 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/inside_colony)
 "llw" = (
+/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/machinery/smartfridge/disk,
 /obj/structure/table/marble,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/storage/primary)
 "llz" = (
@@ -52799,6 +52810,7 @@
 /obj/item/computer_hardware/hard_drive/portable/design/gun_parts/marshal{
 	license = -1
 	},
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "lsH" = (
@@ -57513,9 +57525,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "msC" = (
-/obj/structure/table/rack/shelf,
 /obj/item/computer_hardware/hard_drive/portable/design/logistics,
 /obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/machinery/smartfridge/disk,
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
 "msD" = (
@@ -61248,9 +61263,10 @@
 /area/nadezhda/command/courtroom)
 "ngA" = (
 /obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/random/lathe_disk,
+/obj/random/lathe_disk,
+/obj/machinery/smartfridge/disk,
 /obj/structure/table/steel,
-/obj/random/lathe_disk,
-/obj/random/lathe_disk,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "ngJ" = (
@@ -69445,7 +69461,7 @@
 	input_tag = "tox_in";
 	name = "Plasma Supply Control";
 	output_tag = "tox_out";
-	sensors = list("tox_sensor" = "Tank")
+	sensors = list("tox_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -70499,12 +70515,13 @@
 /obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_smallarms,
 /obj/item/computer_hardware/hard_drive/portable/design/ammo_boxes_rifle,
 /obj/item/computer_hardware/hard_drive/portable/design/security,
-/obj/structure/table/reinforced,
 /obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
 /obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo,
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 30
 	},
+/obj/machinery/smartfridge/disk,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/tactical)
 "paa" = (
@@ -74716,6 +74733,7 @@
 /obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms{
 	pixel_x = -6
 	},
+/obj/machinery/smartfridge/disk,
 /obj/structure/table/woodentable,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/bioreactor)
@@ -75013,7 +75031,7 @@
 /obj/item/reagent_containers/glass/beaker{
 	pixel_x = 1;
 	pixel_y = 3;
-	preloaded_reagents = list("plasma" = 30)
+	preloaded_reagents = list("plasma"=30)
 	},
 /obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -90556,10 +90574,11 @@
 	name = "Residential District Maintenance"
 	})
 "tnD" = (
-/obj/structure/table/reinforced,
 /obj/item/computer_hardware/hard_drive/portable/design/nonlethal_ammo,
 /obj/item/computer_hardware/hard_drive/portable/design/lethal_ammo,
 /obj/random/lathe_disk/advanced/low_chance,
+/obj/machinery/smartfridge/disk,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/fo)
 "tnG" = (
@@ -91418,7 +91437,7 @@
 	input_tag = "n2o_in";
 	name = "Nitrous Oxide Supply Control";
 	output_tag = "n2o_out";
-	sensors = list("n2o_sensor" = "Tank")
+	sensors = list("n2o_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -92595,7 +92614,7 @@
 	input_tag = "waste_in";
 	name = "Gas Mix Tank Control";
 	output_tag = "waste_out";
-	sensors = list("waste_sensor" = "Tank")
+	sensors = list("waste_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -101199,7 +101218,7 @@
 /obj/machinery/reagentgrinder/portable,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/glass/beaker{
-	preloaded_reagents = list("plasma" = 30)
+	preloaded_reagents = list("plasma"=30)
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
@@ -101844,14 +101863,14 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "vCu" = (
-/obj/structure/table/rack/shelf,
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
-/obj/item/reagent_containers/glass/beaker/large,
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/table/reinforced,
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/research)
 "vCx" = (
@@ -111101,7 +111120,7 @@
 	input_tag = "co2_in";
 	name = "Carbon Dioxide Supply Control";
 	output_tag = "co2_out";
-	sensors = list("co2_sensor" = "Tank")
+	sensors = list("co2_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/engineering/atmos)
@@ -114025,10 +114044,10 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "yej" = (
-/obj/structure/table/standard,
-/obj/machinery/recharger,
 /obj/structure/disposalpipe/segment,
 /obj/item/computer_hardware/hard_drive/portable/design/engineering,
+/obj/machinery/smartfridge/disk,
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "yew" = (
@@ -171854,7 +171873,7 @@ wpL
 xXf
 gLz
 npe
-glv
+ejB
 hKX
 umk
 glv
@@ -217704,8 +217723,8 @@ qXu
 rYM
 nfq
 vlP
-wSv
 ngA
+wSv
 dBM
 oAK
 ayn
@@ -217908,7 +217927,7 @@ kfI
 vlP
 dzs
 sTa
-kUX
+rUW
 rug
 kgr
 kUX

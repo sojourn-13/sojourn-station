@@ -853,21 +853,20 @@
 					message = "<span class='danger'>makes a very loud noise, squirming around!</span>"
 					m_type = 2
 
-		if("urah") //Emoting will NOT give you the perk's bonuses, but anyone who knows the emote can at least use it for flavor value.
-			if (miming)
-				message = "acts out a battlecry!"
-				m_type = 1
-			else if (!muzzled)
+
+		if ("urah") //Emoting will NOT give you the perk's bonuses, but anyone who knows the emote can at least use it for flavor value.
+			if (!muzzled)
+				cloud_emote = "cloud-scream"
 				message = "releases a heroic roar, inspiring everyone around [identifying_gender == "male" ? "him" : identifying_gender == "female" ? "her" : "themselves"]! URA!"
-				m_type = 2
-				if(get_sex() == MALE)
-					playsound(loc, 'sound/voice/ura.ogg', 80, 1) //URAH!!!
-				else if(get_sex() == FEMALE || PLURAL || NEUTER)
-					playsound(loc, 'sound/voice/f_warcry.ogg', 100) // Less cringe scream, FORWARD!!
-			else
-				message = "makes a very loud noise."
-				m_type = 2
-			cloud_emote = "cloud-scream"
+				if(get_sex() == FEMALE)
+					m_type = 2
+					playsound(loc, 'sound/voice/f_warcry.ogg', 80, 30)
+				else
+					m_type = 2
+					playsound(loc, 'sound/voice/ura.ogg', 80, 1)
+				if(miming)
+					message = "acts out a battlecry!"
+					m_type = 1
 
 		if("crack")
 			if(!restrained())
@@ -1065,6 +1064,14 @@
 			if(!muzzled)
 				message = "merps."
 				playsound(loc, 'sound/voice/merp.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
+		if ("trill")
+			m_type = 2
+			cloud_emote = "cloud-love"
+			if(!muzzled)
+				message = "trills softly."
+				playsound(loc, 'sound/voice/trill.ogg', 50, 1, -1) // Copyright CC BY-NC 3.0 Arnaud Coutancier (freesound.org) for the source audio.
 			else
 				message = "makes a strange noise."
 		if ("bark")
