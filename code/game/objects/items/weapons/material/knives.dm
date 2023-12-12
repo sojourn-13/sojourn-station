@@ -28,7 +28,7 @@
 	M.apply_damages(backstab_damage,0,0,0,0,0,user.targeted_organ)
 	visible_message("<span class='danger'>[user] backstabs [target] with [src]!</span>")
 	M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been backstabbed by [user.name] ([user.ckey])</font>")
-		user.attack_log += text("\[[time_stamp()]\] <font color='red'>Backstabbed [M.name] ([M.ckey]): Alt Mode [has_alt_mode] (1 means active, 0 means inactive)</font>")
+	user.attack_log += text("\[[time_stamp()]\] <font color='red'>Backstabbed [M.name] ([M.ckey]): Alt Mode [has_alt_mode] (1 means active, 0 means inactive)</font>")
 	//Uses regular call to deal damage
 	//Isn't affected by mob armor*
 	if(alt_mode_active)
