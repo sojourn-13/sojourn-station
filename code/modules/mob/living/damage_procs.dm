@@ -51,7 +51,7 @@
 
 
 
-/mob/living/proc/apply_effect(stun = 0, weaken = 0, paralyze = 0, irradiate = 0, stutter = 0, eyeblur = 0, drowsy = 0, agony = 0, armor_value = 0)
+/mob/living/proc/apply_effect(effect = 0, effecttype = STUN, armor_value = 0, check_protection = 1)
 	activate_ai()
 
 	if(!effect)
@@ -84,7 +84,7 @@
 	return TRUE
 
 
-/mob/living/proc/apply_effects(var/stun = 0, var/weaken = 0, var/paralyze = 0, var/irradiate = 0, var/stutter = 0, var/eyeblur = 0, var/drowsy = 0, var/agony = 0, var/armor_value = 0)
+/mob/living/proc/apply_effects(stun = 0, weaken = 0, paralyze = 0, irradiate = 0, stutter = 0, eyeblur = 0, drowsy = 0, agony = 0, armor_value = 0)
 	activate_ai()
 	if(stun)		apply_effect(stun, STUN, armor_value)
 	if(weaken)		apply_effect(weaken, WEAKEN, armor_value)
