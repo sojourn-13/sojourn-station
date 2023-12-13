@@ -38,6 +38,7 @@
 	icon_state = "os_spacehelm"
 	item_state = "os_spacehelm"
 	desc = "A helmet produced by GP. It's outdated but sleek design makes it still viable to use even after all these years."
+	w_class = ITEM_SIZE_SMALL
 	flash_protection = FLASH_PROTECTION_MODERATE
 	tint = TINT_NONE
 	armor_list = list(
@@ -46,7 +47,7 @@
 		energy = 30,
 		bomb = 25,
 		bio = 100,
-		rad = 25
+		rad = 100
 	)
 	siemens_coefficient = 0.6
 
@@ -54,8 +55,8 @@
 	name = "greyson positronic space suit"
 	icon_state = "os_spacesuit"
 	item_state = "os_spacesuit"
-	desc = "A engineering space suit with slight armor plates to help protect the warer form space dust and haul breaches well not impeeding speed, folds up really tightly as well.."
-	w_class = ITEM_SIZE_NORMAL
+	desc = "A engineering space suit with slight armor plates to help protect the warer form space dust and haul breaches well not impeeding speed, folds up really tightly as well."
+	w_class = ITEM_SIZE_SMALL
 	slowdown = 0
 	armor_list = list(
 		melee = 30,
@@ -63,7 +64,7 @@
 		energy = 30,
 		bomb = 25,
 		bio = 100,
-		rad = 25
+		rad = 100
 	)
 	siemens_coefficient = 0.6
 
@@ -71,7 +72,7 @@
 	name = "Greyson Star Traders Enviromental Helm"
 	icon_state = "gsn_spacehelm"
 	item_state = "gsn_spacehelm"
-	desc = "A helmet produced by Greyson Star Traders. It's more outdated than the usual version, but with sleekier design makes it still viable to use even after all these years."
+	desc = "A helmet produced by Greyson Star Traders. It's more outdated than the usual version, but with sleeker design makes it still viable to use even after all these years."
 	flash_protection = FLASH_PROTECTION_MINOR
 	tint = TINT_NONE
 	armor_list = list( // nerf the value compared to the original
@@ -80,7 +81,7 @@
 		energy = 15,
 		bomb = 5,
 		bio = 100,
-		rad = 25
+		rad = 50
 	)
 	siemens_coefficient = 0.3 // half of the original helm value
 
@@ -97,7 +98,7 @@
 		energy = 15,
 		bomb = 0,
 		bio = 100,
-		rad = 15
+		rad = 50
 	)
 	siemens_coefficient = 0.3
 
