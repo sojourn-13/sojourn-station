@@ -545,15 +545,14 @@
 // Escape: Deteles and kicks you out of the game
 /obj/effect/decal/cleanable/crayon/proc/escape_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	var/obj/item/oddity/common/mirror/ocm
+	var/obj/item/oddity/common/mirror/ocm = new /obj/item/oddity/common/mirror(src.loc)
 	B.remove_self(35) //We still take some blood for this
-	to_chat(M, "<span class='warning'>[M.name] stepped into a fragment of a mirror.</span>")
-	M.client.ckey = null
-	new ocm(M.loc)
-	ocm.name = "[M.name]'s fragments."
-	ocm.desc = "A thousand doodles of [M.name] in crayon stare back at you as you examine the trinket."
+	to_chat(M, "<span class='warning'>[M.real_name] stepped into a fragment of a mirror.</span>")
+	ocm.name = "[M.real_name]'s fragments."
+	ocm.desc = "A thousand doodles of [M.real_name] in crayon stare back at you as you examine the trinket."
 	ocm.perk = PERK_NO_OBSUCATION
-	qdel(M)
+	M.client.ckey = null
+	M.dust(anim = FALSE, remains = /obj/effect/overlay/pulse)
 	return
 
 // Scribe: Gives you the Scribe perk. This is a requirement for inscribing scrolls with the spells below.
