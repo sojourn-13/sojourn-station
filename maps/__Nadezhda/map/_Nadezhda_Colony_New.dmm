@@ -35339,6 +35339,17 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters/bar)
+"hDJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/remote/blast_door{
+	dir = 4;
+	id = "BS001";
+	name = "Shutter control";
+	pixel_x = -22;
+	pixel_y = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/tactical_blackshield)
 "hDS" = (
 /obj/item/stack/ore,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -170975,7 +170986,7 @@ sIK
 cWO
 oVA
 sGN
-oNv
+hDJ
 wlx
 oVA
 fgl
