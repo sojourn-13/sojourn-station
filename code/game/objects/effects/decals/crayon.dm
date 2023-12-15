@@ -218,6 +218,10 @@
 					scroll_spell(M)
 					continue
 
+				if(spell.message == "Tea Party." && candle_amount >= 4)
+					tea_party_spell(M)
+					continue
+
 				if(spell.message == "Fountain." && candle_amount >= 7)
 					basin_spell(M)
 					continue
@@ -1025,7 +1029,6 @@
 			M.max_nutrition -= 20
 			M.maxHealth -= 5
 			M.health -= 5
-			qdel(LP)
 		else
 			to_chat(M, "<span class='info'>Your kettle has run dry.</span>")
 			B.remove_self(10) //Still cost ya to mannifest tea time
@@ -1036,7 +1039,6 @@
 			B.remove_self(25) //Your tea
 			stat_amount += 1  //We give quite a bit for
 			M.max_nutrition -= 5
-			qdel(P)
 		else
 			to_chat(M, "<span class='info'>Your kettle has run dry.</span>")
 			B.remove_self(1) //Still cost ya to mannifest tea time
