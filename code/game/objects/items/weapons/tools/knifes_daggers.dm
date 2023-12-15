@@ -40,15 +40,18 @@
 		return
 	if(user.dir != target.dir)
 		return
-	if(alt_mode_active)
-		return
 	var/mob/living/carbon/M = target
-	M.apply_damages(backstab_damage,0,0,0,0,0,user.targeted_organ)
 	visible_message("<span class='danger'>[user] backstabs [target] with [src]!</span>")
 	M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been backstabbed by [user.name] ([user.ckey])</font>")
-	user.attack_log += text("\[[time_stamp()]\] <font color='red'>Backstabbed [M.name] ([M.ckey])</font>")
+	user.attack_log += text("\[[time_stamp()]\] <font color='red'>Backstabbed [M.name] ([M.ckey]): Alt Mode [has_alt_mode] (1 means active, 0 means inactive)</font>")
 	//Uses regular call to deal damage
-	//Is affected by mob armor*
+	//Isn't affected by mob armor*
+
+	if(alt_mode_active)
+		var/LTL_backstab = backstab_damage * 0.5
+		M.apply_damages(0,0,0,0,0,LTL_backstab,user.targeted_organ)
+	else
+		M.apply_damages(backstab_damage,0,0,0,0,0,user.targeted_organ)
 
 /obj/item/tool/knife/boot
 	name = "boot knife"
