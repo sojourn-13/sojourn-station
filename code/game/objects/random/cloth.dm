@@ -503,8 +503,7 @@
 				/obj/item/clothing/suit/armor/vest/iron_lock_security = 1,
 				/obj/item/clothing/suit/greatcoat/os = 4,
 				/obj/item/clothing/head/os_cap = 4,
-				/obj/item/clothing/head/helmet/space/os = 8,
-				/obj/item/clothing/suit/space/os = 8,
+				/obj/item/clothing/suit/space/void/os = 6,
 				/obj/item/clothing/suit/space/void/greyson = 1))
 
 /obj/random/cloth/assault/reaver
