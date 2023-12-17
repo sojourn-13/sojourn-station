@@ -13782,6 +13782,11 @@
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
 "dcS" = (
@@ -16855,8 +16860,8 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/captain/quarters)
 "dKb" = (
-/obj/structure/curtain/open/privacy,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/curtain/open/privacy,
 /turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/organ_lab)
 "dKd" = (
@@ -21745,9 +21750,6 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/command/bridge)
 "eLq" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/structure/sign/warning/nosmoking/small{
 	pixel_x = 32
 	},
@@ -36935,13 +36937,11 @@
 	dir = 4;
 	pixel_x = -32
 	},
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 2
-	},
 /obj/effect/floor_decal/industrial/outline,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
 "hYm" = (
@@ -60176,7 +60176,7 @@
 /obj/item/reagent_containers/glass/beaker/cryoxadone,
 /obj/item/reagent_containers/glass/beaker/cryoxadone,
 /obj/machinery/vending/wallmed/lobby{
-	pixel_y = 32
+	pixel_x = -28
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/cryo)
@@ -64328,6 +64328,17 @@
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/command/cbo)
+"nNM" = (
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/obj/structure/bed/roller,
+/obj/structure/medical_stand,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/cryo)
 "nNP" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
@@ -79439,6 +79450,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
 "qYe" = (
@@ -112667,6 +112681,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
+"xYB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/medical/organ_lab)
 "xYI" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 5;
@@ -167782,7 +167804,7 @@ suj
 wrc
 bpa
 xFr
-cyX
+xYB
 iyi
 agD
 enQ
@@ -172027,7 +172049,7 @@ lGy
 kjz
 vhe
 tCl
-vHk
+nNM
 vHk
 eLq
 aqN
