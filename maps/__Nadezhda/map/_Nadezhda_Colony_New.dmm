@@ -23123,11 +23123,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
@@ -92752,6 +92747,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"tHP" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/rnd/lab)
 "tHQ" = (
 /obj/structure/table/standard,
 /obj/item/paper_bin,
@@ -109821,6 +109830,9 @@
 	name = "murky water"
 	},
 /area/nadezhda/maintenance/undergroundfloor1east)
+"xiO" = (
+/turf/space,
+/area/colony)
 "xiR" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -110797,9 +110809,6 @@
 /obj/item/clothing/head/helmet/laserproof/marshal,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
-"xtv" = (
-/turf/space,
-/area/colony)
 "xty" = (
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -130365,7 +130374,7 @@ stT
 wwr
 smY
 pNs
-cFw
+tHP
 ufO
 nQC
 cvj
@@ -130595,7 +130604,7 @@ qUI
 qUI
 cZb
 cZb
-xtv
+xiO
 cZb
 cZb
 cZb
