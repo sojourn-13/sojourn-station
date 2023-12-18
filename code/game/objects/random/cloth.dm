@@ -503,8 +503,7 @@
 				/obj/item/clothing/suit/armor/vest/iron_lock_security = 1,
 				/obj/item/clothing/suit/greatcoat/os = 4,
 				/obj/item/clothing/head/os_cap = 4,
-				/obj/item/clothing/head/helmet/space/os = 8,
-				/obj/item/clothing/suit/space/os = 8,
+				/obj/item/clothing/suit/space/void/os = 6,
 				/obj/item/clothing/suit/space/void/greyson = 1))
 
 /obj/random/cloth/assault/reaver
@@ -515,3 +514,20 @@
 
 /obj/random/cloth/assault/reaver/item_to_spawn()
 	return pickweight(list(/obj/item/clothing/suit/space/void/assault/void_wolf))
+
+/obj/random/cloth/bells
+	name = "random bell collar"
+	desc = "This is a random bell collar."
+	icon_state = "armor-grey"
+
+/obj/random/cloth/bells/item_to_spawn()
+	return pickweight(list(
+				/obj/item/clothing/accessory/choker/gold_bell_small_goth = 2,
+				/obj/item/clothing/accessory/choker/gold_bell_goth = 1,
+				/obj/item/clothing/accessory/choker/silver_bell_goth = 2,
+				/obj/item/clothing/accessory/choker/silver_bell_small_goth = 1,
+				/obj/item/clothing/accessory/choker/gold_bell = 2,
+				/obj/item/clothing/accessory/choker/gold_bell_small = 3,
+				/obj/item/clothing/accessory/choker/silver_bell = 2,
+				/obj/item/clothing/accessory/choker/silver_bell_small = 3
+				))

@@ -88,8 +88,7 @@
 
 	products = list(
 		/obj/item/clothing/mask/smokable/cigarette/os/nova = 25,
-		/obj/item/clothing/head/helmet/space/os/nova = 15,
-		/obj/item/clothing/suit/space/os/nova = 15,
+		/obj/item/clothing/suit/space/void/os/nova = 15,
 		/obj/item/clothing/suit/greatcoat/os = 10,
 		/obj/item/clothing/under/os_jumpsuit/nova = 10,
 		/obj/item/clothing/under/os_jumpsuit/bdu/nova = 10,
@@ -99,8 +98,7 @@
 
 	prices = list(
 		/obj/item/clothing/mask/smokable/cigarette/os/nova = 5,
-		/obj/item/clothing/head/helmet/space/os/nova = 85,
-		/obj/item/clothing/suit/space/os/nova = 120,
+		/obj/item/clothing/suit/space/void/os/nova = 210,
 		/obj/item/clothing/suit/greatcoat/os/nova = 70,
 		/obj/item/clothing/under/os_jumpsuit/nova = 25,
 		/obj/item/clothing/under/os_jumpsuit/bdu/nova = 35,
