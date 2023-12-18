@@ -1113,7 +1113,7 @@
 /obj/item/projectile/bullet/crossbow_bolt/lethal
 	name = "bolt"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 12)
+	damage_types = list(BRUTE = 10)
 	agony = 29
 	armor_penetration = 0
 	post_penetration_dammult = 3
