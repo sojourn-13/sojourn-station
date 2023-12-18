@@ -162,9 +162,16 @@
 		if(i in materials_supported)
 			if(i in materials_allowed)
 				var/material/M = get_material_by_name(i)
-				var/obj/item/stack/material/S = new M.stack_type(null, stored_item_materials[i])
-				stored_item_value += S.get_item_cost()
-				stored_item_fluff += "<br>[i] - [stored_item_materials[i]] units, worth [S.get_item_cost()] credits."
+
+				if (istype(stored_item_object, /obj/item/stack))
+					var/obj/item/stack/temp_stack = stored_item_object
+					var/obj/item/stack/material/S = new M.stack_type(null, stored_item_materials[i] * temp_stack.amount)
+					stored_item_value += S.get_item_cost()
+					stored_item_fluff += "<br>[i] - [stored_item_materials[i] * temp_stack.amount] units, worth [S.get_item_cost()] credits."
+				else
+					var/obj/item/stack/material/S = new M.stack_type(null, stored_item_materials[i])
+					stored_item_value += S.get_item_cost()
+					stored_item_fluff += "<br>[i] - [stored_item_materials[i]] units, worth [S.get_item_cost()] credits."
 			else
 				stored_item_fluff += "<br>Payouts for [i] suspended by LSS representative."
 		else // Bay leftover materials
@@ -187,15 +194,23 @@
 	var/datum/transaction/T = new(-stored_item_value, "", "Recycling payout for [stored_item_object.name]", src)
 	T.apply_to(merchants_pocket)
 
+	for(var/i in stored_item_materials)
+		if (istype(stored_item_object, /obj/item/stack))
+			var/obj/item/stack/temp_stack = stored_item_object
+			if(i in materials_stored)
+				materials_stored[i] += stored_item_materials[i] * temp_stack.amount
+			else
+				materials_stored.Add(i)
+				materials_stored[i] = stored_item_materials[i] * temp_stack.amount
+		else
+			if(i in materials_stored)
+				materials_stored[i] += stored_item_materials[i]
+			else
+				materials_stored.Add(i)
+				materials_stored[i] = stored_item_materials[i]
+
 	qdel(stored_item_object)
 	stored_item_object = null
-
-	for(var/i in stored_item_materials)
-		if(i in materials_stored)
-			materials_stored[i] += stored_item_materials[i]
-		else
-			materials_stored.Add(i)
-			materials_stored[i] = stored_item_materials[i]
 
 	playsound(loc, pick('sound/items/polaroid1.ogg', 'sound/items/polaroid2.ogg'), 50, 1)
 	spawn_money(stored_item_value, loc)
