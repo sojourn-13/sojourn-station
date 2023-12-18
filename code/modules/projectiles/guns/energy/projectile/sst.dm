@@ -67,7 +67,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	charge_meter = FALSE
 	twohanded = TRUE
-	suitable_cell = /obj/item/cell/large
+	suitable_cell = /obj/item/cell/medium
 	slot_flags = SLOT_BACK
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 20, MATERIAL_SILVER = 15, MATERIAL_GOLD = 12, MATERIAL_PLATINUM = 0.5)
 	price_tag = 2500
@@ -87,6 +87,13 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/gun/energy/sst/humility/preloaded
+
+/obj/item/gun/energy/sst/humility/preloaded/New()
+	cell = new /obj/item/cell/medium/moebius/high(src)
+	. = ..()
+	update_icon()
 
 /obj/item/gun/energy/sst/systemcost
 	name = "\"SST System Cost\" light machinegun"
