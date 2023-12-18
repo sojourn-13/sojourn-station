@@ -1086,7 +1086,8 @@
 	dir = 4;
 	icon_state = "shutter0";
 	name = "Medbay";
-	opacity = 0
+	opacity = 0;
+	density = 0
 	},
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/medical/reception)
@@ -1518,7 +1519,8 @@
 	dir = 4;
 	icon_state = "shutter0";
 	name = "Medbay";
-	opacity = 0
+	opacity = 0;
+	density = 0
 	},
 /turf/simulated/floor/tiled/white/panels,
 /area/nadezhda/medical/reception)
@@ -8810,7 +8812,6 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "bWL" = (
@@ -14245,7 +14246,6 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "dhi" = (
@@ -21748,7 +21748,6 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "eKU" = (
@@ -23797,7 +23796,6 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "fhe" = (
@@ -29904,6 +29902,10 @@
 	dir = 8
 	},
 /obj/structure/flora/pottedplant/grave_poppers,
+/obj/machinery/power/wall_obelisk{
+	pixel_y = -42;
+	biomatter_ammo = 100
+	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/bar)
 "guL" = (
@@ -32409,7 +32411,6 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "gYU" = (
@@ -34782,7 +34783,6 @@
 	})
 "hAG" = (
 /obj/effect/floor_decal/industrial/warningred,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "hAT" = (
@@ -40224,9 +40224,7 @@
 /obj/machinery/door/blast/shutters{
 	id = "MedbayEMT";
 	dir = 4;
-	icon_state = "shutter0";
-	name = "Emergency Medical Treatment";
-	opacity = 0
+	name = "Emergency Medical Treatment"
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/cryo)
@@ -47769,7 +47767,8 @@
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/wall_obelisk{
-	pixel_y = -42
+	pixel_y = -42;
+	biomatter_ammo = 100
 	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
@@ -63074,10 +63073,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/atmos)
-"nBc" = (
-/obj/machinery/biogenerator,
-/turf/simulated/floor/tiled/steel/techfloor_grid,
-/area/nadezhda/crew_quarters/hydroponics)
 "nBi" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/big/bush3,
@@ -67278,9 +67273,7 @@
 /obj/machinery/door/blast/shutters{
 	id = "MedbayEMT";
 	dir = 4;
-	icon_state = "shutter0";
-	name = "Emergency Medical Treatment";
-	opacity = 0
+	name = "Emergency Medical Treatment"
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/cryo)
@@ -74134,7 +74127,6 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "pPl" = (
@@ -78358,7 +78350,6 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "qKf" = (
@@ -87946,6 +87937,11 @@
 /area/nadezhda/crew_quarters/techshop)
 "sMU" = (
 /obj/structure/flora/ausbushes/fullgrass,
+/obj/machinery/power/wall_obelisk{
+	pixel_x = 33;
+	pixel_y = -11;
+	biomatter_ammo = 100
+	},
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/crew_quarters/hydroponics)
 "sMV" = (
@@ -107886,11 +107882,11 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/hydroponics)
 "wVU" = (
-/obj/structure/table/standard,
 /obj/machinery/status_display{
 	layer = 4;
 	pixel_y = 32
 	},
+/obj/machinery/biogenerator,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/crew_quarters/hydroponics)
 "wVV" = (
@@ -173885,7 +173881,7 @@ cQu
 xgH
 maE
 gPx
-nBc
+qKE
 mmp
 iEV
 lif
@@ -185447,7 +185443,7 @@ krt
 hrP
 fkV
 gYD
-aQO
+kyK
 hAG
 diB
 oLe
