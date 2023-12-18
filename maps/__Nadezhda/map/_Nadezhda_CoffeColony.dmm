@@ -18088,7 +18088,37 @@
 /area/nadezhda/outside/pond)
 "dXr" = (
 /obj/structure/table/rack/shelf,
-/obj/item/storage/part_replacer/mini,
+/obj/item/inflatable_dispenser{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/inflatable_dispenser,
+/obj/item/inflatable_dispenser{
+	pixel_x = -2;
+	pixel_y = -2
+	},
+/obj/item/storage/briefcase/inflatable{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/briefcase/inflatable,
+/obj/item/device/scanner/gas,
+/obj/item/airlock_electronics{
+	pixel_x = 2;
+	pixel_y = -5
+	},
+/obj/item/airlock_electronics{
+	pixel_x = 2;
+	pixel_y = -5
+	},
+/obj/item/airlock_electronics{
+	pixel_x = 2;
+	pixel_y = -5
+	},
+/obj/item/airlock_electronics{
+	pixel_x = 2;
+	pixel_y = -5
+	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "dXw" = (
@@ -18979,16 +19009,8 @@
 	})
 "egE" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/inflatable_dispenser{
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/item/inflatable_dispenser,
-/obj/item/inflatable_dispenser{
-	pixel_x = -2;
-	pixel_y = -2
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "egG" = (
@@ -23286,7 +23308,6 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/medical/genetics)
 "eZT" = (
-/obj/structure/table/rack/shelf,
 /obj/item/stack/material/steel/full,
 /obj/item/stack/material/plastic{
 	amount = 120
@@ -23295,6 +23316,8 @@
 	amount = 60
 	},
 /obj/machinery/camera/network/command,
+/obj/machinery/smartfridge/disk,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/command/fo)
 "eZZ" = (
@@ -33580,29 +33603,8 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/shield_generator)
 "hnB" = (
-/obj/item/device/scanner/gas,
-/obj/item/airlock_electronics{
-	pixel_x = 2;
-	pixel_y = -5
-	},
-/obj/item/airlock_electronics{
-	pixel_x = 2;
-	pixel_y = -5
-	},
-/obj/item/airlock_electronics{
-	pixel_x = 2;
-	pixel_y = -5
-	},
-/obj/item/airlock_electronics{
-	pixel_x = 2;
-	pixel_y = -5
-	},
-/obj/item/storage/briefcase/inflatable{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/briefcase/inflatable,
-/obj/structure/table/steel_reinforced,
+/obj/structure/table/standard,
+/obj/item/device/psionic_catalyst/dull,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "hnF" = (
@@ -52116,6 +52118,7 @@
 /obj/structure/table/marble,
 /obj/item/computer_hardware/hard_drive/portable/design/misc,
 /obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/storage/primary)
 "llz" = (
@@ -52763,6 +52766,7 @@
 /obj/item/computer_hardware/hard_drive/portable/design/gun_parts/marshal{
 	license = -1
 	},
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
 "lsH" = (
@@ -56618,6 +56622,14 @@
 	pixel_y = 4
 	},
 /obj/structure/table/steel_reinforced,
+/obj/item/device/lighting/toggleable/flashlight{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/obj/item/device/lighting/toggleable/flashlight{
+	pixel_x = 1;
+	pixel_y = 5
+	},
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "mjG" = (
@@ -56756,6 +56768,14 @@
 /obj/item/stock_parts/subspace/transmitter,
 /obj/item/stock_parts/subspace/transmitter,
 /obj/structure/table/rack/shelf,
+/obj/item/stock_parts/subspace/ansible,
+/obj/item/stock_parts/subspace/ansible,
+/obj/item/stock_parts/subspace/crystal,
+/obj/item/stock_parts/subspace/crystal,
+/obj/item/stock_parts/subspace/crystal,
+/obj/item/stock_parts/subspace/treatment,
+/obj/item/stock_parts/subspace/treatment,
+/obj/item/stock_parts/subspace/treatment,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/workshop)
 "mkW" = (
@@ -57395,9 +57415,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "msC" = (
-/obj/structure/table/rack/shelf,
 /obj/item/computer_hardware/hard_drive/portable/design/logistics,
 /obj/item/computer_hardware/hard_drive/portable/design/misc,
+/obj/machinery/smartfridge/disk,
+/obj/structure/table/standard{
+	name = "plastic table frame"
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
 "msD" = (
@@ -60650,10 +60673,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "nby" = (
-/obj/machinery/door/airlock/glass_command{
-	name = "Guild Masters Office";
-	req_access = list(19)
-	},
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -60669,6 +60688,10 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/command{
+	name = "Guild Masters Office";
+	req_access = list(19)
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/gmaster)
 "nbA" = (
@@ -70342,6 +70365,7 @@
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 30
 	},
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/tactical)
 "pab" = (
@@ -76684,17 +76708,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "qsu" = (
-/obj/item/device/lighting/toggleable/flashlight{
-	pixel_x = 1;
-	pixel_y = 5
-	},
-/obj/item/device/lighting/toggleable/flashlight{
-	pixel_x = 1;
-	pixel_y = 5
-	},
-/obj/item/stock_parts/console_screen,
-/obj/item/stock_parts/console_screen,
-/obj/item/stock_parts/console_screen,
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
@@ -81181,8 +81194,6 @@
 "rqu" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger,
-/obj/item/device/psionic_catalyst/dull,
-/obj/item/circuitboard/puncher,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "rqF" = (
@@ -85979,14 +85990,6 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "srU" = (
-/obj/item/stock_parts/subspace/ansible,
-/obj/item/stock_parts/subspace/ansible,
-/obj/item/stock_parts/subspace/crystal,
-/obj/item/stock_parts/subspace/crystal,
-/obj/item/stock_parts/subspace/crystal,
-/obj/item/stock_parts/subspace/treatment,
-/obj/item/stock_parts/subspace/treatment,
-/obj/item/stock_parts/subspace/treatment,
 /obj/item/stock_parts/micro_laser,
 /obj/item/stock_parts/manipulator,
 /obj/item/stock_parts/manipulator,
@@ -86001,6 +86004,14 @@
 	dir = 8;
 	pixel_x = 22
 	},
+/obj/item/stock_parts/capacitor,
+/obj/item/stock_parts/capacitor,
+/obj/item/stock_parts/micro_laser,
+/obj/item/stock_parts/micro_laser,
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/console_screen,
+/obj/item/storage/part_replacer/mini,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/workshop)
 "ssb" = (
@@ -98969,12 +98980,12 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/circuits,
-/obj/item/computer_hardware/hard_drive/portable/design/components,
-/obj/item/computer_hardware/hard_drive/portable/design/misc,
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
 	},
+/obj/item/circuitboard/puncher,
+/obj/item/aiModule/reset,
+/obj/item/device/aicard,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "uZe" = (
@@ -103967,11 +103978,11 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/engineering/atmos)
 "wcu" = (
-/obj/structure/table/standard,
-/obj/item/device/aicard,
-/obj/item/aiModule/reset,
-/turf/simulated/floor/tiled/steel/techfloor,
-/area/nadezhda/engineering/workshop)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/obj/machinery/smartfridge/disk,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/rnd/research)
 "wcA" = (
 /turf/simulated/shuttle/wall/science{
 	icon_state = "14,2"
@@ -113236,9 +113247,12 @@
 /area/nadezhda/engineering/engine_room)
 "yej" = (
 /obj/structure/table/standard,
-/obj/machinery/recharger,
 /obj/structure/disposalpipe/segment,
 /obj/item/computer_hardware/hard_drive/portable/design/engineering,
+/obj/machinery/smartfridge/disk,
+/obj/item/computer_hardware/hard_drive/portable/design/circuits,
+/obj/item/computer_hardware/hard_drive/portable/design/components,
+/obj/item/computer_hardware/hard_drive/portable/design/misc,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "yew" = (
@@ -128041,7 +128055,7 @@ lPk
 rLm
 cZb
 cZb
-cZb
+xen
 xen
 asY
 ooi
@@ -128243,7 +128257,7 @@ cFw
 rLm
 cZb
 cZb
-cZb
+xen
 xen
 xen
 xen
@@ -171252,7 +171266,7 @@ rpN
 hKX
 brG
 glv
-aOJ
+wcu
 brG
 uyL
 gLz
@@ -182990,12 +183004,12 @@ kor
 fQg
 gsD
 gsD
-hnB
+qsu
 njP
 gsD
 rqu
-wcu
 dwX
+hnB
 gsD
 unf
 eQP
