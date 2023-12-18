@@ -10381,7 +10381,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "jlL" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized,
-/turf/space,
+/turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
