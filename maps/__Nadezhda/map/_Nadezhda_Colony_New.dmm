@@ -83662,6 +83662,14 @@
 	name = "Medbay Total Lockdown";
 	opacity = 0
 	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4;
+	pixel_x = -3
+	},
 /turf/simulated/open,
 /area/nadezhda/maintenance/substation/medical)
 "rMZ" = (
@@ -109831,8 +109839,16 @@
 	},
 /area/nadezhda/maintenance/undergroundfloor1east)
 "xiO" = (
-/turf/space,
-/area/colony)
+/obj/machinery/door/airlock/external{
+	name = "Terminal Lounge"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/pros/shuttle)
 "xiR" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -130604,7 +130620,7 @@ qUI
 qUI
 cZb
 cZb
-xiO
+cZb
 cZb
 cZb
 cZb
@@ -209346,7 +209362,7 @@ pHb
 pHb
 pHb
 pHb
-dTD
+xiO
 dTD
 pHb
 kgI
