@@ -64,7 +64,7 @@
 	preloaded_reagents = list("inaprovaline" = 60)
 
 /obj/item/reagent_containers/glass/bottle/toxin
-	name = "Txin bottle"
+	name = "Toxin bottle"
 	desc = "A small bottle of toxins. Do not drink, it is poisonous."
 	icon_state = "bottle"
 	preloaded_reagents = list("toxin" = 60)
