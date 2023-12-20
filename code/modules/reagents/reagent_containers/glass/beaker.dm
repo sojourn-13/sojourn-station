@@ -8,6 +8,9 @@
 /obj/item/reagent_containers/glass/beaker/Initialize()
 	. = ..()
 	desc += " Can hold up to [volume] units."
+	if(preloaded_reagents)
+		if(!has_lid())
+			toggle_lid()
 
 /obj/item/reagent_containers/glass/beaker/pickup(mob/user)
 	..()
@@ -30,7 +33,7 @@
 		filling.color = reagents.get_color()
 		add_overlay(filling)
 
-	if(label_text)
+	if(label_text || (preloaded_reagents && display_label))
 		var/label_icon = label_icon_state ? label_icon_state : "label_[icon_state]"
 		var/mutable_appearance/label = mutable_appearance(icon, label_icon)
 		add_overlay(label)
@@ -74,30 +77,40 @@
 	name = "vial"
 	desc = "A small glass vial."
 	icon_state = "vial"
+	lid_icon_state = "lid_vial"
 	matter = list(MATERIAL_GLASS = 1)
 	volume = 30
 	w_class = ITEM_SIZE_TINY
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,25)
 
-/obj/item/reagent_containers/glass/beaker/vial/nanites
-	preloaded_reagents = list("nanites" = 30)
+//// Preloaded beakers ////
 
-/obj/item/reagent_containers/glass/beaker/vial/uncapnanites
-	preloaded_reagents = list("uncap nanites" = 30)
+/obj/item/reagent_containers/glass/beaker/hivemind
+	preloaded_reagents = list("nanites" = 30, "uncap nanites" = 30)
+	desc = "A beaker. Contains a mix of nanites."
 
 /obj/item/reagent_containers/glass/beaker/cryoxadone
 	preloaded_reagents = list("cryoxadone" = 30)
+	desc = "A beaker. Contains pure cryoxadone, meant to be used in cryo cells."
 
 /obj/item/reagent_containers/glass/beaker/sulphuric
+	desc = "A beaker. Contains dangerous sulphuric acid."
 	preloaded_reagents = list("sacid" = 60)
+
+//// Vial(s) ////
+
+/obj/item/reagent_containers/glass/beaker/vial/nanites
+	preloaded_reagents = list("nanites" = 30)
+	desc = "A small glass vial. Contains raw industrial nanobots."
+
+/obj/item/reagent_containers/glass/beaker/vial/uncapnanites
+	preloaded_reagents = list("uncap nanites" = 30)
+	display_label = FALSE
 
 /obj/item/reagent_containers/glass/beaker/vial/vape
 	name = "vape vial"
-	desc = "A small plastic vial."
-	icon_state = "vial_plastic"
 	matter = list(MATERIAL_PLASTIC = 1)
-
 
 /obj/item/reagent_containers/glass/beaker/vial/vape/berry
 	name = "berry vape vial"
@@ -119,9 +132,37 @@
 	name = "nicotine vape vial"
 	preloaded_reagents = list("nicotine" = 30)
 
+
+/obj/item/reagent_containers/glass/beaker/vial/random
+	var/list/random_reagent_list = list(list("water" = 15) = 1, list("cleaner" = 15) = 1)
+
+/obj/item/reagent_containers/glass/beaker/vial/random/toxin
+	random_reagent_list = list(
+		list("mindbreaker" = 10, "space_drugs" = 20)	= 3,
+		list("carpotoxin" = 15)							= 2,
+		list("impedrezene" = 15)						= 2,
+		list("zombiepowder" = 10)						= 1)
+
+/obj/item/reagent_containers/glass/beaker/vial/random/Initialize()
+	. = ..()
+
+	var/list/picked_reagents = pickweight(random_reagent_list)
+	for(var/reagent in picked_reagents)
+		reagents.add_reagent(reagent, picked_reagents[reagent])
+
+	var/list/names = new
+	for(var/datum/reagent/R in reagents.reagent_list)
+		names += R.name
+
+	if(!has_lid())
+		toggle_lid()
+
+
+//// Other ////
+
 /obj/item/reagent_containers/glass/bucket
-	desc = "It's a bucket."
 	name = "bucket"
+	desc = "A bucket."
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "bucket"
 	item_state = "bucket"

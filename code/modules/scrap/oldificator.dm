@@ -161,6 +161,14 @@
 			R.volume = rand(0, R.volume)
 		reagents?.add_reagent("toxin", rand(0, actual_volume - reagents?.total_volume))
 
+//Old chemical bottles also hide their reagents
+/obj/item/reagent_containers/glass/bottle/make_old(low_quality_oldification)
+	.=..()
+	if(.)
+		name = "[pick("scratched", "cracked", "dirty", "chipped")] bottle"
+		desc = "A small old glass bottle."
+		if(display_label)
+			desc += " The label is unreadable."
 
 //Sealed survival food, always edible
 /obj/item/reagent_containers/food/snacks/openable/liquidfood/make_old()
