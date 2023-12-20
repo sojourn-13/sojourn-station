@@ -9,7 +9,7 @@
 	circuit = /obj/item/circuitboard/mech_recharger
 
 	var/obj/mecha/charging = null
-	var/charge = 45
+	var/charge = 200
 	var/repair = 0
 
 /obj/machinery/mech_recharger/Crossed(var/obj/mecha/M)
@@ -28,9 +28,9 @@
 	repair = -5
 	for(var/obj/item/stock_parts/P in component_parts)
 		if(istype(P, /obj/item/stock_parts/capacitor))
-			charge += P.rating * 20
+			charge += P.rating * 100
 		if(istype(P, /obj/item/stock_parts/scanning_module))
-			charge += P.rating * 5
+			charge += P.rating * 10
 			repair += P.rating
 		if(istype(P, /obj/item/stock_parts/manipulator))
 			repair += P.rating * 2
@@ -47,7 +47,7 @@
 		var/t = min(charge, charging.cell.maxcharge - charging.cell.charge)
 		if(t > 0)
 			charging.give_power(t)
-			use_power(t * 150)
+			use_power(t * 500)
 			done = 0
 		else
 			charging.occupant_message(SPAN_NOTICE("Fully charged."))
