@@ -325,10 +325,10 @@
 	var/deadtime = world.time - H.timeofdeath
 	if (deadtime > DEFIB_TIME_LIMIT && !H.isSynthetic())
 		return "buzzes: \"Resuscitation failed - Excessive neural degeneration. Further attempts futile.\""
-
+/* commenting this out for now due to it seeming to be a bit *too* sensitive.
 	if(H.getBrainLoss() >= 200)
 		return "buzzes: \"Resuscitation failed - Massive neural damage. Further attempts futile.\""
-
+*/
 	H.updatehealth()
 
 	if(H.isSynthetic())

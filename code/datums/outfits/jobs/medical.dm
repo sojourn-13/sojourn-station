@@ -40,6 +40,7 @@
 	belt = /obj/item/storage/belt/medical/emt
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 	head = /obj/item/clothing/head/soft/medical
+	gloves = /obj/item/clothing/gloves/stungloves/trauma
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	l_pocket = /obj/item/device/flash
 	r_pocket = /obj/item/handcuffs
