@@ -284,7 +284,7 @@
 	desc = "A pair of white gloves, made with old fashioned gauze rather than latex. Still surprisingly sterile for all medical purposes."
 	icon_state = "regal"
 	item_state = "regal"
-	siemens_coefficient = 0
+	siemens_coefficient = 1.0
 	permeability_coefficient = 0.01
 	price_tag = 300 // A relic!
 
