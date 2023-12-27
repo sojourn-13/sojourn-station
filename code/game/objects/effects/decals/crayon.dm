@@ -37,6 +37,62 @@
 		return FALSE
 	return TRUE
 
+// Trap rune. Created thru events. The colony wanted to treat the users of crayon magic poorly. Now the ones they played with will act out.
+/obj/effect/decal/cleanable/crayon/trap
+	name = "dangerous rune"
+	desc = "The air shimmers about this rune."
+	alpha = 50
+	is_rune = TRUE //We can infact cast from this rune
+	var/playmate = 0
+	var/draw = 1
+
+/obj/effect/decal/cleanable/crayon/trap/Crossed(mob/living/carbon/human/M)
+	var/obj/item/scroll/trap_card = null
+	playmate = 0
+	draw = rand(1,2)
+	src.set_light(3,2,"#FFFFFF") //so it lights up on crossing.
+
+	//checks on the person crossing. Do we go off for this person?
+	if(M.species?.reagent_tag == IS_SYNTHETIC || M.species?.reagent_tag == IS_SLIME)
+		return //our runes dont play with synthetic or slimes
+	for(var/datum/language/L in M.languages)
+		if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
+			return //why would we go off for our friends?
+	if(draw == 1) //are we using scroll spells?
+		if(!trap_card)
+			trap_card = new /obj/item/scroll(M.loc)
+		trap_card.loc = M.loc
+		trap_card.alpha = 0
+		pick(trap_card.smoke_spell(M), trap_card.gaia_spell(M), trap_card.oil_spell(M))
+		do_sparks(3, 0, M.loc)
+	if(draw == 2) //are we using rune spells?
+		pick(src.ignorance_spell(M), src.flux_spell(M), src.madness_spell(M), src.equalize_spell(M))
+		do_sparks(3, 0, M.loc)
+
+
+	//Everyone else in the Areas checks. Wouldn't be MAGIC if it only effected the yolo solo churchie.
+	for(var/mob/living/carbon/human/T in oview(7))
+		playmate = 0
+		for(var/datum/language/L in T.languages) //check to see if they are our friends!
+			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
+				playmate = 1
+		if(!playmate)
+			if(T.species?.reagent_tag == IS_SYNTHETIC || T.species?.reagent_tag == IS_SLIME)
+				return //we don't interact with synths, borgs, slimes, ect
+			if(draw == 1) //are we using scroll spells?
+				if(!trap_card)
+					trap_card = new /obj/item/scroll(T.loc)
+				trap_card.loc = T.loc
+				trap_card.alpha = 0
+				pick(trap_card.smoke_spell(T), trap_card.gaia_spell(T), trap_card.oil_spell(T))
+				do_sparks(3, 0, T.loc)
+			if(draw == 2)//are we using rune spells?
+				pick(src.ignorance_spell(M), src.flux_spell(M), src.madness_spell(M), src.equalize_spell(M))
+				do_sparks(3, 0, T.loc)
+
+	src.set_light(0,0,"#FFFFFF") //turn our light back off we are deactivating.
+
+
 /obj/effect/decal/cleanable/crayon/New(location,main = "#FFFFFF",shade = "#000000",type = "rune")
 	..()
 	loc = location
@@ -63,12 +119,69 @@
 	add_hiddenprint(usr)
 
 
+/obj/effect/decal/cleanable/crayon/attack_hand(mob/living/carbon/human/M)
+	..()
+	if(M.get_core_implant(/obj/item/organ/internal/psionic_tumor)) //Anti psion. Cause we arnt playing with the king below anymore!
+		to_chat(M, "<span class='info'>Voices echo in the air. \red Give up with that silly monster below, Play with us!</span>")
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.confused += 2
+			H.psi_blocking += 1
+
+	if(M.get_core_implant(/obj/item/implant/core_implant/cruciform)) //Church has decided to be our enemy. Punish them for touching runes.
+		to_chat(M, "<span class='info'>Voices echo in the air. \red Now you want to play?</span>")
+		if(M.allow_spin && src.allow_spin)
+			M.SpinAnimation(10,5)
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.adjustBruteLoss(50)
+			addtimer(CALLBACK(H, /atom/proc/SpinAnimation, 3, 3), 1)
+			H.stunned = 1
+			H.confused += 2
+			H.updatehealth()
+			if(prob(100))
+				var/obj/item/organ/external/organ = H.get_organ(pick(BP_R_LEG, BP_L_LEG, BP_R_ARM, BP_L_ARM))
+				if(!organ)
+					H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
+					return
+				organ.droplimb(TRUE, DISMEMBER_METHOD_EDGE)
+				H.visible_message("<font size=1>\red[H.name] is spun around by [src], a sickening sound coming from a limb being ripped off by vacuum force!.</font><\red>", "\red[src] spins you around, violently ripping one of your limbs off!")
+			else H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
+
 // Proc that controls all Book-type spells
 /obj/effect/decal/cleanable/crayon/attackby(obj/item/I, mob/living/carbon/human/M)
 	..()
+	if(M.get_core_implant(/obj/item/organ/internal/psionic_tumor) && !istype(I, /obj/item/soap)) //Anti psion. Cause we arnt playing with the king below anymore!
+		to_chat(M, "<span class='info'>Voices echo in the air. \red Give up with that silly monster below, Play with us!</span>")
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.confused += 2
+			H.psi_blocking += 1
+
+	if(M.get_core_implant(/obj/item/implant/core_implant/cruciform) && !istype(I, /obj/item/soap)) //Church has decided to be our enemy. Punish them for touching runes.
+		to_chat(M, "<span class='info'>Voices echo in the air. \red Now you want to play?</span>")
+		if(M.allow_spin && src.allow_spin)
+			M.SpinAnimation(10,5)
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.adjustBruteLoss(50)
+			addtimer(CALLBACK(H, /atom/proc/SpinAnimation, 3, 3), 1)
+			H.stunned = 1
+			H.confused += 2
+			H.updatehealth()
+			if(prob(100))
+				var/obj/item/organ/external/organ = H.get_organ(pick(BP_R_LEG, BP_L_LEG, BP_R_ARM, BP_L_ARM))
+				if(!organ)
+					H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
+					return
+				organ.droplimb(TRUE, DISMEMBER_METHOD_EDGE)
+				H.visible_message("<font size=1>\red[H.name] is spun around by [src], a sickening sound coming from a limb being ripped off by vacuum force!.</font><\red>", "\red[src] spins you around, violently ripping one of your limbs off!")
+			else H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
+
 	if(istype(I, /obj/item/oddity/common/book_unholy) || istype(I, /obj/item/oddity/common/book_omega))
 		if(body_checks(M) && is_rune)
 			to_chat(M, "<span class='info'>The rune lights up in reaction to the book...</span>")
+
 			if(follow_crayon)
 				var/old_desc = "[I.desc]"
 				follow_crayon.desc = "[old_desc] The strange energies of this planet seem to have infused it with more signicance than before."

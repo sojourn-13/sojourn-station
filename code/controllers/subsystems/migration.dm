@@ -26,6 +26,7 @@ SUBSYSTEM_DEF(migration)
 	var/migrate_chance = 15 //The chance, during each migration, for each populated burrow, that mobs will move from there to somewhere else
 
 
+	var/roundstart_crayon_traps = 30
 	var/roundstart_burrows = 30
 	var/migrate_time = 80 SECONDS //How long it takes to move mobs from one burrow to another
 	var/reinforcement_time = 10 SECONDS //How long it takes for reinforcements to arrive
@@ -46,6 +47,10 @@ SUBSYSTEM_DEF(migration)
 		var/turf/T = A.random_space() //Lets make sure the selected area is valid
 		create_burrow(T)
 
+	for (var/i = 0; i < roundstart_crayon_traps; i++)
+		var/area/A = random_ship_area(TRUE, FALSE, TRUE)
+		var/turf/T = A.random_space()
+		create_crayon_trap(T)
 
 
 /*
@@ -105,6 +110,61 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 	//And we create a burrow there, passing in the associated wall as its anchor
 	var/obj/structure/burrow/B = new /obj/structure/burrow(floor, possible_turfs[floor])
 	return B
+
+
+
+//Creates a crayon trap rune, Uses same code as burrows except the walls.
+/proc/create_crayon_trap(var/turf/target)
+	if (!isOnShipLevel(target))
+		return
+
+	//First of all lets get a list of everything in dview.
+	//Dview is just a view call that ignores darkness. We're probably creating it in a dark maintenance tunnel
+	var/list/viewlist = dview(10, target)
+
+	var/list/possible_turfs = list()
+	//Now lets look at all the floors
+	for (var/turf/simulated/floor/F in viewlist)
+
+
+		//No being under a low wall
+		if (F.is_wall)
+			continue
+
+		//No stacking multiple burrows per tile
+		if (locate(/obj/effect/decal/cleanable/crayon) in F)
+			continue
+
+
+		//No airlocks
+		if (locate(/obj/machinery/door) in F)
+			continue
+
+		//No ladders or stairs
+		if (locate(/obj/structure/multiz) in F)
+			continue
+
+		//No turfs in space
+		if (turf_is_external(F))
+			continue
+
+		//To be valid, the floor needs to have a wall in a cardinal direction
+		for (var/d in cardinal)
+			var/turf/T = get_step(F, d)
+			if (T && T.is_wall)
+				//Its got a wall!
+				possible_turfs[F] = T //We put this floor and its wall into the possible turfs list
+
+
+	//This can happen, there's at least one room made of catwalks that has no floor, and thusly no burrow spots
+	if (!possible_turfs.len)
+		return
+	//Alrighty, now we have a list of viable floors in view, lets pick one
+	var/turf/floor = pick(possible_turfs)
+	//And we create a rune there
+	var/obj/effect/decal/cleanable/crayon/trap/T = new /obj/effect/decal/cleanable/crayon/trap(floor, possible_turfs[floor])
+	return T
+
 
 //Looks for a burrow, and creates one if an existing burrow isnt found
 /proc/find_or_create_burrow(var/turf/target)
