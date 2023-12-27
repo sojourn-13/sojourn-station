@@ -47724,6 +47724,7 @@
 	name = "Emergency Medical Treatment";
 	dir = 8
 	},
+/obj/item/device/defib_kit/loaded,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/medical/cryo)
 "kjB" = (
@@ -78129,6 +78130,10 @@
 	pixel_y = 25
 	},
 /obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/bottle/plasma,
+/obj/item/reagent_containers/dropper{
+	pixel_y = -4
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/medical/chemistry)
 "qFu" = (
