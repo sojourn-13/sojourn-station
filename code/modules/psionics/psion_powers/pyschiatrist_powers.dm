@@ -17,6 +17,12 @@
 	else
 		usr.show_message("\blue You are not holding someone you can use this power on.")
 
+	if(L.psi_blocking >= 10)
+		owner.stun_effect_act(0, L.psi_blocking * 5, BP_HEAD)
+		owner.weakened = L.psi_blocking
+		usr.show_message(SPAN_DANGER("Your head pulsates with pain as your mind bashes against an unbreakable barrier!"))
+		return
+
 /obj/item/organ/internal/psionic_tumor/proc/psionic_heal_other()
 	set category = "Psionic powers"
 	set name = "Psychosomatic Restoration (2)"
