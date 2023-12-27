@@ -39,9 +39,9 @@
 
 /obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 17)
+	damage_types = list(BRUTE = 8)
 	agony = 6
-	post_penetration_dammult = 2
+	post_penetration_dammult = 3
 	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
@@ -174,10 +174,10 @@
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 19)
+	damage_types = list(BRUTE = 9)
 	agony = 11
 	armor_penetration = 0
-	post_penetration_dammult = 2.25
+	post_penetration_dammult = 3
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
@@ -317,9 +317,9 @@
 
 /obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 20)
+	damage_types = list(BRUTE = 10)
 	agony = 12
-	post_penetration_dammult = 2.5
+	post_penetration_dammult = 3
 	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
@@ -413,9 +413,9 @@
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 12)
+	damage_types = list(BRUTE = 6)
 	agony = 6
-	post_penetration_dammult = 2.25
+	post_penetration_dammult = 3
 	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
@@ -511,9 +511,9 @@
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 15)
+	damage_types = list(BRUTE = 7)
 	agony = 9
-	post_penetration_dammult = 2.50
+	post_penetration_dammult = 3
 	armor_penetration = 0
 	penetrating = 0
 	can_ricochet = FALSE
@@ -591,9 +591,9 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 25)
+	damage_types = list(BRUTE = 12)
 	agony = 14
-	post_penetration_dammult = 2.75 //the biggest, rarest round. We deserve the biggest damage against protestors.
+	post_penetration_dammult = 3
 	armor_penetration = 0 //none of none. Dont give HP any AP
 	penetrating = 0
 	can_ricochet = FALSE
@@ -1113,10 +1113,10 @@
 /obj/item/projectile/bullet/crossbow_bolt/lethal
 	name = "bolt"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 23.5)
+	damage_types = list(BRUTE = 10)
 	agony = 29
 	armor_penetration = 0
-	post_penetration_dammult = 2
+	post_penetration_dammult = 3
 	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE)
 	supereffective_mult = 1.5
 	step_delay = 0.9
