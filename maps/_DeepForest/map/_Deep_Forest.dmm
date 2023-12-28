@@ -24383,17 +24383,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/dirt/burned,
 /area/colony/exposedsun/crashed_shop/outsider)
-"vGD" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/dungeon/outside/prepper/vault{
-	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
-	name = "Abandoned Bunker"
-	})
 "vHs" = (
 /obj/landmark/corpse/excelsior,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -63584,7 +63573,7 @@ nxY
 coU
 coU
 coU
-vGD
+xtV
 umz
 pHI
 hgL
