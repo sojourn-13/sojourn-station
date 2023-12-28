@@ -47,11 +47,12 @@ SUBSYSTEM_DEF(migration)
 		var/turf/T = A.random_space() //Lets make sure the selected area is valid
 		create_burrow(T)
 
+/*
 	for (var/i = 0; i < roundstart_crayon_traps; i++)
 		var/area/A = random_ship_area(TRUE, FALSE, TRUE)
 		var/turf/T = A.random_space()
 		create_crayon_trap(T)
-
+*/
 
 /*
 Called by roaches when they spawn.

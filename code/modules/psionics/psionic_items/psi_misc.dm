@@ -29,19 +29,22 @@
 		var/mob/living/carbon/human/T = target
 		var/obj/item/organ/internal/psionic_tumor/PT = T.random_organ_by_process(BP_PSION)
 		if(PT) // Is the target a psion
-			if(PT.max_psi_points - PT.psi_points >= point_per_use) // Is there space to give the psion the points?
-				if(use) // Do we have uses left?
+			if(use) // Do we have uses left?
+				if((PT.max_psi_points - PT.psi_points >= point_per_use) || (T.psi_blocking > 0)) // Is there space to give the psion the points? Do they need a fixup?
 					user.visible_message("[user] injects [target] with the [src].", "You inject [target] with the [src]!")
-					PT.psi_points += point_per_use
+					if(PT.max_psi_points - PT.psi_points >= point_per_use)
+						PT.psi_points += point_per_use
+					if(T.psi_blocking > 0)
+						T.psi_blocking -= 5
 					use--
 					update_icon()
 					return
 				else
-					to_chat(user, "The [src.name] has no doses left.")
+					to_chat(user, "[T.name] already has the maximum amount of essence \his body can hold.")
 					update_icon()
 					return
 			else
-				to_chat(user, "[T.name] already has the maximum amount of essence \his body can hold.")
+				to_chat(user, "The [src.name] has no doses left.")
 				update_icon()
 				return
 		else

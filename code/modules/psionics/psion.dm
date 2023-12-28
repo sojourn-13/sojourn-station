@@ -89,6 +89,9 @@
 		if(psi_points < max_psi_points)
 			psi_points += 1
 
+		if(owner.psi_blocking < 0) //resets psiblock to zero so people can't somehow farm it into the negatives.
+			owner.psi_blocking = 0
+
 /obj/item/organ/internal/psionic_tumor/removed_mob(mob/living/user)
 	..()
 	disabled = TRUE

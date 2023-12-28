@@ -66,7 +66,9 @@
 		pick(trap_card.smoke_spell(M), trap_card.gaia_spell(M), trap_card.oil_spell(M))
 		do_sparks(3, 0, M.loc)
 	if(draw == 2) //are we using rune spells?
-		pick(src.ignorance_spell(M), src.flux_spell(M), src.madness_spell(M), src.equalize_spell(M))
+		if(M.maxHealth < 80)
+			pick(src.flux_spell(M), src.equalize_spell(M))
+		else pick(src.ignorance_spell(M), src.madness_spell(M), src.flux_spell(M), src.equalize_spell(M))
 		do_sparks(3, 0, M.loc)
 
 
@@ -87,10 +89,10 @@
 				pick(trap_card.smoke_spell(T), trap_card.gaia_spell(T), trap_card.oil_spell(T))
 				do_sparks(3, 0, T.loc)
 			if(draw == 2)//are we using rune spells?
-				pick(src.ignorance_spell(M), src.flux_spell(M), src.madness_spell(M), src.equalize_spell(M))
+				if(M.maxHealth < 80)
+					pick(src.flux_spell(T), src.equalize_spell(T))
+				else pick(src.ignorance_spell(T), src.madness_spell(T), src.flux_spell(T), src.equalize_spell(T))
 				do_sparks(3, 0, T.loc)
-
-	src.set_light(0,0,"#FFFFFF") //turn our light back off we are deactivating.
 
 
 /obj/effect/decal/cleanable/crayon/New(location,main = "#FFFFFF",shade = "#000000",type = "rune")
@@ -119,66 +121,30 @@
 	add_hiddenprint(usr)
 
 
-/obj/effect/decal/cleanable/crayon/attack_hand(mob/living/carbon/human/M)
-	..()
-	if(M.get_core_implant(/obj/item/organ/internal/psionic_tumor)) //Anti psion. Cause we arnt playing with the king below anymore!
-		to_chat(M, "<span class='info'>Voices echo in the air. \red Give up with that silly monster below, Play with us!</span>")
-		if(ishuman(M))
-			var/mob/living/carbon/human/H = M
-			H.confused += 2
-			H.psi_blocking += 1
-
-	if(M.get_core_implant(/obj/item/implant/core_implant/cruciform)) //Church has decided to be our enemy. Punish them for touching runes.
-		to_chat(M, "<span class='info'>Voices echo in the air. \red Now you want to play?</span>")
-		if(M.allow_spin && src.allow_spin)
-			M.SpinAnimation(10,5)
-		if(ishuman(M))
-			var/mob/living/carbon/human/H = M
-			H.adjustBruteLoss(50)
-			addtimer(CALLBACK(H, /atom/proc/SpinAnimation, 3, 3), 1)
-			H.stunned = 1
-			H.confused += 2
-			H.updatehealth()
-			if(prob(100))
-				var/obj/item/organ/external/organ = H.get_organ(pick(BP_R_LEG, BP_L_LEG, BP_R_ARM, BP_L_ARM))
-				if(!organ)
-					H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
-					return
-				organ.droplimb(TRUE, DISMEMBER_METHOD_EDGE)
-				H.visible_message("<font size=1>\red[H.name] is spun around by [src], a sickening sound coming from a limb being ripped off by vacuum force!.</font><\red>", "\red[src] spins you around, violently ripping one of your limbs off!")
-			else H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
-
 // Proc that controls all Book-type spells
 /obj/effect/decal/cleanable/crayon/attackby(obj/item/I, mob/living/carbon/human/M)
 	..()
-	if(M.get_core_implant(/obj/item/organ/internal/psionic_tumor) && !istype(I, /obj/item/soap)) //Anti psion. Cause we arnt playing with the king below anymore!
-		to_chat(M, "<span class='info'>Voices echo in the air. \red Give up with that silly monster below, Play with us!</span>")
-		if(ishuman(M))
-			var/mob/living/carbon/human/H = M
-			H.confused += 2
-			H.psi_blocking += 1
-
-	if(M.get_core_implant(/obj/item/implant/core_implant/cruciform) && !istype(I, /obj/item/soap)) //Church has decided to be our enemy. Punish them for touching runes.
-		to_chat(M, "<span class='info'>Voices echo in the air. \red Now you want to play?</span>")
-		if(M.allow_spin && src.allow_spin)
-			M.SpinAnimation(10,5)
-		if(ishuman(M))
-			var/mob/living/carbon/human/H = M
-			H.adjustBruteLoss(50)
-			addtimer(CALLBACK(H, /atom/proc/SpinAnimation, 3, 3), 1)
-			H.stunned = 1
-			H.confused += 2
-			H.updatehealth()
-			if(prob(100))
-				var/obj/item/organ/external/organ = H.get_organ(pick(BP_R_LEG, BP_L_LEG, BP_R_ARM, BP_L_ARM))
-				if(!organ)
-					H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
-					return
-				organ.droplimb(TRUE, DISMEMBER_METHOD_EDGE)
-				H.visible_message("<font size=1>\red[H.name] is spun around by [src], a sickening sound coming from a limb being ripped off by vacuum force!.</font><\red>", "\red[src] spins you around, violently ripping one of your limbs off!")
-			else H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
-
 	if(istype(I, /obj/item/oddity/common/book_unholy) || istype(I, /obj/item/oddity/common/book_omega))
+		if(M.get_core_implant(/obj/item/implant/core_implant/cruciform)) //Church has decided to be our enemy. Punish them
+			to_chat(M, "<span class='info'>Voices echo in the air. \red Now you want to play?</span>")
+			if(M.allow_spin && src.allow_spin)
+				M.SpinAnimation(10,5)
+			if(ishuman(M))
+				var/mob/living/carbon/human/H = M
+				H.adjustBruteLoss(50)
+				addtimer(CALLBACK(H, /atom/proc/SpinAnimation, 3, 3), 1)
+				H.stunned = 1
+				H.confused += 2
+				H.updatehealth()
+				if(prob(100))
+					var/obj/item/organ/external/organ = H.get_organ(pick(BP_R_LEG, BP_L_LEG, BP_R_ARM, BP_L_ARM))
+					if(!organ)
+						H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
+						return
+					organ.droplimb(TRUE, DISMEMBER_METHOD_EDGE)
+					H.visible_message("<font size=1>\red[H.name] is spun around by [src], a sickening sound coming from a limb being ripped off by vacuum force!.</font><\red>", "\red[src] spins you around, violently ripping one of your limbs off!")
+				else H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
+				return //we return out cause we don't want to keep going thru the cast.
 		if(body_checks(M) && is_rune)
 			to_chat(M, "<span class='info'>The rune lights up in reaction to the book...</span>")
 
@@ -448,7 +414,7 @@
 // Ignorance: Basically become impervious to telepathic messages from psions.
 /obj/effect/decal/cleanable/crayon/proc/ignorance_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	M.psi_blocking_additive = 50
+	M.psi_blocking_additive = 20
 	to_chat(M, "<span class='warning'>Your mind feels like an impenetrable fortress against psionic assaults. Your heart is beating like a drum, exerting itself to recover the blood paid for your boon.</span>")
 	M.maxHealth -= 5
 	M.health -= 5
