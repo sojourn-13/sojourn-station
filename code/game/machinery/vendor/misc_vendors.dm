@@ -146,7 +146,7 @@
 					/obj/item/device/binoculars = 12,
 					/obj/item/board = 7,
 					/obj/item/deck/tarot = 4,
-					/obj/item/deck = 10,
+					/obj/item/deck/cards = 10,
 					/obj/item/pack/cardemon = 50,
 					/obj/item/pack/spaceball = 44,
 					/obj/item/deck/cah = 7,
