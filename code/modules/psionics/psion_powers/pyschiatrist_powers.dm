@@ -8,6 +8,14 @@
 	psi_point_cost = 4
 
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
+	var/obj/item/grab/G = locate() in owner
+	if(!G || !istype(G))
+		to_chat(owner, "\red You are not grabbing anyone.")
+		return
+
+	if(G.state < GRAB_AGGRESSIVE)
+		to_chat(owner, "\red You must have an aggressive grab to put someone to sleep!")
+		return
 	if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
 		usr.visible_message(
 				SPAN_DANGER("[usr] places a hand upon [L] attempting to put them to sleep!"),
