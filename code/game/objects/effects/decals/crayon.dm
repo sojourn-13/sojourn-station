@@ -125,29 +125,11 @@
 /obj/effect/decal/cleanable/crayon/attackby(obj/item/I, mob/living/carbon/human/M)
 	..()
 	if(istype(I, /obj/item/oddity/common/book_unholy) || istype(I, /obj/item/oddity/common/book_omega))
-		if(M.get_core_implant(/obj/item/implant/core_implant/cruciform)) //Church has decided to be our enemy. Punish them
-			to_chat(M, "<span class='info'>Voices echo in the air. \red Now you want to play?</span>")
-			if(M.allow_spin && src.allow_spin)
-				M.SpinAnimation(10,5)
-			if(ishuman(M))
-				var/mob/living/carbon/human/H = M
-				H.adjustBruteLoss(50)
-				addtimer(CALLBACK(H, /atom/proc/SpinAnimation, 3, 3), 1)
-				H.stunned = 1
-				H.confused += 2
-				H.updatehealth()
-				if(prob(100))
-					var/obj/item/organ/external/organ = H.get_organ(pick(BP_R_LEG, BP_L_LEG, BP_R_ARM, BP_L_ARM))
-					if(!organ)
-						H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
-						return
-					organ.droplimb(TRUE, DISMEMBER_METHOD_EDGE)
-					H.visible_message("<font size=1>\red[H.name] is spun around by [src], a sickening sound coming from a limb being ripped off by vacuum force!.</font><\red>", "\red[src] spins you around, violently ripping one of your limbs off!")
-				else H.visible_message("<font size=1>\red[H.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
-				return //we return out cause we don't want to keep going thru the cast.
+		if(M.get_core_implant(/obj/item/implant/core_implant/cruciform))
+			rejected_playmate_faithful(M)
+			return
 		if(body_checks(M) && is_rune)
 			to_chat(M, "<span class='info'>The rune lights up in reaction to the book...</span>")
-
 			if(follow_crayon)
 				var/old_desc = "[I.desc]"
 				follow_crayon.desc = "[old_desc] The strange energies of this planet seem to have infused it with more signicance than before."
@@ -250,6 +232,11 @@
 
 // Ritual Knife spell procs
 	if(istype(I, /obj/item/tool/knife/ritual))
+
+		if(M.get_core_implant(/obj/item/implant/core_implant/cruciform))
+			rejected_playmate_faithful(M)
+			return
+
 		if(body_checks(M) && is_rune)
 
 			to_chat(M, "<span class='info'>The rune lights up in response to the touch of the ritual weapon...</span>")
@@ -312,6 +299,11 @@
 				if(spell.message == "Veil." && candle_amount >= 5)
 					veil_spell(M)
 					continue
+
+				if(spell.message == "Caprice." && candle_amount >= 3)
+					caprice_spell(M, able_to_cast)
+					continue
+
 				return
 
 // Start of scroll based spells.
@@ -347,6 +339,59 @@
 			return
 		return
 	return
+
+/obj/effect/decal/cleanable/crayon/proc/rejected_playmate_faithful(mob/living/carbon/human/M)
+	var/not_in_good_faith = pick("To late for that rejecter!",\
+	"You already rejected reality!",\
+	"That pesky jewelry says otherwise...",\
+	"Seems your still not willing to play by my rules.", \
+	"Come back after you recalulate your problem...",\
+	"Your already commited to your playmate!",\
+	"Your friends wouldn't like are playdate.",\
+	"Sorry but you seem a little lost in your own rules, let alone mine.",\
+	"Did you really come back without an appolagity?")
+
+	to_chat(M, "<span class='info'>Voices giggles in the air. </span><span class='angelsay'>Now you wish to play? [not_in_good_faith]</span>")
+	if(M.allow_spin && src.allow_spin)
+		M.SpinAnimation(10,5)
+		M.stunned += 1
+		M.confused += 2
+		if(ishuman(M))
+			addtimer(CALLBACK(M, /atom/proc/SpinAnimation, 3, 3), 1)
+
+	//We already would have rejected you, run along now.
+	if(M.species?.reagent_tag != IS_SYNTHETIC)
+		var/in_good_faith = pick("Your to a puppet losely strung, no playtime for you!",\
+		"Quite a frail wooden doll.",\
+		"Tea time is for well played puppets!",\
+		"Your strings have been cut, can't play untill your fixed!", \
+		"Your not fit for rougher play.",\
+		"You were not made to play!",\
+		"Did you fall off the shelf? Best to go back to play with more careful friends!",\
+		"Come back when your fixed!")
+
+		to_chat(M, "<span class='info'>Some laughter echos. </span><span class='angelsay'>[in_good_faith]</span>")
+		return
+
+	var/obj/item/implant/core_implant/cruciform/CI = M.get_core_implant(/obj/item/implant/core_implant/cruciform)
+	if(CI)
+		if(30 >= CI.power)
+			CI.power -= 30
+			return
+		CI.power = 0
+		if(M.nutrition >= 100)
+			M.nutrition -= 100 //hunger is drained from the person to pay the cost of protection.
+			return
+
+		//If you cant pay the hunger, is not a synth and dont have 30 cruciform power, we take a lim. When removing you from the playime
+		var/obj/item/organ/external/organ = M.get_organ(pick(BP_R_LEG, BP_L_LEG, BP_R_ARM, BP_L_ARM))
+		if(!organ)
+			//You already suffered enuff of fun
+			M.visible_message("<font size=1>\red[M.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
+			return
+		organ.droplimb(TRUE, DISMEMBER_METHOD_EDGE)
+		M.visible_message("<font size=1>\red[M.name] is spun around by [src], a sickening sound coming from a limb being ripped off by vacuum force!.</font><\red>", "\red[src] spins you around, violently ripping one of your limbs off!")
+		return
 
 /obj/effect/decal/cleanable/crayon/proc/body_checks(mob/living/carbon/human/M, blind = FALSE)
 	var/pass = FALSE
@@ -1066,6 +1111,50 @@
 		N.loc = G.loc
 		qdel(G)
 
+// Caprice: Converts runes to and trap rune, if having bable or voice will send it randomly to maints or deepmaints.
+// These work as normal blindfolds for people who do not have the Cult language learned.
+
+
+/obj/effect/decal/cleanable/crayon/proc/caprice_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
+	var/turf/simulated/floor/target	//this is where we are teleporting
+	var/list/validtargets = list()
+
+	for(var/area/A in world)						//Clumbsy, but less intensive than iterating every tile
+		if(istype(A, /area/deepmaint))				//First find our deepmaint areas
+			for(var/turf/simulated/floor/T in A)	//Pull a list of valid floor tiles from deepmaint
+				validtargets += T					//Add them to the list
+
+		if(istype(A, /area/nadezhda/maintenance))	//First find our maints areas
+			if(A.is_maintenance)					//Just in case were a subtype of maintenance and NOT maintenanced
+				for(var/turf/simulated/floor/T in A)
+					if(A.is_maintenance)			//Pull a list of valid floor tiles from deepmaint
+						validtargets += T				//Add them to the list
+
+	//We act differently if a human is doing this
+	if(M)
+		var/datum/reagent/organic/blood/B = M.get_blood()
+		for(var/obj/effect/decal/cleanable/crayon/G in oview(3))
+			if(!body_checks(M))
+				return
+
+			if(able_to_cast)
+				var/obj/effect/decal/cleanable/crayon/trap/trap_teleport_placement = new /obj/effect/decal/cleanable/crayon/trap(src.loc)
+				B.remove_self(20)
+				bluespace_entropy(1, get_turf(src))
+				trap_teleport_placement.forceMove(target)
+				qdel(G)
+			else
+				//We just convert to traps, not move them around in deepmaints or maints normal
+				B.remove_self(10)
+				new /obj/effect/decal/cleanable/crayon/trap(G.loc)
+				qdel(G)
+			return
+	else
+		//This one is done by a higher power with a more stable connection. No entropy
+		var/obj/effect/decal/cleanable/crayon/trap/trap_teleport_placement = new /obj/effect/decal/cleanable/crayon/trap()
+		trap_teleport_placement.forceMove(target)
+
+
 //Scroll: Massive blood cost spell that requires a dead animal to invoke a scroll.
 // Scrolls can only be used by casters with the Scribe perk!
 /obj/effect/decal/cleanable/crayon/proc/scroll_spell(mob/living/carbon/human/M) // Able to be casted by all. But only filled out by scribes.
@@ -1163,7 +1252,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	B.remove_self(50) //decently high just to protect server performance.
 	var/datum/effect/effect/system/smoke_spread/chem/smoke = new
 	var/datum/reagents/gas_storage = new /datum/reagents(100, src)
-	gas_storage.add_reagent("crayon_dust_red", 100) //CRAYON MAGIC
+	gas_storage.add_reagent("crayon_dust_random", 100) //CRAYON MAGIC
 	smoke.attach(src.loc)
 	smoke.set_up(gas_storage, 12, 0, M.loc)
 	spawn(0)
@@ -1252,20 +1341,18 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		M.drop_from_inventory(src)
 	ScrollBurn()
 
-// Eta: Ever Mob seeable via the scroll when burned must past a language checks or be thrown backwards 6 to 12 spaces
+// Eta: Ever Mob seeable via the scroll when burned must past a language checks or be thrown backwards 8 to 12 spaces
 /obj/item/scroll/proc/eta_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	bluespace_entropy(5, get_turf(src))
 	B.remove_self(30)
 	var/iron_mind = FALSE
-	var/fling_back_direction = 1
 	for(var/mob/T in oview(7))
 		for(var/datum/language/L in T.languages)
 			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
 				iron_mind = TRUE
 		if(!iron_mind)
-			fling_back_direction = reverse_dir[T.dir]
-			T.throw_at(get_edge_target_turf(src,fling_back_direction),rand(6,12),30)
+			T.throw_at(get_step(T,reverse_direction(T.dir)),rand(8,12),30)
 
 	if(M.get_inactive_hand() == src)
 		M.drop_from_inventory(src)

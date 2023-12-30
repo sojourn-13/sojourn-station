@@ -59,6 +59,8 @@
 		else if(inhibited && owner.psi_blocking <= 0)
 			owner.show_message("\blue Your psionic power has been freed from its captivity!")
 			inhibited = FALSE
+		if(0 > owner.psi_blocking)
+			owner.psi_blocking = 0 //Insainity check!
 
 		//Removes any implants that are metal, including death alarms
 		remove_synthetics()
