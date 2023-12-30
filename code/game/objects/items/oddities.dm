@@ -409,6 +409,8 @@
 /obj/item/oddity/common/mirror/doodle
 	prob_perk = 0
 	perk = PERK_NO_OBSUCATION
+	kill_stats = TRUE
+	min_stats = 16
 	oddity_stats = list(
 		STAT_COG = 18
 	)

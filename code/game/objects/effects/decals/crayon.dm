@@ -48,28 +48,29 @@
 
 /obj/effect/decal/cleanable/crayon/trap/Crossed(mob/living/carbon/human/M)
 	var/obj/item/scroll/trap_card = null
-	playmate = 0
-	draw = rand(1,2)
-	src.set_light(3,2,"#FFFFFF") //so it lights up on crossing.
+	if(ishuman(M))
+		playmate = 0
+		draw = rand(1,2)
+		src.set_light(3,2,"#FFFFFF") //so it lights up on crossing.
 
-	//checks on the person crossing. Do we go off for this person?
-	if(M.species?.reagent_tag == IS_SYNTHETIC || M.species?.reagent_tag == IS_SLIME)
-		return //our runes dont play with synthetic or slimes
-	for(var/datum/language/L in M.languages)
-		if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
-			return //why would we go off for our friends?
-	if(draw == 1) //are we using scroll spells?
-		if(!trap_card)
-			trap_card = new /obj/item/scroll(M.loc)
-		trap_card.loc = M.loc
-		trap_card.alpha = 0
-		pick(trap_card.smoke_spell(M), trap_card.gaia_spell(M), trap_card.oil_spell(M))
-		do_sparks(3, 0, M.loc)
-	if(draw == 2) //are we using rune spells?
-		if(M.maxHealth < 80)
-			pick(src.flux_spell(M), src.equalize_spell(M))
-		else pick(src.ignorance_spell(M), src.madness_spell(M), src.flux_spell(M), src.equalize_spell(M))
-		do_sparks(3, 0, M.loc)
+		//checks on the person crossing. Do we go off for this person?
+		if(M.species?.reagent_tag == IS_SYNTHETIC || M.species?.reagent_tag == IS_SLIME)
+			return //our runes dont play with synthetic or slimes
+		for(var/datum/language/L in M.languages)
+			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
+				return //why would we go off for our friends?
+		if(draw == 1) //are we using scroll spells?
+			if(!trap_card)
+				trap_card = new /obj/item/scroll(M.loc)
+			trap_card.loc = M.loc
+			trap_card.alpha = 0
+			pick(trap_card.smoke_spell(M), trap_card.gaia_spell(M), trap_card.oil_spell(M))
+			do_sparks(3, 0, M.loc)
+		if(draw == 2) //are we using rune spells?
+			if(M.maxHealth < 80)
+				pick(src.flux_spell(M), src.equalize_spell(M))
+			else pick(src.ignorance_spell(M), src.madness_spell(M), src.flux_spell(M), src.equalize_spell(M))
+			do_sparks(3, 0, M.loc)
 
 
 	//Everyone else in the Areas checks. Wouldn't be MAGIC if it only effected the yolo solo churchie.
@@ -360,7 +361,7 @@
 			addtimer(CALLBACK(M, /atom/proc/SpinAnimation, 3, 3), 1)
 
 	//We already would have rejected you, run along now.
-	if(M.species?.reagent_tag != IS_SYNTHETIC)
+	if(M.species?.reagent_tag == IS_SYNTHETIC || M.species?.reagent_tag == IS_SLIME)
 		var/in_good_faith = pick("Your to a puppet losely strung, no playtime for you!",\
 		"Quite a frail wooden doll.",\
 		"Tea time is for well played puppets!",\
