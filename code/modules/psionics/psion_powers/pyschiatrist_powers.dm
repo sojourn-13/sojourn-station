@@ -10,20 +10,24 @@
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
 	var/obj/item/grab/G = locate() in owner
 	if(!G || !istype(G))
-		to_chat(owner, "\red You are not grabbing anyone.")
+		usr.show_message(SPAN_DANGER("You are not grabbing anyone."))
+		psi_points += psi_point_cost
 		return
 
 	if(G.state < GRAB_AGGRESSIVE)
-		to_chat(owner, "\red You must have an aggressive grab to put someone to sleep!")
+		usr.show_message(SPAN_DANGER("You must have an aggressive grab to put someone to sleep!"))
+		psi_points += psi_point_cost
 		return
-	if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
-		usr.visible_message(
-				SPAN_DANGER("[usr] places a hand upon [L] attempting to put them to sleep!"),
-				SPAN_DANGER("You place your hand on [L] expanding your mind and attempting to put them to sleep!")
-				)
-		L.AdjustSleeping(60)
-	else
-		usr.show_message("\blue You are not holding someone you can use this power on.")
+
+	if(pay_power_cost(psi_point_cost))
+		if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
+			usr.visible_message(
+					SPAN_DANGER("[usr] places a hand upon [L] attempting to put them to sleep!"),
+					SPAN_DANGER("You place your hand on [L] expanding your mind and attempting to put them to sleep!")
+					)
+			L.AdjustSleeping(60)
+		else
+			usr.show_message("\blue You are not holding someone you can use this power on.")
 
 	if(L.psi_blocking >= 10)
 		owner.stun_effect_act(0, L.psi_blocking * 5, BP_HEAD)
