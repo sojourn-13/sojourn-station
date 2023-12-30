@@ -20,7 +20,7 @@
 		return
 
 	if(pay_power_cost(psi_point_cost))
-		if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(psi_point_cost))
+		if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC)
 			usr.visible_message(
 					SPAN_DANGER("[usr] places a hand upon [L] attempting to put them to sleep!"),
 					SPAN_DANGER("You place your hand on [L] expanding your mind and attempting to put them to sleep!")
