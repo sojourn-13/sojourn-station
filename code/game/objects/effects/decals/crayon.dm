@@ -131,7 +131,7 @@
 		if(body_checks(M) && is_rune)
 			to_chat(M, "<span class='info'>The rune lights up in reaction to the book...</span>")
 			if(follow_crayon)
-				var/old_desc = "[I.desc]"
+				var/old_desc = "[follow_crayon.desc]"
 				follow_crayon.desc = "[old_desc] The strange energies of this planet seem to have infused it with more signicance than before."
 				desc = "A rune drawn in empowered crayon wax."
 				follow_crayon = null
@@ -669,12 +669,55 @@
 // Escape: Deteles and kicks you out of the game
 /obj/effect/decal/cleanable/crayon/proc/escape_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	var/obj/item/oddity/common/mirror/ocm = new /obj/item/oddity/common/mirror(src.loc)
+	var/obj/item/oddity/common/mirror/doodle/ocm = new /obj/item/oddity/common/mirror/doodle(src.loc)
 	B.remove_self(35) //We still take some blood for this
 	to_chat(M, "<span class='warning'>[M.real_name] stepped into a fragment of a mirror.</span>")
 	ocm.name = "[M.real_name]'s fragments."
 	ocm.desc = "A thousand doodles of [M.real_name] in crayon stare back at you as you examine the trinket."
-	ocm.perk = PERK_NO_OBSUCATION
+
+	var/job = M.mind.assigned_role
+	log_and_message_admins("[key_name(M)]" + "[M.mind ? " ([M.mind.assigned_role])" : ""]" + " entered a colouring book.")
+
+
+	SSjob.FreeRole(job)
+	clear_antagonist(M.mind)
+
+	// Delete them from datacore.
+
+	if(PDA_Manifest.len)
+		PDA_Manifest.Cut()
+	for(var/datum/data/record/R in data_core.medical)
+		if ((R.fields["name"] == M.real_name))
+			qdel(R)
+	for(var/datum/data/record/T in data_core.security)
+		if ((T.fields["name"] == M.real_name))
+			qdel(T)
+	for(var/datum/data/record/G in data_core.general)
+		if ((G.fields["name"] == M.real_name))
+			qdel(G)
+	// Remove the mob's record.
+	var/datum/computer_file/report/crew_record/record
+	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records) // loop through the records
+		if(M.mind.name == CR.get_name()) // Check the mind's name to the record's name
+			record = CR
+			break
+
+	record?.Destroy() // Delete the crew record
+
+	//Update any existing objectives involving this mob.
+	for(var/datum/objective/O in all_objectives)
+		// Were in a colouring book now...
+		if(O.target == M.mind)
+			if(O.owner && O.owner.current)
+				to_chat(O.owner.current, "<span class='warning'>You get the feeling your target is no longer within your reach...</span>")
+			qdel(O)
+
+	//Same for contract-based objectives.
+	for(var/datum/antag_contract/contract in GLOB.excel_antag_contracts)
+		contract.on_mob_despawned(M.mind)
+
+
+	SSjob.FreeRole(job)
 	M.client.ckey = null
 	M.dust(anim = FALSE, remains = /obj/effect/overlay/pulse)
 	return
@@ -1094,6 +1137,7 @@
 			qdel(O)
 		else
 			to_chat(M, "<span class='info'>This oddity is not a book, knowledge on how to improve it is beyond your grasp.</span>")
+	return
 
 // Veil: Invoke a blindfold that works as prescription goggles with one extra tile of visibility in the dark
 // These work as normal blindfolds for people who do not have the Cult language learned.
@@ -1110,11 +1154,9 @@
 		var/obj/item/clothing/glasses/crayon_blindfold/N = new /obj/item/clothing/glasses/crayon_blindfold
 		N.loc = G.loc
 		qdel(G)
+	return
 
 // Caprice: Converts runes to and trap rune, if having bable or voice will send it randomly to maints or deepmaints.
-// These work as normal blindfolds for people who do not have the Cult language learned.
-
-
 /obj/effect/decal/cleanable/crayon/proc/caprice_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/turf/simulated/floor/target	//this is where we are teleporting
 	var/list/validtargets = list()
@@ -1138,7 +1180,7 @@
 				return
 
 			if(able_to_cast)
-				var/obj/effect/decal/cleanable/crayon/trap/trap_teleport_placement = new /obj/effect/decal/cleanable/crayon/trap(src.loc)
+				var/obj/effect/decal/cleanable/crayon/trap/trap_teleport_placement = new /obj/effect/decal/cleanable/crayon/trap(src.loc,main=RANDOM_RGB,shade=RANDOM_RGB)
 				B.remove_self(20)
 				bluespace_entropy(1, get_turf(src))
 				trap_teleport_placement.forceMove(target)
@@ -1146,14 +1188,15 @@
 			else
 				//We just convert to traps, not move them around in deepmaints or maints normal
 				B.remove_self(10)
-				new /obj/effect/decal/cleanable/crayon/trap(G.loc)
+				new /obj/effect/decal/cleanable/crayon/trap(G.loc,main=RANDOM_RGB,shade=RANDOM_RGB)
 				qdel(G)
 			return
 	else
 		//This one is done by a higher power with a more stable connection. No entropy
-		var/obj/effect/decal/cleanable/crayon/trap/trap_teleport_placement = new /obj/effect/decal/cleanable/crayon/trap()
+		var/obj/effect/decal/cleanable/crayon/trap/trap_teleport_placement = new /obj/effect/decal/cleanable/crayon/trap(main=RANDOM_RGB,shade=RANDOM_RGB)
 		trap_teleport_placement.forceMove(target)
 
+	return
 
 //Scroll: Massive blood cost spell that requires a dead animal to invoke a scroll.
 // Scrolls can only be used by casters with the Scribe perk!
@@ -1235,7 +1278,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	B.remove_self(100)
 	bluespace_entropy(20, get_turf(src))
-	new /obj/effect/decal/cleanable/crayon/mist(M.loc)
+	new /obj/effect/decal/cleanable/crayon/mist(M.loc,main=RANDOM_RGB,shade=RANDOM_RGB)
 	ScrollBurn()
 
 // Shimmer: Invokes a crayon mark that blocks both bullets and laser projectiles.
@@ -1243,7 +1286,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	B.remove_self(100)
 	bluespace_entropy(20, get_turf(src))
-	new /obj/effect/decal/cleanable/crayon/shimmer(M.loc)
+	new /obj/effect/decal/cleanable/crayon/shimmer(M.loc,main=RANDOM_RGB,shade=RANDOM_RGB)
 	ScrollBurn()
 
 // Smoke: Creates a smoke cloud centered around the caster
@@ -1295,7 +1338,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 // Light: Creates a rune on the floor that gives off light.
 /obj/item/scroll/proc/light_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	var/obj/effect/decal/cleanable/crayon/light_rune = new /obj/effect/decal/cleanable/crayon(M.loc)
+	var/obj/effect/decal/cleanable/crayon/light_rune = new /obj/effect/decal/cleanable/crayon(M.loc,main=RANDOM_RGB,shade=RANDOM_RGB)
 	light_rune.set_light(5,4,"#FFFFFF")
 	light_rune.name = "glowing rune"
 	light_rune.desc = "A bright rune giving off vibrant light."
