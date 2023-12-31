@@ -658,11 +658,10 @@
 	cooldown_time = 10 MINUTES
 	cooldown_category = "repair"
 	power = 50
-
-/datum/ritual/cruciform/factorial/self_repair/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/debuff_amount = -5
 	var/debuff_length = 5 MINUTES
 
+/datum/ritual/cruciform/factorial/self_repair/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	user.visible_message("<b><font color='red'>[user]'s cruciform glows before they suddenly collapse!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration, your cruciform withdrawing everything you have to empower your litany!</font><b>", "<b><font color='red'>You hear a thud!</font><b>")
 	var/got_healed = FALSE
 	var/list/target_organs = user.organs + user.internal_organs
@@ -708,14 +707,13 @@
 	cooldown_time = 30 MINUTES
 	cooldown_category = "repair"
 	power = 50
-
-/datum/ritual/cruciform/factorial/mass_repair/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/number_healed = 0 //Number of people healed
 	var/debuff_amount_healed = -5 //Amount of penalty given to the VIG, ROB, and TGH of those healed
 	var/debuff_length_healed = 5 MINUTES //How long thos healed will have their debuff
 	var/debuff_amount_healer = 0 //Amount of penalty given to the VIG, ROB, and TGH of the healer, will scale to number of people healed
 	var/debuff_length_healer = 5 MINUTES //How long the healer will have their debuff
 
+/datum/ritual/cruciform/factorial/mass_repair/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	user.visible_message("<b><font color='red'>[user]'s cruciform glows before brightly!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration!</font><b>", "<b><font color='red'>You hear a light ticking sound!</font><b>")
 	for(var/mob/living/carbon/human/H in oview(user)) // Affect everyone the user can see.
 		var/got_healed = FALSE //Were they healed by this litany
