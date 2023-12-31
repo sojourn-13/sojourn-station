@@ -25,7 +25,7 @@
 		return FALSE
 	return TRUE
 
-// Shimmer rune, invoked by Scribe scrolls, doesn't allow neither lasers nor projectiles to pass through.
+// Shimmer rune, invoked by Scribe scrolls, doesn't allow bullets to pass through.
 /obj/effect/decal/cleanable/crayon/shimmer
 	name = "strange rune"
 	desc = "The air shimmers about this rune."
@@ -37,7 +37,7 @@
 		return FALSE
 	return TRUE
 
-// Trap rune. Created thru events. The colony wanted to treat the users of crayon magic poorly. Now the ones they played with will act out.
+// Trap rune. Created by deepmaint and naughty mages.
 /obj/effect/decal/cleanable/crayon/trap
 	name = "dangerous rune"
 	desc = "The air shimmers about this rune."
@@ -305,6 +305,10 @@
 					caprice_spell(M, able_to_cast)
 					continue
 
+				if(spell.message == "Mightier." && candle_amount >= 3)
+					mightier_spell(M)
+					continue
+
 				return
 
 // Start of scroll based spells.
@@ -342,15 +346,15 @@
 	return
 
 /obj/effect/decal/cleanable/crayon/proc/rejected_playmate_faithful(mob/living/carbon/human/M)
-	var/not_in_good_faith = pick("To late for that rejecter!",\
+	var/not_in_good_faith = pick("To late for that, rejecter!",\
 	"You already rejected reality!",\
 	"That pesky jewelry says otherwise...",\
 	"Seems your still not willing to play by my rules.", \
-	"Come back after you recalulate your problem...",\
+	"Come back after you recalculate your problem...",\
 	"Your already commited to your playmate!",\
-	"Your friends wouldn't like are playdate.",\
+	"Your friends wouldn't like our playdate.",\
 	"Sorry but you seem a little lost in your own rules, let alone mine.",\
-	"Did you really come back without an appolagity?")
+	"Did you really come back without an apology?")
 
 	to_chat(M, "<span class='info'>Voices giggles in the air. </span><span class='angelsay'>Now you wish to play? [not_in_good_faith]</span>")
 	if(M.allow_spin && src.allow_spin)
@@ -362,10 +366,10 @@
 
 	//We already would have rejected you, run along now.
 	if(M.species?.reagent_tag == IS_SYNTHETIC || M.species?.reagent_tag == IS_SLIME)
-		var/in_good_faith = pick("Your to a puppet losely strung, no playtime for you!",\
+		var/in_good_faith = pick("Your a puppet losely strung, no playtime for you!",\
 		"Quite a frail wooden doll.",\
 		"Tea time is for well played puppets!",\
-		"Your strings have been cut, can't play untill your fixed!", \
+		"Your strings have been cut, we can't play until your fixed!", \
 		"Your not fit for rougher play.",\
 		"You were not made to play!",\
 		"Did you fall off the shelf? Best to go back to play with more careful friends!",\
@@ -376,10 +380,11 @@
 
 	var/obj/item/implant/core_implant/cruciform/CI = M.get_core_implant(/obj/item/implant/core_implant/cruciform)
 	if(CI)
-		if(30 >= CI.power)
+		if(30 <= CI.power) //cup keeps you safe if it has enough juice.
 			CI.power -= 30
 			return
-		CI.power = 0
+		if(CI.power <= 0) //safty set
+			CI.power = 0
 		if(M.nutrition >= 100)
 			M.nutrition -= 100 //hunger is drained from the person to pay the cost of protection.
 			return
@@ -1199,6 +1204,24 @@
 
 	return
 
+// Mightier: Invokes throwing crayons whose strength gets higher the lower our max HP is.
+/obj/effect/decal/cleanable/crayon/proc/mightier_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	bluespace_entropy(10, get_turf(src))
+	B.remove_self(50) //roughly 10 percent for each crayon.
+	var/obj/item/stack/thrown/crayons/needles = new /obj/item/stack/thrown/crayons(src.loc)
+	needles.icon_state = pickweight(list("crayonred" = 2,\
+				"crayonorange" = 2,\
+				"crayonyellow" = 2,\
+				"crayongreen" = 2,\
+				"crayonblue" = 2,\
+				"crayonpurple" = 2))
+	needles.item_state = needles.icon_state
+	if(M.get_inactive_hand() == src)
+		M.drop_from_inventory(src)
+		M.put_in_inactive_hand(needles)
+	return
+
 //Scroll: Massive blood cost spell that requires a dead animal to invoke a scroll.
 // Scrolls can only be used by casters with the Scribe perk!
 /obj/effect/decal/cleanable/crayon/proc/scroll_spell(mob/living/carbon/human/M) // Able to be casted by all. But only filled out by scribes.
@@ -1346,24 +1369,6 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	light_rune.color = "#FFFF00"
 	B.remove_self(20)
 	bluespace_entropy(20, get_turf(src)) //high entropy cost. Low blood cost.
-	ScrollBurn()
-
-// Mightier: Invokes throwing crayons whose strength gets higher the lower our max HP is.
-/obj/item/scroll/proc/mightier_spell(mob/living/carbon/human/M)
-	var/datum/reagent/organic/blood/B = M.get_blood()
-	bluespace_entropy(10, get_turf(src))
-	B.remove_self(50) //roughly 10 percent for each crayon.
-	var/obj/item/stack/thrown/crayons/needles = new /obj/item/stack/thrown/crayons(src.loc)
-	needles.icon_state = pickweight(list("crayonred" = 2,\
-				"crayonorange" = 2,\
-				"crayonyellow" = 2,\
-				"crayongreen" = 2,\
-				"crayonblue" = 2,\
-				"crayonpurple" = 2))
-	needles.item_state = needles.icon_state
-	if(M.get_inactive_hand() == src)
-		M.drop_from_inventory(src)
-		M.put_in_inactive_hand(needles)
 	ScrollBurn()
 
 // Gaia: Ever Mob seeable via the scroll when burned must past a language checks or be weaken 5:3
@@ -1654,11 +1659,6 @@ obj/item/scroll/sealed
 		if(message == "Light.")
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			light_spell(M)
-			return
-
-		if(message == "Mightier.")
-			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
-			mightier_spell(M)
 			return
 
 		if(message == "Gaia.")
