@@ -139,6 +139,9 @@
 		if(istype(L))
 			if(BP_IS_ROBOTIC(L))
 				return
+			var/list/current_wounds = L.GetComponents(/datum/component/internal_wound)
+			if(LAZYLEN(current_wounds) && prob(20))
+				LEGACY_SEND_SIGNAL(L, COMSIG_IORGAN_REMOVE_WOUND, pick(current_wounds))
 			if(L.damage > 0)
 				L.damage = max(L.damage - 2 * removed, 0)
 	var/mob/living/carbon/C = M

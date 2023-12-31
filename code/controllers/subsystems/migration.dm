@@ -235,7 +235,7 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 			continue
 
 		// just nop.
-		if (candidate.obelisk_around)
+		if (candidate.obelisk_around())
 			continue
 
 		//And a high chance to reroll it if its not what we want in terms of being in/out of maintenance

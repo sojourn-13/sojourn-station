@@ -13,56 +13,39 @@
 
 /datum/ritual/cruciform/base/relief
 	name = "Relief"
-	phrase = "Et si ambulavero in medio umbrae mortis non timebo mala."
-	desc = "A short litany to relieve pain of the afflicted."
+	phrase = "Tribulationes cordis mei multiplicatae sunt: de necessitatibus meis erue me." //"Relieve the troubles of my heart and free me from my anguish."
+	desc = "A short litany to relieve the pain of the speaker."
 	power = 50
 	ignore_stuttering = TRUE
-	nutri_cost = 25//med cost
-	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/base/relief/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
-	//var/datum/reagent/bloodhold
-	if(H.species?.reagent_tag != IS_SYNTHETIC)
-		if(H.nutrition >= nutri_cost)
-			H.nutrition -= nutri_cost
-		else
-			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			H.vessel.remove_reagent("blood",blood_cost)
+/datum/ritual/cruciform/base/relief/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C)
 	H.reagents.add_reagent("laudanum", 10)
 	H.updatehealth()
 	return TRUE
 
 /datum/ritual/cruciform/base/soul_hunger
 	name = "Soul Hunger"
-	phrase = "Panem nostrum cotidianum da nobis hodie."
-	desc = "Litany of pilgrims that helps better withstand hunger."
+	phrase = "Panem nostrum cotidianum da nobis hodie." //"Give us this day our daily bread."
+	desc = "Litany of pilgrims that helps withstand hunger. Causes some mild poisoning, which can be relieved with Cahors."
 	power = 20
 
-/datum/ritual/cruciform/base/soul_hunger/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/base/soul_hunger/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C)
 	H.nutrition += 50
-	H.adjustFireLoss(5)
+	H.reagents.add_reagent("wormwood", 5)
 	return TRUE
 
 /datum/ritual/cruciform/base/glow_book
 	name = "Word of Guidance"
-	phrase = "Legem pone mihi, Domine, in via tua, et dirige me in semitam rectam, propter inimicos meos."
+	phrase = "Lucerna pedibus meis verbum tuum, et lumen semitis meis." //"Your word is a lamp for my feet, a light on my path."
 	desc = "A prayer to light your way. It makes the ritual book you're holding glow brightly for ten minutes. "
 	power = 10 //Cost correlates to duration
 	cooldown = TRUE
 	cooldown_time = 10 MINUTES
 	cooldown_category = "bglow"
-	nutri_cost = 10//low cost
-	blood_cost = 10//low cost
 
-/datum/ritual/cruciform/base/glow_book/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/base/glow_book/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C)
 	var/successful = FALSE
 	if (istype(H.get_active_hand(), /obj/item/book/ritual/cruciform))
-		if(H.species?.reagent_tag != IS_SYNTHETIC)
-			if(H.nutrition >= nutri_cost)
-				H.nutrition -= nutri_cost
-			else
-				to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-				H.vessel.remove_reagent("blood",blood_cost)
 		var/obj/item/book/ritual/cruciform/M = H.get_active_hand()
 		M.set_light(5) //Slightly better than as a lantern since you can only hold it in hand or within the belt slot.
 		playsound(H.loc, 'sound/ambience/ambicha2.ogg', 75, 1)
@@ -82,22 +65,14 @@
 
 /datum/ritual/cruciform/base/flare
 	name = "Holy Light"
-	phrase = "Lucerna pedibus meis verbum tuum, et lumen semitis meis."
-	desc = "Litany of pilgrims that creates a small light for about twenty minutes."
+	phrase = "Legem pone mihi, Domine, in via tua, et dirige me in semitam rectam, propter inimicos meos."  //"Teach me your way, Lord; lead me in a straight path because of my oppressors."
+	desc = "Litany of pilgrims that creates a small light at your feet for twenty minutes."
 	power = 20 //Cost correlates to duration.
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	cooldown_category = "flare"
-	nutri_cost = 10//low cost
-	blood_cost = 10//low cost
 
-/datum/ritual/cruciform/base/flare/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
-	if(H.species?.reagent_tag != IS_SYNTHETIC)
-		if(H.nutrition >= nutri_cost)
-			H.nutrition -= nutri_cost
-		else
-			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			H.vessel.remove_reagent("blood",blood_cost)
+/datum/ritual/cruciform/base/flare/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C)
 	playsound(H.loc, 'sound/effects/snap.ogg', 50, 1)
 	new /obj/effect/sparks(H.loc)
 	new /obj/effect/effect/smoke/illumination(H.loc, brightness=max(7), lifetime=12000) //Very bright light.
@@ -106,20 +81,12 @@
 
 /datum/ritual/cruciform/base/entreaty
 	name = "Entreaty"
-	phrase = "Deus meus ut quid dereliquisti me."
+	phrase = "Deus meus ut quid dereliquisti me." //"My God, why have you forsaken me?"
 	desc = "Call for help, allowing other cruciform bearers to hear your cries."
 	power = 25
 	ignore_stuttering = TRUE
-	nutri_cost = 25
-	blood_cost = 25
 
-/datum/ritual/cruciform/base/entreaty/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
-	if(H.species?.reagent_tag != IS_SYNTHETIC)
-		if(H.nutrition >= nutri_cost)
-			H.nutrition -= nutri_cost
-		else
-			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			H.vessel.remove_reagent("blood",blood_cost)
+/datum/ritual/cruciform/base/entreaty/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C)
 	for(var/mob/living/carbon/human/target in disciples)
 		if(target == H)
 			continue
@@ -127,26 +94,18 @@
 		var/obj/item/implant/core_implant/cruciform/CI = target.get_core_implant()
 		var/area/t = get_area(H)
 
-		if((istype(CI) && CI.get_module(CRUCIFORM_PRIEST)) || prob(50))
+		if((istype(CI)))
 			to_chat(target, SPAN_DANGER("[H], faithful cruciform follower, cries for salvation at [t.name]!"))
 	return TRUE
 
 /datum/ritual/cruciform/base/reveal
 	name = "Reveal Adversaries"
-	phrase = "Et fumus tormentorum eorum ascendet in saecula saeculorum: nec habent requiem die ac nocte, qui adoraverunt bestiam, et imaginem ejus, et si quis acceperit caracterem nominis ejus."
-	desc = "Gain knowledge of your surroundings to reveal evil in people and places. This can tell you about hostile creatures around you, rarely can help you spot traps and sometimes let you sense a monster disguised as a person."
+	phrase = "Et fumus tormentorum eorum ascendet in saecula saeculorum: nec habent requiem die ac nocte, qui adoraverunt bestiam, et imaginem ejus, et si quis acceperit caracterem nominis ejus." //"And the smoke of their torment will rise for ever and ever. There will be no rest day or night for those who worship the beast and its image, or for anyone who receives the mark of its name."
+	desc = "Gain knowledge of your surroundings to reveal evil in people and places. This litany is imprecise, but can warn you of danger you don't see."
 	power = 35
-	nutri_cost = 25
-	blood_cost = 25
 
-/datum/ritual/cruciform/base/reveal/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/base/reveal/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C)
 	var/was_triggired = FALSE
-	if(H.species?.reagent_tag != IS_SYNTHETIC)
-		if(H.nutrition >= nutri_cost)
-			H.nutrition -= nutri_cost
-		else
-			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			H.vessel.remove_reagent("blood",blood_cost)
 	log_and_message_admins("[H.real_name] performed reveal litany")
 	if(prob(5)) //Additional fail chance that hidded from user
 		to_chat(H, SPAN_NOTICE("There is nothing there. You feel safe."))
@@ -170,7 +129,7 @@
 		for(var/mob/living/carbon/human/target in range(14, H))
 			for(var/organ in target.organs)
 				if (organ in subtypesof(/obj/item/organ/internal/carrion))
-					to_chat(H, SPAN_DANGER("A black terrible evil brushes against your mind suddenly, a horrible monstrous entity who's mere glancing ire is enough to leave you in a breathless cold sweat..."))
+					to_chat(H, SPAN_DANGER("Adversaries are near. You can feel something nasty and hostile.")) //Non-divisors don't get any extra information beyond presence or absence of badness
 				was_triggired = TRUE
 				break
 	if (!was_triggired)
@@ -179,20 +138,12 @@
 
 /datum/ritual/cruciform/base/message
 	name = "Sending"
-	phrase = "Audit, me audit vocationem. Ego nuntius vobis."
-	desc = "Send a message through the void, straight into the mind of another disciple."
+	phrase = "Euntes autem praedicate, dicentes: Quia appropinquavit regnum caelorum." //"As you go, proclaim this message: ‘The kingdom of heaven has come near.’"
+	desc = "Send a message through the communion of believers, straight into the mind of another disciple."
 	power = 30
-	nutri_cost = 10//low cost
-	blood_cost = 10//low cost
 
-/datum/ritual/cruciform/base/message/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+/datum/ritual/cruciform/base/message/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
 	var/mob/living/carbon/human/H = pick_disciple_global(user, TRUE)
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 	if (!H)
 		return
 
@@ -204,6 +155,7 @@
 	if (!text)
 		return
 	to_chat(H, "<span class='notice'><b><font size='3px'><font color='#ffaa00'>[user.real_name]'s voice speaks in your mind: \"[text]\"</font><b></span>")
+	to_chat(user, "<span class='info'><font color='#ffaa00'>You say to [H]: \"[text]\"</font></span>")
 	log_and_message_admins("[user.real_name] sent a message to [H] with text \"[text]\"")
 	playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 	playsound(H, 'sound/machines/signal.ogg', 50, 1)
@@ -211,42 +163,31 @@
 
 /datum/ritual/cruciform/base/revelation
 	name = "Revelation"
-	phrase = "Patris ostendere viam."
-	desc = "A person close to you will have a vision that could increase ther faith... or that's what you hope will happen."
-	power = 50
-	nutri_cost = 50//high cost
-	blood_cost = 10//low cost
+	phrase = "Mysterium, quod absconditum fuit a saeculis, et generationibus, nunc autem manifestatum est sanctis ejus." //"The mystery that has been kept hidden for ages and generations, but is now disclosed to the Lord’s people."
+	desc = "A person close to you will have a vision that could stabilize their mind... or that's what you hope will happen."
+	power = 30
 
-/datum/ritual/cruciform/base/revelation/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/base/revelation/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C)
 	var/mob/living/carbon/human/T = get_front_human_in_range(H, 4)
-	//if(!T || !T.client)
-	if(H.species?.reagent_tag != IS_SYNTHETIC)
-		if(H.nutrition >= nutri_cost)
-			H.nutrition -= nutri_cost
-		else
-			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			H.vessel.remove_reagent("blood",blood_cost)
 	log_and_message_admins("performed Revelation litany (makes people drugged/hallucinate)")
 
 	if(!T)
 		fail("No target.", H, C)
 		return FALSE
 	T.hallucination(50,100)
-	//var/sanity_lost = rand(-10,10) no thanks
+	var/sanity_lost = rand(-5,10)
 	T.druggy = max(T.druggy, 10)
-	//T.sanity.changeLevel(sanity_lost) //no thanks
+	T.sanity.changeLevel(sanity_lost)
 	LEGACY_SEND_SIGNAL(H, COMSIG_RITUAL, src, T)
 	return TRUE
 
 /datum/ritual/cruciform/base/install_upgrade
 	name = "Install Cruciform Upgrade"
-	phrase = "Deum benedicite mihi voluntas in suum donum."
+	phrase = "Omne datum optimum, et omne donum perfectum desursum est, descendens a Patre luminum, apud quem non est transmutatio, nec vicissitudinis obumbratio." //"Every good and perfect gift is from above, coming down from the Father of the heavenly lights, who does not change like shifting shadows."
 	desc = "This litany will command a cruciform upgrade to attach to follower's cruciform. They must lie on an altar with the upgrade near them."
 	power = 20
-	nutri_cost = 10//low cost
-	blood_cost = 10//low cost
 
-/datum/ritual/cruciform/base/install_upgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/base/install_upgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/mob/living/carbon/human/H = get_victim(user)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
 	if(!CI)
@@ -293,13 +234,11 @@
 
 /datum/ritual/cruciform/base/uninstall_upgrade
 	name = "Uninstall Cruciform Upgrade"
-	phrase = "Deus meus ut quid habebant affectus."
+	phrase = "Omnia tempus habent, et suis spatiis transeunt universa sub caelo." //"There is a time for everything, and a season for every activity under the heavens"
 	desc = "This litany will command a cruciform upgrade to detach from a cruciform."
 	power = 20
-	nutri_cost = 10//low cost
-	blood_cost = 10//low cost
 
-/datum/ritual/cruciform/base/uninstall_upgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/base/uninstall_upgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/mob/living/carbon/human/H = get_victim(user)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
 	var/list/L = get_front(user)
@@ -326,14 +265,12 @@
 
 /datum/ritual/cruciform/base/recharge_others
 	name = "Empower"
-	phrase = "Potestas fidei communicanda est."
-	desc = "This ritual helps recharging the nearby disciple's cruciform."
+	phrase = "Alter alterius onera portate." //"Carry each other’s burdens."
+	desc = "This ritual gifts some of your faith to another disciple."
 	power = 15
-	nutri_cost = 15
-	blood_cost = 15
 	ignore_stuttering = TRUE
 
-/datum/ritual/cruciform/base/recharge_others/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+/datum/ritual/cruciform/base/recharge_others/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
 
 	if(!CI || !CI.active || !CI.wearer)
@@ -353,12 +290,6 @@
 		return
 
 	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of succor")
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 	if (do_after(user, 40, H, TRUE))
 		T = get_turf(user)
 		if (!(T.Adjacent(get_turf(H))))

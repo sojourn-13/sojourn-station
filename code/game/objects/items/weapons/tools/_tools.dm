@@ -281,7 +281,7 @@
 *******************************/
 
 //Simple form ideal for basic use. That proc will return TRUE only when everything was done right, and FALSE if something went wrong, ot user was unlucky.
-//Editionaly, handle_failure proc will be called for a critical failure roll.
+//Additionaly, handle_failure proc will be called for a critical failure roll.
 /obj/item/proc/use_tool(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
 	if(health)//Low health on a tool increases failure chance. Scaling up as it breaks further.
 		fail_chance += get_tool_health_modifer(user)
@@ -330,7 +330,13 @@
 
 //Use this proc if you want to handle all types of failure yourself. It used in surgery, for example, to deal damage to patient.
 /obj/item/proc/use_tool_extended(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
+
 	var/obj/item/tool/T
+
+	//Vars for Absolutist speed debuff
+	var/holy_delay = 0
+	var/cruciform_slow = 1.25
+
 	if(istool(src))
 		T = src
 		T.last_tooluse = world.time
@@ -355,6 +361,9 @@
 			fail_chance += round(H.shock_stage/120 * 40)
 			base_time += round(H.shock_stage/120 * 40)
 
+	if(user.stats.getPerk(PERK_COMMUNITY_SAINTS))
+		holy_delay = cruciform_slow
+
 
 	//Start time and time spent are used to calculate resource use
 	var/start_time = world.time
@@ -371,6 +380,9 @@
 		//Workspeed var, can be improved by upgrades
 		if(T && T.workspeed > 0)
 			time_to_finish /= T.workspeed
+		//Slowdown for Absolutists. Sanctified tools don't get additional slowdown
+		if(holy_delay > 0 && T?.sanctified == FALSE)
+			time_to_finish *= holy_delay
 		// the worse tool condition - the more time required
 		if(T && T.degradation)
 			// so basically we adding time based on percent of missing health multiplied by ADDITIONAL_TIME_LOWHEALTH for easier balancing

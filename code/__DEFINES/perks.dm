@@ -46,6 +46,7 @@
 #define PERK_NOBLE /datum/perk/noble
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
 #define PERK_SANITYBOOST /datum/perk/sanityboost
+#define PERK_COMMUNITY_SAINTS /datum/perk/community_of_saints
 #define PERK_CHANNELING /datum/perk/channeling
 #define PERK_IDEALIST /datum/perk/idealist
 #define PERK_LUNGS_OF_IRON /datum/perk/lungs_of_iron

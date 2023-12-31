@@ -13,13 +13,7 @@
 	var/category = "???"
 
 
-	var/nutri_cost = 0 //The cost of the individual's nutrition value per spell cast
-	var/blood_cost = 0 //The cost of the individual's blood reagent per spell cast if nutrition cannot be used
-	//Nutrition cost is balanced as follows:
-	//50 for important spells (healing, knockdowns, buffs, etc)
-	//25 for all medium (pain relief, reveal, etc)
-	//10 for low importance. (Sending, light spells, etc)
-	//Blood cost when failing will be same as nutrition for now. Can be made more punishing in the future.
+	var/nutri_cost = 0 //The nutrition cost system has been removed in favor of a toolspeed penalty, but there's exactly one litany that still uses this one.
 
 	var/cooldown = FALSE
 	var/cooldown_time = 0

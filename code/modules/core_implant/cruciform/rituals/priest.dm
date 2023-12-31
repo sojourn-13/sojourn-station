@@ -1,14 +1,14 @@
 /datum/ritual/cruciform/priest
 	name = "priest"
-	phrase = null
+	phrase = null //An asterisk after the translated quote means it's original via Google Translate, not Scripture taken from the NIV.
 	desc = ""
-	category = "Initiation"
+	category = "Clerical"
 
 /datum/ritual/targeted/cruciform/priest
 	name = "priest targeted"
 	phrase = null
 	desc = ""
-	category = "Initiation"
+	category = "Clerical"
 
 /*
 	Penance
@@ -17,14 +17,11 @@
 
 /datum/ritual/targeted/cruciform/priest/penance
 	name = "Penance"
-	phrase = "Mihi vindicta \[Target human]"
-	desc = "Imparts extreme pain on the target disciple. Does no actual harm. Use this on someone who performs a heretical act."
+	phrase = "Dolor est dolor." //"Pain is just pain."*
+	desc = "Imparts extreme pain on the target disciple, but does no actual harm. Use this as part of Church discipline."
 	power = 35
-	category = "Devotion"
-	nutri_cost = 25//med cost
-	blood_cost = 25//med cost
 
-/datum/ritual/targeted/cruciform/priest/penance/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+/datum/ritual/targeted/cruciform/priest/penance/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
 
 	if(!CI || !CI.active || !CI.wearer)
@@ -44,12 +41,6 @@
 		return
 
 	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of penance")
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 	if (do_after(user, 20, H, TRUE))
 		T = get_turf(user)
 		if (!(T.Adjacent(get_turf(H))))
@@ -72,22 +63,15 @@
 
 /datum/ritual/cruciform/priest/selfheal
 	name = "Convalescence"
-	phrase = "Dominus autem dirigat corda vestra in caritate Dei et patientia deus."
-	desc = "Recover from the ravages of wounds and pain."
+	phrase = "Sana me, Domine, et sanabor: salvum me fac, et salvus ero: quoniam laus mea tu es." //"Heal me, Lord, and I will be healed; save me and I will be saved, for you are the one I praise."
+	desc = "Recover from the ravages of wounds and pain, healing yourself a moderate amount."
 	cooldown = TRUE
 	cooldown_time = 5 MINUTES
+	cooldown_category = "selfheal"
 	power = 35 //Healing yourself is slightly easier than healing someone else
 	category = "Vitae"
-	nutri_cost = 50//high cost
-	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/priest/selfheal/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C,list/targets)
-	if(H.species?.reagent_tag != IS_SYNTHETIC)
-		if(H.nutrition >= nutri_cost)
-			H.nutrition -= nutri_cost
-		else
-			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			H.vessel.remove_reagent("blood",blood_cost)
+/datum/ritual/cruciform/priest/selfheal/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C,list/targets)
 	if(H.species?.reagent_tag == IS_SYNTHETIC)
 		to_chat(H, SPAN_WARNING("You fail to cast the litany due to your non-organic body..."))
 		return FALSE
@@ -103,16 +87,15 @@
 
 /datum/ritual/cruciform/priest/heal_other
 	name = "Succour"
-	phrase = "Venite ad me, omnes qui laboratis, et onerati estis et ego reficiam vos."
+	phrase = "Venite ad me, omnes qui laboratis, et onerati estis et ego reficiam vos." //"Come to me, all you who are weary and burdened, and I will give you rest."
 	desc = "Restore the sanity of another nearby disciple."
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
+	cooldown_category = "succour"
 	power = 45
 	category = "Vitae"
-	nutri_cost = 60
-	blood_cost = 60
 
-/datum/ritual/cruciform/priest/heal_other/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+/datum/ritual/cruciform/priest/heal_other/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
 
 	if(!CI || !CI.active || !CI.wearer)
@@ -132,19 +115,14 @@
 		return
 
 	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of succor")
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 	if (do_after(user, 40, H, TRUE))
 		T = get_turf(user)
 		if (H.species?.reagent_tag == IS_SYNTHETIC)
 			to_chat(user, SPAN_DANGER("[H] is synthetic, healing them has no effect!"))
+			return FALSE
 		if (!(T.Adjacent(get_turf(H))))
 			to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
-			return
+			return FALSE
 		to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain.</span>")
 		H.reagents.add_reagent("laudanum", 5)
 		H.sanity.changeLevel(25)
@@ -154,29 +132,21 @@
 
 /datum/ritual/cruciform/priest/heal_heathen
 	name = "Divine Hymn"
-	phrase = "Ora pro nobis, qui non noverunt viam, hi sunt amissa, sed quia dilexit."
+	phrase = "Et circuibat Jesus omnes civitates, et castella, docens in synagogis eorum, et praedicans Evangelium regni, et curans omnem languorem, et omnem infirmitatem." //"Jesus went through all the towns and villages, teaching in their synagogues, proclaiming the good news of the kingdom and healing every disease and sickness."
 	desc = "Heal every person who can see and hear for a small amount, even if they do not have a cruciform. Can only be done every quarter hour and requires alot of power. Using this prayer prevents other similar prayers from being used for awhile."
 	cooldown = TRUE
 	cooldown_time = 15 MINUTES
 	cooldown_category = "dhymn"
 	power = 50
 	category = "Vitae"
-	nutri_cost = 50//high cost
-	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/priest/heal_heathen/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/priest/heal_heathen/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/list/people_around = list()
 	for(var/mob/living/carbon/human/H in view(user))
-		if(H != user && !isdeaf(H))
+		if(H != user)
 			people_around.Add(H)
 
 	if(people_around.len > 0)
-		if(user.species?.reagent_tag != IS_SYNTHETIC)
-			if(user.nutrition >= nutri_cost)
-				user.nutrition -= nutri_cost
-			else
-				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-				user.vessel.remove_reagent("blood",blood_cost)
 		to_chat(user, SPAN_NOTICE("Your feel the air thrum with an inaudible vibration."))
 		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 		for(var/mob/living/carbon/human/participant in people_around)
@@ -191,9 +161,10 @@
 
 /datum/ritual/cruciform/priest/heal_heathen/proc/heal_other(mob/living/carbon/human/participant)
 		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away your some of your pain.</span>")
-		participant.reagents.add_reagent("laudanum", 5, "bicaridine", 5, "kelotane", 5)
+		participant.reagents.add_reagent("laudanum", 5)
+		participant.adjustBruteLoss(-10)
+		participant.adjustFireLoss(-10)
 		participant.adjustOxyLoss(-20)
-		participant.sanity.changeLevel(15)
 		participant.updatehealth()
 
 /*
@@ -202,14 +173,12 @@
 */
 /datum/ritual/cruciform/priest/scrying
 	name = "Scrying"
-	phrase = "Ecce ego ad te et ad caelum. Scio omnes absconditis tuis. Vos can abscondere, tu es coram me: nudus."
-	desc = "Look into the world from the eyes of another believer. Strenuous and can only be maintained for half a minute. The target will sense they are being watched, but not by whom. This prayer requires power only primes and crusaders have."
+	phrase = "Quo ibo a spiritu tuo? et quo a facie tua fugiam?" //"Where can I go from your Spirit? Where can I flee from your presence?"
+	desc = "Look into the world from the eyes of another believer. Strenuous and can only be maintained for half a minute. The target will sense they are being watched, but not by whom. Requires power that only Primes and Crusaders possess."
 	power = 100
-	category = "Devotion"
-	nutri_cost = 50//high cost
-	blood_cost = 50//high cost
+	category = "Episcopal"
 
-/datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+/datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
 
 	if(!user.client)
 		return FALSE
@@ -231,12 +200,6 @@
 	eye.owner = eye
 	user.reset_view(eye)
 
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 
 	//After 30 seconds, your view is forced back to yourself
 	addtimer(CALLBACK(user, .mob/proc/reset_view, user), 300)
@@ -249,115 +212,13 @@
 		if(target.wearer && target.wearer.stat != DEAD)
 			return target
 
-/datum/ritual/cruciform/priest/epiphany
-	name = "Epiphany"
-	phrase = "In nomine Patris et Filii et Spiritus sancti."
-	desc = "The Absolute's principal sacrament is a ritual of baptism and merging with cruciform. A body, relieved of clothes should be placed on Absolute's special altar."
-	nutri_cost = 10//low cost
-	blood_cost = 10//low cost
-
-/datum/ritual/cruciform/priest/epiphany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
-	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
-
-	if(!CI)
-		fail("There is no cruciform on this one.", user, C)
-		return FALSE
-
-	if(!CI.wearer)
-		fail("Cruciform is not installed.", user, C)
-		return FALSE
-
-	if(CI.activated || CI.active)
-		fail("This cruciform already has a soul inside.", user, C)
-		return FALSE
-
-	if (CI.wearer.stat == DEAD)
-		fail("It is too late for this one, the soul has already left the vessel", user, C)
-		return FALSE
-
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
-	log_and_message_admins("successfully baptized [CI.wearer]")
-	to_chat(CI.wearer, "<span class='info'>Your cruciform vibrates and warms up.</span>")
-
-	CI.activate()
-
-	if(get_storyteller())	//Call objectives update to check inquisitor objective completion
-		get_storyteller().update_objectives()
-
-	return TRUE
-
-/* - This will be used later, when new cult arrive.
-/datum/ritual/cruciform/banish
-	name = "banish"
-	phrase = "Et ne inducas nos in tentationem, sed libera nos a malo"
-*/
-
-/*
-/datum/ritual/cruciform/priest/reincarnation
-	name = "Reincarnation"
-	phrase = "Vetus moritur et onus hoc levaverit"
-	desc = "A reunion of a spirit with it's new body, ritual of activation of a crucifrom, lying on the body. The process requires NeoTheology's special altar on which a body stripped of clothes is to be placed."
-
-/datum/ritual/cruciform/priest/reincarnation/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
-	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
-
-	if(!CI)
-		fail("There is no cruciform on this one", user, C)
-		return FALSE
-
-	var/datum/core_module/cruciform/cloning/data = CI.get_module(CRUCIFORM_CLONING)
-
-	if(!CI.wearer)
-		fail("Cruciform is not installed.", user, C)
-		return FALSE
-
-	if(!CI.activated)
-		fail("This cruciform doesn't have soul inside.", user, C)
-		return FALSE
-
-	if(CI.active)
-		fail("This cruciform already activated.", user, C)
-		return FALSE
-
-	if(CI.wearer.stat == DEAD)
-		fail("Soul cannot move to dead body.", user, C)
-		return FALSE
-
-	var/datum/mind/MN = data.mind
-	if(!istype(MN, /datum/mind))
-		fail("Soul is lost.", user, C)
-		return FALSE
-	if(MN.active)
-		if(data.ckey != ckey(MN.key))
-			fail("Soul is lost.", user, C)
-			return FALSE
-	if(MN.current && MN.current.stat != DEAD)
-		fail("Soul is lost.", user, C)
-		return FALSE
-
-	var/succ = CI.transfer_soul()
-
-	if(!succ)
-		fail("Soul transfer failed.", user, C)
-		return FALSE
-
-
-	return TRUE
-*/
-
 /datum/ritual/cruciform/priest/install
 	name = "Commitment"
-	phrase = "Unde ipse Dominus dabit vobis signum."
-	desc = "This litany will command a cruciform attach to person so you can perform an epiphany. Cruciform must lay near them."
-	nutri_cost = 10//low cost
-	blood_cost = 10//low cost
+	phrase = "Iter tuum para." //"Prepare for your journey."*
+	desc = "This litany will command a cruciform attach to person. Cruciform and the individual must lay on an altar."
+	power = 25
 
-/datum/ritual/cruciform/priest/install/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/priest/install/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/mob/living/carbon/human/H = get_victim(user)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
 	if(CI)
@@ -399,12 +260,6 @@
 		return FALSE
 
 	if(ishuman(H))
-		if(user.species?.reagent_tag != IS_SYNTHETIC)
-			if(user.nutrition >= nutri_cost)
-				user.nutrition -= nutri_cost
-			else
-				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-				user.vessel.remove_reagent("blood",blood_cost)
 		var/mob/living/carbon/human/M = H
 		var/obj/item/organ/external/E = M.organs_by_name[BP_CHEST]
 		for (var/i = 0; i < 5;i++)
@@ -417,14 +272,51 @@
 
 	return TRUE
 
+/datum/ritual/cruciform/priest/epiphany
+	name = "Epiphany"
+	phrase = "Satus iter ad infinitum." //"Begin your journey to infinity."*
+	desc = "The Absolute's principal sacrament is a ritual of baptism and merging with cruciform. A body, relieved of clothes should be placed on Absolute's special altar."
+	power = 25
+
+/datum/ritual/cruciform/priest/epiphany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
+
+	if(!CI)
+		fail("There is no cruciform on this one.", user, C)
+		return FALSE
+
+	if(!CI.wearer)
+		fail("Cruciform is not installed.", user, C)
+		return FALSE
+
+	if(CI.activated || CI.active)
+		fail("This cruciform already has a soul inside.", user, C)
+		return FALSE
+
+	if (CI.wearer.stat == DEAD)
+		fail("It is too late for this one, the soul has already left the vessel", user, C)
+		return FALSE
+
+	log_and_message_admins("successfully baptized [CI.wearer]")
+	to_chat(CI.wearer, "<span class='info'>Your cruciform vibrates and warms up.</span>")
+
+	CI.activate()
+
+	if(get_storyteller())	//Call objectives update to check inquisitor objective completion
+		get_storyteller().update_objectives()
+
+	return TRUE
+
+
+
+
 /datum/ritual/cruciform/priest/ejection
 	name = "Deprivation"
-	phrase = "Et revertatur pulvis in terram suam unde erat et spiritus redeat ad Deum qui dedit illum."
+	phrase = "Et revertatur pulvis in terram suam unde erat et spiritus redeat ad Deum qui dedit illum." //"and the dust returns to the ground it came from, and the spirit returns to God who gave it."
 	desc = "This litany will command a cruciform to detach from its bearer, if the one bearing it is dead."
-	nutri_cost = 10//low cost
-	blood_cost = 10//low cost
+	power = 10
 
-/datum/ritual/cruciform/priest/ejection/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/priest/ejection/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
 
 	if(!CI)
@@ -438,12 +330,6 @@
 	var/mob/M = CI.wearer
 
 	if(ishuman(M) && is_dead(M))
-		if(user.species?.reagent_tag != IS_SYNTHETIC)
-			if(user.nutrition >= nutri_cost)
-				user.nutrition -= nutri_cost
-			else
-				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-				user.vessel.remove_reagent("blood",blood_cost)
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/external/E = H.organs_by_name[BP_CHEST]
 		E.take_damage(15)
@@ -461,16 +347,15 @@
 		fail("Deprivation does not work upon the living.", user, C)
 		return FALSE
 
+/* We have the Remove Upgrade litany, we don't need this one
 /datum/ritual/cruciform/priest/unupgrade
 	name = "Asacris"
-	phrase = "A caelo usque ad centrum."
-	desc = "This litany will remove any upgrade from the target's cruciform implant. Usuable only by primes and crusaders."
-	power = 100
-	category = "Devotion"
-	nutri_cost = 50//high cost
-	blood_cost = 50//high cost
+	phrase = "Redi ad initium." //"Return to the beginning."*
+	desc = "This litany will remove any upgrade from the target's cruciform implant. Usuable only by primes."
+	power = 75
+	category = "Episcopal"
 
-/datum/ritual/cruciform/priest/unupgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/priest/unupgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
 
 	if(!CI)
@@ -481,83 +366,21 @@
 		fail("Cruciform is not installed.", user, C)
 		return FALSE
 
+	if(!C.get_module(CRUCIFORM_PRIME))
+		fail("Only Primes can perform this litany.")
+		return FALSE
+
 	if(!istype(CI.upgrades) || length(CI.upgrades) <= 0)
 		fail("There is no upgrades on this one.", user, C)
 		return FALSE
 
 	for(var/obj/item/coreimplant_upgrade/CU in CI.upgrades)
-		if(user.species?.reagent_tag != IS_SYNTHETIC)
-			if(user.nutrition >= nutri_cost)
-				user.nutrition -= nutri_cost
-			else
-				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-				user.vessel.remove_reagent("blood",blood_cost)
 		CU.remove()
 		log_and_message_admins("removed upgrade from [C] cruciform with asacris litany")
-		user.sanity.changeLevel(-50)
 
 	return TRUE
+	*/
 
-/datum/ritual/targeted/cruciform/priest/upgrade_kit
-	name = "Curaverunt"
-	phrase = "Dominus manum meam pro damnato in ovile redire voluerit."
-	desc = "Request an upgrade kit to restore a vector or prime's cruciform to its devout stage. This litany requires you to stand next to an altar."
-	power = 50
-	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a devout upgrade circuit slips out."
-	nutri_cost = 25//med cost
-	blood_cost = 25//med cost
-
-/datum/ritual/targeted/cruciform/priest/upgrade_kit/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
-	var/list/OBJS = get_front(user)
-
-	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
-
-	if(!altar)
-		fail("This is not your altar, the litany is useless.", user, C)
-		return FALSE
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
-	new /obj/item/coreimplant_upgrade/cruciform/priest(altar.loc)
-	set_personal_cooldown(user)
-
-/datum/ritual/cruciform/priest/initiation
-	name = "Initiation"
-	phrase = "Habe fiduciam in Domino ex toto corde tuo et ne innitaris prudentiae tuae, in omnibus viis tuis cogita illum et ipse diriget gressus tuos."
-	desc = "The second stage of granting a promotion to a disciple, upgrading them to a devout. The devout ascension kit is the first step."
-	power = 50
-	nutri_cost = 50//high cost
-	blood_cost = 50//high cost
-
-/datum/ritual/cruciform/priest/initiation/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
-	var/obj/item/implant/core_implant/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
-
-	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
-		fail("Cruciform not found",user,C)
-		return FALSE
-
-	if(CI.get_module(CRUCIFORM_PRIEST) || CI.get_module(CRUCIFORM_INQUISITOR))
-		fail("The target is already a devout.",user,C)
-		return FALSE
-
-	var/datum/core_module/activatable/cruciform/priest_convert/PC = CI.get_module(CRUCIFORM_PRIEST_CONVERT)
-
-	if(!PC)
-		fail("Target must have devout upgrade inside his cruciform.",user,C)
-		return FALSE
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
-	PC.activate()
-	log_and_message_admins("promoted disciple [C] to devout with initiation litany")
-
-	return TRUE
 
 ///////////////////////////////////////
 ///////////SHORT BOOST LITANIES////////
@@ -571,28 +394,21 @@
 	cooldown_time = 2 MINUTES
 	effect_time = 10 MINUTES
 	cooldown_category = "short_boost"
+	power = 50
 	category = "Words of Power"
 	var/list/stats_to_boost = list()
-	nutri_cost = 50//high cost
-	blood_cost = 50//high cost
 
 /datum/ritual/cruciform/priest/short_boost/New()
 	..()
 	desc = "This litany boosts [get_stats_to_text()] stats of everyone who hears you, for about ten minutes."
 
-/datum/ritual/cruciform/priest/short_boost/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/priest/short_boost/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/list/people_around = list()
 	for(var/mob/living/carbon/human/H in view(user))
 		if(H != user && !isdeaf(H))
 			people_around.Add(H)
 
 	if(people_around.len > 0)
-		if(user.species?.reagent_tag != IS_SYNTHETIC)
-			if(user.nutrition >= nutri_cost)
-				user.nutrition -= nutri_cost
-			else
-				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-				user.vessel.remove_reagent("blood",blood_cost)
 		to_chat(user, SPAN_NOTICE("Your feel the air thrum with an inaudible vibration."))
 		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 		for(var/mob/living/carbon/human/participant in people_around)
@@ -633,25 +449,25 @@
 
 /datum/ritual/cruciform/priest/short_boost/mental
 	name = "Grace of Perseverance"
-	phrase = "Domine petra mea et robur meum et salvator meus Deus meus fortis meus sperabo in eo scutum meum et cornu salutis meae susceptor meus."
+	phrase = "Patientia autem opus perfectum habet: ut sitis perfecti et integri in nullo deficientes." //"Let perseverance finish its work so that you may be mature and complete, not lacking anything."
 	stats_to_boost = list(STAT_MEC = 10, STAT_COG = 10, STAT_BIO = 10)
 
 /datum/ritual/cruciform/priest/short_boost/physical
 	name = "Canto of Courage"
-	phrase = "In Deo laudabo verbum in Domino praedicabo sermonem in Deo speravi non timebo quid faciat homo mihi."
+	phrase = "Ecce praecipio tibi: confortare, et esto robustus. Noli metuere, et noli timere: quoniam tecum est Dominus Deus tuus in omnibus ad quaecumque perrexeris." //"Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go."
 	stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
 
 /datum/ritual/cruciform/priest/records
 	name = "Baptismal Record"
-	phrase = "Memento nomina."
+	phrase = "Memento nomina." //"Remember the names."*
 	desc = "Requests a copy of the churches local parishoner records from your altar."
-	power = 30
+	power = 10
 	success_message = "On the verge of audibility you hear pleasant music, a piece of paper slides out from a slit in the altar."
 
-/datum/ritual/cruciform/priest/records/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/priest/records/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/list/OBJS = get_front(user)
 
-	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
+	var/obj/machinery/optable/altar/altar = locate(/obj/machinery/optable/altar) in OBJS
 
 	if(!altar)
 		fail("This is not your altar, the litany is useless.", user, C)
@@ -662,92 +478,62 @@
 	return TRUE
 
 /datum/ritual/cruciform/priest/new_cruciform
-	name = "Prayer of Reunion"
-	phrase = "Ego enim scio cogitationes quas cogito super vos, ait Dominus Deus: Non est nocere consilia, ut bene sit tibi, et tu non adflictionis ut dem vobis finem et patientiam."
+	name = "Request Cruciform"
+	phrase = "Cartographus, cruciformem da nobis." //"Cartographer, give us a cruciform"*
 	desc = "Request a new cruciform in the event someone wishes to join the fold or the one they had was destroyed. Requires the speaker to stand next to an altar."
 	power = 50
 	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a new cruciform slips out."
-	nutri_cost = 50//high cost
-	blood_cost = 50//high cost
 
-/datum/ritual/cruciform/priest/new_cruciform/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/priest/new_cruciform/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/list/OBJS = get_front(user)
 
-	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
+	var/obj/machinery/optable/altar/altar = locate(/obj/machinery/optable/altar) in OBJS
+	var/altar_cooldown = 10 MINUTES //How long we're going to make the altar wait before doing this again
 
 	if(!altar)
 		fail("This is not your altar, the litany is useless.", user, C)
 		return FALSE
 
 	if(altar)
+		if(altar.request_cooldown)
+			fail("This altar cannot provide another item yet.", user, C)
+			return FALSE
 		var/response = input(user, "Which cruciform do you require?") in list("Lemniscate","Tessellate","Monomial","Divisor","Factorial","No Path","Cancel Litany")
 		if (response == "Lemniscate")
 			new /obj/item/implant/core_implant/cruciform/lemniscate(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			return TRUE
 		if (response == "Tessellate")
 			new /obj/item/implant/core_implant/cruciform/tessellate(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			return TRUE
 		if (response == "Monomial")
 			new /obj/item/implant/core_implant/cruciform/monomial(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			return TRUE
 		if (response == "Divisor")
 			new /obj/item/implant/core_implant/cruciform/divisor(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			return TRUE
 		if (response == "Factorial")
 			new /obj/item/implant/core_implant/cruciform/factorial(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			return TRUE
 		if (response == "No Path")
 			new /obj/item/implant/core_implant/cruciform(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			return TRUE
 		if (response == "Cancel Litany")
 			fail("You decide not to obtain a cruciform at this time.", user, C)
 			return FALSE
 
 /datum/ritual/cruciform/priest/reactivation
-	name = "Reconsecration"
-	phrase = "Vetus moritur et onus hoc levaverit."
-	desc = "The ritual needed for the reactivation and repair of a cruciform that has been unwillingly separated from the body or destroyed by the bearer's death. The process requires an altar and the cruciform in question to be attached."
-	power = 50
-	nutri_cost = 50//high cost
-	blood_cost = 50//high cost
+	name = "Rededication"
+	phrase = "Revertere ad nos." //"Come back to us."*
+	desc = "Reactivates and repair of a cruciform that has been unwillingly separated from the body or destroyed by the bearer's death. The process requires an altar and the cruciform in question to be attached."
+	power = 30
 
-/datum/ritual/cruciform/priest/reactivation/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/priest/reactivation/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform, FALSE)
 
 	if(!CI)
@@ -759,19 +545,13 @@
 		return FALSE
 
 	if(CI.active)
-		fail("This cruciform is already consecrated.", user, C)
+		fail("This cruciform is already active.", user, C)
 		return FALSE
 
 	if (CI.wearer.stat == DEAD)
 		fail("The cruciform cannot be bound to a corpse.", user, C)
 		return FALSE
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
-	log_and_message_admins("successfully reconsecrated [CI.wearer]")
+	log_and_message_admins("successfully reactivated the cruciform of [CI.wearer]")
 	to_chat(CI.wearer, "<span class='info'>Your cruciform vibrates and warms up.</span>")
 
 	CI.activate()
@@ -779,8 +559,8 @@
 	return TRUE
 
 /datum/ritual/cruciform/priest/accelerated_growth
-	name = "Accelerated growth"
-	phrase = "Plantae crescere in divinum lumen tua."
+	name = "Accelerated Growth"
+	phrase = "Itaque neque qui plantat est aliquid, neque qui rigat: sed qui incrementum dat, Deus." //"So neither the one who plants nor the one who waters is anything, but only God, who makes things grow."
 	desc = "This litany boosts the growth of all plants in sight for about 5 minutes."
 	cooldown = TRUE
 	cooldown_time = 5 MINUTES
@@ -788,12 +568,10 @@
 	cooldown_category = "accelerated_growth"
 	power = 30
 	category = "Vitae"
-	nutri_cost = 25//med cost
-	blood_cost = 25//med cost
 
 	var/boost_value = 1.5  // How much the aging process of the plant is sped up
 
-/datum/ritual/cruciform/priest/accelerated_growth/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/priest/accelerated_growth/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 
 	var/list/plants_around = list()
 	for(var/obj/machinery/portable_atmospherics/hydroponics/H in view(user))
@@ -801,12 +579,6 @@
 			plants_around.Add(H.seed)
 
 	if(plants_around.len > 0)
-		if(user.species?.reagent_tag != IS_SYNTHETIC)
-			if(user.nutrition >= nutri_cost)
-				user.nutrition -= nutri_cost
-			else
-				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-				user.vessel.remove_reagent("blood",blood_cost)
 		to_chat(user, SPAN_NOTICE("You feel the air thrum with an inaudible vibration."))
 		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 		for(var/datum/seed/S in plants_around)
@@ -828,25 +600,20 @@
 		S.set_trait(TRAIT_BOOSTED_GROWTH, 1)
 
 /datum/ritual/cruciform/priest/mercy
-	name = "Hand of mercy"
-	phrase = "Non est verus dolor."
+	name = "Words of Mercy"
+	phrase = "Consolarer et ego vos sermonibus, et moverem caput meum super vos." //"But my mouth would encourage you; comfort from my lips would bring you relief."
 	desc = "Relieves the pain of a person in front of you."
-	power = 50
+	power = 40 //It's just pain relief
+	cooldown = TRUE
+	cooldown_time = 5 MINUTES
+	cooldown_category = "wmercy"
 	category = "Vitae"
-	nutri_cost = 25//med cost
-	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/priest/mercy/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/priest/mercy/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
 	if(!T)
 		fail("No target in front of you.", user, C)
 		return FALSE
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 	to_chat(T, SPAN_NOTICE("You feel slightly better as your pain eases."))
 	to_chat(user, SPAN_NOTICE("You ease the pain of [T.name]."))
 
@@ -855,26 +622,17 @@
 	return TRUE
 
 /datum/ritual/cruciform/priest/absolution
-	name = "Absolution of wounds"
-	phrase = "Surge et ambula."
+	name = "Absolution of Wounds"
+	phrase = "Surge, tolle grabatum tuum et ambula." //“Get up! Pick up your mat and walk.”
 	desc = "Stabilizes the health of a person in front of you."
 	power = 50
 	category = "Vitae"
-	nutri_cost = 25//med cost
-	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/priest/absolution/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+/datum/ritual/cruciform/priest/absolution/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
 	if(!T)
 		fail("No target in front of you.", user, C)
 		return FALSE
-
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 
 	to_chat(T, SPAN_NOTICE("You feel a soothing sensation in your veins."))
 	to_chat(user, SPAN_NOTICE("You stabilize [T.name]'s health."))
@@ -888,25 +646,17 @@
 
 /datum/ritual/cruciform/priest/purging
 	name = "Words of purging"
-	phrase = "Purificati a peccatis et in remissionem peccatorum."
-	desc = "Addictions are common afflictions among colony denizens. This litany helps those people by easing or removing their addictions."
-	power = 50
+	phrase = "Noli regibus dare vinum, quia nullum secretum est ubi regnat ebrietas." //"It is not for kings to drink wine, not for rulers to crave beer."
+	desc = "Addictions are common afflictions among colony denizens. This litany helps those people by pushing them through their addictions. Usually needs to be spoken multiple times."
+	power = 20 //Usually needs to be spoken multiple times, so allow that.
 	category = "Vitae"
-	nutri_cost = 25//med cost
-	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/priest/purging/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/priest/purging/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
 	if(!T)
 		fail("No target in front of you.", user, C)
 		return FALSE
 
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 	if(T.metabolism_effects.addiction_list.len)
 		for(var/addiction in T.metabolism_effects.addiction_list)
 			var/datum/reagent/R = addiction
@@ -928,17 +678,16 @@
 
 /datum/ritual/cruciform/priest/prosthetic
 	name = "Litany of wholeness"
-	phrase = "O absolutus! Dona mihi membra novus install a daemone pedisequus vester."
+	phrase = "O Absolutus! Improve corpus nostrum." //"O absolute! Improve our body"
 	desc = "This litany summon a prosthetic limb or implant to install on a follower."
 	power = 50
 	category = "Vitae"
-	nutri_cost = 25//med cost
-	blood_cost = 25//med cost
 
-/datum/ritual/cruciform/priest/prosthetic/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
+/datum/ritual/cruciform/priest/prosthetic/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/list/OBJS = get_front(user)
-	var/obj/machinery/optable/altar = locate(/obj/machinery/optable/altar) in OBJS
+	var/obj/machinery/optable/altar/altar = locate(/obj/machinery/optable/altar) in OBJS
 	var/O = "prosthetic limb"
+	var/altar_cooldown = 10 MINUTES
 	success_message = "On the verge of audibility you hear pleasant music, the altar slides open and a [O] slips out."
 
 	if(!altar)
@@ -946,140 +695,248 @@
 		return FALSE
 
 	if(altar)
+		if(altar.request_cooldown)
+			fail("This altar cannot provide another item yet.", user, C)
+			return FALSE
 		var/response = input(user, "What limb do you require?") in list("Right Arm", "Left Arm", "Right Leg", "Left Leg", "Longsword", "Ritual Knife", "Bible", "Cancel Litany")
 		if (response == "Right Arm")
 			new /obj/item/organ/external/robotic/church/r_arm(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			return TRUE
 		if (response == "Left Arm")
 			new /obj/item/organ/external/robotic/church/l_arm(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			return TRUE
 		if (response == "Right Leg")
 			new /obj/item/organ/external/robotic/church/r_leg(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			return TRUE
 		if (response == "Left Leg")
 			new /obj/item/organ/external/robotic/church/l_leg(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			return TRUE
 		if (response == "Longsword")
 			new /obj/item/organ_module/active/simple/armblade/longsword(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			O = "longsword"
 			return TRUE
 		if (response == "Ritual Knife")
 			new /obj/item/organ_module/active/simple/armblade/ritual(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			O = "ritual knife"
 			return TRUE
 		if (response == "Bible")
 			new /obj/item/organ_module/active/simple/bible(altar.loc)
-			if(user.species?.reagent_tag != IS_SYNTHETIC)
-				if(user.nutrition >= nutri_cost)
-					user.nutrition -= nutri_cost
-				else
-					to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-					user.vessel.remove_reagent("blood",blood_cost)
+			altar.cooldown(altar_cooldown)
 			O = "bible"
 			return TRUE
 		if (response == "Cancel Litany")
 			fail("You decide not to obtain a prosthetic at this time.", user, C)
 			return FALSE
 
-/datum/ritual/cruciform/priest/adoption
-	name = "Adoption"
-	phrase = "Dervans semitas iustitiae et vias sanctorum custodiens."
-	desc = "Opens church doors for target disciple."
-	power = 15
+//Promotions and Access litanies
+/datum/ritual/targeted/cruciform/priest/upgrade_kit
+	name = "Prepare the Way"
+	phrase = "Vox clamantis in deserto: Parate viam Domini, rectas facite in solitudine semitas Dei nostri." //"A voice of one calling: 'In the wilderness prepare the way for the Lord; make straight in the desert a highway for our God.'"
+	desc = "Request an upgrade kit that enables a cruciform to be Consecrated, elevating the individual to a Prime. The actual ritual of Consecration must be performed by a Prime."
+	power = 50 //You can have a Vector get you the upgrade as part of preparing for a consecration.
+	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a devout upgrade circuit slips out."
 
-/datum/ritual/cruciform/priest/adoption/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
-	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
+/datum/ritual/targeted/cruciform/priest/upgrade_kit/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
+	var/list/OBJS = get_front(user)
+
+	var/obj/machinery/optable/altar/altar = locate(/obj/machinery/optable/altar) in OBJS
+	var/altar_cooldown = 10 MINUTES
+
+	if(!altar)
+		fail("This is not your altar, the litany is useless.", user, C)
+		return FALSE
+	if(altar.request_cooldown)
+		fail("This altar cannot provide another item yet.", user, C)
+		return FALSE
+	new /obj/item/coreimplant_upgrade/cruciform/priest(altar.loc)
+	altar.cooldown(altar_cooldown)
+	set_personal_cooldown(user)
+
+/datum/ritual/cruciform/priest/initiation
+	name = "Consecration"
+	phrase = "Sollicite cura teipsum probabilem exhibere Deo, operarium inconfusibilem, recte tractantem verbum veritatis." //"Do your best to present yourself to God as one approved, a worker who does not need to be ashamed and who correctly handles the word of truth."
+	desc = "The second stage of granting a promotion to a disciple, upgrading them to a Prime. The devout ascension kit is the first step. This litany requires power that only Primes and Crusaders have."
+	power = 100
+	category = "Episcopal"
+
+/datum/ritual/cruciform/priest/initiation/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
+	var/obj/item/implant/core_implant/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
 
 	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
-		fail("Cruciform not found", user, C)
+		fail("Cruciform not found.",user,C)
 		return FALSE
 
-	CI.security_clearance = CLEARANCE_COMMON
+	if(CI.get_module(CRUCIFORM_PRIME))
+		fail("The target is already a Prime.",user,C)
+		return FALSE
+
+	var/datum/core_module/activatable/cruciform/priest_convert/PC = CI.get_module(CRUCIFORM_PRIEST_CONVERT)
+
+	if(!PC)
+		fail("Target must have devout upgrade inside his cruciform.",user,C)
+		return FALSE
+	PC.activate()
+	log_and_message_admins("promoted disciple [C] to devout with the Consecration litany")
+
 	return TRUE
 
 /datum/ritual/cruciform/priest/ordination
 	name = "Ordination"
+	phrase = "Si quis episcopatum desiderat, bonum opus desiderat." //"Whoever aspires to be an overseer desires a noble task."
+	desc = "Grants target disciple access to Vector litanies. Should be accompanied by Adoption in the case of full promotions."
+	power = 50
+
+/datum/ritual/cruciform/priest/ordination/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
+
+	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
+		fail("Cruciform not found.", user, C)
+		return FALSE
+
+	if(CI.get_module(CRUCIFORM_CLERGY))
+		fail("Disciple is already a Vector.", user, C)
+		return FALSE
+	else
+		CI.make_vector()
+	return TRUE
+
+/datum/ritual/cruciform/priest/reduction
+	name = "Reduction"
+	phrase = "Nolite plures magistri fieri fratres mei, scientes quoniam majus judicium sumitis." //"Not many of you should become teachers, my fellow believers, because you know that we who teach will be judged more strictly."
+	desc = "Returns a Vector or Prime cruciform to its lay state. Can only be performed by Primes and Inquisitors. Reducing a Prime can only be done by an Inquisitor."
+	power = 100
+	category = "Episcopal"
+
+/datum/ritual/cruciform/priest/reduction/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
+
+	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
+		fail("Cruciform not found.", user, C)
+		return FALSE
+
+	if(!C.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR)) //Power requirement *and* status check because we don't want Crusaders using this
+		fail("Only Primes have the authority to perform Reduction.", user, C)
+
+	if(CI.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_OMNI)) //Considering both Inquisitors and Omnis should be admin-spawn only I don't know why this would ever pass, but here it is
+		fail("Only the Cartographer and the Fundamentals may reduce an Inquisitor.", user, C)
+		return FALSE
+
+	if(!CI.get_module(CRUCIFORM_PRIME) && !CI.get_module(CRUCIFORM_CLERGY))
+		fail("Target is already a layperson.", user, C)
+		return FALSE
+	else if (CI.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR))
+		fail("Only an Inquisitor may reduce another Prime.", user, C)
+		return FALSE
+	else
+		CI.make_common()
+		return TRUE
+
+/datum/ritual/cruciform/priest/separation
+	name = "Separation"
+	phrase = "Si autem ecclesiam non audierit, sit tibi sicut ethnicus et publicanus." //"If they refuse to listen even to the church, treat them as you would a pagan or a tax collector."
+	desc = "Deactivates and removes a cruciform from the target. Can only be performed by Primes and Inquisitors. Separating a Prime can only be done by an Inquisitor."
+	power = 100
+	category = "Episcopal"
+
+/datum/ritual/cruciform/priest/separation/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
+	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
+		fail("Cruciform not found.", user, C)
+		return FALSE
+	var/mob/living/carbon/human/H = CI.wearer
+	if(!C.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR)) //Power requirement *and* status check because we don't want Crusaders using this
+		fail("Only Primes have the authority to perform Separation.", user, C)
+		return FALSE
+	else if (CI.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR))
+		fail("Only Inquisitors have the authority to perform Separation on another Prime.", user, C)
+	else
+		CI.name = "[H]'s Cruciform"
+		CI.deactivate()
+		CI.uninstall()
+		to_chat(H, SPAN_DANGER("You feel a cold emptiness as you are cut off from the Absolute and the faithful. Your cruciform falls from your chest and down to the floor, lifeless."))
+		to_world("The cruciform of [H] falls to the ground, inactive.")
+		log_and_message_admins("removed [H]'s cruciform with the Separation litany.")
+
+/datum/ritual/cruciform/priest/adoption
+	name = "Adoption"
+	phrase = "In domo Patris mei mansiones multae sunt; si quominus dixissem vobis: quia vado parare vobis locum." //"My Father’s house has many rooms; if that were not so, would I have told you that I am going there to prepare a place for you?"
+	desc = "Opens church doors for target disciple."
+	power = 25
+
+/datum/ritual/cruciform/priest/adoption/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
+
+	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
+		fail("Cruciform not found.", user, C)
+		return FALSE
+
+	var/designation = alert("Do you wish to give access to common or clergy (Prime) doors?", "Litany of Adoption", "Common","Clergy")
+	if(designation == "Common")
+		CI.security_clearance = CLEARANCE_COMMON
+	else if(designation == "Clergy")
+		if(C.security_clearance < CLEARANCE_CLERGY) //No more Vectors letting each other into the Prime's office
+			fail("You cannot give access to doors you yourself lack access to.")
+			return FALSE
+		else
+			CI.security_clearance = CLEARANCE_CLERGY
+	return TRUE
+
+/*
+/datum/ritual/cruciform/priest/passage
+	name = "Passage"
 	phrase = "Gloriam sapientes possidebunt stultorum exaltatio ignominia."
 	desc = "Opens clergy doors for target disciple."
 	power = 15
 
-/datum/ritual/cruciform/priest/ordination/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+/datum/ritual/cruciform/priest/passage/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
 
 	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
-		fail("Cruciform not found", user, C)
+		fail("Cruciform not found.", user, C)
 		return FALSE
 
 	CI.security_clearance = CLEARANCE_CLERGY
 	return TRUE
+	*/
 
 /datum/ritual/cruciform/priest/omission
 	name = "Omission"
-	phrase = "Via impiorum tenebrosa nesciunt ubi corruant."
-	desc = "Removes all access from target disciple's cruciform."
-	power = 30
+	phrase = "Et clausa est janua." //"And the door was shut."
+	desc = "Removes all access from target disciple's cruciform. Cannot be used on those of the same or higher rank."
+	power = 25
 
-/datum/ritual/cruciform/priest/omission/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+/datum/ritual/cruciform/priest/omission/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
 	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
 
 	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
-		fail("Cruciform not found", user, C)
+		fail("Cruciform not found.", user, C)
 		return FALSE
 
-	if(CI.get_module(CRUCIFORM_INQUISITOR))
-		fail("You don\'t have the authority for this.", user, C)
+	if((CI.get_module(CRUCIFORM_CLERGY) && !C.get_module(CRUCIFORM_PRIME)) || (CI.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR)) || (CI.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_OMNI))) //This can't be used on someone of the same or higher rank. Vectors can't use it on each other, only Inquisitors can use it on Primes, and only Apostles can use it on inquisitors
+		fail("You lack the authority to perform this on this person.", user, C)
 		return FALSE
 
 	CI.security_clearance = CLEARANCE_NONE
+	log_and_message_admins("removed Church door access from [CI.wearer].")
 	return TRUE
 
-//Etops
+//Will of the Protector litanies
 
 /datum/ritual/cruciform/priest/offering/buy_item
 	name = "Order armaments"
-	phrase = "Et qui non habet, vendat tunicam suam et emat gladium."
+	phrase = "Induite vos armaturam Dei, ut possitis stare adversus insidias diaboli." //"Put on the full armor of God, so that you can take your stand against the devil’s schemes."
 	desc = "Allows you to spend favor to unlock disks from the lower temples through the will of the protector."
 	success_message = "Your prayers have been heard."
 	fail_message = "Your prayers have not been answered."
 	power = 20
 
-/datum/ritual/cruciform/priest/offering/buy_item/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C, targets)
+/datum/ritual/cruciform/priest/offering/buy_item/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C, targets)
 	var/list/OBJS = get_front(H)
 
 	var/obj/machinery/power/eotp/EOTP = locate(/obj/machinery/power/eotp) in OBJS
@@ -1092,15 +949,15 @@
 
 
 /datum/ritual/cruciform/priest/offering
-	name = "Offerings"
-	category = "Offerings"
-	success_message = "Tus plegarais han sido escuchadas."
+	name = "Offering"
+	category = "Offering"
+	success_message = "Your prayers were heard."
 	fail_message = "Your offerings are not worthy."
 	power = 30
 	var/list/req_offerings = list()
 	var/list/miracles = list(ALERT, INSPIRATION, STAT_BUFF, ENERGY_REWARD)
 
-/datum/ritual/cruciform/priest/offering/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C, targets)
+/datum/ritual/cruciform/priest/offering/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C, targets)
 	var/list/OBJS = get_front(H)
 
 	var/obj/machinery/power/eotp/EOTP = locate(/obj/machinery/power/eotp) in OBJS
@@ -1169,32 +1026,28 @@
 
 /datum/ritual/cruciform/priest/offering/call_for_arms
 	name = "Inspiration"
-	phrase = "Pater da mihi fortitudinem cladem ad malum."
-	desc = "Make an appeal to the Will of the Protector by offering ten plasteel, twenty steel, and sixty biomatter to guide its power towards inspiring disciples. \
-	Your offering also increases the protectors armanents reserves."
+	phrase = "Tollite jugum meum super vos, et discite a me, quia mitis sum, et humilis corde: et invenietis requiem animabus vestris." //"Take my yoke upon you and learn from me, for I am gentle and humble in heart, and you will find rest for your souls."
+	desc = "Make an appeal to the Will of the Protector by offering ten plasteel, twenty steel, and sixty biomatter to guide its power towards inspiring disciples.	Your offering also increases the protectors armanents reserves."
 	req_offerings = list(/obj/item/stack/material/plasteel = 10, /obj/item/stack/material/steel = 20, /obj/item/stack/material/biomatter = 60)
 	miracles = list(INSPIRATION)
 
 /datum/ritual/cruciform/priest/offering/divine_intervention
-	name = "Divine intervention"
-	phrase = "Auxilium instaurarent domum tuam."
-	desc = "Make an appeal to the Will of the Protector by offering two hundred and forty biomatter to guide its power towards enhancing the abilities of disciples. \
-	Your offering also increases the protectors armanents reserves."
+	name = "Divine Intervention"
+	phrase = "Si quis autem vestrum indiget sapientia, postulet a Deo, qui dat omnibus affluenter, et non improperat: et dabitur ei." //"If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you."
+	desc = "Make an appeal to the Will of the Protector by offering two hundred and forty biomatter to guide its power towards enhancing the abilities of disciples. Your offering also increases the protectors armanents reserves."
 	req_offerings = list(/obj/item/stack/material/biomatter = 240)
 	miracles = list(STAT_BUFF)
 
 /datum/ritual/cruciform/priest/offering/holy_guidance
-	name = "Holy guidance"
-	phrase = "Domine deus, lux via."
-	desc = "Make an appeal to the Will of the Protector by offering an oddity and forty grown fruits to guide its power towards enhancing cruciform power restoration among disciples. \
-	Your offering also increases the protectors armanents reserves."
+	name = "Holy Guidance"
+	phrase = "Fortitudo mea, et laus mea Dominus, et factus est mihi in salutem." //"The Lord is my strength and my defense; he has become my salvation."
+	desc = "Make an appeal to the Will of the Protector by offering an oddity and forty grown fruits to guide its power towards enhancing cruciform power restoration among disciples. Your offering also increases the protectors armanents reserves."
 	req_offerings = list(/obj/item/oddity = 1, /obj/item/reagent_containers/food/snacks/grown = 40)
 	miracles = list(ENERGY_REWARD)
 
 /datum/ritual/cruciform/priest/offering/alert
 	name = "Discern Malcontents"
-	phrase = "E tenebris educ."
-	desc = "Make an appeal to the Will of the Protector by offering one hundred and twenty biomatter and twenty grown fruits to guide its power towards potentially discovering evil creatures. \
-	Your offering also increases the protectors armanents reserves."
+	phrase = "Nam etsi ambulavero in medio umbrae mortis, non timebo mala, quoniam tu mecum es. Virga tua, et baculus tuus, ipsa me consolata sunt." //"Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me."
+	desc = "Make an appeal to the Will of the Protector by offering one hundred and twenty biomatter and twenty grown fruits to guide its power towards potentially discovering evil creatures. Your offering also increases the protectors armanents reserves."
 	req_offerings = list(/obj/item/stack/material/biomatter = 120, /obj/item/reagent_containers/food/snacks/grown = 20)
 	miracles = list(ALERT)

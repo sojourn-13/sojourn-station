@@ -6,16 +6,12 @@
 	implant_type = /obj/item/implant/core_implant/cruciform
 	category = "Apostle"
 	power = 30
-	nutri_cost = 0
-	blood_cost = 0
 
 /datum/ritual/targeted/cruciform/omni
 	name = "omni targeted"
 	implant_type = /obj/item/implant/core_implant/cruciform
 	category = "Apostle"
 	power = 30
-	nutri_cost = 0
-	blood_cost = 0
 
 //Healing litanies
 //Omni healing litanies are extremely powerful but expensive to use, they have no/short cooldown like lesser litanies to encourage their use.
@@ -28,12 +24,6 @@
 	power = 85
 
 /datum/ritual/cruciform/omni/purify/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/C,list/targets)
-	if(H.species?.reagent_tag != IS_SYNTHETIC)
-		if(H.nutrition >= nutri_cost)
-			H.nutrition -= nutri_cost
-		else
-			to_chat(H, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			H.vessel.remove_reagent("blood",blood_cost)
 	to_chat(H, "<span class='info'>You feel the grace and intervention of a higher power, mending your body.</span>")
 	H.reagents.add_reagent("laudanum", 10)
 	H.adjustBruteLoss(-200)
@@ -72,23 +62,13 @@
 		return
 
 	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of divine intervention")
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 	if (do_after(user, 40, H, TRUE))
 		T = get_turf(user)
 		if (!(T.Adjacent(get_turf(H))))
 			to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
 			return
 		to_chat(H, "<span class='info'>You feel the grace and intervention of a higher power, mending your body.</span>")
-		H.reagents.add_reagent("laudanum", 10)
-		H.adjustBruteLoss(-200)
-		H.adjustFireLoss(-200)
-		H.adjustOxyLoss(-200)
-		H.adjustBrainLoss(-60)
+		H.rejuvenate() //Rather than fix this for Erismed, just making it an actual aheal as it's supposed to be. It's a power granted only to admin characters anyway.
 		H.updatehealth()
 		set_personal_cooldown(user)
 		return TRUE
@@ -109,12 +89,6 @@
 			people_around.Add(H)
 
 	if(people_around.len > 0)
-		if(user.species?.reagent_tag != IS_SYNTHETIC)
-			if(user.nutrition >= nutri_cost)
-				user.nutrition -= nutri_cost
-			else
-				to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-				user.vessel.remove_reagent("blood",blood_cost)
 		to_chat(user, SPAN_NOTICE("Your feel the air thrum with an inaudible vibration."))
 		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 		for(var/mob/living/carbon/human/participant in people_around)
@@ -152,12 +126,6 @@
 
 /datum/ritual/cruciform/omni/empower/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/list/people_around = list()
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 	for(var/mob/living/carbon/human/H in view(user))
 		if(H != user && !isdeaf(H))
 			people_around.Add(H)
@@ -214,20 +182,12 @@
 	desc = "Cures the person in front of you of all genetic instability and clone damage while removing all forms of genetic mutation. This litany requires a great deal of power and thus may \
 	only be used once per hour."
 	power = 50
-	nutri_cost = 100
-	blood_cost = 50
 
 /datum/ritual/cruciform/omni/canticle_of_absolution/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
 	if(!T)
 		fail("No target in front of you.", user, C)
 		return FALSE
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 	to_chat(T, SPAN_NOTICE("You feel your body returning to its natural state."))
 	to_chat(user, SPAN_NOTICE("You bring [T.name] back to their natural state."))
 

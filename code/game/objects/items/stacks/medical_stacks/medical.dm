@@ -198,8 +198,7 @@
 	if(CI.path == "tess" || CI.path == "omni")
 		return TRUE
 
-	//Redlight is prists only
-	if (CI.get_module(CRUCIFORM_REDLIGHT))
+	if (CI.get_module(CRUCIFORM_PRIME))
 		return TRUE
 
 	if (CI.get_module(CRUCIFORM_INQUISITOR))

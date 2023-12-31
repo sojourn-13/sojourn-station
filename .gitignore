@@ -224,3 +224,5 @@ aux*.pdb
 
 # Screenshot tests
 /artifacts
+
+tgui/public/
