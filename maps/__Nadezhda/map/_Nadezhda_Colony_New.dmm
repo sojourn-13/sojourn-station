@@ -11543,6 +11543,12 @@
 /area/nadezhda/command/smc/quarters)
 "cCf" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/westright{
+	name = "Chemistry Desk";
+	req_access = list(33);
+	dir = 1
+	},
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -11551,7 +11557,6 @@
 	name = "Medbay Total Lockdown";
 	opacity = 0
 	},
-/obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/chemistry)
 "cCj" = (
@@ -17840,8 +17845,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai)
 "dSd" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/chemistry)
 "dSm" = (
 /obj/structure/cable/green{
@@ -45399,17 +45404,21 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/bridge)
 "jJp" = (
-/obj/structure/mirror{
-	dir = 8;
-	pixel_x = -28
-	},
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/syringe/stim/greasy_lard{
-	pixel_x = 10
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/toxin{
+	pixel_y = -10
 	},
-/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
-/obj/item/reagent_containers/syringe/stim/ultra_surgeon{
-	pixel_x = -5
+/obj/item/storage/firstaid/toxin{
+	pixel_y = -10
+	},
+/obj/item/storage/firstaid/toxin{
+	pixel_y = -10
+	},
+/obj/item/storage/firstaid/toxin{
+	pixel_y = -10
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/medical/sleeper)
@@ -48269,11 +48278,17 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "kpb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/medical_stand{
-	pixel_x = -22
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "MedbayTotalLockdown";
+	layer = 2.6;
+	name = "Medbay Total Lockdown";
+	opacity = 0
 	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/cryo)
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/nadezhda/medical/chemistry)
 "kpi" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -52264,8 +52279,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "lkQ" = (
-/obj/machinery/electrolyzer,
-/obj/structure/table/reinforced,
+/obj/machinery/chem_master,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/chemistry)
@@ -69834,12 +69848,12 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "oRv" = (
-/obj/machinery/door/airlock/glass_medical{
-	name = "Chemistry Lab";
-	req_access = list(33)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/medical_stand{
+	pixel_x = -22
 	},
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/medical/chemistry)
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/cryo)
 "oRB" = (
 /obj/machinery/vending/coffee,
 /obj/structure/window/reinforced{
@@ -75265,7 +75279,10 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical)
 "pXf" = (
-/turf/simulated/floor/carpet/sblucarpet,
+/obj/machinery/electrolyzer,
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/chemistry)
 "pXp" = (
 /turf/simulated/shuttle/wall/mining{
@@ -76109,24 +76126,8 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "qgT" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/toxin{
-	pixel_y = -10
-	},
-/obj/item/storage/firstaid/toxin{
-	pixel_y = -10
-	},
-/obj/item/storage/firstaid/toxin{
-	pixel_y = -10
-	},
-/obj/item/storage/firstaid/toxin{
-	pixel_y = -10
-	},
-/turf/simulated/floor/tiled/white/cargo,
-/area/nadezhda/medical/sleeper)
+/turf/simulated/floor/carpet/sblucarpet,
+/area/nadezhda/medical/chemistry)
 "qhb" = (
 /obj/machinery/light_switch{
 	pixel_y = 32
@@ -95568,10 +95569,20 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "uiH" = (
-/obj/machinery/chem_master,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/chemistry)
+/obj/structure/mirror{
+	dir = 8;
+	pixel_x = -28
+	},
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/syringe/stim/greasy_lard{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
+/obj/item/reagent_containers/syringe/stim/ultra_surgeon{
+	pixel_x = -5
+	},
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/medical/sleeper)
 "uiJ" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
@@ -101552,8 +101563,11 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/hallway/side/f2section1)
 "vvo" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/tiled/white/monofloor,
+/obj/machinery/door/airlock/glass_medical{
+	name = "Chemistry Lab";
+	req_access = list(33)
+	},
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/chemistry)
 "vvu" = (
 /obj/machinery/door/firedoor/multi_tile{
@@ -106560,21 +106574,7 @@
 /area/nadezhda/security/prisoncells)
 "wvv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/reinforced,
-/obj/machinery/door/window/westright{
-	name = "Chemistry Desk";
-	req_access = list(33);
-	dir = 1
-	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "MedbayTotalLockdown";
-	layer = 2.6;
-	name = "Medbay Total Lockdown";
-	opacity = 0
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
+/turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/chemistry)
 "wvy" = (
 /obj/random/flora/small_jungle_tree,
@@ -168216,9 +168216,9 @@ kRx
 dKD
 bpa
 hco
-kpb
+oRv
 vve
-kpb
+oRv
 ogc
 nbl
 cZb
@@ -169213,7 +169213,7 @@ dPU
 dPU
 nhN
 vIr
-cCf
+kpb
 iIq
 evl
 fws
@@ -169415,7 +169415,7 @@ cZb
 dPU
 meF
 vIr
-wvv
+cCf
 qnB
 mWR
 sDz
@@ -169821,10 +169821,10 @@ pur
 tfM
 fws
 ebY
-dSd
+wvv
 gIk
-pXf
-oRv
+qgT
+vvo
 uhB
 btQ
 umh
@@ -170225,7 +170225,7 @@ nhN
 otu
 fws
 eDh
-dSd
+wvv
 gIk
 vvQ
 fws
@@ -170629,7 +170629,7 @@ aYB
 fhV
 fws
 pBl
-dSd
+wvv
 ntE
 oJN
 fws
@@ -170831,7 +170831,7 @@ thK
 bvf
 enD
 svn
-dSd
+wvv
 ntE
 pug
 duz
@@ -171236,7 +171236,7 @@ vIr
 fws
 gyZ
 tSa
-lkQ
+pXf
 mLo
 sVE
 xEp
@@ -171438,9 +171438,9 @@ vIr
 klE
 wbu
 jMk
+wvv
+wvv
 dSd
-dSd
-vvo
 kHv
 pwX
 yeQ
@@ -171454,8 +171454,8 @@ xmb
 dwK
 qUI
 stb
+uiH
 jJp
-qgT
 bbA
 rIX
 onp
@@ -171842,7 +171842,7 @@ bok
 enD
 vyg
 jMk
-dSd
+wvv
 bKW
 otc
 pYc
@@ -172044,7 +172044,7 @@ rqH
 fws
 qFl
 sKs
-uiH
+lkQ
 mTl
 fws
 slp
