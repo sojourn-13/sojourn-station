@@ -27638,6 +27638,9 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/crew_quarters/sleep/cryo2)
+"fVl" = (
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/medical/sleeper)
 "fVn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -45408,10 +45411,6 @@
 /obj/item/reagent_containers/syringe/stim/ultra_surgeon{
 	pixel_x = -5
 	},
-/obj/item/device/defib_kit/compact/combat/adv/loaded,
-/obj/item/cell/medium/high{
-	pixel_y = 9
-	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/medical/sleeper)
 "jJr" = (
@@ -47943,9 +47942,21 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/crew_quarters/dorm3)
 "klE" = (
-/obj/machinery/atmospherics/unary/vent_scrubber,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "MedbayTotalLockdown";
+	layer = 2.6;
+	name = "Medbay Total Lockdown";
+	opacity = 0
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/westright{
+	dir = 1;
+	name = "Chemistry Desk";
+	req_access = list(33)
+	},
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/chemistry)
 "klG" = (
 /obj/structure/disposalpipe/segment{
@@ -52253,7 +52264,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "lkQ" = (
-/obj/machinery/chem_master,
+/obj/machinery/electrolyzer,
+/obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/chemistry)
@@ -69822,18 +69834,8 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "oRv" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "MedbayTotalLockdown";
-	layer = 2.6;
-	name = "Medbay Total Lockdown";
-	opacity = 0
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/door/window/westright{
-	dir = 1;
-	name = "Chemistry Desk";
+/obj/machinery/door/airlock/glass_medical{
+	name = "Chemistry Lab";
 	req_access = list(33)
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
@@ -75263,8 +75265,8 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical)
 "pXf" = (
-/turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/medical/sleeper)
+/turf/simulated/floor/carpet/sblucarpet,
+/area/nadezhda/medical/chemistry)
 "pXp" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "11,2";
@@ -76107,23 +76109,24 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "qgT" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/westright{
-	name = "Chemistry Desk";
-	req_access = list(33);
-	dir = 1
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/toxin{
+	pixel_y = -10
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "MedbayTotalLockdown";
-	layer = 2.6;
-	name = "Medbay Total Lockdown";
-	opacity = 0
+/obj/item/storage/firstaid/toxin{
+	pixel_y = -10
 	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/medical/chemistry)
+/obj/item/storage/firstaid/toxin{
+	pixel_y = -10
+	},
+/obj/item/storage/firstaid/toxin{
+	pixel_y = -10
+	},
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/medical/sleeper)
 "qhb" = (
 /obj/machinery/light_switch{
 	pixel_y = 32
@@ -95565,7 +95568,9 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/sechall)
 "uiH" = (
-/turf/simulated/floor/carpet/sblucarpet,
+/obj/machinery/chem_master,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/chemistry)
 "uiJ" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -101547,10 +101552,8 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/hallway/side/f2section1)
 "vvo" = (
-/obj/machinery/electrolyzer,
-/obj/structure/table/reinforced,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/chemistry)
 "vvu" = (
 /obj/machinery/door/firedoor/multi_tile{
@@ -106556,8 +106559,22 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
 "wvv" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/tiled/white/monofloor,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/westright{
+	name = "Chemistry Desk";
+	req_access = list(33);
+	dir = 1
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "MedbayTotalLockdown";
+	layer = 2.6;
+	name = "Medbay Total Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/chemistry)
 "wvy" = (
 /obj/random/flora/small_jungle_tree,
@@ -106947,25 +106964,6 @@
 	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
-"wAc" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/toxin{
-	pixel_y = -10
-	},
-/obj/item/storage/firstaid/toxin{
-	pixel_y = -10
-	},
-/obj/item/storage/firstaid/toxin{
-	pixel_y = -10
-	},
-/obj/item/storage/firstaid/toxin{
-	pixel_y = -10
-	},
-/turf/simulated/floor/tiled/white/cargo,
-/area/nadezhda/medical/sleeper)
 "wAd" = (
 /obj/structure/sign/directions/room1,
 /turf/simulated/wall,
@@ -108038,11 +108036,9 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/security/prisoncells)
 "wMr" = (
-/obj/machinery/door/airlock/glass_medical{
-	name = "Chemistry Lab";
-	req_access = list(33)
-	},
-/turf/simulated/floor/tiled/steel/gray_perforated,
+/obj/machinery/atmospherics/unary/vent_scrubber,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/chemistry)
 "wMu" = (
 /obj/structure/catwalk,
@@ -131053,7 +131049,7 @@ aeZ
 joP
 pja
 rlJ
-pXf
+fVl
 xDH
 crv
 qUI
@@ -131457,7 +131453,7 @@ wrE
 wHU
 jwA
 rLm
-pXf
+fVl
 crv
 mbd
 qUI
@@ -169419,7 +169415,7 @@ cZb
 dPU
 meF
 vIr
-qgT
+wvv
 qnB
 mWR
 sDz
@@ -169623,7 +169619,7 @@ nhN
 vIr
 qmF
 tHy
-klE
+wMr
 mhk
 juj
 rXm
@@ -169827,8 +169823,8 @@ fws
 ebY
 dSd
 gIk
-uiH
-wMr
+pXf
+oRv
 uhB
 btQ
 umh
@@ -170027,7 +170023,7 @@ nhN
 vIr
 fws
 xUk
-klE
+wMr
 djj
 iUG
 fws
@@ -171240,7 +171236,7 @@ vIr
 fws
 gyZ
 tSa
-vvo
+lkQ
 mLo
 sVE
 xEp
@@ -171439,12 +171435,12 @@ naG
 gLz
 rHM
 vIr
-oRv
+klE
 wbu
 jMk
 dSd
 dSd
-wvv
+vvo
 kHv
 pwX
 yeQ
@@ -171459,7 +171455,7 @@ dwK
 qUI
 stb
 jJp
-wAc
+qgT
 bbA
 rIX
 onp
@@ -172048,7 +172044,7 @@ rqH
 fws
 qFl
 sKs
-lkQ
+uiH
 mTl
 fws
 slp
