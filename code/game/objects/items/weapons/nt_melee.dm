@@ -363,7 +363,6 @@
 	icon_state = "nt_buckler" //by CeUvi we thx thy
 	item_state = "nt_buckler"
 	matter = list(MATERIAL_BIOMATTER = 15, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 2, MATERIAL_GOLD = 1)
-	//aspects = list(SANCTIFIED) todo:port this
 	price_tag = 300
 	base_block_chance = 45
 	item_flags = DRAG_AND_DROP_UNEQUIP
@@ -438,7 +437,6 @@
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_WEAK
 	armor_penetration = ARMOR_PEN_DEEP
-	//aspects = list(SANCTIFIED) todo:port this
 	price_tag = 300
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
 

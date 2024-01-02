@@ -41,18 +41,6 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 	cost = 1
 
-/datum/gear/factionabsolute/numerical_hat
-	display_name = "numerical hat"
-	path = /obj/item/clothing/head/numerical_hat
-	slot = slot_head
-	cost = 1
-
-/datum/gear/factionabsolute/numerical_grab
-	display_name = "numerical garb"
-	path = /obj/item/clothing/suit/storage/numericalgarb
-	slot = slot_wear_suit
-	cost = 1
-
 /datum/gear/factionabsolute/tabard
 	display_name = "tabard selection"
 	path = /obj/item/clothing/suit/tabard

@@ -12,10 +12,11 @@ var/list/disciples = list()
 	access = list(access_crematorium)
 	power = 0
 	max_power = 60
-	power_regen = 0.5
+	power_regen = 0.8
 	price_tag = 10000
 	var/channeling_boost = 0  // used for the power regen boost if the wearer has the channeling perk
 	var/obj/item/cruciform_upgrade/upgrade
+	var/is_busy = FALSE //Whether or not the person is doing a litany that should preclude others of the same type from being used simultaneously. Currently used only for building.
 
 
 /obj/item/implant/core_implant/cruciform/install(mob/living/target, organ, mob/user)
@@ -23,10 +24,12 @@ var/list/disciples = list()
 	if(.)
 		target.stats.addPerk(PERK_SANITYBOOST)
 		target.stats.addPerk(PERK_UNFINISHED_DELIVERY)
+		target.stats.addPerk(PERK_COMMUNITY_SAINTS)
 
 /obj/item/implant/core_implant/cruciform/uninstall()
 	wearer.stats.removePerk(PERK_SANITYBOOST)
-	wearer.stats.addPerk(PERK_UNFINISHED_DELIVERY)
+	wearer.stats.removePerk(PERK_COMMUNITY_SAINTS)
+	wearer.stats.removePerk(PERK_UNFINISHED_DELIVERY)
 	return ..()
 
 /obj/item/implant/core_implant/cruciform/get_mob_overlay(gender, form)
@@ -77,7 +80,7 @@ var/list/disciples = list()
 		add_module(new CRUCIFORM_MONO)
 		add_module(new CRUCIFORM_DIVI)
 		add_module(new CRUCIFORM_FACT)
-		add_module(new CRUCIFORM_PRIEST)
+		add_module(new CRUCIFORM_CLERGY)
 		add_module(new CRUCIFORM_INQUISITOR)
 		add_module(new CRUCIFORM_CRUSADER)
 		add_module(new CRUCIFORM_OMNI)
@@ -186,21 +189,27 @@ var/list/disciples = list()
 //////////////////////////
 
 /obj/item/implant/core_implant/cruciform/proc/make_common()
-	remove_modules(CRUCIFORM_PRIEST)
+	remove_modules(CRUCIFORM_CLERGY)
 	remove_modules(CRUCIFORM_INQUISITOR)
-	remove_modules(/datum/core_module/cruciform/red_light)
-	security_clearance = CLEARANCE_COMMON
+	remove_modules(CRUCIFORM_PRIME)
+	update_rituals()
 
-/obj/item/implant/core_implant/cruciform/proc/make_priest()
-	add_module(new CRUCIFORM_PRIEST)
-	add_module(new CRUCIFORM_REDLIGHT)
-	security_clearance = CLEARANCE_CLERGY
+/obj/item/implant/core_implant/cruciform/proc/make_vector()
+	add_module(new CRUCIFORM_CLERGY)
+
+/obj/item/implant/core_implant/cruciform/proc/make_prime()
+	add_module(new CRUCIFORM_CLERGY)
+	add_module(new CRUCIFORM_PRIME)
+
+/obj/item/implant/core_implant/cruciform/proc/make_crusader()
+	add_module(new CRUCIFORM_CLERGY)
+	add_module(new CRUCIFORM_CRUSADER)
+	if(security_clearance < CLEARANCE_COMMON)
+		security_clearance = CLEARANCE_COMMON
 
 /obj/item/implant/core_implant/cruciform/proc/make_inquisitor()
-	add_module(new CRUCIFORM_PRIEST)
+	add_module(new CRUCIFORM_CLERGY)
 	add_module(new CRUCIFORM_INQUISITOR)
-	//add_module(new /datum/core_module/cruciform/uplink())
-	remove_modules(/datum/core_module/cruciform/red_light)
 	security_clearance = CLEARANCE_CLERGY
 
 /obj/item/implant/core_implant/cruciform/proc/make_apostle()
@@ -209,7 +218,7 @@ var/list/disciples = list()
 	add_module(new CRUCIFORM_MONO)
 	add_module(new CRUCIFORM_DIVI)
 	add_module(new CRUCIFORM_FACT)
-	add_module(new CRUCIFORM_PRIEST)
+	add_module(new CRUCIFORM_CLERGY)
 	add_module(new CRUCIFORM_INQUISITOR)
 	add_module(new CRUCIFORM_CRUSADER)
 	add_module(new CRUCIFORM_OMNI)
@@ -224,6 +233,11 @@ var/list/disciples = list()
 
 	wearer.update_implants()
 
+/obj/item/implant/core_implant/cruciform/proc/print_glob_rituals()
+	for (var/rn in GLOB.all_rituals)
+		var/datum/ritual/R = GLOB.all_rituals[rn]
+		to_chat(wearer, R.name)
+
 //Path based cruciforms, these grant additional powers based on what path a cultist walks
 /obj/item/implant/core_implant/cruciform/tessellate
 	name = "tessellate cruciform"
@@ -232,7 +246,7 @@ var/list/disciples = list()
 	implant_type = /obj/item/implant/core_implant/cruciform/tessellate
 	power = 0
 	max_power = 60
-	power_regen = 0.8
+	power_regen = 0.5
 	path = "tess"
 
 /obj/item/implant/core_implant/cruciform/lemniscate
@@ -240,7 +254,6 @@ var/list/disciples = list()
 	icon_state = "cruciform_red"
 	desc = "A symbol and power core of every disciple. With the proper rituals, this can be implanted to induct a new believer into the Church of Absolute."
 	implant_type = /obj/item/implant/core_implant/cruciform/lemniscate
-	//access = list(access_nt_disciple) //So they can try and recuit people - Correction people just cant stop abusing everything ever.
 	power = 0
 	max_power = 50
 	power_regen = 1

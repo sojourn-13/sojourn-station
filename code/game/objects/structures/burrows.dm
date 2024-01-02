@@ -32,10 +32,6 @@
 	//Ones located outside of maint are much less likely to be picked for migration
 	var/maintenance = FALSE
 
-	//If true, this burrow is located near NT obelisk.
-	//those are much less likely to be picked for migration due cool NT magic
-	var/obelisk_around = null
-
 
 	//Vars for migration
 	var/processing = FALSE
@@ -135,6 +131,13 @@
 	else
 		populated_burrows -= src
 		unpopulated_burrows |= src
+
+/obj/structure/burrow/proc/obelisk_around()
+	var/obj/machinery/power/nt_obelisk/obelisk = locate(/obj/machinery/power/nt_obelisk) in range(7, src)
+	if(obelisk && obelisk.active)
+		return TRUE
+	else
+		return FALSE
 
 
 /*
