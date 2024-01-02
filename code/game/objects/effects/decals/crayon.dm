@@ -1499,8 +1499,11 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		new /turf/simulated/floor/fixed/fgrass(M.loc)
 		bluespace_entropy(50, M.loc)
 		B.remove_self(20)
-	new /obj/structure/annomlies_diet/spidersilk(M.loc)
-	bluespace_entropy(5, M.loc)
+	for(var/turf/surround in oview(3))
+		if(!surround.is_space())
+			var/obj/structure/annomlies_diet/spidersilk/non_spreader/weave = new /obj/structure/annomlies_diet/spidersilk/non_spreader(surround)
+			bluespace_entropy(5, M.loc)
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel,weave), 3 MINUTES)
 	ScrollBurn()
 
 // Joke: Makes people in the radius of effect ether giggle, laugh or groan from the bad joke. Chance to be any of the 3 but everyone should match the type.
@@ -1550,9 +1553,11 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		//something went wrong!
 		ScrollBurn()
 	while(again == TRUE)
-		new /obj/structure/annomlies_diet/ball_lightning(pick(turf_list))
+		var/obj/structure/annomlies_diet/ball_lightning/zappy = new /obj/structure/annomlies_diet/ball_lightning(pick(turf_list))
 		to_chat(M, SPAN_WARNING("A loud crackling fills the air as something forms."))
 		again = pick(TRUE, FALSE) //It will spawn more and more till it gets a bad flip on a 50/50 chance. How bad is your luck?
+		//creates a callback, global_proc is a mystery to me. But the .proc/ is actually required. As is the , between qdel and zappy. This fucking voodoo proc.
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel,zappy), 3 MINUTES)
 	ScrollBurn()
 
 
