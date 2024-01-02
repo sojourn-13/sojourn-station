@@ -74,6 +74,7 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_armor,
 		/obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster,
 		// Psych unique powers just for them. Do not add these to other lists. -Kaz
+		/obj/item/organ/internal/psionic_tumor/proc/peace_of_mind,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_heal_other,
 		/obj/item/organ/internal/psionic_tumor/proc/meditative_focus_other,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_heal_brain,
