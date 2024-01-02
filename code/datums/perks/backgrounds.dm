@@ -148,26 +148,22 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 		return
 	var/turf/T = get_turf(holder)
 	var/obj/item/W
-	if(is_neotheology_disciple(holder) && prob(50))
-		W = pickweight(list(
-				/obj/item/tool/sword/nt/longsword = 0.5,
-				/obj/item/tool/sword/nt/shortsword = 0.5,
-				/obj/item/tool/sword/nt/scourge = 0.1,
-				/obj/item/tool/knife/dagger/nt = 0.5,
-				/obj/item/gun/projectile/mk58 = 0.4,
-				/obj/item/gun/projectile/mk58/wood = 0.1))
-	else
-		W = pickweight(list(
-				/obj/item/tool/hammer/mace = 0.2,
-				/obj/item/tool/knife/ritual = 0.5,
-				/obj/item/material/butterfly/switchblade = 0.5,
-				/obj/item/tool/sword/saber = 0.2,
-				/obj/item/tool/sword/katana = 0.2,
-				/obj/item/tool/knife/dagger = 0.5,
-				/obj/item/gun/projectile/colt = 0.2,
-				/obj/item/gun/projectile/revolver/detective = 0.1,
-				/obj/item/tool/knife/dagger/ceremonial = 0.4,
-				/obj/item/gun/projectile/revolver/rev10 = 0.4))
+	var/picklist = list( //Total weight sum = 24
+				/obj/item/tool/hammer/mace = 5,
+				/obj/item/tool/knife/ritual = 3,
+				/obj/item/tool/sword/saber = 6,
+				/obj/item/tool/sword/katana = 4,
+				/obj/item/tool/sword/machete = 4,
+				/obj/item/tool/knife/dagger/ceremonial = 2,)
+
+	if(is_neotheology_disciple(holder)) //If someone's NT, they're likely to spawn with an NT weapon instead
+		picklist += list( //Total weight sum = 34
+				/obj/item/tool/sword/nt/longsword = 10,
+				/obj/item/tool/sword/nt/shortsword = 12,
+				/obj/item/tool/sword/nt/scourge = 2,
+				/obj/item/tool/knife/dagger/nt = 10,)
+
+	W = pickweight(picklist)
 	holder.sanity.valid_inspirations += W
 	W = new W(T)
 	W.desc += " It has been inscribed with the \"[holder.name]\" family name."
