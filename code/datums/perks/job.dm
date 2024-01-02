@@ -177,6 +177,18 @@
 		holder.sdisabilities&=BLIND
 	..()
 
+/datum/perk/cooldown/reveal //perk to give thermal vision. Meant to only last a few moments before ending and removing itself.
+	name = "Peak-A-Boo"
+	perk_lifetime = 3 SECONDS
+	gain_text = "The scroll's smoke fills your eyes. Whats moving in the walls?"
+	lose_text = "Your eyes sting but you don't see the pain anymore."
+
+/datum/perk/cooldown/reveal/assign(mob/living/carbon/human/H)
+	..()
+	if(holder)
+		//give thermal vision
+		holder.sight |= SEE_MOBS
+
 /datum/perk/bartender
 	name = "Bar Menu"
 	desc = "You know how to mix a drink, and flip a burger. You can identify the ingredients that went into food and how much was used."
