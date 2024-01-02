@@ -3,8 +3,8 @@
 // Psychiatrist/Psychologist
 /obj/item/organ/internal/psionic_tumor/proc/peace_of_mind()
 	set category = "Psionic powers"
-	set name = "Peace of Mind (2)"
-	set desc = "Expend two psi points to put whatever person you are currently grabbing to sleep for a short time."
+	set name = "Peace of Mind (4)"
+	set desc = "Expend four psi points to put whatever person you are currently grabbing to sleep for a short time."
 	psi_point_cost = 4
 
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
