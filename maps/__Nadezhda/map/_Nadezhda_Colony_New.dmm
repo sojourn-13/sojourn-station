@@ -4548,6 +4548,18 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/crew_quarters/hydroponics)
+"bbj" = (
+/obj/effect/floor_decal/border/carpet/lightblue{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/medical/sleeper)
 "bbn" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "3,0"
@@ -6240,6 +6252,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/nadezhda/crew_quarters/bar)
+"btl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/medical_stand{
+	pixel_x = -22
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/cryo)
 "btp" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -9044,11 +9063,8 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "bYI" = (
-/obj/machinery/door/airlock/glass_medical{
-	name = "Chemistry Lab";
-	req_access = list(33)
-	},
-/turf/simulated/floor/tiled/steel/gray_perforated,
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/chemistry)
 "bYN" = (
 /obj/structure/table/bar_special,
@@ -11553,23 +11569,14 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/smc/quarters)
 "cCf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/reinforced,
-/obj/machinery/door/window/westright{
-	name = "Chemistry Desk";
-	req_access = list(33);
-	dir = 1
+/obj/machinery/door/airlock/glass_medical{
+	id_tag = "medbay exit";
+	name = "Exam Room";
+	req_access = newlist();
+	req_one_access = list(5,45)
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "MedbayTotalLockdown";
-	layer = 2.6;
-	name = "Medbay Total Lockdown";
-	opacity = 0
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/medical/chemistry)
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/sleeper)
 "cCj" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -13216,6 +13223,12 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/command/prime)
+"cSY" = (
+/obj/machinery/holoposter{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/medical/sleeper)
 "cTd" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/structure/sign/levels/stairsup{
@@ -13857,16 +13870,6 @@
 "cZu" = (
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/inside_colony)
-"cZx" = (
-/obj/structure/table/woodentable,
-/obj/item/modular_computer/console/preset/medical/monitor{
-	pixel_y = 26
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/medical/sleeper)
 "cZC" = (
 /obj/structure/flora/small/busha2,
 /turf/simulated/floor/asteroid/grass,
@@ -17588,12 +17591,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
-"dOu" = (
-/obj/structure/bed/chair/comfy/brown{
-	dir = 4
-	},
-/turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/medical/sleeper)
 "dOv" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -17871,11 +17868,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai)
 "dSd" = (
-/obj/effect/floor_decal/border/carpet/lightblue{
-	dir = 8
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/westright{
+	name = "Chemistry Desk";
+	req_access = list(33)
 	},
-/turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/medical/sleeper)
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/chemistry)
 "dSm" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -18823,21 +18823,12 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/absolutism/bioreactor)
 "ebY" = (
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/smartfridge/chemistry,
+/obj/machinery/door/window/westright{
+	name = "Chemistry Desk";
+	req_access = list(33)
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/reinforced,
-/obj/item/storage/box/syringes{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/beakers,
-/obj/item/reagent_containers/dropper{
-	pixel_y = -4
-	},
-/obj/item/tool/screwdriver,
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/chemistry)
 "ecj" = (
 /obj/machinery/sleeper{
@@ -19131,7 +19122,10 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "efM" = (
-/turf/simulated/floor/carpet/sblucarpet,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/medical,
+/obj/structure/curtain/open/privacy,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/sleeper)
 "efR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -19153,22 +19147,6 @@
 /area/nadezhda/rnd/circuitlab{
 	name = "Science Expedition prep"
 	})
-"efU" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/floor_decal/border/carpet/lightblue{
-	dir = 8
-	},
-/obj/effect/floor_decal/border/carpet/lightblue{
-	dir = 1
-	},
-/obj/effect/floor_decal/border/carpet/lightblue{
-	dir = 1
-	},
-/obj/structure/bed/chair/comfy/brown,
-/turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/medical/sleeper)
 "efV" = (
 /obj/structure/sink{
 	dir = 8;
@@ -20572,6 +20550,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"etz" = (
+/obj/machinery/bodyscanner,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/sleeper)
 "etI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/wood{
@@ -20706,13 +20691,11 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/engineering/atmos)
 "evl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/glass_medical{
-	name = "Chemistry Lab";
-	req_access = list(33)
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/medical/chemistry)
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/rnd/lab)
 "evD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -24312,13 +24295,6 @@
 	icon_state = "5,20"
 	},
 /area/shuttle/rocinante_shuttle_area)
-"fiC" = (
-/obj/machinery/bodyscanner,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/medical/sleeper)
 "fiE" = (
 /obj/structure/table/steel,
 /obj/random/material_resources,
@@ -27702,13 +27678,12 @@
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/crew_quarters/sleep/cryo2)
 "fVl" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+/obj/structure/table/woodentable,
+/obj/item/tool/hammer{
+	name = "knee hammer";
+	desc = "This medical tool is used to test the famous knee reflexes"
 	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/techfloor_grid,
+/turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/sleeper)
 "fVn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -27859,6 +27834,18 @@
 /obj/random/cluster/spiders/low_chance,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"fWO" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/nadezhda/medical/sleeper)
 "fWR" = (
 /obj/structure/holohoop,
 /obj/effect/decal/cleanable/dirt,
@@ -29078,6 +29065,9 @@
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/hallway/surface/section1)
+"gjh" = (
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/medical/sleeper)
 "gjm" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/autolathe/mechfab/loaded,
@@ -30032,12 +30022,6 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
-"gtw" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/medical/sleeper)
 "gtx" = (
 /obj/structure/reagent_dispensers/watertank/huge,
 /obj/machinery/alarm{
@@ -31197,15 +31181,29 @@
 /obj/item/contraband/poster/placed/advertisement/syndicate_pistol,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/security/detectives_office)
-"gIk" = (
-/obj/machinery/door/airlock/glass_medical{
-	id_tag = "medbay exit";
-	name = "Exam Room";
-	req_access = newlist();
-	req_one_access = list(5,45)
+"gIi" = (
+/obj/item/paper_bin,
+/obj/item/pen{
+	pixel_x = -1;
+	pixel_y = 3
 	},
+/obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/nadezhda/medical/sleeper)
+"gIk" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/glass_medical{
+	name = "Chemistry Lab";
+	req_access = list(33)
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/chemistry)
 "gIr" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -33919,6 +33917,16 @@
 	icon_state = "9,23"
 	},
 /area/nadezhda/maintenance/undergroundfloor1south)
+"hnY" = (
+/obj/structure/table/woodentable,
+/obj/item/modular_computer/console/preset/medical/monitor{
+	pixel_y = 26
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/sleeper)
 "hoa" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -34539,13 +34547,6 @@
 /obj/item/device/scanner/xenobio,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology)
-"huW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/medical_stand{
-	pixel_x = -22
-	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/cryo)
 "hvd" = (
 /obj/item/material/shard,
 /obj/effect/decal/cleanable/dirt,
@@ -36664,19 +36665,6 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
-"hQW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "MedbayTotalLockdown";
-	layer = 2.6;
-	name = "Medbay Total Lockdown";
-	opacity = 0
-	},
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/medical/chemistry)
 "hRc" = (
 /obj/structure/table/woodentable,
 /obj/random/credits,
@@ -40717,24 +40705,9 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "iIq" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "MedbayTotalLockdown";
-	layer = 2.6;
-	name = "Medbay Total Lockdown";
-	opacity = 0
-	},
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/medical/chemistry)
+/obj/effect/floor_decal/sign/ex,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/medical/sleeper)
 "iIt" = (
 /obj/machinery/hologram/holopad,
 /obj/machinery/light{
@@ -41045,7 +41018,6 @@
 /obj/effect/floor_decal/industrial/box/red/corners{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "iMg" = (
@@ -41774,6 +41746,9 @@
 /obj/random/medical/low_chance,
 /obj/effect/floor_decal/industrial/warningred,
 /obj/structure/table/reinforced,
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "iVd" = (
@@ -42402,18 +42377,6 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/captain)
-"jcg" = (
-/obj/structure/table/rack/shelf,
-/obj/item/roller{
-	pixel_y = -6
-	},
-/obj/item/roller,
-/obj/item/roller{
-	pixel_y = 6
-	},
-/obj/effect/floor_decal/industrial/outline,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/medical/sleeper)
 "jck" = (
 /obj/mecha/working/ripley/firefighter,
 /obj/machinery/light_switch{
@@ -44054,6 +44017,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"jsZ" = (
+/obj/effect/floor_decal/border/carpet/lightblue{
+	dir = 1
+	},
+/obj/structure/table/woodentable,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/medical/sleeper)
 "jti" = (
 /obj/structure/cryofeed{
 	dir = 4;
@@ -44162,7 +44132,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/chemistry)
 "juk" = (
@@ -44337,6 +44306,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/bar_flat,
 /area/nadezhda/crew_quarters/bar)
+"jvB" = (
+/obj/structure/bed/chair/comfy/brown{
+	dir = 4
+	},
+/turf/simulated/floor/carpet/sblucarpet,
+/area/nadezhda/medical/sleeper)
 "jvR" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/bushb1,
@@ -45514,14 +45489,17 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/bridge)
 "jJp" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/toxin{
-	pixel_y = -10
+/obj/structure/mirror{
+	dir = 8;
+	pixel_x = -28
 	},
-/obj/item/storage/firstaid/toxin{
-	pixel_y = -10
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/syringe/stim/greasy_lard{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
+/obj/item/reagent_containers/syringe/stim/ultra_surgeon{
+	pixel_x = -5
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/medical/sleeper)
@@ -45761,9 +45739,12 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
 "jMk" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/medical/sleeper)
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/chemistry)
 "jMx" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -47428,16 +47409,6 @@
 /obj/structure/flora/big/bush1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
-"keY" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
-	},
-/obj/random/furniture/pottedplant,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/medical/sleeper)
 "keZ" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -47756,16 +47727,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/chapel)
-"khF" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/accessory/stethoscope,
-/obj/item/clothing/accessory/stethoscope,
-/obj/item/clothing/accessory/stethoscope,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/medical/sleeper)
 "khK" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -47844,6 +47805,22 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
+"kiT" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/border/carpet/lightblue{
+	dir = 8
+	},
+/obj/effect/floor_decal/border/carpet/lightblue{
+	dir = 1
+	},
+/obj/effect/floor_decal/border/carpet/lightblue{
+	dir = 1
+	},
+/obj/structure/bed/chair/comfy/brown,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/medical/sleeper)
 "kiX" = (
 /obj/machinery/door/blast/regular/open{
 	id = "xenobio7";
@@ -48071,7 +48048,13 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/crew_quarters/dorm3)
 "klE" = (
-/turf/simulated/floor/wood,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/medical/sleeper)
 "klG" = (
 /obj/structure/disposalpipe/segment{
@@ -48383,12 +48366,15 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "kpb" = (
-/obj/structure/disposalpipe/segment{
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/accessory/stethoscope,
+/obj/item/clothing/accessory/stethoscope,
+/obj/item/clothing/accessory/stethoscope,
+/obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/chemistry)
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/sleeper)
 "kpi" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
@@ -50086,12 +50072,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
-"kHe" = (
-/obj/structure/bed/chair/comfy/brown{
-	dir = 8
-	},
-/turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/medical/sleeper)
 "kHv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
@@ -50354,10 +50334,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/nadezhda/command/smc/quarters)
-"kLi" = (
-/obj/machinery/body_scanconsole,
-/turf/simulated/floor/wood,
-/area/nadezhda/medical/sleeper)
 "kLk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/shuttle/floor/mining,
@@ -51884,6 +51860,18 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"leA" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/toxin{
+	pixel_y = -10
+	},
+/obj/item/storage/firstaid/toxin{
+	pixel_y = -10
+	},
+/turf/simulated/floor/tiled/white/cargo,
+/area/nadezhda/medical/sleeper)
 "leF" = (
 /obj/machinery/door/airlock/maintenance_common,
 /obj/structure/cable/cyan{
@@ -54844,12 +54832,6 @@
 /obj/effect/floor_decal/industrial/inputgate,
 /turf/simulated/floor/fixed/hydrotile,
 /area/nadezhda/engineering/engine_room)
-"lNL" = (
-/obj/machinery/holoposter{
-	pixel_x = -32
-	},
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/medical/sleeper)
 "lNN" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack/shelf,
@@ -56857,6 +56839,10 @@
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/hallway/side/f2section1)
+"mic" = (
+/obj/machinery/body_scanconsole,
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/sleeper)
 "mit" = (
 /obj/structure/flora/small/bushc3,
 /obj/random/flora/small_jungle_tree,
@@ -57823,12 +57809,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "mtn" = (
-/obj/structure/table/woodentable,
-/obj/item/modular_computer/console/preset/medical/records{
-	pixel_y = 25
+/obj/effect/floor_decal/border/carpet/lightblue{
+	dir = 4
 	},
-/turf/simulated/floor/wood,
-/area/nadezhda/medical/sleeper)
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/rnd/lab)
 "mto" = (
 /obj/structure/flora/ausbushes/palebush,
 /turf/simulated/floor/asteroid/grass,
@@ -58894,6 +58879,10 @@
 /obj/machinery/atmospherics/pipe/zpipe/up,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/bioreactor)
+"mEZ" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/medical/sleeper)
 "mFb" = (
 /obj/random/scrap/sparse_even,
 /turf/simulated/floor/plating/under,
@@ -59411,23 +59400,6 @@
 	icon_state = "11,3"
 	},
 /area/shuttle/rocinante_shuttle_area)
-"mKl" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "MedbayTotalLockdown";
-	layer = 2.6;
-	name = "Medbay Total Lockdown";
-	opacity = 0
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/door/window/westright{
-	dir = 1;
-	name = "Chemistry Desk";
-	req_access = list(33)
-	},
-/turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/medical/chemistry)
 "mKx" = (
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -59683,15 +59655,6 @@
 "mMN" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/command/panic_room)
-"mMV" = (
-/obj/item/paper_bin,
-/obj/item/pen{
-	pixel_x = -1;
-	pixel_y = 3
-	},
-/obj/structure/table/woodentable,
-/turf/simulated/floor/wood,
-/area/nadezhda/medical/sleeper)
 "mMZ" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "12,0"
@@ -60238,6 +60201,9 @@
 	},
 /obj/machinery/chemical_dispenser,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "mTn" = (
@@ -60267,6 +60233,11 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/xenobiology)
+"mTw" = (
+/obj/structure/table/woodentable,
+/obj/item/device/lighting/toggleable/lamp/green,
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/sleeper)
 "mTA" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
@@ -60621,11 +60592,8 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/atmos)
 "mXV" = (
-/obj/effect/floor_decal/border/carpet/lightblue{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/rnd/lab)
+/turf/simulated/floor/carpet/sblucarpet,
+/area/nadezhda/medical/sleeper)
 "mXW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -63931,12 +63899,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/crew_quarters/hydroponics)
-"nEX" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/rnd/lab)
 "nEY" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/danger{
@@ -65004,14 +64966,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/panic_room)
-"nQo" = (
-/obj/structure/table/rack/shelf,
-/obj/item/clothing/glasses/hud/health/halfmoon,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/wood,
-/area/nadezhda/medical/sleeper)
 "nQz" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/tiled/steel/bar_dance,
@@ -66420,13 +66374,6 @@
 /obj/item/flame/candle/eternal,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/prime)
-"oeZ" = (
-/obj/effect/floor_decal/border/carpet/lightblue{
-	dir = 1
-	},
-/obj/structure/bed/chair/comfy/brown,
-/turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/medical/sleeper)
 "ofc" = (
 /obj/machinery/hologram/holopad,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -67508,11 +67455,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/cryo)
-"oqv" = (
-/obj/structure/table/rack/shelf,
-/obj/item/device/scanner/health,
-/turf/simulated/floor/wood,
-/area/nadezhda/medical/sleeper)
 "oqC" = (
 /obj/effect/floor_decal/industrial/danger/corner{
 	dir = 4
@@ -68830,10 +68772,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "oEP" = (
-/obj/machinery/light{
-	light_color = "#b9e8ea"
-	},
-/turf/simulated/floor/tiled/white/monofloor,
+/turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/sleeper)
 "oET" = (
 /obj/structure/cable/green{
@@ -69302,13 +69241,15 @@
 	pixel_y = 3
 	},
 /obj/item/storage/box/beakers,
-/obj/machinery/light/small,
 /obj/machinery/button/remote/blast_door{
 	id = "Chem";
 	name = "Chemistry shutter control";
 	pixel_y = -37
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "oJP" = (
@@ -69469,6 +69410,12 @@
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
+"oLk" = (
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/medical/sleeper)
 "oLl" = (
 /obj/effect/window_lwall_spawn,
 /turf/simulated/floor/plating/under,
@@ -72495,21 +72442,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
-"pts" = (
-/obj/structure/mirror{
-	dir = 8;
-	pixel_x = -28
-	},
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/syringe/stim/greasy_lard{
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/syringe/stim/ultra_surgeon,
-/obj/item/reagent_containers/syringe/stim/ultra_surgeon{
-	pixel_x = -5
-	},
-/turf/simulated/floor/tiled/white/cargo,
-/area/nadezhda/medical/sleeper)
 "ptD" = (
 /obj/structure/catwalk,
 /obj/structure/lattice,
@@ -73283,7 +73215,6 @@
 "pBl" = (
 /obj/item/stock_parts/manipulator,
 /obj/item/circuitboard/vending,
-/obj/item/tool/screwdriver,
 /obj/item/stack/material/steel{
 	amount = 8
 	},
@@ -73291,13 +73222,14 @@
 /obj/item/stock_parts/matter_bin,
 /obj/item/stack/cable_coil/blue,
 /obj/structure/table/rack/shelf,
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/machinery/light_switch{
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/tool/screwdriver,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "pBw" = (
@@ -75114,11 +75046,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"pUx" = (
-/obj/machinery/chem_master,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/medical/chemistry)
 "pUC" = (
 /obj/item/storage/backpack/guncase,
 /obj/item/storage/backpack/guncase,
@@ -75379,13 +75306,10 @@
 	})
 "pWe" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/glass/beaker{
-	pixel_x = 1;
-	pixel_y = 3;
-	preloaded_reagents = list("plasma"=30)
-	},
-/obj/item/reagent_containers/spray/cleaner,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/centrifuge{
+	pixel_x = 1
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "pWh" = (
@@ -75681,18 +75605,6 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
-"pZJ" = (
-/obj/machinery/holoposter{
-	pixel_x = -32
-	},
-/obj/machinery/light{
-	light_color = "#b9e8ea"
-	},
-/obj/effect/floor_decal/border/carpet/lightblue{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/medical/sleeper)
 "pZL" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/flora/small/trailrocka4,
@@ -76308,10 +76220,7 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "qgT" = (
-/obj/structure/bed/padded,
-/obj/item/bedsheet/medical,
-/obj/structure/curtain/open/privacy,
-/turf/simulated/floor/tiled/white/monofloor,
+/turf/simulated/floor/wood,
 /area/nadezhda/medical/sleeper)
 "qhb" = (
 /obj/machinery/light_switch{
@@ -76856,18 +76765,15 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/crew_quarters/hydroponics)
 "qmF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/smartfridge/chemistry,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "MedbayTotalLockdown";
-	layer = 2.6;
-	name = "Medbay Total Lockdown";
-	opacity = 0
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27
 	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/medical/chemistry)
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/medical/sleeper)
 "qmO" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/big/bush3,
@@ -76930,7 +76836,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/chemistry)
 "qnG" = (
@@ -77147,12 +77052,6 @@
 /obj/structure/flora/pottedplant/water_root,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate)
-"qpQ" = (
-/obj/machinery/camera/network/medbay{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/medical/sleeper)
 "qpR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -78571,14 +78470,14 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "qFl" = (
 /obj/machinery/disposal,
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/box/red,
 /obj/structure/disposalpipe/trunk{
 	dir = 2
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "qFu" = (
@@ -78837,6 +78736,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/bridge)
+"qHq" = (
+/obj/effect/floor_decal/border/carpet/lightblue{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/medical/sleeper)
 "qHt" = (
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 2;
@@ -80571,16 +80476,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/engineering/atmos/surface)
-"rcO" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/floor_decal/border/carpet/lightblue{
-	dir = 1
-	},
-/obj/structure/bed/chair/comfy/brown,
-/turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/medical/sleeper)
 "rcQ" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/ids{
@@ -80774,18 +80669,6 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
-"reW" = (
-/obj/effect/floor_decal/border/carpet/lightblue{
-	dir = 8
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/medical/sleeper)
 "rfb" = (
 /turf/simulated/shuttle/wall/escpod{
 	icon_state = "escpodwall22";
@@ -82409,9 +82292,6 @@
 /obj/structure/flora/small/grassb2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/hallway/main/stairwell)
-"rwR" = (
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/medical/sleeper)
 "rwS" = (
 /obj/structure/bookcase,
 /obj/item/book/manual/nonfiction/ageofreason,
@@ -84481,16 +84361,16 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical)
 "rUl" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/machinery/holoposter{
+	pixel_x = -32
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/machinery/light{
+	light_color = "#b9e8ea"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/effect/floor_decal/border/carpet/lightblue{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/medical/sleeper)
 "rUv" = (
 /obj/effect/floor_decal/industrial/warningred{
@@ -84768,6 +84648,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/glass_medical{
+	id_tag = "medbay exit";
+	name = "Medbay";
+	req_access = newlist();
+	req_one_access = list(5,45)
+	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -84777,7 +84663,6 @@
 	name = "Medbay Total Lockdown";
 	opacity = 0
 	},
-/obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "rXp" = (
@@ -84916,10 +84801,6 @@
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/hallway/side/f2section1)
-"rYs" = (
-/obj/effect/floor_decal/sign/ex,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/medical/sleeper)
 "rYt" = (
 /obj/machinery/photocopier,
 /obj/machinery/light/small{
@@ -87184,6 +87065,12 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/glass/beaker{
+	pixel_x = 1;
+	pixel_y = 3;
+	preloaded_reagents = list("plasma"=30)
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "svs" = (
@@ -89702,7 +89589,6 @@
 /obj/machinery/camera/network/medbay{
 	dir = 1
 	},
-/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/chemistry)
 "sXs" = (
@@ -89959,9 +89845,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/miningdock)
-"sZP" = (
-/turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/medical/sleeper)
 "sZQ" = (
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,13"
@@ -90552,6 +90435,13 @@
 	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/crew_quarters/sleep/cryo2)
+"thm" = (
+/obj/structure/table/rack/shelf,
+/obj/item/device/lighting/toggleable/flashlight/pen,
+/obj/item/device/lighting/toggleable/flashlight/pen,
+/obj/item/device/lighting/toggleable/flashlight/pen,
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/sleeper)
 "thn" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4;
@@ -90656,6 +90546,16 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
+"tie" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/floor_decal/border/carpet/lightblue{
+	dir = 1
+	},
+/obj/structure/bed/chair/comfy/brown,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/medical/sleeper)
 "tih" = (
 /obj/structure/bed/roller,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -93866,14 +93766,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/beach/water/jungledeep,
 /area/nadezhda/maintenance/undergroundfloor1east)
-"tPJ" = (
-/obj/structure/table/woodentable,
-/obj/item/tool/hammer{
-	name = "knee hammer";
-	desc = "This medical tool is used to test the famous knee reflexes"
-	},
-/turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/medical/sleeper)
 "tPL" = (
 /obj/structure/salvageable/computer{
 	pixel_y = 10
@@ -94389,6 +94281,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/bridge)
+"tUZ" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "MedbayTotalLockdown";
+	layer = 2.6;
+	name = "Medbay Total Lockdown";
+	opacity = 0
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/westright{
+	dir = 1;
+	name = "Chemistry Desk";
+	req_access = list(33)
+	},
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/medical/chemistry)
 "tVg" = (
 /mob/living/simple_animal/frog,
 /turf/simulated/floor/beach/water/jungle,
@@ -95030,6 +94939,13 @@
 	icon_state = "7,10"
 	},
 /area/nadezhda/hallway/side/f2section1)
+"ubU" = (
+/obj/effect/floor_decal/border/carpet/lightblue{
+	dir = 1
+	},
+/obj/structure/bed/chair/comfy/brown,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/medical/sleeper)
 "uca" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/machinery/computer/cryopod{
@@ -96087,6 +96003,12 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/medical)
+"ulP" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor_grid,
+/area/nadezhda/medical/sleeper)
 "umh" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -96646,6 +96568,12 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating/under,
 /area/colony)
+"usk" = (
+/obj/machinery/camera/network/medbay{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/medical/sleeper)
 "usq" = (
 /obj/item/remains/unathi,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -97249,11 +97177,6 @@
 /obj/random/mob/roaches/low_chance,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"uAf" = (
-/obj/structure/table/woodentable,
-/obj/item/device/lighting/toggleable/lamp/green,
-/turf/simulated/floor/wood,
-/area/nadezhda/medical/sleeper)
 "uAl" = (
 /obj/structure/table/rack,
 /obj/item/gun/projectile/automatic/texan{
@@ -101777,10 +101700,16 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/hallway/side/f2section1)
 "vvo" = (
-/obj/machinery/camera/network/medbay{
-	dir = 1
+/obj/structure/table/rack/shelf,
+/obj/item/roller{
+	pixel_y = -6
 	},
-/turf/simulated/floor/wood,
+/obj/item/roller,
+/obj/item/roller{
+	pixel_y = 6
+	},
+/obj/effect/floor_decal/industrial/outline,
+/turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/medical/sleeper)
 "vvu" = (
 /obj/machinery/door/firedoor/multi_tile{
@@ -103650,6 +103579,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/maintenance/substation/sec)
+"vPS" = (
+/obj/machinery/chem_master,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/nadezhda/medical/chemistry)
 "vQc" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/busha1,
@@ -104085,6 +104019,11 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/absolutism/bioreactor)
+"vTB" = (
+/obj/structure/table/rack/shelf,
+/obj/item/device/scanner/health,
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/sleeper)
 "vTN" = (
 /obj/machinery/light{
 	dir = 4
@@ -104665,6 +104604,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/genetics)
+"vZy" = (
+/obj/structure/table/woodentable,
+/obj/item/modular_computer/console/preset/medical/records{
+	pixel_y = 25
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/sleeper)
 "vZH" = (
 /obj/machinery/hologram/holopad,
 /obj/structure/cable/green{
@@ -106516,13 +106462,6 @@
 /obj/structure/lattice,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/engineering/atmos)
-"wrW" = (
-/obj/effect/floor_decal/border/carpet/lightblue{
-	dir = 1
-	},
-/obj/structure/table/woodentable,
-/turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/medical/sleeper)
 "wsa" = (
 /obj/item/clothing/suit/gorka/toggle/gorka/crew_o{
 	name = "Digger's gorka jacket";
@@ -110017,13 +109956,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"xhp" = (
-/obj/structure/table/rack/shelf,
-/obj/item/device/lighting/toggleable/flashlight/pen,
-/obj/item/device/lighting/toggleable/flashlight/pen,
-/obj/item/device/lighting/toggleable/flashlight/pen,
-/turf/simulated/floor/wood,
-/area/nadezhda/medical/sleeper)
 "xhw" = (
 /turf/simulated/floor/holofloor/space{
 	layer = 1
@@ -110548,6 +110480,12 @@
 "xmy" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/maintenance/substation/servist)
+"xmz" = (
+/obj/structure/bed/chair/comfy/brown{
+	dir = 8
+	},
+/turf/simulated/floor/carpet/sblucarpet,
+/area/nadezhda/medical/sleeper)
 "xmD" = (
 /obj/random/furniture/pottedplant,
 /obj/item/contraband/poster/placed/generic/no_erp{
@@ -112289,10 +112227,16 @@
 	pixel_y = 25
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/centrifuge{
-	pixel_x = 1
-	},
 /obj/structure/table/reinforced,
+/obj/item/tool/screwdriver,
+/obj/item/reagent_containers/dropper{
+	pixel_y = -4
+	},
+/obj/item/storage/box/beakers,
+/obj/item/storage/box/syringes{
+	pixel_x = 3;
+	pixel_y = 3
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "xEE" = (
@@ -113153,6 +113097,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/miningdock)
+"xNO" = (
+/obj/machinery/camera/network/medbay{
+	dir = 1
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/sleeper)
 "xOl" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -113715,17 +113665,23 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "xUk" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_y = 32
 	},
 /obj/effect/floor_decal/industrial/box/red/corners{
-	dir = 1
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/box/red/corners{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/medical/chemistry)
 "xUp" = (
@@ -115050,6 +115006,14 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/rnd/xenobiology)
+"yjK" = (
+/obj/structure/table/rack/shelf,
+/obj/item/clothing/glasses/hud/health/halfmoon,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/nadezhda/medical/sleeper)
 "yjL" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/decal/cleanable/dirt,
@@ -129895,12 +129859,12 @@ qUI
 cZb
 cZb
 qUI
-efU
-dSd
-reW
-dSd
-dSd
-pZJ
+kiT
+qHq
+bbj
+qHq
+qHq
+rUl
 qUI
 cZb
 cZb
@@ -130097,12 +130061,12 @@ qUI
 qUI
 cZb
 qUI
-wrW
+jsZ
 pXf
 pXf
 pXf
 pXf
-qpQ
+usk
 qUI
 cZb
 cZb
@@ -130299,7 +130263,7 @@ wjj
 qUI
 qUI
 qUI
-rcO
+tie
 pXf
 qUI
 qUI
@@ -130501,14 +130465,14 @@ fkD
 jMh
 qUI
 qUI
-wrW
+jsZ
 pXf
 qUI
 qUI
-cZx
-uAf
-klE
-fiC
+hnY
+mTw
+qgT
+etz
 qUI
 tad
 yfl
@@ -130703,14 +130667,14 @@ gQZ
 qYr
 qUI
 qUI
-oeZ
-oEP
+ubU
+oLk
 qUI
 qUI
-mtn
-dOu
-efM
-kLi
+vZy
+jvB
+mXV
+mic
 qUI
 tad
 tad
@@ -130905,14 +130869,14 @@ vby
 qUI
 qUI
 qUI
-wrW
+jsZ
 pXf
 qUI
 qUI
-mMV
-tPJ
-efM
-vvo
+gIi
+fVl
+mXV
+xNO
 qUI
 cZb
 cZb
@@ -131107,14 +131071,14 @@ qUI
 qUI
 qUI
 qUI
-oeZ
-qpQ
+ubU
+usk
 qUI
 qUI
-klE
-kHe
-efM
-klE
+qgT
+xmz
+mXV
+qgT
 qUI
 cZb
 cZb
@@ -131292,7 +131256,7 @@ rlJ
 pXf
 xDH
 crv
-jMk
+mEZ
 yjl
 fhz
 jeZ
@@ -131303,20 +131267,20 @@ nRn
 qUI
 qUI
 qUI
-keY
-rwR
-gtw
-rwR
-fVl
-lNL
-rwR
-gtw
-rYs
-gIk
+qmF
+gjh
+ulP
+gjh
 klE
-efM
-efM
-klE
+cSY
+gjh
+ulP
+iIq
+cCf
+qgT
+mXV
+mXV
+qgT
 qUI
 cZb
 cZb
@@ -131515,10 +131479,10 @@ sRJ
 sRJ
 qUI
 qUI
-khF
-xhp
-oqv
-nQo
+kpb
+thm
+vTB
+yjK
 qUI
 cZb
 cZb
@@ -131895,10 +131859,10 @@ lGS
 pQL
 baX
 rLm
-qgT
-qgT
-qgT
-jMk
+efM
+efM
+efM
+mEZ
 crv
 fhz
 byN
@@ -132093,8 +132057,8 @@ jLw
 uFj
 dVz
 rLm
-mXV
-mXV
+mtn
+mtn
 lvF
 rLm
 qUI
@@ -132296,7 +132260,7 @@ stJ
 tfX
 krP
 xbF
-nEX
+evl
 rOU
 rAA
 lvQ
@@ -168456,9 +168420,9 @@ kRx
 dKD
 bpa
 hco
-huW
+btl
 vve
-huW
+btl
 ogc
 nbl
 cZb
@@ -169453,9 +169417,9 @@ dPU
 dPU
 nhN
 vIr
-hQW
-iIq
-evl
+kTu
+nhN
+kTu
 fws
 fws
 bpa
@@ -169655,7 +169619,7 @@ cZb
 dPU
 meF
 vIr
-cCf
+kTu
 qnB
 mWR
 sDz
@@ -169857,7 +169821,7 @@ txJ
 txJ
 nhN
 vIr
-qmF
+kTu
 tHy
 wMr
 mhk
@@ -170061,10 +170025,10 @@ pur
 tfM
 fws
 ebY
-wvv
-wAc
-tHy
+dSd
+gIk
 bYI
+fws
 uhB
 btQ
 umh
@@ -171083,7 +171047,7 @@ jEC
 dPj
 jEC
 jEC
-sZP
+oEP
 qZJ
 uoq
 wdH
@@ -171286,7 +171250,7 @@ lEP
 lEP
 rmk
 fxD
-rUl
+fWO
 qgb
 qUI
 qUI
@@ -171675,9 +171639,9 @@ naG
 gLz
 rHM
 vIr
-mKl
+tUZ
 wbu
-kpb
+jMk
 wvv
 uiH
 otc
@@ -171694,8 +171658,8 @@ xmb
 dwK
 qUI
 stb
-pts
 jJp
+leA
 bbA
 rIX
 onp
@@ -171879,7 +171843,7 @@ thK
 kWN
 fws
 xED
-kpb
+jMk
 iSJ
 pWe
 bGf
@@ -171891,7 +171855,7 @@ vaj
 caX
 jeN
 wMO
-jcg
+vvo
 vjl
 igE
 nal
@@ -172081,7 +172045,7 @@ rHM
 bok
 enD
 vyg
-kpb
+jMk
 wvv
 bKW
 otc
@@ -172284,7 +172248,7 @@ rqH
 fws
 qFl
 sKs
-pUx
+vPS
 mTl
 fws
 slp
