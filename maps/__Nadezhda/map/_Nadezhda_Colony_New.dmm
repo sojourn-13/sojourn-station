@@ -1791,14 +1791,6 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
-"avb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/glass_security{
-	name = "Security Garden";
-	req_access = list(63)
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/tactical_blackshield)
 "avd" = (
 /obj/structure/table/steel,
 /obj/random/material_resources,
@@ -10032,10 +10024,6 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/hallway/surface/section1)
 "cks" = (
-/obj/machinery/door/airlock/glass_security{
-	name = "Security Garden";
-	req_access = list(63)
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -10049,6 +10037,10 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/catwalk,
+/obj/machinery/door/airlock/glass_security{
+	name = "Corpsmen Triage";
+	req_access = list(63)
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/triage_blackshield)
 "ckE" = (
@@ -33946,6 +33938,13 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
+"hoT" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/multiz/ladder/up,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/command/panic_room)
 "hoY" = (
 /obj/item/stool/custom,
 /obj/effect/floor_decal/spline/wood{
@@ -85969,12 +85968,13 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "smv" = (
-/obj/machinery/light{
-	dir = 1
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/glass_security{
+	name = "Security Garden";
+	req_access = list(63)
 	},
-/obj/structure/multiz/ladder/up,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/command/panic_room)
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/security/tactical_blackshield)
 "smB" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techmaint,
@@ -173724,7 +173724,7 @@ uAJ
 wCx
 fXW
 fXW
-smv
+hoT
 mMN
 mMN
 ghG
@@ -214118,7 +214118,7 @@ lpi
 bqJ
 mET
 nqF
-avb
+smv
 emZ
 veB
 bXG
