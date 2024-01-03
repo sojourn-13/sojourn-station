@@ -84,7 +84,7 @@
 		wash(C)
 		check_heat(C)
 	for (var/atom/movable/G in src.loc)
-		G.clean_blood(TRUE)
+		G.clean_blood()
 
 /obj/effect/shower/Destroy()
 	mymist = null
