@@ -34,7 +34,9 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/pros/foreman)
 "aak" = (
-/obj/machinery/door/airlock/maintenance_command,
+/obj/machinery/door/airlock/maintenance_command{
+	req_one_access = list(19, 1)
+	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/panic_room)
@@ -10023,7 +10025,7 @@
 /area/nadezhda/hallway/surface/section1)
 "cks" = (
 /obj/machinery/door/airlock/glass_security{
-	name = "Corpsmen Triage";
+	name = "Security Garden";
 	req_access = list(63)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -13383,7 +13385,10 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/merchant)
 "cVA" = (
-/obj/random/flora/small_jungle_tree,
+/obj/structure/multiz/ladder,
+/obj/structure/flora/big/bush3{
+	pixel_y = 5
+	},
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/security/tactical_blackshield)
 "cVC" = (
@@ -44766,8 +44771,8 @@
 /turf/simulated/floor/reinforced/oxygen,
 /area/nadezhda/engineering/atmos)
 "jDk" = (
-/obj/structure/flora/big/bush3,
 /obj/structure/flora/ausbushes/stalkybush,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/security/tactical_blackshield)
 "jDp" = (
@@ -73854,7 +73859,7 @@
 	})
 "pKg" = (
 /obj/machinery/door/airlock/glass_security{
-	name = "Corpsmen Triage";
+	name = "Security Garden";
 	req_access = list(63)
 	},
 /obj/structure/disposalpipe/segment,
@@ -81322,7 +81327,8 @@
 "rmU" = (
 /obj/machinery/door/airlock/highsecurity{
 	id_tag = "panicRoom";
-	name = "Panic Bunker"
+	name = "Panic Bunker";
+	req_access = list(19)
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -85955,15 +85961,13 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "smv" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/closet/wall_mounted/emcloset{
-	pixel_y = -32
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/sechall)
+/obj/machinery/door/airlock/glass_security{
+	name = "Security Garden";
+	req_access = list(63)
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/security/tactical_blackshield)
 "smB" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techmaint,
@@ -100801,6 +100805,13 @@
 	icon_state = "13,15"
 	},
 /area/nadezhda/quartermaster/miningdock)
+"vnt" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/multiz/ladder/up,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/command/panic_room)
 "vnC" = (
 /obj/structure/scrap/poor,
 /obj/effect/decal/cleanable/rubble,
@@ -112368,6 +112379,9 @@
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall_mounted/emcloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
 "xJr" = (
@@ -173710,7 +173724,7 @@ uAJ
 wCx
 fXW
 fXW
-xjt
+vnt
 mMN
 mMN
 ghG
@@ -214103,8 +214117,8 @@ lpi
 lpi
 bqJ
 mET
+nqF
 smv
-oVA
 emZ
 veB
 bXG
