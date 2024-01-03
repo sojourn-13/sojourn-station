@@ -1791,6 +1791,14 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"avb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/glass_security{
+	name = "Security Garden";
+	req_access = list(63)
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/security/tactical_blackshield)
 "avd" = (
 /obj/structure/table/steel,
 /obj/random/material_resources,
@@ -73858,10 +73866,6 @@
 	name = "Residential District Maintenance"
 	})
 "pKg" = (
-/obj/machinery/door/airlock/glass_security{
-	name = "Security Garden";
-	req_access = list(63)
-	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -73872,6 +73876,10 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/glass_security{
+	name = "Corpsmen Triage";
+	req_access = list(63)
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/triage_blackshield)
 "pKk" = (
@@ -85961,13 +85969,12 @@
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
 "smv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/glass_security{
-	name = "Security Garden";
-	req_access = list(63)
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/tactical_blackshield)
+/obj/structure/multiz/ladder/up,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/command/panic_room)
 "smB" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techmaint,
@@ -100805,13 +100812,6 @@
 	icon_state = "13,15"
 	},
 /area/nadezhda/quartermaster/miningdock)
-"vnt" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/multiz/ladder/up,
-/turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/command/panic_room)
 "vnC" = (
 /obj/structure/scrap/poor,
 /obj/effect/decal/cleanable/rubble,
@@ -173724,7 +173724,7 @@ uAJ
 wCx
 fXW
 fXW
-vnt
+smv
 mMN
 mMN
 ghG
@@ -214118,7 +214118,7 @@ lpi
 bqJ
 mET
 nqF
-smv
+avb
 emZ
 veB
 bXG
