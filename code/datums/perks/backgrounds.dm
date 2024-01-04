@@ -148,41 +148,37 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 		return
 	var/turf/T = get_turf(holder)
 	var/obj/item/W
-	if(is_neotheology_disciple(holder) && prob(50))
-		W = pickweight(list(
-				/obj/item/tool/sword/nt/longsword = 0.5,
-				/obj/item/tool/sword/nt/shortsword = 0.5,
-				/obj/item/tool/sword/nt/scourge = 0.1,
-				/obj/item/tool/knife/dagger/nt = 0.5,
-				/obj/item/gun/projectile/mk58 = 0.4,
-				/obj/item/gun/projectile/mk58/wood = 0.1))
-	else
-		W = pickweight(list(
-				/obj/item/tool/hammer/mace = 0.2,
-				/obj/item/tool/knife/ritual = 0.5,
-				/obj/item/material/butterfly/switchblade = 0.5,
-				/obj/item/tool/sword/saber = 0.2,
-				/obj/item/tool/sword/katana = 0.2,
-				/obj/item/tool/knife/dagger = 0.5,
-				/obj/item/gun/projectile/colt = 0.2,
-				/obj/item/gun/projectile/revolver/detective = 0.1,
-				/obj/item/tool/knife/dagger/ceremonial = 0.4,
-				/obj/item/gun/projectile/revolver/rev10 = 0.4))
+	var/picklist = list( //Total weight sum = 24
+				/obj/item/tool/hammer/mace = 5,
+				/obj/item/tool/knife/ritual = 3,
+				/obj/item/tool/sword/saber = 6,
+				/obj/item/tool/sword/katana = 4,
+				/obj/item/tool/sword/machete = 4,
+				/obj/item/tool/knife/dagger/ceremonial = 2,)
+
+	if(is_neotheology_disciple(holder)) //If someone's NT, they're likely to spawn with an NT weapon instead
+		picklist += list( //Total weight sum = 34
+				/obj/item/tool/sword/nt/longsword = 10,
+				/obj/item/tool/sword/nt/shortsword = 12,
+				/obj/item/tool/sword/nt/scourge = 2,
+				/obj/item/tool/knife/dagger/nt = 10,)
+
+	W = pickweight(picklist)
 	holder.sanity.valid_inspirations += W
 	W = new W(T)
 	W.desc += " It has been inscribed with the \"[holder.name]\" family name."
 	W.name = "[W] of [holder.name]"
-	var/oddities = rand(2,4)
+	var/oddities = rand(2,4) //Will boost 2-4 random stats
 	var/list/stats = ALL_STATS
 	var/list/final_oddity = list()
-	for(var/i = 0 to oddities)
+	for(var/i = 1 to oddities)
 		var/stat = pick(stats)
 		stats.Remove(stat)
 		final_oddity += stat
-		final_oddity[stat] = rand(1,7)
-	W.AddComponent(/datum/component/inspiration, final_oddity, get_oddity_perk())
-	W.AddComponent(/datum/component/atom_sanity, 1, "") //sanity gain by area
-	W.sanity_damage -= 1 //damage by view
+		final_oddity[stat] = rand(1,7) //Will boost each stat by 1-7
+	W.AddComponent(/datum/component/inspiration, final_oddity, get_good_perk())
+	W.AddComponent(/datum/component/atom_sanity, 1, "")
+	W.sanity_damage -= 1
 	W.price_tag += rand(1000, 2500)
 	spawn(1)
 		holder.equip_to_storage_or_drop(W)

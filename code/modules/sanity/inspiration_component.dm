@@ -25,8 +25,11 @@
 		get_stats = statistics
 	else
 		return COMPONENT_INCOMPATIBLE
-	var/obj/item/oddity/father = parent
-	perk = father.perk
+	if(new_perk)
+		perk = new_perk
+	else
+		var/obj/item/oddity/father = parent
+		perk = father.perk
 	get_power()
 
 /datum/component/inspiration/RegisterWithParent()
