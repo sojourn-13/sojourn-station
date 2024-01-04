@@ -346,12 +346,12 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotine" = 5,  "mint" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/khi
-	name = "\improper Kitsuhana Singularity cigarette"
+	name = "\improper Hippie's Delight cigarette"
 	icon_state = "khioff"
 	icon_on = "khion"
 	icon_off = "khioff"
 	type_butt = /obj/item/trash/cigbutt/khi
-	preloaded_reagents = list("mindbreaker" = 5, "serotrotium" = 5, "impedrezene" = 5, "space_drugs" = 5)
+	preloaded_reagents = list("mindbreaker" = 3, "serotrotium" = 2, "space_drugs" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/comred
 	name = "\improper ComRed light cigarette"
