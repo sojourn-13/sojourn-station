@@ -35,6 +35,19 @@
 	if(strength)
 		M.add_chemical_effect(CE_TOXIN, strength * dose / 4)
 
+/datum/reagent/toxin/wormwood
+	name = "Wormwood"
+	id = "wormwood"
+	description = "A mild toxin created as a reaction to the Soul Hunger litany that feeds Absolutists. Can be removed by drinking Cahors."
+	appear_in_default_catalog = FALSE
+	overdose = REAGENTS_OVERDOSE
+	metabolism = REM * 2
+	strength = 2
+
+/datum/reagent/toxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_TOXIN, strength + dose / 2)
+	M.add_chemical_effect(CE_SLOWDOWN, 0.75)
+
 /datum/reagent/toxin/plasticide
 	name = "Plasticide"
 	id = "plasticide"

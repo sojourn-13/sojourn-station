@@ -2,6 +2,7 @@
 	name = "absolutism ritual book"
 	desc = "Contains holy litanies and religious prayers."
 	icon_state = "bible"
+	excluded_categories = list("Episcopal")
 	price_tag = 150
 
 /*
@@ -23,4 +24,5 @@
 	name = "prime ritual book"
 	desc = "Contains holy litany and prayers meant only for the prime."
 	icon_state = "biblep"
+	excluded_categories = null
 	price_tag = 250
