@@ -88488,6 +88488,15 @@
 	icon_state = "10,9"
 	},
 /area/shuttle/vasiliy_shuttle_area)
+"sMk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/remote/blast_door{
+	pixel_x = -30;
+	name = "tunnel shutters control";
+	id = "BS001"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/security/tactical_blackshield)
 "sMr" = (
 /obj/machinery/computer/telecomms/server{
 	dir = 8
@@ -111455,11 +111464,11 @@
 	name = "Checkpoint Blast Doors";
 	opacity = 0
 	},
+/obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass_security{
 	name = "Security Post";
-	req_access = "1"
+	req_access = list(1)
 	},
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate)
 "xAd" = (
@@ -171091,7 +171100,7 @@ sIK
 cWO
 oVA
 sGN
-oNv
+sMk
 wlx
 oVA
 fgl
