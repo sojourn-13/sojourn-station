@@ -336,7 +336,7 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 
 /obj/item/storage/fancy/cigarettes/khi
 	name = "\improper Hippie's Delight packet"
-	desc = "A packet of six Hippie's Delight cigarettes. A brand of cigaretts favorited by those whom live in Astrovans on public and private beaches everywhere. CAUTION: Contents may contain chemicals unsuitable for some people. Ride the wave, surf's up bro!"
+	desc = "A packet of six Hippie's Delight cigarettes. A brand of cigarettes favorited by those whom live in Astrovans on public and private beaches everywhere. CAUTION: Contents may contain chemicals unsuitable for some people. Ride the wave, surf's up bro!"
 	icon_state = "KhiCigPacket"
 	item_state = "KhiCigPacket"
 
