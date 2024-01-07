@@ -370,6 +370,9 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					if(owner.stats.addPerk(I.perk))
 						I.perk = null
 
+				if(I.kill_stats)
+					qdel(I, FALSE, TRUE) //Forcefully remove are component
+
 				resting = 0
 
 				LEGACY_SEND_SIGNAL(O, COMSIG_ODDITY_USED)
