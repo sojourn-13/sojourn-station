@@ -81,3 +81,7 @@
 /datum/gear/taperecorder
     display_name = "universal recorder"
     path = /obj/item/device/taperecorder
+
+/datum/gear/wallet
+	display_name = "wallet"
+	path = /obj/item/storage/wallet

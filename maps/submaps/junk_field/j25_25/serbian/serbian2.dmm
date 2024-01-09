@@ -93,10 +93,6 @@
 /obj/machinery/light,
 /turf/simulated/floor,
 /area/template_noop)
-"bE" = (
-/obj/structure/table/rack,
-/turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/template_noop)
 "dO" = (
 /obj/structure/bed/chair/comfy/green,
 /obj/random/booze/low_chance,
@@ -1141,7 +1137,7 @@ aa
 Ze
 LE
 LE
-bE
+Dy
 xO
 zC
 gt

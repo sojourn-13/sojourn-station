@@ -117,15 +117,20 @@
 		holder.sanity.sanity_passive_gain_multiplier /= 1.5
 	..()
 
+/datum/perk/unfinished_delivery
+	name = "Lazarus Protocol"
+	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will attempt an emergency revival that may restore your body after a short time, in which you'll be unconscious."
+	//icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
+
+/datum/perk/community_of_saints
+	name = "Community of the Saints"
+	desc = "Your cruciform connects you to all other believers, but such connection can be distracting as well as beneficial. You take 25% longer to complete all tool-based actions that aren't instantaneous."
+
 /datum/perk/ear_of_quicksilver
 	name = "Ear of Quicksilver"
 	desc = "Training (and an ear implant) given to you as a Ranger makes it hard for secrets to escape your ears. Beware, loud noises are especially dangerous to you as a side effect."
 	//icon_state = "ear" // https://game-icons.net
 
-/datum/perk/unfinished_delivery
-	name = "Lazarus Protocol"
-	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will attempt an emergency revival that may restore your body after a short time, in which you'll be unconscious."
-	//icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
 
 /datum/perk/chemist
 	name = "Periodic Table"
@@ -176,6 +181,18 @@
 	if(holder)
 		holder.sdisabilities&=BLIND
 	..()
+
+/datum/perk/cooldown/reveal //perk to give thermal vision. Meant to only last a few moments before ending and removing itself.
+	name = "Peak-A-Boo"
+	perk_lifetime = 3 SECONDS
+	gain_text = "The scroll's smoke fills your eyes. Whats moving in the walls?"
+	lose_text = "Your eyes sting but you don't see the pain anymore."
+
+/datum/perk/cooldown/reveal/assign(mob/living/carbon/human/H)
+	..()
+	if(holder)
+		//give thermal vision
+		holder.sight |= SEE_MOBS
 
 /datum/perk/bartender
 	name = "Bar Menu"

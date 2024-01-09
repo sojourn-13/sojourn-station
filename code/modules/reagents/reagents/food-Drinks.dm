@@ -1818,6 +1818,7 @@
 	..()
 	M.adjust_hallucination(-0.9 * effect_multiplier)
 	M.add_chemical_effect(CE_TOXIN, -2.5 * effect_multiplier)
+	M.reagents.remove_reagent("wormwood", 0.8 * effect_multiplier)
 
 // Cocktails
 

@@ -1,5 +1,5 @@
 /obj/machinery/power/wall_obelisk
-	name = "Absolutism Protection"
+	name = "Absolutist Wall Obelisk"
 	desc = "The wall mounted version of the obelisk, unlike the larger version, it can remain active even without an active cruciform nearby. \
 	Despite its extended function, it requires biomatter loaded into it periodically. \
 	One of the few designs created for the church by the Greyson AI under control by the Soteria, much to Soteria's annoyance."
@@ -14,10 +14,10 @@
 	idle_power_usage = 30
 	active_power_usage = 300
 
-	var/active = TRUE //Were always active
+	var/active = TRUE //We're always active
 
 	var/area_radius = 7
-	var/damage = 120
+	var/damage = 120 //This one is intended only to protect RP areas, so it can have absurd damage
 	var/max_targets = 3
 
 	var/biomatter_ammo = 10 //We attack 10 times before running out on map spawn
@@ -81,3 +81,12 @@
 				if(!--to_fire)
 					return
 
+/obj/machinery/power/wall_obelisk/silver
+	name = "Silver Absolutist Wall Obelisk"
+	desc = "The wall mounted version of the obelisk, unlike the larger version, it can remain active even without an active cruciform nearby. \
+	Despite its extended function, it requires biomatter loaded into it periodically. \
+	One of the few designs created for the church by the Greyson AI under control by the Soteria, much to Soteria's annoyance. This one is silver, with lower damage output."
+	icon_state = "nt_wall_obelisk_silver"
+
+	damage = 30
+	biomatter_ammo = 20 //600 starting damage capacity. Half as much and slower compared to the gold ones.

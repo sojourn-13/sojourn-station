@@ -43,8 +43,14 @@
 
 /turf/proc/psionic_respawn(my_little_location, respawn_mob_type)
 	if(holy)
-		addtimer(CALLBACK(src, /turf/proc/psionic_respawn, src, respawn_mob_type), rand(15 MINUTES,20 MINUTES))
-		holy = FALSE
+		//5% for a different higher power to step in blocking the defailing of the playground. Killing it for the round.
+		//This comes at a cost of sending a playtime rune being sent somewere.
+		if(prob(5))
+			var/obj/effect/decal/cleanable/crayon/trap/rebound_joy = new /obj/effect/decal/cleanable/crayon/trap(src.loc)
+			rebound_joy.caprice_spell()
+		else
+			addtimer(CALLBACK(src, /turf/proc/psionic_respawn, src, respawn_mob_type), rand(15 MINUTES,20 MINUTES))
+			holy = FALSE
 		return
 	new respawn_mob_type(my_little_location)
 

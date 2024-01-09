@@ -5,6 +5,7 @@
 	icon_state = "book"
 	var/has_reference = FALSE
 	slot_flags = SLOT_BELT
+	var/list/excluded_categories = null
 	var/expanded_group = null
 	var/current_category = "Common"
 	var/reference_mode = FALSE
@@ -38,6 +39,8 @@
 
 	for(var/RT in CI.known_rituals)
 		var/datum/ritual/R = GLOB.all_rituals[RT]
+		if((R.category in excluded_categories))
+			continue
 
 		if(!(R.category in category_data))
 			category_data.Add(R.category)
