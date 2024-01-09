@@ -25,13 +25,10 @@ SUBSYSTEM_DEF(migration)
 
 	var/migrate_chance = 15 //The chance, during each migration, for each populated burrow, that mobs will move from there to somewhere else
 
-
 	var/roundstart_burrows = 30
 	var/migrate_time = 80 SECONDS //How long it takes to move mobs from one burrow to another
 	var/reinforcement_time = 10 SECONDS //How long it takes for reinforcements to arrive
 	var/plantspread_burrows_num = 2 //How many other burrows will each one with plants send them to
-
-
 
 /*************************************************
 	Burrow Creation
@@ -45,8 +42,6 @@ SUBSYSTEM_DEF(migration)
 		var/area/A = random_ship_area(FALSE, FALSE, FALSE)
 		var/turf/T = A.random_space() //Lets make sure the selected area is valid
 		create_burrow(T)
-
-
 
 /*
 Called by roaches when they spawn.
@@ -235,7 +230,7 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 			continue
 
 		// just nop.
-		if (candidate.obelisk_around)
+		if (candidate.obelisk_around())
 			continue
 
 		//And a high chance to reroll it if its not what we want in terms of being in/out of maintenance

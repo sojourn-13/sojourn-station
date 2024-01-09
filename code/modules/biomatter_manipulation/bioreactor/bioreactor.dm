@@ -142,12 +142,14 @@
 	icon_state = "biomatter_tank_medium"
 	amount_per_transfer_from_this = 50
 	volume = 750
+	density = FALSE //So we can build things in a space that contains it
 
 
 /obj/structure/reagent_dispensers/biomatter/large
 	name = "large biomatter canister"
 	icon_state = "biomatter_tank_large"
 	volume = 1000
+	density = TRUE
 
 
 /obj/effect/overlay/bioreactor_solution

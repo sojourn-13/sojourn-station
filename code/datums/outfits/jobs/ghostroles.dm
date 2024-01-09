@@ -58,7 +58,11 @@
 	belt = /obj/item/storage/belt/security/tactical/marshalert
 	head = /obj/item/clothing/head/soft/sarge2soft
 	back = /obj/item/storage/backpack/security
-	backpack_contents = list(/obj/item/ammo_magazine/rifle_75_drum = 3, /obj/item/ammo_magazine/rifle_75_drum/highvelocity = 2, /obj/item/ammo_casing/grenade/flash = 2, /obj/item/ammo_casing/grenade/blast = 2, /obj/item/modular_computer/tablet/lease/preset/command = 1 )
+	backpack_contents = list(/obj/item/ammo_magazine/rifle_75_drum = 3,
+							/obj/item/ammo_magazine/rifle_75_drum/highvelocity = 2,
+							/obj/item/ammo_casing/grenade/flash = 2,
+							/obj/item/ammo_casing/grenade/blast = 2,
+							/obj/item/modular_computer/tablet/lease/preset/command = 1 )
 	id_slot = slot_wear_id
 	id_type =  /obj/item/card/id/syndicate/ert/aa/marshal_ert
 
@@ -124,6 +128,25 @@
 							/obj/item/modular_computer/tablet/lease/preset/command = 1)
 	id_slot = slot_wear_id
 	id_type =  /obj/item/card/id/syndicate/ert/aa/auditor_ert
+
+/decl/hierarchy/outfit/church_ert
+	name = "Inquisitor"
+	l_ear = /obj/item/device/radio/headset/heads/preacher
+	id_slot = slot_wear_id
+	id_type = /obj/item/card/id/syndicate/ert/church_ert
+	uniform = /obj/item/clothing/under/rank/preacher
+	suit = /obj/item/clothing/suit/storage/chaplain/coat
+	suit_store = /obj/item/gun/energy/plasma //Dominion plasma rifle
+	head = /obj/item/clothing/head/preacher
+	shoes = /obj/item/clothing/shoes/reinforced
+	belt = /obj/item/storage/belt/security/neotheology
+	gloves = /obj/item/clothing/gloves/thick
+	back = /obj/item/storage/backpack/satchel/neotheology
+	backpack_contents = list(/obj/item/book/ritual/cruciform/priest = 1,
+							/obj/item/gun/energy/taser = 1, //Counselor stun gun
+							/obj/item/cell/medium/neotheology/plasma = 4
+
+	)
 
 /decl/hierarchy/outfit/sri_ert
 	name = "Ethics Committee investigator"

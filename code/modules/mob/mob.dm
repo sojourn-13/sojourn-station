@@ -1227,9 +1227,9 @@ mob/proc/yank_out_object()
 	if (stats) // Check if mob has stats. Otherwise we cannot read null.perks
 		for(var/perk in stats.perks)
 			var/datum/perk/P = perk
-			Plist += "<td valign='middle'><img src=[SSassets.transport.get_asset_url(P.type)]></td><td><span style='text-align:center'>[P.name]<br>[P.desc]</span></td>"
+			Plist += "<tr><td valign='middle'><img src=[SSassets.transport.get_asset_url(P.type)]></td><td><span style='text-align:center'>[P.name]<br>[P.desc]</span></td></tr>"
 	data += {"
-		<table width=80%>
+		<table width=100%>
 			<th colspan=2>Perks</th>
 			<tr>[Plist.Join()]</tr>
 		</table>

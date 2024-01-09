@@ -29,7 +29,7 @@
 
 
 /obj/machinery/autolathe/bioprinter/disk
-	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter
+	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility
 
 /obj/machinery/autolathe/bioprinter/public
-	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public
+	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility/public

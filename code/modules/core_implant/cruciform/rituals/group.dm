@@ -3,11 +3,12 @@
 	success_message = "On the verge of audibility you hear pleasant music, your mind clears up and the spirit grows stronger. Your prayer was heard."
 	fail_message = "The Cruciform feels cold against your chest."
 	var/high_ritual = TRUE
+//cnt is equal to the number of people FOLLOWING the ritual, not including the speaker. Therefore I adjusted requirements to be one lower and benefits to count as if there was one more.
 
-/datum/ritual/group/cruciform/pre_check(mob/living/carbon/human/user, obj/item/implant/core_implant/C, targets)
+/datum/ritual/group/cruciform/pre_check(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C, targets)
 	if(!..())
 		return FALSE
-	if(high_ritual && !C.get_module(CRUCIFORM_PRIEST) && !is_inquisidor(user))
+	if(high_ritual && !C.get_module(CRUCIFORM_CLERGY) && !is_inquisidor(user))
 		return FALSE
 	return TRUE
 
@@ -29,7 +30,8 @@
 /datum/group_ritual_effect/cruciform/stat
 	var/stat_buff
 	var/buff_value = 3
-	var/aditional_value = 2
+	var/additional_value = 2
+	var/buff_total
 
 /datum/group_ritual_effect/cruciform/stat/trigger_success(var/mob/starter, var/list/participants)
 	. = ..()
@@ -37,24 +39,21 @@
 	GLOB.grup_ritual_performed++ //I guess here?
 
 /datum/group_ritual_effect/cruciform/stat/success(var/mob/living/M, var/cnt)
-	if(cnt < 3 || !stat_buff)
+	if(cnt < 2 || !stat_buff)
 		return
-	M.stats.changeStat(stat_buff, buff_value + cnt * aditional_value)
+	buff_total = buff_value + (cnt +1) * additional_value
+	M.stats.changeStat(stat_buff, buff_total)
 
 /datum/ritual/group/cruciform/stat/mechanical
-	name = "Origin of Time"
+	name = "Value of Labor"
 	desc = "Boosts Mechanical stat to 3 + 2 for each participant permanently, if god wills it."
-	phrase = "Omnia haec tractavi in corde meo ut curiose intellegerem sunt iusti atque sapientes et opera eorum in manu Dei et tamen nescit homo utrum amore an odio dignus sit."
+	phrase = "Filius sapiens laetificat patrem, filius vero stultus moestitia est matris suae." //Proverbs 10:1-5
 	phrases = list(
-		"Omnia haec tractavi in corde meo ut curiose intellegerem sunt iusti atque sapientes et opera eorum in manu Dei et tamen nescit homo utrum amore an odio dignus sit.",
-		"Sed omnia in futuro servantur incerta eo quod universa aeque eveniant iusto et impio bono et malo mundo et inmundo immolanti victimas et sacrificia contemnenti sicut bonus sic et peccator ut periurus ita et ille qui verum deierat.",
-		"Hoc est pessimum inter omnia quae sub sole fiunt quia eadem cunctis eveniunt unde et corda filiorum hominum implentur malitia et contemptu in vita sua et post haec ad inferos deducentur.",
-		"Nemo est qui semper vivat et qui huius rei habeat fiduciam melior est canis vivens leone mortuo.",
-		"Viventes enim sciunt se esse morituros mortui vero nihil noverunt amplius nec habent ultra mercedem quia oblivioni tradita est memoria eorum.",
-		"Amor quoque et odium et invidia simul perierunt nec habent partem in hoc saeculo et in opere quod sub sole geritur.",
-		"Vade ergo et comede in laetitia panem tuum et bibe com gaudio vinum tuum quia Deo placent opera tua.",
-		"Omni tempore sint vestimenta tua candida et oleum de capite tuo non deficiat.",
-		"Perfruere vita com uxore quam diligis cunctis diebus vitae instabilitatis tuae qui dati sunt tibi sub sole omni tempore vanitatis tuae haec est enim pars in vita et in labore tuo quod laboras sub sole.",
+		"Filius sapiens laetificat patrem, filius vero stultus moestitia est matris suae.",
+		"Nil proderunt thesauri impietatis, justitia vero liberabit a morte.",
+		"Non affliget Dominus fame animam justi, et insidias impiorum subvertet.",
+		"Egestatem operata est manus remissa; manus autem fortium divitias parat.",
+		"Qui congregat in messe, filius sapiens est; qui autem stertit aestate, filius confusionis.",
 		"Amen."
 	)
 	effect_type = /datum/group_ritual_effect/cruciform/stat/mechanical
@@ -65,7 +64,7 @@
 /datum/ritual/group/cruciform/stat/cognition
 	name = "Discovery of the Path"
 	desc = "Boosts Cognition stat to 3 + 2 for each participant permanently, if god wills it."
-	phrase = "Dedit quoque Deus sapientiam Salomoni et prudentiam multam nimis et latitudinem cordis quasi harenam quae est in litore maris."
+	phrase = "Dedit quoque Deus sapientiam Salomoni et prudentiam multam nimis et latitudinem cordis quasi harenam quae est in litore maris." //1 Kings 4:29-34
 	phrases = list(
 		"Dedit quoque Deus sapientiam Salomoni et prudentiam multam nimis et latitudinem cordis quasi harenam quae est in litore maris.",
 		"Et praecedebat sapientia Salomonis sapientiam omnium Orientalium et Aegyptiorum.",
@@ -83,7 +82,7 @@
 /datum/ritual/group/cruciform/stat/biology
 	name = "Creation of Vitae"
 	desc = "Boosts Biology stat to 3 + 2 for each participant permanently, if god wills it."
-	phrase = "Convocatis autem duodecim apostolis dedit illis virtutem et potestatem super omnia daemonia et ut languores curarent."
+	phrase = "Convocatis autem duodecim apostolis dedit illis virtutem et potestatem super omnia daemonia et ut languores curarent." //Luke 9:1-6
 	phrases = list(
 		"Convocatis autem duodecim apostolis dedit illis virtutem et potestatem super omnia daemonia et ut languores curarent.",
 		"Et misit illos praedicare regnum Dei et sanare infirmos.",
@@ -99,9 +98,9 @@
 	stat_buff = STAT_BIO
 
 /datum/ritual/group/cruciform/robustness
-	name = "Pilgrim's Path"
+	name = "Strength of the Absolute"
 	desc = "Boosts Robustness stat to 3 + 2 for each participant permanently, if god wills it."
-	phrase = "Audi Israhel tu transgredieris hodie Iordanem ut possideas nationes maximas et fortiores te civitates ingentes et ad caelum usque muratas."
+	phrase = "Audi Israhel tu transgredieris hodie Iordanem ut possideas nationes maximas et fortiores te civitates ingentes et ad caelum usque muratas." //Dueteronomy 9:1-6
 	phrases = list(
 		"Audi Israhel tu transgredieris hodie Iordanem ut possideas nationes maximas et fortiores te civitates ingentes et ad caelum usque muratas.",
 		"Populum magnum atque sublimem filios Enacim quos ipse vidisti et audisti quibus nullus potest ex adverso resistere.",
@@ -119,7 +118,7 @@
 /datum/ritual/group/cruciform/toughness
 	name = "Reclamation of Endurance"
 	desc = "Boosts Toughness stat to 3 + 2 for each participant permanently, if god wills it."
-	phrase = "In finem psalmus David."
+	phrase = "In finem psalmus David." //Psalm 19:1-6
 	phrases = list(
 		"In finem psalmus David.",
 		"Caeli enarrant gloriam Dei et opera manuum eius adnuntiat firmamentum.",
@@ -138,7 +137,7 @@
 /datum/ritual/group/cruciform/crusade
 	name = "Call of the Crusade"
 	desc = "A litany that may reveal the prayers of crusaders, if enough people participate."
-	phrase = "Locutus est Dominus ad Mosen dicens."
+	phrase = "Locutus est Dominus ad Mosen dicens." //Numbers 10:1-9
 	phrases = list(
 		"Locutus est Dominus ad Mosen dicens.",
 		"Fac tibi duas tubas argenteas ductiles quibus convocare possis multitudinem quando movenda sunt castra.",
@@ -148,12 +147,14 @@
 		"In secundo autem sonitu et pari ululatu tubae levabunt tentoria qui habitant ad meridiem et iuxta hunc modum reliqui facient ululantibus tubis in profectione.",
 		"Quando autem congregandus est populus simplex tubarum clangor erit et non concise ululabunt.",
 		"Filii Aaron sacerdotes clangent tubis eritque hoc legitimum sempiternum in generationibus vestris.",
-		"Si exieritis ad bellum de terra vestra contra hostes qui dimicant adversum vos clangetis ululantibus tubis et erit recordatio vestri coram Domino Deo vestro ut eruamini de manibus inimicorum vestrorum."
+		"Si exieritis ad bellum de terra vestra contra hostes qui dimicant adversum vos clangetis ululantibus tubis et erit recordatio vestri coram Domino Deo vestro ut eruamini de manibus inimicorum vestrorum.",
+		"Amen."
 	)
 	effect_type = /datum/group_ritual_effect/cruciform/crusade
 
 /datum/group_ritual_effect/cruciform/crusade/success(var/mob/living/M, var/cnt)
-	if(cnt < 6)
+	log_and_message_admins("is attempting to invoke the Crusader Protocol. If appropriate, assign them and the other participants the Crusader antag role (Currently called Inquisitor).")
+	/*if(cnt < 6)
 		return
 	var/obj/item/implant/core_implant/CI = M.get_core_implant(/obj/item/implant/core_implant/cruciform)
 	if(CI)
@@ -162,20 +163,21 @@
 		C = /datum/ritual/cruciform/crusader/battle_call
 		CI.known_rituals |= initial(C.name)
 		C = /datum/ritual/cruciform/crusader/flash
-		CI.known_rituals |= initial(C.name)
+		CI.known_rituals |= initial(C.name)*/
 
 /datum/ritual/group/cruciform/sanctify
-	name = "Sanctify"
+	name = "Bless Area"
 	desc = "Sanctify the land you tread."
-	phrase = "Benedicite loco isto."
+	phrase = "Loquere filiis Israel, ut tollant mihi primitias: ab omni homine qui offeret ultroneus, accipietis eas." //Exodus 25:1-8
 	phrases = list(
-		"Benedicite loco isto.",
-		"Benedic hoc petimus Patris.",
-		"Nos obsecro te removere percula huius loci.",
-		"Ne malorum tangere terram.",
-		"Frase quinta.",
-		"Frase sexta.",
-		"Frase septima."
+		"Loquere filiis Israel, ut tollant mihi primitias: ab omni homine qui offeret ultroneus, accipietis eas.",
+		"Haec sunt autem quae accipere debeatis: aurum, et argentum, et aes.",
+		"Hyacinthum et purpuram, coccumque bis tinctum, et byssum, pilos caprarum.",
+		"Et pelles arietum rubricatas, pellesque janthinas, et ligna setim.",
+		"Oleum ad luminaria concinnanda: aromata in unguentum, et thymiamata boni odoris.",
+		"Lapides onychinos, et gemmas ad ornandum ephod, ac rationale.",
+		"Facientque mihi sanctuarium, et habitabo in medio eorum.",
+		"Amen."
 	)
 	effect_type = /datum/group_ritual_effect/cruciform/sanctify
 	high_ritual = FALSE
@@ -183,10 +185,23 @@
 /datum/ritual/group/cruciform/sanctify/step_check(mob/living/carbon/human/H)
 	return TRUE
 
-/datum/group_ritual_effect/cruciform/sanctify/trigger_success(var/mob/starter, var/list/participants)
+/datum/group_ritual_effect/cruciform/sanctify/success(var/mob/living/M, var/cnt)
 	..()
-	var/area/A = get_area(starter)
+	var/area/A = get_area(M)
+	var/aoe = 6
 	A?.sanctify()
+	if(cnt < 2)
+		fail("There are not enough disciples praying to bless this land.", M)
+		return FALSE
+	else
+		if (A == /area/deepmaint) //Less effective in the deep maintenance, but more directly useful because holy ground stops psi monsters from spawning for 10 minutes
+			aoe = (cnt +1) * 2
+			for(var/turf/T in range(M, aoe))
+				T.holy = 1
+		else
+			aoe = (cnt +1) * 3
+			for(var/turf/T in range(M, aoe))
+				T.holy = 1
 
 /area/proc/sanctify()
 	LEGACY_SEND_SIGNAL(src, COMSIG_AREA_SANCTIFY)

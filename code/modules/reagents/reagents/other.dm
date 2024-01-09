@@ -111,6 +111,14 @@
 	id = "crayon_dust_brown"
 	color = "#846F35"
 
+/datum/reagent/other/crayon_dust/random
+	name = "Arcane crayon dust"
+	id = "crayon_dust_random"
+
+/datum/reagent/other/crayon_dust/random/initialize_data(newdata)
+	..()
+	color = RANDOM_RGB
+
 /datum/reagent/other/paint
 	name = "Paint"
 	id = "paint"

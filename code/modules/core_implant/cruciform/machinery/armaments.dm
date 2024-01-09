@@ -3,7 +3,7 @@
 	var/desc = "God made it quite clear this should not exist, Perhaps inform those above."
 	var/cost = 20
 	var/min_cost = 10 //absolute minimum it should cost
-	var/path = /obj/item/computer_hardware/hard_drive/portable/design/nt/bioprinter //path to spawn
+	var/path = /obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility //path to spawn
 	var/purchase_count = 0 //how many times its bought
 	var/discount_increase = 5 //discount increase per purchase
 	var/discount = 0 //total discount to apply to the cost
@@ -127,112 +127,107 @@
 	name = "Disk - Power Cells"
 	cost = 10
 	min_cost = 5
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/cells
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/cells/plus
 
 /datum/armament/item/disk/mk58
-	name = "Disk - Rose and Thorn"
+	name = "Disk - Thorn and Rose"
 	cost = 10
 	min_cost = 5
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/mk58
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/mk58/plus
 
 /datum/armament/item/disk/counselor
 	name = "Disk - Counselor"
 	cost = 5
 	min_cost = 5
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/counselor
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/counselor/plus
 
 /datum/armament/item/disk/antebellum
 	name = "Disk - Antebellum"
 	cost = 10
 	min_cost = 5
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/antebellum
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/antebellum/plus
 
 /datum/armament/item/disk/carpedie
 	name = "Disk - Carpedie"
 	cost = 15
 	min_cost = 10
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/carpedie
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/carpedie/plus
 
 /datum/armament/item/disk/regulator
 	name = "Disk - Regulator"
 	cost = 20
 	min_cost = 15
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/regulator
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/regulator/plus
+
 
 /datum/armament/item/disk/halicon
 	name = "Disk - Halicon"
 	cost = 15
 	min_cost = 10
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/halicon
-
-/datum/armament/item/disk/halicon
-	name = "Disk - Halicon"
-	cost = 15
-	min_cost = 10
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/halicon
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/halicon/plus
 
 /datum/armament/item/disk/protector
 	name = "Disk - Protector"
 	cost = 15
 	min_cost = 10
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/protector
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/protector/plus
 
 /datum/armament/item/disk/lemant
 	name = "Disk - Pilgrim"
 	cost = 10
 	min_cost = 5
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/lemant
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/lemant/plus
 
 /datum/armament/item/disk/nt_lightfall
 	name = "Disk - Lightfall"
 	cost = 15
 	min_cost = 10
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/lightfall
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/lightfall/plus
 
 /datum/armament/item/disk/caustic_rounds
 	name = "Disk - Caustic Ammo"
 	cost = 20
 	min_cost = 10
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt_caustic_rounds
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/caustic_rounds/plus
 
 /datum/armament/item/disk/nukes
 	name = "Disk - Holy Grenades"
 	cost = 25
 	min_cost = 20
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/grenades
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/grenades/plus
 
 /datum/armament/item/disk/plasma_shell
 	name = "Disk - Plasma Ammo"
 	cost = 30
 	min_cost = 20
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/plasma_shells
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/plasma_shells/plus
 
 /datum/armament/item/disk/themis
 	name = "Disk - Themis"
 	cost = 35
 	min_cost = 25
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/themis
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/themis/plus
 
 /datum/armament/item/disk/purger
 	name = "Disk - Purger"
 	cost = 40
 	min_cost = 25
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/purger
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/purger/plus
 
 /datum/armament/item/disk/dominion
 	name = "Disk - Dominion"
 	cost = 80
 	min_cost = 80
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/dominion
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/dominion/plus
 
 /datum/armament/item/disk/old_test_disk
 	name = "Disk - Old Testament"
 	cost = 50
 	min_cost = 25
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns/plus
 
 /datum/armament/item/disk/new_test_disk
 	name = "Disk - New Testament"
 	cost = 50
 	min_cost = 25
-	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns
+	path = /obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns/plus

@@ -214,15 +214,15 @@
 
 //Cruciform
 #define CRUCIFORM_COMMON /datum/core_module/rituals/cruciform/base
-//#define CRUCIFORM_AGROLYTE /datum/core_module/rituals/cruciform/agrolyte
-//#define CRUCIFORM_CUSTODIAN /datum/core_module/rituals/cruciform/custodian
-#define CRUCIFORM_PRIEST /datum/core_module/rituals/cruciform/priest
-//#define CRUCIFORM_ACOLYTE /datum/core_module/rituals/cruciform/priest/acolyte
+#define CRUCIFORM_CLERGY /datum/core_module/rituals/cruciform/priest //Formerly CRUCIFORM_PRIEST, still is on Eris
 #define CRUCIFORM_INQUISITOR /datum/core_module/rituals/cruciform/inquisitor
 #define CRUCIFORM_CRUSADER /datum/core_module/rituals/cruciform/crusader
 #define CRUCIFORM_UPLINK /datum/core_module/cruciform/uplink
-#define CRUCIFORM_REDLIGHT /datum/core_module/cruciform/red_light
+#define CRUCIFORM_PRIME /datum/core_module/cruciform/red_light //Formerly CRUCIFORM_REDLIGHT, still is on Eris
 #define CRUCIFORM_CLONING /datum/core_module/cruciform/cloning
+//#define CRUCIFORM_ACOLYTE /datum/core_module/rituals/cruciform/priest/acolyte
+//#define CRUCIFORM_AGROLYTE /datum/core_module/rituals/cruciform/agrolyte
+//#define CRUCIFORM_CUSTODIAN /datum/core_module/rituals/cruciform/custodian
 
 #define CRUCIFORM_OBEY /datum/core_module/cruciform/obey
 #define CRUCIFORM_PRIEST_CONVERT /datum/core_module/activatable/cruciform/priest_convert

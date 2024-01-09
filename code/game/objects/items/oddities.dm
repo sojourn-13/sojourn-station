@@ -20,6 +20,7 @@
 	var/datum/perk/oddity/perk //This is so we can link a perk into the oddity
 	var/prob_perk = 40 //how likely it is to role a perk - if prek isnt present, out of 100
 	var/min_stats = 1 //The lowest amount it can give when randomizing
+	var/kill_stats = FALSE
 
 
 /obj/item/oddity/Initialize()
@@ -41,7 +42,7 @@
 		if(random_stats)
 			for(var/stat in oddity_stats)
 				oddity_stats[stat] = rand(min_stats, oddity_stats[stat])
-		AddComponent(/datum/component/inspiration, oddity_stats, perk)
+		AddComponent(/datum/component/inspiration, oddity_stats, perk, kill_stats)
 
 /obj/item/oddity/proc/upgraded_oddity_rolling()
 	if(!perk && prob(prob_perk+5))
@@ -50,7 +51,7 @@
 		if(random_stats)
 			for(var/stat in oddity_stats)
 				oddity_stats[stat] = round((oddity_stats[stat] = rand(min_stats, oddity_stats[stat]) * 1.5))
-		AddComponent(/datum/component/inspiration, oddity_stats, perk)
+		AddComponent(/datum/component/inspiration, oddity_stats, perk, kill_stats)
 
 /proc/get_oddity_perk()
 	return pick(subtypesof(/datum/perk/oddity))
@@ -403,6 +404,15 @@
 	oddity_stats = list(
 		STAT_COG = 2,
 		STAT_VIG = 4
+	)
+
+/obj/item/oddity/common/mirror/doodle
+	prob_perk = 0
+	perk = PERK_NO_OBSUCATION
+	kill_stats = TRUE
+	min_stats = 16
+	oddity_stats = list(
+		STAT_COG = 18
 	)
 
 /obj/item/oddity/common/lighter

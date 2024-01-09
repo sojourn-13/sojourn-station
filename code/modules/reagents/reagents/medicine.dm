@@ -14,11 +14,6 @@
 	scannable = TRUE
 	nerve_system_accumulations = -5
 
-/datum/reagent/medicine/inaprovaline/holy
-	id = "holyinaprovaline"
-	scannable = FALSE
-	appear_in_default_catalog = FALSE
-
 /datum/reagent/medicine/inaprovaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // No more useless chem of leftover baycode with no inference on health due to pulse not affecting anything. - Seb
 	M.add_chemical_effect(CE_PULSE, 1)
 	M.add_chemical_effect(CE_STABLE) // Keeping these useless effects for the sake of RP.
@@ -451,12 +446,12 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	reagent_state = LIQUID
 	color = "#800080"
 	overdose = REAGENTS_OVERDOSE * 0.66
-	metabolism = 0.02
+	metabolism = 0.1 //Was sticking around waaaaay too long
 	nerve_system_accumulations = 60
 	scannable = TRUE //Finnicky chem application, we need to know how much of it is on a system to prevent overdose.
 
 /datum/reagent/medicine/oxycodone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 65)
+	M.add_chemical_effect(CE_PAINKILLER, 75) //Enough to do surgery while awake without causing pain messages
 	M.druggy = max(M.druggy, 10)
 
 /datum/reagent/medicine/oxycodone/overdose(mob/living/carbon/M, alien)
@@ -485,24 +480,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/nepenthe/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 1000)
 
-/datum/reagent/medicine/anodyne //Standard used around
-	name = "Anodyne"
-	id = "anodyne"
-	description = "The power of the Absolute grants a gift of momentary abatement against the dire physical hardships of the body."
-	taste_description = "numbness"
-	reagent_state = LIQUID
-	color = "#BAA845"
-	overdose = 0
-	scannable = FALSE
-	metabolism = 0.2
-	nerve_system_accumulations = 0
-	appear_in_default_catalog = FALSE
-	nerve_system_accumulations = -30
-
-/datum/reagent/medicine/anodyne/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 90) // Tweaking the numbers here so that they are closer to what litanies used to do, this one is a flat -10 loss to what it used to be...
-
-/datum/reagent/medicine/laudanum //Weakest available
+/datum/reagent/medicine/paracetamol/holy //It's now just paracetamol. The holy Tylenol, though no OD
 	name = "Laudanum"
 	id = "laudanum"
 	description = "A nostalgic sensation of relief and calm against the faintest aches."
@@ -510,23 +488,60 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	reagent_state = LIQUID
 	color = "#488531"
 	overdose = 0
-	scannable = FALSE
-	metabolism = 0.5
-	nerve_system_accumulations = 0
+	//scannable = FALSE Might make them unscannable again before fullmerge, but for now I need to be able to see them easily to test them
 	appear_in_default_catalog = FALSE
-	nerve_system_accumulations = -15
 
-/datum/reagent/medicine/laudanum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 20) // ...yet this one is a buff, making it an acceptably low painkiller range while keeping a 50 difference between tiers like Tram-to-Para ratio - Seb
+/datum/reagent/medicine/tramadol/holy //Tramadol, but with half NSA
+	name = "Anodyne"
+	id = "anodyne"
+	description = "The power of the Absolute grants relief from pain."
+	taste_description = "numbness"
+	color = "#BAA845"
+	//scannable = FALSE
+	nerve_system_accumulations = 20
+	appear_in_default_catalog = FALSE
+
+/datum/reagent/medicine/oxycodone/holy //Oxycodone but with half NSA and higher OD limit
+	name = "Holy Myrrh"
+	id = "myrrh"
+	description = "The faith healing of the Tessellates can extend even to some of the most severe pains known to creatures."
+	taste_description = "numbness"
+	overdose = REAGENTS_OVERDOSE
+	//scannable = FALSE
+	nerve_system_accumulations = 30
+
+/datum/reagent/medicine/inaprovaline/holy
+	id = "holyinaprovaline"
+	scannable = FALSE
+	appear_in_default_catalog = FALSE
 
 /datum/reagent/medicine/dexalinp/holy
-	name = "Helaxin Negative"
+	name = "Breath of Life"
 	description = "A chemical of unknown origin capable of treating oxygen deprivation and repairing muscles, highly effective but difficult to detect."
 	id = "holydexalinp"
-	scannable = FALSE
+	//scannable = FALSE
 	appear_in_default_catalog = FALSE
 	overdose = 0
 	nerve_system_accumulations = 0
+
+/datum/reagent/medicine/tricordrazine/holy //Tricord but no NSA
+	name = "Restorative Grace"
+	description = "A holy chemical that slowly heals the body of basic ills."
+	id = "holytricord"
+	//scannable = FALSE
+	nerve_system_accumulations = 0
+
+/datum/reagent/medicine/quickclot/holy
+	name = "Blood of God"
+	description = "A holy chemical that stymies the flow of blood."
+	id = "holyquickclot"
+	//scannable = FALSE
+
+/datum/reagent/medicine/dylovene/holy
+	name = "Cleanse the Body"
+	description = "A holy chemical that purges the blood of common toxins."
+	id = "holydylo"
+	//scannable = FALSE
 
 /datum/reagent/medicine/cindpetamol/holy
 	name = "Alignitol"
