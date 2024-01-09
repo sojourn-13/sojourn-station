@@ -6,42 +6,73 @@
 	icon_state = "orebox0"
 	name = "ore box"
 	desc = "A heavy box used for storing ore."
-	density = 1
+	density = TRUE
+	spawn_tags = SPAWN_TAG_STRUCTURE_COMMON
+	var/last_update = 0
+	var/list/stored_ore = list()
 
-/obj/structure/ore_box/attackby(obj/item/W as obj, mob/user as mob)
-	if (istype(W, /obj/item/stack/ore))
+/obj/structure/ore_box/attackby(obj/item/W, mob/user)
+	if (istype(W, /obj/item/stack/ore/))
 		user.remove_from_mob(W)
-		W.forceMove(src)
+		src.contents += W
 	if (istype(W, /obj/item/storage))
 		var/obj/item/storage/S = W
 		S.hide_from(usr)
-		if (locate(/obj/item/stack/ore) in S.contents)
+		if (locate(/obj/item/stack/ore/) in S.contents)
 			for(var/obj/item/stack/ore/O in S.contents)
 				S.remove_from_storage(O, src) //This will move the item to this item's contents
 			playsound(loc, S.use_sound, 50, 1, -5)
 			user.visible_message(SPAN_NOTICE("[user.name] empties the [S] into the box"), SPAN_NOTICE("You empty the [S] into the box."), SPAN_NOTICE("You hear a rustling sound"))
 		else
 			to_chat(user, SPAN_WARNING("There's no ore inside the [S] to empty into here"))
+	update_ore_count()
 
 	return
 
+/obj/structure/ore_box/proc/update_ore_count()
+
+	stored_ore = list()
+
+	for(var/obj/item/stack/ore/O in contents)
+
+		if(stored_ore[O.name])
+			stored_ore[O.name]++
+		else
+			stored_ore[O.name] = 1
+
 /obj/structure/ore_box/examine(mob/user)
-	..()
-	to_chat(user, SPAN_NOTICE("The box contains:"))
-	var/list/nice_display_list = list()
-	for(var/type in contents)
-		var/obj/item/stack/ore/O = type
-		nice_display_list[initial(O.name)] += O.amount
-	for(var/element in nice_display_list)
-		var/numtoshow = nice_display_list[element]
-		to_chat(user, SPAN_NOTICE("[numtoshow] of [element]"))
+	to_chat(user, "That's an [src].")
+	to_chat(user, desc)
+
+	// Borgs can now check contents too.
+	if((!ishuman(user)) && (!isrobot(user)))
+		return
+
+	if(!Adjacent(user)) //Can only check the contents of ore boxes if you can physically reach them.
+		return
+
+	add_fingerprint(user)
+
+	if(!contents.len)
+		to_chat(user, "It is empty.")
+		return
+
+	if(world.time > last_update + 10)
+		update_ore_count()
+		last_update = world.time
+
+	to_chat(user, "It holds:")
+	for(var/ore in stored_ore)
+		to_chat(user, "- [stored_ore[ore]] [ore]")
+	return
+
 
 /obj/structure/ore_box/verb/empty_box()
 	set name = "Empty Ore Box"
 	set category = "Object"
 	set src in view(1)
 
-	if(!ishuman(usr) && !isrobot(usr)) //Only living, intelligent creatures with hands can empty material boxes.
+	if(!ishuman(usr)) //Only living, intelligent creatures with hands can empty ore boxes.
 		to_chat(usr, "\red You are physically incapable of emptying the ore box.")
 		return
 
@@ -58,28 +89,68 @@
 		to_chat(usr, "\red The ore box is empty")
 		return
 
+/obj/structure/ore_box/attack_hand(mob/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(Adjacent(user))
+		ui_interact(user)
 
-	dump_box_contents()
+/obj/structure/ore_box/attack_robot(mob/user)
+	if(Adjacent(user))
+		ui_interact(user)
 
-	return
-
-
-/obj/structure/ore_box/proc/dump_box_contents(drop_loc = null)
-	var/drop = drop_loc ? drop_loc : drop_location()
+/obj/structure/ore_box/proc/dump_box_contents(ore_name, ore_amount=-1)
+	var/drop = drop_location()
 	for(var/obj/item/stack/ore/O in src)
+		if(ore_amount == 0)
+			break
 		if(QDELETED(O))
 			continue
 		if(QDELETED(src))
 			break
+		if(ore_name && O.name != ore_name)
+			continue
+		ore_amount--
 		O.forceMove(drop)
-		if(TICK_CHECK)
-			stoplag()
-			drop = drop_loc ? drop_loc : drop_location()
 
-/obj/structure/ore_box/ex_act(severity)
-	if(severity == 1.0 || (severity < 3.0 && prob(50)))
-		for (var/obj/item/stack/ore/O in contents)
-			O.loc = src.loc
-			O.ex_act(severity++)
-		qdel(src)
+/obj/structure/ore_box/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "OreBox", name)
+		ui.open()
+
+/obj/structure/ore_box/ui_data()
+	var/data = list()
+	data["materials"] = list()
+	for(var/ore in stored_ore)
+		data["materials"] += list(list("name" = ore, "amount" = stored_ore[ore], "type" = ore))
+
+	return data
+
+/obj/structure/ore_box/ui_act(action, params)
+	. = ..()
+	if(.)
 		return
+	if(!Adjacent(usr))
+		return
+	add_fingerprint(usr)
+	switch(action)
+		if("ejectallores")
+			dump_box_contents()
+			to_chat(usr, span_notice("You release all the content of the box."))
+			update_ore_count()
+			return TRUE
+		if("ejectall")
+			var/ore_name = params["type"]
+			dump_box_contents(ore_name)
+			to_chat(usr, span_notice("You release all the [ore_name] ores."))
+			update_ore_count()
+			return TRUE
+		if("eject")
+			var/ore_name = params["type"]
+			var/ore_amount = params["qty"]
+			dump_box_contents(ore_name, ore_amount)
+			to_chat(usr, span_notice("You release [ore_amount] [ore_name] ores."))
+			update_ore_count()
+			return TRUE
