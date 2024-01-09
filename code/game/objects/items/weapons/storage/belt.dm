@@ -447,6 +447,24 @@
 	new /obj/item/clothing/glasses/powered/thermal(src)
 	new /obj/item/clothing/glasses/powered/night(src)
 
+/obj/item/storage/belt/security/tactical/solfed
+
+/obj/item/storage/belt/security/tactical/shieldert/populate_contents()
+	new /obj/item/tool/shovel/combat(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/cell/small/moebius/nuclear(src)
+	new /obj/item/cell/small/moebius/nuclear(src)
+	new /obj/item/cell/medium/moebius/nuclear(src)
+	new /obj/item/clothing/glasses/powered/night(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/ammobox/kurtz_50/hv(src)
+	new /obj/item/device/binoculars(src)
+
 /obj/item/storage/belt/security/tactical/opifex
 	name = "opifex tactical belt"
 	desc = "A black tactical belt made specifically for opifex to prevent any pulling or ruffling of feathers, slightly uncomfortable for anyone else but none can deny its quality. This harness is built specifically for combat, limiting its versatility."

@@ -31,7 +31,7 @@
 
 /obj/effect/mob_spawn/human/scavenger
 	name = "storage sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in armor."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in armor."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -45,7 +45,7 @@
 
 /obj/effect/mob_spawn/human/exl_civ
 	name = "storage sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in excelsior equipment."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in excelsior equipment."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -70,7 +70,7 @@
 
 /obj/effect/mob_spawn/human/void_wolf
 	name = "storage sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in void wolf equipment."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in void wolf equipment."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -94,7 +94,7 @@
 
 /obj/effect/mob_spawn/human/si_medical_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in SI medical equipment."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in SI medical equipment."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -115,7 +115,7 @@
 
 /obj/effect/mob_spawn/human/marshal_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Colonial Marshal"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Colonial Marshal"
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -136,7 +136,7 @@
 
 /obj/effect/mob_spawn/human/blackshield_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Blackshield Specialist"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Blackshield Specialist"
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -157,7 +157,7 @@
 
 /obj/effect/mob_spawn/human/engineering_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in advanced Guild equipment."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in advanced Guild equipment."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -178,7 +178,7 @@
 
 /obj/effect/mob_spawn/human/lonestar_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be an Auditor."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be an Auditor."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -200,7 +200,7 @@
 
 /obj/effect/mob_spawn/human/sri_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a member of the SRI Ethics committee."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a member of the SRI Ethics committee."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -222,7 +222,7 @@
 
 /obj/effect/mob_spawn/human/prospector_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a Prospector."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Prospector."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -242,10 +242,32 @@
 		STAT_COG = 5 //Hoggs smartest prospector
 	)
 
+/obj/effect/mob_spawn/human/solfed_survivor //very OP. Fluff wise, this is some kinda recon/vanguard. Lightly armed and armored by the standards of SolFed but still dangerous via their special gear.
+	name = "deployment sleeper"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be some kind of soldier."
+	mob_name = "a human"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/solfed_survivor
+	ghost_role_perks = list(PERK_ASS_OF_CONCRETE, PERK_PARKOUR, PERK_PROSPECTOR_CONDITIONING, PERK_SURE_STEP, PERK_TRUE_NAME)
+	short_desc = "You are a Solarian reconnoiterer, and a survival of the fall."
+	flavour_text = "Nearly seven years since the fall the the Federation, the Bluespace crash - your informal termination, what a fucking joke.\
+	You shake the dust off, that familiar awful taste fills your mouth as your body realizes that the long-sleep is over and you wake once more. \
+	You feel the weight of you trusty issue equipment...Far from a marine assualt-suit, still a fierce advantage against the barbarous masses now running roughshod over the galaxy."
+	assignedrole = "Prospector Underboss"
+	title = "Solarian Vanguard"
+	stat_modifiers = list(
+		STAT_ROB = 45,
+		STAT_TGH = 45,
+		STAT_BIO = 20,
+		STAT_MEC = 5,
+		STAT_VIG = 45,
+		STAT_COG = 20
+	)
 
 /obj/effect/mob_spawn/human/kriosan_trooper
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a Kriosan trooper."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Kriosan trooper."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
