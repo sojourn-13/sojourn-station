@@ -103,7 +103,7 @@ export const Stats = (props: any, context: any) => {
   );
 
   return (
-    <Window width={285} height={295} title={`${name}'s Stats`}>
+    <Window width={285} height={310} title={`${name}'s Stats`}>
       <Window.Content style={{ 'background-image': 'none' }}>
         <Stack fill vertical>
           {(hasPerks && (
