@@ -16,9 +16,7 @@
 	also_known_languages = list(LANGUAGE_LATIN = 100)
 	security_clearance = CLEARANCE_CLERGY
 	health_modifier = 10
-	access = list(
-		access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors
-	)
+	access = list(access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors)
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 
 
@@ -34,16 +32,14 @@
 		STAT_TGH = 10,
 	)
 
-	perks = list(PERK_NEAT, PERK_GREENTHUMB, /datum/perk/channeling
-		//, /datum/perk/chemist -Thanos Voice: "A small price to pay for salvation."
-	)
+	perks = list(PERK_NEAT, PERK_GREENTHUMB, PERK_CHANNELING)
 
 	software_on_spawn = list(/datum/computer_file/program/records,
 							 /datum/computer_file/program/reports)
 
 	core_upgrades = list(
-		CRUCIFORM_PRIEST,
-		CRUCIFORM_REDLIGHT
+		CRUCIFORM_CLERGY,
+		CRUCIFORM_PRIME
 	)
 
 	description = "The Prime serves as the head of the local branch of the Church of the Absolute. <br>\
@@ -91,7 +87,7 @@
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 
 	core_upgrades = list(
-		CRUCIFORM_PRIEST
+		CRUCIFORM_CLERGY
 	)
 
 	perks = list(PERK_NEAT, PERK_GREENTHUMB, PERK_CHANNELING)

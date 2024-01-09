@@ -46,6 +46,7 @@
 #define PERK_NOBLE /datum/perk/noble
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery
 #define PERK_SANITYBOOST /datum/perk/sanityboost
+#define PERK_COMMUNITY_SAINTS /datum/perk/community_of_saints
 #define PERK_CHANNELING /datum/perk/channeling
 #define PERK_IDEALIST /datum/perk/idealist
 #define PERK_LUNGS_OF_IRON /datum/perk/lungs_of_iron
@@ -67,8 +68,6 @@
 #define PERK_MEDICAL_EXPERT /datum/perk/medicalexpertise
 #define PERK_SURGICAL_MASTER /datum/perk/surgical_master
 #define PERK_ADVANCED_MEDICAL /datum/perk/advanced_medical
-#define PERK_ALCHEMY /datum/perk/alchemist
-#define PERK_SCRIBE /datum/perk/scribe
 #define PERK_NERD /datum/perk/chemist
 #define PERK_ROBOTICS_EXPERT /datum/perk/robotics_expert
 #define PERK_ARTIST /datum/perk/job/artist
@@ -174,6 +173,11 @@
 #define PERK_NANITE_ARMOR /datum/perk/nanite_armor
 #define PERK_NANITE_AMMO /datum/perk/nanite_ammo
 #define PERK_NANITE_METAL_EATER /datum/perk/nanite_metal_drinker
+
+// Crayon Mage Perks
+#define PERK_ALCHEMY /datum/perk/alchemist
+#define PERK_SCRIBE /datum/perk/scribe
+#define PERK_REVEAL /datum/perk/cooldown/reveal
 
 // Imprinter Perks
 #define PERK_SMARTLINK /datum/perk/smartlink

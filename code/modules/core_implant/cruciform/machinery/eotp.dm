@@ -148,13 +148,13 @@ var/global/obj/machinery/power/eotp/eotp
 					break
 
 		if(!antagonist_area)
-			for(var/mob/living/carbon/human/H in disciples)
+			for(var/mob/living/carbon/human/H in disciples) //Gives less sanity but more damage heal than Inspiration, with a different message to make it distinct, so disciples know that the Will just did a scan and found nothing.
 				if(H.sanity && prob(50))
 					H.sanity.changeLevel(20)
 					H.adjustOxyLoss(-50)
 					H.adjustBruteLoss(-15)
 					H.adjustFireLoss(-15)
-					to_chat(H, SPAN_NOTICE("You feel a wave of calm pass over you. Your cruciform does a quick routine maintenance, patching any potential minor wounds across your body."))
+					to_chat(H, SPAN_NOTICE("You feel a wave of certainty pass over you. Though things may seem grim, the darkness is not overwhelming. Your cruciform does some minor maintenance, patching any potential minor wounds across your body."))
 
 		else
 			for(var/mob/living/carbon/human/H in disciples)
@@ -172,9 +172,9 @@ var/global/obj/machinery/power/eotp/eotp
 			if(H.sanity && prob(50))
 				H.sanity.breakdown(TRUE)
 				H.adjustOxyLoss(-50)
-				H.adjustBruteLoss(-15)
-				H.adjustFireLoss(-15)
-				to_chat(H, SPAN_NOTICE("You feel a wave of calm pass over you. Your cruciform does a quick routine maintenance, patching any potential minor wounds across your body."))
+				H.adjustBruteLoss(-10)
+				H.adjustFireLoss(-10)
+				to_chat(H, SPAN_NOTICE("You feel a wave of calm pass over you. The Absolute is watching over you. Your cruciform does a quick routine maintenance, patching some wounds across your body."))
 /*
 	else if(type_release == ODDITY)
 		var/oddity_reward = pick(subtypesof(/obj/item/oddity/nt))

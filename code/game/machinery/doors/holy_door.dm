@@ -17,6 +17,12 @@
 	icon = 'icons/obj/doors/Door_holy_preacher.dmi'
 	minimal_holiness = CLEARANCE_CLERGY
 
+/obj/machinery/door/holy/public
+	name = "church public door"
+	desc = "A door crafted by the church that requires no power and doesn't seem to have panel you could open. This one will open to anyone with an active cruciform."
+	icon = 'icons/obj/doors/Door_holy_public.dmi'
+	minimal_holiness = CLEARANCE_NONE
+
 /obj/item/clothing/accessory/cross // It belongs here
 	name = "tau cross necklace"
 	desc = "A heavy necklace resembling a Tau Cross - symbol of the Absolute. Used as a key to church hatchways."
@@ -28,7 +34,7 @@
 
 /obj/item/clothing/accessory/magatama
 	name = "magatama necklace"
-	desc = "A large jade stone with a hole in it, showing some signs of wear. Church legends say it was the personal possession of the first matyred Monomial, and alledge that its touch can calm even the most disquieted soul."
+	desc = "A large jade stone with a hole in it, showing some signs of wear. Church legends say it was the personal possession of the first matyred Monomial, and claim that its touch can calm even the most disquieted soul."
 	icon = 'icons/inventory/accessory/icon.dmi'
 	icon_state = "magatama"
 	item_state = "magatama"

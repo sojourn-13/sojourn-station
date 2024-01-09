@@ -103,7 +103,7 @@
 		return
 	else
 		to_chat(user, "<span class='notice'>You clean \the [target.name].</span>")
-		target.clean_blood()
+		target.clean_blood(TRUE)
 		return
 
 

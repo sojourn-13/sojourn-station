@@ -317,7 +317,7 @@ Proc for attack log creation, because really why not
 	if(!isliving(L))
 		return FALSE
 	var/obj/item/implant/core_implant/cruciform/C = L.get_core_implant(/obj/item/implant/core_implant/cruciform)
-	if(C && C.get_module(CRUCIFORM_PRIEST) && C.get_module(CRUCIFORM_REDLIGHT))
+	if(C && C.get_module(CRUCIFORM_CLERGY) && C.get_module(CRUCIFORM_PRIME))
 		return TRUE
 	return FALSE
 

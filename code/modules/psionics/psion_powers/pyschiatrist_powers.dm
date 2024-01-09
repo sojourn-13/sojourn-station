@@ -1,6 +1,39 @@
 // These powers are specific to certain jobs and are obtained by joining as that job with the proper implant. They may be balanced differently and may cost standard or greater power points.
 
 // Psychiatrist/Psychologist
+/obj/item/organ/internal/psionic_tumor/proc/peace_of_mind()
+	set category = "Psionic powers"
+	set name = "Peace of Mind (4)"
+	set desc = "Expend four psi points to put whatever person you are currently grabbing to sleep for a short time."
+	psi_point_cost = 4
+
+	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
+	var/obj/item/grab/G = locate() in owner
+	if(!G || !istype(G))
+		usr.show_message(SPAN_DANGER("You are not grabbing anyone."))
+		psi_points += psi_point_cost
+		return
+
+	if(G.state < GRAB_AGGRESSIVE)
+		usr.show_message(SPAN_DANGER("You must have an aggressive grab to put someone to sleep!"))
+		psi_points += psi_point_cost
+		return
+
+	if(pay_power_cost(psi_point_cost))
+		if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC)
+			usr.visible_message(
+					SPAN_DANGER("[usr] places a hand upon [L] attempting to put them to sleep!"),
+					SPAN_DANGER("You place your hand on [L] expanding your mind and attempting to put them to sleep!")
+					)
+			L.AdjustSleeping(60)
+		else
+			usr.show_message("\blue You are not holding someone you can use this power on.")
+
+	if(L.psi_blocking >= 10)
+		owner.stun_effect_act(0, L.psi_blocking * 5, BP_HEAD)
+		owner.weakened = L.psi_blocking
+		usr.show_message(SPAN_DANGER("Your head pulsates with pain as your mind bashes against an unbreakable barrier!"))
+		return
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_heal_other()
 	set category = "Psionic powers"

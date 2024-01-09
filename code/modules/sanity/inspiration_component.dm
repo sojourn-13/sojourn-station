@@ -14,9 +14,11 @@
 	var/datum/callback/get_stats
 	//perk
 	var/datum/perk/perk
+	//If we after we are used set are stats to 0
+	var/kill_stats = FALSE
 
 /// Statistics can be a list (static) or a callback to a proc that returns a list (of the same format)
-/datum/component/inspiration/Initialize(statistics, datum/perk/new_perk)
+/datum/component/inspiration/Initialize(statistics, datum/perk/new_perk, kill_stats)
 	if(!istype(parent, /obj/item))
 		return COMPONENT_INCOMPATIBLE
 	if(islist(statistics))
@@ -25,8 +27,13 @@
 		get_stats = statistics
 	else
 		return COMPONENT_INCOMPATIBLE
-	var/obj/item/oddity/father = parent
-	perk = father.perk
+	if(kill_stats)
+		kill_stats = TRUE
+	if(new_perk)
+		perk = new_perk
+	else
+		var/obj/item/oddity/father = parent
+		perk = father.perk
 	get_power()
 
 /datum/component/inspiration/RegisterWithParent()
@@ -79,14 +86,14 @@
 				stat_noun = pick("physique", "soma", "build", "frame")
 				stat_adjective = pick("morphological", "physical")
 		switch(stats[stat])
-			if(30 to INFINITY)
+			if(15 to INFINITY)
 				a_or_an = "an"
 				stat_color = "<span style='color:#cd00ff;'>"
 				if(aspect_noun_or_adjective == "noun")
 					aspect = pick(nouns_reality_bending)
 				else
 					aspect = pick(adjectives_reality_bending)
-			if(10 to 30)
+			if(10 to 15)
 				a_or_an = "an"
 				stat_color = "<span style='color:#d0b050;'>"
 				if(aspect_noun_or_adjective == "noun")
@@ -134,6 +141,10 @@
 		if(usr.stats?.getPerk(PERK_STALKER))
 			var/datum/perk/oddity/OD = GLOB.all_perks[perk]
 			to_chat(user, SPAN_NOTICE("Instinct tells you more about this anomaly: <span style='color:orange'>[OD]. [OD.desc]</span>"))
+
+	if(kill_stats)
+		to_chat(user, SPAN_NOTICE("<span style='color:angelsay'>An unstable decaying aura radiates from this one. It seems this type will one be useable once...</span>"))
+
 
 	var/strength
 	switch(get_power())
