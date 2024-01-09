@@ -449,7 +449,7 @@
 
 /obj/item/storage/belt/security/tactical/solfed
 
-/obj/item/storage/belt/security/tactical/shieldert/populate_contents()
+/obj/item/storage/belt/security/tactical/solfed/populate_contents()
 	new /obj/item/tool/shovel/combat(src)
 	new /obj/item/grenade/frag(src)
 	new /obj/item/grenade/frag(src)
@@ -459,6 +459,7 @@
 	new /obj/item/cell/small/moebius/nuclear(src)
 	new /obj/item/cell/medium/moebius/nuclear(src)
 	new /obj/item/clothing/glasses/powered/night(src)
+	new /obj/item/clothing/glasses/powered/thermal(src)
 	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
 	new /obj/item/ammo_magazine/kurtz_50/hv(src)
 	new /obj/item/ammo_magazine/kurtz_50/hv(src)

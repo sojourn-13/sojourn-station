@@ -168,6 +168,7 @@
 	mask = /obj/item/clothing/mask/gas/old
 	uniform = /obj/item/clothing/under/overalls/utilitygreen
 	suit_store = /obj/item/gun/projectile/automatic/omnirifle/scoped
+	l_pocket = /obj/item/storage/pouch/ammo
 	r_pocket = /obj/item/clothing/accessory/passcard/passport_sol
 	gloves = /obj/item/clothing/gloves/thick/swat
 	glasses = /obj/item/clothing/glasses/powered/thermal
@@ -175,8 +176,7 @@
 	belt = /obj/item/storage/belt/security/tactical/solfed
 	back = /obj/item/storage/backpack/military
 
-	backpack_contents = list(/obj/item/storage/pouch/ammo = 1,
-	/obj/item/rig/combat/solfed = 1,
+	backpack_contents = list(/obj/item/rig/combat/solfed/equipped = 1,
 	/obj/item/ammo_magazine/heavy_rifle_408/hv = 5,
 	/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv = 1,
 	/obj/item/storage/firstaid/combat = 1,
