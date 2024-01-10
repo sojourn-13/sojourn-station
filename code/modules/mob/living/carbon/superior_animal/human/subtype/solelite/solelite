@@ -1,6 +1,6 @@
 /mob/living/carbon/superior_animal/human/solelite
-	name = "Solfed Elite"
-	desc = "Black and charred hardsuit, sub-machine gun in-hand, a being of absolute terror to traitors of the Federation."
+	name = "Elite Operative"
+	desc = "Black and charred hardsuit, sub-machine gun in-hand, a being of absolute terror to those who dare approach."
 	icon = 'icons/mob/mobs-humanoid.dmi'
 	icon_state = "syndicate_stormtrooper_smg"
 	stop_automated_movement_when_pulled = 1
@@ -49,7 +49,6 @@
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
-	drop_items = list(/obj/item/gun/projectile/)
 	faction = "elitemerc"
 
 /mob/living/carbon/superior_animal/human/solelite/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
@@ -64,7 +63,7 @@
 
 /mob/living/carbon/superior_animal/human/solelite/melee
 	icon_state = "syndicate_stormtrooper_melee"
-	desc = "Black and charred hardsuit, sword and shield to match, a being of absolute terror to traitors of the Federation."
+	desc = "Black and charred hardsuit, sword and shield to match, a being of absolute terror to those who dare approach."
 	armor = list(melee = 65, bullet = 65, energy = 80, bomb = 80, bio = 90, rad = 25) //Melee shield
 	ranged = 0
 	melee_damage_lower = 40
@@ -72,7 +71,7 @@
 
 
 /mob/living/carbon/superior_animal/human/solelite/pistol
-	desc = "Black and charred hardsuit, revolver in-hand, a being of absolute terror to traitors of the Federation."
+	desc = "Black and charred hardsuit, revolver in-hand, a being of absolute terror to those who dare approach"
 	icon_state = "syndicate_stormtrooper_pistol"
 	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
 	drop_items = list(/obj/item/gun/projectile/revolver/hornet)
@@ -82,7 +81,7 @@
 	mags_left = 5 //5+1
 
 /mob/living/carbon/superior_animal/human/solelite/shotgunner
-	desc = "Black and charred hardsuit, omnirifle shotgun in-hand, a being of absolute terror to traitors of the Federation."
+	desc = "Black and charred hardsuit, omnirifle shotgun in-hand, a being of absolute terror to those who dare approach."
 	icon_state = "syndicate_stormtrooper_shotgun"
 	projectiletype = /obj/item/projectile/bullet/shotgun
 	drop_items = list(/obj/item/gun/projectile/automatic/omnirifle/hustler)
