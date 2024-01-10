@@ -304,6 +304,7 @@
 /mob/living/simple_animal/hostile/elitemercenary/range/gunslinger
 	ranged_cooldown = 2
 	rapid = 0
+	ranged = 1
 	icon_state = "syndicate_stormtrooper_pistol"
 	projectilesound = 'sound/weapons/guns/fire/revolver_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/kurtz_50
@@ -311,11 +312,12 @@
 
 /mob/living/simple_animal/hostile/elitemercenary/range/space/heavy/shotgun
 	ranged_cooldown = 4
-	rapid = 0
+	rapid = 1
+	ranged = 1
 	armor = list(melee = 65, bullet = 50, energy = 20, bomb = 0, bio = 100, rad = 50)
 	health = 450
 	maxHealth = 450
 	icon_state = "syndicate_stormtrooper_shotgun"
 	projectilesound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/shotgun
-	drop_items = list(/obj/item/gun/projectile/shotgun/pump/combat)
+	drop_items = list(/obj/item/gun/projectile/automatic/omnirifle/hustler)
