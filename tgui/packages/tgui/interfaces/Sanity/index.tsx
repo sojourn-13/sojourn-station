@@ -91,10 +91,10 @@ export const Trait = (props: TraitProps) => {
 
 export const Sanity = (props: any, context: any) => {
   const { data } = useBackend<SanityData>(context);
-  const { style, sanity, desires, insight } = data;
+  const { sanity, desires, insight } = data;
 
   return (
-    <Window width={650} height={650}>
+    <Window width={650} height={510}>
       <Window.Content style={{ 'background-image': 'none' }} scrollable>
         <Stack vertical>
           <Stack.Item>

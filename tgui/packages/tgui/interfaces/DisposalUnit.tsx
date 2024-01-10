@@ -25,7 +25,7 @@ export const DisposalUnit = (props: any, context: any) => {
   let modeText = panel ? 'Power Disabled' : mode;
 
   return (
-    <Window width={300} height={183} title="Waste Disposal Unit">
+    <Window width={300} height={155} title="Waste Disposal Unit">
       <Window.Content>
         <Section>
           <Stack fill vertical>
@@ -33,18 +33,6 @@ export const DisposalUnit = (props: any, context: any) => {
               <LabeledList>
                 <LabeledList.Item label="Status" color={modeColor}>
                   {modeText}
-                </LabeledList.Item>
-                <LabeledList.Item label="Pressure">
-                  <ProgressBar
-                    value={pressure}
-                    minValue={0}
-                    maxValue={100}
-                    ranges={{
-                      bad: [-Infinity, 0],
-                      average: [0, 100],
-                      good: [100, Infinity],
-                    }}
-                  />
                 </LabeledList.Item>
                 <LabeledList.Item label="Handle">
                   <Button
