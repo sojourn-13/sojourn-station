@@ -869,8 +869,8 @@
 	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg')
 	sound_env = LARGE_ENCLOSED
 
-/area/nadezhda/absolutism/storage
-	name = "\improper Church Storage"
+/area/nadezhda/absolutism/hallways
+	name = "\improper Church Hallways"
 	icon_state = "erisyellow"
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 
@@ -885,7 +885,7 @@
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 
 /area/nadezhda/absolutism/vectorrooms
-	name = "\improper Church Vector Commons"
+	name = "\improper Church Commons"
 	icon_state = "erisblue"
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 

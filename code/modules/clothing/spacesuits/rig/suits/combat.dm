@@ -277,3 +277,55 @@
 /obj/item/clothing/head/helmet/space/rig/combat/ert/co/wo
 	name = "tactical armored helmet"
 	camera_networks = list(NETWORK_SECURITY)
+
+/obj/item/rig/combat/solfed //Suffice it to say this should NOT see extensive use and should be reserved for specific events, the nature of this equipment is that it should NOT fall into player hands.
+	name = "MK.XXI 'Pathfinder' RIG"
+	desc = "An incredibly rare and advanced RIG. Typically found in the hands of Solarian vanguard and special recon units, these suits strike fear into the hearts of colonial traitors the galaxy over for they signal\
+	the coming wrath of Sol."
+	icon_state = "military_rig"
+	suit_type = "combat hardsuit"
+	armor_list = list(
+		melee = 60,
+		bullet = 70,
+		energy = 70,
+		bomb = 60,
+		bio = 100,
+		rad = 100
+	)
+	slowdown = -0.2 //super advanced hardsuit.
+	drain = 2
+	offline_slowdown = 4 // aalso fucking heavy.
+	offline_vision_restriction = 1
+	stiffness = 0
+	obscuration = 0
+	max_upgrades = 0
+	initial_modules = list(/obj/item/rig_module/maneuvering_jets)
+	chest_type = /obj/item/clothing/suit/space/rig/combat/solfed
+	helm_type =  /obj/item/clothing/head/helmet/space/rig/combat/solfed
+	boot_type =  /obj/item/clothing/shoes/magboots/rig/combat/solfed
+	glove_type = /obj/item/clothing/gloves/rig/combat/solfed
+
+/obj/item/rig/combat/solfed/equipped
+	initial_modules = list(
+		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/stealth_field,
+		/obj/item/rig_module/modular_injector/combat,
+		/obj/item/rig_module/grenade_launcher,
+		/obj/item/rig_module/vision/multi,
+		/obj/item/rig_module/mounted,
+		/obj/item/rig_module/held/shield,
+		/obj/item/rig_module/self_destruct
+		)
+
+/obj/item/clothing/suit/space/rig/combat/solfed
+	name = "advanced armored hardsuit"
+
+/obj/item/clothing/gloves/rig/combat/solfed
+	name = "advanced armored gloves"
+
+/obj/item/clothing/shoes/magboots/rig/combat/solfed
+	name = "advanced armored boots"
+
+/obj/item/clothing/head/helmet/space/rig/combat/solfed
+	name = "advanced armored helmet"
+	camera_networks = null//list(NETWORK_SOYFED) //It is over general, I have depicted your murderous federation as the soyjack and my glorious homeland as the chad. To do, maybe actually set this up.

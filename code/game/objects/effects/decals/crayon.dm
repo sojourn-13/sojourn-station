@@ -25,7 +25,7 @@
 		return FALSE
 	return TRUE
 
-// Shimmer rune, invoked by Scribe scrolls, doesn't allow neither lasers nor projectiles to pass through.
+// Shimmer rune, invoked by Scribe scrolls, doesn't allow bullets to pass through.
 /obj/effect/decal/cleanable/crayon/shimmer
 	name = "strange rune"
 	desc = "The air shimmers about this rune."
@@ -36,6 +36,66 @@
 	if(istype(mover, /obj/item/projectile) && !istype(mover, /obj/item/projectile/beam))
 		return FALSE
 	return TRUE
+
+// Trap rune. Created by deepmaint and naughty mages.
+/obj/effect/decal/cleanable/crayon/trap
+	name = "dangerous rune"
+	desc = "The air shimmers about this rune."
+	alpha = 50
+	is_rune = TRUE //We can infact cast from this rune
+	var/playmate = 0
+	var/draw = 1
+
+/obj/effect/decal/cleanable/crayon/trap/Crossed(mob/living/carbon/human/M)
+	var/obj/item/scroll/trap_card = null
+	if(ishuman(M))
+		playmate = 0
+		draw = rand(1,2)
+		src.set_light(3,2,"#FFFFFF") //so it lights up on crossing.
+
+		//checks on the person crossing. Do we go off for this person?
+		if(M.species?.reagent_tag == IS_SYNTHETIC || M.species?.reagent_tag == IS_SLIME)
+			return //our runes dont play with synthetic or slimes
+		for(var/datum/language/L in M.languages)
+			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
+				return //why would we go off for our friends?
+		if(draw == 1) //are we using scroll spells?
+			if(!trap_card)
+				trap_card = new /obj/item/scroll(M.loc)
+			trap_card.loc = M.loc
+			trap_card.alpha = 0
+			pick(trap_card.smoke_spell(M), trap_card.gaia_spell(M), trap_card.oil_spell(M), trap_card.entangle_spell(M), trap_card.joke_spell(M), trap_card.charger_spell(M))
+			do_sparks(3, 0, M.loc)
+		if(draw == 2) //are we using rune spells?
+			if(M.maxHealth < 80)
+				pick(src.flux_spell(M, TRUE), src.equalize_spell(M, TRUE))
+			else pick(src.ignorance_spell(M, TRUE), src.madness_spell(M, TRUE), src.flux_spell(M, TRUE), src.equalize_spell(M, TRUE))
+			do_sparks(3, 0, M.loc)
+
+
+	//Everyone else in the Areas checks. Wouldn't be MAGIC if it only effected the yolo solo churchie.
+	for(var/mob/living/carbon/human/T in oview(7))
+		playmate = 0
+		draw = rand(1,2)
+		for(var/datum/language/L in T.languages) //check to see if they are our friends!
+			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
+				playmate = 1
+		if(!playmate)
+			if(T.species?.reagent_tag == IS_SYNTHETIC || T.species?.reagent_tag == IS_SLIME)
+				return //we don't interact with synths, borgs, slimes, ect
+			if(draw == 1) //are we using scroll spells?
+				if(!trap_card)
+					trap_card = new /obj/item/scroll(T.loc)
+				trap_card.loc = T.loc
+				trap_card.alpha = 0
+				pick(trap_card.smoke_spell(T), trap_card.gaia_spell(T), trap_card.oil_spell(T), trap_card.entangle_spell(T), trap_card.joke_spell(T), trap_card.charger_spell(T))
+				do_sparks(3, 0, T.loc)
+			if(draw == 2)//are we using rune spells?
+				if(M.maxHealth < 80)
+					pick(src.flux_spell(T), src.equalize_spell(T))
+				else pick(src.ignorance_spell(T), src.madness_spell(T), src.flux_spell(T), src.equalize_spell(T))
+				do_sparks(3, 0, T.loc)
+
 
 /obj/effect/decal/cleanable/crayon/New(location,main = "#FFFFFF",shade = "#000000",type = "rune")
 	..()
@@ -67,16 +127,23 @@
 /obj/effect/decal/cleanable/crayon/attackby(obj/item/I, mob/living/carbon/human/M)
 	..()
 	if(istype(I, /obj/item/oddity/common/book_unholy) || istype(I, /obj/item/oddity/common/book_omega))
+		if(M.get_core_implant(/obj/item/implant/core_implant/cruciform))
+			rejected_playmate_faithful(M)
+			return
 		if(body_checks(M) && is_rune)
 			to_chat(M, "<span class='info'>The rune lights up in reaction to the book...</span>")
 			if(follow_crayon)
-				var/old_desc = "[I.desc]"
+				var/old_desc = "[follow_crayon.desc]"
 				follow_crayon.desc = "[old_desc] The strange energies of this planet seem to have infused it with more signicance than before."
 				desc = "A rune drawn in empowered crayon wax."
 				follow_crayon = null
 			var/alchemist = FALSE
+			var/able_to_cast = FALSE
 			if(M.stats.getPerk(PERK_ALCHEMY))
 				alchemist = TRUE // We are an alchemist!
+			for(var/datum/language/L in M.languages)
+				if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
+					able_to_cast = TRUE // We can cast
 			var/datum/reagent/organic/blood/B = M.get_blood()
 			var/candle_amount = 0
 			for(var/obj/item/flame/candle/mage_candle in oview(3))
@@ -90,10 +157,13 @@
 
 			for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) // Don't forget to clear your old work!
 
-				// Spell example
+				/* Spell example and explination.
+				able_to_cast: True or False used to check if they know cult or occult language.
+				alchemist: If you have this perk it is true, used in some spells that need to know.
+				scribe: Same as Alchemist but for the scribe perk.
 
-				/*if(spell.message == "Example Spell." && candle_amount >= 0)
-					example_spell(M)
+				if(spell.message == "Example Spell." && candle_amount >= 0)
+					example_spell(M, able_to_cast)
 					continue*/
 
 				if(spell.message == "Babel." && candle_amount >= 3)
@@ -101,7 +171,7 @@
 					continue
 
 				if(spell.message == "Ignorance." && candle_amount >= 1)
-					ignorance_spell(M)
+					ignorance_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Flux." && candle_amount >= 1)
@@ -113,15 +183,15 @@
 					continue
 
 				if(spell.message == "Life." && candle_amount >= 5)
-					life_spell(M)
+					life_spell(M, able_to_cast)
 					continue
 
 				if((spell.message == "Madness." || spell.message == "Insanity.") && candle_amount >= 3)
-					madness_spell(M)
+					madness_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Sight." && candle_amount >= 3)
-					sight_spell(M)
+					sight_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Paradox." && candle_amount >= 7)
@@ -129,11 +199,11 @@
 					continue
 
 				if((spell.message == "The End." || spell.message == "The Beginning.") && candle_amount >= 1)
-					end_spell(M)
+					end_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Brew." && candle_amount >= 2)
-					brew_spell(M)
+					brew_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Recipe." && candle_amount >= 1)
@@ -141,15 +211,15 @@
 					continue
 
 				if((spell.message == "Bees." || spell.message == "Bees!") && candle_amount >= 4)
-					bees_spell(M)
+					bees_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Scribe." && candle_amount >= 7)
-					scribe_spell(M)
+					scribe_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Pouch." && candle_amount >= 2)
-					pouch_spell(M)
+					pouch_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Escape." && candle_amount >= 1)
@@ -157,7 +227,7 @@
 					continue
 
 				if(spell.message == "Awaken." && candle_amount >= 7)
-					awaken_spell(M)
+					awaken_spell(M, able_to_cast)
 					continue
 				// Alchemy-specific rituals below
 				if(spell.message == "Satchel." && candle_amount >= 5)
@@ -171,6 +241,11 @@
 
 // Ritual Knife spell procs
 	if(istype(I, /obj/item/tool/knife/ritual))
+
+		if(M.get_core_implant(/obj/item/implant/core_implant/cruciform))
+			rejected_playmate_faithful(M)
+			return
+
 		if(body_checks(M) && is_rune)
 
 			to_chat(M, "<span class='info'>The rune lights up in response to the touch of the ritual weapon...</span>")
@@ -191,7 +266,7 @@
 
 			for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) // Don't forget to clear your old work!
 				if(spell.message == "Voice." && candle_amount >= 3)
-					voice_spell(M)
+					voice_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Drain." && candle_amount >= 5)
@@ -199,19 +274,19 @@
 					continue
 
 				if(spell.message == "Cards To Life." && candle_amount >= 3)
-					cards_to_life_spell(M)
+					cards_to_life_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Life To Cards." && candle_amount >= 3)
-					life_to_card_spell(M)
+					life_to_cards_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Cards." && candle_amount >= 3)
-					cards_spell(M)
+					cards_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Equalize." && candle_amount >= 6)
-					equalize_spell(M)
+					equalize_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Scroll." && candle_amount >= 7)
@@ -223,20 +298,29 @@
 					continue
 
 				if(spell.message == "Fountain." && candle_amount >= 7)
-					basin_spell(M)
+					basin_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Ascension." && candle_amount >= 7)
-					ascension_spell(M)
+					ascension_spell(M, able_to_cast)
 					continue
 
 				if(spell.message == "Veil." && candle_amount >= 5)
-					veil_spell(M)
+					veil_spell(M, able_to_cast)
 					continue
+
+				if(spell.message == "Caprice." && candle_amount >= 3)
+					caprice_spell(M, able_to_cast)
+					continue
+
+				if(spell.message == "Mightier." && candle_amount >= 3)
+					mightier_spell(M, able_to_cast)
+					continue
+
 				return
 
-// Start of scroll based spells.
-// We use this proc to assign spells to the blank scroll by writing in blood the name of the spells we want inscribed on them
+
+// Scroll Spell Check to assign spells to the blank scroll by writing in blood the name of the spells we want inscribed on them
 // then attacking a rune with the scroll in question (which must NOT be sealed)
 	if(istype(I, /obj/item/scroll) && !istype(I, /obj/item/scroll/sealed) && M.stats.getPerk(PERK_SCRIBE)) // we have to have the new perk for this.
 		if(body_checks(M, blind = TRUE) && is_rune) // We need to be BLIND for these rituals specifically.
@@ -269,6 +353,62 @@
 		return
 	return
 
+//Proc to punish people who are anti-fun.
+/obj/effect/decal/cleanable/crayon/proc/rejected_playmate_faithful(mob/living/carbon/human/M)
+	var/not_in_good_faith = pick("To late for that, rejecter!",\
+	"You already rejected reality!",\
+	"That pesky jewelry says otherwise...",\
+	"Seems your still not willing to play by my rules.", \
+	"Come back after you recalculate your problem...",\
+	"Your already commited to your playmate!",\
+	"Your friends wouldn't like our playdate.",\
+	"Sorry but you seem a little lost in your own rules, let alone mine.",\
+	"Did you really come back without an apology?")
+
+	to_chat(M, "<span class='info'>Voices giggles in the air. </span><span class='angelsay'>Now you wish to play? [not_in_good_faith]</span>")
+	if(M.allow_spin && src.allow_spin)
+		M.SpinAnimation(10,5)
+		M.stunned += 1
+		M.confused += 2
+		if(ishuman(M))
+			addtimer(CALLBACK(M, /atom/proc/SpinAnimation, 3, 3), 1)
+
+	//We already would have rejected you, run along now.
+	if(M.species?.reagent_tag == IS_SYNTHETIC || M.species?.reagent_tag == IS_SLIME)
+		var/in_good_faith = pick("Your a puppet losely strung, no playtime for you!",\
+		"Quite a frail wooden doll.",\
+		"Tea time is for well played puppets!",\
+		"Your strings have been cut, we can't play until your fixed!", \
+		"Your not fit for rougher play.",\
+		"You were not made to play!",\
+		"Did you fall off the shelf? Best to go back to play with more careful friends!",\
+		"Come back when your fixed!")
+
+		to_chat(M, "<span class='info'>Some laughter echos. </span><span class='angelsay'>[in_good_faith]</span>")
+		return
+
+	var/obj/item/implant/core_implant/cruciform/CI = M.get_core_implant(/obj/item/implant/core_implant/cruciform)
+	if(CI)
+		if(30 <= CI.power) //cup keeps you safe if it has enough juice.
+			CI.power -= 30
+			return
+		if(CI.power <= 0) //safty set
+			CI.power = 0
+		if(M.nutrition >= 100)
+			M.nutrition -= 100 //hunger is drained from the person to pay the cost of protection.
+			return
+
+		//If you cant pay the hunger, is not a synth and dont have 30 cruciform power, we take a lim. When removing you from the playime
+		var/obj/item/organ/external/organ = M.get_organ(pick(BP_R_LEG, BP_L_LEG, BP_R_ARM, BP_L_ARM))
+		if(!organ)
+			//You already suffered enuff of fun
+			M.visible_message("<font size=1>\red[M.name] is spun around by [src].</font><\red>", "\red[src] spins you around at high speeds!")
+			return
+		organ.droplimb(TRUE, DISMEMBER_METHOD_EDGE)
+		M.visible_message("<font size=1>\red[M.name] is spun around by [src], a sickening sound coming from a limb being ripped off by vacuum force!.</font><\red>", "\red[src] spins you around, violently ripping one of your limbs off!")
+		return
+
+//proc to check that people arn't cheesing and can actually cast.
 /obj/effect/decal/cleanable/crayon/proc/body_checks(mob/living/carbon/human/M, blind = FALSE)
 	var/pass = FALSE
 
@@ -311,15 +451,15 @@
 
 // Book spell proc example:
 /*
-/obj/effect/decal/cleanable/crayon/proc/example_spell(mob/living/carbon/human/M) //testing spell
-	var/datum/reagent/organic/blood/B = M.get_blood()
-	B.remove_self(1)
+/obj/effect/decal/cleanable/crayon/proc/example_spell(mob/living/carbon/human/M, able_to_cast) //testing spell
+	var/datum/reagent/organic/blood/B = M.get_blood() //used to get a hook into the casters blood supply.
+	B.remove_self(1) //general use cost. We take a small amount of blood for casting.
 	log_and_message_admins("[M] has used the example spell! For testing purposes of course!")
 */
 
 
 // Babel: Grants you knowledge of the Cult language.
-// This is a requirement for the ritual knife spells
+// This is a requirement for the ritual spells.
 /obj/effect/decal/cleanable/crayon/proc/babel_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.add_language(LANGUAGE_CULT)
@@ -332,10 +472,13 @@
 	M.unnatural_mutations.total_instability += 15
 	return
 
-// Ignorance: Basically become impervious to telepathic messages from psions.
-/obj/effect/decal/cleanable/crayon/proc/ignorance_spell(mob/living/carbon/human/M)
+// Ignorance: Basically become impervious to telepathic messages from psions. Will stop you from being able to use psionics if you have them.
+/obj/effect/decal/cleanable/crayon/proc/ignorance_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	M.psi_blocking_additive = 50
+	if(!able_to_cast)
+		return
+
+	M.psi_blocking_additive = 20
 	to_chat(M, "<span class='warning'>Your mind feels like an impenetrable fortress against psionic assaults. Your heart is beating like a drum, exerting itself to recover the blood paid for your boon.</span>")
 	M.maxHealth -= 5
 	M.health -= 5
@@ -344,11 +487,13 @@
 	return
 
 // Life: Revives a dead animal on top of the rune.
-/obj/effect/decal/cleanable/crayon/proc/life_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/life_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	for(var/mob/living/carbon/superior_animal/greater in oview(1)) // Must be on the spell circle
 
 		if(!body_checks(M))
+			return
+		if(!able_to_cast)
 			return
 
 		if(M.maxHealth > 30)
@@ -371,6 +516,8 @@
 
 		if(!body_checks(M))
 			return
+		if(!able_to_cast)
+			return
 
 		if(M.maxHealth > 30)
 			to_chat(M, "<span class='info'>Gung vf abg qrnq juvpu pna rgreany yvr, naq jvgu fgenatr nrbaf rira qrngu znl qvr.</span>")
@@ -389,8 +536,11 @@
 	return
 
 // Madness: Become weaker, and cause a sanity breakdown upon yourself.
-/obj/effect/decal/cleanable/crayon/proc/madness_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/madness_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	to_chat(M, "<span class='warning'>Your blood runs thin as you catch a glimpse of forbidden aeons, shortening your lifespan as you come to terms with your feeble inconsequentiality on the greater scheme of things.</span>")
 	M.maxHealth -= 5
 	M.health -= 5
@@ -400,9 +550,12 @@
 	return
 
 // Sight: Removes your Nearsighted and blind disabilities, if you have them
-// You will be unable to use crayon magic again unless you somehow gain
-/obj/effect/decal/cleanable/crayon/proc/sight_spell(mob/living/carbon/human/M)
+// You will be unable to use crayon magic again unless you somehow gain nearsighted back.
+/obj/effect/decal/cleanable/crayon/proc/sight_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	if(M.disabilities&NEARSIGHTED)
 		M.disabilities &= ~NEARSIGHTED
 	if(M.disabilities&BLIND)
@@ -413,7 +566,7 @@
 	return
 
 // Paradox: Literally kill yourself. No really, this removes a lot of blood, causes a sanity breakdown upon the character
-// And on top of it causes an explosion centered on the rune, most totally gibbing them.
+// And on top of it causes an explosion centered on the rune, most likly totally gibbing them.
 /obj/effect/decal/cleanable/crayon/proc/paradox_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	to_chat(M, "<span class='warning'>The air around you grows hot, your heart races as a feeling of dread washes over you. You hear a faint whisper in the back of your head, \"Upside, downside... all cardinal directions, an illusion...\"</span>")
@@ -430,8 +583,11 @@
 
 // The End: Removes your nearsighted disability, but also your knowledge of cult and occult languages
 // Basically wiping yourself clean of everything caused by crayon magic, but making you unable to cast spells again
-/obj/effect/decal/cleanable/crayon/proc/end_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/end_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	to_chat(M, "<span class='warning'>The truth of the universe flashes before your eyes at a sickening speed, eldritch knowledge being forcefully vacuumed out of your psyche. The light! It burns! IT BURNS!!!</span>")
 	M.disabilities &= ~NEARSIGHTED | ~BLIND
 	B.remove_self(150)
@@ -495,8 +651,11 @@
 	return
 
 // Brew: Grants you the Alchemist perk, and access to all the recipes required by it
-/obj/effect/decal/cleanable/crayon/proc/brew_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/brew_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	if(M.stats.getPerk(PERK_SCRIBE))
 		to_chat(M, SPAN_WARNING("The paths of the Alchemist and the Scribe are mutually exclusive."))
 		return
@@ -509,8 +668,11 @@
 	return
 
 // Bees: NOT THE BEES!! Invokes a gigantic bee per sunflower on a five-tiles radius around the spell circle
-/obj/effect/decal/cleanable/crayon/proc/bees_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/bees_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	M.maxHealth -= 10
 	M.health -= 10
 	for(var/obj/item/reagent_containers/food/snacks/grown/G in oview(5))
@@ -528,13 +690,14 @@
 
 // Pouch: Spawns a pouch with a dimensional-linked shared storage. Every person holding one of these can access the same storage from anywhere.
 // Works only if the pouch is opened, and accessed while being held in-hand
-/obj/effect/decal/cleanable/crayon/proc/pouch_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/pouch_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	for(var/obj/item/storage/pill_bottle/dice/frodo in oview(1))
-
-		if(!body_checks(M))
+		if(!body_checks(M)) //inside cause we have a reocuring blood cost inside.
 			return
-
 		B.remove_self(50)
 		M.sanity.changeLevel(-50) //not always going to break you. But will tank your sanity.
 		to_chat(M, "<span class='warning'>The dice bag gives a loud pop.</span>")
@@ -542,22 +705,68 @@
 		qdel(frodo)
 	return
 
-// Escape: Deteles and kicks you out of the game
+// Escape: Deletes and kicks you out of the game
 /obj/effect/decal/cleanable/crayon/proc/escape_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	var/obj/item/oddity/common/mirror/ocm = new /obj/item/oddity/common/mirror(src.loc)
+	var/obj/item/oddity/common/mirror/doodle/ocm = new /obj/item/oddity/common/mirror/doodle(src.loc)
 	B.remove_self(35) //We still take some blood for this
 	to_chat(M, "<span class='warning'>[M.real_name] stepped into a fragment of a mirror.</span>")
 	ocm.name = "[M.real_name]'s fragments."
 	ocm.desc = "A thousand doodles of [M.real_name] in crayon stare back at you as you examine the trinket."
-	ocm.perk = PERK_NO_OBSUCATION
+
+	var/job = M.mind.assigned_role
+	log_and_message_admins("[key_name(M)]" + "[M.mind ? " ([M.mind.assigned_role])" : ""]" + " entered a colouring book.")
+
+
+	SSjob.FreeRole(job)
+	clear_antagonist(M.mind)
+
+	// Delete them from datacore.
+
+	if(PDA_Manifest.len)
+		PDA_Manifest.Cut()
+	for(var/datum/data/record/R in data_core.medical)
+		if ((R.fields["name"] == M.real_name))
+			qdel(R)
+	for(var/datum/data/record/T in data_core.security)
+		if ((T.fields["name"] == M.real_name))
+			qdel(T)
+	for(var/datum/data/record/G in data_core.general)
+		if ((G.fields["name"] == M.real_name))
+			qdel(G)
+	// Remove the mob's record.
+	var/datum/computer_file/report/crew_record/record
+	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records) // loop through the records
+		if(M.mind.name == CR.get_name()) // Check the mind's name to the record's name
+			record = CR
+			break
+
+	record?.Destroy() // Delete the crew record
+
+	//Update any existing objectives involving this mob.
+	for(var/datum/objective/O in all_objectives)
+		// Were in a colouring book now...
+		if(O.target == M.mind)
+			if(O.owner && O.owner.current)
+				to_chat(O.owner.current, "<span class='warning'>You get the feeling your target is no longer within your reach...</span>")
+			qdel(O)
+
+	//Same for contract-based objectives.
+	for(var/datum/antag_contract/contract in GLOB.excel_antag_contracts)
+		contract.on_mob_despawned(M.mind)
+
+
+	SSjob.FreeRole(job)
 	M.client.ckey = null
 	M.dust(anim = FALSE, remains = /obj/effect/overlay/pulse)
 	return
 
 // Scribe: Gives you the Scribe perk. This is a requirement for inscribing scrolls with the spells below.
-/obj/effect/decal/cleanable/crayon/proc/scribe_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/scribe_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	var/mob/living/carbon/human/H = M
 	for(var/obj/item/paper/P in oview(1)) // Requires a paper
 		if(!body_checks(M))
@@ -579,8 +788,11 @@
 
 // Awaken: Evolve our Ritual Knife into a greater form.
 // It can be used once more upon the harvester for it to become a blade
-/obj/effect/decal/cleanable/crayon/proc/awaken_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/awaken_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	for(var/obj/item/tool/knife/ritual/knifey in oview(1)) // No ascending church knives
 
 		if(!body_checks(M))
@@ -717,8 +929,11 @@
 	return
 
 // Cards: Invokes a random carp card, to use with other spells
-/obj/effect/decal/cleanable/crayon/proc/cards_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/cards_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	to_chat(M, "<span class='warning'>A voice whispers in front of you: Any foils?</span>")
 	for(var/obj/item/device/camera_film in oview(1)) // Must be on the spell circle
 
@@ -733,8 +948,11 @@
 // Cards to Life: Consumes a Carp card of a certain type to summon an animal accordingly.
 // The animal in question is tamed, friendly to the colony, but are incredibly frail and weak.
 // Pelt cards can be turned into scroll pouches, Warren turns into a burrow
-/obj/effect/decal/cleanable/crayon/proc/cards_to_life_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/cards_to_life_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	var /mob/living/simple_animal/simplemob = /mob/living/simple_animal/hostile/creature
 	var /mob/living/carbon/superior_animal/superiormob = null
 	for(var/obj/item/card_carp/carpy in oview(1))
@@ -846,32 +1064,43 @@
 		qdel(carpy)
 
 // Life to Cards: Consumes a mob to turn into a uniquic card
-/obj/effect/decal/cleanable/crayon/proc/life_to_card_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/life_to_cards_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	var/success = FALSE
 	for(var/mob/living/carbon/superior_animal/target in oview(1))
 
 		if(!body_checks(M))
 			return
+		B.remove_self(50) //pay da cost BEFORE we do the living check
+		if(!able_to_cast) //punishment for not being able to cast
+			M.maxHealth -= 1
+			M.health -= 1
+			M.unnatural_mutations.total_instability += 1 //A soft cap
 
-		B.remove_self(15)
 		success = TRUE
-		var/obj/item/card_carp/death_card
-		new /obj/item/card_carp/death_card(src.loc)
+		var/obj/item/card_carp/death_card/death_card = new /obj/item/card_carp/death_card(src.loc)
 		death_card.generate(target.maxHealth, target.meat_amount, target.melee_damage_lower, target.ranged, target.name)
 		to_chat(M, "<span class='warning'>\The [target] sinks down into the rune leaving behind... a small card?!</span>")
+		target.dust()
 
 	for(var/mob/living/simple_animal/simplemtarget in oview(1))
 
 		if(!body_checks(M))
 			return
+		B.remove_self(50)
+		if(!able_to_cast)
+			M.maxHealth -= 1
+			M.health -= 1
+			M.unnatural_mutations.total_instability += 1
 
-		B.remove_self(15)
 		success = TRUE
-		var/obj/item/card_carp/death_card
-		new /obj/item/card_carp/death_card(src.loc)
+		var/obj/item/card_carp/death_card/death_card = new /obj/item/card_carp/death_card(src.loc)
 		death_card.generate(simplemtarget.maxHealth, simplemtarget.meat_amount, simplemtarget.melee_damage_lower, 0, simplemtarget.name)
 		to_chat(M, "<span class='warning'>\The [simplemtarget] sinks down into the rune leaving behind... a small card?!</span>")
+		simplemtarget.dust()
 
 
 	if(!success)
@@ -882,8 +1111,10 @@
 // and distributes it equally among the number of mobs, "equalizing" it.
 // e.g: If a person has 100% blood and another has 50%, both have 75% blood now
 // and then the caster incurrs the blood cost for the spell equal to 20 per person affected, up to a cap of 80 cost.
-/obj/effect/decal/cleanable/crayon/proc/equalize_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/equalize_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
 
 	//get percent of blood. Then pass it back into people. Thats total blood between all / by number of people.
 	var/bloodpercent = 0
@@ -925,8 +1156,11 @@
 // Fountain: High blood cost, to invoke a bloody basin in which to soak one's hands for writing in blood
 // This makes it so that you don't need to gib additional creatures to write each time
 // TODO: MORE CRAYON CULT BASED FURNITURE, CHANDELIERS?
-/obj/effect/decal/cleanable/crayon/proc/basin_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/basin_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	for(var/obj/structure/reagent_dispensers/watertank/W in oview(1)) // Must be on the spell circle
 
 		if(!body_checks(M))
@@ -945,8 +1179,11 @@
 // They have slightly better stats than their stock counterparts and can be used for rituals
 // They also look cool as hell being held on your hands!!!
 
-/obj/effect/decal/cleanable/crayon/proc/ascension_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/ascension_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	for(var/obj/item/oddity/common/O in oview(1))
 
 		if(!body_checks(M))
@@ -970,11 +1207,15 @@
 			qdel(O)
 		else
 			to_chat(M, "<span class='info'>This oddity is not a book, knowledge on how to improve it is beyond your grasp.</span>")
+	return
 
 // Veil: Invoke a blindfold that works as prescription goggles with one extra tile of visibility in the dark
 // These work as normal blindfolds for people who do not have the Cult language learned.
-/obj/effect/decal/cleanable/crayon/proc/veil_spell(mob/living/carbon/human/M)
+/obj/effect/decal/cleanable/crayon/proc/veil_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
 	for(var/obj/item/clothing/glasses/blindfold/G in oview(1))
 
 		if(!body_checks(M))
@@ -986,6 +1227,70 @@
 		var/obj/item/clothing/glasses/crayon_blindfold/N = new /obj/item/clothing/glasses/crayon_blindfold
 		N.loc = G.loc
 		qdel(G)
+	return
+
+// Caprice: Converts runes to and trap rune, if having bable or voice will send it randomly to maints or deepmaints.
+/obj/effect/decal/cleanable/crayon/proc/caprice_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
+	var/turf/simulated/floor/target	//this is where we are teleporting
+	var/list/validtargets = list()
+
+	for(var/area/A in world)						//Clumbsy, but less intensive than iterating every tile
+		if(istype(A, /area/deepmaint))				//First find our deepmaint areas
+			for(var/turf/simulated/floor/T in A)		//Pull a list of valid floor tiles from deepmaint
+				validtargets += T					//Add them to the list
+
+		if(istype(A, /area/nadezhda/maintenance))			//First find our maints areas
+			if(A.is_maintenance)					//Just in case were a subtype of maintenance and NOT maintenanced
+				for(var/turf/simulated/floor/T in A)
+					if(A.is_maintenance)			//Pull a list of valid floor tiles from deepmaint
+						validtargets += T			//Add them to the list
+
+	//We act differently if a human is doing this
+	if(M)
+		var/datum/reagent/organic/blood/B = M.get_blood()
+		for(var/obj/effect/decal/cleanable/crayon/G in oview(3))
+			if(!body_checks(M))
+				return
+
+			if(able_to_cast)
+				var/obj/effect/decal/cleanable/crayon/trap/trap_teleport_placement = new /obj/effect/decal/cleanable/crayon/trap(src.loc,main=RANDOM_RGB,shade=RANDOM_RGB)
+				B.remove_self(20)
+				bluespace_entropy(1, get_turf(src))
+				trap_teleport_placement.forceMove(target)
+				qdel(G)
+			else
+				//We just convert to traps, not move them around in deepmaints or maints normal
+				B.remove_self(10)
+				new /obj/effect/decal/cleanable/crayon/trap(G.loc,main=RANDOM_RGB,shade=RANDOM_RGB)
+				qdel(G)
+			return
+	else
+		//This one is done by a higher power with a more stable connection. No entropy
+		var/obj/effect/decal/cleanable/crayon/trap/trap_teleport_placement = new /obj/effect/decal/cleanable/crayon/trap(main=RANDOM_RGB,shade=RANDOM_RGB)
+		trap_teleport_placement.forceMove(target)
+
+	return
+
+// Mightier: Invokes throwing crayons whose strength gets higher the lower our max HP is.
+/obj/effect/decal/cleanable/crayon/proc/mightier_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
+	bluespace_entropy(10, get_turf(src))
+	B.remove_self(50) //roughly 10 percent for each crayon.
+	var/obj/item/stack/thrown/crayons/needles = new /obj/item/stack/thrown/crayons(src.loc)
+	needles.icon_state = pickweight(list("crayonred" = 2,\
+				"crayonorange" = 2,\
+				"crayonyellow" = 2,\
+				"crayongreen" = 2,\
+				"crayonblue" = 2,\
+				"crayonpurple" = 2))
+	needles.item_state = needles.icon_state
+	if(M.get_inactive_hand() == src)
+		M.drop_from_inventory(src)
+		M.put_in_inactive_hand(needles)
+	return
 
 //Scroll: Massive blood cost spell that requires a dead animal to invoke a scroll.
 // Scrolls can only be used by casters with the Scribe perk!
@@ -1067,7 +1372,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	B.remove_self(100)
 	bluespace_entropy(20, get_turf(src))
-	new /obj/effect/decal/cleanable/crayon/mist(M.loc)
+	new /obj/effect/decal/cleanable/crayon/mist(M.loc,main=RANDOM_RGB,shade=RANDOM_RGB)
 	ScrollBurn()
 
 // Shimmer: Invokes a crayon mark that blocks both bullets and laser projectiles.
@@ -1075,7 +1380,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	B.remove_self(100)
 	bluespace_entropy(20, get_turf(src))
-	new /obj/effect/decal/cleanable/crayon/shimmer(M.loc)
+	new /obj/effect/decal/cleanable/crayon/shimmer(M.loc,main=RANDOM_RGB,shade=RANDOM_RGB)
 	ScrollBurn()
 
 // Smoke: Creates a smoke cloud centered around the caster
@@ -1084,7 +1389,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	B.remove_self(50) //decently high just to protect server performance.
 	var/datum/effect/effect/system/smoke_spread/chem/smoke = new
 	var/datum/reagents/gas_storage = new /datum/reagents(100, src)
-	gas_storage.add_reagent("crayon_dust_red", 100) //CRAYON MAGIC
+	gas_storage.add_reagent("crayon_dust_random", 100) //CRAYON MAGIC
 	smoke.attach(src.loc)
 	smoke.set_up(gas_storage, 12, 0, M.loc)
 	spawn(0)
@@ -1127,31 +1432,13 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 // Light: Creates a rune on the floor that gives off light.
 /obj/item/scroll/proc/light_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
-	var/obj/effect/decal/cleanable/crayon/light_rune = new /obj/effect/decal/cleanable/crayon(M.loc)
+	var/obj/effect/decal/cleanable/crayon/light_rune = new /obj/effect/decal/cleanable/crayon(M.loc,main=RANDOM_RGB,shade=RANDOM_RGB)
 	light_rune.set_light(5,4,"#FFFFFF")
 	light_rune.name = "glowing rune"
 	light_rune.desc = "A bright rune giving off vibrant light."
 	light_rune.color = "#FFFF00"
 	B.remove_self(20)
 	bluespace_entropy(20, get_turf(src)) //high entropy cost. Low blood cost.
-	ScrollBurn()
-
-// Mightier: Invokes throwing crayons whose strength gets higher the lower our max HP is.
-/obj/item/scroll/proc/mightier_spell(mob/living/carbon/human/M)
-	var/datum/reagent/organic/blood/B = M.get_blood()
-	bluespace_entropy(10, get_turf(src))
-	B.remove_self(50) //roughly 10 percent for each crayon.
-	var/obj/item/stack/thrown/crayons/needles = new /obj/item/stack/thrown/crayons(src.loc)
-	needles.icon_state = pickweight(list("crayonred" = 2,\
-				"crayonorange" = 2,\
-				"crayonyellow" = 2,\
-				"crayongreen" = 2,\
-				"crayonblue" = 2,\
-				"crayonpurple" = 2))
-	needles.item_state = needles.icon_state
-	if(M.get_inactive_hand() == src)
-		M.drop_from_inventory(src)
-		M.put_in_inactive_hand(needles)
 	ScrollBurn()
 
 // Gaia: Ever Mob seeable via the scroll when burned must past a language checks or be weaken 5:3
@@ -1173,23 +1460,104 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		M.drop_from_inventory(src)
 	ScrollBurn()
 
-// Eta: Ever Mob seeable via the scroll when burned must past a language checks or be thrown backwards 6 to 12 spaces
+// Eta: Ever Mob seeable via the scroll when burned must past a language checks or be thrown backwards 8 to 12 spaces
 /obj/item/scroll/proc/eta_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	bluespace_entropy(5, get_turf(src))
 	B.remove_self(30)
 	var/iron_mind = FALSE
-	var/fling_back_direction = 1
 	for(var/mob/T in oview(7))
 		for(var/datum/language/L in T.languages)
 			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
 				iron_mind = TRUE
 		if(!iron_mind)
-			fling_back_direction = reverse_dir[T.dir]
-			T.throw_at(get_edge_target_turf(src,fling_back_direction),rand(6,12),30)
+			T.throw_at(get_step(T,reverse_direction(T.dir)),rand(8,12),30)
 
 	if(M.get_inactive_hand() == src)
 		M.drop_from_inventory(src)
+	ScrollBurn()
+
+// Reveal: Gives everyone in a 5x5 thermal vision for a few seconds then ends. Used for a quick reveal thru walls.
+/obj/item/scroll/proc/reveal_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	bluespace_entropy(5, get_turf(src))
+	B.remove_self(20) //low cost but for everyone effected.
+	M.stats.addPerk(PERK_REVEAL) //removes self after a short amount of time.
+	for(var/mob/living/carbon/human/T in oview(5))
+		B = T.get_blood()
+		bluespace_entropy(5, get_turf(src))
+		B.remove_self(20) //low cost but for everyone effected.
+		T.stats.addPerk(PERK_REVEAL) //removes self after a short amount of time.
+	ScrollBurn()
+
+// Entangle: Creates a ring of fairy light anomalies around the player to entangle mobs.
+/obj/item/scroll/proc/entangle_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	B.remove_self(20)
+	var/turf/T = M.loc
+	if(!T || T.is_space()) //do we have a turf? If not we make one! Land mass formed in spaaaaaaace!
+		new /turf/simulated/floor/fixed/fgrass(M.loc)
+		bluespace_entropy(50, M.loc)
+		B.remove_self(20)
+	for(var/turf/surround in oview(3))
+		if(!surround.is_space())
+			var/obj/structure/annomlies_diet/spidersilk/non_spreader/weave = new /obj/structure/annomlies_diet/spidersilk/non_spreader(surround)
+			bluespace_entropy(5, M.loc)
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel,weave), 3 MINUTES)
+	ScrollBurn()
+
+// Joke: Makes people in the radius of effect ether giggle, laugh or groan from the bad joke. Chance to be any of the 3 but everyone should match the type.
+// This would go great in the trap rune.
+/obj/item/scroll/proc/joke_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	var/outcome = pick("giggle", "laugh", "groan")
+	M.say("*[outcome]")
+	switch(outcome)
+		if("giggle")
+			B.remove_self(10)
+			to_chat(M, SPAN_WARNING("This joke is alright."))
+		if("laugh")
+			to_chat(M, SPAN_WARNING("This joke is amazing! To bad the scroll went up in smoke."))
+			M.sanity.changeLevel(25)
+		if("groan")
+			B.remove_self(30)
+			to_chat(M, SPAN_WARNING("What a horrible joke. This scroll can't burn fast enough."))
+			M.sanity.changeLevel(-25)
+
+	for(var/mob/living/carbon/human/T in oview(7))
+		//to_chat for target
+		T.say("*[outcome]")
+		switch(outcome)
+			if("giggle")
+				to_chat(T, SPAN_WARNING("You hear a joke from [M], it fades from memory faster then you can remember it."))
+			if("laugh")
+				T.sanity.changeLevel(20)
+				to_chat(T, SPAN_WARNING("You hear a good joke from [M], it fades from memory faster then you can remember it."))
+			if("groan")
+				T.sanity.changeLevel(-20)
+				to_chat(T, SPAN_WARNING("You hear a horrible joke from [M], it fades from memory faster then you can remember it."))
+	ScrollBurn()
+
+
+// Charger: Releases the wonderful electric anomalys that roam around.
+/obj/item/scroll/proc/charger_spell(mob/living/carbon/human/M)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	B.remove_self(20)
+	var/list/turf_list = list()
+	var/again = TRUE
+
+	for(var/turf/T in oview(5, get_turf(M)))
+		if(T.Enter(src)) // If we can "enter" on the tile then we store it for potential spawning.
+			turf_list += T
+	if(!turf_list.len)
+		//something went wrong!
+		ScrollBurn()
+	while(again == TRUE)
+		var/obj/structure/annomlies_diet/ball_lightning/zappy = new /obj/structure/annomlies_diet/ball_lightning(pick(turf_list))
+		to_chat(M, SPAN_WARNING("A loud crackling fills the air as something forms."))
+		again = pick(TRUE, FALSE) //It will spawn more and more till it gets a bad flip on a 50/50 chance. How bad is your luck?
+		//creates a callback, global_proc is a mystery to me. But the .proc/ is actually required. As is the , between qdel and zappy. This fucking voodoo proc.
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel,zappy), 3 MINUTES)
 	ScrollBurn()
 
 
@@ -1200,7 +1568,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
  // The pouch of wonderful single item sharing!
 /obj/item/crayon_pouch
 	name = "crayon pouch"
-	desc = "What seems to be a normal crayon box has turned into something far more strange."
+	desc = "What seems to be a dice bag has turned into something far more strange."
 	icon = 'icons/obj/dice.dmi'
 	icon_state = "magicdicebag"
 	price_tag = 100
@@ -1270,7 +1638,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 // Throwing crayons, a ranged throwing type weapon that deals more damage the lower your max HP is, up to a cap.
 /obj/item/stack/thrown/crayons
 	name = "throwing crayons"
-	desc = "Sharpened crayons. Used untill they have become the perfectly balanced weight for throwing."
+	desc = "Sharpened crayons. Used until they have become the perfectly balanced weight for throwing."
 	icon = 'icons/obj/crayons.dmi'
 	icon_state = "crayonred"
 	item_state = "crayonred"
@@ -1318,6 +1686,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 			An inkwell of blood in which to dip your fingers to write in blood."
 	icon_state = "blood_basin"
 	density = 1
+	sanity_damage = 5 //its a vat of refilling blood.
 	limited_reagents = FALSE
 	refill_rate = 200
 	reagent_id = "blood"
@@ -1328,6 +1697,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 			to_chat(user, SPAN_NOTICE("You must take off your gloves to dip your fingers in blood."))
 			return FALSE
 		to_chat(user, SPAN_NOTICE("You dip your fingers on the basin, covering them in blood."))
+		user.sanity.changeLevel(-25)
 		user.bloody_hands += 5
 		user.hand_blood_color = "#A10808"
 		user.update_inv_gloves(1)
@@ -1446,11 +1816,6 @@ obj/item/scroll/sealed
 			light_spell(M)
 			return
 
-		if(message == "Mightier.")
-			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
-			mightier_spell(M)
-			return
-
 		if(message == "Gaia.")
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns the ashes sharply move downwards as the world's twisting aura straightens.</span>")
 			gaia_spell(M)
@@ -1459,6 +1824,26 @@ obj/item/scroll/sealed
 		if(message == "Eta.")
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash flying every direction away with a world pushing force.</span>")
 			eta_spell(M)
+			return
+
+		if(message == "Reveal.")
+			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash, the smoke from the scroll pressing into peoples eyes.</span>")
+			reveal_spell(M)
+			return
+
+		if(message == "Entangle.")
+			to_chat(M, "<span class='warning'>You ignite the scroll. Soft bright silk weaves its way thru the air around you.</span>")
+			entangle_spell(M)
+			return
+
+		if(message == "Joke.")
+			to_chat(M, "<span class='warning'>You ignite the scroll. Words fill the page and you quickly read them off before suddenly forgetting them.</span>")
+			joke_spell(M)
+			return
+
+		if(message == "Charger.")
+			to_chat(M, "<span class='warning'>You ignite the scroll. Crackling fills the air. Static clings to everything.</span>")
+			charger_spell(M)
 			return
 
 // If we don't cast anything then we end up doing a normal burn.

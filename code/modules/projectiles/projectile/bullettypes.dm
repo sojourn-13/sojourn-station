@@ -1096,6 +1096,7 @@
 	embed = FALSE
 	sharp = FALSE
 	recoil = 1
+	kill_count = 0 //cap gun so projectile dies the second it fires. -Benl8561
 
 /obj/item/projectile/bullet/crossbow_bolt
 	name = "bolt"

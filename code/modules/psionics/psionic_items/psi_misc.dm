@@ -28,20 +28,28 @@
 	if(ishuman(target)) // Check if it's an actual mob and not a wall
 		var/mob/living/carbon/human/T = target
 		var/obj/item/organ/internal/psionic_tumor/PT = T.random_organ_by_process(BP_PSION)
+		var/obj/item/blocked = T.check_mouth_coverage()
+		if(blocked)
+			to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
+			return
 		if(PT) // Is the target a psion
-			if(PT.max_psi_points - PT.psi_points >= point_per_use) // Is there space to give the psion the points?
-				if(use) // Do we have uses left?
+			if(use) // Do we have uses left?
+				if((PT.max_psi_points - PT.psi_points >= point_per_use) || (T.psi_blocking > 0)) // Is there space to give the psion the points? Do they need a fixup?
 					user.visible_message("[user] injects [target] with the [src].", "You inject [target] with the [src]!")
-					PT.psi_points += point_per_use
+					if(PT.max_psi_points - PT.psi_points >= point_per_use)
+						PT.psi_points += point_per_use
+					if(T.psi_blocking > 0 || T.psi_blocking_additive > 0)
+						to_chat(user, "The affects of psionic blocking feel lighter.")
+						T.psi_blocking -= 5
 					use--
 					update_icon()
 					return
 				else
-					to_chat(user, "The [src.name] has no doses left.")
+					to_chat(user, "[T.name] already has the maximum amount of essence \his body can hold.")
 					update_icon()
 					return
 			else
-				to_chat(user, "[T.name] already has the maximum amount of essence \his body can hold.")
+				to_chat(user, "The [src.name] has no doses left.")
 				update_icon()
 				return
 		else
@@ -96,19 +104,19 @@
 	density = TRUE // People can't move pass these shields.
 
 /obj/effect/directional_shield/psionic/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-    if(air_group || (height==0))
-        return TRUE
-    else if(istype(mover, /obj/item/projectile))
-        var/obj/item/projectile/P = mover
-        if(istype(P, /obj/item/projectile/test) || P.testing) // Turrets need to try to kill the shield and so their test bullet needs to penetrate.
-            return TRUE
+	if(air_group || (height==0))
+		return TRUE
+	else if(istype(mover, /obj/item/projectile))
+		var/obj/item/projectile/P = mover
+		if(istype(P, /obj/item/projectile/test) || P.testing) // Turrets need to try to kill the shield and so their test bullet needs to penetrate.
+			return TRUE
 
-        var/bad_arc = reverse_direction(dir) // Arc of directions from which we cannot block.
-        if(check_parry_arc(src, bad_arc, P)) // This is actually for mobs but it will work for our purposes as well.
-            return FALSE
-        else
-            return TRUE
-    return FALSE
+		var/bad_arc = reverse_direction(dir) // Arc of directions from which we cannot block.
+		if(check_parry_arc(src, bad_arc, P)) // This is actually for mobs but it will work for our purposes as well.
+			return FALSE
+		else
+			return TRUE
+	return FALSE
 
 /obj/item/clothing/gloves/psionic_ring
 	name = "Ring of Dispelling"

@@ -198,6 +198,36 @@
 		STAT_COG = 65
 	)
 
+/obj/effect/mob_spawn/human/church_ert
+	name = "deployment sleeper"
+	desc = "An sleeper, with an unconscious body inside. The occupant seems to be an Inquisitor."
+	mob_name = "a human"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/church_ert
+	ghost_role_perks = list(PERK_NEAT, PERK_GREENTHUMB, PERK_CHANNELING, PERK_TRUE_NAME)
+	short_desc = "You are an Inquisitor."
+	flavour_text = "A member of the clergy on duty, most likely the Prime, has done something that requires investigation and possibly disciplinary action. \
+	Your job is to uphold the doctrine of the Church, and you are empowered to Reduce or Separate even a Prime. \
+	You are not a cop, but you may assist the Marshals in tracking down a renegade clergy member if necessary."
+	assignedrole = "Church Inquisitor"
+	title = "Church Inquisitor"
+	stat_modifiers = list( //Literally just Marshal agent stats, I'm lazy
+		STAT_ROB = 50,
+		STAT_TGH = 45,
+		STAT_BIO = 10,
+		STAT_MEC = 5,
+		STAT_VIG = 45,
+		STAT_COG = 20
+	)
+
+/obj/effect/mob_spawn/human/church_ert/special(mob/living/H)
+	var/obj/item/implant/core_implant/cruciform/C = new /obj/item/implant/core_implant/cruciform(H)
+
+	C.install(H)
+	C.activate()
+	C.make_inquisitor()
+
 /obj/effect/mob_spawn/human/sri_ert
 	name = "deployment sleeper"
 	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a member of the SRI Ethics committee."

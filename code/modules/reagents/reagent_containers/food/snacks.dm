@@ -1050,7 +1050,7 @@
 	filling_color = "#916E36"
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("poppy seeds" = 2, "pretzel" = 3)
-	nutriment_amt = 5
+	nutriment_amt = 4 //As much as one slice of pizza
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 6)
 

@@ -492,8 +492,9 @@
 	icon_state = "cardblank"
 	current_health = 0
 
-/obj/item/card_carp/proc/generate(health, meat, attack, ranged, name)
-
+/obj/item/card_carp/proc/generate(health, meat, attack, ranged, trapped_name)
+	//log_debug("running card carp generate!")
+	//log_debug("[health] , [meat] , [attack] , [ranged] , [trapped_name]")
 	if(health >= 10)
 		health *= 0.01
 
@@ -503,7 +504,7 @@
 	attack *= 0.1
 
 	var/point_total = health + meat + attack
-	var/director_desc = "A trapped [name], not yet balanced by CardCarpCo."
+	var/director_desc = "A card of [trapped_name], not yet balanced by CardCarpCo."
 	var/added_descs
 	var/base_descs
 	if(ranged)
@@ -511,9 +512,11 @@
 
 	point_total = round(point_total)
 
-	name = name
+	name = trapped_name
+	var/randomized_health = rand(1,6)
 
-	base_descs += "H[rand(1, 6)]/P[rand(0, 3)]. Requires [rand(0, 2)] Blood, [rand(0, 3)] Bones, [rand(0, 1)] Player Health."
+	base_descs += "H[randomized_health]/P[rand(0, 3)]. Requires [rand(0, 2)] Blood, [rand(0, 3)] Bones, [rand(0, 1)] Player Health."
+	current_health = randomized_health
 
 	var/list/greatest		= list("Starvation", "Upheaval", "Grace", "Aduit")
 	var/list/good			= list("Opportunistic", "Shreader", "Conqueror")
@@ -561,3 +564,5 @@
 			added_descs += ", [pick_n_take(over_draw)]"
 
 	director_desc = "[director_desc] [base_descs] [added_descs]"
+	desc = director_desc
+	//log_debug("finished card carp generation!")
