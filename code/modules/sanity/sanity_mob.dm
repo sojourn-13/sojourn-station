@@ -31,7 +31,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 
 #define SANITY_CHANGE_FADEOFF(level_change) (level_change * 0.75)
 
-#define INSIGHT_PASSIVE_GAIN 0.05
+#define INSIGHT_PASSIVE_GAIN 0.025
 #define INSIGHT_GAIN(level_change) (INSIGHT_PASSIVE_GAIN + level_change / 15)
 
 #define INSIGHT_DESIRE_COUNT 2
@@ -53,13 +53,13 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/sanity_passive_gain_multiplier = 1
 	var/sanity_invulnerability = 0
 	var/level
-	var/max_level = 150 //Soj change to give a bit more breathing room
+	var/max_level = 300 //Soj change to make sanity less of a wacky rollercoaster.
 	var/level_change = 0
 
 	var/insight
 	var/max_insight = INFINITY
-	var/insight_passive_gain_multiplier = 0.5
-	var/insight_gain_multiplier = 1
+	var/insight_passive_gain_multiplier = 0.25
+	var/insight_gain_multiplier = 0.5
 	var/insight_rest_gain_multiplier = 1
 	var/insight_rest = 0
 	var/max_insight_rest = 1
@@ -75,7 +75,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/positive_prob_multiplier = 1
 	var/negative_prob = 30
 
-	var/view_damage_threshold = 20
+	var/view_damage_threshold = 100
 	var/environment_cap_coeff = 1 //How much we are affected by environmental cognitohazards. Multiplies the above threshold
 
 	var/say_time = 0
