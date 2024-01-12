@@ -26,6 +26,7 @@
 
 	dir = 1
 	explosion_resistance = 25
+	resistance = 20
 
 	//Most blast doors are infrequently toggled and sometimes used with regular doors anyways,
 	//turning this off prevents awkward zone geometry in places like medbay lobby, for example.

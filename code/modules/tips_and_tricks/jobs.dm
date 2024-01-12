@@ -34,11 +34,11 @@
 /tipsAndTricks/jobs/custom_venders
     jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech, /datum/job/mining)
     tipText = "Always try to make use of your Custom Vending Machines when you can, they can sell products when you are busy making more deals. Other departments will love you for setting one up for them as well."
-
+/* this one is outta date since forever
 /tipsAndTricks/jobs/drillllls
     jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
     tipText = "The massive drills mine deep into the ground on the tile its drilling, upgrading it will increase its AOE to more tiles."
-
+*/
 /tipsAndTricks/jobs/diggyhole
     jobs_list = list(/datum/job/cargo_tech, /datum/job/mining)
     tipText = "The ground itself can be digged to get more ore with a shovel, this will likely give you rocks that can be hammered for more ore fragments."
@@ -77,7 +77,7 @@
 
 /tipsAndTricks/jobs/captain_leader
     jobs_list = list(/datum/job/premier)
-    tipText = "A wise man's advise is always listened to, because a wise man will never give bad advice."
+    tipText = "A wise man's advice is always listened to, because a wise man will never give bad advice."
 
 /tipsAndTricks/jobs/captain_free_access
     jobs_list = list(/datum/job/premier)
@@ -141,6 +141,10 @@
 /tipsAndTricks/jobs/theBlackBox
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
     tipText = "The NanoForge can be powered with any oddity that boosts Mechanical knowledge and is also an Anomaly. The NanoForge Black Box will always have an Anomaly."
+
+/tipsAndTricks/jobs/matterforgesnstuff
+    jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
+    tipText = "The NanoForge and Bullet Fabricator can both utilize refined scrap as a highly efficient source of matter."
 
 /tipsAndTricks/jobs/bullet_fab
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)

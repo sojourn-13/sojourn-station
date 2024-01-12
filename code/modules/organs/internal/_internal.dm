@@ -1,7 +1,7 @@
 /obj/item/organ/internal
 	max_damage = IORGAN_STANDARD_HEALTH
-	min_bruised_damage = 3
-	min_broken_damage = 5
+	min_bruised_damage = IORGAN_STANDARD_BRUISE
+	min_broken_damage = IORGAN_STANDARD_BREAK
 	var/list/owner_verbs = list()
 	var/list/organ_efficiency = list()	//Efficency of an organ, should become the most important variable
 	var/list/initial_owner_verbs = list()		// For refreshing when a mod is removed
@@ -65,6 +65,7 @@
 /obj/item/organ/internal/replaced(obj/item/organ/external/affected)
 	..()
 	parent.internal_organs |= src
+	parent.internal_organs[src] = specific_organ_size // Larger organs have greater pick weight for organ damage
 	RegisterSignal(parent, COMSIG_IORGAN_WOUND_COUNT, .proc/wound_count, TRUE)
 	RegisterSignal(parent, COMSIG_IORGAN_REFRESH_PARENT, .proc/refresh_organ_stats, TRUE)
 	RegisterSignal(parent, COMSIG_IORGAN_APPLY, .proc/apply_modifiers, TRUE)
@@ -84,11 +85,11 @@
 /obj/item/organ/internal/proc/get_process_efficiency(process_define)
 	return organ_efficiency[process_define] - (organ_efficiency[process_define] * (damage / max_damage))
 
-/obj/item/organ/internal/take_damage(amount, damage_type = BRUTE, wounding_multiplier = 1, sharp = FALSE, edge = FALSE, silent = FALSE)	//Deals damage to the organ itself
+/obj/item/organ/internal/take_damage(amount, damage_type = BRUTE, wounding_multiplier = 1, silent = FALSE, sharp = FALSE, edge = FALSE, silent = FALSE) //Deals damage to the organ itself
 	if(!damage_type || status & ORGAN_DEAD)
 		return FALSE
 
-	var/wound_count = max(0, round((amount * wounding_multiplier) / 8))	// At base values, every 8 points of damage is 1 wound
+	var/wound_count = max(0, round(amount / 4)) // At base values, every 8 points of damage is 1 wound
 
 	if(!wound_count)
 		return FALSE
@@ -99,7 +100,7 @@
 		for(var/i in 1 to wound_count)
 			var/choice = pick(possible_wounds)
 			add_wound(choice)
-			LAZYREMOVE(possible_wounds, choice)
+			//LAZYREMOVE(possible_wounds, choice) // If this is commented out, we can get a higher severity of a single wound
 			if(!LAZYLEN(possible_wounds))
 				break
 

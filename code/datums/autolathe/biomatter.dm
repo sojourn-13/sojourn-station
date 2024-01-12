@@ -179,6 +179,10 @@
 	name = "Church Garment"
 	build_path = /obj/item/clothing/under/rank/church
 
+/datum/design/bioprinter/nt_clothes/rosary
+	name = "Fractal Rosary"
+	build_path = /obj/item/clothing/accessory/necklace/fractalrosary
+
 /datum/design/bioprinter/nt_clothes/hermes_shoes
 	name = "Hermes Boots"
 	build_path = /obj/item/clothing/shoes/hermes_shoes

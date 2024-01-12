@@ -59,6 +59,7 @@ var/const/BOTANIST			=(1<<9)
 var/const/FOREMAN			=(1<<10)
 var/const/SALVAGER			=(1<<11)
 var/const/PROSPECTOR		=(1<<12)
+var/const/VISITOR			=(1<<13)
 
 
 

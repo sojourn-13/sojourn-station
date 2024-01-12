@@ -15,6 +15,7 @@
 #define ALL_STATS_TO_IMPRINT list(STAT_MEC,STAT_COG,STAT_BIO,STAT_ROB,STAT_VIG) //So that people stop memeing the imprinter
 
 #define STAT_LEVEL_NONE     0
+#define STAT_LEVEL_NOVICE   7
 #define STAT_LEVEL_BASIC    15
 #define STAT_LEVEL_ADEPT    25
 #define STAT_LEVEL_EXPERT   40

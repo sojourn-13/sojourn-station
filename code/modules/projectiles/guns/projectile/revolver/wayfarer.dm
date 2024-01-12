@@ -26,7 +26,7 @@
 	serial_shown = FALSE
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.3 // 30 vig
-	gun_parts = list(/obj/item/part/gun/frame/wayfarer = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/clrifle = 1)
+	gun_parts = list(/obj/item/part/gun/frame/wayfarer = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/clrifle = 1)
 
 /obj/item/part/gun/frame/wayfarer
 	name = "Wayfarer frame"
@@ -34,6 +34,6 @@
 	icon_state = "frame_inspector"
 	result = /obj/item/gun/projectile/revolver/wayfarer
 	resultvars = list(/obj/item/gun/projectile/revolver/wayfarer)
-	gripvars = list(/obj/item/part/gun/grip/excel)
+	gripvars = list(/obj/item/part/gun/grip/serb)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
 	barrelvars = list(/obj/item/part/gun/barrel/clrifle)

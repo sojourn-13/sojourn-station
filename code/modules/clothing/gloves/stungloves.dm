@@ -115,3 +115,22 @@
 	if(istype(C, suitable_cell) && !cell && insert_item(C, user))
 		src.cell = C
 		update_icon()
+
+/obj/item/clothing/gloves/stungloves/trauma
+	name = "SI shock gloves"
+	desc = "Soterias solution to the age old question of unruly patients. Although the uneducation might call these a flagrant ripoff of Seinemetall powergloves, those more thoughtful will find that these come equipped with sterile, autoclave safe components, \
+	high-power capacitors and grippy palm-pads."
+	icon_state = "sipowerglove"
+	item_state = "sipowerglove"
+	permeability_coefficient = 0.01
+	armor_list = list(melee = 15, bullet = 0, energy = 10, bomb = 0, bio = 100, rad = 0)  //same armor values as jackboots + bio protection.
+	action_button_name = "Toggle placeholder Glove"
+	price_tag = 500 //rarer and harder to find.
+	agonyforce = 40 //same as the stun baton, these are slightly better than the Marshal version thusly.
+
+/obj/item/clothing/gloves/stungloves/trauma/update_icon()
+	if(status)
+		icon_state = "sipowerglove_active"
+	else
+		icon_state = "sipowerglove"
+	update_wear_icon()

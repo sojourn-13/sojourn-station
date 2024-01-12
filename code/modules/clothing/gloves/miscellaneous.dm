@@ -1,6 +1,6 @@
 /obj/item/clothing/gloves/captain
 	desc = "A pair of regal blue gloves with a swanky gold trim."
-	name = "premier's gloves"
+	name = "premier's gloves"  //Sprites from Eris
 	icon_state = "captain"
 	item_state = "captain"
 	armor_list = list(melee = 25, bullet = 10, energy = 25, bomb = 0, bio = 0, rad = 0)
@@ -284,7 +284,7 @@
 	desc = "A pair of white gloves, made with old fashioned gauze rather than latex. Still surprisingly sterile for all medical purposes."
 	icon_state = "regal"
 	item_state = "regal"
-	siemens_coefficient = 0
+	siemens_coefficient = 1.0
 	permeability_coefficient = 0.01
 	price_tag = 300 // A relic!
 

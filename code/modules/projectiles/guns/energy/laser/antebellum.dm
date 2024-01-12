@@ -10,7 +10,7 @@
 	fire_sound = 'sound/weapons/energy/laser_rifle.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_NORMAL
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 15, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3, MATERIAL_GOLD = 2, MATERIAL_BIOMATTER = 30)
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 15, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3, MATERIAL_GOLD = 1, MATERIAL_BIOMATTER = 30)
 	suitable_cell = /obj/item/cell/medium/neotheology
 	projectile_type = /obj/item/projectile/plasma/light
 	fire_delay = 15
@@ -19,7 +19,7 @@
 	price_tag = 1250
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
-		list(mode_name="rapid fire", mode_desc="Light rapid plasma bolts", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/Taser4.ogg', fire_delay=8, icon="stun", projectile_color = "#00FFFF", armor_penetration = 5),
+		list(mode_name="rapid fire", mode_desc="Light rapid plasma bolts", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/burn.ogg', fire_delay=8, icon="stun", projectile_color = "#00FFFF", armor_penetration = 5),
 		list(mode_name="grenade", mode_desc="fires a frag biomatter-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag/nt, charge_cost=30000, icon="grenade"),
 	)
 	twohanded = FALSE

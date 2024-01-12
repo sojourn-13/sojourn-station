@@ -190,9 +190,6 @@
 		var/fullness = (carbon.nutrition + (carbon.reagents.get_reagent_amount("nutriment") * 25)) * fullness_modifier
 		if(carbon == user)								//If you're eating it yourself
 			if(istype(human))
-				if(!human.check_has_mouth())
-					to_chat(user, "You cannot eat \the [src] without a mouth.")
-					return
 				var/obj/item/blocked = human.check_mouth_coverage()
 				if(blocked)
 					to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
@@ -724,6 +721,17 @@
 	matter = list(MATERIAL_BIOMATTER = 6)
 	cooked = TRUE
 
+/obj/item/reagent_containers/food/snacks/frenchtoast
+	name = "french toast"
+	desc =  "A slice of bread soaked in a beaten egg mixture. Tastes like home"
+	icon_state = "frenchtoast"
+	trash = /obj/item/trash/plate
+	filling_color = "#fab82a"
+	nutriment_desc = list("sweetness" = 4, "egg" = 3, "home" = 1)
+	nutriment_amt = 8
+	bitesize = 3
+	matter = list(MATERIAL_BIOMATTER = 7)
+
 /obj/item/reagent_containers/food/snacks/eggplantparm
 	name = "eggplant parmigiana"
 	desc = "The only good recipe for eggplant."
@@ -1042,7 +1050,7 @@
 	filling_color = "#916E36"
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("poppy seeds" = 2, "pretzel" = 3)
-	nutriment_amt = 5
+	nutriment_amt = 4 //As much as one slice of pizza
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 6)
 
@@ -1886,3 +1894,59 @@
 	nutriment_amt = 5
 	matter = list(MATERIAL_BIOMATTER = 15)
 
+//Tisanes
+
+/obj/item/reagent_containers/food/snacks/poppy_tisane
+	name = "poppy flower tisane"
+	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, but it is more effective at aiding the healing of trauma than simply eating raw poppyflower."
+	icon_state = "poppy_tisane"
+	nutriment_desc = list("bitter tea" = 1)
+	nutriment_amt = 1 //a lil bit from the leaves and plant solids.
+	bitesize = 5
+	preloaded_reagents = list("p_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/tear_tisane
+	name = "sun tear tisane"
+	desc = "A somewhat concentrated decoction of sun tears. A pleasantly sweet tea, it does a better job at aiding the healing of burns than simply chewing the tears raw."
+	icon_state = "tear_tisane"
+	nutriment_desc = list("honeyed tea" = 1)
+	nutriment_amt = 3 //honey
+	bitesize = 5
+	preloaded_reagents = list("st_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/mercy_tisane
+	name = "mercys hand tisane"
+	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, but it does a better job of purging toxins than eating sun tears raw."
+	icon_state = "mercy_tisane"
+	nutriment_desc = list("tart tea" = 1)
+	nutriment_amt = 1
+	bitesize = 5
+	preloaded_reagents = list("mh_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/vale_tisane
+	name = "vale bush tisane"
+	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, and it leaves your mouth tingling. Still, it functions as a more effective analgesic and vasodilator than simply chewing the tears themselves."
+	icon_state = "vale_tisane"
+	nutriment_desc = list("acetic tea" = 1)
+	nutriment_amt = 1
+	bitesize = 5
+	preloaded_reagents = list("vb_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/helmet_tisane
+	name = "plump helmet tisane"
+	desc = "A somewhat concentrated decoction of poppy flower. Horribly bitter, but if you can choke back the tea you'll find that it's a far more effective antibiotic than raw plump helmets."
+	icon_state = "helmet_tisane"
+	nutriment_desc = list("bitter tea" = 1)
+	nutriment_amt = 1
+	bitesize = 5
+	preloaded_reagents = list("ph_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE

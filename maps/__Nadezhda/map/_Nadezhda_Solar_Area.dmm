@@ -1165,10 +1165,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/engineering/dorm)
-"iH" = (
-/obj/random/traps/wire_splicing/low_chance,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/mountainsolars)
 "iJ" = (
 /obj/structure/flora/small/grassa2,
 /obj/structure/flora/small/grassa2,
@@ -1507,7 +1503,7 @@
 /area/nadezhda/outside/mountainsolars)
 "pl" = (
 /obj/machinery/computer/general_air_control/supermatter_core{
-	sensors = list("SM_sensor"="Tank");
+	sensors = list("SM_sensor" = "Tank");
 	output_tag = "SM_out";
 	name = "Supermatter Supply Control";
 	input_tag = "SM_in";
@@ -8163,39 +8159,39 @@ ac
 ac
 av
 ad
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
-iH
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ac
 ac

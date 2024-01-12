@@ -157,7 +157,7 @@
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_HEART)
+		var/obj/item/organ/internal/vital/heart/C = H.random_organ_by_process(OP_HEART)
 		if(H && istype(H))
 			if(BP_IS_ROBOTIC(C))
 				return
@@ -317,7 +317,8 @@
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0 //Anything above 0 will have 100% odds when smoking
+	addiction_chance = 1 //Anything above 0 will have 100% odds when smoking
+	sanity_gain = 0.8
 	nerve_system_accumulations = 10
 
 /datum/reagent/drug/nicotine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -336,6 +337,11 @@
 		M.add_chemical_effect(CE_ANTITOX, 5)
 		M.heal_organ_damage(0.1 * effect_multiplier, 0.1 * effect_multiplier)
 
+/datum/reagent/drug/nicotine/withdrawal_act(mob/living/carbon/M)
+	M.add_chemical_effect(CE_SLOWDOWN, 0.5) //sluggish
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "tobacco")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "tobacco")
+
 /datum/reagent/drug/nicotine/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
 	M.add_chemical_effect(CE_PULSE, 2) //You're ODing...
@@ -352,7 +358,8 @@
 	reagent_state = LIQUID
 	color = "#181818"
 	overdose = REAGENTS_OVERDOSE
-	addiction_chance = 0 // Note: NEVER make nicotine actually addictive. EVER.
+	addiction_chance = 1 // Note: NEVER make nicotine actually addictive. EVER. //Why? It's based.
+	sanity_gain = 0.8
 	nerve_system_accumulations = 15
 
 /datum/reagent/drug/nicotineplus/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // If you inject fine nicotine
@@ -369,6 +376,11 @@
 	if(M.stats.getPerk(PERK_CHAINGUN_SMOKER))
 		M.add_chemical_effect(CE_ANTITOX, 10)
 		M.heal_organ_damage(0.2, 0.2)
+
+/datum/reagent/drug/nicotineplus/withdrawal_act(mob/living/carbon/M)
+	M.add_chemical_effect(CE_SLOWDOWN, 0.5) //sluggish
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_NOVICE, STIM_TIME, "nicotineplus")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_NOVICE, STIM_TIME, "nicotineplus")
 
 /datum/reagent/drug/nicotineplus/overdose(var/mob/living/carbon/M, var/alien)
 	M.add_side_effect("Headache", 11)
@@ -416,6 +428,43 @@
 /datum/reagent/drug/hyperzine/withdrawal_act(mob/living/carbon/M)
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.add_chemical_effect(CE_PULSE, 1)
+
+/datum/reagent/drug/nanoblood
+	name = "Nanoblood"
+	id = "nanoblood"
+	description =  "A highly dangerous and highly advanced Erythropoiesis-stimulant. Typically reserved for high-end paramedic services or military hospitals - any instance where the \
+	low LD-50 and difficulty of synthesis can be considered acceptable in the face of its rapid effectiveness even in low doses. Must be stored at temperatures not significantly higher\
+	than the human body."
+	taste_description = "copper and batteries"
+	reagent_state = LIQUID
+	metabolism = REM
+	overdose = REAGENTS_OVERDOSE/10
+	color = "#8a0303"
+
+/datum/reagent/drug/nanoblood/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_BLOODRESTORE, 4.5 * effect_multiplier)
+
+/datum/reagent/drug/nanoblood/overdose(var/mob/living/carbon/M, var/alien)
+	M.add_side_effect("Headache", 11) //hypertension
+	M.add_chemical_effect(CE_PULSE, 2)
+	M.adjustCloneLoss(6) //rapidly growing cancer, it was nice knowing you friend.
+
+
+/datum/reagent/drug/nanobad
+	name = "Ruined Nanoblood"
+	id = "nanobad"
+	taste_description = "rotting copper"
+	reagent_state = LIQUID
+	metabolism = REM
+	overdose = REAGENTS_OVERDOSE/10
+	color = "#8a0303"
+	description = "A highly dangerous and highly advanced Erythropoiesis-stimulant that has been improperly stored. Generally identifiable by an off-color, if it has not been kept in incorrect\
+	 conditions for too long it will likely still work albeit notably less potently, though side effects are highly likely."
+
+/datum/reagent/drug/nanobad/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.add_chemical_effect(CE_BLOODRESTORE, 3 * effect_multiplier)
+	M.add_side_effect("Headache", 6)
+	M.adjustCloneLoss(2) //less rapid cancer, still not good perhaps?
 
 /datum/reagent/drug/sanguinum
 	name = "Sanguinum"

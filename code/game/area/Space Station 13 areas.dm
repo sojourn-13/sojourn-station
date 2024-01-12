@@ -348,6 +348,9 @@ area/space/atmosalert()
 /area/centcom/holding
 	name = "\improper Holding Facility"
 
+/area/centcom/agentoffice
+	name = "\improper Lower Colony communication center"
+
 /area/centcom/alien
 	name = "\improper Alien base"
 	icon_state = "yellow"

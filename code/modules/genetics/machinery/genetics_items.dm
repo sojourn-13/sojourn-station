@@ -467,8 +467,8 @@ A holder for items we make with Genetics. Helps add a visceral element to object
 		/obj/item/organ/internal/blood_vessel/extensive,
 		/obj/item/organ/internal/blood_vessel/extensive,
 		/obj/item/organ/internal/liver/big,
-		/obj/item/organ/internal/lungs/long,
-		/obj/item/organ/internal/heart/huge)
+		/obj/item/organ/internal/vital/lungs/long,
+		/obj/item/organ/internal/vital/heart/huge)
 /*
 =================Genetics Circuits=================
 Circuit boards for different Genetics Machines.

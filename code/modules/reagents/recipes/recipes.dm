@@ -186,6 +186,19 @@
 	required_reagents = list("hyperzine" = 1, "blattedin" = 2, "tramadol" = 1)
 	result_amount = 2
 
+/datum/chemical_reaction/nanoblood
+	result = "nanoblood"
+	required_reagents = list("blood" = 3, "uncap nanites" = 5, "sanguinum" = 2)
+	maximum_temperature = 314 //within about 5 degrees of bloods natural temp in the body
+	catalysts = list("plasma" = 5)
+	result_amount = 5
+
+/datum/chemical_reaction/nanobad
+	result = "nanobad"
+	required_reagents = list("nanoblood" = 1)
+	minimum_temperature = 323 // aprox the temp at which blood breaks down, gotta be careful when making it!
+	result_amount = 4 //a little bit of it breaks down in to biofilm and other gross gunk
+
 /datum/chemical_reaction/hyperzine
 	result = "hyperzine"
 	required_reagents = list("sugar" = 1, "blattedin" = 1, "sulfur" = 1)
@@ -322,7 +335,14 @@
 /datum/chemical_reaction/space_cleaner
 	result = "cleaner"
 	required_reagents = list("ammonia" = 1, "water" = 1)
-	result_amount = 2
+	result_amount = 3
+
+/datum/chemical_reaction/space_cleanest
+	result = "cleaner"
+	required_reagents = list("cleaner" = 1, "water" = 1)
+	catalysts = list("cleaner" = 60) //need to actually have enough cleaner to mix.
+	result_amount = 3
+
 
 /datum/chemical_reaction/plantbgone
 	result = "plantbgone"
@@ -941,6 +961,12 @@
 	required_reagents = list("mindbreaker" = 1, "psilocybin" = 1, "sanguinum" = 1 , "anti_toxin" = 1, "ethanol" = 1)
 	result_amount = 5
 
+/datum/chemical_reaction/ctincture
+	result = "ctincture"
+	required_reagents = list("vodka" = 10, "concentrated-carpotoxin" = 1)
+	result_amount = 10
+
+
 /* FBP "medicine" */
 
 /datum/chemical_reaction/fbp_repair
@@ -954,3 +980,4 @@
 	required_reagents = list("nanites" = 1, "oil" = 1)
 	result_amount = 2
 */
+

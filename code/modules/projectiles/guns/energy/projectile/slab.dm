@@ -19,7 +19,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	init_firemodes = list(
 		list(mode_name="kill", mode_desc="fires scrap at relativistic speed", icon="kill"),
-		list(mode_name="superkill", mode_desc="blows all your charge on a single, piercing shot", penetrating = 3, penetration_multiplier = 3, fire_delay = 25, charge_cost = 600, icon="destroy"),
+		list(mode_name="supercharge", mode_desc="hold down the trigger to supercharge capacitors", mode_type = /datum/firemode/charge, icon="charge"),
 	)
 	price_tag = 5000
 

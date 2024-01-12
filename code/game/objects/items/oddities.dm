@@ -20,6 +20,7 @@
 	var/datum/perk/oddity/perk //This is so we can link a perk into the oddity
 	var/prob_perk = 40 //how likely it is to role a perk - if prek isnt present, out of 100
 	var/min_stats = 1 //The lowest amount it can give when randomizing
+	var/kill_stats = FALSE
 
 
 /obj/item/oddity/Initialize()
@@ -41,7 +42,7 @@
 		if(random_stats)
 			for(var/stat in oddity_stats)
 				oddity_stats[stat] = rand(min_stats, oddity_stats[stat])
-		AddComponent(/datum/component/inspiration, oddity_stats, perk)
+		AddComponent(/datum/component/inspiration, oddity_stats, perk, kill_stats)
 
 /obj/item/oddity/proc/upgraded_oddity_rolling()
 	if(!perk && prob(prob_perk+5))
@@ -50,7 +51,7 @@
 		if(random_stats)
 			for(var/stat in oddity_stats)
 				oddity_stats[stat] = round((oddity_stats[stat] = rand(min_stats, oddity_stats[stat]) * 1.5))
-		AddComponent(/datum/component/inspiration, oddity_stats, perk)
+		AddComponent(/datum/component/inspiration, oddity_stats, perk, kill_stats)
 
 /proc/get_oddity_perk()
 	return pick(subtypesof(/datum/perk/oddity))
@@ -405,6 +406,15 @@
 		STAT_VIG = 4
 	)
 
+/obj/item/oddity/common/mirror/doodle
+	prob_perk = 0
+	perk = PERK_NO_OBSUCATION
+	kill_stats = TRUE
+	min_stats = 16
+	oddity_stats = list(
+		STAT_COG = 18
+	)
+
 /obj/item/oddity/common/lighter
 	name = "rusted lighter"
 	desc = "This zippo lighter is rusted shut. It smells faintly of sulphur and blood."
@@ -428,9 +438,9 @@
 
 /obj/item/oddity/common/book_unholy/closed
 	name = "unholy book"
-	desc = "The writings inside describe some strange rituals whose price is always paid in blood. Some pages have been torn out or smudged to illegibility, \
+	desc = "The writings inside describe some strange rituals wrote in crayons. Some pages have been torn out or smudged to illegibility, \
 			but what little you can make out tells you that \"...to be able to see beyond the veil, the caster will need to be half blind...\". \
-			While this sounds like utter nonsense to you, you have a dreadful feeling that using this book in the runes described would have some sinister effect..."
+			While this may look like utter nonsense to you, the dreadful feeling that using this book in the runes described would have some sinister effect..."
 	icon_state = "book_skull"
 	prob_perk = 80 //Cult around this gives it great power
 	oddity_stats = list(

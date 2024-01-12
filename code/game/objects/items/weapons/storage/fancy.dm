@@ -335,8 +335,8 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 	create_reagents(10 * storage_slots)//so people can inject cigarettes without opening a packet, now with being able to inject the whole one
 
 /obj/item/storage/fancy/cigarettes/khi
-	name = "\improper Kitsuhana Singularity packet"
-	desc = "A packet of six Kitsuhana Singularity cigarettes. A brand made by LSD abusers who overdosed one night and invented these smokes, still finds popularity among retards with no sense of quality. WARNING: Contains the kind of chemicals needed to enjoy this type of brand."
+	name = "\improper Hippie's Delight packet"
+	desc = "A packet of six Hippie's Delight cigarettes. A brand of cigarettes favorited by those whom live in Astrovans on public and private beaches everywhere. CAUTION: Contents may contain chemicals unsuitable for some people. Ride the wave, surf's up bro!"
 	icon_state = "KhiCigPacket"
 	item_state = "KhiCigPacket"
 

@@ -6,6 +6,7 @@
 	caliber = CAL_CAP
 	origin_tech = list(TECH_COMBAT = 1, TECH_MATERIAL = 1)
 	price_tag = 100
+	gun_parts = null //no
 	handle_casings = CYCLE_CASINGS
 	max_shells = 7
 	ammo_type = /obj/item/ammo_casing/cap
@@ -19,7 +20,7 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "foambox"
 
-/obj/item/storage/box/foambow/populate_contents()
+/obj/item/storage/box/blanks/populate_contents()
 	new /obj/item/ammo_casing/cap(src)
 	new /obj/item/ammo_casing/cap(src)
 	new /obj/item/ammo_casing/cap(src)

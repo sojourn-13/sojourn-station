@@ -56,3 +56,45 @@
 		MATERIAL_SILVER = 20
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/excelsior
+
+
+/obj/item/clothing/suit/space/void/excelsior/progenitor //non excelsior branded and slightly lower armor, but less slowdown. A decent suit of armor, BUT you still look like a commie so be careful!
+	name = "Cosmonaught armor"
+	desc = "An ancient space suit design. Provides good protection, especially against energy discharges. This one appears to be an older, less advanced model that is notably free of techno-communist corruption."
+	slowdown = 0.6 //slightly less slowdown, slightly less armor.
+	armor_list = list(
+		melee = 40,
+		bullet = 50,
+		energy = 60,
+		bomb = 70,
+		bio = 90,
+		rad = 25
+	)
+	matter = list(
+		MATERIAL_PLASTIC = 20,
+		MATERIAL_STEEL = 20,
+		MATERIAL_PLASTEEL = 10,
+		MATERIAL_GOLD = 5,
+		MATERIAL_SILVER = 5
+	)
+	helmet = /obj/item/clothing/head/helmet/space/void/excelsior/progenitor
+
+/obj/item/clothing/head/helmet/space/void/excelsior/progenitor
+	name = "Cosmonaught helmet"
+	desc = "A deceptively well armored space helmet. An ancient design and the likely progenitor to the Excelsior brand."
+	matter = list(
+		MATERIAL_PLASTIC = 10,
+		MATERIAL_GLASS = 10,
+		MATERIAL_PLASTEEL = 5,
+		MATERIAL_GOLD = 3,
+		MATERIAL_SILVER = 3
+	)
+
+	armor_list = list(
+		melee = 40,
+		bullet = 50,
+		energy = 60,
+		bomb = 70,
+		bio = 90,
+		rad = 25
+	)

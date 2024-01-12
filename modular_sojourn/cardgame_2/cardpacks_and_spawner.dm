@@ -42,7 +42,7 @@
 				/obj/item/card_carp/ratking = 3,
 				/obj/item/card_carp/plaguerat = 5,
 				/obj/item/card_carp/kangaroorat = 3,
-				/obj/random/card_carp/terrain = 3,
+				/obj/random/card_carp/terrain = 4,
 				/obj/random/card_carp/rare = 1 //Rare is rare
 				))
 
@@ -90,6 +90,7 @@
 				/obj/item/card_carp/rpelt = 20,
 				/obj/item/card_carp/dpelt = 10,
 				/obj/item/card_carp/pinepelt = 5,
+				/obj/item/card_carp/peltlice = 3,
 				/obj/item/card_carp/gpelt = 1 //SO RARE
 				))
 

@@ -76,6 +76,12 @@
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/capofficer
+	display_name = "cap, officer"
+	path = /obj/item/clothing/head/rank/janacap
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/cappatrolblack
 	display_name = "cap, patrol black"
 	path = /obj/item/clothing/head/seccorp

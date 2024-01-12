@@ -190,23 +190,28 @@
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
-	charge_cost = 120
+	charge_cost = 70
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
 	init_firemodes = list(
-		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#8d25cc"),
-		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#461266"),
+		list(mode_name="Melt", mode_desc="A reliable plasma round, for stripping away armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/burn.ogg', burst=1, fire_delay = 9, charge_cost=60, icon="kill", projectile_color = "#BF40BF"),
+		list(mode_name="Pulse", mode_desc="A plasma round configured to explode violently on impact, and cause a pulse of EMP", projectile_type=/obj/item/projectile/plasma/aoe/ion, fire_sound='sound/weapons/energy/taser.ogg', burst=1, fire_delay=12, charge_cost=200, icon="stun", projectile_color = "#c082c0")
 	)
 	serial_shown = FALSE
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/plasma/cassad/cult/deepmaints
 	name = "\"Blue Moon\" psi-plasma rifle"
 	desc = "A Cassad-sytle plasma rifle ready to take on any battle, this one crafted out of base violent thought alone has more unique ways of holding a cell's charge known only to the person that had thought of it."
-	charge_cost = 120
+	damage_multiplier = 1
+	penetration_multiplier = 1
 	psigun = 1
-	damage_multiplier = 1.1
-	penetration_multiplier = 1.1
+	init_firemodes = list(
+		list(mode_name="Melt", mode_desc="A reliable plasma round, for stripping away armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/burn.ogg', burst=1, fire_delay = 9, charge_cost=25, icon="kill", projectile_color = "#BF40BF"),
+		list(mode_name="Pulse", mode_desc="A plasma round configured to explode violently on impact, and cause a pulse of EMP", projectile_type=/obj/item/projectile/plasma/aoe/ion, fire_sound='sound/weapons/energy/taser.ogg', burst=1, fire_delay=12, charge_cost=150, icon="stun", projectile_color = "#c082c0")
+	)
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/plasma/auretian/cult
 	name = "\"Meteoroid\" psi-energy pistol"

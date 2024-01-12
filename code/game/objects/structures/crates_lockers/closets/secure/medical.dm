@@ -134,6 +134,7 @@
 	new /obj/item/device/radio(src)
 	new /obj/item/tool/crowbar(src)
 	new /obj/item/extinguisher/mini(src)
+	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/shoes/reinforced/medical(src)
 	new /obj/item/device/radio/headset/headset_med(src)
 	new /obj/item/taperoll/medical(src)
@@ -174,6 +175,7 @@
 	new /obj/item/clothing/gloves/latex(src)
 	new /obj/item/clothing/accessory/halfcape/cbo(src)
 	new /obj/item/clothing/accessory/job/cape/mbo(src) // Both versions of capes for consistency - Seb
+	new /obj/item/rig/light/ultra_light/cmo(src)
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/heads/cmo(src)

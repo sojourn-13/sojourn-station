@@ -160,7 +160,7 @@
 	if(completed) return
 	UnregisterSignal(target, COMSIG_HUMAN_HEALTH)
 	..()
-
+*/
 /datum/individual_objective/helper
 	name = "Helping Hand"
 	units_requested = 15 MINUTES
@@ -275,7 +275,7 @@
 	if(completed) return
 	UnregisterSignal(mind_holder, COMSIG_MOB_LIFE)
 	..()
-*/
+
 /datum/individual_objective/collenction
 	name = "Collection"
 	var/obj/item/target

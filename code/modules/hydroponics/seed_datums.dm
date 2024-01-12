@@ -1353,7 +1353,7 @@
 	set_trait(TRAIT_WATER_CONSUMPTION, 0.5)
 
 /datum/seed/shand
-	name = "shand"
+	name = "mercy's hand"
 	seed_name = "mercy's hand"
 	display_name = "mercy's hand leaves"
 	chems = list("bicaridine" = list(1,10), "anti_toxin" = list(1,10))
@@ -1373,7 +1373,7 @@
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
 
 /datum/seed/mtear
-	name = "mtear"
+	name = "sun tear"
 	seed_name = "sun tear"
 	display_name = "sun tear leaves"
 	chems = list("honey" = list(1,10), "kelotane" = list(3,5))
@@ -1393,7 +1393,7 @@
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
 
 /datum/seed/broot
-	name = "broot"
+	name = "blood root"
 	seed_name = "blood root"
 	display_name = "blood root"
 	chems = list("nutriment" = list(1,10), "sanguinum" = list(3,5))
@@ -1509,10 +1509,11 @@
 	set_trait(TRAIT_POTENCY,1)
 
 /datum/seed/vale
-	name = "vale"
+	name = "vale bush"
 	seed_name = "vale bush"
 	display_name = "vale bush"
 	chems = list("paracetamol" = list(1,5),"dexalin" = list(1,2),"nutriment"= list(1,5))
+	kitchen_tag = "vbush"
 
 /datum/seed/vale/New()
 	..()

@@ -493,7 +493,7 @@
 				to_chat(user, SPAN_WARNING("The plant is dead."))
 				return
 
-			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
+			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
 				// Create a sample.
 				seed.harvest(user,yield_mod,1)
 				health -= (rand(3,5)*10)

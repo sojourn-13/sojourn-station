@@ -34,6 +34,7 @@
 			/obj/item/gun/projectile/glock = good_data("Sky pistol", list(2, 6), 650),
 			/obj/item/gun/projectile/giskard,
 			/obj/item/gun/projectile/olivaw,
+			/obj/item/gun/projectile/automatic/mac,
 			/obj/item/gun/projectile/revolver/detective = good_data("Havelock revolver", list(2, 10), 300),
 			/obj/item/gun/projectile/automatic/ak47/sa = good_data("Kalshnikov rifle", list(1, 3), 1000),
 			/obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
@@ -87,7 +88,7 @@
 		"Xanorath Smugged Gear" = list(
 			/obj/item/clothing/suit/space/void/merc/xanorath,
 			/obj/item/melee/energy/sword/pirate,
-			/obj/item/gun/projectile/gyropistol,
+			/obj/item/gun/projectile/gyropistol = good_data("Novichok", list(0, 2), 28000), //holster sized 'i win' gun, keep this expensive and rare.
 			/obj/item/ammo_magazine/a75,
 			/obj/item/reagent_containers/hypospray/autoinjector/drugs,
 			/obj/item/reagent_containers/syringe/drugs,

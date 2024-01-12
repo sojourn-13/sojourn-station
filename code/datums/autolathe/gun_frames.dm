@@ -49,6 +49,11 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	name = "6.5mm takeshi - frame"
 	build_path = /obj/item/part/gun/frame/tk
 
+/datum/design/autolathe/gun_frame/wind
+	name = "6.5mm/7.62mm Wind frame"
+	build_path = /obj/item/part/gun/frame/nord
+
+
 //Blackshield guns.
 
 /datum/design/autolathe/gun_frame/omni

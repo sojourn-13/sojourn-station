@@ -87,7 +87,7 @@
 				new /obj/item/stack/material/plastic(get_turf(src), 1 ? 30 : 2)
 				new /obj/item/stack/material/plasteel(get_turf(src), 1 ? 20 : 2)
 				new /obj/item/stack/material/glass(get_turf(src), 1 ? 10 : 2)
-				new /obj/item/stack/sheet/refined_scrap(get_turf(src), 1 ? 30 : 2)
+				new /obj/item/stack/material/refined_scrap(get_turf(src), 1 ? 30 : 2)
 				to_chat(user, SPAN_NOTICE("You cut up the mech."))
 				qdel(src)
 			return

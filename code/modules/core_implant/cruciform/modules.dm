@@ -115,7 +115,7 @@
 /datum/core_module/activatable/cruciform/priest_convert/activate()
 	..()
 	var/obj/item/implant/core_implant/cruciform/C = implant
-	C.make_priest()
+	C.make_prime()
 
 /datum/core_module/activatable/cruciform/priest_convert/uninstall()
 	..()
@@ -169,7 +169,6 @@
 	/datum/ritual/targeted/cruciform/priest)
 
 
-
 /datum/core_module/rituals/cruciform/inquisitor
 	access = list(access_nt_inquisitor)
 	ritual_types = list(/datum/ritual/cruciform/inquisitor,
@@ -180,16 +179,32 @@
 	implant.max_power += 50
 	implant.power_regen += 0.5
 
-
 /datum/core_module/rituals/cruciform/inquisitor/uninstall()
 	..()
 	implant.max_power -= 50
 	implant.power_regen -= 0.5
 
 
-
 /datum/core_module/rituals/cruciform/crusader
-	ritual_types = list(/datum/ritual/cruciform/crusader)
+	ritual_types = list(/datum/ritual/cruciform/crusader,
+	/datum/ritual/targeted/cruciform/crusader)
+
+/datum/core_module/rituals/cruciform/crusader/install()
+	..()
+	if(implant.get_module(CRUCIFORM_PRIME)) //If they're a prime they already get +50 power and +0.3 regen, we just need to get them up the rest of the way
+		implant.power_regen += 0.2
+	else
+		implant.max_power += 50
+		implant.power_regen += 0.5
+
+/datum/core_module/rituals/cruciform/crusader/uninstall()
+	..()
+	if(implant.get_module(CRUCIFORM_PRIME))
+		implant.power_regen -= 0.2
+	else
+		implant.max_power -= 50
+		implant.power_regen -= 0.5
+
 
 /datum/core_module/rituals/cruciform/omni
 	ritual_types = list(/datum/ritual/cruciform/omni)

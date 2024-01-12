@@ -18,43 +18,47 @@
 /datum/lobbyscreen/New()
 	if(!length(possibleMusic) || !image_file)
 		CRASH("Login screen setup is wrong.")
-	musicTrack = pick(possibleMusic)
+	musicTrack = pickweight(possibleMusic)
 	return ..()
 
 /datum/lobbyscreen/ship
 	image_file = 'icons/title_screens/ship.png'
 	possibleMusic = list(
-		'sound/music/lobby/To_Eris-Almost_there.ogg',
-		'sound/music/lobby/Lobo_Loco-Technetium_Planet.ogg'
-		)
-
+		'sound/music/lobby/Duke_Gneiss-Bluespace.ogg' = 100,
+		'sound/music/lobby/Duke_Gneiss-Exploring.ogg' = 100,
+		'sound/music/lobby/Duke_Gneiss-Aether.ogg' = 50,
+	)
 
 /datum/lobbyscreen/enroute
 	image_file = 'icons/title_screens/transit.png'
 	possibleMusic = list(
-		'sound/music/lobby/transit.ogg',
-		'sound/music/lobby/Grimbeard-Tubeworm_Instrumental.ogg'
-		)
+		'sound/music/lobby/ultra_deep_field.ogg' = 100,
+		'sound/music/lobby/Duke_Gneiss-Phoron_Industry.ogg' = 10,
+		'sound/music/lobby/Duke_Gneiss-Phoron_Leak.ogg' = 10,
+	)
 
 /datum/lobbyscreen/ironhammer
 	image_file = 'icons/title_screens/ironhammer.png'
 	possibleMusic = list(
-		'sound/music/lobby/Nctrnm-Dos_Lagos.ogg',
-		'sound/music/lobby/Grimbeard-Tubeworm_Instrumental.ogg'
-		)
-
+		'sound/music/lobby/Duke_Gneiss-Metropolis.ogg' = 100,
+		'sound/music/lobby/Duke_Gneiss-Oxygen_Facility.ogg' = 40,
+		'sound/music/lobby/Duke_Gneiss-O.W.L..ogg' = 10,
+		'sound/music/lobby/Duke_Gneiss-The_Runner_in_motion.ogg' = 5,
+	)
 
 /datum/lobbyscreen/onestar
 	image_file = 'icons/title_screens/onestar.png'
 	possibleMusic = list(
-		'sound/music/lobby/Grimbeard-The_Part_Where_You_Always_Leave.ogg',
-		'sound/music/lobby/Kevin_MacLeod-Impact_Prelude.ogg'
-		)
+		'sound/music/lobby/Duke_Gneiss-Downtown_2.ogg' = 100,
+		'sound/music/lobby/Duke_Gneiss-Codebrain.ogg' = 25,
+	)
 
 /datum/lobbyscreen/neotheology
 	image_file = 'icons/title_screens/neotheology.png'
 	possibleMusic = list(
-		'sound/music/lobby/To_Eris-Almost_there.ogg')
+		'sound/music/lobby/Duke_Gneiss-Neotheology.ogg' = 100,
+		'sound/music/lobby/Duke_Gneiss-Creating_A_Shell.ogg' = 20
+	)
 
 /datum/lobbyscreen/proc/play_music(client/C)
 	if(!musicTrack)

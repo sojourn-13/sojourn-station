@@ -566,7 +566,7 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
-		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_LIVER)
+		var/obj/item/organ/internal/vital/heart/C = H.random_organ_by_process(OP_LIVER)
 		if(istype(L) && !BP_IS_ROBOTIC(L))
 			L.take_damage(3, 0)
 		if(istype(C) && !BP_IS_ROBOTIC(C))
@@ -587,7 +587,7 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
-		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_LIVER)
+		var/obj/item/organ/internal/vital/heart/C = H.random_organ_by_process(OP_LIVER)
 		if(istype(L) && !BP_IS_ROBOTIC(L))
 			L.take_damage(3, 0)
 		if(istype(C) && !BP_IS_ROBOTIC(C))
@@ -1158,7 +1158,7 @@
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/heart/C = H.random_organ_by_process(OP_HEART) // I said to watch out!!
+		var/obj/item/organ/internal/vital/heart/C = H.random_organ_by_process(OP_HEART) // I said to watch out!!
 		if(istype(C) && !BP_IS_ROBOTIC(C))
 			M.adjustOxyLoss(0.1) // Hyperventilating
 			M.add_chemical_effect(CE_PULSE, 4) // Heart beating TOO fast
@@ -1818,6 +1818,7 @@
 	..()
 	M.adjust_hallucination(-0.9 * effect_multiplier)
 	M.add_chemical_effect(CE_TOXIN, -2.5 * effect_multiplier)
+	M.reagents.remove_reagent("wormwood", 0.8 * effect_multiplier)
 
 // Cocktails
 
@@ -2497,7 +2498,7 @@
 		M.add_chemical_effect(CE_TOXIN, 0.2 * effect_multiplier)
 	if(dose > 60 && ishuman(M) && prob(5))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/heart/L = H.random_organ_by_process(OP_HEART)
+		var/obj/item/organ/internal/vital/heart/L = H.random_organ_by_process(OP_HEART)
 		if(L && istype(L))
 			if(dose < 120)
 				L.take_damage(1 * effect_multiplier, 0)

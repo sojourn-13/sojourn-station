@@ -89,6 +89,27 @@
 	item_state = "nightstalker_tooth"
 	price_tag = 600
 
+/obj/item/animal_part/stalker_spur
+	name = "chitinous spur"
+	desc = "A long sharp spur typically found at the end of a nightmare stalkers 'leg'. Incredibly durable, it could likely be fashioned into any number of weapons. "
+	icon_state = "nightstalker_spur" //holy coder-sprite batman. This needs replacing eventually.
+	item_state = "nightstalker_spur"
+	price_tag = 600
+
+/obj/item/animal_part/carp_fang
+	name = "mephitic fang"
+	desc = "The venom gland and fang from a particularly large carp. Some claim that such highly concentrated venom can be processed into a tincture used to treat internal injury albeit at the cost of ingesting carpotoxin."
+	icon_state = "carp_tooth"
+	item_state = "carp_tooth"
+	price_tag = 300
+
+/obj/item/animal_part/sarg_horn
+	name = "sargoyle horn"
+	desc = "A small, hollow horn attached to the head of a sargoyle. Decently sturdy, these normally ugly things can be polished to a gorgeous glossy finish making them well prized as decoration for weaponry."
+	icon_state = "sarg_horn" //more fugly coder sprites. These at least have some credit to the creator of the Brahmiluf horns since i modified those to create this icon.
+	item_state = "sarg_horn"
+	price_tag = 200
+
 //start of the dok hunter arc
 /obj/item/animal_part/croaker_tongue
 	name = "croaker lord tongue"

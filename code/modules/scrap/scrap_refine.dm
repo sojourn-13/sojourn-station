@@ -43,15 +43,19 @@
 	pixel_x = rand(0, 16) - 8
 	pixel_y = rand(0, 8) - 8
 
-/obj/item/stack/sheet/refined_scrap
+/obj/item/stack/material/refined_scrap
 	name = "refined scrap"
 	desc = "This is ghetto gold! It could be used as fuel or building material."
 	icon = 'icons/obj/structures/scrap/refine.dmi'
 	icon_state = "refined"
+	default_type = MATERIAL_RSCRAP
+	novariants = TRUE
+	price_tag = 30
 	max_amount = 120
-	amount = 1
-	var/matter_type = MATERIAL_RSCRAP
 
-/obj/item/stack/sheet/refined_scrap/random
+/obj/item/stack/material/refined_scrap/random
 	rand_min = 5
 	rand_max = 20
+
+/obj/item/stack/material/refined_scrap/full
+	amount = 120

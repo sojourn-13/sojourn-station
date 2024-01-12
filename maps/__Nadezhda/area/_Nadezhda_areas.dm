@@ -149,9 +149,10 @@
 //Outside abandoned structures
 
 /area/nadezhda/dungeon/outside
-	is_maintenance = FALSE
+	is_maintenance = TRUE
 	flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
+	ship_area = FALSE
 	turf_initializer = new /datum/turf_initializer/maintenance()
 	ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
@@ -306,6 +307,7 @@
 /area/nadezhda/outside/forest
 	name = "Forest"
 	icon_state = "forest"
+	is_maintenance = TRUE
 	sound_env = FOREST
 	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg', 'sound/ambience/forestamb5.ogg', 'sound/ambience/forestamb6.ogg')
 
@@ -867,8 +869,8 @@
 	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg')
 	sound_env = LARGE_ENCLOSED
 
-/area/nadezhda/absolutism/storage
-	name = "\improper Church Storage"
+/area/nadezhda/absolutism/hallways
+	name = "\improper Church Hallways"
 	icon_state = "erisyellow"
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 
@@ -883,7 +885,7 @@
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 
 /area/nadezhda/absolutism/vectorrooms
-	name = "\improper Church Vector Commons"
+	name = "\improper Church Commons"
 	icon_state = "erisblue"
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 

@@ -56,7 +56,7 @@ the lims and such to pull out the internal bits for other people if needed
 	category = "Medical"
 
 /datum/design/research/item/mechfab/robotic_internals/heart
-	build_path = /obj/item/organ/internal/heart/prosthetic
+	build_path = /obj/item/organ/internal/vital/heart/prosthetic
 	category = "Medical"
 
 /datum/design/research/item/mechfab/robotic_internals/liver

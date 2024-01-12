@@ -5,50 +5,50 @@
 	desc = "A vendor that can dispense specialized equipment kits for Blackshield Troopers."
 	icon_state = "trashvend"
 	products = list( // 5 in stock for the default blackshield kit, 3 for the rest
-		/obj/item/storage/box/bs_kit/mosin = 5,
-		/obj/item/storage/box/bs_kit/vintorez = 2,
-		/obj/item/storage/box/bs_kit/duty = 3,
-		/obj/item/storage/box/bs_kit/sts_para = 2,
-		/obj/item/storage/box/bs_kit/rds_omnicarbine = 2,
-		/obj/item/storage/box/bs_kit/cog = 3,
-		/obj/item/storage/box/bs_kit/drozd = 2,
-		/obj/item/storage/box/bs_kit/ekaterina = 3,
-		/obj/item/storage/box/bs_kit/bounty = 3,
-		/obj/item/storage/box/bs_kit/delta = 5,
-		/obj/item/storage/box/bs_kit/rex10 = 3,
-		/obj/item/storage/box/bs_kit/pilgrim = 3,
-		/obj/item/storage/box/bs_kit/makarov = 3,
-		/obj/item/storage/box/bs_kit/martin = 5,
-		/obj/item/storage/box/bs_kit/sawn_shotgun = 5,
-		/obj/item/storage/box/bs_kit/saiga = 2,
-		/obj/item/storage/box/bs_kit/standard_armor = 5,
-		/obj/item/storage/box/bs_kit/flak_armor = 3,
-		/obj/item/storage/box/bs_kit/bullet_armor = 3,
-		/obj/item/storage/box/bs_kit/laser_armor = 3,
-		/obj/item/storage/box/bs_kit/standard_armor_corpsman = 2
+		/obj/item/storage/box/bs_kit/mosin = 2,
+		//obj/item/storage/box/bs_kit/vintorez = 2,
+		//obj/item/storage/box/bs_kit/duty = 3,
+		//obj/item/storage/box/bs_kit/sts_para = 2,
+		//obj/item/storage/box/bs_kit/rds_omnicarbine = 2,
+		/obj/item/storage/box/bs_kit/cog = 2,
+		//obj/item/storage/box/bs_kit/drozd = 2,
+		//obj/item/storage/box/bs_kit/ekaterina = 3,
+		//obj/item/storage/box/bs_kit/bounty = 3,
+		/obj/item/storage/box/bs_kit/delta = 2,
+		/obj/item/storage/box/bs_kit/rex10 = 2,
+		//obj/item/storage/box/bs_kit/pilgrim = 3,
+		//obj/item/storage/box/bs_kit/makarov = 3,
+		//obj/item/storage/box/bs_kit/martin = 2,
+		//obj/item/storage/box/bs_kit/sawn_shotgun = 5,
+		//obj/item/storage/box/bs_kit/saiga = 2,
+		//obj/item/storage/box/bs_kit/standard_armor = 5,
+		//obj/item/storage/box/bs_kit/flak_armor = 3,
+		//obj/item/storage/box/bs_kit/bullet_armor = 3,
+		//obj/item/storage/box/bs_kit/laser_armor = 3,
+		//obj/item/storage/box/bs_kit/standard_armor_corpsman = 2
 		)
 	prices = list( // 500$ for default Blackshield stuff, 750 for the rest
 		/obj/item/storage/box/bs_kit/mosin = 500,
-		/obj/item/storage/box/bs_kit/vintorez = 1100,
-		/obj/item/storage/box/bs_kit/duty = 950,
-		/obj/item/storage/box/bs_kit/sts_para = 1200,
-		/obj/item/storage/box/bs_kit/rds_omnicarbine = 1200,
+		//obj/item/storage/box/bs_kit/vintorez = 1100,
+		//obj/item/storage/box/bs_kit/duty = 950,
+		//obj/item/storage/box/bs_kit/sts_para = 1200,
+		//obj/item/storage/box/bs_kit/rds_omnicarbine = 1200,
 		/obj/item/storage/box/bs_kit/cog = 750,
-		/obj/item/storage/box/bs_kit/drozd = 800,
-		/obj/item/storage/box/bs_kit/ekaterina = 750,
-		/obj/item/storage/box/bs_kit/bounty = 750,
+		//obj/item/storage/box/bs_kit/drozd = 800,
+		//obj/item/storage/box/bs_kit/ekaterina = 750,
+		//obj/item/storage/box/bs_kit/bounty = 750,
 		/obj/item/storage/box/bs_kit/delta = 750,
 		/obj/item/storage/box/bs_kit/rex10 = 500,
-		/obj/item/storage/box/bs_kit/pilgrim = 750,
-		/obj/item/storage/box/bs_kit/makarov = 500,
-		/obj/item/storage/box/bs_kit/martin = 500,
-		/obj/item/storage/box/bs_kit/sawn_shotgun = 500,
-		/obj/item/storage/box/bs_kit/saiga = 1000,
-		/obj/item/storage/box/bs_kit/standard_armor = 500,
-		/obj/item/storage/box/bs_kit/flak_armor = 750,
-		/obj/item/storage/box/bs_kit/bullet_armor = 750,
-		/obj/item/storage/box/bs_kit/laser_armor = 1250,
-		/obj/item/storage/box/bs_kit/standard_armor_corpsman = 1250
+		//obj/item/storage/box/bs_kit/pilgrim = 750,
+		//obj/item/storage/box/bs_kit/makarov = 500,
+		//obj/item/storage/box/bs_kit/martin = 500, //....why? We literally SPAWN with a martin.
+		//obj/item/storage/box/bs_kit/sawn_shotgun = 500,
+		//obj/item/storage/box/bs_kit/saiga = 1000,
+		//obj/item/storage/box/bs_kit/standard_armor = 500,
+		//obj/item/storage/box/bs_kit/flak_armor = 750,
+		//obj/item/storage/box/bs_kit/bullet_armor = 750,
+		//obj/item/storage/box/bs_kit/laser_armor = 1250,
+		//obj/item/storage/box/bs_kit/standard_armor_corpsman = 1250
 		)
 	auto_price = FALSE
 
@@ -80,7 +80,7 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Mosin Kit" = /obj/item/storage/box/bs_kit/mosin,
-					"Roe Kit" = /obj/item/storage/box/bs_kit/roe,
+					"Watchtower Kit" = /obj/item/storage/box/bs_kit/watchtower,
 					"Duty Kit" = /obj/item/storage/box/bs_kit/duty,
 					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
 					"Ekaterina SMG Kit" = /obj/item/storage/box/bs_kit/ekaterina,
@@ -144,7 +144,7 @@
 /obj/machinery/vending/blackshield_kit/proc/RedeemCOSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Mateba Kit" = /obj/item/storage/box/bs_kit/mateba,
-					"Argos Kit" = /obj/item/storage/box/bs_kit/argos,
+					"Argos Kit" = /obj/item/storage/box/bs_kit/gemini,
 					"Spider Rose Kit" = /obj/item/storage/box/bs_kit/spider)
 	var/selection = items[input(redeemer, "Pick your side-arm kit", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
@@ -190,32 +190,32 @@
 	desc = "A vendor that can dispense specialized equipment kits for Marshal Officers."
 	icon_state = "trashvend"
 	products = list(
-		/obj/item/storage/box/m_kit/freedom = 5,
-		/obj/item/storage/box/m_kit/breacher = 5,
-		/obj/item/storage/box/m_kit/opshotkit = 5,
-		/obj/item/storage/box/m_kit/mamba = 5,
-		/obj/item/storage/box/m_kit/gear_lasgun = 5,
-		/obj/item/storage/box/m_kit/taser = 5,
-		/obj/item/storage/box/m_kit/liberty = 5,
-		/obj/item/storage/box/m_kit/judiciary = 5,
-		/obj/item/storage/box/m_kit/standard_armor = 5,
-		/obj/item/storage/box/m_kit/bullet_proof = 5,
-		/obj/item/storage/box/m_kit/laser_armor = 5,
-		/obj/item/storage/box/m_kit/riot = 5
+		//obj/item/storage/box/m_kit/freedom = 2,
+		//obj/item/storage/box/m_kit/breacher = 5,
+		/obj/item/storage/box/m_kit/opshotkit = 2,
+		/obj/item/storage/box/m_kit/mamba = 2,
+		/obj/item/storage/box/m_kit/gear_lasgun = 2,
+		//obj/item/storage/box/m_kit/taser = 5,
+		//obj/item/storage/box/m_kit/liberty = 5,
+		/obj/item/storage/box/m_kit/judiciary = 2,
+		//obj/item/storage/box/m_kit/standard_armor = 5,
+		//obj/item/storage/box/m_kit/bullet_proof = 5,
+		//obj/item/storage/box/m_kit/laser_armor = 5,
+		//obj/item/storage/box/m_kit/riot = 5
 		)
 	prices = list( // 500$ for default marshal stuff, 750 for the rest
-		/obj/item/storage/box/m_kit/freedom = 750,
-		/obj/item/storage/box/m_kit/breacher = 750,
+		//obj/item/storage/box/m_kit/freedom = 750,
+		//obj/item/storage/box/m_kit/breacher = 750,
 		/obj/item/storage/box/m_kit/opshotkit = 750,
 		/obj/item/storage/box/m_kit/mamba = 750,
 		/obj/item/storage/box/m_kit/gear_lasgun = 750,
-		/obj/item/storage/box/m_kit/taser = 500,
-		/obj/item/storage/box/m_kit/liberty = 1000,
+		//obj/item/storage/box/m_kit/taser = 500,
+		//obj/item/storage/box/m_kit/liberty = 1000,
 		/obj/item/storage/box/m_kit/judiciary = 750,
-		/obj/item/storage/box/m_kit/standard_armor = 500,
-		/obj/item/storage/box/m_kit/bullet_proof = 850,
-		/obj/item/storage/box/m_kit/riot = 750,
-		/obj/item/storage/box/m_kit/laser_armor = 1250
+		//obj/item/storage/box/m_kit/standard_armor = 500,
+		//obj/item/storage/box/m_kit/bullet_proof = 850,
+		//obj/item/storage/box/m_kit/riot = 750,
+		//obj/item/storage/box/m_kit/laser_armor = 1250
 		)
 	auto_price = FALSE
 
@@ -261,7 +261,6 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemSpecPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					"Spec-Op Kit" = /obj/item/storage/box/m_kit/specop,
 					"State Auto-Shotgun Kit" = /obj/item/storage/box/m_kit/state_auto,
 					"Copperhead Kit" = /obj/item/storage/box/m_kit/copperhead,
 					"Gear Laser Carbine Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
@@ -328,7 +327,9 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemArmor(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					"Standard Plate" = /obj/item/storage/box/m_kit/standard_armor,
+					"Standard Full Plate" = /obj/item/storage/box/m_kit/standard_armor,
+					"Webbing Standard Plate" = /obj/item/storage/box/m_kit/webbing_armor,
+					"Greatcoat" = /obj/item/storage/box/m_kit/armored_overcoat,
 					"Riot Armor Kit" = /obj/item/storage/box/m_kit/riot,
 					"Bullet-Proof Armor Kit" = /obj/item/storage/box/m_kit/bullet_proof,
 					"Ablative Armor Kit" = /obj/item/storage/box/m_kit/laser_armor
