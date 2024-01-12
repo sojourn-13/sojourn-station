@@ -237,7 +237,7 @@
 	head = /obj/item/clothing/head/rank/solfedmed
 	mask = /obj/item/clothing/mask/gas/old
 	uniform = /obj/item/clothing/under/rank/fatigues/camo/solfed
-	suit = /obj/item/clothing/suit/armor/flakvest/full
+	suit = /obj/item/clothing/suit/armor/platecarrier/solfed/corpsman
 	suit_store = /obj/item/gun/projectile/automatic/omnirifle/rds
 	l_pocket = /obj/item/storage/pouch/ammo
 	r_pocket = /obj/item/clothing/accessory/passcard/passport_sol
