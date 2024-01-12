@@ -53,7 +53,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/sanity_passive_gain_multiplier = 1
 	var/sanity_invulnerability = 0
 	var/level
-	var/max_level = 300 //Soj change to make sanity less of a wacky rollercoaster.
+	var/max_level = 200 //Soj change to make sanity less of a wacky rollercoaster.
 	var/level_change = 0
 
 	var/insight
