@@ -304,3 +304,27 @@
 	item_state = "supeyrette"
 	baseline_sprite = "syrette"
 	preloaded_reagents = list()
+
+/obj/item/reagent_containers/hypospray/autoinjector/large/meralyn
+	name = "meralyn advanced autoinjector"
+	preloaded_reagents = list("meralyn" = 10)
+
+/obj/item/reagent_containers/hypospray/autoinjector/large/vermicetol
+	name = "vermicetol advanced autoinjector"
+	preloaded_reagents = list("vermicetol" = 10)
+
+/obj/item/reagent_containers/hypospray/autoinjector/large/varceptol
+	name = "varceptol advanced autoinjector"
+	preloaded_reagents = list("varceptol" = 10)
+
+/obj/item/reagent_containers/hypospray/autoinjector/large/blood
+	name = "adv-bleed repair advanced autoinjector"
+	preloaded_reagents = list("nanoblood" = 2, "sanguinum" = 5, "quickclot" = 3)
+
+/obj/item/reagent_containers/hypospray/autoinjector/large/antirad
+	name = "adv-antirad advanced autoinjector"
+	preloaded_reagents = list("arithrazine" = 5, "peridaxon" = 3, "anti_toxin" = 2)
+
+/obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon
+	name = "alky-peri advanced autoinjector"
+	preloaded_reagents = list("peridaxon" = 5, "alkysine" = 5)
