@@ -112,10 +112,6 @@
 	prices = list(
 					/obj/item/paper/fortune = 25)
 
-/obj/machinery/vending/fortune/postvend_effect()
-	playsound(loc, 'sound/machines/fortune_riff.ogg', 100, 1)
-	return
-
 /obj/machinery/vending/gamers
 	name = "Game Emporium"
 	desc = "A one stop shop for all your card or board game needs!"
