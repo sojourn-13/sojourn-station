@@ -68,7 +68,7 @@
 
 	perks = list(PERK_RAT)
 
-	stat_modifiers = list(STAT_VIG = 10, STAT_ROB = -10, STAT_WIL = -5)
+	stat_modifiers = list(STAT_VIG = 10, STAT_ROB = -10, STAT_VIV = -5)
 
 /datum/category_item/setup_option/background/thoughts/reality_not
 	name = "Reality Rejector"
@@ -77,7 +77,7 @@
 	at the cost of your body never seeking to improve."
 	perks = list(PERK_FORCEFUL_REJECTION)
 
-	stat_modifiers = list(STAT_VIG = 5, STAT_WIL = 5, STAT_TGH = -5, STAT_ROB = -5)
+	stat_modifiers = list(STAT_VIG = 5, STAT_VIV = 5, STAT_TGH = -5, STAT_ROB = -5)
 
 
 /* - Psionics can't be started with currently. Until Psionics are reworked this will be disabled.
