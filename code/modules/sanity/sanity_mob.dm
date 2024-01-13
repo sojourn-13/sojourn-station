@@ -59,7 +59,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/insight
 	var/max_insight = INFINITY
 	var/insight_passive_gain_multiplier = 0.25
-	var/insight_gain_multiplier = 0.5
+	var/insight_gain_multiplier = 1
 	var/insight_rest_gain_multiplier = 1
 	var/insight_rest = 0
 	var/max_insight_rest = 1
