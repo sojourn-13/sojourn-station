@@ -426,7 +426,8 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	action_button_name = "Toggle Headlamp"
-	brightness_on = 4
+	brightness_on = 5
+	light_overlay = "m_fullhelm"
 
 /obj/item/clothing/head/helmet/marshal_full/verb/toggle_style()
 	set name = "Adjust Style"
@@ -459,7 +460,7 @@
 /obj/item/clothing/head/helmet/marshal_full/update_icon()
 	if(on)
 		icon_state = "ironhammer_full_on"
-		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
+		set_light(brightness_on, 1, COLOR_LIGHTING_ORANGE_MACHINERY)
 	else
 		icon_state = "ironhammer_full"
 		set_light(0, 0)
@@ -474,13 +475,14 @@
 	flash_protection = FLASH_PROTECTION_MODERATE
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	action_button_name = "Toggle Headlamp" //Excellent job forgetting the verb, Friend.
-	brightness_on = 4
+	brightness_on = 6
+	light_overlay = "m_fullhelm"
 	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 100, rad = 0)
 
 /obj/item/clothing/head/helmet/warrant_officer/update_icon()
 	if(on)
 		icon_state = "ironhammer_wo_full_on"
-		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
+		set_light(brightness_on, 1, COLOR_LIGHTING_ORANGE_MACHINERY)
 	else
 		icon_state = "ironhammer_wo_full"
 		set_light(0, 0)
