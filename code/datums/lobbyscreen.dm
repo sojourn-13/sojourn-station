@@ -20,7 +20,7 @@
 		CRASH("Login screen setup is wrong.")
 	musicTrack = pickweight(possibleMusic)
 	return ..()
-
+/*
 /datum/lobbyscreen/ship
 	image_file = 'icons/title_screens/ship.png'
 	possibleMusic = list(
@@ -59,6 +59,14 @@
 		'sound/music/lobby/Duke_Gneiss-Neotheology.ogg' = 100,
 		'sound/music/lobby/Duke_Gneiss-Creating_A_Shell.ogg' = 20
 	)
+*/
+/datum/lobbyscreen/garden
+	image_file = 'icons/title_screens/garden.png' //Credit to Bamhalazam for the art.
+	possibleMusic = list(
+		'sound/music/lobby/Duke_Gneiss-Neotheology.ogg' = 100,
+		'sound/music/lobby/Duke_Gneiss-Creating_A_Shell.ogg' = 20
+	)
+
 
 /datum/lobbyscreen/proc/play_music(client/C)
 	if(!musicTrack)
