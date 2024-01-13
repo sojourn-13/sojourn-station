@@ -166,7 +166,7 @@
 	options["Yassari"] = LANGUAGE_YASSARI
 	options["Latin"] = LANGUAGE_LATIN
 	options["Kriosan"] = LANGUAGE_KRIOSAN
-	options["Akulan"] = LANGUAGE_AKULA
+	//options["Akulan"] = LANGUAGE_AKULA
 	options["Narad"] = LANGUAGE_MERP
 	var/choice = input(M,"Which language do you know?","Linguist Choice") as null|anything in options
 	if(src && choice)
