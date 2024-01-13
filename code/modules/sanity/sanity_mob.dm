@@ -31,7 +31,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 
 #define SANITY_CHANGE_FADEOFF(level_change) (level_change * 0.75)
 
-#define INSIGHT_PASSIVE_GAIN 0.025
+#define INSIGHT_PASSIVE_GAIN 0.05
 #define INSIGHT_GAIN(level_change) (INSIGHT_PASSIVE_GAIN + level_change / 15)
 
 #define INSIGHT_DESIRE_COUNT 2
