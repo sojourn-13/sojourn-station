@@ -1141,7 +1141,7 @@
 	heat_level_3 = 372 //Default 460
 
 	has_process = list(
-		BP_BRAIN = /obj/item/organ/internal/brain/slime,
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/slime,
 		OP_STOMACH = /obj/item/organ/internal/stomach,
 		)
 

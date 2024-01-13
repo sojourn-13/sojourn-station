@@ -1656,9 +1656,7 @@ var/list/rank_prefix = list(\
 
 /mob/living/carbon/human/proc/set_remoteview(var/atom/A)
 	remoteview_target = A
-<<<<<<< ours
 	reset_view(A)
-=======
 	reset_view(A)
 
 #undef SLIME_TRANSPARENCY
