@@ -1,32 +1,3 @@
-/////////////////
-/* Ghost Perks */
-/////////////////
-
-/datum/perk/special/true_name //Only in here cause there is legitimetly no better place to put it in
-	name = "Rename Self"
-	desc = "No one knows you thus your name is what ever you need or want to be."
-	icon_state = "family"
-	active = FALSE
-	passivePerk = FALSE
-	var/anti_cheat = FALSE
-
-/datum/perk/special/true_name/activate()
-	..()
-	if(anti_cheat)
-		to_chat(holder, "You can only keep up so many personallitys.")
-		return FALSE
-	anti_cheat = TRUE
-	var/mob/M = usr
-	var/npc_name = input(M, "Choose your name: ", "Superstar Name", "VIP") as text
-	if(src && npc_name)
-		M.real_name = npc_name
-		M.stats.removePerk(PERK_TRUE_NAME)
-	anti_cheat = FALSE
-	return TRUE
-
-/datum/perk/special/true_name/remove()
-	..()
-
 ////////////////
 //Crayon Magic//
 ////////////////
