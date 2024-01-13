@@ -61,7 +61,6 @@
 /obj/item/projectile/energy/electrode/stunshot
 	name = "stunshot"
 	damage_types = list(BURN = 5)
-	armor_penetration = 40
 	taser_effect = 1
 	agony = 80
 	affective_damage_range = 2
