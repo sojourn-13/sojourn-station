@@ -1,5 +1,5 @@
 /mob/living/carbon/superior_animal/human/eventwolf
-	name = "Void Wolf Marauder"
+	name = "Void Wolf Juggernaut"
 	desc = "A Void Wolf mercenary, heavily armoured with a large power-hammer."
 	melee_damage_lower = 60
 	melee_damage_upper = 70
