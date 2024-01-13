@@ -151,9 +151,9 @@
 
 /datum/perk/oddity/shell_shock/assign(mob/living/carbon/human/H)
 	..()
-	holder.stats.changeStat(STAT_ROB, -15)
-	holder.stats.changeStat(STAT_TGH, -15)
-	holder.stats.changeStat(STAT_VIG, -15)
+	holder.stats.changeStat(STAT_ROB, -5)
+	holder.stats.changeStat(STAT_TGH, -5)
+	holder.stats.changeStat(STAT_VIG, -5)
 	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 
@@ -171,9 +171,9 @@
 
 /datum/perk/oddity/failing_mind/assign(mob/living/carbon/human/H)
 	..()
-	holder.stats.changeStat(STAT_COG, -15)
-	holder.stats.changeStat(STAT_MEC, -15)
-	holder.stats.changeStat(STAT_BIO, -15)
+	holder.stats.changeStat(STAT_COG, -5)
+	holder.stats.changeStat(STAT_MEC, -5)
+	holder.stats.changeStat(STAT_BIO, -5)
 	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 
