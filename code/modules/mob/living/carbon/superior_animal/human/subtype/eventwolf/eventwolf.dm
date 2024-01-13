@@ -10,7 +10,7 @@
 	ranged = FALSE
 
 
-	armor = list(melee = 50, bullet = 35, energy = 35, bomb = 0, bio = 100, rad = 50)
+	armor = list(melee = 35, bullet = 70, energy = 35, bomb = 35, bio = 100, rad = 50)
 	faction = "pirate"
 	icon = 'icons/mob/mobs-humanoid.dmi'
 
