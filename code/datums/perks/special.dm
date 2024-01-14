@@ -27,7 +27,7 @@
 	if(!istype(user))
 		return ..()
 	if(anti_cheat)
-		to_chat(usr, SPAN_NOTICE("You cant reject well rejecting!"))
+		to_chat(usr, SPAN_NOTICE("You cant reject while rejecting!"))
 		return FALSE
 
 	anti_cheat = TRUE
