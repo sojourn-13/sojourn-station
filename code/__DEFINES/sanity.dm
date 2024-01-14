@@ -1,5 +1,6 @@
-/* Unlike Eris we are using our ollld sanity syatem for drinks, food, and sancks. The reason why is - we have too much fucking food and drinks to sort through.
-Plus it would require me to get taste_tags working. So, for now until someone can be fucked to put the work in to our shit-codebase, it is staying like this. */
+/* Unlike Eris we are using our ollld sanity syatem for drinks, food, and sancks. The reason why is - we have too much fucking food and drinks to sort through.    //CBD said they'll do it manually
+Plus it would require me to get taste_tags working. So, for now until someone can be fucked to put the work in to our shit-codebase, it is staying like this. */  //No we aren't. -v
+/*
 GLOBAL_LIST_EMPTY(sanity_drinks)
 GLOBAL_LIST_EMPTY(sanity_non_alcoholic_drinks)
 GLOBAL_LIST_EMPTY(sanity_foods)
@@ -30,7 +31,7 @@ GLOBAL_LIST_EMPTY(sanity_foods)
 		if(initial(food.cooked))
 			GLOB.sanity_foods += candidate
 	return GLOB.sanity_foods.Copy()
-
+*/
 //We currently don't use style, but might as well leave it defined since it doesn't conflict. Bad system imo - but possibly reworkable.
 //for style
 #define MAX_HUMAN_STYLE 10
@@ -38,7 +39,7 @@ GLOBAL_LIST_EMPTY(sanity_foods)
 #define STYLE_MODIFIER 0.20
 
 
-/* Everything below is Eris' taste-tag defines. Keeping it here for reference incase of future code changes that impliment it.
+// Everything below is Eris' taste-tag defines. Keeping it here for reference incase of future code changes that impliment it.
 
 //for desires
 #define TASTE_SOUR "sour drink"
@@ -88,4 +89,4 @@ var/global/list/all_types_food = list(SWEET_FOOD,
 									FLOURY_FOOD, //baked goods
 									UMAMI_FOOD, //mostly for shrroms but also some fried and other small foods
 									BLAND_FOOD)
-*/
+

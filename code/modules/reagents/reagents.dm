@@ -41,7 +41,7 @@
 	var/color_weight = 1
 	var/sanity_gain_ingest = 0
 	var/sanity_gain = 0
-
+	var/list/taste_tag = list()
 	var/glass_unique_appearance = FALSE
 
 	var/chilling_point

@@ -33,6 +33,7 @@
 	var/chef_buff_type = 0 //What type of buff does this have to it?
 
 	var/junk_food = FALSE //if TRUE, sanity gain per nutriment will be zero
+	var/list/taste_tag = list()
 
 /obj/item/reagent_containers/food/snacks/Initialize()
 	. = ..()
