@@ -13,6 +13,13 @@
 	slot = slot_wear_suit
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/miljacket_marshal //it's a Jacket for Marshals Commisioned by pneumo/husky and sprited/coded by Dromkii
+	display_name = "Marshal Jacket"
+	path = /obj/item/clothing/suit/storage/toggle/miljacket_marshal
+	allowed_roles = list("Warrant Officer","Supply Specialist","Ranger","Marshal Officer")
+	slot = slot_wear_suit
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/beretcommander
 	display_name = "beret, security head"
 	path = /obj/item/clothing/head/rank/commander
