@@ -38,6 +38,8 @@
 	var/current_hallucination_tick
 
 	// Organ adjustments - preferably used for more severe wounds
+	var/list/organ_efficiency_mod = list()
+	var/organ_efficiency_multiplier = null
 	var/specific_organ_size_multiplier = null
 	var/max_blood_storage_multiplier = null
 	var/blood_req_multiplier = null

@@ -406,7 +406,7 @@
 				SPAN_DANGER("You stab yourself in the eyes with [src]!") \
 			)
 
-		playsound(loc, 'sound/weapons/melee/lightstab.ogg', 50, 1, -1)
+		playsound(loc, 'sound/weapons/lightstab.ogg', 50, 1, -1)
 		eyes.take_damage(rand(24, 32), BRUTE, 1, FALSE, TRUE, FALSE)
 		if(eyes.damage >= eyes.min_bruised_damage)
 			if(M.stat != DEAD)
