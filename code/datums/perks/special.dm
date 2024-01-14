@@ -47,7 +47,7 @@
 	anti_cheat = FALSE
 	user.stats.removePerk(perkname.type)
 	user.stats.removePerk(PERK_FORCEFUL_REJECTION)
-	message_admins("\blue [key_name(user)] removed the perk [perkname] from using forceful rejection.", 1)
+	message_admins("\blue [key_name(user)] removed the perk [perkname] by using forceful rejection.", 1)
 
 
 	return ..()
