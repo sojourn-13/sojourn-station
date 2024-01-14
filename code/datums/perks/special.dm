@@ -19,7 +19,7 @@
 	holder.stats.changeStat(STAT_VIV, -15)
 	if(ishuman(usr))
 		var/mob/living/carbon/human/user = usr
-		usr.calculate_nsa()
+		user.metabolism_effects.calculate_nsa()
 		user.sanity.change_max_level(-10)
 	..()
 
