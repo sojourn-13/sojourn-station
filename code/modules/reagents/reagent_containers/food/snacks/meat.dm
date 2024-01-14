@@ -2,6 +2,7 @@
 	name = "meat"
 	desc = "A slab of meat cut from a nondescript animal. The core ingredient in thousands upon thousands of food recipes, in one way or another."
 	icon_state = "meat"
+	taste_tag = list(MEAT_FOOD)
 	health = 180
 	filling_color = "#FF1C1C"
 	center_of_mass = list("x"=16, "y"=14)

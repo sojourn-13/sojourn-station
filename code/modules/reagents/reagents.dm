@@ -58,6 +58,7 @@
 
 	var/nerve_system_accumulations = 5 // Nerve system accumulations
 
+
 	// Catalog stuff
 	var/appear_in_default_catalog = TRUE
 	var/reagent_type = "404: ERROR FILE NOT FOUND!"

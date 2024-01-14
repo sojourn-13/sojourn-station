@@ -2,6 +2,7 @@
 	name = "donut"
 	desc = "Goes great with Robust Coffee."
 	icon_state = "donut1"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#D9C386"
 	var/overlay_state = "box-donut1"
 	center_of_mass = list("x"=13, "y"=16)
@@ -11,6 +12,7 @@
 	name = "donut"
 	desc = "Goes great with Robust Coffee."
 	icon_state = "donut1"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	bitesize = 3
 	nutriment_amt = 1
 	preloaded_reagents = list("sprinkles" = 1, "preservatives" = 2)
@@ -28,6 +30,7 @@
 	name = "chaos donut"
 	desc = "Like life, it never quite tastes the same."
 	icon_state = "donut1"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#ED11E6"
 	nutriment_amt = 1
 	bitesize = 10
@@ -68,6 +71,7 @@
 /obj/item/reagent_containers/food/snacks/donut/jelly
 	name = "jelly donut"
 	desc = "You jelly?"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	icon_state = "jdonut1"
 	filling_color = "#ED1169"
 	center_of_mass = list("x"=16, "y"=11)
@@ -88,6 +92,7 @@
 	name = "jelly donut"
 	desc = "You jelly?"
 	icon_state = "jdonut1"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#ED1169"
 	center_of_mass = list("x"=16, "y"=11)
 	nutriment_amt = 1
@@ -106,6 +111,7 @@
 /obj/item/reagent_containers/food/snacks/donut/cherryjelly
 	name = "jelly donut"
 	desc = "You jelly?"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	icon_state = "jdonut1"
 	filling_color = "#ED1169"
 	bitesize = 5
@@ -126,6 +132,7 @@
 /obj/item/reagent_containers/food/snacks/donut/stat_buff
 	name = "Masterpiece Donut"
 	desc = "The taste you will never forget."
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#ED1169"
 	bitesize = 5
 	center_of_mass = list("x"=16, "y"=11)
@@ -152,6 +159,7 @@
 	name = "Yellow Masterpiece Donut"
 	desc = "The sour citrus flavor you will never forget. A choice sweet of mechanics."
 	icon_state = "donut_mec"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	overlay_state = "donut_mec_c"
 	stats_buff = list(STAT_MEC)
 	preloaded_reagents = list("sprinkles" = 1, "lemonjuice" = 1, "preservatives" = 2)
@@ -161,6 +169,7 @@
 	desc = "The too-sweet artificial grape taste you will never forget. An intellectual's favorite."
 	icon_state = "donut_cog"
 	overlay_state = "donut_cog_c"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	stats_buff = list(STAT_COG)
 	preloaded_reagents = list("sprinkles" = 1, "grapejuice" = 1, "preservatives" = 2)
 
@@ -169,6 +178,7 @@
 	desc = "The fresh spearmint flavor you will never forget. Perfect for an immaculate doctor."
 	icon_state = "donut_bio"
 	overlay_state = "donut_bio_c"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	stats_buff = list(STAT_BIO)
 	preloaded_reagents = list("sprinkles" = 1, "mint" = 1, "preservatives" = 2)
 
@@ -177,6 +187,7 @@
 	desc = "A near-chocolate taste you will never forget. A robust flavor for the strong."
 	icon_state = "donut_rob"
 	overlay_state = "donut_rob_c"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	stats_buff = list(STAT_ROB)
 	preloaded_reagents = list("sprinkles" = 1, "coco" = 1, "preservatives" = 2)
 
@@ -185,6 +196,7 @@
 	desc = "The classic donut flavor you will never forget. Specially panders to tough people."
 	icon_state = "donut_tgh"
 	overlay_state = "donut_tgh_c"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	stats_buff = list(STAT_TGH)
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/vig
@@ -192,5 +204,6 @@
 	desc = "A tart blueberry taste you will never forget. A go-to choice for the vigilant watchman."
 	icon_state = "donut_vig"
 	overlay_state = "donut_vig_c"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	stats_buff = list(STAT_VIG)
 	preloaded_reagents = list("sprinkles" = 1, "berryjuice" = 1, "preservatives" = 2)

@@ -53,6 +53,8 @@ GLOBAL_LIST_EMPTY(sanity_foods)
 #define TASTE_SLIMEY "creamy drink"
 #define TASTE_REFRESHING "refreshing drink"
 #define TASTE_DRY "dry drink"
+#define TASTE_PLAIN "bland drink"
+#define TASTE_UMAMI "savoury drink"
 var/global/list/all_taste_drinks = list(TASTE_SOUR,
 								 TASTE_BITTER,
 								 TASTE_SWEET,
@@ -63,6 +65,7 @@ var/global/list/all_taste_drinks = list(TASTE_SOUR,
 								 TASTE_SALTY,
 								 TASTE_SLIMEY, //for dense,creamy, solid stuff
 								 TASTE_REFRESHING,
+								 TASTE_UMAMI, //for any variety of savory drinks like bloody mary, etc.
 								 TASTE_DRY) //for stuff like martinis
 
 #define SWEET_FOOD "sweet food"
@@ -87,6 +90,6 @@ var/global/list/all_types_food = list(SWEET_FOOD,
 									SALTY_FOOD,
 									SPICY_FOOD, // more about well spiced not necessarely HOT spicy
 									FLOURY_FOOD, //baked goods
-									UMAMI_FOOD, //mostly for shrroms but also some fried and other small foods
+									UMAMI_FOOD, //Mushrooms, tomatos, and other savory things that aren't meat.
 									BLAND_FOOD)
 
