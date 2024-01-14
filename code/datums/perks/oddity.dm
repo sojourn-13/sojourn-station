@@ -5,7 +5,7 @@
 	name = "Survivor"
 	desc = "After seeing the death of many acquaintances and friends, witnessing death doesn't shock you as much as before. \
 			Halves sanity loss from seeing people die."
-	//icon_state = "survivor" // https://game-icons.net/1x1/lorc/one-eyed.html
+	icon_state="survivor" // https://game-icons.net/1x1/lorc/one-eyed.html
 
 /datum/perk/oddity/survivor/assign(mob/living/carbon/human/H)
 	if(..())
@@ -20,7 +20,7 @@
 	name = "Inspiring Presence"
 	desc = "You know just what to say to people and are able to inspire the best - or even worst - in others. \
 			People around you regain their sanity quicker."
-	//icon_state = "inspiration"
+	icon_state="inspiration"
 
 /datum/perk/oddity/inspiring/assign(mob/living/carbon/human/H)
 	if(..())
@@ -41,7 +41,7 @@
 	name = "Fungal Host"
 	desc = "A small hostile fungal spores were on the oddity, hijacking your lungs and forcing them to emit toxins harmful to everyone around you every half hour. It will be a long time before your body can fight this off..."
 	gain_text = "You feel a terrible aching pain in your lungs - an anomalous fungus on the oddity has infused your body!"
-	//icon_state = "Hazmat" // https://game-icons.net
+	icon_state="Hazmat" // https://game-icons.net
 	var/cooldown = 30 MINUTES
 	var/initial_time
 
@@ -71,19 +71,19 @@
 	name = "Gunslinger"
 	desc = "The latent effects of an oddity have granted you an insight into firing bullets faster than anyone else; a shame it doesn't make you immune to recoil."
 	gain_text = "Your trigger finger feels more relaxed than ever..."
-	//icon_state = "dual_shot" // https://game-icons.net/1x1/delapouite/bullet-impacts.html
+	icon_state="dual_shot" // https://game-icons.net/1x1/delapouite/bullet-impacts.html
 
 /datum/perk/oddity/balls_of_plasteel
 	name = "True Grit"
 	desc = "Pain comes and goes, you feel as though can withstand far worse than ever before."
 	gain_text = "Pain is merely weakness leaving the body."
-	//icon_state = "golem" // https://game-icons.net
+	icon_state="golem" // https://game-icons.net
 
 /datum/perk/oddity/fast_walker
 	name = "Springheel"
 	desc = "You're sure of your movements now, slow and steady may win the race but you can prove them wrong."
 	gain_text = "You feel your pace quickening, your thoughts barely catching up with your stride..."
-	//icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
+	icon_state="fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
 
 /datum/perk/oddity/fast_walker/assign(mob/living/carbon/human/H)
 	..()
@@ -221,7 +221,7 @@
 /datum/perk/oddity/iron_will
 	name = "Will of Iron"
 	desc = "The body is able to succumb to many negative affects but the mind can simply ignore them. Getting addicted to things is much harder and you can stomach more chemicals."
-	//icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
+	icon_state="ironpill" // https://game-icons.net/1x1/lorc/underdose.html
 
 /datum/perk/oddity/iron_will/assign(mob/living/carbon/human/H)
 	..()
@@ -238,7 +238,7 @@
 /datum/perk/oddity/mind_of_matter
 	name = "Will to Power"
 	desc = "The mind protects the body by imposing limits to prevent severe harm to the self. With enough focus, you can push yourself past that limit."
-	//icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
+	icon_state="ironpill" // https://game-icons.net/1x1/lorc/underdose.html
 
 /datum/perk/oddity/mind_of_matter/assign(mob/living/carbon/human/H)
 	..()
@@ -278,7 +278,7 @@
 /datum/perk/nt_oddity/holy_light
 	name = "Holy Light"
 	desc = "You have been blessed by the grace of the Absolute. You now provide a weak healing aura, healing both brute and burn damage to any cruciform bearers nearby as well as yourself."
-	//icon_state = "third_eye"  //https://game-icons.net/1x1/lorc/third-eye.html
+	icon_state="third_eye"  //https://game-icons.net/1x1/lorc/third-eye.html
 	var/healing_power = 0.1
 	var/cooldown = 1 SECONDS // Just to make sure that perk don't go berserk.
 	var/initial_time
@@ -370,7 +370,7 @@
 /datum/perk/njoy
 	name = "Njoy (Active)"
 	desc = "Your mind can focus on what is real, just like when you get rid of a painful earring."
-	//icon_state = "cheerful"  //https://game-icons.net/1x1/lorc/cheerful.html
+	icon_state="cheerful"  //https://game-icons.net/1x1/lorc/cheerful.html
 
 	gain_text = "Your mind feels much clearer now."
 	lose_text = "You feel the shadows once more."
