@@ -17,6 +17,7 @@
 
 /datum/perk/forceful_rejection/remove()
 	holder.stats.changeStat(STAT_VIV, -15)
+	holder.calculate_nsa()
 	if(ishuman(usr))
 		var/mob/living/carbon/human/user = usr
 		user.sanity.change_max_level(-10)
