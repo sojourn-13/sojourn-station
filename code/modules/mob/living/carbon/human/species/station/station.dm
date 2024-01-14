@@ -1123,6 +1123,8 @@
 	poison_type = null
 	hunger_factor = 2
 	spawn_flags = CAN_JOIN
+	min_age = 18
+	max_age = 200
 
 	burn_mod = 1.15
 	brute_mod = 1.15
@@ -1142,7 +1144,7 @@
 
 	has_process = list(
 		BP_BRAIN = /obj/item/organ/internal/vital/brain/slime,
-		OP_STOMACH = /obj/item/organ/internal/stomach,
+		OP_STOMACH = /obj/item/organ/internal/stomach/slime
 		)
 
 	breath_type = null
@@ -1162,12 +1164,13 @@
 		BP_R_LEG =  new /datum/organ_description/leg/right/slime
 	)
 
-	perks = list(PERK_LIMB_REGEN, PERK_SLIMEBODY)
+	perks = list(PERK_SLIMEMETH,PERK_SLIMESTAT, PERK_LIMB_REGEN, PERK_SLIMEBODY)
 
 /datum/species/slime/get_bodytype()
-	return "Slime"
-
+	return "Aulvae"
+/*
 /datum/species/slime/handle_death(var/mob/living/carbon/human/H)
 	spawn(1)
 		if(H)
 			H.gib()
+*/

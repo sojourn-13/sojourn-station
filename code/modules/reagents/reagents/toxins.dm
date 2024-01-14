@@ -27,8 +27,8 @@
 			M.sanity.onToxin(src, multi)*/
 		if(M.species?.reagent_tag == IS_SLIME)
 			M.adjustNutrition(strength)
-			M.heal_organ_damage(0.1 * strength, 0.1 * strength)
-			M.add_chemical_effect(CE_ANTITOX, 0.3)
+			M.heal_organ_damage(0.3 * strength, 0.3 * strength)
+			M.add_chemical_effect(CE_ANTITOX, 0.3 * strength)
 		else
 			M.add_chemical_effect(CE_TOXIN, strength + dose / 2)
 
@@ -162,7 +162,10 @@
 		L.adjust_fire_stacks(amount / 5)
 
 /datum/reagent/toxin/plasma/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
-	M.take_organ_damage(0, effect_multiplier * 0.1) //being splashed directly with plasma causes minor chemical burns
+	if(M.species.name == SPECIES_SLIME)
+		return
+	else
+		M.take_organ_damage(0, effect_multiplier * 0.1) //being splashed directly with plasma causes minor chemical burns
 	if(prob(50))
 		M.pl_effects()
 
@@ -172,6 +175,30 @@
 	T.assume_gas("plasma", volume, T20C)
 	remove_self(volume)
 	return TRUE
+
+/datum/reagent/toxin/plasma/on_mob_add(mob/living/carbon/human/L)
+	. = ..()
+	if((L.species.name == SPECIES_SLIME) && (L.stat == DEAD))
+		GLOB.dead_mob_list.Remove(L)
+		if((L in GLOB.living_mob_list) || (L in GLOB.dead_mob_list))
+			WARNING("Mob [L] was Adenosine+ but already in the living or dead list still!")
+		GLOB.living_mob_list += L
+
+		L.timeofdeath = 0
+		L.stat = UNCONSCIOUS //Life() can bring them back to consciousness if it needs to.
+		L.failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
+
+		//Stablizating
+		L.heal_organ_damage(30, 30)
+		L.adjustOxyLoss(-50)
+		L.stats.addPerk(PERK_SLIMEREZ) //When revived this way we get a nasty rez sickness that affects physical stats and dam-mod, but gives us more rob for a limited time.
+
+		L.custom_emote(2, "vibrates and wobbles, electricity momentarily visible within their transluscent flesh.")
+		L.Weaken(rand(10,25))
+		L.updatehealth()
+		return
+	else
+		return
 
 /datum/reagent/toxin/cyanide //Fast and Lethal
 	name = "Cyanide"
@@ -503,9 +530,9 @@
 /datum/reagent/toxin/slimetoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(H.species.name != "Slime")
+		if(H.species.name != "Aulvae")
 			to_chat(M, SPAN_DANGER("Your flesh rapidly mutates!"))
-			H.set_species("Slime")
+			H.set_species("Aulvae")
 
 /datum/reagent/toxin/aslimetoxin
 	name = "Advanced Mutation Toxin"

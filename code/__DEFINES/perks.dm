@@ -101,6 +101,7 @@
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
 #define PERK_REZ_SICKNESS_SEVERE /datum/perk/rezsickness/severe
 #define PERK_REZ_SICKNESS_FATAL /datum/perk/rezsickness/severe/fatal
+
 //////////////
 //Race Perks//
 //////////////
@@ -154,6 +155,9 @@
 //Slime
 #define PERK_LIMB_REGEN /datum/perk/racial/limb_regen
 #define PERK_SLIMEBODY /datum/perk/racial/slime_metabolism
+#define PERK_SLIMEREZ /datum/perk/racial/slime_rez_sickness
+#define PERK_SLIMEMETH /datum/perk/racial/speed_boost
+#define PERK_SLIMESTAT /datum/perk/racial/slime_stat_boost
 
 //////////////
 //Core Perks//

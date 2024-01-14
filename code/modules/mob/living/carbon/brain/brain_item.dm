@@ -115,37 +115,6 @@
 			brainmob.mind.transfer_to(owner)
 		else
 			owner.key = brainmob.key
-
-/obj/item/organ/internal/vital/brain/slime
-	name = "slime core"
-	desc = "A complex, organic knot of jelly and crystalline particles."
-	icon = 'icons/mob/slimes.dmi'
-	icon_state = "bluespace slime extract"
-	parent_organ_base = BP_CHEST
-	blood_req = 0
-	max_blood_storage = 0
-	oxygen_req = 0
-	var/regenerating = FALSE
-	var/revival_chem = "plasma"
-	var/respawn_delay = 100 // Delay, in deciseconds (1/10th of a second), before the slime actually revive after being injected.
-
-/obj/item/organ/internal/vital/brain/slime/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/reagent_containers/syringe) && !regenerating)
-		var/obj/item/reagent_containers/syringe/S = I
-		if(S.mode == 1 && S.reagents.remove_reagent(revival_chem, 5)) // We inject 5u of plasma // the 1 correspond to SYRINGE_INJECT, but we're before the define
-			to_chat(user, SPAN_NOTICE("You inject [revival_chem] into [src]."))
-			src.visible_message("[src] starts to wobble and wiggle...")
-			regenerating = TRUE
-			spawn(100) regen_body()
-
-/obj/item/organ/internal/vital/brain/slime/proc/regen_body()
-	if(loc != get_turf(src))
-		forceMove(src, get_turf(src))
-	var/mob/living/carbon/human/host = new(src, FORM_SLIME, FORM_SLIME)
-	brainmob?.mind.transfer_to(host)
-
-	src.visible_message("[src] expands into a humanoid form.")
-
 /obj/item/organ/internal/vital/brain/golem
 	name = "scroll"
 	desc = "A tightly furled roll of paper, covered with indecipherable runes."

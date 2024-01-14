@@ -422,3 +422,5 @@
 		H.add_language(LANGUAGE_SYNTHETIC)
 	if(H.species.reagent_tag == IS_NARAMAD)
 		H.add_language(LANGUAGE_MERP)
+	if(H.species.reagent_tag == IS_SLIME)
+		H.add_language(LANGUAGE_BLORP)

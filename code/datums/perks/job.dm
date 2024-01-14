@@ -359,6 +359,41 @@
 	if(holder.buckled)
 		cooldown_time -= 2 SECONDS
 
+/datum/perk/racial/slime_rez_sickness
+	name = "Aulvae Decohesion Syndrome"
+	desc = "You've recently been returned to cohesion via the use of high-energy toxins which have left your form in a semi-stable state."
+	gain_text = "Your core vibrates and crackles with barely contained energy as you're revived. You feel stronger than ever, but your form is unstable and fragile. Perhaps it'd be best to lie down and allow time for this to pass, lest you loose cohesion once again."
+	lose_text = "The thunder bouncing around just beneath your dermis has passed and you feel stable once again."
+	var/initial_time
+
+/datum/perk/racial/slime_rez_sickness/assign(mob/living/carbon/human/H)
+	..()
+	initial_time = world.time
+	cooldown_time = world.time + 30 MINUTES
+	holder.brute_mod_perk += 0.3
+	holder.burn_mod_perk += 0.3
+	holder.stats.changeStat(STAT_ROB, 30)
+	holder.stats.changeStat(STAT_TGH, -30)
+	holder.stats.changeStat(STAT_VIG, -30)
+
+/datum/perk/racial/slime_rez_sickness/remove()
+	holder.brute_mod_perk -= 0.3
+	holder.burn_mod_perk -= 0.3
+	holder.stats.changeStat(STAT_ROB, -30)
+	holder.stats.changeStat(STAT_TGH, 30)
+	holder.stats.changeStat(STAT_VIG, 30)
+	..()
+
+/datum/perk/racial/slime_rez_sickness/on_process()
+	if(!..())
+		return
+	if(cooldown_time <= world.time)
+		holder.stats.removePerk(type)
+		to_chat(holder, SPAN_NOTICE("[lose_text]"))
+		return
+	if(holder.buckled)
+		cooldown_time -= 2 SECONDS
+
 /datum/perk/handyman
 	name = "Handyman"
 	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the most efficient way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."

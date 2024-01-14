@@ -406,9 +406,10 @@
 /datum/reagent/drug/hyperzine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(5))
 		M.emote(pick("twitch", "blink_r", "shiver"))
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.4)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.5)
 	M.add_chemical_effect(CE_PULSE, 2)
 	M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_EXPERT, 60 SECONDS)
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -428,6 +429,20 @@
 /datum/reagent/drug/hyperzine/withdrawal_act(mob/living/carbon/M)
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.add_chemical_effect(CE_PULSE, 1)
+
+/datum/reagent/drug/hyperzine/slime_meth
+	name = "volatile speed"
+	id = "slime_speed"
+	description = "Comparable to high-dose amphetamines cut with nano muscle-stimulators. This chemical would melt through just about any organic that dared touch it, unless of course their anatomy was already highly acidic."
+	taste_description = "caustic rust"
+
+/datum/reagent/drug/hyperzine/slime_meth/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(prob(5))
+		M.emote(pick("vibrates", "sways", "crackles with electricity"))
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.5)
+	M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
+	withdrawal_threshold = 100
+
 
 /datum/reagent/drug/nanoblood
 	name = "Nanoblood"
