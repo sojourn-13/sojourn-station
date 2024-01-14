@@ -1,7 +1,7 @@
 
 // Blunt
 /datum/component/internal_wound/organic/brain_blunt
-	treatments_item = list(/obj/item/stack/medical/advanced/bruise_pack = 2)
+	treatments_item = list(/obj/item/stack/medical/bruise_pack/advanced = 2)
 	treatments_tool = list(QUALITY_CLAMPING = FAILCHANCE_HARD)
 	treatments_chem = list(CE_BRAINHEAL = 1)
 	severity = 0
@@ -19,7 +19,7 @@
 
 // Sharp
 /datum/component/internal_wound/organic/brain_sharp
-	treatments_item = list(/obj/item/stack/medical/advanced/bruise_pack = 2)
+	treatments_item = list(/obj/item/stack/medical/bruise_pack/advanced = 2)
 	treatments_tool = list(QUALITY_CAUTERIZING = FAILCHANCE_HARD)
 	treatments_chem = list(CE_BRAINHEAL = 1)
 	severity = 0
@@ -37,13 +37,13 @@
 
 /datum/component/internal_wound/organic/brain_sharp/penetrating
 	name = "penetrating brain injury"
-	treatments_item = list(/obj/item/stack/medical/advanced/bruise_pack = 4)
+	treatments_item = list(/obj/item/stack/medical/bruise_pack/advanced = 4)
 	treatments_tool = list(QUALITY_LASER_CUTTING = FAILCHANCE_HARD)
 	scar = list(/datum/component/internal_wound/organic/penetrating2) // stage 2
 
 /datum/component/internal_wound/organic/penetrating2	 // stage 2
 	name = "accessible penetrating brain injury"
-	treatments_item = list(/obj/item/stack/medical/advanced/bruise_pack = 2)
+	treatments_item = list(/obj/item/stack/medical/bruise_pack/advanced = 2)
 	treatments_tool = list(QUALITY_CAUTERIZING = FAILCHANCE_HARD)
 	treatments_chem = list(CE_BRAINHEAL = 1)
 	severity = 0
@@ -58,7 +58,7 @@
 
 // Edge
 /datum/component/internal_wound/organic/brain_edge
-	treatments_item = list(/obj/item/stack/medical/advanced/bruise_pack = 2)
+	treatments_item = list(/obj/item/stack/medical/bruise_pack/advanced = 2)
 	treatments_tool = list(QUALITY_CAUTERIZING = FAILCHANCE_HARD)
 	treatments_chem = list(CE_BRAINHEAL = 1)
 	severity = 0
@@ -75,13 +75,13 @@
 
 /datum/component/internal_wound/organic/brain_edge/rip
 	name = "ripped brain fibers"
-	treatments_item = list(/obj/item/stack/medical/advanced/bruise_pack = 4)
+	treatments_item = list(/obj/item/stack/medical/bruise_pack/advanced = 4)
 	treatments_tool = list(QUALITY_CLAMPING = FAILCHANCE_HARD)
 	scar = list(/datum/component/internal_wound/organic/rip2)
 
 /datum/component/internal_wound/organic/rip2
 	name = "tighted ripped brain fibers"
-	treatments_item = list(/obj/item/stack/medical/advanced/bruise_pack = 2)
+	treatments_item = list(/obj/item/stack/medical/bruise_pack/advanced = 2)
 	treatments_tool = list(QUALITY_CAUTERIZING = FAILCHANCE_HARD)
 	treatments_chem = list(CE_BRAINHEAL = 1)
 	severity = 0
@@ -100,7 +100,7 @@
 
 // Burn
 /datum/component/internal_wound/organic/brain_burn
-	treatments_item = list(/obj/item/stack/medical/advanced/ointment = 2)
+	treatments_item = list(/obj/item/stack/medical/ointment/advanced = 2)
 	treatments_tool = list(QUALITY_CUTTING = FAILCHANCE_HARD)
 	treatments_chem = list(CE_BRAINHEAL = 1)
 	scar = /datum/component/internal_wound/organic/necrosis_start
@@ -114,7 +114,7 @@
 	name = "burnt brain matter"
 /datum/component/internal_wound/organic/brain_burn/cooked
 	name = "well-cooked brain"
-	treatments_item = list(/obj/item/stack/medical/advanced/ointment = 4)
+	treatments_item = list(/obj/item/stack/medical/ointment/advanced = 4)
 /datum/component/internal_wound/organic/brain_burn/incinerate
 	name = "incinerated brain fibers"
 
@@ -126,7 +126,7 @@
 /datum/component/internal_wound/robotic/brain_blunt
 	treatments_item = list(/obj/item/stack/nanopaste = 1)
 	treatments_tool = list(QUALITY_HAMMERING = FAILCHANCE_HARD)
-	treatments_chem = list(CE_MECH_REPAIR = 0.55)		// repair nanites + 3 metals OR repair nanite OD + a metal 
+	treatments_chem = list(CE_MECH_REPAIR = 0.55)		// repair nanites + 3 metals OR repair nanite OD + a metal
 	severity = 0
 	severity_max = 5
 	hal_damage = IWOUND_INSIGNIFICANT_DAMAGE
@@ -232,5 +232,5 @@
 	treatments_tool = list(QUALITY_CAUTERIZE = FAILCHANCE_HARD)
 
 /datum/component/internal_wound/robotic/brain_emp_burn/upturned
-	name = "upturned memory stack" 
+	name = "upturned memory stack"
 	treatments_tool = list(QUALITY_PRYING = FAILCHANCE_HARD) // gotta put it the way it was!
