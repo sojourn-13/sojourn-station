@@ -33,7 +33,7 @@
 	anti_cheat = TRUE
 
 	if(user.stats.perks.len ==0)
-		to_chat(user, "Creature has no perks to remove, not sure how thats possable")
+		to_chat(user, "Creature has no perks to remove, not sure how that's possible.")
 		return
 	to_chat(user, SPAN_NOTICE("Rejecting reality, but what aspect to remove?"))
 	var/datum/perk/perkname = input("What perk do you want to reject?") as null|anything in user.stats.perks
