@@ -1,36 +1,75 @@
-/datum/category_item/setup_option/background/ancestry/slime_homeworlder
-	name = "Homeworlder"
-	desc = "You grew up on Proteus, living as a more primitive example of your species. \
-	Homeworld Proteans are highly skilled hunters, using stealth to their advantage. \
-	The hostile environment of Proteus has made you physically stronger than other Proteans. \
-	Whether you come from a primitive tribe, or an uplifted one, you’ve only known Proteus as your home. \
-	There are many reasons why you would seek the stars. Your people are insatiable for knowledge and evolution. \
-	You constantly seek to improve yourself and subsequently your people."
+/datum/category_item/setup_option/background/ancestry/slime_robust
+	name = "Aram(Red Aulvae)"
+	desc = "Though far from a martial race, the Aulvae are nothing if not versatile. Laborers and brawler in equal part - \
+	The Aram are rare examples of physical strength made manifest amongst their kin."
 
 	restricted_to_species = list(FORM_SLIME)
 
-	stat_modifiers = list(STAT_VIG = 10)
+	stat_modifiers = list(STAT_ROB = 12)
 
-/datum/category_item/setup_option/background/ancestry/slime_consortium
-	name = "Consortium Citizen"
-	desc = "You are a member of the Varth-Consortium. Primarily based on Proteus’s moon Lapis, the Consortium was the organization that first discovered your kind. \
-	Through a combined effort your people and theirs have peace. You’re born out of the lineage that decided to join the Consortium, and dedicate themselves to science, medicine, and engineering. \
-	As a result of your superior education, you’re smarter than the average Protean. \
-	Whether you dedicate yourself to science, medicine, or any vast array of knowledge pursuits is up to you. \
-	Your mental prowess knows no limitation."
-
+/datum/category_item/setup_option/background/ancestry/slime_fighter
+	name = "Arum(Orange)"
+	desc = "Not unlike their more powerful kin the Aram, the Arum exhibit surprising strength and durability \
+	amongst the Aulvae. "
 
 	restricted_to_species = list(FORM_SLIME)
 
-	stat_modifiers = list(STAT_BIO = 5,STAT_MEC = 5)
+	stat_modifiers = list(STAT_ROB = 6)
+	stat_modifiers = list(STAT_TGH = 6)
 
-
-/datum/category_item/setup_option/background/ancestry/slime_wanderer
-	name = "Wanderer"
-	desc = "You grew up far away from your homeworld. You are descended from those brave Proteans that first decided to leave for adventure amongst the stars. \
-	You might’ve been a mercenary, a laborer, a crewmate on a starship, or all of these things and more. Used to the harsh realities of living in a variety of different environments, you’ve collected a wide variety of experiences from your lineage. \
-	Generations of Proteans before you have wandered all over the galaxy, and you belong to one of these tribes. Your people are the most adaptable of the Proteans. What you become is completely up to you, you truly are the most free of the Proteans."
+/datum/category_item/setup_option/background/ancestry/slime_sniper
+	name = "Arul(yellow)"
+	desc = "Keen of eye and sharp of tongue, none can deny the Aruls natural gifts that make them perfectly suited to \
+	the life of a hunter."
 
 	restricted_to_species = list(FORM_SLIME)
 
-	stat_modifiers = list(STAT_ROB = 2, STAT_TGH = 2, STAT_VIG = 2, STAT_BIO = 2, STAT_MEC = 2, STAT_COG = 2)
+	stat_modifiers = list(STAT_VIG = 12)
+
+/datum/category_item/setup_option/background/ancestry/slime_soldier
+	name = "Arun(green)"
+	desc = "Particularly hardy and calm of mind the Arun fit the archetype of a soldier. One might\
+	muse as to the role they filled in their lost society."
+
+	restricted_to_species = list(FORM_SLIME)
+
+	stat_modifiers = list(STAT_VIG = 6)
+	stat_modifiers = list(STAT_TGH = 6)
+
+/datum/category_item/setup_option/background/ancestry/slime_doc
+	name = "Aren(cyan)"
+	desc = "Despite the unfamiliarity between the Aulvae and the younger sentient races of the galaxy \
+	the Aren and their dogged curiosity of these new forms of life(to them, anyway) have quickly managed to fill the gaps in their knowledge.\
+	Consummate doctors, they have thus far been instrumental in ellucidating the more arcane details of Aulvae biology."
+
+	restricted_to_species = list(FORM_SLIME)
+
+	stat_modifiers = list(STAT_BIO = 12)
+
+/datum/category_item/setup_option/background/ancestry/slime_mechanic
+	name = "Arun(blue)"
+	desc = "Oft mistaken for their viridescent kin amongst the Aulvae, the Arun are to machines what Aren are to lifeforms.\
+	Somewhat of a menace since their arrival, they've demonstrated the very same curiosity and a similar adaptability."
+
+	restricted_to_species = list(FORM_SLIME)
+
+	stat_modifiers = list(STAT_MEC = 12)
+
+/datum/category_item/setup_option/background/ancestry/slime_scientist
+	name = "Arul(violet)"
+	desc = "The first amongst their kin to establish communication, the Arul display a startling intelligence and an oft\
+	more serious disposition to their kin."
+
+	restricted_to_species = list(FORM_SLIME)
+
+	stat_modifiers = list(STAT_MEC = 12)
+
+/datum/category_item/setup_option/background/ancestry/slime_corpsman
+	name = "Aral(Magenta)"
+	desc = "With particularly thick dermis and a gentle affect the Aral are hypothesized to have fit something of an equivilent \
+	role to field-medics and paramedics in their society."
+
+	restricted_to_species = list(FORM_SLIME)
+
+	stat_modifiers = list(STAT_BIO = 6)
+	stat_modifiers = list(STAT_TGH = 6)

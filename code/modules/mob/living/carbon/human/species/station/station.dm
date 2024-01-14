@@ -1107,7 +1107,7 @@
 
 /datum/species/slime
 	name = SPECIES_SLIME
-	name_plural = "slimes"
+	name_plural = "Aulvae"
 
 	default_form = FORM_SLIME
 	obligate_form = TRUE
@@ -1167,7 +1167,7 @@
 /datum/species/slime/get_bodytype()
 	return "Slime"
 
-/*/datum/species/slime/handle_death(var/mob/living/carbon/human/H)
+/datum/species/slime/handle_death(var/mob/living/carbon/human/H)
 	spawn(1)
 		if(H)
-			H.gib()*/
+			H.gib()
