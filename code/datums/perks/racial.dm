@@ -628,7 +628,7 @@
 /datum/perk/racial/limb_regen
 	name = "Hypermytosis"
 	desc = "By expending an extraordinary amount of energy you can kick your natural regeneration into high-gear, regenerating limbs and improving healing. \
-	This process must be done slowly and carefuly to avoid the risk of DNA damage and thus slows you down and limits "
+	This process must be done slowly and carefuly to avoid the risk of DNA damage and thus slows you down and limits consciousness."
 	var/cooldown = 30 MINUTES
 	passivePerk = FALSE
 	var/nutrition_cost = 450

@@ -14,7 +14,6 @@
 /obj/item/organ/internal/bone/slime/removed_mob()
 	..()
 	visible_message(SPAN_NOTICE("the [src] lose cohesion and become a puddle of goo!"))
-	qdel(src)
 	return
 
 //organs
@@ -28,7 +27,6 @@
 /obj/item/organ/internal/stomach/slime/removed_mob()
 	..()
 	visible_message(SPAN_NOTICE("the [src] lose cohesion and become a puddle of goo!"))
-	qdel(src)
 	return
 
 //Core(brain)
@@ -42,6 +40,50 @@
 	blood_req = 0
 	max_blood_storage = 0
 	oxygen_req = 0
+
+//very funny but this needs work.
+
+/obj/item/organ/internal/vital/brain/slime/Process()
+	remove_augments()
+
+/obj/item/organ/internal/vital/brain/slime/proc/remove_augments()
+	var/mob/living/carbon/human/wearer
+	for(var/obj/O in wearer)
+		if(istype(O, /obj/item/organ/external))
+			var/obj/item/organ/external/R = O
+			if(!BP_IS_ROBOTIC(R))
+				continue
+
+			if(R.owner != wearer)
+				continue
+			wearer.visible_message(SPAN_DANGER("[wearer]'s [R.name] tears off."),
+			SPAN_DANGER("Your [R.name] tears off."))
+			R.droplimb(TRUE, DROPLIMB_EDGE)
+		if(istype(O, /obj/item/implant))
+			if(O == src)
+				continue
+			var/obj/item/implant/R = O
+			if(R.wearer != wearer)
+				continue
+			wearer.visible_message(SPAN_DANGER("[R.name] rips through [wearer]'s [R.part]."),\
+			SPAN_DANGER("[R.name] rips through your [R.part]."))
+			R.part.take_damage(rand(20,40))
+			R.uninstall()
+			R.malfunction = MALFUNCTION_PERMANENT
+		if(istype(O, /obj/item/organ/internal))
+			var/obj/item/organ/internal/I = O
+			if(!I.item_upgrades.len)
+				continue
+			if(I.owner != wearer)
+				continue
+			for(var/mod in I.item_upgrades)
+				var/atom/movable/AM = mod
+				LEGACY_SEND_SIGNAL(AM, COMSIG_ITEM_DROPPED, I)
+				I.take_damage(rand(6,12), BRUTE)
+				if(I.parent)
+					I.parent.take_damage(rand(2,5))
+				wearer.visible_message(SPAN_NOTICE("<b>\The [AM]</b> rips through \the [wearer]'s flesh."), SPAN_NOTICE("<b>\The [AM]</b> rips through your flesh. Your [I.name] hurts."))
+
 /*
 This noise doesn't work, nor has it ever.
 It is also obsolete as revival for slimepeople is now accomplished via

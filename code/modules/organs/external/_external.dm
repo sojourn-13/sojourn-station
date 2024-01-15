@@ -39,6 +39,7 @@
 	var/skin_tone			// Skin tone.
 	var/skin_col			// skin colour
 	var/hair_col
+	var/nonsolid			//snowflake code for slimes to apply alpha.
 
 	// Wound and structural data.
 	var/wound_update_accuracy = 3		// how often wounds should be updated, a higher number means less often Occulus Edit: only update wounds every 3 ticks (potential lag reduction)
