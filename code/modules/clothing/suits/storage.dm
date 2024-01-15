@@ -292,7 +292,7 @@
 
 /obj/item/clothing/suit/storage/toggle/miljacket_marshal
 	name = "Marshal jacket"
-	desc = "A Resistant Marshal Coloured jacket with reflective patches on it."
+	desc = "A Resistant Marshal Coloured jacket with reflective yellow patches on it."
 	armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 10, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	icon_state = "marshal_jacket"
