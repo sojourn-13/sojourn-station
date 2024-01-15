@@ -25,10 +25,16 @@
 	var/window_width = 450
 	var/window_height = 600
 
-	var/charge_per_use = 5
-
+	var/charge_per_use = 0
 	var/is_virtual = FALSE // for non-physical scanner to avoid displaying action messages
 
+	throw_speed = 3
+	throw_range = 7
+
+	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
+	origin_tech = list(TECH_BIO = 1)
+
+	price_tag = 100
 
 /obj/item/device/scanner/attack_self(mob/user)
 	if(!scan_data)
