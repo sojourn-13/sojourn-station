@@ -198,6 +198,7 @@
 /area/nadezhda/dungeon/outside/abandoned_outpost
 	name = "Lost Outpost"
 	icon_state = "erisgreen"
+	dynamic_lighting = TRUE
 
 /area/nadezhda/dungeon/outside/zoo
 	name = "Abandoned Research Lab"

@@ -4,6 +4,7 @@
 	name = "tree"
 	anchored = TRUE
 	density = TRUE
+	plane = 1 //To avoid conflicts.
 	pixel_x = -16
 	layer = ABOVE_MOB_LAYER
 	mouse_opacity = MOUSE_OPACITY_ICON
@@ -147,6 +148,7 @@
 	icon_state = "tree"
 	pixel_x = -45
 	pixel_y = -16
+	plane = 2
 
 /obj/structure/flora/tree/jungle/baracade
 	name = "fallen tree"

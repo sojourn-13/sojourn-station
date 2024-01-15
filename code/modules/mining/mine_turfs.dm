@@ -35,10 +35,9 @@
 
 /turf/unsimulated/wall/jungle/New() //please turn a blind eye // PART OF DAY/NIGHT CYCLE
 	if(determine_night())
-		isTransparent = 1
-		plane = 60
+		opacity = 0
 	else
-		isTransparent = 0
+		opacity = 1
 
 /turf/unsimulated/wall/jungle
 	name = "dense forestry"
@@ -49,7 +48,6 @@
 	density = 1
 	plane = 60 // This is to prevent conflicts.
 	layer = BELOW_OBJ_LAYER
-	plane = PLANE_SPACE
 
 /turf/unsimulated/wall/jungle/variant
 	name = "dense forestry"
