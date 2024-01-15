@@ -25,12 +25,12 @@
 /datum/perk/bone
 	name = "Bone Plated"
 	desc = "All sablekyne are covered in bone-like plating across various parts of the body, this layer of natural armor along the shins, thighs, fore-arms, and shoulders allow you to absorb impacts better than anyone, adding a further tolerance to pain."
-	//icon_state = "" // - No icon, suggestion - Riot Shield?
+	icon_state = "shield"
 
 /datum/perk/brawn
 	name = "Brawny Build"
 	desc = "All sablekyne are stocky and built wide, your brawny build and low center of gravity gives you exceptional balance. Few beasts can knock you down and not even the strongest men can push you over."
-	icon_state="muscular" // https://game-icons.net
+	icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/brawn/assign(mob/living/carbon/human/H)
 	..()
@@ -464,7 +464,7 @@
 /datum/perk/chitinarmor
 	name = "Chitin Armor"
 	desc = "Unlike other caste in the cht'mant hive you are built for combat, while not as naturally tough as other species you can tank a few more blows than your softer insectile brethren."
-	//icon_state = "" // - No icon, suggestion - Riot Shield?
+	icon_state = "paper"
 
 /datum/perk/chitinarmor/assign(mob/living/carbon/human/H)
 	..()

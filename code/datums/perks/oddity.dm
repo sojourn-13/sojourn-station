@@ -94,7 +94,7 @@
 	name = "Natural Armor"
 	desc = "Your skin has become harder, more durable, able to accept blunt force and endure."
 	gain_text = "After all you've endured, you can't help but feel tougher than normal, your skin feels like iron."
-	//icon_state = "" // - No icon, suggestion - Riot Shield?
+	icon_state = "riotshield"
 
 /datum/perk/oddity/harden/assign(mob/living/carbon/human/H)
 	..()
@@ -112,7 +112,7 @@
 	name = "Thin Skin"
 	desc = "The anomaly has weakened your skin, making you less resistant to blunt trauma."
 	gain_text = "You feel yourself growing softer...Did everything always hurt this much?"
-	//icon_state = "" // - No icon, suggestion - Paper?
+	icon_state = "paper"
 
 /datum/perk/oddity/thin_skin/assign(mob/living/carbon/human/H)
 	..()
@@ -130,7 +130,7 @@
 	name = "Toxic Resistance"
 	desc = "You've been exposed to something toxic, yet your body fought it off and is now strengthened against poisoning as a result."
 	gain_text = "What doesn't kill you, helps you survive it better."
-	//icon_state = "" // - No icon, suggestion - Anti toxin needle?
+	icon_state = "alch"
 
 /datum/perk/oddity/better_toxins/assign(mob/living/carbon/human/H)
 	..()
@@ -144,7 +144,7 @@
 	name = "Shell Shock"
 	desc = "Why are you not getting better at fighting? Why do mere roaches keep tumbling you down? Your body is weakened by self doubt and despair..."
 	gain_text = "Things just get harder and harder..."
-	//icon_state = "" // - No icon, suggestion, old knife?
+	icon_state = "shock"
 
 /datum/perk/oddity/shell_shock/assign(mob/living/carbon/human/H)
 	..()
@@ -162,7 +162,7 @@
 	name = "Failing Mind"
 	desc = "The mind fogs, blanking out, always distracted. Did that anomaly make you dumber, or where you always like this?"
 	gain_text = "The world is not as clear as it once was."
-	//icon_state = "" // - No icon, suggestion, old newspaper?
+	icon_state = "brainrot"
 
 /datum/perk/oddity/failing_mind/assign(mob/living/carbon/human/H)
 	..()
@@ -186,7 +186,7 @@
 	name = "Sharpened Mind"
 	desc = "Narrowing in and extrapolating the inner workings of the world has never felt so much easier."
 	gain_text = "The mind can over come any puzzle thrown at it!"
-	//icon_state = "" // - No icon, suggestion, detective glass?
+	icon_state = "brain"
 
 /datum/perk/oddity/sharp_mind/assign(mob/living/carbon/human/H)
 	..()
@@ -204,7 +204,7 @@
 	name = "Inner Strength"
 	desc = "You're more keenly aware of your own abilities for combat. You feel more confident on your punches thrown, a bit tougher against those thrown at you, and you're starting to get the hang of shooting that one bulky gun..."
 	gain_text = "The blood pumps, the muscles harden, and your trigger finger feels easier than ever..."
-	//icon_state = "" // - No icon, suggestion, detective glass?
+	icon_state = "muscular"
 
 /datum/perk/oddity/strangth/assign(mob/living/carbon/human/H)
 	..()
@@ -308,7 +308,7 @@
 	desc = "The Tuning Device is taxing on the mind but rewarding... Along with some other side affects..."
 	gain_text = "Having stared too much into the abyss that is Bluespace itself, you can't help but feel its gaze staring back at you."
 	lose_text = "The death heat of the universe strays further away... for now."
-	//icon_state = "" // - No icon, suggestion, vortex?
+	icon_state = "vortex"
 	var/initial_time
 
 /datum/perk/bluespace/assign(mob/living/carbon/human/H)
@@ -344,7 +344,7 @@
 	name = "Blackbox Tinkering"
 	desc = "It's sleek contours, the expert craftsmanship... The best of hand-made mechanical genius."
 	gain_text = "What wondrous possibilities..."
-	//icon_state = "" // - No icon, suggestion, detective glass?
+	icon_state = "tinker"
 
 /datum/perk/guild/blackbox_insight/assign(mob/living/carbon/human/H)
 	..()
