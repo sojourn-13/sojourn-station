@@ -222,13 +222,7 @@
 #define PERK_ULTRASURGEON /datum/perk/drug/ultrasurgeon
 #define PERK_NJOY /datum/perk/njoy
 
-//Task Perks
-#define PERK_FORCEFUL_REJECTION /datum/perk/forceful_rejection
 
-//////////////////
-//Cooldown perks//
-//////////////////
-
-//Exertion Perks
+//cooldown perks
 #define PERK_COOLDOWN_REASON /datum/perk/cooldown/reason
 #define PERK_COOLDOWN_EXERTION /datum/perk/cooldown/exertion

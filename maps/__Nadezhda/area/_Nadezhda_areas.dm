@@ -358,13 +358,11 @@
 /area/nadezhda/outside/forest/hunting_lodge
 	name = "Hunting Lodge"
 	icon_state = "forest"
-	is_maintenance = FALSE
 	is_dungeon_lootable = FALSE
 
 /area/nadezhda/outside/forest/hunting_lodge_dark
 	name = "Hunting Lodge"
 	icon_state = "erisblue"
-	is_maintenance = FALSE
 	dynamic_lighting = TRUE
 	is_dungeon_lootable = FALSE
 

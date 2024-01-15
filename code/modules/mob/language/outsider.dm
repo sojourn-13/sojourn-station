@@ -117,6 +117,7 @@
 	exclaim_verb = list("barks", "yips")
 	colour = "kriosan"
 	key = "k"
+	flags = RESTRICTED
 	has_written_form = FALSE	//Lore reason - Creolized German and their ancient native language. Therefor their written language is 'dead' effectively.
 	partial_understanding = list(
 		LANGUAGE_EURO = 75,
@@ -147,6 +148,7 @@
 	exclaim_verb = list("roars")
 	colour = "akula"
 	key = "a"
+	flags = RESTRICTED
 	has_written_form = FALSE //Lore reason - Warrior culture, likely did not adapt much of a writing system since it was unneeded. Literacy / Acedmia done in foreign tongues.
 	partial_understanding = list(
 		LANGUAGE_JANA = 10,
@@ -164,9 +166,9 @@
 	speech_verb = list("warbles")
 	ask_verb = list("trills")
 	exclaim_verb = list("rythmically trills")
-	flags = RESTRICTED
 	colour = "marqua"
 	key = "q"
+	flags = RESTRICTED
 	has_written_form = TRUE
 	partial_understanding = list(
 		LANGUAGE_JANA = 20,
@@ -196,6 +198,7 @@
 	speech_verb = list("says", "clicks")
 	ask_verb = list("chirps")
 	exclaim_verb = list("croaks")
+	flags = RESTRICTED
 	colour = "rough"
 	key = "n"
 	has_written_form = TRUE

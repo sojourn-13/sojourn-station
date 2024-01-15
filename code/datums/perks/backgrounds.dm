@@ -57,9 +57,6 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	options["Lingua Romana"] = LANGUAGE_ROMANA
 	options["Yassari"] = LANGUAGE_YASSARI
 	options["Latin"] = LANGUAGE_LATIN
-	options["Kriosan"] = LANGUAGE_KRIOSAN
-	options["Akula"] = LANGUAGE_AKULA
-	options["Narad Pidgin"] = LANGUAGE_MERP
 	var/choice = input(M,"Which language do you know?","Linguist Choice") as null|anything in options
 	if(src && choice)
 		M.add_language(choice)
@@ -112,7 +109,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 /datum/perk/nihilist
 	name = "Nihilist"
 	desc = 	"You simply ran out of fucks to give at some point in your life. \
-			This increases chance of positive breakdowns by 30% and negative breakdowns by 20%. Seeing someone die has a random effect on you: \
+			This increases chance of positive breakdowns by 10% and negative breakdowns by 20%. Seeing someone die has a random effect on you: \
 			sometimes you won’t take any sanity loss and you can even gain back sanity, or get a boost to your cognition."
 	icon_state = "eye" //https://game-icons.net/1x1/lorc/tear-tracks.html
 

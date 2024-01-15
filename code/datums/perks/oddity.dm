@@ -48,7 +48,6 @@
 /datum/perk/oddity/toxic_revenger/assign(mob/living/carbon/human/H)
 	..()
 	initial_time = world.time
-	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 /datum/perk/oddity/toxic_revenger/on_process()
 	if(!..())
@@ -120,8 +119,6 @@
 	holder.brute_mod_perk += 0.1
 	holder.mob_bomb_defense -= 5
 	holder.falls_mod += 0.2
-	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
-
 
 /datum/perk/oddity/thin_skin/remove()
 	holder.brute_mod_perk -= 0.1 // One third of subdermal armor
@@ -154,8 +151,6 @@
 	holder.stats.changeStat(STAT_ROB, -5)
 	holder.stats.changeStat(STAT_TGH, -5)
 	holder.stats.changeStat(STAT_VIG, -5)
-	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
-
 
 /datum/perk/oddity/shell_shock/remove()
 	holder.stats.changeStat(STAT_ROB, 5)
@@ -174,8 +169,6 @@
 	holder.stats.changeStat(STAT_COG, -5)
 	holder.stats.changeStat(STAT_MEC, -5)
 	holder.stats.changeStat(STAT_BIO, -5)
-	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
-
 
 /datum/perk/oddity/failing_mind/remove()
 	holder.stats.changeStat(STAT_COG, 5)

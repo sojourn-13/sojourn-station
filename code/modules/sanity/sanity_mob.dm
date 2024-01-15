@@ -404,7 +404,6 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					owner.stats.changeStat_withcap(stat, stat_change[stat])
 
 	owner.pick_individual_objective()
-	owner.metabolism_effects.calculate_nsa() //Updates NSA limit incase we gain any viv on level up
 
 /datum/sanity/proc/onDamage(amount)
 	changeLevel(-SANITY_DAMAGE_HURT(amount, owner.stats.getStat(STAT_VIG)))

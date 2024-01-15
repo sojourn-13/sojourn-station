@@ -49,4 +49,3 @@
 	if(holder)
 		holder.stats.changeStat(STAT_COG, 5)
 	..()
-
