@@ -227,7 +227,7 @@
 	var/wound_path = pick(subtypesof(base_type))
 	var/wound_name = "[name] [wound_descriptor]"
 	I.add_wound(wound_path, wound_name)
-	if(!silent && BP_IS_ORGANIC(I))
+	if(!silent && BP_IS_ORGANIC(I) || BP_IS_SLIME(I))
 		to_chat(user, SPAN_WARNING("You feel a sharp pain in your [I.parent.name]."))
 
 /datum/reagent/proc/initialize_data(var/newdata) // Called when the reagent is created.

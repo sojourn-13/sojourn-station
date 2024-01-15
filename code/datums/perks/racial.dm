@@ -625,23 +625,26 @@
 	passivePerk = TRUE
 
 ///////////////////////////////////// Slime perks
-
-
 /datum/perk/racial/limb_regen
-	name = "Gelatinous Regeneration"
-	desc = "Spend nutrition in exchange of regenerating your limbs"
-	var/cooldown = 20 MINUTES
+	name = "Hypermytosis"
+	desc = "By expending an extraordinary amount of energy you can kick your natural regeneration into high-gear, regenerating limbs and improving healing. \
+	This process must be done slowly and carefuly to avoid the risk of DNA damage and thus slows you down and limits "
+	var/cooldown = 30 MINUTES
 	passivePerk = FALSE
-	var/nutrition_cost = 400
-	var/list/limbs = list(BP_HEAD, BP_GROIN, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+	var/nutrition_cost = 450
 
 /datum/perk/racial/limb_regen/activate()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("TODO Error Message"))
+		to_chat(usr, SPAN_NOTICE("You've already regenerated recently, wait some time before trying again."))
 		return FALSE
-	cooldown_time = world.time + cooldown
-	holder.nutrition -= nutrition_cost
-	holder.restore_all_organs() // Function located in 'code/modules/mob/living/carbon/human/human_damage.dm' Line 334. I couldn't find anything better for regenerating missing limbs and I'm too tired to try and code it in, so it will have to do. -R4d6
+	if(holder.nutrition > nutrition_cost)
+		cooldown_time = world.time + cooldown
+		holder.nutrition -= nutrition_cost
+		to_chat(usr, SPAN_NOTICE("You turn your attention inward, focusing on mending your form."))
+		holder.reagents.add_reagent("mstim", 5)
+	else
+		to_chat(usr, SPAN_NOTICE("You lack the energy for such an expenditure."))
+
 
 /datum/perk/racial/slime_stat_boost
 	name = "Adaptive Anatomy"
@@ -649,46 +652,58 @@
 	var/cooldown = 10 MINUTES
 	passivePerk = FALSE
 	var/nutrition_cost = 200
-	var/list/stats_to_boost = list() // Which stats we boost
 	var/amount_to_boost = 45 // How much the stats are boosted
 	var/duration = 1 MINUTES // How long the stats are boosted for
+	var/blorp = 0 //I'm so sorry.
 
 /datum/perk/racial/slime_stat_boost/activate()
 	if(world.time < cooldown_time)
-		to_chat(usr, SPAN_NOTICE("TODO Error Message"))
+		to_chat(usr, SPAN_NOTICE("You're still recovering from your last amplification!"))
 		return FALSE
-	cooldown_time = world.time + cooldown
-	holder.nutrition -= nutrition_cost
-	for(var/I in stats_to_boost)
-		holder.stats.addTempStat(I, amount_to_boost, duration, "Slime Biology")
-
+	if(holder.nutrition > nutrition_cost)
+		cooldown_time = world.time + cooldown
+		holder.nutrition -= nutrition_cost
+		to_chat(usr, SPAN_NOTICE("You expend some energy to improve your attributes!"))
+		if(blorp == 1)
+			holder.stats.addTempStat(STAT_BIO, amount_to_boost, duration, "Slime Biology")
+			holder.stats.addTempStat(STAT_MEC, amount_to_boost, duration, "Slime Biology")
+			holder.stats.addTempStat(STAT_COG, amount_to_boost, duration, "Slime Biology")
+		else
+			holder.stats.addTempStat(STAT_VIG, amount_to_boost, duration, "Slime Biology")
+			holder.stats.addTempStat(STAT_ROB, amount_to_boost, duration, "Slime Biology")
+			holder.stats.addTempStat(STAT_TGH, amount_to_boost, duration, "Slime Biology")
+	else
+		to_chat(usr, SPAN_NOTICE("You lack the energy for such an expenditure."))
 /datum/perk/racial/slime_stat_boost/mental
-	name = "exalted intellect"
-	desc = "Expend some of your spare calories to vastly improve your mental fortitude."
-	stats_to_boost = list(STAT_BIO, STAT_MEC, STAT_COG)
+	name = "Malleable Mind"
+	desc = "Expend some of your spare calories to greatly improve your intellect."
+	blorp = 1
 
 /datum/perk/racial/slime_stat_boost/physical
-	name = "tempered physique"
-	desc = "Expend some of your spare calories to vastly improve your physical prowess."
-	stats_to_boost = list(STAT_ROB, STAT_TGH, STAT_VIG)
+	name = "Adaptive Anatomy"
+	desc = "Expend some of your spare calories to greatly improve your physical prowess."
 
-/datum/perk/racial/speed_boost
+/datum/perk/racial/speed_boost //Go fast but lose vig and burn through nutri
 	name = "Caloric Redline"
-	desc = "by burning through mass at an excessive rate an Aulvae can push their body to move with surprising swiftness albeit losing some of the fine control over their movements. "
+	desc = "by burning through mass at an excessive rate an Aulvae can push their body to move with surprising swiftness, albeit losing some of the fine control over their movements. "
 	var/cooldown = 5 MINUTES
 	passivePerk = FALSE
-	var/nutrition_cost = 150
+	var/nutrition_cost = 200
 
 /datum/perk/racial/speed_boost/activate()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("You're still recovering from the last attempt."))
 		return FALSE
+	if(holder.nutrition < nutrition_cost)
+		to_chat(usr, SPAN_NOTICE("You lack the energy for such an expenditure."))
+		return FALSE
+
 	cooldown_time = world.time + cooldown
 
 	holder.nutrition -= nutrition_cost
 	holder.reagents.add_reagent("slime_speed", 10)
 
-/*
+/* This is the old code for this perk, it does not work but it's left for postereity. Feel free to remove if you please - CDB
 /datum/perk/racial/limb_regen
 	name = "Gelatinous Regeneration"
 	desc = "Spend nutrition to regenerate lost limbs, albeit without fully fixing your injuries."

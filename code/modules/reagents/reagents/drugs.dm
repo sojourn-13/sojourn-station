@@ -435,14 +435,32 @@
 	id = "slime_speed"
 	description = "Comparable to high-dose amphetamines cut with nano muscle-stimulators. This chemical would melt through just about any organic that dared touch it, unless of course their anatomy was already highly acidic."
 	taste_description = "caustic rust"
+	scannable = FALSE
 
 /datum/reagent/drug/hyperzine/slime_meth/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(prob(5))
-		M.emote(pick("vibrates", "sways", "crackles with electricity"))
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.5)
-	M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
-	withdrawal_threshold = 100
-
+	if(M.species?.reagent_tag == IS_SLIME)
+		if(prob(5))
+			M.emote(pick("vibrates", "sways", "crackles with electricity"))
+		M.add_chemical_effect(CE_SPEEDBOOST, 0.6) //nyoom
+		M.stats.addTempStat(STAT_VIG, -45, 1 MINUTES, "speed jitters")
+		M.stats.addTempStat(STAT_BIO, -45, 1 MINUTES, "speed jitters")
+		M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
+		withdrawal_threshold = 100
+	else
+		var/wound_chance = 100 - (79 * (1 - M.stats.getMult(STAT_TGH)))
+		if(ishuman(M))
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_MUSCLE)
+				create_overdose_wound(L, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/N = H.random_organ_by_process(OP_NERVE)
+				create_overdose_wound(N, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/N = H.random_organ_by_process(OP_BONE)
+				create_overdose_wound(N, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
 
 /datum/reagent/drug/nanoblood
 	name = "Nanoblood"

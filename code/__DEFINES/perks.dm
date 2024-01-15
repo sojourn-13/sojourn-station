@@ -152,12 +152,13 @@
 //Folken
 #define PERK_FOLKEN_HEALING /datum/perk/folken_healing
 #define PERK_FOLKEN_HEALING_YOUNG /datum/perk/folken_healing/young
-//Slime
+//Slimes
 #define PERK_LIMB_REGEN /datum/perk/racial/limb_regen
 #define PERK_SLIMEBODY /datum/perk/racial/slime_metabolism
 #define PERK_SLIMEREZ /datum/perk/racial/slime_rez_sickness
 #define PERK_SLIMEMETH /datum/perk/racial/speed_boost
-#define PERK_SLIMESTAT /datum/perk/racial/slime_stat_boost
+#define PERK_SLIMEBRAIN /datum/perk/racial/slime_stat_boost/mental
+#define PERK_SLIMEBOD /datum/perk/racial/slime_stat_boost/physical
 
 //////////////
 //Core Perks//

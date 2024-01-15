@@ -56,12 +56,13 @@
 #define ORGAN_PROP_PROSTHETIC	BITFLAG(0) // The organ is prosthetic. Changes numerous behaviors, search BP_IS_PROSTHETIC for checks.
 #define ORGAN_PROP_CRYSTAL		BITFLAG(1) // The organ does not suffer laser damage, but shatters on droplimb.
 
-#define MODIFICATION_ORGANIC 0	// Organic
+#define MODIFICATION_ORGANIC  0	// Organic
 #define MODIFICATION_ASSISTED 1 // Like pacemakers, not robotic
-#define MODIFICATION_SILICON 2	// Fully robotic, no organic parts
+#define MODIFICATION_SILICON  2	// Fully robotic, no organic parts
 #define MODIFICATION_LIFELIKE 3	// Robotic, made to appear organic
-#define MODIFICATION_REMOVED 4	// Removed completly
+#define MODIFICATION_REMOVED  4	// Removed completly
 #define MODIFICATION_SUPERIOR 5 //Better than good, a cut above.
+#define MODIFICATION_SLIME    6 //goo people
 
 // Organ flag defines.
 #define ORGAN_FLAG_CAN_AMPUTATE		BITFLAG(0) // The organ can be amputated.

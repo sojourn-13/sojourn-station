@@ -7,7 +7,7 @@
 	var/incision_name = "an incision"
 
 /datum/surgery_step/cut_open/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	return BP_IS_ORGANIC(organ) && !organ.open
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && !organ.open
 
 /datum/surgery_step/cut_open/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(
@@ -59,7 +59,7 @@
 	can_infect = TRUE
 
 /datum/surgery_step/retract_skin/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	return BP_IS_ORGANIC(organ) && organ.open == 1
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && organ.open == 1
 
 /datum/surgery_step/retract_skin/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(
@@ -90,7 +90,7 @@
 	duration = 80
 
 /datum/surgery_step/cauterize/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	return BP_IS_ORGANIC(organ) && organ.open
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && organ.open
 
 /datum/surgery_step/cauterize/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(
@@ -123,7 +123,7 @@
 	blood_level = 1
 
 /datum/surgery_step/attach_organ/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
-	return BP_IS_ORGANIC(organ) && organ.is_open() && (organ.status & ORGAN_CUT_AWAY)
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && organ.is_open() && (organ.status & ORGAN_CUT_AWAY)
 
 /datum/surgery_step/attach_organ/begin_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
 	user.visible_message(
@@ -158,7 +158,7 @@
 	blood_level = 1
 
 /datum/surgery_step/break_bone/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
-	return BP_IS_ORGANIC(organ) && organ.is_open() && !(organ.parent.status & ORGAN_BROKEN)
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && organ.is_open() && !(organ.parent.status & ORGAN_BROKEN)
 
 
 /datum/surgery_step/break_bone/begin_step(mob/living/user, obj/item/organ/internal/bone/organ, obj/item/stack/tool)
@@ -231,7 +231,7 @@
 
 /datum/surgery_step/replace_bone/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
 	var/obj/item/organ/internal/bone/B = tool
-	return BP_IS_ORGANIC(organ) && organ.is_open() && istype(B) && B.organ_tag == organ.organ_tag
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && organ.is_open() && istype(B) && B.organ_tag == organ.organ_tag
 
 
 /datum/surgery_step/replace_bone/begin_step(mob/living/user, obj/item/organ/internal/bone/organ, obj/item/stack/tool)
@@ -268,7 +268,7 @@
 	blood_level = 1
 
 /datum/surgery_step/detach_organ/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
-	return BP_IS_ORGANIC(organ) && organ.is_open() && !(organ.status & ORGAN_CUT_AWAY)
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && organ.is_open() && !(organ.status & ORGAN_CUT_AWAY)
 
 /datum/surgery_step/detach_organ/begin_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
 	user.visible_message(
@@ -303,7 +303,7 @@
 	duration = 30
 
 /datum/surgery_step/remove_item/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool, atom/movable/target)
-	return BP_IS_ORGANIC(organ) && organ.is_open() && organ.can_remove_item(target)
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)  && organ.is_open() && organ.can_remove_item(target)
 
 /datum/surgery_step/remove_item/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool, atom/movable/target)
 	user.visible_message(
@@ -337,7 +337,7 @@
 	blood_level = 2
 
 /datum/surgery_step/amputate/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	return BP_IS_ORGANIC(organ) && organ.owner && !organ.cannot_amputate
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ) && organ.owner && !organ.cannot_amputate
 
 /datum/surgery_step/amputate/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(

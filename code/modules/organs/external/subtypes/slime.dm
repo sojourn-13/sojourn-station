@@ -1,5 +1,6 @@
 // Slime limbs.
 /obj/item/organ/external/slime
+	nature = MODIFICATION_SLIME
 	nerve_struck = -1
 
 /obj/item/organ/external/slime/make_base_internal_organs()

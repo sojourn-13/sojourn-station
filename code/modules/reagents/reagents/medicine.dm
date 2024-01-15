@@ -16,7 +16,7 @@
 
 /datum/reagent/medicine/inaprovaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // No more useless chem of leftover baycode with no inference on health due to pulse not affecting anything. - Seb
 	M.add_chemical_effect(CE_PULSE, 1)
-	M.add_chemical_effect(CE_STABLE) // Keeping these useless effects for the sake of RP.
+	M.add_chemical_effect(CE_STABLE, 1) // Keeping these useless effects for the sake of RP.
 	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier)
 	M.adjustOxyLoss(-0.5 * effect_multiplier) // Should help stall for time against oxyloss killing you to heavy bloodloss or lung/heart damage until your eventual rescue, but won't heal it outright.
 	M.add_chemical_effect(CE_OXYGENATED, 1)
@@ -1084,6 +1084,40 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/kyphotorin/overdose(mob/living/carbon/M, alien)
 	M.adjustCloneLoss(4)
 
+/datum/reagent/medicine/slimeregen
+	name = "mitosis hyperstim"
+	id = "mstim"
+	description = "A novel protein structure used within the bodies of Aulvae to stimulate mitosis to replace large amounts of lost cells in a short time frame. These proteins are theorized to be highly lethal to most organics if ingested or injected."
+	taste_description = "prions"
+	scannable = FALSE
+
+/datum/reagent/medicine/slimeregen/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		var/mob/living/carbon/human/H = M
+		if(prob(0.25 * effect_multiplier))
+			var/list/missingLimbs = list()
+			for(var/name in BP_ALL_LIMBS)
+				if(!H.has_appendage(name))
+					missingLimbs += name
+			if(missingLimbs.len)
+				var/luckyLimbName = pick(missingLimbs)
+				H.restore_organ(luckyLimbName)
+				M.pain(luckyLimbName, 100, TRUE)
+				dose = 0
+		M.heal_organ_damage(0.5 * effect_multiplier, 0, 5 * effect_multiplier) //pretty strong, but the cost is high and they can only use this twice an hour.
+		M.add_chemical_effect(CE_SLOWDOWN, 2)
+		M.eye_blurry = max(M.eye_blurry, 10)
+		if(prob(10))
+			M.Weaken(2)
+			M.custom_emote(1,"'s form suddenly loses cohesion as they fall to the ground!")
+	else
+		var/wound_chance = 100 - (79 * (1 - M.stats.getMult(STAT_TGH)))
+		if(ishuman(M))
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/liver/L = H.random_organ_by_process(BP_BRAIN)
+				create_overdose_wound(L, M, /datum/component/internal_wound/organic/permanent, "prion damage")
+
 /datum/reagent/medicine/polystem
 	name = "Polystem"
 	id = "polystem"
@@ -1300,9 +1334,10 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/fun_gas/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	var/effective_dose = dose / 2
 	dose *= 0.75 // Reduce the dose to prevent buildup from little N2O
+	if(M.species?.reagent_tag == IS_SLIME)
+		return
 	if(issmall(M))
 		effective_dose *= 2
-
 	if(effective_dose < 1)
 		if(effective_dose == metabolism * 2 || prob(10))
 			M.emote("giggle")

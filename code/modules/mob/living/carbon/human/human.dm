@@ -1371,7 +1371,7 @@ var/list/rank_prefix = list(\
 			// Pick an existing non-robotic limb, if possible.
 			for(target_zone in BP_ALL_LIMBS)
 				var/obj/item/organ/external/affecting = get_organ(target_zone)
-				if(affecting && BP_IS_ORGANIC(affecting) || BP_IS_ASSISTED(affecting))
+				if(affecting && BP_IS_ORGANIC(affecting) || BP_IS_ASSISTED(affecting) || BP_IS_SLIME(affecting))
 					break
 
 
