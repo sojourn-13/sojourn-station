@@ -406,7 +406,7 @@
 	name = "Kin to the Spiders"
 	desc = "Through a combination of pheromones, appearance, and an innate understanding of spider behavior all spiders are friendly to you, they won't attack you even if you attack them. This change \
 	in your biology and pheromones however make you an enemy to roaches. As a side effect of dealing with spiders so often, you can't be slowed or stuck by webbing."
-	icon_state="muscular" // https://game-icons.net
+	icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/spiderfriend/assign(mob/living/carbon/human/H)
 	..()
@@ -481,7 +481,7 @@
 /datum/perk/scuttlebug
 	name = "Scuttlebug"
 	desc = "While your definitive purpose is not as clearly defined as other castes within the cht'mant hive your constant movement and labors have made you quite used to the hustle and bustle, letting you run faster than most races."
-	icon_state="fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
+	icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
 
 /datum/perk/repair_goo
 	name = "Produce Repair Goo"
