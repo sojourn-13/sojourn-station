@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, ProgressBar, Section, Stack } from '../components';
+import { Button, LabeledList, Section, Stack } from '../components';
 import { Window } from '../layouts';
 
 const MODE2COLOR = {
