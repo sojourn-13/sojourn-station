@@ -1641,7 +1641,7 @@
 "atu" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "atw" = (
 /obj/effect/floor_decal/spline/wood,
@@ -2007,7 +2007,7 @@
 "awV" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/lakeside)
 "awW" = (
 /obj/machinery/door/blast/regular/open{
@@ -2913,7 +2913,7 @@
 	})
 "aFT" = (
 /obj/structure/flora/small/grassb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "aFV" = (
 /obj/structure/railing/grey{
@@ -3833,7 +3833,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/rock5,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "aRX" = (
 /obj/structure/disposalpipe/segment{
@@ -4563,7 +4563,7 @@
 "baT" = (
 /obj/structure/flora/small/grassb2,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "baW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -4618,7 +4618,7 @@
 "bbC" = (
 /obj/structure/flora/big/rocks2,
 /obj/structure/flora/big/bush1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bbE" = (
 /obj/structure/window/reinforced,
@@ -4950,7 +4950,7 @@
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "beZ" = (
 /obj/structure/flora/big/bush2,
@@ -5793,7 +5793,7 @@
 "bnu" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/grassb4,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bnz" = (
 /obj/random/scrap/dense_weighted,
@@ -6114,7 +6114,7 @@
 /area/nadezhda/command/merchant)
 "brm" = (
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "brn" = (
 /obj/structure/table/woodentable,
@@ -6343,7 +6343,7 @@
 /area/nadezhda/crew_quarters/bar)
 "btP" = (
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "btQ" = (
 /obj/structure/disposalpipe/segment{
@@ -6893,7 +6893,7 @@
 "bzf" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bzi" = (
 /obj/machinery/conveyor/east{
@@ -8499,7 +8499,7 @@
 "bSr" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/busha3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bSt" = (
 /turf/simulated/floor/asteroid/grass,
@@ -8534,7 +8534,7 @@
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bSR" = (
 /obj/structure/closet/cabinet,
@@ -9043,7 +9043,7 @@
 "bXD" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bXG" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -9406,7 +9406,7 @@
 "cbI" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "cbM" = (
 /obj/structure/cable/green{
@@ -9992,7 +9992,7 @@
 "cja" = (
 /obj/random/flora/jungle_tree,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "cjc" = (
 /obj/structure/table/woodentable,
@@ -11346,7 +11346,7 @@
 "cyE" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "cyF" = (
 /obj/structure/flora/ausbushes/pointybush,
@@ -11751,7 +11751,7 @@
 	})
 "cCH" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "cCI" = (
 /obj/machinery/light/small{
@@ -12311,7 +12311,7 @@
 "cIs" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "cIE" = (
 /turf/simulated/shuttle/wall/escpod{
@@ -13767,7 +13767,7 @@
 "cXx" = (
 /obj/random/flora/small_jungle_tree,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "cXA" = (
 /obj/random/flora/small_jungle_tree,
@@ -13867,7 +13867,7 @@
 "cYn" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/lakeside)
 "cYs" = (
 /obj/random/scrap/sparse_weighted/low_chance,
@@ -14382,7 +14382,7 @@
 /area/nadezhda/engineering/atmos/storage)
 "deX" = (
 /obj/structure/flora/small/rock2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "deY" = (
 /obj/structure/railing{
@@ -14992,7 +14992,7 @@
 "dma" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "dmf" = (
 /obj/effect/floor_decal/spline/wood{
@@ -15215,7 +15215,7 @@
 "dnX" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "doc" = (
 /obj/structure/flora/big/bush2,
@@ -15485,7 +15485,7 @@
 "drp" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "drr" = (
 /obj/structure/ore_box,
@@ -15811,7 +15811,7 @@
 "duP" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "duQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -15883,7 +15883,7 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/lakeside)
 "dvB" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/fnest)
 "dvE" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -16203,7 +16203,7 @@
 "dyw" = (
 /obj/structure/flora/small/bushb1,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "dyx" = (
 /obj/machinery/door/unpowered/simple/wood,
@@ -16527,7 +16527,7 @@
 "dCe" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "dCg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -17245,7 +17245,7 @@
 "dJF" = (
 /obj/structure/flora/small/grassb5,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "dJS" = (
 /obj/structure/bed/chair/custom/wood{
@@ -19534,7 +19534,7 @@
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "ehB" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/lakeside)
 "ehM" = (
 /obj/effect/decal/cleanable/blood/oil,
@@ -22284,7 +22284,7 @@
 /obj/structure/flora/small/grassb2,
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "eLM" = (
 /obj/structure/mopbucket,
@@ -22549,7 +22549,7 @@
 "eNw" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "eNE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23641,7 +23641,7 @@
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "eYZ" = (
 /obj/effect/floor_decal/spline/fancy{
@@ -23951,7 +23951,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "fdr" = (
 /obj/structure/flora/small/busha3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "fdu" = (
 /obj/structure/cable/green{
@@ -25006,7 +25006,7 @@
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/grassa1,
 /obj/structure/flora/small/grassa1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "fnu" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -26152,7 +26152,7 @@
 	})
 "fzT" = (
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
@@ -26331,7 +26331,7 @@
 "fCi" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/busha3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "fCj" = (
 /obj/structure/flora/small/bushc2,
@@ -27912,7 +27912,7 @@
 "fUU" = (
 /obj/structure/flora/big/rocks3,
 /obj/structure/boulder,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
@@ -28166,7 +28166,7 @@
 "fYw" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "fYz" = (
 /obj/structure/disposalpipe/segment{
@@ -28344,7 +28344,7 @@
 /area/nadezhda/rnd/lab)
 "fZR" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "fZU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -28577,7 +28577,7 @@
 "gcD" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "gcI" = (
 /obj/effect/decal/cleanable/blood/oil,
@@ -30880,7 +30880,7 @@
 "gzR" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "gzV" = (
 /obj/structure/catwalk,
@@ -31349,10 +31349,10 @@
 /area/nadezhda/medical/morgue)
 "gGq" = (
 /obj/structure/flora/big/rocks2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "gGr" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/dungeon/outside/trashcave)
 "gGN" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -33079,7 +33079,7 @@
 "haq" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/pointybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "hat" = (
 /obj/structure/disposalpipe/segment,
@@ -33108,7 +33108,7 @@
 "haB" = (
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/big/bush1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "haC" = (
 /obj/effect/floor_decal/industrial/hatch,
@@ -33430,7 +33430,7 @@
 "hed" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "hee" = (
 /obj/machinery/door/unpowered/simple/wood/saloon{
@@ -36595,7 +36595,7 @@
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
 "hKz" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/engineering/engine_room)
 "hKH" = (
 /obj/random/junk/low_chance,
@@ -37018,7 +37018,7 @@
 /area/nadezhda/crew_quarters)
 "hQo" = (
 /obj/structure/flora/small/bushc3,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "hRc" = (
 /obj/structure/table/woodentable,
@@ -38137,7 +38137,7 @@
 "ibo" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "ibt" = (
 /obj/structure/low_wall,
@@ -38371,7 +38371,7 @@
 /area/nadezhda/crew_quarters/hydroponics)
 "ieb" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "iee" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -39015,7 +39015,7 @@
 "ikV" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/lakeside)
 "ikX" = (
 /obj/machinery/light{
@@ -39321,7 +39321,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "inz" = (
 /obj/structure/cable/green{
@@ -39553,7 +39553,7 @@
 /area/nadezhda/pros/prep)
 "iqg" = (
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "iqo" = (
 /obj/random/scrap/sparse_weighted,
@@ -40176,7 +40176,7 @@
 "ixl" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "ixJ" = (
 /obj/effect/decal/cleanable/blood,
@@ -40416,7 +40416,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "iAf" = (
 /obj/structure/flora/small/grassb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "iAj" = (
 /obj/machinery/conveyor/east{
@@ -40953,7 +40953,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "iGL" = (
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "iGQ" = (
 /obj/machinery/portable_atmospherics/canister/air/airlock,
@@ -42085,7 +42085,7 @@
 "iUc" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/rock5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "iUe" = (
 /obj/structure/extinguisher_cabinet{
@@ -43462,7 +43462,7 @@
 "jiT" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jiZ" = (
 /obj/structure/cable/cyan{
@@ -43486,7 +43486,7 @@
 /area/nadezhda/security/tactical)
 "jjk" = (
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/dcave)
 "jjm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -44408,7 +44408,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "jsx" = (
 /obj/structure/flora/small/bushb3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jsD" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -44421,7 +44421,7 @@
 "jsE" = (
 /obj/structure/flora/small/grassb2,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jsO" = (
 /obj/machinery/door/unpowered/simple/wood{
@@ -44439,7 +44439,7 @@
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "jsV" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jsX" = (
 /obj/structure/table/rack/shelf,
@@ -44738,7 +44738,7 @@
 "jvR" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jvU" = (
 /obj/machinery/conveyor/east{
@@ -45231,7 +45231,7 @@
 /area/nadezhda/absolutism/bioreactor)
 "jBW" = (
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jCd" = (
 /obj/item/device/lighting/glowstick/random,
@@ -45799,7 +45799,7 @@
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jHX" = (
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -45859,13 +45859,13 @@
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush2,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jIA" = (
 /obj/structure/flora/big/bush2,
 /obj/random/flora/jungle_tree,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jID" = (
 /obj/item/device/radio/intercom{
@@ -45983,7 +45983,7 @@
 "jKi" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jKl" = (
 /obj/effect/floor_decal/industrial/warningwhite,
@@ -46512,7 +46512,7 @@
 "jPM" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jPO" = (
 /obj/structure/table/rack/shelf,
@@ -46743,7 +46743,7 @@
 "jSt" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jSu" = (
 /obj/structure/sign/security/detective{
@@ -47228,7 +47228,7 @@
 "jXT" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jYa" = (
 /obj/structure/flora/small/grassb5,
@@ -48444,7 +48444,7 @@
 "kkF" = (
 /obj/structure/flora/big/bush2,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "kkU" = (
 /obj/structure/table/bench/standard,
@@ -49443,7 +49443,7 @@
 "kvA" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "kvR" = (
 /obj/structure/multiz/stairs/enter,
@@ -49831,7 +49831,7 @@
 "kzq" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "kzt" = (
 /obj/random/scrap/dense_even,
@@ -50059,7 +50059,7 @@
 /area/nadezhda/outside/security/maingate)
 "kCi" = (
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "kCn" = (
 /obj/machinery/conveyor/east{
@@ -50568,7 +50568,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "kJa" = (
 /obj/structure/flora/big/rocks1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "kJc" = (
 /obj/effect/decal/cleanable/dirt,
@@ -50992,7 +50992,7 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/engineering/atmos/storage)
 "kOj" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "kOq" = (
 /obj/machinery/door/airlock/glass_mining{
@@ -51934,7 +51934,7 @@
 /area/nadezhda/outside/forest)
 "kYZ" = (
 /obj/structure/flora/small/rock5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "kZq" = (
 /obj/structure/cable/green{
@@ -52382,7 +52382,7 @@
 /area/nadezhda/rnd/robotics)
 "leW" = (
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "lfb" = (
 /obj/structure/sign/faction/derelict1{
@@ -52805,7 +52805,7 @@
 "ljZ" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "lkf" = (
 /obj/machinery/door/airlock/glass_security,
@@ -53253,7 +53253,7 @@
 /obj/structure/flora/small/busha2,
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "lpW" = (
 /obj/effect/spider/stickyweb,
@@ -53294,7 +53294,7 @@
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "lqm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -53960,7 +53960,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "lxV" = (
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "lyg" = (
 /turf/simulated/floor/beach/water/jungle,
@@ -54178,7 +54178,7 @@
 /area/nadezhda/outside/pros/shuttle)
 "lAL" = (
 /obj/structure/flora/ausbushes/genericbush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "lBf" = (
 /obj/structure/railing/grey{
@@ -54399,7 +54399,7 @@
 "lDk" = (
 /obj/random/flora/small_jungle_tree,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "lDu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -55142,7 +55142,7 @@
 /area/nadezhda/outside/lakeside)
 "lKY" = (
 /mob/living/simple_animal/hostile/diyaab,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "lLf" = (
 /obj/structure/disposalpipe/segment{
@@ -55981,7 +55981,7 @@
 	name = "Residential District Maintenance"
 	})
 "lUl" = (
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/engineering/engine_room)
 "lUm" = (
 /obj/structure/disposalpipe/segment{
@@ -56035,7 +56035,7 @@
 /area/nadezhda/hallway/side/f2section1)
 "lUR" = (
 /obj/structure/flora/small/grassa1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "lUU" = (
 /obj/landmark/storyevent/midgame_stash_spawn,
@@ -57105,12 +57105,12 @@
 "mfX" = (
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "mga" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "mge" = (
 /obj/structure/flora/ausbushes/palebush,
@@ -58873,7 +58873,7 @@
 "mzH" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "mzI" = (
 /obj/structure/sink{
@@ -58891,7 +58891,7 @@
 "mzM" = (
 /obj/random/flora/small_jungle_tree,
 /obj/structure/flora/small/grassa1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "mzP" = (
 /obj/machinery/light/floor,
@@ -60010,7 +60010,7 @@
 "mLb" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "mLf" = (
 /obj/structure/catwalk,
@@ -62144,7 +62144,7 @@
 "ngQ" = (
 /obj/structure/flora/small/busha1,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "ngR" = (
 /obj/structure/flora/small/bushb1,
@@ -63609,7 +63609,7 @@
 "nwr" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "nws" = (
 /obj/effect/decal/cleanable/dirt,
@@ -64093,7 +64093,7 @@
 "nBi" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "nBm" = (
 /obj/structure/catwalk,
@@ -64642,7 +64642,7 @@
 "nFW" = (
 /obj/random/flora/small_jungle_tree,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "nFZ" = (
 /obj/structure/multiz/stairs/enter/bottom{
@@ -64832,7 +64832,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "nIa" = (
 /obj/structure/flora/small/grassb4,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "nIb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -65649,7 +65649,7 @@
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "nQP" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -66338,7 +66338,7 @@
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush2,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "nYc" = (
 /obj/structure/low_wall,
@@ -67750,7 +67750,7 @@
 "oma" = (
 /obj/structure/flora/ausbushes/pointybush,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "omb" = (
 /obj/random/tool/low_chance,
@@ -68491,7 +68491,7 @@
 "ouf" = (
 /obj/structure/flora/small/rock5,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "ouj" = (
 /obj/machinery/door/airlock/glass_command{
@@ -68512,7 +68512,7 @@
 "ouz" = (
 /obj/structure/flora/small/busha1,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "ouJ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -69506,7 +69506,7 @@
 /area/nadezhda/absolutism/chapel)
 "oFe" = (
 /obj/structure/flora/small/grassb5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "oFu" = (
 /obj/machinery/computer/arcade,
@@ -70811,7 +70811,7 @@
 /area/nadezhda/command/smc/quarters)
 "oSY" = (
 /obj/structure/flora/ausbushes/sunnybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "oTb" = (
 /obj/structure/flora/ausbushes/stalkybush,
@@ -71338,7 +71338,7 @@
 "oYz" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/grassb4,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "oYA" = (
 /obj/effect/floor_decal/spline/fancy{
@@ -71819,7 +71819,7 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "pdT" = (
 /turf/simulated/wall/r_wall,
@@ -72508,7 +72508,7 @@
 "plq" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "pls" = (
 /obj/structure/table/woodentable,
@@ -73263,7 +73263,7 @@
 "pue" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "pug" = (
 /obj/structure/table/reinforced,
@@ -73433,7 +73433,7 @@
 "pvz" = (
 /obj/structure/flora/big/bush1,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "pvE" = (
 /obj/structure/flora/small/grassb5,
@@ -74238,7 +74238,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "pDG" = (
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "pDL" = (
 /turf/unsimulated/mineral,
@@ -74898,12 +74898,12 @@
 /obj/structure/flora/ausbushes/genericbush,
 /obj/structure/flora/small/busha2,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "pLJ" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "pLP" = (
 /obj/effect/floor_decal/industrial/danger{
@@ -75617,7 +75617,7 @@
 /area/nadezhda/engineering/atmos/storage)
 "pRX" = (
 /obj/structure/flora/ausbushes/pointybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "pSn" = (
 /obj/structure/table/rack,
@@ -75634,7 +75634,7 @@
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "pSF" = (
 /obj/structure/disposalpipe/segment{
@@ -75833,7 +75833,7 @@
 /turf/unsimulated/mineral,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "pUU" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
@@ -77096,7 +77096,7 @@
 "qit" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "qiB" = (
 /obj/structure/closet/bombcloset/security,
@@ -77394,7 +77394,7 @@
 /area/shuttle/vasiliy_shuttle_area)
 "qli" = (
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "qlq" = (
 /obj/structure/table/reinforced,
@@ -77569,7 +77569,7 @@
 "qmO" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "qmT" = (
 /obj/structure/table/standard,
@@ -79498,7 +79498,7 @@
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "qHg" = (
 /obj/random/mob/roaches/low_chance,
@@ -79969,7 +79969,7 @@
 "qMw" = (
 /obj/structure/flora/small/bushc1,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/lakeside)
 "qMx" = (
 /obj/machinery/light{
@@ -80714,7 +80714,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/dorm1)
 "qVT" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/dcave)
 "qWa" = (
 /obj/effect/decal/cleanable/rubble,
@@ -80949,7 +80949,7 @@
 	})
 "qYC" = (
 /obj/structure/flora/small/rock1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "qYF" = (
 /obj/effect/floor_decal/industrial/hatch,
@@ -80964,7 +80964,7 @@
 "qYJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/lakeside)
 "qYN" = (
 /obj/machinery/light{
@@ -81415,7 +81415,7 @@
 "rew" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "reB" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
@@ -82597,7 +82597,7 @@
 /area/nadezhda/command/tcommsat/computer)
 "rqn" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "rqu" = (
 /obj/structure/table/standard,
@@ -82772,7 +82772,7 @@
 "rsQ" = (
 /obj/structure/flora/small/bushc1,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "rsR" = (
 /obj/structure/flora/small/bushc3,
@@ -83670,7 +83670,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "rCt" = (
 /obj/structure/flora/small/bushc3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "rCu" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/red{
@@ -84030,7 +84030,7 @@
 /area/nadezhda/command/tcommsat/computer)
 "rGO" = (
 /obj/structure/flora/small/grassb3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "rGU" = (
 /obj/structure/boulder,
@@ -86312,7 +86312,7 @@
 "sem" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "sep" = (
 /turf/simulated/floor/carpet,
@@ -86411,7 +86411,7 @@
 "sfF" = (
 /obj/structure/flora/small/grassb4,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "sfG" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
@@ -86906,7 +86906,7 @@
 "slP" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "sma" = (
 /obj/machinery/light,
@@ -88529,7 +88529,7 @@
 "sAI" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/pointybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "sAK" = (
 /turf/simulated/shuttle/wall/mining{
@@ -89466,7 +89466,7 @@
 "sLI" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "sLJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
@@ -90382,7 +90382,7 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "sWc" = (
 /obj/structure/flora/ausbushes/leafybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "sWd" = (
 /obj/machinery/light/small,
@@ -91172,7 +91172,7 @@
 "ten" = (
 /obj/structure/flora/small/busha2,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "tes" = (
 /obj/structure/showcase{
@@ -91318,7 +91318,7 @@
 "tgi" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "tgm" = (
 /obj/effect/decal/cleanable/rubble,
@@ -91983,7 +91983,7 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "toz" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "toD" = (
 /turf/simulated/floor/tiled/dark,
@@ -92895,7 +92895,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushc1,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/lakeside)
 "tyg" = (
 /obj/structure/table/standard,
@@ -93283,7 +93283,7 @@
 "tCd" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "tCi" = (
 /obj/structure/shuttle_part/science{
@@ -93790,7 +93790,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "tGU" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "tHe" = (
 /turf/simulated/floor/asteroid/dirt/burned,
@@ -93836,7 +93836,7 @@
 "tHA" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "tHC" = (
 /turf/simulated/floor/tiled/white/cargo,
@@ -94566,7 +94566,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "tOI" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "tOR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -94836,7 +94836,7 @@
 "tQN" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "tQP" = (
 /obj/structure/cable/yellow{
@@ -95251,7 +95251,7 @@
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "tVv" = (
 /obj/structure/railing,
@@ -95944,7 +95944,7 @@
 /area/nadezhda/rnd/server)
 "ucy" = (
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "ucz" = (
 /obj/structure/cable{
@@ -96271,7 +96271,7 @@
 "ufm" = (
 /obj/structure/flora/small/bushc3,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "ufq" = (
 /obj/machinery/photocopier,
@@ -97283,7 +97283,7 @@
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "upE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -97331,7 +97331,7 @@
 "uqp" = (
 /obj/random/flora/small_jungle_tree,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "uqs" = (
 /obj/structure/disposalpipe/segment{
@@ -98067,7 +98067,7 @@
 /area/nadezhda/engineering/atmos)
 "uzy" = (
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "uzG" = (
 /obj/machinery/vending/fitness,
@@ -98717,7 +98717,7 @@
 "uHi" = (
 /obj/structure/flora/small/bushb1,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "uHl" = (
 /obj/structure/flora/small/bushb2,
@@ -98989,7 +98989,7 @@
 "uJu" = (
 /obj/structure/flora/small/busha1,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/dcave)
 "uJv" = (
 /obj/machinery/cooking_with_jane/oven,
@@ -99924,7 +99924,7 @@
 "uRp" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/busha3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "uRs" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -102910,7 +102910,7 @@
 "vwx" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/small/bushb3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "vwy" = (
 /obj/structure/disposalpipe/segment,
@@ -103398,7 +103398,7 @@
 "vDb" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/rock5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "vDe" = (
 /obj/structure/catwalk,
@@ -103629,7 +103629,7 @@
 "vFv" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "vFx" = (
 /obj/structure/flora/small/busha1,
@@ -103749,7 +103749,7 @@
 "vGI" = (
 /obj/structure/flora/small/busha2,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "vGK" = (
 /obj/effect/floor_decal/industrial/road/straight2,
@@ -104735,7 +104735,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "vRn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -105157,7 +105157,7 @@
 "vUF" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/small/busha3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "vUJ" = (
 /obj/structure/boulder,
@@ -105441,7 +105441,7 @@
 "vXl" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "vXp" = (
 /obj/structure/cable/green{
@@ -105619,7 +105619,7 @@
 "vYV" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "vYW" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -106325,7 +106325,7 @@
 "wgZ" = (
 /obj/structure/flora/big/bush3,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "whe" = (
 /obj/structure/cable/green{
@@ -106529,7 +106529,7 @@
 /area/nadezhda/maintenance/substation/sec)
 "wiQ" = (
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
@@ -110392,7 +110392,7 @@
 /area/nadezhda/hallway/surface/section1)
 "wYP" = (
 /obj/structure/flora/small/bushb3,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "wYR" = (
 /obj/machinery/door/unpowered/simple/wood,
@@ -110582,7 +110582,7 @@
 "xbq" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "xbB" = (
 /obj/machinery/light{
@@ -110702,7 +110702,7 @@
 /area/nadezhda/security/sechall)
 "xcY" = (
 /obj/structure/flora/small/busha3,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "xdw" = (
 /obj/item/contraband/poster/placed/generic/high_class_martini,
@@ -111102,7 +111102,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "xhE" = (
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "xhJ" = (
 /obj/structure/sign/faction/neotheology_cross/gold{
@@ -111212,7 +111212,7 @@
 "xjf" = (
 /obj/structure/flora/small/bushc1,
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "xjh" = (
 /obj/machinery/hologram/holopad,
@@ -111480,7 +111480,7 @@
 /area/nadezhda/rnd/research)
 "xkT" = (
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "xlj" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
@@ -111744,7 +111744,7 @@
 "xos" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "xot" = (
 /obj/item/remains/tajaran,
@@ -112360,7 +112360,7 @@
 /area/nadezhda/crew_quarters)
 "xvh" = (
 /obj/structure/flora/big/bush1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "xvi" = (
 /obj/structure/cable/green{
@@ -113029,7 +113029,7 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/small/busha2,
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "xBu" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -114503,7 +114503,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "xQV" = (
 /obj/structure/flora/big/rocks3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "xQX" = (
 /obj/structure/flora/big/rocks1,
@@ -115403,7 +115403,7 @@
 /obj/structure/flora/small/grassb4,
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "yap" = (
 /obj/structure/catwalk,
@@ -115758,7 +115758,7 @@
 "yeD" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "yeH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{

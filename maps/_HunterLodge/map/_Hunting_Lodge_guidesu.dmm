@@ -1677,7 +1677,7 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "jY" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ke" = (
 /turf/simulated/floor/tiled/dark/gray_platform,

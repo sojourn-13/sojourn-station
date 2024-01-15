@@ -13,6 +13,7 @@
 	var/stump_type = /obj/structure/flora/stump //What type stump do we have
 	var/modular_shadow = TRUE //Are rng picker var, yes or no basiclly
 	var/infested = FALSE //Is this tree infested?
+	plane = 99 //To avoid conflicts.
 
 /obj/structure/flora/tree/New()
 	..()
@@ -24,6 +25,8 @@
 	if(prob(5))
 		infested = TRUE
 		desc = "An unsettling feeling comes from this tree. Webs criss-cross the branches."
+	if(determine_night())//If it is night time, it will set the trees to the night-time icon state
+		icon_state = "icon_state"+"_night"
 
 	//This code is only added to the compiler when 'JANEDEBUG' is defined. We can use it this way this for bugtesting.
 	#ifdef JANEDEBUG

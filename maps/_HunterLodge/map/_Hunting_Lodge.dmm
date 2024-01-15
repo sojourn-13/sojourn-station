@@ -880,7 +880,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "eu" = (
 /obj/map_data/hunting_lodge,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ev" = (
 /obj/effect/overlay/water,
@@ -956,7 +956,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "eS" = (
 /obj/structure/invislight,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "eW" = (
 /obj/random/furniture/pottedplant,
@@ -1294,7 +1294,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge)
 "gM" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "gP" = (
 /obj/structure/flora/ausbushes/leafybush,
@@ -1514,7 +1514,7 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ig" = (
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "ij" = (
 /obj/effect/floor_decal/spline/fancy/corner{
@@ -1763,7 +1763,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/forest/hunting_lodge)
 "jY" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ka" = (
 /obj/structure/bonfire/permanent,
@@ -3014,7 +3014,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "Aw" = (
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "AA" = (
 /obj/structure/invislight,
@@ -4113,7 +4113,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "PO" = (
 /obj/structure/invislight,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "Qo" = (
 /obj/structure/table/marble,

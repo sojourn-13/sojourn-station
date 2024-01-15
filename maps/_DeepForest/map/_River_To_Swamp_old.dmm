@@ -332,7 +332,7 @@
 /turf/simulated/wall/r_wall,
 /area/colony/exposedsun/crashed_shop)
 "gk" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/colony/exposedsun/crashed_shop)
 "gl" = (
 /obj/structure/table/rack,

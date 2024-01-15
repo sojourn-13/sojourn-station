@@ -18571,11 +18571,11 @@
 /area/nadezhda/outside/meadow)
 "aQi" = (
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "aQj" = (
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "aQk" = (
 /obj/structure/flora/big/rocks2,
@@ -18716,10 +18716,10 @@
 /area/nadezhda/outside/forest)
 "aQD" = (
 /obj/structure/flora/big/bush1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "aQE" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "aQF" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -20294,7 +20294,7 @@
 /area/nadezhda/outside/pond)
 "aWv" = (
 /obj/structure/flora/small/busha3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "aWw" = (
 /mob/living/simple_animal/yithian,
@@ -21698,7 +21698,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "bbd" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/fnest)
 "bbe" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -21864,7 +21864,7 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/outside/forest)
 "bbK" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/dungeon/outside/hunter_cabin)
 "bbL" = (
 /obj/structure/table/woodentable,
@@ -22584,7 +22584,7 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/outside/security/maingate)
 "bdN" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/pond)
 "bdO" = (
 /obj/item/device/radio/intercom/department/security{
@@ -22814,7 +22814,7 @@
 "beA" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/tree/jungle/variant5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "beB" = (
 /turf/simulated/floor/asteroid/grass,
@@ -23092,7 +23092,7 @@
 /area/nadezhda/outside/forest)
 "bfe" = (
 /obj/structure/flora/tree/jungle/variant5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bff" = (
 /obj/structure/grille{
@@ -23244,7 +23244,7 @@
 /area/nadezhda/outside/forest)
 "bfC" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bfD" = (
 /obj/structure/flora/small/busha1,
@@ -23262,7 +23262,7 @@
 "bfG" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bfH" = (
 /obj/structure/flora/tree/jungle/variant3,
@@ -23280,15 +23280,15 @@
 /area/nadezhda/outside/forest)
 "bfK" = (
 /obj/structure/flora/tree/jungle_small,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bfL" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bfM" = (
 /obj/structure/flora/small/rock2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bfN" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -23331,7 +23331,7 @@
 /area/nadezhda/outside/lakeside)
 "bfV" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bfW" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -23378,7 +23378,7 @@
 "bgg" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgh" = (
 /obj/structure/flora/tree/jungle/variant4,
@@ -23391,7 +23391,7 @@
 /area/nadezhda/outside/forest)
 "bgj" = (
 /obj/structure/flora/ausbushes/genericbush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgk" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -23409,7 +23409,7 @@
 "bgn" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/tree/jungle,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgo" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -23427,16 +23427,16 @@
 /area/nadezhda/outside/forest)
 "bgr" = (
 /obj/structure/flora/tree/jungle,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgs" = (
 /obj/structure/flora/tree/jungle/variant1,
 /obj/structure/flora/tree/jungle_small/variant4,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgt" = (
 /obj/structure/flora/tree/jungle_small/variant4,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgu" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23462,11 +23462,11 @@
 /area/nadezhda/outside/lakeside)
 "bgz" = (
 /obj/structure/flora/tree/jungle_small/variant2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgA" = (
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgB" = (
 /obj/structure/flora/small/busha1,
@@ -23475,12 +23475,12 @@
 /area/nadezhda/outside/forest)
 "bgC" = (
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgD" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/tree/jungle/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgE" = (
 /obj/structure/flora/small/busha3,
@@ -23489,15 +23489,15 @@
 /area/nadezhda/outside/forest)
 "bgF" = (
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgG" = (
 /obj/structure/flora/tree/jungle/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgH" = (
 /obj/structure/flora/tree/jungle_small/variant5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgI" = (
 /turf/simulated/floor/tiled/steel/danger,
@@ -23505,7 +23505,7 @@
 "bgJ" = (
 /obj/structure/flora/tree/jungle_small/variant2,
 /obj/structure/flora/tree/jungle/variant5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgK" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23531,18 +23531,18 @@
 /area/nadezhda/outside/forest)
 "bgP" = (
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgQ" = (
 /obj/structure/flora/tree/jungle_small/variant2,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgR" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgS" = (
 /obj/random/mob/roaches/low_chance,
@@ -23556,7 +23556,7 @@
 "bgT" = (
 /obj/structure/flora/tree/jungle/variant5,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgU" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -23581,26 +23581,26 @@
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/big/bush3,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bgZ" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bha" = (
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhb" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/tree/jungle/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhc" = (
 /obj/structure/flora/big/rocks2,
 /obj/structure/flora/big/bush1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23617,7 +23617,7 @@
 /area/nadezhda/outside/lakeside)
 "bhg" = (
 /obj/structure/flora/small/bushb3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhh" = (
 /obj/structure/flora/small/busha1,
@@ -23628,7 +23628,7 @@
 "bhi" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhj" = (
 /obj/structure/flora/big/bush3,
@@ -23645,7 +23645,7 @@
 /area/nadezhda/outside/forest)
 "bhm" = (
 /obj/structure/flora/big/rocks2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhn" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23682,7 +23682,7 @@
 /area/nadezhda/outside/forest)
 "bht" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhu" = (
 /obj/structure/flora/tree/jungle/variant2,
@@ -23724,7 +23724,7 @@
 "bhB" = (
 /obj/structure/flora/small/busha1,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhC" = (
 /obj/structure/flora/small/bushb3,
@@ -23739,7 +23739,7 @@
 /area/nadezhda/outside/forest)
 "bhE" = (
 /obj/structure/flora/tree/jungle/variant4,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhF" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -23752,7 +23752,7 @@
 /area/nadezhda/outside/forest)
 "bhH" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhI" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -23779,7 +23779,7 @@
 "bhM" = (
 /obj/structure/flora/tree/jungle/variant5,
 /obj/structure/flora/small/busha3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhN" = (
 /mob/living/simple_animal/hostile/frog{
@@ -23795,7 +23795,7 @@
 "bhP" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhQ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -23837,12 +23837,12 @@
 /obj/structure/flora/big/bush3,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhU" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhV" = (
 /obj/structure/flora/small/bushb2,
@@ -23851,12 +23851,12 @@
 /area/nadezhda/outside/forest)
 "bhW" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhX" = (
 /obj/structure/flora/tree/jungle_small/variant5,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bhY" = (
 /obj/structure/flora/tree/jungle/variant1,
@@ -23883,17 +23883,17 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bid" = (
 /obj/structure/flora/small/bushb2,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bie" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bif" = (
 /obj/structure/flora/small/bushb2,
@@ -23902,7 +23902,7 @@
 "big" = (
 /obj/structure/flora/tree/jungle/variant1,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bih" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23925,7 +23925,7 @@
 "bil" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bim" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -23946,7 +23946,7 @@
 "bip" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biq" = (
 /obj/structure/flora/small/busha1,
@@ -23957,21 +23957,21 @@
 "bir" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bis" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bit" = (
 /obj/structure/flora/tree/jungle/variant1,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biu" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biv" = (
 /obj/structure/flora/small/grassb2,
@@ -23980,7 +23980,7 @@
 "biw" = (
 /obj/structure/flora/tree/jungle/variant3,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bix" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -24001,7 +24001,7 @@
 "biA" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/diyaab,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biB" = (
 /obj/structure/flora/small/busha2,
@@ -24011,7 +24011,7 @@
 "biC" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/tree/jungle_small/variant5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biD" = (
 /obj/structure/flora/small/busha1,
@@ -24026,7 +24026,7 @@
 "biF" = (
 /obj/structure/flora/small/busha2,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biG" = (
 /obj/structure/flora/tree/jungle/variant5,
@@ -24077,7 +24077,7 @@
 "biO" = (
 /obj/structure/flora/tree/jungle_small/variant5,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biP" = (
 /obj/structure/flora/tree/jungle/variant5,
@@ -24086,7 +24086,7 @@
 "biQ" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biR" = (
 /mob/living/simple_animal/hostile/diyaab,
@@ -24105,17 +24105,17 @@
 "biU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biV" = (
 /obj/structure/flora/tree/jungle/variant1,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biW" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biX" = (
 /obj/structure/flora/tree/jungle/variant1,
@@ -24124,7 +24124,7 @@
 /area/nadezhda/outside/forest)
 "biY" = (
 /obj/structure/flora/tree/jungle/variant3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "biZ" = (
 /obj/structure/flora/big/bush3,
@@ -24148,16 +24148,16 @@
 /area/nadezhda/outside/pond)
 "bjd" = (
 /obj/structure/flora/ausbushes/pointybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bje" = (
 /obj/structure/flora/tree/jungle_small/variant3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjf" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/pointybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjg" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -24181,7 +24181,7 @@
 "bjj" = (
 /obj/structure/flora/tree/jungle/variant5,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjk" = (
 /obj/structure/flora/rock{
@@ -24192,7 +24192,7 @@
 "bjl" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjm" = (
 /obj/random/structures/low_chance,
@@ -24209,7 +24209,7 @@
 "bjp" = (
 /obj/structure/flora/tree/jungle_small/variant2,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjq" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -24224,7 +24224,7 @@
 "bjs" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjt" = (
 /obj/structure/flora/tree/jungle_small/variant5,
@@ -24234,16 +24234,16 @@
 "bju" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjv" = (
 /obj/structure/flora/small/rock5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjw" = (
 /obj/structure/flora/ausbushes/pointybush,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjx" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -24267,23 +24267,23 @@
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/tree/jungle/variant5,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjB" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjC" = (
 /obj/structure/flora/tree/jungle/variant3,
 /obj/structure/flora/small/bushb2,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjD" = (
 /obj/structure/flora/small/bushc3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjE" = (
 /obj/structure/flora/ausbushes/leafybush,
@@ -24293,10 +24293,10 @@
 "bjF" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/tree/jungle_small/variant3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjG" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/dcave)
 "bjH" = (
 /obj/structure/cable{
@@ -24308,7 +24308,7 @@
 /area/nadezhda/outside/security/maingate)
 "bjI" = (
 /obj/structure/flora/tree/jungle/variant2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -24335,17 +24335,17 @@
 /obj/structure/flora/tree/jungle/variant1,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjP" = (
 /obj/structure/flora/big/rocks3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjQ" = (
 /obj/structure/flora/small/grassb4,
@@ -24360,22 +24360,22 @@
 "bjS" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/rock5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjT" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/tree/jungle_small/variant3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjU" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle/variant3,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "bjV" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle/variant3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjW" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -24387,31 +24387,31 @@
 "bjX" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjY" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bjZ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/rock5,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bka" = (
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/dcave)
 "bkb" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "bkc" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bkd" = (
 /obj/structure/flora/ausbushes/genericbush,
@@ -24438,7 +24438,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/mob/spiders/low_chance,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bki" = (
 /obj/structure/flora/small/rock5,
@@ -24465,7 +24465,7 @@
 "bkn" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/pointybush,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "bko" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -24493,12 +24493,12 @@
 "bks" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bkt" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bku" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -24619,7 +24619,7 @@
 "bkM" = (
 /obj/structure/flora/tree/jungle/variant1,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bkN" = (
 /obj/structure/flora/small/busha1,
@@ -24641,7 +24641,7 @@
 "bkQ" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bkR" = (
 /obj/structure/flora/small/bushc3,
@@ -24707,12 +24707,12 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blc" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bld" = (
 /obj/structure/flora/big/bush3,
@@ -24722,7 +24722,7 @@
 "ble" = (
 /obj/structure/flora/tree/jungle/variant2,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle/variant,
+/turf/simulated/wall/jungle/variant,
 /area/nadezhda/outside/forest)
 "blf" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -24805,7 +24805,7 @@
 "blt" = (
 /obj/structure/flora/tree/jungle/variant1,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blu" = (
 /obj/structure/flora/ausbushes/pointybush,
@@ -24826,17 +24826,17 @@
 "blx" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bly" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blz" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blA" = (
 /obj/structure/flora/small/bushc1,
@@ -24858,7 +24858,7 @@
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blE" = (
 /obj/structure/flora/small/grassb4,
@@ -24869,7 +24869,7 @@
 /obj/structure/flora/small/grassb4,
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blG" = (
 /obj/structure/flora/tree/jungle_small/variant3,
@@ -24883,7 +24883,7 @@
 "blI" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blJ" = (
 /obj/structure/flora/big/bush2,
@@ -24905,7 +24905,7 @@
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blN" = (
 /obj/structure/flora/small/busha1,
@@ -24916,7 +24916,7 @@
 /obj/structure/flora/tree/jungle/variant3,
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blP" = (
 /obj/structure/flora/small/bushb2,
@@ -24924,7 +24924,7 @@
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/big/bush3,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blQ" = (
 /obj/structure/flora/small/bushb2,
@@ -24935,26 +24935,26 @@
 "blR" = (
 /obj/structure/flora/small/grassb4,
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blS" = (
 /obj/structure/flora/small/grassb4,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blT" = (
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blU" = (
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blV" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "blW" = (
 /obj/structure/flora/small/busha1,
@@ -24984,21 +24984,21 @@
 "bmb" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/small/bushb3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmc" = (
 /obj/structure/flora/small/bushb3,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmd" = (
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/big/bush1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bme" = (
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/fnest)
 "bmf" = (
 /obj/structure/flora/small/busha1,
@@ -25007,16 +25007,16 @@
 /area/nadezhda/outside/forest)
 "bmg" = (
 /obj/structure/flora/small/grassb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmh" = (
 /obj/structure/flora/small/grassb2,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmi" = (
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/fnest)
 "bmj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -25042,12 +25042,12 @@
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/small/bushb3,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmo" = (
 /obj/structure/flora/tree/jungle/variant5,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmp" = (
 /obj/structure/flora/small/rock2,
@@ -25101,12 +25101,12 @@
 "bmy" = (
 /obj/structure/flora/big/bush1,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmz" = (
 /obj/structure/flora/tree/jungle/variant3,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmA" = (
 /obj/structure/flora/rock/variant1,
@@ -25126,7 +25126,7 @@
 "bmD" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmE" = (
 /obj/structure/flora/small/busha2,
@@ -25183,7 +25183,7 @@
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/tree/jungle/variant3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmM" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -25207,7 +25207,7 @@
 /area/nadezhda/outside/forest)
 "bmQ" = (
 /obj/structure/flora/small/rock1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmR" = (
 /obj/structure/flora/big/bush3,
@@ -25227,11 +25227,11 @@
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/tree/jungle_small/variant1,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmV" = (
 /obj/structure/flora/ausbushes/sunnybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bmW" = (
 /obj/structure/flora/small/busha2,
@@ -25294,38 +25294,38 @@
 "bnh" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/tree/jungle/variant5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/pond)
 "bni" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/pond)
 "bnj" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushc1,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/pond)
 "bnk" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/pond)
 "bnl" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/pond)
 "bnm" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/pond)
 "bnn" = (
 /obj/structure/flora/small/bushc1,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/pond)
 "bno" = (
 /obj/structure/flora/small/grassb1,
@@ -25402,7 +25402,7 @@
 /area/nadezhda/outside/meadow)
 "bny" = (
 /obj/structure/flora/small/grassb3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bnz" = (
 /obj/structure/flora/ausbushes/fernybush,
@@ -25458,7 +25458,7 @@
 /obj/structure/flora/tree/jungle/variant5,
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bnK" = (
 /obj/structure/flora/tree/jungle/variant1,
@@ -25620,7 +25620,7 @@
 "boh" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle/variant5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "boi" = (
 /obj/structure/flora/big/bush1,
@@ -25685,7 +25685,7 @@
 "bor" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bos" = (
 /obj/structure/flora/ausbushes/pointybush,
@@ -25707,7 +25707,7 @@
 /area/nadezhda/outside/forest)
 "bow" = (
 /obj/structure/flora/small/grassb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "box" = (
 /obj/structure/flora/small/grassb3,
@@ -25783,18 +25783,18 @@
 /area/nadezhda/outside/forest)
 "boJ" = (
 /obj/structure/flora/small/grassa1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "boK" = (
 /obj/structure/flora/tree/jungle_small/variant2,
 /obj/structure/flora/small/grassa1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "boL" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/small/grassa1,
 /obj/structure/flora/small/grassa1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "boM" = (
 /obj/structure/flora/tree/jungle/variant3,
@@ -25823,7 +25823,7 @@
 "boR" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/tree/jungle/variant2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "boS" = (
 /mob/living/simple_animal/goose{
@@ -25842,7 +25842,7 @@
 "boU" = (
 /obj/structure/flora/small/rock5,
 /obj/structure/flora/tree/jungle_small,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "boV" = (
 /obj/structure/cable{
@@ -25923,13 +25923,13 @@
 "bph" = (
 /obj/structure/flora/small/grassb2,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bpi" = (
 /obj/structure/flora/small/grassb2,
 /obj/structure/flora/tree/jungle/variant5,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bpj" = (
 /obj/structure/flora/tree/jungle_small/variant4,
@@ -25947,7 +25947,7 @@
 "bpm" = (
 /obj/structure/flora/small/bushb2,
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bpn" = (
 /obj/structure/flora/small/grassb5,
@@ -25962,7 +25962,7 @@
 /area/nadezhda/outside/forest)
 "bpp" = (
 /obj/structure/flora/small/grassb5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bpq" = (
 /obj/machinery/light{
@@ -25974,12 +25974,12 @@
 "bpr" = (
 /obj/structure/flora/small/grassb5,
 /obj/structure/flora/tree/jungle/variant5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bps" = (
 /obj/structure/flora/small/grassb4,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bpt" = (
 /obj/structure/flora/small/grassb4,
@@ -26034,7 +26034,7 @@
 "bpC" = (
 /obj/structure/flora/small/grassb5,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bpD" = (
 /obj/structure/flora/small/busha1,
@@ -26108,7 +26108,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bpP" = (
 /obj/structure/flora/big/bush1,
@@ -26138,7 +26138,7 @@
 "bpU" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/tree/jungle_small/variant5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bpV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26148,7 +26148,7 @@
 "bpW" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/grassb4,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bpX" = (
 /obj/structure/flora/small/grassb4,
@@ -26203,7 +26203,7 @@
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/tree/jungle_small/variant2,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bqg" = (
 /obj/structure/flora/small/grassb4,
@@ -26223,7 +26223,7 @@
 "bqj" = (
 /obj/structure/flora/tree/jungle/variant5,
 /obj/structure/flora/tree/jungle_small/variant2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bqk" = (
 /obj/structure/flora/small/grassb4,
@@ -26233,7 +26233,7 @@
 "bql" = (
 /obj/structure/flora/small/bushb1,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bqm" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -26250,7 +26250,7 @@
 /obj/structure/flora/small/grassb4,
 /obj/structure/flora/small/busha1,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bqp" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -26320,7 +26320,7 @@
 "bqE" = (
 /obj/structure/flora/small/bushc1,
 /obj/structure/flora/tree/jungle_small/variant4,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bqF" = (
 /obj/structure/flora/tree/jungle_small/variant2,
@@ -26365,7 +26365,7 @@
 "bqN" = (
 /obj/structure/flora/tree/jungle/variant5,
 /obj/structure/flora/small/rock5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bqO" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -26406,7 +26406,7 @@
 "bqV" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/tree/jungle_small/variant4,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bqW" = (
 /obj/structure/flora/tree/jungle,
@@ -26455,7 +26455,7 @@
 "brg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brh" = (
 /obj/machinery/button/crematorium{
@@ -26475,7 +26475,7 @@
 "brk" = (
 /obj/structure/flora/tree/jungle_small,
 /obj/structure/flora/tree/jungle/variant5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brl" = (
 /turf/simulated/floor/beach/sand,
@@ -26483,13 +26483,13 @@
 "brm" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/tree/jungle/variant3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brn" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bro" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -26503,13 +26503,13 @@
 "brq" = (
 /obj/structure/flora/tree/jungle/variant5,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brr" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/tree/jungle/variant3,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brs" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26517,7 +26517,7 @@
 /area/nadezhda/hallway/surface/section3)
 "brt" = (
 /obj/structure/flora/ausbushes/leafybush,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bru" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -26543,7 +26543,7 @@
 /obj/structure/flora/tree/jungle/variant5,
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brz" = (
 /obj/machinery/light{
@@ -26556,7 +26556,7 @@
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brB" = (
 /obj/structure/flora/small/busha2,
@@ -26567,7 +26567,7 @@
 /obj/structure/flora/ausbushes/genericbush,
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brD" = (
 /obj/structure/flora/ausbushes/genericbush,
@@ -26578,12 +26578,12 @@
 "brE" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brF" = (
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brG" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -26594,7 +26594,7 @@
 /obj/structure/flora/tree/jungle/variant4,
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brI" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26614,7 +26614,7 @@
 "brL" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brM" = (
 /obj/structure/flora/ausbushes/grassybush,
@@ -26635,7 +26635,7 @@
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/tree/jungle/variant3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brQ" = (
 /obj/structure/flora/small/busha2,
@@ -26665,7 +26665,7 @@
 /obj/structure/flora/tree/jungle/variant5,
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "brW" = (
 /turf/simulated/floor/beach/water/shallow,
@@ -26688,12 +26688,12 @@
 "bsa" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/tree/jungle/variant5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsb" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsc" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -26709,19 +26709,19 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsf" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsg" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsh" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -26743,7 +26743,7 @@
 "bsk" = (
 /obj/structure/flora/tree/jungle/variant1,
 /obj/structure/flora/tree/jungle_small,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsl" = (
 /obj/structure/flora/small/rock5,
@@ -26753,81 +26753,81 @@
 "bsm" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsn" = (
 /obj/structure/flora/small/busha1,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bso" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/busha3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsp" = (
 /obj/structure/flora/tree/jungle_small/variant4,
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsq" = (
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/tree/jungle/variant3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsr" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/small/bushb1,
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bss" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/tree/jungle/variant3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bst" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/small/busha2,
 /obj/structure/flora/tree/jungle/variant5,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsu" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsv" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsw" = (
 /obj/structure/flora/small/bushc1,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsx" = (
 /obj/structure/flora/small/bushc3,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsy" = (
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsA" = (
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsB" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/big/bush2,
 /obj/structure/flora/tree/jungle_small/variant1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "bsC" = (
 /obj/structure/flora/small/rock5,

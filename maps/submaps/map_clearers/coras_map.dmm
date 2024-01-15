@@ -54,7 +54,7 @@
 /area/nadezhda/outside/meadow)
 "bz" = (
 /obj/structure/flora/small/busha1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "bA" = (
 /obj/structure/table/marble,
@@ -251,7 +251,7 @@
 /area/asteroid/rogue)
 "kc" = (
 /obj/structure/flora/small/bushb2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "ky" = (
 /obj/structure/table/marble,
@@ -292,7 +292,7 @@
 /area/nadezhda/outside/meadow)
 "lw" = (
 /obj/structure/flora/big/bush2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "lH" = (
 /obj/structure/closet/crate/bin,
@@ -409,7 +409,7 @@
 /area/nadezhda/outside/meadow)
 "oy" = (
 /obj/structure/flora/small/bushb1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "oA" = (
 /obj/random/flora/jungle_tree,
@@ -619,7 +619,7 @@
 /area/asteroid/rogue)
 "wf" = (
 /obj/structure/flora/small/bushc1,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "wi" = (
 /obj/structure/table/marble,
@@ -810,7 +810,7 @@
 /area/asteroid/rogue)
 "Dn" = (
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "DL" = (
 /obj/structure/bookcase,
@@ -899,7 +899,7 @@
 "Gj" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "Gq" = (
 /obj/structure/table/marble,
@@ -935,7 +935,7 @@
 /area/asteroid/rogue)
 "Ha" = (
 /obj/structure/flora/small/busha2,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "Hb" = (
 /obj/structure/table/rack/shelf,
@@ -1006,7 +1006,7 @@
 /area/asteroid/rogue)
 "JL" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "Ki" = (
 /obj/structure/multiz/ladder,
@@ -1024,7 +1024,7 @@
 /turf/simulated/floor/rock/manmade/ruin3,
 /area/asteroid/rogue)
 "Ko" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "Kz" = (
 /obj/random/flora/jungle_tree,
@@ -1121,7 +1121,7 @@
 /area/asteroid/rogue)
 "NF" = (
 /obj/random/flora/small_jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "NJ" = (
 /obj/structure/bookcase,
@@ -1216,7 +1216,7 @@
 /area/nadezhda/outside/meadow)
 "Qz" = (
 /obj/random/flora/jungle_tree,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "QC" = (
 /obj/random/flora/jungle_tree,
@@ -1370,7 +1370,7 @@
 "UR" = (
 /obj/structure/flora/big/bush3,
 /obj/structure/flora/big/bush3,
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/nadezhda/outside/meadow)
 "UZ" = (
 /obj/structure/toilet,

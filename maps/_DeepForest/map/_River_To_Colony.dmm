@@ -889,7 +889,7 @@
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/colony/exposedsun/crashed_shop)
 "uY" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/colony/exposedsun/crashed_shop)
 "vn" = (
 /obj/structure/lattice,

@@ -149,7 +149,7 @@
 /turf/simulated/floor/fixed/fgrass,
 /area/deepmaint)
 "aD" = (
-/turf/unsimulated/wall/jungle,
+/turf/simulated/wall/jungle,
 /area/deepmaint)
 "aE" = (
 /obj/random/cluster/psi_monster/lower_chance,
