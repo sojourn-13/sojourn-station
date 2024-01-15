@@ -61,33 +61,14 @@
 		update_ore_count()
 		last_update = world.time
 
-	to_chat(user, "It holds:")
-	for(var/ore in stored_ore)
-		to_chat(user, "- [stored_ore[ore]] [ore]")
-	return
-
-
-/obj/structure/ore_box/verb/empty_box()
-	set name = "Empty Ore Box"
-	set category = "Object"
-	set src in view(1)
-
-	if(!ishuman(usr)) //Only living, intelligent creatures with hands can empty ore boxes.
-		to_chat(usr, "\red You are physically incapable of emptying the ore box.")
-		return
-
-	if( usr.stat || usr.restrained() )
-		return
-
-	if(!Adjacent(usr)) //You can only empty the box if you can physically reach it
-		to_chat(usr, "You cannot reach the ore box.")
-		return
-
-	add_fingerprint(usr)
-
-	if(contents.len < 1)
-		to_chat(usr, "\red The ore box is empty")
-		return
+	to_chat(user, SPAN_NOTICE("The box contains:"))
+	var/list/nice_display_list = list()
+	for(var/type in contents)
+		var/obj/item/stack/ore/O = type
+		nice_display_list[initial(O.name)] += O.amount
+	for(var/element in nice_display_list)
+		var/numtoshow = nice_display_list[element]
+		to_chat(user, SPAN_NOTICE("[numtoshow] of [element]"))
 
 /obj/structure/ore_box/attack_hand(mob/user, list/modifiers)
 	. = ..()
@@ -123,8 +104,8 @@
 /obj/structure/ore_box/ui_data()
 	var/data = list()
 	data["materials"] = list()
-	for(var/ore in stored_ore)
-		data["materials"] += list(list("name" = ore, "amount" = stored_ore[ore], "type" = ore))
+	for(var/obj/item/stack/ore in contents)
+		data["materials"] += list(list("name" = ore, "amount" = ore.amount, "type" = ore))
 
 	return data
 
