@@ -95,6 +95,32 @@
 	matter = list(MATERIAL_BIOMATTER = 20)
 	price_tag = 800
 
+obj/item/storage/pouch/large_generic/advmedic
+	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket. This one is well worn and reeks like the inside of a frontier-chemlab."
+
+obj/item/storage/pouch/large_generic/advmedic/populate_contents()
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/meralyn(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/meralyn(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/meralyn(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/vermicetol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/vermicetol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/vermicetol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/varceptol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/varceptol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/varceptol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/blood(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/blood(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/blood(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/blood(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon(src)
+
+
 /obj/item/storage/pouch/large_generic/leather
 	desc = "A mini satchel made of leather. Can hold a fair bit, but it won't fit in your pocket"
 	icon_state = "large_leather"
