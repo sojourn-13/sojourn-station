@@ -22536,26 +22536,6 @@
 /obj/item/ammo_magazine/magnum_40,
 /obj/item/ammo_magazine/magnum_40,
 /obj/item/ammo_magazine/magnum_40,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/dominion,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/counselor,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/halicon,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lightfall,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/nemesis,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/purger,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/regulator,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/themis,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/valkirye,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_plasma_shells{
-	disk_name = "Absolute Armory - Plasma Shell Prime Pack";
-	license = 24
-	},
-/obj/item/computer_hardware/hard_drive/portable/design/guns/concillium,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/counselor,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
 "eNt" = (
@@ -75777,12 +75757,6 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "pTT" = (
-/obj/item/computer_hardware/hard_drive/portable/design/nt/bioprinter{
-	pixel_x = 7
-	},
-/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms{
-	pixel_x = -6
-	},
 /obj/machinery/smartfridge/disk,
 /obj/structure/table/woodentable,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
