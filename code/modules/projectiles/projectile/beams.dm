@@ -210,6 +210,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/stun
 	name = "stun beam"
 	icon_state = "stun"
+	armor_penetration = 0
 	nodamage = 1
 	taser_effect = 1
 	agony = 30

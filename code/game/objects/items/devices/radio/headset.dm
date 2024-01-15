@@ -122,6 +122,11 @@
 	name = "sergeant bowman headset"
 	ks2type = /obj/item/device/encryptionkey/headset_bs/sergeant
 
+/obj/item/device/radio/headset/headset_blackshield/bowman/solfed
+	name = "bowman headset"
+	desc = "Looks an awful lot like the headsets used by the blackshield, despite it this one appears to be quite old."
+	ks2type = /obj/item/device/encryptionkey/syndicate
+
 /obj/item/device/radio/headset/radiohat_blackshield // No longer a cap, a honest to god cap with a FUNCTIONAL headset. - Seb
 	name = "blackshield radio hat"
 	desc = "A faded black cap with the badge of the Blackshield. Comes attached with an industrial radio headset for long-range communication."

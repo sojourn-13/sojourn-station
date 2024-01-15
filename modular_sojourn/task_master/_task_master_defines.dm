@@ -9,3 +9,4 @@
 #define PROPER_SEALER /datum/task_master/task/proper_sealer
 #define TOOL_BREAKER /datum/task_master/task/tool_breaker
 #define PROPER_AREA_SMOKER /datum/task_master/task/proper_area_smoker
+#define POORS /datum/task_master/task/poors
