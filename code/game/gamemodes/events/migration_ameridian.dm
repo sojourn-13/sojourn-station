@@ -83,6 +83,6 @@
 			if(istype(T, /turf/space)) //If they end up outside the map then we remove them on end
 				spawned_ameridian.Remove(a)
 				qdel(a)
-			if(istype(T, /turf/simulated/wall/jungle))
+			if(istype(T, /turf/unsimulated/wall/jungle))
 				spawned_ameridian.Remove(a)
 				qdel(a)

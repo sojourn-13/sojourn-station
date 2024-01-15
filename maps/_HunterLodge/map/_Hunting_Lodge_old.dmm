@@ -106,7 +106,7 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aB" = (
-/turf/simulated/wall/jungle/variant,
+/turf/unsimulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aC" = (
 /obj/random/flora/jungle_tree,
@@ -187,7 +187,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "aO" = (
 /obj/item/stack/ore,
-/turf/simulated/wall/jungle/variant,
+/turf/unsimulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "aP" = (
 /turf/simulated/wall/wood,
@@ -278,7 +278,7 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "aZ" = (
 /obj/random/flora/jungle_tree,
-/turf/simulated/wall/jungle/variant,
+/turf/unsimulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ba" = (
 /turf/simulated/wall,
@@ -1488,10 +1488,10 @@
 /area/nadezhda/outside/forest/hunting_lodge)
 "eu" = (
 /obj/map_data/hunting_lodge,
-/turf/simulated/wall/jungle/variant,
+/turf/unsimulated/wall/jungle/variant,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ev" = (
-/turf/simulated/wall/jungle,
+/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/hunting_lodge)
 "ew" = (
 /turf/simulated/open,

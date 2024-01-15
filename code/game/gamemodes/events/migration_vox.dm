@@ -83,6 +83,6 @@
 			if(istype(T, /turf/space)) //If they end up outside the map then we remove them on end
 				spawned_vox.Remove(v)
 				qdel(v)
-			if(istype(T, /turf/simulated/wall/jungle))
+			if(istype(T, /turf/unsimulated/wall/jungle))
 				spawned_vox.Remove(v)
 				qdel(v)

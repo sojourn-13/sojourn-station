@@ -17604,7 +17604,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "aTY" = (
 /obj/structure/flora/big/rocks3,
-/turf/simulated/wall/jungle,
+/turf/unsimulated/wall/jungle,
 /area/nadezhda/maintenance/undergroundfloor1oldgarden)
 "aTZ" = (
 /obj/structure/multiz/stairs/enter/bottom{

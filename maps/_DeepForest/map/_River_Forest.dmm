@@ -143,7 +143,7 @@
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "aD" = (
-/turf/simulated/wall/jungle,
+/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "aE" = (
 /obj/item/remains,
@@ -520,7 +520,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/river_forest_light)
 "gL" = (
-/turf/simulated/wall/jungle,
+/turf/unsimulated/wall/jungle,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/river_forest_light)
 "gO" = (
@@ -4901,7 +4901,7 @@
 /area/nadezhda/outside/forest/river_forest_underground)
 "Zn" = (
 /obj/structure/flora/big/bush2,
-/turf/simulated/wall/jungle,
+/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest/river_forest_light)
 "Zo" = (
 /obj/structure/table/rack/shelf,
