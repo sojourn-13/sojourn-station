@@ -531,3 +531,9 @@
 	desc = "A modern dark blue uniform jacket with red trimmings. Fit for a general officer, even one on the frontier."
 	icon_state = "brigadier_dress"
 	item_state = "brigadier_dress"
+
+//Solfed alternatives.
+/obj/item/clothing/under/rank/fatigues/camo/solfed
+	name = "camo utility uniform"
+	desc = "A camo utility uniform, bearing worn patches of the Solar armed forces.."
+	armor_list = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
