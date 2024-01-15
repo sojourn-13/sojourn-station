@@ -9,10 +9,14 @@
 	maxHealth = 450
 	ranged = FALSE
 
-
 	armor = list(melee = 35, bullet = 70, energy = 35, bomb = 35, bio = 100, rad = 50)
 	faction = "pirate"
 	icon = 'icons/mob/mobs-humanoid.dmi'
+
+	get_stat_modifier = FALSE
+	breath_required_type = 0 // Doesn't need to breath, in a space suit
+	breath_poison_type = 0 // Can't be poisoned
+	min_air_pressure = 0 // Doesn't need pressure
 
 /mob/living/carbon/superior_animal/human/eventwolf/handle_breath(datum/gas_mixture/breath) //we have are own air supplies
 	return
@@ -24,10 +28,6 @@
 	to_chat(src, SPAN_WARNING("Your hand gets pushed away from \the [src]. !"))
 	return
 
-	get_stat_modifier = FALSE
-	breath_required_type = 0 // Doesn't need to breath, in a space suit
-	breath_poison_type = 0 // Can't be poisoned
-	min_air_pressure = 0 // Doesn't need pressure
 
 
 /mob/living/carbon/superior_animal/human/eventwolf/explosive
