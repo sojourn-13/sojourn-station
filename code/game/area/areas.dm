@@ -275,24 +275,33 @@
 var/list/mob/living/forced_ambiance_list = new
 
 /area/Entered(A)
-	if(!isliving(A))
+	if (!isliving(A))
 		return
 
 	var/mob/living/L = A
-	if(!L.ckey)	return
+	if (!L.ckey)
+		return
 
-	if(!L.lastarea)
+	if (!L.lastarea)
 		L.lastarea = get_area(L.loc)
+
 	var/area/newarea = get_area(L.loc)
 	var/area/oldarea = L.lastarea
-	if(oldarea.has_gravity != newarea.has_gravity)
-		if(newarea.has_gravity == 1 && !MOVING_DELIBERATELY(L)) // Being ready when you change areas allows you to avoid falling.
+
+	if (oldarea.has_gravity != newarea.has_gravity)
+		if (newarea.has_gravity == 1 && !MOVING_DELIBERATELY(L))
 			thunk(L)
 		L.update_floating()
 
+	if (newarea.is_forest)
+		L.see_in_dark = 100
+	else
+		L.update_sight()
+
 	L.lastarea = newarea
+
 	play_ambience(L)
-	do_area_blurb(L) // This handles narration logic.
+	do_area_blurb(L)
 
 /area/proc/play_ambience(var/mob/living/L)
     // Ambience goes down here -- make sure to list each area seperately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch

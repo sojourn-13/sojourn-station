@@ -33,6 +33,13 @@
 			return
 		return
 
+/turf/unsimulated/wall/jungle/New() //please turn a blind eye // PART OF DAY/NIGHT CYCLE
+	if(determine_night())
+		isTransparent = 1
+		plane = 60
+	else
+		isTransparent = 0
+
 /turf/unsimulated/wall/jungle
 	name = "dense forestry"
 	icon = 'icons/turf/flooring/grass.dmi'
@@ -40,7 +47,9 @@
 	desc = "A thick, impassable mass of plants and shrubbery."
 	blocks_air = 1
 	density = 1
-	opacity = 1
+	plane = 60 // This is to prevent conflicts.
+	layer = BELOW_OBJ_LAYER
+	plane = PLANE_SPACE
 
 /turf/unsimulated/wall/jungle/variant
 	name = "dense forestry"
@@ -50,6 +59,7 @@
 	blocks_air = 1
 	density = 1
 	opacity = 1
+	layer = BELOW_OBJ_LAYER
 
 /turf/simulated/mineral //wall piece
 	name = "Rock"
