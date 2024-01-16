@@ -278,12 +278,6 @@
 			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.joint] is dangling uselessly!</span><br>"
 		if(((temp.status & ORGAN_BROKEN) && temp.brute_dam > temp.min_broken_damage) || (temp.status & ORGAN_MUTATED))
 			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.name] is mangled!</span><br>"
-		if(temp.germ_level > INFECTION_LEVEL_ONE && temp.germ_level < INFECTION_LEVEL_TWO)//Occulus Edit: Infection status on examine
-			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.name] is greenishly discolored!</span><br>"
-		else if(temp.germ_level > INFECTION_LEVEL_TWO && temp.germ_level < INFECTION_LEVEL_THREE)
-			wound_flavor_text["[temp.name]"] += "<span class='warning'>[His] [temp.name] is oozing pus!</span><br>"
-		else if(temp.germ_level > INFECTION_LEVEL_THREE)
-			wound_flavor_text["[temp.name]"] += "<span class='danger'>[His] [temp.name] is covered in decaying tissue!</span><br>"
 		if(temp.status & ORGAN_DEAD)
 			wound_flavor_text["[temp.name]"] += "<span class='danger'>[His] [temp.name] is necrotic!</span><br>"//Occulus Edit End
 		for(var/obj/item/organ/internal/blood_vessel/BV in temp.internal_organs)//Occulus Edit: Ruptured Blood Vessel

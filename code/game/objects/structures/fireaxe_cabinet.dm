@@ -24,6 +24,7 @@
 	shattered = TRUE
 	unlocked = TRUE
 	open = TRUE
+	sanity_damage = 0.1 //Broken window theory
 	playsound(user, 'sound/effects/Glassbr3.ogg', 100, 1)
 	update_icon()
 

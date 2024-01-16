@@ -15,7 +15,7 @@
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold  = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 1000
 	stations_recommended = list("casino", "kriosanconfederacy")
 	inventory  = list(
 		"Tools and Equipment" = list(
@@ -52,6 +52,13 @@
 			/obj/item/grenade/chem_grenade/antiweed,
 			/obj/item/grenade/chem_grenade/cleaner,
 			/obj/item/grenade/chem_grenade/metalfoam
+		),
+		"Mining Gear" = list(
+			/obj/item/tool/karl,
+			/obj/item/tool/pickaxe,
+			/obj/item/tool/pickaxe/excavation,
+			/obj/item/storage/bag/ore,
+			/obj/structure/ore_box
 		),
 		"Toys" = list(
 			/obj/item/toy/junk/balloon = good_data("Water Balloon", list(1, 50), 5),

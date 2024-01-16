@@ -29,6 +29,7 @@
 		if(MOVING_DELIBERATELY(src))
 			volume -= 45
 			range -= 0.333
+			sanity.changeLevel(0.05) //If we walk around we are less stressed
 		if(!shoes)
 			volume -= 60
 			range -= 0.333

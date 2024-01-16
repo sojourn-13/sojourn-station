@@ -261,7 +261,7 @@
 									else
 										src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
 										M.drip_blood(200)
-										M.adjustToxLoss(200)
+										M.adjustToxLoss(6)
 										M.adjustOxyLoss(200)
 										M.adjustBrainLoss(60)
 										M.updatehealth()

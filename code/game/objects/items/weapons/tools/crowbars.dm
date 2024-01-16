@@ -14,6 +14,13 @@
 	tool_qualities = list(QUALITY_PRYING = 35, QUALITY_DIGGING = 10, QUALITY_HAMMERING = 10)
 	price_tag = 15
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("crushes", "bashes", "wacks", "bludgeones")
+	alt_mode_toggle = "flips the bend of the bar"
+	alt_mode_lossrate = 1.3
+
 /obj/item/tool/crowbar/bs
 	name = "bluespace crowbar"
 	icon_state = "bs_crowbar"
@@ -32,7 +39,7 @@
 
 /obj/item/tool/crowbar/onestar
 	name = "Greyson Positronic crowbar"
-	desc = "Looks like a classic one, but more durable. Has more space for mods too."
+	desc = "Looks like a classic one, but more durable."
 	icon_state = "one_star_crowbar"
 	item_state = "onestar_crowbar"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLATINUM = 1)
@@ -42,6 +49,9 @@
 	workspeed = 1.2
 	price_tag = 180 // Fancy but still just a crowbar.
 	allow_greyson_mods = TRUE
+
+	alt_mode_toggle = "flips the bend of the bar, unlocking its true potential"
+	alt_mode_lossrate = 1.5
 
 /obj/item/tool/crowbar/pneumatic
 	name = "pneumatic crowbar"

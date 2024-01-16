@@ -42,7 +42,7 @@
 				amt++
 				qdel(O)
 		if(user && user.stats)
-			if(user.stats.getPerk(/datum/perk/neat))
+			if(user.stats.getPerk(PERK_NEAT))
 				if(ishuman(user))
 					var/mob/living/carbon/human/H = user
 					if(H.sanity)

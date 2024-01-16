@@ -325,7 +325,10 @@
 	var/deadtime = world.time - H.timeofdeath
 	if (deadtime > DEFIB_TIME_LIMIT && !H.isSynthetic())
 		return "buzzes: \"Resuscitation failed - Excessive neural degeneration. Further attempts futile.\""
-
+/* commenting this out for now due to it seeming to be a bit *too* sensitive.
+	if(H.getBrainLoss() >= 200)
+		return "buzzes: \"Resuscitation failed - Massive neural damage. Further attempts futile.\""
+*/
 	H.updatehealth()
 
 	if(H.isSynthetic())
@@ -374,7 +377,7 @@
 	if(!H.should_have_process(OP_HEART))
 		return FALSE
 
-	var/obj/item/organ/internal/heart/heart = H.random_organ_by_process(OP_HEART)
+	var/obj/item/organ/internal/vital/heart/heart = H.random_organ_by_process(OP_HEART)
 	if(!heart)
 		return TRUE
 
@@ -473,7 +476,7 @@
 	H.adjustOxyLoss(-defib_oxygain())
 
 	if(H.isSynthetic())
-		H.adjustToxLoss(-H.getToxLoss())
+		H.setToxLoss(0)
 
 	H.apply_damage(burn_damage_amt, BURN, BP_TORSO)
 
@@ -550,7 +553,7 @@
 	M.updatehealth()
 	apply_brain_damage(M, deadtime)
 
-	if(!M.stats.getPerk(/datum/perk/rezsickness))
+	if(!M.stats.getPerk(PERK_REZ_SICKNESS))
 		var/rngStatRemoved
 		switch(M.stats.getStat(STAT_MEC))
 			if(0 to 40)
@@ -622,16 +625,16 @@
 	if(!advanced_pads)
 		switch(M.stats.getStat(STAT_TGH))
 			if(-200 to 40)
-				M.stats.addPerk(/datum/perk/rezsickness/severe/fatal)
+				M.stats.addPerk(PERK_REZ_SICKNESS_FATAL)
 				log_and_message_admins("Added fatal rez sickness to [M].")
 			if(40 to 60)
-				M.stats.addPerk(/datum/perk/rezsickness/severe)
+				M.stats.addPerk(PERK_REZ_SICKNESS_SEVERE)
 				log_and_message_admins("Added severe rez sickness to [M].")
 			if(60 to INFINITY)
-				M.stats.addPerk(/datum/perk/rezsickness)
+				M.stats.addPerk(PERK_REZ_SICKNESS)
 				log_and_message_admins("Added mild rez sickness to [M].")
 	else
-		M.stats.addPerk(/datum/perk/rezsickness)
+		M.stats.addPerk(PERK_REZ_SICKNESS)
 		log_and_message_admins("Added mild rez sickness to [M].")
 
 /obj/item/shockpaddles/proc/apply_brain_damage(mob/living/carbon/human/H, var/deadtime)
@@ -639,7 +642,7 @@
 
 	if(!H.should_have_process(BP_BRAIN)) return //no brain
 
-	var/obj/item/organ/internal/brain/brain = H.random_organ_by_process(BP_BRAIN)
+	var/obj/item/organ/internal/vital/brain/brain = H.random_organ_by_process(BP_BRAIN)
 	if(!brain) return //no brain
 
 	var/brain_damage = CLAMP((deadtime - DEFIB_TIME_LOSS)/(DEFIB_TIME_LIMIT - DEFIB_TIME_LOSS)*brain.max_damage, H.getBrainLoss(), brain.max_damage)

@@ -10,10 +10,20 @@
 	max_blood_storage = 10
 	oxygen_req = 1
 	nutriment_req = 1
+	min_bruised_damage = IORGAN_STANDARD_BRUISE + 1
+	min_broken_damage = IORGAN_STANDARD_BREAK + 1
+	min_bruised_damage = 4
+	min_broken_damage = 7
 	var/eyes_color = "#000000"
 	var/robo_color = "#000000"
 	var/cache_key = BP_EYES
 	w_class =  ITEM_SIZE_TINY
+
+
+/obj/item/organ/internal/eyes/plant
+	name = "photoreceptors"
+	desc = "Plant Eyes. They allow you to see."
+	icon_state = "eyes_plant"
 
 /obj/item/organ/internal/eyes/marqua
 	name = "eyeball"
@@ -61,7 +71,7 @@
 		return
 	eyes_color = owner.eyes_color
 
-/obj/item/organ/internal/eyes/take_damage(amount, var/silent=0)
+/obj/item/organ/internal/eyes/take_damage(amount, damage_type = BRUTE, wounding_multiplier = 1, sharp = FALSE, edge = FALSE, silent = FALSE)
 	var/oldbroken = is_broken()
 	..()
 	if(is_broken() && !oldbroken && owner && !owner.stat)

@@ -174,16 +174,12 @@
 			if(pump_direction) //internal -> external
 				var/transfer_moles = calculate_transfer_moles(air_contents, environment, pressure_delta)
 				power_draw += pump_gas(src, air_contents, environment, transfer_moles, power_rating)
-				//if(debug)
-				//	log_debug("Pump Gas internal -> external: environment [environment] - air contents: [air_contents] - transfer moless: [transfer_moles] - Power-rating: [power_rating]")
 			else //external -> internal
 				var/transfer_moles = calculate_transfer_moles(environment, air_contents, pressure_delta, (network)? network.volume : 0)
 
 				//limit flow rate from turfs
 				transfer_moles = min(transfer_moles, environment.total_moles*air_contents.volume/environment.volume)	//group_multiplier gets divided out here
 				power_draw += pump_gas(src, environment, air_contents, transfer_moles, power_rating)
-				//if(debug)
-				//	log_debug("Pump Gas external -> internal: environment [environment] - air contents: [air_contents] - transfer moless: [transfer_moles] - Power-rating: [power_rating]")
 			transfer_happened = TRUE
 
 	if(transfer_happened)

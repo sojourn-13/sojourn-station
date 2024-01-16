@@ -32,23 +32,25 @@
 	result = "harms"
 	required_reagents = list("iron" = 1, "silicon" = 1, "sodiumchloride" = 1)
 	result_amount = 1
+	mix_message = "The solution crystalizes into small golden fragments."
 	require_containers = list(/obj/item/reagent_containers/glass/beaker/flask_alchemy)
 
 /datum/chemical_reaction/oils
-	result = "oils"
+	result = "burns"
 	required_reagents = list("oil" = 1, "sodiumchloride" = 1, "iron" = 1)
 	result_amount = 1
+	mix_message = "The solution begins to fizzle violently, falling inert shortly afterwards..."
 	require_containers = list(/obj/item/reagent_containers/glass/beaker/flask_alchemy)
 
-/datum/chemical_reaction/mind_exspander
-	result = "mind_exspander"
-	required_reagents = list(MATERIAL_GOLD = 1, "sodiumchloride" = 1, "tatonka_milk" = 1)
+/datum/chemical_reaction/mind_expander
+	result = "mind_expander"
+	required_reagents = list(MATERIAL_GOLD = 1, "sodiumchloride" = 1, "milk" = 1)
 	result_amount = 1
 	require_containers = list(/obj/item/reagent_containers/glass/beaker/flask_alchemy)
 
 /datum/chemical_reaction/work_tonic
 	result = "work_tonic"
-	required_reagents = list("protein" = 1, "egg" = 1, "tatonka_milk" = 1)
+	required_reagents = list("protein" = 1, "egg" = 1, "milk" = 1)
 	result_amount = 1
 	require_containers = list(/obj/item/reagent_containers/glass/beaker/flask_alchemy)
 
@@ -69,4 +71,5 @@
 	result = "red_heart"
 	required_reagents = list("blood" = 1, MATERIAL_GOLD = 1, "lively_concoxion" = 1)
 	result_amount = 1
+	mix_message = "The blood congeals into a golden droplet!"
 	require_containers = list(/obj/item/reagent_containers/glass/beaker/flask_alchemy)

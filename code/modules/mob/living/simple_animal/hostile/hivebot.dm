@@ -34,6 +34,7 @@
 	needs_environment = FALSE
 	armor = list(melee = 15, bullet = 5, energy = 20, bomb = 25, bio = 100, rad = 25)
 	cant_gib = TRUE
+	sanity_damage = 1
 
 /mob/living/simple_animal/hostile/hivebot/emp_act(severity)
 	..()
@@ -79,6 +80,7 @@
 	projectilesound = 'sound/weapons/energy/Laser.ogg'
 	projectiletype = /obj/item/projectile/beam //This basiclly nulls armor + deals 20 damage
 	faction = "hivebot"
+	sanity_damage = 1
 
 	//Death and harvest vars
 	meat_amount = 3
@@ -134,6 +136,7 @@
 	emote_see = list("sharpens its knives carefully.", "shudders and shakes for a moment!", "gushes red ichor!")
 	deathmessage = "collapses into a pile of scrap!"
 	speak_chance = 5
+	sanity_damage = 1
 
 	friendly_to_colony = FALSE
 

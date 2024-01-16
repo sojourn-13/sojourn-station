@@ -8,12 +8,12 @@
 	start_discovered = TRUE
 	uid = "moe_basic"
 	spawn_always = TRUE
-	markup = UNIQUE_GOODS
+	markup = COMMON_GOODS
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 2000
 	stations_recommended = list("moe_adv")
 	forced_overmap_zone = list(
 		list(20, 22),
@@ -113,7 +113,7 @@
 			/obj/item/tool/saw/circular/medical = custom_good_amount_range(list(1, 2)),
 			/obj/item/tool/hammer = custom_good_amount_range(list(1, 2)),
 			/obj/item/tool/surgicaldrill/adv = custom_good_amount_range(list(1, 2)),
-			/obj/item/bone_brace = custom_good_amount_range(list(1, 2))
+			/obj/item/modification/organ/internal/electromechanical/bone_braces = custom_good_amount_range(list(1, 2))
 		)
 	)
 

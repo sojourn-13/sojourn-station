@@ -32,6 +32,7 @@
 	/obj/item/gun/projectile/automatic/greasegun = 2,
 	//Shotgun
 	/obj/item/gun/projectile/boltgun/lever = 2,
+	/obj/item/gun/projectile/shotgun/pump/gladstone = 2,
 	/obj/item/gun/projectile/shotgun/pump/china = 2,
 	//Ammo
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 3,
@@ -110,6 +111,7 @@
 	/obj/item/gun/projectile/automatic/greasegun = 800,
 	//Shotgun
 	/obj/item/gun/projectile/boltgun/lever = 650,
+	/obj/item/gun/projectile/shotgun/pump/gladstone = 850,
 	/obj/item/gun/projectile/shotgun/pump/china = 1750,
 	//Ammo
 	/obj/item/ammo_magazine/speed_loader_pistol_35/rubber = 20,
@@ -228,11 +230,7 @@
 					/obj/item/clothing/suit/storage/toggle/absolutehoodie = 5,
 					/obj/item/clothing/suit/greatcoat/absolutecoat= 5,
 					/obj/item/clothing/suit/hooded/absolutecloak = 5,
-					/obj/item/clothing/under/rank/church/sport = 5,
 					/obj/item/clothing/under/rank/church = 5,
-					/obj/item/clothing/under/rank/acolyte = 5,
-					/obj/item/clothing/suit/storage/numericalgarb = 3,
-					/obj/item/clothing/head/numerical_hat = 3,
 					/obj/item/stack/medical/bruise_pack = 8,
 					/obj/item/stack/medical/ointment = 8,
 					/obj/item/stack/medical/splint = 5,
@@ -244,14 +242,14 @@
 					/obj/item/grenade/chem_grenade/antiweed/nt_antiweed = 5,
 					/obj/item/grenade/chem_grenade/cleaner/nt_cleaner = 5,
 					/obj/item/tool/knife/dagger/nt = 3,
-					/obj/item/tool/sword/nt = 3,
-					/obj/item/computer_hardware/hard_drive/portable/design/guns/lemant = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58 = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms/public = 2,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public = 3,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter = 2)
+					/obj/item/tool/sword/nt/shortsword = 3,
+					/obj/item/gun/energy/ntpistol = 3,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt/lemant = 2,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt/mk58 = 2,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns = 2,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns = 2,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_arms/public = 2,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility/public = 3)
 	contraband = list(/obj/item/tool/knife/neotritual = 3,
 					/obj/item/gun/matter/launcher/nt_sprayer = 3)
 
@@ -273,7 +271,6 @@
 					/obj/item/clothing/suit/greatcoat/absolutecoat= 45,
 					/obj/item/clothing/suit/hooded/absolutecloak = 35,
 					/obj/item/clothing/under/rank/acolyte = 25,
-					/obj/item/clothing/under/rank/church/sport = 15,
 					/obj/item/clothing/under/rank/church = 15,
 					/obj/item/clothing/suit/storage/numericalgarb = 65,
 					/obj/item/clothing/head/numerical_hat = 40,
@@ -289,13 +286,13 @@
 					/obj/item/grenade/chem_grenade/cleaner/nt_cleaner = 50,
 					/obj/item/tool/knife/dagger/nt = 50,
 					/obj/item/tool/sword/nt = 100,
-					/obj/item/computer_hardware/hard_drive/portable/design/guns/lemant = 600,
-					/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58 = 550,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns = 950,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns = 800,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms/public = 100,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter/public = 100,
-					/obj/item/computer_hardware/hard_drive/portable/design/nt_bioprinter = 400,
+					/obj/item/gun/energy/ntpistol = 120,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt/lemant = 600,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt/mk58 = 550,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns = 950,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns = 800,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_arms/public = 100,
+					/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility/public = 100,
 					/obj/item/tool/knife/neotritual = 250,
 					/obj/item/gun/matter/launcher/nt_sprayer = 500)
 	custom_vendor = TRUE // So they can sell pouches and other printed goods, if they bother to stock them
@@ -335,7 +332,7 @@
 
 /obj/machinery/vending/serbomat
 	name = "From Serbia with love"
-	desc = "A old world strange vender for some reason still operational."
+	desc = "A strange old world vending machine, for some reason it is still operational."
 	icon_state = "serbomat"
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
 	products = list(

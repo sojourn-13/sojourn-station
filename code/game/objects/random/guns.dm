@@ -25,6 +25,7 @@
 				/obj/item/ammo_kit = 3,\
 				/obj/item/gun/projectile/giskard = 1,\
 				/obj/item/gun/projectile/automatic/luger = 0.5,\
+				/obj/item/gun/projectile/ladon/sa = 0.5,  \
 				/obj/item/gun/projectile/boltgun/sa = 2,\
 				/obj/item/gun/projectile/shotgun/pump = 0.1,\
 				/obj/item/gun/projectile/revolver/sixshot/sawn = 0.5,\
@@ -56,6 +57,7 @@
 	return pickweight(list(/obj/item/part/gun/frame/grizzly = 0.5,
 				/obj/item/part/gun/frame/sixshot = 0.5,
 				/obj/item/part/gun/frame/regulator = 0.5,
+				/obj/item/part/gun/frame/gladstone = 0.5,
 				/obj/item/part/gun/frame/grease = 0.5,
 				/obj/item/part/gun/frame/basilisk = 0.5,
 				/obj/item/part/gun/frame/sts = 0.5,
@@ -73,10 +75,13 @@
 				/obj/item/gun/projectile/revolver/rev10 = 0.3,\
 				/obj/item/gun/projectile/basilisk = 0.5,\
 				/obj/item/gun/projectile/ladon = 0.5,\
+				/obj/item/gun/projectile/ladon/sa = 1.0,\
+				/obj/item/gun/projectile/ladon/hs = 0.5,\
 				/obj/item/gun/projectile/automatic/nordwind/strelki = 0.3,\
 				/obj/item/gun/projectile/revolver/sixshot = 1,\
 				/obj/item/gun/projectile/boltgun/lever = 1.5,\
 				/obj/item/gun/projectile/automatic/greasegun = 0.1,\
+				/obj/item/gun/projectile/shotgun/pump/gladstone = 0.5,\
 				/obj/item/gun/projectile/colt = 2,\
 				/obj/item/gun/projectile/revolver = 2,\
 				/obj/item/gun/projectile/boltgun = 0.5,\
@@ -101,21 +106,26 @@
 				/obj/item/part/gun/frame/makarov = 0.5,
 				/obj/item/part/gun/frame/hornet = 0.5,
 				/obj/item/part/gun/frame/regulator = 0.5,
+				/obj/item/part/gun/frame/gladstone = 0.5,
 				/obj/item/part/gun/frame/pug = 0.5,
 				/obj/item/part/gun/frame/saiga = 0.5,
 				/obj/item/part/gun/frame/strelki = 0.5,
 				/obj/item/part/gun/frame/thompson = 0.5,
 				/obj/item/part/gun/frame/ak47 = 0.5,
 				/obj/item/part/gun/frame/sts = 0.5,
+				/obj/item/gun/projectile/automatic/sts/rifle/heavy/sawn = 1,\
 				/obj/item/part/gun/frame/solmarine = 0.5,
 				/obj/random/gun_parts/frames = 1,
 
 				/obj/item/gun/projectile/automatic/greasegun = 1,\
+				/obj/item/gun/projectile/automatic/mac = 1,\
+				/obj/item/gun/projectile/automatic/mac/croon = 0.7,\
 				/obj/item/gun/projectile/automatic/duty = 1,\
 				/obj/item/ammo_kit = 0.8,
 				/obj/item/gun/projectile/automatic/sts/rifle/sawn = 1,\
 				/obj/item/gun/projectile/automatic/omnirifle/solmarine = 1,\
-				/obj/item/gun/projectile/automatic/thompson = 0.5,
+				/obj/item/gun/projectile/automatic/thompson = 0.5,\
+				/obj/item/gun/projectile/automatic/bren = 0.5,\
 				/obj/item/gun/projectile/automatic/ak47/sa/sawn = 1,\
 				/obj/item/gun/projectile/makarov = 1,\
 				/obj/item/gun/projectile/shotgun/pug = 0.5,
@@ -176,6 +186,7 @@
 
 /obj/random/gun_energy_cheap/item_to_spawn()
 	return pickweight(list(/obj/item/gun/energy/gun/martin = 2,\
+				/obj/item/gun/energy/ntpistol = 2,\
 				/obj/item/gun/energy/gun = 2,\
 				/obj/item/gun/energy/cog = 1,\
 				/obj/item/gun/energy/lasercore = 0.5,\
@@ -222,6 +233,7 @@
 	return pickweight(list(/obj/item/part/gun/frame/sixshot = 0.5,
 				/obj/item/part/gun/frame/grizzly = 0.5,
 				/obj/item/part/gun/frame/regulator = 0.5,
+				/obj/item/part/gun/frame/gladstone = 0.5,
 				/obj/item/part/gun/frame/bull = 0.5,
 				/obj/item/part/gun/frame/pug = 0.5,
 
@@ -231,6 +243,7 @@
 				/obj/item/gun/projectile/shotgun/bull = 0.3,\
 				/obj/item/gun/projectile/shotgun/doublebarrel/sawn = 2,\
 				/obj/item/gun/projectile/shotgun/pump/combat/sawn = 1,\
+				/obj/item/gun/projectile/shotgun/pump/gladstone/sawn = 1,\
 				/obj/item/gun/projectile/shotgun/pug = 0.3,\
 				/obj/item/gun/projectile/revolver/sixshot = 0.7))
 
@@ -255,6 +268,7 @@
 				/obj/item/part/gun/frame/pug = 0.5,
 				/obj/item/part/gun/frame/saiga = 0.5,
 				/obj/item/part/gun/frame/solmarine = 0.5,
+				/obj/item/gun/projectile/automatic/sts/rifle/heavy = 2,
 				/obj/item/part/gun/frame/c20r = 0.5,
 				/obj/item/part/gun/frame/omni = 0.5,
 				/obj/item/part/gun/frame/ak47 = 0.5,
@@ -265,11 +279,13 @@
 				/obj/item/gun/projectile/automatic/chaingun = 1,
 				/obj/item/gun/projectile/automatic/lmg/pk = 3,
 				/obj/item/gun/projectile/automatic/dp = 2,
+				/obj/item/gun/projectile/automatic/bren = 1.5,
 				/obj/item/gun/projectile/automatic/bastard = 2,
+				/obj/item/gun/projectile/automatic/sts/rifle/blackshield = 2,
 				/obj/item/gun/projectile/automatic/ak47/sa/tac = 1,
 				/obj/item/gun/projectile/shotgun/pump/combat = 3,
 				/obj/item/gun/projectile/shotgun/pug = 2,
-				/obj/item/gun/projectile/gyropistol = 1,
+				///obj/item/gun/projectile/gyropistol = 1,
 				/obj/item/gun/projectile/automatic/omnirifle/solmarine = 2,
 				/obj/item/gun/projectile/automatic/omnirifle = 1,
 				/obj/item/gun/projectile/automatic/c20r = 3,
@@ -288,7 +304,7 @@
 	return pickweight(list(
 				/obj/item/gun/energy/xray = 2,
 				/obj/item/gun/energy/sniperrifle = 2,
-				/obj/item/gun/energy/laser/railgun = 1,
+				/obj/item/gun/energy/laser/railgun/railrifle = 1,
 				/obj/item/gun/energy/laser/railgun/pistol = 1,
 				/obj/item/gun/energy/plasma/auretian = 1,
 				/obj/item/gun/energy/centurio = 2,

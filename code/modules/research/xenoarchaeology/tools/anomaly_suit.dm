@@ -5,7 +5,6 @@
 	item_state = "anomaly_suit"
 	slowdown = 0
 	armor_list = list(melee = 5, bullet = 5, energy = 25, bomb = 0, bio = 100, rad = 100)
-	allowed = list(/obj/item/device/lighting/toggleable/flashlight,/obj/item/tank,/obj/item/device/suit_cooling_unit)
 
 /obj/item/clothing/head/helmet/space/anomaly
 	name = "Expedition hood"

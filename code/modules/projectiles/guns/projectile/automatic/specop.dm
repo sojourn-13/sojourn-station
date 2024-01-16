@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/specop
-	name = "\"Spec-Op\" caseless SMG"
-	desc = "The aptly named \"Spec Op\" is a 10x24 hard hitting, compact SMG perfect for operators preferring stealth. While limited in range, operators remark the weapon as nearly silent, leaving behind no signs of a fight besides targets riddled with lead."
+	name = "\"Spec-Op\" caseless Carbine"
+	desc = "The aptly named \"Spec Op\" is a 10x24 hard hitting, compact carbine perfect for operators preferring stealth. While limited in range, operators remark the weapon as nearly silent, leaving behind no signs of a fight besides targets riddled with lead."
 	icon_state = "specop"
 	item_state = "specop"
 	icon = 'icons/obj/guns/projectile/specop.dmi'
@@ -16,13 +16,13 @@
 	price_tag = 1150
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	damage_multiplier = 1.2
+	damage_multiplier = 1.0
 	penetration_multiplier = 1.15
 	zoom_factors = list(0.2)
 	init_recoil = LMG_RECOIL(0.6)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		FULL_AUTO_600_NOLOSS
+		FULL_AUTO_600
 		)
 	serial_type = "NM"
 	wield_delay = 0.4 SECOND

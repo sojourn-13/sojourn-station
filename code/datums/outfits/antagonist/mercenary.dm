@@ -5,7 +5,7 @@
 	uniform = /obj/item/clothing/under/turtleneck
 	l_ear = /obj/item/device/radio/headset
 	shoes = /obj/item/clothing/shoes/magboots/merc
-	suit = /obj/item/clothing/suit/armor/flackvest
+	suit = /obj/item/clothing/suit/armor/flakvest
 	pda_slot = slot_belt
 	pda_type = /obj/item/modular_computer/pda
 

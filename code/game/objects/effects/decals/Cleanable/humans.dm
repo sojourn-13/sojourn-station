@@ -20,7 +20,7 @@ var/global/list/image/splatter_cache=list()
 	var/list/datum/disease2/disease/virus2 = list()
 	var/amount = 5
 	var/drytime
-	sanity_damage = 1
+	sanity_damage = 0.5
 	// List of are shoe prints we got
 	var/list/shoe_types = list()
 

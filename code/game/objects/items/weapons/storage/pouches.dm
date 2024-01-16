@@ -27,15 +27,18 @@
 
 /obj/item/storage/pouch/attack_hand(mob/living/carbon/human/user)
 	if(sliding_behavior && contents.len && (src in user))
-		var/obj/item/I = contents[contents.len]
-		if(istype(I))
-			hide_from(usr)
-			var/turf/T = get_turf(user)
-			remove_from_storage(I, T)
-			usr.put_in_hands(I)
-			add_fingerprint(user)
+		slide_out_item(user)
 	else
 		..()
+
+/obj/item/storage/pouch/proc/slide_out_item(mob/living/carbon/human/user)
+	var/obj/item/I = contents[contents.len]
+	if(istype(I))
+		hide_from(usr)
+		var/turf/T = get_turf(user)
+		remove_from_storage(I, T)
+		usr.put_in_hands(I)
+		add_fingerprint(user)
 
 /obj/item/storage/pouch/small_generic
 	name = "small generic pouch"
@@ -91,6 +94,32 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_BIOMATTER = 20)
 	price_tag = 800
+
+obj/item/storage/pouch/large_generic/advmedic
+	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket. This one is well worn and reeks like the inside of a frontier-chemlab."
+
+obj/item/storage/pouch/large_generic/advmedic/populate_contents()
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/meralyn(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/meralyn(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/meralyn(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/vermicetol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/vermicetol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/vermicetol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/varceptol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/varceptol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/varceptol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/blood(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/blood(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/blood(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/blood(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon(src)
+
 
 /obj/item/storage/pouch/large_generic/leather
 	desc = "A mini satchel made of leather. Can hold a fair bit, but it won't fit in your pocket"
@@ -272,7 +301,7 @@
 
 /obj/item/storage/pouch/grow_a_gun
 	name = "H&S Grow A Gun"
-	desc = "A bag of dehydrated guns, just add water to grow them into a ready to use slot-o-matic. There are several warnings to not eat the dehydrated guns inside, and to keep away from kids unless hydrated."
+	desc = "A bag of dehydrated guns, just add water to grow them into a ready to use Slaught-o-Matic. There are several warnings to not eat the dehydrated guns inside, and to keep away from kids unless hydrated."
 	icon_state = "grow"
 	item_state = "grow"
 	matter = list(MATERIAL_PLASTIC = 1)

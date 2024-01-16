@@ -2,7 +2,7 @@
 /obj/item/clothing/suit/greatcoat/cap
 	name = "premier's greatcoat"
 	desc = "A green greatcoat. Makes you feel like the leader you are supposed to be."
-	icon_state = "cap_coat"
+	icon_state = "cap_coat"  //Sprites from Eris
 	item_state = "cap_coat"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
@@ -22,9 +22,9 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Premier Cloaked Greatcoat"] = "cap_coat_cloak"
 	options["Premier Greatcoat"] = "cap_coat"
-
+	options["Premier old Greatcoat"] = "cap_coat-old"
+	options["Premiers old Cloaked Greatcoat"] = "cap_coat_cloak-old"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
@@ -80,11 +80,12 @@
 
 /obj/item/clothing/suit/greatcoat/nt_wintercoat //Sprite recolour from a Civ13 open github skyrim hidden piece with a few change ups to match our pallet -Dongels
 	name = "absolutist wintercoat"
-	desc = "A comfortably warm, and thick decorated wintercoat for the Absolutist faith and its supporters. Keeping the faithfull warm in the jungle heat since 2652."
+	desc = "A comfortably warm, and thick decorated wintercoat for the Absolutist faith and its supporters. Keeping the faithfull warm in the Amethyn heat since 2652."
 	icon_state = "nt_wintercoat"
 	item_state = "nt_wintercoat"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
+	stiffness = LIGHT_STIFFNESS
 	armor_list = list( //thicker material so +5 boost (from base 10) to armor values, but lower rad/same bomb since not metal lined. Maybe add in minor slowdown if needed -Dongels
 		melee = 15,
 		bullet = 15,
@@ -183,7 +184,7 @@
 
 /obj/item/clothing/suit/greatcoat/cossackcoat
 	name = "jaeger riding coat"
-	desc = "A traditional riding coat often worn by Jaegers, typically inherited or tailored as an expensive practical gift. The design is murder in the humid jungle, but is a time-honored and comfortable jacket for irregulars who served on Krios, where they dressed like woodsmen in their ambush patrols on Sol-Fed regulars in the cold forests and swamps of home."
+	desc = "A traditional riding coat often worn by Jaegers, typically inherited or tailored as an expensive practical gift. The design is murder in the humid Amethyn forests, but is a time-honored and comfortable jacket for irregulars who served on Krios, where they dressed like woodsmen in their ambush patrols on Sol-Fed regulars in the cold forests and swamps of home."
 	icon_state = "cossackcoat"
 	item_state = "cossackcoat"
 	blood_overlay_type = "coat"
@@ -222,6 +223,19 @@
 	item_state = "os_overcoat"
 	blood_overlay_type = "coat"
 	armor_list = list(melee = 30, bullet = 10, energy = 25, bomb = 25, bio = 0, rad = 40)
+	body_parts_covered = UPPER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+	stiffness = LIGHT_STIFFNESS
+
+/obj/item/clothing/suit/greatcoat/os/nova
+	name = "Greyson Star Traders greatcoat"
+	desc = "A thick, heavy coat for workers that really enjoys paperwork."
+	icon_state = "os_overcoat"
+	item_state = "os_overcoat"
+	blood_overlay_type = "coat"
+	armor_list = list(melee = 5, bullet = 5, energy = 15, bomb = 0, bio = 0, rad = 25)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20

@@ -15,7 +15,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunt_master
 	health_modifier = 15
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb, /datum/perk/alchemist)
+	perks = list(PERK_BUTCHER, PERK_MASTER_HERBALIST, PERK_GREENTHUMB)
 	access = list(access_huntmaster, access_hunter)
 
 	stat_modifiers = list(
@@ -57,7 +57,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
 	health_modifier = 10
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/alchemist)
+	perks = list(PERK_BUTCHER)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
@@ -99,7 +99,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/herbalist
 	health_modifier = 5
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb, /datum/perk/alchemist)
+	perks = list(PERK_BUTCHER, PERK_MASTER_HERBALIST, PERK_GREENTHUMB)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
@@ -138,7 +138,6 @@
 //	minimal_access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/outsider
 	difficulty = "Impossible!"
-	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 	has_id = FALSE
 
 	stat_modifiers = list(

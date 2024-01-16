@@ -1,4 +1,4 @@
-/*
+
 /datum/individual_objective/repossession
 	name = "Repossession"
 	req_department = list(DEPARTMENT_LSS)
@@ -25,7 +25,7 @@
 	if(completed) return
 	UnregisterSignal(SStrade, COMSIG_TRADE_BEACON)
 	..()
-*/
+
 /datum/individual_objective/museum
 	name = "It Belongs in a Museum"
 	desc = "Ensure that 3-4 oddities are exported or sold via trade beacon."

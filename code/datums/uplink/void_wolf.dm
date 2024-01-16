@@ -2,7 +2,7 @@
 	category = /datum/uplink_category/void_wolf
 
 /datum/uplink_item/item/void_wolf/cog
-	name = "\"Cog\" lasgun"
+	name = "\"Cog\" laser carbine"
 	item_cost = 3
 	path = /obj/item/gun/energy/cog
 
@@ -15,7 +15,7 @@
 	name = "Void Wolf Red Armor"
 	item_cost = 8
 	path = /obj/item/clothing/suit/space/void/merc/xanorath
-
+/*
 /datum/uplink_item/item/void_wolf/emporer
 	name = "Void Wolf Emporer"
 	item_cost = 16
@@ -25,7 +25,7 @@
 	name = "Void Wolf Emporer Ammo"
 	item_cost = 4
 	path = /obj/item/ammo_magazine/a75
-
+*/ //Nope. Too good to be hardspawn
 //Mods
 /datum/uplink_item/item/void_wolf/dangerzone
 	name = "\"Danger Zone\" Trigger"

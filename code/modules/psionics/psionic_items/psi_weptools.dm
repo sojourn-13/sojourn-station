@@ -143,6 +143,7 @@
 	icon = 'icons/obj/psionic/occgun.dmi'
 	icon_state = "eclipse"
 	origin_tech = list()
+	psigun = 1
 	matter = list()
 	price_tag = 0
 	damage_multiplier = 0.9
@@ -153,6 +154,7 @@
 /obj/item/gun/projectile/automatic/sts/rifle/cult/deepmaints
 	name = "\"Aster\" psi-rifle"
 	desc = "A rather perfect copy of an STS-30 made form either pure willpower or a desperate need for survival."
+	psigun = 1
 	damage_multiplier = 1
 	penetration_multiplier = 1
 
@@ -162,6 +164,7 @@
 	Was it a joke, an insult, or a yearning for something lost? Whatever the case, this weapon is slightly less deadly than the one it mocks."
 	icon = 'icons/obj/psionic/occvalk.dmi'
 	icon_state = "moonrise"
+	psigun = 1
 	origin_tech = list()
 	matter = list()
 	damage_multiplier = 0.9
@@ -172,6 +175,7 @@
 /obj/item/gun/energy/laser/cult/deepmaints
 	name = "\"Moonset\" psi-laser rifle"
 	desc = "A perfected copy of the Lightfall laser rifle at first glance, this empty husk of a weapon is willed into reality to fire condensed projectiles of sheer willpower from the psyche of its mindsmith, rather than relying on any internal components to do it for them."
+	psigun = 1
 	damage_multiplier = 1
 	penetration_multiplier = 1
 	projectile_color = "#BF40BF"
@@ -182,25 +186,32 @@
 	outside the Soteria or Church. Perhaps its popularity is what imprinted it in the memory of the psion that made it?"
 	icon = 'icons/obj/psionic/occcassad.dmi'
 	icon_state = "manumission"
+	psigun = 1
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
-	charge_cost = 50
+	charge_cost = 70
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	damage_multiplier = 0.9
 	penetration_multiplier = 0.9
 	init_firemodes = list(
-		list(mode_name="rapid fire", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#8d25cc"),
-		list(mode_name="armor penetrating", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/Laser.ogg', fire_delay=12, icon="kill", projectile_color = "#461266"),
+		list(mode_name="Melt", mode_desc="A reliable plasma round, for stripping away armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/burn.ogg', burst=1, fire_delay = 9, charge_cost=60, icon="kill", projectile_color = "#BF40BF"),
+		list(mode_name="Pulse", mode_desc="A plasma round configured to explode violently on impact, and cause a pulse of EMP", projectile_type=/obj/item/projectile/plasma/aoe/ion, fire_sound='sound/weapons/energy/taser.ogg', burst=1, fire_delay=12, charge_cost=200, icon="stun", projectile_color = "#c082c0")
 	)
 	serial_shown = FALSE
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/plasma/cassad/cult/deepmaints
 	name = "\"Blue Moon\" psi-plasma rifle"
 	desc = "A Cassad-sytle plasma rifle ready to take on any battle, this one crafted out of base violent thought alone has more unique ways of holding a cell's charge known only to the person that had thought of it."
-	charge_cost = 25
 	damage_multiplier = 1
 	penetration_multiplier = 1
+	psigun = 1
+	init_firemodes = list(
+		list(mode_name="Melt", mode_desc="A reliable plasma round, for stripping away armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/burn.ogg', burst=1, fire_delay = 9, charge_cost=25, icon="kill", projectile_color = "#BF40BF"),
+		list(mode_name="Pulse", mode_desc="A plasma round configured to explode violently on impact, and cause a pulse of EMP", projectile_type=/obj/item/projectile/plasma/aoe/ion, fire_sound='sound/weapons/energy/taser.ogg', burst=1, fire_delay=12, charge_cost=150, icon="stun", projectile_color = "#c082c0")
+	)
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/plasma/auretian/cult
 	name = "\"Meteoroid\" psi-energy pistol"
@@ -208,18 +219,21 @@
 	yet this copy isn't anywhere near what machine lathes can produce. Is it a cheap imitation? A copy of what yearned to be greater? Perhaps it is but flattery."
 	icon = 'icons/obj/guns/energy/psi_brigador.dmi'
 	icon_state = "brigador"
+	psigun = 1
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
 	damage_multiplier = 0.8
 	penetration_multiplier = 0.8
 	serial_shown = FALSE
+	charge_cost = 50
 
 /obj/item/gun/energy/plasma/auretian/cult/deepmaints
 	name = "\"Tektite\" psi-energy pistol"
 	desc = "An energy-styled handgun willed into reality from the mind of someone looking to improve just about everything about it. Whether they meant to or not, they made a perfected copy of the SI Auretian."
 	icon = 'icons/obj/guns/energy/psi_brigador.dmi'
 	icon_state = "brigador"
+	psigun = 1
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
@@ -231,6 +245,7 @@
 	name = "\"Super Nova\" psi-submachine gun"
 	desc = "A ballistic weapon forged from the mind of a psion who shaped an oddity into a weapon. One wonders how and why this weapon came to be. Perhaps that is the point?"
 	icon = 'icons/obj/guns/projectile/greasegun_psi.dmi'
+	psigun = 1
 	origin_tech = list()
 	matter = list()
 	price_tag = 0
@@ -242,6 +257,7 @@
 	name = "\"Star Pepper\" psi-submachine gun"
 	desc = "A grease-gun mind-copy willed into reality with the concept of spraying and praying to hope kill whatever threat happens to be around you. In a sense, a reloadable Slaught-o-Matic conjured out of one's mind."
 	icon = 'icons/obj/guns/projectile/greasegun_psi.dmi'
+	psigun = 1
 	damage_multiplier = 1
 	penetration_multiplier = 1.2
 

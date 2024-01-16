@@ -206,6 +206,14 @@
 	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/lethal
 
+/obj/item/ammo_casing/light_rifle_257/incend
+	desc = "A 6.5mm incendiary bullet casing."
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/light_rifle_257/incend
+
+/obj/item/ammo_casing/light_rifle_257/incend/prespawned
+	amount = 10
+
 /obj/item/ammo_casing/light_rifle_257/laser
 	desc = "A 6.5mm laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/light_rifle_257
@@ -248,6 +256,14 @@
 	desc = "A 7.62mm hollow-point bullet casing."
 	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/rifle_75/lethal
+
+/obj/item/ammo_casing/rifle_75/incend
+	desc = "A 7.62mm incendiary bullet casing."
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/rifle_75/incend
+
+/obj/item/ammo_casing/rifle_75/incend/prespawned
+	amount = 10
 
 /obj/item/ammo_casing/rifle_75/scrap
 	desc = "An old 7.62mm bullet casing."
@@ -301,6 +317,14 @@
 /obj/item/ammo_casing/heavy_rifle_408/lethal
 	desc = "A 8.6mm bullet casing."
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/lethal
+
+/obj/item/ammo_casing/heavy_rifle_408/incend
+	desc = "A 8.6mm incendiary bullet casing."
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/incend
+
+/obj/item/ammo_casing/heavy_rifle_408/incend/prespawned
+	amount = 10
 
 /obj/item/ammo_casing/heavy_rifle_408/scrap
 	desc = "An old 8.6mm rifle bullet casing."
@@ -484,6 +508,15 @@
 	projectile_type = /obj/item/projectile/bullet/antim/ion
 
 /obj/item/ammo_casing/antim/ion/prespawned
+	amount = 5
+
+/obj/item/ammo_casing/antim/incend
+	desc = "\"Willy Pete\" shell casing"
+	shell_color = "atmr_red"
+	spent_icon = "atmr_red-spent"
+	projectile_type = /obj/item/projectile/bullet/antim/incend
+
+/obj/item/ammo_casing/antim/incend/prespawned
 	amount = 5
 
 //// 17mm rolled shot ////
@@ -682,6 +715,19 @@
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/plasma_heavy/prespawned
+	amount = 5
+
+/obj/item/ammo_casing/shotgun/biomatter
+	name = "shotgun slug"
+	desc = "A New Testament paper cartridge with caustic sabot, in 20mm. Designed for deep-impact delivery of caustic biomass, \
+	in a caseless fashion. The cartridge is made of a form of wax paper, designed to burn away and leave nothing to eject after being fired."
+	icon_state = "s-shell_caustic"
+	is_caseless = TRUE
+	caliber = CAL_SHOTGUN
+	projectile_type = /obj/item/projectile/bullet/shotgun/biomatter
+	maxamount = 5
+
+/obj/item/ammo_casing/shotgun/biomatter/prespawned
 	amount = 5
 
 

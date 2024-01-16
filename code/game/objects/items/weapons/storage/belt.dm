@@ -187,6 +187,7 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
+		/obj/item/gun/energy/ntpistol,
 		/obj/item/device/binoculars
 	)
 
@@ -247,6 +248,26 @@
 	new /obj/item/storage/pill_bottle/antitox(src)
 	new /obj/item/bodybag/cryobag(src)
 	new /obj/item/extinguisher/mini(src)
+
+/obj/item/storage/belt/medical/opifex/medical/solfed
+	name = "black medical webbing"
+	desc = "A black webbing, highly customized and lovingly worn. This harness is built specifically for medical supplies, limiting its versatility."
+	icon_state = "webbing_black"
+	item_state = "webbing_black"
+	storage_slots = 16
+
+/obj/item/storage/belt/medical/opifex/medical/solfed/populate_contents()
+	new /obj/item/device/scanner/health(src)
+	new /obj/item/reagent_containers/syringe/large/hyperzine(src)
+	new /obj/item/reagent_containers/syringe/large/tricordrazine(src)
+	new /obj/item/reagent_containers/syringe/large/inaprovaline(src)
+	new /obj/item/storage/pill_bottle/tramadol(src)
+	new /obj/item/storage/pill_bottle/prosurgeon(src)
+	new /obj/item/storage/pill_bottle/bicaridine(src)
+	new /obj/item/storage/pill_bottle/dermaline(src)
+	new /obj/item/storage/pill_bottle/dexalin_plus(src)
+	new /obj/item/storage/pill_bottle/antitox(src)
+	new /obj/item/bodybag/cryobag(src)
 
 /obj/item/storage/belt/medical
 	name = "medical belt"
@@ -364,7 +385,7 @@
 		/obj/item/reagent_containers/food/snacks,
 		/obj/item/reagent_containers/food/drinks,
 		/obj/item/device/binoculars, // By popular demand. - Seb
-		/obj/item/tool/baton/mini
+		/obj/item/tool/baton //So it can actually hold both sizes of batons like it used to.
 	)
 
 /obj/item/storage/belt/holding
@@ -411,10 +432,10 @@
 /obj/item/storage/belt/security/tactical/marshalert/populate_contents()
 	new /obj/item/tool/shovel/combat(src)
 	new /obj/item/gun/energy/gun/martin(src)
-	new /obj/item/cell/small(src)
-	new /obj/item/cell/small(src)
+	new /obj/item/cell/small/hyper(src)
+	new /obj/item/cell/small/hyper(src)
 	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
-	new /obj/item/cell/medium/high(src)
+	new /obj/item/cell/medium/hyper(src)
 	new /obj/item/handcuffs(src)
 	new /obj/item/handcuffs(src)
 	new /obj/item/device/taperecorder(src)
@@ -425,6 +446,45 @@
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/grenade/chem_grenade/teargas(src)
 	new /obj/item/grenade/frag/stinger(src)
+
+/obj/item/storage/belt/security/tactical/shieldert
+
+/obj/item/storage/belt/security/tactical/shieldert/populate_contents()
+	new /obj/item/tool/shovel/combat(src)
+	new /obj/item/gun/energy/gun/martin(src)
+	new /obj/item/cell/small/hyper(src)
+	new /obj/item/cell/small/hyper(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/cell/medium/high(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/device/taperecorder(src)
+	new /obj/item/device/camera(src)
+	new /obj/item/grenade/flashbang(src) //we're so past caring about contraband.
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/clothing/glasses/powered/thermal(src)
+	new /obj/item/clothing/glasses/powered/night(src)
+
+/obj/item/storage/belt/security/tactical/solfed
+
+/obj/item/storage/belt/security/tactical/solfed/populate_contents()
+	new /obj/item/tool/shovel/combat(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/cell/small/moebius/nuclear(src)
+	new /obj/item/cell/small/moebius/nuclear(src)
+	new /obj/item/cell/medium/moebius/nuclear(src)
+	new /obj/item/clothing/glasses/powered/night(src)
+	new /obj/item/clothing/glasses/powered/thermal(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/ammobox/kurtz_50/hv(src)
+	new /obj/item/device/binoculars(src)
 
 /obj/item/storage/belt/security/tactical/opifex
 	name = "opifex tactical belt"
@@ -459,6 +519,7 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
+		/obj/item/gun/energy/ntpistol,
 		/obj/item/device/binoculars
 	)
 

@@ -1,6 +1,42 @@
 /datum/perk/oddity
 	gain_text = "You feel different. Exposure to oddities has changed you. Now you can't go back."
 
+/datum/perk/oddity/survivor
+	name = "Survivor"
+	desc = "After seeing the death of many acquaintances and friends, witnessing death doesn't shock you as much as before. \
+			Halves sanity loss from seeing people die."
+	//icon_state = "survivor" // https://game-icons.net/1x1/lorc/one-eyed.html
+
+/datum/perk/oddity/survivor/assign(mob/living/carbon/human/H)
+	if(..())
+		holder.sanity.death_view_multiplier *= 0.5
+
+/datum/perk/oddity/survivor/remove()
+	if(holder)
+		holder.sanity.death_view_multiplier *= 2
+	..()
+
+/datum/perk/oddity/inspiring
+	name = "Inspiring Presence"
+	desc = "You know just what to say to people and are able to inspire the best - or even worst - in others. \
+			People around you regain their sanity quicker."
+	//icon_state = "inspiration"
+
+/datum/perk/oddity/inspiring/assign(mob/living/carbon/human/H)
+	if(..())
+		holder.sanity_damage -= 2
+
+/datum/perk/oddity/inspiring/remove()
+	if(holder)
+		holder.sanity_damage += 2
+	..()
+
+/datum/perk/oddity/terrible_fate
+	name = "Terrible Fate"
+	desc = "You realize the painful truth of death. You don't want to die and despise death - dying is a unmistakable horror to you. \
+			Anyone who is around you at the moment of your death must roll a Vigilance sanity check. If they fail, their sanity will instantly be dropped to 0."
+	icon_state = "murder" // https://game-icons.net/1x1/delapouite/chalk-outline-murder.html
+
 /datum/perk/oddity/toxic_revenger
 	name = "Fungal Host"
 	desc = "A small hostile fungal spores were on the oddity, hijacking your lungs and forcing them to emit toxins harmful to everyone around you every half hour. It will be a long time before your body can fight this off..."
@@ -12,6 +48,7 @@
 /datum/perk/oddity/toxic_revenger/assign(mob/living/carbon/human/H)
 	..()
 	initial_time = world.time
+	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 /datum/perk/oddity/toxic_revenger/on_process()
 	if(!..())
@@ -83,6 +120,8 @@
 	holder.brute_mod_perk += 0.1
 	holder.mob_bomb_defense -= 5
 	holder.falls_mod += 0.2
+	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
+
 
 /datum/perk/oddity/thin_skin/remove()
 	holder.brute_mod_perk -= 0.1 // One third of subdermal armor
@@ -115,6 +154,8 @@
 	holder.stats.changeStat(STAT_ROB, -5)
 	holder.stats.changeStat(STAT_TGH, -5)
 	holder.stats.changeStat(STAT_VIG, -5)
+	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
+
 
 /datum/perk/oddity/shell_shock/remove()
 	holder.stats.changeStat(STAT_ROB, 5)
@@ -133,6 +174,8 @@
 	holder.stats.changeStat(STAT_COG, -5)
 	holder.stats.changeStat(STAT_MEC, -5)
 	holder.stats.changeStat(STAT_BIO, -5)
+	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
+
 
 /datum/perk/oddity/failing_mind/remove()
 	holder.stats.changeStat(STAT_COG, 5)
@@ -212,6 +255,24 @@
 /datum/perk/oddity/mind_of_matter/remove()
 	holder.maxHealth -= 20
 	holder.health -= 20
+	..()
+
+/datum/perk/oddity/side_loading
+	name = "Side Loading"
+	desc = "Guns that can be side-loaded will tell you when examined. \
+	When onehanding most some guns, you will automatically reload them if in your offhand you hold additional shells."
+	gain_text = "Reloading with a simple mind is almost second nature..."
+	lose_text = "The reloading from the side is more complicated..."
+	icon_state = "plus_one" // https://game-icons.net/1x1/lorc/gears.html
+
+/datum/perk/oddity/side_loading/assign(mob/living/carbon/human/H)
+	..()
+	holder.stats.changeStat(STAT_COG, -5)
+	holder.stats.changeStat(STAT_VIG, 5)
+
+/datum/perk/oddity/side_loading/remove()
+	holder.stats.changeStat(STAT_COG, 5)
+	holder.stats.changeStat(STAT_VIG, -5)
 	..()
 
 ///////////////////////////////////////
@@ -329,3 +390,4 @@
 	if(holder)
 		holder.sanity.insight_gain_multiplier *= 2
 	..()
+

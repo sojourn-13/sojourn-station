@@ -76,6 +76,12 @@
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	sort_category = "Faction: Security"
 
+/datum/gear/factionsecurity/capofficer
+	display_name = "cap, officer"
+	path = /obj/item/clothing/head/rank/janacap
+	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
+	sort_category = "Faction: Security"
+
 /datum/gear/factionsecurity/cappatrolblack
 	display_name = "cap, patrol black"
 	path = /obj/item/clothing/head/seccorp
@@ -122,20 +128,6 @@
 	path = /obj/item/clothing/under/rank/bdu
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	flags = GEAR_HAS_TYPE_SELECTION
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/turtleneck
-	display_name = "Marshal turtleneck"
-	path = /obj/item/clothing/under/rank/security/turtleneck
-	allowed_roles = list("Warrant Officer","Supply Specialist","Ranger","Marshal Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/juniormarshal
-	display_name = "Junior Marshals uniform"
-	path = /obj/item/clothing/under/rank/security/cadet
-	allowed_roles = list("Warrant Officer","Supply Specialist","Ranger","Marshal Officer")
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 
@@ -209,34 +201,6 @@
 	slot = slot_w_uniform
 	sort_category = "Faction: Security"
 
-/datum/gear/factionsecurity/jumpskirtcommander
-	display_name = "jumpskirt, commander"
-	path = /obj/item/clothing/under/rank/ih_commander/skirt
-	allowed_roles = list("Warrant Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/jumpskirtmedspec
-	display_name = "jumpskirt, medical specialist"
-	path = /obj/item/clothing/under/rank/medspec/skirt
-	allowed_roles = list("Corpsman")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/jumpskirtoperative
-	display_name = "jumpskirt, operative"
-	path = /obj/item/clothing/under/rank/security/skirt
-	allowed_roles = list("Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
-/datum/gear/factionsecurity/jumpskirtwarden
-	display_name = "jumpskirt, supply specialist"
-	path = /obj/item/clothing/under/rank/warden/skirt
-	allowed_roles = list("Supply Specialist")
-	slot = slot_w_uniform
-	sort_category = "Faction: Security"
-
 /datum/gear/factionsecurity/security
 	display_name = "security HUD"
 	path = /obj/item/clothing/glasses/hud/security
@@ -268,8 +232,22 @@
 	path = /obj/item/clothing/under/rank/fatigues/
 	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
 	slot = slot_w_uniform
-	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Faction: Security"
+
+/datum/gear/factionsecurity/fatigueselection/New() //Like so.
+	..()
+	var/fatigues = list(
+		"Green Fatigues"				=	/obj/item/clothing/under/rank/fatigues/green,
+		"Navy Fatigues"			=	/obj/item/clothing/under/rank/fatigues/navy,
+		"Grey Fatigues"			=	/obj/item/clothing/under/rank/fatigues/grey,
+		"Camo Fatigues"				=	/obj/item/clothing/under/rank/fatigues/camo,
+		"Tan Fatigues"				=	/obj/item/clothing/under/rank/fatigues/tan,
+		"Alt Grey Fatigues"				=	/obj/item/clothing/under/rank/fatigues/kav,
+		"Alt Green Fatigues"				=	/obj/item/clothing/under/rank/fatigues/kav/green,
+		"Alt Tan Fatigues"				=	/obj/item/clothing/under/rank/fatigues/kav/tan,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(fatigues)
+
 
 /datum/gear/factionsecurity/fatiguecoverselection
 	display_name = "fatigue cover selection"

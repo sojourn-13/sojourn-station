@@ -63,7 +63,9 @@ var/list/channel_to_radio_key = new
 	return default_language
 
 /mob/living/proc/is_muzzled()
-	return 0
+	if(istype(src.wear_mask, /obj/item/clothing/mask/muzzle) || istype(src.wear_mask, /obj/item/grenade))
+		return TRUE
+	return FALSE
 
 /mob/living/proc/handle_speech_problems(var/message, var/verb)
 	var/list/returns[3]
@@ -128,7 +130,7 @@ var/list/channel_to_radio_key = new
 		if(stat == DEAD)
 			return say_dead(message)
 		else if(last_symbol=="@")
-			if(src.stats.getPerk(/datum/perk/codespeak))
+			if(src.stats.getPerk(PERK_CODESPEAK))
 				return
 			else
 				to_chat(src, "You don't know the codes, pal.")

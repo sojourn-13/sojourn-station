@@ -66,6 +66,16 @@ obj/item/clothing/suit/fluff/miko
 	icon_state = "customs_jacket"
 	item_state_slots = list(slot_r_hand_str = "suit_blue", slot_l_hand_str = "suit_blue")
 
+obj/item/clothing/suit/gownrisque
+	name = "delicate gown"
+	desc = "A particularly daring gown. Suited for only the bravest colonists."
+	icon_state = "gown_risque"
+
+obj/item/clothing/suit/gownrisque/alt
+	name = "fine gown"
+	desc = "A particularly daring gown. Suited for only the bravest colonists."
+	icon_state = "gown_risque_alt"
+
 /*
  * Misc
  */
@@ -78,66 +88,6 @@ obj/item/clothing/suit/fluff/miko
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
 	allowed = list(/obj/item/tank)
-
-/*Swimsuit*/
-
-/obj/item/clothing/under/swimsuit/
-	siemens_coefficient = 1
-	body_parts_covered = 0
-
-/obj/item/clothing/under/swimsuit/black
-	name = "black swimsuit"
-	desc = "A black swimsuit perfect for the pool."
-	icon_state = "swim_black"
-	siemens_coefficient = 1
-
-/obj/item/clothing/under/swimsuit/blue
-	name = "blue swimsuit"
-	desc = "A blue swimsuit perfect for the pool."
-	icon_state = "swim_blue"
-	siemens_coefficient = 1
-
-/obj/item/clothing/under/swimsuit/earth
-	name = "earth swimsuit"
-	desc = "A earth swimsuit perfect for the pool."
-	icon_state = "swim_earth"
-	siemens_coefficient = 1
-
-/obj/item/clothing/under/swimsuit/green
-	name = "green swimsuit"
-	desc = "A green swimsuit perfect for the pool."
-	icon_state = "swim_green"
-	siemens_coefficient = 1
-
-/obj/item/clothing/under/swimsuit/purple
-	name = "purple swimsuit"
-	desc = "A purple swimsuit perfect for the pool."
-	icon_state = "swim_purp"
-	siemens_coefficient = 1
-
-/obj/item/clothing/under/swimsuit/red
-	name = "red swimsuit"
-	desc = "A red swimsuit perfect for the pool."
-	icon_state = "swim_red"
-	siemens_coefficient = 1
-
-/obj/item/clothing/under/swimsuit/striped
-	name = "striped swimsuit"
-	desc = "A striped swimsuit perfect for the pool."
-	icon_state = "swim_striped"
-	siemens_coefficient = 1
-
-/obj/item/clothing/under/swimsuit
-	name = "white swimsuit"
-	desc = "A white swimsuit perfect for the pool."
-	icon_state = "swim_white"
-	siemens_coefficient = 1
-
-/obj/item/clothing/under/swimsuit/ntswimsuit
-	name = "Absolutist swimsuit"
-	desc = "A fine, white and gold trim swimsuit produced and often worn by those of the faith"
-	icon_state = "swim_nt"
-	siemens_coefficient = 1
 
 /*Poncho*/
 
@@ -228,23 +178,17 @@ obj/item/clothing/suit/fluff/miko
 
 /obj/item/clothing/suit/sling
 	name = "universal sling"
-	desc = "A generic universal equipment sling for whatever you could need on your back."
+	desc = "A generic universal equipment sling for whatever you could need on your back. More versatile then other choices just don't expect it to protect you from anything."
 	icon_state = "universal_sling"
-	allowed = list (/obj/item/gun,
-	/obj/item/device,
-	/obj/item/material,
-	/obj/item/storage/pouch,
-	/obj/item/storage/box,
+	extra_allowed = list(
 	/obj/item/storage/firstaid,
 	/obj/item/storage/lockbox,
 	/obj/item/storage/part_replacer,
 	/obj/item/storage/secure,
 	/obj/item/storage/toolbox,
 	/obj/item/storage/briefcase,
-	/obj/item/tank,
-	/obj/item/ammo_magazine,
-	/obj/item/ammo_magazine/ammobox/
-	)
+	/obj/item/material,
+	/obj/item/device)
 
 /obj/item/clothing/suit/storage/punkvest
 	name = "punk vest"
@@ -455,9 +399,9 @@ obj/item/clothing/suit/fluff/miko
 
 /obj/item/clothing/suit/storage/numericalgarb
 	name = "numerical garb"
-	desc = "A padded cloak meant for numerical, made to be biomatter resistant. The cloak is reversible, with its switchable colors being red and grey."
-	icon_state = "numericalgarb"
-	item_state = "numericalgarb"
+	desc = "A padded cloak meant for numerical, made to be biomatter resistant. The cloak is reversible, with its switchable colors being red and purple."
+	icon_state = "field_numerical"
+	item_state = "field_numerical"
 	armor_list = list(
 		melee = 10,
 		bullet = 0, //well armored its not going to help a bullet
@@ -479,8 +423,8 @@ obj/item/clothing/suit/fluff/miko
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Red Garb"] = "numericalgarb"
-	options["Gray Garb"] = "numericalgarbgrey"
+	options["Red Garb"] = "field_numerical"
+	options["Purple Garb"] = "field_numerical_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

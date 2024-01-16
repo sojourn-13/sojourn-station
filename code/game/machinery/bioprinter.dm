@@ -18,8 +18,8 @@
 	var/max_matter = 300
 	var/loaded_dna //Blood sample for DNA hashing.
 	var/list/products = list(
-		OP_HEART =  		list(/obj/item/organ/internal/heart,  50),
-		OP_LUNGS =  		list(/obj/item/organ/internal/lungs,  40),
+		OP_HEART =  		list(/obj/item/organ/internal/vital/heart,  50),
+		OP_LUNGS =  		list(/obj/item/organ/internal/vital/lungs,  40),
 		OP_KIDNEYS = 		list(/obj/item/organ/internal/kidney, 20),
 		OP_EYES =    		list(/obj/item/organ/internal/eyes,   30),
 		OP_LIVER =   		list(/obj/item/organ/internal/liver,  50),
@@ -48,8 +48,8 @@
 	if(SSticker.current_state != GAME_STATE_PLAYING)
 		stored_matter = 200
 	products = list(
-		OP_HEART =   		list(/obj/item/organ/internal/heart,  50),
-		OP_LUNGS =   		list(/obj/item/organ/internal/lungs,  40),
+		OP_HEART =   		list(/obj/item/organ/internal/vital/heart,  50),
+		OP_LUNGS =   		list(/obj/item/organ/internal/vital/lungs,  40),
 		OP_KIDNEYS = 		list(/obj/item/organ/internal/kidney, 20),
 		OP_EYES =   		list(/obj/item/organ/internal/eyes,   30),
 		OP_LIVER =   		list(/obj/item/organ/internal/liver,  50),
@@ -124,8 +124,8 @@
 		stored_matter = 200
 
 	products = list(
-		OP_HEART =  		list(/obj/item/organ/internal/heart/prosthetic,  50),
-		OP_LUNGS =  		list(/obj/item/organ/internal/lungs/prosthetic,  40),
+		OP_HEART =  		list(/obj/item/organ/internal/vital/heart/prosthetic,  50),
+		OP_LUNGS =  		list(/obj/item/organ/internal/vital/lungs/prosthetic,  40),
 		OP_KIDNEYS = 		list(/obj/item/organ/internal/kidney/prosthetic, 20),
 		OP_EYES =    		list(/obj/item/organ/internal/eyes/prosthetic,   30),
 		OP_LIVER =   		list(/obj/item/organ/internal/liver/prosthetic,  50),

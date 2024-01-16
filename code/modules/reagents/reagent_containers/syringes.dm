@@ -387,10 +387,10 @@
 /obj/item/reagent_containers/syringe/stim
 	name = "syringe (stim)"
 
-/obj/item/reagent_containers/syringe/stim/mbr
-	name = "syringe (Machine binding ritual)"
-	desc = "A syringe containing an ethanol based stimulator. Often used as a ritual drink by machine cults or engineering groups to enhance initiates who lack experience."
-	preloaded_reagents = list("machine binding ritual" = 15)
+/obj/item/reagent_containers/syringe/stim/greaser
+	name = "syringe (Greaser)"
+	desc = "A syringe containing an ethanol based stimulator. Often used by engineering groups to enhance initiates who lack experience."
+	preloaded_reagents = list("greaser" = 15)
 
 /obj/item/reagent_containers/syringe/stim/cherrydrops
 	name = "syringe (Cherry Drops)"
@@ -417,10 +417,10 @@
 	desc = "A syringe containing a dose of steady, a stimulant favored by mercenaries for enhancing reaction time."
 	preloaded_reagents = list("steady" = 15)
 
-/obj/item/reagent_containers/syringe/stim/machine_spirit
-	name = "syringe (Machine Spirit)"
-	desc = "A syringe containing the ethanol based stimulant machine spirit. A favored chemical used by the Artificer's Guild to make even the lowliest adept a machine master."
-	preloaded_reagents = list("machine spirit" = 15)
+/obj/item/reagent_containers/syringe/stim/greasy_lard
+	name = "syringe (Greasy Lard)"
+	desc = "A syringe containing the ethanol based stimulant Greaser. A favored chemical used by the Artificer's Guild to make even the lowliest adept a machine master."
+	preloaded_reagents = list("greasy lard" = 15)
 
 /obj/item/reagent_containers/syringe/stim/grape_drops
 	name = "syringe (Grape Drops)"

@@ -156,7 +156,7 @@
 			if("Refund")
 				playsound(src.loc, 'sound/machines/synth_yes.ogg', 50, 1)
 				src.visible_message("<b>[name]</b> states, \"Saved by the bell! That spin was free!\"")
-				jackpot = max(jackpot - prize, 0) //Can stack with fruit
+				jackpot = max(jackpot - bet, 0) //Can stack with fruit
 				spawn_money(bet,src.loc,user)
 			if("Zero")
 				playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 1)

@@ -47,7 +47,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
 "ak" = (
-/obj/item/clothing/head/helmet/night_vision_helm,
+/obj/item/clothing/head/helmet/bulletproof/ironhammer_thermal,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
@@ -1395,6 +1395,7 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "hO" = (
 /obj/structure/flora/small/rock3,
+/obj/machinery/power/port_gen/pacman,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "hP" = (
@@ -1832,9 +1833,6 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "kc" = (
 /obj/random/scrap/sparse_even,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"kd" = (
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "ke" = (
@@ -14697,7 +14695,7 @@ hb
 hb
 Mo
 aw
-kd
+YC
 ke
 aw
 aa
@@ -15417,7 +15415,7 @@ zK
 RY
 hb
 aw
-kd
+YC
 ke
 aw
 aa
@@ -15687,7 +15685,7 @@ rb
 ip
 qV
 xa
-kd
+YC
 xK
 aw
 aa
@@ -15777,7 +15775,7 @@ ho
 QM
 iS
 aw
-kd
+YC
 YC
 aw
 aa
@@ -16137,7 +16135,7 @@ gE
 hb
 ho
 aw
-kd
+YC
 xt
 aw
 aa
@@ -16497,7 +16495,7 @@ hb
 wt
 hb
 aw
-kd
+YC
 xR
 aw
 aa
@@ -18071,7 +18069,7 @@ hb
 hF
 aw
 jw
-kd
+YC
 jZ
 kD
 jA
@@ -19099,7 +19097,7 @@ rP
 tA
 sq
 aw
-kd
+YC
 vt
 vH
 vO
@@ -19460,7 +19458,7 @@ aw
 aw
 aw
 uW
-kd
+YC
 vK
 vR
 aw

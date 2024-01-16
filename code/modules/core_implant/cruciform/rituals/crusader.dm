@@ -4,21 +4,61 @@
 	desc = ""
 	category = "Crusader"
 
+/datum/ritual/targeted/cruciform/crusader
+	name = "crusader targeted"
+	implant_type = /obj/item/implant/core_implant/cruciform
+	category = "Crusader"
+
+/datum/ritual/cruciform/crusader/heal_other
+	name = "Crusader's Balm"
+	phrase = "Sit fratribus meis et tibi pax, et domui tuae pax, et omnibus, quaecumque habes, sit pax." //"Long life to you! Good health to you and your household! And good health to all that is yours!"
+	desc = "Heal a nearby disciple."
+	cooldown = TRUE
+	cooldown_time = 100
+	power = 35
+
+/datum/ritual/cruciform/crusader/heal_other/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
+
+	if(!CI || !CI.active || !CI.wearer)
+		fail("Cruciform not found.", user, C)
+		return FALSE
+
+	var/mob/living/carbon/human/H = CI.wearer
+
+	if(!istype(H))
+		fail("Target not found.",user,C,targets)
+		return FALSE
+
+	//Checking turfs allows this to be done in unusual circumstances, like if both are inside the same mecha
+	var/turf/T = get_turf(user)
+	if (!(T.Adjacent(get_turf(H))))
+		to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
+		return
+
+	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of convalescence")
+	if (do_after(user, 40, H, TRUE))
+		T = get_turf(user)
+		if (!(T.Adjacent(get_turf(H))))
+			to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
+			return
+		log_and_message_admins(" healed [CI.wearer] with Crusader's Balm litany")
+		to_chat(H, "<span class='info'>A sensation of relief bathes you, washing away your pain</span>")
+		H.add_chemical_effect(CE_PAINKILLER, 20)
+		H.adjustBruteLoss(-30)
+		H.adjustFireLoss(-30)
+		H.updatehealth()
+		set_personal_cooldown(user)
+		return TRUE
+
 /datum/ritual/cruciform/crusader/brotherhood
 	name = "Eternal Brotherhood"
-	phrase = "Ita multi unum corpus sumus in Christo singuli autem alter alterius membra."
+	phrase = "Sicut enim corpus unum est, et membra habet multa, omnia autem membra corporis cum sint multa, unum tamen corpus sunt." //"Just as a body, though one, has many parts, but all its many parts form one body."
 	desc = "Reveals other disciples to speaker."
-	nutri_cost = 25//low cost
-	blood_cost = 25//low cost
+	power = 50
 
 /datum/ritual/cruciform/crusader/brotherhood/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/datum/core_module/cruciform/neotheologyhud/hud_module = C.get_module(/datum/core_module/cruciform/neotheologyhud)
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 	if(hud_module)
 		C.remove_module(hud_module)
 	else
@@ -33,17 +73,10 @@
 	cooldown_time = 10 MINUTES
 	cooldown_category = "battle call"
 	effect_time = 10 MINUTES
-	nutri_cost = 25//med cost
-	blood_cost = 25//med cost
+	power = 50
 
 /datum/ritual/cruciform/crusader/battle_call/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
 	var/count = 0
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 	for(var/mob/living/carbon/human/brother in view(user))
 		if(brother.get_core_implant(/obj/item/implant/core_implant/cruciform))
 			count += 2
@@ -65,25 +98,18 @@
 /datum/ritual/cruciform/crusader/flash
 	name = "Searing Revelation"
 	phrase = "Per fidem enim ambulamus et non per speciem."
-	desc = "Knocks over everybody without cruciform in the view range. Psy-wave is too powerful, speaker can be knocked too."
+	desc = "Knocks over everybody without cruciform in the view range. The mental pressure is so powerful, the speaker can be knocked down too."
 	cooldown = TRUE
 	cooldown_time = 2 MINUTES
 	cooldown_category = "flash"
-	nutri_cost = 50//high cost
-	blood_cost = 50//high cost
+	power = 75
 
 /datum/ritual/cruciform/crusader/flash/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 	if(prob(100 - user.stats.getStat(STAT_VIG)))
 		user.Weaken(10)
-		to_chat(user, SPAN_WARNING("The flux of psy-energy knocks over you!"))
+		to_chat(user, SPAN_WARNING("The wave knocks you over!"))
 	else
-		to_chat(user, SPAN_NOTICE("The flux of psy-energy washed your mind, but you managed to keep focused!"))
+		to_chat(user, SPAN_NOTICE("The wave pushes at your will, but you managed to keep focused!"))
 	playsound(user.loc, 'sound/effects/cascade.ogg', 65, 1)
 	log_and_message_admins("performed a searing revelation litany")
 	for(var/mob/living/carbon/human/victim in view(user))
@@ -95,3 +121,21 @@
 				to_chat(victim, SPAN_NOTICE("Your legs feel numb, but you managed to stay on your feet!"))
 	set_personal_cooldown(user)
 	return TRUE
+
+/datum/ritual/targeted/cruciform/crusader/spawn_item
+	name = "Litany of Armaments"
+	phrase = "Supra Domini, bona de te peto. Audi me, et libera vocationem ad me munera tua."
+	desc = "Request a greatsword, tower shield, and suit of power armor from the church armory to become a real crusader. Establishing the connection takes a lot of power and this litany may only be used once every twelve hours."
+	power = 100
+	cooldown = TRUE
+	cooldown_time = 12 HOURS
+	cooldown_category = "armaments"
+
+
+/datum/ritual/targeted/cruciform/crusader/spawn_item/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C,list/targets)
+	new /obj/item/tool/sword/crusader(usr.loc)
+	new /obj/item/clothing/accessory/holster/saber/greatsword(usr.loc)
+	new /obj/item/shield/riot/crusader(usr.loc)
+	new /obj/item/storage/belt/security/neotheology(usr.loc)
+	new /obj/item/clothing/suit/space/void/crusader(usr.loc)
+	set_personal_cooldown(user)

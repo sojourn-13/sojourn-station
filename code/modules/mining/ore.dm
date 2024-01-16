@@ -123,7 +123,7 @@
 	name = "sand"
 	icon_state = ORE_SAND
 	origin_tech = list(TECH_MATERIAL = 1)
-	material = "sand"
+	material = ORE_SAND
 	slot_flags = SLOT_HOLSTER
 	crushable = FALSE
 	material_randomly_has = FALSE

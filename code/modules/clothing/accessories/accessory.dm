@@ -165,7 +165,7 @@
 				var/sound_strength = "cannot hear"
 				var/heartbeat = 0
 				if(M.species && M.species.has_process[OP_HEART])
-					var/obj/item/organ/internal/heart/heart = M.random_organ_by_process(OP_HEART)
+					var/obj/item/organ/internal/vital/heart/heart = M.random_organ_by_process(OP_HEART)
 					if(heart && !BP_IS_ROBOTIC(heart))
 						heartbeat = 1
 				if(M.stat == DEAD || (M.status_flags&FAKEDEATH))
@@ -177,7 +177,7 @@
 							sound_strength = "hear"
 							sound = "no heartbeat"
 							if(heartbeat)
-								var/obj/item/organ/internal/heart/heart = M.random_organ_by_process(OP_HEART)
+								var/obj/item/organ/internal/vital/heart/heart = M.random_organ_by_process(OP_HEART)
 								if(!heart)
 									return
 								if(heart.is_bruised() || M.getOxyLoss() > 50)
@@ -187,7 +187,7 @@
 
 							if(!(M.organ_list_by_process(OP_LUNGS).len) || M.losebreath)
 								sound += " and no respiration"
-							else if(M.is_lung_ruptured() || M.getOxyLoss() > 50)
+							else if(M.getOxyLoss() > 50)
 								sound += " and [pick("wheezing","gurgling")] sounds"
 							else
 								sound += " and healthy respiration"
@@ -286,7 +286,7 @@
 
 /obj/item/clothing/accessory/cape/prospie
 	name = "prospector mantle"
-	desc = "A rough mantle of salvaged hydrophobic materials typically worn around one's shoulders. While some may wear it for style, others prefer its use as decent camouflage on the humid amethian jungle."
+	desc = "A rough mantle of salvaged hydrophobic materials typically worn around one's shoulders. While some may wear it for style, others prefer its use as decent camouflage in the humid amethian forest."
 	icon_state = "prospie_cape"
 
 // Head of Departments
@@ -1267,8 +1267,7 @@
 
 /obj/item/clothing/accessory/necklace/fractalrosary
 	name = "Fractal Rosary"
-	desc = "This is an insignia given out by the Church of Absolute to people who consider themself to be a Fractal: \
-			An individual who believes and follows the Church but has not yet or cannot be inducted to full membership."
+	desc = "This is an token given by the Church of Absolute to Fractals, members of the Church who are not yet or cannot be baptized for any reason."
 	icon_state = "fractal_rosary"
 	item_state = "fractal_rosary"
 
@@ -1659,3 +1658,10 @@
 		if(t)
 			name = "nametag ([t])"
 
+//Snowflake badge for the samurai jacket
+
+/obj/item/clothing/accessory/logo
+	name = "gang logo"
+	desc = ""
+	icon = 'icons/inventory/accessory/icon.dmi'
+	icon_state = "punk_over_samurai"

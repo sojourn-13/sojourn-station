@@ -255,7 +255,6 @@
 	flags = CONDUCT
 	force = WEAPON_FORCE_NORMAL
 	throwforce = WEAPON_FORCE_NORMAL
-	w_class = ITEM_SIZE_BULKY
 	throw_speed = 1
 	throw_range = 4
 	max_w_class = null

@@ -190,15 +190,14 @@
 /obj/item/stack/medical/bruise_pack/soteria
 	name = "Soteria medical gauze"
 	singular_name = "Soteria medical gauze"
-	desc = "An advanced sterile gauze to wrap around bloody stumps. Unlike the regular gauze, these have more charges, and sterilize wounds as ointment would, as well as treating small amounts of toxins. Hand-made, with love, by Soteria Medical staff."
+	desc = "An advanced sterile gauze to wrap around bloody stumps. Unlike the regular gauze, these have more charges, and sterilize wounds as ointment would. Hand-made, with love, by Soteria Medical staff."
 	icon_state = "sr_brutepack"
 	preloaded_reagents = list("quickclot" = 5, "sterilizine" = 10)
 	fancy_icon = TRUE
 	disinfectant  = TRUE
 	amount = 8
 	max_amount = 8
-	heal_brute = 20 // Everything handmade and faction-wise will always be superior. See: Hand-Forged manipulators
-	heal_toxin = 8
+	heal_brute = 25 // Everything handmade and faction-wise will always be superior. See: Hand-Forged manipulators
 	price_tag = 25
 
 /obj/item/stack/medical/bruise_pack/advanced/nt

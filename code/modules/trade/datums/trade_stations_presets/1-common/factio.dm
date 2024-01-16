@@ -12,7 +12,7 @@
 	base_income = 800
 	wealth = 0
 	hidden_inv_threshold = 1000
-	recommendation_threshold = 3000
+	recommendation_threshold = 1000
 	stations_recommended = list("greyson")
 	regain_stock = FALSE
 	inventory = list(

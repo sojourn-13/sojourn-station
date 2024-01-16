@@ -32,10 +32,63 @@
 	var/appraised = 0 //Has this piece of food been appraised? We can only do that once.
 	var/chef_buff_type = 0 //What type of buff does this have to it?
 
+	var/junk_food = FALSE //if TRUE, sanity gain per nutriment will be zero
+
 /obj/item/reagent_containers/food/snacks/Initialize()
 	. = ..()
 	if(nutriment_amt)
 		reagents.add_reagent("nutriment", nutriment_amt, nutriment_desc)
+
+/obj/item/reagent_containers/food/snacks/proc/get_sanity_gain(mob/living/carbon/eater) //sanity_gain per bite
+	var/current_nutriment = reagents.get_reagent_amount("nutriment")
+	var/nutriment_percent = 0
+	if(reagents.total_volume && current_nutriment)
+		nutriment_percent = current_nutriment/reagents.total_volume
+	var/nutriment_eaten = min(reagents.total_volume, bitesize) * nutriment_percent
+	var/base_sanity_gain_per_bite = nutriment_eaten * sanity_gain
+	var/message
+	if(!iscarbon(eater))
+		return  list(0, message)
+	if(eater.nutrition > eater.max_nutrition*0.95)
+		message = "You are satisfied and don't need to eat any more."
+		return  list(0, SPAN_WARNING(message))
+	if(!base_sanity_gain_per_bite)
+		message = "This food does not help calm your nerves."
+		return  list(0, SPAN_WARNING(message))
+	var/sanity_gain_per_bite = base_sanity_gain_per_bite
+	message = "This food helps you relax."
+	if(cooked)
+		sanity_gain_per_bite += base_sanity_gain_per_bite * 0.2
+	if(junk_food || !cooked)
+		message += " However, only healthy food will help you rest."
+		return  list(sanity_gain_per_bite, SPAN_NOTICE(message))
+	var/table = FALSE
+	var/companions = FALSE
+	var/view_death = FALSE
+	for(var/carbon in circleview(eater, 3))
+		if(istype(carbon, /obj/structure/table))
+			if(!in_range(carbon, eater) || table)
+				continue
+			table = TRUE
+			message += " Eating is more comfortable using a table."
+			sanity_gain_per_bite += base_sanity_gain_per_bite * 0.1
+
+		else if(ishuman(carbon))
+			var/mob/living/carbon/human/human = carbon
+			if(human == eater)
+				continue
+			if(is_dead(human))
+				view_death = TRUE
+			companions = TRUE
+	if(companions)
+		sanity_gain_per_bite += base_sanity_gain_per_bite * 0.3
+		message += " The food tastes much better in the company of others."
+		if(view_death && !eater.stats.getPerk(PERK_NIHILIST))
+			message = "Your gaze falls on the cadaver. Your food doesn't taste so good anymore."
+			sanity_gain_per_bite = 0
+			return list(sanity_gain_per_bite, SPAN_WARNING(message))
+
+	return list(sanity_gain_per_bite, SPAN_NOTICE(message))
 
 	//Placeholder for effect that trigger on eating that aren't tied to reagents.
 /obj/item/reagent_containers/food/snacks/proc/On_Consume(var/mob/eater, var/mob/feeder = null)
@@ -101,7 +154,6 @@
 				if(9)
 					if(eater.stats)
 						var/mob/living/carbon/M = eater
-						M.adjustToxLoss(-((8 + (M.getToxLoss() * 0.1)) * 1))
 						M.heal_organ_damage(14, 14)
 
 
@@ -121,75 +173,72 @@
 /obj/item/reagent_containers/food/snacks/attack_self(mob/user as mob)
 	return
 
-/obj/item/reagent_containers/food/snacks/attack(mob/M as mob, mob/user as mob, def_zone)
+/obj/item/reagent_containers/food/snacks/attack(mob/mob as mob, mob/user as mob, def_zone)
 	if(!reagents.total_volume)
 		to_chat(user, SPAN_DANGER("None of [src] left!"))
 		user.drop_from_inventory(src)
 		qdel(src)
 		return 0
 
-	if(iscarbon(M))
+	if(iscarbon(mob))
 		//TODO: replace with standard_feed_mob() call.
-		var/mob/living/carbon/C = M
-		var/mob/living/carbon/human/H = M
+		var/mob/living/carbon/carbon = mob
+		var/mob/living/carbon/human/human = mob
 		var/fullness_modifier = 1
-		if(istype(H))
-			fullness_modifier = 100 / H.get_organ_efficiency(OP_STOMACH)
-		var/fullness = (C.nutrition + (C.reagents.get_reagent_amount("nutriment") * 25)) * fullness_modifier
-		if(C == user)								//If you're eating it yourself
-			if(istype(H))
-				if(!H.check_has_mouth())
-					to_chat(user, "Where do you intend to put \the [src]? You don't have a mouth!")
-					return
-				var/obj/item/blocked = H.check_mouth_coverage()
+		if(istype(human))
+			fullness_modifier = 100 / human.get_organ_efficiency(OP_STOMACH)
+		var/fullness = (carbon.nutrition + (carbon.reagents.get_reagent_amount("nutriment") * 25)) * fullness_modifier
+		if(carbon == user)								//If you're eating it yourself
+			if(istype(human))
+				var/obj/item/blocked = human.check_mouth_coverage()
 				if(blocked)
 					to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))
 					return
 
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //puts a limit on how fast people can eat/drink things
 			if (fullness <= 50)
-				to_chat(C, SPAN_DANGER("You hungrily chew out a piece of [src] and gobble it!"))
+				to_chat(carbon, SPAN_DANGER("You hungrily devour a piece of [src]."))
 			if (fullness > 50 && fullness <= 150)
-				to_chat(C, SPAN_NOTICE("You hungrily begin to eat [src]."))
+				to_chat(carbon, SPAN_NOTICE("You hungrily begin to eat [src]."))
 			if (fullness > 150 && fullness <= 350)
-				to_chat(C, SPAN_NOTICE("You take a bite of [src]."))
+				to_chat(carbon, SPAN_NOTICE("You take a bite of [src]."))
 			if (fullness > 350 && fullness <= 550)
-				to_chat(C, SPAN_NOTICE("You unwillingly chew a bit of [src]."))
+				to_chat(carbon, SPAN_NOTICE("You unwillingly chew a bit of [src]."))
 			if (fullness > 550)
-				to_chat(C, SPAN_DANGER("You cannot force any more of [src] to go down your throat."))
+				to_chat(carbon, SPAN_DANGER("You cannot force any more of [src] to go down your throat."))
 				return 0
 		else
-			if(!M.can_force_feed(user, src))
+			if(!mob.can_force_feed(user, src))
 				return
 
 			if (fullness <= 550)
-				user.visible_message(SPAN_DANGER("[user] attempts to feed [M] [src]."))
+				user.visible_message(SPAN_DANGER("[user] attempts to feed [mob] [src]."))
 			else
-				user.visible_message(SPAN_DANGER("[user] cannot force anymore of [src] down [M]'s throat."))
+				user.visible_message(SPAN_DANGER("[user] cannot force anymore of [src] down [mob]'s throat."))
 				return 0
 
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-			if(!do_mob(user, M)) return
+			if(!do_mob(user, mob)) return
 
-			M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been fed [src.name] by [user.name] ([user.ckey]) Reagents: [reagents.log_list()]</font>")
-			user.attack_log += text("\[[time_stamp()]\] <font color='red'>Fed [src.name] by [M.name] ([M.ckey]) Reagents: [reagents.log_list()]</font>")
-			msg_admin_attack("[key_name(user)] fed [key_name(M)] with [src.name] Reagents: [reagents.log_list()] (INTENT: [uppertext(user.a_intent)])")
+			mob.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been fed [src.name] by [user.name] ([user.ckey]) Reagents: [reagents.log_list()]</font>")
+			user.attack_log += text("\[[time_stamp()]\] <font color='red'>Fed [src.name] by [mob.name] ([mob.ckey]) Reagents: [reagents.log_list()]</font>")
+			msg_admin_attack("[key_name(user)] fed [key_name(mob)] with [src.name] Reagents: [reagents.log_list()] (INTENT: [uppertext(user.a_intent)])")
 
-			user.visible_message(SPAN_DANGER("[user] feeds [M] [src]."))
+			user.visible_message(SPAN_DANGER("[user] feeds [mob] [src]."))
 
-		if(reagents)			//Handle ingestion of the reagent.
-			playsound(M.loc,pick(M.eat_sounds), rand(10,50), 1)
+		if(reagents)	//Handle ingestion of the reagent.
+			playsound(mob.loc,pick(mob.eat_sounds), rand(10,50), 1)
 			if(reagents.total_volume)
 				var/amount_eaten = min(reagents.total_volume, bitesize)
-				reagents.trans_to_mob(M, amount_eaten, CHEM_INGEST)
-				if(istype(H))
-					H.sanity.onEat(src, amount_eaten)
+				reagents.trans_to_mob(mob, amount_eaten, CHEM_INGEST)
+				if(istype(human))
+					human.sanity.onEat(src, amount_eaten)
 				bitecount++
-				On_Consume(M, user)
+				On_Consume(mob, user)
 			return 1
 
-	else if (isanimal(M))
-		var/mob/living/simple_animal/SA = M
+	else if (isanimal(mob))
+		var/mob/living/simple_animal/SA = mob
 		SA.scan_interval = SA.min_scan_interval//Feeding an animal will make it suddenly care about food
 
 		var/m_bitesize = bitesize * SA.bite_factor//Modified bitesize based on creature size
@@ -198,6 +247,9 @@
 		if(reagents && SA.reagents)
 			m_bitesize = min(m_bitesize, reagents.total_volume)
 			//If the creature can't even stomach half a bite, then it eats nothing
+			//if (!SA.eat_from_hand)
+			//	to_chat(user, SPAN_WARNING("[mob] doesn't accept hand-feeding."))
+			//	return 0
 			if (!SA.can_eat() || ((user.reagents.maximum_volume - user.reagents.total_volume) < m_bitesize * 0.5))
 				amount_eaten = 0
 			else
@@ -206,18 +258,18 @@
 			return 0//The target creature can't eat
 
 		if (amount_eaten)
-			playsound(M.loc,pick(M.eat_sounds), rand(10,30), 1)
+			playsound(mob.loc,pick(mob.eat_sounds), rand(10,30), 1)
 			bitecount++
 			if (amount_eaten >= m_bitesize)
-				user.visible_message(SPAN_NOTICE("[user] feeds [src] to [M]."))
+				user.visible_message(SPAN_NOTICE("[user] feeds [src] to [mob]."))
 			else
-				user.visible_message(SPAN_NOTICE("[user] feeds [M] a tiny bit of [src]. <b>It looks full.</b>"))
-				if (!istype(M.loc, /turf))
-					to_chat(M, SPAN_NOTICE("[user] feeds you a tiny bit of [src]. <b>You feel pretty full!</b>"))
-			On_Consume(M, user)
+				user.visible_message(SPAN_NOTICE("[user] feeds [mob] a tiny bit of [src]. <b>It looks full.</b>"))
+				if (!istype(mob.loc, /turf))
+					to_chat(mob, SPAN_NOTICE("[user] feeds you a tiny bit of [src]. <b>You feel pretty full!</b>"))
+			On_Consume(mob, user)
 			return 1
 		else
-			to_chat(user, SPAN_WARNING("[M.name] can't stomach anymore food!"))
+			to_chat(user, SPAN_WARNING("[mob.name] can't stomach anymore food!"))
 
 	return 0
 
@@ -276,8 +328,8 @@
 			for(var/i=1 to (slices_num-slices_lost))
 				var/obj/slice = new slice_path (src.loc)
 				reagents.trans_to_obj(slice, reagents_per_slice)
-				if(istype(slice_path, /obj/item/reagent_containers/food/snacks))
-					slice_path?:food_quality = src.food_quality
+				if(istype(slice, /obj/item/reagent_containers/food/snacks))
+					slice?:food_quality = src.food_quality
 			qdel(src)
 			return
 
@@ -669,6 +721,17 @@
 	matter = list(MATERIAL_BIOMATTER = 6)
 	cooked = TRUE
 
+/obj/item/reagent_containers/food/snacks/frenchtoast
+	name = "french toast"
+	desc =  "A slice of bread soaked in a beaten egg mixture. Tastes like home"
+	icon_state = "frenchtoast"
+	trash = /obj/item/trash/plate
+	filling_color = "#fab82a"
+	nutriment_desc = list("sweetness" = 4, "egg" = 3, "home" = 1)
+	nutriment_amt = 8
+	bitesize = 3
+	matter = list(MATERIAL_BIOMATTER = 7)
+
 /obj/item/reagent_containers/food/snacks/eggplantparm
 	name = "eggplant parmigiana"
 	desc = "The only good recipe for eggplant."
@@ -791,8 +854,8 @@
 	cooked = TRUE
 
 /obj/item/reagent_containers/food/snacks/fries
-	name = "space fries"
-	desc = "AKA: French Fries, Freedom Fries, etc."
+	name = "fries"
+	desc = "The golden standard in side dishes"
 	icon_state = "fries"
 	trash = /obj/item/trash/plate
 	filling_color = "#EDDD00"
@@ -828,7 +891,7 @@
 
 /obj/item/reagent_containers/food/snacks/cheesyfries
 	name = "cheesy fries"
-	desc = "Fries. Covered in cheese. Duh."
+	desc = "Fries sticking in gooey melted cheese"
 	icon_state = "cheesyfries"
 	trash = /obj/item/trash/plate
 	filling_color = "#EDDD00"
@@ -987,7 +1050,7 @@
 	filling_color = "#916E36"
 	center_of_mass = list("x"=16, "y"=10)
 	nutriment_desc = list("poppy seeds" = 2, "pretzel" = 3)
-	nutriment_amt = 5
+	nutriment_amt = 4 //As much as one slice of pizza
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 6)
 
@@ -1404,7 +1467,7 @@
 
 /obj/item/reagent_containers/food/snacks/icecream
 	name = "icecream"
-	desc = "A luxurious yet simple iced cream, the most refreshing dessert after a trip through the humid Amethian jungle."
+	desc = "A luxurious yet simple iced cream, the most refreshing dessert after a trip through the humid Amethian forest."
 	icon_state = "vanillaicecream"
 	trash = /obj/item/trash/icecreambowl
 	bitesize = 3
@@ -1563,6 +1626,13 @@
 		to_chat(user, "You flatten the dough.")
 		qdel(src)
 
+// Dough slice + rolling pin = flat dough slice
+/obj/item/reagent_containers/food/snacks/doughslice/attackby(obj/item/W as obj, mob/user as mob)
+	if(istype(W,/obj/item/material/kitchen/rollingpin))
+		new /obj/item/reagent_containers/food/snacks/flatdoughslice(src)
+		to_chat(user, "You flatten the dough slice.")
+		qdel(src)
+
 // slicable into 3xdoughslices
 /obj/item/reagent_containers/food/snacks/sliceable/flatdough
 	name = "flat dough"
@@ -1580,6 +1650,19 @@
 	desc = "A building block of an impressive dish."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "doughslice"
+	slice_path = /obj/item/reagent_containers/food/snacks/spagetti
+	slices_num = 1
+	bitesize = 2
+	center_of_mass = list("x"=17, "y"=19)
+	nutriment_desc = list("dough" = 1)
+	nutriment_amt = 1
+	matter = list(MATERIAL_BIOMATTER = 2)
+
+/obj/item/reagent_containers/food/snacks/flatdoughslice
+	name = "flat dough slice"
+	desc = "A flattened building block of an impressive dish."
+	icon = 'icons/obj/food_ingredients.dmi'
+	icon_state = "flatdoughslice"
 	slice_path = /obj/item/reagent_containers/food/snacks/spagetti
 	slices_num = 1
 	bitesize = 2
@@ -1663,6 +1746,17 @@
 	bitesize = 3
 	nutriment_amt = 6
 	nutriment_desc = list("crunchy pastry" = 5, "buttery goodness" = 5)
+
+/obj/item/reagent_containers/food/snacks/tortilla
+	name = "tortilla"
+	desc = "The foldable possiblites are endless, as long as it's less than seven folds."
+	icon_state = "tortilla"
+	bitesize = 2
+	center_of_mass = list("x"=21, "y"=12)
+	nutriment_desc = list("taco shell" = 2)
+	nutriment_amt = 2
+	cooked = TRUE
+	matter = list(MATERIAL_BIOMATTER = 5)
 
 /obj/item/reagent_containers/food/snacks/taco
 	name = "taco"
@@ -1800,3 +1894,59 @@
 	nutriment_amt = 5
 	matter = list(MATERIAL_BIOMATTER = 15)
 
+//Tisanes
+
+/obj/item/reagent_containers/food/snacks/poppy_tisane
+	name = "poppy flower tisane"
+	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, but it is more effective at aiding the healing of trauma than simply eating raw poppyflower."
+	icon_state = "poppy_tisane"
+	nutriment_desc = list("bitter tea" = 1)
+	nutriment_amt = 1 //a lil bit from the leaves and plant solids.
+	bitesize = 5
+	preloaded_reagents = list("p_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/tear_tisane
+	name = "sun tear tisane"
+	desc = "A somewhat concentrated decoction of sun tears. A pleasantly sweet tea, it does a better job at aiding the healing of burns than simply chewing the tears raw."
+	icon_state = "tear_tisane"
+	nutriment_desc = list("honeyed tea" = 1)
+	nutriment_amt = 3 //honey
+	bitesize = 5
+	preloaded_reagents = list("st_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/mercy_tisane
+	name = "mercys hand tisane"
+	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, but it does a better job of purging toxins than eating sun tears raw."
+	icon_state = "mercy_tisane"
+	nutriment_desc = list("tart tea" = 1)
+	nutriment_amt = 1
+	bitesize = 5
+	preloaded_reagents = list("mh_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/vale_tisane
+	name = "vale bush tisane"
+	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, and it leaves your mouth tingling. Still, it functions as a more effective analgesic and vasodilator than simply chewing the tears themselves."
+	icon_state = "vale_tisane"
+	nutriment_desc = list("acetic tea" = 1)
+	nutriment_amt = 1
+	bitesize = 5
+	preloaded_reagents = list("vb_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE
+
+/obj/item/reagent_containers/food/snacks/helmet_tisane
+	name = "plump helmet tisane"
+	desc = "A somewhat concentrated decoction of poppy flower. Horribly bitter, but if you can choke back the tea you'll find that it's a far more effective antibiotic than raw plump helmets."
+	icon_state = "helmet_tisane"
+	nutriment_desc = list("bitter tea" = 1)
+	nutriment_amt = 1
+	bitesize = 5
+	preloaded_reagents = list("ph_tea" = 10, "water" = 10)
+	matter = list(MATERIAL_BIOMATTER = 5)
+	cooked = TRUE

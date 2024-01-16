@@ -21,6 +21,7 @@
 	uniform = /obj/item/clothing/under/rank/exultant
 	head = /obj/item/clothing/head/firefighter/chief
 	l_ear = /obj/item/device/radio/headset/heads/ce
+	gloves = /obj/item/clothing/gloves/insulated/guild
 	id_type = /obj/item/card/id/ce
 	pda_type = /obj/item/modular_computer/pda/heads/ce
 

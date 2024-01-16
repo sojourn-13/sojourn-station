@@ -15,12 +15,12 @@
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_MASSIVE
 	fire_delay = 10
-	charge_cost = 100 //10 shots with basic 15 with level 2
+	charge_cost = 60 // 10 shots out of a 600M
 	init_recoil = HANDGUN_RECOIL(1)
 	price_tag = 1500
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
-		list(mode_name="rapid fire", mode_desc="Light rapid plasma bolts", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=8, icon="stun", projectile_color = "#00FFFF"),
+		list(mode_name="rapid fire", mode_desc="Light rapid plasma bolts", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/vaporize.ogg', fire_delay=8, icon="stun", projectile_color = "#00FFFF"),
 		list(mode_name="grenade", mode_desc="fires a frag biomatter-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag/nt, charge_cost=30000, icon="grenade"),
 	)
 	twohanded = TRUE

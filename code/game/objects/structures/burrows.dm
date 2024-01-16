@@ -32,10 +32,6 @@
 	//Ones located outside of maint are much less likely to be picked for migration
 	var/maintenance = FALSE
 
-	//If true, this burrow is located near NT obelisk.
-	//those are much less likely to be picked for migration due cool NT magic
-	var/obelisk_around = null
-
 
 	//Vars for migration
 	var/processing = FALSE
@@ -94,7 +90,8 @@
 		maintenance = TRUE
 		break_open(TRUE)
 
-	if(prob(3))
+	var/turf/T = get_turf(src)
+	if(prob(3) && T.z == 2) //Bottom floor of maints only
 		deepmaint_entry_point = TRUE
 
 	if(deepmaint_entry_point) //so we can tell at a glace what is a deep maints borrow
@@ -134,6 +131,13 @@
 	else
 		populated_burrows -= src
 		unpopulated_burrows |= src
+
+/obj/structure/burrow/proc/obelisk_around()
+	var/obj/machinery/power/nt_obelisk/obelisk = locate(/obj/machinery/power/nt_obelisk) in range(7, src)
+	if(obelisk && obelisk.active)
+		return TRUE
+	else
+		return FALSE
 
 
 /*

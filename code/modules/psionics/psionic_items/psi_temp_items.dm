@@ -34,6 +34,52 @@
 		qdel(src)
 		return
 
+/obj/item/flame/pyrokinetic_spark
+	name = "pyrokinetic flame"
+	desc = "A flickering psionic induced flame."
+	icon = 'icons/obj/psionic/occpyrospark.dmi'
+	icon_state = "pyrospark"
+	item_state = "pyrospark"
+	var/burntime = 120
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = null
+	attack_verb = list("burnt", "singed")
+	lit = 1
+	var/mob/living/carbon/holder
+
+/obj/item/flame/pyrokinetic_spark/Process()
+	if(isliving(loc))
+		var/mob/living/M = loc
+		M.IgniteMob()
+	var/turf/location = get_turf(src)
+	burntime--
+	if(burntime < 1)
+		burn_out()
+		return
+	if(location)
+		location.hotspot_expose(700, 5)
+		return
+
+/obj/item/flame/pyrokinetic_spark/proc/burn_out()
+		visible_message("The [src.name] shudders away from your hand like it was nothing.")
+		STOP_PROCESSING(SSobj, src)
+		qdel(src)
+		return
+
+/obj/item/flame/pyrokinetic_spark/New(var/loc, var/mob/living/carbon/Maker)
+	..()
+	holder = Maker
+	set_light(3)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/flame/pyrokinetic_spark/Process()
+	..()
+	if(loc != holder) // We're no longer in the psionic's hand.
+		sleep(4)
+		visible_message("The [src.name] flickers away as the fire fades into nothingness")
+		STOP_PROCESSING(SSobj, src)
+		qdel(src)
+		return
 
 /obj/item/tool/hammer/telekinetic_fist
 	name = "telekinetic fist"
@@ -115,6 +161,7 @@
 	origin_tech = list()
 	matter = list()
 	degradation = 0 // Can't degrade
+	embed_mult = 0 //Shouldn't embed, it's not real.
 	workspeed = 0.8
 	use_power_cost = 0 // Don't use power
 	max_upgrades = 0 // Can't upgrade it

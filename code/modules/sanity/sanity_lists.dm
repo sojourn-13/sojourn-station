@@ -177,18 +177,18 @@
 
 /datum/sanity/proc/pick_emote_20()
 	var/static/list/emotes = list(
-		"grumbles.",
-		"mutters.",
-		"groans."
+		"bobbles up and down.",
+		"turns their head back and forth.",
+		"flinches."
 	)
 	return pick(emotes)
 
 /datum/sanity/proc/pick_emote_40()
 	var/static/list/emotes = list(
-		"stares.",
-		"sighs.",
-		"frowns.",
-		"glares."
+		"gazes into the distance.",
+		"furrows a brow",
+		"shivers a moment.",
+		"crosses arms."
 	)
 	return pick(emotes)
 

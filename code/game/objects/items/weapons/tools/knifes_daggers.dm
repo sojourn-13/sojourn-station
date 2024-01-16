@@ -23,6 +23,13 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BLADE
 	var/backstab_damage = 10
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "switches their stance to avoid using the blade of their weapon"
+	alt_mode_lossrate = 0.7
+
 /obj/item/tool/knife/resolve_attackby(atom/target, mob/user)
 	. = ..()
 	if(!(iscarbon(target) || isanimal(target)))
@@ -34,12 +41,17 @@
 	if(user.dir != target.dir)
 		return
 	var/mob/living/carbon/M = target
-	M.apply_damages(backstab_damage,0,0,0,0,0,user.targeted_organ)
 	visible_message("<span class='danger'>[user] backstabs [target] with [src]!</span>")
 	M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been backstabbed by [user.name] ([user.ckey])</font>")
-	user.attack_log += text("\[[time_stamp()]\] <font color='red'>Backstabbed [M.name] ([M.ckey])</font>")
+	user.attack_log += text("\[[time_stamp()]\] <font color='red'>Backstabbed [M.name] ([M.ckey]): Alt Mode [has_alt_mode] (1 means active, 0 means inactive)</font>")
 	//Uses regular call to deal damage
-	//Is affected by mob armor*
+	//Isn't affected by mob armor*
+
+	if(alt_mode_active)
+		var/LTL_backstab = backstab_damage * 0.5
+		M.apply_damages(0,0,0,0,0,LTL_backstab,user.targeted_organ)
+	else
+		M.apply_damages(backstab_damage,0,0,0,0,0,user.targeted_organ)
 
 /obj/item/tool/knife/boot
 	name = "boot knife"
@@ -82,8 +94,25 @@
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
 	force = WEAPON_FORCE_PAINFUL
+	armor_penetration = ARMOR_PEN_MODERATE
+	max_upgrades = 3
 	backstab_damage = 14
 	price_tag = 7
+
+/obj/item/tool/knife/ritual/sickle
+	name = "bloodletter"
+	desc = "A ritual knife, its latent unearthly energies partly awoken by forces unknown. \
+			The curved blade cuts deep into flesh, drawing blood for rituals with ease."
+	icon_state = "render_awakened"
+	hitsound = 'sound/weapons/renderslash.ogg'
+	force = WEAPON_FORCE_DANGEROUS
+	armor_penetration = ARMOR_PEN_DEEP
+	max_upgrades = 2
+	hitsound = 'sound/weapons/renderslash.ogg'
+	backstab_damage = 8 // Not so much for stabbing as it is for cutting.
+	tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_WIRE_CUTTING = 10)
+	attack_verb = list("slashed", "sliced", "ripped", "diced", "cut")
+	embed_mult = 1.5 // Careful not to lose it!
 
 /obj/item/tool/knife/butch
 	name = "butcher's cleaver"
@@ -156,6 +185,7 @@
 	item_state = "skinning"
 	armor_penetration = ARMOR_PEN_DEEP
 	tool_qualities = list(QUALITY_CUTTING = 50)
+	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 2, MATERIAL_DIAMOND = 3) // 5 plasteel + 2 wood, then +3 plasteel +3 diamond from whetstone.
 	price_tag = 500 // Takes diamond to make and very rare.
 
 /obj/item/tool/knife/dagger/ceremonial

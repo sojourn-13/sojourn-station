@@ -9,11 +9,11 @@
 	tree_y = 0.5
 	start_discovered = FALSE
 	spawn_always = TRUE
-	markup = UNIQUE_GOODS
+	markup = UNCOMMON_GOODS
 	offer_limit = 5
 	base_income = 3200
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3500
 	stations_recommended = list("illegal2")
 	recommendations_needed = 2
 	inventory = list(

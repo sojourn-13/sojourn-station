@@ -299,6 +299,8 @@
 
 	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/_pointed, A))
 
+	usr.visible_message("<b>[src]</b> points to [A]")
+
 /// possibly delayed verb that finishes the pointing process starting in [/mob/verb/pointed()].
 /// either called immediately or in the tick after pointed() was called, as per the [DEFAULT_QUEUE_OR_CALL_VERB()] macro
 /mob/proc/_pointed(atom/pointing_at)
@@ -1206,7 +1208,12 @@ mob/proc/yank_out_object()
 	var/table_header = "<th>Stat Name<th>Stat Value"
 	var/list/S = list()
 	for(var/TS in ALL_STATS)
-		S += "<td>[TS]<td>[getStatStats(TS)]"
+		var/points = user.stats.getStat(TS,pure = TRUE)
+		if(!user.stats.getPerk(PERK_NO_OBSUCATION))
+			S += "<td>[TS]<td> [statPointsToLevel(points)]"
+		else
+			S += "<td>[TS]<td> [points] ([statPointsToLevel(points)])"
+
 	var/data = {"
 		[additionalcss]
 		[user == src ? "Your stats:" : "[name]'s stats"]<br>
@@ -1220,9 +1227,9 @@ mob/proc/yank_out_object()
 	if (stats) // Check if mob has stats. Otherwise we cannot read null.perks
 		for(var/perk in stats.perks)
 			var/datum/perk/P = perk
-			Plist += "<td valign='middle'><img src=[SSassets.transport.get_asset_url(P.type)]></td><td><span style='text-align:center'>[P.name]<br>[P.desc]</span></td>"
+			Plist += "<tr><td valign='middle'><img src=[SSassets.transport.get_asset_url(P.type)]></td><td><span style='text-align:center'>[P.name]<br>[P.desc]</span></td></tr>"
 	data += {"
-		<table width=80%>
+		<table width=100%>
 			<th colspan=2>Perks</th>
 			<tr>[Plist.Join()]</tr>
 		</table>

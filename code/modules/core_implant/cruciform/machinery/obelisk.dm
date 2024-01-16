@@ -15,13 +15,13 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 30
 	active_power_usage = 2500
-	var/overrideFaithfulCheck = FALSE
 	var/active = FALSE
 	var/area_radius = 7
 	var/damage = 20
 	var/max_targets = 5
 	var/nt_buff_power = 5
 	var/nt_buff_cd = 3
+	var/debug = FALSE //Enable if you want admins to be spammed with info about how many mobs are in range of a given obelisk.
 
 	var/static/stat_buff
 	var/list/currently_affected = list()
@@ -36,7 +36,7 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 /obj/machinery/power/nt_obelisk/Destroy()
 	for(var/i in currently_affected)
 		var/mob/living/carbon/human/H = i
-		H.stats.removePerk(/datum/perk/sanityboost)
+		H.stats.removePerk(PERK_SANITYBOOST)
 	currently_affected = null
 	return ..()
 
@@ -47,18 +47,24 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 	..()
 	if(stat)
 		return
-	var/list/affected = list()
+	var/list/affected = hearers(area_radius, src)
+	if(debug)
+		log_and_message_admins("The list that [src] is looking through to find targets is [affected.len] long")
+	/*
 	for(var/mob/living/carbon/human/H in GLOB.human_mob_list)
+		if(debug)
+			log_and_message_admins("The list that the obelisk is looking through to find humans is [GLOB.human_mob_list.len] long")
 		if (H.z == src.z && get_dist(src, H) <= area_radius)
 			affected.Add(H)
-	active = check_for_faithful(affected) || overrideFaithfulCheck
+	*/
+	active = check_for_faithful(affected)
 	update_icon()
 
 	if(force_active > 0)
 		active = TRUE
 	force_active--
 	update_icon()
-
+/*
 	if(!active)
 		use_power = IDLE_POWER_USE
 	else
@@ -69,7 +75,8 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 		return
 	else
 		ticks_to_next_process = 3
-
+*/
+/* Handling this as a check in the burrow life_scan proc
 	for(var/obj/structure/burrow/burrow in GLOB.all_burrows)
 		if(get_dist(src, burrow) <= area_radius)
 			if(!active)
@@ -78,13 +85,15 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 			else
 				if(!burrow.obelisk_around)
 					burrow.obelisk_around = any2ref(src)
-
+*/
 	if(active)
-		var/list/affected_mobs = SSmobs.mob_living_by_zlevel[(get_turf(src)).z]
+		//var/list/affected_mobs = SSmobs.mob_living_by_zlevel[(get_turf(src)).z]
+		//if(debug)
+		//	log_and_message_admins("Has [affected_mobs.len] mobs on its z-level")
 		var/to_fire = max_targets
-		for(var/mob/living/A in affected_mobs)
-			if(!(get_dist(src, A) <= area_radius))
-				continue
+		for(var/mob/living/A in affected)
+			//if(!(get_dist(src, A) <= area_radius))
+			//	continue
 			if(istype(A, /mob/living/carbon/superior_animal))
 				var/mob/living/carbon/superior_animal/animal = A
 				if(animal.stat != DEAD &! animal.colony_friend) //got roach, spider, xenos, but not colony pets
@@ -101,20 +110,20 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 						eotp.addObservation(1)
 					if(!--to_fire)
 						return
-
+/* We don't have maintshrooms
 		if(to_fire)//If there is anything else left, fuck up the plants
 			for(var/obj/effect/plant/shroom in GLOB.all_maintshrooms)
 				if(shroom.z == src.z && get_dist(src, shroom) <= area_radius)
 					qdel(shroom)
 					if(!--to_fire)
 						return
-
+*/
 /obj/machinery/power/nt_obelisk/proc/check_for_faithful(list/affected)
 	var/got_neoteo = FALSE
 	var/list/no_longer_affected = currently_affected - affected
 	for(var/i in no_longer_affected)
 		var/mob/living/carbon/human/H = i
-		H.stats.removePerk(/datum/perk/sanityboost)
+		H.stats.removePerk(PERK_SANITYBOOST)
 	currently_affected -= no_longer_affected
 	for(var/mob/living/carbon/human/mob in affected)
 		var/obj/item/implant/core_implant/I = mob.get_core_implant(/obj/item/implant/core_implant/cruciform)
@@ -128,7 +137,7 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 				eotp.addObservation(10)
 		if(I && I.active && I.wearer)
 			if(!(mob in currently_affected)) // the mob just entered the range of the obelisk
-				mob.stats.addPerk(/datum/perk/sanityboost)
+				mob.stats.addPerk(PERK_SANITYBOOST)
 				currently_affected += mob
 			I.restore_power(I.power_regen*2)
 			for(var/r_tag in mob.personal_ritual_cooldowns)
@@ -140,7 +149,7 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 				var/prev_stat
 				for(var/stat in ALL_STATS_FOR_LEVEL_UP)
 					var/datum/stat_mod/SM = mob.stats.getTempStat(stat, "nt_obelisk")
-					//if(mob.stats && mob.stats.getPerk(/datum/perk/channeling))
+					//if(mob.stats && mob.stats.getPerk(PERK_CHANNELING))
 					//	buff_power = buff_power * 2  // Channeling gives +1 stat point per disciple so it amounts to * 2
 					if(stat == stat_buff)
 						if(!SM)

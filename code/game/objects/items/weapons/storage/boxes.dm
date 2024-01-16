@@ -92,9 +92,10 @@
 	qdel(src)
 
 /obj/item/storage/box/survival/populate_contents()
-	new /obj/item/clothing/mask/breath(src)
-	new /obj/item/tank/emergency_oxygen(src)
+	new /obj/item/stack/medical/bruise_pack(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector(src)
+	new /obj/item/device/lighting/toggleable/flashlight(src)
+	new /obj/item/cell/small(src)
 	if(prob(50))
 		new /obj/item/reagent_containers/food/snacks/openable/mre(src)
 	else
@@ -108,7 +109,9 @@
 		new /obj/item/reagent_containers/food/snacks/openable/mre(src)
 	else
 		new /obj/item/reagent_containers/food/snacks/openable/mre/alt(src)
-	new /obj/item/device/lighting/glowstick/yellow(src)
+	new /obj/item/stack/medical/bruise_pack(src)
+	new /obj/item/device/lighting/toggleable/flashlight(src)
+	new /obj/item/cell/small(src)
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
@@ -666,7 +669,7 @@
 	if(istype(W) && !W.lit && !W.burnt)
 		playsound(src, 'sound/items/matchstrike.ogg', 20, 1, 1)
 		W.lit = 1
-		W.damtype = "burn"
+		W.damtype = BURN
 		W.icon_state = "match_lit"
 		W.tool_qualities = list(QUALITY_CAUTERIZING = 10)
 		START_PROCESSING(SSobj, W)
@@ -815,7 +818,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 // Guild boxes, exclusively used to mass craft guild parts.
 /obj/item/storage/box/guild_manip
 	name = "box of forged manipulators"
-	desc = "A box containing five forged manipulators, the best that Nadezhda can produce."
+	desc = "A box containing four forged manipulators, the best that Nadezhda can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -825,7 +828,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/guild_bin
 	name = "box of cast matter bins"
-	desc = "A box containing five cast matter bins, the best that Nadezhda can produce."
+	desc = "A box containing four cast matter bins, the best that Nadezhda can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -835,7 +838,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/guild_laser
 	name = "box of perfected micro-lasers"
-	desc = "A box containing five perfected micro-lasers, the best that Nadezhda can produce."
+	desc = "A box containing four perfected micro-lasers, the best that Nadezhda can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -845,7 +848,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/guild_scanner
 	name = "box of perfected scanning modules"
-	desc = "A box containing five perfected scanning modules, the best that Nadezhda can produce."
+	desc = "A box containing four perfected scanning modules, the best that Nadezhda can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -855,7 +858,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/guild_capacitor
 	name = "box of ultra capacitors"
-	desc = "A box containing five ultra capacitors, the best that Nadezhda can produce."
+	desc = "A box containing four ultra capacitors, the best that Nadezhda can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -924,3 +927,32 @@ Boxes with clothing on them, unable to put them back if taken out because...
 	for(var/i in 1 to 3)
 		new /obj/item/storage/pill_bottle/njoy/green(src)
 
+/obj/item/storage/box/headsets
+	name = "spare headsets box"
+	desc = "A box full of unkeyed headsets for new colonists."
+	illustration = "headset"
+
+/obj/item/storage/box/headsets/populate_contents()
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+
+/obj/item/storage/box/ccstamps
+	name = "official stamps box"
+	desc = "A box full of assorted stamps from various high ranking officials in the lower colony. What're these all doing together?"
+	illustration = "stamps"
+
+/obj/item/storage/box/ccstamps/populate_contents()
+	new /obj/item/stamp/cc(src)
+	new /obj/item/stamp/cc/nm(src)
+	new /obj/item/stamp/cc/bs(src)
+	new /obj/item/stamp/cc/chunch(src)
+	new /obj/item/stamp/cc/prosp(src)
+	new /obj/item/stamp/cc/si(src)
+	new /obj/item/stamp/cc/ls(src)
+	new /obj/item/stamp/cc/guilg(src)

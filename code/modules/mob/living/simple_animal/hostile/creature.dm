@@ -12,6 +12,7 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 	faction = "creature"
 	speed = 4
+	sanity_damage = 2
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
 /mob/living/simple_animal/hostile/creature/cult
@@ -73,6 +74,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	attacktext = "hits"
+	sanity_damage = 1
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 	attack_sound = 'sound/weapons/rapierhit.ogg'
 
@@ -92,6 +94,7 @@
 	icon_state = "faceless"
 	health = 1000
 	maxHealth = 1000
+	sanity_damage = 4
 
 /mob/living/simple_animal/hostile/madminer/cultist
 	name = "cultist"
@@ -118,7 +121,7 @@
 	speed = 6
 	has_special_parts = TRUE
 	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_ECHOLOCATION, MUTATION_TOXIN_RESISTANCE, MUTATION_BLOOD_BANK)
-	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
+	special_parts = list(/obj/item/animal_part/sarg_horn, /obj/item/animal_part/sarg_horn)
 	armor = list(melee = 5, bullet = 10, energy = 0, bomb = 25, bio = 0, rad = 25)
 
 /*

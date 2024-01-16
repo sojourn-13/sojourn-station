@@ -21,6 +21,7 @@
 	megafauna_max_cooldown = 80
 	vision_range = 16
 	aggro_vision_range = 16
+	sanity_damage = 3
 
 
 	var/health_marker_1 = 0//1700

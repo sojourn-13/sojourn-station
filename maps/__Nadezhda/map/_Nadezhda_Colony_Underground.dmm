@@ -3397,8 +3397,8 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/disposaldrop)
 "ahw" = (
-/obj/item/clothing/suit/armor/flackvest/green,
-/obj/item/clothing/suit/armor/flackvest/green,
+/obj/item/clothing/suit/armor/flakvest,
+/obj/item/clothing/suit/armor/flakvest,
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/head/helmet/faceshield/altyn,
 /obj/item/clothing/head/helmet/faceshield/altyn/maska,
@@ -11294,10 +11294,10 @@
 /obj/item/reagent_containers/syringe/stim/ultra_surgeon{
 	pixel_x = 0
 	},
-/obj/item/reagent_containers/syringe/stim/machine_spirit{
+/obj/item/reagent_containers/syringe/stim/greasy_lard{
 	pixel_x = 5
 	},
-/obj/item/reagent_containers/syringe/stim/machine_spirit{
+/obj/item/reagent_containers/syringe/stim/greasy_lard{
 	pixel_x = 10
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -55416,8 +55416,8 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "tbc" = (
-/obj/item/clothing/suit/armor/platecarrier/ih,
-/obj/item/clothing/suit/armor/platecarrier/ih,
+/obj/item/clothing/suit/armor/platecarrier,
+/obj/item/clothing/suit/armor/platecarrier,
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/head/helmet,
 /obj/item/clothing/head/helmet,
@@ -55429,10 +55429,6 @@
 /obj/item/clothing/suit/armor/vest/ironhammer,
 /obj/item/clothing/suit/armor/vest/ironhammer,
 /obj/item/clothing/suit/armor/vest/ironhammer,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/suit/armor/vest/security,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security)
 "tbq" = (

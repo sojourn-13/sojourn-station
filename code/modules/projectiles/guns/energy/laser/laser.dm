@@ -46,7 +46,7 @@
 	allow_greyson_mods = TRUE
 
 /obj/item/gun/energy/laser/mounted/cyborg
-	name = "integrated \"Cog\" lasgun"
+	name = "integrated \"Cog\" laser carbine"
 	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made."
 	icon = 'icons/obj/guns/energy/cog.dmi'
 	icon_state = "cog"

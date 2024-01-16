@@ -17,7 +17,7 @@
 	minimum_character_age = 25
 	health_modifier = 5
 
-	disallow_species = list(FORM_UNBRANDED, FORM_SOTSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 	outfit_type = /decl/hierarchy/outfit/job/engineering/exultant
 
 	access = list(
@@ -55,7 +55,7 @@
 	Strive to protect the rights of your Adepts, as well as their safety and health.<br>\
 	Conduct your own repairs and projects as required - especially when low staffed. "
 
-	perks = list(/datum/perk/inspiration, /datum/perk/handyman)
+	perks = list(PERK_INSPIRATION, PERK_HANDYMAN)
 
 /obj/landmark/join/start/chief_engineer
 	name = "Guild Master"
@@ -112,7 +112,7 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 	Respond to distress calls and patch breaches in the walls.<br>\
 	Keep every part of the colony powered, oxygenated, and ready to use."
 
-	perks = list(/datum/perk/inspiration, /datum/perk/handyman)
+	perks = list(PERK_INSPIRATION, PERK_HANDYMAN)
 
 /obj/landmark/join/start/technomancer
 	name = "Guild Adept"

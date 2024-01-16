@@ -3,6 +3,12 @@
 	suit = /obj/item/clothing/suit/storage/rank/ass_jacket
 	uniform = /obj/item/clothing/under/rank/assistant
 
+/decl/hierarchy/outfit/job/foreigner
+	name = OUTFIT_JOB_NAME("Visitor")
+	id_type = /obj/item/card/id/visitor
+	pda_type = null
+	uniform = /obj/item/clothing/under/genericw
+
 /decl/hierarchy/outfit/job/service
 	l_ear = /obj/item/device/radio/headset/headset_service
 	hierarchy_type = /decl/hierarchy/outfit/job/service

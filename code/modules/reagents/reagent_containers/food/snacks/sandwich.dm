@@ -122,7 +122,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=4)
 	nutriment_desc = list("bread" = 3, "cheese" = 3)
-	nutriment_amt = 3
+	nutriment_amt = 8 //As much as two slices of pizza
 	preloaded_reagents = list("protein" = 3)
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 13)
@@ -135,7 +135,7 @@
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=4)
 	nutriment_desc = list("toasted bread" = 3, "cheese" = 3)
-	nutriment_amt = 3
+	nutriment_amt = 8
 	preloaded_reagents = list("protein" = 6) // Who thought putting carbon on a FOOD was a good idea?!
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 17)
@@ -149,7 +149,7 @@
 	center_of_mass = list("x"=16, "y"=4)
 	nutriment_desc = list("toasted bread" = 3, "cheese" = 3, "delux toasted sandwich" = 5)
 	nutriment_amt = 3
-	preloaded_reagents = list("protein" = 3, "machine binding ritual" = 3, "glucose" = 2)
+	preloaded_reagents = list("protein" = 3, "greaser" = 3, "glucose" = 2)
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 23)
 

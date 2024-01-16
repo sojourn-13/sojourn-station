@@ -1,30 +1,39 @@
 /datum/design/research/item/greyson/cog
-	name = "GP \"Cog\" lasgun"
+	name = "GP \"Cog\" laser carbine"
 	build_path = /obj/item/gun/energy/cog
 	category = CAT_WEAPON
 
 /datum/design/research/item/greyson/cog_sawn
-	name = "GP \"Pinion\" lasgun"
+	name = "GP \"Pinion\" laser pistol"
 	build_path = /obj/item/gun/energy/cog/sawn
 	category = CAT_WEAPON
 
 /*	// Unneeded with the introduction of the Sprocket, keeps this variant as Marshal exclusive
 /datum/design/research/item/greyson/cog_gear
-	name = "GP \"Gear\" lasgun"
+	name = "GP \"Gear\" police laser carbine"
 	build_path = /obj/item/gun/energy/cog/gear
 	category = CAT_WEAPON
 */
 
 /datum/design/research/item/greyson/cog_sprocket
-	name = "Soteria \"Sprocket\" lasgun"
+	name = "Soteria \"Sprocket\" laser carbine"
 	build_path = /obj/item/gun/energy/cog/sprocket
 	category = CAT_WEAPON
-
 
 /datum/design/research/item/greyson/abnegate
 	name = "\"SST Abnegate\" handgun"
 	build_path = /obj/item/gun/energy/sst
 	category = CAT_WEAPON
+
+/datum/design/research/item/greyson/systemcost
+    name = "\"SST System Cost\" light machinegun"
+    build_path = /obj/item/gun/energy/sst/systemcost
+    category = CAT_WEAPON
+
+/datum/design/research/item/greyson/formatbound
+    name = "\"SST Format Bound\" handgun"
+    build_path = /obj/item/gun/energy/sst/formatbound
+    category = CAT_WEAPON
 
 /datum/design/research/item/greyson/humility
 	name = "\"SST Humility\" shotgun"

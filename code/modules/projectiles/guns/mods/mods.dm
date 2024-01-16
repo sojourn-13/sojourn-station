@@ -407,6 +407,24 @@
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "heavy"
 
+/obj/item/gun_upgrade/mechanism/froggeytensioner
+	name = "high tension bowstring"
+	desc = "A collection of pulleys, mounting screws and an impressively powerful bowstring of animal sinew for installing onto a bow. Makes it harder to draw back, but more powerful."
+	icon_state = "winder_kit"
+	price_tag = 500
+
+/obj/item/gun_upgrade/mechanism/froggeytensioner/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_BRUTE = 0.25,
+		GUN_UPGRADE_OVERCHARGE_MAX = 1.25,
+		GUN_UPGRADE_OVERCHARGE_RATE = 0.7
+		)
+	I.req_gun_tags = list(ARROW_FIRING)
+	I.gun_loc_tag = GUN_MECHANISM
+	I.prefix = "overstrung"
+
 /obj/item/gun_upgrade/mechanism/detensioner
 	name = "compound pulley kit"
 	desc = "A set of compound pulleys, cables and mounting screws for installing onto a bow. Makes it significantly easier to draw back, but less powerful."
@@ -548,22 +566,6 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_BARREL
 
-//We don't use sanity damage and sanity damaging effects, but I'm keeping this commented out in case we some day do.
-// Add psy damage to your weapon
-/obj/item/gun_upgrade/mechanism/psionic_catalyst
-	name = "Moebius \"Mastermind\" psionic catalyst"
-	desc = "This controversial device greatly amplifies the natural psionic ability of the user and allows them to project their will into the world. Before the development of the Psi Amp, psionic disciplines were mostly detectable only in a lab environment."
-	icon_state = "psionic_catalyst"
-	matter = list(MATERIAL_SILVER = 3, MATERIAL_PLASTEEL = 3, MATERIAL_URANIUM = 3)
-
-/obj/item/gun_upgrade/mechanism/psionic_catalyst/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-	GUN_UPGRADE_DAMAGE_PSY = 0.4)
-	I.prefix = "psionic"
-	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.gun_loc_tag = GUN_MECHANISM
 */
 /* //The handholder rail and its consequences have been a disaster for Sojournkind.
 /obj/item/gun_upgrade/mechanism/gun_rail
@@ -588,6 +590,24 @@
 	I.unique_removal = TRUE
 	I.unique_removal_type = GUN_SCOPE
 */
+//We don't use sanity damage and sanity damaging effects, but I'm keeping this commented out in case we some day do.
+// Add psy damage to your weapon
+
+/obj/item/gun_upgrade/mechanism/psionic_catalyst
+	name = "Moebius \"Mastermind\" psionic catalyst"
+	desc = "This controversial device greatly amplifies the natural psionic ability of the user and allows them to project their will into the world. Before the development of the Psi Amp, psionic disciplines were mostly detectable only in a lab environment."
+	icon_state = "psionic_catalyst"
+	matter = list(MATERIAL_SILVER = 3, MATERIAL_PLASTEEL = 3, MATERIAL_URANIUM = 3)
+
+/obj/item/gun_upgrade/mechanism/psionic_catalyst/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_DAMAGE_PSY = 0.4)
+	I.prefix = "psionic"
+	I.req_gun_tags = list(GUN_PROJECTILE)
+	I.gun_loc_tag = GUN_MECHANISM
+
 /obj/item/gun_upgrade/mechanism/greyson_master_catalyst
 	name = "Greyson \"Master Unmaker\" infuser"
 	desc = "One of the rarest and most powerful weapon modifications ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
@@ -686,8 +706,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_OFFSET = 0.9,
-		GUN_UPGRADE_ZOOM = 1 // 8 extra tiles of vision
+		GUN_UPGRADE_OFFSET = 0.5,
+		GUN_UPGRADE_ZOOM = 0.5 // 3 extra tiles of vision
 		)
 	I.gun_loc_tag = GUN_SCOPE
 	I.req_gun_tags = list(GUN_SCOPE)

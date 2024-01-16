@@ -12,7 +12,7 @@
 	/obj/item/paper,
 	/obj/item/paper_bundle,
 	/obj/item/photo,
-	/obj/item/alchemy/recipe_scroll
+	/obj/item/paper/alchemy_recipes
 	)
 
 /obj/item/folder/black

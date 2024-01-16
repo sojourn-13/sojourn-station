@@ -7,7 +7,7 @@
 	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_MAGNUM
-	slot_flags = SLOT_BACK|SLOT_BELT
+	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER // The Vector can, I don't see why this one shouldn't as it's literally just a liberty with extended mag.
 	load_method = SINGLE_CASING|MAGAZINE
 	caliber = CAL_MAGNUM
 	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL

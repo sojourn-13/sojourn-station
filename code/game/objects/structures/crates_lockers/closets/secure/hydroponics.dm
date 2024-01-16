@@ -53,5 +53,4 @@
 	new /obj/item/clothing/suit/armor/vest/botanist(src)
 	new /obj/item/clothing/head/helmet/botanist(src)
 	new /obj/item/clothing/gloves/botanic_leather(src)
-	new /obj/item/clothing/under/rank/church/sport(src)
 	new /obj/item/clothing/suit/storage/neotheosports(src)

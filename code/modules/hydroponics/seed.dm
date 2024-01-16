@@ -729,7 +729,7 @@
 		if(istype(user)) to_chat(user, "You [harvest_sample ? "take a sample" : "harvest"] from the [display_name].")
 
 		// Users with green thumb perk gain sanity when harvesting plants
-		if(ishuman(user) && user.stats && user.stats.getPerk(/datum/perk/greenthumb) && !harvest_sample)
+		if(ishuman(user) && user.stats && user.stats.getPerk(PERK_GREENTHUMB) && !harvest_sample)
 			var/mob/living/carbon/human/H = user
 			if(H.sanity)
 				H.sanity.changeLevel(2.5)

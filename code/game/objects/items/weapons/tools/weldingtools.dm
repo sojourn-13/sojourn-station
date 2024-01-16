@@ -66,6 +66,7 @@
 
 /obj/item/tool/weldingtool/advanced
 	name = "advanced welding tool"
+	desc = "An advanced portable welding torch, more efficient and robust, while also sporting higher fuel capacity."
 	icon_state = "adv_welder"
 	item_state = "adv_welder"
 	glow_color = COLOR_BLUE_LIGHT
@@ -88,7 +89,7 @@
 
 /obj/item/tool/weldingtool/onestar
 	name = "\improper Greyson Positronic welding tool"
-	desc = "An old and legendary Greyson Positronic welding tool. Very powerful and reliable, but its compact design causes it to suffer from a lack of both fuel storage and efficiency."
+	desc = "An old and legendary Greyson Positronic welding tool. Very powerful and reliable, but its compact design causes it to suffer from a lack of both fuel storage and efficiency, requiring regular maintenance."
 	icon_state = "one_star_welder"
 	item_state = "welder"
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLATINUM = 2)
@@ -107,7 +108,7 @@
 //Alchemy thingy
 /obj/item/tool/weldingtool/oil_burner
 	name = "oil burner"
-	desc = "A oil burner used for lighting or to slowly boil things."
+	desc = "A oil burner used for lighting up or to slowly boil things."
 	icon_state = "oil_lamp"
 	item_state = "oil_lamp"
 	switched_on_qualities = list(QUALITY_HEATING = 35, QUALITY_CAUTERIZING = 10, QUALITY_WIRE_CUTTING = 10)

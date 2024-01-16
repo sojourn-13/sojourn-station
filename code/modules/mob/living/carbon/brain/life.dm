@@ -11,17 +11,28 @@
 				to_chat(src, "\red STATUS: CRITICAL AMOUNTS OF RADIATION DETECTED.")
 
 		switch(radiation)
-			if(1 to 49)
+			if(10 to 19)
 				radiation--
-				if(prob(25))
-					adjustToxLoss(1)
-					updatehealth()
+				if(prob(50)) //if we're unlucky, we suffer genetic damage
+					adjustCloneLoss(3)
+				else //if we're lucky, just some minor rad burns
+					adjustFireLoss(5)
+				updatehealth()
+
+			if(20 to 49)
+				radiation--
+				if(prob(50)) //higher rads, the chances of genetic damage rise and so does the actual damage
+					adjustCloneLoss(5)
+				else //if we're lucky, just some rad burns
+					adjustFireLoss(10)
+				updatehealth()
 
 			if(50 to 74)
 				radiation -= 2
-				adjustToxLoss(1)
-				if(prob(5))
+				adjustFireLoss(13) //we definitely got rad burns now
+				if(prob(75))
 					radiation -= 5
+					adjustCloneLoss(15)//and chances are very good we are getting cancer
 					if(!container)
 						to_chat(src, "\red You feel weak.")
 					else
@@ -30,7 +41,8 @@
 
 			if(75 to 100)
 				radiation -= 3
-				adjustToxLoss(3)
+				adjustFireLoss(20)
+				adjustCloneLoss(20)
 				updatehealth()
 
 

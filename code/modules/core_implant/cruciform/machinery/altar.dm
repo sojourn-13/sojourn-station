@@ -20,6 +20,7 @@
 	/obj/item/cruciform_upgrade/speed_of_the_chosen
 	)
 	var/list/available_slots = list()
+	var/request_cooldown = FALSE //Whether this altar has had an item requested from it in the last 10 minutes
 
 /obj/machinery/optable/altar/New()
 	//bottom left
@@ -56,3 +57,9 @@
 		if(!(available_slots[j]["item"] in T.contents))
 			available_slots[j]["item"] = null
 
+/obj/machinery/optable/altar/proc/cooldown(var/T)
+	request_cooldown = TRUE
+	addtimer(CALLBACK(src, .proc/cooled_off), T)
+
+/obj/machinery/optable/altar/proc/cooled_off()
+	request_cooldown = FALSE

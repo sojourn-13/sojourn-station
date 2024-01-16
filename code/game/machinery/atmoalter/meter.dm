@@ -14,23 +14,17 @@
 
 /obj/machinery/meter/New()
 	..()
-	target = locate(/obj/machinery/atmospherics/pipe) in loc
-	if (target) //for some reason, this caused a runtime without this check
-		target.attached_meter = src
-
+	src.target = locate(/obj/machinery/atmospherics/pipe) in loc
 	return 1
 
 /obj/machinery/meter/Initialize()
 	. = ..()
 	if (!target)
-		target = locate(/obj/machinery/atmospherics/pipe) in loc //why do we do this twice, in new and init
-		if (target)
-			target.attached_meter = src
+		src.target = locate(/obj/machinery/atmospherics/pipe) in loc
 
 /obj/machinery/meter/Destroy()
 
 	if(target)
-		target.attached_meter = null
 		target = null
 
 	. = ..()

@@ -149,9 +149,10 @@
 //Outside abandoned structures
 
 /area/nadezhda/dungeon/outside
-	is_maintenance = FALSE
+	is_maintenance = TRUE
 	flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
+	ship_area = FALSE
 	turf_initializer = new /datum/turf_initializer/maintenance()
 	ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
@@ -213,6 +214,14 @@
 	name = "Vault Bunker"
 	icon_state = "erisblue"
 	requires_power = 1
+
+/area/nadezhda/dungeon/outside/safehouse
+	name = "Abandoned Safehouse"
+	icon_state = "nadezhdagreen"
+	dynamic_lighting = TRUE
+	is_dungeon_lootable = FALSE
+	ambience = list('sound/ambience/ambigen1.ogg','sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambigen12.ogg','sound/ambience/ambigen14.ogg')
+	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 //This is put here because the floors are seperated by power needs, the reason being if not powering 1 floor lags the server to hell and back. -Kaz
 /area/nadezhda/dungeon/outside/prepper/vault/floor1
@@ -298,6 +307,7 @@
 /area/nadezhda/outside/forest
 	name = "Forest"
 	icon_state = "forest"
+	is_maintenance = TRUE
 	sound_env = FOREST
 	forced_ambience = list('sound/ambience/forestamb1.ogg', 'sound/ambience/forestamb2.ogg', 'sound/ambience/forestamb3.ogg', 'sound/ambience/forestamb5.ogg', 'sound/ambience/forestamb6.ogg')
 
@@ -348,11 +358,13 @@
 /area/nadezhda/outside/forest/hunting_lodge
 	name = "Hunting Lodge"
 	icon_state = "forest"
+	is_maintenance = FALSE
 	is_dungeon_lootable = FALSE
 
 /area/nadezhda/outside/forest/hunting_lodge_dark
 	name = "Hunting Lodge"
 	icon_state = "erisblue"
+	is_maintenance = FALSE
 	dynamic_lighting = TRUE
 	is_dungeon_lootable = FALSE
 
@@ -399,29 +411,29 @@
 /area/nadezhda/maintenance/substation/engineering
 	name = "Engineering Substation"
 
-/area/nadezhda/maintenance/substation/section1
-	name = "Floor 1 Substation 1"
+/area/nadezhda/maintenance/substation/medical
+	name = "Medial Substation"
 
-/area/nadezhda/maintenance/substation/section2
-	name = "Floor 1 Substation 2"
+/area/nadezhda/maintenance/substation/science
+	name = "Science Substation"
 
-/area/nadezhda/maintenance/substation/section8
-	name = "Floor 1 Substation 3"
+/area/nadezhda/maintenance/substation/sec
+	name = "Marshal Substation"
 
-/area/nadezhda/maintenance/substation/section3
-	name = "Floor 1 Substation 1"
+/area/nadezhda/maintenance/substation/cargo
+	name = "Cargo Substation"
 
-/area/nadezhda/maintenance/substation/section4
-	name = "Floor 1 Substation 2"
+/area/nadezhda/maintenance/substation/servist
+	name = "Servist Substation"
 
-/area/nadezhda/maintenance/substation/section5
-	name = "Floor 1 Substation 3"
+/area/nadezhda/maintenance/substation/misc1
+	name = "MISC Substation 1"
 
-/area/nadezhda/maintenance/substation/section6
-	name = "Floor 2 Substation 4"
+/area/nadezhda/maintenance/substation/misc2
+	name = "MISC Substation 2"
 
-/area/nadezhda/maintenance/substation/section7
-	name = "Floor 1 Substation 5"
+/area/nadezhda/maintenance/substation/misc3
+	name = "MISC Substation 3"
 
 /area/nadezhda/maintenance/substation/bridge
 	name = "Bridge Substation"
@@ -859,8 +871,8 @@
 	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg')
 	sound_env = LARGE_ENCLOSED
 
-/area/nadezhda/absolutism/storage
-	name = "\improper Church Storage"
+/area/nadezhda/absolutism/hallways
+	name = "\improper Church Hallways"
 	icon_state = "erisyellow"
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 
@@ -875,7 +887,7 @@
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 
 /area/nadezhda/absolutism/vectorrooms
-	name = "\improper Church Vector Commons"
+	name = "\improper Church Commons"
 	icon_state = "erisblue"
 	area_light_color = COLOR_LIGHTING_NEOTHEOLOGY_BRIGHT
 

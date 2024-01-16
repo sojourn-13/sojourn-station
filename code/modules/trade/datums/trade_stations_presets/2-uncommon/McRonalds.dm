@@ -6,11 +6,11 @@
 	tree_x = 0.5
 	tree_y = 0.6
 	spawn_always = TRUE
-	markup = UNCOMMON_GOODS
+	markup = COMMON_GOODS
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3000
 	stations_recommended = list("trapper")
 	recommendations_needed = 1
 	offer_limit = 30

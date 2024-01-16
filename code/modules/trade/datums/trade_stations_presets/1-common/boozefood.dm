@@ -11,7 +11,7 @@
 	markup = COMMON_GOODS
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 1000
 	stations_recommended = list("mcronalds", "serbian")
 	inventory = list(
 		"Basic Ingredients" = list(

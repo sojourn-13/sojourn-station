@@ -34,6 +34,7 @@
 	var/max_fuel = 0
 
 	var/mode = NOMODE //For various tool icon updates.
+	var/isbroken = FALSE
 
 	//Third type of resource, stock. A tool that uses physical objects (or itself) in order to work
 	//Currently used for tape roll
@@ -120,8 +121,10 @@
 /obj/item/tool/proc/adjustToolHealth(amount, user)
 	health = min(max_health, max(max_health * (health_threshold/100), health + amount))
 	if(health <= 0)
-		breakTool()
-
+		breakTool(user)
+		return
+	if(max_health <= 0)
+		breakTool(user)
 
 //Ignite plasma around, if we need it
 /obj/item/tool/Process()
@@ -157,6 +160,9 @@
 	return cell
 
 /obj/item/tool/attackby(obj/item/C, mob/living/user)
+	if(isbroken)
+		to_chat(user, SPAN_NOTICE("This tool is broken and falling apart!"))
+		return
 	if(istype(C, suitable_cell) && !cell && insert_item(C, user))
 		src.cell = C
 		update_icon()
@@ -165,6 +171,9 @@
 
 //Turning it on/off
 /obj/item/tool/attack_self(mob/user)
+	if(isbroken)
+		to_chat(user, SPAN_NOTICE("This tool is broken and falling apart!"))
+		return
 	if(toggleable)
 		if(switched_on)
 			if(active_time)
@@ -272,18 +281,11 @@
 *******************************/
 
 //Simple form ideal for basic use. That proc will return TRUE only when everything was done right, and FALSE if something went wrong, ot user was unlucky.
-//Editionaly, handle_failure proc will be called for a critical failure roll.
+//Additionaly, handle_failure proc will be called for a critical failure roll.
 /obj/item/proc/use_tool(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
 	if(health)//Low health on a tool increases failure chance. Scaling up as it breaks further.
-		if(health > max_health * 0.80)//100-80% is normal operation
-		else if(health > max_health * 0.40)
-			fail_chance += 5//80-40% is -5 precision
-		else if(health > max_health * 0.20)
-			fail_chance += 10//40-20% is -10 precision
-		else if(health > max_health * 0.10)
-			fail_chance += 20//20-10% is -20 precision
-		else
-			fail_chance += 40//below 10% is -40 precision. Good luck!
+		fail_chance += get_tool_health_modifer(user)
+
 	var/obj/item/tool/T
 	if(istool(src))
 		T = src
@@ -303,9 +305,38 @@
 		if(TOOL_USE_SUCCESS)
 			return TRUE
 
+/obj/item/proc/get_tool_health_modifer(mob/living/user)
+	var/fail_modifer = 0
+	if(health)//Low health on a tool increases failure chance. Scaling up as it breaks further.
+		if(health > max_health * 0.80)//100-80% is normal operation
+		else if(health > max_health * 0.20)
+			fail_modifer += 2//40-20% is -2 precision
+		else if(health > max_health * 0.10)
+			fail_modifer += 5//20-10% is -5 precision
+		else if(health > max_health * 0.05)
+			fail_modifer += 8//10-5% is -8 precision
+		else
+			fail_modifer += 10//below 5% is -10 precision. Good luck!
+
+	//If a hooman does this with a the tool_breaker tasks they get less odds of failer
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/task_level = H.learnt_tasks.get_task_mastery_level("TOOL_BREAKER")
+		if(task_level)
+			fail_modifer -= task_level
+
+
+	return fail_modifer
+
 //Use this proc if you want to handle all types of failure yourself. It used in surgery, for example, to deal damage to patient.
 /obj/item/proc/use_tool_extended(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
+
 	var/obj/item/tool/T
+
+	//Vars for Absolutist speed debuff
+	var/holy_delay = 0
+	var/cruciform_slow = 1.25
+
 	if(istool(src))
 		T = src
 		T.last_tooluse = world.time
@@ -330,6 +361,9 @@
 			fail_chance += round(H.shock_stage/120 * 40)
 			base_time += round(H.shock_stage/120 * 40)
 
+	if(user.stats.getPerk(PERK_COMMUNITY_SAINTS))
+		holy_delay = cruciform_slow
+
 
 	//Start time and time spent are used to calculate resource use
 	var/start_time = world.time
@@ -346,6 +380,9 @@
 		//Workspeed var, can be improved by upgrades
 		if(T && T.workspeed > 0)
 			time_to_finish /= T.workspeed
+		//Slowdown for Absolutists. Sanctified tools don't get additional slowdown
+		if(holy_delay > 0 && T?.sanctified == FALSE)
+			time_to_finish *= holy_delay
 		// the worse tool condition - the more time required
 		if(T && T.degradation)
 			// so basically we adding time based on percent of missing health multiplied by ADDITIONAL_TIME_LOWHEALTH for easier balancing
@@ -455,6 +492,10 @@
 		fail_chance = 0
 
 	if(fail_chance >= 100)
+		if(!user.stats.getPerk(PERK_NO_OBSUCATION))
+			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! Considering your skills and this tool, it is impossible."))
+		else
+			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! The odds of succes are [fail_chance], this is infact impossible."))
 		to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! Considering your skills and this tool, it is impossible."))
 		return TOOL_USE_FAIL
 	if(prob(fail_chance))
@@ -469,23 +510,43 @@
 			chanceMessage = "small"
 		else if(fail_chance < 95)
 			chanceMessage = "tiny"
+
+		if(!user.stats.getPerk(PERK_NO_OBSUCATION))
+			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [chanceMessage] chance to succeed."))
+		else
+			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [fail_chance]% chance to fail."))
 		to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [chanceMessage] chance to succeed."))
 		return TOOL_USE_FAIL
 
 	return TOOL_USE_SUCCESS
 
 /obj/item/tool/proc/breakTool(mob/user)
+
+	if(isbroken)
+		var/T = get_turf(src)
+		log_debug("breakTool 1, I [src.name] am broken and was called more then once, or am sticking around illegal! [jumplink(T)] User:[src]")
+		return //We already ran through this once, if we stick around then thats a issue
+
+	isbroken = TRUE
+
 	if(user)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/tool_breaker, "TOOL_BREAKER", skill_gained = 1, learner = H)
+
 		to_chat(user, SPAN_DANGER("Your [src] broke!"))
 		new /obj/item/material/shard/shrapnel(user.loc)
-	else
-		new /obj/item/material/shard/shrapnel(get_turf(src))
+		playsound(get_turf(src), 'sound/effects/impacts/thud1.ogg', 50, 1 -3)
+		user.unEquip(src)
+		qdel(src)
+		return
+
+	new /obj/item/material/shard/shrapnel(get_turf(src))
 	if(istype(loc, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/AD = loc
 		AD.take_out_wedged_item()
 	playsound(get_turf(src), 'sound/effects/impacts/thud1.ogg', 50, 1 -3)
 	qdel(src)
-	return
 
 /******************************
 	/* Tool Failure */
@@ -837,6 +898,8 @@
 	use_fuel_cost = initial(use_fuel_cost)
 	use_power_cost = initial(use_power_cost)
 	force = initial(force)
+	armor_penetration = initial(armor_penetration)
+	damtype = initial(damtype)
 	force_upgrade_mults = initial(force_upgrade_mults)
 	force_upgrade_mods = initial(force_upgrade_mods)
 
@@ -865,9 +928,17 @@
 	//Set the fuel volume, incase any mods altered our max fuel
 	if(reagents)
 		reagents.maximum_volume = max_fuel
+
+	if(alt_mode_active)
+		alt_mode_activeate_two()
+
 	SSnano.update_uis(src)
 
 /obj/item/tool/examine(mob/user)
+	if(isbroken)
+		to_chat(user, SPAN_NOTICE("This tool is broken and falling apart!"))
+		return
+
 	if(!..(user,2))
 		return
 
@@ -913,6 +984,9 @@
 
 //Recharge the fuel at fueltank, also explode if switched on
 /obj/item/tool/afterattack(obj/O, mob/user, proximity)
+	if(isbroken)
+		to_chat(user, SPAN_NOTICE("This tool is broken and falling apart!"))
+		return
 	if(use_fuel_cost)
 		if(!proximity) return
 		if((istype(O, /obj/structure/reagent_dispensers/fueltank) || istype(O, /obj/item/weldpack)) && get_dist(src,O) <= 1 && !has_quality(QUALITY_WELDING))
@@ -958,7 +1032,10 @@
 				user.visible_message(SPAN_NOTICE("[user] begins repairing \the [O] with the [src]!"))
 				//Toolception!
 				if(use_tool(user, T, 60, QUALITY_ADHESIVE, FAILCHANCE_EASY, STAT_MEC))
-					T.adjustToolHealth(T.max_health * 0.8 + (user.stats.getStat(STAT_MEC)/2)/100, user)
+					var/tool_repair = T.max_health * 0.8 + (user.stats.getStat(STAT_MEC)/2)/100
+					var/perma_health_loss = (tool_repair *= 0.02) //2%
+					T.max_health -= perma_health_loss
+					T.adjustToolHealth(tool_repair, user)
 					if(user.stats.getStat(STAT_MEC) > STAT_LEVEL_BASIC/2)
 						to_chat(user, SPAN_NOTICE("You knowledge in tools helped you repair it better."))
 					refresh_upgrades()
@@ -1013,6 +1090,9 @@
 
 
 /obj/item/tool/attack(mob/living/M, mob/living/user, var/target_zone)
+	if(isbroken)
+		to_chat(user, SPAN_NOTICE("This tool is broken and falling apart!"))
+		return
 	if((user.a_intent == I_HELP) && ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/external/S = H.organs_by_name[user.targeted_organ]
@@ -1026,11 +1106,13 @@
 				if(S.brute_dam < ROBOLIMB_SELF_REPAIR_CAP || robotics_expert)
 					if(use_tool(user, H, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 						var/repair_amount = 15
+						M.UpdateDamageIcon()
 						if(robotics_expert)
 							repair_amount = user.stats.getStat(STAT_MEC)
 						S.heal_damage(repair_amount,0,TRUE)
 						user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 						user.visible_message(SPAN_NOTICE("\The [user] [robotics_expert ? "expertly" : ""] patches some dents on \the [H]'s [S.name] with \the [src]."))
+						M.UpdateDamageIcon()
 						return 1
 				else if(S.open != 2)
 					to_chat(user, SPAN_DANGER("The damage is far too severe to patch over externally."))

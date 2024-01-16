@@ -35,7 +35,7 @@
 	name = "laser scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting while instantly searing bleeding cuts through laser cauterization."
 	icon_state = "scalpel_t5"
-	damtype = "fire"
+	damtype = BURN
 	force = WEAPON_FORCE_DANGEROUS
 	armor_penetration = ARMOR_PEN_MODERATE
 	matter = list(MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 1)

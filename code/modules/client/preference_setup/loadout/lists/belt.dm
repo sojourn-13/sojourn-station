@@ -29,11 +29,17 @@
 
 
 /datum/gear/belt/medbelt
-	display_name = "Medical belt, Selection EMT / Doctor"
+	display_name = "Medical belt Selection"
 	path = /obj/item/storage/belt/medical
 	allowed_roles = list("Soteria Doctor","Soteria Biolab Officer","Soteria Lifeline Technician")
 	cost = 1
-	flags = GEAR_HAS_TYPE_SELECTION
 
+/datum/gear/belt/medbelt/New()
+	..()
+	var/belts = list(
+		"Medical Belt"				=	/obj/item/storage/belt/medical,
+		"EMT Belt"			=	/obj/item/storage/belt/medical/emt,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(belts)
 
 

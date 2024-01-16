@@ -183,7 +183,7 @@
 /datum/craft_recipe/furniture/soilbed
 	name = "soil"
 	result = /obj/machinery/portable_atmospherics/hydroponics/soil
-	time = 90
+	time = 20
 	icon_state = "woodworking"
 	steps = list(
 		list(/obj/item/stack/ore, 5),

@@ -45,13 +45,13 @@
 	flags = RESTRICTED
 	space_chance = 100
 	has_written_form = TRUE		//I҉̵̴̢҉̶̸̴̵̸̷̷̴̷̷̶̷̴̵̡̨̡̢̧̨̧̡̛̛̛̛̛̀́̀́̀̀̕͘̕͜͢͢͢͜͜͢͜͢͡͞͠͠͠͝͠͡͠͠͞͠ ͜͢҉̴̷̵̨̧̢̛̛̛͝͏̧́̀́̀̕̕͘̕͘͜͢͠͡͏̴̸̶̴̧̛́́́͟͢͡͞͠͞͏̴̴̵̵̵̵̢̨̢̧͟͟͠͞͡͠͞͝͡ḉ̷̸̶̧̢̧̀́͟͢͟͟͢͜͠͡҉̢̛͟͏̷̶̸̡̡̨̡̛̛́͘͢͜͢͠͏̡̧̕͝͏̸̶́́̀͢͢͢͢͡͠͠ ͞͞͏̷̷̀̕͠҉͡͏̸̶̸̷̨̧̨̢̨̨̨́́̀̕̕͜͞͡͏͏̵̴̶̸̀́͟͠u̶̵̡̢̧̕͟͢͝͏̵̶҉̧҉̛͠͝͡҉̶̸̴̶̨̡̀́̀̀́̀͢͢͡͝͝͡͞͡
-	syllables = list("ire","ego","nahlizet","certum","veri","jatkaa","mgar","balaq", "karazet", "geeri", \
-		"orkan", "allaq", "sas'so", "c'arta", "forbici", "tarem", "n'ath", "reth", "sh'yro", "eth", "d'raggathnor", \
-		"mah'weyh", "pleggh", "at", "e'ntrath", "tok-lyr", "rqa'nap", "g'lt-ulotf", "ta'gh", "fara'qha", "fel", "d'amar det", \
-		"yu'gular", "faras", "desdae", "havas", "mithum", "javara", "umathar", "uf'kal", "thenar", "rash'tla", \
-		"sektath", "mal'zua", "zasan", "therium", "viortia", "kla'atu", "barada", "nikt'o", "fwe'sh", "mah", "erl", "nyag", "r'ya", \
-		"gal'h'rfikk", "harfrandid", "mud'gib", "fuu", "ma'jin", "dedo", "ol'btoh", "n'ath", "reth", "sh'yro", "eth", \
-		"d'rekkathnor", "khari'd", "gual'te", "nikka", "nikt'o", "barada", "kla'atu", "barhah", "hra" ,"zar'garis")
+	syllables = list("phlegethor","kadishtu","nahlizet","naf'lthagn","fhtagn","jatkaa","mgar","balaq", "karazet", "exim’ha", \
+		"shatruex", "crunatus", "sas'so", "c'arta", "forbici", "cruonita", "n'ath", "reth", "sh'yro", "eth", "d'raggathnor", \
+		"mah'weyh", "pleggh", "at", "e'ntrath", "tok-lyr", "rqa'nap", "g'lt-ulotf", "ta'gh", "fara'qha", "pretaanluxis", "lokemundux", \
+		"yu'gular", "faras", "ngah", "havas", "stragarana", "stragarana", "umathar", "uf'kal", "maranax", "rash'tla", \
+		"sektath", "mal'zua", "zasan", "malax", "viortia", "kla'atu", "barada", "nikt'o", "fwe'sh", "mah", "erl", "nyag", "r'ya", \
+		"gal'h'rfikk", "harfrandid", "syha'h", "pretiacruento", "invisux", "dedo", "ol'btoh", "n'ath", "reth", "sh'yro", "eth", \
+		"crudux", "khari'd", "gual'te", "cruo", "nikt'o", "barada", "kla'atu", "barhah", "hra" ,"zar'garis")
 	shorthand = "CT"
 
 /datum/language/cult
@@ -117,7 +117,6 @@
 	exclaim_verb = list("barks", "yips")
 	colour = "kriosan"
 	key = "k"
-	flags = RESTRICTED
 	has_written_form = FALSE	//Lore reason - Creolized German and their ancient native language. Therefor their written language is 'dead' effectively.
 	partial_understanding = list(
 		LANGUAGE_EURO = 75,
@@ -148,7 +147,6 @@
 	exclaim_verb = list("roars")
 	colour = "akula"
 	key = "a"
-	flags = RESTRICTED
 	has_written_form = FALSE //Lore reason - Warrior culture, likely did not adapt much of a writing system since it was unneeded. Literacy / Acedmia done in foreign tongues.
 	partial_understanding = list(
 		LANGUAGE_JANA = 10,
@@ -166,9 +164,9 @@
 	speech_verb = list("warbles")
 	ask_verb = list("trills")
 	exclaim_verb = list("rythmically trills")
+	flags = RESTRICTED
 	colour = "marqua"
 	key = "q"
-	flags = RESTRICTED
 	has_written_form = TRUE
 	partial_understanding = list(
 		LANGUAGE_JANA = 20,
@@ -198,7 +196,6 @@
 	speech_verb = list("says", "clicks")
 	ask_verb = list("chirps")
 	exclaim_verb = list("croaks")
-	flags = RESTRICTED
 	colour = "rough"
 	key = "n"
 	has_written_form = TRUE

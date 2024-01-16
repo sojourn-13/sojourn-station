@@ -13,6 +13,7 @@
 	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 16, MATERIAL_PLASTIC = 4)
 	price_tag = 700
+	gun_parts = null
 	damage_multiplier = 0.9
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)
 	init_recoil = SMG_RECOIL(0.7)
@@ -69,8 +70,8 @@
 	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
 
 	init_firemodes = list(
-		FULL_AUTO_600_NOLOSS,
-		list(mode_name="fuller auto", mode_desc = "Hold down trigger to make anything you point it at have 32 more holes around it", mode_type = /datum/firemode/automatic, fire_delay=0, icon="fuller"),
+		FULL_AUTO_300,
+		list(mode_name="fuller auto", mode_desc = "Hold down trigger to make anything you point it at have 32 more holes around it", mode_type = /datum/firemode/automatic, burst_delay=1.25, fire_delay=1, icon="fuller"),
 		)
 
 /obj/item/gun/projectile/automatic/mac/croon/update_icon()

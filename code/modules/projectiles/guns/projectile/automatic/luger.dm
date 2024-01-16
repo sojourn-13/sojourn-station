@@ -5,7 +5,7 @@
 	icon = 'icons/obj/guns/projectile/luger.dmi'
 	icon_state = "luger"
 	item_state = "luger"
-	w_class = ITEM_SIZE_BULKY
+	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_PISTOL
 	mag_well = MAG_WELL_PISTOL|MAG_WELL_SMG|MAG_WELL_H_PISTOL|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 6, MATERIAL_STEEL = 10)

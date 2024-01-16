@@ -186,6 +186,19 @@
 	required_reagents = list("hyperzine" = 1, "blattedin" = 2, "tramadol" = 1)
 	result_amount = 2
 
+/datum/chemical_reaction/nanoblood
+	result = "nanoblood"
+	required_reagents = list("blood" = 3, "uncap nanites" = 5, "sanguinum" = 2)
+	maximum_temperature = 314 //within about 5 degrees of bloods natural temp in the body
+	catalysts = list("plasma" = 5)
+	result_amount = 5
+
+/datum/chemical_reaction/nanobad
+	result = "nanobad"
+	required_reagents = list("nanoblood" = 1)
+	minimum_temperature = 323 // aprox the temp at which blood breaks down, gotta be careful when making it!
+	result_amount = 4 //a little bit of it breaks down in to biofilm and other gross gunk
+
 /datum/chemical_reaction/hyperzine
 	result = "hyperzine"
 	required_reagents = list("sugar" = 1, "blattedin" = 1, "sulfur" = 1)
@@ -322,7 +335,14 @@
 /datum/chemical_reaction/space_cleaner
 	result = "cleaner"
 	required_reagents = list("ammonia" = 1, "water" = 1)
-	result_amount = 2
+	result_amount = 3
+
+/datum/chemical_reaction/space_cleanest
+	result = "cleaner"
+	required_reagents = list("cleaner" = 1, "water" = 1)
+	catalysts = list("cleaner" = 60) //need to actually have enough cleaner to mix.
+	result_amount = 3
+
 
 /datum/chemical_reaction/plantbgone
 	result = "plantbgone"
@@ -631,23 +651,23 @@
 	required_reagents = list("hydrazine" = 2, "carbon" = 2, "ammonia" = 2)
 	result_amount = 6
 
-/datum/chemical_reaction/mbr
-	result = "machine binding ritual"
+/datum/chemical_reaction/greaser
+	result = "greaser"
 	required_reagents = list("coffee" = 2, "diplopterum" = 1, "sugar" = 1, "ethanol" = 1)
 	result_amount = 5
 	maximum_temperature = 343
 	minimum_temperature = 323
 
-/datum/chemical_reaction/machine_spirit
-	result = "machine spirit"
-	required_reagents = list("machine binding ritual" = 1, "tramadol" = 1, "blattedin" = 1)
+/datum/chemical_reaction/lard
+	result = "greasy lard"
+	required_reagents = list("greaser" = 1, "tramadol" = 1, "blattedin" = 1)
 	result_amount = 3
 	maximum_temperature = 318
 	minimum_temperature = 308
 
 /datum/chemical_reaction/party_drops
 	result = "party drops"
-	required_reagents = list("grape drops" = 1, "machine spirit" = 1, "ultrasurgeon" = 1)
+	required_reagents = list("grape drops" = 1, "greasy lard" = 1, "ultrasurgeon" = 1)
 	catalysts = list("honey" = 1)
 	result_amount = 3
 
@@ -935,3 +955,29 @@
 	result_amount = 2
 	maximum_temperature = 12.7
 	minimum_temperature = 7.7
+
+/datum/chemical_reaction/mindwipe
+	result = "mindwipe"
+	required_reagents = list("mindbreaker" = 1, "psilocybin" = 1, "sanguinum" = 1 , "anti_toxin" = 1, "ethanol" = 1)
+	result_amount = 5
+
+/datum/chemical_reaction/ctincture
+	result = "ctincture"
+	required_reagents = list("vodka" = 10, "concentrated-carpotoxin" = 1)
+	result_amount = 10
+
+
+/* FBP "medicine" */
+
+/datum/chemical_reaction/fbp_repair
+	result = "fbp_repair"
+	required_reagents = list("nanites" = 1, "silicon" = 1)
+	result_amount = 2
+
+/* Uncomment when CE_MECH_REPLENISH has a use
+/datum/chemical_reaction/fbp_replenish
+	result = "fbp_replenish"
+	required_reagents = list("nanites" = 1, "oil" = 1)
+	result_amount = 2
+*/
+

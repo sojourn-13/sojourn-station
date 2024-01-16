@@ -58,6 +58,7 @@
 	item_state = "irp_box"
 	w_class = ITEM_SIZE_HUGE
 	desc = "A box of preserved, ready-to-eat food for soldiers and spacefarers on the go."
+	can_hold = list(/obj/item/storage/ration_pack)
 	initial_contents = list(/obj/item/storage/ration_pack = 7)
 
 
@@ -65,6 +66,7 @@
 	name = "tool modifications kit"
 	desc = "A sturdy container full of contraptions, bits of material, components and add-ons for modifying tools."
 	icon_state = "box_tools"
+	can_hold = list(/obj/random/tool_upgrade, /obj/random/tool_upgrade/rare)
 	initial_contents = list(/obj/random/tool_upgrade = 12,
 	/obj/random/tool_upgrade/rare = 3)
 
@@ -72,24 +74,29 @@
 /obj/item/storage/deferred/pouches
 	name = "uniform modification kit"
 	desc = "A box full of hard-wearing pouches designed for easy attachment to clothing and armor. Good for carrying extra ammo or tools in the field."
+	can_hold = list(/obj/random/pouch, /obj/item/storage/pouch/pistol_holster)
 	initial_contents = list(/obj/random/pouch = 8, /obj/item/storage/pouch/pistol_holster = 1)
 	//One guaranteed holster and plenty of randoms
 
 /obj/item/storage/deferred/comms
 	name = "communications kit"
 	desc = "A box full of radios and beacons"
+	can_hold = list(/obj/item/device/radio/beacon, /obj/item/device/radio)
 	initial_contents = list(/obj/item/device/radio/beacon = 6, /obj/item/device/radio = 6)
 
 /obj/item/storage/deferred/lights
 	name = "illumination kit"
 	desc = "A box of flares and flashlights"
+	can_hold = list(/obj/item/device/lighting/glowstick/flare, /obj/item/device/lighting/toggleable/flashlight/heavy)
 	initial_contents = list(/obj/item/device/lighting/glowstick/flare = 20, /obj/item/device/lighting/toggleable/flashlight/heavy = 6)
 
 /obj/item/storage/deferred/music
 	name = "morale kit"
 	desc = "All that's required to unite nation, compacted within single box."
 	icon_state = "box_serbian"
+	can_hold = list(/obj/item/device/synthesized_instrument/trumpet)
 	initial_contents = list(/obj/item/device/synthesized_instrument/trumpet = 1) //TODO: Add an accordian to this, sprites already made.
+
 
 //Medical
 /obj/item/storage/deferred/surgery
@@ -229,7 +236,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
 	/obj/item/clothing/head/soft/green2soft = 1,
-	/obj/item/clothing/suit/armor/platecarrier/green = 1,
+	/obj/item/clothing/suit/armor/platecarrier = 1,
 	/obj/item/clothing/head/helmet/faceshield/altyn = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
@@ -242,8 +249,8 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit/brown = 1,
 	/obj/item/clothing/head/soft/tan2soft = 1,
-	/obj/item/clothing/suit/armor/platecarrier/tan = 1,
-	/obj/item/clothing/head/helmet/faceshield/altyn/brown = 1,
+	/obj/item/clothing/suit/armor/platecarrier = 1,
+	/obj/item/clothing/head/helmet/faceshield/altyn = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1)
@@ -255,7 +262,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit/black = 1,
 	/obj/item/clothing/suit/armor/platecarrier = 1,
-	/obj/item/clothing/head/helmet/faceshield/altyn/black = 1,
+	/obj/item/clothing/head/helmet/faceshield/altyn = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,
@@ -267,7 +274,7 @@
 	icon_state = "serbcrate_deferred_worn"
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
-	/obj/item/clothing/suit/armor/flackvest/green = 1,
+	/obj/item/clothing/suit/armor/flakvest = 1,
 	/obj/item/clothing/head/helmet/faceshield/altyn/maska = 1,
 	/obj/item/clothing/mask/balaclava/tactical = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
@@ -281,7 +288,7 @@
 	initial_contents = list(
 	/obj/item/clothing/under/serbiansuit = 1,
 	/obj/item/clothing/head/soft/green2soft = 1,
-	/obj/item/clothing/suit/armor/flackvest = 1,
+	/obj/item/clothing/suit/armor/flakvest = 1,
 	/obj/item/clothing/head/helmet/steelpot = 1,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/gloves/fingerless = 1,

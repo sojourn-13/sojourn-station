@@ -391,8 +391,8 @@
 
 /obj/machinery/power/solar_control/attack_hand(mob/user)
 	if(!..())
-		interact(user)
-
+		ui_interact(user) //routed to TGUI
+/*
 /obj/machinery/power/solar_control/interact(mob/user)
 
 	var/t = "<B><span class='highlight'>Generated power</span></B> : [round(lastgen)] W<BR>"
@@ -422,7 +422,7 @@
 	popup.open()
 
 	return
-
+*/
 /obj/machinery/power/solar_control/attackby(obj/item/I, mob/user)
 	if(I.get_tool_type(usr, list(QUALITY_SCREW_DRIVING), src))
 		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
@@ -470,7 +470,7 @@
 			nexttime += 36000/abs(trackrate) //reset the counter for the next 1�
 
 	updateDialog()
-
+/*
 /obj/machinery/power/solar_control/Topic(href, href_list)
 	if(..())
 		usr << browse(null, "window=solcon")
@@ -512,7 +512,7 @@
 
 	interact(usr)
 	return 1
-
+*/
 //rotates the panel to the passed angle
 /obj/machinery/power/solar_control/proc/set_panels(var/cdir)
 
@@ -605,3 +605,60 @@
 	var/rate = "[href]=-[Max]'>-</A>[href]=-[Min]'>-</A> [(C?C : 0)] [href]=[Min]'>+</A>[href]=[Max]'>+</A>"
 	if(Limit) return "[href]=-[Limit]'>-</A>"+rate+"[href]=[Limit]'>+</A>"
 	return rate
+
+//tgui stuff
+
+/obj/machinery/power/solar_control/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "SolarControl", name)
+		ui.open()
+
+/obj/machinery/power/solar_control/ui_data()
+	var/data = list()
+	data["generated"] = round(lastgen)
+	data["generated_ratio"] = data["generated"] / round(max(connected_panels.len, 1))
+	data["azimuth_current"] = cdir
+	data["azimuth_rate"] = trackrate
+	data["max_rotation_rate"] = SSsun.rate * 2
+	data["tracking_state"] = track
+	data["connected_panels"] = connected_panels.len
+	data["connected_tracker"] = (connected_tracker ? TRUE : FALSE)
+	return data
+
+/obj/machinery/power/solar_control/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	if(action == "azimuth")
+		var/adjust = text2num(params["adjust"])
+		var/value = text2num(params["value"])
+		if(adjust)
+			value = cdir + adjust
+		if(value != null)
+			set_panels(value)
+			return TRUE
+		return FALSE
+	if(action == "azimuth_rate")
+		var/adjust = text2num(params["adjust"])
+		var/value = text2num(params["value"])
+		if(adjust)
+			value = trackrate + adjust
+		if(value != null)
+			trackrate = round(clamp(value, -2 * SSsun.rate, 2 * SSsun.rate), 0.01)
+			return TRUE
+		return FALSE
+	if(action == "tracking")
+		var/mode = text2num(params["mode"])
+		track = mode
+		if(mode == 2)
+			if(connected_tracker)
+				connected_tracker.set_angle(SSsun.angle)
+				set_panels(cdir)
+			else
+				track = 0
+		return TRUE
+	if(action == "refresh")
+		search_for_connected()
+		return TRUE
+	return FALSE

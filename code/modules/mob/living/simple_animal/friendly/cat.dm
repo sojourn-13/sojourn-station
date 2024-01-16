@@ -25,6 +25,7 @@
 
 	scan_range = 3//less aggressive about stealing food
 	metabolic_factor = 0.75
+	sanity_damage = -1
 	var/mob/living/simple_animal/mouse/mousetarget = null
 	seek_speed = 5
 	pass_flags = PASSTABLE
@@ -276,6 +277,7 @@
 	icon_state = "cat3"
 	item_state = "cat3"
 	holder_type = /obj/item/holder/cat/fluff/bones
+	sanity_damage = -2
 	var/friend_name = "Erstatz Vryroxes"
 
 /mob/living/simple_animal/cat/kitten/New()
@@ -305,9 +307,11 @@
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
+	sanity_damage = 5
 
 /mob/living/simple_animal/cat/runtime/New(loc)
 	..(loc)
+	stats.addPerk(PERK_TERRIBLE_FATE)
 	playsound(loc, 'sound/effects/teleport.ogg', 50, 1)
 
 /mob/living/simple_animal/cat/runtime/attackby(var/obj/item/O, var/mob/user)

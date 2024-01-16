@@ -37,6 +37,7 @@
 	can_burrow = FALSE
 	mob_size =  3  // The same as Hivemind Tyrant
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
+	sanity_damage = 3
 
 /obj/item/projectile/renderspine
 	name = "spine"

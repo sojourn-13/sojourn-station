@@ -6,7 +6,7 @@
 #include "data/shuttles-eris.dm"
 #include "data/reports.dm"
 
-#include "map/_Nadezhda_Colony_Omni_STU.dmm"
+#include "map/_Nadezhda_Colony_New.dmm"
 //#include "_Nadezhda_Colony_Underground.dmm"
 //#include "_Nadezhda_Colony_Transition.dmm"
 //#include "_Nadezhda_Colony_Surface.dmm"
@@ -21,6 +21,17 @@
 
 /obj/map_data/nadezda_ues //Omnie level has all three surface underground and stairs
 	name = "Nadezhda Omni Map"
+	is_station_level = TRUE
+	is_player_level = TRUE
+	is_contact_level = TRUE
+	is_accessable_level = FALSE
+	is_sealed = TRUE
+	generate_asteroid = TRUE
+	height = 3
+	digsites = "HOUSE"
+
+/obj/map_data/nadezda_new //Omnie level has all three surface underground and stairs
+	name = "Nadezhda New Map"
 	is_station_level = TRUE
 	is_player_level = TRUE
 	is_contact_level = TRUE

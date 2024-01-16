@@ -200,7 +200,7 @@
 //Weapons ------------------------
 /datum/craft_recipe/guild/railgunrifle
 	name = "reductor rail rifle"
-	result = /obj/item/gun/energy/laser/railgun
+	result = /obj/item/gun/energy/laser/railgun/railrifle
 	icon_state = "gun"
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 60),
@@ -495,8 +495,23 @@
 		list(QUALITY_BOLT_TURNING, 40, "time" = 40)
 	)
 
+/datum/craft_recipe/guild/swat_yellow
+	name = "Artificers insulated gloves"
+	result = /obj/item/clothing/gloves/insulated/guild
+	steps = list(
+		list(/obj/item/clothing/gloves/thick, 1, "time" = 15),
+		list(QUALITY_CUTTING, 15, 10),
+		list(/obj/item/clothing/gloves/insulated, 1, "time" = 15),
+		list(/obj/item/stack/cable_coil, 2, "time" = 5),
+		list(QUALITY_CUTTING, 15, 10),
+		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC), //So if we use buget we have a reason to think its really shock proof
+		list(QUALITY_WELDING, 10, "time" = 40),
+		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL),
+		list(QUALITY_HAMMERING, 15, 10)
+	)
+
 /datum/craft_recipe/guild/webbing
-	name = "artificer guild web harness"
+	name = "Artificer Guild web harness"
 	icon_state = "clothing"
 	result = /obj/item/storage/belt/webbing/artificer
 	steps = list(
@@ -665,7 +680,12 @@
 	result = /obj/item/gun_upgrade/barrel/bore
 	icon_state = "gun"
 	steps = list(
-		list(/obj/item/gun_upgrade/barrel/forged, 1, "time" = 30),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 30),
+		list(QUALITY_SAWING, 30, "time" = 60),
+		list(QUALITY_HAMMERING, 20, "time" = 40),
+		list(QUALITY_WELDING, 40, "time" = 40),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC, "time" = 30),
+		list(QUALITY_BOLT_TURNING, 25, "time" = 90),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 20, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 40),

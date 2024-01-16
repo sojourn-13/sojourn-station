@@ -238,6 +238,7 @@
 		return
 
 	if(istype(I, /obj/item/tool/multitool) && length(hacked_reagents))
+		to_chat(usr, SPAN_WARNING("You pulse a few wires, unlocking the dispensing restrictions."))
 		hacked()
 
 	var/obj/item/reagent_containers/B = I

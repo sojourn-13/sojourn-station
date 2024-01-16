@@ -73,6 +73,7 @@
 	var/show_iconfig = FALSE
 	var/show_oconfig = FALSE
 	var/show_rconfig = FALSE
+	var/force_take_corps = FALSE
 
 
 /obj/machinery/sorter/Initialize()
@@ -122,7 +123,7 @@
 		return
 	var/sorted = FALSE
 	for(var/datum/sort_rule/rule in sort_settings)
-		if(rule.check_match(item_to_sort))
+		if(rule.check_match(item_to_sort) || (force_take_corps && ismob(item_to_sort)))
 			sorted = rule.accept
 			if(!sorted)
 				break
@@ -321,8 +322,10 @@
 
 /obj/machinery/sorter/biomatter
 	name = "biomatter sorter"
+	desc = "A sorter for biomatter related objects, unlike normal sorters these always accept dead bodies from roaches to humans..."
 	accept_output_side = EAST
 	refuse_output_side = SOUTH
+	force_take_corps = TRUE
 
 /obj/machinery/sorter/biomatter/Initialize()
 	. = ..()

@@ -296,9 +296,8 @@
 	original = target
 	def_zone = target_zone
 
-	spawn()
-		setup_trajectory(curloc, targloc, x_offset, y_offset, angle_offset) //plot the initial trajectory
-		Process()
+	setup_trajectory(curloc, targloc, x_offset, y_offset, angle_offset) //plot the initial trajectory
+	Process()
 
 	return FALSE
 
@@ -699,28 +698,28 @@
 			if(!silenced)
 				visible_message(SPAN_NOTICE("\The [src] misses [target_mob] narrowly!"))
 			return FALSE
-
+/*
 	//hit messages
 	if (!testing)
 		if(silenced)
 			to_chat(target_mob, SPAN_DANGER("You've been hit in the [parse_zone(def_zone)] by \the [src]!"))
 		else
 			visible_message(SPAN_DANGER("\The [target_mob] is hit by \the [src] in the [parse_zone(def_zone)]!"))//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
-
+*/
 		playsound(target_mob, pick(mob_hit_sound), 40, 1)
 
 		//admin logs
-		if(!no_attack_log)
-			if(ismob(firer))
+	if(!no_attack_log)
+		if(ismob(firer))
 
-				var/attacker_message = "shot with \a [src.type]"
-				var/victim_message = "shot with \a [src.type]"
-				var/admin_message = "shot (\a [src.type])"
+			var/attacker_message = "shot with \a [src.type]"
+			var/victim_message = "shot with \a [src.type]"
+			var/admin_message = "shot (\a [src.type])"
 
-				admin_attack_log(firer, target_mob, attacker_message, victim_message, admin_message)
-			else
-				target_mob.attack_log += "\[[time_stamp()]\] <b>UNKNOWN SUBJECT (No longer exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
-				msg_admin_attack("UNKNOWN shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
+			admin_attack_log(firer, target_mob, attacker_message, victim_message, admin_message)
+		else
+			target_mob.attack_log += "\[[time_stamp()]\] <b>UNKNOWN SUBJECT (No longer exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
+			msg_admin_attack("UNKNOWN shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
 
 	//sometimes bullet_act() will want the projectile to continue flying
 	if (result == PROJECTILE_CONTINUE)
