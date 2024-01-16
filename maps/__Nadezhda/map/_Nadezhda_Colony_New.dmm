@@ -9223,6 +9223,23 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/command/tcommsat/computer)
+"caJ" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 32
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/command/hallway)
 "caN" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -9651,8 +9668,6 @@
 	pixel_y = 6
 	},
 /obj/item/clothing/glasses/welding/superior,
-/obj/structure/table/woodentable,
-/obj/structure/table/woodentable,
 /obj/structure/table/woodentable,
 /obj/item/device/von_krabin,
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -18454,6 +18469,19 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/engineering/atmos)
+"dYw" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/command/hallway)
 "dYC" = (
 /obj/structure/table/woodentable,
 /obj/item/cardholder,
@@ -61583,23 +61611,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"nhy" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/disposalpipe/segment,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 32
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/command/hallway)
 "nhz" = (
 /obj/random/boxes,
 /obj/random/gun_combat,
@@ -72167,19 +72178,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/engineering/atmos/surface)
-"ppW" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/disposalpipe/segment,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/command/hallway)
 "ppZ" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized{
 	id = "EYE"
@@ -178692,8 +178690,8 @@ fdu
 hGs
 xfR
 kFF
-nhy
-ppW
+caJ
+dYw
 jJo
 ueH
 kgH
