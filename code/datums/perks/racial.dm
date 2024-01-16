@@ -735,6 +735,6 @@
 	..()
 	holder.toxin_mod_perk -= 0.5
 
-/datum/perk/racial/slime_metabolism/better_toxins/remove()
+/datum/perk/racial/slime_metabolism/remove()
 	holder.toxin_mod_perk += 0.5
 	..()

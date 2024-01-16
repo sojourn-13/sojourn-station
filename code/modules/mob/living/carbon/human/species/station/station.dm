@@ -1112,7 +1112,7 @@
 	default_form = FORM_SLIME
 	obligate_form = TRUE
 	reagent_tag = IS_SLIME
-	unarmed_types = list(/datum/unarmed_attack/slime_glomp)
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/slime_glomp)
 	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
 	siemens_coefficient = 3 //conductive
 	darksight = 3
@@ -1126,8 +1126,8 @@
 	min_age = 18
 	max_age = 200
 
-	burn_mod = 1.15
-	brute_mod = 1.15
+	burn_mod = 1.2
+	brute_mod = 1.2
 	toxins_mod = 1 // fuck toxins_mod, we use a perk for this
 	oxy_mod = 0
 
