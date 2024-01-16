@@ -1543,6 +1543,14 @@
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"in" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/turf/simulated/floor/wood/wild2,
+/area/nadezhda/outside/forest/hunting_lodge_dark)
 "iq" = (
 /obj/structure/invislight,
 /turf/simulated/floor/wood/wild1,
@@ -1995,6 +2003,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"nP" = (
+/obj/structure/catwalk,
+/obj/structure/railing{
+	anchored = 1;
+	dir = 4;
+	icon_state = "railing0";
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
 "nS" = (
 /obj/structure/table/woodentable,
 /obj/item/paper_bin,
@@ -2142,6 +2163,14 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"pk" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/hunting_lodge)
 "pw" = (
 /obj/machinery/conveyor_switch{
 	id = "lodge_grinder"
@@ -2167,6 +2196,12 @@
 	icon_state = "danger"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
+/area/nadezhda/outside/forest/hunting_lodge)
+"pC" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest/hunting_lodge)
 "pO" = (
 /obj/structure/table/bench/wooden,
@@ -2440,6 +2475,9 @@
 "tS" = (
 /obj/structure/closet/crate/bin{
 	name = "trash bin"
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/wood/wild2,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
@@ -3348,6 +3386,14 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Ex" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Ez" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 1
@@ -3444,6 +3490,13 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"FM" = (
+/obj/structure/catwalk,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
 "FU" = (
 /obj/machinery/light{
 	dir = 4
@@ -3481,6 +3534,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Ge" = (
+/obj/structure/invislight,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Gz" = (
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/grass,
@@ -3593,6 +3653,14 @@
 	},
 /turf/unsimulated/mineral,
 /area/nadezhda/outside/forest/hunting_lodge)
+"Iz" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/forest/hunting_lodge)
 "IB" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Master Armory";
@@ -3618,6 +3686,12 @@
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"II" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/forest/hunting_lodge)
 "IN" = (
 /obj/structure/flora/small/lavarock2,
 /turf/simulated/floor/beach/sand,
@@ -3632,6 +3706,20 @@
 /obj/structure/multiz/stairs/active/bottom,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"Je" = (
+/obj/structure/invislight,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
+"Jf" = (
+/obj/structure/invislight,
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest/hunting_lodge)
 "Jh" = (
 /obj/structure/bed/chair/sofa/brown/left{
 	dir = 4
@@ -4293,6 +4381,13 @@
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/wood,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
+"SJ" = (
+/obj/structure/catwalk,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/forest/hunting_lodge)
 "SL" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -5113,7 +5208,7 @@ sW
 ay
 AA
 RE
-QO
+in
 oU
 GB
 GB
@@ -5121,7 +5216,7 @@ GB
 GB
 GB
 NS
-QO
+in
 RE
 ay
 sW
@@ -5129,7 +5224,7 @@ rg
 Ju
 Oe
 ay
-BO
+Jf
 RE
 RE
 av
@@ -5143,7 +5238,7 @@ gg
 av
 RE
 QZ
-ax
+Iz
 Dw
 AA
 RE
@@ -5363,7 +5458,7 @@ ax
 ax
 ax
 ax
-ax
+IE
 RE
 RE
 WQ
@@ -5815,15 +5910,15 @@ ax
 ax
 ax
 ax
+Iz
 ax
-ax
 hj
 hj
 hj
 hj
 hj
 ax
-ay
+pk
 ay
 ay
 XI
@@ -5992,7 +6087,7 @@ rg
 jM
 rg
 kw
-rg
+Ex
 BO
 Yt
 Hi
@@ -6001,7 +6096,7 @@ BO
 do
 gP
 Kv
-rg
+Ex
 rg
 AA
 RE
@@ -7453,10 +7548,10 @@ rg
 rg
 rg
 rg
-ay
+II
 ax
 ax
-ax
+pC
 ax
 ax
 ax
@@ -7559,12 +7654,12 @@ ax
 ax
 ax
 hi
-BO
+Je
 BO
 HM
 HM
 BO
-AA
+Ge
 ax
 ax
 ay
@@ -7782,13 +7877,13 @@ RE
 zo
 zo
 VN
+SJ
+FM
 VN
 VN
 VN
 VN
-VN
-VN
-VN
+SJ
 VN
 VN
 sY
@@ -8796,13 +8891,13 @@ RE
 RE
 xM
 xM
+nP
 xM
 xM
 xM
 xM
 xM
-xM
-xM
+nP
 xM
 xM
 jY
