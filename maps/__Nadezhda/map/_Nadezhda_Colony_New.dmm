@@ -61583,6 +61583,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"nhy" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 32
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/command/hallway)
 "nhz" = (
 /obj/random/boxes,
 /obj/random/gun_combat,
@@ -63655,6 +63672,9 @@
 	},
 /obj/effect/floor_decal/industrial/box/red/corners,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "nDm" = (
@@ -72147,6 +72167,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/engineering/atmos/surface)
+"ppW" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/command/hallway)
 "ppZ" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized{
 	id = "EYE"
@@ -94513,10 +94546,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "tZa" = (
@@ -178657,8 +178692,8 @@ fdu
 hGs
 xfR
 kFF
-ueH
-ueH
+nhy
+ppW
 jJo
 ueH
 kgH
