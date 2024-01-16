@@ -533,7 +533,7 @@
 		if(href_list["startTimer"])
 			addLog("Starting path traversal for bluespace tunnel to ([targetX],[targetY],[targetZ]).")
 			if(user)
-				var/cogBonus = min(user.stats.getStat(STAT_COG)/10, 6)
+				var/cogBonus = min(user.stats.getStat(STAT_COG)/10, 4)
 				startTimer(baseDelay = (BS_PATHING_DELAY - cogBonus))
 			else
 				startTimer()
