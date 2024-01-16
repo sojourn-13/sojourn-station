@@ -48,7 +48,7 @@
 	hard_drive.store_file(new/datum/computer_file/program/newsbrowser())
 	hard_drive.store_file(new/datum/computer_file/program/camera_monitor())
 	hard_drive.store_file(new/datum/computer_file/program/records())
-	hard_drive.store_file(/datum/computer_file/program/tax())
+	hard_drive.store_file(new/datum/computer_file/program/tax())
 
 /obj/item/modular_computer/tablet/lease/preset/medical/install_default_hardware()
 	..()
