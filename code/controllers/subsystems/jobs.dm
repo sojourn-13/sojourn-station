@@ -424,6 +424,7 @@ SUBSYSTEM_DEF(job)
 		H.stats.changeStat(STAT_VIV, H.client.prefs.VIVMOD)
 		H.stats.changeStat(STAT_ANA, H.client.prefs.ANAMOD)
 		H.give_health_via_stats()
+		H.metabolism_effects.calculate_nsa() //update NSA incase we have any viv round start
 		// This could be cleaner and better, however it should apply your stats once on spawn properly if here. If anyone wants to do this in a cleaner manner be my guest.
 
 		BITSET(H.hud_updateflag, ID_HUD)

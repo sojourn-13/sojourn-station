@@ -159,3 +159,16 @@
 
 /datum/task_master/task/proper_area_smoker/activate_affect()
 	forwards_refence.sanity.change_max_level(level)
+
+//Taking bad perks should not be all bad!
+/datum/task_master/task/poors
+	name = "When it rains"
+	key = "POORS"
+	desc = "Just bad luck with getting the right items..."
+	gain_text = "Unlucky day huh..."
+	level_threshholds = 1
+	alt_scaling_number = 2 // 1 2 4 8 ect,
+	unlocked = TRUE
+
+/datum/task_master/task/poors/activate_affect()
+	forwards_refence.stats.addPerk(PERK_FORCEFUL_REJECTION)
