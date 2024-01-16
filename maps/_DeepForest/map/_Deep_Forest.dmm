@@ -3671,6 +3671,11 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"dnx" = (
+/mob/living/simple_animal/hostile/render,
+/obj/structure/invislight,
+/turf/simulated/floor/beach/sand/desert,
+/area/nadezhda/dungeon/outside/zoo)
 "dnC" = (
 /mob/living/carbon/superior_animal/human/excelsior,
 /turf/simulated/floor/tiled/dark/brown_perforated,
@@ -12787,6 +12792,10 @@
 /obj/structure/flora/big/bush2,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/meadow)
+"lFd" = (
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "lFs" = (
 /obj/machinery/floodlight,
 /obj/effect/decal/cleanable/dirt,
@@ -19445,6 +19454,11 @@
 /obj/random/medical_lowcost/low_chance,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"rlW" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "rmh" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/mineral/planet,
@@ -20844,6 +20858,11 @@
 /obj/random/knife/low_chance,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
+"sBn" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "sBD" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/dungeon/outside/safehouse)
@@ -21930,6 +21949,10 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
+"tEi" = (
+/obj/structure/invislight,
+/turf/simulated/floor/beach/sand/desert,
+/area/nadezhda/dungeon/outside/zoo)
 "tEm" = (
 /obj/random/closet,
 /turf/simulated/floor/wood/wild5,
@@ -22218,6 +22241,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/zoo)
+"tRP" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "tSB" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -25289,6 +25317,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"wCP" = (
+/obj/structure/flora/small/busha2,
+/obj/structure/flora/big/bush1,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "wCZ" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/cloth/helmet,
@@ -69911,7 +69945,7 @@ hRL
 hRL
 hRL
 hRL
-hRL
+lFd
 nXw
 lVm
 kWM
@@ -70109,7 +70143,7 @@ hRb
 hRb
 hRb
 hRL
-hRL
+lFd
 xnX
 dDL
 hRL
@@ -70324,7 +70358,7 @@ hRL
 hRL
 tMk
 tMk
-hRL
+lFd
 fon
 fon
 hRL
@@ -71363,7 +71397,7 @@ hRb
 hRb
 hRb
 hRL
-hRL
+lFd
 hRL
 hRL
 vXM
@@ -73244,7 +73278,7 @@ hRb
 hRb
 hRb
 wFt
-wFt
+viI
 wFt
 wFt
 wFt
@@ -74498,7 +74532,7 @@ hRb
 hRb
 hRb
 wFt
-wFt
+viI
 wFt
 wFt
 wFt
@@ -75961,7 +75995,7 @@ hRb
 hRb
 hRb
 klZ
-wFt
+viI
 wFt
 wFt
 wFt
@@ -76797,7 +76831,7 @@ hRb
 hRb
 hRb
 hRL
-hRL
+lFd
 wFt
 hRL
 wFt
@@ -78051,7 +78085,7 @@ hRb
 hRb
 hRb
 hRL
-hRL
+lFd
 hRL
 hRL
 nqw
@@ -78887,7 +78921,7 @@ hRb
 hRb
 hRb
 afB
-afB
+dGE
 hRL
 hRL
 nqw
@@ -80141,7 +80175,7 @@ hRb
 hRb
 hRb
 hRL
-cBP
+sBn
 cBP
 boc
 nqw
@@ -80382,7 +80416,7 @@ cRG
 jBA
 nqw
 lXi
-lXi
+tRP
 hRL
 qxe
 qxe
@@ -80789,7 +80823,7 @@ jBA
 jBA
 jBA
 nqw
-wFt
+viI
 wFt
 nqw
 jBA
@@ -81422,7 +81456,7 @@ nqw
 hRL
 lXi
 boc
-boc
+rlW
 cBP
 boc
 boc
@@ -82026,18 +82060,18 @@ hRL
 hRL
 hRL
 hRL
-boc
+rlW
 boc
 cBP
 cBP
 hRL
+rlW
 boc
-boc
 hRL
 hRL
 hRL
 hRL
-wFt
+viI
 wFt
 nqw
 hRL
@@ -84964,7 +84998,7 @@ nqw
 nqw
 nqw
 wFt
-wFt
+viI
 nqw
 nqw
 nqw
@@ -93286,7 +93320,7 @@ gbQ
 rHY
 rHY
 hRL
-qlM
+wCP
 dqw
 hRL
 hRL
@@ -105289,8 +105323,8 @@ iIR
 tAp
 nqw
 nqw
-wFt
-wFt
+viI
+viI
 hRL
 naj
 tAp
@@ -105751,7 +105785,7 @@ vGv
 nzM
 wwu
 dHv
-tlo
+dnx
 dHv
 idZ
 coa
@@ -107214,7 +107248,7 @@ uTy
 jJr
 dHv
 btF
-dHv
+tEi
 oQE
 pYz
 coa

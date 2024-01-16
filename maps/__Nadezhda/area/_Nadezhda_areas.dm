@@ -157,7 +157,7 @@
 	turf_initializer = new /datum/turf_initializer/maintenance()
 	ambience = list('sound/ambience/maintambience.ogg')
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
-	dynamic_lighting = FALSE
+	dynamic_lighting = TRUE
 	is_dungeon_lootable = TRUE
 
 
@@ -178,6 +178,7 @@
 /area/nadezhda/dungeon/outside/burned_outpost
 	name = "Burned Outpost"
 	icon_state = "erisgreen"
+	dynamic_lighting = TRUE
 
 /area/nadezhda/dungeon/outside/hunter_cabin
 	name = "Abandoned Hunter Cabin"
@@ -189,11 +190,13 @@
 	name = "Campground"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
+	dynamic_lighting = TRUE
 
 /area/nadezhda/dungeon/outside/farm
 	name = "Lost Farm"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
+	dynamic_lighting = TRUE
 
 /area/nadezhda/dungeon/outside/abandoned_outpost
 	name = "Lost Outpost"
@@ -216,6 +219,7 @@
 	name = "Vault Bunker"
 	icon_state = "erisblue"
 	requires_power = 1
+	dynamic_lighting = TRUE
 
 /area/nadezhda/dungeon/outside/safehouse
 	name = "Abandoned Safehouse"

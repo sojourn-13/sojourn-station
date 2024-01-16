@@ -3988,10 +3988,9 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/nadezhda/medical/reception)
 "aUE" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/small/bushb1,
-/obj/random/flora/small_jungle_tree,
-/turf/space,
+/obj/structure/flora/small/grassb5,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/forest)
 "aUF" = (
 /obj/effect/decal/cleanable/rubble,
@@ -5147,6 +5146,8 @@
 	icon_state = "escpodwall27";
 	tag = "icon-escpodwall27"
 	},
+/obj/structure/invislight,
+/obj/structure/invislight,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/shuttle/surface_transport_lz)
 "bgI" = (
@@ -7619,6 +7620,7 @@
 /obj/structure/shuttle_part/science{
 	icon_state = "12,17"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "bHX" = (
@@ -10316,6 +10318,7 @@
 /obj/structure/shuttle_part/mining{
 	icon_state = "16,3"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
 "cmo" = (
@@ -12198,6 +12201,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/crew_quarters/pool)
 "cHI" = (
+/obj/structure/invislight,
 /turf/simulated/shuttle/wall/escpod,
 /area/shuttle/surface_transport_lz)
 "cHJ" = (
@@ -15529,6 +15533,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/reception)
+"drN" = (
+/obj/item/stack/ore/slag,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/dungeon/outside/burned_outpost)
 "drT" = (
 /obj/structure/lattice,
 /obj/structure/lattice,
@@ -17962,6 +17971,7 @@
 	icon_state = "6,0"
 	},
 /obj/effect/floor_decal/industrial/danger,
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
 "dQY" = (
@@ -19211,6 +19221,7 @@
 /obj/structure/shuttle_part/science{
 	icon_state = "1,0"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "eeK" = (
@@ -19550,6 +19561,12 @@
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/nadezhda/crew_quarters/bar)
+"ehP" = (
+/obj/structure/flora/big/bush3,
+/obj/structure/flora/small/busha3,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
 "ehT" = (
 /obj/structure/catwalk,
 /obj/effect/spider/stickyweb,
@@ -24681,6 +24698,7 @@
 	dir = 8;
 	tag = "icon-danger (WEST)"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
 "fkp" = (
@@ -34781,6 +34799,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "htM" = (
+/obj/structure/invislight,
 /turf/simulated/shuttle/wall/escpod{
 	icon_state = "escpodwall19";
 	tag = "icon-escpodwall19"
@@ -35086,6 +35105,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/dorm3)
 "hxH" = (
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "hxL" = (
@@ -35684,9 +35704,9 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
 "hCP" = (
-/obj/structure/flora/big/bush3,
-/obj/structure/flora/small/busha1,
-/turf/space,
+/obj/structure/flora/small/rock5,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "hCS" = (
 /obj/effect/decal/cleanable/dirt,
@@ -37806,9 +37826,9 @@
 /turf/simulated/floor/tiled/steel/brown_platform,
 /area/nadezhda/pros/foreman)
 "hYQ" = (
-/obj/structure/flora/small/busha2,
-/turf/space,
-/area/nadezhda/outside/forest)
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/dungeon/outside/burned_outpost)
 "hYS" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -46674,8 +46694,9 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "jRN" = (
-/obj/random/flora/jungle_tree,
-/turf/space,
+/obj/structure/flora/small/grassb1,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "jRQ" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
@@ -47327,8 +47348,9 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/command/smc/quarters)
 "jZq" = (
-/obj/random/flora/small_jungle_tree,
-/turf/space,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "jZr" = (
 /obj/random/mob/roaches,
@@ -49342,6 +49364,7 @@
 	dir = 4;
 	tag = "icon-danger (EAST)"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
 "kuK" = (
@@ -53545,7 +53568,7 @@
 /obj/structure/flora/small/rock5,
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/busha3,
-/turf/space,
+/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "ltz" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -55133,6 +55156,7 @@
 /obj/structure/shuttle_part/science{
 	icon_state = "7,21"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "lKW" = (
@@ -57637,6 +57661,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/workshop)
 "mkW" = (
+/obj/structure/invislight,
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "12,23"
 	},
@@ -62925,9 +62950,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "npv" = (
-/obj/random/mob/roaches/low_chance,
-/turf/space,
-/area/nadezhda/outside/forest)
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/dirt/burned,
+/area/nadezhda/dungeon/outside/burned_outpost)
 "npy" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/flora/small/trailrocka1,
@@ -69228,10 +69253,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "oCa" = (
-/obj/random/flora/jungle_tree,
-/obj/structure/flora/small/busha3,
-/obj/structure/flora/small/busha2,
-/turf/space,
+/obj/structure/flora/small/bushc2,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "oCe" = (
 /obj/structure/cable{
@@ -81622,6 +81646,7 @@
 /obj/structure/shuttle_part/science{
 	icon_state = "16,4"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "rfU" = (
@@ -81746,6 +81771,7 @@
 /obj/structure/shuttle_part/science{
 	icon_state = "9,21"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "rhg" = (
@@ -83237,6 +83263,7 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/engine_room)
 "rxK" = (
+/obj/structure/invislight,
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "5,23"
 	},
@@ -88284,7 +88311,7 @@
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha3,
 /obj/structure/flora/small/bushb1,
-/turf/space,
+/turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "syl" = (
 /obj/structure/disposalpipe/segment{
@@ -88775,6 +88802,7 @@
 /obj/structure/shuttle_part/mining{
 	icon_state = "1,3"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
 "sDT" = (
@@ -88937,6 +88965,7 @@
 /area/nadezhda/engineering/engine_waste)
 "sFH" = (
 /obj/random/mob/termite_no_despawn,
+/obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/burned_outpost)
 "sFI" = (
@@ -89347,6 +89376,11 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"sKy" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
 "sKG" = (
 /obj/machinery/light{
 	dir = 1
@@ -90647,7 +90681,7 @@
 "sYS" = (
 /obj/structure/flora/small/bushb1,
 /obj/random/flora/jungle_tree,
-/turf/space,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/lakeside)
 "sYW" = (
 /obj/item/contraband/poster/placed/generic/tools{
@@ -91032,6 +91066,7 @@
 /obj/structure/shuttle_part/science{
 	icon_state = "4,17"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "tcJ" = (
@@ -92845,9 +92880,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/security/maingate)
 "txC" = (
-/obj/random/flora/jungle_tree,
-/obj/structure/flora/big/bush3,
-/turf/space,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "txD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -93289,6 +93323,7 @@
 /obj/structure/shuttle_part/science{
 	icon_state = "15,0"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "tCk" = (
@@ -95886,6 +95921,11 @@
 	icon_state = "7,10"
 	},
 /area/nadezhda/hallway/side/f2section1)
+"ubU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/invislight,
+/turf/simulated/floor/tiled/steel,
+/area/nadezhda/dungeon/outside/burned_outpost)
 "uca" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/machinery/computer/cryopod{
@@ -96424,6 +96464,7 @@
 	icon_state = "11,0"
 	},
 /obj/effect/floor_decal/industrial/danger,
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
 "ugi" = (
@@ -103736,9 +103777,9 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "vGF" = (
-/obj/structure/flora/small/busha1,
-/obj/structure/flora/big/bush2,
-/turf/space,
+/obj/structure/flora/small/bushc3,
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "vGH" = (
 /obj/effect/decal/mecha_wreckage/ripley{
@@ -104082,6 +104123,7 @@
 /obj/structure/shuttle_part/science{
 	icon_state = "0,4"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "vKC" = (
@@ -110008,6 +110050,7 @@
 	icon_state = "escpodwall9";
 	tag = "icon-escpodwall9"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/shuttle/surface_transport_lz)
 "wVc" = (
@@ -199574,7 +199617,7 @@ tfW
 tfW
 tfW
 tfW
-aff
+sKy
 kOj
 iGL
 kTO
@@ -199925,12 +199968,12 @@ tfW
 hHs
 hHs
 tHe
-tHe
+npv
 iXi
 tHe
 tHe
 tHe
-gwu
+drN
 tHe
 fHw
 sxF
@@ -200339,7 +200382,7 @@ eBP
 wLe
 fHw
 pwf
-pwf
+ubU
 fKl
 pwf
 lBy
@@ -200579,7 +200622,7 @@ aff
 wcY
 pCD
 tfW
-tfW
+txC
 tfW
 lfI
 pls
@@ -200935,7 +200978,7 @@ tfW
 hHs
 nsk
 tHe
-tHe
+npv
 tHe
 gwu
 tHe
@@ -201142,7 +201185,7 @@ tHe
 ura
 tHe
 tHe
-fHw
+hYQ
 fHw
 aML
 vfR
@@ -201589,7 +201632,7 @@ muX
 cxU
 cxU
 cxU
-tfW
+txC
 tfW
 lfI
 wSD
@@ -201761,9 +201804,9 @@ tfW
 xwr
 xwr
 tfW
-tfW
+txC
 xwr
-tfW
+txC
 tfW
 tfW
 tfW
@@ -201952,7 +201995,7 @@ sxF
 tAD
 pwf
 gsc
-pwf
+ubU
 tAD
 tAD
 hHs
@@ -202397,7 +202440,7 @@ tfW
 tfW
 cxU
 cxU
-cxU
+kmM
 cxU
 lfI
 lIn
@@ -203407,7 +203450,7 @@ tfW
 mHv
 tfW
 tfW
-tfW
+txC
 wcY
 lfI
 kRT
@@ -204624,7 +204667,7 @@ tfW
 tfW
 tfW
 tfW
-tfW
+txC
 tfW
 tfW
 kTO
@@ -205559,7 +205602,7 @@ tfW
 tfW
 tfW
 tfW
-jRN
+mHv
 cCH
 kOj
 kOj
@@ -207025,7 +207068,7 @@ tfW
 tfW
 cxU
 cxU
-cxU
+kmM
 cxU
 cxU
 asu
@@ -207829,7 +207872,7 @@ tfW
 cXA
 tfW
 cxU
-tfW
+txC
 sSB
 gNG
 ugx
@@ -208243,7 +208286,7 @@ ugx
 bBy
 xfe
 wjb
-tfW
+txC
 tfW
 tfW
 tfW
@@ -209019,7 +209062,7 @@ iRG
 iRG
 kOj
 kOj
-npv
+diC
 cri
 tfW
 tfW
@@ -209266,7 +209309,7 @@ vSM
 tfW
 tfW
 kOj
-oCa
+jHW
 fdr
 myo
 qjY
@@ -209451,7 +209494,7 @@ tfW
 tfW
 tfW
 fhp
-tfW
+txC
 tfW
 tfW
 tfW
@@ -209590,7 +209633,7 @@ tfW
 eUV
 tfW
 tfW
-jRN
+mHv
 kOj
 kOj
 kOj
@@ -219169,8 +219212,8 @@ phr
 phr
 nhI
 sYS
-aUE
-hYQ
+uvl
+uzy
 kTO
 "}
 (110,1,3) = {"
@@ -224817,12 +224860,12 @@ cxU
 tfW
 bSm
 eUV
-ocM
+ehP
 qjm
 eUV
 ewk
 cFN
-lOm
+hCP
 eUV
 uTf
 kOj
@@ -225411,14 +225454,14 @@ tfW
 tfW
 mmJ
 tfW
-cAF
+jRN
 tfW
 tfW
 tfW
-tfW
+txC
 uxn
 cxU
-iEn
+aUE
 uxn
 lOm
 bsl
@@ -225608,7 +225651,7 @@ cxU
 cxU
 cxU
 vaP
-tfW
+txC
 tfW
 kEV
 tfW
@@ -226239,7 +226282,7 @@ rvA
 rBH
 byp
 bsl
-tfW
+txC
 jBW
 kTO
 "}
@@ -227224,7 +227267,7 @@ cxU
 cxU
 cxU
 tlB
-fqz
+jZq
 tlB
 tlB
 tlB
@@ -227634,7 +227677,7 @@ cxU
 cxU
 cxU
 cxU
-cxU
+kmM
 lJP
 rBH
 rBH
@@ -227847,10 +227890,10 @@ rBH
 pGM
 oVF
 kEV
-uTf
+vGF
 kEV
 tfW
-tfW
+txC
 tfW
 tfW
 tfW
@@ -228240,7 +228283,7 @@ cxU
 cxU
 cxU
 cxU
-cxU
+kmM
 nMT
 rBH
 rBH
@@ -228660,7 +228703,7 @@ tzW
 cDx
 oVF
 kEV
-tfW
+txC
 tfW
 tfW
 tfW
@@ -228844,7 +228887,7 @@ tfW
 tfW
 tfW
 tfW
-tym
+oKU
 cxU
 raM
 bsl
@@ -229446,7 +229489,7 @@ fqz
 fqz
 fqz
 cXA
-tfW
+txC
 bSm
 bsl
 wMi
@@ -229670,7 +229713,7 @@ jny
 rdM
 nUy
 tfW
-tfW
+txC
 lOm
 tfW
 kOj
@@ -230456,7 +230499,7 @@ tfW
 tfW
 tfW
 bSm
-tfW
+txC
 tfW
 bsl
 bsl
@@ -230475,7 +230518,7 @@ bsl
 kEV
 kEV
 tfW
-tfW
+txC
 tfW
 tfW
 txQ
@@ -230865,16 +230908,16 @@ tfW
 tfW
 tfW
 tfW
+txC
 tfW
 tfW
 tfW
 tfW
+txC
 tfW
 tfW
 tfW
-tfW
-tfW
-tfW
+txC
 tfW
 tfW
 tfW
@@ -232058,7 +232101,7 @@ gCE
 cXp
 pey
 tiO
-tfW
+txC
 tiO
 tfW
 tiO
@@ -232870,7 +232913,7 @@ gCE
 gCE
 gCE
 tfW
-tfW
+txC
 tfW
 tfW
 cGa
@@ -233274,7 +233317,7 @@ gCE
 gCE
 gCE
 tiO
-tfW
+txC
 tfW
 tfW
 tfW
@@ -233650,7 +233693,7 @@ aQo
 aQo
 rTe
 iSI
-tfW
+txC
 fbJ
 ixl
 kOj
@@ -233851,7 +233894,7 @@ kOB
 dUD
 aQo
 rTe
-hCP
+ixl
 tfW
 tfW
 tfW
@@ -234245,7 +234288,7 @@ kOj
 kOj
 kOj
 ucy
-tfW
+txC
 hEL
 aQo
 aQo
@@ -234688,7 +234731,7 @@ cXp
 cXp
 cXp
 rTe
-vGF
+cyE
 jBW
 kOj
 xkT
@@ -234890,7 +234933,7 @@ cXp
 cXp
 cXp
 rTe
-jZq
+iGL
 kOj
 kOj
 kOj
@@ -235077,7 +235120,7 @@ mHv
 tfW
 raN
 tfW
-vcn
+oCa
 tiO
 cXp
 cXp
@@ -235442,7 +235485,7 @@ kOj
 kOj
 kOj
 kOj
-jRN
+xkT
 wub
 wub
 bSm
@@ -235672,7 +235715,7 @@ tHS
 tfW
 ePQ
 iSI
-txC
+bzf
 kOj
 kOj
 kOj
