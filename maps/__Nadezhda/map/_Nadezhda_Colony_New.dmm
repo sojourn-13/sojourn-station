@@ -22124,25 +22124,11 @@
 /turf/simulated/floor/beach/water/shallow,
 /area/nadezhda/crew_quarters/hydroponics)
 "eMD" = (
-/obj/structure/catwalk,
-/obj/random/scrap/dense_weighted/low_chance,
-/obj/structure/table/rack,
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+/obj/item/modular_computer/console/preset/command{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/inside_colony)
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/nadezhda/pros/foreman)
 "eMM" = (
 /obj/structure/closet/crate/trashcart,
 /obj/machinery/alarm{
@@ -24769,10 +24755,6 @@
 /obj/structure/flora/small/grassb2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
-"fnA" = (
-/obj/structure/table/woodentable,
-/turf/simulated/floor/tiled/steel/brown_platform,
-/area/nadezhda/pros/foreman)
 "fnB" = (
 /obj/structure/scrap/food/large,
 /turf/simulated/floor/beach/sand,
@@ -46859,7 +46841,8 @@
 /obj/machinery/button/remote/airlock{
 	id = "mcshutters";
 	req_access = list(58);
-	pixel_y = 25
+	pixel_y = 25;
+	name = "Shutters Control"
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/smc/quarters)
@@ -53808,6 +53791,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/random/scrap/dense_weighted/low_chance,
+/obj/structure/table/rack,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
 "lCI" = (
@@ -208582,7 +208567,7 @@ lcJ
 ugE
 urR
 lCH
-hJm
+fEi
 gBD
 iYY
 pHb
@@ -208784,7 +208769,7 @@ rgy
 mpg
 cNA
 grR
-hJm
+fEi
 gBD
 gBD
 pHb
@@ -208986,7 +208971,7 @@ mHg
 qJJ
 usV
 grR
-hJm
+fEi
 qIy
 gBD
 pHb
@@ -209389,8 +209374,8 @@ acV
 acV
 acV
 acV
-eMD
-fEi
+grR
+hJm
 miU
 rDN
 pHb
@@ -218673,7 +218658,7 @@ cMF
 xja
 cyz
 nVX
-iuW
+eMD
 uoU
 oZX
 maJ
@@ -218875,7 +218860,7 @@ cMF
 xja
 xNb
 pjU
-fnA
+iuW
 nly
 oZX
 owe
