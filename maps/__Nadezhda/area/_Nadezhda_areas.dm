@@ -536,6 +536,10 @@
 	name = "\improper Control Room"
 	icon_state = "bridge"
 
+/area/nadezhda/command/hallway
+	name = "\improper Command Hallway"
+	icon_state = "bridge"
+
 /area/nadezhda/command/meeting_room
 	name = "\improper Heads of Staff Meeting Room"
 	icon_state = "bridge"
