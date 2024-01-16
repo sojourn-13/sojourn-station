@@ -44,6 +44,7 @@
 	metabolism = REM * 2
 	strength = 2
 
+
 /datum/reagent/toxin/wormwood/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_TOXIN, strength + dose / 2)
 	M.add_chemical_effect(CE_SLOWDOWN, 0.75)
