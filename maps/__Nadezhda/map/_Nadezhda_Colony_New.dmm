@@ -2240,11 +2240,11 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "azp" = (
-/obj/machinery/computer/aifixer,
 /obj/structure/sign/warning/nosmoking/small{
 	pixel_x = -32;
 	pixel_y = 32
 	},
+/obj/structure/filingcabinet,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "azs" = (
@@ -9223,23 +9223,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/command/tcommsat/computer)
-"caJ" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/disposalpipe/segment,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 32
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/command/hallway)
 "caN" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
@@ -18469,19 +18452,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/engineering/atmos)
-"dYw" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/disposalpipe/segment,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/command/hallway)
 "dYC" = (
 /obj/structure/table/woodentable,
 /obj/item/cardholder,
@@ -32387,6 +32357,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"gWd" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/command/hallway)
 "gWf" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -82659,6 +82642,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/bridge)
+"rzD" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 32
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/command/hallway)
 "rzP" = (
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/suit/armor/vest/ironhammer,
@@ -94733,9 +94733,7 @@
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/hallway/surface/section1)
 "uaT" = (
-/obj/machinery/computer/prisoner{
-	req_access = list(5)
-	},
+/obj/machinery/computer/aifixer,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "uaY" = (
@@ -178690,8 +178688,8 @@ fdu
 hGs
 xfR
 kFF
-caJ
-dYw
+rzD
+gWd
 jJo
 ueH
 kgH
