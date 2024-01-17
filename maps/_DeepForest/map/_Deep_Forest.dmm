@@ -11934,10 +11934,6 @@
 /obj/random/oddity_guns,
 /turf/simulated/floor/wood,
 /area/nadezhda/dungeon/outside/prepper)
-"kNl" = (
-/obj/structure/flora/small/busha3,
-/turf/space,
-/area/nadezhda/outside/meadow)
 "kNK" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/small/busha3,
@@ -81936,7 +81932,7 @@ naj
 eOY
 hHq
 fwV
-kNl
+fon
 hRL
 hRL
 jLb
