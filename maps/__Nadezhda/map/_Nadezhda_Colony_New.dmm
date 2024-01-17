@@ -8284,10 +8284,6 @@
 /obj/item/storage/box/donkpockets,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/absolutism/vectorrooms)
-"bOV" = (
-/obj/structure/flora/small/bushb2,
-/turf/space,
-/area/nadezhda/outside/forest)
 "bPh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -230053,7 +230049,7 @@ pCJ
 pCJ
 pCJ
 pCJ
-bOV
+rbi
 btP
 kOj
 kOj

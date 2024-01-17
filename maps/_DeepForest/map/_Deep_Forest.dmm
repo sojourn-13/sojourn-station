@@ -19072,10 +19072,6 @@
 /obj/random/medical,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"qTR" = (
-/obj/random/flora/jungle_tree,
-/turf/space,
-/area/nadezhda/outside/meadow)
 "qUj" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -97621,7 +97617,7 @@ tMk
 eOY
 hRL
 hRL
-qTR
+iVK
 fiZ
 naj
 naj
