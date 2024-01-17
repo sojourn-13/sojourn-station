@@ -101,7 +101,10 @@
 	nerve_system_accumulations = 10
 
 /datum/reagent/medicine/kelotane/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(M.species?.reagent_tag == IS_CHTMANT || M.species?.reagent_tag == IS_SLIME)
+	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.heal_organ_damage(0, 0.3 * effect_multiplier, 0, 1.5 * effect_multiplier)
 		return
 	M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 3 * effect_multiplier)
 
@@ -118,6 +121,9 @@
 	nerve_system_accumulations = 20
 
 /datum/reagent/medicine/dermaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 2.5 * effect_multiplier)
+		return
 	M.heal_organ_damage(0, 1.2 * effect_multiplier, 0, 5 * effect_multiplier)
 
 /datum/reagent/medicine/dylovene
@@ -161,7 +167,7 @@
 
 /datum/reagent/medicine/carthatoline/affect_blood(var/mob/living/carbon/M, var/alien, effect_multiplier, var/removed = REM)
 	if(M.species?.reagent_tag == IS_SLIME)
-		M.add_chemical_effect(CE_TOXIN, 1.5)
+		M.add_chemical_effect(CE_TOXIN, 2)
 		return
 	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
 	if(ishuman(M))
@@ -286,7 +292,7 @@
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		return
 	if(!(M.species?.reagent_tag == IS_SLIME))
-		M.add_chemical_effect(CE_ANTITOX, 1)
+		M.add_chemical_effect(CE_TOXIN, 1)
 	M.adjustOxyLoss(-0.6 * effect_multiplier)
 	M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
 	M.add_chemical_effect(CE_ANTITOX, 1)
