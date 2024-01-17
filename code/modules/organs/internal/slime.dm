@@ -7,7 +7,7 @@
 	max_blood_storage = 7.5
 	oxygen_req = 2.5
 	nutriment_req = 4 // its a non breakable slime bone with muscle. We eat the owner.
-	organ_efficiency = list(OP_BONE = 125, OP_MUSCLE = 125, OP_NERVE = 100) //We have slightly higher efficiency, but we also don't have a bone to protect us so any damage to the internals damages all of us
+	organ_efficiency = list(OP_BONE = 125, OP_MUSCLE = 125, OP_NERVE = 125) //We have slightly higher efficiency, but we also don't have a bone to protect us so any damage to the internals damages all of us
 	price_tag = 200
 	force = WEAPON_FORCE_NORMAL
 
