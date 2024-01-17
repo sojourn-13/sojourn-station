@@ -1109,7 +1109,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 		M.eye_blurry = max(M.eye_blurry, 10)
 		if(prob(10))
 			M.Weaken(2)
-			M.custom_emote(1,"'s form suddenly loses cohesion as they fall to the ground!")
+			M.custom_emote(1,"'s form momentarily loses cohesion as they fall to the ground!")
 	else
 		var/wound_chance = 100 - (79 * (1 - M.stats.getMult(STAT_TGH)))
 		if(ishuman(M))

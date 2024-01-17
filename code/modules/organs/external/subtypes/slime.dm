@@ -1,6 +1,7 @@
 // Slime limbs.
 /obj/item/organ/external/slime
 	nature = MODIFICATION_SLIME
+	min_broken_damage = 60 //because of how we work, we need more health to not just explode the moment we get hurt.
 	nonsolid = 1
 	nerve_struck = -1
 

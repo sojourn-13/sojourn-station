@@ -14,7 +14,7 @@
 /obj/item/organ/internal/bone/slime/removed_mob()
 	..()
 	visible_message(SPAN_NOTICE("the [src] lose cohesion and become a puddle of goo!"))
-	return
+	Destroy()
 
 //organs
 /obj/item/organ/internal/stomach/slime
@@ -22,12 +22,12 @@
 	desc = "A series of small organs found floating barely-visible within an Aulvae that assist in digestion."
 	icon_state = "slime_stomach"
 	nature = MODIFICATION_SLIME
-	organ_efficiency = list(OP_STOMACH = 125)
+	organ_efficiency = list(OP_STOMACH = 150) //we're *very* hungry bois and thusly can hold a lotta food. Why is max nutri only based on stomach efficiency? Lol! Lmao! That is all it seems to affect so this is a fine enough solution. This gives us approximately 600 nutri vs a humans 400.
 
 /obj/item/organ/internal/stomach/slime/removed_mob()
 	..()
 	visible_message(SPAN_NOTICE("the [src] lose cohesion and become a puddle of goo!"))
-	return
+	Destroy()
 
 //Core(brain)
 /obj/item/organ/internal/vital/brain/slime
