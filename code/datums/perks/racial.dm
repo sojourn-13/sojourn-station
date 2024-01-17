@@ -728,13 +728,20 @@
 
 /datum/perk/racial/slime_metabolism
 	name = "Gelatinous Biology"
-	desc = "Your abnormal biology allows you to benefit from most toxins - however, many antitoxins are outright harmful to you." //This perk doesn't actually cause the slime-specific chem metabolism effects
+	desc = "Your peculiar anatomy afford you a variety of benefits compared to most organics. Toxins will generally heal instead of hurt, whereas anti-toxins will hurt instead of heal.\
+	additionally you are somewhat resistant to NSA overload, and can slowly regenerate health so long as you have nutrition. "//This perk doesn't actually cause the slime-specific chem metabolism effects
 	passivePerk = TRUE
+	var/regen_rate = 0.3
+
 
 /datum/perk/racial/slime_metabolism/assign(mob/living/carbon/human/H)
 	..()
 	holder.toxin_mod_perk -= 0.5
+	holder.metabolism_effects.nsa_bonus += 100
+	holder.metabolism_effects.calculate_nsa()
 
 /datum/perk/racial/slime_metabolism/remove()
 	holder.toxin_mod_perk += 0.5
+	holder.metabolism_effects.nsa_bonus -= 100
+	holder.metabolism_effects.calculate_nsa()
 	..()

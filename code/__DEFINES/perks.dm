@@ -158,7 +158,7 @@
 #define PERK_SLIMEREZ /datum/perk/racial/slime_rez_sickness
 #define PERK_SLIMEMETH /datum/perk/racial/speed_boost
 #define PERK_SLIMEBRAIN /datum/perk/racial/slime_stat_boost/mental
-#define PERK_SLIMEBOD /datum/perk/racial/slime_stat_boost/physical
+#define PERK_SLIMEBUFF /datum/perk/racial/slime_stat_boost/physical
 
 //////////////
 //Core Perks//

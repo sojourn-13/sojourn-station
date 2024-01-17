@@ -835,6 +835,11 @@
 		if(P && P.regen_rate) // Check if the perk is actually there and got regeneration enabled.
 			heal_overall_damage(P.regen_rate, P.regen_rate, P.regen_rate)
 
+	if(stats.getPerk(PERK_SLIMEBODY))// Very lazy but whatever. To Do - make both of these into one thing and maybe make it a bit more modular.
+		var/datum/perk/racial/slime_metabolism/S = stats.getPerk(PERK_SLIMEBODY)
+		if(S && S.regen_rate  && nutrition > 300) //We lose regen when we are below half max nutrition.
+			heal_overall_damage(S.regen_rate, S.regen_rate, S.regen_rate)
+
 	if(species.light_dam)//TODO: Use this proc for flora and mycus races. Search proc mycus. -Note for Kaz.
 		var/light_amount = 0
 		if(isturf(loc))

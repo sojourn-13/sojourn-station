@@ -1,6 +1,6 @@
 /datum/category_item/setup_option/background/ethnicity/slime_robust
 	name = "Aram(Red Aulvae)"
-	desc = "Though far from a martial race, the Aulvae are nothing if not versatile. Laborers and brawler in equal part - \
+	desc = "Though far from a martial species, the Aulvae are nothing if not versatile. Laborers and brawler in equal part - \
 	The Aram are rare examples of physical strength made manifest amongst their kin."
 
 	restricted_to_species = list(FORM_SLIME)

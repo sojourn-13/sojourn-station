@@ -25,7 +25,7 @@
 			var/mob/living/carbon/human/H = M
 			H.sanity.onToxin(src, effect_multiplier)
 			M.sanity.onToxin(src, multi)*/
-		if(M.species?.reagent_tag == IS_SLIME)
+		if(M.species.reagent_tag == IS_SLIME)
 			M.adjustNutrition(strength)
 			M.heal_organ_damage(0.3 * strength, 0.3 * strength)
 			M.add_chemical_effect(CE_ANTITOX, 0.3 * strength)
@@ -34,11 +34,16 @@
 
 /datum/reagent/toxin/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	if(strength)
-		M.add_chemical_effect(CE_TOXIN, strength + dose / 3)
+		if(M.species.reagent_tag == IS_SLIME)
+			M.adjustNutrition(strength)
+			M.heal_organ_damage(0.3 * strength, 0.3 * strength)
+			M.add_chemical_effect(CE_ANTITOX, 0.3 * strength)
+		else
+			M.add_chemical_effect(CE_TOXIN, strength + dose / 3)
 
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
-		if(M.species?.reagent_tag == IS_SLIME)
+		if(M.species.reagent_tag == IS_SLIME)
 			M.adjustNutrition(strength / 2)
 			M.heal_organ_damage(0.05 * strength, 0.05 * strength)
 			M.add_chemical_effect(CE_ANTITOX, 0.1)
@@ -535,7 +540,6 @@
 		if(H.species.name != "Aulvae")
 			to_chat(M, SPAN_DANGER("Your flesh rapidly mutates!"))
 			H.set_species("Aulvae")
-
 /datum/reagent/toxin/aslimetoxin
 	name = "Advanced Mutation Toxin"
 	id = "amutationtoxin"
