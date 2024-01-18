@@ -25,6 +25,7 @@
 
 
 /obj/item/rig/combat/equipped
+	cell_type =  /obj/item/cell/large/moebius/nuclear
 	initial_modules = list(
 		/obj/item/rig_module/mounted,
 		/obj/item/rig_module/vision/thermal,
@@ -308,6 +309,7 @@
 /obj/item/rig/combat/solfed/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/storage/combat,
 		/obj/item/rig_module/stealth_field,
 		/obj/item/rig_module/modular_injector/combat,
 		/obj/item/rig_module/grenade_launcher,

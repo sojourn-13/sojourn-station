@@ -474,7 +474,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye/plus
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/concillium = 3,
-		/datum/design/autolathe/cell/medium/high,
+		/datum/design/autolathe/cell/large/high,
 	)
 
 
