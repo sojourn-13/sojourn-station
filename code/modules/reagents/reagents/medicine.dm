@@ -300,7 +300,7 @@
 /datum/reagent/medicine/tricordrazine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		return
-	if(!(M.species?.reagent_tag == IS_SLIME))
+	if(M.species?.reagent_tag == IS_SLIME)
 		M.take_organ_damage(1, 0)
 		M.apply_damage(1, HALLOSS)
 		if(prob(5))
