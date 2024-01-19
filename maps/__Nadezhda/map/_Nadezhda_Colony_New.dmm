@@ -35057,6 +35057,9 @@
 	pixel_y = -22
 	},
 /obj/item/toy/plushie/deer,
+/obj/machinery/camera/network/colony_surface{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/circuitlab{
 	name = "Science Expedition prep"
@@ -49833,6 +49836,11 @@
 	},
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"kFb" = (
+/obj/structure/railing,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/inside_colony)
 "kFh" = (
 /obj/structure/table/steel,
 /obj/item/stamp,
@@ -51624,9 +51632,6 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "lcJ" = (
-/obj/machinery/camera/network/colony_surface{
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
@@ -84464,7 +84469,7 @@
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
 	},
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/inside_colony)
 "rVT" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -210597,7 +210602,7 @@ acV
 acV
 hJm
 mEU
-frR
+kFb
 uGM
 pHb
 kgI
