@@ -25,7 +25,7 @@
 			var/mob/living/carbon/human/H = M
 			H.sanity.onToxin(src, effect_multiplier)
 			M.sanity.onToxin(src, multi)*/
-		if(M.species.reagent_tag == IS_SLIME)
+		if(M.species?.reagent_tag == IS_SLIME)
 			M.adjustNutrition(strength)
 			M.heal_organ_damage(0.3 * strength, 0.3 * strength)
 			M.add_chemical_effect(CE_ANTITOX, 0.3 * strength)
@@ -34,7 +34,7 @@
 
 /datum/reagent/toxin/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	if(strength)
-		if(M.species.reagent_tag == IS_SLIME)
+		if(M.species?.reagent_tag == IS_SLIME)
 			M.adjustNutrition(strength)
 			M.heal_organ_damage(0.3 * strength, 0.3 * strength)
 			M.add_chemical_effect(CE_ANTITOX, 0.3 * strength)
@@ -43,7 +43,7 @@
 
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
-		if(M.species.reagent_tag == IS_SLIME)
+		if(M.species?.reagent_tag == IS_SLIME)
 			M.adjustNutrition(strength / 2)
 			M.heal_organ_damage(0.05 * strength, 0.05 * strength)
 			M.add_chemical_effect(CE_ANTITOX, 0.1)
@@ -168,7 +168,7 @@
 		L.adjust_fire_stacks(amount / 5)
 
 /datum/reagent/toxin/plasma/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
-	if(M.species.reagent_tag == IS_SLIME)
+	if(M.species?.reagent_tag == IS_SLIME)
 		return
 	else
 		M.take_organ_damage(0, effect_multiplier * 0.1) //being splashed directly with plasma causes minor chemical burns
