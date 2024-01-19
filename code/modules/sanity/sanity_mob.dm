@@ -53,7 +53,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/sanity_passive_gain_multiplier = 1
 	var/sanity_invulnerability = 0
 	var/level
-	var/max_level = 150 //Soj change to give a bit more breathing room
+	var/max_level = 200 //Soj change to make sanity less of a wacky rollercoaster.
 	var/level_change = 0
 
 	var/insight
@@ -75,7 +75,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/positive_prob_multiplier = 1
 	var/negative_prob = 30
 
-	var/view_damage_threshold = 20
+	var/view_damage_threshold = 35
 	var/environment_cap_coeff = 1 //How much we are affected by environmental cognitohazards. Multiplies the above threshold
 
 	var/say_time = 0
