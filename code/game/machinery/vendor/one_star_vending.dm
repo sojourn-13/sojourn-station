@@ -89,7 +89,7 @@
 	products = list(
 		/obj/item/clothing/mask/smokable/cigarette/os/nova = 25,
 		/obj/item/clothing/suit/space/void/os/nova = 15,
-		/obj/item/clothing/suit/greatcoat/os = 10,
+		/obj/item/clothing/suit/greatcoat/os/nova = 10,
 		/obj/item/clothing/under/os_jumpsuit/nova = 10,
 		/obj/item/clothing/under/os_jumpsuit/bdu/nova = 10,
 		/obj/item/clothing/under/iron_lock_security = 10,

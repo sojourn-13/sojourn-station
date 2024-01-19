@@ -10,7 +10,7 @@
 		energy = 30,
 		bomb = 25,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)
 	slowdown = 0.3
 	item_flags = STOPPRESSUREDAMAGE | THICKMATERIAL | DRAG_AND_DROP_UNEQUIP | EQUIP_SOUNDS
