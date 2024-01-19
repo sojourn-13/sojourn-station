@@ -1125,6 +1125,7 @@
 	spawn_flags = CAN_JOIN
 	min_age = 18
 	max_age = 200
+	taste_sensitivity = TASTE_SENSITIVE
 
 	burn_mod = 1.2
 	brute_mod = 1.2
