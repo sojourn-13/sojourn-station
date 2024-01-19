@@ -25,6 +25,7 @@
 
 
 /obj/item/rig/combat/equipped
+	cell_type =  /obj/item/cell/large/moebius/nuclear
 	initial_modules = list(
 		/obj/item/rig_module/mounted,
 		/obj/item/rig_module/vision/thermal,
@@ -42,7 +43,7 @@
 	desc = "Standard operative suit issued to blackshield and marshal operatives alike. Provides balanced overall protection against various threats and widely used on planets surface, space stations or in open space."
 	icon_state = "ihs_rig"
 	helm_type = /obj/item/clothing/head/helmet/space/rig/combat/ironhammer
-	suit_type = "ironhammer hardsuit"
+	suit_type = "security hardsuit"
 
 /obj/item/rig/combat/ironhammer/equipped
 	initial_modules = list(
@@ -59,7 +60,7 @@
 	name = "Blackshield Ops control module"
 	desc = "A Blackshield RIG module that has been tailored for CQC. Due to its plating, it's slightly bulkier than normal standard security hardsuits."
 	icon_state = "blackshield_rig"
-	suit_type = "light suit"
+	suit_type = "blackshield hardsuit"
 	armor_list = list(
 		melee = 60,
 		bullet = 55,
@@ -90,16 +91,11 @@
 		)
 
 /obj/item/clothing/suit/space/rig/combat/blackshield
-	name = "blackshield hazard suit"
 
 /obj/item/clothing/gloves/rig/combat/blackshield
-	name = "blackshield hazard gloves"
 
 /obj/item/clothing/shoes/magboots/rig/combat/blackshield
-	name = "blackshield hazard shoes"
-
 /obj/item/clothing/head/helmet/space/rig/combat/blackshield
-	name = "blackshield hazard hood"
 	desc = "A hazard hood modded to help against CQC combat."
 	camera_networks = list(NETWORK_SECURITY)
 
@@ -108,7 +104,7 @@
 	desc = "A RIG module for a \"Hussar\" model hardsuit, jointly manufactured by Divisors and Numericals of the New Testament. \
 	The Tau Cross shining brightly upon its shoulder, it offers moderate combat protection against many a type of threat to the Absolute."
 	icon_state = "hussar_rig" //Rig modula by Gundam Tanaka#9565
-	suit_type = "hussar rig"
+	suit_type = "hussar hardsuit"
 	armor_list = list(
 		melee = 50,
 		bullet = 45,
@@ -135,16 +131,13 @@
 		)
 
 /obj/item/clothing/suit/space/rig/combat/knight //Suit by Polyushko#0323
-	name = "hussar hardsuit breastplate"
 
 /obj/item/clothing/gloves/rig/combat/knight //Gloves by Gundam Tanaka#9565
-	name = "hussar hardsuit gauntlets"
 
 /obj/item/clothing/shoes/magboots/rig/combat/knight //Boots by Gundam Tanaka#9565
-	name = "hussar hardsuit greaves"
 
 /obj/item/clothing/head/helmet/space/rig/combat/knight //Helm by Polyushko#0323
-	name = "hussar hardsuit full helm"
+	name = "full helm"
 	desc = "One's spirit is generally the greatest shield."
 	light_overlay = "helmet_light_dual"
 	armor_list = list(
@@ -161,7 +154,7 @@
 	name = "tactical hardsuit control module"
 	desc = "A heavy duty RIG that any true sons and daughters of Sol(or terrorist, for that matter.) would instantly recognize as a slightly older style of tactical armor, often issued by system defense fleets for anti-piracy operations. Despite its age, it still smells brand new."
 	icon_state = "ert_rig"
-	suit_type = "combat hardsuit"
+	suit_type = "tactical armored hardsuit"
 	req_access = list(access_hos)
 	armor_list = list(
 		melee = 50,
@@ -194,16 +187,12 @@
 		)
 
 /obj/item/clothing/suit/space/rig/combat/ert
-	name = "tactical armored hardsuit"
 
 /obj/item/clothing/gloves/rig/combat/ert
-	name = "tactical armored gloves"
 
 /obj/item/clothing/shoes/magboots/rig/combat/ert
-	name = "tactical armored shoes"
 
 /obj/item/clothing/head/helmet/space/rig/combat/ert
-	name = "tactical armored helmet"
 	camera_networks = list(NETWORK_SECURITY)
 
 /obj/item/rig/combat/ert/co
@@ -211,7 +200,7 @@
 	desc = "A heavy duty RIG that any true sons and daughters of Sol(or terrorist, for that matter.) would instantly recognize as a slightly older style of tactical armor, often issued by system defense fleets for anti-piracy operations. This one appears to have been modified for CQB."
 	req_access = list(access_hos)
 	icon_state = "ert_rig"
-	suit_type = "combat hardsuit"
+	suit_type = "blackshield tactical hardsuit"
 	armor_list = list(
 		melee = 60,
 		bullet = 55,
@@ -229,7 +218,6 @@
 	initial_modules = list(/obj/item/rig_module/maneuvering_jets)
 
 /obj/item/clothing/head/helmet/space/rig/combat/ert/co
-	name = "tactical armored helmet"
 	camera_networks = list(NETWORK_SECURITY)
 
 /obj/item/rig/combat/ert/co/equipped
@@ -246,6 +234,7 @@
 	name = "marshals tactical hardsuit control module"
 	desc = "A heavy duty RIG that any true sons and daughters of Sol(or terrorist, for that matter.) would instantly recognize as a slightly older style of tactical armor, often issued by system defense fleets for anti-piracy operations. This one appears to have had some of its armor stripped and its servos upgraded.."
 	icon_state = "ert_rig_wo"
+	suit_type = "marshal tactical"
 	req_access = list(access_hos)
 	armor_list = list(
 		melee = 50,
@@ -275,7 +264,6 @@
 		)
 
 /obj/item/clothing/head/helmet/space/rig/combat/ert/co/wo
-	name = "tactical armored helmet"
 	camera_networks = list(NETWORK_SECURITY)
 
 /obj/item/rig/combat/solfed //Suffice it to say this should NOT see extensive use and should be reserved for specific events, the nature of this equipment is that it should NOT fall into player hands.
@@ -283,7 +271,7 @@
 	desc = "An incredibly rare and advanced RIG. Typically found in the hands of Solarian vanguard and special recon units, these suits strike fear into the hearts of colonial traitors the galaxy over for they signal\
 	the coming wrath of Sol."
 	icon_state = "military_rig"
-	suit_type = "combat hardsuit"
+	suit_type = "Pathfinder hardsuit advanced armored"
 	armor_list = list(
 		melee = 60,
 		bullet = 70,
@@ -308,6 +296,7 @@
 /obj/item/rig/combat/solfed/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/storage/combat,
 		/obj/item/rig_module/stealth_field,
 		/obj/item/rig_module/modular_injector/combat,
 		/obj/item/rig_module/grenade_launcher,
@@ -318,14 +307,10 @@
 		)
 
 /obj/item/clothing/suit/space/rig/combat/solfed
-	name = "advanced armored hardsuit"
 
 /obj/item/clothing/gloves/rig/combat/solfed
-	name = "advanced armored gloves"
 
 /obj/item/clothing/shoes/magboots/rig/combat/solfed
-	name = "advanced armored boots"
 
 /obj/item/clothing/head/helmet/space/rig/combat/solfed
-	name = "advanced armored helmet"
 	camera_networks = null//list(NETWORK_SOYFED) //It is over general, I have depicted your murderous federation as the soyjack and my glorious homeland as the chad. To do, maybe actually set this up.

@@ -289,3 +289,12 @@
 		access_prospector, access_foreman, access_external_airlocks, access_eva, access_heads, access_sec_doors,
 		access_RC_announce, access_keycard_auth, access_maint_tunnels, access_medical_suits
 	) //same as foreman, ofc.
+
+//Event and similar IDs.
+/obj/item/card/id/syndicate/solfed
+	name = "SF Armed Forces ID card"
+	icon_state = "tags"
+	desc = "A set of identifyiing tags for a member of the Solarian Armed Forces. This particular set is de-personalized and contains minimal personal information."
+	registered_name = "MSgt Joker"
+	assignment = "Solarian Armed Forces"
+
