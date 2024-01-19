@@ -290,7 +290,7 @@
 	icon_open = "militaryjacket_soyfed_open"
 	icon_closed = "militaryjacket_soyfed"
 
-obj/item/clothing/suit/storage/toggle/miljacket_marshal
+/obj/item/clothing/suit/storage/toggle/miljacket_marshal
 	name = "Marshal jacket"
 	desc = "A Resistant Marshal Coloured jacket with reflective yellow patches on it."
 	armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 10, bio = 0, rad = 0)
