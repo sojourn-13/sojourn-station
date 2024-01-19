@@ -69,7 +69,7 @@
 	nerve_system_accumulations = 20
 
 /datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	if(!(M.species?.reagent_tag == IS_SLIME))
+	if((M.species?.reagent_tag == IS_SLIME))
 		M.take_organ_damage(1, 0)
 		M.apply_damage(1, HALLOSS)
 		if(prob(5)) // dont wanna do it constantly.
@@ -141,7 +141,7 @@
 	nerve_system_accumulations = 0
 
 /datum/reagent/medicine/dylovene/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(!(M.species?.reagent_tag == IS_SLIME))
+	if((M.species?.reagent_tag == IS_SLIME))
 		M.take_organ_damage(0.5, 0)
 		M.apply_damage(0.5, HALLOSS)
 		if(prob(5))
