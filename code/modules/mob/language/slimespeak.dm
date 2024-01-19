@@ -11,11 +11,11 @@
 	key = "w"
 	shorthand = "AS"
 	partial_understanding = list(
-		LANGUAGE_CULT = 30, //
-		LANGUAGE_MARQUA = 50, //another tonal language.
+		LANGUAGE_CULT = 30, //Another language with a deep connection to Amethyn that goes back who knows how many years.
+		LANGUAGE_MARQUA = 40, //another ancient tonal language
 	)
 	space_chance = 10
 	syllables = list(
 		"blorb", "blurble", ,"blorp", "Ahh", "Ahhhh","aa","aaa","a", "Mmmmh!", "Wrrr", "ghp", "Oooo", "ooo", "oo", "qrr", "qss", "Wrrr", "vrr", "!", "?", "*",
-		"rrr", "trr", "Trrrrrrl", "uuu"
+		"rrr", "trr", "Trrrrrrl", "uuu", "A", "a", "R", "r", "U", "u", "M", "m", "L", "l", "E", "e", "N", "n"
 	)

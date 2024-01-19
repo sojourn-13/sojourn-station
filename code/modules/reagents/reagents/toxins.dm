@@ -524,7 +524,7 @@
 	common = TRUE //So people mistakenly believe it is, in fact, beer.
 
 /* Transformations */
-
+/* With the reimplimentation of slime people as a cogent thing, I'm commenting these out for now. Perhaps later we'll do something with this.
 /datum/reagent/toxin/slimetoxin
 	name = "Mutation Toxin"
 	id = "mutationtoxin"
@@ -540,6 +540,7 @@
 		if(H.species.name != "Aulvae")
 			to_chat(M, SPAN_DANGER("Your flesh rapidly mutates!"))
 			H.set_species("Aulvae")
+
 /datum/reagent/toxin/aslimetoxin
 	name = "Advanced Mutation Toxin"
 	id = "amutationtoxin"
@@ -573,7 +574,7 @@
 	else
 		new_mob.key = M.key
 	qdel(M)
-
+*/
 /datum/reagent/toxin/pararein
 	name = "Pararein"
 	id = "pararein"

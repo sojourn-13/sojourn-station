@@ -70,7 +70,10 @@
 
 /datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(!(M.species?.reagent_tag == IS_SLIME))
-		M.add_chemical_effect(CE_ANTITOX, 3 * removed)
+		M.take_organ_damage(1, 0)
+		M.apply_damage(1, HALLOSS)
+		if(prob(5)) // dont wanna do it constantly.
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
 	M.heal_organ_damage(9 * removed, 0)
 
 /datum/reagent/medicine/meralyne
@@ -138,8 +141,11 @@
 	nerve_system_accumulations = 0
 
 /datum/reagent/medicine/dylovene/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(M.species?.reagent_tag == IS_SLIME)
-		M.add_chemical_effect(CE_TOXIN, 1)
+	if(!(M.species?.reagent_tag == IS_SLIME))
+		M.take_organ_damage(0.5, 0)
+		M.apply_damage(0.5, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
 		return
 	M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
 	M.adjust_hallucination(-0.9 * effect_multiplier)
@@ -167,7 +173,10 @@
 
 /datum/reagent/medicine/carthatoline/affect_blood(var/mob/living/carbon/M, var/alien, effect_multiplier, var/removed = REM)
 	if(M.species?.reagent_tag == IS_SLIME)
-		M.add_chemical_effect(CE_TOXIN, 2)
+		M.take_organ_damage(2, 0)
+		M.apply_damage(2, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
 		return
 	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
 	if(ishuman(M))
@@ -292,7 +301,11 @@
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		return
 	if(!(M.species?.reagent_tag == IS_SLIME))
-		M.add_chemical_effect(CE_TOXIN, 1)
+		M.take_organ_damage(1, 0)
+		M.apply_damage(1, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
+		return
 	M.adjustOxyLoss(-0.6 * effect_multiplier)
 	M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
 	M.add_chemical_effect(CE_ANTITOX, 1)

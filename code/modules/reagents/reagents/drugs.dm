@@ -104,7 +104,13 @@
 	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier, TRUE)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "serotrotium")
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "serotrotium")
-	M.add_chemical_effect(CE_ANTITOX, 0.5)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.take_organ_damage(1, 0) //we are however still bad for slime biology.
+		M.apply_damage(1, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
+	else
+		M.add_chemical_effect(CE_ANTITOX, 0.5)
 	..()
 
 
@@ -126,7 +132,13 @@
 	M.add_chemical_effect(CE_PAINKILLER, 25 * effect_multiplier, TRUE)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "cryptobiolin")
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "cryptobiolin")
-	M.add_chemical_effect(CE_ANTITOX, 0.5)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.take_organ_damage(1, 0) //we are however still bad for slime biology.
+		M.apply_damage(1, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
+	else
+		M.add_chemical_effect(CE_ANTITOX, 0.5)
 	..()
 
 
