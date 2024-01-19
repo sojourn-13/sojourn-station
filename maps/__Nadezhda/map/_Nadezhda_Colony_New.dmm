@@ -6741,24 +6741,6 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
-"byg" = (
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/space,
-/area/nadezhda/outside/inside_colony)
 "byk" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "16,20"
@@ -63218,11 +63200,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"nyY" = (
-/obj/structure/invislight,
-/obj/structure/catwalk,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/inside_colony)
 "nyZ" = (
 /obj/structure/flora/small/grassb1,
 /obj/structure/flora/small/busha1,
@@ -71577,7 +71554,8 @@
 	req_one_access = newlist()
 	},
 /obj/machinery/requests_console/preset/command/cro{
-	dir = 4
+	dir = 4;
+	pixel_x = 34
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
@@ -209203,8 +209181,8 @@ nyv
 qJJ
 qJJ
 vLb
-byg
-nyY
+grR
+hJm
 osl
 hcX
 pHb
