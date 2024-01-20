@@ -29899,9 +29899,6 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "gsS" = (
-/obj/effect/floor_decal/steeldecal/steel_decals10{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -49836,11 +49833,6 @@
 	},
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/maintenance/undergroundfloor1east)
-"kFb" = (
-/obj/structure/railing,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/outside/inside_colony)
 "kFh" = (
 /obj/structure/table/steel,
 /obj/item/stamp,
@@ -76939,6 +76931,7 @@
 	pixel_x = 32
 	},
 /obj/machinery/papershredder,
+/obj/effect/floor_decal/steeldecal/steel_decals10,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
 "qoI" = (
@@ -87694,6 +87687,11 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/crew_quarters/pool)
+"sBB" = (
+/obj/structure/railing,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/inside_colony)
 "sBF" = (
 /obj/structure/railing,
 /obj/structure/multiz/stairs/enter/bottom{
@@ -210602,7 +210600,7 @@ acV
 acV
 hJm
 mEU
-kFb
+sBB
 uGM
 pHb
 kgI
