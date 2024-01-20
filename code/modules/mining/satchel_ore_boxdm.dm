@@ -101,13 +101,19 @@
 		ui = new(user, src, "OreBox", name)
 		ui.open()
 
-/obj/structure/ore_box/ui_data()
-	var/data = list()
-	data["materials"] = list()
-	for(var/obj/item/stack/ore in contents)
-		data["materials"] += list(list("name" = ore, "amount" = ore.amount, "type" = ore))
+/obj/structure/ore_box/ui_data()                        //you're telling me a blue haired cat wrote this code?
+    var/contents = list()
+    for(var/obj/item/stack/ore/O in src)
+        contents[O.type] += O.amount
 
-	return data
+    var/data = list()
+    data["materials"] = list()
+    for(var/type in contents)
+        var/obj/item/stack/ore/O = type
+        var/name = initial(O.name)
+        data["materials"] += list(list("name" = name, "amount" = contents[type], "id" = type))
+
+    return data
 
 /obj/structure/ore_box/ui_act(action, params)
 	. = ..()
