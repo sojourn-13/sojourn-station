@@ -689,7 +689,7 @@
 /datum/perk/racial/speed_boost //Go fast but lose vig and burn through nutri
 	name = "Caloric Redline"
 	desc = "by burning through mass at an excessive rate an Aulvae can push their body to move with surprising swiftness, albeit losing some of the fine control over their movements. "
-	var/cooldown = 5 MINUTES
+	var/cooldown = 10 MINUTES
 	passivePerk = FALSE
 	var/nutrition_cost = 200
 
@@ -704,7 +704,7 @@
 	cooldown_time = world.time + cooldown
 
 	holder.nutrition -= nutrition_cost
-	holder.reagents.add_reagent("slime_speed", 10)
+	holder.reagents.add_reagent("slime_speed", 3)
 
 /* This is the old code for this perk, it does not work but it's left for postereity. Feel free to remove if you please - CDB
 /datum/perk/racial/limb_regen

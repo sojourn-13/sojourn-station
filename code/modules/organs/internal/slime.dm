@@ -19,10 +19,10 @@
 //organs
 /obj/item/organ/internal/stomach/slime
 	name = "Aulvae lysosomes"
-	desc = "A series of small organs found floating barely-visible within an Aulvae that assist in digestion."
+	desc = "A series of small organs found floating barely-visible within an Aulvae that assist in a variety of tasks relating to the processing of ingested matter."
 	icon_state = "slime_stomach"
 	nature = MODIFICATION_SLIME
-	organ_efficiency = list(OP_STOMACH = 150) //we're *very* hungry bois and thusly can hold a lotta food. Why is max nutri only based on stomach efficiency? Lol! Lmao! That is all it seems to affect so this is a fine enough solution. This gives us approximately 600 nutri vs a humans 400.
+	organ_efficiency = list(OP_STOMACH = 150, OP_LIVER = 100, OP_KIDNEYS = 100) //we're *very* hungry bois and thusly can hold a lotta food. Why is max nutri only based on stomach efficiency? Lol! Lmao! That is all it seems to affect so this is a fine enough solution. This gives us approximately 600 nutri vs a humans 400.
 
 /obj/item/organ/internal/stomach/slime/removed_mob()
 	..()
@@ -35,6 +35,7 @@
 	desc = "A complex, organic knot of jelly and crystalline particles."
 	icon = 'icons/mob/slimes.dmi'
 	icon_state = "bluespace slime extract"
+//	organ_efficiency = list() //tbh not sure why we didn't just make the core do all these functions along with stomach. Oh well.
 	nature = MODIFICATION_SLIME
 	parent_organ_base = BP_CHEST
 	blood_req = 0

@@ -26,8 +26,7 @@
 			H.sanity.onToxin(src, effect_multiplier)
 			M.sanity.onToxin(src, multi)*/
 		if(M.species?.reagent_tag == IS_SLIME)
-			M.adjustNutrition(strength)
-			M.heal_organ_damage(0.3 * strength, 0.3 * strength)
+			M.heal_organ_damage(0.1 * strength, 0.1 * strength)
 			M.add_chemical_effect(CE_ANTITOX, 0.3 * strength)
 		else
 			M.add_chemical_effect(CE_TOXIN, strength + dose / 2)
@@ -35,8 +34,7 @@
 /datum/reagent/toxin/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	if(strength)
 		if(M.species?.reagent_tag == IS_SLIME)
-			M.adjustNutrition(strength)
-			M.heal_organ_damage(0.3 * strength, 0.3 * strength)
+			M.heal_organ_damage(0.1 * strength, 0.1 * strength)
 			M.add_chemical_effect(CE_ANTITOX, 0.3 * strength)
 		else
 			M.add_chemical_effect(CE_TOXIN, strength + dose / 3)
@@ -44,7 +42,6 @@
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
 		if(M.species?.reagent_tag == IS_SLIME)
-			M.adjustNutrition(strength / 2)
 			M.heal_organ_damage(0.05 * strength, 0.05 * strength)
 			M.add_chemical_effect(CE_ANTITOX, 0.1)
 		else
@@ -175,6 +172,19 @@
 	if(prob(50))
 		M.pl_effects()
 
+/datum/reagent/toxin/plasma/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(strength)
+		if(M.species?.reagent_tag == IS_SLIME)
+			M.adjustNutrition(strength)
+			M.heal_organ_damage(0.2 * strength, 0.2 * strength)
+			M.add_chemical_effect(CE_ANTITOX, 0.3 * strength)
+		else
+			..()
+			var/mob/living/carbon/human/H = M
+			var/obj/item/organ/internal/vital/heart/S = H.random_organ_by_process(OP_BLOOD_VESSEL)
+			create_overdose_wound(S, M, /datum/component/internal_wound/organic/heavy_poisoning, "plasma poisoning")
+
+
 /datum/reagent/toxin/plasma/touch_turf(turf/simulated/T)
 	if(!istype(T))
 		return
@@ -204,6 +214,7 @@
 			L.custom_emote(2, "vibrates and wobbles, electricity momentarily visible within their transluscent flesh.")
 			L.Weaken(rand(10,25))
 			L.updatehealth()
+			//holder.remove_reagent("plasma", 30)
 			return
 		else
 			return

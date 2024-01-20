@@ -409,7 +409,7 @@
 	taste_description = "acid"
 	reagent_state = LIQUID
 	color = "#FF3300"
-	metabolism = REM * 0.2
+	metabolism = REM * 0.5
 	overdose = REAGENTS_OVERDOSE * 0.66
 	withdrawal_threshold = 10
 	nerve_system_accumulations = 55
@@ -448,11 +448,12 @@
 	description = "Comparable to high-dose amphetamines cut with nano muscle-stimulators. This chemical would melt through just about any organic that dared touch it, unless of course their anatomy was already highly acidic."
 	taste_description = "caustic rust"
 	scannable = FALSE
+	metabolism = REM * 2.5 //burn through fast, we process chems kinda slow so this makes it more reasonable.
 
 /datum/reagent/drug/hyperzine/slime_meth/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_SLIME)
 		if(prob(5))
-			M.emote(pick("vibrates", "sways", "crackles with electricity"))
+			M.custom_emote(2, "[pick("vibrates", "sways", "crackles with electricity")]")
 		M.add_chemical_effect(CE_SPEEDBOOST, 0.6) //nyoom
 		M.stats.addTempStat(STAT_VIG, -45, 1 MINUTES, "speed jitters")
 		M.stats.addTempStat(STAT_BIO, -45, 1 MINUTES, "speed jitters")
