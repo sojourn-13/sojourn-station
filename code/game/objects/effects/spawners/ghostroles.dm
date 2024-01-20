@@ -65,8 +65,20 @@
 		STAT_COG = 10
 	)
 
-/obj/effect/mob_spawn/human/exl_armored
+/obj/effect/mob_spawn/human/exl_civ/special(mob/living/H)
+	var/obj/item/implant/excelsior/E = new /obj/item/implant/excelsior(H)
+	E.install(H, BP_HEAD, H)
+
+/obj/effect/mob_spawn/human/exl_civ/armored
 	outfit = /decl/hierarchy/outfit/antagonist/mercenary/excelsior/equipped
+	stat_modifiers = list( //Should be beefy, they're antags who are supposed to face fully awakened Blackshield
+		STAT_ROB = 50,
+		STAT_TGH = 50,
+		STAT_BIO = 25,
+		STAT_MEC = 25,
+		STAT_VIG = 50,
+		STAT_COG = 10
+	)
 
 /obj/effect/mob_spawn/human/void_wolf
 	name = "storage sleeper"
