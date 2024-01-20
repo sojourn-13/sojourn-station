@@ -85,6 +85,48 @@
 
 	return FALSE
 
+/obj/machinery/door/holy/public/allowed(mob/M)
+	if(locked)
+		return FALSE
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/implant/core_implant/cruciform/CI = H.get_core_implant(/obj/item/implant/core_implant/cruciform)
+		if(CI && CI.security_clearance >= minimal_holiness)
+			return TRUE
+
+		if(istype(H.get_active_hand(), /obj/item/clothing/accessory/cross))
+			return TRUE
+
+		if(istype(H.wear_mask, /obj/item/clothing/accessory/cross))
+			return TRUE
+
+		var/obj/item/clothing/C = H.w_uniform
+		var/bingo
+		if(istype(C))
+			for(var/obj/item/I in C.accessories)
+				if(istype(I, /obj/item/clothing/accessory/cross))
+					bingo = TRUE
+					break
+			if(bingo)
+				return TRUE
+
+		if(istype(H.get_active_hand(), /obj/item/clothing/accessory/necklace/fractalrosary))
+			return TRUE
+
+		if(istype(H.wear_mask, /obj/item/clothing/accessory/necklace/fractalrosary))
+			return TRUE
+
+		if(istype(C))
+			for(var/obj/item/I in C.accessories)
+				if(istype(I, /obj/item/clothing/accessory/necklace/fractalrosary))
+					bingo = TRUE
+					break
+			if(bingo)
+				return TRUE
+
+	return FALSE
+
 /obj/machinery/door/holy/attack_hand(mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(allowed(user))
