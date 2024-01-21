@@ -1111,7 +1111,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/slimeregen/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(M.species?.reagent_tag == IS_SLIME)
 		var/mob/living/carbon/human/H = M
-		if(prob(0.25 * effect_multiplier))
+		if(prob(0.5 * effect_multiplier))
 			var/list/missingLimbs = list()
 			for(var/name in BP_ALL_LIMBS)
 				if(!H.has_appendage(name))

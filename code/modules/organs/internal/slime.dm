@@ -7,7 +7,7 @@
 	max_blood_storage = 7.5
 	oxygen_req = 2.5
 	nutriment_req = 4 // its a non breakable slime bone with muscle. We eat the owner.
-	organ_efficiency = list(OP_BONE = 125, OP_MUSCLE = 125, OP_NERVE = 125) //We have slightly higher efficiency, but we also don't have a bone to protect us so any damage to the internals damages all of us
+	organ_efficiency = list(OP_BONE = 125, OP_MUSCLE = 125, OP_NERVE = 125, OP_HEART = 15) //We have slightly higher efficiency, but we also don't have a bone to protect us so any damage to the internals damages all of us. Heart efficiency is low as it is primely used to pump chems around our body- and each bone applies that bonus. With 7 cytostructures you get 105 efficiency total.
 	price_tag = 200
 	force = WEAPON_FORCE_NORMAL
 
@@ -22,7 +22,8 @@
 	desc = "A series of small organs found floating barely-visible within an Aulvae that assist in a variety of tasks relating to the processing of ingested matter."
 	icon_state = "slime_stomach"
 	nature = MODIFICATION_SLIME
-	organ_efficiency = list(OP_STOMACH = 150, OP_LIVER = 100, OP_KIDNEYS = 100, OP_HEART = 100) //we're *very* hungry bois and thusly can hold a lotta food. Why is max nutri only based on stomach efficiency? Lol! Lmao! That is all it seems to affect so this is a fine enough solution. This gives us approximately 600 nutri vs a humans 400.
+	parent_organ_base = BP_HEAD
+	organ_efficiency = list(OP_STOMACH = 150, OP_LIVER = 100, OP_KIDNEYS = 100) //we're *very* hungry bois and thusly can hold a lotta food. Why is max nutri only based on stomach efficiency? Lol! Lmao! That is all it seems to affect so this is a fine enough solution. This gives us approximately 600 nutri vs a humans 400.
 
 /obj/item/organ/internal/stomach/slime/removed_mob()
 	..()
