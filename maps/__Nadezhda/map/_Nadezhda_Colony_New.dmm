@@ -89740,7 +89740,6 @@
 	},
 /obj/structure/table/woodentable,
 /obj/item/rig/combat/ert/co/wo/equipped,
-/obj/item/device/lighting/toggleable/lamp,
 /obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/swo/quarters)
@@ -108334,6 +108333,9 @@
 	pixel_x = -6;
 	pixel_y = 4;
 	range = 4
+	},
+/obj/item/device/lighting/toggleable/lamp{
+	pixel_x = 6
 	},
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/swo/quarters)
