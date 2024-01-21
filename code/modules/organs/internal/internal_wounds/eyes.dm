@@ -78,11 +78,11 @@
 	name = "charred sclera"
 
 /datum/component/internal_wound/organic/eyes_burn/scorch
-	name = "scorched deep tissue"
+	name = "scorched tissue"
 	treatments_tool = list(QUALITY_RETRACTING = FAILCHANCE_HARD)
-	scar = /datum/component/internal_wound/organic/eyes_deep_burn
+	//scar = /datum/component/internal_wound/organic/eyes_deep_burn
 
-/datum/component/internal_wound/organic/eyes_deep_burn //stage 2
+/datum/component/internal_wound/organic/eyes_burn/eyes_deep_burn //stage 2
 	name = "scorched deep tissue"
 	severity = 3 // starts with max damage as it is a second stage
 	severity_max = 3
