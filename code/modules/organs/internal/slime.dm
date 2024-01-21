@@ -22,7 +22,7 @@
 	desc = "A series of small organs found floating barely-visible within an Aulvae that assist in a variety of tasks relating to the processing of ingested matter."
 	icon_state = "slime_stomach"
 	nature = MODIFICATION_SLIME
-	organ_efficiency = list(OP_STOMACH = 150, OP_LIVER = 100, OP_KIDNEYS = 100) //we're *very* hungry bois and thusly can hold a lotta food. Why is max nutri only based on stomach efficiency? Lol! Lmao! That is all it seems to affect so this is a fine enough solution. This gives us approximately 600 nutri vs a humans 400.
+	organ_efficiency = list(OP_STOMACH = 150, OP_LIVER = 100, OP_KIDNEYS = 100, OP_HEART = 100) //we're *very* hungry bois and thusly can hold a lotta food. Why is max nutri only based on stomach efficiency? Lol! Lmao! That is all it seems to affect so this is a fine enough solution. This gives us approximately 600 nutri vs a humans 400.
 
 /obj/item/organ/internal/stomach/slime/removed_mob()
 	..()

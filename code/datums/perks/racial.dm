@@ -704,7 +704,7 @@
 	cooldown_time = world.time + cooldown
 
 	holder.nutrition -= nutrition_cost
-	holder.reagents.add_reagent("slime_speed", 3)
+	holder.reagents.add_reagent("slime_speed", 5)
 
 /* This is the old code for this perk, it does not work but it's left for postereity. Feel free to remove if you please - CDB
 /datum/perk/racial/limb_regen
