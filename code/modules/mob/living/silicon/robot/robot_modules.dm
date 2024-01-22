@@ -1305,8 +1305,7 @@ var/global/list/robot_modules = list(
 	P.synths = list(plastic)
 	src.modules += P
 
-	//We know guild work and robotics.
-	R.stats.addPerk(PERK_HANDYMAN)
+	//We know repair work and robotics.
 	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
 	R.stats.addPerk(PERK_SI_SCI)
 

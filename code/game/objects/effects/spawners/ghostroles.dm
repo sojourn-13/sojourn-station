@@ -31,7 +31,7 @@
 
 /obj/effect/mob_spawn/human/scavenger
 	name = "storage sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in armor."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in armor."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -45,7 +45,7 @@
 
 /obj/effect/mob_spawn/human/exl_civ
 	name = "storage sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in excelsior equipment."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in excelsior equipment."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -65,12 +65,24 @@
 		STAT_COG = 10
 	)
 
-/obj/effect/mob_spawn/human/exl_armored
+/obj/effect/mob_spawn/human/exl_civ/special(mob/living/H)
+	var/obj/item/implant/excelsior/E = new /obj/item/implant/excelsior(H)
+	E.install(H, BP_HEAD, H)
+
+/obj/effect/mob_spawn/human/exl_civ/armored
 	outfit = /decl/hierarchy/outfit/antagonist/mercenary/excelsior/equipped
+	stat_modifiers = list( //Should be beefy, they're antags who are supposed to face fully awakened Blackshield
+		STAT_ROB = 50,
+		STAT_TGH = 50,
+		STAT_BIO = 25,
+		STAT_MEC = 25,
+		STAT_VIG = 50,
+		STAT_COG = 10
+	)
 
 /obj/effect/mob_spawn/human/void_wolf
 	name = "storage sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in void wolf equipment."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in void wolf equipment."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -94,7 +106,7 @@
 
 /obj/effect/mob_spawn/human/si_medical_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in SI medical equipment."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in SI medical equipment."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -115,7 +127,7 @@
 
 /obj/effect/mob_spawn/human/marshal_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Colonial Marshal"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Colonial Marshal"
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -136,7 +148,7 @@
 
 /obj/effect/mob_spawn/human/blackshield_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Blackshield Specialist"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Blackshield Specialist"
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -157,7 +169,7 @@
 
 /obj/effect/mob_spawn/human/engineering_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be covered in advanced Guild equipment."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in advanced Guild equipment."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -178,7 +190,7 @@
 
 /obj/effect/mob_spawn/human/lonestar_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be an Auditor."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be an Auditor."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -230,7 +242,7 @@
 
 /obj/effect/mob_spawn/human/sri_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a member of the SRI Ethics committee."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a member of the SRI Ethics committee."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -252,7 +264,7 @@
 
 /obj/effect/mob_spawn/human/prospector_ert
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a Prospector."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Prospector."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -272,10 +284,9 @@
 		STAT_COG = 5 //Hoggs smartest prospector
 	)
 
-
 /obj/effect/mob_spawn/human/kriosan_trooper
 	name = "deployment sleeper"
-	desc = "An sleeper, with an unconscious body inside. The occupant seems to be a Kriosan trooper."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Kriosan trooper."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -294,3 +305,75 @@
 		STAT_COG = 18
 	)
 
+//Solfed shit
+
+
+/obj/effect/mob_spawn/human/solfed_survivor //very OP. Fluff wise, this is some kinda recon/vanguard. Lightly armed and armored by the standards of SolFed but still dangerous via their special gear.
+	name = "deployment sleeper"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be some kind of soldier."
+	mob_name = "a human"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/solfed_survivor
+	ghost_role_perks = list(PERK_ASS_OF_CONCRETE, PERK_PARKOUR, PERK_PROSPECTOR_CONDITIONING, PERK_SURE_STEP, PERK_TRUE_NAME)
+	short_desc = "You are a Solarian reconnoiterer, and a survival of the fall."
+	flavour_text = "Nearly seven years since the fall of the Federation, the Bluespace crash - your informal termination, what a fucking joke.\
+	You shake the dust off, that familiar awful taste fills your mouth as your body realizes that the long-sleep is over and you wake once more. \
+	You feel the weight of you trusty issue equipment...Far from a marine assualt-suit, still a fierce advantage against the barbarous masses now running roughshod over the galaxy."
+	assignedrole = "SFF Recon"
+	title = "Solarian Vanguard"
+	stat_modifiers = list(
+		STAT_ROB = 45,
+		STAT_TGH = 45,
+		STAT_BIO = 20,
+		STAT_MEC = 5,
+		STAT_VIG = 45,
+		STAT_COG = 20
+	)
+
+/obj/effect/mob_spawn/human/solfed_survivor_medic
+	name = "deployment sleeper"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be some kind of soldier."
+	mob_name = "a human"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/solfed_survivor_medic
+	ghost_role_perks = list(PERK_MEDICAL_EXPERT, PERK_ADVANCED_MEDICAL, PERK_PROSPECTOR_CONDITIONING, PERK_SURE_STEP, PERK_TRUE_NAME)
+	short_desc = "You are a Solarian Corpsman, and a survival of the fall."
+	flavour_text = "Seven years and how many hundreds of trillions of miles from the Core, or what's left of it. You carefuly extricate yourself from the sleeper, \
+	Dehydrated, Hungry, tired - a standard cryosleep revival. In your bodies still weakened state the weight of your bag threatens to pull you to the ground loaded with \
+	a veritable cornucopia of cure-alls - If your fellows are awake and returning to their usual frothing state, you'll need every drop."
+	assignedrole = "SFF Medic"
+	title = "Solarian Vanguard"
+	stat_modifiers = list(
+		STAT_ROB = 25,
+		STAT_TGH = 45,
+		STAT_BIO = 40,
+		STAT_MEC = 5,
+		STAT_VIG = 25,
+		STAT_COG = 20
+	)
+
+/obj/effect/mob_spawn/human/solfed_survivor_auxilliary //Bit less OP. No fucked up suit, no crazy stuff. Just some normal high end gear.
+	name = "deployment sleeper"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be some kind of soldier."
+	mob_name = "a human"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/solfed_survivor_aux
+	ghost_role_perks = list(PERK_PROSPECTOR_CONDITIONING, PERK_SURE_STEP, PERK_TRUE_NAME)
+	short_desc = "You are a Solarian reconnoiterer, and a survival of the fall."
+	flavour_text = "Seven years they've been waiting for word from Sol - Feels like they're waiting for nothing, hardly your problem now. 'Three hots and a cot', cliched tripe \
+	But when the Crash happened and the entire milky way went to hellthat offer suddenly seemed a lot more tempting. What other choice is there? Become a fucking void-wolf? \
+	Yea right, at least here you can make a difference keeping order with the remains of the Federation, putting down insurrections and reminding everyone that the Federation \
+	may be in a transitionary period - but her loyal hands will be here, waitiing for the word"
+	assignedrole = "SFF Auxilliary"
+	title = "Solarian Vanguard"
+	stat_modifiers = list(
+		STAT_ROB = 30,
+		STAT_TGH = 30,
+		STAT_BIO = 20,
+		STAT_MEC = 5,
+		STAT_VIG = 35,
+		STAT_COG = 20
+	)

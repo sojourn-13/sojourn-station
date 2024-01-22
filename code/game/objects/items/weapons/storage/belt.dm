@@ -249,6 +249,26 @@
 	new /obj/item/bodybag/cryobag(src)
 	new /obj/item/extinguisher/mini(src)
 
+/obj/item/storage/belt/medical/opifex/medical/solfed
+	name = "black medical webbing"
+	desc = "A black webbing, highly customized and lovingly worn. This harness is built specifically for medical supplies, limiting its versatility."
+	icon_state = "webbing_black"
+	item_state = "webbing_black"
+	storage_slots = 16
+
+/obj/item/storage/belt/medical/opifex/medical/solfed/populate_contents()
+	new /obj/item/device/scanner/health(src)
+	new /obj/item/reagent_containers/syringe/large/hyperzine(src)
+	new /obj/item/reagent_containers/syringe/large/tricordrazine(src)
+	new /obj/item/reagent_containers/syringe/large/inaprovaline(src)
+	new /obj/item/storage/pill_bottle/tramadol(src)
+	new /obj/item/storage/pill_bottle/prosurgeon(src)
+	new /obj/item/storage/pill_bottle/bicaridine(src)
+	new /obj/item/storage/pill_bottle/dermaline(src)
+	new /obj/item/storage/pill_bottle/dexalin_plus(src)
+	new /obj/item/storage/pill_bottle/antitox(src)
+	new /obj/item/bodybag/cryobag(src)
+
 /obj/item/storage/belt/medical
 	name = "medical belt"
 	desc = "Can hold various medical equipment."
@@ -446,6 +466,25 @@
 	new /obj/item/grenade/explosive(src)
 	new /obj/item/clothing/glasses/powered/thermal(src)
 	new /obj/item/clothing/glasses/powered/night(src)
+
+/obj/item/storage/belt/security/tactical/solfed
+
+/obj/item/storage/belt/security/tactical/solfed/populate_contents()
+	new /obj/item/tool/shovel/combat(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/cell/small/moebius/nuclear(src)
+	new /obj/item/cell/small/moebius/nuclear(src)
+	new /obj/item/cell/medium/moebius/nuclear(src)
+	new /obj/item/clothing/glasses/powered/night(src)
+	new /obj/item/clothing/glasses/powered/thermal(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/ammobox/kurtz_50/hv(src)
+	new /obj/item/device/binoculars(src)
 
 /obj/item/storage/belt/security/tactical/opifex
 	name = "opifex tactical belt"
