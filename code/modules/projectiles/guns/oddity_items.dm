@@ -21,6 +21,7 @@
 	max_shells = 60
 	init_recoil = RIFLE_RECOIL(1.1)
 	price_tag = 3000
+	gun_parts = null
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/revolver/mistral/elite/New()
@@ -44,6 +45,7 @@
 	penetration_multiplier = 2
 	init_recoil = RIFLE_RECOIL(4)
 	price_tag = 3250
+	gun_parts = null
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //Regains its internal mag due to its more annoying way of reloading
 	serial_type = "BlueCross"
 	icon = 'icons/obj/guns/projectile/sawnoff/bluecross_shotgun.dmi'
@@ -155,6 +157,7 @@
 	penetration_multiplier  = 2
 	max_shells = 1
 	price_tag = 2750
+	gun_parts = null
 	sharp = FALSE
 	saw_off = FALSE
 	serial_type = "BlueCross"
@@ -165,6 +168,7 @@
 			A small red eye has been painted onto the firing pin of this formerly undepowered pistol, this one has been modified with a better feed mechanism to allow \
 			for deadlier shots. Uses 9mm rounds and can take standard pistol magazines, high cap magazines, or submachine gun mags."
 	price_tag = 2000
+	gun_parts = null
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
 	damage_multiplier = 1.5
 	icon = 'icons/obj/guns/projectile/clarissa.dmi'
@@ -187,6 +191,7 @@
 	max_shells = 4
 	init_recoil = HMG_RECOIL(2)
 	price_tag = 3000
+	gun_parts = null
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic
@@ -250,6 +255,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	price_tag = 1420
+	gun_parts = null
 	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
@@ -291,6 +297,7 @@
 	origin_tech = list(TECH_MAGNET = 10) //3500 points for rnd, eh its meant to stay in player hands not be deconned
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
 	price_tag = 2450
+	gun_parts = null
 	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
