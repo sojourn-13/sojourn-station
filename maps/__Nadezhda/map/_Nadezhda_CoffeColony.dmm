@@ -316,7 +316,7 @@
 "adu" = (
 /obj/structure/closet/custodial,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "adN" = (
 /obj/random/structures/low_chance,
 /turf/simulated/floor/wood/wild2,
@@ -2859,7 +2859,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "aEB" = (
 /obj/structure/table/steel,
 /obj/machinery/door/blast/shutters/glass,
@@ -4858,7 +4858,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "bcM" = (
 /obj/structure/invislight,
 /obj/effect/decal/cleanable/dirt,
@@ -5879,7 +5879,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "bnh" = (
 /obj/random/structures/low_chance,
 /turf/simulated/floor/tiled/techmaint,
@@ -6614,7 +6614,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "buT" = (
 /obj/structure/closet/cabinet,
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
@@ -6931,7 +6931,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "byu" = (
 /obj/machinery/power/sensor{
 	long_range = 1;
@@ -7315,7 +7315,7 @@
 	pixel_y = -30
 	},
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "bDa" = (
 /obj/structure/flora/small/trailrocka3,
 /turf/simulated/floor/asteroid/dirt/mud,
@@ -7852,7 +7852,7 @@
 	name = "Water Fountain"
 	},
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "bJa" = (
 /obj/machinery/cryopod,
 /obj/machinery/computer/cryopod{
@@ -9356,7 +9356,7 @@
 /area/nadezhda/rnd/rbreakroom)
 "cbA" = (
 /turf/simulated/mineral,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "cbE" = (
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/maintenance/undergroundfloor1east)
@@ -9878,7 +9878,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "cig" = (
 /obj/structure/grille,
 /turf/simulated/floor/tiled/techmaint_perforated,
@@ -11236,7 +11236,7 @@
 	},
 /obj/structure/multiz/stairs/enter,
 /turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "cxL" = (
 /obj/machinery/vending/cola,
 /obj/machinery/ai_status_display{
@@ -15089,7 +15089,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "dmK" = (
 /obj/structure/table/glass,
 /obj/random/scrap/dense_even,
@@ -15676,7 +15676,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "dtz" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -17209,7 +17209,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "dIW" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -17489,7 +17489,7 @@
 	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "dLT" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 8
@@ -17727,7 +17727,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "dOp" = (
 /obj/machinery/power/port_gen/pacman/diesel/anchored,
 /obj/structure/cable/yellow,
@@ -18864,7 +18864,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "eaE" = (
 /obj/structure/bed/chair/sofa/black/left,
 /turf/simulated/floor/wood,
@@ -19149,7 +19149,7 @@
 /obj/item/soap/church,
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "ecQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -19672,7 +19672,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint_panels,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "eiA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -21005,7 +21005,7 @@
 "euU" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/wall/church_reinforced,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "evc" = (
 /obj/machinery/light{
 	dir = 4
@@ -22588,26 +22588,26 @@
 /obj/item/ammo_magazine/magnum_40,
 /obj/item/ammo_magazine/magnum_40,
 /obj/item/ammo_magazine/magnum_40,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_new_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_old_guns,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/dominion,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/counselor,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/halicon,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/lightfall,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/nemesis,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/purger,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/regulator,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/themis,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/valkirye,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/mk58,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_grenades,
-/obj/item/computer_hardware/hard_drive/portable/design/nt_plasma_shells{
+/obj/item/computer_hardware/hard_drive/portable/design/nt/new_guns,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/old_guns,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/dominion,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/counselor,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/halicon,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/lightfall,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/nemesis,
+/obj/item/integrated_circuit/reagent/purger,
+/obj/item/part/gun/frame/regulator,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/themis,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye,
+/obj/item/gun/projectile/mk58,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/grenades,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/grenades,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/plasma_shells{
 	disk_name = "Absolute Armory - Plasma Shell Prime Pack";
 	license = 24
 	},
-/obj/item/computer_hardware/hard_drive/portable/design/guns/concillium,
-/obj/item/computer_hardware/hard_drive/portable/design/guns/counselor,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/concillium,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/counselor,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
 "eNt" = (
@@ -24592,7 +24592,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "fiX" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/white,
@@ -27921,7 +27921,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "fTE" = (
 /turf/simulated/floor/plating/under,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "fTG" = (
 /obj/machinery/light{
 	dir = 8
@@ -28195,7 +28195,7 @@
 	icon_state = "32-2"
 	},
 /turf/simulated/open,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "fWB" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/big/bush2,
@@ -33585,7 +33585,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "heX" = (
 /obj/structure/railing{
 	dir = 8
@@ -34452,7 +34452,7 @@
 	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "hpF" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -34570,7 +34570,7 @@
 /obj/item/stock_parts/matter_bin,
 /obj/item/stack/cable_coil/yellow,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "hrA" = (
 /obj/machinery/button/crematorium{
 	pixel_y = 4
@@ -36434,7 +36434,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "hJI" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining,
@@ -43440,7 +43440,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "jhM" = (
 /obj/structure/bookcase,
 /obj/item/book/ritual/cruciform,
@@ -44678,7 +44678,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "juy" = (
 /obj/effect/floor_decal/border/carpet/lightblue,
 /obj/effect/floor_decal/border/carpet/orange,
@@ -47101,7 +47101,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "jUB" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /obj/structure/disposalpipe/segment{
@@ -49054,7 +49054,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "kpI" = (
 /obj/effect/spider/stickyweb,
 /obj/structure/grille/broken,
@@ -49188,7 +49188,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "kqU" = (
 /obj/machinery/light{
 	dir = 4
@@ -49317,7 +49317,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "ksS" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -50359,7 +50359,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "kDQ" = (
 /obj/machinery/light,
 /obj/machinery/holoposter{
@@ -52084,7 +52084,7 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "kYj" = (
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "kYk" = (
 /obj/structure/closet/secure_closet/militia/armor,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -54030,7 +54030,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "luL" = (
 /obj/machinery/telecomms/server/presets/service,
 /turf/simulated/floor/bluegrid{
@@ -55998,7 +55998,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "lQW" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
@@ -58123,7 +58123,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "mmS" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/item/organ/internal/bone/l_arm,
@@ -60396,7 +60396,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "mMi" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk,
@@ -65531,7 +65531,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "nMT" = (
 /obj/random/traps/low_chance,
 /obj/machinery/door/airlock/multi_tile/metal/mait{
@@ -65883,7 +65883,7 @@
 	name = "Church"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "nRh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -66132,7 +66132,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "nTM" = (
 /obj/random/material_resources/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -68645,7 +68645,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "otD" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -69003,7 +69003,7 @@
 	},
 /obj/structure/multiz/stairs/active,
 /turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "oxA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/techfloor,
@@ -70375,7 +70375,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "oMx" = (
 /obj/effect/spider/stickyweb,
 /obj/structure/closet/secure_closet/rare_loot,
@@ -72418,7 +72418,7 @@
 	},
 /obj/machinery/camera/network/church,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "pja" = (
 /turf/simulated/wall/r_wall,
 /area/nadezhda/medical/paramedic)
@@ -73011,7 +73011,7 @@
 "ppE" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "ppG" = (
 /mob/living/carbon/superior_animal/roach/nanite,
 /obj/effect/floor_decal/spline/plain,
@@ -73728,7 +73728,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "pxF" = (
 /obj/machinery/recharge_station/robotics,
 /obj/machinery/light,
@@ -74949,7 +74949,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "pKu" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -75600,7 +75600,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "pRx" = (
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 6
@@ -75849,13 +75849,14 @@
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "pTT" = (
-/obj/item/computer_hardware/hard_drive/portable/design/nt/bioprinter{
-	pixel_x = 7
-	},
-/obj/item/computer_hardware/hard_drive/portable/design/nt_basic_arms{
+/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_arms{
 	pixel_x = -6
 	},
 /obj/structure/table/woodentable,
+/obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility{
+	pixel_x = 5
+	},
+/obj/machinery/smartfridge/disk,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/bioreactor)
 "pUc" = (
@@ -76362,7 +76363,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "pZr" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 1
@@ -78125,11 +78126,11 @@
 "qtq" = (
 /obj/machinery/camera/network/church,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "qtt" = (
 /obj/structure/closet/secure_closet/personal/agrolyte,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "qtv" = (
 /obj/structure/mirror{
 	pixel_x = 28
@@ -82438,7 +82439,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "roB" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/decal/cleanable/dirt,
@@ -83866,7 +83867,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "rDN" = (
 /obj/structure/flora/small/grassa5,
 /turf/simulated/floor/asteroid/grass,
@@ -83894,7 +83895,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "rEh" = (
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "rEB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -85989,7 +85990,7 @@
 "sbl" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "sbt" = (
 /obj/machinery/door/airlock/vault{
 	name = "Lonestar Vault";
@@ -86034,7 +86035,7 @@
 "sbI" = (
 /obj/machinery/power/nt_obelisk,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "sbJ" = (
 /obj/structure/table/rack/shelf,
 /obj/item/plantspray/pests,
@@ -87963,7 +87964,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "swt" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/stalkybush,
@@ -88020,7 +88021,7 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "swN" = (
 /turf/simulated/wall/church_reinforced,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "swS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
@@ -88565,7 +88566,7 @@
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "sCn" = (
 /obj/structure/table/glass,
 /obj/item/storage/freezer,
@@ -88721,7 +88722,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "sEj" = (
 /obj/machinery/smartfridge,
 /turf/simulated/floor/tiled/cafe,
@@ -89957,7 +89958,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "sSg" = (
 /obj/machinery/door/airlock/maintenance_common,
 /obj/item/mine/excelsior{
@@ -90166,7 +90167,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "sUE" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "6,3"
@@ -90643,7 +90644,7 @@
 	name = "Church"
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "tad" = (
 /turf/unsimulated/mineral,
 /area/colony)
@@ -91416,7 +91417,7 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "tiD" = (
 /obj/random/scrap/dense_weighted,
 /obj/machinery/light/small,
@@ -91683,7 +91684,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "tlu" = (
 /obj/machinery/light{
 	dir = 1
@@ -92165,7 +92166,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "trv" = (
 /obj/random/mob/spiders,
 /turf/simulated/floor/rock,
@@ -92969,7 +92970,7 @@
 	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "tyI" = (
 /obj/machinery/door/airlock/maintenance_cargo{
 	req_one_access = list(50,48,26)
@@ -94037,7 +94038,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "tJU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -95613,7 +95614,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "tZu" = (
 /obj/structure/flora/small/rock2,
 /obj/structure/flora/ausbushes/brflowers,
@@ -97678,7 +97679,7 @@
 "utL" = (
 /obj/machinery/atmospherics/pipe/zpipe/down,
 /turf/simulated/open,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "utN" = (
 /obj/structure/catwalk,
 /obj/random/scrap/dense_weighted,
@@ -98542,7 +98543,7 @@
 /area/nadezhda/absolutism/bioreactor)
 "uFe" = (
 /turf/simulated/wall/church,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "uFj" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -100308,7 +100309,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "uVj" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 1
@@ -101783,7 +101784,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "vld" = (
 /obj/random/traps/low_chance,
 /turf/simulated/floor/tiled/techmaint_perforated,
@@ -103836,7 +103837,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "vHx" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -104209,7 +104210,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "vLn" = (
 /obj/machinery/conveyor/northwest/ccw{
 	id = "QMLoad2"
@@ -104476,7 +104477,7 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "vOm" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -108363,7 +108364,7 @@
 "wFB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "wFD" = (
 /obj/landmark/join/start/janitor,
 /turf/simulated/floor/tiled/steel/cyancorner,
@@ -108565,7 +108566,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "wHW" = (
 /turf/simulated/floor/carpet,
 /area/nadezhda/crew_quarters/dorm2)
@@ -114179,7 +114180,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "xTl" = (
 /obj/machinery/light,
 /obj/effect/spider/stickyweb,
@@ -114418,7 +114419,7 @@
 "xVL" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/absolutism/storage)
+/area/nadezhda/absolutism/hallways)
 "xVP" = (
 /turf/simulated/mineral,
 /area/nadezhda/engineering/workshop)
