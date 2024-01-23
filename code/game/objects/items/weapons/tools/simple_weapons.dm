@@ -428,7 +428,7 @@
 
 /obj/item/tool/sword/saber/deconstuctive_rapier
 	name = "Cinq Deconstructive Rapier"
-	desc = "A long, thin bladed sword with a weaponized destructive analyzer integrated into the blade. At the moment of its victim's death it is able to deconstruct them and wirelessly transmit data to interinal research database."
+	desc = "A long, thin bladed sword with a weaponized destructive analyzer integrated into the blade. At the moment of its victim's death it is able to deconstruct them and wirelessly transmit data to internal research database."
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "rapier_cro"
 	item_state = "saber"
