@@ -1152,8 +1152,8 @@
 	poison_type = null
 
 	bump_flag = SLIME
-	swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
-	push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
+	swap_flags = MONKEY|SLIME
+	push_flags = MONKEY|SLIME
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/slime,
