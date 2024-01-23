@@ -140,7 +140,7 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK | SLOT_BELT
 	throwforce = WEAPON_FORCE_LETHAL * 1.5
-	armor_penetration = ARMOR_PEN_HALF
+	armor_penetration = ARMOR_PEN_MASSIVE
 	throw_speed = 3
 	price_tag = 150
 	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_PLASTEEL = 10) // More expensive, high-end spear
@@ -230,6 +230,7 @@
 	item_state = "nt_warhammer"
 	wielded_icon = "nt_warhammer_wielded"
 	force = WEAPON_FORCE_DANGEROUS //Naturally weaker do to knockbacking are targets (can stun lock)
+	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	armor_penetration = ARMOR_PEN_EXTREME
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
@@ -266,7 +267,7 @@
 	switched_on_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 30)
 	switched_off_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
 	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
-	active_time = 50
+	active_time = 100
 	var/faith_cost = 50 //How much faith does it take to use this?
 
 /obj/item/tool/sword/nt/power/attack_self(mob/living/user)

@@ -183,6 +183,7 @@
 		/obj/item/soap,
 		/obj/item/reagent_containers/spray/cleaner,
 		/obj/item/tool/knife/dagger/nt,
+		/obj/item/tool/sword/nt/shortsword,
 		/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
@@ -515,6 +516,7 @@
 		/obj/item/gun/energy/crossbow,
 		/obj/item/gun/energy/taser, //specially fitted to hold the counselor
 		/obj/item/tool/knife/dagger/nt,
+		/obj/item/tool/sword/nt/shortsword,
 		/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
