@@ -21,7 +21,7 @@
 	for(var/S in ALL_STATS)
 		var/stat_data = list(
 			"name" = S,
-			"value" = getStat(S)
+			"value" = getStat(S, require_direct_value = FALSE)
 		)
 		LAZYADD(stats_data, list(stat_data))
 	data["stats"] = stats_data
