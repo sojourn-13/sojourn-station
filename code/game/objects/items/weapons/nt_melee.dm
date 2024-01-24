@@ -267,7 +267,7 @@
 	switched_on_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 30)
 	switched_off_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
 	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
-	active_time = 100
+	active_time = 10 SECONDS
 	var/faith_cost = 50 //How much faith does it take to use this?
 
 /obj/item/tool/sword/nt/power/attack_self(mob/living/user)
