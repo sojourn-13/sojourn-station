@@ -466,7 +466,7 @@
 		if(!ishuman(M))
 			if(!issilicon(M))
 				if(is_dead(M))
-					user.visible_message("[user] drives [src.name] into [M.name]'s body, decontructing it!", "You drive the [src.name] into [M.name], exstracting value data")
+					user.visible_message("[user] drives [src.name] into [M.name]'s body, deconstructing it!", "You drive the [src.name] into [M.name], extracting research data")
 					msg_admin_attack("[user] deconned [M.name] - ([user.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[M.x];Y=[M.y];Z=[M.z]'>JMP</a>)")
 					M.dust()
 					add_points(50)
