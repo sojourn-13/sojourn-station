@@ -492,6 +492,7 @@
 	force = WEAPON_FORCE_ROBUST
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 120
+	matter = list(MATERIAL_STEEL = 15)
 
 /obj/item/tool/sword/cleaver
 	name = "sun cleaver"
