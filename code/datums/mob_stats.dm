@@ -68,12 +68,12 @@
 	var/datum/stat/S = stat_list[statName]
 	S.setValue(Value)
 
-/datum/stat_holder/proc/getStat(statName, pure = FALSE)                                         ///A blue cat edited this code that already existed
+/datum/stat_holder/proc/getStat(statName, pure = FALSE, require_direct_value = TRUE)
 	if (!islist(statName))
 		var/datum/stat/S = stat_list[statName]
 		LEGACY_SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
-		var/stat_value =  S ? S.getValue(pure) : 0
-		if(holder.stats.getPerk(PERK_NO_OBSUCATION))
+		var/stat_value =  S ? S.getValue(pure)
+		if(holder?.stats.getPerk(PERK_NO_OBSUCATION) || require_direct_value)
 			return stat_value 
 		else
 			return statPointsToLevel(stat_value)
