@@ -73,14 +73,24 @@
 /datum/gear/implanter
 	display_name = "implanter (empty)"
 	path = /obj/item/implanter
+	cost = 0
 
 /datum/gear/implant_tracking
 	display_name = "implant (tracking)"
 	path = /obj/item/implant/tracking
+
+/datum/gear/implant_generic_1
+	display_name = "implant (generic) 1"
+	path = /obj/item/implant/generic
 	cost = 0
 
-/datum/gear/implant_generic
-	display_name = "implant (generic)"
+/datum/gear/implant_generic_2
+	display_name = "implant (generic) 2"
+	path = /obj/item/implant/generic
+	cost = 0
+
+/datum/gear/implant_generic_3
+	display_name = "implant (generic) 3"
 	path = /obj/item/implant/generic
 	cost = 0
 
