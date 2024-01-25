@@ -70,9 +70,19 @@
 	display_name = "spaceball booster pack"
 	path = /obj/item/pack/spaceball
 
-/datum/gear/trackingimplanter
-	display_name = "implanter (tracking)"
-	path = /obj/item/implanter/tracking
+/datum/gear/implanter
+	display_name = "implanter (empty)"
+	path = /obj/item/implanter
+
+/datum/gear/implant_tracking
+	display_name = "implant (tracking)"
+	path = /obj/item/implant/tracking
+	cost = 0
+
+/datum/gear/implant_generic
+	display_name = "implant (generic)"
+	path = /obj/item/implant/generic
+	cost = 0
 
 /datum/gear/photo_frame
     display_name = "photograph frame"

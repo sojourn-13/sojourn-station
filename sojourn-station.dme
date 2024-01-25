@@ -1222,6 +1222,7 @@
 #include "code\game\objects\items\weapons\implant\implants\excelsior.dm"
 #include "code\game\objects\items\weapons\implant\implants\explosive.dm"
 #include "code\game\objects\items\weapons\implant\implants\freedom.dm"
+#include "code\game\objects\items\weapons\implant\implants\generic.dm"
 #include "code\game\objects\items\weapons\implant\implants\health.dm"
 #include "code\game\objects\items\weapons\implant\implants\spying.dm"
 #include "code\game\objects\items\weapons\implant\implants\tracking.dm"
