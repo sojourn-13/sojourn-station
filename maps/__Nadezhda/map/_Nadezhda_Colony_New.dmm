@@ -12325,6 +12325,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/genetics)
+"cJS" = (
+/obj/machinery/telesci_inhibitor/mini{
+	pixel_y = 29
+	},
+/turf/simulated/floor/plating/under,
+/area/turret_protected/ai)
 "cJV" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass/jungle,
@@ -12637,6 +12643,9 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
+/obj/machinery/telesci_inhibitor/mini{
+	pixel_y = 29
+	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/security/nuke_storage)
 "cNA" = (
@@ -12695,6 +12704,9 @@
 /area/nadezhda/maintenance/undergroundfloor1south)
 "cOl" = (
 /obj/structure/bed/chair/office/light,
+/obj/machinery/telesci_inhibitor/mini{
+	pixel_y = 29
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/panic_room)
 "cOo" = (
@@ -56706,6 +56718,9 @@
 /obj/item/clothing/gloves/thick/combat,
 /obj/item/storage/belt/security,
 /obj/item/storage/belt/security,
+/obj/machinery/telesci_inhibitor/mini{
+	pixel_y = 29
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "mfX" = (
@@ -61605,6 +61620,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/nadezhda/security/barracks)
+"nfA" = (
+/obj/structure/lattice,
+/obj/machinery/telesci_inhibitor/mini{
+	pixel_y = 29
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/turret_protected/ai_upload)
 "nfC" = (
 /obj/structure/flora/big/bush1,
 /obj/structure/flora/small/busha3,
@@ -96571,6 +96593,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/plating,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
+"uqW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/telesci_inhibitor/mini{
+	pixel_y = 30;
+	pixel_x = -3
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/armory)
 "uqX" = (
 /obj/machinery/door/airlock/multi_tile/glass{
 	dir = 1;
@@ -102640,6 +102671,9 @@
 /obj/structure/bed/chair/office/light{
 	dir = 8
 	},
+/obj/machinery/telesci_inhibitor/mini{
+	pixel_y = 29
+	},
 /turf/simulated/floor/wood,
 /area/nadezhda/command/captain/quarters)
 "vEH" = (
@@ -103145,6 +103179,9 @@
 	},
 /obj/item/clothing/gloves/thick/swat/militia{
 	pixel_y = -9
+	},
+/obj/machinery/telesci_inhibitor/mini{
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
@@ -128135,7 +128172,7 @@ xen
 mEK
 sGy
 xen
-mvB
+nfA
 mvB
 xen
 yfl
@@ -130178,7 +130215,7 @@ cZb
 cZb
 tad
 yfl
-uAs
+cJS
 yfl
 cCd
 yfl
@@ -212524,7 +212561,7 @@ uSy
 uSy
 fEL
 fEL
-fsi
+uqW
 mxE
 pCr
 bvN
