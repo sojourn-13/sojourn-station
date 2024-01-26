@@ -63356,6 +63356,22 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/rbreakroom)
+"nuh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28;
+	operating = 0
+	},
+/obj/structure/cable/cyan,
+/turf/simulated/floor/tiled/techmaint,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "nuk" = (
 /obj/structure/flora/small/grassb4,
 /obj/effect/decal/cleanable/dirt,
@@ -98909,7 +98925,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan,
 /obj/machinery/power/apc{
-	locked = 0;
 	name = "South APC";
 	pixel_y = -28;
 	operating = 0
@@ -142046,7 +142061,7 @@ huF
 nDe
 huF
 huF
-huF
+nuh
 huF
 huF
 huF
