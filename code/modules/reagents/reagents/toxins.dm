@@ -178,12 +178,17 @@
 			M.adjustNutrition(strength)
 			M.heal_organ_damage(0.2 * strength, 0.2 * strength)
 			M.add_chemical_effect(CE_ANTITOX, 0.3 * strength)
-		else
+			return
+		if(ishuman(M))
 			..()
 			var/mob/living/carbon/human/H = M
-			var/obj/item/organ/internal/vital/heart/S = H.random_organ_by_process(OP_BLOOD_VESSEL)
-			create_overdose_wound(S, M, /datum/component/internal_wound/organic/heavy_poisoning/plasma, "plasma poisoning")
-
+			var/obj/item/organ/internal/kidney/K = H.random_organ_by_process(OP_KIDNEY_LEFT, OP_KIDNEY_RIGHT)
+			var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
+			M.add_chemical_effect(CE_TOXIN, 5 * dose) //very bad.
+			if(prob(3 * dose))
+				create_overdose_wound(K, M, /datum/component/internal_wound/organic/heavy_poisoning/plasma, "plasma poisoning")
+			else if(prob(3 * dose))
+				create_overdose_wound(L, M, /datum/component/internal_wound/organic/heavy_poisoning/plasma, "plasma poisoning")
 
 /datum/reagent/toxin/plasma/touch_turf(turf/simulated/T)
 	if(!istype(T))

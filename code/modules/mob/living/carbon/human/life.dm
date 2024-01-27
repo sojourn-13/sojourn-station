@@ -824,7 +824,7 @@
 		for(var/obj/item/I in src)
 			if(I.contaminated)
 				total_plasmaloss += vsc.plc.CONTAMINATION_LOSS
-		if(!(status_flags & GODMODE))
+		if(!(status_flags & GODMODE) && prob(10))
 			bloodstr.add_reagent("plasma", total_plasmaloss)
 
 	if(status_flags & GODMODE)
