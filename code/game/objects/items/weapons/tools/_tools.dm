@@ -837,7 +837,7 @@
 /obj/item/tool/proc/check_tool_effects(mob/living/user, time)
 
 	if(use_power_cost)
-		if(!cell || !cell.check_charge(use_power_cost*time))
+		if(!cell || !cell.check_charge(use_power_cost*time) && (!toggleable || (toggleable && switched_on)))
 			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
 			return FALSE
 
