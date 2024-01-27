@@ -590,7 +590,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 		/obj/item/stack/material/plasteel = 40,
 		/obj/item/stack/material/wood = 25,
 		/obj/item/stack/material/glass = 15,
-		/obj/item/stack/material/gold = 3,
+		/obj/item/stack/material/gold = 10,
 		/obj/item/stack/material/silver = 5
 	)
 	build_time = 8 SECONDS
