@@ -64,15 +64,15 @@
 	price_tag = 2875
 
 /obj/item/tool/shovel/combat/turbo
-	name = "Artificer \"Dirt Demon\" Power Crovel"
-	desc = "A product of the Artificer's Guild dreamed up by an adept with a love of combustion engines. This abomination is the offspring of a combat crovel and a chainsaw, and includes a fuel guzzling engine for high-octane shoveling. An engraving on the handle reads, \"THIS MACHINE KILLS SPIDERS -D.R.\""
+	name = "Artificer Power Crovel"
+	desc = "A creation of the Artificer's Guild dreamed up by an adept with a love for combustion. Rather than a cell this device uses a higher power gas burning engine for high-octane shoveling. An engraving on the handle reads, \"THIS MACHINE KILLS SPIDERS.\""
 	icon_state = "Powercrovel" //Sprites by Dromkii
 	item_state = "Powercrovel"
 
 	slot_flags = SLOT_BELT|SLOT_BACK //I PAID FOR THE WHOLE BACK SPRITE, I'M GONNA USE THE WHOLE BACK SPRITE
 	switched_on_icon_state = "Powercrovel-on"
 	wielded_icon = "Powercrovel_wielded"
-	switched_on_forcemult = 1.3 //26 damage. Slightly worse than a chainsaw, made up for by the bonus damage against spiders
+	switched_on_forcemult = 1.3 //26 damage. Slightly worse than a chainsaw. Gets bonus damage vs spiders, like all shovels
 	workspeed = 1.3
 	w_class = ITEM_SIZE_NORMAL //Bigger than a normal crovel, doesn't fit in your pocket
 
