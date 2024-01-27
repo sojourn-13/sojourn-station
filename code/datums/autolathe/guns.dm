@@ -497,7 +497,7 @@
 	build_path = /obj/item/gun/energy/cog
 
 /datum/design/autolathe/gun/plasma/martyr
-	name = "OT PR \"Martyr\""
+	name = "NT PR \"Martyr\""
 	build_path = /obj/item/gun/energy/plasma/martyr
 
 /datum/design/autolathe/gun/sunrise
@@ -505,15 +505,15 @@
 	build_path = /obj/item/gun/energy/sunrise
 
 /datum/design/autolathe/gun/concillium
-	name = "OT Las-MG \"Concillium\""
+	name = "NT Las-MG \"Concillium\""
 	build_path = /obj/item/gun/energy/concillium
 
 /datum/design/autolathe/gun/plasma/antebellum
-	name = "OT PR \"Antebellum\""
+	name = "NT PR \"Antebellum\""
 	build_path = /obj/item/gun/energy/plasma/antebellum
 
 /datum/design/autolathe/gun/carpediem
-	name = "OT LM \"Carpediem\""
+	name = "NT LM \"Carpediem\""
 	build_path = /obj/item/gun/energy/carpediem
 
 /datum/design/autolathe/gun/peacekeeper
@@ -525,7 +525,7 @@
 	build_path = /obj/item/gun/energy/zwang
 
 /datum/design/autolathe/gun/plasma/excubitor
-	name = "OT \"Excubitor\""
+	name = "NT \"Excubitor\""
 	build_path = /obj/item/gun/energy/plasma/excubitor
 
 // Gun mods
