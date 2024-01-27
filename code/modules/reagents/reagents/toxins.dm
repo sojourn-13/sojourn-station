@@ -182,7 +182,7 @@
 			..()
 			var/mob/living/carbon/human/H = M
 			var/obj/item/organ/internal/vital/heart/S = H.random_organ_by_process(OP_BLOOD_VESSEL)
-			create_overdose_wound(S, M, /datum/component/internal_wound/organic/heavy_poisoning, "plasma poisoning")
+			create_overdose_wound(S, M, /datum/component/internal_wound/organic/heavy_poisoning/plasma, "plasma poisoning")
 
 
 /datum/reagent/toxin/plasma/touch_turf(turf/simulated/T)
