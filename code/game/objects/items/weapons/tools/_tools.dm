@@ -834,7 +834,7 @@
 		adjustToolHealth(-degradation, user)
 
 //Power and fuel drain, sparks spawn
-/obj/item/proc/check_tool_effects(mob/living/user, time)
+/obj/item/tool/proc/check_tool_effects(mob/living/user, time)
 
 	if(use_power_cost)
 		if(!cell || !cell.check_charge(use_power_cost*time))
@@ -842,7 +842,7 @@
 			return FALSE
 
 	if(use_fuel_cost)
-		if(get_fuel() < (use_fuel_cost*time))
+		if(get_fuel() < (use_fuel_cost*time) && (!toggleable || (toggleable && switched_on)))
 			to_chat(user, SPAN_NOTICE("You need more welding fuel to complete this task."))
 			return FALSE
 
@@ -863,10 +863,13 @@
 	return TRUE
 
 //Returns the amount of fuel in tool
-/obj/item/proc/get_fuel()
+/obj/item/tool/proc/get_fuel()
 	return ( reagents ? reagents.get_reagent_amount(my_fuel) : 0 )
 
 /obj/item/tool/proc/consume_fuel(volume)
+	//Fixes tool off-state behavior
+	if(toggleable && !switched_on)
+		return TRUE
 	if(get_fuel() >= volume)
 		reagents.remove_reagent(my_fuel, volume)
 		return TRUE
