@@ -644,7 +644,7 @@
 		cooldown_time = world.time + cooldown
 		holder.nutrition -= nutrition_cost
 		to_chat(usr, SPAN_NOTICE("You turn your attention inward, focusing on mending your form."))
-		holder.reagents.add_reagent("mstim", 5)
+		holder.reagents.add_reagent("mstim", 10)
 	else
 		to_chat(usr, SPAN_NOTICE("You lack the energy for such an expenditure."))
 

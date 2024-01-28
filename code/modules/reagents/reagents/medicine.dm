@@ -1106,12 +1106,13 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	id = "mstim"
 	description = "A novel protein structure used within the bodies of Aulvae to stimulate mitosis to replace large amounts of lost cells in a short time frame. These proteins are theorized to be highly lethal to most organics if ingested or injected."
 	taste_description = "prions"
+	overdose = 9 //Regenerate limbs automatically if we reach the end of the dose given by the chem without actually rolling well.
 	scannable = FALSE
 
 /datum/reagent/medicine/slimeregen/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	if(M.species?.reagent_tag == IS_SLIME)
 		var/mob/living/carbon/human/H = M
-		if(prob(0.5 * effect_multiplier))
+		if(prob(0.5 * effect_multiplier) || dose >= overdose)
 			var/list/missingLimbs = list()
 			for(var/name in BP_ALL_LIMBS)
 				if(!H.has_appendage(name))
