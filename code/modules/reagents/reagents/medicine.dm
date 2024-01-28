@@ -1107,6 +1107,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	description = "A novel protein structure used within the bodies of Aulvae to stimulate mitosis to replace large amounts of lost cells in a short time frame. These proteins are theorized to be highly lethal to most organics if ingested or injected."
 	taste_description = "prions"
 	overdose = 9 //Regenerate limbs automatically if we reach the end of the dose given by the chem without actually rolling well.
+	metabolism = REM * 0.5
 	scannable = FALSE
 
 /datum/reagent/medicine/slimeregen/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
