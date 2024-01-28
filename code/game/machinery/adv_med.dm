@@ -153,6 +153,13 @@
 		/obj/item/implant/core_implant/cruciform,
 		/obj/item/implant/excelsior
 	)
+	var/known_cybernetics = list(
+		/obj/item/organ_module/active/simple/wolverine,
+		/obj/item/organ_module/active/simple/armblade/energy_blade,
+		/obj/item/organ_module/active/simple/armblade/bs_tomahawk,
+		/obj/item/organ_module/active/simple/armblade/longsword,
+		/obj/item/organ_module/active/simple/armblade/ritual
+	)
 	var/delete
 	var/temphtml
 	name = "body scanner console"
@@ -367,6 +374,12 @@
 				if(is_type_in_list(I,known_implants))
 					var/obj/item/implant/device = I
 					other_wounds += "[device.get_scanner_name()] implanted"
+				else if(is_type_in_list(I,known_cybernetics))
+					var/obj/item/organ_module/active/simple/device = I
+					other_wounds += "[device.get_scanner_name()] detected"
+				else if(istype(I, /obj/item/implant/generic))
+					var/obj/item/implant/device = I
+					other_wounds += "[device.get_scanner_name()] detected"
 				else if(istype(I, /obj/item/material/shard/shrapnel))
 					other_wounds += "Embedded shrapnel"
 				else if(istype(I, /obj/item/implant))

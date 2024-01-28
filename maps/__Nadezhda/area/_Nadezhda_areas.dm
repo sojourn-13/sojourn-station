@@ -126,9 +126,17 @@
 	name = "Underground Floor 2 South Maintenance"
 	icon_state = "erisgreen"
 
-/area/nadezhda/maintenance/surface_maints_1
+/area/nadezhda/maintenance/surfacenorth
 	name = "Surface North Maintenance"
 	icon_state = "erisyellow"
+
+/area/nadezhda/maintenance/surfaceeast
+	name = "Surface East Maintenance"
+	icon_state = "erisgreen"
+
+/area/nadezhda/maintenance/surfacesec
+	name = "Surface Security Maintenance"
+	icon_state = "erisblue"
 
 /area/nadezhda/maintenance/cavehideout
 	name = "Abandoned Cave Shed"
@@ -534,6 +542,10 @@
 
 /area/nadezhda/command/bridge
 	name = "\improper Control Room"
+	icon_state = "bridge"
+
+/area/nadezhda/command/hallway
+	name = "\improper Command Hallway"
 	icon_state = "bridge"
 
 /area/nadezhda/command/meeting_room

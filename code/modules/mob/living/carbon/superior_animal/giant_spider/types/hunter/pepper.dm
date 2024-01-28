@@ -26,7 +26,7 @@
 	var/spray_movement_delay = 5
 	/// The amount of ticks the spray will exist for
 	var/spray_lifespan = 10
-
+	inherent_mutations = list(MUTATION_SHOCK_LESS)
 
 /mob/living/carbon/superior_animal/giant_spider/hunter/pepper/New()
 	.=..()

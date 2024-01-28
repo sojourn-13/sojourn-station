@@ -752,7 +752,6 @@
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
 		M.adjust_hallucination(-0.9 * effect_multiplier)
-		M.add_chemical_effect(CE_TOXIN, 4)
 		M.add_chemical_effect(CE_ANTITOX, 2)
 		holder.remove_reagent("pararein", 0.4 * effect_multiplier)
 		return

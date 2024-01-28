@@ -573,6 +573,34 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/pwr_drain()
 	return 0 // Process Kill
 
+//Power and fuel drain, sparks spawn
+//Moved here from _tools because we need tools to use certain tool only variables in the logic, but we don't want to break anything unexpected
+/obj/item/proc/check_tool_effects(mob/living/user, time)
+	if(use_power_cost)
+		if(!cell || !cell.check_charge(use_power_cost*time))
+			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
+			return FALSE
+
+	if(use_fuel_cost)
+		if(get_fuel() < (use_fuel_cost*time))
+			to_chat(user, SPAN_NOTICE("You need more welding fuel to complete this task."))
+			return FALSE
+
+	if(use_stock_cost)
+		if(stock < (use_stock_cost*time))
+			to_chat(user, SPAN_NOTICE("There is not enough left in [src] to complete this task."))
+			return FALSE
+
+	if(eye_hazard)
+		eyecheck(user)
+
+	if(sparks_on_use && !(item_flags & SILENT))
+		var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
+		sparks.set_up(3, 0, get_turf(src))
+		sparks.start()
+
+	update_icon()
+	return TRUE
 
 //Called when a human swaps hands to a hand which is holding this item
 /obj/item/proc/swapped_to(mob/user)

@@ -78,6 +78,10 @@
 		soft_crit_threshold += 20
 		hard_crit_threshold += 20
 
+	if(SHOCK_LESS in mutations)
+		soft_crit_threshold += 20
+		hard_crit_threshold += 20
+
 	//Get shock speed
 	var/shock_stage_speed = 1
 	if(traumatic_shock > soft_crit_threshold + SHOCK_STAGE_BUFFER)

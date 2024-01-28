@@ -151,7 +151,7 @@
 
 // This proc removes all implanters other then non-metal ones.
 /obj/item/organ/internal/psionic_tumor/proc/remove_implanted(metal_implant)
-	if(istype(metal_implant, /obj/item/implant))
+	if(istype(metal_implant, /obj/item/implant) && !istype(metal_implant, /obj/item/implant/generic))
 		var/obj/item/implant/R = metal_implant
 		if(R.implanted)
 			owner.visible_message(SPAN_DANGER("[R.name] rips through [owner]'s body."),\
