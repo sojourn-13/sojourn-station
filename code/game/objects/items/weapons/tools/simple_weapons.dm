@@ -430,7 +430,7 @@
 	name = "Cinq Deconstructive Rapier"
 	desc = "A long, thin bladed sword with a weaponized destructive analyzer integrated into the blade. At the moment of its victim's death it is able to deconstruct them and wirelessly transmit data to internal research database."
 	icon = 'icons/obj/weapons-blades.dmi'
-	icon_state = "rapier_cro"
+	icon_state = "rapier_cro" //Sprite by Gidgit
 	item_state = "saber"
 	force = WEAPON_FORCE_PAINFUL - 5 //10 base
 	armor_penetration = ARMOR_PEN_MODERATE
@@ -477,7 +477,7 @@
 /obj/item/tool/sword/saber/injection_rapier
 	name = "Cinq Inject Rapier"
 	desc = "A long, thin bladed sword with a hollow chamber in the blade. A mechanical release mechanism allows the wielder to inject targets with fluid from a reservoir in the grip."
-	icon = 'icons/obj/weapons-blades.dmi'
+	icon = 'icons/obj/weapons-blades.dmi' //Sprite by Gidgit
 	icon_state = "rapier_cbo"
 	item_state = "saber"
 	force = WEAPON_FORCE_PAINFUL - 5 //10 base
