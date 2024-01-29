@@ -109409,7 +109409,7 @@
 	id = "WO";
 	pixel_x = -6;
 	pixel_y = 4;
-	range = 4
+	range = 5
 	},
 /obj/item/device/lighting/toggleable/lamp{
 	pixel_x = 6
