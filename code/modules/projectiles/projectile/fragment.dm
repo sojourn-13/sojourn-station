@@ -24,6 +24,8 @@
 
 /obj/item/projectile/bullet/pellet/fragment/rubber
 	damage_types = list(BRUTE = 1)
+	ricochet_mod = 3 // :3c
+	can_ricochet = TRUE
 	agony = 25 // 70 x 25 = 1750 pain, if all hit, rather then 32 x 150
 	embed = FALSE
 	sharp = FALSE
