@@ -150,10 +150,7 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BORING
 	tool_qualities = list(QUALITY_HAMMERING = 40, QUALITY_PRYING = 1)
 	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 15)
-
-/obj/item/tool/hammer/ironhammer/attack()
-	..()
-	usr.setClickCooldown(DEFAULT_LONG_COOLDOWN)
+	clickdelay_offset = DEFAULT_LONG_COOLDOWN
 
 /obj/item/tool/hammer/mace
 	name = "mace"
