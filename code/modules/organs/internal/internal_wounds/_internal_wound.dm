@@ -176,12 +176,12 @@
 			if(istype(I, /obj/item/stack))
 				var/obj/item/stack/S = I
 				if(do_after(user, WORKTIME_NORMAL - user_stat_level, parent))
-					if(prob(10 + user_stat_level))
+					if(prob(10 + user_stat_level)&& S.amount > 0)
 						free_use = TRUE
 						is_treated = TRUE
-					else
+					else if(S.amount >= charges_needed)
 						is_treated = S.use(charges_needed)
-			if(istype(I)) // check for using items without stacks
+			else if(istype(I) && !istype(I, /obj/item/stack))
 				is_treated = TRUE
 				qdel(I)
 			if(is_treated)
