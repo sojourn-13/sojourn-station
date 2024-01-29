@@ -167,8 +167,8 @@
 	psigun = 1
 	origin_tech = list()
 	matter = list()
-	damage_multiplier = 0.9
-	penetration_multiplier = 0.9
+	damage_multiplier = 0.8
+	penetration_multiplier = 0.8
 	price_tag = 0
 	serial_shown = FALSE
 

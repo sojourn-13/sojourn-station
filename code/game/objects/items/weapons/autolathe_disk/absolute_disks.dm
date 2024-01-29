@@ -207,7 +207,6 @@
 		/datum/design/autolathe/gun/regulator = 3,
 		/datum/design/autolathe/gun/lemant = 3,
 		/datum/design/autolathe/gun/taser,
-		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/gun/sniperrifle = 6,
 		/datum/design/autolathe/ammo/pistol_ammobox_biomatter,
 		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2
