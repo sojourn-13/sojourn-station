@@ -353,7 +353,6 @@
 	armor_penetration = 15
 	penetrating = 1
 	can_ricochet = TRUE
-	ricochet_mod = 2.25
 	step_delay = 0.3
 	affective_damage_range = 7
 	affective_ap_range = 7
