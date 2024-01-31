@@ -1082,7 +1082,7 @@
 				E.take_damage(1, BURN)
 				if(E.damage > 12)
 					H.eye_blurry += rand(3,6)
-			if(FLASH_PROTECTION_MINOR)
+			if(FLASH_PROTECTION_MODERATE)
 				to_chat(H, SPAN_WARNING("The searing light burns your eyes through your insufficient protection."))
 				E.take_damage(rand(6, 9), BURN)
 				if(E.damage > 11)
