@@ -204,7 +204,7 @@
 
 /obj/item/shield/riot/crusader/psionic
 	name = "psychic combat shield"
-	desc = "A shield projected by the mind of a psion, it's speed and skill depend on the toughness of the psionic that created it. Useful for blocking energy beams, bullets, and melee attacks. \
+	desc = "A shield projected by the mind of a psion, it's speed and skill depend on the toughness of the psionic that created it. Useful for blocking melee attacks. \
 	A simple thought can deploy or shrink the shield at will."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "psishield1"
@@ -220,6 +220,8 @@
 	armor_list = list(melee = 15, bullet = 15, energy = 35, bomb = 15, bio = 0, rad = 0)
 	base_block_chance = 40
 	var/mob/living/carbon/holder // The one that prevent the blade from fading
+	//Got to do a little more effort to make this block proj (min cost of 2 points)
+	can_block_proj = FALSE
 
 /obj/item/shield/riot/crusader/psionic/New(var/loc, var/mob/living/carbon/Maker)
 	..()
@@ -233,6 +235,15 @@
 		STOP_PROCESSING(SSobj, src)
 		qdel(src)
 		return
+
+/obj/item/shield/riot/crusader/psionic/layered
+	name = "layered psychic combat shield"
+	desc = "Unlike the idea of a shield this one is made of many thin layers allowing it to block projectiles and attacks easier \
+	Due to this process of layering it can not be enhanced or modified without destroying itself."
+	max_durability = 120
+	durability = 120
+	base_block_chance = 50
+	armor_list = list(melee = 25, bullet = 20, energy = 40, bomb = 25, bio = 0, rad = 0)
 
 // Psionic gun.
 /obj/item/gun/kinetic_blaster
