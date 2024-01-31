@@ -272,6 +272,7 @@
 	embed = 0 // nope
 	nodamage = TRUE
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
+	ignition_source = FALSE
 
 
 /obj/item/projectile/flamer_lob
