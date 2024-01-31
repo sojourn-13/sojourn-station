@@ -126,6 +126,16 @@
 			"You feel the rush of electric essence shocking your hand lightly before a psy-shield forms!"
 			)
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+		//If we have 60 TGH we automatically make the basic shield block proj skipping 1 psionic point cost
+		//This is so that if you have tanked cog or just power level TGH to be able to use the shield more affectively you can still be tanky!
+		if (owner.stats.getStat(STAT_TGH) >= STAT_LEVEL_PROF)
+			owner.visible_message(
+			"[owner] looks at the psy-shield and forcefully compresses it!",
+			"Its hard to tell but you can feel that the shield well more solidified. This should be able capable of blocking lasers and bullets."
+			)
+			shield.can_block_proj = TRUE
+			shield.base_block_chance += 10
+			shield.adjustShieldDurability(-10, owner)
 		usr.put_in_active_hand(shield)
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_shield_layered()
