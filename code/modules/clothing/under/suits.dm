@@ -224,6 +224,12 @@
 
 /*Modular Suits*/
 
+/obj/item/clothing/under/modular
+	name = "suit"
+	desc = "You probably should not be seeing this."
+	icon_state = "blacksuitbuttoned"
+	item_state = "blacksuitbuttoned"
+
 /obj/item/clothing/under/modular/black
 	name = "black suit"
 	desc = "A pair of black suit leggings complemented by a buttoned white shirt."

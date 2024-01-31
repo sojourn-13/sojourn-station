@@ -124,6 +124,7 @@
 	var/adj_temp = 0
 	var/targ_temp = 310
 	var/halluci = 0
+	taste_tag = list(TASTE_STRONG)
 	sanity_gain_ingest = 0.5
 	common = TRUE //All alchoholic reagents can be ID'd pretty easily
 

@@ -41,7 +41,7 @@
 	var/color_weight = 1
 	var/sanity_gain_ingest = 0
 	var/sanity_gain = 0
-
+	var/list/taste_tag = list()
 	var/glass_unique_appearance = FALSE
 
 	var/chilling_point
@@ -57,6 +57,7 @@
 	var/constant_metabolism = FALSE	// if metabolism factor should not change with volume or blood circulation
 
 	var/nerve_system_accumulations = 5 // Nerve system accumulations
+
 
 	// Catalog stuff
 	var/appear_in_default_catalog = TRUE

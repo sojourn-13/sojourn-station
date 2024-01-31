@@ -4,6 +4,7 @@
 	icon_state = "bread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice
 	slices_num = 5
+	taste_tag = list(FLOURY_FOOD)
 	filling_color = "#FFE396"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=9)
@@ -15,6 +16,7 @@
 	name = "bread slice"
 	desc = "A slice of home."
 	icon_state = "breadslice"
+	taste_tag = list(FLOURY_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#D27332"
 	nutriment_amt = 1
@@ -25,6 +27,7 @@
 	name = "buttered toast"
 	desc = "A freshly toasted slice of bread with melting butter on top, the humblest of meals for the simple man."
 	icon_state = "buttertoast"
+	taste_tag = list(FLOURY_FOOD)
 	bitesize = 3
 	nutriment_amt = 3
 	nutriment_desc = list("bread" = 6, "butter" = 3)
@@ -33,6 +36,7 @@
 	name = "cream cheese bread"
 	desc = "Yum yum yum!"
 	icon_state = "creamcheesebread"
+	taste_tag = list(CHEESE_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/creamcheesebreadslice
 	slices_num = 5
 	filling_color = "#FFF896"
@@ -46,6 +50,7 @@
 /obj/item/reagent_containers/food/snacks/creamcheesebreadslice
 	name = "cream cheese bread slice"
 	desc = "A slice of yum!"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	icon_state = "creamcheesebreadslice"
 	trash = /obj/item/trash/plate
 	filling_color = "#FFF896"
@@ -59,6 +64,7 @@
 	name = "meatbread loaf"
 	desc = "The culinary base of every self-respecting eloquen/tg/entleman."
 	icon_state = "meatbread"
+	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/meatbreadslice
 	slices_num = 5
 	filling_color = "#FF7575"
@@ -73,6 +79,7 @@
 	name = "meatbread slice"
 	desc = "A slice of delicious meatbread."
 	icon_state = "meatbreadslice"
+	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#FF7575"
 	bitesize = 2
@@ -85,6 +92,7 @@
 	name = "xenomeatbread loaf"
 	desc = "The culinary base of every self-respecting eloquent gentleman. Extra Heretical."
 	icon_state = "xenomeatbread"
+	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/xenomeatbreadslice
 	slices_num = 5
 	filling_color = "#8AFF75"
@@ -99,6 +107,7 @@
 	name = "xenomeatbread slice"
 	desc = "A slice of delicious meatbread. Extra Heretical."
 	icon_state = "xenobreadslice"
+	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#8AFF75"
 	bitesize = 2
@@ -112,6 +121,7 @@
 	name = "banana-nut bread"
 	desc = "A heavenly and filling treat."
 	icon_state = "bananabread"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/bananabreadslice
 	slices_num = 5
 	filling_color = "#EDE5AD"
@@ -126,6 +136,7 @@
 	name = "banana-nut bread slice"
 	desc = "A slice of delicious banana bread."
 	icon_state = "bananabreadslice"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#EDE5AD"
 	bitesize = 2

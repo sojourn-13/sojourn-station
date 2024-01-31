@@ -671,7 +671,7 @@
 		/obj/item/clothing/under/modular/smoky = 4,
 		/obj/item/clothing/under/modular/smokyskirt = 4,
 		/obj/item/clothing/under/modular/tan = 4,
-		/obj/item/clothing/under/modular = 4,
+		/obj/item/clothing/under/modular/black = 4,
 		/obj/item/clothing/under/white = 4,
 		/obj/item/clothing/under/red = 4,
 		/obj/item/clothing/under/green = 4,

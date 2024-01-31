@@ -25,12 +25,12 @@
 /datum/perk/bone
 	name = "Bone Plated"
 	desc = "All sablekyne are covered in bone-like plating across various parts of the body, this layer of natural armor along the shins, thighs, fore-arms, and shoulders allow you to absorb impacts better than anyone, adding a further tolerance to pain."
-	//icon_state = "" // - No icon, suggestion - Riot Shield?
+	icon_state = "shield"
 
 /datum/perk/brawn
 	name = "Brawny Build"
 	desc = "All sablekyne are stocky and built wide, your brawny build and low center of gravity gives you exceptional balance. Few beasts can knock you down and not even the strongest men can push you over."
-	//icon_state = "muscular" // https://game-icons.net
+	icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/brawn/assign(mob/living/carbon/human/H)
 	..()
@@ -409,7 +409,7 @@
 	name = "Kin to the Spiders"
 	desc = "Through a combination of pheromones, appearance, and an innate understanding of spider behavior all spiders are friendly to you, they won't attack you even if you attack them. This change \
 	in your biology and pheromones however make you an enemy to roaches. As a side effect of dealing with spiders so often, you can't be slowed or stuck by webbing."
-	//icon_state = "muscular" // https://game-icons.net
+	icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/spiderfriend/assign(mob/living/carbon/human/H)
 	..()
@@ -467,7 +467,7 @@
 /datum/perk/chitinarmor
 	name = "Chitin Armor"
 	desc = "Unlike other caste in the cht'mant hive you are built for combat, while not as naturally tough as other species you can tank a few more blows than your softer insectile brethren."
-	//icon_state = "" // - No icon, suggestion - Riot Shield?
+	icon_state = "paper"
 
 /datum/perk/chitinarmor/assign(mob/living/carbon/human/H)
 	..()
@@ -484,7 +484,7 @@
 /datum/perk/scuttlebug
 	name = "Scuttlebug"
 	desc = "While your definitive purpose is not as clearly defined as other castes within the cht'mant hive your constant movement and labors have made you quite used to the hustle and bustle, letting you run faster than most races."
-	//icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
+	icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
 
 /datum/perk/repair_goo
 	name = "Produce Repair Goo"
