@@ -2027,7 +2027,7 @@
 
 /obj/item/reagent_containers/food/snacks/mercy_tisane
 	name = "mercys hand tisane"
-	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, but it does a better job of purging toxins than eating sun tears raw."
+	desc = "A somewhat concentrated decoction of mercy hand. Not entirely pleasant tasting, but it does a better job of purging toxins than eating mercy hand raw."
 	icon_state = "mercy_tisane"
 	taste_tag = list(TASTE_LIGHT)
 	nutriment_desc = list("tart tea" = 1)
