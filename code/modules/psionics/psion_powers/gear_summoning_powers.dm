@@ -128,7 +128,8 @@
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
 		//If we have 60 TGH we automatically make the basic shield block proj skipping 1 psionic point cost
 		//This is so that if you have tanked cog or just power level TGH to be able to use the shield more affectively you can still be tanky!
-		if (owner.stats.getStat(STAT_TGH) >= STAT_LEVEL_PROF)
+		//If you pick bedlam backround you also bypass the need of 2 points to block proj.
+		if (owner.stats.getStat(STAT_TGH) >= STAT_LEVEL_PROF || owner.stats.getPerk(PERK_PSI_MANIA)
 			owner.visible_message(
 			"[owner] looks at the psy-shield and forcefully compresses it!",
 			"Its hard to tell but you can feel that the shield well more solidified. This should be able capable of blocking lasers and bullets."
@@ -145,7 +146,7 @@
 	psi_point_cost = 1
 
 	if(pay_power_cost(psi_point_cost))
-		var/obj/item/shield/riot/crusader/psionic/shield = new /obj/item/shield/riot/crusader/psionic(src, owner)
+		var/obj/item/shield/riot/crusader/psionic/layered/shield = new /obj/item/shield/riot/crusader/psionic/layered(src, owner)
 		owner.visible_message(
 			"[owner] clenches their fist, electricity crackling before a psy-shield forms in their hand!",
 			"You feel the rush of electric essence shocking your hand lightly before a psy-shield forms!"
