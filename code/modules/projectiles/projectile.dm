@@ -123,7 +123,7 @@
 
 	var/recoil = 0
 
-	var/ignition_source = TRUE
+	var/ignition_source = TRUE //Used for deciding if a projectile should blow up a benzin.
 
 /obj/item/projectile/New()
 
