@@ -7,7 +7,7 @@
 */
 
 
-ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_DEBUG, TRUE)
+ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_MOD|R_DEBUG, TRUE)
 
 /client/proc/cmd_dev_bst()
 	set category = "Debug"
