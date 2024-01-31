@@ -29,6 +29,7 @@ var/global/list/robot_modules = list(
 					LANGUAGE_KRIOSAN = 1,
 					LANGUAGE_AKULA = 1,
 					LANGUAGE_MARQUA = 1,
+					LANGUAGE_BLORP = 1,
 					LANGUAGE_YASSARI = 1,
 					LANGUAGE_ILLYRIAN = 1,
 					LANGUAGE_CYRILLIC = 1,
@@ -403,6 +404,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
+	src.modules += new /obj/item/tool/sword/saber/injection_rapier(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/gripper/ammo(src)
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
@@ -1189,6 +1191,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/storage/part_replacer(src)
+	src.modules += new /obj/item/tool/sword/saber/deconstuctive_rapier(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/gripper/ammo(src)
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
@@ -1305,8 +1308,7 @@ var/global/list/robot_modules = list(
 	P.synths = list(plastic)
 	src.modules += P
 
-	//We know guild work and robotics.
-	R.stats.addPerk(PERK_HANDYMAN)
+	//We know repair work and robotics.
 	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
 	R.stats.addPerk(PERK_SI_SCI)
 

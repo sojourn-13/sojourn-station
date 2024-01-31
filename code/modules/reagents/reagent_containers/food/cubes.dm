@@ -212,7 +212,7 @@
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
 	grow_into = /mob/living/carbon/superior_animal/roach/toxic
 
-/obj/item/reagent_containers/food/snacks/cube/roach/benzin
+/obj/item/reagent_containers/food/snacks/cube/roach/nitro
 	name = "Benzin Cube"
 	desc = "Just add Blood!"
 	reagent_flags = REFILLABLE
@@ -223,4 +223,4 @@
 	center_of_mass = list("x"=16, "y"=14)
 	preloaded_reagents = list("protein" = 10)
 	taste_tag = list(MEAT_FOOD,BLAND_FOOD)
-	grow_into = /mob/living/carbon/superior_animal/roach/benzin
+	grow_into = /mob/living/carbon/superior_animal/roach/nitro

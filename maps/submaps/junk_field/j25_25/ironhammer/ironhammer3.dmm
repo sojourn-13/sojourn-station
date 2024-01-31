@@ -323,7 +323,6 @@
 /area/template_noop)
 "bs" = (
 /obj/item/gun/projectile/glock,
-/obj/item/ammo_casing/pistol,
 /turf/simulated/floor/tiled/steel/bluecorner,
 /area/template_noop)
 "bt" = (

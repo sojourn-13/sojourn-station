@@ -16,7 +16,7 @@
 
 /datum/reagent/medicine/inaprovaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // No more useless chem of leftover baycode with no inference on health due to pulse not affecting anything. - Seb
 	M.add_chemical_effect(CE_PULSE, 1)
-	M.add_chemical_effect(CE_STABLE) // Keeping these useless effects for the sake of RP.
+	M.add_chemical_effect(CE_STABLE, 1) // Keeping these useless effects for the sake of RP.
 	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier)
 	M.adjustOxyLoss(-0.5 * effect_multiplier) // Should help stall for time against oxyloss killing you to heavy bloodloss or lung/heart damage until your eventual rescue, but won't heal it outright.
 	M.add_chemical_effect(CE_OXYGENATED, 1)
@@ -35,7 +35,7 @@
 	nerve_system_accumulations = 15 // Basic chems shouldn't hurt the body as much as higher potency ones.
 
 /datum/reagent/medicine/bicaridine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(M.species?.reagent_tag == IS_CHTMANT)
+	if(M.species?.reagent_tag == IS_CHTMANT || M.species?.reagent_tag == IS_SLIME)
 		M.heal_organ_damage(0.15 * effect_multiplier, 0, 5 * effect_multiplier)
 		return
 	M.heal_organ_damage(0.3 * effect_multiplier, 0, 5 * effect_multiplier)
@@ -69,8 +69,12 @@
 	nerve_system_accumulations = 20
 
 /datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if((M.species?.reagent_tag == IS_SLIME))
+		M.take_organ_damage(1, 0)
+		M.apply_damage(1, HALLOSS)
+		if(prob(5)) // dont wanna do it constantly.
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
 	M.heal_organ_damage(9 * removed, 0)
-	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
 
 /datum/reagent/medicine/meralyne
 	name = "Meralyne"
@@ -102,6 +106,9 @@
 /datum/reagent/medicine/kelotane/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		return
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.heal_organ_damage(0, 0.3 * effect_multiplier, 0, 1.5 * effect_multiplier)
+		return
 	M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 3 * effect_multiplier)
 
 /datum/reagent/medicine/dermaline
@@ -117,6 +124,9 @@
 	nerve_system_accumulations = 20
 
 /datum/reagent/medicine/dermaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 2.5 * effect_multiplier)
+		return
 	M.heal_organ_damage(0, 1.2 * effect_multiplier, 0, 5 * effect_multiplier)
 
 /datum/reagent/medicine/dylovene
@@ -131,6 +141,12 @@
 	nerve_system_accumulations = 0
 
 /datum/reagent/medicine/dylovene/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if((M.species?.reagent_tag == IS_SLIME))
+		M.take_organ_damage(0.5, 0)
+		M.apply_damage(0.5, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
+		return
 	M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
 	M.adjust_hallucination(-0.9 * effect_multiplier)
 	M.add_chemical_effect(CE_ANTITOX, 2)
@@ -156,6 +172,12 @@
 	nerve_system_accumulations = -10
 
 /datum/reagent/medicine/carthatoline/affect_blood(var/mob/living/carbon/M, var/alien, effect_multiplier, var/removed = REM)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.take_organ_damage(2, 0)
+		M.apply_damage(2, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
+		return
 	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -277,6 +299,12 @@
 
 /datum/reagent/medicine/tricordrazine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.take_organ_damage(1, 0)
+		M.apply_damage(1, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
 		return
 	M.adjustOxyLoss(-0.6 * effect_multiplier)
 	M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
@@ -606,14 +634,12 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	nerve_system_accumulations = -15
 
 /datum/reagent/medicine/alkysine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.adjustBrainLoss(-(3 + (M.getBrainLoss() * 0.05)) * effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 10 * effect_multiplier, TRUE)
-	var/mob/living/carbon/human/H = M
-	var/obj/item/organ/internal/E = H.random_organ_by_process(BP_BRAIN)
-	if(E && istype(E))
-		var/list/current_wounds = E.GetComponents(/datum/component/internal_wound)
-		if(LAZYLEN(current_wounds) && prob(10))
-			LEGACY_SEND_SIGNAL(E, COMSIG_IORGAN_REMOVE_WOUND, pick(current_wounds))
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/vital/brain/B = H.internal_organs_by_efficiency[BP_BRAIN]
+		if(!BP_IS_ROBOTIC(B) && prob(75))
+			M.add_chemical_effect(CE_PAINKILLER, 10)
+			M.add_chemical_effect(CE_BRAINHEAL, 1)
 
 /datum/reagent/medicine/imidazoline
 	name = "Imidazoline"
@@ -634,8 +660,8 @@ We don't use this but we might find use for it. Porting it since it was updated 
 		var/obj/item/organ/internal/E = H.random_organ_by_process(OP_EYES)
 		if(E && istype(E))
 			var/list/current_wounds = E.GetComponents(/datum/component/internal_wound)
-			if(LAZYLEN(current_wounds) && prob(10))
-				LEGACY_SEND_SIGNAL(E, COMSIG_IORGAN_REMOVE_WOUND, pick(current_wounds))
+			if(LAZYLEN(current_wounds) && prob(75))
+				M.add_chemical_effect(CE_EYEHEAL, 1)
 
 /datum/reagent/medicine/imidazoline/overdose(mob/living/carbon/M, alien)
 	. = ..()
@@ -657,15 +683,15 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	nerve_system_accumulations = 30
 
 /datum/reagent/medicine/peridaxon/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(M.species?.reagent_tag == IS_CHTMANT)
-		return
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Peridaxon shouldn't heal brain or bones
 		for(var/obj/item/organ/I in organs_sans_brain_and_bones)
 			var/list/current_wounds = I.GetComponents(/datum/component/internal_wound)
 			if(LAZYLEN(current_wounds) && !BP_IS_ROBOTIC(I) && prob(75)) //Peridaxon heals only non-robotic organs
-				LEGACY_SEND_SIGNAL(I, COMSIG_IORGAN_REMOVE_WOUND, pick(current_wounds))
+				M.add_chemical_effect(CE_ONCOCIDAL, 1)
+				M.add_chemical_effect(CE_BLOODCLOT, 1)
+				M.add_chemical_effect(CE_ANTITOX, 2)
 
 /datum/reagent/medicine/peridaxon/overdose(mob/living/carbon/M, alien)
 	. = ..()
@@ -1075,6 +1101,42 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/kyphotorin/overdose(mob/living/carbon/M, alien)
 	M.adjustCloneLoss(4)
 
+/datum/reagent/medicine/slimeregen
+	name = "mitosis hyperstim"
+	id = "mstim"
+	description = "A novel protein structure used within the bodies of Aulvae to stimulate mitosis to replace large amounts of lost cells in a short time frame. These proteins are theorized to be highly lethal to most organics if ingested or injected."
+	taste_description = "prions"
+	overdose = 9 //Regenerate limbs automatically if we reach the end of the dose given by the chem without actually rolling well.
+	metabolism = REM * 0.5
+	scannable = FALSE
+
+/datum/reagent/medicine/slimeregen/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		var/mob/living/carbon/human/H = M
+		if(prob(0.5 * effect_multiplier) || dose >= overdose)
+			var/list/missingLimbs = list()
+			for(var/name in BP_ALL_LIMBS)
+				if(!H.has_appendage(name))
+					missingLimbs += name
+			if(missingLimbs.len)
+				var/luckyLimbName = pick(missingLimbs)
+				H.restore_organ(luckyLimbName)
+				M.pain(luckyLimbName, 100, TRUE)
+				dose = 0
+		M.heal_organ_damage(0.5 * effect_multiplier, 0, 5 * effect_multiplier) //pretty strong, but the cost is high and they can only use this twice an hour.
+		M.add_chemical_effect(CE_SLOWDOWN, 2)
+		M.eye_blurry = max(M.eye_blurry, 10)
+		if(prob(10))
+			M.Weaken(2)
+			M.custom_emote(1,"'s form momentarily loses cohesion as they fall to the ground!")
+	else
+		var/wound_chance = 100 - (79 * (1 - M.stats.getMult(STAT_TGH)))
+		if(ishuman(M))
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/liver/L = H.random_organ_by_process(BP_BRAIN)
+				create_overdose_wound(L, M, /datum/component/internal_wound/organic/permanent, "prion damage")
+
 /datum/reagent/medicine/polystem
 	name = "Polystem"
 	id = "polystem"
@@ -1291,9 +1353,10 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/fun_gas/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	var/effective_dose = dose / 2
 	dose *= 0.75 // Reduce the dose to prevent buildup from little N2O
+	if(M.species?.reagent_tag == IS_SLIME)
+		return
 	if(issmall(M))
 		effective_dose *= 2
-
 	if(effective_dose < 1)
 		if(effective_dose == metabolism * 2 || prob(10))
 			M.emote("giggle")

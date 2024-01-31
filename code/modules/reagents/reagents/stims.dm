@@ -529,7 +529,56 @@
 
 /datum/reagent/stim/hacker/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_PROF, STIM_TIME, "hacker_w")
+/*
+/datum/reagent/stim/slime_smarts
+	name = "core stimulant"
+	id = "corestim"
+	description = "A powerful mutagenic stimulant used by Aulvae to augment their intellect. To call this poison to normal carbon biology would be the understatement of the century."
+	scannable = FALSE
+	addiction_chance = 0
 
+/datum/reagent/stim/slime_smarts/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.stats.addTempStat(STAT_MEC, 45, 1 MINUTES, "Aulvae biology")
+		M.stats.addTempStat(STAT_BIO, 45, 1 MINUTES, "Aulvae biology")
+		M.stats.addTempStat(STAT_COG, 45, 1 MINUTES, "Aulvae biology")
+	else
+		var/wound_chance = 100 - (79 * (1 - M.stats.getMult(STAT_TGH)))
+		if(ishuman(M))
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_MUSCLE)
+				create_overdose_wound(L, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/N = H.random_organ_by_process(OP_NERVE)
+				create_overdose_wound(N, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/N = H.random_organ_by_process(OP_BONE)
+				create_overdose_wound(N, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+
+
+/datum/reagent/stim/slime_strength
+	name = "cyto stimulant"
+	id = "cytostim"
+	description = "A powerful mutagenic stimulant used by Aulvae to augment their physical attributes. To call this poison to normal carbon biology would be the understatement of the century."
+	scannable = FALSE
+	addiction_chance = 0
+
+/datum/reagent/stim/slime_strength/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.stats.addTempStat(STAT_ROB, 45, 1 MINUTES, "Aulvae biology")
+		M.stats.addTempStat(STAT_TGH, 45, 1 MINUTES, "Aulvae biology")
+		M.stats.addTempStat(STAT_VIG, 45, 1 MINUTES, "Aulvae biology")
+	else
+		var/wound_chance = 100 - (79 * (1 - M.stats.getMult(STAT_TGH)))
+		if(ishuman(M))
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/liver/L = H.random_organ_by_process(BP_BRAIN)
+				create_overdose_wound(L, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+*/
 /datum/reagent/stim/mind_melter
 	name = "Cerebrenal"
 	id = "mindmelter"

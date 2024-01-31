@@ -716,6 +716,13 @@
 /obj/item/trash/mre/os,
 /turf/simulated/floor/wood/wild5,
 /area/colony/exposedsun/pastgate)
+"aIU" = (
+/obj/structure/salvageable/autolathe_os,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "aIV" = (
 /obj/item/device/lighting/toggleable/lantern,
 /obj/effect/decal/cleanable/rubble,
@@ -984,6 +991,13 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"aVB" = (
+/obj/structure/girder,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "aWi" = (
 /mob/living/carbon/superior_animal/human/excelsior/excel_drozd,
 /turf/simulated/floor/tiled/dark/brown_platform,
@@ -991,6 +1005,10 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"aWm" = (
+/obj/effect/damagedfloor,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/meadow)
 "aWp" = (
 /obj/structure/flora/big/bush2,
 /obj/effect/overlay/water,
@@ -2039,6 +2057,17 @@
 /obj/structure/salvageable/personal,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
+"bUL" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/structure/medical_stand,
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "bUN" = (
 /obj/structure/table/steel_reinforced,
 /obj/structure/sign/department/rnd{
@@ -2500,6 +2529,13 @@
 "cpY" = (
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"cpZ" = (
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "cqo" = (
 /obj/structure/table/onestar,
 /obj/item/flame/lighter/zippo/black,
@@ -2709,6 +2745,11 @@
 /obj/random/mob/roomba/job,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star)
+"cve" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/toolbox/emergency,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/meadow)
 "cvv" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/small/busha1,
@@ -3430,6 +3471,15 @@
 /mob/living/carbon/superior_animal/human/voidwolf/captain,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"cZh" = (
+/obj/item/trash/cigbutt/fortress,
+/obj/item/trash/material/metal,
+/obj/effect/damagedfloor,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "cZq" = (
 /obj/structure/boulder,
 /turf/simulated/floor/plating/under,
@@ -3729,6 +3779,13 @@
 /obj/structure/morgue,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/dungeon/outside/prepper)
+"dqm" = (
+/obj/item/mine/armed,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "dqw" = (
 /obj/structure/flora/big/bush1,
 /turf/simulated/floor/asteroid/grass,
@@ -3844,6 +3901,13 @@
 /mob/living/simple_animal/yithian,
 /turf/simulated/floor/asteroid/grass/sif,
 /area/nadezhda/dungeon/outside/zoo)
+"dvn" = (
+/obj/structure/low_wall,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "dvG" = (
 /obj/structure/closet/crate/bin,
 /turf/simulated/floor/wood/wild5,
@@ -4040,6 +4104,13 @@
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/dungeon/outside/zoo)
+"dCs" = (
+/obj/random/mob/vox/low_chance,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "dCT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/mob/prepper,
@@ -4149,6 +4220,13 @@
 "dHv" = (
 /turf/simulated/floor/beach/sand/desert,
 /area/nadezhda/dungeon/outside/zoo)
+"dHy" = (
+/obj/random/mob/vox/low_chance,
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "dHD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
@@ -4337,6 +4415,14 @@
 "dRn" = (
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
+"dRt" = (
+/obj/item/ammo_casing/heavy_rifle_408/spent,
+/obj/effect/damagedfloor,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "dRE" = (
 /obj/structure/table/onestar,
 /obj/structure/window/reinforced{
@@ -4415,6 +4501,13 @@
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
+	})
+"dWA" = (
+/obj/item/stack/medical/bruise_pack,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
 	})
 "dXH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5414,6 +5507,10 @@
 /obj/machinery/centrifuge,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/dungeon/outside/zoo)
+"eWV" = (
+/obj/item/ammo_casing/shotgun/spent,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "eXs" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/derelict,
@@ -6023,6 +6120,15 @@
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/nadezhda/dungeon/outside/prepper/vault/floor5)
+"fxK" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "fxO" = (
 /obj/random/junkfood,
 /obj/random/junkfood,
@@ -6140,6 +6246,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/zoo)
+"fEj" = (
+/turf/simulated/mineral/planet,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "fEk" = (
 /obj/structure/salvageable/console_broken_os,
 /turf/simulated/floor/plating/under,
@@ -6400,6 +6512,11 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
+"fPp" = (
+/obj/random/mob/vox/low_chance,
+/obj/effect/damagedfloor,
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
 "fQh" = (
 /obj/structure/sink{
@@ -7010,6 +7127,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"gqE" = (
+/obj/structure/flora/small/busha3,
+/obj/item/ammo_casing/shotgun/spent,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "gqN" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -7442,6 +7564,13 @@
 /obj/structure/invislight,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/dungeon/outside/prepper)
+"gJH" = (
+/obj/structure/salvageable/console_os,
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "gKF" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/wood/wild3,
@@ -7493,6 +7622,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/scrap_lump,
 /turf/simulated/floor/plating/under,
+/area/nadezhda/outside/meadow)
+"gNM" = (
+/obj/structure/flora/small/busha3,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/outside/meadow)
 "gNT" = (
 /obj/landmark/join/start/outsider,
@@ -7548,6 +7681,13 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"gQm" = (
+/obj/item/trash/material/metal,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "gQn" = (
 /obj/structure/table/woodentable,
 /obj/machinery/chemical_dispenser/coffee_master,
@@ -7714,6 +7854,13 @@
 /obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"gVU" = (
+/obj/item/mine/armed,
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "gWs" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/reagent_containers/food/drinks/drinkingglass,
@@ -7742,6 +7889,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
+"gYc" = (
+/obj/structure/flora/small/busha3,
+/obj/structure/girder,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "gYu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/filth,
@@ -7788,6 +7940,13 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/beach/water/jungle,
 /area/nadezhda/outside/meadow)
+"hbk" = (
+/obj/item/trash/cigbutt/fortress,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "hbw" = (
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
@@ -7896,6 +8055,12 @@
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
+	})
+"heZ" = (
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
 	})
 "hfl" = (
 /obj/random/cloth/armor,
@@ -8505,6 +8670,10 @@
 /obj/random/mob/prepper,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
+"hIy" = (
+/obj/item/remains/ribcage,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "hIF" = (
 /obj/machinery/chemical_dispenser/soda,
 /obj/structure/table/marble,
@@ -8950,6 +9119,13 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
+"idq" = (
+/obj/item/mine/armed,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "idF" = (
 /obj/random/flora/jungle_tree,
 /obj/structure/flora/big/bush2,
@@ -9220,6 +9396,14 @@
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
+	})
+"ipX" = (
+/obj/item/trash/candy/proteinbar,
+/obj/effect/damagedfloor,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
 	})
 "iqh" = (
 /obj/structure/table/woodentable,
@@ -9702,6 +9886,13 @@
 /obj/structure/kitchenspike,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/zoo)
+"iJo" = (
+/obj/item/stack/medical/splint,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "iJI" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/random/flora/jungle_tree,
@@ -10386,6 +10577,13 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"jlR" = (
+/obj/structure/bed/chair/office/dark,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "jmu" = (
 /obj/structure/multiz/stairs/enter/bottom,
 /turf/simulated/wall/r_wall,
@@ -10900,6 +11098,13 @@
 /obj/item/circuitboard/apc,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/dungeon/outside/prepper/vault/floor2)
+"jOg" = (
+/obj/item/trash/mre,
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "jOk" = (
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/zoo)
@@ -11083,6 +11288,13 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"jXI" = (
+/obj/structure/salvageable/autolathe,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "jXJ" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/item/ammo_magazine/maxim_75,
@@ -11360,6 +11572,10 @@
 /obj/random/junk/low_chance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"kju" = (
+/obj/structure/salvageable/autolathe,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/meadow)
 "kjK" = (
 /obj/structure/medical_stand{
 	pixel_x = -10
@@ -11462,10 +11678,8 @@
 /area/nadezhda/dungeon/outside/prepper/vault/floor2)
 "koI" = (
 /obj/random/junk,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
 /obj/item/ammo_casing,
+/obj/item/mine/armed,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
@@ -11687,6 +11901,10 @@
 /obj/random/mob/voidwolf,
 /turf/simulated/floor/carpet/turcarpet,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"kzf" = (
+/obj/structure/girder,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/meadow)
 "kzu" = (
 /obj/effect/decal/cleanable/filth,
 /obj/random/junk,
@@ -13459,6 +13677,13 @@
 /obj/random/gun_energy_cheap,
 /turf/simulated/floor/tiled/white/bluecorner,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"mjw" = (
+/obj/structure/table/rack/shelf,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "mjE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -13747,6 +13972,17 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/meadow)
+"mvV" = (
+/obj/item/ammo_casing/heavy_rifle_408/hv/spent,
+/obj/item/ammo_casing/heavy_rifle_408/hv/spent,
+/obj/item/ammo_casing/heavy_rifle_408/hv/spent,
+/obj/item/ammo_casing/heavy_rifle_408/spent,
+/obj/item/ammo_casing/heavy_rifle_408/spent,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "mwn" = (
 /obj/structure/table/woodentable,
 /obj/random/circuitboard,
@@ -14162,6 +14398,13 @@
 	},
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/colony/exposedsun/crashed_shop/outsider)
+"mMK" = (
+/obj/item/trash/mre,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "mMP" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /obj/item/oddity/common/old_money,
@@ -14458,6 +14701,10 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/one_star)
+"mYu" = (
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/meadow)
 "mZe" = (
 /obj/structure/flora/small/busha1,
 /obj/item/trash/mre_candy,
@@ -14477,6 +14724,14 @@
 /obj/random/junkfood,
 /turf/simulated/floor/tiled/derelict/white_red_edges,
 /area/nadezhda/outside/one_star)
+"mZM" = (
+/obj/item/ammo_casing/heavy_rifle_408/hv/spent,
+/obj/effect/damagedfloor,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "nae" = (
 /obj/machinery/washing_machine,
 /turf/simulated/floor/tiled/dark,
@@ -15542,6 +15797,13 @@
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
+	})
+"nZq" = (
+/obj/item/trash/material/metal,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
 	})
 "nZr" = (
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -16928,6 +17190,13 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"phr" = (
+/obj/item/ammo_magazine/heavy_rifle_408/empty,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "phC" = (
 /obj/effect/decal/cleanable/generic,
 /obj/random/closet_maintloot,
@@ -17227,6 +17496,10 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
+"prf" = (
+/obj/item/ammo_casing/shotgun/spent,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/meadow)
 "prT" = (
 /obj/structure/multiz/ladder,
 /obj/structure/flora/small/bushb2,
@@ -17472,6 +17745,13 @@
 /obj/rogue_mobspawner,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/asteroid/rogue)
+"pDj" = (
+/obj/structure/girder,
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "pDZ" = (
 /obj/structure/flora/small/bushc1,
 /obj/structure/flora/small/busha3,
@@ -18909,6 +19189,12 @@
 /obj/structure/barricade,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"qJp" = (
+/turf/simulated/wall/r_wall,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "qJt" = (
 /obj/structure/sign/warning/armory/small,
 /turf/simulated/wall/r_wall,
@@ -18960,6 +19246,13 @@
 /obj/random/junkfood,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
+"qNj" = (
+/obj/structure/girder,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "qNk" = (
 /obj/random/junk,
 /obj/item/mine_old{
@@ -19481,6 +19774,13 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"riH" = (
+/obj/effect/decal/mecha_wreckage/ripley,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "rjb" = (
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
@@ -19765,6 +20065,16 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"rxo" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "rxy" = (
 /obj/structure/cable/yellow{
 	d2 = 8;
@@ -19858,6 +20168,13 @@
 /obj/structure/flora/small/busha2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"rCn" = (
+/obj/structure/salvageable/implant_container_os,
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "rCq" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -20049,6 +20366,13 @@
 /obj/structure/flora/ausbushes/fernybush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"rMP" = (
+/obj/item/shield/riot/damaged,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "rNq" = (
 /obj/random/scrap/dense_weighted,
 /obj/effect/decal/cleanable/dirt,
@@ -20212,6 +20536,13 @@
 /obj/structure/medical_stand,
 /turf/simulated/floor/wood/wild4,
 /area/colony/exposedsun/crashed_shop/outsider)
+"rVM" = (
+/obj/effect/damagedfloor,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "rVT" = (
 /obj/machinery/door/blast/regular{
 	id = "prepper room A"
@@ -20276,6 +20607,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/dungeon/outside/prepper)
+"rYD" = (
+/obj/item/mine/armed,
+/obj/item/ammo_casing/heavy_rifle_408/spent,
+/obj/item/ammo_casing/heavy_rifle_408/spent,
+/obj/item/ammo_casing/heavy_rifle_408/spent,
+/obj/item/trash/cigbutt/fortress,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "rYK" = (
 /obj/random/traps/low_chance,
 /turf/simulated/floor/tiled/dark,
@@ -20554,6 +20896,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"skx" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "skA" = (
 /obj/random/mecha/damaged/low_chance,
 /obj/effect/decal/cleanable/blood/oil,
@@ -20654,6 +21006,13 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"soI" = (
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "spm" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/stack/material/diamond/random,
@@ -21004,6 +21363,14 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"sEJ" = (
+/obj/item/trash/material/metal,
+/obj/effect/damagedfloor,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "sEK" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -21073,6 +21440,13 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"sIg" = (
+/obj/structure/salvageable/console_broken_os,
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "sIW" = (
 /obj/machinery/power/smes/buildable,
 /obj/structure/cable/yellow,
@@ -21103,16 +21477,6 @@
 /obj/structure/multiz/ladder,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper)
-"sJY" = (
-/obj/random/junk,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
-/turf/simulated/floor/tiled/dark/brown_platform,
-/area/nadezhda/dungeon/outside/prepper/vault{
-	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
-	name = "Abandoned Bunker"
-	})
 "sKv" = (
 /obj/effect/decal/cleanable/cobweb2,
 /obj/structure/closet/random_hostilemobs,
@@ -21418,6 +21782,13 @@
 /obj/item/hand_labeler,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/dungeon/outside/zoo)
+"taP" = (
+/obj/item/trash/material/metal,
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "tbd" = (
 /obj/structure/shuttle_part/cargo{
 	icon_state = "cargoshwall41";
@@ -21482,6 +21853,13 @@
 /obj/random/pack/tech_loot/onestar,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
+"tdN" = (
+/obj/structure/scrap/medical,
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "tdU" = (
 /obj/structure/railing/grey,
 /obj/random/scrap/sparse_even,
@@ -22004,12 +22382,27 @@
 /obj/random/mob/undergroundmob,
 /turf/simulated/floor/asteroid/dirt/dark,
 /area/asteroid/rogue)
+"tDn" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/toolbox/mechanical,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "tDs" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/smuggler_zone)
+"tDS" = (
+/obj/structure/low_wall,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "tEd" = (
 /obj/structure/salvageable/implant_container,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -22551,6 +22944,12 @@
 /obj/structure/flora/ausbushes/genericbush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/meadow)
+"ucp" = (
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "ucq" = (
 /obj/structure/table/standard,
 /obj/item/gun/projectile/dartgun,
@@ -22671,6 +23070,13 @@
 /obj/structure/multiz/ladder/up,
 /turf/simulated/floor/wood/wild4,
 /area/asteroid/rogue)
+"ufS" = (
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "ufW" = (
 /obj/machinery/light{
 	dir = 1
@@ -22993,6 +23399,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper)
+"uvI" = (
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "uvO" = (
 /obj/structure/flora/small/grassb3,
 /obj/structure/flora/small/busha1,
@@ -23447,6 +23859,10 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"uOJ" = (
+/obj/structure/girder,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/meadow)
 "uON" = (
 /obj/machinery/gym,
 /turf/simulated/floor/wood/wild5,
@@ -23966,6 +24382,15 @@
 /obj/item/computer_hardware/hard_drive/portable/design/onestar,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star)
+"vme" = (
+/obj/structure/table/rack/shelf,
+/obj/random/ammo_lowcost/low_chance,
+/obj/random/ammo_lowcost/low_chance,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "vmk" = (
 /obj/structure/table/onestar,
 /obj/random/common_oddities/low_chance,
@@ -24408,6 +24833,12 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"vIm" = (
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "vIA" = (
 /obj/structure/flora/small/bushc2,
 /obj/structure/flora/small/busha2,
@@ -24637,6 +25068,14 @@
 /obj/random/junk,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
+"vRw" = (
+/obj/structure/table/rack/shelf,
+/obj/random/gun_cheap,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "vSd" = (
 /obj/item/mine_old,
 /obj/structure/flora/small/bushb3,
@@ -24915,6 +25354,11 @@
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/dungeon/outside/monster_cave)
+"wfZ" = (
+/obj/effect/damagedfloor,
+/obj/effect/damagedfloor,
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/meadow)
 "wgB" = (
 /obj/structure/flora/small/trailrockb1,
 /turf/simulated/floor/asteroid/dirt,
@@ -24979,6 +25423,14 @@
 /obj/random/tool_upgrade/low_chance,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star)
+"wjD" = (
+/obj/effect/decal/cleanable/blood/oil,
+/obj/effect/damagedfloor,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "wjL" = (
 /obj/structure/closet/secure_closet/injection,
 /turf/simulated/floor/tiled/white/panels,
@@ -25250,6 +25702,14 @@
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
+	})
+"wvp" = (
+/obj/item/bedsheet/brown,
+/obj/structure/bed/padded,
+/turf/simulated/floor/tiled/dark/panels,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
 	})
 "wvJ" = (
 /obj/random/closet_maintloot,
@@ -25625,6 +26085,17 @@
 /obj/item/clothing/gloves/thick,
 /turf/simulated/floor/carpet,
 /area/nadezhda/dungeon/outside/safehouse)
+"wNy" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/item/ammo_casing/heavy_rifle_408/hv/spent,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "wNz" = (
 /obj/structure/sign/faction/one_star_old{
 	pixel_y = 30
@@ -25744,6 +26215,13 @@
 /obj/structure/flora/small/bushc1,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
+"wVd" = (
+/obj/item/ammo_casing/heavy_rifle_408/spent,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "wVw" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -25829,6 +26307,15 @@
 	},
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star)
+"wZp" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/fancy/cigarettes/fortress,
+/obj/item/clothing/mask/smokable/cigarette/cigar,
+/turf/simulated/floor/carpet/bcarpet,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "wZv" = (
 /obj/structure/table/standard,
 /obj/random/medical,
@@ -25863,6 +26350,16 @@
 /area/nadezhda/dungeon/outside/prepper/vault{
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
+	})
+"xbf" = (
+/obj/item/ammo_casing/heavy_rifle_408/spent,
+/obj/item/ammo_casing/heavy_rifle_408/spent,
+/obj/item/ammo_casing/heavy_rifle_408/spent,
+/obj/effect/damagedfloor,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
 	})
 "xbq" = (
 /obj/random/lathe_disk,
@@ -26135,6 +26632,14 @@
 /obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
+"xkW" = (
+/obj/item/ammo_casing/shotgun/spent,
+/obj/effect/damagedfloor,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "xkY" = (
 /obj/structure/table/woodentable,
 /obj/item/toy/plushie/fox/coffee,
@@ -26234,6 +26739,13 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor4)
+"xrb" = (
+/obj/structure/salvageable/server_os,
+/turf/simulated/floor/tiled/steel/danger,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "xri" = (
 /obj/random/junk,
 /obj/effect/decal/cleanable/dirt,
@@ -26425,6 +26937,13 @@
 "xzW" = (
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/dungeon/outside/smuggler_zone_u)
+"xAj" = (
+/obj/structure/closet/crate/trashcart,
+/turf/simulated/floor/tiled/steel/techfloor_grid,
+/area/nadezhda/dungeon/outside/smuggler_zone{
+	name = "Abandoned Outpost";
+	narrate = "This building seems to have been quickly fabricated within the depths of the small rocky hill over it. Whoever made it seems to have fled, as the interior seems both roughened by fighting, but also completely abandoned, with machines either falling into disarray or intentionally sabotaged along with the rest of the outpost."
+	})
 "xAR" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -56901,7 +57420,7 @@ aHN
 aHN
 aHN
 aHN
-sJY
+snd
 qvg
 aHN
 nZp
@@ -70392,10 +70911,10 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
+fEj
+qJp
+qJp
+qJp
 tml
 tml
 tml
@@ -70591,20 +71110,20 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
+qJp
+qJp
+qJp
+jXI
+jXI
+fEj
+fEj
+fEj
+fEj
+fEj
+uvI
+wvp
+soI
+qJp
 tml
 tml
 tml
@@ -70800,20 +71319,20 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
+qJp
+mjw
+cpZ
+vIm
+vIm
+fEj
+fEj
+fEj
+fEj
+vIm
+vIm
+vIm
+uvI
+qJp
 tml
 tml
 tml
@@ -71009,20 +71528,20 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
+qJp
+mjw
+heZ
+vIm
+gQm
+fEj
+fEj
+fEj
+pDj
+tdN
+jOg
+vIm
+uvI
+qJp
 tml
 tml
 tml
@@ -71218,20 +71737,20 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
+qJp
+vme
+idq
+vIm
+fEj
+fEj
+fEj
+fEj
+fEj
+fEj
+bUL
+dqm
+uvI
+qJp
 tml
 tml
 tml
@@ -71427,20 +71946,20 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
+qJp
+vRw
+rxo
+vIm
+fEj
+fEj
+fEj
+qJp
+fEj
+fEj
+qJp
+vIm
+qJp
+qJp
 tml
 tml
 tml
@@ -71636,20 +72155,20 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
+qJp
+qJp
+qJp
+vIm
+fEj
+fEj
+fEj
+qJp
+qJp
+qJp
+qJp
+wVd
+qJp
+qJp
 tml
 tml
 tml
@@ -71845,20 +72364,20 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
+fEj
+fEj
+fEj
+vIm
+fEj
+fEj
+fEj
+fEj
+aVB
+aVB
+heZ
+vIm
+qNj
+qJp
 tml
 tml
 tml
@@ -72049,25 +72568,25 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
+fEj
+qJp
+qJp
+qJp
+qJp
+qJp
+qJp
+fEj
+vIm
+sEJ
+fEj
+fEj
+aVB
+wjD
+xrb
+aVB
+vIm
+vIm
+qJp
 tml
 tml
 tml
@@ -72258,25 +72777,25 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
+qJp
+qJp
+taP
+uvI
+dHy
+uvI
+uvI
+uvI
+vIm
+vIm
+fEj
+fEj
+tDn
+mMK
+xbf
+aIU
+vIm
+dCs
+qJp
 tml
 tml
 tml
@@ -72467,25 +72986,25 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
+qJp
+rCn
+uvI
+jlR
+ufS
+fxK
+gVU
+fEj
+vIm
+dCs
+vIm
+hbk
+mvV
+phr
+rYD
+vIm
+dRt
+ipX
+qJp
 tml
 tml
 tml
@@ -72676,25 +73195,25 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
+qJp
+gJH
+uvI
+jlR
+wZp
+fxK
+fEj
+fEj
+iJo
+vIm
+dWA
+wNy
+dvn
+dvn
+dvn
+jXI
+vIm
+dRt
+qJp
 tml
 tml
 tml
@@ -72885,25 +73404,25 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-tml
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
+fEj
+sIg
+uvI
+jlR
+ufS
+fxK
+uvI
+fEj
+fEj
+vIm
+fEj
+fEj
+cZh
+dCs
+vIm
+vIm
+wVd
+vIm
+qJp
 qxe
 qxe
 tml
@@ -73095,24 +73614,24 @@ tml
 tml
 tml
 tml
-tml
-tml
-tml
-tml
-tml
-tml
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
+fEj
+fEj
+uvI
+skx
+fEj
+fEj
+fEj
+fEj
+vIm
+fEj
+riH
+rVM
+xkW
+vIm
+vIm
+xAj
+xAj
+qJp
 qxe
 qxe
 tml
@@ -73306,22 +73825,22 @@ tml
 tml
 tml
 qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-qxe
-wFt
-wFt
-wFt
-wFt
-wFt
-qxe
+fEj
+qJp
+qJp
+fEj
+fEj
+fEj
+mZM
+tDS
+qJp
+qJp
+nZq
+ucp
+rMP
+qJp
+qJp
+fEj
 qxe
 qxe
 gbQ
@@ -73520,18 +74039,18 @@ qxe
 qxe
 naj
 naj
-qxe
-oQy
-qxe
-qxe
+fEj
+tDS
+tDS
+aWm
 wFt
 nkE
+uOJ
 wFt
 wFt
-wFt
-wFt
-wFt
-wFt
+aWm
+mYu
+cve
 qxe
 naj
 naj
@@ -73732,13 +74251,13 @@ naj
 qxe
 oQy
 hRL
+prf
 wFt
 wFt
 wFt
 wFt
-wFt
-nkE
-wFt
+fPp
+aWm
 wFt
 wFt
 hRL
@@ -73939,17 +74458,17 @@ naj
 naj
 naj
 naj
-fon
+gqE
 hRL
-wFt
-wFt
+prf
+aWm
 wFt
 wFt
 hRL
-wFt
-wFt
-wFt
-wFt
+aWm
+wfZ
+aWm
+kju
 fon
 naj
 naj
@@ -74148,18 +74667,18 @@ naj
 naj
 naj
 naj
-fon
+gNM
+hRb
+uOJ
+uOJ
+kzf
 hRL
-hRL
-hRL
-hRL
-hRL
-hRL
+fhq
 wFt
-wFt
-wFt
-wFt
-fon
+uOJ
+uOJ
+hRb
+gNM
 oQy
 tmw
 naj
@@ -74358,9 +74877,9 @@ naj
 naj
 atz
 hRL
+eWV
 hRL
-hRL
-hRL
+eWV
 afB
 hRL
 hRL
@@ -74568,7 +75087,7 @@ qxe
 fon
 hRL
 hRL
-hRL
+eWV
 hRL
 hRL
 hRL
@@ -74999,7 +75518,7 @@ hRL
 hRL
 iVK
 hRL
-hRL
+hIy
 fon
 fon
 hRL
@@ -75204,7 +75723,7 @@ fwV
 fon
 atz
 hRL
-hRL
+kzf
 hRL
 hRL
 hRL
@@ -75412,7 +75931,7 @@ naj
 fwV
 naj
 fon
-fon
+gYc
 hRL
 hRL
 hRL

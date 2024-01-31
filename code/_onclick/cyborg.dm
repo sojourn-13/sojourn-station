@@ -83,7 +83,7 @@
 	if(A == loc || (A in loc) || (A in contents))
 		// No adjacency checks
 
-		var/resolved = A.attackby(W, src, params)
+		var/resolved = (LEGACY_SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (LEGACY_SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
 		if(!resolved && A && W)
 			W.afterattack(A, src, 1, params)
 		return
@@ -94,14 +94,15 @@
 	// cyborgs are prohibited from using storage items so we can I think safely remove (A.loc && isturf(A.loc.loc))
 	if(isturf(A) || isturf(A.loc))
 		if(A.Adjacent(src)) // see adjacent.dm
+			if(W)
+				// Return 1 in attackby() to prevent afterattack() effects (when safely moving items for example)
+				var/resolved = (LEGACY_SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (LEGACY_SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
+				if(!resolved && A && W)
+					W.afterattack(A, src, 1, params) // 1: clicking something Adjacent
+			return
+		if(W)
+			W.afterattack(A, src, 0, params) // 0: not Adjacent
 
-			var/resolved = A.attackby(W, src)
-			if(!resolved && A && W)
-				W.afterattack(A, src, 1, params)
-			return
-		else
-			W.afterattack(A, src, 0, params)
-			return
 	return
 
 
@@ -134,9 +135,10 @@
 
 	// cyborgs are prohibited from using storage items so we can I think safely remove (A.loc && isturf(A.loc.loc))
 	if(isturf(A) || isturf(A.loc))
-		if(A.Adjacent(src)) // see adjacent.dm
-			var/resolved = A.attackby(W, src, params)
-			if (!grippersafety(G))return
+		if(A.Adjacent(src))
+			var/resolved = (LEGACY_SEND_SIGNAL(W, COMSIG_IATTACK, A, src, params)) || (LEGACY_SEND_SIGNAL(A, COMSIG_ATTACKBY, W, src, params)) || W.resolve_attackby(A, src, params)
+			if (!grippersafety(G))
+				return
 			if(!resolved && A && W)
 				W.afterattack(A, src, 1, params)
 			if (!grippersafety(G))return

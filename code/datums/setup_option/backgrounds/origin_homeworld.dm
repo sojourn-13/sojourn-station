@@ -346,3 +346,21 @@
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
+
+/datum/category_item/setup_option/background/homeworld/lost_world
+	name = "The Forgotten Empire"
+	desc = "Thought by some to be less a literal time, place and culture and more so a personal ideal. The Aulvae often speak in flowery prose of the past from which they come. \
+	Contradictory stories and vaguery have left many to wonder if it is not simply a collective coping mechanism as the Aulvae can recall precious little else from their past. \
+	None may deny that in spite of their peculiarities the Aulvae are a skilled and capable people in spite of their malleable disposition and naivete"
+
+	restricted_to_species = list(FORM_SLIME)
+	allow_modifications = FALSE
+
+	stat_modifiers = list(
+		STAT_ROB = 4,
+		STAT_TGH = 4,
+		STAT_VIG = 4,
+		STAT_BIO = 4,
+		STAT_MEC = 4,
+		STAT_COG = 4
+	)

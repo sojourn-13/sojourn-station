@@ -1701,3 +1701,25 @@
 	)
 	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
 	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
+
+//solfed gear
+
+/obj/item/clothing/suit/armor/platecarrier/solfed
+	name = "military plate carrier"
+	desc = "An armored vest carrying military grade trauma plates and advanced ballistic meshes. This particular set is deep black with golden IFF marks, the very same used by auxilliaries of the Solarian Federation."
+	icon_state = "platecarrier_sfa"
+	item_state = "platecarrier_sfa"
+	blood_overlay_type = "armor"
+	slowdown = 0.05
+	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+
+/obj/item/clothing/suit/armor/platecarrier/solfed/corpsman
+	name = "military plate carrier"
+	desc = "An armored vest carrying military grade trauma plates and advanced ballistic meshes. This particular set is deep black with golden IFF marks, the very same used by corpsmen of the Solarian Federation."
+	icon_state = "platecarrier_sfc"
+	item_state = "platecarrier_sfc"
+	blood_overlay_type = "armor"
+	slowdown = 0.05
+	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 40, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS

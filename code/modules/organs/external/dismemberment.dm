@@ -37,7 +37,7 @@
 
 	if(parent_organ)
 		var/datum/wound/lost_limb/W = new (src, disintegrate, clean)
-		if(clean)
+		if((clean) || (BP_IS_SLIME(src)))
 			if(!BP_IS_ROBOTIC(src))
 				parent_organ.wounds |= W
 				parent_organ.update_damages()

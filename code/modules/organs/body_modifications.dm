@@ -20,7 +20,7 @@ var/global/list/modifications_types = list(
 
 /proc/get_default_modificaton(var/nature = MODIFICATION_ORGANIC)
 	switch(nature)
-		if(MODIFICATION_ORGANIC, MODIFICATION_SUPERIOR)
+		if(MODIFICATION_ORGANIC, MODIFICATION_SUPERIOR, MODIFICATION_SLIME)
 			return body_modifications["nothing"]
 		if(MODIFICATION_SILICON)
 			return body_modifications["robotize_organ"]

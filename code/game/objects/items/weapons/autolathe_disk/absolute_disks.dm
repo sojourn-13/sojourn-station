@@ -207,7 +207,6 @@
 		/datum/design/autolathe/gun/regulator = 3,
 		/datum/design/autolathe/gun/lemant = 3,
 		/datum/design/autolathe/gun/taser,
-		/datum/design/autolathe/gun/laser = 2,
 		/datum/design/autolathe/gun/sniperrifle = 6,
 		/datum/design/autolathe/ammo/pistol_ammobox_biomatter,
 		/datum/design/autolathe/ammo/magnum_ammobox_biomatter = 2
@@ -474,7 +473,7 @@ obj/item/computer_hardware/hard_drive/portable/design/nt/valkirye/plus
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/concillium = 3,
-		/datum/design/autolathe/cell/medium/high,
+		/datum/design/autolathe/cell/large/high,
 	)
 
 

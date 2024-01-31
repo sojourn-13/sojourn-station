@@ -101,6 +101,7 @@
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
 #define PERK_REZ_SICKNESS_SEVERE /datum/perk/rezsickness/severe
 #define PERK_REZ_SICKNESS_FATAL /datum/perk/rezsickness/severe/fatal
+
 //////////////
 //Race Perks//
 //////////////
@@ -151,11 +152,17 @@
 //Folken
 #define PERK_FOLKEN_HEALING /datum/perk/folken_healing
 #define PERK_FOLKEN_HEALING_YOUNG /datum/perk/folken_healing/young
-//Slime
-#define PERK_LIMB_REGEN /datum/perk/limb_regen
-#define PERK_MIND_BOOST /datum/perk/slime_stat_boost/mental
-#define PERK_BODY_BOOST /datum/perk/slime_stat_boost/physical
-#define PERK_SPEED /datum/perk/speed_boost
+//Slimes
+#define PERK_LIMB_REGEN /datum/perk/racial/limb_regen
+#define PERK_SLIMEBODY /datum/perk/racial/slime_metabolism
+#define PERK_SLIMEREZ /datum/perk/racial/slime_rez_sickness
+#define PERK_SLIMEMETH /datum/perk/racial/speed_boost
+#define PERK_SLIMEBRAIN /datum/perk/racial/slime_stat_boost/mental
+#define PERK_SLIMEBUFF /datum/perk/racial/slime_stat_boost/physical
+
+//////////////
+//Core Perks//
+//////////////
 
 // Psionic perks
 #define PERK_PSION /datum/perk/psion
@@ -222,7 +229,13 @@
 #define PERK_ULTRASURGEON /datum/perk/drug/ultrasurgeon
 #define PERK_NJOY /datum/perk/njoy
 
+//Task Perks
+#define PERK_FORCEFUL_REJECTION /datum/perk/forceful_rejection
 
-//cooldown perks
+//////////////////
+//Cooldown perks//
+//////////////////
+
+//Exertion Perks
 #define PERK_COOLDOWN_REASON /datum/perk/cooldown/reason
 #define PERK_COOLDOWN_EXERTION /datum/perk/cooldown/exertion

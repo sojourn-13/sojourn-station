@@ -23,6 +23,7 @@
 #define SPECIES_ZORREN_FLAT		"Dog"
 #define SPECIES_ZORREN_HIGH		"Wolf"
 #define SPECIES_STATIONXENO     "Xenomorph Hybrid"
+#define SPECIES_SLIME			"Aulvae"
 #define SPECIES_CUSTOM			"Custom Species"
 
 // Monkey and alien monkeys.
@@ -68,7 +69,7 @@
 #define FORM_MOTH				"Moth"
 #define FORM_MOTH_WHITE			"Moth (Colorable)"
 #define FORM_NARAMAD			"Naramad"
-#define FORM_SLIME				"Slime"
+#define FORM_SLIME				"Aulvae"
 #define FORM_AVIAN				"Avian"
 #define FORM_SPIDER				"Arachnoid"
 #define FORM_STATIONXENO	    "Xenohybrid Drone"

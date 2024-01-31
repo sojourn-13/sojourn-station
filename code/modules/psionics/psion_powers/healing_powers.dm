@@ -23,18 +23,18 @@
 //Heals hunger
 /obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer()
 	set category = "Psionic powers"
-	set name = "Psychosomatic Transference (1)"
-	set desc = "Expend a single point of your psi essence to fill your stomach with cannibalized proteins from your own body. Beware, this will generate toxins and expend some of your blood."
+	set name = "Psychosomatic Fullness (1)"
+	set desc = "Expend a single point of your psi essence to convince your stomach it's not actually that hungry, burning fat reserves to keep going strong. Taxing on the mind and causes minor burns."
 	psi_point_cost = 1
 
 	if(pay_power_cost(psi_point_cost))
 		if(!owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
-			owner.nutrition = 400
-			owner.drip_blood(54)
+			owner.nutrition += 100 //Twice as strong as Soul Hunger
+			owner.adjustFireLoss(10) //You're not using your nutrition to fuel things like Church used to, this should be fine
 		else
-			owner.nutrition = 400
-			owner.drip_blood(26)
-		to_chat(owner, "You feel sick and woozy, a sudden full sensation in your gut almost making you want to vomit.")
+			owner.nutrition += 100
+			owner.adjustFireLoss(5)
+		to_chat(owner, "You feel energized, though there is minor pain from burning so much fat so quickly.")
 
 // Heals stuns/other misc things
 /obj/item/organ/internal/psionic_tumor/proc/chosen_control()

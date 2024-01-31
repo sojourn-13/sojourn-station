@@ -17,7 +17,7 @@
 	department_account_access = TRUE
 	playtimerequired = 2500
 	health_modifier = 25
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF, FORM_SLIME)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/smc
 
@@ -81,7 +81,7 @@
 	department_account_access = TRUE
 	playtimerequired = 2500
 	health_modifier = 25
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF, FORM_SLIME)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/swo
 
@@ -143,7 +143,7 @@
 	minimum_character_age = 25
 	playtimerequired = 1200
 	health_modifier = 20
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF, FORM_SLIME)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/gunserg
 
@@ -201,7 +201,7 @@
 	minimum_character_age = 25
 	playtimerequired = 1200
 	health_modifier = 20
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF, FORM_SLIME)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/serg
 
@@ -256,7 +256,7 @@
 	wage = WAGE_PROFESSIONAL
 	playtimerequired = 1200
 	health_modifier = 5
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF, FORM_SLIME)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/inspector
 

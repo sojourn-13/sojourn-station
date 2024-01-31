@@ -567,7 +567,7 @@
 	name = "bodytemp"
 	desc = "Temperature of your body. Affected by environment, health, and certain reagents.\
 	<br>Fever might be a sign of untreated infection.\
-	<br>You are slowed down if your body temperature is low enough, and hurt if it is high enough."
+	<br>You are slowed down if your body temperature is low enough, and hurt if it is too out of your comfort zone."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "blank"
 	screen_loc = "15,8"
@@ -671,6 +671,8 @@
 //--------------------------------------------------toxin---------------------------------------------------------
 /obj/screen/toxin
 	name = "toxin"
+	desc = "Warns you that there might be plasma or other bad gases in the air you're on.\
+	<br>Being in an environment with harmful gases without a voidsuit is probably fatal."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "tox0"
 	screen_loc = "15,10"
@@ -702,6 +704,8 @@
 
 /obj/screen/oxygen
 	name = "oxygen"
+	desc = "A warning sign that you're not in a position where you can breathe properly.\
+	<br>Being in an environment with low pressure without a voidsuit is often fatal."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "oxy0"
 	screen_loc = "15,12"
@@ -733,6 +737,8 @@
 //--------------------------------------------------fire---------------------------------------------------------
 /obj/screen/fire
 	name = "fire"
+	desc = "A warning sign if your body is probably experiencing damage from temperature or on fire.\
+	<br>Being in an environment with extreme temperature without a protection is quite fatal."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "blank"
 	screen_loc = "15,9"
@@ -766,6 +772,7 @@ obj/screen/fire/DEADelize()
 //-----------------------internal------------------------------
 /obj/screen/internal
 	name = "internal"
+	desc = "This is the selector for using internal air reserves."
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "blank"
 	screen_loc = "15,14"

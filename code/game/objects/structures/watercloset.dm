@@ -169,7 +169,8 @@
 	var/ismist = 0				//needs a var so we can make it linger~
 	var/watertemp = "normal"	//freezing, normal, or boiling
 	var/is_washing = 0
-	var/list/temperature_settings = list("normal" = 310, "boiling" = T0C+100, "freezing" = T0C)
+	//Boiling was edited to not be as lethal 38c for normal, 40c for boiling
+	var/list/temperature_settings = list("normal" = 311.15, "boiling" = 313.15, "freezing" = T0C)
 	var/soap_modifer = 20 //Baseline we clean up about 20 germs by water erosion
 	var/bless = FALSE
 	var/washing_callback = FALSE
@@ -403,6 +404,8 @@
 		var/mob/living/carbon/human/H = M
 		if(temperature >= H.species.heat_level_1)
 			to_chat(H, SPAN_DANGER("The water is searing hot!"))
+			if(H.frost > 0)
+				H.frost -= 5
 		else if(temperature <= H.species.cold_level_1)
 			to_chat(H, SPAN_WARNING("The water is freezing cold!"))
 

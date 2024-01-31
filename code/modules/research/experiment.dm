@@ -133,6 +133,9 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 /datum/experiment_data/proc/read_science_tool(obj/item/device/science_tool/I)
 	var/points = 0
 
+	points += I.raw_data_points
+	I.raw_data_points = 0
+
 	for(var/weapon in I.scanned_autopsy_weapons)
 		if(!(weapon in saved_autopsy_weapons))
 			saved_autopsy_weapons += weapon
@@ -348,6 +351,8 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	var/list/scanned_fruittraits = list()
 	//Datablock Data
 	var/datablocks = 0
+	//Flat out RnD points 1:1 to give
+	var/raw_data_points = 0
 
 /obj/item/device/science_tool/Initialize()
 	. = ..()
@@ -556,3 +561,29 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 /obj/item/computer_hardware/hard_drive/portable/research_points/rare
 	min_points = 10000
 	max_points = 20000
+
+/obj/proc/givepointscompont(raw_data_points)
+
+	var/datum/component/rnd_points/I = AddComponent(/datum/component/rnd_points)
+	I.data_points = raw_data_points
+	I.holding_obj = src
+
+/datum/component/rnd_points
+	dupe_mode = COMPONENT_DUPE_UNIQUE
+	can_transfer = TRUE
+	var/data_points = 0
+	var/obj/holding_obj //we ASSUME that are holder is an object, after all what else would be able to *PHYSICALY* hold points????
+
+/datum/component/rnd_points/RegisterWithParent()
+	RegisterSignal(parent, COMSIG_ATTACKBY, .proc/attempt_transfer)
+
+/datum/component/rnd_points/proc/attempt_transfer(obj/I, var/mob/living/user, params)
+	if(!holding_obj)
+		return
+
+	if(istype(I, /obj/item/device/science_tool)) //HAVE to be at the wire stage, to you know, data jack into wires
+		var/obj/item/device/science_tool/ST = I
+		ST.raw_data_points += data_points
+		user.visible_message("[user] attaches [I]'s datajack to [holding_obj.name].", "You attach [I]'s datajack to [holding_obj.name] gathering [data_points] data points")
+		data_points = 0
+		return

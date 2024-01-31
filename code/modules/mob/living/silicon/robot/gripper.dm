@@ -231,7 +231,7 @@
 		/obj/item/spacecash,
 		/obj/item/coin,
 		/obj/item/device/toner,
-		/obj/item/computer_hardware/hard_drive/portable/design
+		/obj/item/computer_hardware/hard_drive/portable
 		)
 
 /obj/item/gripper/research //A general usage gripper, used for toxins/robotics/xenobio/etc
@@ -290,7 +290,7 @@
 		/obj/item/tank,
 		/obj/item/reagent_containers/food/snacks/meat, //For grinding up roaches
 		/obj/item/reagent_containers/food/snacks/grown, //For grinding up herbs
-
+		/obj/item/genetics, //for doing genetics. Research borgs get this as well
 		/obj/item/stack/material/plasma
 		)
 
