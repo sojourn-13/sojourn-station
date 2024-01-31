@@ -123,6 +123,8 @@
 
 	var/recoil = 0
 
+	var/ignition_source = TRUE
+
 /obj/item/projectile/New()
 
 	penetration_holder = new /datum/penetration_holder
