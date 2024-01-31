@@ -85242,7 +85242,7 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
 "rUO" = (
-/mob/living/carbon/superior_animal/roach/benzin,
+/mob/living/carbon/superior_animal/roach/nitro,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/undergroundfloor2west)
 "rUW" = (
