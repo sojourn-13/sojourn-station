@@ -129,7 +129,7 @@
 		//If we have 60 TGH we automatically make the basic shield block proj skipping 1 psionic point cost
 		//This is so that if you have tanked cog or just power level TGH to be able to use the shield more affectively you can still be tanky!
 		//If you pick bedlam backround you also bypass the need of 2 points to block proj.
-		if (owner.stats.getStat(STAT_TGH) >= STAT_LEVEL_PROF || owner.stats.getPerk(PERK_PSI_MANIA)
+		if (owner.stats.getStat(STAT_TGH) >= STAT_LEVEL_PROF || owner.stats.getPerk(PERK_PSI_MANIA))
 			owner.visible_message(
 			"[owner] looks at the psy-shield and forcefully compresses it!",
 			"Its hard to tell but you can feel that the shield well more solidified. This should be able capable of blocking lasers and bullets."
