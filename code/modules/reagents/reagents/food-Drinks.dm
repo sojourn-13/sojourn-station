@@ -304,7 +304,10 @@
 /datum/reagent/organic/nutriment/hot_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.bodytemperature += 1.5 * TEMPERATURE_DAMAGE_COEFFICIENT
-
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.frost > 0)
+			H.frost -= 5
 
 /datum/reagent/organic/nutriment/hell_ramen
 	name = "Hell Ramen"
@@ -319,6 +322,10 @@
 /datum/reagent/organic/nutriment/hell_ramen/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
 	M.bodytemperature += 5 * TEMPERATURE_DAMAGE_COEFFICIENT
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.frost > 0)
+			H.frost -= 8
 
 /datum/reagent/organic/nothing
 	name = "Nothing"
@@ -379,6 +386,11 @@
 	if(isslime(M))
 		M.bodytemperature = max(M.bodytemperature - rand(10,20), 0)
 	holder.remove_reagent("capsaicin", 5)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.frost > 0)
+			H.frost += 2
+
 
 /datum/reagent/organic/capsaicin
 	name = "Capsaicin Oil"
@@ -400,6 +412,8 @@
 /datum/reagent/organic/capsaicin/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
+		if(H.frost > 0)
+			H.frost -= 1
 		if(H.species && (H.species.flags & (NO_PAIN)))
 			return
 	if(dose < agony_dose)
@@ -441,6 +455,8 @@
 		protection = list(H.head, H.glasses, H.wear_mask)
 		if(H.species && (H.species.flags & NO_PAIN))
 			no_pain = 1 //TODO: living-level can_feel_pain() proc
+		if(H.frost > 0)
+			H.frost -= 2
 	else
 		protection = list(M.wear_mask)
 
@@ -1816,9 +1832,17 @@
 
 /datum/reagent/ethanol/ntcahors/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
 	..()
-	M.adjust_hallucination(-0.9 * effect_multiplier)
-	M.add_chemical_effect(CE_TOXIN, -2.5 * effect_multiplier)
-	M.reagents.remove_reagent("wormwood", 0.8 * effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.adjust_hallucination(-0.9 * effect_multiplier)
+		M.reagents.remove_reagent("wormwood", 0.8 * effect_multiplier) //well at least we still do these basic things.
+		M.take_organ_damage(1, 0) //we are however still bad for slime biology.
+		M.apply_damage(1, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
+	else
+		M.adjust_hallucination(-0.9 * effect_multiplier)
+		M.add_chemical_effect(CE_TOXIN, -2.5 * effect_multiplier)
+		M.reagents.remove_reagent("wormwood", 0.8 * effect_multiplier)
 
 // Cocktails
 

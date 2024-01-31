@@ -15,9 +15,9 @@
 #define HEAT_GAS_DAMAGE_LEVEL_2 4 //Amount of damage applied when the current breath's temperature passes the 400K point
 #define HEAT_GAS_DAMAGE_LEVEL_3 8 //Amount of damage applied when the current breath's temperature passes the 1000K point
 
-#define COLD_GAS_DAMAGE_LEVEL_1 0.5 //Amount of damage applied when the current breath's temperature just passes the 260.15k safety point
-#define COLD_GAS_DAMAGE_LEVEL_2 1.5 //Amount of damage applied when the current breath's temperature passes the 200K point
-#define COLD_GAS_DAMAGE_LEVEL_3 3 //Amount of damage applied when the current breath's temperature passes the 120K point
+#define COLD_GAS_DAMAGE_LEVEL_1 0.1 //Amount of damage applied when the current breath's temperature just passes the 260.15k safety point
+#define COLD_GAS_DAMAGE_LEVEL_2 0.5 //Amount of damage applied when the current breath's temperature passes the 200K point
+#define COLD_GAS_DAMAGE_LEVEL_3 1   //Amount of damage applied when the current breath's temperature passes the 120K point
 
 #define FIRE_ALERT_NONE 0 //No fire alert
 #define FIRE_ALERT_COLD 1 //Frostbite
@@ -254,26 +254,12 @@
 	radiation = CLAMP(radiation,0,100)
 	var/damage = rand(0,0) //We start doing no serious damage,
 
-	if (radiation > 0)
-		radiation -= 1 * RADIATION_SPEED_COEFFICIENT //and rads slowly start to go down
-		if(prob(1)) //very low chance per tic but does happen
-			to_chat(src, SPAN_WARNING("Saliva floods from under your tongue as you're overcome with a terrible nausea."))
-			vomit()
-		if(prob(5))
-			take_overall_damage(0,rand(2,4), used_weapon = "Radiation Burns")
-			to_chat(src, SPAN_WARNING("Your skin suddenly feels warm and begins to redden."))
-
-	if (radiation > 30)
+	if (radiation)
 		radiation -= 1 * RADIATION_SPEED_COEFFICIENT
-		if(prob(5)) //a chance exists now for serious bad times.
-			damage = rand(2,4)
-			to_chat(src, SPAN_WARNING("You suddenly have a metallic taste in your mouth..."))
 
-		if (radiation > 60)
-			if(prob(50))
-				damage = rand(2,4)
-				radiation -= 1 * RADIATION_SPEED_COEFFICIENT
-			if(prob(5))
+		if (radiation > 50)
+			radiation -= 1 * RADIATION_SPEED_COEFFICIENT
+			if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT))
 				radiation -= 5 * RADIATION_SPEED_COEFFICIENT
 				to_chat(src, SPAN_WARNING("You feel weak."))
 				take_overall_damage(0,rand(0,2), used_weapon = "Radiation Burns")
@@ -509,40 +495,56 @@
 	breath.update_values()
 	return !failed_breath
 
+//this proc handles breathable gas temeperature
 /mob/living/carbon/human/proc/handle_temperature_effects(datum/gas_mixture/breath)
 	if(!species)
 		return
 	// Hot air hurts :( :(
-	if((breath.temperature < species.cold_level_1 || breath.temperature > species.heat_level_1) && !(COLD_RESISTANCE in mutations))
-		var/damage = 0
-		if(breath.temperature <= species.cold_level_1)
+	if((breath.temperature < species.lower_breath_t || breath.temperature > species.upper_breath_t) && !(COLD_RESISTANCE in mutations))
+		var/oof = 0
+		if(breath.temperature <= species.lower_breath_t)
 			if(prob(20))
-				to_chat(src, SPAN_DANGER("You feel your face freezing and icicles forming in your lungs!"))
+				to_chat(src, SPAN_DANGER("You feel icicles forming in your lungs!"))
 
-			switch(breath.temperature)
-				if(species.cold_level_3 to species.cold_level_2)
-					damage = COLD_GAS_DAMAGE_LEVEL_3
-				if(species.cold_level_2 to species.cold_level_1)
-					damage = COLD_GAS_DAMAGE_LEVEL_2
-				else
-					damage = COLD_GAS_DAMAGE_LEVEL_1
+			if(breath.temperature <= (species.lower_breath_t - 40))
+				oof += COLD_GAS_DAMAGE_LEVEL_3
+				frost += COLD_GAS_DAMAGE_LEVEL_3
+			else if(breath.temperature <= (species.lower_breath_t - 20))
+				oof += COLD_GAS_DAMAGE_LEVEL_2
+				frost += COLD_GAS_DAMAGE_LEVEL_2
+			else
+				oof += COLD_GAS_DAMAGE_LEVEL_1
+				frost += COLD_GAS_DAMAGE_LEVEL_1
 
-			apply_damage(damage, BURN, BP_HEAD, used_weapon = "Excessive Cold")
+            //apply_damage(damage, BURN, OP_LUNGS, used_weapon = "Artic Inhalation") this is here case someone figures out how to give lung damage and show up on authopsy
 			fire_alert = FIRE_ALERT_COLD
-		else if(breath.temperature >= species.heat_level_1)
+			if(oof >= 8)
+				var/obj/item/organ/internal/L = random_organ_by_process(OP_LUNGS)
+				if(L && istype(L))
+					L.take_damage(oof,BURN)
+					oof = 0
+
+		else if(breath.temperature >= species.upper_breath_t)
 			if(prob(20))
-				to_chat(src, SPAN_DANGER("You feel your face burning and a searing heat in your lungs!"))
+				to_chat(src, SPAN_DANGER("You feel a searing heat in your lungs!"))
 
-			switch(breath.temperature)
-				if(species.heat_level_1 to species.heat_level_2)
-					damage = HEAT_GAS_DAMAGE_LEVEL_1
-				if(species.heat_level_2 to species.heat_level_3)
-					damage = HEAT_GAS_DAMAGE_LEVEL_2
-				else
-					damage = HEAT_GAS_DAMAGE_LEVEL_3
+			if(breath.temperature >= (species.upper_breath_t - 40))
+				oof += HEAT_GAS_DAMAGE_LEVEL_3
+				frost -= HEAT_GAS_DAMAGE_LEVEL_3
+			else if(breath.temperature >= (species.upper_breath_t - 20))
+				oof += HEAT_GAS_DAMAGE_LEVEL_2
+				frost -= HEAT_GAS_DAMAGE_LEVEL_2
+			else
+				oof += HEAT_GAS_DAMAGE_LEVEL_1
+				frost -= HEAT_GAS_DAMAGE_LEVEL_1
 
-			apply_damage(damage, BURN, BP_HEAD, used_weapon = "Excessive Heat")
+			//apply_damage(damage, BURN, OP_LUNGS, used_weapon = "Excessive Heat") this is here case someone figures out how to give lung damage and show up on authopsy
 			fire_alert = FIRE_ALERT_HOT
+			if(oof >= 8)
+				var/obj/item/organ/internal/L = random_organ_by_process(OP_LUNGS)
+				if(L && istype(L))
+					L.take_damage(oof,BURN)
+					oof = 0
 
 		//breathing in hot/cold air also heats/cools you a bit
 		var/temp_adj = breath.temperature - bodytemperature
@@ -564,6 +566,7 @@
 	else if(breath.temperature <= species.cold_discomfort_level)
 		species.get_environment_discomfort(src,"cold")
 
+//Heavilly edited for lib
 /mob/living/carbon/human/handle_environment(datum/gas_mixture/environment)
 	if(!environment)
 		return
@@ -627,10 +630,13 @@
 		switch(bodytemperature)
 			if(species.heat_level_1 to species.heat_level_2)
 				burn_dam = HEAT_DAMAGE_LEVEL_1
+				frost -= HEAT_DAMAGE_LEVEL_1
 			if(species.heat_level_2 to species.heat_level_3)
 				burn_dam = HEAT_DAMAGE_LEVEL_2
+				frost -= HEAT_DAMAGE_LEVEL_2
 			if(species.heat_level_3 to INFINITY)
 				burn_dam = HEAT_DAMAGE_LEVEL_3
+				frost -= HEAT_DAMAGE_LEVEL_3
 		take_overall_damage(burn=burn_dam, used_weapon = "High Body Temperature")
 		fire_alert = max(fire_alert, FIRE_ALERT_HOT)
 
@@ -639,14 +645,26 @@
 		if(status_flags & GODMODE)	return 1	//godmode
 
 		if(!istype(loc, /obj/machinery/atmospherics/unary/cryo_cell))
-			var/burn_dam = 0
 			switch(bodytemperature)
 				if(-INFINITY to species.cold_level_3)
-					burn_dam = COLD_DAMAGE_LEVEL_1
+					frost += COLD_DAMAGE_LEVEL_1
 				if(species.cold_level_3 to species.cold_level_2)
-					burn_dam = COLD_DAMAGE_LEVEL_2
+					frost += COLD_DAMAGE_LEVEL_2
 				if(species.cold_level_2 to species.cold_level_1)
+					frost += COLD_DAMAGE_LEVEL_3
+			fire_alert = max(fire_alert, FIRE_ALERT_COLD)
+		else
+			var/burn_dam = 0
+			switch(bodytemperature)
+				if(species.cold_level_1 to species.cold_level_2)
+					burn_dam = COLD_DAMAGE_LEVEL_1
+					frost += COLD_DAMAGE_LEVEL_1
+				if(species.cold_level_2 to species.cold_level_3)
+					burn_dam = COLD_DAMAGE_LEVEL_2
+					frost += COLD_DAMAGE_LEVEL_2
+				if(species.cold_level_3 to -(INFINITY))
 					burn_dam = COLD_DAMAGE_LEVEL_3
+					frost += COLD_DAMAGE_LEVEL_3
 			take_overall_damage(burn=burn_dam, used_weapon = "Low Body Temperature")
 			fire_alert = max(fire_alert, FIRE_ALERT_COLD)
 
@@ -710,6 +728,7 @@
 	if(bodytemperature < species.cold_level_1) //260.15 is 310.15 - 50, the temperature where you start to feel effects.
 		if(nutrition >= 2) //If we are very, very cold we'll use up quite a bit of nutriment to heat us up.
 			nutrition -= 2
+		frost += 0.5
 		var/recovery_amt = max((body_temperature_difference / BODYTEMP_AUTORECOVERY_DIVISOR), BODYTEMP_AUTORECOVERY_MINIMUM)
 		//world << "Cold. Difference = [body_temperature_difference]. Recovering [recovery_amt]"
 //				log_debug("Cold. Difference = [body_temperature_difference]. Recovering [recovery_amt]")
@@ -776,6 +795,8 @@
 	return min(1,.)
 
 /mob/living/carbon/human/handle_chemicals_in_body()
+	always_ingest = species.always_ingest
+	always_blood = species.always_blood
 	if(in_stasis)
 		return
 
@@ -803,7 +824,7 @@
 		for(var/obj/item/I in src)
 			if(I.contaminated)
 				total_plasmaloss += vsc.plc.CONTAMINATION_LOSS
-		if(!(status_flags & GODMODE))
+		if(!(status_flags & GODMODE) && prob(10))
 			bloodstr.add_reagent("plasma", total_plasmaloss)
 
 	if(status_flags & GODMODE)
@@ -813,6 +834,11 @@
 		var/datum/perk/nanite_regen/P = stats.getPerk(PERK_NANITE_REGEN) // Add a reference to the perk for us to use.
 		if(P && P.regen_rate) // Check if the perk is actually there and got regeneration enabled.
 			heal_overall_damage(P.regen_rate, P.regen_rate, P.regen_rate)
+
+	if(stats.getPerk(PERK_SLIMEBODY))// Very lazy but whatever. To Do - make both of these into one thing and maybe make it a bit more modular.
+		var/datum/perk/racial/slime_metabolism/S = stats.getPerk(PERK_SLIMEBODY)
+		if(S && S.regen_rate  && nutrition > 300) //We lose regen when we are below half max nutrition.
+			heal_overall_damage(S.regen_rate, S.regen_rate, S.regen_rate)
 
 	if(species.light_dam)//TODO: Use this proc for flora and mycus races. Search proc mycus. -Note for Kaz.
 		var/light_amount = 0

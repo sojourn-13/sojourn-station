@@ -25,15 +25,27 @@
 			var/mob/living/carbon/human/H = M
 			H.sanity.onToxin(src, effect_multiplier)
 			M.sanity.onToxin(src, multi)*/
-		M.add_chemical_effect(CE_TOXIN, strength + dose / 2)
+		if(M.species?.reagent_tag == IS_SLIME)
+			M.heal_organ_damage(0.1 * strength, 0.1 * strength)
+			M.add_chemical_effect(CE_ANTITOX, 0.3 * strength)
+		else
+			M.add_chemical_effect(CE_TOXIN, strength + dose / 2)
 
 /datum/reagent/toxin/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	if(strength)
-		M.add_chemical_effect(CE_TOXIN, strength + dose / 3)
+		if(M.species?.reagent_tag == IS_SLIME)
+			M.heal_organ_damage(0.1 * strength, 0.1 * strength)
+			M.add_chemical_effect(CE_ANTITOX, 0.3 * strength)
+		else
+			M.add_chemical_effect(CE_TOXIN, strength + dose / 3)
 
 /datum/reagent/toxin/overdose(mob/living/carbon/M, alien)
 	if(strength)
-		M.add_chemical_effect(CE_TOXIN, strength * dose / 4)
+		if(M.species?.reagent_tag == IS_SLIME)
+			M.heal_organ_damage(0.05 * strength, 0.05 * strength)
+			M.add_chemical_effect(CE_ANTITOX, 0.1)
+		else
+			M.add_chemical_effect(CE_TOXIN, strength * dose / 4)
 
 /datum/reagent/toxin/wormwood
 	name = "Wormwood"
@@ -153,9 +165,30 @@
 		L.adjust_fire_stacks(amount / 5)
 
 /datum/reagent/toxin/plasma/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
-	M.take_organ_damage(0, effect_multiplier * 0.1) //being splashed directly with plasma causes minor chemical burns
+	if(M.species?.reagent_tag == IS_SLIME)
+		return
+	else
+		M.take_organ_damage(0, effect_multiplier * 0.1) //being splashed directly with plasma causes minor chemical burns
 	if(prob(50))
 		M.pl_effects()
+
+/datum/reagent/toxin/plasma/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(strength)
+		if(M.species?.reagent_tag == IS_SLIME)
+			M.adjustNutrition(strength)
+			M.heal_organ_damage(0.2 * strength, 0.2 * strength)
+			M.add_chemical_effect(CE_ANTITOX, 0.3 * strength)
+			return
+		if(ishuman(M))
+			..()
+			var/mob/living/carbon/human/H = M
+			var/obj/item/organ/internal/kidney/K = H.random_organ_by_process(OP_KIDNEY_LEFT, OP_KIDNEY_RIGHT)
+			var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
+			M.add_chemical_effect(CE_TOXIN, 5 * dose) //very bad.
+			if(prob(3 * dose))
+				create_overdose_wound(K, M, /datum/component/internal_wound/organic/heavy_poisoning/plasma, "plasma poisoning")
+			else if(prob(3 * dose))
+				create_overdose_wound(L, M, /datum/component/internal_wound/organic/heavy_poisoning/plasma, "plasma poisoning")
 
 /datum/reagent/toxin/plasma/touch_turf(turf/simulated/T)
 	if(!istype(T))
@@ -163,6 +196,33 @@
 	T.assume_gas("plasma", volume, T20C)
 	remove_self(volume)
 	return TRUE
+
+/datum/reagent/toxin/plasma/on_mob_add(mob/living/carbon/human/L)
+	. = ..()
+	var/mob/living/carbon/human/H = L
+	if(ishuman(H))
+		if((L.species.name == SPECIES_SLIME) && (L.stat == DEAD))
+			GLOB.dead_mob_list.Remove(L)
+			if((L in GLOB.living_mob_list) || (L in GLOB.dead_mob_list))
+				WARNING("Mob [L] was Adenosine+ but already in the living or dead list still!")
+			GLOB.living_mob_list += L
+
+			L.timeofdeath = 0
+			L.stat = UNCONSCIOUS //Life() can bring them back to consciousness if it needs to.
+			L.failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
+
+			//Stablizating
+			L.heal_organ_damage(30, 30)
+			L.adjustOxyLoss(-50)
+			L.stats.addPerk(PERK_SLIMEREZ) //When revived this way we get a nasty rez sickness that affects physical stats and dam-mod, but gives us more rob for a limited time.
+
+			L.custom_emote(2, "vibrates and wobbles, electricity momentarily visible within their transluscent flesh.")
+			L.Weaken(rand(10,25))
+			L.updatehealth()
+			//holder.remove_reagent("plasma", 30)
+			return
+		else
+			return
 
 /datum/reagent/toxin/cyanide //Fast and Lethal
 	name = "Cyanide"
@@ -493,7 +553,7 @@
 	common = TRUE //So people mistakenly believe it is, in fact, beer.
 
 /* Transformations */
-
+/* With the reimplimentation of slime people as a cogent thing, I'm commenting these out for now. Perhaps later we'll do something with this.
 /datum/reagent/toxin/slimetoxin
 	name = "Mutation Toxin"
 	id = "mutationtoxin"
@@ -506,11 +566,11 @@
 /datum/reagent/toxin/slimetoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(H.species.name != "Slime")
+		if(H.species.name != "Aulvae")
 			to_chat(M, SPAN_DANGER("Your flesh rapidly mutates!"))
-			H.set_species("Slime")
+			H.set_species("Aulvae")
 
-/* Erismed 4 ver of this chem. Kept in the event we ever *get* slimepeople, leaving as original for now.
+//Erismed 4 ver of this chem. Kept in the event we ever *get* slimepeople, leaving as original for now.
 		if(H.species.name != SPECIES_SLIME && !H.isSynthetic()) //cannot transform if already a slime perosn or lack flesh to transform
 			if(istype(H.get_core_implant(), /obj/item/implant/core_implant/cruciform))
 				H.gib() //Deus saves
@@ -520,7 +580,7 @@
 					if(istype(W, /obj/item/organ/external/robotic) || istype(W, /obj/item/implant)) //drop prosthetic limbs and implants, you are a slime now.
 						W.dropped()
 				H.set_species(SPECIES_SLIME)
-*/
+
 
 /datum/reagent/toxin/aslimetoxin
 	name = "Advanced Mutation Toxin"
@@ -568,6 +628,8 @@
 		else //if victim was cruciformed, gib the body instead of creating a slime. Deus saves
 			M.gib()
 	else
+		new_mob.key = M.key
+	qdel(M)
 		MH.vomit() //Otherwise the toxin spams as the body attempts to process it. Gets it out of the system quickly and we can stop trying to process this.
 
 /datum/reagent/other/xenomicrobes
@@ -577,6 +639,7 @@
 	taste_description = "sludge"
 	reagent_state = LIQUID
 	color = "#535E66"
+*/
 
 /datum/reagent/toxin/pararein
 	name = "Pararein"

@@ -70,7 +70,7 @@
 	return tool_name
 
 /datum/surgery_step/fix_bone/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
-	return BP_IS_ORGANIC(organ) && organ.is_open() && organ.damage > 0
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && organ.is_open() && organ.damage > 0
 
 /datum/surgery_step/fix_bone/begin_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
 	user.visible_message(
@@ -105,7 +105,7 @@
 	can_infect = TRUE
 
 /datum/surgery_step/fix_bleeding/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	return BP_IS_ORGANIC(organ) && organ.open && (organ.status & ORGAN_BLEEDING)
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && organ.open && (organ.status & ORGAN_BLEEDING)
 
 /datum/surgery_step/fix_bleeding/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(

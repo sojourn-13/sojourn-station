@@ -173,6 +173,10 @@
 /datum/component/internal_wound/organic/heavy_poisoning/chem
 	name = "chemical poisoning"
 
+/datum/component/internal_wound/organic/heavy_poisoning/plasma
+	name = "plasma toxicity"
+	treatments_chem = list(CE_ANTITOX = 3) //Carthatoline. This is caused by plasma, you NEED anti-toxin for this.
+
 // Clone/radiation
 /datum/component/internal_wound/organic/radiation
 	treatments_tool = list(QUALITY_CUTTING = FAILCHANCE_NORMAL)

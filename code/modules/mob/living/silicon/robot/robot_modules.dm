@@ -29,6 +29,7 @@ var/global/list/robot_modules = list(
 					LANGUAGE_KRIOSAN = 1,
 					LANGUAGE_AKULA = 1,
 					LANGUAGE_MARQUA = 1,
+					LANGUAGE_BLORP = 1,
 					LANGUAGE_YASSARI = 1,
 					LANGUAGE_ILLYRIAN = 1,
 					LANGUAGE_CYRILLIC = 1,

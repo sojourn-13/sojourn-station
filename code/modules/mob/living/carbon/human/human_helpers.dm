@@ -58,10 +58,6 @@
 		return list(HUMAN_EATING_BLOCKED_MOUTH, blocked)
 	return list(HUMAN_EATING_NO_ISSUE)
 
-#undef HUMAN_EATING_NO_ISSUE
-#undef HUMAN_EATING_NO_MOUTH
-#undef HUMAN_EATING_BLOCKED_MOUTH
-
 /mob/living/carbon/human/proc/update_equipment_vision()
 	flash_protection = 0
 	psi_blocking = 0
