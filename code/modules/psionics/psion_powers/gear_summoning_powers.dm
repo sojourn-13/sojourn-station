@@ -80,8 +80,8 @@
 		//Small tracker of how many shields we have use for preventing a spawning of a 3rd shield
 		var/num_of_shields = 0
 
-		//This is a little messy as we are going to do the same thing basically twice, but if you have 2 shields\
-		Then you get to enhanced one for free!
+		// This is a little messy as we are going to do the same thing basically twice, but if you have 2 shields
+		// Then you get to enhanced one for free!
 		if(active)
 			if(istype(active, /obj/item/shield/riot/crusader/psionic))
 				var/obj/item/shield/riot/crusader/psionic/PS = active
