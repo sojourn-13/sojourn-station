@@ -52145,6 +52145,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"lcH" = (
+/obj/random/junk/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/mine/armed,
+/turf/simulated/floor/tiled/dark/brown_platform,
+/area/nadezhda/maintenance/undergroundfloor1north)
 "lcI" = (
 /obj/random/scrap/sparse_even,
 /obj/machinery/light/small{
@@ -73984,9 +73990,7 @@
 "pCq" = (
 /obj/machinery/door/airlock/maintenance_common,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
+/obj/item/mine/armed,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "pCr" = (
@@ -85238,7 +85242,7 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
 "rUO" = (
-/mob/living/carbon/superior_animal/roach/benzin,
+/mob/living/carbon/superior_animal/roach/nitro,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/maintenance/undergroundfloor2west)
 "rUW" = (
@@ -103233,9 +103237,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "vDi" = (
 /obj/machinery/door/airlock/maintenance_common,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
+/obj/item/mine/armed,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "vDn" = (
@@ -136813,7 +136815,7 @@ uyF
 boT
 tkb
 uyF
-sTc
+lcH
 uyZ
 uyZ
 uyF

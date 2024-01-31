@@ -61,6 +61,7 @@
 	can_ricochet = TRUE
 	ricochet_mod = 3 //lower cal rubbers are the most likely to ricochet.
 	recoil = 4
+	ignition_source = FALSE
 
 /obj/item/projectile/bullet/pistol_35/rubber/soporific
 	name = "soporific coated rubber bullet"
@@ -198,6 +199,7 @@
 	ricochet_mod = 2.5
 	step_delay = 0.5
 	recoil = 6
+	ignition_source = FALSE
 
 /obj/item/projectile/bullet/magnum_40/rubber/pepperball
 	name = "pepperball"
@@ -285,6 +287,7 @@
 	ricochet_mod = 2 //including our AP mallus for bounce we are baseline about 1.9x as likely to bounce.
 	step_delay = 0.7
 	recoil = 10
+	ignition_source = FALSE
 
 /obj/item/projectile/bullet/kurtz_50/rubber/pepperball
 	name = "pepperball"
@@ -391,6 +394,7 @@
 	can_ricochet = TRUE
 	step_delay = 0.9
 	recoil = 4
+	ignition_source = FALSE
 
 /obj/item/projectile/bullet/light_rifle_257/rubber/pepperball
 	name = "pepperball"
@@ -494,6 +498,7 @@
 	ricochet_mod = 2 //including armor penalty ends up as closer to 1.85x as likely.
 	step_delay = 0.9
 	recoil = 6
+	ignition_source = FALSE
 
 /obj/item/projectile/bullet/rifle_75/rubber/soporific
     name = "soporific coated rubber bullet"
@@ -571,6 +576,7 @@
 	ricochet_mod = 1.35 //after AP penalty to ricochet is factored in we have more like 15% more chance to ricochet.
 	step_delay = 0.9
 	recoil = 14
+	ignition_source = FALSE
 
 /obj/item/projectile/bullet/heavy_rifle_408/practice
 	name = "practice bullet"
@@ -845,6 +851,7 @@
 	affective_damage_range = 5
 	affective_ap_range = 2
 	recoil = 10
+	ignition_source = FALSE
 
 /obj/item/projectile/bullet/shotgun/beanbag/pepperball
 	name = "pepperball slug"
@@ -971,6 +978,7 @@
 	can_ricochet = FALSE
 	ricochet_mod = 1.5
 	recoil = 9
+	ignition_source = FALSE
 
 /obj/item/projectile/bullet/kurtz_50/incendiary
 	damage_types = list(BRUTE = 5)
@@ -1103,6 +1111,7 @@
 	sharp = FALSE
 	recoil = 1
 	kill_count = 0 //cap gun so projectile dies the second it fires. -Benl8561
+	ignition_source = FALSE //dunno how you'd manage it but just in case.
 
 /obj/item/projectile/bullet/crossbow_bolt
 	name = "bolt"
@@ -1218,6 +1227,7 @@
 	affective_ap_range = 6
 	create_type = /obj/item/ammo_casing/arrow
 	recoil = 0 //arrow moment
+	ignition_source = FALSE
 
 /obj/item/projectile/bullet/reusable/arrow/serrated //Lower base damage, higher embed rate, higher AP. Arrow HV's, though not as good as the Lodge's.
 	name = "serrated arrow"
@@ -1232,6 +1242,7 @@
 	affective_ap_range = 8
 	create_type = null
 	shrapnel_type = /obj/item/ammo_casing/arrow/serrated //the ENTIRE arrow!
+	ignition_source = FALSE
 
 /obj/item/projectile/bullet/reusable/arrow/broadhead
 	name = "broadhead arrow"
@@ -1333,6 +1344,7 @@
 	affective_ap_range = 6
 	kill_count = 7 //heavy arrow, worse aerodynamics
 	create_type = null
+	ignition_source = TRUE
 
 /obj/item/projectile/bullet/reusable/arrow/explosive/on_impact(atom/target)
 	if (!testing)

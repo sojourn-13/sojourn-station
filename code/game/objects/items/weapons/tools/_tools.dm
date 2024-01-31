@@ -1010,8 +1010,8 @@
 				var/obj/item/weldpack/P = O
 				P.explode()
 			return
-		else if(istype(O, /mob/living/carbon/superior_animal/roach/benzin))
-			var/mob/living/carbon/superior_animal/roach/benzin/B = O
+		else if(istype(O, /mob/living/carbon/superior_animal/roach/nitro))
+			var/mob/living/carbon/superior_animal/roach/nitro/B = O
 			if(B.stat != DEAD)
 				if(has_quality(QUALITY_WELDING))
 					B.fire_act()

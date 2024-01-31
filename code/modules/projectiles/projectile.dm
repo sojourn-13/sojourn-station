@@ -124,6 +124,8 @@
 
 	var/recoil = 0
 
+	var/ignition_source = TRUE //Used for deciding if a projectile should blow up a benzin.
+
 /obj/item/projectile/New()
 
 	penetration_holder = new /datum/penetration_holder

@@ -21477,16 +21477,6 @@
 /obj/structure/multiz/ladder,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/prepper)
-"sJY" = (
-/obj/random/junk,
-/obj/item/mine/excelsior{
-	armed = 1
-	},
-/turf/simulated/floor/tiled/dark/brown_platform,
-/area/nadezhda/dungeon/outside/prepper/vault{
-	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
-	name = "Abandoned Bunker"
-	})
 "sKv" = (
 /obj/effect/decal/cleanable/cobweb2,
 /obj/structure/closet/random_hostilemobs,
@@ -57430,7 +57420,7 @@ aHN
 aHN
 aHN
 aHN
-sJY
+snd
 qvg
 aHN
 nZp
