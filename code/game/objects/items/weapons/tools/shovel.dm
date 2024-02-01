@@ -81,7 +81,7 @@
 	passive_fuel_cost = 0.05
 	max_fuel = 80
 
-	switched_on_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 45, QUALITY_PRYING = 30, QUALITY_CUTTING = 10, QUALITY_SAWING = 15)
+	switched_on_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 60, QUALITY_PRYING = 45, QUALITY_CUTTING = 10, QUALITY_SAWING = 15)
 	switched_off_qualities = list(QUALITY_SHOVELING = 25, QUALITY_DIGGING = 25, QUALITY_PRYING = 25, QUALITY_CUTTING = 5, QUALITY_SAWING = 5) //Still kindof usable when off
 
 /obj/item/tool/shovel/combat/turbo/turn_on(mob/user)
