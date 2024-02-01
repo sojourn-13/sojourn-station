@@ -77,7 +77,7 @@
 	w_class = ITEM_SIZE_NORMAL //Bigger than a normal crovel, doesn't fit in your pocket
 
 	toggleable = TRUE
-	use_fuel_cost = 0.1
+	use_fuel_cost = 0.12
 	passive_fuel_cost = 0.05
 	max_fuel = 80
 
