@@ -89,6 +89,7 @@
 /obj/item/reagent_containers/food/snacks/openable/chips_alt
 	name = "chips"
 	desc = "A closed bag of chips, ready to be opened."
+	taste_tag = list(SALTY_FOOD)
 	icon_state = "lays_green"
 	trash = /obj/item/trash/chips_green
 
@@ -98,6 +99,7 @@
 	alt_desc = "A plethora of steaming beans mixed with meat, ready for consumption."
 	icon_state = "mre"
 	trash = /obj/item/trash/mre
+	taste_tag = list(UMAMI_FOOD)
 	filling_color = "#948051"
 	nutriment_desc = list("heartiness" = 1, "beans" = 3)
 	nutriment_amt = 6
@@ -114,12 +116,14 @@
 	desc = "A closed mre, ready to be opened. This one is a wok mre mix."
 	alt_desc = "A nice mix of noodles and herbs all waiting to be eaten."
 	icon_state = "wok"
+	taste_tag = list(UMAMI_FOOD, SPICY_FOOD)
 	trash = /obj/item/trash/mre/alt
 	nutriment_desc = list("pasta" = 1, "salt" = 3, "herbs" = 3)
 
 /obj/item/reagent_containers/food/snacks/openable/mre/os
 	name = "GP Fast Noodles"
 	desc = "A closed wok, ready to be opened."
+	taste_tag = list(UMAMI_FOOD, SPICY_FOOD)
 	alt_desc = "A nice mix of noodles and herbs all waiting to be eaten."
 	icon_state = "os_wok"
 	trash = /obj/item/trash/mre/os
@@ -136,6 +140,7 @@
 	trash = /obj/item/trash/mre_can
 	filling_color = "#948051"
 	nutriment_desc = list("heartiness" = 1, "meat" = 3)
+	taste_tag = list(MEAT_FOOD)
 	nutriment_amt = 5
 	preloaded_reagents = list("protein" = 6, "iron" = 2)
 	heated_reagents = list("bicaridine" = 5, "kelotane" = 5)
@@ -146,6 +151,7 @@
 	name = "morale bar"
 	desc = "Some brand of non-melting military chocolate."
 	alt_desc = "Some brand of non-melting military chocolate. This one is open, and still unmelted."
+	taste_tag = list(SWEET_FOOD)
 	icon_state = "mre_candy"
 	trash = /obj/item/trash/mre_candy
 	nutriment_desc = list("sweetness" = 1, "chocolate" = 3)
@@ -155,6 +161,7 @@
 /obj/item/reagent_containers/food/snacks/openable/candy/shokoladka
 	desc = "Shokoladka branded non-melting military chocolate."
 	alt_desc = "Shokoladka branded non-melting military chocolate. This one is open, and still unmelted."
+	taste_tag = list(SWEET_FOOD)
 	icon_state = "shokoladka"
 	trash = /obj/item/trash/mre_shokoladka
 	bitten_icon_alt = TRUE
@@ -162,6 +169,7 @@
 /obj/item/reagent_containers/food/snacks/openable/candy/dalococh
 	desc = "Dalococh branded non-melting military chocolate."
 	alt_desc = "Dalococh branded non-melting military chocolate. This one is open, and still unmelted."
+	taste_tag = list(SWEET_FOOD)
 	icon_state = "dalococh"
 	trash = /obj/item/trash/mre_dalococh
 	bitten_icon_alt = TRUE
@@ -169,6 +177,7 @@
 /obj/item/reagent_containers/food/snacks/openable/candy/os
 	desc = "GP branded non-melting chocolate."
 	alt_desc = "GP branded non-melting chocolate. This one is open, and still unmelted."
+	taste_tag = list(SWEET_FOOD)
 	icon_state = "chocolate"
 	trash = /obj/item/trash/os_coco_wrapper
 	bitten_icon_alt = FALSE
@@ -241,6 +250,7 @@
 	name = "Cubed Steak"
 	desc = "A self heating packet with commpressed meat in the form of a steak."
 	alt_desc = "A fresh-ish commpressed meat steak."
+	taste_tag = list(MEAT_FOOD)
 	icon_state = "steak_red"
 	trash = /obj/item/trash/os_wrapper
 	filling_color = "#948051"
@@ -265,6 +275,7 @@
 	name = "Hot Bun"
 	desc = "A loaf of bread in a self heating container."
 	alt_desc = "A fluffy soft and sweet bread bun."
+	taste_tag = list(FLOURY_FOOD, SWEET_FOOD)
 	icon_state = "bun"
 	trash = /obj/item/trash/os_wrapper
 	filling_color = "#948051"
@@ -281,6 +292,7 @@
 	name = "Hearty Meal"
 	desc = "A prepacked full heart?"
 	alt_desc = "A gummy heart made with three chambers of different flavours."
+	taste_tag = list(SWEET_FOOD)
 	icon_state = "heart"
 	trash = /obj/item/trash/os_wrapper
 	filling_color = "#948051"
@@ -297,6 +309,7 @@
 	name = "Liver Meal"
 	desc = "A prepacked full liver?"
 	alt_desc = "A gummy liver made two main lobes of flavour."
+	taste_tag = list(SWEET_FOOD)
 	icon_state = "liver"
 	trash = /obj/item/trash/os_wrapper
 	filling_color = "#948051"
@@ -314,6 +327,7 @@
 	desc = "GP portable SoyPack."
 	alt_desc = "GP portable SoyPack."
 	icon_state = "soylent_orange"
+	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/os_soypack
 
 /obj/item/reagent_containers/food/snacks/openable/os_soypack/Initialize(mapload)
@@ -382,6 +396,7 @@
 	desc = "A peachy looking paste."
 	icon_state = "paste"
 	trash = /obj/item/trash/mre_paste
+	taste_tag = list(BLAND_FOOD)
 	filling_color = "#DEDEAB"
 	nutriment_desc = list("acrid peaches" = 2)
 	bitesize = 2
@@ -394,6 +409,7 @@
 	name = "GP nutrient paste"
 	desc = "A chalky looking paste tube."
 	icon_state = "os_paste"
+	taste_tag = list(BLAND_FOOD)
 	trash = /obj/item/trash/os_paste_empty
 	filling_color = "#DEDEAB"
 	nutriment_desc = list("chalk" = 2)
@@ -407,6 +423,7 @@
 	name = "canned peaches"
 	desc = "A can of peaches."
 	icon_state = "peachcan"
+	taste_tag = list(SWEET_FOOD)
 	trash = /obj/item/trash/peachcan
 	filling_color = "#DEDEAB"
 	nutriment_desc = list("acrid peaches" = 2)
@@ -420,6 +437,7 @@
 	name = "enriched cracker"
 	desc = "It's a salted cracker, the surface looks saturated with oil."
 	icon_state = "mre_cracker"
+	taste_tag = list(SALTY_FOOD)
 	filling_color = "#F5DEB8"
 	center_of_mass = list("x"=17, "y"=6)
 	nutriment_desc = list("salt" = 1, "cracker" = 2)

@@ -834,20 +834,21 @@
 		adjustToolHealth(-degradation, user)
 
 //Power and fuel drain, sparks spawn
-/obj/item/proc/check_tool_effects(mob/living/user, time)
-
+/obj/item/tool/check_tool_effects(mob/living/user, time)
+	//Check if our tool is something that needs to be turned on to spend resources
+	var/can_spend_resources = (!toggleable || (toggleable && switched_on))
 	if(use_power_cost)
-		if(!cell || !cell.check_charge(use_power_cost*time))
+		if(!cell || !cell.check_charge(use_power_cost*time) && can_spend_resources)
 			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
 			return FALSE
 
 	if(use_fuel_cost)
-		if(get_fuel() < (use_fuel_cost*time))
+		if(get_fuel() < (use_fuel_cost*time) && can_spend_resources)
 			to_chat(user, SPAN_NOTICE("You need more welding fuel to complete this task."))
 			return FALSE
 
 	if(use_stock_cost)
-		if(stock < (use_stock_cost*time))
+		if(stock < (use_stock_cost*time) && can_spend_resources)
 			to_chat(user, SPAN_NOTICE("There is not enough left in [src] to complete this task."))
 			return FALSE
 
@@ -867,6 +868,9 @@
 	return ( reagents ? reagents.get_reagent_amount(my_fuel) : 0 )
 
 /obj/item/tool/proc/consume_fuel(volume)
+	//Fixes tool off-state behavior
+	if(toggleable && !switched_on)
+		return TRUE
 	if(get_fuel() >= volume)
 		reagents.remove_reagent(my_fuel, volume)
 		return TRUE
@@ -1006,8 +1010,8 @@
 				var/obj/item/weldpack/P = O
 				P.explode()
 			return
-		else if(istype(O, /mob/living/carbon/superior_animal/roach/benzin))
-			var/mob/living/carbon/superior_animal/roach/benzin/B = O
+		else if(istype(O, /mob/living/carbon/superior_animal/roach/nitro))
+			var/mob/living/carbon/superior_animal/roach/nitro/B = O
 			if(B.stat != DEAD)
 				if(has_quality(QUALITY_WELDING))
 					B.fire_act()
@@ -1075,23 +1079,23 @@
 		switch(safety)
 			if(FLASH_PROTECTION_MINOR)
 				to_chat(H, SPAN_WARNING("Your eyes sting a little."))
-				E.take_damage(3, BURN)
+				E.take_damage(1, BURN)
 				if(E.damage > 12)
 					H.eye_blurry += rand(3,6)
 			if(FLASH_PROTECTION_MINOR)
 				to_chat(H, SPAN_WARNING("The searing light burns your eyes through your insufficient protection."))
-				E.take_damage(rand(6, 9), BURN)
+				E.take_damage(rand(3, 6), BURN)
 				if(E.damage > 11)
 					E.take_damage(rand(4, 6), BURN)
 			if(FLASH_PROTECTION_NONE)
 				to_chat(H, SPAN_WARNING("Your eyes burn."))
-				E.take_damage(rand(8, 12), BURN)
+				E.take_damage(rand(4, 6), BURN)
 				if(E.damage > 10)
-					E.take_damage(rand(4, 12))
+					E.take_damage(rand(2, 6))
 			if(FLASH_PROTECTION_REDUCED)
 				to_chat(H, SPAN_DANGER("Your equipment intensify the welder's glow. Your eyes itch and burn severely."))
 				H.eye_blurry += rand(12,20)
-				E.take_damage(rand(16, 20))
+				E.take_damage(rand(8, 16))
 		if(safety<FLASH_PROTECTION_MAJOR)
 			if(E.damage > 10)
 				to_chat(user, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))

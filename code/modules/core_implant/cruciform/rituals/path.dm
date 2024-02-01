@@ -791,8 +791,7 @@
 /datum/ritual/cruciform/factorial/mod_litany
 	name = "Hymn of the Engineer"
 	phrase = "Per fidem in Absoluto assequi possumus instrumenta servitii." //"Through faith in the Absolute we can obtain the means of service."
-	desc = "Creates unique mods or cruciform upgrades. Due to the complexity of the technology, this litany may only be used \
-	once every hour. One must still have another perform the rites of installation to upgrade one's cruciform."
+	desc = "Requests unique mods or cruciform upgrades from the lower levels. To avoid exhausting supplies, this litany may only be used once every hour. One must still have another perform the rites of installation to upgrade one's cruciform."
 	power = 25 //Mainly restricted by its cooldown
 	cooldown = TRUE
 	cooldown_time = 60 MINUTES

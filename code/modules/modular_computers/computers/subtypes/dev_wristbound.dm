@@ -21,6 +21,7 @@
 	var/hard_drive_type = /obj/item/computer_hardware/hard_drive/small
 	var/processor_unit_type = /obj/item/computer_hardware/processor_unit/small
 	var/network_card_type = /obj/item/computer_hardware/network_card
+	var/gunshot_residue // fucking motherfuck.
 
 /obj/item/modular_computer/wrist/Initialize()
 	. = ..()

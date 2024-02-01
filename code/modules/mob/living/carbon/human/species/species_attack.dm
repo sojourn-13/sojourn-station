@@ -70,12 +70,23 @@
 /datum/unarmed_attack/slime_glomp
 	attack_verb = list("glomped")
 	attack_noun = list("body")
+	var/delay = 10 SECONDS//  10 seconds
+	var/last_attack
 	damage = 2
 
-/datum/unarmed_attack/slime_glomp/apply_effects()
-	//Todo, maybe have a chance of causing an electrical shock?
-	return
+/datum/unarmed_attack/slime_glomp/apply_effects(mob/living/carbon/human/user, mob/living/carbon/human/target, attack_damage, zone)
+	if(user.nutrition > 40 && (world.time > last_attack + delay) && !(user.stat) && target)
+		zone = target.get_organ(zone) // Zone is passed as a string and not as a external organ.
+		if(!zone)
+			return
+		target.electrocute_act(25, "[user.name]'s", 1, zone)
+		user.adjustNutrition(-40)
+		last_attack = world.time
+		user.visible_message(SPAN_DANGER("[user] electrocutes \the [target] with their arms!"), SPAN_NOTICE("You electrocute \the [target] with your arm!"), SPAN_WARNING("You hear a splash of water and a sharp electric buzz!"), 5)
+		addtimer(CALLBACK(src, .proc/warn_recharge, user), delay)
 
+/datum/unarmed_attack/slime_glomp/proc/warn_recharge(mob/living/carbon/human/user)
+	to_chat(user, SPAN_NOTICE("Your arms are ready to shock again!"))
 /datum/unarmed_attack/stomp/weak
 	attack_verb = list("jumped on")
 

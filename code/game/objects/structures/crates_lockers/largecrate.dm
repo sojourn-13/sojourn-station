@@ -104,7 +104,7 @@
 
 /obj/structure/largecrate/animal/welder_roach
 	name = "Benzin Roach crate"
-	held_type = /mob/living/carbon/superior_animal/roach/benzin
+	held_type = /mob/living/carbon/superior_animal/roach/nitro
 
 /obj/structure/largecrate/animal/piano
 	held_type = /obj/structure/synthesized_instrument/synthesizer/piano

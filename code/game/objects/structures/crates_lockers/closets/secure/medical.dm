@@ -190,6 +190,7 @@
 	new /obj/item/circuitboard/sleeper/hyper(src)
 	new /obj/item/oddity/chem_book(src)
 	new /obj/item/storage/hcases/med(src)
+	new /obj/item/tool/sword/saber/injection_rapier(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control closet"

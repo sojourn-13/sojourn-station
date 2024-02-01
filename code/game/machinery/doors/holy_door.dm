@@ -7,9 +7,11 @@
 	var/next_beep_at = 0
 	var/locked = 0
 	var/minimal_holiness = CLEARANCE_COMMON // Compared with security_clearance on cruciform
+	var/allow_rosary = FALSE
 	var/open_sound_powered = 'sound/machines/airlock_open.ogg'
 	var/open_sound_unpowered = 'sound/machines/airlock_creaking.ogg'
 	var/obj/item/wedged_item
+
 
 /obj/machinery/door/holy/preacher
 	name = "church portcullis"
@@ -19,9 +21,10 @@
 
 /obj/machinery/door/holy/public
 	name = "church public door"
-	desc = "A door crafted by the church that requires no power and doesn't seem to have panel you could open. This one will open to anyone with an active cruciform."
+	desc = "A door crafted by the church that requires no power and doesn't seem to have panel you could open. This one will open to anyone with an active cruciform or fractals."
 	icon = 'icons/obj/doors/Door_holy_public.dmi'
 	minimal_holiness = CLEARANCE_NONE
+	allow_rosary = TRUE
 
 /obj/item/clothing/accessory/cross // It belongs here
 	name = "tau cross necklace"
@@ -82,6 +85,21 @@
 					break
 			if(bingo)
 				return TRUE
+
+		if(allow_rosary)
+			if(istype(H.get_active_hand(), /obj/item/clothing/accessory/necklace/fractalrosary))
+				return TRUE
+
+			if(istype(H.wear_mask, /obj/item/clothing/accessory/necklace/fractalrosary))
+				return TRUE
+
+			if(istype(C))
+				for(var/obj/item/I in C.accessories)
+					if(istype(I, /obj/item/clothing/accessory/necklace/fractalrosary))
+						bingo = TRUE
+						break
+				if(bingo)
+					return TRUE
 
 	return FALSE
 

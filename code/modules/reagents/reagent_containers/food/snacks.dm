@@ -33,6 +33,7 @@
 	var/chef_buff_type = 0 //What type of buff does this have to it?
 
 	var/junk_food = FALSE //if TRUE, sanity gain per nutriment will be zero
+	var/list/taste_tag = list()
 
 /obj/item/reagent_containers/food/snacks/Initialize()
 	. = ..()
@@ -422,6 +423,7 @@
 	name = "aesir salad"
 	desc = "Probably too incredible for mortal men to fully enjoy."
 	icon_state = "aesirsalad"
+	taste_tag = list(VEGAN_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#468C00"
 	center_of_mass = list("x"=17, "y"=11)
@@ -436,6 +438,7 @@
 	name = "cookie"
 	desc = "COOKIE!!!"
 	icon_state = "COOKIE!!!"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#DBC94F"
 	bitesize = 1
 	center_of_mass = list("x"=17, "y"=18)
@@ -447,6 +450,7 @@
 	name = "chocolate egg"
 	desc = "Such sweet, fattening food."
 	icon_state = "chocolateegg"
+	taste_tag = list(COCO_FOOD, SWEET_FOOD)
 	filling_color = "#7D5F46"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=13)
@@ -458,6 +462,7 @@
 	name = "chocolate coin"
 	desc = "Chocolate pressed into a coin shape, could pass for a coin if wrapped in gold foil."
 	icon_state = "chococoin-wrapped"
+	taste_tag = list(COCO_FOOD, SWEET_FOOD)
 	filling_color = "#7D5F46"
 	bitesize = 1
 	center_of_mass = list("x"=15, "y"=15)
@@ -570,6 +575,7 @@
 	name = "fried egg"
 	desc = "A fried egg, with a touch of salt and pepper."
 	icon_state = "friedegg"
+	taste_tag = list(UMAMI_FOOD, SALTY_FOOD)
 	filling_color = "#FFDF78"
 	bitesize = 1
 	center_of_mass = list("x"=16, "y"=14)
@@ -581,6 +587,7 @@
 	name = "boiled egg"
 	desc = "A hard boiled egg."
 	icon_state = "egg"
+	taste_tag = list(UMAMI_FOOD)
 	filling_color = "#FFFFFF"
 	preloaded_reagents = list("protein" = 2)
 	matter = list(MATERIAL_BIOMATTER = 9)
@@ -589,6 +596,7 @@
 	name = "tofu"
 	icon_state = "tofu"
 	desc = "We all love tofu."
+	taste_tag = list(BLAND_FOOD)
 	filling_color = "#FFFEE0"
 	bitesize = 3
 	center_of_mass = list("x"=17, "y"=10)
@@ -605,6 +613,7 @@
 	center_of_mass = list("x"=16, "y"=8)
 	nutriment_amt = 12
 	nutriment_desc = list("turkey" = 3, "tofu" = 5, "goeyness" = 4)
+	taste_tag = list(UMAMI_FOOD, SPICY_FOOD)
 	preloaded_reagents = list("stoxin" = 3)
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 20)
@@ -613,6 +622,7 @@
 	name = "stuffing"
 	desc = "Moist, peppery breadcrumbs for filling the body cavities of dead birds. Dig in!"
 	icon_state = "stuffing"
+	taste_tag = list(SPICY_FOOD, FLOURY_FOOD)
 	filling_color = "#C9AC83"
 	bitesize = 1
 	center_of_mass = list("x"=16, "y"=10)
@@ -624,6 +634,7 @@
 	name = "fish fingers"
 	desc = "Fish slabs battered and fried. Please do not consume with custard."
 	icon_state = "fishfingers"
+	taste_tag = list(MEAT_FOOD)
 	filling_color = "#FFDEFE"
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=13)
@@ -635,6 +646,7 @@
 	name = "sashimi"
 	desc = "Raw cuts of carp fillet with a side of soy sauce, apparently an eastern earth delicacy."
 	icon_state = "sashimi"
+	taste_tag = list(MEAT_FOOD)
 	trash = /obj/item/trash/grease
 	bitesize = 2
 	nutriment_amt = 4
@@ -645,6 +657,7 @@
 	name = "huge mushroom slice"
 	desc = "A slice from a huge mushroom."
 	icon_state = "hugemushroomslice"
+	taste_tag = list(UMAMI_FOOD)
 	filling_color = "#E0D7C5"
 	bitesize = 6
 	center_of_mass = list("x"=17, "y"=16)
@@ -657,6 +670,7 @@
 	name = "tomato slice"
 	desc = "A slice from a huge tomato"
 	icon_state = "tomatomeat"
+	taste_tag = list(UMAMI_FOOD)
 	filling_color = "#DB0000"
 	bitesize = 6
 	center_of_mass = list("x"=17, "y"=16)
@@ -668,6 +682,7 @@
 	name = "meatball"
 	desc = "Contrary to popular belief, this one's not spicy."
 	icon_state = "meatball"
+	taste_tag = list(MEAT_FOOD)
 	filling_color = "#DB0000"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=16)
@@ -678,6 +693,7 @@
 	name = "sausage"
 	desc = "A piece of mixed, long meat."
 	icon_state = "sausage"
+	taste_tag = list(MEAT_FOOD)
 	filling_color = "#DB0000"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=16)
@@ -687,6 +703,7 @@
 /obj/item/reagent_containers/food/snacks/omelette
 	name = "omelette du fromage"
 	desc = "That's all you can say!"
+	taste_tag = list(CHEESE_FOOD, UMAMI_FOOD)
 	icon_state = "omelette"
 	trash = /obj/item/trash/plate
 	filling_color = "#FFF9A8"
@@ -700,6 +717,7 @@
 	name = "muffin"
 	desc = "A delicious and spongy little cake"
 	icon_state = "muffin"
+	taste_tag = list(FLOURY_FOOD, SWEET_FOOD)
 	filling_color = "#E0CF9B"
 	bitesize = 2
 	center_of_mass = list("x"=17, "y"=4)
@@ -712,6 +730,7 @@
 	name = "waffles"
 	desc = "Mmm, waffles"
 	icon_state = "waffles"
+	taste_tag = list(FLOURY_FOOD)
 	trash = /obj/item/trash/waffles
 	filling_color = "#E6DEB5"
 	center_of_mass = list("x"=15, "y"=11)
@@ -725,6 +744,7 @@
 	name = "french toast"
 	desc =  "A slice of bread soaked in a beaten egg mixture. Tastes like home"
 	icon_state = "frenchtoast"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#fab82a"
 	nutriment_desc = list("sweetness" = 4, "egg" = 3, "home" = 1)
@@ -736,6 +756,7 @@
 	name = "eggplant parmigiana"
 	desc = "The only good recipe for eggplant."
 	icon_state = "eggplantparm"
+	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#4D2F5E"
 	center_of_mass = list("x"=16, "y"=11)
@@ -749,6 +770,7 @@
 	name = "soylent green"
 	desc = "Not made of people. Honest." //Totally people.
 	icon_state = "soylent_green"
+	taste_tag = list(MEAT_FOOD)
 	trash = /obj/item/trash/waffles
 	filling_color = "#B8E6B5"
 	bitesize = 2
@@ -761,6 +783,7 @@
 	name = "soylen virdians"
 	desc = "Not made of people. Honest." //Actually honest for once.
 	icon_state = "soylent_yellow"
+	taste_tag = list(VEGAN_FOOD)
 	trash = /obj/item/trash/waffles
 	filling_color = "#E6FA61"
 	bitesize = 2
@@ -775,6 +798,7 @@
 	name = "wing fang chu"
 	desc = "A savory dish of alien wing wang in soy."
 	icon_state = "wingfangchu"
+	taste_tag = list(MEAT_FOOD, SALTY_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#43DE18"
 	bitesize = 2
@@ -786,6 +810,7 @@
 	name = "-kabob"
 	icon_state = "kabob"
 	desc = "A human meat, on a stick."
+	taste_tag = list(MEAT_FOOD)
 	trash = /obj/item/stack/rods
 	filling_color = "#A85340"
 	bitesize = 2
@@ -797,6 +822,7 @@
 	name = "meat-kabob"
 	icon_state = "kabob"
 	desc = "Delicious meat, on a stick."
+	taste_tag = list(MEAT_FOOD)
 	trash = /obj/item/stack/rods
 	filling_color = "#A85340"
 	bitesize = 2
@@ -808,6 +834,7 @@
 	name = "tofu-kabob"
 	icon_state = "kabob"
 	desc = "Vegan meat, on a stick."
+	taste_tag = list(VEGAN_FOOD)
 	trash = /obj/item/stack/rods
 	filling_color = "#FFFEE0"
 	bitesize = 2
@@ -821,6 +848,7 @@
 	name = "popcorn"
 	desc = "Now let's find some cinema."
 	icon_state = "popcorn"
+	taste_tag = list(SALTY_FOOD)
 	trash = /obj/item/trash/popcorn
 	var/unpopped = 0
 	filling_color = "#FFFAD4"
@@ -843,6 +871,7 @@
 /obj/item/reagent_containers/food/snacks/loadedbakedpotato
 	name = "loaded baked potato"
 	desc = "Totally baked."
+	taste_tag = list(UMAMI_FOOD)
 	icon_state = "loadedbakedpotato"
 	filling_color = "#9C7A68"
 	bitesize = 2
@@ -857,6 +886,7 @@
 	name = "fries"
 	desc = "The golden standard in side dishes"
 	icon_state = "fries"
+	taste_tag = list(VEGAN_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#EDDD00"
 	bitesize = 2
@@ -870,6 +900,7 @@
 	name = "soy dope"
 	desc = "Dope from a soy."
 	icon_state = "soydope"
+	taste_tag = list(BLAND_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#C4BF76"
 	bitesize = 2
@@ -882,6 +913,7 @@
 	name = "spaghetti"
 	desc = "A bundle of raw spaghetti."
 	icon_state = "spagetti"
+	taste_tag = list(BLAND_FOOD)
 	filling_color = "#EDDD00"
 	bitesize = 1
 	center_of_mass = list("x"=16, "y"=16)
@@ -893,6 +925,7 @@
 	name = "cheesy fries"
 	desc = "Fries sticking in gooey melted cheese"
 	icon_state = "cheesyfries"
+	taste_tag = list(CHEESE_FOOD, VEGETARIAN_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#EDDD00"
 	bitesize = 2
@@ -907,6 +940,7 @@
 	name = "fortune cookie"
 	desc = "A true prophecy in each cookie!"
 	icon_state = "fortune_cookie"
+	taste_tag = list(FLOURY_FOOD)
 	filling_color = "#E8E79E"
 	bitesize = 2
 	center_of_mass = list("x"=15, "y"=14)
@@ -917,6 +951,7 @@
 	name = "burned mess"
 	desc = "Someone should be demoted from chef for this."
 	icon_state = "badrecipe"
+	taste_tag = list(BLAND_FOOD)
 	filling_color = "#211F02"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=12)
@@ -926,6 +961,7 @@
 	name = "meat steak"
 	desc = "A piece of hot meat, lightly seasoned with salt and pepper."
 	icon_state = "meatsteak"
+	taste_tag = list(MEAT_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#7A3D11"
 	bitesize = 3
@@ -938,6 +974,7 @@
 	name = "chicken steak"
 	desc = "Poultry breasts, cooked juicy and tender, lightly seasoned with salt and pepper." // Don't ask how they get grill marks on a microwave tho - Seb
 	icon_state = "chickenbreast_cooked"
+	taste_tag = list(MEAT_FOOD, SALTY_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#7A3D11"
 	bitesize = 3
@@ -951,6 +988,7 @@
 	name = "chicken roast"
 	desc = "A wonderful roast of an entire poultry. While you can't tell if it's exactly chicken, it certainlly will end up tasting like it."
 	icon_state = "chimken"
+	taste_tag = list(MEAT_FOOD)
 	trash = /obj/item/trash/tray
 	bitesize = 6
 	preloaded_reagents = list("protein" = 10, "sodiumchloride" = 1, "blackpepper" = 1)
@@ -962,6 +1000,7 @@
 	name = "fried poultry"
 	desc = "Crunchy on the exterior but juicy and soft on the inside, a piece of poultry that has been fried to mouthwatering perfection."
 	icon_state = "friedchicken"
+	taste_tag = list(MEAT_FOOD, SPICY_FOOD)
 	bitesize = 3
 	preloaded_reagents = list("protein" = 8, "cornoil" = 5)
 	nutriment_desc = list("fried poultry" = 10, "spicy fried batter" = 3)
@@ -972,6 +1011,7 @@
 	name = "fried bacon" // Now has a raw state.
 	desc = "When it comes to bacon, always be prepared." // Time to find 38 spots on the colony to hide it
 	icon = 'icons/obj/food_ingredients.dmi' // Refactored into here for consistency.
+	taste_tag = list(MEAT_FOOD, SALTY_FOOD)
 	icon_state = "bacon"
 	bitesize = 2
 	preloaded_reagents = list("protein" = 3, "cornoil" = 5)
@@ -981,6 +1021,7 @@
 	name = "glazed pork chops"
 	desc = "Perfectly grilled pork chops that are still a shade of pink on the inside, slathered generously with barbecue sauce."
 	icon_state = "porkchop"
+	taste_tag = list(MEAT_FOOD)
 	bitesize = 3
 	trash = /obj/item/trash/plate
 	filling_color = "#7A3D11"
@@ -994,6 +1035,7 @@
 	name = "eggs and bacon"
 	desc = "A classic breakfast combo of fried, sunny-side eggs, with bacon strips on the side." // Wakey wakey.
 	icon_state = "baconegg"
+	taste_tag = list(SALTY_FOOD)
 	bitesize = 4
 	preloaded_reagents = list("protein" = 6, "cornoil" = 3)
 	nutriment_desc = list("bacon" = 5, "fried eggs" = 5)
@@ -1002,6 +1044,7 @@
 	name = "eggs benedict"
 	desc = "A perfectly poached runny egg sitting atop a bedding of Nadezhdian bacon and muffin, with hollandaise sauce generously spread on top. The best breakfast you'll ever have."
 	icon_state = "benedict"
+	taste_tag = list(SALTY_FOOD, SPICY_FOOD)
 	bitesize = 5
 	preloaded_reagents = list("protein" = 15, "sodiumchloride" = 1, "blackpepper" = 1)
 	nutriment_desc = list("ham" = 5, "poached egg" = 5, "hollandaise sauce" = 3)
@@ -1010,6 +1053,7 @@
 	name = "tonkatsu"
 	desc = "Salted cutlets covered in breadcrumbs and deep fried, presented into thick slices. Crispy outside, juicy and tender inside."
 	icon_state = "katsu"
+	taste_tag = list(MEAT_FOOD)
 	bitesize = 2
 	preloaded_reagents = list("protein" = 10, "sodiumchloride" = 1)
 	nutriment_desc = list("fried pork" = 5, "panko breadcrumb" = 2)
@@ -1018,6 +1062,7 @@
 	name = "spacy liberty duff"
 	desc = "Jello gelatin, from Alfred Hubbard's cookbook"
 	icon_state = "spacylibertyduff"
+	taste_tag = list(UMAMI_FOOD, SWEET_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#42B873"
 	bitesize = 3
@@ -1032,6 +1077,7 @@
 	name = "amanita jelly"
 	desc = "Looks curiously toxic"
 	icon_state = "amanitajelly"
+	taste_tag = list(SWEET_FOOD, UMAMI_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#ED0758"
 	bitesize = 3
@@ -1046,6 +1092,7 @@
 	name = "poppy pretzel"
 	desc = "It's all twisted up!"
 	icon_state = "poppypretzel"
+	taste_tag = list(FLOURY_FOOD)
 	bitesize = 2
 	filling_color = "#916E36"
 	center_of_mass = list("x"=16, "y"=10)
@@ -1064,6 +1111,7 @@
 	name = "enchiladas"
 	desc = "Viva La Mexico!"
 	icon_state = "enchiladas"
+	taste_tag = list(MEAT_FOOD, SPICY_FOOD)
 	trash = /obj/item/trash/tray
 	filling_color = "#A36A1F"
 	bitesize = 4
@@ -1078,6 +1126,7 @@
 	name = "monkey's delight"
 	desc = "Eeee Eee!"
 	icon_state = "monkeysdelight"
+	taste_tag = list(MEAT_FOOD)
 	trash = /obj/item/trash/tray
 	filling_color = "#5C3C11"
 	bitesize = 6
@@ -1090,6 +1139,7 @@
 	name = "baguette"
 	desc = "Bon appetit!"
 	icon_state = "baguette"
+	taste_tag = list(FLOURY_FOOD)
 	filling_color = "#E3D796"
 	bitesize = 3
 	center_of_mass = list("x"=18, "y"=12)
@@ -1103,6 +1153,7 @@
 	name = "fish and chips"
 	desc = "You got a loicense for eatin' these?"
 	icon_state = "fishandchips"
+	taste_tag = list(MEAT_FOOD)
 	filling_color = "#E3D796"
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=16)
@@ -1115,6 +1166,7 @@
 	name = "roffle waffles"
 	desc = "Waffles from Roffle. Co."
 	icon_state = "rofflewaffles"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/waffles
 	filling_color = "#FF00F7"
 	bitesize = 4
@@ -1129,6 +1181,7 @@
 	name = "jellied toast"
 	desc = "A slice of bread covered with delicious jam."
 	icon_state = "jellytoast"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#B572AB"
 	bitesize = 3
@@ -1147,6 +1200,7 @@
 	name = "stewed soy meat"
 	desc = "Even non-vegetarians will LOVE this!"
 	icon_state = "stewedsoymeat"
+	taste_tag = list(SPICY_FOOD, VEGAN_FOOD)
 	trash = /obj/item/trash/plate
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=10)
@@ -1159,6 +1213,7 @@
 	name = "boiled spaghetti"
 	desc = "A plain dish of noodles, this sucks."
 	icon_state = "spagettiboiled"
+	taste_tag = list(BLAND_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#FCEE81"
 	bitesize = 2
@@ -1171,6 +1226,7 @@
 	name = "boiled rice"
 	desc = "A boring dish of boring rice."
 	icon_state = "boiledrice"
+	taste_tag = list(BLAND_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#FFFBDB"
 	bitesize = 2
@@ -1183,6 +1239,7 @@
 	name = "rice pudding"
 	desc = "Where's the jam?"
 	icon_state = "rpudding"
+	taste_tag = list(SWEET_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#FFFBDB"
 	bitesize = 2
@@ -1196,6 +1253,7 @@
 	name = "beef curry"
 	desc = "A piping hot plate of spicy beef curry atop fluffy, steamed white rice."
 	icon_state = "beefcurry"
+	taste_tag = list(SPICY_FOOD, MEAT_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	bitesize = 4
 	preloaded_reagents = list("protein" = 8, "capsaicin" = 2)
@@ -1205,6 +1263,7 @@
 	name = "poultry curry"
 	desc = "A piping hot plate of spicy poultry curry atop fluffy, steamed white rice."
 	icon_state = "chickencurry"
+	taste_tag = list(MEAT_FOOD, SPICY_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	bitesize = 4
 	preloaded_reagents = list("protein" = 8, "capsaicin" = 2)
@@ -1214,6 +1273,7 @@
 	name = "mashed potatoes"
 	desc = "Soft and fluffy mashed potatoes, the perfect side dish for a variety of meats."
 	icon_state = "mashpotatoes"
+	taste_tag = list(VEGETARIAN_FOOD)
 	trash = /obj/item/trash/plate
 	bitesize = 4
 	nutriment_amt = 8
@@ -1225,6 +1285,7 @@
 	name = "katsudon"
 	desc = "Fried cutlets of meat on top of fluffy white rice with its own special sauce. A dish perfect for a night before an exam or getting a confession out of a criminal."
 	icon_state = "katsudon"
+	taste_tag = list(MEAT_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#FFFBDB"
 	bitesize = 5
@@ -1238,6 +1299,7 @@
 	name = "spaghetti"
 	desc = "Spaghetti and crushed tomatoes. Just like your abusive father used to make!"
 	icon_state = "pastatomato"
+	taste_tag = list(FLOURY_FOOD, VEGAN_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#DE4545"
 	bitesize = 4
@@ -1251,6 +1313,7 @@
 /obj/item/reagent_containers/food/snacks/meatballspagetti
 	name = "spaghetti & meatballs"
 	desc = "Now thats a nic'e meatball!"
+	taste_tag = list(MEAT_FOOD, FLOURY_FOOD)
 	icon_state = "meatballspagetti"
 	trash = /obj/item/trash/plate
 	filling_color = "#DE4545"
@@ -1278,6 +1341,7 @@
 /obj/item/reagent_containers/food/snacks/carrotfries
 	name = "carrot fries"
 	desc = "Tasty fries from fresh Carrots."
+	taste_tag = list(VEGAN_FOOD)
 	icon_state = "carrotfries"
 	trash = /obj/item/trash/plate
 	filling_color = "#FAA005"
@@ -1293,6 +1357,7 @@
 	name = "candied apple"
 	desc = "An apple coated in sugary sweetness."
 	icon_state = "candiedapple"
+	taste_tag = list(SWEET_FOOD)
 	filling_color = "#F21873"
 	bitesize = 3
 	center_of_mass = list("x"=15, "y"=13)
@@ -1323,6 +1388,7 @@
 	name = "plump helmet biscuit"
 	desc = "This is a finely-prepared plump helmet biscuit. The ingredients are exceptionally minced plump helmet, and well-minced dwarven wheat flour."
 	icon_state = "phelmbiscuit"
+	taste_tag = list(FLOURY_FOOD, UMAMI_FOOD)
 	filling_color = "#CFB4C4"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=13)
@@ -1343,6 +1409,7 @@
 	name = "chawanmushi"
 	desc = "A legendary egg custard that makes friends out of enemies. Probably too hot for a cat to eat."
 	icon_state = "chawanmushi"
+	taste_tag = list(FLOURY_FOOD, UMAMI_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#F0F2E4"
 	bitesize = 1
@@ -1355,6 +1422,7 @@
 	name = "tossed salad"
 	desc = "A proper salad, basic and simple, with little bits of carrot, tomato and apple intermingled. Vegan!"
 	icon_state = "herbsalad"
+	taste_tag = list(VEGAN_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#76B87F"
 	center_of_mass = list("x"=17, "y"=11)
@@ -1368,6 +1436,7 @@
 	name = "valid salad"
 	desc = "It's just a salad of questionable 'herbs' with meatballs and fried potato slices. Nothing suspicious about it."
 	icon_state = "validsalad"
+	taste_tag = list(VEGETARIAN_FOOD, MEAT_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#76B87F"
 	center_of_mass = list("x"=17, "y"=11)
@@ -1382,6 +1451,7 @@
 	name = "golden apple streusel tart"
 	desc = "A tasty dessert that won't make it through a metal detector."
 	icon_state = "gappletart"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#FFFF00"
 	center_of_mass = list("x"=16, "y"=18)
@@ -1396,6 +1466,7 @@
 	name = "honey pudding"
 	desc = "A tasty dessert that is made with honey and cocoa powder for a delightful pudding." // IT'S CHOCOLATE NOT COCAINE! - Seb
 	icon_state = "pudding"
+	taste_tag = list(SWEET_FOOD)
 	filling_color = "#FFFF00"
 	center_of_mass = list("x"=16, "y"=18)
 	nutriment_desc = list("bitter cocoa powder" = 1, "sweet gooey honey" = 2)
@@ -1409,6 +1480,7 @@
 	name = "iced honey buns"
 	desc = "A pastry that was iced with sugar and filled with honey."
 	icon_state = "honeybuns"
+	taste_tag = list(SWEET_FOOD, FLOURY_FOOD)
 	filling_color = "#FFFF00"
 	center_of_mass = list("x"=16, "y"=18)
 	nutriment_desc = list("honey" = 8, "pastry" = 3)
@@ -1422,6 +1494,7 @@
 	name = "honey icecream"
 	desc = "A cool dessert that is a mix of ice, cream, and honey."
 	icon_state = "honey_icecream"
+	taste_tag = list(SWEET_FOOD)
 	trash = /obj/item/trash/icecreambowl
 	filling_color = "#FFFF00"
 	center_of_mass = list("x"=16, "y"=18)
@@ -1444,6 +1517,7 @@
 	name = "tofubread"
 	icon_state = "Like meatbread but for vegetarians. Not guaranteed to give superpowers."
 	icon_state = "tofubread"
+	taste_tag = list(BLAND_FOOD, FLOURY_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/tofubreadslice
 	slices_num = 5
 	filling_color = "#F7FFE0"
@@ -1457,6 +1531,7 @@
 	name = "tofubread slice"
 	desc = "A slice of delicious tofubread."
 	icon_state = "tofubreadslice"
+	taste_tag = list(BLAND_FOOD, FLOURY_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#F7FFE0"
 	bitesize = 2
@@ -1469,6 +1544,7 @@
 	name = "icecream"
 	desc = "A luxurious yet simple iced cream, the most refreshing dessert after a trip through the humid Amethian forest."
 	icon_state = "vanillaicecream"
+	taste_tag = list(SWEET_FOOD)
 	trash = /obj/item/trash/icecreambowl
 	bitesize = 3
 	nutriment_amt = 6
@@ -1486,6 +1562,7 @@
 	name = "chocolate icecream"
 	desc = "A sweet and intense velvety chocolate icecream, for those who love bitter yet sweet tones."
 	icon_state = "chocolateicecream"
+	taste_tag = list(SWEET_FOOD, COCO_FOOD)
 	trash = /obj/item/trash/icecreambowl
 	bitesize = 3
 	nutriment_amt = 8
@@ -1496,6 +1573,7 @@
 	name = "strawberry icecream"
 	desc = "Classic strawberry flavored icecream, a delicious treat for ladies and lovers of berries all around the universe."
 	icon_state = "strawberryicecream"
+	taste_tag = list(SWEET_FOOD)
 	trash = /obj/item/trash/icecreambowl
 	bitesize = 3
 	nutriment_amt = 8
@@ -1513,6 +1591,7 @@
 	name = "chocolate piece"
 	desc = "A luscious milk chocolate piece filled with gooey dulce de leche."
 	icon_state =  "chocolatepiece"
+	taste_tag = list(SWEET_FOOD, COCO_FOOD)
 	filling_color = "#7D5F46"
 	nutriment_amt = 1
 	nutriment_desc = list("chocolate" = 3, "dulce de leche" = 2, "lusciousness" = 1)
@@ -1523,6 +1602,7 @@
 	name = "white chocolate piece"
 	desc = "A creamy white chocolate piece drizzled in milk chocolate."
 	icon_state = "chocolatepiece_white"
+	taste_tag = list(SWEET_FOOD, COCO_FOOD)
 	filling_color = "#E2DAD3"
 	nutriment_desc = list("white chocolate" = 3, "creaminess" = 1)
 	matter = list(MATERIAL_BIOMATTER = 5)
@@ -1531,6 +1611,7 @@
 	name = "chocolate truffle"
 	desc = "A bite-sized milk chocolate truffle that could buy anyone's love."
 	icon_state = "chocolatepiece_truffle"
+	taste_tag = list(SWEET_FOOD, COCO_FOOD)
 	nutriment_desc = list("chocolate" = 3, "undying devotion" = 3)
 	matter = list(MATERIAL_BIOMATTER = 8)
 
@@ -1538,6 +1619,7 @@
 	name = "cheese wheel"
 	desc = "A big wheel of delicious cheese."
 	icon_state = "cheesewheel"
+	taste_tag = list(CHEESE_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/cheesewedge
 	slices_num = 5
 	filling_color = "#FFF700"
@@ -1552,6 +1634,7 @@
 	name = "cheese wedge"
 	desc = "A wedge of delicious cheese. The cheese wheel it was cut from can't have gone far."
 	icon_state = "cheesewedge"
+	taste_tag = list(CHEESE_FOOD)
 	filling_color = "#FFF700"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=10)
@@ -1561,6 +1644,7 @@
 	name = "watermelon slice"
 	desc = "A slice of watery goodness."
 	icon_state = "watermelonslice"
+	taste_tag = list(SWEET_FOOD)
 	filling_color = "#FF3867"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=10)
@@ -1571,6 +1655,7 @@
 	name = "cracker"
 	desc = "It's a salted cracker."
 	icon_state = "cracker"
+	taste_tag = list(FLOURY_FOOD, SALTY_FOOD)
 	filling_color = "#F5DEB8"
 	center_of_mass = list("x"=17, "y"=6)
 	nutriment_desc = list("salt" = 1, "cracker" = 2)
@@ -1598,6 +1683,7 @@
 	name = "cinnamon roll"
 	desc = "A rolled up pastry with cream cheese frosting and cinnamon sugar filling."
 	icon_state = "cinnamonroll"
+	taste_tag = list(FLOURY_FOOD)
 	bitesize = 3
 	nutriment_amt = 6
 	nutriment_desc = list("cinnamon" = 10, "buttery goodness" = 5, "cream cheese" = 3)
@@ -1612,6 +1698,7 @@
 	desc = "A piece of dough."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "dough"
+	taste_tag = list(BLAND_FOOD)
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=13)
 	nutriment_desc = list("dough" = 3)
@@ -1639,6 +1726,7 @@
 	desc = "A flattened dough."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "flat dough"
+	taste_tag = list(BLAND_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/doughslice
 	slices_num = 3
 	center_of_mass = list("x"=16, "y"=16)
@@ -1650,6 +1738,7 @@
 	desc = "A building block of an impressive dish."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "doughslice"
+	taste_tag = list(BLAND_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/spagetti
 	slices_num = 1
 	bitesize = 2
@@ -1663,6 +1752,7 @@
 	desc = "A flattened building block of an impressive dish."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "flatdoughslice"
+	taste_tag = list(BLAND_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/spagetti
 	slices_num = 1
 	bitesize = 2
@@ -1676,6 +1766,7 @@
 	desc = "A base for any self-respecting burger."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "bun"
+	taste_tag = list(FLOURY_FOOD)
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=12)
 	nutriment_desc = list("bun" = 4)
@@ -1731,6 +1822,7 @@
 	name = "pancakes"
 	desc = "A stack of fluffy pancakes, topped with melting butter and syrup flowing down. A heavensent to pair with coffee in the morning, or bacon strips."
 	icon_state = "pancakes"
+	taste_tag = list(FLOURY_FOOD, SWEET_FOOD)
 	bitesize = 4
 	nutriment_amt = 8
 	trash = /obj/item/trash/plate
@@ -1751,6 +1843,7 @@
 	name = "tortilla"
 	desc = "The foldable possiblites are endless, as long as it's less than seven folds."
 	icon_state = "tortilla"
+	taste_tag = list(VEGAN_FOOD)
 	bitesize = 2
 	center_of_mass = list("x"=21, "y"=12)
 	nutriment_desc = list("taco shell" = 2)
@@ -1762,6 +1855,7 @@
 	name = "taco"
 	desc = "Take a bite!"
 	icon_state = "taco"
+	taste_tag = list(MEAT_FOOD)
 	bitesize = 3
 	center_of_mass = list("x"=21, "y"=12)
 	nutriment_desc = list("cheese" = 2, "taco shell" = 2)
@@ -1775,6 +1869,7 @@
 	desc = "A thin piece of raw meat."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "rawcutlet"
+	taste_tag = list(MEAT_FOOD)
 	bitesize = 1
 	center_of_mass = list("x"=17, "y"=20)
 	preloaded_reagents = list("protein" = 1)
@@ -1785,6 +1880,7 @@
 	desc = "A tasty meat slice."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "cutlet"
+	taste_tag = list(MEAT_FOOD)
 	bitesize = 2
 	center_of_mass = list("x"=17, "y"=20)
 	preloaded_reagents = list("protein" = 3)
@@ -1801,6 +1897,7 @@
 	desc = "Tasty strips of raw porcine back meat. Uncured, unsalted, and ready to be turned into delicious bacon."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "rawbacon"
+	taste_tag = list(MEAT_FOOD)
 	bitesize = 2
 	preloaded_reagents = list("protein" = 2)
 	matter = list(MATERIAL_BIOMATTER = 2)
@@ -1810,6 +1907,7 @@
 	desc = "A raw patty ready to be grilled into a juicy and delicious burger."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "patty_raw"
+	taste_tag = list(MEAT_FOOD)
 	bitesize = 3
 	center_of_mass = list("x"=17, "y"=20)
 	preloaded_reagents = list("protein" = 2)
@@ -1820,6 +1918,7 @@
 	desc = "A juicy cooked patty, ready to be slapped between two buns."
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "patty"
+	taste_tag = list(MEAT_FOOD)
 	bitesize = 3
 	center_of_mass = list("x"=17, "y"=20)
 	preloaded_reagents = list("protein" = 3) // It's cooked
@@ -1829,6 +1928,7 @@
 	name = "poultry breast"
 	desc = "The breast meat of an avian species, chicken or otherwise."
 	icon_state = "chickenbreast"
+	taste_tag = list(MEAT_FOOD)
 	bitesize = 3
 	preloaded_reagents = list("protein" = 2)
 	matter = list(MATERIAL_BIOMATTER = 3)
@@ -1836,6 +1936,7 @@
 /obj/item/reagent_containers/food/snacks/rawmeatball
 	name = "raw meatball"
 	desc = "A raw meatball."
+	taste_tag = list(MEAT_FOOD)
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "rawmeatball"
 	bitesize = 3
@@ -1846,6 +1947,7 @@
 /obj/item/reagent_containers/food/snacks/hotdog
 	name = "hotdog"
 	desc = "Unrelated to dogs, maybe."
+	taste_tag = list(MEAT_FOOD)
 	icon_state = "hotdog"
 	bitesize = 3
 	center_of_mass = list("x"=16, "y"=17)
@@ -1855,6 +1957,7 @@
 /obj/item/reagent_containers/food/snacks/flatbread
 	name = "flatbread"
 	desc = "Bland but filling."
+	taste_tag = list(FLOURY_FOOD)
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "flatbread"
 	bitesize = 2
@@ -1876,6 +1979,7 @@
 /obj/item/reagent_containers/food/snacks/rawsticks
 	name = "raw potato sticks"
 	desc = "Raw fries, not very tasty."
+	taste_tag = list(VEGAN_FOOD)
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "rawsticks"
 	bitesize = 2
@@ -1888,6 +1992,7 @@
 	name = "organ"
 	desc = "Technically qualifies as organic."
 	icon = 'icons/obj/surgery.dmi'
+	taste_tag = list(MEAT_FOOD)
 	icon_state = "appendix"
 	filling_color = "#E00D34"
 	bitesize = 3
@@ -1900,6 +2005,7 @@
 	name = "poppy flower tisane"
 	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, but it is more effective at aiding the healing of trauma than simply eating raw poppyflower."
 	icon_state = "poppy_tisane"
+	taste_tag = list(TASTE_BITTER)
 	nutriment_desc = list("bitter tea" = 1)
 	nutriment_amt = 1 //a lil bit from the leaves and plant solids.
 	bitesize = 5
@@ -1911,6 +2017,7 @@
 	name = "sun tear tisane"
 	desc = "A somewhat concentrated decoction of sun tears. A pleasantly sweet tea, it does a better job at aiding the healing of burns than simply chewing the tears raw."
 	icon_state = "tear_tisane"
+	taste_tag = list(TASTE_SWEET)
 	nutriment_desc = list("honeyed tea" = 1)
 	nutriment_amt = 3 //honey
 	bitesize = 5
@@ -1920,8 +2027,9 @@
 
 /obj/item/reagent_containers/food/snacks/mercy_tisane
 	name = "mercys hand tisane"
-	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, but it does a better job of purging toxins than eating sun tears raw."
+	desc = "A somewhat concentrated decoction of mercy hand. Not entirely pleasant tasting, but it does a better job of purging toxins than eating mercy hand raw."
 	icon_state = "mercy_tisane"
+	taste_tag = list(TASTE_LIGHT)
 	nutriment_desc = list("tart tea" = 1)
 	nutriment_amt = 1
 	bitesize = 5
@@ -1933,6 +2041,7 @@
 	name = "vale bush tisane"
 	desc = "A somewhat concentrated decoction of poppy flower. Not entirely pleasant tasting, and it leaves your mouth tingling. Still, it functions as a more effective analgesic and vasodilator than simply chewing the tears themselves."
 	icon_state = "vale_tisane"
+	taste_tag = list(TASTE_SOUR)
 	nutriment_desc = list("acetic tea" = 1)
 	nutriment_amt = 1
 	bitesize = 5
@@ -1944,6 +2053,7 @@
 	name = "plump helmet tisane"
 	desc = "A somewhat concentrated decoction of poppy flower. Horribly bitter, but if you can choke back the tea you'll find that it's a far more effective antibiotic than raw plump helmets."
 	icon_state = "helmet_tisane"
+	taste_tag = list(TASTE_BITTER)
 	nutriment_desc = list("bitter tea" = 1)
 	nutriment_amt = 1
 	bitesize = 5

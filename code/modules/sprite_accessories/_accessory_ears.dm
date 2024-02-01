@@ -25,6 +25,13 @@
 	colored_layers = 2
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/antlers_a
+	name = "Antlers, With Ears alt"
+	desc = ""
+	icon_state = "elk-ears"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/antlers_small
 	name = "Antlers, Small"
 	desc = ""

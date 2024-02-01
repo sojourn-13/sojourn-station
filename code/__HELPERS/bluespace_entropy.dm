@@ -12,6 +12,8 @@ GLOBAL_VAR_INIT(bluespace_distotion_cooldown, 10 MINUTES)
 	do_teleport(ateleatom, adestination, aprecision, afteleport, aeffectin, aeffectout, asoundin, asoundout)
 
 /proc/bluespace_entropy(max_value=1, turf/T, minor_distortion=FALSE)
+	if(!T)
+		return
 	var/entropy_value = rand(0, max_value) * GLOB.chaos_level
 	var/area/A = get_area(T)
 	if(minor_distortion && A)

@@ -9,6 +9,7 @@
 	name = "margherita"
 	desc = "The golden standard of pizzas."
 	icon_state = "pizzamargherita"
+	taste_tag = list(FLOURY_FOOD, UMAMI_FOOD, CHEESE_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/margheritaslice
 	slices_num = 6
 	bitesize = 2
@@ -21,6 +22,7 @@
 	name = "margherita slice"
 	desc = "A slice of classic margherita pizza."
 	icon_state = "pizzamargheritaslice"
+	taste_tag = list(FLOURY_FOOD, UMAMI_FOOD, CHEESE_FOOD)
 	filling_color = "#BAA14C"
 	bitesize = 2
 	center_of_mass = list("x"=18, "y"=13)
@@ -32,6 +34,7 @@
 	name = "meat pizza"
 	desc = "A pizza with meat toppings."
 	icon_state = "meatpizza"
+	taste_tag = list(FLOURY_FOOD, MEAT_FOOD, CHEESE_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/meatpizzaslice
 	slices_num = 6
 	center_of_mass = list("x"=16, "y"=11)
@@ -44,6 +47,7 @@
 	name = "meat pizza slice"
 	desc = "A slice of meaty pizza."
 	icon_state = "meatpizzaslice"
+	taste_tag = list(FLOURY_FOOD, MEAT_FOOD, CHEESE_FOOD)
 	filling_color = "#BAA14C"
 	bitesize = 2
 	center_of_mass = list("x"=18, "y"=13)
@@ -55,6 +59,7 @@
 	name = "mushroom pizza"
 	desc = "Pizza with a hefty topping of mushrooms."
 	icon_state = "mushroompizza"
+	taste_tag = list(FLOURY_FOOD, UMAMI_FOOD, CHEESE_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/mushroompizzaslice
 	slices_num = 6
 	center_of_mass = list("x"=16, "y"=11)
@@ -67,6 +72,7 @@
 	name = "mushroom pizza slice"
 	desc = "A slice of mushroom topped pizza."
 	icon_state = "mushroompizzaslice"
+	taste_tag = list(FLOURY_FOOD, UMAMI_FOOD, CHEESE_FOOD)
 	filling_color = "#BAA14C"
 	bitesize = 2
 	center_of_mass = list("x"=18, "y"=13)
@@ -78,6 +84,7 @@
 	name = "vegetable pizza"
 	desc = "No Tomato Sapiens were harmed during the baking of this pizza."
 	icon_state = "vegetablepizza"
+	taste_tag = list(FLOURY_FOOD, VEGETARIAN_FOOD, CHEESE_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/vegetablepizzaslice
 	slices_num = 6
 	center_of_mass = list("x"=16, "y"=11)
@@ -90,6 +97,7 @@
 	name = "vegetable pizza slice"
 	desc = "A slice of the most green pizza of all pizzas not containing green ingredients."
 	icon_state = "vegetablepizzaslice"
+	taste_tag = list(FLOURY_FOOD, VEGETARIAN_FOOD, CHEESE_FOOD)
 	filling_color = "#BAA14C"
 	bitesize = 2
 	center_of_mass = list("x"=18, "y"=13)
@@ -101,6 +109,7 @@
 	name = "hawaiian pizza pizza"
 	desc = "A pizza with added cooked pineapple slices, some swear by it, others hate it."
 	icon_state = "hawaiianpizza"
+	taste_tag = list(FLOURY_FOOD, VEGETARIAN_FOOD, CHEESE_FOOD)
 	slice_path = /obj/item/reagent_containers/food/snacks/hawaiianpizzaslice
 	slices_num = 6
 	center_of_mass = list("x"=16, "y"=11)
@@ -113,6 +122,7 @@
 	name = "hawaiian pizza slice"
 	desc = "A slice of hawaiian pizza with bits of cooked pineapple atop it."
 	icon_state = "hawaiianpizzaslice"
+	taste_tag = list(FLOURY_FOOD, VEGETARIAN_FOOD, CHEESE_FOOD)
 	filling_color = "#BAA14C"
 	bitesize = 2
 	center_of_mass = list("x"=18, "y"=13)

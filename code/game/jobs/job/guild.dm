@@ -18,7 +18,7 @@
 		access_heads, access_mining_station, access_RC_announce, access_keycard_auth, access_sec_doors,
 		access_eva, access_external_airlocks, access_hydroponics, access_bar, access_kitchen, access_theatre
 	)
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF, FORM_SLIME)
 
 	ideal_character_age = 40
 	minimum_character_age = 25

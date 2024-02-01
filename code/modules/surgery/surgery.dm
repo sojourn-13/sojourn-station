@@ -280,7 +280,7 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool)
 				return TRUE
 
 
-	else if(BP_IS_ORGANIC(src))
+	else if(BP_IS_ORGANIC(src) || BP_IS_SLIME(src))
 		possible_steps = list()
 
 		if(open)

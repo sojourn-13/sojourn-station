@@ -390,6 +390,9 @@ var/global/list/wings_icon_cache = list()
 				facial_s.Blend(facial_color, ICON_ADD)
 
 			face_standing.Blend(facial_s, ICON_OVERLAY)
+			if(head_organ.nonsolid)
+				face_standing += rgb(,,,120)
+
 
 	if(h_style && !(head && (head.flags_inv & BLOCKHEADHAIR)))
 		var/icon/grad_s = null
@@ -406,8 +409,11 @@ var/global/list/wings_icon_cache = list()
 					hair_s.Blend(grad_s, ICON_OVERLAY)
 
 			face_standing.Blend(hair_s, ICON_OVERLAY)
+			if(head_organ.nonsolid)
+				face_standing += rgb(,,,120)
 
 	overlays_standing[HAIR_LAYER]	= image(face_standing)
+
 
 	if(update_icons)   update_icons()
 
@@ -516,14 +522,17 @@ var/global/list/wings_icon_cache = list()
 /mob/living/carbon/human/proc/update_ears(var/update_icons = 1)
 	if(QDESTROYING(src))
 		return
+	var/obj/item/organ/external/head = organs_by_name[BP_HEAD]
 
 	overlays_standing[CUSTOM_EARS_LAYER] = null
 	if(head && head.flags_inv & HIDEEARS)
 		if(update_icons) update_icons()
 		return
 
+
 	var/image/ears_image = get_ears_image()
 	if(ears_image)
+		ears_image.alpha = head?.nonsolid ? 180 : 255
 		overlays_standing[CUSTOM_EARS_LAYER] = ears_image
 		if(update_icons) update_icons()
 
@@ -558,10 +567,12 @@ var/global/list/wings_icon_cache = list()
 		return
 	*/
 	var/active_tail_layer = tail_over ? CUSTOM_TAIL_LAYER_ALT : CUSTOM_TAIL_LAYER
+	var/obj/item/organ/external/chest = organs_by_name[BP_TORSO]
 
 	var/image/tail_image = get_tail_image()
 	if(tail_image)
 		overlays_standing[active_tail_layer] = tail_image
+		tail_image.alpha = chest?.nonsolid ? 180 : 255
 		if(update_icons) update_icons()
 
 /*	var/species_tail = species.get_tail(src) // Species tail icon_state prefix.
@@ -601,9 +612,12 @@ var/global/list/wings_icon_cache = list()
 		if(update_icons) update_icons()
 		return
 
+	var/obj/item/organ/external/chest = organs_by_name[BP_TORSO]
+
 	var/image/wings_image = get_wings_image()
 	if(wings_image)
 		overlays_standing[CUSTOM_WINGS_LAYER] = wings_image
+		wings_image.alpha = chest?.nonsolid ? 180 : 255
 		if(update_icons) update_icons()
 
 mob/living/carbon/human/proc/get_wings_image()

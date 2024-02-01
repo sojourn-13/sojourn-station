@@ -611,6 +611,7 @@ Neglects to mention where to find its pieces.
 		"Flesh sacs can be achieved through irradiated human DNA- if you're a bad person.",
 		"Flesh sacs can be achieved through irradiated vatgrown DNA- if you're a morally ambiguous person.",
 		"Flesh sacs can be achieved through irradiated monkey DNA with only limited moral quandaries!",
+		"You can combine quite a few blood banks together to make a blood lake, and then lakes into bigger blood genes! How many times can you do it?",
 		"If you combine the mutations that make roaches and spiders accept you, you can create a mutation that will cause them to ignore you."))
 	desc = "Xenogenetics fact of the day: [blurb]"
 

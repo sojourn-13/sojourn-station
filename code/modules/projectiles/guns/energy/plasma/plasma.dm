@@ -8,7 +8,7 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
-	matter = list(MATERIAL_PLASTEEL = 17, MATERIAL_WOOD = 8, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 4)
+	matter = list(MATERIAL_PLASTEEL = 17, MATERIAL_WOOD = 8, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 5)
 	price_tag = 2000
 	origin_tech = list(TECH_COMBAT = 3, TECH_PLASMA = 2)
 	fire_sound = 'sound/weapons/energy/pulse.ogg'

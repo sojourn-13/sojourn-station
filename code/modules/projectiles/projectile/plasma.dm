@@ -77,6 +77,7 @@
 	check_armour = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
+	ignition_source = FALSE
 
 /obj/item/projectile/plasma/lastertag/blue/on_hit(atom/target)
 	if (!testing)
@@ -98,6 +99,7 @@
 	check_armour = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
+	ignition_source = FALSE
 
 /obj/item/projectile/plasma/lastertag/red/on_hit(atom/target)
 	if (!testing)
@@ -119,6 +121,7 @@
 	check_armour = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
+	ignition_source = FALSE
 
 /obj/item/projectile/plasma/lastertag/green/on_hit(atom/target)
 	if (!testing)
@@ -140,6 +143,7 @@
 	check_armour = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
+	ignition_source = FALSE
 
 /obj/item/projectile/plasma/lastertag/yellow/on_hit(atom/target)
 	if (!testing)
@@ -160,6 +164,7 @@
 	check_armour = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
+	ignition_source = FALSE
 
 	muzzle_type = /obj/effect/projectile/laser_omni/muzzle
 	tracer_type = /obj/effect/projectile/laser_omni/tracer

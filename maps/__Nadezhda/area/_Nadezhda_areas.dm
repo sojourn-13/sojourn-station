@@ -126,9 +126,17 @@
 	name = "Underground Floor 2 South Maintenance"
 	icon_state = "erisgreen"
 
-/area/nadezhda/maintenance/surface_maints_1
+/area/nadezhda/maintenance/surfacenorth
 	name = "Surface North Maintenance"
 	icon_state = "erisyellow"
+
+/area/nadezhda/maintenance/surfaceeast
+	name = "Surface East Maintenance"
+	icon_state = "erisgreen"
+
+/area/nadezhda/maintenance/surfacesec
+	name = "Surface Security Maintenance"
+	icon_state = "erisblue"
 
 /area/nadezhda/maintenance/cavehideout
 	name = "Abandoned Cave Shed"
@@ -536,6 +544,10 @@
 	name = "\improper Control Room"
 	icon_state = "bridge"
 
+/area/nadezhda/command/hallway
+	name = "\improper Command Hallway"
+	icon_state = "bridge"
+
 /area/nadezhda/command/meeting_room
 	name = "\improper Heads of Staff Meeting Room"
 	icon_state = "bridge"
@@ -736,13 +748,13 @@
 	sound_env = SMALL_SOFTFLOOR
 
 /area/nadezhda/crew_quarters/sleep/cryo
-	name = "\improper Upper Cryogenic Storage"
+	name = "\improper Colony Cryosleep Storage"
 	icon_state = "Sleep"
 	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
 	flags = AREA_FLAG_CRITICAL | AREA_FLAG_RAD_SHIELDED
 
 /area/nadezhda/crew_quarters/sleep/cryo2
-	name = "\improper Lower Cryogenic Storage"
+	name = "\improper Lower Colony Elevator Lobby"
 	icon_state = "Sleep"
 	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
 	flags = AREA_FLAG_CRITICAL | AREA_FLAG_RAD_SHIELDED
@@ -1211,7 +1223,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "surgery"
 
 /area/nadezhda/medical/cryo
-	name = "\improper Cryogenics"
+	name = "\improper Soteria Cryogenics Bay"
 	icon_state = "cryo"
 
 /area/nadezhda/medical/exam_room

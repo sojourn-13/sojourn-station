@@ -10,7 +10,7 @@
 	..()
 	processor_unit = new/obj/item/computer_hardware/processor_unit/small(src)
 	tesla_link = new/obj/item/computer_hardware/tesla_link(src)
-	hard_drive = new/obj/item/computer_hardware/hard_drive/small(src)
+	hard_drive = new/obj/item/computer_hardware/hard_drive/small/adv(src)
 	network_card = new/obj/item/computer_hardware/network_card/advanced(src)
 	printer = new/obj/item/computer_hardware/printer(src)
 	card_slot = new/obj/item/computer_hardware/card_slot(src)
@@ -31,9 +31,9 @@
 
 /obj/item/modular_computer/tablet/lease/preset/command/install_default_hardware()
 	..()
-	processor_unit = new/obj/item/computer_hardware/processor_unit/small(src)
+	processor_unit = new/obj/item/computer_hardware/processor_unit/adv/small(src)
 	tesla_link = new/obj/item/computer_hardware/tesla_link(src)
-	hard_drive = new/obj/item/computer_hardware/hard_drive(src)
+	hard_drive = new/obj/item/computer_hardware/hard_drive/small/adv(src)
 	network_card = new/obj/item/computer_hardware/network_card/advanced(src)
 	printer = new/obj/item/computer_hardware/printer(src)
 	card_slot = new/obj/item/computer_hardware/card_slot(src)
@@ -48,6 +48,7 @@
 	hard_drive.store_file(new/datum/computer_file/program/newsbrowser())
 	hard_drive.store_file(new/datum/computer_file/program/camera_monitor())
 	hard_drive.store_file(new/datum/computer_file/program/records())
+	hard_drive.store_file(new/datum/computer_file/program/tax())
 
 /obj/item/modular_computer/tablet/lease/preset/medical/install_default_hardware()
 	..()

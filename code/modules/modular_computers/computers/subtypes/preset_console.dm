@@ -115,6 +115,10 @@
 // Command
 /obj/item/modular_computer/console/preset/command/install_default_hardware()
 	..()
+	processor_unit = new/obj/item/computer_hardware/processor_unit/adv(src)
+	tesla_link = new/obj/item/computer_hardware/tesla_link(src)
+	hard_drive = new/obj/item/computer_hardware/hard_drive/advanced(src)
+	scanner = new /obj/item/computer_hardware/scanner/paper(src)
 	printer = new/obj/item/computer_hardware/printer(src)
 	card_slot = new/obj/item/computer_hardware/card_slot(src)
 
@@ -129,6 +133,7 @@
 	hard_drive.store_file(new/datum/computer_file/program/reports())
 	hard_drive.store_file(new/datum/computer_file/program/comm())
 	hard_drive.store_file(new/datum/computer_file/program/card_mod())
+	hard_drive.store_file(new/datum/computer_file/program/tax())
 
 //First Officer
 /obj/item/modular_computer/console/preset/command/access/install_default_programs()

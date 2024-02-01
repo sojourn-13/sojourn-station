@@ -104,7 +104,13 @@
 	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier, TRUE)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "serotrotium")
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "serotrotium")
-	M.add_chemical_effect(CE_ANTITOX, 0.5)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.take_organ_damage(1, 0) //we are however still bad for slime biology.
+		M.apply_damage(1, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
+	else
+		M.add_chemical_effect(CE_ANTITOX, 0.5)
 	..()
 
 
@@ -126,7 +132,13 @@
 	M.add_chemical_effect(CE_PAINKILLER, 25 * effect_multiplier, TRUE)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "cryptobiolin")
 	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "cryptobiolin")
-	M.add_chemical_effect(CE_ANTITOX, 0.5)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.take_organ_damage(1, 0) //we are however still bad for slime biology.
+		M.apply_damage(1, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
+	else
+		M.add_chemical_effect(CE_ANTITOX, 0.5)
 	..()
 
 
@@ -397,7 +409,7 @@
 	taste_description = "acid"
 	reagent_state = LIQUID
 	color = "#FF3300"
-	metabolism = REM * 0.2
+	metabolism = REM * 0.5
 	overdose = REAGENTS_OVERDOSE * 0.66
 	withdrawal_threshold = 10
 	nerve_system_accumulations = 55
@@ -406,9 +418,10 @@
 /datum/reagent/drug/hyperzine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(prob(5))
 		M.emote(pick("twitch", "blink_r", "shiver"))
-	M.add_chemical_effect(CE_SPEEDBOOST, 0.4)
+	M.add_chemical_effect(CE_SPEEDBOOST, 0.5)
 	M.add_chemical_effect(CE_PULSE, 2)
 	M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_EXPERT, 60 SECONDS)
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -428,6 +441,39 @@
 /datum/reagent/drug/hyperzine/withdrawal_act(mob/living/carbon/M)
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 	M.add_chemical_effect(CE_PULSE, 1)
+
+/datum/reagent/drug/hyperzine/slime_meth
+	name = "volatile speed"
+	id = "slime_speed"
+	description = "Comparable to high-dose amphetamines cut with nano muscle-stimulators. This chemical would melt through just about any organic that dared touch it, unless of course their anatomy was already highly acidic."
+	taste_description = "caustic rust"
+	scannable = FALSE
+	metabolism = REM * 2.5 //burn through fast, we process chems kinda slow so this makes it more reasonable.
+
+/datum/reagent/drug/hyperzine/slime_meth/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		if(prob(5))
+			M.custom_emote(2, "[pick("vibrates", "sways", "crackles with electricity")]")
+		M.add_chemical_effect(CE_SPEEDBOOST, 0.6) //nyoom
+		M.stats.addTempStat(STAT_VIG, -45, 1 MINUTES, "speed jitters")
+		M.stats.addTempStat(STAT_BIO, -45, 1 MINUTES, "speed jitters")
+		M.nutrition = max(M.nutrition - 0.5 * effect_multiplier, 0)
+		withdrawal_threshold = 100
+	else
+		var/wound_chance = 100 - (79 * (1 - M.stats.getMult(STAT_TGH)))
+		if(ishuman(M))
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_MUSCLE)
+				create_overdose_wound(L, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/N = H.random_organ_by_process(OP_NERVE)
+				create_overdose_wound(N, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/N = H.random_organ_by_process(OP_BONE)
+				create_overdose_wound(N, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
 
 /datum/reagent/drug/nanoblood
 	name = "Nanoblood"
