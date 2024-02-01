@@ -311,6 +311,7 @@
 /area/nadezhda/outside/scave
 	name = "Spider Cave"
 	icon_state = "erisgreen"
+	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/forest
 	name = "Forest"
