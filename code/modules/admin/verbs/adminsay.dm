@@ -1,4 +1,4 @@
-ADMIN_VERB_ADD(/client/proc/cmd_admin_say, R_ADMIN, TRUE)
+ADMIN_VERB_ADD(/client/proc/cmd_admin_say, R_ADMIN|R_MOD, TRUE)
 //admin-only ooc chat
 /client/proc/cmd_admin_say(msg as text)
 	set category = "Special Verbs"
