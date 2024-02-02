@@ -455,7 +455,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	icon_state = "hcase_engi"
 	matter = list(MATERIAL_STEEL = 20)
 	max_w_class = ITEM_SIZE_NORMAL
-	max_storage_space = DEFAULT_NORMAL_STORAGE * 2
+	max_storage_space = DEFAULT_NORMAL_STORAGE
 	can_hold = list(
 		/obj/item/cell,
 		/obj/item/circuitboard,
