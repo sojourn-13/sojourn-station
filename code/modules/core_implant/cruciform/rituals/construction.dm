@@ -49,6 +49,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 			continue
 		listed_components += list("[blueprint.materials[placeholder]] [initial(placeholder.name)]")
 	to_chat(user, SPAN_NOTICE("[blueprint.name] requires: [english_list(listed_components)]."))
+	return TRUE
 
 /datum/ritual/cruciform/priest/construction
 	name = "Manifestation"
@@ -117,6 +118,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	user.visible_message(SPAN_NOTICE("You hear a soft humming sound as [user] finishes his ritual."),SPAN_NOTICE("You take a deep breath as the divine manifestation finishes."))
 	var/build_path = blueprint.build_path
 	new build_path(target_turf)
+	return TRUE
 
 /datum/ritual/cruciform/priest/construction/proc/items_check(mob/user,turf/target, datum/nt_blueprint/blueprint)
 	var/list/turf_contents = target.contents
@@ -188,6 +190,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	user.visible_message(SPAN_NOTICE("Clanking of parts hit the floor as [user] finishes their prayer and the machine falls apart."),SPAN_NOTICE("Collect the evidence, and begin to atone."))
 
 	qdel(reclaimed)
+	return TRUE
 
 /datum/nt_blueprint/
 	var/name = "Report me"

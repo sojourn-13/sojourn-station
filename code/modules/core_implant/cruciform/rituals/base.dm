@@ -44,7 +44,6 @@
 	cooldown_category = "bglow"
 
 /datum/ritual/cruciform/base/glow_book/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C)
-	var/successful = FALSE
 	if (istype(H.get_active_hand(), /obj/item/book/ritual/cruciform))
 		var/obj/item/book/ritual/cruciform/M = H.get_active_hand()
 		M.set_light(5) //Slightly better than as a lantern since you can only hold it in hand or within the belt slot.
@@ -54,11 +53,11 @@
 			SPAN_NOTICE("The ritual book you're holding begins to glow brightly.")
 		)
 		addtimer(CALLBACK(M, /obj/item/book/ritual/cruciform/proc/glowient), 6000)
-		successful = TRUE
 		set_personal_cooldown(H)
+		return TRUE
 	else
 		to_chat(H, SPAN_DANGER("You need to be holding a ritual book to perfom this rite."))
-	return successful
+		return FALSE
 
 /obj/item/book/ritual/cruciform/proc/glowient()
 	set_light(0)
@@ -145,20 +144,21 @@
 /datum/ritual/cruciform/base/message/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
 	var/mob/living/carbon/human/H = pick_disciple_global(user, TRUE)
 	if (!H)
-		return
+		return TRUE //You pay even if you don't actually talk to anyone. Sending shouldn't be a free version of Baptismal Record.
 
 	if(user == H)
 		fail("You feel stupid.",user,C,targets)
-		return FALSE
+		return TRUE //You pay even if you don't actually talk to anyone. Sending shouldn't be a free version of Baptismal Record.
 
 	var/text = input(user, "What message will you send to the target? The message will be recieved telepathically.", "Sending a message") as text|null
 	if (!text)
-		return
+		return TRUE //You pay even if you don't actually talk to anyone. Sending shouldn't be a free version of Baptismal Record.
 	to_chat(H, "<span class='notice'><b><font size='3px'><font color='#ffaa00'>[user.real_name]'s voice speaks in your mind: \"[text]\"</font><b></span>")
 	to_chat(user, "<span class='info'><font color='#ffaa00'>You say to [H]: \"[text]\"</font></span>")
 	log_and_message_admins("[user.real_name] sent a message to [H] with text \"[text]\"")
 	playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 	playsound(H, 'sound/machines/signal.ogg', 50, 1)
+	return TRUE
 
 
 /datum/ritual/cruciform/base/revelation
@@ -287,7 +287,7 @@
 	var/turf/T = get_turf(user)
 	if (!(T.Adjacent(get_turf(H))))
 		to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
-		return
+		return FALSE
 
 	user.visible_message("[user] places their hands upon [H] and utters a prayer", "You lay your hands upon [H] and begin speaking the words of succor")
 	if (do_after(user, 40, H, TRUE))
