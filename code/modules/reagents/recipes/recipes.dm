@@ -9,7 +9,7 @@
 /datum/chemical_reaction/dylovene
 	result = "anti_toxin"
 	required_reagents = list("silicon" = 1, "potassium" = 1, "ammonia" = 1)
-	//byproducts = list("water" = 1, "sugar" = 1)
+	byproducts = list("sodiumchloride" = 0.1)
 	result_amount = 3
 
 /datum/chemical_reaction/carthatoline
