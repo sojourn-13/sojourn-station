@@ -126,7 +126,7 @@
 	name = "Litany of Armaments"
 	phrase = "Supra Domini, bona de te peto. Audi me, et libera vocationem ad me munera tua."
 	desc = "Request a greatsword, tower shield, and suit of power armor from the church armory to become a real crusader. Establishing the connection takes a lot of power and this litany may only be used once every twelve hours."
-	power = 100
+	power = 75 //Only usable once per shift anyway, we don't need to use every drop of power the player has
 	cooldown = TRUE
 	cooldown_time = 12 HOURS
 	cooldown_category = "armaments"
@@ -139,3 +139,4 @@
 	new /obj/item/storage/belt/security/neotheology(usr.loc)
 	new /obj/item/clothing/suit/space/void/crusader(usr.loc)
 	set_personal_cooldown(user)
+	return TRUE

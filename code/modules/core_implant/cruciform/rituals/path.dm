@@ -116,54 +116,6 @@
 
 	return TRUE
 
-
-
-/* Two AoE heals and they're not that helpful anyway in ErisMed
-/datum/ritual/cruciform/tessellate/desperate_calculation
-	name = "Desperate Calculation"
-	phrase = "Vere languores nostros ipse tulit, et dolores nostros ipse portavit." //"Surely he took up our pain and bore our suffering,"
-	desc = "An immensely powerful healing litany that restores any who hear it around the speaker, however the strength of the litany requires so much that the body of the speaker is temporarily ravaged by hunger. \
-	Due to the strength of this hymn, it can only be used once every half hour."
-	cooldown = TRUE
-	power = 60
-	cooldown_time = 30 MINUTES
-	cooldown_category = "dcalculation" //Seperate cooldown since it stuns the user.
-	nutri_cost = 150 //Leaving it in for this particular one: it's supposed to consume your nutrition to work. Sadly can't think of a good equivalent debuff for synths, but I rarely see synth Tesselates anyway
-
-/datum/ritual/cruciform/tessellate/desperate_calculation/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
-	var/list/people_around = list()
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			user.nutrition = 0 //No more blood cost, but it can and will drop your nutrition to zero
-	for(var/mob/living/carbon/human/H in view(user))
-		if(H != user && !isdeaf(H))
-			people_around.Add(H)
-
-	if(people_around.len > 0)
-		user.visible_message("<b><font color='red'>[user]'s cruciform glows brightly!</font><b>", "<b><font color='red'>Your feel the air thrum with an inaudible vibration, your cruciform withdrawing a lot of power to empower your litany!</font><b>", "<b><font color='red'>You hear a small crackle!</font><b>")
-		playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
-		for(var/mob/living/carbon/human/participant in people_around)
-			to_chat(participant, SPAN_NOTICE("You hear a silent signal..."))
-			heal_other(participant)
-			add_effect(participant, FILTER_HOLY_GLOW, 25)
-		set_personal_cooldown(user)
-		return TRUE
-	else
-		fail("Your cruciform sings, alone, unto the void.", user, C)
-		return FALSE
-
-/datum/ritual/cruciform/tessellate/desperate_calculation/proc/heal_other(mob/living/carbon/human/participant)
-		to_chat(participant, "<span class='info'>A sensation of relief bathes you, washing away most of your pain!</span>")
-		participant.reagents.add_reagent("laudanum", 10)
-		participant.adjustBruteLoss(-40)
-		participant.adjustFireLoss(-40)
-		participant.adjustOxyLoss(-80)
-		participant.adjustBrainLoss(-10)
-		participant.updatehealth()
-*/
-
 /datum/ritual/cruciform/tessellate/superstable //More powerful version of Absolution of Wounds, lacks inaprov but does some basic healing over time. No cooldown, but chems will OD if spammed on a patient.
 	name = "Spare the Dying"
 	phrase = "Et tenens manum puellae, ait illi: Talitha cumi, quod est interpretatum: Puella (tibi dico), surge." //" He took her by the hand and said to her, “Talitha koum!” (which means “Little girl, I say to you, get up!”)."
@@ -312,6 +264,7 @@
 	new /obj/item/storage/lunchbox/lemniscate/full(usr.loc)
 	to_chat(user, SPAN_NOTICE("A lemniscate branded lunchbox that smells delicious appears at your feet, still warm and fresh from the kitchens!"))
 	set_personal_cooldown(user)
+	return TRUE
 
 /datum/ritual/cruciform/lemniscate/zoom_litany
 	name = "Infinite Hymn"
@@ -325,7 +278,7 @@
 
 /datum/ritual/cruciform/lemniscate/zoom_litany/perform(mob/living/carbon/human/H, obj/item/implant/core_implant/cruciform/C,list/targets)
 	to_chat(H, "<span class='info'>You feel yourself speeding up, your senses and reaction times quickening!</span>")
-	H.add_chemical_effect(CE_SPEEDBOOST, 0.2, 5 MINUTES, "hyperzine")
+	H.reagents.add_reagent("hyperzine", 10)
 	H.updatehealth()
 	set_personal_cooldown(H)
 	return TRUE
@@ -480,7 +433,7 @@
 	name = "Canticle of Defense"
 	phrase = "At illi dixerunt: Nihil. Dixit ergo eis: Sed nunc qui habet sacculum, tollat; similiter et peram: et qui non habet, vendat tunicam suam et emat gladium." //"He said to them, “But now if you have a purse, take it, and also a bag; and if you don’t have a sword, sell your cloak and buy one."
 	desc = "Request a Counselor taser, absolutism tactical belt, and divisor garb from the church armory for defending yourself and your fellow disciples. Establishing the connection takes a lot of power and this litany may only be used once every four hours."
-	power = 50
+	power = 20 //Balanced mainly by 4 hour cooldown
 	cooldown = TRUE
 	cooldown_time = 4 HOURS
 	cooldown_category = "cdefn"
@@ -492,30 +445,8 @@
 	new /obj/item/clothing/head/rank/divisor(usr.loc)
 	new /obj/item/clothing/suit/greatcoat/divisor(usr.loc)
 	set_personal_cooldown(user)
-/*
-/datum/ritual/cruciform/divisor/div_flash
-	name = "Ire"
-	phrase = "Fortitudo mea et laus mea Dominus, et sicut in omnibus divitiis."
-	desc = "Knocks over everybody without cruciform in your view range. Though the energy emitted is quite powerful, a vigilant person may resist it. This litany can only be used once every 30 minutes."
-	cooldown = TRUE
-	cooldown_time = 30 MINUTES
-	cooldown_category = "dflas"
-	power = 50
-
-/datum/ritual/cruciform/divisor/div_flash/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
-	playsound(user.loc, 'sound/effects/cascade.ogg', 65, 1)
-	log_and_message_admins("performed an ire litany")
-	for(var/mob/living/victim in view(user))
-		if(!victim.get_core_implant(/obj/item/implant/core_implant/cruciform))
-			if(prob(100 - (victim.stats.getStat(STAT_VIG))))
-				to_chat(victim, SPAN_WARNING("You feel a blast of energy that knocks you down!"))
-				victim.Stun(3)
-				victim.Weaken(3)
-			else
-				to_chat(victim, SPAN_NOTICE("Your legs feel numb, but you managed to stay on your feet!"))
-	set_personal_cooldown(user)
 	return TRUE
-*/
+
 /datum/ritual/cruciform/divisor/echo_of_blasphemy
 	name = "Echo of Blasphemy"
 	phrase = "Ignem veni mittere in terram, et quid volo nisi ut accendatur?" //"I have come to bring fire on the earth, and how I wish it were already kindled!"
@@ -694,6 +625,7 @@
 		user.stats.addTempStat(STAT_VIG, debuff_amount, debuff_length, src.name)
 		addtimer(CALLBACK(src, .proc/debuff_over, user), debuff_length)
 		set_personal_cooldown(user)
+		return TRUE
 
 /datum/ritual/cruciform/factorial/self_repair/proc/debuff_over(user)
 	to_chat(user, "Your energy returns to you from your self-repairs, leaving you in full fighting shape once more.")
@@ -753,6 +685,7 @@
 		set_personal_cooldown(user)
 		to_chat(user, "You feel your energy flowing into those you have blessed. The drain will significantly interfere with your combat abilities for a few minutes.")
 		addtimer(CALLBACK(src, .proc/healer_debuff_over, user), debuff_length_healer)
+		return TRUE
 
 /datum/ritual/cruciform/factorial/mass_repair/proc/healed_debuff_over(mob/living/carbon/human/H)
 	to_chat(H,"You feel the interference dissipate, leaving you once more at combat readiness.") //Not entirely true if you got this stacked by multiple healers, but if you did that's your problem.

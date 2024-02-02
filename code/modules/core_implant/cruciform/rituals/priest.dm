@@ -178,7 +178,7 @@
 	power = 100
 	category = "Episcopal"
 
-/datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
+/datum/ritual/cruciform/priest/scrying/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C, list/targets)
 
 	if(!user.client)
 		return FALSE
@@ -307,9 +307,6 @@
 
 	return TRUE
 
-
-
-
 /datum/ritual/cruciform/priest/ejection
 	name = "Deprivation"
 	phrase = "Et revertatur pulvis in terram suam unde erat et spiritus redeat ad Deum qui dedit illum." //"and the dust returns to the ground it came from, and the spirit returns to God who gave it."
@@ -346,41 +343,6 @@
 	else
 		fail("Deprivation does not work upon the living.", user, C)
 		return FALSE
-
-/* We have the Remove Upgrade litany, we don't need this one
-/datum/ritual/cruciform/priest/unupgrade
-	name = "Asacris"
-	phrase = "Redi ad initium." //"Return to the beginning."*
-	desc = "This litany will remove any upgrade from the target's cruciform implant. Usuable only by primes."
-	power = 75
-	category = "Episcopal"
-
-/datum/ritual/cruciform/priest/unupgrade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
-	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
-
-	if(!CI)
-		fail("There is no cruciform on this one.", user, C)
-		return FALSE
-
-	if(!CI.wearer)
-		fail("Cruciform is not installed.", user, C)
-		return FALSE
-
-	if(!C.get_module(CRUCIFORM_PRIME))
-		fail("Only Primes can perform this litany.")
-		return FALSE
-
-	if(!istype(CI.upgrades) || length(CI.upgrades) <= 0)
-		fail("There is no upgrades on this one.", user, C)
-		return FALSE
-
-	for(var/obj/item/coreimplant_upgrade/CU in CI.upgrades)
-		CU.remove()
-		log_and_message_admins("removed upgrade from [C] cruciform with asacris litany")
-
-	return TRUE
-	*/
-
 
 ///////////////////////////////////////
 ///////////SHORT BOOST LITANIES////////
@@ -757,6 +719,7 @@
 	new /obj/item/coreimplant_upgrade/cruciform/priest(altar.loc)
 	altar.cooldown(altar_cooldown)
 	set_personal_cooldown(user)
+	return TRUE
 
 /datum/ritual/cruciform/priest/initiation
 	name = "Consecration"
@@ -782,7 +745,7 @@
 		fail("Target must have devout upgrade inside his cruciform.",user,C)
 		return FALSE
 	PC.activate()
-	log_and_message_admins("promoted disciple [C] to devout with the Consecration litany")
+	log_and_message_admins("promoted disciple [CI.wearer] to devout with the Consecration litany")
 
 	return TRUE
 
@@ -799,11 +762,16 @@
 		fail("Cruciform not found.", user, C)
 		return FALSE
 
+	var/mob/living/carbon/human/H = CI.wearer
+
 	if(CI.get_module(CRUCIFORM_CLERGY))
 		fail("Disciple is already a Vector.", user, C)
 		return FALSE
 	else
 		CI.make_vector()
+		to_chat(H, SPAN_NOTICE("You feel divine power growing within your cruciform as you are ordained."))
+		to_chat(user, SPAN_NOTICE("The cruciform of [H] thrums with a power only you can feel as they are ordained."))
+		log_and_message_admins("[user] has given [H] access to Vector litanies with Ordination.")
 	return TRUE
 
 /datum/ritual/cruciform/priest/reduction
@@ -862,6 +830,7 @@
 		to_chat(H, SPAN_DANGER("You feel a cold emptiness as you are cut off from the Absolute and the faithful. Your cruciform falls from your chest and down to the floor, lifeless."))
 		to_world("The cruciform of [H] falls to the ground, inactive.")
 		log_and_message_admins("removed [H]'s cruciform with the Separation litany.")
+		return TRUE
 
 /datum/ritual/cruciform/priest/adoption
 	name = "Adoption"
@@ -876,34 +845,23 @@
 		fail("Cruciform not found.", user, C)
 		return FALSE
 
+	var/mob/living/carbon/human/H = CI.wearer
+
 	var/designation = alert("Do you wish to give access to common or clergy (Prime) doors?", "Litany of Adoption", "Common","Clergy")
 	if(designation == "Common")
 		CI.security_clearance = CLEARANCE_COMMON
+		to_chat(H, SPAN_NOTICE("You feel paths open before you as you are granted access to the common doors of the Church."))
+		log_and_message_admins("[user] has given [H] access to common Church doors with Adoption.")
 	else if(designation == "Clergy")
 		if(C.security_clearance < CLEARANCE_CLERGY) //No more Vectors letting each other into the Prime's office
-			fail("You cannot give access to doors you yourself lack access to.")
+			fail("You cannot give access to doors you yourself lack access to.", user, C)
 			return FALSE
 		else
 			CI.security_clearance = CLEARANCE_CLERGY
+			to_chat(H, SPAN_NOTICE("You feel paths open before you as you are granted access to the clergy doors of the Church."))
+			log_and_message_admins("[user] has given [H] access to clergy Church doors with Adoption.")
 	return TRUE
 
-/*
-/datum/ritual/cruciform/priest/passage
-	name = "Passage"
-	phrase = "Gloriam sapientes possidebunt stultorum exaltatio ignominia."
-	desc = "Opens clergy doors for target disciple."
-	power = 15
-
-/datum/ritual/cruciform/priest/passage/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
-	var/obj/item/implant/core_implant/cruciform/CI = get_implant_from_victim(user, /obj/item/implant/core_implant/cruciform)
-
-	if(!CI || !CI.wearer || !ishuman(CI.wearer) || !CI.active)
-		fail("Cruciform not found.", user, C)
-		return FALSE
-
-	CI.security_clearance = CLEARANCE_CLERGY
-	return TRUE
-	*/
 
 /datum/ritual/cruciform/priest/omission
 	name = "Omission"
