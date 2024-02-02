@@ -144,7 +144,7 @@
 /datum/ritual/cruciform/base/message/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
 	var/mob/living/carbon/human/H = pick_disciple_global(user, TRUE)
 	if (!H)
-		return
+		return TRUE //You pay even if you don't actually talk to anyone. Sending shouldn't be a free version of Baptismal Record.
 
 	if(user == H)
 		fail("You feel stupid.",user,C,targets)
@@ -152,7 +152,7 @@
 
 	var/text = input(user, "What message will you send to the target? The message will be recieved telepathically.", "Sending a message") as text|null
 	if (!text)
-		return
+		return TRUE //You pay even if you don't actually talk to anyone. Sending shouldn't be a free version of Baptismal Record.
 	to_chat(H, "<span class='notice'><b><font size='3px'><font color='#ffaa00'>[user.real_name]'s voice speaks in your mind: \"[text]\"</font><b></span>")
 	to_chat(user, "<span class='info'><font color='#ffaa00'>You say to [H]: \"[text]\"</font></span>")
 	log_and_message_admins("[user.real_name] sent a message to [H] with text \"[text]\"")
