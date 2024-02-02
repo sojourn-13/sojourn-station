@@ -71,3 +71,29 @@
 		WEAPON_NORMAL
 	)
 	serial_type = "NM"
+
+/obj/item/gun/energy/lasercore/militia/blaster
+	name = "\"Gleam\" Laser Rifle"
+	desc = "An old and venerable design from arms giants H&S. Originally pitched as a high-end upgrade to the 'Laser Core' available to those Federation forces \
+	with both the need and finances to afford it. Insanely tempermental, these weapons while an improvement in almost every way over their base platform are infamous \
+	for its high maintenance, requiring both frequent and expensive parts replacement to remain up to spec. This one still bears the scar of its H&S serial which appears\
+	to have been 'drawn over' with an electro-stensil."
+	icon = 'icons/obj/guns/energy/gleam.dmi' //Credit to Aurora for the sprite that I shamelessly kitbashed to serve my costs.
+	icon_state = "gleam"
+	item_state = "gleam"
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 4, MATERIAL_WOOD = 12, MATERIAL_SILVER = 15, MATERIAL_GOLD = 4, MATERIAL_DIAMOND = 3) //steal the COs laser for copper wire.
+	extra_bulk = 15 //A bit more bulk than an unfolded laser-core.
+	projectile_type = /obj/item/projectile/beam/midlaser //a step down but we're also a good bit more energy efficient.
+	damage_multiplier = 1.1 //essentially the same bonus you get from
+	armor_penetration = 1.2
+	zoom_factors = list(0.4)
+	extra_damage_mult_scoped = 0.2
+	max_upgrades = 3 //we're already pretty beefy.
+	charge_cost = 80
+	fire_delay = 10
+	price_tag = 2500 //SPENSIVE
+	folding_stock = FALSE
+	init_firemodes = list(
+		WEAPON_NORMAL,
+		BURST_2_ROUND
+		)
