@@ -748,13 +748,13 @@
 	sound_env = SMALL_SOFTFLOOR
 
 /area/nadezhda/crew_quarters/sleep/cryo
-	name = "\improper Colony Cryosleep Storage"
+	name = "\improper Upper Cryogenic Storage"
 	icon_state = "Sleep"
 	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
 	flags = AREA_FLAG_CRITICAL | AREA_FLAG_RAD_SHIELDED
 
 /area/nadezhda/crew_quarters/sleep/cryo2
-	name = "\improper Lower Colony Elevator Lobby"
+	name = "\improper Lower Cryogenic Storage"
 	icon_state = "Sleep"
 	area_light_color = COLOR_LIGHTING_SCI_BRIGHT
 	flags = AREA_FLAG_CRITICAL | AREA_FLAG_RAD_SHIELDED
@@ -1223,7 +1223,7 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "surgery"
 
 /area/nadezhda/medical/cryo
-	name = "\improper Soteria Cryogenics Bay"
+	name = "\improper Cryogenics"
 	icon_state = "cryo"
 
 /area/nadezhda/medical/exam_room
