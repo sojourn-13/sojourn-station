@@ -217,6 +217,10 @@
 /mob/living/carbon/human/proc/stomach_process()
 	var/stomach_efficiency = get_organ_efficiency(OP_STOMACH)
 	//max_nutrition = MOB_BASE_MAX_HUNGER * (stomach_efficiency / 100) - This messes with genetics, and a few perks/affects.
+	//If we have for some reason negitive max_nutrition, set to 0 as not to ruin maths in human_movement.dm
+	if(-1 >= max_nutrition)
+		max_nutrition = 0
+
 	if(nutrition > 0 && stat != 2)
 		if(stomach_efficiency <= 0)
 			nutrition = 0
