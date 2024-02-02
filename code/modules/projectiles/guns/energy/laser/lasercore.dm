@@ -54,3 +54,20 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/gun/energy/lasercore/militia
+	name = "Blackshield \"Laser Core\" carbine"
+	desc = "A high-powered laser carbine made by H&S and modified by the Marshals. Hailed in its prime for its high power and compactness, notable improvements have been made to its energy efficiency and it bears blackshield IFF stripes. however it is somewhat slower to fire."
+	icon = 'icons/obj/guns/energy/lasercore_bs.dmi'
+	icon_state = "lcore"
+	item_state = "lcore"
+	projectile_color = "#6f5791"
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 8, MATERIAL_SILVER = 10, MATERIAL_GOLD = 2)
+	charge_cost = 100
+	fire_delay = 13
+	price_tag = 1100 //slightly more expensive. Tweaked!
+	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
+	init_firemodes = list(
+		WEAPON_NORMAL
+	)
+	serial_type = "NM"

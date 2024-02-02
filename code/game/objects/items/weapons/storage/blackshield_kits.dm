@@ -120,6 +120,20 @@
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/storage/pouch/tubular(src)
 
+/obj/item/storage/box/bs_kit/lascore
+	name = "\improper Lascore Primary Kit"
+	desc = "A kit holding an energy based weaponry kit. Far more high powered, these custom tooled lascore carbines are the best of power and efficiency. Their cost \
+	prohibits their standardization."
+
+	populate_contents()
+		new /obj/item/gun/energy/lasercore/militia(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/storage/pouch/tubular(src)
+
 /obj/item/storage/box/bs_kit/drozd
 	name = "\improper Drozd Kit"
 	desc = "A box containing a standard issue Drozd SMG issued uniquely to corpsmen. Boasting a compact frame, low rate of fire but decent stopping power to deal with armored threats."
