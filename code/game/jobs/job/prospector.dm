@@ -90,7 +90,7 @@
 
 	perks = list(PERK_STALKER, PERK_MARKET_PROF)
 
-	description = "The Dealer is a master of the prospector arsenal. Somewhere between gunsmith and trader, your job is to mete out the finds to buyers, and to \
+	description = "The Fence is a master of the prospector arsenal. Somewhere between gunsmith and trader, your job is to mete out the finds to buyers, and to \
 	make the rusted piles of junk at the bottom of the trash cart presentable enough for sale. \
 	You are a veteran prospector or salvager, one of Hogg's long timers, and you know your stuff. You're expected to help wrangle the newbies and to back up the Foremans word  \
 	Alongside this, you've got final say over the store from which you vend your (ill)-gotten gains. Remember, you're a veteran at this. \
