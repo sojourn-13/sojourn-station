@@ -7,7 +7,7 @@
 #define JOBS_LSS "Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor","Artist"
 #define JOBS_CIVILIAN "Colonist", "Visitor"
 #define JOBS_CHURCH "Prime", "Vector"
-#define JOBS_PROSPECTOR "Foreman","Dealer","Salvager","Prospector"
+#define JOBS_PROSPECTOR "Foreman","Fence","Salvager","Prospector"
 #define JOBS_NONHUMAN "AI","Robot","pAI"
 #define JOBS_INDEPENDENT "Lodge Hunt Master","Lodge Hunter","Lodge Herbalist","Outsider"
 
