@@ -92,6 +92,7 @@
 	charge_cost = 80
 	fire_delay = 10
 	price_tag = 2500 //SPENSIVE
+	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	folding_stock = FALSE
 	init_firemodes = list(
 		WEAPON_NORMAL,
