@@ -642,21 +642,21 @@
 		new /obj/item/grenade/spawnergrenade/manhacks/junkbot(src)
 
 
-/obj/structure/closet/secure_closet/reinforced/foreman/dealer  //essentially just a modified foreman locker. This is fine for now.
+/obj/structure/closet/secure_closet/reinforced/foreman/fence //essentially just a modified foreman locker. This is fine for now.
 	name = "Fences locker"
 	req_access = list(access_fence)
-	icon_state = "dealer"
+	icon_state = "fence"
 
 //Small note from Trilby: Forman loot picks are basically just the BEST versons of the scav lockers so theirs no doble coin flip
 //Also dosnt have a side arm loot spawn but still has the vars for one if someone wants to mirrow it or do something like that in furchture
-/obj/structure/closet/secure_closet/reinforced/foreman/dealer/gain_rng()
+/obj/structure/closet/secure_closet/reinforced/foreman/fence/gain_rng()
 	main_weapon_cache = pickweight(list("SMG" = 12, "LMG" = 4, "GOOD_SMG" = 10, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
 	side_arm_cache = pickweight(list("PISTOL" = 12, "REVOLVER" = 4, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
 	melee_cache = pickweight(list("MACHETE" = 12, "KATANA" = 8, "PHAMMER" = 4, "CHAINSAW" = 1))
 	bag_cache = pickweight(list("INDUSTRIAL" = 24, "DUFFEL" = 16, "MILI" = 8, "BLUESPACE" = 1))
 	armor_cache = pickweight(list("BASIC_A" = 12, "BULLET_A" = 4, "EGUN_A" = 4, "MELEE_A" = 8))
 
-/obj/structure/closet/secure_closet/reinforced/foreman/dealer/populate_contents()
+/obj/structure/closet/secure_closet/reinforced/foreman/fence/populate_contents()
 	gain_rng()
 
 	new /obj/item/device/radio/headset/headset_pro(src)

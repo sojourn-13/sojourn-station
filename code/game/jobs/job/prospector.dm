@@ -74,7 +74,7 @@
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 
-	outfit_type = /decl/hierarchy/outfit/job/dealer
+	outfit_type = /decl/hierarchy/outfit/job/fence
 	playtimerequired = 600
 	access = list(
 		access_prospector, access_fence, access_external_airlocks, access_eva, access_maint_tunnels

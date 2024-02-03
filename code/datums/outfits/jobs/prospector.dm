@@ -7,8 +7,8 @@
 	id_type = /obj/item/card/id/black
 	pda_type = /obj/item/modular_computer/pda/cargo
 
-/decl/hierarchy/outfit/job/dealer
-	name = OUTFIT_JOB_NAME("Prospectors - Dealer")
+/decl/hierarchy/outfit/job/fence
+	name = OUTFIT_JOB_NAME("Prospectors - Fence")
 	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/top/outfitgambler
 	l_ear = /obj/item/device/radio/headset/headset_pro
