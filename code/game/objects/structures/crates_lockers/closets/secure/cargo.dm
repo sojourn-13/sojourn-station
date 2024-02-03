@@ -642,6 +642,131 @@
 		new /obj/item/grenade/spawnergrenade/manhacks/junkbot(src)
 
 
+/obj/structure/closet/secure_closet/reinforced/foreman/dealer  //essentially just a modified foreman locker. This is fine for now.
+	name = "Fences locker"
+	req_access = list(access_fence)
+	icon_state = "dealer"
+
+//Small note from Trilby: Forman loot picks are basically just the BEST versons of the scav lockers so theirs no doble coin flip
+//Also dosnt have a side arm loot spawn but still has the vars for one if someone wants to mirrow it or do something like that in furchture
+/obj/structure/closet/secure_closet/reinforced/foreman/dealer/gain_rng()
+	main_weapon_cache = pickweight(list("SMG" = 12, "LMG" = 4, "GOOD_SMG" = 10, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
+	side_arm_cache = pickweight(list("PISTOL" = 12, "REVOLVER" = 4, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
+	melee_cache = pickweight(list("MACHETE" = 12, "KATANA" = 8, "PHAMMER" = 4, "CHAINSAW" = 1))
+	bag_cache = pickweight(list("INDUSTRIAL" = 24, "DUFFEL" = 16, "MILI" = 8, "BLUESPACE" = 1))
+	armor_cache = pickweight(list("BASIC_A" = 12, "BULLET_A" = 4, "EGUN_A" = 4, "MELEE_A" = 8))
+
+/obj/structure/closet/secure_closet/reinforced/foreman/dealer/populate_contents()
+	gain_rng()
+
+	new /obj/item/device/radio/headset/headset_pro(src)
+	new /obj/item/clothing/accessory/cape/prospie(src)
+	switch(bag_cache)
+		if("INDUSTRIAL")
+			if(prob(80))
+				new /obj/item/storage/backpack/satchel/industrial(src)
+			else
+				new /obj/item/storage/backpack/industrial(src)
+		if("DUFFEL")
+			new /obj/item/storage/backpack/duffelbag(src)
+		if("MILI")
+			new /obj/item/storage/backpack/military(src)
+		if("BLUESPACE")
+			new /obj/item/storage/backpack/holding(src)
+	//Still roll the rng ones for laser proof armor other fancy armor types that are better in a case then are normal foreman one
+	switch(armor_cache)
+		if("BASIC_A")
+			new /obj/item/clothing/suit/storage/scavengerarmor(src)
+			new /obj/item/clothing/head/helmet/handmade/scavengerhelmet(src)
+			new /obj/item/clothing/gloves/thick/combat(src)
+			new /obj/item/clothing/shoes/combat(src)
+		if("BULLET_A")
+			new /obj/item/clothing/suit/armor/platecarrier(src)
+			new /obj/item/clothing/head/helmet/ballistic(src)
+			new /obj/item/clothing/gloves/thick/combat(src)
+			new /obj/item/clothing/shoes/combat(src)
+		if("MELEE_A")
+			new /obj/item/clothing/suit/armor/heavy/riot(src)
+			new /obj/item/clothing/head/helmet/faceshield/riot(src)
+			new /obj/item/clothing/gloves/thick/combat(src)
+			new /obj/item/clothing/shoes/combat(src)
+		if("EGUN_A")
+			new /obj/item/clothing/suit/armor/laserproof(src)
+			new /obj/item/clothing/head/helmet/visor/cyberpunkgoggle(src) //shitty helmet but it looks cool with the vest
+			new /obj/item/clothing/gloves/thick/combat(src)
+			new /obj/item/clothing/shoes/combat(src)
+
+	//longarms
+	switch(main_weapon_cache)
+		if("SMG")
+			new /obj/item/gun/projectile/automatic/luger(src)
+			new /obj/item/ammo_magazine/smg_35(src)
+			new /obj/item/ammo_magazine/smg_35(src)
+		if("LMG")
+			//Well not a lmg at the top its still a good gun to roll in its place
+			new /obj/item/gun/projectile/automatic/nordwind/strelki(src)
+			new /obj/item/ammo_magazine/rifle_75(src)
+			new /obj/item/ammo_magazine/rifle_75(src)
+		if("SHOTGUN")
+			new /obj/item/gun/projectile/shotgun/pump(src)
+			new /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet(src)
+			new /obj/item/ammo_magazine/speed_loader_shotgun/empty(src)
+		if("GOOD_SMG")
+			new /obj/item/gun/projectile/automatic/vector(src)
+			new /obj/item/ammo_magazine/smg_magnum_40(src)
+			new /obj/item/ammo_magazine/smg_magnum_40(src)
+		if("RIFLE")
+			new /obj/item/gun/projectile/boltgun(src)
+			new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+			new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+			new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
+		if("EGUN")
+			new /obj/item/gun/energy/lasercore(src)
+			new /obj/random/powercell/medium_safe_lonestar(src)
+			new /obj/item/cell/medium(src)
+			new /obj/item/cell/medium(src)
+	//free shottie for blasting dumbasses.
+	new /obj/item/gun/projectile/automatic/slaught_o_matic(src) //has silver eye
+	new /obj/item/gun/projectile/shotgun/doublebarrel/sawn(src)
+	new /obj/item/ammo_magazine/ammobox/shotgun/buckshot(src)
+	//melee
+
+	switch(melee_cache)
+		if("MACHETE")
+			new /obj/item/clothing/accessory/holster/saber/machete(src)
+			new /obj/item/tool/sword/machete(src)
+		if("KATANA")
+			new /obj/item/tool/sword/katana(src)
+		if("PHAMMER")
+			new /obj/item/tool/power_fist(src)
+		if("CHAINSAW")
+			new /obj/item/tool/saw/hyper(src)
+
+
+	//Regular spawns
+	new /obj/item/tool/knife/dagger(src)
+	if(prob(70))
+		new /obj/item/gun/projectile/boltgun/flare_gun(src)
+		new /obj/item/ammo_casing/flare/blue/prespawn(src)
+		new /obj/item/ammo_casing/flare/green/prespawn(src)
+		new /obj/item/ammo_casing/flare/prespawn(src)
+	else
+		new /obj/item/device/lighting/glowstick/flare(src)
+		new /obj/item/device/lighting/glowstick/flare(src)
+	new /obj/item/device/radio/off(src)
+	//Salvager improved
+	new /obj/item/storage/belt/utility/full(src)
+	new /obj/item/storage/firstaid/regular(src)
+	if(prob(70))
+		new /obj/item/storage/firstaid/ifak(src)
+	else
+		new /obj/item/storage/firstaid/combat(src)
+	if(prob(40))
+		new /obj/item/grenade/spawnergrenade/manhacks/junkbot(src)
+	if(prob(20))
+		new /obj/item/grenade/spawnergrenade/manhacks/junkbot(src)
+
+
 /obj/structure/closet/secure_closet/personal/artist
 	name = "lonestar artist's locker"
 	req_access = list(access_theatre)
