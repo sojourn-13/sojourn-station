@@ -656,7 +656,7 @@
 	bag_cache = pickweight(list("INDUSTRIAL" = 24, "DUFFEL" = 16, "MILI" = 8, "BLUESPACE" = 1))
 	armor_cache = pickweight(list("BASIC_A" = 12, "BULLET_A" = 4, "EGUN_A" = 4, "MELEE_A" = 8))
 
-/obj/structure/closet/secure_closet/reinforced/foreman/dealer/populate_contents()
+/obj/structure/closet/secure_closet/reinforced/foreman/fence/populate_contents()
 	gain_rng()
 
 	new /obj/item/device/radio/headset/headset_pro(src)
