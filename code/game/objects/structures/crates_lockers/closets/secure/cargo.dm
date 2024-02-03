@@ -645,7 +645,7 @@
 /obj/structure/closet/secure_closet/reinforced/foreman/dealer  //essentially just a modified foreman locker. This is fine for now.
 	name = "Fences locker"
 	req_access = list(access_fence)
-	icon_state = "dealer"
+	icon_state = "fence"
 
 //Small note from Trilby: Forman loot picks are basically just the BEST versons of the scav lockers so theirs no doble coin flip
 //Also dosnt have a side arm loot spawn but still has the vars for one if someone wants to mirrow it or do something like that in furchture
