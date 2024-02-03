@@ -642,7 +642,7 @@
 		new /obj/item/grenade/spawnergrenade/manhacks/junkbot(src)
 
 
-/obj/structure/closet/secure_closet/reinforced/foreman/dealer  //essentially just a modified foreman locker. This is fine for now.
+/obj/structure/closet/secure_closet/reinforced/foreman/fence //essentially just a modified foreman locker. This is fine for now.
 	name = "Fences locker"
 	req_access = list(access_fence)
 	icon_state = "fence"
