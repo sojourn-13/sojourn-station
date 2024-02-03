@@ -410,7 +410,7 @@
 	name = "claymore"
 	result = /obj/item/tool/sword
 	steps = list(
-		list(CRAFT_MATERIAL, 15, MATERIAL_STEEL, "time" = 30),
+		list(CRAFT_MATERIAL, 15, MATERIAL_PLASTEEL, "time" = 30),
 		list(QUALITY_SAWING, 30, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(QUALITY_WELDING, 40, "time" = 60)
