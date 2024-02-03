@@ -109606,7 +109606,7 @@
 	pixel_x = 32;
 	pixel_y = -32
 	},
-/obj/structure/closet/secure_closet/reinforced/foreman/dealer,
+/obj/structure/closet/secure_closet/reinforced/foreman/fence,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "wSD" = (
