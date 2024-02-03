@@ -649,7 +649,7 @@
 
 //Small note from Trilby: Forman loot picks are basically just the BEST versons of the scav lockers so theirs no doble coin flip
 //Also dosnt have a side arm loot spawn but still has the vars for one if someone wants to mirrow it or do something like that in furchture
-/obj/structure/closet/secure_closet/reinforced/foreman/dealer/gain_rng()
+/obj/structure/closet/secure_closet/reinforced/foreman/fence/gain_rng()
 	main_weapon_cache = pickweight(list("SMG" = 12, "LMG" = 4, "GOOD_SMG" = 10, "SHOTGUN" = 8, "RIFLE" = 6, "EGUN" = 4))
 	side_arm_cache = pickweight(list("PISTOL" = 12, "REVOLVER" = 4, "GOOD_PISTOL" = 10, "HEAVY_PISTOL" = 2, "EGUN_P" = 4))
 	melee_cache = pickweight(list("MACHETE" = 12, "KATANA" = 8, "PHAMMER" = 4, "CHAINSAW" = 1))
