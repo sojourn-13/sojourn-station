@@ -43,7 +43,6 @@
 		list(mode_name = "overclock", mode_desc="A large ball of volatile hydrogen to blow up cover or targets", projectile_type = /obj/item/projectile/hydrogen/cannon/max, fire_sound = 'sound/weapons/energy/hydrogen_heavy.ogg', fire_delay = 50, icon = "vaporize", use_plasma_cost = 30)
 	)
 	twohanded = TRUE
-	can_dual = FALSE
 
 // Blue cross weapon, no overheat.
 /obj/item/gun/hydrogen/incinerator
