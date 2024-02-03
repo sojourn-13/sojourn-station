@@ -180,7 +180,7 @@
 		list(/obj/item/tool_upgrade/augment/fuel_tank, 1),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 10),
 		list(QUALITY_DRILLING, 45, 10),
-		list(CRAFT_MATERIAL, 1, MATERIAL_DIAMOND, TIME = 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_DIAMOND, "time" = 60),
 		list(QUALITY_HAMMERING, 30, "time" = 40),
 		list(QUALITY_SAWING, 45, "time" = 40),
 		list(QUALITY_WELDING, 30, "time" = 60)

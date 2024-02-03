@@ -65,7 +65,7 @@
 
 /obj/item/tool/shovel/combat/turbo
 	name = "Artificer Power Crovel"
-	desc = "A creation of the Artificer's Guild dreamed up by an adept with a love for combustion. Rather than a cell this device uses a higher power gas burning engine for high-octane shoveling. An engraving on the handle reads, \"THIS MACHINE KILLS SPIDERS.\""
+	desc = "A creation of the Artificer's Guild dreamed up by an adept with a love for internal combustion. Rather than a cell, this device uses a high power fuel burning engine for high-octane shoveling. An engraving on the handle reads, \"THIS MACHINE KILLS SPIDERS.\""
 	icon_state = "Powercrovel" //Sprites by Dromkii
 	item_state = "Powercrovel"
 
@@ -81,7 +81,7 @@
 	passive_fuel_cost = 0.05
 	max_fuel = 80
 
-	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6, MATERIAL_DIAMOND = 1) //Added 1 diamond do to the crafting repice having one
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6, MATERIAL_DIAMOND = 1) //Added 1 diamond due to the crafting repice having one
 	switched_on_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 45, QUALITY_PRYING = 30, QUALITY_CUTTING = 10, QUALITY_SAWING = 15)
 	switched_off_qualities = list(QUALITY_SHOVELING = 25, QUALITY_DIGGING = 25, QUALITY_PRYING = 25, QUALITY_CUTTING = 5, QUALITY_SAWING = 5) //Still kindof usable when off
 
