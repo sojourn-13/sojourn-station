@@ -85393,19 +85393,6 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/inside_colony)
-"rSk" = (
-/obj/structure/multiz/stairs/enter,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 4;
-	icon_state = "pdoor0";
-	id = s;
-	layer = 2.6;
-	name = "Checkpoint Blast Doors";
-	opacity = 0
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate)
 "rSo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/window_lwall_spawn,
@@ -215815,7 +215802,7 @@ hCV
 crH
 pMa
 bbZ
-rSk
+iVo
 pIH
 pvU
 jlS
