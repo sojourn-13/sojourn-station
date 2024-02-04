@@ -2795,8 +2795,14 @@
 	network = list("Nadzedha Wall Colony")
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
+	},
+/obj/structure/cable/green,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate)
+/area/nadezhda/security/maingate/east)
 "aEw" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -9573,6 +9579,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/engineering/foyer)
+"ceg" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/inside_colony)
 "ceB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/firedoor,
@@ -28489,6 +28504,14 @@
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/medical/genetics)
+"gcy" = (
+/obj/machinery/power/apc{
+	pixel_y = 4;
+	pixel_x = 31
+	},
+/obj/structure/cable/green,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/security/maingate/west)
 "gcB" = (
 /obj/structure/table/rack,
 /obj/structure/window/reinforced{
@@ -35339,6 +35362,11 @@
 "hzA" = (
 /obj/effect/floor_decal/industrial/road/curvebig4,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/security/maingate)
 "hzI" = (
@@ -49807,8 +49835,13 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1north)
 "kyn" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate)
+/area/nadezhda/security/maingate/east)
 "kyy" = (
 /turf/simulated/floor/tiled/steel/bar_flat,
 /area/nadezhda/command/tcommsat/computer)
@@ -56257,6 +56290,21 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/crew_quarters/bar)
+"lWa" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "checkpointlockdown";
+	layer = 2.6;
+	name = "Checkpoint Blast Doors";
+	opacity = 0
+	},
+/obj/machinery/door/airlock/highsecurity{
+	name = "Checkpoint Airlock"
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/nadezhda/security/maingate/east)
 "lWd" = (
 /obj/effect/floor_decal/industrial/box/red,
 /obj/machinery/disposal,
@@ -57970,8 +58018,13 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "Checkpoint Airlock"
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate)
+/area/nadezhda/security/maingate/east)
 "mnb" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
 /obj/effect/decal/cleanable/dirt,
@@ -65959,6 +66012,11 @@
 	network = list("Nadzedha Wall Colony")
 	},
 /obj/structure/multiz/stairs/enter/bottom,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/west)
 "nTw" = (
@@ -71979,6 +72037,11 @@
 /obj/machinery/vending/wallmed/lobby{
 	pixel_y = -32
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/security/maingate)
 "peQ" = (
@@ -73049,8 +73112,13 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate)
+/area/nadezhda/security/maingate/east)
 "pre" = (
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/maintenance{
@@ -74860,6 +74928,20 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/triage_blackshield)
+"pKh" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/maingate)
 "pKk" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -76875,6 +76957,11 @@
 "qen" = (
 /obj/effect/floor_decal/industrial/road/warning4,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/security/maingate)
 "qeo" = (
@@ -94605,6 +94692,11 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/security/maingate)
 "tPc" = (
@@ -95831,6 +95923,14 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
+"ubp" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/maingate)
 "ubv" = (
 /obj/random/closet_tech/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -103453,6 +103553,11 @@
 /area/nadezhda/crew_quarters/dorm4)
 "vEp" = (
 /obj/effect/floor_decal/industrial/hatch,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/security/maingate)
 "vEr" = (
@@ -103880,6 +103985,11 @@
 "vJo" = (
 /obj/effect/floor_decal/industrial/road/curvebig3,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/security/maingate)
 "vJq" = (
@@ -213947,9 +214057,9 @@ hJm
 hJm
 hJm
 hJm
-hJm
+ceg
 nTu
-sSx
+gcy
 nSJ
 gNQ
 nDp
@@ -214351,7 +214461,7 @@ fyn
 kXG
 gqb
 oOa
-eIG
+ubp
 pHc
 pHc
 pHc
@@ -214553,7 +214663,7 @@ crH
 crH
 crH
 crH
-crH
+wYz
 pHc
 vgZ
 iZk
@@ -214755,7 +214865,7 @@ lUn
 jKt
 mWf
 uXo
-jKt
+pKh
 mGJ
 bJt
 hVl
@@ -215165,8 +215275,8 @@ qhi
 fUc
 ejG
 vUn
-wjp
-wjp
+xgY
+xgY
 xCz
 rUz
 lpa
@@ -215973,8 +216083,8 @@ wjS
 fFJ
 cYg
 vjs
-xgY
-xgY
+pHc
+pHc
 qQP
 pvU
 jlS
@@ -216175,8 +216285,8 @@ nyx
 crH
 eIG
 qJS
-xgY
-xgY
+pHc
+pHc
 txk
 ovQ
 pfD
@@ -217991,7 +218101,7 @@ kyn
 mna
 prd
 aEv
-mna
+lWa
 unx
 jhN
 qMG
