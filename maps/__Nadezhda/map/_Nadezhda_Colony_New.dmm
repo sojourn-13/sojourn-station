@@ -7514,7 +7514,7 @@
 /area/nadezhda/crew_quarters/pool)
 "bGt" = (
 /obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "bGx" = (
 /obj/structure/shuttle_part/science{
@@ -30357,7 +30357,7 @@
 	opacity = 0
 	},
 /obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "guc" = (
 /obj/effect/floor_decal/industrial/warningwhite{
@@ -96896,7 +96896,7 @@
 	name = "Checkpoint Blast Doors";
 	opacity = 0
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "uki" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
