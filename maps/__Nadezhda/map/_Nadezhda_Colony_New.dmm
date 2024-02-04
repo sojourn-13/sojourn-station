@@ -34523,12 +34523,12 @@
 "hpT" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
-	d1 = 2;
+	d1 = 1;
 	d2 = 4;
-	icon_state = "2-4"
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/security/maingate/west)
 "hpV" = (
 /obj/random/closet_maintloot,
 /obj/effect/decal/cleanable/dirt,
@@ -66063,11 +66063,6 @@
 	network = list("Nadzedha Wall Colony")
 	},
 /obj/structure/multiz/stairs/enter/bottom,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/west)
 "nTw" = (
@@ -105153,12 +105148,16 @@
 /turf/simulated/floor/wood,
 /area/nadezhda/command/merchant)
 "vTm" = (
+/obj/structure/catwalk,
 /obj/machinery/power/apc{
 	pixel_y = 4;
 	pixel_x = 31
 	},
-/obj/structure/cable/green,
-/turf/simulated/floor/asteroid/dirt/dust,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating/under,
 /area/nadezhda/security/maingate/west)
 "vTp" = (
 /obj/effect/damagedfloor/fire,
@@ -113737,6 +113736,13 @@
 /obj/machinery/floodlight,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
+"xHk" = (
+/obj/machinery/door/airlock/glass_security{
+	name = "Security Post";
+	req_access = list(1)
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/maingate/west)
 "xHt" = (
 /obj/machinery/vending/drip,
 /turf/simulated/floor/tiled/steel/monofloor{
@@ -214178,10 +214184,10 @@ hJm
 hJm
 hJm
 hJm
-hJm
+vTm
 hpT
 nTu
-vTm
+sSx
 nSJ
 gNQ
 nDp
@@ -214380,9 +214386,9 @@ pHc
 pHc
 pHc
 eYM
-pHc
-hKK
-pHc
+xRA
+xHk
+xRA
 xRA
 xRA
 xRA
