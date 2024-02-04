@@ -24,5 +24,5 @@
 
 /obj/structure/closet/secure_closet/reinforced
 	icon = 'icons/obj/closet.dmi'
-	icon_state = "hop"
+	icon_state = "reinforced"
 	icon_lock = "reinforced"
