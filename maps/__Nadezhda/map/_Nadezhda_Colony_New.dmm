@@ -56753,8 +56753,7 @@
 	anchored = 1;
 	req_one_access = list(1)
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate)
 "maQ" = (
 /obj/item/modular_computer/console/preset/security/records,
