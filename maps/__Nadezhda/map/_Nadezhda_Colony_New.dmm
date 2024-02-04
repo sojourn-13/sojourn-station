@@ -33078,6 +33078,15 @@
 	tag = "icon-escpodwall3"
 	},
 /area/shuttle/surface_transport_lz)
+"gZU" = (
+/obj/machinery/button/remote/blast_door{
+	pixel_y = 4;
+	pixel_x = -8;
+	id = "checkpointlockdown";
+	name = "Checkpoint Lockdown"
+	},
+/turf/simulated/wall/r_wall,
+/area/nadezhda/security/maingate)
 "gZV" = (
 /obj/structure/catwalk,
 /obj/machinery/light/small,
@@ -47330,7 +47339,8 @@
 /obj/machinery/button/remote/blast_door{
 	id = "fencelockdown";
 	name = "section shutters";
-	pixel_y = -28
+	pixel_y = -28;
+	pixel_x = 6
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -85383,6 +85393,19 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/inside_colony)
+"rSk" = (
+/obj/structure/multiz/stairs/enter,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = s;
+	layer = 2.6;
+	name = "Checkpoint Blast Doors";
+	opacity = 0
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/security/maingate)
 "rSo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/window_lwall_spawn,
@@ -215792,7 +215815,7 @@ hCV
 crH
 pMa
 bbZ
-iVo
+rSk
 pIH
 pvU
 jlS
@@ -216599,7 +216622,7 @@ lFK
 suv
 crH
 jXQ
-pHc
+gZU
 pHc
 dis
 rME
