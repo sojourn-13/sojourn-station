@@ -2794,6 +2794,7 @@
 	dir = 8;
 	network = list("Nadzedha Wall Colony")
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate)
 "aEw" = (
@@ -7797,6 +7798,7 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate)
 "bJu" = (
@@ -19651,6 +19653,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "ejS" = (
@@ -24529,6 +24532,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate)
 "fjo" = (
@@ -25928,6 +25932,7 @@
 "fyn" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/microwave,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "fyw" = (
@@ -27767,6 +27772,7 @@
 "fUc" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "fUe" = (
@@ -29392,7 +29398,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/workshop)
 "gkJ" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/sparsegrass,
 /obj/machinery/camera/network/gate{
 	network = list("Nadzedha Wall Colony")
 	},
@@ -29921,6 +29927,7 @@
 "gqb" = (
 /obj/machinery/vending/coffee,
 /obj/effect/floor_decal/industrial/outline,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "gqf" = (
@@ -37429,6 +37436,7 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate)
 "hVm" = (
@@ -40149,14 +40157,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
-"ivY" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate)
 "iwq" = (
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,11"
@@ -42283,6 +42283,15 @@
 /area/nadezhda/maintenance/undergroundfloor2east)
 "iVo" = (
 /obj/structure/multiz/stairs/enter,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id = "checkpointlockdown";
+	layer = 2.6;
+	name = "Checkpoint Blast Doors";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "iVq" = (
@@ -42588,6 +42597,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/maingate)
 "iZo" = (
@@ -48689,6 +48699,7 @@
 /obj/structure/curtain/open{
 	pixel_y = 32
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/security/maingate)
 "kmM" = (
@@ -50144,6 +50155,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
+	},
+/obj/machinery/alarm{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate)
@@ -51907,6 +51921,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/box/donkpockets,
 /obj/structure/closet/secure_closet/freezer/mini,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "kXH" = (
@@ -56066,8 +56081,14 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "lUn" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/gate{
-	dir = 10;
+	dir = 8;
 	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -56659,6 +56680,7 @@
 	anchored = 1;
 	req_one_access = list(1)
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate)
 "maQ" = (
@@ -70377,6 +70399,7 @@
 "oOa" = (
 /obj/machinery/vending/cigarette,
 /obj/effect/floor_decal/industrial/outline,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "oOe" = (
@@ -73025,6 +73048,7 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate)
 "pre" = (
@@ -77102,6 +77126,7 @@
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = -32
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "qhu" = (
@@ -77917,6 +77942,7 @@
 	req_one_access = list(1)
 	},
 /obj/effect/floor_decal/industrial/outline,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate)
 "qpR" = (
@@ -79591,7 +79617,14 @@
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "qHh" = (
-/turf/simulated/floor/tiled/dark/cargo,
+/obj/structure/closet/secure_closet/reinforced{
+	anchored = 1;
+	req_one_access = list(1)
+	},
+/obj/effect/floor_decal/industrial/outline,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate)
 "qHj" = (
 /obj/machinery/disease2/isolator,
@@ -79824,10 +79857,6 @@
 	},
 /obj/machinery/body_scanconsole,
 /obj/effect/floor_decal/industrial/hatch,
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -32
-	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "qJT" = (
@@ -83108,6 +83137,7 @@
 /obj/item/storage/firstaid/regular,
 /obj/item/bodybag/cryobag,
 /obj/item/roller,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "rvy" = (
@@ -99933,6 +99963,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/device/binoculars,
 /obj/item/device/camera,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "uRZ" = (
@@ -105038,6 +105069,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/table/steel_reinforced,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "vUr" = (
@@ -105731,6 +105763,7 @@
 	pixel_x = -12;
 	pixel_y = 2
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_panels,
 /area/nadezhda/security/maingate)
 "wbl" = (
@@ -114797,6 +114830,7 @@
 /obj/effect/floor_decal/industrial/box/red/corners{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "xVk" = (
@@ -214317,7 +214351,7 @@ fyn
 kXG
 gqb
 oOa
-lUn
+eIG
 pHc
 pHc
 pHc
@@ -214717,15 +214751,15 @@ bXS
 qKI
 gtY
 pgu
+lUn
 jKt
-mWf
 mWf
 uXo
 jKt
 mGJ
 bJt
 hVl
-qHh
+lnW
 fjc
 pHc
 pHc
@@ -215131,8 +215165,8 @@ qhi
 fUc
 ejG
 vUn
-pHc
-pHc
+wjp
+wjp
 xCz
 rUz
 lpa
@@ -215534,7 +215568,7 @@ crH
 pMa
 hCV
 crH
-ivY
+pMa
 bbZ
 iVo
 pIH
@@ -215735,8 +215769,8 @@ wYz
 eIG
 ntl
 hCV
-eIG
-ivY
+crH
+pMa
 bbZ
 iVo
 pIH
@@ -215930,7 +215964,7 @@ fjo
 pHc
 maP
 qpO
-qpO
+qHh
 bGt
 xSm
 wYz
@@ -216130,8 +216164,8 @@ cwC
 pCc
 fjo
 pHc
-eIG
-eIG
+hCV
+hCV
 hvB
 gTC
 inH
@@ -216141,8 +216175,8 @@ nyx
 crH
 eIG
 qJS
-pHc
-pHc
+xgY
+xgY
 txk
 ovQ
 pfD
@@ -216341,7 +216375,7 @@ jrB
 pHc
 lFK
 suv
-eIG
+crH
 jXQ
 pHc
 pHc
