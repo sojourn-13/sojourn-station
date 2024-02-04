@@ -106404,9 +106404,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
-/obj/machinery/computer/prisoner{
-	dir = 3
-	},
+/obj/machinery/computer/prisoner,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/gray_platform,
