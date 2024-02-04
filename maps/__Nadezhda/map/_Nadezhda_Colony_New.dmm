@@ -4708,7 +4708,8 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/highsecurity{
-	name = "Checkpoint Airlock"
+	name = "Checkpoint Airlock";
+	req_access = list(1)
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate)
@@ -48793,10 +48794,11 @@
 	name = "Checkpoint Blast Doors";
 	opacity = 0
 	},
-/obj/machinery/door/airlock/highsecurity{
-	name = "Checkpoint Airlock"
-	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/highsecurity{
+	name = "Checkpoint Airlock";
+	req_access = list(1)
+	},
 /turf/simulated/floor/plating,
 /area/nadezhda/security/maingate)
 "kni" = (
@@ -58040,7 +58042,8 @@
 	opacity = 0
 	},
 /obj/machinery/door/airlock/highsecurity{
-	name = "Checkpoint Airlock"
+	name = "Checkpoint Airlock";
+	req_access = list(1)
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate/east)
@@ -59006,7 +59009,8 @@
 	opacity = 0
 	},
 /obj/machinery/door/airlock/highsecurity{
-	name = "Checkpoint Airlock"
+	name = "Checkpoint Airlock";
+	req_access = list(1)
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -59857,11 +59861,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/highsecurity{
-	name = "Checkpoint Airlock"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/highsecurity{
+	name = "Checkpoint Airlock";
+	req_access = list(1)
+	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate)
 "mGO" = (
@@ -105096,7 +105101,8 @@
 	opacity = 0
 	},
 /obj/machinery/door/airlock/highsecurity{
-	name = "Checkpoint Airlock"
+	name = "Checkpoint Airlock";
+	req_access = list(1)
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate/west)
