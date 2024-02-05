@@ -191,7 +191,7 @@
 	else if(!advanced_medical)
 		to_chat(user, SPAN_WARNING("You don't have the first idea how you'd repair the damaged tissue."))
 	else if(target.stats.getPerk(PERK_FSYNDROME))
-		to_chat(user, SPAN_WARNING("This mind appears to have already been rejuvenated once using nanites, further attempts are futile."))
+		to_chat(user, SPAN_WARNING("This brain appears to have already been rejuvenated once using nanites, further attempts are futile."))
 
 	if (world.time - target.timeofdeath > DEFIB_TIME_LIMIT)
 		user.visible_message(SPAN_NOTICE("[user] begins repairing any neural degradation with the [tool_name]."), \
