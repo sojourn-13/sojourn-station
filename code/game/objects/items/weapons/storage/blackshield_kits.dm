@@ -104,6 +104,8 @@
 		new /obj/item/ammo_magazine/heavy_rifle_408(src)
 		new /obj/item/ammo_magazine/heavy_rifle_408(src)
 		new /obj/item/ammo_magazine/heavy_rifle_408(src)
+		new /obj/item/ammo_magazine/heavy_rifle_408(src)
+		new /obj/item/ammo_magazine/heavy_rifle_408(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/bs_kit/cog
@@ -183,6 +185,7 @@
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/bs_kit/saiga
@@ -191,6 +194,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony(src)
+		new /obj/item/ammo_magazine/sbaw(src)
+		new /obj/item/ammo_magazine/sbaw(src)
 		new /obj/item/ammo_magazine/sbaw(src)
 		new /obj/item/ammo_magazine/sbaw(src)
 		new /obj/item/ammo_magazine/sbaw(src)
@@ -281,8 +286,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
 /obj/item/storage/box/bs_kit/gemini
@@ -291,8 +296,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/lamia/gemini(src)
-		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
-		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/kurtz_50(src)
+		new /obj/item/ammo_magazine/kurtz_50(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
 // Armor Kits
