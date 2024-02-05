@@ -15225,6 +15225,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate)
 "dox" = (
@@ -27811,6 +27816,14 @@
 	pixel_y = -6;
 	pixel_x = -28
 	},
+/obj/machinery/recharger{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/machinery/recharger{
+	pixel_y = 3;
+	pixel_x = 5
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "fUe" = (
@@ -29963,9 +29976,9 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/prisoncells)
 "gqb" = (
-/obj/machinery/vending/coffee,
 /obj/effect/floor_decal/industrial/outline,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/snack,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "gqf" = (
@@ -80080,7 +80093,7 @@
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 8
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/inside_colony)
 "qKW" = (
 /obj/effect/decal/cleanable/dirt,
@@ -105297,14 +105310,6 @@
 	},
 /obj/structure/table/steel_reinforced,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/recharger/wallcharger{
-	pixel_y = -6;
-	pixel_x = -28
-	},
-/obj/machinery/recharger/wallcharger{
-	pixel_y = 5;
-	pixel_x = -28
-	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "vUr" = (
