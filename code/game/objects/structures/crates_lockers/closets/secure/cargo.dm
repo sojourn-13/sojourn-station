@@ -650,33 +650,16 @@
 /obj/structure/closet/secure_closet/reinforced/foreman/fence/populate_contents()
 	new /obj/item/clothing/suit/storage/scavengerarmor(src)
 	new /obj/item/clothing/head/helmet/handmade/scavengerhelmet(src)
-	new /obj/item/gun/projectile/automatic/ak47(src)
-	new /obj/item/ammo_magazine/speed_loader_shotgun/empty(src)
-	new /obj/item/ammo_magazine/rifle_75(src)
-	new /obj/item/ammo_magazine/rifle_75(src)
-	new /obj/item/gun/projectile/automatic/slaught_o_matic(src)
-	new /obj/item/gun/projectile/shotgun/doublebarrel/sawn(src)
+	new /obj/item/gun/projectile/shotgun/bull/bison(src)
 	new /obj/item/ammo_magazine/ammobox/shotgun/buckshot(src)
-	new /obj/item/clothing/accessory/holster/saber/machete(src)
-	new /obj/item/tool/sword/machete(src)
+	new /obj/item/ammo_magazine/speed_loader_shotgun/empty(src)
+	new /obj/item/gun/projectile/automatic/slaught_o_matic(src)
+	new /obj/item/gun/projectile/ladon/sa(src)
+	new /obj/item/ammo_magazine/magnum_40(src)
+	new /obj/item/ammo_magazine/magnum_40(src)
 	new /obj/item/tool/knife/dagger(src)
-	if(prob(70))
-		new /obj/item/gun/projectile/boltgun/flare_gun(src)
-		new /obj/item/ammo_casing/flare/blue/prespawn(src)
-		new /obj/item/ammo_casing/flare/green/prespawn(src)
-		new /obj/item/ammo_casing/flare/prespawn(src)
-	else
-		new /obj/item/device/lighting/glowstick/flare(src)
-		new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/radio/off(src)
 	new /obj/item/storage/belt/utility/full(src)
-	new /obj/item/storage/firstaid/regular(src)
-	if(prob(70))
-		new /obj/item/storage/firstaid/ifak(src)
-	else
-		new /obj/item/storage/firstaid/combat(src)
-
-
 
 /obj/structure/closet/secure_closet/personal/artist
 	name = "lonestar artist's locker"
