@@ -102,8 +102,6 @@
 #define PERK_REZ_SICKNESS_SEVERE /datum/perk/rezsickness/severe
 #define PERK_REZ_SICKNESS_FATAL /datum/perk/rezsickness/severe/fatal
 
-#define PERK_FSYNDROME /datum/perk/fsyndrome
-
 //////////////
 //Race Perks//
 //////////////

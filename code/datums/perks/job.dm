@@ -361,24 +361,10 @@
 	if(holder.buckled)
 		cooldown_time -= 2 SECONDS
 
-/datum/perk/fsyndrome
-	name = "Flatline Syndrome"
-	desc = "Whether on purpose or on accident your grey-matter was nearly destroyed. The miracles of modern medicine have brought you back, but only barely. Your constition fails you and unlike the more common forms of revival-sickness it's going to take more than a powernap to walk this one off."
-
-/datum/perk/fsyndrome/assign(mob/living/carbon/human/H)
-	..()
-	holder.brute_mod_perk += 0.5
-	holder.burn_mod_perk += 0.5
-	holder.oxy_mod_perk += 0.5
-	holder.toxin_mod_perk += 0.5
-	holder.stats.changeStat(STAT_ROB, -40)
-	holder.stats.changeStat(STAT_TGH, -40)
-	holder.stats.changeStat(STAT_VIG, -40)
-
 /datum/perk/racial/slime_rez_sickness
 	name = "Aulvae Decohesion Syndrome"
 	desc = "You've recently been returned to cohesion via the use of high-energy toxins which have left your form in a semi-stable state."
-	gain_text = "Your core vibrates and crackles with barely contained energy as you're revived. You feel stronger than ever, but your form is unstable and fragile. Perhaps it'd be best to lie down and allow time for this to pass, lest you lose cohesion once again."
+	gain_text = "Your core vibrates and crackles with barely contained energy as you're revived. You feel stronger than ever, but your form is unstable and fragile. Perhaps it'd be best to lie down and allow time for this to pass, lest you loose cohesion once again."
 	lose_text = "The thunder bouncing around just beneath your dermis has passed and you feel stable once again."
 	var/initial_time
 
