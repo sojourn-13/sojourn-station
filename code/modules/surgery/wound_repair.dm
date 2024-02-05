@@ -178,12 +178,28 @@
 		to_chat(user, SPAN_WARNING("[tool_name] has no more uses left."))
 		return
 
-	if (target.getToxLoss() >= 0 || world.time - target.timeofdeath > DEFIB_TIME_LIMIT)
-		user.visible_message(SPAN_NOTICE("[user] begins filtering out any toxins in [target]'s body and repairing any neural degradation with the [tool_name]."), \
-		SPAN_NOTICE("You begin to filter out any toxins to [target]'s body and repair any neural degradation with the [tool_name].") )
+	var/advanced_medical = user.stats.getPerk(PERK_ADVANCED_MEDICAL)
+	var/obj/item/organ/internal/vital/brain/B
+	if(target.getBrainLoss()>= 200 && tool.amount == 5 && advanced_medical && !target.stats.getPerk(PERK_FSYNDROME))
+		user.visible_message(SPAN_NOTICE("[user] begins rejuvenating damaged tissue with the [tool_name]."))
+		target.stats.addPerk(PERK_FSYNDROME)
+		tool.amount -= 5
+		B.rejuvenate()
+		log_and_message_admins("Added devestating rez sickness to [target].")
+	else if(tool.amount <=5)
+		to_chat(user, SPAN_WARNING("There's not enough nanites left to rejuvenate the damaged tissue."))
+	else if(!advanced_medical)
+		to_chat(user, SPAN_WARNING("You don't have the first idea how you'd repair the damaged tissue."))
+	else if(target.stats.getPerk(PERK_FSYNDROME))
+		to_chat(user, SPAN_WARNING("This mind appears to have already been rejuvenated once using nanites, further attempts are futile."))
+
+	if (world.time - target.timeofdeath > DEFIB_TIME_LIMIT)
+		user.visible_message(SPAN_NOTICE("[user] begins repairing any neural degradation with the [tool_name]."), \
+		SPAN_NOTICE("You begin to repair any neural degradation with the [tool_name].") )
 
 	target.custom_pain("The pain in your [affected.name] is living hell!",1)
 	..()
+
 
 /datum/old_surgery_step/external/tox_heal/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
