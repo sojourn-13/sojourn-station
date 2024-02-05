@@ -24699,6 +24699,17 @@
 /obj/structure/flora/big/rocks1,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/inside_colony)
+"fkA" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/bed/chair/office/dark{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/bluecorner,
+/area/nadezhda/security/maingate)
 "fkD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -46178,6 +46189,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate)
 "jKE" = (
@@ -56186,6 +56198,7 @@
 	dir = 8;
 	network = list("Nadzedha Wall Colony")
 	},
+/obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate)
 "lUp" = (
@@ -215014,7 +215027,7 @@ gtY
 pgu
 lUn
 jKt
-mWf
+fkA
 uXo
 dou
 mGJ
