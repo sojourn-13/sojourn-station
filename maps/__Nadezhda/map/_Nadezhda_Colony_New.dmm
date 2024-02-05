@@ -27802,8 +27802,15 @@
 /area/nadezhda/command/bridge)
 "fUc" = (
 /obj/structure/table/steel_reinforced,
-/obj/machinery/recharger,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 5;
+	pixel_x = -28
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_y = -6;
+	pixel_x = -28
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "fUe" = (
@@ -37487,9 +37494,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
-	},
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 8
 	},
@@ -42660,6 +42664,9 @@
 	icon_state = "0-4"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/maingate/west)
 "iZo" = (
@@ -77273,7 +77280,6 @@
 	dir = 8
 	},
 /obj/structure/table/steel_reinforced,
-/obj/machinery/recharger,
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = -32
 	},
@@ -105154,13 +105160,14 @@
 /area/nadezhda/command/merchant)
 "vTm" = (
 /obj/structure/catwalk,
-/obj/machinery/power/apc{
-	pixel_y = 4;
-	pixel_x = 31
-	},
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/security/maingate/west)
@@ -105290,6 +105297,14 @@
 	},
 /obj/structure/table/steel_reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/recharger/wallcharger{
+	pixel_y = -6;
+	pixel_x = -28
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 5;
+	pixel_x = -28
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "vUr" = (
