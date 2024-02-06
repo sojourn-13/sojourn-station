@@ -243,19 +243,7 @@
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P
-	P = new()
-	P.name = "Wanted:Liam Wright"
-	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
-				<h2>Latest wanted issues</h2>\
-				</center>\
-				<hr>\
-				<b>NAME:</b> <i>Liam Wright</i><br>\
-				<b>DESCRIPTION:</b><i>Pale, thin, male vat-grown. Short, black hair</i><br>\
-				<b>CRIMES:</b><i>Sabotage, Infiltration, possession of excelsior contraband, threat of murder or serious injury, conspiracy to commit grand tresspass, sparking manhunt.  </i><br>\
-				<b>NOTES:</b><i>A long veteran foreman of the Prospectors and a known Psion. Suspect should be assumed armed and dangerous at all times and is wanted alive. Militia personnel are advised to not engage alone.</i>"
-	P.copy_overlays(list("paper_stamp-dots"), TRUE)
-	P.stamped &= STAMP_FACTION
-	src.contents += P
+
 
 
 /obj/structure/noticeboard/medical
