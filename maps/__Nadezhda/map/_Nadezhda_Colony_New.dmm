@@ -13778,11 +13778,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/nadezhda/absolutism/vectorrooms)
-"cYl" = (
-/obj/machinery/power/solar,
-/obj/structure/cable,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
 "cYn" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/big/bush3,
@@ -17634,10 +17629,6 @@
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/storage/primary)
-"dOt" = (
-/obj/item/spider_shadow_trap,
-/turf/simulated/floor/plating,
-/area/nadezhda/dungeon/outside/abandoned_outpost)
 "dOv" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -33141,14 +33132,6 @@
 /obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"hdu" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
 "hdw" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/structures/low_chance,
@@ -33988,14 +33971,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/hallway/side/f2section1)
-"hnb" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
 "hnc" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -34078,15 +34053,6 @@
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/crew_quarters/kitchen)
-"hoh" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
 "hok" = (
 /obj/random/structures/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -34226,14 +34192,10 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/medical/sleeper)
 "hpq" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid/grass/dry,
-/area/nadezhda/outside/forest)
+/obj/random/cluster/spiders,
+/obj/item/spider_shadow_trap,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/scave)
 "hps" = (
 /obj/random/spider_trap/low_chance,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -34508,13 +34470,9 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/hallway/surface/section1)
 "hsY" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/asteroid/grass/dry,
-/area/nadezhda/outside/forest)
+/obj/random/gun_combat/low_chance,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/scave)
 "htd" = (
 /turf/simulated/wall,
 /area/nadezhda/crew_quarters/dorm2)
@@ -74080,14 +74038,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/nadezhda/security/barracks)
-"pFK" = (
-/obj/machinery/power/tracker,
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
 "pFT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/cluster/spiders,
@@ -84096,14 +84046,9 @@
 /turf/simulated/wall/r_wall,
 /area/nadezhda/rnd/lab)
 "rLw" = (
-/obj/structure/flora/small/grassb2,
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
+/obj/item/spider_shadow_trap,
+/turf/simulated/floor/plating,
+/area/nadezhda/dungeon/outside/abandoned_outpost)
 "rLy" = (
 /obj/structure/table/woodentable,
 /obj/item/paper_bin,
@@ -86079,22 +86024,6 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
-"sfX" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
 "sgb" = (
 /obj/structure/catwalk,
 /obj/structure/railing{
@@ -91741,15 +91670,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"tqQ" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/forest)
 "tra" = (
 /obj/machinery/power/hydroelectric,
 /obj/structure/lattice,
@@ -102522,10 +102442,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/lab)
-"vzk" = (
-/obj/random/gun_combat/low_chance,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/scave)
 "vzm" = (
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,10"
@@ -107212,11 +107128,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"wvN" = (
-/obj/random/cluster/spiders,
-/obj/item/spider_shadow_trap,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/scave)
 "wvO" = (
 /obj/structure/catwalk,
 /obj/structure/closet/crate/trashcart,
@@ -183892,7 +183803,7 @@ hRu
 hRu
 pJd
 ggh
-wvN
+hpq
 ggh
 aIE
 pJd
@@ -189153,7 +189064,7 @@ ggh
 nMT
 pdo
 hRu
-vzk
+hsY
 ggh
 ggh
 hRu
@@ -225915,7 +225826,7 @@ dAX
 crJ
 gHd
 gHd
-dOt
+rLw
 gHd
 gHd
 dAX
@@ -229558,7 +229469,7 @@ dAX
 dAX
 dAX
 uNO
-hsY
+uNO
 uNO
 uNO
 uNO
@@ -229760,7 +229671,7 @@ dAX
 dAX
 dAX
 uNO
-hsY
+uNO
 uNO
 qjm
 uNO
@@ -229962,7 +229873,7 @@ uNO
 fLZ
 uNO
 uNO
-hpq
+fLZ
 fLZ
 uNO
 uNO
@@ -230164,7 +230075,7 @@ uNO
 fLZ
 uNO
 fLZ
-hoh
+qZG
 tfW
 keX
 tfW
@@ -230366,7 +230277,7 @@ tfW
 qZG
 tfW
 tfW
-hnb
+tfW
 tfW
 tfW
 tfW
@@ -230567,9 +230478,9 @@ tfW
 tfW
 tfW
 tfW
-hdu
-sfX
-cYl
+tfW
+tfW
+tfW
 tfW
 bSm
 tfW
@@ -230769,9 +230680,9 @@ tfW
 tfW
 qZG
 tfW
-hdu
-sfX
-cYl
+tfW
+tfW
+tfW
 tfW
 tfW
 tfW
@@ -230971,9 +230882,9 @@ cxU
 cxU
 tfW
 tfW
-hdu
-sfX
-cYl
+tfW
+tfW
+tfW
 tfW
 bSm
 tfW
@@ -231173,9 +231084,9 @@ cxU
 cxU
 tfW
 tfW
-hdu
-sfX
-cYl
+tfW
+tfW
+tfW
 tfW
 tfW
 tfW
@@ -231375,9 +231286,9 @@ cxU
 cxU
 tfW
 tfW
-hdu
-sfX
-cYl
+tfW
+tfW
+tfW
 tfW
 tfW
 bSm
@@ -231577,9 +231488,9 @@ cxU
 cxU
 cxU
 tfW
-tqQ
-sfX
-cYl
+tfW
+tfW
+tfW
 ebv
 tfW
 tfW
@@ -231779,9 +231690,9 @@ cxU
 cxU
 cxU
 tfW
-hdu
-sfX
-cYl
+tfW
+tfW
+tfW
 tfW
 tfW
 tfW
@@ -231981,9 +231892,9 @@ cxU
 cxU
 cxU
 tfW
-hdu
-sfX
-cYl
+tfW
+tfW
+tfW
 ebv
 tfW
 tfW
@@ -232183,9 +232094,9 @@ cxU
 cxU
 tfW
 tfW
-rLw
-sfX
-cYl
+tfW
+tfW
+tfW
 tfW
 tfW
 tfW
@@ -232385,8 +232296,8 @@ cxU
 cxU
 tfW
 tfW
-raN
-pFK
+tfW
+tfW
 tfW
 tfW
 mHv
