@@ -52,6 +52,7 @@
 	min_age = 18
 	max_age = 200 //Effectively ageless, but human history is only so long.
 	hunger_factor = 1.1
+	nutrition_mod = 100
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
@@ -1122,6 +1123,8 @@
 	min_age = 18
 	max_age = 200
 	taste_sensitivity = TASTE_SENSITIVE
+
+	nutrition_mod = 150 //Important for some perks
 
 	burn_mod = 1.2
 	brute_mod = 1.2

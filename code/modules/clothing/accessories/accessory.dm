@@ -1089,6 +1089,12 @@
 	icon_state = "militarypilot"
 	item_state = "militarypilot"
 
+/obj/item/clothing/accessory/flag/mardinat_yunan
+	name = "Mardinat-Yunan flag"
+	desc = "A flag that can be draped over the shoulders of it's wearer. Yunan bleeds for it's children."
+	icon_state = "mardinat_yunan_flag"
+	item_state = "mardinat_yunan_flag"
+
 /* Kneepads */
 
 /obj/item/clothing/accessory/kneepads
@@ -1523,7 +1529,7 @@ Anyone wearing it can open public church doors. You should do your best to keep 
 /obj/item/clothing/accessory/passcard/mardinat_yunan
 	name = "Mardinat Yanun passcard"
 	desc = "A passcard issued to citizens of Mardinat Yunan, initially selected for habitation for its rich gasses and potential for being located on an upcoming trade lane. This gas giant had many of its economic dreams dashed, with the gaseous mixture of the atmosphere being poor for fuel production and the trade lane never materializing."
-	icon_state = "passcard_madinat_yunan"
+	icon_state = "passcard_mardinat_yunan"
 	item_state = "badge"
 
 /obj/item/clothing/accessory/passcard/thalatta

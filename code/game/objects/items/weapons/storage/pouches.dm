@@ -285,7 +285,10 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/ammo_casing/shotgun,
-		/obj/item/ammo_magazine/speed_loader_shotgun
+		/obj/item/ammo_magazine/speed_loader_shotgun,
+		/obj/item/ammo_casing/grenade,
+		/obj/item/device/flash,
+		/obj/item/reagent_containers/food/snacks/openable/tastybread
 		)
 
 /obj/item/storage/pouch/tubular/vial
