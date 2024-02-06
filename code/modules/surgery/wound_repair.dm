@@ -180,7 +180,7 @@
 
 	var/advanced_medical = user.stats.getPerk(PERK_ADVANCED_MEDICAL)
 	var/obj/item/organ/internal/vital/brain/B
-	if(target.getBrainLoss()>= 200 && tool.amount == 5 && advanced_medical && !target.stats.getPerk(PERK_FSYNDROME))
+	if(target.getBrainLoss()>= 200 && tool.amount >= 5 && advanced_medical && !target.stats.getPerk(PERK_FSYNDROME))
 		user.visible_message(SPAN_NOTICE("[user] begins rejuvenating damaged tissue with the [tool_name]."))
 		target.stats.addPerk(PERK_FSYNDROME)
 		tool.amount -= 5
