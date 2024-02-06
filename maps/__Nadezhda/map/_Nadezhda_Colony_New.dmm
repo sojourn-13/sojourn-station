@@ -17635,9 +17635,9 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/storage/primary)
 "dOt" = (
-/obj/random/gun_shotgun,
-/turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/outside/scave)
+/obj/item/spider_shadow_trap,
+/turf/simulated/floor/plating,
+/area/nadezhda/dungeon/outside/abandoned_outpost)
 "dOv" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -102523,7 +102523,7 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/lab)
 "vzk" = (
-/obj/random/gun_fancy,
+/obj/random/gun_combat/low_chance,
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/scave)
 "vzm" = (
@@ -107212,6 +107212,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"wvN" = (
+/obj/random/cluster/spiders,
+/obj/item/spider_shadow_trap,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/scave)
 "wvO" = (
 /obj/structure/catwalk,
 /obj/structure/closet/crate/trashcart,
@@ -183887,7 +183892,7 @@ hRu
 hRu
 pJd
 ggh
-nMT
+wvN
 ggh
 aIE
 pJd
@@ -184089,12 +184094,12 @@ hRu
 hRu
 ggh
 aIE
-vzk
+ggh
 ggh
 ggh
 rZH
 leK
-dOt
+ggh
 pdo
 hRu
 hRu
@@ -185111,7 +185116,7 @@ hRu
 ggh
 pdo
 ggh
-xgi
+ggh
 ggh
 ggh
 ggh
@@ -185301,7 +185306,7 @@ hRu
 hRu
 ggh
 ggh
-wAP
+ary
 ggh
 ggh
 ggh
@@ -185509,7 +185514,7 @@ ggh
 ppb
 pJd
 ggh
-ggh
+xgi
 ggh
 hRu
 ggh
@@ -185517,7 +185522,7 @@ ggh
 ggh
 ggh
 nMT
-wAP
+ary
 ggh
 aIE
 ggh
@@ -185705,7 +185710,7 @@ hRu
 hRu
 ggh
 ggh
-xgi
+ggh
 ggh
 ggh
 ggh
@@ -187726,7 +187731,7 @@ hRu
 ggh
 uhn
 ggh
-wAP
+ary
 jsU
 ggh
 pJd
@@ -187941,7 +187946,7 @@ ary
 ggh
 ggh
 ggh
-xgi
+ggh
 ggh
 ggh
 ggh
@@ -188536,7 +188541,7 @@ ggh
 ggh
 ggh
 ggh
-ggh
+ary
 pdo
 pdo
 pdo
@@ -189148,7 +189153,7 @@ ggh
 nMT
 pdo
 hRu
-pcU
+vzk
 ggh
 ggh
 hRu
@@ -189350,7 +189355,7 @@ pdo
 ayc
 pdo
 hRu
-fev
+cZq
 ggh
 ggh
 hRu
@@ -225910,7 +225915,7 @@ dAX
 crJ
 gHd
 gHd
-gHd
+dOt
 gHd
 gHd
 dAX
