@@ -100,7 +100,7 @@
 	name = "Marshal bulletin board"
 	desc = "A board containing vital notices and official memos for Marshal Officers."
 	icon_state = "nboard03"
-	notices = 3
+	notices = 7
 
 /obj/structure/noticeboard/marshal/New()
 //add some memos, make sure to break them up so it's relatively readable in code!
@@ -165,12 +165,25 @@
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
+	P = new()
+	P.name = "Wanted:Liam Wright"
+	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
+				<h2>Latest wanted issues</h2>\
+				</center>\
+				<hr>\
+				<b>NAME:</b> <i>Liam Wright</i><br>\
+				<b>DESCRIPTION:</b><i>Pale, thin, male vat-grown. Short, black hair</i><br>\
+				<b>CRIMES:</b><i>Sabotage, Infiltration, possession of excelsior contraband, threat of murder or serious injury, conspiracy to commit grand tresspass, sparking manhunt.  </i><br>\
+				<b>NOTES:</b><i>A long veteran foreman of the Prospectors and a known Psion. Suspect should be assumed armed and dangerous at all times and is wanted alive. Militia personnel are advised to not engage alone.</i>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
 
 /obj/structure/noticeboard/blackshield
 	name = "Blackshield bulletin board"
 	desc = "A board containing vital notices and official memos for the Blackshield Militia"
 	icon_state = "nboard02"
-	notices = 2
+	notices = 5
 
 /obj/structure/noticeboard/blackshield/New()
 	var/obj/item/paper/P = new()
@@ -216,6 +229,22 @@
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P
+
+	P = new()
+	P.name = "Wanted:Liam Wright"
+	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
+				<h2>Latest wanted issues</h2>\
+				</center>\
+				<hr>\
+				<b>NAME:</b> <i>Liam Wright</i><br>\
+				<b>DESCRIPTION:</b><i>Pale, thin, male vat-grown. Short, black hair</i><br>\
+				<b>CRIMES:</b><i>Sabotage, Infiltration, possession of excelsior contraband, threat of murder or serious injury, conspiracy to commit grand tresspass, sparking manhunt.  </i><br>\
+				<b>NOTES:</b><i>A long veteran foreman of the Prospectors and a known Psion. Suspect should be assumed armed and dangerous at all times and is wanted alive. Militia personnel are advised to not engage alone.</i>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
+
 
 /obj/structure/noticeboard/medical
 	name = "Medical bulletin board"
