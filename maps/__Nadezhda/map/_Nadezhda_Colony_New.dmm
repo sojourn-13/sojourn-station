@@ -399,15 +399,14 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "aeZ" = (
-/obj/machinery/washing_machine,
-/obj/structure/catwalk,
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/alarm{
 	pixel_y = 32
 	},
-/turf/simulated/floor/plating/under,
+/obj/structure/filingcabinet,
+/turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "afb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -2275,7 +2274,7 @@
 	pixel_x = -32;
 	pixel_y = 32
 	},
-/obj/structure/filingcabinet,
+/obj/machinery/computer/prisoner,
 /turf/simulated/floor/carpet/purcarpet,
 /area/nadezhda/command/cro)
 "azs" = (
@@ -44212,9 +44211,6 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/command/courtroom)
 "joP" = (
-/obj/effect/floor_decal/spline/wood{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
@@ -72243,9 +72239,6 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/command/courtroom)
 "pgk" = (
-/obj/effect/floor_decal/spline/wood{
-	dir = 4
-	},
 /mob/living/simple_animal/soteria_roomba,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
@@ -84755,15 +84748,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"rLP" = (
-/obj/effect/window_lwall_spawn/smartspawn/church,
-/obj/machinery/door/blast/regular/open{
-	id = "Colony Lockdown"
-	},
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/plating,
-/area/nadezhda/absolutism/chapel)
 "rLR" = (
 /obj/structure/invislight,
 /obj/structure/disposalpipe/segment{
@@ -108938,6 +108922,10 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/substation/servist)
+"wGH" = (
+/obj/structure/filingcabinet,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/command/cro)
 "wGJ" = (
 /obj/random/mob/croaker/low_chance,
 /turf/simulated/floor/beach/sand,
@@ -113745,6 +113733,11 @@
 /obj/machinery/door/airlock/glass_security{
 	name = "Security Post";
 	req_access = list(1)
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate/west)
@@ -132564,7 +132557,7 @@ rlJ
 aeZ
 joP
 pja
-rlJ
+wGH
 fVl
 xDH
 crv
@@ -132766,7 +132759,7 @@ rlJ
 rlJ
 rlJ
 rlJ
-rlJ
+wGH
 azO
 acW
 kHd
@@ -185079,7 +185072,7 @@ mbN
 mbN
 mbN
 gdC
-rLP
+vSI
 htA
 nQa
 vDn
@@ -185483,7 +185476,7 @@ mbN
 mbN
 mbN
 gdC
-rLP
+vSI
 lWE
 nGY
 xkt
