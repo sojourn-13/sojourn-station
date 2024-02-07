@@ -17,7 +17,7 @@
 	var/asteroid_belt_status // if it has an asteroid belt
 	var/affinity // affinity of the junk field
 	var/list/affinities = list(
-		"Neutral" = 10,
+		"Neutral" = 3,
 		"Greyson" = 3,
 		"Military" = 3,
 		"Void Wolf" = 3,
