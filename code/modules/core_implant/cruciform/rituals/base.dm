@@ -92,9 +92,10 @@
 
 		var/obj/item/implant/core_implant/cruciform/CI = target.get_core_implant()
 		var/area/t = get_area(H)
+		var/turf/T = get_turf(H)
 
 		if((istype(CI)))
-			to_chat(target, SPAN_DANGER("[H], faithful cruciform follower, cries for salvation at [t.name]!"))
+			to_chat(target, SPAN_DANGER("[H], faithful cruciform follower, cries for salvation at [t.name] [T.x], [T.y], [T.z]!"))
 	return TRUE
 
 /datum/ritual/cruciform/base/reveal
