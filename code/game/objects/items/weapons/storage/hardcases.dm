@@ -117,7 +117,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	icon_state = "scrap"
 	sticker_name = "scrap"
 	desc = "A lacquer coated hardcase that can hold a lot of various things. Alt+click to open and close."
-	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
 
 /obj/item/storage/hcases/scrap/job_artist
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -143,10 +142,12 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo
 	name = "ammo hard case"
-	desc = "A generic ammo can. Can hold ammo magazines, boxes, bullets, a assortment of grenades and some gear. Alt+click to open and close."
+	desc = "A generic ammo can. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 	icon_state = "ammo_case"
 	sticker_name = "ammo"
 	matter = list(MATERIAL_STEEL = 20)
+	storage_slots = 14 //336 rounds of 12mm. Really annoying big ammo box! More or less.
+	max_w_class = ITEM_SIZE_SMALL //no drum mags or big boxes etc.
 
 	can_hold = list(
 		/obj/item/ammo_magazine,
@@ -167,7 +168,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/ih
 	icon_state = "ammo_case_ih"
-	desc = "An ammo can for Marshals. Can hold ammo magazines, boxes, bullets, a assortment of grenades and some gear. Alt+click to open and close."
+	desc = "An ammo can for Marshals. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 
 /obj/item/storage/hcases/ammo/ih/wo
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -213,11 +214,11 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/serb
 	icon_state = "ammo_case_serb"
-	desc = "A generic ammo holding can. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
+	desc = "A generic ammo holding can. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 
 /obj/item/storage/hcases/ammo/blackmarket
 	icon_state = "ammo_case_blackmarket"
-	desc = "A shady looking ammo can. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
+	desc = "A shady looking ammo can. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 
 /obj/item/storage/hcases/ammo/blackmarket/co
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -264,15 +265,14 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/excel
 	icon_state = "ammo_case_excel"
-	desc = "The peoples ammo can! Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
+	desc = "The peoples ammo can! Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 
 /obj/item/storage/hcases/ammo/scrap
 	icon_state = "ammo_case_scrap"
-	desc = "A lacquer coated ammo can. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
-	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
+	desc = "A lacquer coated ammo can. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 
 /obj/item/storage/hcases/ammo/scrap/outsider
-	desc = "A harcase containing what little you could scavenge for your own survival. Can hold ammo magazines, boxes, and bullets. Alt+click to open and close."
+	desc = "A harcase containing what little you could scavenge for your own survival. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/ammo/scrap/outsider/populate_contents()
@@ -313,8 +313,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	desc = "A hard case that can hold electronic parts. Alt+click to open and close."
 	icon_state = "hcase_parts"
 	matter = list(MATERIAL_STEEL = 20)
-	max_w_class = ITEM_SIZE_NORMAL
-
+	max_w_class = ITEM_SIZE_SMALL //no large cells thanks
+	storage_slots = 20
 	can_hold = list(
 		/obj/item/computer_hardware,
 		/obj/item/stock_parts,
@@ -328,7 +328,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/airalarm_electronics,
 		/obj/item/tool_upgrade,
 		/obj/item/clothing/head/welding,
-		/obj/item/weldpack,
 		/obj/item/circuitboard,
 		/obj/item/part/gun
 		)
@@ -337,17 +336,17 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	icon_state = "scrap_parts"
 	sticker_name = "scrap"
 	desc = "A lacquer coated hard case that can hold weapon, armor, machine, and electronic parts. Alt+click to open and close."
-	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
 
 //////////////////////////////////////////Medical//////////////////////////////////////////
 
 /obj/item/storage/hcases/med
 	name = "medical hard case"
-	desc = "A hardcase with medical markings that can hold a lot of medical supplies. Alt+click to open and close."
+	desc = "A hardcase with medical markings that can hold a lot of medical supplies and surgical tools. Alt+click to open and close."
 	icon_state = "hcase_medi"
 	matter = list(MATERIAL_STEEL = 20)
 
 	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_SMALL_STORAGE * 2
 
 	can_hold = list(
 		/obj/item/device/scanner/health,
@@ -365,14 +364,21 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/reagent_containers/hypospray,
 		/obj/item/clothing/glasses/hud/health,
 		/obj/item/gun/projectile/boltgun/flare_gun,
-		/obj/item/ammo_casing/flare
+		/obj/item/ammo_casing/flare,
+		/obj/item/tool/bonesetter,
+		/obj/item/tool/cautery,
+		/obj/item/tool/hemostat,
+		/obj/item/tool/retractor,
+		/obj/item/tool/scalpel,
+		/obj/item/tool/tape_roll/bonegel,
+		/obj/item/tool/medmultitool,
+		/obj/item/tool/tape_roll
 		)
 
 /obj/item/storage/hcases/med/scrap
 	icon_state = "scrap_medi"
 	sticker_name = "scrap"
-	desc = "A lacquer coated hardcase with medical markings that can hold a lot of medical supplies. Alt+click to open and close."
-	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
+	desc = "A lacquer coated hardcase with medical markings that can hold a lot of medical supplies and surgical tools. Alt+click to open and close."
 
 /obj/item/storage/hcases/med/medical_job
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -449,6 +455,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	icon_state = "hcase_engi"
 	matter = list(MATERIAL_STEEL = 20)
 	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_NORMAL_STORAGE
 	can_hold = list(
 		/obj/item/cell,
 		/obj/item/circuitboard,
@@ -480,7 +487,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	icon_state = "scrap_engi"
 	sticker_name = "scrap"
 	desc = "An old lacquer coated hardcase with engineering markings that can hold a variety of different tools and materials. Alt+click to open and close."
-	max_storage_space = DEFAULT_SMALL_STORAGE * 1.3 //a better fancy box
 
 
 ////////////////////////////////////////////Rando 'gear kits'./////////////////////////////////////
