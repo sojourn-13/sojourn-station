@@ -59,6 +59,7 @@
 
 	var/can_ricochet = FALSE // defines if projectile can or cannot ricochet.
 	var/ricochet_id = 0 // if the projectile ricochets, it gets its unique id in order to process iteractions with adjacent walls correctly.
+	var/ricochet_mod = 1 //How much we affect the likeliness of a round to bounce. This number is modified negatively by 10% of the projecties AP(thus, ricochet_mult = 1.5 on ap 10 gun is actually 1.4). high cal rubbers have lower mult than low cal rubbers and are further penalized by having AP and AP mod on their rounds/weapons more often.
 
 	var/list/damage_types = list(BRUTE = 10) //BRUTE, BURN, TOX, OXY, CLONE, HALLOSS -> int are the only things that should be in here
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
@@ -227,6 +228,9 @@
 
 /obj/item/projectile/proc/get_structure_damage()
 	return ((damage_types[BRUTE] + damage_types[BURN]) * structure_damage_factor)
+
+/obj/item/projectile/proc/get_ricochet_modifier()
+	return (ricochet_mod - (armor_penetration * 0.01)) //Return ricochet mod(default 1) modified by AP. E.G 1 - (AP(10) * 0.01) = 0.1. Thus 10% less likely to bounce per 10ap.
 
 //return 1 if the projectile should be allowed to pass through after all, 0 if not.
 /obj/item/projectile/proc/check_penetrate(atom/A)

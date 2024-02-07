@@ -59,6 +59,7 @@
 	embed = FALSE	//Prob should have a chance to embed, but makes close to no sense to do this for 9mm at least.
 	sharp = FALSE
 	can_ricochet = TRUE
+	ricochet_mod = 3 //lower cal rubbers are the most likely to ricochet.
 	recoil = 4
 	ignition_source = FALSE
 
@@ -195,6 +196,7 @@
 	embed = TRUE	//If you shoot someone with a rubber, it will take out an eye - or require surgery if it's high-velocity. Anything over 9mm should, realistically, fuck you up.
 	sharp = FALSE
 	can_ricochet = TRUE
+	ricochet_mod = 2.5
 	step_delay = 0.5
 	recoil = 6
 	ignition_source = FALSE
@@ -282,6 +284,7 @@
 	check_armour = ARMOR_MELEE
 	armor_penetration = 10
 	can_ricochet = TRUE
+	ricochet_mod = 2 //including our AP mallus for bounce we are baseline about 1.9x as likely to bounce.
 	step_delay = 0.7
 	recoil = 10
 	ignition_source = FALSE
@@ -492,6 +495,7 @@
 	embed = TRUE	//literally imagine a 7.62 rubber bullet hitting you - holy shit.
 	sharp = TRUE	//there is literally no-fucking-way this would not act like a regular sharp round at this point.
 	can_ricochet = TRUE
+	ricochet_mod = 2 //including armor penalty ends up as closer to 1.85x as likely.
 	step_delay = 0.9
 	recoil = 6
 	ignition_source = FALSE
@@ -569,6 +573,7 @@
 	embed = TRUE	//imagine an effectively smaller .50 Cal marksman round hitting you. holy shit.
 	sharp = TRUE	//there is literally no-fucking-way this would not act like a regular sharp round at this point.
 	can_ricochet = TRUE
+	ricochet_mod = 1.35 //after AP penalty to ricochet is factored in we have more like 15% more chance to ricochet.
 	step_delay = 0.9
 	recoil = 14
 	ignition_source = FALSE
@@ -971,6 +976,7 @@
 /obj/item/projectile/bullet/kurtz_50/rubber/railgun
 	hitscan = TRUE
 	can_ricochet = FALSE
+	ricochet_mod = 1.5
 	recoil = 9
 	ignition_source = FALSE
 
