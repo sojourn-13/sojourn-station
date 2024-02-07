@@ -18,9 +18,9 @@
 	var/affinity // affinity of the junk field
 	var/list/affinities = list(
 		"Neutral" = 3,
-		"Greyson" = 3,
-		"Military" = 3,
-		"Void Wolf" = 3,
+		"Greyson" = 4,
+		"Military" = 2,
+		"Void Wolf" = 4,
 		//"SpaceWrecks" = 0 caused runtimes and ci failures
 		) // available affinities
 
