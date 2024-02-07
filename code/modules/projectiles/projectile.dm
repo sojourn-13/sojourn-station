@@ -123,6 +123,7 @@
 	var/serial_type_index_bullet = ""
 
 	var/recoil = 0
+	var/wounding_mult = 1 // A multiplier on damage inflicted to and damage blocked by mobs
 
 	var/ignition_source = TRUE //Used for deciding if a projectile should blow up a benzin.
 
@@ -150,9 +151,8 @@
 /obj/item/projectile/proc/get_total_damage()
 	var/val = 0
 	for(var/i in damage_types)
-		val += damage_types[i]
+		val += damage_types[i] * post_penetration_dammult
 	return val
-
 
 /obj/item/projectile/proc/is_halloss()
 	for(var/i in damage_types)
