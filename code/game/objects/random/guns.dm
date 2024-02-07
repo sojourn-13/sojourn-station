@@ -120,6 +120,7 @@
 				/obj/item/gun/projectile/automatic/greasegun = 1,\
 				/obj/item/gun/projectile/automatic/mac = 1,\
 				/obj/item/gun/projectile/automatic/mac/croon = 0.7,\
+				/obj/item/gun/projectile/automatic/mac/tek = 0.8,\
 				/obj/item/gun/projectile/automatic/duty = 1,\
 				/obj/item/ammo_kit = 0.8,
 				/obj/item/gun/projectile/automatic/sts/rifle/sawn = 1,\

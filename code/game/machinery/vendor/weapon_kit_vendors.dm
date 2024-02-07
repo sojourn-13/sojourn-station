@@ -250,6 +250,7 @@
 /obj/machinery/vending/marshal_kit/proc/RedeemPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
 					"Freedom Kit" = /obj/item/storage/box/m_kit/freedom,
+					"Eckler kit" = /obj/item/storage/box/m_kit/eckler,
 					"Breacher-hammer Kit" = /obj/item/storage/box/m_kit/breacher,
 					"Operator Kit" = /obj/item/storage/box/m_kit/opshotkit,
 					"Mamba Kit" = /obj/item/storage/box/m_kit/mamba,
@@ -306,7 +307,8 @@
 	var/items = list(
 					"Deckard Kit" = /obj/item/storage/box/m_kit/deckard,
 					"Zwang Kit" = /obj/item/storage/box/m_kit/zwang,
-					"Judge Revolver Kit" = /obj/item/storage/box/m_kit/judge)
+					"Judge Revolver Kit" = /obj/item/storage/box/m_kit/judge,
+					"Aktion Kit" = /obj/item/storage/box/m_kit/aktion)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)

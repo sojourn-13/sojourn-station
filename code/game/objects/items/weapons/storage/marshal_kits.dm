@@ -7,7 +7,7 @@
 
 // Primary kits
 /obj/item/storage/box/m_kit/freedom
-	name = "Freedom Kit"
+	name = "Freedom magnum smg Kit"
 	desc = "The standard Marshal box kit containing a \"Freedom\" submachine gun. An SMG worthy of main-carry or concealed carry, depending on a user's preference."
 
 	populate_contents()
@@ -15,6 +15,17 @@
 		new /obj/item/ammo_magazine/smg_magnum_40/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
 		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/storage/pouch/ammo(src)
+
+/obj/item/storage/box/m_kit/eckler
+	name = "Eckler smg Kit"
+	desc = "The standard Marshal box kit containing an \"Eckler\" submachine gun. An SMG worthy of main-carry or concealed carry, depending on a user's preference."
+
+	populate_contents()
+		new /obj/item/gun/projectile/automatic/eckler(src)
+		new /obj/item/ammo_magazine/smg_35/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/smg_35(src)
+		new /obj/item/ammo_magazine/smg_35(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/breacher
@@ -142,6 +153,17 @@
 		new /obj/item/ammo_magazine/magnum_40/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/magnum_40/rubber/pepperball(src)
 		new /obj/item/ammo_magazine/magnum_40(src)
+		new /obj/item/clothing/accessory/holster/armpit(src)
+
+/obj/item/storage/box/m_kit/aktion
+	name = "Aktion Secondary Kit"
+	desc = "The standard Marshal box kit containing an Aktion pistol. A 10mm Magnum revolver made to suit the uses of your local Ranger."
+
+	populate_contents()
+		new /obj/item/gun/projectile/shotgun/pump/aktion(src)
+		new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/judiciary

@@ -89,3 +89,30 @@
 /obj/item/gun/projectile/automatic/mac/croon/Initialize()
 	. = ..()
 	update_icon()
+
+
+/obj/item/gun/projectile/automatic/mac/tek
+	name = "\"Nina\" Assault pistol"
+	desc = "A particularly venerable design by some metrics. The reality is that despite its pedigree the Nina is a bastardization of at least a dozen other public domain auto-pistols designed for power, concealability and rate of fire, somewhat akin to the grizzly. Though sometimes bemoaned as unreliable the Nina has a positive reputation amongst the many dispossessed for whom this weapon serves as a final check against the tyranny of law."
+	icon = 'icons/obj/guns/projectile/tec.dmi'
+	icon_state = "tec"
+	item_state = "tec"
+	w_class = ITEM_SIZE_NORMAL
+	caliber = CAL_PISTOL
+	can_dual = TRUE
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	load_method = SINGLE_CASING|MAGAZINE
+	mag_well = MAG_WELL_SMG|MAG_WELL_H_PISTOL
+	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 3)
+	price_tag = 900
+	gun_parts = null
+	damage_multiplier = 1.1
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
+	init_recoil = SMG_RECOIL(0.9)
+
+	init_firemodes = list(
+		FULL_AUTO_600_NOLOSS,
+		SEMI_AUTO_NODELAY
+		)
+	serial_type = "HB" //Homebrew design.
