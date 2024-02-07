@@ -504,9 +504,37 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list() // Moved the Galaxy to secondary selection
-		options["Osprey - precision rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped/fancy,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber)
-		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags/pepperball, /obj/item/ammo_magazine/ammobox/c10x24_small)
-		options["Ostwind - police carbine"] = list(/obj/item/gun/projectile/automatic/ostwind, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball)
+		options["Osprey - precision rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped/fancy,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber, /obj/item/storage/pouch/ammo)
+		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags/pepperball, /obj/item/ammo_magazine/ammobox/c10x24_small, /obj/item/storage/pouch/ammo)
+		options["Ostwind - police carbine"] = list(/obj/item/gun/projectile/automatic/ostwind, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball, /obj/item/storage/pouch/ammo)
+		options["Gleam - Assault Laser"] = list(/obj/item/gun/energy/lasercore/militia/blaster, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/storage/pouch/tubular)
+		var/choice = input(user,"What type of equipment?") as null|anything in options
+		if(src && choice)
+			var/list/things_to_spawn = options[choice]
+			for(var/new_type in things_to_spawn)
+				var/atom/movable/AM = new new_type(get_turf(src))
+				if(istype(AM, /obj/item/gun/))
+					to_chat(user, "You have chosen \the [AM].")
+			qdel(src)
+		else
+			stamped = FALSE
+
+
+/obj/item/gunbox/commanding_officer
+	name = "\improper CO equipment kit"
+	desc = "A secure box containing the CO primary weapon."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "rifle_case"
+
+/obj/item/gunbox/commanding_officer/attack_self(mob/living/user)
+	..()
+	var/stamped
+	if(!stamped)
+		stamped = TRUE
+		var/list/options = list()
+		options["\"Longarm\" - marksman rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/storage/pouch/ammo)
+		options["\"Hustler\" - Breacher Shotgun"] = list(/obj/item/gun/projectile/automatic/omnirifle/hustler, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/storage/pouch/ammo)
+		options["\"Gleam\" - Assault Laser"] = list(/obj/item/gun/energy/lasercore/militia/blaster, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/storage/pouch/tubular)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]

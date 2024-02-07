@@ -68,6 +68,7 @@ var/global/blackshield_max_energy //Maximaum combined energy of all teleporters
 		/obj/item/gun/projectile/automatic/ak47/NM_colony = 450,
 		/obj/item/gun/projectile/automatic/vintorez/NM_colony = 400,
 		/obj/item/gun/projectile/automatic/ak47/saiga/NM_colony = 500,
+		/obj/item/gun/energy/lasercore/militia = 600, //very good, very expensive.
 		/obj/item/shield/buckler = 250,
 		/obj/item/shield/riot = 350,
 		//Armor

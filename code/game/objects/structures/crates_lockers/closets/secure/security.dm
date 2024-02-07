@@ -66,7 +66,6 @@
 	new /obj/item/device/holowarrant(src)
 	new /obj/item/taperoll/police(src)
 	new /obj/item/gunbox/warrantofficer(src) // Primary on their locker, secondary on their hardcase.
-	new /obj/item/storage/pouch/ammo(src)
 	new /obj/item/clothing/gloves/stungloves(src)
 	new /obj/item/device/taperecorder(src)
 	new /obj/item/clipboard(src)
