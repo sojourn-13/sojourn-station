@@ -70,7 +70,7 @@
 	melee_damage_upper = 25
 	emote_see = list("chitters.","rubs its legs.","thumps its many legs on the ground.")
 	mob_size = MOB_LARGE
-	armor = list(melee = 15, bullet = 15, energy = 5, bomb = 5, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 15, bullet = 10, energy = 5, bomb = 5, bio = 10, rad = 25, agony = 0)
 
 
 /mob/living/carbon/superior_animal/giant_spider/tarantula/UnarmedAttack(var/atom/A, var/proximity)
@@ -204,7 +204,7 @@
 	flash_resistances = 3 //For balance against are speedy fello
 	poison_type = "party drops"
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/emperor
-	armor = list(melee = 25, bullet = 25, energy = 15, bomb = 25, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 25, bullet = 10, energy = 5, bomb = 25, bio = 10, rad = 25, agony = 0)
 	armor_penetration = 25
 
 	get_stat_modifier = FALSE //Were not getting armor
