@@ -15957,6 +15957,10 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/crew_quarters/fitness)
+"dwE" = (
+/obj/structure/sign/warning/nosmoking/small,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/security/maingate)
 "dwK" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -55558,6 +55562,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/bar)
+"lOk" = (
+/obj/structure/low_wall,
+/obj/structure/sign/warning/smoking/small{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/security/maingate)
 "lOm" = (
 /obj/structure/flora/small/rock5,
 /turf/simulated/floor/asteroid/grass,
@@ -68863,6 +68874,7 @@
 	dir = 4
 	},
 /obj/structure/table/steel_reinforced,
+/obj/item/material/ashtray,
 /turf/simulated/floor/plating,
 /area/nadezhda/security/maingate)
 "ovS" = (
@@ -83299,6 +83311,9 @@
 /obj/item/bodybag/cryobag,
 /obj/item/roller,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/nosmoking/small{
+	pixel_x = -28
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
 "rvy" = (
@@ -216411,7 +216426,7 @@ nyx
 crH
 eIG
 qJS
-pHc
+dwE
 pHc
 txk
 ovQ
@@ -216615,7 +216630,7 @@ crH
 jXQ
 gZU
 pHc
-dis
+lOk
 rME
 dis
 dis
