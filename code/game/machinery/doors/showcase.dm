@@ -2,9 +2,9 @@
 	name = "showcase"
 	icon = 'icons/obj/doors/showcase.dmi'
 	icon_state = "closed"
-	health = 100
-	maxHealth = 100
-	resistance = RESISTANCE_NONE
+	health = 150
+	maxHealth = 150
+	resistance = RESISTANCE_AVERAGE
 	opacity = 0
 	layer = 4.2
 	var/have_glass = TRUE
