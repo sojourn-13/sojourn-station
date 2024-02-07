@@ -43,7 +43,7 @@
 	if(!exploded)
 		exploded = TRUE
 		visible_message(SPAN_DANGER("\the [src] violently explodes!"))
-		explosion(src.loc,0,0,2) //explosion weaker than a welding tank
+		explosion(src.loc, -1, -1, 2, 3) //explosion weaker than a welding tank
 		gib()
 
 /mob/living/carbon/superior_animal/roach/nitro/attackby(obj/item/I)
