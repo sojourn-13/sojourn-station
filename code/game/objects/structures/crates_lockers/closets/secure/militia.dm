@@ -7,7 +7,7 @@
 	new /obj/item/gunbox/commanding_officer(src) // Secondary on their personal hardcase, primary on the locker.
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/tool/disciplinary_action(src)
-	new /obj/item/clothing/head/helmet/ballistic/militia/full(src)
+	new /obj/item/clothing/head/helmet/ballistic/militia/full/co(src)
 	new /obj/item/clothing/head/rank/milcom(src)
 	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)
 	new /obj/item/clothing/gloves/stungloves(src)

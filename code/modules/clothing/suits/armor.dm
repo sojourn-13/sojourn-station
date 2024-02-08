@@ -836,7 +836,7 @@
 	item_state = "flakvest_mil"
 	blood_overlay_type = "armor"
 	slowdown = 0.1 //faster than standard due to being fancier.
-	armor_list = list(melee = 45, bullet = 50, energy = 30, bomb = 50, bio = 0, rad = 0)
+	armor_list = list(melee = 35, bullet = 50, energy = 40, bomb = 50, bio = 0, rad = 0)
 
 
 /obj/item/clothing/suit/armor/flakvest/commander/toggle_style()
