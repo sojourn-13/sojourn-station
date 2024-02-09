@@ -641,10 +641,15 @@
 /obj/random/dungeon_gun_mods/voidwolf,
 /obj/random/dungeon_gun_mods/voidwolf,
 /obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
 /obj/item/gun_upgrade/scope/killer,
-/obj/item/gun_upgrade/trigger/dangerzone,
-/obj/item/gun_upgrade/trigger/dangerzone,
 /obj/item/gun_upgrade/barrel/gauss,
+/obj/item/gun_upgrade/trigger/dangerzone,
+/obj/item/gun_upgrade/trigger/dangerzone,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "pp" = (
@@ -1161,6 +1166,7 @@
 /obj/random/cloth/armor,
 /obj/random/cloth/armor,
 /obj/random/cloth/armor,
+/obj/item/clothing/suit/space/void/merc/xanorath,
 /obj/item/clothing/suit/space/void/merc/xanorath,
 /obj/item/clothing/suit/space/void/merc/xanorath,
 /turf/simulated/floor/wood_old,
@@ -1701,6 +1707,8 @@
 /obj/item/shield/buckler/energy/reaver,
 /obj/item/shield/buckler/energy/reaver,
 /obj/item/melee/energy/sword/pirate,
+/obj/item/melee/energy/sword/pirate,
+/obj/item/shield/buckler/energy/reaver,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "MD" = (
