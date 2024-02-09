@@ -20,6 +20,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	auto_eject = 1
+	folding_stock = TRUE
 	init_recoil = SMG_RECOIL(1)
 	init_firemodes = list(
 		FULL_AUTO_600_NOLOSS,
@@ -30,3 +31,32 @@
 	wield_delay = 0.2 SECOND
 	wield_delay_factor = 0.20 // Heavy smg , 20 vig to insta wield
 	gun_parts = null
+
+/obj/item/gun/projectile/automatic/eckler/update_icon()
+	..()
+
+	var/iconstring = initial(icon_state)
+	var/itemstring = ""
+
+	if(!folded)
+		iconstring += "_stock"
+
+	if (ammo_magazine)
+		iconstring += "[ammo_magazine? "_mag[ammo_magazine.max_ammo]": ""]"
+
+	if (!ammo_magazine || !length(ammo_magazine.stored_ammo))
+		iconstring += "_slide"
+
+	if(wielded)
+		itemstring += "_doble"
+
+	if (silenced)
+		iconstring += "_s"
+		itemstring += "_s"
+
+	icon_state = iconstring
+	set_item_state(itemstring)
+
+/obj/item/gun/projectile/automatic/eckler/Initialize()
+	. = ..()
+	update_icon()
