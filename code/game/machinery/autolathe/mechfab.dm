@@ -11,7 +11,7 @@
 	have_disk = FALSE
 	have_reagents = FALSE
 	have_recycling = FALSE
-	max_efficiency = 0.5
+	max_efficiency = 0.2
 	code_dex = "MECHFAB"
 
 	special_actions = list(
