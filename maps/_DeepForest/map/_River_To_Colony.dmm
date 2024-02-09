@@ -641,6 +641,10 @@
 /obj/random/dungeon_gun_mods/voidwolf,
 /obj/random/dungeon_gun_mods/voidwolf,
 /obj/random/dungeon_gun_mods/voidwolf,
+/obj/item/gun_upgrade/scope/killer,
+/obj/item/gun_upgrade/trigger/dangerzone,
+/obj/item/gun_upgrade/trigger/dangerzone,
+/obj/item/gun_upgrade/barrel/gauss,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "pp" = (
@@ -702,11 +706,8 @@
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
 "rx" = (
-/obj/effect/floor_decal/industrial/loading{
-	dir = 4
-	},
-/obj/structure/ore_box,
-/turf/simulated/floor/tiled/steel,
+/obj/item/storage/firstaid/regular,
+/turf/simulated/wall/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "rA" = (
 /obj/item/stack/rods/random,
@@ -1519,10 +1520,6 @@
 /obj/structure/multiz/ladder,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
-"JG" = (
-/obj/item/storage/firstaid/regular,
-/turf/simulated/wall/wood_old,
-/area/colony/exposedsun/crashed_shop/workshop)
 "JN" = (
 /obj/structure/girder,
 /turf/simulated/floor/plating/under,
@@ -1701,8 +1698,9 @@
 "MB" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/melee/energy/sword/pirate,
-/obj/random/melee,
-/obj/random/melee,
+/obj/item/shield/buckler/energy/reaver,
+/obj/item/shield/buckler/energy/reaver,
+/obj/item/melee/energy/sword/pirate,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "MD" = (
@@ -9415,7 +9413,7 @@ zc
 zc
 zc
 zc
-JG
+rx
 cc
 Sy
 MD
@@ -11225,7 +11223,7 @@ Gt
 gI
 Ng
 Lr
-rx
+Ja
 hJ
 ys
 GO
