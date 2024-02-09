@@ -99,6 +99,8 @@
 	init_recoil = LMG_RECOIL(0.5)
 	serial_type = "BlueCross"
 	excelsior = FALSE
+	gun_parts = list(/obj/item/part/gun/frame/maxim = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
 
 /obj/item/gun/energy/lasersmg/inferno
 	name = "Disco Inferno \"Light Show\""

@@ -18,7 +18,7 @@
 	icon_state = "acolyte"
 	item_state = "acolyte"
 	slowdown = 0.15
-	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 25, MATERIAL_BIOMATTER = 40)
+	matter = list(MATERIAL_PLASTIC = 15, MATERIAL_STEEL = 15, MATERIAL_BIOMATTER = 20)
 	armor_list = list(
 		melee = 25,
 		bullet = 25,
@@ -49,7 +49,7 @@
 	icon_state = "botanist"
 	item_state = "botanist"
 	slowdown = 0
-	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 15, MATERIAL_BIOMATTER = 40)
+	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 15, MATERIAL_BIOMATTER = 30)
 	armor_list = list(
 		melee = 25,
 		bullet = 25,
@@ -81,7 +81,7 @@
 	icon_state = "custodian"
 	item_state = "custodian"
 	slowdown = 0.05
-	matter = list(MATERIAL_PLASTIC = 40, MATERIAL_STEEL = 15, MATERIAL_BIOMATTER = 40)
+	matter = list(MATERIAL_PLASTIC = 15, MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 30)
 	armor_list = list(
 		melee = 25,
 		bullet = 25,
@@ -117,7 +117,7 @@
 	desc = "A voidsuit designed by the church with a most holy mix of biomatter and inorganic matter."
 	icon_state = "ntvoid"
 	item_state = "ntvoid"
-	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 29)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 25)
 	slowdown = 0.15
 	armor_list = list(
 		melee = 40,

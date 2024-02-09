@@ -107,7 +107,7 @@
 	icon = 'icons/obj/guns/projectile/sawnoff/sawnshotgun.dmi'
 	icon_state = "sawnshotgun"
 	item_state = "sawnshotgun"
-	gun_parts = list(/obj/item/part/gun/frame/doublebarrel = 1, /obj/item/stack/material/wood = 2, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)
+	gun_parts = list(/obj/item/stack/material/wood = 2, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	can_dual = TRUE
 	caliber = CAL_SHOTGUN

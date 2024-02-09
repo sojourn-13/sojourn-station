@@ -82,7 +82,7 @@
 	init_recoil = RIFLE_RECOIL(1.2)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/obrez
-	gun_parts = list(/obj/item/part/gun/frame/grizzly = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)
+	gun_parts = list(/obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.3 // 30 vig
 
@@ -102,6 +102,6 @@
 	penetration_multiplier = 0.8
 	init_recoil = RIFLE_RECOIL(1.3)
 	saw_off = FALSE
-	gun_parts = list(/obj/item/part/gun/frame/grizzly = 1, /obj/item/stack/material/wood = 2, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)
+	gun_parts = list(/obj/item/stack/material/wood = 2, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)
 	wield_delay = 0.2 SECOND
 	wield_delay_factor = 0.2 // 20 vig

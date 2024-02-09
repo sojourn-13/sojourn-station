@@ -401,7 +401,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 		)
 
 	cant_hold = list(/obj/item/storage/pouch,
-					 /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield,
+					 /obj/item/gun/projectile/automatic/sts/rifle/blackshield/sawn,
 					 /obj/item/gun/projectile/automatic/sts/rifle/sawn,
 					 /obj/item/gun/projectile/revolver/sixshot,
 					 /obj/item/gun/energy/gun/nuclear,

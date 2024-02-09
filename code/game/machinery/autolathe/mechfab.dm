@@ -12,6 +12,7 @@
 	have_reagents = FALSE
 	have_recycling = FALSE
 	max_efficiency = 0.5
+	code_dex = "MECHFAB"
 
 	special_actions = list(
 		list("action" = "sync", "name" = "Sync with R&D console", "icon" = "refresh")
