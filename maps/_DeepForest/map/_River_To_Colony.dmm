@@ -1101,6 +1101,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /obj/random/oddity_guns,
+/obj/item/clothing/suit/space/void/SCAF/voidwolf,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "Aw" = (
@@ -1156,10 +1157,11 @@
 /obj/structure/table/steel_reinforced,
 /obj/random/dungeon_armor_mods,
 /obj/random/dungeon_armor_mods,
+/obj/random/cloth/armor,
+/obj/random/cloth/armor,
+/obj/random/cloth/armor,
 /obj/item/clothing/suit/space/void/merc/xanorath,
-/obj/random/cloth/armor,
-/obj/random/cloth/armor,
-/obj/random/cloth/armor,
+/obj/item/clothing/suit/space/void/merc/xanorath,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "Bd" = (
@@ -1517,6 +1519,10 @@
 /obj/structure/multiz/ladder,
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
+"JG" = (
+/obj/item/storage/firstaid/regular,
+/turf/simulated/wall/wood_old,
+/area/colony/exposedsun/crashed_shop/workshop)
 "JN" = (
 /obj/structure/girder,
 /turf/simulated/floor/plating/under,
@@ -9409,7 +9415,7 @@ zc
 zc
 zc
 zc
-Lr
+JG
 cc
 Sy
 MD
