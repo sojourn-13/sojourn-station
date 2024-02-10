@@ -464,7 +464,7 @@
 /datum/design/bioprinter/nt_cells/medium/plasma
 	name = "NT \"Radiance 1500M\""
 	build_path = /obj/item/cell/medium/neotheology/plasma
-	materials = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 10, MATERIAL_PLASMA = 0.5)
+	materials = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 10, MATERIAL_PLASMA = 0.6) //This is to keep things in 5s or 0s
 
 /datum/design/bioprinter/nt_cells/small
 	name = "NT \"Spark 300S\""

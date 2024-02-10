@@ -25,8 +25,8 @@
 
 /obj/machinery/autolathe/bioprinter/RefreshParts()
 	..()
-	mat_efficiency = mat_efficiency
-
+	mat_efficiency = initial(mat_efficiency)
+	speed = initial(speed)
 
 /obj/machinery/autolathe/bioprinter/disk
 	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility

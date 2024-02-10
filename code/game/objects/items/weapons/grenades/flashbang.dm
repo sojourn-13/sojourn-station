@@ -153,7 +153,7 @@
 	desc = "An \"Absolute\" branded flashbang grenade, to spread the light of god."
 	icon_state = "flashbang_nt"
 	item_state = "flashbang_nt"
-	matter = list(MATERIAL_BIOMATTER = 15)
+	matter = list(MATERIAL_BIOMATTER = 10)
 
 /obj/item/grenade/flashbang/nt/flashbang_without_the_bang(turf/T, mob/living/carbon/M)
 	if(M.get_core_implant(/obj/item/implant/core_implant/cruciform))
