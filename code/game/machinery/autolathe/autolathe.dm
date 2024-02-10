@@ -801,11 +801,7 @@
 
 
 		if(design_file.design.required_printer_code)
-			if(design_file.design.required_printer_code != code_dex)
-				return ERR_WRONG_BUILDTYPE
-
-		if(design_file.design.required_printer_code)
-			if(design_file.design.build_type != build_type)
+			if(design_file.design.code_dex != code_dex)
 				return ERR_WRONG_BUILDTYPE
 
 		var/datum/design/design = design_file.design
