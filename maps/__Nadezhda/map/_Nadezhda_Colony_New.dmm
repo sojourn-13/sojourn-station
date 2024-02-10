@@ -7997,18 +7997,12 @@
 /area/nadezhda/maintenance/undergroundfloor1west)
 "bLm" = (
 /obj/structure/table/marble,
+/obj/machinery/button/windowtint{
+	id = "Bar";
+	range = 5
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/kitchen)
-"bLo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/slotmachine{
-	dir = 8
-	},
-/obj/machinery/camera/network/colony_underground{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/crew_quarters/bar)
 "bLr" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -17563,6 +17557,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"dMY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stool/padded,
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/crew_quarters/kitchen)
 "dMZ" = (
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn/reinforced,
@@ -21841,10 +21840,15 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "eHE" = (
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn,
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/crew_quarters/bar)
+/obj/item/reagent_containers/glass/bucket{
+	name = "potato peel bucket";
+	desc = "A bucket used for storing potato peels after peeling them."
+	},
+/obj/item/tool/knife{
+	name = "potato knife"
+	},
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/crew_quarters/kitchen)
 "eHG" = (
 /turf/simulated/floor/wood,
 /area/nadezhda/maintenance{
@@ -36946,7 +36950,9 @@
 /area/nadezhda/security/tactical_blackshield)
 "hNT" = (
 /obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn,
+/obj/effect/window_lwall_spawn/reinforced/polarized{
+	id = "Bar"
+	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/kitchen{
 	name = "\improper Dining Area"
@@ -43325,6 +43331,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2west)
+"jgD" = (
+/obj/structure/table/woodentable,
+/obj/item/flame/candle,
+/obj/machinery/camera/network/colony_underground,
+/turf/simulated/floor/carpet/sblucarpet,
+/area/nadezhda/crew_quarters/kitchen{
+	name = "\improper Dining Area"
+	})
 "jgG" = (
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/reedbush,
@@ -44808,12 +44822,16 @@
 /area/nadezhda/engineering/workshop)
 "jvn" = (
 /obj/structure/table/marble,
+/obj/effect/floor_decal/spline/wood{
+	dir = 4
+	},
+/obj/machinery/button/windowtint{
+	id = "Bar2";
+	range = 5
+	},
 /obj/machinery/door/blast/shutters/glass{
 	id = "bar1";
 	name = "glass shutter"
-	},
-/obj/effect/floor_decal/spline/wood{
-	dir = 4
 	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/bar)
@@ -53497,6 +53515,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/maintenance/undergroundfloor2west)
+"lrt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/slotmachine{
+	dir = 8
+	},
+/obj/machinery/camera/network/colony_underground{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/crew_quarters/bar)
 "lrA" = (
 /obj/structure/catwalk,
 /obj/random/scrap/sparse_weighted,
@@ -57314,16 +57342,6 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
-"mgI" = (
-/obj/item/reagent_containers/glass/bucket{
-	name = "potato peel bucket";
-	desc = "A bucket used for storing potato peels after peeling them."
-	},
-/obj/item/tool/knife{
-	name = "potato knife"
-	},
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/crew_quarters/kitchen)
 "mgM" = (
 /obj/item/reagent_containers/blood/AMinus{
 	pixel_x = -7;
@@ -60177,14 +60195,6 @@
 	icon_state = "11,3"
 	},
 /area/shuttle/rocinante_shuttle_area)
-"mKv" = (
-/obj/structure/table/woodentable,
-/obj/item/flame/candle,
-/obj/machinery/camera/network/colony_underground,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
 "mKx" = (
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
@@ -87130,21 +87140,6 @@
 	icon_state = "5,7"
 	},
 /area/shuttle/rocinante_shuttle_area)
-"smL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -32;
-	pixel_y = -11
-	},
-/obj/machinery/camera/network/colony_underground{
-	dir = 4
-	},
-/turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
 "smQ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
@@ -87848,8 +87843,10 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "stI" = (
-/obj/effect/window_lwall_spawn,
 /obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/reinforced/polarized{
+	id = "Bar2"
+	},
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/bar)
 "stJ" = (
@@ -88890,11 +88887,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor2west)
-"sDw" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/stool/padded,
-/turf/simulated/floor/tiled/cafe,
-/area/nadezhda/crew_quarters/kitchen)
 "sDz" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
@@ -97464,6 +97456,13 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"urG" = (
+/obj/effect/window_lwall_spawn/reinforced/polarized{
+	id = "Bar"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/nadezhda/command/captain/quarters)
 "urR" = (
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment,
@@ -108681,6 +108680,21 @@
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/tactical)
+"wHf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -32;
+	pixel_y = -11
+	},
+/obj/machinery/camera/network/colony_underground{
+	dir = 4
+	},
+/turf/simulated/floor/carpet/gaycarpet,
+/area/nadezhda/crew_quarters/kitchen{
+	name = "\improper Dining Area"
+	})
 "wHh" = (
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_y = 32
@@ -178516,7 +178530,7 @@ gmt
 gmt
 kgS
 vxh
-smL
+wHf
 fLT
 sZv
 wCM
@@ -178916,8 +178930,8 @@ sDC
 hiG
 guj
 bLm
-sDw
-mgI
+dMY
+eHE
 wls
 xAD
 ybE
@@ -179522,7 +179536,7 @@ knK
 ayH
 acQ
 bCN
-mKv
+jgD
 uag
 hht
 mBu
@@ -180099,7 +180113,7 @@ vpT
 vpT
 pdT
 enj
-vpT
+urG
 pdT
 pdT
 pdT
@@ -180742,7 +180756,7 @@ cOU
 blY
 xXV
 elY
-eHE
+stI
 bbM
 hGK
 cVH
@@ -180944,7 +180958,7 @@ jvz
 jvz
 jvz
 wGi
-eHE
+stI
 bbM
 mln
 qvS
@@ -181146,7 +181160,7 @@ mSH
 mSH
 jvz
 myS
-eHE
+stI
 bbM
 mRV
 axX
@@ -181752,7 +181766,7 @@ dkt
 vDF
 jvz
 oaq
-eHE
+stI
 gNJ
 mRV
 whU
@@ -181940,7 +181954,7 @@ hDW
 amq
 rBi
 whU
-eHE
+stI
 abn
 ieD
 dYe
@@ -181954,7 +181968,7 @@ oyb
 mcu
 mei
 btk
-eHE
+stI
 gNJ
 hGK
 axX
@@ -182142,7 +182156,7 @@ gEJ
 whU
 epe
 whU
-eHE
+stI
 ehN
 gOS
 gOS
@@ -182154,9 +182168,9 @@ utI
 eFn
 jvz
 qkJ
-bLo
+lrt
 wGi
-eHE
+stI
 gdi
 hyp
 bwI
@@ -182345,14 +182359,14 @@ aYQ
 nMd
 rYf
 cPd
-eHE
-eHE
+stI
+stI
 stI
 cPd
 cPd
 cPd
-eHE
-eHE
+stI
+stI
 cPd
 cPd
 cPd
