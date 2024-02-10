@@ -51,6 +51,7 @@
 	icon_state = "imprinter"
 	circuit = /obj/item/circuitboard/circuit_imprinter
 	max_efficiency = 0.2
+	build_type = IMPRINTER
 	storage_capacity = 60
 	speed = 3
 
