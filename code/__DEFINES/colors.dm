@@ -135,6 +135,7 @@
 #define COLOR_LIGHTING_CREW_SOFT						"#fef9e7"
 #define COLOR_LIGHTING_SCI_BRIGHT						"#6a6c71"
 #define COLOR_LIGHTING_SCI_DARK							"#4f535f"
+#define COLOR_LIGHTING_BAR_BLUE							"#87a2f5"
 
 
 

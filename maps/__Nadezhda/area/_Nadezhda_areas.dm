@@ -811,6 +811,7 @@
 	name = "\improper Bar"
 	icon_state = "bar"
 	sound_env = LARGE_SOFTFLOOR
+	area_light_color = COLOR_LIGHTING_BAR_BLUE
 
 /area/nadezhda/crew_quarters/bar/vip
 	name = "\improper VIP Room"
