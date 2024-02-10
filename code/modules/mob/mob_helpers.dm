@@ -685,6 +685,94 @@ proc/is_blind(A)
 /mob/proc/weight_coeff()
 	return get_max_w_class()/(ITEM_SIZE_TITANIC)
 
+// Steps used to modify wounding multiplier. Should be used alongside edge/sharp when determining final damage of BRUTE-type attacks.
+/proc/step_wounding(var/wounding, var/is_increase = FALSE) // Usually mobs are the ones attacking (no), so this should be okay here? If it gets lucky a macro would be slightly faster
+	if(is_increase)
+		switch(wounding)
+			if(WOUNDING_HARMLESS)
+				return WOUNDING_TINY
+			if(WOUNDING_TINY)
+				return WOUNDING_SMALL
+			if(WOUNDING_SMALL)
+				return WOUNDING_NORMAL
+			if(WOUNDING_NORMAL)
+				return WOUNDING_NORMAL
+			if(WOUNDING_NORMAL)
+				return WOUNDING_WIDE
+			if(WOUNDING_WIDE)
+				return WOUNDING_EXTREME
+			if(WOUNDING_EXTREME)
+				return WOUNDING_DEVESTATING
+			if(WOUNDING_DEVESTATING)
+				return WOUNDING_DEVESTATING
+	else
+		switch(wounding)
+			if(WOUNDING_HARMLESS)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_TINY)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_SMALL)
+				return WOUNDING_TINY
+			if(WOUNDING_NORMAL)
+				return WOUNDING_SMALL
+			if(WOUNDING_SERIOUS)
+				return WOUNDING_NORMAL
+			if(WOUNDING_WIDE)
+				return WOUNDING_SERIOUS
+			if(WOUNDING_EXTREME)
+				return WOUNDING_WIDE
+			if(WOUNDING_DEVESTATING)
+				return WOUNDING_EXTREME
+
+/proc/step_wounding_double(var/wounding, var/is_increase = FALSE)
+	if(is_increase)
+		switch(wounding)
+			if(WOUNDING_HARMLESS)
+				return WOUNDING_SMALL
+			if(WOUNDING_TINY)
+				return WOUNDING_NORMAL
+			if(WOUNDING_SMALL)
+				return WOUNDING_SERIOUS
+			if(WOUNDING_NORMAL)
+				return WOUNDING_WIDE
+			if(WOUNDING_SERIOUS)
+				return WOUNDING_WIDE
+			if(WOUNDING_WIDE)
+				return WOUNDING_DEVESTATING
+			if(WOUNDING_EXTREME)
+				return WOUNDING_DEVESTATING
+
+		switch(wounding)
+			if(WOUNDING_HARMLESS)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_TINY)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_SMALL)
+				return WOUNDING_HARMLESS
+			if(WOUNDING_NORMAL)
+				return WOUNDING_TINY
+			if(WOUNDING_SERIOUS)
+				return WOUNDING_SMALL
+			if(WOUNDING_WIDE)
+				return WOUNDING_NORMAL
+			if(WOUNDING_EXTREME)
+				return WOUNDING_SERIOUS
+			if(WOUNDING_DEVESTATING)
+				return WOUNDING_WIDE
+
+// Determine wounding level. If var/wounding is provided, the attack should come from a projectile. This isn't the case yet, as we default to var/wounding = 1 until melee rework.
+/proc/wound_check(var/injurytype, var/wounding, var/edge, var/sharp)
+	if(sharp && (!edge)) // impaling/piercing, 2x damage, affected by injurytype
+		switch(injurytype) // A small note, the original values are 1, 1.5, 2 - which meant double damage for humans, normal for slimes. We're...not doing this, pendiing balance. - CDB
+			if(INJURY_TYPE_HOMOGENOUS)
+				return wounding ? step_wounding_double(wounding) : 1
+			if(INJURY_TYPE_UNLIVING)
+				return wounding ? step_wounding(wounding) : 1
+			else
+				return wounding ? wounding : 1
+	if(sharp && edge) // cutting, 1.5x damage
+		return wounding ? wounding : 1.5
+	return wounding ? wounding : 1 // crushing, 1x damage
 
 //Soj edit
 /mob/proc/get_health()

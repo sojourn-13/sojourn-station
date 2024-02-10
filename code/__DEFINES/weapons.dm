@@ -29,7 +29,13 @@
 #define WOUNDING_SERIOUS			1.25
 #define WOUNDING_WIDE				1.5
 #define WOUNDING_EXTREME			1.75
-#define WOUNDING_DEVESTATIING		2
+#define WOUNDING_DEVESTATING		2
+
+//Injury Type: Degrades specific wounding multipliers depending on sharpness and edge
+
+#define INJURY_TYPE_LIVING "living" // Anything with soft organs
+#define INJURY_TYPE_UNLIVING "unliving" // Things with hard vital parts, but not a proper organism, such as robots. TODO: FBPs into their own species - all robotic limbs possessing the defined species regardless of torso
+#define INJURY_TYPE_HOMOGENOUS "homogenous" // Solid objects, such as walls, slimes (they contain a slime core, but otherwise are a single "cell", with no distinct organs), golems
 
 //Resistance values, used on floors, windows, airlocks, girders, and similar hard targets.
 //Resistance value is also used on simple animals.

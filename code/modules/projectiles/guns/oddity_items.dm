@@ -138,7 +138,7 @@
 	This particular pistol has been oiled, cleaned, and appears to be so well maintained that its become 110% of its normal potential."
 	damage_multiplier = 1.8
 	init_recoil = HANDGUN_RECOIL(0.3)
-	penetration_multiplier = 1.5
+	penetration_multiplier = 0.5
 	price_tag = 2350
 	serial_type = "BlueCross"
 

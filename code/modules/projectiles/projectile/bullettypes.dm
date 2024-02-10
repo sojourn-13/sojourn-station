@@ -454,7 +454,7 @@
 
 /obj/item/projectile/bullet/rifle_75/hv
 	damage_types = list(BRUTE = 14)
-	armor_divisor = 36
+	armor_divisor = 2.5
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 2
 	hitscan = TRUE
