@@ -200,17 +200,17 @@
 			if("pistol") //From havelock.dm, Arbitrary Values
 				R.caliber = pick(CAL_PISTOL)
 				R.damage_multiplier = 1.2 + rand(-5,5)/10
-				R.penetration_multiplier = 1.2 + rand(-5,5)/10
+				R.penetration_multiplier = 0.2 + rand(-5,5)/10
 
 			if("magnum") //From consul.dm, Arbitrary values
 				R.caliber = CAL_MAGNUM
 				R.damage_multiplier = 1.2 + rand(-5,5)/10
-				R.penetration_multiplier = 1.2 + rand(-5,5)/10
+				R.penetration_multiplier = 0.2 + rand(-5,5)/10
 
 			if("shotgun") //From bull.dm, Arbitrary values
 				R.caliber = CAL_SHOTGUN
 				R.damage_multiplier = 0.8 + rand(-2,2)/10
-				R.penetration_multiplier = 0.75 + rand(-3,3)/10
+				R.penetration_multiplier = -0.25 + rand(-3,3)/10
 				R.bulletinsert_sound = 'sound/weapons/guns/interact/shotgun_insert.ogg'
 				R.fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 

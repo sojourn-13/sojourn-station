@@ -25,7 +25,7 @@
 	melee_damage_lower_increment = 5
 	melee_damage_upper_increment = 5
 	maxHealth_increment = 25
-	armor_penetration_increment = 15
+	armor_divisor_increment = 1.25
 
 	description = "This one is noticably tougher with sharp claws. It looks like it might hit harder than others."
 
@@ -52,7 +52,7 @@
 
 	armor_adjustment = list(
 		melee = -15,
-		bullet = 35,
+		bullet = 8,
 		bomb = -10,
 		agony = 60 //just cant feel it
 	)

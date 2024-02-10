@@ -15,7 +15,7 @@
 	mag_well = MAG_WELL_RIFLE
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
 	damage_multiplier = 1.0
-	penetration_multiplier = 1.0
+	penetration_multiplier = 0
 	extra_damage_mult_scoped = 0.2
 	zoom_factors = list(0.8)
 	price_tag = 950
@@ -78,7 +78,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10)
 	price_tag = 1200
 	damage_multiplier = 1.2
-	penetration_multiplier = 1.1
+	penetration_multiplier = 0.1
 	zoom_factors = list(0.4)
 	init_recoil = CARBINE_RECOIL(1)
 	folding_stock = FALSE
@@ -148,7 +148,7 @@
 	price_tag = 1400
 	fire_delay = 15
 	damage_multiplier = 1.2
-	penetration_multiplier = 1.4
+	penetration_multiplier = 0.4
 	zoom_factors = list(1.2)
 	extra_damage_mult_scoped = 0.4
 	init_recoil = CARBINE_RECOIL(1.2)

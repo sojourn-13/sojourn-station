@@ -16,7 +16,7 @@
 	hitsound = 'sound/effects/woodhit.ogg'
 	slot_flags = SLOT_BELT
 	damtype = BRUTE
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	force = WEAPON_FORCE_ROBUST
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 
@@ -24,12 +24,12 @@
 	if(user.a_intent == I_HELP)
 		damtype = HALLOSS
 		force = WEAPON_FORCE_PAINFUL
-		armor_penetration = ARMOR_PEN_MODERATE
+		armor_divisor = ARMOR_PEN_MODERATE
 
 	if(user.a_intent == I_DISARM)
 		damtype = HALLOSS
 		force = WEAPON_FORCE_PAINFUL
-		armor_penetration = ARMOR_PEN_SHALLOW
+		armor_divisor = ARMOR_PEN_SHALLOW
 
 	if(user.a_intent == I_HURT)
 		damtype = BRUTE
@@ -111,12 +111,12 @@
 		if(user.a_intent == I_HELP)
 			damtype = HALLOSS
 			force = WEAPON_FORCE_PAINFUL
-			armor_penetration = ARMOR_PEN_MODERATE
+			armor_divisor = ARMOR_PEN_MODERATE
 
 		if(user.a_intent == I_DISARM)
 			damtype = HALLOSS
 			force = 18 //3 more then help but not as good as a wooden classic
-			armor_penetration = ARMOR_PEN_SHALLOW
+			armor_divisor = ARMOR_PEN_SHALLOW
 
 		if(user.a_intent == I_HURT)
 			damtype = BRUTE

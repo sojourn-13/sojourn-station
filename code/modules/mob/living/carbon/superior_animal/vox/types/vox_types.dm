@@ -44,7 +44,7 @@
 
 	reload_message = "picks up a rock!"
 
-	armor = list(melee = 40, bullet = 30, energy = 10, bomb = 50, bio = 0, rad = 0)
+	armor = list(melee = 10, bullet = 7, energy = 2, bomb = 50, bio = 0, rad = 0)
 
 	ranged = FALSE
 
@@ -133,7 +133,7 @@
 
 	knock_over_odds = 30
 
-	armor = list(melee = 50, bullet = 40,  bomb = 60, bio = 0, rad = 0)
+	armor = list(melee = 12, bullet = 10, energy = 2, bomb = 60, bio = 0, rad = 0)
 	ranged = FALSE
 
 	can_burrow = TRUE

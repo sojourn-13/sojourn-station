@@ -50,7 +50,7 @@
 	hitsound = WORKSOUND_CIRCULAR_SAW
 	worksound = WORKSOUND_CIRCULAR_SAW
 	force = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SAWING = 45, QUALITY_CUTTING = 30, QUALITY_WIRE_CUTTING = 30)
 	price_tag = 240
@@ -77,7 +77,7 @@
 	name = "advanced circular saw"
 	desc = "You think you can cut anything with it. More power efficient than a regular circular saw."
 	icon_state = "advanced_saw"
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 1, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SAWING = 50, QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 40)
 	degradation = 0.7
@@ -94,7 +94,7 @@
 	force = WEAPON_FORCE_WEAK
 	switched_on_forcemult = 4 //28 total
 	w_class = ITEM_SIZE_NORMAL
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 2)
 	tool_qualities = list(QUALITY_SAWING = 5, QUALITY_CUTTING = 5, QUALITY_WIRE_CUTTING = 5) //barely usable when off, but allows mods to be applied
 	switched_off_qualities = list(QUALITY_CUTTING = 5)
@@ -129,7 +129,7 @@
 	force = WEAPON_FORCE_WEAK
 	switched_on_forcemult = 4 //28 total
 	w_class = ITEM_SIZE_NORMAL
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 3)
 	tool_qualities = list(QUALITY_SAWING = 5, QUALITY_CUTTING = 5, QUALITY_WIRE_CUTTING = 5) //barely usable when off, but allows mods to be applied
 	switched_off_qualities = list(QUALITY_CUTTING = 5)

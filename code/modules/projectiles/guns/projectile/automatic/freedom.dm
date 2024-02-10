@@ -18,7 +18,7 @@
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	zoom_factors = list(0.2)
 	damage_multiplier = 1.0
-	penetration_multiplier = 1.1
+	penetration_multiplier = 0.1
 	init_recoil = HANDGUN_RECOIL(0.9)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,

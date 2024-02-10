@@ -13,7 +13,7 @@
 	price_tag = 700
 	gun_parts = null
 	damage_multiplier = 1.4
-	penetration_multiplier = 1.3
+	penetration_multiplier = 0.3
 	init_recoil = HANDGUN_RECOIL(1.2)
 	zoom_factors = list(0.2)
 	fire_sound = 'sound/weapons/guns/fire/revolver_fire.ogg'
@@ -56,7 +56,7 @@
 	price_tag = 300
 	gun_parts = null
 	damage_multiplier = 1.2
-	penetration_multiplier = 1.3
+	penetration_multiplier = 0.3
 	init_recoil = HANDGUN_RECOIL(1.1)
 	zoom_factors = list()
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_INTERNAL_MAG, GUN_REVOLVER)

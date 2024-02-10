@@ -17,7 +17,7 @@
 	faction = "wurm"
 	fire_verb = "spits"
 	see_in_dark = 10
-	armor_penetration = 15
+	armor_divisor = 1.1
 	density = 0 // Prevents friendly fire between themselves, projectiles will go over them, making them also harder to target.
 
 	fleshcolor = "#7C90B8"
@@ -94,7 +94,7 @@
 	melee_damage_upper = TERMITE_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 20, bullet = 35, energy = 35, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 5, bullet = 8, energy = 8, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/iron
@@ -121,7 +121,7 @@
 	melee_damage_upper = TERMITE_DMG_HIGH
 
 //Armor related variables
-	armor = list(melee = 35, bullet = 59, energy = 20, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 8, bullet = 14, energy = 5, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
@@ -151,7 +151,7 @@
 	melee_damage_upper = TERMITE_DMG_LOW
 
 //Armor related variables
-	armor = list(melee = 50, bullet = 35, energy = 20, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 12, bullet = 8, energy = 5, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/uranium
@@ -178,7 +178,7 @@
 	melee_damage_upper = TERMITE_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 20, bullet = 30, energy = 50, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 5, bullet = 7, energy = 12, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/plasma
@@ -190,7 +190,7 @@
 	icon = 'icons/mob/mobs-termite.dmi' // Sprites made by Polyushko#0323
 	icon_state = "koroleva_termite"
 	icon_dead = "koroleva_gore"
-	armor_penetration = 35
+	armor_divisor = 1.3
 	inherent_mutations = list(MUTATION_DEAF, MUTATION_RAND_UNSTABLE, MUTATION_GIGANTISM, MUTATION_PROT_MILK, MUTATION_TERMITE_FRIEND)
 
 //Health related variables
@@ -206,7 +206,7 @@
 	melee_damage_upper = TERMITE_DMG_HIGH
 
 //Armor related variables
-	armor = list(melee = 25, bullet = 40, energy = 50, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 6, bullet = 10, energy = 12, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/diamond
@@ -221,7 +221,7 @@
 	comfy_range = 6 //How far we like to be form are targets when we fire!
 	projectiletype = /obj/item/projectile/bullet/spear
 	contaminant_immunity = TRUE
-	armor_penetration = 35
+	armor_divisor = 1.5
 	inherent_mutations = list(MUTATION_DEAF, MUTATION_RAND_UNSTABLE, MUTATION_GIGANTISM, MUTATION_SCREAMING)
 
 //Health related variables
@@ -239,7 +239,7 @@
 	ranged = TRUE
 
 //Armor related variables
-	armor = list(melee = 50, bullet = 30, energy = 40, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 12, bullet = 7, energy = 10, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/osmium

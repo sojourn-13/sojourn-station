@@ -9,7 +9,7 @@
 	maxHealth = 100
 	health = 100
 
-	armor = list(melee = 55, bullet = 55, energy = 70, bomb = 80, bio = 90, rad = 25) //Legitmently their armor (melee is higher {45} to account for AI stupidness)
+	armor = list(melee = 13, bullet = 13, energy = 17, bomb = 80, bio = 90, rad = 25) //Legitmently their armor (melee is higher {45} to account for AI stupidness)
 
 	//range/ammo stuff
 	ranged = 1

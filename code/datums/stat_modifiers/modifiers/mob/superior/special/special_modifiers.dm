@@ -40,9 +40,9 @@
 
 	move_to_delay_increment = -1.3 // fast
 
-	projectile_armor_penetration_mult_increment = 0.5
-	armor_penetration_mult = 1.5
-	armor_penetration_zeroth = 0.1
+	projectile_armor_divisor_mult_increment = 0.5
+	armor_divisor_mult = 1.5
+	armor_divisor_zeroth = 0.1
 
 	melee_damage_lower_mult = 1.5
 	melee_damage_upper_mult = 1.5

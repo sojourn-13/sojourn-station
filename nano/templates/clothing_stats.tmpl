@@ -8,7 +8,7 @@
 					{{:value.name}}
 				</div>
 				<div class="itemContent">
-				{{:helper.displayBar(value.value, 0, 100, value.value <= 25 ? 'bad' : value.value < 50 ? 'average' : 'good', value.value + '%')}}
+				{{:helper.displayBar(value.value, 0, 30, value.value <= 5 ? 'bad' : value.value < 10 ? 'average' : 'good', value.value)}}
 				</div>
 			{{/for}}
 			<br>
@@ -25,29 +25,13 @@
 				{{:helper.displayBar(data.slowdown, -5, 20, data.slowdown < 1 ? 'good' : data.slowdown > 1 ? 'bad': 'average', data.slowdown+' delay units')}}
 			</div>
 		{{/if}}
-		{{if data.stiffness != 1}}
-			<div class="itemLabel">
-				Stiffness:
-			</div>
-			<div class="itemContent">
-				{{:helper.displayBar(data.stiffness, -5, 20, data.stiffness < 1 ? 'good' : data.stiffness > 1 ? 'bad': 'average', data.stiffness+' delay units')}}
-			</div>
-		{{/if}}
-		{{if data.obscuration != 1}}
-			<div class="itemLabel">
-				Obscuration:
-			</div>
-			<div class="itemContent">
-				{{:helper.displayBar(data.obscuration, -5, 20, data.obscuration < 1 ? 'good' : data.obscuration > 1 ? 'bad': 'average', data.obscuration+' delay units')}}
-			</div>
-		{{/if}}
 		<br>
 		{{if data.body_coverage}}
 			<div class="itemLabel">
 				Coverage:
 			</div>
 			<div class="itemContent">
-				{{:data.body_coverage}} 
+				{{:data.body_coverage}}
 			</div>
 		{{else}}
 			<div class="average">
@@ -60,5 +44,10 @@
 		<div class="itemContent">
 			{{:helper.displayBar(data.equip_delay, 0, 100, data.equip_delay < 10 ? 'good' : data.equip_delay > 50 ? 'bad': 'average', data.equip_delay/10+' seconds')}}
 		</div>
+		<div class="itemLabel">
+			Style:
+		</div>
+		<div class="itemContent">
+			{{:helper.displayBar(data.info_style, -2, 2, data.info_style > 0 ? 'good' : data.info_style < 0 ? 'bad': 'average', data.info_style)}}
 	</div>
 </div>

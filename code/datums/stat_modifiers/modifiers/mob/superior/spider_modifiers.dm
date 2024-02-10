@@ -5,7 +5,7 @@
 	)
 
 	flash_resistances_increment = 2
-	armor_penetration_increment = 15
+	armor_divisor_increment = 1.25
 
 	prefix = "Lustrous"
 
@@ -22,7 +22,7 @@
 		agony = 30
 	)
 
-	armor_penetration_increment = 5
+	armor_divisor_increment = 1.1
 	flash_resistances_increment = 1
 	maxHealth_increment = 20
 

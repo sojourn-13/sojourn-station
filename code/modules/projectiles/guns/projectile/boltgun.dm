@@ -51,7 +51,7 @@
 	price_tag = 75
 	sharp = 0
 	init_recoil = HMG_RECOIL(0.8)
-	penetration_multiplier = 0.5
+	penetration_multiplier = -0.5
 	damage_multiplier = 0.9
 	fire_delay = 4
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)

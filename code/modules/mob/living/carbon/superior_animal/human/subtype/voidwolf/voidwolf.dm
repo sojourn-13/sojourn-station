@@ -26,7 +26,7 @@
 	target_telegraph = "fumbles to ready their weapon, preparing to engage"
 	rush_target_telegraph = "quickly snaps their aim toward"
 
-	armor = list(melee = 10, bullet = 10, energy = 10, bomb = 0, bio = 100, rad = 50) //Legitmently their armor
+	armor = list(melee = 2, bullet = 2, energy = 2, bomb = 0, bio = 100, rad = 50) //Legitmently their armor
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
 
@@ -214,7 +214,7 @@
 
 	flash_resistances = 20 //no.
 
-	armor = list(melee = 60, bullet = 55, energy = 50, bomb = 75, bio = 100, rad = 25) //Legitmently their armor
+	armor = list(melee = 15, bullet = 13, energy = 12, bomb = 75, bio = 100, rad = 25) //Legitmently their armor
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/New()
 	..()

@@ -24,7 +24,7 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth)
 
-	armor = list(melee = 10, bullet = 15, energy = 5, bomb = 20, bio = 20, rad = 0)
+	armor = list(melee = 2, bullet = 3, energy = 1, bomb = 20, bio = 20, rad = 0)
 
 	get_stat_modifier = TRUE
 

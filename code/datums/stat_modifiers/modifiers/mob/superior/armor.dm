@@ -114,9 +114,9 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/positive/high
 	armor_adjustment = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
+		melee =7,
+		bullet = 7,
+		energy = 7,
 		bomb = 30,
 		bio = 30,
 		rad = 30,

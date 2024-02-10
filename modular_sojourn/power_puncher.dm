@@ -112,8 +112,8 @@
 			take_damage(dmg, dmg_type)
 		if(P.agony)
 			take_damage(P.agony, HALLOSS)
-		if(P.armor_penetration)
-			take_damage(P.armor_penetration, HALLOSS)
+		if(P.armor_divisor)
+			take_damage(P.armor_divisor * 10, HALLOSS)
 
 /obj/machinery/power/puncher/Destroy()
 	return ..()

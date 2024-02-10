@@ -14,7 +14,7 @@
 	origin_tech = list(TECH_COMBAT = 20, TECH_MATERIAL = 3) //So rnd has a use to get their hands on one
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10)
 	price_tag = 3000
-	penetration_multiplier = 1.5 //50% more ap
+	penetration_multiplier = 0.5 //50% more ap
 	damage_multiplier = 1.1 //Payload "rifle" has a scope so fair enough
 	zoom_factors = list(0.4)
 	fire_delay = 12
@@ -98,7 +98,7 @@
 	desc = "An obscene tool of destruction forged by ancient gods of warfare, sowing horror when you weild this Thunder Striking Wizard Thrasher."
 	icon = 'icons/obj/guns/projectile/sbaw.dmi'
 	icon_state = "sbaw"
-	penetration_multiplier = 1.5
+	penetration_multiplier = 0.5
 	damage_multiplier = 1.5
 	init_recoil = RIFLE_RECOIL(1.1)
 	fire_delay = 0.5

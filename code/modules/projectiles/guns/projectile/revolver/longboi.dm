@@ -12,7 +12,7 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
 	price_tag = 1250 //It's a novelty item.
 	damage_multiplier = 0.9
-	penetration_multiplier = 1.1
+	penetration_multiplier = 0.1
 	init_recoil = HANDGUN_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	twohanded = TRUE

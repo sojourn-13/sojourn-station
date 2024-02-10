@@ -19,7 +19,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	damage_multiplier = 1.2
-	penetration_multiplier = 1.5
+	penetration_multiplier = 0.5
 	zoom_factors = list(0.4)
 	init_recoil = SMG_RECOIL(0.9)
 	serial_type = "SA"
@@ -64,7 +64,7 @@
 	desc = "A Soteria copy of the Scarborough Arms C-20r, not quite as good at punching through armor nor as deadly, but still reliable and versatile none the less as its often nicknamed the bullpip. Uses 9mm or 10mm depending on the installed barrel."
 	icon = 'icons/obj/guns/projectile/si_cr20.dmi'
 	damage_multiplier = 1.1
-	penetration_multiplier = 1.3
+	penetration_multiplier = 0.3
 	gun_parts = list(/obj/item/part/gun/frame/c20r/sci = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
 	price_tag = 500
 	serial_type = "SI"

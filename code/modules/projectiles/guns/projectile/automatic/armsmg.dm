@@ -16,7 +16,7 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 3)
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	damage_multiplier = 0.9
-	penetration_multiplier = 0.5
+	penetration_multiplier = -0.5
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
 	init_recoil = EMBEDDED_RECOIL(0.8)
 	init_firemodes = list(

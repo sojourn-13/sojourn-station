@@ -42,7 +42,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 10)
 	max_shells = 1
 	damage_multiplier = 2
-	penetration_multiplier = 2
+	penetration_multiplier = 1
 	init_recoil = RIFLE_RECOIL(4)
 	price_tag = 3250
 	gun_parts = null
@@ -138,7 +138,7 @@
 	This particular pistol has been oiled, cleaned, and appears to be so well maintained that its become 110% of its normal potential."
 	damage_multiplier = 1.8
 	init_recoil = HANDGUN_RECOIL(0.3)
-	penetration_multiplier = 3.1
+	penetration_multiplier = 1.5
 	price_tag = 2350
 	serial_type = "BlueCross"
 
@@ -261,7 +261,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_H_PISTOL|MAG_WELL_PISTOL
 	damage_multiplier = 1.25
-	penetration_multiplier = 1
+	penetration_multiplier = 0
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
 	init_recoil = HANDGUN_RECOIL(0.1)
 
@@ -303,7 +303,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	damage_multiplier = 1.5
-	penetration_multiplier = 1.2 // So that it's good for PVE too
+	penetration_multiplier = 0.2 // So that it's good for PVE too
 	init_recoil = HANDGUN_RECOIL(0.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "BlueCross"
@@ -325,7 +325,7 @@
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	can_dual = TRUE
 	damage_multiplier = 1.2
-	penetration_multiplier = 1.2
+	penetration_multiplier = 0.2
 	init_recoil = HANDGUN_RECOIL(0.1)
 	gun_tags = list(GUN_ENERGY, GUN_LASER, GUN_SILENCABLE)
 	init_firemodes = list(
@@ -352,7 +352,7 @@
 	force = WEAPON_FORCE_BRUTAL
 	throwforce = WEAPON_FORCE_PAINFUL
 	w_class = ITEM_SIZE_NORMAL
-	armor_penetration = ARMOR_PEN_HALF
+	armor_divisor = ARMOR_PEN_HALF
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
 	tool_qualities = list(QUALITY_HAMMERING = 20)
 	max_upgrades = 3
@@ -394,7 +394,7 @@
 	force = WEAPON_FORCE_DANGEROUS
 	switched_on_forcemult = 4.4 //88
 	w_class = ITEM_SIZE_NORMAL
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	switched_on_penmult = 2.5 //50
 	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 3)
 	tool_qualities = list(QUALITY_SAWING = 70, QUALITY_CUTTING = 60, QUALITY_WIRE_CUTTING = 30)

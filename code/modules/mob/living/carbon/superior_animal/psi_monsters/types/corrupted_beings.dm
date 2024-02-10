@@ -22,11 +22,11 @@
 	special_parts = list(/obj/item/animal_part/chimera_fang)
 
 
-	armor_penetration = 25 //Sharp bones
+	armor_divisor = 2 //Sharp bones
 
 
 	//Good stats baseline in case admins dont edit these
-	armor = list(melee = 45, bullet = 15, energy = 45, bomb = 10, bio = 100, rad = 100, agony = 70)
+	armor = list(melee = 11, bullet = 3, energy = 11, bomb = 10, bio = 100, rad = 100, agony = 70)
 
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower
@@ -54,7 +54,7 @@
 	colony_friend = FALSE
 	friendly_to_colony = FALSE
 
-	armor_penetration = 15
+	armor_divisor = 1.25
 
 	color = "#49D6F2"
 
@@ -62,7 +62,7 @@
 
 
 	//Same armor that they are warning
-	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 30, bio = 100, rad = 50)
+	armor = list(melee = 7, bullet = 7, energy = 7, bomb = 30, bio = 100, rad = 50)
 
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey
@@ -87,7 +87,7 @@
 	move_to_delay = 1
 	attacktext = "rends apart"
 
-	armor_penetration = 35
+	armor_divisor = 2.5
 
 	color = null
 
@@ -106,7 +106,7 @@
 	//Scale armor ref from CDDA
 	//Dragons are weak to melee - source: Dnd
 	//Ive never seen a wizard NOT nuke a dragon with fire ball
-	armor = list(melee = 40, bullet = 30, energy = 95, bomb = 40, bio = 100, rad = 100)
+	armor = list(melee = 10, bullet = 17, energy = 23, bomb = 40, bio = 100, rad = 100)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/MiddleClickOn(mob/targetDD as mob)
 	var/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey/shooter = src //We're the shooter.
@@ -184,7 +184,7 @@
 
 	drop_items = list(/obj/item/tool/sword/cleaver/cult/deepmaints)
 
-	armor_penetration = 15
+	armor_divisor = 1.25
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/plasma
 	name = "Daskveyian Plasma Caster"
@@ -209,7 +209,7 @@
 	comfy_range = 6
 	projectiletype = /obj/item/projectile/plasma/aoe/heat
 
-	armor_penetration = 15
+	armor_divisor = 1
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/laser
 	name = "Daskveyian Las-Gunner"
@@ -237,7 +237,7 @@
 	comfy_range = 6
 	projectiletype = /obj/item/projectile/beam
 
-	armor_penetration = 15
+	armor_divisor = 1
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg
 	name = "Daskveyian Assaulter"
@@ -269,7 +269,7 @@
 	projectiletype = /obj/item/projectile/bullet/pistol_35/scrap
 	mag_type = /obj/item/ammo_magazine/smg_35/empty
 
-	armor_penetration = 15
+	armor_divisor = 1
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle
 	name = "Daskveyian Rifleperson"
@@ -301,7 +301,7 @@
 	projectiletype = /obj/item/projectile/bullet/rifle_75/scrap
 	mag_type = /obj/item/ammo_magazine/rifle_75/empty
 
-	armor_penetration = 15
+	armor_divisor = 1
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/shield
 	name = "Daskveyian Juggernaut "
@@ -319,8 +319,8 @@
 
 	drop_items = list()
 
-	armor_penetration = 0
-	armor = list(melee = 60, bullet = 60, energy = 60, bomb = 100, bio = 100, rad = 90)
+	armor_divisor = 1
+	armor = list(melee = 15, bullet = 15, energy = 3, bomb = 100, bio = 100, rad = 90)
 	var/knockdown_odds = 30
 
 // BUMP!
@@ -351,8 +351,8 @@
 
 	drop_items = list()
 
-	armor_penetration = 30
-	armor = list(melee = 60, bullet = 60, energy = 60, bomb = 100, bio = 100, rad = 90)
+	armor_divisor = 1.5
+	armor = list(melee = 15, bullet = 15, energy = 3, bomb = 100, bio = 100, rad = 90)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/weakling
 	name = "Daskveyian Uplifted"
@@ -370,7 +370,7 @@
 
 	drop_items = list()
 
-	armor_penetration = 0
+	armor_divisor = 1
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_shooter
@@ -389,7 +389,7 @@
 
 	drop_items = list()
 
-	armor_penetration = 0
+	armor_divisor = 1
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 	rounds_per_fire = 1
@@ -429,7 +429,7 @@
 
 	drop_items = list()
 
-	armor_penetration = 0
+	armor_divisor = 1
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 
 	rounds_per_fire = 1

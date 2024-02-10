@@ -82,7 +82,7 @@
 				/obj/item/flame/lighter/zippo/capitalist = 500, // Item description, meant to be expensive
 				/obj/item/flame/lighter/zippo/royal = 50,
 				/obj/item/flame/lighter/zippo/gonzo = 50,
-				/obj/item/flame/lighter/zippo/bullet = 50,
+				/obj/item/flame/lighter/zippo/bullet = 12,
 				/obj/item/flame/lighter/zippo/communist = 250, // Idiot tax, but still affordable
 				/obj/item/flame/lighter/zippo/brass = 55,
 				/obj/item/flame/lighter/zippo/absolutism = 50,

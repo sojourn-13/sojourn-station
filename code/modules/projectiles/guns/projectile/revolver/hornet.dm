@@ -12,7 +12,7 @@
 	can_dual = TRUE
 	proj_agony_multiplier = 1.4
 	damage_multiplier = 0.8
-	penetration_multiplier = 1
+	penetration_multiplier = 0
 	init_recoil = HANDGUN_RECOIL(1) //So it can accully be used
 	zoom_factors = list(0.2)
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'

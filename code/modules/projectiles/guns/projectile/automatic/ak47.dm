@@ -93,7 +93,7 @@
 	desc = "A bulked up and modified version of the Kalashnikov made to fire 20mm shotgun shells, taking magazines similar to the Sol Federation SBAW design. \nThis model of the \"Saiga\" shotgun has been reclaimed and repurposed by Nadezhda Marshals, making it free of Excelsior taint."
 	icon_state = "saiga-bs"
 	item_state = "saiga-bs"
-	penetration_multiplier = 0.9 //Non-Excelsior varient, it's powerful as is. Pug on crack.
+	penetration_multiplier = -0.1 //Non-Excelsior varient, it's powerful as is. Pug on crack.
 	excelsior = FALSE
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 1)
 	price_tag = 800
@@ -230,7 +230,7 @@
 	origin_tech = list(TECH_COMBAT = 2)	//bad copies don't give good science
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 10)
 	damage_multiplier = 1.1
-	penetration_multiplier = 0.8
+	penetration_multiplier = -0.2
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY	//too poorly made for burst or automatic

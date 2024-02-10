@@ -14,12 +14,12 @@
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(1.1)
-	penetration_multiplier = 1
+	penetration_multiplier = 0
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM)
 
 	init_firemodes = list(
 		list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", burst=1, fire_delay=0.2, fire_stacks=0, move_delay=null, icon="semi"),
-		list(mode_name="fire blast", mode_desc="Consumes one round to fire a burst of flame.", burst=1, fire_delay=0.2, fire_stacks=3, penetration_multiplier = 0.5, damage_multiplier = 0.8, icon="kill") //Worse than Kurtz incendiary.
+		list(mode_name="fire blast", mode_desc="Consumes one round to fire a burst of flame.", burst=1, fire_delay=0.2, fire_stacks=3, penetration_multiplier = -0.5, damage_multiplier = 0.8, icon="kill") //Worse than Kurtz incendiary.
 		)
 
 	reload_sound 	= 'sound/weapons/guns/interact/reload_silver.ogg'

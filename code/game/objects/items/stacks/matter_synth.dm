@@ -1,6 +1,6 @@
 /datum/matter_synth
 	var/name = "Generic Synthesizer"
-	var/max_energy = 60000
+	var/max_energy = 15000
 	var/recharge_rate = 2000
 	var/max_energy_multiplied = 60000
 	var/multiplier = 1						// Robot may be upgraded with better matter bin to multiply capacity of it's synthetisers
@@ -57,5 +57,5 @@
 
 /datum/matter_synth/wire
 	name = "Wire Synthesizer"
-	max_energy = 50
+	max_energy = 12
 	recharge_rate = 2

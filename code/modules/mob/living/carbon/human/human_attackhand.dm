@@ -349,7 +349,7 @@
 	var/penetration = 0
 	if(istype(user, /mob/living))
 		var/mob/living/L = user
-		penetration = L.armor_penetration
+		penetration = L.armor_divisor
 
 	user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [src.name] ([src.ckey])</font>")
 	src.attack_log += text("\[[time_stamp()]\] <font color='orange'>was attacked by [user.name] ([user.ckey])</font>")

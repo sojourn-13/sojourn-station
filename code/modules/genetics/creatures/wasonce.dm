@@ -38,7 +38,7 @@ Has ability of every roach.
 
 	attacktext = "delivered a crushing blow to"
 
-	armor = list(melee = 60, bullet = 30, energy = 0, bomb = 20, bio = 50, rad = 100, agony = 100)
+	armor = list(melee = 15, bullet = 7, energy = 0, bomb = 20, bio = 50, rad = 100, agony = 100)
 
 	var/knockdown_odds = 60 //Maybe stay away from it
 

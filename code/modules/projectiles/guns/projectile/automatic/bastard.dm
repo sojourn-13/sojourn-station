@@ -12,7 +12,7 @@
 	mag_well = MAG_WELL_LINKED_BOX
 	caliber = CAL_LRIFLE
 	tac_reloads = FALSE
-	penetration_multiplier = 0.8
+	penetration_multiplier = -0.2
 	damage_multiplier = 0.9
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 4, MATERIAL_STEEL = 15)
 	price_tag = 1000

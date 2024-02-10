@@ -28,12 +28,12 @@
 	melee_damage_lower_increment = 2
 	melee_damage_upper_increment = 2
 	maxHealth_increment = 5
-	armor_penetration_increment = 2
+	armor_divisor_increment = 1.25
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG
 
 	inherent_projectile_mult_increment = 0.1
-	projectile_armor_penetration_adjustment = 2
+	projectile_armor_divisor_adjustment = 2
 
 	description = "This one is noticably muscular. It looks like it might hit harder than others."
 

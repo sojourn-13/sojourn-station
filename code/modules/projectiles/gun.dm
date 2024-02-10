@@ -31,7 +31,7 @@
 	var/auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg' //The sound that places when a mag is dropped
 
 	var/damage_multiplier = 1 //Multiplies damage of projectiles fired from this gun
-	var/penetration_multiplier = 1 //Multiplies armor penetration of projectiles fired from this gun
+	var/penetration_multiplier = 0 //Multiplies armor penetration of projectiles fired from this gun
 	var/pierce_multiplier = 0 //ADDITIVE wall penetration to projectiles fired from this gun
 	var/extra_damage_mult_scoped = 0 //Adds even more damage mulitplier, when scopped so snipers can sniper
 	var/proj_agony_multiplier = 1
@@ -475,9 +475,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		projectile.multiply_projectile_damage(damage_multiplier)
 
 		if(extra_proj_penmult)
-			projectile.multiply_projectile_penetration(extra_proj_penmult)
+			projectile.add_projectile_penetration(penetration_multiplier)
 
-		projectile.multiply_projectile_penetration(penetration_multiplier + user.stats.getStat(STAT_VIG) * 0.02)
+		projectile.add_projectile_penetration(penetration_multiplier + user.stats.getStat(STAT_VIG) * 0.02)
 
 		if(extra_proj_wallbangmult)
 			projectile.multiply_pierce_penetration(extra_proj_wallbangmult)
@@ -1047,7 +1047,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/data = list()
 	data["damage_multiplier"] = damage_multiplier
 	data["pierce_multiplier"] = pierce_multiplier
-	data["penetration_multiplier"] = penetration_multiplier
+	data["penetration_multiplier"] = penetration_multiplier + 1
 	data["proj_agony_multiplier"] = proj_agony_multiplier
 
 	data["fire_delay"] = fire_delay //time between shots, in ms
@@ -1056,7 +1056,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	data["force"] = force
 	data["force_max"] = initial(force)*10
-	data["armor_penetration"] = armor_penetration
+	data["armor_divisor"] = armor_divisor
 	data["muzzle_flash"] = muzzle_flash
 
 	var/total_recoil = 0
@@ -1126,8 +1126,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/data = list()
 	data["projectile_name"] = P.name
 	data["projectile_damage"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()
+	data["projectile_AP"] = P.armor_divisor + penetration_multiplier
 	data["projectile_WOUND"] = P.wounding_mult
-	data["projectile_AP"] = P.armor_penetration * penetration_multiplier
 	data["projectile_pain"] = P.agony * proj_agony_multiplier
 	data["projectile_recoil"] = P.recoil
 	qdel(P)
@@ -1160,7 +1160,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	vision_flags = initial(vision_flags)
 	see_invisible_gun = initial(see_invisible_gun)
 	force = initial(force)
-	armor_penetration = initial(armor_penetration)
+	armor_divisor = initial(armor_divisor)
 	sharp = initial(sharp)
 	attack_verb = list()
 	auto_eject = initial(auto_eject) //SoJ edit

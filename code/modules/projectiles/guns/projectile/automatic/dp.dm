@@ -9,7 +9,7 @@
 	slot_flags = 0
 	max_shells = 1
 	damage_multiplier = 1.0
-	penetration_multiplier = 0.9
+	penetration_multiplier = -0.1
 	caliber = CAL_RIFLE
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BACK

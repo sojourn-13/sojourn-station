@@ -13,7 +13,7 @@
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	price_tag = 3400
 	damage_multiplier = 1.5
-	penetration_multiplier = 3
+	penetration_multiplier = 1
 	pierce_multiplier = 2
 	init_recoil = HMG_RECOIL(0.5)
 	init_firemodes = list(

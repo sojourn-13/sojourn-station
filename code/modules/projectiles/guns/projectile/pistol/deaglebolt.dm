@@ -14,7 +14,7 @@
 	price_tag = 1750
 	can_dual = TRUE
 	damage_multiplier = 1.4
-	penetration_multiplier = 1.3
+	penetration_multiplier = 0.3
 	init_recoil = HANDGUN_RECOIL(1.3)
 	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'

@@ -401,7 +401,7 @@
 	if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
 		G.proj_agony_multiplier += weapon_upgrades[GUN_UPGRADE_PAIN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
-		G.penetration_multiplier *= weapon_upgrades[GUN_UPGRADE_PEN_MULT]
+		G.penetration_multiplier += weapon_upgrades[GUN_UPGRADE_PEN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 		G.pierce_multiplier += weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
@@ -596,7 +596,7 @@
 				to_chat(user, SPAN_WARNING("Decreases projectile agony damage by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
-			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_MULT]-1
+			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_MULT]
 			if(amount > 0)
 				to_chat(user, SPAN_NOTICE("Increases projectile penetration by [amount*100]%"))
 			else

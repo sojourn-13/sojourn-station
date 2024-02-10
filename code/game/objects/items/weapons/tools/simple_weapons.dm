@@ -46,7 +46,7 @@
 	w_class = ITEM_SIZE_SMALL
 	sharp = TRUE
 	edge = TRUE
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	origin_tech = list(TECH_MATERIAL = 2, TECH_COMBAT = 1)
 	attack_verb = list("chopped", "torn", "cut")
 	tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_SAWING = 15)
@@ -61,7 +61,7 @@
 	wielded_icon = "fireaxe1"
 	sharp = TRUE
 	edge = TRUE
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_PRYING = 20, QUALITY_SAWING = 15)
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
@@ -124,7 +124,7 @@
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 3)
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_NORMAL
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_NORMAL
 	attack_verb = list("chopped", "torn", "cut", "cleaved", "slashed")
 	tool_qualities = list(QUALITY_CUTTING = 10)
@@ -240,7 +240,7 @@
 	slot_flags = SLOT_BELT
 	worksound = WORKSOUND_HARD_SLASH
 	force = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 
 	throwforce = WEAPON_FORCE_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -266,7 +266,7 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 5, MATERIAL_DIAMOND = 1) //sharpened using diamond dust or whatever
 	slot_flags = SLOT_BELT | SLOT_BACK
 	force = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	item_icons = list(
 		slot_back_str = 'icons/inventory/back/mob.dmi')
 	item_state_slots = list(
@@ -281,7 +281,7 @@
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 2) //twice the value of a kitche knife
 	slot_flags = SLOT_BELT|SLOT_BACK
 	force = WEAPON_FORCE_DANGEROUS
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	price_tag = 40
 
 /obj/item/tool/sword/katana/nano
@@ -391,7 +391,7 @@
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "saber"
 	item_state = "saber"
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	price_tag = 400
 	has_alt_mode = TRUE
 	alt_mode_damagetype = HALLOSS
@@ -415,7 +415,7 @@
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "saber"
 	item_state = "saber"
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	price_tag = 350
 
 /obj/item/tool/sword/saber/militiasergeant
@@ -423,7 +423,7 @@
 	desc = "An Saber made for the Senior Enlisted of Blackshield, Usually used for Ceremonial usage but can also be used in combat, Preferably used by a maniac who likes to charge into battle without helmet or armour."
 	icon_state = "cutlass"
 	item_state = "cutlass"
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	price_tag = 325
 
 /obj/item/tool/sword/saber/deconstuctive_rapier
@@ -433,7 +433,7 @@
 	icon_state = "rapier_cro" //Sprite by Gidgit
 	item_state = "saber"
 	force = WEAPON_FORCE_PAINFUL - 5 //10 base
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	price_tag = 1600
 	has_alt_mode = TRUE
 	attack_verb = list("stabbed", "slashed", "pierces")
@@ -481,7 +481,7 @@
 	icon_state = "rapier_cbo"
 	item_state = "saber"
 	force = WEAPON_FORCE_PAINFUL - 5 //10 base
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	price_tag = 1600
 	has_alt_mode = TRUE
 	attack_verb = list("stabbed", "slashed", "pierces")
@@ -515,7 +515,7 @@
 		modifier += min(30,H.stats.getStat(STAT_ROB))
 		reagent_modifier = CLAMP(round(H.stats.getStat(STAT_BIO)/10), 1, 5)
 	var/mob/living/L = target
-	if(prob(min(100,((100+armor_penetration)-L.getarmor(user.targeted_organ, ARMOR_MELEE))+modifier)))
+	if(prob(min(100,((100 / armor_divisor)-L.getarmor(user.targeted_organ, ARMOR_MELEE))+modifier)))
 		var/trans = reagents.trans_to_mob(target, rand(1,3)*reagent_modifier, CHEM_BLOOD)
 		admin_inject_log(user, target, src, reagents.log_list(), trans)
 		to_chat(user, SPAN_NOTICE("You inject [trans] units of the solution. [src] now contains [src.reagents.total_volume] units."))
@@ -527,7 +527,7 @@
 	item_state = "msword"
 	slot_flags = SLOT_BELT|SLOT_BACK
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 2) // 2 rods, 5 plasteel
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	tool_qualities = list(QUALITY_CUTTING = 15,  QUALITY_SAWING = 5)
 	degradation = 1.5 // Crappily made
 	max_upgrades = 5 // Handmade nature
@@ -544,7 +544,7 @@
 	item_state = "renderslayer"
 	force = WEAPON_FORCE_BRUTAL + 2 // 35 damage
 	slot_flags = SLOT_BELT|SLOT_BACK
-	armor_penetration = ARMOR_PEN_MASSIVE // Sharp edge
+	armor_divisor = ARMOR_PEN_MASSIVE // Sharp edge
 	effective_faction = list("deathclaw") // Called like this for a reason
 	damage_mult = 2
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 5)
@@ -565,7 +565,7 @@
 	icon_state = "crayon_blade"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 2, MATERIAL_DIAMOND = 1)
 	force = WEAPON_FORCE_ROBUST + 4 // 30 damage
-	armor_penetration = ARMOR_PEN_MASSIVE // More balanced than psi weapons with psi mania perk.
+	armor_divisor = ARMOR_PEN_MASSIVE // More balanced than psi weapons with psi mania perk.
 	w_class = ITEM_SIZE_BULKY
 	max_upgrades = 2
 	slot_flags = SLOT_BELT|SLOT_BACK
@@ -596,7 +596,7 @@
 	item_state = "cleaver_back"
 	tool_qualities = list(QUALITY_CUTTING = 30)
 	force = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	w_class = ITEM_SIZE_BULKY
 	effective_faction = list("tengo", "tengolo_berserker", "xenomorph") // Which faction the cleaver is effective against.
 	damage_mult = 2.5 // The damage multiplier the cleaver get when attacking that faction.
@@ -618,7 +618,7 @@
 	slot_flags = SLOT_BELT | SLOT_BACK
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_SAWING = 20) //Very sharp blade, serrated back
 	force = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_DEEP // same as other, cheaper swords.
+	armor_divisor = ARMOR_PEN_DEEP // same as other, cheaper swords.
 	effective_faction = list("wurm", "roach", "spider", "vox_tribe", "russian", "tengo", "tengolo_berserker", "xenomorph", "stalker") // This is the janky solution but works.
 	damage_mult = 2 //We are better for hunting, worse for "real fights"
 	w_class = ITEM_SIZE_NORMAL
@@ -631,7 +631,7 @@
 	icon_state = "gauntlet"
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_SAWING = 20) //Cuts people down just like trees.
 	force = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_HALF //same pen as a dagger. This is a fairly rare weapon that require fighting on of the more dangerous mobs.
+	armor_divisor = ARMOR_PEN_HALF //same pen as a dagger. This is a fairly rare weapon that require fighting on of the more dangerous mobs.
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 5)
 	attack_verb = list("clawed", "scratched", "lacerated", "slashed")
@@ -646,7 +646,7 @@
 	toggleable = TRUE
 	worksound = WORKSOUND_HAMMER
 	switched_on_forcemult = 3.3 //33
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 7)
 	attack_verb = list("punched", "decked", "haymakered", "uppercut")
@@ -705,7 +705,7 @@
 
 	force = WEAPON_FORCE_PAINFUL
 	throwforce = WEAPON_FORCE_DANGEROUS
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	throw_speed = 3
 	max_upgrades = 5
 
@@ -732,7 +732,7 @@
 	wielded_icon = "spear_steel_wielded"
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	tool_qualities = list(QUALITY_CUTTING = 10,  QUALITY_WIRE_CUTTING = 5, QUALITY_SCREW_DRIVING = 5)
 	matter = list(MATERIAL_STEEL = 3)
 	structure_damage_factor = STRUCTURE_DAMAGE_WEAK
@@ -745,7 +745,7 @@
 	wielded_icon = "spear_plasteel_wielded"
 	force = WEAPON_FORCE_ROBUST
 	throwforce = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	tool_qualities = list(QUALITY_CUTTING = 15,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 10)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTEEL = 2)
 	structure_damage_factor = STRUCTURE_DAMAGE_NORMAL
@@ -758,7 +758,7 @@
 	wielded_icon = "spear_uranium_wielded"
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_DANGEROUS
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	tool_qualities = list(QUALITY_CUTTING = 10,  QUALITY_WIRE_CUTTING = 5, QUALITY_SCREW_DRIVING = 5)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_URANIUM = 1)
 
@@ -775,7 +775,7 @@
 	wielded_icon = "makeshift_halberd_wielded"
 	force = WEAPON_FORCE_ROBUST
 	throwforce = WEAPON_FORCE_NORMAL
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	tool_qualities = list(QUALITY_CUTTING = 10)
 	matter = list(MATERIAL_STEEL = 5)
 
@@ -787,7 +787,7 @@
 	item_state = "hunter_halberd"
 	wielded_icon = "hunter_halberd_wielded"
 	force = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	effective_faction = list("wurm", "roach", "spider", "vox_tribe", "russian", "tengo", "tengolo_berserker", "xenomorph", "stalker") // This is the janky solution but works.
 	damage_mult = 2 //We are better for hunting, worse for "real fights"
 	price_tag = 500
@@ -807,7 +807,7 @@
 	slot_flags = SLOT_BELT
 	worksound = WORKSOUND_HARD_SLASH
 	force = WEAPON_FORCE_ROBUST
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 
 	throwforce = WEAPON_FORCE_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -838,7 +838,7 @@
 	icon_state = "katana_old"
 	item_state = "katana"
 	force = WEAPON_FORCE_DANGEROUS
-	armor_penetration = ARMOR_PEN_EXTREME
+	armor_divisor = ARMOR_PEN_EXTREME
 
 /obj/item/tool/cheap/spear
 	name = "cheap spear"

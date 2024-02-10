@@ -66,7 +66,7 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 5, MATERIAL_STEEL= 5)
 	price_tag = 250
 	damage_multiplier = 0.7
-	penetration_multiplier = 0.8
+	penetration_multiplier = -0.2
 	init_recoil = RIFLE_RECOIL(2.3)
 
 	wield_delay = 0.8 SECOND

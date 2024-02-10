@@ -20,7 +20,7 @@
 	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_DRUM
 	caliber = CAL_HRIFLE
 	tac_reloads = FALSE
-	penetration_multiplier = 0.85
+	penetration_multiplier = -0.15
 	damage_multiplier = 1.2
 	slowdown = 0.15
 	matter = list(MATERIAL_PLASTEEL = 50, MATERIAL_PLASTIC = 20)

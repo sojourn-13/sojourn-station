@@ -18,7 +18,7 @@
 	auto_eject = FALSE
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
 	price_tag = 750
-	penetration_multiplier = 1.3
+	penetration_multiplier = 0.3
 	damage_multiplier = 1.1
 	extra_damage_mult_scoped = 0.5
 	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'

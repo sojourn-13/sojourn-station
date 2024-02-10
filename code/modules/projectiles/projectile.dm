@@ -151,7 +151,7 @@
 /obj/item/projectile/proc/get_total_damage()
 	var/val = 0
 	for(var/i in damage_types)
-		val += damage_types[i] * post_penetration_dammult
+		val += damage_types[i]
 	return val
 
 /obj/item/projectile/proc/is_halloss()
@@ -162,10 +162,10 @@
 
 /obj/item/projectile/multiply_projectile_damage(newmult)
 	for(var/i in damage_types)
-		damage_types[i] *= newmult
+		damage_types[i] *= i == HALLOSS ? 1 : newmult
 
-/obj/item/projectile/multiply_projectile_penetration(newmult)
-	armor_penetration = initial(armor_penetration) * newmult
+/obj/item/projectile/add_projectile_penetration(newmult)
+	armor_divisor = initial(armor_divisor) + newmult
 
 /obj/item/projectile/multiply_pierce_penetration(newmult)
 	penetrating = initial(penetrating) + newmult
@@ -173,9 +173,6 @@
 /obj/item/projectile/multiply_projectile_step_delay(newmult)
 	if(!hitscan)
 		step_delay = initial(step_delay) * newmult
-
-/obj/item/projectile/multiply_projectile_agony(newmult)
-	agony = initial(agony) * newmult
 
 /obj/item/projectile/add_fire_stacks(newmult)
 	fire_stacks = initial(fire_stacks) + newmult
@@ -230,7 +227,7 @@
 	return ((damage_types[BRUTE] + damage_types[BURN]) * structure_damage_factor)
 
 /obj/item/projectile/proc/get_ricochet_modifier()
-	return (ricochet_mod - (armor_penetration * 0.01)) //Return ricochet mod(default 1) modified by AP. E.G 1 - (AP(10) * 0.01) = 0.1. Thus 10% less likely to bounce per 10ap.
+	return (ricochet_mod - (armor_divisor * 0.1)) //Return ricochet mod(default 1) modified by AP. E.G 1 - (AP(5) * 0.1) = 0.5. Thus 10% less likely to bounce per divisor.
 
 //return 1 if the projectile should be allowed to pass through after all, 0 if not.
 /obj/item/projectile/proc/check_penetrate(atom/A)
@@ -276,11 +273,11 @@
 			for (var/entry in livingfirer.projectile_damage_increment)
 				damage_types[entry] += livingfirer.projectile_damage_increment[entry]
 
-		if (livingfirer.projectile_armor_penetration_mult != 1)
-			multiply_projectile_penetration(livingfirer.projectile_armor_penetration_mult)
+		if (livingfirer.projectile_armor_divisor_mult != 1)
+			add_projectile_penetration(livingfirer.projectile_armor_divisor_mult)
 
-		if (livingfirer.projectile_armor_penetration_adjustment)
-			armor_penetration += livingfirer.projectile_armor_penetration_adjustment
+		if (livingfirer.projectile_armor_divisor_adjustment)
+			armor_divisor *= livingfirer.projectile_armor_divisor_adjustment
 
 		if (livingfirer.projectile_speed_mult != 1)
 			multiply_projectile_step_delay(livingfirer.projectile_speed_mult)
@@ -876,7 +873,7 @@
 				damage_drop_off = max(1, range_shot - affective_damage_range) / 100 //How far we were shot - are affective range. This one is for damage drop off
 				ap_drop_off = max(1, range_shot - affective_ap_range) //How far we were shot - are affective range. This one is for AP drop off
 
-				armor_penetration = max(0, armor_penetration - ap_drop_off)
+				armor_divisor = max(0, armor_divisor - ap_drop_off)
 
 				agony = max(0, agony - range_shot) //every step we lose one agony, this stops sniping with rubbers.
 				//log_and_message_admins("LOG 2| range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
@@ -945,7 +942,7 @@
 				damage_drop_off = max(1, range_shot - affective_damage_range) / 100 //How far we were shot - are affective range. This one is for damage drop off
 				ap_drop_off = max(1, range_shot - affective_ap_range) //How far we were shot - are affective range. This one is for AP drop off
 
-				armor_penetration = max(0, armor_penetration - ap_drop_off)
+				armor_divisor = max(0, armor_divisor - ap_drop_off)
 
 				agony = max(0, agony - range_shot) //every step we lose one agony, this stops sniping with rubbers.
 				//log_and_message_admins("LOG 2| range shot [range_shot] | drop ap [ap_drop_off] | drop damg | [damage_drop_off] | penetrating [penetrating].")
@@ -1090,7 +1087,7 @@
 			P.activate(P.lifetime)
 
 /obj/item/projectile/proc/block_damage(var/amount, atom/A)
-	amount /= armor_penetration
+	amount /= armor_divisor
 	var/dmg_total = 0
 	var/dmg_remaining = 0
 	for(var/dmg_type in damage_types)
