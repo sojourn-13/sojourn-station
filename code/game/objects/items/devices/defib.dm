@@ -553,7 +553,7 @@
 	M.updatehealth()
 	apply_brain_damage(M, deadtime)
 
-	if(!M.stats.getPerk(PERK_REZ_SICKNESS))
+	if(!M.stats.getPerk(PERK_REZ_SICKNESS) && !advanced_pads)
 		var/rngStatRemoved
 		switch(M.stats.getStat(STAT_MEC))
 			if(0 to 40)
@@ -622,7 +622,6 @@
 				M.stats.changeStat(STAT_VIG, -rngStatRemoved)
 		log_and_message_admins("Removed [-rngStatRemoved] to the VIG stat of [M]")
 
-	if(!advanced_pads)
 		switch(M.stats.getStat(STAT_TGH))
 			if(-200 to 40)
 				M.stats.addPerk(PERK_REZ_SICKNESS_FATAL)
