@@ -617,10 +617,9 @@
 /turf/simulated/floor/rock/grey,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "oT" = (
-/obj/item/trash/material/metal,
-/obj/random/oddity_guns,
-/turf/simulated/floor/plating/under,
-/area/colony/exposedsun/crashed_shop)
+/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon,
+/turf/simulated/floor/wood_old,
+/area/colony/exposedsun/crashed_shop/workshop)
 "oZ" = (
 /obj/item/trash/material/metal,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -646,10 +645,10 @@
 /obj/random/dungeon_gun_mods/voidwolf,
 /obj/random/dungeon_gun_mods/voidwolf,
 /obj/random/dungeon_gun_mods/voidwolf,
-/obj/item/gun_upgrade/scope/killer,
 /obj/item/gun_upgrade/barrel/gauss,
 /obj/item/gun_upgrade/trigger/dangerzone,
 /obj/item/gun_upgrade/trigger/dangerzone,
+/obj/item/gun_upgrade/barrel/gauss,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "pp" = (
@@ -1107,6 +1106,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /obj/random/oddity_guns,
+/obj/random/oddity_guns,
 /obj/item/clothing/suit/space/void/SCAF/voidwolf,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
@@ -1375,9 +1375,11 @@
 /turf/simulated/floor/tiled/cafe,
 /area/colony/exposedsun/crashed_shop/workshop)
 "FY" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r,
-/turf/simulated/floor/wood_old,
+/obj/structure/bed/chair/comfy/black{
+	dir = 4
+	},
+/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon,
+/turf/simulated/floor/carpet/bcarpet,
 /area/colony/exposedsun/crashed_shop/workshop)
 "Gk" = (
 /obj/structure/flora/rock,
@@ -1708,7 +1710,7 @@
 /obj/item/shield/buckler/energy/reaver,
 /obj/item/melee/energy/sword/pirate,
 /obj/item/melee/energy/sword/pirate,
-/obj/item/shield/buckler/energy/reaver,
+/obj/item/melee/energy/sword/pirate,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "MD" = (
@@ -9753,7 +9755,7 @@ qH
 ir
 Yy
 ZW
-FY
+oF
 Yy
 oF
 oF
@@ -9835,7 +9837,7 @@ WD
 WD
 Yy
 aW
-gf
+ZW
 Gv
 Gv
 jd
@@ -9915,7 +9917,7 @@ NB
 Lr
 Io
 Nv
-xo
+Yy
 gf
 oF
 jd
@@ -9996,10 +9998,10 @@ Su
 NB
 Lr
 vR
-vR
+FY
 Yy
 aW
-FY
+oF
 fZ
 fZ
 fZ
@@ -10082,7 +10084,7 @@ MT
 Yy
 oF
 oF
-Yy
+oT
 oF
 oF
 bt
@@ -12457,7 +12459,7 @@ Su
 NB
 yw
 To
-oT
+uh
 NB
 Su
 Su
