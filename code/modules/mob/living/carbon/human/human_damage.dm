@@ -382,7 +382,7 @@ This function restores all organs.
 		return FALSE
 
 	damageoverlaytemp = 20
-	if(organ.take_damage(damage, damagetype, (armor_divisor * 0.1), wounding_multiplier, sharp, edge, used_weapon))
+	if(organ.take_damage(damage, damagetype, armor_divisor, wounding_multiplier, sharp, edge, used_weapon))
 		UpdateDamageIcon()
 
 	sanity.onDamage(damage)

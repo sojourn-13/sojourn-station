@@ -1,6 +1,5 @@
 #define ARMOR_HALLOS_COEFFICIENT 0.1
 
-
 //This calculation replaces old run_armor_check in favor of more complex and better system
 //If you need to do something else with armor - just use getarmor() proc and do with those numbers all you want
 //Random absorb system was a cancer, and was removed from all across the codebase. Don't recreate it. Clockrigger 2019
@@ -17,8 +16,7 @@
 	else
 		show_message(msg1, 1)
 
-/mob/living/proc/damage_through_armor(var/damage = 0, var/damagetype = BRUTE, var/def_zone, var/attack_flag = ARMOR_MELEE, var/armor_divisor = 1, var/used_weapon, var/sharp = FALSE, var/edge = FALSE, var/wounding_multiplier = 1, var/list/dmg_types = list())
-
+/mob/living/proc/damage_through_armor(damage = 0, damagetype = BRUTE, def_zone, attack_flag = ARMOR_MELEE, armor_divisor = 1, used_weapon, sharp = FALSE, edge = FALSE, wounding_multiplier, list/dmg_types = list(), return_continuation = FALSE)
 	if(damage) // If damage is defined, we add it to the list
 		if(!dmg_types[damagetype])
 			dmg_types += damagetype
@@ -50,7 +48,6 @@
 		var/dmg = dmg_types[dmg_type]
 		if(dmg)
 			var/used_armor = 0 // Used for agony calculation, as well as reduction in armour before follow-up attacks
-
 
 			if(dmg_type in list(BRUTE, BURN, TOX, BLAST)) // Some damage types do not help penetrate armor
 				if(remaining_armor)
@@ -90,7 +87,7 @@
 						armor_message(SPAN_NOTICE("[src] armor deflected the strike!"), // No cut (strike), only bash
 										SPAN_NOTICE("Your armor deflects the strike!"))
 
-				apply_damage(dmg, dmg_type, def_zone, sharp, edge, used_weapon)
+				apply_damage(dmg, dmg_type, def_zone, armor_divisor, wounding_multiplier, sharp, edge, used_weapon)
 				if(ishuman(src) && def_zone && dmg >= 20)
 					var/mob/living/carbon/human/H = src
 					var/obj/item/organ/external/o = H.get_organ(def_zone)
@@ -99,6 +96,7 @@
 								SPAN_WARNING("Your splints break off after being hit!"))
 						o.status &= ~ORGAN_SPLINTED
 	var/effective_armor = (1 - dealt_damage / total_dmg) * 100
+
 
 
 	//Feedback
@@ -122,6 +120,28 @@
 	if(ablative_armor)
 		damageablative(def_zone, (ablative_armor - remaining_ablative) * armor_divisor)
 
+	//If we have a grab in our hands and get hit with melee damage type, there is a chance we lower our grab's state
+	if(attack_flag == ARMOR_MELEE && ishuman(src) && isitem(used_weapon))
+		var/mob/living/carbon/human/H = src
+		var/obj/item/I = used_weapon
+		var/toughness_val = H.stats.getStat(STAT_TGH)
+
+		if(dealt_damage > 10 && prob((dealt_damage - toughness_val * (sharp && edge ? 1 : 0.5) * (I.w_class < ITEM_SIZE_BULKY ? 1 : 0.5))))
+			for(var/obj/item/grab/G in get_both_hands(H))
+				visible_message(SPAN_NOTICE("[H]'s grab has been weakened!"), SPAN_WARNING("Your grab has been weakened!"))
+				G.state--
+
+	// Returns if a projectile should continue travelling
+	if(return_continuation)
+		var/obj/item/projectile/P = used_weapon
+		P.damage_types = dmg_types
+		if(sharp)
+			var/remaining_dmg = 0
+			for(var/dmg_type in dmg_types)
+				remaining_dmg += dmg_types[dmg_type]
+			return ((total_dmg / 2 < remaining_dmg && remaining_dmg > mob_size) ? PROJECTILE_CONTINUE : PROJECTILE_STOP)
+		else return PROJECTILE_STOP
+
 	return dealt_damage
 
 //if null is passed for def_zone, then this should return something appropriate for all zones (e.g. area effect damage)
@@ -139,7 +159,7 @@
 		return
 	shake_animation(damage)
 
-
+ // return PROJECTILE_CONTINUE if bullet should continue flying
 /mob/living/bullet_act(obj/item/projectile/P, var/def_zone_hit)
 	var/hit_dir = get_dir(P, src)
 
@@ -165,13 +185,14 @@
 	if(P.knockback && hit_dir)
 		throw_at(get_edge_target_turf(src, hit_dir), P.knockback, P.knockback)
 
+	P.on_hit(src, def_zone_hit)
+
 	//Armor and damage
 	if(!P.nodamage)
 		hit_impact(P.get_structure_damage(), hit_dir)
-		damage_through_armor(def_zone = def_zone_hit, attack_flag = P.check_armour, armor_divisor = P.armor_divisor, used_weapon = P, sharp = is_sharp(P), edge = has_edge(P), wounding_multiplier = P.wounding_mult, dmg_types = P.damage_types)
+		return damage_through_armor(def_zone = def_zone_hit, attack_flag = P.check_armour, armor_divisor = P.armor_divisor, used_weapon = P, sharp = is_sharp(P), edge = has_edge(P), wounding_multiplier = P.wounding_mult, dmg_types = P.damage_types, return_continuation = TRUE)
 
-	P.on_hit(src, def_zone_hit)
-	return TRUE
+	return PROJECTILE_CONTINUE
 
 //Handles the effects of "stun" weapons
 /mob/living/proc/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone, var/used_weapon)
@@ -255,7 +276,7 @@
 
 		src.visible_message(SPAN_WARNING("[src] has been hit by [O]."))
 
-		damage_through_armor(throw_damage, dtype, null, ARMOR_MELEE, null, used_weapon = O, sharp = is_sharp(O), edge = has_edge(O))
+		damage_through_armor(throw_damage, dtype, null, ARMOR_MELEE, O.armor_divisor, used_weapon = O, sharp = is_sharp(O), edge = has_edge(O))
 
 		O.throwing = 0		//it hit, so stop moving
 
@@ -415,6 +436,11 @@
 					I.action = new/datum/action/item_action
 				I.action.name = I.action_button_name
 				I.action.target = I
+				if(I.action_button_proc)
+					I.action.action_type = AB_ITEM_PROC
+					I.action.procname = I.action_button_proc
+					if(I.action_button_arguments)
+						I.action.arguments = I.action_button_arguments
 			I.action.Grant(src)
 	return
 

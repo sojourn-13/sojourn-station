@@ -29,9 +29,9 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/aggressive/savage
 
 	armor_adjustment = list(
-		melee = -40,
-		bullet = -35,
-		energy = -35,
+		melee = -10,
+		bullet = -8,
+		energy = -8,
 		bomb = -40,
 		agony = 50 //it doesnt care, it just wants you dead
 	)

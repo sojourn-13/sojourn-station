@@ -17,7 +17,7 @@
 	emote_see = list("chitters.", "rubs its legs.")
 	speak_chance = 5
 
-	get_stat_modifier = TRUE //We get randomized addition armor
+	get_stat_modifier = FALSE //We're too baby to get extra mods.
 	armor_divisor = 1
 
 	armor = list(melee = 1, bullet = 0, energy = 0, bomb = 1, bio = 10, rad = 25)

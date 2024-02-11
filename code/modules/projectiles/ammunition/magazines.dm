@@ -819,7 +819,7 @@
 	caliber = CAL_50
 	matter = list(MATERIAL_STEEL = 4)
 	ammo_type = /obj/item/ammo_casing/kurtz_50
-	max_ammo = 10
+	max_ammo = 7
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/kurtz_50/empty
@@ -957,7 +957,7 @@
 	caliber = CAL_50
 	ammo_type = /obj/item/ammo_casing/kurtz_50
 	matter = list(MATERIAL_STEEL = 3)
-	max_ammo = 6
+	max_ammo = 5
 
 /obj/item/ammo_magazine/speed_loader_kurtz_50/update_icon()
 	cut_overlays()

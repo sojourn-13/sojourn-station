@@ -763,13 +763,13 @@ proc/is_blind(A)
 // Determine wounding level. If var/wounding is provided, the attack should come from a projectile. This isn't the case yet, as we default to var/wounding = 1 until melee rework.
 /proc/wound_check(var/injurytype, var/wounding, var/edge, var/sharp)
 	if(sharp && (!edge)) // impaling/piercing, 2x damage, affected by injurytype
-		switch(injurytype) // A small note, the original values are 1, 1.5, 2 - which meant double damage for humans, normal for slimes. We're...not doing this, pendiing balance. - CDB
+		switch(injurytype)
 			if(INJURY_TYPE_HOMOGENOUS)
 				return wounding ? step_wounding_double(wounding) : 1
 			if(INJURY_TYPE_UNLIVING)
-				return wounding ? step_wounding(wounding) : 1
+				return wounding ? step_wounding(wounding) : 1.5
 			else
-				return wounding ? wounding : 1
+				return wounding ? wounding : 2
 	if(sharp && edge) // cutting, 1.5x damage
 		return wounding ? wounding : 1.5
 	return wounding ? wounding : 1 // crushing, 1x damage

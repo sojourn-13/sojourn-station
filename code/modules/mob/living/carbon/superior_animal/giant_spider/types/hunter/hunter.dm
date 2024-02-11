@@ -207,7 +207,7 @@
 	armor = list(melee = 6, bullet = 6, energy = 2, bomb = 25, bio = 10, rad = 25, agony = 0)
 	armor_divisor = 2
 
-	get_stat_modifier = FALSE //Were not getting armor
+	get_stat_modifier = TRUE //Were not getting armor //Yes we are.
 
 	//Giving the emperor spider his own meat that has party drops. Reducing dropped meat to 3 from 4.
 	meat_amount = 4 //So its more worth killing these

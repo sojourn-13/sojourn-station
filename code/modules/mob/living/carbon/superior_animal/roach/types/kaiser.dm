@@ -15,6 +15,7 @@ Has ability of every roach.
 	maxHealth = 1000
 	health = 1000
 	contaminant_immunity = TRUE
+	get_stat_modifier = TRUE
 
 	var/datum/reagents/gas_sac
 

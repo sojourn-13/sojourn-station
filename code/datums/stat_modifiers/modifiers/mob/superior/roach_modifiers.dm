@@ -1,8 +1,8 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified
 
 	armor_adjustment = list(
-	melee = 10,
-	bullet = 5,
+	melee = 2,
+	bullet = 1,
 	bomb = 10,
 	agony = 15 //Rubbers deal way less to us!
 	)
@@ -18,7 +18,7 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/lambertian
 
 	armor_adjustment = list(
-	energy = 10,
+	energy = 2,
 	agony = 10
 	)
 

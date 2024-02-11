@@ -16,8 +16,8 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/durable/spider
 
 	armor_adjustment = list(
-		melee = 5,
-		bullet = 5,
+		melee = 1,
+		bullet = 1,
 		bomb = 15,
 		agony = 30
 	)
@@ -33,9 +33,9 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/young/spider
 
 	armor_adjustment = list(
-		melee = -5,
-		bullet = -5,
-		energy = -5,
+		melee = -1,
+		bullet = -1,
+		energy = -1,
 		agony = -5
 	)
 
@@ -51,8 +51,8 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/old/spider
 
 	armor_adjustment = list(
-		melee = 5,
-		bullet = 5,
+		melee = 1,
+		bullet = 1,
 		bomb = 10,
 		agony = 20 //just cant feel it
 	)

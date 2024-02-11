@@ -1,9 +1,9 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/durable
 
 	armor_adjustment = list(
-	melee = 5,
-	bullet = 5,
-	bomb = 15,
+	melee = 1,
+	bullet = 1,
+	bomb = 3,
 	agony = 30
 	)
 
@@ -18,9 +18,9 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/brutish
 
 	armor_adjustment = list(
-		melee = 5,
-		bullet = 5,
-		energy = -5,
+		melee = 1,
+		bullet = 1,
+		energy = -1,
 		bomb = 5,
 		agony = 15
 		)
@@ -42,8 +42,8 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/padded
 
 	armor_adjustment = list(
-		melee = 10,
-		bullet = 5,
+		melee = 2,
+		bullet = 1,
 		bomb = 10,
 		agony = 15 //Rubbers deal way less to us!
 	)
@@ -59,8 +59,8 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/old
 
 	armor_adjustment = list(
-		melee = 5,
-		bullet = 5,
+		melee = 1,
+		bullet = 1,
 		bomb = 10,
 		agony = 20 //just cant feel it
 	)
@@ -79,9 +79,9 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/young
 
 	armor_adjustment = list(
-		melee = -5,
-		bullet = -5,
-		energy = -5,
+		melee = -1,
+		bullet = -1,
+		energy = -1,
 		agony = -5
 	)
 
@@ -101,8 +101,8 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/brutal
 
 	armor_adjustment = list(
-		melee = 15,
-		bullet = 5,
+		melee = 3,
+		bullet = 1,
 		bomb = 15,
 		agony = 30
 	)

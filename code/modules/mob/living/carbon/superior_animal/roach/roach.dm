@@ -13,9 +13,9 @@
 	turns_per_move = 4
 	turns_since_move = 0
 
-	get_stat_modifier = TRUE //We get randomized addition armor
+	get_stat_modifier = FALSE//NNNNNOPE, having hoard enemies get these has caused massive issues for balance. These should be limited to actual serious mobs from here on out.
 
-	armor = list(melee = 2, bullet = 1, energy = 0, bomb = 5, bio = 20, rad = 0, agony = 0)
+	armor = list(melee = 2, bullet = 0, energy = 0, bomb = 5, bio = 20, rad = 0, agony = 0)
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 26,

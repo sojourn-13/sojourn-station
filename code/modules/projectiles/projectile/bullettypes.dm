@@ -11,7 +11,7 @@
 //*********************************//
 ///9mm///
 /obj/item/projectile/bullet/pistol_35
-	damage_types = list(BRUTE = 26)
+	damage_types = list(BRUTE = 24)
 	armor_divisor = 0.6
 	step_delay = 0.65
 	can_ricochet = TRUE
@@ -21,7 +21,7 @@
 	recoil = 5
 
 /obj/item/projectile/bullet/pistol_35/hv
-	damage_types = list(BRUTE = 16)
+	damage_types = list(BRUTE = 14)
 	armor_divisor = 1.2
 	wounding_mult = WOUNDING_TINY
 	step_delay = 0.5
@@ -41,7 +41,7 @@
 
 /obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 14, HALLOSS = 6)
+	damage_types = list(BRUTE = 18, HALLOSS = 6)
 	armor_divisor = 0.25
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 0
@@ -54,7 +54,7 @@
 /obj/item/projectile/bullet/pistol_35/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 15, HALLOSS = 22)
+	damage_types = list(BRUTE = 12, HALLOSS = 22)
 	armor_divisor = 0.4
 	wounding_mult = WOUNDING_SMALL
 	embed = FALSE	//Prob should have a chance to embed, but makes close to no sense to do this for 9mm at least.
@@ -138,7 +138,7 @@
 
 /obj/item/projectile/bullet/magnum_40
 	icon_state = "bullet_magnum"
-	damage_types = list(BRUTE = 30)
+	damage_types = list(BRUTE = 28)
 	armor_divisor = 0.7
 	wounding_mult = WOUNDING_NORMAL
 	can_ricochet = TRUE
@@ -159,7 +159,7 @@
 	recoil = 4
 
 /obj/item/projectile/bullet/magnum_40/hv
-	damage_types = list(BRUTE = 21)
+	damage_types = list(BRUTE = 19)
 	armor_divisor = 1.4
 	penetrating = 1
 	step_delay = 0.25
@@ -171,7 +171,7 @@
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 16, HALLOSS = 11)
+	damage_types = list(BRUTE = 20, HALLOSS = 11)
 	armor_divisor = 0.4
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 0
@@ -184,7 +184,7 @@
 /obj/item/projectile/bullet/magnum_40/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
-	damage_types = list(BRUTE = 17, HALLOSS = 30)	//Basically a lower-damage HP but with more agony damage to it. Technically LTL - but not really ideal for it. Crowd-suppression.
+	damage_types = list(BRUTE = 15, HALLOSS = 30)	//Basically a lower-damage HP but with more agony damage to it. Technically LTL - but not really ideal for it. Crowd-suppression.
 	armor_divisor = 0.5
 	wounding_mult = WOUNDING_SMALL
 	embed = TRUE	//If you shoot someone with a rubber, it will take out an eye - or require surgery if it's high-velocity. Anything over 9mm should, realistically, fuck you up.
@@ -235,7 +235,7 @@
 			reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
 
 /obj/item/projectile/bullet/magnum_40/scrap
-	damage_types = list(BRUTE = 16)
+	damage_types = list(BRUTE = 15)
 	armor_divisor = 0.5
 	affective_damage_range = 3
 	affective_ap_range = 3
@@ -454,7 +454,7 @@
 
 /obj/item/projectile/bullet/rifle_75/hv
 	damage_types = list(BRUTE = 14)
-	armor_divisor = 2.5
+	armor_divisor = 36
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 2
 	hitscan = TRUE
@@ -506,7 +506,7 @@
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 12, HALLOSS = 9)
+	damage_types = list(BRUTE = 18, HALLOSS = 9)
 	armor_divisor = 0.5
 	wounding_mult = WOUNDING_WIDE
 	penetrating = 0
