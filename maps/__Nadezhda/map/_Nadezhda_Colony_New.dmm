@@ -33716,6 +33716,13 @@
 	},
 /turf/simulated/floor/tiled/steel/golden,
 /area/nadezhda/absolutism/bioreactor)
+"hje" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/fence,
+/obj/structure/bed/chair/office/dark,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/pros/prep)
 "hji" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
@@ -109554,12 +109561,11 @@
 /turf/simulated/floor/reinforced,
 /area/nadezhda/engineering/atmos)
 "wSC" = (
-/obj/structure/table/rack,
-/obj/effect/floor_decal/industrial/warningwhite/full,
 /obj/structure/sign/warning/smoking/small{
 	pixel_x = 32;
 	pixel_y = -32
 	},
+/obj/structure/closet/secure_closet/reinforced/foreman/fence,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "wSD" = (
@@ -218295,7 +218301,7 @@ lBK
 kgr
 unw
 kUX
-kUX
+hje
 xdH
 pQw
 mhw
