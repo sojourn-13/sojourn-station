@@ -27,6 +27,7 @@
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/storage/hcases/parts(src)
 	new /obj/item/storage/hcases/engi(src)
+	new /obj/item/circuitboard/bullet_fab(src)
 	new /obj/item/rpd(src)
 	new /obj/item/gun/energy/laser/railgun/pistol/slab(src)
 	if(prob(50))
