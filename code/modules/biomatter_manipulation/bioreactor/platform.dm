@@ -96,7 +96,7 @@
 
 //This proc called on object/mob consumption
 /obj/machinery/multistructure/bioreactor_part/platform/proc/consume(atom/movable/object)
-	if(ishuman(object))
+	/*if(ishuman(object))
 		var/mob/living/carbon/human/H = object
 		for(var/obj/item/item in H.contents)
 			//non robotic limbs will be consumed
@@ -107,7 +107,7 @@
 				var/obj/machinery/multistructure/bioreactor_part/platform/neighbor_platform = pick(MS_bioreactor.platforms)
 				organ.forceMove(get_turf(neighbor_platform))
 				organ.removed()
-				continue
+				continue*/
 	qdel(object)
 	//now let's add some dirt to the glass
 	for(var/obj/structure/window/reinforced/bioreactor/glass in loc)

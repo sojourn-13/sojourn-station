@@ -149,17 +149,17 @@
 				</div>
 
 			<div class="itemLabel">
-				PvP damage:
+				Overall damage:
 			</div>
 				<div class="itemContent">
 					{{:data.projectile_damage}}
 				</div>
 
 			<div class="itemLabel">
-				Estimated  PvE Damage:
+				Wound scale:
 			</div>
 				<div class="itemContent">
-					{{:data.projectile_damage_pve}}
+					{{:data.projectile_WOUND}}
 				</div>
 
 			<div class="itemLabel">
@@ -211,6 +211,7 @@
 									Name:{{:value.projectile_name}}<br>
 									Overall damage: {{:value.projectile_damage}}<br>
 									Overall AP: {{:value.projectile_AP}}<br>
+									Wound scale: {{:value.projectile_WOUND}}<br>
 								</div>
 						{{/if}}
 						{{if value.burst}}
