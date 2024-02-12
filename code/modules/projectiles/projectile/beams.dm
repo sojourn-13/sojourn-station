@@ -213,8 +213,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	armor_divisor = 1
 	nodamage = 1
 	taser_effect = 1
-	agony = 30
-	damage_types = list(BURN = 1)
+	damage_types = list(BURN = 1, HALLOSS = 30)
 
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
@@ -226,8 +225,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	icon_state = "stun"
 	nodamage = 1
 	taser_effect = 1
-	agony = 65 // Middle ground between an instant electrode stun and stunbeam
-	damage_types = list(BURN = 0) // Just in case, this is supposed to be 100% nonlethal
+	damage_types = list(BURN = 0, HALLOSS = 65) // Middle ground between an instant electrode stun and stunbeam
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
 	impact_type = /obj/effect/projectile/stun/impact
@@ -238,8 +236,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/sniper/judgement
 	name = "lighting"
 	icon_state = "stun"
-	agony = 5
-	damage_types = list(BURN = 10)
+	damage_types = list(BURN = 10, HALLOSS = 5)
 	armor_divisor = 1
 	eyeblur = 0
 

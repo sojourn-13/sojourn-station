@@ -19,7 +19,7 @@
 		melee = 1,
 		bullet = 1,
 		bomb = 15,
-		agony = 30
+		agony = 7
 	)
 
 	armor_divisor_increment = 1.1
@@ -36,7 +36,7 @@
 		melee = -1,
 		bullet = -1,
 		energy = -1,
-		agony = -5
+		agony = -1
 	)
 
 	maxHealth_increment = -10
@@ -54,7 +54,7 @@
 		melee = 1,
 		bullet = 1,
 		bomb = 10,
-		agony = 20 //just cant feel it
+		agony = 5 //just cant feel it
 	)
 
 	maxHealth_increment = 20 //life already seen them by
@@ -71,7 +71,7 @@
 		bomb = 5,
 		bio = 15,
 		rad = 15,
-		agony = 10
+		agony = 2
 	)
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG

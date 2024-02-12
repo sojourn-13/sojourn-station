@@ -66,6 +66,14 @@
 			else
 				dmg = max(dmg - remaining_armor - remaining_ablative, 0)
 
+			if(istype(src,/mob/living/simple_animal/) || istype(src,/mob/living/carbon/superior_animal/)) //This code is kept as a bit of a dinosaur from GDR but is tweaked for allowing halloss=damage on mobs.
+				var/mob_agony_armor = src.getarmor(def_zone, "agony")
+				var/guaranteed_damage_red = armor * 0.1 //0.1 is the former GDR value, tweak this to tweak the whole formulae
+				var/effective_damage = damage - guaranteed_damage_red
+
+				if(damagetype == HALLOSS)
+					effective_damage =  max(0,round(effective_damage - mob_agony_armor))
+
 			if(!(dmg_type == HALLOSS)) // Determine pain from impact
 				adjustHalLoss(used_armor * (wounding_multiplier ? wounding_multiplier : 1) * ARMOR_HALLOS_COEFFICIENT * max(0.5, (get_specific_organ_efficiency(OP_NERVE, def_zone) / 100)))
 

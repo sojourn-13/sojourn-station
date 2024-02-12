@@ -47,7 +47,7 @@
 	melee_damage_lower = 35
 	melee_damage_upper = 40
 
-	armor = list(melee = 8, bullet = 7, energy = 6, bomb = 5, bio = 10, rad = 25)
+	armor = list(melee = 10, bullet = 14, energy = 12, bomb = 5, bio = 10, agony = 10, rad = 25)
 
 	old_x = -16
 	old_y = 0
@@ -220,7 +220,7 @@
 	rare_parts = list(/obj/item/animal_part/stalker_spur)
 
 	mob_size = MOB_LARGE
-	armor = list(melee = 3, bullet = 7, energy = 8, bomb = 5, bio = 10, rad = 25)
+	armor = list(melee = 5, bullet = 14, energy = 12, bomb = 5, bio = 10, agony = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_COUGHING, MUTATION_NERVOUSNESS, MUTATION_CLOAKING)
 
 /mob/living/simple_animal/hostile/nightmare/dream_daemon
@@ -238,7 +238,7 @@
 	turns_per_move = 4
 	vision_range = 8
 	aggro_vision_range = 20
-	armor = list(melee = 5, bullet = 7, energy = 1, bomb = 5, bio = 10, rad = 25) //Lost its laser armor do to being a darker colour
+	armor = list(melee = 5, bullet = 7, energy = 1, bomb = 5, bio = 10, agony = 20, rad = 25) //Lost its laser armor do to being a darker colour
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_COUGHING, MUTATION_NERVOUSNESS, MUTATION_GREATER_CLOAKING)
 
 /mob/living/simple_animal/hostile/nightmare/MoveToTarget()
@@ -345,7 +345,7 @@
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/hell_hide)
 	mob_size = MOB_LARGE
-	armor = list(melee = 6, bullet = 2, energy = 5, bomb = 5, bio = 10, rad = 25)
+	armor = list(melee = 8, bullet = 6, energy = 10, bomb = 5, bio = 10, agony = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_BLINDNESS, MUTATION_NO_PAIN, MUTATION_HYPERION, MUTATION_BLOOD_BANK)
 
 /mob/living/simple_animal/hostile/hell_pig/wendigo
@@ -364,7 +364,7 @@
 	speak_emote = list("snarls!", "jerks erratically.")
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/cannibal_tooth)
-	armor = list(melee = 8, bullet = 5, energy = 0, bomb = 5, bio = 10, rad = 25)
+	armor = list(melee = 8, bullet = 10, energy = 3, bomb = 5, bio = 10, agony = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE, MUTATION_HYPERION)
 
 
@@ -388,5 +388,5 @@
 	speak_emote = list("stomps its hooves!", "whinnies!")
 	has_special_parts = TRUE
 	special_parts = list(/obj/item/animal_part/slepnir_hoof,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
-	armor = list(melee = 6, bullet = 2, energy = 2, bomb = 5, bio = 10, rad = 25)
+	armor = list(melee = 8, bullet = 4, energy = 4, bomb = 5, bio = 10, agony = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE, MUTATION_HYPERION, MUTATION_BLOOD_BANK)

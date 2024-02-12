@@ -1120,7 +1120,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/proc/get_dud_projectile()
 	return null
 
-/obj/item/gun/proc/ui_data_projectile(var/obj/item/projectile/P)
+/obj/item/gun/proc/ui_data_projectile(obj/item/projectile/P)
 	if(!P)
 		return list()
 	var/list/data = list()
@@ -1128,7 +1128,9 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	data["projectile_damage"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()
 	data["projectile_AP"] = P.armor_divisor + penetration_multiplier
 	data["projectile_WOUND"] = P.wounding_mult
-	data["projectile_pain"] = P.agony * proj_agony_multiplier
+	data["unarmoured_damage"] = ((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) * P.wounding_mult
+	data["armoured_damage_10"] = (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (10 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult
+	data["armoured_damage_15"] = (((P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()) - (15 / (P.armor_divisor + penetration_multiplier))) * P.wounding_mult
 	data["projectile_recoil"] = P.recoil
 	qdel(P)
 	return data

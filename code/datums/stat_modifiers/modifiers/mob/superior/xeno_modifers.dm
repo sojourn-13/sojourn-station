@@ -4,7 +4,7 @@
 	melee = 3,
 	bullet = 3,
 	bomb = 3,
-	agony = 30
+	agony = 7
 	)
 
 	flash_resistances_increment = 2
@@ -19,7 +19,7 @@
 		bullet = 2,
 		energy = 0,
 		bomb = 5,
-		agony = 15
+		agony = 3
 		)
 
 	melee_damage_lower_increment = 5
@@ -37,7 +37,7 @@
 		melee = 5,
 		bullet = 3,
 		bomb = 20,
-		agony = 35 //Rubbers deal way less to us!
+		agony = 8 //Rubbers deal way less to us!
 	)
 
 	stattags = DEFENSE_STATTAG
@@ -54,7 +54,7 @@
 		melee = -3,
 		bullet = 2,
 		bomb = -10,
-		agony = 60 //just cant feel it
+		agony = 30 //just cant feel it
 	)
 
 	maxHealth_increment = 60 //life already seen them by

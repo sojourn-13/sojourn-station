@@ -33,7 +33,7 @@
 		bullet = -8,
 		energy = -8,
 		bomb = -40,
-		agony = 50 //it doesnt care, it just wants you dead
+		agony = 12 //it doesnt care, it just wants you dead
 	)
 
 	maxHealth_mult = 0.8 //80% hp

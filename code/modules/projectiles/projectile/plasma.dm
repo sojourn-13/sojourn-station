@@ -61,8 +61,7 @@
 /obj/item/projectile/plasma/stun
 	name = "stun plasma bolt"
 	taser_effect = 1
-	agony = 30
-	damage_types = list(HALLOS = 0)
+	damage_types = list(HALLOS = 30)
 	impact_type = /obj/effect/projectile/stun/impact
 	recoil = 7
 	fire_stacks = 0

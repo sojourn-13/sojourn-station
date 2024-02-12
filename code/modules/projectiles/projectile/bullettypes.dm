@@ -810,9 +810,9 @@
 /obj/item/projectile/bullet/shotgun
 	name = "slug"
 	icon_state = "slug"
-	damage_types = list(BRUTE = 45)
-	armor_divisor = 2
-	wounding_mult = WOUNDING_WIDE
+	damage_types = list(BRUTE = 35)
+	armor_divisor = 1.5
+	wounding_mult = WOUNDING_SERIOUS
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
 	//Slugs are meant for long range shooting
@@ -1023,7 +1023,7 @@
 /obj/item/projectile/bullet/pellet/shotgun
 	name = "shrapnel"
 	icon_state = "birdshot-1"
-	damage_types = list(BRUTE = 15, HALLOSS = 5)
+	damage_types = list(BRUTE = 16)
 	armor_divisor = 0.6
 	wounding_mult = WOUNDING_SMALL //lotta relatively smaller pellets.
 	pellets = 4

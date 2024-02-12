@@ -19,7 +19,7 @@
 
 	armor_adjustment = list(
 	energy = 2,
-	agony = 10
+	agony = 1
 	)
 
 	flash_resistances_increment = 2

@@ -26,7 +26,7 @@
 
 
 	//Good stats baseline in case admins dont edit these
-	armor = list(melee = 11, bullet = 3, energy = 11, bomb = 10, bio = 100, rad = 100, agony = 70)
+	armor = list(melee = 11, bullet = 3, energy = 11, bomb = 10, bio = 100, rad = 100, agony = 17)
 
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower
