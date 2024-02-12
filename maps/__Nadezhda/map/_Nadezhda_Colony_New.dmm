@@ -101430,7 +101430,9 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/courtroom)
 "vcQ" = (
-/obj/effect/floor_decal/industrial/loading/white,
+/obj/effect/floor_decal/industrial/loading/white{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/bioreactor)
 "vcV" = (
@@ -190606,8 +190608,8 @@ jZv
 jZv
 jZv
 xKc
-vcQ
 hrB
+vcQ
 nRi
 gvL
 qjW

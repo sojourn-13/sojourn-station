@@ -16,7 +16,7 @@
 	idle_power_usage = 5
 	active_power_usage = 300
 	var/active = FALSE
-	var/port_dir = NORTH
+	var/port_dir = SOUTH
 	var/obj/structure/reagent_dispensers/biomatter/container
 	var/last_time_used = 0
 
