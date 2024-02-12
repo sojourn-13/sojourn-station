@@ -465,6 +465,12 @@
 	desc = "Foreman's Quarters"
 	region = ACCESS_REGION_PROSPECTOR
 
+/var/const/access_fence = 111
+/datum/access/fence
+	id = access_fence
+	desc = "Fences access" //maybe they'll get a closet for an office one day.
+	region = ACCESS_REGION_PROSPECTOR
+
 /**************
 * Hunt Lodge *
 ***************/
