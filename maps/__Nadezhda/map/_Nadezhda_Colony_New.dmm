@@ -111357,7 +111357,8 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/bulletfabricator,
+/obj/structure/table/rack,
+/obj/item/paper/monitorkey,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/gmaster)
 "xny" = (
@@ -111703,7 +111704,6 @@
 /obj/item/stack/material/plastic{
 	amount = 120
 	},
-/obj/item/paper/monitorkey,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/steel/gray_perforated,
