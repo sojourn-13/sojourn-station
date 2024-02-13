@@ -9,7 +9,8 @@
 	fire_sound = 'sound/weapons/energy/lasmusket_fire.ogg'
 	slot_flags = SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
-	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_WOOD = 25, MATERIAL_GLASS = 15, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)	projectile_type = /obj/item/projectile/beam/musket
+	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_WOOD = 25, MATERIAL_GLASS = 15, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
+	projectile_type = /obj/item/projectile/beam/musket
 	fire_delay = 35
 	charge_cost = 150 // 4 shots on a 600M
 	init_recoil = CARBINE_RECOIL(1)
