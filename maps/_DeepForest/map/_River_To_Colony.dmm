@@ -51,10 +51,7 @@
 /area/colony/exposedsun/crashed_shop/workshop)
 "be" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/steel_reinforced,
-/obj/random/toolbox/low_chance,
-/obj/random/material_rare/low_chance,
-/obj/random/material/low_chance,
+/obj/structure/ore_box,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
 "bn" = (
@@ -286,6 +283,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/floodlight{
+	name = "floodlight";
+	oldified = 1
+	},
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "gI" = (
@@ -303,13 +304,6 @@
 "hp" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/danger,
-/area/colony/exposedsun/crashed_shop/workshop)
-"hs" = (
-/obj/machinery/floodlight{
-	name = "floodlight";
-	oldified = 1
-	},
-/turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
 "hx" = (
 /obj/item/scrap_lump,
@@ -599,6 +593,7 @@
 /obj/item/stack/material/diamond/random,
 /obj/item/tool/tape_roll/fiber,
 /obj/random/material_rare/low_chance,
+/obj/random/material/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
 "oB" = (
@@ -617,9 +612,10 @@
 /turf/simulated/floor/rock/grey,
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "oT" = (
-/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon,
-/turf/simulated/floor/wood_old,
-/area/colony/exposedsun/crashed_shop/workshop)
+/obj/item/trash/material/metal,
+/obj/random/oddity_guns,
+/turf/simulated/floor/plating/under,
+/area/colony/exposedsun/crashed_shop)
 "oZ" = (
 /obj/item/trash/material/metal,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -645,10 +641,10 @@
 /obj/random/dungeon_gun_mods/voidwolf,
 /obj/random/dungeon_gun_mods/voidwolf,
 /obj/random/dungeon_gun_mods/voidwolf,
-/obj/item/gun_upgrade/barrel/gauss,
-/obj/item/gun_upgrade/trigger/dangerzone,
-/obj/item/gun_upgrade/trigger/dangerzone,
-/obj/item/gun_upgrade/barrel/gauss,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
+/obj/random/dungeon_gun_mods/voidwolf,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "pp" = (
@@ -678,6 +674,7 @@
 /area/colony/exposedsun/crashed_shop/bottom_floor)
 "qC" = (
 /obj/machinery/light/small,
+/obj/item/clothing/suit/space/void/SCAF/voidwolf,
 /turf/simulated/floor/tiled/cafe,
 /area/colony/exposedsun/crashed_shop/workshop)
 "qH" = (
@@ -707,11 +704,15 @@
 /obj/item/stack/material/uranium/random,
 /obj/random/material_rare/low_chance,
 /obj/random/material/low_chance,
+/obj/random/toolbox/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
 "rx" = (
-/obj/item/storage/firstaid/regular,
-/turf/simulated/wall/wood_old,
+/obj/effect/floor_decal/industrial/loading{
+	dir = 4
+	},
+/obj/structure/ore_box,
+/turf/simulated/floor/tiled/steel,
 /area/colony/exposedsun/crashed_shop/workshop)
 "rA" = (
 /obj/item/stack/rods/random,
@@ -927,6 +928,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/random/lathe_disk/advanced/low_chance,
 /obj/random/lathe_disk/advanced/low_chance,
+/obj/random/material_rare/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
 "vH" = (
@@ -1107,7 +1109,6 @@
 /obj/structure/table/steel_reinforced,
 /obj/random/oddity_guns,
 /obj/random/oddity_guns,
-/obj/item/clothing/suit/space/void/SCAF/voidwolf,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "Aw" = (
@@ -1163,12 +1164,12 @@
 /obj/structure/table/steel_reinforced,
 /obj/random/dungeon_armor_mods,
 /obj/random/dungeon_armor_mods,
-/obj/random/cloth/armor,
-/obj/random/cloth/armor,
-/obj/random/cloth/armor,
 /obj/item/clothing/suit/space/void/merc/xanorath,
 /obj/item/clothing/suit/space/void/merc/xanorath,
 /obj/item/clothing/suit/space/void/merc/xanorath,
+/obj/random/cloth/armor,
+/obj/random/cloth/armor,
+/obj/random/cloth/armor,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "Bd" = (
@@ -1195,6 +1196,8 @@
 /obj/item/oddity/common/blueprint,
 /obj/item/stack/material/silver/random,
 /obj/random/material_rare/low_chance,
+/obj/random/material/low_chance,
+/obj/random/toolbox/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
 "Bz" = (
@@ -1296,9 +1299,7 @@
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
 "EG" = (
-/obj/structure/table/steel_reinforced,
-/obj/random/toolbox/low_chance,
-/obj/random/material/low_chance,
+/obj/structure/ore_box,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/colony/exposedsun/crashed_shop/workshop)
 "EN" = (
@@ -1372,14 +1373,17 @@
 /obj/item/grenade/chem_grenade/cleaner,
 /obj/item/grenade/chem_grenade/cleaner,
 /obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner,
+/obj/item/grenade/chem_grenade/cleaner,
 /turf/simulated/floor/tiled/cafe,
 /area/colony/exposedsun/crashed_shop/workshop)
 "FY" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 4
-	},
-/mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon,
-/turf/simulated/floor/carpet/bcarpet,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior_animal/human/voidwolf/elite/c20r,
+/turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "Gk" = (
 /obj/structure/flora/rock,
@@ -1706,11 +1710,12 @@
 "MB" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/melee/energy/sword/pirate,
-/obj/item/shield/buckler/energy/reaver,
-/obj/item/shield/buckler/energy/reaver,
 /obj/item/melee/energy/sword/pirate,
 /obj/item/melee/energy/sword/pirate,
 /obj/item/melee/energy/sword/pirate,
+/obj/item/melee/energy/sword/pirate,
+/obj/random/melee,
+/obj/random/melee,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/workshop)
 "MD" = (
@@ -2078,6 +2083,7 @@
 /turf/simulated/floor/plating/under,
 /area/colony/exposedsun/crashed_shop)
 "TL" = (
+/obj/structure/table/steel_reinforced,
 /obj/structure/closet/crate/voidwolf/voidwolfdrugs,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/colony/exposedsun/crashed_shop/workshop)
@@ -9423,7 +9429,7 @@ zc
 zc
 zc
 zc
-rx
+Lr
 cc
 Sy
 MD
@@ -9588,9 +9594,9 @@ zc
 zc
 Lr
 Lr
-Lr
+ZM
 cE
-Lr
+ZM
 Lr
 Lr
 Lr
@@ -9755,7 +9761,7 @@ qH
 ir
 Yy
 ZW
-oF
+FY
 Yy
 oF
 oF
@@ -9837,7 +9843,7 @@ WD
 WD
 Yy
 aW
-ZW
+gf
 Gv
 Gv
 jd
@@ -9917,7 +9923,7 @@ NB
 Lr
 Io
 Nv
-Yy
+xo
 gf
 oF
 jd
@@ -9998,10 +10004,10 @@ Su
 NB
 Lr
 vR
-FY
+vR
 Yy
 aW
-oF
+FY
 fZ
 fZ
 fZ
@@ -10084,7 +10090,7 @@ MT
 Yy
 oF
 oF
-oT
+Yy
 oF
 oF
 bt
@@ -10170,7 +10176,7 @@ Gv
 Gv
 jd
 RF
-hs
+Gv
 Lr
 QS
 QS
@@ -11233,7 +11239,7 @@ Gt
 gI
 Ng
 Lr
-Ja
+rx
 hJ
 ys
 GO
@@ -12459,7 +12465,7 @@ Su
 NB
 yw
 To
-uh
+oT
 NB
 Su
 Su
