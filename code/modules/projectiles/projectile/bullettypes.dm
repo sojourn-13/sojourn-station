@@ -28,11 +28,12 @@
 	affective_damage_range = 5
 	affective_ap_range = 5
 	can_ricochet = TRUE
+	sharp = TRUE
 	recoil = 6
 
 /obj/item/projectile/bullet/pistol_35/practice
 	name = "practice bullet"
-	damage_types = list(BRUTE = 4, HALLOSS = 2)
+	damage_types = list(BRUTE = 4)
 	embed = FALSE
 	sharp = FALSE
 	step_delay = 0.75
@@ -41,13 +42,13 @@
 
 /obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 18, HALLOSS = 6)
+	damage_types = list(BRUTE = 18)
 	armor_divisor = 0.25
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
-	sharp = TRUE
+	sharp = FALSE
 	step_delay = 0.65
 	recoil = 5
 
@@ -151,7 +152,7 @@
 
 /obj/item/projectile/bullet/magnum_40/practice
 	name = "practice bullet"
-	damage_types = list(BRUTE = 2, HALLOSS = 4)
+	damage_types = list(BRUTE = 4)
 	embed = FALSE
 	sharp = FALSE
 	can_ricochet = FALSE
@@ -165,19 +166,20 @@
 	step_delay = 0.25
 	nocap_structures = TRUE //Door breaching
 	wounding_mult = WOUNDING_SMALL
+	sharp = TRUE
 	affective_damage_range = 5
 	affective_ap_range = 5
 	recoil = 9
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 20, HALLOSS = 11)
+	damage_types = list(BRUTE = 20)
 	armor_divisor = 0.4
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
-	sharp = TRUE
+	sharp = FALSE
 	step_delay = 0.5
 	recoil = 7
 
@@ -302,7 +304,7 @@
 
 /obj/item/projectile/bullet/kurtz_50/practice
 	name = "practice bullet"
-	damage_types = list(BRUTE = 2, HALLOSS = 3)
+	damage_types = list(BRUTE = 5)
 	embed = FALSE
 	can_ricochet = FALSE
 	step_delay = 0.75
@@ -310,7 +312,7 @@
 
 /obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 18, HALLOSS = 12)
+	damage_types = list(BRUTE = 18)
 	armor_divisor = 0.5
 	wounding_mult = WOUNDING_EXTREME
 	penetrating = 0
@@ -329,6 +331,7 @@
 	affective_damage_range = 6
 	affective_ap_range = 6
 	nocap_structures = TRUE //We can breach doors rather well
+	sharp = TRUE
 	recoil = 16
 
 
@@ -352,7 +355,7 @@
 
 /obj/item/projectile/bullet/light_rifle_257/practice
 	name = "practice bullet"
-	damage_types = list(BRUTE = 3, HALLOSS = 3)
+	damage_types = list(BRUTE = 4)
 	embed = FALSE
 	sharp = FALSE
 	can_ricochet = FALSE
@@ -368,6 +371,7 @@
 	affective_damage_range = 8 //Can snipe
 	affective_ap_range = 8
 	nocap_structures = TRUE //RATARATARAT down a door
+	sharp = TRUE
 	recoil = 7
 
 /obj/item/projectile/bullet/light_rifle_257/rubber
@@ -378,7 +382,7 @@
 	armor_divisor = 0.8
 	wounding_mult = WOUNDING_TINY
 	embed = TRUE	//Imagine being shot with a high velocity .223/5.56 rubber bullet - that shit could easily kill you - or at least would act like a normal bullet.
-	sharp = TRUE	//There is no-way this round is not acting like a regular high-velocity round at this point.
+	sharp = FALSE
 	can_ricochet = TRUE
 	step_delay = 0.9
 	recoil = 4
@@ -406,13 +410,13 @@
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 9, HALLOSS = 6)
+	damage_types = list(BRUTE = 18)
 	armor_divisor = 0.4
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
-	sharp = TRUE
+	sharp = FALSE
 	step_delay = 0.6
 	recoil = 5
 
@@ -454,19 +458,20 @@
 
 /obj/item/projectile/bullet/rifle_75/hv
 	damage_types = list(BRUTE = 14)
-	armor_divisor = 36
+	armor_divisor = 3
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 2
 	hitscan = TRUE
 	affective_damage_range = 8
 	affective_ap_range = 8
 	nocap_structures = TRUE //Helps against walls and doors
+	sharp = TRUE
 	recoil = 14
 
 /obj/item/projectile/bullet/rifle_75/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 2, HALLOSS = 2)
-	armor_divisor = 0.25
+	armor_divisor = 1
 	embed = FALSE
 	sharp = FALSE
 	can_ricochet = FALSE
@@ -480,7 +485,7 @@
 	armor_divisor = 1
 	wounding_mult = WOUNDING_NORMAL
 	embed = TRUE	//literally imagine a 7.62 rubber bullet hitting you - holy shit.
-	sharp = TRUE	//there is literally no-fucking-way this would not act like a regular sharp round at this point.
+	sharp = FALSE
 	can_ricochet = TRUE
 	ricochet_mod = 2 //including armor penalty ends up as closer to 1.85x as likely.
 	step_delay = 0.9
@@ -506,13 +511,13 @@
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 18, HALLOSS = 9)
-	armor_divisor = 0.5
+	damage_types = list(BRUTE = 22)
+	armor_divisor = 0.8
 	wounding_mult = WOUNDING_WIDE
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
-	sharp = TRUE
+	sharp = FALSE
 	step_delay = 0.8
 	recoil = 10
 
@@ -555,7 +560,7 @@
 	armor_divisor = 1.3
 	check_armour = ARMOR_MELEE
 	embed = TRUE	//imagine an effectively smaller .50 Cal marksman round hitting you. holy shit.
-	sharp = TRUE	//there is literally no-fucking-way this would not act like a regular sharp round at this point.
+	sharp = FALSE
 	can_ricochet = TRUE
 	ricochet_mod = 1.35 //after AP penalty to ricochet is factored in we have more like 15% more chance to ricochet.
 	step_delay = 0.9
@@ -564,8 +569,8 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/practice
 	name = "practice bullet"
-	damage_types = list(BRUTE = 2, HALLOSS = 2)
-	armor_divisor = 0.5
+	damage_types = list(BRUTE = 6)
+	armor_divisor = 1
 	embed = FALSE
 	sharp = FALSE
 	wounding_mult = WOUNDING_NORMAL
@@ -583,17 +588,18 @@
 	affective_damage_range = 9 //Sniping cal
 	affective_ap_range = 9
 	nocap_structures = TRUE //anit-wall/door
+	sharp = TRUE
 	recoil = 20
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 15, HALLOSS = 14)
-	armor_divisor = 0.65
+	damage_types = list(BRUTE = 28)
+	armor_divisor = 1
 	wounding_mult = WOUNDING_WIDE
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = TRUE
-	sharp = TRUE
+	sharp = FALSE
 	step_delay = 0.5
 	recoil = 16
 
@@ -601,7 +607,7 @@
 	name = "incendiary bullet"
 	damage_types = list(BURN = 15) //We deal most of are damage with fire stacks
 	fire_stacks = 3
-	armor_divisor = 0.5
+	armor_divisor = 1
 	penetrating = 0
 	can_ricochet = FALSE
 	embed = FALSE
@@ -917,7 +923,7 @@
 
 /obj/item/projectile/bullet/pellet/shotgun/scrap
 	damage_types = list(BRUTE = 8)
-	armor_divisor = 0.5
+	armor_divisor = 0.9
 	affective_damage_range = 4
 	affective_ap_range = 4
 	recoil = 6
@@ -1116,7 +1122,7 @@
 /obj/item/projectile/bullet/crossbow_bolt/lethal
 	name = "bolt"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 10, HALLOSS = 29)
+	damage_types = list(BRUTE = 22)
 	wounding_mult = WOUNDING_NORMAL //slightly bigger
 	armor_divisor = 0.5
 	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE)
@@ -1131,6 +1137,7 @@
 	armor_divisor = 3
 	penetrating = 3
 	hitscan = TRUE
+	sharp = TRUE
 	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE)
 	supereffective_mult = 1.5
 	affective_damage_range = 9
@@ -1195,7 +1202,7 @@
 	armor_divisor = 20
 	step_delay = 0.2
 	embed = TRUE
-	penetrating = 0
+	penetrating = 2
 	affective_damage_range = 7
 	affective_ap_range = 7
 	create_type = null
@@ -1224,7 +1231,7 @@
 	damage_types = list(BRUTE = 1.5) // 15 damage at max pull
 	damage_mult = 1.5 // Less bonus damage against effective faction
 	embed_mult = 3 //we are going to try really hard to embed
-	armor_divisor = 0.5 // Crossbow bolts are better, however this should not penetrate armor the same as a bullet (if not MORE).
+	armor_divisor = 0.75 // Crossbow bolts are better, however this should not penetrate armor the same as a bullet (if not MORE).
 	hitscan = TRUE // As every HV ammo
 	affective_damage_range = 8
 	affective_ap_range = 8

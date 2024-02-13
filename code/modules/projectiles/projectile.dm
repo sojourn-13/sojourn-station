@@ -213,9 +213,6 @@
 			playsound(src, hitsound_wall, 50, 1, -2)
 	return
 
-/obj/item/projectile/multiply_pierce_penetration(newmult)
-	penetrating = initial(penetrating) + newmult
-
 //Checks if the projectile is eligible for embedding. Not that it necessarily will.
 /obj/item/projectile/proc/can_embed()
 	//embed must be enabled and damage type must be brute
@@ -229,12 +226,50 @@
 	else
 		return (damage_types[BRUTE] + damage_types[BURN]) * wound_check(injury_type, wounding_mult, edge, sharp) * 2
 
-/obj/item/projectile/proc/get_ricochet_modifier()
-	return (ricochet_mod - (armor_divisor * 0.1)) //Return ricochet mod(default 1) modified by AP. E.G 1 - (AP(5) * 0.1) = 0.5. Thus 10% less likely to bounce per divisor.
-
 //return 1 if the projectile should be allowed to pass through after all, 0 if not.
 /obj/item/projectile/proc/check_penetrate(atom/A)
 	return TRUE
+
+/obj/item/projectile/proc/get_ricochet_modifier()
+	return (ricochet_mod - (armor_divisor * 0.1)) //Return ricochet mod(default 1) modified by AP. E.G 1 - (AP(5) * 0.1) = 0.5. Thus 10% less likely to bounce per divisor.
+
+/obj/item/projectile/bullet/check_penetrate(var/atom/A)
+	if((!A || !A.density)) return 1 //if whatever it was got destroyed when we hit it, then I guess we can just keep going
+
+	var/blocked_damage = 0
+	if(istype(A, /turf/simulated/wall)) // TODO: refactor this from functional into OOP
+		var/turf/simulated/wall/W = A
+		blocked_damage = round(W.material.integrity / 8)
+	else if(istype(A, /obj/machinery/door))
+		var/obj/machinery/door/D = A
+		blocked_damage = round(D.maxHealth / 8)
+		if(D.glass) blocked_damage /= 2
+	else if(istype(A, /obj/structure/girder))
+		return TRUE
+	else if(istype(A, /obj/structure/low_wall))
+		blocked_damage = 20 // hardcoded, value is same as steel wall, will have to be changed once low walls have integrity
+	else if(istype(A, /obj/structure/table))
+		var/obj/structure/table/T = A
+		blocked_damage = round(T.maxHealth / 8)
+	else if(istype(A, /obj/structure/barricade))
+		var/obj/structure/barricade/B = A
+		blocked_damage = round(B.material.integrity / 8)
+	else if(istype(A, /obj/machinery) || istype(A, /obj/structure))
+		blocked_damage = 20
+
+	var/percentile_blocked = block_damage(blocked_damage, A)
+	if(percentile_blocked > 0.5)
+		percentile_blocked = CLAMP(percentile_blocked, 50, 90) / 100 // calculate leftover velocity, capped between 50% and 90%
+
+		step_delay = min(step_delay / percentile_blocked, step_delay / 2)
+
+		if(A.opacity || istype(A, /obj/item/shield))
+			//display a message so that people on the other side aren't so confused
+			A.visible_message(SPAN_WARNING("\The [src] pierces through \the [A]!"))
+			playsound(A.loc, 'sound/weapons/shield/shieldpen.ogg', 50, 1)
+		return 1
+
+	return 0
 
 /obj/item/projectile/proc/check_fire(atom/target as mob, mob/living/user as mob)  //Checks if you can hit them or not.
 	check_trajectory(target, user, pass_flags, flags)
@@ -757,11 +792,11 @@
 		loc = A.loc
 		return FALSE //go fuck yourself in another place pls
 
+
 	if((bumped && !forced) || (A in permutated))
 		return FALSE
 
 	var/passthrough = FALSE //if the projectile should continue flying
-	var/distance = get_dist(starting,loc)
 
 	var/tempLoc = get_turf(A)
 
@@ -773,46 +808,35 @@
 			trajectory.loc_z = loc.z
 			bumped = FALSE
 			return FALSE
-	if(iscarbon(A))
-		var/mob/living/carbon/C = A
-		if (!testing)
-			var/obj/item/shield/S
-			for(S in get_both_hands(C))
-				if(S && S.block_bullet(C, src, def_zone))
-					on_hit(S,def_zone)
-					if (testing)
-						impact_atom = C
-					qdel(src)
-					return TRUE
-				break //Prevents shield dual-wielding
-			S = C.get_equipped_item(slot_back)
-			if(S && S.block_bullet(C, src, def_zone))
-				on_hit(S,def_zone)
-				if (testing)
-					impact_atom = C
-				qdel(src)
-				return TRUE
-
 	if(ismob(A))
+		// Mobs inside containers shouldnt get bumped(such as mechs or closets)
+		if(!isturf(A.loc))
+			bumped = FALSE
+			return FALSE
+
 		var/mob/M = A
 		if(isliving(A))
 			//if they have a neck grab on someone, that person gets hit instead
-			if (!testing)
-				var/obj/item/grab/G = locate() in M
-				if(G && G.state >= GRAB_NECK && G.affecting.health >= 0) //Cant use dead or dieing bodies as a shield as they are limp
-					visible_message(SPAN_DANGER("\The [M] uses [G.affecting] as a shield!"))
-					if(Bump(G.affecting, TRUE))
-						return //If Bump() returns 0 (keep going) then we continue on to attack M.
-			passthrough = !attack_mob(M, distance)
+			var/obj/item/grab/G = locate() in M
+			if(G && G.state >= GRAB_NECK)
+				visible_message(SPAN_DANGER("\The [M] uses [G.affecting] as a shield!"))
+				if(Bump(G.affecting, TRUE))
+					return //If Bump() returns 0 (keep going) then we continue on to attack M.
+			passthrough = !attack_mob(M)
 		else
 			passthrough = FALSE //so ghosts don't stop bullets
 	else
 		passthrough = (A.bullet_act(src, def_zone) == PROJECTILE_CONTINUE) //backwards compatibility
 		if(isturf(A))
-			for(var/obj/O in A)
-				O.bullet_act(src)
+			if(QDELETED(src)) // we don't want bombs to explode once for every time bullet_act is called
+				on_impact(A)
+				invisibility = 101
+				return TRUE // see that next line? it can overload the server.
+			for(var/obj/O in A) // if src's bullet act spawns more objs, the list will increase,
+				if(O.density)
+					O.bullet_act(src) // causing exponential growth due to the spawned obj spawning itself
 			for(var/mob/living/M in A)
-				attack_mob(M, distance)
+				attack_mob(M)
 
 	//penetrating projectiles can pass through things that otherwise would not let them
 	if(!passthrough && penetrating > 0)
@@ -824,8 +848,6 @@
 	if(passthrough)
 		//move ourselves onto A so we can continue on our way
 		if (!tempLoc)
-			if (testing)
-				impact_atom = A
 			qdel(src)
 			return TRUE
 
@@ -841,8 +863,7 @@
 	density = FALSE
 	invisibility = 101
 
-	if (testing)
-		impact_atom = A
+
 	qdel(src)
 	return TRUE
 

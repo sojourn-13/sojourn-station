@@ -197,6 +197,16 @@
 
 	//Armor and damage
 	if(!P.nodamage)
+		for(var/damage_type in P.damage_types)
+			var/damage = P.damage_types[damage_type]
+			var/dmult = 1
+			if(LAZYLEN(P.effective_faction))
+				if(faction in P.effective_faction)
+					dmult += P.damage_mult
+			if(LAZYLEN(P.supereffective_types))
+				if(is_type_in_list(src, P.supereffective_types, TRUE))
+					dmult += P.supereffective_mult
+			damage *= dmult
 		hit_impact(P.get_structure_damage(), hit_dir)
 		return damage_through_armor(def_zone = def_zone_hit, attack_flag = P.check_armour, armor_divisor = P.armor_divisor, used_weapon = P, sharp = is_sharp(P), edge = has_edge(P), wounding_multiplier = P.wounding_mult, dmg_types = P.damage_types, return_continuation = TRUE)
 

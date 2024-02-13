@@ -42,7 +42,7 @@
 		UPGRADE_BULK = 2,
 		GUN_UPGRADE_STEPDELAY_MULT = 2,
 		GUN_UPGRADE_DAMAGE_MULT = 0.5,
-		GUN_UPGRADE_PEN_MULT = -0.5,
+		GUN_UPGRADE_PEN_MULT = -0.25,
 		GUN_UPGRADE_PIERC_MULT = -3, //This does a LOT lowering range, as well as most guns being unable to wall bang with it
 		GUN_UPGRADE_OFFSET = 21,
 		GUN_UPGRADE_RECOIL = 2.5,
@@ -124,7 +124,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = -0.5,
+		GUN_UPGRADE_PEN_MULT = -0.25,
 		GUN_UPGRADE_DAMAGE_BURN = 10,
 		GUN_UPGRADE_OFFSET = 5,
 		GUN_UPGRADE_RECOIL = 1.3,
@@ -148,7 +148,7 @@
 		GUN_UPGRADE_HONK = TRUE,
 		GUN_UPGRADE_RECOIL = 1.2,
 		GUN_UPGRADE_DAMAGE_MULT = 0.8,
-		GUN_UPGRADE_PEN_MULT = -0.2,
+		GUN_UPGRADE_PEN_MULT = -0.1,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
 		GUN_UPGRADE_MOVE_DELAY_MULT = 1.2,
 		GUN_UPGRADE_MUZZLEFLASH = 1.2,
