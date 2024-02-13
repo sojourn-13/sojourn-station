@@ -89,9 +89,7 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 			if(command && engineer)
 				return TRUE
 
-	var/tcol = "red"
-	if(GLOB.player_list.len <= 10)
-		tcol = "black"
+	var/tcol = "#ffaa00"
 
 	if(announce)
 		if(!engineer && !command)
