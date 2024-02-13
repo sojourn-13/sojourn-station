@@ -412,7 +412,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEJUMPSUIT
-	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
 /obj/item/clothing/suit/armor/vest/rosaria/verb/toggle_style()
 	set name = "Adjust Style"
@@ -478,7 +478,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEJUMPSUIT
-	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
 /obj/item/clothing/suit/armor/vest/prime/verb/toggle_style()
 	set name = "Adjust Style"

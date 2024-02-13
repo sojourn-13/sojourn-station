@@ -607,7 +607,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	name = "Absolutism Medkit"
 	build_path = /obj/item/storage/firstaid/nt
 	materials = list(
-		/obj/item/stack/material/biomatter = 45,
+		/obj/item/stack/material/biomatter = 105,
 		/obj/item/stack/material/plastic = 4,
 		/obj/item/stack/material/glass = 2,
 		/obj/item/stack/material/gold = 2,
