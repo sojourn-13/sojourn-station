@@ -3,6 +3,9 @@
 	build_type = ORGAN_GROWER
 	starts_unlocked = TRUE
 
+	required_printer_code = TRUE
+	code_dex = "ORGAN_GROWER"
+
 /datum/design/organ/heart
 	materials = list(MATERIAL_BIOMATTER = 30)
 	build_path = /obj/item/organ/internal/vital/heart

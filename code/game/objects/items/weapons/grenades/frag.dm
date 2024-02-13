@@ -41,7 +41,7 @@
 	desc = "A military-grade defensive fragmentation grenade, designed to be thrown from cover."
 	icon_state = "frag_nt"
 	item_state = "frggrenade_nt"
-	matter = list(MATERIAL_BIOMATTER = 75)
+	matter = list(MATERIAL_BIOMATTER = 40)
 	fragment_damage = 7
 	damage_step = 3
 
