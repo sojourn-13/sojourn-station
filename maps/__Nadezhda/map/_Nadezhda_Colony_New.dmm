@@ -21012,6 +21012,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1{
 	name = "Bar Hallway"
@@ -24720,6 +24723,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/crew_quarters/kitchen{
 	name = "\improper Dining Area"
@@ -32689,6 +32696,9 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2
 	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/kitchen{
@@ -48362,6 +48372,17 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor2north)
+"kiV" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section1{
+	name = "Bar Hallway"
+	})
 "kiX" = (
 /obj/machinery/door/blast/regular/open{
 	id = "xenobio7";
@@ -48403,6 +48424,9 @@
 "kju" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/crew_quarters/kitchen{
 	name = "\improper Dining Area"
@@ -48584,11 +48608,11 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor2west)
 "klq" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment{
 	dir = 1;
 	icon_state = "pipe-c"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1{
 	name = "Bar Hallway"
@@ -56304,6 +56328,9 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1{
 	name = "Bar Hallway"
@@ -61096,6 +61123,9 @@
 	},
 /obj/machinery/disposal,
 /obj/machinery/light,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/kitchen{
 	name = "\improper Dining Area"
@@ -64470,8 +64500,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/disposalpipe/junction{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
@@ -79180,6 +79210,9 @@
 	})
 "qCt" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/crew_quarters/kitchen{
 	name = "\improper Dining Area"
@@ -93369,6 +93402,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/maintenance/undergroundfloor1east)
+"tCZ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section1{
+	name = "Bar Hallway"
+	})
 "tDe" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet/turcarpet,
@@ -99120,6 +99165,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1{
 	name = "Bar Hallway"
@@ -101924,6 +101972,23 @@
 	icon_state = "13,15"
 	},
 /area/nadezhda/quartermaster/miningdock)
+"vnn" = (
+/obj/effect/floor_decal/spline/wood,
+/obj/effect/floor_decal/spline/wood{
+	dir = 8;
+	icon_state = "road_edge_decal4"
+	},
+/obj/effect/floor_decal/spline/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/crew_quarters/kitchen{
+	name = "\improper Dining Area"
+	})
 "vnC" = (
 /obj/structure/scrap/poor,
 /obj/effect/decal/cleanable/rubble,
@@ -103060,6 +103125,9 @@
 "vAx" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/unpowered/simple/wood/saloon,
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/kitchen{
 	name = "\improper Dining Area"
@@ -110533,6 +110601,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/gaycarpet,
 /area/nadezhda/crew_quarters/kitchen{
 	name = "\improper Dining Area"
@@ -111910,6 +111981,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "xrE" = (
@@ -179137,7 +179211,7 @@ ilr
 bCN
 bTI
 flb
-xva
+vnn
 gVG
 mUH
 lKe
@@ -180146,9 +180220,9 @@ sEF
 pQg
 bfB
 tXI
-sEF
+tCZ
 exf
-sEF
+kiV
 uLq
 lVY
 xrC
