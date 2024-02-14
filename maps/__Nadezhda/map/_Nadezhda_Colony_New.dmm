@@ -35106,12 +35106,6 @@
 "hxH" = (
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
-"hxJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/secure_closet/reinforced/foreman/fence,
-/turf/simulated/floor/tiled/dark,
-/area/nadezhda/pros/prep)
 "hxL" = (
 /obj/random/furniture/pottedplant,
 /obj/machinery/light{
@@ -75535,14 +75529,11 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "pQg" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/obj/structure/closet/secure_closet/reinforced/foreman/fence,
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/pros/prep)
 "pQo" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
 /turf/simulated/floor/wood/wild3,
@@ -180046,7 +180037,7 @@ gwo
 gwo
 lAo
 pVp
-pQg
+dJS
 fFg
 sEF
 tVy
@@ -218224,7 +218215,7 @@ ipV
 hjV
 xgn
 kUX
-hxJ
+pQg
 aLk
 kau
 vfw
