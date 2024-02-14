@@ -6301,9 +6301,7 @@
 	},
 /obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/wood/wild1,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "btQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -7966,9 +7964,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "bKW" = (
 /obj/structure/bed/chair/office/light,
 /obj/effect/decal/cleanable/dirt,
@@ -8581,9 +8577,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "bTR" = (
 /obj/item/modular_computer/console/preset/command/access{
 	dir = 4
@@ -9495,9 +9489,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "cdB" = (
 /obj/structure/catwalk,
 /obj/machinery/camera/network/security{
@@ -19417,9 +19409,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "egV" = (
 /obj/structure/table/glass,
 /obj/random/rations,
@@ -23244,10 +23234,16 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/xenobiology)
 "eWd" = (
-/obj/effect/window_lwall_spawn,
-/turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section1{
+	name = "Bar Hallway"
 	})
 "eWe" = (
 /obj/structure/cable/yellow{
@@ -24121,6 +24117,17 @@
 /obj/structure/reagent_dispensers/fueltank/huge,
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
+"ffE" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/hallway/side/f2section1{
+	name = "Bar Hallway"
+	})
 "ffH" = (
 /obj/random/booze,
 /obj/random/booze,
@@ -24728,9 +24735,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "flq" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -27125,9 +27130,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild1,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "fLZ" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/asteroid/grass/dry,
@@ -29019,9 +29022,7 @@
 /obj/structure/table/woodentable,
 /obj/item/flame/candle,
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "ggD" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -30156,11 +30157,6 @@
 "gsq" = (
 /obj/structure/cable/green{
 	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
@@ -30173,9 +30169,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "gsr" = (
 /obj/structure/bed/chair/sofa/brown/left,
 /turf/simulated/floor/wood,
@@ -32701,9 +32695,7 @@
 	dir = 2
 	},
 /turf/simulated/floor/wood/wild1,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "gVH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -33744,9 +33736,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/asteroid/grass/jungle,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "hhx" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -35856,9 +35846,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "hDS" = (
 /obj/item/stack/ore,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -36964,9 +36952,7 @@
 	id = "Bar"
 	},
 /turf/simulated/floor/tiled/white/gray_platform,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "hNV" = (
 /obj/machinery/chemical_dispenser/industrial{
 	fancy_hack = 1
@@ -43346,9 +43332,7 @@
 /obj/item/flame/candle,
 /obj/machinery/camera/network/colony_underground,
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "jgG" = (
 /obj/structure/flora/ausbushes/leafybush,
 /obj/structure/flora/ausbushes/reedbush,
@@ -48372,17 +48356,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor2north)
-"kiV" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
 "kiX" = (
 /obj/machinery/door/blast/regular/open{
 	id = "xenobio7";
@@ -48428,9 +48401,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "kjx" = (
 /obj/structure/catwalk,
 /obj/structure/railing{
@@ -55214,10 +55185,17 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/farm)
 "lKe" = (
-/turf/simulated/wall/r_wall,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/obj/effect/floor_decal/spline/wood,
+/obj/effect/floor_decal/spline/wood{
+	dir = 8;
+	icon_state = "road_edge_decal4"
+	},
+/obj/effect/floor_decal/spline/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/wood/wild1,
+/area/nadezhda/crew_quarters/kitchen)
 "lKh" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 8
@@ -56124,9 +56102,7 @@
 	},
 /obj/machinery/door/unpowered/simple/wood/saloon,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "lTW" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -59326,9 +59302,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "mBw" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
@@ -61127,9 +61101,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/wild1,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "mUL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -65930,9 +65902,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "nSe" = (
 /obj/structure/table/steel,
 /obj/random/common_oddities/low_chance,
@@ -66931,9 +66901,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "obE" = (
 /obj/landmark/join/start/supsec,
 /obj/effect/decal/cleanable/dirt,
@@ -79214,9 +79182,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "qCv" = (
 /obj/machinery/light{
 	dir = 8
@@ -80702,9 +80668,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/grass/jungle,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "qSC" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -90787,9 +90751,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "sZy" = (
 /obj/structure/table/standard,
 /obj/item/device/assembly/igniter,
@@ -93402,18 +93364,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/maintenance/undergroundfloor1east)
-"tCZ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
 "tDe" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet/turcarpet,
@@ -95719,9 +95669,7 @@
 /obj/structure/railing/grey,
 /obj/structure/table/woodentable,
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "uar" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
@@ -98178,9 +98126,7 @@
 /obj/item/flame/candle,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "uAy" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "2,8"
@@ -101972,23 +101918,6 @@
 	icon_state = "13,15"
 	},
 /area/nadezhda/quartermaster/miningdock)
-"vnn" = (
-/obj/effect/floor_decal/spline/wood,
-/obj/effect/floor_decal/spline/wood{
-	dir = 8;
-	icon_state = "road_edge_decal4"
-	},
-/obj/effect/floor_decal/spline/wood{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
-/turf/simulated/floor/wood/wild1,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
 "vnC" = (
 /obj/structure/scrap/poor,
 /obj/effect/decal/cleanable/rubble,
@@ -102092,9 +102021,7 @@
 /obj/structure/table/woodentable,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "voK" = (
 /obj/effect/floor_decal/industrial/hatch,
 /obj/machinery/door/airlock/maintenance_common,
@@ -102851,9 +102778,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "vww" = (
 /obj/machinery/door/blast/regular{
 	id = "Mil Armory";
@@ -102917,21 +102842,9 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "vxh" = (
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28;
-	operating = 0
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "vxm" = (
 /obj/structure/sign/warning/armory/small,
 /turf/simulated/wall/church_reinforced,
@@ -103129,9 +103042,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "vAy" = (
 /obj/effect/floor_decal/industrial/hatch,
 /obj/machinery/sleeper{
@@ -108415,9 +108326,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "wCP" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -108760,9 +108669,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "wHh" = (
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_y = 32
@@ -110605,9 +110512,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "xbR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -111679,9 +111584,7 @@
 /obj/landmark/join/start/clubworker,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "xob" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -112309,10 +112212,11 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
 /turf/simulated/floor/wood/wild1,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "xvd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -112629,9 +112533,7 @@
 /obj/structure/railing/grey,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "xyb" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 1
@@ -112885,9 +112787,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "xAL" = (
 /obj/machinery/power/nt_obelisk,
 /obj/machinery/camera/network/church{
@@ -115491,9 +115391,7 @@
 /area/nadezhda/maintenance/undergroundfloor2west)
 "ybE" = (
 /turf/simulated/floor/carpet/gaycarpet,
-/area/nadezhda/crew_quarters/kitchen{
-	name = "\improper Dining Area"
-	})
+/area/nadezhda/crew_quarters/kitchen)
 "ybH" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 5;
@@ -178401,12 +178299,12 @@ bCN
 bCN
 bCN
 bCN
-lKe
-lKe
-lKe
-lKe
-lKe
-lKe
+bCN
+bCN
+bCN
+bCN
+bCN
+bCN
 wFV
 tnO
 fUB
@@ -179009,7 +178907,7 @@ eHE
 wls
 xAD
 ybE
-xva
+lKe
 xnW
 nRZ
 hNT
@@ -179206,15 +179104,15 @@ ijo
 xNt
 orF
 bCN
-eWd
+ilr
 ilr
 bCN
 bTI
 flb
-vnn
+xva
 gVG
 mUH
-lKe
+bCN
 whU
 tnO
 whU
@@ -179413,7 +179311,7 @@ cdh
 btG
 xAD
 kju
-xva
+lKe
 hDH
 cdh
 hNT
@@ -179817,7 +179715,7 @@ nRZ
 btG
 xAD
 qCt
-xva
+lKe
 obw
 bKS
 hNT
@@ -180016,13 +179914,13 @@ ilr
 bCN
 hNT
 hNT
-lKe
+bCN
 lTV
 vAx
-lKe
+bCN
 hNT
 hNT
-lKe
+bCN
 rtI
 due
 fpd
@@ -180220,9 +180118,9 @@ sEF
 pQg
 bfB
 tXI
-tCZ
+eWd
 exf
-kiV
+ffE
 uLq
 lVY
 xrC
