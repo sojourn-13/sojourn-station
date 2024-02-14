@@ -1555,6 +1555,7 @@ Anyone wearing it can open public church doors. You should do your best to keep 
 	desc = "A passcard issued to citizens of Aqua Fria. Tucked away in a heavily populated system, this large aquatic world has made a reputation for being a substantial food source and home to a number of research institutes."
 	icon_state = "passcard_aqua_fria"
 	item_state = "badge"
+
 /obj/item/clothing/accessory/passcard/wanderers_armada
 	name = "Wanderers Armada passcard"
 	desc = "A passcard issued to citizens of the Wanderers Armada, A wandering fleet of spacers massive enough to have it's own Citizenship status. Well known for it's black market trade and elicit activity."
