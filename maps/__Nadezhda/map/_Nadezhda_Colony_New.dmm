@@ -5034,9 +5034,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "bfC" = (
 /obj/machinery/door/airlock/maintenance_common,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -7800,9 +7798,7 @@
 	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "bJv" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -14962,14 +14958,6 @@
 /obj/structure/flora/big/bush3,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
-"dmf" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
 "dmj" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -17224,12 +17212,12 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "dJS" = (
-/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "dJT" = (
 /obj/item/modular_computer/console/preset/command{
 	dir = 4;
@@ -18348,9 +18336,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "dWI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -21006,9 +20992,7 @@
 	dir = 2
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "exg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -22957,9 +22941,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "eRV" = (
 /obj/structure/catwalk,
 /obj/structure/table/rack/shelf,
@@ -23242,9 +23224,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "eWe" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -23837,9 +23817,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "fby" = (
 /obj/random/closet_maintloot,
 /turf/simulated/floor/tiled/techmaint_perforated,
@@ -24125,9 +24103,7 @@
 	dir = 2
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "ffH" = (
 /obj/random/booze,
 /obj/random/booze,
@@ -26068,9 +26044,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "fzw" = (
 /obj/machinery/conveyor/south{
 	id = "mining_internal"
@@ -26558,9 +26532,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "fFh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -29447,9 +29419,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "glv" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -40627,9 +40597,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "iBD" = (
 /obj/random/scrap/sparse_even,
 /turf/simulated/floor/tiled/techmaint,
@@ -42082,18 +42050,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
-"iSE" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
 "iSI" = (
 /obj/structure/flora/small/busha1,
 /turf/simulated/floor/asteroid/grass,
@@ -48585,9 +48541,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "klv" = (
 /obj/structure/table/woodentable,
 /obj/machinery/recharger,
@@ -51088,9 +51042,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "kNN" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8
@@ -56308,9 +56260,7 @@
 	dir = 2
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "lWd" = (
 /obj/effect/floor_decal/industrial/box/red,
 /obj/machinery/disposal,
@@ -63640,9 +63590,7 @@
 	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "nuv" = (
 /obj/random/closet_maintloot,
 /turf/simulated/floor/asteroid/dirt/dark,
@@ -67101,9 +67049,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "odx" = (
 /obj/effect/floor_decal/spline/wood{
 	dir = 9
@@ -71063,9 +71009,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "oTO" = (
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = -32
@@ -88966,9 +88910,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "sEL" = (
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor2north)
@@ -95411,9 +95353,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "tXL" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -99115,9 +99055,7 @@
 	dir = 2
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "uLs" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /obj/machinery/door/blast/shutters{
@@ -106932,9 +106870,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "woX" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/generic,
@@ -108419,9 +108355,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "wDM" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/blucarpet,
@@ -113591,9 +113525,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/hallway/side/f2section1{
-	name = "Bar Hallway"
-	})
+/area/nadezhda/hallway/side/f2section1)
 "xIm" = (
 /obj/structure/grille,
 /obj/structure/railing,
@@ -180110,12 +180042,12 @@ pVp
 pQg
 fFg
 sEF
-iSE
+tVy
 eRT
 fbj
 fzr
 sEF
-pQg
+dJS
 bfB
 tXI
 eWd
@@ -180311,11 +180243,11 @@ jre
 guA
 hRx
 gll
-dmf
-dmf
+qwh
+qwh
 oTN
 nut
-dJS
+kgK
 bJu
 klq
 odw
