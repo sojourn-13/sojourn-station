@@ -1,6 +1,6 @@
 /datum/design/research/item/mechfab/robot
 	category = CAT_ROBOT
-	build_type = AUTOLATHE | MECHFAB
+	build_type = MECHFAB
 	starts_unlocked = TRUE
 
 /datum/design/research/item/mechfab/robot/exoskeleton
@@ -73,7 +73,7 @@
 
 // Robot updates
 /datum/design/research/item/robot_upgrade
-	build_type = AUTOLATHE | MECHFAB
+	build_type = MECHFAB
 	category = CAT_ROBOT
 	name_category = "robot upgrade"
 

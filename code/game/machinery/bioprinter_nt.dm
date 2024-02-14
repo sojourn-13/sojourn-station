@@ -4,6 +4,7 @@
 	icon_state = "bioprinter"
 	unsuitable_materials = list()
 	build_type = AUTOLATHE | BIOPRINTER
+	code_dex = "MECHFAB"
 	storage_capacity = 480
 	speed = 11
 	have_recycling = TRUE

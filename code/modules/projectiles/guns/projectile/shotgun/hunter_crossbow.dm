@@ -19,6 +19,7 @@
 	pumpshotgun_sound = 'sound/weapons/guns/interact/hydra_crossbow_load.ogg'
 	serial_type = "INDEX"
 	serial_shown = FALSE
+	gun_parts = null
 
 /obj/item/gun/projectile/shotgun/pump/hunter_crossbow/handle_post_fire()
 	..()

@@ -5,6 +5,7 @@
 #define ERR_NOLICENSE "no license"
 #define ERR_PAUSED "paused"
 #define ERR_NOINSIGHT "no insight"
+#define ERR_WRONG_BUILDTYPE "cant read"
 
 /obj/machinery/autolathe/artist_bench
 	name = "artist's bench"
@@ -368,4 +369,4 @@
 #undef ERR_NOLICENSE
 #undef ERR_PAUSED
 #undef ERR_NOINSIGHT
-
+#undef ERR_WRONG_BUILDTYPE
