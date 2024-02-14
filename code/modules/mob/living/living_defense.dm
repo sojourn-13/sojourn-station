@@ -197,6 +197,8 @@
 
 	//Armor and damage
 	if(!P.nodamage)
+		if (!(P.testing))
+			hit_impact(P.get_structure_damage(), hit_dir)
 		for(var/damage_type in P.damage_types)
 			var/damage = P.damage_types[damage_type]
 			var/dmult = 1

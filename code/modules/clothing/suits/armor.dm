@@ -1024,9 +1024,9 @@
 	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
 	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
 	armor_list = list(
-		melee = 2,
-		bullet = 2,
-		energy = 2,
+		melee = 10,
+		bullet = 10,
+		energy = 10,
 		bomb = 35,
 		bio = 0,
 		rad = 0

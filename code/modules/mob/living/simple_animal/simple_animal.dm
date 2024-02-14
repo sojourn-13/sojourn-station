@@ -417,7 +417,7 @@
 				dmult += Proj.supereffective_mult
 		damage *= dmult
 		if (!(Proj.testing))
-			damage_through_armor(damage, damage_type, def_zone, Proj.check_armour, armor_divisor = Proj.armor_divisor, used_weapon = Proj, sharp=is_sharp(Proj), edge=has_edge(Proj))
+			return damage_through_armor(def_zone, attack_flag = Proj.check_armour, armor_divisor = Proj.armor_divisor, used_weapon = Proj, sharp = is_sharp(Proj), edge = has_edge(Proj), wounding_multiplier = Proj.wounding_mult, dmg_types = Proj.damage_types, return_continuation = TRUE)
 	return FALSE
 
 /mob/living/simple_animal/rejuvenate()
