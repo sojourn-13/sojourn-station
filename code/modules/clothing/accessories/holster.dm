@@ -335,6 +335,57 @@ Sword holsters
 	holstered = new holstered_spawn
 	update_icon()
 
+/obj/item/clothing/accessory/holster/saber/rapiermed
+	name = "Rapier scabbard"
+	desc = "A brilliantly wood carved gold gilded scabbard fit for royalty, it's design is surgically precise."
+	icon_state = "rapiermed_holster"
+	overlay_state = "rapiermed"
+	slot = "utility"
+	can_hold = list(/obj/item/tool/sword/saber/injection_rapier)
+	price_tag = 2000
+	sound_in = 'sound/effects/sheathin.ogg'
+	sound_out = 'sound/effects/sheathout.ogg'
+
+/obj/item/clothing/accessory/holster/saber/rapiermed/update_icon()
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/accessory/icon.dmi', "rapiermed_layer"))
+
+
+/obj/item/clothing/accessory/holster/saber/rapiermed/occupied
+	var/holstered_spawn = /obj/item/tool/sword/saber/injection_rapier
+
+/obj/item/clothing/accessory/holster/saber/rapiermed/occupied/Initialize()
+	holstered = new holstered_spawn
+	update_icon()
+
+//
+/obj/item/clothing/accessory/holster/saber/rapiersci
+	name = "Rapier saya"
+	desc = "A sleek hardened ebony material covers the entire saya in multifaceted shapes, it's design probes your mind."
+	icon_state = "rapiersci_holster"
+	overlay_state = "rapiersci"
+	slot = "utility"
+	can_hold = list(/obj/item/tool/sword/saber/deconstuctive_rapier)
+	price_tag = 2000
+	sound_in = 'sound/effects/sheathin.ogg'
+	sound_out = 'sound/effects/sheathout.ogg'
+
+/obj/item/clothing/accessory/holster/saber/rapiersci/update_icon()
+	..()
+	cut_overlays()
+	if(contents.len)
+		add_overlay(image('icons/inventory/accessory/icon.dmi', "rapiersci_layer"))
+
+
+/obj/item/clothing/accessory/holster/saber/rapiersci/occupied
+	var/holstered_spawn = /obj/item/tool/sword/saber/deconstuctive_rapier
+
+/obj/item/clothing/accessory/holster/saber/rapiersci/occupied/Initialize()
+	holstered = new holstered_spawn
+	update_icon()
+
 /obj/item/clothing/accessory/holster/saber/saya
 	name = "katana saya"
 	desc = "A traditional \"saya\", a sheath for a non-curved oriental sword known as a katana."

@@ -147,6 +147,12 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	return destination
 
 
+/proc/ennumeratemobs()
+	var/i
+	var/mobnum
+	for(i=1, i<world.maxz, i++)
+		mobnum = SSmobs.mob_living_by_zlevel[i].len
+		to_chat(usr, "Z-level [i] has [mobnum] mobs on it")
 
 /proc/LinkBlocked(turf/A, turf/B)
 	if(A == null || B == null) return 1

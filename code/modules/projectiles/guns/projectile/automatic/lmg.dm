@@ -20,7 +20,7 @@
 	mag_well = MAG_WELL_LINKED_BOX
 	caliber = CAL_RIFLE
 	tac_reloads = FALSE
-	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
+	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 20)
 	price_tag = 2000
 	unload_sound 	= 'sound/weapons/guns/interact/lmg_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
@@ -111,6 +111,7 @@
 	icon_state = "pk_closed"
 	item_state = "pk_closed"
 	damage_multiplier = 1.0 // This becomes x0.8 as forced full auto modes incurr 20% damage penalty.
+	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 15, MATERIAL_WOOD = 5)
 	init_firemodes = list(
 		BURST_5_ROUND,
 		BURST_8_ROUND,

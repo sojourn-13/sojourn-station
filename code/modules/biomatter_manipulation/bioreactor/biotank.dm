@@ -26,6 +26,7 @@
 	var/obj/canister
 	var/pipes_opened = FALSE
 	var/pipes_cleanness = 200
+	var/transfer_rate = 50 //The units per processing tick that are moved into the attached canister
 
 
 /obj/machinery/multistructure/bioreactor_part/biotank_platform/Initialize()
@@ -66,7 +67,7 @@
 	if(!MS)
 		return
 	if(biotank.canister)
-		biotank.reagents.trans_to_holder(biotank.canister.reagents, 10)
+		biotank.reagents.trans_to_holder(biotank.canister.reagents, transfer_rate)
 
 
 /obj/machinery/multistructure/bioreactor_part/biotank_platform/attackby(var/obj/item/I, var/mob/user)
