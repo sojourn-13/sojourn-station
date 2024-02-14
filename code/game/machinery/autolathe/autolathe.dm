@@ -5,6 +5,7 @@
 #define ERR_NOLICENSE "no license"
 #define ERR_PAUSED "paused"
 #define ERR_NOINSIGHT "no insight"
+#define ERR_WRONG_BUILDTYPE "cant read"
 
 
 /obj/machinery/autolathe
@@ -21,6 +22,7 @@
 	circuit = /obj/item/circuitboard/autolathe
 
 	var/build_type = AUTOLATHE
+	var/code_dex = "AUTOLATHE" //Used in place of build_type
 
 	var/obj/item/computer_hardware/hard_drive/portable/disk
 
@@ -76,7 +78,8 @@
 		ERR_NOMATERIAL = "Not enough materials.",
 		ERR_NOREAGENT = "Not enough reagents.",
 		ERR_PAUSED = "**Construction Paused**",
-		ERR_NOINSIGHT = "Not enough insight."
+		ERR_NOINSIGHT = "Not enough insight.",
+		ERR_WRONG_BUILDTYPE = "Unable to read design."
 	)
 
 	var/tmp/datum/wires/autolathe/wires
@@ -796,6 +799,11 @@
 		if(!design_file.check_license())
 			return ERR_NOLICENSE
 
+
+		if(design_file.design.required_printer_code)
+			if(design_file.design.code_dex != code_dex)
+				return ERR_WRONG_BUILDTYPE
+
 		var/datum/design/design = design_file.design
 
 		for(var/rmat in design.materials)
@@ -1073,6 +1081,7 @@
 #undef ERR_NOLICENSE
 #undef ERR_PAUSED
 #undef ERR_NOINSIGHT
+#undef ERR_WRONG_BUILDTYPE
 
 
 // A version with some materials already loaded, to be used on map spawn

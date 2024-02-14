@@ -39,7 +39,7 @@
 	icon = 'icons/obj/guns/projectile/sawnoff/gladstone.dmi'
 	icon_state = "obrez"
 	item_state = "obrez"
-	gun_parts = list(/obj/item/part/gun/frame/gladstone = 1, /obj/item/stack/material/plastic = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)
+	gun_parts = list(/obj/item/stack/material/plastic = 1, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)
 	max_shells = 4
 	w_class = ITEM_SIZE_BULKY
 	damage_multiplier = 0.8
