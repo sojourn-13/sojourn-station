@@ -163,8 +163,7 @@
 	ship_area = FALSE
 	turf_initializer = new /datum/turf_initializer/maintenance()
 	ambience = list('sound/ambience/maintambience.ogg')
-	area_light_color = COLOR_LIGHTING_MAINT_DARK
-	dynamic_lighting = FALSE
+	area_light_color = COLOR_LIGHTING_ORANGE_BRIGHT // to give that streetlight vibe
 	is_dungeon_lootable = TRUE
 
 
@@ -268,7 +267,6 @@
 /area/nadezhda/outside
 	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
-	dynamic_lighting = FALSE
 	flags = null
 	is_dungeon_lootable = TRUE
 	ship_area = FALSE
@@ -406,6 +404,11 @@
 
 /area/nadezhda/outside/inside_colony/west
 	name = "Colony Meadow - West"
+
+/area/nadezhda/outside/inside_colony/road
+	name = "Colony Meadow - Road"
+	area_light_color = COLOR_LIGHTING_ORANGE_BRIGHT
+
 /area/nadezhda/outside/mountainsolars
 	name = "Mountain Solars"
 	icon_state = "meadow"
@@ -857,7 +860,7 @@
 /area/nadezhda/crew_quarters/hydroponics/garden
 	name = "\improper Garden"
 	icon_state = "garden"
-	dynamic_lighting = FALSE
+	dynamic_lighting = TRUE
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 
 /area/nadezhda/crew_quarters/clothingstorage
@@ -1354,14 +1357,17 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/security/maingate
 	name = "\improper Security - Main Gate"
 	icon_state = "security"
-	dynamic_lighting = FALSE
+	dynamic_lighting = TRUE
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
+	area_light_color = COLOR_LIGHTING_BLUE_CREW
 
 /area/nadezhda/security/maingate/east
 	name = "\improper Security - Eastern Perimeter"
+	area_light_color = COLOR_LIGHTING_BLUE_CREW
 
 /area/nadezhda/security/maingate/west
 	name = "\improper Security - Western Perimeter"
+	area_light_color = COLOR_LIGHTING_BLUE_CREW
 
 /area/nadezhda/security/checkpoint/supply
 	name = "Security Post - Cargo Bay"
