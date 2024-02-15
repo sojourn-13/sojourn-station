@@ -10,7 +10,7 @@
 	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_NORMAL
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
-	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_WOOD = 8, MATERIAL_SILVER = 1)
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_WOOD = 8, MATERIAL_SILVER = 6)
 	price_tag = 900
 	projectile_type = /obj/item/projectile/beam/midlaser
 	fire_delay = 5
