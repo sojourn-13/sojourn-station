@@ -64,8 +64,9 @@
 	invisibility = 101
 	anchored = TRUE
 
-/obj/structure/invislight/New()
-	set_light(7, 5, "#999999")
+/obj/structure/invislight/New()//Disables dynamic lights when nighttime, preventing a lot of structures being lit up with no light sources
+	if(!determine_night())
+		set_light(7, 5, "#999999")
 	. = ..()
 
 /obj/structure/invislightsmall

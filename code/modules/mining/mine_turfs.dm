@@ -33,6 +33,12 @@
 			return
 		return
 
+/turf/unsimulated/wall/jungle/New() // PART OF DAY/NIGHT CYCLE
+	if(determine_night())
+		opacity = 0
+	else
+		opacity = 1
+
 /turf/unsimulated/wall/jungle
 	name = "dense forestry"
 	icon = 'icons/turf/flooring/grass.dmi'
