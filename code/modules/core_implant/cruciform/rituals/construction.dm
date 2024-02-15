@@ -14,10 +14,11 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			continue
 		if(blueprint_type == /datum/nt_blueprint/cruciform_upgrade)
 			continue
+		/* - Removed do to exploits with uprooting after autolathen printing giving full prices
 		if(blueprint_type == /datum/nt_blueprint/weapons)
 			continue
 		if(blueprint_type == /datum/nt_blueprint/health_care)
-			continue
+			continue*/
 		var/datum/nt_blueprint/pb = new blueprint_type()
 		list[pb.name] = pb
 	. = list
