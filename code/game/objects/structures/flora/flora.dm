@@ -907,13 +907,10 @@
 			return
 		return
 
-/obj/structure/flora/big/New() //Will just delete bushes if it's night
-	if(determine_night())
-		del /obj/structure/flora/big
-		
 /obj/structure/flora/big
 	name = "big bush"
 	layer = ABOVE_MOB_LAYER
+	plane = 2 //elevates the thing above the jungle background layer
 	anchored = 1
 
 /obj/structure/flora/small/big/attackby(obj/item/I, mob/user)

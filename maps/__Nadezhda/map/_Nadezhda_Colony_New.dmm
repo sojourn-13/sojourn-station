@@ -26598,6 +26598,15 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
+"fAd" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1
+	},
+/obj/machinery/light/floor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/pros/shuttle)
 "fAf" = (
 /obj/structure/closet/random_hostilemobs,
 /obj/machinery/light/small,
@@ -29385,6 +29394,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/science)
+"gfi" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/light/floor{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/pros/shuttle)
 "gfl" = (
 /obj/structure/disposalpipe/junction{
 	dir = 4;
@@ -35913,8 +35934,8 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/lab)
 "hzj" = (
-/obj/machinery/light/floor{
-	dir = 3
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/outside/inside_colony/road)
@@ -43504,8 +43525,8 @@
 /turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/rnd/robotics)
 "jaF" = (
-/obj/machinery/light/floor{
-	dir = 4
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/outside/inside_colony/road)
@@ -47493,6 +47514,16 @@
 /obj/random/junk,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"jQu" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/sign/warning/docking_area/small2,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/pros/shuttle)
 "jQI" = (
 /obj/structure/shuttle_part/mining{
 	icon_state = "17,19"
@@ -48614,6 +48645,10 @@
 	},
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
+"kcX" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/outside/inside_colony/road)
 "kdb" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -48657,7 +48692,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
+/obj/machinery/light/small{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -59094,6 +59129,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/research)
+"moo" = (
+/obj/structure/sign/warning/docking_area/small,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/pros/shuttle)
 "mou" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -59471,6 +59510,13 @@
 /obj/machinery/floodlight,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/surfacesec)
+"msr" = (
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#0892d0"
+	},
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/inside_colony/road)
 "msx" = (
 /obj/random/structures/low_chance,
 /obj/effect/decal/cleanable/rubble,
@@ -74386,11 +74432,12 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/bridge)
 "pqW" = (
-/obj/machinery/light/floor{
-	dir = 1
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/golden,
-/area/nadezhda/outside/inside_colony/road)
+/obj/structure/sign/warning/docking_area/small2,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/nadezhda/pros/shuttle)
 "pqZ" = (
 /obj/structure/table/gamblingtable,
 /obj/machinery/alarm{
@@ -81293,6 +81340,12 @@
 /area/nadezhda/rnd/circuitlab{
 	name = "Science Expedition prep"
 	})
+"qJL" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/golden,
+/area/nadezhda/outside/inside_colony/road)
 "qJO" = (
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/under/hawaiian/vintage,
@@ -81913,7 +81966,7 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 24
 	},
-/obj/machinery/light{
+/obj/machinery/light/small{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -90291,7 +90344,9 @@
 /area/nadezhda/maintenance/undergroundfloor2north)
 "sBc" = (
 /obj/effect/floor_decal/industrial/danger,
-/obj/structure/sign/warning/docking_area/small2,
+/obj/machinery/light/floor{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/pros/shuttle)
 "sBf" = (
@@ -105621,6 +105676,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/outside/inside_colony/road)
 "vHW" = (
@@ -115052,6 +115108,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
+"xCm" = (
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/gray_platform,
+/area/nadezhda/outside/inside_colony/road)
 "xCn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -116409,6 +116475,10 @@
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/hallway/surface/section1)
+"xQJ" = (
+/obj/machinery/light,
+/turf/simulated/floor/asteroid/dirt/dust,
+/area/nadezhda/outside/inside_colony/road)
 "xQK" = (
 /obj/structure/closet/secure_closet/reinforced/hos,
 /turf/simulated/floor/wood,
@@ -208261,14 +208331,14 @@ qlM
 qlM
 nRx
 qlM
+eUw
 qlM
 qlM
 qlM
 qlM
 qlM
 qlM
-qlM
-qlM
+eUw
 qlM
 nRx
 qlM
@@ -210300,7 +210370,7 @@ itd
 itd
 itd
 itd
-cxs
+fAd
 rHw
 pvI
 hGC
@@ -212301,14 +212371,14 @@ dXe
 dXe
 qGW
 dXe
+etf
+pqW
 dXe
 dXe
 dXe
-dXe
-dXe
+jQu
 xtO
-xtO
-xtO
+gfi
 xtO
 qkB
 xtO
@@ -212705,7 +212775,7 @@ pHb
 tfr
 kgI
 kgI
-pHb
+moo
 suh
 iqL
 iqL
@@ -219775,7 +219845,7 @@ cum
 gej
 aPg
 aeI
-vHU
+xCm
 vHU
 ufr
 rIK
@@ -220584,7 +220654,7 @@ iyJ
 gUw
 wzm
 ksX
-hzj
+ksX
 ruQ
 uit
 uit
@@ -221189,8 +221259,8 @@ yjF
 ckO
 xJo
 aeI
-ksX
-ksX
+jaF
+kcX
 aeI
 hcX
 gcR
@@ -222199,7 +222269,7 @@ pfy
 fFO
 lPo
 iJr
-pqW
+ksX
 ksX
 iJr
 pFV
@@ -223007,8 +223077,8 @@ pFV
 lPo
 pFV
 aeI
-ksX
-ksX
+jaF
+kcX
 aeI
 pFV
 vrW
@@ -223614,7 +223684,7 @@ tyN
 pfy
 eli
 ksX
-hzj
+ksX
 wFM
 pFV
 xGe
@@ -224010,7 +224080,7 @@ kvx
 iaD
 mvt
 iaD
-ksX
+qJL
 ksX
 ksX
 ksX
@@ -224212,10 +224282,10 @@ kvx
 iaD
 mvt
 iaD
+hzj
 ksX
 ksX
 ksX
-jaF
 ksX
 ksX
 ksX
@@ -224421,8 +224491,8 @@ iJr
 iJr
 iJr
 aeI
-ugp
-ugp
+msr
+xQJ
 aeI
 pFV
 tBq
