@@ -137,6 +137,7 @@
 		SEMI_AUTO_NODELAY
 		)
 	serial_type = "SI"
+	gun_parts = null
 
 /obj/item/gun/projectile/automatic/ak47/sa
 	name = "\"Kalashnikov\" rifle"

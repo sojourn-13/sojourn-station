@@ -29,6 +29,7 @@
 		FULL_AUTO_600_NOLOSS
 		)
 	serial_type = "NM"
+	gun_parts = null
 
 	wield_delay = 0.5 SECOND
 	wield_delay_factor = 0.1 // 10 vig
