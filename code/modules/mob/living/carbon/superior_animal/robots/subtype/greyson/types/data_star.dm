@@ -372,7 +372,7 @@ This monster is borderline unkillable and will make players upset
 	if(built_up_rage > 2)
 		to_chat(world, "<b><font color='#ffaa00'>Qdel shield successful, Data Collected.</font></b>")
 
-/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/forceMove()
+/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/forceMove(atom/destination, var/special_event, glide_size_override=0)
 	if(built_up_rage <= 1 && allow_teleporters)
 		if(!marked_for_death)
 			to_chat(world, "<b><font color='#ffaa00'>Data Collected, fabricating counter measure.</font></b>")
