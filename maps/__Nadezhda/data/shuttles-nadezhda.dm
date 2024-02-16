@@ -49,7 +49,6 @@
 	name = "Surface Transit Landing Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
-	dynamic_lighting = FALSE
 	base_turf = /turf/simulated/floor/plating/under
 
 //Consoles
@@ -115,7 +114,6 @@
 	name = "Skipjack Landing Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
-	dynamic_lighting = TRUE
 	base_turf = /turf/space
 
 //Merc shuttle Code
@@ -176,7 +174,6 @@
 	name = "Mercenary Landing Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
-	dynamic_lighting = TRUE
 	base_turf = /turf/space
 
 //Scav shuttle
@@ -235,7 +232,6 @@
 	name = "The Rocinante Landing Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
-	dynamic_lighting = FALSE
 	base_turf = /turf/simulated/floor/reinforced
 
 //Marshal shuttle
@@ -296,5 +292,4 @@
 	name = "The Vasiliy Landing Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
-	dynamic_lighting = FALSE
 	base_turf = /turf/simulated/floor/reinforced

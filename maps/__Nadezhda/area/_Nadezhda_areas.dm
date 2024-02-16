@@ -415,6 +415,7 @@
 	sound_env = MOUNTAINS
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 	is_dungeon_lootable = FALSE
+	area_light_color = COLOR_LIGHTING_ORANGE_BRIGHT
 
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 
@@ -1707,7 +1708,7 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/pros/shuttle
 	name = "\improper Shuttle Hangar"
 	icon_state = "erisgreen"
-	dynamic_lighting = FALSE
+	area_light_color = COLOR_LIGHTING_BLUE_CREW
 
 /area/nadezhda/pros/proelav
 	name = "\improper Lonestar Surface Elevator"
