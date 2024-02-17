@@ -264,6 +264,10 @@
 
 //Outside natural areas
 
+/area/nadezhda/outside/New() //Part of the day/night cycle system
+	apply_dynamic_lighting()
+	.=..()
+
 /area/nadezhda/outside
 	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
@@ -1355,18 +1359,18 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Security Checkpoint"
 	icon_state = "checkpoint1"
 
-/area/nadezhda/security/maingate
+/area/nadezhda/outside/security/maingate //Changed this typepath to include outside to make it affected by day/night cycle
 	name = "\improper Security - Main Gate"
 	icon_state = "security"
 	dynamic_lighting = TRUE
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 	area_light_color = COLOR_LIGHTING_BLUE_CREW
 
-/area/nadezhda/security/maingate/east
+/area/nadezhda/outside/security/maingate/east
 	name = "\improper Security - Eastern Perimeter"
 	area_light_color = COLOR_LIGHTING_BLUE_CREW
 
-/area/nadezhda/security/maingate/west
+/area/nadezhda/outside/security/maingate/west
 	name = "\improper Security - Western Perimeter"
 	area_light_color = COLOR_LIGHTING_BLUE_CREW
 
@@ -1705,7 +1709,7 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Foreman Office"
 	icon_state = "erisgreen"
 
-/area/nadezhda/pros/shuttle
+/area/nadezhda/outside/pros/shuttle //Typepath changed so it would be affected by day/night aswell.
 	name = "\improper Shuttle Hangar"
 	icon_state = "erisgreen"
 	area_light_color = COLOR_LIGHTING_BLUE_CREW

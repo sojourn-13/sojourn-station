@@ -18,7 +18,7 @@
 		/area/eris/rnd/server, /area/mine, /area/asteroid,
 		/area/nadezhda/quartermaster/mining_outside_doc,
 		/area/colony, /area/nadezhda/dungeon, /area/nadezhda/outside,
-		/area/nadezhda/crew_quarters/hydroponics/garden, /area/nadezhda/pros/shuttle,
+		/area/nadezhda/crew_quarters/hydroponics/garden, /area/nadezhda/outside/pros/shuttle,
 		/area/nadezhda/maintenance,
 		/area/nadezhda/crew_quarters/botanist)
 

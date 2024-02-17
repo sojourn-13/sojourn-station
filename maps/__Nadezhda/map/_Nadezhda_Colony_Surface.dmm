@@ -14,11 +14,11 @@
 /obj/structure/catwalk,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aad" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aae" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -27,7 +27,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaf" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -36,7 +36,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aag" = (
 /turf/unsimulated/mask,
 /area/mine/gulag)
@@ -46,18 +46,18 @@
 	icon_state = "dangercorner"
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aai" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1;
 	icon_state = "danger"
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaj" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "aak" = (
@@ -199,35 +199,35 @@
 "aay" = (
 /obj/effect/floor_decal/industrial/danger/corner,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaz" = (
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaA" = (
 /obj/effect/floor_decal/industrial/danger,
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaB" = (
 /obj/effect/floor_decal/industrial/danger/corner{
 	dir = 1;
 	icon_state = "dangercorner"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaC" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaD" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaE" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/dirt,
@@ -240,7 +240,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaG" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -249,14 +249,14 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaH" = (
 /obj/effect/floor_decal/industrial/danger,
 /obj/effect/floor_decal/industrial/stand_clear{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaI" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1;
@@ -264,7 +264,7 @@
 	},
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaJ" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1;
@@ -272,14 +272,14 @@
 	},
 /obj/effect/floor_decal/industrial/stand_clear,
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaK" = (
 /obj/effect/floor_decal/industrial/danger/corner{
 	dir = 8;
 	icon_state = "dangercorner"
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "aaM" = (
 /obj/structure/table/standard,
 /obj/machinery/power/apc{
@@ -373,7 +373,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "aaZ" = (
@@ -383,14 +383,14 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "aba" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "abb" = (
@@ -399,7 +399,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "abc" = (
@@ -409,13 +409,13 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "abd" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "abe" = (
@@ -425,7 +425,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "abf" = (
@@ -435,7 +435,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "abg" = (
@@ -443,7 +443,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "abh" = (
@@ -480,7 +480,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "abk" = (
@@ -491,7 +491,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "abl" = (
@@ -501,7 +501,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "abm" = (
@@ -511,7 +511,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "abn" = (
@@ -521,7 +521,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "abo" = (
@@ -533,7 +533,7 @@
 	},
 /obj/structure/invislight,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "abp" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -543,7 +543,7 @@
 	},
 /obj/structure/invislight,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "abq" = (
 /obj/machinery/door/airlock/lift,
 /turf/simulated/shuttle/floor/mining{
@@ -1757,7 +1757,7 @@
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "aen" = (
@@ -1933,7 +1933,7 @@
 	},
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "aeQ" = (
@@ -2006,7 +2006,7 @@
 /obj/structure/catwalk,
 /obj/structure/railing,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afc" = (
@@ -2045,7 +2045,7 @@
 /obj/effect/floor_decal/industrial/warningred,
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afi" = (
@@ -2094,7 +2094,7 @@
 	},
 /obj/effect/floor_decal/industrial/box/red,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afo" = (
@@ -2103,7 +2103,7 @@
 	},
 /obj/item/modular_computer/console/preset/security/camera,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afp" = (
@@ -2119,7 +2119,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afq" = (
@@ -2133,7 +2133,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afr" = (
@@ -2147,12 +2147,12 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afs" = (
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "aft" = (
@@ -2161,7 +2161,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afu" = (
@@ -2172,7 +2172,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afv" = (
@@ -2192,7 +2192,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afx" = (
@@ -2200,7 +2200,7 @@
 /obj/item/device/camera,
 /obj/item/device/binoculars,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afy" = (
@@ -2238,7 +2238,7 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afz" = (
@@ -2267,7 +2267,7 @@
 	},
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afB" = (
@@ -2282,7 +2282,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afC" = (
@@ -2298,7 +2298,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afD" = (
@@ -2318,7 +2318,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "afE" = (
@@ -2383,7 +2383,7 @@
 /obj/structure/catwalk,
 /obj/structure/railing,
 /turf/simulated/floor/plating/under,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "afP" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2421,7 +2421,7 @@
 "afU" = (
 /obj/effect/shuttle_landmark/mercshuttle_colony,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "afV" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -2430,7 +2430,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "afW" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -2439,7 +2439,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "afX" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -3819,7 +3819,7 @@
 	},
 /obj/machinery/recharge_station/upgraded_t_three,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "aiV" = (
@@ -4308,7 +4308,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "akg" = (
@@ -4699,7 +4699,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "akU" = (
@@ -5039,7 +5039,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "asN" = (
@@ -5136,7 +5136,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "ayh" = (
@@ -5282,7 +5282,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "aEo" = (
@@ -5363,7 +5363,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "aJM" = (
@@ -5541,7 +5541,7 @@
 /area/nadezhda/outside/forest)
 "aRc" = (
 /turf/simulated/floor/asteroid/grass,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "aSs" = (
@@ -5605,7 +5605,7 @@
 	},
 /obj/effect/floor_decal/industrial/road/straight2,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "aTK" = (
@@ -5722,7 +5722,7 @@
 	name = "perimeter fence"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "bae" = (
@@ -5890,7 +5890,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "bjb" = (
@@ -6282,7 +6282,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "bzc" = (
@@ -6495,7 +6495,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "bIL" = (
@@ -6556,12 +6556,12 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "bKQ" = (
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "bLe" = (
@@ -6744,7 +6744,7 @@
 	},
 /obj/structure/cable,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "bVM" = (
@@ -7013,7 +7013,7 @@
 "ciA" = (
 /obj/structure/multiz/stairs/enter/bottom,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "ciC" = (
@@ -7379,7 +7379,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "cDN" = (
@@ -7406,7 +7406,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "cDY" = (
@@ -7472,7 +7472,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "cGP" = (
@@ -7982,7 +7982,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "cZM" = (
@@ -8436,7 +8436,7 @@
 "dBn" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "dBG" = (
@@ -8734,7 +8734,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "dQc" = (
@@ -8750,7 +8750,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "dSi" = (
@@ -8869,7 +8869,7 @@
 	name = "WARNING: ELECTRIC FENCE"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "dWm" = (
@@ -8925,7 +8925,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "eaH" = (
@@ -9029,7 +9029,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "eeD" = (
@@ -9339,7 +9339,7 @@
 /obj/effect/floor_decal/spline/plain,
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "ezC" = (
@@ -9359,7 +9359,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "eBf" = (
@@ -9420,7 +9420,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating/under,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "eCw" = (
@@ -9690,7 +9690,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "eQy" = (
@@ -9791,7 +9791,7 @@
 "eVL" = (
 /obj/structure/low_wall,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "eWv" = (
@@ -9900,7 +9900,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "faS" = (
@@ -10312,7 +10312,7 @@
 /obj/effect/floor_decal/industrial/hatch,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "fAz" = (
@@ -10404,7 +10404,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "fFo" = (
@@ -10488,7 +10488,7 @@
 	name = "perimeter fence"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "fKS" = (
@@ -10530,7 +10530,7 @@
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/stand_clear/red,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "fNr" = (
@@ -10708,7 +10708,7 @@
 	icon_state = "railing0"
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "fWb" = (
@@ -10739,7 +10739,7 @@
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "fXQ" = (
@@ -10881,7 +10881,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "gde" = (
@@ -10926,7 +10926,7 @@
 	},
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "gfM" = (
@@ -11018,7 +11018,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "glg" = (
@@ -11454,7 +11454,7 @@
 	icon_state = "railing0"
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "gGP" = (
@@ -11466,7 +11466,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "gID" = (
@@ -11507,7 +11507,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "gLu" = (
@@ -11647,7 +11647,7 @@
 	},
 /obj/machinery/computer/prisoner,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "gQh" = (
@@ -12129,7 +12129,7 @@
 /obj/item/storage/firstaid/regular,
 /obj/item/bodybag/cryobag,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "hnl" = (
@@ -12450,7 +12450,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "hBM" = (
@@ -12500,7 +12500,7 @@
 	req_access = list(1)
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "hDd" = (
@@ -12608,7 +12608,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "hIb" = (
@@ -12825,7 +12825,7 @@
 "hSJ" = (
 /obj/effect/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "hTe" = (
@@ -13262,7 +13262,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "iiz" = (
@@ -13373,7 +13373,7 @@
 	req_access = list(1)
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "imt" = (
@@ -13566,7 +13566,7 @@
 	name = "WARNING: ELECTRIC FENCE"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "ixd" = (
@@ -13584,7 +13584,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "iye" = (
@@ -13615,7 +13615,7 @@
 "iBe" = (
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "iBA" = (
@@ -14996,7 +14996,7 @@
 /obj/effect/floor_decal/industrial/stand_clear/white,
 /obj/effect/floor_decal/industrial/warningwhite,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "jVq" = (
@@ -15121,7 +15121,7 @@
 	icon_state = "box_corners_red"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "kbM" = (
@@ -15261,7 +15261,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "klo" = (
@@ -15332,7 +15332,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "kpY" = (
@@ -15448,7 +15448,7 @@
 "kys" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "kyC" = (
@@ -15456,7 +15456,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "kyR" = (
@@ -15564,7 +15564,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "kEt" = (
@@ -15573,7 +15573,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "kEu" = (
@@ -15731,13 +15731,13 @@
 /obj/random/junkfood/low_chance,
 /obj/item/device/camera_film,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "kLD" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "kLJ" = (
@@ -15857,7 +15857,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "kUm" = (
@@ -15896,7 +15896,7 @@
 	req_access = list(1)
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "kVG" = (
@@ -15927,7 +15927,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "kWH" = (
@@ -15971,7 +15971,7 @@
 /area/nadezhda/outside/forest)
 "laC" = (
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "laF" = (
@@ -16103,7 +16103,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "lhN" = (
@@ -16124,7 +16124,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "ljp" = (
@@ -16418,7 +16418,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "lBY" = (
@@ -16659,7 +16659,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "lOF" = (
@@ -16684,7 +16684,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "lPW" = (
@@ -16899,7 +16899,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "lYN" = (
@@ -17022,7 +17022,7 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "mhK" = (
@@ -17031,7 +17031,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "mhV" = (
@@ -17065,7 +17065,7 @@
 /obj/machinery/camera/network/cev_eris,
 /obj/machinery/porta_turret/gate,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "mjj" = (
@@ -17278,12 +17278,12 @@
 "mtE" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "mtY" = (
 /turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "mug" = (
@@ -17312,7 +17312,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "mvb" = (
@@ -17407,7 +17407,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "mzw" = (
@@ -17447,7 +17447,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "mBh" = (
@@ -17655,7 +17655,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "mNc" = (
@@ -17714,7 +17714,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "mPS" = (
@@ -18002,7 +18002,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "njg" = (
@@ -18156,7 +18156,7 @@
 "nqC" = (
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "nqD" = (
@@ -18722,7 +18722,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "odv" = (
@@ -18807,7 +18807,7 @@
 "ohS" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "ohU" = (
@@ -18892,7 +18892,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "olM" = (
@@ -18961,7 +18961,7 @@
 /obj/effect/floor_decal/industrial/road/warning2,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "ooT" = (
@@ -19035,7 +19035,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/steel/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "otl" = (
@@ -19054,7 +19054,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "otL" = (
@@ -19428,7 +19428,7 @@
 "oLe" = (
 /obj/machinery/camera/network/cev_eris,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "oLr" = (
@@ -19437,7 +19437,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "oLv" = (
@@ -19512,7 +19512,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "oOl" = (
@@ -19738,7 +19738,7 @@
 	name = "WARNING: ELECTRIC FENCE"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "pac" = (
@@ -19749,7 +19749,7 @@
 "pal" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "par" = (
@@ -19947,7 +19947,7 @@
 /area/nadezhda/outside/forest)
 "pjq" = (
 /turf/unsimulated/mineral,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "pjv" = (
@@ -20043,7 +20043,7 @@
 	name = "WARNING: ELECTRIC FENCE"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "pnB" = (
@@ -20081,7 +20081,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "pom" = (
@@ -20930,7 +20930,7 @@
 "qcD" = (
 /obj/effect/floor_decal/industrial/road/warning2,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "qdi" = (
@@ -21100,7 +21100,7 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "qjT" = (
@@ -21131,7 +21131,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "qky" = (
@@ -21293,7 +21293,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "qsy" = (
@@ -21641,7 +21641,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "qJu" = (
@@ -21704,7 +21704,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "qMC" = (
@@ -21794,7 +21794,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "qSe" = (
@@ -21853,7 +21853,7 @@
 /obj/machinery/camera/network/cev_eris,
 /obj/machinery/porta_turret/gate,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "qXH" = (
@@ -22083,7 +22083,7 @@
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "rlL" = (
@@ -22097,7 +22097,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "rmK" = (
@@ -22379,7 +22379,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "rzj" = (
@@ -22717,7 +22717,7 @@
 	name = "perimeter fence"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "rOs" = (
@@ -23053,7 +23053,7 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "seg" = (
@@ -23233,7 +23233,7 @@
 /area/nadezhda/absolutism/storage)
 "sli" = (
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "slL" = (
@@ -23348,7 +23348,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "srt" = (
@@ -23363,7 +23363,7 @@
 "srw" = (
 /obj/structure/flora/small/trailrocka1,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "srY" = (
@@ -23465,7 +23465,7 @@
 "szx" = (
 /obj/structure/bed,
 /turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "szO" = (
@@ -23682,7 +23682,7 @@
 	pixel_y = 30
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "sOv" = (
@@ -23943,7 +23943,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "taJ" = (
@@ -24001,7 +24001,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "tey" = (
@@ -24302,7 +24302,7 @@
 "tuR" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "tuU" = (
@@ -24329,7 +24329,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "twB" = (
@@ -24479,7 +24479,7 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "tCr" = (
@@ -24653,7 +24653,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "tMI" = (
@@ -24791,7 +24791,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "tWm" = (
@@ -24933,13 +24933,13 @@
 	name = "WARNING: ELECTRIC FENCE"
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "ubs" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/bluecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "ubM" = (
@@ -25025,7 +25025,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "uhQ" = (
@@ -25173,7 +25173,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "urr" = (
@@ -25706,7 +25706,7 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "uNa" = (
@@ -25748,7 +25748,7 @@
 	dir = 4
 	},
 /turf/simulated/wall/r_wall,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "uNP" = (
@@ -26026,7 +26026,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "vde" = (
@@ -26058,7 +26058,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "vfM" = (
@@ -26132,7 +26132,7 @@
 /obj/structure/low_wall,
 /mob/living/simple_animal/jungle_bird,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "vio" = (
@@ -26140,7 +26140,7 @@
 /obj/machinery/camera/network/cev_eris,
 /obj/machinery/porta_turret/gate,
 /turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "vit" = (
@@ -26155,7 +26155,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "vjg" = (
@@ -26167,7 +26167,7 @@
 /area/nadezhda/hallway/surface/section1)
 "vjD" = (
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "vjQ" = (
@@ -26360,7 +26360,7 @@
 	name = "glass shutter"
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "vwQ" = (
@@ -26438,7 +26438,7 @@
 /obj/effect/floor_decal/industrial/hatch,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "vzL" = (
@@ -26965,7 +26965,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "vZp" = (
@@ -27013,7 +27013,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "wcK" = (
@@ -27312,7 +27312,7 @@
 "woI" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/dirt/dust,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "woJ" = (
@@ -27356,7 +27356,7 @@
 "wsa" = (
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "wsc" = (
@@ -27595,7 +27595,7 @@
 /area/nadezhda/outside/forest)
 "wGQ" = (
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/nadezhda/pros/shuttle)
+/area/nadezhda/outside/pros/shuttle)
 "wGU" = (
 /obj/random/closet_maintloot/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -28382,7 +28382,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "xxO" = (
@@ -28729,7 +28729,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/nadezhda/security/maingate{
+/area/nadezhda/outside/security/maingate{
 	name = "\improper Outdoors - Pad"
 	})
 "xZX" = (
