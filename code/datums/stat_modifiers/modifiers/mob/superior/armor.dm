@@ -92,9 +92,9 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/positive/low
 	armor_adjustment = list(
-		melee = 10,
-		bullet = 10,
-		energy = 10,
+		melee = 2,
+		bullet = 2,
+		energy = 2,
 		bomb = 10,
 		bio = 10,
 		rad = 10,
@@ -103,9 +103,9 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/positive/medium
 	armor_adjustment = list(
-		melee = 20,
-		bullet = 20,
-		energy = 20,
+		melee = 3,
+		bullet = 3,
+		energy = 3,
 		bomb = 20,
 		bio = 20,
 		rad = 20,
@@ -114,9 +114,9 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/positive/high
 	armor_adjustment = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
+		melee = 4,
+		bullet = 4,
+		energy = 4,
 		bomb = 30,
 		bio = 30,
 		rad = 30,
@@ -161,9 +161,9 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/low
 	armor_adjustment = list(
-		melee = -10,
-		bullet = -10,
-		energy = -10,
+		melee = -2,
+		bullet = -2,
+		energy = -2,
 		bomb = -10,
 		bio = -10,
 		rad = -10,
@@ -172,9 +172,9 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/medium
 	armor_adjustment = list(
-		melee = -20,
-		bullet = -20,
-		energy = -20,
+		melee = -5,
+		bullet = -5,
+		energy = -5,
 		bomb = -20,
 		bio = -20,
 		rad = -20,
@@ -183,9 +183,9 @@
 
 /datum/stat_modifier/mob/living/carbon/superior_animal/armor/flat/negative/high
 	armor_adjustment = list(
-		melee = -30,
-		bullet = -30,
-		energy = -30,
+		melee = -7,
+		bullet = -7,
+		energy = -7,
 		bomb = -30,
 		bio = -30,
 		rad = -30,

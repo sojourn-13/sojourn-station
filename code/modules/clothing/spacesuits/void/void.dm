@@ -6,9 +6,9 @@
 
 	heat_protection = HEAD
 	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 10,
+		melee = 7,
+		bullet = 5,
+		energy = 2,
 		bomb = 25,
 		bio = 100,
 		rad = 75
@@ -24,9 +24,9 @@
 	desc = "A high-tech dark red space suit." //not that high tech apparently. This is legacy stuff so should be avoided being messed with too
 	slowdown = 1
 	armor_list = list(
-		melee = 30,
-		bullet = 20,
-		energy = 10,
+		melee = 7,
+		bullet = 5,
+		energy = 2,
 		bomb = 25,
 		bio = 100,
 		rad = 75

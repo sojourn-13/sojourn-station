@@ -15,7 +15,7 @@
 	mag_well = MAG_WELL_SMG|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 28, MATERIAL_PLASTIC = 10)
 	price_tag = 1000
-	penetration_multiplier = 1.2
+	penetration_multiplier = 0.2
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
@@ -65,7 +65,7 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	price_tag = 800
 	damage_multiplier = 0.9
-	penetration_multiplier = 1.0
+	penetration_multiplier = 0
 	init_recoil = SMG_RECOIL(1.3)
 	auto_eject = 0
 	serial_type = "NM"

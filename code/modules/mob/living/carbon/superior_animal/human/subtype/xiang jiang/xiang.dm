@@ -10,7 +10,7 @@
 	maxHealth = 100
 	health = 100
 
-	armor = list(melee = 30, bullet = 30, energy = 20, bomb = 30, bio = 100, rad = 100)
+	armor = list(melee = 7, bullet = 7, energy = 5, bomb = 30, bio = 100, rad = 100)
 
 //range/ammo stuff
 	ranged = TRUE
@@ -73,7 +73,7 @@
 	maxHealth = 150
 	health = 150
 
-	armor = list(melee = 70, bullet = 50, energy = 50, bomb = 35, bio = 100, rad = 100)
+	armor = list(melee = 17, bullet = 12, energy = 12, bomb = 35, bio = 100, rad = 100)
 
 	ranged = FALSE
 

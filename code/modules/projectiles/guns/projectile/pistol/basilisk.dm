@@ -12,7 +12,7 @@
 	price_tag = 800
 	can_dual = TRUE
 	damage_multiplier = 1.1
-	penetration_multiplier = 1.2
+	penetration_multiplier = 0.2
 	init_recoil = HANDGUN_RECOIL(1.6)
 	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'

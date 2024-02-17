@@ -1,13 +1,13 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified
 
 	armor_adjustment = list(
-	melee = 10,
-	bullet = 5,
+	melee = 2,
+	bullet = 1,
 	bomb = 10,
 	agony = 15 //Rubbers deal way less to us!
 	)
 
-	armor_penetration_increment = 15
+	armor_divisor_increment = 1.5
 
 	stattags = DEFENSE_STATTAG | MELEE_STATTAG
 
@@ -18,12 +18,12 @@
 /datum/stat_modifier/mob/living/carbon/superior_animal/lambertian
 
 	armor_adjustment = list(
-	energy = 10,
-	agony = 10
+	energy = 2,
+	agony = 1
 	)
 
 	flash_resistances_increment = 2
-	armor_penetration_increment = 5
+	armor_divisor_increment = 1.15
 
 	stattags = DEFENSE_STATTAG
 

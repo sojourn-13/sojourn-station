@@ -56,7 +56,7 @@
 	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	damage_multiplier = 1.0
-	penetration_multiplier = 1.3
+	penetration_multiplier = 0.3
 	zoom_factors = list(0.2)
 	init_recoil = HANDGUN_RECOIL(0.6)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)

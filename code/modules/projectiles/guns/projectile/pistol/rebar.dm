@@ -14,7 +14,7 @@
 	mag_well = MAG_WELL_PISTOL
 	damage_multiplier = 1.6
 	init_recoil = HANDGUN_RECOIL(1)
-	penetration_multiplier = 2
+	penetration_multiplier = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM, GUN_SILENCABLE)
 	allow_greyson_mods = TRUE
 

@@ -47,7 +47,7 @@
 	active = TRUE
 	force = active_force
 	throwforce = active_throwforce
-	armor_penetration = active_ap
+	armor_divisor = active_ap
 	sharp = TRUE
 	edge = TRUE
 	w_class = active_w_class
@@ -62,7 +62,7 @@
 	active = FALSE
 	force = initial(force)
 	throwforce = initial(throwforce)
-	armor_penetration = initial(armor_penetration)
+	armor_divisor = initial(armor_divisor)
 	sharp = initial(sharp)
 	edge = initial(edge)
 	w_class = initial(w_class)

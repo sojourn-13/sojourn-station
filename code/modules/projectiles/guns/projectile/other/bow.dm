@@ -103,7 +103,7 @@
 	icon_state = "recurve"
 	desc = "A recurve hunting bow, made alternating bands of stalker chitin, animal sinew and wood laminated together."
 	matter = list(MATERIAL_BONE = 10, MATERIAL_WOOD = 10, MATERIAL_PLASTIC = 5)
-	penetration_multiplier = 1.5
+	penetration_multiplier = 0.5
 	gun_tags = list(ARROW_FIRING)
 	zoom_factors = list(2.0)
 	extra_damage_mult_scoped = 0.2
@@ -118,7 +118,7 @@
 	A modified \"Watchman\" scope is attached to the riser, with arrow drop markers for various weights of arrow present."
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 40, MATERIAL_PLASMAGLASS = 2)
 	damage_multiplier = 1.2
-	penetration_multiplier = 1.2
+	penetration_multiplier = 0.2
 	gun_tags = list(ARROW_FIRING)
 	max_upgrades = 4
 	zoom_factors = list(1.4)

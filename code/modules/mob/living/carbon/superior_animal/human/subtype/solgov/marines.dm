@@ -9,7 +9,7 @@
 	maxHealth = 100
 	health = 100
 
-	armor = list(melee = 50, bullet = 50, energy = 45, bomb = 50, bio = 100, rad = 100)
+	armor = list(melee = 12, bullet = 12, energy = 11, bomb = 50, bio = 100, rad = 100)
 
 	casingtype = /obj/item/ammo_casing/heavy_rifle_408/spent
 
@@ -75,7 +75,7 @@
 	icon_state = "solfed_trooper_shield"
 	icon_dead = "solfed_trooper_shield_dead"
 
-	armor = list(melee = 60, bullet = 70, energy = 50, bomb = 40, bio = 100, rad = 100)
+	armor = list(melee = 15, bullet = 17, energy = 12, bomb = 40, bio = 100, rad = 100)
 
 	casingtype = /obj/item/ammo_casing/magnum_40/spent
 
@@ -106,7 +106,7 @@
 	icon_state = "solfed_trooper_shotgun"
 	icon_dead = "solfed_trooper_shotgun_dead"
 
-	armor = list(melee = 70, bullet = 55, energy = 40, bomb = 70, bio = 100, rad = 100)
+	armor = list(melee = 17, bullet = 13, energy = 10, bomb = 70, bio = 100, rad = 100)
 
 	casingtype = /obj/item/ammo_casing/shotgun/spent
 
@@ -187,7 +187,7 @@
 	maxHealth = 75 //Less health than a noraml person.
 	health = 75
 
-	armor = list(melee = 25, bullet = 40, energy = 35, bomb = 20, bio = 100, rad = 100)
+	armor = list(melee = 6, bullet = 10, energy = 8, bomb = 20, bio = 100, rad = 100)
 
 	casingtype = /obj/item/ammo_casing/heavy_rifle_408/hv/spent
 

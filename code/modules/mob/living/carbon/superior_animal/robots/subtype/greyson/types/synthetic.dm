@@ -51,7 +51,7 @@
 	projectiletype = /obj/item/projectile/beam
 	health = 150
 	maxHealth = 150
-	armor = list(melee = 35, bullet = 25, energy = 40, bomb = 60, bio = 100, rad = 100) //We want to be gunned down, not lasered
+	armor = list(melee = 8, bullet = 6, energy = 10, bomb = 60, bio = 100, rad = 100) //We want to be gunned down, not lasered
 
 /// base type, dont use
 /mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/sniper

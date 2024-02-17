@@ -24,9 +24,9 @@
 	var/flash_resistances_mult
 	var/flash_resistances_zeroth = 0.5
 
-	var/armor_penetration_increment
-	var/armor_penetration_mult
-	var/armor_penetration_zeroth = 0
+	var/armor_divisor_increment
+	var/armor_divisor_mult
+	var/armor_divisor_zeroth = 1
 
 	var/rapid_fire_shooting_amount_increment
 	var/rapid_fire_shooting_amount_mult
@@ -78,10 +78,10 @@
 		if (flash_resistances_mult)
 			superior_holder.flash_resistances = ZERO_OR_MORE(round(superior_holder.flash_resistances / flash_resistances_mult))
 
-		if (armor_penetration_increment)
-			superior_holder.armor_penetration = ZERO_OR_MORE(superior_holder.armor_penetration - armor_penetration_increment)
-		if (armor_penetration_mult)
-			superior_holder.armor_penetration = ZERO_OR_MORE(superior_holder.armor_penetration / armor_penetration_mult)
+		if (armor_divisor_increment)
+			superior_holder.armor_divisor = ZERO_OR_MORE(superior_holder.armor_divisor - armor_divisor_increment)
+		if (armor_divisor_mult)
+			superior_holder.armor_divisor = ZERO_OR_MORE(superior_holder.armor_divisor / armor_divisor_mult)
 
 		if (fire_delay_increment)
 			superior_holder.fire_delay = ZERO_OR_MORE(superior_holder.fire_delay - fire_delay_increment)
@@ -153,10 +153,10 @@
 		if (flash_resistances_increment)
 			superior_target.flash_resistances = ZERO_OR_MORE(superior_target.flash_resistances + flash_resistances_increment)
 
-		if (armor_penetration_mult)
-			superior_target.armor_penetration = (SAFEMULT(superior_target.armor_penetration, armor_penetration_mult, armor_penetration_zeroth))
-		if (armor_penetration_increment)
-			superior_target.armor_penetration = (superior_target.armor_penetration + armor_penetration_increment)
+		if (armor_divisor_mult)
+			superior_target.armor_divisor = (SAFEMULT(superior_target.armor_divisor, armor_divisor_mult, armor_divisor_zeroth))
+		if (armor_divisor_increment)
+			superior_target.armor_divisor = (superior_target.armor_divisor + armor_divisor_increment)
 
 		if (fire_delay_mult)
 			superior_target.fire_delay_initial = ZERO_OR_MORE(round(SAFEMULT(superior_target.fire_delay_initial, fire_delay_mult, fire_delay_zeroth)))

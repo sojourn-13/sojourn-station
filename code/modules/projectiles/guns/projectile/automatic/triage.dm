@@ -16,7 +16,7 @@
 	mag_well = MAG_WELL_SMG|MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 14, MATERIAL_PLASTIC = 12, MATERIAL_PLATINUM = 3)
 	price_tag = 900
-	penetration_multiplier = 1.2
+	penetration_multiplier = 0.2
 	init_recoil = SMG_RECOIL(0.6)
 	gun_parts = null //she's a delicate, complicated lil flower. Don't try to pull her apart.
 	fire_sound_silenced = 'sound/weapons/guns/fire/grease_fire.ogg'

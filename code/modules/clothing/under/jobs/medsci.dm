@@ -141,9 +141,9 @@
 	item_state = "paramedic"
 	permeability_coefficient = 0.50
 	armor_list = list(
-		melee = 10,
-		bullet = 5,
-		energy = 5,
+		melee = 2,
+		bullet = 1,
+		energy = 1,
 		bomb = 0,
 		bio = 30,
 		rad = 0

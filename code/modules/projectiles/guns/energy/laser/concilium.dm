@@ -20,7 +20,7 @@
 	slowdown_hold = 1 //heavy wood stock. Stupidly chonky
 	suitable_cell = /obj/item/cell/large
 	damage_multiplier = 1.2 //Kinda bad beam inside but can be upgraded to be a normal laser lmg!
-	armor_penetration = 1.1
+	armor_divisor = 0.1
 	init_offset = 3
 	price_tag = 2000
 	gun_tags = list(GUN_LASER, GUN_ENERGY)

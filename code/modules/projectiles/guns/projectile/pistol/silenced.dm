@@ -15,7 +15,7 @@
 	mag_well = MAG_WELL_PISTOL
 	proj_step_multiplier = 0.8
 	damage_multiplier = 1.6
-	penetration_multiplier = 3
+	penetration_multiplier = 1.5
 	init_recoil = HANDGUN_RECOIL(0.4)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	serial_type = "SD GmbH"

@@ -26,7 +26,7 @@
 	bones_amount = 0
 	var/datum/effect/effect/system/trail/ion/trail
 
-	armor = list(melee = 35, bullet = 10, energy = 20, bomb = 25, bio = 0, rad = 25)
+	armor = list(melee = 8, bullet = 2, energy = 5, bomb = 25, bio = 0, rad = 25)
 
 	//the drone randomly switches between these states because it's malfunctioning
 	var/hostile_drone = 0

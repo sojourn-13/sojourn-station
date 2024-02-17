@@ -13,7 +13,7 @@
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_STEEL = 8, MATERIAL_WOOD = 6)
 	price_tag = 250 //cheap civ peashooter revolver, something similar to olivav
 	damage_multiplier = 1.15 //because pistol round
-	penetration_multiplier = 1.2
+	penetration_multiplier = 0.2
 	init_recoil = HANDGUN_RECOIL(0.5) //Rule of Cool
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_SILENCABLE)
 	serial_type = "H&S"

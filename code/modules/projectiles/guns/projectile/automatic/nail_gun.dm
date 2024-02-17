@@ -21,7 +21,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 	damage_multiplier = 1.2
-	penetration_multiplier = 1.5
+	penetration_multiplier = 0.5
 	init_recoil = CARBINE_RECOIL(0.2)
 
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_SCOPE, GUN_MAGWELL)

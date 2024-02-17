@@ -92,7 +92,7 @@
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
 	projectile_type = /obj/item/projectile/bullet/pistol_35/lethal //self defense gun, great for bugs less good for a "real fight" against anyone with anything resembling armor
 	damage_multiplier = 0.7
-	penetration_multiplier = 0.7
+	penetration_multiplier = -0.3
 	init_recoil = HANDGUN_RECOIL(0.4) //Hard to control accurately in most cases.
 	charge_meter = FALSE
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)

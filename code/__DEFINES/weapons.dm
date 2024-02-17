@@ -12,13 +12,14 @@
 #define WEAPON_FORCE_GODLIKE		88 // currently only used by the energy axe, which can only be obtained via admin verbs
 
 //Armor Penetration: Ignores a certain amount of armor for the purposes of inflicting damage.
-#define ARMOR_PEN_GRAZING			5
-#define ARMOR_PEN_SHALLOW			10
-#define ARMOR_PEN_MODERATE			15
-#define ARMOR_PEN_DEEP				20
-#define ARMOR_PEN_EXTREME			25
-#define ARMOR_PEN_MASSIVE			30
-#define ARMOR_PEN_HALF				50
+#define ARMOR_PEN_GRAZING			1.2
+#define ARMOR_PEN_SHALLOW			1.4
+#define ARMOR_PEN_MODERATE			1.6
+#define ARMOR_PEN_DEEP				1.8
+#define ARMOR_PEN_HALF				2
+#define ARMOR_PEN_EXTREME			2.5
+#define ARMOR_PEN_MASSIVE			3
+#define ARMOR_PEN_MAX				10
 
 //Wounding Multiplier: Increases damage taken, applied after armor.
 #define WOUNDING_HARMLESS			0.25
@@ -28,7 +29,13 @@
 #define WOUNDING_SERIOUS			1.25
 #define WOUNDING_WIDE				1.5
 #define WOUNDING_EXTREME			1.75
-#define WOUNDING_DEVESTATIING		2
+#define WOUNDING_DEVESTATING		2
+
+//Injury Type: Degrades specific wounding multipliers depending on sharpness and edge
+
+#define INJURY_TYPE_LIVING "living" // Anything with soft organs
+#define INJURY_TYPE_UNLIVING "unliving" // Things with hard vital parts, but not a proper organism, such as robots. TODO: FBPs into their own species - all robotic limbs possessing the defined species regardless of torso
+#define INJURY_TYPE_HOMOGENOUS "homogenous" // Solid objects, such as walls, slimes (they contain a slime core, but otherwise are a single "cell", with no distinct organs), golems
 
 //Resistance values, used on floors, windows, airlocks, girders, and similar hard targets.
 //Resistance value is also used on simple animals.

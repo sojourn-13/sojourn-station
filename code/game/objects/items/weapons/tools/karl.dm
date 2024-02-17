@@ -17,7 +17,7 @@
 
 	// Damage related
 	force = WEAPON_FORCE_DANGEROUS
-	armor_penetration = ARMOR_PEN_EXTREME
+	armor_divisor = ARMOR_PEN_EXTREME
 	throwforce = WEAPON_FORCE_NORMAL
 	sharp = TRUE
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE // Drills and picks are made for getting through hard materials

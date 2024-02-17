@@ -18,4 +18,4 @@
 	meat_type = /obj/item/stack/material/silver/random
 	drop1 = /obj/item/tool/sword/nt/longsword
 	drop2 = /obj/item/tool/sword/nt/shortsword
-	armor = list(melee = 15, bullet = 15, energy = 10, bomb = 5, bio = 100, rad = 100, agony = 100)
+	armor = list(melee = 3, bullet = 3, energy = 2, bomb = 5, bio = 100, rad = 100, agony = 100)
