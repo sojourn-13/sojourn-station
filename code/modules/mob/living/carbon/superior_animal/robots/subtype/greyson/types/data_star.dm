@@ -241,7 +241,7 @@ This monster is borderline unkillable and will make players upset
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/adjustBruteLoss(amount)
 	if(amount >= 1000)
-		to_chat(world,"<b><font color='#ffaa00'>Anti-Cheat Shielding Successfully Deplyed. Data Collected.</font></b>")
+		to_chat(world,"<b><font color='#ffaa00'>Anti-Cheat Shielding Successfully Deployed. Data Collected.</font></b>")
 		built_up_rage += 1
 		if(built_up_rage > 2)
 			to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbital Beacon Shield Successfully Deployed. Data Collected.</font></b>")
