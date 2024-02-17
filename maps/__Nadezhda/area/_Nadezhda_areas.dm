@@ -1362,7 +1362,6 @@ area/nadezhda/medical/medbaymeeting
 /area/nadezhda/outside/security/maingate //Changed this typepath to include outside to make it affected by day/night cycle
 	name = "\improper Security - Main Gate"
 	icon_state = "security"
-	dynamic_lighting = TRUE
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 	area_light_color = COLOR_LIGHTING_BLUE_CREW
 
