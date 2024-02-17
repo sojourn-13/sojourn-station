@@ -12,7 +12,7 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/panzer
 	knockdown_odds = 3
 
-	armor = list(melee = 15, bullet = 10, energy = 5, bomb = 5, bio = 20, rad = 0, agony = 0)
+	armor = list(melee = 15, bullet = 10, energy = 10, bomb = 5, bio = 20, rad = 0, agony = 0)
 	armor_penetration = 15
 
 // Panzers won't slip over on water or soap.

@@ -15,7 +15,7 @@
 
 	get_stat_modifier = TRUE //We get randomized addition armor
 
-	armor = list(melee = 10, bullet = 5, energy = 0, bomb = 5, bio = 20, rad = 0, agony = 0)
+	armor = list(melee = 5, bullet = 0, energy = 0, bomb = 5, bio = 20, rad = 100, agony = 0)
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/mob/living/carbon/superior_animal/biosilicified = 26,
