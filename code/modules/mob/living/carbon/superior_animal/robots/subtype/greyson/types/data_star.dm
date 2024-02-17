@@ -20,8 +20,8 @@ This monster is borderline unkillable and will make players upset
 */
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star
 	name = "Data Star"
-	desc = "A clearly well build drone by Greyson's, it sports a hologram eye that scans everything around. \
-	The unending feeling of dread builds up around this with its pure calutating killing gaze."
+	desc = "A clearly well built drone by Greyson, it sports a hologram eye that scans everything around. \
+	The unending feeling of dread builds up around this with its pure calculating killing gaze."
 
 	icon_state = "data_fighter"
 	icon_living = "data_fighter"
@@ -63,7 +63,7 @@ This monster is borderline unkillable and will make players upset
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
 	mob_classification = CLASSIFICATION_SYNTHETIC
 
-	reload_message = "ejects a magazine as it loudly reloads with mechanical speed!"
+	reload_message = "ejects a spent box of ammo as it rearms its weaponry with machinelike speed!"
 
 	ranged = TRUE //will it shoot?
 	rapid = FALSE //will it shoot fast?
@@ -229,7 +229,7 @@ This monster is borderline unkillable and will make players upset
 	process_med_hud(src,0)
 	if (health <= death_threshold && stat != DEAD)
 		if(kcorp_moduals > 0)
-			to_chat(world, "<b><font color='#ffaa00'>Data Star Morality Wounded, Data Collected.</font></b>")
+			to_chat(world, "<b><font color='#ffaa00'>Data Star Mortally Wounded, Data Collected.</font></b>")
 			adjustBruteLoss(-1000)
 			adjustFireLoss(-1000)
 			data_count += 4000 //We REALLY disliked that
@@ -244,8 +244,8 @@ This monster is borderline unkillable and will make players upset
 		to_chat(world,"<b><font color='#ffaa00'>Anti-Cheat Shielding Successfully Deplyed. Data Collected.</font></b>")
 		built_up_rage += 1
 		if(built_up_rage > 2)
-			to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbitcal Beacon Shield Successfully Deplyed. Data Collected.</font></b>")
-			message_admins("<b><font color='#ffaa00'>Adminstation Being Data Collected.</font></b>")
+			to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbital Beacon Shield Successfully Deployed. Data Collected.</font></b>")
+			message_admins("<b><font color='#ffaa00'>Administration Being Data Collected.</font></b>")
 		return
 
 	..()
@@ -253,11 +253,11 @@ This monster is borderline unkillable and will make players upset
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/adjustFireLoss(amount)
 	if(amount >= 1000)
-		to_chat(world,"<b><font color='#ffaa00'>Anti-Cheat Shielding Successfully Deplyed. Data Collected.</font></b>")
+		to_chat(world,"<b><font color='#ffaa00'>Anti-Cheat Shielding Successfully Deployed. Data Collected.</font></b>")
 		built_up_rage += 1
 		if(built_up_rage > 2)
-			to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbitcal Beacon Shield Successfully Deplyed. Data Collected.</font></b>")
-			message_admins("<b><font color='#ffaa00'>Adminstation Being Data Collected.</font></b>")
+			to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbital Beacon Shield Successfully Deployed. Data Collected.</font></b>")
+			message_admins("<b><font color='#ffaa00'>Administration Being Data Collected.</font></b>")
 		return
 
 	..()
@@ -315,7 +315,7 @@ This monster is borderline unkillable and will make players upset
 		SetStunned(0)
 		SetWeakened(0)
 		SetDrowsyness(0)
-		to_chat(src,"<b><font color='#ffaa00'>Data Star Anti-Stun Deployed Successfully. Data Collected.</font></b>")
+		to_chat(src,"<b><font color='#ffaa00'>Data Star Anti-Mobility Countermeasures Deployed Successfully. Data Collected.</font></b>")
 		return
 	else
 		data_count += 50 //We REALLY dislike being stunned
@@ -327,7 +327,7 @@ This monster is borderline unkillable and will make players upset
 		SetStunned(0)
 		SetWeakened(0)
 		SetDrowsyness(0)
-		to_chat(src,"<b><font color='#ffaa00'>Data Star Anti-Weaken Deployed Successfully. Data Collected.</font></b>")
+		to_chat(src,"<b><font color='#ffaa00'>Data Star Anti-Mobility Countermeasures Deployed Successfully. Data Collected.</font></b>")
 		return
 	else
 		data_count += 50 //We REALLY dislike being weakened
