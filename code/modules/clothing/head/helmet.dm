@@ -383,6 +383,51 @@
 	brightness_on = 4
 	light_overlay = "corpsmanfullhelm_light"
 
+/obj/item/clothing/head/helmet/ballistic/militia/full/co
+	name = "blackshield Commanders full helm"
+	desc = "Advanced military gear. This full-faced variant of the common ballistic helmet comes with high-end materials making it both lighter and \
+	more durable."
+	icon_state = "bs_fullhelm_co"
+	item_state = "bs_fullhelm_co"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	obscuration = LIGHT_OBSCURATION
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 5
+	light_overlay = "bsfullhelm_light"
+	armor_list = list(melee = 35, bullet = 50, energy = 40, bomb = 50, bio = 0, rad = 0)
+
+/obj/item/clothing/head/helmet/ballistic/militia/full/co/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard fullhelm"] = ""
+	options["Tan fullhelm"] = "_tan"
+	options["Green fullhelm"] = "_green"
+	options["Grey hooded fullhelm"] = "_gp"
+	options["Green hooeded fullhelm"] = "_grp"
+	options["Tan hooded fullhelm"] = "_tp"
+	options["Camo hooded fullhelm"] = "_cp"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You adjust to the [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 //Marshals
 /obj/item/clothing/head/helmet/marshal
 	name = "marshal helmet"
