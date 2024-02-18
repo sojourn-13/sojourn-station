@@ -433,7 +433,7 @@
 /obj/item/ammo_magazine/ammobox/laser_223/box/lethal
 	name = "ammunition box (5.56mm DL)"
 	icon_state = "box223-lethal-laser"
-	ammo_type = /obj/item/ammo_casing/laser_223
+	ammo_type = /obj/item/ammo_casing/laser_223/lethal
 	max_ammo = 200
 
 //// 12mm heavy pistol
