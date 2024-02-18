@@ -83,7 +83,7 @@
 	name = "ammunition packet (9mm laser)"
 	icon_state = "pistol_si"
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
-	matter = list(MATERIAL_PLASTIC = 1)
+	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 90
 
 /obj/item/ammo_magazine/ammobox/pistol_35/biomatter
@@ -289,7 +289,7 @@
 	name = "ammunition packet (6.5mm Carbine laser)"
 	icon_state = "clrifle_si"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/laser
-	matter = list(MATERIAL_PLASTIC = 1)
+	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 120
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257/scrap
@@ -389,7 +389,7 @@
 	name = "ammunition packet (7.62mm Rifle laser)"
 	icon_state = "srifle_si"
 	ammo_type = /obj/item/ammo_casing/rifle_75/laser
-	matter = list(MATERIAL_PLASTIC = 1)
+	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 90
 
 
@@ -478,7 +478,7 @@
 	name = "ammunition box (12mm laser)"
 	icon_state = "box50-si"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/laser
-	matter = list(MATERIAL_PLASTIC = 1)
+	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 50
 
 //// 14.5×114mm ////
@@ -575,7 +575,7 @@
 	icon_state = "hrifle_si"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 7mm subcaliber laser rounds."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/laser
-	matter = list(MATERIAL_PLASTIC = 1)
+	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 60
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap
