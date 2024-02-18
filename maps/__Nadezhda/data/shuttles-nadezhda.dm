@@ -62,7 +62,7 @@
 //Skipjack Code
 /datum/shuttle/autodock/multi/skipjack
 	name = "Skipjack"
-	move_time = (15 MINUTES) / (1 SECOND)
+	move_time = (7 MINUTES) / (1 SECOND)
 	shuttle_area = /area/shuttle/skipjack_area
 	current_location = "nav_skipjack_homebase"
 	landmark_transition = "nav_skipjack_transit"
@@ -121,7 +121,7 @@
 //Merc shuttle Code
 /datum/shuttle/autodock/multi/mercshuttle
 	name = "Mercenary Shuttle"
-	move_time = (15 MINUTES) / (1 SECOND)
+	move_time = (7 MINUTES) / (1 SECOND)
 	shuttle_area = /area/shuttle/mercshuttle_area
 	current_location = "nav_mercshuttle_homebase"
 	landmark_transition = "nav_mercshuttle_transit"
@@ -241,7 +241,7 @@
 //Marshal shuttle
 /datum/shuttle/autodock/multi/vasiliy
 	name = "The Vasiliy"
-	move_time = (7 MINUTES) / (1 SECOND)
+	move_time = (3 MINUTES) / (1 SECOND)
 	shuttle_area = /area/shuttle/vasiliy_shuttle_area
 	current_location = "nav_vasiliy_homebase"
 	landmark_transition = "nav_vasiliy_transit"
