@@ -166,7 +166,7 @@
 	name = "ammunition packet (10mm Magnum Laser)"
 	icon_state = "magnum_si"
 	ammo_type = /obj/item/ammo_casing/magnum_40/laser
-	matter = list(MATERIAL_PLASTIC = 1)
+	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 70
 
 /obj/item/ammo_magazine/ammobox/magnum_40/biomatter
