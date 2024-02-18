@@ -109749,7 +109749,7 @@
 /area/nadezhda/maintenance/undergroundfloor1east)
 "wuK" = (
 /obj/machinery/power/eotp,
-/obj/structure/invislight,
+/obj/structure/invislightsmall,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/absolutism/bioreactor)
 "wuL" = (
