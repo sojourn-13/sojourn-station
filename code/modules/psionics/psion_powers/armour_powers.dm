@@ -7,7 +7,7 @@
 	set desc = "Creates a set of armor from somewhere that does not exist. Anything taken off disappears and whatever clothing you are wearing when this power is used is destroyed."
 	psi_point_cost = 4
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
 		owner.visible_message(
 			SPAN_DANGER("[src.owner]'s flesh and clothing contort and shimmer, reforming into flowing, black and bronze robes!"),
@@ -24,7 +24,7 @@
 	set desc = "Creates a set of very strong armor, using your mind and the environment as the material. Each piece of armor replaces the clothes you are already wearing, and provides additional strength to your body, in exchange for your psionic abilities."
 	psi_point_cost = 8
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/effects/phasein.ogg'), 50, 1, -3)
 		owner.visible_message(
 			SPAN_DANGER("[src.owner]'s Flesh and clothing merge together, tiny crumbs, small objects, streams of thoughts and ideas are pulled together to him, forming on his body a solid armor woven from matter itself, held together by only one will of the psion!"),
@@ -41,7 +41,7 @@
 	set desc = "When applied, it creates an ultra-light protected cloak, spurring the wearer to new adventures in the kingdom of the king of dreams! Each part of the kit enhances the psion's thinking abilities and accelerates his step."
 	psi_point_cost = 6
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		playsound(usr.loc, pick('sound/mecha/lowpower.ogg','sound/effects/magic/Blind.ogg','sound/hallucinations/i_see_you2.ogg','sound/effects/phasein.ogg'), 50, 1, 1, -3)
 		owner.visible_message(
 			SPAN_DANGER("[src.owner]'s Flesh and clothing merge together, tiny crumbs, small objects, streams of thoughts and ideas are pulled together to him, forming on his body a solid armor woven from matter itself, held together by only one will of the psion!"),

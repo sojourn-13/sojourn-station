@@ -10,7 +10,7 @@
 	var/stat_bio = 25
 	var/stat_rob = 25
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		var/obj/item/tool/psionic_omnitool/tool = new /obj/item/tool/psionic_omnitool(src, owner)
 		if (owner.stats.getStat(STAT_MEC) > 32)
 			stat_mec = owner.stats.getStat(STAT_MEC) * 0.8
@@ -38,7 +38,7 @@
 	set desc = "Expend a single point of your psi essence to create a tiny flickering fire in your hand that will shine light and ignite combustible materials, can be thrown but will extinguish quickly."
 	psi_point_cost = 1
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		var/obj/item/flame/pyrokinetic_spark/flame = new /obj/item/flame/pyrokinetic_spark(src, owner)
 		owner.visible_message(
 			"[owner] raises their arm, electricity crackling before a small flame juts from their hand!",
@@ -53,7 +53,7 @@
 	set desc = "Expend a single point of your psi essence to create a low quality but still deadly knife. It's power and damage scale with your robustness."
 	psi_point_cost = 1
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		var/obj/item/tool/knife/psionic_blade/knife = new /obj/item/tool/knife/psionic_blade(src, owner)
 		owner.visible_message(
 			"[owner] clenches their fist, electricity crackling before a psionic blade forms in their hand!",
@@ -70,7 +70,7 @@
 	If the shield inhand is already enhanced it will be be healed"
 	psi_point_cost = 1
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		//Used to tell if we need to spawn new shield or not
 		var/successfully_enhanced = FALSE
 		//Grabs the item on the mobs *actively selected hand*
@@ -145,7 +145,7 @@
 	set desc = "Expend a single point of your psi essence to create a layered shield capable of blocking bullets, energy beams, and melee attacks."
 	psi_point_cost = 1
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		var/obj/item/shield/riot/crusader/psionic/layered/shield = new /obj/item/shield/riot/crusader/psionic/layered(src, owner)
 		owner.visible_message(
 			"[owner] clenches their fist, electricity crackling before a psy-shield forms in their hand!",
@@ -162,7 +162,7 @@
 	scales with your physical robustness."
 	psi_point_cost = 1
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		var/obj/item/tool/hammer/telekinetic_fist/fist = new /obj/item/tool/hammer/telekinetic_fist(src, owner)
 		owner.visible_message(
 			"[owner] clenches their hand into a fist, electric energy crackling around it before a telekinetic fist forms over it!",
@@ -178,7 +178,7 @@
 	psi_point_cost = 2
 	var/timer = 10 SECONDS
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		var/obj/item/shield_projector/line/psionic/shield = new(src, owner.stats.getStat(STAT_COG), owner.dir)
 		owner.visible_message(
 			"[owner] stares ahead as a psychic barrier forms from thin air!",
@@ -197,7 +197,7 @@
 	set desc = "Expend none of your essence to create a kinetic orb in hand, a ranged weapon that grows in power with your cognition and expends a single psi point per shot."
 	psi_point_cost = 0
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		var/obj/item/gun/kinetic_blaster/KB = new(src, owner, src)
 		owner.visible_message(
 			"[owner] clenches their hand into a fist, electric energy crackling around it before a kinetic blaster forms over it!",
@@ -214,7 +214,7 @@
 	Deals no damage on its own, but the sudden blast of cold stuns whoever it hits for a short time."
 	psi_point_cost = 0
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		var/obj/item/gun/kinetic_blaster/cryo/KB = new(src, owner, src)
 		owner.visible_message(
 			"[owner] clenches their hand into a fist, electric energy crackling around it before a cryo-kinetic orb forms over it!",
@@ -230,7 +230,7 @@
 	The heat generated from pyro blasts fast enough to not cause fires, but the sudden expansion of hot air is highly explosive."
 	psi_point_cost = 0
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		var/obj/item/gun/kinetic_blaster/pyro/KB = new(src, owner, src)
 		owner.visible_message(
 			"[owner] clenches their hand into a fist, electric energy crackling around it before a pyro-kinetic orb forms over it!",
@@ -246,7 +246,7 @@
 	Much stronger than kinetic blasts and doesn't need to travel towards its target, being electric."
 	psi_point_cost = 0
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		var/obj/item/gun/kinetic_blaster/electro/KB = new(src, owner, src)
 		owner.visible_message(
 			"[owner] clenches their hand into a fist, electric energy crackling around it before an electro-kinetic orb forms over it!",

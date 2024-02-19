@@ -12,7 +12,7 @@
 		if(!active.oddity_stats)
 			to_chat(usr, "This oddity has no aspects to build a weapon from!")
 			return
-		if(pay_power_cost(psi_point_cost))
+		if(pay_power_cost(psi_point_cost) && check_possibility())
 			var/list/LStats = active.oddity_stats
 			var/obj/item/cultweaponchoice = pickweight(list(
 				/obj/item/gun/energy/plasma/auretian/cult = (1 + LStats[STAT_ROB]),
@@ -47,7 +47,7 @@
 			to_chat(usr, "This oddity has no aspects to build a weapon from!")
 			return
 
-		if(pay_power_cost(psi_point_cost))
+		if(pay_power_cost(psi_point_cost) && check_possibility())
 			var/list/LStats = active.oddity_stats
 			var/obj/item/cultweaponchoice = pickweight(list(
 				/obj/item/tool/sword/cult = (1 + LStats[STAT_ROB]),
@@ -83,7 +83,7 @@
 		if(!active.oddity_stats)
 			to_chat(usr, "This oddity has no aspects to build a weapon from!")
 			return
-		if(pay_power_cost(psi_point_cost))
+		if(pay_power_cost(psi_point_cost) && check_possibility())
 			var/list/LStats = active.oddity_stats
 			var/obj/item/cultweaponchoice = pickweight(list(
 				/obj/item/tool/shovel/combat/cult = (1 + LStats[STAT_ROB]),
@@ -121,7 +121,7 @@
 		to_chat(owner, SPAN_NOTICE("You're not holding an oddity or proper anomaly!"))
 		return FALSE
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		owner.visible_message("<b><font color='purple'>[owner] concentrates on the anomaly in their hand, something about it changing in a subtle way.</font><b>", "<b><font color='purple'>You focus on the energies around the object, swaying them to your will and trying to change it!</font><b>")
 
 		if(O.oddity_stats)
