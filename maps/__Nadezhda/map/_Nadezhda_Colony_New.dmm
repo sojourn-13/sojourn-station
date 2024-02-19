@@ -46988,6 +46988,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/steel_reinforced,
+/obj/item/device/lighting/toggleable/lamp,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/outside/security/maingate)
 "jKE" = (
