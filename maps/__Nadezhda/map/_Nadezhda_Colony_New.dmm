@@ -56498,7 +56498,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/outside/inside_colony/road)
 "lNB" = (
 /obj/effect/floor_decal/industrial/inputgate,
 /turf/simulated/floor/fixed/hydrotile,
@@ -58362,6 +58362,9 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
+"mgo" = (
+/turf/simulated/floor/wood,
+/area/nadezhda/outside/inside_colony/road)
 "mgp" = (
 /obj/machinery/light{
 	light_color = "#b9e8ea"
@@ -73957,7 +73960,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/outside/inside_colony/road)
 "pla" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -79745,7 +79748,7 @@
 "qrX" = (
 /obj/structure/flora/small/rock3,
 /turf/simulated/floor/asteroid/dirt/dark,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/outside/inside_colony/road)
 "qsl" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/syringe/drugs,
@@ -95399,6 +95402,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/surfaceeast)
+"tFp" = (
+/turf/simulated/floor/asteroid/dirt/dark,
+/area/nadezhda/outside/inside_colony/road)
 "tFu" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
@@ -107415,7 +107421,7 @@
 "vXi" = (
 /obj/random/spider_trap_burrowing/low_chance,
 /turf/simulated/floor/asteroid/dirt/dark,
-/area/nadezhda/outside/inside_colony)
+/area/nadezhda/outside/inside_colony/road)
 "vXn" = (
 /obj/structure/flora/small/bushc2,
 /obj/structure/invislight,
@@ -223358,14 +223364,14 @@ cwC
 cwC
 rIK
 hcX
-ckO
-ckO
-ckO
-ckO
-ckO
-ckO
-ckO
-ckO
+tFp
+tFp
+tFp
+tFp
+tFp
+tFp
+tFp
+tFp
 qrX
 rIK
 hcX
@@ -223559,16 +223565,16 @@ cwC
 cwC
 pFV
 svB
-ckO
-kvx
+tFp
+mgo
 pkK
-kvx
-kvx
-kvx
-kvx
-kvx
+mgo
+mgo
+mgo
+mgo
+mgo
 pkK
-kvx
+mgo
 vXi
 svB
 bSK
@@ -223761,8 +223767,8 @@ ckO
 ckO
 ckO
 ckO
-ckO
-kvx
+tFp
+mgo
 uit
 uit
 uit
@@ -223770,9 +223776,9 @@ uit
 uit
 uit
 uit
-kvx
-ckO
-ckO
+mgo
+tFp
+tFp
 iaD
 mvt
 iaD
@@ -223963,8 +223969,8 @@ kvx
 kvx
 ydA
 kvx
-ckO
-kvx
+tFp
+mgo
 uit
 uit
 tzR
@@ -223972,9 +223978,9 @@ uit
 uit
 kXv
 uit
-kvx
-kvx
-kvx
+mgo
+mgo
+mgo
 iaD
 mvt
 iaD
@@ -224165,8 +224171,8 @@ kvx
 uit
 kfz
 kvx
-kvx
-kvx
+mgo
+mgo
 uit
 uit
 njt
@@ -224174,9 +224180,9 @@ uit
 uit
 uit
 uit
-kvx
-kvx
-kvx
+mgo
+mgo
+mgo
 iaD
 mvt
 iaD
@@ -224367,8 +224373,8 @@ kvx
 uit
 uit
 kvx
-kvx
-kvx
+mgo
+mgo
 uit
 uit
 uit
@@ -224376,9 +224382,9 @@ uit
 uit
 uit
 uit
-kvx
-kvx
-kvx
+mgo
+mgo
+mgo
 iaD
 mvt
 iaD
@@ -224569,8 +224575,8 @@ kvx
 kvx
 kvx
 kvx
-ckO
-kvx
+tFp
+mgo
 uit
 uit
 kXv
@@ -224578,9 +224584,9 @@ uit
 uit
 aQK
 uit
-kvx
-kvx
-kvx
+mgo
+mgo
+mgo
 iaD
 mvt
 iaD
@@ -224771,8 +224777,8 @@ ckO
 ckO
 ckO
 ckO
-ckO
-kvx
+tFp
+mgo
 uit
 uit
 uit
@@ -224780,9 +224786,9 @@ uit
 uit
 uit
 uit
-kvx
-ckO
-ckO
+mgo
+tFp
+tFp
 iaD
 mvt
 iaD
@@ -224973,17 +224979,17 @@ pDs
 pDs
 pFV
 rIK
-ckO
-kvx
+tFp
+mgo
 lNu
-kvx
-kvx
-kvx
-kvx
-kvx
+mgo
+mgo
+mgo
+mgo
+mgo
 lNu
-kvx
-ckO
+mgo
+tFp
 rIK
 bSK
 mvt
@@ -225176,15 +225182,15 @@ pDs
 cwC
 pFV
 ckO
-ckO
-ckO
-ckO
-ckO
-ckO
-ckO
-ckO
-ckO
-ckO
+tFp
+tFp
+tFp
+tFp
+tFp
+tFp
+tFp
+tFp
+tFp
 mzy
 pFV
 iaD
