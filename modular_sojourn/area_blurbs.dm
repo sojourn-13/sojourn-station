@@ -38,7 +38,7 @@ ty ilu - bear
 ////////////
 
 
-/area/colony/exposedsun/pastgate
+/area/colony/outside/exposedsun/pastgate
 	narrate = "Untamed wilderness and hostile wildlife roam freely past the colony gates amidst the traps and mines. Tread carefully, and keep your wits about you, you are not alone out here..."
 
 //Maintenance
