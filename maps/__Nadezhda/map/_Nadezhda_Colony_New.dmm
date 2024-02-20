@@ -111645,6 +111645,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "wYq" = (
+/obj/machinery/vending/neko,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "wYz" = (
