@@ -86,7 +86,7 @@
 	treatments_chem = list(CE_EYEHEAL = 1)
 	severity = 0
 	severity_max = 8 //slow death of eyes like infection but we dont want it spreading elsewhere!
-	progression_threshold = IWOUND_8_MINUTES //very slow! I hope
+	progression_threshold = IWOUND_10_MINUTES //very slow! I hope
 
 /datum/component/internal_wound/organic/eyes_special/photokeratitis
 	name = "photokeratitis"
