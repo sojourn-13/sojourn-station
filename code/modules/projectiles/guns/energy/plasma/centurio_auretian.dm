@@ -42,7 +42,6 @@
 	init_recoil = HANDGUN_RECOIL(0.2)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 8, MATERIAL_PLASMA = 2, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 3)
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
-	blacklist_upgrades = list()
 
 	init_firemodes = list(
 		list(mode_name="plasma", mode_desc="Hard hitting plasma bolt that melts flesh and armor alike", projectile_type=/obj/item/projectile/plasma/heavy, fire_sound='sound/weapons/energy/melt.ogg', fire_delay=9, icon="destroy", projectile_color = "#00FFFF"),
