@@ -76,19 +76,22 @@
 
 /datum/component/internal_wound/organic/eyes_burn/eyes_deep_burn //stage 2
 	name = "scorched deep tissue"
-	severity = 2 // starts with high  damage as it is a second stage
+	severity = 2 // starts with high damage as it is a second stage
 	severity_max = 3
-	next_wound = /datum/component/internal_wound/organic/eyes_special/photokeratitis
+	next_wound = /datum/component/internal_wound/organic/eyes_special
 
-/datum/component/internal_wound/organic/eyes_special/photokeratitis
-	name = "Photokeratitis"
+/datum/component/internal_wound/organic/eyes_special
 	treatments_item = list(/obj/item/stack/medical/ointment/advanced = 2)
 	treatments_tool = list(QUALITY_CLAMPING = FAILCHANCE_HARD)
 	treatments_chem = list(CE_EYEHEAL = 1)
 	severity = 0
 	severity_max = 8 //slow death of eyes like infection but we dont want it spreading elsewhere!
-	progression_threshold = IWOUND_6_MINUTES //very slow! I hope
+	progression_threshold = IWOUND_8_MINUTES //very slow! I hope
 
+/datum/component/internal_wound/organic/eyes_special/photokeratitis
+	name = "photokeratitis"
+/datum/component/internal_wound/organic/eyes_special/keratoconus
+	name = "keratoconus"
 
 // Tox (toxins)
 /datum/component/internal_wound/organic/eyes_poisoning
