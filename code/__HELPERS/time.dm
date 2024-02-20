@@ -207,7 +207,7 @@ var/global/rollovercheck_last_timeofday = 0
 #undef DELTA_CALC
 
 proc/determine_night() // Determines whether it's night or not and returns TRUE or FALSE accordingly
-	if(true_roundstart_hour <= 20 || true_roundstart_hour >= 8)
+	if(true_roundstart_hour <= 20 && true_roundstart_hour >= 8)
 		return TRUE
 	else
 		return FALSE
