@@ -318,7 +318,7 @@ obj/item/clothing/head/ribbon/red
 /obj/item/clothing/head/leather_hat
 	name = "leather hat"
 	icon_state = "field_numerical_hat"
-	desc = "A tall hat for nurmerical of the faith. Can be turned inside out to turn form red to purple or purple to red"
+	desc = "A tall hat for followers of the faith. Can be turned inside out to turn form red to purple or purple to red"
 	armor_list = list( //same as the garb
 		melee = 10,
 		bullet = 0,
