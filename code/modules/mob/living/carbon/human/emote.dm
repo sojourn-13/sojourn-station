@@ -143,10 +143,6 @@
 			return custom_emote(m_type, message)
 
 		if ("subtle")
-
-			//if(silent && silent > 0 && findtext(message,"\"",1, null) > 0)
-			//	return //This check does not work and I have no idea why, I'm leaving it in for reference.
-
 			if (src.client)
 				if (client.prefs.muted & MUTE_IC)
 					src << "\red You cannot send IC messages (muted)."
@@ -157,7 +153,8 @@
 				return
 			if(!(message))
 				return
-			return custom_emote(m_type, "<I>[message]</I>", 1)
+			return custom_emote(m_type, "<I>[message]</I>", 7, TRUE)
+			// The '7' should account for tile-range visible, previously set to '1' but recommended to be at 7. "We don't want subtle emotes to be abused; so they should only be anti-ghost." -Rebel
 
 		if("pain")
 			if(!message)
