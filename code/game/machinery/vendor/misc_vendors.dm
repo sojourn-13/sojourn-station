@@ -338,7 +338,7 @@
 					/obj/item/toy/plushie/kitten = 10,
 					/obj/item/paper/card/cat = 10,
 					/mob/living/simple_animal/cat/kitten = 500 )
-	contraband = list(/mob/living/simple_animal/cat/kitten = 1, )
+	contraband = list(/mob/living/simple_animal/cat/kitten = 1)
 	idle_power_usage = 50
 	auto_price = FALSE
 	always_open = TRUE
