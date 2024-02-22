@@ -87,11 +87,11 @@
 		var/obj/item/stack/material/glass = I
 		var/list/glassless_dirs = get_opened_dirs()
 		if(glass.use(glassless_dirs.len))
-			to_chat(user, SPAN_NOTICE("[user] you careful placing [I] into [src]'s holders, making glass wall."))
+			to_chat(user, SPAN_NOTICE("[user] you carefully place [I] into [src]'s holders, making a glass wall."))
 			if(do_after(user, 3*glassless_dirs.len SECONDS, src))
 				make_windows()
 		else
-			to_chat(user, SPAN_WARNING("Not enough amount of [I]."))
+			to_chat(user, SPAN_WARNING("Not enough [I]."))
 	..()
 
 
@@ -191,7 +191,7 @@
 		if(1)
 			to_chat(user, SPAN_NOTICE("There are a few stains on it. Except this, [src] looks pretty clean."))
 		if(2)
-			to_chat(user, SPAN_NOTICE("You see a sign of biomatter on this [src]. Better to clean it up."))
+			to_chat(user, SPAN_NOTICE("You see signs of biomatter on this [src]. Better to clean it up."))
 		if(3)
 			to_chat(user, SPAN_WARNING("This [src] has clear signs and stains of biomatter."))
 		if(4)
@@ -199,7 +199,7 @@
 		if(5)
 			to_chat(user, SPAN_WARNING("Now it's hard to see what's inside. Better to clean this [src]."))
 		else
-			to_chat(user, SPAN_NOTICE("This [src] is so clean, that you can see your reflection. Is that something green at your teeth?"))
+			to_chat(user, SPAN_NOTICE("This [src] is so clean, that you can see your reflection. Is that something green in your teeth?"))
 
 
 /obj/structure/window/reinforced/bioreactor/update_icon()
