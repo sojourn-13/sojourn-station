@@ -237,7 +237,7 @@
 				var/set_canister = FALSE
 				if(tank)
 					tank.can_anchor = TRUE
-					set_canister = tank.set_anchored(FALSE)
+					set_canister = tank.bio_anchored(FALSE)
 					if(set_canister)
 						tank.pixel_x = initial(tank.pixel_x)
 						tank = null
@@ -246,7 +246,7 @@
 				else
 					tank = locate(/obj/structure/reagent_dispensers) in get_turf(src)
 					if(tank)
-						set_canister = tank.set_anchored(TRUE)
+						set_canister = tank.bio_anchored(TRUE)
 						if(set_canister)
 							tank.can_anchor = FALSE
 							tank.pixel_x = 8
@@ -317,7 +317,7 @@
 	layer = LOW_OBJ_LAYER
 	var/obj/machinery/multistructure/biogenerator_part/generator/generator
 	var/working_cycles = 0
-	var/wearout_cycle = 500
+	var/wearout_cycle = 800
 	var/wires_integrity = 100
 	var/wires = TRUE
 
@@ -420,7 +420,7 @@
 	var/obj/machinery/multistructure/biogenerator_part/generator/generator
 	var/coil_condition = 100
 	var/working_cycles = 0
-	var/wearout_cycle = 600
+	var/wearout_cycle = 900
 	var/coil_frame = TRUE
 
 
