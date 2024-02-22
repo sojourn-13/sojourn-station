@@ -36,7 +36,7 @@
 	can_dual = TRUE
 	sel_mode = 1
 	suitable_cell = /obj/item/cell/small
-	charge_cost = 20
+	charge_cost = 50
 	damage_multiplier = 1
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 8, MATERIAL_PLASMA = 2, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 3)
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
