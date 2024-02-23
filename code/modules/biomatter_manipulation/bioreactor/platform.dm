@@ -36,7 +36,7 @@
 				//if our target has hazard protection, apply damage based on the protection percentage.
 				var/hazard_protection = victim.getarmor(null, ARMOR_BIO)
 				var/damage = BIOREACTOR_DAMAGE_PER_TICK - (BIOREACTOR_DAMAGE_PER_TICK * (hazard_protection/100))
-				victim.apply_damage(damage, BRUTE, used_weapon = "Biological")
+				victim.apply_damage(damage, BURN, used_weapon = "Biological")
 				victim.adjustOxyLoss(BIOREACTOR_DAMAGE_PER_TICK / 2)	// Snowflake shit, but we need the mob to die within a reasonable time frame
 
 				if(prob(10))
@@ -97,7 +97,7 @@
 
 //This proc called on object/mob consumption
 /obj/machinery/multistructure/bioreactor_part/platform/proc/consume(atom/movable/object)
-	if(ishuman(object))
+	/*if(ishuman(object))
 		var/mob/living/carbon/human/H = object
 		for(var/obj/item/item in H.contents)
 			//non robotic limbs will be consumed
@@ -108,7 +108,7 @@
 				var/obj/machinery/multistructure/bioreactor_part/platform/neighbor_platform = pick(MS_bioreactor.platforms)
 				organ.forceMove(get_turf(neighbor_platform))
 				organ.removed()
-				continue
+				continue*/
 
 	qdel(object)
 	//now let's add some dirt to the glass
