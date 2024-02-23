@@ -740,6 +740,10 @@
 	name = "Tribal Braid"
 	icon_state = "tribalbraid"
 
+/datum/sprite_accessory/hair/tribun
+	name = "Tri Bun"
+	icon_state = "tribun"
+
 /datum/sprite_accessory/hair/vegeta
 	name = "Vegeta"
 	icon_state = "toriyama2"
