@@ -5,10 +5,13 @@
 	icon_state = "armor-chest"
 
 /obj/item/organ_module/armor/onInstall(obj/item/organ/external/E)
-	E.owner.stats.addPerk(PERK_SUBDERMAL)
+	if(allowed_organs && allowed_organs.len && (E.organ_tag in allowed_organs))
+		E.owner.stats.addPerk(PERK_SUBDERMAL)
 
 /obj/item/organ_module/armor/onRemove(obj/item/organ/external/E)
-	E.owner.stats.removePerk(PERK_SUBDERMAL)
+	//This check is to avoid tomfoolery where adding one to your arm after and then taking it out removes the perk if you have one in your chest.
+	if(allowed_organs && allowed_organs.len && (E.organ_tag in allowed_organs))
+		E.owner.stats.removePerk(PERK_SUBDERMAL)
 
 
 /obj/item/organ_module/armor/organic
