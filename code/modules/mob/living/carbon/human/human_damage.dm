@@ -367,9 +367,9 @@ This function restores all organs.
 
 		switch(damagetype)
 			if(BRUTE)
-				damage = damage*species.brute_mod
+				damage = (damage*species.brute_mod)*src.brute_mod_perk
 			if(BURN)
-				damage = damage*species.burn_mod
+				damage = (damage*species.burn_mod)*src.burn_mod_perk
 
 	var/obj/item/organ/external/organ = null
 	if(isorgan(def_zone))

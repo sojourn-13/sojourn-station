@@ -42,6 +42,9 @@
 #define PERK_HOLY_LIGHT /datum/perk/nt_oddity/holy_light
 #define PERK_SIDE_LOADING /datum/perk/oddity/side_loading
 
+//Augmentation perks
+#define PERK_SUBDERMAL /datum/perk/augmentation/subdermal
+
 //roundstart perks (job / backgrounds)
 #define PERK_NOBLE /datum/perk/noble
 #define PERK_UNFINISHED_DELIVERY /datum/perk/unfinished_delivery

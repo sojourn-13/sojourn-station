@@ -5,10 +5,10 @@
 	icon_state = "armor-chest"
 
 /obj/item/organ_module/armor/onInstall(obj/item/organ/external/E)
-	E.brute_mod -= 0.3
+	E.owner.stats.addPerk(PERK_SUBDERMAL)
 
 /obj/item/organ_module/armor/onRemove(obj/item/organ/external/E)
-	E.brute_mod += 0.3
+	E.owner.stats.removePerk(PERK_SUBDERMAL)
 
 
 /obj/item/organ_module/armor/organic
