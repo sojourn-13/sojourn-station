@@ -20578,6 +20578,14 @@
 	icon_state = "12,2"
 	},
 /area/shuttle/vasiliy_shuttle_area)
+"epG" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular{
+	id = "ProspShop";
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/pros/prep)
 "epH" = (
 /obj/machinery/light{
 	dir = 1
@@ -112028,15 +112036,16 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
 "xdH" = (
-/obj/machinery/door/blast/regular{
-	id = "ProspShop"
-	},
 /obj/machinery/door/firedoor,
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/northright{
 	req_access = list(78)
 	},
 /obj/machinery/door/window/southright,
+/obj/machinery/door/blast/regular{
+	id = "ProspShop";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/pros/prep)
 "xdV" = (
@@ -219526,7 +219535,7 @@ vIU
 vIU
 lkL
 vIU
-aLk
+epG
 wrj
 iMB
 pTs
@@ -219728,7 +219737,7 @@ hjV
 xgn
 kUX
 kUX
-aLk
+epG
 kau
 vfw
 nQd
@@ -220132,7 +220141,7 @@ kUX
 kUX
 kUX
 jxx
-aLk
+epG
 rvW
 hpt
 bBn
