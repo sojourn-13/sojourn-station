@@ -89,7 +89,14 @@
 	desc = "This headset is a premium quality headset made for only true operators! Ignore.. the ten credit price tag and the rattling noise it makes when you shake it. This has a small symbol denoting its built-in backup transmitter"
 	icon_state = "sec_headset_bowman"
 	item_state = "headset"
-	adhoc_fallback = TRUE
+
+/obj/item/device/radio/headset/headset_sec/spec
+	name = "supply specialist headset"
+	ks2type = /obj/item/device/encryptionkey/headset_mar/spec
+
+/obj/item/device/radio/headset/headset_sec/bowman/spec
+	name = "supply specialist bowman headset"
+	ks2type = /obj/item/device/encryptionkey/headset_mar/spec
 
 /obj/item/device/radio/headset/headset_blackshield
 	name = "blackshield radio headset"
@@ -112,7 +119,6 @@
 	desc = "This headset of questionable quality was made years ago for Sol cargo pilots, it's hard to ingore the rattling noise whenever you turn your head too fast. This has a small symbol denoting its built-in backup transmitter."
 	icon_state = "bs_bowman_headset"
 	item_state = "bs_bowman_headset"
-	adhoc_fallback = TRUE
 
 /obj/item/device/radio/headset/headset_blackshield/bowman/corps
 	name = "corpsman bowman headset"

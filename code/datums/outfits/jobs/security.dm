@@ -41,6 +41,7 @@
 /decl/hierarchy/outfit/job/security/gunserg
 	name = OUTFIT_JOB_NAME("Marshal - Supply Specialist")
 	uniform = /obj/item/clothing/under/rank/warden
+	l_ear = /obj/item/device/radio/headset/headset_sec/spec
 	suit = /obj/item/clothing/suit/armor/vest/ironhammer
 	head = /obj/item/clothing/head/rank/warden/beret
 	glasses = /obj/item/clothing/glasses/hud/security
