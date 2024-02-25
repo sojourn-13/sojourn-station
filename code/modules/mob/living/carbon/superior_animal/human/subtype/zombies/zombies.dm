@@ -9,8 +9,8 @@
     melee_damage_lower = 10
     melee_damage_upper = 20
     armor = list(melee = 40, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 50)
-    maxHealth = 250
-    health = 250
+    maxHealth = 150
+    health = 150
     melee_damage_lower = 10
     melee_damage_upper = 15
     attacktext = "blasts"
