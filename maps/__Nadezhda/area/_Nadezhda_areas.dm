@@ -13,7 +13,7 @@
 	dynamic_lighting = FALSE
 	base_turf = /turf/simulated/floor/asteroid/dirt
 
-/area/colony/exposedsun/pastgate
+/area/colony/outside/exposedsun/pastgate //Moves this under outside typepath so it would be affected by day-night aswell
 	ship_area = FALSE
 	icon_state = "erisblue"
 	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
@@ -28,7 +28,7 @@
 	dynamic_lighting = TRUE
 
 /area/colony/exposedsun/crashed_shop/bottom_floor
-	dynamic_lighting = FALSE
+	dynamic_lighting = TRUE
 	icon_state = "erisgreen"
 
 /area/colony/exposedsun/crashed_shop/workshop
