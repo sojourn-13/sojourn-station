@@ -135,7 +135,7 @@ obj/item/clothing/suit/gownrisque/alt
 
 // Umi_Cloak
 /obj/item/clothing/suit/orsicoat
-	name = "Orsi Winter Cape"
+	name = "Red Winter Cape"
 	desc = "A soft red cape with synthetic white fur trim."
 	icon_state = "orsicoat"
 	item_state = "orsicoat"

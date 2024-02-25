@@ -16,7 +16,7 @@
 	cost = 2 // Pay the horni tax.
 
 /datum/gear/suit/orsicoat
-	display_name = "Orsi Winter Cape"
+	display_name = "Red Winter Cape"
 	path = /obj/item/clothing/suit/orsicoat
 
 /datum/gear/suit/cloakselect
