@@ -55,7 +55,7 @@ This monster is borderline unkillable and will make players upset
 	melee_damage_upper = 20
 
 	destroy_surroundings = FALSE
-	armor = list(melee = -30, bullet = -30, energy = -30, bomb = -30, bio = 100, rad = 100) //Starting wise we are less then armorless
+	armor = list(melee = -10, bullet = -10, energy = -10, bomb = -10, bio = 100, rad = 100) //Starting wise we are less then armorless
 
 	contaminant_immunity = TRUE
 
@@ -96,6 +96,7 @@ This monster is borderline unkillable and will make players upset
 	var/marked_for_death = FALSE
 	var/allow_teleporters = TRUE
 	var/returning_fire = FALSE
+	var/damage_cap_devider = 1
 
 	allowed_stat_modifiers = list()
 
@@ -134,11 +135,13 @@ This monster is borderline unkillable and will make players upset
 		delay_for_all = 0.1 SECONDS
 		armor = list(melee = 35, bullet = 35, energy = 35, bomb = 70, bio = 100, rad = 100) //We are now in self-defence mode
 		projectiletype = /obj/item/projectile/beam/shotgun/strong
+		damage_cap_devider = 5
 
 	if(data_count >= 4000)
 		turrets_can_build = TRUE
 		armor = list(melee = 15, bullet = 15, energy = 15, bomb = 15, bio = 100, rad = 100)
 		emp_damage = FALSE
+		damage_cap_devider += 2
 		return
 
 	if(data_count >= 3500)
@@ -214,7 +217,6 @@ This monster is borderline unkillable and will make players upset
 
 	if(data_count >= 500)
 		projectiletype = /obj/item/projectile/beam/weak/magnum_40
-		armor = list(melee = -10, bullet = -10, energy = -10, bomb = -10, bio = 100, rad = 100) //Starting wise we are less then armorless
 		return
 
 	if(data_count >= 100)
@@ -234,39 +236,48 @@ This monster is borderline unkillable and will make players upset
 			adjustFireLoss(-1000)
 			data_count += 4000 //We REALLY disliked that
 			kcorp_moduals -= 1
+			damage_cap_devider += 1
 		else
 			death()
 	handled_mode()
 	try_n_build()
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/adjustBruteLoss(amount)
-	if(amount >= 1000)
-		to_chat(world,"<b><font color='#ffaa00'>Anti-Cheat Shielding Successfully Deployed. Data Collected.</font></b>")
-		built_up_rage += 1
-		if(built_up_rage > 2)
-			to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbital Beacon Shield Successfully Deployed. Data Collected.</font></b>")
-			message_admins("<b><font color='#ffaa00'>Administration Being Data Collected.</font></b>")
+	if(amount >= (1000 / damage_cap_devider))
+		if(amount >= 1000)
+			to_chat(world,"<b><font color='#ffaa00'>Anti-Cheat Shielding Successfully Deployed. Data Collected.</font></b>")
+			built_up_rage += 1
+			if(built_up_rage > 2)
+				to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbital Beacon Shield Successfully Deployed. Data Collected.</font></b>")
+				message_admins("<b><font color='#ffaa00'>Administration Being Data Collected.</font></b>")
 		return
 
 	..()
 	data_count += (amount*0.5)
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/adjustFireLoss(amount)
-	if(amount >= 1000)
-		to_chat(world,"<b><font color='#ffaa00'>Anti-Cheat Shielding Successfully Deployed. Data Collected.</font></b>")
-		built_up_rage += 1
-		if(built_up_rage > 2)
-			to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbital Beacon Shield Successfully Deployed. Data Collected.</font></b>")
-			message_admins("<b><font color='#ffaa00'>Administration Being Data Collected.</font></b>")
+	if(amount >= (1000 / damage_cap_devider))
+		if(amount >= 1000)
+			to_chat(world,"<b><font color='#ffaa00'>Anti-Cheat Shielding Successfully Deployed. Data Collected.</font></b>")
+			built_up_rage += 1
+			if(built_up_rage > 2)
+				to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbital Beacon Shield Successfully Deployed. Data Collected.</font></b>")
+				message_admins("<b><font color='#ffaa00'>Administration Being Data Collected.</font></b>")
 		return
 
 	..()
 	data_count += (amount*0.5)
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/bullet_act(obj/item/projectile/proj)
-	..()
+	var/gp_questionmark = findtext(proj.serial_type_index_bullet, "GP")
+	if(gp_questionmark || proj.allow_greyson_mods)
+		data_count += 120
+		if(prob(15))
+			to_chat(src,"<b><font color='#ffaa00'>Anti-Traitor Successfully Deployed, Data Collected.</font></b>")
+		return PROJECTILE_FORCE_MISS
 
-	if(returning_fire)
+
+	if(returning_fire || gp_questionmark || proj.allow_greyson_mods)
 		returning_fire = FALSE
 		var/turf/proj_start_turf = proj.starting
 		for(var/obj in proj_start_turf.contents)
@@ -280,6 +291,8 @@ This monster is borderline unkillable and will make players upset
 		OpenFire(proj_start_turf)
 		handled_mode()
 
+
+	..()
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/emp_act(severity)
 	data_count += rand(-100, 500)
@@ -342,7 +355,7 @@ This monster is borderline unkillable and will make players upset
 		allow_teleporters = TRUE
 		qdel(src)
 
-	if(health == maxHealth || health < 0 || !kcorp_moduals)
+	if(health <= 0 && !kcorp_moduals)
 		marked_for_death = TRUE
 		allow_teleporters = TRUE
 		qdel(src)
@@ -355,6 +368,7 @@ This monster is borderline unkillable and will make players upset
 	s.set_up(3, 1, src)
 	s.start()
 	bluespace_entropy(1200, get_turf(src), TRUE) //Ye... It went far away
+	new /obj/item/reagent_containers/food/snacks/icecream(src.loc)
 	if(dieing <= 1)
 		allow_teleporters = TRUE
 		dieing += 1
@@ -373,6 +387,12 @@ This monster is borderline unkillable and will make players upset
 		to_chat(world, "<b><font color='#ffaa00'>Qdel shield successful, Data Collected.</font></b>")
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/forceMove(atom/destination, var/special_event, glide_size_override=0)
+	var/turf/currentTurf = src.loc
+	for(var/obj/structure/multiz/allow_move in currentTurf.contents)
+		if(istype(allow_move, /obj/structure/multiz))
+			..()
+			return
+
 	if(built_up_rage <= 1 && allow_teleporters)
 		if(!marked_for_death)
 			to_chat(world, "<b><font color='#ffaa00'>Data Collected, fabricating counter measure.</font></b>")
