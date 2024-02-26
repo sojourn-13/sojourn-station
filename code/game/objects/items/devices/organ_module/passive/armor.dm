@@ -11,11 +11,9 @@
 	E.brute_mod += 0.3
 
 /obj/item/organ_module/armor/ablative
-	name = "subdermal armor"
+	name = "subdermal ablative armor"
 	desc = "A set of subdermal ablative plates, designed to disperse energy discharges while remaining lightweight."
-	allowed_organs = list(BP_CHEST)
 	matter = list(MATERIAL_PLASTIC = 12, MATERIAL_PLATINUM = 2)
-	icon_state = "armor-chest"
 
 /obj/item/organ_module/armor/onInstall(obj/item/organ/external/E)
 	E.burn_mod -= 0.3
