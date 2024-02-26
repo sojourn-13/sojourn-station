@@ -312,7 +312,7 @@
 	name = "Absolute \"Kudzu Killer\""
 	desc = "Church brand weedkiller grenades. Designed to deal with Kudzu infestations. Mixes toxic biomatter with plasticides for great results"
 	icon_state = "foam"
-	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_BIOMATTER = 5)
+	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_BIOMATTER = 3)
 	matter_reagents = list("water" = 30)
 
 /obj/item/grenade/chem_grenade/cleaner
@@ -327,7 +327,7 @@
 	name = "Absolutism \"Cleanse Capsule\""
 	desc = "Church brand cleaner grenades. Designed to deal with biogenerator accidents and the aftermaths of wildlife hordes in the colony."
 	icon_state = "foam"
-	matter = list(MATERIAL_STEEL = 3, MATERIAL_BIOMATTER = 5)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 5)
 	matter_reagents = list("water" = 30)
 
 /obj/item/grenade/chem_grenade/cleaner/Initialize()

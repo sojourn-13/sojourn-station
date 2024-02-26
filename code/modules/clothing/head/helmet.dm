@@ -779,7 +779,7 @@
 	armor_list = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 5, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 3, MATERIAL_GOLD = 2)
 
 /obj/item/clothing/head/helmet/rosaria/verb/toggle_style()
 	set name = "Adjust Style"

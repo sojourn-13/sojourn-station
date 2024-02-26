@@ -30,7 +30,7 @@
 	item_state = "explosive_nt"
 	heavy_range = 1.5
 	weak_range = 5
-	matter = list(MATERIAL_BIOMATTER = 100)
+	matter = list(MATERIAL_BIOMATTER = 50)
 
 
 /obj/item/grenade/explosive/artileria
