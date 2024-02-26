@@ -214,6 +214,10 @@
 					bees_spell(M, able_to_cast)
 					continue
 
+				if((spell.message == "Sky." || spell.message == "Above.") && candle_amount >= 1)
+					sun_spell(M, able_to_cast)
+					continue
+
 				if(spell.message == "Scribe." && candle_amount >= 7)
 					scribe_spell(M, able_to_cast)
 					continue
@@ -686,6 +690,30 @@
 			B.remove_self(70)
 			M.sanity.changeLevel(4)
 			qdel(G)
+	return
+
+// Sky: / Above:
+// Converts a open omega book into a drawing of the sun, a oddity with a perk that exspands the skill cap by 30 points.
+/obj/effect/decal/cleanable/crayon/proc/sun_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
+	M.maxHealth -= 5
+	M.health -= 5
+	for(var/obj/item/oddity/common/book_omega/opened/BOOK in oview(3))
+
+		to_chat(M, "<span class='info'>A cold voice creeks. </span><span class='angelsay'> With this messy canvas, I can only provide you a glance of that.</span>")
+
+		if(!body_checks(M))
+			to_chat(M, "<span class='info'>A cold voice sighs. </span><span class='angelsay'> You will not do. Waste the others time.</span>")
+			bluespace_entropy(3, get_turf(src)) //Wasting an artists time is rather rude
+			return
+
+		to_chat(M, "<span class='info'>The pages of [BOOK.name] slowly turn into paint.</span>")
+		new /obj/item/oddity/rare/drawing_of_sun(BOOK.loc)
+		B.remove_self(140) //Base is 540
+		qdel(BOOK)
 	return
 
 // Pouch: Spawns a pouch with a dimensional-linked shared storage. Every person holding one of these can access the same storage from anywhere.

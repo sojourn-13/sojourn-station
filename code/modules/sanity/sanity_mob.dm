@@ -342,7 +342,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					resting_times = 1
 				for(var/stat in L)
 					var/stat_up = L[stat] * 2 * resting_times
-					if((owner.stats.getStat(stat)) >= STAT_VALUE_MAXIMUM)
+					if((owner.stats.getStat(stat)) >= owner.stats.grab_Stat_cap(stat))
 						stat_up = 0
 						to_chat(owner, SPAN_NOTICE("You feel that you can't grow anymore better for today in [stat] with oddities"))
 					else
@@ -380,7 +380,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 				LAZYAPLUS(stat_change, pick(ALL_STATS_FOR_LEVEL_UP), 3)
 
 			for(var/stat in stat_change)
-				if((owner.stats.getStat(stat)) >= STAT_VALUE_MAXIMUM)
+				if((owner.stats.getStat(stat)) >= owner.stats.grab_Stat_cap(stat))
 					to_chat(owner, SPAN_NOTICE("You can not increase [stat] anymore with simple resting."))
 				else
 					to_chat(owner, SPAN_NOTICE("Your [stat] stat goes up by [stat_change[stat]]"))
