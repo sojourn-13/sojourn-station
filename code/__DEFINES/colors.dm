@@ -118,6 +118,7 @@
 #define COLOR_LIGHTING_GREEN_DARK						"#3a5f3a"
 #define COLOR_LIGHTING_BLUE_MACHINERY					"#162cca"
 #define COLOR_LIGHTING_BLUE_BRIGHT						"#8a95a8"
+#define COLOR_LIGHTING_BLUE_CREW						"#afcaf8"
 #define COLOR_LIGHTING_BLUE_DARK						"#3a4b5f"
 #define COLOR_LIGHTING_ORANGE_MACHINERY					"#e0900b"
 #define COLOR_LIGHTING_ORANGE_BRIGHT					"#d7be93"
@@ -135,6 +136,7 @@
 #define COLOR_LIGHTING_CREW_SOFT						"#fef9e7"
 #define COLOR_LIGHTING_SCI_BRIGHT						"#6a6c71"
 #define COLOR_LIGHTING_SCI_DARK							"#4f535f"
+
 
 
 

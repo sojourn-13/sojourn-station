@@ -934,14 +934,18 @@
 /obj/structure/flora/big/bush1
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "bush1"
+	plane = 2
 
 /obj/structure/flora/big/bush2
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "bush2"
+	plane = 2
+
 
 /obj/structure/flora/big/bush3
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "bush3"
+	plane = 2
 
 /obj/structure/flora/big/rocks1
 	name = "rock pile"

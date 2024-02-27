@@ -44,12 +44,15 @@
 	spawn_nothing_percentage = 10
 
 /obj/random/flora/small_jungle_tree/item_to_spawn()
-	return pick(/obj/structure/flora/tree/jungle_small,\
-				/obj/structure/flora/tree/jungle_small/variant1,\
-				/obj/structure/flora/tree/jungle_small/variant2,\
-				/obj/structure/flora/tree/jungle_small/variant3,\
-				/obj/structure/flora/tree/jungle_small/variant4,\
-				/obj/structure/flora/tree/jungle_small/variant5)
+	if(!determine_night()) //Checks if it's night and simply doesn't spawn this stuff if it is
+		return pick(/obj/structure/flora/tree/jungle_small,\
+					/obj/structure/flora/tree/jungle_small/variant1,\
+					/obj/structure/flora/tree/jungle_small/variant2,\
+					/obj/structure/flora/tree/jungle_small/variant3,\
+					/obj/structure/flora/tree/jungle_small/variant4,\
+					/obj/structure/flora/tree/jungle_small/variant5)
+	else
+		return null
 
 /obj/random/flora/jungle_tree
 	name = "random jungle tree (100%)"
@@ -60,11 +63,14 @@
 	spawn_nothing_percentage = 10
 
 /obj/random/flora/jungle_tree/item_to_spawn()
-	return pick(/obj/structure/flora/tree/jungle,\
-				/obj/structure/flora/tree/jungle/variant1,\
-				/obj/structure/flora/tree/jungle/variant2,\
-				/obj/structure/flora/tree/jungle/variant3,\
-				/obj/structure/flora/tree/jungle/variant4,\
-				/obj/structure/flora/tree/jungle/variant5)
+	if(!determine_night()) //Checks if it's night and simply doesn't spawn this stuff if it is
+		return pick(/obj/structure/flora/tree/jungle,\
+					/obj/structure/flora/tree/jungle/variant1,\
+					/obj/structure/flora/tree/jungle/variant2,\
+					/obj/structure/flora/tree/jungle/variant3,\
+					/obj/structure/flora/tree/jungle/variant4,\
+					/obj/structure/flora/tree/jungle/variant5)
+	else
+		return null
 
 

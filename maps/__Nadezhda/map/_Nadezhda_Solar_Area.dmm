@@ -31,6 +31,9 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk,
+/obj/machinery/light/floor{
+	dir = 8
+	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
 "ag" = (
@@ -672,15 +675,9 @@
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
 "cL" = (
-/obj/structure/railing{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
-	},
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
-	},
-/turf/simulated/floor/asteroid/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor,
+/turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "cM" = (
 /obj/structure/railing{
@@ -698,16 +695,26 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "cO" = (
-/obj/structure/railing{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/asteroid/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk,
+/obj/machinery/light/floor{
+	dir = 4
+	},
+/turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
 "cP" = (
 /obj/structure/railing{
@@ -1004,6 +1011,12 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
+"eV" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
 "fn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -1122,6 +1135,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
+"hR" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
 "hV" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8;
@@ -1589,6 +1612,12 @@
 /obj/random/flora/jungle_tree/low,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
+"rt" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/fixed/hydrotile,
+/area/nadezhda/outside/mountainsolars)
 "rC" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
@@ -1920,6 +1949,12 @@
 	},
 /obj/structure/railing,
 /turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/mountainsolars)
+"yx" = (
+/obj/machinery/light/floor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "yC" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
@@ -2327,6 +2362,19 @@
 /obj/machinery/camera/network/engineering,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
+"GX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 4;
+	tag = "icon-railing0 (EAST)"
+	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
 "Hk" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 9
@@ -2725,6 +2773,13 @@
 /obj/structure/flora/big/bush3,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
+"OW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
+/area/nadezhda/outside/mountainsolars)
 "Pd" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/scrap/dense_weighted,
@@ -2915,6 +2970,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/random/tool/advanced/low_chance,
 /turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/outside/mountainsolars)
+"Tw" = (
+/obj/machinery/light/floor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "Tz" = (
 /obj/structure/window/reinforced{
@@ -3156,6 +3217,26 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/outside/mountainsolars)
+"WX" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk,
+/obj/machinery/light/floor,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
 "Xa" = (
@@ -5711,39 +5792,39 @@ bP
 aS
 aS
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ac
@@ -6527,39 +6608,39 @@ aS
 aS
 aS
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ac
@@ -7241,39 +7322,39 @@ al
 aS
 aS
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ae
-ag
+WX
 dF
 ac
 ac
@@ -8057,39 +8138,39 @@ al
 al
 av
 ae
-ag
+cO
 dF
 ac
 ae
-ag
+cO
 dF
 ac
 ae
-ag
+cO
 dF
 ac
 ae
-ag
+cO
 dF
 ac
 ae
-ag
+cO
 dF
 ac
 ae
-ag
+cO
 dF
 ac
 ae
-ag
+cO
 dF
 ac
 ae
-ag
+cO
 dF
 ac
 ae
-ag
+cO
 dF
 ac
 ac
@@ -8995,9 +9076,9 @@ rF
 zI
 ak
 Zx
-au
-au
-au
+ac
+ac
+ac
 cq
 cq
 cq
@@ -9200,7 +9281,7 @@ aA
 bd
 au
 cg
-au
+Tw
 cz
 cF
 cH
@@ -9304,9 +9385,9 @@ oJ
 ct
 cr
 cA
-cg
+cL
 cF
-cg
+OW
 cI
 aS
 cN
@@ -9916,9 +9997,9 @@ Oq
 al
 al
 cp
-cg
+cL
 cz
-au
+yx
 cI
 ac
 ac
@@ -10426,9 +10507,9 @@ fp
 Gh
 Gh
 yp
-cg
+cL
 cz
-au
+yx
 cI
 ac
 al
@@ -10531,7 +10612,7 @@ au
 au
 cg
 cg
-cL
+cI
 ac
 ac
 ac
@@ -10633,8 +10714,8 @@ cz
 cg
 au
 cz
-cz
-cO
+GX
+cQ
 cQ
 cq
 cq
@@ -10764,7 +10845,7 @@ ac
 ac
 ac
 ac
-ac
+eV
 ac
 ac
 eI
@@ -11976,7 +12057,7 @@ ac
 bw
 bw
 ng
-rW
+hR
 Ev
 Ev
 WH
@@ -12989,7 +13070,7 @@ iZ
 iZ
 iZ
 iZ
-iZ
+rt
 Xt
 Xt
 Xt

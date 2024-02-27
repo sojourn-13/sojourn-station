@@ -12,7 +12,7 @@
 	name = "Surface Transport Shuttle Pad"
 	landmark_tag = "nav_pad_surface_transport"
 	base_turf = /turf/simulated/floor/tiled/dark/cargo
-	base_area = /area/nadezhda/security/maingate
+	base_area = /area/nadezhda/outside/security/maingate
 
 /obj/effect/shuttle_landmark/transit/surface_transport
 	name = "In transit"
@@ -49,7 +49,6 @@
 	name = "Surface Transit Landing Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
-	dynamic_lighting = FALSE
 	base_turf = /turf/simulated/floor/plating/under
 
 //Consoles
@@ -115,7 +114,6 @@
 	name = "Skipjack Landing Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
-	dynamic_lighting = TRUE
 	base_turf = /turf/space
 
 //Merc shuttle Code
@@ -176,7 +174,6 @@
 	name = "Mercenary Landing Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
-	dynamic_lighting = TRUE
 	base_turf = /turf/space
 
 //Scav shuttle
@@ -235,7 +232,6 @@
 	name = "The Rocinante Landing Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
-	dynamic_lighting = FALSE
 	base_turf = /turf/simulated/floor/reinforced
 
 //Marshal shuttle
@@ -296,5 +292,4 @@
 	name = "The Vasiliy Landing Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
-	dynamic_lighting = FALSE
 	base_turf = /turf/simulated/floor/reinforced

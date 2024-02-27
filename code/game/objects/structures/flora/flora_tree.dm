@@ -147,6 +147,7 @@
 	icon_state = "tree"
 	pixel_x = -45
 	pixel_y = -16
+	plane = 3
 
 /obj/structure/flora/tree/jungle/baracade
 	name = "fallen tree"
