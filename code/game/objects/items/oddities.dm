@@ -496,7 +496,7 @@
 	price_tag = 2500 //Bluecross spawn
 	prob_perk = 0
 	kill_stats = TRUE
-	perk = PERK_SKILL_CAP_EXSPANDING
+	perk = PERK_SKILL_CAP_EXPANDING
 
 /obj/item/oddity/rare/drawing_of_sun
 	name = "Drawing of a Unknown Sun"

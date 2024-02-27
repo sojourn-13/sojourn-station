@@ -68,9 +68,9 @@
 	var/datum/stat/S = stat_list[statName]
 	S.setValue(Value)
 
-/datum/stat_holder/proc/change_Stat_cap(statName, amount)
+/datum/stat_holder/proc/add_Stat_cap(statName, amount)
 	var/datum/stat/S = stat_list[statName]
-	S.change_stat_cap(amount)
+	S.add_stat_cap(amount)
 
 /datum/stat_holder/proc/grab_Stat_cap(statName)
 	var/datum/stat/S = stat_list[statName]
@@ -251,7 +251,7 @@
 	else
 		src.value = value
 
-/datum/stat/proc/change_stat_cap(amount)
+/datum/stat/proc/add_stat_cap(amount)
 	stat_cap += amount
 
 /datum/stat/proc/grabbed_stat_cap()

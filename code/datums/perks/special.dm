@@ -58,7 +58,7 @@
 //Bluecross Perks//
 ///////////////////
 
-/datum/perk/skill_cap_exspanding
+/datum/perk/skill_cap_expanding
 	name = "Celestial Gift"
 	desc = "The normal limit of the mind has been exspanded by 50%"
 	gain_text = "It came in a dream."
@@ -74,11 +74,11 @@
 		var/gather_increase = holder.stats.grab_Stat_cap(stat)
 		gather_increase *= 0.5
 		statis_amount = gather_increase
-		holder.stats.change_Stat_cap(gather_increase)
+		holder.stats.add_Stat_cap(gather_increase)
 
 /datum/perk/skill_cap_exspanding/remove()
 	for(var/stat in ALL_STATS)
-		holder.stats.change_Stat_cap(-statis_amount)
+		holder.stats.add_Stat_cap(-statis_amount)
 	..()
 
 /datum/perk/skill_cap_addition
@@ -93,10 +93,10 @@
 /datum/perk/skill_cap_addition/assign(mob/living/carbon/human/H)
 	..()
 	for(var/stat in ALL_STATS)
-		holder.stats.change_Stat_cap(30)
+		holder.stats.add_Stat_cap(30)
 
 /datum/perk/skill_cap_addition/remove()
 	for(var/stat in ALL_STATS)
-		holder.stats.change_Stat_cap(-30)
+		holder.stats.add_Stat_cap(-30)
 	..()
 

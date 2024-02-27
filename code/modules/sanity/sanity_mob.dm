@@ -353,7 +353,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					if(owner.stats.addPerk(I.perk))
 						I.perk = null
 
-				if(I.self_destory)
+				if(I.self_destroy)
 					qdel(I, FALSE, TRUE) //Forcefully remove are component
 
 				resting = 0
