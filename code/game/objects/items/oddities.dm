@@ -487,10 +487,11 @@
 	name = "Fragment of Moon"
 	desc = "A glowing, white, glass like shard of the Amethyn Moon."
 	icon_state = "moon_fragment"
-	min_stats = 12
+	min_stats = 16
+	//Its 1 then done so we give quite a bit
 	oddity_stats = list(
-		STAT_COG = 15,
-		STAT_VIG = 15
+		STAT_COG = 18,
+		STAT_VIG = 18
 	)
 	price_tag = 2500 //Bluecross spawn
 	prob_perk = 0
