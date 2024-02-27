@@ -59874,7 +59874,7 @@
 /area/nadezhda/quartermaster/miningdock)
 "cRG" = (
 /obj/structure/table/reinforced,
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bruise_pack/advanced,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/robotics)
 "cRH" = (

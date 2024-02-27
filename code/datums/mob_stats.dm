@@ -68,13 +68,17 @@
 	var/datum/stat/S = stat_list[statName]
 	S.setValue(Value)
 
-/datum/stat_holder/proc/getStat(statName, pure = FALSE)
+/datum/stat_holder/proc/getStat(statName, pure = FALSE, require_direct_value = TRUE)
 	if (!islist(statName))
 		var/datum/stat/S = stat_list[statName]
 		LEGACY_SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
-		return S ? S.getValue(pure) : 0
+		var/stat_value =  S ? S.getValue(pure) : 0
+		if(holder?.stats.getPerk(PERK_NO_OBSUCATION) || require_direct_value)
+			return stat_value 
+		else
+			return statPointsToLevel(stat_value)
 	else
-		log_debug("passed list to getStat(), statName without a list: [statName]")
+		log_debug("passed list to getStat(), statName without a list: [statName]") 
 
 //	Those are accept list of stats
 //	Compound stat checks.
@@ -121,9 +125,9 @@
 // return value from 0 to 1 based on value of stat, more stat value less return value
 // use this proc to get multiplier for decreasing delay time (exaple: "50 * getMult(STAT_ROB, STAT_LEVEL_ADEPT)"  this will result in 5 seconds if stat STAT_ROB = 0 and result will be 0 if STAT_ROB = STAT_LEVEL_ADEPT)
 /datum/stat_holder/proc/getMult(statName, statCap = STAT_LEVEL_MAX, pure = FALSE)
-    if(!statName)
-        return
-    return 1 - max(0,min(1,getStat(statName, pure)/statCap))
+	if(!statName)
+		return
+	return 1 - max(0,min(1,getStat(statName, pure)/statCap))
 
 /datum/stat_holder/proc/getPerk(perkType)
 	RETURN_TYPE(/datum/perk)

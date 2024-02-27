@@ -540,3 +540,30 @@
 
 /mob/living/carbon/slime/slip() //Can't slip something without legs.
 	return 0
+
+//fancy slime people code, because making slime people carbon/human/slime is too much and would totally not solve a bunch of issues
+
+/mob/living/carbon/slime/can_eat(var/food, var/feedback = 1)
+	var/list/status = can_eat_status()
+	if(status[1] == HUMAN_EATING_NO_ISSUE)
+		return 1
+	if(feedback)
+		if(status[1] == HUMAN_EATING_NO_MOUTH)
+			to_chat(src, "Where do you intend to put \the [food]? You don't have a mouth!")
+		else if(status[1] == HUMAN_EATING_BLOCKED_MOUTH)
+			to_chat(src, SPAN_WARNING("\The [status[2]] is in the way!"))
+	return 0
+
+/mob/living/carbon/slime/proc/can_eat_status()
+	return list(HUMAN_EATING_NO_ISSUE)
+
+/mob/living/carbon/slime/can_force_feed(var/feeder, var/food, var/feedback = 1)
+	var/list/status = can_eat_status()
+	if(status[1] == HUMAN_EATING_NO_ISSUE)
+		return 1
+	if(feedback)
+		if(status[1] == HUMAN_EATING_NO_MOUTH)
+			to_chat(feeder, "Where do you intend to put \the [food]? \The [src] doesn't have a mouth!")
+		else if(status[1] == HUMAN_EATING_BLOCKED_MOUTH)
+			to_chat(feeder, SPAN_WARNING("\The [status[2]] is in the way!"))
+	return 0

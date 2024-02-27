@@ -52,6 +52,7 @@
 	min_age = 18
 	max_age = 200 //Effectively ageless, but human history is only so long.
 	hunger_factor = 1.1
+	nutrition_mod = 100
 
 	dark_color = "#ffffff"
 	light_color = "#000000"
@@ -1106,37 +1107,56 @@
 	spawn_flags = IS_RESTRICTED
 
 /datum/species/slime
-	name = "Slime"
-	name_plural = "slimes"
+	name = SPECIES_SLIME
+	name_plural = "Aulvae"
 
 	default_form = FORM_SLIME
 	obligate_form = TRUE
 	reagent_tag = IS_SLIME
-	unarmed_types = list(/datum/unarmed_attack/slime_glomp)
+	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/slime_glomp)
 	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
 	siemens_coefficient = 3 //conductive
 	darksight = 3
 	virus_immune = TRUE
+	always_blood = TRUE
+	always_ingest = TRUE
 	breath_type = null
 	poison_type = null
 	hunger_factor = 2
-	spawn_flags = IS_RESTRICTED
+	spawn_flags = CAN_JOIN
+	min_age = 18
+	max_age = 200
+	taste_sensitivity = TASTE_SENSITIVE
 
-	burn_mod = 1.15
-	brute_mod = 1.15
-	toxins_mod = -1 // This is dumb. I hope it works. -R4d6
+	nutrition_mod = 150 //Important for some perks
+
+	burn_mod = 1.2
+	brute_mod = 1.2
+	toxins_mod = 1 // fuck toxins_mod, we use a perk for this
 	oxy_mod = 0
 
+	cold_discomfort_level = 283
+	heat_discomfort_level = 313
+
+	cold_level_1 = 258 //Default 270
+	cold_level_2 = 243 //Default 230
+	cold_level_3 = 228  //Default 200
+
+	heat_level_1 = 333 //Default 330
+	heat_level_2 = 353 //Default 380
+	heat_level_3 = 372 //Default 460
+
 	has_process = list(
-		BP_BRAIN = /obj/item/organ/internal/vital/brain/slime
+		BP_BRAIN = /obj/item/organ/internal/vital/brain/slime,
+		OP_STOMACH = /obj/item/organ/internal/stomach/slime
 		)
 
 	breath_type = null
 	poison_type = null
 
 	bump_flag = SLIME
-	swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
-	push_flags = MONKEY|SLIME|SIMPLE_ANIMAL
+	swap_flags = MONKEY|SLIME
+	push_flags = MONKEY|SLIME
 
 	has_limbs = list(
 		BP_CHEST =  new /datum/organ_description/chest/slime,
@@ -1148,10 +1168,13 @@
 		BP_R_LEG =  new /datum/organ_description/leg/right/slime
 	)
 
-	perks = list(PERK_SPEED, PERK_LIMB_REGEN, PERK_MIND_BOOST, PERK_BODY_BOOST)
+	perks = list(PERK_SLIMEMETH, PERK_SLIMEBRAIN, PERK_SLIMEBUFF, PERK_LIMB_REGEN, PERK_SLIMEBODY)
 
+/datum/species/slime/get_bodytype()
+	return "Aulvae"
+/*
 /datum/species/slime/handle_death(var/mob/living/carbon/human/H)
 	spawn(1)
 		if(H)
 			H.gib()
-
+*/

@@ -14,14 +14,9 @@
 	scannable = TRUE
 	nerve_system_accumulations = -5
 
-/datum/reagent/medicine/inaprovaline/holy
-	id = "holyinaprovaline"
-	scannable = FALSE
-	appear_in_default_catalog = FALSE
-
 /datum/reagent/medicine/inaprovaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier) // No more useless chem of leftover baycode with no inference on health due to pulse not affecting anything. - Seb
 	M.add_chemical_effect(CE_PULSE, 1)
-	M.add_chemical_effect(CE_STABLE) // Keeping these useless effects for the sake of RP.
+	M.add_chemical_effect(CE_STABLE, 1) // Keeping these useless effects for the sake of RP.
 	M.add_chemical_effect(CE_PAINKILLER, 15 * effect_multiplier)
 	M.adjustOxyLoss(-0.5 * effect_multiplier) // Should help stall for time against oxyloss killing you to heavy bloodloss or lung/heart damage until your eventual rescue, but won't heal it outright.
 	M.add_chemical_effect(CE_OXYGENATED, 1)
@@ -40,7 +35,7 @@
 	nerve_system_accumulations = 15 // Basic chems shouldn't hurt the body as much as higher potency ones.
 
 /datum/reagent/medicine/bicaridine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(M.species?.reagent_tag == IS_CHTMANT)
+	if(M.species?.reagent_tag == IS_CHTMANT || M.species?.reagent_tag == IS_SLIME)
 		M.heal_organ_damage(0.15 * effect_multiplier, 0, 5 * effect_multiplier)
 		return
 	M.heal_organ_damage(0.3 * effect_multiplier, 0, 5 * effect_multiplier)
@@ -74,8 +69,12 @@
 	nerve_system_accumulations = 20
 
 /datum/reagent/medicine/varceptol/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if((M.species?.reagent_tag == IS_SLIME))
+		M.take_organ_damage(1, 0)
+		M.apply_damage(1, HALLOSS)
+		if(prob(5)) // dont wanna do it constantly.
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
 	M.heal_organ_damage(9 * removed, 0)
-	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
 
 /datum/reagent/medicine/meralyne
 	name = "Meralyne"
@@ -107,6 +106,9 @@
 /datum/reagent/medicine/kelotane/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
 		return
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.heal_organ_damage(0, 0.3 * effect_multiplier, 0, 1.5 * effect_multiplier)
+		return
 	M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 3 * effect_multiplier)
 
 /datum/reagent/medicine/dermaline
@@ -122,6 +124,9 @@
 	nerve_system_accumulations = 20
 
 /datum/reagent/medicine/dermaline/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.heal_organ_damage(0, 0.6 * effect_multiplier, 0, 2.5 * effect_multiplier)
+		return
 	M.heal_organ_damage(0, 1.2 * effect_multiplier, 0, 5 * effect_multiplier)
 
 /datum/reagent/medicine/dylovene
@@ -136,6 +141,12 @@
 	nerve_system_accumulations = 0
 
 /datum/reagent/medicine/dylovene/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if((M.species?.reagent_tag == IS_SLIME))
+		M.take_organ_damage(0.5, 0)
+		M.apply_damage(0.5, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
+		return
 	M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
 	M.adjust_hallucination(-0.9 * effect_multiplier)
 	M.add_chemical_effect(CE_ANTITOX, 2)
@@ -161,6 +172,12 @@
 	nerve_system_accumulations = -10
 
 /datum/reagent/medicine/carthatoline/affect_blood(var/mob/living/carbon/M, var/alien, effect_multiplier, var/removed = REM)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.take_organ_damage(2, 0)
+		M.apply_damage(2, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
+		return
 	M.add_chemical_effect(CE_ANTITOX, 3 * removed)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -282,6 +299,12 @@
 
 /datum/reagent/medicine/tricordrazine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(M.species?.reagent_tag == IS_CHTMANT)
+		return
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.take_organ_damage(1, 0)
+		M.apply_damage(1, HALLOSS)
+		if(prob(5))
+			to_chat(M, "You feel a distinctive ache as something begins to eat away at you from the inside out!")
 		return
 	M.adjustOxyLoss(-0.6 * effect_multiplier)
 	M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
@@ -451,12 +474,12 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	reagent_state = LIQUID
 	color = "#800080"
 	overdose = REAGENTS_OVERDOSE * 0.66
-	metabolism = 0.02
+	metabolism = 0.1 //Was sticking around waaaaay too long
 	nerve_system_accumulations = 60
 	scannable = TRUE //Finnicky chem application, we need to know how much of it is on a system to prevent overdose.
 
 /datum/reagent/medicine/oxycodone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 65)
+	M.add_chemical_effect(CE_PAINKILLER, 75) //Enough to do surgery while awake without causing pain messages
 	M.druggy = max(M.druggy, 10)
 
 /datum/reagent/medicine/oxycodone/overdose(mob/living/carbon/M, alien)
@@ -485,24 +508,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/nepenthe/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 1000)
 
-/datum/reagent/medicine/anodyne //Standard used around
-	name = "Anodyne"
-	id = "anodyne"
-	description = "The power of the Absolute grants a gift of momentary abatement against the dire physical hardships of the body."
-	taste_description = "numbness"
-	reagent_state = LIQUID
-	color = "#BAA845"
-	overdose = 0
-	scannable = FALSE
-	metabolism = 0.2
-	nerve_system_accumulations = 0
-	appear_in_default_catalog = FALSE
-	nerve_system_accumulations = -30
-
-/datum/reagent/medicine/anodyne/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 90) // Tweaking the numbers here so that they are closer to what litanies used to do, this one is a flat -10 loss to what it used to be...
-
-/datum/reagent/medicine/laudanum //Weakest available
+/datum/reagent/medicine/paracetamol/holy //It's now just paracetamol. The holy Tylenol, though no OD
 	name = "Laudanum"
 	id = "laudanum"
 	description = "A nostalgic sensation of relief and calm against the faintest aches."
@@ -510,23 +516,60 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	reagent_state = LIQUID
 	color = "#488531"
 	overdose = 0
-	scannable = FALSE
-	metabolism = 0.5
-	nerve_system_accumulations = 0
+	//scannable = FALSE Might make them unscannable again before fullmerge, but for now I need to be able to see them easily to test them
 	appear_in_default_catalog = FALSE
-	nerve_system_accumulations = -15
 
-/datum/reagent/medicine/laudanum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 20) // ...yet this one is a buff, making it an acceptably low painkiller range while keeping a 50 difference between tiers like Tram-to-Para ratio - Seb
+/datum/reagent/medicine/tramadol/holy //Tramadol, but with half NSA
+	name = "Anodyne"
+	id = "anodyne"
+	description = "The power of the Absolute grants relief from pain."
+	taste_description = "numbness"
+	color = "#BAA845"
+	//scannable = FALSE
+	nerve_system_accumulations = 20
+	appear_in_default_catalog = FALSE
+
+/datum/reagent/medicine/oxycodone/holy //Oxycodone but with half NSA and higher OD limit
+	name = "Holy Myrrh"
+	id = "myrrh"
+	description = "The faith healing of the Tessellates can extend even to some of the most severe pains known to creatures."
+	taste_description = "numbness"
+	overdose = REAGENTS_OVERDOSE
+	//scannable = FALSE
+	nerve_system_accumulations = 30
+
+/datum/reagent/medicine/inaprovaline/holy
+	id = "holyinaprovaline"
+	scannable = FALSE
+	appear_in_default_catalog = FALSE
 
 /datum/reagent/medicine/dexalinp/holy
-	name = "Helaxin Negative"
+	name = "Breath of Life"
 	description = "A chemical of unknown origin capable of treating oxygen deprivation and repairing muscles, highly effective but difficult to detect."
 	id = "holydexalinp"
-	scannable = FALSE
+	//scannable = FALSE
 	appear_in_default_catalog = FALSE
 	overdose = 0
 	nerve_system_accumulations = 0
+
+/datum/reagent/medicine/tricordrazine/holy //Tricord but no NSA
+	name = "Restorative Grace"
+	description = "A holy chemical that slowly heals the body of basic ills."
+	id = "holytricord"
+	//scannable = FALSE
+	nerve_system_accumulations = 0
+
+/datum/reagent/medicine/quickclot/holy
+	name = "Blood of God"
+	description = "A holy chemical that stymies the flow of blood."
+	id = "holyquickclot"
+	//scannable = FALSE
+
+/datum/reagent/medicine/dylovene/holy
+	name = "Cleanse the Body"
+	description = "A holy chemical that purges the blood of common toxins."
+	id = "holydylo"
+	//scannable = FALSE
 
 /datum/reagent/medicine/cindpetamol/holy
 	name = "Alignitol"
@@ -591,14 +634,12 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	nerve_system_accumulations = -15
 
 /datum/reagent/medicine/alkysine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.adjustBrainLoss(-(3 + (M.getBrainLoss() * 0.05)) * effect_multiplier)
-	M.add_chemical_effect(CE_PAINKILLER, 10 * effect_multiplier, TRUE)
-	var/mob/living/carbon/human/H = M
-	var/obj/item/organ/internal/E = H.random_organ_by_process(BP_BRAIN)
-	if(E && istype(E))
-		var/list/current_wounds = E.GetComponents(/datum/component/internal_wound)
-		if(LAZYLEN(current_wounds) && prob(10))
-			LEGACY_SEND_SIGNAL(E, COMSIG_IORGAN_REMOVE_WOUND, pick(current_wounds))
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/vital/brain/B = H.internal_organs_by_efficiency[BP_BRAIN]
+		if(!BP_IS_ROBOTIC(B) && prob(75))
+			M.add_chemical_effect(CE_PAINKILLER, 10)
+			M.add_chemical_effect(CE_BRAINHEAL, 1)
 
 /datum/reagent/medicine/imidazoline
 	name = "Imidazoline"
@@ -619,8 +660,8 @@ We don't use this but we might find use for it. Porting it since it was updated 
 		var/obj/item/organ/internal/E = H.random_organ_by_process(OP_EYES)
 		if(E && istype(E))
 			var/list/current_wounds = E.GetComponents(/datum/component/internal_wound)
-			if(LAZYLEN(current_wounds) && prob(10))
-				LEGACY_SEND_SIGNAL(E, COMSIG_IORGAN_REMOVE_WOUND, pick(current_wounds))
+			if(LAZYLEN(current_wounds) && prob(75))
+				M.add_chemical_effect(CE_EYEHEAL, 1)
 
 /datum/reagent/medicine/imidazoline/overdose(mob/living/carbon/M, alien)
 	. = ..()
@@ -642,15 +683,15 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	nerve_system_accumulations = 30
 
 /datum/reagent/medicine/peridaxon/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	if(M.species?.reagent_tag == IS_CHTMANT)
-		return
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Peridaxon shouldn't heal brain or bones
 		for(var/obj/item/organ/I in organs_sans_brain_and_bones)
 			var/list/current_wounds = I.GetComponents(/datum/component/internal_wound)
 			if(LAZYLEN(current_wounds) && !BP_IS_ROBOTIC(I) && prob(75)) //Peridaxon heals only non-robotic organs
-				LEGACY_SEND_SIGNAL(I, COMSIG_IORGAN_REMOVE_WOUND, pick(current_wounds))
+				M.add_chemical_effect(CE_ONCOCIDAL, 1)
+				M.add_chemical_effect(CE_BLOODCLOT, 1)
+				M.add_chemical_effect(CE_ANTITOX, 2)
 
 /datum/reagent/medicine/peridaxon/overdose(mob/living/carbon/M, alien)
 	. = ..()
@@ -1060,6 +1101,42 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/kyphotorin/overdose(mob/living/carbon/M, alien)
 	M.adjustCloneLoss(4)
 
+/datum/reagent/medicine/slimeregen
+	name = "mitosis hyperstim"
+	id = "mstim"
+	description = "A novel protein structure used within the bodies of Aulvae to stimulate mitosis to replace large amounts of lost cells in a short time frame. These proteins are theorized to be highly lethal to most organics if ingested or injected."
+	taste_description = "prions"
+	overdose = 9 //Regenerate limbs automatically if we reach the end of the dose given by the chem without actually rolling well.
+	metabolism = REM * 0.5
+	scannable = FALSE
+
+/datum/reagent/medicine/slimeregen/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		var/mob/living/carbon/human/H = M
+		if(prob(0.5 * effect_multiplier) || dose >= overdose)
+			var/list/missingLimbs = list()
+			for(var/name in BP_ALL_LIMBS)
+				if(!H.has_appendage(name))
+					missingLimbs += name
+			if(missingLimbs.len)
+				var/luckyLimbName = pick(missingLimbs)
+				H.restore_organ(luckyLimbName)
+				M.pain(luckyLimbName, 100, TRUE)
+				dose = 0
+		M.heal_organ_damage(0.5 * effect_multiplier, 0, 5 * effect_multiplier) //pretty strong, but the cost is high and they can only use this twice an hour.
+		M.add_chemical_effect(CE_SLOWDOWN, 2)
+		M.eye_blurry = max(M.eye_blurry, 10)
+		if(prob(10))
+			M.Weaken(2)
+			M.custom_emote(1,"'s form momentarily loses cohesion as they fall to the ground!")
+	else
+		var/wound_chance = 100 - (79 * (1 - M.stats.getMult(STAT_TGH)))
+		if(ishuman(M))
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/liver/L = H.random_organ_by_process(BP_BRAIN)
+				create_overdose_wound(L, M, /datum/component/internal_wound/organic/permanent, "prion damage")
+
 /datum/reagent/medicine/polystem
 	name = "Polystem"
 	id = "polystem"
@@ -1276,9 +1353,10 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/fun_gas/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	var/effective_dose = dose / 2
 	dose *= 0.75 // Reduce the dose to prevent buildup from little N2O
+	if(M.species?.reagent_tag == IS_SLIME)
+		return
 	if(issmall(M))
 		effective_dose *= 2
-
 	if(effective_dose < 1)
 		if(effective_dose == metabolism * 2 || prob(10))
 			M.emote("giggle")

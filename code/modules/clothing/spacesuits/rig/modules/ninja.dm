@@ -203,7 +203,7 @@
 
 	interface_name = "dead man's switch"
 	interface_desc = "An integrated self-destruct module. When the wearer dies, so does the surrounding area. Do not press this button."
-	var/list/explosion_values = list(1,2,4,5)
+	var/list/explosion_values = list(2,2,4,5)
 
 /obj/item/rig_module/self_destruct/small
 	explosion_values = list(0,0,3,4)

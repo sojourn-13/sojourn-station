@@ -53,6 +53,52 @@
 		health = 0
 		..(wound_damage, damage_type, wounding_multiplier, sharp, edge, silent)
 
+/obj/item/organ/internal/vital/brain/get_possible_wounds(damage_type, sharp, edge)
+	var/list/possible_wounds = list()
+
+	// Determine possible wounds based on nature and damage type
+	var/is_robotic = BP_IS_ROBOTIC(src)
+	var/is_organic = BP_IS_ORGANIC(src) || BP_IS_ASSISTED(src)
+
+	switch(damage_type)
+		if(BRUTE)
+			if(!edge)
+				if(sharp) // dont even fucking ask whats the difference between this and eyes get_possible_wounds. I dont know, I wont tell you. 
+					if(is_organic)
+						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/brain_sharp))
+					if(is_robotic)
+						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/brain_sharp))
+				else
+					if(is_organic)
+						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/brain_blunt))
+					if(is_robotic)
+						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/brain_blunt))
+			else
+				if(is_organic)
+					LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/brain_edge))
+				if(is_robotic)
+					LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/brain_edge))
+		if(BURN)
+			if(is_organic)
+				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/brain_burn))
+			if(is_robotic)
+				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/brain_emp_burn))
+		if(TOX)
+			if(is_organic)
+				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/poisoning))
+			//if(is_robotic)
+			//	LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/poisoning))
+		if(CLONE)
+			if(is_organic)
+				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/radiation))
+		if(PSY)
+			if(is_organic)
+				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/sanity))
+			if(is_robotic)
+				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/sanity))
+
+	return possible_wounds
+
 /// Brain blood oxygenation is handled via oxyloss
 /obj/item/organ/internal/vital/brain/handle_blood()
 	if(BP_IS_ROBOTIC(src) || !owner)
@@ -115,34 +161,6 @@
 			brainmob.mind.transfer_to(owner)
 		else
 			owner.key = brainmob.key
-
-/obj/item/organ/internal/vital/brain/slime
-	name = "slime core"
-	desc = "A complex, organic knot of jelly and crystalline particles."
-	icon = 'icons/mob/slimes.dmi'
-	icon_state = "bluespace slime extract"
-	parent_organ_base = BP_CHEST
-	var/regenerating = FALSE
-	var/revival_chem = "plasma"
-	var/respawn_delay = 100 // Delay, in deciseconds (1/10th of a second), before the slime actually revive after being injected.
-
-/obj/item/organ/internal/vital/brain/slime/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/reagent_containers/syringe) && !regenerating)
-		var/obj/item/reagent_containers/syringe/S = I
-		if(S.mode == 1 && S.reagents.remove_reagent(revival_chem, 5)) // We inject 5u of plasma // the 1 correspond to SYRINGE_INJECT, but we're before the define
-			to_chat(user, SPAN_NOTICE("You inject [revival_chem] into [src]."))
-			src.visible_message("[src] start to wobble and wiggle...")
-			regenerating = TRUE
-			spawn(100) regen_body()
-
-/obj/item/organ/internal/vital/brain/slime/proc/regen_body()
-	if(loc != get_turf(src))
-		forceMove(src, get_turf(src))
-	var/mob/living/carbon/human/host = new(src, FORM_SLIME, FORM_SLIME)
-	brainmob?.mind.transfer_to(host)
-
-	src.visible_message("[src] expand into a humanoid form")
-
 /obj/item/organ/internal/vital/brain/golem
 	name = "scroll"
 	desc = "A tightly furled roll of paper, covered with indecipherable runes."

@@ -8,7 +8,7 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	force = WEAPON_FORCE_PAINFUL
-	matter = list(MATERIAL_PLASTEEL = 17, MATERIAL_WOOD = 8, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 4)
+	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_WOOD = 8, MATERIAL_SILVER = 5, MATERIAL_URANIUM = 3)
 	price_tag = 2000
 	origin_tech = list(TECH_COMBAT = 3, TECH_PLASMA = 2)
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
@@ -50,7 +50,7 @@
 	desc = "An older \"Old Testament\" brand plasma rifle, developed in direct response to compete against the highly successful \"Cassad\" design. Reliable and capable of firing suppressive bursts of lower-temperature plasma."
 	icon = 'icons/obj/guns/energy/destroyer.dmi'
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10, MATERIAL_URANIUM = 7)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 7, MATERIAL_URANIUM = 5)
 	sel_mode = 1
 	projectile_type = /obj/item/projectile/beam/pulse
 	origin_tech = list(TECH_COMBAT = 4, TECH_PLASMA = 3)
@@ -74,7 +74,7 @@
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_POCKET|SLOT_HOLSTER
 	force = WEAPON_FORCE_PAINFUL
-	matter = list(MATERIAL_STEEL = 2, "biomatter" = 20)
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_BIOMATTER = 10)
 	disposable = TRUE
 	origin_tech = list(TECH_COMBAT = 1, TECH_PLASMA = 1)
 	price_tag = 250

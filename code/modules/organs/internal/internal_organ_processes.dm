@@ -46,7 +46,7 @@
 	return effective_efficiency ? effective_efficiency : 1
 
 /mob/living/carbon/human/proc/eye_process()
-	var/eye_efficiency = get_organ_efficiency(OP_EYES)
+	var/eye_efficiency = get_organ_efficiency(OP_EYES) * (1 + chem_effects[CE_EYEHEAL]) //Highest this goes is 2
 
 	if(eye_efficiency < BRUISED_2_EFFICIENCY)
 		eye_blurry = 1
@@ -55,9 +55,9 @@
 	//update_client_colour()
 
 /mob/living/carbon/human/proc/kidney_process()
-	var/kidneys_efficiency = get_organ_efficiency(OP_KIDNEYS)
+	var/kidneys_efficiency = get_organ_efficiency(OP_KIDNEYS) * (1 + chem_effects[CE_PURGER])
 	var/obj/item/organ/internal/kidney = random_organ_by_process(OP_KIDNEYS)
-	var/chem_toxicity = chem_effects[CE_ANTITOX] + chem_effects[CE_BLOODCLOT] + chem_effects[CE_SPEEDBOOST]
+	var/chem_toxicity = chem_effects[CE_BLOODCLOT] + chem_effects[CE_SPEEDBOOST]
 	var/toxin_strength = chem_effects[CE_TOXIN] * IORGAN_KIDNEY_TOX_RATIO + chem_toxicity
 
 	// Existing damage is subtracted to prevent weaker toxins from maxing out tox wounds on the organ
@@ -216,7 +216,11 @@
 
 /mob/living/carbon/human/proc/stomach_process()
 	var/stomach_efficiency = get_organ_efficiency(OP_STOMACH)
-	max_nutrition = MOB_BASE_MAX_HUNGER * (stomach_efficiency / 100)
+	//max_nutrition = MOB_BASE_MAX_HUNGER * (stomach_efficiency / 100) - This messes with genetics, and a few perks/affects.
+	//If we have for some reason negitive max_nutrition, set to 0 as not to ruin maths in human_movement.dm
+	if(-1 >= max_nutrition)
+		max_nutrition = 0
+
 	if(nutrition > 0 && stat != 2)
 		if(stomach_efficiency <= 0)
 			nutrition = 0

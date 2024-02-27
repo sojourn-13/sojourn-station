@@ -25396,7 +25396,7 @@
 "bij" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/surgery,
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bruise_pack/advanced,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "bik" = (
@@ -51905,7 +51905,7 @@
 "qUh" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/surgery,
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bruise_pack/advanced,
 /obj/machinery/camera/network/research{
 	dir = 8
 	},

@@ -21,6 +21,7 @@
 	max_shells = 60
 	init_recoil = RIFLE_RECOIL(1.1)
 	price_tag = 3000
+	gun_parts = null
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/revolver/mistral/elite/New()
@@ -44,6 +45,7 @@
 	penetration_multiplier = 2
 	init_recoil = RIFLE_RECOIL(4)
 	price_tag = 3250
+	gun_parts = null
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG) //Regains its internal mag due to its more annoying way of reloading
 	serial_type = "BlueCross"
 	icon = 'icons/obj/guns/projectile/sawnoff/bluecross_shotgun.dmi'
@@ -97,6 +99,8 @@
 	init_recoil = LMG_RECOIL(0.5)
 	serial_type = "BlueCross"
 	excelsior = FALSE
+	gun_parts = list(/obj/item/part/gun/frame/maxim = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
+
 
 /obj/item/gun/energy/lasersmg/inferno
 	name = "Disco Inferno \"Light Show\""
@@ -155,6 +159,7 @@
 	penetration_multiplier  = 2
 	max_shells = 1
 	price_tag = 2750
+	gun_parts = null
 	sharp = FALSE
 	saw_off = FALSE
 	serial_type = "BlueCross"
@@ -165,6 +170,7 @@
 			A small red eye has been painted onto the firing pin of this formerly undepowered pistol, this one has been modified with a better feed mechanism to allow \
 			for deadlier shots. Uses 9mm rounds and can take standard pistol magazines, high cap magazines, or submachine gun mags."
 	price_tag = 2000
+	gun_parts = null
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG
 	damage_multiplier = 1.5
 	icon = 'icons/obj/guns/projectile/clarissa.dmi'
@@ -187,6 +193,7 @@
 	max_shells = 4
 	init_recoil = HMG_RECOIL(2)
 	price_tag = 3000
+	gun_parts = null
 	serial_type = "BlueCross"
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic
@@ -221,7 +228,7 @@
 /obj/item/gun/energy/xray/psychic_cannon
 	name = "\"Manta-RAY\" cannon"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-			An unusual gun sought after by the Soteria when it appears for both its utility and its research value. It's durasteel interior and unknown technological function allows \
+			An unusual gun sought after by the Soteria when it appears for both its utility and its research value. It's unknown technological function allows \
 			this weapon to use moderately high damage armor penetrating x-ray laser blasts. While a strict step up from a standard x-ray weapon in all ways, this weapon is more valued for \
 			its research points in the deconstrustive analyzer."
 	icon = 'icons/obj/guns/energy/psychiccannon.dmi'
@@ -250,6 +257,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	price_tag = 1420
+	gun_parts = null
 	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE
@@ -291,6 +299,7 @@
 	origin_tech = list(TECH_MAGNET = 10) //3500 points for rnd, eh its meant to stay in player hands not be deconned
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
 	price_tag = 2450
+	gun_parts = null
 	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	can_dual = TRUE
 	load_method = MAGAZINE

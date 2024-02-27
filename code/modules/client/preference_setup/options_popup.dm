@@ -94,34 +94,34 @@
 				dat += "[initial(J.title)]<br>" //enjoy your byond magic
 			dat += "<br>"
 
-	if(selected_option.perks.len)
-		dat += "Perks:<br>"
-		for(var/perk in selected_option.perks)
-			var/datum/perk/P = perk
-			if(initial(P.icon))
-				dat += "<img style='vertical-align: middle;width=18px;height=18px;' src='[SSassets.transport.get_asset_url(sanitizeFileName("[P].png"))]'/>"
-			dat += " [initial(P.name)]<br>"
-		dat += "<br>"
-		if(selected_option.allowed_jobs.len)
-			dat += "Special jobs:<br>"
-			for(var/job in selected_option.allowed_jobs)
-				var/datum/job/J = job
-				dat += "[initial(J.title)]<br>"
-			dat += "<br>"
-
 		if(selected_option.perks.len)
 			dat += "Perks:<br>"
 			for(var/perk in selected_option.perks)
 				var/datum/perk/P = perk
 				if(initial(P.icon))
-					preference_mob() << browse_rsc(icon(initial(P.icon),initial(P.icon_state)), "perk_[initial(P.name)].png")
-					dat += "<img style='vertical-align: middle;width=18px;height=18px;' src='perk_[initial(P.name)].png'/>"
-				dat += "[initial(P.name)]<br>"
+					dat += "<img style='vertical-align: middle;width=18px;height=18px;' src='[SSassets.transport.get_asset_url(sanitizeFileName("[P].png"))]'/>"
+				dat += " [initial(P.name)]<br>"
 			dat += "<br>"
+			if(selected_option.allowed_jobs.len)
+				dat += "Special jobs:<br>"
+				for(var/job in selected_option.allowed_jobs)
+					var/datum/job/J = job
+					dat += "[initial(J.title)]<br>"
+				dat += "<br>"
 
-		if(!selected_option.allow_modifications)
-			dat += "Body augmentation disabled<br>"
-			dat += "<br>"
+			if(selected_option.perks.len)
+				dat += "Perks:<br>"
+				for(var/perk in selected_option.perks)
+					var/datum/perk/P = perk
+					if(initial(P.icon))
+						preference_mob() << browse_rsc(icon(initial(P.icon),initial(P.icon_state)), "perk_[initial(P.name)].png")
+						dat += "<img style='vertical-align: middle;width=18px;height=18px;' src='perk_[initial(P.name)].png'/>"
+					dat += "[initial(P.name)]<br>"
+				dat += "<br>"
+
+			if(!selected_option.allow_modifications)
+				dat += "Body augmentation disabled<br>"
+				dat += "<br>"
 	else
 		dat +="This should never be shown. If you see this, please report it. You managed to call /datum/category_item/player_setup_item/proc/show_popup without a selected option. Provide details of how you got here."
 	if(get_pref_option() == selected_option)

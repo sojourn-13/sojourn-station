@@ -6,7 +6,7 @@
 		crew_data["muted"] = TRUE
 	if(!H.isSynthetic())
 		var/obj/item/organ/internal/vital/heart/O = H.random_organ_by_process(OP_HEART)
-		if(O && BP_IS_ORGANIC(O))
+		if(O && BP_IS_ORGANIC(O) || BP_IS_SLIME(O))
 			var/pulse = H.pulse()
 			if(pulse == PULSE_NONE || pulse == PULSE_THREADY)
 				crew_data["alert"] = TRUE

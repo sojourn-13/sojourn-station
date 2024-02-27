@@ -540,6 +540,11 @@
 	desc = "A sleek lime green poncho."
 	icon_state = "tacpon_cowboyponcho"
 
+/obj/item/clothing/accessory/tacticalponcho/dec
+	name = "thick decorated tactical poncho"
+	desc = "Dark brown with white patterns."
+	icon_state = "tacpon_dec"
+
 /obj/item/clothing/accessory/colorponcho
 	name = "tactical poncho"
 	desc = "A sleek poncho, now in any color of your choice!"
@@ -1089,6 +1094,12 @@
 	icon_state = "militarypilot"
 	item_state = "militarypilot"
 
+/obj/item/clothing/accessory/flag/mardinat_yunan
+	name = "Mardinat-Yunan flag"
+	desc = "A flag that can be draped over the shoulders of it's wearer. Yunan bleeds for it's children."
+	icon_state = "mardinat_yunan_flag"
+	item_state = "mardinat_yunan_flag"
+
 /* Kneepads */
 
 /obj/item/clothing/accessory/kneepads
@@ -1267,8 +1278,8 @@
 
 /obj/item/clothing/accessory/necklace/fractalrosary
 	name = "Fractal Rosary"
-	desc = "This is an insignia given out by the Church of Absolute to people who consider themself to be a Fractal: \
-			An individual who believes and follows the Church but has not yet or cannot be inducted to full membership."
+	desc = "This is an token given by the Church of Absolute to Fractals, members of the Church who are not yet or cannot be baptized for any reason. \
+Anyone wearing it can open public church doors. You should do your best to keep it out of the hands of the non-faithful, lest it be abused."
 	icon_state = "fractal_rosary"
 	item_state = "fractal_rosary"
 
@@ -1523,7 +1534,7 @@
 /obj/item/clothing/accessory/passcard/mardinat_yunan
 	name = "Mardinat Yanun passcard"
 	desc = "A passcard issued to citizens of Mardinat Yunan, initially selected for habitation for its rich gasses and potential for being located on an upcoming trade lane. This gas giant had many of its economic dreams dashed, with the gaseous mixture of the atmosphere being poor for fuel production and the trade lane never materializing."
-	icon_state = "passcard_madinat_yunan"
+	icon_state = "passcard_mardinat_yunan"
 	item_state = "badge"
 
 /obj/item/clothing/accessory/passcard/thalatta
@@ -1544,17 +1555,40 @@
 	icon_state = "passcard_neopolis"
 	item_state = "passport"
 
-
 /obj/item/clothing/accessory/passcard/aqua_fria
 	name = "Aqua Fria passcard"
 	desc = "A passcard issued to citizens of Aqua Fria. Tucked away in a heavily populated system, this large aquatic world has made a reputation for being a substantial food source and home to a number of research institutes."
 	icon_state = "passcard_aqua_fria"
 	item_state = "badge"
 
+/obj/item/clothing/accessory/passcard/wanderers_armada
+	name = "Wanderers Armada passcard"
+	desc = "A passcard issued to citizens of the Wanderers Armada, A wandering fleet of spacers massive enough to have it's own Citizenship status. Well known for it's black market trade and elicit activity."
+	icon_state = "passcard_wanderers_armada"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/kurilskaya
+	name = "Kurilskaya passcard"
+	desc = "A passcard issued to citizens of Kurilskaya, An old mining facility that grew into a lawless land. An unkind and very secretive facility on a gas giant. Not much is known about the place itself to the general public aside from that it's infested with cutthroats."
+	icon_state = "passcard_kurilskaya"
+	item_state = "kuri"
+
 /obj/item/clothing/accessory/passcard/donbettyr
 	name = "Donbettyr passcard"
 	desc = "A passcard issued to citizens of Donbettyr, the homeworld of the Akula. An old, primarily ocean world with two moons and few thousand separated areas of land making up a series of islands and archipelagos."
 	icon_state = "passcard_donbettyr"
+	item_state = "badge"
+
+/obj/item/clothing/accessory/passcard/norian
+	name = "Norian passcard"
+	desc = "A passcard issued to citizens of Norian, the homeworld of the Naramadi. A dangerous but pretty planet and home to many of the other Federation races."
+	icon_state = "passcard_norian"
+	item_state = "general_passport"
+
+/obj/item/clothing/accessory/passcard/marqua
+	name = "Marqua Homeworlds passcard"
+	desc = "A passcard issued to those who live on the many Marqua Homeworlds, standard on the mass of planets they control. Regardless of citizenship status."
+	icon_state = "passcard_marqua_homeworld"
 	item_state = "badge"
 
 /obj/item/clothing/accessory/passcard/passport_sol
@@ -1566,7 +1600,7 @@
 /obj/item/clothing/accessory/passcard/passport_general
 	name = "passport"
 	desc = "A passport issued to Nadezhda Colonists that live on Amethyn, in the Chromin 8 system."
-	icon_state = "general_passport"
+	icon_state = "passport_general"
 	item_state = "general_passport"
 
 /obj/item/clothing/accessory/passcard/passport_kriosan

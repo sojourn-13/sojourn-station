@@ -71,6 +71,9 @@
 		if(IRRADIATE)
 			var/rad_protection = check_protection ? getarmor(null, ARMOR_RAD) / 100 : 0
 			radiation += max((1 - rad_protection) * effect, 0)//Rads auto check armor
+			if(ishuman(src))
+				var/mob/living/carbon/human/H = src
+				radiation *= H.species.radiation_mod
 		if(STUTTER)
 			if(status_flags & CANSTUN) // stun is usually associated with stutter
 				stuttering = max(stuttering,(effect))

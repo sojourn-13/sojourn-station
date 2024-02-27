@@ -1,3 +1,4 @@
+#define SLIME_TRANSPARENCY 210 //this define only exists to make it easier to tweak the value in this small file
 /mob/living/carbon/human
 	name = "unknown"
 	real_name = "unknown"
@@ -59,7 +60,9 @@
 	sanity = new(src)
 
 	flash_mod = species.flash_mod
+
 	movement_hunger_factors *= species.hunger_factor
+	max_nutrition += species.nutrition_mod //Some races have different nutrition maxs
 
 	AddComponent(/datum/component/fabric)
 
@@ -1024,37 +1027,8 @@ var/list/rank_prefix = list(\
 	set desc		= "Browse your character sanity."
 	set category	= "IC"
 	set src			= usr
-	nano_ui_interact(src)
 
-/mob/living/carbon/human/nano_ui_data()
-	var/list/data = list()
-
-	//data["style"] = get_total_style()
-	data["min_style"] = MIN_HUMAN_STYLE
-	data["max_style"] = MAX_HUMAN_STYLE
-	data["sanity"] = sanity.level
-	data["sanity_max_level"] = sanity.max_level
-	data["insight"] = sanity.insight
-	data["desires"] = sanity.list_desires()
-	data["rest"] = sanity.resting
-	data["insight_rest"] = sanity.insight_rest
-
-	var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
-	if(C)
-		data["cruciform"] = TRUE
-		//data["righteous_life"] = C.righteous_life
-
-	return data
-
-/mob/living/carbon/human/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
-	var/list/data = nano_ui_data()
-
-	ui = SSnano.try_update_ui(user, user, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "sanity.tmpl", name, 650, 550, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+	sanity?.ui_interact(src)
 
 /mob/living/carbon/human/verb/Toggle_Title()
 	set name = "Toggle Title"
@@ -1177,8 +1151,13 @@ var/list/rank_prefix = list(\
 
 /mob/living/carbon/human/proc/set_form(var/new_form = FORM_HUMAN, var/default_color)
 	form = GLOB.all_species_form_list[new_form]
+	if(new_form == FORM_SLIME) //slime people snowflake code
+		alpha = SLIME_TRANSPARENCY
+	else
+		alpha = 255
 	if(default_color)
 		skin_color = form.base_color
+
 
 //Needed for augmentation
 /mob/living/carbon/human/proc/rebuild_organs(from_preference)
@@ -1365,7 +1344,7 @@ var/list/rank_prefix = list(\
 			// Pick an existing non-robotic limb, if possible.
 			for(target_zone in BP_ALL_LIMBS)
 				var/obj/item/organ/external/affecting = get_organ(target_zone)
-				if(affecting && BP_IS_ORGANIC(affecting) || BP_IS_ASSISTED(affecting))
+				if(affecting && BP_IS_ORGANIC(affecting) || BP_IS_ASSISTED(affecting) || BP_IS_SLIME(affecting))
 					break
 
 
@@ -1646,39 +1625,11 @@ var/list/rank_prefix = list(\
 
 /mob/living/carbon/human/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
 	. = ..()
-	if(.)
-		if(species.reagent_tag == IS_SLIME) // Slimes clean the floor. Code stolen from the roombas
-			var/turf/tile = loc
-			var/nutrition_gained = 5 // Up here for ease of modification
-			if(isturf(tile))
-				tile.clean_blood()
-				for(var/A in tile)
-					if(istype(A, /obj/effect))
-						if(istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay))
-							qdel(A)
-							src.nutrition += nutrition_gained // Gain some nutrition
-					else if(istype(A, /obj/item))
-						var/obj/item/cleaned_item = A
-						cleaned_item.clean_blood()
-					else if(ishuman(A))
-						var/mob/living/carbon/human/cleaned_human = A
-						if(cleaned_human.lying)
-							if(cleaned_human.head)
-								cleaned_human.head.clean_blood()
-								cleaned_human.update_inv_head(0)
-							if(cleaned_human.wear_suit)
-								cleaned_human.wear_suit.clean_blood()
-								cleaned_human.update_inv_wear_suit(0)
-							else if(cleaned_human.w_uniform)
-								cleaned_human.w_uniform.clean_blood()
-								cleaned_human.update_inv_w_uniform(0)
-							if(cleaned_human.shoes)
-								cleaned_human.shoes.clean_blood()
-								cleaned_human.update_inv_shoes(0)
-							cleaned_human.clean_blood(1)
-							to_chat(cleaned_human, SPAN_DANGER("[src] cleans your face!"))
-
+//no more slime cleaning
 
 /mob/living/carbon/human/proc/set_remoteview(var/atom/A)
 	remoteview_target = A
 	reset_view(A)
+	reset_view(A)
+
+#undef SLIME_TRANSPARENCY

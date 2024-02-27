@@ -59,6 +59,7 @@
 
 	var/can_ricochet = FALSE // defines if projectile can or cannot ricochet.
 	var/ricochet_id = 0 // if the projectile ricochets, it gets its unique id in order to process iteractions with adjacent walls correctly.
+	var/ricochet_mod = 1 //How much we affect the likeliness of a round to bounce. This number is modified negatively by 10% of the projecties AP(thus, ricochet_mult = 1.5 on ap 10 gun is actually 1.4). high cal rubbers have lower mult than low cal rubbers and are further penalized by having AP and AP mod on their rounds/weapons more often.
 
 	var/list/damage_types = list(BRUTE = 10) //BRUTE, BURN, TOX, OXY, CLONE, HALLOSS -> int are the only things that should be in here
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
@@ -122,6 +123,9 @@
 	var/serial_type_index_bullet = ""
 
 	var/recoil = 0
+	var/wounding_mult = 1 // A multiplier on damage inflicted to and damage blocked by mobs
+
+	var/ignition_source = TRUE //Used for deciding if a projectile should blow up a benzin.
 
 /obj/item/projectile/New()
 
@@ -147,9 +151,8 @@
 /obj/item/projectile/proc/get_total_damage()
 	var/val = 0
 	for(var/i in damage_types)
-		val += damage_types[i]
+		val += damage_types[i] * post_penetration_dammult
 	return val
-
 
 /obj/item/projectile/proc/is_halloss()
 	for(var/i in damage_types)
@@ -225,6 +228,9 @@
 
 /obj/item/projectile/proc/get_structure_damage()
 	return ((damage_types[BRUTE] + damage_types[BURN]) * structure_damage_factor)
+
+/obj/item/projectile/proc/get_ricochet_modifier()
+	return (ricochet_mod - (armor_penetration * 0.01)) //Return ricochet mod(default 1) modified by AP. E.G 1 - (AP(10) * 0.01) = 0.1. Thus 10% less likely to bounce per 10ap.
 
 //return 1 if the projectile should be allowed to pass through after all, 0 if not.
 /obj/item/projectile/proc/check_penetrate(atom/A)
@@ -709,17 +715,17 @@
 		playsound(target_mob, pick(mob_hit_sound), 40, 1)
 
 		//admin logs
-		if(!no_attack_log)
-			if(ismob(firer))
+	if(!no_attack_log)
+		if(ismob(firer))
 
-				var/attacker_message = "shot with \a [src.type]"
-				var/victim_message = "shot with \a [src.type]"
-				var/admin_message = "shot (\a [src.type])"
+			var/attacker_message = "shot with \a [src.type]"
+			var/victim_message = "shot with \a [src.type]"
+			var/admin_message = "shot (\a [src.type])"
 
-				admin_attack_log(firer, target_mob, attacker_message, victim_message, admin_message)
-			else
-				target_mob.attack_log += "\[[time_stamp()]\] <b>UNKNOWN SUBJECT (No longer exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
-				msg_admin_attack("UNKNOWN shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
+			admin_attack_log(firer, target_mob, attacker_message, victim_message, admin_message)
+		else
+			target_mob.attack_log += "\[[time_stamp()]\] <b>UNKNOWN SUBJECT (No longer exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
+			msg_admin_attack("UNKNOWN shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
 
 	//sometimes bullet_act() will want the projectile to continue flying
 	if (result == PROJECTILE_CONTINUE)

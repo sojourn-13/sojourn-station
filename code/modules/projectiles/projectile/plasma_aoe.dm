@@ -15,9 +15,9 @@
 /obj/item/projectile/plasma/aoe/on_hit(atom/target)
 	if (!testing)
 		if(emp_strength)
-			empulse(target, aoe_strong, aoe_weak, strength=emp_strength)
+			empulse(target.loc, aoe_strong, aoe_weak, strength=emp_strength)
 		if(heat_damage)
-			heatwave(target, aoe_strong, aoe_weak, heat_damage, fire_stacks, armor_penetration)
+			heatwave(target.loc, aoe_strong, aoe_weak, heat_damage, fire_stacks, armor_penetration)
 	..()
 
 /obj/item/projectile/plasma/aoe/ion

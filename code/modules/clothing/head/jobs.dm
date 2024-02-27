@@ -516,3 +516,19 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 	desc = "A styled black divisor cap for showing everyone you are so steadfast in the name of god you don't need a helmet."
 	icon_state = "divisor_cap"
 	item_state = "divisor_cap"
+
+//misc stuff.
+
+/obj/item/clothing/head/rank/solfedmed
+	name = "Solarian beret"
+	desc = "an old grey-green beret bearing the markings of the Solar Federations fleet, you can almost make out a caduceus against a near worn-off badge."
+	armor_list = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	icon_state = "beret-grey"
+	item_state = "beret-grey"
+
+/obj/item/clothing/head/rank/solfedrecon
+	name = "green utility cover"
+	desc = "A green camo cover, fit for a soldier. This one appears particularly worn down and bears an illegible patch of what seemed to be the Solar Federations armed forces."
+	armor_list = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	icon_state = "greenutility"
+	item_state = "greenutility"

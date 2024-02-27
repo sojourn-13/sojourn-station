@@ -55,12 +55,7 @@
 	cell = /obj/item/cell/large/high
 	structure_damage_factor = STRUCTURE_DAMAGE_BLUNT
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 15, MATERIAL_SILVER = 10)
-
-/obj/item/tool/baton/maul/attack()
-	..()
-	usr.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*1.5)
-
-
+	clickdelay_offset = DEFAULT_ATTACK_COOLDOWN*1.5
 
 /obj/item/tool/baton/mini
 	name = "mini stun baton"

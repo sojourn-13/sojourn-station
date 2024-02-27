@@ -65,17 +65,95 @@
 /obj/item/organ/internal/psionic_tumor/proc/psionic_shield()
 	set category = "Psionic powers"
 	set name = "Psychic Shield (1)"
-	set desc = "Expend a single point of your psi essence to create an energy shield capable of blocking bullets, energy beams, and melee attacks."
+	set desc = "Expend a single point of your psi essence to create an energy shield capable of blocking melee attacks. \
+	If you already have a shield inhand it will enhance it making it capable of blocking lasers and bullets at the cost of its durablity.\
+	If the shield inhand is already enhanced it will be be healed"
 	psi_point_cost = 1
 
 	if(pay_power_cost(psi_point_cost))
+		//Used to tell if we need to spawn new shield or not
+		var/successfully_enhanced = FALSE
+		//Grabs the item on the mobs *actively selected hand*
+		var/active = owner.get_active_hand()
+		//Grabs the item on the mobs *non-selected hand*
+		var/inactive = owner.get_inactive_hand()
+		//Small tracker of how many shields we have use for preventing a spawning of a 3rd shield
+		var/num_of_shields = 0
+
+		// This is a little messy as we are going to do the same thing basically twice, but if you have 2 shields
+		// Then you get to enhanced one for free!
+		if(active)
+			if(istype(active, /obj/item/shield/riot/crusader/psionic))
+				var/obj/item/shield/riot/crusader/psionic/PS = active
+				num_of_shields += 1
+				if(!PS.can_block_proj)
+					PS.can_block_proj = TRUE
+					PS.base_block_chance += 10
+					PS.adjustShieldDurability(-10, owner)
+					successfully_enhanced = TRUE
+				else
+					//We healed are shield at the cost of a point
+					PS.adjustShieldDurability(80, owner)
+					PS.base_block_chance += 5
+		if(inactive)
+			if(istype(inactive, /obj/item/shield/riot/crusader/psionic))
+				num_of_shields += 1
+				var/obj/item/shield/riot/crusader/psionic/PS = inactive
+				if(!PS.can_block_proj)
+					PS.can_block_proj = TRUE
+					PS.base_block_chance += 10
+					PS.adjustShieldDurability(-10, owner)
+					successfully_enhanced = TRUE
+				else
+					//We healed are shield at the cost of a poins
+					PS.adjustShieldDurability(80, owner)
+					PS.base_block_chance += 5
+
+		//Did we improve a shield that was in are hands?
+		//If so tell the player and stop this proc
+		if(successfully_enhanced || num_of_shields >= 2)
+			owner.visible_message(
+			"[owner] looks at the psy-shield and forcefully compresses it!",
+			"Its hard to tell but you can feel that the shield well more solidified. This should be able capable of blocking lasers and bullets."
+			)
+			return
+
+		//Spawn the item inside the owner (mob that has the psionic implant)
+		//We then tell the player a fancy message well playing a sound and forcemoving it to a in_active hand if possable
 		var/obj/item/shield/riot/crusader/psionic/shield = new /obj/item/shield/riot/crusader/psionic(src, owner)
 		owner.visible_message(
 			"[owner] clenches their fist, electricity crackling before a psy-shield forms in their hand!",
 			"You feel the rush of electric essence shocking your hand lightly before a psy-shield forms!"
 			)
 		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+		//If we have 60 TGH we automatically make the basic shield block proj skipping 1 psionic point cost
+		//This is so that if you have tanked cog or just power level TGH to be able to use the shield more affectively you can still be tanky!
+		//If you pick bedlam backround you also bypass the need of 2 points to block proj.
+		if (owner.stats.getStat(STAT_TGH) >= STAT_LEVEL_PROF || owner.stats.getPerk(PERK_PSI_MANIA))
+			owner.visible_message(
+			"[owner] looks at the psy-shield and forcefully compresses it!",
+			"Its hard to tell but you can feel that the shield well more solidified. This should be able capable of blocking lasers and bullets."
+			)
+			shield.can_block_proj = TRUE
+			shield.base_block_chance += 10
+			shield.adjustShieldDurability(-10, owner)
 		usr.put_in_active_hand(shield)
+
+/obj/item/organ/internal/psionic_tumor/proc/psionic_shield_layered()
+	set category = "Psionic powers"
+	set name = "Layered Psychic Shield (1)"
+	set desc = "Expend a single point of your psi essence to create a layered shield capable of blocking bullets, energy beams, and melee attacks."
+	psi_point_cost = 1
+
+	if(pay_power_cost(psi_point_cost))
+		var/obj/item/shield/riot/crusader/psionic/layered/shield = new /obj/item/shield/riot/crusader/psionic/layered(src, owner)
+		owner.visible_message(
+			"[owner] clenches their fist, electricity crackling before a psy-shield forms in their hand!",
+			"You feel the rush of electric essence shocking your hand lightly before a psy-shield forms!"
+			)
+		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+		usr.put_in_active_hand(shield)
+
 
 /obj/item/organ/internal/psionic_tumor/proc/telekinetic_fist()
 	set category = "Psionic powers"

@@ -26,7 +26,7 @@
 
 
 //Handle NSA changing due to organ damage
-/obj/item/organ/internal/nerve/take_damage(amount, silent)
+/obj/item/organ/internal/nerve/take_damage(amount, silent, sharp = FALSE, edge = FALSE)
 	..(amount, silent)
 	owner.metabolism_effects.calculate_nsa(TRUE)
 

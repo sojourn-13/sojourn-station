@@ -165,7 +165,7 @@
 	icon_state = "nt_burnkit"
 	heal_brute = 5
 	automatic_charge_overlays = FALSE
-	matter = list(MATERIAL_BIOMATTER = 5)
+	matter = list(MATERIAL_BIOMATTER = 2)
 	origin_tech = list(TECH_BIO = 4)
 	fancy_icon = TRUE
 	w_class = ITEM_SIZE_SMALL

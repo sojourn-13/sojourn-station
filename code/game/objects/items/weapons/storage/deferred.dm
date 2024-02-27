@@ -229,6 +229,23 @@
 	/obj/random/booze/low_chance = 10,
 	/obj/item/reagent_containers/food/drinks/bottle/vodka = 3)
 
+//SERBIAN-YUNANI UNIFORM CRATES
+
+/obj/item/storage/deferred/crate/uniform_mardinat
+	name = "worn uniform kit"
+	desc = "A moderately sized crate full of clothes. Hastily painted green stripes adorn the box."
+	icon_state = "mardcrate_deferred"
+	initial_contents = list(
+	/obj/item/clothing/under/serbiansuit/brown = 1,
+	/obj/item/clothing/head/soft/tan2soft = 1,
+	/obj/item/clothing/suit/armor/platecarrier = 1,
+	/obj/item/clothing/head/helmet/faceshield/altyn/mardinat_yunan = 1,
+	/obj/item/clothing/mask/balaclava/tactical = 1,
+	/obj/item/clothing/shoes/jackboots = 1,
+	/obj/item/clothing/gloves/fingerless = 1,
+	/obj/item/clothing/accessory/passcard/mardinat_yunan = 1,
+	/obj/item/clothing/accessory/flag/mardinat_yunan = 1)
+
 /obj/item/storage/deferred/crate/uniform_green
 	name = "green uniform kit"
 	desc = "A moderately sized crate full of clothes."
@@ -341,7 +358,7 @@
 	desc = "A small collection of autolathe disks"
 	initial_contents = list(/obj/random/lathe_disk = 7)
 
-obj/item/storage/deferred/gun_parts
+/obj/item/storage/deferred/gun_parts
 	name = "gun part box"
 	desc = "Uppers, lowers, and everything in between"
 	initial_contents = list(/obj/random/gun_parts = 7)

@@ -272,6 +272,7 @@
 	embed = 0 // nope
 	nodamage = TRUE
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
+	ignition_source = FALSE
 
 
 /obj/item/projectile/flamer_lob
@@ -374,7 +375,7 @@
 	damage_types = list(BRUTE = 0)
 	kill_count = 10
 	step_delay = 0.2
-	muzzle_type = /obj/effect/projectile/line/muzzle
+	muzzle_type = null
 	tracer_type = /obj/effect/projectile/line/tracer
 	impact_type = /obj/effect/projectile/line/impact
 	var/list/our_tracers

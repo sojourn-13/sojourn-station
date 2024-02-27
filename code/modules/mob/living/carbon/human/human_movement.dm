@@ -33,12 +33,17 @@
 			var/obj/item/cruciform_upgrade/speed_of_the_chosen/sotc = upgrade
 			tally -= sotc.speed_increase
 
-	var/health_deficiency = (maxHealth - health)
-	var/hunger_deficiency = (MOB_BASE_MAX_HUNGER - nutrition)
-	if((hunger_deficiency >= 200) && species.reagent_tag != IS_SYNTHETIC)
-		tally += (hunger_deficiency / 100) //If youre starving, movement slowdown can be anything up to 4.
-	if(health_deficiency >= 40)
-		tally += (health_deficiency / 25)
+	//If we are not a synth then we have some movement delays thanks to hunger
+	if(species.reagent_tag != IS_SYNTHETIC)
+		var/health_deficiency = (maxHealth - health)
+		var/hunger_deficiency = (max_nutrition - nutrition)
+		var/hunger_half = max_nutrition * 0.5			//50% of max nutrition
+		var/hunger_one_tenth = max_nutrition * 0.1		//10% of max nutrition
+
+		if(hunger_deficiency >= hunger_half)
+			tally += (hunger_deficiency / 100) //If youre starving, movement slowdown can be anything up to 4.
+		if(health_deficiency >= hunger_one_tenth)
+			tally += (health_deficiency / 25)
 
 	if(istype(buckled, /obj/structure/bed/chair/wheelchair))
 		//Not porting bay's silly organ checking code here
@@ -48,7 +53,7 @@
 			tally += wear_suit.slowdown
 		if(shoes)
 			tally += shoes.slowdown
-		if(back)
+		if(back && !src.stats.getPerk(PERK_SECOND_SKIN))
 			tally += back.slowdown
 
 	//tally += min((shock_stage / 100) * 3, 3) //Scales from 0 to 3 over 0 to 100 shock stage

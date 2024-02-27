@@ -10,9 +10,10 @@
 	fire_sound = 'sound/weapons/energy/laser_rifle.ogg' // Big unwieldy gun, despite the shit lasers
 	slot_flags = null
 	w_class = ITEM_SIZE_HUGE
-	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_WOOD = 25, MATERIAL_GLASS = 15, MATERIAL_SILVER = 5, MATERIAL_GOLD = 3)
+	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_WOOD = 25, MATERIAL_GLASS = 10, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 	projectile_type = /obj/item/projectile/beam/drone
-	init_recoil = CARBINE_RECOIL(1)
+	init_recoil = CARBINE_RECOIL(2)
+	fire_delay = 2
 	charge_cost = 100 //130 shots on a large spark
 	wield_delay = 1.5 SECOND
 	wield_delay_factor = 0.5 // 50 vig to instant wield heavy chonker gun
@@ -24,10 +25,10 @@
 	price_tag = 2000
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(
-		FULL_AUTO_600,
-		list(mode_name="short bursts", mode_desc="dakka 5 shots in quick succession", burst=5,    burst_delay=2, move_delay=6,  icon="burst"),
-		list(mode_name="long bursts", mode_desc="Dakka 8 shots in succession",  burst=8, burst_delay=4, move_delay=8,  icon="burst"),
-		list(mode_name="suppressing fire", mode_desc="DAKKA 16 shots back to back to keep targets inside cover",  burst=16, burst_delay=4, move_delay=11,  icon="burst")
+		FULL_AUTO_300,
+		list(mode_name="short bursts", mode_desc="Fire 5 shots in succession", burst=5,    burst_delay=4, move_delay=6,  icon="burst"),
+		list(mode_name="long bursts", mode_desc="Fire 8 shots in succession",  burst=8, burst_delay=4, move_delay=8,  icon="burst"),
+		list(mode_name="suppressing fire", mode_desc="Fire 16 shots back to back to keep targets inside cover",  burst=16, burst_delay=4, move_delay=11,  icon="burst")
 		)
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 	twohanded = TRUE

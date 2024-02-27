@@ -20,6 +20,16 @@
 #define ARMOR_PEN_MASSIVE			30
 #define ARMOR_PEN_HALF				50
 
+//Wounding Multiplier: Increases damage taken, applied after armor.
+#define WOUNDING_HARMLESS			0.25
+#define WOUNDING_TINY				0.5
+#define WOUNDING_SMALL				0.75
+#define WOUNDING_NORMAL				1
+#define WOUNDING_SERIOUS			1.25
+#define WOUNDING_WIDE				1.5
+#define WOUNDING_EXTREME			1.75
+#define WOUNDING_DEVESTATIING		2
+
 //Resistance values, used on floors, windows, airlocks, girders, and similar hard targets.
 //Resistance value is also used on simple animals.
 //Reduces the damage they take by flat amounts

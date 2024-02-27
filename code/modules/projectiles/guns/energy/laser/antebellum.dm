@@ -10,7 +10,7 @@
 	fire_sound = 'sound/weapons/energy/laser_rifle.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_NORMAL
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 15, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3, MATERIAL_GOLD = 1, MATERIAL_BIOMATTER = 30)
+	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 8, MATERIAL_GLASS = 2, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1, MATERIAL_BIOMATTER = 5)
 	suitable_cell = /obj/item/cell/medium/neotheology
 	projectile_type = /obj/item/projectile/plasma/light
 	fire_delay = 15

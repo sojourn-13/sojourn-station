@@ -412,7 +412,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEJUMPSUIT
-	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
 /obj/item/clothing/suit/armor/vest/rosaria/verb/toggle_style()
 	set name = "Adjust Style"
@@ -478,7 +478,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEJUMPSUIT
-	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
 /obj/item/clothing/suit/armor/vest/prime/verb/toggle_style()
 	set name = "Adjust Style"
@@ -836,7 +836,7 @@
 	item_state = "flakvest_mil"
 	blood_overlay_type = "armor"
 	slowdown = 0.1 //faster than standard due to being fancier.
-	armor_list = list(melee = 45, bullet = 50, energy = 30, bomb = 50, bio = 0, rad = 0)
+	armor_list = list(melee = 35, bullet = 50, energy = 40, bomb = 50, bio = 0, rad = 0)
 
 
 /obj/item/clothing/suit/armor/flakvest/commander/toggle_style()
@@ -1701,3 +1701,25 @@
 	)
 	body_parts_covered = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
 	cold_protection = UPPER_TORSO|LEGS|ARMS|LOWER_TORSO
+
+//solfed gear
+
+/obj/item/clothing/suit/armor/platecarrier/solfed
+	name = "military plate carrier"
+	desc = "An armored vest carrying military grade trauma plates and advanced ballistic meshes. This particular set is deep black with golden IFF marks, the very same used by auxilliaries of the Solarian Federation."
+	icon_state = "platecarrier_sfa"
+	item_state = "platecarrier_sfa"
+	blood_overlay_type = "armor"
+	slowdown = 0.05
+	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+
+/obj/item/clothing/suit/armor/platecarrier/solfed/corpsman
+	name = "military plate carrier"
+	desc = "An armored vest carrying military grade trauma plates and advanced ballistic meshes. This particular set is deep black with golden IFF marks, the very same used by corpsmen of the Solarian Federation."
+	icon_state = "platecarrier_sfc"
+	item_state = "platecarrier_sfc"
+	blood_overlay_type = "armor"
+	slowdown = 0.05
+	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 40, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS

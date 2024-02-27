@@ -739,6 +739,28 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			mouthshoot = FALSE
 			return
 
+	if (istype(in_chamber))
+		user.visible_message(SPAN_WARNING("[user] pulls the trigger."))
+		if(silenced)
+			playsound(user, fire_sound, 10, 1)
+		else
+			playsound(user, fire_sound, 60, 1)
+		if(istype(in_chamber, /obj/item/projectile/bullet/cap))
+			user.show_message(SPAN_WARNING("You feel rather silly, trying to commit suicide with a toy."))
+			mouthshoot = FALSE
+			return
+
+	if (istype(in_chamber))
+		user.visible_message(SPAN_WARNING("[user] pulls the trigger."))
+		if(silenced)
+			playsound(user, fire_sound, 10, 1)
+		else
+			playsound(user, fire_sound, 60, 1)
+		if(istype(in_chamber, /obj/item/projectile/chameleon))
+			user.show_message(SPAN_WARNING("The gun fired but...you feel fine?"))
+			mouthshoot = FALSE
+			return
+
 		in_chamber.on_hit(M)
 		if (!in_chamber.is_halloss())
 			log_and_message_admins("[key_name(user)] commited suicide using \a [src]")
@@ -1104,7 +1126,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/data = list()
 	data["projectile_name"] = P.name
 	data["projectile_damage"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()
-	data["projectile_damage_pve"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust() + (P.agony * proj_agony_multiplier)
+	data["projectile_WOUND"] = P.wounding_mult
 	data["projectile_AP"] = P.armor_penetration * penetration_multiplier
 	data["projectile_pain"] = P.agony * proj_agony_multiplier
 	data["projectile_recoil"] = P.recoil

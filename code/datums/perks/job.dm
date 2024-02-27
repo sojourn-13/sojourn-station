@@ -2,14 +2,14 @@
 /datum/perk/inspiration
 	name = "Exotic Inspiration"
 	desc = "The best ideas come from a mind not entirely sober, any alcohol will give you that much needed boost... somehow."
-	//icon_state = "inspiration" // https://game-icons.net/1x1/delapouite/booze.html
+	icon_state = "inspiration" // https://game-icons.net/1x1/delapouite/booze.html
 
 /datum/perk/active_inspiration
 	name = "Exotic Inspiration (Active)"
 	desc = "The alcohol you imbibed is granting you that much needed boost in inspiration for your next project...somehow."
 	gain_text = "You feel a sudden rush of alcohol-induced inspiration..."
 	lose_text = "Your sudden flash of brilliance fades away..."
-	//icon_state = "inspiration_active" // https://game-icons.net/1x1/lorc/enlightenment.html
+	icon_state = "inspiration_active" // https://game-icons.net/1x1/lorc/enlightenment.html
 
 /datum/perk/active_inspiration/assign(mob/living/carbon/human/H)
 	..()
@@ -74,7 +74,7 @@
 	name = "Sol Born"
 	desc = "Clean living in the Sol system has prevented you from building up a tolerance to most chemicals, your body can't handle the more hardcore drugs that most can and you find yourself getting \
 	addicted slightly easier."
-	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
+	icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
 
 /datum/perk/solborn/assign(mob/living/carbon/human/H)
 	..()
@@ -91,7 +91,7 @@
 /datum/perk/klutz
 	name = "Klutz"
 	desc = "You find a lot of tasks a little beyond your ability to perform such is using any type of weaponry, but being accident prone has at least made you used to getting hurt."
-	//icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
+	icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
 
 /datum/perk/klutz/assign(mob/living/carbon/human/H)
 	..()
@@ -106,7 +106,7 @@
 	desc = "When near an obelisk, you feel your mind at ease. Your body is strengthened by its presence, resisting all forms of damage."
 	gain_text = "You feel the protection of the nearby obelisk."
 	lose_text = "You no longer feel the protection of an obelisk."
-	//icon_state = "sanityboost" // https://game-icons.net/1x1/lorc/templar-eye.html
+	icon_state = "sanityboost" // https://game-icons.net/1x1/lorc/templar-eye.html
 
 /datum/perk/active_sanityboost/assign(mob/living/carbon/human/H)
 	if(..())
@@ -117,15 +117,20 @@
 		holder.sanity.sanity_passive_gain_multiplier /= 1.5
 	..()
 
-/datum/perk/ear_of_quicksilver
-	name = "Ear of Quicksilver"
-	desc = "Training (and an ear implant) given to you as a Ranger makes it hard for secrets to escape your ears. Beware, loud noises are especially dangerous to you as a side effect."
-	//icon_state = "ear" // https://game-icons.net
-
 /datum/perk/unfinished_delivery
 	name = "Lazarus Protocol"
 	desc = "Your cruciform is more than just a symbol of faith. Should you ever perish, it will attempt an emergency revival that may restore your body after a short time, in which you'll be unconscious."
-	//icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
+	icon_state = "regrowth" // https://game-icons.net/1x1/delapouite/stump-regrowth.html
+
+/datum/perk/community_of_saints
+	name = "Community of the Saints"
+	desc = "Your cruciform connects you to all other believers, but such connection can be distracting as well as beneficial. You take 25% longer to complete all tool-based actions that aren't instantaneous."
+
+/datum/perk/ear_of_quicksilver
+	name = "Ear of Quicksilver"
+	desc = "Training (and an ear implant) given to you as a Ranger makes it hard for secrets to escape your ears. Beware, loud noises are especially dangerous to you as a side effect."
+	icon_state = "ear" // https://game-icons.net
+
 
 /datum/perk/chemist
 	name = "Periodic Table"
@@ -177,6 +182,18 @@
 		holder.sdisabilities&=BLIND
 	..()
 
+/datum/perk/cooldown/reveal //perk to give thermal vision. Meant to only last a few moments before ending and removing itself.
+	name = "Peak-A-Boo"
+	perk_lifetime = 3 SECONDS
+	gain_text = "The scroll's smoke fills your eyes. Whats moving in the walls?"
+	lose_text = "Your eyes sting but you don't see the pain anymore."
+
+/datum/perk/cooldown/reveal/assign(mob/living/carbon/human/H)
+	..()
+	if(holder)
+		//give thermal vision
+		holder.sight |= SEE_MOBS
+
 /datum/perk/bartender
 	name = "Bar Menu"
 	desc = "You know how to mix a drink, and flip a burger. You can identify the ingredients that went into food and how much was used."
@@ -193,7 +210,7 @@
 	var/init_sight
 	var/init_flash
 	var/obj/screen/lightOverlay = null
-	//icon_state = "night" // https://game-icons.net/1x1/lorc/night-sky.html
+	icon_state = "night" // https://game-icons.net/1x1/lorc/night-sky.html
 
 /datum/perk/nightcrawler/assign(mob/living/carbon/human/H)
 	..()
@@ -211,12 +228,12 @@
 	name = "Fast fingers"
 	desc = "Nothing is safe around your hands. You are a true kleptomaniac. Taking items off others makes no sound or prompts, provided its in their pockets, hands, or their ears. \
 	It's also quicker and you can slip pills into drinks unnoticed."
-	//icon_state = "robber_hand" // https://game-icons.net/1x1/darkzaitzev/robber-hand.html
+	icon_state = "robber_hand" // https://game-icons.net/1x1/darkzaitzev/robber-hand.html
 
 /datum/perk/quiet_as_mouse
 	name = "Quiet as a mouse"
 	desc = "Being deadly, easy. Silent? Even easier now. You generate less noise than others."
-	//icon_state = "footsteps" // https://game-icons.net
+	icon_state = "footsteps" // https://game-icons.net
 
 /datum/perk/quiet_as_mouse/assign(mob/living/carbon/human/H)
 	..()
@@ -229,12 +246,12 @@
 /datum/perk/junkborn
 	name = "Expert Scavenger"
 	desc = "One man's trash is another man's salary. Removing a trash pile has a chance of revealing a valuable item nobody else would find."
-	//icon_state = "treasure" // https://game-icons.net
+	icon_state = "treasure" // https://game-icons.net
 
 /datum/perk/ass_of_concrete
 	name = "Immovable Object"
 	desc = "Your intense training has perfected your footing, and you're an expert at holding the line. Few things can knock you off balance or push you around."
-	//icon_state = "muscular" // https://game-icons.net
+	icon_state = "muscular" // https://game-icons.net
 
 /datum/perk/ass_of_concrete/assign(mob/living/carbon/human/H)
 	..()
@@ -247,7 +264,7 @@
 /datum/perk/sommelier
 	name = "Sommelier"
 	desc = "You know how to handle even the strongest alcohol in the universe and doing so improves your toughness."
-	//icon_state = "inspiration"
+	icon_state = "inspiration"
 
 /datum/perk/rezsickness
 	name = "Revival Sickness"
@@ -267,6 +284,7 @@
 	holder.stats.changeStat(STAT_ROB, -10)
 	holder.stats.changeStat(STAT_TGH, -10)
 	holder.stats.changeStat(STAT_VIG, -10)
+	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 0.5, learner = H)
 
 /datum/perk/rezsickness/remove()
 	holder.brute_mod_perk -= 0.10
@@ -276,6 +294,7 @@
 	holder.stats.changeStat(STAT_ROB, 10)
 	holder.stats.changeStat(STAT_TGH, 10)
 	holder.stats.changeStat(STAT_VIG, 10)
+
 	..()
 
 /datum/perk/rezsickness/severe
@@ -333,6 +352,41 @@
 	..()
 
 /datum/perk/rezsickness/on_process()
+	if(!..())
+		return
+	if(cooldown_time <= world.time)
+		holder.stats.removePerk(type)
+		to_chat(holder, SPAN_NOTICE("[lose_text]"))
+		return
+	if(holder.buckled)
+		cooldown_time -= 2 SECONDS
+
+/datum/perk/racial/slime_rez_sickness
+	name = "Aulvae Decohesion Syndrome"
+	desc = "You've recently been returned to cohesion via the use of high-energy toxins which have left your form in a semi-stable state."
+	gain_text = "Your core vibrates and crackles with barely contained energy as you're revived. You feel stronger than ever, but your form is unstable and fragile. Perhaps it'd be best to lie down and allow time for this to pass, lest you loose cohesion once again."
+	lose_text = "The thunder bouncing around just beneath your dermis has passed and you feel stable once again."
+	var/initial_time
+
+/datum/perk/racial/slime_rez_sickness/assign(mob/living/carbon/human/H)
+	..()
+	initial_time = world.time
+	cooldown_time = world.time + 30 MINUTES
+	holder.brute_mod_perk += 0.3
+	holder.burn_mod_perk += 0.3
+	holder.stats.changeStat(STAT_ROB, 30)
+	holder.stats.changeStat(STAT_TGH, -30)
+	holder.stats.changeStat(STAT_VIG, -30)
+
+/datum/perk/racial/slime_rez_sickness/remove()
+	holder.brute_mod_perk -= 0.3
+	holder.burn_mod_perk -= 0.3
+	holder.stats.changeStat(STAT_ROB, -30)
+	holder.stats.changeStat(STAT_TGH, 30)
+	holder.stats.changeStat(STAT_VIG, 30)
+	..()
+
+/datum/perk/racial/slime_rez_sickness/on_process()
 	if(!..())
 		return
 	if(cooldown_time <= world.time)
@@ -449,7 +503,7 @@
 	desc = "You're used to see blood and filth in all its forms. Your motto: a clean colony is a happy colony. \
 			This perk reduces the total sanity damage you can take from what is happening around you. \
 			You can regain sanity by cleaning."
-	//icon_state = "neat" // https://game-icons.net/1x1/delapouite/broom.html
+	icon_state = "neat" // https://game-icons.net/1x1/delapouite/broom.html
 
 /datum/perk/neat/assign(mob/living/carbon/human/H)
 	if(..())
@@ -469,7 +523,7 @@
 /datum/perk/codespeak
 	name = "Codespeak"
 	desc = "You know Marshal codes."
-	//icon_state = "codespeak" // https://game-icons.net/1x1/delapouite/police-officer-head.html
+	icon_state = "codespeak" // https://game-icons.net/1x1/delapouite/police-officer-head.html
 	var/list/codespeak_procs = list(
 		/mob/living/carbon/human/proc/codespeak_help,
 		/mob/living/carbon/human/proc/codespeak_clear,

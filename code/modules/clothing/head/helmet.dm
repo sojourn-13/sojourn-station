@@ -383,6 +383,51 @@
 	brightness_on = 4
 	light_overlay = "corpsmanfullhelm_light"
 
+/obj/item/clothing/head/helmet/ballistic/militia/full/co
+	name = "blackshield Commanders full helm"
+	desc = "Advanced military gear. This full-faced variant of the common ballistic helmet comes with high-end materials making it both lighter and \
+	more durable."
+	icon_state = "bs_fullhelm_co"
+	item_state = "bs_fullhelm_co"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	obscuration = LIGHT_OBSCURATION
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 5
+	light_overlay = "bsfullhelm_light"
+	armor_list = list(melee = 35, bullet = 50, energy = 40, bomb = 50, bio = 0, rad = 0)
+
+/obj/item/clothing/head/helmet/ballistic/militia/full/co/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard fullhelm"] = ""
+	options["Tan fullhelm"] = "_tan"
+	options["Green fullhelm"] = "_green"
+	options["Grey hooded fullhelm"] = "_gp"
+	options["Green hooeded fullhelm"] = "_grp"
+	options["Tan hooded fullhelm"] = "_tp"
+	options["Camo hooded fullhelm"] = "_cp"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You adjust to the [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 //Marshals
 /obj/item/clothing/head/helmet/marshal
 	name = "marshal helmet"
@@ -426,7 +471,8 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
 	action_button_name = "Toggle Headlamp"
-	brightness_on = 4
+	brightness_on = 5
+	light_overlay = "m_fullhelm"
 
 /obj/item/clothing/head/helmet/marshal_full/verb/toggle_style()
 	set name = "Adjust Style"
@@ -459,7 +505,7 @@
 /obj/item/clothing/head/helmet/marshal_full/update_icon()
 	if(on)
 		icon_state = "ironhammer_full_on"
-		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
+		set_light(brightness_on, 1, COLOR_LIGHTING_ORANGE_MACHINERY)
 	else
 		icon_state = "ironhammer_full"
 		set_light(0, 0)
@@ -474,13 +520,14 @@
 	flash_protection = FLASH_PROTECTION_MODERATE
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	action_button_name = "Toggle Headlamp" //Excellent job forgetting the verb, Friend.
-	brightness_on = 4
+	brightness_on = 6
+	light_overlay = "m_fullhelm"
 	armor_list = list(melee = 50, bullet = 50, energy = 30, bomb = 10, bio = 100, rad = 0)
 
 /obj/item/clothing/head/helmet/warrant_officer/update_icon()
 	if(on)
 		icon_state = "ironhammer_wo_full_on"
-		set_light(2, 2, COLOR_LIGHTING_ORANGE_MACHINERY)
+		set_light(brightness_on, 1, COLOR_LIGHTING_ORANGE_MACHINERY)
 	else
 		icon_state = "ironhammer_wo_full"
 		set_light(0, 0)
@@ -732,7 +779,7 @@
 	armor_list = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 5, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 3, MATERIAL_GOLD = 2)
 
 /obj/item/clothing/head/helmet/rosaria/verb/toggle_style()
 	set name = "Adjust Style"
@@ -1610,6 +1657,10 @@
 	icon_state = "maska"
 	armor_list = list(melee = 55, bullet = 55, energy = 0, bomb = 45, bio = 0, rad = 0) // best what you can get, unless you face lasers
 
+/obj/item/clothing/head/helmet/faceshield/altyn/mardinat_yunan
+	desc = "\"Human rights are not only violated by terrorism, repression or assassination, but also by unfair economic structures that create huge inequalities.\" An Altyn-pattern helmet commonly found throughout the frontier. This example has been painted up in the national colours of Mardinat-Yunan and comes with a copy of the tenets of a galaxy's economic manifesto held against the helmet by a strap."
+	icon_state = "altyn_mardinat-yunan"
+	item_state = "altyn_mardinat-yunan"
 
 /obj/item/clothing/head/helmet/faceshield/altyn/maska/toggle_style()
 	set name = "Adjust Style"

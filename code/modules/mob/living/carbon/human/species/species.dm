@@ -29,8 +29,11 @@
 
 	var/mob_size	= MOB_MEDIUM
 	var/virus_immune
-	var/blood_volume = 560                               // Initial blood volume.
+	var/blood_volume = 560
+	var/always_blood = FALSE 						 // Can we process reagents without blood?
+	var/always_ingest = FALSE 		                               // Initial blood volume.
 	var/hunger_factor = DEFAULT_HUNGER_FACTOR            // Multiplier for hunger.
+	var/nutrition_mod = 0                                // Flat addition to max nutrition (Base is 400)
 	var/taste_sensitivity = TASTE_NORMAL                 // How sensitive the species is to minute tastes.
 	var/show_ssd = "fast asleep"
 
@@ -72,16 +75,18 @@
 	var/cold_level_3 = 200                            // Cold damage level 3 below this point.
 	var/heat_level_1 = 330                            // Heat damage level 1 above this point.
 	var/heat_level_2 = 380                            // Heat damage level 2 above this point.
-	var/heat_level_3 = 460                           // Heat damage level 3 above this point.
+	var/heat_level_3 = 460                            // Heat damage level 3 above this point.
 	var/passive_temp_gain = 0		                  // Species will gain this much temperature every second
 	var/hazard_high_pressure = HAZARD_HIGH_PRESSURE   // Dangerously high pressure.
 	var/warning_high_pressure = WARNING_HIGH_PRESSURE // High pressure warning.
 	var/warning_low_pressure = WARNING_LOW_PRESSURE   // Low pressure warning.
 	var/hazard_low_pressure = HAZARD_LOW_PRESSURE     // Dangerously low pressure.
-	var/eyes_are_impermeable = FALSE         // If TRUE, this species' eyes are not damaged by plasma.
+	var/eyes_are_impermeable = FALSE         		  // If TRUE, this species' eyes are not damaged by plasma.
 	var/light_dam                                     // If set, mob will be damaged in light over this value and heal in light below its negative.
 	var/body_temperature = 310.15	                  // Non-IS_SYNTHETIC species will try to stabilize at this temperature.
 	                                                  // (also affects temperature processing)
+	var/upper_breath_t = 333.15						  // upper limit of breathable gas temperature before lung damage
+	var/lower_breath_t = 233.15						  // lower limit of breathable gas temperature before lung damage
 	var/list/stat_modifiers = list(
 		STAT_BIO = 0,
 		STAT_COG = 0,
@@ -418,3 +423,5 @@
 		H.add_language(LANGUAGE_SYNTHETIC)
 	if(H.species.reagent_tag == IS_NARAMAD)
 		H.add_language(LANGUAGE_MERP)
+	if(H.species.reagent_tag == IS_SLIME)
+		H.add_language(LANGUAGE_BLORP)

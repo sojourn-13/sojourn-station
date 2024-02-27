@@ -272,6 +272,7 @@
 // Prosthetic helpers.
 #define BP_IS_ORGANIC(org)		(!QDELETED(org) && (org.nature == MODIFICATION_ORGANIC || org.nature == MODIFICATION_SUPERIOR))
 #define BP_IS_ROBOTIC(org)		(!QDELETED(org) && (org.nature == MODIFICATION_SILICON || org.nature == MODIFICATION_LIFELIKE))
+#define BP_IS_SLIME(org)		(!QDELETED(org) && (org.nature == MODIFICATION_SLIME))
 #define BP_IS_PROSTHETIC(org)	(!QDELETED(org) && (org.nature == MODIFICATION_SILICON))
 #define BP_IS_BRITTLE(org)		(!QDELETED(org) && (org.status	& ORGAN_BRITTLE))
 #define BP_IS_CRYSTAL(org)		(!QDELETED(org) && (org.nature	& ORGAN_PROP_CRYSTAL))

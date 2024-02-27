@@ -104,6 +104,8 @@
 		new /obj/item/ammo_magazine/heavy_rifle_408(src)
 		new /obj/item/ammo_magazine/heavy_rifle_408(src)
 		new /obj/item/ammo_magazine/heavy_rifle_408(src)
+		new /obj/item/ammo_magazine/heavy_rifle_408(src)
+		new /obj/item/ammo_magazine/heavy_rifle_408(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/bs_kit/cog
@@ -113,6 +115,20 @@
 
 	populate_contents()
 		new /obj/item/gun/energy/cog(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/cell/medium/high(src)
+		new /obj/item/storage/pouch/tubular(src)
+
+/obj/item/storage/box/bs_kit/lascore
+	name = "\improper Lascore Primary Kit"
+	desc = "A kit holding an energy based weaponry kit. Far more high powered, these custom tooled lascore carbines are the best of power and efficiency. Their cost \
+	prohibits their standardization."
+
+	populate_contents()
+		new /obj/item/gun/energy/lasercore/militia(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
 		new /obj/item/cell/medium/high(src)
@@ -169,6 +185,7 @@
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
+		new /obj/item/ammo_magazine/speed_loader_shotgun(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/bs_kit/saiga
@@ -177,6 +194,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/ak47/saiga/NM_colony(src)
+		new /obj/item/ammo_magazine/sbaw(src)
+		new /obj/item/ammo_magazine/sbaw(src)
 		new /obj/item/ammo_magazine/sbaw(src)
 		new /obj/item/ammo_magazine/sbaw(src)
 		new /obj/item/ammo_magazine/sbaw(src)
@@ -267,8 +286,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
 /obj/item/storage/box/bs_kit/gemini
@@ -277,8 +296,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/lamia/gemini(src)
-		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
-		new /obj/item/ammo_magazine/kurtz_50/lethal(src)
+		new /obj/item/ammo_magazine/kurtz_50(src)
+		new /obj/item/ammo_magazine/kurtz_50(src)
 		new /obj/item/clothing/accessory/holster/leg(src)
 
 // Armor Kits
@@ -331,29 +350,3 @@
 	populate_contents()
 		new /obj/item/clothing/suit/armor/platecarrier/corpsman(src)
 		new /obj/item/clothing/head/helmet/ballistic/militia/full/corpsman(src)
-
-/obj/item/gunbox/commanding_officer //credit goes to Hestia both for the idea of loadout gun box and for the code, and sprite.
-	name = "\improper CO equipment kit"
-	desc = "A secure box containing the CO primary weapon."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "rifle_case"
-
-/obj/item/gunbox/commanding_officer/attack_self(mob/living/user)
-	..()
-	var/stamped
-	if(!stamped)
-		stamped = TRUE
-		var/list/options = list()
-		options["\"Longarm\" - marksman rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped,/obj/item/ammo_magazine/heavy_rifle_408/lethal,/obj/item/ammo_magazine/heavy_rifle_408/lethal, /obj/item/ammo_magazine/heavy_rifle_408/lethal)
-		options["\"Hustler\" - Breacher Shotgun"] = list(/obj/item/gun/projectile/automatic/omnirifle/hustler, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw)
-		var/choice = input(user,"What type of equipment?") as null|anything in options
-		if(src && choice)
-			var/list/things_to_spawn = options[choice]
-			for(var/new_type in things_to_spawn)
-				var/atom/movable/AM = new new_type(get_turf(src))
-				if(istype(AM, /obj/item/gun/))
-					to_chat(user, "You have chosen \the [AM].")
-			qdel(src)
-		else
-			stamped = FALSE
-

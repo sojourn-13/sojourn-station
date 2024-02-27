@@ -182,8 +182,16 @@
 	var/gathered = 0
 	if(ishuman(M))
 		var/mob/living/carbon/human/back_pack_checker = M
+		var/obj/item/W = M.get_active_hand()
 		if(!back_pack_checker.back)
 			gathered -= 1
+		if(W)
+			gathered += W.clickdelay_offset
+	if(issilicon(M))
+		var/mob/living/silicon/S = M
+		var/obj/item/W = S.get_active_hand()
+		if(W)
+			gathered += W.clickdelay_offset
 	gathered += click_delay_addition
 	return gathered
 

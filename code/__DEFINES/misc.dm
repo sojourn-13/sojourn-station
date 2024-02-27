@@ -158,9 +158,9 @@
 #define NTNET_SYSTEMCONTROL 4		// Control of various systems, RCon, air alarm control, etc.
 
 // NTNet transfer speeds, used when downloading/uploading a file/program.
-#define NTNETSPEED_LOWSIGNAL 0.05	// GQ/s transfer speed when the device is wirelessly connected and on Low signal
-#define NTNETSPEED_HIGHSIGNAL 0.15	// GQ/s transfer speed when the device is wirelessly connected and on High signal
-#define NTNETSPEED_ETHERNET 0.40		// GQ/s transfer speed when the device is using wired connection
+#define NTNETSPEED_LOWSIGNAL 0.25	// GQ/s transfer speed when the device is wirelessly connected and on Low signal
+#define NTNETSPEED_HIGHSIGNAL 0.5	// GQ/s transfer speed when the device is wirelessly connected and on High signal
+#define NTNETSPEED_ETHERNET 1		// GQ/s transfer speed when the device is using wired connection
 #define NTNETSPEED_DOS_AMPLIFICATION 2	// Multiplier for Denial of Service program. Resulting load on NTNet relay is this multiplied by NTNETSPEED of the device
 
 // Program bitflags
@@ -214,15 +214,15 @@
 
 //Cruciform
 #define CRUCIFORM_COMMON /datum/core_module/rituals/cruciform/base
-//#define CRUCIFORM_AGROLYTE /datum/core_module/rituals/cruciform/agrolyte
-//#define CRUCIFORM_CUSTODIAN /datum/core_module/rituals/cruciform/custodian
-#define CRUCIFORM_PRIEST /datum/core_module/rituals/cruciform/priest
-//#define CRUCIFORM_ACOLYTE /datum/core_module/rituals/cruciform/priest/acolyte
+#define CRUCIFORM_CLERGY /datum/core_module/rituals/cruciform/priest //Formerly CRUCIFORM_PRIEST, still is on Eris
 #define CRUCIFORM_INQUISITOR /datum/core_module/rituals/cruciform/inquisitor
 #define CRUCIFORM_CRUSADER /datum/core_module/rituals/cruciform/crusader
 #define CRUCIFORM_UPLINK /datum/core_module/cruciform/uplink
-#define CRUCIFORM_REDLIGHT /datum/core_module/cruciform/red_light
+#define CRUCIFORM_PRIME /datum/core_module/cruciform/red_light //Formerly CRUCIFORM_REDLIGHT, still is on Eris
 #define CRUCIFORM_CLONING /datum/core_module/cruciform/cloning
+//#define CRUCIFORM_ACOLYTE /datum/core_module/rituals/cruciform/priest/acolyte
+//#define CRUCIFORM_AGROLYTE /datum/core_module/rituals/cruciform/agrolyte
+//#define CRUCIFORM_CUSTODIAN /datum/core_module/rituals/cruciform/custodian
 
 #define CRUCIFORM_OBEY /datum/core_module/cruciform/obey
 #define CRUCIFORM_PRIEST_CONVERT /datum/core_module/activatable/cruciform/priest_convert

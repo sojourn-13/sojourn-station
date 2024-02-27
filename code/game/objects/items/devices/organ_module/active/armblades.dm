@@ -13,6 +13,9 @@
 	armor_penetration = ARMOR_PEN_MODERATE
 	tool_qualities = list(QUALITY_CUTTING = 20)
 
+/obj/item/organ_module/active/simple/proc/get_scanner_name()
+	return name
+
 /obj/item/organ_module/active/simple/armblade
 	name = "embedded armblade"
 	desc = "A mechanical blade designed to be inserted into an arm. Gives you a nice advantage in a brawl."

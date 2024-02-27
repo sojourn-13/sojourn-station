@@ -2,6 +2,7 @@
 	name = "meatball soup"
 	desc = "You've got balls kid, BALLS!"
 	icon_state = "meatballsoup"
+	taste_tag = list(MEAT_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#785210"
 	bitesize = 5
@@ -14,6 +15,7 @@
 	name = "slime soup"
 	desc = "If no water is available, you may substitute tears."
 	icon_state = "rorosoup" //nonexistant?
+	taste_tag = list(BLAND_FOOD)
 	filling_color = "#C4DBA0"
 	bitesize = 5
 	preloaded_reagents = list("slimejelly" = 5, "water" = 10)
@@ -22,6 +24,7 @@
 /obj/item/reagent_containers/food/snacks/bloodsoup
 	name = "tomato soup"
 	desc = "Smells like copper."
+	taste_tag = list(UMAMI_FOOD)
 	icon_state = "tomatosoup"
 	filling_color = "#FF0000"
 	bitesize = 5
@@ -33,6 +36,7 @@
 	name = "clown's tears"
 	desc = "Not very funny."
 	icon_state = "clownstears"
+	taste_tag = list(SWEET_FOOD, BLAND_FOOD)
 	filling_color = "#C4FBFF"
 	center_of_mass = list("x"=16, "y"=7)
 	nutriment_desc = list("salt" = 1, "the worst joke" = 3)
@@ -45,6 +49,7 @@
 	name = "vegetable soup"
 	desc = "A true vegan meal" //TODO
 	icon_state = "vegetablesoup"
+	taste_tag = list(VEGAN_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#AFC4B5"
 	center_of_mass = list("x"=16, "y"=8)
@@ -59,6 +64,7 @@
 	name = "nettle soup"
 	desc = "To think, the gardener would've beat you to death with one of these."
 	icon_state = "nettlesoup"
+	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#AFC4B5"
 	center_of_mass = list("x"=16, "y"=7)
@@ -73,6 +79,7 @@
 	name = "mystery soup"
 	desc = "The mystery is, why aren't you eating it?"
 	icon_state = "mysterysoup"
+	taste_tag = list(BLAND_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#F082FF"
 	center_of_mass = list("x"=16, "y"=6)
@@ -132,6 +139,7 @@
 	name = "wish soup"
 	desc = "I wish this was soup."
 	icon_state = "wishsoup"
+	taste_tag = list(BLAND_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#D1F4FF"
 	center_of_mass = list("x"=16, "y"=11)
@@ -151,6 +159,7 @@
 	name = "hot chili"
 	desc = "A five alarm Texan Chili!"
 	icon_state = "hotchili"
+	taste_tag = list(MEAT_FOOD, SPICY_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#FF3C00"
 	center_of_mass = list("x"=15, "y"=9)
@@ -165,6 +174,7 @@
 	name = "cold chili"
 	desc = "This slush is barely a liquid!"
 	icon_state = "coldchili"
+	taste_tag = list(SPICY_FOOD, MEAT_FOOD)
 	filling_color = "#2B00FF"
 	center_of_mass = list("x"=15, "y"=9)
 	nutriment_desc = list("ice peppers" = 3)
@@ -179,6 +189,7 @@
 	name = "bear meat chili"
 	desc = "A chili so manly you'll end up growing hair on your chest and wrestling Renders with your bare hands."
 	icon_state = "bearchili"
+	taste_tag = list(MEAT_FOOD, SPICY_FOOD)
 	nutriment_desc = list("manliest meat" = 10, "hot chili peppers" = 3)
 	nutriment_amt = 3
 	trash = /obj/item/trash/snack_bowl
@@ -189,6 +200,7 @@
 	name = "tomato soup"
 	desc = "Drinking this feels like being a vampire! A tomato vampire..."
 	icon_state = "tomatosoup"
+	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#D92929"
 	bitesize = 3
@@ -203,6 +215,7 @@
 	name = "stew"
 	desc = "A nice and warm stew. Healthy and strong."
 	icon_state = "stew"
+	taste_tag = list(MEAT_FOOD, UMAMI_FOOD)
 	filling_color = "#9E673A"
 	bitesize = 10
 	center_of_mass = list("x"=16, "y"=5)
@@ -216,6 +229,7 @@
 	name = "milo soup"
 	desc = "The universes best soup! Yum!!!"
 	icon_state = "milosoup"
+	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	bitesize = 4
 	center_of_mass = list("x"=16, "y"=7)
@@ -229,6 +243,7 @@
 	name = "chantrelle soup"
 	desc = "A delicious and hearty mushroom soup."
 	icon_state = "mushroomsoup"
+	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#E386BF"
 	bitesize = 3
@@ -242,6 +257,7 @@
 	name = "beet soup"
 	desc = "Wait, how do you spell it again..?"
 	icon_state = "beetsoup"
+	taste_tag = list(UMAMI_FOOD)
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#FAC9FF"
 	bitesize = 2

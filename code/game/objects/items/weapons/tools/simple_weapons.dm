@@ -426,6 +426,100 @@
 	armor_penetration = ARMOR_PEN_SHALLOW
 	price_tag = 325
 
+/obj/item/tool/sword/saber/deconstuctive_rapier
+	name = "Cinq Deconstructive Rapier"
+	desc = "A long, thin bladed sword with a weaponized destructive analyzer integrated into the blade. At the moment of its victim's death it is able to deconstruct them and wirelessly transmit data to internal research database."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "rapier_cro" //Sprite by Gidgit
+	item_state = "rapiersci"
+	force = WEAPON_FORCE_PAINFUL - 5 //10 base
+	armor_penetration = ARMOR_PEN_MODERATE
+	price_tag = 1600
+	has_alt_mode = TRUE
+	attack_verb = list("stabbed", "slashed", "pierces")
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("jabs", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "switches their stance to avoid using the blade of their weapon"
+	alt_mode_lossrate = 1.5 //So its able to be used as a baton in some cases
+	reagent_flags = INJECTABLE|TRANSPARENT
+	matter = null //magicium
+	clickdelay_offset = -4 //DEFAULT_QUICK_COOLDOWN = 4 so we offset are weapon to quick
+	var/datum/component/rnd_points/point_holder
+
+/obj/item/tool/sword/saber/deconstuctive_rapier/New()
+	..()
+	givepointscompont(0)
+	GET_COMPONENT_FROM(C, /datum/component/rnd_points, src)
+	point_holder = C
+
+/obj/item/tool/sword/saber/deconstuctive_rapier/proc/add_points(points)
+	if(point_holder)
+		//message_admins("[points] points!")
+		point_holder.data_points += points
+
+/obj/item/tool/sword/saber/deconstuctive_rapier/resolve_attackby(atom/target, mob/user)
+	.=..()
+	//Little icky but it works
+	if(isliving(target))
+		var/mob/M = target
+		if(!ishuman(M))
+			if(!issilicon(M))
+				if(is_dead(M))
+					user.visible_message("[user] drives [src.name] into [M.name]'s body, deconstructing it!", "You drive the [src.name] into [M.name], extracting research data")
+					msg_admin_attack("[user] deconned [M.name] - ([user.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[M.x];Y=[M.y];Z=[M.z]'>JMP</a>)")
+					M.dust()
+					add_points(50)
+					add_overlay(image('icons/obj/cwj_cooking/scan.dmi', icon_state="scan_person", layer=ABOVE_WINDOW_LAYER))
+					addtimer(CALLBACK(src, /atom.proc/update_icon), 11)
+					return
+
+/obj/item/tool/sword/saber/injection_rapier
+	name = "Cinq Inject Rapier"
+	desc = "A long, thin bladed sword with a hollow chamber in the blade. A mechanical release mechanism allows the wielder to inject targets with fluid from a reservoir in the grip."
+	icon = 'icons/obj/weapons-blades.dmi' //Sprite by Gidgit
+	icon_state = "rapier_cbo"
+	item_state = "rapiermed"
+	force = WEAPON_FORCE_PAINFUL - 5 //10 base
+	armor_penetration = ARMOR_PEN_MODERATE
+	price_tag = 1600
+	has_alt_mode = TRUE
+	attack_verb = list("stabbed", "slashed", "pierces")
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("jabs", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "switches their stance to avoid using the blade of their weapon"
+	alt_mode_lossrate = 1.5 //So its able to be used as a baton in some cases
+	reagent_flags = INJECTABLE|TRANSPARENT
+	matter = null //magicium
+	clickdelay_offset = -4 //DEFAULT_QUICK_COOLDOWN = 4 so we offset are weapon to quick
+
+/obj/item/tool/sword/saber/injection_rapier/New()
+	..()
+	create_reagents(30)
+
+/obj/item/tool/sword/saber/injection_rapier/resolve_attackby(atom/target, mob/user)
+	.=..()
+	if(!target.reagents || !isliving(target))
+		return
+
+	if(!reagents.total_volume)
+		return
+
+	if(!target.reagents.get_free_space())
+		return
+	var/modifier = 1
+	var/reagent_modifier = 1
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		modifier += min(30,H.stats.getStat(STAT_ROB))
+		reagent_modifier = CLAMP(round(H.stats.getStat(STAT_BIO)/10), 1, 5)
+	var/mob/living/L = target
+	if(prob(min(100,((100+armor_penetration)-L.getarmor(user.targeted_organ, ARMOR_MELEE))+modifier)))
+		var/trans = reagents.trans_to_mob(target, rand(1,3)*reagent_modifier, CHEM_BLOOD)
+		admin_inject_log(user, target, src, reagents.log_list(), trans)
+		to_chat(user, SPAN_NOTICE("You inject [trans] units of the solution. [src] now contains [src.reagents.total_volume] units."))
+
 /obj/item/tool/sword/handmade
 	name = "junkblade"
 	desc = "Hack and slash!"
@@ -492,6 +586,7 @@
 	force = WEAPON_FORCE_ROBUST
 	w_class = ITEM_SIZE_NORMAL
 	price_tag = 120
+	matter = list(MATERIAL_STEEL = 15)
 
 /obj/item/tool/sword/cleaver
 	name = "sun cleaver"

@@ -18,10 +18,10 @@ var/list/department_radio_keys = list(
 	"p" = "AI Private",
 	"t" = "Church",
 	"k" = "Prospector",
-	"1" = "Plasmatag B",
-	"2" = "Plasmatag R",
-	"3" = "Plasmatag Y",
-	"4" = "Plasmatag G"
+	"a" = "Plasmatag B",
+	"o" = "Plasmatag R",
+	"q" = "Plasmatag Y",
+	"z" = "Plasmatag G"
 )
 
 
