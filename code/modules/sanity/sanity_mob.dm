@@ -354,7 +354,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 						I.perk = null
 
 				if(I.kill_stats)
-					if(istype(I.parrent, /obj/item/oddity)
+					if(istype(I.parrent, /obj/item/oddity))
 						var/obj/item/oddity/remove_stats
 						remove_stats.oddity_stats = null
 					qdel(I, FALSE, TRUE) //Forcefully remove are component
