@@ -355,6 +355,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 
 				if(I.kill_stats)
 					qdel(I, FALSE, TRUE) //Forcefully remove are component
+					I.oddity_stats = null
 
 				resting = 0
 
