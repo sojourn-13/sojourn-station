@@ -316,8 +316,10 @@
 		if (STAT_LEVEL_EXPERT to STAT_LEVEL_PROF)
 			return "Expert"
 		if (STAT_LEVEL_PROF to STAT_LEVEL_MASTER)
-			return "Master"
+			return "Proficient"
 		if (STAT_LEVEL_MASTER to STAT_LEVEL_HIGHER)
+			return "Mastery"
+		if (STAT_LEVEL_HIGHER to STAT_LEVEL_COSMIC)
 			return "Skill Mastery"
 		if (STAT_LEVEL_COSMIC to STAT_LEVEL_UNIVERSAL)
 			return "Grand Mastery"
