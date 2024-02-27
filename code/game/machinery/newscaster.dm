@@ -304,7 +304,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	if(ishuman(user) || issilicon(user))
 		var/mob/living/human_or_robot_user = user
 		var/dat
-		scan_user(human_or_robot_user) //Newscaster scans you
+		dat = text("<HEAD><meta charset=\"UTF-8\"><TITLE>Newscaster</TITLE></HEAD><H3>Newscaster Unit #[src.unit_no]</H3>")
 
 		switch(screen)
 			if(0)

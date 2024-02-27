@@ -1111,7 +1111,7 @@ window "mainwindow"
 		anchor2 = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
-		title = "Space Station 13"
+		title = "Coffe Colony"
 		is-maximized = true
 		icon = 'icons\\ss13_64.png'
 		macro = "macro"

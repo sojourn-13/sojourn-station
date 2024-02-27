@@ -58,13 +58,14 @@
 	else
 		usr.emote(message)
 
-/*
+//Coffe Edit: Subtle is returned. Unholy.
 /mob/verb/subtle_wrapper()
-	set name = "Subtle verb"
+	set name = "Subtle (Anti-ghost) verb"
 	set category = "IC"
 
 	var/message = input("", "subtle (text)") as text|null
 	if(message)
+		log_and_message_admins("Subtle verb => \"[message]\"")
 		subtle_verb(message)
 
 /mob/verb/subtle_verb(message as text)
@@ -78,7 +79,7 @@
 		usr.emote("subtle", usr.emote_type, message)
 	else
 		usr.emote(message)
-*/
+
 /mob/proc/say_dead(message)
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, SPAN_DANGER("Speech is currently admin-disabled."))
@@ -137,7 +138,7 @@
 
 /mob/proc/say_quote(message, datum/language/speaking = null)
 	var/verb = "says"
-	var/ending = copytext(message, length(message))
+	var/ending = copytext_char(message, length(message))
 	if(ending=="!")
 		verb=pick("exclaims", "shouts", "yells")
 	else if(ending=="?")
@@ -161,7 +162,7 @@
 	return get_turf(src)
 
 /mob/proc/say_test(text)
-	var/ending = copytext(text, length(text))
+	var/ending = copytext_char(text, length(text))
 	if(ending == "?")
 		return "1"
 	else if(ending == "!")
@@ -172,11 +173,11 @@
 //returns the message mode string or null for no message mode.
 //standard mode is the mode returned for the special ';' radio code.
 /mob/proc/parse_message_mode(message, standard_mode = "headset")
-	if(length(message) >= 1 && copytext(message,1,2) == get_prefix_key(/decl/prefix/radio_main_channel))
+	if(length(message) >= 1 && copytext_char(message,1,2) == get_prefix_key(/decl/prefix/radio_main_channel))
 		return standard_mode
 
-	if(length(message) >= 2 && copytext(message,1,2) == get_prefix_key(/decl/prefix/radio_channel_selection))
-		var/channel_prefix = lowertext(copytext(message, 2, 3))
+	if(length(message) >= 2 && copytext_char(message,1,2) == get_prefix_key(/decl/prefix/radio_channel_selection))
+		var/channel_prefix = lowertext(copytext_char(message, 2, 3))
 		return department_radio_keys[channel_prefix]
 
 	return null
@@ -184,12 +185,12 @@
 //parses the language code (e.g. :j) from text, such as that supplied to say.
 //returns the language object only if the code corresponds to a language that src can speak, otherwise null.
 /mob/proc/parse_language(message)
-	var/prefix = copytext(message, 1, 2)
+	var/prefix = copytext_char(message, 1, 2)
 	if(length(message) >= 1 && prefix == get_prefix_key(/decl/prefix/audible_emote))
 		return all_languages["Noise"]
 
 	if(length(message) >= 2 && is_language_prefix(prefix))
-		var/language_prefix = copytext(message, 2, 3)
+		var/language_prefix = copytext_char(message, 2, 3)
 		var/datum/language/L = language_keys[language_prefix]
 		if(can_speak(L))
 			return L
