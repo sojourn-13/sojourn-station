@@ -353,10 +353,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					if(owner.stats.addPerk(I.perk))
 						I.perk = null
 
-				if(I.kill_stats)
-					if(istype(I.parrent, /obj/item/oddity))
-						var/obj/item/oddity/remove_stats
-						remove_stats.oddity_stats = null
+				if(I.self_destory)
 					qdel(I, FALSE, TRUE) //Forcefully remove are component
 
 				resting = 0
