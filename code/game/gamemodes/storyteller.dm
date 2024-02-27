@@ -36,7 +36,7 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 	EVENT_LEVEL_MUNDANE = 10, //Mundane
 	EVENT_LEVEL_MODERATE = 10, //Moderate
 	EVENT_LEVEL_MAJOR = 5, //Major
-	EVENT_LEVEL_ROLESET = -999 //Roleset
+	EVENT_LEVEL_ROLESET = 5 //Roleset
 	)
 
 	//Lists of events. These are built dynamically at runtime
