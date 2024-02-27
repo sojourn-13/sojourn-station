@@ -68,7 +68,7 @@
 	active = FALSE
 	passivePerk = FALSE
 
-/datum/perk/skill_cap_exspanding/assign(mob/living/carbon/human/H)
+/datum/perk/skill_cap_expanding/assign(mob/living/carbon/human/H)
 	..()
 	for(var/stat in ALL_STATS)
 		var/gather_increase = holder.stats.grab_Stat_cap(stat)
@@ -76,7 +76,7 @@
 		statis_amount = gather_increase
 		holder.stats.add_Stat_cap(gather_increase)
 
-/datum/perk/skill_cap_exspanding/remove()
+/datum/perk/skill_cap_expanding/remove()
 	for(var/stat in ALL_STATS)
 		holder.stats.add_Stat_cap(-statis_amount)
 	..()
