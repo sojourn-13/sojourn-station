@@ -340,7 +340,7 @@
 	seed_name = "ambrosia deus"
 	display_name = "ambrosia deus"
     mutants = "null"
-	evolutions = list("ambrosiaomni") = list ("silver))
+	evolutions = list("ambrosiaomni" = list ("silver))
 	chems = list("nutriment" = list(1), "bicaridine" = list(1,8), "synaptizine" = list(1,8,1), "hyperzine" = list(1,10,1), "space_drugs" = list(1,10))
 	kitchen_tag = "ambrosiadeus"
 
@@ -354,7 +354,7 @@
 	seed_name = "ambrosia omni"
 	display_name = "ambrosia omni"
 	mutants = null
-	evolutions = list("ambrosiapanacea") = list("clonexadone"))
+	evolutions = list("ambrosiapanacea" = list("clonexadone"))
 	chems = list("nutriment"=list(1), "tricordrazine"=list(1,10), "anti_toxin"=list(1,10), "bicaridine"=list(2), "dexalinp"=list(2), "kelotane"=list(2),"copper"=list(2),"stoxin"=list(2))
 
 /datum/seed/ambrosia/omni/New()
