@@ -320,7 +320,6 @@
 	seed_name = "ambrosia vulgaris"
 	display_name = "ambrosia vulgaris"
 	mutants = list("ambrosiadeus", "ambrosiarobusto")
-	greatMutants = list("ambrosiainfernum", "ambrosiaomni")
 	chems = list("nutriment" = list(1), "space_drugs" = list(1,8), "kelotane" = list(1,8,1), "bicaridine" = list(1,10,1), "toxin" = list(1,10))
 	kitchen_tag = "ambrosia"
 
@@ -340,7 +339,7 @@
 	name = "ambrosiadeus"
 	seed_name = "ambrosia deus"
 	display_name = "ambrosia deus"
-	mutants = null
+	evolutions = list("ambrosiaomni")
 	chems = list("nutriment" = list(1), "bicaridine" = list(1,8), "synaptizine" = list(1,8,1), "hyperzine" = list(1,10,1), "space_drugs" = list(1,10))
 	kitchen_tag = "ambrosiadeus"
 
@@ -354,7 +353,7 @@
 	seed_name = "ambrosia omni"
 	display_name = "ambrosia omni"
 	mutants = null
-	evolutions = list("ambrosiapanacea")
+	evolutions = list("ambrosiapanacea") = list("silver"))
 	chems = list("nutriment"=list(1), "tricordrazine"=list(1,10), "anti_toxin"=list(1,10), "bicaridine"=list(2), "dexalinp"=list(2), "kelotane"=list(2),"copper"=list(2),"stoxin"=list(2))
 
 /datum/seed/ambrosia/omni/New()
@@ -381,6 +380,7 @@
 	seed_name = "ambrosia robusto"
 	display_name = "ambrosia robusto"
 	mutants = null
+    evolutions = list("ambrosiainfernum" = list("gold"))
 	chems = list("nicotineplus" = list(5,20), "space_drugs" = list(1))
 
 /datum/seed/ambrosia/robusto/New()
@@ -560,7 +560,7 @@
 	name = "destroyingangel"
 	seed_name = "destroying angel"
 	display_name = "destroying angel mushrooms"
-	greatMutants = list("gravefiller")
+	Mutants = list("gravefiller")
 	chems = list("nutriment" = list(1,50), "amatoxin" = list(13,3), "psilocybin" = list(1,25))
 
 /datum/seed/mushroom/poison/death/New()
