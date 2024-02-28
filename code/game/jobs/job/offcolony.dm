@@ -10,7 +10,7 @@
 	difficulty = "Hard."
 	selection_color = "#9b633e"
 	account_allowed = 0
-	create_record = 0
+	create_record = 1
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunt_master
 	health_modifier = 15
@@ -52,7 +52,7 @@
 	supervisors = "the hunt master"
 	selection_color = "#9b633e"
 	account_allowed = 0
-	create_record = 0
+	create_record = 1
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
 	health_modifier = 10
@@ -94,7 +94,7 @@
 	supervisors = "the hunt master"
 	selection_color = "#9b633e"
 	account_allowed = 0
-	create_record = 0
+	create_record = 1
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/herbalist
 	health_modifier = 5
