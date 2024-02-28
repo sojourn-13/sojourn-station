@@ -269,6 +269,7 @@
 		/obj/item/clothing/under/pants/leggingswhite = 5,
 		/obj/item/clothing/under/pants/leggingsprint = 5,
 		//Over Clothing
+		/obj/item/clothing/suit/orsicoat =5,
 		/obj/item/clothing/accessory/duster/brown = 5,
 		/obj/item/clothing/accessory/duster/chestnut = 5,
 		/obj/item/clothing/accessory/duster/crimson = 5,
@@ -443,6 +444,7 @@
 		/obj/item/clothing/under/jamrock_suit = 75,
 		/obj/item/clothing/under/aerostatic_suit = 75,
 		//Over Clothing
+		/obj/item/clothing/suit/orsicoat =40,
 		/obj/item/clothing/accessory/duster/brown = 40,
 		/obj/item/clothing/accessory/duster/chestnut = 40,
 		/obj/item/clothing/accessory/duster/crimson = 40,

@@ -38,17 +38,17 @@
 /datum/design/autolathe/ammo/shotgun_plasma
 	name = "shotgun shells (Plasma)"
 	build_path = /obj/item/ammo_casing/shotgun/plasma/prespawned
-	materials = list(MATERIAL_STEEL = 6, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1, MATERIAL_URANIUM = 1)
+	materials = list(MATERIAL_STEEL = 6, MATERIAL_SILVER = 0.6, MATERIAL_GOLD = 0.6, MATERIAL_URANIUM = 0.6)
 
 /datum/design/autolathe/ammo/shotgun_plasma_heavy
 	name = "shotgun shells (Heavy Plasma)"
 	build_path = /obj/item/ammo_casing/shotgun/plasma_heavy/prespawned
-	materials = list(MATERIAL_STEEL = 6, MATERIAL_SILVER = 2, MATERIAL_GOLD = 2, MATERIAL_URANIUM = 2)
+	materials = list(MATERIAL_STEEL = 6, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1, MATERIAL_URANIUM = 1)
 
 /datum/design/autolathe/ammo/shotgun_biomatter
 	name = "shotgun shells box (caustic)"
 	build_path = /obj/item/ammo_magazine/ammobox/shotgun/biomatter
-	materials = list(MATERIAL_BIOMATTER = 120) //Double the cost of magnum rounds, i guess? It works.
+	materials = list(MATERIAL_BIOMATTER = 60) //Double the cost of magnum rounds, i guess? It works.
 
 /datum/design/autolathe/ammo/shotgun_he
 	name = "20mm shells (HEFI)"
@@ -255,7 +255,7 @@
 /datum/design/autolathe/ammo/pistol_ammobox_biomatter
 	name = "ammunition box (9mm Caustic)"
 	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/biomatter
-	materials = list(MATERIAL_BIOMATTER = 35)
+	materials = list(MATERIAL_BIOMATTER = 20)
 
 //9mm large box
 /datum/design/autolathe/ammo/pistol_ammobox/large
@@ -371,7 +371,7 @@
 /datum/design/autolathe/ammo/magnum_ammobox_biomatter
 	name = "ammunition box (10mm Auto-Mag Caustic)"
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/biomatter
-	materials = list(MATERIAL_BIOMATTER = 50)
+	materials = list(MATERIAL_BIOMATTER = 25)
 
 // 10mm magnum large boxes
 /datum/design/autolathe/ammo/magnum_ammobox/large

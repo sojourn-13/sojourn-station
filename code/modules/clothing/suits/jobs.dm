@@ -168,7 +168,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	permeability_coefficient = 0.50
 	siemens_coefficient = 0.7
-	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_GOLD = 2)
 	armor_list = list(
 		melee = 20,
 		bullet = 20,

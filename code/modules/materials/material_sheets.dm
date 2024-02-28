@@ -417,7 +417,7 @@
 	default_type = MATERIAL_BIOMATTER
 	price_tag = 1 //to keep biomatter in the player economy as the church and science use it.
 	novariants = FALSE
-	var/biomatter_in_sheet = 1
+	var/biomatter_in_sheet = BIOMATTER_PER_SHEET // defined in solidifier.dm
 
 /obj/item/stack/material/biomatter/random
 	rand_min = 5

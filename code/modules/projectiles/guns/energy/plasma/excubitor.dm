@@ -9,7 +9,7 @@
 	fire_sound = 'sound/weapons/energy/Laser.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
-	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_WOOD = 25, MATERIAL_GLASS = 5, MATERIAL_GOLD = 2, MATERIAL_BIOMATTER = 120, MATERIAL_STEEL = 30)
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 15, MATERIAL_GLASS = 5, MATERIAL_GOLD = 2, MATERIAL_BIOMATTER = 80, MATERIAL_STEEL = 15)
 	suitable_cell = /obj/item/cell/medium/neotheology
 	projectile_type = /obj/item/projectile/plasma/light
 	force = WEAPON_FORCE_BRUTAL
