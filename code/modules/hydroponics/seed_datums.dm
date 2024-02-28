@@ -339,6 +339,7 @@
 	name = "ambrosiadeus"
 	seed_name = "ambrosia deus"
 	display_name = "ambrosia deus"
+    mutants = "null"
 	evolutions = list("ambrosiaomni")
 	chems = list("nutriment" = list(1), "bicaridine" = list(1,8), "synaptizine" = list(1,8,1), "hyperzine" = list(1,10,1), "space_drugs" = list(1,10))
 	kitchen_tag = "ambrosiadeus"
