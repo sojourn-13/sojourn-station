@@ -13,14 +13,16 @@
 			var/mob/living/L = get_grabbed_mob(owner)		//Grab anyone we have grabbed
 			var/turf/simulated/floor/target					//this is where we are teleporting
 			var/list/validtargets = list()					//list of valid tiles to teleport to
+			var/mob/living/carbon/human/H
 
 			if(ishuman(L))
-				var/mob/living/carbon/human/H = L
+				H = L
 
-				if(H.psi_blocking >= 10)
-					owner.stun_effect_act(0, H.psi_blocking * 5, BP_HEAD)
-					owner.weakened = H.psi_blocking
-					usr.show_message(SPAN_DANGER("Your head pulsates with pain as your mind bashes against an unbreakable barrier!"))
+			if(H) //If H was assigned, we need to check if we can teleport them
+				if(!check_possibility(TRUE, H))
+					return
+			else //If H wasn't assigned, just need the normal check_possibility
+				if(!check_possibility())
 					return
 
 			for(var/area/A in world)						//Clumbsy, but less intensive than iterating every tile
