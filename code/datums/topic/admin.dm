@@ -398,6 +398,8 @@
 	//Non-Human (Green)
 	body += source.formatJobGroup(M, "Non-human Positions", "ccffcc", "nonhumandept", nonhuman_positions + "Antag HUD")
 	//Antagonist (Orange)
+	body += source.formatJobGroup(M, "Lodge Positions", "191919", "lodgedept", lodge_positions)
+	//Off-colony Lodge (Black)
 
 	var/jobban_list = list()
 	for(var/a_id in GLOB.antag_bantypes)

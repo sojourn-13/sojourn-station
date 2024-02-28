@@ -25,7 +25,8 @@
 		list("names" = list(), "header" = "Prospector", "flag" = PROSPECTORS),
 		list("names" = list(), "header" = "Civilian", "flag" = CIVILIAN),
 		list("names" = list(), "header" = "Miscellaneous", "flag" = MISC),
-		list("names" = list(), "header" = "Silicon")
+		list("names" = list(), "header" = "Silicon"),
+		list("names" = list(), "header" = "Lodge", "flag" = LODGE)
 	)
 	var/list/misc //Special departments for easier access
 	var/list/bot

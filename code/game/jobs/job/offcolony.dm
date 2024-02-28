@@ -4,8 +4,8 @@
 	spawn_positions = 1
 	flag = HUNTMASTER
 	faction = MAP_FACTION
-	department = DEPARTMENT_INDEPENDENT
-	department_flag = INDEPENDENT
+	department = DEPARTMENT_LODGE
+	department_flag = LODGE
 	supervisors = "the lodge matriarch"
 	difficulty = "Hard."
 	selection_color = "#9b633e"
@@ -46,8 +46,8 @@
 	spawn_positions = 4
 	flag = LODGEHUNTER
 	faction = MAP_FACTION
-	department = DEPARTMENT_INDEPENDENT
-	department_flag = INDEPENDENT
+	department = DEPARTMENT_LODGE
+	department_flag = LODGE
 	difficulty = "Hard."
 	supervisors = "the hunt master"
 	selection_color = "#9b633e"
@@ -88,8 +88,8 @@
 	spawn_positions = 2
 	flag = LODGEHERBALIST
 	faction = MAP_FACTION
-	department = DEPARTMENT_INDEPENDENT
-	department_flag = INDEPENDENT
+	department = DEPARTMENT_LODGE
+	department_flag = LODGE
 	difficulty = "Hard."
 	supervisors = "the hunt master"
 	selection_color = "#9b633e"
