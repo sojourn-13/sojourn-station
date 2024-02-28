@@ -104,6 +104,7 @@
 			"civ" = civilian_positions,
 			"chr" = church_positions,
 			"pro" = prospector_positions,
+			"ldg" = lodge_positions,
 			"bot" = nonhuman_positions
 		)
 

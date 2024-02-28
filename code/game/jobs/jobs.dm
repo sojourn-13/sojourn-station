@@ -113,7 +113,5 @@ var/list/offcolony_positions = list(JOBS_INDEPENDENT)
 
 var/list/lodge_positions = list(JOBS_LODGE)
 
-
-
 /proc/guest_jobbans(var/job)
 	return ((job in command_positions) || (job in nonhuman_positions) || (job in security_positions))

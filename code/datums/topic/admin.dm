@@ -484,6 +484,11 @@
 				var/datum/job/temp = SSjob.GetJob(jobPos)
 				if(!temp) continue
 				joblist += temp.title
+		if("lodgedept")
+			for(var/jobPos in lodge_positions)
+				var/datum/job/temp = SSjob.GetJob(jobPos)
+				if(!temp) continue
+				joblist += temp.title
 		if("nonhumandept")
 			joblist += "pAI"
 			for(var/jobPos in nonhuman_positions)
