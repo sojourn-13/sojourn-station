@@ -19527,7 +19527,7 @@
 	id_tag = "checkpoint1";
 	name = "Forest Airlock";
 	req_access = newlist();
-	req_one_access = list(78,19,1)
+	req_one_access = list(80,78,19,1)
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -49808,7 +49808,7 @@
 /obj/machinery/door/airlock/multi_tile/glass{
 	id_tag = "checkpoint2";
 	name = "Colony Airlock";
-	req_one_access = list(78,19,1)
+	req_one_access = list(80,78,19,1)
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
