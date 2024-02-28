@@ -32,8 +32,8 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		block_damage(loss, A)
 		A.visible_message(SPAN_WARNING("\The [src] is weakened by the \the [A]!"))
 		playsound(A.loc, 'sound/weapons/shield/shielddissipate.ogg', 50, 1)
-		return 1
-	return 0
+		return FALSE
+	return TRUE
 
 /obj/item/projectile/beam/musket
 	name = "Musket laser"
