@@ -281,7 +281,7 @@
 
 		seed.seed.apply_gene(loaded_gene)
 		seed.modified += round(rand(10, 15) * stat_multiplier)
-		seed.modified = max(seed.modified, 100)
+		seed.modified = min(seed.modified, 100)
 
 		start_task()
 		return 1
