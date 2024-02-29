@@ -7,7 +7,7 @@
 	set desc = "Expend two points of your psi essence to call creatures from nearby burrows. They are not inherently friendly to you. Use at your own risks."
 	psi_point_cost = 2
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		playsound(src.loc, 'sound/voice/shriek1.ogg', 75, 1, 8, 8)
 		spawn(2)
 		playsound(src.loc, 'sound/voice/shriek1.ogg', 75, 1, 8, 8)
@@ -25,7 +25,7 @@
 	resist your psychic influence."
 	psi_point_cost = 4
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		playsound(src.loc, 'sound/voice/hiss6.ogg', 75, 1, 8, 8)
 		spawn(2)
 		playsound(src.loc, 'sound/voice/hiss6.ogg', 75, 1, 8, 8)
@@ -43,7 +43,7 @@
 	incapable of proper violence, such as rats."
 	psi_point_cost = 3
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		var/mob/living/carbon/superior_animal/S = get_grabbed_mob(owner)
 		if(istype(S, /mob/living/carbon/superior_animal))
 			usr.visible_message(
@@ -73,7 +73,7 @@
 	set desc = "Expend five psi points and wither your body and mind to call three dreaming daemons from somewhere else. They are not inherently allied to you."
 	psi_point_cost = 5
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		owner.stats.changeStat(STAT_TGH, -20)
 		owner.stats.changeStat(STAT_VIG, -20)
 		owner.stats.changeStat(STAT_ROB, -20)

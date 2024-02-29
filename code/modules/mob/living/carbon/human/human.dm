@@ -316,6 +316,7 @@ var/list/rank_prefix = list(\
 	"Chief Executive Officer" = "Executive",\
 	"Prime" = "Prime",\
 	"Foreman" = "Foreman",\
+	"Lodge Hunt Master" = "Hunt Master",\
 	)
 
 /mob/living/carbon/human/proc/rank_prefix_name(name)

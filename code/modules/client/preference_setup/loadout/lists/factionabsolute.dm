@@ -10,6 +10,18 @@
 	path = /obj/item/clothing/under/jersey
 	cost = 0
 
+/datum/gear/factionabsolute/leather_hat
+	display_name = "Absolute leather hat"
+	path = /obj/item/clothing/head/leather_hat
+	slot = slot_head
+	cost = 1
+
+/datum/gear/factionabsolute/surtout
+	display_name = "Absolute surtout"
+	path = /obj/item/clothing/suit/storage/surtout
+	slot = slot_wear_suit
+	cost = 1
+
 /datum/gear/factionabsolute/ntdress
 	display_name = "absolutist summmer dress"
 	path = /obj/item/clothing/under/rank/ntdress
