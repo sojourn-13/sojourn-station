@@ -156,7 +156,8 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
 	force = WEAPON_FORCE_DANGEROUS
 	bolt_training = FALSE
-	penetration_multiplier  = 2
+	penetration_multiplier  = 3
+	damage_multiplier  = 2
 	max_shells = 1
 	price_tag = 2750
 	gun_parts = null
@@ -405,6 +406,7 @@
 	use_power_cost = 1
 	suitable_cell = /obj/item/cell/medium
 	price_tag = 1850
+	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE)
 
 /obj/item/tool/saw/hyper/doombringer/turn_on(mob/user)
 	if (cell && cell.charge >= 1)
@@ -424,6 +426,36 @@
 	to_chat(user, SPAN_NOTICE("You turn the [src] off."))
 	..()
 
+/obj/item/tool/sword/katana/crimson_arc
+	name = "\"Crimson Arc\" katana"
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
+			What seems to be a normal katana but with a red hilt but with a nasty trick, the closer the user is to death the faster it becomes to swing."
+	icon_state = "chokuto"
+	item_state = "katana"
+	hitsound = 'sound/weapons/heavyslash.ogg'
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_SHALLOW
+	price_tag = 2050
+	clickdelay_offset = 0
+	max_upgrades = 1//Already over powered.
+	degradation = 0.1
+	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE)
+
+
+/obj/item/tool/sword/katana/crimson_arc/resolve_attackby(atom/target, mob/user)
+	.=..()
+	//Little icky but it works
+	var/safty_math =  user.health
+	safty_math = round(safty_math)
+	if(safty_math <= 0)
+		safty_math = 1
+	var/current_health = (user.maxHealth / (safty_math - 10))
+	if(current_health <= 0)
+		current_health = 8
+	else
+		current_health = round(current_health)
+	current_health = clamp(current_health, -7, 5) //-1 from no bag means this can be in affect a 2 cooldown weapon. This is insainly good
+	clickdelay_offset = -current_health
 
 //Armor
 
