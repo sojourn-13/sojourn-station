@@ -62,7 +62,7 @@
 				qdel(src)
 				return
 		if(QUALITY_DIGGING)
-			if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_COG))
+			if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_DIGGING, FAILCHANCE_EASY, required_stat = STAT_COG))
 				if(method == 1)
 					for(var/obj/A in contents)
 						A.forceMove(T)
@@ -74,7 +74,7 @@
 				qdel(src)
 				return
 		if(QUALITY_EXCAVATION)
-			if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_COG))
+			if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_EXCAVATION, FAILCHANCE_EASY, required_stat = STAT_COG))
 				if(method == 2)
 					for(var/obj/A in contents)
 						A.forceMove(T)
