@@ -88,7 +88,7 @@
 		// At STAT_LEVEL_GODLIKE, there is no pain from the surgery at all
 		// This supports negative stat values
 		if(user && user.stats)
-			strength *= max((STAT_LEVEL_GODLIKE - user.stats.getStat(required_stat)) / STAT_LEVEL_GODLIKE, 0)
+			strength *= max((STAT_LEVEL_MASTER - user.stats.getStat(required_stat)) / STAT_LEVEL_MASTER, 0)
 
 		organ.owner_pain(strength)
 
@@ -367,10 +367,10 @@ proc/calculate_expert_surgery_bonus(mob/living/user)
 	var/stat_bonus = 0
 	if(user_stat > STAT_LEVEL_EXPERT && user_stat <= STAT_LEVEL_PROF)
 		stat_bonus = user_stat - STAT_LEVEL_EXPERT
-	else if(user_stat > STAT_LEVEL_PROF && user_stat <= STAT_LEVEL_GODLIKE)
+	else if(user_stat > STAT_LEVEL_PROF && user_stat <= STAT_LEVEL_MASTER)
 		stat_bonus = 20 + (user_stat - STAT_LEVEL_PROF) * 0.5
-	else if(user_stat > STAT_LEVEL_GODLIKE)
-		stat_bonus = 30 + (user_stat - STAT_LEVEL_GODLIKE) * 0.1
+	else if(user_stat > STAT_LEVEL_MASTER)
+		stat_bonus = 30 + (user_stat - STAT_LEVEL_MASTER) * 0.1
 	return stat_bonus
 
 // Same logic as above, but instead gives a bonus to reduce surgery step duration
@@ -383,10 +383,10 @@ proc/bio_time_bonus(mob/living/user)
 	var/time_bonus = 0 // Maximum of 80
 	if(user_stat > STAT_LEVEL_EXPERT && user_stat <= STAT_LEVEL_PROF) // Average doctor gets 40 BIO, bonuses start from 41 MEC/BIO onwards
 		time_bonus = (user_stat - 40) // Minimum of 1 up to 20 at 60 MEC/BIO
-	else if(user_stat > STAT_LEVEL_PROF && user_stat <= STAT_LEVEL_GODLIKE)
+	else if(user_stat > STAT_LEVEL_PROF && user_stat <= STAT_LEVEL_MASTER)
 		time_bonus = 20 + (user_stat - STAT_LEVEL_PROF) // 21 up to 40 at 80 MEC/BIO
-	else if(user_stat > STAT_LEVEL_GODLIKE && user_stat <= 120) // Soft cap to prevent going over the surgical step duration
-		time_bonus = 40 + (user_stat - STAT_LEVEL_GODLIKE) // 41 to 80 (instant!) at 120 MEC/BIO and over
+	else if(user_stat > STAT_LEVEL_MASTER && user_stat <= 120) // Soft cap to prevent going over the surgical step duration
+		time_bonus = 40 + (user_stat - STAT_LEVEL_MASTER) // 41 to 80 (instant!) at 120 MEC/BIO and over
 	else if(user_stat >= 120) // Sanity check
 		time_bonus = 80 // Hardcap met at 120 MEC/BIO already, don't ever make it go over this no matter how insane our stats are
 	return time_bonus

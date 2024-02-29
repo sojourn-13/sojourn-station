@@ -86,7 +86,8 @@
 				/obj/item/gun_upgrade/mechanism/brass_kit = 1,
 				//Misc - things that are not a "gun" but still good for this
 				/obj/item/oddity/nt/seal = 1,
-				/obj/item/soap/bluespase = 0.5))
+				/obj/item/soap/bluespase = 0.5,
+				/obj/item/oddity/rare/moon_fragment = 0.2))
 
 /obj/random/uplink/low_chance
 	name = "really really really low chance random uplink"
