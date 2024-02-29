@@ -931,7 +931,7 @@
 			return
 
 		to_chat(M, "<span class='warning'>The sacrifice vanishes to dust before you. You feel an ominous warm wind envelop your form as you absorb its lifeforce unto your own.</span>")
-		if(able_to_cast)
+		if(able_to_cast && M.maxHealth < 200)
 			M.maxHealth += 1
 			M.health += 1
 			M.unnatural_mutations.total_instability += 1 //A soft cap
@@ -946,7 +946,7 @@
 			return
 
 		to_chat(M, "<span class='warning'>The sacrifice vanishes to dust before you. You feel an ominous warm wind envelop your form as you absorb its lifeforce unto your own.</span>")
-		if(able_to_cast)
+		if(able_to_cast && M.maxHealth < 200)
 			M.maxHealth += 1
 			M.health += 1
 			M.unnatural_mutations.total_instability += 1 //A soft cap
