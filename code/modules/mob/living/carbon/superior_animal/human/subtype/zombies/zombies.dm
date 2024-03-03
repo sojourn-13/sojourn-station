@@ -4,6 +4,7 @@
 /mob/living/carbon/superior_animal/human/zombies
     name = "zombie prospector"
     desc = "A husk of one of the many infamous 'Prospectors' of the colony, fallen prey to the hoard."
+	icon = 'icons/mob/zombies.dmi'
     icon_state = "zombie_prospector_brown_ak"
     icon_dead = "zombie_prospector_brown_dead"
     melee_damage_lower = 10
@@ -21,15 +22,6 @@
     friendly_to_colony = FALSE
 
 
-//Drops
-    drop_items = list(/obj/item/grenade/frag, /obj/item/book/manual/fiction/kinglear)
-
-
-/mob/living/carbon/superior_animal/human/zombies/death()
-    ..()
-    drop_death_loot()
-
-
 //Ranged weapon stuff
 
 
@@ -42,6 +34,14 @@
     rounds_left = 20
     mag_type = /obj/item/ammo_mag/rifle-0
     mags_left = 4
+
+//Drops
+    drop_items = list(/obj/item/grenade/frag, /obj/item/book/manual/fiction/kinglear)
+
+
+/mob/living/carbon/superior_animal/human/zombies/death()
+    ..()
+    drop_death_loot()
 
 
 
