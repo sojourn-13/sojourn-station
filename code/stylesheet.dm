@@ -105,6 +105,7 @@ h1.alert, h2.alert		{color: #000000;}
 .marqua					{color: #00FFFF}
 .akula					{color: #f8412c}
 .plant					{color: #882d17}
+.opifex					{color: #aa00aa}
 
 .interface				{color: #330033;}
 
