@@ -32,8 +32,8 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		block_damage(loss, A)
 		A.visible_message(SPAN_WARNING("\The [src] is weakened by the \the [A]!"))
 		playsound(A.loc, 'sound/weapons/shield/shielddissipate.ogg', 50, 1)
-		return 1
-	return 0
+		return FALSE
+	return TRUE
 
 /obj/item/projectile/beam/musket
 	name = "Musket laser"
@@ -62,23 +62,25 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 
 // 223 is a middle ground between 408 and 75. Damage of 408, AP of 75
 /obj/item/projectile/beam/laser_223
-	damage_types = list(BRUTE = 20)
+	damage_types = list(BURN = 20)
 	armor_penetration = 20
 	recoil = 5
 	wounding_mult = WOUNDING_SERIOUS
-
+/*
 /obj/item/projectile/beam/laser_223/ap
-	damage_types = list(BRUTE = 16)
+	damage_types = list(BURN = 16)
 	armor_penetration = 36
 	recoil = 7
 	wounding_mult = WOUNDING_NORMAL
+	penetrating = 1
 
+//Our Gimick will be that we do high damage but reflect based on a chance on the armor.
 /obj/item/projectile/beam/laser_223/lethal
-	damage_types = list(BRUTE = 12)
-	armor_penetration = 0
+	damage_types = list(BURN = 27)
+	armor_penetration = 15
 	recoil = 5
 	wounding_mult = WOUNDING_WIDE
-	post_penetration_dammult = 3
+*/
 
 /obj/item/projectile/beam/weak/pistol_35
 	damage_types = list(BURN = 15)
