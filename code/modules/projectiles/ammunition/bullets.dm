@@ -813,7 +813,7 @@
 
 /obj/item/ammo_casing/beam/spent
 	projectile_type = null
-
+/*
 /obj/item/ammo_casing/laser_223/ap
 	desc = "A .223 pulse charged laser cavity. This type possess an integrated sensor array that adjusts the focal point to the targets location, allowing for better penetration for the cost of firepower due to the occupied space."
 	projectile_type = /obj/item/projectile/beam/laser_223/ap
@@ -821,7 +821,7 @@
 /obj/item/ammo_casing/laser_223/lethal
 	desc = "A .223 pulse charged laser cavity. This type uses a wide witdh lense to cause less overpenetration and cause more damage in exchange of being more susceptible to armor. Its cal is 5.56mm."
 	projectile_type = /obj/item/projectile/beam/laser_223/lethal
-
+*/
 /obj/item/ammo_casing/beam/ap/spent
 	projectile_type = null
 	desc = "A spent .223 pulse charged laser cavity. Its metal case is molten and shows an array of discolaretion"

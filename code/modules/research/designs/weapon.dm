@@ -258,7 +258,7 @@
 	desc = "A 200 round box of casings of pulse loaded laser cavities. Its cal is 5.56mm."
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/box
 	materials = list(MATERIAL_STEEL = 20, MATERIAL_GLASS = 20, MATERIAL_SILVER = 10)
-
+/*
 /datum/design/research/item/ammo/laser/box/ap
 	name = "\"Piezoelectric\" piercing laser box."
 	desc = "A 200 round box of casings of pulse loaded laser cavities. This type possess an integrated sensor array that adjusts the focal point to the targets location, allowing for better penetration for the cost of firepower due to the occupied space. Its cal is 5.56mm."
@@ -270,7 +270,7 @@
 	desc = "A 200 round box of casings of pulse loaded laser cavities. This type uses a wide witdh lense to cause less overpenetration and cause more damage in exchange of being more susceptible to armor. Its cal is 5.56mm."
 	materials = list(MATERIAL_STEEL = 20, MATERIAL_GLASS = 20, MATERIAL_PLASMA = 10)
 	build_path = /obj/item/ammo_magazine/ammobox/laser_223/box/lethal
-
+*/
 /datum/design/research/item/ammo/fancy_dart
 	name = "carbine chem dart"
 	desc = "A hollow dart that loads into a cartridge."

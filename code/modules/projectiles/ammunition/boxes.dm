@@ -423,7 +423,7 @@
 	caliber = CAL_SCI
 	ammo_type = /obj/item/ammo_casing/laser_223
 	max_ammo = 200
-
+/*
 /obj/item/ammo_magazine/ammobox/laser_223/box/ap
 	name = "ammunition box (5.56mm PL)"
 	icon_state = "box223-ap-laser"
@@ -435,7 +435,7 @@
 	icon_state = "box223-lethal-laser"
 	ammo_type = /obj/item/ammo_casing/laser_223/lethal
 	max_ammo = 200
-
+*/
 //// 12mm heavy pistol
 
 /obj/item/ammo_magazine/ammobox/kurtz_50

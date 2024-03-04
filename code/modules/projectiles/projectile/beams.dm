@@ -74,7 +74,6 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 1
 
-//Our Gimick will be that we do high damage but reflect based on a chance on the armor.
 /obj/item/projectile/beam/laser_223/lethal
 	damage_types = list(BURN = 27)
 	armor_penetration = 15
