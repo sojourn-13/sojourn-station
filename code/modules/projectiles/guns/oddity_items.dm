@@ -429,7 +429,7 @@
 /obj/item/tool/sword/katana/crimson_arc
 	name = "\"Crimson Arc\" katana"
 	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
-			What seems to be a normal katana but with a red hilt but with a nasty trick, the closer the user is to death the faster it becomes to swing."
+			What seems to be a normal katana but with a red hilt and a nasty trick, the closer the user is to death the faster it becomes to swing."
 	icon_state = "chokuto"
 	item_state = "katana"
 	hitsound = 'sound/weapons/heavyslash.ogg'
