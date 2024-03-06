@@ -28,7 +28,7 @@
 		new death_spawn_gift(src.loc)
 
 
-	if(psionic_respawn)
+	if(psionic_respawn && GLOB.deepmaints_data_bool["allow_respawning"])
 		var/my_little_location = get_turf(src)
 		addtimer(CALLBACK(my_little_location, /turf/proc/psionic_respawn, my_little_location, respawn_mob_type), rand(fast_respawn,slow_respawn))
 
@@ -36,16 +36,16 @@
 
 	//You killed something not of this planet. Congrats...
 
-	if(affects_chaos)
+	if(affects_chaos && GLOB.deepmaints_data_bool["chaos_lowering"])
 		GLOB.chaos_level -= 1
 
 	. = ..()
 
 /turf/proc/psionic_respawn(my_little_location, respawn_mob_type)
-	if(holy)
+	if(holy && GLOB.deepmaints_data_bool["holy_water_delay"])
 		//5% for a different higher power to step in blocking the defailing of the playground. Killing it for the round.
 		//This comes at a cost of sending a playtime rune being sent somewere.
-		if(prob(5))
+		if(prob(5) && GLOB.deepmaints_data_bool["holy_water_despawning"])
 			var/obj/effect/decal/cleanable/crayon/trap/rebound_joy = new /obj/effect/decal/cleanable/crayon/trap(src.loc)
 			rebound_joy.caprice_spell()
 		else

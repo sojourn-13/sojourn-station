@@ -207,6 +207,14 @@ ADMIN_VERB_ADD(/client/proc/hivemind_panel, R_FUN, TRUE)
 		var/datum/hivemind_panel/H = GLOB.hivemind_panel
 		H.main_interact()
 
+ADMIN_VERB_ADD(/client/proc/deepmaints_panel, R_FUN, TRUE)
+/client/proc/deepmaints_panel()
+	set category = "Fun"
+	set name = "Deepmaint Psionic Panel"
+	if(holder && GLOB.deepmaints_panel)
+		var/datum/deepmaints_panel/H = GLOB.deepmaints_panel
+		H.main_interact()
+
 #define MAX_WARNS 3
 #define AUTOBANTIME 10
 
