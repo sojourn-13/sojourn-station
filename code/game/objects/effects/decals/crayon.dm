@@ -1495,6 +1495,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	B.remove_self(30)
 	var/iron_mind = FALSE
 	for(var/mob/T in oview(7))
+		iron_mind = FALSE //So 1 crayon mage dosnt block the whole thing
 		for(var/datum/language/L in T.languages)
 			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
 				iron_mind = TRUE
