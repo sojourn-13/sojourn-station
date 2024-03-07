@@ -5,12 +5,14 @@
 	desc = "At some point you chose to have a nanogate installed in your body, the metallic nanite based implant goes directly at the base of your skull right where your spine connects. While \
 	quite powerful and widely useful, but there are side effects. Those with a nanogate find it far more difficult to become inspired. On top of this, nanogates violently attack any mutations \
 	it detects in the body, which can be harmful when combined with fast-acting genetic modifications."
+	icon_state = "nanogateimplant"
 	gain_text = "Your head aches for a moment, the effects of your spine having been seperated and an advanced machine slotted inbetween leaving you with a dull pain that is quickly cured \
 	by your nanites."
 
 /datum/perk/nanite_regen
 	name = "Nanite Regeneration"
 	desc = "You configure your nanite matrix to begin aiding in your natural healing."
+	icon_state = "naniteregeneration"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	var/regen_rate = 0.5 //This seems low but this is per human handle_chemicals_in_body meaning this is rather robust
 
@@ -32,6 +34,7 @@
 	name = "Nanite Skin-Weave"
 	desc = "Through the use of reactive nanites designed to plate together into a shield your machines can reform at a lightning pace to let you physically resist incoming damage by forming a \
 	mesh weave shield just before a strike connects."
+	icon_state = "naniteskinweave"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 
 /datum/perk/nanite_armor/assign(mob/living/carbon/human/H)

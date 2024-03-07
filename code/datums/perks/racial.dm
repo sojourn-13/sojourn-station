@@ -44,6 +44,7 @@
 /datum/perk/suddenbrilliance
 	name = "Sudden Brilliance"
 	desc = "Your intelligence is above the 'lesser races' and even the humblest of Mar'qua can prove it easily in moments of focus. Use this to center your thoughts and increase all your mental abilities."
+	icon_state = "suddenbrilliance"
 	active = FALSE
 	passivePerk = FALSE
 
@@ -63,10 +64,12 @@
 /datum/perk/inspired
 	name = "Inspired Intellect"
 	desc = "Even the most humble Mar'qua is capable of study and extrapolation, your natural intellect allows you to become gain inspiration more easily."
+	icon_state = "inspiredintellect"
 
 /datum/perk/alien_nerves
 	name = "Adapted Nervous System"
 	desc = "A mar'qua's nervous system has long since adapted to the use of stimulants, chemicals, and different toxins. Unlike lesser races, you can handle a wide variety of chemicals before showing any side effects and you'll never become addicted."
+	icon_state = "adaptednervoussystem"
 
 /datum/perk/alien_nerves/assign(mob/living/carbon/human/H)
 	..()
@@ -84,6 +87,7 @@
 /datum/perk/iwillsurvive
 	name = "Will to Survive"
 	desc = "Your determination to survive and push on takes precedent before your other instincs making you ignore some of your pain and letting your body recover faster."
+	icon_state = "willtosurvive"
 	active = FALSE
 	passivePerk = FALSE
 
@@ -103,6 +107,7 @@
 /datum/perk/battlecry
 	name = "Inspiring Battlecry"
 	desc = "Life has taught you that beyond sheer force of will, what made your kind conquer the stars was also a sense of camaraderie and cooperation among your battle brothers and sisters. Your heroic warcry can inspire yourself and others to better performance in combat."
+	icon_state = "inspiringbattlecry"
 	active = FALSE
 	passivePerk = FALSE
 
@@ -141,10 +146,12 @@
 /datum/perk/tenacity
 	name = "Tenacity"
 	desc = "Humans were always resilient, not letting anything or anyone to get in way of their goals. Due to this your body is way more adapted to anything thrown it's way letting you push onward for just a little bit longer than others."
+	icon_state = "tenacity"
 
 /datum/perk/linguist_for_humans
 	name = "Diverse Culture"
 	desc = "Sol Fed conquering the stars led to almost every human having diverse knowledge of different languages."
+	icon_state = "diverseculture"
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
@@ -182,6 +189,7 @@
 /datum/perk/enhancedsenses
 	name = "Enhance Senses"
 	desc = "You're a predator at heart and have the senses to match, for a short time your body toughens and your aim improves drastically as your senses enhance."
+	icon_state = "enhancesenses"
 	active = FALSE
 	passivePerk = FALSE
 
@@ -201,12 +209,14 @@
 /datum/perk/exceptional_aim
 	name = "Instinctual Skill"
 	desc = "All kriosans understand the dynamics of shooting, to such a degree that guns are more extensions to one's hand than weapon. You take no penalty when firing any range weapon one handed."
+	icon_state = "instinctualskill"
 
 ////////////////////////////////////////Akula perks
 /datum/perk/recklessfrenzy
 	name = "Reckless Frenzy"
 	desc = "Your body is powerful and strong when you succumb to instinct, but doing so leaves you without much higher reasoning for a short time. The rush of chemicals is also highly addictive \
 	and often times will leave your body weaker for a short time."
+	icon_state = "recklessfrenzy"
 	active = FALSE
 	passivePerk = FALSE
 
@@ -227,12 +237,14 @@
 /datum/perk/iron_flesh
 	name = "Iron Flesh"
 	desc = "Akula scales are not only tough and resistant to damage but exceptionally skilled at naturally forcing out embedded objects that somehow punch through. You'll never get a bullet nor object stuck inside when hit."
+	icon_state = "ironflesh"
 
 
 ////////////////////////////////////////Naramad perks
 /datum/perk/adrenalineburst
 	name = "Adrenaline Burst"
 	desc = "Naramads are built for extreme speed, be it for charging forward and retreating back."
+	icon_state = "adrenalineburst"
 	active = FALSE
 	passivePerk = FALSE
 
@@ -253,10 +265,12 @@
 /datum/perk/stay_hydrated
 	name = "Hydration Reliance"
 	desc = "Naramad have adapted biology heavily reliant on the intake of fluids, in particular clean clear water. Drinking purified water, even tap water, heals your body slowly, as if you drank tricordizine!"
+	icon_state = "hydrationreliance"
 
 /datum/perk/born_warrior
 	name = "Born Warrior"
 	desc = "No matter their background all naramadi are capable bringing any object to bear as a weapon, be it bladed or blunt. Unlike other races your grip is iron and you'll never lose your weapon through embedding it in an enemy."
+	icon_state = "bornwarrior"
 
 /////////////////////////////////////////Cindarite perks
 /datum/perk/purgetoxins
@@ -305,6 +319,7 @@
 /datum/perk/opifex_backup
 	name = "Smuggled Tools"
 	desc = "You retrieve your custom made quality tools hidden on your person somewhere, along with the opifex-made black webbing vest that holds them. As every opifex is told, never go anywhere without your kit. This kit is also yours alone and a specialized suite of tools, unless you're upgrading to new tools you should not ever sell or give these away."
+	icon_state = "smuggledtools"
 	active = FALSE
 	passivePerk = FALSE
 
@@ -367,6 +382,7 @@
 /datum/perk/opifex_turret
 	name = "Smuggled Circuit"
 	desc = "Opifex are scavengers at heart and rely heavily on machines and AI as a result, as such, each opifex keeps a specially designed circuit on their person to build a make shift defense platform when needed to secure their safety. Sadly, you only managed to smuggle the circuit on your person."
+	icon_state = "smuggledcircuit"
 	active = FALSE
 	passivePerk = FALSE
 
@@ -387,6 +403,7 @@
 /datum/perk/opifex_patchkit
 	name = "Smuggled Patch Kit"
 	desc = "Every opifex carries their own personal IFAK stashed somewhere. Being practical is the best option, after all, and the colony is a dangerous place."
+	icon_state = "smuggledpatchkit"
 	active = FALSE
 	passivePerk = FALSE
 
@@ -515,6 +532,7 @@
 /datum/perk/oddity_reroll
 	name = "Modify Oddity"
 	desc = "You reach into your understanding of this natural world to alter the latent effects of an oddity, enhancing the properties it has."
+	icon_state = "modifyoddity"
 	active = FALSE
 	passivePerk = FALSE
 
@@ -540,6 +558,7 @@
 /datum/perk/folken_healing
 	name = "Folken Photo-Healing"
 	desc = "As a Folken, you can use the light to heal wounds, standing in areas of bright light will increase your natural regeneration."
+	icon_state = "folkenphotohealing"
 	passivePerk = TRUE
 
 /datum/perk/folken_healing/young
@@ -563,6 +582,7 @@
 /datum/perk/dark_heal
 	name = "Mycus Regeneration"
 	desc = "As a mycus, you heal as long as you are in the darkness, increasing your natural regeneration."
+	icon_state = "mycusregeneration"
 	passivePerk = TRUE
 
 /datum/perk/mushroom_follower
@@ -593,6 +613,7 @@
 	name = "Spawn Slime-Mold"
 	desc = "Slime-mold shroomlings are animal-intelligence mycus capable of following simple orders like 'Slime-Mold 'Name' Follow.' and 'Slimd-Mold 'Name' Stop.' who will stay by you when ordered. Slime-molds are made for combat, being \
 	incredibly sturdy and physically strong, able to regenerate even the worst wounds. Unfortunately they suffer from poor eyesight, requiring threats to get close before they notice them."
+	icon_state = "spawnslimemold"
 	active = FALSE
 	passivePerk = FALSE
 	var/used = FALSE // Not deleting after use since the description is useful.
@@ -619,12 +640,14 @@
 	name = "Carnivore"
 	desc = "For whatever reason, be it genetics or racial inclination, you are an obligate carnivore. You get very little nutrition from standard nutriment, but gain alot from meat and protein \
 	based products."
+	icon_state = "carnivore"
 	passivePerk = TRUE
 
 /datum/perk/herbivore
 	name = "Herbivore"
 	desc = "For whatever reason, be it genetics or racial inclination, you are an obligate herbivore. You get very little nutrition from standard protein, but gain alot from grown foods and glucose \
 	based products."
+	icon_state = "herbivore"
 	passivePerk = TRUE
 
 ///////////////////////////////////// Slime perks

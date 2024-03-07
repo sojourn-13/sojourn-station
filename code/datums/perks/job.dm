@@ -104,9 +104,10 @@
 /datum/perk/sanityboost
 	name = "True Faith"
 	desc = "When near an obelisk, you feel your mind at ease. Your body is strengthened by its presence, resisting all forms of damage."
+	icon_state = "truefaith"
 	gain_text = "You feel the protection of the nearby obelisk."
 	lose_text = "You no longer feel the protection of an obelisk."
-	icon_state = "sanityboost" // https://game-icons.net/1x1/lorc/templar-eye.html
+
 
 /datum/perk/active_sanityboost/assign(mob/living/carbon/human/H)
 	if(..())
@@ -125,6 +126,7 @@
 /datum/perk/community_of_saints
 	name = "Community of the Saints"
 	desc = "Your cruciform connects you to all other believers, but such connection can be distracting as well as beneficial. You take 25% longer to complete all tool-based actions that aren't instantaneous."
+	icon_state = "communityofthesaints"
 
 /datum/perk/ear_of_quicksilver
 	name = "Ear of Quicksilver"
@@ -136,6 +138,7 @@
 	name = "Periodic Table"
 	desc = "You know what the atoms around you react to and in what way they do. You are used to making organic substitutes and using them. \
 			You get quarter more NSA than a normal person. You can also see all reagents in beakers."
+	icon_state = "periodictable"
 	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
 
 /datum/perk/chemist/assign(mob/living/carbon/human/H)
@@ -202,6 +205,7 @@
 /datum/perk/chem_contraband
 	name = "Illegal Substance Training"
 	desc = "For reasons either fair or foul, you know how to easily identify certain kinds of illegal chemical contraband."
+	icon_state = "illegalsubstancetraining"
 	perk_shared_ability = PERK_SHARED_SEE_ILLEGAL_REAGENTS
 
 /datum/perk/nightcrawler
@@ -410,16 +414,19 @@
 /datum/perk/stalker
 	name = "Anomaly Hunter"
 	desc = "Special training from senior Prospectors and your own experience has allowed you to instinctively know the effects of greater oddities. By examining an oddity that has become an anomaly, you can tell what its greater boon or curse may be."
+	icon_state = "anomalyhunter"
 
 /datum/perk/market_prof
 	name = "Market Professional"
 	desc = "You've become an excellent appraiser of goods over the years. Just by looking at the item, you can know how much it would sell for in today's market rates."
+	icon_state = "marketprofessional"
 
 //Medical perks - relates to surgery and all.
 
 /datum/perk/surgical_master
 	name = "Surgery Training"
 	desc = "While you may not know the more advanced medical procedures, your mandatory training on surgery for implantation purposes allows you to perform basic surgical procedures with ease."
+	icon_state = "surgerytraining"
 
 /datum/perk/advanced_medical
 	name = "Advanced Surgical Techniques"
@@ -428,6 +435,7 @@
 /datum/perk/robotics_expert
 	name = "Robotics Expert"
 	desc = "Your formal training and experience in advanced mech construction and complex devices has made you more adept at working with them."
+	icon_state = "roboticsexpert"
 
 /datum/perk/robotics_expert/assign(mob/living/carbon/human/H)
 	..()
@@ -442,6 +450,7 @@
 /datum/perk/job/jingle_jangle
 	name = "Key Smith"
 	desc = "You have been granted a multitude of specially crafted electronic 'keys' for opening most airlocks around the colony, and the knowledge on how to use them has been solely been passed on to you. Don't get discouraged, you will eventually find the right one..."
+	icon_state = "keysmith"
 
 /datum/perk/job/blackshield_conditioning
 	name = "Blackshield Conditioning"
@@ -460,6 +469,7 @@
 /datum/perk/job/prospector_conditioning
 	name = "Rough and Tumble"
 	desc = "You've been through it all. Spider bites, random cuts on rusted metal, animal claws, getting shot, and even set on fire. Hell, even a few used needles in desperate times. You feel as though your body fights off the inflictions of too much NSA and addictions much better than others."
+	icon_state = "roughandtumble"
 	perk_shared_ability = PERK_SHARED_SEE_ILLEGAL_REAGENTS
 
 /datum/perk/prospector_conditioning/assign(mob/living/carbon/human/H)
@@ -479,7 +489,7 @@
 /datum/perk/job/butcher
 	name = "Master Butcher"
 	desc = "Your skill as a butcher is unmatched, be it through your training or accumulated field experience. You can harvest additional valuable parts from animals you cut up, nothing shall be wasted."
-
+	icon_state = "masterbutcher"
 
 /datum/perk/job/butcher/assign(mob/living/carbon/human/H)
 	..()
@@ -496,6 +506,7 @@
 
 /datum/perk/si_sci
 	name = "SI Science Training"
+	icon_state = "sitraining"
 	desc = "You know how to use RnD core consoles and Exosuit Fabs."
 
 /datum/perk/neat
