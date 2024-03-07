@@ -25,7 +25,7 @@
 		return FALSE
 	return TRUE
 
-// Shimmer rune, invoked by Scribe scrolls, doesn't allow bullets to pass through.
+// Shimmer rune, invoked by Scribe scrolls, doesn't allow bullets to pass through. Unless they have penetration.
 /obj/effect/decal/cleanable/crayon/shimmer
 	name = "strange rune"
 	desc = "The air shimmers about this rune."
@@ -1257,7 +1257,7 @@
 		qdel(G)
 	return
 
-// Caprice: Converts runes to and trap rune, if having bable or voice will send it randomly to maints or deepmaints.
+// Caprice: Converts the rune to a trap rune, if having bable or voice will send it randomly to maints or deepmaints.
 /obj/effect/decal/cleanable/crayon/proc/caprice_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/turf/simulated/floor/target	//this is where we are teleporting
 	var/list/validtargets = list()
@@ -1403,7 +1403,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	new /obj/effect/decal/cleanable/crayon/mist(M.loc,main=RANDOM_RGB,shade=RANDOM_RGB)
 	ScrollBurn()
 
-// Shimmer: Invokes a crayon mark that blocks both bullets and laser projectiles.
+// Shimmer: Invokes a crayon mark that blocks both bullets, penetration weapons and rounds will still pierce.
 /obj/item/scroll/proc/shimmer_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	B.remove_self(100)
@@ -1469,7 +1469,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	bluespace_entropy(20, get_turf(src)) //high entropy cost. Low blood cost.
 	ScrollBurn()
 
-// Gaia: Ever Mob seeable via the scroll when burned must past a language checks or be weaken 5:3
+// Gaia: Every Mob seeable via the scroll when burned must past a language checks or be weaken 5:3, multiple crayon mages nearby will flip the effect.
 /obj/item/scroll/proc/gaia_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	bluespace_entropy(5, get_turf(src))
@@ -1488,13 +1488,14 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		M.drop_from_inventory(src)
 	ScrollBurn()
 
-// Eta: Ever Mob seeable via the scroll when burned must past a language checks or be thrown backwards 8 to 12 spaces
+// Eta: Every Mob seeable via the scroll when burned must past a language checks or be thrown backwards 8 to 12 spaces
 /obj/item/scroll/proc/eta_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	bluespace_entropy(5, get_turf(src))
 	B.remove_self(30)
 	var/iron_mind = FALSE
 	for(var/mob/T in oview(7))
+		iron_mind = FALSE //So 1 crayon mage dosnt block the whole thing
 		for(var/datum/language/L in T.languages)
 			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
 				iron_mind = TRUE
@@ -1714,7 +1715,6 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 			An inkwell of blood in which to dip your fingers to write in blood."
 	icon_state = "blood_basin"
 	density = 1
-	sanity_damage = 5 //its a vat of refilling blood.
 	limited_reagents = FALSE
 	refill_rate = 200
 	reagent_id = "blood"
@@ -1724,11 +1724,13 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		if(user.gloves)
 			to_chat(user, SPAN_NOTICE("You must take off your gloves to dip your fingers in blood."))
 			return FALSE
-		to_chat(user, SPAN_NOTICE("You dip your fingers on the basin, covering them in blood."))
-		user.sanity.changeLevel(-25)
-		user.bloody_hands += 5
-		user.hand_blood_color = "#A10808"
-		user.update_inv_gloves(1)
+		if(user.sanity.insight && user.sanity.insight > 25)
+			to_chat(user, SPAN_NOTICE("You dip your fingers in the basin, voices echo in your head, A price for everything."))
+			user.sanity.insight = 0
+			user.bloody_hands += 5
+			user.hand_blood_color = "#A10808"
+			user.update_inv_gloves(1)
+		else to_chat(user, SPAN_NOTICE("Voices boom in your thoughts. TAKE NOT! INEXPERIENCED PUPPET!"))
 		user.verbs += /mob/living/carbon/human/proc/bloody_doodle
 
 /obj/structure/sink/basion/crayon/attackby(obj/item/I, mob/user)
