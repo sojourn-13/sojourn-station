@@ -53,7 +53,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	var/locked = TRUE			//if the turret's behaviour control access is locked
 
 	var/damage_cap = 90 // How much damage can the turret do per zap maximum.
-	var/power_damage_ratio = 400 // How much power does the machine consume per damage point.
+	var/power_damage_ratio = 5 // How much power does the machine consume per damage point.
 
 	var/reqpower = 500		//holder for power needed
 
@@ -617,9 +617,13 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		sleep(shot_delay)
 		last_fired = FALSE
 
-
-	var/power = min(apc.terminal.powernet.avail/2, damage_cap * power_damage_ratio) //Drains based on ALL available power on an APC's grid
-	current_power_area.removeStaticPower(power, power_channel)
+	var/power = min(apc.terminal.powernet.avail/20, damage_cap * power_damage_ratio)
+	apc.charging = TRUE
+	if(!apc.cell.checked_use(power))
+		return
+	else
+		apc.cell.use(power) //Drains a lot from the cell in the apc
+	//current_power_area.removeStaticPower(power, power_channel)
 	//apc.terminal.powernet.draw_power(power) //Alternative if it doesn't draw enough
 	playsound(src, 'sound/effects/lightningshock.ogg', 100, 1, extrarange = 5)
 
