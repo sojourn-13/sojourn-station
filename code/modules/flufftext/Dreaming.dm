@@ -27,7 +27,7 @@ var/list/dreams = list(
 	"a Delta Elite","a Stallion","a Clarissa","a Firefly","a Molly","a Mateba",
 	"a Mistral","a Havelock","a Deckard","a Bull","a MAC",
 	"a Texan","a Straylight","a handmade pistol","a L6 SAW","a Penetrator","a Zeus",
-	"a Rose","a Regulator","a Pulse Rifle","an RPG","a STS","The Cock Unsucker"
+	"a Rose","a Regulator","a Pulse Rifle","an RPG","a STS","The Cock Unsucker",
 
 
 //Clothing
@@ -43,7 +43,7 @@ var/list/dreams = list(
 
 //Misc
 	"a common item","an uncommon item","a rare item","a hidden treasure","a pile of remains","a body bag","a shooting target",
-	"a plushie","a toy","a piece of trash","a hair comb","a newspaper","an oddity","a bag of money", "A pat on the head"
+	"a plushie","a toy","a piece of trash","a hair comb","a newspaper","an oddity","a bag of money","A pat on the head",
 
 //Feelings
 	"admiration","adoration","appreciation","amusement","anxiety","awe","awkwardness","boredom","calmness","confusion",
@@ -70,7 +70,7 @@ var/list/dreams = list(
 	"an abhuman","an akula","an angel","a bird","a bunny","a cht'mant","a coyote","a crocodile","a deer","a demon",
 	"a dogborg","a dragon","a fox","a goblin","a human","a husky","a kobold","a kriosan","a lion","a mar'qua",
 	"a polar bear",,"a sablekyne","a seelie","a sergal","a shark","a slime","a squid",
-	"a squirrel","a strange hybrid","a synth","a wabbite","a wolf","a cindarite"
+	"a squirrel","a strange hybrid","a synth","a wabbite","a wolf","a cindarite",
 
 //People
 	"a friend","an enemy","a loved one","an acquaintance","a stranger","an unknown individual","a hidden figure",
@@ -88,7 +88,7 @@ var/list/dreams = list(
 	"a giant nurse spider","a giant hunter spider","a kampfer roach","a fuhrer roach","a jager roach","a kraftwerk roach",
 	"a seuche roach","a panzer roach","a gestrahlte roach","a disembodied brain","a monkey","a shadekin","an impossible shape",
     "a crimson jelly","a fading memory","a psionic crusher","a monstrosity without a face","a creature with limbs upon limbs upon limbs",
-    "a black silluette"
+    "a dark silluette",
 
 //Factions/Groups
 	"the marshals","the blackshield","the prospectors","the excelsior institute","lonestar shipping solutions",
@@ -100,7 +100,7 @@ var/list/dreams = list(
 	"the chemistry lab","the morgue","the operating theatre","the recovery room","the cargo bay","the warehouse",
 	"the research lab","the server room","the toxins test chamber","the technical storage","the engine","the armory",
 	"the telecommunications chamber","the brig","the courtroom","the interrogation room","the security post","the vault",
-	"the teleporter","the maintenance tunnels","the twisted tunnels of deep maintenance"
+	"the teleporter","the maintenance tunnels","the twisted tunnels of deep maintenance",
 
 //Other Locations
 	"the darkness of space","the empty void","the planet surface","the space ruins","the derelict","the smuggler hideout",
