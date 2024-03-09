@@ -27,7 +27,7 @@ var/list/dreams = list(
 	"a Delta Elite","a Stallion","a Clarissa","a Firefly","a Molly","a Mateba",
 	"a Mistral","a Havelock","a Deckard","a Bull","a MAC",
 	"a Texan","a Straylight","a handmade pistol","a L6 SAW","a Penetrator","a Zeus",
-	"a Rose","a Regulator","a Pulse Rifle","an RPG","a STS","the Cock Unsucker",
+	"a Rose","a Regulator","a Pulse Rifle","an RPG","a STS","the Head Unpatter",
 
 //Clothing
 	"a blindfold","an eyepatch","a monocle","a pair of aviators","a pair of glasses","a pair of goggles","a pair of earmuffs",
