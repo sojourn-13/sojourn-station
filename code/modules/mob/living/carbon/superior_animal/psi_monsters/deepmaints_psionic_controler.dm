@@ -1,4 +1,7 @@
 GLOBAL_LIST_INIT(deepmaints_data_bool, list(
+	"active_psionics"				= TRUE,
+	"deepmaints_ash_drops"			= TRUE,
+	"deepmaints_loot_drops"			= TRUE,
 	"allow_leaving"					= FALSE,
 	"allow_respawning"				= TRUE,
 	"holy_water_delay"				= TRUE,
@@ -16,7 +19,16 @@ GLOBAL_VAR_INIT(deepmaints_panel, new /datum/deepmaints_panel)
 	var/data = "<center><font size='3'><b>DEEPMAINTS PANEL</b></font></center>"
 	data += "<table><tr><td><a href='?src=\ref[src];refresh=1'>\[REFRESH\]</a>"
 
-	data += "<br>Allow All Deepmaints Mobs To Leave To Colony: [GLOB.deepmaints_data_bool["allow_leaving"] ? "Enabled" : "Disabled"]] \
+	data += "<br>Psionic Implant Powers Active: [GLOB.deepmaints_data_bool["active_psionics"] ? "Enabled" : "Disabled"] \
+	<a href='?src=\ref[src];active_psionics=1'>\[SET\]</a>"
+
+	data += "<br>Deepmaints Mobs Ash Drops: [GLOB.deepmaints_data_bool["deepmaints_ash_drops"] ? "Enabled" : "Disabled"] \
+	<a href='?src=\ref[src];deepmaints_ash_drops=1'>\[SET\]</a>"
+
+	data += "<br>Deepmaints Mobs Loot Drops: [GLOB.deepmaints_data_bool["deepmaints_loot_drops"] ? "Enabled" : "Disabled"] \
+	<a href='?src=\ref[src];deepmaints_loot_drops=1'>\[SET\]</a>"
+
+	data += "<br>Allow All Deepmaints Mobs To Leave To Colony: [GLOB.deepmaints_data_bool["allow_leaving"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];allow_leaving=1'>\[SET\]</a>"
 
 	data += "<br>Allow Deepmaints Mob Respawning: [GLOB.deepmaints_data_bool["allow_respawning"] ? "Enabled" : "Disabled"] \
@@ -41,6 +53,15 @@ GLOBAL_VAR_INIT(deepmaints_panel, new /datum/deepmaints_panel)
 /datum/deepmaints_panel/Topic(href,href_list)
 	if(!check_rights(R_FUN))
 		return
+
+	if(href_list["active_psionics"])
+		GLOB.deepmaints_data_bool["active_psionics"] = !GLOB.deepmaints_data_bool["active_psionics"]
+
+	if(href_list["deepmaints_ash_drops"])
+		GLOB.deepmaints_data_bool["deepmaints_ash_drops"] = !GLOB.deepmaints_data_bool["deepmaints_ash_drops"]
+
+	if(href_list["deepmaints_loot_drops"])
+		GLOB.deepmaints_data_bool["deepmaints_loot_drops"] = !GLOB.deepmaints_data_bool["deepmaints_loot_drops"]
 
 	if(href_list["allow_leaving"])
 		GLOB.deepmaints_data_bool["allow_leaving"] = !GLOB.deepmaints_data_bool["allow_leaving"]

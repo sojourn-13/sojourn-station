@@ -20,12 +20,15 @@
 		drop_from_inventory(I)
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
-	new momento_mori(src.loc)
-	drop_death_loot(src.loc)
+	if(GLOB.deepmaints_data_bool["deepmaints_ash_drops"])
+		new momento_mori(src.loc)
 
-	if(death_present)
-		src.visible_message(SPAN_DANGER(death_gasp))
-		new death_spawn_gift(src.loc)
+	if(GLOB.deepmaints_data_bool["deepmaints_loot_drops"])
+		drop_death_loot(src.loc)
+
+		if(death_present)
+			src.visible_message(SPAN_DANGER(death_gasp))
+			new death_spawn_gift(src.loc)
 
 
 	if(psionic_respawn && GLOB.deepmaints_data_bool["allow_respawning"])
