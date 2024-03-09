@@ -118,7 +118,7 @@ var/list/dreams = list(
 	"a code yellow","a code red","an explosion","a nuclear detonation","an encounter","a regretful moment","getting pounced on",
 	"an assassination contract","a suited teleporting individual with a plasma SMG","a deep maintenance incursion",
     "a shuttlecraft flying backwards and upside down with a flag on it one does not recognize",
-    "a single quake followed by all shadows rotating counter clockwise".)
+    "a single quake followed by all shadows rotating counter clockwise")
 
 
 mob/living/carbon/proc/dream()
