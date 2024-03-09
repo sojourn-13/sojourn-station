@@ -29,7 +29,6 @@ var/list/dreams = list(
 	"a Texan","a Straylight","a handmade pistol","a L6 SAW","a Penetrator","a Zeus",
 	"a Rose","a Regulator","a Pulse Rifle","an RPG","a STS","the Cock Unsucker",
 
-
 //Clothing
 	"a blindfold","an eyepatch","a monocle","a pair of aviators","a pair of glasses","a pair of goggles","a pair of earmuffs",
 	"an armband","a badge","a holster","a leg brace","a neck brace","a scarf","a stethoscope","a tie","a waistcoat","a pair of gloves",
@@ -64,7 +63,7 @@ var/list/dreams = list(
 	"a Prime","an Entertainer","a Chef","a Doctor","a Psychologist","a Soteria Paramedic",
 	"a Soteria Chemist","a Soteria Scientist","a Soteria Roboticist","a Cyborg","a Cargo Technician","a Lonestar Miner",
 	"a Guild Adept", "a Marshal Officer","a Supply Specialist","a Ranger", "the Premier",
-	"a Corpsman", "a Trooper",
+	"a Corpsman","a Trooper",
 
 //Races (Check Creatures Before Adding Stuff Here, There's Some Overlap!)
 	"an abhuman","an akula","an angel","a bird","a bunny","a cht'mant","a coyote","a crocodile","a deer","a demon",
