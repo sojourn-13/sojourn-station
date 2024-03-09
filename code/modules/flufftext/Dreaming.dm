@@ -27,7 +27,7 @@ var/list/dreams = list(
 	"a Delta Elite","a Stallion","a Clarissa","a Firefly","a Molly","a Mateba",
 	"a Mistral","a Havelock","a Deckard","a Bull","a MAC",
 	"a Texan","a Straylight","a handmade pistol","a L6 SAW","a Penetrator","a Zeus",
-	"a Rose","a Regulator","a Pulse Rifle","an RPG","a STS","The Cock Unsucker",
+	"a Rose","a Regulator","a Pulse Rifle","an RPG","a STS","the Cock Unsucker",
 
 
 //Clothing
@@ -43,7 +43,7 @@ var/list/dreams = list(
 
 //Misc
 	"a common item","an uncommon item","a rare item","a hidden treasure","a pile of remains","a body bag","a shooting target",
-	"a plushie","a toy","a piece of trash","a hair comb","a newspaper","an oddity","a bag of money","A pat on the head",
+	"a plushie","a toy","a piece of trash","a hair comb","a newspaper","an oddity","a bag of money","a pat on the head",
 
 //Feelings
 	"admiration","adoration","appreciation","amusement","anxiety","awe","awkwardness","boredom","calmness","confusion",
