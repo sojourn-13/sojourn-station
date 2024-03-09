@@ -30,7 +30,6 @@
 			src.visible_message(SPAN_DANGER(death_gasp))
 			new death_spawn_gift(src.loc)
 
-
 	if(psionic_respawn && GLOB.deepmaints_data_bool["allow_respawning"])
 		var/my_little_location = get_turf(src)
 		addtimer(CALLBACK(my_little_location, /turf/proc/psionic_respawn, my_little_location, respawn_mob_type), rand(fast_respawn,slow_respawn))
