@@ -15,7 +15,7 @@ var/list/dreams = list(
 	"an air vent","an airlock","a bed","a bedsheet","a bookcase","a boulder","a burrow","a catwalk","a chair","a closet","a coat rack",
 	"a curtain","a disposals chute","a dog bed","an emergency shutter","a filing cabinet","a floor tile","a medical stand","a mirror",
 	"a notice board","a painting","a poster","a roller bed","a reinforced window","a showcase","a sofa","a stool","a sign","a table",
-	"a transit tube","a wardrobe","a web","a warning sign","a window","an entropy inversion device"
+	"a transit tube","a wardrobe","a web","a warning sign","a window","an entropy inversion device",
 
 //Weapons
 	"a bullet casing","an ammo magazine","a missile","a flamethrower","a pistol","a sniper rifle","a laser cannon","a knife",
