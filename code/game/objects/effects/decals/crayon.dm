@@ -240,11 +240,10 @@
 			S.desc = "A scroll covered in various glyphs and runes."
 			qdel(src) //Eat the rune, nom nom
 			return
-		else
-			S.icon_state = "Scroll blood"
-			S.desc = "A scroll with a large rune on it."
-			qdel(src) // We consume the rune.
-			return
+
+		S.icon_state = "Scroll blood"
+		S.desc = "A scroll with a large rune on it."
+		qdel(src) // We consume the rune.
 		return
 
 	if(type == 3)
