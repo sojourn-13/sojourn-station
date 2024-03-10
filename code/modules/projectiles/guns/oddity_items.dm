@@ -441,7 +441,6 @@
 	degradation = 0.1
 	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE)
 
-
 /obj/item/tool/sword/katana/crimson_arc/resolve_attackby(atom/target, mob/user)
 	.=..()
 	//Little icky but it works
@@ -456,6 +455,63 @@
 		current_health = round(current_health)
 	current_health = clamp(current_health, -7, 5) //-1 from no bag means this can be in affect a 2 cooldown weapon. This is insainly good
 	clickdelay_offset = -current_health
+
+
+/obj/item/tool/scythe/spectral_harvester
+	name = "\"Spectral Harvester\" scythe"
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
+			A large flat bluespace blade attached to a long red handle that requires two hands to even swing."
+	icon_state = "spectral_harvester"
+	hitsound = 'sound/weapons/heavyslash.ogg'
+	force = WEAPON_FORCE_GODLIKE //88 damage but
+	armor_penetration = ARMOR_PEN_GRAZING
+	price_tag = 2750
+	clickdelay_offset = 15 //This stacks with base
+	max_upgrades = 0 //No...
+	degradation = 0.1
+	slowdown = 2 //Little missleading as we get teleports
+	slowdown_hold = 2
+	w_class = ITEM_SIZE_HUGE
+	var/entropy_value = 0.5
+	var/range = 10
+	var/toclose_range = 2
+
+/obj/item/tool/scythe/spectral_harvester/afterattack(mob/living/M, mob/living/user, target_zone)
+	clickdelay_offset = 15
+	if(!wielded)
+		to_chat(user, SPAN_DANGER("\The [src.name] is too heavy to swing with one hand!"))
+		return FALSE
+
+	if(get_dist(M, user) > range)
+		return FALSE
+
+	if(!(M in view(user)))
+		return FALSE
+
+	if(ismob(M))
+		if(toclose_range > get_dist(M, user))
+			return
+		if((M.health - force) <= 0) //Some can survive but not long
+			clickdelay_offset = -6 //Almost a complete refund if you get
+		resolve_attackby(M, user)
+		var/turf/AtomTurf = get_turf(M)
+		go_to_bluespace(get_turf(user), entropy_value, FALSE, user, AtomTurf)
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	return
+
+//Need to override this proc to allow range hits
+/obj/item/tool/scythe/spectral_harvester/resolve_attackby(atom/A, mob/user, params)
+	if(ismob(A))
+		if(toclose_range > get_dist(A, user) && A != user)
+			to_chat(user, SPAN_DANGER("You are to close to swing [src.name]!"))
+			return
+	if(item_flags & ABSTRACT)//Abstract items cannot be interacted with. They're not real.
+		return 1
+	add_fingerprint(user)
+	return A.attackby(src, user, params)
+
+/obj/item/tool/scythe/spectral_harvester/Adjacent(var/atom/neighbor, var/recurse = 1)
+	return TRUE //We are always adjacent
 
 //Armor
 
