@@ -494,8 +494,8 @@
 		if((M.health - force) <= 0) //Some can survive but not long
 			clickdelay_offset = -6 //Almost a complete refund if you get
 		var/turf/AtomTurf = get_turf(M)
-		go_to_bluespace(get_turf(user), entropy_value, FALSE, user, AtomTurf)
 		resolve_attackby(M, user)
+		go_to_bluespace(get_turf(user), entropy_value, FALSE, user, AtomTurf)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	return
 
