@@ -463,14 +463,14 @@
 			A large flat bluespace blade attached to a long red handle that requires two hands to even swing."
 	icon_state = "spectral_harvester"
 	hitsound = 'sound/weapons/heavyslash.ogg'
-	force = WEAPON_FORCE_GODLIKE //88 damage but
-	armor_penetration = ARMOR_PEN_GRAZING
+	force = WEAPON_FORCE_GODLIKE + 30//118 damage but + weilding
+	armor_penetration = ARMOR_PEN_HALF
 	price_tag = 2750
 	clickdelay_offset = 15 //This stacks with base
 	max_upgrades = 0 //No...
-	degradation = 0.1
-	slowdown = 2 //Little missleading as we get teleports
-	slowdown_hold = 2
+	degradation = 0.01
+	slowdown = 1 //Little missleading as we get teleports
+	slowdown_hold = 1
 	w_class = ITEM_SIZE_HUGE
 	var/entropy_value = 0.5
 	var/range = 10
