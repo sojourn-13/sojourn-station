@@ -51,7 +51,7 @@
 		/datum/job/ai
 	) // The way to restrict this to one job could be done cleaner but this way easier so fuck it. -Kaz
 	allow_modifications = FALSE
-	restricted_depts = SECURITY | PROSPECTORS | ENGINEERING | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
+	restricted_depts = SECURITY | PROSPECTORS | ENGINEERING | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS | LODGE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
 
 /datum/category_item/setup_option/core_implant/nanogate
@@ -85,7 +85,7 @@
 		)
 	allow_modifications = TRUE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_AGSYNTH)
-	restricted_depts = SECURITY | PROSPECTORS | MEDICAL | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS
+	restricted_depts = SECURITY | PROSPECTORS | MEDICAL | SCIENCE | CHURCH | INDEPENDENT | CIVILIAN | LSS | LODGE
 
 /datum/category_item/setup_option/core_implant/opifex_nanogate
 	name = "Opifex Nanogate"

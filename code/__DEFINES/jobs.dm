@@ -9,7 +9,8 @@
 #define JOBS_CHURCH "Prime", "Vector"
 #define JOBS_PROSPECTOR "Foreman","Fence","Salvager","Prospector"
 #define JOBS_NONHUMAN "AI","Robot","pAI"
-#define JOBS_INDEPENDENT "Lodge Hunt Master","Lodge Hunter","Lodge Herbalist","Outsider"
+#define JOBS_LODGE "Lodge Hunt Master","Lodge Hunter","Lodge Herbalist",
+#define JOBS_INDEPENDENT "Outsider"
 
 #define JOBS_ANTI_HIVEMIND "Blackshield Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant","Prime","Vector","Foreman","Fence","Salvager","Prospector","Premier","Steward","AI","Janitor","Soteria Lifeline Technician","Soteria Roboticist","Lonestar Miner"
 
@@ -26,6 +27,7 @@
 #define DEPARTMENT_CIVILIAN	"Contractors"
 #define DEPARTMENT_CHURCH	"Church of Absolute"
 #define DEPARTMENT_PROSPECTOR "Prospectors"
+#define DEPARTMENT_LODGE "Lodge"
 #define DEPARTMENT_INDEPENDENT "Independant"
 
 #define DEPARTMENT_GREYSON "Greyson Positronic"
