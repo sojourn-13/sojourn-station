@@ -244,7 +244,7 @@
 	desc = "A advanced version of slime jelly. Naturally made from certain slimes."
 	icon_state = "bottle"
 	preloaded_reagents = list("pureslimejelly" = 60)
-
+/*
 /obj/item/reagent_containers/glass/bottle/slimetoxin
 	name = "slime mutation bottle"
 	desc = "A corruptive toxin produced by slimes."
@@ -256,7 +256,7 @@
 	desc = "An advanced corruptive toxin produced by slimes."
 	icon_state = "bottle"
 	preloaded_reagents = list("amutationtoxin" = 60)
-
+*/
 //organic bottled chems
 /obj/item/reagent_containers/glass/bottle/organic
 	name = "resin bottle"

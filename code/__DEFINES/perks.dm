@@ -231,6 +231,9 @@
 
 //Task Perks
 #define PERK_FORCEFUL_REJECTION /datum/perk/forceful_rejection
+//Bluecross perks
+#define PERK_SKILL_CAP_ADDITION /datum/perk/skill_cap_addition
+#define PERK_SKILL_CAP_EXPANDING /datum/perk/skill_cap_expanding
 
 //////////////////
 //Cooldown perks//

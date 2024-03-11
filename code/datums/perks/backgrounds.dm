@@ -172,7 +172,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	W.desc += " It has been inscribed with the \"[holder.name]\" family name."
 	W.name = "[W] of [holder.name]"
 	var/oddities = rand(2,4) //Will boost 2-4 random stats
-	var/list/stats = ALL_STATS
+	var/list/stats = ALL_STATS_FOR_LEVEL_UP
 	var/list/final_oddity = list()
 	for(var/i = 1 to oddities)
 		var/stat = pick(stats)
