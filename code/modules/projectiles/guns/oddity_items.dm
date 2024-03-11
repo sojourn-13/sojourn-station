@@ -464,7 +464,7 @@
 	icon_state = "spectral_harvester"
 	hitsound = 'sound/weapons/heavyslash.ogg'
 	force = WEAPON_FORCE_GODLIKE //88 damage but + weilding
-	armor_penetration = ARMOR_PEN_HALF
+	armor_penetration = ARMOR_PEN_MODERATE
 	price_tag = 2750
 	clickdelay_offset = 15 //This stacks with base
 	max_upgrades = 0 //No...
