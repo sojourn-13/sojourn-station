@@ -11949,13 +11949,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1south)
-"cFr" = (
-/obj/item/paper{
-	info =  "Hey there boys might notice the hangers looking a little bit empty today. The Vasiliy is out of commission getting some work done for a  indeterminate amount of time for now have this short notice replacement! Got the Guild to hook us up with a damn quick replacement at a good price! She's not feature rich like the old girl but at least she's gonna be quick and include a onboard bathroom I'm told. Still not seen it yet getting worked on as this is being written but I'm sure they will do fine.";
-	name = "The Pod"
-	},
-/turf/simulated/floor/reinforced,
-/area/nadezhda/security/sechall)
 "cFt" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/dirt,
@@ -206418,7 +206411,7 @@ rRv
 rRv
 soO
 rRv
-cFr
+rRv
 rRv
 rRv
 rRv
