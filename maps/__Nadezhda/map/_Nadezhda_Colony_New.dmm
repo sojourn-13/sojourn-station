@@ -11949,6 +11949,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"cFr" = (
+/obj/item/paper{
+	info =  "Hey there boys might notice the hangers looking a little bit empty today. The Vasiliy is out of commission getting some work done for a  indeterminate amount of time for now have this short notice replacement! Got the Guild to hook us up with a damn quick replacement at a good price! She's not feature rich like the old girl but at least she's gonna be quick and include a onboard bathroom I'm told. Still not seen it yet getting worked on as this is being written but I'm sure they will do fine.";
+	name = "The Pod"
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/security/sechall)
 "cFt" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/dirt,
@@ -19594,6 +19601,13 @@
 /mob/living/carbon/superior_animal/giant_spider/nurse,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
+"eiT" = (
+/obj/machinery/camera/network/security{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/security/sechall)
 "eiU" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
@@ -47064,11 +47078,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/crew_quarters)
-"jTH" = (
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/security/sechall)
 "jTP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -50856,13 +50865,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/pond)
-"kKe" = (
-/obj/machinery/camera/network/security{
-	dir = 4
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/security/sechall)
 "kKh" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/simulated/floor/asteroid/grass,
@@ -55427,13 +55429,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"lMS" = (
-/obj/item/paper{
-	info =  "Hey there boys might notice the hangers looking a little bit empty today. The Vasiliy is out of commission getting some work done for a  indeterminate amount of time for now have this short notice replacement! Got the guild to hook us up good damn good price! She's not feature rich like the old girl but at least she's gonna be quick and include a onboard bathroom I'm told.";
-	name = "The Pod"
-	},
-/turf/simulated/floor/reinforced,
-/area/nadezhda/security/sechall)
 "lMU" = (
 /obj/structure/table/rack,
 /obj/item/towel/random,
@@ -109521,6 +109516,11 @@
 /obj/random/flora/jungle_tree,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
+"wRP" = (
+/obj/structure/catwalk,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/nadezhda/security/sechall)
 "wRQ" = (
 /obj/structure/flora/big/bush1,
 /obj/effect/damagedfloor/fire,
@@ -203378,8 +203378,8 @@ kRY
 kRY
 kOR
 uSy
-jTH
-kKe
+wRP
+eiT
 cKc
 cKc
 cKc
@@ -206418,7 +206418,7 @@ rRv
 rRv
 soO
 rRv
-lMS
+cFr
 rRv
 rRv
 rRv
