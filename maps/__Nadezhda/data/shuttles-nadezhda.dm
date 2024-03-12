@@ -241,7 +241,7 @@
 //Marshal shuttle
 /datum/shuttle/autodock/multi/vasiliy
 	name = "The Vasiliy"
-	move_time = (3 MINUTES) / (1 SECOND)
+	move_time = (1 MINUTES) / (1 SECOND)
 	shuttle_area = /area/shuttle/vasiliy_shuttle_area
 	current_location = "nav_vasiliy_homebase"
 	landmark_transition = "nav_vasiliy_transit"
