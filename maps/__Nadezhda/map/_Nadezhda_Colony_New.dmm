@@ -10350,13 +10350,6 @@
 	pixel_x = 13;
 	pixel_y = -9
 	},
-/obj/machinery/button/remote/airlock{
-	pixel_x = -24;
-	pixel_y = 0;
-	dir = 4;
-	specialfunctions = 4;
-	id = "shitbox"
-	},
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,16"
 	},
@@ -18704,16 +18697,6 @@
 /obj/item/pen,
 /turf/simulated/floor/carpet,
 /area/nadezhda/absolutism/hallways)
-"dZc" = (
-/obj/machinery/button/remote/airlock{
-	pixel_x = -24;
-	pixel_y = 0;
-	dir = 4;
-	specialfunctions = 4;
-	id = "shitbox"
-	},
-/turf/simulated/floor/reinforced,
-/area/shuttle/vasiliy_shuttle_area)
 "dZd" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -21589,6 +21572,10 @@
 "eDt" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "10,19"
+	},
+/obj/machinery/light/small{
+	pixel_y = 32;
+	dir = 2
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
@@ -35183,9 +35170,6 @@
 "hxo" = (
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/dorm3)
-"hxH" = (
-/turf/simulated/floor/reinforced,
-/area/shuttle/vasiliy_shuttle_area)
 "hxL" = (
 /obj/random/furniture/pottedplant,
 /obj/machinery/light{
@@ -39035,10 +39019,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"ijy" = (
-/obj/machinery/light/small,
-/turf/simulated/floor/reinforced,
-/area/shuttle/vasiliy_shuttle_area)
 "ijC" = (
 /obj/structure/table/woodentable,
 /obj/random/toy/mecha,
@@ -61488,10 +61468,6 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/crew_quarters/toilet/public)
-"mZb" = (
-/obj/effect/shuttle_landmark/vasiliy_home,
-/turf/simulated/floor/reinforced,
-/area/shuttle/vasiliy_shuttle_area)
 "mZc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -83787,6 +83763,13 @@
 	req_access = list(5);
 	id_tag = "shitbox"
 	},
+/obj/machinery/button/remote/airlock{
+	pixel_x = -24;
+	pixel_y = 0;
+	dir = 4;
+	specialfunctions = 4;
+	id = "shitbox"
+	},
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,16"
 	},
@@ -105460,6 +105443,7 @@
 /obj/machinery/computer/shuttle_control/multi/vasiliy{
 	pixel_y = -12
 	},
+/obj/effect/shuttle_landmark/vasiliy_home,
 /turf/simulated/shuttle/wall/science{
 	icon_state = "8,19";
 	opacity = 0
@@ -112622,6 +112606,10 @@
 "xAk" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "6,19"
+	},
+/obj/machinery/light/small{
+	pixel_y = 32;
+	dir = 2
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
@@ -205601,7 +205589,7 @@ rRv
 rRv
 rRv
 rRv
-ijy
+rRv
 xAk
 neC
 eYH
@@ -205803,12 +205791,12 @@ rRv
 rRv
 rRv
 rRv
-mZb
+rRv
 vZO
 uWK
 cmt
 rCg
-hxH
+rRv
 rRv
 rRv
 rRv
@@ -206005,7 +205993,7 @@ rRv
 rRv
 rRv
 rRv
-ijy
+rRv
 eDt
 iHF
 aaN
@@ -206210,7 +206198,7 @@ rRv
 rRv
 rRv
 rRv
-dZc
+rRv
 rRv
 rRv
 rRv
