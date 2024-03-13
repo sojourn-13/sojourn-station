@@ -157,6 +157,7 @@
 	desc = "A sharp and curved blade on a long fiber-metal handle, this tool makes it easy to reap what you sow."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "scythe0"
+	item_state = "scythe0"
 	matter = list(MATERIAL_PLASTEEL = 7, MATERIAL_PLASTIC = 3)
 	sharp = TRUE
 	edge = TRUE
