@@ -69,7 +69,7 @@
 
 		if(damagetype == HALLOSS)
 			//First we get the nervs!
-			effective_damage = round(effective_damage * clamp((get_specific_organ_efficiency(OP_NERVE, def_zone) / 100), 0.5, 1))
+			effective_damage = round(effective_damage * clamp((get_specific_organ_efficiency(OP_NERVE, def_zone) / 100), 0.5, 1.5))
 			var/pain_armor = max(0, (src.getarmor(def_zone, "bullet") +  src.getarmor(def_zone, "melee") - armour_pen))//All brute over-pen checks bullet rather then melee for simple mobs to keep melee viable
 			var/pain_no_matter_what = (effective_damage * 0.15) //we deal 15% of are pain, this is to stop rubbers being *completely* uses with basic armor - Its not perfect in melee
 			effective_damage = max(pain_no_matter_what, (effective_damage - pain_armor))
@@ -131,7 +131,7 @@
 		//Pain part of the damage, that simulates impact from armor absorbtion
 		//For balance purposes, it's lowered by ARMOR_HALLOS_COEFFICIENT
 		if(!(damagetype == HALLOSS ))
-			var/agony_gamage = round( ( effective_damage * armor_effectiveness * ARMOR_HALLOS_COEFFICIENT * clamp((get_specific_organ_efficiency(OP_NERVE, def_zone) / 100), 0.5, 1) / 100))
+			var/agony_gamage = round( ( effective_damage * armor_effectiveness * ARMOR_HALLOS_COEFFICIENT * clamp((get_specific_organ_efficiency(OP_NERVE, def_zone) / 100), 0.5, 1.5) / 100))
 			adjustHalLoss(agony_gamage)
 
 		//Actual part of the damage that passed through armor
