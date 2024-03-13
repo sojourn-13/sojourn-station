@@ -60,6 +60,7 @@
 
 	drop_items = list(/obj/item/tool/sword/cult/deepmaints)
 
+	can_leave = TRUE //freedom
 
 	//Same armor that they are warning
 	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 30, bio = 100, rad = 50)

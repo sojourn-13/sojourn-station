@@ -11,17 +11,46 @@
 		spawn(3) if(src) animate(src, alpha = 55, time = 2)
 		spawn(3) if(src) animate(src, alpha = chameleon_skill, time = 2)
 
+	//Deepmaints mobs **can not** survive outside deepmaints, this just codeifies it
+	if(!can_leave && !GLOB.deepmaints_data_bool["allow_leaving"])
+		var/area/my_area = get_area(src.loc)
+		if(!my_area || my_area.name != "Deep Maintenance")
+			//We nest this to save on proccessing useless data
+			var/turf/simulated/floor/target					//this is where we are teleporting
+			var/list/validtargets = list()					//list of valid tiles to teleport to
+
+			for(var/area/A in world)						//Clumbsy, but less intensive than iterating every tile
+				if(istype(A, /area/deepmaint))				//First find our deepmaint areas
+					for(var/turf/simulated/floor/T in A)	//Pull a list of valid floor tiles from deepmaint
+						validtargets += T					//Add them to the list
+
+			target = pick(validtargets)					//Now we pick a target
+
+
+			//If we cant get a target then were in a test server or something critical wrong has happen!
+			if(!target)
+				message_admins("[src.name] was unable to find a target and was forcefuly moved outside of deepmaints! Was in [my_area.name]")
+				log_game("[src.name] was unable to find a target and was forcefuly moved outside of deepmaints! Was in [my_area.name]")
+				psionic_respawn = FALSE
+				death() //Your honour, League of Legends
+				return
+			visible_message("<span class='alert'>[src.name] becomes unstable and droops down before suddenly sinks into the floor howling in pain.</span>")
+			forceMove(target)							//Moves the caster
+
+
 /mob/living/carbon/superior_animal/psi_monster/dreaming_king/Life()
 	. = ..()
+	//Used for teleports, we grab it here to not repeat same code
+	var/turf/simulated/floor/target
+	var/list/validtargets = list()
 	if(health <= (maxHealth * 0.66) && first_teleport == FALSE)
-		var/turf/simulated/floor/target
-		var/list/validtargets = list()
+		if(GLOB.deepmaints_data_bool["king_teleporting"])
 
-		for(var/area/A in world)
-			if(istype(A, /area/deepmaint))
-				for(var/turf/simulated/floor/T in A)
-					validtargets += T
-		target = pick(validtargets)
+			for(var/area/A in world)
+				if(istype(A, /area/deepmaint))
+					for(var/turf/simulated/floor/T in A)
+						validtargets += T
+			target = pick(validtargets)
 
 		do_sparks(1, 0, src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
@@ -57,14 +86,13 @@
 		first_teleport = TRUE
 
 	if(health <= (maxHealth * 0.33) && second_teleport == FALSE)
-		var/turf/simulated/floor/target
-		var/list/validtargets = list()
+		if(GLOB.deepmaints_data_bool["king_teleporting"])
 
-		for(var/area/A in world)
-			if(istype(A, /area/deepmaint))
-				for(var/turf/simulated/floor/T in A)
-					validtargets += T
-		target = pick(validtargets)
+			for(var/area/A in world)
+				if(istype(A, /area/deepmaint))
+					for(var/turf/simulated/floor/T in A)
+						validtargets += T
+			target = pick(validtargets)
 
 		do_sparks(1, 0, src.loc)
 		new /obj/effect/gibspawner/human(src.loc)
