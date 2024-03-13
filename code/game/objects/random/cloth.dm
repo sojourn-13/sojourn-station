@@ -513,7 +513,7 @@
 	spawn_nothing_percentage = 97 //about a 1/3 chance on a normal round of obtaining this
 
 /obj/random/cloth/assault/reaver/item_to_spawn()
-	return pickweight(list(/obj/item/clothing/suit/space/void/assault/void_wolf))
+	return pickweight(list(/obj/item/clothing/suit/space/void/assault_wolf))
 
 /obj/random/cloth/bells
 	name = "random bell collar"

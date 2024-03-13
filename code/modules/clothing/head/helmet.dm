@@ -1235,6 +1235,7 @@
 	icon_state = "ablative"
 	armor_list = list(melee = 30, bullet = 30, energy = 75, bomb = 50, bio = 10, rad = 0)
 	flags_inv = HIDEEARS|HIDEEYES
+	body_parts_covered = HEAD|EYES|EARS
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.5
@@ -1371,8 +1372,8 @@
 	desc = "A bulletproof security helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
 			Comes with inbuilt nightvision HUD."
 	icon_state = "bulletproof_ironhammer"
-	body_parts_covered = HEAD | EARS
-	flags_inv = NONE
+	body_parts_covered = HEAD|FACE|EARS
+	flags_inv = HIDEEARS
 	action_button_name = "Toggle Night Vision"
 	var/obj/item/clothing/glasses/powered/nightvision_helmet/hud
 	var/last_toggle = 0
