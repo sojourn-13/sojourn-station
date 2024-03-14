@@ -1,7 +1,7 @@
 // Blunt
 /datum/component/internal_wound/organic/bone_blunt
 	treatments_item = list(/obj/item/stack/medical/bruise_pack/advanced = 2)
-	treatments_tool = list(QUALITY_SEALING = FAILCHANCE_NORMAL)
+	treatments_tool = list(QUALITY_BONE_SETTING = FAILCHANCE_NORMAL)
 	treatments_chem = list(CE_BONE_MEND = 0.5)
 	severity = 0
 	severity_max = 10
@@ -76,7 +76,7 @@
 // Fracture
 /datum/component/internal_wound/organic/bone_fracture
 	name = "fracture"
-	treatments_tool = list(QUALITY_BONE_SETTING = FAILCHANCE_NORMAL)
+	treatments_tool = list(QUALITY_BONE_GRAFTING = FAILCHANCE_NORMAL)
 	treatments_chem = list(CE_BONE_MEND = 1)
 	severity = 4
 	severity_max = 20
