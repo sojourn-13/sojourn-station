@@ -37,6 +37,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 /datum/perk/linguist
 	name = "Linguist"
 	desc = "Having dedicated time to learn foreign tongues, you find yourself knowing an extra language. Be it from your upbringing or schooling, you're fluent in one more language than the average person!"
+	icon_state = "linguist"
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
@@ -195,7 +196,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	name = "Chem Addict"
 	desc = "You've been an addict all your life, for whatever piss poor reason you've told yourself. Your body is able to handle a variety of drugs, more than the average person, but you get \
 	easily addicted to all of them."
-	icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
+	icon_state = "chemaddict" // https://game-icons.net/1x1/lorc/overdose.html
 
 /datum/perk/addict/assign(mob/living/carbon/human/H)
 	..()

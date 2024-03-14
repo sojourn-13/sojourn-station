@@ -20,6 +20,7 @@
 	name = "Psionic Psychosis"
 	desc = "You lived a life of unsettled violence. Maybe it was circumstance, maybe it was necessity, or maybe you just liked hurting people. No matter the reason, your mind is attuned to bloody \
 	violence and your potential as a psion reflects that. No matter your stats or physical body, you always deal maximum damage when using scaling psionic weaponry you create."
+	icon_state = "psionicpsychosis"
 
 /datum/perk/psi_harmony
 	name = "Psionic Harmony"
@@ -38,6 +39,7 @@
 	name = "Mind Master"
 	desc = "Your training as a Soteria psychologist and understanding of psychiatry has given you a deep understanding of how the mind works. As a result, if you became a psion, you have an \
 	expanded set of powers that aid you in your work, with additional essence to use your abilities."
+	icon_state = "mindmaster"
 
 /datum/perk/psi_grace
 	name = "Psionic Grace"
