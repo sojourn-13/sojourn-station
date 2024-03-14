@@ -333,8 +333,8 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
 	serial_type = "BlueCross"
 	gun_parts = null
-	slowdown = -1
-	slowdown_hold = -1
+	slowdown = -0.5
+	slowdown_hold = -0.5
 
 /obj/item/gun/energy/lasersmg/p9evil
 	name = "P9 \"Evil\" smg"
