@@ -2,7 +2,7 @@
 /datum/component/internal_wound/organic/bone_blunt
 	treatments_item = list(/obj/item/stack/medical/bruise_pack/advanced = 2)
 	treatments_tool = list(QUALITY_SEALING = FAILCHANCE_NORMAL)
-	treatments_chem = list(CE_BONE_MEND = 1)
+	treatments_chem = list(CE_BONE_MEND = .5)
 	severity = 0
 	severity_max = 5
 	hal_damage = IWOUND_LIGHT_DAMAGE
@@ -27,7 +27,7 @@
 /datum/component/internal_wound/organic/bone_sharp
 	treatments_item = list(/obj/item/stack/medical/bruise_pack/advanced = 2)
 	treatments_tool = list(QUALITY_SEALING = FAILCHANCE_NORMAL)
-	treatments_chem = list(CE_BONE_MEND = 1)
+	treatments_chem = list(CE_BONE_MEND = .5)
 	severity = 0
 	severity_max = 5
 	hal_damage = IWOUND_LIGHT_DAMAGE
@@ -52,7 +52,7 @@
 /datum/component/internal_wound/organic/bone_edge
 	treatments_item = list(/obj/item/stack/medical/bruise_pack/advanced = 2)
 	treatments_tool = list(QUALITY_SEALING = FAILCHANCE_NORMAL)
-	treatments_chem = list(CE_BONE_MEND = 1)
+	treatments_chem = list(CE_BONE_MEND = .5)
 	severity = 0
 	severity_max = 5
 	hal_damage = IWOUND_LIGHT_DAMAGE
@@ -77,7 +77,7 @@
 /datum/component/internal_wound/organic/bone_fracture
 	name = "fracture"
 	treatments_tool = list(QUALITY_BONE_SETTING = FAILCHANCE_NORMAL)
-	treatments_chem = list(CE_BONE_MEND = 2)
+	treatments_chem = list(CE_BONE_MEND = 1)
 	severity = 4
 	severity_max = 4
 	hal_damage = IWOUND_MEDIUM_DAMAGE
