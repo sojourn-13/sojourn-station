@@ -2003,6 +2003,7 @@
 #include "code\modules\genetics\mutations\thick_fur.dm"
 #include "code\modules\genetics\mutations\toxin_resistance.dm"
 #include "code\modules\genetics\mutations\unbalanced.dm"
+#include "code\modules\genetics\mutations\vampire.dm"
 #include "code\modules\genetics\mutations\wurm_cry.dm"
 #include "code\modules\genetics\recipes\abilities.dm"
 #include "code\modules\genetics\recipes\blood_based.dm"
