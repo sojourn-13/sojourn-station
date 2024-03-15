@@ -156,7 +156,7 @@
 	if (!injected || !our)
 		return
 	var/not_vampire = TRUE
-	if(bloodstr.has_reagent("nosfernium") || VAMPIRE in mutations)
+	if(bloodstr.has_reagent("nosfernium") || (VAMPIRE in mutations))
 		not_vampire = FALSE
 	if(blood_incompatible(injected.data["blood_type"],our.data["blood_type"],injected.data["species"],our.data["species"]) && not_vampire)
 		reagents.add_reagent("toxin",amount * 0.5)
