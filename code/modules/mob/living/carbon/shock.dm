@@ -51,7 +51,7 @@
 		. += organ.internal_wound_hal_dam
 		if(organ && (organ.is_broken() || (!BP_IS_ROBOTIC(organ) && organ.open)))
 			. += 25
-		. *= clamp((get_specific_organ_efficiency(OP_NERVE, organ.organ_tag)/100), 0.5, 1.5)
+		. *= clamp((get_specific_organ_efficiency(OP_NERVE, organ.organ_tag)/100), 0.5, 1)
 
 /mob/living/carbon/proc/get_dynamic_pain()
 	. = 1.33 * halloss
