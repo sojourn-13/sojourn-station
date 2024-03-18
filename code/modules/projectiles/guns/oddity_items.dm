@@ -311,6 +311,31 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "BlueCross"
 
+//Weaker spawn but speed is speed
+/obj/item/gun/projectile/cane_pistol_bluecross
+	name = "\"Blue Carpet\" cane"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+			A blue handled cane that seems to make you walk faster. It also contains a hidden silenced 12mm pistol inside."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "blue_cane"
+	item_state = "stick"
+	caliber = CAL_50 //Cant be caseless do to bugs oh well
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_SILVER = 5, MATERIAL_PLATINUM = 3)
+	price_tag = 1980
+	gun_parts = null
+	silenced = TRUE
+	handle_casings = HOLD_CASINGS
+	load_method = SINGLE_CASING|SPEEDLOADER
+	max_shells = 1
+	damage_multiplier = 2
+	penetration_multiplier = 2
+	init_recoil = EMBEDDED_RECOIL(0.3)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
+	serial_type = "BlueCross"
+	gun_parts = null
+	slowdown = -0.5
+	slowdown_hold = -0.5
+
 /obj/item/gun/energy/lasersmg/p9evil
 	name = "P9 \"Evil\" smg"
 	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
