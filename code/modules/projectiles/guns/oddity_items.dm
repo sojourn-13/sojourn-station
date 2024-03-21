@@ -541,4 +541,21 @@
 //Armor
 
 
+// Regal Outfit (Crimson Clothing)
+/obj/item/clothing/suit/crimsoncross_regaloutfit
+	name = "\"Regal\" greatecoat"
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
+	A highly decorated white cloak with golden epaulets over a blue vest and sleek white pants.  It is absolutely stained in blood forevermore. An air of nobility ensures that any upraising of a robotic foe will be reduced."
+	icon_state = "regaloutfit_redder" //Sprite by Ayshe / gid_git
+	item_state = "regaloutfit_redder"
+	blood_overlay_type = "coat"
+	armor_list = list(melee = 30, bullet = 10, energy = 25, bomb = 25, bio = 0, rad = 40)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	min_cold_protection_temperature = T0C - 60
+	siemens_coefficient = 0 //Foolishness
+	stiffness = 0 //You are above the red tape
+	price_tag = 3500 //Silk and gold
+	//all its affects are in human_defense.dm
+
 //Tools and tool mods (these are for things not intended for fighting but for actual tools)

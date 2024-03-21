@@ -87,6 +87,8 @@
 				//obj/item/material/butterfly/frenchman = 1,
 				//Gun/Tool Mods
 				/obj/item/gun_upgrade/mechanism/brass_kit = 1,
+				//Armor
+				/obj/item/clothing/suit/crimsoncross_regaloutfit = 1,
 				//Misc - things that are not a "gun" but still good for this
 				/obj/item/oddity/nt/seal = 1,
 				/obj/item/soap/bluespase = 0.5,
