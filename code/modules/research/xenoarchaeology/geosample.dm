@@ -21,10 +21,21 @@
 	icon_state = "sliver1"	//0-4
 	w_class = ITEM_SIZE_TINY
 	sharp = 1
-	preloaded_reagents = list("ground_rock" = 50)
 	//item_state = "electronic"
 	var/source_rock = "/turf/simulated/mineral/"
 	var/datum/geosample/geological_data
+	var/method_hint = null
+
+/obj/item/rocksliver/examine(mob/user)
+	..()
+	if(method_hint != null)
+		switch(method_hint)
+			if(0)
+				to_chat(user, "<span class='info'>[name] has losely packed sand and dust holding it together</span>")
+			if(1)
+				to_chat(user, "<span class='info'>[name] has packed stones holding itself together</span>")
+			if(2)
+				to_chat(user, "<span class='info'>[name] has hard layers of rocks stablizing it</span>")
 
 /obj/item/rocksliver/New()
 	icon_state = "sliver[rand(1,3)]"
@@ -43,7 +54,8 @@
 	var/artifact_id = ""					//id of a nearby artifact, if there is one
 	var/artifact_distance = -1				//proportional to distance
 	var/source_mineral = "chlorine"			//machines will pop up a warning telling players that the sample may be confused
-	//
+	var/relic_method = null					//Used in telling the player what method to use for strange rocks
+
 	//var/source_mineral
 	//all potential finds are initialised to null, so nullcheck before you access them
 	var/list/find_presence = list()
@@ -113,6 +125,11 @@
 					artifact_id = T.artifact_find.artifact_id
 			else
 				SSxenoarch.artifact_spawning_turfs.Remove(T)
+
+//Only used for strange rocks
+/datum/geosample/proc/RelicInfo(relic_type)
+	if(relic_type)
+		relic_method = relic_type
 
 /*
 #undef FIND_PLANT

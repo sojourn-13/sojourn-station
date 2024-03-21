@@ -156,7 +156,8 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
 	force = WEAPON_FORCE_DANGEROUS
 	bolt_training = FALSE
-	penetration_multiplier  = 2
+	penetration_multiplier  = 3
+	damage_multiplier  = 2
 	max_shells = 1
 	price_tag = 2750
 	gun_parts = null
@@ -310,6 +311,31 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "BlueCross"
 
+//Weaker spawn but speed is speed
+/obj/item/gun/projectile/cane_pistol_bluecross
+	name = "\"Blue Carpet\" cane"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+			A blue handled cane that seems to make you walk faster. It also contains a hidden silenced 12mm pistol inside."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "blue_cane"
+	item_state = "stick"
+	caliber = CAL_50 //Cant be caseless do to bugs oh well
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_SILVER = 5, MATERIAL_PLATINUM = 3)
+	price_tag = 1980
+	gun_parts = null
+	silenced = TRUE
+	handle_casings = HOLD_CASINGS
+	load_method = SINGLE_CASING|SPEEDLOADER
+	max_shells = 1
+	damage_multiplier = 2
+	penetration_multiplier = 2
+	init_recoil = EMBEDDED_RECOIL(0.3)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
+	serial_type = "BlueCross"
+	gun_parts = null
+	slowdown = -0.5
+	slowdown_hold = -0.5
+
 /obj/item/gun/energy/lasersmg/p9evil
 	name = "P9 \"Evil\" smg"
 	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
@@ -405,6 +431,7 @@
 	use_power_cost = 1
 	suitable_cell = /obj/item/cell/medium
 	price_tag = 1850
+	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE)
 
 /obj/item/tool/saw/hyper/doombringer/turn_on(mob/user)
 	if (cell && cell.charge >= 1)
@@ -424,6 +451,92 @@
 	to_chat(user, SPAN_NOTICE("You turn the [src] off."))
 	..()
 
+/obj/item/tool/sword/katana/crimson_arc
+	name = "\"Crimson Arc\" katana"
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
+			What seems to be a normal katana but with a red hilt and a nasty trick, the closer the user is to death the faster it becomes to swing."
+	icon_state = "chokuto"
+	item_state = "katana"
+	hitsound = 'sound/weapons/heavyslash.ogg'
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_SHALLOW
+	price_tag = 2050
+	clickdelay_offset = 0
+	max_upgrades = 1//Already over powered.
+	degradation = 0.1
+	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE)
+
+/obj/item/tool/sword/katana/crimson_arc/resolve_attackby(atom/target, mob/user)
+	.=..()
+	//Little icky but it works
+	var/safty_math =  user.health
+	safty_math = round(safty_math)
+	if(safty_math <= 0)
+		safty_math = 1
+	var/current_health = (user.maxHealth / (safty_math - 10))
+	if(current_health <= 0)
+		current_health = 8
+	else
+		current_health = round(current_health)
+	current_health = clamp(current_health, -7, 5) //-1 from no bag means this can be in affect a 2 cooldown weapon. This is insainly good
+	clickdelay_offset = -current_health
+
+
+/obj/item/tool/scythe/spectral_harvester
+	name = "\"Spectral Harvester\" scythe"
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
+			A large flat bluespace blade attached to a long red handle that requires two hands to even swing."
+	icon_state = "spectral_harvester"
+	hitsound = 'sound/weapons/heavyslash.ogg'
+	force = WEAPON_FORCE_GODLIKE //88 damage but + weilding
+	armor_penetration = ARMOR_PEN_MODERATE
+	price_tag = 2750
+	clickdelay_offset = 15 //This stacks with base
+	max_upgrades = 0 //No...
+	degradation = 0.01
+	slowdown = 1 //Little missleading as we get teleports
+	slowdown_hold = 1
+	w_class = ITEM_SIZE_HUGE
+	var/entropy_value = 0.5
+	var/range = 10
+	var/toclose_range = 2
+
+/obj/item/tool/scythe/spectral_harvester/afterattack(mob/living/M, mob/living/user, target_zone)
+	clickdelay_offset = 15
+	if(!wielded)
+		to_chat(user, SPAN_DANGER("\The [src.name] is too heavy to swing with one hand!"))
+		return FALSE
+
+	if(get_dist(M, user) > range)
+		return FALSE
+
+	if(!(M in view(user)))
+		return FALSE
+
+	if(ismob(M))
+		if(toclose_range > get_dist(M, user))
+			return
+		if((M.health - force) <= 0) //Some can survive but not long
+			clickdelay_offset = -6 //Almost a complete refund if you get
+		var/turf/AtomTurf = get_turf(M)
+		resolve_attackby(M, user)
+		go_to_bluespace(get_turf(user), entropy_value, FALSE, user, AtomTurf)
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	return
+
+//Need to override this proc to allow range hits
+/obj/item/tool/scythe/spectral_harvester/resolve_attackby(atom/A, mob/user, params)
+	if(ismob(A))
+		if(toclose_range > get_dist(A, user) && A != user)
+			to_chat(user, SPAN_DANGER("You are to close to swing [src.name]!"))
+			return
+	if(item_flags & ABSTRACT)//Abstract items cannot be interacted with. They're not real.
+		return 1
+	add_fingerprint(user)
+	return A.attackby(src, user, params)
+
+/obj/item/tool/scythe/spectral_harvester/Adjacent(var/atom/neighbor, var/recurse = 1)
+	return TRUE //We are always adjacent
 
 //Armor
 

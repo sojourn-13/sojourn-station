@@ -27,6 +27,8 @@
 	var/hard_crit_threshold = HARDCRIT_TRAUMATIC_SHOCK + min(stats.getStat(STAT_TGH), 100)
 	if(stats.getPerk(PERK_BALLS_OF_PLASTEEL))
 		hard_crit_threshold += 20
+	if(stats.getPerk(PERK_TENACITY))
+		hard_crit_threshold += 20
 
 	. = get_limb_damage()
 
@@ -75,6 +77,10 @@
 	var/soft_crit_threshold = SOFTCRIT_TRAUMATIC_SHOCK + stats.getStat(STAT_TGH)
 	var/hard_crit_threshold = HARDCRIT_TRAUMATIC_SHOCK + stats.getStat(STAT_TGH)
 	if(stats.getPerk(PERK_BALLS_OF_PLASTEEL))
+		soft_crit_threshold += 20
+		hard_crit_threshold += 20
+
+	if(stats.getPerk(PERK_TENACITY))
 		soft_crit_threshold += 20
 		hard_crit_threshold += 20
 

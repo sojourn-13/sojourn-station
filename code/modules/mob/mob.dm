@@ -1371,6 +1371,9 @@ mob/proc/yank_out_object()
 //SoJ
 
 /mob/proc/give_health_via_stats()
-	if(stats)
+	if(maxHealth && stats)
 		health += src.stats.getStat(STAT_ANA)
 		maxHealth += src.stats.getStat(STAT_ANA)
+		if(maxHealth > 300) //soft cap to keep players from becoming killable only by organ damage or pain.
+			health = 300
+			maxHealth = 300

@@ -1074,6 +1074,21 @@
 				playsound(loc, 'sound/voice/trill.ogg', 50, 1, -1) // Copyright CC BY-NC 3.0 Arnaud Coutancier (freesound.org) for the source audio.
 			else
 				message = "makes a strange noise."
+		if ("geck")
+			m_type = 2
+			cloud_emote = "cloud-scream" //of course
+			if(!muzzled)
+				message = "geckers obnoxiously!"
+				playsound(loc, 'sound/voice/geck.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
+		if ("squish")
+			m_type = 2
+			if(!muzzled)
+				message = "squishes."
+				playsound(loc, 'sound/voice/slime_squish.ogg', 50, 1, -1)  //Credit to DrMinky (freesound.org) for the sound.
+			else
+				message = "makes a strange noise."
 		if ("bark")
 			m_type = 2
 			cloud_emote = "cloud-scream"
@@ -1195,8 +1210,8 @@
 				message = "makes a strange noise."
 		if ("help")
 			to_chat(src, "aslap-(none)/mob, awhistle-(none)/mob, awoo, bark, bellow, bleat, blink, blink_r, blush, bow-(none)/mob, chirp, chitter, choke, chuckle, clap, croon1, croon2, croak, collapse, cough, cry, custom, deathgasp, drool, eyebrow, \
-					facepalm, frown, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, moo, mumble, mwah-(none)/mob, nod, nya, painscream, pale, peep, point-atom, qwhistle, \
-					raise, scream, sneeze, shake, shiver, shriek, shrug, sigh, signal-#1-10, slap-(none)/mob, smile, sneeze, sniff, snore, stare-(none)/mob, squeak, squeal, throat, tremble, twitch, twitch_s, urah, vomit, weh, whimper, wink, yawn,\
+					facepalm, frown, gasp, geck, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, moo, mumble, mwah-(none)/mob, nod, nya, painscream, pale, peep, point-atom, qwhistle, \
+					raise, scream, sneeze, shake, shiver, shriek, shrug, sigh, signal-#1-10, squish, slap-(none)/mob, smile, sneeze, sniff, snore, stare-(none)/mob, squeak, squeal, throat, tremble, trill, twitch, twitch_s, urah, vomit, weh, whimper, wink, yawn,\
 					ycackle, zartan. Synthetics: beep, buzz, yes, no, rcough, rsneeze, ping")
 
 		else

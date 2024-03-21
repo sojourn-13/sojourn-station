@@ -68,6 +68,7 @@
 				/obj/item/gun/projectile/boltgun/bluecross = 1,
 				/obj/item/gun/projectile/that_gun = 1,
 				/obj/item/gun/projectile/colt/cult = 1,
+				/obj/item/gun/projectile/cane_pistol_bluecross = 1,
 				//Energy
 				/obj/item/gun/energy/sniperrifle/saint = 1,
 				//obj/item/gun/energy/lasersmg/inferno = 1,
@@ -81,6 +82,8 @@
 				/obj/item/tool/nailstick/ogre = 1,
 				/obj/item/tool/wrench/big_wrench/freedom = 1,
 				/obj/item/tool/saw/hyper/doombringer = 1,
+				/obj/item/tool/sword/katana/crimson_arc = 1,
+				/obj/item/tool/scythe/spectral_harvester = 1,
 				//obj/item/material/butterfly/frenchman = 1,
 				//Gun/Tool Mods
 				/obj/item/gun_upgrade/mechanism/brass_kit = 1,

@@ -96,6 +96,10 @@ the lims and such to pull out the internal bits for other people if needed
 	name = "Sub-Dermal Body Armor"
 	build_path = /obj/item/organ_module/armor
 
+/datum/design/research/item/mechfab/modules/ablativearmor
+	name = "Sub-Dermal Ablative Armor"
+	build_path = /obj/item/organ_module/armor/ablative
+
 /datum/design/research/item/mechfab/modules/armblade
 	name = "Embedded Arm Blade"
 	build_path = /obj/item/organ_module/active/simple/armblade
