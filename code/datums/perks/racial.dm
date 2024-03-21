@@ -99,7 +99,7 @@
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("The human body can only take so much, you'll need more time before you've recovered enough to use this again."))
 		return FALSE
-	cooldown_time = world.time + 15 MINUTES
+	cooldown_time = world.time + 10 MINUTES
 	user.visible_message("[user] grits their teeth and begins breathing slowly.", "You grit your teeth and remind yourself you ain't got time to bleed!")
 	log_and_message_admins("used their [src] perk.")
 	user.reagents.add_reagent("adrenol", 5)
