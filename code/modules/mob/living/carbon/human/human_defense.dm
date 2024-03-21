@@ -506,7 +506,7 @@ uniquic_armor_act
 	//We at this moment only have one outfit that we check and its by path for now.
 	if(istype(wear_suit,/obj/item/clothing/suit/crimsoncross_regaloutfit))
 		//We hate you synth, please die!
-		if(species.reagent_tag == IS_SYNTHETIC)
+		if(!has_synthetics())
 			return EF //Foolishness
 		var/en_passant = FALSE //Used for tracking if we are attacked by something we dislike
 		//message_admins("bluecross_regaloutfit (Pass)")
@@ -579,7 +579,7 @@ uniquic_armor_act
 		if(EF)
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
-				if(H.species.reagent_tag == IS_SYNTHETIC)
+				if(H.has_synthetics())
 					EF *= 0.25
 				else
 					EF *= 3 //Viva!!
@@ -600,4 +600,51 @@ uniquic_armor_act
 			return EF
 
 
+/mob/living/carbon/human/proc/has_synthetics()
+	var/sytnthetics = FALSE
 
+	if(species.reagent_tag == IS_SYNTHETIC)
+		sytnthetics = TRUE
+		return sytnthetics
+
+	for(var/obj/item/organ/O in organs)
+		if(istype(O, /obj/item/organ/external))
+			var/obj/item/organ/external/R = O
+			if(BP_IS_ROBOTIC(R))
+				sytnthetics = TRUE
+				break
+			for(var/obj/item/organ_module/OM in R.contents)
+				if(istype(OM, /obj/item/organ/internal))
+					if(OM.is_organic_module == FALSE)
+						sytnthetics = TRUE
+						break
+
+	if(sytnthetics)
+		return sytnthetics
+
+	for(var/obj/item/organ/O in internal_organs)
+		if(istype(O, /obj/item/organ/internal))
+			var/obj/item/organ/internal/R = O
+			if(BP_IS_ROBOTIC(R))
+				sytnthetics = TRUE
+				break
+
+	if(sytnthetics)
+		return sytnthetics
+
+	for(var/obj/item/implant/O in contents)
+		if(istype(O, /obj/item/implant))
+			var/obj/item/implant/I = O
+			if(I.implanted)
+				sytnthetics = TRUE
+				break
+
+	for(var/obj/item/implant/core_implant/O in contents)
+		if(istype(O,/obj/item/implant/core_implant))
+			var/obj/item/implant/core_implant/CI = O
+			if(CI.active)
+				sytnthetics = TRUE
+				break
+
+
+	return sytnthetics
