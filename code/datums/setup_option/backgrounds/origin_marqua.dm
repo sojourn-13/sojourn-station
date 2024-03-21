@@ -13,9 +13,9 @@
 		STAT_ROB = -10,
 		STAT_TGH = -10,
 		STAT_VIG = -10,
-		STAT_BIO = 5,
-		STAT_MEC = 5,
-		STAT_COG = 5
+		STAT_BIO = 10,
+		STAT_MEC = 10,
+		STAT_COG = 10
 	)
 
 
