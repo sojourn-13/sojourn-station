@@ -526,7 +526,8 @@ uniquic_armor_act
 			/mob/living/simple_animal/hostile/commanded/nanomachine,
 			/mob/living/simple_animal/hostile/viscerator,
 			/mob/living/silicon,
-			/mob/living/simple_animal/hostile/hivemind
+			/mob/living/simple_animal/hostile/hivemind,
+			/mob/living/simple_animal/hostile/retaliate/malf_drone
 			)
 		if(A)
 			if(istype(A, /obj/item/projectile))

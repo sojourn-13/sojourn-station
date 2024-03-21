@@ -543,7 +543,7 @@
 // Regal Outfit (Crimson Clothing)
 /obj/item/clothing/suit/crimsoncross_regaloutfit
 	name = "\"Regal\" greatecoat"
-	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
+	desc = "An anomalous cloathing created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
 	A highly decorated white cloak with golden epaulets over a blue vest and sleek white pants. It is forevermore stained with blood. An air of nobility ensures that no robotic foe may easily rise against its wearer. \
 	When fighting anything that isn't a robotic you will take additional damage."
 	icon_state = "regaloutfit_redder" //Sprite by Ayshe / gid_git
