@@ -555,11 +555,11 @@ uniquic_armor_act
 						Proj.wounding_mult = 1 //Foolishness!
 						if(Proj.damage_types[BRUTE])
 						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
-							Proj.damage_types[BRUTE] *= 0.25
+							Proj.damage_types[BRUTE] *= 0.15
 						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
 						if(Proj.damage_types[BURN])
 						//	message_admins("prj BURN [Proj.damage_types[BURN]] Pre")
-							Proj.damage_types[BURN] *= 0.25
+							Proj.damage_types[BURN] *= 0.15
 						//	message_admins("prj BURN [Proj.damage_types[BURN]] Post")
 						//message_admins("prj ranged [Proj.penetrating]")
 
