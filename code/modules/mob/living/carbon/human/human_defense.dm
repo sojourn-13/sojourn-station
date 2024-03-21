@@ -594,7 +594,7 @@ uniquic_armor_act
 						break
 
 			if(en_passant)
-				EF *= 0.25
+				EF *= 0.15
 			else
 				EF *= 3 //Viva!!
 
