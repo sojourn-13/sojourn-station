@@ -77,6 +77,7 @@
 				/obj/item/gun/projectile/ladon = 0.5,\
 				/obj/item/gun/projectile/ladon/sa = 1.0,\
 				/obj/item/gun/projectile/ladon/hs = 0.5,\
+				/obj/item/gun/projectile/shotgun/pump/aktion = 0.75, \
 				/obj/item/gun/projectile/automatic/nordwind/strelki = 0.3,\
 				/obj/item/gun/projectile/revolver/sixshot = 1,\
 				/obj/item/gun/projectile/boltgun/lever = 1.5,\
@@ -120,11 +121,13 @@
 				/obj/item/gun/projectile/automatic/greasegun = 1,\
 				/obj/item/gun/projectile/automatic/mac = 1,\
 				/obj/item/gun/projectile/automatic/mac/croon = 0.7,\
+				/obj/item/gun/projectile/automatic/mac/tek = 0.8,\
 				/obj/item/gun/projectile/automatic/duty = 1,\
 				/obj/item/ammo_kit = 0.8,
 				/obj/item/gun/projectile/automatic/sts/rifle/sawn = 1,\
 				/obj/item/gun/projectile/automatic/omnirifle/solmarine = 1,\
 				/obj/item/gun/projectile/automatic/thompson = 0.5,\
+				/obj/item/gun/projectile/automatic/eckler = 0.5, \
 				/obj/item/gun/projectile/automatic/bren = 0.5,\
 				/obj/item/gun/projectile/automatic/ak47/sa/sawn = 1,\
 				/obj/item/gun/projectile/makarov = 1,\

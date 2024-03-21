@@ -160,7 +160,7 @@
 	switch(main_weapon_cache)
 		if("SMG")
 			if(prob(50))
-				new /obj/item/gun/projectile/automatic/luger(src)
+				new /obj/item/gun/projectile/automatic/mac/tek(src)
 				new /obj/item/ammo_magazine/smg_35(src)
 				new /obj/item/ammo_magazine/smg_35(src)
 			else
@@ -349,7 +349,7 @@
 	switch(main_weapon_cache)
 		if("SMG")
 			if(prob(50))
-				new /obj/item/gun/projectile/automatic/luger(src)
+				new /obj/item/gun/projectile/automatic/mac/tek(src)
 				new /obj/item/ammo_magazine/smg_35(src)
 				new /obj/item/ammo_magazine/smg_35(src)
 			else
@@ -571,7 +571,7 @@
 	//longarms
 	switch(main_weapon_cache)
 		if("SMG")
-			new /obj/item/gun/projectile/automatic/luger(src)
+			new /obj/item/gun/projectile/automatic/mac/tek(src)
 			new /obj/item/ammo_magazine/smg_35(src)
 			new /obj/item/ammo_magazine/smg_35(src)
 		if("LMG")
