@@ -358,7 +358,7 @@
 	user.do_attack_animation(src)
 
 	//reduced damage
-	var/RD = uniquic_armor_check(null, user, damage)
+	var/RD = unique_armor_check(null, user, damage)
 	if(RD)
 		damage = RD
 

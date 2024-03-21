@@ -13,7 +13,7 @@ uniquic_armor_act
 	if(!has_organ(def_zone))
 		return PROJECTILE_FORCE_MISS //if they don't have the organ in question then the projectile just passes by.
 
-	uniquic_armor_check(P, null, null)
+	unique_armor_check(P, null, null)
 
 	var/obj/item/organ/external/organ = get_organ(def_zone)
 
@@ -235,9 +235,9 @@ uniquic_armor_act
 	if(!affecting)
 		return FALSE//should be prevented by attacked_with_item() but for sanity.
 
-	visible_message("<span class='danger'>[src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] in the  ffecting.name] with [I.name] by [user]!</span>")
+	visible_message("<span class='danger'>[src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] in the  [affecting.name] with [I.name] by [user]!</span>")
 
-	var/EF = uniquic_armor_check(I, user, effective_force)
+	var/EF = unique_armor_check(I, user, effective_force)
 	if(EF)
 		effective_force = EF
 
@@ -499,8 +499,8 @@ uniquic_armor_act
 
 //soj edit
 //This atm only has 1 armor in it thus its coding is trash and snowflake
-/mob/living/carbon/human/proc/uniquic_armor_check(atom/A, mob/user, EF)
-	//message_admins("uniquic_armor_check([user.name]) EF [EF]")
+/mob/living/carbon/human/proc/unique_armor_check(atom/A, mob/user, EF)
+	//message_admins("unique_armor_check([user.name]) EF [EF]")
 	//Optimiation based on only 1 suit being this check, no point in asking for 99.99% of the time past this by types
 	if(!wear_suit) return EF
 	//We at this moment only have one outfit that we check and its by path for now.
@@ -546,28 +546,43 @@ uniquic_armor_act
 					//		message_admins("bluecross_regaloutfit Proj Pass")
 							en_passant = TRUE
 					if(en_passant)
-					//	message_admins("uniquic_armor_check en_passant ranged")
+					//	message_admins("unique_armor_check en_passant ranged")
 					//	message_admins("prj ranged [Proj.penetrating]")
-						Proj.armor_penetration *= 0.1
+						Proj.armor_penetration *= 0.5
 						Proj.check_armour = ARMOR_MELEE //Foolishness
 						Proj.fire_stacks = 0   //No witches here
 						Proj.wounding_mult = 1 //Foolishness!
 						if(Proj.damage_types[BRUTE])
 						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
-							Proj.damage_types[BRUTE] *= 0.1
+							Proj.damage_types[BRUTE] *= 0.25
 						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
 						if(Proj.damage_types[BURN])
 						//	message_admins("prj BURN [Proj.damage_types[BURN]] Pre")
-							Proj.damage_types[BURN] *= 0.1
+							Proj.damage_types[BURN] *= 0.25
 						//	message_admins("prj BURN [Proj.damage_types[BURN]] Post")
-							Proj.damage_types[BURN] *= 0.1
 						//message_admins("prj ranged [Proj.penetrating]")
+
+					else
+					//	message_admins("unique_armor_check en_passant ranged")
+					//	message_admins("prj ranged [Proj.penetrating]")
+						Proj.armor_penetration *= 2
+						if(Proj.damage_types[BRUTE])
+						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
+							Proj.damage_types[BRUTE] *= 1.5
+						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
+						if(Proj.damage_types[BURN])
+						//	message_admins("prj BURN [Proj.damage_types[BURN]] Post")
+							Proj.damage_types[BURN] *= 2
+						//message_admins("prj ranged [Proj.penetrating]")
+
 				return EF
 		if(EF)
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				if(H.species.reagent_tag == IS_SYNTHETIC)
-					EF *= 0.1
+					EF *= 0.25
+				else
+					EF *= 3 //Viva!!
 				return EF
 			if(user)
 				for(var/MWH in mobs_we_hitless)
@@ -578,7 +593,9 @@ uniquic_armor_act
 						break
 
 			if(en_passant)
-				EF *= 0.1
+				EF *= 0.25
+			else
+				EF *= 3 //Viva!!
 
 			return EF
 
