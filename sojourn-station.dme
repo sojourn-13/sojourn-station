@@ -2329,6 +2329,7 @@
 #include "code\modules\mob\living\carbon\superior_animal\nanobot\nanobot.dm"
 #include "code\modules\mob\living\carbon\superior_animal\psi_monsters\ai.dm"
 #include "code\modules\mob\living\carbon\superior_animal\psi_monsters\attack.dm"
+#include "code\modules\mob\living\carbon\superior_animal\psi_monsters\deepmaints_psionic_controler.dm"
 #include "code\modules\mob\living\carbon\superior_animal\psi_monsters\life.dm"
 #include "code\modules\mob\living\carbon\superior_animal\psi_monsters\psi_monster.dm"
 #include "code\modules\mob\living\carbon\superior_animal\psi_monsters\types\corrupted_beings.dm"

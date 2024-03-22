@@ -69,12 +69,13 @@
 /datum/perk/medicalexpertise
 	name = "Medical Expertise"
 	desc = "Your medical training and experience in the area of patient triage is unparalleled. 'Waste not, want not' is your motto, and you apply bandages and salves with utmost efficiency, sometimes using just the right amount of them."
+	icon_state = "medicalexpertise"
 
 /datum/perk/solborn
 	name = "Sol Born"
 	desc = "Clean living in the Sol system has prevented you from building up a tolerance to most chemicals, your body can't handle the more hardcore drugs that most can and you find yourself getting \
 	addicted slightly easier."
-	icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
+	icon_state = "solborn" // https://game-icons.net/1x1/lorc/overdose.html
 
 /datum/perk/solborn/assign(mob/living/carbon/human/H)
 	..()
@@ -91,7 +92,7 @@
 /datum/perk/klutz
 	name = "Klutz"
 	desc = "You find a lot of tasks a little beyond your ability to perform such is using any type of weaponry, but being accident prone has at least made you used to getting hurt."
-	icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
+	icon_state = "klutz"
 
 /datum/perk/klutz/assign(mob/living/carbon/human/H)
 	..()
@@ -200,6 +201,7 @@
 /datum/perk/bartender
 	name = "Bar Menu"
 	desc = "You know how to mix a drink, and flip a burger. You can identify the ingredients that went into food and how much was used."
+	icon_state = "barmenu"
 	perk_shared_ability = PERK_SHARED_SEE_COMMON_REAGENTS
 
 /datum/perk/chem_contraband
@@ -273,6 +275,7 @@
 /datum/perk/rezsickness
 	name = "Revival Sickness"
 	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. You better find a bed or chair to rest into until you've fully recuperated."
+	icon_state = "revivalsickness"
 	gain_text = "Your body aches from the pain of returning from death, you better find a chair or bed to rest in so you can heal properly."
 	lose_text = "You finally feel like you recovered from the ravages of your body."
 	var/initial_time
@@ -304,6 +307,7 @@
 /datum/perk/rezsickness/severe
 	name = "Severe Revival Sickness"
 	desc = "You've recently died and have been brought back to life. Your body cannot handle this traumatic experience very well, to the point where you struggle to complete even basic tasks. You better rest in a bed until it subsides before going back to work."
+	icon_state = "severerevivalsickness"
 
 /datum/perk/rezsickness/severe/assign(mob/living/carbon/human/H)
 	..()
@@ -328,6 +332,7 @@
 /datum/perk/rezsickness/severe/fatal
 	name = "Fatal Revival Sickness"
 	desc = "You've recently died and have been brought back to life. Your frail constitution can barely handle the process, leaving you utterly physically and mentally wrecked. You better stay in bed for now and rest, or you risk dying even easier than before."
+	icon_state = "fatalrevivalsickness"
 
 /datum/perk/rezsickness/severe/fatal/assign(mob/living/carbon/human/H)
 	..()
@@ -403,6 +408,7 @@
 /datum/perk/handyman
 	name = "Handyman"
 	desc = "Training by the Artificer's Guild has granted you the knowledge of how to take apart machines in the most efficient way possible, finding materials and supplies most people would miss. This training is taken further the more mechanically skilled or cognitively capable you are."
+	icon_state = "handyman"
 
 /datum/perk/handyman/assign(mob/living/carbon/human/H)
 	..()
@@ -431,6 +437,7 @@
 /datum/perk/advanced_medical
 	name = "Advanced Surgical Techniques"
 	desc = "Your surgical training and experience have tempered your special techniques for treating patients, enabling you to make more effective and efficient use of your resources when reconstituting their bodies."
+	icon_state = "advancedsurgicaltechniques"
 
 /datum/perk/robotics_expert
 	name = "Robotics Expert"
@@ -446,6 +453,7 @@
 /datum/perk/job/bolt_reflect
 	name = "Bolt Action Rifle Training"
 	desc = "Through intense and repetitive training with bolt-action and lever-action rifles, you will always chamber a new round instantly after firing."
+	icon_state = "boltactionrifletraining"
 
 /datum/perk/job/jingle_jangle
 	name = "Key Smith"
@@ -455,6 +463,7 @@
 /datum/perk/job/blackshield_conditioning
 	name = "Blackshield Conditioning"
 	desc = "Thanks to special and intensive training received in the course of your employment with Blackshield, with all the practice gained in space you feel you can jump from greater heights and know when to duck-and-cover."
+	icon_state = "blackshieldconditioning"
 
 /datum/perk/blackshield_conditioning/assign(mob/living/carbon/human/H)
 	..()
@@ -502,6 +511,7 @@
 	desc = "The secrets of natural remedies have been unlocked by the lodge after special training from folken tribes, given their alliance. This has granted you the ability to make better \
 	use of grown plants to harvest more fruit and more properly manage the use of medical supplies like blood tongues or powder pouches. As an added bonus, when harvesting soil \
 	or plant trays you always harvest an additional bonus! You are also a capable surgeon, able to perform surgical steps a lot more easily, to the point of rivaling real surgeons."
+	icon_state = "naturalist"
 	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
 
 /datum/perk/si_sci

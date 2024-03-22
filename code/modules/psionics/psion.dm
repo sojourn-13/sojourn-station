@@ -183,6 +183,10 @@
 
 //This proc handles checking whether a power can be used for reasons other than cost. It is called after pay cost
 /obj/item/organ/internal/psionic_tumor/proc/check_possibility(targeted = FALSE, var/mob/living/carbon/human/target, require_target_active = FALSE)
+	if(!GLOB.deepmaints_data_bool["active_psionics"])
+		to_chat(usr,"Your mind struggles to tap into any psionic ablities!")
+		return
+
 	if(owner.psi_blocking >= 10)
 		owner.stun_effect_act(0, owner.psi_blocking * 5, BP_HEAD)
 		owner.weakened = owner.psi_blocking
