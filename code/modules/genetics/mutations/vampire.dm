@@ -10,26 +10,28 @@
 	var/new_skin = "#FFFFFF"
 	var/old_faction
 
+/datum/genetics/mutation/vampire/onPlayerImplant()
+	..()
+	var/mob/living/carbon/human/H = container.holder
+	old_skin = H.skin_color
+	H.change_skin_color(new_skin)
+	H.total_nutriment_req += 1
+	container.holder.mutations.Add(mutation)
+
 /datum/genetics/mutation/vampire/onMobImplant()
 	..()
-	if(ishuman(container.holder))
-		var/mob/living/carbon/human/H = container.holder
-		old_skin = H.skin_color
-		H.change_skin_color(new_skin)
-		H.total_nutriment_req += 1
-	container.holder.mutations.Add(mutation)
-	if(ismob(container.holder))
-		var/mob/M = container.holder
-		old_faction = M.faction
-		M.faction = "scarybat"
+	var/mob/M = container.holder
+	old_faction = M.faction
+	M.faction = "scarybat"
+
+/datum/genetics/mutation/vampire/onPlayerRemove()
+	..()
+	var/mob/living/carbon/human/H = container.holder
+	H.change_skin_color(old_skin)
+	H.total_nutriment_req += -1
 
 /datum/genetics/mutation/vampire/onMobRemove()
 	..()
-	if(ishuman(container))
-		var/mob/living/carbon/human/H = container.holder
-		H.change_skin_color(old_skin)
-		H.total_nutriment_req += -1
-	if(ismob(container.holder))
-		var/mob/M = container.holder
-		M.faction = old_faction
+	var/mob/M = container.holder
+	M.faction = old_faction
 	container.holder.mutations.Remove(mutation)
