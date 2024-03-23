@@ -540,7 +540,7 @@ ADMIN_VERB_ADD(/client/proc/change_security_level, R_ADMIN|R_FUN, FALSE)
 	set desc = "Sets the colony's security level"
 	set category = "Admin"
 
-	if(!check_rights(R_ADMIN))	return
+	if(!check_rights(R_FUN))	return
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
 	var/decl/security_level/new_security_level = input(usr, "It's currently [security_state.current_security_level.name].", "Select Security Level")  as null|anything in (security_state.all_security_levels - security_state.current_security_level)
