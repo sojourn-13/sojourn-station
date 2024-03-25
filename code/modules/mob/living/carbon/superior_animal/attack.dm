@@ -169,6 +169,7 @@
 
 		if (do_we_shoot)
 			var/offset_temp = right_before_firing()
+			A.original_firer = src
 			A.launch(target, def_zone, firer_arg = src, angle_offset = offset_temp) //this is where we actually shoot the projectile
 			right_after_firing()
 			SEND_SIGNAL(src, COMSIG_SUPERIOR_FIRED_PROJECTILE, A)
