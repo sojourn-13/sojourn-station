@@ -39,6 +39,7 @@
 	size_pixel_offset_x = 0
 
 	var/transform_ed = FALSE
+	can_leave = TRUE
 
 // BUMP!
 /mob/living/carbon/superior_animal/psi_monster/ploge/UnarmedAttack(atom/A, proximity)

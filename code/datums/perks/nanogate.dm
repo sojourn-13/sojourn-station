@@ -1,4 +1,4 @@
-// Perks given by the nanogate organ
+ // Perks given by the nanogate organ
 
 /datum/perk/nanogate
 	name = "Nanogate Implant"
@@ -20,6 +20,7 @@
 	name = "Nanofiber Muscle Therapy"
 	desc = "Through the use of pain killers, implanted nanofibers, and small dispersed drug therapy to critical areas your nanogate has enhanced your physical movement speed and endurance, allowing you to run for \
 	longer stretches at a faster pace without tiring. Though you feel that all this strain might make your slightly weaker to physical trauma."
+	icon_state = "nanofibermuscletherapy"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 
 /datum/perk/nanite_muscle/assign(mob/living/carbon/human/H)
@@ -86,14 +87,17 @@
 
 /datum/perk/nanite_chem/control_booster_combat
 	name = "Control Booster Combat Nanites"
+	icon_state = "combatnanites"
 	chem_id = "cbc"
 
 /datum/perk/nanite_chem/purgers
 	name = "Purger Nanites"
+	icon_state = "purgernanites"
 	chem_id = "nanopurgers"
 
 /datum/perk/nanite_chem/oxyrush
 	name = "Oxyrush Nanites"
+	icon_state = "oxyrushnanites"
 	chem_id = "oxyrush"
 
 /datum/perk/nanite_chem/nantidotes
@@ -104,6 +108,7 @@
 	name = "Munition Fabrication"
 	desc = "You programmed and set aside a specific subset of nanites whose singular purpose is to reconstruct themselves into ammunition boxes. The process is quite intensive and requires \
 	half an hour between uses."
+	icon_state = "munitionfabrication"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	active = FALSE
 	passivePerk = FALSE
