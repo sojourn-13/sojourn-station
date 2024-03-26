@@ -500,6 +500,11 @@
 	var/range = 10
 	var/toclose_range = 2
 
+/obj/item/tool/scythe/spectral_harvester/New()
+	..()
+	item_flags |= BLUESPACE
+	bluespace_entropy(5, get_turf(src))
+
 /obj/item/tool/scythe/spectral_harvester/afterattack(mob/living/M, mob/living/user, target_zone)
 	clickdelay_offset = 15
 	if(!wielded)
@@ -536,6 +541,98 @@
 
 /obj/item/tool/scythe/spectral_harvester/Adjacent(var/atom/neighbor, var/recurse = 1)
 	return TRUE //We are always adjacent
+
+// Shield
+
+/obj/item/shield/riot/mass_grave
+	name = "grave marker shield"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
+			A large grave marker degraded by the sands of time to be unreadable. This shield will always help block any physical attack. Has the power of endless growth in power the more *direct* kills directly caused by the shield."
+	icon_state = "mass_grave" //SOB MAKING SPRITES IS SO HARD - Trilby
+	item_state = "tray_walk"
+	flags = null
+	throw_speed = 1
+	throw_range = 0
+	matter = list(MATERIAL_MARBLE = 120) //V_V
+	base_block_chance = -16 //We start out worse then anything you have ever seen
+	max_durability = 250
+	durability = 200
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	var/mass_grave_counter = 1 //Here lays... We dont know, they didnt put their name on the stone
+	var/post_moder_game_balance = 500
+	slowdown = 0.5
+	slowdown_hold = 0.5
+	//Its a bad weapon
+	force = WEAPON_FORCE_NORMAL
+
+/obj/item/shield/riot/mass_grave/check_shield_arc()
+	return TRUE
+
+/obj/item/shield/riot/mass_grave/refresh_upgrades()
+	return
+
+/obj/item/shield/riot/mass_grave/alt_mode_activeate_one()
+	return
+
+/obj/item/shield/riot/mass_grave/proc/upgrade_mass_grave()
+	//Endless growth
+	max_durability += 1
+	switch(mass_grave_counter)
+		if(5)
+			armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
+			force = WEAPON_FORCE_PAINFUL
+		if(10)
+			armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
+			force = WEAPON_FORCE_DANGEROUS
+		if(20)
+			armor_list = list(melee = 25, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
+			force = WEAPON_FORCE_ROBUST
+			slowdown = 0.25
+			slowdown_hold = 0.25
+		if(50)
+			armor_list = list(melee = 35, bullet = 35, energy = 35, bomb = 0, bio = 0, rad = 0)
+			force = WEAPON_FORCE_ROBUST
+			slowdown = 0.15
+			slowdown_hold = 0.15
+		if(100)
+			armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 0, bio = 0, rad = 0)
+			force = WEAPON_FORCE_BRUTAL
+			slowdown = 0.05
+			slowdown_hold = 0.05
+
+	if(mass_grave_counter >= post_moder_game_balance)
+		//Endless Growth
+		name = "mass grave marker shield"
+		force += 1
+		post_moder_game_balance *= 1.01 //500 x 1.01 = 505 -> 505 x 1.01 = 510.05 ect ect
+		post_moder_game_balance = round(post_moder_game_balance)
+
+/obj/item/shield/riot/mass_grave/handle_shield()
+	//No more grace
+	if(mass_grave_counter >= 50)
+		mass_grave_counter -= 1
+	..()
+
+
+/obj/item/shield/riot/mass_grave/get_protected_area(mob/user)
+	return BP_ALL_LIMBS
+
+/obj/item/shield/riot/mass_grave/get_partial_protected_area(mob/user)
+	return BP_ALL_LIMBS
+
+/obj/item/shield/riot/mass_grave/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+	return base_block_chance + mass_grave_counter
+
+/obj/item/shield/riot/mass_grave/resolve_attackby(atom/A, mob/user, params)
+	if(ismob(A))
+		var/mob/living/M = A
+		if(M.stat != DEAD)
+			if(M.health - force <= 0)
+				mass_grave_counter += 1
+				upgrade_mass_grave()
+				if(!ishuman(M))
+					M.gib()
+	..()
 
 //Armor
 
