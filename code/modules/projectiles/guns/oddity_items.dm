@@ -549,7 +549,7 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A large grave marker degraded by the sands of time to be unreadable. This shield will always help block any physical attack. Has the power of endless growth in power the more *direct* kills directly caused by the shield."
 	icon_state = "mass_grave" //SOB MAKING SPRITES IS SO HARD - Trilby
-	item_state = "tray_walk"
+	item_state = "tray"
 	flags = null
 	throw_speed = 1
 	throw_range = 0
