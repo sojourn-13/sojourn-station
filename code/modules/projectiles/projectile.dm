@@ -256,7 +256,8 @@
 
 	if (firer_arg)
 		firer = firer_arg
-		original_firer = firer_arg
+		if(!original_firer)
+			original_firer = firer_arg
 
 	if (firer && (isliving(firer))) //here we apply the projectile adjustments applied by prefixes and such
 		var/mob/living/livingfirer = firer
@@ -722,10 +723,11 @@
 			var/victim_message = "shot with \a [src.type]"
 			var/admin_message = "shot (\a [src.type])"
 
-			admin_attack_log(firer, target_mob, attacker_message, victim_message, admin_message)
+			admin_attack_log(original_firer, target_mob, attacker_message, victim_message, admin_message)
 		else
-			target_mob.attack_log += "\[[time_stamp()]\] <b>UNKNOWN SUBJECT (No longer exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
-			msg_admin_attack("UNKNOWN shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
+			target_mob.attack_log += "\[[time_stamp()]\] <b>[original_firer] (May No Longer Exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
+			if(target_mob.ckey && original_firer.ckey) //We dont care about PVE
+				msg_admin_attack("[original_firer.name] (May No Longer Exists) shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
 
 	//sometimes bullet_act() will want the projectile to continue flying
 	if (result == PROJECTILE_CONTINUE)
