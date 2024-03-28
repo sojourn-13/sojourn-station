@@ -38,7 +38,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	from_file(S["skin_base"], pref.s_base)
 	from_file(S["hair_style_name"], pref.h_style)
 	from_file(S["facial_style_name"], pref.f_style)
-	pref.preview_icon = null
+	if (!pref.generating_preview)
+		pref.preview_icon = null
 	from_file(S["bgstate"], pref.bgstate)
 	from_file(S["eyes_color"], pref.eyes_color)
 	from_file(S["skin_color"], pref.skin_color)
@@ -103,7 +104,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 /datum/category_item/player_setup_item/physical/body/content(var/mob/user)
 	if(!pref.preview_icon)
 		pref.update_preview_icon()
-	user << browse_rsc(pref.preview_icon, "previewicon.png")
+	if (pref.preview_icon) // failsafe, if the icon fails to render for whatever reason we at least have our customization options
+		user << browse_rsc(pref.preview_icon, "previewicon.png")
 
 	var/datum/species_form/mob_species_form = GLOB.all_species_form_list[pref.species_form]
 	. += "<style>span.color_holder_box{display: inline-block; width: 20px; height: 8px; border:1px solid #000; padding: 0px;}</style>"
