@@ -33,3 +33,6 @@ GLOBAL_PROTECT(log_directory)
 
 // TGUI MOVE ME //
 GLOBAL_DATUM(changelog_tgui, /datum/changelog)
+
+// TGS //
+GLOBAL_REAL_VAR(client_count)
