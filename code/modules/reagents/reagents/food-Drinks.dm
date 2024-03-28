@@ -43,6 +43,9 @@
 	affect_ingest(M, alien, effect_multiplier * 1.2)
 
 /datum/reagent/organic/nutriment/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(VAMPIRE in M.mutations)
+		return
+
 	if(ishuman(M))
 		if(M.stats.getPerk(PERK_HERBIVORE))
 			nutriment_factor = 7
@@ -72,6 +75,9 @@
 	common = TRUE //Protein Shake
 
 /datum/reagent/organic/nutriment/protein/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(VAMPIRE in M.mutations)
+		return
+
 	if(ishuman(M))
 		if(M.stats.getPerk(PERK_CARNIVORE))
 			nutriment_factor = 7
@@ -93,6 +99,9 @@
 	regen_factor = 0.2
 
 /datum/reagent/organic/nutriment/preservatives/affect_ingest(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(VAMPIRE in M.mutations)
+		return
+
 	if(ishuman(M))
 		if(M.stats.getPerk(PERK_SNACKIVORE))
 			M.adjustNutrition(nutriment_factor * 10)

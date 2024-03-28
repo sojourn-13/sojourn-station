@@ -62,6 +62,7 @@
 #define MUTATION_BLOOD_LAKE /datum/genetics/mutation/blood_lake
 #define MUTATION_BLOOD_SEA /datum/genetics/mutation/blood_sea
 #define MUTATION_BLOOD_TEMPLE /datum/genetics/mutation/blood_temple
+#define MUTATION_VAMPIRE /datum/genetics/mutation/vampire
 
 #define MUTATION_SEASONED_MIND /datum/genetics/mutation/seasoned_mind
 #define MUTATION_SHOCK_LESS /datum/genetics/mutation/shock_less
@@ -113,8 +114,9 @@
 //refer to code\__DEFINES\dna.dm for the other states in this list.
 //I use these instead of directly checking the mutations datum in some cases because it is quicker.
 #define ROACH_BLOOD          11
-#define CLOAKING          	 12
+#define CLOAKING             12
 #define SHOCK_LESS           13
+#define VAMPIRE              14
 
 
 //Thresholds for mutagenic Destabilization

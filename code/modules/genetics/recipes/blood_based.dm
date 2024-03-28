@@ -13,3 +13,7 @@
 /datum/genetics/mutation_recipe/combination/blood_temple
 	required_mutations = list(MUTATION_BLOOD_SEA, MUTATION_BLOOD_SEA)
 	result_path = MUTATION_BLOOD_TEMPLE
+
+/datum/genetics/mutation_recipe/combination/vampire
+	required_mutations = list(MUTATION_CAT_EYES, MUTATION_BLOOD_BANK, MUTATION_BOTTOMLESS_BELLY)
+	result_path = MUTATION_VAMPIRE

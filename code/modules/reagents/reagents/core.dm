@@ -40,6 +40,17 @@
 
 /datum/reagent/organic/blood/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 
+	if(VAMPIRE in M.mutations)
+		M.adjustNutrition(20) // For hunger
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.sanity.onNonAlcohol(src, effect_multiplier)
+			H.sanity.onAlcohol(src, effect_multiplier)
+			apply_sanity_effect(M, effect_multiplier)
+			LEGACY_SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
+
+		return //No other badness
+
 	var/effective_dose = dose
 	if(issmall(M)) effective_dose *= 2
 
