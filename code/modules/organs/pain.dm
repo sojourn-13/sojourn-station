@@ -92,7 +92,7 @@ mob/living/carbon/human/proc/handle_pain()
 		if(E.status&ORGAN_DEAD || BP_IS_ROBOTIC(E))
 			continue
 		var/dam = E.get_damage()
-		dam *= (get_specific_organ_efficiency(OP_NERVE, E.organ_tag)/100)
+		dam *= (min(get_specific_organ_efficiency(OP_NERVE, E.organ_tag)/100, 1.5))
 		// make the choice of the organ depend on damage,
 		// but also sometimes use one of the less damaged ones
 		if(dam > maxdam && (maxdam == 0 || prob(70)) )
