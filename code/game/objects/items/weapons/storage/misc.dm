@@ -41,7 +41,7 @@
 
 /obj/item/storage/ration_pack
 	icon = 'icons/obj/food.dmi'
-	icon_state = "mre_closed"
+	icon_state = "erp_closed"
 	name = "meal-read-to-eat-pack"
 	desc = "Silvery plastic package, with the letters \"MRE\" pasted onto the front. Seems air tight, and vacuumed sealed. \
 	The packaging holds usage information within the fineprint: \
