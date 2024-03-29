@@ -41,9 +41,9 @@
 
 /obj/item/storage/ration_pack
 	icon = 'icons/obj/food.dmi'
-	icon_state = "erp_closed"
-	name = "emergency ration pack"
-	desc = "Silvery plastic package, with the letters \"ERP\" pasted onto the front. Seems air tight, and vacuumed sealed. \
+	icon_state = "mre_closed"
+	name = "meal-read-to-eat-pack"
+	desc = "Silvery plastic package, with the letters \"MRE\" pasted onto the front. Seems air tight, and vacuumed sealed. \
 	The packaging holds usage information within the fineprint: \
 	\"Instructions: Remove contents from packaging, open both MRE container and ration can, use them in-hand to activate thermal heater. \
 	Thermal insulation will keep them warm for over four hours. Nutrient paste and morale bar contains medicinal additives for field performance, DO NOT OVER-CONSUME.\""
