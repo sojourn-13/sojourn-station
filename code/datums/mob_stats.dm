@@ -82,7 +82,7 @@
 		var/datum/stat/S = stat_list[statName]
 		LEGACY_SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
 		var/stat_value =  S ? S.getValue(pure) : 0
-		if(holder?.stats.getPerk(PERK_NO_OBSUCATION) || require_direct_value)
+		if(holder?.stats.getPerk(PERK_NO_OBFUSCATION) || require_direct_value)
 			return stat_value
 		else
 			return statPointsToLevel(stat_value)
