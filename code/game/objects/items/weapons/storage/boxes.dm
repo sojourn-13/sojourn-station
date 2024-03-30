@@ -927,3 +927,32 @@ Boxes with clothing on them, unable to put them back if taken out because...
 	for(var/i in 1 to 3)
 		new /obj/item/storage/pill_bottle/njoy/green(src)
 
+/obj/item/storage/box/headsets
+	name = "spare headsets box"
+	desc = "A box full of unkeyed headsets for new colonists."
+	illustration = "headset"
+
+/obj/item/storage/box/headsets/populate_contents()
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+	new /obj/item/device/radio/headset(src)
+
+/obj/item/storage/box/ccstamps
+	name = "official stamps box"
+	desc = "A box full of assorted stamps from various high ranking officials in the lower colony. What're these all doing together?"
+	illustration = "stamps"
+
+/obj/item/storage/box/ccstamps/populate_contents()
+	new /obj/item/stamp/cc(src)
+	new /obj/item/stamp/cc/nm(src)
+	new /obj/item/stamp/cc/bs(src)
+	new /obj/item/stamp/cc/chunch(src)
+	new /obj/item/stamp/cc/prosp(src)
+	new /obj/item/stamp/cc/si(src)
+	new /obj/item/stamp/cc/ls(src)
+	new /obj/item/stamp/cc/guilg(src)

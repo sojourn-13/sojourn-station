@@ -27,6 +27,12 @@
 	icon_state = "healthscouter"
 	body_parts_covered = 0
 
+/obj/item/clothing/glasses/hud/health/halfmoon
+	name = "health scanner HUD"
+	desc = "Sleek rimless halfmoon glasses that sit tight on the nose bridge.  A blur of medical information zips across it's opulent lens."
+	icon_state = "healthhalfmoon"
+	body_parts_covered = 0
+
 /obj/item/clothing/glasses/hud/health/process_hud(var/mob/M)
 	process_med_hud(M, 1)
 

@@ -42,7 +42,7 @@
 	armor_penetration = ARMOR_PEN_EXTREME
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 500
-	matter = list(MATERIAL_BIOMATTER = 75, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5)
+	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5)
 
 /obj/item/tool/knife/dagger/nt
 	name = "dagger"
@@ -54,7 +54,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	armor_penetration = ARMOR_PEN_MASSIVE
 	price_tag = 120
-	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_STEEL = 1)
+	matter = list(MATERIAL_BIOMATTER = 5, MATERIAL_STEEL = 1)
 
 /obj/item/tool/spear/halberd
 	name = "halberd"
@@ -68,7 +68,7 @@
 	force = WEAPON_FORCE_BRUTAL
 	armor_penetration = ARMOR_PEN_MASSIVE
 	price_tag = 600
-	matter = list(MATERIAL_BIOMATTER = 80, MATERIAL_STEEL = 8, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 2)
+	matter = list(MATERIAL_BIOMATTER = 60, MATERIAL_STEEL = 8, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 2)
 
 /obj/item/tool/sword/nt/scourge
 	name = "scourge"
@@ -86,7 +86,7 @@
 	var/stun = 0
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
-	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 2)
+	matter = list(MATERIAL_BIOMATTER = 30, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 2)
 	has_alt_mode = FALSE
 
 /obj/item/tool/sword/nt/scourge/attack_self(mob/user)
@@ -140,7 +140,7 @@
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK | SLOT_BELT
 	throwforce = WEAPON_FORCE_LETHAL * 1.5
-	armor_penetration = ARMOR_PEN_HALF
+	armor_penetration = ARMOR_PEN_MASSIVE
 	throw_speed = 3
 	price_tag = 150
 	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_PLASTEEL = 10) // More expensive, high-end spear
@@ -182,7 +182,7 @@
 	armor_penetration = ARMOR_PEN_MASSIVE
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
-	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 3)
+	matter = list(MATERIAL_BIOMATTER = 30, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 3)
 	tool_qualities = list(QUALITY_HAMMERING = 10) //Not designed for that fine nailing
 	var/glowing = FALSE
 	sharp = FALSE
@@ -230,10 +230,11 @@
 	item_state = "nt_warhammer"
 	wielded_icon = "nt_warhammer_wielded"
 	force = WEAPON_FORCE_DANGEROUS //Naturally weaker do to knockbacking are targets (can stun lock)
+	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
 	armor_penetration = ARMOR_PEN_EXTREME
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
-	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 12)
+	matter = list(MATERIAL_BIOMATTER = 30, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 8)
 	tool_qualities = list(QUALITY_HAMMERING = 30) //Not designed for that fine nailing
 	var/glowing = FALSE
 	sharp = FALSE
@@ -266,7 +267,7 @@
 	switched_on_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 30)
 	switched_off_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
 	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
-	active_time = 50
+	active_time = 10 SECONDS
 	var/faith_cost = 50 //How much faith does it take to use this?
 
 /obj/item/tool/sword/nt/power/attack_self(mob/living/user)
@@ -292,7 +293,7 @@
 	item_state = "nt_shield"
 	force = WEAPON_FORCE_DANGEROUS
 	armor_list = list(melee = 20, bullet = 20, energy = 10, bomb = 15, bio = 0, rad = 0)
-	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 10, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_BIOMATTER = 35, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5, MATERIAL_GOLD = 3)
 	price_tag = 1000
 	base_block_chance = 60
 	item_flags = DRAG_AND_DROP_UNEQUIP
@@ -363,7 +364,6 @@
 	icon_state = "nt_buckler" //by CeUvi we thx thy
 	item_state = "nt_buckler"
 	matter = list(MATERIAL_BIOMATTER = 15, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 2, MATERIAL_GOLD = 1)
-	//aspects = list(SANCTIFIED) todo:port this
 	price_tag = 300
 	base_block_chance = 45
 	item_flags = DRAG_AND_DROP_UNEQUIP
@@ -438,7 +438,6 @@
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_WEAK
 	armor_penetration = ARMOR_PEN_DEEP
-	//aspects = list(SANCTIFIED) todo:port this
 	price_tag = 300
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
 

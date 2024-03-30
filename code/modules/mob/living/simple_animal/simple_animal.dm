@@ -40,7 +40,9 @@
 	var/leather_amount = 1 //The amount of leather sheets dropped.
 	var/bones_amount = 1 //The amount of bone sheets dropped.
 	var/has_special_parts = FALSE //var for checking during the butcher process.
+	var/has_rare_parts = FALSE //For when we want a chance for the mob to drop a different set on a coinflip.
 	var/list/special_parts = list()//Any special body parts.
+	var/list/rare_parts = list() //Rare body parts we want. Offered as an alternate for some critters. Will only drop special OR rare parts, but not both.
 
 	var/stop_automated_movement = FALSE //Use this to temporarely stop random movement or to if you write special movement code for animals.
 	var/wander = TRUE	// Does the mob wander around when idle?
@@ -594,7 +596,10 @@
 			for(var/i=0;i<actual_bones_amount;i++)
 				new /obj/item/stack/material/bone(get_turf(src))
 
-		if(has_special_parts)
+		if(has_special_parts && has_rare_parts && prob(50))
+			for(var/animal_part in rare_parts)
+				new animal_part(get_turf(src))
+		else
 			for(var/animal_part in special_parts)
 				new animal_part(get_turf(src))
 

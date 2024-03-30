@@ -21,16 +21,11 @@
 		to_chat(owner, "Your psionic attunement allows you to bypass fully using your essence.")
 		psi_point_cost = 0
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility(TRUE, target))
 		var/say = sanitize(input("What do you wish to say"))
-		if(target.psi_blocking >= 10)
-			owner.stun_effect_act(0, target.psi_blocking * 5, BP_HEAD)
-			owner.weakened = target.psi_blocking
-			usr.show_message(SPAN_DANGER("Your head pulsates with pain as your mind bashes against an unbreakable barrier!"))
-		else
-			target.show_message("\blue <b><font size='3px'> You hear [usr.real_name]'s voice: [say] </font></b>")
-			usr.show_message("\blue You project your mind into [target.real_name]: [say]")
-			log_say("[key_name(usr)] sent a telepathic message to [key_name(target)]: [say]")
-			for(var/mob/observer/ghost/G in world)
-				G.show_message("<i>Telepathic message from <b>[owner]</b> to <b>[target]</b>: [say]</i>")
+		target.show_message("\blue <b><font size='3px'> You hear [usr.real_name]'s voice: [say] </font></b>")
+		usr.show_message("\blue You project your mind into [target.real_name]: [say]")
+		log_say("[key_name(usr)] sent a telepathic message to [key_name(target)]: [say]")
+		for(var/mob/observer/ghost/G in world)
+			G.show_message("<i>Telepathic message from <b>[owner]</b> to <b>[target]</b>: [say]</i>")
 

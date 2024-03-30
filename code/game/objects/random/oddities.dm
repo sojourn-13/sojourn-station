@@ -68,6 +68,7 @@
 				/obj/item/gun/projectile/boltgun/bluecross = 1,
 				/obj/item/gun/projectile/that_gun = 1,
 				/obj/item/gun/projectile/colt/cult = 1,
+				/obj/item/gun/projectile/cane_pistol_bluecross = 1,
 				//Energy
 				/obj/item/gun/energy/sniperrifle/saint = 1,
 				//obj/item/gun/energy/lasersmg/inferno = 1,
@@ -81,12 +82,17 @@
 				/obj/item/tool/nailstick/ogre = 1,
 				/obj/item/tool/wrench/big_wrench/freedom = 1,
 				/obj/item/tool/saw/hyper/doombringer = 1,
+				/obj/item/tool/sword/katana/crimson_arc = 1,
+				/obj/item/tool/scythe/spectral_harvester = 1,
 				//obj/item/material/butterfly/frenchman = 1,
 				//Gun/Tool Mods
 				/obj/item/gun_upgrade/mechanism/brass_kit = 1,
+				//Armor
+				/obj/item/clothing/suit/crimsoncross_regaloutfit = 0.1, //Little rarer then even soap
 				//Misc - things that are not a "gun" but still good for this
 				/obj/item/oddity/nt/seal = 1,
-				/obj/item/soap/bluespase = 0.5))
+				/obj/item/soap/bluespase = 0.5,
+				/obj/item/oddity/rare/moon_fragment = 0.2))
 
 /obj/random/uplink/low_chance
 	name = "really really really low chance random uplink"

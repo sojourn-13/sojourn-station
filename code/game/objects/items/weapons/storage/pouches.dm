@@ -95,6 +95,32 @@
 	matter = list(MATERIAL_BIOMATTER = 20)
 	price_tag = 800
 
+obj/item/storage/pouch/large_generic/advmedic
+	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket. This one is well worn and reeks like the inside of a frontier-chemlab."
+
+obj/item/storage/pouch/large_generic/advmedic/populate_contents()
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/meralyn(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/meralyn(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/meralyn(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/vermicetol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/vermicetol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/vermicetol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/varceptol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/varceptol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/varceptol(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/blood(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/blood(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/blood(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/blood(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/antirad(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/large/peridaxon(src)
+
+
 /obj/item/storage/pouch/large_generic/leather
 	desc = "A mini satchel made of leather. Can hold a fair bit, but it won't fit in your pocket"
 	icon_state = "large_leather"
@@ -259,7 +285,10 @@
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/ammo_casing/shotgun,
-		/obj/item/ammo_magazine/speed_loader_shotgun
+		/obj/item/ammo_magazine/speed_loader_shotgun,
+		/obj/item/ammo_casing/grenade,
+		/obj/item/device/flash,
+		/obj/item/reagent_containers/food/snacks/openable/tastybread
 		)
 
 /obj/item/storage/pouch/tubular/vial
@@ -372,7 +401,7 @@
 		)
 
 	cant_hold = list(/obj/item/storage/pouch,
-					 /obj/item/gun/projectile/automatic/sts/rifle/sawn/blackshield,
+					 /obj/item/gun/projectile/automatic/sts/rifle/blackshield/sawn,
 					 /obj/item/gun/projectile/automatic/sts/rifle/sawn,
 					 /obj/item/gun/projectile/revolver/sixshot,
 					 /obj/item/gun/energy/gun/nuclear,

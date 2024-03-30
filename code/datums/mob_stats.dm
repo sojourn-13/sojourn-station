@@ -68,11 +68,24 @@
 	var/datum/stat/S = stat_list[statName]
 	S.setValue(Value)
 
-/datum/stat_holder/proc/getStat(statName, pure = FALSE)
+/datum/stat_holder/proc/add_Stat_cap(statName, amount)
+	var/datum/stat/S = stat_list[statName]
+	S.add_stat_cap(amount)
+
+/datum/stat_holder/proc/grab_Stat_cap(statName)
+	var/datum/stat/S = stat_list[statName]
+	var/number = S.grabbed_stat_cap()
+	return number
+
+/datum/stat_holder/proc/getStat(statName, pure = FALSE, require_direct_value = TRUE)
 	if (!islist(statName))
 		var/datum/stat/S = stat_list[statName]
 		LEGACY_SEND_SIGNAL(holder, COMSIG_STAT, S.name, S.getValue(), S.getValue(TRUE))
-		return S ? S.getValue(pure) : 0
+		var/stat_value =  S ? S.getValue(pure) : 0
+		if(holder?.stats.getPerk(PERK_NO_OBSUCATION) || require_direct_value)
+			return stat_value
+		else
+			return statPointsToLevel(stat_value)
 	else
 		log_debug("passed list to getStat(), statName without a list: [statName]")
 
@@ -121,9 +134,9 @@
 // return value from 0 to 1 based on value of stat, more stat value less return value
 // use this proc to get multiplier for decreasing delay time (exaple: "50 * getMult(STAT_ROB, STAT_LEVEL_ADEPT)"  this will result in 5 seconds if stat STAT_ROB = 0 and result will be 0 if STAT_ROB = STAT_LEVEL_ADEPT)
 /datum/stat_holder/proc/getMult(statName, statCap = STAT_LEVEL_MAX, pure = FALSE)
-    if(!statName)
-        return
-    return 1 - max(0,min(1,getStat(statName, pure)/statCap))
+	if(!statName)
+		return
+	return 1 - max(0,min(1,getStat(statName, pure)/statCap))
 
 /datum/stat_holder/proc/getPerk(perkType)
 	RETURN_TYPE(/datum/perk)
@@ -175,6 +188,7 @@
 	var/desc = "Basic characteristic, you are not supposed to see this. Report to admins."
 	var/value = STAT_VALUE_DEFAULT
 	var/list/mods = list()
+	var/stat_cap = STAT_VALUE_DEFAULT_MAXIMUM
 
 /datum/stat/proc/addModif(delay, affect, id)
 	for(var/elem in mods)
@@ -205,11 +219,11 @@
 	value = value + affect
 
 /datum/stat/proc/changeValue_withcap(affect)
-	if(value > STAT_VALUE_MAXIMUM)
+	if(value > stat_cap)
 		return
 
-	if(value + affect > STAT_VALUE_MAXIMUM)
-		value = STAT_VALUE_MAXIMUM
+	if(value + affect > stat_cap)
+		value = stat_cap
 	else
 		value = value + affect
 
@@ -232,10 +246,16 @@
 
 //Unused but might be good for later additions
 /datum/stat/proc/setValue_withcap(value)
-	if(value > STAT_VALUE_MAXIMUM)
-		src.value = STAT_VALUE_MAXIMUM
+	if(value > stat_cap)
+		src.value = stat_cap
 	else
 		src.value = value
+
+/datum/stat/proc/add_stat_cap(amount)
+	stat_cap += amount
+
+/datum/stat/proc/grabbed_stat_cap()
+	return stat_cap
 
 /datum/stat/productivity
 	name = STAT_MEC
@@ -277,11 +297,15 @@
 
 /proc/statPointsToLevel(var/points)
 	switch(points)
-		if (-1000 to -50)
+		if (-1000 to -100)
 			return "Hopeless"
-		if (-50 to -25)
+		if (-100 to -50)
+			return "Blundering"
+		if (-50 to -20)
+			return "Incompetent"
+		if (-20 to -15)
 			return "Inept"
-		if (-25 to -1)
+		if (-15 to -1)
 			return "Misinformed"
 		if (STAT_LEVEL_NONE to STAT_LEVEL_BASIC)
 			return "Untrained"
@@ -291,5 +315,15 @@
 			return "Adept"
 		if (STAT_LEVEL_EXPERT to STAT_LEVEL_PROF)
 			return "Expert"
-		if (STAT_LEVEL_PROF to INFINITY)
-			return "Master"
+		if (STAT_LEVEL_PROF to STAT_LEVEL_MASTER)
+			return "Proficient"
+		if (STAT_LEVEL_MASTER to STAT_LEVEL_HIGHER)
+			return "Mastery"
+		if (STAT_LEVEL_HIGHER to STAT_LEVEL_COSMIC)
+			return "Skill Mastery"
+		if (STAT_LEVEL_COSMIC to STAT_LEVEL_UNIVERSAL)
+			return "Grand Mastery"
+		if (STAT_LEVEL_UNIVERSAL to STAT_LEVEL_BYOND)
+			return "Theoretical Understanding"
+		if (STAT_LEVEL_BYOND to INFINITY)
+			return "Higher Understanding"

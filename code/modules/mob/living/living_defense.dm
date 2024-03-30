@@ -119,7 +119,13 @@
 	//No armor? Damage as usual
 	if(armor_effectiveness == 0)
 		apply_damage(effective_damage * post_pen_mult, damagetype, def_zone, used_weapon, sharp, edge)
-
+		if(ishuman(src) && def_zone)
+			var/mob/living/carbon/human/H = src
+			var/obj/item/organ/external/o = H.get_organ(def_zone)
+			if (o && o.status & ORGAN_SPLINTED && effective_damage >= 20)
+				visible_message(SPAN_WARNING("The splints break off [src] after being hit!"),
+						SPAN_WARNING("Your splints break off after being hit!"))
+				o.status &= ~ORGAN_SPLINTED
 	//Here we split damage in two parts, where armor value will determine how much damage will get through
 	else
 		//Pain part of the damage, that simulates impact from armor absorbtion
@@ -131,6 +137,13 @@
 		//Actual part of the damage that passed through armor
 		var/actual_damage = round ( ( effective_damage * ( 100 - armor_effectiveness ) ) / 100 )
 		apply_damage(actual_damage * post_pen_mult, damagetype, def_zone, used_weapon, sharp, edge)
+		if(ishuman(src) && def_zone && actual_damage >= 20)
+			var/mob/living/carbon/human/H = src
+			var/obj/item/organ/external/o = H.get_organ(def_zone)
+			if (o && o.status & ORGAN_SPLINTED)
+				visible_message(SPAN_WARNING("The splints break off [src] after being hit!"),
+						SPAN_WARNING("Your splints break off after being hit!"))
+				o.status &= ~ORGAN_SPLINTED
 		return actual_damage
 	return effective_damage
 
@@ -410,6 +423,11 @@
 		if(world.time >= next_onfire_brn)
 			next_onfire_brn = world.time + 50
 			adjustFireLoss(fire_stacks*5 + 3) //adjusted to be lower. You need time to put yourself out. And each roll only removes 2.5 stacks.
+			if(prob(25) && fire_stacks > 0) //over time the fire will slowly burn itself out. This is meant to be decently slow so as to not make fire much less dangerous as its purpose is to prevent issues when mobs hit tens of thousands of fireloss.
+				adjust_fire_stacks(-1)
+			if(fire_stacks == 0)
+				ExtinguishMob()
+
 
 /mob/living/fire_act()
 	adjust_fire_stacks(2)

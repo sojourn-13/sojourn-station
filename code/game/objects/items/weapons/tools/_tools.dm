@@ -281,7 +281,7 @@
 *******************************/
 
 //Simple form ideal for basic use. That proc will return TRUE only when everything was done right, and FALSE if something went wrong, ot user was unlucky.
-//Editionaly, handle_failure proc will be called for a critical failure roll.
+//Additionaly, handle_failure proc will be called for a critical failure roll.
 /obj/item/proc/use_tool(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
 	if(health)//Low health on a tool increases failure chance. Scaling up as it breaks further.
 		fail_chance += get_tool_health_modifer(user)
@@ -330,7 +330,13 @@
 
 //Use this proc if you want to handle all types of failure yourself. It used in surgery, for example, to deal damage to patient.
 /obj/item/proc/use_tool_extended(mob/living/user, atom/target, base_time, required_quality, fail_chance, required_stat, instant_finish_tier = 110, forced_sound = null, sound_repeat = 2.5 SECONDS)
+
 	var/obj/item/tool/T
+
+	//Vars for Absolutist speed debuff
+	var/holy_delay = 0
+	var/cruciform_slow = 1.25
+
 	if(istool(src))
 		T = src
 		T.last_tooluse = world.time
@@ -355,6 +361,9 @@
 			fail_chance += round(H.shock_stage/120 * 40)
 			base_time += round(H.shock_stage/120 * 40)
 
+	if(user.stats.getPerk(PERK_COMMUNITY_SAINTS))
+		holy_delay = cruciform_slow
+
 
 	//Start time and time spent are used to calculate resource use
 	var/start_time = world.time
@@ -371,6 +380,9 @@
 		//Workspeed var, can be improved by upgrades
 		if(T && T.workspeed > 0)
 			time_to_finish /= T.workspeed
+		//Slowdown for Absolutists. Sanctified tools don't get additional slowdown
+		if(holy_delay > 0 && T?.sanctified == FALSE)
+			time_to_finish *= holy_delay
 		// the worse tool condition - the more time required
 		if(T && T.degradation)
 			// so basically we adding time based on percent of missing health multiplied by ADDITIONAL_TIME_LOWHEALTH for easier balancing
@@ -822,20 +834,21 @@
 		adjustToolHealth(-degradation, user)
 
 //Power and fuel drain, sparks spawn
-/obj/item/proc/check_tool_effects(mob/living/user, time)
-
+/obj/item/tool/check_tool_effects(mob/living/user, time)
+	//Check if our tool is something that needs to be turned on to spend resources
+	var/can_spend_resources = (!toggleable || (toggleable && switched_on))
 	if(use_power_cost)
-		if(!cell || !cell.check_charge(use_power_cost*time))
+		if(!cell || !cell.check_charge(use_power_cost*time) && can_spend_resources)
 			to_chat(user, SPAN_WARNING("[src] battery is dead or missing."))
 			return FALSE
 
 	if(use_fuel_cost)
-		if(get_fuel() < (use_fuel_cost*time))
+		if(get_fuel() < (use_fuel_cost*time) && can_spend_resources)
 			to_chat(user, SPAN_NOTICE("You need more welding fuel to complete this task."))
 			return FALSE
 
 	if(use_stock_cost)
-		if(stock < (use_stock_cost*time))
+		if(stock < (use_stock_cost*time) && can_spend_resources)
 			to_chat(user, SPAN_NOTICE("There is not enough left in [src] to complete this task."))
 			return FALSE
 
@@ -855,6 +868,9 @@
 	return ( reagents ? reagents.get_reagent_amount(my_fuel) : 0 )
 
 /obj/item/tool/proc/consume_fuel(volume)
+	//Fixes tool off-state behavior
+	if(toggleable && !switched_on)
+		return TRUE
 	if(get_fuel() >= volume)
 		reagents.remove_reagent(my_fuel, volume)
 		return TRUE
@@ -994,8 +1010,8 @@
 				var/obj/item/weldpack/P = O
 				P.explode()
 			return
-		else if(istype(O, /mob/living/carbon/superior_animal/roach/benzin))
-			var/mob/living/carbon/superior_animal/roach/benzin/B = O
+		else if(istype(O, /mob/living/carbon/superior_animal/roach/nitro))
+			var/mob/living/carbon/superior_animal/roach/nitro/B = O
 			if(B.stat != DEAD)
 				if(has_quality(QUALITY_WELDING))
 					B.fire_act()
@@ -1056,23 +1072,31 @@
 		var/obj/item/organ/internal/eyes/E = H.random_organ_by_process(OP_EYES)
 		if(!E)
 			return
+		if(BP_IS_ROBOTIC(E))
+			to_chat(H, SPAN_WARNING("The world suddenly dims in response to the blindingly bright light, protecting you from its shine."))
+			return
 		var/safety = H.eyecheck()
 		switch(safety)
 			if(FLASH_PROTECTION_MINOR)
 				to_chat(H, SPAN_WARNING("Your eyes sting a little."))
-				E.damage += rand(1, 2)
+				E.take_damage(1, BURN)
 				if(E.damage > 12)
 					H.eye_blurry += rand(3,6)
+			if(FLASH_PROTECTION_MINOR)
+				to_chat(H, SPAN_WARNING("The searing light burns your eyes through your insufficient protection."))
+				E.take_damage(rand(3, 6), BURN)
+				if(E.damage > 11)
+					E.take_damage(rand(4, 6), BURN)
 			if(FLASH_PROTECTION_NONE)
 				to_chat(H, SPAN_WARNING("Your eyes burn."))
-				E.damage += rand(2, 4)
+				E.take_damage(rand(4, 6), BURN)
 				if(E.damage > 10)
-					E.damage += rand(4,10)
+					E.take_damage(rand(2, 6))
 			if(FLASH_PROTECTION_REDUCED)
 				to_chat(H, SPAN_DANGER("Your equipment intensify the welder's glow. Your eyes itch and burn severely."))
 				H.eye_blurry += rand(12,20)
-				E.damage += rand(12, 16)
-		if(safety<FLASH_PROTECTION_MODERATE)
+				E.take_damage(rand(8, 16))
+		if(safety<FLASH_PROTECTION_MAJOR)
 			if(E.damage > 10)
 				to_chat(user, SPAN_WARNING("Your eyes are really starting to hurt. This can't be good for you!"))
 

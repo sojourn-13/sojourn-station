@@ -165,8 +165,8 @@
 	var/turf/origin = get_turf(telepad)
 	if(!isPlayerLevel(targetZ))
 		return BS_DISTANCE_INVALID //Invalid area.
-	if(isSealedLevel(targetZ))
-		return BS_DISTANCE_STRESSFUL //Sealed Z levels like deep maint require stressing the telepad.
+//	if(isSealedLevel(targetZ)) //Commented out. Nearly all of our z-levels are sealed  we don't need to check for this. -Benl8561
+//		return BS_DISTANCE_STRESSFUL //Sealed Z levels like deep maint require stressing the telepad.
 	if(targetArea.tele_inhibited())
 		return BS_DISTANCE_STRESSFUL //Tele inhibited Z levels also require stressing the telepad.
 	if(tracking_beacon)

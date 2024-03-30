@@ -45,6 +45,8 @@
 	icon_state = "marshal"
 	license = 20 //1:1 with blackshield guns
 	designs = list(
+		//pistol
+		/datum/design/autolathe/gun/glock = 1,
 		//ion
 		/datum/design/autolathe/gun/ion_pistol = 5,
 		//launcher

@@ -27,6 +27,7 @@
 		FORM_CHURCHSYNTH,
 		FORM_NASHEF,
 		FORM_MYCUS,
+		FORM_SLIME,
 		FORM_UNBRANDED
 		)
 
@@ -738,6 +739,10 @@
 /datum/sprite_accessory/hair/tribalbraid
 	name = "Tribal Braid"
 	icon_state = "tribalbraid"
+
+/datum/sprite_accessory/hair/tribun
+	name = "Tri Bun"
+	icon_state = "tribun"
 
 /datum/sprite_accessory/hair/vegeta
 	name = "Vegeta"

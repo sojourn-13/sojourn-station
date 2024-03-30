@@ -50,6 +50,7 @@
 	name = "electrode"
 	icon_state = "spark"
 	mob_hit_sound = list('sound/weapons/tase.ogg')
+	armor_penetration = 20
 	nodamage = 1
 	taser_effect = 1
 	agony = 40

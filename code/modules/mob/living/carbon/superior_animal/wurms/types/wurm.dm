@@ -153,7 +153,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 20, bullet = 35, energy = 35, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 10, bullet = 15, energy = 15, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/iron
@@ -179,7 +179,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_LOW
 
 //Armor related variables
-	armor = list(melee = 50, bullet = 35, energy = 20, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 25, bullet = 20, energy = 10, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/silver
@@ -205,7 +205,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 35, bullet = 59, energy = 20, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 15, bullet = 30, energy = 10, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/osmium
@@ -232,7 +232,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 20, bullet = 35, energy = 50, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 20, bullet = 20, energy = 25, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/osmium
@@ -261,7 +261,7 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	melee_damage_upper = WURM_DMG_MED
 
 //Armor related variables
-	armor = list(melee = 20, bullet = 35, energy = 50, bomb = 50, bio = 100, rad = 0)
+	armor = list(melee = 20, bullet = 20, energy = 25, bomb = 50, bio = 100, rad = 0)
 
 //Loot related variables
 	ore = /obj/item/stack/ore/iron // given something just in case.

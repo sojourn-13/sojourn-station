@@ -23,18 +23,18 @@
 //Heals hunger
 /obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer()
 	set category = "Psionic powers"
-	set name = "Psychosomatic Transference (1)"
-	set desc = "Expend a single point of your psi essence to fill your stomach with cannibalized proteins from your own body. Beware, this will generate toxins and expend some of your blood."
+	set name = "Psychosomatic Fullness (1)"
+	set desc = "Expend a single point of your psi essence to convince your stomach it's not actually that hungry, burning fat reserves to keep going strong. Taxing on the mind and causes minor burns."
 	psi_point_cost = 1
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		if(!owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
-			owner.nutrition = 400
-			owner.drip_blood(54)
+			owner.nutrition += 100 //Twice as strong as Soul Hunger
+			owner.adjustFireLoss(10) //You're not using your nutrition to fuel things like Church used to, this should be fine
 		else
-			owner.nutrition = 400
-			owner.drip_blood(26)
-		to_chat(owner, "You feel sick and woozy, a sudden full sensation in your gut almost making you want to vomit.")
+			owner.nutrition += 100
+			owner.adjustFireLoss(5)
+		to_chat(owner, "You feel energized, though there is minor pain from burning so much fat so quickly.")
 
 // Heals stuns/other misc things
 /obj/item/organ/internal/psionic_tumor/proc/chosen_control()
@@ -43,7 +43,7 @@
 	set desc = "Expend four psi points to clear all effects that impede one's control. Remove stuns, paralysis, pain, agony, restrainments, and clears the users body of all chemicals and addictions."
 	psi_point_cost = 4
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		owner.visible_message(
 			"[owner] shimmers strangely!",
 			"You remind the universe that it bends to your will!"
@@ -77,7 +77,7 @@
 	set desc = "Expend two psi points of your psi essence to focus your mind and increase your sanity."
 	psi_point_cost = 2
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		if(owner.sanity.level >= (owner.sanity.max_level - 10))
 			psi_points += psi_point_cost
 			owner.visible_message(

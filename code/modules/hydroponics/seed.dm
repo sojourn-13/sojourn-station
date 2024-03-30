@@ -434,8 +434,8 @@
 			"water",
 			"potassium",
 			"plasticide",
-			"mutationtoxin",
-			"amutationtoxin",
+			//"mutationtoxin",
+			//"amutationtoxin",
 			"inaprovaline",
 			"space_drugs",
 			"paroxetine",
@@ -526,9 +526,9 @@
 	set_trait(TRAIT_PRODUCTION,get_trait(TRAIT_MATURATION)+rand(2,5))
 
 //Returns a key corresponding to an entry in the global seed list.
-/datum/seed/proc/get_mutant_variant()
-	if(!mutants || !mutants.len || get_trait(TRAIT_IMMUTABLE) > 0) return 0
-	return pick(mutants)
+/datum/seed/proc/get_mutant_variant(var/list/strains)
+    if(!strains || !strains.len || get_trait(TRAIT_IMMUTABLE) > 0) return 0
+    return pick(strains)
 
 //Mutates the plant overall (randomly).
 /datum/seed/proc/mutate(degree,turf/source_turf)

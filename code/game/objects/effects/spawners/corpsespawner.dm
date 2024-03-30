@@ -153,7 +153,7 @@
 /obj/landmark/corpse/one_star/void
 	name = "warped skeletal remains"
 	corpseuniform = /obj/item/clothing/under/os_jumpsuit
-	corpsesuit = /obj/item/clothing/suit/space/os	// Helmet won't spawn pre-equipped, but it's there
+	corpsesuit = /obj/item/clothing/suit/space/void/os	// Helmet won't spawn pre-equipped, but it's there
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpseradio = /obj/item/device/radio/headset
 	//corpseid = TRUE

@@ -335,6 +335,7 @@
 	cost = 1500
 
 	unlocks_designs = list(	/datum/design/research/item/mechfab/modules/armor,
+							/datum/design/research/item/mechfab/modules/ablativearmor,
 							/datum/design/research/item/mechfab/modules/armblade,
 							/datum/design/research/item/mechfab/modules/wolverine,
 							/datum/design/research/item/mechfab/modules/energy_blade,

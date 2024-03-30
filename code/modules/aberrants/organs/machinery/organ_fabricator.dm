@@ -20,6 +20,7 @@
 	have_recycling = FALSE
 	speed = 6
 
+	code_dex = "ORGAN_GROWER"
 	selectively_recycled_types = list(
 		/obj/item/organ,
 		/obj/item/modification/organ
@@ -106,7 +107,7 @@
 			var/choice = alert("If you deconstruct this machine, the biomatter inside will be destroyed. Are you sure you want to continue?", "Deconstruction Warning", "Deconstruct", "Leave it alone")
 			if(choice != "Deconstruct" || starting_loc != user.loc)
 				return
-	
+
 	..()
 
 /obj/machinery/autolathe/organ_fabricator/on_deconstruction(obj/item/I, mob/user)

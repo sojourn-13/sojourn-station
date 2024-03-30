@@ -23,6 +23,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		return heat
 
 /proc/isflamesource(A)
+	if(istype(A, /obj/item/flame))
+		var/obj/item/flame/F = A
+		return (F.lit)
+	if(istype(A, /obj/item/device/assembly/igniter))
+		return TRUE
 	if(istype(A, /obj/item))
 		var/obj/item/I = A
 		if(QUALITY_WELDING in I.tool_qualities)
@@ -31,11 +36,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			return TRUE
 		if (I.is_hot())
 			return TRUE
-	if(istype(A, /obj/item/flame))
-		var/obj/item/flame/F = A
-		return (F.lit)
-	if(istype(A, /obj/item/device/assembly/igniter))
-		return TRUE
 	return FALSE
 
 ///////////
@@ -272,6 +272,14 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	type_butt = /obj/item/trash/cigbutt/os
 	preloaded_reagents = list("nicotine" = 5)
 
+/obj/item/clothing/mask/smokable/cigarette/os/nova
+	name = "\improper Greyson Star Traders produced cigarette"
+	desc = "A inhouse made cigarette by Greyson Star Traders. It has a very unique aroma, hard to describe but its honestly not awful, you can see that it is actually somehow packed with care? Why robots would mass produce cigars with care?"
+	icon_state = "cigoff"
+	icon_on = "cigon"
+	icon_off = "cigoff"
+	type_butt = /obj/item/trash/cigbutt/os
+	preloaded_reagents = list("nicotine" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/tannhauser
 	name = "\improper Tannhauser Gate cigarette"
@@ -338,12 +346,12 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	preloaded_reagents = list("nicotine" = 5,  "mint" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/khi
-	name = "\improper Kitsuhana Singularity cigarette"
+	name = "\improper Hippie's Delight cigarette"
 	icon_state = "khioff"
 	icon_on = "khion"
 	icon_off = "khioff"
 	type_butt = /obj/item/trash/cigbutt/khi
-	preloaded_reagents = list("mindbreaker" = 5, "serotrotium" = 5, "impedrezene" = 5, "space_drugs" = 5)
+	preloaded_reagents = list("mindbreaker" = 3, "serotrotium" = 2, "space_drugs" = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/comred
 	name = "\improper ComRed light cigarette"

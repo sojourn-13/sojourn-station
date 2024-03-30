@@ -15,7 +15,7 @@
 	edge = TRUE
 	max_health = 500
 	tool_qualities = list(QUALITY_SHOVELING = 35, QUALITY_DIGGING = 35, QUALITY_EXCAVATION = 10)
-	effective_faction = list("spider") // Spiders are weak to crushing.
+	effective_faction = list("spiders") // Spiders are weak to crushing.
 	damage_mult = 2
 	hitsound = 'sound/weapons/smash.ogg'
 	price_tag = 15
@@ -52,7 +52,7 @@
 
 /obj/item/tool/shovel/combat/marqua
 	name = "Mar'quaian crovel"
-	desc = "A sharp, balanced crovel made from made of a strange alloy."
+	desc = "A sharp, balanced crovel made from a strange alloy."
 	icon_state = "clustertool-shovel"
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_DANGEROUS
@@ -62,6 +62,41 @@
 	tool_qualities = list(QUALITY_SHOVELING = 85, QUALITY_DIGGING = 85, QUALITY_PRYING = 70, QUALITY_CUTTING = 30, QUALITY_SAWING = 45)
 	workspeed = 1.5
 	price_tag = 2875
+
+/obj/item/tool/shovel/combat/turbo
+	name = "Artificer Power Crovel"
+	desc = "A creation of the Artificer's Guild dreamed up by an adept with a love for internal combustion. Rather than a cell, this device uses a high power fuel burning engine for high-octane shoveling. An engraving on the handle reads, \"THIS MACHINE KILLS SPIDERS.\""
+	icon_state = "Powercrovel" //Sprites by Dromkii
+	item_state = "Powercrovel"
+
+	slot_flags = SLOT_BELT|SLOT_BACK //I PAID FOR THE WHOLE BACK SPRITE, I'M GONNA USE THE WHOLE BACK SPRITE
+	switched_on_icon_state = "Powercrovel-on"
+	wielded_icon = "Powercrovel_wielded"
+	switched_on_forcemult = 1.3 //26 damage. Slightly worse than a chainsaw. Gets bonus damage vs spiders, like all shovels
+	workspeed = 1.3
+	w_class = ITEM_SIZE_NORMAL //Bigger than a normal crovel, doesn't fit in your pocket
+
+	toggleable = TRUE
+	use_fuel_cost = 0.1
+	passive_fuel_cost = 0.05
+	max_fuel = 80
+
+	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 6, MATERIAL_DIAMOND = 1) //Added 1 diamond due to the crafting repice having one
+	switched_on_qualities = list(QUALITY_SHOVELING = 60, QUALITY_DIGGING = 45, QUALITY_PRYING = 30, QUALITY_CUTTING = 10, QUALITY_SAWING = 15)
+	switched_off_qualities = list(QUALITY_SHOVELING = 25, QUALITY_DIGGING = 25, QUALITY_PRYING = 25, QUALITY_CUTTING = 5, QUALITY_SAWING = 5) //Still kindof usable when off
+
+/obj/item/tool/shovel/combat/turbo/turn_on(mob/user)
+	.=..()
+	if(.)
+		to_chat(user, SPAN_NOTICE("You rev up the [src]."))
+		playsound(loc, 'sound/items/chainsaw_on.ogg', 40)
+		hitsound = WORKSOUND_CHAINSAW //It only makes chainsaw noises when it's on!
+		START_PROCESSING(SSobj, src)
+
+/obj/item/tool/shovel/combat/turbo/turn_off()
+	playsound(loc, 'sound/items/chainsaw_off.ogg', 80)
+	hitsound = 'sound/weapons/smash.ogg'
+	..()
 
 /obj/item/tool/shovel/onestar_shovel
 	name = "Greyson Positronic shovel"

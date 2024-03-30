@@ -221,7 +221,7 @@
 		var/stat_multiplier = 1
 		if(usr.stats)
 			// Uses best of BIO and COG
-			stat_multiplier = min(usr.stats.getMult(STAT_BIO, STAT_LEVEL_GODLIKE), usr.stats.getMult(STAT_COG, STAT_LEVEL_GODLIKE))
+			stat_multiplier = min(usr.stats.getMult(STAT_BIO, STAT_LEVEL_MASTER), usr.stats.getMult(STAT_COG, STAT_LEVEL_MASTER))
 
 		seed.modified += round(rand(30, 70) * stat_multiplier)
 		if(seed.modified >= 100)
@@ -268,7 +268,7 @@
 		var/stat_multiplier = 1
 		if(usr.stats)
 			// Uses best of BIO and COG
-			stat_multiplier = min(usr.stats.getMult(STAT_BIO, STAT_LEVEL_GODLIKE), usr.stats.getMult(STAT_COG, STAT_LEVEL_GODLIKE))
+			stat_multiplier = min(usr.stats.getMult(STAT_BIO, STAT_LEVEL_MASTER), usr.stats.getMult(STAT_COG, STAT_LEVEL_MASTER))
 
 		if(!isnull(plant_controller.seeds[seed.seed.name]))
 			seed.seed = seed.seed.diverge(1)
@@ -281,7 +281,7 @@
 
 		seed.seed.apply_gene(loaded_gene)
 		seed.modified += round(rand(10, 15) * stat_multiplier)
-		seed.modified = max(seed.modified, 100)
+		seed.modified = min(seed.modified, 100)
 
 		start_task()
 		return 1

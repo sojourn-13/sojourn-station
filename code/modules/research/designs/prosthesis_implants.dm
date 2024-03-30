@@ -56,7 +56,7 @@ the lims and such to pull out the internal bits for other people if needed
 	category = "Medical"
 
 /datum/design/research/item/mechfab/robotic_internals/heart
-	build_path = /obj/item/organ/internal/heart/prosthetic
+	build_path = /obj/item/organ/internal/vital/heart/prosthetic
 	category = "Medical"
 
 /datum/design/research/item/mechfab/robotic_internals/liver
@@ -95,6 +95,10 @@ the lims and such to pull out the internal bits for other people if needed
 /datum/design/research/item/mechfab/modules/armor
 	name = "Sub-Dermal Body Armor"
 	build_path = /obj/item/organ_module/armor
+
+/datum/design/research/item/mechfab/modules/ablativearmor
+	name = "Sub-Dermal Ablative Armor"
+	build_path = /obj/item/organ_module/armor/ablative
 
 /datum/design/research/item/mechfab/modules/armblade
 	name = "Embedded Arm Blade"

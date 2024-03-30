@@ -173,6 +173,10 @@
 /datum/component/internal_wound/organic/heavy_poisoning/chem
 	name = "chemical poisoning"
 
+/datum/component/internal_wound/organic/heavy_poisoning/plasma
+	name = "plasma toxicity"
+	treatments_chem = list(CE_ANTITOX = 3) //Carthatoline. This is caused by plasma, you NEED anti-toxin for this.
+
 // Clone/radiation
 /datum/component/internal_wound/organic/radiation
 	treatments_tool = list(QUALITY_CUTTING = FAILCHANCE_NORMAL)
@@ -222,9 +226,10 @@
 // Infection 2.0. This will spread to other organs in your body if untreated. Progresses until death.
 /datum/component/internal_wound/organic/infection
 	treatments_chem = list(CE_ANTIBIOTIC = 5)
-	characteristic_flag = IWOUND_CAN_DAMAGE|IWOUND_PROGRESS|IWOUND_PROGRESS_DEATH|IWOUND_SPREAD
+	characteristic_flag = IWOUND_CAN_DAMAGE|IWOUND_PROGRESS |IWOUND_SPREAD
 	severity = 0
 	severity_max = IORGAN_MAX_HEALTH
+	progression_threshold = IWOUND_8_MINUTES
 	hal_damage = IWOUND_LIGHT_DAMAGE
 	spread_threshold = IORGAN_SMALL_HEALTH
 	status_flag = ORGAN_WOUNDED|ORGAN_INFECTED

@@ -1,7 +1,7 @@
 /obj/item/organ/internal
 	max_damage = IORGAN_STANDARD_HEALTH
-	min_bruised_damage = 3
-	min_broken_damage = 5
+	min_bruised_damage = IORGAN_STANDARD_BRUISE
+	min_broken_damage = IORGAN_STANDARD_BREAK
 	var/list/owner_verbs = list()
 	var/list/organ_efficiency = list()	//Efficency of an organ, should become the most important variable
 	var/list/initial_owner_verbs = list()		// For refreshing when a mod is removed
@@ -65,6 +65,7 @@
 /obj/item/organ/internal/replaced(obj/item/organ/external/affected)
 	..()
 	parent.internal_organs |= src
+	parent.internal_organs[src] = specific_organ_size // Larger organs have greater pick weight for organ damage
 	RegisterSignal(parent, COMSIG_IORGAN_WOUND_COUNT, .proc/wound_count, TRUE)
 	RegisterSignal(parent, COMSIG_IORGAN_REFRESH_PARENT, .proc/refresh_organ_stats, TRUE)
 	RegisterSignal(parent, COMSIG_IORGAN_APPLY, .proc/apply_modifiers, TRUE)
@@ -84,11 +85,11 @@
 /obj/item/organ/internal/proc/get_process_efficiency(process_define)
 	return organ_efficiency[process_define] - (organ_efficiency[process_define] * (damage / max_damage))
 
-/obj/item/organ/internal/take_damage(amount, damage_type = BRUTE, wounding_multiplier = 1, sharp = FALSE, edge = FALSE, silent = FALSE)	//Deals damage to the organ itself
+/obj/item/organ/internal/take_damage(amount, damage_type = BRUTE, wounding_multiplier = 1, silent = FALSE, sharp = FALSE, edge = FALSE, silent = FALSE) //Deals damage to the organ itself
 	if(!damage_type || status & ORGAN_DEAD)
 		return FALSE
 
-	var/wound_count = max(0, round((amount * wounding_multiplier) / 8))	// At base values, every 8 points of damage is 1 wound
+	var/wound_count = max(0, round(amount / 4)) // At base values, every 8 points of damage is 1 wound
 
 	if(!wound_count)
 		return FALSE
@@ -99,7 +100,7 @@
 		for(var/i in 1 to wound_count)
 			var/choice = pick(possible_wounds)
 			add_wound(choice)
-			LAZYREMOVE(possible_wounds, choice)
+			//LAZYREMOVE(possible_wounds, choice) // If this is commented out, we can get a higher severity of a single wound
 			if(!LAZYLEN(possible_wounds))
 				break
 
@@ -114,6 +115,7 @@
 	// Determine possible wounds based on nature and damage type
 	var/is_robotic = BP_IS_ROBOTIC(src) || BP_IS_ASSISTED(src)
 	var/is_organic = BP_IS_ORGANIC(src) || BP_IS_ASSISTED(src)
+	var/is_slime = BP_IS_SLIME(src)
 
 	switch(damage_type)
 		if(BRUTE)
@@ -123,21 +125,29 @@
 						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/sharp))
 					if(is_robotic)
 						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/sharp))
+					if(is_slime)
+						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/slime/sharp))
 				else
 					if(is_organic)
 						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/blunt))
 					if(is_robotic)
 						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/blunt))
+					if(is_slime)
+						LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/slime/blunt))
 			else
 				if(is_organic)
 					LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/edge))
 				if(is_robotic)
 					LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/edge))
+				if(is_slime)
+					LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/slime/edge))
 		if(BURN)
 			if(is_organic)
 				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/burn))
 			if(is_robotic)
 				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/emp_burn))
+			if(is_slime)
+				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/slime/burn))
 		if(TOX)
 			if(is_organic)
 				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/poisoning))
@@ -146,12 +156,16 @@
 		if(CLONE)
 			if(is_organic)
 				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/radiation))
+			if(is_slime)
+				LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/slime/radiation))
 		if(PSY)
 			if(LAZYACCESS(organ_efficiency, OP_EYES) || LAZYACCESS(organ_efficiency, BP_BRAIN))
 				if(is_organic)
 					LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/sanity))
 				if(is_robotic)
 					LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/robotic/sanity))
+				if(is_slime)
+					LAZYADD(possible_wounds, subtypesof(/datum/component/internal_wound/organic/sanity))
 
 	return possible_wounds
 
@@ -231,15 +245,18 @@
 /obj/item/organ/internal/proc/fracture()
 	if(LAZYACCESS(organ_efficiency, OP_BONE))
 		// Determine possible wounds based on nature and damage type
+		var/obj/item/organ/external/limb = get_limb()
 		var/is_robotic = BP_IS_ROBOTIC(src) || BP_IS_ASSISTED(src)
 		var/is_organic = BP_IS_ORGANIC(src) || BP_IS_ASSISTED(src)
+		var/is_slime   = BP_IS_SLIME(src)
 		var/list/possible_wounds = list()
 
 		if(is_organic)
 			LAZYADD(possible_wounds, /datum/component/internal_wound/organic/bone_fracture)
 		if(is_robotic)
 			LAZYADD(possible_wounds, /datum/component/internal_wound/robotic/deformation)
-
+		if(is_slime)
+			limb.droplimb(TRUE, DISMEMBER_METHOD_BLUNT) //We aren't like normal bones, if you hurt us enough to break then we burst.
 		if(LAZYLEN(possible_wounds))
 			var/choice = pick(possible_wounds)
 			add_wound(choice)
@@ -313,7 +330,7 @@
 
 // Mutations
 /obj/item/organ/internal/proc/unmutate()
-	if(!BP_IS_ORGANIC(src) || !BP_IS_ASSISTED(src))
+	if(!BP_IS_ORGANIC(src) || !BP_IS_ASSISTED(src) || BP_IS_SLIME(src))
 		return
 
 	for(var/wound in GetComponents(/datum/component/internal_wound/organic/radiation))

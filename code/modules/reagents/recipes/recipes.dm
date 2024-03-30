@@ -9,7 +9,7 @@
 /datum/chemical_reaction/dylovene
 	result = "anti_toxin"
 	required_reagents = list("silicon" = 1, "potassium" = 1, "ammonia" = 1)
-	//byproducts = list("water" = 1, "sugar" = 1)
+	byproducts = list("sodiumchloride" = 0.1)
 	result_amount = 3
 
 /datum/chemical_reaction/carthatoline
@@ -961,6 +961,12 @@
 	required_reagents = list("mindbreaker" = 1, "psilocybin" = 1, "sanguinum" = 1 , "anti_toxin" = 1, "ethanol" = 1)
 	result_amount = 5
 
+/datum/chemical_reaction/ctincture
+	result = "ctincture"
+	required_reagents = list("vodka" = 10, "concentrated-carpotoxin" = 1)
+	result_amount = 10
+
+
 /* FBP "medicine" */
 
 /datum/chemical_reaction/fbp_repair
@@ -974,3 +980,4 @@
 	required_reagents = list("nanites" = 1, "oil" = 1)
 	result_amount = 2
 */
+

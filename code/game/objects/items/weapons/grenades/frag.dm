@@ -41,7 +41,7 @@
 	desc = "A military-grade defensive fragmentation grenade, designed to be thrown from cover."
 	icon_state = "frag_nt"
 	item_state = "frggrenade_nt"
-	matter = list(MATERIAL_BIOMATTER = 75)
+	matter = list(MATERIAL_BIOMATTER = 40)
 	fragment_damage = 7
 	damage_step = 3
 
@@ -53,6 +53,8 @@
 	loadable = TRUE
 	num_fragments = 70
 	fragment_type = /obj/item/projectile/bullet/pellet/fragment/rubber
+	fragment_damage = 1 //+1 from the actual projectile itself. This mostly applies to instances where someone is directly on top of the grenade. Leaving this value at default was resulting in 400+ damage stiingers.
+	damage_step = 12
 
 /obj/item/grenade/frag/pipebomb
 	name = "improvised pipebomb"

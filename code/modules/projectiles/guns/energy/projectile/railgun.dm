@@ -43,7 +43,7 @@
 	serial_type = "AG"
 	init_firemodes = list(
 		list(mode_name="slug", mode_desc="fires a small metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/kurtz_50/railgun, icon="kill"),
-		list(mode_name="non-lethal", mode_desc="fires a small rubber chunk at light speeds", projectile_type=/obj/item/projectile/bullet/kurtz_50/rubber/railgun, icon="stun"),
+		list(mode_name="Less-lethal", mode_desc="fires a small rubber chunk at light speeds. Still likely to ruin someones day.", projectile_type=/obj/item/projectile/bullet/kurtz_50/rubber/railgun, icon="stun"),
 		list(mode_name="grenade", mode_desc="fires a frag synth-shell", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=30000, icon="grenade"),
 	)
 	price_tag = 1250
@@ -140,31 +140,33 @@
 	charge_cost = 500
 	gun_tags = list(GUN_PROJECTILE, GUN_ENERGY, GUN_SCOPE)
 	suitable_cell = /obj/item/cell/large
-	fire_delay = 14 //Slow, on par with a shotgun pump then fire
+	fire_delay = 10 //Slow, on par with a shotgun pump then fire
 	init_recoil = RIFLE_RECOIL(1)
 	damage_multiplier = 1
 	init_firemodes = list(
 		list(mode_name="slug", mode_desc="fires a large metal chunk at light speeds", projectile_type=/obj/item/projectile/bullet/shotgun/railgun, icon="kill"),
-		list(mode_name="non-lethal", mode_desc="fires a rubber pellet at light speed", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
+		list(mode_name="Less-lethal", mode_desc="fires a rubber pellet at light speed. Still likely to ruin somones day.", projectile_type=/obj/item/projectile/bullet/shotgun/beanbag/railgun, icon="stun"),
 		list(mode_name="grenade", mode_desc="fires an explosive synth-shell", projectile_type=/obj/item/projectile/bullet/grenade, charge_cost=30000, icon="grenade")
 	)
 	consume_cell = FALSE
 	price_tag = 2250
 	serial_type = "AG"
-	var/overheat_damage = 25
+//	var/overheat_damage = 25
 
 	//Blacklisting now works!
-	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/battery_shunt = TRUE,
-							/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 
 /obj/item/gun/energy/laser/railgun/railrifle/consume_next_projectile(mob/user)
 	if(!cell)
 		return null
+//commented out for now I wont remove the code incase someones willing to fix it. Currently does no damage to the user for overheating. -Benl8561
+/**
 	var/datum/component/heat/H = GetComponent(/datum/component/heat)
 	H.tickHeat()
 	if(H.currentHeat > H.heatThresholdSpecial )
 		to_chat(user, "\The [src] is currently overheating!")
 		handleoverheatreductor()
+**/
 	if(!ispath(projectile_type))
 		return null
 	if(consume_cell && !cell.checked_use(charge_cost))
@@ -189,7 +191,7 @@
 			else
 				consume_cell = TRUE
 				to_chat(user, SPAN_NOTICE("You loosen the safety bolts and overclock the capacitor to unsafe levels, allowing the weapon to destroy empty cells for use as ammunition."))
-
+/**
 /obj/item/gun/energy/laser/railgun/railrifle/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	..()
@@ -217,7 +219,7 @@
 /obj/item/gun/energy/laser/railgun/railrifle/proc/venteventreductor()
 	src.visible_message("\The [src]'s vents open valves atop of the exterior coil mounts, cooling itself down.")
 	playsound(usr.loc, 'sound/weapons/guns/interact/gauss_vent.ogg', 50, 1)
-
+*/
 //Gauss-rifle type, snowflake launcher mixed with rail rifle and hydrogen gun code. Consumes matter-stack and cell charge to fire. - Rebel0
 /obj/item/gun/energy/laser/railgun/gauss
 	name = "\"Bat'ko\" gauss rifle"
@@ -243,6 +245,7 @@
 		list(mode_name="powered-rod", mode_desc="fires a metal rod at incredible speeds", projectile_type=/obj/item/projectile/bullet/gauss, icon="kill"),
 		list(mode_name="fragmented scrap", mode_desc="fires a brittle, sharp piece of scrap-metal", projectile_type=/obj/item/projectile/bullet/grenade/frag, charge_cost=30000, icon="grenade"),
 	)
+	serial_type = "AG"
 	consume_cell = FALSE
 	price_tag = 6000
 

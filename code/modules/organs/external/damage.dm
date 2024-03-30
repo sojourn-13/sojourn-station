@@ -9,25 +9,36 @@
 	var/prev_brute = brute_dam	//We'll record how much damage the limb already had, before we apply the damage from this incoming hit
 	var/prev_burn = burn_dam
 
-	switch(damage_type)
-		if(BRUTE)
-			amount = round(amount * brute_mod, 0.1)
-		if(BURN)
-			amount = round(amount * burn_mod, 0.1)
+	if(owner)
+		switch(damage_type)
+			if(BRUTE)
+				amount = round(amount * owner.species.brute_mod * owner.brute_mod_perk * brute_mod, 0.1)
+			if(BURN)
+				amount = round(amount * owner.species.burn_mod * owner.burn_mod_perk * burn_mod, 0.1)
 
-	// Damage is transferred to internal organs. Chest and head must be broken before transferring unless they're slime limbs.
+	else
+		switch(damage_type)
+			if(BRUTE)
+				amount = round(amount * brute_mod, 0.1)
+			if(BURN)
+				amount = round(amount * burn_mod, 0.1)
+
+
+
+
+
+	// Damage is transferred to internal organs.
 	if(LAZYLEN(internal_organs))
-		var/can_transfer = FALSE	// Only applies to brute and burn
-		if((organ_tag != BP_CHEST && organ_tag != BP_HEAD) || status & ORGAN_BROKEN || cannot_break)
-			can_transfer = TRUE
-		var/obj/item/organ/internal/I = pick(internal_organs)
+	//	var/can_transfer = (brute_dam > (min_broken_damage * ORGAN_HEALTH_MULTIPLIER)) ? TRUE : FALSE	// Only applies to brute and burn
+		var/obj/item/organ/internal/I = pickweight(internal_organs)
+		if((damage_type == BRUTE || damage_type == BURN) && !((status & ORGAN_BROKEN) || cannot_break))
+			I = get_bone()
 		var/transferred_damage_amount
 		switch(damage_type)
 			if(BRUTE)
-				transferred_damage_amount = can_transfer ? (amount - (max_damage - brute_dam) / armor_divisor) / 2 : 0
+				transferred_damage_amount = amount - (max_damage - brute_dam) / max(1, armor_penetration * 0.1) / 2
 			if(BURN)
-				var/damage_divisor = can_transfer ? 2 : 4
-				transferred_damage_amount = (amount - (max_damage - burn_dam) / armor_divisor) / damage_divisor
+				transferred_damage_amount = amount - (max_damage - burn_dam) / max(1, armor_penetration * 0.1) / 2
 			if(HALLOSS)
 				transferred_damage_amount = 0
 			else
@@ -45,8 +56,6 @@
 	// Handle remaining limb damage
 	switch(damage_type)
 		if(BRUTE)
-			if(should_fracture())
-				fracture()
 
 			if(status & ORGAN_BROKEN && prob(40))
 				if(owner && !(owner.species && (owner.species.flags & NO_PAIN)))

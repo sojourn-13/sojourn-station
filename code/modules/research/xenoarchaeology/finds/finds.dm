@@ -37,34 +37,58 @@
 /obj/item/stack/ore/strangerock/New(loc, var/inside_item_type = 0)
 	..(loc)
 
-	//method = rand(0,2)
+	method = rand(0,2)
 	if(inside_item_type)
 		inside = new/obj/item/archaeological_find(src, new_item_type = inside_item_type)
-		if(!inside)
-			inside = locate() in contents
 
 /*/obj/item/stack/ore/strangerock/ex_act(var/severity)
 	if(severity && prob(30))
 		src.visible_message("The [src] crumbles away, leaving some dust and gravel behind.")*/
 
 /obj/item/stack/ore/strangerock/attackby(obj/item/I, mob/user)
-	if(QUALITY_WELDING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_COG))
-			if(!src.method)
-				if(inside)
-					inside.loc = get_turf(src)
+	var/tool_type = I.get_tool_type(user, list(QUALITY_WELDING, QUALITY_DIGGING, QUALITY_EXCAVATION), src)
+	var/turf/T = get_turf(src)
+	switch(tool_type)
+		if(QUALITY_WELDING)
+			if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_COG))
+				if(method == 0)
+					for(var/obj/A in contents)
+						A.forceMove(T)
 					for(var/mob/M in viewers(world.view, user))
-						M.show_message("<span class='info'>[src] burns away revealing [inside].</span>",1)
+						M.show_message("<span class='info'>[src] burns away revealing [inside.name].</span>",1)
 				else
 					for(var/mob/M in viewers(world.view, user))
-						M.show_message("<span class='info'>[src] burns away into nothing.</span>",1)
+						M.show_message("<span class='info'>A few sparks fly off [src], but nothing else happens.</span>",1)
 				qdel(src)
-			else
-				for(var/mob/M in viewers(world.view, user))
-					M.show_message("<span class='info'>A few sparks fly off [src], but nothing else happens.</span>",1)
+				return
+		if(QUALITY_DIGGING)
+			if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_DIGGING, FAILCHANCE_EASY, required_stat = STAT_COG))
+				if(method == 1)
+					for(var/obj/A in contents)
+						A.forceMove(T)
+					for(var/mob/M in viewers(world.view, user))
+						M.show_message("<span class='info'>[src] chips away revealing [inside.name].</span>",1)
+				else
+					for(var/mob/M in viewers(world.view, user))
+						M.show_message("<span class='info'>A plume of dust and dirt scatter around [src], but nothing else happens.</span>",1)
+				qdel(src)
+				return
+		if(QUALITY_EXCAVATION)
+			if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_EXCAVATION, FAILCHANCE_EASY, required_stat = STAT_COG))
+				if(method == 2)
+					for(var/obj/A in contents)
+						A.forceMove(T)
+					for(var/mob/M in viewers(world.view, user))
+						M.show_message("<span class='info'>[src] carefully extracts chunks away revealing [inside.name].</span>",1)
+				else
+					for(var/mob/M in viewers(world.view, user))
+						M.show_message("<span class='info'>A plume of dust and dirt scatter around [src], but nothing else happens.</span>",1)
+				qdel(src)
+				return
+		if(ABORT_CHECK)
 			return
 
-	else if(istype(I,/obj/item/device/core_sampler/))
+	if(istype(I,/obj/item/device/core_sampler/))
 		var/obj/item/device/core_sampler/S = I
 		S.sample_item(src, user)
 		return

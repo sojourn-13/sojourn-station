@@ -134,6 +134,7 @@
 	new /obj/item/device/radio(src)
 	new /obj/item/tool/crowbar(src)
 	new /obj/item/extinguisher/mini(src)
+	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/shoes/reinforced/medical(src)
 	new /obj/item/device/radio/headset/headset_med(src)
 	new /obj/item/taperoll/medical(src)
@@ -189,6 +190,7 @@
 	new /obj/item/circuitboard/sleeper/hyper(src)
 	new /obj/item/oddity/chem_book(src)
 	new /obj/item/storage/hcases/med(src)
+	new /obj/item/clothing/accessory/holster/saber/rapiermed/occupied(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control closet"

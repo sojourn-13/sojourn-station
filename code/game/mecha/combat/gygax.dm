@@ -6,7 +6,7 @@
 	step_in = 2
 	step_energy_drain = 2
 	dir_in = 1 //Facing North.
-	health = 600
+	health = 900
 	deflect_chance = 15
 	damage_absorption = list("brute"=0.75,"fire"=1,"bullet"=0.8,"energy"=0.85,"bomb"=1)
 	armor_level = MECHA_ARMOR_SCOUT
@@ -30,7 +30,7 @@
 	step_in = 3
 	step_energy_drain = 4
 	armor_level = MECHA_ARMOR_LIGHT
-	health = 500
+	health = 750
 	deflect_chance = 10
 	damage_absorption = list("brute"=0.85,"fire"=1,"bullet"=0.9,"energy"=0.95,"bomb"=1)
 	price_tag = 10000
@@ -52,6 +52,8 @@
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/melee_weapon/shockmaul
 	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/ppc
+	ME.attach(src)
 	return
 
 
@@ -61,7 +63,7 @@
 	name = "Dark Gygax"
 	icon_state = "darkgygax"
 	initial_icon = "darkgygax"
-	health = 800
+	health = 1200
 	deflect_chance = 25
 	damage_absorption = list("brute"=0.6,"fire"=0.8,"bullet"=0.6,"energy"=0.65,"bomb"=0.8)
 	max_temperature = 45000

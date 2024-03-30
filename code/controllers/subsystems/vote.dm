@@ -90,7 +90,7 @@ SUBSYSTEM_DEF(vote)
 		return
 	var/data = "<html><head><title>Voting Panel</title></head><body>"
 
-	var/admin = check_rights(R_ADMIN, FALSE, C)
+	var/admin = check_rights(R_ADMIN|R_MOD|R_FUN, FALSE, C)
 
 	voters |= C
 

@@ -28,6 +28,10 @@ LINEN BINS
 	if(!user || user.incapacitated() || !user.Adjacent(A))
 		return
 	if(toggle_fold(user))
+		pixel_x = 0
+		pixel_y = 0
+		pixel_z = 0
+		pixel_w = 0
 		user.drop_item()
 		forceMove(get_turf(A))
 		add_fingerprint(user)

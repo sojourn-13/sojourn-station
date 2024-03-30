@@ -240,6 +240,37 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 	desc = "A red marshal beret signifying a supply specialist position."
 	icon_state = "beret_navy_warden"
 
+/obj/item/clothing/head/rank/janacap //fucking weaboos.
+	name = "marshal officers cap"
+	desc = "A stylish officers cap. Somewhere between a kepi and peaked officer cap, this style is popular amongst enforcement corps in some region of Solarian space."
+	icon_state = "police_cap"
+
+/obj/item/clothing/head/rank/janacap/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Police Cap"] = "police_cap"
+	options["Police Cap, feminine"] = "police_cap_f"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
+//engineering
 /obj/item/clothing/head/rank/engineering
 	name = "adept beret"
 	desc = "A yellow beret signifying a guild adept position."
@@ -474,8 +505,30 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 	icon_state = "navyutility"
 	item_state = "navyutility"
 
+/obj/item/clothing/head/rank/fatigue/tan
+	name = "tan utility cover"
+	desc = "A tan camo cover, fit for a soldier. The markings of a removed patch linger."
+	icon_state = "tanutility"
+	item_state = "tanutility"
+
 /obj/item/clothing/head/rank/divisor
 	name = "divisor cap"
 	desc = "A styled black divisor cap for showing everyone you are so steadfast in the name of god you don't need a helmet."
 	icon_state = "divisor_cap"
 	item_state = "divisor_cap"
+
+//misc stuff.
+
+/obj/item/clothing/head/rank/solfedmed
+	name = "Solarian beret"
+	desc = "an old grey-green beret bearing the markings of the Solar Federations fleet, you can almost make out a caduceus against a near worn-off badge."
+	armor_list = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	icon_state = "beret-grey"
+	item_state = "beret-grey"
+
+/obj/item/clothing/head/rank/solfedrecon
+	name = "green utility cover"
+	desc = "A green camo cover, fit for a soldier. This one appears particularly worn down and bears an illegible patch of what seemed to be the Solar Federations armed forces."
+	armor_list = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	icon_state = "greenutility"
+	item_state = "greenutility"

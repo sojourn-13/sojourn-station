@@ -8,6 +8,10 @@
 	var/inflamed = 0 //Counter, not boolean
 	w_class = ITEM_SIZE_SMALL
 
+	max_damage = IORGAN_SMALL_HEALTH
+	min_bruised_damage = IORGAN_SMALL_BRUISE
+	min_broken_damage = IORGAN_SMALL_BREAK
+
 /obj/item/organ/internal/appendix/update_icon()
 	..()
 	if(inflamed)
@@ -24,7 +28,7 @@
 		if(inflamed > 200)
 			if(prob(3))
 				take_damage(10, BRUTE)
-				owner.emote("me",1,"winces painfully.")
+				owner.custom_emote("me",1,"winces painfully.")
 				owner.adjustHalLoss(1)
 		if(inflamed > 400)
 			if(prob(1))

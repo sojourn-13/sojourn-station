@@ -415,13 +415,15 @@
 	desc = "Omni tool for Engineering borgs and the like has almost everything you need!"
 	icon_state = "engimplant"
 	tool_qualities = list(QUALITY_PRYING = 40,
-						  QUALITY_HAMMERING = 30,
+						  QUALITY_HAMMERING = 45,
 						  QUALITY_BOLT_TURNING = 40,
 						  QUALITY_WIRE_CUTTING = 40,
 						  QUALITY_CUTTING = 150, //So were faster at cutting up boddies
-						  QUALITY_SAWING = 30,
+						  QUALITY_SAWING = 60,
 						  QUALITY_DIGGING = 40,
-						  QUALITY_SCREW_DRIVING = 40)
+						  QUALITY_SCREW_DRIVING = 40,
+						  QUALITY_DRILLING = 60)
+
 	force = WEAPON_FORCE_PAINFUL
 	use_power_cost = 0
 	suitable_cell = null
@@ -507,7 +509,7 @@
 
 /obj/item/tool/crowbar/robotic
 	icon = 'icons/obj/robot_items.dmi'
-	tool_qualities = list(QUALITY_PRYING = 40, QUALITY_HAMMERING = 10) //We can dig but not that fast!
+	tool_qualities = list(QUALITY_PRYING = 40, QUALITY_HAMMERING = 10, QUALITY_DIGGING = 20) //only used on the medical borg and they need burrow digging like the rest!
 	degradation = 0
 
 /obj/item/tool/wrench/robotic
@@ -532,6 +534,7 @@
 /obj/item/tool/weldingtool/robotic
 	icon = 'icons/obj/robot_items.dmi'
 	switched_on_qualities = list(QUALITY_WELDING = 40, QUALITY_CAUTERIZING = 15, QUALITY_WIRE_CUTTING = 15)
+	max_fuel = 40
 	degradation = 0
 
 /obj/item/tool/weldingtool/robotic/weaker

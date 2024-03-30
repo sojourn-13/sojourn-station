@@ -20,6 +20,7 @@
 	var/datum/perk/oddity/perk //This is so we can link a perk into the oddity
 	var/prob_perk = 40 //how likely it is to role a perk - if prek isnt present, out of 100
 	var/min_stats = 1 //The lowest amount it can give when randomizing
+	var/kill_stats = FALSE
 
 
 /obj/item/oddity/Initialize()
@@ -41,7 +42,7 @@
 		if(random_stats)
 			for(var/stat in oddity_stats)
 				oddity_stats[stat] = rand(min_stats, oddity_stats[stat])
-		AddComponent(/datum/component/inspiration, oddity_stats, perk)
+		AddComponent(/datum/component/inspiration, oddity_stats, perk, kill_stats)
 
 /obj/item/oddity/proc/upgraded_oddity_rolling()
 	if(!perk && prob(prob_perk+5))
@@ -50,7 +51,7 @@
 		if(random_stats)
 			for(var/stat in oddity_stats)
 				oddity_stats[stat] = round((oddity_stats[stat] = rand(min_stats, oddity_stats[stat]) * 1.5))
-		AddComponent(/datum/component/inspiration, oddity_stats, perk)
+		AddComponent(/datum/component/inspiration, oddity_stats, perk, kill_stats)
 
 /proc/get_oddity_perk()
 	return pick(subtypesof(/datum/perk/oddity))
@@ -405,6 +406,15 @@
 		STAT_VIG = 4
 	)
 
+/obj/item/oddity/common/mirror/doodle
+	prob_perk = 0
+	perk = PERK_NO_OBSUCATION
+	kill_stats = TRUE
+	min_stats = 16
+	oddity_stats = list(
+		STAT_COG = 18
+	)
+
 /obj/item/oddity/common/lighter
 	name = "rusted lighter"
 	desc = "This zippo lighter is rusted shut. It smells faintly of sulphur and blood."
@@ -428,9 +438,9 @@
 
 /obj/item/oddity/common/book_unholy/closed
 	name = "unholy book"
-	desc = "The writings inside describe some strange rituals whose price is always paid in blood. Some pages have been torn out or smudged to illegibility, \
+	desc = "The writings inside describe some strange rituals wrote in crayons. Some pages have been torn out or smudged to illegibility, \
 			but what little you can make out tells you that \"...to be able to see beyond the veil, the caster will need to be half blind...\". \
-			While this sounds like utter nonsense to you, you have a dreadful feeling that using this book in the runes described would have some sinister effect..."
+			While this may look like utter nonsense to you, the dreadful feeling that using this book in the runes described would have some sinister effect..."
 	icon_state = "book_skull"
 	prob_perk = 80 //Cult around this gives it great power
 	oddity_stats = list(
@@ -472,6 +482,35 @@
 	)
 	price_tag = 2000 //Its a good tie for a collector
 	perk = PERK_SURE_STEP //Insainly rare and ok stats, but really its the perk. In Disco-E this perk would save you so much making this the perfect joke
+
+/obj/item/oddity/rare/moon_fragment
+	name = "Fragment of Moon"
+	desc = "A glowing, white, glass like shard of the Amethyn Moon."
+	icon_state = "moon_fragment"
+	min_stats = 16
+	//Its 1 then done so we give quite a bit
+	oddity_stats = list(
+		STAT_COG = 18,
+		STAT_VIG = 18
+	)
+	price_tag = 2500 //Bluecross spawn
+	prob_perk = 0
+	kill_stats = TRUE
+	perk = PERK_SKILL_CAP_EXPANDING
+
+/obj/item/oddity/rare/drawing_of_sun
+	name = "Drawing of a Unknown Sun"
+	desc = "A drawing of a type of sun no one has ever seen before done in crayon."
+	icon_state = "crayon_sun"
+	min_stats = 3
+	oddity_stats = list(
+		STAT_COG = 1,
+		STAT_VIG = 2
+	)
+	price_tag = 5
+	perk = PERK_SKILL_CAP_ADDITION
+	prob_perk = 0
+	kill_stats = TRUE
 
 //Non-Spawn
 //Odditys that are event only or spawned in on map gen

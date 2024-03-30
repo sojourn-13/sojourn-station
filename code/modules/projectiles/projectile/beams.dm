@@ -32,8 +32,8 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		block_damage(loss, A)
 		A.visible_message(SPAN_WARNING("\The [src] is weakened by the \the [A]!"))
 		playsound(A.loc, 'sound/weapons/shield/shielddissipate.ogg', 50, 1)
-		return 1
-	return 0
+		return FALSE
+	return TRUE
 
 /obj/item/projectile/beam/musket
 	name = "Musket laser"
@@ -189,7 +189,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	var/mob/living/carbon/human/H = M
 	if(ishuman(target))
 		if(istype(target, /mob/living/carbon/))
-			H.apply_effect(30,IRRADIATE)//woop woop ass blast USA woop woop
+			H.apply_effect(20,IRRADIATE)//woop woop ass blast USA woop woop
 	else
 		return 1
 
@@ -210,6 +210,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/stun
 	name = "stun beam"
 	icon_state = "stun"
+	armor_penetration = 0
 	nodamage = 1
 	taser_effect = 1
 	agony = 30

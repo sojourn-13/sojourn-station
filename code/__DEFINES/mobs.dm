@@ -272,6 +272,7 @@
 // Prosthetic helpers.
 #define BP_IS_ORGANIC(org)		(!QDELETED(org) && (org.nature == MODIFICATION_ORGANIC || org.nature == MODIFICATION_SUPERIOR))
 #define BP_IS_ROBOTIC(org)		(!QDELETED(org) && (org.nature == MODIFICATION_SILICON || org.nature == MODIFICATION_LIFELIKE))
+#define BP_IS_SLIME(org)		(!QDELETED(org) && (org.nature == MODIFICATION_SLIME))
 #define BP_IS_PROSTHETIC(org)	(!QDELETED(org) && (org.nature == MODIFICATION_SILICON))
 #define BP_IS_BRITTLE(org)		(!QDELETED(org) && (org.status	& ORGAN_BRITTLE))
 #define BP_IS_CRYSTAL(org)		(!QDELETED(org) && (org.nature	& ORGAN_PROP_CRYSTAL))
@@ -442,7 +443,7 @@
 
 #define ORGAN_HEALTH_MULTIPLIER 1
 #define ORGAN_REGENERATION_MULTIPLIER 0.2
-#define WOUND_BLEED_MULTIPLIER 0.05 //Bleeding wounds drip damage*this units of blood per process tick, this also cheats by doble taking, so higher numbers byond 0.1 are insainly bleedy
+#define WOUND_BLEED_MULTIPLIER 0.035 //Bleeding wounds drip damage*this units of blood per process tick, this also cheats by doble taking, so higher numbers byond 0.1 are insainly bleedy
 #define OPEN_ORGAN_BLEED_AMOUNT 0.5 //Wounds with open, unclamped incisions bleed this many units of blood per process tick
 
 #define HEAT_MOBIGNITE_THRESHOLD 530 //minimum amount of heat an object needs to ignite a mob when it hits the mob

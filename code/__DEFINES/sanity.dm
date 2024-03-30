@@ -1,5 +1,6 @@
-/* Unlike Eris we are using our ollld sanity syatem for drinks, food, and sancks. The reason why is - we have too much fucking food and drinks to sort through.
-Plus it would require me to get taste_tags working. So, for now until someone can be fucked to put the work in to our shit-codebase, it is staying like this. */
+/* Unlike Eris we are using our ollld sanity syatem for drinks, food, and sancks. The reason why is - we have too much fucking food and drinks to sort through.    //CBD said they'll do it manually
+Plus it would require me to get taste_tags working. So, for now until someone can be fucked to put the work in to our shit-codebase, it is staying like this. */  //No we aren't. -v
+/*
 GLOBAL_LIST_EMPTY(sanity_drinks)
 GLOBAL_LIST_EMPTY(sanity_non_alcoholic_drinks)
 GLOBAL_LIST_EMPTY(sanity_foods)
@@ -30,7 +31,7 @@ GLOBAL_LIST_EMPTY(sanity_foods)
 		if(initial(food.cooked))
 			GLOB.sanity_foods += candidate
 	return GLOB.sanity_foods.Copy()
-
+*/
 //We currently don't use style, but might as well leave it defined since it doesn't conflict. Bad system imo - but possibly reworkable.
 //for style
 #define MAX_HUMAN_STYLE 10
@@ -38,7 +39,7 @@ GLOBAL_LIST_EMPTY(sanity_foods)
 #define STYLE_MODIFIER 0.20
 
 
-/* Everything below is Eris' taste-tag defines. Keeping it here for reference incase of future code changes that impliment it.
+// Everything below is Eris' taste-tag defines. Keeping it here for reference incase of future code changes that impliment it.
 
 //for desires
 #define TASTE_SOUR "sour drink"
@@ -52,6 +53,8 @@ GLOBAL_LIST_EMPTY(sanity_foods)
 #define TASTE_SLIMEY "creamy drink"
 #define TASTE_REFRESHING "refreshing drink"
 #define TASTE_DRY "dry drink"
+#define TASTE_PLAIN "bland drink"
+#define TASTE_UMAMI "savoury drink"
 var/global/list/all_taste_drinks = list(TASTE_SOUR,
 								 TASTE_BITTER,
 								 TASTE_SWEET,
@@ -62,6 +65,7 @@ var/global/list/all_taste_drinks = list(TASTE_SOUR,
 								 TASTE_SALTY,
 								 TASTE_SLIMEY, //for dense,creamy, solid stuff
 								 TASTE_REFRESHING,
+								 TASTE_UMAMI, //for any variety of savory drinks like bloody mary, etc.
 								 TASTE_DRY) //for stuff like martinis
 
 #define SWEET_FOOD "sweet food"
@@ -86,6 +90,6 @@ var/global/list/all_types_food = list(SWEET_FOOD,
 									SALTY_FOOD,
 									SPICY_FOOD, // more about well spiced not necessarely HOT spicy
 									FLOURY_FOOD, //baked goods
-									UMAMI_FOOD, //mostly for shrroms but also some fried and other small foods
+									UMAMI_FOOD, //Mushrooms, tomatos, and other savory things that aren't meat.
 									BLAND_FOOD)
-*/
+

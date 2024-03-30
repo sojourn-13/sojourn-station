@@ -1326,6 +1326,9 @@
 			if("Security")
 				icon = 'icons/mob/robot_tall/sec.dmi'
 
+			if("Defense")
+				icon = 'icons/mob/robot_tall/sec.dmi'
+
 			if("Service")
 				icon = 'icons/mob/robot_tall/server.dmi'
 

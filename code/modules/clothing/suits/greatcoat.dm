@@ -85,6 +85,7 @@
 	item_state = "nt_wintercoat"
 	blood_overlay_type = "coat"
 	permeability_coefficient = 0.50
+	stiffness = LIGHT_STIFFNESS
 	armor_list = list( //thicker material so +5 boost (from base 10) to armor values, but lower rad/same bomb since not metal lined. Maybe add in minor slowdown if needed -Dongels
 		melee = 15,
 		bullet = 15,
@@ -222,6 +223,19 @@
 	item_state = "os_overcoat"
 	blood_overlay_type = "coat"
 	armor_list = list(melee = 30, bullet = 10, energy = 25, bomb = 25, bio = 0, rad = 40)
+	body_parts_covered = UPPER_TORSO|ARMS
+	cold_protection = UPPER_TORSO|ARMS
+	min_cold_protection_temperature = T0C - 20
+	siemens_coefficient = 0.7
+	stiffness = LIGHT_STIFFNESS
+
+/obj/item/clothing/suit/greatcoat/os/nova
+	name = "Greyson Star Traders greatcoat"
+	desc = "A thick, heavy coat for workers that really enjoys paperwork."
+	icon_state = "os_overcoat"
+	item_state = "os_overcoat"
+	blood_overlay_type = "coat"
+	armor_list = list(melee = 5, bullet = 5, energy = 15, bomb = 0, bio = 0, rad = 25)
 	body_parts_covered = UPPER_TORSO|ARMS
 	cold_protection = UPPER_TORSO|ARMS
 	min_cold_protection_temperature = T0C - 20

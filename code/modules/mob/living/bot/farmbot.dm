@@ -102,7 +102,7 @@
 	else if(href_list["collect"])
 		collects_produce = !collects_produce
 	else if(href_list["removedead"])
-		removes_dead = !removes_dead	
+		removes_dead = !removes_dead
 	else if(href_list["speakeron"])
 		speaker_on = !speaker_on
 
@@ -228,7 +228,7 @@
 				if(do_after(src, 30, A))
 					visible_message(SPAN_NOTICE("[src] waters \the [A]."))
 					playsound(loc, "robot_talk_heavy", 10, 0, 0)
-					T.reagents.add_reagent("ammonia", 10)
+					T.reagents.add_reagent("eznutrient", 10)
 		attacking = 0
 		action = ""
 		update_icons()

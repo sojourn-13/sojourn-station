@@ -124,6 +124,7 @@
 	var/adj_temp = 0
 	var/targ_temp = 310
 	var/halluci = 0
+	taste_tag = list(TASTE_STRONG)
 	sanity_gain_ingest = 0.5
 	common = TRUE //All alchoholic reagents can be ID'd pretty easily
 
@@ -155,6 +156,7 @@
 	M.adjustNutrition(nutriment_factor * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
 
 	M.add_chemical_effect(CE_ALCOHOL, 1)
+
 
 //Tough people can drink a lot
 	var/tolerance = max(5, strength + (M.stats.getStat(STAT_TGH) * 0.5)) //TGH scaling is 50%
@@ -200,6 +202,9 @@
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
 		H.sanity.onAlcohol(src, effect_multiplier)
+		if(H.frost > 0)
+			H.frost -= 1
+
 
 /datum/reagent/ethanol/touch_obj(var/obj/O)
 	if(istype(O, /obj/item/paper))

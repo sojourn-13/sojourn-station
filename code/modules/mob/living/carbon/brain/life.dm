@@ -11,7 +11,7 @@
 				to_chat(src, "\red STATUS: CRITICAL AMOUNTS OF RADIATION DETECTED.")
 
 		switch(radiation)
-			if(1 to 19)
+			if(10 to 19)
 				radiation--
 				if(prob(50)) //if we're unlucky, we suffer genetic damage
 					adjustCloneLoss(3)

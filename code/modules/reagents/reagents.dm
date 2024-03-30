@@ -41,7 +41,7 @@
 	var/color_weight = 1
 	var/sanity_gain_ingest = 0
 	var/sanity_gain = 0
-
+	var/list/taste_tag = list()
 	var/glass_unique_appearance = FALSE
 
 	var/chilling_point
@@ -57,6 +57,7 @@
 	var/constant_metabolism = FALSE	// if metabolism factor should not change with volume or blood circulation
 
 	var/nerve_system_accumulations = 5 // Nerve system accumulations
+
 
 	// Catalog stuff
 	var/appear_in_default_catalog = TRUE
@@ -101,6 +102,11 @@
 			removed = ingest_met * calculated_buff
 		else
 			removed = (metabolism / 2) * calculated_buff
+		if(consumer.species.always_ingest) //If we bypass the need for a stomach, use 100 (the average efficiency)
+			if(ingest_met)
+				removed = ingest_met * 1
+			else
+				removed = (metabolism / 2) * 1
 	if(touch_met && (location == CHEM_TOUCH))
 		removed = touch_met // This doesn't get a buff , there is no organ that can count for this , really.
 	// on half of overdose, chemicals will start be metabolized faster,
@@ -112,6 +118,11 @@
 				removed = CLAMP(metabolism * volume/(overdose/2) * consumer.get_blood_circulation()/100 * calculated_buff, metabolism * REAGENTS_MIN_EFFECT_MULTIPLIER, metabolism * REAGENTS_MAX_EFFECT_MULTIPLIER)
 			else
 				removed = CLAMP(metabolism * volume/(REAGENTS_OVERDOSE/2) * consumer.get_blood_circulation()/100 * calculated_buff, metabolism * REAGENTS_MIN_EFFECT_MULTIPLIER, metabolism * REAGENTS_MAX_EFFECT_MULTIPLIER)
+			if(consumer.species.always_blood) //If we bypass the need for a stomach, use 100 (the average efficiency)
+				if(overdose)
+					removed = CLAMP(metabolism * volume/(overdose/2) * calculated_buff, metabolism * REAGENTS_MIN_EFFECT_MULTIPLIER, metabolism * REAGENTS_MAX_EFFECT_MULTIPLIER)
+				else
+					removed = CLAMP(metabolism * volume/(REAGENTS_OVERDOSE/2) * calculated_buff, metabolism * REAGENTS_MIN_EFFECT_MULTIPLIER, metabolism * REAGENTS_MAX_EFFECT_MULTIPLIER)
 	removed = max(round(removed, 0.01), 0.01)
 	removed = min(removed, volume)
 
@@ -217,7 +228,7 @@
 	var/wound_path = pick(subtypesof(base_type))
 	var/wound_name = "[name] [wound_descriptor]"
 	I.add_wound(wound_path, wound_name)
-	if(!silent && BP_IS_ORGANIC(I))
+	if(!silent && BP_IS_ORGANIC(I) || BP_IS_SLIME(I))
 		to_chat(user, SPAN_WARNING("You feel a sharp pain in your [I.parent.name]."))
 
 /datum/reagent/proc/initialize_data(var/newdata) // Called when the reagent is created.

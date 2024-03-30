@@ -14,10 +14,10 @@
 #define FORM_CANINE				"Canine"
 #define FORM_SHARK				"Shark"
 #define FORM_LIZARD				"Lizard"
-#define FORM_VULPINE				"Vulpine"
+#define FORM_VULPINE			"Vulpine"
 #define FORM_FENNEC				"Fennec"
-#define FORM_NARAMAD				"Naramad"
-#define FORM_SLIME				"Slime"
+#define FORM_NARAMAD			"Naramad"
+#define FORM_SLIME				"Aulvae"
 #define FORM_AVIAN				"Avian"
 #define FORM_SPIDER				"Arachnoid"
 #define FORM_MARQUA				"Mar'Qua"*/

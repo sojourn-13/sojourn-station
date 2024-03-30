@@ -12,6 +12,7 @@
 	max_shells = 9
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 450
+	gun_parts = null
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.1
 	init_recoil = HANDGUN_RECOIL(0.8)
@@ -181,6 +182,7 @@
 	max_shells = 9
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 700
+	gun_parts = null
 	damage_multiplier = 1.3
 	penetration_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(1.1)

@@ -5,6 +5,7 @@
 #define ERR_NOLICENSE "no license"
 #define ERR_PAUSED "paused"
 #define ERR_NOINSIGHT "no insight"
+#define ERR_WRONG_BUILDTYPE "cant read"
 
 /obj/machinery/autolathe/artist_bench
 	name = "artist's bench"
@@ -280,7 +281,7 @@
 		return
 	flick("[initial(icon_state)]_work", src)
 	working = TRUE
-	if(!do_after(user, 15 * user.stats.getMult(STAT_MEC, STAT_LEVEL_GODLIKE), src))
+	if(!do_after(user, 15 * user.stats.getMult(STAT_MEC, STAT_LEVEL_MASTER), src))
 		error = "Lost artist."
 		working = FALSE
 		return
@@ -368,4 +369,4 @@
 #undef ERR_NOLICENSE
 #undef ERR_PAUSED
 #undef ERR_NOINSIGHT
-
+#undef ERR_WRONG_BUILDTYPE

@@ -622,7 +622,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	if(!wielded)
 		unwielded_recoil = recoil.getRating(RECOIL_ONEHAND)
-
+/*
 	if(unwielded_recoil)
 		switch(recoil.getRating(RECOIL_ONEHAND_LEVEL))
 			if(0.6 to 0.8)
@@ -648,7 +648,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 				to_chat(user, SPAN_WARNING("You have trouble keeping \the [src] on target while carrying it!"))
 			if(1.2 to INFINITY)
 				to_chat(user, SPAN_WARNING("You struggle to keep \the [src] on target while carrying it!"))
-
+*/
 	user.handle_recoil(src, (base_recoil + brace_recoil + unwielded_recoil) * P.recoil)
 
 /obj/item/gun/proc/process_point_blank(var/obj/item/projectile/P, mob/user, atom/target)
@@ -736,6 +736,28 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			playsound(user, fire_sound, 60, 1)
 		if(istype(in_chamber, /obj/item/projectile/plasma/lastertag))
 			user.show_message(SPAN_WARNING("You feel rather silly, trying to commit suicide with a toy."))
+			mouthshoot = FALSE
+			return
+
+	if (istype(in_chamber))
+		user.visible_message(SPAN_WARNING("[user] pulls the trigger."))
+		if(silenced)
+			playsound(user, fire_sound, 10, 1)
+		else
+			playsound(user, fire_sound, 60, 1)
+		if(istype(in_chamber, /obj/item/projectile/bullet/cap))
+			user.show_message(SPAN_WARNING("You feel rather silly, trying to commit suicide with a toy."))
+			mouthshoot = FALSE
+			return
+
+	if (istype(in_chamber))
+		user.visible_message(SPAN_WARNING("[user] pulls the trigger."))
+		if(silenced)
+			playsound(user, fire_sound, 10, 1)
+		else
+			playsound(user, fire_sound, 60, 1)
+		if(istype(in_chamber, /obj/item/projectile/chameleon))
+			user.show_message(SPAN_WARNING("The gun fired but...you feel fine?"))
 			mouthshoot = FALSE
 			return
 
@@ -1104,7 +1126,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/data = list()
 	data["projectile_name"] = P.name
 	data["projectile_damage"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()
-	data["projectile_damage_pve"] = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust() + (P.agony * proj_agony_multiplier)
+	data["projectile_WOUND"] = P.wounding_mult
 	data["projectile_AP"] = P.armor_penetration * penetration_multiplier
 	data["projectile_pain"] = P.agony * proj_agony_multiplier
 	data["projectile_recoil"] = P.recoil

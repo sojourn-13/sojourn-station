@@ -13,9 +13,10 @@
 	active_power_usage = 400
 	var/make_glasswalls_after_creation = FALSE
 
-/obj/machinery/multistructure/bioreactor_part/platform/Initialize(mapload)
+/obj/machinery/multistructure/bioreactor_part/platform/Initialize()
 	. = ..()
 	update_icon()
+
 
 /obj/machinery/multistructure/bioreactor_part/platform/Process()
 	if(!MS)
@@ -33,9 +34,9 @@
 					victim.forceMove(MS_bioreactor.misc_output)
 					continue
 				//if our target has hazard protection, apply damage based on the protection percentage.
-				var/hazard_protection = victim.getarmor(null, "bio")
+				var/hazard_protection = victim.getarmor(null, ARMOR_BIO)
 				var/damage = BIOREACTOR_DAMAGE_PER_TICK - (BIOREACTOR_DAMAGE_PER_TICK * (hazard_protection/100))
-				victim.apply_damage(damage, BRUTE, used_weapon = "Biological")
+				victim.apply_damage(damage, BURN, used_weapon = "Biological")
 				victim.adjustOxyLoss(BIOREACTOR_DAMAGE_PER_TICK / 2)	// Snowflake shit, but we need the mob to die within a reasonable time frame
 
 				if(prob(10))
@@ -53,7 +54,7 @@
 				var/obj/item/target = M
 				//if we found biomatter, let's start processing
 				//it will slowly disappear. Time based at size of object and we manipulate with its alpha (we also check for it)
-				if(MATERIAL_BIOMATTER in target.matter)
+				if((MATERIAL_BIOMATTER in target.matter) && !target.unacidable)
 					target.alpha -= round(100 / target.w_class)
 					var/icon/I = new(target.icon, icon_state = target.icon_state)
 					//we turn this things to degenerate sprite a bit
@@ -96,18 +97,19 @@
 
 //This proc called on object/mob consumption
 /obj/machinery/multistructure/bioreactor_part/platform/proc/consume(atom/movable/object)
-	if(ishuman(object))
+	/*if(ishuman(object))
 		var/mob/living/carbon/human/H = object
 		for(var/obj/item/item in H.contents)
 			//non robotic limbs will be consumed
 			if(istype(item, /obj/item/organ))
 				var/obj/item/organ/organ = item
-				if(istype(organ, /obj/item/organ/external) && (organ.nature == MODIFICATION_ORGANIC || organ.nature == MODIFICATION_SUPERIOR))
+				if(istype(organ, /obj/item/organ/external) && organ.nature == MODIFICATION_ORGANIC)
 					continue
 				var/obj/machinery/multistructure/bioreactor_part/platform/neighbor_platform = pick(MS_bioreactor.platforms)
 				organ.forceMove(get_turf(neighbor_platform))
 				organ.removed()
-				continue
+				continue*/
+
 	qdel(object)
 	//now let's add some dirt to the glass
 	for(var/obj/structure/window/reinforced/bioreactor/glass in loc)
@@ -201,7 +203,7 @@
 
 
 /obj/structure/window/reinforced/bioreactor/update_icon()
-	cut_overlays()
+	overlays.Cut()
 	..()
 	if(contamination_level)
 		var/biomass_alpha = min((50*contamination_level), 255)
@@ -210,7 +212,7 @@
 		biomass.Turn(-40, 40)
 		biomass.Blend(rgb(0, 0, 0, biomass_alpha))
 		default.Blend(biomass, ICON_MULTIPLY)
-		add_overlay(default)
+		overlays += default
 
 
 /obj/structure/window/reinforced/bioreactor/proc/apply_dirt(var/amount)
@@ -220,7 +222,7 @@
 		opacity = FALSE
 	if(contamination_level <= 0)
 		contamination_level = 0
-		opacity = FALSE
+		opacity = TRUE
 	update_icon()
 
 
@@ -233,7 +235,7 @@
 		if(user.loc != loc)
 			to_chat(user, SPAN_WARNING("You need to be inside to clean it up."))
 			return
-		to_chat(user, SPAN_NOTICE("You begin cleaning [src] with your [I]..."))
+		to_chat(user, SPAN_NOTICE("You begin cleaning [src] with [I]..."))
 		if(do_after(user, CLEANING_TIME * contamination_level, src))
 			to_chat(user, SPAN_NOTICE("You clean \the [src]."))
 			toxin_attack(user, 5*contamination_level)

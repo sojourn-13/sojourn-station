@@ -134,13 +134,6 @@
 
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-		if(!H.check_has_mouth())
-			if(target == user)
-				to_chat(user, "Where do you intend to put \the [src]? You don't have a mouth!")
-			else
-				to_chat(user, "Where do you intend to put \the [src]? \The [H] doesn't have a mouth!")
-			return TRUE
-
 		var/obj/item/blocked = H.check_mouth_coverage()
 		if(blocked)
 			to_chat(user, SPAN_WARNING("\The [blocked] is in the way!"))

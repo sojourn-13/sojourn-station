@@ -68,7 +68,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 /obj/machinery/requests_console/New()
 	..()
 
-	announcement.title = "[department] announcement"
+	announcement.title = "[department] Announcement"
 	announcement.newscast = 1
 
 	name = "[department] Requests Console"
@@ -234,3 +234,58 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	announcement.announcer = ""
 	if(mainmenu)
 		screen = RCS_MAINMENU
+
+/obj/machinery/requests_console/preset
+	name = ""
+	department = ""
+	departmentType = ""
+	announcementConsole = 0
+//Todo: presets and mapping for more non-command RCs
+
+/obj/machinery/requests_console/preset/steward
+	name = "Steward Request Console"
+	department = "Steward's Office"
+	departmentType = RC_INFO
+
+/obj/machinery/requests_console/preset/command //General type for command RCs, used in Bridge
+	name = "Control Room Request Console"
+	department = "Control Room"
+	announcementConsole = 1 //Heads can make announcements
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/command/premier
+	name = "Premier Request Console"
+	department = "Premier's Desk"
+
+/obj/machinery/requests_console/preset/command/ceo
+	name = "CEO Request Console"
+	department = "Chief Executive Officer's Desk"
+	departmentType = RC_ASSIST|RC_SUPPLY|RC_INFO //CEO should be able to get supply requests
+
+/obj/machinery/requests_console/preset/command/cbo
+	name = "CBO Request Console"
+	department = "Chief Biological Overseer's Desk"
+
+/obj/machinery/requests_console/preset/command/cro
+	name = "CRO Request Console"
+	department = "Chief Research Overseer's Desk"
+
+/obj/machinery/requests_console/preset/command/bc
+	name = "Commander Request Console"
+	department = "Blackshield Commander's Desk"
+
+/obj/machinery/requests_console/preset/command/wo
+	name = "WO Request Console"
+	department = "Warrant Officer's Desk"
+
+/obj/machinery/requests_console/preset/command/prime
+	name = "Prime Request Console"
+	department = "Prime's Desk"
+
+/obj/machinery/requests_console/preset/command/gm
+	name = "GM Request Console"
+	department = "Guild Master's Desk"
+
+/obj/machinery/requests_console/preset/command/foreman
+	name = "Foreman Request Console"
+	department = "Foreman's Desk"
