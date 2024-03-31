@@ -44,7 +44,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 
 
 #define EAT_COOLDOWN_MESSAGE 15 SECONDS
-#define SANITY_MOB_DISTANCE_ACTIVATION 12
+//used to be 12
+#define SANITY_MOB_DISTANCE_ACTIVATION world.view
 
 /datum/sanity
 	var/flags

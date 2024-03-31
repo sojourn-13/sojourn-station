@@ -172,16 +172,6 @@
 
 	return safepick(possible_locations) //return one at random
 
-// Same as breath but with innecesarry code removed and damage tripled. Environment pressure damage moved here since we handle moles.
-
-/mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/breath as anything)
-	var/breath_pressure = (breath.total_moles*R_IDEAL_GAS_EQUATION*breath.temperature)/BREATH_VOLUME
-	var/breath_required = breath_pressure > 15 && (breath_required_type || breath_poison_type)
-	if(!breath_required) // 15 KPA Minimum
-		return FALSE
-	adjustOxyLoss(breath.gas[breath_required_type] ? 0 : ((((breath.gas[breath_required_type] / breath.total_moles) * breath_pressure) < min_breath_required_type) ? 0 : 6))
-	adjustToxLoss(breath.gas[breath_poison_type] ? 0 : ((((breath.gas[breath_poison_type] / breath.total_moles) * breath_pressure) < min_breath_poison_type) ? 0 : 6))
-
 /mob/living/carbon/superior_animal/handle_environment(datum/gas_mixture/environment as anything)
 	var/pressure = environment.return_pressure()
 	var/enviro_damage = (bodytemperature < min_bodytemperature) || (pressure < min_air_pressure) || (pressure > max_air_pressure)
@@ -238,50 +228,40 @@
 
 /mob/living/carbon/superior_animal/proc/handle_ai()
 
-	if(weakened)
-		return
-
-	if(ckey) //prevents players from having process on a mob theyre controlling
-		return
-
-	if (AI_inactive)
-		return
-
 	objectsInView = null
-
-	//CONSCIOUS UNCONSCIOUS DEAD
 
 	if (!check_AI_act())
 		return
 
-	var/atom/targetted_mob
-	if (target_mob)
-		targetted_mob = (target_mob?.resolve())
-	if (!targetted_mob) //will be false if there is no target_mob or if the resolved value is null
-		loseTarget()
-	else if (!targetted_mob.check_if_alive(TRUE)) //else if because we dont want a runtime
-		loseTarget()
+	if (!AI_inactive)
+		var/atom/targetted_mob
+		if (target_mob)
+			targetted_mob = (target_mob?.resolve())
+		if (!targetted_mob) //will be false if there is no target_mob or if the resolved value is null
+			loseTarget()
+		else if (!targetted_mob.check_if_alive(TRUE)) //else if because we dont want a runtime
+			loseTarget()
 
-	switch(stance)
-		if(HOSTILE_STANCE_IDLE)
-			if (!busy) // if not busy with a special task
-				stop_automated_movement = FALSE
-			if (!targetted_mob)
-				target_mob = WEAKREF(findTarget()) //no target? try to find one
-				targetted_mob = (target_mob?.resolve())
-			if (targetted_mob) // is it still null?
-				stance = HOSTILE_STANCE_ATTACK
+		switch(stance)
+			if(HOSTILE_STANCE_IDLE)
+				if (!busy) // if not busy with a special task
+					stop_automated_movement = FALSE
+				if (!targetted_mob)
+					target_mob = WEAKREF(findTarget()) //no target? try to find one
+					targetted_mob = (target_mob?.resolve())
+				if (targetted_mob) // is it still null?
+					stance = HOSTILE_STANCE_ATTACK
+					handle_hostile_stance(targetted_mob)
+
+			if(HOSTILE_STANCE_ATTACK)
 				handle_hostile_stance(targetted_mob)
 
-		if(HOSTILE_STANCE_ATTACK)
-			handle_hostile_stance(targetted_mob)
-
-		if(HOSTILE_STANCE_ATTACKING)
-			if (delayed == 0) // is our targetting delayed still?
-				delayed = delayed_initial // if not, reset the value
-				handle_attacking_stance(targetted_mob) // and attack
-			else
-				delayed-- // decrement it, we'll check again next tick
+			if(HOSTILE_STANCE_ATTACKING)
+				if (delayed == 0) // is our targetting delayed still?
+					delayed = delayed_initial // if not, reset the value
+					handle_attacking_stance(targetted_mob) // and attack
+				else
+					delayed-- // decrement it, we'll check again next tick
 
 	//random movement
 	if(wander && !stop_automated_movement && !anchored)
@@ -538,35 +518,13 @@
 		return TRUE
 	return FALSE
 
-/mob/living/carbon/superior_animal/handle_chemicals_in_body()
-	if(reagents)
-		chem_effects.Cut()
-		if(touching)
-			touching.metabolize()
-		if(bloodstr)
-			bloodstr.metabolize()
-
-	/*
-	if(light_dam)
-		var/light_amount = 0
-		if(isturf(loc))
-			var/turf/T = loc
-			light_amount = round((T.get_lumcount()*10)-5)
-		if(light_amount > light_dam) //if there's enough light, start dying
-			take_overall_damage(1,1)
-		else //heal in the dark
-			heal_overall_damage(1,1)
-	// nutrition decrease
-	if (hunger_factor && (nutrition > 0) && (stat != DEAD))
-		nutrition = max (0, nutrition - hunger_factor)
-	updatehealth()
-	*/
-
 /mob/living/carbon/superior_animal/Life()
+	. = ..()
+
 	ticks_processed++
-	handle_regular_hud_updates()
-	if(!reagent_immune)
-		handle_chemicals_in_body() //not under ai_inactive, because of shit like blattedin
+	if(client)// Was always calling, but requires client to do anything. So, cull it here.
+		handle_hud_icons()
+		handle_vision()
 
 	// is this optimal? no. do i like this? no. if i could, would i rip it up and make it better? yes.
 	// but this is eriscode. i cant make a clean change on fucking anything. i am so goddamn tired of trying
@@ -575,38 +533,17 @@
 	// MAKE THIS BETTER. we have SO many goddamn superior mobs that this shit NEEDS to be optimal but i am a goddamn
 	// sophmore in college about to get a goddamn job so im pretty tired of workin on this shit.
 	if(!(ticks_processed%3))
-		if (!AI_inactive)
-			handle_status_effects()
-			update_lying_buckled_and_verb_status()
-		if(!never_stimulate_air)
-			var/datum/gas_mixture/environment = loc.return_air_for_internal_lifeform()
-			var/datum/gas_mixture/breath = environment.remove_volume(BREATH_VOLUME)
-			handle_breath(breath)
-			handle_environment(environment) //it should be pretty safe to move this out of ai inactive if this causes problems.
-			if (can_burrow && bad_environment)
-				evacuate()
-			//Fire handling , not passing the whole list because thats unefficient.
-			handle_fire(environment.gas["oxygen"], loc)
 		// this one in particular im very unhappy about. every 3 ticks, if a superior mob is dead to something that doesnt directly apply damage, it dies. i hate this.
 		handle_regular_status_updates() // we should probably still do this even if we're dead or something
 		ticks_processed = 0
 
-	if (!weakened)
-
-		if(!AI_inactive) //we dont need to handle ai if we're disabled
-			handle_ai()
-			//Speaking
-
-			if(speak_chance && prob(speak_chance))
-				visible_emote(emote_see)
-
-			if (following)
-				if (!target_mob) // Are we following someone and not attacking something?
-					if (stat != DEAD)
-						SSmove_manager.move_to(src, following, follow_distance, move_to_delay) // Follow the mob referenced in 'following' and stand almost next to them.
-			else if (!target_mob && last_followed)
-				SSmove_manager.stop_looping(src)
-				last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
+	if(!(stunned||weakened||ckey) && stat != DEAD)
+		handle_ai()
+		if(following && !target_mob && (stat != DEAD || !weakened || !stunned))
+			SSmove_manager.move_to(src, following, follow_distance, move_to_delay)
+	else if (!target_mob && last_followed || (weakened||stunned||ckey)) // Brian Damage
+		SSmove_manager.stop_looping(src)
+		last_followed = null // this exists so we only stop the following once, no need to constantly end our walk
 
 	if(life_cycles_before_sleep)
 		life_cycles_before_sleep--
@@ -617,10 +554,17 @@
 	if(life_cycles_before_scan)
 		life_cycles_before_scan--
 		return FALSE
-	if(check_surrounding_area(viewRange))
-		activate_ai()
-		life_cycles_before_scan = initial(life_cycles_before_scan)/6 //So it doesn't fall asleep just to wake up the next tick
-		return TRUE
+	if(AI_inactive)
+		//for(var/mob/M in oview(src))
+			//if(!(M.stat < DEAD) && M.faction == ("neutral"||"station"||"CEV Eris") && M.faction != faction)// TIME KOMPRESSION
+				//activate_ai()
+				//life_cycles_before_scan = initial(life_cycles_before_scan)/6
+				//return TRUE
+		for(var/obj/mecha/potential_mech in oview(src)) // I hate mech code
+			if(potential_mech.get_mob())
+				activate_ai()
+				life_cycles_before_scan = initial(life_cycles_before_scan)/6
+				return TRUE
 	life_cycles_before_scan = initial(life_cycles_before_scan)
 	return FALSE
 

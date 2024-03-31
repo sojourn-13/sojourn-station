@@ -4,16 +4,21 @@
 
 	. = FALSE
 	..()
+
+	// update the current life tick, can be used to e.g. only do something every 4 ticks
+	life_tick++
+
 	if(config.enable_mob_sleep)
 		if(stat != DEAD && !mind)	// Check for mind so player-driven, nonhuman mobs don't sleep
 			if(life_cycles_before_scan > 0)
 				life_cycles_before_scan--
 			else
-				if(check_surrounding_area(7))
-					activate_ai()
-					life_cycles_before_scan = 29 //So it doesn't fall asleep just to wake up the next tick
-				else
-					life_cycles_before_scan = 240
+				for(var/obj/mecha/potential_mech in oview(src)) // I hate mech code
+					if(potential_mech.get_mob())
+						activate_ai()
+						life_cycles_before_scan = 29 //So it doesn't fall asleep just to wake up the next tick
+					else
+						life_cycles_before_scan = 240
 
 			if(life_cycles_before_sleep)
 				life_cycles_before_sleep--
@@ -22,7 +27,7 @@
 				AI_inactive = TRUE
 
 
-	if((!stasis && !AI_inactive) || ishuman(src)) //god fucking forbid we do this to humanmobs somehow
+	if(!stasis && !(AI_inactive && issuperioranimal(src)) || ishuman(src)) //god fucking forbid we do this to humanmobs somehow
 		if(Life_Check())
 			. = TRUE
 
@@ -48,20 +53,23 @@
 		//Breathing, if applicable
 		handle_breathing()
 
-		//Mutations and radiation
+	///	Question. Why are these three called, when they do absolutely nothing
+		///	??????????????????????????????????????????
+		///	Moved all to human/Life()
+/*		//Mutations and radiation
 		handle_mutations_and_radiation()
-
 		//Blood
-		handle_blood()
-
+		handle_blood() // We already have /mob/living/carbon/human/Life() calling this this. No need to call it here
 		//Random events (vomiting etc)
 		handle_random_events()
-
+*/
 		. = TRUE
 
 	//Handle temperature/pressure differences between body and environment
-	if(environment)
+	if(environment && life_tick%2) // 20 checks a second. Very slight resistance(almost impossible) to avoid dangerous temps
 		handle_environment(environment)
+		if (can_burrow && bad_environment)
+			evacuate()
 
 	//Chemicals in the body
 	handle_chemicals_in_body()
@@ -99,8 +107,19 @@
 	var/datum/gas_mixture/environment = loc.return_air()
 
 	//Handle temperature/pressure differences between body and environment
-	if(environment)
+	if(environment && life_tick%4) // 10 checks a second. Sleepy times
 		handle_environment(environment)
+		if (can_burrow && bad_environment)
+			evacuate()
+
+	update_pulling()
+
+//Called when the environment becomes unlivable, maybe in other situations
+//The mobs will request the nearby burrow to take them away somewhere else
+/mob/living/proc/evacuate()
+	var/obj/structure/burrow/B = find_visible_burrow(src)
+	if (B)
+		B.evacuate()
 
 	update_pulling()
 

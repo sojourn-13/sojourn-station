@@ -316,7 +316,9 @@
 				if(!atmos_suitable)
 					adjustBruteLoss(unsuitable_atoms_damage)
 
-		if(!AI_inactive)
+		if(incapacitated())
+			return TRUE
+		else
 			//Speaking
 			if(!client && speak_chance)
 				if(rand(0,200) < speak_chance)

@@ -307,11 +307,11 @@
 /mob/living/carbon/superior_animal/get_heat_protection(temperature)
 	return heat_protection
 
-/*/mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/breath)
+/mob/living/carbon/superior_animal/handle_breath(datum/gas_mixture/breath)
 	if(status_flags & GODMODE)
 		return
 
-	if (is_dead(src))
+	if (is_dead(src)) return
 
 	failed_last_breath = FALSE
 
@@ -338,7 +338,7 @@
 		if(toxins_pp > min_breath_poison_type)
 			adjustToxLoss(2)
 
-	return TRUE */
+	return TRUE
 
 //Disables roaches/spiders/xenos ect form mess with atmo to prevent lag of that kind
 /mob/living/carbon/superior_animal/handle_post_breath(datum/gas_mixture/breath)
@@ -372,13 +372,6 @@
 	if(on_fire)
 		add_overlay(image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing"))
 */
-
-//The most common cause of an airflow stun is a sudden breach. Evac conditions generally
-/mob/living/carbon/superior_animal/airflow_stun()
-	.=..()
-	if (can_burrow && !stat)
-		evacuate()
-
 
 //Called when the environment becomes unlivable, maybe in other situations
 //The mobs will request the nearby burrow to take them away somewhere else
