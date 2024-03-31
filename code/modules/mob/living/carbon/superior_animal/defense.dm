@@ -373,14 +373,6 @@
 		add_overlay(image("icon"='icons/mob/OnFire.dmi', "icon_state"="Standing"))
 */
 
-//Called when the environment becomes unlivable, maybe in other situations
-//The mobs will request the nearby burrow to take them away somewhere else
-/mob/living/carbon/superior_animal/proc/evacuate()
-	var/obj/structure/burrow/B = find_visible_burrow(src)
-	if (B)
-		B.evacuate()
-
-
 /mob/living/carbon/superior_animal/proc/pick_armor()
 	return
 
