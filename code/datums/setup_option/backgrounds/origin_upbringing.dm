@@ -238,7 +238,7 @@
 /datum/category_item/setup_option/background/bckgrnd/true_data
 	name = "Introspective"
 	desc = "Do to being more in-tune with what you are and whats around you things that were once hidden behind probability or guessing are shown to you as factual odds."
-	perks = list(PERK_NO_OBSUCATION)
+	perks = list(PERK_NO_OBFUSCATION)
 
 	stat_modifiers = list(
 		STAT_VIG = 5,

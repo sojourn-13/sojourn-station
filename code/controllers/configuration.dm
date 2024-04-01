@@ -93,6 +93,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/debugparanoid = 0
 	var/borderControl = 0
 
+	var/bypassObfuscation = 0
 
 	var/language
 	var/serverurl
@@ -309,6 +310,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if ("border_control")
 					config.borderControl = text2num(value)
+
+				if ("bypass_obfuscation")
+					config.bypassObfuscation = 1
 
 				if ("log_admin")
 					config.log_admin = 1
