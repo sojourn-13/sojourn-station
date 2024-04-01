@@ -1,12 +1,12 @@
 /datum/world_topic
 	var/keyword
 	var/log = TRUE
-	var/key_valid
+	var/key_invalid
 	var/require_comms_key = FALSE
 
 /datum/world_topic/proc/TryRun(list/input)
-	key_valid = !config || config.comms_password != input["key"]
-	if(require_comms_key && !key_valid)
+	key_invalid = !config || !istext(config.comms_password) || config.comms_password == "" || config.comms_password != input["key"]
+	if(require_comms_key && key_invalid)
 		return "Bad Key"
 	input -= "key"
 	. = Run(input)
@@ -36,7 +36,7 @@
 	log = FALSE
 
 /datum/world_topic/status/Run(list/input)
-	if(!key_valid) //If we have a key, then it's safe to trust that this isn't a malicious packet. Also prevents the extra info from leaking
+	if(!key_invalid) //If we have a key, then it's safe to trust that this isn't a malicious packet. Also prevents the extra info from leaking
 		if(GLOB.topic_status_lastcache <= world.time)
 			return GLOB.topic_status_cache
 		GLOB.topic_status_lastcache = world.time + 5
@@ -84,7 +84,7 @@
 		s["players"] = n
 		s["admins"] = admins
 
-	if(!key_valid)
+	if(!key_invalid)
 		GLOB.topic_status_cache = .
 	return s
 

@@ -216,20 +216,6 @@
 		rad = 0
 	)
 
-// Regal Outfit (Bluecross Clothing)
-/obj/item/clothing/suit/greatcoat/regaloutfit
-	name = "Regal outfit"
-	desc = "A highly decorated white cloak with golden epaulets over a blue vest and sleek white pants.  It is absolutely stained in blood forevermore."
-	icon_state = "regaloutfit"
-	item_state = "regaloutfit"
-	blood_overlay_type = "coat"
-	armor_list = list(melee = 30, bullet = 10, energy = 25, bomb = 25, bio = 0, rad = 40)
-	body_parts_covered = UPPER_TORSO|ARMS
-	cold_protection = UPPER_TORSO|ARMS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
-	stiffness = LIGHT_STIFFNESS
-
 /obj/item/clothing/suit/greatcoat/os
 	name = "Greyson Positronic greatcoat"
 	desc = "A thick, heavy coat for workers form pipework to welding."

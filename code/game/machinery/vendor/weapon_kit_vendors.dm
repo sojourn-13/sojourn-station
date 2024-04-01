@@ -293,6 +293,7 @@
 	var/items = list(
 					"Counselor Kit" = /obj/item/storage/box/m_kit/taser,
 					"Liberty Kit" = /obj/item/storage/box/m_kit/liberty,
+					"Mistral Kit" = /obj/item/storage/box/m_kit/mistral,
 					"Judiciary Kit" = /obj/item/storage/box/m_kit/judiciary)
 	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
 	if(selection)
