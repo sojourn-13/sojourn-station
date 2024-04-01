@@ -39,7 +39,7 @@ This monster is borderline unkillable and will make players upset
 	attacktext = "toppled"
 	attack_sound = 'sound/weapons/smash.ogg'
 	speak_emote = list("calculates") //Liers
-	emote_see = list("Data found.", "I'm harmless.", "I'm willing to be peaceful.", "I'll pay you to betray your allies!", "bobbles", "emits a plinking sound", "scans", "emits a ping sound", "plays some distorted music")
+	emote_see = list("\"Data found.\"", "\"I'm harmless.\"", "\"I'm willing to be peaceful.\"", "\"I'll pay you to betray your allies!\"", "bobbles", "emits a plinking sound", "scans", "emits a ping sound", "plays some distorted music")
 	speak_chance = 5 //Chatty
 
 	//Little slow, we shoot not melee basically
@@ -92,11 +92,12 @@ This monster is borderline unkillable and will make players upset
 	var/dieing = FALSE
 	var/turrets_can_build = FALSE
 	var/walls_to_make = 3
-	var/turrets_to_make = 2
+	var/turrets_to_make = 5
 	var/marked_for_death = FALSE
 	var/allow_teleporters = TRUE
 	var/returning_fire = FALSE
 	var/damage_cap_devider = 1
+	var/loaded_rocket = FALSE
 
 	allowed_stat_modifiers = list()
 
@@ -136,17 +137,20 @@ This monster is borderline unkillable and will make players upset
 		armor = list(melee = 35, bullet = 35, energy = 35, bomb = 70, bio = 100, rad = 100) //We are now in self-defence mode
 		projectiletype = /obj/item/projectile/beam/shotgun/strong
 		damage_cap_devider = 5
+		able_to_build = TRUE
 
 	if(data_count >= 4000)
 		turrets_can_build = TRUE
 		armor = list(melee = 15, bullet = 15, energy = 15, bomb = 15, bio = 100, rad = 100)
 		emp_damage = FALSE
 		damage_cap_devider += 2
+		able_to_build = TRUE
 		return
 
 	if(data_count >= 3500)
 		armor = list(melee = 5, bullet = 5, energy = 5, bomb = 5, bio = 100, rad = 100)
 		emp_damage = FALSE
+		able_to_build = TRUE
 		return
 
 	if(data_count >= 3000)
@@ -160,8 +164,8 @@ This monster is borderline unkillable and will make players upset
 		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_408
 		rapid = FALSE
 		armor = list(melee = 3, bullet = 3, energy = 3, bomb = 3, bio = 100, rad = 100)
-		able_to_build = TRUE
 		returning_fire = TRUE
+		able_to_build = TRUE
 		return
 
 	if(data_count >= 2000)
@@ -197,6 +201,7 @@ This monster is borderline unkillable and will make players upset
 		projectiletype = /obj/item/projectile/beam/weak/rifle_75
 		rapid = TRUE
 		armor = list(melee = 3, bullet = 3, energy = 3, bomb = 3, bio = 100, rad = 100)
+		able_to_build = TRUE
 		return
 
 	if(data_count >= 1500)
@@ -207,22 +212,32 @@ This monster is borderline unkillable and will make players upset
 		ranged_cooldown = 4 //Yikes
 		projectiletype = /obj/item/projectile/beam/weak/rifle_75
 		rapid = FALSE
+		able_to_build = TRUE
 		armor = list(melee = -1, bullet = -1, energy = -1, bomb = -1, bio = 100, rad = 100) //Starting wise we are less then armorless
 		return
 
 	if(data_count >= 1000)
 		projectiletype = /obj/item/projectile/beam/weak/light_rifle_257
 		armor = list(melee = -1, bullet = -1, energy = -1, bomb = -1, bio = 100, rad = 100) //Starting wise we are less then armorless
+		able_to_build = TRUE
 		return
 
 	if(data_count >= 500)
 		projectiletype = /obj/item/projectile/beam/weak/magnum_40
+		able_to_build = TRUE
 		return
 
 	if(data_count >= 100)
 		projectiletype = /obj/item/projectile/beam/weak/pistol_35
 		rapid = TRUE
+		able_to_build = TRUE
 		return
+	return
+
+/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/give_data(number)
+	data_count += number
+	handled_mode()
+	return
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/updatehealth()
 	set_sight(sight|SEE_TURFS|SEE_MOBS|SEE_OBJS) //wall hacks
@@ -237,10 +252,14 @@ This monster is borderline unkillable and will make players upset
 			data_count += 4000 //We REALLY disliked that
 			kcorp_moduals -= 1
 			damage_cap_devider += 1
+			loaded_rocket = TRUE
 		else
 			death()
 	handled_mode()
 	try_n_build()
+	if(prob(0.5))
+		call_folks(1)
+	return
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/adjustBruteLoss(amount)
 	if(amount >= (1000 / damage_cap_devider))
@@ -251,6 +270,8 @@ This monster is borderline unkillable and will make players upset
 				to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbital Beacon Shield Successfully Deployed. Data Collected.</font></b>")
 				message_admins("<b><font color='#ffaa00'>Administration Being Data Collected.</font></b>")
 		return
+	if(prob(0.5))
+		call_folks(1)
 
 	..()
 	data_count += (amount*0.5)
@@ -264,7 +285,8 @@ This monster is borderline unkillable and will make players upset
 				to_chat(world,"<b><font color='#ffaa00'>Lesser Being Orbital Beacon Shield Successfully Deployed. Data Collected.</font></b>")
 				message_admins("<b><font color='#ffaa00'>Administration Being Data Collected.</font></b>")
 		return
-
+	if(prob(0.5))
+		call_folks(1)
 	..()
 	data_count += (amount*0.5)
 
@@ -285,26 +307,40 @@ This monster is borderline unkillable and will make players upset
 				return		// Don't shoot other turrets
 		if(prob(data_count*0.01))
 			projectiletype = /obj/item/projectile/tether
+			call_folks(2)
 		if(prob(data_count*0.001))
 			projectiletype = /obj/item/projectile/bullet/c10x24
+			call_folks(3)
+		if(loaded_rocket)
+			projectiletype = /obj/item/projectile/bullet/gyro
+			call_folks(4)
+			loaded_rocket = FALSE
 		rapid = FALSE
 		OpenFire(proj_start_turf)
 		handled_mode()
 
+	if(prob(0.5))
+		call_folks(1)
 
 	..()
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/emp_act(severity)
 	data_count += rand(-100, 500)
+	call_folks(5)
+	turrets_can_build += 1
 	if(data_count >= 3000)
 		to_chat(src,"<b><font color='#ffaa00'>Data Star EMP Shielding Deployed Successfully. Data Collected.</font></b>")
+		loaded_rocket = TRUE
 		return
 	..()
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/ex_act(severity)
 	data_count += rand(80, 100)
+	call_folks(2)
+	turrets_can_build += 1
 	if(data_count >= 1000)
 		to_chat(src,"<b><font color='#ffaa00'>Data Star Bomb Shielding Deployed Successfully. Data Collected.</font></b>")
+		loaded_rocket = TRUE
 		return
 	..()
 
@@ -317,13 +353,57 @@ This monster is borderline unkillable and will make players upset
 		new /obj/structure/grille(src.loc)
 	if(prob(3))
 		new /obj/random/mob/roomba/any(src.loc) //This could be a clean bot or a phazon, RnG!
-	if(turrets_can_build && turrets_to_make > 0)
-		if(prob(0.01*data_count))
-			turrets_to_make -= 1
-			new /obj/random/turret/os(src.loc)
+	if(prob(0.001*data_count) && turrets_can_build)
+		try_n_build_turret()
+
+	return
+
+/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/try_n_build_turret()
+	var/list/validtargets = list()	//list of valid tiles build the turret in
+	var/target = FALSE
+
+	for(var/turf/simulated/floor/T in oview(2, src))
+		validtargets += T							//Add them to the list
+	target = pick(validtargets)						//Now we pick a target
+
+	if(turrets_to_make > 0 && target)
+		turrets_to_make -= 1
+		new /obj/random/turret/os(target)
+
+
+	return
+
+/mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/proc/call_folks(amount = 1)
+	if(!able_to_build)
+		return
+
+	if(!istype(loc, /turf/simulated/floor))
+		return
+
+	var/list/validtargets = list()
+	var/target = FALSE
+
+	for(var/turf/simulated/floor/T in oview(3, src))
+		validtargets += T
+	target = pick(validtargets)
+
+	if(!target)
+		return
+
+	to_chat(src,"<b><font color='#ffaa00'>Data Star Backup Successfully Deployed x [amount]. Data Collected.</font></b>")
+
+
+	var/spawned = 0
+	for(spawned, amount>=spawned, spawned++)
+		target = pick(validtargets)
+		bluespace_entropy(0.5, get_turf(src), TRUE)
+		new /obj/random/mob/roomba/combat_class(target)
+
+	return
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/handle_stunned()
 	if(data_count >= 1200 && stunned)
+		turrets_can_build += 1
 		SetParalysis(0)
 		SetStunned(0)
 		SetWeakened(0)
@@ -336,6 +416,7 @@ This monster is borderline unkillable and will make players upset
 
 /mob/living/carbon/superior_animal/robot/greyson/true_boss_data_star/handle_weakened()
 	if(data_count >= 1200 && weakened)
+		turrets_can_build += 1
 		SetParalysis(0)
 		SetStunned(0)
 		SetWeakened(0)
