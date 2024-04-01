@@ -56,7 +56,7 @@
 		to_chat(usr, SPAN_WARNING("Your biological understanding isn't enough to use this."))
 		return
 
-	if(user.stats?.getPerk(PERK_NO_OBSUCATION) || user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
+	if(user.stats?.getPerk(PERK_NO_OBFUSCATION) || user.stats?.getPerk(PERK_ADVANCED_MEDICAL))
 		exsact_stats = TRUE
 
 
