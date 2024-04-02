@@ -134,21 +134,21 @@ This monster is borderline unkillable and will make players upset
 		delay_for_rapid_range = 0.3 SECONDS
 		delay_for_melee = 0 SECONDS
 		delay_for_all = 0.1 SECONDS
-		armor = list(melee = 35, bullet = 35, energy = 35, bomb = 70, bio = 100, rad = 100) //We are now in self-defence mode
+		armor = list(melee = 50, bullet = 50, energy = 50, bomb = 90, bio = 100, rad = 100) //We are now in self-defence mode
 		projectiletype = /obj/item/projectile/beam/shotgun/strong
-		damage_cap_devider = 5
+		damage_cap_devider = 10
 		able_to_build = TRUE
 
 	if(data_count >= 4000)
 		turrets_can_build = TRUE
-		armor = list(melee = 15, bullet = 15, energy = 15, bomb = 15, bio = 100, rad = 100)
+		armor = list(melee = 35, bullet = 35, energy = 35, bomb = 35, bio = 100, rad = 100)
 		emp_damage = FALSE
-		damage_cap_devider += 2
+		damage_cap_devider = 5
 		able_to_build = TRUE
 		return
 
 	if(data_count >= 3500)
-		armor = list(melee = 5, bullet = 5, energy = 5, bomb = 5, bio = 100, rad = 100)
+		armor = list(melee = 25, bullet = 25, energy = 25, bomb = 25, bio = 100, rad = 100)
 		emp_damage = FALSE
 		able_to_build = TRUE
 		return
@@ -163,7 +163,7 @@ This monster is borderline unkillable and will make players upset
 		comfy_range = 12
 		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_408
 		rapid = FALSE
-		armor = list(melee = 3, bullet = 3, energy = 3, bomb = 3, bio = 100, rad = 100)
+		armor = list(melee = 20, bullet = 20, energy = 20, bomb = 20, bio = 100, rad = 100)
 		returning_fire = TRUE
 		able_to_build = TRUE
 		return
@@ -176,7 +176,7 @@ This monster is borderline unkillable and will make players upset
 		ranged_cooldown = 3
 		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_408
 		rapid = FALSE
-		armor = list(melee = 3, bullet = 3, energy = 3, bomb = 3, bio = 100, rad = 100)
+		armor = list(melee = 15, bullet = 15, energy = 15, bomb = 15, bio = 100, rad = 100)
 		able_to_build = TRUE
 		return
 
@@ -188,7 +188,7 @@ This monster is borderline unkillable and will make players upset
 		ranged_cooldown = 3
 		projectiletype = /obj/item/projectile/beam/weak/rifle_75
 		rapid = TRUE
-		armor = list(melee = 3, bullet = 3, energy = 3, bomb = 3, bio = 100, rad = 100)
+		armor = list(melee = 10, bullet = 10, energy = 10, bomb = 10, bio = 100, rad = 100)
 		able_to_build = TRUE
 		return
 
@@ -295,7 +295,7 @@ This monster is borderline unkillable and will make players upset
 	if(gp_questionmark || proj.allow_greyson_mods)
 		data_count += 120
 		if(prob(15))
-			to_chat(src,"<b><font color='#ffaa00'>Anti-Traitor Successfully Deployed, Data Collected.</font></b>")
+			visible_message("<b><font color='#ffaa00'>Anti-Traitor Successfully Deployed, Data Collected.</font></b>")
 		return PROJECTILE_FORCE_MISS
 
 
@@ -311,6 +311,7 @@ This monster is borderline unkillable and will make players upset
 		if(prob(data_count*0.001))
 			projectiletype = /obj/item/projectile/bullet/c10x24
 			call_folks(3)
+			turrets_to_make += 1
 		if(loaded_rocket)
 			projectiletype = /obj/item/projectile/bullet/gyro
 			call_folks(4)
@@ -329,7 +330,7 @@ This monster is borderline unkillable and will make players upset
 	call_folks(5)
 	turrets_can_build += 1
 	if(data_count >= 3000)
-		to_chat(src,"<b><font color='#ffaa00'>Data Star EMP Shielding Deployed Successfully. Data Collected.</font></b>")
+		visible_message("<b><font color='#ffaa00'>Data Star EMP Shielding Deployed Successfully. Data Collected.</font></b>")
 		loaded_rocket = TRUE
 		return
 	..()
@@ -339,7 +340,7 @@ This monster is borderline unkillable and will make players upset
 	call_folks(2)
 	turrets_can_build += 1
 	if(data_count >= 1000)
-		to_chat(src,"<b><font color='#ffaa00'>Data Star Bomb Shielding Deployed Successfully. Data Collected.</font></b>")
+		visible_message("<b><font color='#ffaa00'>Data Star Bomb Shielding Deployed Successfully. Data Collected.</font></b>")
 		loaded_rocket = TRUE
 		return
 	..()
@@ -390,7 +391,7 @@ This monster is borderline unkillable and will make players upset
 	if(!target)
 		return
 
-	to_chat(src,"<b><font color='#ffaa00'>Data Star Backup Successfully Deployed x [amount]. Data Collected.</font></b>")
+	visible_message("<b><font color='#ffaa00'>Data Star Backup Successfully Deployed x [amount]. Data Collected.</font></b>")
 
 
 	var/spawned = 0
@@ -408,7 +409,7 @@ This monster is borderline unkillable and will make players upset
 		SetStunned(0)
 		SetWeakened(0)
 		SetDrowsyness(0)
-		to_chat(src,"<b><font color='#ffaa00'>Data Star Anti-Mobility Countermeasures Deployed Successfully. Data Collected.</font></b>")
+		visible_message("<b><font color='#ffaa00'>Data Star Anti-Mobility Countermeasures Deployed Successfully. Data Collected.</font></b>")
 		return
 	else
 		data_count += 50 //We REALLY dislike being stunned
@@ -421,7 +422,7 @@ This monster is borderline unkillable and will make players upset
 		SetStunned(0)
 		SetWeakened(0)
 		SetDrowsyness(0)
-		to_chat(src,"<b><font color='#ffaa00'>Data Star Anti-Mobility Countermeasures Deployed Successfully. Data Collected.</font></b>")
+		visible_message("<b><font color='#ffaa00'>Data Star Anti-Mobility Countermeasures Deployed Successfully. Data Collected.</font></b>")
 		return
 	else
 		data_count += 50 //We REALLY dislike being weakened
@@ -489,7 +490,7 @@ This monster is borderline unkillable and will make players upset
 		if (I_GRAB)
 			M.Weaken(3)
 			visible_message(SPAN_WARNING("\red [src] breaks the grapple and melts [M] with a laser beam!"))
-			to_chat(src,"<b><font color='#ffaa00'>Anti-Grapple Targeting Successful, Data Collected.</font></b>")
+			visible_message("<b><font color='#ffaa00'>Anti-Grapple Targeting Successful, Data Collected.</font></b>")
 			M.adjustFireLoss(20)
 			return 1
 	..()
