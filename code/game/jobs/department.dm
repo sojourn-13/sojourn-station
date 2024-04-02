@@ -126,12 +126,17 @@
 	id = DEPARTMENT_PROSPECTOR
 	//With only the Foreman currently being paid, after 8 hours, it totals to 4800 of payment, leaving an ample 1700 left.
 	account_initial_balance = 6500 //With how Prospectors no longer get paid, they no longer need such an inflated department balance
-	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro")
+	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro","/datm/job/fence")
 
 /datum/department/independent
 	name = "Independent Allied Factions"
 	id = DEPARTMENT_INDEPENDENT
-	jobs_in_department = list("/datum/job/off_colony_hunt_master","/datum/job/off_colony_hunter","/datum/job/off_colony_herbalist","/datum/job/outsider","/datum/job/assistant","/datum/job/foreigner")
+	jobs_in_department = list("/datum/job/outsider","/datum/job/assistant","/datum/job/foreigner")
+
+/datum/department/lodge
+	name = "Lodge"
+	id = DEPARTMENT_LODGE
+	jobs_in_department = list("/datum/job/off_colony_hunt_master","/datum/job/off_colony_hunter","/datum/job/off_colony_herbalist")
 
 /datum/department/greyson_positronic
 	name = "Greyson Positronic"

@@ -4,11 +4,12 @@
 	icon_state = "bioprinter"
 	unsuitable_materials = list()
 	build_type = AUTOLATHE | BIOPRINTER
+	code_dex = "MECHFAB"
 	storage_capacity = 480
 	speed = 11
 	have_recycling = TRUE
 	queue_max = 16 //Might be 8 in game do to wires
-	mat_efficiency = 0.5
+	mat_efficiency = 0.75 //T3.5
 
 /obj/machinery/autolathe/bioprinter/attackby(obj/item/I, mob/user)
 	//hacky way to forbid deconstruction but use ..()
@@ -26,7 +27,6 @@
 	..()
 	speed = initial(speed)
 	mat_efficiency = initial(mat_efficiency)
-
 
 /obj/machinery/autolathe/bioprinter/disk
 	default_disk = /obj/item/computer_hardware/hard_drive/portable/design/nt/basic_utility

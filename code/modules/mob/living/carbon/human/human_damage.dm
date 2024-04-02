@@ -93,7 +93,6 @@
 
 
 /mob/living/carbon/human/adjustBruteLoss(var/amount)
-	amount = amount*species.brute_mod*src.brute_mod_perk
 	if(amount > 0)
 		take_overall_damage(amount, 0)
 	else
@@ -101,7 +100,6 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 /mob/living/carbon/human/adjustFireLoss(var/amount)
-	amount = amount*species.burn_mod*src.burn_mod_perk
 	if(amount > 0)
 		take_overall_damage(0, amount)
 	else
@@ -109,7 +107,6 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 /mob/living/carbon/human/proc/adjustBruteLossByPart(var/amount, var/organ_name, var/obj/damage_source = null)
-	amount = amount*species.brute_mod*src.brute_mod_perk
 	if (organ_name in organs_by_name)
 		var/obj/item/organ/external/O = get_organ(organ_name)
 
@@ -122,7 +119,6 @@
 	BITSET(hud_updateflag, HEALTH_HUD)
 
 /mob/living/carbon/human/proc/adjustFireLossByPart(var/amount, var/organ_name, var/obj/damage_source = null)
-	amount = amount*species.burn_mod*src.burn_mod_perk
 	if (organ_name in organs_by_name)
 		var/obj/item/organ/external/O = get_organ(organ_name)
 
@@ -355,7 +351,7 @@ This function restores all organs.
 		if(damagetype == PSY)
 			sanity.onPsyDamage(damage)
 			var/obj/item/organ/brain = random_organ_by_process(BP_BRAIN)
-			brain.take_damage(damage, PSY, armor_divisor, wounding_multiplier)
+			brain.take_damage(damage, PSY, (armor_penetration * 0.1), wounding_multiplier)
 			return TRUE
 
 		if(damagetype == TOX && stats.getPerk(PERK_BLOOD_OF_LEAD))
@@ -364,12 +360,12 @@ This function restores all organs.
 		. = ..(damage, damagetype, def_zone)
 	else	//Handle BRUTE and BURN damage
 		handle_suit_punctures(damagetype, damage, def_zone)
-
-		switch(damagetype)
-			if(BRUTE)
-				damage = damage*species.brute_mod
-			if(BURN)
-				damage = damage*species.burn_mod
+		//We're moving these calculations to organ/external/take_damage for ease of maintenance.
+		// switch(damagetype)
+		// 	if(BRUTE)
+		// 		damage = (damage*species.brute_mod)*src.brute_mod_perk
+		// 	if(BURN)
+		// 		damage = (damage*species.burn_mod)*src.burn_mod_perk
 
 	var/obj/item/organ/external/organ = null
 	if(isorgan(def_zone))
@@ -382,7 +378,7 @@ This function restores all organs.
 		return FALSE
 
 	damageoverlaytemp = 20
-	if(organ.take_damage(damage, damagetype, armor_divisor, wounding_multiplier, sharp, edge, used_weapon))
+	if(organ.take_damage(damage, damagetype, (armor_penetration * 0.1), wounding_multiplier, sharp, edge, used_weapon))
 		UpdateDamageIcon()
 
 	sanity.onDamage(damage)

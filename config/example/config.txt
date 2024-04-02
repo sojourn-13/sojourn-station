@@ -371,3 +371,5 @@ IPR_MINIMUM_AGE 5
 # Enable/disable 'panic bunker' (prevents new players from joining if they've never been seen before in the DB)
 #PANIC_BUNKER
 
+# Disable stat obfuscation. (Gives all humans NO_OBFUSCATION perk)
+#BYPASS_OBFUSCATION

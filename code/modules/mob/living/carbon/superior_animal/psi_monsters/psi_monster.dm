@@ -101,6 +101,8 @@
 	var/steal_amount = 1
 	var/mob/living/Victim = null
 
+	var/can_leave = FALSE
+
 
 /mob/living/carbon/superior_animal/psi_monster/New()
 	..()

@@ -20,7 +20,7 @@
 	name = "Inspiring Presence"
 	desc = "You know just what to say to people and are able to inspire the best - or even worst - in others. \
 			People around you regain their sanity quicker."
-	icon_state = "inspiration"
+	icon_state = "inspiringpresence"
 
 /datum/perk/oddity/inspiring/assign(mob/living/carbon/human/H)
 	if(..())

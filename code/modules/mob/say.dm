@@ -35,7 +35,7 @@
 
 	set_typing_indicator(TRUE)
 	hud_typing = TRUE
-	var/message = input("", "me (text)") as text|null
+	var/message = input("", "me (text)") as message|null
 	hud_typing = FALSE
 	set_typing_indicator(FALSE)
 	if(message)

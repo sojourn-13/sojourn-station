@@ -311,6 +311,7 @@
 /area/nadezhda/outside/scave
 	name = "Spider Cave"
 	icon_state = "erisgreen"
+	dynamic_lighting = TRUE
 
 /area/nadezhda/outside/forest
 	name = "Forest"
@@ -400,7 +401,11 @@
 	sound_env = MOUNTAINS
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 
+/area/nadezhda/outside/inside_colony/east
+	name = "Colony Meadow - East"
 
+/area/nadezhda/outside/inside_colony/west
+	name = "Colony Meadow - West"
 /area/nadezhda/outside/mountainsolars
 	name = "Mountain Solars"
 	icon_state = "meadow"
@@ -1351,6 +1356,12 @@ area/nadezhda/medical/medbaymeeting
 	icon_state = "security"
 	dynamic_lighting = FALSE
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
+
+/area/nadezhda/security/maingate/east
+	name = "\improper Security - Eastern Perimeter"
+
+/area/nadezhda/security/maingate/west
+	name = "\improper Security - Western Perimeter"
 
 /area/nadezhda/security/checkpoint/supply
 	name = "Security Post - Cargo Bay"

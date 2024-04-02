@@ -383,6 +383,51 @@
 	brightness_on = 4
 	light_overlay = "corpsmanfullhelm_light"
 
+/obj/item/clothing/head/helmet/ballistic/militia/full/co
+	name = "blackshield Commanders full helm"
+	desc = "Advanced military gear. This full-faced variant of the common ballistic helmet comes with high-end materials making it both lighter and \
+	more durable."
+	icon_state = "bs_fullhelm_co"
+	item_state = "bs_fullhelm_co"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	obscuration = LIGHT_OBSCURATION
+	action_button_name = "Toggle Headlamp"
+	brightness_on = 5
+	light_overlay = "bsfullhelm_light"
+	armor_list = list(melee = 35, bullet = 50, energy = 40, bomb = 50, bio = 0, rad = 0)
+
+/obj/item/clothing/head/helmet/ballistic/militia/full/co/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Standard fullhelm"] = ""
+	options["Tan fullhelm"] = "_tan"
+	options["Green fullhelm"] = "_green"
+	options["Grey hooded fullhelm"] = "_gp"
+	options["Green hooeded fullhelm"] = "_grp"
+	options["Tan hooded fullhelm"] = "_tp"
+	options["Camo hooded fullhelm"] = "_cp"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You adjust to the [choice].")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 //Marshals
 /obj/item/clothing/head/helmet/marshal
 	name = "marshal helmet"
@@ -734,7 +779,7 @@
 	armor_list = list(melee = 30, bullet = 30, energy = 30, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
-	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 5, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 3, MATERIAL_GOLD = 2)
 
 /obj/item/clothing/head/helmet/rosaria/verb/toggle_style()
 	set name = "Adjust Style"
@@ -1190,6 +1235,7 @@
 	icon_state = "ablative"
 	armor_list = list(melee = 30, bullet = 30, energy = 75, bomb = 50, bio = 10, rad = 0)
 	flags_inv = HIDEEARS|HIDEEYES
+	body_parts_covered = HEAD|EYES|EARS
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.5
@@ -1326,8 +1372,8 @@
 	desc = "A bulletproof security helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. \
 			Comes with inbuilt nightvision HUD."
 	icon_state = "bulletproof_ironhammer"
-	body_parts_covered = HEAD | EARS
-	flags_inv = NONE
+	body_parts_covered = HEAD|FACE|EARS
+	flags_inv = HIDEEARS
 	action_button_name = "Toggle Night Vision"
 	var/obj/item/clothing/glasses/powered/nightvision_helmet/hud
 	var/last_toggle = 0

@@ -12,7 +12,7 @@
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
 	projectile_type = /obj/item/projectile/beam/pulse/heavy
-	charge_cost = 6000 //1 heavy shot of this with most basic cells. Titanic but with bigger stats basiclly
+	charge_cost = 2000 //8 heavy shots of this with with a large posi. Damage per cell of a Titanic but trading number of shots for per shot damage basiclly
 	fire_delay = 36 //Upgrades will make this fire way faster making it something you have to modife more then once to get a real bang out of it
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_SILVER = 10)
 	twohanded = TRUE

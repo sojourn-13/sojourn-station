@@ -77,12 +77,13 @@
 	..()
 
 //Green
+/* //should be replaced with something/reworked some day but I've no ideas.
 /datum/chemical_reaction/slime/mutate
 	result = "mutationtoxin"
 	required_reagents = list("plasma" = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/green
-
+*/
 //
 /datum/chemical_reaction/slime/mutate_clear
 	result = null
@@ -442,6 +443,7 @@
 	P.loc = get_turf(holder.my_atom)
 
 //Black
+/* //should be replaced with something/reworked some day but I've no ideas.
 /datum/chemical_reaction/slime/mutate2
 	result = "amutationtoxin"
 	required_reagents = list("plasma" = 1)
@@ -474,7 +476,7 @@
 	"green" = 1)
 	S.set_mutation(pickweight(colors))
 	..()
-
+*/
 //Oil
 /datum/chemical_reaction/slime/explosion
 	result = null

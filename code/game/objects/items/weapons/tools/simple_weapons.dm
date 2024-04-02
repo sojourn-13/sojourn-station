@@ -157,6 +157,7 @@
 	desc = "A sharp and curved blade on a long fiber-metal handle, this tool makes it easy to reap what you sow."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "scythe0"
+	item_state = "scythe0"
 	matter = list(MATERIAL_PLASTEEL = 7, MATERIAL_PLASTIC = 3)
 	sharp = TRUE
 	edge = TRUE
@@ -431,7 +432,7 @@
 	desc = "A long, thin bladed sword with a weaponized destructive analyzer integrated into the blade. At the moment of its victim's death it is able to deconstruct them and wirelessly transmit data to internal research database."
 	icon = 'icons/obj/weapons-blades.dmi'
 	icon_state = "rapier_cro" //Sprite by Gidgit
-	item_state = "saber"
+	item_state = "rapiersci"
 	force = WEAPON_FORCE_PAINFUL - 5 //10 base
 	armor_penetration = ARMOR_PEN_MODERATE
 	price_tag = 1600
@@ -479,7 +480,7 @@
 	desc = "A long, thin bladed sword with a hollow chamber in the blade. A mechanical release mechanism allows the wielder to inject targets with fluid from a reservoir in the grip."
 	icon = 'icons/obj/weapons-blades.dmi' //Sprite by Gidgit
 	icon_state = "rapier_cbo"
-	item_state = "saber"
+	item_state = "rapiermed"
 	force = WEAPON_FORCE_PAINFUL - 5 //10 base
 	armor_penetration = ARMOR_PEN_MODERATE
 	price_tag = 1600
