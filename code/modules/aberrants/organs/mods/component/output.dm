@@ -99,9 +99,10 @@
 			if(is_input_valid && index <= LAZYLEN(possible_outputs))
 				var/input_multiplier = input[i]
 				var/datum/reagent/output = possible_outputs[index]
-				var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
-				RM.add_reagent(initial(output.id), amount_to_add)
-				triggered = TRUE
+				if(RM.get_reagent_amount(initial(output.id)) < 5)
+					var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
+					RM.add_reagent(initial(output.id), amount_to_add)
+					triggered = TRUE
 
 	if(triggered)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
