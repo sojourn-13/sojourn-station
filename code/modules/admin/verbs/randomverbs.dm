@@ -2,7 +2,7 @@
 	set category = null
 	set name = "Drop Everything"
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 
 	var/confirm = alert(src, "Make [M] drop everything?", "Message", "Yes", "No")
@@ -24,7 +24,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_subtle_message, R_FUN, FALSE)
 
 	if(!ismob(M))	return
 	if (!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 
 	var/msg = sanitize(input("Message:", text("Subtle PM to [M.key]")) as text)
@@ -34,7 +34,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_subtle_message, R_FUN, FALSE)
 	if(usr)
 		if (usr.client)
 			if(usr.client.holder)
-				to_chat(M, "\bold You hear a voice in your head... \italic [msg]")
+				to_chat(M, "\bold Ты слышишь голос в своей голове... \italic [msg]")
 
 	log_admin("SubtlePM: [key_name(usr)] -> [key_name(M)] : [msg]")
 	message_admins("\blue \bold SubtleMessage: [key_name_admin(usr)] -> [key_name_admin(M)] : [msg]", 1)
@@ -66,7 +66,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_direct_narrate, R_ADMIN, FALSE)
 	set name = "Direct Narrate"
 
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 
 	if(!M)
@@ -89,7 +89,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_direct_narrate, R_ADMIN, FALSE)
 	set category = "Special Verbs"
 	set name = "Godmode"
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	M.status_flags ^= GODMODE
 	to_chat(usr, "\blue Toggled [(M.status_flags & GODMODE) ? "ON" : "OFF"]")
@@ -153,7 +153,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_add_random_ai_law, R_FUN, FALSE)
 	set category = "Fun"
 	set name = "Add Random AI Law"
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	var/confirm = alert(src, "You sure?", "Confirm", "Yes", "No")
 	if(confirm != "Yes") return
@@ -204,7 +204,7 @@ ADMIN_VERB_ADD(/client/proc/allow_character_respawn, R_ADMIN, FALSE)
 	set name = "Allow player to respawn"
 	set desc = "Let's the player bypass the 30 minute wait to respawn or allow them to re-enter their corpse."
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 	var/list/ghosts= get_ghosts(1,1)
 
 	var/target = input("Please, select a ghost!", "COME BACK TO LIFE!", null, null) as null|anything in ghosts
@@ -250,7 +250,7 @@ ADMIN_VERB_ADD(/client/proc/toggle_antagHUD_use, R_ADMIN, FALSE)
 	set desc = "Toggles antagHUD usage for observers"
 
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 	var/action=""
 	if(config.antag_hud_allowed)
 		for(var/mob/observer/ghost/g in get_ghosts())
@@ -283,7 +283,7 @@ ADMIN_VERB_ADD(/client/proc/toggle_antagHUD_restrictions, R_ADMIN, FALSE)
 	set name = "Toggle antagHUD Restrictions"
 	set desc = "Restricts players that have used antagHUD from being able to join this round."
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 	var/action=""
 	if(config.antag_hud_restricted)
 		for(var/mob/observer/ghost/g in get_ghosts())
@@ -311,7 +311,7 @@ ADMIN_VERB_ADD(/client/proc/spawn_character, R_ADMIN, FALSE)
 	set name = "Spawn Character"
 	set desc = "(Re)Spawn a client's loaded character."
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 
 	//I frontload all the questions so we don't have a half-done process while you're reading.
@@ -480,7 +480,7 @@ ADMIN_VERB_ADD(/client/proc/respawn_character, R_ADMIN, FALSE)
 	set name = "Respawn Character"
 	set desc = "Respawn a person that has been gibbed/dusted/killed. They must be a ghost for this to work and preferably should not have a body to go back into."
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	var/input = ckey(input(src, "Please specify which key will be respawned.", "Key", ""))
 	if(!input)
@@ -587,7 +587,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_add_freeform_ai_law, R_FUN, FALSE)
 	set category = "Fun"
 	set name = "Add Custom AI law"
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	var/input = sanitize(input(usr, "Please enter anything you want the AI to do. Anything. Serious.", "What?", "") as text|null)
 	if(!input)
@@ -616,7 +616,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_rejuvenate, R_ADMIN|R_MOD, FALSE)
 	set category = "Special Verbs"
 	set name = "Rejuvenate"
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	if(!mob)
 		return
@@ -633,7 +633,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_create_centcom_report, R_FUN, FALSE)
 	set category = "Special Verbs"
 	set name = "Create Command Report"
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	var/input = sanitize(input(usr, "Please enter anything you want. Anything. Serious.", "What?", "") as message|null, extra = 0)
 	var/customname = sanitizeSafe(input(usr, "Pick a title for the report.", "Title") as text|null)
@@ -663,7 +663,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_delete, R_ADMIN|R_SERVER|R_DEBUG, FALSE)
 	set name = "Delete"
 
 	if (!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 
 	if (alert(src, "Are you sure you want to delete:\n[O]\nat ([O.x], [O.y], [O.z])?", "Confirmation", "Yes", "No") == "Yes")
@@ -678,7 +678,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_list_open_jobs, R_ADMIN|R_DEBUG, FALSE)
 	set name = "List free slots"
 
 	if (!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	for(var/datum/job/job in SSjob.occupations)
 		to_chat(src, "[job.title]: [job.total_positions]")
@@ -775,7 +775,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_gib_self, R_FUN, FALSE)
 	set name = "Manual Ban"
 	set category = "Special Verbs"
 	if(!authenticated || !holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 	var/mob/M = null
 	switch(alert("How would you like to ban someone today?", "Manual Ban", "Key List", "Enter Manually", "Cancel"))
@@ -848,7 +848,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_check_contents, R_ADMIN, FALSE)
 	set category = "Debug"
 	set name = "Stabilize Atmos."
 	if(!holder)
-		to_chat(src, "Only administrators may use this command.")
+		to_chat(src, "Эту команду могут использовать только администраторы.")
 		return
 
 // DEFERRED

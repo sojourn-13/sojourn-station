@@ -346,8 +346,8 @@
 	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
 
 	var/dat = "<html><meta charset=\"UTF-8\"><body><center>"
-	dat += "<b>Welcome, [name].<br></b>"
-	dat += "Round Duration: [roundduration2text()]<br>"
+	dat += "<b>Добро пожаловать, [name].<br></b>"
+	dat += "Длительность Раунда: [roundduration2text()]<br>"
 
 	if(evacuation_controller.has_evacuated()) //In case Nanotrasen decides reposess CentCom's shuttles.
 		dat += "<font color='red'><b>The vessel has been evacuated.</b></font><br>"
@@ -357,7 +357,7 @@
 		else                                           // Crew transfer initiated
 			dat += "<font color='red'>The vessel is currently undergoing crew transfer procedures.</font><br>"
 
-	dat += "Choose from the following open/valid positions:<br>"
+	dat += "Выберите одну из доступных ролей:<br>"
 	for(var/datum/job/job in SSjob.occupations)
 		if(job && IsJobAvailable(job.title))
 			if(job.is_restricted(client.prefs))
@@ -370,6 +370,44 @@
 
 	dat += "</center>"
 	src << browse(dat, "window=latechoices;size=400x640;can_close=1")
+
+
+
+
+
+
+
+
+
+
+// /mob/new_player/proc/LateChoices()
+// 	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
+
+// 	var/dat = "<html><meta charset=\"UTF-8\"><body><center>"
+// 	dat += "<b>Welcome, [name].<br></b>"
+// 	dat += "Round Duration: [roundduration2text()]<br>"
+
+// 	if(evacuation_controller.has_evacuated()) //In case Nanotrasen decides reposess CentCom's shuttles.
+// 		dat += "<font color='red'><b>The vessel has been evacuated.</b></font><br>"
+// 	else if(evacuation_controller.is_evacuating())
+// 		if(evacuation_controller.emergency_evacuation) // Emergency shuttle is past the point of no recall
+// 			dat += "<font color='red'>The vessel is currently undergoing evacuation procedures.</font><br>"
+// 		else                                           // Crew transfer initiated
+// 			dat += "<font color='red'>The vessel is currently undergoing crew transfer procedures.</font><br>"
+
+// 	dat += "Choose from the following open/valid positions:<br>"
+// 	for(var/datum/job/job in SSjob.occupations)
+// 		if(job && IsJobAvailable(job.title))
+// 			if(job.is_restricted(client.prefs))
+// 				continue
+// 			var/active = 0
+// 			// Only players with the job assigned and AFK for less than 10 minutes count as active
+// 			for(var/mob/M in GLOB.player_list) if(M.mind && M.client && M.mind.assigned_role == job.title && M.client.inactivity <= 10 * 60 * 10)
+// 				active++
+// 			dat += "<a href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions]) (Active: [active])</a><br>"
+
+// 	dat += "</center>"
+// 	src << browse(dat, "window=latechoices;size=400x640;can_close=1")
 
 
 /mob/new_player/proc/create_character()
