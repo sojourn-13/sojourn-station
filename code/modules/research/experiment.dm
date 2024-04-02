@@ -316,6 +316,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	if(0 >= calculated_research_points)
 		autosay("Detected explosion with power level [power], Expected explosion was [targetBoom]. Test Results Outside Expected Range", name ,"Science")
 	targetBoom = rand(10,35)
+	autosay("Next expected power level is [targetBoom]", name ,"Science")
 
 // Universal tool to get research points from autopsy reports, virus info reports, archeology reports, slime cores
 /obj/item/device/science_tool
