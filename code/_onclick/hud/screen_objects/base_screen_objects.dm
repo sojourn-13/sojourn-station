@@ -139,8 +139,8 @@
 	name = "actionA"
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "actionA"
-	screen_loc = "8,1:13"
-	var/minloc = "7,2:13"
+	screen_loc = "11,1:13"
+	var/minloc = "10,2:13"
 	layer = ABOVE_HUD_LAYER
 	plane = ABOVE_HUD_PLANE
 
@@ -163,19 +163,19 @@
 
 /obj/screen/item_action/top_bar/A
 	icon_state = "actionA"
-	screen_loc = "8,1:13"
+	screen_loc = "11,1:13"
 
 /obj/screen/item_action/top_bar/B
 	icon_state = "actionB"
-	screen_loc = "8,1:13"
+	screen_loc = "11,1:13"
 
 /obj/screen/item_action/top_bar/C
 	icon_state = "actionC"
-	screen_loc = "9,1:13"
+	screen_loc = "12,1:13"
 
 /obj/screen/item_action/top_bar/D
 	icon_state = "actionD"
-	screen_loc = "9,1:13"
+	screen_loc = "12,1:13"
 
 
 //-----------------------------------------------ITEM ACTION END---------------------------------------------------------

@@ -130,13 +130,13 @@
 	"rest"               = list("type" = /obj/screen/rest,              "loc" = "EAST,BOTTOM+1",      "minloc" = "RIGHT-1,2",    "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
 	"move intent"        = list("type" = /obj/screen/mov_intent,        "loc" = "EAST,BOTTOM",        "minloc" = "RIGHT-1,1",    "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
 	"implant bionics"    = list("type" = /obj/screen/implant_bionics,   "loc" = "EAST-2,BOTTOM-1",    "minloc" = "12,1",         "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
-	"craft menu"         = list("type" = /obj/screen/craft_menu,        "loc" = "EAST-2:16,BOTTOM",   "minloc" = "12:16,1",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
-	"wield"              = list("type" = /obj/screen/wield,             "loc" = "EAST-2:16,BOTTOM+1", "minloc" = "12:16,2",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
-	"intent"             = list("type" = /obj/screen/intent,            "loc" = "EAST-1,BOTTOM",      "minloc" = "13,1",         "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
+	"craft menu"         = list("type" = /obj/screen/craft_menu,        "loc" = "EAST-2:16,BOTTOM",   "minloc" = "17.5,1",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
+	"wield"              = list("type" = /obj/screen/wield,             "loc" = "EAST-2:16,BOTTOM+1", "minloc" = "17.5,2",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
+	"intent"             = list("type" = /obj/screen/intent,            "loc" = "EAST-1,BOTTOM",      "minloc" = "18,1",         "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
 	"damage zone"        = list("type" = /obj/screen/zone_sel,          "loc" = "EAST+1,BOTTOM",      "minloc" = "RIGHT,1",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
 //hand buttons
-	"equip"              = list("type" = /obj/screen/equip,             "loc" = "8,1",                "minloc" = "7,2",          "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back14-l"),
-	"swap hand"          = list("type" = /obj/screen/swap,              "loc" = "8,1",                "minloc" = "7,2",          "hideflag" = TOGGLE_BOTTOM_FLAG),
+	"equip"              = list("type" = /obj/screen/equip,             "loc" = "11,1",                "minloc" = "10,2",          "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back14-l"),
+	"swap hand"          = list("type" = /obj/screen/swap,              "loc" = "11,1",                "minloc" = "10,2",          "hideflag" = TOGGLE_BOTTOM_FLAG),
 	"right arm bionics"  = list("type" = /obj/screen/bionics/r_arm,     "loc" = "7:19,1",             "minloc" = "6:20,2",       "background" = "back16"),
 	"left arm bionics"   = list("type" = /obj/screen/bionics/l_arm,     "loc" = "10,1",               "minloc" = "9:-1,2",       "background" = "back16"),
 
@@ -157,11 +157,11 @@
 		"Suit Storage" = list("loc" = "4,0", "minloc" = "3,1",        "state" = "suit-belt","hideflag" = TOGGLE_BOTTOM_FLAG,   "background" = "back1"),
 		"Back" =         list("loc" = "7,0", "minloc" = "6,1",        "state" = "back",    "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
 		"ID" =           list("loc" = "5,0", "minloc" = "4,1",        "state" = "id",      "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
-		"Left Pocket" =     list("loc" = "10,0", "minloc" = "9,1",    "state" = "pocket_l","hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
-		"Right Pocket" =     list("loc" = "11,0", "minloc" = "10,1",  "state" = "pocket_r","hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
+		"Left Pocket" =     list("loc" = "14,0", "minloc" = "12,1",    "state" = "pocket_l","hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
+		"Right Pocket" =     list("loc" = "15,0", "minloc" = "13,1",  "state" = "pocket_r","hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
 		"Belt" =         list("loc" = "6,0", "minloc" = "5,1",        "state" = "belt",    "hideflag" = TOGGLE_BOTTOM_FLAG,    "background" = "back1"),
-		"Left Hand" =       list("loc" = "9,0", "minloc" = "8,1",     "state" = "hand-l",  "hideflag" = TOGGLE_BOTTOM_FLAG, "type" = /obj/screen/inventory/hand, "background" = "back1"),
-		"Right Hand" =       list("loc" = "8,0", "minloc" = "7,1",    "state" = "hand-r",  "hideflag" = TOGGLE_BOTTOM_FLAG, "type" = /obj/screen/inventory/hand, "background" = "back1")
+		"Left Hand" =       list("loc" = "12,0", "minloc" = "11,1",     "state" = "hand-l",  "hideflag" = TOGGLE_BOTTOM_FLAG, "type" = /obj/screen/inventory/hand, "background" = "back1"),
+		"Right Hand" =       list("loc" = "11,0", "minloc" = "10,1",    "state" = "hand-r",  "hideflag" = TOGGLE_BOTTOM_FLAG, "type" = /obj/screen/inventory/hand, "background" = "back1")
 		)
 
 	HUDfrippery = list(
@@ -176,11 +176,11 @@
 		list("loc" = "5,1", "icon_state" = "frame1-2",  "hideflag" = TOGGLE_INVENTORY_FLAG),
 		list("loc" = "5,2", "icon_state" = "frame1-6",  "hideflag" = TOGGLE_INVENTORY_FLAG),
 		list("loc" = "5,3", "icon_state" = "frame1-4", "hideflag" = TOGGLE_INVENTORY_FLAG),
-		list("loc" = "8,1:13", "icon_state" = "frame1-8", "hideflag" = TOGGLE_BOTTOM_FLAG),
-		list("loc" = "9,1:13", "icon_state" = "frame1-1", "hideflag" = TOGGLE_BOTTOM_FLAG),
-		list("loc" = "12,0", "icon_state" = "frame3-2", "hideflag" = TOGGLE_BOTTOM_FLAG),
-		list("loc" = "12,0", "icon_state" = "frame0-2", "hideflag" = TOGGLE_BOTTOM_FLAG),
-		list("loc" = "12,0", "icon_state" = "frame0-3", "hideflag" = TOGGLE_BOTTOM_FLAG),
+		list("loc" = "11,1:13", "icon_state" = "frame1-8", "hideflag" = TOGGLE_BOTTOM_FLAG), //swap bar 1
+		list("loc" = "12,1:13", "icon_state" = "frame1-1", "hideflag" = TOGGLE_BOTTOM_FLAG),//swap bar 2
+		list("loc" = "13,0", "icon_state" = "frame3-2", "hideflag" = TOGGLE_BOTTOM_FLAG),  //pocket bar
+		list("loc" = "13,0", "icon_state" = "frame0-2", "hideflag" = TOGGLE_BOTTOM_FLAG), //pocket bracket
+		list("loc" = "13,0", "icon_state" = "frame0-3", "hideflag" = TOGGLE_BOTTOM_FLAG),//swap bar 2
 		list("loc" = "EAST+1,BOTTOM+2:25", "icon_state" = "frame1-1"),
 		list("loc" = "EAST+1,BOTTOM+2:25", "icon_state" = "frame3-3"),
 		list("loc" = "EAST+1,BOTTOM+2:25", "icon_state" = "frame0-4"),

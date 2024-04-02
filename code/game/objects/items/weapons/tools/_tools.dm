@@ -1205,8 +1205,8 @@
 
 /obj/screen/item_action/top_bar/tool_info
 	icon = 'icons/mob/screen/gun_actions.dmi'
-	screen_loc = "8,1:13"
-	minloc = "7,2:13"
+	screen_loc = "11,1:13"
+	minloc = "10,2:13"
 	name = "Tool information"
 	icon_state = "info"
 

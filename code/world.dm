@@ -14,7 +14,7 @@
 	mob = /mob/new_player
 	turf = /turf/space
 	area = /area/space
-	view = "15x15"
+	view = "20x15"  //test
 	hub = "Exadv1.spacestation13"
 	cache_lifespan = 0	//stops player uploaded stuff from being kept in the rsc past the current session
 	fps = 20
