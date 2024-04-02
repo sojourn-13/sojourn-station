@@ -15,7 +15,7 @@
 
 /obj/item/clothing/head/rank/captain
 	name = "premier's hat"
-	icon_state = "captain"
+	icon_state = "captain"  //Sprites from Eris
 	desc = "It's good being the king."
 	item_state_slots = list(
 		slot_l_hand_str = "caphat",
@@ -23,16 +23,31 @@
 		)
 	body_parts_covered = 0
 
-/obj/item/clothing/head/rank/captain/cap
-	name = "premier's cap"
-	desc = "You fear to wear it for the negligence it brings."
-	icon_state = "capcap"
+/obj/item/clothing/head/rank/captain/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
+	if(!isliving(loc))
+		return
 
-/obj/item/clothing/head/rank/captain/formal
-	name = "parade hat"
-	desc = "No one in a commanding position should be without a perfect, white hat of ultimate authority."
-	icon_state = "officercap"
+	var/mob/M = usr
+	var/list/options = list()
+	options["Premier's Hat"] = "captain"
+	options["Premier's old Hat"] = "captain-old"
+	options["Premier's Cap"] = "capcap"
+	options["Parade Hat"] = "officercap"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 
 //HOP
 /obj/item/clothing/head/rank/first_officer
@@ -53,12 +68,71 @@
 	desc = "Useful for hiding disdainful eyes from the godless masses."
 	icon_state = "church_hat"
 
+/obj/item/clothing/head/preacher/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Primes hat"] = "church_hat"
+	options["Primes visor"] = "nt_visor"
+	options["Primes trihat"] = "nt_trihat" //credit to Près de l'oiseau on Eris for all of these!
+	options["Primes visored trihat"] = "nt_trihat_visor"
+	options["Primes mitre"] = "nt_papalhat"
+	options["Primes visored mitre"] = "nt_papalhat_visor"
+	options["Primes illuminant mitre"] = "nt_papalhat_illuminati"
+	options["Primes visored habit"] = "nt_habithat_visor"
+	options["Primes masked habit"] = "nt_habithat_mask"
+	options["Primes hood"] = "nt_robe_hood"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 //Mime
 /obj/item/clothing/head/beret
 	name = "red beret"
 	desc = "A formidable red beret."
 	icon_state = "beret"
 	body_parts_covered = 0
+
+obj/item/clothing/head/beret/syndicate
+	name = "syndicate beret"
+	desc = "A stylish and comfortable beret, popular amongst members of the Xanoranth syndicate and their many clients."
+	icon_state = "syndberet"
+
+obj/item/clothing/head/beret/syndicate/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Xanoranth Beret"] = "syndberet" //credits to Eris for the sprite
+	options["Xanoranth Beret alt"] = "syndberet2" //credits to Eris for the sprite
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/clothing/head/beret/artist
 	name = "Feathered Beret"
@@ -128,7 +202,7 @@
 //Security
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"
-	desc = "A navy blue marshal beret."
+	desc = "A stylish beret, this one has markings of the Marshals."
 	icon_state = "policeberet"
 
 /obj/item/clothing/head/rank/commander
@@ -166,6 +240,37 @@
 	desc = "A red marshal beret signifying a supply specialist position."
 	icon_state = "beret_navy_warden"
 
+/obj/item/clothing/head/rank/janacap //fucking weaboos.
+	name = "marshal officers cap"
+	desc = "A stylish officers cap. Somewhere between a kepi and peaked officer cap, this style is popular amongst enforcement corps in some region of Solarian space."
+	icon_state = "police_cap"
+
+/obj/item/clothing/head/rank/janacap/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Police Cap"] = "police_cap"
+	options["Police Cap, feminine"] = "police_cap_f"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+
+//engineering
 /obj/item/clothing/head/rank/engineering
 	name = "adept beret"
 	desc = "A yellow beret signifying a guild adept position."
@@ -357,6 +462,7 @@
 	options["BC Beret"] = "beret_militia"
 	options["BC Cap"] = "commander_cap"
 	options["BC Default"] = "hoshat"
+	options["Campaign Cover"] = "instructor"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -368,11 +474,6 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
-
-/obj/item/clothing/head/rank/instructor_hat
-	name = "campaign cover"
-	desc = "Mama, mama, can't you see what this Corps has done to me?"
-	icon_state = "instructor"
 
 /obj/item/clothing/head/rank/commanderdress
 	name = "Blackshield command cover"
@@ -404,8 +505,30 @@
 	icon_state = "navyutility"
 	item_state = "navyutility"
 
+/obj/item/clothing/head/rank/fatigue/tan
+	name = "tan utility cover"
+	desc = "A tan camo cover, fit for a soldier. The markings of a removed patch linger."
+	icon_state = "tanutility"
+	item_state = "tanutility"
+
 /obj/item/clothing/head/rank/divisor
 	name = "divisor cap"
 	desc = "A styled black divisor cap for showing everyone you are so steadfast in the name of god you don't need a helmet."
 	icon_state = "divisor_cap"
 	item_state = "divisor_cap"
+
+//misc stuff.
+
+/obj/item/clothing/head/rank/solfedmed
+	name = "Solarian beret"
+	desc = "an old grey-green beret bearing the markings of the Solar Federations fleet, you can almost make out a caduceus against a near worn-off badge."
+	armor_list = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	icon_state = "beret-grey"
+	item_state = "beret-grey"
+
+/obj/item/clothing/head/rank/solfedrecon
+	name = "green utility cover"
+	desc = "A green camo cover, fit for a soldier. This one appears particularly worn down and bears an illegible patch of what seemed to be the Solar Federations armed forces."
+	armor_list = list(melee = 10, bullet = 0, energy = 10, bomb = 0, bio = 0, rad = 0)
+	icon_state = "greenutility"
+	item_state = "greenutility"

@@ -155,7 +155,7 @@
 /datum/design/research/item/scalpel_laser
 	name = "Laser Scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting while instantly searing bleeding cuts through laser cauterization."
-	build_path = /obj/item/tool/scalpel/laser
+	build_path = /obj/item/tool/scalpel/laser/si
 	category = CAT_TOOLS
 
 /datum/design/research/item/scalpel_adv
@@ -195,7 +195,7 @@
 /datum/design/research/item/medsaw_circular
 	name = "Medical Circular Saw"
 	desc = "For clean bone cutting, but doesn't seem all that durable. Spins slower than the normal saw to allow for higher surgical precision."
-	build_path = /obj/item/tool/saw/circular/medical
+	build_path = /obj/item/tool/saw/circular/medical/si
 	category = CAT_TOOLS
 
 /datum/design/research/item/medical/nanopaste
@@ -205,8 +205,8 @@
 	chemicals = list("nanites" = 5)
 
 /datum/design/research/item/bonegel
-	name = "Bone Gel"
-	desc = "A gel-like calcium composite used as a surgical substitute for broken or missing bone pieces."
+	name = "Super Bone Gel"
+	desc = "An improved gel-like calcium composite formula used as a surgical substitute for broken or missing bone pieces."
 	build_path = /obj/item/tool/tape_roll/bonegel/si
 	materials = list(MATERIAL_PLASTIC = 10)
 	category = CAT_TOOLS

@@ -31,7 +31,7 @@
 	build_path = /obj/item/gun_upgrade/muzzle/silencer
 
 /datum/design/autolathe/sec/acog
-	name = "acog scope"
+	name = "AGOG scope"
 	build_path = /obj/item/gun_upgrade/scope/acog
 	materials = list(MATERIAL_GLASS = 4, MATERIAL_STEEL = 2) // Double materials, prevents obtaining more than used.
 
@@ -57,7 +57,7 @@
 	build_path = /obj/item/tool/baton/mini
 
 /datum/design/autolathe/sec/auto_eject_mod
-	name = "H&S \"Dropper\" Magwell Braker"
+	name = "H&S \"Dropper\" Magwell Breaker"
 	build_path = /obj/item/gun_upgrade/magwell/auto_eject
 
 //Shields

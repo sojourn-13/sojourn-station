@@ -30,12 +30,13 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND_NOLOSS,
-		FULL_AUTO_300_NOLOSS
+		FULL_AUTO_600_NOLOSS
 		)
 	serial_type = "SA"
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.3 // Heavy smg , 30 vig to insta wield
+	gun_parts = list(/obj/item/part/gun = 2, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/magnum = 1)
 
 /obj/item/gun/projectile/automatic/vector/update_icon()
 	..()

@@ -6,8 +6,8 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/kraftwerk
 	meat_amount = 3
 	turns_per_move = 1
-	maxHealth = 35
-	health = 35
+	maxHealth = 30
+	health = 30
 
 	knockdown_odds = 3
 	melee_damage_lower = 1

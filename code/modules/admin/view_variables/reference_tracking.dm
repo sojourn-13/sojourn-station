@@ -1,3 +1,6 @@
+/*
+
+This was moved to garbage.dm keeping this here tho for history logging
 #ifdef REFERENCE_TRACKING
 
 /datum/proc/find_references(skip_alert)
@@ -82,7 +85,7 @@
 	CHECK_TICK
 	#endif
 
-	if(istype(potential_container, /datum))
+	if(isdatum(potential_container))
 		var/datum/datum_container = potential_container
 		if(datum_container.last_find_references == search_time)
 			return
@@ -155,3 +158,4 @@
 	qdel(src, force)
 
 #endif
+*/

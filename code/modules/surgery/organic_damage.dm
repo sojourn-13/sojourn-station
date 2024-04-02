@@ -3,9 +3,9 @@
 /datum/surgery_step/fix_organ
 	target_organ_type = /obj/item/organ/internal
 	allowed_tools = list(
-		/obj/item/stack/medical/advanced/bruise_pack = 100,
+		/obj/item/stack/medical/bruise_pack/advanced = 100,
 		/obj/item/stack/medical/bruise_pack = 20,
-		/obj/item/stack/medical/advanced/bruise_pack/mending_ichor = 100,
+		/obj/item/stack/medical/bruise_pack/advanced/mending_ichor = 100,
 	)
 	requires_perk = TRUE
 	duration = 80
@@ -15,11 +15,11 @@
 
 /datum/surgery_step/fix_organ/proc/get_tool_name(obj/item/stack/tool)
 	var/tool_name = "\the [tool]"
-	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack))
+	if (istype(tool, /obj/item/stack/medical/bruise_pack/advanced))
 		tool_name = "regenerative membrane"
 	if (istype(tool, /obj/item/stack/medical/bruise_pack))
 		tool_name = "the bandaid"
-	if (istype(tool, /obj/item/stack/medical/advanced/bruise_pack/mending_ichor))
+	if (istype(tool, /obj/item/stack/medical/bruise_pack/advanced/mending_ichor))
 		tool_name = "the mending ichor"
 	return tool_name
 
@@ -70,7 +70,7 @@
 	return tool_name
 
 /datum/surgery_step/fix_bone/can_use(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
-	return BP_IS_ORGANIC(organ) && organ.is_open() && organ.damage > 0
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && organ.is_open() && organ.damage > 0
 
 /datum/surgery_step/fix_bone/begin_step(mob/living/user, obj/item/organ/internal/organ, obj/item/stack/tool)
 	user.visible_message(
@@ -105,7 +105,7 @@
 	can_infect = TRUE
 
 /datum/surgery_step/fix_bleeding/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	return BP_IS_ORGANIC(organ) && organ.open && (organ.status & ORGAN_BLEEDING)
+	return BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ)   && organ.open && (organ.status & ORGAN_BLEEDING)
 
 /datum/surgery_step/fix_bleeding/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(

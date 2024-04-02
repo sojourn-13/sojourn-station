@@ -11,13 +11,13 @@
 	difficulty = "Medium."
 	selection_color = "#c7b97b"
 	req_admin_notify = 1
-	playtimerequired = 1200
+	playtimerequired = 600
 	wage = WAGE_COMMAND
 	ideal_character_age = 50
-	minimum_character_age = 30
+	minimum_character_age = 25
 	health_modifier = 5
 
-	disallow_species = list(FORM_UNBRANDED, FORM_SOTSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF, FORM_SLIME)
 	outfit_type = /decl/hierarchy/outfit/job/engineering/exultant
 
 	access = list(
@@ -55,7 +55,7 @@
 	Стремитесь защитить права своих Адептов, а также их безопасность и здоровье.<br>\
 	Проводите свои собственные ремонтные работы и проекты по мере необходимости - особенно при нехватке персонала. "
 
-	perks = list(/datum/perk/inspiration, /datum/perk/handyman)
+	perks = list(PERK_INSPIRATION, PERK_HANDYMAN)
 
 /obj/landmark/join/start/chief_engineer
 	name = "Guild Master"
@@ -112,7 +112,7 @@
 	Отвечайте на сигналы бедствия и латайте бреши в стенах.<br>\
 	Поддерживайте питание каждой части колонии, насыщайте ее кислородом и сделайте все чтобы с технической точки зрения колония была работоспособна."
 
-	perks = list(/datum/perk/inspiration, /datum/perk/handyman)
+	perks = list(PERK_INSPIRATION, PERK_HANDYMAN)
 
 /obj/landmark/join/start/technomancer
 	name = "Guild Adept"

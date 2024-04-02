@@ -126,13 +126,9 @@
 
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			var/obj/item/organ/I = H.random_organ_by_process(BP_BRAIN)
-			if(!I) // No brain organ, so the borer moves in and replaces it permanently.
-				replace_brain()
-			else
-				// If they're in normally, implant removal can get them out.
-				var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
-				head.implants += src
+			// If they're in normally, implant removal can get them out.
+			var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
+			head.implants += src //Removed the brain eating/replacing proc reference.
 
 /*
 /mob/living/simple_animal/borer/verb/devour_brain()
@@ -158,7 +154,7 @@
 
 	to_chat(src, "<span class = 'danger'>It only takes a few moments to render the dead host brain down into a nutrient-rich slurry...</span>")
 	replace_brain()
-*/
+
 
 // BRAIN WORM ZOMBIES AAAAH.
 /mob/living/simple_animal/borer/proc/replace_brain()
@@ -207,7 +203,7 @@
 		H.computer_id = s2h_id
 
 	if(!H.lastKnownIP)
-		H.lastKnownIP = s2h_ip
+		H.lastKnownIP = s2h_ip*/
 
 /mob/living/simple_animal/borer/proc/secrete_chemicals()
 	set category = "Abilities"
@@ -390,7 +386,6 @@
 		host.adjustFireLoss(-10)
 		host.adjustCloneLoss(-10)
 		host.adjustOxyLoss(-10)
-		host.adjustToxLoss(-10)
 		all_damage = host.getBruteLoss() + host.getFireLoss() + host.getCloneLoss() + host.getOxyLoss() + host.getToxLoss()
 
 	host.stat = UNCONSCIOUS
@@ -399,9 +394,8 @@
 	host.SetStunned(10)
 	host.SetWeakened(10)
 	host.SetParalysis(10)
-	if(H == host)
-		H.restore_blood()
-		H.fixblood()
+	host.restore_blood()
+	host.fixblood()
 	host.update_lying_buckled_and_verb_status()
 	chemicals -= 500
 
@@ -449,8 +443,8 @@
 			to_chat(src, SPAN_NOTICE("You learned [english_list(copied_languages)]."))
 
 		to_chat(host, SPAN_DANGER("Your head spins, your memories thrown in disarray!"))
-		H.adjustBrainLoss(copied_amount * 4)
-		H?.sanity.onPsyDamage(copied_amount * 4)
+		host.adjustBrainLoss(copied_amount * 4)
+		host?.sanity.onPsyDamage(copied_amount * 4)
 
 		host.make_dizzy(copied_amount * 4)
 		host.confused = max(host.confused, copied_amount * 4)
@@ -497,7 +491,7 @@
 
 		to_chat(host, SPAN_DANGER("Your head spins as new information fills your mind!"))
 		host.adjustBrainLoss(copied_amount * 2)
-		H?.sanity.onPsyDamage(copied_amount * 2)
+		host?.sanity.onPsyDamage(copied_amount * 2)
 
 		host.make_dizzy(copied_amount * 2)
 		host.confused = max(host.confused, copied_amount * 2)
@@ -711,7 +705,6 @@
 		"dermaline_amount" = H.reagents.get_reagent_amount("dermaline"),
 		"blood_amount" = round((H.vessel.get_reagent_amount("blood") / H.species.blood_volume)*100),
 		"disabilities" = H.sdisabilities,
-		"lung_ruptured" = H.is_lung_ruptured(),
 		"external_organs" = H.organs.Copy(),
 		"internal_organs" = H.internal_organs.Copy(),
 		"species_organs" = H.species.has_process, //Just pass a reference for this, it shouldn't ever be modified outside of the datum.
@@ -772,8 +765,6 @@
 		for(var/datum/wound/W in e.wounds) if(W.internal)
 			other_wounds += "Internal bleeding"
 			break
-		if(e.organ_tag == BP_CHEST && occ["lung_ruptured"])
-			other_wounds += "Lung ruptured"
 		if(e.status & ORGAN_SPLINTED)
 			other_wounds += "Splinted"
 		if(e.status & ORGAN_BLEEDING)
@@ -785,22 +776,6 @@
 		if(e.open)
 			other_wounds += "Open"
 
-		switch (e.germ_level)
-			if (0 to INFECTION_LEVEL_ONE - 1) //in the case of no infection, do nothing.
-			if (INFECTION_LEVEL_ONE to INFECTION_LEVEL_ONE + 200)
-				other_wounds += "Mild Infection"
-			if (INFECTION_LEVEL_ONE + 200 to INFECTION_LEVEL_ONE + 300)
-				other_wounds += "Mild Infection+"
-			if (INFECTION_LEVEL_ONE + 300 to INFECTION_LEVEL_ONE + 400)
-				other_wounds += "Mild Infection++"
-			if (INFECTION_LEVEL_TWO to INFECTION_LEVEL_TWO + 200)
-				other_wounds += "Acute Infection"
-			if (INFECTION_LEVEL_TWO + 200 to INFECTION_LEVEL_TWO + 300)
-				other_wounds += "Acute Infection+"
-			if (INFECTION_LEVEL_TWO + 300 to INFECTION_LEVEL_TWO + 400)
-				other_wounds += "Acute Infection++"
-			if (INFECTION_LEVEL_THREE to INFINITY)
-				other_wounds += "Septic"
 		if(e.rejecting)
 			other_wounds += "being rejected"
 		var/known_implants = list() //You know nothing, jon sno
@@ -836,23 +811,6 @@
 			if(B.parent.status & ORGAN_BROKEN)
 				other_wounds += "[B.broken_description]"
 
-		var/infection = "None"
-		switch (I.germ_level)
-			if (0 to INFECTION_LEVEL_ONE - 1) //in the case of no infection, do nothing.
-			if (1 to INFECTION_LEVEL_ONE + 200)
-				infection = "Mild Infection"
-			if (INFECTION_LEVEL_ONE + 200 to INFECTION_LEVEL_ONE + 300)
-				infection = "Mild Infection+"
-			if (INFECTION_LEVEL_ONE + 300 to INFECTION_LEVEL_ONE + 400)
-				infection = "Mild Infection++"
-			if (INFECTION_LEVEL_TWO to INFECTION_LEVEL_TWO + 200)
-				infection = "Acute Infection"
-			if (INFECTION_LEVEL_TWO + 200 to INFECTION_LEVEL_TWO + 300)
-				infection = "Acute Infection+"
-			if (INFECTION_LEVEL_TWO + 300 to INFINITY)
-				infection = "Acute Infection++"
-		if(I.rejecting)
-			infection += "being rejected"
 		dat += "<tr>"
 		dat += "<td>[I.name]</td><td>N/A</td><td>[I.damage]</td><td>[other_wounds.len ? jointext(other_wounds, ":") : "None"]</td><td></td>"
 		dat += "</tr>"

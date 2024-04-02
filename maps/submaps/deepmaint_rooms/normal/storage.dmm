@@ -79,6 +79,7 @@
 /area/deepmaint)
 "n" = (
 /obj/machinery/light/small,
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
 "o" = (
@@ -86,6 +87,10 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel/panels,
+/area/deepmaint)
+"p" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/brown_perforated,
 /area/deepmaint)
 "A" = (
 /obj/structure/table/rack/shelf,
@@ -96,6 +101,10 @@
 /obj/random/pouch/low_chance,
 /obj/random/tool_upgrade/rare/low_chance,
 /turf/simulated/floor/tiled/steel/brown_platform,
+/area/deepmaint)
+"F" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/monofloor,
 /area/deepmaint)
 "L" = (
 /obj/structure/table/rack/shelf,
@@ -119,11 +128,11 @@
 
 (1,1,1) = {"
 a
+p
 a
 a
 a
-a
-a
+p
 a
 a
 a
@@ -184,15 +193,15 @@ a
 "}
 (6,1,1) = {"
 a
+F
+c
+F
 c
 c
+F
 c
 c
-c
-c
-c
-c
-c
+F
 a
 "}
 (7,1,1) = {"
@@ -249,11 +258,11 @@ a
 "}
 (11,1,1) = {"
 a
+p
 a
 a
 a
-a
-a
+p
 a
 a
 a

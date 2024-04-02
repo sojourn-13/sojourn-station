@@ -22,7 +22,8 @@ Securing and unsecuring the flask is a long and hard task, and a failure when un
 	w_class = ITEM_SIZE_BULKY
 	init_recoil = CARBINE_RECOIL(0.1)
 	twohanded = FALSE
-	can_dual = TRUE
+	can_dual = FALSE
+	slot_flags = SLOT_BELT|SLOT_BACK
 	max_upgrades = 3
 	fire_delay = 10
 	fire_sound = 'sound/weapons/energy/hydrogen.ogg'

@@ -15,7 +15,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunt_master
 	health_modifier = 15
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
+	perks = list(PERK_BUTCHER, PERK_MASTER_HERBALIST, PERK_GREENTHUMB)
 	access = list(access_huntmaster, access_hunter)
 
 	stat_modifiers = list(
@@ -26,7 +26,7 @@
 		STAT_MEC = 5,
 		STAT_COG = 0
 	)
-	playtimerequired = 1200
+	playtimerequired = 600
 	description = "Вы не являетесь частью колонии – по крайней мере пока.<br>\
 	Вместо этого вы решили присоединится к местной фракции охотников.<br>\
 	Время покажет на какой срок. Ваша задача как главы общины – вести свои охотников и сделать все возможное для их благополучия.<br>\
@@ -57,7 +57,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
 	health_modifier = 10
 
-	perks = list(/datum/perk/job/butcher)
+	perks = list(PERK_BUTCHER)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
@@ -100,7 +100,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/herbalist
 	health_modifier = 5
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
+	perks = list(PERK_BUTCHER, PERK_MASTER_HERBALIST, PERK_GREENTHUMB)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
@@ -129,8 +129,8 @@
 
 /datum/job/outsider
 	title = "Outsider"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 10
+	spawn_positions = 10
 	flag = OUTSIDER
 	faction = MAP_FACTION
 	department = DEPARTMENT_INDEPENDENT
@@ -143,7 +143,6 @@
 //	minimal_access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/outsider
 	difficulty = "Impossible!"
-	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 	has_id = FALSE
 
 	stat_modifiers = list(

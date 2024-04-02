@@ -16,6 +16,11 @@ List of powers in this page :
 	set desc = "Spend a large portion of your nanites to restore and repair your body by enhancing your natural healing."
 	nano_point_cost = 7
 
+	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIGNMENT IMPOSSIBLE FOR SYNTHETICS!\"")
+		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_regen
+		return
+
 	if(!owner.stats.getPerk(PERK_NANITE_REGEN)) // Do they already have the bot?
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You permanently assign some of your nanites to repairing your body.")
@@ -64,6 +69,11 @@ List of powers in this page :
 	set desc = "Convert some of your nanites into more specialized nanites. Only works for biological entities."
 	nano_point_cost = 1
 
+	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIGNMENT IMPOSSIBLE FOR SYNTHETICS!\"")
+		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_chem
+		return
+
 	var/list/choices_perk = list(	"Implantoids" = PERK_NANITE_CHEM_IMPLANT,
 									"Trauma Control System" = PERK_NANITE_CHEM_TCS,
 									"Control Booster Utility" = PERK_NANITE_CHEM_CBU,
@@ -74,7 +84,7 @@ List of powers in this page :
 
 	var/datum/perk/nanite_chem/choice = choices_perk[input(owner, "Which nanite chem do you want?", "Chem Choice", null) as null|anything in choices_perk]
 
-	if(choice && owner.species?.reagent_tag != IS_SYNTHETIC && pay_power_cost(nano_point_cost)) // Check if the user actually made a choice, and if they did, check if they have the points.
+	if(choice && pay_power_cost(nano_point_cost)) // Check if the user actually made a choice, and if they did, check if they have the points.
 		owner.stats.addPerk(choice)
 		perk_list += choice
 		to_chat(owner, "You permanently convert some of your nanites into specialized variants.")
@@ -97,6 +107,8 @@ List of powers in this page :
 						/obj/item/tool_upgrade/augment/ai_tool_excelsior,
 						/obj/item/tool_upgrade/augment/repair_nano,
 						/obj/item/tool_upgrade/augment/randomizer,
+						/obj/item/tool_upgrade/augment/holy_oils,
+						/obj/item/tool_upgrade/augment/crusader_seal,
 						/obj/item/tool_upgrade/artwork_tool_mod,
 						/obj/item/tool_upgrade/augment/sanctifier,	//Has biomatter, sadly nanites are not able to use that
 						/obj/item/tool_upgrade/armor/melee,
@@ -161,3 +173,62 @@ List of powers in this page :
 			owner.stats.addPerk(PERK_NANITE_AMMO)
 			perk_list += PERK_NANITE_AMMO
 			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_ammo
+
+// Spends points for stats
+/obj/item/organ/internal/nanogate/proc/nanite_stats()
+	set category = "Nanogate Powers"
+	set name = "Nanite Augment - Mindbanking (2)"
+	set desc = "Spend some of your nanites to increase your knowledge."
+	nano_point_cost = 2
+
+	var/list/choices_stats = list(	"Mechanical" = STAT_MEC,
+									"Cognition" = STAT_COG,
+									"Biology" = STAT_BIO,
+									"Robustness" = STAT_ROB,
+									"Toughness" = STAT_TGH,
+									"Vigilance" = STAT_VIG
+									)
+
+	var/stat = choices_stats[input(owner, "Which nanite chem do you want?", "Stats Choice", null) as null|anything in choices_stats]
+
+	if(stat && pay_power_cost(nano_point_cost))
+		to_chat(owner, "You permanently assign some of your nanites to be databanks.")
+		owner.stats.changeStat(stat, 5)
+
+// Spends points for increased food storage
+/obj/item/organ/internal/nanogate/proc/nanite_food_storage()
+	set category = "Nanogate Powers"
+	set name = "Nanite Augment - Food Banking (1)"
+	set desc = "Spend some of your nanites to allow the storage of additional nutrition on your body."
+	nano_point_cost = 1
+
+	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIGNMENT IMPOSSIBLE FOR SYNTHETICS!\"")
+		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_food_storage
+		return
+
+	if(pay_power_cost(nano_point_cost))
+		to_chat(owner, "You permanently assign some of your nanites to store additional nutrition.")
+		owner.max_nutrition += 25 //Base is 400
+
+// Allows you to drink metals for food
+/obj/item/organ/internal/nanogate/proc/nanite_metal_drinker()
+	set category = "Nanogate Powers"
+	set name = "Nanite Augment - Metal-Eater (2)"
+	set desc = "Spend some of your nanites to allow you to drink basic metals for nutrition. Does not nullifies any harmful effects of drinking said metal."
+	nano_point_cost = 2
+
+	if(owner.species.reagent_tag == IS_SYNTHETIC)
+		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIGNMENT IMPOSSIBLE FOR SYNTHETICS!\"")
+		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_metal_drinker
+		return
+
+	if(!owner.stats.getPerk(PERK_NANITE_METAL_EATER)) // Do they already have the perk?
+		if(pay_power_cost(nano_point_cost))
+			to_chat(owner, "You permanently assign some of your nanites to break down metals in your guts for nutrition.")
+			owner.stats.addPerk(PERK_NANITE_METAL_EATER)
+			perk_list += PERK_NANITE_METAL_EATER
+			verbs -= /obj/item/organ/internal/nanogate/proc/nanite_metal_drinker
+
+
+

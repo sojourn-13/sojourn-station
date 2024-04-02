@@ -2,8 +2,8 @@
 /mob/living/carbon/superior_animal/ameridian_golem/ameridian_shooter
 	name = "ameridian shooter"
 	desc = "A weird creature made of ameridian. It is quadruped and seems to shoot ameridian shards."
-	health = 70
-	maxHealth = 70
+	health = 50
+	maxHealth = 50
 	armor = list(melee = 10, bullet = 50, energy = 55, bomb = 30, bio = 100, rad = 100) //We want to be rushed in melee, not shot.
 	ranged = TRUE
 	rapid = TRUE

@@ -6,10 +6,10 @@
 	icon_state = "excel_makarov"
 	stop_automated_movement_when_pulled = 1
 	wander = 0
-	maxHealth = 150 //About as much health as a normal person
-	health = 150
+	maxHealth = 100
+	health = 100
 
-	armor = list(melee = 60, bullet = 60, energy = 60, bomb = 75, bio = 100, rad = 90) //Legitmently their armor
+	armor = list(melee = 55, bullet = 55, energy = 70, bomb = 80, bio = 90, rad = 25) //Legitmently their armor (melee is higher {45} to account for AI stupidness)
 
 	//range/ammo stuff
 	ranged = 1
@@ -17,7 +17,7 @@
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
 	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
-	projectilesound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	projectilesound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 16
@@ -45,7 +45,7 @@
 	min_bodytemperature = 0
 
 //Drops
-	meat_amount = 4
+	meat_amount = 1
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
@@ -70,7 +70,7 @@
 	projectilesound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	rounds_left = 71
 	mag_type = /obj/item/ammo_magazine/highcap_pistol_35/drum/empty
-	mags_left = 1 //1+1
+	mags_left = 2 //2+1
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_ak
 	icon_state = "excel_ak"

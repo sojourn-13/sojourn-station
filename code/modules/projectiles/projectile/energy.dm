@@ -19,7 +19,6 @@
 	var/flash_range = 0
 	var/brightness = 7
 	var/light_duration = 5
-	added_damage_laser_pve = 5
 
 /obj/item/projectile/energy/flash/on_impact(var/atom/A)
 	if (!testing)
@@ -46,12 +45,12 @@
 	flash_range = 1
 	brightness = 9 //similar to a flare
 	light_duration = 60000 //this is in milasecnds.
-	added_damage_laser_pve = 10
 
 /obj/item/projectile/energy/electrode
 	name = "electrode"
 	icon_state = "spark"
 	mob_hit_sound = list('sound/weapons/tase.ogg')
+	armor_penetration = 20
 	nodamage = 1
 	taser_effect = 1
 	agony = 40
@@ -66,7 +65,6 @@
 	agony = 80
 	affective_damage_range = 2
 	recoil = 16
-	added_damage_laser_pve = 5
 
 /obj/item/projectile/energy/declone
 	name = "declone"
@@ -90,13 +88,11 @@
 	nodamage = 0
 	agony = 40
 	stutter = 10
-	added_damage_laser_pve = 20
 
 
 /obj/item/projectile/energy/bolt/large
 	name = "largebolt"
 	damage_types = list(BURN = 30)
-	added_damage_laser_pve = 30
 
 
 /obj/item/projectile/energy/neurotoxin
@@ -104,4 +100,3 @@
 	icon_state = "neurotoxin"
 	damage_types = list(BURN = 5)
 	weaken = 5
-	added_damage_laser_pve = 5

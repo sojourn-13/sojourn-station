@@ -26,7 +26,6 @@
 					H.fixblood()
 			//
 			C.adjustOxyLoss(-25 * weakness)
-			C.adjustToxLoss(-25 * weakness)
 			C.adjustBruteLoss(-25 * weakness)
 			C.adjustFireLoss(-25 * weakness)
 			//
@@ -44,7 +43,6 @@
 					to_chat(C, "\blue You feel a soothing energy radiating from something nearby.")
 				C.adjustBruteLoss(-1 * weakness)
 				C.adjustFireLoss(-1 * weakness)
-				C.adjustToxLoss(-1 * weakness)
 				C.adjustOxyLoss(-1 * weakness)
 				C.adjustBrainLoss(-1 * weakness)
 				C.updatehealth()
@@ -59,7 +57,6 @@
 				to_chat(C, "\blue A wave of energy invigorates you.")
 				C.adjustBruteLoss(-5 * weakness)
 				C.adjustFireLoss(-5 * weakness)
-				C.adjustToxLoss(-5 * weakness)
 				C.adjustOxyLoss(-5 * weakness)
 				C.adjustBrainLoss(-5 * weakness)
 				C.updatehealth()

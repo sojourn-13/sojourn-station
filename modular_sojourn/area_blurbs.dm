@@ -75,6 +75,25 @@ ty ilu - bear
 /area/nadezhda/dungeon/outside/farm
 	narrate = "A humble plot of land ruined by local fauna and left to the mercy of local weeds and abandonement of its soil. With labor and dedication enough, you might make these lands a profitable farm once more..."
 
+/area/nadezhda/outside/forest/river_forest_light
+	narrate = "The sound of chirping birds, of local xenofauna sipping by the nearby rivers, the menacing roars of ursine fauna, the chittering of insects, the wind blowing across the open plains... These fields are the place where man and beast collide, for either coexistance or survival of the fittest."
+
+/area/nadezhda/outside/forest/river_forest_lake
+	narrate = "These plains are also home to a myriad of rivers dotting its landscape, becoming the dumpster of its previous temporary inhabitants, all converging in a giant lake full of ferocious space fish masquerading as tempting aquatic morsels. If you see the white whale, you best aim for its crooked brow with the nearby harpoons from previous attempts to its life."
+
+/area/nadezhda/outside/forest/river_forest_cabin
+	narrate = "Abandoned signs of civilization attempting to settle peaceful turistic spots amidst the jungle. The local beasts have proved them this is no place for a tranquil vacation..."
+
+/area/nadezhda/outside/forest/river_forest_dark
+	narrate = "Humid caves, primordially known for being the most primal of habitations for sentient and feral beast alike, also dot the landscape of these plains. You are not the first person to venture inside looking for either safety or resources, and you won't likely be the last... \
+			   If you aim to claim these for your own, know that you will eventually have to deal with the same kind of interloper that you once were upon them."
+
+/area/nadezhda/outside/forest/river_forest_underground
+	narrate = "Terrifying roars of mutated bears contest the ear piercing shrieks and gurgles of spine-chilling xenomorphs, eerily echoing throughout these caverns. Dare you venture upon their turf war to claim the spoils within for your own...?"
+
+/area/nadezhda/outside/forest/plains_farm
+	narrate = "What was once a humble plot of harrowed land tended perhaps by a local hunter that decided to settle down has, at some point, been overrun by aggressive ursine fauna. With labor and dedication enough, you might make these lands a profitable farmstead once more..."
+
 /area/nadezhda/dungeon/outside/abandoned_outpost
 	narrate = "The earliest traces of sentient technological settlement on the planet can be found in what's left of this haphazardly built outpost, now fallen to ruin. Be wary of the roaches and spiders that have claimed it as their nest."
 

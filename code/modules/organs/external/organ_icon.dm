@@ -22,7 +22,7 @@ var/global/list/limb_icon_cache = list()
 		return //Do nothing because we have no idea what to do.
 	if(form && human.form && form.name != human.form.name)
 		return
-	if(!isnull(human.s_tone) && (human.form.appearance_flags & HAS_SKIN_TONE))
+	if(!isnull(human.s_tone) && (human.form.appearance_flags & HAS_SKIN_TONE | DEFAULT_APPEARANCE_FLAGS))
 		skin_tone = human.s_tone
 	if(human.form.appearance_flags & HAS_SKIN_COLOR)
 		skin_col = human.skin_color

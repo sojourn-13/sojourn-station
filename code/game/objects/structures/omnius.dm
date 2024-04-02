@@ -62,6 +62,7 @@
 	icon = null
 	layer = HIDING_MOB_PLANE
 	invisibility = 101
+	anchored = TRUE
 
 /obj/structure/invislight/New()
 	set_light(7, 5, "#999999")
@@ -72,6 +73,7 @@
 	icon = null
 	layer = HIDING_MOB_PLANE
 	invisibility = 101
+	anchored = TRUE
 
 /obj/structure/invislightsmall/New()
 	set_light(1, 1, "#999999")

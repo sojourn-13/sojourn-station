@@ -47,6 +47,11 @@
 	preloaded_reagents = list("glue" = 15, "plasticide" = 5)
 	price_tag = 30
 
+/obj/item/tool/tape_roll/fiber/medical
+	name = "osseous tape"
+	desc = "A roll of flexible adhesive bioadaptive tape. Used for sealing minor damage to bones."
+	tool_qualities = list(QUALITY_ADHESIVE = 30, QUALITY_SEALING = 30)
+
 /obj/item/tool/tape_roll/repair_goo
 	name = "repair goo"
 	desc = "A wad of sticky gray goo capable of repairing tools and sealing cracks."
@@ -85,7 +90,7 @@
 	price_tag = 20
 
 /obj/item/tool/tape_roll/bonegel/si
-	name = "bone super gel"
+	name = "super bone gel"
 	desc = "An improved gel-like calcium composite formula used as an efficient surgical substitute for broken or missing bone pieces."
 	icon = 'icons/obj/stack/items.dmi'
 	icon_state = "bonegel_SI"

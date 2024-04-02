@@ -4,8 +4,8 @@
 	icon_state = "elektromagnetisch"
 	meat_amount = 2
 	turns_per_move = 2
-	maxHealth = 120
-	health = 120
+	maxHealth = 75
+	health = 75
 	move_to_delay = 7
 	deathmessage = "pulses violently as it dies!"
 	melee_damage_lower = 12

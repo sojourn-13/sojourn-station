@@ -38,7 +38,7 @@
 	icon_state = "protolathe"
 	circuit = /obj/item/circuitboard/protolathe
 	unsuitable_materials = list() //So we can use biomatter and others
-
+	max_efficiency = 0.2
 	build_type = PROTOLATHE
 	storage_capacity = 120
 
@@ -48,7 +48,7 @@
 	desc = "A machine used for printing advanced circuit boards. Operated from an R\&D console."
 	icon_state = "imprinter"
 	circuit = /obj/item/circuitboard/circuit_imprinter
-
+	max_efficiency = 0.2
 	build_type = IMPRINTER
 	storage_capacity = 60
 	speed = 3

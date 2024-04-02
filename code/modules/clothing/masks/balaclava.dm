@@ -1,3 +1,5 @@
+#define BALACLAVA_SANITY_COEFF_BUFF 1.6
+
 /obj/item/clothing/mask/balaclava
 	name = "balaclava"
 	desc = "LOADSAMONEY"
@@ -9,13 +11,17 @@
 	w_class = ITEM_SIZE_SMALL
 	var/open = 0 //0 = full, 1 = head only, 2 = face only
 
+/obj/item/clothing/mask/balaclava/New()
+	..()
+	AddComponent(/datum/component/clothing_sanity_protection, BALACLAVA_SANITY_COEFF_BUFF)
+
 /obj/item/clothing/mask/balaclava/proc/adjust_mask(mob/living/carbon/human/user)
 	if(!istype(user))
 		return
 	if(!user.incapacitated())
 		switch(open)
 			if (0)
-				flags_inv = BLOCKHEADHAIR|HIDEEARS
+				flags_inv = BLOCKHAIR|HIDEEARS
 				body_parts_covered = HEAD
 				icon_state = initial(icon_state) + "_open"
 				to_chat(user, "You put the balaclava away, revealing your face.")

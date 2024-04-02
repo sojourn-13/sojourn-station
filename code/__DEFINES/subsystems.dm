@@ -75,15 +75,17 @@
 #define INITIALIZE_IMMEDIATE(X) ##X/New(loc, ...){\
 	..();\
 	if(!initialized) {\
+		var/previous_initialized_value = SSatoms.initialized;\
+		SSatoms.initialized = INITIALIZATION_INNEW_MAPLOAD;\
 		args[1] = TRUE;\
 		SSatoms.InitAtom(src, FALSE, args);\
+		SSatoms.initialized = previous_initialized_value;\
 	}\
 }
 
 // Subsystem init_order, from highest priority to lowest priority
 // Subsystems shutdown in the reverse of the order they initialize in
 // The numbers just define the ordering, they are meaningless otherwise.
-
 #define INIT_ORDER_GARBAGE 99
 #define INIT_ORDER_SKYBOX 20
 #define INIT_ORDER_DBCORE 19
@@ -106,6 +108,7 @@
 #define INIT_ORDER_ALARM -2
 #define INIT_ORDER_MINIMAP -3
 #define INIT_ORDER_HOLOMAPS -4
+#define INIT_ORDER_CRAFT -4 // DO NOT INIT THIS AFTER ASSETS
 #define INIT_ORDER_ASSETS -5
 #define INIT_ORDER_ICON_SMOOTHING -6
 #define INIT_ORDER_OVERLAY -7
@@ -119,7 +122,6 @@
 #define INIT_ORDER_XENOARCH	-50
 #define INIT_ORDER_PERSISTENCE -100
 #define INIT_OPEN_SPACE -150
-#define INIT_ORDER_CRAFT -175
 #define INIT_ORDER_LATELOAD -180
 #define INIT_ORDER_CHAT	-185
 
@@ -171,3 +173,6 @@ if(Datum.is_processing) {\
 	* * timer_subsystem the subsystem to insert this timer into
 */
 #define addtimer(args...) _addtimer(args, file = __FILE__, line = __LINE__)
+
+/// The timer key used to know how long subsystem initialization takes
+#define SS_INIT_TIMER_KEY "ss_init"

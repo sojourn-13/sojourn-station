@@ -8,8 +8,8 @@
 	icon_state = "voidwolf_melee"
 	icon_dead = "voidwolf_melee_dead"
 	stop_automated_movement_when_pulled = 0
-	maxHealth = 200
-	health = 200
+	maxHealth = 125
+	health = 125
 	melee_damage_lower = 30
 	melee_damage_upper = 30
 	breath_required_type = 0 // Doesn't need to breath, in a space suit
@@ -109,8 +109,8 @@
 	projectilesound = 'sound/weapons/energy/laser.ogg'
 	melee_damage_lower = 10 //We dont like melee
 	melee_damage_upper = 15
-	maxHealth = 100
-	health = 100
+	maxHealth = 75
+	health = 75
 	ranged = TRUE
 	rapid = TRUE
 	rapid_fire_shooting_amount = 3
@@ -173,8 +173,8 @@
 	icon_dead = "voidwolfcap_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	maxHealth = 200
-	health = 200
+	maxHealth = 150
+	health = 150
 	ranged_cooldown = 3
 	ranged = TRUE
 	rapid = FALSE
@@ -205,7 +205,7 @@
 	rapid = TRUE
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
-	drop_items = list(/obj/item/gun/energy/firestorm/reaver_modded)
+	drop_items = list(/obj/item/gun/energy/firestorm/reaver_modded,/obj/random/cloth/assault/reaver)
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 20
@@ -228,7 +228,7 @@
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/laserak
 	projectiletype = /obj/item/projectile/beam/weak/ap/reaver
-	drop_items = list(/obj/item/gun/energy/firestorm/reaver_modded)
+	drop_items = list(/obj/item/gun/energy/firestorm/reaver_modded,/obj/random/cloth/assault/reaver)
 
 	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 3
@@ -277,9 +277,9 @@
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet
 	icon_state = "reaver_gyro"
-	projectilesound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
+	projectilesound = 'sound/weapons/guns/fire/ubgl.ogg'
 	projectiletype = /obj/item/projectile/bullet/gyro
-	drop_items = list(/obj/item/gun/projectile/gyropistol)
+	drop_items = list(/obj/item/gun/projectile/gyropistol,/obj/random/cloth/assault/reaver)
 	rapid = FALSE
 	rounds_left = 4
 	mag_type = /obj/item/ammo_magazine/a75/empty
@@ -303,7 +303,7 @@
 	ranged = FALSE
 	rapid = FALSE
 	limited_ammo = FALSE
-	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/shield/buckler/energy/reaver/damaged)
+	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/shield/buckler/energy/reaver/damaged,/obj/random/cloth/assault/reaver)
 
 	var/block_chance = 65
 

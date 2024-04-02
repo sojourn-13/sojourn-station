@@ -172,6 +172,7 @@
 
 	//inputting
 	if(input_attempt && (!input_pulsed && !input_cut))
+		input_available = terminal.surplus()
 		target_load = min((capacity-charge)/SMESRATE, input_level)	// Amount we will request from the powernet.
 		if(terminal && terminal.powernet)
 			terminal.powernet.smes_demand += target_load
@@ -258,14 +259,94 @@
 	add_fingerprint(user)
 	if(!check_user(user)) //To try and make this more guild only
 		return
-	nano_ui_interact(user)
+	ui_interact(user) //REROUTED TO TGUI
+
+/obj/machinery/power/smes/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Smes", name)
+		ui.open()
+
+/obj/machinery/power/smes/ui_data()
+	var/list/data = list(
+		"capacity" = capacity,
+		"capacityPercent" = round(100*charge/capacity, 0.1),
+		"charge" = charge,
+		"inputAttempt" = input_attempt,
+		"inputting" = inputting,
+		"inputLevel" = input_level,
+		//"inputLevel_text" = display_power(input_level),
+		"inputLevelMax" = input_level_max,
+		"inputAvailable" = input_available,
+		"outputAttempt" = output_attempt,
+		"outputting" = outputting,
+		"outputLevel" = output_level,
+		//"outputLevel_text" = display_power(output_level),
+		"outputLevelMax" = output_level_max,
+		"outputUsed" = output_used,
+	)
+	return data
+
+/obj/machinery/power/smes/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	switch(action)
+		if("tryinput")
+			input_attempt = !input_attempt
+			log_smes(usr)
+			update_icon()
+			. = TRUE
+		if("tryoutput")
+			output_attempt = !output_attempt
+			log_smes(usr)
+			update_icon()
+			. = TRUE
+		if("input")
+			var/target = params["target"]
+			var/adjust = text2num(params["adjust"])
+			if(target == "min")
+				target = 0
+				. = TRUE
+			else if(target == "max")
+				target = input_level_max
+				. = TRUE
+			else if(adjust)
+				target = input_level + adjust
+				. = TRUE
+			else if(text2num(target) != null)
+				target = text2num(target)
+				. = TRUE
+			if(.)
+				input_level = clamp(target, 0, input_level_max)
+				log_smes(usr)
+		if("output")
+			var/target = params["target"]
+			var/adjust = text2num(params["adjust"])
+			if(target == "min")
+				target = 0
+				. = TRUE
+			else if(target == "max")
+				target = output_level_max
+				. = TRUE
+			else if(adjust)
+				target = output_level + adjust
+				. = TRUE
+			else if(text2num(target) != null)
+				target = text2num(target)
+				. = TRUE
+			if(.)
+				output_level = clamp(target, 0, output_level_max)
+				log_smes(usr)
+
+/obj/machinery/power/smes/proc/log_smes(mob/user)
+	investigate_log("Input/Output: [input_level]/[output_level] | Charge: [charge] | Output-mode: [output_attempt?"ON":"OFF"] | Input-mode: [input_attempt?"AUTO":"OFF"] by [user ? key_name(user) : "outside forces"]", "singulo")
 
 /obj/machinery/power/smes/proc/check_user(mob/user)
 	if(user.stats?.getPerk(PERK_HANDYMAN) || user.stat_check(STAT_MEC, skill_check))
 		return TRUE
 	to_chat(user, SPAN_NOTICE("You don't know how to make the [src] work, you lack the training or mechanical skill."))
 	return FALSE
-
 
 /obj/machinery/power/smes/attackby(var/obj/item/I, var/mob/user)
 	if(!check_user(user)) //To try and make this more guild only
@@ -327,7 +408,7 @@
 		return 0
 
 	return tool_type || 1
-
+/*
 /obj/machinery/power/smes/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 
 	if(stat & BROKEN)
@@ -361,9 +442,6 @@
 		ui.open()
 		// auto update every Master Controller tick
 		ui.set_auto_update(1)
-
-/obj/machinery/power/smes/proc/Percentage()
-	return round(100.0*charge/capacity, 0.1)
 
 /obj/machinery/power/smes/Topic(href, href_list)
 	if(..())
@@ -403,6 +481,9 @@
 	playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
 
 	return 1
+*/
+/obj/machinery/power/smes/proc/Percentage()
+	return round(100.0*charge/capacity, 0.1)
 
 /obj/machinery/power/smes/proc/energy_fail(var/duration)
 	failure_timer = max(failure_timer, duration)

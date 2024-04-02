@@ -22,6 +22,7 @@
 	eject_animatio = FALSE //TODO: this
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE) //We cant be overshooter or sharpened, but we can take a scope!
 	price_tag = 30
+	gun_parts = null //no free mosin!
 	serial_type = "H&S"
 
 

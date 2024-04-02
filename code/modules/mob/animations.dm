@@ -355,7 +355,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 	var/image/I = image(icon = src, loc = old_turf)
 	I.plane = plane
 	I.layer = ABOVE_MOB_LAYER
-	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
+	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | DEFAULT_APPEARANCE_FLAGS
 	if (istype(target,/mob))
 		I.dir = target.dir
 
@@ -396,7 +396,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 		I.plane = get_relative_plane(GAME_PLANE)
 		I.layer = ABOVE_MOB_LAYER
 		I.transform = matrix() * 0
-		I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
+		I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | DEFAULT_APPEARANCE_FLAGS
 		I.pixel_x = 0
 		I.pixel_y = 0
 		if (istype(target,/mob))
@@ -427,7 +427,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 	var/image/I = image(icon = src, loc = src.loc, layer = layer + 0.1)
 	I.plane = get_relative_plane(GAME_PLANE)
 	I.layer = ABOVE_MOB_LAYER
-	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
+	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | DEFAULT_APPEARANCE_FLAGS
 
 	flick_overlay(I, clients, 4)
 

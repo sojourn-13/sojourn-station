@@ -12,11 +12,12 @@
 #define REBUILDING_ORGANS	BITFLAG(5)
 #define PASSEMOTES			BITFLAG(6)	// Mob has a holder inside of it that need to see emotes.
 #define BLEEDOUT			BITFLAG(7)
-#define GODMODE				BITFLAG(8)
-#define FAKEDEATH			BITFLAG(9)	// Replaces stuff like changeling.changeling_fakedeath.
-#define NO_ANTAG_MOB		BITFLAG(10)	// Players are restricted from gaining antag roles when occupying this mob
-#define XENO_HOST			BITFLAG(11)	// Tracks whether we're gonna be a baby alien's mummy.
-#define ENABLE_AI			BITFLAG(12)	// Regardless of player control, the mob is using AI.
+#define HARDCRIT			BITFLAG(8)
+#define GODMODE				BITFLAG(9)
+#define FAKEDEATH			BITFLAG(10)	// Replaces stuff like changeling.changeling_fakedeath.
+#define NO_ANTAG_MOB		BITFLAG(11)	// Players are restricted from gaining antag roles when occupying this mob
+#define XENO_HOST			BITFLAG(12)	// Tracks whether we're gonna be a baby alien's mummy.
+#define ENABLE_AI			BITFLAG(13)	// Regardless of player control, the mob is using AI.
 
 #define BORGMESON		BITFLAG(0)
 #define BORGTHERM		BITFLAG(1)
@@ -271,6 +272,7 @@
 // Prosthetic helpers.
 #define BP_IS_ORGANIC(org)		(!QDELETED(org) && (org.nature == MODIFICATION_ORGANIC || org.nature == MODIFICATION_SUPERIOR))
 #define BP_IS_ROBOTIC(org)		(!QDELETED(org) && (org.nature == MODIFICATION_SILICON || org.nature == MODIFICATION_LIFELIKE))
+#define BP_IS_SLIME(org)		(!QDELETED(org) && (org.nature == MODIFICATION_SLIME))
 #define BP_IS_PROSTHETIC(org)	(!QDELETED(org) && (org.nature == MODIFICATION_SILICON))
 #define BP_IS_BRITTLE(org)		(!QDELETED(org) && (org.status	& ORGAN_BRITTLE))
 #define BP_IS_CRYSTAL(org)		(!QDELETED(org) && (org.nature	& ORGAN_PROP_CRYSTAL))
@@ -364,9 +366,9 @@
 
 // Termite defines
 
-#define TERMITE_HEALTH_LOW 25
-#define TERMITE_HEALTH_MED 50
-#define TERMITE_HEALTH_HIGH 75
+#define TERMITE_HEALTH_LOW 20
+#define TERMITE_HEALTH_MED 45
+#define TERMITE_HEALTH_HIGH 70
 #define TERMITE_HEALTH_ULTRA 100
 
 #define TERMITE_DMG_LOW 15
@@ -441,7 +443,7 @@
 
 #define ORGAN_HEALTH_MULTIPLIER 1
 #define ORGAN_REGENERATION_MULTIPLIER 0.2
-#define WOUND_BLEED_MULTIPLIER 0.05 //Bleeding wounds drip damage*this units of blood per process tick, this also cheats by doble taking, so higher numbers byond 0.1 are insainly bleedy
+#define WOUND_BLEED_MULTIPLIER 0.035 //Bleeding wounds drip damage*this units of blood per process tick, this also cheats by doble taking, so higher numbers byond 0.1 are insainly bleedy
 #define OPEN_ORGAN_BLEED_AMOUNT 0.5 //Wounds with open, unclamped incisions bleed this many units of blood per process tick
 
 #define HEAT_MOBIGNITE_THRESHOLD 530 //minimum amount of heat an object needs to ignite a mob when it hits the mob

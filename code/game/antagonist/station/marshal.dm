@@ -25,7 +25,7 @@
 
 	for(var/name in stat_modifiers)
 		L.stats.changeStat(name, stat_modifiers[name])
-		L.stats.addPerk(/datum/perk/codespeak)
+		L.stats.addPerk(PERK_CODESPEAK)
 
 	if(!owner.current)
 		return FALSE

@@ -82,7 +82,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.2,
+		GUN_UPGRADE_DAMAGE_MULT = 1.2,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.1, // Better than the mod used to make it
 		GUN_UPGRADE_RECOIL = 1.1, // Better than a ported barrel
 		UPGRADE_BULK = 1
@@ -172,7 +172,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.3,
+		GUN_UPGRADE_DAMAGE_MULT = 1.3,
 		GUN_UPGRADE_CHARGECOST = 1.15,
 		UPGRADE_BULK = 0.5,
 		)
@@ -192,7 +192,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.45,
+		GUN_UPGRADE_DAMAGE_MULT = 1.45,
 		GUN_UPGRADE_CHARGECOST = 1.25,
 		UPGRADE_BULK = 0.75,
 		)
@@ -316,11 +316,11 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.1, //10% more damage
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9, //10% declay removed
+		GUN_UPGRADE_DAMAGE_MULT = 1.1,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9, //10% delay removed
 		GUN_UPGRADE_PEN_MULT = 1.2, //we shoot harder, but not by much
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.9, //We shoot somehwat faster (not hit scan)
-		GUN_UPGRADE_RECOIL = 0.85, //15% less recoil (dosnt help as much without stacking it with other mods)
+		GUN_UPGRADE_RECOIL = 0.85, //15% less recoil (doesn't help as much without stacking it with other mods)
 		UPGRADE_BULK = -1
 		)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
@@ -342,8 +342,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.15, //15% more damage
-		GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 1.15, //15% more damage to mobs
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8, //20% declay removed
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8, //20% delay removed
 		GUN_UPGRADE_PEN_MULT = 2, //we shoot harder
 		GUN_UPGRADE_MOVE_DELAY_MULT = 0.6, //We shoot way faster (not hit scan)
 		GUN_UPGRADE_MUZZLEFLASH = 2, //Bigger flash
@@ -408,6 +407,24 @@
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "heavy"
 
+/obj/item/gun_upgrade/mechanism/froggeytensioner
+	name = "high tension bowstring"
+	desc = "A collection of pulleys, mounting screws and an impressively powerful bowstring of animal sinew for installing onto a bow. Makes it harder to draw back, but more powerful."
+	icon_state = "winder_kit"
+	price_tag = 500
+
+/obj/item/gun_upgrade/mechanism/froggeytensioner/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_DAMAGE_BRUTE = 0.25,
+		GUN_UPGRADE_OVERCHARGE_MAX = 1.25,
+		GUN_UPGRADE_OVERCHARGE_RATE = 0.7
+		)
+	I.req_gun_tags = list(ARROW_FIRING)
+	I.gun_loc_tag = GUN_MECHANISM
+	I.prefix = "overstrung"
+
 /obj/item/gun_upgrade/mechanism/detensioner
 	name = "compound pulley kit"
 	desc = "A set of compound pulleys, cables and mounting screws for installing onto a bow. Makes it significantly easier to draw back, but less powerful."
@@ -457,7 +474,7 @@
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 2,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
-	GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE = 2,
+	GUN_UPGRADE_DAMAGE_MULT = 2,
 	GUN_UPGRADE_CHARGECOST = 2)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
@@ -549,22 +566,6 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_BARREL
 
-//We don't use sanity damage and sanity damaging effects, but I'm keeping this commented out in case we some day do.
-// Add psy damage to your weapon
-/obj/item/gun_upgrade/mechanism/psionic_catalyst
-	name = "Moebius \"Mastermind\" psionic catalyst"
-	desc = "This controversial device greatly amplifies the natural psionic ability of the user and allows them to project their will into the world. Before the development of the Psi Amp, psionic disciplines were mostly detectable only in a lab environment."
-	icon_state = "psionic_catalyst"
-	matter = list(MATERIAL_SILVER = 3, MATERIAL_PLASTEEL = 3, MATERIAL_URANIUM = 3)
-
-/obj/item/gun_upgrade/mechanism/psionic_catalyst/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-	GUN_UPGRADE_DAMAGE_PSY = 0.4)
-	I.prefix = "psionic"
-	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.gun_loc_tag = GUN_MECHANISM
 */
 /* //The handholder rail and its consequences have been a disaster for Sojournkind.
 /obj/item/gun_upgrade/mechanism/gun_rail
@@ -589,6 +590,24 @@
 	I.unique_removal = TRUE
 	I.unique_removal_type = GUN_SCOPE
 */
+//We don't use sanity damage and sanity damaging effects, but I'm keeping this commented out in case we some day do.
+// Add psy damage to your weapon
+
+/obj/item/gun_upgrade/mechanism/psionic_catalyst
+	name = "Moebius \"Mastermind\" psionic catalyst"
+	desc = "This controversial device greatly amplifies the natural psionic ability of the user and allows them to project their will into the world. Before the development of the Psi Amp, psionic disciplines were mostly detectable only in a lab environment."
+	icon_state = "psionic_catalyst"
+	matter = list(MATERIAL_SILVER = 3, MATERIAL_PLASTEEL = 3, MATERIAL_URANIUM = 3)
+
+/obj/item/gun_upgrade/mechanism/psionic_catalyst/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+	GUN_UPGRADE_DAMAGE_PSY = 0.4)
+	I.prefix = "psionic"
+	I.req_gun_tags = list(GUN_PROJECTILE)
+	I.gun_loc_tag = GUN_MECHANISM
+
 /obj/item/gun_upgrade/mechanism/greyson_master_catalyst
 	name = "Greyson \"Master Unmaker\" infuser"
 	desc = "One of the rarest and most powerful weapon modifications ever made by Greyson Positronics and one of the numerous reasons they remain a threat even after the company collapsed into malfunctioning artificial intelligences. It can infuse any weapon with immense power that causes utter ruin to machine and organic matter alike."
@@ -687,8 +706,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_OFFSET = 0.9,
-		GUN_UPGRADE_ZOOM = 1 // 8 extra tiles of vision
+		GUN_UPGRADE_OFFSET = 0.5,
+		GUN_UPGRADE_ZOOM = 0.5 // 3 extra tiles of vision
 		)
 	I.gun_loc_tag = GUN_SCOPE
 	I.req_gun_tags = list(GUN_SCOPE)
@@ -720,8 +739,8 @@
 
 // Greatly reduces firerate but will turn on or off auto-eject
 /obj/item/gun_upgrade/magwell/auto_eject
-	name = "H&S \"Dropper\" Magwell Braker"
-	desc = "A rather smartly designed magwell braker box that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwel itself out! When force-ejecting a mag, will play a beeping sound."
+	name = "H&S \"Dropper\" Magwell Autodrop Mechanism"
+	desc = "A rather smartly-designed magwell breaker box that, when added to guns that do not already possess an auto-eject feature, will automatically drop the gun's magazine into the floor once it empties! When force-ejecting a mag, it will play a beeping sound."
 	icon_state = "auto_spingbox"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2)
 	price_tag = 70
@@ -739,9 +758,9 @@
 
 //Fancy verson
 /obj/item/gun_upgrade/magwell/auto_eject/no_removal
-	name = "SI \"Faller\" Magwell Clearer"
-	desc = "A rather oddly designed magwell clearing device that when added to guns that have an auto-eject magwell prevent it, if it dosn't prevent an auto-eject it will force the magwell itself out! When force-ejecting a mag, it will play a beeping sound.\
-	Unlike the other versions on the market this, once added, will not be removable as it replaces key components to be as seamless as possible."
+	name = "SI \"Braker\" Magwell Autodrop System"
+	desc = "A rather oddly-designed magwell breaker box that, when added to guns that do not already possess an auto-eject feature, will automatically drop the gun's magazine into the floor once it empties! When force-ejecting a mag, it will play a beeping sound.\
+	Unlike the other versions on the market this, once added, will not be removable as it replaces key components of the receiver to be as seamless as possible."
 	can_remove = FALSE
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GLASS = 2, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1)
 
@@ -761,7 +780,7 @@
 
 /obj/item/gun_upgrade/underbarrel/bipod
 	name = "H&S \"Stand\" bipod"
-	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. It greatly reduces recoil when deployed, but also increases the gun\'s weight, making it unwieldy unless braced."
+	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. It greatly reduces recoil when deployed, but also increases the gun's weight, making it unwieldy unless braced."
 	icon_state = "bipod"
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 3)
 	price_tag = 130

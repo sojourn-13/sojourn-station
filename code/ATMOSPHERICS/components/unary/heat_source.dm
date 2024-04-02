@@ -1,13 +1,13 @@
 //TODO: Put this under a common parent type with freezers to cut down on the copypasta
-#define HEATER_PERF_MULT 4.5
+#define HEATER_PERF_MULT 2.5
 
 /obj/machinery/atmospherics/unary/heater
 	name = "gas heating system"
-	desc = "Heats gas if connected to a pipe network"
+	desc = "Heats gas when connected to a pipe network"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "heater_0"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	use_power = NO_POWER_USE
 	idle_power_usage = 5			//5 Watts for thermostat related circuitry
 	circuit = /obj/item/circuitboard/unary_atmos/heater
@@ -77,7 +77,7 @@
 
 	update_icon()
 
-/obj/machinery/atmospherics/unary/heater/attack_hand(mob/user as mob)
+/obj/machinery/atmospherics/unary/heater/attack_hand(mob/user)
 	nano_ui_interact(user)
 
 /obj/machinery/atmospherics/unary/heater/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
@@ -142,7 +142,7 @@
 	max_power_rating = initial(max_power_rating) * cap_rating / 2
 	max_temperature = max(initial(max_temperature) - T20C, 0) * ((bin_rating * 4 + cap_rating) / 5) + T20C
 	if(air_contents)
-		air_contents.volume = max(initial(internal_volume) - 200, 0) + 800 * bin_rating
+		air_contents.volume = max(initial(internal_volume) - 200, 0) + 200 * bin_rating
 	set_power_level(power_setting)
 
 /obj/machinery/atmospherics/unary/heater/proc/set_power_level(var/new_power_setting)

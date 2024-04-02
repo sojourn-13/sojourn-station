@@ -106,8 +106,8 @@
 
 	knock_over_odds = 15
 
-	maxHealth = 40
-	health = 40
+	maxHealth = 35
+	health = 35
 
 /mob/living/carbon/superior_animal/vox/rage
 	name = "Jan barazana"

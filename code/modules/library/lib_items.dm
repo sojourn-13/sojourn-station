@@ -33,7 +33,12 @@
 	/obj/item/oddity/ls/manual,
 	/obj/item/folder,
 	/obj/item/paper,
-	/obj/item/paper_bundle)
+	/obj/item/paper_bundle,
+	/obj/item/photo,
+	/obj/item/paper/alchemy_recipes,
+	/obj/item/scroll
+	)
+	var/hex_code_for_ui_backround = "#C4A484"
 
 /obj/structure/bookcase/Initialize()
 	. = ..()
@@ -45,6 +50,55 @@
 
 	update_icon()
 
+/obj/structure/bookcase/attack_hand(mob/living/carbon/user, list/modifiers)
+	. = ..()
+	ui_interact(user)
+
+/obj/structure/bookcase/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "BookCase")
+		ui.open()
+
+/obj/structure/bookcase/ui_data(mob/user)
+	var/list/data = list()
+
+	data["bookcase_name"] = "[name]"
+	data["contents"] = list()
+	data["contents_ref"] = list()
+	data["hex_code_for_backround"] = hex_code_for_ui_backround
+	for(var/obj/item/content in src)
+		data["contents"] += "[content]"
+		data["contents_ref"] += "[REF(content)]"
+
+	return data
+
+/obj/structure/bookcase/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		// Take the object out
+		if("remove_object")
+			var/obj/item/content = locate(params["ref"]) in src
+			if(istype(content) && in_range(src, usr))
+				usr.put_in_hands(content)
+				updateUsrDialog()
+				update_icon()
+
+/obj/structure/bookcase/Topic(href, href_list)
+	if(href_list["retrieve"])
+		usr << browse("", "window=bookcase") // Close the menu
+
+		var/obj/item/P = locate(href_list["retrieve"]) in src //contents[retrieveindex]
+		if(istype(P) && in_range(src, usr))
+			usr.put_in_hands(P)
+			updateUsrDialog()
+			update_icon()
+
+
+
 /obj/structure/bookcase/attackby(obj/item/O, mob/user)
 	if(LAZYLEN(allowed_book_items))
 		if(is_type_in_list(O,allowed_book_items))
@@ -52,7 +106,7 @@
 			O.loc = src
 			update_icon()
 	if(istype(O, /obj/item/pen))
-		var/newname = sanitizeSafe(input("What would you like to title this bookshelf?"), MAX_NAME_LEN)
+		var/newname = sanitizeSafe(input("What would you like to title?"), MAX_NAME_LEN)
 		if(!newname)
 			return
 		else
@@ -78,35 +132,40 @@
 
 	..()
 
-/obj/structure/bookcase/attack_hand(mob/user)
+/obj/structure/bookcase/attack_tk(mob/user)
+	if(anchored)
+		return attack_self_tk(user)
+	return ..()
+
+/obj/structure/bookcase/attack_self_tk(mob/user)
 	if(contents.len)
-		var/obj/item/book/choice = input("Which book would you like to remove from the shelf?") as null|obj in contents
-		if(choice)
-			if(!usr.canmove || usr.stat || usr.restrained() || !in_range(loc, usr))
-				return
-			if(ishuman(user))
-				if(!user.get_active_hand())
-					user.put_in_hands(choice)
-			else
-				choice.loc = get_turf(src)
+		if(prob(40 + contents.len * 5))
+			var/obj/item/I = pick(contents)
+			I.loc = loc
+			I.reset_plane_and_layer()
+			if(prob(25))
+				step_rand(I)
+			to_chat(user, SPAN_NOTICE("You pull \a [I] out of [src] at random."))
 			update_icon()
+			return
+	to_chat(user, SPAN_NOTICE("You find nothing in [src]."))
 
 /obj/structure/bookcase/ex_act(severity)
 	switch(severity)
 		if(1)
-			for(var/obj/item/book/b in contents)
+			for(var/obj/item/b in contents)
 				qdel(b)
 			qdel(src)
 			return
 		if(2)
-			for(var/obj/item/book/b in contents)
+			for(var/obj/item/b in contents)
 				if (prob(50)) b.loc = (get_turf(src))
 				else qdel(b)
 			qdel(src)
 			return
 		if(3)
 			if (prob(50))
-				for(var/obj/item/book/b in contents)
+				for(var/obj/item/b in contents)
 					b.loc = (get_turf(src))
 				qdel(src)
 			return
@@ -124,6 +183,7 @@
 /obj/structure/bookcase/metal
 	desc = "A metal shelving unit used for storing all sorts of literature."
 	icon_state = "metalshelf-0"
+	hex_code_for_ui_backround = "#897E75"
 
 /obj/structure/bookcase/metal/update_icon()
 	if(contents.len < 5)
@@ -152,6 +212,7 @@
 		new /obj/item/book/manual/wiki/engineering_hacking(src)
 		new /obj/item/book/manual/wiki/engineering_atmos(src)
 		new /obj/item/book/manual/evaguide(src)
+		new /obj/item/book/manualshield_generator_guide(src)
 		update_icon()
 
 /obj/structure/bookcase/manuals/research_and_development
@@ -161,6 +222,36 @@
 		..()
 		new /obj/item/book/manual/research_and_development(src)
 		update_icon()
+
+
+/obj/structure/bookcase/guncase
+	name = "gunparts locker"
+	desc = "A metal locker unit that can store, gun parts, ammo and tools related to gunsmithing. As well as gun storage such as pouches or cases."
+	icon_state = "gunpart_locker"
+	hex_code_for_ui_backround = "#897E75"
+	allowed_book_items = list(
+	/obj/item/part/gun,
+	/obj/item/tool_upgrade,
+	/obj/item/gun_upgrade,
+	/obj/item/tool/screwdriver,
+	/obj/item/tool/wirecutters,
+	/obj/item/tool/crowbar,
+	/obj/item/tool/hammer,
+	/obj/item/tool/saw,
+	/obj/item/ammo_magazine,
+	/obj/item/ammo_casing,
+	/obj/item/reagent_containers/spray/vvd40,
+	/obj/item/reagent_containers/glass/beaker,
+	/obj/item/storage/backpack/guncase,
+	/obj/item/clothing/accessory/holster,
+	/obj/item/storage/pouch/baton_holster,
+	/obj/item/storage/pouch/ammo,
+	/obj/item/ammo_kit
+	)
+
+
+/obj/structure/bookcase/guncase/update_icon()
+	return
 
 
 /*

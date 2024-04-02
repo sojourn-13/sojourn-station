@@ -32,6 +32,7 @@
 
 	wield_delay = 1.4 SECOND
 	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class assault rifle. Why is this 7.62 instead of 9mm? I'll never know.
+	gun_parts = list(/obj/item/part/gun/frame/vintorez = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 /obj/item/gun/projectile/automatic/vintorez/NM_colony
 	name = "\"Val\" silenced rifle"
@@ -44,6 +45,7 @@
 	price_tag = 800
 	serial_type = "NM"
 	excelsior = FALSE
+	gun_parts = list(/obj/item/part/gun/frame/vintorez = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 /obj/item/gun/projectile/automatic/vintorez/update_icon()
 	..()
@@ -63,3 +65,13 @@
 /obj/item/gun/projectile/automatic/vintorez/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/part/gun/frame/vintorez
+	name = "Vintorez frame"
+	desc = "A Vintorez rifle frame. Accurate and damaging."
+	icon_state = "frame_vintorez"
+	result = /obj/item/gun/projectile/automatic/vintorez
+	resultvars = list(/obj/item/gun/projectile/automatic/vintorez, /obj/item/gun/projectile/automatic/vintorez/NM_colony)
+	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)

@@ -185,6 +185,9 @@
 			return "reports"
 	return pick(speech_verb)
 
+/datum/language/proc/can_speak_special(var/mob/speaker)
+	return 1
+
 // Language handling.
 /mob/proc/add_language(var/language)
 

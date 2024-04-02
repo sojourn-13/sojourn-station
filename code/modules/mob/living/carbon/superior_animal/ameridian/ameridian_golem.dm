@@ -22,8 +22,8 @@
 	attack_sound = 'sound/weapons/heavysmash.ogg' //So we dont make bite sounds
 
 	deathmessage = "shatters in a pile of rubbles."
-	health = 80
-	maxHealth = 80
+	health = 60
+	maxHealth = 60
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	leather_amount = 0

@@ -29,7 +29,7 @@
 	data["is_owner"] = owner && (owner == user.mind)
 	data["contracts"] = list()
 
-	for(var/datum/antag_contract/item/C in GLOB.excel_antag_contracts)
+	for(var/datum/antag_contract/item/C in GLOB.various_antag_contracts)
 		if(C.completed || !C.check(src))
 			continue
 		data["contracts"].Add(list(list(
@@ -59,7 +59,7 @@
 
 		playsound(get_turf(src), 'sound/machines/defib_zap.ogg', 50, 1, -1)
 
-		for(var/datum/antag_contract/item/C in GLOB.excel_antag_contracts)
+		for(var/datum/antag_contract/item/C in GLOB.various_antag_contracts)
 			if(C.completed)
 				continue
 			C.on_container(src)

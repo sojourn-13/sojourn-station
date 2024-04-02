@@ -11,15 +11,13 @@
 	difficulty = "Medium."
 	selection_color = "#ecd37d"
 	ideal_character_age = 40
-	minimum_character_age = 30
-	playtimerequired = 1200
+	minimum_character_age = 25
+	playtimerequired = 600
 	also_known_languages = list(LANGUAGE_LATIN = 100)
 	security_clearance = CLEARANCE_CLERGY
 	health_modifier = 10
-	access = list(
-		access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors
-	)
-	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
+	access = list(access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 
 
 	wage = WAGE_COMMAND //The church has deep pockets
@@ -34,16 +32,14 @@
 		STAT_TGH = 10,
 	)
 
-	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling
-		//, /datum/perk/chemist -Thanos Voice: "A small price to pay for salvation."
-	)
+	perks = list(PERK_NEAT, PERK_GREENTHUMB, PERK_CHANNELING)
 
 	software_on_spawn = list(/datum/computer_file/program/records,
 							 /datum/computer_file/program/reports)
 
 	core_upgrades = list(
-		CRUCIFORM_PRIEST,
-		CRUCIFORM_REDLIGHT
+		CRUCIFORM_CLERGY,
+		CRUCIFORM_PRIME
 	)
 
 	description = "Прайм является главой местного отделения Церкви Абсолюта. <br>\
@@ -89,13 +85,13 @@
 	STAT_VIG = 10,
 	STAT_TGH = 5,
 	)
-	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 
 	core_upgrades = list(
-		CRUCIFORM_PRIEST
+		CRUCIFORM_CLERGY
 	)
 
-	perks = list(/datum/perk/neat, /datum/perk/greenthumb, /datum/perk/channeling)
+	perks = list(PERK_NEAT, PERK_GREENTHUMB, PERK_CHANNELING)
 
 	description = "Вектор служит Прайму и, в более широком смысле, церкви как последователь Веры.<br>\
 	Священные обязанности по эксплуатации биореактора и управлению биомассой для церковных машин являются вашим главным приоритетом.<br>\

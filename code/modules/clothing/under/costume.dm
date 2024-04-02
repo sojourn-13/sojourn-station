@@ -78,7 +78,6 @@ obj/item/clothing/under/costume/history/pirate
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		item_state = options[choice]
 		item_state_slots = list(
 			slot_back_str = options[choice]
 		)
@@ -113,7 +112,6 @@ obj/item/clothing/under/costume/history/pirate
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		item_state = options[choice]
 		item_state_slots = list(
 			slot_back_str = options[choice]
 		)
@@ -271,7 +269,6 @@ obj/item/clothing/under/costume/history/pirate
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		item_state = options[choice]
 		item_state_slots = list(
 			slot_back_str = options[choice]
 		)
@@ -310,7 +307,6 @@ obj/item/clothing/under/costume/history/pirate
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		item_state = options[choice]
 		item_state_slots = list(
 			slot_back_str = options[choice]
 		)

@@ -36,6 +36,7 @@
 
 	wield_delay = 1 SECOND
 	wield_delay_factor = 0.5 // 50 vig for instant wield
+	gun_parts = list(/obj/item/part/gun/frame/dp27 = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 obj/item/gun/projectile/automatic/dp/update_icon()
 	..()
@@ -46,3 +47,13 @@ obj/item/gun/projectile/automatic/dp/update_icon()
 		icon_state = initial(icon_state)
 		set_item_state()
 	return
+
+/obj/item/part/gun/frame/dp27
+	name = "DP27 frame"
+	desc = "A DP27 frame. A gravity-operated machinegun fed by pan-mags."
+	icon_state = "frame_dp27"
+	result = /obj/item/gun/projectile/automatic/dp
+	resultvars = list(/obj/item/gun/projectile/automatic/dp)
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/machinegun
+	barrelvars = list(/obj/item/part/gun/barrel/lrifle)

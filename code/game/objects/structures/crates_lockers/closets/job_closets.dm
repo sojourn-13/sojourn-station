@@ -27,7 +27,6 @@
 	new /obj/item/clothing/accessory/waistcoat(src)
 	new /obj/item/clothing/shoes/color/black(src)
 	new /obj/item/clothing/shoes/color/black(src)
-	new /obj/item/clothing/under/rank/bartender/skirt(src)
 
 /*
  * Chef
@@ -40,7 +39,7 @@
 /obj/structure/closet/chefcloset/populate_contents()
 	new /obj/item/clothing/under/costume/job/waiter(src)
 	new /obj/item/clothing/under/costume/job/waiter(src)
-	new /obj/item/clothing/under/waiter/skirt(src)
+	new /obj/item/clothing/under/rank/bartender(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/storage/box/mousetraps(src)
@@ -82,10 +81,12 @@
 	new /obj/item/clothing/shoes/galoshes(src)
 	new /obj/item/mop(src)
 	new /obj/item/soap/deluxe(src)
-	new /obj/item/storage/pouch/small_generic(src) // Because I feel like poor janitor gets it bad.
+	new /obj/item/storage/pouch/small_generic/purple(src) // These pouches never get used! Why not give them to are jani boys?
 	new /obj/item/newspaper_stack(src)
 	new /obj/item/holyvacuum(src)
 	new /obj/item/clothing/accessory/job/cape/service(src) // Boobles! - Seb
+	new /obj/item/tool/pickaxe(src) //helps with burrows! decent enough for minor pest control as well
+	new /obj/item/tool/hammer(src) //cracks! To go along side that pickaxe
 
 /obj/structure/closet/custodial
 	name = "church custodial closet"
@@ -128,9 +129,10 @@
 	new /obj/item/clothing/mask/gas/germanmask(src)
 	new /obj/item/device/radio/headset/church(src)
 	new /obj/item/clothing/gloves/thick(src)
-	new /obj/item/clothing/under/rank/church/sport(src)
+	new /obj/item/gunbox/church(src)
 	new /obj/item/clothing/suit/storage/neotheosports(src)
 	new /obj/item/cell/small(src)
 	new /obj/item/tool/knife/dagger/nt(src)
+	new /obj/item/gun/energy/ntpistol(src)
 	new /obj/item/clothing/head/helmet/acolyte(src)
 	new /obj/item/clothing/suit/armor/vest/acolyte(src)

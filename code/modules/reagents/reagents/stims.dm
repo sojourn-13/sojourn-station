@@ -4,9 +4,9 @@
 	constant_metabolism = TRUE
 	reagent_type = "Stimulator"
 
-/datum/reagent/stim/mbr
-	name = "Machine binding ritual"
-	id = "machine binding ritual"
+/datum/reagent/stim/greaser
+	name = "Greaser"
+	id = "greaser"
 	description = "A ethanol based stimulator. Used as pick me up for engineers and technicians."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
@@ -15,23 +15,21 @@
 	addiction_chance = 20
 	nerve_system_accumulations = 15
 
-/datum/reagent/stim/mbr/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_BASIC, STIM_TIME, "mbr")
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "mbr")
+/datum/reagent/stim/greaser/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_BASIC, STIM_TIME, "greaser")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "greaser")
 
-/datum/reagent/stim/mbr/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "mbr_w")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "mbr_w")
+/datum/reagent/stim/greaser/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "greaser_w")
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "greaser_w")
 
-/datum/reagent/stim/mbr/overdose(mob/living/carbon/M, alien)
+/datum/reagent/stim/greaser/overdose(mob/living/carbon/M, alien)
 	if(prob(5))
 		M.vomit()
-	M.add_chemical_effect(CE_TOXIN, 1)
-	if(ishuman(M) && prob(80 - (30 * M.stats.getMult(STAT_TGH))))
+	if(ishuman(M) && prob(80 - (60 * (1 - M.stats.getMult(STAT_TGH)))))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
-		if(istype(L))
-			L.take_damage(3, 0)
+		var/obj/item/organ/internal/L = H.random_organ_by_process(OP_LIVER)
+		create_overdose_wound(L, M, /datum/component/internal_wound/organic/heavy_poisoning)
 
 /datum/reagent/stim/ishigrape
 	name = "Ishimura Special"
@@ -73,6 +71,10 @@
 
 /datum/reagent/stim/cherrydrops/overdose(mob/living/carbon/M, alien)
 	M.apply_effect(3, STUTTER)
+	if(ishuman(M) && prob(80 - (60 * (1 - M.stats.getMult(STAT_TGH)))))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/B = H.random_organ_by_process(OP_BLOOD_VESSEL)
+		create_overdose_wound(B, M, /datum/component/internal_wound/organic/heavy_poisoning)
 
 /datum/reagent/stim/pro_surgeon
 	name = "ProSurgeon"
@@ -95,12 +97,16 @@
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "proSurgeon_w")
 
 /datum/reagent/stim/pro_surgeon/overdose(mob/living/carbon/M, alien)
-	if(prob(5 - (5 * M.stats.getMult(STAT_TGH))))
+	var/inverse_tough_mult = 1 - M.stats.getMult(STAT_TGH)
+	if(prob(5 - (5 * inverse_tough_mult)))
 		M.custom_emote(1,"twitches and drops [M.gender == MALE ? "his" : "her"] [M.get_active_hand()].") // there is only two genders, male and others
 		M.drop_item()
-	M.add_chemical_effect(CE_TOXIN, 1)
-	if(prob(80 - (20 * M.stats.getMult(STAT_TGH))))
-		M.adjustToxLoss(5)
+	if(prob(80 - (20 * inverse_tough_mult)))
+		M.add_chemical_effect(CE_TOXIN, 5)
+	if(ishuman(M)&& prob(80 - (60 * inverse_tough_mult)))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/N = H.random_organ_by_process(OP_NERVE)
+		create_overdose_wound(N, M, /datum/component/internal_wound/organic/heavy_poisoning)
 
 /datum/reagent/stim/violence
 	name = "Violence"
@@ -124,9 +130,15 @@
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "violence_w")
 
 /datum/reagent/stim/violence/overdose(mob/living/carbon/M, alien)
-	M.adjustCloneLoss(5)
+	var/inverse_tough_mult = 1 - M.stats.getMult(STAT_TGH)
 	M.make_jittery(5)
 	M.confused = max(M.confused, 20)
+	if(prob(80 - (20 * inverse_tough_mult)))
+		M.adjustCloneLoss(5)
+	if(ishuman(M) && prob(80 - (60 * inverse_tough_mult)))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/I = H.random_organ_by_process(OP_MUSCLE)
+		create_overdose_wound(I, M, /datum/component/internal_wound/organic/heavy_poisoning)
 
 /datum/reagent/stim/bouncer
 	name = "Bouncer"
@@ -148,9 +160,14 @@
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "bouncer_w")
 
 /datum/reagent/stim/bouncer/overdose(mob/living/carbon/M, alien)
-	if(prob(5 - (3 * M.stats.getMult(STAT_TGH))))
+	var/inverse_tough_mult = 1 - M.stats.getMult(STAT_TGH)
+	if(prob(5 - (3 * inverse_tough_mult)))
 		M.Stun(rand(1,5))
 	M.bodytemperature += TEMPERATURE_DAMAGE_COEFFICIENT
+	if(ishuman(M) && prob(80 - (60 * inverse_tough_mult)))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/L = H.random_organ_by_process(OP_LUNGS)
+		create_overdose_wound(L, M, /datum/component/internal_wound/organic/heavy_poisoning)
 
 /datum/reagent/stim/steady
 	name = "Steady"
@@ -170,20 +187,19 @@
 /datum/reagent/stim/steady/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "steady_w")
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "steady_w")
-	if(prob(25 - (10 * M.stats.getMult(STAT_TGH))))
+	if(prob(25 - (10 * (1 - M.stats.getMult(STAT_TGH)))))
 		M.shake_animation(5)
 
 /datum/reagent/stim/steady/overdose(mob/living/carbon/M, alien)
-	if(ishuman(M) && prob(80 - (30 * M.stats.getMult(STAT_TGH))))
+	if(ishuman(M) && prob(80 - (60 * (1 - M.stats.getMult(STAT_TGH)))))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/heart/L = H.random_organ_by_process(OP_HEART)
-		if(istype(L))
-			L.take_damage(5, 0)
+		var/obj/item/organ/internal/I = H.random_organ_by_process(OP_HEART)
+		create_overdose_wound(I, M, /datum/component/internal_wound/organic/heavy_poisoning)
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
 
-/datum/reagent/stim/machine_spirit
-	name = "Machine Spirit"
-	id = "machine spirit"
+/datum/reagent/stim/greasy_lard
+	name = "Greasy Lard"
+	id = "greasy lard"
 	description = "Potent ethanol based stimulator. Used by engineers and technicians to gain an edge when working with machines."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
@@ -192,25 +208,23 @@
 	nerve_system_accumulations = 30
 	addiction_chance = 30
 
-/datum/reagent/stim/machine_spirit/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_ADEPT, STIM_TIME, "machine_spirit")
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "machine_spirit")
-	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "machine_spirit")
+/datum/reagent/stim/greasy_lard/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_ADEPT, STIM_TIME, "greasy_lard")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "greasy_lard")
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "greasy_lard")
 
-/datum/reagent/stim/machine_spirit/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "machineSpirit_w")
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "machineSpirit_w")
-	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "machineSpirit_w")
+/datum/reagent/stim/greasy_lard/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "greasy_lard_w")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "greasy_lard_w")
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "greasy_lard_w")
 
-/datum/reagent/stim/machine_spirit/overdose(mob/living/carbon/M, alien)
+/datum/reagent/stim/greasy_lard/overdose(mob/living/carbon/M, alien)
 	if(prob(5))
 		M.vomit()
-	M.add_chemical_effect(CE_TOXIN, 1)
-	if(ishuman(M) && prob(80 - (30 * M.stats.getMult(STAT_TGH))))
+	if(ishuman(M) && prob(80 - (60 * (1 - M.stats.getMult(STAT_TGH)))))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
-		if(istype(L))
-			L.take_damage(5, 0)
+		create_overdose_wound(L, M, /datum/component/internal_wound/organic/necrosis_start, "rot")
 
 /datum/reagent/stim/grape_drops
 	name = "Grape Drops"
@@ -237,6 +251,10 @@
 /datum/reagent/stim/grape_drops/overdose(mob/living/carbon/M, alien)
 	M.slurring = max(M.slurring, 30)
 	M.adjustBrainLoss(1)
+	if(ishuman(M) && prob(80 - (60 * (1 - M.stats.getMult(STAT_TGH)))))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/B = H.random_organ_by_process(OP_BLOOD_VESSEL)
+		create_overdose_wound(B, M, /datum/component/internal_wound/organic/necrosis_start, "rot")
 
 /datum/reagent/stim/ultra_surgeon
 	name = "UltraSurgeon"
@@ -265,15 +283,20 @@
 	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "ultraSurgeon_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "ultraSurgeon_w")
 	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "ultraSurgeon_w")
-	if(prob(25 - (10 * M.stats.getMult(STAT_TGH))))
+	if(prob(25 - (10 * (1 - M.stats.getMult(STAT_TGH)))))
 		M.shake_animation(8)
 
 /datum/reagent/stim/ultra_surgeon/overdose(mob/living/carbon/M, alien)
-	if(prob(80 - (20 * M.stats.getMult(STAT_TGH))))
-		M.adjustToxLoss(10)
-	if(prob(10 - (5 * M.stats.getMult(STAT_TGH))))
+	var/inverse_tough_mult = 1 - M.stats.getMult(STAT_TGH)
+	if(prob(80 - (20 * inverse_tough_mult)))
+		M.add_chemical_effect(CE_TOXIN, 10)
+	if(prob(10 - (5 * inverse_tough_mult)))
 		M.custom_emote(1,"twitches and drops [M.gender == MALE ? "his" : "her"] [M.get_active_hand()].") // there is only two genders, male and others
 		M.drop_item()
+	if(ishuman(M) && prob(80 - (60 * inverse_tough_mult)))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/N = H.random_organ_by_process(OP_NERVE)
+		create_overdose_wound(N, M, /datum/component/internal_wound/organic/necrosis_start, "rot")
 
 /datum/reagent/stim/violence_ultra
 	name = "Violence Ultra"
@@ -295,14 +318,20 @@
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "violenceUltra_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "violenceUltra_w")
 	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "violenceUltra_w")
-	if(prob(25 - (10 * M.stats.getMult(STAT_TGH))))
+	if(prob(25 - (10 * (1 - M.stats.getMult(STAT_TGH)))))
 		M.shake_animation(8)
 	M.adjustNutrition(-5)
 
 /datum/reagent/stim/violence_ultra/overdose(mob/living/carbon/M, alien)
-	M.adjustCloneLoss(5)
+	var/inverse_tough_mult = 1 - M.stats.getMult(STAT_TGH)
 	M.make_jittery(5)
 	M.confused = max(M.confused, 20)
+	if(prob(80 - (20 * inverse_tough_mult)))
+		M.adjustCloneLoss(5)
+	if(ishuman(M) && prob(80 - (60 * inverse_tough_mult)))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/I = H.random_organ_by_process(OP_MUSCLE)
+		create_overdose_wound(I, M, /datum/component/internal_wound/organic/necrosis_start, "rot")
 
 /datum/reagent/stim/boxer
 	name = "Boxer"
@@ -325,9 +354,14 @@
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "boxer_w")
 
 /datum/reagent/stim/boxer/overdose(mob/living/carbon/M, alien)
-	if(prob(8 - (3 * M.stats.getMult(STAT_TGH))))
-		M.Stun(rand(2,5))
+	var/inverse_tough_mult = 1 - M.stats.getMult(STAT_TGH)
 	M.bodytemperature += TEMPERATURE_DAMAGE_COEFFICIENT * 1.5
+	if(prob(8 - (3 * inverse_tough_mult)))
+		M.Stun(rand(2,5))
+	if(ishuman(M) && prob(80 - (60 * inverse_tough_mult)))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/L = H.random_organ_by_process(OP_LUNGS)
+		create_overdose_wound(L, M, /datum/component/internal_wound/organic/necrosis_start, "rot")
 
 /datum/reagent/stim/turbo
 	name = "TURBO"
@@ -350,17 +384,17 @@
 /datum/reagent/stim/turbo/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "turbo_w")
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "turbo_w")
-	if(prob(25 - (5 * M.stats.getMult(STAT_TGH))))
+	if(prob(25 - (5 * (1 - M.stats.getMult(STAT_TGH)))))
 		M.shake_animation(8)
 
 /datum/reagent/stim/turbo/overdose(mob/living/carbon/M, alien)
-	if(ishuman(M) && (prob(80 - (30 * M.stats.getMult(STAT_TGH)))))
+	var/inverse_tough_mult = 1 - M.stats.getMult(STAT_TGH)
+	if(ishuman(M) && prob(80 - (60 * inverse_tough_mult)))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/heart/L = H.random_organ_by_process(OP_HEART)
-		if(istype(L))
-			L.take_damage(7, 0)
+		var/obj/item/organ/internal/vital/heart/L = H.random_organ_by_process(OP_HEART)
+		create_overdose_wound(L, M, /datum/component/internal_wound/organic/necrosis_start, "rot")
 	M.add_chemical_effect(CE_SLOWDOWN, 1)
-	if(prob(5 - (2 * M.stats.getMult(STAT_TGH))))
+	if(prob(5 - (2 * inverse_tough_mult)))
 		M.paralysis = max(M.paralysis, 20)
 
 /datum/reagent/stim/party_drops
@@ -370,30 +404,44 @@
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#ffb3b7"
-	overdose = REAGENTS_OVERDOSE - 18
+	overdose = REAGENTS_OVERDOSE - 20
 	nerve_system_accumulations = 70
 	addiction_chance = 50
 
 /datum/reagent/stim/party_drops/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_ADEPT, STIM_TIME, "party_drops")
-	M.stats.addTempStat(STAT_BIO, STAT_LEVEL_ADEPT, STIM_TIME, "party_drops")
-	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "party_drops")
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "party_drops")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "party_drops")
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "party_drops")
+	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "party_drops")
+	M.stats.addTempStat(STAT_BIO, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "party_drops")
+	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "party_drops")
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "party_drops")
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "party_drops")
+	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "party_drops")
 
 /datum/reagent/stim/party_drops/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "partyDrops_w")
 	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "partyDrops_w")
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "partyDrops_w")
-	if(prob(25 - (5 * M.stats.getMult(STAT_TGH))))
+	if(prob(25 - (5 * (1 - M.stats.getMult(STAT_TGH)))))
 		M.shake_animation(8)
 
 /datum/reagent/stim/party_drops/overdose(mob/living/carbon/M, alien)
-	M.adjustOxyLoss(2)
+	var/wound_chance = 80 - (79 * (1 - M.stats.getMult(STAT_TGH)))
+	M.adjustBrainLoss(2)
 	M.slurring = max(M.slurring, 30)
 	if(prob(5))
 		M.vomit()
+	if(ishuman(M))
+		if(prob(wound_chance))
+			var/mob/living/carbon/human/H = M
+			var/obj/item/organ/internal/B = H.random_organ_by_process(OP_BLOOD_VESSEL)
+			create_overdose_wound(B, M, /datum/component/internal_wound/organic/permanent, "scar")
+		if(prob(wound_chance))
+			var/mob/living/carbon/human/H = M
+			var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
+			create_overdose_wound(L, M, /datum/component/internal_wound/organic/permanent, "scar")
+		if(prob(wound_chance))
+			var/mob/living/carbon/human/H = M
+			var/obj/item/organ/internal/N = H.random_organ_by_process(OP_NERVE)
+			create_overdose_wound(N, M, /datum/component/internal_wound/organic/permanent, "scar")
 
 /datum/reagent/stim/menace
 	name = "MENACE"
@@ -402,33 +450,47 @@
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#ffb3b7"
-	overdose = REAGENTS_OVERDOSE - 21
+	overdose = REAGENTS_OVERDOSE - 18
 	nerve_system_accumulations = 70
 	addiction_chance = 90
 
 /datum/reagent/stim/menace/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, STIM_TIME, "menace")
-	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "menace")
-	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "menace")
-	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "menace")
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, STIM_TIME, "menace")
-	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "menace")
+	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace")
+	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace")
+	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace")
+	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "menace")
+	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "menace")
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, ADV_STIM_TIME, "menace")
 	M.slurring = max(M.slurring, 30)
 	M.add_chemical_effect(CE_SPEECH_VOLUME, 4)
 
 /datum/reagent/stim/menace/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, STIM_TIME, "menace_w")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, STIM_TIME, "menace_w")
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, STIM_TIME, "menace_w")
-	if(prob(25 - (5 * M.stats.getMult(STAT_TGH))))
+	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace_w")
+	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace_w")
+	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, ADV_STIM_TIME, "menace_w")
+	if(prob(25 - (5 * (1 - M.stats.getMult(STAT_TGH)))))
 		M.shake_animation(8)
 	M.adjustNutrition(-7)
 
 /datum/reagent/stim/menace/overdose(mob/living/carbon/M, alien)
+	var/wound_chance = 80 - (79 * (1 - M.stats.getMult(STAT_TGH)))
 	M.slurring = max(M.slurring, 50)
 	M.apply_effect(3, STUTTER)
 	if(prob(6))
 		M.paralysis = max(M.paralysis, 20)
+	if(ishuman(M))
+		if(prob(wound_chance))
+			var/mob/living/carbon/human/H = M
+			var/obj/item/organ/internal/I = H.random_organ_by_process(OP_MUSCLE)
+			create_overdose_wound(I, M, /datum/component/internal_wound/organic/permanent, "scar")
+		if(prob(wound_chance))
+			var/mob/living/carbon/human/H = M
+			var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LUNGS)
+			create_overdose_wound(L, M, /datum/component/internal_wound/organic/permanent, "scar")
+		if(prob(wound_chance))
+			var/mob/living/carbon/human/H = M
+			var/obj/item/organ/internal/O = H.random_organ_by_process(OP_HEART)
+			create_overdose_wound(O, M, /datum/component/internal_wound/organic/permanent, "scar")
 
 /datum/reagent/stim/gumdrops
 	name = "Gum Drops"
@@ -467,7 +529,56 @@
 
 /datum/reagent/stim/hacker/withdrawal_act(mob/living/carbon/M)
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_PROF, STIM_TIME, "hacker_w")
+/*
+/datum/reagent/stim/slime_smarts
+	name = "core stimulant"
+	id = "corestim"
+	description = "A powerful mutagenic stimulant used by Aulvae to augment their intellect. To call this poison to normal carbon biology would be the understatement of the century."
+	scannable = FALSE
+	addiction_chance = 0
 
+/datum/reagent/stim/slime_smarts/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.stats.addTempStat(STAT_MEC, 45, 1 MINUTES, "Aulvae biology")
+		M.stats.addTempStat(STAT_BIO, 45, 1 MINUTES, "Aulvae biology")
+		M.stats.addTempStat(STAT_COG, 45, 1 MINUTES, "Aulvae biology")
+	else
+		var/wound_chance = 100 - (79 * (1 - M.stats.getMult(STAT_TGH)))
+		if(ishuman(M))
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_MUSCLE)
+				create_overdose_wound(L, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/N = H.random_organ_by_process(OP_NERVE)
+				create_overdose_wound(N, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/N = H.random_organ_by_process(OP_BONE)
+				create_overdose_wound(N, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+
+
+/datum/reagent/stim/slime_strength
+	name = "cyto stimulant"
+	id = "cytostim"
+	description = "A powerful mutagenic stimulant used by Aulvae to augment their physical attributes. To call this poison to normal carbon biology would be the understatement of the century."
+	scannable = FALSE
+	addiction_chance = 0
+
+/datum/reagent/stim/slime_strength/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species?.reagent_tag == IS_SLIME)
+		M.stats.addTempStat(STAT_ROB, 45, 1 MINUTES, "Aulvae biology")
+		M.stats.addTempStat(STAT_TGH, 45, 1 MINUTES, "Aulvae biology")
+		M.stats.addTempStat(STAT_VIG, 45, 1 MINUTES, "Aulvae biology")
+	else
+		var/wound_chance = 100 - (79 * (1 - M.stats.getMult(STAT_TGH)))
+		if(ishuman(M))
+			if(prob(wound_chance))
+				var/mob/living/carbon/human/H = M
+				var/obj/item/organ/internal/liver/L = H.random_organ_by_process(BP_BRAIN)
+				create_overdose_wound(L, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
+*/
 /datum/reagent/stim/mind_melter
 	name = "Cerebrenal"
 	id = "mindmelter"
@@ -546,7 +657,6 @@
 			//Stablizating
 			L.heal_organ_damage(30, 30)
 			L.adjustOxyLoss(-50)
-			L.adjustToxLoss(-50)
 
 			L.emote("gasp")
 			L.Weaken(rand(10,25))

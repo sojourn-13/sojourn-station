@@ -5,6 +5,7 @@
 	icon_state = "energy"
 	fire_sound = 'sound/weapons/energy/Taser.ogg'
 	fire_sound_text = "laser blast"
+	gun_parts = null //No disassembling these by default, SOMEONE failed to give them any actual parts.
 
 	init_recoil = HANDGUN_RECOIL(0.1)
 

@@ -5,8 +5,8 @@
 	icon_living = "crusher"
 	icon_dead = "crusher_dead"
 	icon_rest = "crusher_stunned"
-	maxHealth = 500
-	health = 500
+	maxHealth = 250
+	health = 250
 	attack_sound = list('sound/xenomorph/alien_footstep_charge1.ogg', 'sound/xenomorph/alien_footstep_charge2.ogg', 'sound/xenomorph/alien_footstep_charge3.ogg')
 
 	armor = list(melee = 35, bullet = 35, energy = 15, bomb = 30, bio = 100, rad = 100)
@@ -31,8 +31,8 @@
 	icon_living = "screecher"
 	icon_dead = "screecher_dead"
 	icon_rest = "screecher_stunned"
-	maxHealth = 400
-	health = 400
+	maxHealth = 200
+	health = 200
 
 	melee_damage_lower = 20
 	melee_damage_upper = 25
@@ -55,8 +55,8 @@
 	icon_living = "ravager"
 	icon_dead = "ravager_dead"
 	icon_rest = "ravager_stunned"
-	maxHealth = 450
-	health = 450
+	maxHealth = 225
+	health = 225
 
 	melee_damage_lower = 40
 	melee_damage_upper = 50
@@ -71,8 +71,8 @@
 	icon_living = "defiler"
 	icon_dead = "defiler_dead"
 	icon_rest = "defiler_stunned"
-	maxHealth = 400
-	health = 400
+	maxHealth = 200
+	health = 200
 
 	melee_damage_lower = 30
 	melee_damage_upper = 35
@@ -96,8 +96,8 @@
 	icon_living = "hivelord"
 	icon_dead = "hivelord_dead"
 	icon_rest = "hivelord_stunned"
-	maxHealth = 600
-	health = 600
+	maxHealth = 300
+	health = 300
 
 	allowed_stat_modifiers = list(
 		/datum/stat_modifier/mob/living/carbon/superior_animal/padded/xeno = 36,

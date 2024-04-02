@@ -17,8 +17,8 @@
 
 	cant_be_pulled = TRUE
 	cant_gib = TRUE
-	maxHealth = 120
-	health = 120
+	maxHealth = 100
+	health = 100
 	randpixel = 0
 	attack_sound = list('sound/xenomorph/alien_claw_flesh1.ogg', 'sound/xenomorph/alien_claw_flesh2.ogg', 'sound/xenomorph/alien_claw_flesh3.ogg', 'sound/xenomorph/alien_tail_attack.ogg')
 	var/aggro_noise = 'sound/hallucinations/hell_screech.ogg'
@@ -92,6 +92,14 @@
 	var/slow_respawn = 15 MINUTES
 	var/respawn_mob_type = /obj/random/mob/psi_monster
 	var/affects_chaos = FALSE
+
+	var/leach_on_odds = 0
+	var/can_leach = FALSE
+	var/is_leaching = FALSE
+	var/steal_odds = 0
+	var/stat_to_steal = STAT_VIV
+	var/steal_amount = 1
+	var/mob/living/Victim = null
 
 
 /mob/living/carbon/superior_animal/psi_monster/New()

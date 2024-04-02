@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 /obj/structure/scrap
 	name = "scrap pile"
 	desc = "A pile of industrial debris."
-	appearance_flags = TILE_BOUND
+	appearance_flags = TILE_BOUND | DEFAULT_APPEARANCE_FLAGS
 	anchored = TRUE
 	opacity = FALSE
 	density = FALSE
@@ -20,6 +20,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/material,
 		/obj/item/stack/rods/random,
 		/obj/item/material/shard,
+		/obj/random/gun_parts,
 		/obj/random/junk/nondense = 2,
 		/obj/random/pack/rare = 0.4
 	)
@@ -32,7 +33,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	var/obj/big_item
 	var/list/ways = list("pokes around in", "searches", "scours", "digs through", "rummages through", "goes through","picks through")
 	var/beacon = FALSE // If this junk pile is getting pulled by the junk beacon or not.
-	sanity_damage = 0.1
+	//sanity_damage = 0.1	// no fuck you that's dumb
 	var/rare_item_chance = 33
 	var/rare_item = FALSE
 
@@ -120,6 +121,11 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	for(var/obj/item/loot in contents)
 		if(prob(66))
 			loot.make_old()
+		if(istype(loot, /obj/item/reagent_containers/food/snacks))
+			var/obj/item/reagent_containers/food/snacks/S = loot
+			S.junk_food = TRUE
+			if(prob(20))
+				S.reagents.add_reagent("toxin", rand(2, 5))
 
 	loot = new(src)
 	loot.max_w_class = ITEM_SIZE_HUGE
@@ -236,7 +242,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		var/mob/living/carbon/human/victim = user
 		if(victim.species.flags & NO_MINOR_CUT)
 			return FALSE
-		if(victim.gloves && prob(95))
+		if(victim.gloves)
 			return FALSE
 		var/obj/item/organ/external/BP = victim.get_organ(victim.hand ? BP_L_ARM : BP_R_ARM)
 		if(!BP)
@@ -244,7 +250,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		if(BP_IS_ROBOTIC(BP))
 			return FALSE
 		to_chat(user, "<span class='danger'>Ouch! You cut yourself while picking through \the [src].</span>")
-		BP.take_damage(5, null, TRUE, TRUE, "Sharp debris")
+		BP.take_damage(5, BRUTE, TRUE, TRUE, "Sharp debris")
 		victim.reagents.add_reagent("toxin", pick(prob(50);0,prob(50);5,prob(10);10,prob(1);25))
 		if(victim.species.flags & NO_PAIN) // So we still take damage, but actually dig through.
 			return FALSE
@@ -299,7 +305,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		O = new O(get_turf(src))
 		visible_message("<span class='notice'><span style='color:orange'>\A rare [O.name] is found beneath the [src]!</span>")
 	else if(rare_item && prob(50))
-		new /obj/item/stack/sheet/refined_scrap/random(src.loc)
+		new /obj/item/stack/material/refined_scrap/random(src.loc)
 		visible_message("<span class='notice'><span style='color:orange'>A pile of refined scrap is found beneath the [src]!</span>")
 	qdel(src)
 
@@ -395,12 +401,13 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 		/obj/random/pack/gun_loot = 8,
 		/obj/random/powercell,
 		/obj/random/mecha_equipment = 2,
-		/obj/item/toy/weapon/crossbow,
 		/obj/item/material/shard,
 		/obj/item/stack/material/steel/random,
 		/obj/item/stack/material/plasteel/random = 0.6,
 		/obj/random/junk/nondense,
-		/obj/random/pack/rare = 0.3
+		/obj/random/pack/rare = 0.3,
+		/obj/random/gun_parts/frames = 1,
+		/obj/random/gun_parts = 2
 	)
 
 /obj/structure/scrap/science
@@ -424,7 +431,12 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	name = "cloth pile"
 	desc = "A pile of ruined and discarded clothing."
 	parts_icon = 'icons/obj/structures/scrap/cloth.dmi'
-	loot_list = list(/obj/random/pack/cloth,/obj/random/pack/rare = 0.2)
+	loot_list = list(/obj/random/pack/cloth,
+		/obj/random/pack/rare = 0.2,
+		/obj/random/gun_parts/frames = 0.2,
+		/obj/random/gun_parts = 0.5,
+		/obj/item/storage/wallet = 0.2,
+		/obj/item/storage/wallet/random = 0.1)
 
 /obj/structure/scrap/poor
 	icontype = "poor"
@@ -456,6 +468,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/poor/large/beacon
 	beacon = TRUE
+	big_item_chance = 45
 
 /obj/structure/scrap/vehicle/large
 	name = "large industrial debris pile"
@@ -468,10 +481,11 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	base_min = 9
 	base_max = 14
 	base_spread = 16
-	big_item_chance = 100
+	big_item_chance = 80
 
 /obj/structure/scrap/vehicle/large/beacon
 	beacon = TRUE
+	big_item_chance = 60
 
 /obj/structure/scrap/food/large
 	name = "large food trash pile"
@@ -488,6 +502,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/food/large/beacon
 	beacon = TRUE
+	big_item_chance = 20
 
 /obj/structure/scrap/medical/large
 	name = "large medical refuse pile"
@@ -504,6 +519,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/medical/large/beacon
 	beacon = TRUE
+	big_item_chance = 30
 
 /obj/structure/scrap/guns/large
 	name = "large armaments refuse pile"
@@ -520,6 +536,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/guns/large/beacon
 	beacon = TRUE
+	big_item_chance = 25
 
 /obj/structure/scrap/science/large
 	name = "large scientific trash pile"
@@ -536,6 +553,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/science/large/beacon
 	beacon = TRUE
+	big_item_chance = 60
 
 /obj/structure/scrap/cloth/large
 	name = "large cloth pile"
@@ -552,6 +570,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 
 /obj/structure/scrap/cloth/large/beacon
 	beacon = TRUE
+	big_item_chance = 35
 
 /obj/structure/scrap/poor/structure
 	name = "large mixed rubbish"
@@ -563,10 +582,11 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	dig_amount = 3
 	base_min = 3
 	base_max = 6
-	big_item_chance = 100
+	big_item_chance = 80
 
 /obj/structure/scrap/poor/structure/beacon
 	beacon = TRUE
+	big_item_chance = 65
 
 
 /obj/structure/scrap/poor/structure/update_icon() //make big trash icon for this

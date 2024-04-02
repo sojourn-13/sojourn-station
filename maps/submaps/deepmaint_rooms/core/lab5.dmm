@@ -30,11 +30,13 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/fixed/fgrass,
 /area/deepmaint)
 "ah" = (
 /obj/structure/flora/small/grassb5,
 /obj/item/ammo_casing,
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/fixed/fgrass,
 /area/deepmaint)
 "ai" = (
@@ -122,6 +124,7 @@
 "ay" = (
 /obj/item/ammo_casing,
 /obj/item/ammo_casing,
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/fixed/fgrass,
 /area/deepmaint)
 "az" = (
@@ -273,6 +276,11 @@
 /obj/random/psi_catalyst,
 /turf/simulated/floor/fixed/fgrass,
 /area/deepmaint)
+"tf" = (
+/obj/item/ammo_casing,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/fixed/fgrass,
+/area/deepmaint)
 "uN" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -280,6 +288,10 @@
 	},
 /obj/random/cluster/psi_monster/lower_chance,
 /turf/simulated/floor/tiled/dark,
+/area/deepmaint)
+"Ub" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/fixed/fgrass,
 /area/deepmaint)
 
 (1,1,1) = {"
@@ -405,11 +417,11 @@ ab
 aD
 ab
 aD
-as
+tf
 aD
 aY
 aD
-ab
+Ub
 ai
 ab
 aD
@@ -565,7 +577,7 @@ aJ
 ab
 ab
 aq
-as
+tf
 as
 aD
 aM
@@ -668,7 +680,7 @@ aD
 ab
 al
 ab
-ab
+Ub
 aJ
 aa
 aa
@@ -686,7 +698,7 @@ aU
 aD
 ax
 aB
-ab
+Ub
 aD
 ab
 ap

@@ -88,9 +88,6 @@
 	if(is_drainable())
 		if(ishuman(usr))
 			var/mob/living/carbon/human/H = usr
-			if(!H.check_has_mouth())
-				to_chat(H, "Where do you intend to put \the [src]? You don't have a mouth!")
-				return
 			var/obj/item/blocked = H.check_mouth_coverage()
 			if(blocked)
 				to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
@@ -194,6 +191,14 @@
 		icon_state = "coffee"
 	else
 		icon_state = "cup"
+
+/obj/item/reagent_containers/food/drinks/os_coffee
+	name = "Hot Black Water"
+	desc = "A bottle of likely coffee..."
+	icon_state = "oscoffee"
+	center_of_mass = list("x"=15, "y"=10)
+	base_icon = "oscup"
+	preloaded_reagents = list("coffee" = 30)
 
 /obj/item/reagent_containers/food/drinks/ice
 	name = "Northern Freeze"

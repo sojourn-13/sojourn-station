@@ -88,6 +88,12 @@
 	allowed_roles = list("Chief Biolab Overseer","Soteria Doctor","Soteria Lifeline Technician","Corpsman")
 	sort_category = "Faction: Soteria"
 
+/datum/gear/factionsoteria/medicalhalfmoon
+	display_name = "medical HUD, halfmoon glasses"
+	path = /obj/item/clothing/glasses/hud/health/halfmoon
+	allowed_roles = list("Chief Biolab Overseer","Soteria Doctor","Soteria Lifeline Technician","Corpsman")
+	sort_category = "Faction: Soteria"
+
 /datum/gear/factionsoteria/hudpatch
 	display_name = "medical HUD, eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch/medpatch

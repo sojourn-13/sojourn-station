@@ -15,9 +15,9 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
-	playtimerequired = 2500
+	playtimerequired = 1200
 	health_modifier = 25
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF, FORM_SLIME)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/smc
 
@@ -35,10 +35,10 @@
 		STAT_VIG = 40,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete,
-				 /datum/perk/job/blackshield_conditioning,
-				 /datum/perk/job/bolt_reflect,
-				 /datum/perk/chem_contraband)
+	perks = list(PERK_ASS_OF_CONCRETE,
+				 PERK_BLACKSHIELD_CONDITIONING,
+				 PERK_BOLT_REFLECT,
+				 PERK_CHEM_CONTRABAND)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -79,9 +79,9 @@
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
-	playtimerequired = 2500
+	playtimerequired = 1200
 	health_modifier = 25
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF, FORM_SLIME)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/swo
 
@@ -100,10 +100,10 @@
 		STAT_VIG = 30,
 	)
 
-	perks = list(/datum/perk/ass_of_concrete,
-				 /datum/perk/codespeak,
-				 /datum/perk/chem_contraband,
-				 /datum/perk/gunsmith)
+	perks = list(PERK_ASS_OF_CONCRETE,
+				 PERK_CODESPEAK,
+				 PERK_CHEM_CONTRABAND,
+				 PERK_GUNSMITH)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/digitalwarrant,
@@ -141,9 +141,9 @@
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
-	playtimerequired = 1200
+	playtimerequired = 600
 	health_modifier = 20
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF, FORM_SLIME)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/gunserg
 
@@ -163,7 +163,7 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 
-	perks = list(/datum/perk/market_prof,
+	perks = list(PERK_MARKET_PROF,
 				 /datum/perk/codespeak,
 				 /datum/perk/chem_contraband,
 				 /datum/perk/gunsmith)
@@ -200,16 +200,17 @@
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
-	playtimerequired = 1200
+	playtimerequired = 600
 	health_modifier = 20
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF, FORM_SLIME)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/serg
 
 	access = list(
 		access_security, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
-		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen
+		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen,
+		access_medical_equip, access_surgery, access_medical_suits
 	)
 
 	stat_modifiers = list(
@@ -218,7 +219,7 @@
 		STAT_VIG = 25,
 	)
 
-	perks = list(/datum/perk/job/bolt_reflect, /datum/perk/job/blackshield_conditioning, /datum/perk/chem_contraband)
+	perks = list(PERK_BLACKSHIELD_CONDITIONING, PERK_BOLT_REFLECT, PERK_CHEM_CONTRABAND)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
@@ -254,9 +255,8 @@
 	alt_titles = list("Junior Ranger","Detective","Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
-	playtimerequired = 1200
 	health_modifier = 5
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF, FORM_SLIME)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/inspector
 
@@ -267,9 +267,9 @@
 		access_medical_suits
 	)
 
-	perks = list(/datum/perk/ear_of_quicksilver,
-				 /datum/perk/codespeak,
-				 /datum/perk/chem_contraband)
+	perks = list(PERK_EAR_OF_QUICKSILVER,
+				 PERK_CODESPEAK,
+				 PERK_CHEM_CONTRABAND)
 
 	stat_modifiers = list(
 		STAT_BIO = 15,
@@ -314,7 +314,7 @@
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_AGSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/security/medspec
 
@@ -330,7 +330,7 @@
 		STAT_ROB = 10,
 	)
 
-	perks = list(/datum/perk/medicalexpertise, /datum/perk/job/blackshield_conditioning)
+	perks = list(PERK_MEDICAL_EXPERT, PERK_BLACKSHIELD_CONDITIONING)
 				// /datum/perk/chemist -Thanos Voice: "I'm sorry little one..."
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
@@ -374,7 +374,7 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
-	perks = list(/datum/perk/job/bolt_reflect, /datum/perk/job/blackshield_conditioning, /datum/perk/chem_contraband)
+	perks = list(PERK_BLACKSHIELD_CONDITIONING, PERK_BOLT_REFLECT, PERK_CHEM_CONTRABAND)
 
 	access = list(
 		access_security, access_eva,
@@ -439,7 +439,7 @@
 		STAT_VIG = 20,
 	)
 
-	perks = list(/datum/perk/codespeak, /datum/perk/chem_contraband)
+	perks = list(PERK_CODESPEAK, PERK_CHEM_CONTRABAND)
 
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)

@@ -49,3 +49,17 @@
 	. = ..()
 	if(spent)
 		to_chat(user, SPAN_WARNING("It is spent."))//What message should show when we are examining it
+
+/obj/item/device/mental_imprinter/agent //this is JUST for getting agents brought up to high stat levels without the need to VV edit.
+	name = "advanced mental imprinter"
+	desc = "A potent and rare device from the heart of the Solarian Federation. Similar to its more primitive cousin, this device can push the users attributes for far longer periods of time than standard combat stimms, albeit at the cost of extended recovery."
+	icon_state = "mental_imprinter"
+	stat_increase = 25 //How many stats we gain
+	apply_sanity_damage = 0
+	price_tag = 2500
+
+/obj/item/device/mental_imprinter/agent/strong
+	name = "ultratech mental imprinter"
+	desc = "An incredibly potent and rare device from the heart of the Solarian Federation. Similar to its more primitive cousin, this device can push the users attributes to the peak of human condition for hours at a time - though carrying an often days long recovery."
+	stat_increase = 50 //How many stats we gain
+	price_tag = 5000

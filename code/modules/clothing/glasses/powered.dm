@@ -175,3 +175,22 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 
+/obj/item/clothing/glasses/powered/nightvision_helmet
+	name = "night vision goggles"
+	desc = "A pair of night vision goggles stuck to your helmet, has a slot for a medium battery inside."
+	icon_state = "bulletproof_ironhammer_goggles"
+	item_state = null
+	off_state = "bulletproof_ironhammer_goggles"
+	action_button_name = null
+	toggleable = FALSE
+	darkness_view = 7
+	see_invisible = SEE_INVISIBLE_NOLIGHTING
+	flags = ABSTRACT
+	suitable_cell = /obj/item/cell/medium
+	spawn_with_cell = FALSE
+
+	tick_cost = 1
+
+/obj/item/clothing/glasses/powered/bullet_proof_ironhammer/Initialize()
+	. = ..()
+	screenOverlay = global_hud.nvg

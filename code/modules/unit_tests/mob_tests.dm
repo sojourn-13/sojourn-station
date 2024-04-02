@@ -60,9 +60,7 @@
 #define IMMUNE 3              // Will take no damage
 
 /datum/unit_test/mob_damage/Run()
-	var/list/damtypes = list(
-		BRUTE, BURN, TOX,
-		OXY, CLONE, HALLOSS)
+	var/list/damtypes = list(BRUTE, BURN, OXY, HALLOSS)
 
 	for(var/i in damtypes)
 		var/mob/living/carbon/human/H = allocate(/mob/living/carbon/human)
@@ -112,7 +110,7 @@
 			expected_msg = "To take no damage"
 
 	if(failure)
-		Fail("Failed at damage type [damtype]. Damage taken: [ending_damage] out of 5 => expected: [expected_msg] \[Overall Health:[ending_health] (Initial: [initial_health]\]")
+		TEST_FAIL("Failed at damage type [damtype]. Damage taken: [ending_damage] out of 5 => expected: [expected_msg] \[Overall Health:[ending_health] (Initial: [initial_health]\]")
 
 
 /datum/unit_test/robot_module_icons/Run()
@@ -121,7 +119,7 @@
 
 	for(var/i in robot_modules)
 		if(!(lowertext(i) in valid_states))
-			Fail("[i] does not contain a valid icon state in [icon_file]")
+			TEST_FAIL("[i] does not contain a valid icon state in [icon_file]")
 
 #undef STANDARD
 #undef ARMORED

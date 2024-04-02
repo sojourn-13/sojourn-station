@@ -139,6 +139,7 @@
 	icon_gib = "brownbear_gib"
 	icon_dead = "combatbear_dead"
 	faction = "excelsior"
+	armor = list(melee = 20, bullet = 15, energy = 5, bomb = 10, bio = 100, rad = 100, agony = 0) // It's an ARMORED bear
 	maxHealth = 400
 	health = 400
 	melee_damage_lower = 30

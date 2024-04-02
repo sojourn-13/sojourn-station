@@ -16,12 +16,13 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	req_admin_notify = 1
 	playtimerequired = 2500
 	wage = WAGE_COMMAND
+	disallow_species = list(FORM_SLIME) //We're quite new to the colony and not yet trusted in such a position.
 
 	ideal_character_age = 50 // Old geezer captains ftw
-	minimum_character_age = 35
+	minimum_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/captain
 
-	perks = list(/datum/perk/sommelier)
+	perks = list(PERK_SOMELLIER)
 
 	description = "Премьер-министр является главным посредником самой колонии, выступая в качестве доверенного советника среди своих сотрудников.<br>\
 Вам доверен контроль над банковскими аккаунтами колонии, и вы также можете контролировать доступ внутри колонии.<br>\
@@ -71,7 +72,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	title = "Steward"
 	flag = STEWARD
 	department = DEPARTMENT_COMMAND
-	head_position = TRUE
+	head_position = FALSE
 	aster_guild_member = TRUE
 	department_flag = COMMAND
 	faction = MAP_FACTION
@@ -81,10 +82,11 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	difficulty = "Hard."
 	selection_color = "#ddddff"
 	req_admin_notify = 1
-	playtimerequired = 1200
+	playtimerequired = 600
 	wage = WAGE_COMMAND
 	ideal_character_age = 35
-	minimum_character_age = 30
+	minimum_character_age = 25
+	disallow_species = list(FORM_SLIME)
 
 	health_modifier = 5
 	description = "Стюард - верная правая рука Премьера. Служа личной охраной, следуйте за ним, куда бы он ни пошел.<br>\
@@ -100,7 +102,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
 	outfit_type = /decl/hierarchy/outfit/job/hop
 
-	perks = list(/datum/perk/sommelier)
+	perks = list(PERK_SOMELLIER)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/card_mod,

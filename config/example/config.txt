@@ -18,11 +18,11 @@ ALERT_DELTA The ship's self-destruct mechanism has been engaged. All crew are in
 ## Add a # infront of this if you want to use the SQL based banning system. The legacy systems use the files in the data folder. You need to set up your database to use the SQL based system.
 #BAN_LEGACY_SYSTEM
 
-## Add a # here if you wish to use the setup where jobs have more access. This is intended for servers with low populations - where there are not enough players to fill all roles, so players need to do more than just one job. Also for servers where they don't want people to hide in their own departments.
-JOBS_HAVE_MINIMAL_ACCESS
-
 ## Enables the memo system for admins, used to log on each player
 ADMIN_MEMO_SYSTEM
+
+## Add a # here if you wish to use the setup where jobs have more access. This is intended for servers with low populations - where there are not enough players to fill all roles, so players need to do more than just one job. Also for servers where they don't want people to hide in their own departments.
+JOBS_HAVE_MINIMAL_ACCESS
 
 ## Unhash this entry to have certain jobs require your account to be at least a certain number of days old to select. You can configure the exact age requirement for different jobs by editing
 ## the minimal_player_age variable in the files in folder /code/game/jobs/job/.. for the job you want to edit. Set minimal_player_age to 0 to disable age requirement for that job.
@@ -41,7 +41,7 @@ ADMIN_MEMO_SYSTEM
 ## log OOC channel
 LOG_OOC
 
-## log client Say 
+## log client Say
 LOG_SAY
 
 ## log admin actions
@@ -93,7 +93,7 @@ SQL_ENABLED
 
 
 ## probablities for game modes chosen in "secret" and "random" modes
-## 
+##
 ## default probablity is 1, increase to make that mode more likely to be picked
 ## set to 0 to disable that mode
 PROBABILITY EXTENDED 1
@@ -191,7 +191,7 @@ GUEST_BAN
 # LANGUAGE
 
 ## forum address
-# FORUMURL https://discord.gg/c5zvcGYBrs
+# FORUMURL https://discord.gg/Y3YzxH9W6V
 
 ## Wiki address
 # WIKIURL https://sojourn13.space/wiki/Main_Page
@@ -212,7 +212,7 @@ GITHUBURL https://github.com/Amerecanno/CoffeStation.git
 ##Remove the # mark infront of this to forbid admins from posssessing the singularity.
 #FORBID_SINGULO_POSSESSION
 
-## Remove the # to show a popup 'reply to' window to every non-admin that recieves an adminPM. 
+## Remove the # to show a popup 'reply to' window to every non-admin that recieves an adminPM.
 ## The intention is to make adminPMs more visible. (although I fnd popups annoying so this defaults to off)
 #POPUP_ADMIN_PM
 
@@ -283,6 +283,8 @@ BONES_CAN_BREAK 1
 ## 0 means limbs can't be amputated, 1 means they can
 LIMBS_CAN_BREAK 1
 
+## Uncomment this to prevent players from printing copy/pasted circuits
+# DISABLE_CIRCUIT_PRINTING
 
 ### REVIVAL ###
 
@@ -315,7 +317,7 @@ JOIN_UNASSIGNED
 ## Clients will be unable to connect unless their build is equal to or higher than this (a number, e.g. 1000)
 #MINIMUM_BYOND_BUILD
 
-## Time in minutes before empty server will restart	
+## Time in minutes before empty server will restart
 EMPTY_SERVER_RESTART_TIME 30
 
 ## If the server only accepts whitelisted connections
@@ -329,8 +331,43 @@ BORDER_CONTROL 0
 ##EMOJIS
 
 ## MOB AI SLEEPING ###
-## Uncomment this out if you want to disable mob AI sleeping 
+## Uncomment this out if you want to disable mob AI sleeping
 #ENABLE_MOB_SLEEP
 
 WEBHOOK_URL http://localhost:44303/webhook/en
 WEBHOOK_KEY testkey
+
+## Text-to-speech stuff ##
+#TTS_BEARER Bearer *lotsa symbols*
+#TTS_ENABLED 1
+#TTS_CACHE 1
+
+###### IP Reputation Checking
+# Enable/disable IP reputation checking (present/nonpresent)
+#IP_REPUTATION
+
+# Set the e-mail address problems can go to for IPR checks (e-mail address)
+IPR_EMAIL whatever@whatever.com
+
+# Above this value, reputation scores are considered 'bad' (number)
+IPR_BAD_SCORE 1
+
+# If you want the people disconnected. Otherwise it just logs. (present/nonpresent)
+IPR_BLOCK_BAD_IPS
+
+# If players of a certain length of playtime are allowed anyway (REQUIRES DATABASE) (present/nonpresent)
+IPR_ALLOW_EXISTING
+
+# And what that age is (number)
+IPR_MINIMUM_AGE 5
+
+# If provided, will look up additional IP reputation info from ipqualityscore.com
+#IPQUALITYSCORE_APIKEY ABC12345YOURKEYHERE
+
+###### Antiraid Settings
+# Enable/disable 'paranoia logging' (notifying admins of new byond accounts joining, and player first-time joins)
+#PARANOIA_LOGGING
+
+# Enable/disable 'panic bunker' (prevents new players from joining if they've never been seen before in the DB)
+#PANIC_BUNKER
+

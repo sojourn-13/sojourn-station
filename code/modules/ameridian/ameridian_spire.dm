@@ -1,7 +1,7 @@
 // Ameridian Spire, an indestructible building that constantly refill missing ameridian around it.
 /obj/structure/ameridian_crystal/spire
 	name = "ameridian spire"
-	desc = "A strange crystal formation that seems to have grown form a more rare crystal core."
+	desc = "A strange crystal formation that seems to have grown from a rarer crystal core."
 	icon_state = "ameridian_crystal_purple"
 	anchored = TRUE
 	density = TRUE
@@ -29,16 +29,16 @@
 /obj/structure/ameridian_crystal/spire/fake
 	spread_range = -1 //Invest 3 into me before a return
 	name = "artificial ameridian spire growth"
-	desc = "A colony planted verson of a sprite growth, made with tons of fragmented shards, and some pure ameridain cores."
+	desc = "An artificially constructed version of a sprite growth, made with a pure ameridian core pulsing around tons of ameridian shards."
 	colour_type = "FAKE"
 	is_growing = FALSE
 
 /obj/structure/ameridian_crystal/spire/examine(mob/user)
 	..()
 	if(spread_range > 0)
-		to_chat(user, "<span class='angelsay'>The shard mass seems to have </span><span class='rose'>[spread_range] cores</span><span class='moderate'> inside it all pulsing together...</span>")
+		to_chat(user, "<span class='angelsay'>The shard mass seems to have </span><span class='rose'>[spread_range] core/s</span><span class='moderate'> inside...</span>")
 	else
-		to_chat(user, "<span class='info'>The fragmented shard mass seems to have need more cores inside it before it could ever begine to grow.</span>")
+		to_chat(user, "<span class='info'>The fragmented shard mass needs at least one core in its center before it could ever begin to grow.</span>")
 
 /obj/structure/ameridian_crystal/spire/New()
 	..()
@@ -49,12 +49,12 @@
 		if(!is_growing)
 			addtimer(CALLBACK(src, .proc/spread), rand(40,90)) //So people have time to prepare for the worst
 			is_growing = TRUE
-			to_chat(user, "<span class='info'>The spire begines to</span><span class='rose'> grow rapidly as it comuses the </span><span class='angelsay'>pure core </span><span class='moderate'>whole.</span>")
+			to_chat(user, "<span class='info'>The spire begins to</span><span class='rose'> grow rapidly as it consumes the </span><span class='angelsay'>[I]</span><span class='moderate'> whole.</span>")
 			if(!rads_producter)
 				rads_producter = TRUE
 				add_rads()
 		else
-			to_chat(user, "<span class='info'>The spire begines to</span><span class='rose'> grow even faster as it comuses the </span><span class='angelsay'>pure core </span><span class='moderate'>whole.</span>")
+			to_chat(user, "<span class='info'>The spire begins to</span><span class='rose'> grow even faster as it consumes the </span><span class='angelsay'>[I]</span><span class='moderate'> whole.</span>")
 			spread_range += 1 //this can quickly
 		qdel(I)
 		return

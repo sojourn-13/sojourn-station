@@ -11,7 +11,7 @@
 	selection_color = "#dddddd"
 	initial_balance = 800
 	wage = WAGE_NONE //Get a job ya lazy bum
-	//alt_titles = list("Visitor", "Refugee","Guild Novice","Soteria Intern","Lonestar Intern")
+	alt_titles = list("Freelancer")
 
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 

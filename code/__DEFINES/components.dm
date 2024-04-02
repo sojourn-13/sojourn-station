@@ -4,6 +4,9 @@
 /// Arguments given here are packaged in a list and given to _SendSignal
 #define SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(target, ##arguments)) )
 
+//Simular to the above but this one is done by eris
+#define ERIS_SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(##arguments)) )
+
 /// Depreciated. Use SEND_SIGNAL instead. This only exists for compatability.
 #define LEGACY_SEND_SIGNAL(target, sigtype, arguments...) ( !target.comp_lookup || !target.comp_lookup[sigtype] ? NONE : target._SendSignal(sigtype, list(##arguments)) )
 
@@ -57,6 +60,9 @@
 
 #define COMSIG_RITUAL "ritual"
 #define COMSIG_TRANSATION "transation"          //from transfer_funds()
+
+/// from datum ui_act (usr, action)
+#define COMSIG_UI_ACT "COMSIG_UI_ACT"
 
 // /datum/mecha signals
 #define COMSIG_HUD_DELETED "hud_deleted"
@@ -127,6 +133,8 @@
 
 //machinery
 #define COMSIG_AREA_APC_OPERATING "area_operating"  //from apc process()
+#define COMSIG_AREA_APC_DELETED "area_apc_gone"
+#define COMSIG_AREA_APC_POWER_CHANGE "area_apc_power_change"
 #define COMSING_DESTRUCTIVE_ANALIZER "destructive_analizer"
 #define COMSIG_TURRENT "create_turrent"
 
@@ -138,6 +146,7 @@
 #define COMSIG_REMOVE "uninstall"
 #define COMSIG_ITEM_DROPPED	"item_dropped"					//from  /obj/item/weapon/tool/attackby(): Called to remove an upgrade
 #define COMSIG_ITEM_PICKED "item_picked"
+#define COMSIG_ODDITY_USED "used_oddity"                    //from /datum/sanity/proc/oddity_stat_up(): called to notify the used oddity it was used.
 // /obj/item/clothing signals
 #define COMSIG_CLOTH_DROPPED "cloths_missing"
 #define COMSIG_CLOTH_EQUIPPED "cloths_recovered"
@@ -151,6 +160,22 @@
 
 //obj/item/gun signals
 #define COMSIG_GUN_POST_FIRE "gun_post_fire"	//from base of /obj/item/gun/proc/handle_post_fire(): (atom/target, pointblank, reflex)
+
+// Internal organ signals
+#define COMSIG_IORGAN_REFRESH_SELF "internal_organ_self_refresh"
+#define COMSIG_IORGAN_REFRESH_PARENT "internal_organ_parent_refresh"
+#define COMSIG_IORGAN_APPLY "internal_organ_apply_modifiers"
+#define COMSIG_IORGAN_ADD_WOUND "add_internal_wound"
+#define COMSIG_IORGAN_REMOVE_WOUND "remove_internal_wound"
+#define COMSIG_IORGAN_WOUND_COUNT "count_internal_wounds"
+
+// Internal wound signals
+#define COMSIG_IWOUND_EFFECTS "internal_wound_effects"
+#define COMSIG_IWOUND_LIMB_EFFECTS "internal_wound_limb_effects"
+#define COMSIG_IWOUND_FLAGS_ADD "internal_wound_flags_add"
+#define COMSIG_IWOUND_FLAGS_REMOVE "internal_wound_flags_remove"
+#define COMSIG_IWOUND_DAMAGE "internal_wound_damage"
+#define COMSIG_IWOUND_TREAT "internal_wound_autodoc"
 
 // ABERRANT signals
 #define COMSIG_ABERRANT_INPUT "aberrant_input"

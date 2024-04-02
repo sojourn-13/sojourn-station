@@ -14,6 +14,9 @@
 /tipsAndTricks/gameplay/fightBlob_two
     tipText = "Блобы удивительно слабы к взрывателям и дымовым гранатам. Используйте их в случаях, когда блобы захватывают колонию."
 
+/tipsAndTricks/gameplay/maskProtections
+    tipText = "Balaclavas, surgical masks, and other masks provide a buff to your sanity protection. Perfect for operators, thieves, and people afraid of disease!."
+
 /tipsAndTricks/gameplay/fuhrerRoachReinforcement
     tipText = "Таракан 'Фюрер' может вызвать целый батальон тараканов на подкрепление. Если ты услышишь его крик, БЕГИ!"
 
@@ -71,5 +74,17 @@
 
 /tipsAndTricks/gameplay/fighting_slimes_two
     tipText = "Slimes are weaker to cold than heat. You can use frost oil or bullets to greater affect, while lasers and pepper spray only make a slime stronger!"
+
+/tipsAndTricks/gameplay/hauling
+    tipText = "You can control+click tiles which you are not standing on to move every item on said tile to yours. Take advantage of this to gather large amounts of spread out resources, or just to help clean up."
+
+/tipsAndTricks/gameplay/survivalism
+    tipText = "If you're hurt in the wilderness, some red-flowers can yield poppys if a knife is used on them. Poppys contain a small amount of brute healing meds."
+
+/tipsAndTricks/gameplay/sinks
+    tipText = "you can alt-click a sink with a container to pour the reagents down the drain."
+
+/tipsAndTricks/gameplay/sinks
+    tipText = "if you spill all the bullets out of an ammobox, you can click the tile they're on with their box to scoop them back up"
 
 

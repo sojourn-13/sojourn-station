@@ -44,6 +44,7 @@ var/global/list/datum/supply_drop_loot/supply_drop
 		/obj/item/gun/projectile/mk58,
 		/obj/item/gun/projectile/shotgun/doublebarrel,
 		/obj/item/gun/projectile/shotgun/pump/combat,
+		/obj/item/gun/projectile/automatic/pitbull,
 		/obj/item/gun/projectile/automatic/texan)
 
 /datum/supply_drop_loot/seeds

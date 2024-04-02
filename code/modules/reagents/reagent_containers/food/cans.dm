@@ -255,3 +255,25 @@
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("energy_drink_baton" = 25, "sodawater" = 15, "grapejuice" = 10, "berryjuice" = 10)
 	volume = 60
+
+//Discount cans
+/obj/item/reagent_containers/food/drinks/cans/energy // Refactoring into cans for the sake of its state being whack.
+	name = "energy drink"
+	desc = "A heart attack that fits in your pocket."
+	icon_state = "eris_energy_drink"
+	center_of_mass = list("x"=15, "y"=13)
+	preloaded_reagents = list("energy_drink_monster" = 30, "sugar" = 10) // Now it's a proper energy drink instead of overpriced cola
+
+/obj/item/reagent_containers/food/drinks/protein_shake
+	name = "protein shake"
+	desc = "The best thing to drink after a workout, tastes like apples! At least, the description on this plastic bottle says so. Smells odd..."
+	icon_state = "protein_shake_bottle"
+	center_of_mass = list("x"=16, "y"=8)
+	preloaded_reagents = list("protein_shake_commercial" = 40)
+
+/obj/item/reagent_containers/food/drinks/protein_shake/update_icon()
+	if(reagent_flags == OPENCONTAINER)
+		if(reagents && reagents.total_volume)
+			icon_state = "protein_shake_bottle"
+		else
+			icon_state = "protein_shake_bottle_whacked"

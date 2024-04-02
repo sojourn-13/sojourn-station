@@ -42,7 +42,7 @@
 				/obj/item/card_carp/ratking = 3,
 				/obj/item/card_carp/plaguerat = 5,
 				/obj/item/card_carp/kangaroorat = 3,
-				/obj/random/card_carp/terrain = 3,
+				/obj/random/card_carp/terrain = 4,
 				/obj/random/card_carp/rare = 1 //Rare is rare
 				))
 
@@ -57,7 +57,7 @@
 				/obj/item/card_carp/manti_lord = 4,
 				/obj/item/card_carp/mole_man = 6,
 				/obj/item/card_carp/magpie = 7,
-				/obj/item/card_carp/great_white = 2,
+				/obj/item/card_carp/great_white = 4,
 				/obj/item/card_carp/lost_rabbit = 6,
 				/obj/item/card_carp/geck = 1,
 				/obj/item/card_carp/mothman = 2,
@@ -90,6 +90,7 @@
 				/obj/item/card_carp/rpelt = 20,
 				/obj/item/card_carp/dpelt = 10,
 				/obj/item/card_carp/pinepelt = 5,
+				/obj/item/card_carp/peltlice = 3,
 				/obj/item/card_carp/gpelt = 1 //SO RARE
 				))
 

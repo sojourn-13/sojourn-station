@@ -193,8 +193,8 @@
 		if(desc)
 			to_chat(user, desc)
 
-//		if(ishuman(user) && user.stats && user.stats.getPerk(/datum/perk/greenthumb))
-//			var/datum/perk/greenthumb/P = user.stats.getPerk(/datum/perk/greenthumb) SoJ edit, we dont have the code here
+//		if(ishuman(user) && user.stats && user.stats.getPerk(PERK_GREENTHUMB))
+//			var/datum/perk/greenthumb/P = user.stats.getPerk(PERK_GREENTHUMB) SoJ edit, we dont have the code here
 //			P.virtual_scanner.afterattack(src, user, get_dist(src, user) <= 1)
 
 

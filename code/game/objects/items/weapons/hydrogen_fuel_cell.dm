@@ -48,7 +48,7 @@
 /obj/item/hydrogen_fuel_cell/backpack
 	name = "cryo-sealed hydrogen fuel pack"
 	desc = "A backpack full of volatile hydrogen. It cannot be refilled once spent."
-	description_info = "Insert your hydrogen gun on it to connect it to its holding port, then drag the backpack to an empty hand to draw the gun. To disconnect it for retrieval, use a wrench on the backpack."
+	description_info = "Insert your hydrogen gun on it to connect it to its holding port, then drag the backpack to an empty hand to draw the gun. To disconnect it for retrieval, use a wrenching tool on the backpack."
 
 	icon_state = "plasmapack"
 	item_state = "plasmapack"

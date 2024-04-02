@@ -23,6 +23,16 @@
 	annihilate = TRUE
 
 /datum/map_template/coras_map
-	name = "Coras Event Map"
+	name = "Coras Event Map (40x40 2-Z Levels)"
 	desc = "lmao, kekw lizard am i right?"
 	mappath = 'maps/submaps/map_clearers/coras_map.dmm'
+
+/datum/map_template/spider_turns_os_map
+	name = "Spider Outpost Turned GP Event Map (30x30)"
+	desc = "The start up costs were exsorbident."
+	mappath = 'maps/submaps/map_clearers/os_reclaimed_spider_post.dmm'
+
+/datum/map_template/burnt_outpost_turns_vw_map
+	name = "Burnt Post Voidwolf Reclaimed Event Map (30x30)"
+	desc = "When voidwolfs were told to make a repair shop they forgot the colony was located that mountain untill after the repairs were done."
+	mappath = 'maps/submaps/map_clearers/burnt_post_voidwolf_reclaimed.dmm'

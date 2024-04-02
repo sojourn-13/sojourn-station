@@ -27,6 +27,7 @@
 
 	wield_delay = 1 SECOND
 	wield_delay_factor = 0.3 // 30 vig for insta wield
+	gun_parts = list(/obj/item/part/gun = 3 ,/obj/item/stack/material/steel = 15)
 
 
 //Automatic firing

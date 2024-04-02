@@ -6,6 +6,7 @@
 	icon = 'icons/obj/guns/plasma/hydrogen.dmi'
 	icon_state = "pistol"
 	twohanded = FALSE
+	slot_flags = SLOT_BELT|SLOT_HOLSTER|SLOT_BACK
 	w_class = ITEM_SIZE_NORMAL
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 6, TECH_PLASMA = 5)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_MHYDROGEN = 1, MATERIAL_TRITIUM = 1)
@@ -18,6 +19,7 @@
 		list(mode_name = "overclock", mode_desc="A large ball of volatile hydrogen to blow up cover or targets", projectile_type = /obj/item/projectile/hydrogen/pistol/max, fire_sound = 'sound/weapons/energy/hydrogen_heavy.ogg', icon = "vaporize", heat_per_shot = 40, use_plasma_cost = 20)
 	)
 
+	can_dual = TRUE
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
 
@@ -30,6 +32,8 @@
 	icon_state = "cannon"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_MHYDROGEN = 2, MATERIAL_TRITIUM = 1)
 	origin_tech = list(TECH_COMBAT = 9, TECH_MATERIAL = 7, TECH_PLASMA = 10)
+	w_class = ITEM_SIZE_HUGE
+	slot_flags = SLOT_BACK
 	projectile_type = /obj/item/projectile/hydrogen/cannon
 	use_plasma_cost = 15 // 10 shots
 	heat_per_shot = 50
@@ -39,7 +43,6 @@
 		list(mode_name = "overclock", mode_desc="A large ball of volatile hydrogen to blow up cover or targets", projectile_type = /obj/item/projectile/hydrogen/cannon/max, fire_sound = 'sound/weapons/energy/hydrogen_heavy.ogg', fire_delay = 50, icon = "vaporize", use_plasma_cost = 30)
 	)
 	twohanded = TRUE
-	can_dual = FALSE
 
 // Blue cross weapon, no overheat.
 /obj/item/gun/hydrogen/incinerator
@@ -76,6 +79,7 @@
 	var/obj/item/tool/plasma_torch/welder = null // Hold the welder the gun turns into.
 	serial_type = "INDEX"
 	serial_shown = FALSE
+	slot_flags = SLOT_BELT|SLOT_HOLSTER|SLOT_BACK
 
 
 // This is where the gun turn into a welder

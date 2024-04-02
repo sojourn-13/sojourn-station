@@ -278,7 +278,7 @@
 /obj/item/storage/box/costume/nekomaid/populate_contents()
 	new /obj/item/clothing/head/costume/animal/kitty(src)
 	new /obj/item/clothing/head/costume/animal/rabbitears(src)
-	new /obj/item/clothing/under/plaid/maid(src)
+	new /obj/item/clothing/under/dress/maid(src)
 
 /obj/item/storage/box/costume/nurse
 	name = "nurse costume kit"
@@ -529,7 +529,7 @@
 /obj/item/storage/box/costume/randoarmy/populate_contents()
 	new /obj/item/clothing/under/pants/black/outlaw(src)
 	new /obj/item/clothing/suit/storage/toggle/leather/denimjacket/outlaw(src)
-	new /obj/item/clothing/head/helmet/biker/football(src)
+	new /obj/item/clothing/head/helmet/biker(src)
 	new /obj/item/clothing/shoes/reinforced(src)
 	new /obj/item/clothing/gloves/dusters(src)
 

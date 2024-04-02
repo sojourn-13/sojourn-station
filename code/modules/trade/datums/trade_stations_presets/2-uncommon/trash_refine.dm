@@ -7,12 +7,12 @@
 	tree_y = 0.8
 	start_discovered = FALSE
 	spawn_always = TRUE
-	markup = UNCOMMON_GOODS
+	markup = WHOLESALE_GOODS
 	offer_limit = 20
 	base_income = 0
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3000
 	stations_recommended = list("junker")
 	recommendations_needed = 1
 	inventory = list(
@@ -32,7 +32,7 @@
 			/obj/structure/salvageable/implant_container = custom_good_amount_range(list(3, 5)),
 			/obj/structure/salvageable/autolathe = custom_good_amount_range(list(0, 2))
 		),
-		"Refined Scrap" = list(/obj/item/stack/sheet/refined_scrap = custom_good_amount_range(list(50, 75))
+		"Refined Scrap" = list(/obj/item/stack/material/refined_scrap = custom_good_amount_range(list(50, 75))
 		)
 	)
 	hidden_inventory = list(
@@ -60,7 +60,8 @@
 		/obj/structure/scrap_cube = offer_data("compressed scrap cube", 80, 3),
 		/obj/item/reagent_containers/food/snacks/baconburger = offer_data("bacon burger", 500, 4),
 		/obj/item/reagent_containers/food/snacks/blt = offer_data("blt sandwich", 500, 4),
-		/obj/item/storage/bag/sheetsnatcher = offer_data("sheet snatcher", 300, 4)
+		/obj/item/storage/bag/sheetsnatcher = offer_data("sheet snatcher", 300, 4),
+		/datum/reagent/drug/mindbreaker = offer_data("mindbreaker toxin bottle(60u)", 850, 2)
 	)
 //imo way better place of doing the whole list to be in same file as the ship - Trilby
 /obj/random/scrap
@@ -102,5 +103,5 @@
 /obj/item/scrap_lump
 	price_tag = 3
 
-/obj/item/stack/sheet/refined_scrap
+/obj/item/stack/material/refined_scrap
 	price_tag = 30 //Proffit!

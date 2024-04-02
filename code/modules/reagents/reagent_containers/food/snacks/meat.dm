@@ -2,6 +2,7 @@
 	name = "meat"
 	desc = "A slab of meat cut from a nondescript animal. The core ingredient in thousands upon thousands of food recipes, in one way or another."
 	icon_state = "meat"
+	taste_tag = list(MEAT_FOOD)
 	health = 180
 	filling_color = "#FF1C1C"
 	center_of_mass = list("x"=16, "y"=14)
@@ -88,7 +89,7 @@
 /obj/item/reagent_containers/food/snacks/meat/roachmeat/elektromagnetisch
 	preloaded_reagents = list("protein" = 4, "seligitillin" = 8, "diplopterum" = 6, "iron" = 5)
 
-/obj/item/reagent_containers/food/snacks/meat/roachmeat/benzin
+/obj/item/reagent_containers/food/snacks/meat/roachmeat/nitro
 	desc = "A slab of sickly-green meat cut from a benzin roach. Stinks of welding fuel. Delicious!"
 	preloaded_reagents = list("protein" = 4, "blattedin" = 6, "fuel" = 30)
 

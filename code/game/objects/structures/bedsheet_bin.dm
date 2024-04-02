@@ -28,6 +28,10 @@ LINEN BINS
 	if(!user || user.incapacitated() || !user.Adjacent(A))
 		return
 	if(toggle_fold(user))
+		pixel_x = 0
+		pixel_y = 0
+		pixel_z = 0
+		pixel_w = 0
 		user.drop_item()
 		forceMove(get_turf(A))
 		add_fingerprint(user)
@@ -283,18 +287,28 @@ LINEN BINS
 	var/amount = 20
 	var/list/sheets = list()
 	var/obj/item/hidden
+	var/double = FALSE
 
 
 /obj/structure/bedsheetbin/examine(mob/user)
 	..(user)
 
 	if(amount < 1)
-		to_chat(user, "There are no bed sheets in the bin.")
+		if (double)
+			to_chat(user, "There are no double bed sheets in the bin.")
+		else
+			to_chat(user, "There are no bed sheets in the bin.")
 		return
 	if(amount == 1)
-		to_chat(user, "There is one bed sheet in the bin.")
+		if (double)
+			to_chat(user, "There is one double bed sheet in the bin.")
+		else
+			to_chat(user, "There is one bed sheet in the bin.")
 		return
-	to_chat(user, "There are [amount] bed sheets in the bin.")
+	if (double)
+		to_chat(user, "There are [amount] double bed sheets in the bin.")
+	else
+		to_chat(user, "There are [amount] bed sheets in the bin.")
 
 
 /obj/structure/bedsheetbin/update_icon()
@@ -327,6 +341,8 @@ LINEN BINS
 			B = sheets[sheets.len]
 			sheets.Remove(B)
 
+		else if (double)
+			B = new /obj/item/bedsheet/double(loc, TRUE)
 		else
 			B = new /obj/item/bedsheet(loc, TRUE)
 
@@ -351,6 +367,8 @@ LINEN BINS
 			B = sheets[sheets.len]
 			sheets.Remove(B)
 
+		else if (double)
+			B = new /obj/item/bedsheet/double(loc, TRUE)
 		else
 			B = new /obj/item/bedsheet(loc, TRUE)
 

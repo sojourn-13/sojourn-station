@@ -19,6 +19,7 @@
 
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
+	gun_parts = list(/obj/item/part/gun/frame/colt = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 /obj/item/gun/projectile/colt/ten
 	name = "\"Delta Elite\" magnum pistol"
@@ -32,7 +33,7 @@
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8)
 	price_tag = 550
-	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	init_recoil = HANDGUN_RECOIL(0.5)
@@ -42,6 +43,7 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.4 // 40 vig
+	gun_parts = list(/obj/item/part/gun/frame/colt = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/magnum = 1)
 
 /obj/item/gun/projectile/colt/liberty
 	name = "\"Liberty\" magnum pistol"
@@ -51,6 +53,7 @@
 	item_state = "liberty"
 	caliber = CAL_MAGNUM
 	price_tag = 650
+	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.3
@@ -61,6 +64,7 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.4 // 40 vig
+	gun_parts = list(/obj/item/part/gun/frame/colt = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/magnum = 1)
 
 
 /obj/item/gun/projectile/colt/update_icon()
@@ -82,3 +86,14 @@
 /obj/item/gun/projectile/colt/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/part/gun/frame/colt
+	name = "Colt 1911 frame"
+	desc = "A Colt pistol frame. Winner of dozens of world wars, and loser of many more guerilla wars."
+	icon_state = "frame_1911"
+	result = /obj/item/gun/projectile/colt
+	gripvars = list(/obj/item/part/gun/grip/wood, /obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = list(/obj/item/part/gun/barrel/pistol, /obj/item/part/gun/barrel/magnum)
+	resultvars = list(/obj/item/gun/projectile/colt, /obj/item/gun/projectile/colt/liberty, /obj/item/gun/projectile/colt/ten)
+

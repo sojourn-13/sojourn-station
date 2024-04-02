@@ -7,13 +7,14 @@
 	item_charge_meter = TRUE
 	fire_sound = 'sound/weapons/energy/laser_rifle.ogg'
 	slot_flags = SLOT_BACK
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_NORMAL
 	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
-	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 5)
-	price_tag = 550
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 8, MATERIAL_SILVER = 10)
+	price_tag = 900
 	projectile_type = /obj/item/projectile/beam/midlaser
 	fire_delay = 5
+	charge_cost = 50
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
 		WEAPON_NORMAL,
@@ -46,7 +47,7 @@
 	allow_greyson_mods = TRUE
 
 /obj/item/gun/energy/laser/mounted/cyborg
-	name = "integrated \"Cog\" lasgun"
+	name = "integrated \"Cog\" laser carbine"
 	desc = "A Greyson Positronic design, cheap and widely produced. In the distant past - this was the main weapon of low-rank police forces, billions of copies of this gun were made."
 	icon = 'icons/obj/guns/energy/cog.dmi'
 	icon_state = "cog"
@@ -94,7 +95,7 @@
 /obj/item/gun/energy/zwang
 	name = "\"Zwang\" energy revolver"
 	desc = "The \"Zwang\" is a law enforcer's best friend of a sidearm. Carrying both an extremely effective lethal and non-lethal firemode. \
-	Luckily it does not sacrifice style for effiency neither. The 'revolver' spins its cell while firing, mimicking that of a double-action to make use of multiple connection points."
+	Luckily, it does not sacrifice style for efficiency. The 'cylinder' spins its cell while firing, mimicking a double-action revolver mechanism to make use of multiple connection points."
 	icon = 'icons/obj/guns/energy/zwang.dmi'
 	icon_state = "zwang"
 	item_state = "zwang"

@@ -309,9 +309,16 @@
 	)
 
 /datum/craft_recipe/gun/multi_laser
-	name = "Multi-Laser Cannon"
+	name = "Pulse-Laser Cannon"
 	result = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy/auto
 	steps = list(
-		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 4, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 180)
+		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 1, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 180),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 60),
+		list(QUALITY_ADHESIVE, 15, 70),
+		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL),
+		list(QUALITY_WELDING, 10, 20),
+		list(CRAFT_MATERIAL, 15, MATERIAL_PLASTIC),
+		list(/obj/item/stock_parts/micro_laser , 4),
+		list(QUALITY_SCREW_DRIVING, 30)
 	)

@@ -57,6 +57,31 @@
 	icon_state = "holobadge-cord"
 	slot_flags = SLOT_MASK | SLOT_ACCESSORY_BUFFER
 
+
+/obj/item/clothing/accessory/badge/holo/wo
+	name = "holobadge"
+	desc = "This glowing golden badge marks the holder as a member of security."
+	icon_state = "marshalbadge"
+	item_state = "marshalbadge"
+
+/obj/item/clothing/accessory/badge/holo/inspector
+	name = "holobadge"
+	desc = "This glowing silver badge marks the holder as a member of security."
+	icon_state = "inspectorbadge"
+	item_state = "inspectorbadge"
+
+/obj/item/clothing/accessory/badge/holo/co
+	name = "holobadge"
+	desc = "This glowing red badge marks the holder as a member of blackshield."
+	icon_state = "sargebadge"
+	item_state = "sargebadge"
+
+/obj/item/clothing/accessory/badge/holo/warden
+	name = "holobadge"
+	desc = "This glowing cyan badge marks the holder as a member of security."
+	icon_state = "specbadge"
+	item_state = "holobadge"
+
 /obj/item/clothing/accessory/badge/holo/attack_self(mob/user as mob)
 	if(!stored_name)
 		to_chat(user, "Waving around a holobadge before swiping an ID would be pretty pointless.")
@@ -101,7 +126,7 @@
 /obj/item/clothing/accessory/badge/warden
 	name = "Supply specialist badge"
 	desc = "A silver supply specialist badge. Stamped with the words 'SS.'"
-	icon_state = "silverbadge"
+	icon_state = "silverbadgez"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 
@@ -119,8 +144,13 @@
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/badge/marshal
-	name = "commando's badge"
+	name = "Marshal Agent's badge"
 	desc = "A leather-backed gold badge displaying the crest of the Brigadier and Provost Marshal, signifying the wearer as an agent of both, carrying the full authority over both organizations."
-	icon_state = "marshalbadge"
+	icon_state = "agentbadge"
 	badge_string = "Special Agent"
 
+/obj/item/clothing/accessory/badge/militiaagent
+	name = "blackshield specialist's badge"
+	desc = "A leather-backed gold badge displaying the crest of the Brigadier and Provost Marshal, signifying the wearer as an agent of both, carrying the full authority over both organizations."
+	icon_state = "agentbadge"
+	badge_string = "Specialist"

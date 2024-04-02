@@ -30,6 +30,7 @@
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.3 // Heavy smg , 30 vig to insta wield
+	gun_parts = list(/obj/item/part/gun/frame/ppsh = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 /obj/item/gun/projectile/automatic/ppsh/NM_colony
 	name = "\"Ekaterina\" assault SMG"
@@ -41,6 +42,7 @@
 	price_tag = 800
 	serial_type = "NM"
 	excelsior = FALSE
+	gun_parts = list(/obj/item/part/gun/frame/ppsh = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 /obj/item/gun/projectile/automatic/ppsh/update_icon()
 	..()
@@ -68,6 +70,7 @@
 	auto_eject = 0
 	serial_type = "NM"
 	excelsior = FALSE
+	gun_parts = list(/obj/item/part/gun/frame/ppsh = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/smg = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 /obj/item/gun/projectile/automatic/ppsh/ppv/update_icon()
 	..()
@@ -83,3 +86,13 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/part/gun/frame/ppsh
+	name = "PPSH frame"
+	desc = "A PPSH SMG frame. A worker's best friend."
+	icon_state = "frame_ppsh"
+	result = /obj/item/gun/projectile/automatic/ppsh
+	gripvars = list(/obj/item/part/gun/grip/excel, /obj/item/part/gun/grip/rubber, /obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/smg
+	barrelvars = list(/obj/item/part/gun/barrel/pistol)
+	resultvars = list(/obj/item/gun/projectile/automatic/ppsh, /obj/item/gun/projectile/automatic/ppsh/NM_colony, /obj/item/gun/projectile/automatic/ppsh/ppv)

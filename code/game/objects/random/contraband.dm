@@ -19,7 +19,6 @@
 				/obj/item/clothing/glasses/chameleon = 1,
 				/obj/item/clothing/gloves/chameleon = 1,
 				/obj/item/storage/backpack/chameleon = 1,
-				/obj/item/storage/backpack/satchel/chameleon = 1,
 				/obj/item/device/radio/headset/chameleon = 1,
 				/obj/item/clothing/shoes/chameleon = 1,
 				/obj/item/clothing/head/chameleon = 1,

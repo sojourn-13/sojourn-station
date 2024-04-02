@@ -15,6 +15,7 @@
 
 	wield_delay = 1.5 SECOND
 	wield_delay_factor = 0.6 // 60 vig , heavy stuff
+	gun_parts = list(/obj/item/part/gun = 2, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/shotgun = 1)
 
 /obj/item/gun/projectile/grenade/lenar/proc/update_charge()
 	var/ratio = loaded.len / max_shells

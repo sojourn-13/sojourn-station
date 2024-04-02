@@ -19,10 +19,10 @@
 		on_removed()
 	return ..()
 
-/obj/item/clothing/accessory/proc/get_inv_overlay()
-	if(!inv_overlay)
+/obj/item/clothing/accessory/proc/get_inv_overlay(var/override = FALSE) //set override to TRUE if we want to force a new overlay
+	if(!inv_overlay || override)
 		if(!mob_overlay)
-			get_mob_overlay()
+			get_mob_overlay(override)
 
 		var/tmp_icon_state = "[overlay_state? "[overlay_state]" : "[icon_state]"]"
 		if(icon_override)
@@ -33,8 +33,8 @@
 			inv_overlay.color = color
 	return inv_overlay
 
-/obj/item/clothing/accessory/proc/get_mob_overlay()
-	if(!mob_overlay)
+/obj/item/clothing/accessory/proc/get_mob_overlay(var/override = FALSE) //set override to TRUE if we want to force a new overlay
+	if(!mob_overlay || override)
 		var/tmp_icon_state = "[overlay_state? "[overlay_state]" : "[icon_state]"]"
 		if(icon_override)
 			if("[tmp_icon_state]_mob" in icon_states(icon_override))
@@ -138,6 +138,11 @@
 	desc = "A neosilk clip-on tie with a gaudy yellow design."
 	icon_state = "horribletie"
 
+/obj/item/clothing/accessory/tie/color
+	name = "tie"
+	desc = "A neosilk clip-on tie."
+	icon_state = "colortie"
+
 /*Stethoscope*/
 
 /obj/item/clothing/accessory/stethoscope
@@ -160,7 +165,7 @@
 				var/sound_strength = "cannot hear"
 				var/heartbeat = 0
 				if(M.species && M.species.has_process[OP_HEART])
-					var/obj/item/organ/internal/heart/heart = M.random_organ_by_process(OP_HEART)
+					var/obj/item/organ/internal/vital/heart/heart = M.random_organ_by_process(OP_HEART)
 					if(heart && !BP_IS_ROBOTIC(heart))
 						heartbeat = 1
 				if(M.stat == DEAD || (M.status_flags&FAKEDEATH))
@@ -172,7 +177,7 @@
 							sound_strength = "hear"
 							sound = "no heartbeat"
 							if(heartbeat)
-								var/obj/item/organ/internal/heart/heart = M.random_organ_by_process(OP_HEART)
+								var/obj/item/organ/internal/vital/heart/heart = M.random_organ_by_process(OP_HEART)
 								if(!heart)
 									return
 								if(heart.is_bruised() || M.getOxyLoss() > 50)
@@ -182,7 +187,7 @@
 
 							if(!(M.organ_list_by_process(OP_LUNGS).len) || M.losebreath)
 								sound += " and no respiration"
-							else if(M.is_lung_ruptured() || M.getOxyLoss() > 50)
+							else if(M.getOxyLoss() > 50)
 								sound += " and [pick("wheezing","gurgling")] sounds"
 							else
 								sound += " and healthy respiration"
@@ -281,7 +286,7 @@
 
 /obj/item/clothing/accessory/cape/prospie
 	name = "prospector mantle"
-	desc = "A rough mantle of salvaged hydrophobic materials typically worn around one's shoulders. While some may wear it for style, others prefer its use as decent camouflage on the humid amethian jungle."
+	desc = "A rough mantle of salvaged hydrophobic materials typically worn around one's shoulders. While some may wear it for style, others prefer its use as decent camouflage in the humid amethian forest."
 	icon_state = "prospie_cape"
 
 // Head of Departments
@@ -292,9 +297,9 @@
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/job/cape/fo
-	name = "premier guard's cloak"
+	name = "steward's cloak"
 	icon_state = "focloak"
-	desc = "A blue cloak with red epaulette."
+	desc = "A blue cloak with red epaulettes."
 
 /obj/item/clothing/accessory/job/cape/meo
 	name = "research overseer's cloak"
@@ -530,6 +535,22 @@
 	desc = "A highly tactical partial ghillie suit adjusted for the upper body, it only makes you look a little goofy when not lying down!"
 	icon_state = "tacpon_ghillie"
 
+/obj/item/clothing/accessory/tacticalponcho/limegreen
+	name = "cowboy tactical poncho"
+	desc = "A sleek lime green poncho."
+	icon_state = "tacpon_cowboyponcho"
+
+/obj/item/clothing/accessory/colorponcho
+	name = "tactical poncho"
+	desc = "A sleek poncho, now in any color of your choice!"
+	icon_state = "tacpon_color"
+	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
+
+/obj/item/clothing/accessory/colorponcho/ghillie
+	name = "ghillie poncho"
+	desc = "A ghillie poncho in a range of colors... which sort of defeats the point of a ghillie suit."
+	icon_state = "tacpon_color_g"
+
 /*Shirts*/
 /obj/item/clothing/accessory/hawaiian
 	name = "black Hawaiian shirt"
@@ -588,6 +609,85 @@
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+//Shirt sprites below were ported from Aurora
+
+/obj/item/clothing/accessory/shirt
+	name = "shirt"
+	desc = "A plain, loose-fitting shirt."
+	icon_state = "shirt"
+
+/obj/item/clothing/accessory/shirt/verb/toggle_style()
+	set name = "Adjust style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["roll down sleeves"] = ""
+	options["roll up sleeves"] = "_r"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		get_mob_overlay(TRUE)
+		get_inv_overlay(TRUE)
+		to_chat(M, "You adjust your shirt.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/accessory/shirt/crop
+	name = "crop top"
+	desc = "A loose-fitting crop top."
+	icon_state = "shirt_crop"
+
+/obj/item/clothing/accessory/shirt/dress
+	name = "dress shirt"
+	desc = "A plain button-up shirt."
+	icon_state = "dressshirt"
+
+/obj/item/clothing/accessory/shirt/dress_crop
+	name = "cropped dress shirt"
+	desc = "A cropped button-up shirt. In what context could this possibly be appropriate?"
+	icon_state = "dressshirt_crop"
+
+/obj/item/clothing/accessory/shirt/crop
+	name = "formal shirt"
+	desc = "A crisp dress shirt without buttons."
+	icon_state = "dressshirt_alt"
+
+/obj/item/clothing/accessory/shirt/v_neck
+	name = "v-neck dress shirt"
+	desc = "A plain button-up shirt with a sheer v-neck."
+	icon_state = "dressshirt_v"
+
+/*Sweaters*/
+//Sprites ported from Aurora
+
+/obj/item/clothing/accessory/sweater
+	name = "sweater"
+	desc = "A cosy sweater."
+	icon_state = "sweater"
+
+/obj/item/clothing/accessory/sweater/turtleneck
+	name = "turtleneck sweater"
+	desc = "A cosy sweater that covers your neck. What's so tactical about these, anyway?"
+	icon_state = "sweater_turtleneck"
+
+/obj/item/clothing/accessory/sweater/v_neck
+	name = "v-neck sweater"
+	desc = "A cosy sweater with a deep v-neck. How is this meant to keep you warm?."
+	icon_state = "sweater_v"
 
 /*Dusters*/
 
@@ -950,6 +1050,13 @@
 	item_state = "shemagh-yellow"
 
 //End of sprites by Michiyamenotehifunana and Occulist
+
+//Sprite below is a reshade of the above, not made by Michiyamenotehifunana and Occulist
+/obj/item/clothing/accessory/shemagh/recolor
+	name = "shemagh"
+	icon_state = "shemagh-color"
+	item_state = "shemagh-color"
+
 /*One-Off Stuff*/
 
 /obj/item/clothing/accessory/dropstraps
@@ -981,6 +1088,12 @@
 	desc = "A military harness commonly seen being used by pilots within military or paramilitary forces for their fighter pilots and combat mech pilots. The harness itself has extra safety strapping and buckles allowing for the attaching of safety ane EVA equipment in case of an emergency however would still ensure you're safely strapped into whatever cockpit you may be seated in."
 	icon_state = "militarypilot"
 	item_state = "militarypilot"
+
+/obj/item/clothing/accessory/flag/mardinat_yunan
+	name = "Mardinat-Yunan flag"
+	desc = "A flag that can be draped over the shoulders of it's wearer. Yunan bleeds for it's children."
+	icon_state = "mardinat_yunan_flag"
+	item_state = "mardinat_yunan_flag"
 
 /* Kneepads */
 
@@ -1160,8 +1273,8 @@
 
 /obj/item/clothing/accessory/necklace/fractalrosary
 	name = "Fractal Rosary"
-	desc = "This is an insignia given out by the Church of Absolute to people who consider themself to be a Fractal: \
-			An individual who believes and follows the Church but has not yet or cannot be inducted to full membership."
+	desc = "This is an token given by the Church of Absolute to Fractals, members of the Church who are not yet or cannot be baptized for any reason. \
+Anyone wearing it can open public church doors. You should do your best to keep it out of the hands of the non-faithful, lest it be abused."
 	icon_state = "fractal_rosary"
 	item_state = "fractal_rosary"
 
@@ -1326,6 +1439,20 @@
 	item_state = "elegant_waistcoat"
 	overlay_state = "elegant_waistcoat"
 
+/obj/item/clothing/accessory/waistcoat/color
+	name = "waistcoat"
+	desc = "A classy waistcoat."
+	icon_state = "wcoat"
+	item_state = "wcoat"
+	overlay_state = ""
+
+/obj/item/clothing/accessory/waistcoat/color/alt
+	name = "suit vest"
+	desc = "A classy vest."
+	icon_state = "wcoat_alt"
+	item_state = ""
+	overlay_state = ""
+
 /* Attachable sweater vests for suits */
 
 /obj/item/clothing/accessory/swvest
@@ -1402,7 +1529,7 @@
 /obj/item/clothing/accessory/passcard/mardinat_yunan
 	name = "Mardinat Yanun passcard"
 	desc = "A passcard issued to citizens of Mardinat Yunan, initially selected for habitation for its rich gasses and potential for being located on an upcoming trade lane. This gas giant had many of its economic dreams dashed, with the gaseous mixture of the atmosphere being poor for fuel production and the trade lane never materializing."
-	icon_state = "passcard_madinat_yunan"
+	icon_state = "passcard_mardinat_yunan"
 	item_state = "badge"
 
 /obj/item/clothing/accessory/passcard/thalatta
@@ -1506,6 +1633,12 @@
 	icon_state = "sash_purple"
 	item_state = "sash_purple"
 
+/obj/item/clothing/accessory/sash/color
+	name = "sash"
+	desc = "A sash commonly worn by religious figures and members of various orders."
+	icon_state = "sash_color"
+	item_state = "sash_color"
+
 /obj/item/clothing/accessory/pin
 	name = "white badge"
 	desc = "A simple badge with a pin."
@@ -1531,3 +1664,11 @@
 		var/t = input(user, "What would you like the label to say?", "Nametag")
 		if(t)
 			name = "nametag ([t])"
+
+//Snowflake badge for the samurai jacket
+
+/obj/item/clothing/accessory/logo
+	name = "gang logo"
+	desc = ""
+	icon = 'icons/inventory/accessory/icon.dmi'
+	icon_state = "punk_over_samurai"

@@ -43,7 +43,7 @@
 	cost = 0
 
 /datum/gear/xenowear/opifexnotmask
-	display_name = "opifex gas synthetizer"
+	display_name = "opifex gas synthesizer"
 	path = /obj/item/clothing/mask/opifex_no_mask
 	slot = slot_wear_mask
 	sort_category = "Xenowear"
@@ -178,3 +178,11 @@
 	slot = slot_shoes
 	sort_category = "Xenowear"
 	cost = 1
+
+/datum/gear/xenowear/bugsocks
+    display_name = "insect socks"
+    path = /obj/item/clothing/shoes/bugsocks
+    slot = slot_shoes
+    sort_category = "Xenowear"
+    cost = 0
+    flags = GEAR_HAS_COLOR_SELECTION

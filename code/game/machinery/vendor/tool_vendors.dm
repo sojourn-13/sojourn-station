@@ -11,6 +11,7 @@
 		/obj/item/device/assembly/timer = 10,
 		)
 	product_ads = "Only the finest!;Have some tools.;The most robust equipment.;The finest gear in space!"
+	shut_up = 1
 	auto_price = FALSE
 	give_discounts = FALSE
 	give_discount_points = FALSE
@@ -59,6 +60,7 @@
 	name = "Guild-Vend"
 	desc = "Spare tool vending. What? Did you expect some witty description?"
 	product_slogans = "Spare tools for your Engineering needs!;Forgot where we keep mesons again, didn't you?;Need a battery?;You need electronics? I got electronics."
+	shut_up = 1
 	icon_state = "engivend"
 	icon_deny = "engivend-deny"
 	products = list(/obj/item/clothing/glasses/powered/meson = 2,
@@ -254,6 +256,7 @@
 /obj/machinery/vending/plasmaresearch
 	name = "Toximate 3000"
 	desc = "All the fine parts you need in one vending machine!"
+	shut_up = 1
 	products = list(/obj/item/clothing/under/rank/scientist = 6,
 					/obj/item/clothing/suit/bio_suit = 6,
 					/obj/item/clothing/head/bio_hood = 6,

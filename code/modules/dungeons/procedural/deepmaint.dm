@@ -179,7 +179,7 @@ var/global/list/big_deepmaint_room_templates = list()
 /obj/procedural/jp_DungeonGenerator/deepmaint/proc/populateCorridors()
 	var/niche_count = 20
 	var/try_count = niche_count * 7 //In case it somehow zig-zags all of the corridors and stucks in a loop
-	var/trap_count = 150
+	var/trap_count = 200
 	var/list/path_turfs_copy = path_turfs.Copy()
 	while(niche_count > 0 && try_count > 0)
 		try_count = try_count - 1
@@ -191,7 +191,7 @@ var/global/list/big_deepmaint_room_templates = list()
 		trap_count = trap_count - 1
 		var/turf/N = pick(path_turfs_copy)
 		path_turfs_copy -= N
-		if(prob(90))
+		if(prob(60))
 			new /obj/random/traps(N)
 		else
 			new /obj/random/mob/psi_monster(N)
@@ -204,7 +204,12 @@ var/global/list/big_deepmaint_room_templates = list()
 /obj/procedural/dungenerator/deepmaint
 	name = "Deep Maint Gen"
 
-
+// Skip deepmaint. DO NOT REMOVE ELSE, it becomes unreachable
+#if defined(UNIT_TESTS) || defined(SPACEMAN_DMM)
+/obj/procedural/dungenerator/deepmaint/New()
+	log_test("Skipping deepmaint generation for unit tests")
+	return
+#else
 /obj/procedural/dungenerator/deepmaint/New()
 	while(1)
 		if(Master.current_runlevel)
@@ -213,7 +218,7 @@ var/global/list/big_deepmaint_room_templates = list()
 		else
 			sleep(150)
 	spawn()
-		var/start = REALTIMEOFDAY
+		//testing_variable(start, REALTIMEOFDAY)
 		var/obj/procedural/jp_DungeonGenerator/deepmaint/generate = new /obj/procedural/jp_DungeonGenerator/deepmaint(src)
 		testing("Beginning procedural generation of [name] -  Z-level [z].")
 		generate.name = name
@@ -254,4 +259,5 @@ var/global/list/big_deepmaint_room_templates = list()
 		generate.populateCorridors()
 		generate.makeLadders()
 		testing("Finished procedural generation of [name]. [generate.errString(generate.out_error)] -  Z-level [z], in [(REALTIMEOFDAY - start) / 10] seconds.")
+#endif
 

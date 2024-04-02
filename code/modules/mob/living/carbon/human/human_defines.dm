@@ -77,6 +77,7 @@
 	var/xylophone = 0 //For the spoooooooky xylophone cooldown
 
 	var/mob/remoteview_target = null
+	var/remoteviewer = FALSE //for Glassification breakdown
 	var/hand_blood_color
 
 	var/gunshot_residue
@@ -108,6 +109,7 @@
 
 
 	var/datum/sanity/sanity = null
+	var/rest_points = 0
 
 	var/shock_resist = 0 // Resistance to paincrit
 
@@ -122,3 +124,11 @@
 
 
 	var/added_movedelay = 0 //Used for humans only
+
+	//Lib edits
+	var/frost = 0
+	var/frost_emote
+	var/frost_emote_cooldown = 49
+	var/frost_warnings
+	var/frost_warnings_cooldown = 49
+	var/max_frost = 1200 //were out of 1.2k so are values are a bit inflated

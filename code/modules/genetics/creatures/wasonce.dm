@@ -86,7 +86,6 @@ Has ability of every roach.
 		akira = victim
 		//Kill them properly. - 300 damage to bypass most health mods, this should kill anyone even power gamers with best stats, best perks.
 		akira.adjustBruteLoss(80)
-		akira.adjustToxLoss(220)
 		akira.adjustCloneLoss(100)
 
 		name = "Was once [akira]"

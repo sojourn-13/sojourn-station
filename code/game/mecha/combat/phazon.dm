@@ -6,7 +6,7 @@
 	step_in = 1
 	dir_in = 1 //Facing North.
 	step_energy_drain = 3
-	health = 400
+	health = 600
 	deflect_chance = 30
 	damage_absorption = list("brute"=0.7,"fire"=0.7,"bullet"=0.7,"energy"=0.7,"bomb"=0.7)
 	armor_level = MECHA_ARMOR_MEDIUM
@@ -68,11 +68,11 @@
 	var/new_damtype = alert(src.occupant,"Melee Damage Type",null,"Brute","Fire","Toxic")
 	switch(new_damtype)
 		if("Brute")
-			damtype = "brute"
+			damtype = BRUTE
 		if("Fire")
-			damtype = "fire"
+			damtype = BURN
 		if("Toxic")
-			damtype = "tox"
+			damtype = TOX
 	src.occupant_message("Melee damage type switched to [new_damtype ]")
 	return
 

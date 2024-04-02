@@ -124,6 +124,25 @@
 /obj/random/junk,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/deepmaint)
+"K" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/cargo,
+/area/deepmaint)
+"M" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/deepmaint)
+"O" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/cargo,
+/area/deepmaint)
+"W" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/deepmaint)
 
 (1,1,1) = {"
 t
@@ -144,7 +163,7 @@ c
 c
 f
 w
-h
+W
 h
 d
 c
@@ -155,7 +174,7 @@ t
 a
 c
 e
-d
+O
 h
 m
 h
@@ -191,17 +210,17 @@ c
 s
 "}
 (6,1,1) = {"
-a
+M
 u
 v
-d
+O
 k
 c
 p
-d
+O
 d
 u
-a
+M
 "}
 (7,1,1) = {"
 b
@@ -246,9 +265,9 @@ t
 a
 c
 c
-f
+K
 h
-h
+W
 h
 d
 c

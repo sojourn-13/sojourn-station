@@ -79,6 +79,13 @@ I said no!
 	)
 	result = /obj/item/reagent_containers/food/snacks/dumplings
 
+/datum/recipe/frenchtoast
+	reagents = list("egg" = 3, "milk" = 5)
+	items = list(
+		/obj/item/reagent_containers/food/snacks/breadslice
+	)
+	result = /obj/item/reagent_containers/food/snacks/frenchtoast
+
 /datum/recipe/humanburger
 	items = list(
 		/obj/item/reagent_containers/food/snacks/meat/human,
@@ -103,7 +110,7 @@ I said no!
 /datum/recipe/brainburger
 	items = list(
 		/obj/item/reagent_containers/food/snacks/bun,
-		/obj/item/organ/internal/brain
+		/obj/item/organ/internal/vital/brain
 	)
 	result = /obj/item/reagent_containers/food/snacks/brainburger
 
@@ -1261,7 +1268,7 @@ I said no!
 
 /datum/recipe/cake/brain
 	items = list(
-		/obj/item/organ/internal/brain,
+		/obj/item/organ/internal/vital/brain,
 		/obj/item/reagent_containers/food/snacks/sliceable/butterstick,
 		)
 	result = /obj/item/reagent_containers/food/snacks/sliceable/braincake

@@ -25,7 +25,7 @@
 			/obj/item/clothing/gloves/thick/ablasive = custom_good_amount_range(list(1, 5)),
 			/obj/item/clothing/head/helmet/laserproof = custom_good_amount_range(list(1, 5)),
 			/obj/item/clothing/head/helmet/faceshield/altyn = custom_good_amount_range(list(1, 5)),
-			/obj/item/clothing/suit/armor/flackvest/full = custom_good_amount_range(list(1, 5))
+			/obj/item/clothing/suit/armor/flakvest/full = custom_good_amount_range(list(1, 5))
 		),
 		"Voidsuits" = list(
 			/obj/item/clothing/suit/space/void,
@@ -71,7 +71,10 @@
 			/obj/item/rig_module/vision/sechud,
 			/obj/item/rig_module/vision/medhud,
 			/obj/item/rig_module/vision/thermal,
-			/obj/item/rig_module/storage
+			/obj/item/rig_module/storage,
+			/obj/item/rig_module/storage/engi,
+			/obj/item/rig_module/storage/med,
+			/obj/item/rig_module/storage/combat
 		)
 	)
 

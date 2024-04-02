@@ -32,6 +32,13 @@
 			to_chat(l, SPAN_WARNING("Your skin itches."))
 		l.apply_effect(2, IRRADIATE)
 
+/obj/effect/decal/cleanable/greenglow/bile/Process()
+	. = ..()
+	for(var/mob/living/carbon/l in range(4))
+		if(prob(25))
+			to_chat(src, SPAN_WARNING("The air begins to feel warm."))
+		l.apply_effect(0.5, IRRADIATE) //we spit out THREE of these.
+
 /obj/effect/decal/cleanable/dirt
 	name = "dirt"
 	desc = "Someone should clean that up."
@@ -135,6 +142,11 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "greenglow"
 
+/obj/effect/decal/cleanable/greenglow/bile
+	name = "glowing bile"
+	desc = "A small puddle of glowing green bile, it utterly reeks. Just being near it makes you feel a bit warmer."
+
+
 /obj/effect/decal/cleanable/slimecorpse // Slimepeople remains
 	name = "runny slime pool"
 	icon = 'icons/effects/effects.dmi'
@@ -188,7 +200,7 @@
 	icon_state = "vomit_1"
 	random_icon_states = list("vomit_1", "vomit_2", "vomit_3", "vomit_4")
 	var/list/viruses = list()
-	sanity_damage = 1
+	sanity_damage = 0.5
 
 	Destroy()
 		. = ..()

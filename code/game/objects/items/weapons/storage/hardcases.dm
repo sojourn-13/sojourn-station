@@ -20,7 +20,7 @@
 	..()
 	return QDEL_HINT_QUEUE //just to be safe
 
-/obj/item/storage/hcases/proc/can_interact(mob/user)
+/obj/item/storage/hcases/can_interact(mob/user)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
 		return 1
 	if(istype(loc, /obj/item/storage))
@@ -161,7 +161,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/device/flash,
 		/obj/item/grenade,
 		/obj/item/reagent_containers/spray/pepper,
-		/obj/item/handcuffs
+		/obj/item/handcuffs,
+		/obj/item/part/gun
 		)
 
 /obj/item/storage/hcases/ammo/ih
@@ -177,6 +178,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
+	new /obj/item/clothing/accessory/badge/holo/wo(src)
 
 /obj/item/storage/hcases/ammo/ih/spec_officer
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -186,6 +188,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
+	new /obj/item/clothing/accessory/badge/holo/warden(src)
 
 
 /obj/item/storage/hcases/ammo/ih/ranger_officer
@@ -196,6 +199,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
+	new /obj/item/clothing/accessory/badge/holo/inspector(src)
 	new /obj/item/cell/small/high(src)
 
 /obj/item/storage/hcases/ammo/ih/marshal_officer
@@ -225,6 +229,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/cell/small/high(src)
 	new /obj/item/gun/energy/gun/martin/preloaded(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
+	new /obj/item/clothing/accessory/badge/holo/co(src)
 
 /obj/item/storage/hcases/ammo/blackmarket/serg
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -324,7 +329,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/tool_upgrade,
 		/obj/item/clothing/head/welding,
 		/obj/item/weldpack,
-		/obj/item/circuitboard
+		/obj/item/circuitboard,
+		/obj/item/part/gun
 		)
 
 /obj/item/storage/hcases/parts/scrap
@@ -372,11 +378,11 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/med/medical_job/populate_contents()
-	new /obj/item/stack/medical/advanced/bruise_pack/large(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment/large(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/large(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced/large(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
@@ -389,11 +395,11 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/med/medical_job_psyco/populate_contents()
-	new /obj/item/stack/medical/advanced/bruise_pack/large(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment/large(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/large(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced/large(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
@@ -409,11 +415,11 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	exspand_when_spawned = FALSE //No exspanding cheats
 
 /obj/item/storage/hcases/med/medical_job_cbo/populate_contents()
-	new /obj/item/stack/medical/advanced/bruise_pack/large(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/bruise_pack(src)
-	new /obj/item/stack/medical/advanced/ointment/large(src)
-	new /obj/item/stack/medical/advanced/ointment(src)
+	new /obj/item/stack/medical/bruise_pack/advanced/large(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/bruise_pack/advanced(src)
+	new /obj/item/stack/medical/ointment/advanced/large(src)
+	new /obj/item/stack/medical/ointment/advanced(src)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
@@ -466,7 +472,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		/obj/item/airlock_electronics,
 		/obj/item/airalarm_electronics,
 		/obj/item/tool_upgrade,
-		/obj/item/cell
+		/obj/item/cell,
+		/obj/item/part/gun
 		)
 
 /obj/item/storage/hcases/engi/scrap
@@ -491,8 +498,9 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list() // Moved the Galaxy to secondary selection
-		options["Copperhead - assault rifle"] = list(/obj/item/gun/projectile/automatic/mamba/copperhead,/obj/item/ammo_magazine/rifle_75,/obj/item/ammo_magazine/rifle_75, /obj/item/ammo_magazine/rifle_75/rubber)
-		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags, /obj/item/ammo_magazine/ammobox/c10x24_small)
+		options["Osprey - precision rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped/fancy,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber)
+		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/ammobox/shotgun/beanbags/pepperball, /obj/item/ammo_magazine/ammobox/c10x24_small)
+		options["Ostwind - police carbine"] = list(/obj/item/gun/projectile/automatic/ostwind, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball)
 		var/choice = input(user,"What type of equipment?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]
@@ -543,7 +551,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		var/list/options = list()
 		// Keeping this in case any other "sensible" option for a primary weapon for Lifeline Techs arrives, just add them as an option here.
 		options["Bullpip SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_35/hv,/obj/item/ammo_magazine/smg_35/hv)
-		options["Soteria \"Sprocket\" lasgun"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
+		options["Soteria \"Sprocket\" laser carbine"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
+		options["SST \"Humility\" shotgun"] = list(/obj/item/gun/energy/sst/humility/preloaded,/obj/item/cell/medium/moebius/high)
 		var/choice = input(user,"Which gun will you take?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]
@@ -555,3 +564,90 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		else
 			stamped = FALSE
 
+/obj/item/gunbox/forehead
+	name = "Foreman's melee weapon case"
+	desc = "A secure box containing the melee weapon of choice for Foremen."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "rifle_case" // Placeholder?
+
+/obj/item/gunbox/forehead/attack_self(mob/living/user)
+	..()
+	var/stamped
+	if(!stamped)
+		stamped = TRUE
+		var/list/options = list()
+		options["Foreman's Sledgehammer"] = list(/obj/item/tool/hammer/foremansledge)
+		options["\"Render Slayer\" Greatsword"] = list(/obj/item/tool/sword/foreman)
+		var/choice = input(user,"Which weapon will you take?") as null|anything in options
+		if(src && choice)
+			var/list/things_to_spawn = options[choice]
+			for(var/new_type in things_to_spawn)
+				var/atom/movable/AM = new new_type(get_turf(src))
+				if(istype(AM, /obj/item/gun/))
+					to_chat(user, "You have chosen \the [AM].")
+			qdel(src)
+		else
+			stamped = FALSE
+
+// ERT / Agent kits. These mostly hold imprinters to grant stats / perks that said operative should have without having to manually tweak.
+//Agents already start with the stats perks if spawned via _ert spawners however these are maintained for convenience if making agents via spawn_character + select_outfit.
+
+/obj/item/storage/hcases/ert
+	name = "imprinter hard case" // 2 stats +50 3 stats +25.
+	desc = "A hardcase containing a number of advanced mental imprinters."
+	can_hold = list(/obj/item/device/mental_imprinter/agent)
+
+/obj/item/storage/hcases/ert/populate_contents()
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+
+/obj/item/storage/hcases/ert/marshal
+	name = "marshals imprinter hard case"
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the Nadezhda Marshals."
+	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
+
+/obj/item/storage/hcases/ert/marshal/populate_contents()
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/hardware_imprinter/smartlink(src)
+	new /obj/item/device/hardware_imprinter/spaceasshole(src)
+	new /obj/item/device/hardware_imprinter/codlang(src)
+	new /obj/item/device/hardware_imprinter/contraband(src)
+
+/obj/item/storage/hcases/ert/blackshield
+	name = "blackshield imprinter hard case"
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the Nadezhda Blackshield Militia."
+	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
+
+/obj/item/storage/hcases/ert/marshal/populate_contents()
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/hardware_imprinter/boltraining(src)
+	new /obj/item/device/hardware_imprinter/spaceasshole(src)
+	new /obj/item/device/hardware_imprinter/conditioning(src)
+	new /obj/item/device/hardware_imprinter/contraband(src)
+
+/obj/item/storage/hcases/ert/medical
+	name = "medical imprinter hard case"
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the SRI medical division."
+	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
+
+/obj/item/storage/hcases/ert/medical/populate_contents()
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/mental_imprinter/agent/strong(src)
+	new /obj/item/device/hardware_imprinter/medexpert(src)
+	new /obj/item/device/hardware_imprinter/medadept(src)
+	new /obj/item/device/hardware_imprinter/chemist(src)
+	new /obj/item/device/hardware_imprinter/science(src)

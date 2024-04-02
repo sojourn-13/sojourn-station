@@ -13,9 +13,7 @@
 	permeability_coefficient = 0.05
 	item_flags = NOSLIP | SILENT
 	origin_tech = list(TECH_ILLEGAL = 3)
-	var/list/clothing_choices = list()
 	siemens_coefficient = 0 // DAMN BOI
-	species_restricted = null
 
 /obj/item/clothing/shoes/ablasive
 	name = "ablative jackboots"
@@ -364,6 +362,11 @@
 	name = "red footwraps"
 	desc = "A roll of treated canvas used for wrapping claws or paws."
 	icon_state = "leg-wrap2"
+
+/obj/item/clothing/shoes/bugsocks
+    name = "insect socks"
+    desc = "An extra durable set of extremely small and grippy socks. Usually used by the cht'mant to protect their oddly shaped nubs. Much more preferable to standard shoes if not very protective."
+    icon_state = "chtman_grippys"
 
 /*Winter Boots*/
 

@@ -25,6 +25,7 @@
 
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.3 // 30 vig
+	gun_parts = list(/obj/item/part/gun/frame/glock = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol= 1)
 
 /obj/item/gun/projectile/glock/update_icon()
 	..()
@@ -44,3 +45,13 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/part/gun/frame/glock
+	name = "Sky frame"
+	desc = "A Sky pistol frame. An ugly, blocky piece of shit."
+	icon_state = "frame_glock"
+	result = /obj/item/gun/projectile/glock
+	resultvars = list(/obj/item/gun/projectile/glock)
+	gripvars = list(/obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = list(/obj/item/part/gun/barrel/pistol)

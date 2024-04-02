@@ -325,7 +325,7 @@
 	price_tag = 1
 
 /obj/item/stack/material/cloth/random
-	rand_min = 2
+	rand_min = 3
 	rand_max = 7
 
 /obj/item/stack/material/cloth/soteria

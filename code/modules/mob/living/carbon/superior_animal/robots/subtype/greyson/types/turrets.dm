@@ -9,8 +9,8 @@
 
 	mob_size = MOB_MEDIUM
 
-	maxHealth = 150
-	health = 150
+	maxHealth = 75
+	health = 75
 
 	faction = "greyson"
 
@@ -92,8 +92,8 @@
 	ranged_cooldown = 8
 	rounds_left = 33
 	mags_left = 3
-	maxHealth = 250
-	health = 250
+	maxHealth = 125
+	health = 125
 	rapid = TRUE
 	rapid_fire_shooting_amount = 3
 
@@ -146,8 +146,8 @@
 
 	get_stat_modifier = FALSE // lol no
 
-	maxHealth = 550 //very tanky
-	health = 550
+	maxHealth = 400 //tanky
+	health = 400
 
 	deathmessage = "violently explodes, its internal generator combusting in a brilliant blue-white flame!"
 	reload_message = "lets out a hiss as a fuel rod ejects from its carapace!"

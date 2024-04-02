@@ -17,7 +17,7 @@
 	cell_type =  /obj/item/cell/large/ameridian/loaded // With how it is made, it start ready to be used
 	air_type =   /obj/item/tank/oxygen
 	suitable_cell = /obj/item/cell/large
-	initial_modules = list(	/obj/item/rig_module/storage/expanded,
+	initial_modules = list(//obj/item/rig_module/storage/expanded,
 							/obj/item/rig_module/mounted,
 							/obj/item/rig_module/held/shield,
 							/obj/item/rig_module/vision/nvg,
@@ -32,6 +32,7 @@
 
 /obj/item/clothing/head/helmet/space/rig/ameridian_knight
 	name = "helmet"
+	camera_networks = list(NETWORK_RESEARCH)
 	retract_while_active = TRUE
 	flash_protection = FLASH_PROTECTION_MODERATE
 

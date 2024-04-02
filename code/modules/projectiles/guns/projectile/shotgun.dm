@@ -5,3 +5,6 @@
 
 	wield_delay = 2 SECOND
 	wield_delay_factor = 0.5// 50 vig
+
+	perk_plusone_eligible = TRUE //sideload edit.
+	alt_plus_one_loading = TRUE //also sideload

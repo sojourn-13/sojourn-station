@@ -10,9 +10,12 @@
 		//SMGs
 		/datum/design/autolathe/gun/triage = 3,
 		//rifles
+		/datum/design/autolathe/gun/watchtower = 3,
 		/datum/design/autolathe/gun/sol = 3,
 		/datum/design/autolathe/gun/omnirifle = 4,
 		/datum/design/autolathe/gun/rds_omnicarbine = 5,
+		//shotgun
+		/datum/design/autolathe/gun/hustler = 5,
 		//machinegun
 		/datum/design/autolathe/gun/heroic = 5,
 		//grenade launcher
@@ -54,6 +57,14 @@
 		/datum/design/autolathe/ammo/kurtz_lethal,
 		/datum/design/autolathe/ammo/kurtz_rubber,
 		/datum/design/autolathe/ammo/kurtz_practice = 0,
+		/datum/design/autolathe/ammo/sbaw_empty = 0,
+		/datum/design/autolathe/ammo/sbaw_beanbag,
+		/datum/design/autolathe/ammo/sbaw_pellet,
+		/datum/design/autolathe/ammo/sbaw_slug,
+		/datum/design/autolathe/ammo/m12empty = 1,
+		/datum/design/autolathe/ammo/m12beanbag = 2,
+		/datum/design/autolathe/ammo/m12pellet = 2,
+		/datum/design/autolathe/ammo/m12slug = 2,
 		/datum/design/autolathe/ammo/shotgun_box = 3, //Might want to up these, but really only a ten point difference from the other disk.
 		/datum/design/autolathe/ammo/shotgun_pellet_box = 3,
 		/datum/design/autolathe/ammo/lrifle,
@@ -156,6 +167,20 @@
 		/datum/design/autolathe/ammo/smg_magnum_40_rubber = 1,
 		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 3,
 		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
+		)
+
+/obj/item/computer_hardware/hard_drive/portable/design/blackshield/watchtower
+	name = "NM - 7.62mm \"Watchtower\""
+	disk_name = ""
+	icon_state = "blackshield"
+	license = 8
+
+	designs = list(
+		/datum/design/autolathe/gun/watchtower = 3,
+		/datum/design/autolathe/ammo/rifle,
+		/datum/design/autolathe/ammo/rifle_rubber,
+		/datum/design/autolathe/ammo/rifle_practice = 0,
+		/datum/design/autolathe/ammo/rifle_lethal = 2
 		)
 
 /obj/item/computer_hardware/hard_drive/portable/design/blackshield/dp

@@ -12,7 +12,7 @@
 	can_dual = TRUE
 	silenced = FALSE
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6, MATERIAL_PLATINUM = 6)
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_CALIBRE_9MM, GUN_MAGWELL)

@@ -63,6 +63,8 @@
 	var/have_recycling = FALSE //Also dictates auto-input
 	var/have_design_selector = TRUE
 
+	var/max_efficiency = 0.5
+
 	var/list/selectively_recycled_types = list()	// Allows recycling of specified types if have_recycling = FALSE
 
 	var/list/unsuitable_materials = list(MATERIAL_BIOMATTER)
@@ -213,6 +215,10 @@
 
 /obj/machinery/autolathe/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/list/data = nano_ui_data(user, ui_key)
+
+	var/datum/asset/designIcons = get_asset_datum(/datum/asset/simple/design_icons)
+	if (designIcons.send(user.client))
+		user.client.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -972,7 +978,7 @@
 	queue_max = initial(queue_max) + mb_rating + (hacked ? 8 : 0) //So the more matter bin levels the more we can queue!
 
 	speed = initial(speed) + man_rating + las_rating
-	mat_efficiency = max(0.5, 1.0 - (man_rating * 0.1))
+	mat_efficiency = max(max_efficiency, 1.0 - (man_rating * 0.1))
 
 
 
@@ -1017,6 +1023,7 @@
 	circuit = /obj/item/circuitboard/autolathe_industrial
 	speed = 4
 	storage_capacity = 240
+	max_efficiency = 0.3
 	have_recycling = TRUE
 
 /obj/machinery/autolathe/greyson

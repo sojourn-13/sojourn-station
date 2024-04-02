@@ -108,6 +108,14 @@
 	name = "trade sending beacon"
 	build_path = /obj/item/circuitboard/trade_beacon/sending
 
+/datum/design/autolathe/circuit/smartfridge
+	name = "smartfridge"
+	build_path = /obj/item/circuitboard/smartfridge
+
+/datum/design/autolathe/circuit/smartfridge/disk
+	name = "disk storage"
+	build_path = /obj/item/circuitboard/smartfridge/disk
+
 //Soj thing
 /datum/design/autolathe/circuit/nanite_reconstitution_apparatus
 	name = "nanite reconstitution apparatus"

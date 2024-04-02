@@ -117,12 +117,25 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/deepmaint)
+"v" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/dark,
+/area/deepmaint)
+"z" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/dark/panels,
+/area/deepmaint)
 "E" = (
 /obj/structure/table/standard,
 /obj/random/card_carp,
 /obj/random/card_carp,
 /obj/random/card_carp,
 /obj/random/card_carp/pelt,
+/turf/simulated/floor/tiled/dark,
+/area/deepmaint)
+"L" = (
+/obj/machinery/light/small,
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/tiled/dark,
 /area/deepmaint)
 "S" = (
@@ -132,6 +145,10 @@
 /obj/random/medical/low_chance,
 /obj/random/firstaid/low_chance,
 /turf/simulated/floor/tiled/dark/gray_perforated,
+/area/deepmaint)
+"U" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/deepmaint)
 "Z" = (
 /obj/structure/table/rack/shelf,
@@ -149,17 +166,17 @@
 a
 a
 a
+v
 a
 a
 a
 a
 a
-a
-a
+v
 a
 "}
 (2,1,1) = {"
-b
+L
 c
 c
 a
@@ -176,7 +193,7 @@ a
 c
 f
 g
-g
+U
 h
 m
 k
@@ -192,7 +209,7 @@ g
 g
 h
 n
-k
+z
 r
 c
 a
@@ -212,7 +229,7 @@ t
 "}
 (6,1,1) = {"
 a
-a
+v
 a
 a
 a
@@ -221,7 +238,7 @@ o
 a
 a
 a
-a
+v
 "}
 (7,1,1) = {"
 a
@@ -263,7 +280,7 @@ s
 a
 "}
 (10,1,1) = {"
-a
+v
 e
 c
 c
@@ -278,12 +295,12 @@ a
 (11,1,1) = {"
 a
 a
-a
+v
 a
 a
 l
 a
-a
+v
 a
 a
 a

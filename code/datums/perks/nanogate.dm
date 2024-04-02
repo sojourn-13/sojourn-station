@@ -44,6 +44,11 @@
 	holder.health -= 40
 	..()
 
+/datum/perk/nanite_metal_drinker
+	name = "Nanite Metal Drinker"
+	desc = "Allows the user to drink metals (like Gold/Silver/Iron/Potassium and more) to regain nutrition."
+	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
+
 /datum/perk/nanite_chem
 	name = "Nanite Chemicals"
 	desc = "You programmed and set aside a specific subset of nanites who have a singular purpose that you can call upon at any time to engage their effect, but this only works once."
@@ -143,6 +148,7 @@
 						/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap,
 						/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv,
 						/obj/item/ammo_magazine/ammobox/shotgun/flashshells, //holds 70 shells, its a map item not meant to be common
+						/obj/item/ammo_magazine/ammobox/shotgun/biomatter,
 						/obj/item/ammo_magazine/ammobox/shotgun/payload,
 						/obj/item/ammo_magazine/ammobox/shotgun/incendiary,
 						/obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag,

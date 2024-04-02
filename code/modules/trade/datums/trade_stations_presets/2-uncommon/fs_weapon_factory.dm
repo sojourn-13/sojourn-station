@@ -1,7 +1,7 @@
 /datum/trade_station/fs_factory
 	name_pool = list("XSMS 'Kaida'" = "Xanaroth Syndicate Manufacturing Station 'Kaida'. \"Well if it isn't our favorite trade partner, we got some side deals just for you!\"")
 	spawn_always = TRUE
-	markup = RARE_GOODS		// dept-specific stuff should be more expensive for guild
+	markup = COMMON_GOODS		// dept-specific stuff should be more expensive for guild
 	uid = "fs_guns"
 	tree_x = 0.82
 	tree_y = 0.7
@@ -9,15 +9,17 @@
 	base_income = 0
 	wealth = 0
 //	secret_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3000
 	stations_recommended = list("illegal1")
 	recommendations_needed = 1
 	inventory = list(
 		"Projectiles" = list(
 			/obj/item/gun/projectile/automatic/c20r,
 			/obj/item/gun/projectile/automatic/sts/rifle,
+			/obj/item/gun/projectile/automatic/pitbull,
 			/obj/item/gun/projectile/boltgun/lever,
 			/obj/item/gun/projectile/boltgun/sa = good_data("Mosin boltaction rifle", list(1, 5), 500),
+			/obj/item/gun/projectile/shotgun/pump/gladstone,
 			/obj/item/gun/projectile/shotgun/bull,
 			/obj/item/gun/projectile/shotgun/pug,
 			/obj/item/gun/projectile/shotgun/pump = good_data("Grizzly shotgun", list(1, 5), 700),
@@ -28,6 +30,7 @@
 			/obj/item/ammo_magazine/heavy_rifle_408_drum = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_magazine/m12/pellet = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_casing/antim/lethal/prespawned = custom_good_amount_range(list(1, 10)),
+			/obj/item/ammo_casing/antim/incend/prespawned = custom_good_amount_range(list(1, 10)),
 
 			/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small,
 			/obj/item/ammo_magazine/ammobox/rifle_75_small,
@@ -69,13 +72,21 @@
 		"High End Laser Guns" = list(
 			/obj/item/gun/energy/firestorm,
 			/obj/item/gun/energy/xray,
+			/obj/item/gun/energy/mindflayer,
 			/obj/item/gun/energy/lasercore,
 			/obj/item/gun/energy/pulse/cassad
+		),
+		"Surplus Gun Parts & Disk for Resale" = list(
+			/obj/item/computer_hardware/hard_drive/portable/design/gun_frames/resale/high = good_data("SA Gun Frame Disk", list(1, 1), 1450),
+			/obj/item/part/gun/grip/serb,
+			/obj/item/part/gun/mechanism/autorifle,
+			/obj/item/part/gun/mechanism/smg,
+			/obj/item/part/gun/barrel/lrifle,
 		)
 	)
 
 	offer_types = list(
-		/obj/item/gun/energy/laser/railgun= offer_data("\"Reductor\" rail rifle", 3500, 1),
+		/obj/item/gun/energy/laser/railgun/railrifle= offer_data("\"Reductor\" rail rifle", 3500, 1),
 		/obj/item/gun_upgrade/mechanism/overshooter = offer_data("overshooter", 400, 2),
 		/obj/item/gun_upgrade/mechanism/weintraub = offer_data("\"Hurricane\" full auto kit", 450, 3),
 		/obj/item/gun_upgrade/trigger/dangerzone = offer_data("\"Dangerzone\" trigger", 250, 3),

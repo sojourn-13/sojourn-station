@@ -21,7 +21,7 @@
 	bar = image('icons/effects/progessbar.dmi', target, "prog_bar_0", HUD_LAYER)
 	bar.alpha = 0
 	bar.plane = HUD_PLANE
-	bar.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
+	bar.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA|DEFAULT_APPEARANCE_FLAGS
 	bar.mouse_opacity = 0
 	user = User
 	if(user)

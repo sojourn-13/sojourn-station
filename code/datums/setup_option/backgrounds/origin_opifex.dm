@@ -6,7 +6,7 @@
 
 	restricted_to_species = list(FORM_OPIFEX)
 
-	perks = list(/datum/perk/opifex_backup)
+	perks = list(PERK_OPIFEX_BACKUP)
 	racial_implants = (/obj/item/organ_module/active/simple/opifex_pouch)
 
 	stat_modifiers = list(
@@ -28,7 +28,7 @@
 
 	restricted_to_species = list(FORM_OPIFEX)
 
-	perks = list(/datum/perk/opifex_backup_medical)
+	perks = list(PERK_OPIFEX_MEDICAL)
 	racial_implants = (/obj/item/organ_module/active/simple/opifex_pouch)
 
 	stat_modifiers = list(
@@ -50,7 +50,7 @@
 
 	restricted_to_species = list(FORM_OPIFEX)
 
-	perks = list(/datum/perk/opifex_backup_combat)
+	perks = list(PERK_OPIFEX_COMBAT)
 	racial_implants = (/obj/item/organ_module/active/simple/opifex_pouch)
 
 	stat_modifiers = list(

@@ -146,7 +146,7 @@
 		return FALSE
 
 	if(tool_upgrades[UPGRADE_SANCTIFY])
-		if(SANCTIFIED in T.aspects)
+		if(T.sanctified == TRUE)
 			if(user)
 				to_chat(user, SPAN_WARNING("This tool already sanctified!"))
 			return FALSE
@@ -341,7 +341,7 @@
 
 /datum/component/item_upgrade/proc/apply_values_tool(var/obj/item/tool/T)
 	if(tool_upgrades[UPGRADE_SANCTIFY])
-		T.aspects += list(SANCTIFIED)
+		T.sanctified = TRUE
 	if(tool_upgrades[UPGRADE_ALLOW_GREYON_MODS])
 		T.allow_greyson_mods = tool_upgrades[UPGRADE_ALLOW_GREYON_MODS]
 	if(tool_upgrades[UPGRADE_PRECISION])
@@ -404,8 +404,6 @@
 		G.penetration_multiplier *= weapon_upgrades[GUN_UPGRADE_PEN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 		G.pierce_multiplier += weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
-	if(weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE])
-		G.proj_pve_damage_multiplier *= weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]
 	if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
 		G.proj_step_multiplier *= weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
@@ -535,7 +533,7 @@
 
 /datum/component/item_upgrade/proc/on_examine(var/mob/user)
 	if(tool_upgrades[UPGRADE_SANCTIFY])
-		to_chat(user, SPAN_NOTICE("Does additional burn damage to mutants."))
+		to_chat(user, SPAN_NOTICE("Blesses tool for use by Absolutists")) //We don't have any damage bonus from sanctified weapons. Might be added in the future, but for now don't mislead players.
 	if(tool_upgrades[UPGRADE_PRECISION] > 0)
 		to_chat(user, SPAN_NOTICE("Enhances precision by [tool_upgrades[UPGRADE_PRECISION]]"))
 	else if (tool_upgrades[UPGRADE_PRECISION] < 0)
@@ -596,13 +594,6 @@
 				to_chat(user, SPAN_NOTICE("Increases projectile agony damage by [amount*100]%"))
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile agony damage by [abs(amount*100)]%"))
-
-		if(weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE])
-			var/amount = weapon_upgrades[GUN_UPGRADE_PVE_PROJ_MULT_DAMAGE]-1
-			if(amount > 0)
-				to_chat(user, SPAN_NOTICE("Increases PVE damage by [amount*100]%"))
-			else
-				to_chat(user, SPAN_WARNING("Decreases PVE damage by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PEN_MULT]-1

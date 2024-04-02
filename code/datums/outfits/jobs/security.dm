@@ -50,9 +50,9 @@
 
 /decl/hierarchy/outfit/job/security/serg
 	name = OUTFIT_JOB_NAME("Blackshield - Sergeant")
-	l_ear = /obj/item/device/radio/headset/headset_blackshield
-	uniform = /obj/item/clothing/under/instructor
-	head = /obj/item/clothing/head/rank/instructor_hat
+	l_ear = /obj/item/device/radio/headset/headset_blackshield/sergeant
+	uniform = /obj/item/clothing/under/rank/armorer/gorka
+	head = /obj/item/clothing/head/rank/armorer/cap
 	glasses = /obj/item/clothing/glasses/ballistic
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/thick/swat/blackshield
@@ -63,7 +63,7 @@
 	head = /obj/item/clothing/head/rank/inspector
 	uniform = /obj/item/clothing/under/rank/inspector
 	suit = /obj/item/clothing/suit/storage/rank/insp_trench
-	head = /obj/item/clothing/head/fedora/brown
+	head = /obj/item/clothing/head/investigator
 	gloves = /obj/item/clothing/gloves/stungloves
 	l_pocket = /obj/item/device/flash
 	shoes = /obj/item/clothing/shoes/reinforced
@@ -80,7 +80,7 @@
 /decl/hierarchy/outfit/job/security/medspec
 	name = OUTFIT_JOB_NAME("Blackshield - Corpsman")
 	l_pocket = /obj/item/device/flash
-	l_ear = /obj/item/device/radio/headset/headset_blackshield
+	l_ear = /obj/item/device/radio/headset/headset_blackshield/corps
 	id_type = /obj/item/card/id/medcpec
 	uniform = /obj/item/clothing/under/rank/corpsman
 	head = /obj/item/clothing/head/rank/corpsman/beret
@@ -96,6 +96,7 @@
 	uniform = /obj/item/clothing/under/rank/security
 	mask = /obj/item/clothing/mask/balaclava/tactical
 	glasses = /obj/item/clothing/glasses/sechud/tactical
+	head = /obj/item/clothing/head/seccap
 	gloves = /obj/item/clothing/gloves/stungloves
 	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/marshal_officer = 1)
 

@@ -33,15 +33,18 @@
 			var/obj/item/cruciform_upgrade/speed_of_the_chosen/sotc = upgrade
 			tally -= sotc.speed_increase
 
-	var/health_deficiency = (maxHealth - health)
-	var/hunger_deficiency = (MOB_BASE_MAX_HUNGER - nutrition)
-	if((hunger_deficiency >= 200) && species.reagent_tag != IS_SYNTHETIC)
-		tally += (hunger_deficiency / 100) //If youre starving, movement slowdown can be anything up to 4.
-	if(health_deficiency >= 40)
-		tally += (health_deficiency / 25)
+	//If we are not a synth then we have some movement delays thanks to hunger
+	if(species.reagent_tag != IS_SYNTHETIC)
+		var/health_deficiency = (maxHealth - health)
+		var/hunger_deficiency = (max_nutrition - nutrition)
+		var/hunger_half = max_nutrition * 0.5			//50% of max nutrition
+		var/hunger_one_tenth = max_nutrition * 0.1		//10% of max nutrition
 
-	if (!(species && (species.flags & NO_PAIN)))
-		if(halloss >= 10) tally += (halloss / 20) //halloss shouldn't slow you down if you can't even feel it
+		if(hunger_deficiency >= hunger_half)
+			tally += (hunger_deficiency / 100) //If youre starving, movement slowdown can be anything up to 4.
+		if(health_deficiency >= hunger_one_tenth)
+			tally += (health_deficiency / 25)
+
 	if(istype(buckled, /obj/structure/bed/chair/wheelchair))
 		//Not porting bay's silly organ checking code here
 		tally += 1 //Small slowdown so wheelchairs aren't turbospeed
@@ -50,10 +53,16 @@
 			tally += wear_suit.slowdown
 		if(shoes)
 			tally += shoes.slowdown
+		if(back)
+			tally += back.slowdown
 
-	if(shock_stage >= 10) tally += 3
+	//tally += min((shock_stage / 100) * 3, 3) //Scales from 0 to 3 over 0 to 100 shock stage
+	//Soj edit - Are painkillers dont just magically make us faster
+	var/pain_effecting = (get_dynamic_pain() - get_painkiller())
+	if(pain_effecting >= 1)
+		tally += min(pain_effecting / 40, 3) // Scales from 0 to 3,
 
-	//if(stats.getPerk(/datum/perk/timeismoney)?.is_active())
+	//if(stats.getPerk(PERK_TIMEISMONEY)?.is_active())
 		//tally -= 2
 
 	if (bodytemperature < 283.222)

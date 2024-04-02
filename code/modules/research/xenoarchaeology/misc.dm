@@ -95,7 +95,6 @@
 		new /obj/item/device/core_sampler(src)
 		new /obj/item/device/gps(src)
 		new /obj/item/device/beacon_locator(src)
-		new /obj/item/device/radio/beacon(src)
 		new /obj/item/clothing/glasses/powered/meson(src)
 		new /obj/item/tool/pickaxe(src)
 		new /obj/item/device/measuring_tape(src)

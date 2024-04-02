@@ -28,8 +28,8 @@
 
 /obj/item/storage/debug
 	name = "Destickinator"
-	desc = "A case that can fit legitmently anything inside it, used by Bluespace Technicians and the like to remove stuck items form their hands. \
-	Seems its somehow was made stable as well, allowing you to de-stick even bluespace items without risk of your hand being lost."
+	desc = "A case that can fit legitimately anything inside it, used by Bluespace Technicians and the like to remove items stuck from people's hands. \
+	Seems it somehow was made stable as well, allowing you to de-stick even bluespace items without risk of losing your limbs."
 	icon_state = "desticker"
 	w_class = ITEM_SIZE_PLANET
 	max_w_class = 999

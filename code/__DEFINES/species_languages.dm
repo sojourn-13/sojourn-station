@@ -41,6 +41,9 @@
 #define LANGUAGE_AKULA "Akula"
 #define LANGUAGE_MARQUA "Marqua"
 #define LANGUAGE_PLANT "Native Plant"
+#define LANGUAGE_SYNTHETIC "Technical Cant"
+#define LANGUAGE_MERP "Narad Pidgin"
+#define LANGUAGE_BLORP "Aulvae Sonet"
 
 // Special / Antag langauges.
 #define LANGUAGE_MONKEY "Chimpanzee"
@@ -49,7 +52,7 @@
 #define LANGUAGE_HIVEMIND "Hivemind"
 #define LANGUAGE_CORTICAL "Cortical Link"
 #define LANGUAGE_CULT "Cult"
-#define LANGUAGE_OCCULT "Occult"
+#define LANGUAGE_OCCULT "Occult Projection"
 #define LANGUAGE_BLITZ "Blitzshell Communique"
 
 // Language flags.

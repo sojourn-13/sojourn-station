@@ -40,7 +40,7 @@
 			SPAN_NOTICE("You insert [tool] into [organ.get_surgery_name()].")
 		)
 	organ.add_item(tool, user)
-	if(BP_IS_ORGANIC(organ))
+	if(BP_IS_ORGANIC(organ) || BP_IS_SLIME(organ))
 		playsound(get_turf(organ), 'sound/effects/squelch1.ogg', 50, 1)
 
 /datum/surgery_step/insert_item/fail_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
@@ -52,13 +52,13 @@
 				SPAN_WARNING("[user]'s gripper slips, hitting [organ.get_surgery_name()] with \the [tool]!"),
 				SPAN_WARNING("Your gripper slips, hitting [organ.get_surgery_name()] with \the [tool]!")
 			)
-			organ.take_damage(5, 0)
+			organ.take_damage(5, BRUTE)
 	else
 		user.visible_message(
 			SPAN_WARNING("[user]'s hand slips, hitting [organ.get_surgery_name()] with \the [tool]!"),
 			SPAN_WARNING("Your hand slips, hitting [organ.get_surgery_name()] with \the [tool]!")
 		)
-		organ.take_damage(5, 0)
+		organ.take_damage(5, BRUTE)
 
 /datum/surgery_step/insert_item/robotic
 	required_stat = STAT_MEC

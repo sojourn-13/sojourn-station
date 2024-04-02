@@ -11,7 +11,7 @@ var/datum/xenomorph/xenomorph_ai
 	icon_rest = "drone_stunned"
 	icon_gib = "drone_gibbed"
 	pass_flags = PASSTABLE
-
+	get_stat_modifier = TRUE
 	cant_be_pulled = TRUE
 
 	mob_size = MOB_LARGE
@@ -32,6 +32,7 @@ var/datum/xenomorph/xenomorph_ai
 	deathmessage = "lets out a shrill scream as it dies!"
 	overkill_gib = 20
 	overkill_dust = 20
+	sanity_damage = 1
 
 	breath_required_type = NONE
 	breath_poison_type = NONE

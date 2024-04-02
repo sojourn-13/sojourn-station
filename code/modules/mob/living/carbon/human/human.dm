@@ -1,3 +1,4 @@
+#define SLIME_TRANSPARENCY 210 //this define only exists to make it easier to tweak the value in this small file
 /mob/living/carbon/human
 	name = "unknown"
 	real_name = "unknown"
@@ -12,6 +13,20 @@
 	var/show_title = TRUE
 
 /mob/living/carbon/human/New(var/new_loc, var/new_species, var/new_form)
+	hud_list[HEALTH_HUD]      = image('icons/mob/hud.dmi', src, "hudhealth100", ON_MOB_HUD_LAYER)
+	hud_list[STATUS_HUD]      = image('icons/mob/hud.dmi', src, "hudhealthy",   ON_MOB_HUD_LAYER)
+	hud_list[LIFE_HUD]        = image('icons/mob/hud.dmi', src, "hudhealthy",   ON_MOB_HUD_LAYER)
+	hud_list[ID_HUD]          = image('icons/mob/hud.dmi', src, "hudunknown",   ON_MOB_HUD_LAYER)
+	hud_list[WANTED_HUD]      = image('icons/mob/hud.dmi', src, "hudblank",     ON_MOB_HUD_LAYER)
+	hud_list[IMPCHEM_HUD]     = image('icons/mob/hud.dmi', src, "hudblank",     ON_MOB_HUD_LAYER)
+	hud_list[IMPTRACK_HUD]    = image('icons/mob/hud.dmi', src, "hudblank",     ON_MOB_HUD_LAYER)
+	hud_list[SPECIALROLE_HUD] = image('icons/mob/hud.dmi', src, "hudblank",     ON_MOB_HUD_LAYER)
+	hud_list[STATUS_HUD_OOC]  = image('icons/mob/hud.dmi', src, "hudhealthy",   ON_MOB_HUD_LAYER)
+
+
+
+	GLOB.human_mob_list |= src
+	..()
 
 	if(!dna)
 		dna = new /datum/dna(null)
@@ -35,21 +50,6 @@
 		if(mind)
 			mind.name = real_name
 
-	hud_list[HEALTH_HUD]      = image('icons/mob/hud.dmi', src, "hudhealth100", ON_MOB_HUD_LAYER)
-	hud_list[STATUS_HUD]      = image('icons/mob/hud.dmi', src, "hudhealthy",   ON_MOB_HUD_LAYER)
-	hud_list[LIFE_HUD]        = image('icons/mob/hud.dmi', src, "hudhealthy",   ON_MOB_HUD_LAYER)
-	hud_list[ID_HUD]          = image('icons/mob/hud.dmi', src, "hudunknown",   ON_MOB_HUD_LAYER)
-	hud_list[WANTED_HUD]      = image('icons/mob/hud.dmi', src, "hudblank",     ON_MOB_HUD_LAYER)
-	hud_list[IMPCHEM_HUD]     = image('icons/mob/hud.dmi', src, "hudblank",     ON_MOB_HUD_LAYER)
-	hud_list[IMPTRACK_HUD]    = image('icons/mob/hud.dmi', src, "hudblank",     ON_MOB_HUD_LAYER)
-	hud_list[SPECIALROLE_HUD] = image('icons/mob/hud.dmi', src, "hudblank",     ON_MOB_HUD_LAYER)
-	hud_list[STATUS_HUD_OOC]  = image('icons/mob/hud.dmi', src, "hudhealthy",   ON_MOB_HUD_LAYER)
-
-
-
-	GLOB.human_mob_list |= src
-	..()
-
 	if(dna)
 		dna.ready_dna(src)
 		dna.real_name = real_name
@@ -60,7 +60,9 @@
 	sanity = new(src)
 
 	flash_mod = species.flash_mod
+
 	movement_hunger_factors *= species.hunger_factor
+	max_nutrition += species.nutrition_mod //Some races have different nutrition maxs
 
 	AddComponent(/datum/component/fabric)
 
@@ -112,10 +114,11 @@
 			stat(null, "Suit charge: [cell_status]")
 
 		var/chemvessel_efficiency = get_organ_efficiency(OP_CHEMICALS)
-		if(chemvessel_efficiency)
+		if(chemvessel_efficiency > 1)
 			stat("Chemical Storage", "[carrion_stored_chemicals]/[round(0.5 * chemvessel_efficiency)]")
+
 		var/maw_efficiency = get_organ_efficiency(OP_MAW)
-		if(maw_efficiency > 0)
+		if(maw_efficiency > 1)
 			stat("Gnawing hunger", "[carrion_hunger]/[round(maw_efficiency/10)]")
 
 		var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
@@ -241,6 +244,10 @@
 		dat += "<BR><A href='?src=\ref[src];item=[slot_handcuffed]'>Handcuffed</A>"
 	if(legcuffed)
 		dat += "<BR><A href='?src=\ref[src];item=[slot_legcuffed]'>Legcuffed</A>"
+
+	for(var/entry in worn_underwear)
+		var/obj/item/underwear/UW = entry
+		dat += "<BR><a href='?src=\ref[src];item=\ref[UW]'>Remove \the [UW]</a>"
 
 	if(suit && suit.accessories.len)
 		dat += "<BR><A href='?src=\ref[src];item=tie'>Remove accessory</A>"
@@ -753,7 +760,11 @@ var/list/rank_prefix = list(\
 			location.add_vomit_floor(src, 1)
 
 		adjustNutrition(-40)
-		adjustToxLoss(-3)
+		if(src.ingested && src.ingested.reagent_list.len > 0) // If we have anything on our stomach...
+			for(var/datum/reagent/R in src.ingested.reagent_list)
+				if(R == src)
+					continue
+				src.ingested.remove_reagent(R.id, 10, 0) // ...We vomit some of it down!
 		//regen_slickness(-3)
 		//dodge_time = get_game_time()
 		//confidence = FALSE
@@ -901,24 +912,14 @@ var/list/rank_prefix = list(\
 		remoteview_target = null
 		reset_view(0)
 
-/mob/living/carbon/human/proc/increase_germ_level(n)
-	if(gloves)
-		gloves.germ_level += n
-	else
-		germ_level += n
-
 /mob/living/carbon/human/revive()
 
 	if(species && !(species.flags & NO_BLOOD))
 		vessel.add_reagent("blood",species.blood_volume-vessel.total_volume)
 		fixblood()
 
-	// Fix up all organs.
-	// This will ignore any prosthetics in the prefs currently.
-	rebuild_organs()
-
 	if(!client || !key) //Don't boot out anyone already in the mob.
-		for(var/obj/item/organ/internal/brain/H in world)
+		for(var/obj/item/organ/internal/vital/brain/H in world)
 			if(H.brainmob)
 				if(H.brainmob.real_name == src.real_name)
 					if(H.brainmob.mind)
@@ -934,51 +935,8 @@ var/list/rank_prefix = list(\
 
 	..()
 
-/mob/living/carbon/human/proc/is_lung_ruptured()
-	var/obj/item/organ/internal/lungs/L = random_organ_by_process(OP_LUNGS)
-	return L && L.is_bruised()
-
-/mob/living/carbon/human/proc/rupture_lung()
-	var/obj/item/organ/internal/lungs/L = random_organ_by_process(OP_LUNGS)
-
-	if(L && !L.is_bruised())
-		src.custom_pain("You feel a stabbing pain in your chest!", 1)
-		L.bruise()
-
-/*
-/mob/living/carbon/human/verb/simulate()
-	set name = "sim"
-	set background = 1
-
-	var/damage = input("Wound damage","Wound damage") as num
-
-	var/germs = 0
-	var/tdamage = 0
-	var/ticks = 0
-	while (germs < 2501 && ticks < 100000 && round(damage/10)*20)
-		log_misc("VIRUS TESTING: [ticks] : germs [germs] tdamage [tdamage] prob [round(damage/10)*20]")
-		ticks++
-		if (prob(round(damage/10)*20))
-			germs++
-		if (germs == 100)
-			to_chat(world, "Reached stage 1 in [ticks] ticks")
-		if (germs > 100)
-			if (prob(10))
-				damage++
-				germs++
-		if (germs == 1000)
-			to_chat(world, "Reached stage 2 in [ticks] ticks")
-		if (germs > 1000)
-			damage++
-			germs++
-		if (germs == 2500)
-			to_chat(world, "Reached stage 3 in [ticks] ticks")
-	to_chat(world, "Mob took [tdamage] tox damage")
-*/
-//returns 1 if made bloody, returns 0 otherwise
-
-/mob/living/carbon/human/add_blood(mob/living/carbon/human/M as mob)
-	if (!..())
+/mob/living/carbon/human/add_blood(mob/living/carbon/human/M)
+	if(!..())
 		return 0
 	//if this blood isn't already in the list, add it
 	if(istype(M))
@@ -1002,12 +960,10 @@ var/list/rank_prefix = list(\
 	if(gloves)
 		if(gloves.clean_blood())
 			update_inv_gloves()
-		gloves.germ_level = 0
 	else
 		if(bloody_hands)
 			bloody_hands = 0
 			update_inv_gloves()
-		germ_level = 0
 
 	gunshot_residue = null
 
@@ -1059,14 +1015,20 @@ var/list/rank_prefix = list(\
 					to_chat(src, msg)
 				var/mob/living/carbon/human/H = organ.owner
 				if(!MOVING_DELIBERATELY(H))
-					organ.take_damage(rand(1,3), 0, 0)
+					organ.take_damage(3, BRUTE, organ.max_damage, 6.7, TRUE, TRUE)	// When the limb is at 60% of max health, internal organs start taking damage.
 					if(organ.setBleeding())
-						src.adjustToxLoss(rand(1,3))
+						organ.take_damage(2, BRUTE) //Extra 2 damage
 					if(species.reagent_tag == IS_CHTMANT)
-						src.hallucination(30, 50)
-						src.adjustHalLoss(3)
-						src.adjustToxLoss(1)
+						hallucination(30, 50)
+						adjustHalLoss(3)
 
+/mob/living/carbon/human/verb/browse_sanity()
+	set name		= "Show sanity"
+	set desc		= "Browse your character sanity."
+	set category	= "IC"
+	set src			= usr
+
+	sanity?.ui_interact(src)
 
 /mob/living/carbon/human/verb/Toggle_Title()
 	set name = "Toggle Title"
@@ -1189,8 +1151,13 @@ var/list/rank_prefix = list(\
 
 /mob/living/carbon/human/proc/set_form(var/new_form = FORM_HUMAN, var/default_color)
 	form = GLOB.all_species_form_list[new_form]
+	if(new_form == FORM_SLIME) //slime people snowflake code
+		alpha = SLIME_TRANSPARENCY
+	else
+		alpha = 255
 	if(default_color)
 		skin_color = form.base_color
+
 
 //Needed for augmentation
 /mob/living/carbon/human/proc/rebuild_organs(from_preference)
@@ -1377,7 +1344,7 @@ var/list/rank_prefix = list(\
 			// Pick an existing non-robotic limb, if possible.
 			for(target_zone in BP_ALL_LIMBS)
 				var/obj/item/organ/external/affecting = get_organ(target_zone)
-				if(affecting && BP_IS_ORGANIC(affecting) || BP_IS_ASSISTED(affecting))
+				if(affecting && BP_IS_ORGANIC(affecting) || BP_IS_ASSISTED(affecting) || BP_IS_SLIME(affecting))
 					break
 
 
@@ -1510,7 +1477,7 @@ var/list/rank_prefix = list(\
 //			output for machines^	^^^^^^^output for people^^^^^^^^^
 
 /mob/living/carbon/human/proc/pulse()
-	if(!(organ_list_by_process(OP_HEART).len))
+	if(stat == DEAD || !(organ_list_by_process(OP_HEART).len))
 		return PULSE_NONE
 	else
 		return pulse
@@ -1594,25 +1561,35 @@ var/list/rank_prefix = list(\
 
 		switch(burndamage)
 			if(1 to 10)
-				status += "numb"
+				status += "stinging"
 			if(10 to 40)
 				status += "blistered"
 			if(40 to INFINITY)
 				status += "peeling away"
 
-		if(org.is_stump())
-			status += "MISSING"
+		if(org.is_stump()) // You at least have a stump still
+			status += "just a stump"
+		//Sanity check. You should not be able to see this
+		// as the limb gets removed from the list of organs asked at the start of this proc
+		if(!org) // NO LIMB!
+			status += "<b>GONE!</b>"
 		if(org.status & ORGAN_MUTATED)
-			status += "weirdly shapen"
+			status += "misshapen"
 		if(org.nerve_struck == 2)
 			status += "torpid"
 		if(org.status & ORGAN_BROKEN)
 			status += "hurts when touched"
+		if(org.status & ORGAN_BLEEDING) // "Oh hey, I'm bleeding"
+			status += "<b>bleeding profusely</b>"
 		if(org.status & ORGAN_DEAD)
-			status += "is bruised and necrotic"
+			status += "<b><font color='005500'>rotten</font></b>" // Necrotic
 		if(!org.is_usable())
 			status += "dangling uselessly"
-
+		for(var/obj/item/organ/internal/blood_vessel/BV in org.internal_organs)
+			if(BV.damage > 4) // Same as examine text, if our blood vessels are damaged beyond self-healing threshold...
+				status += "<font color='6533da'>swollen with black and blue spots</font>" // ...Let us see our bruises.
+		if(org.status & ORGAN_SPLINTED) // If our limb is splinted, tell us...
+			status += "<a href='?src=\ref[src];item=splints'>splinted</a>" // ...And let us remove the splints ourselves!
 		var/status_text = SPAN_NOTICE("OK")
 		if(status.len)
 			status_text = SPAN_WARNING(english_list(status))
@@ -1648,34 +1625,11 @@ var/list/rank_prefix = list(\
 
 /mob/living/carbon/human/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
 	. = ..()
-	if(.)
-		if(species.reagent_tag == IS_SLIME) // Slimes clean the floor. Code stolen from the roombas
-			var/turf/tile = loc
-			var/nutrition_gained = 5 // Up here for ease of modification
-			if(isturf(tile))
-				tile.clean_blood()
-				for(var/A in tile)
-					if(istype(A, /obj/effect))
-						if(istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay))
-							qdel(A)
-							src.nutrition += nutrition_gained // Gain some nutrition
-					else if(istype(A, /obj/item))
-						var/obj/item/cleaned_item = A
-						cleaned_item.clean_blood()
-					else if(ishuman(A))
-						var/mob/living/carbon/human/cleaned_human = A
-						if(cleaned_human.lying)
-							if(cleaned_human.head)
-								cleaned_human.head.clean_blood()
-								cleaned_human.update_inv_head(0)
-							if(cleaned_human.wear_suit)
-								cleaned_human.wear_suit.clean_blood()
-								cleaned_human.update_inv_wear_suit(0)
-							else if(cleaned_human.w_uniform)
-								cleaned_human.w_uniform.clean_blood()
-								cleaned_human.update_inv_w_uniform(0)
-							if(cleaned_human.shoes)
-								cleaned_human.shoes.clean_blood()
-								cleaned_human.update_inv_shoes(0)
-							cleaned_human.clean_blood(1)
-							to_chat(cleaned_human, SPAN_DANGER("[src] cleans your face!"))
+//no more slime cleaning
+
+/mob/living/carbon/human/proc/set_remoteview(var/atom/A)
+	remoteview_target = A
+	reset_view(A)
+	reset_view(A)
+
+#undef SLIME_TRANSPARENCY

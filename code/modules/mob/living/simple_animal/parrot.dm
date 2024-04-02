@@ -86,6 +86,7 @@
 	//Parrots are kleptomaniacs. This variable ... stores the item a parrot is holding.
 	var/obj/item/held_item = null
 
+	sanity_damage = -1
 
 /mob/living/simple_animal/parrot/New()
 	..()
@@ -779,6 +780,7 @@
 	mob_size = MOB_SMALL
 	faction = "pond"
 	speak_chance = 5
+	sanity_damage = -1
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/chicken // You monster.
 	meat_amount = 2

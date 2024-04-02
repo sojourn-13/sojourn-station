@@ -31,7 +31,6 @@
 	heat_damage = 20
 	emp_strength = 2
 	recoil = 5
-	added_damage_laser_pve = 10
 
 	fire_stacks = FALSE
 
@@ -47,7 +46,6 @@
 	recoil = 3
 
 	fire_stacks = FALSE
-	added_damage_laser_pve = 10
 
 /obj/item/projectile/plasma/aoe/heat
 	name = "high-temperature plasma blast"
@@ -61,7 +59,6 @@
 	recoil = 12
 
 	fire_stacks = TRUE
-	added_damage_laser_pve = 10
 
 /obj/item/projectile/plasma/aoe/heat/strong
 	name = "high-temperature plasma blast"
@@ -75,4 +72,3 @@
 	recoil = 80
 
 	fire_stacks = TRUE
-	added_damage_laser_pve = 26.5

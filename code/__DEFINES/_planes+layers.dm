@@ -179,3 +179,12 @@ What is the naming convention for planes or layers?
 
 // Check if a mob can "logically" see an atom plane
 #define MOB_CAN_SEE_PLANE(M, P) (P <= PLANE_WORLD || (P in M.planes_visible))
+
+
+//Bay port start
+
+#define DEFAULT_APPEARANCE_FLAGS (PIXEL_SCALE)
+
+/atom/appearance_flags = DEFAULT_APPEARANCE_FLAGS
+/image/appearance_flags = DEFAULT_APPEARANCE_FLAGS
+//Bay port end

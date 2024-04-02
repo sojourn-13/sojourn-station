@@ -45,6 +45,7 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/plating/under,
 /area/deepmaint)
 "ai" = (
@@ -113,11 +114,15 @@
 /turf/simulated/floor/reinforced,
 /area/deepmaint)
 "av" = (
-/obj/machinery/power/smes/buildable,
-/turf/simulated/floor/bluegrid,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/bar_flat,
 /area/deepmaint)
 "aw" = (
 /obj/structure/disposalpipe/segment,
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/plating/under,
 /area/deepmaint)
 "ax" = (
@@ -125,9 +130,17 @@
 /turf/simulated/floor/bluegrid,
 /area/deepmaint)
 "ay" = (
-/obj/structure/AIcore,
-/turf/simulated/floor/bluegrid,
-/area/space)
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe-s";
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/plating/under,
+/area/deepmaint)
 "az" = (
 /obj/machinery/button/remote/blast_door{
 	dir = 2;
@@ -185,6 +198,7 @@
 	dir = 4;
 	anchored = 1
 	},
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/plating/under,
 /area/deepmaint)
 "aG" = (
@@ -197,6 +211,7 @@
 	icon_state = "railing0";
 	dir = 8
 	},
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/plating/under,
 /area/deepmaint)
 "aI" = (
@@ -406,7 +421,7 @@
 	name = "AI Core"
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
-/area/space)
+/area/deepmaint)
 "cY" = (
 /obj/structure/table/reinforced,
 /obj/random/pack/rare,
@@ -418,6 +433,10 @@
 /obj/random/dungeon_gun_energy,
 /turf/simulated/floor/bluegrid,
 /area/deepmaint)
+"id" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/deepmaint)
 "jp" = (
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment{
@@ -427,11 +446,20 @@
 /obj/random/cluster/psi_monster/low_chance,
 /turf/simulated/floor/plating/under,
 /area/deepmaint)
+"lk" = (
+/obj/random/junk,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/plating/under,
+/area/deepmaint)
 "qh" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/catwalk,
 /obj/random/cluster/psi_monster/low_chance,
 /turf/simulated/floor/plating/under,
+/area/deepmaint)
+"rL" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/bar_flat,
 /area/deepmaint)
 "Ff" = (
 /obj/structure/table/reinforced,
@@ -452,6 +480,12 @@
 /obj/random/dungeon_gun_ballistic,
 /turf/simulated/floor/bluegrid,
 /area/deepmaint)
+"Qc" = (
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/plating/under,
+/area/deepmaint)
 
 (1,1,1) = {"
 aa
@@ -470,8 +504,8 @@ aa
 aT
 aa
 aa
-aa
-aa
+rL
+rL
 aa
 bn
 aO
@@ -487,8 +521,8 @@ ab
 ab
 aX
 aa
-aa
-aa
+rL
+rL
 aa
 ab
 ab
@@ -515,16 +549,16 @@ at
 at
 aq
 aA
-aa
+rL
 aa
 aO
 aa
-ac
+id
 aa
 "}
 (4,1,1) = {"
 aa
-ac
+id
 aa
 ae
 ai
@@ -556,7 +590,7 @@ ab
 ab
 aS
 aR
-aQ
+Qc
 aS
 aS
 ab
@@ -576,7 +610,7 @@ af
 ab
 aQ
 aR
-aR
+lk
 aQ
 ab
 ab
@@ -643,7 +677,7 @@ ab
 aN
 af
 ab
-aR
+lk
 ab
 cY
 au
@@ -681,7 +715,7 @@ ab
 aa
 aa
 ab
-aa
+rL
 "}
 (11,1,1) = {"
 aa
@@ -692,9 +726,9 @@ ab
 aR
 ab
 as
-av
+ar
 ab
-ay
+ax
 ac
 au
 ar
@@ -839,7 +873,7 @@ ab
 ab
 ab
 ab
-bj
+ay
 aN
 ab
 aa
@@ -900,7 +934,7 @@ ab
 ab
 ab
 aO
-aa
+rL
 bd
 al
 bf
@@ -933,6 +967,6 @@ aa
 aO
 aa
 aO
-aL
+av
 aa
 "}

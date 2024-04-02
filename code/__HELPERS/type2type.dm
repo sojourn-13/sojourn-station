@@ -37,9 +37,8 @@
 	return num
 
 // Returns the hex value of a number given a value assumed to be a base-ten value
+var/global/list/hexdigits = list("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F")
 /proc/num2hex(num, padlength)
-	var/global/list/hexdigits = list("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F")
-
 	. = ""
 	while(num > 0)
 		var/hexdigit = hexdigits[(num & 0xF) + 1]
@@ -65,10 +64,10 @@
 // Turns a direction into text
 /proc/num2dir(direction)
 	switch (direction)
-		if (1.0) return NORTH
-		if (2.0) return SOUTH
-		if (4.0) return EAST
-		if (8.0) return WEST
+		if (1) return NORTH
+		if (2) return SOUTH
+		if (4) return EAST
+		if (8) return WEST
 		else
 			log_world("UNKNOWN DIRECTION: [direction]")
 
@@ -98,29 +97,31 @@
 		if ("SOUTHEAST") return 6
 		if ("SOUTHWEST") return 10
 
-// Converts an angle (degrees) into an ss13 direction
-/proc/angle2dir(var/degree)
-	degree = (degree + 22.5) % 365 // 22.5 = 45 / 2
-	if (degree < 45)  return NORTH
-	if (degree < 90)  return NORTHEAST
-	if (degree < 135) return EAST
-	if (degree < 180) return SOUTHEAST
-	if (degree < 225) return SOUTH
-	if (degree < 270) return SOUTHWEST
-	if (degree < 315) return WEST
-	return NORTH|WEST
+//Converts an angle (degrees) into a ss13 direction
+GLOBAL_LIST_INIT(modulo_angle_to_dir, list(NORTH,NORTHEAST,EAST,SOUTHEAST,SOUTH,SOUTHWEST,WEST,NORTHWEST))
+#define angle2dir(X) (GLOB.modulo_angle_to_dir[round((((X%360)+382.5)%360)/45)+1])
 
-// Returns the north-zero clockwise angle in degrees, given a direction
-/proc/dir2angle(var/D)
-	switch (D)
-		if (NORTH)     return 0
-		if (SOUTH)     return 180
-		if (EAST)      return 90
-		if (WEST)      return 270
-		if (NORTHEAST) return 45
-		if (SOUTHEAST) return 135
-		if (NORTHWEST) return 315
-		if (SOUTHWEST) return 225
+//returns the north-zero clockwise angle in degrees, given a direction
+/proc/dir2angle(D)
+	switch(D)
+		if(NORTH)
+			return 0
+		if(SOUTH)
+			return 180
+		if(EAST)
+			return 90
+		if(WEST)
+			return 270
+		if(NORTHEAST)
+			return 45
+		if(SOUTHEAST)
+			return 135
+		if(NORTHWEST)
+			return 315
+		if(SOUTHWEST)
+			return 225
+		else
+			return null
 
 // Returns the angle in english
 /proc/angle2text(var/degree)
@@ -156,12 +157,14 @@
 	else
 		. = max(0, min(255, 329.698727446 * (temp - 60) ** -0.1332047592))
 
+
 /proc/heat2color_g(temp)
 	temp /= 100
 	if(temp <= 66)
 		. = max(0, min(255, 99.4708025861 * log(temp) - 161.1195681661))
 	else
-		. = max(0, min(255, 288.1221695283 * ((temp - 60) ** -0.0755148492)))
+		. = max(0, min(255, 288.1221685293 * ((temp - 60) ** -0.075148492)))
+
 
 /proc/heat2color_b(temp)
 	temp /= 100
@@ -280,18 +283,7 @@
 		else //regex everything else (works for /proc too)
 			return lowertext(replacetext("[the_type]", "[type2parent(the_type)]/", ""))
 
-// Converts a string into a list by splitting the string at each delimiter found. (discarding the seperator)
-/proc/text2list(text, delimiter="\n")
-	var/delim_len = length(delimiter)
-	if (delim_len < 1)
-		return list(text)
-
-	. = list()
-	var/last_found = 1
-	var/found
-
-	do
-		found       = findtext(text, delimiter, last_found, 0)
-		.          += copytext(text, last_found, found)
-		last_found  = found + delim_len
-	while (found)
+/// Return html to load a url.
+/// for use inside of browse() calls to html assets that might be loaded on a cdn.
+/proc/url2htmlloader(url)
+	return {"<html><head><meta http-equiv="refresh" content="0;URL='[url]'"/></head><body onLoad="parent.location='[url]'"></body></html>"}

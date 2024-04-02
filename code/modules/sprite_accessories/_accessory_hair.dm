@@ -27,6 +27,7 @@
 		FORM_CHURCHSYNTH,
 		FORM_NASHEF,
 		FORM_MYCUS,
+		FORM_SLIME,
 		FORM_UNBRANDED
 		)
 
@@ -256,7 +257,7 @@
 	name = "Emo Fringe"
 	icon_state = "emofringe"
 
-/datum/sprite_accessory/hair/fag
+/datum/sprite_accessory/hair/flow
 	name = "Flow"
 	icon_state = "flowhair"
 
@@ -363,6 +364,10 @@
 /datum/sprite_accessory/hair/jessica
 	name = "Jessica"
 	icon_state = "jessica"
+
+/datum/sprite_accessory/hair/jill
+	name = "Jill"
+	icon_state = "jill"
 
 /datum/sprite_accessory/hair/joestar
 	name = "Joestar"
