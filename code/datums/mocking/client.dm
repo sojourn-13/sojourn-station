@@ -4,7 +4,7 @@
 	var/datum/preferences/prefs
 
 	/// The view of the client, similar to /client/var/view.
-	var/view = "20x15"
+	var/view = "21x15"
 
 	/// Objects on the screen of the client
 	var/list/screen = list()
