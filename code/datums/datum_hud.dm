@@ -130,9 +130,9 @@
 	"rest"               = list("type" = /obj/screen/rest,              "loc" = "EAST,BOTTOM+1",      "minloc" = "RIGHT-1,2",    "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back17-1"),
 	"move intent"        = list("type" = /obj/screen/mov_intent,        "loc" = "EAST,BOTTOM",        "minloc" = "RIGHT-1,1",    "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
 	"implant bionics"    = list("type" = /obj/screen/implant_bionics,   "loc" = "EAST-2,BOTTOM-1",    "minloc" = "12,1",         "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
-	"craft menu"         = list("type" = /obj/screen/craft_menu,        "loc" = "EAST-2:16,BOTTOM",   "minloc" = "17.5,1",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
-	"wield"              = list("type" = /obj/screen/wield,             "loc" = "EAST-2:16,BOTTOM+1", "minloc" = "17.5,2",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
-	"intent"             = list("type" = /obj/screen/intent,            "loc" = "EAST-1,BOTTOM",      "minloc" = "18,1",         "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
+	"craft menu"         = list("type" = /obj/screen/craft_menu,        "loc" = "EAST-2:16,BOTTOM",   "minloc" = "18.5,1",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
+	"wield"              = list("type" = /obj/screen/wield,             "loc" = "EAST-2:16,BOTTOM+1", "minloc" = "18.5,2",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back13"),
+	"intent"             = list("type" = /obj/screen/intent,            "loc" = "EAST-1,BOTTOM",      "minloc" = "19,1",         "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
 	"damage zone"        = list("type" = /obj/screen/zone_sel,          "loc" = "EAST+1,BOTTOM",      "minloc" = "RIGHT,1",      "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1"),
 //hand buttons
 	"equip"              = list("type" = /obj/screen/equip,             "loc" = "11,1",                "minloc" = "10,2",          "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back14-l"),
