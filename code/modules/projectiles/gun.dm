@@ -805,8 +805,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		zoom = FALSE
 		return
 	var/tozoom = zoom_factors[active_zoom_factor]
-	var/zoom_offset = round(world.view * tozoom)
-	var/view_size = round(world.view + tozoom)
+	var/zoom_offset = round(DEFAULT_RANGE * tozoom)
+	var/view_size = round(DEFAULT_RANGE + tozoom)
 
 	zoom(zoom_offset, view_size, switchzoom)
 	check_safety_cursor(user)

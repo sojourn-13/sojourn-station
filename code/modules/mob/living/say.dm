@@ -206,7 +206,7 @@ var/list/channel_to_radio_key = new
 	var/sound_vol = handle_v[2] * (chem_effects[CE_SPEECH_VOLUME] ? chem_effects[CE_SPEECH_VOLUME] : 1)
 
 	var/italics = FALSE
-	var/message_range = SOUND_RANGE
+	var/message_range = DEFAULT_RANGE
 	//speaking into radios
 	if(used_radios.len)
 		italics = TRUE
