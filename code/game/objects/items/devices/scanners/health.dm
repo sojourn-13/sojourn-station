@@ -245,9 +245,9 @@
 		var/blood_volume = H.vessel.get_reagent_amount("blood")
 		var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
 		var/blood_type = H.dna.b_type
-		if((blood_percent <= H.total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER) && (blood_percent > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER))
+		if((blood_percent * H.effective_blood_volume <= H.total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER) && (blood_percent * H.effective_blood_volume > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER))
 			dat += "<font color='red'>Warning: Blood Level LOW: [blood_percent]% [blood_volume]cl.</font> <span class='highlight'>Type: [blood_type]</span>"
-		else if(blood_percent <= H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
+		else if(blood_percent * H.effective_blood_volume <= H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
 			dat += "<font color='red'><i>Warning: Blood Level CRITICAL: [blood_percent]% [blood_volume]cl.</i></font> <span class='highlight'>Type: [blood_type]</span>"
 		else
 			dat += span("highlight", "Blood Level Normal: [blood_percent]% [blood_volume]cl. Type: [blood_type]")
