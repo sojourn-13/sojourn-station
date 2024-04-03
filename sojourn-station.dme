@@ -1511,6 +1511,7 @@
 #include "code\game\turfs\unsimulated\walls.dm"
 #include "code\game\verbs\fit_viewport.dm"
 #include "code\game\verbs\ooc.dm"
+#include "code\game\verbs\toggle_verbs.dm"
 #include "code\game\verbs\who.dm"
 #include "code\js\byjax.dm"
 #include "code\js\menus.dm"
