@@ -137,8 +137,8 @@
 //hand buttons
 	"equip"              = list("type" = /obj/screen/equip,             "loc" = "10,1",                "minloc" = "9,2",          "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back14-l"),
 	"swap hand"          = list("type" = /obj/screen/swap,              "loc" = "10,1",                "minloc" = "9,2",          "hideflag" = TOGGLE_BOTTOM_FLAG),
-	"right arm bionics"  = list("type" = /obj/screen/bionics/r_arm,     "loc" = "9:19,1",             "minloc" = "6:20,2",       "background" = "back16"),
-	"left arm bionics"   = list("type" = /obj/screen/bionics/l_arm,     "loc" = "12,1",               "minloc" = "9:-1,2",       "background" = "back16"),
+	"right arm bionics"  = list("type" = /obj/screen/bionics/r_arm,     "loc" = "9:19,1",             "minloc" = "8:20,2",       "background" = "back16"),
+	"left arm bionics"   = list("type" = /obj/screen/bionics/l_arm,     "loc" = "12,1",               "minloc" = "11:-1,2",       "background" = "back16"),
 
 	"toggle inventory"    = list("type" = /obj/screen/toggle_invetory,   "loc" = "2,0",                "minloc" = "1,1",          "hideflag" = TOGGLE_BOTTOM_FLAG, "background" = "back1")
 
