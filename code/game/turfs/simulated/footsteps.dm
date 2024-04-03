@@ -24,7 +24,7 @@
 	var/footsound = T.get_footstep_sound()
 	if(footsound)
 
-		var/range = -(world.view - 2)
+		var/range = -(SOUND_RANGE - 2)
 		var/volume = 70
 		if(MOVING_DELIBERATELY(src))
 			volume -= 45

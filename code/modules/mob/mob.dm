@@ -97,7 +97,7 @@
 // blind_message (optional) is what blind people will hear e.g. "You hear something!"
 // target (optional) is the target that will ALWAYS be given the message
 
-/mob/visible_message(var/message, var/self_message, var/blind_message, var/range = world.view, var/mob/target, var/message_target = TRUE)
+/mob/visible_message(var/message, var/self_message, var/blind_message, var/range = SOUND_RANGE, var/mob/target, var/message_target = TRUE)
 	var/list/messageturfs = list()//List of turfs we broadcast to.
 	var/list/messagemobs = list()//List of living mobs nearby who can hear it, and distant ghosts who've chosen to hear it
 	for (var/turf in view(range, get_turf(src)))
@@ -147,7 +147,7 @@
 // hearing_distance (optional) is the range, how many tiles away the message can be heard.
 /mob/audible_message(var/message, var/deaf_message, var/hearing_distance, var/self_message)
 
-	var/range = world.view
+	var/range = SOUND_RANGE
 	if(hearing_distance)
 		range = hearing_distance
 
