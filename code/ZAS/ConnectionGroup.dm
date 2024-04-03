@@ -113,7 +113,7 @@ Class Procs:
 		if(M.check_airflow_movable(differential))
 			//Check for things that are in range of the midpoint turfs.
 			var/list/close_turfs = list()
-			for (var/T in RANGE_TURFS(world.view, M))
+			for (var/T in RANGE_TURFS(SOUND_RANGE, M))
 				if (connecting_turfs[T])
 					close_turfs += T
 
