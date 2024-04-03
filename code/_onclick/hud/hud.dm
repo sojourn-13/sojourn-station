@@ -31,11 +31,11 @@ var/list/global_huds
 	//that white blurry effect you get when you eyes are damaged
 	blurry = new /obj/screen/fullscreen/tile("blurry")
 
-	nvg = new /obj/screen/fullscreen("nvg_hud")
-	//nvg.plane = LIGHTING_PLANE
-	thermal = new /obj/screen/fullscreen("thermal_hud")
-	meson = new /obj/screen/fullscreen("meson_hud")
-	science = new /obj/screen/fullscreen("science_hud")
+	nvg = new /obj/screen/fullscreen/tile("nvg_hud") //turned these into tiles to test something, should make them work better with scopes instead of a weird cutoff happening due to the hud being a set size
+	//nvg.plane = LIGHTING_PLANE                    // worst case scenario I make a 19x15 version of the old BIG ones
+	thermal = new /obj/screen/fullscreen/tile("thermal_hud")
+	meson = new /obj/screen/fullscreen/tile("meson_hud")
+	science = new /obj/screen/fullscreen/tile("science_hud")
 
 	//that nasty looking dither you  get when you're short-sighted
 	lightMask = newlist(
