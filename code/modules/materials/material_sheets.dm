@@ -331,6 +331,9 @@
 /obj/item/stack/material/cloth/soteria
 	amount = 4
 
+/obj/item/stack/material/cloth/biogen
+	amount = 5
+
 /obj/item/stack/material/silk
 	name = "silk"
 	icon_state = "sheet_silk_bundle"
@@ -356,6 +359,9 @@
 	icon_state = "sheet-leather"
 	default_type = MATERIAL_LEATHER
 	price_tag = 10
+
+/obj/item/stack/material/leather/biogen
+	amount = 5
 
 /obj/item/stack/material/bone
 	name = "bones"
