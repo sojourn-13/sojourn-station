@@ -647,7 +647,7 @@
 	materials = list(MATERIAL_STEEL = 2)
 
 /datum/design/autolathe/ammo/rifle_hv
-	name = "7.62×39mm Rifle magazine (high velocity)"
+	name = "7.62×39mm Rifle magazine (APDS)"
 	build_path = /obj/item/ammo_magazine/rifle_75/highvelocity
 	materials = list(MATERIAL_STEEL = 2)
 
@@ -674,7 +674,7 @@
 	materials = list(MATERIAL_STEEL = 1)
 
 /datum/design/autolathe/ammo/rifle_short_hv
-	name = "short 7.62×39mm Rifle magazine (high velocity)"
+	name = "short 7.62×39mm Rifle magazine (APDS)"
 	build_path = /obj/item/ammo_magazine/rifle_75_short/highvelocity
 	materials = list(MATERIAL_STEEL = 1)
 
@@ -701,7 +701,7 @@
 	materials = list(MATERIAL_STEEL = 10)
 
 /datum/design/autolathe/ammo/rifle_drum_hv
-	name = "7.62×39mm Rifle drum magazine (high velocity)"
+	name = "7.62×39mm Rifle drum magazine (APDS)"
 	build_path = /obj/item/ammo_magazine/rifle_75_drum/highvelocity
 	materials = list(MATERIAL_STEEL = 10)
 
@@ -753,7 +753,7 @@
 	materials = list(MATERIAL_STEEL = 10)
 
 /datum/design/autolathe/ammo/rifle_ammobox_small_hv
-	name = "ammunition packet 7.62×39mm Rifle (high velocity)"
+	name = "ammunition packet 7.62×39mm Rifle (APDS)"
 	build_path = /obj/item/ammo_magazine/ammobox/rifle_75_small/hv
 	materials = list(MATERIAL_STEEL = 10)
 
@@ -793,7 +793,7 @@
 	materials = list(MATERIAL_STEEL = 3)
 
 /datum/design/autolathe/ammo/hrifle_hv
-	name = "8.6mm heavy rifle magazine (high-velocity)"
+	name = "8.6mm heavy rifle magazine (SLAP)"
 	build_path = /obj/item/ammo_magazine/heavy_rifle_408/hv
 	materials = list(MATERIAL_STEEL = 3)
 
@@ -829,7 +829,7 @@
 	materials = list(MATERIAL_STEEL = 20)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_hv
-	name = "ammunition box 8.6mm H-Rifle (high-velocity)"
+	name = "ammunition box 8.6mm H-Rifle (SLAP)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv
 	materials = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
 
@@ -854,7 +854,7 @@
 	materials = list(MATERIAL_STEEL = 10)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_linked_hv
-	name = "linked ammunition box 8.6mm H-Rifle (high-velocity)"
+	name = "linked ammunition box 8.6mm H-Rifle (SLAP)"
 	build_path = /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/highvelocity
 	materials = list(MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 4)
 
@@ -885,7 +885,7 @@
 	materials = list(MATERIAL_STEEL = 15)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_small_hv
-	name = "ammunition packet 8.6mm Heavy Rifle (high velocity)"
+	name = "ammunition packet 8.6mm Heavy Rifle (SLAP)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/hv
 	materials = list(MATERIAL_STEEL = 15)
 
