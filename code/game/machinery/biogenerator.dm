@@ -43,7 +43,7 @@
 			list(name="Cloth Sheet", cost=50, path=/obj/item/stack/material/cloth),
 			list(name="Cloth Sheet x5", cost=250, path=/obj/item/stack/material/cloth/biogen),
 			list(name="Leather Sheet", cost=800, path=/obj/item/stack/material/leather),//exspensive to make sure that hunters always have a better deal
-			list(name="Leather Sheet x5", cost=4000, path=/obj/item/stack/material/leather),//Where we're going, we dont need to have boxes for our leather!
+			list(name="Leather Sheet x5", cost=4000, path=/obj/item/stack/material/leather/biogen),//Where we're going, we dont need to have boxes for our leather!
 			list(name="Wallet", cost=100, path=/obj/item/storage/wallet),
 			list(name="Botanical gloves", cost=250, path=/obj/item/clothing/gloves/botanic_leather),
 			list(name="Utility belt", cost=300, path=/obj/item/storage/belt/utility),
