@@ -112,3 +112,22 @@
 				/mob/living/carbon/superior_animal/robot/greyson/synthetic/ripley/phazon = 1
 				))
 
+/obj/random/mob/roomba/combat_class
+	name = "random greyson bot (100% Spawns combat class)"
+	has_postspawn = FALSE
+
+/obj/random/mob/roomba/combat_class/low
+	name = "random greyson bot (10% Spawns combat class)"
+	spawn_nothing_percentage = 90
+
+/obj/random/mob/roomba/combat_class/item_to_spawn()
+	return pickweight(list(
+				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol = 9,
+				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/esmg = 3,
+				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/rifle = 7,
+				/mob/living/carbon/superior_animal/robot/greyson/synthetic/epistol/heavy = 4,
+				/mob/living/carbon/superior_animal/robot/greyson/roomba/trip/armored = 9,
+				/mob/living/carbon/superior_animal/robot/greyson/roomba/gun_ba/armored = 5,
+				/mob/living/carbon/superior_animal/robot/greyson/stalker = 3,
+				/mob/living/carbon/superior_animal/robot/greyson/stalker/dual = 1
+				))

@@ -408,7 +408,7 @@
 
 /obj/item/oddity/common/mirror/doodle
 	prob_perk = 0
-	perk = PERK_NO_OBSUCATION
+	perk = PERK_NO_OBFUSCATION
 	kill_stats = TRUE
 	min_stats = 16
 	oddity_stats = list(
@@ -482,6 +482,35 @@
 	)
 	price_tag = 2000 //Its a good tie for a collector
 	perk = PERK_SURE_STEP //Insainly rare and ok stats, but really its the perk. In Disco-E this perk would save you so much making this the perfect joke
+
+/obj/item/oddity/rare/moon_fragment
+	name = "Fragment of Moon"
+	desc = "A glowing, white, glass like shard of the Amethyn Moon."
+	icon_state = "moon_fragment"
+	min_stats = 16
+	//Its 1 then done so we give quite a bit
+	oddity_stats = list(
+		STAT_COG = 18,
+		STAT_VIG = 18
+	)
+	price_tag = 2500 //Bluecross spawn
+	prob_perk = 0
+	kill_stats = TRUE
+	perk = PERK_SKILL_CAP_EXPANDING
+
+/obj/item/oddity/rare/drawing_of_sun
+	name = "Drawing of a Unknown Sun"
+	desc = "A drawing of a type of sun no one has ever seen before done in crayon."
+	icon_state = "crayon_sun"
+	min_stats = 3
+	oddity_stats = list(
+		STAT_COG = 1,
+		STAT_VIG = 2
+	)
+	price_tag = 5
+	perk = PERK_SKILL_CAP_ADDITION
+	prob_perk = 0
+	kill_stats = TRUE
 
 //Non-Spawn
 //Odditys that are event only or spawned in on map gen

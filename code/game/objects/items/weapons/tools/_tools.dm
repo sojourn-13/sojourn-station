@@ -492,7 +492,7 @@
 		fail_chance = 0
 
 	if(fail_chance >= 100)
-		if(!user.stats.getPerk(PERK_NO_OBSUCATION))
+		if(!user.stats.getPerk(PERK_NO_OBFUSCATION))
 			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! Considering your skills and this tool, it is impossible."))
 		else
 			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! The odds of succes are [fail_chance], this is infact impossible."))
@@ -511,7 +511,7 @@
 		else if(fail_chance < 95)
 			chanceMessage = "tiny"
 
-		if(!user.stats.getPerk(PERK_NO_OBSUCATION))
+		if(!user.stats.getPerk(PERK_NO_OBFUSCATION))
 			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [chanceMessage] chance to succeed."))
 		else
 			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [fail_chance]% chance to fail."))

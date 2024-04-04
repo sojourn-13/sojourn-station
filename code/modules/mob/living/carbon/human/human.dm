@@ -64,6 +64,9 @@
 	movement_hunger_factors *= species.hunger_factor
 	max_nutrition += species.nutrition_mod //Some races have different nutrition maxs
 
+	if(config.bypassObfuscation)
+		stats.addPerk(PERK_NO_OBFUSCATION)
+
 	AddComponent(/datum/component/fabric)
 
 /mob/living/carbon/human/add_initial_transforms()
@@ -316,6 +319,7 @@ var/list/rank_prefix = list(\
 	"Chief Executive Officer" = "Executive",\
 	"Prime" = "Prime",\
 	"Foreman" = "Foreman",\
+	"Lodge Hunt Master" = "Huntmaster",\
 	)
 
 /mob/living/carbon/human/proc/rank_prefix_name(name)

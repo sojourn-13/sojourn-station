@@ -3,7 +3,7 @@
 //Guns
 /obj/item/gun/energy/sniperrifle/saint
 	name = "\"Saint\" laser rifle"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 	The normal \"Valkyrie\" design meeting the improvements with Lightfall design in a wooden frame with a golden barrel to help conduct the extra little bit of juice to hit as hard as possible."
 	charge_cost = 200
 	extra_damage_mult_scoped = 0.2
@@ -16,7 +16,7 @@
 
 /obj/item/gun/projectile/revolver/mistral/elite
 	name = "\"Elite\" magnum revolver"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 	Unlike a standard Mistral magnum this one has a bluespace crystal in its cylinder and a weighted barrel for better recoil control. How many bullets does it hold? Uses 10mm Magnum rounds."
 	max_shells = 60
 	init_recoil = RIFLE_RECOIL(1.1)
@@ -31,7 +31,7 @@
 
 /obj/item/gun/projectile/shotgun/doublebarrel/bluecross_shotgun
 	name = "\"King's\" shotgun"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 	The replication of a prized legendary royal shotgun wielded by a king that was once prophesized to have used it for their own undoing."
 	icon_state = "shotgun"
 	load_method = SINGLE_CASING|SPEEDLOADER
@@ -69,7 +69,7 @@
 
 /obj/item/gun/energy/ntpistol/mana
 	name = "\"Mana from Heaven\" energy pistol"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 	A black and blue version of the defunct \"Serenity\" energy pistol, somehow despite looking just like a repainted job it conserves power unusually well."
 	icon_state = "ntpistol"
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
@@ -89,7 +89,7 @@
 
 /obj/item/gun/projectile/automatic/maxim/replica
 	name = "\"Maxim\" light machinegun"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 	A common design used by certain nefarious political groups, this model however has been stripped of its fellows evil machinations, making it safe to use by anyone."
 	icon = 'icons/obj/guns/projectile/maxim_colony.dmi'
 	icon_state = "maxim_bluecross"
@@ -104,7 +104,7 @@
 
 /obj/item/gun/energy/lasersmg/inferno
 	name = "Disco Inferno \"Light Show\""
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 	Someone has inscribed 'INFERNO' in a stylized multi-color crayon on the side while modifying its internal power capacitor to be much more efficient."
 	charge_cost = 10 // Ridiculously cell efficient
 	projectile_type = /obj/item/projectile/beam/weak/smg/firestorm // DISCO INFERNO
@@ -116,7 +116,7 @@
 
 /obj/item/gun/energy/lasersmg/chaos_engine
 	name = "Hell's Teeth \"Chaos Engine\""
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A styled red laser submachine gun often referred to as a chaos engine due to its unpredictability and penchant for letting its user unleash a blended hell of lasers."
 	icon = 'icons/obj/guns/energy/lasersmg_hell.dmi'
 	icon_state = "chaossmg"
@@ -135,7 +135,7 @@
 
 /obj/item/gun/projectile/silenced/rat
 	name = "\"Rat Man\" silenced pistol"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 	A spray painted decal of a rat man with a grinning face has been placed on the grip, the deadliest killers are often those ignored or underestimated by others after all. \
 	This particular pistol has been oiled, cleaned, and appears to be so well maintained that its become 110% of its normal potential."
 	damage_multiplier = 1.8
@@ -146,7 +146,7 @@
 
 /obj/item/gun/projectile/boltgun/bluecross
 	name = "\"Krag Jørgensen\" boltgun"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A single shot rifle; perfect for big game hunters! \
 			Amazing for a budget - or if you hate yourself. One of the two."
 	icon = 'icons/obj/guns/projectile/bluecross.dmi'
@@ -156,7 +156,8 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE)
 	force = WEAPON_FORCE_DANGEROUS
 	bolt_training = FALSE
-	penetration_multiplier  = 2
+	penetration_multiplier  = 3
+	damage_multiplier  = 2
 	max_shells = 1
 	price_tag = 2750
 	gun_parts = null
@@ -166,7 +167,7 @@
 
 /obj/item/gun/projectile/clarissa/devil_eye
 	name = "\"Devil Eye\" pistol"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A small red eye has been painted onto the firing pin of this formerly undepowered pistol, this one has been modified with a better feed mechanism to allow \
 			for deadlier shots. Uses 9mm rounds and can take standard pistol magazines, high cap magazines, or submachine gun mags."
 	price_tag = 2000
@@ -180,7 +181,7 @@
 
 /obj/item/gun/projectile/boltgun/lever/handcock
 	name = "\"Handcock\" lever action rifle"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			This lever action rifle seems to be masterfully rebored, its loading port skillfully enlarged to allow 14.5mm anti-materiel rounds to be loaded! \
 			Wild-west styled antimateriel rifle... who would have thought?"
 	icon = 'icons/obj/guns/projectile/lever.dmi'
@@ -198,7 +199,7 @@
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic
 	name = "\"Lockpick-o-Matic\""
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A mix of several other Slot-o-Matics put together after being sawn apart to make a rainbow and then fitted with a long unreloadable 10x24 caseless mag."
 	caliber = "10x24"
 	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
@@ -213,7 +214,7 @@
 
 /obj/item/gun/energy/captain/zapper
 	name = "\"Retro-Funk\" Zapper"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			Not really much of an interesting weapon by Bluecross standards, with no unusual properties besides a self charging battery and incredible shot capacity. Often loved for its simplicity and retro style."
 	icon = 'icons/obj/guns/energy/zapper.dmi'
 	fire_sound = 'sound/weapons/energy/Laser4.ogg' // Retro!
@@ -227,7 +228,7 @@
 
 /obj/item/gun/energy/xray/psychic_cannon
 	name = "\"Manta-RAY\" cannon"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			An unusual gun sought after by the Soteria when it appears for both its utility and its research value. It's unknown technological function allows \
 			this weapon to use moderately high damage armor penetrating x-ray laser blasts. While a strict step up from a standard x-ray weapon in all ways, this weapon is more valued for \
 			its research points in the deconstrustive analyzer."
@@ -248,7 +249,7 @@
 
 /obj/item/gun/projectile/that_gun
 	name = "\"That Gun\" revolver pistol"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A sneaky pistol designed to look like a revolver to fool people into thinking you only have six shots. Feeling lucky, punk?"
 	icon = 'icons/obj/guns/projectile/that_gun.dmi'
 	icon_state = "thatgun"
@@ -290,7 +291,7 @@
 
 /obj/item/gun/projectile/colt/cult
 	name = "Brass \"Cult\" pistol"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A normal looking H&S Colt but somehow made completely out of brass, with a small light in its chamber that glows an eerie red and feeling warm to the touch. If you listen in closely, there's a faint sound of whirling cogs coming from the inside."
 	icon = 'icons/obj/guns/projectile/colt.dmi'
 	icon_state = "brass"
@@ -310,9 +311,34 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "BlueCross"
 
+//Weaker spawn but speed is speed
+/obj/item/gun/projectile/cane_pistol_bluecross
+	name = "\"Blue Carpet\" cane"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
+			A blue handled cane that seems to make you walk faster. It also contains a hidden silenced 12mm pistol inside."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "blue_cane"
+	item_state = "stick"
+	caliber = CAL_50 //Cant be caseless do to bugs oh well
+	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_SILVER = 5, MATERIAL_PLATINUM = 3)
+	price_tag = 1980
+	gun_parts = null
+	silenced = TRUE
+	handle_casings = HOLD_CASINGS
+	load_method = SINGLE_CASING|SPEEDLOADER
+	max_shells = 1
+	damage_multiplier = 2
+	penetration_multiplier = 2
+	init_recoil = EMBEDDED_RECOIL(0.3)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
+	serial_type = "BlueCross"
+	gun_parts = null
+	slowdown = -0.5
+	slowdown_hold = -0.5
+
 /obj/item/gun/energy/lasersmg/p9evil
 	name = "P9 \"Evil\" smg"
-	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
 			An odd looking tool-made smg of sorts, made completely out of stamped metal and hatred. You wonder by looking at this how many people have used this worn weapon of war. \
 			Looking at it long enough appears to make you see red.. feeling as if its draining your life force just to fire it! Let the hatred RISE!"
 	icon = 'icons/obj/guns/energy/p9evil.dmi'
@@ -347,7 +373,7 @@
 //Melee Weapons
 /obj/item/tool/nailstick/ogre
 	name = "\"Oni\" Greatclub"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A wooden club inscribed with several symbols of jana, though they make no sense put together. The wood is of unusual qualities and some lunatic hammered durasteel nails into \
 			it. Either the maker didn't know or didn't care about the value, it still ended up a supremely deadly weapon ... or hammer."
 	icon_state = "oni"
@@ -363,13 +389,13 @@
 
 /obj/item/tool/knife/dagger/assassin/ubersaw //Waiting for code to be done to deal blood damage/take % of blood
 	name = "\"Uber\" syringe-dagger"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			Whoever made this was very pro-active about collecting samples in the middle of active combat. They probably lost their medical license."
 	price_tag = 1900
 
 /obj/item/tool/wrench/big_wrench/freedom
 	name = "\"Freedom\" wrench"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			The sign of a man is someone who can build and who can break, with a wrench like this, you'll do both."
 	icon_state = "freedom_wrench"
 	w_class = ITEM_SIZE_NORMAL
@@ -384,7 +410,7 @@
 
 /obj/item/tool/saw/hyper/doombringer
 	name = "\"Doombringer\" chainsword"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			The only thing they fear is you."
 	icon_state = "rip_and_tear"
 	item_state = "rip_and_tear"
@@ -405,6 +431,7 @@
 	use_power_cost = 1
 	suitable_cell = /obj/item/cell/medium
 	price_tag = 1850
+	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE)
 
 /obj/item/tool/saw/hyper/doombringer/turn_on(mob/user)
 	if (cell && cell.charge >= 1)
@@ -424,8 +451,111 @@
 	to_chat(user, SPAN_NOTICE("You turn the [src] off."))
 	..()
 
+/obj/item/tool/sword/katana/crimson_arc
+	name = "\"Crimson Arc\" katana"
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
+			What seems to be a normal katana but with a red hilt and a nasty trick, the closer the user is to death the faster it becomes to swing."
+	icon_state = "chokuto"
+	item_state = "katana"
+	hitsound = 'sound/weapons/heavyslash.ogg'
+	force = WEAPON_FORCE_BRUTAL
+	armor_penetration = ARMOR_PEN_SHALLOW
+	price_tag = 2050
+	clickdelay_offset = 0
+	max_upgrades = 1//Already over powered.
+	degradation = 0.1
+	blacklist_upgrades = list(/obj/item/tool_upgrade/augment/expansion = TRUE)
+
+/obj/item/tool/sword/katana/crimson_arc/resolve_attackby(atom/target, mob/user)
+	.=..()
+	//Little icky but it works
+	var/safty_math =  user.health
+	safty_math = round(safty_math)
+	if(safty_math <= 0)
+		safty_math = 1
+	var/current_health = (user.maxHealth / (safty_math - 10))
+	if(current_health <= 0)
+		current_health = 8
+	else
+		current_health = round(current_health)
+	current_health = clamp(current_health, -7, 5) //-1 from no bag means this can be in affect a 2 cooldown weapon. This is insainly good
+	clickdelay_offset = -current_health
+
+/obj/item/tool/scythe/spectral_harvester
+	name = "\"Spectral Harvester\" scythe"
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
+			A large flat bluespace blade attached to a long red handle that requires two hands to even swing."
+	icon_state = "spectral_harvester"
+	hitsound = 'sound/weapons/heavyslash.ogg'
+	force = WEAPON_FORCE_GODLIKE //88 damage but + weilding
+	armor_penetration = ARMOR_PEN_MODERATE
+	price_tag = 2750
+	clickdelay_offset = 15 //This stacks with base
+	max_upgrades = 0 //No...
+	degradation = 0.01
+	slowdown = 1 //Little missleading as we get teleports
+	slowdown_hold = 1
+	w_class = ITEM_SIZE_HUGE
+	var/entropy_value = 0.5
+	var/range = 10
+	var/toclose_range = 2
+
+/obj/item/tool/scythe/spectral_harvester/afterattack(mob/living/M, mob/living/user, target_zone)
+	clickdelay_offset = 15
+	if(!wielded)
+		to_chat(user, SPAN_DANGER("\The [src.name] is too heavy to swing with one hand!"))
+		return FALSE
+
+	if(get_dist(M, user) > range)
+		return FALSE
+
+	if(!(M in view(user)))
+		return FALSE
+
+	if(ismob(M))
+		if(toclose_range > get_dist(M, user))
+			return
+		if((M.health - force) <= 0) //Some can survive but not long
+			clickdelay_offset = -6 //Almost a complete refund if you get
+		var/turf/AtomTurf = get_turf(M)
+		resolve_attackby(M, user)
+		go_to_bluespace(get_turf(user), entropy_value, FALSE, user, AtomTurf)
+		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	return
+
+//Need to override this proc to allow range hits
+/obj/item/tool/scythe/spectral_harvester/resolve_attackby(atom/A, mob/user, params)
+	if(ismob(A))
+		if(toclose_range > get_dist(A, user) && A != user)
+			to_chat(user, SPAN_DANGER("You are to close to swing [src.name]!"))
+			return
+	if(item_flags & ABSTRACT)//Abstract items cannot be interacted with. They're not real.
+		return 1
+	add_fingerprint(user)
+	return A.attackby(src, user, params)
+
+/obj/item/tool/scythe/spectral_harvester/Adjacent(var/atom/neighbor, var/recurse = 1)
+	return TRUE //We are always adjacent
 
 //Armor
 
+
+// Regal Outfit (Crimson Clothing)
+/obj/item/clothing/suit/crimsoncross_regaloutfit
+	name = "\"Regal\" greatcoat"
+	desc = "An anomalous clothing created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
+	A highly decorated white cloak with golden epaulets over a blue vest and sleek white pants. It is forevermore stained with blood. An air of nobility ensures that no robotic foe may easily rise against its wearer. \
+	When fighting anything that isn't a robotic you will take additional damage. The affects of the coat only works if the wearer is completely clean of robotic filth."
+	icon_state = "regaloutfit_redder" //Sprite by Ayshe / gid_git
+	item_state = "regaloutfit_redder"
+	blood_overlay_type = "coat"
+	armor_list = list(melee = 10, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	min_cold_protection_temperature = T0C - 60
+	siemens_coefficient = 0 //Foolishness
+	stiffness = 0 //You are above the red tape
+	price_tag = 3500 //Silk and gold
+	//all its affects are in human_defense.dm
 
 //Tools and tool mods (these are for things not intended for fighting but for actual tools)

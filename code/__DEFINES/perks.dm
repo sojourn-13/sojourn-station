@@ -96,7 +96,7 @@
 #define PERK_PROSPECTOR_CONDITIONING /datum/perk/job/prospector_conditioning
 #define PERK_BLACKSHIELD_CONDITIONING /datum/perk/job/blackshield_conditioning
 #define PERK_BARTENDER /datum/perk/bartender
-#define PERK_NO_OBSUCATION /datum/perk/no_obsucation //isekai perk?
+#define PERK_NO_OBFUSCATION /datum/perk/no_obfuscation //isekai perk?
 
 #define PERK_REZ_SICKNESS /datum/perk/rezsickness
 #define PERK_REZ_SICKNESS_SEVERE /datum/perk/rezsickness/severe
@@ -231,6 +231,9 @@
 
 //Task Perks
 #define PERK_FORCEFUL_REJECTION /datum/perk/forceful_rejection
+//Bluecross perks
+#define PERK_SKILL_CAP_ADDITION /datum/perk/skill_cap_addition
+#define PERK_SKILL_CAP_EXPANDING /datum/perk/skill_cap_expanding
 
 //////////////////
 //Cooldown perks//

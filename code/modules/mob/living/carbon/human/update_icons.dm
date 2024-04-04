@@ -522,7 +522,6 @@ var/global/list/wings_icon_cache = list()
 /mob/living/carbon/human/proc/update_ears(var/update_icons = 1)
 	if(QDESTROYING(src))
 		return
-	var/obj/item/organ/external/head = organs_by_name[BP_HEAD]
 
 	overlays_standing[CUSTOM_EARS_LAYER] = null
 	if(head && head.flags_inv & HIDEEARS)
@@ -532,6 +531,7 @@ var/global/list/wings_icon_cache = list()
 
 	var/image/ears_image = get_ears_image()
 	if(ears_image)
+		var/obj/item/organ/external/head = organs_by_name[BP_HEAD]
 		ears_image.alpha = head?.nonsolid ? 180 : 255
 		overlays_standing[CUSTOM_EARS_LAYER] = ears_image
 		if(update_icons) update_icons()

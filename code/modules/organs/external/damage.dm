@@ -9,11 +9,23 @@
 	var/prev_brute = brute_dam	//We'll record how much damage the limb already had, before we apply the damage from this incoming hit
 	var/prev_burn = burn_dam
 
-	switch(damage_type)
-		if(BRUTE)
-			amount = round(amount * brute_mod, 0.1)
-		if(BURN)
-			amount = round(amount * burn_mod, 0.1)
+	if(owner)
+		switch(damage_type)
+			if(BRUTE)
+				amount = round(amount * owner.species.brute_mod * owner.brute_mod_perk * brute_mod, 0.1)
+			if(BURN)
+				amount = round(amount * owner.species.burn_mod * owner.burn_mod_perk * burn_mod, 0.1)
+
+	else
+		switch(damage_type)
+			if(BRUTE)
+				amount = round(amount * brute_mod, 0.1)
+			if(BURN)
+				amount = round(amount * burn_mod, 0.1)
+
+
+
+
 
 	// Damage is transferred to internal organs.
 	if(LAZYLEN(internal_organs))

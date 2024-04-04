@@ -5202,7 +5202,7 @@
 "bfU" = (
 /obj/machinery/door/airlock/vault{
 	locked = 1;
-	req_access = list(1e+012)
+	req_access = list(16)
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -14914,6 +14914,10 @@
 	pixel_y = 5
 	},
 /obj/machinery/light/small,
+/obj/item/storage/box/data_disk/basic{
+	pixel_x = 16;
+	pixel_y = 2
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "dic" = (
@@ -19523,7 +19527,7 @@
 	id_tag = "checkpoint1";
 	name = "Forest Airlock";
 	req_access = newlist();
-	req_one_access = list(78,19,1)
+	req_one_access = list(80,78,19,1)
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -20578,6 +20582,14 @@
 	icon_state = "12,2"
 	},
 /area/shuttle/vasiliy_shuttle_area)
+"epG" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular{
+	id = "ProspShop";
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/nadezhda/pros/prep)
 "epH" = (
 /obj/machinery/light{
 	dir = 1
@@ -49364,6 +49376,11 @@
 	name = "Checkpoint Airlock";
 	req_access = list(1)
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/nadezhda/security/maingate)
 "kni" = (
@@ -49791,7 +49808,7 @@
 /obj/machinery/door/airlock/multi_tile/glass{
 	id_tag = "checkpoint2";
 	name = "Colony Airlock";
-	req_one_access = list(78,19,1)
+	req_one_access = list(80,78,19,1)
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -64724,6 +64741,22 @@
 /mob/living/carbon/superior_animal/roach/nanite,
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"nxN" = (
+/obj/structure/grille{
+	desc = "Keeps the ruffians out. Hopefully.";
+	name = "perimeter fence"
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/asteroid/dirt,
+/area/nadezhda/security/maingate/west)
 "nxP" = (
 /turf/simulated/open,
 /area/nadezhda/engineering/engine_room)
@@ -65354,6 +65387,11 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/west)
@@ -82690,7 +82728,7 @@
 "reT" = (
 /obj/machinery/door/airlock/vault{
 	locked = 1;
-	req_access = list(1e+012)
+	req_access = list(16)
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -111645,6 +111683,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
 "wYq" = (
+/obj/machinery/vending/neko,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "wYz" = (
@@ -112027,15 +112066,16 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/absolutism/chapel)
 "xdH" = (
-/obj/machinery/door/blast/regular{
-	id = "ProspShop"
-	},
 /obj/machinery/door/firedoor,
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/northright{
 	req_access = list(78)
 	},
 /obj/machinery/door/window/southright,
+/obj/machinery/door/blast/regular{
+	id = "ProspShop";
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/pros/prep)
 "xdV" = (
@@ -215326,7 +215366,7 @@ sSx
 nSJ
 gNQ
 nDp
-jbb
+nxN
 cxU
 cxU
 tfW
@@ -219525,7 +219565,7 @@ vIU
 vIU
 lkL
 vIU
-aLk
+epG
 wrj
 iMB
 pTs
@@ -219727,7 +219767,7 @@ hjV
 xgn
 kUX
 kUX
-aLk
+epG
 kau
 vfw
 nQd
@@ -220131,7 +220171,7 @@ kUX
 kUX
 kUX
 jxx
-aLk
+epG
 rvW
 hpt
 bBn

@@ -44,9 +44,9 @@
 				material_points += 6
 			if(STAT_LEVEL_EXPERT to STAT_LEVEL_PROF)
 				material_points += 9
-			if(STAT_LEVEL_PROF to STAT_LEVEL_GODLIKE)
+			if(STAT_LEVEL_PROF to STAT_LEVEL_MASTER)
 				material_points += 12
-			if(STAT_LEVEL_GODLIKE to INFINITY)
+			if(STAT_LEVEL_MASTER to INFINITY)
 				material_points += 15
 
 	var/list/array = list(

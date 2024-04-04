@@ -15,6 +15,10 @@
 	path = /obj/item/clothing/suit/costume/kinky/alyson
 	cost = 2 // Pay the horni tax.
 
+/datum/gear/suit/orsicoat
+	display_name = "Red Winter Cape"
+	path = /obj/item/clothing/suit/orsicoat
+
 /datum/gear/suit/cloakselect
 	display_name = "cloak selection"
 	path = /obj/item/clothing/suit/hooded/cloak/simple
