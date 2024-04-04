@@ -161,7 +161,7 @@
 	name = "precept sandwich"
 	desc = "A classic sandwich grilled in butter and toasted perfectly. Comes packed with protein-rich meat made from mukwahs and cheese derived from tangu milk, making it an immensely empowering meal. \
 	Side effects include enhanced toughness, robustness, movement speed, and twitching."
-	preloaded_reagents = list("protein" = 10, "tangu_milk" = 10, "hyperzine" = 10)
+	preloaded_reagents = list("protein" = 10, "tangu_milk" = 10)
 
 /obj/item/reagent_containers/food/snacks/grilledcheese
 	name = "grilled cheese sandwich"
