@@ -112,6 +112,7 @@
 		/datum/design/autolathe/ammo/hrifle_ammobox_small_practice = 0,
 		/datum/design/autolathe/ammo/shotgun_pellet_box = 2,
 		/datum/design/autolathe/ammo/shotgun_box = 2, //reduced from 5 to 2 so anyone actually makes this ever
+		/datum/design/autolathe/ammo/shotgun_blanks = 0, //Practice rounds exist but not the design for some reason ?
 	) // Ammo can on misc disk
 
 
