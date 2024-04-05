@@ -46,6 +46,7 @@
 	var/mob/firer = null//Who shot it
 	var/mob/original_firer //Who shot it. Never changes, even after ricochet.
 	var/friendly_to_colony = FALSE //If we bypass allies or not.
+	var/faction_iff = "" //Used for Excel and Greyson turrets
 	var/silenced = FALSE	//Attack message
 	var/yo = null
 	var/xo = null
@@ -369,6 +370,9 @@
 		return FALSE
 
 	if(friendly_to_colony && target_mob.friendly_to_colony) // Used for automated defenses
+		return FALSE
+
+	if(faction_iff == target_mob.faction)
 		return FALSE
 
 	//roll to-hit

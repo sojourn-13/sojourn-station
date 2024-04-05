@@ -35,6 +35,7 @@
 	var/projectile = null	//holder for bullettype
 	var/eprojectile = null	//holder for the shot when emagged
 	var/friendly_to_colony = FALSE //is our turret smart enough to bypass allies?
+	var/faction_iff = ""	//Are we the baddies?
 	var/reqpower = 500		//holder for power needed
 	var/iconholder = null	//holder for the icon_state. 1 for orange sprite, null for blue.
 	var/egun = null			//holder to handle certain guns switching bullettypes
@@ -75,6 +76,7 @@
 
 /obj/machinery/porta_turret/One_star
 	name = "greyson positronic turret"
+	faction_iff = "greyson"
 	installation = /obj/item/gun/energy/cog
 
 /obj/machinery/porta_turret/crescent
@@ -790,6 +792,7 @@ var/list/turret_icons
 	var/def_zone = get_exposed_defense_zone(target)
 	if(friendly_to_colony) //Reserved for more premium turrets
 		A.friendly_to_colony = TRUE
+	A.faction_iff = faction_iff
 	//Shooting Code:
 	A.launch(target, def_zone)
 

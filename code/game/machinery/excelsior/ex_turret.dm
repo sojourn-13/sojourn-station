@@ -15,6 +15,7 @@
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 160
 	var/working_range = 30 // how far this turret operates from excelsior teleporter
+	faction_iff = "excelsior"
 	health = 300
 	maxHealth = 300
 	auto_repair = 1
@@ -359,6 +360,9 @@
 
 	if(L.faction == "neutral")
 		return TURRET_NOT_TARGET
+
+	if(is_excelsior(L))
+		return TURRET_PRIORITY_TARGET
 
 	if(L.lying)
 		return TURRET_SECONDARY_TARGET
