@@ -155,7 +155,7 @@
 	icon = 'icons/obj/machines/excelsior/turret.dmi'
 	name = "artificer turret"
 	desc = "A fully automated battery powered self-repairing anti-wildlife turret platform built by the Artificer's Guild. It features a three round burst fire automatic and an integrated \
-	non-sapient automated artificial-intelligence diagnostic repair system. In other words, the fanciest bit of forging the guild can make. Fires 7.62mm rounds and holds up to 180."
+	non-sapient automated artificial-intelligence diagnostic repair system. In other words, the fanciest bit of forging the guild can make. Fires 7.62mm rounds and holds up to 180. Capable of IFF."
 	icon_state = "turret_legs"
 	density = TRUE
 	lethal = TRUE
@@ -271,7 +271,7 @@
 					"<span class='notice'>You begin [anchored ? "un" : ""]securing the turret.</span>" \
 				)
 
-			if(do_after(user, 50, src))
+			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 				//This code handles moving the turret around. After all, it's a portable turret!
 				if(!anchored)
 					playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
