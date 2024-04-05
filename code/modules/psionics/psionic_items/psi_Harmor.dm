@@ -58,6 +58,7 @@
 	desc = "This is a massive helmet with a large and durable visor, looking through which you see the world through the veil of nothingness itself. You are detached from reality and it cannot harm you. You control reality, it doesn't control you. \
 	This is a very good defense, but maintaining it requires constant concentration. It's massive visor serves as a more powerful Witchlight."
 	slot_flags = SLOT_HEAD
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION|BLOCK_GAS_SMOKE_EFFECT
 	matter = list()
 	armor_list = list(
 		melee = 60,
@@ -104,7 +105,6 @@
 	icon_state = "gloves"
 	icon_override = 'icons/obj/psionic/occHmob.dmi'
 	slot_flags = SLOT_GLOVES
-	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION|BLOCK_GAS_SMOKE_EFFECT
 	siemens_coefficient = 0 //Insulated!
 	matter = list()
 	armor_list = list(
