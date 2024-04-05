@@ -707,7 +707,7 @@
 	caliber = CAL_SHOTGUN
 	w_class = ITEM_SIZE_NORMAL //so we dont magiclly shrink
 	ammo_type = /obj/item/ammo_casing/shotgun
-	max_ammo = 50
+	max_ammo = 40 //Down to 40 from 50 from original 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/update_icon()
 	var/iconstring = initial(icon_state)
