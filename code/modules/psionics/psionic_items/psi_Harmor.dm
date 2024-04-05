@@ -104,6 +104,7 @@
 	icon_state = "gloves"
 	icon_override = 'icons/obj/psionic/occHmob.dmi'
 	slot_flags = SLOT_GLOVES
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION|BLOCK_GAS_SMOKE_EFFECT
 	siemens_coefficient = 0 //Insulated!
 	matter = list()
 	armor_list = list(
