@@ -34,6 +34,7 @@
 	var/obj/item/gun/energy/installation = /obj/item/gun/energy/gun	//the weapon that's installed. Store as path to initialize a new gun on creation.
 	var/projectile = null	//holder for bullettype
 	var/eprojectile = null	//holder for the shot when emagged
+	var/friendly_to_colony = FALSE //is our turret smart enough to bypass allies?
 	var/reqpower = 500		//holder for power needed
 	var/iconholder = null	//holder for the icon_state. 1 for orange sprite, null for blue.
 	var/egun = null			//holder to handle certain guns switching bullettypes
@@ -787,6 +788,8 @@ var/list/turret_icons
 	//Turrets aim for the center of mass by default.
 	//If the target is grabbing someone then the turret smartly aims for extremities
 	var/def_zone = get_exposed_defense_zone(target)
+	if(friendly_to_colony) //Reserved for more premium turrets
+		A.friendly_to_colony = TRUE
 	//Shooting Code:
 	A.launch(target, def_zone)
 

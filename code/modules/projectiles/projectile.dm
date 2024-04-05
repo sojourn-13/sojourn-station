@@ -45,6 +45,7 @@
 	var/def_zone = ""	//Aiming at
 	var/mob/firer = null//Who shot it
 	var/mob/original_firer //Who shot it. Never changes, even after ricochet.
+	var/friendly_to_colony = FALSE //If we bypass allies or not.
 	var/silenced = FALSE	//Attack message
 	var/yo = null
 	var/xo = null
@@ -365,6 +366,9 @@
 		return
 
 	if(target_mob == firer) // Do not hit the shooter if the bullet hasn't ricocheted yet. The firer changes upon ricochet, so this should not prevent ricocheting shots from hitting their shooter.
+		return FALSE
+
+	if(friendly_to_colony && target_mob.friendly_to_colony) // Used for automated defenses
 		return FALSE
 
 	//roll to-hit

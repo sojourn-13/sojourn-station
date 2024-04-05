@@ -167,6 +167,7 @@
 	var/ammo = 0 // number of bullets left.
 	var/ammo_max = 180
 	var/obj/item/cell/large/cell = null
+	friendly_to_colony = 1 //Artificers perfection.
 	health = 150
 	auto_repair = 1
 	shot_delay = 3
