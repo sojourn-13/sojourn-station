@@ -75,7 +75,7 @@
 	var/pointremoved = 0 //Did we take you your cog?
 
 	action_button_name = "Toggle Witchlight" //reflavor this so I can make it purple to go in line with the guns - Sigma
-	light_overlay = "helmet_light" //Sadly this has to go in icons/obj/light_overlays because I can't figure out how to point it to a different one.
+	light_overlay = "helmet_light_occult" //Sadly this has to go in icons/obj/light_overlays because I can't figure out how to point it to a different one.
 										  //Currently it's located in the icons/obj/light_overlays folder, proc is at /obj/item/clothing/head/on_update_icon(mob/user) -Sigma
 
 /obj/item/clothing/head/helmet/space/occultLhood/dropped()
@@ -103,7 +103,6 @@
 	icon_override = 'icons/obj/psionic/occLmob.dmi'
 	slowdown = -0.09
 	slot_flags = SLOT_GLOVES
-	item_flags = THICKMATERIAL
 	siemens_coefficient = 0 //Insulated!
 	matter = list()
 	armor_list = list(
@@ -147,7 +146,7 @@
 	icon_override = 'icons/obj/psionic/occLmob.dmi'
 	slot_flags = SLOT_FEET
 	matter = list()
-	slowdown = -1.09 //3,75% speed up! No! Wrong! Humans are +1 slowdown by default so that you are slower without shoes, this is why shoes have -1 slowdown. Needs to have -1 slowdown as BASE
+	slowdown = -1.09 //1.36% speed up with all parts! No! Wrong! Humans are +1 slowdown by default so that you are slower without shoes, this is why shoes have -1 slowdown. Needs to have -1 slowdown as BASE
 	can_hold_knife = 1
 	armor_list = list(
 		melee = 25,
