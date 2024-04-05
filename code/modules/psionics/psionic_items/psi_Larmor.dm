@@ -3,7 +3,7 @@
 //////////////////////////////
 //
 
-/obj/item/clothing/suit/space/occulLtist //In line with the syndicate spacesuit except not able to be taken off. Maybe give it some other bonuses too?
+/obj/item/clothing/suit/space/occulLtist
 	name = "psion void cloak"
 	icon_state = "armor"
 	item_state = "armor"
@@ -12,6 +12,7 @@
 	desc = "This cloak is made of thin and airy fabric. Putting it on, you feel an unusual, strange lightness, as if its weight lightens your burden. It seems to you that just by touching this material, you become faster."
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_OCLOTHING
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
 	matter = list()
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS //It has gloves, hood, and shoes for the rest of them
 	slowdown = -0.09 //with all three pieces figures out to 1.36 speed bonus, which is fairly high but also this shit is rare.
