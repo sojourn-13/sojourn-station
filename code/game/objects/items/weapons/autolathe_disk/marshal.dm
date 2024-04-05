@@ -34,6 +34,7 @@
 		/datum/design/autolathe/ammo/flare_shell_g,
 		/datum/design/autolathe/ammo/flare_shell_b,
 		/datum/design/autolathe/container/ammocan_ih,
+		/datum/design/autolathe/container/ammocan_serb, //Moved from actual ammo disks
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/security/hos
