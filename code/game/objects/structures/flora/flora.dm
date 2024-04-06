@@ -912,7 +912,13 @@
 	layer = ABOVE_MOB_LAYER
 	anchored = 1
 
-/obj/structure/flora/small/big/attackby(obj/item/I, mob/user)
+
+
+/obj/structure/flora/big/bush1
+	icon = 'icons/obj/flora/largejungleflora.dmi'
+	icon_state = "bush1"
+
+/obj/structure/flora/big/bush1/attackby(obj/item/I, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(!istype(user.loc, /turf))
 		return
@@ -931,17 +937,51 @@
 			return
 		return
 
-/obj/structure/flora/big/bush1
-	icon = 'icons/obj/flora/largejungleflora.dmi'
-	icon_state = "bush1"
-
 /obj/structure/flora/big/bush2
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "bush2"
 
+/obj/structure/flora/big/bush2/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You start to cut the bush away, harvesting some plant clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/big/bush3
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "bush3"
+
+/obj/structure/flora/big/bush3/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You start to cut the bush away, harvesting some plant clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/big/rocks1
 	name = "rock pile"
