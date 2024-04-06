@@ -5,18 +5,19 @@
 	icon_state = "ihs_rig_old"
 	suit_type = "nanite suit"
 	armor_list = list(
-		melee = 30,
-		bullet = 30,
-		energy = 30,
+		melee = 35,
+		bullet = 35,
+		energy = 35,
 		bomb = 25,
 		bio = 100,
 		rad = 100
 	)
-	slowdown = 0.3
+	slowdown = 0.15 //Less slowdown cause it's light
 	item_flags = STOPPRESSUREDAMAGE | THICKMATERIAL | DRAG_AND_DROP_UNEQUIP | EQUIP_SOUNDS
 	offline_slowdown = 2
 	offline_vision_restriction = 0
 	drain = 2
+	max_upgrades = 2 //Let's add an extra upgrade slot since you're stuck with this thing
 	canremove = FALSE // It is attached to your back
 
 	chest_type = /obj/item/clothing/suit/space/rig/nanite
@@ -69,12 +70,15 @@
 
 /obj/item/clothing/gloves/rig/nanite
 	name = "gloves"
+	siemens_coefficient = 0 //Insulated
 
 /obj/item/clothing/shoes/magboots/rig/nanite
 	name = "shoes"
+	mag_slow = 1 // Less slowdown than normal magboots, makes it a little bit kindof competitive with psions getting free noslips
 
 /obj/item/clothing/head/helmet/space/rig/nanite
 	name = "hood"
+	brightness_on = 6 //SUPER BRIGHT
 
 /obj/item/rig/nanite/attackby(obj/item/I, mob/user)
 

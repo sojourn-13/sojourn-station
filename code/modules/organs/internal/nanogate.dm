@@ -22,11 +22,12 @@
 	var/nano_point_cost
 	var/mob/living/carbon/superior_animal/nanobot/Stand // The personal robot of the owner. I wonder how many people will get the reference... -R4d6
 	var/obj/item/rig/nanite/nanite_rig // The nanite rig you can make
-	var/list/perk_list = list() //List of activated perks for later removal
+	//var/list/perk_list = list() //List of activated perks for later removal
+	var/obj/item/modular_computer/tablet/nanogate/vm //The virtual tablet that comes with your nanogate
 	min_broken_damage = 10 //Should break when organ is at 10 health of its 60.
 
 	owner_verbs = list(
-		/obj/item/organ/internal/nanogate/proc/nanite_antenna,
+		///obj/item/organ/internal/nanogate/proc/nanite_antenna, //Made redundant by the built-in VM
 		// Creation and upgrade of the bot
 
 		/obj/item/organ/internal/nanogate/proc/create_nanobot,
@@ -67,7 +68,7 @@ obj/item/organ/internal/nanogate/artificer
 	origin_tech = list(TECH_ENGINEERING = 25, TECH_BIO = 15, TECH_DATA = 10)
 
 	owner_verbs = list(
-		/obj/item/organ/internal/nanogate/proc/nanite_antenna,
+		///obj/item/organ/internal/nanogate/proc/nanite_antenna, //Made redundant by the built-in VM
 		// Creation and upgrade of the bot
 		/obj/item/organ/internal/nanogate/proc/create_nanobot,
 
@@ -90,6 +91,7 @@ obj/item/organ/internal/nanogate/artificer
 // Nanogates use either nanomachines or electromagnetic nanites. So - you would be impacted by EMPs.
 /obj/item/organ/internal/nanogate/emp_act(severity)
 	..()
+	SEND_SIGNAL(src, COMSIG_NANOGATE_EMP, severity)
 	switch (severity)
 		if(1)
 			owner.apply_effect(40, HALLOSS)
@@ -98,9 +100,10 @@ obj/item/organ/internal/nanogate/artificer
 		if(3)
 			owner.apply_effect(20, HALLOSS)
 
-// If the organ goes below is theshold it dies. And does bad effects.
+// If the organ goes below this threshold it dies. And does bad effects.
 /obj/item/organ/internal/nanogate/die()
 	if(status & ORGAN_BROKEN)
+		vm.shutdown_computer(0)
 		var/obj/item/organ/internal/targeted_organ
 		to_chat(owner, SPAN_DANGER("You are in absolute agony as your nanites attack your own body!"))
 		var/list/listed_organs  = list("brain",OP_EYES,"heart")

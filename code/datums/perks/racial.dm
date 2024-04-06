@@ -772,6 +772,10 @@
 	passivePerk = TRUE
 	var/regen_rate = 0.3
 
+/datum/perk/racial/slime_metabolism/on_process()
+	. = ..()
+	if(regen_rate  && holder.nutrition > 300 && holder.stat != DEAD) //We lose regen when we are below half max nutrition. Or when we're dead.
+		holder.heal_overall_damage(regen_rate, regen_rate)
 
 /datum/perk/racial/slime_metabolism/assign(mob/living/carbon/human/H)
 	..()
