@@ -159,7 +159,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/vig = owner.stats.getStat(STAT_VIG)
 	for(var/atom/A in view(owner.client ? owner.client : owner))
 		var/mob/M = A
-		if(M.faction = owner.faction)
+		if(ismob(M) && M?.faction == owner.faction)
 			return
 		if(A.sanity_damage) //If this thing is not nice to behold
 			. += SANITY_DAMAGE_VIEW(A.sanity_damage, vig, get_dist(owner, A))
