@@ -12,6 +12,7 @@
 		bio = 100,
 		rad = 100
 	)
+	seal_delay = 20
 	slowdown = 0.15 //Less slowdown cause it's light
 	item_flags = STOPPRESSUREDAMAGE | THICKMATERIAL | DRAG_AND_DROP_UNEQUIP | EQUIP_SOUNDS
 	offline_slowdown = 2
