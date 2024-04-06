@@ -3,7 +3,7 @@
 	name = "nanite suit control module"
 	desc = "A lighter, less armoured rig suit made from nanites and attached to someone's spine."
 	icon_state = "ihs_rig_old"
-	suit_type = "nanite suit"
+	suit_type = "nanite"
 	armor_list = list(
 		melee = 35,
 		bullet = 35,
@@ -17,7 +17,6 @@
 	offline_slowdown = 2
 	offline_vision_restriction = 0
 	drain = 2
-	max_upgrades = 2 //Let's add an extra upgrade slot since you're stuck with this thing
 	canremove = FALSE // It is attached to your back
 
 	chest_type = /obj/item/clothing/suit/space/rig/nanite
