@@ -31,7 +31,7 @@
 /datum/perk/nanite_power/nanite_muscle
 	name = "Nanofiber Muscle Therapy"
 	desc = "Through the use of pain killers, implanted nanofibers, and small dispersed drug therapy to critical areas your nanogate has enhanced your physical movement speed and endurance, allowing you to run for \
-	longer stretches at a faster pace without tiring. Though you feel that all this strain might make your slightly weaker to physical trauma."
+	longer stretches at a faster pace without tiring."
 	icon_state = "nanofibermuscletherapy"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	emped_message = "You feel your legs cramp as your nanite-augmented muscles seize."
