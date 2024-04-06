@@ -16,11 +16,6 @@ List of powers in this page :
 	set desc = "Spend a large portion of your nanites to restore and repair your body by enhancing your natural healing."
 	nano_point_cost = 7
 
-	if(owner.species.reagent_tag == IS_SYNTHETIC)
-		to_chat(owner, "a small beep of your nanogate tells you \"ERROR, REFUNDING NANITES: ASSIGNMENT IMPOSSIBLE FOR SYNTHETICS!\"")
-		verbs -= /obj/item/organ/internal/nanogate/proc/nanite_regen
-		return
-
 	if(!owner.stats.getPerk(PERK_NANITE_REGEN)) // Do they already have the bot?
 		if(pay_power_cost(nano_point_cost))
 			to_chat(owner, "You permanently assign some of your nanites to repairing your body.")
