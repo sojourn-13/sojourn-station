@@ -42,7 +42,7 @@
 					SPAN_DANGER("[usr] forcefully presses a hand upon [L] in an attempt to inflict pain upon them!"),
 					SPAN_DANGER("You force your hand on [L] expanding your mind and inflicting pain upon them!")
 					)
-			L.AdjustHalLoss(50)
+			L.adjustHalLoss(50)
 
 //Heals hunger
 /obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer()
