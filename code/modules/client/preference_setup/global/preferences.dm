@@ -1,6 +1,7 @@
 GLOBAL_VAR_CONST(PREF_YES, "Yes")
 GLOBAL_VAR_CONST(PREF_NO, "No")
 GLOBAL_VAR_CONST(PREF_ALL_SPEECH, "All Speech")
+GLOBAL_VAR_CONST(PREF_HIDDEN_SPEECH, "Hidden Speech")
 GLOBAL_VAR_CONST(PREF_NEARBY, "Nearby")
 GLOBAL_VAR_CONST(PREF_ALL_EMOTES, "All Emotes")
 GLOBAL_VAR_CONST(PREF_ALL_CHATTER, "All Chatter")
@@ -112,6 +113,11 @@ var/list/_client_preferences_by_type
 	description ="Ghost ears"
 	key = "CHAT_GHOSTEARS"
 	options = list(GLOB.PREF_ALL_SPEECH, GLOB.PREF_NEARBY)
+
+/datum/client_preference/ghost_ears_plus
+	description ="Ghost Psionics/Cruciform"
+	key = "CHAT_GHOST_EARS_PLUS"
+	options = list(GLOB.PREF_HIDDEN_SPEECH, GLOB.PREF_NEARBY)
 
 /datum/client_preference/ghost_sight
 	description ="Ghost sight"
