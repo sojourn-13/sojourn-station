@@ -41,8 +41,8 @@
 
 /datum/reagent/nanites/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	eat_blood(M)
-	if(M.get_blood_volume() < M.total_blood_req + BLOOD_VOLUME_OKAY_MODIFIER)
-		var/removed = consumed_amount() * (M.total_blood_req + BLOOD_VOLUME_OKAY_MODIFIER - M.get_blood_volume() / 100)
+	if(M.get_blood_volume() * M.effective_blood_volume < M.total_blood_req + BLOOD_VOLUME_OKAY_MODIFIER)
+		var/removed = consumed_amount() * (M.total_blood_req + BLOOD_VOLUME_OKAY_MODIFIER - M.get_blood_volume() / 100 * M.effective_blood_volume)
 		removed = min(volume,removed)
 		var/datum/reagents/metabolism/met = M.get_metabolism_handler(CHEM_BLOOD)
 		met.remove_reagent(id, removed)

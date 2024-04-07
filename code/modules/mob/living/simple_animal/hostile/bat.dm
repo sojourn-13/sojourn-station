@@ -64,5 +64,5 @@
 			L.visible_message(SPAN_DANGER("\the [src] swarms all over \the [L]!"))
 
 /mob/living/simple_animal/hostile/scarybat/cult
-	faction = "cult"
+	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_ECHOLOCATION, MUTATION_TOXIN_RESISTANCE, MUTATION_BLOOD_BANK, MUTATION_VAMPIRE)
 	supernatural = 1
