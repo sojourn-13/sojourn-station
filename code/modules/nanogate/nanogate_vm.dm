@@ -1,6 +1,8 @@
 /obj/item/modular_computer/tablet/nanogate
 	action_button_name = "Access Nanogate Interface"
 	icon_state = "generic"
+	screen_light_range = 0 //So our nanogate users don't look like they work for the federal government
+	screen_light_strength = 0
 	var/obj/item/organ/internal/nanogate/linked_nanogate
 	suitable_cell = /obj/item/cell/small/moebius/pda
 
@@ -9,14 +11,24 @@
 /obj/item/modular_computer/tablet/nanogate/emp_act(severity)
 	return
 
+/obj/item/computer_hardware/network_card/advanced/satlink
+	name = "satellite uplink"
+	desc = "A highly advanced satellite uplink that works anywhere on the planet."
+	ethernet = TRUE //Unlimited connection range.
+
+/obj/item/modular_computer/tablet/nanogate/can_interact(mob/user)
+	if(linked_nanogate.status & ORGAN_BROKEN)
+		return FALSE
+	..()
+
 //Currently it's a slightly fancy tablet but nothing super special.
 //TODO: Make variants for each type of nanogate.
 /obj/item/modular_computer/tablet/nanogate/install_default_hardware()
 	. = ..()
 	processor_unit = new/obj/item/computer_hardware/processor_unit/small(src)
 	tesla_link = new/obj/item/computer_hardware/tesla_link(src)
-	hard_drive = new/obj/item/computer_hardware/hard_drive/small(src)
-	network_card = new/obj/item/computer_hardware/network_card/advanced(src)
+	hard_drive = new/obj/item/computer_hardware/hard_drive/small/adv(src)
+	network_card = new/obj/item/computer_hardware/network_card/advanced/satlink(src)
 	cell = new suitable_cell(src)
 
 /obj/item/modular_computer/tablet/nanogate/Initialize()
