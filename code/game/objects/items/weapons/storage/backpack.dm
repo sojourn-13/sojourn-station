@@ -211,7 +211,7 @@
 		return 1
 
 /obj/item/storage/backpack/corpsman
-	name = "Corpsman backpack"
+	name = "corpsman backpack"
 	desc = "A robust military backpack with medical liverly."
 	icon_state = "backpack_corps"
 
@@ -305,8 +305,13 @@
 //Faction-specific backsports
 /obj/item/storage/backpack/sport/ironhammer
 	name = "operator's sport backpack"
-	desc = "Done in a complementing shade for Ironhammer Security forces. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
+	desc = "Done in a complementing shade for Nadezhda security. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
 	icon_state = "backsport_ironhammer"
+
+/obj/item/storage/backpack/sport/militia
+	name = "blackshield sport backpack"
+	desc = "Done in a complementing shade for Nadezhda militia. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
+	icon_state = "backsport_militia"
 
 /obj/item/storage/backpack/sport/neotheology
 	name = "cruciform sport backpack"
@@ -398,6 +403,11 @@
 	name = "operator's satchel"
 	desc = "Done in a complementing shade for Nadezhda security forces, for the itinerant military contractor."
 	icon_state = "satchel_ironhammer"
+
+/obj/item/storage/backpack/satchel/militia
+	name = "blackshield satchel"
+	desc = "Done in a complementing shade for Nadezhda militia, for the itinerant military contractor."
+	icon_state = "satchel_militia"
 
 /obj/item/storage/backpack/satchel/neotheology
 	name = "cruciform satchel"
