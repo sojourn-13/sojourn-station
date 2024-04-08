@@ -73,6 +73,11 @@
 	allowed_roles = list("Corpsman")
 	slot = slot_wear_suit
 
+/datum/gear/factionsecurity/bdu
+	display_name = "blackshield battle dress uniform"
+	path = /obj/item/clothing/under/rank/bdu/trooper
+	slot = slot_w_uniform
+
 /datum/gear/factionblackshield/blackshield
 	display_name = "cloak selection, blackshield"
 	path = /obj/item/clothing/accessory/job/cape/blackshield
