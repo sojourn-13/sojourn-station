@@ -1,7 +1,7 @@
 // Inherits most of its vars from the base datum.
 /datum/antagonist/contractor
 	id = ROLE_CONTRACTOR
-	protected_jobs = list(JOBS_SECURITY, JOBS_COMMAND)
+	protected_jobs = list(JOBS_SECURITY, JOBS_BLACKSHIELD, JOBS_COMMAND)
 	bantype = ROLE_CONTRACTOR
 	antaghud_indicator = "hudcontractor"
 
