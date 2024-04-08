@@ -42236,12 +42236,6 @@
 /obj/structure/sign/warning/nosmoking/small,
 /turf/simulated/wall/r_wall,
 /area/nadezhda/medical/reception)
-"iKY" = (
-/obj/machinery/portable_atmospherics/powered/pump{
-	start_pressure = 15000
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/engineering/workshop)
 "iLc" = (
 /obj/structure/boulder,
 /obj/structure/barricade,
@@ -188242,7 +188236,7 @@ cGH
 gfO
 bDF
 bpF
-iKY
+bpF
 hxQ
 tNm
 hBc
