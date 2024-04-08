@@ -71087,8 +71087,7 @@
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -27;
-	req_one_access = newlist();
-	target_temperature = 313.15
+	req_one_access = newlist()
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/workshop)
