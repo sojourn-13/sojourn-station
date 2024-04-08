@@ -2,14 +2,14 @@
 	title = "Blackshield Commander"
 	flag = SMC
 	head_position = 1
-	department = DEPARTMENT_BLACKSHIELD
-	department_flag = BLACKSHIELD | COMMAND
+	department = DEPARTMENT_SECURITY
+	department_flag = SECURITY | COMMAND
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Council"
 	difficulty = "Very Hard."
-	selection_color = "#6d7b83"
+	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
 	ideal_character_age = 40
@@ -17,9 +17,9 @@
 	department_account_access = TRUE
 	playtimerequired = 2500
 	health_modifier = 25
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF, FORM_SLIME)
 
-	outfit_type = /decl/hierarchy/outfit/job/blackshield/smc
+	outfit_type = /decl/hierarchy/outfit/job/security/smc
 
 	access = list(
 		access_security, access_eva, access_sec_doors, access_brig, access_armory, access_medspec,
@@ -65,27 +65,28 @@
 /datum/job/serg
 	title = "Sergeant"
 	flag = SERG
-	department = DEPARTMENT_BLACKSHIELD
-	department_flag = BLACKSHIELD
+	department = DEPARTMENT_SECURITY
+	department_flag = SECURITY
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
-	selection_color = "#8ea0aa"
+	selection_color = "#a7bbc6"
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
 	minimum_character_age = 25
 	playtimerequired = 1200
 	health_modifier = 20
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF, FORM_SLIME)
 
-	outfit_type = /decl/hierarchy/outfit/job/blackshield/serg
+	outfit_type = /decl/hierarchy/outfit/job/security/serg
 
 	access = list(
 		access_security, access_medspec, access_engine, access_mailsorting,
 		access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue,
-		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen
+		access_external_airlocks, access_research_equipment, access_prospector, access_kitchen,
+		access_medical_equip, access_surgery, access_medical_suits
 	)
 
 	stat_modifiers = list(
@@ -115,12 +116,11 @@
 	icon_state = "player-blue"
 	join_tag = /datum/job/serg
 
-
 /datum/job/medspec
 	title = "Corpsman"
 	flag = MEDSPEC
-	department = DEPARTMENT_BLACKSHIELD
-	department_flag = BLACKSHIELD
+	department = DEPARTMENT_SECURITY
+	department_flag = SECURITY
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
@@ -128,12 +128,12 @@
 	difficulty = "Hard."
 	noob_name = "Corpsman Cadet"
 	alt_titles = list("Corpsman Cadet", "Combat Medic")
-	selection_color = "#8ea0aa"
+	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_AGSYNTH, FORM_NASHEF)
 
-	outfit_type = /decl/hierarchy/outfit/job/blackshield/medspec
+	outfit_type = /decl/hierarchy/outfit/job/security/medspec
 
 	access = list(
 		access_security, access_sec_doors, access_medspec, access_morgue, access_maint_tunnels,
@@ -175,8 +175,8 @@
 /datum/job/trooper
 	title = "Blackshield Trooper"
 	flag = TROOPER
-	department = DEPARTMENT_BLACKSHIELD
-	department_flag = BLACKSHIELD
+	department = DEPARTMENT_SECURITY
+	department_flag = SECURITY
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
@@ -184,12 +184,12 @@
 	difficulty = "Hard."
 	noob_name = "Blackshield Cadet"
 	alt_titles = list("Blackshield Cadet")
-	selection_color = "#8ea0aa"
+	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
-	outfit_type = /decl/hierarchy/outfit/job/blackshield/troop
+	outfit_type = /decl/hierarchy/outfit/job/security/troop
 
 	perks = list(PERK_BLACKSHIELD_CONDITIONING, PERK_BOLT_REFLECT, PERK_CHEM_CONTRABAND)
 
