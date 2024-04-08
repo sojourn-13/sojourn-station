@@ -23,7 +23,7 @@
 //antiheals people with halloss
 /obj/item/organ/internal/psionic_tumor/proc/pain_infliction()
 	set category = "Psionic powers"
-        set name = "Pain Infliction (2)"
+	set name = "Pain Infliction (2)"
 	set desc = "Expend two psi points to inflict pain upon whatever person you are currently grabbing in a tight hold."
 	psi_point_cost = 2 //Two Points. Yes spamable to pain somebody but considering what people can do with grabs for free this is relatively tame. Needs aggressive grab, people with deep psi pools usually invested into that and lack robustness
 
