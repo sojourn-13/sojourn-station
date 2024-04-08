@@ -46,7 +46,7 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_tool,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_call,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_banish,
-        /obj/item/organ/internal/psionic_tumor/proc/powerword_pain,
+        /obj/item/organ/internal/psionic_tumor/proc/pain_infliction,
 		/obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_armor,
 		/obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster
@@ -71,7 +71,7 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_tool,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_call,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_banish,
-        /obj/item/organ/internal/psionic_tumor/proc/powerword_pain,
+        /obj/item/organ/internal/psionic_tumor/proc/pain_infliction,
 		/obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_armor,
 		/obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster,
