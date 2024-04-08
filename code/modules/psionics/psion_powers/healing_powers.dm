@@ -25,7 +25,7 @@
     set category = "Psionic powers"
 	set name = "Pain Infliction (2)"
 	set desc = "Expend two psi points to inflict pain upon whatever person you are currently grabbing in a tight hold."
-	psi_point_cost = 2 //Two Points. Yes slightly spamable but considering what people can do with grabs for free this is relatively tame. Needs aggressive grab, people with deep psi pools usually invested into that and lack robustness
+	psi_point_cost = 2 //Two Points. Yes slightly spamable but considering what people can do with grabs for free this is relatively tame.
 
 	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
 	var/obj/item/grab/G = locate() in owner
