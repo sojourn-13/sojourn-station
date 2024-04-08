@@ -72,17 +72,11 @@
 /datum/gear/factionsecurity/cloakironhammer
 	display_name = "cloak, security"
 	path = /obj/item/clothing/accessory/job/cape/ironhammer
-	allowed_roles = list("Blackshield Commander","Warrant Officer","Supply Specialist","Sergeant","Ranger","Corpsman","Blackshield Trooper","Marshal Officer")
-	slot = slot_wear_suit
-	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/bdu
-	display_name = "security BDU selection"
-	path = /obj/item/clothing/under/rank/bdu
-	allowed_roles = list(JOBS_SECURITY, JOBS_BLACKSHIELD)
-	flags = GEAR_HAS_TYPE_SELECTION
+	display_name = "security battle dress uniform"
+	path = /obj/item/clothing/under/rank/bdu/marshal
 	slot = slot_w_uniform
-	sort_category = "Faction: Security"
 
 /datum/gear/factionsecurity/winterbootssecurity
 	display_name = "winter boots, security"
@@ -106,10 +100,3 @@
 	display_name = "tactical security HUD"
 	path = /obj/item/clothing/glasses/sechud/tactical
 	cost = 2 //has flash protection
-
-/datum/gear/factionsecurity/armoredcossackcoat
-	display_name = "jaeger hussar coat"
-	path = /obj/item/clothing/suit/greatcoat/cossackarmoredcoat
-	allowed_roles = list(JOBS_SECURITY, JOBS_BLACKSHIELD)
-	slot = slot_wear_suit
-	cost = 2
