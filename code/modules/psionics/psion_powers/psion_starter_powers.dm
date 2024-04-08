@@ -27,6 +27,6 @@
 		usr.show_message("\blue You project your mind into [target.real_name]: [say]")
 		log_say("[key_name(usr)] sent a telepathic message to [key_name(target)]: [say]")
 		for(var/mob/observer/ghost/G in world)
-			if(G.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_HIDDEN_SPEECH)
+			if(G.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.GLOB.PREF_YES)
 				G.show_message("<i>Telepathic message from <b>[owner]</b> to <b>[target]</b>: [say]</i>")
 
