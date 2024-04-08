@@ -30,6 +30,7 @@
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
 
+
 /obj/structure/closet/secure_closet/armorer
 	name = "sergeant's locker"
 	req_access = list(access_armory)
@@ -68,46 +69,6 @@
 		new /obj/item/storage/backpack/military(src)
 
 
-/obj/structure/closet/secure_closet/personal/trooper
-	name = "blackshield trooper's locker"
-	req_access = list(access_hos)
-	access_occupy = list(access_brig)
-	icon_state = "trooper"
-
-/obj/structure/closet/secure_closet/personal/trooper/populate_contents()
-	new /obj/item/voucher/blackshield/primary(src)
-	new /obj/item/voucher/blackshield/secondary(src)
-	new /obj/item/voucher/blackshield/armor(src)
-	new /obj/item/tool/knife/boot/blackshield(src)
-	new /obj/item/tool/fireaxe/militia_tomahawk(src)
-	new /obj/item/clothing/glasses/ballistic(src)
-	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)
-	new /obj/item/clothing/mask/balaclava/tactical(src)
-	new /obj/item/clothing/gloves/thick/swat/blackshield(src)
-	new /obj/item/device/radio/headset/headset_blackshield(src)
-	new /obj/item/clothing/head/rank/trooper/beret(src)
-	new /obj/item/clothing/head/rank/trooper/cap(src)
-	new /obj/item/clothing/accessory/halfcape/trooper_cape(src)
-	new /obj/item/clothing/under/rank/trooper/gorka(src)
-	new /obj/item/storage/belt/webbing(src)
-	new /obj/item/storage/belt/security(src)
-	new /obj/item/storage/backpack/satchel/ironhammer(src)
-	new /obj/item/storage/backpack/ironhammer(src)
-	new /obj/item/storage/firstaid/ifak(src)
-	new /obj/item/melee/telebaton(src)
-	new /obj/item/storage/pouch/baton_holster(src)
-	new /obj/item/storage/box/trooperuniform(src)
-	new /obj/item/storage/hcases/ammo/serb(src)
-	new /obj/item/device/radio/headset/headset_blackshield/bowman(src)
-	if(prob(50))
-		new /obj/item/gun_upgrade/muzzle/silencer(src)
-	if(prob(5))
-		new /obj/random/rations/crayon(src)
-	if(prob(35))
-		new /obj/item/storage/backpack/militia(src)
-	else
-		new /obj/item/storage/backpack/military(src)
-
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"
 	req_access = list(access_hos)
@@ -142,6 +103,47 @@
 	new /obj/item/device/radio/headset/headset_blackshield/bowman/corps(src)
 	if(prob(50))
 		new /obj/item/storage/firstaid/blackshield/large(src)
+	if(prob(50))
+		new /obj/item/gun_upgrade/muzzle/silencer(src)
+	if(prob(5))
+		new /obj/random/rations/crayon(src)
+	if(prob(35))
+		new /obj/item/storage/backpack/corpsman(src)
+	else
+		new /obj/item/storage/backpack/military(src)
+
+
+/obj/structure/closet/secure_closet/personal/trooper
+	name = "blackshield trooper's locker"
+	req_access = list(access_hos)
+	access_occupy = list(access_brig)
+	icon_state = "trooper"
+
+/obj/structure/closet/secure_closet/personal/trooper/populate_contents()
+	new /obj/item/voucher/blackshield/primary(src)
+	new /obj/item/voucher/blackshield/secondary(src)
+	new /obj/item/voucher/blackshield/armor(src)
+	new /obj/item/tool/knife/boot/blackshield(src)
+	new /obj/item/tool/fireaxe/militia_tomahawk(src)
+	new /obj/item/clothing/glasses/ballistic(src)
+	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)
+	new /obj/item/clothing/mask/balaclava/tactical(src)
+	new /obj/item/clothing/gloves/thick/swat/blackshield(src)
+	new /obj/item/device/radio/headset/headset_blackshield(src)
+	new /obj/item/clothing/head/rank/trooper/beret(src)
+	new /obj/item/clothing/head/rank/trooper/cap(src)
+	new /obj/item/clothing/accessory/halfcape/trooper_cape(src)
+	new /obj/item/clothing/under/rank/trooper/gorka(src)
+	new /obj/item/storage/belt/webbing(src)
+	new /obj/item/storage/belt/security(src)
+	new /obj/item/storage/backpack/satchel/ironhammer(src)
+	new /obj/item/storage/backpack/ironhammer(src)
+	new /obj/item/storage/firstaid/ifak(src)
+	new /obj/item/melee/telebaton(src)
+	new /obj/item/storage/pouch/baton_holster(src)
+	new /obj/item/storage/box/trooperuniform(src)
+	new /obj/item/storage/hcases/ammo/serb(src)
+	new /obj/item/device/radio/headset/headset_blackshield/bowman(src)
 	if(prob(50))
 		new /obj/item/gun_upgrade/muzzle/silencer(src)
 	if(prob(5))
