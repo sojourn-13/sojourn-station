@@ -1,5 +1,5 @@
 
-//Powers that heal people or self
+//Powers that heal people or self or antiheal people
 
 /obj/item/organ/internal/psionic_tumor/proc/psionic_healing()
 	set category = "Psionic powers"
@@ -96,3 +96,28 @@
 				"[owner]'s head lowers for a concentrated moment.",
 				"A second turns to eternity, your mind assures its place in the universe"
 				)
+
+// Antiheals people with pain
+obj/item/organ/internal/psionic_tumor/proc/powerword_pain()
+	set category = "Psionic powers"
+	set name = "Powerword Pain (2)"
+	set desc = "Expend two psi points to inflict pain upon whatever person you are currently grabbing in a tight hold."
+	psi_point_cost = 2
+
+	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
+	var/obj/item/grab/G = locate() in owner
+	if(!G || !istype(G))
+		usr.show_message(SPAN_DANGER("You can't inflict pain if you are not grabbing anyone."))
+		return
+
+	if(G.state < GRAB_AGGRESSIVE)
+		usr.show_message(SPAN_DANGER("You must have an aggressive grab to inflict pain upon somebody!"))
+		return
+
+	if(pay_power_cost(psi_point_cost)
+	if(check_possibility(TRUE, L))
+		usr.visible_message(
+			SPAN_DANGER("[usr] forcefully presses a hand upon [L] in an attempt to inflict pain upon them!"),
+			SPAN_DANGER("You force your hand on [L] expanding your mind and inflicting pain upon them!")
+			)
+		L.adjustHalLoss(30)
