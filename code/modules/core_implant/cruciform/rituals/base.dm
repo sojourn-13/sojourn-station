@@ -159,7 +159,7 @@
 	playsound(user.loc, 'sound/machines/signal.ogg', 50, 1)
 	playsound(H, 'sound/machines/signal.ogg', 50, 1)
 	for(var/mob/observer/ghost/G in world)
-		if(G.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_YES)
+		if(G.get_preference_value(/datum/client_preference/ghost_ears_plus) == GLOB.PREF_YES)
 			G.show_message("<i>Cruciform Sending message from <b>[user]</b> to <b>[H]</b>: [text]</i>")
 
 	return TRUE

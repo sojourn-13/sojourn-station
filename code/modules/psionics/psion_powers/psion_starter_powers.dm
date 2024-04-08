@@ -28,6 +28,6 @@
 		log_and_message_admins("[key_name(usr)] sent a telepathic message to [key_name(target)]: [say]")
 
 		for(var/mob/observer/ghost/G in world)
-			if(G.get_preference_value(/datum/client_preference/ghost_ears) == GLOB.PREF_YES)
+			if(G.get_preference_value(/datum/client_preference/ghost_ears_plus) == GLOB.PREF_YES)
 				G.show_message("<i>Telepathic message from <b>[owner]</b> to <b>[target]</b>: [say]</i>")
 
