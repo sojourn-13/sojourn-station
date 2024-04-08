@@ -22,28 +22,28 @@
 
 //antiheals people with halloss
 /obj/item/organ/internal/psionic_tumor/proc/pain_infliction()
-    set category = "Psionic powers"
-    set name = "Pain Infliction (2)"
-    set desc = "Expend two psi points to inflict pain upon whatever person you are currently grabbing in a tight hold."
-    psi_point_cost = 2 //Two Points. Yes slightly spamable but considering what people can do with grabs for free this is relatively tame.
+	set category = "Psionic powers"
+        set name = "Pain Infliction (2)"
+	set desc = "Expend two psi points to inflict pain upon whatever person you are currently grabbing in a tight hold."
+	psi_point_cost = 2 //Two Points. Yes spamable to pain somebody but considering what people can do with grabs for free this is relatively tame. Needs aggressive grab, people with deep psi pools usually invested into that and lack robustness
 
-    var/mob/living/carbon/human/L = get_grabbed_mob(owner)
-    var/obj/item/grab/G = locate() in owner
-    if(!G || !istype(G))
+	var/mob/living/carbon/human/L = get_grabbed_mob(owner)
+	var/obj/item/grab/G = locate() in owner
+	if(!G || !istype(G))
 		usr.show_message(SPAN_DANGER("You can't inflict pain if you are not grabbing anyone."))
 		return
 
-    if(G.state < GRAB_AGGRESSIVE)
+	if(G.state < GRAB_AGGRESSIVE)
 		usr.show_message(SPAN_DANGER("You must have an aggressive grab to inflict pain upon somebody!"))
 		return
 
-    if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost))
 		if(check_possibility(TRUE, L))
 			usr.visible_message(
 					SPAN_DANGER("[usr] forcefully presses a hand upon [L] in an attempt to inflict pain upon them!"),
 					SPAN_DANGER("You force your hand on [L] expanding your mind and inflicting pain upon them!")
 					)
-			L.adjustHalLoss(30)
+			L.AdjustHalLoss(30)
 
 //Heals hunger
 /obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer()
