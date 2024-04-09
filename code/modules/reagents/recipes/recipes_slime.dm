@@ -77,14 +77,13 @@
 	..()
 
 //Green
-/* //should be replaced with something/reworked some day but I've no ideas.
 /datum/chemical_reaction/slime/mutate
-	result = "mutationtoxin"
+	result = "Mutagen"
 	required_reagents = list("plasma" = 1)
-	result_amount = 1
+	result_amount = 10
 	required = /obj/item/slime_extract/green
-*/
-//
+
+
 /datum/chemical_reaction/slime/mutate_clear
 	result = null
 	required_reagents = list("water" = 1)
@@ -449,15 +448,15 @@
 	required_reagents = list("plasma" = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/black
+*/
 
-//
-/datum/chemical_reaction/slime/spawn2
+datum/chemical_reaction/slime/spawn2
 	result = null
-	required_reagents = list("amutationtoxin" = 1)
+	required_reagents = list("mutagen" = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/black
 
-/datum/chemical_reaction/slime/spawn2/on_reaction(var/datum/reagents/holder)
+datum/chemical_reaction/slime/spawn2/on_reaction(var/datum/reagents/holder)
 	holder.my_atom.visible_message(SPAN_WARNING("The core begins to quiver and grow, and soon a new baby slime emerges from it!"))
 	var/mob/living/carbon/slime/S = new /mob/living/carbon/slime
 	S.loc = get_turf(holder.my_atom)
@@ -476,7 +475,7 @@
 	"green" = 1)
 	S.set_mutation(pickweight(colors))
 	..()
-*/
+
 //Oil
 /datum/chemical_reaction/slime/explosion
 	result = null
