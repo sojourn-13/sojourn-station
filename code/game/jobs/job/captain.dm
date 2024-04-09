@@ -16,7 +16,6 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	req_admin_notify = 1
 	playtimerequired = 2500
 	wage = WAGE_COMMAND
-	disallow_species = list(FORM_SLIME) //We're quite new to the colony and not yet trusted in such a position.
 
 	ideal_character_age = 50 // Old geezer captains ftw
 	minimum_character_age = 30
@@ -85,7 +84,6 @@ Treat your command officers with respect, and listen to their council. Try not t
 	wage = WAGE_COMMAND
 	ideal_character_age = 35
 	minimum_character_age = 25
-	disallow_species = list(FORM_SLIME)
 
 	health_modifier = 5
 	description = "The Steward is the loyal right-hand of the Premier. Serving as a personal guard, follow him wherever he goes.<br>\
