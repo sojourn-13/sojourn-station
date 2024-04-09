@@ -398,10 +398,14 @@
 		G.allow_greyson_mods = weapon_upgrades[GUN_UPGRADE_ALLOW_GREYON_MODS]
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT])
 		G.damage_multiplier *= weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT]
+	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE])
+		G.damage_multiplier += weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE]
 	if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
 		G.proj_agony_multiplier += weapon_upgrades[GUN_UPGRADE_PAIN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
 		G.penetration_multiplier *= weapon_upgrades[GUN_UPGRADE_PEN_MULT]
+	if(weapon_upgrades[GUN_UPGRADE_PEN_BASE])
+		G.penetration_multiplier += weapon_upgrades[GUN_UPGRADE_PEN_BASE]
 	if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 		G.pierce_multiplier += weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
@@ -588,6 +592,10 @@
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile damage by [abs(amount*100)]%"))
 
+		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE])
+			to_chat(user, SPAN_NOTICE("Increases projectile damage multiplier by [tool_upgrades[GUN_UPGRADE_DAMAGE_BASE]]"))
+
+
 		if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PAIN_MULT]-1
 			if(amount > 0)
@@ -601,6 +609,10 @@
 				to_chat(user, SPAN_NOTICE("Increases projectile penetration by [amount*100]%"))
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile penetration by [abs(amount*100)]%"))
+
+		if(weapon_upgrades[GUN_UPGRADE_PEN_BASE])
+			to_chat(user, SPAN_NOTICE("Increases projectile penetration multiplier by [tool_upgrades[GUN_UPGRADE_DAMAGE_BASE]]"))
+
 
 		if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
