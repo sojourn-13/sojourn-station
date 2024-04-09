@@ -9,6 +9,7 @@
 	icon = 'icons/obj/machines/one_star/machines.dmi'
 	icon_state = "os_gauss" // sprite by Infrared Baron
 	circuit = /obj/item/circuitboard/os_turret
+	var/faction_iff = "greyson"
 	idle_power_usage = 30
 	active_power_usage = 2500
 	density = TRUE
@@ -310,6 +311,9 @@
 	set_dir(get_dir(src, target))
 	var/obj/item/projectile/P = new projectile(loc)
 	P.original_firer = src
+	P.faction_iff = faction_iff
+	if(!should_target_players)
+		P.friendly_to_colony = TRUE
 	P.launch(target, def_zone)
 	playsound(src, shot_sound, 60, 1)
 
