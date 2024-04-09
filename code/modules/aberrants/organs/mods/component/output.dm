@@ -99,9 +99,14 @@
 			if(is_input_valid && index <= LAZYLEN(possible_outputs))
 				var/input_multiplier = input[i]
 				var/datum/reagent/output = possible_outputs[index]
-				var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
-				RM.add_reagent(initial(output.id), amount_to_add)
-				triggered = TRUE
+				var/reagent_amount = RM.get_reagent_amount(initial(output.id))
+				if(reagent_amount < initial(output.overdose) || !initial(output.overdose))
+					var/amount_to_add = possible_outputs[output] * organ_multiplier * input_multiplier
+					if(!initial(output.overdose) && reagent_amount < 50) //Some reagents have no overdose
+						RM.add_reagent(initial(output.id), clamp(50 / 10 * amount_to_add,0, 50 - reagent_amount))
+					else //add a tenth of our overdose up until 90%
+						RM.add_reagent(initial(output.id), clamp(initial(output.overdose) / 10 * amount_to_add,0, initial(output.overdose) * 0.9 - reagent_amount))
+					triggered = TRUE
 
 	if(triggered)
 		LEGACY_SEND_SIGNAL(holder, COMSIG_ABERRANT_COOLDOWN, TRUE)
