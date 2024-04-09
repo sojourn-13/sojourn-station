@@ -50,9 +50,8 @@
 		user.visible_message(SPAN_DANGER("\The [user] stuffs \the [victim] into the compresser!"))
 		playsound(loc, 'sound/machines/juicer.ogg', 50, 1)
 		flick("compressering", src)
-		for(var/num in victim.cores)
-            new victim.coretype(user.loc)
-		new victim.coretype(user.loc)
+			for(var/num in victim.cores)
+        new victim.coretype(user.loc)
 		qdel(victim)
 
 //Dye vat and its various procs and checks
