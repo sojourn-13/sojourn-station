@@ -107,6 +107,10 @@
 /obj/random/tool_upgrade/rare/low_chance,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
+"bd" = (
+/obj/structure/low_wall/onestar,
+/turf/simulated/floor/rock/manmade/road,
+/area/nadezhda/outside/one_star/fo_outside)
 "be" = (
 /obj/machinery/light/floor{
 	dir = 8;
@@ -187,8 +191,12 @@
 /obj/structure/table/onestar,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_internal)
+"bD" = (
+/obj/item/stack/material/wood,
+/turf/simulated/floor/rock/manmade/road,
+/area/nadezhda/outside/one_star/fo_outside)
 "bF" = (
-/obj/machinery/door/airlock,
+/obj/machinery/vending/one_star/food,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "bH" = (
@@ -234,6 +242,11 @@
 "bU" = (
 /obj/random/mob/roomba/job,
 /turf/simulated/floor/rock/manmade/road,
+/area/nadezhda/outside/one_star/fo_outside)
+"bW" = (
+/obj/structure/bed/chair/custom/onestar/red,
+/obj/item/trash/cigbutt/toha,
+/turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
 "ca" = (
 /obj/structure/table/onestar,
@@ -303,6 +316,10 @@
 /obj/effect/step_trigger/gbase_to_gfoffices_2_A,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
+"cx" = (
+/mob/living/carbon/superior_animal/robot/greyson/synthetic,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "cy" = (
 /obj/structure/bed/chair/custom/onestar/red{
 	dir = 1
@@ -850,6 +867,13 @@
 /mob/living/simple_animal/hostile/viscerator,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
+"gU" = (
+/obj/effect/floor_decal/industrial/outline/yellow{
+	name = "parking outline"
+	},
+/obj/structure/closet/crate,
+/turf/simulated/floor/rock/manmade/road,
+/area/nadezhda/outside/one_star/fo_outside)
 "gZ" = (
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/one_star/fo_internal)
@@ -1183,6 +1207,10 @@
 /mob/living/carbon/superior_animal/robot/greyson/roomba,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
+"jF" = (
+/obj/structure/invislight,
+/turf/simulated/wall/untinted/onestar_reinforced,
+/area/nadezhda/outside/one_star/fo_internal)
 "jH" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/tiled/derelict,
@@ -1455,6 +1483,12 @@
 /obj/item/reagent_containers/food/snacks/meat,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/outside/one_star/fo_internal)
+"mi" = (
+/obj/structure/flora/small/lavarock1,
+/turf/simulated/floor/beach/water/ocean{
+	name = "clear water"
+	},
+/area/nadezhda/outside/one_star/fo_outside)
 "mj" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -1508,16 +1542,21 @@
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/one_star/fo_outside)
+"mG" = (
+/obj/structure/table/onestar,
+/obj/item/stack/os_cash/random,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/nadezhda/outside/one_star/fo_internal)
 "mH" = (
 /obj/item/tool/pickaxe/onestar,
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "mI" = (
-/obj/structure/bed/chair/custom/onestar,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/vending/one_star/health,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "mK" = (
@@ -1540,6 +1579,10 @@
 /obj/machinery/light/floor,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_internal)
+"mQ" = (
+/mob/living/carbon/superior_animal/robot/greyson/custodian/engineer,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "mR" = (
 /obj/effect/window_lwall_spawn/smartspawn/onestar,
 /turf/simulated/floor/reinforced,
@@ -1747,6 +1790,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "oQ" = (
 /obj/machinery/door/airlock,
+/obj/structure/invislight,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "oR" = (
@@ -1790,6 +1834,10 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/outside/one_star/fo_internal)
+"pq" = (
+/obj/machinery/vending/snack,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "ps" = (
 /obj/machinery/door/airlock/glass,
 /turf/simulated/floor/carpet/purcarpet,
@@ -1849,6 +1897,11 @@
 /obj/machinery/vending/one_star/food,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
+"pN" = (
+/obj/machinery/light,
+/obj/machinery/vending/one_star/guns,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/nadezhda/outside/one_star/fo_internal)
 "pO" = (
 /obj/structure/multiz/stairs/active{
 	dir = 8
@@ -2272,6 +2325,13 @@
 /obj/item/material/shard/shrapnel/scrap,
 /obj/item/trash/material/metal,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/nadezhda/outside/one_star/fo_internal)
+"sL" = (
+/obj/structure/bed/chair/custom/onestar/red{
+	dir = 4
+	},
+/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "sN" = (
 /obj/structure/bed/chair/custom/onestar/red,
@@ -2805,6 +2865,10 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_internal)
+"wu" = (
+/obj/effect/shuttle_landmark/vasiliy_field_office,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "wv" = (
 /mob/living/carbon/superior_animal/robot/greyson/synthetic,
 /turf/simulated/floor/rock/manmade/road,
@@ -2914,6 +2978,10 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/outside/one_star/fo_internal)
+"xd" = (
+/obj/structure/invislight,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/one_star/fo_outside)
 "xf" = (
 /obj/structure/table/onestar,
 /obj/random/junkfood,
@@ -2922,7 +2990,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "xh" = (
 /obj/item/tank/onestar_regenerator,
-/obj/structure/closet/onestar/tier3/medical,
+/obj/random/structures/os,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
 "xm" = (
@@ -3199,6 +3267,10 @@
 /obj/random/mob/roomba/mecha/low,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_internal)
+"zm" = (
+/mob/living/carbon/superior_animal/robot/greyson/roomba/slayer,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/outside/one_star/fo_internal)
 "zp" = (
 /obj/structure/bed/chair/custom/onestar/red{
 	dir = 1
@@ -3218,6 +3290,13 @@
 	},
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/outside/one_star/fo_internal)
+"zt" = (
+/obj/effect/floor_decal/industrial/outline/yellow{
+	name = "parking outline"
+	},
+/obj/item/stack/material/wood,
+/turf/simulated/floor/rock/manmade/road,
+/area/nadezhda/outside/one_star/fo_outside)
 "zw" = (
 /obj/structure/table/rack/shelf,
 /obj/item/grenade/chem_grenade/cleaner,
@@ -3287,6 +3366,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "zU" = (
 /obj/effect/window_lwall_spawn/smartspawn/onestar,
+/obj/structure/invislight,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "zV" = (
@@ -3349,6 +3429,10 @@
 /obj/structure/largecrate,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
+"AB" = (
+/obj/random/closet_tech,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "AD" = (
 /obj/structure/table/onestar,
 /obj/item/reagent_containers/food/condiment/flour,
@@ -3391,6 +3475,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "AZ" = (
 /obj/effect/window_lwall_spawn/smartspawn/onestar,
+/obj/structure/invislight,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_outside)
 "Bb" = (
@@ -3550,7 +3635,7 @@
 /area/nadezhda/outside/one_star/fo_outside)
 "Ca" = (
 /obj/structure/invislight,
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_outside)
 "Cf" = (
@@ -3667,6 +3752,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
+"Do" = (
+/obj/item/stool,
+/turf/simulated/floor/tiled/derelict,
+/area/nadezhda/outside/one_star/fo_internal)
 "Dq" = (
 /obj/structure/railing{
 	dir = 8
@@ -3812,6 +3901,10 @@
 /obj/structure/table/onestar,
 /obj/random/junkfood,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/nadezhda/outside/one_star/fo_internal)
+"En" = (
+/obj/structure/invislight,
+/turf/simulated/wall/untinted/onestar,
 /area/nadezhda/outside/one_star/fo_internal)
 "Ep" = (
 /obj/machinery/light{
@@ -3973,9 +4066,10 @@
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/outside/one_star/fo_internal)
 "FO" = (
-/obj/random/mob/roomba/any,
-/turf/simulated/floor/reinforced,
-/area/nadezhda/outside/one_star/fo_outside)
+/obj/random/credits,
+/obj/item/remains/human,
+/turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/nadezhda/outside/one_star/fo_internal)
 "FP" = (
 /obj/structure/bed/chair/custom/onestar,
 /obj/random/mob/roomba/range,
@@ -4116,7 +4210,7 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/one_star/fo_outside)
 "GW" = (
-/obj/structure/closet,
+/obj/random/closet_tech,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "GX" = (
@@ -4224,6 +4318,11 @@
 /obj/effect/floor_decal/industrial/road/warning1,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
+"Ib" = (
+/obj/structure/table/onestar,
+/obj/random/tool/advanced/onestar/low_chance,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "Ie" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/railing/grey,
@@ -4269,6 +4368,10 @@
 /obj/random/mob/roomba/job,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
+"Iz" = (
+/mob/living/carbon/superior_animal/robot/greyson/synthetic,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/outside/one_star/fo_internal)
 "IC" = (
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/steel/brown_perforated,
@@ -4596,6 +4699,10 @@
 	faction = "greyson"
 	},
 /turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/one_star/fo_outside)
+"Le" = (
+/obj/structure/closet/crate,
+/turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/one_star/fo_outside)
 "Lg" = (
 /obj/structure/sink/kitchen{
@@ -5036,6 +5143,10 @@
 /obj/structure/table/onestar,
 /turf/simulated/floor/tiled/steel/cargo,
 /area/nadezhda/outside/one_star/fo_internal)
+"OM" = (
+/obj/item/trash/cigbutt/toha,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "ON" = (
 /obj/machinery/light/floor,
 /obj/random/mob/roomba/job,
@@ -5144,6 +5255,10 @@
 	},
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
+"Pu" = (
+/obj/random/mob/roomba/range,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/one_star/fo_outside)
 "Pz" = (
 /obj/random/mob/roomba/range/low,
 /turf/simulated/floor/tiled/steel/cargo,
@@ -5191,6 +5306,12 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
+"PV" = (
+/obj/structure/flora/rock/variant2,
+/turf/simulated/floor/beach/water/ocean{
+	name = "clear water"
+	},
+/area/nadezhda/outside/one_star/fo_outside)
 "PY" = (
 /obj/machinery/light,
 /turf/simulated/floor/carpet/purcarpet,
@@ -5322,6 +5443,11 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/wild3,
+/area/nadezhda/outside/one_star/fo_outside)
+"QQ" = (
+/turf/simulated/floor/beach/water/ocean{
+	name = "clear water"
+	},
 /area/nadezhda/outside/one_star/fo_outside)
 "QR" = (
 /obj/structure/salvageable/console_os{
@@ -5492,6 +5618,10 @@
 /obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/nadezhda/outside/one_star/fo_outside)
+"St" = (
+/obj/structure/invislight,
+/turf/simulated/wall/untinted/onestar_reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "Su" = (
 /obj/structure/sign/levels/stairsup,
 /turf/simulated/wall/untinted/onestar_reinforced,
@@ -5624,6 +5754,10 @@
 /obj/item/stock_parts/scanning_module/one_star,
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
+"TA" = (
+/obj/machinery/vending/cola,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "TD" = (
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/outside/one_star/fo_internal)
@@ -5730,6 +5864,10 @@
 "UE" = (
 /obj/structure/toilet,
 /turf/simulated/floor/tiled/derelict/red_white_edges,
+/area/nadezhda/outside/one_star/fo_internal)
+"UH" = (
+/mob/living/carbon/superior_animal/robot/greyson/roomba/trip,
+/turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/outside/one_star/fo_internal)
 "UI" = (
 /obj/structure/table/rack/shelf,
@@ -5841,6 +5979,13 @@
 	},
 /turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
+"Vy" = (
+/obj/structure/table/onestar,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "VB" = (
 /obj/structure/bed/chair/custom/onestar/red{
 	dir = 4
@@ -6288,6 +6433,12 @@
 	},
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/nadezhda/outside/one_star/fo_internal)
+"YD" = (
+/obj/structure/flora/rock/variant1,
+/turf/simulated/floor/beach/water/ocean{
+	name = "clear water"
+	},
+/area/nadezhda/outside/one_star/fo_outside)
 "YG" = (
 /obj/structure/railing{
 	dir = 8
@@ -6391,6 +6542,10 @@
 /obj/item/device/camera,
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/outside/one_star/fo_internal)
+"ZC" = (
+/obj/structure/salvageable/autolathe_os,
+/turf/simulated/floor/reinforced,
+/area/nadezhda/outside/one_star/fo_outside)
 "ZD" = (
 /obj/structure/sign/departmentold/medical1,
 /turf/simulated/wall/untinted/onestar,
@@ -6646,7 +6801,7 @@ wK
 wK
 wK
 wK
-fC
+Rl
 Re
 Re
 PN
@@ -6834,9 +6989,9 @@ cF
 cF
 cF
 PN
-fC
+Rl
 pZ
-fC
+Rl
 PN
 Hi
 PN
@@ -6950,7 +7105,7 @@ Je
 Dx
 Je
 MV
-wK
+En
 ZT
 PN
 ZT
@@ -7122,9 +7277,9 @@ wK
 wK
 fC
 fC
-fC
+Rl
 yZ
-fC
+Rl
 wK
 wK
 wK
@@ -8828,7 +8983,7 @@ XZ
 no
 no
 DF
-PN
+xd
 PN
 PN
 PN
@@ -8980,7 +9135,7 @@ TD
 no
 no
 DF
-GI
+rW
 PN
 PN
 PN
@@ -9132,7 +9287,7 @@ TD
 no
 no
 XG
-GI
+rW
 PN
 PN
 PN
@@ -9284,7 +9439,7 @@ Yk
 no
 no
 XG
-GI
+rW
 PN
 PN
 PN
@@ -9436,7 +9591,7 @@ Yk
 no
 LG
 XG
-GI
+rW
 PN
 PN
 PN
@@ -9588,7 +9743,7 @@ Yk
 no
 no
 XG
-GI
+rW
 PN
 PN
 PN
@@ -9740,7 +9895,7 @@ TD
 no
 no
 XG
-GI
+rW
 PN
 PN
 PN
@@ -9892,7 +10047,7 @@ TD
 no
 no
 DF
-GI
+rW
 PN
 PN
 PN
@@ -10044,7 +10199,7 @@ TD
 no
 no
 DF
-GI
+rW
 PN
 PN
 PN
@@ -13556,7 +13711,7 @@ Qb
 GI
 PN
 ZT
-DF
+St
 JI
 JI
 JI
@@ -13708,7 +13863,7 @@ PN
 GI
 PN
 PN
-DF
+St
 aA
 aA
 aA
@@ -13860,7 +14015,7 @@ PN
 GI
 GI
 GI
-DF
+St
 no
 no
 no
@@ -14012,7 +14167,7 @@ PN
 GI
 GI
 cF
-DF
+St
 UZ
 RU
 kn
@@ -14220,10 +14375,10 @@ wK
 wK
 fC
 fC
-fC
-cF
-cF
-fC
+Rl
+FD
+FD
+Rl
 fC
 fC
 JV
@@ -15228,7 +15383,7 @@ PN
 PN
 GI
 GI
-DF
+St
 no
 Km
 no
@@ -15380,7 +15535,7 @@ PN
 PN
 PN
 PN
-DF
+St
 aA
 aA
 aA
@@ -15532,7 +15687,7 @@ Fe
 PN
 PN
 ZT
-DF
+St
 eh
 JI
 JI
@@ -15684,7 +15839,7 @@ PN
 PN
 PN
 ZT
-DF
+St
 Jj
 ih
 JI
@@ -16194,18 +16349,18 @@ Qu
 Qu
 Qu
 DF
-DF
+St
 jp
+St
 DF
 DF
 DF
 DF
 DF
-DF
-DF
+St
 cj
 cj
-DF
+St
 DF
 DF
 ZT
@@ -16255,19 +16410,19 @@ cF
 cF
 cF
 DF
+St
 DF
 DF
 DF
 DF
 DF
-DF
-DF
+St
 Ys
 Qf
 vz
 Ys
 Qf
-DF
+St
 DF
 DF
 DF
@@ -16406,7 +16561,7 @@ iR
 qL
 iR
 DF
-DF
+St
 Qu
 Xe
 Xe
@@ -16426,7 +16581,7 @@ Xe
 Xe
 Xe
 Qu
-DF
+St
 DF
 KO
 iR
@@ -16557,7 +16712,7 @@ PN
 PN
 PN
 DF
-DF
+St
 Jr
 JI
 JI
@@ -16579,7 +16734,7 @@ JI
 JI
 JI
 Jr
-DF
+St
 DF
 PN
 PN
@@ -16708,7 +16863,7 @@ PN
 PN
 ka
 DF
-DF
+St
 Qu
 Ef
 gJ
@@ -16732,7 +16887,7 @@ JI
 gJ
 XJ
 Qu
-DF
+St
 DF
 PN
 PN
@@ -17163,9 +17318,9 @@ Qu
 Qu
 Qu
 Qu
+JN
 GW
-GW
-VB
+sL
 VB
 Qu
 gC
@@ -17315,7 +17470,7 @@ Qu
 Qu
 Qu
 gN
-no
+LG
 no
 no
 no
@@ -17773,9 +17928,9 @@ AG
 Km
 no
 no
-Qu
-Qu
-Qu
+CV
+Do
+no
 no
 no
 no
@@ -17925,9 +18080,9 @@ no
 Km
 no
 no
-Qu
-Qu
-Qu
+CV
+Do
+no
 no
 no
 no
@@ -18379,7 +18534,7 @@ Qu
 Qu
 Qu
 gN
-no
+LG
 no
 no
 no
@@ -18531,7 +18686,7 @@ Qu
 Qu
 Qu
 Qu
-GW
+JN
 GW
 Vv
 Vv
@@ -20297,7 +20452,7 @@ wD
 Qu
 Qu
 no
-UZ
+as
 no
 Qu
 IP
@@ -20448,7 +20603,7 @@ wD
 wD
 Qu
 Qu
-LG
+no
 UZ
 no
 Qu
@@ -21362,7 +21517,7 @@ Qu
 Qu
 no
 UZ
-LG
+no
 Qu
 VG
 UZ
@@ -21513,7 +21668,7 @@ wD
 Qu
 Qu
 no
-UZ
+as
 no
 Qu
 VG
@@ -22577,7 +22732,7 @@ wD
 Qu
 Qu
 no
-as
+UZ
 no
 Qu
 no
@@ -22881,7 +23036,7 @@ wD
 Qu
 Qu
 no
-UZ
+as
 no
 Qu
 Lv
@@ -23649,7 +23804,7 @@ bf
 so
 bf
 no
-LG
+no
 no
 UZ
 UZ
@@ -23662,7 +23817,7 @@ bf
 bf
 so
 no
-LG
+no
 no
 Qu
 ZT
@@ -23795,7 +23950,7 @@ Qu
 no
 UZ
 UZ
-UZ
+as
 UZ
 RU
 UZ
@@ -23806,7 +23961,7 @@ UZ
 UZ
 UZ
 UZ
-as
+UZ
 UZ
 UZ
 UZ
@@ -23945,7 +24100,7 @@ wD
 Qu
 Qu
 no
-zk
+UZ
 Km
 bf
 so
@@ -23953,12 +24108,12 @@ so
 so
 bf
 no
-fV
+LG
 Km
 UZ
-zk
+UZ
 Km
-no
+LG
 no
 bf
 bf
@@ -23966,7 +24121,7 @@ so
 so
 bf
 Km
-zk
+UZ
 no
 Qu
 ZT
@@ -24249,7 +24404,7 @@ wD
 Qu
 Qu
 no
-UZ
+zk
 no
 bf
 so
@@ -24260,17 +24415,17 @@ no
 no
 no
 UZ
+UZ
+no
+no
+no
+so
+bf
+bf
+bf
+so
+no
 Wq
-no
-no
-no
-so
-bf
-bf
-bf
-so
-no
-UZ
 no
 Qu
 ZT
@@ -24409,10 +24564,10 @@ no
 no
 no
 no
-Uk
+no
 no
 UZ
-as
+UZ
 no
 no
 no
@@ -24956,7 +25111,7 @@ wQ
 PN
 PN
 xx
-Qu
+jF
 GH
 RU
 Mq
@@ -25010,7 +25165,7 @@ Qu
 Qu
 aO
 JI
-Ef
+mG
 Ef
 Ef
 gt
@@ -25028,7 +25183,7 @@ Qu
 aO
 gt
 Ef
-Ef
+mG
 Ef
 JI
 bh
@@ -25161,29 +25316,29 @@ wD
 Qu
 Qu
 mI
-JI
+gt
 Ef
 sY
-Ef
+mG
 JI
-vN
+pN
 Qu
 Qu
-aO
+bF
 JI
 JI
 JI
 JI
-bh
+bF
 Qu
 Qu
 mI
 JI
-Ef
+mG
 sY
 Ef
-JI
-vN
+gt
+pN
 Qu
 ZT
 PN
@@ -25260,7 +25415,7 @@ PN
 Ea
 PN
 cf
-Qu
+jF
 RC
 RU
 Mq
@@ -25314,9 +25469,9 @@ Qu
 Qu
 aO
 JI
-Ef
-Ef
-Ef
+JI
+JI
+JI
 JI
 bh
 Qu
@@ -25331,10 +25486,10 @@ Qu
 Qu
 aO
 JI
-Ef
-Ef
-Ef
-gt
+JI
+JI
+JI
+JI
 bh
 Qu
 ZT
@@ -25466,7 +25621,15 @@ Qu
 Qu
 OG
 JI
-gt
+GZ
+GZ
+GZ
+JI
+lr
+Qu
+Qu
+OG
+FO
 JI
 JI
 JI
@@ -25475,17 +25638,9 @@ Qu
 Qu
 OG
 JI
-JI
-JI
-JI
-lr
-Qu
-Qu
-OG
-JI
-JI
-JI
-JI
+GZ
+GZ
+GZ
 JI
 lr
 Qu
@@ -35902,7 +36057,7 @@ wV
 wV
 wV
 qn
-qn
+DF
 DF
 DF
 DF
@@ -36032,8 +36187,8 @@ DF
 DF
 DF
 DF
-DF
-DF
+St
+St
 nT
 DF
 wV
@@ -36055,11 +36210,11 @@ wV
 wV
 qn
 DF
-DF
-nT
-nT
-nT
-nT
+PN
+PN
+hU
+PN
+zB
 nT
 cF
 cF
@@ -36073,7 +36228,7 @@ Sl
 Sl
 vq
 vJ
-vJ
+Iz
 WB
 WB
 WB
@@ -36185,9 +36340,9 @@ Qu
 Qu
 Qu
 Qu
-DF
+St
 Uf
-DF
+St
 DF
 wV
 wV
@@ -36207,11 +36362,11 @@ wV
 wV
 qn
 DF
-nT
-nT
-nT
-nT
-nT
+PN
+PN
+PN
+PN
+PN
 nT
 cF
 cF
@@ -36359,11 +36514,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+PN
+vR
+PN
+PN
+PN
 nT
 cF
 cF
@@ -36372,7 +36527,7 @@ nT
 nT
 nT
 fC
-vJ
+UH
 Sl
 vq
 tV
@@ -36511,11 +36666,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+PN
+PN
+PN
+HR
+yR
 nT
 cF
 cF
@@ -36663,11 +36818,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+bd
+bd
+bd
+bd
+NC
 nT
 cF
 cF
@@ -36815,11 +36970,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+QQ
+QQ
+QQ
+QQ
+NC
 nT
 cF
 cF
@@ -36967,11 +37122,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+QQ
+QQ
+PV
+QQ
+NC
 nT
 cF
 cF
@@ -37119,11 +37274,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+YD
+QQ
+QQ
+QQ
+NC
 nT
 cF
 cF
@@ -37271,11 +37426,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+QQ
+QQ
+QQ
+YD
+NC
 nT
 cF
 cF
@@ -37423,11 +37578,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+QQ
+mi
+QQ
+QQ
+NC
 nT
 cF
 cF
@@ -37436,7 +37591,7 @@ nT
 nT
 nT
 fC
-vJ
+zm
 La
 La
 vq
@@ -37575,11 +37730,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+QQ
+QQ
+QQ
+QQ
+NC
 nT
 cF
 cF
@@ -37727,11 +37882,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+bd
+bd
+bd
+bd
+NC
 nT
 cF
 cF
@@ -37745,7 +37900,7 @@ La
 La
 La
 vJ
-vJ
+Iz
 Nj
 Nj
 Nj
@@ -37879,11 +38034,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+PN
+PN
+PN
+vR
+yR
 nT
 cF
 cF
@@ -38031,11 +38186,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+PN
+PN
+ka
+Pu
+PN
 nT
 cF
 cF
@@ -38052,7 +38207,7 @@ ry
 KA
 fC
 wK
-bF
+wK
 wK
 fC
 fC
@@ -38183,11 +38338,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+PN
+PN
+PN
+PN
+PN
 nT
 cF
 cF
@@ -38206,7 +38361,7 @@ fC
 kG
 JI
 LU
-fC
+Rl
 nT
 cF
 nT
@@ -38335,11 +38490,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+PN
+hU
+HR
+PN
+aa
 nT
 cF
 cF
@@ -38487,11 +38642,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+DF
+DF
+DF
+DF
+DF
 nT
 cF
 cF
@@ -38510,7 +38665,7 @@ fC
 Lg
 va
 WH
-fC
+Rl
 nT
 cF
 nT
@@ -38639,12 +38794,12 @@ wV
 wV
 DF
 DF
+Ib
+Ib
 nT
 nT
-nT
-nT
-nT
-nT
+QM
+cF
 cF
 cF
 nT
@@ -38791,12 +38946,12 @@ wV
 wV
 DF
 DF
+Ib
 nT
+OM
+pq
+DF
 nT
-nT
-nT
-nT
-kZ
 cF
 cF
 nT
@@ -38943,11 +39098,11 @@ wV
 wV
 DF
 DF
+Vy
 nT
-nT
-nT
-nT
-nT
+mQ
+bW
+JV
 nT
 cF
 cF
@@ -39095,17 +39250,17 @@ wV
 wV
 DF
 DF
+ZC
+OM
 nT
-nT
-nT
-nT
-nT
+OM
+JV
 nT
 cF
 cF
 nT
 nT
-FO
+nT
 nT
 nT
 nT
@@ -39247,11 +39402,11 @@ wV
 wV
 DF
 DF
+AB
+cx
 nT
-nT
-nT
-nT
-nT
+AB
+DF
 nT
 cF
 cF
@@ -39399,11 +39554,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+AB
+cx
+OM
+AB
+DF
 nT
 cF
 cF
@@ -39551,19 +39706,19 @@ wV
 wV
 DF
 DF
+ZC
 nT
 nT
 nT
-nT
-nT
-nT
-cF
-cF
-nT
-nT
-nT
+JV
 nT
 cF
+cF
+nT
+nT
+nT
+nT
+RP
 cF
 cF
 cF
@@ -39703,11 +39858,11 @@ wV
 wV
 DF
 DF
+Vy
 nT
+mQ
 nT
-nT
-nT
-nT
+JV
 nT
 cF
 cF
@@ -39855,11 +40010,11 @@ wV
 wV
 DF
 DF
+Ib
+wx
 nT
-nT
-nT
-nT
-nT
+TA
+DF
 nT
 cF
 cF
@@ -40007,12 +40162,12 @@ wV
 wV
 DF
 DF
+Ib
+Ib
+OM
 nT
-nT
-nT
-nT
-nT
-nT
+QM
+cF
 cF
 cF
 nT
@@ -40159,11 +40314,11 @@ wV
 wV
 DF
 DF
-nT
-nT
-nT
-nT
-nT
+DF
+DF
+DF
+DF
+DF
 nT
 cF
 cF
@@ -40263,7 +40418,7 @@ wV
 wV
 gG
 oK
-DF
+St
 Qu
 Ef
 aD
@@ -40299,7 +40454,7 @@ JI
 Ef
 El
 Qu
-DF
+St
 wV
 wV
 wV
@@ -40416,7 +40571,7 @@ wV
 gG
 oK
 DF
-DF
+St
 Qu
 Qu
 Qu
@@ -40450,7 +40605,7 @@ Qu
 Qu
 Qu
 Qu
-DF
+St
 DF
 wV
 wV
@@ -40872,7 +41027,7 @@ wV
 gG
 oK
 DF
-DF
+St
 El
 ap
 aD
@@ -40906,7 +41061,7 @@ Df
 Ef
 ap
 VX
-DF
+St
 DF
 oK
 SZ
@@ -41023,7 +41178,7 @@ wV
 wV
 gG
 oK
-DF
+St
 Qu
 Qu
 Qu
@@ -41059,7 +41214,7 @@ Qu
 Qu
 Qu
 Qu
-DF
+St
 cG
 QL
 wV
@@ -41426,7 +41581,7 @@ qn
 nT
 nT
 nT
-nT
+wu
 nT
 nT
 nT
@@ -41555,12 +41710,12 @@ cF
 sU
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+cF
+cF
+cF
+cF
+cF
 nC
 qn
 wD
@@ -41707,12 +41862,12 @@ cF
 sU
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+sU
+gU
+sU
+sU
+cF
 nC
 qn
 wD
@@ -41859,12 +42014,12 @@ cF
 sU
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+sU
+bD
+Le
+gU
+cF
 nC
 qn
 wD
@@ -42011,12 +42166,12 @@ cF
 sU
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+gU
+Le
+cm
+sU
+cF
 nC
 qn
 wD
@@ -42163,12 +42318,12 @@ sU
 sU
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+sU
+sU
+sU
+gU
+bU
 nC
 qn
 wD
@@ -42315,12 +42470,12 @@ cF
 cF
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+cF
+cF
+cF
+cF
+cF
 nC
 qn
 wD
@@ -42467,12 +42622,12 @@ cF
 cF
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+sU
+gU
+zt
+sU
+cF
 nC
 qn
 wD
@@ -42619,12 +42774,12 @@ cF
 cF
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+gU
+Le
+cF
+gU
+cF
 nC
 qn
 wD
@@ -42771,12 +42926,12 @@ sU
 sU
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+sU
+cF
+Le
+sU
+cF
 nC
 qn
 wD
@@ -42923,12 +43078,12 @@ cF
 sU
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+gU
+sU
+sU
+zt
+cF
 nC
 qn
 wD
@@ -42943,7 +43098,7 @@ wD
 wD
 wD
 qn
-nT
+qn
 nT
 nT
 nT
@@ -43075,12 +43230,12 @@ cF
 sU
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+cF
+bU
+cF
+cF
+cF
 nC
 qn
 wD
@@ -43095,7 +43250,7 @@ wD
 wD
 wD
 qn
-nT
+qn
 nT
 nT
 nT
@@ -43227,12 +43382,12 @@ cF
 sU
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+sU
+sU
+sU
+gU
+cF
 nC
 qn
 wD
@@ -43247,8 +43402,8 @@ wD
 wD
 wD
 qn
-nT
-nT
+qn
+qn
 nT
 nT
 nT
@@ -43379,12 +43534,12 @@ cF
 sU
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+sU
+Le
+cm
+sU
+cF
 nC
 qn
 wD
@@ -43399,9 +43554,9 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
+qn
+qn
+qn
 nT
 nT
 nT
@@ -43531,12 +43686,12 @@ cF
 sU
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+sU
+Le
+Le
+sU
+cF
 nC
 qn
 wD
@@ -43551,9 +43706,9 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
+qn
+qn
+qn
 nT
 nT
 nT
@@ -43683,12 +43838,12 @@ sU
 sU
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+gU
+sU
+sU
+sU
+cF
 nC
 qn
 wD
@@ -43703,10 +43858,10 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
-nT
+qn
+qn
+qn
+qn
 nT
 nT
 nT
@@ -43835,12 +43990,12 @@ cF
 cF
 cF
 nT
-nT
-nT
-nT
-nT
-nT
-nT
+cF
+cF
+cF
+cF
+cF
+cF
 nC
 qn
 wD
@@ -43855,11 +44010,11 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
-nT
-nT
+qn
+qn
+qn
+qn
+qn
 nT
 nT
 nT
@@ -44007,15 +44162,15 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 nT
 nT
 nT
@@ -44140,7 +44295,7 @@ cF
 cF
 nT
 nT
-dN
+nT
 nT
 nT
 nT
@@ -44159,21 +44314,21 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 nT
 nT
 nT
@@ -44311,24 +44466,24 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 nT
 nT
 nT
@@ -44463,27 +44618,27 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 nT
 nT
 nT
@@ -44615,29 +44770,29 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 nT
 nT
 nT
@@ -44767,31 +44922,31 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 nT
 nC
 wV
@@ -44919,31 +45074,31 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 nT
 nC
 wV
@@ -45071,32 +45226,32 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 nC
 wV
 wV
@@ -45223,32 +45378,32 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 nC
 wV
 wV
@@ -45375,33 +45530,33 @@ wD
 wD
 wD
 qn
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nT
-nC
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
+qn
 wV
 wV
 wV
