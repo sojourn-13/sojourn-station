@@ -31253,7 +31253,8 @@
 "gwZ" = (
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/pipe/simple/sink_heat{
-	dir = 4
+	dir = 4;
+	effective = 0.05
 	},
 /obj/machinery/camera/network/engineering{
 	dir = 4
