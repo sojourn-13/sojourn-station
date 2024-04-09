@@ -15,7 +15,6 @@
 
 /obj/machinery/slime_compresser/update_icon()
 	return //Were boring and have no alt icons
-
 /obj/machinery/slime_compresser/affect_grab(var/mob/user, var/mob/target, var/state)
 	if(state < GRAB_NECK)
 		to_chat(user, SPAN_DANGER("You need a better grip to do that!"))
