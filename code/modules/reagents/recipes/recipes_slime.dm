@@ -78,7 +78,7 @@
 
 //Green
 /datum/chemical_reaction/slime/mutate
-	result = "Mutagen"
+	result = "mutagen"
 	required_reagents = list("plasma" = 1)
 	result_amount = 10
 	required = /obj/item/slime_extract/green
