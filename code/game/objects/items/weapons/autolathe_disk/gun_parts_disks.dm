@@ -127,14 +127,15 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/gun_frame/judiciary,
 		/datum/design/autolathe/gun_frame/colt,
 		/datum/design/autolathe/gun_frame/amnesty,
-		/datum/design/autolathe/gun_frame/freedom,
 		/datum/design/autolathe/gun_frame/judge,
+		/datum/design/autolathe/gun_frame/freedom,
 		/datum/design/autolathe/gun_frame/bastard,
-		/datum/design/autolathe/gun_frame/mamba,
 		/datum/design/autolathe/gun_frame/specop,
-		/datum/design/autolathe/gun_frame/dp,
+		/datum/design/autolathe/gun_frame/mamba,
 		/datum/design/autolathe/gun_frame/opshot,
 		/datum/design/autolathe/gun_frame/wind,
-		/datum/design/autolathe/gun_frame/takeshi,
-		/datum/design/autolathe/gun_frame/omni
+		/datum/design/autolathe/gun_frame/omni, //Dunno since when this is a marshal gun but I guess ?
+		/datum/design/autolathe/gun_frame/dp,
+		/datum/design/autolathe/gun_frame/takeshi
 	)
+//Rearranged into Pistol > Revolver > SMG > Carbine > Shotgun > Rifle > MG for better clarity
