@@ -59,8 +59,15 @@
 
 	if(!tracker && (contents.len || reagents.total_volume != 0))
 		to_chat(user, "The [src] is full. Empty its contents first.")
-	else
-		process_item(used_item, user)
+		return
+	if(istype(used_item, /obj/item/gripper))
+		var/obj/item/gripper/gripper = used_item
+		if(!gripper.wrapped)
+			return
+		else
+			process_item(gripper.wrapped, user)
+
+	process_item(used_item, user)
 
 	return TRUE
 

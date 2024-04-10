@@ -23,9 +23,11 @@
 
 	if(pay_power_cost(psi_point_cost) && check_possibility(TRUE, target))
 		var/say = sanitize(input("What do you wish to say"))
-		target.show_message("\blue <b><font size='3px'> You hear [usr.real_name]'s voice: [say] </font></b>")
+		target.show_message("\blue <b><font size='3px'> [usr.real_name]'s thoughts are projected into your mind: [say] </font></b>")
 		usr.show_message("\blue You project your mind into [target.real_name]: [say]")
-		log_say("[key_name(usr)] sent a telepathic message to [key_name(target)]: [say]")
+		log_and_message_admins("[key_name(usr)] sent a telepathic message to [key_name(target)]: [say]")
+
 		for(var/mob/observer/ghost/G in world)
-			G.show_message("<i>Telepathic message from <b>[owner]</b> to <b>[target]</b>: [say]</i>")
+			if(G.get_preference_value(/datum/client_preference/ghost_ears_plus) == GLOB.PREF_YES)
+				G.show_message("<i>Telepathic message from <b>[owner]</b> to <b>[target]</b>: [say]</i>")
 
