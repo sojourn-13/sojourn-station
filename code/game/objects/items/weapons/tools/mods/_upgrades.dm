@@ -611,7 +611,7 @@
 				to_chat(user, SPAN_WARNING("Decreases projectile penetration by [abs(amount*100)]%"))
 
 		if(weapon_upgrades[GUN_UPGRADE_PEN_BASE])
-			to_chat(user, SPAN_NOTICE("Increases projectile penetration multiplier by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE]]"))
+			to_chat(user, SPAN_NOTICE("Increases projectile penetration multiplier by [weapon_upgrades[GUN_UPGRADE_PEN_BASE]]"))
 
 
 		if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
