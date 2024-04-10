@@ -158,7 +158,6 @@
 	if(default_deconstruction(used_item, user))
 		return
 
-
 	if(istype(used_item, /obj/item/stack/material/wood))
 		var/obj/item/stack/material/wood/stack = used_item
 		var/used_sheets = min(stack.get_amount(), (wood_maximum - stored_wood))
@@ -178,6 +177,17 @@
 
 
 	var/input = getInput(params)
+
+
+	if(istype(used_item, /obj/item/gripper))
+		var/obj/item/gripper/gripper = used_item
+		if(!gripper.wrapped && items[input])
+			var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
+			var/turf/T = get_turf(src)
+			container.forceMove(T)
+			items[input] = null
+			update_icon()
+			return
 
 	if(items[input] != null)
 		var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]

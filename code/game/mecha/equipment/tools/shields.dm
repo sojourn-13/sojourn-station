@@ -98,7 +98,7 @@
 	desc = "A wide shield, which has the property to block incoming projectiles but allow outgoing projectiles to pass it.  \
 	Slower moving objects are not blocked, so people can walk in and out of the barrier, and things can be thrown into and out \
 	of it."
-	icon_state = "church_shield"
+	icon_state = "church_shield" //this icon is really really annoying so I've soft-disabeld it on the projecter itself. No point in deleting it so I'll leave it here incase someone wants to improve it.
 
 // This is the actual shield.  The projector is a different item.
 /obj/effect/directional_shield
@@ -353,8 +353,8 @@
 	description_info = "This creates a shield in a square shape around the user, which allows projectiles to leave from inside but blocks projectiles from outside.  \
 	Everything else can pass through the shield freely, including other people and thrown objects. The shield also cannot block certain effects which \
 	take place over an area, such as flashbangs or explosions."
-	size_x = 2
-	size_y = 2
+	size_x = 1 //Focus on protecting areself over others.
+	size_y = 1
 
 /obj/item/shield_projector/rectangle/church_personal
 	name = "rosaria personal shield"
@@ -363,17 +363,18 @@
 	The shield also cannot block certain effects which \
 	take place over an area, such as flashbangs or explosions."
 	icon_state = "last_shelter"
-	high_color = "#FFFFFF"
+	high_color = "#EADB83"
 	shield_health = 300
 	max_shield_health = 300
-	size_x = 1
-	size_y = 1
+	size_x = 2 //but the Prime? We protect are own!
+	size_y = 2
 
+/* This icon is not great. Hard to see through. Often just makes trouble for everyone.
 /obj/item/shield_projector/rectangle/church_personal/create_shield(var/newloc, var/new_dir)
 	var/obj/effect/directional_shield/personal/S = new(newloc, src)
 	S.dir = new_dir
 	active_shields += S
-
+*/
 /obj/item/shield_projector/rectangle/borg_personal
 	name = "integrated combat shield projector"
 	description_info = "A small integral shield emitter designed for use by synthetics. Smaller and more cheaply made, it is notably less efficient than higher end models,\
