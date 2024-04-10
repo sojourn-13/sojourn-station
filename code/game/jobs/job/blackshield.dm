@@ -17,7 +17,7 @@
 	department_account_access = TRUE
 	playtimerequired = 2500
 	health_modifier = 25
-	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF, FORM_SLIME)
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/blackshield/smc
 
