@@ -67,6 +67,3 @@
  **/
 /datum/proc/nano_ui_data(mob/user, ui_key = "main")
 	return list() // Not implemented.
-
-// Used by SSnano (/datum/controller/subsystem/processing/nano) to track UIs opened by this mob
-/mob/var/list/open_uis

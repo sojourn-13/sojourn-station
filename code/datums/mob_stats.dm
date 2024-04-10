@@ -292,8 +292,10 @@
 
 // Use to perform stat checks
 /mob/proc/stat_check(stat_path, needed)
-	var/points = src.stats.getStat(stat_path)
-	return points >= needed
+	if(src.stats)
+		var/points = src.stats.getStat(stat_path)
+		return points >= needed
+	else return 0
 
 /proc/statPointsToLevel(var/points)
 	switch(points)

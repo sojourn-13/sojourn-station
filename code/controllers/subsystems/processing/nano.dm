@@ -3,9 +3,6 @@ PROCESSING_SUBSYSTEM_DEF(nano)
 	priority = SS_PRIORITY_NANO
 	wait = 2 SECONDS
 
-	// a list of current open /nanoui UIs, grouped by src_object and ui_key
-	var/list/open_uis = list()
-
  /**
   * Get an open /nanoui ui for the current user, src_object and ui_key and try to update it with data
   *
