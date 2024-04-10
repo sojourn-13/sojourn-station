@@ -110,7 +110,6 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
 	serial_type = "SD GmbH"
-	gun_parts = null //To prevent meme decon of uniques
 
 
 /obj/item/gun/projectile/automatic/omnirifle/rds
