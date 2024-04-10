@@ -27,3 +27,7 @@
 	user.attack_log += "\[[time_stamp()]\] <font color='red'> fired a grenade ([chambered.name]) from a grenade launcher ([src.name])</font>"
 	chambered = null
 	pump(user)
+
+/obj/item/gun/projectile/shotgun/pump/china/borg
+	twohanded = FALSE
+	gun_parts = null
