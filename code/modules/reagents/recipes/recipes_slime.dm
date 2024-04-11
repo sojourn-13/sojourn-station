@@ -456,7 +456,7 @@ datum/chemical_reaction/slime/spawn2
 	result_amount = 1
 	required = /obj/item/slime_extract/black
 
-datum/chemical_reaction/slime/spawn2/on_reaction(var/datum/reagents/holder)
+/datum/chemical_reaction/slime/spawn2/on_reaction(var/datum/reagents/holder)
 	holder.my_atom.visible_message(SPAN_WARNING("The core begins to quiver and grow, and soon a new baby slime emerges from it!"))
 	var/mob/living/carbon/slime/S = new /mob/living/carbon/slime
 	S.loc = get_turf(holder.my_atom)
