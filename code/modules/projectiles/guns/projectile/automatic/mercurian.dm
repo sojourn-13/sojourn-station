@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/mercu
 	name = "Mercurian Anti-Atmos Rifle"
-	desc = "An attempt to bring an old design to a more modern era. The classic Sol Fed design revamped for a contemporary cartridge and an inhouse made big bore rifle intended to breach through tough windows on shuttle craft, station exteriors, or faceshields before laying down a hail of 10x24."
+	desc = "An attempt to bring an old design to a more modern era, the classic Sol Fed design but revamped for a contemporary cartridge and a custom big bore rifle intended to breach through tough windows on shuttle craft, station exteriors, or faceshields before laying down a hail of 10x24. Any growing pirate or marine's dream for EVA and boarding operations."
 	icon = 'icons/obj/guns/projectile/mercurian.dmi'
 	icon_state = "mercu"
 	item_state = "mercu"
