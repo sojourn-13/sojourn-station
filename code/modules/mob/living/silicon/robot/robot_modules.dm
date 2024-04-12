@@ -287,12 +287,12 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/scanner/health(src)
 	src.modules += new /obj/item/gripper(src)
 	src.modules += new /obj/item/device/t_scanner(src)
-	src.modules += new /obj/item/gripper/upgrade(src)
+
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
-	src.modules += new /obj/item/gripper/paperwork(src)
+
 	src.modules += new /obj/item/device/gps(src)
-	src.modules += new /obj/item/gripper/ammo(src)
+
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/melee/energy/sword(src)
 
@@ -389,7 +389,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/robotic_omni_surgery(src)
 	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //hardsuits.
 	src.modules += new /obj/item/tool/scalpel/laser/si/robo(src) //hardsuits.
-	src.modules += new /obj/item/gripper/chemistry(src)
+	src.modules += new /obj/item/gripper(src)
 	src.modules += new /obj/item/reagent_containers/dropper/industrial(src)
 	src.modules += new /obj/item/reagent_containers/syringe(src)
 	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
@@ -399,14 +399,14 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/reagent_containers/spray/sterilizine(src)
 	src.modules += new /obj/item/shockpaddles/robot(src)
 	src.modules += new /obj/item/roller_holder(src)
-	src.modules += new /obj/item/gripper/upgrade(src)
+
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
-	src.modules += new /obj/item/gripper/paperwork(src)
+
 	src.modules += new /obj/item/tool/sword/saber/injection_rapier(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.modules += new /obj/item/gripper/ammo(src)
+
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/reagent_containers/spray/acid(src)
 
@@ -536,7 +536,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/scanner/gas(src)
 	src.modules += new /obj/item/taperoll/engineering(src)
 	src.modules += new /obj/item/gripper(src)
-	src.modules += new /obj/item/gripper/no_use/loader(src)
+
 	src.modules += new /obj/item/device/lightreplacer(src)
 	src.modules += new /obj/item/device/pipe_painter(src)
 	src.modules += new /obj/item/device/floor_painter(src)
@@ -544,13 +544,13 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/storage/part_replacer/mini(src)
 	src.modules += new /obj/item/reagent_containers/glass/bucket(src)
 	src.modules += new /obj/item/reagent_containers/spray/krag_b_gone(src)
-	src.modules += new /obj/item/gripper/upgrade(src)
+
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
-	src.modules += new /obj/item/gripper/paperwork(src)
-	src.modules += new /obj/item/gripper/ammo(src)
+
+
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/tool/baton/robot(src)
 
@@ -705,16 +705,16 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/borg/sight/hud/sec(src)
 	src.modules += new /obj/item/tool/hammer/ironhammer(src) //breaching!
 	src.modules += new /obj/item/gun/energy/bsrifle(src) //Clearing! Comes prepared to do warcrimes via incendiary rounds
-	src.modules += new /obj/item/gripper/ammo(src)
+	src.modules += new /obj/item/gripper(src)
 	src.modules += new /obj/item/shield_projector/rectangle/borg_personal(src) //this is your lifeline, without it you are SCRAP
-	src.modules += new /obj/item/gripper/upgrade(src)
+
 	src.modules += new /obj/item/tool/robotic_omni_sec(src) //borrows and the like.
 	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //cracks and the like.
 	src.modules += new /obj/item/gun/energy/dazzlation(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
-	src.modules += new /obj/item/gripper/paperwork(src)
+
 	src.emag += new /obj/item/gun/projectile/shotgun/pump/china/borg(src)
 
 	//We are stronk so we get less no knockdowns
@@ -796,12 +796,12 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/knife/tacknife(src)
 	src.modules += new /obj/item/taperoll/police(src)
 	src.modules += new /obj/item/gun/energy/riot_autoshotgun(src)
-	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gripper/upgrade(src)
+	src.modules += new /obj/item/gripper(src)
+
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
-	src.modules += new /obj/item/gripper/paperwork(src)
+
 	//src.modules += new /obj/item/device/holowarrant(src)
 	//src.modules += new /obj/item/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
 	src.emag += new /obj/item/gun/energy/laser/mounted/cyborg(src)
@@ -893,7 +893,7 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/custodial/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/device/scanner/price(src)
-	src.modules += new /obj/item/gripper/service(src)
+	src.modules += new /obj/item/gripper(src)
 	src.modules += new /obj/item/soap/deluxe(src)
 	src.modules += new /obj/item/storage/bag/robotic/trash(src)
 	src.modules += new /obj/item/mop(src)
@@ -902,12 +902,12 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/tool/robotic_omni_cleaner(src)
-	src.modules += new /obj/item/gripper/upgrade(src)
+
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
-	src.modules += new /obj/item/gripper/paperwork(src)
-	src.modules += new /obj/item/gripper/ammo(src)
+
+
 	src.modules += new /obj/item/gun/energy/smg(src) //superior arms due to janitor union /s. But really, this is because they're more likely to have to do fighting while roaming around cleaning
 	src.emag += new /obj/item/reagent_containers/spray/lube(src)
 
@@ -986,7 +986,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/robotic_omni_standard(src)
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/gripper/service(src)
+	src.modules += new /obj/item/gripper(src)
 	src.modules += new /obj/item/reagent_containers/glass/bucket(src)
 	src.modules += new /obj/item/tool/minihoe(src)
 	src.modules += new /obj/item/tool/hatchet(src)
@@ -1001,11 +1001,11 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/reagent_containers/glass/rag(src) // a rag for.. yeah.. the primary tool of bartender
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
-	src.modules += new /obj/item/gripper/paperwork(src)
+
 	src.modules += new /obj/item/hand_labeler(src)
 	src.modules += new /obj/item/tool/tape_roll(src) //allows it to place flyers
 	src.modules += new /obj/item/stamp/denied(src) //why was this even a emagged item before smh
-	src.modules += new /obj/item/gripper/upgrade(src)
+
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/device/synthesized_instrument/synthesizer(src)
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
@@ -1101,17 +1101,17 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/storage/bag/robotic/ore(src)
 	src.modules += new /obj/item/tool/pickaxe/diamonddrill(src)
 	src.modules += new /obj/item/storage/bag/robotic/sheetsnatcher(src)
-	src.modules += new /obj/item/gripper/miner(src)
+	src.modules += new /obj/item/gripper(src)
 	src.modules += new /obj/item/device/scanner/mining(src)
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/gun/energy/riot_autoshotgun(src)
-	src.modules += new /obj/item/gripper/ammo(src)
-	src.modules += new /obj/item/gripper/upgrade(src)
+
+
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
-	src.modules += new /obj/item/gripper/paperwork(src)
+
 	src.modules += new /obj/item/device/ore_sonar(src)
 	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
 
@@ -1170,8 +1170,8 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/research/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 //	src.modules += new /obj/item/portable_destructive_analyzer(src) dosnt work
-	src.modules += new /obj/item/gripper/research(src)
-	src.modules += new /obj/item/gripper/no_use/loader(src)
+	src.modules += new /obj/item/gripper(src)
+
 	src.modules += new /obj/item/device/robotanalyzer(src)
 	src.modules += new /obj/item/card/robot(src)
 	src.modules += new /obj/item/tool/robotic_omni_sci(src)
@@ -1179,7 +1179,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/weldingtool/robotic(src)
 	src.modules += new /obj/item/robot_harvester(src)
 	src.modules += new /obj/item/reagent_containers/syringe(src)
-	src.modules += new /obj/item/gripper/chemistry(src)
+
 	src.modules += new /obj/item/reagent_containers/dropper/industrial(src)
 	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
@@ -1189,11 +1189,11 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
-	src.modules += new /obj/item/gripper/paperwork(src)
+
 	src.modules += new /obj/item/storage/part_replacer(src)
 	src.modules += new /obj/item/tool/sword/saber/deconstuctive_rapier(src)
-	src.modules += new /obj/item/gripper/upgrade(src)
-	src.modules += new /obj/item/gripper/ammo(src)
+
+
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
@@ -1237,8 +1237,8 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/lightreplacer(src)
 	src.modules += new /obj/item/gripper(src)
 	src.modules += new /obj/item/soap(src)
-	src.modules += new /obj/item/gripper/no_use/loader(src)
-	src.modules += new /obj/item/gripper/chemistry(src)// For refilling autolathens with sillicon
+
+
 	src.modules += new /obj/item/storage/part_replacer/mini(src)
 	src.modules += new /obj/item/extinguisher(src)
 	src.modules += new /obj/item/device/pipe_painter(src)
@@ -1247,8 +1247,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/reagent_containers/spray/krag_b_gone(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
-	src.modules += new /obj/item/gripper/paperwork(src)
-	src.modules += new /obj/item/gripper/upgrade(src)
+
 	src.modules += new /obj/item/device/gps(src)
 
 	//src.emag += new /obj/item/gun/energy/plasmacutter/mounted(src)

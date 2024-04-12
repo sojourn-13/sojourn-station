@@ -46,6 +46,8 @@
 #define isbrain(A) istype(A, /mob/living/carbon/brain)
 
 #define ishuman(A) istype(A, /mob/living/carbon/human)
+
+#define isgripper(G) (istype(G, /obj/item/gripper))
 //---------------------------------------------------
 
 #define isanimal(A) istype(A, /mob/living/simple_animal)

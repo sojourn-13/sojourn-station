@@ -188,6 +188,9 @@
 		if(slot_wear_mask) return wear_mask
 	return null
 
+/mob/proc/get_all_slots(obj/item/W)
+	return list(wear_mask, back) + is_holding(W)
+
 //Outdated but still in use apparently. This should at least be a human proc.
 /mob/proc/get_equipped_items()
 	return list()

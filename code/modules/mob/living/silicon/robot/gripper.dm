@@ -11,39 +11,35 @@
 
 	flags = NOBLUDGEON
 
+	 //This is a list of items that can't be held even if their parent is whitelisted.
+	var/list/blacklist = list(
+		/obj/item/gun,
+		/obj/item/projectile,
+		/obj/item/storage,
+		/obj/item/modular_computer,
+		/obj/item/remains,
+		/obj/item/wheelchair,
+		/obj/item/stool,
+		/obj/item/shield
+		)
 	//Has a list of items that it can hold.
 	var/list/can_hold = list(
-		/obj/item/extinguisher,
-		/obj/item/cell,
-		/obj/item/firealarm_electronics,
-		/obj/item/airalarm_electronics,
-		/obj/item/airlock_electronics,
-		/obj/item/tracker_electronics,
-		/obj/item/stock_parts,
-		/obj/item/frame,
-		/obj/item/camera_assembly,
-		/obj/item/tank,
-		/obj/item/circuitboard,
-		/obj/item/device/assembly,//Primarily for making improved cameras, but opens many possibilities
-		/obj/item/computer_hardware,
-		/obj/item/tool_upgrade,
-		/obj/item/am_containment,
-		/obj/item/am_shielding_container,
-		/obj/item/stack/tile, //Repair floors yay
-		/obj/item/oddity/blackbox_nanoforge
-		)
+		/obj/item
+		) // Look, look with your special eyes!
 
 	var/obj/item/wrapped = null // Item currently being held.
+
+	var/list/valid_containers = list(/obj/item/storage)
 
 	var/force_holder = null //
 	var/justdropped = 0//When set to 1, the gripper has just dropped its item, and should not attempt to trigger anything
 
-/obj/item/gripper/examine(var/mob/user)
-	..()
-	if (wrapped)
-		to_chat(user, span("notice", "It is holding \the [wrapped]"))
+/obj/item/gripper/examine(mob/user)
+	if(wrapped)
+		wrapped.examine(user)
+		return
 	else
-		to_chat(user, "It is empty.")
+		..()
 
 
 /proc/grippersafety(var/obj/item/gripper/G)
@@ -63,60 +59,108 @@
 
 
 
-/obj/item/gripper/proc/grip_item(obj/item/I as obj, mob/user as mob, var/feedback = 1)
-	//This function returns 1 if we successfully took the item, or 0 if it was invalid. This information is useful to the caller
+/obj/item/gripper/proc/grip_item(obj/item/I as obj, mob/user, var/feedback = TRUE)
+	//This function returns TRUE if we successfully took the item, or FALSE if it was invalid. This information is useful to the caller
+	if(isrobot(user))
+		var/mob/living/silicon/robot/R = user
+		if(I.loc == (R || R.module))// Don't remove your own modules
+			to_chat(R, "<span class='danger'>ERROR. Safety protocols prevent self-disassembling.</span>")
+			return FALSE
 	if (!wrapped)
-		if(is_type_in_list(I,can_hold))
-			if (feedback)
-				to_chat(user, "You collect \the [I].")
+		var/grab = FALSE
+		for(var/typepath in can_hold)
+			if(istype(I,typepath))
+				grab = TRUE
+				break
+		if(grab && !is_type_in_list(I, blacklist))
+			if(feedback)
+				to_chat(user, "<span class='notice'>You collect \the [I].</span>")
 			I.do_pickup_animation(user.loc, I.loc)
-			I.forceMove(src)
+			I.loc = src
+			I.add_fingerprint(user)
 			wrapped = I
 			update_icon()
 			return TRUE
-		if (feedback)
-			to_chat(user, "<span class='danger'>Your gripper cannot hold \the [I].</span>")
+		if(feedback)
+			to_chat(user, "<span class='danger'>ERROR. Your [name] wasn't designed to handle \the [I].</span>")
 		return FALSE
-	if (feedback)
-		to_chat(user, "<span class='danger'>Your gripper is already holding \the [wrapped].</span>")
+	if(feedback)
+		to_chat(user, "<span class='danger'>ERROR. Your [name] is already holding \the [wrapped].</span>")
 	return FALSE
 
 
 //This places a little image of the gripped item in the gripper, so you can see visually what you're holding
 /obj/item/gripper/update_icon()
-	underlays.Cut()
-	if (wrapped && wrapped.icon)
-		var/mutable_appearance/MA = new(wrapped)
-		MA.layer = ABOVE_HUD_LAYER
-		MA.plane = get_relative_plane(ABOVE_HUD_PLANE)
+	overlays.Cut()
+	if(wrapped && wrapped.icon)
+		var/image/olay = image("icon" = wrapped.icon, "icon_state" = wrapped.icon_state, "layer" = 30 + wrapped.layer, "pixel_x" = null, "pixel_y" = null)
+		olay.overlays = wrapped.overlays
+		olay.appearance_flags = RESET_ALPHA
+		alpha = 128
+		overlays += olay
+	else
+		alpha = initial(alpha)
+	..()
 
-		//Reset pixel offsets to initial values, incase being on a table messed them up
-		//And then subtract 8 from the Y value so it appears in the claw at the bottom
-		MA.pixel_y = initial(MA.pixel_y)-8
-		MA.pixel_x = initial(MA.pixel_x)
+/obj/item/gripper/AltClick()
+	if(gripper_sanity_check(src))
+		.=wrapped.AltClick()
+		update_icon()
+		return
+	return ..()
 
-		underlays += MA
+/obj/item/gripper/CtrlClick()
+	if(gripper_sanity_check(src))
+		.=wrapped.CtrlClick()
+		update_icon()
+		return
+	return ..()
 
-/obj/item/gripper/attack_self(mob/user as mob)
-	if(wrapped)
+/obj/item/gripper/attack_self(var/mob/living/user)
+	if(gripper_sanity_check(src))
 		.=wrapped.attack_self(user)
 		update_icon()
 		return
 	return ..()
 
-/obj/item/gripper/AltClick(mob/user as mob)
-	if(wrapped)
-		.=wrapped.AltClick(user)
-		update_icon()
-	return ..()
+/obj/item/gripper/proc/drop_item(var/obj/item/to_drop, var/atom/target, force_drop = 0,var/dontsay = null) //Do we care about to_drop at all?
+	if(!gripper_sanity_check(src))
+		return FALSE
+	if(to_drop && !istype(wrapped, to_drop))// What the fuck?
+		drop_item(force_drop = 1)
+		return FALSE
+	if(!target) //Just drop it, baka.
+		target = loc
+	var/mob/holder = get_holder_of_type(src, /mob)
+	if(holder)
+		if(!dontsay)
+			to_chat(usr, "<span class='warning'>You drop \the [wrapped].</span>")
+		wrapped.dropped(usr)
+	if(force_drop)
+		wrapped.loc = get_turf(target)
+	else
+		wrapped.forceMove(target)
+	wrapped = null
+	update_icon()
+	return TRUE
 
-/obj/item/gripper/verb/drop_item()
+/proc/gripper_sanity_check(var/obj/item/gripper/G)
+	if(!G.wrapped)//The object must have been lost
+		G.update_icon()
+		return FALSE
+	if(G.wrapped.loc != G)//The object left the gripper but it still exists. Maybe placed on a table
+		//Reset the force and then remove our reference to it
+		G.wrapped.force = G.force_holder
+		G.wrapped = null
+		G.force_holder = null
+		G.update_icon()
+		return FALSE
+	return TRUE
 
-	set name = "Drop Item"
-	set desc = "Release an item from your magnetic gripper."
-	set category = "Robot Commands"
-
-	drop(get_turf(src))
+/obj/item/gripper/Destroy()
+	if(gripper_sanity_check(src))
+		drop_item(force_drop = 1, dontsay = TRUE)
+	..()
 
 /obj/item/gripper/proc/drop(var/atom/target)
 	if(wrapped && wrapped.loc == src)
@@ -126,23 +170,21 @@
 	return TRUE
 
 /obj/item/gripper/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
-	if(wrapped) 	//The force of the wrapped obj gets set to zero during the attack() and afterattack().
+	if(gripper_sanity_check(src))//Somehow things happened.
 		force_holder = wrapped.force
-		wrapped.force = 0.0
+		wrapped.force = 0
 		wrapped.attack(M,user)
-		if(QDELETED(wrapped))
-			wrapped = null
+		gripper_sanity_check(src)
 		return TRUE
 	else// mob interactions
 		switch (user.a_intent)
 			if (I_HELP)
 				user.visible_message("[user] [pick("boops", "squeezes", "pokes", "prods", "strokes", "bonks")] [M] with \the [src]")
 			if (I_HURT)
-				M.attack_generic(user,user.mob_size*0.5,"crushed")//about 20 dmg for a cyborg
-				//Attack generic does a visible message so we dont need one here
+				user.visible_message("<span class='danger'>[user] [pick("bludgeons", "whacks", "impales")] [M] with \the [src]!</spam>")
+				playsound(user, 'sound/weapons/smash.ogg', 40, 1)
+
 				user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN*4)
-				playsound(user, 'sound/effects/attackblob.ogg', 60, 1)
-				//Slow,powerful attack for borgs. No spamclicking
 	return FALSE
 
 /obj/item/gripper/attackby(var/obj/item/O as obj, var/mob/user as mob)
@@ -186,11 +228,13 @@
 
 	else if(istype(target,/obj/item)) //Check that we're not pocketing a mob.
 
-		//...and that the item is not in a container.
-		if(!isturf(target.loc))
-			return
-
-		grip_item(target, user)
+		var/obj/item/I = target
+		if(isturf(target.loc))
+			grip_item(I, user, 1)
+		else if(is_type_in_list(target.loc,valid_containers))
+			var/obj/O = target.loc
+			grip_item(I, user, 1)
+			O.update_icon()//updating fancy containers
 
 	else if (!justdropped)
 		target.attack_ai(user)
@@ -200,7 +244,7 @@
 
 /*
 	//Definitions of gripper subtypes
-*/
+
 
 // VEEEEERY limited version for mining borgs. Basically only for swapping cells, upgrading the drills, and upgrading custom KAs.
 /obj/item/gripper/miner
@@ -356,3 +400,4 @@
 		/obj/item/stack/material,
 		/obj/item/stack/material/refined_scrap
 		)
+*/

@@ -90,17 +90,7 @@
 /obj/item/gripper/antag
 	name = "Objective Gripper"
 	desc = "A special grasping tool specialized in 'dirty' work. Can rip someone's head off if you need it."
-	can_hold = list(
-		/obj/item/implanter,
-		/obj/item/device/spy_sensor,
-		/obj/item/computer_hardware/hard_drive,
-		/obj/item/reagent_containers,
-		/obj/item/spacecash,
-		/obj/item/device/mind_fryer,
-		/obj/item/organ/external/head,
-		/obj/item/oddity/secdocs,
-		/obj/item/stack/telecrystal //To reload the uplink
-		)
+
 
 /obj/item/gripper/antag/afterattack(var/atom/target, var/mob/living/user, proximity, params)
 	..()

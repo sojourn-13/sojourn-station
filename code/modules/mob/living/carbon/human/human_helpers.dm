@@ -118,7 +118,7 @@
 	else
 		..()
 
-/mob/living/carbon/human/proc/get_all_slots() //General code for checking all external slots for something. Does not search inside objects in slots.
+/mob/living/carbon/human/get_all_slots() //General code for checking all external slots for something. Does not search inside objects in slots.
 	. = get_head_slots() | get_body_slots()
 
 /mob/living/carbon/human/proc/get_body_slots()

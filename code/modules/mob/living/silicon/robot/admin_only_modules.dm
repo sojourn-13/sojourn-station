@@ -100,7 +100,7 @@
 	src.modules += new /obj/item/tool/robotic_omni_engi(src)
 	src.modules += new /obj/item/tool/tape_roll/fiber/robotic(src) //Window repair
 	src.modules += new /obj/item/device/pipe_painter(src)
-	src.modules += new /obj/item/gripper/no_use/loader(src)
+
 	src.modules += new /obj/item/gripper(src)
 	src.modules += new /obj/item/device/t_scanner(src) // to check underfloor wiring
 	src.modules += new /obj/item/device/scanner/gas(src) // to check air pressure in the area
@@ -113,7 +113,7 @@
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
-	src.modules += new /obj/item/gripper/paperwork(src)
+
 	src.emag = new /obj/item/tool/saw/hyper(src)
 
 	//src.emag = new /obj/item/gun/energy/plasmacutter/mounted(src)
@@ -212,7 +212,7 @@
 	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src)
 	src.modules += new /obj/item/roller_holder(src)
 	src.modules += new /obj/item/hatton/robot(src)
-	src.modules += new /obj/item/gripper/chemistry(src)
+	src.modules += new /obj/item/gripper(src)
 	src.modules += new /obj/item/reagent_containers/borghypo/rescue(src)
 	src.modules += new /obj/item/reagent_containers/syringe(src)
 	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
@@ -222,7 +222,7 @@
 	src.modules += new /obj/item/tool/scalpel(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
-	src.modules += new /obj/item/gripper/paperwork(src)
+
 	src.emag += new /obj/item/reagent_containers/spray/acid(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(15000)

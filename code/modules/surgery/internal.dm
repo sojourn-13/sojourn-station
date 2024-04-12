@@ -7,8 +7,8 @@
 	return organ.is_open() && organ.can_add_item(tool, user)
 
 /datum/surgery_step/insert_item/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	if(istype(tool, /obj/item/gripper/chemistry)) // Robots have to do surgery somehow
-		var/obj/item/gripper/chemistry/SG = tool
+	if(istype(tool, /obj/item/gripper)) // Robots have to do surgery somehow
+		var/obj/item/gripper/SG = tool
 		if(SG.wrapped)
 			tool = SG.wrapped // We want to install whatever the gripper is holding, not the gripper itself
 	if(istype(tool, /obj/item/organ/external))
@@ -24,8 +24,8 @@
 	organ.owner_custom_pain("The pain in your [organ.name] is living hell!", 1)
 
 /datum/surgery_step/insert_item/end_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	if(istype(tool, /obj/item/gripper/chemistry))
-		var/obj/item/gripper/chemistry/SG = tool
+	if(istype(tool, /obj/item/gripper))
+		var/obj/item/gripper/SG = tool
 		if(SG.wrapped)
 			tool = SG.wrapped
 			SG.wrapped = null // When item successfully inserted - stop referencing it in gripper
@@ -44,8 +44,8 @@
 		playsound(get_turf(organ), 'sound/effects/squelch1.ogg', 50, 1)
 
 /datum/surgery_step/insert_item/fail_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	if(istype(tool, /obj/item/gripper/chemistry))
-		var/obj/item/gripper/chemistry/SG = tool
+	if(istype(tool, /obj/item/gripper))
+		var/obj/item/gripper/SG = tool
 		if(SG.wrapped)
 			tool = SG.wrapped
 			user.visible_message(
@@ -80,8 +80,8 @@
 	if(!istype(I))
 		return FALSE
 
-	if(istype(I, /obj/item/gripper/chemistry))
-		var/obj/item/gripper/chemistry/SG = I
+	if(istype(I, /obj/item/gripper))
+		var/obj/item/gripper/SG = I
 		if(SG.wrapped)
 			I = SG.wrapped
 		else
@@ -184,8 +184,8 @@
 	if(do_check && !can_add_item(I, user))
 		return
 
-	if(istype(I, /obj/item/gripper/chemistry))
-		var/obj/item/gripper/chemistry/SG = I
+	if(istype(I, /obj/item/gripper))
+		var/obj/item/gripper/SG = I
 		if(SG.wrapped)
 			I = SG.wrapped
 

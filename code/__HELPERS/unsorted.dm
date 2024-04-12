@@ -1445,3 +1445,16 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		digit_numbers--
 		generated_code += "[generate_single_gun_number()]" // cast to string
 	return generated_code
+
+/*
+	get_holder_of_type(): Returns the FIRST holder of type specified. NOT the "highest up".
+	Example: Call find_holder_of_type(A, /mob) to find the first mob holder of A.
+*/
+/proc/get_holder_of_type(const/atom/movable/O, type)
+	ASSERT(istype(O))
+	var/atom/A = O
+	while(A && !isturf(A))
+		if(istype(A, type))
+			return A
+		A = A.loc
+	return null

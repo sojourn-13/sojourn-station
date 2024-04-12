@@ -247,7 +247,7 @@
 			continue
 
 	for(var/obj/item/organ/external/temp in organs)
-		if(BP_IS_PROSTHETIC(temp))
+		if(BP_IS_PROSTHETIC(temp) && !(temp.owner.species?.reagent_tag == IS_SYNTHETIC || BP_IS_LIFELIKE(temp)))
 			var/part_display_name
 			if(copytext(temp.name, 1, 6) == "robot")
 				part_display_name = "\a [temp]"
