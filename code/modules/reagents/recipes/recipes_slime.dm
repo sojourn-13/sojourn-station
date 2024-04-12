@@ -77,14 +77,13 @@
 	..()
 
 //Green
-/* //should be replaced with something/reworked some day but I've no ideas.
 /datum/chemical_reaction/slime/mutate
-	result = "mutationtoxin"
+	result = "mutagen"
 	required_reagents = list("plasma" = 1)
-	result_amount = 1
+	result_amount = 10
 	required = /obj/item/slime_extract/green
-*/
-//
+
+
 /datum/chemical_reaction/slime/mutate_clear
 	result = null
 	required_reagents = list("water" = 1)
@@ -449,11 +448,11 @@
 	required_reagents = list("plasma" = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/black
+*/
 
-//
-/datum/chemical_reaction/slime/spawn2
+datum/chemical_reaction/slime/spawn2
 	result = null
-	required_reagents = list("amutationtoxin" = 1)
+	required_reagents = list("mutagen" = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/black
 
@@ -476,7 +475,7 @@
 	"green" = 1)
 	S.set_mutation(pickweight(colors))
 	..()
-*/
+
 //Oil
 /datum/chemical_reaction/slime/explosion
 	result = null

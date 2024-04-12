@@ -2189,7 +2189,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 				<a name='2'><H3>Green</H3>
 				Ideally greens will be made when you have someone doing genetics. They are useful for purgers.
 				Water will create a ready to use genetics purger
-				plasma (more units at once the better) will create mutation toxin. This will turn people into slime people!
+				plasma (more units at once the better) will create unstable mutagen!
 				<a name='3'><h3>Metal</h3>
 				Metal slimes are a workhorse of the material production process. The first step in getting raw mats for our department.
 				Plasma will produce metal sheets and the wondrous plasteel! Used in mass quantities by those seeking armaments or a mech.
@@ -2242,7 +2242,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 				Honey in 5 units will create a similar slime jar but for adults.
 				<a name='14'><h3>Black</h3>
 				Plasma will create a mutation toxin that's stronger than greens... It will fully turn someone into a slime... Very dangerous.
-				Advanced Mutation Toxin will cause a reaction like Grey Slimes with Plasma. Except it can create a wide variety of colors instead of just grey!
+				Unstable mutagen will cause a reaction like Grey Slimes with Plasma. Except it can create a wide variety of colors instead of just grey!
 				<a name='15'><h3>Oil</h3>
 				Oil slimes are a strange mix. They have few reactions, most of which are nothing short of illegal. But the nonslipping power of them makes them wonderful.
 				Plasma... This is nothing short of a hellishly strong hand grenade. Blackshield wishes they had fire power like this thing.
