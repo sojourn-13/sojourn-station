@@ -19,6 +19,7 @@
 		/datum/design/autolathe/ammo/slkurtz_rubber,
 		//smg mags
 		/datum/design/autolathe/ammo/smg_rubber,
+		/datum/design/autolathe/ammo/smg_magnum_40_rubber,
 		// rifles
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
 		/datum/design/autolathe/ammo/rifle_short_rubber,
@@ -50,6 +51,8 @@
 		//smg mags
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_lethal,
+		/datum/design/autolathe/ammo/smg_magnum_40,
+		/datum/design/autolathe/ammo/smg_magnum_40_lethal, //Marshals got weapons for this, probably shouldn't be tied up only to 2 disks
 		/datum/design/autolathe/ammo/mag_10x24, // The specific model of the Spec Ops.
 		// rifles
 		/datum/design/autolathe/ammo/lrifle_short,
@@ -122,6 +125,7 @@
 	license = 20
 
 	designs = list(
+		/datum/design/autolathe/ammo/smg_magnum_40_empty,
 		/datum/design/autolathe/ammo/c10x24 = 3,
 		/datum/design/autolathe/ammo/mag_10x24 = 1,
 		/datum/design/autolathe/ammo/box_10x24 = 5,
