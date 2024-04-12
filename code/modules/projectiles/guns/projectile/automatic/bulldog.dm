@@ -12,7 +12,7 @@
 	slot_flags = SLOT_BELT
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 12)
 	price_tag = 1100
-	gun_parts = null
+	gun_parts = list(/obj/item/part/gun/frame/bulldog = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	init_recoil = CARBINE_RECOIL(1)
 	gun_tags = list(GUN_PROJECTILE, GUN_SCOPE, GUN_MAGWELL)
@@ -43,6 +43,15 @@
 	. = ..()
 	update_icon()
 
+/obj/item/part/gun/frame/bulldog
+	name = "K9-series frame"
+	desc = "A K9-series frame. Predecesor to the Wind-series, remains largely popular with low budget security firms. Can be assembled into a Bulldog or older Z7 Model."
+	icon_state = "frame_bull"
+	result = /obj/item/gun/projectile/automatic/bulldog
+	resultvars = list(/obj/item/gun/projectile/automatic/bulldog, /obj/item/gun/projectile/automatic/pitbull)
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/serb)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/srifle)
 
 /obj/item/gun/projectile/automatic/bulldog/rds
 	name = "\"Bulldog Red\" carbine"
