@@ -77,10 +77,11 @@
 			var/obj/item/projectile/sonic_bolt/SB = P
 			SB.multiply_projectile_damage(SB.golem_damage_bonus)
 			drop_amount = 0 // No loot
+	spawn(100 MILLISECONDS)
+		if(!QDELETED(src))
+			maintain_drop_amount()
 
 	. = ..()
-
-	addtimer(CALLBACK(src, /mob/living/carbon/superior_animal/ameridian_golem/.proc/maintain_drop_amount), 100 MILLISECONDS) //consider converting this to ticks?
 
 /mob/living/carbon/superior_animal/ameridian_golem/proc/maintain_drop_amount()
 	if (!is_dead(src)) // We're still alive!

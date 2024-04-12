@@ -32,7 +32,7 @@ SUBSYSTEM_DEF(processing)
 		else if((call(thing, process_proc)(wait * 0.1) == PROCESS_KILL))
 			// fully stop so that a future START_PROCESSING will work
 			STOP_PROCESSING(src, thing)
-		if (MC_TICK_CHECK)
+		if (MC_TICK_CHECK && !(priority == SS_PRIORITY_MOB))
 			return
 
 /**

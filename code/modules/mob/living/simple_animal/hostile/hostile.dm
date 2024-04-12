@@ -217,9 +217,10 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 /mob/living/simple_animal/hostile/proc/ListTargets(var/dist = 7)
 	var/list/L = hearers(src, dist)
 
-	for (var/obj/mecha/M in GLOB.mechas_list)
-		if (M.z == src.z && get_dist(src, M) <= dist)
-			L += M
+	for(var/atom/movable/AM in view(dist, src))
+		var/M = AM.get_mob()	// we look inside things
+		if(M)
+			LAZYDISTINCTADD(L, M)
 
 	return L
 

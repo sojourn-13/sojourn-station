@@ -87,13 +87,8 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 					burrow.obelisk_around = any2ref(src)
 */
 	if(active)
-		//var/list/affected_mobs = SSmobs.mob_living_by_zlevel[(get_turf(src)).z]
-		//if(debug)
-		//	log_and_message_admins("Has [affected_mobs.len] mobs on its z-level")
 		var/to_fire = max_targets
 		for(var/mob/living/A in affected)
-			//if(!(get_dist(src, A) <= area_radius))
-			//	continue
 			if(istype(A, /mob/living/carbon/superior_animal))
 				var/mob/living/carbon/superior_animal/animal = A
 				if(animal.stat != DEAD &! animal.colony_friend) //got roach, spider, xenos, but not colony pets

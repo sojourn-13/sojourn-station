@@ -14,7 +14,7 @@
 	)
 
 /obj/item/bluespace_leak/Crossed(mob/M)
-	for(M in living_mobs_in_view(1, src))
+	for(M in able_mobs_in_oview(1, src))
 		clone_attack(M, rand(4, 8))
 	.=..()
 

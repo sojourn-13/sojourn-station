@@ -22,11 +22,11 @@
  * range - How far, in a square, around this mob, will we search.
  * source - The source of the search.
 **/
-/proc/mobs_in_view(range, atom/source)
-	var/list/mobs = list()
-	for(var/mob/target_mob in view(range, source))
-		mobs += target_mob
-	return mobs
+/proc/mobs_in_view(var/range, var/source)
+	for(var/atom/movable/AM in view(range, source))
+		var/M = AM.get_mob() // Mecha automatically tracked above
+		if(M)
+			LAZYDISTINCTADD(., M)
 
 /**
  * Returns a list of all LIVING mobs within view(), using given arguments to determine the range of the search
@@ -36,32 +36,30 @@
  * range - How far, in a square, around this mob, will we search.
  * source - The source of the search.
 **/
-/proc/living_mobs_in_view(var/range, var/atom/source)
+/proc/able_mobs_in_oview(var/range, var/origin)
 	var/list/mobs = list()
-	for(var/mob/living/target_mob in view(range, source))
-		mobs += target_mob
+	for(var/mob/living/M in oview(range, origin)) // Only living mobs are considered able.
+		if(!M.is_physically_disabled())
+			mobs += M
+	for(var/obj/mecha/potential_mech in oview(range, origin)) // Because mechs are stupid.
+		var/mob/living/M = potential_mech.get_mob()
+		if(M && !M.is_physically_disabled())
+			mobs += M
 	return mobs
 
-
-/**
- * Returns a list of all mobs within view(), even those within mechs, using given arguments to determine the range of the search
- * and the source of the proc.
- *
- * Args:
- * range - How far, in a square, around this mob, will we search.
- * source - The source of the search.
-**/
-/proc/all_mobs_in_view(var/range, var/atom/source)
+/*		Only Hivemind used this. Called in 4 lines of code, why is it here?
+		mobs_in_view() now checks inside of things...
+/proc/all_mobs_in_view(var/range, var/atom/origin)
 	var/list/mobs = list()
-	for(var/mob/target_mob in view(range, source))
-		mobs += target_mob
+	for(var/mob/living/M in oview(range, origin)) // Only living mobs are considered able.
+		mobs += M
 	for(var/obj/mecha/potential_mech in GLOB.mechas_list)
-		if(potential_mech.z == source.z && get_dist(potential_mech, source) < range && can_see(source, potential_mech, range))
+		if(potential_mech.z == origin.z && get_dist(potential_mech, origin) < range && can_see(source, potential_mech, range))
 			var/mob/living/occupant = potential_mech.get_mob()
 			if (occupant)
 				mobs += occupant
     return mobs
-
+*/
 /proc/random_hair_style(gender, species = "Human")
 	var/h_style = "Bald"
 

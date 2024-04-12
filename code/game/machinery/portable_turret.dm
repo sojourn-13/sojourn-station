@@ -570,7 +570,7 @@ var/list/turret_icons
 	for(var/mob/living/M in view(firing_range, src)) //WE USED WORLD.VIEW BEFORE THATS FUCKING PSYCHOPATHIC
 		assess_and_assign(M, targets, secondarytargets) //might want to not use a proc due to proc overhead cost
 
-	for(var/obj/mecha/mech in GLOB.mechas_list)
+	for(var/obj/mecha/mech in view(firing_range, src))
 		if (mech.z == z && (get_dist(mech, src) < firing_range) && can_see(src, mech, firing_range))
 			var/mob/living/occupant = mech.get_mob()
 			if (occupant)

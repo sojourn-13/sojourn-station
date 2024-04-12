@@ -40,7 +40,7 @@
 	layer = TURF_LAYER + 0.6
 
 /obj/effect/decal/cleanable/solid_biomass/Crossed(mob/M)
-	for(M in living_mobs_in_view(1, src))
+	for(M in able_mobs_in_oview(1, src))
 		toxin_attack(M, rand(10, 20))
 		.=..()
 
@@ -66,7 +66,7 @@
 
 
 /obj/effect/decal/cleanable/solid_biomass/aoe/Process()
-	for(var/mob/living/creature in living_mobs_in_view(1, src))
+	for(var/mob/living/creature in able_mobs_in_oview(1, src))
 		toxin_attack(creature, rand(4, 8))
 
 

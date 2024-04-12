@@ -11,14 +11,6 @@
 		return //We're contained inside something, a locker perhaps.
 	return hearers(src, viewRange)
 
-
-	/* There was an attempt at optimization, but it was unsanitized, and was more expensive than just checking hearers.
-	var/list/list_to_return = new
-	for(var/atom/thing in SSmobs.mob_living_by_zlevel[((get_turf(src)).z)])
-		if(get_dist(src, thing) <= viewRange)
-			list_to_return += thing
-	return list_to_return*/
-
 /mob/living/carbon/superior_animal/proc/findTarget(prioritizeCurrent = FALSE)
 
 	if (prioritizeCurrent)
@@ -30,18 +22,16 @@
 
 	var/turf/our_turf = get_turf(src)
 	if (our_turf) //If we're not in anything, continue
-		for(var/mob/living/target_mob as anything in hearers(src, viewRange)) //as anything works because isvalid has a isliving check, change if necessary
-			if (isValidAttackTarget(target_mob))
+		for(var/mob/living/target_mob as anything in hearers(viewRange, src)) //as anything works because isvalid has a isliving check, change if necessary
+			if(!(target_mob?.faction == faction && !attack_same) && isValidAttackTarget(target_mob))
 				if(target_mob.target_dummy && prioritize_dummies) //Target me over anyone else
 					return target_mob
 				filteredTargets += target_mob
 
-		for (var/obj/mecha/M as anything in GLOB.mechas_list)
-			//As goofy as this looks its more optimized as were not looking at every mech outside are z-level if they are around us. - Trilby
-			if(M.z == z)
-				if(get_dist(src, M) <= viewRange)
-					if(isValidAttackTarget(M))
-						filteredTargets += M
+		for(var/obj/mecha/AM in view(viewRange, src))
+			var/mob/living/M = AM.get_mob()	// we look inside things
+			if(!(M?.faction == faction && !attack_same) && isValidAttackTarget(M))
+				LAZYDISTINCTADD(filteredTargets, M)
 
 	var/atom/filteredTarget = safepick(getTargets(filteredTargets, src))
 
@@ -129,8 +119,6 @@
 		if(L.stat != CONSCIOUS)
 			return FALSE
 		if(L.health <= (ishuman(L) ? HEALTH_THRESHOLD_CRIT : 0))
-			return FALSE
-		if((!attack_same && (L.faction == faction)) || (L in friends)) //just cuz your a friend dosnt mean it magically will no longer attack same
 			return FALSE
 		if(L.friendly_to_colony && friendly_to_colony) //If are target and areselfs have the friendly to colony tag, used for chtmant protection
 			return FALSE

@@ -6,7 +6,8 @@
 		breathe()
 
 /mob/living/carbon/proc/get_breath_modulo()
-	return 2
+	return 4			// Carbon mobs breath 10 times every second. 40ticks/1second
+						// Human get_breath_modulo() is overridden by lungs/efficiency
 
 /mob/living/carbon/proc/breathe()
 	//if(istype(loc, /obj/machinery/atmospherics/unary/cryo_cell)) return

@@ -10,7 +10,11 @@
 /mob/living/carbon/Life()
 	. = ..()
 
+	handle_mutations_and_radiation()
 	handle_viruses()
+
+	handle_blood()
+	handle_random_events()
 
 /mob/living/carbon/Destroy()
 

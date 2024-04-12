@@ -578,14 +578,6 @@
 
 //Tells everyone thats living and is a SSmobs to wake up their AI when aplicable
 /proc/activate_mobs_in_range(atom/caller , distance)
-	var/turf/starting_point = get_turf(caller)
-	if(!starting_point)
-		return FALSE
-	for(var/mob/living/potential_attacker in SSmobs.mob_living_by_zlevel[starting_point.z])
-		if(potential_attacker == caller)
-			continue
-		if(potential_attacker.stat == DEAD)
-			continue
-		if(!(get_dist(starting_point, potential_attacker) <= distance))
-			continue
-		potential_attacker.try_activate_ai()
+	for(var/mob/living/M in orange(distance, caller))
+		if(!is_dead(M))
+			M.try_activate_ai()

@@ -1,7 +1,7 @@
 #define BORER_EXP_LEVEL_1 20
 #define BORER_EXP_LEVEL_2 40
 #define BORER_EXP_LEVEL_3 80
-#define BORER_EXP_LEVEL_4 100 
+#define BORER_EXP_LEVEL_4 100
 #define BORER_EXP_LEVEL_5 120
 /mob/living/simple_animal/borer
 	name = "cortical borer"
@@ -194,8 +194,8 @@
 			if(prob(host.brainloss/20))
 				host.say("*[pick(list("blink","blink_r","choke","aflap","drool","twitch","twitch_s","gasp"))]")
 
-	for(var/mob/living/L in view(7)) //Sucks to put this here, but otherwise mobs will ignore them
-		L.try_activate_ai()
+	//for(var/mob/living/L in view(7)) //Sucks to put this here, but otherwise mobs will ignore them
+		//L.try_activate_ai()
 
 /mob/living/simple_animal/borer/Stat()
 	. = ..()
