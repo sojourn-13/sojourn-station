@@ -41,7 +41,7 @@
 
 /obj/item/gun/projectile/automatic/mercu/Initialize()
 	. = ..()
-		borerifle = new(src)
+	borerifle = new(src)
 
 /obj/item/gun/projectile/automatic/mercu/attackby(obj/item/I, mob/user)
 	if((istype(I, /obj/item/ammo_casing/ball)))
