@@ -28,7 +28,7 @@
 /obj/machinery/door/airlock/multi_tile/metal{
 	dir = 2
 	},
-/turf/simulated/floor/rock/manmade/road,
+/turf/simulated/floor/tiled/derelict,
 /area/nadezhda/outside/one_star/fo_internal)
 "ap" = (
 /obj/structure/table/onestar,
@@ -1423,7 +1423,7 @@
 	dir = 8
 	},
 /obj/random/turret/os,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/hull,
 /area/nadezhda/outside/one_star/fo_outside)
 "lJ" = (
 /obj/machinery/light/floor,
@@ -1643,10 +1643,6 @@
 	},
 /turf/simulated/floor/tiled/derelict/red_white_edges,
 /area/nadezhda/outside/one_star/fo_internal)
-"nv" = (
-/obj/random/turret/os,
-/turf/simulated/floor/reinforced,
-/area/nadezhda/outside/one_star/fo_outside)
 "nx" = (
 /obj/structure/bed{
 	dir = 4
@@ -2145,7 +2141,7 @@
 	dir = 1
 	},
 /obj/random/turret/os,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/hull,
 /area/nadezhda/outside/one_star/fo_outside)
 "rr" = (
 /obj/structure/railing{
@@ -3203,7 +3199,7 @@
 "yO" = (
 /obj/item/scrap_lump,
 /obj/item/trash/material/metal,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/hull,
 /area/nadezhda/outside/one_star/fo_outside)
 "yP" = (
 /obj/structure/railing/grey{
@@ -4011,10 +4007,6 @@
 /obj/structure/flora/small/bushc2,
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
-"Fy" = (
-/obj/random/turret/os,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/one_star/fo_outside)
 "Fz" = (
 /obj/random/mob/roomba,
 /turf/simulated/floor/wood/wild3,
@@ -4102,7 +4094,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "Ge" = (
 /obj/random/turret/os,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/hull,
 /area/nadezhda/outside/one_star/fo_outside)
 "Gf" = (
 /obj/structure/railing{
@@ -5548,7 +5540,7 @@
 /area/nadezhda/outside/one_star/fo_internal)
 "RG" = (
 /obj/random/turret/os,
-/turf/simulated/floor/tiled/derelict/red_white_edges,
+/turf/simulated/floor/hull,
 /area/nadezhda/outside/one_star/fo_internal)
 "RH" = (
 /obj/structure/table/onestar,
@@ -5715,8 +5707,10 @@
 /turf/simulated/wall/untinted/onestar_reinforced,
 /area/nadezhda/outside/one_star/fo_internal)
 "Tn" = (
-/obj/machinery/porta_turret/One_star,
-/turf/simulated/floor/asteroid/dirt,
+/obj/machinery/door/airlock/multi_tile/metal{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/nadezhda/outside/one_star/fo_outside)
 "Ts" = (
 /obj/structure/kitchenspike,
@@ -12925,7 +12919,7 @@ cF
 cF
 GI
 uf
-Fy
+Ge
 PN
 GI
 cF
@@ -15017,12 +15011,12 @@ cF
 GI
 GI
 GI
-Tn
+Ge
 cF
 cF
 cF
 cF
-Tn
+Ge
 GI
 GI
 GI
@@ -16411,25 +16405,25 @@ cF
 cF
 DF
 St
-DF
-DF
-DF
-DF
-DF
+St
+St
+St
+St
+St
 St
 Ys
 Qf
 vz
 Ys
-Qf
+Tn
 St
-DF
-DF
-DF
-DF
-DF
-DF
-DF
+St
+St
+St
+St
+St
+St
+St
 cF
 cF
 cF
@@ -16582,7 +16576,7 @@ Xe
 Xe
 Qu
 St
-DF
+St
 KO
 iR
 pY
@@ -16735,7 +16729,7 @@ JI
 JI
 Jr
 St
-DF
+St
 PN
 PN
 PN
@@ -16888,7 +16882,7 @@ gJ
 XJ
 Qu
 St
-DF
+St
 PN
 PN
 PN
@@ -17172,7 +17166,7 @@ Qu
 Qu
 Qu
 Qu
-tT
+no
 an
 Qu
 Qu
@@ -17185,7 +17179,7 @@ JI
 Qu
 Qu
 Qu
-tT
+no
 an
 Qu
 Qu
@@ -21120,7 +21114,7 @@ JI
 JI
 rR
 aA
-YT
+RG
 no
 Km
 JU
@@ -21142,7 +21136,7 @@ no
 JU
 Km
 no
-YT
+RG
 aA
 Lp
 bz
@@ -22944,7 +22938,7 @@ tS
 Kl
 Kl
 aA
-YT
+RG
 no
 Km
 JU
@@ -22966,7 +22960,7 @@ no
 JU
 Km
 no
-YT
+RG
 aA
 JI
 Nm
@@ -24790,7 +24784,7 @@ no
 JU
 Km
 no
-YT
+RG
 aA
 zO
 Dr
@@ -40464,7 +40458,7 @@ wV
 wV
 wV
 wV
-nv
+Ge
 DF
 nT
 nT
