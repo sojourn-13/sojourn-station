@@ -685,11 +685,12 @@ var/global/list/robot_modules = list(
 					"Contractor Tactical Alt" = "mmekasec",
 					"Contractor Foxtrot" = "mekasyndi_foxtrot",
 					"Contractor Traffic Light" = "fmekasyndi",
-					"Contractor Riot Stopper" = "mmekasyndi"
+					"Marshal Civil Servant" = "fmekasyndi_marshal", //Odio made this and for some reason named the original file slutty_bot.dmi so putting here so nobody will forget to shame him later for it.
+					"Contractor Riot Stopper" = "mmekasyndi",
+					"Marshal Riot Unit" = "mmekasyndi_marshal"
 				)
 
 	tall_sprites = list(
-
 					"mekasyndi",
 					"mekasec",
 					"k4tsec",
@@ -697,7 +698,9 @@ var/global/list/robot_modules = list(
 					"mmekasec",
 					"mekasyndi_foxtrot",
 					"fmekasyndi",
-					"mmekasyndi"
+					"fmekasyndi_marshal",
+					"mmekasyndi",
+					"mmekasyndi_marshal"
 				)
 
 /obj/item/robot_module/security/defense/New(var/mob/living/silicon/robot/R)
@@ -752,16 +755,12 @@ var/global/list/robot_modules = list(
 
 /obj/item/robot_module/security/enforcement
 	sprites = list(
-					"Basic" = "robotsecy",
-					"Sleek" = "sleeksecurity",
-					"Black Knight" = "securityrobot",
-					"Bloodhound" = "bloodhound",
-					"Bloodhound - Treaded" = "treadhound",
-					"Drone" = "drone-sec",
-					"Classic" = "secborg",
-					"Spider" = "spidersec",
-					"Heavy" = "heavysec",
-					"Miss" = "missm_security",
+					"Bloodhound" = "syndie_bloodhound",
+					"Treadhound" = "syndie_treadhound",
+					"Precision" = "syndi-medi",
+					"Heavy" = "syndi-heavy",
+					"Artillery" = "spidersyndi",
+					"Miss" = "missm_syndie",
 					"Contractor RedShell" = "mekasyndi",
 					"Contractor RedShell Alt" = "mekasec",
 					"Contractor Tanker" = "k4tsec",
@@ -770,7 +769,9 @@ var/global/list/robot_modules = list(
 					"Contractor Tactical Alt" = "mmekasec",
 					"Contractor Foxtrot" = "mekasyndi_foxtrot",
 					"Contractor Traffic Light" = "fmekasyndi",
-					"Contractor Riot Stopper" = "mmekasyndi"
+					"Marshal Civil Servant" = "fmekasyndi_marshal", //Odio made this and for some reason named the original file slutty_bot.dmi so putting here so nobody will forget to shame him later for it.
+					"Contractor Riot Stopper" = "mmekasyndi",
+					"Marshal Riot Unit" = "mmekasyndi_marshal"
 				)
 
 	tall_sprites = list(
@@ -781,7 +782,9 @@ var/global/list/robot_modules = list(
 					"mmekasec",
 					"mekasyndi_foxtrot",
 					"fmekasyndi",
-					"mmekasyndi"
+					"fmekasyndi_marshal",
+					"mmekasyndi",
+					"mmekasyndi_marshal"
 				)
 
 /obj/item/robot_module/security/enforcement/New(var/mob/living/silicon/robot/R)
