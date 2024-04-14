@@ -25,7 +25,7 @@
 		bomb = 30,
 		bio = 100,
 		rad = 50
-	) //These are the same stats as the blood red hardsuit.
+	)
 	siemens_coefficient = 0.4
 	can_breach = FALSE //This can't be taken off so we don't want it breaching.
 	supporting_limbs = list()
@@ -78,7 +78,7 @@
 	var/pointremoved = 0 //Did we take you your cog?
 
 	action_button_name = "Toggle Witchlight" //reflavor this so I can make it purple to go in line with the guns - Sigma
-	light_overlay = "helmet_light_occult" //Sadly this has to go in icons/obj/light_overlays because I can't figure out how to point it to a different one.
+	light_overlay = "helmet_occult" //Sadly this has to go in icons/obj/light_overlays because I can't figure out how to point it to a different one.
 										  //Currently it's located in the icons/obj/light_overlays folder, proc is at /obj/item/clothing/head/on_update_icon(mob/user) -Sigma
 
 /obj/item/clothing/head/helmet/space/occulthood/dropped()

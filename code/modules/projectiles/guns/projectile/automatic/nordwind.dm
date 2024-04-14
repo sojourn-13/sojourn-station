@@ -151,4 +151,4 @@
 		)
 	serial_type = "NM"
 
-	gun_parts = null
+	gun_parts = list(/obj/item/part/gun/frame/discountnordwind = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)

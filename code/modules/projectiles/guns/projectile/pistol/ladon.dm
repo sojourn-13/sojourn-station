@@ -18,7 +18,7 @@
 	auto_eject = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	serial_type = "SD GmbH"
-	gun_parts = null
+	gun_parts = list(/obj/item/part/gun/frame/ladon = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/magnum = 1)
 
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.4 // 40 vig
@@ -50,3 +50,13 @@
 	damage_multiplier = 1.1
 	init_recoil = HANDGUN_RECOIL(1.1)
 	serial_type = "SA"
+
+/obj/item/part/gun/frame/ladon
+	name = "Ladon frame"
+	desc = "A Ladon pistol frame. Useful if you want to bring out your inner mall-cop."
+	icon_state = "frame_1911"
+	result = /obj/item/gun/projectile/ladon
+	gripvars = list(/obj/item/part/gun/grip/black)
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = list( /obj/item/part/gun/barrel/magnum)
+	resultvars = list(/obj/item/gun/projectile/ladon)

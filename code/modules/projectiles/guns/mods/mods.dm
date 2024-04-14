@@ -474,7 +474,7 @@
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 2,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
-	GUN_UPGRADE_DAMAGE_MULT = 2,
+	GUN_UPGRADE_DAMAGE_BASE = 1,
 	GUN_UPGRADE_CHARGECOST = 2)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
@@ -492,7 +492,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_DAMAGE_MULT = 0.90,
+	GUN_UPGRADE_DAMAGE_MULT = 0.9,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 0.25)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
@@ -646,7 +646,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_BRUTE = 5,
-		GUN_UPGRADE_PEN_MULT = 1.2,
+		GUN_UPGRADE_PEN_BASE = 0.2,
 		GUN_UPGRADE_PIERC_MULT = 1,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2,
 		GUN_UPGRADE_RECOIL = 1.2,

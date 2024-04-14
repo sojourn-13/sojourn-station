@@ -56,6 +56,10 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 
 //Blackshield guns.
 
+/datum/design/autolathe/gun_frame/discountnordwind
+	name = "6.5mm/7.62 carbine/rifle- frame"
+	build_path = /obj/item/part/gun/frame/discountnordwind
+
 /datum/design/autolathe/gun_frame/omni
 	name = "8.6mm omni - frame"
 	build_path = /obj/item/part/gun/frame/omni

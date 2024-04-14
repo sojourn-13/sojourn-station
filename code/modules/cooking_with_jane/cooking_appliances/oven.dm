@@ -106,6 +106,7 @@
 	var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items
 	if(container.handle_ignition())
 		on_fire = TRUE
+
 /obj/machinery/cooking_with_jane/oven/attackby(var/obj/item/used_item, var/mob/user, params)
 	if(default_deconstruction(used_item, user))
 		return
@@ -113,6 +114,17 @@
 	var/center_selected = getInput(params)
 
 	if(opened && center_selected)
+
+		if(istype(used_item, /obj/item/gripper))
+			var/obj/item/gripper/gripper = used_item
+			if(!gripper.wrapped && items)
+				var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items
+				var/turf/T = get_turf(src)
+				container.forceMove(T)
+				items = null
+				update_icon()
+			return
+
 		if(items != null)
 			var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items
 
@@ -130,6 +142,7 @@
 			items = used_item
 			if(switches == 1)
 				cooking_timestamp = world.time
+
 	else
 		handle_open(user)
 	update_icon()
@@ -161,26 +174,29 @@
 		if(TRUE)
 			if(!opened)
 				handle_open(user)
+				update_icon()
+				return
+			if(items != null)
+				if(switches == 1)
+					handle_cooking(user)
+					cooking_timestamp = world.time
+					if(ishuman(user) && (temperature == "High" || temperature == "Medium" ))
+						var/mob/living/carbon/human/burn_victim = user
+						if(!burn_victim.gloves)
+							switch(temperature)
+								if("High")
+									burn_victim.adjustFireLoss(5)
+								if("Medium")
+									burn_victim.adjustFireLoss(2)
+							to_chat(burn_victim, SPAN_DANGER("You burn your hand a little taking the [items] off of the oven."))
+				user.put_in_hands(items)
+				items = null
 			else
-				if(items != null)
-					if(switches == 1)
-						handle_cooking(user)
-						cooking_timestamp = world.time
-						if(ishuman(user) && (temperature == "High" || temperature == "Medium" ))
-							var/mob/living/carbon/human/burn_victim = user
-							if(!burn_victim.gloves)
-								switch(temperature)
-									if("High")
-										burn_victim.adjustFireLoss(5)
-									if("Medium")
-										burn_victim.adjustFireLoss(2)
-								to_chat(burn_victim, SPAN_DANGER("You burn your hand a little taking the [items] off of the oven."))
-					user.put_in_hands(items)
-					items = null
-				else
-					handle_open(user)
+				handle_open(user)
 		if(FALSE)
 			handle_open(user)
+			update_icon()
+			return
 	update_icon()
 
 /obj/machinery/cooking_with_jane/oven/CtrlClick(var/mob/user, params)

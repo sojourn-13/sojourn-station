@@ -70,7 +70,7 @@
 	return sanitize(replace_characters(input, list(">"=" ", "<"=" ", "\""="'","&lt;" = " ","&gt;" = " ")), max_length, encode, trim, extra)
 
 //Filters out undesirable characters from names
-/proc/sanitizeName(var/input, var/max_length = MAX_NAME_LEN, var/allow_numbers = 0)
+/proc/sanitizeName(var/input, var/max_length = MAX_NAME_LEN, var/allow_numbers = TRUE)//Soj/Liberty edit, allows to use numbers in names
 	if(!input || length(input) > max_length)
 		return //Rejects the input if it is null or if it is longer then the max length allowed
 

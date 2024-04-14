@@ -43,6 +43,7 @@
 	var/burntime = 120
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = null
+	tool_qualities = list(QUALITY_WELDING = 0)
 	attack_verb = list("burnt", "singed")
 	lit = 1
 	var/mob/living/carbon/holder

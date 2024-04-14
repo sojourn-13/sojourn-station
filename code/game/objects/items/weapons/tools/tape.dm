@@ -74,6 +74,7 @@
 	price_tag = 1000 // Mythical
 
 /obj/item/tool/tape_roll/bonegel //Five stacks is too little for how often bones break. Tape-based stock system works just as fine.
+								//Now that it has a use in fracture repair, having a nigh infinite stock is too much. I'm cutting it down! -Dustan
 	name = "bone gel"
 	desc = "A gel-like calcium composite used as a surgical substitute for broken or missing bone pieces."
 	icon = 'icons/obj/stack/items.dmi'
@@ -84,8 +85,8 @@
 	matter = list(MATERIAL_PLASTIC = 20)
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 3)
 	preloaded_reagents = list("milk" = 5)
-	tool_qualities = list(QUALITY_BONE_GRAFTING = 80)
-	max_stock = 200
+	tool_qualities = list(QUALITY_BONE_GRAFTING = 50)
+	max_stock = 20
 	use_stock_cost = 1
 	price_tag = 20
 
@@ -95,8 +96,8 @@
 	icon = 'icons/obj/stack/items.dmi'
 	icon_state = "bonegel_SI"
 	matter = list(MATERIAL_PLASTIC = 30, MATERIAL_STEEL = 3)
-	tool_qualities = list(QUALITY_BONE_GRAFTING = 150)
-	max_stock = 500
+	tool_qualities = list(QUALITY_BONE_GRAFTING = 100)
+	max_stock = 40
 	preloaded_reagents = null
 	price_tag = 200
 

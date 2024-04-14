@@ -205,6 +205,23 @@
 		list(CWJ_USE_STOVE, J_MED, 40 SECONDS)
 	)
 
+/datum/cooking_with_jane/recipe/friedchikin
+	cooking_container = PAN
+	product_type = /obj/item/reagent_containers/food/snacks/friedchikin
+
+	replace_reagents = TRUE
+
+	step_builder = list(
+		list(CWJ_ADD_REAGENT, "cornoil", 3),
+		list(CWJ_USE_STOVE, J_LO, 5 SECONDS),
+		list(CWJ_ADD_ITEM, /obj/item/reagent_containers/food/snacks/chickenbreast, qmod=0.5),
+		list(CWJ_ADD_REAGENT, "flour", 5),
+		list(CWJ_ADD_REAGENT, "sodiumchloride", 1),
+		list(CWJ_USE_STOVE, J_HI, 10 SECONDS),
+		list(CWJ_ADD_PRODUCE_OPTIONAL, "chili"),
+		list(CWJ_ADD_REAGENT, "blackpepper", 1)
+	)
+
 /datum/cooking_with_jane/recipe/mashpotato
 	cooking_container = BOWL
 	product_type = /obj/item/reagent_containers/food/snacks/mashpotatoes
