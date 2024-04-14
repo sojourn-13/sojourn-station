@@ -11,7 +11,7 @@
 	max_shells = 6
 	matter = list(MATERIAL_PLASTEEL = 14, MATERIAL_WOOD = 6)
 	price_tag = 700
-	gun_parts = null
+	gun_parts = list(/obj/item/part/gun/frame/rev10 = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/magnum = 1)
 	damage_multiplier = 1.4
 	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.2)
@@ -42,6 +42,16 @@
 	. = ..()
 	update_icon()
 
+/obj/item/part/gun/frame/rev10
+	name = "Break-action frame"
+	desc = "An old school frame for outdated but cheap to make revolvers. Can be used to construct Cowboy and Frontier."
+	icon_state = "frame_revolver_hm"
+	result = /obj/item/gun/projectile/revolver/rev10
+	gripvars = list(/obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
+	barrelvars = list(/obj/item/part/gun/barrel/magnum, /obj/item/part/gun/barrel/pistol)
+	resultvars = list(/obj/item/gun/projectile/revolver/rev10, /obj/item/gun/projectile/revolver/rev10/rex10)
+
 /obj/item/gun/projectile/revolver/rev10/rex10
 	name = "\"Cowboy\" double-action revolver"
 	desc = "A relatively common gun around the frontier of the galaxy. This gun can be found worn by outlaws, criminals and small-time sheriffs or law enforcement. \
@@ -54,7 +64,7 @@
 	fire_sound = 'sound/weapons/guns/fire/9mm_revolver.ogg'
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 6)
 	price_tag = 300
-	gun_parts = null
+	gun_parts = list(/obj/item/part/gun/frame/rev10 = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/pistol = 1)
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.1)

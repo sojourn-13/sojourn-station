@@ -21,7 +21,7 @@
 	penetration_multiplier = 1
 	damage_multiplier = 1.1
 	zoom_factors = list(0.2)
-	gun_parts = null
+	gun_parts = list(/obj/item/part/gun/frame/bulldog = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	serial_type = "Sol Fed"
 

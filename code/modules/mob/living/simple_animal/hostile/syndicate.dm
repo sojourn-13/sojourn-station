@@ -227,6 +227,33 @@
 	faction = "neutral"
 	colony_friend = TRUE
 
+/mob/living/simple_animal/hostile/viscerator/psionic
+	name = "psionic swarm"
+	desc = "A cloud of bluish swirling energies flow through the air"
+	icon_state = "psionicswarm"
+	pass_flags = PASSTABLE | PASSGRILLE
+	faction = "neutral"
+	colony_friend = TRUE
+	attack_sound = 'sound/weapons/lightstab.ogg'
+	var/time_alive = 0
+
+/mob/living/simple_animal/hostile/viscerator/psionic/New()
+	..()
+	set_light(l_range = 2, l_power = 1, l_color = "#8A2BE2")
+
+/mob/living/simple_animal/hostile/viscerator/psionic/Life()
+	..()
+	if(time_alive >= 30)
+		phase_out()
+	else
+		time_alive += 1
+
+/mob/living/simple_animal/hostile/viscerator/psionic/proc/phase_out()
+		visible_message("The [src.name] fades to a speck before disappearing in a glint.")
+		playsound(src.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+		qdel(src)
+		return
+
 /mob/living/simple_animal/hostile/elitemercenary
 	name = "\improper Elite operative"
 	desc = "A vat grown elite mercenary with bionic enhancements and high quality armor. You feel like you're about to have a bad time."

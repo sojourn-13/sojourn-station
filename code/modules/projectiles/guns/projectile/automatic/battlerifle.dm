@@ -89,6 +89,7 @@
 		BURST_3_ROUND
 		)
 	serial_type = "H&S"
+	gun_parts = null //To prevent meme decon of uniques
 
 /obj/item/gun/projectile/automatic/omnirifle/scoped/fancy
 	name = "\"Osprey\" precision rifle"
