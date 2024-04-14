@@ -1582,6 +1582,6 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	color = "#298f59"
 	nerve_system_accumulations = 25
 
-/datum/reagent/medicine/ossisine/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
+/datum/reagent/medicine/ossisine/flora/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
 	M.add_chemical_effect(CE_BONE_MEND, 0.5)
