@@ -691,6 +691,7 @@ var/global/list/robot_modules = list(
 				)
 
 	tall_sprites = list(
+
 					"mekasyndi",
 					"mekasec",
 					"k4tsec",
@@ -755,12 +756,16 @@ var/global/list/robot_modules = list(
 
 /obj/item/robot_module/security/enforcement
 	sprites = list(
-					"Bloodhound" = "syndie_bloodhound",
-					"Treadhound" = "syndie_treadhound",
-					"Precision" = "syndi-medi",
-					"Heavy" = "syndi-heavy",
-					"Artillery" = "spidersyndi",
-					"Miss" = "missm_syndie",
+					"Basic" = "robotsecy",
+					"Sleek" = "sleeksecurity",
+					"Black Knight" = "securityrobot",
+					"Bloodhound" = "bloodhound",
+					"Bloodhound - Treaded" = "treadhound",
+					"Drone" = "drone-sec",
+					"Classic" = "secborg",
+					"Spider" = "spidersec",
+					"Heavy" = "heavysec",
+					"Miss" = "missm_security",
 					"Contractor RedShell" = "mekasyndi",
 					"Contractor RedShell Alt" = "mekasec",
 					"Contractor Tanker" = "k4tsec",
