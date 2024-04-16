@@ -5,7 +5,7 @@
 	The field of play is a (recommended) 4 x 5 grid, players may only play cards on their side of the field unless otherwise noted.<BR>\n\
 	At the beginning of the game, both players draw 3 cards + 1 fodder card.<BR>\n\
 	After drawing their initial cards, players may place any terrian or blocker cards anywhere on the field.<BR>\n\
-	At the beginning of each turn, a player may draw 1 fodder card or 1 card from their deck box. Players draw on their very first turn.<BR>\n\
+	At the beginning of each turn, a player may draw 3 cards, eather fodder or from their deck box, may choice to draw from both i.e 1 fodder 2 main deck. Players draw on their very first turn.<BR>\n\
 
 	Playing Cards:<BR>\n\
 	Some cards have an associated blood cost. This cost is paid by sacrificing a total amount of cards on the players field to equal the amount required. Unless otherwise stated, one card is one blood. \
