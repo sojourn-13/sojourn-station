@@ -101101,7 +101101,7 @@
 /area/nadezhda/security/tactical_blackshield)
 "uLW" = (
 /obj/machinery/power/breakerbox{
-	RCon_tag = "Crg Substation Bypass"
+	RCon_tag = "Sci Substation Bypass"
 	},
 /obj/effect/floor_decal/industrial/danger,
 /obj/effect/floor_decal/industrial/danger{
