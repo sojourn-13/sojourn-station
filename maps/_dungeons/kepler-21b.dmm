@@ -1,193 +1,198 @@
-"ad" = (/obj/structure/filingcabinet,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler)
-"aG" = (/obj/effect/floor_decal/corner_oldtile/purple/diagonal,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
-"aK" = (/obj/item/storage/deferred/crate/uniform_mardinat,/obj/item/storage/fancy/cigarettes/tannhauser,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
-"aO" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/obj/machinery/teleport/hub,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
+"ad" = (/obj/structure/filingcabinet,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler/red)
+"aG" = (/obj/effect/floor_decal/corner_oldtile/purple/diagonal,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
+"aK" = (/obj/item/storage/deferred/crate/uniform_mardinat,/obj/item/storage/fancy/cigarettes/tannhauser,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
+"aO" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/obj/machinery/teleport/hub,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
 "cb" = (/obj/structure/snowfall,/obj/item/grenade/frag/white_phosphorous,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
-"cu" = (/obj/item/clothing/mask/smokable/cigarette/cigar,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
-"cv" = (/obj/item/clothing/suit/armor/platecarrier,/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
+"cu" = (/obj/item/clothing/mask/smokable/cigarette/cigar,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
+"cv" = (/obj/item/clothing/suit/armor/platecarrier,/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
 "cL" = (/obj/structure/snowfall,/obj/structure/catwalk,/obj/item/stock_parts/smes_coil/super_io,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"dc" = (/obj/item/clothing/suit/space/void/peking,/obj/structure/closet/cabinet,/turf/simulated/floor/tiled/steel/techfloor,/area/nadezhda/outside/kepler)
-"dl" = (/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler)
+"dc" = (/obj/item/clothing/suit/space/void/peking,/obj/structure/closet/cabinet,/turf/simulated/floor/tiled/steel/techfloor,/area/nadezhda/outside/kepler/red)
+"dl" = (/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler/red)
 "do" = (/obj/structure/closet/crate/internals,/obj/structure/snowfall,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
 "dy" = (/obj/structure/snowfall,/obj/item/grenade/frag/pipebomb,/obj/structure/table/onestar,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
 "dT" = (/obj/structure/snowfall,/obj/effect/floor_decal/industrial/road/warning2{dir = 4},/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"eg" = (/obj/effect/floor_decal/corner_oldtile/purple/diagonal,/obj/rogue/teleporter{name = "unknown device"},/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
-"ei" = (/obj/effect/floor_decal/industrial/warning/fulltile,/obj/machinery/door/airlock/vault/bolted,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
-"eF" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/obj/item/handcuffs/cable,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
+"eg" = (/obj/effect/floor_decal/corner_oldtile/purple/diagonal,/obj/rogue/teleporter{name = "unknown device"},/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
+"ei" = (/obj/effect/floor_decal/industrial/warning/fulltile,/obj/machinery/door/airlock/vault/bolted,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
+"eF" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/obj/item/handcuffs/cable,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
 "eX" = (/obj/structure/snowfall,/obj/structure/catwalk,/mob/living/carbon/superior_animal/human/xiang/ronin,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"fv" = (/obj/structure/bedsheetbin,/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler)
+"fv" = (/obj/structure/bedsheetbin,/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler/red)
 "fx" = (/obj/structure/snowfall,/obj/structure/sign/warning/hazard_electrical,/obj/structure/grille,/obj/machinery/door/blast/shutters/glass,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
 "fy" = (/obj/structure/snowfall,/obj/structure/grille,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"fM" = (/obj/structure/toilet{dir = 8},/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/kepler)
-"gH" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler)
-"hd" = (/obj/item/stock_parts/micro_laser/handmade,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
+"fM" = (/obj/structure/toilet{dir = 8},/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/kepler/red)
+"gH" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler/red)
+"hd" = (/obj/item/stock_parts/micro_laser/handmade,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler/red)
 "hj" = (/obj/structure/snowfall,/obj/machinery/door/blast/regular,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
 "hx" = (/obj/item/storage/deferred/crate/cells,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"hY" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/obj/item/stack/cable_coil/random,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
-"ir" = (/obj/effect/decal/cleanable/blood/splatter,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/kepler)
+"hY" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/obj/item/stack/cable_coil/random,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
+"ir" = (/obj/effect/decal/cleanable/blood/splatter,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/kepler/red)
 "iX" = (/obj/structure/snowfall,/obj/structure/light_stick,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
-"jH" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall6"; opacity = 0},/area/nadezhda/outside/kepler)
+"jH" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall6"; opacity = 0},/area/nadezhda/outside/kepler/red)
 "lf" = (/obj/structure/snowfall,/obj/structure/sign/warning/caution/small2{name = "\improper ELECTRIC FENCE"},/turf/simulated/wall/untinted/onestar{name = "red wall"},/area/nadezhda/outside/kepler)
 "lw" = (/obj/effect/floor_decal/industrial/road/warning2,/obj/structure/snowfall,/obj/machinery/door/blast/regular{dir = 4},/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"lz" = (/obj/structure/snowfall,/obj/effect/decal/cleanable/blood/oil,/obj/effect/floor_decal/border/borderfloorblack,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"mB" = (/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
-"oi" = (/obj/machinery/door/airlock/glass_command,/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/kepler)
-"oE" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
+"lz" = (/obj/structure/snowfall,/obj/effect/decal/cleanable/blood/oil,/obj/effect/floor_decal/border/borderfloorblack,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler/red)
+"mB" = (/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
+"oi" = (/obj/machinery/door/airlock/glass_command,/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/kepler/red)
+"oE" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
 "pf" = (/obj/structure/snowfall,/obj/item/stock_parts/capacitor/super,/turf/simulated/floor/plating,/area/nadezhda/outside/kepler)
-"pH" = (/mob/living/carbon/superior_animal/human/xiang/ronin,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
-"qz" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
+"pH" = (/mob/living/carbon/superior_animal/human/xiang/ronin,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
+"qz" = (/obj/effect/decal/cleanable/blood,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler/red)
 "qK" = (/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"ru" = (/obj/item/paper_bin,/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler)
+"ru" = (/obj/item/paper_bin,/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler/red)
 "rV" = (/obj/structure/snowfall,/turf/unsimulated/mineral/cold,/area/nadezhda/outside/kepler)
 "rY" = (/obj/structure/snowfall,/obj/structure/grille,/obj/structure/sign/warning/hazard_electrical,/obj/machinery/door/blast/shutters/glass,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"sd" = (/obj/effect/floor_decal/border/borderfloorblack,/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall20"; tag = "icon-escpodwall20"},/area/nadezhda/outside/kepler)
+"sd" = (/obj/effect/floor_decal/border/borderfloorblack,/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall20"; tag = "icon-escpodwall20"},/area/nadezhda/outside/kepler/red)
 "sg" = (/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/rock{dir = 8},/area/nadezhda/outside/kepler)
-"sh" = (/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
-"sv" = (/obj/machinery/door/airlock/vault/bolted,/obj/machinery/door/blast/shutters,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler)
+"sh" = (/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
+"sv" = (/obj/machinery/door/airlock/vault/bolted,/obj/machinery/door/blast/shutters,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler/red)
 "sO" = (/obj/structure/closet/crate/freezer/rations,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
+"sT" = (/obj/structure/snowfall,/turf/unsimulated/mineral/cold,/area/nadezhda/outside/kepler/red)
 "tf" = (/obj/structure/snowfall,/obj/structure/light_stick,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
 "tK" = (/obj/structure/largecrate/hoverpod,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
 "tT" = (/obj/item/storage/deferred/crate/uniform_mardinat,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
 "tV" = (/obj/effect/floor_decal/industrial/road/warning2{dir = 4},/obj/structure/snowfall,/obj/machinery/door/blast/regular{dir = 4},/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"tZ" = (/turf/simulated/floor/tiled/steel/techfloor,/area/nadezhda/outside/kepler)
+"tZ" = (/turf/simulated/floor/tiled/steel/techfloor,/area/nadezhda/outside/kepler/red)
 "ug" = (/obj/structure/snowfall,/obj/item/grenade/frag,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
-"ur" = (/obj/machinery/door/airlock/vault/bolted,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/kepler)
-"uW" = (/obj/structure/snowfall,/obj/effect/floor_decal/rust/steel_decals_rusted2,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"vb" = (/obj/structure/bed,/obj/item/bedsheet/hop,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
-"vh" = (/obj/item/trash/cigbutt/faith,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
-"vr" = (/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
+"ur" = (/obj/machinery/door/airlock/vault/bolted,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/kepler/red)
+"uU" = (/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler/red)
+"uW" = (/obj/structure/snowfall,/obj/effect/floor_decal/rust/steel_decals_rusted2,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler/red)
+"vb" = (/obj/structure/bed,/obj/item/bedsheet/hop,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
+"vh" = (/obj/item/trash/cigbutt/faith,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
+"vr" = (/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler/red)
 "vC" = (/obj/structure/snowfall,/obj/random/spawner/encouter/coffin,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
 "vO" = (/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/rock{dir = 7},/area/nadezhda/outside/kepler)
 "wd" = (/obj/structure/snowfall,/obj/structure/low_wall/onestar,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
 "xe" = (/obj/structure/closet/crate/secure/weapon,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
 "xl" = (/obj/structure/grille,/obj/structure/sign/warning/hazard_electrical,/obj/structure/snowfall,/obj/machinery/door/blast/shutters/glass,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
 "ya" = (/obj/structure/snowfall,/obj/structure/grille,/obj/machinery/door/blast/shutters/glass,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"yj" = (/obj/structure/snowfall,/obj/effect/floor_decal/border/borderfloorblack,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
-"yl" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
+"yj" = (/obj/structure/snowfall,/obj/effect/floor_decal/border/borderfloorblack,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler/red)
+"yl" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
 "yJ" = (/obj/structure/snowfall,/obj/structure/closet/coffin/spawnercorpse,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
-"zo" = (/obj/machinery/door/window{dir = 1},/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler)
-"zt" = (/obj/item/clothing/suit/armor/platecarrier/solfed{name = "bloodied military plate carrier"; desc = "An armored vest carrying military grade trauma plates and advanced ballistic meshes. This particular set is deep black with golden IFF marks, the very same used by auxilliaries of the Solarian Federation. It also has deep stains of red coloration..."},/obj/effect/decal/cleanable/blood/splatter,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/kepler)
+"zo" = (/obj/machinery/door/window{dir = 1},/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler/red)
+"zt" = (/obj/item/clothing/suit/armor/platecarrier/solfed{name = "bloodied military plate carrier"; desc = "An armored vest carrying military grade trauma plates and advanced ballistic meshes. This particular set is deep black with golden IFF marks, the very same used by auxilliaries of the Solarian Federation. It also has deep stains of red coloration..."},/obj/effect/decal/cleanable/blood/splatter,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/kepler/red)
 "zv" = (/obj/effect/floor_decal/industrial/inputgate{name = "barrier"; desc = "A gate designed to prevent vehicles from entering."},/obj/structure/snowfall,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
-"zU" = (/obj/structure/bed,/obj/item/bedsheet/captain,/obj/item/clothing/suit/storage/snowsuit,/obj/item/clothing/mask/smokable/cigarette/fortress,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
+"zU" = (/obj/structure/bed,/obj/item/bedsheet/captain,/obj/item/clothing/suit/storage/snowsuit,/obj/item/clothing/mask/smokable/cigarette/fortress,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
 "zZ" = (/obj/structure/snowfall,/turf/simulated/wall/untinted/onestar{name = "red wall"},/area/nadezhda/outside/kepler)
 "Ab" = (/turf/unsimulated/mineral/cold,/area/nadezhda/outside/kepler)
-"AA" = (/obj/effect/floor_decal/rust/steel_decals_rusted2,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
+"AA" = (/obj/effect/floor_decal/rust/steel_decals_rusted2,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler/red)
 "AO" = (/obj/structure/closet/crate/serbcrate_gray,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"AS" = (/obj/machinery/door/airlock/glass,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/kepler)
-"AX" = (/obj/item/stock_parts/manipulator/excelsior,/obj/item/stock_parts/manipulator/excelsior,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
+"AS" = (/obj/machinery/door/airlock/glass,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/kepler/red)
+"AX" = (/obj/item/stock_parts/manipulator/excelsior,/obj/item/stock_parts/manipulator/excelsior,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler/red)
 "Bv" = (/obj/structure/snowfall,/obj/structure/catwalk,/obj/item/stock_parts/smes_coil/super_capacity,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
 "Cr" = (/obj/structure/grille,/obj/structure/sign/warning/caution/small2{name = "\improper ELECTRIC FENCE"},/obj/structure/snowfall,/obj/machinery/door/blast/shutters/glass,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"CJ" = (/obj/machinery/door/airlock/glass,/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/kepler)
+"CJ" = (/obj/machinery/door/airlock/glass,/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/kepler/red)
 "CO" = (/obj/structure/snowfall,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
 "Dl" = (/obj/structure/grille,/obj/structure/snowfall,/obj/machinery/door/blast/shutters/glass,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
 "Dm" = (/obj/structure/snowfall,/obj/structure/low_wall/onestar,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
-"Dt" = (/obj/effect/floor_decal/corner_oldtile/purple/diagonal,/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
+"Dt" = (/obj/effect/floor_decal/corner_oldtile/purple/diagonal,/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
 "Dv" = (/obj/structure/sign/warning/caution/small2{name = "\improper ELECTRIC FENCE"},/obj/structure/snowfall,/turf/simulated/wall/untinted/onestar{name = "red wall"},/area/nadezhda/outside/kepler)
-"Dx" = (/obj/structure/snowfall,/obj/effect/floor_decal/border/borderfloorblack,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"Er" = (/obj/effect/floor_decal/rust/mono_rusted3,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"Ex" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall19"; tag = "icon-escpodwall19"},/area/nadezhda/outside/kepler)
+"Dx" = (/obj/structure/snowfall,/obj/effect/floor_decal/border/borderfloorblack,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler/red)
+"Er" = (/obj/effect/floor_decal/rust/mono_rusted3,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler/red)
+"Ex" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall19"; tag = "icon-escpodwall19"},/area/nadezhda/outside/kepler/red)
 "ER" = (/obj/structure/snowfall,/obj/structure/sign/warning/mail_delivery,/turf/simulated/wall/untinted/onestar{name = "red wall"},/area/nadezhda/outside/kepler)
-"EU" = (/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler)
-"EY" = (/obj/effect/floor_decal/rust/mono_rusted3,/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall29"; tag = "icon-escpodwall29"; dir = 6},/area/nadezhda/outside/kepler)
-"EZ" = (/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"Fn" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/obj/machinery/teleport/station,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
-"Fq" = (/turf/simulated/wall/untinted/onestar{name = "red wall"},/area/nadezhda/outside/kepler)
+"EU" = (/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler/red)
+"EY" = (/obj/effect/floor_decal/rust/mono_rusted3,/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall29"; tag = "icon-escpodwall29"; dir = 6},/area/nadezhda/outside/kepler/red)
+"EZ" = (/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler/red)
+"Fn" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/obj/machinery/teleport/station,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
+"Fq" = (/turf/simulated/wall/untinted/onestar{name = "red wall"},/area/nadezhda/outside/kepler/red)
 "FA" = (/obj/machinery/floodlight,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"FB" = (/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler)
-"FC" = (/obj/effect/decal/cleanable/blood/oil/streak,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
+"FB" = (/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler/red)
+"FC" = (/obj/effect/decal/cleanable/blood/oil/streak,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
 "FL" = (/obj/structure/snowfall,/obj/structure/closet/coffin,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
-"Gj" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall17"; tag = "icon-escpodwall17"},/area/nadezhda/outside/kepler)
-"Gz" = (/mob/living/carbon/superior_animal/human/xiang/ronin,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler)
+"Gj" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall17"; tag = "icon-escpodwall17"},/area/nadezhda/outside/kepler/red)
+"Gz" = (/mob/living/carbon/superior_animal/human/xiang/ronin,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler/red)
 "GK" = (/obj/structure/snowfall,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"Hj" = (/obj/machinery/door/airlock/multi_tile/glass{dir = 1},/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
+"Hj" = (/obj/machinery/door/airlock/multi_tile/glass{dir = 1},/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
 "Hr" = (/obj/effect/floor_decal/industrial/road/warning4,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
 "Hz" = (/obj/item/storage/deferred/crate/sidearm,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
+"HH" = (/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler/red)
 "HS" = (/obj/structure/snowfall,/obj/structure/catwalk,/obj/item/stock_parts/subspace/ansible,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
 "Ib" = (/obj/structure/snowfall,/obj/item/stock_parts/console_screen,/obj/item/stock_parts/console_screen,/turf/simulated/floor/plating,/area/nadezhda/outside/kepler)
-"Ir" = (/obj/structure/bed/chair/custom/onestar,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
-"IX" = (/obj/effect/floor_decal/corner_oldtile/purple/diagonal,/obj/effect/decal/cleanable/blood/oil/streak,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
+"Ir" = (/obj/structure/bed/chair/custom/onestar,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
+"IX" = (/obj/effect/floor_decal/corner_oldtile/purple/diagonal,/obj/effect/decal/cleanable/blood/oil/streak,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
 "Jc" = (/obj/structure/grille,/obj/structure/sign/warning/hazard_electrical{dir = 6},/obj/structure/snowfall,/obj/machinery/door/blast/shutters/glass,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"Jj" = (/obj/structure/low_wall/onestar,/obj/structure/window/reinforced/plasma/full,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler)
-"Jr" = (/obj/structure/snowfall,/obj/item/clothing/suit/space/void/ronin,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
-"JF" = (/obj/effect/decal/cleanable/blood/oil,/obj/effect/floor_decal/rust/mono_rusted3,/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall29"; tag = "icon-escpodwall29"; dir = 6},/area/nadezhda/outside/kepler)
-"JY" = (/mob/living/carbon/superior_animal/human/xiang/ronin,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
-"Ka" = (/obj/item/tool/hammer,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/kepler)
+"Jj" = (/obj/structure/low_wall/onestar,/obj/structure/window/reinforced/plasma/full,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler/red)
+"Jr" = (/obj/structure/snowfall,/obj/item/clothing/suit/space/void/ronin,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler/red)
+"JF" = (/obj/effect/decal/cleanable/blood/oil,/obj/effect/floor_decal/rust/mono_rusted3,/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall29"; tag = "icon-escpodwall29"; dir = 6},/area/nadezhda/outside/kepler/red)
+"JY" = (/mob/living/carbon/superior_animal/human/xiang/ronin,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
+"Ka" = (/obj/item/tool/hammer,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/kepler/red)
 "Kb" = (/obj/structure/snowfall,/obj/item/grenade/flashbang,/obj/item/grenade/frag/white_phosphorous,/obj/item/grenade/frag/white_phosphorous,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
 "Kk" = (/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/rock{dir = 3},/area/nadezhda/outside/kepler)
 "KQ" = (/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/rock{dir = 6},/area/nadezhda/outside/kepler)
-"KX" = (/obj/structure/sign/warning/emergence{desc = "A large holoscreen. It is stuck transmitting (or receiving) what seems to be an emergency broadcast. The language is unknown, but you do recognise a SolFed flag in one of the frames."; pixel_y = 32},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler)
+"KX" = (/obj/structure/sign/warning/emergence{desc = "A large holoscreen. It is stuck transmitting (or receiving) what seems to be an emergency broadcast. The language is unknown, but you do recognise a SolFed flag in one of the frames."; pixel_y = 32},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/red_white_edges,/area/nadezhda/outside/kepler/red)
 "Ln" = (/obj/structure/largecrate/animal/pig,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"Lt" = (/obj/item/clothing/suit/storage/snowsuit,/obj/structure/closet/cabinet,/turf/simulated/floor/tiled/steel/techfloor,/area/nadezhda/outside/kepler)
+"Lt" = (/obj/item/clothing/suit/storage/snowsuit,/obj/structure/closet/cabinet,/turf/simulated/floor/tiled/steel/techfloor,/area/nadezhda/outside/kepler/red)
 "Lw" = (/obj/structure/snowfall,/obj/structure/sign/warning/smoking/small,/turf/simulated/wall/untinted/onestar{name = "red wall"},/area/nadezhda/outside/kepler)
 "LA" = (/obj/structure/snowfall,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
-"LO" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/obj/item/stack/material/steel/random,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
-"LP" = (/obj/item/stock_parts/matter_bin/adv,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
+"LO" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/obj/item/stack/material/steel/random,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
+"LP" = (/obj/item/stock_parts/matter_bin/adv,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler/red)
 "LS" = (/obj/structure/snowfall,/mob/living/carbon/superior_animal/human/xiang/ronin,/turf/simulated/floor/plating,/area/nadezhda/outside/kepler)
-"Ma" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall12"; tag = "icon-escpodwall12"},/area/nadezhda/outside/kepler)
-"Mc" = (/obj/item/stock_parts/console_screen,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
+"Ma" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall12"; tag = "icon-escpodwall12"},/area/nadezhda/outside/kepler/red)
+"Mc" = (/obj/item/stock_parts/console_screen,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler/red)
 "MA" = (/obj/structure/largecrate,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"MC" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
-"MD" = (/obj/structure/snowfall,/obj/item/grenade/explosive/artileria,/obj/item/grenade/explosive/artileria,/obj/item/rig_module/grenade_launcher,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
+"MC" = (/obj/effect/floor_decal/corner_oldtile/white/diagonal,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
+"MD" = (/obj/structure/snowfall,/obj/item/grenade/explosive/artileria,/obj/item/grenade/explosive/artileria,/obj/item/rig_module/grenade_launcher,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler/red)
 "ML" = (/obj/structure/snowfall,/obj/structure/light_stick/red,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
 "MM" = (/obj/structure/snowfall,/obj/machinery/door/blast/regular{dir = 4},/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
-"MV" = (/obj/item/trash/cigbutt/brouzouf,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
-"MW" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler)
-"Og" = (/obj/structure/snowfall,/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall23"; opacity = 0},/area/nadezhda/outside/kepler)
-"Oj" = (/obj/structure/bed,/obj/item/bedsheet/ce,/obj/item/clothing/suit/storage/snowsuit,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
+"MV" = (/obj/item/trash/cigbutt/brouzouf,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
+"MW" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler/red)
+"Og" = (/obj/structure/snowfall,/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall23"; opacity = 0},/area/nadezhda/outside/kepler/red)
+"Oj" = (/obj/structure/bed,/obj/item/bedsheet/ce,/obj/item/clothing/suit/storage/snowsuit,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
 "Ow" = (/obj/item/storage/deferred/crate/tools,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
 "OB" = (/obj/structure/snowfall,/obj/effect/floor_decal/industrial/inputgate{name = "barrier"; desc = "A gate designed to prevent vehicles from entering."},/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"ON" = (/obj/structure/low_wall/onestar,/obj/machinery/door/blast/shutters/glass,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/kepler)
+"ON" = (/obj/structure/low_wall/onestar,/obj/machinery/door/blast/shutters/glass,/turf/simulated/floor/tiled/steel,/area/nadezhda/outside/kepler/red)
 "OR" = (/obj/structure/snowfall,/obj/structure/light_stick/red,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"OV" = (/obj/item/stock_parts/micro_laser/one_star,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
+"OV" = (/obj/item/stock_parts/micro_laser/one_star,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler/red)
 "Ps" = (/obj/structure/low_wall/onestar,/obj/structure/snowfall,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
-"PB" = (/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/kepler)
+"PB" = (/turf/simulated/floor/tiled/cafe,/area/nadezhda/outside/kepler/red)
+"PE" = (/turf/unsimulated/mineral/cold,/area/nadezhda/outside/kepler/red)
 "Qq" = (/obj/item/storage/deferred/crate/alcohol,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"QA" = (/obj/item/board,/obj/item/grenade/explosive/nt,/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
-"QL" = (/obj/structure/low_wall/onestar,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/kepler)
-"QY" = (/obj/item/stock_parts/micro_laser/excelsior,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
+"QA" = (/obj/item/board,/obj/item/grenade/explosive/nt,/obj/structure/table/onestar,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
+"QL" = (/obj/structure/low_wall/onestar,/turf/simulated/floor/tiled/techmaint_perforated,/area/nadezhda/outside/kepler/red)
+"QY" = (/obj/item/stock_parts/micro_laser/excelsior,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler/red)
 "Ry" = (/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
-"RG" = (/obj/item/device/binoculars,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler)
-"Sg" = (/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
-"SA" = (/obj/item/clothing/suit/space/void/peking,/obj/item/clothing/head/helmet/space/void/peking,/turf/simulated/floor/tiled/steel/techfloor,/area/nadezhda/outside/kepler)
-"SF" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall5"; opacity = 0},/area/nadezhda/outside/kepler)
+"RG" = (/obj/item/device/binoculars,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler/red)
+"Sg" = (/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
+"SA" = (/obj/item/clothing/suit/space/void/peking,/obj/item/clothing/head/helmet/space/void/peking,/turf/simulated/floor/tiled/steel/techfloor,/area/nadezhda/outside/kepler/red)
+"SF" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall5"; opacity = 0},/area/nadezhda/outside/kepler/red)
 "Tb" = (/obj/structure/sign/warning/armory/small,/obj/structure/snowfall,/turf/simulated/wall/untinted/onestar{name = "red wall"},/area/nadezhda/outside/kepler)
 "Th" = (/obj/structure/snowfall,/obj/item/grenade/heatwave,/obj/item/grenade/chem_grenade/metalfoam,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
-"Ti" = (/turf/simulated/shuttle/wall/escpod{dir = 4; icon_state = "escpodwall14"},/area/nadezhda/outside/kepler)
+"Ti" = (/turf/simulated/shuttle/wall/escpod{dir = 4; icon_state = "escpodwall14"},/area/nadezhda/outside/kepler/red)
 "Tn" = (/obj/structure/snowfall,/obj/machinery/power/solar/fake,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"TG" = (/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
+"TG" = (/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
 "TN" = (/obj/structure/low_wall/onestar,/obj/structure/snowfall,/turf/space,/area/nadezhda/outside/kepler)
 "TR" = (/obj/structure/snowfall,/obj/item/stock_parts/capacitor/one_star,/turf/simulated/floor/plating,/area/nadezhda/outside/kepler)
 "Ub" = (/obj/item/device/spaceflare,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"Ur" = (/obj/item/storage/deferred/crate/uniform_mardinat,/obj/item/storage/fancy/cigarettes/frozen,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
+"Ur" = (/obj/item/storage/deferred/crate/uniform_mardinat,/obj/item/storage/fancy/cigarettes/frozen,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
 "Ux" = (/obj/structure/snowfall,/turf/simulated/floor/plating,/area/nadezhda/outside/kepler)
-"Uz" = (/obj/item/stock_parts/scanning_module/adv,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler)
-"UO" = (/obj/machinery/door/airlock/glass,/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/steel/techfloor,/area/nadezhda/outside/kepler)
-"Vb" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall2"; tag = "icon-escpodwall2"},/area/nadezhda/outside/kepler)
-"WD" = (/obj/machinery/door/airlock/glass,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
-"Xl" = (/obj/effect/floor_decal/corner_oldtile/purple/diagonal,/obj/item/stack/cable_coil/blue,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
-"Xx" = (/obj/item/circuitboard/teleporter,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler)
+"Uz" = (/obj/item/stock_parts/scanning_module/adv,/turf/simulated/floor/fixed/shale/windswept,/area/nadezhda/outside/kepler/red)
+"UO" = (/obj/machinery/door/airlock/glass,/obj/effect/floor_decal/industrial/warning/fulltile,/turf/simulated/floor/tiled/steel/techfloor,/area/nadezhda/outside/kepler/red)
+"UZ" = (/obj/structure/snowfall,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler/red)
+"Vb" = (/turf/simulated/shuttle/wall/escpod{icon_state = "escpodwall2"; tag = "icon-escpodwall2"},/area/nadezhda/outside/kepler/red)
+"WD" = (/obj/machinery/door/airlock/glass,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
+"Xl" = (/obj/effect/floor_decal/corner_oldtile/purple/diagonal,/obj/item/stack/cable_coil/blue,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
+"Xx" = (/obj/item/circuitboard/teleporter,/turf/simulated/floor/tiled/derelict/white_red_edges,/area/nadezhda/outside/kepler/red)
 "XA" = (/obj/effect/floor_decal/industrial/inputgate{name = "barrier"; desc = "A gate designed to prevent vehicles from entering."},/obj/structure/snowfall,/obj/machinery/door/blast/regular{dir = 4},/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
 "XK" = (/obj/structure/snowfall,/obj/structure/catwalk,/obj/item/stock_parts/smes_coil/weak,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
-"XY" = (/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler)
+"XY" = (/obj/effect/decal/cleanable/blood/oil,/turf/simulated/floor/plating/under,/area/nadezhda/outside/kepler/red)
 "Yh" = (/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/rock{dir = 5},/area/nadezhda/outside/kepler)
 "Yi" = (/obj/structure/snowfall,/obj/structure/light_stick/red,/turf/simulated/floor/asteroid/shale,/area/nadezhda/outside/kepler)
 "Ys" = (/obj/effect/floor_decal/industrial/inputgate{name = "barrier"; desc = "A gate designed to prevent vehicles from entering."},/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
 "Yt" = (/obj/structure/snowfall,/obj/item/stock_parts/capacitor/excelsior,/turf/simulated/floor/plating,/area/nadezhda/outside/kepler)
-"YG" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
+"YG" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
 "YI" = (/obj/item/gun/projectile/boltgun/flare_gun,/obj/structure/snowfall,/turf/simulated/floor/fixed/shale/dark,/area/nadezhda/outside/kepler)
-"YT" = (/mob/living/carbon/superior_animal/human/xiang/ronin,/obj/effect/floor_decal/corner_oldtile/purple/diagonal,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler)
-"ZS" = (/obj/structure/table/onestar,/obj/item/reagent_containers/food/snacks/boiledspagetti,/obj/item/storage/fancy/cigar,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler)
+"YT" = (/mob/living/carbon/superior_animal/human/xiang/ronin,/obj/effect/floor_decal/corner_oldtile/purple/diagonal,/turf/simulated/floor/tiled/white,/area/nadezhda/outside/kepler/red)
+"ZS" = (/obj/structure/table/onestar,/obj/item/reagent_containers/food/snacks/boiledspagetti,/obj/item/storage/fancy/cigar,/turf/simulated/floor/tiled/derelict/white_small_edges,/area/nadezhda/outside/kepler/red)
 
 (1,1,1) = {"
-AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbOVhdQYAbAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyAbAbAbAbAbRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbUzUzAbAXMcAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbvrvrvrvrvrvrvrAbAbAbAbAbAbAbAbvrAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyLALALALALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyvrAbAbvrvrvrvrvrvrvrvrvrvrvrAbAbAbAbAbAbvrAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyLALALALALALALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyvrvrvrvrvrvrvrAbAbAbvrvrvrvrAbAbAbAbvrLPAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbRyRyRyRyRyAbAbAbRyRyRyRyRyRyRyLALALARyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyMLRyRyRyRyvrvrvrAbAbAbAbAbAbAbAbvrvrvrvrAbvrvrAbAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbRyRyRyRyRyRyAbAbAbRyRyRyRyRyRyLALARyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbvrAbvrvrvrAbAbAbAbAbAbAbAbAbAbAbAbAb
+AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPE
+AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPE
+AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEOVhdQYPEPEPEPEPEPEPEPEPEPEPEPE
+AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyAbAbAbAbAbRyRyRyRyRyAbPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEUzUzPEAXMcPEPEPEPEPEPEPEPEPEPEPE
+AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyPEPEPEPEPEPEvrvrvrvrvrvrvrPEPEPEPEPEPEPEPEvrPEPEPEPEPEPEPEPEPEPEPE
+AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyLALALALALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyHHvrPEPEvrvrvrvrvrvrvrvrvrvrvrPEPEPEPEPEPEvrPEPEPEPEPEPEPEPEPEPEPE
+AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyLALALALALALALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyHHHHvrvrvrvrvrvrvrPEPEPEvrvrvrvrPEPEPEPEvrLPPEPEPEPEPEPEPEPEPEPEPE
+AbAbAbAbAbAbAbAbRyRyRyRyRyAbAbAbRyRyRyRyRyRyRyLALALARyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyMLRyHHHHHHvrvrvrPEPEPEPEPEPEPEPEvrvrvrvrPEvrvrPEPEPEPEPEPEPEPEPEPEPEPE
+AbAbAbAbAbAbAbAbRyRyRyRyRyRyAbAbAbRyRyRyRyRyRyLALARyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyPEPEPEPEPEPEPEPEPEPEPEPEPEPEPEvrPEvrvrvrPEPEPEPEPEPEPEPEPEPEPEPEPE
 AbAbAbAbAbAbAbRyRyRyRyRyRyRyAbAbAbRyRyRyRyRyRyLALARyRyRyRyRyRyRyLALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
 AbAbAbAbAbAbAbRyRyRyRyRyRyRyAbAbAbRyRyRyRyRyLALALARyRyRyRyRyRyRyRyLALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyMLRyRyRyLALALALARyRyRyRyRyRyRyAbAbAbAbAbAbAbAbRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
 AbAbAbAbAbAbAbRyRyRyRyRyRyRyRyAbAbRyRyRyRyRyLALALARyRyRyRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyRyLARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAb
@@ -202,26 +207,26 @@ AbAbAbAbAbAbAbAbAbRyRyAbAbRyRyRyLALALALALALALARyRyRyLALALALALALALALALALALALALALA
 AbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyLALALALALALALALARyRyRyLALALALALALALALALALALALALALALALALALARyRyLALALALALALALALALALALALALALALALALALALALALALALALARyRyRyRyRyRyRyRyRyRyLALALALALARyLALALARyRyRyRyRyRyAbAbAbAb
 AbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyLALALALALALALALARyRyRyRyRyLALALALALALALALALALALALALALALALARyRyRyLALALALALALARyLALALALALALALARyRyRyRyLALALALALALALARyRyRyRyRyRyLALALALARyRyRyRyLALARyRyRyRyRyRyAbAbAbAb
 AbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyLALALALALALALALALALALALALARyRyRyRyLALALALALALALALALALALALARyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyLALALARyRyRyLALALALALALARyRyRyRyLALALARyRyRyRyRyRyLARyRyRyRyRyRyAbAbAbAb
-AbAbAbAbAbJrMDRyAbRyRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALALALAYhLALALALALALALALAYiLARyRyMLRyRyLALALALALALALALALALALALALALALARyRyRyRyRyRyLALARyRyRyRyLALALARyRyRyRyRyRyLALARyRyRyRyRyAbAbAbAb
-AbAbAbAbRyRyAbAbAbRyRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALARyRyRyRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyLARyRyRyRyRyAbAbAbAb
-AbAbAbRyRyAbAbAbAbRyRyRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALARyRyRyRyRyRyLALALARyRyLARyRyRyRyLALARyRyRyRyRyAbAbAbAb
-AbAbRyRyAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALALALALALALALADmLALALADmLALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALARyRyLARyRyRyRyLARyRyRyRyRyRyAbAbAbAb
-AbAbRyRyAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyLARyRyRyRyRyLALALALALALALALALALALALAzZrYyalfyayazZyayalfMMMMMMlfyayazZyayalfyayazZyarYzZLALALALALALALAzZUxIbLSUxTRpfYtzZLALALARyRyRyLALALALARyRyRyRyRyRyRyAbAbAbAb
-AbAbRyRyAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyLALALALARyRyRyLALALALALALALALALAYhLAyaLALALALALALALALAfxqKqKqKrYLALALALALALALALALALALAyaLALALALALALALAfyTnGKGKTnGKGKTnfyLALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAb
-AbAbAbRyRyAbAbAbAbRyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyLALALALALALALALALALAyaLALALALALALALALAyaqKqKqKyaLALALALALALALALALALALAyaLALALALALALALAfyTnGKGKTnGKeXTnfyLALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAb
-AbAbAbRyRyRyAbAbAbRyRyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyLALALALALALALALAFqFqFqFqFqFqFqFqFqFqFqHrzvHrzZLAFqFqFqFqFqThcbLALAKbzZLALALALALALALAzZTnGKcLqKGKGKTnzZLARyLALARyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAb
-AbAbAbAbRyRyRyAbAbAbRyRyRyRyRyRyRyRyRyRyRyLALALALARyLARyLALALALALALALALAFqLOFnaOJjXxJjYTaGaGFqqKqKqKPsLAFqirztfMFqdyLAugLAdyzZLALALALALALALAfyCOGKGKTnGKBvTnfyLARyLALARyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
-AbAbAbAbAbRyRyAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyLALALALARyRyRyLALALALALALALAFqMCeFLOJjEUJjIXegaGFqqKqKqKPsLAFqPBKaFqFqFqFqFqFqFqFqLALALALALALALAfyTnGKGKTnGKGKTnfyLARyLALARyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
-AbAbAbAbAbRyRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALARyLALALALALALALAFqMCylhYJjMWJjXlaGDtFqqKwdLAPsLAFqASFqFqaKUrFqOjvbFqFqLALALALALALALAzZTnGKGKTnXKGKTnzZLALARyRyLARyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
-AbAbAbAbAbRyRyRyAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLARyRyLALALALALALALAFqFBJjJjFqsvFqJjJjFBFqqKwdLAzZPsFqshoEoEoEoEFqshoEFqFqLALALALALALALAfyTnGKeXTnHSGKTnfyLALALALALARyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
-AbAbAbAbAbRyRyRyRyAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyLALALALALALALAFqmBmBJYmBmBSgYGmBYGurqKqKqKLALAFqshMVvhpHoETGshoEshONLALALALALALALAfyTnGKGKTnGKeXTnfyLALARyLALALARyRyRyRyRyRyRyRyRyAbAbAbAbAbAb
-AbAbAbAbAbRyRyRyRyAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLARyLALALALALALALAFqJYYGYGFCmBHjYGFCYGurqKqKqKLALAFqWDFqFqUOFqFqFqeiFqFqLALALALAKkLALAzZzZqKqKUxzZfyfyzZLALARyRyLALALARyRyRyRyRyRyRyRyAbAbAbAbAbAb
-AbAbAbAbAbAbRyRyRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLARyRyLALALALALALAFqdldlFBrufvFqFqFqFqFqHrYsHrzZLAFqoEIrQLtZdcLtFqoEQAONLALALALALALALALAqKqKLALALALALALALALARyRyRyLALALALARyRyRyRyRyAbAbAbAbAbAbAb
-AbAbAbAbAbRyRyRyRyRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyLARyRyLALALALALALAFqFqFqFqFqFqFqFqLALAPsLAqKqKPsLAFqZScvQLtZtZSAFqcuzUFqLALALAiXLALALAqKqKqKLALALALALALALALARyRyRyRyLALALALARyRyRyRyAbAbAbAbAbAbAb
-AbAbAbAbAbRyRyRyRyRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyLARyRyRyLALALALALAFqFqFqRGEUFqFqFqLALALAqKqKqKLALAFqFqFqFqCJFqFqFqFqFqFqLALAqKqKqKqKqKqKLALALALALAvOLALALALARyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAb
-AbAbAbAbAbRyRyRyRyRyRyAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyRyRyLALALALAFqEUEUEUGzMWEUFqLALAqKFAqKqKqKLALALALALAqKLALALALALAzZLAqKqKqKqKqKLALALALAvOLALALALALALARyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAb
-AbAbAbAbAbRyRyRyRyRyRyAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyRyRyLALALALAFqMWFBdldlgHEUFqqKqKqKqKqKqKqKqKqKqKqKqKqKLAqKLALAqKhjqKqKqKqKLALALALALALALALALALALALALARyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAb
-AbAbAbAbRyRyRyRyRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALARyRyRyLALALAONEUFBFBFBgHMWFqqKqKqKqKqKqKqKqKqKqKqKOwQqqKqKLAqKqKhjLALALALALALALALALARyRyLALALALALALARyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAb
+PEPEPEPEPEJrMDHHPERyRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALALALAYhLALALALALALALALAYiLARyRyMLRyRyLALALALALALALALALALALALALALALARyRyRyRyRyRyLALARyRyRyRyLALALARyRyRyRyRyRyLALARyRyRyRyRyAbAbAbAb
+PEPEPEPEHHHHPEPEPERyRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALARyRyRyRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyLARyRyRyRyRyAbAbAbAb
+PEPEPEHHHHPEPEPEPERyRyRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALARyRyRyRyRyRyLALALARyRyLARyRyRyRyLALARyRyRyRyRyAbAbAbAb
+PEPEHHHHPEPEPEPEPERyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALALALALALALALADmLALALADmLALALALALALALALALALALALALALALALALALALALALALALALALALALALALALALARyRyLARyRyRyRyLARyRyRyRyRyRyAbAbAbAb
+PEPEHHHHPEPEPEPEPERyRyRyRyRyRyRyRyRyRyLARyRyRyRyRyLALALALALALALALALALALALAzZrYyalfyayazZyayalfMMMMMMlfyayazZyayalfyayazZyarYzZLALALALALALALAzZUxIbLSUxTRpfYtzZLALALARyRyRyLALALALARyRyRyRyRyRyRyAbAbAbAb
+PEPEHHHHPEPEPEPEPERyRyRyRyRyRyRyRyRyRyLALALALARyRyRyLALALALALALALALALAYhLAyaLALALALALALALALAfxqKqKqKrYLALALALALALALALALALALAyaLALALALALALALAfyTnGKGKTnGKGKTnfyLALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAb
+PEPEPEHHHHPEPEPEPERyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyLALALALALALALALALALAyaLALALALALALALALAyaqKqKqKyaLALALALALALALALALALALAyaLALALALALALALAfyTnGKGKTnGKeXTnfyLALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAb
+PEPEPEHHHHHHPEPEPERyRyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyLALALALALALALALAFqFqFqFqFqFqFqFqFqFqFqHrzvHrzZLAFqFqFqFqFqThcbLALAKbzZLALALALALALALAzZTnGKcLqKGKGKTnzZLARyLALARyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAb
+PEPEPEPEHHHHHHPEPEAbRyRyRyRyRyRyRyRyRyRyRyLALALALARyLARyLALALALALALALALAFqLOFnaOJjXxJjYTaGaGFqqKqKqKPsLAFqirztfMFqdyLAugLAdyzZLALALALALALALAfyCOGKGKTnGKBvTnfyLARyLALARyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
+PEPEPEPEPEHHHHPEPEAbRyRyRyRyRyRyRyRyRyRyRyRyLALALALARyRyRyLALALALALALALAFqMCeFLOJjEUJjIXegaGFqqKqKqKPsLAFqPBKaFqFqFqFqFqFqFqFqLALALALALALALAfyTnGKGKTnGKGKTnfyLARyLALARyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
+PEPEPEPEPEHHHHHHPEAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALARyLALALALALALALAFqMCylhYJjMWJjXlaGDtFqqKwdLAPsLAFqASFqFqaKUrFqOjvbFqFqLALALALALALALAzZTnGKGKTnXKGKTnzZLALARyRyLARyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
+PEPEPEPEPEHHHHHHPEPEPERyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLARyRyLALALALALALALAFqFBJjJjFqsvFqJjJjFBFqqKwdLAzZPsFqshoEoEoEoEFqshoEFqFqLALALALALALALAfyTnGKeXTnHSGKTnfyLALALALALARyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
+PEPEPEPEPEHHHHHHHHPEPEAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyLALALALALALALAFqmBmBJYmBmBSgYGmBYGurqKqKqKLALAFqshMVvhpHoETGshoEshONLALALALALALALAfyTnGKGKTnGKeXTnfyLALARyLALALARyRyRyRyRyRyRyRyRyAbAbAbAbAbAb
+PEPEPEPEPEHHHHHHHHPEPEAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLARyLALALALALALALAFqJYYGYGFCmBHjYGFCYGurqKqKqKLALAFqWDFqFqUOFqFqFqeiFqFqLALALALAKkLALAzZzZqKqKUxzZfyfyzZLALARyRyLALALARyRyRyRyRyRyRyRyAbAbAbAbAbAb
+PEPEPEPEPEPEHHHHHHHHPEAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLARyRyLALALALALALAFqdldlFBrufvFqFqFqFqFqHrYsHrzZLAFqoEIrQLtZdcLtFqoEQAONLALALALALALALALAqKqKLALALALALALALALARyRyRyLALALALARyRyRyRyRyAbAbAbAbAbAbAb
+PEPEPEPEPEHHHHHHHHHHHHAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyLARyRyLALALALALALAFqFqFqFqFqFqFqFqLALAPsLAqKqKPsLAFqZScvQLtZtZSAFqcuzUFqLALALAiXLALALAqKqKqKLALALALALALALALARyRyRyRyLALALALARyRyRyRyAbAbAbAbAbAbAb
+PEPEPEPEPEHHHHHHHHHHHHAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyLARyRyRyLALALALALAFqFqFqRGEUFqFqFqLALALAqKqKqKLALAFqFqFqFqCJFqFqFqFqFqFqLALAqKqKqKqKqKqKLALALALALAvOLALALALARyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAb
+PEPEPEPEPEHHHHHHHHHHHHAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyRyRyLALALALAFqEUEUEUGzMWEUFqLALAqKFAqKqKqKLALALALALAqKLALALALALAzZLAqKqKqKqKqKLALALALAvOLALALALALALARyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAb
+PEPEPEPEPEHHHHHHHHHHHHAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyRyRyLALALALAFqMWFBdldlgHEUFqqKqKqKqKqKqKqKqKqKqKqKqKqKLAqKLALAqKhjqKqKqKqKLALALALALALALALALALALALALARyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAb
+PEPEPEPEHHHHHHHHHHHHPEAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALARyRyRyLALALAONEUFBFBFBgHMWFqqKqKqKqKqKqKqKqKqKqKqKOwQqqKqKLAqKqKhjLALALALALALALALALARyRyLALALALALALARyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAb
 AbAbAbAbRyRyRyRyAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALARyRyRyLALAONzoFqFqFqFqzoFqqKqKLwdTOBdTLwhxqKYIqKTbERxeqKtKqKLAzZLALALALAsgLALALALARyRyRyRyLALALALARyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAb
 AbAbAbAbRyRyRyAbAbRyLALARyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALALARyRyLALAONEUgHgHKXFBEUFqqKqKPsqKLAqKPsqKqKqKqKAOLnqKqKqKHzLADlLALAYhvOLALALALALARyRyLARyRyLALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAb
 AbAbAbAbRyRyRyRyRyRyyJyJLALARyRyRyRyRyRyRyRyRyRyRyRyLALALALALALALARyRyRyFqEUFBdldlFBMWoiqKqKPsqKqKqKPstTqKqKqKqKqKqKqKqKqKqKDlLALALALALALALALALALARyLALARyRyLARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAb
@@ -257,26 +262,26 @@ AbAbAbAbRyRyRyRyRyRyRyLARyRyRyRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALA
 AbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALARyRyLALALARyRyLALALALARyLALALAAbRyRyRyLALALALALALALALALALALALALALALALALAYhLALALALALALALALALALALALALARyRyRyAbAbRyRyAbAbAbAb
 AbAbAbAbAbRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALALALALALALALALALARyRyRyRyRyRyLARyRyLALALALARyLALALALARyRyRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALALALALALALALARyRyRyRyAbAbRyRyAbAbAbAb
 AbAbAbAbAbRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALALALALALALALARyRyRyRyRyRyRyRyRyRyLALALALALALALAAbLARyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALALALALALALALALALARyRyRyRyRyAbRyRyRyAbAbAbAb
-AbAbAbAbAbRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALALALALALALARyRyRyRyRyRyRyRyRyRyRyLAYhLALALALAAbRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALALALALALALALALARyRyRyRyRyRyRyRyRyRyAbAbAbAb
-AbAbAbAbAbRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALALALARyRyRyRyRyRyRyRyRyRyRyRyLALALALALALALARyRyRyRyRyRyRyRyRyLALALALALALARyRyRyRyRyRyRyRyRyLALALALALALALARyRyRyRyRyRyRyRyRyRyRyAbAbAbAb
-AbAbAbAbRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALALARyRyRyRyRyRyRyRyRyRyRyRyLAYiLALALARyRyRyRyRyRyRyRyRyRyRyLARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAb
-AbAbAbAbRyRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALARyRyRyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
-AbAbAbAbRyRyRyAbAbRyRyRyAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
-AbAbAbAbRyRyRyAbAbAbRyRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyLALALARyRyqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
-AbAbAbAbRyRyRyAbAbAbAbRyRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyqKqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
-AbAbAbRyRyRyAbAbAbAbAbRyRyRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALARyRyRyRyRyRyRyRyRyRyqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAb
-AbAbAbRyRyRyAbAbAbAbAbAbAbAbRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALARyRyRyRyRyRyRyRyqKRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAb
-AbAbRyRyRyAbAbAbAbAbAbAbAbAbAbRyRyAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALARyRyRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAb
-AbAbRyRyAbAbAbAbAbAbAbAbAbAbAbAbRyRyAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyqKRyRyRyRyRyLARyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAb
-AbRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyqKqKRyLALALALARyRyRyRyRyRyRyRyRyRyRyAbRyRyRyAbAbAbAbAbAbAbAbAbAbAbRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
-AbRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyqKqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
-AbRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyqKqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
-AbAbRyRyAbAbAbAbRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyqKRyqKqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyAbAbAb
-AbAbRyRyAbAbAbRyRyAbAbRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyrVrVRyqKqKqKqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbRyRyRyRyRyRyRyAbAbRyRyRyRyAbAbAbAbAbAbAbAbAb
-AbAbAbRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbExsdOgDxlzyjrVrVRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbGjqzEZuWCOrVrVrVRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbTiEYErJFAAAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbMaXYErXYAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbVbSFjHAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
-AbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
+PEPEPEPEPEHHPEAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALALALALALALARyRyRyRyRyRyRyRyRyRyRyLAYhLALALALAAbRyRyRyRyRyRyRyRyLALALALALALALALALALALALALALALALALALALALALALALALARyRyRyRyRyRyRyRyRyRyAbAbAbAb
+PEPEPEPEPEHHPEAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALALALARyRyRyRyRyRyRyRyRyRyRyRyLALALALALALALARyRyRyRyRyRyRyRyRyLALALALALALARyRyRyRyRyRyRyRyRyLALALALALALALARyRyRyRyRyRyRyRyRyRyRyAbAbAbAb
+PEPEPEPEHHHHPEAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALALARyRyRyRyRyRyRyRyRyRyRyRyLAYiLALALARyRyRyRyRyRyRyRyRyRyRyLARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAb
+PEPEPEPEHHHHHHAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALALARyRyRyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
+PEPEPEPEHHHHHHAbAbRyRyRyAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
+PEPEPEPEHHHHHHAbAbAbRyRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyLALALARyRyqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
+PEPEPEPEHHHHHHAbAbAbAbRyRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyqKqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAb
+PEPEPEHHHHHHPEAbAbAbAbRyRyRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALARyRyRyRyRyRyRyRyRyRyqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAb
+PEPEPEHHHHHHPEAbAbAbAbAbAbAbRyRyAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALARyRyRyRyRyRyRyRyqKRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAb
+PEPEHHHHHHPEPEAbAbAbAbAbAbAbAbRyRyAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyLALALARyRyRyRyRyRyRyRyRyRyLALARyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAb
+PEPEHHHHPEPEPEAbAbAbAbAbAbAbAbAbRyRyAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyqKRyRyRyRyRyLARyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAb
+PEHHHHHHPEPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyqKqKRyLALALALARyRyRyRyRyRyRyRyRyRyRyAbRyRyRyAbAbAbAbAbAbAbAbAbAbAbRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
+PEHHHHPEPEPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyqKqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
+PEHHHHPEPEPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyqKqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
+PEPEHHHHPEPEPEPEHHHHHHHHPEPEAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyqKRyqKqKRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyAbAbAb
+PEPEHHHHPEPEPEHHHHPEPEHHHHPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyrVsTHHuUuUuUuUHHHHRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbRyRyRyRyRyRyRyAbAbRyRyRyRyAbAbAbAbAbAbAbAbAb
+PEPEPEHHHHHHHHHHPEPEPEPEPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyRyRyRyRyAbAbPEExsdOgDxlzyjsTrVRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAb
+PEPEPEPEPEPEPEPEPEPEPEPEPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbPEGjqzEZuWUZsTsTrVRyRyRyRyRyRyRyRyRyRyRyRyRyRyAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
+PEPEPEPEPEPEPEPEPEPEPEPEPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbPETiEYErJFAAPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
+PEPEPEPEPEPEPEPEPEPEPEPEPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbPEMaXYErXYPEPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
+PEPEPEPEPEPEPEPEPEPEPEPEPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbPEPEVbSFjHPEPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
+PEPEPEPEPEPEPEPEPEPEPEPEPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbPEPEPEPEPEPEPEPEAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAbAb
 "}
