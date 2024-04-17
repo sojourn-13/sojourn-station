@@ -8,6 +8,15 @@
 	opacity = 1
 	layer = BELOW_MOB_LAYER
 
+/turf/unsimulated/mineral/cold
+	name = "impassable rock"
+	icon = 'icons/turf/walls.dmi'
+	icon_state = "rock-cold"
+	blocks_air = 1
+	density = 1
+	opacity = 1
+	layer = BELOW_MOB_LAYER
+
 /turf/unsimulated/mineral/transition
 	name = "path elsewhere"
 	desc = "Looks like this leads to a whole new area."
