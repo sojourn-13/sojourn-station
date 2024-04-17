@@ -56,6 +56,10 @@
 	last_use = world.time
 	teleport()
 
+///////////////*Large Invislights*///////////////////
+
+/*Base Invislight*/
+
 /obj/structure/invislight
 	name = "invisible light"
 	desc = "You should not be able to see this. Contact the nearest bluespace tech."
@@ -68,6 +72,60 @@
 	set_light(7, 5, "#999999")
 	. = ..()
 
+/*Colored Invislights (RGB+Y)*/
+
+/obj/structure/invislight/blue
+	name = "invisible light"
+	desc = "You should not be able to see this. Contact the nearest bluespace tech."
+	icon = null
+	layer = HIDING_MOB_PLANE
+	invisibility = 101
+	anchored = TRUE
+
+/obj/structure/invislight/blue/New()
+	set_light(7, 5, "#4a48ac")
+	. = ..()
+
+/obj/structure/invislight/red
+	name = "invisible light"
+	desc = "You should not be able to see this. Contact the nearest bluespace tech."
+	icon = null
+	layer = HIDING_MOB_PLANE
+	invisibility = 101
+	anchored = TRUE
+
+/obj/structure/invislight/red/New()
+	set_light(7, 5, "#ac4848")
+	. = ..()
+
+/obj/structure/invislight/green
+	name = "invisible light"
+	desc = "You should not be able to see this. Contact the nearest bluespace tech."
+	icon = null
+	layer = HIDING_MOB_PLANE
+	invisibility = 101
+	anchored = TRUE
+
+/obj/structure/invislight/green/New()
+	set_light(7, 5, "#5cac48")
+	. = ..()
+
+/obj/structure/invislight/yellow
+	name = "invisible light"
+	desc = "You should not be able to see this. Contact the nearest bluespace tech."
+	icon = null
+	layer = HIDING_MOB_PLANE
+	invisibility = 101
+	anchored = TRUE
+
+/obj/structure/invislight/yellow/New()
+	set_light(7, 5, "#aca248")
+	. = ..()
+
+///////////////*Small Invislights*///////////////////
+
+/*Base Invislight*/
+
 /obj/structure/invislightsmall
 	name = "small invisible light"
 	icon = null
@@ -77,4 +135,50 @@
 
 /obj/structure/invislightsmall/New()
 	set_light(1, 1, "#999999")
+	. = ..()
+
+/*Colored Invislights (RGB+Y)*/
+
+/obj/structure/invislightsmall/blue
+	name = "small invisible light"
+	icon = null
+	layer = HIDING_MOB_PLANE
+	invisibility = 101
+	anchored = TRUE
+
+/obj/structure/invislightsmall/blue/New()
+	set_light(1, 1, "#4a48ac")
+	. = ..()
+
+/obj/structure/invislightsmall/red
+	name = "small invisible light"
+	icon = null
+	layer = HIDING_MOB_PLANE
+	invisibility = 101
+	anchored = TRUE
+
+/obj/structure/invislightsmall/red/New()
+	set_light(1, 1, "#ac4848")
+	. = ..()
+
+/obj/structure/invislightsmall/green
+	name = "small invisible light"
+	icon = null
+	layer = HIDING_MOB_PLANE
+	invisibility = 101
+	anchored = TRUE
+
+/obj/structure/invislightsmall/green/New()
+	set_light(1, 1, "#5cac48")
+	. = ..()
+
+/obj/structure/invislightsmall/yellow
+	name = "small invisible light"
+	icon = null
+	layer = HIDING_MOB_PLANE
+	invisibility = 101
+	anchored = TRUE
+
+/obj/structure/invislightsmall/yellow/New()
+	set_light(1, 1, "#aca248")
 	. = ..()
