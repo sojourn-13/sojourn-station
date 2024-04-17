@@ -200,6 +200,7 @@
 #include "code\ATMOSPHERICS\components\unary\generator_input.dm"
 #include "code\ATMOSPHERICS\components\unary\heat_exchanger.dm"
 #include "code\ATMOSPHERICS\components\unary\heat_source.dm"
+#include "code\ATMOSPHERICS\components\unary\map_sink.dm"
 #include "code\ATMOSPHERICS\components\unary\outlet_injector.dm"
 #include "code\ATMOSPHERICS\components\unary\oxygen_generator.dm"
 #include "code\ATMOSPHERICS\components\unary\unary_base.dm"
