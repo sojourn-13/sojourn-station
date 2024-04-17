@@ -64,7 +64,7 @@
 				/obj/item/gun/projectile/automatic/maxim/replica = 1,
 				/obj/item/gun/projectile/revolver/deacon = 1,
 				/obj/item/gun/projectile/clarissa/devil_eye = 1,
-				/obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic = 1,
+				/obj/item/clothing/accessory/holster/bluecross = 1,
 				/obj/item/gun/projectile/boltgun/bluecross = 1,
 				/obj/item/gun/projectile/that_gun = 1,
 				/obj/item/gun/projectile/colt/cult = 1,
