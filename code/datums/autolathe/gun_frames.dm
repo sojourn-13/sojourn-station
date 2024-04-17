@@ -48,19 +48,19 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 //Marshal Surplus
 
 /datum/design/autolathe/gun_frame/glock
-	name - "9mm sky - frame"
+	name = "9mm sky - frame"
 	build_path = /obj/item/part/gun/frame/glock
 
 /datum/design/autolathe/gun_frame/ladon
-	name - "10mm ladon - frame"
+	name = "10mm ladon - frame"
 	build_path = /obj/item/part/gun/frame/ladon
 
 /datum/design/autolathe/gun_frame/grease
-	name - "9mm greasegun/texan - frame"
+	name = "9mm greasegun/texan - frame"
 	build_path = /obj/item/part/gun/frame/grease
 
 /datum/design/autolathe/gun_frame/canine
-	name - "6.5mm K9 frame"
+	name = "6.5mm K9 frame"
 	build_path = /obj/item/part/gun/frame/bulldog
 
 /datum/design/autolathe/gun_frame/gladstone
