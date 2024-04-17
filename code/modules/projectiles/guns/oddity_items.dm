@@ -208,7 +208,9 @@
 	serial_type = "BlueCross"
 	gun_parts = null
 	matter = list()
+	price_tag = 0
 	throw_range = 7
+	magazine_type = /obj/item/ammo_magazine/smg_35/bluecross
 	var/throw_special = TRUE
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/handle_click_empty(mob/user)
@@ -224,6 +226,9 @@
 	throwforce = initial(throwforce)
 	src.visible_message(SPAN_DANGER("[src] sharp edge cracks!"))
 
+/obj/item/ammo_magazine/smg_35/bluecross
+	matter = list()
+
 /obj/item/clothing/accessory/holster/bluecross
 	name = "\"Lockpick-o-Matic\" holster"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
@@ -233,6 +238,11 @@
 /obj/item/clothing/accessory/holster/bluecross/Initialize()
 	. = ..()
 	holstered = new /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic
+
+/obj/item/clothing/accessory/holster/bluecross/New()
+	..()
+	item_flags |= BLUESPACE
+	bluespace_entropy(20, get_turf(src)) //There is a great disturbance in the force
 
 /obj/item/clothing/accessory/holster/bluecross/holster(var/obj/item/I, var/mob/living/user)
 	to_chat(user, SPAN_WARNING("There is already \a [holstered] holstered here!"))
