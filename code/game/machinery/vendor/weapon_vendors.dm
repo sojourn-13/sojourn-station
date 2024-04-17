@@ -115,7 +115,7 @@
 	/obj/item/gun/projectile/revolver/detective = 90, //Honey fetch the family revolver
 	/obj/item/gun/projectile/revolver = 700, //Old stock
 	//Automatic
-	/obj/item/gun/projectile/automatic/texan = 800
+	/obj/item/gun/projectile/automatic/texan = 800,
 	/obj/item/gun/projectile/automatic/ppsh/ppv = 1100,
 	/obj/item/gun/projectile/automatic/bulldog = 1200,
 	/obj/item/gun/projectile/automatic/bulldog/rds = 1350,
