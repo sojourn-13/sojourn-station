@@ -245,7 +245,7 @@
 	shuttle_area = /area/shuttle/vasiliy_shuttle_area
 	current_location = "nav_vasiliy_homebase"
 	landmark_transition = "nav_vasiliy_transit"
-	destination_tags = list("nav_vasiliy_homebase", "nav_vasiliy_deep_forest", "nav_vasiliy_swamps", "nav_vasiliy_river_forest") //, "nav_vasiliy_spacefort"
+	destination_tags = list("nav_vasiliy_homebase", "nav_vasiliy_deep_forest", "nav_vasiliy_swamps", "nav_vasiliy_river_forest", "nav_vasiliy_graysonfield") //, "nav_vasiliy_spacefort"
 
 //, "nav_vasiliy_spacefort"
 
@@ -278,6 +278,13 @@
 	landmark_tag = "nav_vasiliy_river_forest"
 	base_turf = /turf/simulated/floor/reinforced
 	autoset = TRUE
+
+/obj/effect/shuttle_landmark/vasiliy_field_office
+	name = "Greyson Field Office Dock"
+	landmark_tag = "nav_vasiliy_graysonfield"
+	base_turf = /turf/simulated/floor/reinforced
+	autoset = TRUE
+
 /* Pretty sure this isn't even active?
 /obj/effect/shuttle_landmark/vasiliy_spacefort
 	name = "Local Space Station Dock"
