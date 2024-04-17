@@ -127,7 +127,7 @@
 			if(R.ignore_stuttering)
 				ture_message = message_pre_problems
 			if(R.compare(ture_message))
-				if(R.power > src.power && !(max_power == power))
+				if(R.power > src.power && !(power >= max_power))
 					to_chat(H, SPAN_DANGER("Not enough energy for the [R.name]."))
 					return
 				if(!R.is_allowed(src))
