@@ -90,7 +90,7 @@
 	anchored = TRUE
 
 /obj/structure/light_stick/New()
-	set_light(4,3, "#274170")
+	set_light(3,3, "#274170")
 
 /obj/structure/light_stick/red
 	icon_state = "light_stick_red"
@@ -99,7 +99,7 @@
 	anchored = TRUE
 
 /obj/structure/light_stick/red/New()
-	set_light(4,3, "#962b2b")
+	set_light(3,3, "#962b2b")
 
 //Weather that emits ambient light. Credit to CM for weather sprites.
 /obj/structure/snowfall

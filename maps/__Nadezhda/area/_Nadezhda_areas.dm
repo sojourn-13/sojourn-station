@@ -417,16 +417,16 @@
 	name = "barren planet"
 	icon_state = "erisblue"
 	area_light_color = COLOR_LIGHTING_BLUE_DARK
-	forced_ambience = list('sound/ambience/occ_scaryambie.ogg')
+	forced_ambience = list('sound/ambience/ambiwind1.ogg')
 	dynamic_lighting = TRUE
 	sound_env = PSYCHOTIC
 	is_dungeon_lootable = TRUE
 	ship_area = FALSE
 
-/area/nadezhda/outside/kepler/red //Off-world location, meant for areas near huts
+/area/nadezhda/outside/kepler/red //Off-world location, meant for areas near and inside huts
 	name = "barren planet - indoors"
 	area_light_color = COLOR_LIGHTING_RED_DARK
-	forced_ambience = list('sound/ambience/occ_scaryambie.ogg')
+	forced_ambience = list('sound/ambience/ambiwind2.ogg')
 	dynamic_lighting = TRUE
 	sound_env = PSYCHOTIC
 	is_dungeon_lootable = TRUE
