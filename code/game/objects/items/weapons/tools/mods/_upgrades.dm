@@ -50,11 +50,8 @@
 	return can_apply(A, user) && apply(A, user)
 
 /datum/component/item_upgrade/proc/can_apply(var/atom/A, var/mob/living/user)
-	message_admins("can_apply: a [A] user [user]")
 	if(isrobot(A))
-		message_admins("can_apply2: a [A] user [user]")
 		return check_robot(A, user)
-	message_admins("can_apply3: a [A] user [user]")
 
 	if(isitem(A))
 		var/obj/item/T = A
@@ -85,7 +82,6 @@
 	return FALSE
 
 /datum/component/item_upgrade/proc/check_robot(var/mob/living/silicon/robot/R, var/mob/living/user)
-	message_admins("check_robot: r [R] user [user]")
 	if(!R.opened)
 		if(user)
 			to_chat(user, SPAN_WARNING("You need to open [R]'s panel to access its tools."))
@@ -98,7 +94,6 @@
 		var/obj/item/tool/chosen_tool = input(user,"Which tool are you trying to modify?","Tool Modification","Cancel") as null|anything in robotools + "Cancel"
 		if(!chosen_tool == "Cancel")
 			return FALSE
-		message_admins("check_robot2: r [R] user [user] chosen_tool [chosen_tool]")
 		if(can_apply(chosen_tool,user))
 			apply(chosen_tool, user)
 		return FALSE
