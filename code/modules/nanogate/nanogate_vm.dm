@@ -35,6 +35,15 @@
 	. = ..()
 	enable_computer()
 
+/obj/item/modular_computer/tablet/nanogate/proc/login_email()
+	var/datum/computer_file/program/email_client/P = getProgramByType(/datum/computer_file/program/email_client)
+	var/mob/living/carbon/human/user = linked_nanogate.owner
+	if(P && user.mind)
+		P.stored_login = user.mind.initial_email_login["login"]
+		P.stored_password = user.mind.initial_email_login["password"]
+		P.update_email()
+
+
 /obj/item/modular_computer/tablet/nanogate/install_default_programs()
 	..()
 	hard_drive.store_file(new/datum/computer_file/program/email_client())

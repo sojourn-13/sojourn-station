@@ -17,7 +17,7 @@
 	available_to_ai = TRUE
 
 /datum/nano_module/program/remote_cyborg_controle/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
-	var/data[0]
+	var/list/data = nano_ui_data(user)
 	var/safety = 1
 	data["robots"] = get_cyborgs(user)
 	data["safety"] = safety
@@ -27,7 +27,7 @@
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "robot_control.tmpl", "Robotic Control Console", 400, 500)
+		ui = new(user, src, ui_key, "robot_control.tmpl", "Robotic Control Console", 400, 500, state = state)
 		ui.set_initial_data(data)
 		ui.open()
 		ui.set_auto_update(1)

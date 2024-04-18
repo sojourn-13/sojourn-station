@@ -72,3 +72,4 @@
 	I.loc = owner
 	I.linked_nanogate = src
 	vm = I
+	vm.login_email()
