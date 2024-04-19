@@ -132,7 +132,7 @@
 
 /mob/living/carbon/human/proc/handle_heart_blood()
 	var/heart_efficiency = get_organ_efficiency(OP_HEART)
-	var/blood_oxygenation = 0.4 * chem_effects[CE_OXYGENATED] - 0.2 * chem_effects[CE_BLOODCLOT]
+	var/blood_oxygenation = 0.4 * chem_effects[CE_OXYGENATED]
 	var/blood_volume = get_blood_volume() // Percentage.
 
 	// Damaged heart virtually reduces the blood volume, as the blood isn't being pumped properly anymore.
