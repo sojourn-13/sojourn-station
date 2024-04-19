@@ -747,6 +747,17 @@
 	icon_state = "road_1"
 	initial_flooring = /decl/flooring/rock/manmade/road
 
+/*Shale - ALL SPRITE CREDITS GO TO CM-SS13!*/
+
+/turf/simulated/floor/asteroid/shale
+	name = "coarse shale"
+	icon = 'icons/turf/flooring/dirt.dmi'
+	icon_state = "shale0"
+	initial_flooring = /decl/flooring/shale
+	oxygen = 0
+	nitrogen = 0
+	carbon_dioxide = 850
+
 /*POOL - new pool tile and the splash code to go with it*/
 /turf/simulated/floor/pool
 	name = "poolwater"

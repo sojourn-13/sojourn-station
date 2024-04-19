@@ -413,6 +413,25 @@
 	forced_ambience = list('sound/ambience/meadowamb1.ogg', 'sound/ambience/meadowamb2.ogg', 'sound/ambience/meadowamb3.ogg', 'sound/ambience/meadowamb4.ogg')
 	is_dungeon_lootable = FALSE
 
+/area/nadezhda/outside/kepler //Off-world location
+	name = "barren planet"
+	icon_state = "erisblue"
+	area_light_color = COLOR_LIGHTING_BLUE_DARK
+	forced_ambience = list('sound/ambience/windamb1.ogg')
+	dynamic_lighting = TRUE
+	sound_env = PSYCHOTIC
+	is_dungeon_lootable = TRUE
+	ship_area = FALSE
+
+/area/nadezhda/outside/kepler/red //Off-world location, meant for areas near and inside huts
+	name = "barren planet - indoors"
+	area_light_color = COLOR_LIGHTING_RED_DARK
+	forced_ambience = list('sound/ambience/windamb2.ogg')
+	dynamic_lighting = TRUE
+	sound_env = PSYCHOTIC
+	is_dungeon_lootable = TRUE
+	ship_area = FALSE
+
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 
 /area/nadezhda/maintenance/substation
