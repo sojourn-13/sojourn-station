@@ -127,6 +127,18 @@
 	name = "Bowl 2"
 	icon_state = "bowlcut2"
 
+/datum/sprite_accessory/hair/bonnie
+	name = "Bonnie"
+	icon_state = "bonnie"
+
+/datum/sprite_accessory/hair/bonnieshort
+	name = "Bonnie Short"
+	icon_state = "bonnie_short"
+
+/datum/sprite_accessory/hair/bonnielong
+	name = "Bonnie Long"
+	icon_state = "bonnie_long"
+
 /datum/sprite_accessory/hair/bookish
 	name = "Bookish"
 	icon_state = "lem"
@@ -222,6 +234,14 @@
 /datum/sprite_accessory/hair/dandypomp
 	name = "Dandy Pompadour"
 	icon_state = "dandypompadour"
+
+/datum/sprite_accessory/hair/daisy
+	name = "Daisy"
+	icon_state = "daisy"
+
+/datum/sprite_accessory/hair/depresso
+	name = "Depresso"
+	icon_state = "depresso"
 
 /datum/sprite_accessory/hair/devillock
 	name = "Devil Lock"
@@ -388,6 +408,18 @@
 	name = "Keanu"
 	icon_state = "keanu"
 
+/datum/sprite_accessory/hair/kobenir
+	name = "Kobeni Right"
+	icon_state = "kobeni_r"
+
+/datum/sprite_accessory/hair/kobenil
+	name = "Kobeni Left"
+	icon_state = "kobeni_l"
+
+/datum/sprite_accessory/hair/kobenishort
+	name = "Kobeni Short"
+	icon_state = "kobeni_short"
+
 /datum/sprite_accessory/hair/kusangi
 	name = "Kusanagi"
 	icon_state = "kusanagi"
@@ -399,6 +431,10 @@
 /datum/sprite_accessory/hair/ladylike2
 	name = "Ladylike 2"
 	icon_state = "ladylike2"
+
+/datum/sprite_accessory/hair/librarian
+	name = "Librarian Doo"
+	icon_state = "librarian"
 
 /datum/sprite_accessory/hair/longemo
 	name = "Long Emo"
@@ -592,6 +628,10 @@
 	name = "Reverse Mohawk"
 	icon_state = "reversemohawk"
 
+/datum/sprite_accessory/hair/rockstar
+	name = "Rockstar"
+	icon_state = "rockstar"
+
 /datum/sprite_accessory/hair/ronin
 	name = "Ronin"
 	icon_state = "ronin"
@@ -623,6 +663,10 @@
 /datum/sprite_accessory/hair/sharppony
 	name = "Sharp Ponytail"
 	icon_state = "sharp_ponytail"
+
+/datum/sprite_accessory/hair/sharppony2
+	name = "Sharp Ponytail Alt"
+	icon_state = "sharptail"
 
 /datum/sprite_accessory/hair/shavedmohawk
 	name = "Shaved Mohawk"
