@@ -38,6 +38,7 @@
 	var/floorOnly = FALSE
 	var/ignoreExAct = FALSE
 	alpha = 128
+	atmos_canpass = CANPASS_PROC
 
 /obj/effect/shield/floor
 	alpha = 32
