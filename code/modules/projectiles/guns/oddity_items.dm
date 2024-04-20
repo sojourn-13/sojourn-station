@@ -373,19 +373,93 @@
 //Melee Weapons
 /obj/item/tool/nailstick/ogre
 	name = "\"Oni\" Greatclub"
-	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
-			A wooden club inscribed with several symbols of jana, though they make no sense put together. The wood is of unusual qualities and some lunatic hammered durasteel nails into \
-			it. Either the maker didn't know or didn't care about the value, it still ended up a supremely deadly weapon ... or hammer."
-	icon_state = "oni"
-	force = WEAPON_FORCE_BRUTAL
-	throwforce = WEAPON_FORCE_PAINFUL
+	desc = "An anomalous clothing created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
+			A wooden club inscribed with several symbols of jana, though they make no sense put together. The steel is of unusual qualities. \
+			The more harmed you are harder it is to swing but the rubys glow more, melting through armor and flesh alike."
+	icon_state = "oni" //Sprite by cupofmothium
+	damtype = BURN
+	force = WEAPON_FORCE_HARMLESS
+	throwforce = WEAPON_FORCE_HARMLESS
 	w_class = ITEM_SIZE_NORMAL
 	armor_penetration = ARMOR_PEN_HALF
 	structure_damage_factor = STRUCTURE_DAMAGE_DESTRUCTIVE
 	tool_qualities = list(QUALITY_HAMMERING = 20)
-	max_upgrades = 3
-	price_tag = 3500 // It has durasteel spikes
-	matter = list(MATERIAL_WOOD = 4, MATERIAL_DURASTEEL = 1)
+	max_upgrades = 2
+	price_tag = 3500
+	matter = list(MATERIAL_STEEL = 4, MATERIAL_MARBLE = 1)
+
+/obj/item/tool/nailstick/ogre/resolve_attackby(atom/target, mob/user)
+	//Little icky but it works
+	var/safty_math =  user.health - user.maxHealth
+	var/safty_health = max(1, user.health)
+	var/real_mod = 0
+	var/delay_adder = user.maxHealth / safty_health
+
+//	message_admins("1ogre: safty_math [safty_math] safty_health [safty_health]  delay_adder [delay_adder]")
+
+
+	delay_adder = round(delay_adder)
+	delay_adder = clamp(delay_adder, 0, 8)
+//	message_admins("2ogre: safty_math [safty_math] safty_health [safty_health]  delay_adder [delay_adder]")
+	real_mod += -safty_math
+	real_mod *= 0.5 //Insainly op
+
+//	message_admins("3ogre: safty_math [safty_math] safty_health [safty_health]  delay_adder [delay_adder]")
+//	message_admins("4ogre: armor_penetration [armor_penetration]")
+	armor_penetration += real_mod
+//	message_admins("5ogre: armor_penetration [armor_penetration]")
+	clickdelay_offset = delay_adder
+
+	.=..()
+	refresh_upgrades()
+
+
+/obj/item/tool/knife/dagger/vail_render
+	name = "\"Vail Render\" dagger"
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
+			A dagger that is able to cut deeper the more closer to death the victim is, in addition to the users."
+	icon_state = "vail_render"
+	item_state = "dagger"
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 12)
+	force = 15 //Base level
+	backstab_damage = 15 //base is 15 but grows
+	armor_penetration = ARMOR_PEN_MASSIVE //Less do to how powerful it is
+	throwforce = WEAPON_FORCE_ROBUST
+	price_tag = 3500
+	max_upgrades = 2
+
+/obj/item/tool/knife/dagger/vail_render/resolve_attackby(atom/target, mob/user)
+	//Little icky but it works
+	var/safty_math =  user.health - user.maxHealth
+	var/real_mod = 0
+
+	real_mod += (-safty_math * 0.1)  //The gimmic of this knife isnt self harm, but we do still add a 1/10th
+//	message_admins("1knife: safty_math [safty_math] real_mod [real_mod]")
+
+	if(ismob(target))
+		var/mob/stabbed = target
+		var/health_missing = stabbed.maxHealth - stabbed.health
+		health_missing += 1 //Used to make sure the first hit is properly scored
+//		message_admins("1.1knife: safty_math [safty_math] real_mod [real_mod] stabbed.maxHealth [stabbed.maxHealth] health_missing [health_missing]")
+		if(0 < health_missing)
+//			message_admins("1.2knife: safty_math [safty_math] real_mod [real_mod] stabbed.maxHealth [stabbed.maxHealth] health_missing [health_missing]")
+			real_mod += health_missing
+			real_mod *= 0.25 //1/4th of your targets missing health is now damage.
+		else
+//			message_admins("1.21knife: safty_math [safty_math] real_mod [real_mod] stabbed.maxHealth [stabbed.maxHealth] health_missing [health_missing]")
+			real_mod += stabbed.maxHealth
+			real_mod *= 0.15 //This typically will be used on people so we are less, or on dead bodies
+//	message_admins("2knife: safty_math [safty_math] real_mod [real_mod]")
+
+
+	force += real_mod
+	backstab_damage += real_mod
+//	message_admins("3knife: force [force] real_mod [real_mod]")
+
+	.=..()
+	backstab_damage = 15
+	refresh_upgrades()
+
 
 /obj/item/tool/knife/dagger/assassin/ubersaw //Waiting for code to be done to deal blood damage/take % of blood
 	name = "\"Uber\" syringe-dagger"
@@ -500,6 +574,11 @@
 	var/range = 10
 	var/toclose_range = 2
 
+/obj/item/tool/scythe/spectral_harvester/New()
+	..()
+	item_flags |= BLUESPACE
+	bluespace_entropy(5, get_turf(src))
+
 /obj/item/tool/scythe/spectral_harvester/afterattack(mob/living/M, mob/living/user, target_zone)
 	clickdelay_offset = 15
 	if(!wielded)
@@ -536,6 +615,109 @@
 
 /obj/item/tool/scythe/spectral_harvester/Adjacent(var/atom/neighbor, var/recurse = 1)
 	return TRUE //We are always adjacent
+
+// Shield
+
+/obj/item/shield/riot/mass_grave
+	name = "grave marker shield"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
+			A large grave marker degraded by the sands of time to be unreadable. This shield will always help block any physical attack. Has the power of endless growth in power the more *direct* kills directly caused by the shield."
+	icon_state = "mass_grave"  //Sprite by gid_git
+	item_state = "mass_grave"
+	flags = null
+	throw_speed = 1
+	throw_range = 0
+	matter = list(MATERIAL_MARBLE = 120) //V_V
+	base_block_chance = -16 //We start out worse then anything you have ever seen
+	max_durability = 250
+	durability = 200
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	var/mass_grave_counter = 1 //Here lays... We dont know, they didnt put their name on the stone
+	var/post_moder_game_balance = 150
+	slowdown = 0.3
+	slowdown_hold = 0.3
+	//Its a bad weapon
+	force = WEAPON_FORCE_PAINFUL
+	armor_penetration = ARMOR_PEN_SHALLOW
+
+/obj/item/shield/riot/mass_grave/check_shield_arc()
+	return TRUE
+
+/obj/item/shield/riot/mass_grave/refresh_upgrades()
+	return
+
+/obj/item/shield/riot/mass_grave/alt_mode_activeate_one()
+	return
+
+/obj/item/shield/riot/mass_grave/proc/upgrade_mass_grave()
+	//Endless growth
+	max_durability += 1
+	switch(mass_grave_counter)
+		if(5)
+			armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
+			force = WEAPON_FORCE_DANGEROUS
+			armor_penetration = ARMOR_PEN_MODERATE
+			slowdown = 0.25
+			slowdown_hold = 0.25
+		if(10)
+			armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
+			force = WEAPON_FORCE_ROBUST
+			armor_penetration = ARMOR_PEN_DEEP
+			slowdown = 0.20
+			slowdown_hold = 0.20
+		if(20)
+			armor_list = list(melee = 25, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
+			force = WEAPON_FORCE_BRUTAL
+			armor_penetration = ARMOR_PEN_EXTREME
+			slowdown = 0.15
+			slowdown_hold = 0.15
+		if(50)
+			armor_list = list(melee = 35, bullet = 35, energy = 35, bomb = 0, bio = 0, rad = 0)
+			force = WEAPON_FORCE_LETHAL
+			armor_penetration = ARMOR_PEN_MASSIVE
+			slowdown = 0.10
+			slowdown_hold = 0.10
+		if(100)
+			armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 0, bio = 0, rad = 0)
+			force = WEAPON_FORCE_LETHAL + 5
+			armor_penetration = ARMOR_PEN_MASSIVE + 5
+			slowdown = 0.05
+			slowdown_hold = 0.05
+
+	if(mass_grave_counter >= post_moder_game_balance)
+		//Endless Growth
+		name = "mass grave marker shield"
+		force += 1
+		armor_penetration += 1
+		post_moder_game_balance *= 1.1 //150 x 1.1 = 165 -> 165 x 1.1 = 181.5(182) ect ect
+		post_moder_game_balance = round(post_moder_game_balance)
+
+/obj/item/shield/riot/mass_grave/handle_shield()
+	//No more grace, you are in endless mode
+	if(mass_grave_counter >= 101) //Lets not reset are gains
+		mass_grave_counter -= 1
+	..()
+
+
+/obj/item/shield/riot/mass_grave/get_protected_area(mob/user)
+	return BP_ALL_LIMBS
+
+/obj/item/shield/riot/mass_grave/get_partial_protected_area(mob/user)
+	return BP_ALL_LIMBS
+
+/obj/item/shield/riot/mass_grave/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+	return base_block_chance + mass_grave_counter
+
+/obj/item/shield/riot/mass_grave/resolve_attackby(atom/A, mob/user, params)
+	if(ismob(A))
+		var/mob/living/M = A
+		if(M.stat != DEAD)
+			if(M.health - force <= 0)
+				mass_grave_counter += 1
+				upgrade_mass_grave()
+				if(!ishuman(M))
+					M.gib()
+	..()
 
 //Armor
 

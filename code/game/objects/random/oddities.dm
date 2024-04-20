@@ -84,6 +84,8 @@
 				/obj/item/tool/saw/hyper/doombringer = 1,
 				/obj/item/tool/sword/katana/crimson_arc = 1,
 				/obj/item/tool/scythe/spectral_harvester = 1,
+				/obj/item/tool/knife/dagger/vail_render = 1,
+				/obj/item/shield/riot/mass_grave = 1,
 				//obj/item/material/butterfly/frenchman = 1,
 				//Gun/Tool Mods
 				/obj/item/gun_upgrade/mechanism/brass_kit = 1,
