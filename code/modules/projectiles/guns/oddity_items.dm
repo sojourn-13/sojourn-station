@@ -200,17 +200,77 @@
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic
 	name = "\"Lockpick-o-Matic\""
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
-			A mix of several other Slot-o-Matics put together after being sawn apart to make a rainbow and then fitted with a long unreloadable 10x24 caseless mag."
-	caliber = "10x24"
-	fire_sound = 'sound/weapons/guns/fire/m41_shoot.ogg'
-	ammo_type = "/obj/item/ammo_casing/pistol"
-	mag_well = MAG_WELL_PULSE
-	magazine_type = /obj/item/ammo_magazine/c10x24
-	gun_tags = list(GUN_PROJECTILE)
+			A mix of several other Slot-o-Matics seemingly molten and merged into rainbow. Each pistol holding its trade mark blue cross."
 	possible_colors = list("rainbow")
-	init_recoil = EMBEDDED_RECOIL(0.5)
-	price_tag = 300
+	damage_multiplier = 1
+	penetration_multiplier = 0.6
+	init_recoil = EMBEDDED_RECOIL(0.35)
 	serial_type = "BlueCross"
+	gun_parts = null
+	matter = list()
+	price_tag = 0
+	throw_range = 7
+	magazine_type = /obj/item/ammo_magazine/smg_35/bluecross
+	var/throw_special = TRUE
+
+/obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/handle_click_empty(mob/user)
+	. = ..()
+	if(throw_special)
+		if (user)
+			user.show_message(SPAN_WARNING("Your [src] upper half flashes into a sharp edge as it fires its last bullet! Throw it quickly!"))
+		throw_special = FALSE
+		throwforce = WEAPON_FORCE_LETHAL //Bonus style!
+		addtimer(CALLBACK(src, .proc/crack), 15 SECONDS)
+
+/obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/proc/crack()
+	throwforce = initial(throwforce)
+	src.visible_message(SPAN_DANGER("[src] sharp edge cracks!"))
+
+/obj/item/ammo_magazine/smg_35/bluecross
+	matter = list()
+
+/obj/item/clothing/accessory/holster/bluecross
+	name = "\"Lockpick-o-Matic\" holster"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
+			A \"presumebly\" endless supply of slaught-o-matics when drawn. You are never really able to tell when and how a new one takes its place when you draw one."
+	price_tag = 4000
+
+/obj/item/clothing/accessory/holster/bluecross/Initialize()
+	. = ..()
+	holstered = new /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic
+
+/obj/item/clothing/accessory/holster/bluecross/New()
+	..()
+	item_flags |= BLUESPACE
+	bluespace_entropy(20, get_turf(src)) //There is a great disturbance in the force
+
+/obj/item/clothing/accessory/holster/bluecross/holster(var/obj/item/I, var/mob/living/user)
+	to_chat(user, SPAN_WARNING("There is already \a [holstered] holstered here!"))
+	return
+
+/obj/item/clothing/accessory/holster/bluecross/unholster(mob/user as mob)
+	if(user.lying)
+		to_chat(user, SPAN_WARNING("You need to be standing!"))
+		return
+
+	if(istype(user.get_active_hand(),/obj))
+		to_chat(user, SPAN_WARNING("You need an empty hand to draw \the [holstered]!"))
+	else
+		if(user.a_intent == I_HURT)
+			usr.visible_message(
+				SPAN_DANGER("[user] draws \the [holstered], ready to fight!"),
+				SPAN_WARNING("You draw \the [holstered], ready to fight!")
+				)
+		else
+			user.visible_message(
+				SPAN_NOTICE("[user] draws \the [holstered], pointing it at the ground."),
+				SPAN_NOTICE("You draw \the [holstered], pointing it at the ground.")
+				)
+		var/obj/item/gun/gun = new /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic(src)
+		user.put_in_active_hand(gun)
+		gun.add_fingerprint(user)
+		gun.toggle_safety(user) // Lets pull out our weapons sharp!
+		playsound(user, "[sound_out]", 75, 0)
 
 /obj/item/gun/energy/captain/zapper
 	name = "\"Retro-Funk\" Zapper"
