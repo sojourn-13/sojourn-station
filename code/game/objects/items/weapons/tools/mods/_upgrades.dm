@@ -50,7 +50,6 @@
 	return can_apply(A, user) && apply(A, user)
 
 /datum/component/item_upgrade/proc/can_apply(var/atom/A, var/mob/living/user)
-
 	if(isrobot(A))
 		return check_robot(A, user)
 
@@ -89,11 +88,15 @@
 	var/list/robotools = list()
 	for(var/obj/item/tool/robotool in R.module.modules)
 		robotools.Add(robotool)
+	for(var/obj/item/gun/robogun in R.module.modules)
+		robotools.Add(robogun)
 	if(robotools.len)
-		var/obj/item/tool/chosen_tool = input(user,"Which tool are you trying to modify?","Tool Modification","Cancel") in robotools + "Cancel"
-		if(chosen_tool == "Cancel")
+		var/obj/item/tool/chosen_tool = input(user,"Which tool are you trying to modify?","Tool Modification","Cancel") as null|anything in robotools + "Cancel"
+		if(!chosen_tool == "Cancel")
 			return FALSE
-		return can_apply(chosen_tool,user)
+		if(can_apply(chosen_tool,user))
+			apply(chosen_tool, user)
+		return FALSE
 	if(user)
 		to_chat(user, SPAN_WARNING("[R] has no modifiable tools."))
 	return FALSE
