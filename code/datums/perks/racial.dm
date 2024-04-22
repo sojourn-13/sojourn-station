@@ -744,8 +744,8 @@
 /* This is the old code for this perk, it does not work but it's left for postereity. Feel free to remove if you please - CDB
 /datum/perk/racial/limb_regen
 	name = "Gelatinous Regeneration"
-	desc = "Spend nutrition to regenerate lost limbs, albeit without fully fixing your injuries."
-	var/cooldown = 30 MINUTES
+	desc = "Spend nutrition to regenerate a lost limb, albeit without fully fixing your injuries."
+	var/cooldown = 5 MINUTES
 	passivePerk = FALSE
 	var/nutrition_cost = 300
 
