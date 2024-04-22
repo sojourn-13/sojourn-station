@@ -664,7 +664,7 @@
 	desc = "By expending an extraordinary amount of energy you can kick your natural regeneration into high-gear, regenerating limbs and improving healing. \
 	This process must be done slowly and carefuly to avoid the risk of DNA damage and thus slows you down and limits consciousness."
 	icon_state = "hypermytosis"
-	var/cooldown = 30 MINUTES
+	var/cooldown = 5 MINUTES
 	passivePerk = FALSE
 	var/nutrition_cost = 450
 
@@ -745,7 +745,7 @@
 /datum/perk/racial/limb_regen
 	name = "Gelatinous Regeneration"
 	desc = "Spend nutrition to regenerate a lost limb, albeit without fully fixing your injuries."
-	var/cooldown = 5 MINUTES
+	var/cooldown = 30 MINUTES
 	passivePerk = FALSE
 	var/nutrition_cost = 300
 
