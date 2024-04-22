@@ -45,6 +45,38 @@
 					)
 			L.adjustHalLoss(30)
 
+//Transfers pain from grabbed to grabber
+/obj/item/organ/internal/psionic_tumor/proc/pain_transference()
+    set category = "Psionic powers"
+        set name = "Pain Transference (2)"
+    set desc = "Expend two psi points to psionically absorb some of the pain of whoever you are holding. Obviously this is very painful to the psion."
+    psi_point_cost = 2 //Basically a grab is needed to steal somebodies pain and take it for yourself, good for all those support mains
+    var/amount
+    var/absorbed = 50
+
+    var/mob/living/carbon/human/L = get_grabbed_mob(owner)
+    var/obj/item/grab/G = locate() in owner
+    if(!G || !istype(G))
+        usr.show_message(SPAN_DANGER("You can't inflict pain if you are not grabbing anyone."))
+        return
+
+    if(G.state < GRAB_AGGRESSIVE)
+        usr.show_message(SPAN_DANGER("You must have an aggressive grab take somebodies pain!"))
+        return
+
+    if(pay_power_cost(psi_point_cost))
+        if(check_possibility(TRUE, L))
+            usr.visible_message(
+                    SPAN_DANGER("[usr] presses their hands upon [L] shoulders in an attempt to take their pain."),
+                    SPAN_DANGER("You press your hands onto the shoulders of [L] expanding your mind and transferring their pain!")
+                    )
+            amount = min(absorbed,L.getHalLoss())
+            L.adjustHalLoss(-amount)
+            if(owner.stats.getPerk(PERK_PSI_ATTUNEMENT))
+                owner.adjustHalLoss(amount/2) //Psi Attunement shunts some pain into the environment
+            else
+                owner.adjustHalLoss(amount)
+
 //Heals hunger
 /obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer()
 	set category = "Psionic powers"
