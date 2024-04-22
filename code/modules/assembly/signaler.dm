@@ -105,7 +105,7 @@
 
 /obj/item/device/assembly/signaler/attackby(var/obj/item/WIELD, var/mob/user)
     if(istype(WIELD, /obj/item/device/assembly/signaler))
-        var/obj/item/assembly/signaler/signaler2 = WIELD
+        var/obj/item/device/assembly/signaler/signaler2 = WIELD
         if(secured && signaler2.secured)
             code = signaler2.code
             set_frequency(signaler2.frequency)
