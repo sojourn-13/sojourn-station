@@ -300,7 +300,6 @@
 	cost = 375
 
 	unlocks_designs = list(
-							/datum/design/research/item/posibrain,
 							/datum/design/research/item/mmi_radio,
 							/datum/design/research/item/intellicard,
 							/datum/design/research/item/paicard,

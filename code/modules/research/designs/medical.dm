@@ -211,13 +211,6 @@
 	materials = list(MATERIAL_PLASTIC = 10)
 	category = CAT_TOOLS
 
-//Brain stuff
-/datum/design/research/item/posibrain
-	name = "Positronic Brain"
-	build_type = PROTOLATHE | MECHFAB
-	build_path = /obj/item/device/mmi/digital/posibrain
-	category = "Medical"
-
 /datum/design/research/item/mmi
 	name = "Man-machine interface"
 	build_type = PROTOLATHE | MECHFAB
