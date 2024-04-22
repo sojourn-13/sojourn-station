@@ -1706,7 +1706,7 @@
 /area/nadezhda/crew_quarters/hydroponics)
 "asM" = (
 /obj/machinery/camera/network/gate{
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/west)
@@ -2347,7 +2347,7 @@
 /obj/structure/catwalk,
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -2943,7 +2943,7 @@
 "aEv" = (
 /obj/machinery/camera/network/gate{
 	dir = 8;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc{
@@ -4542,7 +4542,7 @@
 "aYN" = (
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/west)
@@ -5304,7 +5304,7 @@
 	dir = 10
 	},
 /obj/machinery/camera/network/gate{
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -7589,7 +7589,7 @@
 /obj/structure/flora/small/rock2,
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/east)
@@ -11062,7 +11062,7 @@
 	},
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
@@ -18464,7 +18464,6 @@
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/obj/item/device/mmi/digital/posibrain,
 /obj/structure/sink{
 	dir = 4;
 	pixel_x = 11
@@ -18473,6 +18472,7 @@
 	dir = 1;
 	pixel_y = -32
 	},
+/obj/item/brokenposi,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/rnd/robotics)
 "dSP" = (
@@ -19438,7 +19438,7 @@
 "ecW" = (
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/security/maingate/west)
@@ -22471,7 +22471,7 @@
 	},
 /obj/machinery/camera/network/colony_surface{
 	dir = 4;
-	network = list("Nadzedha                                                                                                                                Wall                                                                                                                                Colony")
+	network = list("Nadzedha                                                                                                                                                                                                                                                                Wall                                                                                                                                                                                                                                                                Colony")
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
@@ -29973,7 +29973,7 @@
 "gkJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/machinery/camera/network/gate{
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate)
@@ -31482,7 +31482,7 @@
 "gAa" = (
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/security/maingate/east)
@@ -39764,7 +39764,7 @@
 "iko" = (
 /obj/machinery/camera/network/gate{
 	dir = 4;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/security/maingate/west)
@@ -40671,7 +40671,7 @@
 /obj/effect/floor_decal/industrial/hatch,
 /obj/machinery/camera/network/gate{
 	dir = 8;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
@@ -53066,7 +53066,7 @@
 	dir = 1;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon                                                                                                                                                                                                                                                                Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous                                                                                                                                                                                                                                                                Oxide","waste_sensor"="Gas                                                                                                                                                                                                                                                                Mix                                                                                                                                                                                                                                                                Tank")
+	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Oxide","waste_sensor"="Gas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Mix                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Tank")
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
@@ -53519,7 +53519,7 @@
 	dir = 8;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon                                                                                                                                                                                                                                                                Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous                                                                                                                                                                                                                                                                Oxide","waste_sensor"="Gas                                                                                                                                                                                                                                                                Mix                                                                                                                                                                                                                                                                Tank")
+	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Oxide","waste_sensor"="Gas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Mix                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Tank")
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/engineering/atmos/surface)
@@ -57104,7 +57104,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/gate{
 	dir = 8;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/tiled/dark/bluecorner,
@@ -61189,7 +61189,7 @@
 "mKM" = (
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/security/maingate/east)
@@ -64756,7 +64756,7 @@
 "nvf" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/machinery/camera/network/gate{
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/east)
@@ -67137,7 +67137,7 @@
 "nTu" = (
 /obj/machinery/camera/network/gate{
 	dir = 8;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /obj/structure/multiz/stairs/enter/bottom,
 /turf/simulated/floor/asteroid/dirt,
@@ -71516,7 +71516,7 @@
 	},
 /obj/machinery/camera/network/gate{
 	dir = 4;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
@@ -71858,7 +71858,7 @@
 	},
 /obj/machinery/camera/network/colony_surface{
 	dir = 8;
-	network = list("Nadzedha                                                                                                                                Wall                                                                                                                                Colony")
+	network = list("Nadzedha                                                                                                                                                                                                                                                                Wall                                                                                                                                                                                                                                                                Colony")
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
@@ -87461,7 +87461,7 @@
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "rZN" = (
 /obj/machinery/camera/network/gate{
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/east)
@@ -90881,7 +90881,7 @@
 /obj/effect/floor_decal/industrial/road/straight2,
 /obj/machinery/camera/network/colony_surface{
 	dir = 8;
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/manmade/road,
@@ -96972,7 +96972,7 @@
 	},
 /obj/machinery/camera/network/colony_surface{
 	dir = 8;
-	network = list("Nadzedha                                                                                                                                Wall                                                                                                                                Colony")
+	network = list("Nadzedha                                                                                                                                                                                                                                                                Wall                                                                                                                                                                                                                                                                Colony")
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/outside/inside_colony)
@@ -115115,7 +115115,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /obj/machinery/camera/network/gate{
-	network = list("Nadzedha                                Wall                                Colony")
+	network = list("Nadzedha                                                                Wall                                                                Colony")
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
