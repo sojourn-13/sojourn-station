@@ -698,10 +698,6 @@
 	desc = "Years upon years of being recycled over and over again this positronic brain ceased all its function. It keeps reappearing in the same spot for some reason. Once per shift it can be recycled in an industrial lathe for some materials." // The Roundstart Posibrain turned into an oddity
 	icon_state = "posibrain"
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_GOLD = 5, MATERIAL_SILVER = 5)
-	oddity_stats = list(
-		STAT_COG = 2, //Swear if anyone says this is a good oddity ingame I am going to be sad.
-		STAT_MEC = 2
-	)
 
 /obj/item/oddity/si_bluespace_scanner
 	name = "Bluespace Tuning Device"
