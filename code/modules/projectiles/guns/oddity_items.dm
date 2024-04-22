@@ -202,31 +202,56 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A mix of several other Slot-o-Matics seemingly molten and merged into rainbow. Each pistol holding its trade mark blue cross."
 	possible_colors = list("rainbow")
-	damage_multiplier = 1
-	penetration_multiplier = 0.6
-	init_recoil = EMBEDDED_RECOIL(0.35)
+	damage_multiplier = 0.8
+	penetration_multiplier = 0.2
+	caliber = "10x24"
+	ammo_type = /obj/item/ammo_casing/c10x24
+	mag_well = MAG_WELL_PULSE
+	magazine_type = /obj/item/ammo_magazine/c10x24/bluecross
+	gun_tags = list(GUN_PROJECTILE)
+	init_recoil = EMBEDDED_RECOIL(0.2)
 	serial_type = "BlueCross"
 	gun_parts = null
 	matter = list()
 	price_tag = 0
 	throw_range = 7
-	magazine_type = /obj/item/ammo_magazine/smg_35/bluecross
-	var/throw_special = TRUE
+	var/timerid
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/handle_click_empty(mob/user)
 	. = ..()
-	if(throw_special)
-		if (user)
-			user.show_message(SPAN_WARNING("Your [src] upper half flashes into a sharp edge as it fires its last bullet! Throw it quickly!"))
-		throw_special = FALSE
-		throwforce = WEAPON_FORCE_LETHAL //Bonus style!
-		addtimer(CALLBACK(src, .proc/crack), 15 SECONDS)
+	if (user)
+		user.show_message(SPAN_WARNING("Your [src] charges up! Throw it at your enemies!"))
+	throwforce = WEAPON_FORCE_LETHAL //Bonus style!
+	timerid = addtimer(CALLBACK(src, .proc/crack), 5 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
 
 /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/proc/crack()
-	throwforce = initial(throwforce)
-	src.visible_message(SPAN_DANGER("[src] sharp edge cracks!"))
+	var/turf/T = get_turf(src)
+	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
+	sparks.set_up(5, 0, T)
+	sparks.start()
+	playsound(src.loc, "sparks", 50, 1)
+	src.visible_message(SPAN_DANGER("[src] blows apart!"))
+	new /obj/effect/decal/cleanable/generic(src.loc)
+	deltimer(timerid)
+	qdel(src)
 
-/obj/item/ammo_magazine/smg_35/bluecross
+/obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/proc/borrowedtime()
+	timerid = addtimer(CALLBACK(src, .proc/crack), 1 MINUTES, TIMER_UNIQUE|TIMER_STOPPABLE)
+
+/obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/throw_impact(atom/hit_atom)
+	if(!..()) //not caught in mid-air
+		if(throwforce == WEAPON_FORCE_LETHAL) //Cheesy way to figure out if we ran out of ammo
+			if(isliving(hit_atom))
+				var/mob/living/victim = hit_atom
+				victim.damage_through_armor(throwforce, BRUTE, attack_flag = ARMOR_MELEE)
+				if(!ishuman(hit_atom))
+					victim.Weaken(6) //Get styled on
+				playsound(src.loc, 'sound/weapons/tablehit1.ogg', 100, 1)
+				crack()
+
+
+/obj/item/ammo_magazine/c10x24/bluecross
+	max_ammo = 32
 	matter = list()
 
 /obj/item/clothing/accessory/holster/bluecross
@@ -234,6 +259,9 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A \"presumebly\" endless supply of slaught-o-matics when drawn. You are never really able to tell when and how a new one takes its place when you draw one."
 	price_tag = 4000
+	var/spam_protection = 10 //The amount of guns we currently store
+	var/spam_protection_delay = 1 SECOND //How fast we recharge our storage
+	var/stored = 10
 
 /obj/item/clothing/accessory/holster/bluecross/Initialize()
 	. = ..()
@@ -243,10 +271,16 @@
 	..()
 	item_flags |= BLUESPACE
 	bluespace_entropy(20, get_turf(src)) //There is a great disturbance in the force
+	recharge()
 
 /obj/item/clothing/accessory/holster/bluecross/holster(var/obj/item/I, var/mob/living/user)
 	to_chat(user, SPAN_WARNING("There is already \a [holstered] holstered here!"))
 	return
+
+/obj/item/clothing/accessory/holster/bluecross/proc/recharge()
+	if(stored < spam_protection)
+		stored++
+	addtimer(CALLBACK(src, .proc/recharge), spam_protection_delay)
 
 /obj/item/clothing/accessory/holster/bluecross/unholster(mob/user as mob)
 	if(user.lying)
@@ -266,8 +300,13 @@
 				SPAN_NOTICE("[user] draws \the [holstered], pointing it at the ground."),
 				SPAN_NOTICE("You draw \the [holstered], pointing it at the ground.")
 				)
-		var/obj/item/gun/gun = new /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic(src)
+		if(!stored) // Kudos to the gamers who made a unholster\ndrop macro
+			to_chat(user, SPAN_WARNING("You try to pull it out but it is stuck! Try waiting a little."))
+			return
+		var/obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic/gun = new /obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic(src)
+		stored--
 		user.put_in_active_hand(gun)
+		gun.borrowedtime()
 		gun.add_fingerprint(user)
 		gun.toggle_safety(user) // Lets pull out our weapons sharp!
 		playsound(user, "[sound_out]", 75, 0)
