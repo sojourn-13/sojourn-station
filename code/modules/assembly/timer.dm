@@ -112,6 +112,6 @@
         if(secured && timer2.secured)
             timing = timer2.timing
             time = timer2.time
-            to_chat(user, "You transfer the set time from [timer2] to [src].")
+            to_chat(user, "You transfer the timing parameters from [timer2] to [src].")
     else
         ..()
