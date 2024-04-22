@@ -48,7 +48,7 @@
 //Transfers pain from grabbed to grabber
 /obj/item/organ/internal/psionic_tumor/proc/pain_transference()
     set category = "Psionic powers"
-        set name = "Pain Transference (2)"
+    set name = "Pain Transference (2)"
     set desc = "Expend two psi points to psionically absorb some of the pain of whoever you are holding. Obviously this is very painful to the psion."
     psi_point_cost = 2 //Basically a grab is needed to steal somebodies pain and take it for yourself, good for all those support mains
     var/amount
