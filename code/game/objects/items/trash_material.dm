@@ -89,7 +89,7 @@
 	. = ..()
 	icon_state = "cutlass[rand(3)]"
 
-/obj/item/trash/material/brokenposi
+/obj/item/brokenposi
 	name = "Broken Positronic Brain"
 	desc = "Years upon years of being recycled over and over again this positronic brain ceased all its function. Yet it keeps reappearing in the same spot for some reason. Still contains the samea amount of materials" // The Roundstart Posibrain turned into an oddity
 	icon_state = "posibrain"
