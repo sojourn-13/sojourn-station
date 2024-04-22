@@ -80,7 +80,7 @@
 		to_chat(user, "\The [borerifle] is empty.")
 
 /obj/item/gun/projectile/automatic/underslung/borerifle
-	name = "Unnderslung large bore rifle"
+	name = "Underslung large bore rifle"
 	desc = "Not much more than a tube and a firing mechanism, this large bore rifle is designed to be fitted to another gun."
 	fire_sound = 'sound/weapons/guns/fire/sniper.ogg'
 	bulletinsert_sound = 'sound/weapons/guns/interact/china_lake_reload.ogg'
