@@ -90,8 +90,8 @@
 	icon_state = "cutlass[rand(3)]"
 
 /obj/item/brokenposi
-	name = "Broken Positronic Brain"
-	desc = "Years upon years of being recycled over and over again this positronic brain ceased all its function. Yet it keeps reappearing in the same spot for some reason. Still contains the same amount of materials" // The Roundstart Posibrain turned into an oddity
+	name = "broken Positronic brain pieces"
+	desc = "Years upon years of being recycled over and over again this positronic brain has ceased all its function and has fallen to pieces. Yet it keeps reappearing in the same spot for some reason like some unnatural corpse. Still contains the same amount of materials." // The Roundstart Posibrain turned into an oddity
 	icon = 'icons/obj/assemblies.dmi'
 	icon_state = "posibrain"
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 5, MATERIAL_GOLD = 5, MATERIAL_SILVER = 5)
