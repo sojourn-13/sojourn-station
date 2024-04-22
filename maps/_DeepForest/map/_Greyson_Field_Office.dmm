@@ -1219,7 +1219,7 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/obj/random/mob/roomba,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/one_star/fo_outside)
 "jM" = (
@@ -4008,7 +4008,7 @@
 /turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/one_star/fo_outside)
 "Fz" = (
-/obj/random/mob/roomba,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/one_star/fo_outside)
 "FA" = (
@@ -6168,7 +6168,7 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/obj/random/mob/roomba,
+/obj/random/mob/roomba/any,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/one_star/fo_outside)
 "WJ" = (
