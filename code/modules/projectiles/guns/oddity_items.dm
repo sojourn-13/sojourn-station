@@ -260,7 +260,7 @@
 			A \"presumebly\" endless supply of slaught-o-matics when drawn. You are never really able to tell when and how a new one takes its place when you draw one."
 	price_tag = 4000
 	var/spam_protection = 10 //The amount of guns we currently store
-	var/spam_protection_delay = 1 SECOND //How fast we recharge our storage
+	var/spam_protection_delay = 2 SECOND //How fast we recharge our storage
 	var/stored = 10
 
 /obj/item/clothing/accessory/holster/bluecross/Initialize()
