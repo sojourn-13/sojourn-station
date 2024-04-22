@@ -2,8 +2,8 @@
 	title = "Blackshield Commander"
 	flag = SMC
 	head_position = 1
-	department = DEPARTMENT_SECURITY
-	department_flag = SECURITY | COMMAND
+	department = DEPARTMENT_BLACKSHIELD
+	department_flag = BLACKSHIELD | COMMAND
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
@@ -65,8 +65,8 @@
 /datum/job/serg
 	title = "Sergeant"
 	flag = SERG
-	department = DEPARTMENT_SECURITY
-	department_flag = SECURITY
+	department = DEPARTMENT_BLACKSHIELD
+	department_flag = BLACKSHIELD
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
@@ -120,8 +120,8 @@
 /datum/job/medspec
 	title = "Corpsman"
 	flag = MEDSPEC
-	department = DEPARTMENT_SECURITY
-	department_flag = SECURITY
+	department = DEPARTMENT_BLACKSHIELD
+	department_flag = BLACKSHIELD
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
@@ -176,8 +176,8 @@
 /datum/job/trooper
 	title = "Blackshield Trooper"
 	flag = TROOPER
-	department = DEPARTMENT_SECURITY
-	department_flag = SECURITY
+	department = DEPARTMENT_BLACKSHIELD
+	department_flag = BLACKSHIELD
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
