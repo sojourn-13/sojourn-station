@@ -231,6 +231,7 @@
 	taste_mult = 0.6
 	reagent_state = LIQUID
 	color = "#CF3600"
+	strength = 2
 	metabolism = REM/4 //0.05 Cyanide lasts within one day but duh...
 
 /datum/reagent/toxin/cyanide/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
