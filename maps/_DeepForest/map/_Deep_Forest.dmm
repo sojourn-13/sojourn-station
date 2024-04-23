@@ -15378,12 +15378,6 @@
 /obj/random/scrap/sparse_even,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"nBZ" = (
-/obj/item/storage/firstaid/surgery/traitor,
-/obj/item/storage/firstaid/surgery/traitor,
-/obj/structure/table/steel,
-/turf/simulated/floor/wood/wild4,
-/area/colony/exposedsun/crashed_shop/outsider)
 "nCt" = (
 /obj/effect/decal/cleanable/blood/oil/streak,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
@@ -20435,10 +20429,6 @@
 /obj/random/mob/prepper_ranged,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
-"rQF" = (
-/obj/machinery/chem_master,
-/turf/simulated/floor/wood/wild4,
-/area/colony/exposedsun/crashed_shop/outsider)
 "rQJ" = (
 /obj/random/powercell,
 /turf/simulated/floor/tiled/dark,
@@ -20654,14 +20644,6 @@
 /obj/effect/window_lwall_spawn/smartspawn/onestar,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
-"saY" = (
-/obj/structure/table/steel,
-/obj/item/storage/box/beakers,
-/obj/item/reagent_containers/dropper,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/modular_computer/tablet/lease/preset/chemistry,
-/turf/simulated/floor/wood/wild4,
-/area/colony/exposedsun/crashed_shop/outsider)
 "sbn" = (
 /obj/structure/table/reinforced,
 /obj/random/credits/c5000,
@@ -22431,10 +22413,6 @@
 /obj/structure/flora/big/bush2,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
-"tEy" = (
-/obj/machinery/chemical_dispenser,
-/turf/simulated/floor/wood/wild4,
-/area/colony/exposedsun/crashed_shop/outsider)
 "tEI" = (
 /obj/structure/railing/grey{
 	dir = 1;
@@ -23242,9 +23220,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/zoo)
 "unH" = (
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
 /obj/structure/table/steel,
+/obj/item/tool/knife,
+/obj/item/tool/wirecutters/pliers,
+/obj/item/flame/lighter/zippo,
+/obj/item/tool/wirecutters,
 /turf/simulated/floor/wood/wild4,
 /area/colony/exposedsun/crashed_shop/outsider)
 "unP" = (
@@ -23513,11 +23493,6 @@
 /obj/structure/flora/small/bushb2,
 /turf/simulated/mineral/planet,
 /area/nadezhda/outside/meadow)
-"uBf" = (
-/obj/structure/table/steel,
-/obj/item/flame/lighter/zippo,
-/turf/simulated/floor/wood/wild4,
-/area/colony/exposedsun/crashed_shop/outsider)
 "uBg" = (
 /obj/structure/table,
 /obj/item/material/shard,
@@ -26122,7 +26097,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/dungeon/outside/prepper/vault/floor3)
 "wPb" = (
-/obj/structure/closet/secure_closet/freezer/blood,
+/obj/structure/table/steel,
+/obj/item/device/radio,
 /turf/simulated/floor/wood/wild4,
 /area/colony/exposedsun/crashed_shop/outsider)
 "wPh" = (
@@ -62306,7 +62282,7 @@ daI
 daI
 daI
 daI
-mCD
+nja
 mCD
 daI
 daI
@@ -63125,7 +63101,7 @@ daI
 daI
 oFE
 wPb
-qpz
+wPb
 qpz
 qpz
 qpz
@@ -63333,8 +63309,8 @@ daI
 daI
 daI
 oFE
-saY
-uBf
+sJb
+qpz
 sZV
 qpz
 sZV
@@ -63542,7 +63518,7 @@ daI
 daI
 daI
 oFE
-tEy
+sJb
 sZV
 qpz
 mBs
@@ -63751,7 +63727,7 @@ daI
 daI
 daI
 oFE
-rQF
+sJb
 sJb
 qpz
 kGM
@@ -64169,7 +64145,7 @@ daI
 daI
 daI
 oFE
-vgW
+qpz
 qpz
 qpz
 qpz
@@ -64380,7 +64356,7 @@ daI
 oFE
 pqM
 unH
-nBZ
+sJb
 pqM
 vgW
 vgW
