@@ -327,7 +327,7 @@
 				to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the maintenance panel."))
 				cut_overlays()
 				if(panel_open)
-					overlays += image(icon, "[icon_type]-panel")
+					add_overlay(image(icon, "[icon_type]-panel"))
 			return
 
 		if(QUALITY_WELDING)
