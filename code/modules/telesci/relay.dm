@@ -118,12 +118,12 @@
 	bluespace_entropy(2, get_turf(src), TRUE)
 	cut_overlays()
 	if(panel_open)
-		overlays += "relay-panel"
+		add_overlay("relay-panel")
 	if(burntOut)
-		overlays += "relay-fried"
+		add_overlay("relay-fried")
 		addtimer(CALLBACK(src, /atom/proc/update_icon), 4)
 	else
-		overlays += "relay-calculating"
+		add_overlay("relay-calculating")
 		addtimer(CALLBACK(src, /atom/proc/update_icon), 5)
 
 /obj/machinery/telesci_relay/proc/checkCrystal() //Like pingCrystal(), but without risking damage.
