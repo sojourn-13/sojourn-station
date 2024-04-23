@@ -73,13 +73,13 @@
 		to_chat(user, "<span class='notice'>\The [src]s crystal slot is empty.")
 
 /obj/machinery/telesci_relay/update_icon()
-	cut_overlays()
+	cut_overlays()	
 	if(panel_open)
-		overlays += "relay-panel"
+		add_overlay("relay-panel")
 	if(checkCrystal())
-		overlays += "relay-powered"
+		add_overlay("relay-powered")
 	if(inUse)
-		overlays += "relay-calculating"
+		add_overlay("relay-calculating")
 
 /obj/machinery/telesci_relay/proc/getCrystalIntegrityPercent()
 	var/percent = stored_crystal.integrity/stored_crystal.max_integrity
