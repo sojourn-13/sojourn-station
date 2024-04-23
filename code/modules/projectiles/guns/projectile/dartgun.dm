@@ -32,9 +32,7 @@
 	icon_state = "dart"
 	caliber = "dart"
 	projectile_type = /obj/item/projectile/bullet/chemdart
-
-/obj/item/ammo_casing/chemdart/expend()
-	qdel(src)
+	is_caseless = TRUE
 
 /obj/item/ammo_magazine/chemdart
 	name = "dart cartridge"
