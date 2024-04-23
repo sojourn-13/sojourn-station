@@ -1706,7 +1706,7 @@
 /area/nadezhda/crew_quarters/hydroponics)
 "asM" = (
 /obj/machinery/camera/network/gate{
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/west)
@@ -4525,7 +4525,7 @@
 "aYN" = (
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/west)
@@ -5290,7 +5290,7 @@
 	dir = 4
 	},
 /obj/machinery/camera/network/gate{
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate)
@@ -7572,7 +7572,7 @@
 /obj/structure/flora/small/rock2,
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/east)
@@ -11047,7 +11047,7 @@
 	},
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
@@ -19423,7 +19423,7 @@
 "ecW" = (
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/security/maingate/west)
@@ -29958,7 +29958,7 @@
 "gkJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/machinery/camera/network/gate{
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate)
@@ -31467,7 +31467,7 @@
 "gAa" = (
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/security/maingate/east)
@@ -36416,7 +36416,7 @@
 	},
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/inside_colony)
@@ -38812,7 +38812,8 @@
 "iaA" = (
 /obj/structure/bed,
 /obj/machinery/camera/network/gate{
-	dir = 8
+	dir = 8;
+	network = list("Nadzedha Wall Colony")
 	},
 /obj/item/bedsheet/orange,
 /obj/item/toy/plushie/spider{
@@ -39759,7 +39760,8 @@
 /area/nadezhda/engineering/engine_waste)
 "iko" = (
 /obj/machinery/camera/network/gate{
-	dir = 4
+	dir = 4;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/security/maingate/west)
@@ -40667,7 +40669,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/gate{
 	dir = 8;
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/security/maingate)
@@ -48444,7 +48446,7 @@
 "kaO" = (
 /obj/machinery/camera/network/gate{
 	dir = 10;
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/nadezhda/security/maingate/east)
@@ -48687,7 +48689,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/gate{
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
@@ -57109,7 +57111,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/office/dark,
 /obj/machinery/camera/network/gate{
-	dir = 8
+	dir = 8;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/maingate)
@@ -64753,7 +64756,7 @@
 "nvf" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/machinery/camera/network/gate{
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/east)
@@ -67134,7 +67137,8 @@
 "nTu" = (
 /obj/structure/multiz/stairs/enter/bottom,
 /obj/machinery/camera/network/gate{
-	dir = 8
+	dir = 8;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/west)
@@ -71511,7 +71515,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/network/gate{
-	dir = 4
+	dir = 4;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
@@ -74424,7 +74429,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/camera/network/gate{
-	dir = 4
+	dir = 4;
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/security/maingate/east)
@@ -87459,7 +87465,7 @@
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "rZN" = (
 /obj/machinery/camera/network/gate{
-	network = list("Nadzedha  Wall  Colony")
+	network = list("Nadzedha Wall Colony")
 	},
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/east)
@@ -103080,7 +103086,9 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/machinery/camera/network/gate,
+/obj/machinery/camera/network/gate{
+	network = list("Nadzedha Wall Colony")
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/security/maingate/west)
 "vhj" = (
