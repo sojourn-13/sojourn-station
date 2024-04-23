@@ -398,8 +398,8 @@
 	M.adjustFireLoss(5 * effect_multiplier) //burns you up rapidly
 	M.take_organ_damage(0.2 * effect_multiplier, 0) //fucks your organs but not as much as dedicated cytotoxins like Lexorin
 	if(prob(50))
-		M.adjustBrainLoss(4) //you injected yourself with acid of course its affects your brain
-	if(prob(20))
+		M.adjustBrainLoss(1) //you injected yourself with acid of course its affects your brain
+	if(prob(5))
 		to_chat(M, SPAN_DANGER("YOUR INSIDES ARE MELTING!!!")) //last but not least tells somebody they got hit by polytrinic
 
 /datum/reagent/toxin/lexorin
