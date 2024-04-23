@@ -73,13 +73,13 @@
 		to_chat(user, "<span class='notice'>\The [src]s crystal slot is empty.")
 
 /obj/machinery/telesci_relay/update_icon()
-	cut_overlays()
+	cut_overlays()	
 	if(panel_open)
-		overlays += "relay-panel"
+		add_overlay("relay-panel")
 	if(checkCrystal())
-		overlays += "relay-powered"
+		add_overlay("relay-powered")
 	if(inUse)
-		overlays += "relay-calculating"
+		add_overlay("relay-calculating")
 
 /obj/machinery/telesci_relay/proc/getCrystalIntegrityPercent()
 	var/percent = stored_crystal.integrity/stored_crystal.max_integrity
@@ -118,12 +118,12 @@
 	bluespace_entropy(2, get_turf(src), TRUE)
 	cut_overlays()
 	if(panel_open)
-		overlays += "relay-panel"
+		add_overlay("relay-panel")
 	if(burntOut)
-		overlays += "relay-fried"
+		add_overlay("relay-fried")
 		addtimer(CALLBACK(src, /atom/proc/update_icon), 4)
 	else
-		overlays += "relay-calculating"
+		add_overlay("relay-calculating")
 		addtimer(CALLBACK(src, /atom/proc/update_icon), 5)
 
 /obj/machinery/telesci_relay/proc/checkCrystal() //Like pingCrystal(), but without risking damage.
