@@ -7,7 +7,7 @@
 	kill_count = 15 //shorter range
 	muzzle_type = null
 	reagent_flags = NO_REACT
-	var/reagent_amount = 15
+	var/reagent_amount = 5
 
 /obj/item/projectile/bullet/chemdart/New()
 	if (!testing)
@@ -67,7 +67,7 @@
 	var/list/beakers = list() //All containers inside the gun.
 	var/list/mixing = list() //Containers being used for mixing.
 	var/max_beakers = 3
-	var/dart_reagent_amount = 15
+	var/dart_reagent_amount = 5
 	var/beaker_type = /obj/item/reagent_containers/glass/beaker
 	var/list/starting_chems = null
 	serial_type = "SI"
