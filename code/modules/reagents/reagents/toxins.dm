@@ -388,7 +388,6 @@
 	power = 10
 	meltdose = 4
 	metabolism = REM * 2 //should neutralize reasonably fast in your blood if you want it more accurate to reality I can add some metabolites at some point for acids which are usually salts you do not want in your body either
-	strength = 2
 	illegal = TRUE
 	nerve_system_accumulations = 85
 
