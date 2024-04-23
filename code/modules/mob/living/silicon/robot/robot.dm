@@ -435,7 +435,7 @@
 /mob/living/silicon/robot/verb/toggle_panel_lock()
 	set name = "Toggle Panel Lock"
 	set category = "Silicon Commands"
-	to_chat(src, "You begin [locked ? "" : "un"]locking your panel.")
+	to_chat(src, "You begin [locked ? "un" : ""]locking your panel.")
 	if(!opened && has_power && do_after(usr, 80) && !opened && has_power)
 		to_chat(src, "You [locked ? "un" : ""]locked your panel.")
 		locked = !locked
@@ -577,6 +577,9 @@
 				if(istype(WC))
 					C.brute_damage = WC.brute
 					C.electronics_damage = WC.burn
+					C.max_damage = WC.internal_damage
+					C.brute_mult = WC.brute_mult
+					C.burn_mult = WC.burn_mult
 
 				to_chat(usr, SPAN_NOTICE("You install the [I.name]."))
 
@@ -622,9 +625,19 @@
 					to_chat(user, SPAN_NOTICE("Nothing to fix here!"))
 					return
 
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC) && !opened)
+					to_chat(user, SPAN_NOTICE("You can't reach the damage without a opening."))
+					return
+
+				var/datum/robot_component/armour_component = components["armour"]
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC) && opened && armour_component)
+					if(armour_component.brute_damage + armour_component.electronics_damage >= armour_component.max_damage)
+						to_chat(user, SPAN_NOTICE("Their isn't enough left of the internal plates to fix."))
+						return
 					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-					adjustBruteLoss(-30)
+					armour_component.brute_damage -= 30
+					if(armour_component.brute_damage < 0) //safty check
+						armour_component.brute_damage = 0
 					updatehealth()
 					add_fingerprint(user)
 					for(var/mob/O in viewers(user, null))

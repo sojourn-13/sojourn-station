@@ -325,6 +325,7 @@
 		/obj/item/ammo_casing,
 		/obj/item/ammo_kit,
 		/obj/item/ammo_magazine,
+		/obj/item/cell,
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/mech_ammo_box
