@@ -231,7 +231,6 @@
 	taste_mult = 0.6
 	reagent_state = LIQUID
 	color = "#CF3600"
-	strength = 2
 	metabolism = REM/4 //0.05 Cyanide lasts within one day but duh...
 
 /datum/reagent/toxin/cyanide/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
@@ -396,7 +395,7 @@
 /datum/reagent/toxin/polyacid/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.adjustToxLoss(rand(3,5) * effect_multiplier)
 	M.adjustOxyLoss(1 * effect_multiplier) //acidic vapors should fuck lungs especially if its probably just trekkified antimony pentafluoride
-	M.adjustBurnLoss(5 * effect_multiplier) //burns you up rapidly
+	M.adjustFireLoss(5 * effect_multiplier) //burns you up rapidly
 	M.take_organ_damage(0.2 * effect_multiplier, 0) //fucks your organs but not as much as dedicated cytotoxins like Lexorin
 	if(prob(50))
 		M.adjustBrainLoss(4) //you injected yourself with acid of course its affects your brain
