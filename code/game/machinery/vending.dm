@@ -327,7 +327,7 @@
 				to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the maintenance panel."))
 				cut_overlays()
 				if(panel_open)
-					overlays += image(icon, "[icon_type]-panel")
+					add_overlay(image(icon, "[icon_type]-panel")) //we have to use add_overlay here as opposed to overlay += due to the latter adding another layer onto the icon with each use of the screwdriver
 			return
 
 		if(QUALITY_WELDING)
