@@ -208,7 +208,7 @@
 	speech_verb = list("says", "hisses")
 	ask_verb = list("inquires")
 	exclaim_verb = list("bellows")
-	colour = "rough" //placeholder for now till somebody can explain me how to set this up proper 
+	colour = "cindarite" //placeholder for now till somebody can explain me how to set this up proper 
 	key = "u"
 	has_written_form = TRUE
 	shorthand = "CRV"
