@@ -393,9 +393,8 @@
 	nerve_system_accumulations = 85
 
 /datum/reagent/toxin/polyacid/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.adjustToxLoss(rand(3,5) * effect_multiplier)
 	M.adjustOxyLoss(1 * effect_multiplier) //acidic vapors should fuck lungs especially if its probably just trekkified antimony pentafluoride
-	M.adjustFireLoss(5 * effect_multiplier) //burns you up rapidly
+	M.adjustFireLoss(3 * effect_multiplier) //burns you up rapidly
 	M.take_organ_damage(0.2 * effect_multiplier, 0) //fucks your organs but not as much as dedicated cytotoxins like Lexorin
 	if(prob(5))
 		to_chat(M, SPAN_DANGER("YOUR INSIDES ARE MELTING!!!")) //last but not least tells somebody they got hit by polytrinic
