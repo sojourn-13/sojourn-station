@@ -130,6 +130,9 @@ var/global/list/robot_modules = list(
 			//Setting this to be infinity power isnt as good of a fix do to guns that cost power getting endless free shots, so auto charging is better - Trilby
 
 /obj/item/robot_module/proc/Reset(var/mob/living/silicon/robot/R)
+	if(R.actively_resting || R.allow_resting)
+		R.actively_resting = 0
+		R.allow_resting = 0
 	if(robot_traits) // removes module-only traits
 		R.RemoveTrait(robot_traits)
 	remove_camera_networks(R)
