@@ -621,8 +621,8 @@ var/global/list/robot_modules = list(
 
 /obj/item/robot_module/engineering/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	if(src.modules)
-		var/obj/item/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
-		KBG.reagents.add_reagent("silicate", 2 * amount)
+		var/obj/item/reagent_containers/spray/cleaner/SC = locate() in src.modules //space cleaner
+		SC.reagents.add_reagent("cleaner", 2 * amount)
 	..()
 
 	if(R.HasTrait(CYBORG_TRAIT_EMAGGED))
