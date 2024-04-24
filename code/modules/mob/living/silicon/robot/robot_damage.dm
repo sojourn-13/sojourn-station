@@ -204,4 +204,3 @@
 	spawn(2)
 		playsound(src, 'sound/weapons/heavysmash.ogg', 100, 1, 20,20)
 	playsound(src, pick(robot_talk_heavy_sound), 100, 1, 5,5)
-

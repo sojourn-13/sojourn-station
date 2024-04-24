@@ -6,8 +6,8 @@
 	real_name = "Cyborg"
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "robot"
-	maxHealth = 200
-	health = 200
+	maxHealth = 100
+	health = 100
 	defaultHUD = "BorgStyle"
 	mob_bump_flag = ROBOT
 	mob_swap_flags = ROBOT|MONKEY|SLIME|SIMPLE_ANIMAL
@@ -326,8 +326,14 @@
 	var/module_type = robot_modules[modtype]
 	var/obj/item/robot_module/RM = new module_type() //Spawn a dummy module to read values from
 
+	var/armourHealth = 0
+	for(var/V in src.components)
+		var/datum/robot_component/C = src.components[V]
+		if (V == "armour")
+			armourHealth = C.max_damage
+
 	switch(alert(src, "[RM.desc] \n \n\
-	Health: [RM.health] \n\
+	Health: [RM.health + armourHealth] \n\
 	Power Efficiency: [RM.power_efficiency*100]%\n\
 	Movement Speed: [RM.speed_factor*100]%",
 	"[modtype] module", "Yes", "No"))
@@ -625,19 +631,9 @@
 					to_chat(user, SPAN_NOTICE("Nothing to fix here!"))
 					return
 
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC) && !opened)
-					to_chat(user, SPAN_NOTICE("You can't reach the damage without a opening."))
-					return
-
-				var/datum/robot_component/armour_component = components["armour"]
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC) && opened && armour_component)
-					if(armour_component.brute_damage + armour_component.electronics_damage >= armour_component.max_damage)
-						to_chat(user, SPAN_NOTICE("Their isn't enough left of the internal plates to fix."))
-						return
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+					adjustBruteLoss(-30)
 					user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-					armour_component.brute_damage -= 30
-					if(armour_component.brute_damage < 0) //safty check
-						armour_component.brute_damage = 0
 					updatehealth()
 					add_fingerprint(user)
 					for(var/mob/O in viewers(user, null))
@@ -752,7 +748,10 @@
 		if(ABORT_CHECK)
 			return
 
-	if(istype(I, /obj/item/stack/cable_coil) && (wiresexposed || isdrone(src)))
+	if(istype(I, /obj/item/stack/cable_coil))
+		if (src == user)
+			to_chat(user, SPAN_WARNING("You lack the reach to be able to repair yourself."))
+			return
 		if (!getFireLoss())
 			to_chat(user, "Nothing to fix here!")
 			return
@@ -761,8 +760,11 @@
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 			adjustFireLoss(-30)
 			updatehealth()
+			add_fingerprint(user)
 			for(var/mob/O in viewers(user, null))
 				O.show_message(text(SPAN_DANGER("[user] has fixed some of the burnt wires on [src]!")), 1)
+			return
+
 
 	else if (istype(I, /obj/item/stock_parts/matter_bin) && opened) // Installing/swapping a matter bin
 		if(storage)

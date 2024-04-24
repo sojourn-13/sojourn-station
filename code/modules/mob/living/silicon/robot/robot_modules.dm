@@ -56,7 +56,7 @@ var/global/list/robot_modules = list(
 	// A list of robot traits , these can be found at cyborg_traits.dm
 	var/robot_traits = null
 	//Module stats, these are applied to the robot
-	health = 200 //Max health. Apparently this is already defined in item.dm
+	health = 100 //Max health. Apparently this is already defined in item.dm
 	var/speed_factor = 1.3 //Speed factor, applied as a divisor on movement delay
 	var/power_efficiency = 1.0 //Power efficiency, applied as a divisor on power taken from the internal cell
 
@@ -90,9 +90,17 @@ var/global/list/robot_modules = list(
 	if(R.radio)
 		R.radio.recalculateChannels()
 
+	//Snagging the value of armour if a borg has one. So that way health can be updated to accomodate that plating.
+	var/armourHealth = 0
+	if(R)
+		for(var/V in R.components)
+			var/datum/robot_component/C = R.components[V]
+			if (V == "armour")
+				armourHealth = C.max_damage
+
 	//Setting robot stats
 	var/healthpercent = R.health / R.maxHealth //We update the health to remain at the same percentage it was before
-	R.maxHealth = health
+	R.maxHealth = health + armourHealth //So we don't have borgs with more internal armour then their actual life.
 	R.health = R.maxHealth * healthpercent
 
 	R.handle_regular_hud_updates()
@@ -138,7 +146,15 @@ var/global/list/robot_modules = list(
 	remove_subsystems(R)
 	remove_status_flags(R)
 
-	R.maxHealth = initial(R.maxHealth)
+	var/armourHealth = 0
+	for(var/V in R.components)
+		var/datum/robot_component/C = R.components[V]
+		if (V == "armour")
+			armourHealth = C.max_damage
+
+	var/healthpercent = R.health / R.maxHealth //We update the health to remain at the same percentage it was before
+	R.maxHealth = initial(R.maxHealth) + armourHealth
+	R.health = R.maxHealth * healthpercent
 	R.speed_factor = initial(R.speed_factor)
 	R.power_efficiency = initial(R.power_efficiency)
 	for(var/name in stat_modifiers)
@@ -368,7 +384,7 @@ var/global/list/robot_modules = list(
 
 /obj/item/robot_module/medical/general
 	name = "medical robot module"
-	health = 180 //bit weaker
+	health = 120 //bit weaker
 	speed_factor = 1.3 //normal speed
 	power_efficiency = 0.9 //Very poor, shackled to a charger
 	supported_upgrades = list(/obj/item/borg/upgrade/hypospray_medical,
@@ -509,7 +525,7 @@ var/global/list/robot_modules = list(
 				"mmekacargo"
 				)
 
-	health = 240 //Slightly above average
+	health = 120 //Slightly above average
 	speed_factor = 1.4 //Slightly above average
 	power_efficiency = 0.9 //Slightly below average
 
@@ -654,7 +670,7 @@ var/global/list/robot_modules = list(
 							 /obj/item/borg/upgrade/bigknife)
 
 /obj/item/robot_module/security/defense
-	health = 180 //Kinda light! We're meant for rapid response
+	health = 160 //Kinda light! We're meant for rapid response
 	speed_factor = 1.45 //pretty fast!
 	power_efficiency = 0.95 //We're dangerous, but generally can't stray too far from our chargers!
 
@@ -739,7 +755,7 @@ var/global/list/robot_modules = list(
 
 
 /obj/item/robot_module/security/enforcement
-	health = 320 //Very tanky!
+	health = 220 //Very tanky!
 	speed_factor = 1.15 //Kinda slow
 	power_efficiency = 1.55 //Decent, we are meant to be going out and learing spiders
 
@@ -878,7 +894,7 @@ var/global/list/robot_modules = list(
 					"mmekajani"
 				)
 
-	health = 250 //Bulky
+	health = 120 //Bulky
 	speed_factor = 1.45 //Fast
 	power_efficiency = 0.8 //Poor
 
@@ -973,7 +989,7 @@ var/global/list/robot_modules = list(
 					"mmekaserv"
 				)
 
-	health = 130 //fragile
+	health = 120
 	speed_factor = 1.5 //Quick
 	power_efficiency = 1 //Base line
 
@@ -1082,7 +1098,7 @@ var/global/list/robot_modules = list(
 					"k4tmine_alt1"
 				)
 
-	health = 250 //Pretty tough
+	health = 160 //Pretty tough
 	speed_factor = 1.2 //meh
 	power_efficiency = 1.5 //Best efficiency
 
@@ -1160,7 +1176,7 @@ var/global/list/robot_modules = list(
 					"mmekaninja"
 					)
 
-	health = 160 //Weak
+	health = 120 //Weak
 	speed_factor = 1.3 //Average
 	power_efficiency = 0.75 //Poor efficiency
 
