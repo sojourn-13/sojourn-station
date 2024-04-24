@@ -212,5 +212,5 @@
 	key = "u"
 	has_written_form = TRUE
 	shorthand = "CRV"
-	space_chance = 5
+	space_chance = 50
 	syllables = list("ssa", "zra", "sz", "sssc", "i", "zro", "zii", "zr", "zs", "sz", "ssso", "ol",  "or", "ar", "weh", "ors",  "uuz", "izu", "iso", "e", "a", "u", "lo", "ak", "ssro", "nar", "nra", "nzo", "ee", "li", "ki", "eeh", "ssh", "hssr", "hiissr", "rass", "sie", "lu", "ku", "ri", "bi", "bso", "om", "rro", "siksi", "don", "su", "sss", "ars", "ree", "ssan")
