@@ -211,6 +211,12 @@
 	colour = "cindarite" //placeholder for now till somebody can explain me how to set this up proper 
 	key = "u"
 	has_written_form = TRUE
+	partial_understanding = list(
+		LANGUAGE_COMMON = 20 //Words often get imported into other languages especially if they convey the same information better that and common is the most common language
+		LANGUAGE_YASSARI = 10 //See common
+		LANGUAGE_EURO = 10, //See common
+		LANGUAGE_JANA = 10 //See common
+	)
 	shorthand = "CRV"
 	space_chance = 50
 	syllables = list("ssa", "zra", "sz", "sssc", "i", "zro", "zii", "zr", "zs", "sz", "ssso", "ol",  "or", "ar", "weh", "ors",  "uuz", "izu", "iso", "e", "a", "u", "lo", "ak", "ssro", "nar", "nra", "nzo", "ee", "li", "ki", "eeh", "ssh", "hssr", "hiissr", "rass", "sie", "lu", "ku", "ri", "bi", "bso", "om", "rro", "siksi", "don", "su", "sss", "ars", "ree", "ssan")
