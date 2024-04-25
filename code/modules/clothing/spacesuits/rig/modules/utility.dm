@@ -260,7 +260,7 @@
 		msg_admin_attack("[key_name(H)] TRYED [key_name(target_mob)] to inject (AMOUNT: [injection_amount])" )
 		for(var/datum/reagent/R in beaker.reagents.reagent_list)
 			target_mob.attack_log += "Beaker Contents: [R.id]"
-
+			msg_admin_attack("[key_name(H)]'s Beaker Contents: [R.id]" )
 		if(!do_after(H, injection_to_others_delay, target_mob))
 			return FALSE
 		to_chat(H, SPAN_DANGER("You inject [target_mob] with [injection_amount] unit\s of [beaker.name]."))
