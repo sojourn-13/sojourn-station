@@ -253,9 +253,23 @@
 		target_mob = H
 
 	if(target_mob != H)
+		target_mob.visible_message(SPAN_DANGER("[H]'s hardsuit starts to deploy a needle trying to inject [target_mob]!"))
+
+		target_mob.attack_log += "\[[time_stamp()]\]<font color='red'> TRYED [H.name] ([H.ckey]) with [target_mob] (AMOUNT: [injection_amount])</font>"
+		H.attack_log += "\[[time_stamp()]\]<font color='orange'> TRYED to inject [target_mob.name] ([target_mob.ckey]) with [name] (AMOUNT: [injection_amount])</font>"
+		msg_admin_attack("[key_name(H)] TRYED [key_name(target_mob)] to inject (AMOUNT: [injection_amount])" )
+		var/datum/reagents/current = beaker.reagents.reagent_list
+		for(var/datum/reagent/R in current)
+			target_mob.attack_log += "Beaker Contents: [R.id]"
+
 		if(!do_after(H, injection_to_others_delay, target_mob))
 			return FALSE
 		to_chat(H, SPAN_DANGER("You inject [target_mob] with [injection_amount] unit\s of [beaker.name]."))
+
+		target_mob.attack_log += "\[[time_stamp()]\]<font color='red'> HAS [H.name] ([H.ckey]) with [target_mob] (AMOUNT: [injection_amount])</font>"
+		H.attack_log += "\[[time_stamp()]\]<font color='orange'> HAS to inject [target_mob.name] ([target_mob.ckey]) with [name] (AMOUNT: [injection_amount])</font>"
+		msg_admin_attack("[key_name(H)] HAS [key_name(target_mob)] to inject (AMOUNT: [injection_amount])" )
+
 
 	to_chat(target_mob, "<span class='danger'>You feel a rush in your veins as [injection_amount] unit\s of chemicals are injected in your bloodstream.</span>")
 	// Update display

@@ -378,9 +378,9 @@ Technomancer RIG
 	icon_state = "response_team"
 	armor_list = list(
 		melee = 60,
-		bullet = 35,
-		energy = 25,
-		bomb = 50,
+		bullet = 15,
+		energy = 10,
+		bomb = 30,
 		bio = 100,
 		rad = 100
 	)
