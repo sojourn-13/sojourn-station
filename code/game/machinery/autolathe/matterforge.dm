@@ -39,7 +39,6 @@
 
 	var/list/unsuitable_materials = list(MATERIAL_BIOMATTER)
 
-	var/list/special_actions
 	var/global/list/error_messages = list(
 		ERR_NOTFOUND = "Design data not found.",
 		ERR_NOMATERIAL = "Not enough materials.",
@@ -110,8 +109,6 @@
 	data["error"] = error
 	data["paused"] = paused
 	data["unfolded"] = unfolded
-
-	data["special_actions"] = special_actions
 
 	data |= materials_data()
 
