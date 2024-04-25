@@ -212,8 +212,8 @@
 	key = "u"
 	has_written_form = TRUE
 	partial_understanding = list(
-		LANGUAGE_COMMON = 20 
-		LANGUAGE_YASSARI = 10 
+		LANGUAGE_COMMON = 20, 
+		LANGUAGE_YASSARI = 10, 
 		LANGUAGE_EURO = 10, 
 		LANGUAGE_JANA = 10 
 	)
