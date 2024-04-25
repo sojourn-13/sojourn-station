@@ -2903,6 +2903,7 @@
 #include "code\modules\projectiles\guns\projectile\automatic\mac.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\mamba.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\maxim.dm"
+#include "code\modules\projectiles\guns\projectile\automatic\mercurian.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\motherfucker.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\nail_gun.dm"
 #include "code\modules\projectiles\guns\projectile\automatic\nordwind.dm"
