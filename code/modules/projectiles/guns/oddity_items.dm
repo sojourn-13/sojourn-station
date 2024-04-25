@@ -247,7 +247,7 @@
 				crack()
 
 /obj/item/projectile/bullet/pistol_35/blue
-	color = '#5234ff' //its blue
+	color = "#5234ff" //its blue
 
 /obj/item/ammo_casing/pistol_35/blue
 	projectile_type = /obj/item/projectile/bullet/pistol_35/blue
