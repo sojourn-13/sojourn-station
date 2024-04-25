@@ -679,6 +679,7 @@ var/global/list/robot_modules = list(
 
 	stat_modifiers = list(
 		STAT_VIG = 60,
+		STAT_ROB = 60,
 		STAT_TGH = 60,
 		STAT_BIO = 25,
 		STAT_COG = 120,
@@ -764,6 +765,7 @@ var/global/list/robot_modules = list(
 
 	stat_modifiers = list(
 		STAT_ROB = 60,
+		STAT_VIG = 60,
 		STAT_TGH = 60,
 		STAT_BIO = 25,
 		STAT_COG = 120,
