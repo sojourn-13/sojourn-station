@@ -418,16 +418,31 @@
 	var/burn_temperature = fire_burn_temperature()
 	var/thermal_protection = get_heat_protection(burn_temperature)
 
-	if (thermal_protection < 1 && bodytemperature < burn_temperature && on_fire)
+	if (thermal_protection < 1 && bodytemperature < burn_temperature && on_fire && fire_stacks < 20)
 		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
 		if(world.time >= next_onfire_brn)
 			next_onfire_brn = world.time + 50
-			adjustFireLoss(fire_stacks*5 + 3) //adjusted to be lower. You need time to put yourself out. And each roll only removes 2.5 stacks.
-			if(prob(25) && fire_stacks > 0) //over time the fire will slowly burn itself out. This is meant to be decently slow so as to not make fire much less dangerous as its purpose is to prevent issues when mobs hit tens of thousands of fireloss.
-				adjust_fire_stacks(-1)
+			adjustFireLoss(0.33*(NUM_E**(fire_stacks*0.25)) + 3) //This uses an attenuated natural exponential function. The + 3 at the end is there to make sure that you take some damage even at 1 stack. 7 stacks with this function deal about the same damage as 2 firestacks with the old equation also please if you plan to adjust this use wolfram alpha to sanity check your equation, can easily be adjusted to ones desire.
+			if(prob(60) && fire_stacks > 0) //over time the fire will slowly burn itself out. This is meant to be decently slow so as to not make fire much less dangerous as its purpose is to prevent issues when mobs hit tens of thousands of fireloss. Irkalla edit: I upped the loss chance to 40 so its less feeling like you got napalmed when you just set your coat on fire or something
+				adjust_fire_stacks(-1) 
+			if(fire_stacks > 5)
+				adjust_fire_stacks(-2) //This is to simulate carbonization of surface area hence less material to burn
+			if(fire_stacks > 12)
+				adjust_fire_stacks(-3) //Surface reduction from burning
+			if(fire_stacks > 15)
+				adjust_fire_stacks(-4) //Here the efunction begins to pick up and apply damages similar to the ones from the old version
+			if(fire_stacks > 18)
+				fire_stacks = 18 //Softcap to prevent people having thousands upon thousands of burn damage
 			if(fire_stacks == 0)
 				ExtinguishMob()
-
+				
+	if (thermal_protection < 1 && bodytemperature < burn_temperature && on_fire && fire_stacks >= 20) //prevents incendiary grenade abuse for thousands of burn damage due to e function, linear area of function
+		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)
+		if(world.time >= next_onfire_brn)
+			next_onfire_brn = world.time + 50
+			adjustFireLoss(fire_stacks*3 + 3) //linear scaling from 20 onwards
+			if(fire_stacks >18) //Down to softcap and e-function processing
+				fire_stacks = 18
 
 /mob/living/fire_act()
 	adjust_fire_stacks(2)
