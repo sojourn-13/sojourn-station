@@ -212,10 +212,10 @@
 	key = "u"
 	has_written_form = TRUE
 	partial_understanding = list(
-		LANGUAGE_COMMON = 20 //Words often get imported into other languages especially if they convey the same information better that and common is the most common language
-		LANGUAGE_YASSARI = 10 //See common
-		LANGUAGE_EURO = 10, //See common
-		LANGUAGE_JANA = 10 //See common
+		LANGUAGE_COMMON = 20 
+		LANGUAGE_YASSARI = 10 
+		LANGUAGE_EURO = 10, 
+		LANGUAGE_JANA = 10 
 	)
 	shorthand = "CRV"
 	space_chance = 50
