@@ -19,8 +19,6 @@
 	var/obj/power_source
 	var/storage_capacity = 1000
 	var/unfolded
-	var/show_category
-	var/list/categories
 	var/list/lst = list()
 
 	var/working = FALSE
@@ -33,16 +31,11 @@
 	var/queue_max = 8
 
 	var/list/disk_list = list(
-	/obj/item/computer_hardware/hard_drive/portable/design/nanoforge
+		/obj/item/computer_hardware/hard_drive/portable/design/nanoforge
 	)
 	var/list/design_list = list()
 	var/speed = 2
 	var/mat_efficiency = 1
-
-	var/have_disk = FALSE
-	var/have_reagents = FALSE
-	var/have_materials = TRUE
-	var/have_design_selector = TRUE
 
 	var/list/unsuitable_materials = list(MATERIAL_BIOMATTER)
 
@@ -80,6 +73,15 @@
 	qdel(c)
 	return files
 
+/obj/machinery/matter_nanoforge/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Matterforge")
+		ui.open()
+
+/obj/machinery/matter_nanoforge/ui_data(mob/user)
+	return nano_ui_data()
+
 /obj/machinery/matter_nanoforge/proc/materials_data()
 	var/list/data = list()
 	data["mat_efficiency"] = mat_efficiency
@@ -102,16 +104,12 @@
 /obj/machinery/matter_nanoforge/nano_ui_data()
 	var/list/data = list()
 
-	data["have_materials"] = have_materials
-	data["have_design_selector"] = have_design_selector
+	data["have_materials"] = TRUE
+	data["have_design_selector"] = TRUE
 
 	data["error"] = error
 	data["paused"] = paused
 	data["unfolded"] = unfolded
-
-	if(categories)
-		data["categories"] = categories
-		data["show_category"] = show_category
 
 	data["special_actions"] = special_actions
 
@@ -183,19 +181,13 @@
 	if(!design_list?.len)
 		get_designs()
 	nano_ui_interact(user)
+	ui_interact(user)
 
 /obj/machinery/matter_nanoforge/Topic(href, href_list)
 	if(..())
 		return
 
 	usr.set_machine(src)
-
-	if(href_list["category"] && categories)
-		var/new_category = text2num(href_list["category"])
-
-		if(new_category && new_category <= length(categories))
-			show_category = categories[new_category]
-		return 1
 
 	if(href_list["eject_material"] && (!current_design || paused || error))
 		var/material = href_list["eject_material"]
