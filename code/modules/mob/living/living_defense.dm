@@ -424,7 +424,11 @@
 			next_onfire_brn = world.time + 50
 			adjustFireLoss(20/(1+(NUM_E**(-0.25*(fire_stacks-10))))) //Logistic function A/(1+(e^(b*(x-y))) --> A the maximum number of burn you can take b the steepness of the curve y the point of inversion and x the number of firestacks. This results in that you may try to go above 30 firestacks but you still 'only' take 20 fire damage per cycle. Who would have thought that math learned 10 years ago is useful.
 			if(prob(40) && fire_stacks > 0) //over time the fire will slowly burn itself out. This is meant to be decently slow so as to not make fire much less dangerous as its purpose is to prevent issues when mobs hit tens of thousands of fireloss. Irkalla edit: I upped the loss chance to 40 so its less feeling like you got napalmed when you just set your coat on fire or something. Fire will still proc wounds and infections. It just wont turbokill you unless you are in an inferno unprotected
-				adjust_fire_stacks(-1) 
+				adjust_fire_stacks(-1)
+			if(fire_stacks > 26)
+				adjust_fire_stacks(-1)
+			if(fire_stacks > 40)
+				fire_stacks = 40
 			if(fire_stacks == 0)
 				ExtinguishMob()
 
