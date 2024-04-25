@@ -258,8 +258,7 @@
 		target_mob.attack_log += "\[[time_stamp()]\]<font color='red'> TRYED [H.name] ([H.ckey]) with [target_mob] (AMOUNT: [injection_amount])</font>"
 		H.attack_log += "\[[time_stamp()]\]<font color='orange'> TRYED to inject [target_mob.name] ([target_mob.ckey]) with [name] (AMOUNT: [injection_amount])</font>"
 		msg_admin_attack("[key_name(H)] TRYED [key_name(target_mob)] to inject (AMOUNT: [injection_amount])" )
-		var/datum/reagents/current = beaker.reagents.reagent_list
-		for(var/datum/reagent/R in current)
+		for(var/datum/reagent/R in beaker.reagents.reagent_list)
 			target_mob.attack_log += "Beaker Contents: [R.id]"
 
 		if(!do_after(H, injection_to_others_delay, target_mob))
