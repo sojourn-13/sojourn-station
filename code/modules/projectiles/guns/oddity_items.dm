@@ -202,12 +202,9 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A mix of several other Slot-o-Matics seemingly molten and merged into rainbow. Each pistol holding its trade mark blue cross."
 	possible_colors = list("rainbow")
-	damage_multiplier = 0.8
-	penetration_multiplier = 0.2
-	caliber = "10x24"
-	ammo_type = /obj/item/ammo_casing/c10x24
-	mag_well = MAG_WELL_PULSE
-	magazine_type = /obj/item/ammo_magazine/c10x24/bluecross
+	damage_multiplier = 1
+	penetration_multiplier = 0.8
+	magazine_type = /obj/item/ammo_magazine/smg_35/bluecross
 	gun_tags = list(GUN_PROJECTILE)
 	init_recoil = EMBEDDED_RECOIL(0.2)
 	serial_type = "BlueCross"
@@ -249,9 +246,15 @@
 				playsound(src.loc, 'sound/weapons/tablehit1.ogg', 100, 1)
 				crack()
 
+/obj/item/projectile/bullet/pistol_35/blue
+	color = '#5234ff' //its blue
 
-/obj/item/ammo_magazine/c10x24/bluecross
-	max_ammo = 32
+/obj/item/ammo_casing/pistol_35/blue
+	projectile_type = /obj/item/projectile/bullet/pistol_35/blue
+	is_caseless = TRUE
+
+/obj/item/ammo_magazine/smg_35/bluecross
+	ammo_type = /obj/item/ammo_casing/pistol_35/blue
 	matter = list()
 
 /obj/item/clothing/accessory/holster/bluecross
