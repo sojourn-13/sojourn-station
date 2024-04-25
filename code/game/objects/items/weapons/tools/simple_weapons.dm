@@ -447,6 +447,7 @@
 	matter = null //magicium
 	clickdelay_offset = -4 //DEFAULT_QUICK_COOLDOWN = 4 so we offset are weapon to quick
 	var/datum/component/rnd_points/point_holder
+	degradation = 0.4 //Used a lot
 
 /obj/item/tool/sword/saber/deconstuctive_rapier/New()
 	..()
@@ -494,6 +495,13 @@
 	reagent_flags = INJECTABLE|TRANSPARENT
 	matter = null //magicium
 	clickdelay_offset = -4 //DEFAULT_QUICK_COOLDOWN = 4 so we offset are weapon to quick
+	degradation = 0.4 //Used a lot
+	var/max_reagents = 30
+
+/obj/item/tool/sword/saber/injection_rapier/refresh_upgrades()
+	..()
+	if(reagents)
+		reagents.maximum_volume = max_reagents
 
 /obj/item/tool/sword/saber/injection_rapier/New()
 	..()
