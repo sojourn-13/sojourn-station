@@ -127,7 +127,7 @@
 			if(R.ignore_stuttering)
 				ture_message = message_pre_problems
 			if(R.compare(ture_message))
-				if(R.power > src.power)
+				if(R.power > src.power && !(power >= max_power))
 					to_chat(H, SPAN_DANGER("Not enough energy for the [R.name]."))
 					return
 				if(!R.is_allowed(src))
@@ -147,7 +147,7 @@
 
 
 /obj/item/implant/core_implant/proc/use_power(var/value)
-	power = max(0, power - value)
+	power -= value
 
 /obj/item/implant/core_implant/proc/restore_power(var/value)
 	power = min(max_power, power + value)
