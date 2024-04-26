@@ -81,6 +81,76 @@
 /obj/machinery/matter_nanoforge/ui_data(mob/user)
 	return nano_ui_data()
 
+/obj/machinery/matter_nanoforge/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("eject_material")
+			if(!current_design || paused || error)
+				var/material = params["id"]
+				var/material/M = get_material_by_name(material)
+
+				if(!M.stack_type)
+					return FALSE
+
+				var/num = input("Enter sheets number to eject. 0-[stored_material[material]]","Eject",0) as num
+				if(!CanUseTopic(usr))
+					return FALSE
+
+				num = min(max(num,0), stored_material[material])
+				eject(num)
+				. = TRUE
+
+		if("add_to_queue")
+			var/recipe = params["id"]
+			var/datum/design/picked_design
+
+			for(var/datum/design/f in design_list)
+				var/test = text2path((recipe))
+				if(f.id == test)
+					picked_design = f
+					break
+
+			if(picked_design)
+				var/amount = 1
+
+				if(params["several"])
+					amount = input("How many \"[picked_design.id]\" you want to print ?", "Print several") as null|num
+					if(!CanUseTopic(usr) || !(picked_design in design_list))
+						return
+
+				queue_design(picked_design, amount)
+
+			. = TRUE
+
+		if("remove_from_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 1 && ind <= queue.len)
+				queue.Cut(ind, ind + 1)
+			. = 1
+
+		if("move_up_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 2 && ind <= queue.len)
+				queue.Swap(ind, ind - 1)
+			. = 1
+		
+		if("move_down_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 1 && ind <= queue.len-1)
+				queue.Swap(ind, ind + 1)
+			. = 1
+	
+		if("abort_print")
+			abort()
+			. = 1
+
+		if("pause")
+			paused = !paused
+			. = 1
+
 /obj/machinery/matter_nanoforge/proc/materials_data()
 	var/list/data = list()
 	data["mat_efficiency"] = mat_efficiency
@@ -117,17 +187,19 @@
 		L.Add(list(d.nano_ui_data))
 	data["designs"] = L
 
-
 	if(current_design)
 		data["current"] = current_design.nano_ui_data
 		data["progress"] = progress
+	else
+		data["current"] = null
+		data["progress"] = null
 
 	var/list/Q = list()
 	var/qmats = stored_material[MATERIAL_COMPRESSED_MATTER]
 
 	for(var/i = 1; i <= queue.len; i++)
 		var/datum/design/picked_design = queue[i]
-		var/list/QR = picked_design.nano_ui_data
+		var/list/QR = picked_design.nano_ui_data.Copy()
 
 		QR["ind"] = i
 
