@@ -448,6 +448,7 @@
 	clickdelay_offset = -4 //DEFAULT_QUICK_COOLDOWN = 4 so we offset are weapon to quick
 	var/datum/component/rnd_points/point_holder
 	degradation = 0.4 //Used a lot
+	embed_mult = 0
 
 /obj/item/tool/sword/saber/deconstuctive_rapier/New()
 	..()
@@ -497,6 +498,7 @@
 	clickdelay_offset = -4 //DEFAULT_QUICK_COOLDOWN = 4 so we offset are weapon to quick
 	degradation = 0.4 //Used a lot
 	var/max_reagents = 30
+	embed_mult = 0
 
 /obj/item/tool/sword/saber/injection_rapier/refresh_upgrades()
 	..()
