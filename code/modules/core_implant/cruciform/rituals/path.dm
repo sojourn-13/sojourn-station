@@ -354,22 +354,38 @@
 	cooldown_category = "succour"
 	power = 40
 
-/datum/ritual/cruciform/monomial/inner_peace/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
-	var/mob/living/carbon/human/T = get_front_human_in_range(user, 1)
-	if(!T)
-		fail("No target in front of you.", user, C)
+/datum/ritual/cruciform/monomial/inner_peace/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
+	var/mob/living/carbon/human/H = get_front_human_in_range(user, 1)
+
+	if(!istype(H))
+		fail("Target not found.",user,C,targets)
 		return FALSE
 
-	if(user.sanity >= 20 && user.species?.reagent_tag != IS_SYNTHETIC && T.species?.reagent_tag != IS_SYNTHETIC)
-		user.sanity.changeLevel(-20)
-		T.sanity.changeLevel(40) //Better than Succour and works on unbelievers, but costs your own sanity
-		to_chat(user, "<span class='info'>You offer your peace to [T.name], your meditation boosting another, sharing with them the rock solid mountain of your faith.</span>")
-		to_chat(T, "<span class='info'>You feelanchored, the steadfast presence of [user] reassuring your mind and bolstering your resolve.</span>")
-		set_personal_cooldown(user)
-	else
-		to_chat(user, SPAN_WARNING("You lack the mental strength to impart more to another, time and meditation will allow you to try again."))
+	//Checking turfs allows this to be done in unusual circumstances, like if both are inside the same mecha
+	var/turf/T = get_turf(user)
+	if (!(T.Adjacent(get_turf(H))))
+		to_chat(user, SPAN_DANGER("[H] is beyond your reach.."))
+		return
 
-	return TRUE
+	user.visible_message("[user] lays their hand on [H]'s chest and chants the words of inner peace.", "You lay your hands upon [H] and chant the words of inner peace.")
+	if (do_after(user, 20, H, TRUE))
+		T = get_turf(user)
+		if (H.species?.reagent_tag == IS_SYNTHETIC)
+			fail("The target is synthetic and cannot benefit from inner peace.", user, C)
+			return FALSE
+		if (user.species?.reagent_tag == IS_SYNTHETIC)
+			fail("You are synthetic and cannot provide inner peace.", user, C)
+			return FALSE
+		if (!(T.Adjacent(get_turf(H))))
+			fail("[H] is beyond your reach..", user, C)
+			return FALSE
+		to_chat(H, "<span class='info'>[User] shares their mountain of of faith as with you as feel calmer and focussed.</span>")
+		H.sanity.changeLevel(40)
+		H.updatehealth()
+		user.sanity.changeLevel(-20)
+		user.updatehealth()
+		set_personal_cooldown(user)
+		return TRUE
 
 /datum/ritual/cruciform/monomial/bulwark_of_harmony
 	name = "Bulwark of Harmony"
