@@ -131,31 +131,31 @@
 			var/ind = text2num(params["index"])
 			if(ind >= 1 && ind <= queue.len)
 				queue.Cut(ind, ind + 1)
-			. = 1
+			. = TRUE
 
 		if("move_up_queue")
 			var/ind = text2num(params["index"])
 			if(ind >= 2 && ind <= queue.len)
 				queue.Swap(ind, ind - 1)
-			. = 1
+			. = TRUE
 		
 		if("move_down_queue")
 			var/ind = text2num(params["index"])
 			if(ind >= 1 && ind <= queue.len-1)
 				queue.Swap(ind, ind + 1)
-			. = 1
+			. = TRUE
 	
 		if("abort_print")
 			abort()
-			. = 1
+			. = TRUE
 
 		if("pause")
 			paused = !paused
-			. = 1
+			. = TRUE
 
 		if("clear_queue")
 			queue.Cut()
-			. = 1
+			. = TRUE
 
 /obj/machinery/matter_nanoforge/proc/materials_data()
 	var/list/data = list()

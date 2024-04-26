@@ -105,6 +105,19 @@
 	QDEL_NULL(image_load_material)
 	return ..()
 
+/obj/machinery/autolathe/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Autolathe")
+		ui.open()
+
+/obj/machinery/autolathe/ui_data(mob/user)
+	return nano_ui_data()
+
+/obj/machinery/autolathe/ui_assets(mob/user)
+	return list(
+		get_asset_datum(/datum/asset/simple/design_icons)
+	)
 
 // Also used by R&D console UI.
 /obj/machinery/autolathe/proc/materials_data()
@@ -121,6 +134,8 @@
 			L.Add(list(LE))
 
 		data["reagents"] = L
+	else
+		data["reagents"] = null
 
 	var/list/M = list()
 	for(var/mtype in stored_material)
@@ -135,7 +150,6 @@
 	data["materials"] = M
 
 	return data
-
 
 /obj/machinery/autolathe/nano_ui_data()
 	var/list/data = list()
@@ -158,10 +172,15 @@
 			"license" = disk.license,
 			"read_only" = disk.read_only
 		)
+	else
+		data["disk"] = null
 
 	if(categories)
 		data["categories"] = categories
 		data["show_category"] = show_category
+	else
+		data["categories"] = null
+		data["show_category"] = null
 
 	data["special_actions"] = special_actions
 
@@ -178,6 +197,9 @@
 	if(current_file)
 		data["current"] = current_file.nano_ui_data()
 		data["progress"] = progress
+	else
+		data["current"] = null
+		data["progress"] = null
 
 	var/list/Q = list()
 	var/licenses_used = 0
@@ -214,7 +236,6 @@
 	data["queue_max"] = queue_max
 
 	return data
-
 
 /obj/machinery/autolathe/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 	var/list/data = nano_ui_data(user, ui_key)
@@ -266,6 +287,7 @@
 
 	user.set_machine(src)
 	nano_ui_interact(user)
+	ui_interact(user)
 
 
 /obj/machinery/autolathe/attack_hand(mob/user)
@@ -274,7 +296,95 @@
 
 	user.set_machine(src)
 	nano_ui_interact(user)
+	ui_interact(user)
 	wires.Interact(user)
+
+/obj/machinery/autolathe/ui_act(action, list/params)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("abort_print")
+			abort()
+			. = TRUE
+
+		if("pause")
+			paused = !paused
+			. = TRUE
+
+		if("eject_disk")
+			eject_disk(usr)
+			. = TRUE
+
+		if("eject_beaker")
+			eject_beaker(usr)
+			. = TRUE
+
+		if("clear_queue")
+			queue.Cut()
+			. = TRUE
+
+		if("eject_material")
+			if(!current_file || paused || error)
+				var/material = params["id"]
+				var/material/M = get_material_by_name(material)
+
+				if(!M.stack_type)
+					return FALSE
+
+				var/num = input("Enter sheets number to eject. 0-[stored_material[material]]","Eject",0) as num
+				if(!CanUseTopic(usr))
+					return FALSE
+
+				num = min(max(num,0), stored_material[material])
+
+				eject(material, num)
+				. = TRUE
+
+		if("add_to_queue")
+			var/recipe_filename = params["filename"]
+			var/datum/computer_file/binary/design/design_file
+
+			for(var/f in design_list())
+				var/datum/computer_file/temp_file = f
+				if(temp_file.filename == recipe_filename)
+					design_file = temp_file
+					break
+
+			if(design_file)
+				var/amount = 1
+
+				if(params["several"])
+					amount = input("How many \"[design_file.design.name]\" you want to print ?", "Print several") as null|num
+					if(!CanUseTopic(usr) || !(design_file in design_list()))
+						return FALSE
+
+				queue_design(design_file, amount)
+
+			. = TRUE
+
+		if("remove_from_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 1 && ind <= queue.len)
+				queue.Cut(ind, ind + 1)
+			. = TRUE
+
+		if("move_up_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 2 && ind <= queue.len)
+				queue.Swap(ind, ind - 1)
+			. = TRUE
+		
+		if("move_down_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 1 && ind <= queue.len-1)
+				queue.Swap(ind, ind + 1)
+			. = TRUE
+
+		if("switch_category")
+			show_category = params["category"]
+			. = TRUE
 
 /obj/machinery/autolathe/Topic(href, href_list)
 	if(..())

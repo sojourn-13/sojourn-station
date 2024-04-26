@@ -83,12 +83,28 @@
 
 	return design_files
 
+/obj/machinery/autolathe/organ_fabricator/ui_interact()
+	if(!categories?.len)
+		categories = files.design_categories_organfab
+	if(!disk && !show_category && length(categories))
+		show_category = categories[1]
+	. = ..()
+
 /obj/machinery/autolathe/organ_fabricator/nano_ui_interact()
 	if(!categories?.len)
 		categories = files.design_categories_organfab
 	if(!disk && !show_category && length(categories))
 		show_category = categories[1]
 	..()
+
+/obj/machinery/autolathe/organ_fabricator/ui_act(action, list/params)
+	. = ..()
+	if(.)
+		return
+
+	if(action == "special_action" && params["action"] == "rip")
+		rip_disk()
+		. = TRUE
 
 /obj/machinery/autolathe/organ_fabricator/Topic(href, href_list)
 	if(..())

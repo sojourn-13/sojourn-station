@@ -43,7 +43,6 @@
 
 	return data
 
-
 /obj/machinery/autolathe/artist_bench/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui, force_open = NANOUI_FOCUS)
 	var/list/data = nano_ui_data(user, ui_key)
 

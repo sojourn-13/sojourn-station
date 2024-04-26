@@ -41,10 +41,24 @@
 
 	return design_files
 
+/obj/machinery/autolathe/mechfab/ui_interact()
+	if(!categories)
+		update_categories()
+	. = ..()
+
 /obj/machinery/autolathe/mechfab/nano_ui_interact()
 	if(!categories)
 		update_categories()
 	..()
+
+/obj/machinery/autolathe/mechfab/ui_act(action, list/params)
+	. = ..()
+	if(.)
+		return
+
+	if(action == "special_action" && params["action"] == "sync")
+		sync(usr)
+		. = TRUE
 
 /obj/machinery/autolathe/mechfab/Topic(href, href_list)
 	if(..())
