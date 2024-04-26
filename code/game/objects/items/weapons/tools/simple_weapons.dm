@@ -53,6 +53,9 @@
 	worksound = WORKSOUND_HARD_SLASH
 	price_tag = 30
 
+/obj/item/tool/hatchet/robo //for the service borg
+	embed_mult = 0
+
 /obj/item/tool/fireaxe
 	name = "fire axe"
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"

@@ -422,6 +422,7 @@
 	suitable_cell = null
 	degradation = 0
 	sharp = 1
+	embed_mult = 0
 
 /obj/item/tool/robotic_omni/surgery
 	name = "Surgery omni tool"
