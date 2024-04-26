@@ -316,9 +316,21 @@ export const Matterforge = (props, context) => {
                   fill
                   title="Queue"
                   buttons={
-                    <Box>
-                      Queue: {queue.length} / {queue_max}
-                    </Box>
+                    <Stack align="center">
+                      <Stack.Item>
+                        Queue: {queue.length} / {queue_max}
+                      </Stack.Item>
+                      <Stack.Item>
+                        <Button
+                          color="bad"
+                          icon="times"
+                          tooltip="Clear Queue"
+                          onClick={() => {
+                            act('clear_queue');
+                          }}
+                        />
+                      </Stack.Item>
+                    </Stack>
                   }
                   scrollable>
                   <Stack vertical>

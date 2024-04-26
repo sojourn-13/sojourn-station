@@ -72,14 +72,16 @@
 	qdel(c)
 	return files
 
+/obj/machinery/matter_nanoforge/ui_assets(mob/user)
+	return list(
+		get_asset_datum(/datum/asset/simple/design_icons)
+	)
+
 /obj/machinery/matter_nanoforge/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "Matterforge")
 		ui.open()
-
-/obj/machinery/matter_nanoforge/ui_data(mob/user)
-	return nano_ui_data()
 
 /obj/machinery/matter_nanoforge/ui_act(action, params)
 	. = ..()
@@ -151,6 +153,10 @@
 			paused = !paused
 			. = 1
 
+		if("clear_queue")
+			queue.Cut()
+			. = 1
+
 /obj/machinery/matter_nanoforge/proc/materials_data()
 	var/list/data = list()
 	data["mat_efficiency"] = mat_efficiency
@@ -170,7 +176,7 @@
 
 	return data
 
-/obj/machinery/matter_nanoforge/nano_ui_data()
+/obj/machinery/matter_nanoforge/ui_data(mob/user)
 	var/list/data = list()
 
 	data["have_materials"] = TRUE
@@ -220,26 +226,6 @@
 
 	return data
 
-/obj/machinery/matter_nanoforge/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	var/list/data = nano_ui_data(user, ui_key)
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		// the ui does not exist, so we'll create a new() one
-		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "autolathe.tmpl", capitalize(name), 600, 700)
-
-		// template keys starting with _ are not appended to the UI automatically and have to be called manually
-		ui.add_template("_materials", "autolathe_materials.tmpl")
-		ui.add_template("_reagents", "autolathe_reagents.tmpl")
-		ui.add_template("_designs", "matterforge_designs.tmpl")
-		ui.add_template("_queue", "autolathe_queue.tmpl")
-
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
-
 /obj/machinery/matter_nanoforge/attack_hand(mob/user)
 	if(..())
 		return TRUE
@@ -249,86 +235,7 @@
 	user.set_machine(src)
 	if(!design_list?.len)
 		get_designs()
-	nano_ui_interact(user)
 	ui_interact(user)
-
-/obj/machinery/matter_nanoforge/Topic(href, href_list)
-	if(..())
-		return
-
-	usr.set_machine(src)
-
-	if(href_list["eject_material"] && (!current_design || paused || error))
-		var/material = href_list["eject_material"]
-		var/material/M = get_material_by_name(MATERIAL_COMPRESSED_MATTER)
-
-		if(!M.stack_type)
-			return
-
-		var/num = input("Enter sheets number to eject. 0-[stored_material[material]]","Eject",0) as num
-		if(!CanUseTopic(usr))
-			return
-
-		num = min(max(num,0), stored_material[material])
-		eject(num)
-		return 1
-
-
-	if(href_list["add_to_queue"])
-		var/recipe = href_list["add_to_queue"]
-		var/datum/design/picked_design
-
-		for(var/datum/design/f in design_list)
-			var/test = text2path((recipe))
-			if(f.id == test)
-				picked_design = f
-				break
-
-		if(picked_design)
-			var/amount = 1
-
-			if(href_list["several"])
-				amount = input("How many \"[picked_design.id]\" you want to print ?", "Print several") as null|num
-				if(!CanUseTopic(usr) || !(picked_design in design_list))
-					return
-
-			queue_design(picked_design, amount)
-
-		return 1
-
-	if(href_list["remove_from_queue"])
-		var/ind = text2num(href_list["remove_from_queue"])
-		if(ind >= 1 && ind <= queue.len)
-			queue.Cut(ind, ind + 1)
-		return 1
-
-	if(href_list["move_up_queue"])
-		var/ind = text2num(href_list["move_up_queue"])
-		if(ind >= 2 && ind <= queue.len)
-			queue.Swap(ind, ind - 1)
-		return 1
-
-	if(href_list["move_down_queue"])
-		var/ind = text2num(href_list["move_down_queue"])
-		if(ind >= 1 && ind <= queue.len-1)
-			queue.Swap(ind, ind + 1)
-		return 1
-
-
-	if(href_list["abort_print"])
-		abort()
-		return 1
-
-	if(href_list["pause"])
-		paused = !paused
-		return 1
-
-	if(href_list["unfold"])
-		if(unfolded == href_list["unfold"])
-			unfolded = null
-		else
-			unfolded = href_list["unfold"]
-		return 1
 
 /obj/machinery/matter_nanoforge/attackby(obj/item/I, mob/user)
 
