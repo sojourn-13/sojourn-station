@@ -5,24 +5,36 @@ macro "borghotkeymode"
 	elem
 		name = "WEST+UP"
 		command = "MoveKey 8 0"
+	elem "westshift"
+		name = "CTRL+SHIFT+West"
+		command = "westshift"
 	elem
 		name = "NORTH"
 		command = "MoveKey 1 1"
 	elem
 		name = "NORTH+UP"
 		command = "MoveKey 1 0"
+	elem "northshift"
+		name = "CTRL+SHIFT+North"
+		command = "northshift"
 	elem
 		name = "EAST"
 		command = "MoveKey 4 1"
 	elem
 		name = "EAST+UP"
 		command = "MoveKey 4 0"
+	elem "eastshift"
+		name = "CTRL+SHIFT+East"
+		command = "eastshift"
 	elem
 		name = "SOUTH"
 		command = "MoveKey 2 1"
 	elem
 		name = "SOUTH+UP"
 		command = "MoveKey 2 0"
+	elem "southshift"
+		name = "CTRL+SHIFT+South"
+		command = "southshift"
 	elem
 		name = "A"
 		command = "MoveKey 8 1"
