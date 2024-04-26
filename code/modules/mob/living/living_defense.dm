@@ -426,9 +426,9 @@
 			if(prob(40) && fire_stacks > 0) //over time the fire will slowly burn itself out. This is meant to be decently slow so as to not make fire much less dangerous as its purpose is to prevent issues when mobs hit tens of thousands of fireloss. Irkalla edit: I upped the loss chance to 40 so its less feeling like you got napalmed when you just set your coat on fire or something. Fire will still proc wounds and infections. It just wont turbokill you unless you are in an inferno unprotected
 				adjust_fire_stacks(-1)
 			if(fire_stacks > 26)
-				adjust_fire_stacks(-1)
+				adjust_fire_stacks(-1) //This is to simulate some processes that happen during incineration namely sintering and carbonization. Skin is porous. If something is heated pores grow and fuse and thus the surface area decreases. Carbonized skin is far less reactive than uncarbonized. So we have a decrease in surface area and a decrease in reactivity thus it gets harder to be incinerated. Very gamy explanation but thats the gist of it.
 			if(fire_stacks > 40)
-				fire_stacks = 40
+				fire_stacks = 40 //Hardcap to prevent gamers from applying 300 firestacks to a mob or player. That way people dont burn for all eternity.
 			if(fire_stacks == 0)
 				ExtinguishMob()
 
