@@ -1397,15 +1397,15 @@
 /obj/effect/decal/cleanable/crayon/proc/cessation_spell(mob/living/carbon/human/M, candle_number)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	var/cn
-	//Dont change the top lines they are real letters BYOND DM cant see
+	//Dont change the top lines they are real letters BYOND DM cant see normally
 	var/list/hmm = list("༒", "༎༐།", "‽", "⸘", "༑", \
-	"Sipping sounds echo in you.", "Nothing is around you.", "Nothing is still", "Sounds are felt here, not heard.", "Where are you?")
+	"Sipping sounds echo in you.", "Nothing is around you.", "Nothing is still.", "Sounds are felt here, not heard.", "Where are you?")
 
 	B.remove_self(candle_number)
 
 	for(cn=0, cn<candle_number, cn++)
 		var/huh = pick(hmm)
-		to_chat(M, "<span class='info'>[huh].</span>") //Spammy!
+		to_chat(M, "<span class='info'>[huh]</span>") //Spammy!
 	M.loc = null
 
 	if(prob(candle_number))
