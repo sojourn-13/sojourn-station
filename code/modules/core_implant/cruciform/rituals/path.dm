@@ -379,7 +379,7 @@
 		if (!(T.Adjacent(get_turf(H))))
 			fail("[H] is beyond your reach..", user, C)
 			return FALSE
-		to_chat(H, "<span class='info'>[User] shares their mountain of of faith as with you as feel calmer and focussed.</span>")
+		to_chat(H, "<span class='info'>As a mountain of of faith is shared with you a senstation of calmness and focus settles in.</span>")
 		H.sanity.changeLevel(40)
 		H.updatehealth()
 		user.sanity.changeLevel(-20)
