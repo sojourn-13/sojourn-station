@@ -37,19 +37,17 @@ export const Reagents = (props: ReagentData, context) => {
         ) : null
       }>
       {container ? (
-        <>
-          {reagents.length > 0 ? (
-            <LabeledList>
-              {reagents.map((reagent) => (
-                <LabeledList.Item label={reagent.name}>
-                  {reagent.amount}
-                </LabeledList.Item>
-              ))}
-            </LabeledList>
-          ) : (
-            'Empty.'
-          )}
-        </>
+        reagents.length > 0 ? (
+          <LabeledList>
+            {reagents.map((reagent) => (
+              <LabeledList.Item key={reagent.name} label={reagent.name}>
+                {reagent.amount}
+              </LabeledList.Item>
+            ))}
+          </LabeledList>
+        ) : (
+          'Empty.'
+        )
       ) : (
         'Not inserted.'
       )}
@@ -180,7 +178,7 @@ export const Autolathe = (props, context) => {
               <Section title="Special Actions">
                 <Stack>
                   {special_actions.map((action) => (
-                    <Stack.Item>
+                    <Stack.Item key={action.action}>
                       <Button
                         icon={action.icon}
                         onClick={() => {
@@ -199,9 +197,9 @@ export const Autolathe = (props, context) => {
               <Section>
                 <Stack>
                   {categories.map((category) => (
-                    <Stack.Item>
+                    <Stack.Item key={category}>
                       <Button
-                        selected={category == show_category}
+                        selected={category === show_category}
                         onClick={() =>
                           act('switch_category', { category: category })
                         }>
@@ -241,14 +239,14 @@ export const Autolathe = (props, context) => {
                                 )
                                 .map((design) => {
                                   return (
-                                    <Stack.Item>
+                                    <Stack.Item key={design.id + design.name}>
                                       <AutolatheItem design={design} />
                                     </Stack.Item>
                                   );
                                 })
                             : designs.map((design) => {
                                 return (
-                                  <Stack.Item>
+                                  <Stack.Item key={design.id + design.name}>
                                     <AutolatheItem design={design} />
                                   </Stack.Item>
                                 );

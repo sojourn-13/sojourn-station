@@ -1,15 +1,5 @@
-import { BooleanLike } from '../../common/react';
 import { useBackend } from '../backend';
-import {
-  Box,
-  Button,
-  Flex,
-  Knob,
-  LabeledControls,
-  LabeledList,
-  Section,
-  Stack,
-} from '../components';
+import { Box, Button, LabeledList, Section, Stack } from '../components';
 import { Window } from '../layouts';
 import { LoadedMaterials, MaterialData } from './Matterforge';
 
@@ -81,7 +71,7 @@ export const ArtistBench = (props, context) => {
             <Section title="Stats">
               <Stack vertical>
                 {oddity_stats.map((stat) => (
-                  <Stack.Item>
+                  <Stack.Item key={stat.name}>
                     <OddityTag level={stat.level} /> aspect of{' '}
                     <b>{stat.name}</b>
                   </Stack.Item>

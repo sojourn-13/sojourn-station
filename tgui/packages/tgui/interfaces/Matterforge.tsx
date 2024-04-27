@@ -2,10 +2,6 @@ import { useBackend, useLocalState, useSharedState } from '../backend';
 import {
   Box,
   Button,
-  Collapsible,
-  Flex,
-  Knob,
-  LabeledControls,
   LabeledList,
   ProgressBar,
   Section,
@@ -15,7 +11,6 @@ import { Window } from '../layouts';
 import { BooleanLike } from '../../common/react';
 import { toTitleCase } from '../../common/string';
 import { SearchBar } from './Fabrication/SearchBar';
-import { ScrollableSection } from './LibraryConsole';
 
 export type MaterialData = {
   mat_capacity: number;
@@ -39,6 +34,7 @@ export const LoadedMaterials = (props: MaterialData, context) => {
           {materials.map((material) => {
             return (
               <LabeledList.Item
+                key={material.id}
                 buttons={
                   material.ejectable && (
                     <Button
@@ -93,14 +89,18 @@ export const AutolatheItemDetails = (props: AutolatheItemProps, context) => {
       {design.materials ? (
         <Section title="Materials">
           {design.materials.map((mat) => (
-            <LabeledList.Item label={mat.name}>{mat.req}</LabeledList.Item>
+            <LabeledList.Item key={mat.id} label={mat.name}>
+              {mat.req}
+            </LabeledList.Item>
           ))}
         </Section>
       ) : null}
       {design.chemicals ? (
         <Section title="Chemicals">
           {design.chemicals.map((chem) => (
-            <LabeledList.Item label={chem.name}>{chem.req}</LabeledList.Item>
+            <LabeledList.Item key={chem.id} label={chem.name}>
+              {chem.req}
+            </LabeledList.Item>
           ))}
         </Section>
       ) : null}
@@ -299,7 +299,9 @@ export const AutolatheQueue = (props: AutolatheQueueData, context) => {
           scrollable>
           <Stack vertical>
             {queue.map((item) => (
-              <Stack.Item style={{ 'border-bottom': '2px solid #444' }}>
+              <Stack.Item
+                key={item.name + item.ind}
+                style={{ 'border-bottom': '2px solid #444' }}>
                 <Stack align="center">
                   <Stack.Item grow color={errorToColor(item.error)}>
                     {item.name}
@@ -369,7 +371,7 @@ type Data = MaterialData &
 const errorToColor = (error: number) => {
   if (error >= 2) {
     return 'bad';
-  } else if (error == 1) {
+  } else if (error === 1) {
     return 'average';
   } else {
     return 'good';
@@ -415,14 +417,14 @@ export const Matterforge = (props, context) => {
                         )
                         .map((design) => {
                           return (
-                            <Stack.Item>
+                            <Stack.Item key={design.id}>
                               <AutolatheItem design={design} />
                             </Stack.Item>
                           );
                         })
                     : designs.map((design) => {
                         return (
-                          <Stack.Item>
+                          <Stack.Item key={design.id}>
                             <AutolatheItem design={design} />
                           </Stack.Item>
                         );
