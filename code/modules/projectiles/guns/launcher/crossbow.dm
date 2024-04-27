@@ -68,6 +68,8 @@
 	serial_type = null //it's a handmade crossbow who's putting serials on it
 	var/superheat_cost = 250
 
+	wrench_intraction = TRUE
+
 /obj/item/gun/projectile/crossbow/consume_next_projectile(mob/user)
 	if(tension <= 0)
 		to_chat(user, SPAN_WARNING("\The [src] is not drawn back!"))
@@ -148,12 +150,6 @@
 		else
 			to_chat(user, SPAN_NOTICE("[src] already has a cell installed."))
 
-	else if(I.get_tool_type(user, list(QUALITY_BOLT_TURNING), src))
-		if(cell)
-			eject_item(cell, user)
-			cell = null
-		else
-			to_chat(user, SPAN_NOTICE("[src] doesn't have a cell installed."))
 	else if(chambered)
 		user.visible_message("[user] relaxes the tension on [src]'s string and removes [chambered].","You relax the tension on [src]'s string and remove [chambered].")
 		new /obj/item/stack/rods(get_turf(src))
@@ -163,6 +159,16 @@
 
 	else
 		..()
+
+/obj/item/gun/projectile/crossbow/wrench_intraction(obj/item/I, mob/user)
+	if(I.get_tool_type(user, list(QUALITY_BOLT_TURNING), src))
+		if(cell)
+			eject_item(cell, user)
+			cell = null
+		else
+			to_chat(user, SPAN_NOTICE("[src] doesn't have a cell installed."))
+	return
+
 
 /obj/item/gun/projectile/crossbow/proc/superheat_rod(var/mob/user)
 	if(!user || !cell || !chambered)
