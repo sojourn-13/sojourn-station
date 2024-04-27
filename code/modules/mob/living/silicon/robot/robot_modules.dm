@@ -424,7 +424,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/gripper/ammo(src)
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
-	src.emag += new /obj/item/reagent_containers/spray/acid(src)
+	src.emag += new /obj/item/melee/energy/sword(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
 	synths += medicine
@@ -736,7 +736,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
-	src.emag += new /obj/item/gun/projectile/shotgun/pump/china/borg(src)
+	src.emag += new /obj/item/melee/energy/sword(src)
 
 	//We are stronk so we get less no knockdowns
 	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
@@ -935,7 +935,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/gripper/ammo(src)
 	src.modules += new /obj/item/gun/energy/smg(src) //superior arms due to janitor union /s. But really, this is because they're more likely to have to do fighting while roaming around cleaning
-	src.emag += new /obj/item/reagent_containers/spray/lube(src)
+	src.emag += new /obj/item/melee/energy/sword(src)
 
 	//Silent cleaners
 	R.stats.addPerk(PERK_QUIET_AS_MOUSE)
@@ -1035,6 +1035,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/device/synthesized_instrument/synthesizer(src)
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
+	src.emag += new /obj/item/melee/energy/sword(src)
 	src.emag += new /obj/item/stamp/chameleon(src)
 	src.emag += new /obj/item/pen/chameleon(src)
 	..(R)
@@ -1139,7 +1140,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
 	src.modules += new /obj/item/device/ore_sonar(src)
-	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
+	src.emag += new /obj/item/melee/energy/sword(src)
 
 	//Seller so quite and knowing the deal!
 	R.stats.addPerk(PERK_MARKET_PROF)
@@ -1222,7 +1223,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/gripper/ammo(src)
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.modules += new /obj/item/device/gps(src)
-	src.emag += new /obj/item/tool/pickaxe/onestar/cyborg(src)
+	src.emag += new /obj/item/melee/energy/sword(src)
 
 	var/datum/matter_synth/nanite = new /datum/matter_synth/nanite(10000)
 	synths += nanite
