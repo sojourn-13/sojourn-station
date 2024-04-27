@@ -266,7 +266,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		if(istype(target, /mob/living/carbon/))
 			H.apply_effect(5,IRRADIATE)//Irradiates less but pierces walls
 	else
-		return			
+		return 1			
 
 /obj/item/projectile/beam/sniper
 	name = "sniper beam"
