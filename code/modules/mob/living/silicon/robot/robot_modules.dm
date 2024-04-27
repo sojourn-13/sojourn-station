@@ -1129,6 +1129,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/pickaxe/diamonddrill(src)
 	src.modules += new /obj/item/storage/bag/robotic/sheetsnatcher(src)
 	src.modules += new /obj/item/gripper/miner(src)
+	src.modules += new /obj/item/gripper/no_use/loader(src) //They have to sell materials over desks at times.
 	src.modules += new /obj/item/device/scanner/mining(src)
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/gun/energy/riot_autoshotgun(src)
