@@ -351,7 +351,7 @@
 /datum/reagent/other/sodiumchloride
 	name = "Table Salt"
 	id = "sodiumchloride"
-	description = "Sodium chloride, most commonly known as salt. Commonly used to season food."
+	description = "Sodium chloride, most commonly known as salt. Commonly used to season food. It is iodized."
 	taste_description = "salt"
 	taste_tag = list(SALTY_FOOD)
 	reagent_state = SOLID
