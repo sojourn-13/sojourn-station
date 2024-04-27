@@ -224,7 +224,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		if(istype(target, /mob/living/carbon/))
 			H.apply_effect(20,IRRADIATE)//woop woop ass blast USA woop woop
 	else
-		return
+		return 1
 
 /obj/item/projectile/beam/IRKdissolver //Marking this for future use with IRK
 	name = "dissolver ray"
@@ -244,7 +244,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		if(istype(target, /mob/living/carbon/))
 			H.apply_effect(35,IRRADIATE)//Irradiates more
 	else
-		return
+		return 1
 
 /obj/item/projectile/beam/IRKdesolator //Marking this for future use with IRK
 	name = "desolator ray"
