@@ -627,6 +627,43 @@
 	to_chat(user, SPAN_NOTICE("You turn the [src] off."))
 	..()
 
+//Movement = Damage
+/obj/item/tool/sword/saber/nightmare_saber
+	name = "dusk saber"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
+			A fine blade for cutting and dicing though the ranks of lower beings and nightmares. The more momentum you have the more damage it deals!"
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "nightmare_saber"
+	item_state = "saber"
+	price_tag = 5000
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("hilts", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "switches their stance to avoid using the blade of their weapon"
+	alt_mode_lossrate = 0.2
+	effective_faction = list("psi_monster", "stalker") //Nightmares!
+	damage_mult = 1.2
+	//Normal force is 26
+	//Normal AP is 10
+
+/obj/item/tool/sword/saber/nightmare_saber/resolve_attackby(atom/target, mob/user)
+	//Little icky but it works
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/speedy_dashing = H.momentum_speed
+		if(speedy_dashing > 0)
+			if(speedy_dashing >= 6) //Hard cap of 6x damage. No more!
+				speedy_dashing = 6
+
+			//Hopefully your running around to accually use this
+			armor_penetration *= speedy_dashing
+			force *= speedy_dashing
+
+		clickdelay_offset = -speedy_dashing
+	.=..()
+	refresh_upgrades()
+
 /obj/item/tool/sword/katana/crimson_arc
 	name = "\"Crimson Arc\" katana"
 	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
