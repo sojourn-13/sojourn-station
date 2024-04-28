@@ -13,12 +13,12 @@
 		/mob/living/simple_animal/hostile/hivemind/mechiver = 1
 		))
 
-/obj/random/structures/hivemind_mechine
-	name = "random hivemind mechine"
+/obj/random/structures/hivemind_machine
+	name = "random hivemind machine"
 	icon_state = "hostilemob-purple"
 	alpha = 128
 
-/obj/random/structures/hivemind_mechine/item_to_spawn()
+/obj/random/structures/hivemind_machine/item_to_spawn()
 	return pickweight(list(/obj/machinery/hivemind_machine/node = 0.1,
 		/obj/machinery/hivemind_machine/turret = 2,
 		/obj/machinery/hivemind_machine/mob_spawner = 3,
@@ -28,12 +28,12 @@
 		/obj/machinery/hivemind_machine/distractor = 2,
 		))
 
-/obj/random/structures/hivemind_mechine_or_mob
-	name = "random hivemind mechine or mob"
+/obj/random/structures/hivemind_machine_or_mob
+	name = "random hivemind machine or mob"
 	icon_state = "hostilemob-purple"
 	alpha = 128
 
-/obj/random/structures/hivemind_mechine_or_mob/item_to_spawn()
+/obj/random/structures/hivemind_machine_or_mob/item_to_spawn()
 	return pickweight(list(/obj/machinery/hivemind_machine/node = 0.1,
 		/obj/machinery/hivemind_machine/turret = 5,
 		/obj/machinery/hivemind_machine/mob_spawner = 3,
