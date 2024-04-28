@@ -26,6 +26,7 @@
 	new /obj/item/clothing/gloves/thick/swat/blackshield(src)
 	new /obj/item/storage/sheath/judgement/exultor/filled(src)
 	new /obj/item/device/radio/headset/heads/bscom/bowman(src)
+	new /obj/item/storage/backpack/satchel/militia(src)
 	new /obj/item/storage/backpack/militia(src)
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
@@ -52,7 +53,8 @@
 	new /obj/item/clothing/under/rank/armorer/gorka(src)
 	new /obj/item/storage/belt/webbing(src)
 	new /obj/item/storage/belt/security(src)
-	new /obj/item/storage/backpack/satchel/ironhammer(src)
+	new /obj/item/storage/backpack/satchel/militia(src)
+	new /obj/item/storage/backpack/militia(src)
 	new /obj/item/storage/pouch/ammo(src)
 	new /obj/item/storage/firstaid/ifak(src)
 	new /obj/item/melee/telebaton(src)
@@ -64,10 +66,7 @@
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
 	if(prob(35))
-		new /obj/item/storage/backpack/militia(src)
-	else
 		new /obj/item/storage/backpack/military(src)
-
 
 /obj/structure/closet/secure_closet/personal/corpsman
 	name = "blackshield medical corpsman locker"
@@ -92,6 +91,8 @@
 	new /obj/item/storage/belt/webbing(src)
 	new /obj/item/storage/belt/security(src)
 	new /obj/item/storage/backpack/duffelbag(src)
+	new /obj/item/storage/backpack/satchel/militia(src)
+	new /obj/item/storage/backpack/corpsman(src)
 	new /obj/item/storage/firstaid/ifak(src)
 	new /obj/item/storage/firstaid/regular(src)
 	new /obj/item/storage/firstaid/combat(src)
@@ -108,8 +109,6 @@
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
 	if(prob(35))
-		new /obj/item/storage/backpack/corpsman(src)
-	else
 		new /obj/item/storage/backpack/military(src)
 
 
@@ -136,8 +135,8 @@
 	new /obj/item/clothing/under/rank/trooper/gorka(src)
 	new /obj/item/storage/belt/webbing(src)
 	new /obj/item/storage/belt/security(src)
-	new /obj/item/storage/backpack/satchel/ironhammer(src)
-	new /obj/item/storage/backpack/ironhammer(src)
+	new /obj/item/storage/backpack/satchel/militia(src)
+	new /obj/item/storage/backpack/militia(src)
 	new /obj/item/storage/firstaid/ifak(src)
 	new /obj/item/melee/telebaton(src)
 	new /obj/item/storage/pouch/baton_holster(src)
@@ -149,8 +148,6 @@
 	if(prob(5))
 		new /obj/random/rations/crayon(src)
 	if(prob(35))
-		new /obj/item/storage/backpack/militia(src)
-	else
 		new /obj/item/storage/backpack/military(src)
 
 
