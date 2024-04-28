@@ -157,7 +157,7 @@
 	icon_state = "frame_sol"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	result = /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
-	gripvars = list(/obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black)
-	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle/solmarine, /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless)
+	gripvars = list(/obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
+	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle/solmarine, /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless, /obj/item/gun/projectile/automatic/mercu)
 	mechanismvar = /obj/item/part/gun/mechanism/autorifle
-	barrelvars = list(/obj/item/part/gun/barrel/srifle)
+	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/clrifle)

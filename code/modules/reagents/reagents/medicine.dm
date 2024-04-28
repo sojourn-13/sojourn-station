@@ -1568,3 +1568,20 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	to_chat(M, SPAN_WARNING("Your stomach groans and aches, you feel as though you might vomit"))
 	if(prob(10 * dose))
 		M.vomit()
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Xenobotany reagents for hard to get plants
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//Exclusive to Panacea
+/datum/reagent/medicine/ossisine/flora
+	name = "Flossisine"
+	id = "flossisine"
+	description = "A bioengineered natural compound that aids the repairs of broken bones without the side effects of its synthetic version."
+	taste_description = "minty calcium"
+	color = "#298f59"
+	nerve_system_accumulations = 25
+
+/datum/reagent/medicine/ossisine/flora/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.1)
+	M.add_chemical_effect(CE_BONE_MEND, 0.5)

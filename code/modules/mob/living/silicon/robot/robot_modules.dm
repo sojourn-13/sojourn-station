@@ -130,6 +130,9 @@ var/global/list/robot_modules = list(
 			//Setting this to be infinity power isnt as good of a fix do to guns that cost power getting endless free shots, so auto charging is better - Trilby
 
 /obj/item/robot_module/proc/Reset(var/mob/living/silicon/robot/R)
+	if(R.actively_resting || R.allow_resting)
+		R.actively_resting = 0
+		R.allow_resting = 0
 	if(robot_traits) // removes module-only traits
 		R.RemoveTrait(robot_traits)
 	remove_camera_networks(R)
@@ -685,7 +688,9 @@ var/global/list/robot_modules = list(
 					"Contractor Tactical Alt" = "mmekasec",
 					"Contractor Foxtrot" = "mekasyndi_foxtrot",
 					"Contractor Traffic Light" = "fmekasyndi",
-					"Contractor Riot Stopper" = "mmekasyndi"
+					"Marshal Civil Servant" = "fmekasyndi_marshal", //Odio made this and for some reason named the original file slutty_bot.dmi so putting here so nobody will forget to shame him later for it.
+					"Contractor Riot Stopper" = "mmekasyndi",
+					"Marshal Riot Unit" = "mmekasyndi_marshal"
 				)
 
 	tall_sprites = list(
@@ -697,7 +702,9 @@ var/global/list/robot_modules = list(
 					"mmekasec",
 					"mekasyndi_foxtrot",
 					"fmekasyndi",
-					"mmekasyndi"
+					"fmekasyndi_marshal",
+					"mmekasyndi",
+					"mmekasyndi_marshal"
 				)
 
 /obj/item/robot_module/security/defense/New(var/mob/living/silicon/robot/R)
@@ -715,7 +722,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
-	src.emag += new /obj/item/gun/projectile/shotgun/pump/china(src)
+	src.emag += new /obj/item/gun/projectile/shotgun/pump/china/borg(src)
 
 	//We are stronk so we get less no knockdowns
 	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
@@ -770,7 +777,9 @@ var/global/list/robot_modules = list(
 					"Contractor Tactical Alt" = "mmekasec",
 					"Contractor Foxtrot" = "mekasyndi_foxtrot",
 					"Contractor Traffic Light" = "fmekasyndi",
-					"Contractor Riot Stopper" = "mmekasyndi"
+					"Marshal Civil Servant" = "fmekasyndi_marshal", //Odio made this and for some reason named the original file slutty_bot.dmi so putting here so nobody will forget to shame him later for it.
+					"Contractor Riot Stopper" = "mmekasyndi",
+					"Marshal Riot Unit" = "mmekasyndi_marshal"
 				)
 
 	tall_sprites = list(
@@ -781,7 +790,9 @@ var/global/list/robot_modules = list(
 					"mmekasec",
 					"mekasyndi_foxtrot",
 					"fmekasyndi",
-					"mmekasyndi"
+					"fmekasyndi_marshal",
+					"mmekasyndi",
+					"mmekasyndi_marshal"
 				)
 
 /obj/item/robot_module/security/enforcement/New(var/mob/living/silicon/robot/R)

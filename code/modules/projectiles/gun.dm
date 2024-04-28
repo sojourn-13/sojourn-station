@@ -62,6 +62,12 @@
 	var/list/zoom_factors = list()//How much to scope in when using weapon,
 	var/list/initial_zoom_factors = list()
 	var/psigun = 0
+	//For projectile guns mostly but we put them here in the base for the tool wheel
+	var/saw_off = FALSE			//Can be sawn off?
+	var/sawn = null				//what it becomes when sawn down, accepts a typepath.
+	var/wrench_intraction = FALSE
+	var/plusing_intraction = FALSE
+
 /*
 
 NOTE: For the sake of standardizing guns and extra vision range, here's a general guideline for zooming factor.
@@ -390,41 +396,86 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			to_chat(user, "<span class='info'>Projectile Serial Calibration: ERROR.</span>")
 
 
-	if(!istool(I) || user.a_intent != I_HURT)
-		return FALSE
+	var/list/usable_qualities = list()
+	if(saw_off)
+		usable_qualities.Add(QUALITY_SAWING)
 
-	//UNDETECTABLE CRIIIIMEEEE!!!!!!!
-	if(I.get_tool_quality(QUALITY_HAMMERING) && serial_type)
-		user.visible_message(SPAN_NOTICE("[user] begins chiseling \the [name]'s serial numbers away."), SPAN_NOTICE("You begin removing the serial numbers from \the [name]."))
-		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_MEC))
-			user.visible_message(SPAN_DANGER("[user] removes \the [name]'s serial numbers."), SPAN_NOTICE("You successfully remove the serial numbers from \the [name]."))
-			serial_type = "INDEX"
-			serial_type += "-[generate_gun_serial(pick(3,4,5,6,7,8))]"
-			serial_shown = FALSE
-			return FALSE
+	if(!psigun && gun_parts)
+		usable_qualities.Add(QUALITY_WIRE_CUTTING)
 
-	if(I.get_tool_quality(QUALITY_WIRE_CUTTING))
-		if(psigun)
-			to_chat(user, SPAN_NOTICE("You can't dismantle [src] as it has no gun parts! How strange..."))
-			return FALSE
-		if(!gun_parts)
-			to_chat(user, SPAN_NOTICE("You can't dismantle [src], it is far too complicated!"))
-			return FALSE
+	if(serial_type)
+		usable_qualities.Add(QUALITY_HAMMERING)
+
+	if(wrench_intraction)
+		usable_qualities.Add(QUALITY_BOLT_TURNING)
+
+	if(plusing_intraction)
+		usable_qualities.Add(QUALITY_PULSING)
+
+	if(usable_qualities)
+		var/tool_type = I.get_tool_type(user, usable_qualities, src)
+		switch(tool_type)
+
+			if(QUALITY_SAWING)
+				to_chat(user, SPAN_NOTICE("You begin to saw off the stock and barrel of \the [src]."))
+				//We got to know if were loaded or not seeings how this works
+				if(istype(src, /obj/item/gun/projectile))
+					var/obj/item/gun/projectile/MLG = src
+					if(MLG.ammo_magazine && MLG.ammo_magazine.stored_ammo && !MLG.ammo_magazine.stored_ammo.len)
+						to_chat(user, SPAN_WARNING("You should unload \the [src] first!"))
+						return
+				if(cell)
+					to_chat(user, SPAN_WARNING("You should unload \the [src] first!"))
+					return
+				if(silenced)
+					to_chat(user, SPAN_WARNING("You should remove the silencer first!"))
+					return
+				if(saw_off && I.use_tool(user, src, WORKTIME_LONG, QUALITY_SAWING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+					qdel(src)
+					new sawn(usr.loc)
+					to_chat(user, SPAN_WARNING("You cut down the stock, barrel, and anything else nice from \the [src], ruining a perfectly good weapon for no good reason!"))
+				return
+
+			if(QUALITY_WIRE_CUTTING)
+				user.visible_message(SPAN_NOTICE("[user] begins breaking apart [src]."), SPAN_WARNING("You begin breaking apart [src] for gun parts."))
+				if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					user.visible_message(SPAN_NOTICE("[user] breaks [src] apart for gun parts!"), SPAN_NOTICE("You break [src] apart for gun parts."))
+					for(var/target_item in gun_parts)
+						var/amount = gun_parts[target_item]
+						while(amount)
+							if(ispath(target_item, /obj/item/part/gun/frame))
+								var/obj/item/part/gun/frame/F = new target_item(get_turf(src))
+								F.serial_type = serial_type
+							else
+								new target_item(get_turf(src))
+							amount--
+					qdel(src)
+				return
+
+			//UNDETECTABLE CRIIIIMEEEE!!!!!!!
+			if(QUALITY_HAMMERING)
+				user.visible_message(SPAN_NOTICE("[user] begins chiseling \the [name]'s serial numbers away."), SPAN_NOTICE("You begin removing the serial numbers from \the [name]."))
+				if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					user.visible_message(SPAN_DANGER("[user] removes \the [name]'s serial numbers."), SPAN_NOTICE("You successfully remove the serial numbers from \the [name]."))
+					serial_type = "INDEX"
+					serial_type += "-[generate_gun_serial(pick(3,4,5,6,7,8))]"
+					serial_shown = FALSE
+					return
+
+			if(QUALITY_BOLT_TURNING)
+				wrench_intraction(I, user)
+				return
+
+			if(QUALITY_PULSING)
+				plusing_intraction(I, user)
+				return
+
+			if(ABORT_CHECK)
+				return
 
 
-		user.visible_message(SPAN_NOTICE("[user] begins breaking apart [src]."), SPAN_WARNING("You begin breaking apart [src] for gun parts."))
-		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
-			user.visible_message(SPAN_NOTICE("[user] breaks [src] apart for gun parts!"), SPAN_NOTICE("You break [src] apart for gun parts."))
-			for(var/target_item in gun_parts)
-				var/amount = gun_parts[target_item]
-				while(amount)
-					if(ispath(target_item, /obj/item/part/gun/frame))
-						var/obj/item/part/gun/frame/F = new target_item(get_turf(src))
-						F.serial_type = serial_type
-					else
-						new target_item(get_turf(src))
-					amount--
-			qdel(src)
+	else
+		..()
 
 /obj/item/gun/proc/dna_check(user)
 	if(dna_compare_samples)
@@ -1224,3 +1275,11 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(!sharp)
 		gun_tags |= SLOT_BAYONET
 */
+
+//Used for swapping some guns to have an alt "hidden" mode.
+/obj/item/gun/proc/wrench_intraction(obj/item/I, mob/user)
+	return
+
+//Used for swapping some guns to have an alt "hidden" mode.
+/obj/item/gun/proc/plusing_intraction(obj/item/I, mob/user)
+	return

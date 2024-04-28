@@ -108,3 +108,16 @@
 		new /mob/living/simple_animal/hostile/nightmare/dream_daemon(owner.loc)
 		new /mob/living/simple_animal/hostile/nightmare/dream_daemon(owner.loc)
 
+/obj/item/organ/internal/psionic_tumor/proc/psionic_swarm()
+	set category = "Psionic powers"
+	set name = "Psionic Swarm (2)"
+	set desc = "Spend two psionic essence to call forth a psionic energy cloud that will rip at foes and protect you for a short time."
+	psi_point_cost = 2
+
+	if(pay_power_cost(psi_point_cost) && check_possibility())
+		owner.visible_message(
+			"[owner] summons forth a swarm of swirling crackling blue energies!",
+			"You summon forth a psionic swarm around you!"
+			)
+		playsound(usr.loc, pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg'), 50, 1, -3)
+		new /mob/living/simple_animal/hostile/viscerator/psionic(owner.loc)

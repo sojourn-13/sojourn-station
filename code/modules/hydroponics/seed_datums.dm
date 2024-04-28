@@ -368,7 +368,7 @@
 	display_name = "ambrosia panacea"
 	mutants = null
 	evolutions = null
-	chems = list("nutriment"=list(1), "cronexidone"=list(5), "cordradaxon"=list(5,20),"peridaxon"=list(5,20),"respiradoxon"=list(5,20),"vermicetol"=list(5,20),"rezadone"=list(5,20),"quickclot"=list(5,20),"ossissine"=list(5,20))
+	chems = list("nutriment"=list(1), "cronexidone"=list(5), "cordradaxon"=list(5,20),"peridaxon"=list(5,20),"respirodaxon"=list(5,20),"vermicetol"=list(5,20),"rezadone"=list(5,20),"quickclot"=list(5,20),"flossisine"=list(5,20))
 	exude_gasses = list("sleeping_agent" = 4)
 
 /datum/seed/ambrosia/panacea/New()

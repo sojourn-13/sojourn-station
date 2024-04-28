@@ -16,7 +16,7 @@ proc/explosion(turf/epicenter, devastation_range, heavy_impact_range, light_impa
 			// light for 1 power
 			// giving us a cap of 25 power.
 
-			if(get_dist(W, epicenter) < 10)
+			if(get_dist(W, epicenter) < 10 && W.z == epicenter.z)
 				W.react_explosion(epicenter, power)
 
 		var/start = world.timeofday

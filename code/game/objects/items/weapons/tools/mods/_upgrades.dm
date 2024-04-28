@@ -50,7 +50,6 @@
 	return can_apply(A, user) && apply(A, user)
 
 /datum/component/item_upgrade/proc/can_apply(var/atom/A, var/mob/living/user)
-
 	if(isrobot(A))
 		return check_robot(A, user)
 
@@ -89,11 +88,15 @@
 	var/list/robotools = list()
 	for(var/obj/item/tool/robotool in R.module.modules)
 		robotools.Add(robotool)
+	for(var/obj/item/gun/robogun in R.module.modules)
+		robotools.Add(robogun)
 	if(robotools.len)
-		var/obj/item/tool/chosen_tool = input(user,"Which tool are you trying to modify?","Tool Modification","Cancel") in robotools + "Cancel"
-		if(chosen_tool == "Cancel")
+		var/obj/item/tool/chosen_tool = input(user,"Which tool are you trying to modify?","Tool Modification","Cancel") as null|anything in robotools + "Cancel"
+		if(!chosen_tool == "Cancel")
 			return FALSE
-		return can_apply(chosen_tool,user)
+		if(can_apply(chosen_tool,user))
+			apply(chosen_tool, user)
+		return FALSE
 	if(user)
 		to_chat(user, SPAN_WARNING("[R] has no modifiable tools."))
 	return FALSE
@@ -398,10 +401,14 @@
 		G.allow_greyson_mods = weapon_upgrades[GUN_UPGRADE_ALLOW_GREYON_MODS]
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT])
 		G.damage_multiplier *= weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT]
+	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE])
+		G.damage_multiplier += weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE]
 	if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
 		G.proj_agony_multiplier += weapon_upgrades[GUN_UPGRADE_PAIN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
 		G.penetration_multiplier *= weapon_upgrades[GUN_UPGRADE_PEN_MULT]
+	if(weapon_upgrades[GUN_UPGRADE_PEN_BASE])
+		G.penetration_multiplier += weapon_upgrades[GUN_UPGRADE_PEN_BASE]
 	if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 		G.pierce_multiplier += weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_STEPDELAY_MULT])
@@ -588,6 +595,10 @@
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile damage by [abs(amount*100)]%"))
 
+		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE])
+			to_chat(user, SPAN_NOTICE("Increases projectile damage multiplier by [weapon_upgrades[GUN_UPGRADE_DAMAGE_BASE]]"))
+
+
 		if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PAIN_MULT]-1
 			if(amount > 0)
@@ -601,6 +612,10 @@
 				to_chat(user, SPAN_NOTICE("Increases projectile penetration by [amount*100]%"))
 			else
 				to_chat(user, SPAN_WARNING("Decreases projectile penetration by [abs(amount*100)]%"))
+
+		if(weapon_upgrades[GUN_UPGRADE_PEN_BASE])
+			to_chat(user, SPAN_NOTICE("Increases projectile penetration multiplier by [weapon_upgrades[GUN_UPGRADE_PEN_BASE]]"))
+
 
 		if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
 			var/amount = weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
@@ -772,7 +787,7 @@
 
 /datum/component/upgrade_removal/proc/attempt_uninstall(var/obj/item/C, var/mob/living/user)
 	if(!isitem(C))
-		return 0
+		return FALSE
 
 	var/obj/item/upgrade_loc = parent
 
@@ -783,7 +798,7 @@
 
 	if(istype(upgrade_loc, /obj/item/clothing))
 		//to_chat(user, SPAN_DANGER("You cannot remove armor upgrades once they've been installed!")) so we dont spawm for suit changing
-		return 1
+		return FALSE
 
 	ASSERT(istype(upgrade_loc))
 	//Removing upgrades from a tool. Very difficult, but passing the check only gets you the perfect result
@@ -794,17 +809,17 @@
 		possibles += "Cancel"
 		var/obj/item/tool_upgrade/toremove = input("Which upgrade would you like to try to remove? The upgrade will probably be destroyed in the process","Removing Upgrades") in possibles
 		if (toremove == "Cancel")
-			return 1
+			return TRUE
 		if(!toremove.can_remove)
 			to_chat(user, SPAN_DANGER("You cannot remove [toremove] once it's been installed!"))
-			return 0
+			return FALSE
 		var/datum/component/item_upgrade/IU = toremove.GetComponent(/datum/component/item_upgrade)
 		if(C.use_tool(user = user, target =  upgrade_loc, base_time = IU.removal_time, required_quality = QUALITY_SCREW_DRIVING, fail_chance = IU.removal_difficulty, required_stat = STAT_MEC))
 			//If you pass the check, then you manage to remove the upgrade intact
 			to_chat(user, SPAN_NOTICE("You successfully remove \the [toremove] while leaving it intact."))
 			LEGACY_SEND_SIGNAL(toremove, COMSIG_REMOVE, upgrade_loc)
 			upgrade_loc.refresh_upgrades()
-			return 1
+			return TRUE
 		else
 			//You failed the check, lets see what happens
 			if(IU.breakable == FALSE)
@@ -818,14 +833,14 @@
 				QDEL_NULL(toremove)
 				upgrade_loc.refresh_upgrades()
 				user.update_action_buttons()
-				return 1
+				return TRUE
 			else if(T && T.degradation) //Because robot tools are unbreakable
 				//otherwise, damage the host tool a bit, and give you another try
 				to_chat(user, SPAN_DANGER("You only managed to damage \the [upgrade_loc], but you can retry."))
 				T.adjustToolHealth(-(5 * T.degradation), user) // inflicting 4 times use damage
 				upgrade_loc.refresh_upgrades()
 				user.update_action_buttons()
-				return 1
+				return TRUE
 	return 0
 
 

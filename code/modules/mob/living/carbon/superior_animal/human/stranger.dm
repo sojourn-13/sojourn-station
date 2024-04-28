@@ -34,6 +34,10 @@
 	. = ..()
 	do_sparks(3, 0, src.loc)
 
+/mob/living/carbon/superior_animal/human/stranger/right_before_firing()
+	flick("strangerranged_shooter",src)
+	..()
+
 /mob/living/carbon/superior_animal/human/stranger/death()
 	. = ..()
 	var/obj/item/gun/energy/plasma/stranger/S = new (src.loc)

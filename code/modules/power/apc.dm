@@ -1020,7 +1020,7 @@
 		//		malfvacate()
 		if("reboot")
 			failure_timer = 0
-			force_update = FALSE
+			force_update = TRUE
 			update_icon()
 			update()
 		//if("emergency_lighting")		we don't have those

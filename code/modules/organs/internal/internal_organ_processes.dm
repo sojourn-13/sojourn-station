@@ -97,7 +97,7 @@
 
 	// Blood loss or liver damage make you lose nutriments
 	var/blood_volume = get_blood_volume()
-	if(blood_volume < total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER || (liver_efficiency < BRUISED_2_EFFICIENCY))
+	if(blood_volume * effective_blood_volume < total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER || (liver_efficiency < BRUISED_2_EFFICIENCY))
 		if(nutrition >= 300)
 			adjustNutrition(-10)
 		else if(nutrition >= 200)
@@ -122,7 +122,7 @@
 	if(life_tick % 5 == 0)//update pulse every 5 life ticks (~1 tick/sec, depending on server load)
 		pulse = PULSE_NORM
 
-		if(round(vessel.get_reagent_amount("blood")) <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)	//how much blood do we have
+		if(get_blood_volume() * effective_blood_volume <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)	//how much blood do we have
 			pulse  = PULSE_THREADY	//not enough :(
 
 		if(status_flags & FAKEDEATH || chem_effects[CE_NOPULSE])
@@ -132,15 +132,15 @@
 
 /mob/living/carbon/human/proc/handle_heart_blood()
 	var/heart_efficiency = get_organ_efficiency(OP_HEART)
-	var/blood_oxygenation = 0.4 * chem_effects[CE_OXYGENATED] - 0.2 * chem_effects[CE_BLOODCLOT]
-	var/blood_volume_raw = vessel.get_reagent_amount("blood")
-	var/blood_volume = round((blood_volume_raw/species.blood_volume)*100) // Percentage.
+	var/blood_oxygenation = 0.4 * chem_effects[CE_OXYGENATED]
+	var/blood_volume = get_blood_volume() // Percentage.
 
 	// Damaged heart virtually reduces the blood volume, as the blood isn't being pumped properly anymore.
 	if(heart_efficiency <= 100)	//flat scaling up to 100
-		blood_volume *= (heart_efficiency / 100) + blood_oxygenation
+		effective_blood_volume = (heart_efficiency / 100) + blood_oxygenation
 	else	//half scaling at over 100
-		blood_volume *= 1 + ((heart_efficiency - 100) / 200) + blood_oxygenation
+		effective_blood_volume = 1 + ((heart_efficiency - 100) / 200) + blood_oxygenation
+	blood_volume *= effective_blood_volume
 
 	//Effects of bloodloss
 	var/blood_safe = total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER

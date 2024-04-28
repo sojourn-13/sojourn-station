@@ -5,7 +5,7 @@
 	var/require_comms_key = FALSE
 
 /datum/world_topic/proc/TryRun(list/input)
-	key_invalid = !config || config.comms_password || config.comms_password == "" || config.comms_password != input["key"]
+	key_invalid = !config || !istext(config.comms_password) || config.comms_password == "" || config.comms_password != input["key"]
 	if(require_comms_key && key_invalid)
 		return "Bad Key"
 	input -= "key"

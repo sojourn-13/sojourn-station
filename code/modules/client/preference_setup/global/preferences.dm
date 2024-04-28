@@ -113,6 +113,11 @@ var/list/_client_preferences_by_type
 	key = "CHAT_GHOSTEARS"
 	options = list(GLOB.PREF_ALL_SPEECH, GLOB.PREF_NEARBY)
 
+/datum/client_preference/ghost_ears_plus
+	description ="Ghost Psionics/Cruciform"
+	key = "CHAT_GHOST_EARS_PLUS"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+
 /datum/client_preference/ghost_sight
 	description ="Ghost sight"
 	key = "CHAT_GHOSTSIGHT"

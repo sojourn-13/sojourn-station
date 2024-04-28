@@ -94,5 +94,5 @@
 		/obj/item/gun_upgrade/barrel/bore = offer_data("bored barrel", 750, 2),
 		/obj/item/gun_upgrade/barrel/forged = offer_data("forged barrel", 750, 4),
 		/obj/item/gun_upgrade/magwell/auto_eject = offer_data("H&S \"Dropper\" Magwell Braker", 450, 5),
-		/obj/item/clothing/glasses/powered/night/guild  = offer_data("Converted NV Goggles", 1000, 1)
+		/obj/item/clothing/glasses/powered/night/guild  = offer_data("Optimized NV Goggles", 1000, 1)
 	)

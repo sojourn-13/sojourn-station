@@ -140,7 +140,7 @@
 	nodamage = TRUE
 	check_armour = ARMOR_ENERGY
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	hitscan = TRUE
+	hitscan = FALSE
 
 /obj/item/projectile/slime_death/on_impact(atom/target)//These two could likely check temp protection on the mob
 	if (!testing)

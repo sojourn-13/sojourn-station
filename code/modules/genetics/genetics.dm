@@ -556,7 +556,7 @@
 
 //Quick Check if our holder is living
 /datum/genetics/genetics_holder/proc/holder_is_living()
-	return ((holder && istype(holder, /mob/living/carbon/human)) ? TRUE : FALSE)
+	return ((holder && istype(holder, /mob/living)) ? TRUE : FALSE)
 
 //Quick Check if our holder is human
 /datum/genetics/genetics_holder/proc/holder_is_human()
