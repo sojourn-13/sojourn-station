@@ -48072,7 +48072,7 @@
 /obj/machinery/door/airlock/glass_security{
 	id_tag = "shuttle_hatch_bolts";
 	name = "Shuttle Hatch";
-	req_one_access = list(1,19,80)
+	req_one_access = list(1,5,19,80)
 	},
 /obj/machinery/button/remote/airlock{
 	id = "shuttle_hatch_bolts";
