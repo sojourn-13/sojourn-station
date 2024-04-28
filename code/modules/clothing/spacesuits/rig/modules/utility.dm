@@ -116,7 +116,6 @@
 		device.afterattack(target,holder.wearer,1)
 	return 1
 
-
 /obj/item/rig_module/modular_injector
 	name = "mounted modular dispenser"
 	desc = "A specialized system for injecting chemicals."
@@ -219,12 +218,20 @@
 			user.visible_message("[user] removes \the [sel_ref.name] from \the [src]")
 			if(!user.put_in_active_hand(sel_ref))
 				sel_ref.loc = get_turf(src)
+	//Unlike fast change this lets you adjust to any number you want! (oh no)
 	if(W.get_tool_quality(QUALITY_BOLT_TURNING))
-		var/amount = input(user, "Choose reagent injection amount", null) in list(0, initial(injection_amount), max_injection_amount * 0.5, max_injection_amount)
+		var/amount = input(user, "Choose reagent injection amount", null) as null|num
 		if(amount != null)
 			injection_amount = amount
 			to_chat(user, "You set the injection amount to [amount] on \the [src]")
 			user.visible_message("[user] tweaks the injection amount on \the [src]")
+
+/obj/item/rig_module/modular_injector/proc/quick_change(mob/user)
+	var/amount = input(user, "Choose reagent injection amount", null) in list(0, initial(injection_amount), max_injection_amount * 0.5, max_injection_amount)
+	if(amount != null)
+		injection_amount = amount
+		to_chat(user, "You set the injection amount to [amount] on \the [src]")
+		user.visible_message("[user] tweaks the injection amount on \the [src]")
 
 /obj/item/rig_module/modular_injector/engage(atom/target)
 
@@ -284,10 +291,10 @@
 	max_beakers = 6
 	injection_to_others_delay = 1
 	initial_beakers = list(
-		list(/obj/item/reagent_containers/glass/beaker/large, "hyperzine", 60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "tramadol", 60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "nutriment", 60),
-		list(/obj/item/reagent_containers/glass/beaker/large, "tricordrazine", 60)
+		list(/obj/item/reagent_containers/glass/beaker/large/rig_hyperzine,     "hyperzine", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large/rig_tramadol,      "tramadol", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large/rig_nutriment,     "nutriment", 60),
+		list(/obj/item/reagent_containers/glass/beaker/large/rig_tricordrazine, "tricordrazine", 60)
 	)
 	interface_name = "integrated chemical combat dispenser"
 	interface_desc = "Dispenses loaded chemicals directly into the user's bloodstream."
@@ -296,7 +303,7 @@
 	name = "mounted medical injector"
 	desc = "A specialized system for injecting chemicals in patients."
 	price_tag = 3750
-	max_injection_amount = 3
+	max_injection_amount = 5 //3 was for 10 injections on max turns, now its 5 for 6 injects max. Evens out I suppose
 	injection_amount = 1
 	max_beakers = 8 //We have limitations in injection amount, time and *maxium* storage, this is a fair trade.
 	usable = 0
@@ -305,13 +312,13 @@
 	vial_only = TRUE
 	injection_to_others_delay = 7 //Not nerely as long as you would think
 	initial_beakers = list(
-		list(/obj/item/reagent_containers/glass/beaker/vial, "inaprovaline",15),
-		list(/obj/item/reagent_containers/glass/beaker/vial, "dexalinp",15),
-		list(/obj/item/reagent_containers/glass/beaker/vial, "tramadol",15),
-		list(/obj/item/reagent_containers/glass/beaker/vial, "bicaridine", 15),
-		list(/obj/item/reagent_containers/glass/beaker/vial, "kelotane",15),
-		list(/obj/item/reagent_containers/glass/beaker/vial, "anti_toxin", 15),
-		list(/obj/item/reagent_containers/glass/beaker/vial, "spaceacillin", 15)
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_inaprovaline, "inaprovaline",15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_dexalinp,     "dexalinp",15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_tramadol,     "tramadol",15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_bicaridine,   "bicaridine", 15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_kelotane,     "kelotane",15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_anti_toxin,   "anti_toxin", 15),
+		list(/obj/item/reagent_containers/glass/beaker/vial/rig_spaceacillin, "spaceacillin", 15)
 	)
 	interface_name = "integrated chemical injector"
 	interface_desc = "Dispenses loaded chemicals directly into the bloodstream of its target. Can be used on the wearer as well."
