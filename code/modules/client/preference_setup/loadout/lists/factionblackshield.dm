@@ -113,3 +113,8 @@
 	display_name = "fatigue cover selection"
 	path = /obj/item/clothing/head/rank/fatigue/
 	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/factionblackshield/blackshieldbackpack
+	display_name = "green blackshield backpack"
+	path = /obj/item/storage/backpack/militia/green
+	slot = slot_back
