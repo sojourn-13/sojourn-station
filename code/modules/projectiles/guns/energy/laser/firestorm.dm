@@ -19,6 +19,7 @@
 	init_recoil = CARBINE_RECOIL(0.2)
 	projectile_type = /obj/item/projectile/beam
 	cell_type = /obj/item/cell/small
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 	charge_cost = 40
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
