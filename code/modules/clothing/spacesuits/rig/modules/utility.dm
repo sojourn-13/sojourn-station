@@ -133,6 +133,7 @@
 	var/list/beakers = list()
 	var/max_beakers = 5
 	var/injection_amount = 5
+	//""max"" injection is for quick-selections, if you use a wrench directly on the modular injector you can set it to *any number you want*
 	var/max_injection_amount = 20
 	var/empties = 0
 	var/initial_beakers = null
