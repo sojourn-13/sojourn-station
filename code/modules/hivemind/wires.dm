@@ -381,7 +381,7 @@
 		if(ishuman(subject))
 			var/mob/living/L = subject
 
-			if(GLOB.hive_data_bool["gibbing_dead"])
+			if(GLOB.hive_data_bool["prevent_gibbing_dead"])
 			//We we dont touch the dead via are controler we dont want to pk people form the round
 				return
 
