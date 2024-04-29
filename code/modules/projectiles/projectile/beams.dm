@@ -249,8 +249,8 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/IRKdesolator //Marking this for future use with IRK
 	name = "desolator ray"
 	icon_state = "xray"
-	damage_types = list(BURN = 20) //less burn but more pen
-	armor_penetration = 45
+	damage_types = list(BURN = 20) //Worse Xray
+	armor_penetration = 25
 	eyeblur = 4
 	recoil = 6
 	penetrating = 1
