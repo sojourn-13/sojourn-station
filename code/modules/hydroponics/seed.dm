@@ -326,7 +326,7 @@
 	// Handle gas production.
 	if(exude_gasses && exude_gasses.len && !check_only)
 		for(var/gas in exude_gasses)
-			environment.adjust_gas(gas, max(1,round((exude_gasses[gas]*(get_trait(TRAIT_POTENCY)/5))/exude_gasses.len)))
+			environment.adjust_gas_temp(gas, max(1,round((exude_gasses[gas]*(get_trait(TRAIT_POTENCY)/5))/exude_gasses.len)), T20C)
 
 	//Handle temperature change.
 	if(get_trait(TRAIT_ALTER_TEMP) != 0 && !check_only)
