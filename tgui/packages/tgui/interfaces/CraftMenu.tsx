@@ -1,6 +1,6 @@
-import { filter, sortBy } from '../../common/collections';
+import { sortBy } from '../../common/collections';
 import { BooleanLike } from '../../common/react';
-import { createSearch, decodeHtmlEntities } from '../../common/string';
+import { createSearch } from '../../common/string';
 import { useBackend, useLocalState } from '../backend';
 import {
   Box,
@@ -12,7 +12,6 @@ import {
   Tabs,
 } from '../components';
 import { Window } from '../layouts';
-import { SearchBar } from './Fabrication/SearchBar';
 
 const GroupTitle = ({ title }) => {
   return (
@@ -28,7 +27,7 @@ const GroupTitle = ({ title }) => {
   ) as any;
 };
 
-export type CraftingStep = {
+export type CraftingStepData = {
   // Amount of resource needed for this step
   amt: number;
   // The resource OR tool needed
@@ -39,12 +38,12 @@ export type CraftingStep = {
   reqed_material: BooleanLike;
 };
 
-export const CraftingStep = (props: { step: CraftingStep }, context) => {
+export const CraftingStep = (props: { step: CraftingStepData }, context) => {
   const { step } = props;
 
   const { amt, tool_name, icon, reqed_material } = step;
 
-  if (amt == 0) {
+  if (amt === 0) {
     return (
       <Stack align="center">
         <Stack.Item>
@@ -54,7 +53,7 @@ export const CraftingStep = (props: { step: CraftingStep }, context) => {
       </Stack>
     );
     // correct pluralization for non-stacks
-  } else if (amt == 1 && !reqed_material) {
+  } else if (amt === 1 && !reqed_material) {
     return (
       <Stack align="center">
         <Stack.Item>
@@ -77,36 +76,30 @@ export const CraftingStep = (props: { step: CraftingStep }, context) => {
   }
 };
 
-export const CompactCraftingStep = (props: { step: CraftingStep }, context) => {
-  const { step } = props;
-
+const getCompactCraftingStepText = (step: CraftingStepData) => {
   const { amt, tool_name, icon, reqed_material } = step;
 
-  if (amt == 0) {
-    return <>{tool_name}</>;
+  if (amt === 0) {
+    return tool_name;
     // correct pluralization for non-stacks
-  } else if (amt == 1 && !reqed_material) {
-    return <>{tool_name}</>;
+  } else if (amt === 1 && !reqed_material) {
+    return tool_name;
   } else {
-    return (
-      <>
-        {amt} {tool_name}
-      </>
-    );
+    return amt + ' ' + tool_name;
   }
 };
 
-export type CraftingRecipe = {
+export type CraftingRecipeData = {
   name: string;
   ref: string;
   icon: string;
   batch: BooleanLike;
   desc: string;
-  steps: CraftingStep[];
+  steps: CraftingStepData[];
 };
 
 export const CraftingRecipe = (
-  props: { recipe: CraftingRecipe; compact: boolean; admin: boolean },
+  props: { recipe: CraftingRecipeData; compact: boolean; admin: boolean },
   context
 ) => {
   const { act } = useBackend(context);
@@ -127,16 +120,12 @@ export const CraftingRecipe = (
               if (compact) {
                 return (
                   <>
-                    <CompactCraftingStep step={step} />
+                    {getCompactCraftingStepText(step)}
                     {idx !== recipe.steps.length ? ', ' : ''}
                   </>
                 );
               } else {
-                return (
-                  <>
-                    <CraftingStep step={step} />
-                  </>
-                );
+                return <CraftingStep step={step} />;
               }
             })}
           </Box>
@@ -271,7 +260,7 @@ export const CraftingRecipe = (
 
 type Data = {
   crafting_recipes: {
-    [key: string]: CraftingRecipe[];
+    [key: string]: CraftingRecipeData[];
   };
   is_admin: BooleanLike;
 };
@@ -303,7 +292,7 @@ export const CraftMenu = (props, context) => {
 
   const searchName = createSearch(
     searchText,
-    (item: CraftingRecipe) => item.name
+    (item: CraftingRecipeData) => item.name
   );
 
   // Pagination
@@ -329,7 +318,7 @@ export const CraftMenu = (props, context) => {
       .filter(searchName);
   }
 
-  recipes = sortBy((recipe: CraftingRecipe) => recipe.name.toUpperCase())(
+  recipes = sortBy((recipe: CraftingRecipeData) => recipe.name.toUpperCase())(
     recipes
   );
 
@@ -357,7 +346,8 @@ export const CraftMenu = (props, context) => {
                     <Tabs fluid vertical>
                       {available_categories.map((category) => (
                         <Tabs.Tab
-                          selected={category == currentCategory}
+                          key={category}
+                          selected={category === currentCategory}
                           onClick={() => {
                             setPages(1);
                             setCurrentCategory(category);
@@ -388,6 +378,7 @@ export const CraftMenu = (props, context) => {
             <Box height="100%" pr={1} pt={1} mr={-1} overflowY="auto">
               {recipes.slice(0, displayLimit).map((recipe) => (
                 <CraftingRecipe
+                  key={recipe.ref}
                   recipe={recipe}
                   compact={showCompact}
                   admin={!!is_admin}
