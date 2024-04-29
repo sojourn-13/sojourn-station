@@ -1345,6 +1345,7 @@
 #include "code\game\objects\random\furniture.dm"
 #include "code\game\objects\random\guns.dm"
 #include "code\game\objects\random\hardcases.dm"
+#include "code\game\objects\random\hivemind.dm"
 #include "code\game\objects\random\junk.dm"
 #include "code\game\objects\random\materials.dm"
 #include "code\game\objects\random\mecha.dm"
