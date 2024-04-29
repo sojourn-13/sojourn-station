@@ -267,7 +267,8 @@
 			
 /obj/item/projectile/IRKdebilitate //Marking for future use
 	name = "debilitator bolt"
-	damage_types = list(BRUTE = 25) //Intended to be brute
+	damage_types = list(BRUTE = 12) //Intended to be brute
+	agony = 20
 	icon_state = "declone"
 	armor_penetration = 10
 	recoil = 2
@@ -276,7 +277,7 @@
 	if(ishuman(target))
 		if (!testing)
 			var/mob/living/carbon/human/M = target
-			M.confused += rand(2,3)
+			M.confused += rand(1,2)
 			M.sanity_damage = 3 //Somehow these bolts mess with your head, must be some really weird scifi bullshit
 
 /obj/item/projectile/chameleon
