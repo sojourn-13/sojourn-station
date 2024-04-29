@@ -645,49 +645,64 @@
 	effective_faction = list("psi_monster", "stalker") //Nightmares!
 	damage_mult = 1.2
 	embed_mult = 0
+	degradation = 0.1 //We do a LOT of attacks
 	//Normal force is 26
 	//Normal AP is 10
 	var/coin_tracker = 0 //Number not false
 	var/tracker
 
-/obj/item/tool/sword/saber/nightmare_saber/resolve_attackby(atom/target, mob/user)
+/obj/item/tool/sword/saber/nightmare_saber/resolve_attackby(atom/target, mob/user, give_coin = TRUE)
 	//Little icky but it works
 	clickdelay_offset = 0
+	if(coin_tracker >= 5)
+		coin_tracker = 0
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/able_to_use = FALSE
-		message_admins("1knife: H [H]")
-
+		var/robo_lim = 0 //Counts byond just true or false
+		//message_admins("1knife: H [H]")
+		//message_admins("1knife: give_coin [give_coin]")
 		if(!H.get_organ(BP_L_ARM) || !H.get_organ(BP_R_ARM))
 			able_to_use = TRUE
 		if(istype(H.get_organ(BP_L_ARM), /obj/item/organ/external/stump))
 			able_to_use = TRUE
 		if(istype(H.get_organ(BP_R_ARM), /obj/item/organ/external/stump))
 			able_to_use = TRUE
+		//Robo *lim* bypasses needing only 1 arm, but having 2 robo lims cancle one another out
+		if(istype(H.get_organ(BP_L_ARM), /obj/item/organ/external/robotic))
+			robo_lim += 1
+		if(istype(H.get_organ(BP_R_ARM), /obj/item/organ/external/robotic))
+			robo_lim += 1
+		if(robo_lim == 1)
+			able_to_use = TRUE
 
-		message_admins("1knife: able_to_use [able_to_use]")
+
+		//message_admins("1knife: able_to_use [able_to_use]")
 
 		if(able_to_use)
-			message_admins("2knife: able_to_use [able_to_use]")
+			//message_admins("2knife: able_to_use [able_to_use]")
 			var/speedy_dashing = H.momentum_speed
-			message_admins("2knife: speedy_dashing [speedy_dashing]")
+			//message_admins("2knife: speedy_dashing [speedy_dashing]")
 			if(speedy_dashing > 0)
 				//Hopefully your running around to accually use this
 				armor_penetration *= speedy_dashing
 				force *= speedy_dashing
-			if(tracker == target.name)
+			if(tracker == target.name && give_coin)
 				coin_tracker += 1
 			else
 				if(ismob(target))
 					tracker = target.name
 					coin_tracker = 0
-			message_admins("3knife: coin_tracker [coin_tracker]")
+			//message_admins("3knife: coin_tracker [coin_tracker]")
 			if(coin_tracker >= 4)
 				for(var/mob/living/victim in range(1, H))
 					if(victim != user)
-						new /atom/movable/DuskCut(victim.loc, src)
-						resolve_attackby(victim, user) //Attack again!
-						resolve_attackby(victim, user) //Attack again! 2x
+						var/turf/T = get_turf(victim)
+						new /atom/movable/DuskCut(T, src)
+						resolve_attackby(victim, user, give_coin = FALSE) //Attack again!
+						resolve_attackby(victim, user, give_coin = FALSE) //Attack again! 2x
+						resolve_attackby(victim, user, give_coin = FALSE) //Attack again! 3x
+						resolve_attackby(victim, user, give_coin = FALSE) //Attack again! 4x
 				coin_tracker = 0
 
 			clickdelay_offset = -speedy_dashing
@@ -698,12 +713,13 @@
 	icon = 'icons/obj/weapons-blades.dmi'
 	color = "#ffffff"
 	icon_state = "nightmare_saber_arc"
-	alpha = 150
+	alpha = 200
+	layer = 9 //Random number to be ontop of everything
 	var/qdel_timer
 
 /atom/movable/DuskCut/Initialize(mapload)
 	dir = pick(NORTH, SOUTH, EAST, WEST) //Random
-	qdel_timer = QDEL_IN(src, 2.6)
+	qdel_timer = QDEL_IN(src, 4)
 
 /obj/item/tool/sword/katana/crimson_arc
 	name = "\"Crimson Arc\" katana"
