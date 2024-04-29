@@ -3315,6 +3315,7 @@
 #include "code\modules\tgui\status_composers.dm"
 #include "code\modules\tgui\tgui.dm"
 #include "code\modules\tgui\tgui_window.dm"
+#include "code\modules\tgui\modules\_base.dm"
 #include "code\modules\tgui\states\always.dm"
 #include "code\modules\tgui\states\machinery.dm"
 #include "code\modules\tgui\states\notcontained.dm"
