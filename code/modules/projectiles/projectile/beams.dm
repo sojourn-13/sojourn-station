@@ -264,7 +264,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	var/mob/living/carbon/human/H = M
 	if(ishuman(target))
 		if(istype(target, /mob/living/carbon/))
-			H.apply_effect(5,IRRADIATE)//Irradiates less but pierces walls
+			H.apply_effect(15,IRRADIATE)//Irradiates less but pierces walls
 	else
 		return 1			
 
