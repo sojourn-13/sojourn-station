@@ -35,9 +35,9 @@
 	twohanded = TRUE
 	gun_tags = list(GUN_LASER, GUN_ENERGY) //Xray laser with a scope? Yeah no.
 	init_firemodes = list(
-		list(mode_name="DEBILITATE", projectile_type=/obj/item/projectile/IRKdebilitate, fire_sound = 'sound/weapons/energy/burn.ogg', fire_delay=5, icon="destroy"),
-		list(mode_name="DISSOLVE", projectile_type=/obj/item/projectile/beam/IRKdissolver, fire_sound='sound/weapons/energy/SuperHeavyLaser.ogg', fire_delay=5, icon="kill"),
-		list(mode_name="DESOLATE", projectile_type=/obj/item/projectile/beam/IRKdesolator, fire_sound='sound/weapons/energy/vaporize.ogg', fire_delay=5, icon="vaporize"),
+		list(mode_name="DEBILITATE", projectile_type=/obj/item/projectile/IRKdebilitate, fire_sound = 'sound/weapons/energy/burn.ogg', fire_delay=8, icon="destroy"),
+		list(mode_name="DISSOLVE", projectile_type=/obj/item/projectile/beam/IRKdissolver, fire_sound='sound/weapons/energy/SuperHeavyLaser.ogg', fire_delay=8, icon="kill"),
+		list(mode_name="DESOLATE", projectile_type=/obj/item/projectile/beam/IRKdesolator, fire_sound='sound/weapons/energy/vaporize.ogg', fire_delay=10, icon="vaporize"),
 	)
 	
 	var/lightfail = 0
