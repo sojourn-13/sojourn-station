@@ -250,7 +250,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "desolator ray"
 	icon_state = "xray"
 	damage_types = list(BURN = 20) //Worse Xray
-	armor_penetration = 20
+	armor_penetration = 25
 	eyeblur = 4
 	recoil = 6
 	penetrating = 1
