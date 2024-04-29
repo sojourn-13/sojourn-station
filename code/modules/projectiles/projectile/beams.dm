@@ -230,7 +230,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "dissolver ray"
 	icon_state = "emitter"
 	damage_types = list(BURN = 30) //Less burn but also less recoil
-	armor_penetration = 30 //Experimental and extremely rare but also self recharging so take it as you will
+	armor_penetration = 40 //Experimental and extremely rare but also self recharging so take it as you will
 	recoil = 5 //Less recoil but also less burn
 
 	muzzle_type = /obj/effect/projectile/emitter/muzzle
