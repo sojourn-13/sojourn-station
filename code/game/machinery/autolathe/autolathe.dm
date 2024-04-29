@@ -108,7 +108,7 @@
 /obj/machinery/autolathe/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "Autolathe")
+		ui = new(user, src, "Autolathe", name)
 		ui.open()
 
 /obj/machinery/autolathe/ui_data(mob/user)
@@ -294,6 +294,10 @@
 
 		if("clear_queue")
 			queue.Cut()
+			. = TRUE
+
+		if("insert_material")
+			eat(usr)
 			. = TRUE
 
 		if("eject_material")

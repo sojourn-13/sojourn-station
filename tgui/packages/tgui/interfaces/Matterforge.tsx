@@ -28,7 +28,15 @@ export const LoadedMaterials = (props: MaterialData, context) => {
   const { materials, mat_capacity } = props;
 
   return (
-    <Section title="Loaded Materials">
+    <Section
+      title="Loaded Materials"
+      buttons={
+        <Button
+          icon="arrow-up"
+          tooltip="Load Materials From Hand"
+          onClick={() => act('insert_material')}
+        />
+      }>
       {(materials.length > 0 && (
         <LabeledList>
           {materials.map((material) => {

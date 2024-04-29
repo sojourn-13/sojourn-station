@@ -80,7 +80,7 @@
 /obj/machinery/matter_nanoforge/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "Matterforge")
+		ui = new(user, src, "Matterforge", name)
 		ui.open()
 
 /obj/machinery/matter_nanoforge/ui_act(action, params)
@@ -89,6 +89,14 @@
 		return
 
 	switch(action)
+		if("insert_material")
+			if(power_source)
+				eat(usr)
+				. = TRUE
+			else
+				to_chat(usr, SPAN_WARNING("\The [src] does not have any artifact powering it."))
+				. = FALSE
+
 		if("eject_material")
 			if(!current_design || paused || error)
 				var/material = params["id"]
