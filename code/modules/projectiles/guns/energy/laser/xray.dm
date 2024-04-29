@@ -33,6 +33,7 @@
 	charge_cost = 50
 	can_dual = FALSE //Lol no
 	twohanded = TRUE
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE)
 	gun_tags = list(GUN_LASER, GUN_ENERGY) //Xray laser with a scope? Yeah no.
 	init_firemodes = list(
 		list(mode_name="DEBILITATE", projectile_type=/obj/item/projectile/IRKdebilitate, fire_sound = 'sound/weapons/energy/burn.ogg', fire_delay=8, icon="destroy"),
