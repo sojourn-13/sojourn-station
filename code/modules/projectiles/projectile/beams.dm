@@ -231,7 +231,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	icon_state = "emitter"
 	damage_types = list(BURN = 30) //Less burn but also less recoil
 	armor_penetration = 30 //Experimental and extremely rare but also self recharging so take it as you will
-	recoil = 3 //Less recoil but also less burn
+	recoil = 5 //Less recoil but also less burn
 
 	muzzle_type = /obj/effect/projectile/emitter/muzzle
 	tracer_type = /obj/effect/projectile/emitter/tracer
@@ -252,7 +252,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	damage_types = list(BURN = 20) //less burn but more pen
 	armor_penetration = 45
 	eyeblur = 4
-	recoil = 3
+	recoil = 6
 	penetrating = 1
 	
 	muzzle_type = /obj/effect/projectile/xray/muzzle
