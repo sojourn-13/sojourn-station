@@ -1414,6 +1414,10 @@ area/nadezhda/medical/medbaymeeting
 	name = "\improper Vacant Office"
 	icon_state = "security"
 
+/area/nadezhda/security/secrecroom
+	name = "Security - Recreation Room"
+	icon_state = "security"
+
 /area/nadezhda/security/inspectors_office
 	name = "Inspectors Office"
 	icon_state = "hammerblue"
