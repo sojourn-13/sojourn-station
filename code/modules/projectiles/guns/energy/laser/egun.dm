@@ -26,6 +26,13 @@
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
 
+/obj/item/gun/energy/gun/preloaded //For soteria lifeline techs
+
+/obj/item/gun/energy/gun/preloaded/New()
+	cell = new /obj/item/cell/medium/moebius/high(src)
+	. = ..()
+	update_icon()
+
 /obj/item/gun/energy/gun/mounted
 	name = "mounted energy gun"
 	self_recharge = 1
