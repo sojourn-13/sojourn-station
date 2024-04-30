@@ -1,6 +1,6 @@
-import { useBackend } from '../backend'
-import { Section } from '../components'
-import { Window } from '../layouts'
+import { useBackend } from '../backend';
+import { Section } from '../components';
+import { Window } from '../layouts';
 
 type Data = {
   priority: string[]
@@ -8,8 +8,8 @@ type Data = {
 }
 
 export const AtmosAlertConsole = props => {
-  const { act, data } = useBackend<Data>()
-  const { priority = [], minor = [] } = data
+  const { act, data } = useBackend<Data>();
+  const { priority = [], minor = [] } = data;
 
   return (
     <Window width={350} height={300}>
@@ -32,5 +32,5 @@ export const AtmosAlertConsole = props => {
         </Section>
       </Window.Content>
     </Window>
-  )
-}
+  );
+};
