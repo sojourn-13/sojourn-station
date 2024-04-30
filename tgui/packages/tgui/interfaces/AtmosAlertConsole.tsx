@@ -3,41 +3,41 @@ import { Button, Section } from '../components';
 import { Window } from '../layouts';
 
 type Data = {
-  priority: string[];
-  minor: string[];
-};
+  priority: string[]
+  minor: string[]
+}
 
-export const AtmosAlertConsole = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
+export const AtmosAlertConsole = props => {
+  const { act, data } = useBackend<Data>();
   const { priority = [], minor = [] } = data;
 
   return (
     <Window width={350} height={300}>
       <Window.Content scrollable>
-        <Section title="Alarms">
+        <Section title='Alarms'>
           <ul>
             {priority.length === 0 && (
-              <li className="color-good">No Priority Alerts</li>
+              <li className='color-good'>No Priority Alerts</li>
             )}
-            {priority.map((alert) => (
+            {priority.map(alert => (
               <li key={alert}>
                 <Button
-                  icon="times"
+                  icon='times'
                   content={alert}
-                  color="bad"
+                  color='bad'
                   onClick={() => act('clear', { zone: alert })}
                 />
               </li>
             ))}
             {minor.length === 0 && (
-              <li className="color-good">No Minor Alerts</li>
+              <li className='color-good'>No Minor Alerts</li>
             )}
-            {minor.map((alert) => (
+            {minor.map(alert => (
               <li key={alert}>
                 <Button
-                  icon="times"
+                  icon='times'
                   content={alert}
-                  color="average"
+                  color='average'
                   onClick={() => act('clear', { zone: alert })}
                 />
               </li>

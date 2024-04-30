@@ -1,5 +1,6 @@
-import { Component } from 'inferno';
-import { Stack, Input, Icon } from '../../components';
+import { Component } from 'react';
+
+import { Icon, Input, Stack } from '../../components';
 
 /**
  * The properties of a search bar.
@@ -8,23 +9,23 @@ export type SearchBarProps = {
   /**
    * The hint displayed in the search bar when it is empty.
    */
-  hint?: string;
+  hint?: string
 
   /**
    * The currently set search text.
    */
-  searchText: string;
+  searchText: string
 
   /**
    * Invoked whenever the search text is changed by the user.
    */
-  onSearchTextChanged: (newSearchText: string) => void;
-};
+  onSearchTextChanged: (newSearchText: string) => void
+}
 
 export class SearchBar extends Component<SearchBarProps> {
   timeout?: NodeJS.Timeout;
 
-  onInput(value: string) {
+  onInput (value: string) {
     if (this.timeout) {
       clearTimeout(this.timeout);
     }
@@ -32,13 +33,13 @@ export class SearchBar extends Component<SearchBarProps> {
     this.timeout = setTimeout(() => this.props.onSearchTextChanged(value), 200);
   }
 
-  render() {
+  render () {
     const { searchText, hint } = this.props;
 
     return (
-      <Stack align="baseline">
+      <Stack align='baseline'>
         <Stack.Item>
-          <Icon name="search" />
+          <Icon name='search' />
         </Stack.Item>
         <Stack.Item grow>
           <Input

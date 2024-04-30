@@ -1,11 +1,14 @@
+import { useState } from 'react';
+
 import { sortBy } from '../../common/collections';
 import { BooleanLike } from '../../common/react';
 import { createSearch } from '../../common/string';
-import { useBackend, useLocalState } from '../backend';
+import { useBackend } from '../backend';
 import {
   Box,
   Button,
   Divider,
+  Image,
   Input,
   Section,
   Stack,
@@ -29,25 +32,25 @@ const GroupTitle = ({ title }) => {
 
 export type CraftingStepData = {
   // Amount of resource needed for this step
-  amt: number;
+  amt: number
   // The resource OR tool needed
-  tool_name: string;
+  tool_name: string
   // Icon url
-  icon: string;
+  icon: string
   // Used to indicate if tool_name is a material stack, used for correct pluralization
-  reqed_material: BooleanLike;
-};
+  reqed_material: BooleanLike
+}
 
-export const CraftingStep = (props: { step: CraftingStepData }, context) => {
+export const CraftingStep = (props: { step: CraftingStepData }) => {
   const { step } = props;
 
   const { amt, tool_name, icon, reqed_material } = step;
 
   if (amt === 0) {
     return (
-      <Stack align="center">
+      <Stack align='center'>
         <Stack.Item>
-          <img src={icon} />
+          <Image src={icon} />
         </Stack.Item>
         <Stack.Item>Apply {tool_name}</Stack.Item>
       </Stack>
@@ -55,18 +58,18 @@ export const CraftingStep = (props: { step: CraftingStepData }, context) => {
     // correct pluralization for non-stacks
   } else if (amt === 1 && !reqed_material) {
     return (
-      <Stack align="center">
+      <Stack align='center'>
         <Stack.Item>
-          <img src={icon} />
+          <Image src={icon} />
         </Stack.Item>
         <Stack.Item>Attach {tool_name}</Stack.Item>
       </Stack>
     );
   } else {
     return (
-      <Stack align="center">
+      <Stack align='center'>
         <Stack.Item>
-          <img src={icon} />
+          <Image src={icon} />
         </Stack.Item>
         <Stack.Item>
           Attach {amt} {tool_name}
@@ -90,32 +93,33 @@ const getCompactCraftingStepText = (step: CraftingStepData) => {
 };
 
 export type CraftingRecipeData = {
-  name: string;
-  ref: string;
-  icon: string;
-  batch: BooleanLike;
-  desc: string;
-  steps: CraftingStepData[];
-};
+  name: string
+  ref: string
+  icon: string
+  batch: BooleanLike
+  desc: string
+  steps: CraftingStepData[]
+}
 
-export const CraftingRecipe = (
-  props: { recipe: CraftingRecipeData; compact: boolean; admin: boolean },
-  context
-) => {
-  const { act } = useBackend(context);
+export const CraftingRecipe = (props: {
+  recipe: CraftingRecipeData
+  compact: boolean
+  admin: boolean
+}) => {
+  const { act } = useBackend();
   const { recipe, compact, admin } = props;
 
   return (
     <Section>
       <Stack>
         <Stack.Item>
-          <img src={recipe.icon} />
+          <Image src={recipe.icon} />
         </Stack.Item>
         <Stack.Item grow>
-          <Box style={{ 'text-transform': 'capitalize' }}>{recipe.name}</Box>
-          {!compact && <Box color="grey">{recipe.desc}</Box>}
+          <Box style={{ textTransform: 'capitalize' }}>{recipe.name}</Box>
+          {!compact && <Box color='grey'>{recipe.desc}</Box>}
           <Box color={compact ? 'grey' : ''}>
-            {!compact && <GroupTitle title="Steps" />}
+            {!compact && <GroupTitle title='Steps' />}
             {recipe.steps.map((step, idx) => {
               if (compact) {
                 return (
@@ -125,7 +129,7 @@ export const CraftingRecipe = (
                   </>
                 );
               } else {
-                return <CraftingStep step={step} />;
+                return <CraftingStep step={step} key={idx} />;
               }
             })}
           </Box>
@@ -134,16 +138,16 @@ export const CraftingRecipe = (
           <Stack vertical={!compact}>
             <Stack.Item>
               <Button
-                icon="hammer"
-                tooltip="Craft"
+                icon='hammer'
+                tooltip='Craft'
                 onClick={() => act('build', { ref: recipe.ref })}
               />
             </Stack.Item>
             <Stack.Item>
               {admin && (
                 <Button
-                  icon="bug"
-                  tooltip="View Variables"
+                  icon='bug'
+                  tooltip='View Variables'
                   onClick={() => act('view_variables', { ref: recipe.ref })}
                 />
               )}
@@ -157,44 +161,46 @@ export const CraftingRecipe = (
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign="right"
-                    tooltip="Craft 5"
-                    onClick={() =>
-                      act('build', { ref: recipe.ref, amount: 5 })
-                    }>
+                    textAlign='right'
+                    tooltip='Craft 5'
+                    onClick={() => act('build', { ref: recipe.ref, amount: 5 })}
+                  >
                     5
                   </Button>
                 </Stack.Item>
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign="right"
-                    tooltip="Craft 10"
+                    textAlign='right'
+                    tooltip='Craft 10'
                     onClick={() =>
                       act('build', { ref: recipe.ref, amount: 10 })
-                    }>
+                    }
+                  >
                     10
                   </Button>
                 </Stack.Item>
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign="right"
-                    tooltip="Craft 25"
+                    textAlign='right'
+                    tooltip='Craft 25'
                     onClick={() =>
                       act('build', { ref: recipe.ref, amount: 25 })
-                    }>
+                    }
+                  >
                     25
                   </Button>
                 </Stack.Item>
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign="right"
-                    tooltip="Craft 50"
+                    textAlign='right'
+                    tooltip='Craft 50'
                     onClick={() =>
                       act('build', { ref: recipe.ref, amount: 50 })
-                    }>
+                    }
+                  >
                     50
                   </Button>
                 </Stack.Item>
@@ -206,44 +212,46 @@ export const CraftingRecipe = (
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign="right"
-                    tooltip="Craft 5"
-                    onClick={() =>
-                      act('build', { ref: recipe.ref, amount: 5 })
-                    }>
+                    textAlign='right'
+                    tooltip='Craft 5'
+                    onClick={() => act('build', { ref: recipe.ref, amount: 5 })}
+                  >
                     5
                   </Button>
                 </Stack.Item>
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign="right"
-                    tooltip="Craft 10"
+                    textAlign='right'
+                    tooltip='Craft 10'
                     onClick={() =>
                       act('build', { ref: recipe.ref, amount: 10 })
-                    }>
+                    }
+                  >
                     10
                   </Button>
                 </Stack.Item>
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign="right"
-                    tooltip="Craft 25"
+                    textAlign='right'
+                    tooltip='Craft 25'
                     onClick={() =>
                       act('build', { ref: recipe.ref, amount: 25 })
-                    }>
+                    }
+                  >
                     25
                   </Button>
                 </Stack.Item>
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign="right"
-                    tooltip="Craft 50"
+                    textAlign='right'
+                    tooltip='Craft 50'
                     onClick={() =>
                       act('build', { ref: recipe.ref, amount: 50 })
-                    }>
+                    }
+                  >
                     50
                   </Button>
                 </Stack.Item>
@@ -260,35 +268,31 @@ export const CraftingRecipe = (
 
 type Data = {
   crafting_recipes: {
-    [key: string]: CraftingRecipeData[];
-  };
-  is_admin: BooleanLike;
-};
+    [key: string]: CraftingRecipeData[]
+  }
+  is_admin: BooleanLike
+}
 
-export const CraftMenu = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
+export const CraftMenu = props => {
+  const { act, data } = useBackend<Data>();
   const { crafting_recipes, is_admin } = data;
 
   // Filter out empty categories
   const available_categories = Object.keys(crafting_recipes).filter(
-    (category) => crafting_recipes[category].length !== 0
+    category => crafting_recipes[category].length !== 0
   );
 
   // Total recipe count
   const recipeCount = available_categories
-    .map((category) => crafting_recipes[category].length)
+    .map(category => crafting_recipes[category].length)
     .reduce((s, a) => s + a, 0);
 
   // -- State --
   // Compact mode
-  const [showCompact, setShowCompact] = useLocalState(
-    context,
-    'showCompact',
-    false
-  );
+  const [showCompact, setShowCompact] = useState(false);
 
   // Search text
-  const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
+  const [searchText, setSearchText] = useState('');
 
   const searchName = createSearch(
     searchText,
@@ -296,16 +300,14 @@ export const CraftMenu = (props, context) => {
   );
 
   // Pagination
-  const [pages, setPages] = useLocalState(context, 'pages', 1);
+  const [pages, setPages] = useState(1);
 
   const pageSize =
     searchText.length > 0 ? (showCompact ? 20 : 10) : showCompact ? 60 : 30;
   const displayLimit = pageSize * pages;
 
   // Selected Category
-  const [currentCategory, setCurrentCategory] = useLocalState(
-    context,
-    'currentCategory',
+  const [currentCategory, setCurrentCategory] = useState(
     available_categories[0]
   );
 
@@ -314,12 +316,12 @@ export const CraftMenu = (props, context) => {
 
   if (searchText !== '') {
     recipes = available_categories
-      .flatMap((category) => crafting_recipes[category])
+      .flatMap(category => crafting_recipes[category])
       .filter(searchName);
   }
 
-  recipes = sortBy((recipe: CraftingRecipeData) => recipe.name.toUpperCase())(
-    recipes
+  recipes = sortBy<CraftingRecipeData>(recipes, (recipe: CraftingRecipeData) =>
+    recipe.name.toUpperCase()
   );
 
   // -- UI --
@@ -327,9 +329,9 @@ export const CraftMenu = (props, context) => {
     <Window width={800} height={450}>
       <Window.Content>
         <Stack fill>
-          <Stack.Item width="30%">
+          <Stack.Item width='30%'>
             <Section fill>
-              <Stack fill vertical justify="space-between">
+              <Stack fill vertical justify='space-between'>
                 <Stack.Item>
                   <Input
                     placeholder={'Search in ' + recipeCount + ' recipes...'}
@@ -342,9 +344,9 @@ export const CraftMenu = (props, context) => {
                   />
                 </Stack.Item>
                 <Stack.Item grow>
-                  <Box height="100%" pt={1} pr={1} overflowY="auto">
+                  <Box height='100%' pt={1} pr={1} overflowY='auto'>
                     <Tabs fluid vertical>
-                      {available_categories.map((category) => (
+                      {available_categories.map(category => (
                         <Tabs.Tab
                           key={category}
                           selected={category === currentCategory}
@@ -354,7 +356,8 @@ export const CraftMenu = (props, context) => {
                             if (searchText.length > 0) {
                               setSearchText('');
                             }
-                          }}>
+                          }}
+                        >
                           {category} ({crafting_recipes[category].length})
                         </Tabs.Tab>
                       ))}
@@ -366,7 +369,7 @@ export const CraftMenu = (props, context) => {
                   {/* <Button.Checkbox fluid content="Craftable Only" /> */}
                   <Button.Checkbox
                     fluid
-                    content="Compact List"
+                    content='Compact List'
                     checked={showCompact}
                     onClick={() => setShowCompact(!showCompact)}
                   />
@@ -375,8 +378,8 @@ export const CraftMenu = (props, context) => {
             </Section>
           </Stack.Item>
           <Stack.Item grow my={-1}>
-            <Box height="100%" pr={1} pt={1} mr={-1} overflowY="auto">
-              {recipes.slice(0, displayLimit).map((recipe) => (
+            <Box height='100%' pr={1} pt={1} mr={-1} overflowY='auto'>
+              {recipes.slice(0, displayLimit).map(recipe => (
                 <CraftingRecipe
                   key={recipe.ref}
                   recipe={recipe}
@@ -387,9 +390,10 @@ export const CraftMenu = (props, context) => {
               {recipes.length > displayLimit && (
                 <Section
                   mb={2}
-                  textAlign="center"
+                  textAlign='center'
                   style={{ cursor: 'pointer' }}
-                  onClick={() => setPages(pages + 1)}>
+                  onClick={() => setPages(pages + 1)}
+                >
                   Load {Math.min(pageSize, recipes.length - displayLimit)}{' '}
                   more...
                 </Section>
