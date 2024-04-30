@@ -1,5 +1,5 @@
 import { useBackend } from '../backend'
-import { Button, Section } from '../components'
+import { Section } from '../components'
 import { Window } from '../layouts'
 
 type Data = {
