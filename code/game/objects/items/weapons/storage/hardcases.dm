@@ -442,11 +442,10 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/med/medical_job_trama/populate_contents()
 	new /obj/item/gearbox/traumatizedteam(src)
+	new /obj/item/gunbox/traumatizedteam_sidearm(src)
 	new /obj/item/gunbox/traumatizedteam(src) // Moved the weapon selection to here
-	new /obj/item/cell/medium/moebius/high(src) // Keeping the cell as a "second mag" for the Abnegate
 	new /obj/item/clothing/suit/straight_jacket(src)
 	new /obj/item/storage/firstaid/soteria/large(src)
-	new /obj/item/gun/energy/sst/preloaded(src) // They're now nonlethal and justifies getting an upgrade from science as nobody will ever want a downgrade.
 	new /obj/item/modular_computer/tablet/moebius/preset(src)
 
 //////////////////////////////////////////Engineering//////////////////////////////////////////
@@ -590,6 +589,32 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		options["Bullpip SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_35/hv,/obj/item/ammo_magazine/smg_35/hv)
 		options["Soteria \"Sprocket\" laser carbine"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
 		options["SST \"Humility\" shotgun"] = list(/obj/item/gun/energy/sst/humility/preloaded,/obj/item/cell/medium/moebius/high)
+		var/choice = input(user,"Which gun will you take?") as null|anything in options
+		if(src && choice)
+			var/list/things_to_spawn = options[choice]
+			for(var/new_type in things_to_spawn)
+				var/atom/movable/AM = new new_type(get_turf(src))
+				if(istype(AM, /obj/item/gun/))
+					to_chat(user, "You have chosen \the [AM].")
+			qdel(src)
+		else
+			stamped = FALSE
+
+/obj/item/gunbox/traumatizedteam_sidearm
+	name = "Lifeline Technician's sidearm guncase"
+	desc = "A secure box containing the weapon of choice for the Soteria Lifeline Technician."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "medbriefcase"
+
+/obj/item/gunbox/traumatizedteam_sidearm/attack_self(mob/living/user)
+	..()
+	var/stamped
+	if(!stamped)
+		stamped = TRUE
+		var/list/options = list()
+		options["SST \"Abnegate\" handgun"] = list(/obj/item/gun/energy/sst/preloaded)
+		options["\"Hera\" stun revolver"] = list(/obj/item/gun/energy/stunrevolver/sci/preloaded)
+		options["\"Spider Rose\" energy pistol"] = list(/obj/item/gun/energy/gun/preloaded)
 		var/choice = input(user,"Which gun will you take?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]
