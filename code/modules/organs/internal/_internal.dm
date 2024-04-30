@@ -222,15 +222,17 @@
 	return
 
 /obj/item/organ/internal/emp_act(severity)
+	var/rand_modifier = rand(1, 3)
 	if(!BP_IS_ROBOTIC(src))
 		return
+
 	switch(severity)
-		if(1)
-			take_damage(18, BURN)
-		if(2)
-			take_damage(12, BURN)
-		if(3)
-			take_damage(6, BURN)
+		if	(1)
+			take_damage(3 * rand_modifier, BURN)
+		if	(2)
+			take_damage(2 * rand_modifier, BURN)
+		if	(3)
+			take_damage(1 * rand_modifier, BURN)
 
 // Is body part open for most surgerical operations?
 /obj/item/organ/internal/is_open()
