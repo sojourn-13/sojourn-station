@@ -3,6 +3,7 @@
 	desc = "A deceptively well armored space helmet. Ancient design, but advanced manufacturing."
 	icon_state = "cosmo"
 	item_state = "cosmo"
+	psi_blocking = 10
 
 	//The excelsior armors cost small amounts of rare materials that they can teleport in.
 	//This means they can either build up materials over time, or make it go faster by scavenging rare mats
