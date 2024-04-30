@@ -139,6 +139,7 @@ export const Autolathe = (props, context) => {
     special_actions,
     categories,
     show_category,
+    mat_efficiency,
   } = data;
 
   const [searchText, setSearchText] = useSharedState(
@@ -240,14 +241,20 @@ export const Autolathe = (props, context) => {
                                 .map((design) => {
                                   return (
                                     <Stack.Item key={design.id + design.name}>
-                                      <AutolatheItem design={design} />
+                                      <AutolatheItem
+                                        design={design}
+                                        mat_efficiency={mat_efficiency}
+                                      />
                                     </Stack.Item>
                                   );
                                 })
                             : designs.map((design) => {
                                 return (
                                   <Stack.Item key={design.id + design.name}>
-                                    <AutolatheItem design={design} />
+                                    <AutolatheItem
+                                      design={design}
+                                      mat_efficiency={mat_efficiency}
+                                    />
                                   </Stack.Item>
                                 );
                               })}
@@ -270,6 +277,7 @@ export const Autolathe = (props, context) => {
                     progress={progress}
                     queue={queue}
                     queue_max={queue_max}
+                    mat_efficiency={mat_efficiency}
                   />
                 </Stack.Item>
               ) : null}

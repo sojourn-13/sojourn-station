@@ -87,10 +87,11 @@ export type Design = {
 
 export type AutolatheItemProps = {
   design: Design;
+  mat_efficiency: number;
 };
 
 export const AutolatheItemDetails = (props: AutolatheItemProps, context) => {
-  const { design } = props;
+  const { design, mat_efficiency } = props;
 
   return (
     <>
@@ -98,7 +99,7 @@ export const AutolatheItemDetails = (props: AutolatheItemProps, context) => {
         <Section title="Materials">
           {design.materials.map((mat) => (
             <LabeledList.Item key={mat.id} label={mat.name}>
-              {mat.req}
+              {mat.req * mat_efficiency}
             </LabeledList.Item>
           ))}
         </Section>
@@ -128,7 +129,7 @@ export const AutolatheItemDetails = (props: AutolatheItemProps, context) => {
 
 export const AutolatheItem = (props: AutolatheItemProps, context) => {
   const { act } = useBackend(context);
-  const { design } = props;
+  const { design, mat_efficiency } = props;
 
   const [showDetails, setShowDetails] = useLocalState(
     context,
@@ -195,7 +196,10 @@ export const AutolatheItem = (props: AutolatheItemProps, context) => {
         </Stack.Item>
         {showDetails && (
           <Stack.Item backgroundColor="black" style={{ 'padding': '10px' }}>
-            <AutolatheItemDetails design={design} />
+            <AutolatheItemDetails
+              design={design}
+              mat_efficiency={mat_efficiency}
+            />
           </Stack.Item>
         )}
       </Stack>
@@ -213,11 +217,13 @@ export type AutolatheQueueData = {
   })[];
   queue_max: number;
   paused: BooleanLike;
+  mat_efficiency: number;
 };
 
 export const AutolatheQueue = (props: AutolatheQueueData, context) => {
   const { act } = useBackend<Data>(context);
-  const { error, current, progress, queue, queue_max, paused } = props;
+  const { error, current, progress, queue, queue_max, paused, mat_efficiency } =
+    props;
 
   return (
     <Stack vertical height="100%">
@@ -275,7 +281,10 @@ export const AutolatheQueue = (props: AutolatheQueueData, context) => {
                 </Stack>
               </Stack.Item>
               <Stack.Item backgroundColor="black" style={{ 'padding': '10px' }}>
-                <AutolatheItemDetails design={current} />
+                <AutolatheItemDetails
+                  design={current}
+                  mat_efficiency={mat_efficiency}
+                />
               </Stack.Item>
             </Stack>
           ) : (
@@ -388,7 +397,16 @@ const errorToColor = (error: number) => {
 
 export const Matterforge = (props, context) => {
   const { act, data } = useBackend<Data>(context);
-  const { error, designs, current, progress, queue, queue_max, paused } = data;
+  const {
+    error,
+    designs,
+    current,
+    progress,
+    queue,
+    queue_max,
+    paused,
+    mat_efficiency,
+  } = data;
 
   const [searchText, setSearchText] = useSharedState(
     context,
@@ -426,14 +444,20 @@ export const Matterforge = (props, context) => {
                         .map((design) => {
                           return (
                             <Stack.Item key={design.id}>
-                              <AutolatheItem design={design} />
+                              <AutolatheItem
+                                design={design}
+                                mat_efficiency={mat_efficiency}
+                              />
                             </Stack.Item>
                           );
                         })
                     : designs.map((design) => {
                         return (
                           <Stack.Item key={design.id}>
-                            <AutolatheItem design={design} />
+                            <AutolatheItem
+                              design={design}
+                              mat_efficiency={mat_efficiency}
+                            />
                           </Stack.Item>
                         );
                       })}
@@ -449,6 +473,7 @@ export const Matterforge = (props, context) => {
               progress={progress}
               queue={queue}
               queue_max={queue_max}
+              mat_efficiency={mat_efficiency}
             />
           </Stack.Item>
         </Stack>
