@@ -27,12 +27,10 @@ export const Processor = (props) => {
                   size={2}
                   minValue={5}
                   maxValue={30}
-                  value={5}
+                  value={sheet_rate}
                   unit="Sheets"
-                  fillValue={sheet_rate}
-                  content="Smelting rate"
                   step={1}
-                  stepPixelSize={1}
+                  stepPixelSize={2}
                   onDrag={(e, value) =>
                     act('set_rate', {
                       sheets: value,
