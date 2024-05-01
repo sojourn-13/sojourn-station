@@ -32,11 +32,6 @@
 	set desc = "For when you need to change your guns caliber, handy when you have more ammo of one type."
 	set category = "Object"
 
-/obj/item/gun/projectile/deaglebolt/verb/change_caliber()
-	set name = "Change Caliber"
-	set desc = "For when you need to change your guns caliber, handy when you have more ammo of one type."
-	set category = "Object"
-
 	playsound(src.loc, 'sound/weapons/guns/interact/chaingun_cock.ogg', 100, 1)
 	if(caliber == CAL_50)
 		caliber = CAL_PISTOL
