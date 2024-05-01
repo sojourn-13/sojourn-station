@@ -146,6 +146,8 @@ const product = (product: ProductData) => {
     <Stack.Item>
       <Stack fill height='5.9ch'>
         <Stack.Item grow>
+          { /*
+          // @ts-expect-error: Spurious error due to bad type in upstream Button component */ }
           <Button
             fluid
             ellipsis
