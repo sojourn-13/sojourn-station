@@ -14,6 +14,11 @@
 	var/listening = 0
 	var/datum/language/langset
 
+/obj/item/device/universal_translator/Destroy()
+	if(listening)
+		remove_hearing()
+	. = ..()
+
 /obj/item/device/universal_translator/attack_self(mob/user) //REWRITE TO USE MICROPHONE CODE FROM CIRCUITS AND TTS from CIRCUIT
 	if(!listening) //Turning ON
 		langset = input(user,"Translate to which of your languages?","Language Selection") as null|anything in user.languages
