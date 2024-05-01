@@ -1,6 +1,6 @@
 //Universal translator
 /obj/item/device/universal_translator
-	name = "handheld translator"
+	name = "handheld translato"
 	desc = "A handheld device that translates foreign language to a language known to the user."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "translator"
