@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { sortBy } from '../../common/collections';
 import { BooleanLike } from '../../common/react';
 import { createSearch } from '../../common/string';
-import { useBackend } from '../backend';
+import { useBackend, useSharedState } from '../backend';
 import {
   Box,
   Button,
@@ -292,7 +292,7 @@ export const CraftMenu = props => {
   const [showCompact, setShowCompact] = useState(false);
 
   // Search text
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useSharedState('searchText', '');
 
   const searchName = createSearch(
     searchText,
