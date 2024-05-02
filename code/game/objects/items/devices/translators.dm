@@ -19,11 +19,11 @@
 		remove_hearing()
 	. = ..()
 
-/obj/item/device/universal_translator/attack_self(mob/user) //REWRITE TO USE MICROPHONE CODE FROM CIRCUITS AND TTS from CIRCUIT
+/obj/item/device/universal_translator/attack_self(mob/user) 
 	if(!listening) //Turning ON
 		langset = input(user,"Translate to which of your languages?","Language Selection") as null|anything in user.languages
 		if(langset)
-			if(langset && ((langset.flags & NONVERBAL) || (langset.flags & HIVEMIND)))
+			if(langset && ((langset.flags & NONVERBAL) || (langset.flags & HIVEMIND) || (langset.flags & RESTRICTED)))
 				to_chat(user, "<span class='warning'>\The [src] cannot output that language.</span>")
 				return
 			else
@@ -57,6 +57,9 @@
 		
 	if (language && ((language.flags & HIVEMIND)))
 		return //How do you hear a hivemind
+
+	if (language && ((language.flags & RESTRICTED)))
+		return //Prevents Opifex Language and other restricted languages from being translated
 
 	//Only translate if they can't understand, otherwise pointlessly spammy
 	//I'll just assume they don't look at the screen in that case
