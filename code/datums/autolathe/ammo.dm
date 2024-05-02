@@ -816,27 +816,27 @@
 /datum/design/autolathe/ammo/hrifle_ammobox
 	name = "ammunition box 8.6mm H-Rifle(ball)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408
-	materials = list(MATERIAL_STEEL = 20)
+	materials = list(MATERIAL_STEEL = 30)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_rubber
 	name = "ammunition box 8.6mm H-Rifle(rubber)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber
-	materials = list(MATERIAL_STEEL = 20)
+	materials = list(MATERIAL_STEEL = 30)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_practice
 	name = "ammunition box 8.6mm (training)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408/practice
-	materials = list(MATERIAL_STEEL = 20)
+	materials = list(MATERIAL_STEEL = 30)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_hv
 	name = "ammunition box 8.6mm H-Rifle (SLAP)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv
-	materials = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
+	materials = list(MATERIAL_STEEL = 30, MATERIAL_PLASTEEL = 10)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_lethal
 	name = "ammunition box 8.6mm H-Rifle (hollow point)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408/lethal
-	materials = list(MATERIAL_STEEL = 20)
+	materials = list(MATERIAL_STEEL = 30)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_linked
 	name = "linked ammunition box 8.6mm H-Rifle (ball)"
