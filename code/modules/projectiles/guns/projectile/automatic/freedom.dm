@@ -4,7 +4,7 @@
 	icon_state = "freedom"
 	item_state = "freedom"
 	icon = 'icons/obj/guns/projectile/freedom.dmi'
-	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/1911_fire.ogg' //This is just a 1911 with rapidfire, no reason for it to sound different. / Sound taken from JSRS SOUND MOD https://www.moddb.com/mods/stalker-anomaly/addons/solarint-gunshot-overhaul
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_MAGNUM
 	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER // The Vector can, I don't see why this one shouldn't as it's literally just a liberty with extended mag.

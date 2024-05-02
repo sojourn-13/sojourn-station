@@ -8,7 +8,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 5)
 	price_tag = 450
-	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
+	fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg' // Sound taken from JSRS SOUND MOD https://www.moddb.com/mods/stalker-anomaly/addons/solarint-gunshot-overhaul
 	can_dual = TRUE
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
@@ -33,8 +33,7 @@
 	mag_well = MAG_WELL_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8)
 	price_tag = 550
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-	load_method = MAGAZINE
+	fire_sound = 'sound/weapons/guns/fire/1911_fire.ogg' //Two world wars or something / Sound taken from JSRS SOUND MOD https://www.moddb.com/mods/stalker-anomaly/addons/solarint-gunshot-overhaul
 	mag_well = MAG_WELL_PISTOL
 	init_recoil = HANDGUN_RECOIL(0.5)
 	damage_multiplier = 1.1
@@ -53,7 +52,7 @@
 	item_state = "liberty"
 	caliber = CAL_MAGNUM
 	price_tag = 650
-	fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
+	fire_sound = 'sound/weapons/guns/fire/1911_fire.ogg' //Two world wars or something / Sound taken from JSRS SOUND MOD https://www.moddb.com/mods/stalker-anomaly/addons/solarint-gunshot-overhaul
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.3

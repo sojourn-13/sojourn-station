@@ -16,7 +16,7 @@
 	damage_multiplier = 1.4
 	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.3)
-	fire_sound = 'sound/weapons/guns/fire/hpistol_fire.ogg'
+	fire_sound 		= 'sound/weapons/guns/fire/deagle_fire.ogg' // Sound taken from JSRS SOUND MOD https://www.moddb.com/mods/stalker-anomaly/addons/solarint-gunshot-overhaul
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
@@ -40,7 +40,7 @@
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	else if(caliber == CAL_PISTOL)
 		caliber = CAL_MAGNUM
-		fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
+		fire_sound = 'sound/weapons/guns/fire/1911_fire.ogg'
 		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 10mm magnum caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	else if (caliber == CAL_MAGNUM)
