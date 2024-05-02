@@ -535,7 +535,7 @@
 	name = "ammunition packet (8.6mm ball)"
 	icon_state = "hrifle"
 	desc = "A box of 8.6x70mm heavy rifle ammunition."
-	matter = list(MATERIAL_STEEL = 15, MATERIAL_CARDBOARD = 1)
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_CARDBOARD = 1)
 	caliber = CAL_HRIFLE
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
 	max_ammo = 40
