@@ -614,7 +614,6 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		var/list/options = list()
 		options["SST \"Abnegate\" handgun"] = list(/obj/item/gun/energy/sst/preloaded)
 		options["\"Hera\" stun revolver"] = list(/obj/item/gun/energy/stunrevolver/sci/preloaded)
-		options["\"Spider Rose\" energy pistol"] = list(/obj/item/gun/energy/gun/preloaded)
 		var/choice = input(user,"Which gun will you take?") as null|anything in options
 		if(src && choice)
 			var/list/things_to_spawn = options[choice]
