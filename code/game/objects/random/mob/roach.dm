@@ -18,9 +18,10 @@
 		mobs += list(/mob/living/carbon/superior_animal/roach/fuhrer = (0.5 * GLOB.chaos_level))
 	if(GLOB.chaos_level > 1)
 		mobs += list(/mob/living/carbon/superior_animal/roach/nitro = (0.5 * GLOB.chaos_level))
+	if(GLOB.chaos_level > 2)
 		mobs += list(/mob/living/carbon/superior_animal/roach/elektromagnetisch = (0.1 * GLOB.chaos_level))
 	if(GLOB.chaos_level > 4)
-		mobs += list(/mob/living/carbon/superior_animal/roach/kaiser = (0.1 * GLOB.chaos_level))
+		mobs += list(/mob/living/carbon/superior_animal/roach/kaiser = (0.02 * GLOB.chaos_level)) //0.1 then 0.12 ect ect 
 
 	return pickweight(mobs)
 
