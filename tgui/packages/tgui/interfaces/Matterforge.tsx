@@ -476,7 +476,6 @@ export const Matterforge = props => {
               queue={queue}
               queue_max={queue_max}
               mat_efficiency={mat_efficiency}
-              mat_efficiency={mat_efficiency}
             />
           </Stack.Item>
         </Stack>
