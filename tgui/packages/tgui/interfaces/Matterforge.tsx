@@ -104,7 +104,6 @@ export const AutolatheItemDetails = (props: AutolatheItemProps) => {
           {design.materials.map(mat => (
             <LabeledList.Item key={mat.id} label={mat.name}>
               {mat.req * mat_efficiency}
-              {mat.req * mat_efficiency}
             </LabeledList.Item>
           ))}
         </Section>
@@ -442,20 +441,12 @@ export const Matterforge = props => {
                                 design={design}
                                 mat_efficiency={mat_efficiency}
                               />
-                              <AutolatheItem
-                                design={design}
-                                mat_efficiency={mat_efficiency}
-                              />
                             </Stack.Item>
                           );
                         })
                     : designs.map(design => {
                         return (
                           <Stack.Item key={design.id}>
-                            <AutolatheItem
-                              design={design}
-                              mat_efficiency={mat_efficiency}
-                            />
                             <AutolatheItem
                               design={design}
                               mat_efficiency={mat_efficiency}
