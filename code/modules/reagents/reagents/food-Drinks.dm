@@ -351,7 +351,7 @@
 /datum/reagent/other/sodiumchloride
 	name = "Table Salt"
 	id = "sodiumchloride"
-	description = "Sodium chloride, most commonly known as salt. Commonly used to season food."
+	description = "Sodium chloride, most commonly known as salt. Commonly used to season food. It is iodized."
 	taste_description = "salt"
 	taste_tag = list(SALTY_FOOD)
 	reagent_state = SOLID
@@ -359,6 +359,10 @@
 	overdose = REAGENTS_OVERDOSE
 	scannable = TRUE
 	common = TRUE
+
+/datum/reagent/sodiumchloride/affect_blood(mob/living/carbon/M, alien, effect_multiplier) //reasoning: Table salt is usually iodized. Iodine saturates glands. Glands are often getting screwed over by isotopes of iodine if exposed to radiation. Yes its a preventatitve method IRL but this is gamyfictaion.
+	..()
+	M.radiation = max(M.radiation - (0.3 * effect_multiplier), 0) //10 times less effective than Hyronalin
 
 /datum/reagent/organic/blackpepper
 	name = "Black Pepper"
