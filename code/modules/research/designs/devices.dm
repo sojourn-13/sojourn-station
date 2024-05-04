@@ -123,5 +123,5 @@
 	name = "Universal Translator Earpiece"
 	desc = "A headset that translates foreign languages to a known language of the users choice."
 	materials = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1)
-	build_path = /obj/item/device/universal_translator
+	build_path = /obj/item/device/universal_translator/ear
 	category = "Bluespace Telecoms"
