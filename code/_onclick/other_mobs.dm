@@ -39,7 +39,7 @@
 		return interact(user)
 	return FALSE
 
-/atom/proc/can_interact(mob/user, require_adjacent_turf = TRUE)
+/atom/proc/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
 	// if(!user.can_interact_with(src, interaction_flags_atom & INTERACT_ATOM_ALLOW_USER_LOCATION))
 	// 	return FALSE
 	// if((interaction_flags_atom & INTERACT_ATOM_REQUIRES_DEXTERITY) && !ISADVANCEDTOOLUSER(user))
@@ -49,7 +49,8 @@
 		return TRUE
 	// BANAID: advanced tool usrs can only interact uis
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!"))
+		if(show_message)
+			to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return FALSE
 
 	// if(!(interaction_flags_atom & INTERACT_ATOM_IGNORE_INCAPACITATED))
@@ -66,11 +67,11 @@
 /atom/ui_status(mob/user)
 	. = ..()
 	//Check if both user and atom are at the same location
-	if(!can_interact(user))
+	if(!can_interact(user, show_message = FALSE))
 		. = min(., UI_UPDATE)
 
-/atom/movable/can_interact(mob/user)
-	. = ..()
+/atom/movable/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
+	. = ..(user, require_adjacent_turf, show_message)
 	if(!.)
 		return
 	// if(!anchored && (interaction_flags_atom & INTERACT_ATOM_REQUIRES_ANCHORED))
