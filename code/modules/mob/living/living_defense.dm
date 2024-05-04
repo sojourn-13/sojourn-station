@@ -431,8 +431,6 @@
 				adjust_fire_stacks(-1)
 			if(fire_stacks > 26)
 				adjust_fire_stacks(-1) //This is to simulate some processes that happen during incineration namely sintering and carbonization. Skin is porous. If something is heated pores grow and fuse and thus the surface area decreases. Carbonized skin is far less reactive than uncarbonized. So we have a decrease in surface area and a decrease in reactivity thus it gets harder to be incinerated. Very gamy explanation but thats the gist of it.
-			if(fire_stacks > 40)
-				fire_stacks = 40 //2nd check for Hardcap to prevent gamers from applying 300 firestacks to a mob or player by various other exploits bypassing FIRE_MAX_STACKs. That way people dont burn for all eternity.
 			if(fire_stacks <= 0)
 				ExtinguishMob()
 
