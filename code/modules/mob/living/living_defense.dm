@@ -424,6 +424,7 @@
 			next_onfire_brn = world.time + 50
 			if(fire_stacks <= 0)
 				ExtinguishMob()
+				return
 			if(fire_stacks > FIRE_MAX_STACKS)
 				fire_stacks = FIRE_MAX_STACKS //Hardcap to prevent gamers from applying 300 firestacks to a mob or player. That way people dont burn for all eternity.
 			adjustFireLoss(20/(1+(NUM_E**(-0.25*(fire_stacks-10))))) //Logistic function A/(1+(e^(b*(x-y))) --> A the maximum number of burn you can take b the steepness of the curve y the point of inversion and x the number of firestacks. This results in that you may try to go above 30 firestacks but you still 'only' take 20 fire damage per cycle. Who would have thought that math learned 10 years ago is useful.
