@@ -52,7 +52,7 @@
 		var/leftover = abs(health)
 		//Small sanity to prevent -inf, also prevents recusively destorying tiles that (note that if floor tiles ever get less then 100 HP)
 		//leftover = clamp(leftover, 0, 10 * maxHealth) //Uncomment this if damage amounts are so ridiculous that they cause insanely long loops.
-		if(leftover >= INF) leftover = 0 //Comment this if you uncomment the previous line.
+		if(leftover >= INF) leftover = 0
 		make_plating() //Destroy us and make the plating underneath
 		spawn()
 			//We'll spawn off a new stack in order to damage the next layer, incase it turns into a different turf object
