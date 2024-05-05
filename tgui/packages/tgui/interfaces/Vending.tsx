@@ -179,24 +179,22 @@ const product = (product: ProductData) => {
             <Stack.Item>
               <Button
                 icon='tag'
+                tooltip="Change Price"
                 color='yellow'
                 className='Vending--icon'
                 verticalAlignContent='middle'
                 onClick={() => act('setprice', { key: product.key })}
-              >
-                Change Price
-              </Button>
+              />
             </Stack.Item>
             <Stack.Item>
               <Button
                 icon='eject'
+                tooltip="Remove"
                 color='red'
                 className='Vending--icon'
                 verticalAlignContent='middle'
                 onClick={() => act('remove', { key: product.key })}
-              >
-                Remove
-              </Button>
+              />
             </Stack.Item>
           </>
         )) ||

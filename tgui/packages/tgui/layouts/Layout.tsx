@@ -7,6 +7,7 @@
 import { classes } from 'common/react';
 import { useEffect, useRef } from 'react';
 
+import { useBackend } from '../backend';
 import {
   BoxProps,
   computeBoxClassName,
@@ -20,7 +21,21 @@ type Props = Partial<{
   BoxProps;
 
 export function Layout(props: Props) {
-  const { className, theme = 'nanotrasen', children, ...rest } = props;
+  const { className, children, ...rest } = props;
+  
+  let { theme } = props;
+  
+  // use user prefs for theme if the UI doesn't force a theme
+  if (theme === undefined) {
+    const { config } = useBackend();
+    const { default_theme } = config.window;
+
+    if (default_theme !== null) {
+      theme = default_theme;
+    } else {
+      theme = "nanotrasen";
+    }
+  }
 
   return (
     <div className={'theme-' + theme}>
