@@ -50,8 +50,11 @@
 	if (health <= 0)
 		//Leftover damage will carry over to whatever tile replaces this one
 		var/leftover = abs(health)
+		//Small sanity to prevent -inf, also prevents recusively destorying tiles that (note that if floor tiles ever get less then 100 HP)
+		if(leftover >= 100)
+			leftover = 99
 		make_plating() //Destroy us and make the plating underneath
-		spawn()
+		spawn(0)
 			//We'll spawn off a new stack in order to damage the next layer, incase it turns into a different turf object
 			damage_floor_at(x,y,z,leftover, damage_type, ignore_resistance)
 		return
