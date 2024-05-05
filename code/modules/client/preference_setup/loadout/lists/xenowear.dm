@@ -98,6 +98,13 @@
 	sort_category = "Xenowear"
 	cost = 1
 
+/datum/gear/factionsecurity/armoredcossackcoat
+	display_name = "jaeger hussar coat"
+	path = /obj/item/clothing/suit/greatcoat/cossackarmoredcoat
+	allowed_roles = list(JOBS_SECURITY, JOBS_BLACKSHIELD)
+	slot = slot_wear_suit
+	cost = 2
+
 /datum/gear/xenowear/footwraps
 	display_name = "cloth footwraps"
 	path = /obj/item/clothing/shoes/footwraps

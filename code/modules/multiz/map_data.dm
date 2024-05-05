@@ -107,8 +107,9 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 
 	var/default_spawn = "Cryogenic Storage"
 
-	var/allowed_jobs = list(/datum/job/premier, /datum/job/rd, /datum/job/pg, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/smc, /datum/job/swo, /datum/job/foreman,
-						/datum/job/supsec, /datum/job/inspector, /datum/job/medspec, /datum/job/trooper, /datum/job/officer, /datum/job/serg,
+	var/allowed_jobs = list(/datum/job/premier, /datum/job/rd, /datum/job/pg, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/swo, /datum/job/smc, /datum/job/foreman,
+						/datum/job/supsec, /datum/job/inspector,  /datum/job/officer,
+						/datum/job/serg, /datum/job/medspec, /datum/job/trooper,
 						/datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist,
 						/datum/job/technomancer,
 						/datum/job/cargo_tech, /datum/job/mining, /datum/job/merchant,
