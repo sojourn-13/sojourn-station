@@ -16,7 +16,8 @@
 	var/list/dept_data = list(
 
 		list("names" = list(), "header" = "Command Staff", "flag" = COMMAND),
-		list("names" = list(), "header" = "Marshal and Blackshield", "flag" = SECURITY),
+		list("names" = list(), "header" = "Security - Marshals", "flag" = SECURITY),
+		list("names" = list(), "header" = "Security - Blackshield", "flag" = BLACKSHIELD),
 		list("names" = list(), "header" = "Soteria Medical", "flag" = MEDICAL),
 		list("names" = list(), "header" = "Soteria Research", "flag" = SCIENCE),
 		list("names" = list(), "header" = "Church of the Absolute", "flag" = CHURCH),
@@ -142,6 +143,7 @@
 		"heads" = filtered_nano_crew_manifest(command_positions),\
 		"sci" = filtered_nano_crew_manifest(science_positions),\
 		"sec" = filtered_nano_crew_manifest(security_positions),\
+		"bls" = filtered_nano_crew_manifest(blackshield_positions),\
 		"eng" = filtered_nano_crew_manifest(engineering_positions),\
 		"med" = filtered_nano_crew_manifest(medical_positions),\
 		"sup" = filtered_nano_crew_manifest(cargo_positions),\

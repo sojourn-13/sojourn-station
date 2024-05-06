@@ -60,9 +60,13 @@
 	name = "Robot Armour plating"
 	build_path = /obj/item/robot_parts/robot_component/armour
 
-/datum/design/research/item/mechfab/robot/component/armour
-	name = "Robot Mark II Armour plating"
+/datum/design/research/item/mechfab/robot/component/armour/mkii
+	name = "Mark II energy armour plating"
 	build_path = /obj/item/robot_parts/robot_component/armour/mkii
+
+/datum/design/research/item/mechfab/robot/component/armour/mkv
+	name = "Mark V extra armour plating"
+	build_path = /obj/item/robot_parts/robot_component/armour/mkv
 
 
 /datum/design/research/item/mechfab/robot/component/jetpack

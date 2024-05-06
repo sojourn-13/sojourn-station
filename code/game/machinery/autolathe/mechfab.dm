@@ -15,11 +15,10 @@
 	code_dex = "MECHFAB"
 
 	special_actions = list(
-		list("action" = "sync", "name" = "Sync with R&D console", "icon" = "refresh")
+		list("action" = "sync", "name" = "Sync with R&D console", "icon" = "sync")
 	)
 
 	var/datum/research/files
-
 
 /obj/machinery/autolathe/mechfab/proc/check_user(mob/user)
 	if(user.stats?.getPerk(PERK_SI_SCI) || user.stat_check(STAT_MEC, 30)) //Needs same skill as it takes to maintain a mech
@@ -41,18 +40,20 @@
 
 	return design_files
 
-/obj/machinery/autolathe/mechfab/nano_ui_interact()
+/obj/machinery/autolathe/mechfab/ui_interact()
 	if(!categories)
 		update_categories()
-	..()
+	. = ..()
 
-/obj/machinery/autolathe/mechfab/Topic(href, href_list)
-	if(..())
-		return 1
+/obj/machinery/autolathe/mechfab/ui_act(action, list/params)
+	. = ..()
+	if(.)
+		return
 
-	if(href_list["action"] == "sync")
+	if(action == "special_action" && params["action"] == "sync")
 		sync(usr)
-		return 1
+		. = TRUE
+
 
 /obj/machinery/autolathe/mechfab/proc/sync(mob/user)
 	var/sync = FALSE

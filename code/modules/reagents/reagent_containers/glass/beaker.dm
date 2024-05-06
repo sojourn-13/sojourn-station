@@ -98,6 +98,20 @@
 	desc = "A beaker. Contains dangerous sulphuric acid."
 	preloaded_reagents = list("sacid" = 60)
 
+//// Prelabled beakers ////
+
+/obj/item/reagent_containers/glass/beaker/large/rig_hyperzine
+	label_text = "hyperzine"
+
+/obj/item/reagent_containers/glass/beaker/large/rig_tramadol
+	label_text = "tramadol"
+
+/obj/item/reagent_containers/glass/beaker/large/rig_nutriment
+	label_text = "nutriment"
+
+/obj/item/reagent_containers/glass/beaker/large/rig_tricordrazine
+	label_text = "tricordrazine"
+
 //// Vial(s) ////
 
 /obj/item/reagent_containers/glass/beaker/vial/nanites
@@ -108,30 +122,50 @@
 	preloaded_reagents = list("uncap nanites" = 30)
 	display_label = FALSE
 
+/obj/item/reagent_containers/glass/beaker/vial/rig_inaprovaline
+	label_text = "inaprovaline"
+
+/obj/item/reagent_containers/glass/beaker/vial/rig_dexalinp
+	label_text = "dexalinp"
+
+/obj/item/reagent_containers/glass/beaker/vial/rig_tramadol
+	label_text = "tramadol"
+
+/obj/item/reagent_containers/glass/beaker/vial/rig_bicaridine
+	label_text = "bicaridine"
+
+/obj/item/reagent_containers/glass/beaker/vial/rig_kelotane
+	label_text = "kelotane"
+
+/obj/item/reagent_containers/glass/beaker/vial/rig_anti_toxin
+	label_text = "anti_toxin"
+
+/obj/item/reagent_containers/glass/beaker/vial/rig_spaceacillin
+	label_text = "spaceacillin"
+
 /obj/item/reagent_containers/glass/beaker/vial/vape
 	name = "vape vial"
 	matter = list(MATERIAL_PLASTIC = 1)
 
 /obj/item/reagent_containers/glass/beaker/vial/vape/berry
-	name = "berry vape vial"
 	preloaded_reagents = list("nicotine" = 20, "berryjuice" = 10)
+	label_text = "berry"
 
 /obj/item/reagent_containers/glass/beaker/vial/vape/lemon
-	name = "lemon vape vial"
 	preloaded_reagents = list("nicotine" = 20, "lemonjuice" = 10)
+	label_text = "lemon"
 
 /obj/item/reagent_containers/glass/beaker/vial/vape/banana
-	name= "banana vape vial"
 	preloaded_reagents = list("nicotine" = 20, "banana" = 10)
+	label_text = "banana"
 
 /obj/item/reagent_containers/glass/beaker/vial/vape/mint
-	name= "mint vape vial"
 	preloaded_reagents = list("nicotine" = 20, "mint" = 10)
+	label_text = "mint"
 
 /obj/item/reagent_containers/glass/beaker/vial/vape/nicotine
-	name = "nicotine vape vial"
 	preloaded_reagents = list("nicotine" = 30)
-
+	label_text = "nicotine"
 
 /obj/item/reagent_containers/glass/beaker/vial/random
 	var/list/random_reagent_list = list(list("water" = 15) = 1, list("cleaner" = 15) = 1)

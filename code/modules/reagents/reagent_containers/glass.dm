@@ -52,6 +52,9 @@
 /obj/item/reagent_containers/glass/Initialize()
 	. = ..()
 	base_name = name
+	//For when beakers are pre-labled.
+	update_name_label()
+	update_icon()
 
 /obj/item/reagent_containers/glass/proc/has_lid()
 	return !is_open_container()

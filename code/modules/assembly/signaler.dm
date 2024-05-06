@@ -103,6 +103,15 @@
 			set_freq(input_freq)
 		return 1
 
+/obj/item/device/assembly/signaler/attackby(var/obj/item/WIELD, var/mob/user)
+    if(istype(WIELD, /obj/item/device/assembly/signaler))
+        var/obj/item/device/assembly/signaler/signaler2 = WIELD
+        if(secured && signaler2.secured)
+            code = signaler2.code
+            set_frequency(signaler2.frequency)
+            to_chat(user, "You transfer the frequency and code of [signaler2] to [src].")
+    else
+        ..()
 
 /obj/item/device/assembly/signaler/proc/signal()
 	if(!radio_connection)

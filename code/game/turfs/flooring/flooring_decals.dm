@@ -1563,19 +1563,24 @@ obj/effect/floor_decal/corner_techfloor_gray
 	name = "corner steel_grid full"
 	icon_state = "steel_grid_full"
 
-
-
-
-
-
-
-
 //Grass for ship garden
 
 /obj/effect/floor_decal/spline/grass_edge
 	name = "grass edge"
-	icon_state = "grass_edge"
+	icon_state = "grass_edges"
 
 /obj/effect/floor_decal/spline/grass_edge/corner
 	name = "grass edge"
 	icon_state = "grass_edge_corner"
+
+/*Shale Edges*/
+
+/obj/effect/floor_decal/spline/shale_edge
+	name = "shale edge"
+	icon_state = "shale_edges"
+
+/obj/effect/floor_decal/spline/shale_edge/corner
+	name = "shale edge"
+	icon_state = "shale_edge_corner"
+
+

@@ -94,13 +94,13 @@
 	return ..()
 
 /obj/machinery/telesci_pad/update_icon()
-	cut_overlays()
-	if(!(stat & NOPOWER))
-		overlays += "pad-powered"
-	if(panel_open)
-		overlays += "pad-panel"
-	if(calculating)
-		overlays += "pad-working"
+    cut_overlays()
+    if(!(stat & NOPOWER))
+        add_overlay("pad-powered")
+    if(panel_open)
+        add_overlay("pad-panel")
+    if(calculating)
+        add_overlay("pad-working")
 
 /obj/machinery/telesci_pad/proc/openPortal(x, y, z)
 	if(panel_open)

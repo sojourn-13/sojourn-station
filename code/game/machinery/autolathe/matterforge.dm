@@ -19,8 +19,6 @@
 	var/obj/power_source
 	var/storage_capacity = 1000
 	var/unfolded
-	var/show_category
-	var/list/categories
 	var/list/lst = list()
 
 	var/working = FALSE
@@ -33,20 +31,14 @@
 	var/queue_max = 8
 
 	var/list/disk_list = list(
-	/obj/item/computer_hardware/hard_drive/portable/design/nanoforge
+		/obj/item/computer_hardware/hard_drive/portable/design/nanoforge
 	)
 	var/list/design_list = list()
 	var/speed = 2
 	var/mat_efficiency = 1
 
-	var/have_disk = FALSE
-	var/have_reagents = FALSE
-	var/have_materials = TRUE
-	var/have_design_selector = TRUE
-
 	var/list/unsuitable_materials = list(MATERIAL_BIOMATTER)
 
-	var/list/special_actions
 	var/global/list/error_messages = list(
 		ERR_NOTFOUND = "Design data not found.",
 		ERR_NOMATERIAL = "Not enough materials.",
@@ -80,6 +72,99 @@
 	qdel(c)
 	return files
 
+/obj/machinery/matter_nanoforge/ui_assets(mob/user)
+	return list(
+		get_asset_datum(/datum/asset/simple/design_icons)
+	)
+
+/obj/machinery/matter_nanoforge/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Matterforge", name)
+		ui.open()
+
+/obj/machinery/matter_nanoforge/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("insert_material")
+			if(power_source)
+				eat(usr)
+				. = TRUE
+			else
+				to_chat(usr, SPAN_WARNING("\The [src] does not have any artifact powering it."))
+				. = FALSE
+
+		if("eject_material")
+			if(!current_design || paused || error)
+				var/material = params["id"]
+				var/material/M = get_material_by_name(material)
+
+				if(!M.stack_type)
+					return FALSE
+
+				var/num = input("Enter sheets number to eject. 0-[stored_material[material]]","Eject",0) as num
+				if(!CanUseTopic(usr))
+					return FALSE
+
+				num = min(max(num,0), stored_material[material])
+				eject(num)
+				. = TRUE
+
+		if("add_to_queue")
+			var/recipe = params["id"]
+			var/datum/design/picked_design
+
+			for(var/datum/design/f in design_list)
+				var/test = text2path((recipe))
+				if(f.id == test)
+					picked_design = f
+					break
+
+			if(picked_design)
+				var/amount = 1
+
+				if(params["several"])
+					amount = input("How many \"[picked_design.id]\" you want to print ?", "Print several") as null|num
+					if(!CanUseTopic(usr) || !(picked_design in design_list))
+						return
+
+				queue_design(picked_design, amount)
+
+			. = TRUE
+
+		if("remove_from_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 1 && ind <= queue.len)
+				queue.Cut(ind, ind + 1)
+			. = TRUE
+
+		if("move_up_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 2 && ind <= queue.len)
+				queue.Swap(ind, ind - 1)
+			. = TRUE
+		
+		if("move_down_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 1 && ind <= queue.len-1)
+				queue.Swap(ind, ind + 1)
+			. = TRUE
+	
+		if("abort_print")
+			abort()
+			. = TRUE
+
+		if("pause")
+			paused = !paused
+			. = TRUE
+
+		if("clear_queue")
+			queue.Cut()
+			. = TRUE
+
 /obj/machinery/matter_nanoforge/proc/materials_data()
 	var/list/data = list()
 	data["mat_efficiency"] = mat_efficiency
@@ -99,21 +184,15 @@
 
 	return data
 
-/obj/machinery/matter_nanoforge/nano_ui_data()
+/obj/machinery/matter_nanoforge/ui_data(mob/user)
 	var/list/data = list()
 
-	data["have_materials"] = have_materials
-	data["have_design_selector"] = have_design_selector
+	data["have_materials"] = TRUE
+	data["have_design_selector"] = TRUE
 
 	data["error"] = error
 	data["paused"] = paused
 	data["unfolded"] = unfolded
-
-	if(categories)
-		data["categories"] = categories
-		data["show_category"] = show_category
-
-	data["special_actions"] = special_actions
 
 	data |= materials_data()
 
@@ -122,17 +201,19 @@
 		L.Add(list(d.nano_ui_data))
 	data["designs"] = L
 
-
 	if(current_design)
 		data["current"] = current_design.nano_ui_data
 		data["progress"] = progress
+	else
+		data["current"] = null
+		data["progress"] = null
 
 	var/list/Q = list()
 	var/qmats = stored_material[MATERIAL_COMPRESSED_MATTER]
 
 	for(var/i = 1; i <= queue.len; i++)
 		var/datum/design/picked_design = queue[i]
-		var/list/QR = picked_design.nano_ui_data
+		var/list/QR = picked_design.nano_ui_data.Copy()
 
 		QR["ind"] = i
 
@@ -153,26 +234,6 @@
 
 	return data
 
-/obj/machinery/matter_nanoforge/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	var/list/data = nano_ui_data(user, ui_key)
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		// the ui does not exist, so we'll create a new() one
-		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "autolathe.tmpl", capitalize(name), 600, 700)
-
-		// template keys starting with _ are not appended to the UI automatically and have to be called manually
-		ui.add_template("_materials", "autolathe_materials.tmpl")
-		ui.add_template("_reagents", "autolathe_reagents.tmpl")
-		ui.add_template("_designs", "matterforge_designs.tmpl")
-		ui.add_template("_queue", "autolathe_queue.tmpl")
-
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
-
 /obj/machinery/matter_nanoforge/attack_hand(mob/user)
 	if(..())
 		return TRUE
@@ -182,92 +243,7 @@
 	user.set_machine(src)
 	if(!design_list?.len)
 		get_designs()
-	nano_ui_interact(user)
-
-/obj/machinery/matter_nanoforge/Topic(href, href_list)
-	if(..())
-		return
-
-	usr.set_machine(src)
-
-	if(href_list["category"] && categories)
-		var/new_category = text2num(href_list["category"])
-
-		if(new_category && new_category <= length(categories))
-			show_category = categories[new_category]
-		return 1
-
-	if(href_list["eject_material"] && (!current_design || paused || error))
-		var/material = href_list["eject_material"]
-		var/material/M = get_material_by_name(MATERIAL_COMPRESSED_MATTER)
-
-		if(!M.stack_type)
-			return
-
-		var/num = input("Enter sheets number to eject. 0-[stored_material[material]]","Eject",0) as num
-		if(!CanUseTopic(usr))
-			return
-
-		num = min(max(num,0), stored_material[material])
-		eject(num)
-		return 1
-
-
-	if(href_list["add_to_queue"])
-		var/recipe = href_list["add_to_queue"]
-		var/datum/design/picked_design
-
-		for(var/datum/design/f in design_list)
-			var/test = text2path((recipe))
-			if(f.id == test)
-				picked_design = f
-				break
-
-		if(picked_design)
-			var/amount = 1
-
-			if(href_list["several"])
-				amount = input("How many \"[picked_design.id]\" you want to print ?", "Print several") as null|num
-				if(!CanUseTopic(usr) || !(picked_design in design_list))
-					return
-
-			queue_design(picked_design, amount)
-
-		return 1
-
-	if(href_list["remove_from_queue"])
-		var/ind = text2num(href_list["remove_from_queue"])
-		if(ind >= 1 && ind <= queue.len)
-			queue.Cut(ind, ind + 1)
-		return 1
-
-	if(href_list["move_up_queue"])
-		var/ind = text2num(href_list["move_up_queue"])
-		if(ind >= 2 && ind <= queue.len)
-			queue.Swap(ind, ind - 1)
-		return 1
-
-	if(href_list["move_down_queue"])
-		var/ind = text2num(href_list["move_down_queue"])
-		if(ind >= 1 && ind <= queue.len-1)
-			queue.Swap(ind, ind + 1)
-		return 1
-
-
-	if(href_list["abort_print"])
-		abort()
-		return 1
-
-	if(href_list["pause"])
-		paused = !paused
-		return 1
-
-	if(href_list["unfold"])
-		if(unfolded == href_list["unfold"])
-			unfolded = null
-		else
-			unfolded = href_list["unfold"]
-		return 1
+	ui_interact(user)
 
 /obj/machinery/matter_nanoforge/attackby(obj/item/I, mob/user)
 
@@ -357,6 +333,7 @@
 			used_sheets = (added_mats / artifact.get_power()) / lst[mat]
 		else
 			used_sheets = total_material_gained[mat]
+		gained_mats += added_mats
 	if(istype(eating, /obj/item/stack))
 		var/obj/item/stack/stack = eating
 		to_chat(user, SPAN_NOTICE("You create [gained_mats] Compressed Matter from [stack.singular_name]\s in the [src]."))
