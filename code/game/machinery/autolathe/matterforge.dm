@@ -333,6 +333,7 @@
 			used_sheets = (added_mats / artifact.get_power()) / lst[mat]
 		else
 			used_sheets = total_material_gained[mat]
+		gained_mats += added_mats
 	if(istype(eating, /obj/item/stack))
 		var/obj/item/stack/stack = eating
 		to_chat(user, SPAN_NOTICE("You create [gained_mats] Compressed Matter from [stack.singular_name]\s in the [src]."))

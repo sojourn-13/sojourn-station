@@ -163,6 +163,9 @@
 	embed_mult = 0.6
 	price_tag = 38
 
+/obj/item/tool/knife/tacknife/robo //used by sec bot
+	embed_mult = 0
+
 /obj/item/tool/knife/dagger
 	name = "dagger"
 	desc = "A sharp implement; difference between this and a knife: it's sharp on both sides. Good for finding holes in armor and exploiting them."

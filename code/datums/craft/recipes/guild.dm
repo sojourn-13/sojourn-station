@@ -97,8 +97,22 @@
 		list(QUALITY_SAWING, 30, "time" = 60)
 	)
 
-/datum/craft_recipe/guild/robotmelee //Lots of steps
-	name = "robot mark v armor plating"
+/datum/craft_recipe/guild/robotmelee //Lots of heating and hammering. Forge your blade samurai.
+	name = "robot mark III reinforced armor plating"
+	result = /obj/item/robot_parts/robot_component/armour/mkiii
+	steps = list(
+		list(CRAFT_MATERIAL, 25, MATERIAL_STEEL, "time" = 30),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(QUALITY_HAMMERING, 30, "time" = 180),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(QUALITY_HAMMERING, 30, "time" = 180),
+		list(QUALITY_WELDING, 40, "time" = 90),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
+		list(QUALITY_CUTTING, 30, "time" = 180),
+	)
+
+/datum/craft_recipe/guild/robothp //Lots of steps
+	name = "robot mark v extra armor plating"
 	result = /obj/item/robot_parts/robot_component/armour/mkv
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 90),

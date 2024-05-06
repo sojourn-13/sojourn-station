@@ -14,7 +14,7 @@
 	damage_multiplier = 1.1
 	penetration_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(1.6)
-	fire_sound = 'sound/weapons/guns/fire/deckard_fire.ogg'
+	fire_sound		= 'sound/weapons/guns/fire/deagle_fire.ogg' // Sound taken from JSRS SOUND MOD https://www.moddb.com/mods/stalker-anomaly/addons/solarint-gunshot-overhaul
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'

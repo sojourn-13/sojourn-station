@@ -627,6 +627,100 @@
 	to_chat(user, SPAN_NOTICE("You turn the [src] off."))
 	..()
 
+//Movement = Damage
+/obj/item/tool/sword/saber/nightmare_saber
+	name = "dusk saber"
+	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \
+			A fine blade for cutting and dicing though the ranks of lower beings and nightmares. The more momentum you have the more damage it deals, at the cost of requiring you to be missing an arm."
+	icon = 'icons/obj/weapons-blades.dmi'
+	icon_state = "nightmare_saber"
+	item_state = "saber"
+	price_tag = 5000
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("hilts", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "switches their stance to avoid using the blade of their weapon"
+	alt_mode_lossrate = 0.2
+	effective_faction = list("psi_monster", "stalker") //Nightmares!
+	damage_mult = 1.2
+	embed_mult = 0
+	degradation = 0.1 //We do a LOT of attacks
+	//Normal force is 26
+	//Normal AP is 10
+	var/coin_tracker = 0 //Number not false
+	var/tracker
+
+/obj/item/tool/sword/saber/nightmare_saber/resolve_attackby(atom/target, mob/user, give_coin = TRUE)
+	//Little icky but it works
+	clickdelay_offset = 0
+	if(coin_tracker >= 5)
+		coin_tracker = 0
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/able_to_use = FALSE
+		var/robo_lim = 0 //Counts byond just true or false
+		//message_admins("1knife: H [H]")
+		//message_admins("1knife: give_coin [give_coin]")
+		if(!H.get_organ(BP_L_ARM) || !H.get_organ(BP_R_ARM))
+			able_to_use = TRUE
+		if(istype(H.get_organ(BP_L_ARM), /obj/item/organ/external/stump))
+			able_to_use = TRUE
+		if(istype(H.get_organ(BP_R_ARM), /obj/item/organ/external/stump))
+			able_to_use = TRUE
+		//Robo *lim* bypasses needing only 1 arm, but having 2 robo lims cancle one another out
+		if(istype(H.get_organ(BP_L_ARM), /obj/item/organ/external/robotic))
+			robo_lim += 1
+		if(istype(H.get_organ(BP_R_ARM), /obj/item/organ/external/robotic))
+			robo_lim += 1
+		if(robo_lim == 1)
+			able_to_use = TRUE
+
+
+		//message_admins("1knife: able_to_use [able_to_use]")
+
+		if(able_to_use)
+			//message_admins("2knife: able_to_use [able_to_use]")
+			var/speedy_dashing = H.momentum_speed
+			//message_admins("2knife: speedy_dashing [speedy_dashing]")
+			if(speedy_dashing > 0)
+				//Hopefully your running around to accually use this
+				armor_penetration *= speedy_dashing
+				force *= speedy_dashing
+			if(tracker == target.name && give_coin)
+				coin_tracker += 1
+			else
+				if(ismob(target))
+					tracker = target.name
+					coin_tracker = 0
+			//message_admins("3knife: coin_tracker [coin_tracker]")
+			if(coin_tracker >= 4)
+				for(var/mob/living/victim in range(1, H))
+					if(victim != user)
+						var/turf/T = get_turf(victim)
+						new /atom/movable/DuskCut(T, src)
+						resolve_attackby(victim, user, give_coin = FALSE) //Attack again!
+						resolve_attackby(victim, user, give_coin = FALSE) //Attack again! 2x
+						resolve_attackby(victim, user, give_coin = FALSE) //Attack again! 3x
+						resolve_attackby(victim, user, give_coin = FALSE) //Attack again! 4x
+				coin_tracker = 0
+
+			clickdelay_offset = -speedy_dashing
+	.=..()
+	refresh_upgrades()
+
+/atom/movable/DuskCut
+	icon = 'icons/obj/weapons-blades.dmi'
+	color = "#ffffff"
+	icon_state = "nightmare_saber_arc"
+	alpha = 200
+	layer = 9 //Random number to be ontop of everything
+	var/qdel_timer
+
+/atom/movable/DuskCut/Initialize(mapload)
+	dir = pick(NORTH, SOUTH, EAST, WEST) //Random
+	qdel_timer = QDEL_IN(src, 4)
+
 /obj/item/tool/sword/katana/crimson_arc
 	name = "\"Crimson Arc\" katana"
 	desc = "An anomalous weapon created by rivals of the unknown person(or group?) of the bluecross, their work marked by a crimson cross, these items are known to vanish and reappear when left alone. \

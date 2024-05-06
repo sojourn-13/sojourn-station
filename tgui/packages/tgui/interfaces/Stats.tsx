@@ -1,30 +1,32 @@
-import { useBackend, useLocalState } from '../backend';
+import { classes } from 'common/react';
+import { capitalize } from 'common/string';
+import { useState } from 'react';
+
+import { useBackend } from '../backend';
 import { Box, Section, Stack, Tabs, Tooltip } from '../components';
 import { Window } from '../layouts';
-import { capitalize } from 'common/string';
-import { classes } from 'common/react';
 
 enum TABS {
   stats,
-  perks,
+  perks
 }
 
 interface StatData {
-  name: string;
-  value: number;
+  name: string
+  value: number
 }
 
 interface PerkData {
-  name: string;
-  icon: string;
-  desc: string;
+  name: string
+  icon: string
+  desc: string
 }
 
 interface StatsData {
-  name: string;
-  hasPerks: boolean;
-  stats: StatData[];
-  perks: PerkData[];
+  name: string
+  hasPerks: boolean
+  stats: StatData[]
+  perks: PerkData[]
 }
 
 const perk = (perk: PerkData) => {
@@ -32,15 +34,17 @@ const perk = (perk: PerkData) => {
 
   return (
     <Stack.Item>
-      <Tooltip position="bottom" content={desc}>
-        <Stack position="relative" fill>
+      <Tooltip position='bottom' content={desc}>
+        <Stack position='relative' fill>
           <Stack.Item
-            className={classes(['Stats__box--icon', 'Stats__content'])}>
+            className={classes(['Stats__box--icon', 'Stats__content'])}
+          >
             <Box className={classes(['perks32x32', icon])} />
           </Stack.Item>
           <Stack.Item
             grow
-            className={classes(['Stats__box--text', 'Stats__content'])}>
+            className={classes(['Stats__box--text', 'Stats__content'])}
+          >
             {capitalize(name)}
           </Stack.Item>
         </Stack>
@@ -49,12 +53,12 @@ const perk = (perk: PerkData) => {
   );
 };
 
-const PerksTab = (props: any, context: any) => {
-  const { data } = useBackend<StatsData>(context);
+const PerksTab = props => {
+  const { data } = useBackend<StatsData>();
   const { perks } = data;
 
   return (
-    <Stack fill vertical justify="start">
+    <Stack fill vertical justify='start'>
       {perks.map((value, i) => perk(value))}
     </Stack>
   );
@@ -68,12 +72,14 @@ const stat = (stat: StatData) => {
       <Stack fill>
         <Stack.Item
           grow={2}
-          className={classes(['Stats__box--skill', 'Stats__content'])}>
+          className={classes(['Stats__box--skill', 'Stats__content'])}
+        >
           {capitalize(name)}
         </Stack.Item>
         <Stack.Item
           grow={1}
-          className={classes(['Stats__box--text', 'Stats__content'])}>
+          className={classes(['Stats__box--text', 'Stats__content'])}
+        >
           {value}
         </Stack.Item>
       </Stack>
@@ -81,42 +87,40 @@ const stat = (stat: StatData) => {
   );
 };
 
-const StatsTab = (props: any, context: any) => {
-  const { data } = useBackend<StatsData>(context);
+const StatsTab = props => {
+  const { data } = useBackend<StatsData>();
   const { stats } = data;
 
   return (
-    <Stack fill vertical justify="space-around">
+    <Stack fill vertical justify='space-around'>
       {stats.map((value, i) => stat(value))}
     </Stack>
   );
 };
 
-export const Stats = (props: any, context: any) => {
-  const { data } = useBackend<StatsData>(context);
+export const Stats = props => {
+  const { data } = useBackend<StatsData>();
   const { name, hasPerks } = data;
 
-  const [currentTab, setCurrentTab] = useLocalState(
-    context,
-    'stats_tab',
-    TABS.stats
-  );
+  const [currentTab, setCurrentTab] = useState(TABS.stats);
 
   return (
     <Window width={285} height={320} title={`${name}'s Stats`}>
-      <Window.Content style={{ 'background-image': 'none' }}>
+      <Window.Content style={{ backgroundImage: 'none' }}>
         <Stack fill vertical>
           {(hasPerks && (
             <Stack.Item>
               <Tabs fluid>
                 <Tabs.Tab
                   selected={currentTab === TABS.stats}
-                  onClick={() => setCurrentTab(TABS.stats)}>
+                  onClick={() => setCurrentTab(TABS.stats)}
+                >
                   Stats
                 </Tabs.Tab>
                 <Tabs.Tab
                   selected={currentTab === TABS.perks}
-                  onClick={() => setCurrentTab(TABS.perks)}>
+                  onClick={() => setCurrentTab(TABS.perks)}
+                >
                   Perks
                 </Tabs.Tab>
               </Tabs>

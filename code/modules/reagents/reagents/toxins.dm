@@ -388,9 +388,16 @@
 	color = "#8E18A9"
 	power = 10
 	meltdose = 4
+	metabolism = REM * 2 //should neutralize reasonably fast in your blood if you want it more accurate to reality I can add some metabolites at some point for acids which are usually salts you do not want in your body either
 	illegal = TRUE
-	nerve_system_accumulations = 45
+	nerve_system_accumulations = 85
 
+/datum/reagent/toxin/polyacid/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.adjustOxyLoss(1 * effect_multiplier) //acidic vapors should fuck lungs especially if its probably just trekkified antimony pentafluoride
+	M.adjustFireLoss(3 * effect_multiplier) //burns you up rapidly
+	M.take_organ_damage(0.2 * effect_multiplier, 0) //fucks your organs but not as much as dedicated cytotoxins like Lexorin
+	if(prob(5))
+		to_chat(M, SPAN_DANGER("YOUR INSIDES ARE MELTING!!!")) //last but not least tells somebody they got hit by polytrinic
 
 /datum/reagent/toxin/lexorin
 	name = "Lexorin"
