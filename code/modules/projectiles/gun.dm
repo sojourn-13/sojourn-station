@@ -1046,7 +1046,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	fold(span_chat = TRUE)
 
-/obj/item/gun/can_interact(mob/user)
+/obj/item/gun/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
 		return 1
 	if(istype(loc, /obj/item/storage))
@@ -1057,11 +1057,11 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(folding_stock)
 		if(!folded)
 			if(span_chat)
-				to_chat(usr, SPAN_NOTICE("You unfold the stock on \the [src]."))
+				to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
 			folded = TRUE
 		else
 			if(span_chat)
-				to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
+				to_chat(usr, SPAN_NOTICE("You unfold the stock on \the [src]."))
 			folded = FALSE
 	refresh_upgrades() //First we grab our upgrades to not do anything silly
 	update_icon() //Likely has alt icons for being folded or not so we refresh our icon

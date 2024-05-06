@@ -16,7 +16,7 @@
 	desc = "A highly advanced satellite uplink that works anywhere on the planet."
 	ethernet = TRUE //Unlimited connection range.
 
-/obj/item/modular_computer/tablet/nanogate/can_interact(mob/user)
+/obj/item/modular_computer/tablet/nanogate/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
 	if(linked_nanogate.status & ORGAN_BROKEN)
 		return FALSE
 	..()
