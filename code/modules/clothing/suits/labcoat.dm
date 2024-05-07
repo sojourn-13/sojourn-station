@@ -106,7 +106,8 @@
 
 /obj/item/clothing/suit/storage/toggle/labcoat/field
 	name = "SI Field Labcoat"
-	desc = "Specially made for protecting men and women of science in the dangerous wilds of Amethyn, this labcoat features lightweight armor inlays over strategic locations to protect vital organs."
+	desc = "Specially made for protecting men and women of science in the dangerous wilds of Amethyn, this labcoat features lightweight armor inlays over strategic locations to protect vital organs. \
+	Features strategically placed pouches and straps to secure samples for extraction."
 	icon_state = "si_plasticoat"
 	item_state = "si_plasticoat"
 	icon_open = "si_plasticoat_open"
@@ -116,6 +117,7 @@
 	siemens_coefficient = 0.60 //Default for all armor
 	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	tool_qualities = list(QUALITY_ARMOR = 100)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 20)
 	max_upgrades = 1
 	armor_list = list(
 		melee = 25,
@@ -126,8 +128,6 @@
 		rad = 25
 	)
 	extra_allowed = list(
-		/obj/item/extinguisher,
-		/obj/item/stack/flag,
 		/obj/item/storage/bag/fossils,
 		/obj/item/storage/bag/xenobio,
 		/obj/item/storage/bag/produce
