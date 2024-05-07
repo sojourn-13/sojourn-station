@@ -108,7 +108,7 @@
 	build_path = /obj/item/clothing/suit/armor/laserproof/rnd
 
 /datum/design/research/item/clothing/armor_soterialabcoat
-	name = "Field Labcoat"
+	name = "SI Field Labcoat"
 	desc = "Specially made for protecting men and women of science in the dangerous wilds of Amethyn, this labcoat features lightweight armor inlays over strategic locations to protect vital organs. \
 	Features strategically placed pouches and straps to secure samples for extraction."
 	build_path = /obj/item/clothing/suit/storage/toggle/labcoat/field
