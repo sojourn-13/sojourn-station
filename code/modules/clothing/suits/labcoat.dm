@@ -108,7 +108,7 @@
 /obj/item/clothing/suit/storage/toggle/labcoat/field
 	name = "SI Field Labcoat"
 	desc = "Specially made for protecting men and women of science in the dangerous wilds of Amethyn, this labcoat features lightweight armor inlays over strategic locations to protect vital organs. \
-	Features strategically placed pouches and straps to secure samples for extraction."
+	Features an assortment of pouches and straps to secure your samples for extraction."
 	icon_state = "si_plasticoat"
 	item_state = "si_plasticoat"
 	icon_open = "si_plasticoat_open"
