@@ -2074,7 +2074,8 @@
 	skill_check = -30
 	},
 /obj/structure/cable/yellow{
-	dir = 1
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/outside/forest/hunting_lodge_dark)

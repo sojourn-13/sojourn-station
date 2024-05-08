@@ -142,8 +142,25 @@
 
 /obj/item/gun/energy/plasma/super_heavy/attackby(obj/item/W, mob/user)
 
-	if(istype(W, /obj/item/tool)) // Is it a tool?
-		var/obj/item/tool/T = W // To use tool-only checks
+	if(istype(W, /obj/item/reagent_containers)) // Is it something that hold chems ?
+		// Do we already have one inside?
+		if(container)
+			to_chat(user, "The [src.name] already got a beaker.")
+			return
+		else
+			var/obj/item/reagent_containers/C = W
+			// Remove the container from the user and put it in the gun
+			user.remove_from_mob(C) // Remove from the mob's hand before moving it.
+			C.forceMove(src) // Moving the container into the gun.
+			container = C // Assiging a reference variable
+			to_chat(user, "You add the [W.name] to the [src].")
+			return
+	..()
+	return
+
+/obj/item/gun/energy/plasma/super_heavy/wrench_intraction(obj/item/I, mob/user)
+	if(istype(I, /obj/item/tool)) // Is it a tool?
+		var/obj/item/tool/T = I // To use tool-only checks
 		if(QUALITY_BOLT_TURNING in T.tool_qualities) // Can we turn bolts with the tool?
 			if(container) // Do we have something to remove?
 				if(T.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC)) // Skill check.
@@ -152,23 +169,6 @@
 					container = null // We no longer have a container.
 					return
 			to_chat(user, "[src.name] doesn't have a container.")
-
-	if(istype(W, /obj/item/reagent_containers)) // Is it something that hold chems ?
-
-		// Do we already have one inside?
-		if(container)
-			to_chat(user, "The [src.name] already got a beaker.")
-			return
-		else
-			var/obj/item/reagent_containers/C = W
-
-			// Remove the container from the user and put it in the gun
-			user.remove_from_mob(C) // Remove from the mob's hand before moving it.
-			C.forceMove(src) // Moving the container into the gun.
-			container = C // Assiging a reference variable
-			to_chat(user, "You add the [W.name] to the [src].")
-			return
-	..()
 	return
 
 /obj/item/gun/energy/plasma/super_heavy/handle_post_fire(mob/user)

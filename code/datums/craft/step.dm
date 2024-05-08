@@ -64,6 +64,16 @@
 		tool_name = "units of [M.display_name]"
 	make_desc()
 
+/datum/craft_step/ui_data(mob/user)
+	var/list/data = list()
+
+	data["amt"] = req_amount
+	data["tool_name"] = tool_name
+	data["reqed_material"] = reqed_material
+	data["icon"] = iconfile
+
+	return data
+
 /datum/craft_step/proc/make_desc(obj/item/craft/C)
 	var/amt = req_amount
 	if(C && reqed_type && req_amount > 1)

@@ -60,7 +60,7 @@
 	if(mode)
 		to_chat(user, SPAN_NOTICE("You turn on \the [src]."))
 		//Now let them chose the text.
-		var/str = sanitizeName(input(user,"Label text?","Set label",""), MAX_NAME_LEN) //Only A-Z, 1-9 and `-`
+		var/str = sanitizeSafe(input(user,"Label text?","Set label",""), MAX_NAME_LEN)
 		if(!str || !length(str))
 			to_chat(user, SPAN_NOTICE("Invalid text."))
 			return

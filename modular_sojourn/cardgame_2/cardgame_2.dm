@@ -5,12 +5,13 @@
 	The field of play is a (recommended) 4 x 5 grid, players may only play cards on their side of the field unless otherwise noted.<BR>\n\
 	At the beginning of the game, both players draw 3 cards + 1 fodder card.<BR>\n\
 	After drawing their initial cards, players may place any terrian or blocker cards anywhere on the field.<BR>\n\
-	At the beginning of each turn, a player may draw 1 fodder card or 1 card from their deck box. Players draw on their very first turn.<BR>\n\
+	At the beginning of each turn, a player may draw 3 cards, eather fodder or from their deck box, may choice to draw from both i.e 1 fodder 2 main deck. Players draw on their very first turn.<BR>\n\
 
 	Playing Cards:<BR>\n\
+	Unless stated otherwise, cards may only be played in the back row.\n\
 	Some cards have an associated blood cost. This cost is paid by sacrificing a total amount of cards on the players field to equal the amount required. Unless otherwise stated, one card is one blood. \
 	Any excess blood disappears after a creature is played. You may not sacrifice additional cards while paying a blood cost i.e. if a wolf requires 2 blood, you cannot sacrifice 3 squirrels. \
-	If for example you sacrificed one black goat which gives 3 blood to play a wolf that cost 2 blood, the excess amount may not be used for any other purpose and disappears immediately.<BR>\n\
+	If for example you sacrificed one black goat which gives 3 blood to play a wolf that cost 2 blood, the excess amount may not be used for any other purpose and disappears immediately unless stated otherwise, this applies to bones.<BR>\n\
 	Some cards have an associated bones cost. Bones are paid by using the counters in the bone pile. When a card is sacrificed or dies it is added to the player's discard pile, the bone pile then \
 	gains 1 tally unless otherwise noted. When paying bones, a player must put an equal number of cards back into the deck box it was drawn from equal to the value of bones paid.<BR>\n\
 	Blood costs may NOT be paid using cards not on the field or in the discard pile.<BR>\n\
@@ -22,8 +23,21 @@
 	Cards deal damage to cards opposite on the board to them. Damage delt in excess to a cards health carries over to the card behind it but NOT the player unless otherwise stated.<BR>\n\
 	Cards in the back row cannot attack or move cards in the front row of their side of the field unless otherwise stated, even if that card is a blocker, obstacle, or pelt.<BR>\n\
 	When a card dies, it is placed inside the discard pile of the owner of the card unless otherwise stated.<BR>\n\
+	Cards can NOT deal negitive damage unless otherwise stated.<BR>\n\
+
+
+	Winning/Losing:<BR>\n\
 	If a player were to deal winning or more damage on turn one before the other one is able to play, reset the scale.<BR>\n\
-	If the defending player has unblocked, or otherwise attacking cards, that if they were to attack bring the scale below the losing threshhold, adjust scale to be the 1 point away from a loss. Cards in the back row do not move or attack in this calulation.<BR>\n\
+	In the defending players calulation the card order is left to right of defending player.\n\
+	If the defending player has unblocked, or otherwise attacking cards, that if they were to attack bring the scale below the losing threshhold, adjust scale to be the 1 point away from a loss. \
+	Cards in the back row do not move or attack in this calulation unless stated otherwise.<BR>\n\
+
+	Terrain:<BR>\n\
+	Terrain - Terrain  cards may be placed on any position on either players board before the game begins. Terrain cards do not move. When a terrain card is \
+	destroyed unless stated otherwise it is not placed in the player's discard pile and is instead removed from the game. Each player can only play a maximum of 2 terrain cards during pre-match set up.<BR>\n\
+	Terrian Cards that are drawn into hand may only be placed on the side of the player that drew the card this placement is allowed to be on first or second row, unless otherwise stated.\n\
+	Terrian Cards that are in the back row on turn start of the player that has the Terrian Card on their backrow may chose to deal 1 damage.\n\
+	Terrian Cards well in back row protect the card or empty space in the first row, this interaction overrides all other blocking affects unless stated otherwise.\n\
 
 	Cards:<BR>\n\
 	All cards have health, power, and play requirements noted on the card. Some cards have special effects or rules that are also noted on the card or on the rules card.<BR>\n\
@@ -43,7 +57,7 @@
 	desc = "Card Effects:<BR>\n\
 	Flying - Cards with flying ignore blockers, obstacles, and pelts unless that card is capable of blocking flyers. Having flying does not give a card the ability to block other flyers.<BR>\n\
 	Destructive - All cards with destructive kill all cards of the same kin type when dying. I.E. a crab with destructive kills all other crabs. Type is determined by matching words in the name.<BR>\n\
-	Deathtouch - On attack, any card it is facing is considered killed.<BR>\n\
+	Deathtouch - On attack, any card it is facing is considered killed unless otherwise stated.<BR>\n\
 	Eternal - This card does not die when used as a sacrifice for blood.<BR>\n\
 	Thorns - When attacked deal one damage back to the card that attacked them.<BR>\n\
 	Stinky - This card reduces any opposing cards power by 1.<BR>\n\
@@ -53,7 +67,7 @@
 	Tri Strike - As prong strike, but also attacks the opposing card.<BR>\n\
 	Toxic - On death, all cards attacking it die.<BR>\n\
 	Guard - If an unoccupied space would be attacked by an opposing card, this card moves to that space and blocks that attack. This effect may happen mutiple times until all attacks are resolved or \
-	the guarding card is dead.<BR>\n\
+	the guarding card is dead. May only move and protect against Flying when the same card has the Defender effect.<BR>\n\
 	Fortune - As long as this card remains on the field, all players draw an additional card when ever they may draw a card. The additional card may be chosen from the main or fodder deck. Fortune \
 	cards do not stack with other fortune cards.<BR>\n\
 	Frail - If this card attacks and deals damage to either a player or another card, it dies.<BR>\n\
@@ -66,15 +80,15 @@
 	Pelt - Pelt cards may be placed on any position on either players board when played. Pelt cards do not move but otherwise follow the same rules as other cards. Pelt cards cannot be sacrificed \
 	for blood and are added to the discard pile upon death.<BR>\n\
 	Cornered - Only attacks if the player that has payed for this card is losing by scale damage or if an posing card can attack.<BR>\n\
-	Terrain - Terrain  cards may be placed on any position on either players board before the game begins. Terrain cards do not move. When a terrain card is \
-	destroyed unless otherwise noted it is not placed in the player's discard pile and is instead removed from the game. Each player can only play a maximum of 2 terrain cards during pre-match set up.<BR>\n\
+	Terrain - For this cards affects see Rules Card.<BR>\n\
+	Anti-Avian - If an Flying card attacks over this card, deal 1 damage to the card after its attack.<BR>\n\
 	Rivalry - This card loses power equal to the amount of cards sharing the same type currently on the field under that player's control. Each card can only remove 1 power, no matter how many matching \
 	types they have, unless otherwise stated. Rivalry cards do not count themselves for the purposes of losing power.<BR>\n\
 	Kinship - This card gains power equal to the amount of cards sharing the same type currently on the field under that player's control. Each card can only add 1 power, no matter how many matching \
 	types they have, unless otherwise stated. Kinship cards do not count themselves for the purposes of gaining power."
 
 /obj/item/card_carp/index/adved
-	name = "Vol IIndex-Effects: CardCarp"
+	name = "Vol II Index-Effects: CardCarp"
 	desc = "Card Effects:<BR>\n\
 	Mending - After every attacking phase, remove or add one damage to the scale. If scale is already at midway then do not add or remove damage.<BR>\n\
 	Fast Ageing - After dealing damage to a player or card, remove one health from this card.<BR>\n\
@@ -85,7 +99,7 @@
 	Grace - If this card is not in the second row, the player who played its price, can not lose the game.<BR>\n\
 	Cowardly - If attacked, the damage is delt to the player that payed its price rather then card, unless it would be enough to lose from.<BR>\n\
 	Bounded - On death deal one damage to player that payed its price.<BR>\n\
-	Upheaval - When moving into an the second row and hitting a card, move the card back to the second lane then deal moved card damage, \
+	Upheaval - When moving into an the second row and hitting a card, move the card back to the second lane if then deal moved card damage, \
 	if a card is behind the striked card, move it back into the player that paid that cards price.<BR>\n\
 	Aduit - When this card dies, if the total damage of the every card in any row is even, half the damage on the scale, if odd, both players draw two cards from fodder deck.<BR>\n\
 	Hermit - If attacking a player, deal zero damage.<BR>\n\
@@ -98,7 +112,6 @@
 	Starvation - At the start of the players turn that played the price of this card, deal one damage unblockable to any one card of their choice.<BR>\n\
 	Confliction - If a card has the same has conflicting effects, then the player may choice what effect to use over one.  \
 	If the card has the same effects more then once it only counts as one, unless otherwise stated."
-
 
 /obj/item/card_carp/examine(mob/user)
 	..()
@@ -135,21 +148,21 @@
 
 /obj/item/card_carp/rat
 	name = "Rat"
-	desc = "A rat, a fastidiously clean creature. H1/P1. Bloodless, Cornered."
+	desc = "A rat, a fastidiously clean creature. H1/P1. Bloodless. Cornered."
 	icon_state = "card_rat"
 	cant_box = TRUE
 	current_health = 1
 
 /obj/item/card_carp/rabbit
 	name = "Rabbit"
-	desc = "A rabbit, a greatly undervalued card. H1/P0. Kinship, Frail."
+	desc = "A rabbit, a greatly undervalued card. H1/P0. Kinship. Frail."
 	icon_state = "card_rabbit"
 	cant_box = TRUE
 	current_health = 1
 
 /obj/item/card_carp/shell
 	name = "Shell"
-	desc = "A robotic shell, serves little purpose. H1/P0."
+	desc = "A robotic shell, serves little purpose. H1/P0. Boneless. Boneless. Anti-Avian."
 	icon_state = "card_squirls"
 	cant_box = TRUE
 	current_health = 1
@@ -160,7 +173,7 @@
 
 /obj/item/card_carp/moon
 	name = "Moon"
-	desc = "The moon, scenic and dangerous and only used by blatent cheaters. H40/P1. Defender. Takes up all rows on the owner's side. Deals 1 damage to all cards on the opposing side. Cannot hit opposing player as long as 1 card is capable of blocking."
+	desc = "The moon, a celestal body unbound by normal means of attacking. H40/P1. Defender. Takes up all rows on the owner's side. Deals 1 damage to all cards on the opposing side. Cannot hit opposing player as long as 1 card is capable of blocking."
 	icon_state = "card_moon"
 	current_health = 40
 
@@ -188,7 +201,7 @@
 
 /obj/item/card_carp/cat
 	name = "Cat"
-	desc = "A feline, a favorite among certain opossums. H1/P0. Eternal."
+	desc = "A feline, known for ketching small pray and hunting Avians. H1/P0. Eternal. Anti-Avian."
 	icon_state = "card_cat"
 	current_health = 1
 
@@ -236,7 +249,7 @@
 
 /obj/item/card_carp/mole
 	name = "Mole"
-	desc = "A mole, the under rated tunneler. H5/P0. Requires 1 blood. Gaurd."
+	desc = "A mole, the under rated tunneler. H5/P0. Requires 1 blood. Gaurd. Anti-Avian."
 	icon_state = "card_mole"
 	current_health = 5
 
@@ -290,7 +303,7 @@
 
 /obj/item/card_carp/sparrow
 	name = "Sparrow"
-	desc = "A sparrow, the quick of wit and wing. H1/P2. Requires 1 blood. Flying."
+	desc = "A sparrow, the quick of wit and wing. H1/P2. Requires 1 blood. Flying. Anti-Avian."
 	icon_state = "card_sparrow"
 	current_health = 1
 
@@ -314,7 +327,7 @@
 
 /obj/item/card_carp/daus
 	name = "Daus"
-	desc = "A daus, an ill tempered and dangerous creature as ornery as they come. H2/P2. Requires 2 blood. Chime."
+	desc = "A daus, an ill tempered and dangerous creature as ornery as they come. H2/P2. Requires 2 blood. Chime. Anti-Avian."
 	icon_state = "card_daus"
 	current_health = 2
 
@@ -326,19 +339,19 @@
 
 /obj/item/card_carp/lost_rabbit
 	name = "Lost Rabbit"
-	desc = "A lost rabbit, far from its warren and its kin. H1/P0. Kinship, Frail."
+	desc = "A lost rabbit, far from its warren and its kin. H1/P0. Kinship. Frail. Anti-Avian."
 	icon_state = "card_rabbit"
 	current_health = 1
 
 /obj/item/card_carp/larva
 	name = "Moth Larva"
-	desc = "A moth larva, brimming with potential. H1/P0. Requires 1 bone. Gives 2 blood. Kinship, Frail."
+	desc = "A moth larva, brimming with potential. H1/P0. Requires 1 bone. Gives 2 blood. Kinship. Frail."
 	icon_state = "card_larva"
 	current_health = 1
 
 /obj/item/card_carp/pupa
 	name = "Moth Pupa"
-	desc = "A moth pupa, almost all it can be. H2/P1. Requires 2 bones. Blood Donor, Kinship, Frail."
+	desc = "A moth pupa, almost all it can be. H2/P1. Requires 2 bones. Blood Donor. Kinship, Frail."
 	icon_state = "card_pupa"
 	current_health = 2
 
@@ -350,13 +363,13 @@
 
 /obj/item/card_carp/beaver
 	name = "Beaver"
-	desc = "A beaver, the most industrious of rodents. H1/P3. Requires 2 blood."
+	desc = "A beaver, the most industrious of rodents. H1/P3. Requires 2 blood. Anti-Avian."
 	icon_state = "card_bever"
 	current_health = 1
 
 /obj/item/card_carp/wyrm
 	name = "Ring Wyrm"
-	desc = "A ring wyrm, a circular creature. H1/P0. Requires 1 blood. Toxic."
+	desc = "A ring wyrm, a circular creature. H1/P0. Requires 1 blood. Toxic. Defender."
 	icon_state = "card_ring"
 	current_health = 1
 
@@ -430,6 +443,12 @@
 	icon_state = "card_rabbit_pelt"
 	current_health = 3
 
+/obj/item/card_carp/tanningpelt
+	name = "Tanning Pelt"
+	desc = "A small pelt reaking of tan. H1/P0. Requires 2 bones. Pelt. Defender. Stinky"
+	icon_state = "card_rabbit_pelt"
+	current_health = 1
+
 /obj/item/card_carp/pinepelt
 	name = "Porcupine Pelt"
 	desc = "A small pelt of a porcupine still has its quills. H3/P0. Requires 4 bones. Pelt. Defender, Thorns."
@@ -460,26 +479,26 @@
 
 /obj/item/card_carp/tree
 	name = "Tree"
-	desc = "A tree, there to hide behind and obstruct. H10/P0. Terrain. Defender, Bloodless, Boneless."
-	icon_state = "card_13"
+	desc = "A tree, there to hide behind and obstruct. H10/P0. Terrain. Defender. Bloodless. Boneless."
+	icon_state = "card_turf"
 	current_health = 10
 
 /obj/item/card_carp/pinetree
 	name = "Pine Tree"
-	desc = "A tree with sharp needles, there to hide behind and obstruct. H5/P0. Terrain. Defender, Thorn, Bloodless, Boneless"
-	icon_state = "card_13"
+	desc = "A tree with sharp needles, there to hide behind and obstruct. H5/P0. Terrain. Defender. Thorn. Bloodless. Boneless"
+	icon_state = "card_turf"
 	current_health = 5
 
 /obj/item/card_carp/rock
 	name = "Rock"
-	desc = "A rock, the pioneers favorite, hitting it wouldnt be to good for you. H7/P0. Terrain. Thorn, Bloodless, Boneless"
-	icon_state = "card_child"
+	desc = "A rock, the pioneers favorite, hitting it wouldnt be to good for you. H7/P0. Terrain. Thorn, Bloodless. Boneless, Anti-Avian."
+	icon_state = "card_turf"
 	current_health = 7
 
 /obj/item/card_carp/bloodrock
 	name = "Blood Stone"
-	desc = "A refined stone, the blood on it is still useable, hitting it wouldnt be to good for you. H3/P0. Terrain. Thorn, Boneless, Blood Donor"
-	icon_state = "card_child"
+	desc = "A refined stone, the blood on it is still useable, hitting it wouldnt be to good for you. H3/P0. Terrain. Thorn. Boneless, Blood Donor"
+	icon_state = "card_turf"
 	current_health = 3
 
 /////////////////////////////
@@ -556,7 +575,7 @@
 
 		if(0 > point_total && bad.len)
 			added_descs += ", [pick_n_take(bad)]"
-			if(prob(50))
+			if(prob(15))
 				added_descs += ", Fodder"
 				late_fodder = TRUE
 

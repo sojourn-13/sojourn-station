@@ -17,7 +17,7 @@
 	if(spent)//Is it already used up or not
 		return
 
-	if(user.stats.getPerk(perk_imprinting) || user.stats.getPerk(perk_imprinting_forbidden) || user.species.reagent_tag == IS_SYNTHETIC)//What perks stop this from being usable to prevent things like kriosans getting double recoil reduction
+	if(user.stats.getPerk(perk_imprinting) || user.stats.getPerk(perk_imprinting_forbidden) || user.species.reagent_tag == IS_SYNTHETIC || user.random_organ_by_process(BP_PSION))//What perks stop this from being usable to prevent things like kriosans getting double recoil reduction
 		return//Also no synths to prevent memes
 
 	if(!istype(user) || user.incapacitated() || user.get_active_hand() != src)//Checks for sanity
@@ -54,9 +54,9 @@
 		to_chat(user, SPAN_WARNING("[src] beeps, notifying you that it's spent!"))
 		playsound(usr, 'sound/machines/buzz-two.ogg', 20, -5)
 		return ..()
-	if(user.stats.getPerk(perk_imprinting) || user.stats.getPerk(perk_imprinting_forbidden) || user.species.reagent_tag == IS_SYNTHETIC) //Reason we check for the perk we are printing too is that you don't waste one for nothing
-		to_chat(user, SPAN_WARNING("[src] beeps, refusing you as host!"))//No synths
-		playsound(usr, 'sound/machines/buzz-two.ogg', 20, -5)
+	if(user.stats.getPerk(perk_imprinting) || user.stats.getPerk(perk_imprinting_forbidden) || user.species.reagent_tag == IS_SYNTHETIC || user.random_organ_by_process(BP_PSION)) //Reason we check for the perk we are printing too is that you don't waste one for nothing
+		to_chat(user, SPAN_WARNING("[src] beeps, refusing you as host!"))//No synths or psions
+		playsound(usr, 'sound/machines/buzz-two.ogg', 20, -5) //Why did I make this get checked twice who will honestly ever know not like it matters this runs once and never again.
 		return ..()
 	if(!istype(user) || M != user || target_zone != BP_EYES || user.incapacitated())
 		to_chat(user, SPAN_WARNING("[src] beeps, being unable to operate on you under current conditions!"))

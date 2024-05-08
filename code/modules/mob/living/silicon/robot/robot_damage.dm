@@ -132,7 +132,7 @@
 
 	var/datum/robot_component/armour/A = get_armour()
 	if(A)
-		A.take_damage(brute,burn,sharp)
+		A.take_damage(brute*A.brute_mult,burn*A.burn_mult,sharp)
 		return
 
 	while(parts.len && (brute>0 || burn>0) )
@@ -204,4 +204,3 @@
 	spawn(2)
 		playsound(src, 'sound/weapons/heavysmash.ogg', 100, 1, 20,20)
 	playsound(src, pick(robot_talk_heavy_sound), 100, 1, 5,5)
-

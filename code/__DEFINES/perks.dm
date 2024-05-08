@@ -175,11 +175,11 @@
 
 // Nanogate Perks
 #define PERK_NANOGATE /datum/perk/nanogate
-#define PERK_NANITE_REGEN /datum/perk/nanite_regen
-#define PERK_NANITE_MUSCLE /datum/perk/nanite_muscle
-#define PERK_NANITE_ARMOR /datum/perk/nanite_armor
-#define PERK_NANITE_AMMO /datum/perk/nanite_ammo
-#define PERK_NANITE_METAL_EATER /datum/perk/nanite_metal_drinker
+#define PERK_NANITE_REGEN /datum/perk/nanite_power/nanite_regen
+#define PERK_NANITE_MUSCLE /datum/perk/nanite_power/nanite_muscle
+#define PERK_NANITE_ARMOR /datum/perk/nanite_power/nanite_armor
+#define PERK_NANITE_AMMO /datum/perk/nanite_power/nanite_ammo
+#define PERK_NANITE_METAL_EATER /datum/perk/nanite_power/nanite_metal_drinker
 
 // Crayon Mage Perks
 #define PERK_ALCHEMY /datum/perk/alchemist
@@ -192,14 +192,15 @@
 #define PERK_CHEMNEUTRAL /datum/perk/chemical_neutralizer
 
 // Nanite Chem Perks.
-#define PERK_NANITE_CHEM /datum/perk/nanite_chem
-#define PERK_NANITE_CHEM_IMPLANT /datum/perk/nanite_chem/implantoids
-#define PERK_NANITE_CHEM_TCS /datum/perk/nanite_chem/trauma_control_system
-#define PERK_NANITE_CHEM_CBU /datum/perk/nanite_chem/control_booster_utility
-#define PERK_NANITE_CHEM_CBC /datum/perk/nanite_chem/control_booster_combat
-#define PERK_NANITE_CHEM_PURGER /datum/perk/nanite_chem/purgers
-#define PERK_NANITE_CHEM_OXYRUSH /datum/perk/nanite_chem/oxyrush
-#define PERK_NANITE_CHEM_NANTIDOTE /datum/perk/nanite_chem/nantidotes
+#define PERK_NANITE_CHEM /datum/perk/nanite_power/nanite_chem
+#define PERK_NANITE_CHEM_IMPLANT /datum/perk/nanite_power/nanite_chem/implantoids
+#define PERK_NANITE_SYMBIOTES /datum/perk/nanite_power/nanite_chem/symbiotes
+#define PERK_NANITE_CHEM_TCS /datum/perk/nanite_power/nanite_chem/trauma_control_system
+#define PERK_NANITE_CHEM_CBU /datum/perk/nanite_power/nanite_chem/control_booster_utility
+#define PERK_NANITE_CHEM_CBC /datum/perk/nanite_power/nanite_chem/control_booster_combat
+#define PERK_NANITE_CHEM_PURGER /datum/perk/nanite_power/nanite_chem/purgers
+#define PERK_NANITE_CHEM_OXYRUSH /datum/perk/nanite_power/nanite_chem/oxyrush
+#define PERK_NANITE_CHEM_NANTIDOTE /datum/perk/nanite_power/nanite_chem/nantidotes
 
 
 //Wage Perks

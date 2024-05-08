@@ -494,6 +494,7 @@ var/global/list/wings_icon_cache = list()
 						break
 			if(valid && ("[real_marking.icon_state]-[part]" in icon_states(real_marking.icon)))
 				valid_body_parts += part
+			CHECK_TICK
 		var/icon/specific_marking_icon
 		var/cache_key = "[markname]-[valid_body_parts.Join("_")]"
 		var/advanced_cache_key = "B*[cache_key]*[body_markings[markname]]*[real_marking.blend]" //The *B is there to prevent collisions.
@@ -516,6 +517,7 @@ var/global/list/wings_icon_cache = list()
 			marking_icon.Blend(specific_marking_icon, ICON_OVERLAY)
 		else //WARNING: THIS WILL BREAK IF WE EVER USE INCONSISTENT MARKING SIZES
 			marking_icon = specific_marking_icon
+		CHECK_TICK
 	return image(marking_icon)
 
 //Insert Furry Bits

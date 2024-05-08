@@ -312,6 +312,10 @@
 		if(findtext(spell, "Satchel.") && candle_amount >= 5)
 			satchel_spell(M, alchemist)
 
+		//Both book and knife work with this one
+		if(findtext(spell, "Cessation.") && candle_amount >= 1)
+			cessation_spell(M, candle_amount)
+
 		/* WIP!!!
 		if(findtext(spell, "Transmute." && candle_amount >= 6)
 			transmutation_spell(M)
@@ -344,6 +348,9 @@
 
 		if(findtext(spell, "Tea Party.") && candle_amount >= 4)
 			tea_party_spell(M)
+
+		if(findtext(spell, "Cessation.") && candle_amount >= 1)
+			cessation_spell(M, candle_amount)
 
 		if(findtext(spell, "Fountain.") && candle_amount >= 7)
 			basin_spell(M, able_to_cast)
@@ -1385,6 +1392,37 @@
 		if(M.stats && body_checks(M)) //Make sure to not overburnen yourself in this tea party
 			M.stats.addTempStat(stat, stat_amount, stat_amount MINUTES, "Tea Party")
 	return
+
+// Cessation: Baba is gone? - Removes you from player from the world for an equal amount of candles
+/obj/effect/decal/cleanable/crayon/proc/cessation_spell(mob/living/carbon/human/M, candle_number)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	var/cn
+	//Dont change the top lines they are real letters BYOND DM cant see normally
+	var/list/hmm = list("༒", "༎༐།", "‽", "⸘", "༑", \
+	"Sipping sounds echo in you.", "Nothing is around you.", "Nothing is still.", "Sounds are felt here, not heard.", "Where are you?")
+
+	B.remove_self(candle_number)
+
+	for(cn=0, cn<candle_number, cn++)
+		var/huh = pick(hmm)
+		to_chat(M, "<span class='info'>[huh]</span>") //Spammy!
+	M.loc = null
+
+	if(prob(candle_number))
+		to_chat(M, "<span class='info'>A secondary voice of a canvus being painted on fittles \"You wanted me to paint a slow path back for you? Don't blame me for what you dont hear!\".</span>")
+		candle_number *= 60
+	else
+		to_chat(M, "<span class='info'>A primary chipper voice of musical notes drips \"You wish to get away from here quickly? I'll lead the way! Te Te Te. Don't blame me for what you dont see!\".</span>")
+
+	//Surely nothing bad will happen
+	var/cn_s = candle_number SECONDS
+	sleep(cn_s)
+	var/turf/source = get_turf(src)
+	if(source)
+		M.loc = source
+		to_chat(M, "<span class='info'>In a instance you find yourself back at the rune...</span>")
+	else
+		to_chat(M, "<span class='info'>The path back is no longer, as the planet no longer can find you.</span>")
 
 /******************************/
 /* SCROLL SPELLS PROCS START! */

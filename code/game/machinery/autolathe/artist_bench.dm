@@ -24,7 +24,7 @@
 	var/datum/component/inspiration/inspiration
 	var/obj/item/oddity
 
-/obj/machinery/autolathe/artist_bench/nano_ui_data()
+/obj/machinery/autolathe/artist_bench/ui_data()
 	var/list/data = list()
 
 	data["have_disk"] = have_disk
@@ -43,18 +43,10 @@
 
 	return data
 
-
-/obj/machinery/autolathe/artist_bench/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui, force_open = NANOUI_FOCUS)
-	var/list/data = nano_ui_data(user, ui_key)
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+/obj/machinery/autolathe/artist_bench/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key, "artist_bench.tmpl", "Artist's Bench UI", 600, 700)
-
-		ui.add_template("_materials", "autolathe_materials.tmpl")
-
-		ui.set_initial_data(data)
-
+		ui = new(user, src, "ArtistBench")
 		ui.open()
 
 /obj/machinery/autolathe/artist_bench/attackby(obj/item/I, mob/user)
@@ -64,30 +56,31 @@
 		return
 	. = ..()
 
-/obj/machinery/autolathe/artist_bench/Topic(href, href_list)//var/mob/living/carbon/human/H, var/mob/living/user
-	if(..())
+/obj/machinery/autolathe/artist_bench/ui_act(action, list/params)
+	. = ..()
+	if(.)
 		return
 
-	usr.set_machine(src)
-
-	if(href_list["oddity_name"])
-		if(oddity)
-			remove_oddity(usr)
-		else
-			insert_oddity(usr)
-		return TRUE
-
-	if(href_list["create_art"])
-		if(ishuman(usr))
-			var/mob/living/carbon/human/H = usr
-			var/ins_used = 0
-			if(H.stats.getPerk(PERK_ARTIST) && H.sanity.insight > 40)
-				ins_used = input("How much of your insight will you dedicate to this work? 40-[H.sanity.insight > 100 ? 100 : H.sanity.insight]","Insight Used") as null|num
+	switch(action)
+		if("oddity")
+			if(oddity)
+				remove_oddity(usr)
 			else
-				ins_used = H.sanity.insight
-			create_art(ins_used, H)
-			return TRUE
-		return FALSE
+				insert_oddity(usr)
+			. = TRUE
+
+		if("create_art")
+			if(ishuman(usr))
+				var/mob/living/carbon/human/H = usr
+				var/ins_used = 0
+				if(H.stats.getPerk(PERK_ARTIST) && H.sanity.insight > 40)
+					ins_used = input("How much of your insight will you dedicate to this work? 40-[H.sanity.insight > 100 ? 100 : H.sanity.insight]","Insight Used") as null|num
+				else
+					ins_used = H.sanity.insight
+				create_art(ins_used, H)
+				. = TRUE
+			else
+				. = FALSE
 
 /obj/machinery/autolathe/artist_bench/proc/insert_oddity(mob/living/user, obj/item/inserted_oddity) //Not sure if nessecary to name oddity this way. obj/item/oddity/inserted_oddity
 	if(oddity)

@@ -64,3 +64,35 @@ Outdoor turfs for atmos buggery.
 	icon = 'icons/turf/flooring/grass.dmi'
 	icon_state = "grass0"
 	initial_flooring = /decl/flooring/grass
+
+/*
+Shale turfs - Credit to CM-SS13!
+*/
+
+/turf/simulated/floor/fixed/shale/rock
+	name = "coarse shale"
+	icon = 'icons/turf/flooring/dirt.dmi'
+	icon_state = "shale_alt"
+	initial_flooring = /decl/flooring/shale/rock
+	layer = ABOVE_NORMAL_TURF_LAYER //ensures that the rock is above the other layers!
+	oxygen = 0
+	nitrogen = 0
+	carbon_dioxide = 850
+
+/turf/simulated/floor/fixed/shale/dark
+	name = "dark shale"
+	icon = 'icons/turf/flooring/dirt.dmi'
+	icon_state = "shale_dark"
+	initial_flooring = /decl/flooring/shale/dark
+	oxygen = 0
+	nitrogen = 0
+	carbon_dioxide = 850
+
+/turf/simulated/floor/fixed/shale/windswept
+	name = "windswept shale"
+	icon = 'icons/turf/flooring/dirt.dmi'
+	icon_state = "shale_windswept"
+	initial_flooring = /decl/flooring/shale/windswept
+	oxygen = 0
+	nitrogen = 0
+	carbon_dioxide = 850

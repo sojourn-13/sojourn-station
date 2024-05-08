@@ -23,7 +23,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/random/mob/roomba/any,
+/obj/random/mob/roomba,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "g" = (
@@ -73,7 +73,7 @@
 "o" = (
 /obj/machinery/power/terminal,
 /obj/structure/catwalk,
-/obj/random/mob/roomba/any,
+/obj/random/mob/roomba,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "p" = (
@@ -162,12 +162,12 @@
 /obj/machinery/power/terminal,
 /obj/structure/catwalk,
 /obj/random/powercell,
-/obj/random/mob/roomba/any,
+/obj/random/mob/roomba,
 /turf/simulated/floor/tiled/derelict/white_small_edges,
 /area/crawler)
 "U" = (
 /obj/item/tool_upgrade/augment/cell_mount,
-/obj/random/mob/roomba/any,
+/obj/random/mob/roomba,
 /turf/simulated/floor/tiled/derelict,
 /area/crawler)
 "Z" = (
