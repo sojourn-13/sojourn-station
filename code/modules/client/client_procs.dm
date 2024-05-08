@@ -256,6 +256,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			// log_suspicious_login("Failed Login: [key] - Spoofed byond version")
 			qdel(src)
 
+		// TODO: Remove when 515 is stable
+		if (byond_version >= 515)
+			to_chat(src, span_userdanger("WARNING: This server does not support BYOND versions above 514.1589, but you are running [byond_version].[byond_build]! This is known to cause issues such as UI windows not working!"))
+			to_chat(src, span_danger("Please downgrade to <a href=\"https://secure.byond.com/download/build/514\">BYOND 514.1589</a> or earlier."))
+
 		if (num2text(byond_build) in GLOB.blacklisted_builds)
 			log_access("Failed login: [key] - blacklisted byond version")
 			to_chat(src, span_userdanger("Your version of byond is blacklisted."))
