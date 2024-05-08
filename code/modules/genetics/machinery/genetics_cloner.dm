@@ -651,7 +651,7 @@ and which aren't.
 
 	var/cloneLog = ""
 	var/menuOption = VAT_MENU_SELECT
-
+	circuit = /obj/item/circuitboard/genetics/clone_console
 	var/obj/machinery/genetics/cloner/linked_cloner
 	var/obj/structure/reagent_dispensers/bidon/linked_bidon
 
