@@ -1,8 +1,8 @@
-import { uniq } from '../../common/collections'
-import { useBackend } from '../backend'
-import { Box, Button, Divider, Flex, NoticeBox, Section, Stack } from '../components'
-import { Window } from '../layouts'
-import { departmentData } from './common/departments'
+import { uniq } from '../../common/collections';
+import { useBackend } from '../backend';
+import { Box, Button, Divider, NoticeBox, Section, Stack } from '../components';
+import { Window } from '../layouts';
+import { departmentData } from './common/departments';
 
 type Job = {
   title: string
@@ -19,15 +19,15 @@ type Data = {
 }
 
 export const LateChoices = props => {
-  const { act, data } = useBackend<Data>()
+  const { act, data } = useBackend<Data>();
 
-  const { name, duration, evac, jobs } = data
+  const { name, duration, evac, jobs } = data;
 
   const departments = uniq(jobs.flatMap(job => job.departments)).sort(
     (a, b) =>
       Object.keys(departmentData).indexOf(a) -
       Object.keys(departmentData).indexOf(b)
-  )
+  );
 
   return (
     <Window width={400} height={640}>
@@ -47,7 +47,7 @@ export const LateChoices = props => {
           {departments.map(department => {
             let filtered_jobs = jobs.filter(
               job => job.departments.indexOf(department) !== -1
-            )
+            );
 
             return (
               <Section
@@ -64,33 +64,33 @@ export const LateChoices = props => {
                   </Button>
                 ))}
               </Section>
-            )
+            );
           })}
         </Section>
       </Window.Content>
     </Window>
-  )
-}
+  );
+};
 
 export const Evacuation = props => {
-  const { data } = props
+  const { data } = props;
 
   switch (data) {
     case 'None':
-      return <></>
+      return '';
     case 'CrewTransfer':
       return (
         <NoticeBox danger>
           The vessel is currently undergoing crew transfer procedures.
         </NoticeBox>
-      )
+      );
     case 'Emergency':
       return (
         <NoticeBox danger>
           The vessel is currently undergoing evacuation procedures.
         </NoticeBox>
-      )
+      );
     case 'Gone':
-      return <NoticeBox danger>The vessel has been evacuated.</NoticeBox>
+      return <NoticeBox danger>The vessel has been evacuated.</NoticeBox>;
   }
-}
+};

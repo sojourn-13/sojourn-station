@@ -1,8 +1,9 @@
-import { useBackend } from 'tgui/backend'
-import { Section, Table } from 'tgui/components'
-import { Window } from 'tgui/layouts'
-import { classes } from '../../common/react'
-import { departmentData } from './common/departments'
+import { useBackend } from 'tgui/backend';
+import { Section, Table } from 'tgui/components';
+import { Window } from 'tgui/layouts';
+
+import { classes } from '../../common/react';
+import { departmentData } from './common/departments';
 
 type CrewMember = {
   name: string
@@ -10,7 +11,7 @@ type CrewMember = {
   status: string
 }
 
-type CrewManifest = {
+type CrewManifestData = {
   heads: CrewMember[]
   sci: CrewMember[]
   sec: CrewMember[]
@@ -26,20 +27,20 @@ type CrewManifest = {
 }
 
 type Data = {
-  manifest: CrewManifest
+  manifest: CrewManifestData
 }
 
 export const CrewManifest = props => {
-  const { act, data } = useBackend<Data>()
+  const { act, data } = useBackend<Data>();
 
-  let { manifest } = data
+  let { manifest } = data;
 
   let sortedManifest = Object.entries(manifest).filter(([dept, crew]) => crew.length > 0).sort(([a, _a], [b, _b]) => {
     return (
       Object.keys(departmentData).indexOf(a) -
       Object.keys(departmentData).indexOf(b)
-    )
-  })
+    );
+  });
 
   return (
     <Window width={450} height={600}>
@@ -65,7 +66,7 @@ export const CrewManifest = props => {
                     <Table.Cell
                       className={classes([
                         'CrewManifest__Cell',
-                        'CrewManifest__Cell--Rank'
+                        'CrewManifest__Cell--Rank',
                       ])}
                       maxWidth='135px'
                       overflow='hidden'
@@ -88,5 +89,5 @@ export const CrewManifest = props => {
           ))}
       </Window.Content>
     </Window>
-  )
-}
+  );
+};

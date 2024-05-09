@@ -11,6 +11,6 @@ export const departmentData = {
   pro: { name: 'Prospector' },
   civ: { name: 'Civilian' },
   bot: { name: 'Silicon' },
-  ldg: { name: 'Lodge' }
-}
+  ldg: { name: 'Lodge' },
+};
   
