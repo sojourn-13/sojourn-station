@@ -1,16 +1,23 @@
 // Generates a simple HTML crew manifest for use in various places
 
-//Intended for open manifest in separate window
-/proc/show_manifest(var/mob/user, var/datum/src_object = user, nano_state = GLOB.default_state)
-	var/list/data = list()
-	data["crew_manifest"] = html_crew_manifest(TRUE)
+/datum/tgui_module/manifest
+	name = "Manifest"
+	tgui_id = "CrewManifest"
 
-	var/datum/nanoui/ui = SSnano.try_update_ui(user, src_object, "manifest", null, data, TRUE)
-	if (!ui)
-		ui = new(user, src_object, "manifest", "crew_manifest.tmpl", "Crew Manifest", 450, 600, state = nano_state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+/datum/tgui_module/manifest/ui_data(mob/user)
+	var/list/data = list()
+
+	data["manifest"] = nano_crew_manifest()
+
+	return data
+
+/datum/tgui_module/manifest/ui_state(mob/user)
+	return GLOB.always_state
+
+//Intended for open manifest in separate window
+/proc/show_manifest(mob/user)
+	var/datum/tgui_module/manifest/manifest = new()
+	manifest.ui_interact(user)
 
 /proc/html_crew_manifest(var/monochrome, var/OOC)
 	var/list/dept_data = list(
