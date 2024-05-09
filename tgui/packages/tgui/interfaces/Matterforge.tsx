@@ -13,6 +13,7 @@ import {
   Stack } from '../components';
 import { Window } from '../layouts';
 import { SearchBar } from './Fabrication/SearchBar';
+import { round } from '../../common/math';
 
 export type MaterialData = {
   mat_capacity: number
@@ -103,7 +104,7 @@ export const AutolatheItemDetails = (props: AutolatheItemProps) => {
         <Section title='Materials'>
           {design.materials.map(mat => (
             <LabeledList.Item key={mat.id} label={mat.name}>
-              {mat.req * mat_efficiency}
+              {round(mat.req * mat_efficiency, 2)}
             </LabeledList.Item>
           ))}
         </Section>
