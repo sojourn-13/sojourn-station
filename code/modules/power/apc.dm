@@ -909,6 +909,7 @@
 		"powerCellStatus" = cell ? cell.percent() : null,
 		"chargeMode" = chargemode,
 		"chargingStatus" = charging,
+		"chargingPowerDisplay" = round(lastused_charging),
 		"totalLoad" = round(lastused_total),
 		"coverLocked" = coverlocked,
 		//"remoteAccess" = (user == remote_control_user),
