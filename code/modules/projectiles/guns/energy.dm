@@ -200,14 +200,36 @@
 		return
 	..()
 
-/obj/item/gun/energy/nano_ui_data(mob/user)
+/obj/item/gun/energy/ui_data(mob/user)
 	var/list/data = ..()
-	data["charge_cost"] = charge_cost
-	var/obj/item/cell/C = get_cell()
-	if(C)
-		data["cell_charge"] = C.percent()
-		data["shots_remaining"] = round(C.charge/charge_cost)
-		data["max_shots"] = round(C.maxcharge/charge_cost)
+
+	var/list/stats = data["stats"]
+	
+	var/list/cell_stats = list()
+
+	cell_stats += list(list("name" = "Power Usage", "type" = "AnimatedNumber", "value" = charge_cost))
+
+	var/obj/item/cell/cell = get_cell()
+	if(cell)
+		cell_stats += list(list(
+			"name" = "Cell Charge",
+			"type" = "ProgressBar",
+			"value" = cell.percent(),
+			"unit" = "%",
+			"max" = 100,
+			"ranges" = list(
+				"good" = list(100, 100),
+				"average" = list(25, 100),
+				"bad" = list(0, 24.99)
+			)
+		))
+		var/shots_remaining = round(cell.charge / charge_cost)
+		cell_stats += list(list("name" = "Shots Remaining", "type" = "ProgressBar", "value" = shots_remaining, "unit" = shots_remaining == 1 ? " shot" : " shots", "max" = round(cell.maxcharge / charge_cost)))
+	else
+		cell_stats += list(list("name" = "Cell Charge", "type" = "String", "value" = "No Cell Installed"))
+
+	stats["Cell Stats"] = cell_stats
+
 	return data
 
 /obj/item/gun/energy/get_dud_projectile()
