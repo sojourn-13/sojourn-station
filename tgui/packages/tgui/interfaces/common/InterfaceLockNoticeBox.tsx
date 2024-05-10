@@ -1,5 +1,20 @@
-import { useBackend } from '../../backend';
-import { Button, Flex, NoticeBox } from '../../components';
+import { BooleanLike } from 'common/react';
+import { useBackend } from 'tgui/backend';
+import { Button, Flex, NoticeBox } from 'tgui/components';
+
+export type InterfaceLockNoticeBoxData = {
+  siliconUser: BooleanLike;
+  locked: BooleanLike;
+  preventLocking: BooleanLike;
+};
+
+export type InterfaceLockNoticeBoxProps = {
+  onLockStatusChange?: (locked: BooleanLike) => undefined;
+  accessText?: string;
+  siliconUser?: BooleanLike;
+  locked?: BooleanLike;
+  preventLocking?: BooleanLike;
+};
 
 /**
  * This component by expects the following fields to be returned
@@ -15,8 +30,8 @@ import { Button, Flex, NoticeBox } from '../../components';
  * All props can be redefined if you want custom behavior, but
  * it's preferred to stick to defaults.
  */
-export const InterfaceLockNoticeBox = (props) => {
-  const { act, data } = useBackend();
+export const InterfaceLockNoticeBox = (props: InterfaceLockNoticeBoxProps) => {
+  const { act, data } = useBackend<InterfaceLockNoticeBoxData>();
   const {
     siliconUser = data.siliconUser,
     locked = data.locked,
@@ -36,14 +51,15 @@ export const InterfaceLockNoticeBox = (props) => {
               m={0}
               color={locked ? 'red' : 'green'}
               icon={locked ? 'lock' : 'unlock'}
-              content={locked ? 'Locked' : 'Unlocked'}
               disabled={preventLocking}
               onClick={() => {
                 if (onLockStatusChange) {
                   onLockStatusChange(!locked);
                 }
               }}
-            />
+            >
+              {locked ? 'Locked' : 'Unlocked'}
+            </Button>
           </Flex.Item>
         </Flex>
       </NoticeBox>

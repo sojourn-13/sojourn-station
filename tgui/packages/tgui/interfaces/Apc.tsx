@@ -1,3 +1,5 @@
+import { BooleanLike } from 'common/react';
+
 import { useBackend } from '../backend';
 import {
   Box,
@@ -18,6 +20,36 @@ export const Apc = (props) => {
       </Window.Content>
     </Window>
   );
+};
+
+type Data = {
+  locked: BooleanLike;
+  failTime: number;
+  isOperating: BooleanLike;
+  externalPower: number;
+  powerCellStatus: number;
+  chargeMode: BooleanLike;
+  chargingStatus: number;
+  chargingPowerDisplay: number;
+  totalLoad: number;
+  coverLocked: BooleanLike;
+  siliconUser: BooleanLike;
+  powerChannels: {
+    title: string;
+    powerLoad: number;
+    status: number;
+    topicParams: {
+      auto: { [key: string]: number };
+      on: { [key: string]: number };
+      off: { [key: string]: number };
+    };
+  }[];
+  // Unused, currently
+  malfStatus: number;
+  remoteAccess: BooleanLike;
+  emergencyLights: BooleanLike;
+  nightshiftLights: BooleanLike;
+  disable_nightshift_toggle: BooleanLike;
 };
 
 const powerStatusMap = {
@@ -62,7 +94,7 @@ const malfMap = {
 };
 
 const ApcContent = (props) => {
-  const { act, data } = useBackend();
+  const { act, data } = useBackend<Data>();
   const locked = data.locked && !data.siliconUser;
   const externalPowerStatus =
     powerStatusMap[data.externalPower] || powerStatusMap[0];
@@ -85,11 +117,12 @@ const ApcContent = (props) => {
         <br />
         <Button
           icon="sync"
-          content="Reboot Now"
           tooltip="Force an interface reset."
           tooltipPosition="bottom"
           onClick={() => act('reboot')}
-        />
+        >
+          Reboot Now
+        </Button>
       </NoticeBox>
     );
   }
@@ -107,11 +140,12 @@ const ApcContent = (props) => {
             buttons={
               <Button
                 icon={data.isOperating ? 'power-off' : 'times'}
-                content={data.isOperating ? 'On' : 'Off'}
                 selected={data.isOperating && !locked}
                 disabled={locked}
                 onClick={() => act('breaker')}
-              />
+              >
+                {data.isOperating ? 'On' : 'Off'}
+              </Button>
             }
           >
             [ {externalPowerStatus.externalPowerText} ]
@@ -125,10 +159,11 @@ const ApcContent = (props) => {
             buttons={
               <Button
                 icon={data.chargeMode ? 'sync' : 'times'}
-                content={data.chargeMode ? 'Auto' : 'Off'}
                 disabled={locked}
                 onClick={() => act('charge')}
-              />
+              >
+                {data.chargeMode ? 'Auto' : 'Off'}
+              </Button>
             }
           >
             [{' '}
@@ -157,28 +192,31 @@ const ApcContent = (props) => {
                     </Box>
                     <Button
                       icon="sync"
-                      content="Auto"
                       selected={
                         !locked &&
                         (channel.status === 1 || channel.status === 3)
                       }
                       disabled={locked}
                       onClick={() => act('channel', topicParams.auto)}
-                    />
+                    >
+                      Auto
+                    </Button>
                     <Button
                       icon="power-off"
-                      content="On"
                       selected={!locked && channel.status === 2}
                       disabled={locked}
                       onClick={() => act('channel', topicParams.on)}
-                    />
+                    >
+                      On
+                    </Button>
                     <Button
                       icon="times"
-                      content="Off"
                       selected={!locked && channel.status === 0}
                       disabled={locked}
                       onClick={() => act('channel', topicParams.off)}
-                    />
+                    >
+                      Off
+                    </Button>
                   </>
                 }
               >
@@ -199,16 +237,15 @@ const ApcContent = (props) => {
               {!!data.malfStatus && (
                 <Button
                   icon={malfStatus.icon}
-                  content={malfStatus.content}
                   color="bad"
                   onClick={() => act(malfStatus.action)}
-                />
+                >
+                  {malfStatus.content}
+                </Button>
               )}
-              <Button
-                icon="lightbulb-o"
-                content="Overload"
-                onClick={() => act('overload')}
-              />
+              <Button icon="lightbulb-o" onClick={() => act('overload')}>
+                Overload
+              </Button>
             </>
           )
         }
@@ -220,10 +257,11 @@ const ApcContent = (props) => {
               <Button
                 tooltip="APC cover can be pried open with a crowbar."
                 icon={data.coverLocked ? 'lock' : 'unlock'}
-                content={data.coverLocked ? 'Engaged' : 'Disengaged'}
                 disabled={locked}
                 onClick={() => act('cover')}
-              />
+              >
+                {data.coverLocked ? 'Engaged' : 'Disengaged'}
+              </Button>
             }
           />
           <LabeledList.Item
@@ -232,10 +270,11 @@ const ApcContent = (props) => {
               <Button
                 tooltip="Lights use internal power cell when there is no power available."
                 icon="lightbulb-o"
-                content={data.emergencyLights ? 'Enabled' : 'Disabled'}
                 disabled={locked}
                 onClick={() => act('emergency_lighting')}
-              />
+              >
+                {data.emergencyLights ? 'Enabled' : 'Disabled'}
+              </Button>
             }
           />
           <LabeledList.Item
@@ -244,10 +283,11 @@ const ApcContent = (props) => {
               <Button
                 tooltip="Dim lights to reduce power consumption."
                 icon="lightbulb-o"
-                content={data.nightshiftLights ? 'Enabled' : 'Disabled'}
                 disabled={data.disable_nightshift_toggle}
                 onClick={() => act('toggle_nightshift')}
-              />
+              >
+                {data.nightshiftLights ? 'Enabled' : 'Disabled'}
+              </Button>
             }
           />
         </LabeledList>
