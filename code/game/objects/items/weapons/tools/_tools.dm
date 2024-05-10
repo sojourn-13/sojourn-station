@@ -1037,7 +1037,7 @@
 				//Toolception!
 				if(use_tool(user, T, 60, QUALITY_ADHESIVE, FAILCHANCE_EASY, STAT_MEC))
 					var/tool_repair = T.max_health * 0.8 + (user.stats.getStat(STAT_MEC)/2)/100
-					var/perma_health_loss = (tool_repair *= 0.02) //2%
+					var/perma_health_loss = (tool_repair * 0.5) //50%
 					T.max_health -= perma_health_loss
 					T.adjustToolHealth(tool_repair, user)
 					if(user.stats.getStat(STAT_MEC) > STAT_LEVEL_BASIC/2)
