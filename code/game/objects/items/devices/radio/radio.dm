@@ -761,38 +761,6 @@ var/global/list/default_medbay_channels = list(
 
 	return
 
-/obj/item/device/radio/borg/Topic(href, href_list)
-	if(..())
-		return 1
-	if (href_list["mode"])
-		var/enable_subspace_transmission = text2num(href_list["mode"])
-		if(enable_subspace_transmission != subspace_transmission)
-			subspace_transmission = !subspace_transmission
-			if(subspace_transmission)
-				to_chat(usr, SPAN_NOTICE("Subspace Transmission is enabled"))
-			else
-				to_chat(usr, SPAN_NOTICE("Subspace Transmission is disabled"))
-
-			if(subspace_transmission == 0)//Simple as fuck, clears the channel list to prevent talking/listening over them if subspace transmission is disabled
-				channels = list()
-			else
-				recalculateChannels()
-		. = 1
-	if (href_list["shutup"]) // Toggle loudspeaker mode, AKA everyone around you hearing your radio.
-		var/do_shut_up = text2num(href_list["shutup"])
-		if(do_shut_up != shut_up)
-			shut_up = !shut_up
-			if(shut_up)
-				canhear_range = 0
-				to_chat(usr, SPAN_NOTICE("Loadspeaker disabled."))
-			else
-				canhear_range = 3
-				to_chat(usr, SPAN_NOTICE("Loadspeaker enabled."))
-		. = 1
-
-	if(.)
-		SSnano.update_uis(src)
-
 /obj/item/device/radio/borg/interact(mob/user as mob)
 	if(!on)
 		return
