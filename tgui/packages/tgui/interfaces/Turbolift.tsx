@@ -1,7 +1,8 @@
-import { useBackend } from 'tgui/backend'
-import { Button, Flex, Section } from 'tgui/components'
-import { Window } from 'tgui/layouts'
-import { BooleanLike } from '../../common/react'
+import { useBackend } from 'tgui/backend';
+import { Button, Flex, Section } from 'tgui/components';
+import { Window } from 'tgui/layouts';
+
+import { BooleanLike } from '../../common/react';
 
 type Floor = {
   id: number
@@ -20,9 +21,9 @@ type Data = {
 }
 
 export const Turbolift = props => {
-  const { act, data } = useBackend<Data>()
+  const { act, data } = useBackend<Data>();
 
-  const { floors, doors_open, fire_mode } = data
+  const { floors, doors_open, fire_mode } = data;
 
   return (
     <Window width={480} height={260 + (fire_mode ? 1 : 0) * 25}>
@@ -94,5 +95,5 @@ export const Turbolift = props => {
         </Section>
       </Window.Content>
     </Window>
-  )
-}
+  );
+};

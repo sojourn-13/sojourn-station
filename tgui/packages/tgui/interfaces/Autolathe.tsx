@@ -1,24 +1,24 @@
-import { BooleanLike } from '../../common/react'
-import { decodeHtmlEntities } from '../../common/string'
-import { useBackend, useSharedState } from '../backend'
+import { BooleanLike } from '../../common/react';
+import { decodeHtmlEntities } from '../../common/string';
+import { useBackend, useSharedState } from '../backend';
 import {
   Box,
   Button,
   LabeledList,
   Section,
   Stack,
-  VirtualList
-} from '../components'
-import { Window } from '../layouts'
-import { SearchBar } from './Fabrication/SearchBar'
+  VirtualList,
+} from '../components';
+import { Window } from '../layouts';
+import { SearchBar } from './Fabrication/SearchBar';
 import {
   AutolatheItem,
   AutolatheQueue,
   AutolatheQueueData,
   Design,
   LoadedMaterials,
-  MaterialData
-} from './Matterforge'
+  MaterialData,
+} from './Matterforge';
 
 export type ReagentData = {
   container: BooleanLike
@@ -26,9 +26,9 @@ export type ReagentData = {
 }
 
 export const Reagents = (props: ReagentData) => {
-  const { act } = useBackend()
+  const { act } = useBackend();
 
-  const { container, reagents } = props
+  const { container, reagents } = props;
 
   return (
     <Section
@@ -60,8 +60,8 @@ export const Reagents = (props: ReagentData) => {
         'Not inserted.'
       )}
     </Section>
-  )
-}
+  );
+};
 
 export type DiskData = {
   disk: {
@@ -72,9 +72,9 @@ export type DiskData = {
 }
 
 export const Disk = (props: DiskData) => {
-  const { act } = useBackend()
+  const { act } = useBackend();
 
-  const { disk } = props
+  const { disk } = props;
 
   return (
     <Section>
@@ -88,7 +88,7 @@ export const Disk = (props: DiskData) => {
                 icon='eject'
                 tooltip='Eject Disk'
                 onClick={() => {
-                  act('eject_disk')
+                  act('eject_disk');
                 }}
               />
             ) : null
@@ -103,8 +103,8 @@ export const Disk = (props: DiskData) => {
         ) : null}
       </LabeledList>
     </Section>
-  )
-}
+  );
+};
 
 type Data = MaterialData &
   ReagentData &
@@ -126,7 +126,7 @@ type Data = MaterialData &
   }
 
 export const Autolathe = props => {
-  const { act, data } = useBackend<Data>()
+  const { act, data } = useBackend<Data>();
 
   const {
     have_design_selector,
@@ -148,10 +148,10 @@ export const Autolathe = props => {
     special_actions,
     categories,
     show_category,
-    mat_efficiency
-  } = data
+    mat_efficiency,
+  } = data;
 
-  const [searchText, setSearchText] = useSharedState('search_text', '')
+  const [searchText, setSearchText] = useSharedState('search_text', '');
 
   return (
     <Window width={720} height={700}>
@@ -188,7 +188,7 @@ export const Autolathe = props => {
                       <Button
                         icon={action.icon}
                         onClick={() => {
-                          act('special_action', { action: action.action })
+                          act('special_action', { action: action.action });
                         }}
                       >
                         {action.name}
@@ -235,7 +235,7 @@ export const Autolathe = props => {
                       <Section
                         style={{
                           paddingRight: '4px',
-                          paddingBottom: '30px'
+                          paddingBottom: '30px',
                         }}
                         fill
                         scrollable
@@ -257,7 +257,7 @@ export const Autolathe = props => {
                                           mat_efficiency={mat_efficiency}
                                         />
                                       </Stack.Item>
-                                    )
+                                    );
                                   })
                               : designs.map(design => {
                                   return (
@@ -267,7 +267,7 @@ export const Autolathe = props => {
                                         mat_efficiency={mat_efficiency}
                                       />
                                     </Stack.Item>
-                                  )
+                                  );
                                 })}
                           </VirtualList>
                         </Stack>
@@ -298,5 +298,5 @@ export const Autolathe = props => {
         </Stack>
       </Window.Content>
     </Window>
-  )
-}
+  );
+};

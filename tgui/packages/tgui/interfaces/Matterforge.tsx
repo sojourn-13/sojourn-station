@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-import { round } from '../../common/math'
-import { BooleanLike } from '../../common/react'
-import { toTitleCase } from '../../common/string'
-import { useBackend, useSharedState } from '../backend'
+import { round } from '../../common/math';
+import { BooleanLike } from '../../common/react';
+import { toTitleCase } from '../../common/string';
+import { useBackend, useSharedState } from '../backend';
 import {
   Box,
   Button,
@@ -12,10 +12,10 @@ import {
   ProgressBar,
   Section,
   Stack,
-  VirtualList
-} from '../components'
-import { Window } from '../layouts'
-import { SearchBar } from './Fabrication/SearchBar'
+  VirtualList,
+} from '../components';
+import { Window } from '../layouts';
+import { SearchBar } from './Fabrication/SearchBar';
 
 export type MaterialData = {
   mat_capacity: number
@@ -28,9 +28,9 @@ export type MaterialData = {
 }
 
 export const LoadedMaterials = (props: MaterialData) => {
-  const { act, data } = useBackend<MaterialData>()
+  const { act, data } = useBackend<MaterialData>();
 
-  const { materials, mat_capacity } = props
+  const { materials, mat_capacity } = props;
 
   return (
     <Section
@@ -61,13 +61,13 @@ export const LoadedMaterials = (props: MaterialData) => {
               >
                 {material.amount} / {mat_capacity}
               </LabeledList.Item>
-            )
+            );
           })}
         </LabeledList>
       )) || <Box>None loaded.</Box>}
     </Section>
-  )
-}
+  );
+};
 
 export type Design = {
   id: string
@@ -98,7 +98,7 @@ export type AutolatheItemProps = {
 }
 
 export const AutolatheItemDetails = (props: AutolatheItemProps) => {
-  const { design, mat_efficiency } = props
+  const { design, mat_efficiency } = props;
 
   return (
     <>
@@ -131,14 +131,14 @@ export const AutolatheItemDetails = (props: AutolatheItemProps) => {
         </LabeledList>
       </Section>
     </>
-  )
-}
+  );
+};
 
 export const AutolatheItem = (props: AutolatheItemProps) => {
-  const { act } = useBackend()
-  const { design, mat_efficiency } = props
+  const { act } = useBackend();
+  const { design, mat_efficiency } = props;
 
-  const [showDetails, setShowDetails] = useState(false)
+  const [showDetails, setShowDetails] = useState(false);
 
   return (
     <Box style={{ borderBottom: '2px solid #444', padding: '4px' }}>
@@ -155,7 +155,7 @@ export const AutolatheItem = (props: AutolatheItemProps) => {
                   objectFit: 'cover',
                   margin: '4px',
                   backgroundColor: 'black',
-                  border: '1px solid #3e6189'
+                  border: '1px solid #3e6189',
                 }}
               />
             </Stack.Item>
@@ -168,8 +168,8 @@ export const AutolatheItem = (props: AutolatheItemProps) => {
                   act('add_to_queue', {
                     id: design.id,
                     filename: design.filename,
-                    several: false
-                  })
+                    several: false,
+                  });
                 }}
               />
             </Stack.Item>
@@ -181,8 +181,8 @@ export const AutolatheItem = (props: AutolatheItemProps) => {
                   act('add_to_queue', {
                     id: design.id,
                     filename: design.filename,
-                    several: true
-                  })
+                    several: true,
+                  });
                 }}
               />
             </Stack.Item>
@@ -205,8 +205,8 @@ export const AutolatheItem = (props: AutolatheItemProps) => {
         )}
       </Stack>
     </Box>
-  )
-}
+  );
+};
 
 export type AutolatheQueueData = {
   error: string
@@ -222,9 +222,9 @@ export type AutolatheQueueData = {
 }
 
 export const AutolatheQueue = (props: AutolatheQueueData) => {
-  const { act } = useBackend<Data>()
+  const { act } = useBackend<Data>();
   const { error, current, progress, queue, queue_max, paused, mat_efficiency } =
-    props
+    props;
 
   return (
     <Stack vertical height='100%'>
@@ -244,7 +244,7 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                         objectFit: 'cover',
                         margin: '4px',
                         backgroundColor: 'black',
-                        border: '1px solid #3e6189'
+                        border: '1px solid #3e6189',
                       }}
                     />
                   </Stack.Item>
@@ -267,13 +267,13 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                     <Button
                       icon={paused ? 'play' : 'pause'}
                       onClick={() => {
-                        act('pause')
+                        act('pause');
                       }}
                     />
                     <Button
                       icon='times'
                       onClick={() => {
-                        act('abort_print')
+                        act('abort_print');
                       }}
                     />
                   </Stack.Item>
@@ -306,7 +306,7 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                   icon='times'
                   tooltip='Clear Queue'
                   onClick={() => {
-                    act('clear_queue')
+                    act('clear_queue');
                   }}
                 />
               </Stack.Item>
@@ -329,7 +329,7 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                       <Button
                         icon='arrow-up'
                         onClick={() => {
-                          act('move_up_queue', { index: item.ind })
+                          act('move_up_queue', { index: item.ind });
                         }}
                       />
                     </Stack.Item>
@@ -339,7 +339,7 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                       <Button
                         icon='arrow-down'
                         onClick={() => {
-                          act('move_down_queue', { index: item.ind })
+                          act('move_down_queue', { index: item.ind });
                         }}
                       />
                     </Stack.Item>
@@ -348,7 +348,7 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                     <Button
                       icon='times'
                       onClick={() => {
-                        act('remove_from_queue', { index: item.ind })
+                        act('remove_from_queue', { index: item.ind });
                       }}
                     />
                   </Stack.Item>
@@ -362,7 +362,7 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                         objectFit: 'cover',
                         margin: '4px',
                         backgroundColor: 'black',
-                        border: '1px solid #3e6189'
+                        border: '1px solid #3e6189',
                       }}
                     />
                   </Stack.Item>
@@ -373,8 +373,8 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
         </Section>
       </Stack.Item>
     </Stack>
-  )
-}
+  );
+};
 
 type Data = MaterialData &
   AutolatheQueueData & {
@@ -386,16 +386,16 @@ type Data = MaterialData &
 
 const errorToColor = (error: number) => {
   if (error >= 2) {
-    return 'bad'
+    return 'bad';
   } else if (error === 1) {
-    return 'average'
+    return 'average';
   } else {
-    return 'good'
+    return 'good';
   }
-}
+};
 
 export const Matterforge = props => {
-  const { act, data } = useBackend<Data>()
+  const { act, data } = useBackend<Data>();
   const {
     error,
     designs,
@@ -404,10 +404,10 @@ export const Matterforge = props => {
     queue,
     queue_max,
     paused,
-    mat_efficiency
-  } = data
+    mat_efficiency,
+  } = data;
 
-  const [searchText, setSearchText] = useSharedState('search_text', '')
+  const [searchText, setSearchText] = useSharedState('search_text', '');
 
   return (
     <Window width={720} height={700}>
@@ -446,7 +446,7 @@ export const Matterforge = props => {
                                   mat_efficiency={mat_efficiency}
                                 />
                               </Stack.Item>
-                            )
+                            );
                           })
                       : designs.map(design => {
                           return (
@@ -456,7 +456,7 @@ export const Matterforge = props => {
                                 mat_efficiency={mat_efficiency}
                               />
                             </Stack.Item>
-                          )
+                          );
                         })}
                   </VirtualList>
                 </Stack>
@@ -477,5 +477,5 @@ export const Matterforge = props => {
         </Stack>
       </Window.Content>
     </Window>
-  )
-}
+  );
+};
