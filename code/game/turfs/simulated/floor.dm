@@ -49,11 +49,11 @@
 	return INITIALIZE_HINT_LATELOAD
 
 //Floors no longer update their icon in New, but instead update it here, after everything else is setup
-/turf/simulated/floor/LateInitialize(var/list/mapload_arg)
+/turf/simulated/floor/LateInitialize(mapload)
 	..()
 	//At roundstart, we call update icon with update_neighbors set to false.
 	//So each floor tile will only work once
-	if (mapload_arg)
+	if(mapload)
 		update_icon(FALSE)
 	else
 		//If its not roundstart, then we call update icon with update_neighbors set to true.
