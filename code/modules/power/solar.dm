@@ -620,19 +620,15 @@
 	if(.)
 		return
 	if(action == "azimuth")
-		var/adjust = text2num(params["adjust"])
 		var/value = text2num(params["value"])
-		if(adjust)
-			value = cdir + adjust
 		if(value != null)
-			set_panels(value)
+			cdir = dd_range(0, 359, value)
+			targetdir = cdir
+			set_panels(cdir)
 			return TRUE
 		return FALSE
 	if(action == "azimuth_rate")
-		var/adjust = text2num(params["adjust"])
 		var/value = text2num(params["value"])
-		if(adjust)
-			value = trackrate + adjust
 		if(value != null)
 			trackrate = round(clamp(value, -2 * SSsun.rate, 2 * SSsun.rate), 0.01)
 			return TRUE
