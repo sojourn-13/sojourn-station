@@ -111,6 +111,18 @@
 		ui = new(user, src, "Autolathe", name)
 		ui.open()
 
+/obj/machinery/autolathe/ui_static_data(mob/user)
+	var/list/data = list()
+
+	var/list/L = list()
+	for(var/d in design_list())
+		var/datum/computer_file/binary/design/design_file = d
+		if(!show_category || design_file.design.category == show_category)
+			L.Add(list(design_file.nano_ui_data()))
+	data["designs"] = L
+
+	return data
+
 /obj/machinery/autolathe/ui_data(mob/user)
 	var/list/data = list()
 
@@ -145,13 +157,6 @@
 	data["special_actions"] = special_actions
 
 	data |= materials_data()
-
-	var/list/L = list()
-	for(var/d in design_list())
-		var/datum/computer_file/binary/design/design_file = d
-		if(!show_category || design_file.design.category == show_category)
-			L.Add(list(design_file.nano_ui_data()))
-	data["designs"] = L
 
 
 	if(current_file)
@@ -332,7 +337,7 @@
 
 				if(params["several"])
 					amount = input("How many \"[design_file.design.name]\" you want to print ?", "Print several") as null|num
-					if(!CanUseTopic(usr) || !(design_file in design_list()))
+					if(!CanUseTopic(usr) || !(design_file in design_list()) || amount == null)
 						return FALSE
 
 				queue_design(design_file, amount)
@@ -385,7 +390,7 @@
 	inserted_disk.forceMove(src)
 	disk = inserted_disk
 	to_chat(user, SPAN_NOTICE("You insert \the [inserted_disk] into [src]."))
-	SStgui.update_uis(src)
+	update_static_data_for_all_viewers()
 
 
 /obj/machinery/autolathe/proc/insert_beaker(mob/living/user, obj/item/reagent_containers/glass/beaker)
@@ -453,6 +458,7 @@
 	//Now they will graciously allow you to eject the disk
 	disk.forceMove(drop_location())
 	to_chat(usr, SPAN_NOTICE("You remove \the [disk] from \the [src]."))
+	update_static_data_for_all_viewers()
 
 	if(istype(user) && Adjacent(user))
 		user.put_in_active_hand(disk)
