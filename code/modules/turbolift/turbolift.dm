@@ -69,7 +69,7 @@
 		if(floor.ext_panel)
 			floor.ext_panel.reset()
 	queued_stops.Cut()
-	control_panel_interior.updateDialog()
+	SStgui.update_uis(control_panel_interior)
 
 // Update the icons of all exterior panels (after we change modes etc)
 /datum/turbolift/proc/update_ext_panel_icons()
@@ -110,7 +110,7 @@
 			moving_upwards = 1
 		else
 			moving_upwards = 0
-		control_panel_interior.updateDialog()
+		SStgui.update_uis(control_panel_interior)
 
 	if(doors_are_open())
 		if(!doors_closing)
