@@ -1040,7 +1040,7 @@
 					//If a tool is REALLY damaged, they take more max hp damage, this helps encurages use tape and repairs
 					//Otherwise small repairing isnt punished
 					//Repairing a tool will **always** do to how this math works out be at full hp.
-					var/tool_repair = T.max_health * 0.8 + (user.stats.getStat(STAT_MEC))/200
+					var/tool_repair = T.max_health * (0.8 + (user.stats.getStat(STAT_MEC))/200)
 					var/damage_to_repair = T.max_health - T.health
 					tool_repair = min(tool_repair, damage_to_repair)
 					var/perma_health_loss = tool_repair * 0.50 //50%
