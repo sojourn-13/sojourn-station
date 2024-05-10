@@ -1036,8 +1036,15 @@
 				user.visible_message(SPAN_NOTICE("[user] begins repairing \the [O] with the [src]!"))
 				//Toolception!
 				if(use_tool(user, T, 60, QUALITY_ADHESIVE, FAILCHANCE_EASY, STAT_MEC))
-					var/tool_repair = T.max_health * 0.8 + (user.stats.getStat(STAT_MEC)/2)/100
-					var/perma_health_loss = (tool_repair * 0.5) //50%
+					//Little notes about how this works
+					//If a tool is REALLY damaged, they take more max hp damage, this helps encurages use tape and repairs
+					//Otherwise small repairing isnt punished
+					//Repairing a tool will **always** do to how this math works out be at full hp.
+					var/tool_repair = T.max_health * 0.8 + (user.stats.getStat(STAT_MEC))/200
+					var/damage_to_repair = T.max_health - T.health
+					tool_repair = min(tool_repair, damage_to_repair)
+					var/perma_health_loss = tool_repair * 0.50 //50%
+
 					T.max_health -= perma_health_loss
 					T.adjustToolHealth(tool_repair, user)
 					if(user.stats.getStat(STAT_MEC) > STAT_LEVEL_BASIC/2)
