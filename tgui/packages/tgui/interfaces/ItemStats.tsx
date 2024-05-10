@@ -1,4 +1,4 @@
-import { useBackend } from 'tgui/backend'
+import { useBackend } from 'tgui/backend';
 import {
   AnimatedNumber,
   Box,
@@ -9,10 +9,9 @@ import {
   NoticeBox,
   ProgressBar,
   Section,
-  Stack
-} from 'tgui/components'
-import { Window } from 'tgui/layouts'
-import { BooleanLike } from '../../common/react'
+  Stack,
+} from 'tgui/components';
+import { Window } from 'tgui/layouts';
 
 enum StatType {
   AnimatedNumber = 'AnimatedNumber',
@@ -60,9 +59,9 @@ type Data = {
   WeaponData
 
 export const ItemStats = props => {
-  const { act, data } = useBackend<Data>()
+  const { act, data } = useBackend<Data>();
 
-  const { stats, attachments, max_upgrades, firemodes } = data
+  const { stats, attachments, max_upgrades, firemodes } = data;
 
   return (
     <Window width={650} height={550}>
@@ -71,7 +70,7 @@ export const ItemStats = props => {
         {Object.entries(stats)
           .filter(([_title, data]) => Array.isArray(data) && data.length !== 0)
           .map(([title, data]) => (
-            <Section title={title}>
+            <Section title={title} key={title}>
               <LabeledList>
                 {data.map(stats => (
                   <StatDisplay key={stats.name} stats={stats} />
@@ -84,21 +83,21 @@ export const ItemStats = props => {
         )}
       </Window.Content>
     </Window>
-  )
-}
+  );
+};
 
 export const StatDisplay = (props: { stats: StatsData }) => {
-  const { stats } = props
+  const { stats } = props;
 
-  const { type, name, value, unit } = stats
+  const { type, name, value, unit } = stats;
 
-  let innerElement
+  let innerElement;
 
   switch (type) {
     case StatType.AnimatedNumber:
       if (typeof value !== 'number') {
-        innerElement = <NoticeBox danger>Invalid Data</NoticeBox>
-        break
+        innerElement = <NoticeBox danger>Invalid Data</NoticeBox>;
+        break;
       }
 
       innerElement = (
@@ -106,21 +105,21 @@ export const StatDisplay = (props: { stats: StatsData }) => {
           <AnimatedNumber value={value} />
           {unit}
         </Box>
-      )
-      break
-    case StatType.ProgressBar:
-      const { min, max, ranges, color } = stats
+      );
+      break;
+    case StatType.ProgressBar: {
+      const { min, max, ranges, color } = stats;
 
-      if (max === undefined) {
-        innerElement = <NoticeBox danger>Invalid Data</NoticeBox>
-        break
+      if (max === undefined || typeof value !== 'number') {
+        innerElement = <NoticeBox danger>Invalid Data</NoticeBox>;
+        break;
       }
 
-      let finalContent
+      let finalContent;
       if (unit) {
-        finalContent = value + '' + unit
+        finalContent = value + '' + unit;
       } else {
-        finalContent = value + ' / ' + max
+        finalContent = value + ' / ' + max;
       }
 
       innerElement = (
@@ -133,26 +132,27 @@ export const StatDisplay = (props: { stats: StatsData }) => {
         >
           {finalContent}
         </ProgressBar>
-      )
+      );
 
-      break
+      break;
+    }
     case StatType.String:
-      innerElement = value
-      break
+      innerElement = value;
+      break;
   }
 
-  return <LabeledList.Item label={name}>{innerElement}</LabeledList.Item>
-}
+  return <LabeledList.Item label={name}>{innerElement}</LabeledList.Item>;
+};
 
 export const Attachments = (props: ToolData) => {
-  const { attachments, max_upgrades } = props
+  const { attachments, max_upgrades } = props;
 
   if (attachments === undefined) {
     return (
       <Section title='Attachments'>
         <NoticeBox danger>Attachment Data Invalid</NoticeBox>
       </Section>
-    )
+    );
   }
 
   return (
@@ -176,16 +176,16 @@ export const Attachments = (props: ToolData) => {
         ))}
       </Stack>
     </Section>
-  )
-}
+  );
+};
 
 export const Firemodes = (props: { firemodes: FiremodesData }) => {
-  const { act } = useBackend()
+  const { act } = useBackend();
 
-  const { firemodes } = props
+  const { firemodes } = props;
 
   if (firemodes.modes.length === 0) {
-    return undefined
+    return undefined;
   }
 
   return (
@@ -197,7 +197,7 @@ export const Firemodes = (props: { firemodes: FiremodesData }) => {
             title={mode.name}
             buttons={
               <Button
-                selected={mode.index == firemodes.sel_mode}
+                selected={mode.index === firemodes.sel_mode}
                 onClick={() => act('firemode', { index: mode.index })}
               >
                 Select
@@ -233,5 +233,5 @@ export const Firemodes = (props: { firemodes: FiremodesData }) => {
         </Box>
       ))}
     </Section>
-  )
-}
+  );
+};
