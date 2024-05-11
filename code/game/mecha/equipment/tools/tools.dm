@@ -28,7 +28,8 @@
 	icon_state = "mecha_clamp"
 	equip_cooldown = 15
 	energy_drain = 10
-	var/dam_force = 20
+	tool_qualities = list(QUALITY_CLAMPING = 5,  QUALITY_HAMMERING = 30, QUALITY_PRYING = 30, QUALITY_BOLT_TURNING = 20, QUALITY_EXCAVATION = 20, QUALITY_SHOVELING = 15) // This is a literal industrial clamp
+	force = 20
 	var/obj/mecha/working/ripley/cargo_holder
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
@@ -37,49 +38,58 @@
 		cargo_holder = M
 		return
 
-	attack_object(obj/T, mob/living/user) //attack_object override for all of the clamp's fancy interactions
-		if(!action_checks(target)) return
+	action(atom/A, mob/living/user) // fancy non attackby interactions
+		if(!action_checks(A)) return
 		if(!cargo_holder) return
 
 		//loading
-		if(T.buckled_mob)
-			return
-		if(locate(/mob/living) in T)
-			occupant_message(SPAN_WARNING("You can't load living things into the cargo compartment."))
-			return
-		if(istype(T, /obj/structure/scrap))
-			occupant_message(SPAN_NOTICE("\The [chassis] begins compressing \the [O] with \the [src]."))
+		if(isobj(A))
+			var/obj/T = A
+			if(T.buckled_mob)
+				return
+			if(locate(/mob/living) in T)
+				occupant_message(SPAN_WARNING("You can't load living things into the cargo compartment."))
+				return
+			if(istype(T, /obj/structure/scrap))
+				occupant_message(SPAN_NOTICE("\The [chassis] begins compressing \the [T] with \the [src]."))
+				if(do_after_cooldown(T))
+					if(istype(T, /obj/structure/scrap))
+						var/obj/structure/scrap/S = T
+						S.make_cube()
+						occupant_message(SPAN_NOTICE("\The [chassis] compresses \the [T] into a cube with \the [src]."))
+				return
+
+
+
+			if(T.anchored && !istype(T, /obj/structure/salvageable))
+				attack_object(T, user)
+			if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
+				occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
+				return
+
+			occupant_message("You lift [T] and start to load it into cargo compartment.")
+			playsound(src,'sound/mecha/hydraulic.ogg',100,1)
+			chassis.visible_message("[chassis] lifts [T] and starts to load it into cargo compartment.")
+			set_ready_state(0)
+			chassis.use_power(energy_drain)
+			T.anchored = 1
+			var/L = chassis.loc
 			if(do_after_cooldown(T))
-				if(istype(T, /obj/structure/scrap))
-					var/obj/structure/scrap/S = T
-					S.make_cube()
-					occupant_message(SPAN_NOTICE("\The [chassis] compresses \the [O] into a cube with \the [src]."))
-			return
-		if(T.anchored && !istype(T, /obj/structure/salvageable))
-			occupant_message(SPAN_WARNING("[T] is firmly secured."))
-			return
-		if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
-			occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
-			return
+				if(L == chassis.loc && src == chassis.selected)
+					cargo_holder.cargo += T
+					T.loc = chassis
+					T.anchored = 0
+					occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
+					log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
+					return
+				else
+					occupant_message(SPAN_WARNING("You must hold still while handling objects."))
+					T.anchored = initial(T.anchored)
+					return
 
-		occupant_message("You lift [T] and start to load it into cargo compartment.")
-		playsound(src,'sound/mecha/hydraulic.ogg',100,1)
-		chassis.visible_message("[chassis] lifts [T] and starts to load it into cargo compartment.")
-		set_ready_state(0)
-		chassis.use_power(energy_drain)
-		T.anchored = 1
-		var/L = chassis.loc
-		if(do_after_cooldown(T))
-			if(L == chassis.loc && src == chassis.selected)
-				cargo_holder.cargo += T
-				T.loc = chassis
-				T.anchored = 0
-				occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
-				log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
-			else
-				occupant_message(SPAN_WARNING("You must hold still while handling objects."))
-				T.anchored = initial(T.anchored)
+		attack_object(A, user) // If none of these has come to pass, we do normal item interactions
 
+	attack_object(obj/T, mob/living/user) // attack_object override for the clamp after action()
 		return ..()
 
 
@@ -87,58 +97,28 @@
 	name = "drill"
 	desc = "This is the drill that'll pierce the heavens! (Can be attached to: Combat and Engineering Exosuits)"
 	icon_state = "mecha_drill"
-	equip_cooldown = 30
+	equip_cooldown = 15
 	energy_drain = 10
 	price_tag = 150
+	force = 30
+	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
+	tool_qualities = list(QUALITY_DIGGING = 60) // Duh
 	force = WEAPON_FORCE_DANGEROUS
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
-	action(atom/target)
-		if(!action_checks(target)) return
-		if(isobj(target))
-			var/obj/target_obj = target
-			if(!target_obj.vars.Find("unacidable") || target_obj.unacidable)	return
-		set_ready_state(0)
-		chassis.use_power(energy_drain)
-		chassis.visible_message(SPAN_DANGER("\The [chassis] starts to drill \the [target]"), SPAN_WARNING("You hear a large drill."))
-		occupant_message(SPAN_DANGER("You start to drill \the [target]"))
-		playsound(src,'sound/mecha/mechdrill.ogg',40,1)
-		var/T = chassis.loc
-		var/C = target.loc	//why are these backwards? we may never know -Pete
-		if(do_after_cooldown(target))
-			if(T == chassis.loc && src == chassis.selected)
-				if(istype(target, /turf/simulated/wall))
-					var/turf/simulated/wall/W = target
-					if(W.reinf_material)
-						occupant_message(SPAN_WARNING("\The [target] is too durable to drill through."))
-					else
-						log_message("Drilled through \the [target]")
-						target.ex_act(2)
-				else if(istype(target, /turf/simulated/mineral))
-					for(var/turf/simulated/mineral/M in trange(1, chassis))
-						if(get_dir(chassis,M)&chassis.dir)
-							M.GetDrilled()
-					log_message("Drilled through \the [target]")
-					if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment)
-						var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
-						if(ore_box)
-							for(var/obj/item/stack/ore/ore in range(chassis,1))
-								if(get_dir(chassis,ore)&chassis.dir)
-									ore.Move(ore_box)
-				else if(istype(target, /turf/simulated/floor/asteroid))
-					for(var/turf/simulated/floor/asteroid/M in trange(1, chassis))
-						if(get_dir(chassis,M)&chassis.dir)
-							M.gets_dug()
-					log_message("Drilled through \the [target]")
-					if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment)
-						var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
-						if(ore_box)
-							for(var/obj/item/stack/ore/ore in range(chassis,1))
-								if(get_dir(chassis,ore)&chassis.dir)
-									ore.Move(ore_box)
-				else if(target.loc == C)
-					log_message("Drilled through \the [target]")
-					target.ex_act(2)
+	action(atom/T, mob/living/user)
+		attack_object(T,user) // drill has nothing special to do, just drilling
+
+	attack_object(obj/T, mob/living/user) // attack_object override for all of the drill's fancy interactions after action()
+		..() // strike the earth
+
+		if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment) // load ore if any is nearby after striking something
+			var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
+			if(ore_box)
+				for(var/obj/item/stack/ore/ore in range(chassis,1))
+					if(get_dir(chassis,ore)&chassis.dir)
+						ore.Move(ore_box)
+
 		return 1
 
 /obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill

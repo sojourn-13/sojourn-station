@@ -88,7 +88,7 @@
 		return 0
 	return 1
 
-/obj/item/mecha_parts/mecha_equipment/proc/action(atom/target)
+/obj/item/mecha_parts/mecha_equipment/proc/action(atom/target, mob/living/user)
 	return
 
 /obj/item/mecha_parts/mecha_equipment/proc/attack_object(obj/T, mob/living/user) // To prevent having mechs attacking other mechs accidentally attach their weapons on the opposing mech
