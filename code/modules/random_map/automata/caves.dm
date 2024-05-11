@@ -90,8 +90,8 @@
 			continue
 
 		num_applied += 1
-		new new_path(T)
-
+		T.ChangeTurf(new_path)
+		get_additional_spawns(map[tmp_cell], T)
 		CHECK_TICK
 
 	game_log("ASGEN", "Applied [num_applied] turfs.")

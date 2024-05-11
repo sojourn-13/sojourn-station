@@ -31,7 +31,8 @@ var/global/list/map_count = list()
 	// Test to see if rand_seed() can be used reliably.
 	var/priority_process
 
-/datum/random_map/New(var/seed, var/tx, var/ty, var/tz, var/tlx, var/tly, var/do_not_apply, var/do_not_announce)
+/datum/random_map/New(seed, tx, ty, tz, tlx, tly, do_not_apply, do_not_announce)
+	
 	// Store this for debugging.
 	if(!map_count[descriptor])
 		map_count[descriptor] = 1
@@ -107,8 +108,7 @@ var/global/list/map_count = list()
 	to_chat(user, "[dat]+------+</code>")
 
 /datum/random_map/proc/set_map_size()
-	map = list()
-	map.len = limit_x * limit_y
+	map = new (limit_x * limit_y)
 
 /datum/random_map/proc/seed_map()
 	for(var/x = 1, x <= limit_x, x++)

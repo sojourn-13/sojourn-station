@@ -4,10 +4,10 @@
 	var/rare_val = 0.7              // Threshold for rare metal, set in new as percentage of cell_range.
 	var/chunk_size = 4              // Size each cell represents on map
 
-/datum/random_map/noise/ore/New()
+/datum/random_map/noise/ore/New(seed, tx, ty, tz, tlx, tly, do_not_apply, do_not_announce)
 	rare_val = cell_range * rare_val
 	deep_val = cell_range * deep_val
-	..()
+	..(seed, tx, ty, tz, (tlx / chunk_size), (tly / chunk_size), do_not_apply, do_not_announce)
 
 /datum/random_map/noise/ore/check_map_sanity()
 
