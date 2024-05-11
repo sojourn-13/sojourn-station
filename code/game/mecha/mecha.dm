@@ -392,25 +392,30 @@
 			selected.action(target, user)
 	else if(selected) // If target is adjacent
 		if(istype(selected, /obj/item/mecha_parts/mecha_equipment/melee_weapon) || istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon)) // This makes it so you can atleast melee with your ranged weapon
-			if(istype(target, /mob/living)) // If the target is alive
-				selected.attack(target, user, user.targeted_organ)
-			else if(istype(target, /obj)) // If the target is an object
+			if(istype(target, /mob/living))
+				selected.attack(target, user, user.targeted_organ) // Against living targets
+			else if(istype(target, /obj))
 				if(user.a_intent == I_HELP && istype(target, /obj/machinery)) // This allows us to interface on health intent on machinery, so we don't break a computer we're trying to access
 					interface_action(target)
 				else // If not machinery or help intent, attack
 					selected.attack_object(target, user)
-			else if(istype(target, /turf/simulated)) // For walls and floors, as they break differently than things like objects
-				target.attackby(selected, user)
-		else if(!user.a_intent == I_HELP && selected.is_melee()) // For every other tool mechs have when not on help intent
-			if(istype(target, /turf/simulated)) // For walls and floors, as they break differently than things like objects
-				target.attackby(selected, user)
-			else
+
+		else if(istype(selected, /obj/item/mecha_parts/mecha_equipment/tool)) // For every other tool mechs have
+			if(istype(target, /mob/living))
+				selected.attack(target, user, user.targeted_organ) // Against living targets
+			else if(istype(target, /obj))
+				if(user.a_intent == I_HELP && istype(target, /obj/machinery)) // This allows us to interface on health intent on machinery, so we don't break a computer we're trying to access
+					interface_action(target)
+				else // If not machinery or help intent, attack
+					selected.attack_object(target, user)
+			else // If not machinery or not alive, do the fancy tool uses
 				selected.action(target, user)
 	else // Empty handed, no equipment selected
 		if(user.a_intent == I_HELP && istype(target, /obj/machinery))
 			interface_action(target, user)
 			return
-		src.melee_action(target)
+		else
+			src.melee_action(target)
 	return
 
 /obj/mecha/proc/interface_action(obj/machinery/target)

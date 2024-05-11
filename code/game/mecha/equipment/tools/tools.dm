@@ -42,8 +42,8 @@
 		if(!action_checks(A)) return
 		if(!cargo_holder) return
 
-		//loading
-		if(isobj(A))
+		//clamp loading code
+		if(istype(A, /obj)) //if it's not an object, don't even bother loading, none of the code beyond here will work with non objects
 			var/obj/T = A
 			if(T.buckled_mob)
 				return
@@ -67,25 +67,26 @@
 				occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
 				return
 
-			occupant_message("You lift [T] and start to load it into cargo compartment.")
-			playsound(src,'sound/mecha/hydraulic.ogg',100,1)
-			chassis.visible_message("[chassis] lifts [T] and starts to load it into cargo compartment.")
-			set_ready_state(0)
-			chassis.use_power(energy_drain)
-			T.anchored = 1
-			var/L = chassis.loc
-			if(do_after_cooldown(T))
-				if(L == chassis.loc && src == chassis.selected)
-					cargo_holder.cargo += T
-					T.loc = chassis
-					T.anchored = 0
-					occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
-					log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
-					return
-				else
-					occupant_message(SPAN_WARNING("You must hold still while handling objects."))
-					T.anchored = initial(T.anchored)
-					return
+			if(user.a_intent == I_HELP) // So, if we want to do something stupid like searching a trash pile or hitting a locker, we can on non help intent
+				occupant_message("You lift [T] and start to load it into cargo compartment.")
+				playsound(src,'sound/mecha/hydraulic.ogg',100,1)
+				chassis.visible_message("[chassis] lifts [T] and starts to load it into cargo compartment.")
+				set_ready_state(0)
+				chassis.use_power(energy_drain)
+				T.anchored = 1
+				var/L = chassis.loc
+				if(do_after_cooldown(T))
+					if(L == chassis.loc && src == chassis.selected)
+						cargo_holder.cargo += T
+						T.loc = chassis
+						T.anchored = 0
+						occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
+						log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
+						return
+					else
+						occupant_message(SPAN_WARNING("You must hold still while handling objects."))
+						T.anchored = initial(T.anchored)
+						return
 
 		attack_object(A, user) // If none of these has come to pass, we do normal item interactions
 
