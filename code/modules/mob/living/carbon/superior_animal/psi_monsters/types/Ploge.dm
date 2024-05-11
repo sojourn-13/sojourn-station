@@ -1,5 +1,5 @@
-//EXSTREAMLY RARE able heck some people up or do events with
-//Requires chaos level 3 or admins
+//Admin only mob to heck some people up or do events with
+
 
 /mob/living/carbon/superior_animal/psi_monster/ploge
 	name = "Ploge"

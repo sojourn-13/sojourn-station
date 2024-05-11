@@ -10,9 +10,6 @@
 	var/late_handling = FALSE
 	invisibility = INVISIBILITY_MAXIMUM	// Hides these spawners from the dmm-tools minimap renderer of SpacemanDMM
 
-/obj/random/mob
-	var/list/mobs = list()
-
 // creates a new object and deletes itself
 /obj/random/Initialize()
 	..()

@@ -307,8 +307,7 @@
 	unlocks_designs = list(/datum/design/research/item/clothing/soteriaarmorchest,
 							 /datum/design/research/item/clothing/soteriaarmorhead,
 							 /datum/design/research/item/clothing/rig_cheap,
-							 /datum/design/research/item/clothing/tinfoil,
-							 /datum/design/research/item/clothing/armor_soterialabcoat)
+							 /datum/design/research/item/clothing/tinfoil)
 
 /datum/technology/advanced_armor
 	name = "Advanced Armor Designs"
