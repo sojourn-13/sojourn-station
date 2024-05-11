@@ -51,6 +51,12 @@
 	else
 		data["ai"] = FALSE
 
+	// Tank data
+	if(air_supply)
+		data["tank"] = air_supply.ui_data(user)
+	else
+		data["tank"] = null
+
 	data["sealed"] = !canremove
 	data["sealing"] = sealing
 	data["helmet"] = (helmet ? "[helmet.name]" : "None.")
@@ -160,3 +166,6 @@
 					if("select_charge_type")
 						module.charge_selected = params["charge_type"]
 						. = TRUE
+		if("tank_settings")
+			air_supply?.attack_self(usr)
+			. = TRUE

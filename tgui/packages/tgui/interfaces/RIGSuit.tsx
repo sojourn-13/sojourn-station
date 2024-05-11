@@ -1,7 +1,6 @@
 import { BooleanLike } from 'common/react';
 import { capitalize, toTitleCase } from 'common/string';
-
-import { useBackend } from '../backend';
+import { useBackend } from 'tgui/backend';
 import {
   Box,
   Button,
@@ -9,8 +8,10 @@ import {
   LabeledList,
   ProgressBar,
   Section,
-} from '../components';
-import { Window } from '../layouts';
+} from 'tgui/components';
+import { Window } from 'tgui/layouts';
+
+import { Data as TankData } from './Tank';
 
 type RIGSuitModule = {
   index: number;
@@ -56,6 +57,7 @@ type Data = {
   securitycheck: BooleanLike;
   malf: number;
   modules: RIGSuitModule[];
+  tank: TankData | null;
 };
 
 export const RIGSuit = (props) => {
@@ -97,6 +99,8 @@ const RIGSuitStatus = (props) => {
     chargestatus,
     charge,
     maxcharge,
+    // Tank data
+    tank,
     // AI Control Toggle
     aioverride,
     // Suit Status
@@ -168,6 +172,27 @@ const RIGSuitStatus = (props) => {
             </Button>
           )}
         </LabeledList.Item>
+        {tank && (
+          <LabeledList.Item
+            label="Suit Tank Pressure"
+            buttons={
+              <Button icon="wind" onClick={() => act('tank_settings')}>
+                Tank Settings
+              </Button>
+            }
+          >
+            <ProgressBar
+              value={tank.tankPressure / 1013}
+              ranges={{
+                good: [0.35, Infinity],
+                average: [0.15, 0.35],
+                bad: [-Infinity, 0.15],
+              }}
+            >
+              {tank.tankPressure + ' kPa'}
+            </ProgressBar>
+          </LabeledList.Item>
+        )}
       </LabeledList>
     </Section>
   );

@@ -10,7 +10,7 @@ import {
 } from '../components';
 import { Window } from '../layouts';
 
-type Data = {
+export type Data = {
   connected: BooleanLike;
   showToggle: BooleanLike;
   maskConnected: BooleanLike;

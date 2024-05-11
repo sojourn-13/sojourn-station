@@ -107,10 +107,13 @@ var/list/global/tank_gauge_cache = list()
 	data["defaultReleasePressure"] = round(TANK_DEFAULT_RELEASE_PRESSURE)
 	data["minReleasePressure"] = 0
 	data["maxReleasePressure"] = round(TANK_MAX_RELEASE_PRESSURE)
+	data["showToggle"] = TRUE
 
 	var/mob/living/carbon/C = loc
 	if(!istype(C))
 		C = loc.loc
+		// Don't show a toggle that will never work
+		data["showToggle"] = FALSE
 	if(!istype(C))
 		return data
 
@@ -156,6 +159,9 @@ var/list/global/tank_gauge_cache = list()
 			. = TRUE
 
 	add_fingerprint(usr)
+
+/obj/item/tank/ui_state(mob/user)
+	return GLOB.deep_inventory_state
 
 /obj/item/tank/proc/toggle_valve(var/mob/user)
 	if(iscarbon(loc))
