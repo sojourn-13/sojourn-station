@@ -2,14 +2,15 @@
 	name = "random termite that dosnt despawn"
 	icon_state = "hostilemob-brown"
 	alpha = 128
-
-/obj/random/mob/termite_no_despawn/item_to_spawn()
-	return pickweight(list(/mob/living/carbon/superior_animal/termite_no_despawn/iron = 9,
+	mobs = list(/mob/living/carbon/superior_animal/termite_no_despawn/iron = 9,
 				/mob/living/carbon/superior_animal/termite_no_despawn/silver = 5,
 				/mob/living/carbon/superior_animal/termite_no_despawn/plasma = 2,
 				/mob/living/carbon/superior_animal/termite_no_despawn/uranium = 4,
 				/mob/living/carbon/superior_animal/termite_no_despawn/diamond = 1,
-				/mob/living/carbon/superior_animal/termite_no_despawn/osmium = 0.5))
+				/mob/living/carbon/superior_animal/termite_no_despawn/osmium = 0.5)
+
+/obj/random/mob/termite_no_despawn/item_to_spawn()
+	return pickweight(mobs)
 
 /obj/random/mob/termite_no_despawn/low_chance
 	name = "low chance random roach"
