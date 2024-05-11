@@ -8,7 +8,7 @@
  * tgui_interact() is the proc that opens the UI. It doesn't really do anything else, unlike NanoV1.
  * We add an extra argument, custom_state, for the things that want a custom state for their UI.
  */
-/obj/item/rig/ui_interact(mob/user, datum/tgui/ui, datum/tgui/parent_ui, datum/ui_state/custom_state)
+/obj/item/rig/ui_interact(mob/user, datum/tgui/ui, datum/nano_topic_state/custom_state)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, (loc != usr ? ai_interface_path : interface_path), interface_title)
