@@ -63,6 +63,7 @@
 
 			if(T.anchored && !istype(T, /obj/structure/salvageable))
 				attack_object(T, user)
+				return
 			if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
 				occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
 				return
@@ -104,7 +105,6 @@
 	force = 30
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	tool_qualities = list(QUALITY_DIGGING = 60) // Duh
-	force = WEAPON_FORCE_DANGEROUS
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
 	action(atom/T, mob/living/user)
@@ -129,50 +129,22 @@
 	origin_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 3)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_DIAMOND = 3)
 	equip_cooldown = 10 // 3 diamonds for 3x the speed!
-	force = 25 //Lets not be out classed by a wrench...
+	force = 40
+	tool_qualities = list(QUALITY_DIGGING = 70) // Duh
 
-	action(atom/target)
-		if(!action_checks(target)) return
-		if(isobj(target))
-			var/obj/target_obj = target
-			if(target_obj.unacidable)	return
-		set_ready_state(0)
-		chassis.use_power(energy_drain)
-		chassis.visible_message(SPAN_DANGER("\The [chassis] starts to drill \the [target]"), SPAN_WARNING("You hear a large drill."))
-		occupant_message(SPAN_DANGER("You start to drill \the [target]"))
-		playsound(src,'sound/mecha/mechdrill.ogg',40,1)
-		var/T = chassis.loc
-		var/C = target.loc	//why are these backwards? we may never know -Pete
-		if(do_after_cooldown(target))
-			if(T == chassis.loc && src == chassis.selected)
-				if(istype(target, /turf/simulated/wall))
-					var/turf/simulated/wall/W = target
-					if(!W.reinf_material || do_after_cooldown(target))//To slow down how fast mechs can drill through the station
-						log_message("Drilled through \the [target]")
-						target.ex_act(3)
-				else if(istype(target, /turf/simulated/mineral))
-					for(var/turf/simulated/mineral/M in trange(1, chassis))
-						if(get_dir(chassis,M)&chassis.dir)
-							M.GetDrilled()
-					log_message("Drilled through \the [target]")
-					if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment)
-						var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
-						if(ore_box)
-							for(var/obj/item/stack/ore/ore in range(chassis,1))
-								if(get_dir(chassis,ore)&chassis.dir)
-									ore.Move(ore_box)
-				else if(istype(target,/turf/simulated/floor/asteroid))
-					for(var/turf/simulated/floor/asteroid/M in trange(1, target))
-						M.gets_dug()
-					log_message("Drilled through \the [target]")
-					if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment)
-						var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
-						if(ore_box)
-							for(var/obj/item/stack/ore/ore in range(target,1))
-								ore.Move(ore_box)
-				else if(target.loc == C)
-					log_message("Drilled through \the [target]")
-					target.ex_act(2)
+	action(atom/T, mob/living/user)
+		attack_object(T,user) // drill has nothing special to do, just drilling
+
+	attack_object(obj/T, mob/living/user) // attack_object override for all of the drill's fancy interactions after action()
+		..() // strike the earth
+
+		if(locate(/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp) in chassis.equipment) // load ore if any is nearby after striking something
+			var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in chassis:cargo
+			if(ore_box)
+				for(var/obj/item/stack/ore/ore in range(chassis,1))
+					if(get_dir(chassis,ore)&chassis.dir)
+						ore.Move(ore_box)
+
 		return 1
 
 /obj/item/mecha_parts/mecha_equipment/tool/extinguisher

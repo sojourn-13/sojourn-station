@@ -399,7 +399,9 @@
 					interface_action(target)
 				else // If not machinery or help intent, attack
 					selected.attack_object(target, user)
-			else // If not machinery or not alive, do the fancy tool uses
+			else if(istype(target, /obj/mecha)) // So it can attack mechs
+				selected.attack_object(target, user)
+			else // If not machinery, not mech or not alive, do the fancy tool uses
 				selected.action(target, user)
 	else // Empty handed, no equipment selected
 		if(user.a_intent == I_HELP && istype(target, /obj/machinery))
