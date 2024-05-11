@@ -47,6 +47,15 @@
 	C.make_crusader()
 	return TRUE
 
+/datum/antagonist/inquisitor/remove_antagonist() //Only use this on people whose cruciforms are active
+	var/obj/item/implant/core_implant/cruciform/C = owner.current.get_core_implant(/obj/item/implant/core_implant/cruciform)
+
+	if(!C)
+		return
+	else
+		C.remove_crusader()
+
+	.=..()
 
 /datum/antagonist/inquisitor/greet()
 	if(!owner || !owner.current)

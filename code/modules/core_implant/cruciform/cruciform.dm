@@ -207,6 +207,13 @@ var/list/disciples = list()
 	if(security_clearance < CLEARANCE_COMMON)
 		security_clearance = CLEARANCE_COMMON
 
+/obj/item/implant/core_implant/cruciform/proc/remove_crusader()
+	remove_modules(CRUCIFORM_CRUSADER)
+	if(!wearer.stats.getPerk(PERK_CHANNELING)) //If we weren't a roundstart vector, reset us to Scalar status. If the clergy want to re-ordain or give access, they can
+		remove_modules(CRUCIFORM_CLERGY)
+		security_clearance = CLEARANCE_NONE //Vectors will still keep their Prime access, but I can't think of an easy way to check it and it's not a huge deal
+	update_rituals()
+
 /obj/item/implant/core_implant/cruciform/proc/make_inquisitor()
 	add_module(new CRUCIFORM_CLERGY)
 	add_module(new CRUCIFORM_INQUISITOR)
