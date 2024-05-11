@@ -123,7 +123,7 @@
 					  "Queen ",
 					  "Raider ", "Ravager ", "Renegade ", "Revolutionary ", "Representative ", "Racketeer ",
 					  "Soldier ", "Scavenger ", "Sergeant ", "Serial Killer ", "Serbian ", "Smuggler ", "Swarmer ", "Supreme ", "Sorcerer ",
-					  "Traitor ", "Terrorist ", "Thief ", "Trafficker ", "Terroriser ", "Treasure Hunter ", "Terrible ", "Titanic ",
+					  "contractor ", "Terrorist ", "Thief ", "Trafficker ", "Terroriser ", "Treasure Hunter ", "Terrible ", "Titanic ",
 					  "Vandal ", "Viscount ", "Vampire ", "Void Wolf ", "Veteran ", "Villainous ", "Vice President ",
 					  "Warlord ", "Warmonger ", "Wrangler ", "Waster ", "Wizard ",
 					  "Xenomorph ", "Xenohybrid ",

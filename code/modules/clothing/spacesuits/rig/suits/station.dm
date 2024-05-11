@@ -28,7 +28,7 @@
 ****************************************/
 /obj/item/rig/industrial
 	name = "industrial suit control module"
-	suit_type = "industrial hardsuit"
+	suit_type = "industrial hardsuit" //Credit for sprites go to Près de l'oiseau over at Eris
 	desc = "A heavy, powerful rig used by construction crews and mining corporations."
 	icon_state = "engineering_rig"
 	armor_list = list(
@@ -37,7 +37,7 @@
 		energy = 10,
 		bomb = 25,
 		bio = 100,
-		rad = 90
+		rad = 100
 	)
 	slowdown = 0.3
 	drain = 3
@@ -75,7 +75,7 @@
 /obj/item/rig/eva
 	name = "EVA suit control module"
 	suit_type = "EVA hardsuit"
-	desc = "A light rig for repairs and maintenance to the outside of habitats and vessels."
+	desc = "A light RIG for performing minute repairs and maintenance on low-pressure environments."
 	icon_state = "eva_rig"
 	armor_list = list(
 		melee = 20,
@@ -85,6 +85,7 @@
 		bio = 100,
 		rad = 100
 	)
+	seal_delay = 20
 	slowdown = 0
 	offline_slowdown = 1
 	offline_vision_restriction = 1
@@ -116,9 +117,9 @@
 Advanced Voidsuit: Guild Master
 ****************************************/
 /obj/item/rig/ce
-	name = "advanced voidsuit control module"
-	suit_type = "advanced voidsuit"
-	desc = "An advanced voidsuit that protects against hazardous, low pressure environments. Shines with a high polish."
+	name = "advanced hardsuit control module"
+	suit_type = "advanced hardsuit"
+	desc = "An advanced hardsuit that protects against hazardous, low pressure environments. Shines with a high polish."
 	icon_state = "ce_rig"
 	armor_list = list(
 		melee = 40,
@@ -128,6 +129,7 @@ Advanced Voidsuit: Guild Master
 		bio = 100,
 		rad = 100
 	)
+	seal_delay = 15
 	slowdown = 0
 	stiffness = 0
 	obscuration = 0
@@ -160,7 +162,7 @@ Advanced Voidsuit: Guild Master
 		/obj/item/rig_module/device/rcd,
 		/obj/item/rig_module/vision/meson,
 		/obj/item/rig_module/cargo_clamp,
-		/obj/item/rig_module/storage
+		/obj/item/rig_module/storage/engi
 		)
 
 /obj/item/clothing/gloves/rig/ce
@@ -168,9 +170,9 @@ Advanced Voidsuit: Guild Master
 	siemens_coefficient = 0
 
 /obj/item/clothing/shoes/magboots/rig/ce
-	name = "advanced magboots"
+	name = "magboots"
 	desc = "Advanced magnetic boots that have a lighter magnetic pull, placing less burden on the wearer."
-	mag_slow = 1
+	mag_slow = 0
 
 /***************************************
 Technomancer RIG
@@ -210,7 +212,7 @@ Technomancer RIG
 
 /obj/item/rig/techno/equipped
 	initial_modules = list(
-		/obj/item/rig_module/storage,
+		/obj/item/rig_module/storage/engi,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/cargo_clamp,
 		)
@@ -273,7 +275,6 @@ Technomancer RIG
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/anomaly_scanner,
-		/obj/item/rig_module/storage
 		)
 
 /***************************************
@@ -320,17 +321,14 @@ Technomancer RIG
 	req_access = list()
 
 /obj/item/clothing/suit/space/rig/advhazmat
-	name = "Advanced AMI suit"
 
 /obj/item/clothing/gloves/rig/advhazmat
-	name = "Advanced AMI gloves"
 	siemens_coefficient = 0
 
 /obj/item/clothing/shoes/magboots/rig/advhazmat
-	name = "Advanced AMI shoes"
 
 /obj/item/clothing/head/helmet/space/rig/advhazmat
-	name = "Advanced AMI void helm"
+	camera_networks = list(NETWORK_RESEARCH)
 
 /***************************************
 	Medical
@@ -369,7 +367,7 @@ Technomancer RIG
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
-		/obj/item/rig_module/storage
+		/obj/item/rig_module/storage/med
 		)
 
 /obj/item/rig/recovery_suit
@@ -380,12 +378,13 @@ Technomancer RIG
 	icon_state = "response_team"
 	armor_list = list(
 		melee = 60,
-		bullet = 35,
-		energy = 25,
-		bomb = 50,
+		bullet = 15,
+		energy = 10,
+		bomb = 30,
 		bio = 100,
 		rad = 100
 	)
+	seal_delay = 15 //quick deploy for quick recovery
 	slowdown = 0
 	stiffness = MEDIUM_STIFFNESS
 	helm_type = /obj/item/clothing/head/helmet/space/rig/medical
@@ -403,13 +402,39 @@ Technomancer RIG
 	req_one_access = list()
 
 	initial_modules = list(
-		/obj/item/rig_module/modular_injector/combat,
 		/obj/item/rig_module/modular_injector/medical,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
-		/obj/item/rig_module/storage/expanded/tt
+		/obj/item/rig_module/storage/med
 		)
+
+/obj/item/rig/light/ultra_light/cmo
+	name = "SI 'Medtek' control module"
+	desc = "An upgraded and somewhat customized soteria 'retainer' RIGsuit. Though superficially and aesthetically similar this suit has undergone a series of upgrades so as to improve its utility \
+	for Soterias resident overworked Chief of Medicine. Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
+	suit_type = "SI 'Medtek"
+	armor_list = list(
+		melee = 0,
+		bullet = 0,
+		energy = 0,
+		bomb = 0,
+		bio = 100,
+		rad = 20
+	)
+	req_access = list(access_cmo)
+	airtight = 0
+	seal_delay = 4 //built for speed
+	slowdown = -0.3 //we get a bit more speed than the baseline recovery rig as this is a unique item with exactly 0 armor. This is for zipping around medical, rather than getting in the weeds
+
+	initial_modules = list(
+		/obj/item/rig_module/modular_injector/combat,
+		/obj/item/rig_module/modular_injector/medical,
+		/obj/item/rig_module/device/healthscanner,
+		/obj/item/rig_module/vision/medhud,
+		/obj/item/rig_module/storage/med
+		)
+
 
 /***************************************
 	Hazard Suit
@@ -446,10 +471,10 @@ Technomancer RIG
 		/obj/item/rig_module/mounted/taser
 		)
 /obj/item/rig/hazard/steward
-	name = "hazard hardsuit control module"
-	suit_type = "hazard hardsuit"
-	desc = "A modification of the traditional hazard rig built for equal parts utility and defense. Marked with a seal of two Armstrong rifles crossing each other in a X at the base of the neck."
-	icon_state = "hazard_rig"
+	name = "stewards hardsuit control module"
+	desc = "A modification of the traditional combat rig built for equal parts utility and defense. Marked with a seal of two Armstrong rifles crossing each other in a X at the base of the neck."
+	icon_state = "security_rig"
+	suit_type = "stewards hardsuit"
 	armor_list = list(
 		melee = 40,
 		bullet = 40,
@@ -476,5 +501,5 @@ Technomancer RIG
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/modular_injector/medical,
 		/obj/item/rig_module/ai_container,
-		/obj/item/rig_module/storage
+		/obj/item/rig_module/storage/combat
 		)

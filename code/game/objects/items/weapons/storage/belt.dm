@@ -183,10 +183,12 @@
 		/obj/item/soap,
 		/obj/item/reagent_containers/spray/cleaner,
 		/obj/item/tool/knife/dagger/nt,
+		/obj/item/tool/sword/nt/shortsword,
 		/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
+		/obj/item/gun/energy/ntpistol,
 		/obj/item/device/binoculars
 	)
 
@@ -215,7 +217,7 @@
 
 /obj/item/storage/belt/utility/opifex/full/populate_contents()
 	new /obj/item/tool/crowbar/pneumatic(src)
-	new /obj/item/tool/hammer(src)
+	new /obj/item/tool/hammer/deadblow(src)
 	new /obj/item/tool/multitool/advanced(src)
 	new /obj/item/tool/saw/circular/advanced(src)
 	new /obj/item/tool/screwdriver/electric(src)
@@ -247,6 +249,26 @@
 	new /obj/item/storage/pill_bottle/antitox(src)
 	new /obj/item/bodybag/cryobag(src)
 	new /obj/item/extinguisher/mini(src)
+
+/obj/item/storage/belt/medical/opifex/medical/solfed
+	name = "black medical webbing"
+	desc = "A black webbing, highly customized and lovingly worn. This harness is built specifically for medical supplies, limiting its versatility."
+	icon_state = "webbing_black"
+	item_state = "webbing_black"
+	storage_slots = 16
+
+/obj/item/storage/belt/medical/opifex/medical/solfed/populate_contents()
+	new /obj/item/device/scanner/health(src)
+	new /obj/item/reagent_containers/syringe/large/hyperzine(src)
+	new /obj/item/reagent_containers/syringe/large/tricordrazine(src)
+	new /obj/item/reagent_containers/syringe/large/inaprovaline(src)
+	new /obj/item/storage/pill_bottle/tramadol(src)
+	new /obj/item/storage/pill_bottle/prosurgeon(src)
+	new /obj/item/storage/pill_bottle/bicaridine(src)
+	new /obj/item/storage/pill_bottle/dermaline(src)
+	new /obj/item/storage/pill_bottle/dexalin_plus(src)
+	new /obj/item/storage/pill_bottle/antitox(src)
+	new /obj/item/bodybag/cryobag(src)
 
 /obj/item/storage/belt/medical
 	name = "medical belt"
@@ -345,7 +367,9 @@
 		/obj/item/tool/knife,
 		/obj/item/tool/shovel/combat,
 		/obj/item/gun/projectile/mk58,
-		/obj/item/gun/projectile/revolver/lemant,
+		/obj/item/gun/projectile/makarov,
+		/obj/item/gun/projectile/clarissa,
+		/obj/item/gun/projectile/colt,
 		/obj/item/gun/energy/gun,
 		/obj/item/gun/projectile/giskard,
 		/obj/item/gun/projectile/olivaw,
@@ -362,7 +386,7 @@
 		/obj/item/reagent_containers/food/snacks,
 		/obj/item/reagent_containers/food/drinks,
 		/obj/item/device/binoculars, // By popular demand. - Seb
-		/obj/item/tool/baton/mini
+		/obj/item/tool/baton //So it can actually hold both sizes of batons like it used to.
 	)
 
 /obj/item/storage/belt/holding
@@ -409,10 +433,10 @@
 /obj/item/storage/belt/security/tactical/marshalert/populate_contents()
 	new /obj/item/tool/shovel/combat(src)
 	new /obj/item/gun/energy/gun/martin(src)
-	new /obj/item/cell/small(src)
-	new /obj/item/cell/small(src)
+	new /obj/item/cell/small/hyper(src)
+	new /obj/item/cell/small/hyper(src)
 	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
-	new /obj/item/cell/medium/high(src)
+	new /obj/item/cell/medium/hyper(src)
 	new /obj/item/handcuffs(src)
 	new /obj/item/handcuffs(src)
 	new /obj/item/device/taperecorder(src)
@@ -423,6 +447,45 @@
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/grenade/chem_grenade/teargas(src)
 	new /obj/item/grenade/frag/stinger(src)
+
+/obj/item/storage/belt/security/tactical/shieldert
+
+/obj/item/storage/belt/security/tactical/shieldert/populate_contents()
+	new /obj/item/tool/shovel/combat(src)
+	new /obj/item/gun/energy/gun/martin(src)
+	new /obj/item/cell/small/hyper(src)
+	new /obj/item/cell/small/hyper(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/cell/medium/high(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/handcuffs(src)
+	new /obj/item/device/taperecorder(src)
+	new /obj/item/device/camera(src)
+	new /obj/item/grenade/flashbang(src) //we're so past caring about contraband.
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/clothing/glasses/powered/thermal(src)
+	new /obj/item/clothing/glasses/powered/night(src)
+
+/obj/item/storage/belt/security/tactical/solfed
+
+/obj/item/storage/belt/security/tactical/solfed/populate_contents()
+	new /obj/item/tool/shovel/combat(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/grenade/explosive(src)
+	new /obj/item/cell/small/moebius/nuclear(src)
+	new /obj/item/cell/small/moebius/nuclear(src)
+	new /obj/item/cell/medium/moebius/nuclear(src)
+	new /obj/item/clothing/glasses/powered/night(src)
+	new /obj/item/clothing/glasses/powered/thermal(src)
+	new /obj/item/device/lighting/toggleable/flashlight/heavy(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/ammobox/kurtz_50/hv(src)
+	new /obj/item/device/binoculars(src)
 
 /obj/item/storage/belt/security/tactical/opifex
 	name = "opifex tactical belt"
@@ -453,10 +516,12 @@
 		/obj/item/gun/energy/crossbow,
 		/obj/item/gun/energy/taser, //specially fitted to hold the counselor
 		/obj/item/tool/knife/dagger/nt,
+		/obj/item/tool/sword/nt/shortsword,
 		/obj/item/reagent_containers/food/drinks/bottle/ntcahors,
 		/obj/item/gun/projectile/boltgun/flare_gun,
 		/obj/item/ammo_casing/flare,
 		/obj/item/gun/energy/plasma/martyr,
+		/obj/item/gun/energy/ntpistol,
 		/obj/item/device/binoculars
 	)
 
@@ -485,17 +550,29 @@
 	max_w_class = ITEM_SIZE_SMALL //Holds 14 small items like a real harness, and hats
 	max_storage_space = DEFAULT_NORMAL_STORAGE
 
-/obj/item/storage/belt/webbing/green
-	name = "green web harness"
-	desc = "Everything you need at hand, at belt."
-	icon_state = "webbing_green"
-	item_state = "webbing_green"
+/obj/item/storage/belt/webbing/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
 
-/obj/item/storage/belt/webbing/black
-	name = "black web harness"
-	desc = "Everything you need at hand, at belt."
-	icon_state = "webbing_black"
-	item_state = "webbing_black"
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Brown"] = "webbing"
+	options["Green"] = "webbing_green"
+	options["Black"] = "webbing_black"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
 
 /obj/item/storage/belt/webbing/ih
 	name = "security web harness"

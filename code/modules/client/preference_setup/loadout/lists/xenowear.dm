@@ -50,7 +50,7 @@
 	cost = 0
 
 /datum/gear/xenowear/opifexnotmask
-	display_name = "opifex gas synthetizer"
+	display_name = "opifex gas synthesizer"
 	path = /obj/item/clothing/mask/opifex_no_mask
 	slot = slot_wear_mask
 	sort_category = "Xenowear"
@@ -97,6 +97,13 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 	sort_category = "Xenowear"
 	cost = 1
+
+/datum/gear/factionsecurity/armoredcossackcoat
+	display_name = "jaeger hussar coat"
+	path = /obj/item/clothing/suit/greatcoat/cossackarmoredcoat
+	allowed_roles = list(JOBS_SECURITY, JOBS_BLACKSHIELD)
+	slot = slot_wear_suit
+	cost = 2
 
 /datum/gear/xenowear/footwraps
 	display_name = "cloth footwraps"
@@ -185,3 +192,11 @@
 	slot = slot_shoes
 	sort_category = "Xenowear"
 	cost = 1
+
+/datum/gear/xenowear/bugsocks
+    display_name = "insect socks"
+    path = /obj/item/clothing/shoes/bugsocks
+    slot = slot_shoes
+    sort_category = "Xenowear"
+    cost = 0
+    flags = GEAR_HAS_COLOR_SELECTION

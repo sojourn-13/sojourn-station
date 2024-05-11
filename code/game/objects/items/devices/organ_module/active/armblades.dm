@@ -5,12 +5,16 @@
 	icon_state = "armblade"
 	item_state = null
 	worksound = WORKSOUND_HARD_SLASH
+	hitsound = 'sound/weapons/heavyslash.ogg'
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_WEAK
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("stabbed", "chopped", "cut")
 	armor_penetration = ARMOR_PEN_MODERATE
 	tool_qualities = list(QUALITY_CUTTING = 20)
+
+/obj/item/organ_module/active/simple/proc/get_scanner_name()
+	return name
 
 /obj/item/organ_module/active/simple/armblade
 	name = "embedded armblade"

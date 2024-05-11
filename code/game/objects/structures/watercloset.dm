@@ -147,27 +147,6 @@
 	return TRUE
 
 
-/obj/machinery/shower
-	name = "shower"
-	desc = "A HS-451 shower unit. Has a bolted temperature dial."
-	icon = 'icons/obj/watercloset.dmi'
-	icon_state = "shower"
-	density = 0
-	anchored = 1
-	use_power = NO_POWER_USE
-	var/on = 0
-	var/obj/effect/mist/mymist = null
-	var/ismist = 0				//needs a var so we can make it linger~
-	var/watertemp = "normal"	//freezing, normal, or boiling
-	var/is_washing = 0
-	var/list/temperature_settings = list("normal" = 310, "boiling" = T0C+100, "freezing" = T0C)
-
-/obj/machinery/shower/New()
-	..()
-	create_reagents(50)
-
-//add heat controls? when emagged, you can freeze to death in it?
-
 /obj/effect/mist
 	name = "mist"
 	icon = 'icons/obj/watercloset.dmi'
@@ -176,15 +155,66 @@
 	anchored = 1
 	mouse_opacity = 0
 
+/obj/machinery/shower
+	name = "shower"
+	desc = "A HS-451 shower unit. Has a bolted temperature dial."
+	icon = 'icons/obj/watercloset.dmi'
+	icon_state = "shower"
+	density = 0
+	anchored = 1
+	use_power = NO_POWER_USE
+	var/soap = null
+	var/on = 0
+	var/obj/effect/mist/mymist = null
+	var/ismist = 0				//needs a var so we can make it linger~
+	var/watertemp = "normal"	//freezing, normal, or boiling
+	var/is_washing = 0
+	//Boiling was edited to not be as lethal 38c for normal, 40c for boiling
+	var/list/temperature_settings = list("normal" = 311.15, "boiling" = 313.15, "freezing" = T0C)
+	var/soap_modifer = 20 //Baseline we clean up about 20 germs by water erosion
+	var/bless = FALSE
+	var/washing_callback = FALSE
+
+/obj/machinery/shower/New()
+	..()
+	create_reagents(50)
+	if(!soap && prob(10))
+		soap = new/obj/item/soap(src)
+		update_soap_mods()
+
+
+/obj/machinery/shower/proc/update_soap_mods()
+	if(soap)
+		var/obj/item/soap/soapy_the_soap = soap
+		soap_modifer = soapy_the_soap.clean_speed
+		if(soapy_the_soap.bless_tile)
+			bless = TRUE
+		update_icon()
+		return
+	soap_modifer = 20
+	bless = FALSE
+	update_icon()
+
+//add heat controls? when emagged, you can freeze to death in it?
+
 /obj/machinery/shower/attack_hand(mob/M as mob)
 	on = !on
 	update_icon()
 	if(on)
-		if (M.loc == loc)
-			wash(M)
+		if(M.loc == loc)
 			process_heat(M)
 		for (var/atom/movable/G in src.loc)
-			G.clean_blood()
+			G.clean_blood(TRUE)
+
+		if(bless)
+			var/turf/T = get_turf(src)
+			T.holy = TRUE
+	if(M.a_intent == I_GRAB && soap)
+		M.visible_message(SPAN_NOTICE("\ [M] swipes the bar of soap."), SPAN_NOTICE("You steal the soap."))
+		eject_item(soap, M)
+		soap = null
+		update_soap_mods()
+		return
 
 /obj/machinery/shower/attackby(obj/item/I, mob/user)
 	if(QUALITY_PULSING in I.tool_qualities)
@@ -196,11 +226,26 @@
 			user.visible_message(SPAN_NOTICE("\The [user] adjusts \the [src] with \the [I]."), SPAN_NOTICE("You adjust the shower with \the [I]."))
 			add_fingerprint(user)
 
+	if(istype(I, /obj/item/soap))
+		if(!soap) // Check if that cell slot is free
+			soap = I // Add the cell to the list.
+			insert_item(I, user)
+			user.visible_message(
+									SPAN_NOTICE("[user] place [I] onto [src] soap dish.")
+								)
+			update_soap_mods()
+		else
+			to_chat(user, SPAN_NOTICE("[src] already has soap."))
+
+
 /obj/machinery/shower/update_icon()	//this is terribly unreadable, but basically it makes the shower mist up
 	cut_overlays()					//once it's been on for a while, in addition to handling the water overlay.
 	if(mymist)
 		qdel(mymist)
 		mymist = null
+
+	if(soap)
+		add_overlay(image('icons/obj/watercloset.dmi', src, "soap", ABOVE_MOB_LAYER, dir))
 
 	if(on)
 		add_overlay(image('icons/obj/watercloset.dmi', src, "water", ABOVE_MOB_LAYER, dir))
@@ -239,6 +284,7 @@
 		if(M.back)
 			if(M.back.clean_blood())
 				M.update_inv_back(0)
+
 
 		//flush away reagents on the skin
 		if(M.touching)
@@ -316,7 +362,8 @@
 
 	reagents.splash(O, 10)
 
-/obj/machinery/shower/Process()
+/obj/machinery/shower/proc/try_to_wash_stuff()
+	washing_callback = FALSE
 	if(!on) return
 
 	for(var/thing in loc)
@@ -326,6 +373,13 @@
 			wash(AM)
 			if(istype(L))
 				process_heat(L)
+
+/obj/machinery/shower/Process()
+	if(!on) return
+
+	if(!washing_callback)
+		addtimer(CALLBACK(src, /obj/machinery/shower/proc/try_to_wash_stuff), max(60 - soap_modifer, 20))
+		washing_callback = TRUE
 	wash_floor()
 	reagents.add_reagent("water", reagents.get_free_space())
 
@@ -350,6 +404,8 @@
 		var/mob/living/carbon/human/H = M
 		if(temperature >= H.species.heat_level_1)
 			to_chat(H, SPAN_DANGER("The water is searing hot!"))
+			if(H.frost > 0)
+				H.frost -= 5
 		else if(temperature <= H.species.cold_level_1)
 			to_chat(H, SPAN_WARNING("The water is freezing cold!"))
 
@@ -414,7 +470,7 @@
 		return
 
 	if(amount_of_reagents < 40 && limited_reagents)
-		to_chat(user, SPAN_WARNING("The water presser seems to low to wash with."))
+		to_chat(user, SPAN_WARNING("The water pressure seems too low to wash with."))
 		return
 
 	if(busy)
@@ -456,7 +512,7 @@
 			if(limited_reagents)
 				amount_of_reagents -= amount_to_add
 		else
-			to_chat(user, SPAN_WARNING("The sink seems to be out of presser"))
+			to_chat(user, SPAN_WARNING("The sink seems to be out of pressure"))
 		return 1
 
 	else if (istype(O, /obj/item/tool/baton))
@@ -489,7 +545,7 @@
 	to_chat(usr, SPAN_NOTICE("You start washing \the [I]."))
 
 	if(amount_of_reagents < 40)
-		to_chat(user, SPAN_WARNING("The water presser seems to low to wash with."))
+		to_chat(user, SPAN_WARNING("The water pressure seems too low to wash with."))
 		return
 
 	busy = 1
@@ -524,7 +580,7 @@
 	refill_rate = 2
 
 /obj/structure/sink/basion
-	name = "water basion"
+	name = "water basin"
 	desc = "A deep basin of polished stone that has been pre-filled with fresh water."
 	icon_state = "BaptismFont_Water"
 	limited_reagents = FALSE

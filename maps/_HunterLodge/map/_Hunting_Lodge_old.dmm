@@ -1038,7 +1038,7 @@
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "da" = (
 /obj/structure/table/woodentable,
-/obj/item/gun/projectile/shotgun/pump/gladstone/queen,
+/obj/item/gun/projectile/shotgun/pump/queen,
 /turf/simulated/floor/wood/wild3,
 /area/nadezhda/outside/forest/hunting_lodge_dark)
 "db" = (

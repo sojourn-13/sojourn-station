@@ -15,6 +15,10 @@
 	path = /obj/item/clothing/suit/costume/kinky/alyson
 	cost = 2 // Pay the horni tax.
 
+/datum/gear/suit/orsicoat
+	display_name = "Red Winter Cape"
+	path = /obj/item/clothing/suit/orsicoat
+
 /datum/gear/suit/cloakselect
 	display_name = "cloak selection"
 	path = /obj/item/clothing/suit/hooded/cloak/simple
@@ -48,10 +52,6 @@
 /datum/gear/suit/hazard_vest
 	display_name = "hazard vest"
 	path = /obj/item/clothing/suit/storage/hazardvest
-
-/datum/gear/suit/hazard_vest_black
-	display_name = "black hazard vest"
-	path = /obj/item/clothing/suit/storage/hazardvest_black
 
 /datum/gear/suit/hoodies
 	display_name = "hoodie selection"
@@ -101,6 +101,11 @@
 /datum/gear/suit/miko
 	display_name = "purple miko dress"
 	path = /obj/item/clothing/suit/fluff/miko
+
+/datum/gear/suit/gownrisque
+	display_name = "daring gown"
+	path = /obj/item/clothing/suit/gownrisque
+	flags = GEAR_HAS_COLOR_SELECTION | GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/suit/labcoat
 	display_name = "labcoat"
@@ -182,6 +187,10 @@
 /datum/gear/suit/akira
 	display_name = "red jacket"
 	path = /obj/item/clothing/suit/storage/akira
+
+/datum/gear/suit/solo
+	display_name ="punk jacket"
+	path = /obj/item/clothing/suit/storage/solo
 /*
 /datum/gear/suit/radhat
 	display_name = "radiation hood"

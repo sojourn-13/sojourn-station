@@ -10,11 +10,11 @@
 #define MOVEMODE_STEP 1
 #define MOVEMODE_THRUST 2
 
-#define MECHA_ARMOR_LIGHT 1
-#define MECHA_ARMOR_SCOUT 2
-#define MECHA_ARMOR_MEDIUM 3
-#define MECHA_ARMOR_HEAVY 4
-#define MECHA_ARMOR_SUPERHEAVY 5
+#define MECHA_ARMOR_LIGHT 2
+#define MECHA_ARMOR_SCOUT 3
+#define MECHA_ARMOR_MEDIUM 4
+#define MECHA_ARMOR_HEAVY 5
+#define MECHA_ARMOR_SUPERHEAVY 6
 
 /obj/mecha
 	name = "Mecha"
@@ -509,7 +509,7 @@
 		return
 
 	else
-		if(damtype == "brute")
+		if(damtype == BRUTE)
 			for(var/target_type in src.destroyable_obj)
 				if(istype(target, target_type) && hascall(target, "attackby"))
 					src.occupant_message("You hit [target].")

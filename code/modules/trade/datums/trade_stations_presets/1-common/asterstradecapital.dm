@@ -15,7 +15,7 @@
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold  = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 1000
 	stations_recommended = list("casino", "kriosanconfederacy")
 	inventory  = list(
 		"Tools and Equipment" = list(
@@ -52,6 +52,13 @@
 			/obj/item/grenade/chem_grenade/antiweed,
 			/obj/item/grenade/chem_grenade/cleaner,
 			/obj/item/grenade/chem_grenade/metalfoam
+		),
+		"Mining Gear" = list(
+			/obj/item/tool/karl,
+			/obj/item/tool/pickaxe,
+			/obj/item/tool/pickaxe/excavation,
+			/obj/item/storage/bag/ore,
+			/obj/structure/ore_box
 		),
 		"Toys" = list(
 			/obj/item/toy/junk/balloon = good_data("Water Balloon", list(1, 50), 5),
@@ -94,10 +101,17 @@
 			/obj/item/ammo_magazine/ammobox/pistol_35,
 			/obj/item/ammo_magazine/ammobox/pistol_35/rubber
 		),
+		"Solnishko 'Guns-from-Home' Parts" = list(
+			/obj/item/computer_hardware/hard_drive/portable/design/gun_parts/bootleg = good_data("Solnishko Distrubtion - Homemade Parts", list(1, 1), 600),
+			/obj/item/part/gun/grip/wood,
+			/obj/item/part/gun/mechanism/pistol,
+			/obj/item/part/gun/mechanism/revolver,
+			/obj/item/part/gun/barrel/pistol,
+			/obj/item/part/gun/barrel/magnum
+		),
 		"Miscellanous" = list(
 			/obj/item/device/camera,
 			/obj/item/device/camera_film,
-			/obj/item/device/toner,
 			/obj/item/storage/photo_album,
 			/obj/item/wrapping_paper,
 			/obj/item/packageWrap,

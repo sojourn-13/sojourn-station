@@ -273,6 +273,7 @@
 			var/real_damage = stat_damage
 			real_damage += attack.get_unarmed_damage(H)
 			real_damage *= damage_multiplier
+			real_damage += H.punch_damage_increase
 			stat_damage *= damage_multiplier
 			if(HULK in H.mutations)
 				real_damage *= 2 // Hulks do twice the damage
@@ -355,6 +356,11 @@
 	src.visible_message(SPAN_DANGER("[user] has [attack_message] [src]!"))
 
 	user.do_attack_animation(src)
+
+	//reduced damage
+	var/RD = unique_armor_check(null, user, damage)
+	if(RD)
+		damage = RD
 
 	var/dam_zone = pick(organs_by_name)
 	var/obj/item/organ/external/affecting = get_organ(ran_zone(dam_zone))

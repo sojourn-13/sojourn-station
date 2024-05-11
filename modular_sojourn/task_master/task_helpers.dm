@@ -6,7 +6,10 @@
 	value += value_to_gain
 	if(value >= level_threshholds)
 		level += 1
-		level_threshholds += (level_threshholds * min(1, level))
+		if(!alt_scaling_number)
+			level_threshholds += (level_threshholds * min(1, level))
+		else
+			level_threshholds += (level_threshholds * alt_scaling_number)
 		if(!unlocked)
 			unlocked = TRUE
 		else

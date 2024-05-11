@@ -9,11 +9,11 @@
 	tree_y = 0.5
 	start_discovered = FALSE
 	spawn_always = TRUE
-	markup = UNIQUE_GOODS
+	markup = UNCOMMON_GOODS
 	offer_limit = 5
 	base_income = 3200
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 3500
 	stations_recommended = list("illegal2")
 	recommendations_needed = 2
 	inventory = list(
@@ -57,5 +57,6 @@
 	offer_types = list(
 		/obj/item/mine = offer_data("landmine", 1200, 3),
 		/obj/item/beartrap = offer_data("mechanical trap", 600, 5),
-		/obj/item/device/assembly/mousetrap = offer_data("mousetrap", 200, 10)
+		/obj/item/device/assembly/mousetrap = offer_data("mousetrap", 200, 10),
+		/datum/reagent/toxin/zombiepowder = offer_data("zombie powder bottle(60u)", 800, 2)
 	)

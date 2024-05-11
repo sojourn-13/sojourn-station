@@ -20,7 +20,7 @@
 	return TRUE
 
 /obj/item/projectile/bullet/gyro
-	name = "explosive bolt"
+	name = "explosive microjet"
 	icon_state = "bolter"
 	damage_types = list(BRUTE = 50)
 	check_armour = ARMOR_BULLET
@@ -56,6 +56,12 @@
 		explosion(loc, 0, 1, 2, 4)
 		set_light(0)
 	return TRUE
+
+/obj/item/projectile/bullet/rocket/scrap
+	damage_types = list(BRUTE = 30)
+
+/obj/item/projectile/bullet/rocket/scrap/on_impact(atom/target)
+	explosion(target, 0, 0, 2, 3)
 
 /obj/item/projectile/bullet/rocket/emp
 	name = "EMP rocket"
@@ -134,7 +140,7 @@
 	nodamage = TRUE
 	check_armour = ARMOR_ENERGY
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	hitscan = TRUE
+	hitscan = FALSE
 
 /obj/item/projectile/slime_death/on_impact(atom/target)//These two could likely check temp protection on the mob
 	if (!testing)
@@ -257,6 +263,7 @@
 		if (!testing)
 			var/mob/living/carbon/human/M = target
 			M.confused += rand(5,8)
+			M.sanity_damage = 8
 
 /obj/item/projectile/chameleon
 	name = "bullet"
@@ -265,6 +272,7 @@
 	embed = 0 // nope
 	nodamage = TRUE
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
+	ignition_source = FALSE
 
 
 /obj/item/projectile/flamer_lob
@@ -367,7 +375,7 @@
 	damage_types = list(BRUTE = 0)
 	kill_count = 10
 	step_delay = 0.2
-	muzzle_type = /obj/effect/projectile/line/muzzle
+	muzzle_type = null
 	tracer_type = /obj/effect/projectile/line/tracer
 	impact_type = /obj/effect/projectile/line/impact
 	var/list/our_tracers
@@ -379,6 +387,15 @@
 	nodamage = FALSE
 	stun = 2 //Horrors
 	weaken = 2 //Unspeakable
+
+/obj/item/projectile/tether/tail
+	name = "tail lash"
+	damage_types = list(BRUTE = 13)
+	armor_penetration = 35
+	nodamage = FALSE
+	stun = 2 //Horrors
+	weaken = 2 //Unspeakable
+
 
 /obj/item/projectile/tether/Initialize()
 	..()
@@ -471,3 +488,23 @@
 	muzzle_type = /obj/effect/projectile/laser_blue/muzzle
 	tracer_type = /obj/effect/projectile/laser_blue/tracer
 	impact_type = /obj/effect/projectile/laser_blue/impact
+
+//PPC
+/obj/item/projectile/ppc
+	name = "plasma discharge bolt"
+	icon_state = "ice_1"
+	damage_types = list(BURN = 47)
+	armor_penetration = 50
+	check_armour = ARMOR_ENERGY
+	recoil = 8
+
+	muzzle_type = /obj/effect/projectile/tesla/muzzle
+	tracer_type = /obj/effect/projectile/tesla/tracer
+	impact_type = /obj/effect/projectile/tesla/impact
+
+/obj/item/projectile/ppc/on_impact(atom/target)
+	if (!testing)
+		empulse(target, 0, 1)
+		electrocute_mob(target, 1)
+		new/obj/effect/sparks(target.loc)
+	return TRUE

@@ -389,6 +389,16 @@
 		icon_state ="spirit"
 		body_parts = list(BP_HEAD)
 
+	warmonger_body
+		name = "FBP-Warmonger chassis"
+		icon_state ="warmonger"
+		body_parts = list(BP_GROIN,BP_TORSO)
+
+	warmonger_head
+		name = "FBP-Warmonger head"
+		icon_state ="warmonger"
+		body_parts = list(BP_HEAD)
+
 	bishop_alt_optics
 		name = "FBP-Bishop Alt. Optics (IPC)"
 		icon_state = "bishop_alt_optics"

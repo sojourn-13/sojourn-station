@@ -130,6 +130,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/tiled/white/cargo,
 /area/deepmaint)
 "B" = (
@@ -138,6 +139,11 @@
 /obj/random/junkfood/low_chance,
 /obj/random/lathe_disk/advanced/low_chance,
 /turf/simulated/floor/tiled/white/brown_perforated,
+/area/deepmaint)
+"D" = (
+/obj/random/junk,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/white/panels,
 /area/deepmaint)
 "E" = (
 /obj/item/remains/mouse,
@@ -155,6 +161,11 @@
 /obj/random/pouch/low_chance,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/deepmaint)
+"P" = (
+/obj/item/remains/mouse,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/white/panels,
+/area/deepmaint)
 "Q" = (
 /obj/structure/table/standard,
 /obj/random/psi_megafauna,
@@ -166,11 +177,15 @@
 /obj/random/junkfood/low_chance,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/deepmaint)
+"T" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/deepmaint)
 
 (1,1,1) = {"
 a
 a
-a
+T
 a
 a
 a
@@ -216,7 +231,7 @@ j
 k
 n
 t
-w
+P
 a
 "}
 (5,1,1) = {"
@@ -233,7 +248,7 @@ v
 a
 "}
 (6,1,1) = {"
-a
+T
 c
 c
 c
@@ -268,7 +283,7 @@ i
 k
 m
 B
-v
+D
 q
 "}
 (9,1,1) = {"
@@ -300,7 +315,7 @@ a
 (11,1,1) = {"
 a
 a
-a
+T
 a
 a
 a

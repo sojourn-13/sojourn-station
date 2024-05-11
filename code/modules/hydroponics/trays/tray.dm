@@ -6,6 +6,7 @@
 	anchored = 1
 	reagent_flags = OPENCONTAINER
 	volume = 100
+	price_tag = 150 //Mostly just to have a price for the beacon, but I guess you could sell them if you were REALLY desperate?
 
 	blue_ink_tk_blocker = TRUE //Removes bugs with teleportion
 
@@ -492,7 +493,7 @@
 				to_chat(user, SPAN_WARNING("The plant is dead."))
 				return
 
-			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
+			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
 				// Create a sample.
 				seed.harvest(user,yield_mod,1)
 				health -= (rand(3,5)*10)

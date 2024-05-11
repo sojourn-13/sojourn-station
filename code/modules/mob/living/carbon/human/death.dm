@@ -53,7 +53,7 @@
 				B.host_brain.ckey = null
 				B.host_brain.name = "host brain"
 				B.host_brain.real_name = "host brain"
-			verbs -= /mob/living/proc/release_control
+			verbs -= /mob/living/carbon/proc/release_control
 
 	callHook("death", list(src, gibbed))
 
@@ -63,6 +63,9 @@
 		)
 
 	learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/rebound_case, "REBOUND_CASE", skill_gained = 1, learner = src)
+
+	if(stats.getPerk(PERK_TERRIBLE_FATE))
+		visible_message(SPAN_WARNING("their inert body emits a strange sensation and a cold invades your body. Their screams before dying recount in your mind."))
 
 	. = ..(gibbed,form.death_message)
 	if(!gibbed)
@@ -86,7 +89,6 @@
 					damage_healed = martyr.damage_healed / get_dist(src, H)
 					H.adjustFireLoss(-damage_healed)
 					H.adjustBruteLoss(-damage_healed)
-					H.adjustToxLoss(-damage_healed)
 					to_chat(H, SPAN_DANGER("You are get healed by radiance!"))
 
 			qdel(martyr)

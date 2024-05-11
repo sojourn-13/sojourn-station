@@ -46,8 +46,6 @@
 	name = "\proper x-ray vision"
 	sight_mode = BORGXRAY
 
-
-
 /obj/item/borg/sight/thermal
 	name = "\proper thermal vision"
 	sight_mode = BORGTHERM
@@ -57,8 +55,6 @@
 /obj/item/borg/sight/thermal/New()
 	..()
 	overlay = global_hud.thermal
-
-
 
 /obj/item/borg/sight/meson
 	name = "\proper meson vision"
@@ -70,7 +66,6 @@
 	..()
 	overlay = global_hud.meson
 
-
 /obj/item/borg/sight/material
 	name = "\proper material scanner vision"
 	sight_mode = BORGMATERIAL
@@ -79,25 +74,22 @@
 	name = "hud"
 	var/obj/item/clothing/glasses/hud/hud = null
 
-
-
 /obj/item/borg/sight/hud/med
 	name = "medical hud"
 	icon_state = "healthhud"
 	icon = 'icons/inventory/eyes/icon.dmi'
 
-	New()
-		..()
-		hud = new /obj/item/clothing/glasses/hud/health(src)
-		return
-
+/obj/item/borg/sight/hud/med/New()
+	..()
+	hud = new /obj/item/clothing/glasses/hud/health(src)
+	return
 
 /obj/item/borg/sight/hud/sec
 	name = "security hud"
 	icon_state = "securityhud"
 	icon = 'icons/inventory/eyes/icon.dmi'
 
-	New()
-		..()
-		hud = new /obj/item/clothing/glasses/hud/security(src)
-		return
+/obj/item/borg/sight/hud/med/New()
+	..()
+	hud = new /obj/item/clothing/glasses/hud/security(src)
+	return

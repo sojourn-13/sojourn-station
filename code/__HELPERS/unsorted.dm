@@ -147,6 +147,12 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	return destination
 
 
+/proc/ennumeratemobs()
+	var/i
+	var/mobnum
+	for(i=1, i<world.maxz, i++)
+		mobnum = SSmobs.mob_living_by_zlevel[i].len
+		to_chat(usr, "Z-level [i] has [mobnum] mobs on it")
 
 /proc/LinkBlocked(turf/A, turf/B)
 	if(A == null || B == null) return 1
@@ -314,8 +320,8 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 
 //Generalised helper proc for letting mobs rename themselves. Used to be clname() and ainame()
-//Last modified by Carn
-/mob/proc/rename_self(var/role, var/allow_numbers=0)
+//Last modified by Carn and Lamasmaster
+/mob/proc/rename_self(var/role, var/allow_numbers=TRUE)
 	spawn(0)
 		var/oldname = real_name
 
@@ -1386,18 +1392,20 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 /proc/pass(...)
 	return
 
-// \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
-// If it ever becomes necesary to get a more performant REF(), this lies here in wait
-// #define REF(thing) (thing && istype(thing, /datum) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : "\ref[thing]")
+/**
+ * \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
+ * If it ever becomes necesary to get a more performant REF(), this lies here in wait
+ * #define REF(thing) (thing && isdatum(thing) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : "\ref[thing]")
+**/
 /proc/REF(input)
-	// if(istype(input, /datum))
-	// 	var/datum/thing = input
-	// 	if(thing.datum_flags & DF_USE_TAG)
-	// 		if(!thing.tag)
-	// 			stack_trace("A ref was requested of an object with DF_USE_TAG set but no tag: [thing]")
-	// 			thing.datum_flags &= ~DF_USE_TAG
-	// 		else
-	// 			return "\[[url_encode(thing.tag)]\]"
+	if(isdatum(input))
+		var/datum/thing = input
+		if(thing.datum_flags & DF_USE_TAG)
+			if(!thing.tag)
+				stack_trace("A ref was requested of an object with DF_USE_TAG set but no tag: [thing]")
+				thing.datum_flags &= ~DF_USE_TAG
+			else
+				return "\[[url_encode(thing.tag)]\]"
 	return "\ref[input]"
 
 // Makes a call in the context of a different usr

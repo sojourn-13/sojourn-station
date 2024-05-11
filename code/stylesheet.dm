@@ -56,6 +56,7 @@ em						{font-style: normal;font-weight: bold;}
 .bsradio				{color: #88100a;}
 .engradio				{color: #A66300;}
 .medradio				{color: #0081A3;}
+.medaltradio				{color: #0081A3;}
 .sciradio				{color: #993399;}
 .supradio				{color: #5F4519;}
 .srvradio				{color: #6EAA2C;}
@@ -101,9 +102,10 @@ h1.alert, h2.alert		{color: #000000;}
 .romana					{color: #ed7961}
 .yassari				{color: #5fbf4e}
 .kriosan				{color: #ff8000}
-.marqua					{color: #00FFFF}
+.marqua					{color: #5ec2e7}
 .akula					{color: #f8412c}
 .plant					{color: #882d17}
+.opifex					{color: #e96443}
 
 .interface				{color: #330033;}
 

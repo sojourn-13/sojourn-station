@@ -51,19 +51,14 @@
 				/obj/item/clothing/suit/armor/vest/ironhammer  = 10,
 				/obj/item/clothing/suit/storage/vest = 5,
 				/obj/item/clothing/suit/armor/platecarrier  = 10,
-				/obj/item/clothing/suit/armor/platecarrier/green  = 10,
-				/obj/item/clothing/suit/armor/platecarrier/tan  = 10,
-				/obj/item/clothing/suit/armor/flackvest  = 5,
-				/obj/item/clothing/suit/armor/flackvest/tan = 5,
-				/obj/item/clothing/suit/armor/flackvest/green  = 5,
-				/obj/item/clothing/suit/armor/vest/detective  = 10,
+				/obj/item/clothing/suit/armor/flakvest  = 5,
 				/obj/item/clothing/suit/armor/vest/handmade = 20,
 				/obj/item/clothing/suit/space/void/SCAF = 1,
 				/obj/item/clothing/suit/storage/vest/merc = 1,
 				/obj/item/clothing/suit/space/void/odst/red = 1,
 				/obj/item/clothing/suit/space/void/odst/blue = 1,
 				/obj/item/clothing/suit/space/void/odst/orange = 1,
-				/obj/item/clothing/suit/armor/vest/security = 20))
+				/obj/item/clothing/suit/armor/vest = 20))
 
 /obj/random/cloth/armor/low_chance
 	name = "low chance random armor"
@@ -81,7 +76,6 @@
 				/obj/item/clothing/suit/storage/rank/cargo_jacket = 10,
 				/obj/item/clothing/suit/storage/rank/insp_trench = 5,
 				/obj/item/clothing/suit/storage/hazardvest = 10,
-				/obj/item/clothing/suit/storage/rank/det_trench  = 3,
 				/obj/item/clothing/suit/storage/toggle/leather = 3,
 				/obj/item/clothing/suit/storage/rank/robotech_jacket = 10,
 				/obj/item/clothing/suit/storage/toggle/bomber = 5,
@@ -149,7 +143,6 @@
 				/obj/item/clothing/under/suit_jacket/blazer = 5,
 				/obj/item/clothing/under/pj/blue = 5,
 				/obj/item/clothing/under/color/brown = 5,
-				/obj/item/clothing/under/rank/captain/formal = 2,
 				/obj/item/clothing/under/color/grey = 5,
 				/obj/item/clothing/under/color/grey = 5,
 				/obj/item/clothing/under/color/red = 5,
@@ -182,7 +175,7 @@
 				/obj/item/clothing/under/color/purple = 5,
 				/obj/item/clothing/under/costume/misc/rainbowjumpsuit = 5,
 				/obj/item/clothing/under/pj = 5,
-				/obj/item/clothing/under/plaid/properblue = 5,
+				/obj/item/clothing/under/dress/properblue = 5,
 				/obj/item/clothing/under/suit_jacket/red = 5,
 				/obj/item/clothing/under/suit_jacket = 5,
 				/obj/item/clothing/under/turtleneck = 5,
@@ -220,22 +213,20 @@
 	return pickweight(list(/obj/item/clothing/head/helmet = 5,
 				/obj/item/clothing/head/helmet/faceshield/riot = 5,
 				/obj/item/clothing/head/helmet/ballistic = 5,
-				/obj/item/clothing/head/helmet/ballistic/green = 5,
-				/obj/item/clothing/head/helmet/ballistic/tan = 5,
 				/obj/item/clothing/head/helmet/laserproof = 2,
 				/obj/item/clothing/head/helmet/handmade = 5,
 				/obj/item/clothing/head/helmet/steelpot = 8,
 				/obj/item/clothing/head/helmet/generic_full = 5,
 				/obj/item/clothing/head/helmet/faceshield/altyn = 2,
-				/obj/item/clothing/head/helmet/faceshield/altyn/brown = 2,
-				/obj/item/clothing/head/helmet/faceshield/altyn/black = 2,
 				/obj/item/clothing/head/helmet/faceshield/altyn/maska = 2,
 				/obj/item/clothing/head/helmet/mercenary = 2,
+				/obj/item/clothing/head/helmet/bulletproof = 2,
 				/obj/item/clothing/head/helmet/space/void/odst/red = 1,
 				/obj/item/clothing/head/helmet/space/void/odst/blue = 1,
 				/obj/item/clothing/head/helmet/space/void/odst/orange = 1,
 				/obj/item/clothing/head/helmet/space/void/SCAF = 1,
-				/obj/item/clothing/head/helmet/night_vision_helm = 0.5,))
+				/obj/item/clothing/head/helmet/bulletproof/ironhammer_nvg = 1,
+				/obj/item/clothing/head/helmet/bulletproof/ironhammer_thermal = 0.3,))
 
 /obj/random/cloth/helmet/low_chance
 	name = "low chance random helmet"
@@ -269,7 +260,6 @@
 				/obj/item/clothing/head/bandana/orange = 5,
 				/obj/item/clothing/head/bandana/green = 5,
 				/obj/item/clothing/head/costume/job/nun = 5,
-				/obj/item/clothing/head/rank/inspector/grey = 5,
 				/obj/item/clothing/head/rank/inspector = 5,
 				/obj/item/clothing/head/soft = 1,
 				/obj/item/clothing/head/soft/red = 1,
@@ -298,22 +288,6 @@
 	name = "low chance random head"
 	icon_state = "armor-grey-low"
 	spawn_nothing_percentage = 60
-
-/obj/random/cloth/bikehelms
-	name = "random biker helmet"
-	desc = "random colored biker helmet"
-	icon_state = "armor-grey"
-
-/obj/random/cloth/bikehelms/item_to_spawn()
-	return pickweight(list(/obj/item/clothing/head/helmet/biker = 1,
-				/obj/item/clothing/head/helmet/biker/white = 1,
-				/obj/item/clothing/head/helmet/biker/red = 1,
-				/obj/item/clothing/head/helmet/biker/green = 1,
-				/obj/item/clothing/head/helmet/biker/blue = 1,
-				/obj/item/clothing/head/helmet/biker/purple = 1,
-				/obj/item/clothing/head/helmet/biker/pink = 1,
-				/obj/item/clothing/head/helmet/biker/yellow = 1,
-				/obj/item/clothing/head/helmet/biker/football = 1))
 
 /obj/random/cloth/bikehelms/low_chance
 	name = "low chance random biker helmet"
@@ -370,6 +344,7 @@
 	return pickweight(list(/obj/item/clothing/glasses/eyepatch = 4,
 				/obj/item/clothing/glasses/binoclard_lenses = 2,
 				/obj/item/clothing/glasses/regular/gglasses = 2,
+				/obj/item/clothing/glasses/regular/hack_lens = 2,
 				/obj/item/clothing/glasses/hud/health = 2,
 				/obj/item/clothing/glasses/hud/security = 2,
 				/obj/item/clothing/glasses/sechud/tactical = 2,
@@ -474,9 +449,7 @@
 	return pickweight(list(/obj/item/storage/belt/medical = 8,
 				/obj/item/storage/belt/medical/emt = 8,
 				/obj/item/storage/belt/security = 4,
-				/obj/item/storage/belt/webbing = 2,
-				/obj/item/storage/belt/webbing/green = 2,
-				/obj/item/storage/belt/webbing/black = 2,
+				/obj/item/storage/belt/webbing = 6,
 				/obj/item/storage/belt/webbing/ih = 2,
 				/obj/item/storage/belt/security/neotheology = 2,
 				/obj/item/storage/belt/utility = 8,
@@ -530,5 +503,31 @@
 				/obj/item/clothing/suit/armor/vest/iron_lock_security = 1,
 				/obj/item/clothing/suit/greatcoat/os = 4,
 				/obj/item/clothing/head/os_cap = 4,
-				/obj/item/clothing/head/helmet/space/os = 8,
-				/obj/item/clothing/suit/space/os = 8))
+				/obj/item/clothing/suit/space/void/os = 6,
+				/obj/item/clothing/suit/space/void/greyson = 1))
+
+/obj/random/cloth/assault/reaver
+	name = "low chance Reaver Assault Armor"
+	desc = "Low chance reaver assault armor spawn. Intended for use on Reavers."
+	icon_state = "armor-grey-low"
+	spawn_nothing_percentage = 97 //about a 1/3 chance on a normal round of obtaining this
+
+/obj/random/cloth/assault/reaver/item_to_spawn()
+	return pickweight(list(/obj/item/clothing/suit/space/void/assault_wolf))
+
+/obj/random/cloth/bells
+	name = "random bell collar"
+	desc = "This is a random bell collar."
+	icon_state = "armor-grey"
+
+/obj/random/cloth/bells/item_to_spawn()
+	return pickweight(list(
+				/obj/item/clothing/accessory/choker/gold_bell_small_goth = 2,
+				/obj/item/clothing/accessory/choker/gold_bell_goth = 1,
+				/obj/item/clothing/accessory/choker/silver_bell_goth = 2,
+				/obj/item/clothing/accessory/choker/silver_bell_small_goth = 1,
+				/obj/item/clothing/accessory/choker/gold_bell = 2,
+				/obj/item/clothing/accessory/choker/gold_bell_small = 3,
+				/obj/item/clothing/accessory/choker/silver_bell = 2,
+				/obj/item/clothing/accessory/choker/silver_bell_small = 3
+				))

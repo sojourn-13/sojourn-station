@@ -157,7 +157,7 @@
 	brightness_on = 6 //luminosity when on
 	light_overlay = "hardhat_light"
 
-	icon_state = "mining_helmet"
+	icon_state = "mining_helmet" //Credit for sprites go to Près de l'oiseau over at Eris
 	item_state = "mining_helmet"
 	item_state_slots = list(
 		slot_l_hand_str = "mining_helm",
@@ -176,7 +176,7 @@
 /obj/item/clothing/suit/space/void/mining
 	name = "mining voidsuit"
 	desc = "A special suit that protects against hazardous, low pressure environments. Has reinforced plating."
-	item_state = "miner_suit"
+	item_state = "miner_suit" //Credit for sprites go to Près de l'oiseau over at Eris
 	icon_state = "miner_suit"
 	slowdown = 0.35
 	armor_list = list(
@@ -542,22 +542,51 @@
 		usr.update_action_buttons()
 		return 1
 
-/obj/item/clothing/head/space/void/assault/void_wolf
+/obj/item/clothing/head/space/void/assault_wolf //moving away from being a child of assault armor. Makes issues with its parant handing off its adjust style verb
 	name = "reaver assault helmet"
 	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor as well as a light built in. This one was made for a Void Wolf Reaver."
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
-
-/obj/item/clothing/head/space/void/assault/void_wolf/New()
+	action_button_name = "Toggle Headlamp"
 	icon_state = "assault_wolf"
 	item_state = "assault_wolf"
+	brightness_on = 4 //luminosity when on
+	light_overlay = "hardhat_light"
 
-/obj/item/clothing/suit/space/void/assault/void_wolf
+	item_state_slots = list(
+		slot_l_hand_str = "assaulthelm",
+		slot_r_hand_str = "assaulthelm",
+		)
+	obscuration = MEDIUM_OBSCURATION
+
+	armor_list = list(
+		melee = 40,
+		bullet = 65,
+		energy = 50,
+		bomb = 70,
+		bio = 75,
+		rad = 50
+	)
+	siemens_coefficient = 0.4
+	light_overlay = "helmet_light_dual"
+
+/obj/item/clothing/suit/space/void/assault_wolf
 	name = "reaver assault armor"
 	icon_state = "assault_wolf"
 	item_state = "assault_wolf"
 	desc = "Void Wolves prey on Kriosan trade ships and frontier colonies all the time, in rare circumstances they engage military ships, with skilled and ballsy Void Wolf Reavers succeeding \
 	and making off with expensive loot, such as this assault armor given a Void Wolf paint job."
-	helmet = /obj/item/clothing/head/space/void/assault/void_wolf
+	armor_list = list(
+		melee = 50,
+		bullet = 75,
+		energy = 60,
+		bomb = 80,
+		bio = 100,
+		rad = 50
+	)
+	siemens_coefficient = 0.4
+	slowdown = 0.6
+	helmet = /obj/item/clothing/head/space/void/assault_wolf
+	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/space/void/assault
 	name = "assault armor"
@@ -582,6 +611,7 @@
 /obj/item/clothing/head/space/void/medarmor
 	name = "soteria medical helmet"
 	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor and even a built in light."
+	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
 	icon_state = "armor_medical"
 	item_state = "armor_medical"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
@@ -599,7 +629,7 @@
 	armor_list = list(
 		melee = 25,
 		bullet = 30,
-		energy = 20,
+		energy = 40,
 		bomb = 35,
 		bio = 100,
 		rad = 90
@@ -623,9 +653,11 @@
 		rad = 90
 	)
 	siemens_coefficient = 0.4
+	slowdown = 0.6
+	stiffness = LIGHT_STIFFNESS
 	helmet = /obj/item/clothing/head/space/void/medarmor
 	matter = list(MATERIAL_STEEL = 40, MATERIAL_PLASTIC = 30, MATERIAL_GLASS = 10, MATERIAL_PLATINUM = 8)
-	stiffness = MEDIUM_STIFFNESS
+
 
 /obj/item/clothing/suit/space/void/medarmor/handle_shield(mob/user, damage, atom/damage_source = null, mob/attacker = null, def_zone = null, attack_text = "the attack")
 	if(istype(damage_source, /obj/item/projectile/energy) || istype(damage_source, /obj/item/projectile/beam))

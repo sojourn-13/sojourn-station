@@ -70,6 +70,7 @@
 	degradation = 2
 	workspeed = 1.2
 	use_power_cost = 0
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/pickaxe/onestar/turn_on(mob/user)
 	..(null, TRUE)

@@ -72,9 +72,6 @@
 	var/update_slimes = 0
 	var/is_busy = FALSE // Prevents stacking of certain actions, like resting and diving
 	var/silent = 0 		// Can't talk. Value goes down every life proc.
-	var/on_fire = 0 //The "Are we on fire?" var
-	var/fire_stacks
-	var/next_onfire_hal = 0 //burn
 
 	var/failed_last_breath = 0 //This is used to determine if the mob failed a breath. If they did fail a brath, they will attempt to breathe each tick, otherwise just once per 4 ticks.
 	var/possession_candidate // Can be possessed by ghosts if unplayed.
@@ -132,3 +129,13 @@
 	var/delay_for_rapid_range = 0 SECONDS
 	var/delay_for_melee = 0 SECONDS
 	var/delay_for_all = 0 SECONDS
+
+	//vars pertaining to the mob's relation to atmos and if they are on fire
+	var/never_stimulate_air = FALSE
+	var/min_air_pressure = 50 //below this, brute damage is dealt
+	var/max_air_pressure = 300 //above this, brute damage is dealt
+	var/min_bodytemperature = 200 //below this, burn damage is dealt
+	var/max_bodytemperature = 360 //above this, burn damage is dealt
+	var/on_fire = 0 //The "Are we on fire?" var
+	var/fire_stacks
+	var/next_onfire_brn = 0 //burn

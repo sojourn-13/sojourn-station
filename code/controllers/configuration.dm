@@ -44,7 +44,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 //	var/enable_authentication = 0		// goon authentication
 	var/del_new_on_log = 1				// del's new players if they log before they spawn in
 	var/objectives_disabled = 0 			//if objectives are disabled or not
-	var/protect_roles_from_antagonist = 0// If security and such can be traitor/cult/other
+	var/protect_roles_from_antagonist = 0// If security and such can be contractor/cult/other
 	var/allow_Metadata = 0				// Metadata is supported.
 	var/popup_admin_pm = 0				//adminPMs to non-admins show in a pop-up 'reply' window when set to 1.
 	var/tick_limit_mc_init = TICK_LIMIT_MC_INIT_DEFAULT	//SSinitialization throttling
@@ -93,6 +93,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/debugparanoid = 0
 	var/borderControl = 0
 
+	var/bypassObfuscation = 0
 
 	var/language
 	var/serverurl
@@ -102,6 +103,18 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/forumurl
 	var/githuburl
 	var/discordurl
+
+	var/static/ip_reputation = FALSE		//Should we query IPs to get scores? Generates HTTP traffic to an API service.
+	var/static/ipr_email					//Left null because you MUST specify one otherwise you're making the internet worse.
+	var/static/ipr_block_bad_ips = FALSE	//Should we block anyone who meets the minimum score below? Otherwise we just log it (If paranoia logging is on, visibly in chat).
+	var/static/ipr_bad_score = 1			//The API returns a value between 0 and 1 (inclusive), with 1 being 'definitely VPN/Tor/Proxy'. Values equal/above this var are considered bad.
+	var/static/ipr_allow_existing = FALSE 	//Should we allow known players to use VPNs/Proxies? If the player is already banned then obviously they still can't connect.
+	var/static/ipr_minimum_age = 5			//How many days before a player is considered 'fine' for the purposes of allowing them to use VPNs.
+	var/static/ipqualityscore_apikey		//API key for ipqualityscore.com. Optional additional service that can be used if an API key is provided.
+
+	var/static/panic_bunker = FALSE			//Only allow ckeys who have already been seen by the DB. Only makes sense if you have a DB.
+	var/static/paranoia_logging = FALSE		//Log new byond accounts and first-time joins
+
 
 	//Alert level description
 	var/alert_desc_green = "All threats to the colony have passed. Security may not have weapons visible, privacy laws are once again fully enforced."
@@ -113,7 +126,6 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/forbid_singulo_possession = 0
 
 	var/organs_decay
-	var/default_brain_health = 400
 
 	//Paincrit knocks someone down once they hit 60 shock_stage, so by default make it so that close to 100 additional damage needs to be dealt,
 	//so that it's similar to HALLOSS. Lowered it a bit since hitting paincrit takes much longer to wear off than a halloss stun.
@@ -299,6 +311,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 				if ("border_control")
 					config.borderControl = text2num(value)
 
+				if ("bypass_obfuscation")
+					config.bypassObfuscation = 1
+
 				if ("log_admin")
 					config.log_admin = 1
 
@@ -439,6 +454,33 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if ("githuburl")
 					config.githuburl = value
+
+				if("ip_reputation")
+					config.ip_reputation = 1
+
+				if("ipr_email")
+					config.ipr_email = value
+
+				if("ipr_block_bad_ips")
+					config.ipr_block_bad_ips = 1
+
+				if("ipr_bad_score")
+					config.ipr_bad_score = text2num(value)
+
+				if("ipr_allow_existing")
+					config.ipr_allow_existing = 1
+
+				if("ipr_minimum_age")
+					config.ipr_minimum_age = text2num(value)
+
+				if ("ipqualityscore_apikey")
+					config.ipqualityscore_apikey = value
+
+				if ("panic_bunker")
+					config.panic_bunker = 1
+
+				if ("paranoia_logging")
+					config.paranoia_logging = 1
 
 				if ("ghosts_can_possess_animals")
 					config.ghosts_can_possess_animals = value
@@ -744,10 +786,6 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 					config.organ_damage_spillover_multiplier = value / 100
 				if("organs_can_decay")
 					config.organs_decay = 1
-				if("default_brain_health")
-					config.default_brain_health = text2num(value)
-					if(!config.default_brain_health || config.default_brain_health < 1)
-						config.default_brain_health = initial(config.default_brain_health)
 				if("bones_can_break")
 					config.bones_can_break = value
 				if("limbs_can_break")

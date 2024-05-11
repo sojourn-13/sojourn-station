@@ -13,7 +13,7 @@
 	circuit = /obj/item/circuitboard/ameridian_refinery
 	frame_type = FRAME_VERTICAL
 	var/obj/structure/reagent_dispensers/bidon/Container
-	var/crystal_worth = 10 // How much liquid ameridian is each solid crystal worth.
+	var/crystal_worth = 8 // How much liquid ameridian is each solid crystal worth.
 
 /obj/machinery/ameridian_refinery/New()
 	..()
@@ -57,6 +57,12 @@
 		Bidon.reagents.trans_to_holder(src.reagents, Bidon.reagents.total_volume)
 		reagents.maximum_volume = Bidon.reagents.maximum_volume
 		Bidon.update_icon()
+
+	var/man_rating = 0
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
+
+	crystal_worth = man_rating + 8
 
 /obj/machinery/ameridian_refinery/attack_hand(mob/user as mob)
 	interact(user)

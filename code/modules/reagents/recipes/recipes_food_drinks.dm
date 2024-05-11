@@ -43,6 +43,7 @@
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/tofu(location)
 
+/* Deprecated form of making chocolate_bar via chemical mix - Chocolate bar is now made in a Pot, recipe in VIRK
 /datum/chemical_reaction/chocolate_bar
 	result = null
 	required_reagents = list("soymilk" = 2, "coco" = 2, "sugar" = 2)
@@ -66,6 +67,7 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/chocolatebar(location)
+*/
 
 /datum/chemical_reaction/icecreambase
 	required_reagents = list("sugar" = 1, "ice" = 1, "cream" = 1)
@@ -123,6 +125,7 @@
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/sliceable/cheesewheel(location)
 
+/* Deprecated form of making meatball via chemical mix - Meatball is made in prep bowl, VIRK recipe
 /datum/chemical_reaction/meatball
 	result = null
 	required_reagents = list("protein" = 3, "flour" = 5)
@@ -134,6 +137,7 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/rawmeatball(location)
+*/
 
 /datum/chemical_reaction/dough
 	result = null
@@ -801,6 +805,12 @@
 	required_reagents = list("manhattan" = 1, "fernet" = 1)
 	result_amount = 2
 
+/datum/chemical_reaction/drinks/jagerbomb
+	result = "jagerbomb"
+	required_reagents = list("fernet" = 1, "energy_drink_monster" = 1)
+	result_amount = 2
+	mix_message = "The bitter shot falls into the energy drink with a plop!"
+
 /datum/chemical_reaction/drinks/antidepressant
 	result = "antidepressant"
 	required_reagents = list("space_up" = 10, "triplecitrus" = 20, "sugarrush" = 10, "ice" = 5, "cola" = 10, "pineapplejuice" = 10)
@@ -892,3 +902,11 @@
 	result = "friendlyfire"
 	required_reagents = list("rum" = 2, "iron" = 1, "vodka" = 1)
 	result_amount = 3
+
+
+/* Other */
+
+/datum/chemical_reaction/protein_shake
+	result = "protein_shake"
+	required_reagents = list("milk" = 1, "protein" = 1)
+	result_amount = 2

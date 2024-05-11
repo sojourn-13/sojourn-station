@@ -74,7 +74,7 @@
 		//Create and assign the click handler
 		//A click handler intercepts mouseup/drag/down events which allow fullauto firing
 		CH = new /datum/click_handler/charge()
-		CH.reciever = gun //Reciever is the gun that gets the fire events
+		CH.receiver = gun //receiver is the gun that gets the fire events
 		L.client.CH = CH //Put it on the client
 		CH.owner = L.client //And tell it where it is
 
@@ -85,14 +85,14 @@
 /datum/click_handler/charge
 	handler_name = "charge mode"
 	var/atom/target = null
-	var/obj/item/gun/reciever
+	var/obj/item/gun/receiver
 
 /datum/click_handler/charge/Click()
 	return TRUE //As we don't use the normal click, but the MouseDown/MouseUp, this function is not needed at all. This also bypasses the delete on use check
 
 //Begin charging
 /datum/click_handler/charge/MouseDown(object,location,control,params)
-	reciever.begin_charge(owner.mob)
+	receiver.begin_charge(owner.mob)
 
 //Fire charged attack
 /datum/click_handler/charge/MouseUp(object,location,control,params)
@@ -101,7 +101,7 @@
 		var/atom/target = object
 		target = object
 		owner.mob.face_atom(target)
-	reciever.release_charge(object, owner.mob)
+	receiver.release_charge(object, owner.mob)
 
 /******************
 	The actual code

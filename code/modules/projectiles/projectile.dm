@@ -45,6 +45,8 @@
 	var/def_zone = ""	//Aiming at
 	var/mob/firer = null//Who shot it
 	var/mob/original_firer //Who shot it. Never changes, even after ricochet.
+	var/friendly_to_colony = FALSE //If we bypass allies or not.
+	var/faction_iff = "" //Used for Excel and Greyson turrets
 	var/silenced = FALSE	//Attack message
 	var/yo = null
 	var/xo = null
@@ -59,6 +61,7 @@
 
 	var/can_ricochet = FALSE // defines if projectile can or cannot ricochet.
 	var/ricochet_id = 0 // if the projectile ricochets, it gets its unique id in order to process iteractions with adjacent walls correctly.
+	var/ricochet_mod = 1 //How much we affect the likeliness of a round to bounce. This number is modified negatively by 10% of the projecties AP(thus, ricochet_mult = 1.5 on ap 10 gun is actually 1.4). high cal rubbers have lower mult than low cal rubbers and are further penalized by having AP and AP mod on their rounds/weapons more often.
 
 	var/list/damage_types = list(BRUTE = 10) //BRUTE, BURN, TOX, OXY, CLONE, HALLOSS -> int are the only things that should be in here
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
@@ -122,9 +125,9 @@
 	var/serial_type_index_bullet = ""
 
 	var/recoil = 0
+	var/wounding_mult = 1 // A multiplier on damage inflicted to and damage blocked by mobs
 
-	var/added_damage_bullet_pve = 0 //Added damage against mobs, checks bullet armor
-	var/added_damage_laser_pve  = 0 //Added damage against mobs, checks enegery armor
+	var/ignition_source = TRUE //Used for deciding if a projectile should blow up a benzin.
 
 /obj/item/projectile/New()
 
@@ -150,15 +153,8 @@
 /obj/item/projectile/proc/get_total_damage()
 	var/val = 0
 	for(var/i in damage_types)
-		val += damage_types[i]
+		val += damage_types[i] * post_penetration_dammult
 	return val
-
-/obj/item/projectile/proc/get_total_damage_pve()
-	var/val = 0
-	val += added_damage_bullet_pve
-	val += added_damage_laser_pve
-	return val
-
 
 /obj/item/projectile/proc/is_halloss()
 	for(var/i in damage_types)
@@ -182,10 +178,6 @@
 
 /obj/item/projectile/multiply_projectile_agony(newmult)
 	agony = initial(agony) * newmult
-
-/obj/item/projectile/multiply_pve_damage(newmult)
-	added_damage_bullet_pve = initial(added_damage_bullet_pve) * newmult
-	added_damage_laser_pve  = initial(added_damage_laser_pve) * newmult
 
 /obj/item/projectile/add_fire_stacks(newmult)
 	fire_stacks = initial(fire_stacks) + newmult
@@ -239,6 +231,9 @@
 /obj/item/projectile/proc/get_structure_damage()
 	return ((damage_types[BRUTE] + damage_types[BURN]) * structure_damage_factor)
 
+/obj/item/projectile/proc/get_ricochet_modifier()
+	return (ricochet_mod - (armor_penetration * 0.01)) //Return ricochet mod(default 1) modified by AP. E.G 1 - (AP(10) * 0.01) = 0.1. Thus 10% less likely to bounce per 10ap.
+
 //return 1 if the projectile should be allowed to pass through after all, 0 if not.
 /obj/item/projectile/proc/check_penetrate(atom/A)
 	return TRUE
@@ -263,7 +258,8 @@
 
 	if (firer_arg)
 		firer = firer_arg
-		original_firer = firer_arg
+		if(!original_firer)
+			original_firer = firer_arg
 
 	if (firer && (isliving(firer))) //here we apply the projectile adjustments applied by prefixes and such
 		var/mob/living/livingfirer = firer
@@ -309,9 +305,8 @@
 	original = target
 	def_zone = target_zone
 
-	spawn()
-		setup_trajectory(curloc, targloc, x_offset, y_offset, angle_offset) //plot the initial trajectory
-		Process()
+	setup_trajectory(curloc, targloc, x_offset, y_offset, angle_offset) //plot the initial trajectory
+	Process()
 
 	return FALSE
 
@@ -372,6 +367,12 @@
 		return
 
 	if(target_mob == firer) // Do not hit the shooter if the bullet hasn't ricocheted yet. The firer changes upon ricochet, so this should not prevent ricocheting shots from hitting their shooter.
+		return FALSE
+
+	if(friendly_to_colony && target_mob.friendly_to_colony) // Used for automated defenses
+		return FALSE
+
+	if(faction_iff == target_mob.faction)
 		return FALSE
 
 	//roll to-hit
@@ -712,28 +713,29 @@
 			if(!silenced)
 				visible_message(SPAN_NOTICE("\The [src] misses [target_mob] narrowly!"))
 			return FALSE
-
+/*
 	//hit messages
 	if (!testing)
 		if(silenced)
 			to_chat(target_mob, SPAN_DANGER("You've been hit in the [parse_zone(def_zone)] by \the [src]!"))
 		else
 			visible_message(SPAN_DANGER("\The [target_mob] is hit by \the [src] in the [parse_zone(def_zone)]!"))//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
-
+*/
 		playsound(target_mob, pick(mob_hit_sound), 40, 1)
 
 		//admin logs
-		if(!no_attack_log)
-			if(ismob(firer))
+	if(!no_attack_log)
+		if(ismob(firer))
 
-				var/attacker_message = "shot with \a [src.type]"
-				var/victim_message = "shot with \a [src.type]"
-				var/admin_message = "shot (\a [src.type])"
+			var/attacker_message = "shot with \a [src.type]"
+			var/victim_message = "shot with \a [src.type]"
+			var/admin_message = "shot (\a [src.type])"
 
-				admin_attack_log(firer, target_mob, attacker_message, victim_message, admin_message)
-			else
-				target_mob.attack_log += "\[[time_stamp()]\] <b>UNKNOWN SUBJECT (No longer exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
-				msg_admin_attack("UNKNOWN shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
+			admin_attack_log(original_firer, target_mob, attacker_message, victim_message, admin_message)
+		else
+			target_mob.attack_log += "\[[time_stamp()]\] <b>[original_firer] (May No Longer Exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
+			if(target_mob.ckey && original_firer.ckey) //We dont care about PVE
+				msg_admin_attack("[original_firer.name] (May No Longer Exists) shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
 
 	//sometimes bullet_act() will want the projectile to continue flying
 	if (result == PROJECTILE_CONTINUE)
@@ -916,7 +918,7 @@
 			pixel_x = location.pixel_x
 			pixel_y = location.pixel_y
 
-			if(!bumped && !isturf(original))
+			if(!bumped && !QDELETED(original) && !isturf(original))
 				if(loc == get_turf(original))
 					if(!(original in permutated))
 						if(Bump(original))
@@ -1117,7 +1119,7 @@
 			damage_types -= dmg_type
 	if(!damage_types.len)
 		on_impact(A)
-		qdel(A)
+		qdel(src)
 
 	return dmg_total ? (dmg_remaining / dmg_total) : 0
 

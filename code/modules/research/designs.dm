@@ -32,6 +32,9 @@ other types of metals and chemistry for reagents).
 /datum/design/research/item/mechfab
 	build_type = MECHFAB
 
+	required_printer_code = TRUE
+	code_dex = "MECHFAB"
+
 /datum/design/research/item/clothing
 	category = CAT_CLOTHING
 

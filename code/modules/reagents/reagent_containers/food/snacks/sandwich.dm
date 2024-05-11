@@ -110,6 +110,7 @@
 	name = "muffin egg sandwich"
 	desc = "A muffin sandwich consisting of fried egg and nadezhdian bacon, a good breakfast takeaway choice."
 	icon_state = "muffinegg"
+	taste_tag = list(FLOURY_FOOD, SALTY_FOOD)
 	bitesize = 2
 	nutriment_desc = list("bacon" = 5, "runny fried egg" = 5, "muffin" = 2)
 	nutriment_amt = 6
@@ -118,11 +119,12 @@
 	name = "sandwich"
 	desc = "A grand creation of meat, cheese, bread, and several leaves of lettuce! Arthur Dent would be proud."
 	icon_state = "sandwich"
+	taste_tag = list(MEAT_FOOD, CHEESE_FOOD)
 	filling_color = "#D9BE29"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=4)
 	nutriment_desc = list("bread" = 3, "cheese" = 3)
-	nutriment_amt = 3
+	nutriment_amt = 8 //As much as two slices of pizza
 	preloaded_reagents = list("protein" = 3)
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 13)
@@ -131,11 +133,12 @@
 	name = "toasted sandwich"
 	desc = "Your classic sandwich, grilled with butter to amp up its deliciousness factor tenfold."
 	icon_state = "toastedsandwich"
+	taste_tag = list(FLOURY_FOOD)
 	filling_color = "#D9BE29"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=4)
 	nutriment_desc = list("toasted bread" = 3, "cheese" = 3)
-	nutriment_amt = 3
+	nutriment_amt = 8
 	preloaded_reagents = list("protein" = 6) // Who thought putting carbon on a FOOD was a good idea?!
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 17)
@@ -144,25 +147,26 @@
 	name = "deluxe toasted sandwich"
 	desc = "A perfectly toasted sandwich with all the works."
 	icon_state = "toastedsandwich"
+	taste_tag = list(MEAT_FOOD, CHEESE_FOOD)
 	filling_color = "#D9BE29"
 	bitesize = 2
 	center_of_mass = list("x"=16, "y"=4)
 	nutriment_desc = list("toasted bread" = 3, "cheese" = 3, "delux toasted sandwich" = 5)
 	nutriment_amt = 3
-	preloaded_reagents = list("protein" = 3, "machine binding ritual" = 3, "glucose" = 2)
+	preloaded_reagents = list("protein" = 3, "greaser" = 3, "glucose" = 2)
 	cooked = TRUE
 	matter = list(MATERIAL_BIOMATTER = 23)
 
 /obj/item/reagent_containers/food/snacks/toastedsandwich/holy
 	name = "precept sandwich"
-	desc = "A classic sandwich grilled in butter and toasted perfectly. Comes packed with protein-rich meat made from mukwahs and cheese derived from tangu milk, making it an immensely empowering meal. \
-	Side effects include enhanced toughness, robustness, movement speed, and twitching."
-	preloaded_reagents = list("protein" = 10, "tangu_milk" = 10, "hyperzine" = 10)
+	desc = "A classic sandwich grilled in butter and toasted perfectly. Comes packed with protein-rich meat made from mukwahs and cheese derived from tangu milk."
+	preloaded_reagents = list("protein" = 10, "tangu_milk" = 10)
 
 /obj/item/reagent_containers/food/snacks/grilledcheese
 	name = "grilled cheese sandwich"
 	desc = "Goes great with Tomato soup!"
 	icon_state = "toastedsandwich"
+	taste_tag = list(CHEESE_FOOD)
 	filling_color = "#D9BE29"
 	bitesize = 2
 	nutriment_desc = list("toasted bread" = 3, "cheese" = 3)
@@ -175,6 +179,7 @@
 	name = "BLT"
 	desc = "A classic sandwich composed of nothing more than bacon, lettuce and tomato."
 	icon_state = "blt"
+	taste_tag = list(MEAT_FOOD, CHEESE_FOOD, UMAMI_FOOD)
 	bitesize = 2
 	nutriment_desc = list("toasted bread" = 3, "bacon" = 3, "tomato" = 2)
 	nutriment_amt = 3
@@ -183,6 +188,7 @@
 	name = "two bread"
 	desc = "It is very bitter and winy."
 	icon_state = "twobread"
+	taste_tag = list(FLOURY_FOOD)
 	filling_color = "#DBCC9A"
 	bitesize = 3
 	center_of_mass = list("x"=15, "y"=12)
@@ -195,6 +201,7 @@
 	name = "jelly sandwich"
 	desc = "You wish you had some peanut butter to go with this..."
 	icon_state = "jellysandwich"
+	taste_tag = list(FLOURY_FOOD, SWEET_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#9E3A78"
 	bitesize = 3
@@ -213,6 +220,7 @@
 	name = "cuban carp"
 	desc = "A sandwich that burns your tongue and then leaves it numb!"
 	icon_state = "cubancarp"
+	taste_tag = list(SPICY_FOOD, MEAT_FOOD)
 	trash = /obj/item/trash/plate
 	filling_color = "#E9ADFF"
 	bitesize = 3
@@ -227,6 +235,7 @@
 	name = "icecream sandwich"
 	desc = "A classic icecream sandwiched between two chocolate cookies, an essential dessert to have by the dozen."
 	icon_state = "icecreamsandwich"
+	taste_tag = list(SWEET_FOOD)
 	bitesize = 4
 	nutriment_amt = 8
 	nutriment_desc = list("icecream" = 10, "cookies" = 5, "perfection" = 15)
@@ -236,6 +245,7 @@
 	name = "strawberry icecream sandwich"
 	desc = "A classic strawberry icecream sandwiched between two vanilla cookies, an essential treat to have by the dozen."
 	icon_state = "icecreamsandwich_sb"
+	taste_tag = list(SWEET_FOOD)
 	bitesize = 4
 	nutriment_amt = 8
 	nutriment_desc = list("strawberry icecream" = 10, "cookies" = 5, "perfection" = 15)

@@ -14,7 +14,7 @@
 				/obj/item/oddity/common/paper_crumpled = 2,
 				/obj/item/oddity/common/paper_omega = 1,
 				/obj/item/oddity/common/book_eyes = 1,
-				/obj/item/oddity/common/book_omega = 2,
+				/obj/item/oddity/common/book_omega/closed = 2,
 				/obj/item/oddity/common/book_bible = 3,
 				/obj/item/oddity/common/old_money = 3,
 				/obj/item/oddity/common/healthscanner = 2,
@@ -30,7 +30,7 @@
 				/obj/item/oddity/common/broken_glass = 0.5,
 				/obj/item/oddity/common/broken_key = 0.5,
 				/obj/item/oddity/common/rusted_sword = 0.1,
-				/obj/item/oddity/common/book_unholy = 0.5,
+				/obj/item/oddity/common/book_unholy/closed = 0.5,
 				/obj/item/oddity/common/device = 2,
 				/obj/item/oddity/common/lighter = 3,
 				/obj/item/oddity/common/mirror = 3,
@@ -64,14 +64,15 @@
 				/obj/item/gun/projectile/automatic/maxim/replica = 1,
 				/obj/item/gun/projectile/revolver/deacon = 1,
 				/obj/item/gun/projectile/clarissa/devil_eye = 1,
-				/obj/item/gun/projectile/automatic/slaught_o_matic/lockpickomatic = 1,
+				/obj/item/clothing/accessory/holster/bluecross = 1,
 				/obj/item/gun/projectile/boltgun/bluecross = 1,
 				/obj/item/gun/projectile/that_gun = 1,
 				/obj/item/gun/projectile/colt/cult = 1,
+				/obj/item/gun/projectile/cane_pistol_bluecross = 1,
 				//Energy
 				/obj/item/gun/energy/sniperrifle/saint = 1,
 				//obj/item/gun/energy/lasersmg/inferno = 1,
-				/obj/item/gun/energy/ntpistol = 1,
+				/obj/item/gun/energy/ntpistol/mana = 1,
 				/obj/item/gun/energy/captain/zapper = 1,
 				/obj/item/gun/energy/xray/psychic_cannon = 1,
 				/obj/item/gun/energy/lasersmg/chaos_engine = 1,
@@ -81,12 +82,20 @@
 				/obj/item/tool/nailstick/ogre = 1,
 				/obj/item/tool/wrench/big_wrench/freedom = 1,
 				/obj/item/tool/saw/hyper/doombringer = 1,
+				/obj/item/tool/sword/katana/crimson_arc = 1,
+				/obj/item/tool/scythe/spectral_harvester = 1,
+				/obj/item/tool/knife/dagger/vail_render = 1,
+				/obj/item/shield/riot/mass_grave = 1,
+				/obj/item/tool/sword/saber/nightmare_saber = 1,
 				//obj/item/material/butterfly/frenchman = 1,
 				//Gun/Tool Mods
 				/obj/item/gun_upgrade/mechanism/brass_kit = 1,
+				//Armor
+				/obj/item/clothing/suit/crimsoncross_regaloutfit = 0.1, //Little rarer then even soap
 				//Misc - things that are not a "gun" but still good for this
 				/obj/item/oddity/nt/seal = 1,
-				/obj/item/soap/bluespase = 0.5))
+				/obj/item/soap/bluespase = 0.5,
+				/obj/item/oddity/rare/moon_fragment = 0.2))
 
 /obj/random/uplink/low_chance
 	name = "really really really low chance random uplink"

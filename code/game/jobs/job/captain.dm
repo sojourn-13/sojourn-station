@@ -18,10 +18,10 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	wage = WAGE_COMMAND
 
 	ideal_character_age = 50 // Old geezer captains ftw
-	minimum_character_age = 35
+	minimum_character_age = 30
 	outfit_type = /decl/hierarchy/outfit/job/captain
 
-	perks = list(/datum/perk/sommelier)
+	perks = list(PERK_SOMELLIER)
 
 	description = "The Premier is the prime mediator of the colony itself, acting as a trusted advisor amongst their peers.<br>\
 You are trusted with control of the colony primary accounts, and are also able to control access within the colony.<br>\
@@ -70,7 +70,7 @@ Treat your command officers with respect, and listen to their council. Try not t
 	title = "Steward"
 	flag = STEWARD
 	department = DEPARTMENT_COMMAND
-	head_position = TRUE
+	head_position = FALSE
 	aster_guild_member = TRUE
 	department_flag = COMMAND
 	faction = MAP_FACTION
@@ -83,7 +83,7 @@ Treat your command officers with respect, and listen to their council. Try not t
 	playtimerequired = 1200
 	wage = WAGE_COMMAND
 	ideal_character_age = 35
-	minimum_character_age = 30
+	minimum_character_age = 25
 
 	health_modifier = 5
 	description = "The Steward is the loyal right-hand of the Premier. Serving as a personal guard, follow him wherever he goes.<br>\
@@ -99,7 +99,7 @@ Treat your command officers with respect, and listen to their council. Try not t
 
 	outfit_type = /decl/hierarchy/outfit/job/hop
 
-	perks = list(/datum/perk/sommelier)
+	perks = list(PERK_SOMELLIER)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
 							 /datum/computer_file/program/card_mod,

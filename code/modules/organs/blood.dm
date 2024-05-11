@@ -155,7 +155,7 @@
 
 	if (!injected || !our)
 		return
-	if(blood_incompatible(injected.data["blood_type"],our.data["blood_type"],injected.data["species"],our.data["species"]) && (!bloodstr.has_reagent("nosfernium")))
+	if(blood_incompatible(injected.data["blood_type"],our.data["blood_type"],injected.data["species"],our.data["species"]) && !(bloodstr.has_reagent("nosfernium") || (VAMPIRE in mutations)))
 		reagents.add_reagent("toxin",amount * 0.5)
 		reagents.update_total()
 	else
@@ -296,7 +296,7 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 	var/heart_efficiency = get_organ_efficiency(OP_HEART)
 	var/robo_check = TRUE	//check if all hearts are robotic
 	var/open_check = FALSE  //check if any heart is open
-	for(var/obj/item/organ/internal/heart/heart in organ_list_by_process(OP_HEART))
+	for(var/obj/item/organ/internal/vital/heart/heart in organ_list_by_process(OP_HEART))
 		if(!(BP_IS_ROBOTIC(heart)))
 			robo_check = FALSE
 		if(heart.open)
@@ -325,6 +325,8 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 	amount *= (species.blood_volume / SPECIES_BLOOD_DEFAULT)
 	var/blood_volume_raw = vessel.get_reagent_amount("blood")
 	amount = max(0,min(amount, species.blood_volume - blood_volume_raw))
+	if(VAMPIRE in mutations)
+		amount *= 1.50 //25% more
 	if(amount)
 		vessel.add_reagent("blood", amount, get_blood_data())
 	return amount

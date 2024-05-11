@@ -121,7 +121,7 @@
 			The device owner is immune to this effect."
 	item_cost = 3
 	path = /obj/item/device/mind_fryer
-	antag_roles = list(ROLE_TRAITOR, ROLE_BLITZ)
+	antag_roles = list(ROLE_contractor, ROLE_BLITZ)
 
 /datum/uplink_item/item/tools/mind_fryer/buy(obj/item/device/uplink/U)
 	. = ..()
@@ -135,7 +135,7 @@
 			Place the sensors in target area, make sure to activate each one and do not move or otherwise disturb them."
 	item_cost = 1
 	path = /obj/item/storage/box/syndie_kit/spy_sensor
-	antag_roles = ROLES_CONTRACT
+	antag_roles = ROLES_CONTRACT_COMPLETE
 
 /datum/uplink_item/item/tools/spy_sensor/buy(obj/item/device/uplink/U)
 	. = ..()
@@ -148,7 +148,7 @@
 	name = "Blue Space Direct Mail Unit"
 	item_cost = 1
 	path = /obj/item/storage/bsdm
-	antag_roles = ROLES_CONTRACT
+	antag_roles = ROLES_CONTRACT_COMPLETE
 
 /datum/uplink_item/item/tools/bsdm/can_view(obj/item/device/uplink/U)
 	return ..() && (U.bsdm_time > world.time)
@@ -163,7 +163,7 @@
 	name = "Blue Space Direct Mail Unit"
 	item_cost = 0
 	path = /obj/item/storage/bsdm
-	antag_roles = ROLES_CONTRACT
+	antag_roles = ROLES_CONTRACT_COMPLETE
 
 /datum/uplink_item/item/tools/bsdm_free/can_view(obj/item/device/uplink/U)
 	return ..() && (U.bsdm_time <= world.time)

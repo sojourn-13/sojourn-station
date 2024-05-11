@@ -38,8 +38,9 @@
 	if(owner)
 		if(!owner.stats.getPerk(PERK_NANOGATE))
 			owner.stats.addPerk(PERK_NANOGATE)
+			src.give_internal_computer()
 		return PROCESS_KILL
-	
+
 
 
 // Check if there's enough nano points and remove them.
@@ -59,9 +60,16 @@
 
 /obj/item/organ/internal/nanogate/removed_mob()
 	//Remove purchased powers
-	for (var/perk in perk_list)
-		if(ispath(perk, /datum/perk))
-			if(owner)
-				owner.stats.removePerk(perk)
-
+	SEND_SIGNAL(src, COMSIG_NANOGATE_REMOVED)
 	..()
+
+/obj/item/organ/internal/nanogate/proc/give_internal_computer()
+	var/obj/item/modular_computer/tablet/nanogate/I = new/obj/item/modular_computer/tablet/nanogate
+	I.action = new/datum/action/item_action/hands_free/nanogate_vm
+	I.action.name = I.action_button_name
+	I.action.target = I
+	I.action.Grant(owner)
+	I.loc = owner
+	I.linked_nanogate = src
+	vm = I
+	vm.login_email()

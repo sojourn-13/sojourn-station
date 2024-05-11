@@ -461,7 +461,7 @@
 
 	if(implant)
 		var/image/I = image(icon, "reader_c_green")
-		if(implant.get_module(CRUCIFORM_PRIEST))
+		if(implant.get_module(CRUCIFORM_PRIME))
 			I = image(icon, "reader_c_red")
 		add_overlay(I)
 

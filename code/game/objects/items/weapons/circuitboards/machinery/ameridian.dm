@@ -20,7 +20,8 @@
 	origin_tech = list(TECH_DATA = 4, TECH_MATERIAL = 9, TECH_ENGINEERING = 5)
 	frame_type = FRAME_VERTICAL
 	req_components = list(
-		/obj/structure/reagent_dispensers/bidon = 1
+		/obj/structure/reagent_dispensers/bidon = 1,
+		/obj/item/stock_parts/manipulator = 2
 	)
 
 /obj/item/circuitboard/liquid_ameridian_processor

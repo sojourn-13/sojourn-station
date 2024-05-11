@@ -40,13 +40,24 @@
 
 /datum/reagent/organic/blood/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 
+	if(VAMPIRE in M.mutations)
+		M.adjustNutrition(20) // For hunger
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.sanity.onNonAlcohol(src, effect_multiplier)
+			H.sanity.onAlcohol(src, effect_multiplier)
+			apply_sanity_effect(M, effect_multiplier)
+			LEGACY_SEND_SIGNAL(M, COMSIG_CARBON_HAPPY, src, ON_MOB_DRUG)
+
+		return //No other badness
+
 	var/effective_dose = dose
 	if(issmall(M)) effective_dose *= 2
 
 	if(effective_dose > 5)
-		M.adjustToxLoss(1 * effect_multiplier)
+		M.add_chemical_effect(CE_TOXIN, effect_multiplier)
 	if(effective_dose > 15)
-		M.adjustToxLoss(1 * effect_multiplier)
+		M.add_chemical_effect(CE_TOXIN, effect_multiplier)
 	if(data && data["virus2"])
 		var/list/vlist = data["virus2"]
 		if(vlist.len)
@@ -105,10 +116,16 @@
 	if(M.stats.getPerk(PERK_STAY_HYDRATED))
 		M.adjustOxyLoss(-0.6 * effect_multiplier)
 		M.heal_organ_damage(0.3 * effect_multiplier, 0.3 * effect_multiplier)
-		M.adjustToxLoss(-0.3 * effect_multiplier)
+		M.add_chemical_effect(CE_ANTITOX, 0.3 * effect_multiplier)
 		M.add_chemical_effect(CE_BLOODCLOT, 0.1)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 1 * effect_multiplier)
 	if(!ishuman(M))
 		M.adjustHalLoss(-0.5)
+
+/datum/reagent/water/affect_blood(var/mob/living/carbon/M, var/alien)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 2)
 
 /datum/reagent/water/extinguisher
 	name = "Extinguisher"
@@ -137,6 +154,17 @@
 	T.color = "white"
 	return TRUE
 
+/datum/reagent/water/extinguisher/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 1 * effect_multiplier)
+
+/datum/reagent/water/extinguisher/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 1 * effect_multiplier)
+
+/datum/reagent/water/extinguisher/affect_blood(var/mob/living/carbon/M, var/alien)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 2)
 
 /datum/reagent/water/holywater
 	name = "Holy Water"
@@ -145,6 +173,8 @@
 	id = "holywater"
 
 /datum/reagent/water/holywater/affect_ingest(mob/living/carbon/human/M, alien, effect_multiplier)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 2)
 	var/obj/item/implant/core_implant/I = M.get_core_implant(/obj/item/implant/core_implant/cruciform)
 	if(!I && !I.wearer) //Do we have a core implant?
 		return
@@ -152,6 +182,14 @@
 		return
 	M.heal_organ_damage(0, 0.2 * effect_multiplier, 0, 3 * effect_multiplier)
 	..()
+
+/datum/reagent/water/holywater/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 1 * effect_multiplier)
+
+/datum/reagent/water/holywater/affect_blood(var/mob/living/carbon/M, var/alien)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 2)
 
 /datum/reagent/water/holywater/touch_turf(turf/T)
 	..()
@@ -206,6 +244,8 @@
 		*/
 
 /datum/reagent/water/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
+	if(M.species.reagent_tag == IS_SLIME)
+		M.take_organ_damage(0, 2)
 	if(isslime(M))
 		var/mob/living/carbon/slime/S = M
 		S.adjustToxLoss(20 * effect_multiplier) // Babies have 150 health, adults have 200; So, 10 units and 13.5
@@ -236,7 +276,7 @@
 	return TRUE
 
 /datum/reagent/toxin/fuel/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.adjustToxLoss(0.2 * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
+	M.add_chemical_effect(CE_TOXIN, 2 * (issmall(M) ? effect_multiplier * 2 : effect_multiplier))
 
 /datum/reagent/toxin/fuel/touch_mob(mob/living/L, var/amount)
 	if(istype(L))

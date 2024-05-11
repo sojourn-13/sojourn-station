@@ -254,7 +254,7 @@
 		if("corgi")
 			M.change_mob_type( /mob/living/simple_animal/corgi , null, null, delmob )
 		if("ian")
-			M.change_mob_type( /mob/living/simple_animal/corgi/Ian , null, null, delmob )
+			M.change_mob_type( /mob/living/simple_animal/corgi/fluff/Ian , null, null, delmob )
 		if("crab")
 			M.change_mob_type( /mob/living/simple_animal/crab , null, null, delmob )
 		if("coffee")
@@ -398,6 +398,8 @@
 	//Non-Human (Green)
 	body += source.formatJobGroup(M, "Non-human Positions", "ccffcc", "nonhumandept", nonhuman_positions + "Antag HUD")
 	//Antagonist (Orange)
+	body += source.formatJobGroup(M, "Lodge Positions", "191919", "lodgedept", lodge_positions)
+	//Off-colony Lodge (Black)
 
 	var/jobban_list = list()
 	for(var/a_id in GLOB.antag_bantypes)
@@ -479,6 +481,11 @@
 				joblist += temp.title
 		if("offcolonydept")
 			for(var/jobPos in offcolony_positions)
+				var/datum/job/temp = SSjob.GetJob(jobPos)
+				if(!temp) continue
+				joblist += temp.title
+		if("lodgedept")
+			for(var/jobPos in lodge_positions)
 				var/datum/job/temp = SSjob.GetJob(jobPos)
 				if(!temp) continue
 				joblist += temp.title
@@ -797,6 +804,28 @@
 	log_admin("[key_name(usr)] forced [key_name(M)] to say: [speech]")
 	message_admins("\blue [key_name_admin(usr)] forced [key_name_admin(M)] to say: [speech]")
 
+/datum/admin_topic/forcesanity
+	keyword = "forcesanity"
+	require_perms = list(R_FUN)
+
+/datum/admin_topic/forcesanity/Run(list/input)
+	var/mob/living/carbon/human/H = locate(input["forcesanity"])
+	if(!ishuman(H))
+		to_chat(usr, "This can only be used on instances of type /human.")
+		return
+
+	var/datum/breakdown/B = input("What breakdown will [key_name(H)] suffer from?", "Sanity Breakdown") as null | anything in subtypesof(/datum/breakdown)
+	if(!B)
+		return
+	B = new B(H.sanity)
+	if(!B.can_occur())
+		to_chat(usr, "[B] could not occur. [key_name(H)] did not meet the right conditions.")
+		qdel(B)
+		return
+	if(B.occur())
+		H.sanity.breakdowns += B
+		to_chat(usr, SPAN_NOTICE("[B] has occurred for [key_name(H)]."))
+		return
 
 /datum/admin_topic/revive
 	keyword = "revive"
@@ -1197,20 +1226,20 @@
 	source.view_log_panel(M)
 
 
-/datum/admin_topic/traitor
-	keyword = "traitor"
+/datum/admin_topic/contractor
+	keyword = "contractor"
 	require_perms = list(R_MOD|R_ADMIN)
 
-/datum/admin_topic/traitor/Run(list/input)
+/datum/admin_topic/contractor/Run(list/input)
 	if(!GLOB.storyteller)
 		alert("The game hasn't started yet!")
 		return
 
-	var/mob/M = locate(input["traitor"])
+	var/mob/M = locate(input["contractor"])
 	if(!ismob(M))
 		to_chat(usr, "This can only be used on instances of type /mob.")
 		return
-	source.show_traitor_panel(M)
+	source.show_contractor_panel(M)
 
 
 /datum/admin_topic/create_object
@@ -1520,7 +1549,7 @@
 						WANTED.backup_author = source.admincaster_signature                  //Submitted by
 						WANTED.is_admin_message = 1
 						news_network.wanted_issue = WANTED
-						for(var/obj/machinery/newscaster/NEWSCASTER in allCasters)
+						for(var/obj/machinery/newscaster/NEWSCASTER in GLOB.allCasters)
 							NEWSCASTER.newsAlert()
 							NEWSCASTER.update_icon()
 						source.admincaster_screen = 15
@@ -1536,7 +1565,7 @@
 			var/choice = alert("Please confirm Wanted Issue removal","Network Security Handler","Confirm","Cancel")
 			if(choice=="Confirm")
 				news_network.wanted_issue = null
-				for(var/obj/machinery/newscaster/NEWSCASTER in allCasters)
+				for(var/obj/machinery/newscaster/NEWSCASTER in GLOB.allCasters)
 					NEWSCASTER.update_icon()
 				source.admincaster_screen=17
 			source.access_news_network()

@@ -308,7 +308,7 @@
 	name = "Bomber"
 	desc = "This hovering cyborg emits a faint smell of welding fuel."
 	icon_state = "bomber"
-	density = 0
+	density = 1
 	speak_chance = 3
 	malfunction_chance = 1
 	speak_chance = 4
@@ -899,7 +899,7 @@
 
 
 /mob/living/simple_animal/hostile/hivemind/mechiver/proc/destroy_passenger()
-	if(GLOB.hive_data_bool["gibbing_dead"])
+	if(GLOB.hive_data_bool["prevent_gibbing_dead"])
 		qdel(passenger)
 	else
 		release_passenger(TRUE) //HAS to be true or we do an endless loop!

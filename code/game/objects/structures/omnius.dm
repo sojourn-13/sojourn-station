@@ -62,6 +62,7 @@
 	icon = null
 	layer = HIDING_MOB_PLANE
 	invisibility = 101
+	anchored = TRUE
 
 /obj/structure/invislight/New()
 	set_light(7, 5, "#999999")
@@ -72,7 +73,55 @@
 	icon = null
 	layer = HIDING_MOB_PLANE
 	invisibility = 101
+	anchored = TRUE
 
 /obj/structure/invislightsmall/New()
 	set_light(1, 1, "#999999")
 	. = ..()
+
+/*Area Lighting Objects*/
+//Things that emit light, but aren't lamps.
+
+/obj/structure/light_stick
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "light_stick"
+	name = "marking device"
+	desc = "A powerful light mounted on a metal stick, used to mark trails, landing spots, points of interest and any other potential exploration-related ventures. It's secured to the ground via an anchor."
+	anchored = TRUE
+
+/obj/structure/light_stick/New()
+	set_light(3,3, "#274170")
+
+/obj/structure/light_stick/red
+	icon_state = "light_stick_red"
+	name = "marking device"
+	desc = "A powerful light mounted on a metal stick, used to mark trails, landing spots, points of interest and any other potential exploration-related ventures. It's secured to the ground via an anchor."
+	anchored = TRUE
+
+/obj/structure/light_stick/red/New()
+	set_light(3,3, "#962b2b")
+
+//Weather that emits ambient light. Credit to CM for weather sprites.
+/obj/structure/snowfall
+	icon = 'icons/effects/weather_effects.dmi'
+	icon_state = "light_snow"
+	name = "snowfall"
+	desc = "Flakes of carbon dioxide descending from the inky black skies."
+	anchored = TRUE
+	layer = ABOVE_MOB_LAYER
+	density = FALSE
+
+/obj/structure/snowfall/New()
+	set_light(2,2, "#4d568a")
+
+/obj/structure/snowstorm
+	icon = 'icons/effects/weather_effects.dmi'
+	icon_state = "snow_storm"
+	name = "snowstorm"
+	desc = "Violent thrashing of flakes, caused by the winds. It makes it difficult to see"
+	anchored = TRUE
+	layer = ABOVE_MOB_LAYER
+	density = FALSE
+
+/obj/structure/snowstorm/New()
+	set_light(2,2, "#494e6e")

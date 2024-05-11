@@ -3,8 +3,8 @@
 	desc = "An AI controlled autonomous power loading unit equipped with a diamond tipped drill."
 	icon_state = "greyson_ripley"
 	attacktext = "drilled"
-	health = 500
-	maxHealth = 500
+	health = 250
+	maxHealth = 250
 	melee_damage_lower = 40
 	melee_damage_upper = 45
 	attack_sound = 'sound/mecha/mechdrill.ogg'
@@ -109,8 +109,8 @@
 	attacktext = "titan-punched"
 	turns_per_move = 8
 	move_to_delay = 1
-	health = 800
-	maxHealth = 800
+	health = 400
+	maxHealth = 400
 	melee_damage_lower = 50
 	melee_damage_upper = 55
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'

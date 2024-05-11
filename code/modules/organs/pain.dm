@@ -29,13 +29,13 @@ mob/living/carbon/proc/pain(var/partname, var/amount, var/force, var/burning = 0
 	if(burning)
 		switch(amount)
 			if(1 to 10)
-				msg = "\red <b>Your [partname] burns.</b>"
+				msg = "\green <b>Your [partname] burns.</b>"
 			if(11 to 90)
 				flash_weak_pain()
-				msg = "\red <b><font size=2>Your [partname] burns badly!</font></b>"
+				msg = "\green <b><font size=2>Your [partname] burns badly!</font></b>"
 			if(91 to 10000)
 				flash_pain()
-				msg = "\red <b><font size=3>OH GOD! Your [partname] is on fire!</font></b>"
+				msg = "\green <b><font size=3>OH GOD! Your [partname] is on fire!</font></b>"
 	else
 		switch(amount)
 			if(1 to 10)
@@ -60,16 +60,16 @@ mob/living/carbon/human/proc/custom_pain(message, flash_strength)
 	if(species.flags & NO_PAIN)
 		return
 
-	if(analgesic >= 100)
+	if(analgesic >= 75)
 		return
-	else if(analgesic >= 50)
+	else if(analgesic >= 40)
 		flash_strength -= 1
 		if(flash_strength < 0)
 			return
 
-	var/msg = "\red <b>[message]</b>"
+	var/msg = "\green <b>[message]</b>"
 	if(flash_strength >= 1)
-		msg = "\red <font size=3><b>[message]</b></font>"
+		msg = "\green <font size=3><b>[message]</b></font>"
 
 	// Anti message spam checks
 	if(msg && ((msg != last_pain_message) || (world.time >= next_pain_time)))
@@ -84,7 +84,7 @@ mob/living/carbon/human/proc/handle_pain()
 
 	if(stat >= DEAD)
 		return
-	if(analgesic > 70)
+	if(analgesic >= 50)
 		return
 	var/maxdam = 0
 	var/obj/item/organ/external/damaged_organ = null
@@ -92,7 +92,7 @@ mob/living/carbon/human/proc/handle_pain()
 		if(E.status&ORGAN_DEAD || BP_IS_ROBOTIC(E))
 			continue
 		var/dam = E.get_damage()
-		dam *= (get_specific_organ_efficiency(OP_NERVE, E.organ_tag)/100)
+		dam *= (min(get_specific_organ_efficiency(OP_NERVE, E.organ_tag)/100, 1.5))
 		// make the choice of the organ depend on damage,
 		// but also sometimes use one of the less damaged ones
 		if(dam > maxdam && (maxdam == 0 || prob(70)) )

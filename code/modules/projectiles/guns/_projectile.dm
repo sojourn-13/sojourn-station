@@ -27,8 +27,6 @@
 	var/cocked_sound 	= 'sound/weapons/guns/interact/pistol_cock.ogg'
 	var/bulletinsert_sound 	= 'sound/weapons/guns/interact/bullet_insert.ogg'
 	var/item_suffix = ""		//Allows for variations within the same icon sheet.
-	var/saw_off = FALSE			//Can be sawn off?
-	var/sawn = null				//what it becomes when sawn down, accepts a typepath.
 
 	//For SINGLE_CASING or SPEEDLOADER guns
 	var/max_shells = 1			//the number of casings that will fit inside As of 3/29/2022 this has to be at lest 1 otherwise the gun can no fire without fire_from_mag
@@ -44,6 +42,10 @@
 	var/fire_from_mag = TRUE //This allows us to fire directly from the mag rather then a loaded list or chamber
 
 	gun_tags = list(GUN_PROJECTILE)
+
+	//Lib sideloading port
+	var/perk_plusone_eligible = FALSE //Incase we get shotguns that we dont want to get the oddity interaction
+	var/alt_plus_one_loading = FALSE
 
 /obj/item/gun/projectile/loadAmmoBestGuess()
 	var/obj/item/ammo_magazine/chosenMag = null
@@ -106,7 +108,7 @@
 		return chambered.BB
 	return null
 
-/obj/item/gun/projectile/handle_post_fire()
+/obj/item/gun/projectile/handle_post_fire(mob/user)
 	..()
 	if(chambered)
 		chambered.expend()
@@ -117,7 +119,11 @@
 			loaded += ammo_magazine.stored_ammo[1]
 			ammo_magazine.stored_ammo -= loaded
 
-/obj/item/gun/projectile/handle_click_empty()
+	//Lib sideloading port
+	if(!alt_plus_one_loading)
+		side_loading(user)
+
+/obj/item/gun/projectile/handle_click_empty(mob/user)
 	..()
 	process_chambered()
 
@@ -126,6 +132,9 @@
 			loaded += ammo_magazine.stored_ammo[1]
 			ammo_magazine.stored_ammo -= loaded
 
+	//Lib sideloading port
+	if(!alt_plus_one_loading)
+		side_loading(user)
 
 /obj/item/gun/projectile/proc/process_chambered()
 	if (!chambered) return
@@ -177,7 +186,7 @@
 	if(istype(A, /obj/item/ammo_magazine))
 		var/obj/item/ammo_magazine/AM = A
 		if(!(load_method & AM.mag_type) || caliber != AM.caliber)
-			to_chat(user, SPAN_WARNING("[AM] won't fit into the magwell. This mag and ammunition inside it is incompatible with [src]."))
+			to_chat(user, SPAN_WARNING("[AM] won't fit into the magwell. This mag and ammunition inside it is incompatible with \the [src]."))
 			return //incompatible
 
 		//How are we trying to apply this magazine to this gun?
@@ -200,16 +209,21 @@
 		switch(method_for_this_load)
 			if(MAGAZINE)
 				if(AM.ammo_mag != ammo_mag && ammo_mag != "default")
-					to_chat(user, SPAN_WARNING("[src] requires another magazine.")) //wrong magazine
+					to_chat(user, SPAN_WARNING("[src] requires another magazine.")) // Magazine not defined, might be internal
 					return
 				if(tac_reloads && ammo_magazine)
-					unload_ammo(user)	// ejects the magazine before inserting the new one.
-					to_chat(user, SPAN_NOTICE("You tactically reload your [src] with [AM]!"))
+					if(!(AM.mag_well & mag_well))
+						to_chat(user, SPAN_WARNING("\The [AM] won't fit into the magwell.")) //Prevents an exploit
+						return
+					else if(replace_item(ammo_magazine, A, user)) // The replace_item() proc already existed, THIS is a proper tac reload and not an Iraqi reload.
+						ammo_magazine = A
+						update_icon()
+						to_chat(user, SPAN_NOTICE("You tactically reload your [src] with [AM]!"))
 				else if(ammo_magazine)
-					to_chat(user, SPAN_WARNING("[src] already has a magazine loaded.")) //already a magazine here
+					to_chat(user, SPAN_WARNING("\The [src] already has a magazine loaded.")) //already a magazine here, and this type of gun doesn't allow tactical reloads.
 					return
 				if(!(AM.mag_well & mag_well))
-					to_chat(user, SPAN_WARNING("[AM] won't fit into the magwell.")) //wrong magazine
+					to_chat(user, SPAN_WARNING("\The [AM] won't fit into the magwell.")) // The gun lacks the proper magwell for this type of mag
 					return
 				user.remove_from_mob(AM)
 				AM.loc = src
@@ -227,14 +241,14 @@
 				if(loaded.len >= max_shells)
 					if(ammo_magazine)
 						if(ammo_magazine.stored_ammo.len >= ammo_magazine.max_ammo)
-							to_chat(user, SPAN_WARNING("[src] is full!"))
+							to_chat(user, SPAN_WARNING("\The [src] is full!"))
 							return
 					else
-						to_chat(user, SPAN_WARNING("[src] is full!"))
+						to_chat(user, SPAN_WARNING("\The [src] is full!"))
 						return
 				var/count = 0
 				if(AM.reload_delay)
-					to_chat(user, SPAN_NOTICE("It takes some time to reload [src] with [AM]..."))
+					to_chat(user, SPAN_NOTICE("It takes some time to reload \the [src] with \the [AM]..."))
 				if (do_after(user, AM.reload_delay, user))
 					for(var/obj/item/ammo_casing/C in AM.stored_ammo)
 						if(loaded.len >= max_shells)
@@ -254,7 +268,7 @@
 							count++
 							AM.update_icon()
 				if(count)
-					user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into [src]."))
+					user.visible_message("[user] reloads [src].", SPAN_NOTICE("You load [count] round\s into \the [src]."))
 					if(reload_sound) playsound(src.loc, reload_sound, 75, 1)
 					cock_gun(user)
 				update_firemode()
@@ -262,14 +276,14 @@
 	else if(istype(A, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/C = A
 		if(!(load_method & SINGLE_CASING) || caliber != C.caliber)
-			to_chat(user, SPAN_WARNING("[src] is incompatible with [C]."))
+			to_chat(user, SPAN_WARNING("\The [src] is incompatible with \the [C]."))
 			return //incompatible
 		if(loaded.len >= max_shells)
 			to_chat(user, SPAN_WARNING("[src] is full."))
 			return
 
 		if(C.reload_delay)
-			to_chat(user, SPAN_NOTICE("It takes some time to reload [src] with [C]..."))
+			to_chat(user, SPAN_NOTICE("It takes some time to reload \the [src] with \the [C]..."))
 		if (!do_after(user, C.reload_delay, user))
 			return
 
@@ -299,7 +313,7 @@
 			C.forceMove(src)
 			loaded.Insert(1, C) //add to the head of the list
 		update_firemode()
-		user.visible_message("[user] inserts \a [C] into [src].", SPAN_NOTICE("You insert \a [C] into [src]."))
+		user.visible_message("[user] inserts \a [C] into [src].", SPAN_NOTICE("You insert \a [C] into \the [src]."))
 		if(bulletinsert_sound) playsound(src.loc, bulletinsert_sound, 75, 1)
 
 	update_icon()
@@ -325,13 +339,13 @@
 					count++
 				loaded.Cut()
 			if(count)
-				user.visible_message("[user] unloads [src].", SPAN_NOTICE("You unload [count] round\s from [src]."))
+				user.visible_message("[user] unloads [src].", SPAN_NOTICE("You unload [count] round\s from \the [src]."))
 				if(bulletinsert_sound) playsound(src.loc, bulletinsert_sound, 75, 1)
 		else if(load_method & SINGLE_CASING)
 			var/obj/item/ammo_casing/C = loaded[loaded.len]
 			loaded.len--
 			user.put_in_hands(C)
-			user.visible_message("[user] removes \a [C] from [src].", SPAN_NOTICE("You remove \a [C] from [src]."))
+			user.visible_message("[user] removes \a [C] from [src].", SPAN_NOTICE("You remove \a [C] from \the [src]."))
 			if(bulletinsert_sound) playsound(src.loc, bulletinsert_sound, 75, 1)
 	else
 		to_chat(user, SPAN_WARNING("[src] is empty."))
@@ -378,6 +392,12 @@
 	if(ammo_magazine)
 		to_chat(user, "It has \a [ammo_magazine] loaded.")
 	to_chat(user, "Has [get_ammo()] round\s remaining.")
+
+	//Sideloading Lib changes
+	if(perk_plusone_eligible)
+		if(ishuman(user))
+			if(user.stats.getPerk(PERK_SIDE_LOADING))
+				to_chat(user, SPAN_NOTICE("[name] is eligible for sideloading.")) // Feedback that we can do this
 	return
 
 /obj/item/gun/projectile/proc/get_ammo()
@@ -449,21 +469,20 @@
 	..()
 	playsound(src,'sound/weapons/guns/interact/lmg_magin.ogg',20,4)
 
-/obj/item/gun/projectile/attackby(var/obj/item/A as obj, mob/user as mob)
-	if(QUALITY_SAWING in A.tool_qualities)
-		to_chat(user, SPAN_NOTICE("You begin to saw off the stock and barrel of \the [src]."))
-		if(saw_off == FALSE)
-			to_chat(user, SPAN_NOTICE("Sawing down \the [src] will achieve nothing or may impede operation."))
-			return
-		if(ammo_magazine && ammo_magazine.stored_ammo && !ammo_magazine.stored_ammo.len)
-			to_chat(user, SPAN_WARNING("You should unload \the [src] first!"))
-			return
-		if(silenced)
-			to_chat(user, SPAN_WARNING("You should remove the silencer first!"))
-			return
-		if(saw_off && A.use_tool(user, src, WORKTIME_LONG, QUALITY_SAWING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-			qdel(src)
-			new sawn(usr.loc)
-			to_chat(user, SPAN_WARNING("You cut down the stock, barrel, and anything else nice from \the [src], ruining a perfectly good weapon for no good reason!"))
-	else
-		..()
+//Lib sideloading port
+/obj/item/gun/projectile/proc/side_loading(mob/user)
+	if(!perk_plusone_eligible && !ishuman(user))
+		return
+
+	var/mob/living/carbon/human/H = user
+	if(!H.stats.getPerk(PERK_SIDE_LOADING))
+		return
+
+	var/otherhands_object = H.get_inactive_hand()
+	if(istype(otherhands_object, /obj/item/ammo_casing))
+		var/obj/item/ammo_casing/autoload = otherhands_object
+		if(autoload.caliber == caliber)
+			if(!ammo_magazine)
+				load_ammo(autoload, H)
+			else
+				ammo_magazine.attackby(autoload, user)

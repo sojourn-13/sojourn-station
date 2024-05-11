@@ -6,7 +6,6 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),
 	)
 	related_stats = list(STAT_MEC)
-	requiredPerk = PERK_HANDYMAN
 
 /datum/craft_recipe/airlock/standard
 	name = "airlock assembly"

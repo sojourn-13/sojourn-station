@@ -320,7 +320,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "Plasma reinforced black prosthesis designed for heavy combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/excelsior.dmi' //Sprites were done by Kirov on request
 	model = "excelsior"
-	armor_list = list(melee = 50, bullet = 50, energy = 50, bomb = 50, bio = 0, rad = 100)
+	armor_list = list(melee = 50, bullet = 50, energy = 50, bomb = 50, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 1, MATERIAL_PLASMA = 0.5) //Plasma needed as a material that excelsiors can't teleport in
 	max_damage = 65
 	min_broken_damage = 45
@@ -353,7 +353,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "Advanced, extremely resilient and mobile prosthetic. Inscribed with \"Made in\" followed by gibberish, must have been lost to time."
 	force_icon = 'icons/mob/human_races/cyberlimbs/one_star.dmi'
 	model = "one_star"
-	armor_list = list(melee = 65, bullet = 65, energy = 65, bomb = 65, bio = 0, rad = 100)
+	armor_list = list(melee = 65, bullet = 65, energy = 65, bomb = 65, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 4, MATERIAL_PLATINUM = 2)
 	max_damage = 70
 	min_broken_damage = 50
@@ -377,7 +377,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "A robotic limb crafted from metallic hydrogen and gold"
 	force_icon = 'icons/mob/human_races/cyberlimbs/nashef-agunabi.dmi'
 	model = "nashef-agunabi"
-	armor_list = list(melee = 20, bullet = 20, energy = 35, bomb = 30, bio = 0, rad = 100)
+	armor_list = list(melee = 20, bullet = 20, energy = 35, bomb = 30, bio = 100, rad = 100)
 	matter = list(MATERIAL_HYDROGEN = 5, MATERIAL_GOLD = 4, MATERIAL_PLATINUM = 2)
 	max_damage = 70
 	min_broken_damage = 50

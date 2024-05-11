@@ -21,7 +21,7 @@
 
 /datum/nano_module/shield_control
 	name = "Shield control"
-	var/obj/machinery/power/shield_generator/hull/gen = null
+	var/obj/machinery/power/shield_generator/gen = null
 	var/multigen = FALSE //Set true if multiple active hull shield generators are detected onstation
 	var/genloc = ""//A string that describes the location of our connected shield generator
 
@@ -33,11 +33,11 @@
 /datum/nano_module/shield_control/proc/connect_to_generator()
 	var/n = 0
 	gen = null
-	for (var/obj/machinery/power/shield_generator/hull/G in world)
+	for (var/obj/machinery/power/shield_generator/G in world)
 		//Check that the generator is on the same vessel as us.
 		//This allows antag ships/stations to have their own shield generators and consoles
 		if (is_matching_vessel(G, nano_host()))
-			if (G.anchored && G.tendrils_deployed) //Only look at those that are wrenched in and setup
+			if (G.anchored && !G.ai_control_disabled) //Only look at any shield generator that are wrenched in and ai control wire is intact
 				gen = G //It's a good enough candidate, we're connected!
 				n++
 

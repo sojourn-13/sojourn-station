@@ -3055,7 +3055,7 @@
 	dir = 1
 	},
 /obj/structure/table/rack,
-/obj/item/gun/projectile/shotgun/pump/gladstone,
+/obj/item/gun/projectile/shotgun/pump,
 /obj/structure/sign/departmentold/security2{
 	pixel_x = -32
 	},
@@ -3397,8 +3397,8 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/disposaldrop)
 "ahw" = (
-/obj/item/clothing/suit/armor/flackvest/green,
-/obj/item/clothing/suit/armor/flackvest/green,
+/obj/item/clothing/suit/armor/flakvest,
+/obj/item/clothing/suit/armor/flakvest,
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/head/helmet/faceshield/altyn,
 /obj/item/clothing/head/helmet/faceshield/altyn/maska,
@@ -11294,10 +11294,10 @@
 /obj/item/reagent_containers/syringe/stim/ultra_surgeon{
 	pixel_x = 0
 	},
-/obj/item/reagent_containers/syringe/stim/machine_spirit{
+/obj/item/reagent_containers/syringe/stim/greasy_lard{
 	pixel_x = 5
 	},
-/obj/item/reagent_containers/syringe/stim/machine_spirit{
+/obj/item/reagent_containers/syringe/stim/greasy_lard{
 	pixel_x = 10
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -25396,7 +25396,7 @@
 "bij" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/surgery,
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bruise_pack/advanced,
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "bik" = (
@@ -36234,7 +36234,7 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "gyX" = (
-/mob/living/simple_animal/corgi/Lisa,
+/mob/living/simple_animal/corgi/fluff/Lisa,
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/command/swo/quarters)
 "gzb" = (
@@ -51905,7 +51905,7 @@
 "qUh" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/surgery,
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bruise_pack/advanced,
 /obj/machinery/camera/network/research{
 	dir = 8
 	},
@@ -55416,8 +55416,8 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/atmos)
 "tbc" = (
-/obj/item/clothing/suit/armor/platecarrier/ih,
-/obj/item/clothing/suit/armor/platecarrier/ih,
+/obj/item/clothing/suit/armor/platecarrier,
+/obj/item/clothing/suit/armor/platecarrier,
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/head/helmet,
 /obj/item/clothing/head/helmet,
@@ -55429,10 +55429,6 @@
 /obj/item/clothing/suit/armor/vest/ironhammer,
 /obj/item/clothing/suit/armor/vest/ironhammer,
 /obj/item/clothing/suit/armor/vest/ironhammer,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/suit/armor/vest/security,
-/obj/item/clothing/suit/armor/vest/security,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security)
 "tbq" = (

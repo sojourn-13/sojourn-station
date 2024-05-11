@@ -7,6 +7,7 @@
 	throwforce = WEAPON_FORCE_WEAK
 	throw_speed = 5
 	throw_range = 3
+	sanctified = TRUE //Already struggles to compete with mop, let's not make it slower in the hands of those who use it most
 	w_class = ITEM_SIZE_BULKY
 	attack_verb = list("bashed", "bludgeoned", "whacked")
 	matter = list(MATERIAL_PLASTIC = 5, MATERIAL_STEEL = 10, MATERIAL_BIOMATTER = 5)

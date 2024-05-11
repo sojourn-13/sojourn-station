@@ -35,11 +35,12 @@
 	uniform = /obj/item/clothing/under/rank/paramedic
 	id_type = /obj/item/card/id/med
 	pda_type = /obj/item/modular_computer/pda/science/medical
-	suit =  /obj/item/clothing/suit/armor/vest/security
+	suit =  /obj/item/clothing/suit/armor/vest
 	shoes = /obj/item/clothing/shoes/jackboots
 	belt = /obj/item/storage/belt/medical/emt
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 	head = /obj/item/clothing/head/soft/medical
+	gloves = /obj/item/clothing/gloves/stungloves/trauma
 	r_ear  = /obj/item/reagent_containers/syringe/large
 	l_pocket = /obj/item/device/flash
 	r_pocket = /obj/item/handcuffs
@@ -50,6 +51,7 @@
 	uniform = /obj/item/clothing/under/rank/psych
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	r_ear  = /obj/item/reagent_containers/syringe/large
+	backpack_contents = list(/obj/item/storage/hcases/med/medical_job_psyco = 1)
 
 /decl/hierarchy/outfit/job/medical/doctor/medStudent
 	name = OUTFIT_JOB_NAME("Soteria - Soteria Medical Student")

@@ -10,7 +10,6 @@
 	Adapted for Eris and more modern byond versions by me.
 	Quite a bit was modified/removed/re-done.
 	Pathing was made strict/all objects here are subtype of obj/procedural.
-
 - Nestor/drexample (full permission to bug me if you have questions or code suggestions)
 */
 /obj/procedural/jp_DungeonGenerator
@@ -105,9 +104,7 @@
 
 
 /*
-
 	Same as above, but skips X tiles from original one
-
 */
 
 /obj/procedural/jp_DungeonGenerator/proc/getAdjacentFurther(turf/t, var/num = 1)
@@ -161,9 +158,7 @@
 
 
 /*
-
 	Spawns a lightbulb, adjacent to a wall
-
 */
 
 
@@ -174,9 +169,7 @@
 		new /obj/machinery/light/small/autoattach(t)
 
 /*
-
 	Sets chance a light source spawns in the paths generated (in percent), per tile
-
 */
 
 /obj/procedural/jp_DungeonGenerator/proc/setLightChance(r)
@@ -184,9 +177,7 @@
 
 
 /*
-
 	Post-initializes all submaps
-
 */
 
 /obj/procedural/jp_DungeonGenerator/proc/initializeSubmaps()
@@ -528,7 +519,6 @@
 	Actually goes out on a limb and generates the dungeon. This procedure runs in the
 	background, because it's very slow. The various out_ variables will be updated after
 	the generator has finished running. I suggest spawn()ing off the call to the generator.
-
 	After this procedure finishes executing, you should have a beautiful shiny dungeon,
 	with all rooms reachable from all other rooms. If you don't, first check the parameters
 	you've passed to the generator - if you've set the number of rooms to 0, or haven't set
@@ -1279,10 +1269,12 @@ the arms of the plus sign - there are only four.
 
 
 /obj/procedural/jp_DungeonRoom/preexist/square/submap/finalise()
-	if(border.len < 1)
-		testing("ROOM [my_map.name] HAS NO BORDERS! at [centre.x], [centre.y]!")
 	if(my_map)
 		my_map.load(centre, centered = TRUE, orientation = SOUTH, post_init = 1)
 	else
 		gen.out_error = gen.ERROR_NO_SUBMAPS
 
+#ifdef TESTING
+	if(!LAZYLEN(border))
+		testing("ROOM [my_map.name] HAS NO BORDERS! at [centre.x], [centre.y]!")
+#endif

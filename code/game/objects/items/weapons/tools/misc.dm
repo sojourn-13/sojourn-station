@@ -50,8 +50,8 @@
 	max_upgrades = 0 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
 
 /obj/item/tool/medmultitool
-	name = "Greyson Positronic medical multitool"
-	desc = "A compact Greyson Positronic medical multitool. It has all surgery tools and takes a medium cell in its handle.."
+	name = "Greyson Positronic medical omnitool"
+	desc = "A compact Greyson Positronic medical omnitool. It has all surgery tools and takes a medium cell in its handle."
 	icon_state = "medmulti"
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 2)
 	flags = CONDUCT
@@ -63,11 +63,12 @@
 	workspeed = 1.2
 	price_tag = 1400 // Super fancy
 	degradation = 2
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/medmultitool/medimplant
-	name = "soteria medical omnitool"
+	name = "Soteria medical omnitool implant"
 	desc = "An all-in-one medical tool based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a medium power cell."
-	icon_state = "medimplant"
+	icon_state = "medmulti_sci"
 	matter = null
 	force = WEAPON_FORCE_PAINFUL
 	sharp = TRUE
@@ -78,6 +79,7 @@
 	degradation = 0.5
 	workspeed = 0.8
 	price_tag = 600 // Not nearly as fancy.
+	allow_greyson_mods = FALSE
 
 	use_power_cost = 1.2
 	suitable_cell = /obj/item/cell/medium
@@ -85,9 +87,9 @@
 	max_upgrades = 1
 
 /obj/item/tool/medmultitool/medimplant/sci
-	name = "soteria medical omnitool"
+	name = "Soteria medical omnitool"
 	desc = "An all-in-one medical tool based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a small power cell. This one is a cheap copy of better versions."
-	icon_state = "medimplant_sci"
+	icon_state = "medimplant"
 	matter = null //Nope
 	degradation = 1
 	workspeed = 0.2 //SLOW
@@ -118,7 +120,7 @@
 	//matter = list(MATERIAL_BIOMATTER = 10) No
 
 /obj/item/tool/engimplant
-	name = "engineering omnitool"
+	name = "engineering omnitool implant"
 	desc = "An all-in-one engineering tool implant. Convenient to use and more effective than the basics, but much less efficient than customized or more specialized tools."
 	icon_state = "engimplant"
 	force = WEAPON_FORCE_DANGEROUS
@@ -249,6 +251,7 @@
 	worksound = WORKSOUND_PULSING
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = null
+	sanctified = TRUE //Isn't affected by the general Absolutist speed penalty, still has its slow workspseed
 	flags = CONDUCT
 	tool_qualities = list(QUALITY_SCREW_DRIVING = 30, QUALITY_BOLT_TURNING = 30, QUALITY_DRILLING = 30, QUALITY_WELDING = 30, QUALITY_PRYING = 30, QUALITY_DIGGING = 30, QUALITY_PULSING = 30, QUALITY_WIRE_CUTTING = 30, QUALITY_HAMMERING = 30, QUALITY_SHOVELING = 30, QUALITY_EXCAVATION = 30, QUALITY_SAWING = 30, QUALITY_CUTTING = 30)
 	degradation = 0

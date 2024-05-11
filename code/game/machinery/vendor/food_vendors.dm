@@ -12,6 +12,12 @@
 					/obj/item/reagent_containers/food/drinks/bottle/wine = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/cognac = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/kahlua = 5,
+					/obj/item/reagent_containers/food/drinks/bottle/grenadine = 5,
+					/obj/item/reagent_containers/food/drinks/bottle/melonliquor = 2,
+					/obj/item/reagent_containers/food/drinks/bottle/bluecuracao = 2,
+					/obj/item/reagent_containers/food/drinks/bottle/redcandywine = 2,
+					/obj/item/reagent_containers/food/drinks/bottle/nanatsunoumi = 2,
+					/obj/item/reagent_containers/food/drinks/bottle/absinthe = 2,
 					/obj/item/reagent_containers/food/drinks/bottle/small/beer = 6,
 					/obj/item/reagent_containers/food/drinks/bottle/small/ale = 6,
 					/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 4,
@@ -28,12 +34,6 @@
 					/obj/item/reagent_containers/food/drinks/flask/vacuumflask = 2,
 					/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 					/obj/item/reagent_containers/food/drinks/ice = 9,
-					/obj/item/reagent_containers/food/drinks/bottle/melonliquor = 2,
-					/obj/item/reagent_containers/food/drinks/bottle/bluecuracao = 2,
-					/obj/item/reagent_containers/food/drinks/bottle/redcandywine = 2,
-					/obj/item/reagent_containers/food/drinks/bottle/nanatsunoumi = 2,
-					/obj/item/reagent_containers/food/drinks/bottle/absinthe = 2,
-					/obj/item/reagent_containers/food/drinks/bottle/grenadine = 5,
 					/obj/item/reagent_containers/food/snacks/candy/pistachios_pack = 4
 					)
 	contraband = list(/obj/item/reagent_containers/food/drinks/tea/green = 10,
@@ -73,10 +73,6 @@
 					/obj/item/reagent_containers/food/condiment/pack/sugar = 5,
 					/obj/item/reagent_containers/food/condiment/pack/milk = 5,
 					/obj/item/reagent_containers/food/drinks/dry_ramen/premade = 100)
-
-/obj/machinery/vending/coffee/postvend_effect()
-	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
-	return
 
 /obj/machinery/vending/snack
 	name = "Getmore Chocolate Corp"
@@ -143,10 +139,6 @@
 					/obj/item/reagent_containers/food/snacks/openable/liquidfood = 30)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
-/obj/machinery/vending/cola/postvend_effect()
-	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
-	return
-
 /obj/machinery/vending/hydronutrients
 	name = "NutriMax"
 	desc = "A plant nutrients vendor."
@@ -175,62 +167,63 @@
 
 	products = list(
 					/obj/item/seeds/ambrosiarobusto = 3,
+					/obj/item/seeds/appleseed = 3,
 					/obj/item/seeds/bananaseed = 3,
 					/obj/item/seeds/berryseed = 3,
 					/obj/item/seeds/blueberryseed = 3,
+					/obj/item/seeds/brootseed = 2,
+					/obj/item/seeds/cabbageseed = 3,
 					/obj/item/seeds/carrotseed = 3,
 					/obj/item/seeds/chantermycelium = 3,
+					/obj/item/seeds/cherryseed = 3,
 					/obj/item/seeds/chiliseed = 3,
 					/obj/item/seeds/cinnamonseed = 2,
+					/obj/item/seeds/cocoapodseed = 3,
 					/obj/item/seeds/cornseed = 3,
 					/obj/item/seeds/eggplantseed = 3,
-					/obj/item/seeds/potatoseed = 3,
-					/obj/item/seeds/soyaseed = 3,
-					/obj/item/seeds/sunflowerseed = 3,
+					/obj/item/seeds/gelthi = 2,
+					/obj/item/seeds/grapeseed = 3,
+					/obj/item/seeds/grassseed = 3,
+					/obj/item/seeds/lemonseed = 3,
+					/obj/item/seeds/limeseed = 3,
 					/obj/item/seeds/mintseed = 2,
+					/obj/item/seeds/mtearseed = 2,
+					/obj/item/seeds/orangeseed = 3,
+					/obj/item/seeds/peanutseed = 3,
+					/obj/item/seeds/pineappleseed = 2,
+					/obj/item/seeds/plastiseed = 3,
+					/obj/item/seeds/plumpmycelium = 2,
+					/obj/item/seeds/poppyseed = 3,
+					/obj/item/seeds/potatoseed = 3,
+					/obj/item/seeds/pumpkinseed = 3,
+					/obj/item/seeds/riceseed = 3,
+					/obj/item/seeds/shandseed = 2,
+					/obj/item/seeds/soyaseed = 3,
+					/obj/item/seeds/strawberryseed = 3,
+					/obj/item/seeds/sugarcaneseed = 3,
+					/obj/item/seeds/sunflowerseed = 3,
+					/obj/item/seeds/thaadra = 2,
+					/obj/item/seeds/thaadra = 3,
 					/obj/item/seeds/tomatoseed = 3,
 					/obj/item/seeds/towermycelium = 3,
-					/obj/item/seeds/wheatseed = 3,
-					/obj/item/seeds/appleseed = 3,
-					/obj/item/seeds/poppyseed = 3,
-					/obj/item/seeds/sugarcaneseed = 3,
-					/obj/item/seeds/peanutseed = 3,
-					/obj/item/seeds/whitebeetseed = 3,
 					/obj/item/seeds/watermelonseed = 3,
-					/obj/item/seeds/limeseed = 3,
-					/obj/item/seeds/lemonseed = 3,
-					/obj/item/seeds/orangeseed = 3,
-					/obj/item/seeds/strawberryseed = 3,
-					/obj/item/seeds/grassseed = 3,
-					/obj/item/seeds/cocoapodseed = 3,
-					/obj/item/seeds/plumpmycelium = 2,
-					/obj/item/seeds/cabbageseed = 3,
-					/obj/item/seeds/grapeseed = 3,
-					/obj/item/seeds/pumpkinseed = 3,
-					/obj/item/seeds/thaadra = 3,
-					/obj/item/seeds/cherryseed = 3,
-					/obj/item/seeds/plastiseed = 3,
-					/obj/item/seeds/riceseed = 3,
-					/obj/item/seeds/thaadra = 2,
-					/obj/item/seeds/gelthi = 2,
-					/obj/item/seeds/mtearseed = 2,
-					/obj/item/seeds/shandseed = 2,
-					/obj/item/seeds/pineappleseed = 2,
+					/obj/item/seeds/wheatseed = 3,
+					/obj/item/seeds/whitebeetseed = 3,
 					)
 
 	contraband = list(
 					/obj/item/seeds/amanitamycelium = 2,
-					/obj/item/seeds/glowshroom = 2,
+					/obj/item/seeds/amauri = 2,
 					/obj/item/seeds/ambrosiavulgarisseed = 2,
+					/obj/item/seeds/glowshroom = 2,
+					/obj/item/seeds/jurlmah = 2,
 					/obj/item/seeds/libertymycelium = 2,
 					/obj/item/seeds/nettleseed = 2,
 					/obj/item/seeds/reishimycelium = 2,
 					/obj/item/seeds/reishimycelium = 2,
-					/obj/item/seeds/jurlmah = 2,
-					/obj/item/seeds/amauri = 2,
-					/obj/item/seeds/vale = 2,
 					/obj/item/seeds/surik = 2,
 					/obj/item/seeds/telriis = 2,
+					/obj/item/seeds/vale = 2,
 					 )
 	auto_price = FALSE
 
@@ -273,6 +266,14 @@
 					/obj/item/tool/knife = 6,
 					/obj/item/material/kitchen/utensil/spoon = 6,
 					/obj/item/material/kitchen/rollingpin = 3,
+					/obj/item/spatula = 6,
+					/obj/item/reagent_containers/dropper = 3,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/board = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate = 6,
 					/obj/item/reagent_containers/glass/rag = 5,
 					/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/shot = 30,
@@ -321,6 +322,14 @@
 					/obj/item/tool/knife = 6,
 					/obj/item/material/kitchen/utensil/spoon = 6,
 					/obj/item/material/kitchen/rollingpin = 3,
+					/obj/item/spatula = 6,
+					/obj/item/reagent_containers/dropper = 3,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/board = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl = 6,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate = 6,
 					/obj/item/reagent_containers/glass/rag = 5,
 					/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/shot = 30,
@@ -360,6 +369,14 @@
 					/obj/item/tool/knife = 35,
 					/obj/item/material/kitchen/utensil/spoon = 3,
 					/obj/item/material/kitchen/rollingpin = 9,
+					/obj/item/spatula = 12,
+					/obj/item/reagent_containers/dropper = 10,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/board = 15,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/oven = 5,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/pan = 40,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/pot = 40,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/bowl = 8,
+					/obj/item/reagent_containers/cooking_with_jane/cooking_container/grill_grate = 6,
 					/obj/item/reagent_containers/glass/rag = 15,
 					/obj/item/reagent_containers/food/drinks/drinkingglass = 1,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/shot = 1,
@@ -412,10 +429,6 @@
 	contraband = list(/obj/item/reagent_containers/food/drinks/drinkingglass/cola = 20)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	auto_price = FALSE
-
-/obj/machinery/vending/sovietsoda/postvend_effect()
-	playsound(loc, 'sound/machines/vending_coffee.ogg', 100, 1)
-	return
 
 /obj/machinery/vending/fitness
 	name = "SweatMAX"
@@ -471,3 +484,50 @@
 
 	if(contents.len && !(stat & NOPOWER))
 		add_overlay(image(icon, icon_fill))
+
+/obj/machinery/vending/plant_gene
+	name = "Eugene's Plant Genes"
+	desc = "A vendor selling data disks with individual plant genes."
+	product_slogans = "Keep your plants on!;Get back to your roots!;Don't leaf me!"
+	product_ads = "Seed for yourself!;Green!;OMG! Only Modified Genetically!"
+	icon_state = "seeds"
+	products = list(
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/potency_high = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/yield_high = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/production_high = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/maturation_fast = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/metabolism/no_nutrients_water = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/psilocybin = 2
+		)
+	contraband = list(
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/potency_max = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/yield_max = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/production_max = 2,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/maturation_faster = 2
+		)
+	prices = list(
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/potency_high = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/yield_high = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/production_high = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/maturation_fast = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/metabolism/no_nutrients_water = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/psilocybin = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/biochemistry/potency_max = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/yield_max = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/production_max = 500,
+		/obj/item/computer_hardware/hard_drive/portable/plantgene/vigour/maturation_faster = 500
+		)
+
+/obj/machinery/vending/plant_gene/Initialize()
+	. = ..()
+	var/light_color = pick(\
+		COLOR_LIGHTING_RED_DARK,\
+		COLOR_LIGHTING_BLUE_DARK,\
+		COLOR_LIGHTING_GREEN_DARK,\
+		COLOR_LIGHTING_ORANGE_DARK,\
+		COLOR_LIGHTING_PURPLE_DARK,\
+		COLOR_LIGHTING_CYAN_DARK\
+		)
+	set_light(1.4, 1, light_color)
+	earnings_account = department_accounts[vendor_department]	// Weirdness with offship account demands this
+	wires = new /datum/wires/vending/intermediate(src)

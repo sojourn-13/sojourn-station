@@ -41,6 +41,8 @@
 /obj/structure/ameridian_crystal/New()
 	..()
 	update_icon()
+	if(is_growing)
+		addtimer(CALLBACK(src, .proc/spread), rand(fast_improvement,slow_improvement))
 	if(!randomized_colour)
 		gooners()
 		return
@@ -54,8 +56,6 @@
 		icon_state = "ameridian_crystal_red"
 		fast_improvement = 60
 		slow_improvement = 90
-	if(is_growing)
-		addtimer(CALLBACK(src, .proc/spread), rand(fast_improvement,slow_improvement))
 	gooners()
 	self_improvements()
 

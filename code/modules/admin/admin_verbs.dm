@@ -207,6 +207,14 @@ ADMIN_VERB_ADD(/client/proc/hivemind_panel, R_FUN, TRUE)
 		var/datum/hivemind_panel/H = GLOB.hivemind_panel
 		H.main_interact()
 
+ADMIN_VERB_ADD(/client/proc/deepmaints_panel, R_FUN, TRUE)
+/client/proc/deepmaints_panel()
+	set category = "Fun"
+	set name = "Deepmaint Psionic Panel"
+	if(holder && GLOB.deepmaints_panel)
+		var/datum/deepmaints_panel/H = GLOB.deepmaints_panel
+		H.main_interact()
+
 #define MAX_WARNS 3
 #define AUTOBANTIME 10
 
@@ -532,7 +540,7 @@ ADMIN_VERB_ADD(/client/proc/change_security_level, R_ADMIN|R_FUN, FALSE)
 	set desc = "Sets the colony's security level"
 	set category = "Admin"
 
-	if(!check_rights(R_ADMIN))	return
+	if(!check_rights(R_FUN))	return
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
 	var/decl/security_level/new_security_level = input(usr, "It's currently [security_state.current_security_level.name].", "Select Security Level")  as null|anything in (security_state.all_security_levels - security_state.current_security_level)
@@ -613,6 +621,23 @@ ADMIN_VERB_ADD(/client/proc/perkadd, R_ADMIN, FALSE)
 		return
 	T.stats.addPerk(perkname)
 	message_admins("\blue [key_name_admin(usr)] gave the perk [perkname] to [key_name(T)].", 1)
+
+/*
+ADMIN_VERB_ADD(/client/proc/perkbreakdown, R_ADMIN, FALSE)
+/client/proc/perkbreakdown(mob/living/carbon/T as mob in SSmobs.mob_list)
+	set category = "Fun"
+	set name = "Add Breakdown"
+	set desc = "Add a Breakdown to a person."
+	var/datum/breakdown/breakdown_name = input("What perk do you want to add?") as null|anything in subtypesof(/datum/breakdown/)
+	if (!breakdown_name)
+		return
+	if(QDELETED(T))
+		to_chat(usr, "Creature has been delete in the meantime.")
+		return
+	var/mob/living/carbon/human/ouch = T
+	ouch.sanity.breakdown_debug(breakdown_name)
+	message_admins("\blue [key_name_admin(usr)] gave the perk [breakdown_name] to [key_name(T)].", 1)
+*/
 
 ADMIN_VERB_ADD(/client/proc/playtimebypass, R_ADMIN|R_MOD|R_DEBUG, FALSE)
 /client/proc/playtimebypass(mob/T as mob in GLOB.player_list)

@@ -47,7 +47,7 @@
 	icon = 'icons/obj/guns/matter/reclaimer.dmi'
 	slot_flags = SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
-	fire_sound = 'sound/weapons/Genhit.ogg'
+	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 3, TECH_BIO = 8, TECH_ILLEGAL = 1)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 5, MATERIAL_PLASTIC = 20)
 	matter_type = MATERIAL_WOOD
@@ -81,7 +81,7 @@
 	icon = 'icons/obj/guns/matter/breaker.dmi'
 	slot_flags = SLOT_BACK
 	w_class = ITEM_SIZE_BULKY
-	fire_sound = 'sound/weapons/Genhit.ogg'
+	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 3, TECH_BIO = 8, TECH_ILLEGAL = 1)
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 5, MATERIAL_PLASTIC = 20)
 	matter_type = MATERIAL_WOOD

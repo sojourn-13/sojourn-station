@@ -23,6 +23,9 @@
 	var/datum/computer_file/binary/design/file
 
 
+	//Used for determing if the printer can accually print the design Mech fabs/Organ Printers ect ect
+	var/required_printer_code = FALSE
+	var/code_dex = FALSE
 
 //These procs are used in subtypes for assigning names and descriptions dynamically
 /datum/design/proc/AssembleDesignInfo(atom/temp_atom)
@@ -134,7 +137,6 @@
 		"id" = "[id]", "name" = name, "desc" = desc, "time" = time,
 		"category" = category, "adjust_materials" = adjust_materials
 	)
-	// nano_ui_data["icon"] is set in asset code.
 
 	if(length(materials))
 		var/list/RS = list()

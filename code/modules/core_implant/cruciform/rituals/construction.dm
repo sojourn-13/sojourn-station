@@ -1,5 +1,6 @@
 #define CRUCIFORM_TYPE obj/item/implant/core_implant/cruciform
 
+//Create a list of what can be created via construction ritual
 GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
 /proc/init_nt_blueprints()
@@ -13,22 +14,33 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			continue
 		if(blueprint_type == /datum/nt_blueprint/cruciform_upgrade)
 			continue
+		/* - Removed do to exploits with uprooting after autolathen printing giving full prices
 		if(blueprint_type == /datum/nt_blueprint/weapons)
 			continue
+		if(blueprint_type == /datum/nt_blueprint/health_care)
+			continue*/
 		var/datum/nt_blueprint/pb = new blueprint_type()
 		list[pb.name] = pb
-	return list
+	. = list
+
+//Create a list of what the blueprints actually make, and the materials required to make them. Blueprints list generation turns them into text format, not datums.
+GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
+
+/proc/init_nt_constructs()
+	var/list/nt_constructs = list()
+	for(var/name in GLOB.nt_blueprints)
+		var/datum/nt_blueprint/accessed = GLOB.nt_blueprints[name]
+		nt_constructs[accessed.build_path] = accessed.materials
+	. = nt_constructs
 
 /datum/ritual/cruciform/priest/blueprint_check
 	name = "Divine Guidance"
-	phrase = "Dirige me in veritate tua, et doce me, quia tu es Deus salvator meus, et te sustinui tota die."
-	desc = "Building needs mainly faith but resources as well. Find out what it takes."
+	phrase = "Dirige me in veritate tua, et doce me, quia tu es Deus salvator meus, et te sustinui tota die." //"Guide me in your truth and teach me, for you are God my Savior, and my hope is in you all day long."
+	desc = "Building needs not only faith but resources as well. Find out what it takes."
 	power = 5
 	category = "Construction"
-	nutri_cost = 10
-	blood_cost = 10
 
-/datum/ritual/cruciform/priest/blueprint_check/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C, list/targets)
+/datum/ritual/cruciform/priest/blueprint_check/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C, list/targets)
 	var/construction_key = input("Select construction", "") as null|anything in GLOB.nt_blueprints
 	var/datum/nt_blueprint/blueprint = GLOB.nt_blueprints[construction_key]
 	var/list/listed_components = list()
@@ -38,53 +50,61 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			continue
 		listed_components += list("[blueprint.materials[placeholder]] [initial(placeholder.name)]")
 	to_chat(user, SPAN_NOTICE("[blueprint.name] requires: [english_list(listed_components)]."))
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
+	return TRUE
 
 /datum/ritual/cruciform/priest/construction
 	name = "Manifestation"
-	phrase = "Omnia autem quae arguuntur a lumine manifestantur omne enim quod manifestatur lumen est."
+	phrase = "Omnia per ipsum facta sunt: et sine ipso factum est nihil, quod factum est." //"Through him all things were made; without him nothing was made that has been made."
 	desc = "Build and expand. Shape your faith into something more sensible."
 	power = 40
 	category = "Construction"
-	nutri_cost = 25
-	blood_cost = 25
 
 
-/datum/ritual/cruciform/priest/construction/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C, list/targets)
-	var/construction_key = input("Select construction", "") as null|anything in GLOB.nt_blueprints
-	var/datum/nt_blueprint/blueprint = GLOB.nt_blueprints[construction_key]
-	var/turf/target_turf = get_step(user,user.dir)
-	if(!blueprint)
+/datum/ritual/cruciform/priest/construction/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C, list/targets)
+	var/construction_key = null
+	var/datum/nt_blueprint/blueprint = null
+	var/construct_time = null
+	var/turf/target_turf = null
+	if(C.is_busy == TRUE)
+		fail("You can only build one thing at a time.", user, C)
+		return FALSE
+	else
+		C.is_busy = TRUE  //Has to happen before the input to avoid cheesing
+		construction_key = input("Select construction", "") as null|anything in GLOB.nt_blueprints
+		blueprint = GLOB.nt_blueprints[construction_key]
+		target_turf = get_step(user,user.dir)
+
+	if(!blueprint || !construction_key)
 		fail("You decided not to test your faith.",user,C,targets)
-		return
+		C.is_busy = FALSE
+		return FALSE
+	construct_time = blueprint.build_time //Has to be here to prevent runtimes
 	if(!items_check(user, target_turf, blueprint))
 		fail("Something is missing.",user,C,targets)
-		return
+		C.is_busy = FALSE
+		return FALSE
+	if(target_turf.contains_dense_objects() && (blueprint.blueprint_type == "machine" || blueprint.blueprint_type == "golem"))
+		fail("You can't build this here, there's something else in the way.", user, C, targets) //No more stacking 5 solidifiers
+		C.is_busy = FALSE
+		return FALSE
 
 	user.visible_message(SPAN_NOTICE("You see as [user] passes his hands over something."),SPAN_NOTICE("You see your faith take physical form as you concentrate on [blueprint.name] image"))
-	if(user.species?.reagent_tag != IS_SYNTHETIC)
-		if(user.nutrition >= nutri_cost)
-			user.nutrition -= nutri_cost
-		else
-			to_chat(user, SPAN_WARNING("You manage to cast the litany at a cost. The physical body consumes itself..."))
-			user.vessel.remove_reagent("blood",blood_cost)
 
-	var/obj/effect/overlay/nt_construction/effect = new(target_turf, blueprint.build_time)
+	if(C.get_module(CRUCIFORM_FACT)) //Factorials get 25% build time reduction. Value can change if things get unbalanced with golems.
+		construct_time *= 0.75
+
+	var/obj/effect/overlay/nt_construction/effect = new(target_turf, construct_time)
 
 	if(!do_after(user, blueprint.build_time, target_turf))
 		fail("You feel something is judging you upon your impatience",user,C,targets)
 		effect.failure()
-		return
+		C.is_busy = FALSE
+		return FALSE
 	if(!items_check(user, target_turf, blueprint))
 		fail("Something got stolen!",user,C,targets)
 		effect.failure()
-		return
-	//magic has to be a bit innacurate
+		C.is_busy = FALSE
+		return FALSE
 
 	for(var/item_type in blueprint.materials)
 		var/t = locate(item_type) in target_turf.contents
@@ -95,9 +115,11 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			qdel(t)
 
 	effect.success()
+	C.is_busy = FALSE
 	user.visible_message(SPAN_NOTICE("You hear a soft humming sound as [user] finishes his ritual."),SPAN_NOTICE("You take a deep breath as the divine manifestation finishes."))
 	var/build_path = blueprint.build_path
 	new build_path(target_turf)
+	return TRUE
 
 /datum/ritual/cruciform/priest/construction/proc/items_check(mob/user,turf/target, datum/nt_blueprint/blueprint)
 	var/list/turf_contents = target.contents
@@ -117,11 +139,66 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 				return FALSE
 	return TRUE
 
+/datum/ritual/cruciform/priest/acolyte/deconstruction
+	name = "Uproot"
+	phrase = "Dominus dedit, Dominus abstulit." //"The Lord gives, and the Lord takes away."*
+	desc = "Mistakes are to be a lesson, but first we must correct it by deconstructing its form."
+	power = 20
+	category = "Construction"
+
+/datum/ritual/cruciform/priest/acolyte/deconstruction/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C, list/targets)
+	if(!GLOB.nt_constructs) //Makes sure the list we curated earlier actually exists
+		fail("You have no idea what constitutes a church construct.",user,C,targets)
+		return
+
+	var/obj/reclaimed //Variable to be defined later as the removed construct
+	var/loot //Variable to be defined later as materials resulting from deconstruction
+	var/turf/target_turf = get_step(user,user.dir) //Gets the turf in front of the user
+
+	//Find the NT Structure in front of the player
+	for(reclaimed in target_turf)
+		if(reclaimed.type in GLOB.nt_constructs)
+			loot = GLOB.nt_constructs[reclaimed.type]
+			break
+
+	if(isnull(loot))
+		fail("There is no mistake to remove here.",user,C,targets)
+		return
+
+	user.visible_message(SPAN_NOTICE("[user] places one hand on their chest, and the other stretched forward."),SPAN_NOTICE("You take back what is, returning it to what was."))
+
+	var/obj/effect/overlay/nt_construction/effect = new(target_turf, 5 SECONDS)
+
+	if(!do_after(user, 5 SECONDS, target_turf)) //"Sit still" timer
+		fail("You feel something is judging you upon your impatience",user,C,targets)
+		effect.failure()
+		return
+
+	if(QDELETED(reclaimed) || reclaimed.loc != target_turf)
+		fail("It's no longer there.", user, C, targets)
+		effect.failure()
+		return
+
+	//Lets spawn and drop the materials resulting from deconstruction
+	for(var/obj/scrap as anything in loot)
+		if(ispath(scrap, /obj/item/stack))
+			var/obj/item/stack/mat = new scrap(target_turf)
+			mat.amount = loot[scrap]
+		else
+			scrap = new scrap(target_turf)
+
+	effect.success()
+	user.visible_message(SPAN_NOTICE("Clanking of parts hit the floor as [user] finishes their prayer and the machine falls apart."),SPAN_NOTICE("Collect the evidence, and begin to atone."))
+
+	qdel(reclaimed)
+	return TRUE
+
 /datum/nt_blueprint/
 	var/name = "Report me"
 	var/build_path
 	var/list/materials
 	var/build_time = 3 SECONDS
+	var/blueprint_type = ""
 
 /datum/nt_blueprint/canister
 	name = "Biomatter Canister"
@@ -130,6 +207,8 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 		/obj/item/stack/material/steel = 8,
 		/obj/item/stack/material/plastic = 2
 	)
+	blueprint_type = "canister"
+
 /datum/nt_blueprint/canister/large
 	name = "Large Biomatter Canister"
 	build_path = /obj/structure/reagent_dispensers/biomatter/large
@@ -143,6 +222,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
 //For making mobs
 /datum/nt_blueprint/mob
+	blueprint_type = "golem"
 
 /datum/nt_blueprint/mob/rook
 	name = "Rook Golem"
@@ -207,6 +287,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
 //For making machinery
 /datum/nt_blueprint/machinery
+	blueprint_type = "machine"
 
 /datum/nt_blueprint/machinery/obelisk
 	name = "Obelisk"
@@ -251,41 +332,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	)
 	build_time = 9 SECONDS
 
-//Notice: We don't use them on Soj but its kept here for posterity. -Kaz
-//cloner
-/*
-/datum/nt_blueprint/machinery/cloner
-	name = "Cloner Pod"
-	build_path = /obj/machinery/neotheology/cloner
-	materials = list(
-		/obj/item/stack/material/glass = 15,
-		/obj/item/stack/material/plasteel = 10,
-		/obj/item/stack/material/gold = 5,
-		/obj/item/stack/material/glass/reinforced = 10,
-	)
-	build_time = 10 SECONDS
-
-/datum/nt_blueprint/machinery/reader
-	name = "Cruciform Reader"
-	build_path = /obj/machinery/neotheology/reader
-	materials = list(
-		/obj/item/stack/material/steel = 10,
-		/obj/item/stack/material/plasteel = 5,
-		/obj/item/stack/material/silver = 10,
-		/CRUCIFORM_TYPE = 1
-	)
-	build_time = 10 SECONDS
-
-/datum/nt_blueprint/machinery/biocan
-	name = "Biomass tank"
-	build_path = /obj/machinery/neotheology/biomass_container
-	materials = list(
-		/obj/item/stack/material/gold = 5,
-		/obj/item/stack/material/plasteel = 5,
-		/obj/structure/reagent_dispensers/biomatter/large = 1
-	)
-	build_time = 8 SECONDS
-*/
+//Notice: Cloner blueprints got moved to cloning.dm
 
 //generator
 /datum/nt_blueprint/machinery/biogen
@@ -419,6 +466,16 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	)
 	build_time = 8 SECONDS
 
+/datum/nt_blueprint/machinery/door_public
+	name = "Public Door"
+	build_path = /obj/machinery/door/holy/public
+	materials = list(
+		/obj/item/stack/material/steel = 5,
+		/obj/item/stack/material/biomatter = 20,
+		/obj/item/stack/material/silver = 3
+	)
+	build_time = 8 SECONDS
+
 //Requires a lot but heals bluespace, for free, like really good
 /datum/nt_blueprint/machinery/entropy_repairer
 	name = "Absolute Nullifer"
@@ -435,6 +492,7 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
 //Church implant upgrade, basiclly biomatter dumps?
 /datum/nt_blueprint/cruciform_upgrade
+	blueprint_type = "upgrade"
 
 /datum/nt_blueprint/cruciform_upgrade/natures_blessing
 	name = "Cruciform Natures blessing Upgrade"
@@ -503,21 +561,22 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 
 //Church weapons, faster but more exspensive way for vectors to get their armorments without a disk
 /datum/nt_blueprint/weapons
+	blueprint_type = "item"
 
 /datum/nt_blueprint/weapons/antebellum
-	name = "\"Antebellum\" Blunderbuss lasgun"
+	name = "\"Antebellum\" laser blunderbuss"
 	build_path = /obj/item/gun/energy/plasma/antebellum
 	materials = list(
 		/obj/item/stack/material/plasteel = 10,
 		/obj/item/stack/material/wood = 15,
 		/obj/item/stack/material/biomatter = 20,
-		/obj/item/stack/material/gold = 2,
+		/obj/item/stack/material/gold = 1,
 		/obj/item/stack/material/silver = 2
 	)
 	build_time = 3 SECONDS
 
 /datum/nt_blueprint/weapons/carpediem
-	name = "\"Carpediem\" lasgun"
+	name = "\"Carpediem\" laser musket"
 	build_path = /obj/item/gun/energy/carpediem
 	materials = list(
 		/obj/item/stack/material/plasteel = 5,
@@ -532,10 +591,52 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 	name = "\"Concillium\" las-machinegun"
 	build_path = /obj/item/gun/energy/concillium
 	materials = list(
-		/obj/item/stack/material/plasteel = 30,
+		/obj/item/stack/material/plasteel = 40,
 		/obj/item/stack/material/wood = 25,
 		/obj/item/stack/material/glass = 15,
-		/obj/item/stack/material/gold = 3,
+		/obj/item/stack/material/gold = 5,
 		/obj/item/stack/material/silver = 5
 	)
 	build_time = 8 SECONDS
+
+//For making medical stuff
+
+/datum/nt_blueprint/health_care
+	blueprint_type = "item"
+
+/datum/nt_blueprint/health_care/nt_firstaid
+	name = "Absolutism Medkit"
+	build_path = /obj/item/storage/firstaid/nt
+	materials = list(
+		/obj/item/stack/material/biomatter = 45,
+		/obj/item/stack/material/plastic = 4,
+		/obj/item/stack/material/glass = 2,
+		/obj/item/stack/material/gold = 2,
+		/obj/item/stack/material/silver = 2
+	)
+	build_time = 8 SECONDS
+
+/datum/nt_blueprint/health_care/nt_ointment
+	name = "Absolutism Burnpack"
+	build_path = /obj/item/stack/medical/ointment/advanced/nt
+	materials = list(
+		/obj/item/stack/material/biomatter = 25,
+		/obj/item/stack/material/plastic = 2,
+		/obj/item/stack/material/glass = 1,
+		/obj/item/stack/material/gold = 1,
+		/obj/item/stack/material/silver = 1
+	)
+	build_time = 5 SECONDS
+
+/datum/nt_blueprint/health_care/nt_bruise_pack
+	name = "Absolutism Bruisepack"
+	build_path = /obj/item/stack/medical/bruise_pack/advanced/nt
+	materials = list(
+		/obj/item/stack/material/biomatter = 25,
+		/obj/item/stack/material/plastic = 2,
+		/obj/item/stack/material/glass = 1,
+		/obj/item/stack/material/gold = 1,
+		/obj/item/stack/material/silver = 1
+	)
+	build_time = 5 SECONDS
+

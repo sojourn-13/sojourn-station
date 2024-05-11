@@ -21,14 +21,15 @@
 	penetration_multiplier = 1.1
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE, GUN_SCOPE, GUN_CALIBRE_9MM)
 	init_recoil = SMG_RECOIL(1)
-	folding_stock = TRUE //we can fold are stocks
+	folding_stock = TRUE
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND_NOLOSS,
-		FULL_AUTO_300_NOLOSS
+		FULL_AUTO_600_NOLOSS
 		)
 	serial_type = "NM"
+	gun_parts = null
 
 	wield_delay = 0.5 SECOND
 	wield_delay_factor = 0.1 // 10 vig

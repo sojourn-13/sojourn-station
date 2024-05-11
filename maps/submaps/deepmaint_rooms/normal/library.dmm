@@ -72,6 +72,14 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/deepmaint)
+"L" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/wood,
+/area/deepmaint)
+"O" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/deepmaint)
 
 (1,1,1) = {"
 b
@@ -83,7 +91,7 @@ e
 d
 b
 b
-b
+L
 b
 "}
 (2,1,1) = {"
@@ -139,7 +147,7 @@ h
 e
 "}
 (6,1,1) = {"
-e
+O
 h
 f
 b
@@ -175,7 +183,7 @@ b
 g
 o
 j
-b
+L
 "}
 (9,1,1) = {"
 b
@@ -207,7 +215,7 @@ b
 b
 b
 c
-b
+L
 e
 d
 e

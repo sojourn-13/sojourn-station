@@ -61,6 +61,7 @@
 				rtotal += round(potency/reagent_data[2])
 			if(rid == "nutriment")
 				data[seed.seed_name] = max(1,rtotal)
+			reagents.maximum_volume += max(1,rtotal)
 			reagents.add_reagent(rid,max(1,rtotal),data)
 	update_desc()
 	if(reagents.total_volume > 0)
@@ -112,6 +113,8 @@
 			descriptors |= "hallucinogenic"
 		if(reagents.has_reagent("bicaridine"))
 			descriptors |= "medicinal"
+		if(reagents.has_reagent("sanguinum"))
+			descriptors |= "metallic"
 		if(reagents.has_reagent(MATERIAL_GOLD))
 			descriptors |= "shiny"
 		if(reagents.has_reagent("lube"))

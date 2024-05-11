@@ -6,7 +6,7 @@
 	damage_types = list(BURN = 28)
 	armor_penetration = 15
 	check_armour = ARMOR_ENERGY
-	fire_stacks = 2 //Blasma
+	fire_stacks = 1 //Blasma
 
 	affective_damage_range = 3
 	affective_ap_range = 5
@@ -16,19 +16,16 @@
 
 	muzzle_type = /obj/effect/projectile/plasma/muzzle
 	impact_type = /obj/effect/projectile/plasma/impact
-	added_damage_laser_pve = 14
 
 /obj/item/projectile/plasma/shell
 	damage_types = list(BURN = 36)
 	recoil = 12
-	added_damage_laser_pve = 18
 
 /obj/item/projectile/plasma/light
 	name = "light plasma bolt"
 	damage_types = list(BURN = 28)
 	armor_penetration = 0
 	recoil = 7
-	added_damage_laser_pve = 14
 
 /obj/item/projectile/plasma/heavy
 	name = "heavy plasma bolt"
@@ -36,16 +33,14 @@
 	affective_damage_range = 2
 	affective_ap_range = 3
 	recoil = 10
-	fire_stacks = 3
+	fire_stacks = 1
 
 	damage_types = list(BURN = 30)
 	armor_penetration = 30
-	added_damage_laser_pve = 15
 
 /obj/item/projectile/plasma/heavy/shell
 	damage_types = list(BURN = 42)
 	recoil = 24
-	added_damage_laser_pve = 21
 
 /obj/item/projectile/plasma/heavy/super_heavy
 	name = "superheavy plasma bolt"
@@ -53,8 +48,7 @@
 	affective_damage_range = 1
 	affective_ap_range = 2
 	recoil = 30
-	added_damage_laser_pve = 25
-	fire_stacks = 4
+	fire_stacks = 1
 
 /obj/item/projectile/plasma/impact
 	name = "plasma impact bolt"
@@ -83,6 +77,7 @@
 	check_armour = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
+	ignition_source = FALSE
 
 /obj/item/projectile/plasma/lastertag/blue/on_hit(atom/target)
 	if (!testing)
@@ -104,6 +99,7 @@
 	check_armour = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
+	ignition_source = FALSE
 
 /obj/item/projectile/plasma/lastertag/red/on_hit(atom/target)
 	if (!testing)
@@ -125,6 +121,7 @@
 	check_armour = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
+	ignition_source = FALSE
 
 /obj/item/projectile/plasma/lastertag/green/on_hit(atom/target)
 	if (!testing)
@@ -146,6 +143,7 @@
 	check_armour = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
+	ignition_source = FALSE
 
 /obj/item/projectile/plasma/lastertag/yellow/on_hit(atom/target)
 	if (!testing)
@@ -166,6 +164,7 @@
 	check_armour = ARMOR_ENERGY
 	recoil = 1
 	fire_stacks = 0
+	ignition_source = FALSE
 
 	muzzle_type = /obj/effect/projectile/laser_omni/muzzle
 	tracer_type = /obj/effect/projectile/laser_omni/tracer
@@ -192,13 +191,12 @@
 	mob_hit_sound = list('sound/effects/gore/sear.ogg')
 	hitsound_wall = 'sound/weapons/guns/misc/ric4.ogg'
 	damage_types = list(BRUTE = 54)
-	armor_penetration = 50
+	armor_penetration = 65
 	check_armour = ARMOR_BULLET
 	affective_damage_range = 16
 	affective_ap_range = 16
 	hitscan = TRUE
 	recoil = 50
-	added_damage_laser_pve = 27
 	fire_stacks = 0
 
 /obj/item/projectile/plasma/check_penetrate(var/atom/A)

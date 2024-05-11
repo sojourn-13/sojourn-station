@@ -1,12 +1,12 @@
 /obj/item/projectile/bullet/batonround
 	name = "baton round"
 	icon_state = "grenade"
-	damage_types = list(BRUTE = 10)
-	added_damage_laser_pve = 10
-	agony = 80
+	damage_types = list(BRUTE = 20)
+	agony = 100
 	check_armour = ARMOR_MELEE
-	armor_penetration = 0
-	embed = FALSE
+	armor_penetration = 10
+	embed = TRUE			//literally imagine being hit by this.
+	can_ricochet = TRUE		//It's rubber
 	sharp = FALSE
 	recoil = 35
 
@@ -14,9 +14,8 @@
 	name = "grenade shell"
 	icon_state = "grenade"
 	damage_types = list(BRUTE = 10)
-	added_damage_laser_pve = 10
 	armor_penetration = 0
-	embed = FALSE
+	embed = TRUE
 	sharp = FALSE
 	check_armour = ARMOR_BULLET
 	recoil = 45

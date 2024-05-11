@@ -25,7 +25,7 @@
 		access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch, access_network, access_maint_tunnels, access_research_equipment
 	)
 	ideal_character_age = 40
-	minimum_character_age = 30
+	minimum_character_age = 25
 
 	stat_modifiers = list(
 		STAT_MEC = 25,
@@ -33,7 +33,7 @@
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci, /datum/perk/chemist)
+	perks = list(PERK_SURGICAL_MASTER, PERK_ROBOTICS_EXPERT, PERK_SI_SCI, PERK_CHEMIST)
 
 	// TODO: enable after baymed
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -84,7 +84,7 @@
 		access_genetics, access_medical_suits
 	)
 
-	perks = list(/datum/perk/si_sci, /datum/perk/chemist) //We do hydro?
+	perks = list(PERK_SI_SCI, PERK_CHEMIST) //We do hydro?
 
 	stat_modifiers = list(
 		STAT_MEC = 20,
@@ -123,7 +123,7 @@
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
 	department_account_access = TRUE
-	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 
 	outfit_type = /decl/hierarchy/outfit/job/science/roboticist
@@ -140,7 +140,7 @@
 		STAT_BIO = 25,
 	)
 
-	perks = list(/datum/perk/surgical_master, /datum/perk/robotics_expert, /datum/perk/si_sci)
+	perks = list(PERK_SURGICAL_MASTER, PERK_ROBOTICS_EXPERT, PERK_SI_SCI)
 
 	description = "The Roboticist is a specialized scientist with a busy workload - at the forefront of Soteria's service offerings.<br>\
 	You must maintain and upgrade the fleet of synthetics that keep the ship running, as well as constructing new ones on occasion.<br>\

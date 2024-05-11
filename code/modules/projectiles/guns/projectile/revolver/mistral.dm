@@ -18,3 +18,14 @@
 	serial_type = "SD GmbH"
 	wield_delay = 0.4 SECOND
 	wield_delay_factor = 0.4 // 40 vig
+	gun_parts = list(/obj/item/part/gun/frame/minstral = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/magnum = 1)
+
+/obj/item/part/gun/frame/minstral
+	name = "Minstral frame"
+	desc = "A Minstral revolver frame. The gambler's choice."
+	icon_state = "frame_revolver"
+	result = /obj/item/gun/projectile/revolver/mistral
+	resultvars = list(/obj/item/gun/projectile/revolver/mistral)
+	gripvars = list(/obj/item/part/gun/grip/rubber)
+	mechanismvar = /obj/item/part/gun/mechanism/revolver
+	barrelvars = list(/obj/item/part/gun/barrel/magnum)

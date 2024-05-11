@@ -23,8 +23,8 @@
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one seems to have a knife taped to it..?"
 	icon_state = "roomba_knife"
-	health = 35
-	maxHealth = 35
+	health = 30
+	maxHealth = 30
 	melee_damage_lower = 12
 	melee_damage_upper = 17
 	drop2 = /obj/item/tool/knife
@@ -33,8 +33,8 @@
 	name = "Greyson Positronic RMB-A unit"
 	desc = "A small round drone, usually tasked with carrying out menial tasks. This one has a baton attached to it..."
 	icon_state = "roomba_batton"
-	health = 35
-	maxHealth = 35
+	health = 30
+	maxHealth = 30
 	move_to_delay = 2 //speedy boy!
 	melee_damage_lower = 7
 	melee_damage_upper = 12
@@ -57,8 +57,8 @@
 	name = "Greyson Positronic RMB-SEC unit"
 	desc = "A small blue round drone, usually tasked with carrying out menial tasks. This one has a baton attached to it and seems to have added armor..."
 	icon_state = "roomba_IH_batton"
-	health = 90
-	maxHealth = 90
+	health = 80
+	maxHealth = 80
 	move_to_delay = 2 //speedy boy!
 	melee_damage_lower = 7
 	melee_damage_upper = 12

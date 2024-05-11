@@ -35,7 +35,7 @@
 		/obj/item/rig_module/electrowarfare_suite,
 		/obj/item/rig_module/modular_injector/combat,
 		/obj/item/rig_module/fabricator/energy_net,
-		/obj/item/rig_module/storage
+		//obj/item/rig_module/storage
 		)
 
 //Has most of the modules removed

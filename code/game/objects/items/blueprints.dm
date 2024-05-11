@@ -76,6 +76,7 @@ move an amendment</a> to the drawing.</p>
 	if(istype(A, /area/space))
 		return AREA_SPACE
 	var/list/SPECIALS = list(
+		/area/deepmaint,
 		/area/shuttle,
 		/area/admin,
 		/area/arrival,

@@ -8,12 +8,12 @@
 	start_discovered = TRUE
 	uid = "moe_basic"
 	spawn_always = TRUE
-	markup = UNIQUE_GOODS
+	markup = COMMON_GOODS
 	offer_limit = 20
 	base_income = 1600
 	wealth = 0
 	hidden_inv_threshold = 2000
-	recommendation_threshold = 4000
+	recommendation_threshold = 2000
 	stations_recommended = list("moe_adv")
 	forced_overmap_zone = list(
 		list(20, 22),
@@ -88,7 +88,7 @@
 			/obj/item/computer_hardware/hard_drive/portable/design/medical = custom_good_amount_range(list(3, 6)),
 			/obj/item/device/defib_kit,
 			/obj/item/reagent_containers/glass/beaker/vial/nanites = good_data("Raw Nanites Vial", list(-2, 2), 1200),
-			/obj/item/reagent_containers/glass/beaker/vial/nanites = good_data("Raw Uncapped Nanites Vial", list(-1, 1), 1500)
+			/obj/item/reagent_containers/glass/beaker/vial/uncapnanites = good_data("Raw Uncapped Nanites Vial", list(-1, 1), 1500)
 		)
 	)
 	hidden_inventory = list(
@@ -113,16 +113,16 @@
 			/obj/item/tool/saw/circular/medical = custom_good_amount_range(list(1, 2)),
 			/obj/item/tool/hammer = custom_good_amount_range(list(1, 2)),
 			/obj/item/tool/surgicaldrill/adv = custom_good_amount_range(list(1, 2)),
-			/obj/item/bone_brace = custom_good_amount_range(list(1, 2))
+			/obj/item/modification/organ/internal/electromechanical/bone_braces = custom_good_amount_range(list(1, 2))
 		)
 	)
 
 	offer_types = list(
 		/obj/item/organ/internal/scaffold = offer_data_mods("aberrant organ (input, process, output)", 1200, 4, OFFER_ABERRANT_ORGAN, 3),
 		/datum/reagent/medicine/ossisine = offer_data("ossissine bottle (60u)", 2000, 1),
-		/datum/reagent/medicine/bicaridine = offer_data("bicard bottle (60u)", 150, 3),
-		/datum/reagent/medicine/kelotane = offer_data("kelotane bottle (60u)", 150, 3),
-		/datum/reagent/medicine/dylovene = offer_data("dylovene bottle (60u)", 150, 3),
+		/datum/reagent/medicine/bicaridine = offer_data("bicard bottle (60u)", 200, 3),
+		/datum/reagent/medicine/kelotane = offer_data("kelotane bottle (60u)", 200, 3),
+		/datum/reagent/medicine/dylovene = offer_data("dylovene bottle (60u)", 200, 3),
 		/datum/reagent/nanites/uncapped/control_booster_utility = offer_data("Control Booster Utility bottle (60u)", 30000, 1),
 		/datum/reagent/nanites/uncapped/control_booster_combat = offer_data("Control Booster Combat bottle (60u)", 30000, 1)
 		)

@@ -16,7 +16,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	handle_casings = HOLD_CASINGS
 	fire_sound = 'sound/weapons/guns/fire/GLfire.ogg'
-	bulletinsert_sound = 'sound/weapons/guns/interact/batrifle_magin.ogg'   //Placeholder, could use a new sound
+	bulletinsert_sound = 'sound/weapons/guns/interact/china_lake_reload.ogg'   // Might not be a M203 but better than a mag sound.
 	max_shells = 3
 	init_recoil = HANDGUN_RECOIL(3)
 	twohanded = TRUE

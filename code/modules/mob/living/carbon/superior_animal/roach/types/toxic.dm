@@ -5,8 +5,8 @@
 
 	meat_amount = 3
 	turns_per_move = 1
-	maxHealth = 45
-	health = 45
+	maxHealth = 40
+	health = 40
 
 	contaminant_immunity = TRUE
 

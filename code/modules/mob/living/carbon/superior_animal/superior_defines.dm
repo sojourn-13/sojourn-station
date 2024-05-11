@@ -146,7 +146,7 @@
 
 	var/toxin_immune = FALSE
 	var/reagent_immune = FALSE
-	var/never_stimulate_air = FALSE
+	//var/never_stimulate_air = FALSE  moved to \code\modules\mob\living\living_defines.dm
 
 	var/contaminant_immunity = FALSE //if TRUE, mob is immune to harmful contaminants in air (plasma), skin contact, does not relate to breathing
 	var/cold_protection = 0 //0 to 1 value, which corresponds to the percentage of protection, affects only bodytemperature
@@ -160,11 +160,12 @@
 
 	colony_friend = FALSE
 
-
+	/*
 	var/min_air_pressure = 50 //below this, brute damage is dealt
 	var/max_air_pressure = 300 //above this, brute damage is dealt
 	var/min_bodytemperature = 200 //below this, burn damage is dealt
-	var/max_bodytemperature = 360 //above this, burn damage is dealt
+	var/max_bodytemperature = 360 //above this, burn damage is dealt  moved to \code\modules\mob\living\living_defines.dm
+	*/
 
 	var/deathmessage = "dies."
 	var/attacktext = "bitten"

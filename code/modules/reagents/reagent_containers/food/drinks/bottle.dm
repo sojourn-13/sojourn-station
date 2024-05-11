@@ -24,7 +24,8 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/Initialize()
 	icon_state_full = "[icon_state]"
-	icon_state_empty = "[icon_state]_empty"
+	if (icon_state_empty == null)
+		icon_state_empty = "[icon_state]_empty"
 	. = ..()
 	if(isGlass)
 		unacidable = TRUE
@@ -48,7 +49,7 @@
 	..()
 
 	if(bottle_thrower_intent != I_HELP)
-		if(reagents)
+		if(reagents && reagents.total_volume)
 			hit_atom.visible_message(SPAN_NOTICE("The contents of \the [src] splash all over [hit_atom]!"))
 			reagents.splash(hit_atom, reagents.total_volume)
 		src.smash(loc, hit_atom)
@@ -159,7 +160,7 @@
 		user.visible_message(SPAN_DANGER("\The [user] smashes [src] into [target]!"))
 
 	//The reagents in the bottle splash all over the target, thanks for the idea Nodrak
-	if(reagents)
+	if(reagents && reagents.total_volume)
 		user.visible_message(SPAN_NOTICE("The contents of \the [src] splash all over [target]!"))
 		reagents.splash(target, reagents.total_volume)
 
@@ -305,7 +306,7 @@
 	icon_state = "alco-white"
 	center_of_mass = list("x"=16, "y"=6)
 	preloaded_reagents = list("nanatsunoumi" = 100)
-	icon_state_empty = "alco-white_empty"
+	icon_state_empty = "alco-empty"
 
 /obj/item/reagent_containers/food/drinks/bottle/grenadine
 	name = "Briar Rose Grenadine Syrup"

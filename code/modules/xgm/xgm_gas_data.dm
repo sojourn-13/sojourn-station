@@ -61,7 +61,7 @@
 	icon = 'icons/effects/tile_effects.dmi'
 	icon_state = "generic"
 	layer = LIGHTING_LAYER - 1
-	appearance_flags = RESET_COLOR
+	appearance_flags = RESET_COLOR | DEFAULT_APPEARANCE_FLAGS
 	mouse_opacity = 0
 
 /obj/effect/gas_overlay/Initialize()

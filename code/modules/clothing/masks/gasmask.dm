@@ -1,6 +1,8 @@
+#define GAS_MASK_SANITY_COEFF_BUFF 1.7
+
 /obj/item/clothing/mask/gas
 	name = "gas mask"
-	desc = "A face-covering mask that can be connected to an air supply. Filters harmful gases from the air."
+	desc = "A face-covering mask that can be connected to an air supply. Filters harmful gases from the air along with most of the horrid smells."
 	icon_state = "gas_mask"
 	item_flags = BLOCK_GAS_SMOKE_EFFECT | AIRTIGHT
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
@@ -23,6 +25,10 @@
 	price_tag = 20
 	muffle_voice = FALSE
 	var/is_alts = TRUE
+
+/obj/item/clothing/mask/gas/New()
+	..()
+	AddComponent(/datum/component/clothing_sanity_protection, GAS_MASK_SANITY_COEFF_BUFF)
 
 /obj/item/clothing/mask/gas/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/tool/screwdriver))
@@ -154,6 +160,31 @@
 	price_tag = 40
 	is_alts = FALSE
 
+/obj/item/clothing/mask/gas/ihs/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Sec gasmask"] = "IHSgasmask"
+	options["Xeno Sec Gasmask"] = "IHSgasmask_a"
+	options["Extended Xeno Sec Gasmask"] = "IHSgasmask_k"
+
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1 //Or you could just use this instead of making another subtype just for races
+
 /obj/item/clothing/mask/gas/tactical
 	name = "tactical mask"
 	desc = "A close-fitting tactical mask that can be connected to an air supply."
@@ -254,6 +285,22 @@
 	icon_state = "bane"
 	is_alts = FALSE
 
+/obj/item/clothing/mask/gas/artificer
+	name = "artificer's gas mask"
+	desc = "An industrial gas mask bearing the colors of the artificer's guild."
+	icon_state = "gas_guild" // Sprites by Ezoken/Dromkii
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 60, rad = 80)
+	is_alts = FALSE
+
+/obj/item/clothing/mask/gas/guild_rebreather
+	name = "artificer's rebreather"
+	desc = "An industrial gas mask bearing the colors of the artificer's guild."
+	icon_state = "bane_guild" // Sprites by Ezoken/Dromkii
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 30, rad = 40) // Half coverage, half bonuses.
+	flags_inv = BLOCKFACEHAIR
+	body_parts_covered = FACE
+	is_alts = FALSE
+
 /obj/item/clothing/mask/gas/opifex
 	name = "opifex gas mask"
 	desc = "An archaic gas mask used commonly by opifex to filter out oxygen and other biohazards. They'll slowly die without wearing this, as will any other race that dons this mask."
@@ -315,3 +362,33 @@
 	filtered.update_values()
 
 	return filtered
+
+/obj/item/clothing/mask/gas/bigguy/sleekguy
+	name = "sleek grey rebreather"
+	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user." // take that Lonestar, no longer will you have a monopoly on cool facewear -Mus
+	icon_state = "srebreath"
+
+/obj/item/clothing/mask/gas/bigguy/sleekblueguy
+	name = "sleek blue rebreather"
+	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one is blue and has a Soteria Medical marking"
+	icon_state = "srebreath_blue"
+
+/obj/item/clothing/mask/gas/bigguy/sleekgoldguy
+	name = "sleek gold rebreather"
+	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one is gold and has a Lonestar marking."
+	icon_state = "srebreath_gold"
+
+/obj/item/clothing/mask/gas/bigguy/sleekorangeguy
+	name = "sleek orange rebreather"
+	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one is orange and has a Guild marking."
+	icon_state = "srebreath_orange"
+
+/obj/item/clothing/mask/gas/bigguy/sleekmarshalguy
+	name = "sleek marshal rebreather"
+	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one carries the Marshal colors and has thicker filters."
+	icon_state = "srebreath_marshal"
+
+/obj/item/clothing/mask/gas/bigguy/sleekpurpleguy
+	name = "sleek purple rebreather"
+	desc = "A small, Soteria-brand rebreather designed to regulate the flux of gasses fed to its user. This one is purple and has a Soteria Research marking."
+	icon_state = "srebreath_purple"

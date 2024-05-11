@@ -6,13 +6,18 @@ SUBSYSTEM_DEF(xenoarch)
 	var/const/xenoarch_spawn_chance = 0.5
 	var/const/digsite_size_lower = 4
 	var/const/digsite_size_upper = 12
-	var/const/artifact_spawnnum_lower = 6
-	var/const/artifact_spawnnum_upper = 12
+	var/artifact_spawnnum_lower = 1
+	var/artifact_spawnnum_upper = 2
 
 	var/list/artifact_spawning_turfs = list()
 	var/list/digsite_spawning_turfs = list()
+	var/list/map_data_list = list()
 
 /datum/controller/subsystem/xenoarch/Initialize(start_timeofday)
+	//fill list of map data so we can use it to determine digsite types
+	for(var/obj/map_data/MD in world)
+		if (MD.digsites)
+			map_data_list += MD
 	//create digsites
 	for(var/turf/simulated/mineral/M in block(locate(1,1,1), locate(world.maxx, world.maxy, world.maxz)))
 		if(isnull(M.geologic_data))
@@ -21,8 +26,11 @@ SUBSYSTEM_DEF(xenoarch)
 		if(!prob(xenoarch_spawn_chance))
 			continue
 
+		if(!(is_allowed_digsites(M.z)))
+			continue
+
 		digsite_spawning_turfs.Add(M)
-		var/digsite = get_random_digsite_type(M.z)
+		var/digsite = get_digsite_type(M.z, map_data_list)
 		var/target_digsite_size = rand(digsite_size_lower, digsite_size_upper)
 		var/list/processed_turfs = list()
 		var/list/turfs_to_process = list(M)
@@ -68,9 +76,12 @@ SUBSYSTEM_DEF(xenoarch)
 			//have a chance for an artifact to spawn here, but not in animal or plant digsites
 			if(isnull(M.artifact_find) && digsite != 1 && digsite != 2)
 				artifact_spawning_turfs.Add(archeo_turf)
+				artifact_spawnnum_upper += 1
 
 	//create artifact machinery
-	var/num_artifacts_spawn = rand(artifact_spawnnum_lower, artifact_spawnnum_upper)
+	artifact_spawnnum_lower = artifact_spawnnum_upper / 2
+	var/num_artifacts_spawn = rand(artifact_spawnnum_lower * 0.1, artifact_spawnnum_upper * 0.1) // 0.1 makes it 10% potentially might have to be lowered more.
+	//log_and_message_admins("Xenoarch artifact spawn count is [num_artifacts_spawn].") //Used to test how many spawned at round start.
 	while(artifact_spawning_turfs.len > num_artifacts_spawn)
 		pick_n_take(artifact_spawning_turfs)
 

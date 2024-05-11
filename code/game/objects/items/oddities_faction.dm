@@ -727,3 +727,137 @@ No more of that.
 					"potato",
 					"rice")]
 				S.harvest(get_turf(src),0,0,1)
+
+
+
+/obj/item/direct_line
+	name = "direct phone line"
+	desc = "A powerful direct hotline to local ships in the area, as well as having a slot to charge the phone with cashcards to directly fund a station of the CEO's choice."
+	icon = 'icons/obj/items.dmi'
+	icon_state = "phone"
+	flags = CONDUCT
+	force = WEAPON_FORCE_HARMLESS
+	throwforce = WEAPON_FORCE_HARMLESS
+	throw_speed = 1
+	throw_range = 4
+	w_class = ITEM_SIZE_SMALL
+	price_tag = 4000
+	attack_verb = list("liquidates", "divests", "outsources", "lays off", "downsizes")
+	hitsound = 'sound/weapons/ring.ogg'
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 4)
+	preloaded_reagents = list("plasticide" = 20, "copper" = 6, "silicon" = 10)
+	var/unlocks_left = 1
+	var/credits_to_fund = 0
+	var/favours_to_call = 0
+	var/anti_cheat = FALSE
+
+/obj/item/direct_line/examine(mob/user)
+	..()
+	to_chat(user, "<span class='info'>The little tracker on the said that lists of transferable funds reads as: [credits_to_fund]</span>")
+
+//This code is a mess
+
+/obj/item/direct_line/attack_self(mob/user as mob)
+
+	if(anti_cheat)
+		to_chat(user, "The line is busy with other deals, wait your turn.")
+		return
+
+	var/choice = input(user, "What do you want to call in?") as null|anything in list("Funding Operations","Aggressive Sales Market") //,"Call in a Favour"
+
+	if(anti_cheat)
+		to_chat(user, "The line is busy with other deals, wait your turn.")
+		return
+
+	switch(choice)
+
+		if("Funding Operations")
+			if(credits_to_fund)
+				var/list/stations_list_for_fund = list()
+				for(var/stations_to_fund in SStrade.discovered_stations)
+					var/datum/trade_station/O = stations_to_fund
+					stations_list_for_fund += O
+
+				if(!stations_list_for_fund)
+					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say \"I'm prepared to close this deal quickly\", followed by a silent dial tone. Seems like there are no stations willing to trade with the colony."))
+					return
+
+				var/datum/trade_station/station_choice = input(user, "What Station do you want to force sales with?") as null|anything in stations_list_for_fund
+				if(!station_choice)	// user can cancel
+					to_chat(user, SPAN_NOTICE("You quickly hang up the phone."))
+					return
+				station_choice.wealth += credits_to_fund
+				to_chat(user, SPAN_NOTICE("Before you work out a deal to transfer the funding you hear ''[pick("You rang?","I was planning on running into you.","This caller always collects.","I'm one smooth operator.","I always make my calls direct.")]'' and then the line goes silent, as the counter on the side for funding slowly ticks down..."))
+				credits_to_fund = 0
+			else
+				to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say \"Sorry, we cannot give credit. Call back when you're a little mmm.... richer.\" followed by a silent dial tone. It's likely due to the phone not having enough money to directly fund a station."))
+/*
+		if("Call in a Favour")
+			if(credits_to_fund >= 1000) //Random number 1k seems fair?
+				var/list/stations_list_for_favour = list()
+				for(var/stations_to_favour in list_of_stations)
+					var/datum/trade_station/O = stations_to_fund
+					stations_list_for_favour += O
+
+				if(!stations_list_for_favour)
+					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say ''I'm prepared to close this deal quickly.'' and then the line goes silent. Seems like their is no stations willing to trade with the colony."))
+					return
+
+				var/datum/trade_station/station_choice = input(user, "What Station do you want to force sales with you?") as null|anything in stations_list_for_favour
+				if(!station_choice)	// user can cancel
+					to_chat(user, SPAN_NOTICE("You quickly hang up the phone."))
+					return
+				station_choice.offer_tick() //Forcefully refreshes trade deals
+				to_chat(user, SPAN_NOTICE("Before you work out a deal to transfer the funding you hear ''[pick("You rang?","I was planning on running into you.","This caller always collects.","I'm one smooth operator.","I always make my calls direct.")]'' and then the line goes silent, as the counter on the side for funding slowly ticks down..."))
+				credits_to_fund -= 1000
+			else
+				to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say ''I'm prepared to close this deal quickly.'' and then the line goes silent. You likely need more funds to ensentives the station request your goods."))
+*/
+
+
+		if("Aggressive Sales Market")
+			if(unlocks_left)
+				anti_cheat = TRUE
+				var/list/stations_list_for_phone = list()
+				for(var/stations_to_unlock in SStrade.all_stations)
+					if(stations_to_unlock in SStrade.discovered_stations)
+						continue
+					var/datum/trade_station/O = stations_to_unlock
+					stations_list_for_phone += O
+
+				if(!stations_list_for_phone)
+					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say \"I'm prepared to close this deal quickly.\" followed by a silent dial tone. Looks like they are not in any mood to do more Aggressive Sales Market."))
+					return
+
+				if(!unlocks_left)
+					to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say \"I'm prepared to close this deal quickly.\" followed by a silent dial tone. Looks like they are not in any mood to do more Aggressive Sales Market."))
+					return
+
+				var/station_choice = input(user, "What Station do you want to force sales with you?") as null|anything in stations_list_for_phone
+				if(!station_choice)	// user can cancel
+					anti_cheat = FALSE
+					to_chat(user, SPAN_NOTICE("You quickly hang up the phone."))
+					return
+				SStrade.discovered_stations |= station_choice
+				unlocks_left -= 1
+				anti_cheat = FALSE
+			else
+				to_chat(user, SPAN_NOTICE("When you ring the line, you hear an annoyed voice say \"I'm prepared to close this deal quickly.\" followed by a silent dial tone. Looks like they are not in any mood to do more Aggressive Sales Market."))
+
+
+		else
+			return
+
+
+/obj/item/direct_line/attackby(obj/item/I, mob/living/user, params)
+	if(istype(I, /obj/item/spacecash/ewallet))
+		var/obj/item/spacecash/ewallet/C = I
+		if(C.worth <= 0)
+			to_chat(user, SPAN_NOTICE("When you try to transfer the e-wallet funds to the line, you hear \"Sorry, we cannot give credit. Call back when you're a little mmm.... richer.\" followed by a silent dial tone. It's likely due to not having enough funds on it..."))
+		else
+			to_chat(user, SPAN_NOTICE("When you try to transfer the ewallet you hear on the line ''[pick("Surprised to hear from me?","I was planning on running into you.","I have some costly items for you today.","I'm one smooth operator.","I'm going to cause a ringing sensation.")]'' and then the line goes silent, as the counter on the side for funding slowly ticks up..."))
+			credits_to_fund += C.worth
+			C.worth = 0
+			C.update_icon() //Incase
+
+	..()

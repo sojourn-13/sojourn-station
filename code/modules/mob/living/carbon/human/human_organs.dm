@@ -13,7 +13,7 @@
 /mob/living/carbon/human/proc/handle_organs()
 
 	var/force_process = 0
-	var/damage_this_tick = getBruteLoss() + getFireLoss() + getToxLoss()
+	var/damage_this_tick = getBruteLoss() + getFireLoss()
 	if(damage_this_tick > last_dam)
 		force_process = 1
 	last_dam = damage_this_tick
@@ -24,8 +24,9 @@
 
 	//Processing internal organs, shutting them off if the process returns with the classic Kill return value.
 	for(var/obj/item/organ/I in internal_organs)
-		if(I.inserted_and_processing && I.Process() == PROCESS_KILL)
-			I.inserted_and_processing = FALSE
+		I.Process()
+		if(I.damage > 0)
+			force_process = TRUE	// Let's us know that we have internal damage to process
 
 
 	handle_stance()
@@ -37,6 +38,10 @@
 	for(var/obj/item/organ/external/E in organs)
 		E.handle_bones()
 
+		// If there is a flag from an internal injury, queue it for processing
+		if(E.status & ORGAN_MUTATED|ORGAN_INFECTED|ORGAN_WOUNDED)
+			bad_external_organs |= E
+
 	for(var/obj/item/organ/external/E in bad_external_organs)
 		if(!E)
 			continue
@@ -46,18 +51,11 @@
 		else
 			E.Process()
 
-			if (!lying && !buckled && world.time - l_move_time < 15)
-			//Moving around with fractured ribs won't do you any good
-				if (E.is_broken() && E.internal_organs && E.internal_organs.len && prob(15))
-					var/obj/item/organ/I = pick(E.internal_organs)
-					custom_pain("You feel broken bones moving in your [E.name]!", 1)
-					I.take_damage(rand(3,5))
-
-				//Moving makes open wounds get infected much faster
-				if (E.wounds.len)
-					for(var/datum/wound/W in E.wounds)
-						if (W.infection_check())
-							W.germ_level += 1
+			if(!lying && !buckled && world.time - l_move_time < 15)
+				//Moving around with fractured ribs won't do you any good
+				if(E.is_broken() && E.internal_organs && E.internal_organs.len && prob(15))
+					var/obj/item/organ/internal/I = pick(E.internal_organs)
+					I.take_damage(3, BRUTE, E.max_damage, 5.8, TRUE, TRUE)		// Internal damage is taken at 80% health
 
 /mob/living/carbon/human/proc/handle_stance()
 	// Don't need to process any of this if they aren't standing anyways
@@ -87,9 +85,14 @@
 	// One cane fully mitigates a broken leg.
 	// Two canes are needed for a lost leg. If you are missing both legs, canes aren't gonna help you.
 	if(stance_damage > 0 && stance_damage < 8)
-		if (l_hand && istype(l_hand, /obj/item/cane))
+		var/iscan = FALSE
+		if(istype(l_hand, /obj/item/cane) || istype(r_hand, /obj/item/cane))
+			iscan = TRUE
+		if(istype(l_hand, /obj/item/gun/projectile/cane_pistol_bluecross) || istype(r_hand, /obj/item/gun/projectile/cane_pistol_bluecross))
+			iscan = TRUE
+		if (l_hand && iscan)
 			stance_damage -= 3
-		if (r_hand && istype(r_hand, /obj/item/cane))
+		if (r_hand && iscan)
 			stance_damage -= 3
 		stance_damage = max(stance_damage, 0)
 
@@ -166,7 +169,7 @@
 
 /mob/living/carbon/human/is_asystole()
 	if(should_have_process(OP_HEART))
-		var/obj/item/organ/internal/heart/heart = random_organ_by_process(OP_HEART)
+		var/obj/item/organ/internal/vital/heart/heart = random_organ_by_process(OP_HEART)
 		if(!istype(heart) || !heart.is_working())
 			return TRUE
 	return FALSE
@@ -227,7 +230,7 @@
 	else
 		if(organ_type in BP_ALL_LIMBS)
 			var/obj/item/organ/external/O = E
-			if (heal && (O.damage > 0 || O.status & (ORGAN_BROKEN) || O.has_internal_bleeding()))
+			if (heal && (O.damage > 0 || O.status & (ORGAN_BROKEN)))
 				O.status &= ~ORGAN_BROKEN
 				for(var/datum/wound/W in O.wounds)
 					if(W.internal)

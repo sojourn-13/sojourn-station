@@ -16,7 +16,8 @@
 	var/list/dept_data = list(
 
 		list("names" = list(), "header" = "Command Staff", "flag" = COMMAND),
-		list("names" = list(), "header" = "Marshal and Blackshield", "flag" = SECURITY),
+		list("names" = list(), "header" = "Security - Marshals", "flag" = SECURITY),
+		list("names" = list(), "header" = "Security - Blackshield", "flag" = BLACKSHIELD),
 		list("names" = list(), "header" = "Soteria Medical", "flag" = MEDICAL),
 		list("names" = list(), "header" = "Soteria Research", "flag" = SCIENCE),
 		list("names" = list(), "header" = "Church of the Absolute", "flag" = CHURCH),
@@ -25,7 +26,8 @@
 		list("names" = list(), "header" = "Prospector", "flag" = PROSPECTORS),
 		list("names" = list(), "header" = "Civilian", "flag" = CIVILIAN),
 		list("names" = list(), "header" = "Miscellaneous", "flag" = MISC),
-		list("names" = list(), "header" = "Silicon")
+		list("names" = list(), "header" = "Silicon"),
+		list("names" = list(), "header" = "Lodge", "flag" = LODGE)
 	)
 	var/list/misc //Special departments for easier access
 	var/list/bot
@@ -141,13 +143,15 @@
 		"heads" = filtered_nano_crew_manifest(command_positions),\
 		"sci" = filtered_nano_crew_manifest(science_positions),\
 		"sec" = filtered_nano_crew_manifest(security_positions),\
+		"bls" = filtered_nano_crew_manifest(blackshield_positions),\
 		"eng" = filtered_nano_crew_manifest(engineering_positions),\
 		"med" = filtered_nano_crew_manifest(medical_positions),\
 		"sup" = filtered_nano_crew_manifest(cargo_positions),\
 		"chr" = filtered_nano_crew_manifest(church_positions),\
 		"pro" = filtered_nano_crew_manifest(prospector_positions),\
 		"bot" = silicon_nano_crew_manifest(nonhuman_positions),\
-		"civ" = filtered_nano_crew_manifest(civilian_positions)\
+		"civ" = filtered_nano_crew_manifest(civilian_positions),\
+		"ldg" = filtered_nano_crew_manifest(lodge_positions)\
 		)
 
 /proc/flat_nano_crew_manifest()

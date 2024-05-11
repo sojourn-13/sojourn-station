@@ -9,6 +9,9 @@
 	projectile_type = /obj/item/projectile/bullet/pistol_35
 	maxamount = 15
 
+/obj/item/ammo_casing/pistol_35/prespawned
+	amount = 15
+
 /obj/item/ammo_casing/pistol_35/hv
 	desc = "A 9mm high-velocity bullet casing."
 	icon_state = "pistol_c_hv"
@@ -32,6 +35,13 @@
 	spent_icon = "pistol_c_r-spent"
 	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber
+
+/obj/item/ammo_casing/pistol_35/rubber/pepperball
+	desc = "A 9mm pepper-ball projectile casing."
+	icon_state = "pistol_c_pepper"
+	spent_icon = "pistol_c_pepper-spent"
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber/pepperball
 
 /obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
 	desc = "A 9mm soporific condensed plastic shell."
@@ -77,6 +87,9 @@
 	projectile_type = /obj/item/projectile/bullet/magnum_40
 	maxamount = 6
 
+/obj/item/ammo_casing/magnum_40/prespawned
+	amount = 6
+
 /obj/item/ammo_casing/magnum_40/practice
 	desc = "A 10mm Magnum practice bullet casing."
 	icon_state = "magnum_c_p"
@@ -99,9 +112,10 @@
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber
 
 /obj/item/ammo_casing/magnum_40/rubber/pepperball
-	desc = "A 10mm Magnum pepper-spray projectile casing."
-	icon_state = "magnum_c_l"
-	is_caseless = TRUE
+	desc = "A 10mm Magnum pepper-ball projectile casing."
+	icon_state = "magnum_c_pepper"
+	spent_icon = "magnum_c_pepper-spent"
+	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/pepperball
 
 /obj/item/ammo_casing/magnum_40/lethal
@@ -146,6 +160,9 @@
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257
 	maxamount = 10
 
+/obj/item/ammo_casing/light_rifle_257/prespawned
+	amount = 10
+
 /obj/item/ammo_casing/light_rifle_257/practice
 	desc = "A 6.5mm practice bullet casing."
 	icon_state = "srifle_c_p"
@@ -167,6 +184,13 @@
 	shell_color = "r"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/rubber
 
+/obj/item/ammo_casing/light_rifle_257/rubber/pepperball
+	desc = "A 6.5mm pepper-ball projectile casing."
+	icon_state = "lrifle_c_pepper"
+	spent_icon = "lrifle_c_pepper-spent"
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/light_rifle_257/rubber/pepperball
+
 /obj/item/ammo_casing/light_rifle_257/scrap
 	desc = "An old 6.5mm rifle bullet casing."
 	icon_state = "srifle_c_s"
@@ -182,6 +206,14 @@
 	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/light_rifle_257/lethal
 
+/obj/item/ammo_casing/light_rifle_257/incend
+	desc = "A 6.5mm incendiary bullet casing."
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/light_rifle_257/incend
+
+/obj/item/ammo_casing/light_rifle_257/incend/prespawned
+	amount = 10
+
 /obj/item/ammo_casing/light_rifle_257/laser
 	desc = "A 6.5mm laser casing."
 	projectile_type = /obj/item/projectile/beam/weak/light_rifle_257
@@ -196,6 +228,9 @@
 	caliber = CAL_RIFLE
 	projectile_type = /obj/item/projectile/bullet/rifle_75
 	maxamount = 10
+
+/obj/item/ammo_casing/rifle_75/prespawned
+	amount = 10
 
 /obj/item/ammo_casing/rifle_75/hv
 	desc = "A 7.62mm high-velocity bullet casing."
@@ -222,6 +257,14 @@
 	shell_color = "l"
 	projectile_type = /obj/item/projectile/bullet/rifle_75/lethal
 
+/obj/item/ammo_casing/rifle_75/incend
+	desc = "A 7.62mm incendiary bullet casing."
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/rifle_75/incend
+
+/obj/item/ammo_casing/rifle_75/incend/prespawned
+	amount = 10
+
 /obj/item/ammo_casing/rifle_75/scrap
 	desc = "An old 7.62mm bullet casing."
 	icon_state = "srifle_c_s"
@@ -247,6 +290,9 @@
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408
 	maxamount = 10
 
+/obj/item/ammo_casing/heavy_rifle_408/prespawned
+	amount = 10
+
 /obj/item/ammo_casing/heavy_rifle_408/rubber
 	desc = "A 8.6mm rubber bullet casing."
 	icon_state = "lrifle_c_r"
@@ -271,6 +317,14 @@
 /obj/item/ammo_casing/heavy_rifle_408/lethal
 	desc = "A 8.6mm bullet casing."
 	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/lethal
+
+/obj/item/ammo_casing/heavy_rifle_408/incend
+	desc = "A 8.6mm incendiary bullet casing."
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/incend
+
+/obj/item/ammo_casing/heavy_rifle_408/incend/prespawned
+	amount = 10
 
 /obj/item/ammo_casing/heavy_rifle_408/scrap
 	desc = "An old 8.6mm rifle bullet casing."
@@ -367,6 +421,9 @@
 	icon_state = "lrifle_c_l"
 	spent_icon = "lrifle_c_l-spent"
 
+/obj/item/ammo_casing/kurtz_50/prespawned
+	amount = 6
+
 /obj/item/ammo_casing/kurtz_50/rubber
 	desc = "A 12mm rubber bullet casing."
 	caliber = CAL_50
@@ -374,6 +431,13 @@
 	shell_color = "r"
 	icon_state = "lrifle_c_r"
 	spent_icon = "lrifle_c_r-spent"
+
+/obj/item/ammo_casing/kurtz_50/rubber/pepperball
+	desc = "A 12mm pepper-ball projectile casing."
+	icon_state = "lrifle_c_pepper"
+	spent_icon = "lrifle_c_pepper-spent"
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/kurtz_50/rubber/pepperball
 
 /obj/item/ammo_casing/kurtz_50/practice
 	desc = "A 12mm practice bullet casing."
@@ -446,6 +510,15 @@
 /obj/item/ammo_casing/antim/ion/prespawned
 	amount = 5
 
+/obj/item/ammo_casing/antim/incend
+	desc = "\"Willy Pete\" shell casing"
+	shell_color = "atmr_red"
+	spent_icon = "atmr_red-spent"
+	projectile_type = /obj/item/projectile/bullet/antim/incend
+
+/obj/item/ammo_casing/antim/incend/prespawned
+	amount = 5
+
 //// 17mm rolled shot ////
 /obj/item/ammo_casing/ball
 	name = "shell casing"
@@ -512,6 +585,18 @@
 	maxamount = 5
 
 /obj/item/ammo_casing/shotgun/beanbag/prespawned
+	amount = 5
+
+/obj/item/ammo_casing/shotgun/beanbag/pepperball
+	name = "beanbag shell"
+	desc = "A 20mm beanbag shell."
+	icon_state = "s-shell_pepper"
+	spent_icon = "s-shell_pepper-spent"
+	shell_color = "l"
+	projectile_type = /obj/item/projectile/bullet/shotgun/beanbag/pepperball
+	maxamount = 5
+
+/obj/item/ammo_casing/shotgun/beanbag/pepperball/prespawned
 	amount = 5
 
 /obj/item/ammo_casing/shotgun/beanbag/scrap
@@ -632,6 +717,19 @@
 /obj/item/ammo_casing/shotgun/plasma_heavy/prespawned
 	amount = 5
 
+/obj/item/ammo_casing/shotgun/biomatter
+	name = "shotgun slug"
+	desc = "A New Testament paper cartridge with caustic sabot, in 20mm. Designed for deep-impact delivery of caustic biomass, \
+	in a caseless fashion. The cartridge is made of a form of wax paper, designed to burn away and leave nothing to eject after being fired."
+	icon_state = "s-shell_caustic"
+	is_caseless = TRUE
+	caliber = CAL_SHOTGUN
+	projectile_type = /obj/item/projectile/bullet/shotgun/biomatter
+	maxamount = 5
+
+/obj/item/ammo_casing/shotgun/biomatter/prespawned
+	amount = 5
+
 
 //Can stun in one hit if aimed at the head, but
 //is blocked by clothing that stops tasers and is vulnerable to EMP
@@ -676,13 +774,24 @@
 	is_caseless = TRUE
 	w_class = ITEM_SIZE_NORMAL
 
+/obj/item/ammo_casing/rocket/scrap
+	name = "scrap rocket"
+	desc = "An old improvised rocket shell for the RPG-7 launcher. Has a tubular shape."
+	icon_state = "old_rocketshell"
+	projectile_type = /obj/item/projectile/bullet/rocket/scrap
+	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASMA = 2)
+
+/obj/item/ammo_casing/rocket/scrap/prespawned
+	amount = 1
+
 /obj/item/ammo_casing/rocket/emp
 	name = "PG-7EMP grenade"
 	desc = "A 40mm EMP/Flash warhead designed for the RPG-7 launcher. Has a tubular shape."
 	projectile_type = /obj/item/projectile/bullet/rocket/emp
 
 /obj/item/ammo_casing/a75
-	desc = "A .70 gyrojet casing."
+	name = "microjet casing"
+	desc = "A 19mm gyrojet rocket."
 	caliber = CAL_70
 	projectile_type = /obj/item/projectile/bullet/gyro
 
@@ -696,25 +805,26 @@
 	color = "#FF0000"
 	projectile_type = /obj/item/projectile/bullet/cap
 
-/obj/item/ammo_casing/beam
+/obj/item/ammo_casing/laser_223
 	name = "laser casing"
-	desc = "A laser casing thats cal is .223."
+	desc = "A .223 pulse charged laser cavity."
 	caliber = CAL_SCI
-	projectile_type = /obj/item/projectile/beam/weak
+	projectile_type = /obj/item/projectile/beam/laser_223
 
 /obj/item/ammo_casing/beam/spent
 	projectile_type = null
+/*
+/obj/item/ammo_casing/laser_223/ap
+	desc = "A .223 pulse charged laser cavity. This type possess an integrated sensor array that adjusts the focal point to the targets location, allowing for better penetration for the cost of firepower due to the occupied space."
+	projectile_type = /obj/item/projectile/beam/laser_223/ap
 
-/obj/item/ammo_casing/beam/ap
-	desc = "A piercing laser casing. Meant for penetration of armor thats cal is .223."
-	projectile_type = /obj/item/projectile/beam/weak/ap
-
-/obj/item/ammo_casing/beam/lethal
-	desc = "A dence laser casing. Compact laser that is easily blocked by armor thats cal is .223."
-	projectile_type = /obj/item/projectile/beam/weak/lethal
-
+/obj/item/ammo_casing/laser_223/lethal
+	desc = "A .223 pulse charged laser cavity. This type uses a wide witdh lense to cause less overpenetration and cause more damage in exchange of being more susceptible to armor. Its cal is 5.56mm."
+	projectile_type = /obj/item/projectile/beam/laser_223/lethal
+*/
 /obj/item/ammo_casing/beam/ap/spent
 	projectile_type = null
+	desc = "A spent .223 pulse charged laser cavity. Its metal case is molten and shows an array of discolaretion"
 
 //// Grenade Shells ////
 
@@ -774,7 +884,7 @@
 
 /obj/item/ammo_casing/crossbow_bolts/fragment
 	name = "fragment crossbow bolt"
-	desc = "A finely made bolt designed for a crossbow with sharp shards of ores and rocks attached to the tip that brake apart inside the target."
+	desc = "A finely made bolt designed for a crossbow with sharp shards of ores and rocks attached to the tip that break apart inside the target."
 	icon_state = "bolt"
 	projectile_type = /obj/item/projectile/bullet/crossbow_bolt/lethal
 	matter = list(MATERIAL_STEEL = 1)
@@ -850,7 +960,7 @@
 	icon_state = "arrow-broad"
 	force = WEAPON_FORCE_PAINFUL
 	armor_penetration = 0
-	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has quite a broad head, letting it stick in wounds easily, but reducing its ability to penetrate armor."
+	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has quite a broad head, capable of causing severe damage to unarmored targets, but reducing its ability to penetrate armor."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/broadhead
 
 /obj/item/ammo_casing/arrow/serrated
@@ -858,7 +968,7 @@
 	icon_state = "arrow-serrated"
 	force = WEAPON_FORCE_PAINFUL
 	armor_penetration = 0
-	desc = "A good-quality handmade arrow, with a metal head and plastic fletching. This one has wicked sharp serrated blades along its head, capable of causing severe damage to unarmored targets."
+	desc = "A good-quality handmade aerodinamic arrow, with a metal head and plastic fletching. This one has wicked sharp serrated blades along its head, letting it stick in wounds easily, penetrating thick hide and armor alike at fast speeds."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/serrated
 
 /obj/item/ammo_casing/arrow/reagent

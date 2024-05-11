@@ -388,7 +388,10 @@
 			cloud_emote = "cloud-gasp"
 
 		if ("deathgasp")
-			message = "[form.death_message]"
+			if(stats.getPerk(PERK_TERRIBLE_FATE))
+				message = "their inert body emits a strange sensation and a cold invades your body. Their screams before dying recount in your mind."
+			else
+				message = "[form.death_message]"
 			m_type = 1
 
 		if ("giggle")
@@ -850,21 +853,20 @@
 					message = "<span class='danger'>makes a very loud noise, squirming around!</span>"
 					m_type = 2
 
-		if("urah") //Emoting will NOT give you the perk's bonuses, but anyone who knows the emote can at least use it for flavor value.
-			if (miming)
-				message = "acts out a battlecry!"
-				m_type = 1
-			else if (!muzzled)
+
+		if ("urah") //Emoting will NOT give you the perk's bonuses, but anyone who knows the emote can at least use it for flavor value.
+			if (!muzzled)
+				cloud_emote = "cloud-scream"
 				message = "releases a heroic roar, inspiring everyone around [identifying_gender == "male" ? "him" : identifying_gender == "female" ? "her" : "themselves"]! URA!"
-				m_type = 2
-				if(get_sex() == MALE)
-					playsound(loc, 'sound/voice/ura.ogg', 80, 1) //URAH!!!
-				else if(get_sex() == FEMALE || PLURAL || NEUTER)
-					playsound(loc, 'sound/voice/f_warcry.ogg', 100) // Less cringe scream, FORWARD!!
-			else
-				message = "makes a very loud noise."
-				m_type = 2
-			cloud_emote = "cloud-scream"
+				if(get_sex() == FEMALE)
+					m_type = 2
+					playsound(loc, 'sound/voice/f_warcry.ogg', 80, 30)
+				else
+					m_type = 2
+					playsound(loc, 'sound/voice/ura.ogg', 80, 1)
+				if(miming)
+					message = "acts out a battlecry!"
+					m_type = 1
 
 		if("crack")
 			if(!restrained())
@@ -1064,6 +1066,29 @@
 				playsound(loc, 'sound/voice/merp.ogg', 50, 1, -1)
 			else
 				message = "makes a strange noise."
+		if ("trill")
+			m_type = 2
+			cloud_emote = "cloud-love"
+			if(!muzzled)
+				message = "trills softly."
+				playsound(loc, 'sound/voice/trill.ogg', 50, 1, -1) // Copyright CC BY-NC 3.0 Arnaud Coutancier (freesound.org) for the source audio.
+			else
+				message = "makes a strange noise."
+		if ("geck")
+			m_type = 2
+			cloud_emote = "cloud-scream" //of course
+			if(!muzzled)
+				message = "geckers obnoxiously!"
+				playsound(loc, 'sound/voice/geck.ogg', 50, 1, -1)
+			else
+				message = "makes a strange noise."
+		if ("squish")
+			m_type = 2
+			if(!muzzled)
+				message = "squishes."
+				playsound(loc, 'sound/voice/slime_squish.ogg', 50, 1, -1)  //Credit to DrMinky (freesound.org) for the sound.
+			else
+				message = "makes a strange noise."
 		if ("bark")
 			m_type = 2
 			cloud_emote = "cloud-scream"
@@ -1185,8 +1210,8 @@
 				message = "makes a strange noise."
 		if ("help")
 			to_chat(src, "aslap-(none)/mob, awhistle-(none)/mob, awoo, bark, bellow, bleat, blink, blink_r, blush, bow-(none)/mob, chirp, chitter, choke, chuckle, clap, croon1, croon2, croak, collapse, cough, cry, custom, deathgasp, drool, eyebrow, \
-					facepalm, frown, gasp, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, moo, mumble, mwah-(none)/mob, nod, nya, painscream, pale, peep, point-atom, qwhistle, \
-					raise, scream, sneeze, shake, shiver, shriek, shrug, sigh, signal-#1-10, slap-(none)/mob, smile, sneeze, sniff, snore, stare-(none)/mob, squeak, squeal, throat, tremble, twitch, twitch_s, urah, vomit, weh, whimper, wink, yawn,\
+					facepalm, frown, gasp, geck, giggle, glare-(none)/mob, grin, groan, grumble, handshake, hiss, hug-(none)/mob, laugh, look-(none)/mob, merp, moan, moo, mumble, mwah-(none)/mob, nod, nya, painscream, pale, peep, point-atom, qwhistle, \
+					raise, scream, sneeze, shake, shiver, shriek, shrug, sigh, signal-#1-10, squish, slap-(none)/mob, smile, sneeze, sniff, snore, stare-(none)/mob, squeak, squeal, throat, tremble, trill, twitch, twitch_s, urah, vomit, weh, whimper, wink, yawn,\
 					ycackle, zartan. Synthetics: beep, buzz, yes, no, rcough, rsneeze, ping")
 
 		else

@@ -29,7 +29,8 @@
 		/obj/item/tool_upgrade,
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
-		/obj/item/stack/tile //Repair floors yay
+		/obj/item/stack/tile, //Repair floors yay
+		/obj/item/oddity/blackbox_nanoforge
 		)
 
 	var/obj/item/wrapped = null // Item currently being held.
@@ -197,11 +198,6 @@
 	justdropped = 0
 
 
-
-
-
-
-
 /*
 	//Definitions of gripper subtypes
 */
@@ -234,7 +230,8 @@
 		/obj/item/photo,
 		/obj/item/spacecash,
 		/obj/item/coin,
-		/obj/item/device/toner
+		/obj/item/device/toner,
+		/obj/item/computer_hardware/hard_drive/portable
 		)
 
 /obj/item/gripper/research //A general usage gripper, used for toxins/robotics/xenobio/etc
@@ -249,7 +246,7 @@
 		/obj/item/robot_parts,
 		/obj/item/borg/upgrade,
 		/obj/item/device/flash, //to build borgs,
-		/obj/item/organ/internal/brain, //to insert into MMIs,
+		/obj/item/organ/internal/vital/brain, //to insert into MMIs,
 		/obj/item/stack/cable_coil, //again, for borg building,
 		/obj/item/circuitboard,
 		/obj/item/slime_extract,
@@ -288,11 +285,12 @@
 		/obj/item/am_shielding_container,
 		/obj/item/organ,
 		/obj/item/organ_module,
+		/obj/item/modification/organ,
 		/obj/item/device/mmi,
 		/obj/item/tank,
 		/obj/item/reagent_containers/food/snacks/meat, //For grinding up roaches
 		/obj/item/reagent_containers/food/snacks/grown, //For grinding up herbs
-
+		/obj/item/genetics, //for doing genetics. Research borgs get this as well
 		/obj/item/stack/material/plasma
 		)
 
@@ -314,7 +312,8 @@
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/clothing/mask/smokable/cigarette,
-		///obj/item/reagent_containers/cooking_container //PArt of cooking overhaul, not yet ported
+		/obj/item/reagent_containers/cooking_with_jane/cooking_container,
+		/obj/item/spatula
 		)
 
 /obj/item/gripper/ammo //Used to boxes, ammo and shells
@@ -326,6 +325,8 @@
 		/obj/item/ammo_casing,
 		/obj/item/ammo_kit,
 		/obj/item/ammo_magazine,
+		/obj/item/cell,
+		/obj/item/part/gun,
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/mech_ammo_box
@@ -355,5 +356,5 @@
 
 	can_hold = list(
 		/obj/item/stack/material,
-		/obj/item/stack/sheet/refined_scrap
+		/obj/item/stack/material/refined_scrap
 		)

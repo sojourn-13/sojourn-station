@@ -57,6 +57,9 @@
 	new /obj/random/ammo/low_chance(src)
 	new /obj/random/ammo_lowcost/low_chance(src)
 	new /obj/random/ammo_fancy/low_chance(src)
+	if(prob(20))
+		new /obj/random/gun_parts/high_end(src)
+		new /obj/random/gun_parts/frames(src)
 
 /obj/item/storage/hcases/ammo/ih/has_items_spawn
 
@@ -64,6 +67,10 @@
 	new /obj/random/rubber_ammo/low_chance(src)
 	new /obj/random/rubber_ammo/low_chance(src)
 	new /obj/random/rubber_ammo/low_chance(src)
+	new /obj/random/gun_parts/low(src)
+	if(prob(10))
+		new /obj/random/gun_parts/high_end(src)
+		new /obj/random/gun_parts/frames(src)
 
 /obj/item/storage/hcases/ammo/serb/has_items_spawn
 
@@ -72,6 +79,11 @@
 	new /obj/random/ammo/low_chance(src)
 	new /obj/random/ammo/shotgun/low_chance(src)
 	new /obj/random/ammo/shotgun/low_chance(src)
+	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/low(src)
+	if(prob(30))
+		new /obj/random/gun_parts/high_end(src)
+		new /obj/random/gun_parts/frames(src)
 
 /obj/item/storage/hcases/ammo/blackmarket/has_items_spawn
 
@@ -80,6 +92,11 @@
 	new /obj/random/ammo/low_chance(src)
 	new /obj/random/ammo/shotgun/low_chance(src)
 	new /obj/random/dungeon_ammo/really_low_chance(src)
+	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/low(src)
+	if(prob(25))
+		new /obj/random/gun_parts/high_end(src)
+		new /obj/random/gun_parts/frames(src)
 
 /obj/item/storage/hcases/ammo/excel/has_items_spawn
 
@@ -88,12 +105,21 @@
 	new /obj/random/ammo/low_chance(src)
 	new /obj/random/ammo/shotgun/low_chance(src)
 	new /obj/random/dungeon_ammo/really_low_chance(src)
+	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/low(src)
+	if(prob(70))
+		new /obj/random/gun_parts/high_end(src)
+		new /obj/random/gun_parts/frames(src)
 
 /obj/item/storage/hcases/ammo/scrap/has_items_spawn
 
 /obj/item/storage/hcases/ammo/scrap/has_items_spawn/populate_contents()
 	new /obj/random/ammo_lowcost/low_chance(src)
 	new /obj/random/ammo_lowcost/low_chance(src)
+	new /obj/random/gun_parts/low(src)
+	if(prob(20))
+		new /obj/random/gun_parts/frames(src)
 	if(prob(30))
 		new /obj/item/ammo_kit(src)
 
@@ -107,6 +133,11 @@
 	new /obj/random/powercell/low_chance(src)
 	new /obj/random/circuitboard/low_chance(src)
 	new /obj/random/lathe_disk/low_chance(src)
+	new /obj/random/gun_parts/low(src)
+	new /obj/random/gun_parts/low(src)
+	if(prob(20))
+		new /obj/random/gun_parts/frames(src)
+		new /obj/random/gun_parts/high_end(src)
 	if(prob(30))
 		new /obj/item/stack/cable_coil/random(src)
 
@@ -116,6 +147,7 @@
 	new /obj/random/tool_upgrade/low_chance(src)
 	new /obj/random/circuitboard/low_chance(src)
 	new /obj/random/circuitboard/low_chance(src)
+	new /obj/random/gun_parts/low(src)
 	if(prob(10))
 		new /obj/item/stack/cable_coil/random(src)
 

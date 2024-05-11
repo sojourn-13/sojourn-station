@@ -8,8 +8,9 @@
 	item_state = "solmarine"
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 6)
 	w_class = ITEM_SIZE_BULKY
-	mag_well = MAG_WELL_STANMAG
+	mag_well = MAG_WELL_RIFLE
 	caliber = CAL_LRIFLE
+	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
 	price_tag = 1100
 	damage_multiplier = 1.0
 	penetration_multiplier = 1.2
@@ -25,6 +26,7 @@
 
 	var/obj/item/gun/projectile/automatic/underslung/shotgun_3/shotgun
 	var/shotgun_haver = TRUE
+	gun_parts = list(/obj/item/part/gun/frame/solmarine = 1, /obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/omnirifle/solmarine/Initialize()
 	. = ..()
@@ -61,7 +63,7 @@
 	safety = FALSE
 	twohanded = FALSE
 	load_method = SINGLE_CASING
-	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	ammo_type = /obj/item/ammo_casing/shotgun
 	caliber = CAL_SHOTGUN
 	handle_casings = EJECT_CASINGS
 	init_firemodes = list(
@@ -82,6 +84,7 @@
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_PLASTIC = 3)
+	gun_parts = list(/obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 	can_dual = TRUE
 	init_recoil = CARBINE_RECOIL(1.2)
 	init_firemodes = list(
@@ -103,6 +106,7 @@
 	price_tag = 650
 	icon_state = "solmarine"
 	item_state = "solmarine"
+	gun_parts = list(/obj/item/part/gun/grip/serb = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 	shotgun_haver = FALSE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
@@ -126,6 +130,7 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND
 		)
+	gun_parts = list(/obj/item/part/gun/frame/solmarine = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless/update_icon()
 	..()
@@ -145,3 +150,14 @@
 /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless/Initialize()
 	. = ..()
 	update_icon()
+
+/obj/item/part/gun/frame/solmarine
+	name = "Solmarine frame"
+	desc = "A Solmarine carbine frame. For those who want to LARP 600 years in the past."
+	icon_state = "frame_sol"
+	matter = list(MATERIAL_PLASTEEL = 8)
+	result = /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless
+	gripvars = list(/obj/item/part/gun/grip/serb, /obj/item/part/gun/grip/black, /obj/item/part/gun/grip/rubber)
+	resultvars = list(/obj/item/gun/projectile/automatic/omnirifle/solmarine, /obj/item/gun/projectile/automatic/omnirifle/solmarine/shotgunless, /obj/item/gun/projectile/automatic/mercu)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/clrifle)

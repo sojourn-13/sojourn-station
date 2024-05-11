@@ -39,11 +39,11 @@
 
 /obj/item/mech_ammo_box/hmg
 	name = "25mm ammunition box"
-	desc = "A box of ammo meant for loading into a HMG platforms."
+	desc = "A heavy duty box with a feeder containing ammunition for a mech-mounted heavy machinegun."
 	icon_state = "boxhrifle-practice"
-	ammo_amount_left = 300
-	ammo_max_amout = 300
-	amount_per_click = 3 //Hack to make them impossable to go into negitives / It can still go into negatives
+	ammo_amount_left = 200
+	ammo_max_amout = 200
+	amount_per_click = 40 //Hack to make them impossable to go into negitives / It can still go into negatives
 	ammo_type = CAL_MECH_MACHINEGUN
 	price_tag = 30
 
@@ -53,21 +53,21 @@
 
 /obj/item/mech_ammo_box/cannon
 	name = "60mm HEAD ammunition box"
-	desc = "A box of ammo meant for loading into a AC platforms."
+	desc = "A heavy duty box with a feeder containing ammunition for a full-sized autocannon."
 	icon_state = "boxhrifle-practice"
-	ammo_amount_left = 25
-	ammo_max_amout = 25
-	amount_per_click = 3
+	ammo_amount_left = 40
+	ammo_max_amout = 40
+	amount_per_click = 10
 	ammo_type = CAL_MECH_AUTOCANNON
 	price_tag = 30
 
 /obj/item/mech_ammo_box/ultracannon
-	name = "50mm HEAD ammunition box"
-	desc = "A box of ammo meant for loading into a U-AC platforms."
+	name = "30mm HEAD ammunition box"
+	desc = "A heavy duty box with a feeder containing ammunition for a mech-sized autocannon."
 	icon_state = "boxhrifle-practice"
-	ammo_amount_left = 25
-	ammo_max_amout = 25
-	amount_per_click = 3
+	ammo_amount_left = 60
+	ammo_max_amout = 60
+	amount_per_click = 30
 	ammo_type = CAL_MECH_ULTRACANNON
 	price_tag = 30
 
@@ -76,11 +76,11 @@
 ////////////////
 
 /obj/item/mech_ammo_box/scattershot
-	name = "30mm HEAD ammunition box"
-	desc = "A box of ammo meant for loading into a LB-X/flak platforms."
+	name = "50mm HEAD ammunition box"
+	desc = "A heavy duty box with a feeder containing ammunition for a flak cannon."
 	icon_state = "boxhrifle-hv"
-	ammo_amount_left = 40
-	ammo_max_amout = 40
+	ammo_amount_left = 30
+	ammo_max_amout = 30
 	ammo_type = CAL_MECH_SHOTGUN
 	price_tag = 30
 
@@ -98,6 +98,21 @@
 	throw_impact(atom/hit_atom)
 		if(primed)
 			explosion(hit_atom, 0, 1, 2, 4)
+			qdel(src)
+		else
+			..()
+		return
+
+/obj/item/longtom
+	icon = 'icons/obj/grenade.dmi'
+	icon_state = "missile_tom"
+	var/primed = null
+	throwforce = 10
+	allow_spin = 0
+
+	throw_impact(atom/hit_atom)
+		if(primed)
+			explosion(hit_atom, 3, 4, 6, 5)
 			qdel(src)
 		else
 			..()

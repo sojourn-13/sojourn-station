@@ -51,13 +51,14 @@
 	if(href_list["drop_from_cargo"])
 		var/obj/O = locate(href_list["drop_from_cargo"])
 		if(O && (O in src.cargo))
-			src.occupant_message(SPAN_NOTICE("You unload [O]."))
+			occupant_message(SPAN_NOTICE("You unload [O]."))
 			O.loc = get_turf(src)
-			src.cargo -= O
+			cargo -= O
+			O.reset_plane_and_layer()
 			var/turf/T = get_turf(O)
 			if(T)
 				T.Entered(O)
-			src.log_message("Unloaded [O]. Cargo compartment capacity: [cargo_capacity - src.cargo.len]")
+			log_message("Unloaded [O]. Cargo compartment capacity: [cargo_capacity - src.cargo.len]")
 	return
 
 /obj/mecha/combat/Exit(atom/movable/O)

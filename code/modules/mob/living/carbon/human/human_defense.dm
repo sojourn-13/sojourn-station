@@ -4,7 +4,7 @@ Contains most of the procs that are called when a mob is attacked by something
 bullet_act
 ex_act
 meteor_act
-
+uniquic_armor_act
 */
 
 /mob/living/carbon/human/bullet_act(var/obj/item/projectile/P, var/def_zone)
@@ -12,6 +12,8 @@ meteor_act
 	def_zone = check_zone(def_zone)
 	if(!has_organ(def_zone))
 		return PROJECTILE_FORCE_MISS //if they don't have the organ in question then the projectile just passes by.
+
+	unique_armor_check(P, null, null)
 
 	var/obj/item/organ/external/organ = get_organ(def_zone)
 
@@ -233,7 +235,11 @@ meteor_act
 	if(!affecting)
 		return FALSE//should be prevented by attacked_with_item() but for sanity.
 
-	visible_message("<span class='danger'>[src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] in the [affecting.name] with [I.name] by [user]!</span>")
+	visible_message("<span class='danger'>[src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] in the  [affecting.name] with [I.name] by [user]!</span>")
+
+	var/EF = unique_armor_check(I, user, effective_force)
+	if(EF)
+		effective_force = EF
 
 	standard_weapon_hit_effects(I, user, effective_force, hit_zone)
 
@@ -256,27 +262,19 @@ meteor_act
 
 	if(effective_force > 10 || effective_force >= 5 && prob(33))
 		forcesay(hit_appends)	//forcesay checks stat already
-	if((I.damtype == BRUTE || I.damtype == HALLOSS) && prob(25 + (effective_force * 2)))
-		if(!stat && !(has_shield()))
-			if(headcheck(hit_zone))
-				//Harder to score a stun but if you do it lasts a bit longer
-				if(prob(effective_force))
-					visible_message(SPAN_DANGER("[src] [form.knockout_message]"))
-					apply_effect(20, PARALYZE, getarmor(hit_zone, ARMOR_MELEE) )
-			else
-				//Easier to score a stun but lasts less time
-				if(prob(effective_force + 10))
-					visible_message(SPAN_DANGER("[src] has been knocked down!"))
-					apply_effect(6, WEAKEN, getarmor(hit_zone, ARMOR_MELEE) )
 
 		//Apply blood
-		if(!((I.flags & NOBLOODY)||(I.item_flags & NOBLOODY)))
+		if(!((I.flags & NOBLOODY)||(I.item_flags & NOBLOODY)) && src.species?.reagent_tag != IS_SYNTHETIC)
 			I.add_blood(src)
 
-		if(prob(33 + I.sharp * 10))
+		if(prob(33 + I.sharp * 10) && src.species?.reagent_tag != IS_SYNTHETIC)
 			var/turf/location = loc
-			if(istype(location, /turf/simulated))
+			if(istype(location, /turf/simulated) && I.damtype == BRUTE)
 				location.add_blood(src)
+				drip_blood(3)
+			else
+				spawn emote("me", 1, "coughs up blood!")
+				drip_blood(5)
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				if(get_dist(H, src) <= 1) //people with TK won't get smeared with blood
@@ -497,3 +495,157 @@ meteor_act
 		perm += perm_by_part[part]
 
 	return perm
+
+
+//soj edit
+//This atm only has 1 armor in it thus its coding is trash and snowflake
+/mob/living/carbon/human/proc/unique_armor_check(atom/A, mob/user, EF)
+	//message_admins("unique_armor_check([user.name]) EF [EF]")
+	//Optimiation based on only 1 suit being this check, no point in asking for 99.99% of the time past this by types
+	if(!wear_suit) return EF
+	//We at this moment only have one outfit that we check and its by path for now.
+	if(istype(wear_suit,/obj/item/clothing/suit/crimsoncross_regaloutfit))
+		//We hate you synth, please die!
+		if(!has_synthetics())
+			return EF //Foolishness
+		var/en_passant = FALSE //Used for tracking if we are attacked by something we dislike
+		//message_admins("bluecross_regaloutfit (Pass)")
+		//Hopefully this is all the types of things that are robotic and harm - likely isnt, oh well
+		var/list/mobs_we_hitless = list(
+			/mob/living/carbon/superior_animal/robot,
+			/mob/living/simple_animal/hostile/hivebot,
+			/obj/machinery/porta_turret,
+			/obj/machinery/power/os_turret,
+			/mob/living/simple_animal/hostile/megafauna/hivemind_tyrant,
+			/mob/living/simple_animal/hostile/megafauna/one_star,
+			/mob/living/simple_animal/hostile/republicon,
+			/mob/living/carbon/superior_animal/sentinal_seeker,
+			/mob/living/carbon/superior_animal/roach/elektromagnetisch, //beep boop
+			/mob/living/carbon/superior_animal/roach/nanite,
+			/mob/living/simple_animal/hostile/naniteswarm,
+			/mob/living/simple_animal/hostile/commanded/nanomachine,
+			/mob/living/simple_animal/hostile/viscerator,
+			/mob/living/silicon,
+			/mob/living/simple_animal/hostile/hivemind,
+			/mob/living/simple_animal/hostile/retaliate/malf_drone
+			)
+		if(A)
+			if(istype(A, /obj/item/projectile))
+				//message_admins("bluecross_regaloutfit proj pass")
+				var/obj/item/projectile/Proj = A
+				if(Proj.original_firer)
+				//	message_admins("bluecross_regaloutfit Proj Pass - [Proj.original_firer]")
+					for(var/MWH in mobs_we_hitless)
+					//	message_admins("[MWH] vs [Proj.original_firer]")
+						if(istype(Proj.original_firer, MWH))
+					//		message_admins("bluecross_regaloutfit Proj Pass - [Proj.original_firer] !!!!!!")
+							en_passant = TRUE
+							break
+					if(ishuman(Proj.original_firer))
+						var/mob/living/carbon/human/H = Proj.original_firer
+						if(H.species.reagent_tag == IS_SYNTHETIC)
+					//		message_admins("bluecross_regaloutfit Proj Pass")
+							en_passant = TRUE
+					if(en_passant)
+					//	message_admins("unique_armor_check en_passant ranged")
+					//	message_admins("prj ranged [Proj.penetrating]")
+						Proj.armor_penetration *= 0.5
+						Proj.check_armour = ARMOR_MELEE //Foolishness
+						Proj.fire_stacks = 0   //No witches here
+						Proj.wounding_mult = 1 //Foolishness!
+						if(Proj.damage_types[BRUTE])
+						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
+							Proj.damage_types[BRUTE] *= 0.15
+						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
+						if(Proj.damage_types[BURN])
+						//	message_admins("prj BURN [Proj.damage_types[BURN]] Pre")
+							Proj.damage_types[BURN] *= 0.15
+						//	message_admins("prj BURN [Proj.damage_types[BURN]] Post")
+						//message_admins("prj ranged [Proj.penetrating]")
+
+					else
+					//	message_admins("unique_armor_check en_passant ranged")
+					//	message_admins("prj ranged [Proj.penetrating]")
+						Proj.armor_penetration *= 2
+						if(Proj.damage_types[BRUTE])
+						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
+							Proj.damage_types[BRUTE] *= 1.5
+						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Post")
+						if(Proj.damage_types[BURN])
+						//	message_admins("prj BURN [Proj.damage_types[BURN]] Post")
+							Proj.damage_types[BURN] *= 2
+						//message_admins("prj ranged [Proj.penetrating]")
+
+				return EF
+		if(EF)
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				if(H.has_synthetics())
+					EF *= 0.25
+				else
+					EF *= 3 //Viva!!
+				return EF
+			if(user)
+				for(var/MWH in mobs_we_hitless)
+				//	message_admins("[MWH] vs [mobs_we_hitless]")
+					if(istype(user, MWH))
+						//message_admins("bluecross_regaloutfit Proj Melee - [mobs_we_hitless] !!!!!!")
+						en_passant = TRUE
+						break
+
+			if(en_passant)
+				EF *= 0.15
+			else
+				EF *= 3 //Viva!!
+
+			return EF
+
+
+/mob/living/carbon/human/proc/has_synthetics()
+	var/sytnthetics = FALSE
+
+	if(species.reagent_tag == IS_SYNTHETIC)
+		sytnthetics = TRUE
+		return sytnthetics
+
+	for(var/obj/item/organ/O in organs)
+		if(istype(O, /obj/item/organ/external))
+			var/obj/item/organ/external/R = O
+			if(BP_IS_ROBOTIC(R))
+				sytnthetics = TRUE
+				break
+			for(var/obj/item/organ_module/OM in R.contents)
+				if(istype(OM, /obj/item/organ/internal))
+					if(OM.is_organic_module == FALSE)
+						sytnthetics = TRUE
+						break
+
+	if(sytnthetics)
+		return sytnthetics
+
+	for(var/obj/item/organ/O in internal_organs)
+		if(istype(O, /obj/item/organ/internal))
+			var/obj/item/organ/internal/R = O
+			if(BP_IS_ROBOTIC(R))
+				sytnthetics = TRUE
+				break
+
+	if(sytnthetics)
+		return sytnthetics
+
+	for(var/obj/item/implant/O in contents)
+		if(istype(O, /obj/item/implant))
+			var/obj/item/implant/I = O
+			if(I.implanted)
+				sytnthetics = TRUE
+				break
+
+	for(var/obj/item/implant/core_implant/O in contents)
+		if(istype(O,/obj/item/implant/core_implant))
+			var/obj/item/implant/core_implant/CI = O
+			if(CI.active)
+				sytnthetics = TRUE
+				break
+
+
+	return sytnthetics

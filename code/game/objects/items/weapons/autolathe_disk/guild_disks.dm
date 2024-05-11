@@ -114,13 +114,15 @@
 		/datum/design/autolathe/circuit/centrifuge,
 		/datum/design/autolathe/circuit/electrolyzer,
 		/datum/design/autolathe/circuit/reagentgrinder,
-		/datum/design/research/circuit/pacman = 2,
-		/datum/design/research/circuit/diesel = 3,
+		//datum/design/research/circuit/pacman = 2,
+		//datum/design/research/circuit/diesel = 3,
 		/datum/design/autolathe/circuit/trade_beacon_receiving = 5,
 		/datum/design/autolathe/circuit/trade_beacon_sending = 5,
 		/datum/design/autolathe/part/cable_coil,
 		/datum/design/autolathe/container/hcase_parts,
 		/datum/design/autolathe/container/hcase_engi,
+		/datum/design/autolathe/circuit/smartfridge,
+		/datum/design/autolathe/circuit/smartfridge/disk,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/logistics

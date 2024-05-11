@@ -6,7 +6,7 @@
 
 	restricted_to_species = list(FORM_SOTSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/surgical)
-	restricted_jobs = list(/datum/job/outsider)
+	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -26,15 +26,15 @@
 
 	restricted_to_species = list(FORM_SOTSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/engineer)
-	restricted_jobs = list(/datum/job/outsider)
+	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
-		STAT_TGH = 15,
+		STAT_TGH = 5,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
 		STAT_MEC = 15,
-		STAT_COG = 0
+		STAT_COG = 10
 	)
 
 /datum/category_item/setup_option/background/ethnicity/sot_synth_combat
@@ -46,12 +46,12 @@
 
 	restricted_to_species = list(FORM_SOTSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armblade/energy_blade)
-	restricted_jobs = list(/datum/job/outsider)
+	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_VIG = 15,
+		STAT_ROB = 20,
+		STAT_TGH = 5,
+		STAT_VIG = 20,
 		STAT_BIO = 0,
 		STAT_MEC = -5,
 		STAT_COG = -5
@@ -66,7 +66,7 @@
 
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/engineer)
-	restricted_jobs = list(/datum/job/outsider)
+	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -86,15 +86,15 @@
 
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/engineer)
-	restricted_jobs = list(/datum/job/outsider)
+	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 20,
-		STAT_VIG = 0,
+		STAT_ROB = 10,
+		STAT_TGH = 0,
+		STAT_VIG = 5,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
-		STAT_COG = 15
+		STAT_COG = 20
 	)
 
 /datum/category_item/setup_option/background/ethnicity/ag_synth_mine
@@ -106,19 +106,19 @@
 
 	restricted_to_species = list(FORM_AGSYNTH)
 	racial_implants = (/obj/item/organ_module/active/multitool/miner)
-	restricted_jobs = list(/datum/job/outsider)
+	//restricted_jobs = list(/datum/job/outsider)
 
 //Idea for this is that you were made with being a miner, thus giving you everything you need as one
 //The main boon being you get a bit of evey skill you /need/ to mine out faster and maintain tools / set up the big drills.
 //-0Loss Stats +15Gained Stat
 
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 10,
+		STAT_ROB = 25,
+		STAT_TGH = 0,
 		STAT_VIG = 0,
 		STAT_BIO = 0,
-		STAT_MEC = 10,
-		STAT_COG = 0
+		STAT_MEC = 15,
+		STAT_COG = 5
 	)
 
 /datum/category_item/setup_option/background/ethnicity/blackshield_security
@@ -129,12 +129,12 @@
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/taser/blackshield)
-	restricted_jobs = list(/datum/job/outsider)
+	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_VIG = 15,
+		STAT_ROB = 20,
+		STAT_TGH = 5,
+		STAT_VIG = 20,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -149,12 +149,12 @@
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armblade/bs_tomahawk)
 	racial_implants_l = (/obj/item/organ_module/active/simple/armshield)
-	restricted_jobs = list(/datum/job/outsider)
+	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 20,
-		STAT_VIG = 0,
+		STAT_ROB = 30,
+		STAT_TGH = 10,
+		STAT_VIG = 5,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -163,17 +163,17 @@
 /datum/category_item/setup_option/background/ethnicity/blackshield_ranged
 	name = "Ballistic Model"
 	desc = "Synthetics are often times built with a specific purpose in mind to augment the qualities most appropriate to the purpose they're intended for. This model is designed for ranged engagements. \
-	Ballistic positronics are slightly less sturdy than their CQC and non-lethal counterparts, but still have a sturdy chassis and AI-guided targeting systems to aid in shooting. \
-	In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and sturdy combatants. This model comes with an implanted .35 smg in the right arm."
+	Ranged positronics are slightly less sturdy than their CQC and non-lethal counterparts, but still have a sturdy chassis and AI-guided targeting systems to aid in shooting. \
+	In-built armor plating and AI-fed combat techniques given on a subconscious level allow for robust and sturdy combatants. This model comes with an implanted smg in the right arm."
 
 	restricted_to_species = list(FORM_BSSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armsmg/blackshield)
-	restricted_jobs = list(/datum/job/outsider)
+	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
-		STAT_ROB = 0,
-		STAT_TGH = 20,
-		STAT_VIG = 20,
+		STAT_ROB = 10,
+		STAT_TGH = 10,
+		STAT_VIG = 30,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -187,7 +187,7 @@
 
 	restricted_to_species = list(FORM_CHURCHSYNTH)
 	racial_implants = (/obj/item/organ_module/active/multitool/farmer)
-	restricted_jobs = list(/datum/job/outsider)
+	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 0,
@@ -206,13 +206,13 @@
 
 	restricted_to_species = list(FORM_CHURCHSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/armblade/longsword)
-	restricted_jobs = list(/datum/job/outsider)
+	//restricted_jobs = list(/datum/job/outsider)
 
 	//Compared to the soteria combat model and blackshield synths you get 20 armor across the body vs. 30/35 respectively, so what you lack in natural defense is made up in offense. -Kaz
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 20,
-		STAT_VIG = 20,
+		STAT_ROB = 25,
+		STAT_TGH = 10,
+		STAT_VIG = 25,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0
@@ -227,15 +227,15 @@
 	restricted_to_species = list(FORM_CHURCHSYNTH)
 	racial_implants = (/obj/item/organ_module/active/simple/bible)
 	racial_implants_l = (/obj/item/organ_module/active/simple/armblade/ritual)
-	restricted_jobs = list(/datum/job/outsider)
+	//restricted_jobs = list(/datum/job/outsider)
 
 	stat_modifiers = list(
 		STAT_ROB = 10,
-		STAT_TGH = 10,
+		STAT_TGH = 0,
 		STAT_VIG = 10,
-		STAT_BIO = 0, //Given 10 bio racially.
+		STAT_BIO = 5, //Given 10 bio racially.
 		STAT_MEC = 10,
-		STAT_COG = 10
+		STAT_COG = 15
 	)
 
 // FBP's lack a base racial bonus, what you see here is all they get.
@@ -250,11 +250,11 @@
 
 	stat_modifiers = list(
 		STAT_ROB = 15,
-		STAT_TGH = 15,
+		STAT_TGH = 0,
 		STAT_VIG = 15,
-		STAT_BIO = 15,
-		STAT_MEC = 15,
-		STAT_COG = 15
+		STAT_BIO = 20,
+		STAT_MEC = 20,
+		STAT_COG = 20
 	)
 
 /datum/category_item/setup_option/background/ethnicity/full_body_prosthetic_fighter
@@ -268,9 +268,9 @@
 	restricted_to_species = list(FORM_FBP, FORM_UNBRANDED)
 
 	stat_modifiers = list(
-		STAT_ROB = 25, // No inbuilt weapons.
-		STAT_TGH = 25,
-		STAT_VIG = 25,
+		STAT_ROB = 32, // No inbuilt weapons.
+		STAT_TGH = 10,
+		STAT_VIG = 32,
 		STAT_BIO = 0,
 		STAT_MEC = 0,
 		STAT_COG = 0

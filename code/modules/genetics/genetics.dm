@@ -528,7 +528,7 @@
 				to_chat(holder, SPAN_DANGER("You don't feel too good."))
 			if(6)
 				holder.visible_message(SPAN_DANGER("The muscles beneath the skin of \the [holder] ripple and bulge."))
-				to_chat(holder, SPAN_DANGER("Your form wavers. Ascention calls to you."))
+				to_chat(holder, SPAN_DANGER("Your form wavers. Ascension calls to you."))
 			if(12)
 				to_chat(holder, SPAN_DANGER("You feel yourself becoming... More. You answer the call."))
 			if(13)
@@ -556,7 +556,7 @@
 
 //Quick Check if our holder is living
 /datum/genetics/genetics_holder/proc/holder_is_living()
-	return ((holder && istype(holder, /mob/living/carbon/human)) ? TRUE : FALSE)
+	return ((holder && istype(holder, /mob/living)) ? TRUE : FALSE)
 
 //Quick Check if our holder is human
 /datum/genetics/genetics_holder/proc/holder_is_human()

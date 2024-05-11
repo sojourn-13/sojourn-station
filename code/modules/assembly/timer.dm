@@ -105,3 +105,13 @@
 
 	if(usr)
 		attack_self(usr)
+
+/obj/item/device/assembly/timer/attackby(var/obj/item/WIELD, var/mob/user)
+    if(istype(WIELD, /obj/item/device/assembly/timer))
+        var/obj/item/device/assembly/timer/timer2 = WIELD
+        if(secured && timer2.secured)
+            timing = timer2.timing
+            time = timer2.time
+            to_chat(user, "You transfer the timing parameters from [timer2] to [src].")
+    else
+        ..()

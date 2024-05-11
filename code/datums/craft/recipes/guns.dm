@@ -181,20 +181,6 @@
 		list(QUALITY_WELDING, 10, 20)
 	)
 
-/datum/craft_recipe/gun/sts
-	name = "\"STS\" battle rifle"
-	result = /obj/item/gun/projectile/automatic/sts/rifle
-	steps = list(
-		list(/obj/item/gun/projectile/automatic/sts/lrifle, 1, "time" = 60),
-		list(QUALITY_SCREW_DRIVING, 10, "time" = 10),
-		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL),
-		list(QUALITY_WELDING, 10, "time" = 30),
-		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
-		list(QUALITY_SAWING, 10, "time" = 10),
-		list(QUALITY_BOLT_TURNING, 20, "time" = 10)
-
-	)
-
 /datum/craft_recipe/gun/bssts
 	name = "\"STS PARA\" Blackshield rifle"
 	result = /obj/item/gun/projectile/automatic/sts/rifle/blackshield
@@ -297,19 +283,6 @@
 		list(QUALITY_ADHESIVE, 15, 70)
 	)
 
-/datum/craft_recipe/gun/zatvor
-	name = "Makeshift 7.62 \"Zatvor\" boltrifle"
-	result = /obj/item/gun/projectile/boltgun/zatvor
-	steps = list(
-		list(/obj/item/gun/projectile/boltgun, 1),
-		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL),
-		list(QUALITY_WELDING, 10, 20),
-		list(QUALITY_SCREW_DRIVING, 10),
-		list(CRAFT_MATERIAL, 4, MATERIAL_WOOD),
-		list(QUALITY_HAMMERING, 10),
-		list(QUALITY_ADHESIVE, 15, 70)
-	)
-
 /datum/craft_recipe/gun/rxd
 	name = "RXD - rapid crossbow device"
 	result = /obj/item/gun/projectile/crossbow/RCD
@@ -336,29 +309,16 @@
 	)
 
 /datum/craft_recipe/gun/multi_laser
-	name = "Multi-Laser Cannon"
+	name = "Pulse-Laser Cannon"
 	result = /obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy/auto
 	steps = list(
-		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 4, "time" = 60),
-		list(QUALITY_WELDING, 30, "time" = 180)
-	)
-
-/datum/craft_recipe/gun/pilgrim_claw
-	name = "Pilgrim Claw"
-	result = /obj/item/gun/projectile/revolver/lemant/claw
-	steps = list(
-		list(/obj/item/gun/projectile/revolver/lemant, 1, "time" = 20),
-		list(/obj/item/tool_upgrade/augment/spikes, 1, "time" = 20),
-		list(QUALITY_HAMMERING, 30, "time" = 10)
-	)
-
-/datum/craft_recipe/gun/pilgrim_uppercut
-	name = "Pilgrim Hero"
-	result = /obj/item/gun/projectile/revolver/lemant/uppercut
-	steps = list(
-		list(/obj/item/gun/projectile/revolver/lemant, 1, "time" = 20),
-		list(QUALITY_SAWING, 20, "time" = 60),
-		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL, "time" = 10),
-		list(QUALITY_WELDING, 25, "time" = 30),
-		list(QUALITY_HAMMERING, 30, "time" = 10)
+		list(/obj/item/mecha_parts/mecha_equipment/ranged_weapon/energy/laser/heavy, 1, "time" = 60),
+		list(QUALITY_WELDING, 30, "time" = 180),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 60),
+		list(QUALITY_ADHESIVE, 15, 70),
+		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL),
+		list(QUALITY_WELDING, 10, 20),
+		list(CRAFT_MATERIAL, 15, MATERIAL_PLASTIC),
+		list(/obj/item/stock_parts/micro_laser , 4),
+		list(QUALITY_SCREW_DRIVING, 30)
 	)

@@ -2,7 +2,7 @@
 /obj/item/book/manual/excavation
 	name = "Out on the Dig"
 	icon_state = "excavation"
-	author = "Professor Patrick Mason, Curator of the Antiquities Museum on Ichar VII, Edited by Professor Wisponellus for Nedezhda use."
+	author = "Professor Patrick Mason, Curator of the Antiquities Museum on Ichar VII, Edited by Professor Wisponellus for Nadezhda use."
 	title = "Out on the Dig"
 	dat = {"<html>
 				<head>
@@ -140,7 +140,7 @@
 /obj/item/book/manual/suspension
 	name = "Suspension Setup"
 	icon_state = "excavation"
-	author = "Professor Euclidenies Wisponellus, Curator of Nedezhda's Museum of Ancients"
+	author = "Professor Euclidenies Wisponellus, Curator of Nadezhda's Museum of Ancients"
 	title = "Suspension Setup"
 	dat = {"<html>
 				<head>

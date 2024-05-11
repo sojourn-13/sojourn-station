@@ -1,25 +1,29 @@
+#define MAX_NOTICES 5
+
 /obj/structure/noticeboard
 	name = "notice board"
 	desc = "A board for pinning important notices upon."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "nboard00"
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 	var/notices = 0
 
 /obj/structure/noticeboard/Initialize()
 	. = ..()
 	for(var/obj/item/I in loc)
-		if(notices > 4) break
+		if(notices >= MAX_NOTICES)
+			break
 		if(istype(I, /obj/item/paper))
 			I.loc = src
 			notices++
 	icon_state = "nboard0[notices]"
 
+
 //attaching papers!!
 /obj/structure/noticeboard/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(istype(O, /obj/item/paper))
-		if(notices < 5)
+		if(notices < MAX_NOTICES)
 			O.add_fingerprint(user)
 			add_fingerprint(user)
 			user.drop_from_inventory(O)
@@ -30,56 +34,65 @@
 		else
 			to_chat(user, SPAN_NOTICE("You reach to pin your paper to the board but hesitate. You are certain your paper will not be seen among the many others already attached."))
 
-/obj/structure/noticeboard/attack_hand(var/mob/user)
-	examine(user)
+/obj/structure/noticeboard/ui_state(mob/user)
+	return GLOB.physical_state
 
-// Since Topic() never seems to interact with usr on more than a superficial
-// level, it should be fine to let anyone mess with the board other than ghosts.
-/obj/structure/noticeboard/examine(var/mob/user)
-	if(!user)
-		user = usr
-	if(user.Adjacent(src))
-		var/dat = "<B>Noticeboard</B><BR>"
-		for(var/obj/item/paper/P in src)
-			dat += "<A href='?src=\ref[src];read=\ref[P]'>[P.name]</A> <A href='?src=\ref[src];write=\ref[P]'>Write</A> <A href='?src=\ref[src];remove=\ref[P]'>Remove</A><BR>"
-		user << browse("<HEAD><TITLE>Notices</TITLE></HEAD>[dat]","window=noticeboard")
-		onclose(user, "noticeboard")
-	else
-		..()
+/obj/structure/noticeboard/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "NoticeBoard", name)
+		ui.open()
 
-/obj/structure/noticeboard/Topic(href, href_list)
-	..()
-	usr.set_machine(src)
-	if(href_list["remove"])
-		if((usr.stat || usr.restrained()))	//For when a player is handcuffed while they have the notice window open
-			return
-		var/obj/item/P = locate(href_list["remove"])
-		if(P && P.loc == src)
-			P.loc = get_turf(src)	//dump paper on the floor because you're a clumsy fuck
-			P.add_fingerprint(usr)
-			add_fingerprint(usr)
-			notices--
-			icon_state = "nboard0[notices]"
-	if(href_list["write"])
-		if((usr.stat || usr.restrained())) //For when a player is handcuffed while they have the notice window open
-			return
-		var/obj/item/P = locate(href_list["write"])
-		if((P && P.loc == src)) //ifthe paper's on the board
-			if(istype(usr.r_hand, /obj/item/pen)) //and you're holding a pen
-				add_fingerprint(usr)
-				P.attackby(usr.r_hand, usr) //then do ittttt
+/obj/structure/noticeboard/ui_data(mob/user)
+	var/list/data = list()
+	data["allowed"] = allowed(user)
+	data["items"] = list()
+	for(var/obj/item/content in contents)
+		var/list/content_data = list(
+			name = content.name,
+			ref = REF(content)
+		)
+		data["items"] += list(content_data)
+	return data
+
+/obj/structure/noticeboard/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+
+	var/obj/item/item = locate(params["ref"]) in contents
+	if(!istype(item) || item.loc != src)
+		return
+
+	var/mob/user = usr
+
+	switch(action)
+		if("examine")
+			if(istype(item, /obj/item/paper))
+				item.examine(user)
 			else
-				if(istype(usr.l_hand, /obj/item/pen)) //check other hand for pen
-					add_fingerprint(usr)
-					P.attackby(usr.l_hand, usr)
-				else
-					to_chat(usr, SPAN_NOTICE("You'll need something to write with!"))
-	if(href_list["read"])
-		var/obj/item/paper/P = locate(href_list["read"])
-		if((P && P.loc == src))
-			usr << browse("<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY><TT>[P.info]</TT></BODY></HTML>", "window=[P.name]")
-			onclose(usr, "[P.name]")
-	return
+				user.examinate(item)
+			return TRUE
+		if("remove")
+			if(!allowed(user))
+				return
+			remove_item(item, user)
+			return TRUE
+
+/**
+ * Removes an item from the notice board
+ *
+ * Arguments:
+ * * item - The item that is to be removed
+ * * user - The mob that is trying to get the item removed, if there is one
+ */
+/obj/structure/noticeboard/proc/remove_item(obj/item/item, mob/user)
+	item.forceMove(drop_location())
+	if(user)
+		user.put_in_hands(item)
+		//balloon_alert(user, "removed from board")
+	notices--
+	icon_state = "nboard0[notices]"
 
 // put actual, filled noticeboards here. These are for adding actual notices via code. Be careful! Anything written here will likely be taken as law by those that read them
 
@@ -123,6 +136,36 @@
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
+	P = new()
+	P.name = "Memo:Smart Engagement"
+	P.info = "<h3>Dear Colleagues of the Marshal and Blackshield Departments,</h1><br>\
+				<small>I would like to remind you of and re-emphasize the golden rule of extended combat (the three REs):<ol>\
+				<li> REtreat</li>\
+				<li>REgroup</li>\
+				<li>REengage</li>\
+				</ol><br>\
+				While it may be tempting to attempt defeat the opposing force in one swift decisive skirmish, it's often impossible to do so with better equipped (and organised) hostile elements as recent experiences have shown us. <br><br>\
+				Focus on surviving and putting the pressure on the enemy instead of blind suicide charges. <br><br> \
+				<i>C.Mallory</i></small>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
+	P = new()
+	P.name = "Wanted:Jack Terran"
+	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
+				<h2>Latest wanted issues</h2>\
+				</center>\
+				<hr>\
+				<b>NAME:</b> <i>Jack Terran</i><br>\
+				<b>DESCRIPTION:</b><i>Tall, well built male. Long ginger hair at time of writing. Fair complexion</i><br>\
+				<b>CRIMES:</b><i>Murder, three counts. Misleading an Investigator, one count. Sparking a manhunt, one count. </i><br>\
+				<b>NOTES:</b><i>As a former Prospector Mister Terran has demonstrated an extreme level of danger and willingness to use violence on personnelle who pursue him. Given the high threat posed by the fugitive, Security Personnel are recommended to not engage without highly favorable conditions or backup. </i>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
+
 /obj/structure/noticeboard/blackshield
 	name = "Blackshield bulletin board"
 	desc = "A board containing vital notices and official memos for the Blackshield Militia"
@@ -140,7 +183,36 @@
 	P = new()
 	P.name = "Memo RE: Gate procedure"
 	P.info = "<br>This is a firm reminder to all Blackshield Personnel to draw their attention to the Gate Operations section of S.O.P, <b>particularly</b> the section detailing proper bolting of the gate when present and \
-	<b><i>UNBOLTING</b></i> of the gate when NOT present. The next trooper to get a fax sent because he left the foreman bolted outside is going to be scrubbing the latrines with his toothbrust - Sgt Dansen"
+	<b><i>UNBOLTING</b></i> of the gate in a <b><i>TIMELY</b></i> fashion that means within not more than five m The next trooper to get a fax sent because he left the foreman bolted outside is going to be scrubbing the latrines with his toothbrust - Sgt Dansen"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
+	P = new()
+	P.name = "Memo:Smart Engagement"
+	P.info = "<h3>Dear Colleagues of the Marshal and Blackshield Departments,</h1><br>\
+				<small>I would like to remind you of and re-emphasize the golden rule of extended combat (the three REs):<ol>\
+				<li> REtreat</li>\
+				<li>REgroup</li>\
+				<li>REengage</li>\
+				</ol><br>\
+				While it may be tempting to attempt defeat the opposing force in one swift decisive skirmish, it's often impossible to do so with better equipped (and organised) hostile elements as recent experiences have shown us. <br><br>\
+				Focus on surviving and putting the pressure on the enemy instead of blind suicide charges. <br><br> \
+				<i>C.Mallory</i></small>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+
+	P = new()
+	P.name = "Wanted:Jack Terran"
+	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
+				<h2>Latest wanted issues</h2>\
+				</center>\
+				<hr>\
+				<b>NAME:</b> <i>Jack Terran</i><br>\
+				<b>DESCRIPTION:</b><i>Tall, well built male. Long ginger hair at time of writing. Fair complexion</i><br>\
+				<b>CRIMES:</b><i>Murder, three counts. Misleading an Investigator, one count. Sparking a manhunt, one count. </i><br>\
+				<b>NOTES:</b><i>As a former Prospector Mister Terran has demonstrated an extreme level of danger and willingness to use violence on personnelle who pursue him. Given the high threat posed by the fugitive, Security Personnel are recommended to not engage without highly favorable conditions or backup. </i>"
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P
@@ -228,13 +300,13 @@ P.S - <u><h1>Don't leave the drills running unattended!</u></h1>"
 	P.name = "Memo RE: Ameridian handling"
 	P.info = "Remember, when dealing with Ameridian Crystals, to :<ol> \
 	<li> Wear a Radiation Suit. The crystals are radioactive with a radius of 2 meters, and the small ones are as radioactive as the grown ones.\
-	<li> Let the crystals grow. Only a fully grown crystal will spread and allow for a sustainable field.\
-	<li> Not let it grow out of control. If enough fully matured crystals are close enough together, golems can appear.\
-	<li> Retreat past the Sonic Fence if golems appear. The Sonic Fence will instantly destroy the golems that touches it. You can also use the Handheld Sonic emitter to destroy the golem.\
-	<li> Not turn off the Sonic Fence or allow it to be turned off. The Sonic Fence is a perfect containment to Ameridian, when it is active. If it turned off, the crystal will be able to spread out of control. If it needs to be turned off for whatever reason, either keep an eye on the crystals, or harvest them all to prevent unwanted spread.\
-	<li> Reseed the field. In case the field get removed completely, more crystals can be seeded with either 5 ameridian shard, or by splashing at least 10u of Liquid Ameridian on the floor.\
+	<li> Let the crystals grow. Fully grown crystals are the best to harvest as they give the most.\
+	<li> If you need to leave, DONT DESTORY THE SPIRE UNLESS NESSARY. You can let it spread out and clear the golems, and then walk away safely, golems only grow when new shards uproot up.\
+	<li> Golems will only grow when a new shard growth is spread. Meaning if you let the main spire grow out its maximum  amount clearing all the golems, the area is safe from any golems regrowing, but not the radiation.\
+	<li> Crystals grown from the spire itself can also spread to its neighboring area, the offspring of these lesser growths can not spread.\
+	<li> You can also use the Handheld Sonic emitter to destroy the golem, using said Sonic emitter will not result in you getting extra shards from the golems, or from the crystals if used.\
 	<li> Refine the shards. While Ameridian is valuable on its own, it's true value can only be used when refining it into Liquid Ameridian using an Ameridian Refinery, after which it can be further transformed into regular materials in the Liquid Ameridian Processor.\
-	<li> Carry the shards through the fence. Your body interfere with the Sonic Fence, allowing you to carry ameridian shards through the fence. The same cannot be said for dragged or thrown crystals, which will get destroyed on contact. Do not throw money away.</ol> "
+	<li> If you set up a Sonic Fence, carry the shards through the fence. Your body interfere with the Sonic Fence, allowing you to carry ameridian shards through the fence. The same cannot be said for dragged or thrown crystals, which will get destroyed on contact. Do not throw money away.</ol> "
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P
@@ -255,3 +327,4 @@ P.S - <u><h1>Don't leave the drills running unattended!</u></h1>"
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 	*/
+#undef MAX_NOTICES

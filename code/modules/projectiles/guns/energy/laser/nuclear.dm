@@ -19,7 +19,7 @@
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE) //Were all three and can have a scope if someone wants
 	init_firemodes = list(
 		list(mode_name="stunshot", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound = 'sound/weapons/energy/Taser.ogg', fire_delay=35, icon="stun"),
-		list(mode_name="lethal", projectile_type=/obj/item/projectile/beam/radiation, fire_sound='sound/weapons/energy/emitter2.ogg', fire_delay=10, icon="kill"),
+		list(mode_name="nuclear beam", projectile_type=/obj/item/projectile/beam/radiation, fire_sound='sound/weapons/energy/aer14fire.ogg', fire_delay=10, icon="kill"),
 	)
 
 	var/lightfail = 0

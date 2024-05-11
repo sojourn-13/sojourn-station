@@ -7,7 +7,7 @@
 	icon_state = "lasersmg"
 	item_state = "lasersmg"
 	w_class = ITEM_SIZE_NORMAL
-	fire_sound = 'sound/weapons/energy/Laser.ogg'
+	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
 	suitable_cell = /obj/item/cell/medium
 	can_dual = TRUE
 	projectile_type = /obj/item/projectile/beam/weak/smg

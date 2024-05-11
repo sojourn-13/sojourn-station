@@ -1,4 +1,5 @@
 /mob
+	datum_flags = DF_USE_TAG
 	density = 1
 	layer = 4.0
 	animate_movement = 2
@@ -6,6 +7,7 @@
 	blood_color = "#A10808"
 	var/datum/mind/mind
 	var/cant_gib = FALSE //This is used for mobs that dquel on death
+	var/static/next_mob_id = 0
 
 	//This is here for admins to modife for any player, mob for events or other things. Also antags could
 	//likely use this - I.E Bots with deeper scans could see through into a carrion or a Exl agent

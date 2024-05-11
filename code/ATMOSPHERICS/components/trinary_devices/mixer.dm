@@ -1,10 +1,10 @@
 /obj/machinery/atmospherics/trinary/mixer
 	icon = 'icons/atmos/mixer.dmi'
 	icon_state = "map"
-	density = 0
+	density = FALSE
 	level = BELOW_PLATING_LEVEL
 
-	name = "gas mixer"
+	name = "Gas mixer"
 
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
@@ -109,7 +109,7 @@
 	var/datum/gas_mixture/int_air = return_air()
 	var/datum/gas_mixture/env_air = loc.return_air()
 	if ((int_air.return_pressure()-env_air.return_pressure()) > 2*ONE_ATMOSPHERE)
-		to_chat(user, SPAN_WARNING("You cannot unfasten \the [src], it is under too much pressure."))
+		to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], it too exerted due to internal pressure."))
 		add_fingerprint(user)
 		return 1
 	to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
@@ -165,11 +165,11 @@
 	if(href_list["node1_c"])
 		var/value = text2num(href_list["node1_c"])
 		src.mixing_inputs[air1] = max(0, min(1, src.mixing_inputs[air1] + value))
-		src.mixing_inputs[air2] = 1.0 - mixing_inputs[air1]
+		src.mixing_inputs[air2] = 1 - mixing_inputs[air1]
 	if(href_list["node2_c"])
 		var/value = text2num(href_list["node2_c"])
 		src.mixing_inputs[air2] = max(0, min(1, src.mixing_inputs[air2] + value))
-		src.mixing_inputs[air1] = 1.0 - mixing_inputs[air2]
+		src.mixing_inputs[air1] = 1 - mixing_inputs[air2]
 	src.update_icon()
 	src.updateUsrDialog()
 	return

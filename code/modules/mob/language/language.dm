@@ -128,12 +128,12 @@
 			capitalize = 1
 		else if(chance > 5 && chance <= space_chance)
 			scrambled_text += " "
-		
+
 	// Add it to cache, cutting old entries if the list is too long
 	scramble_cache[input] = scrambled_text
 	if(scramble_cache.len > SCRAMBLE_CACHE_LEN)
 		scramble_cache.Cut(1, scramble_cache.len-SCRAMBLE_CACHE_LEN-1)
-	
+
 	return scrambled_text
 
 /datum/language/proc/format_message(message, verb)
@@ -184,6 +184,9 @@
 		if("@")
 			return "reports"
 	return pick(speech_verb)
+
+/datum/language/proc/can_speak_special(var/mob/speaker)
+	return 1
 
 // Language handling.
 /mob/proc/add_language(var/language)

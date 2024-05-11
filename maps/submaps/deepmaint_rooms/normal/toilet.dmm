@@ -6,9 +6,9 @@
 /turf/simulated/wall,
 /area/deepmaint)
 "c" = (
-/obj/machinery/light{
+/obj/machinery/light/small{
 	dir = 4;
-	icon_state = "tube1"
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/deepmaint)
@@ -19,16 +19,14 @@
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "e" = (
-/obj/machinery/light{
+/obj/machinery/light/small{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/deepmaint)
 "f" = (
 /obj/machinery/recharge_station,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/small,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "g" = (
@@ -49,9 +47,6 @@
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "j" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/random/pack/rare/low_chance,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
@@ -65,18 +60,21 @@
 /turf/simulated/floor/tiled/steel/panels,
 /area/deepmaint)
 "l" = (
+/obj/random/mob/psi_monster/low_chance,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel/panels,
 /area/deepmaint)
 "m" = (
 /obj/structure/toilet{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/random/pack/rare/low_chance,
 /obj/random/pack/rare/low_chance,
 /obj/random/pack/rare/low_chance,
+/obj/random/mob/psi_monster/low_chance,
+/obj/machinery/light/small,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "n" = (
@@ -95,11 +93,10 @@
 /obj/structure/toilet{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/random/common_oddities/low_chance,
 /obj/random/pack/rare/low_chance,
+/obj/random/mob/psi_monster/low_chance,
+/obj/machinery/light/small,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "q" = (
@@ -120,9 +117,8 @@
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/deepmaint)
 "u" = (
-/obj/machinery/light,
-/obj/random/cluster/psi_monster/lower_chance,
-/turf/simulated/floor/tiled/steel,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/panels,
 /area/deepmaint)
 "v" = (
 /obj/structure/sink{
@@ -139,6 +135,10 @@
 /obj/random/ammo_fancy,
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/deepmaint)
+"x" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/deepmaint)
 "C" = (
 /obj/item/storage/hcases/ammo/blackmarket,
 /obj/random/dungeon_gun_mods,
@@ -148,17 +148,27 @@
 /obj/random/cluster/psi_monster/lower_chance,
 /turf/simulated/floor/tiled/steel/brown_perforated,
 /area/deepmaint)
+"H" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/deepmaint)
 "I" = (
 /obj/structure/toilet{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/random/common_oddities/low_chance,
 /obj/random/pack/rare/low_chance,
 /obj/item/ammo_kit,
+/obj/random/mob/psi_monster/low_chance,
+/obj/machinery/light/small,
 /turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"L" = (
+/obj/random/mob/psi_monster/low_chance,
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/steel/brown_perforated,
 /area/deepmaint)
 "N" = (
 /obj/structure/sink{
@@ -179,6 +189,10 @@
 /obj/random/psi_megafauna,
 /turf/simulated/floor/tiled/steel,
 /area/deepmaint)
+"S" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel/brown_perforated,
+/area/deepmaint)
 "T" = (
 /obj/structure/table/rack,
 /obj/random/pack/tech_loot,
@@ -187,6 +201,17 @@
 /obj/random/pack/tech_loot/low_chance,
 /obj/random/powercell/low_chance,
 /turf/simulated/floor/tiled/steel/panels,
+/area/deepmaint)
+"W" = (
+/obj/random/mob/psi_monster/low_chance,
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/deepmaint)
+"X" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel,
 /area/deepmaint)
 "Z" = (
 /obj/random/dungeon_ammo,
@@ -199,7 +224,7 @@ c
 a
 a
 a
-a
+S
 a
 a
 E
@@ -233,7 +258,7 @@ b
 a
 "}
 (4,1,1) = {"
-a
+x
 b
 h
 b
@@ -243,23 +268,23 @@ h
 b
 h
 b
-a
+H
 "}
 (5,1,1) = {"
 a
 d
 i
+X
 i
 i
 i
-i
-i
+X
 i
 d
 a
 "}
 (6,1,1) = {"
-a
+L
 b
 j
 n
@@ -267,9 +292,9 @@ i
 P
 i
 i
-u
+n
 b
-a
+H
 "}
 (7,1,1) = {"
 a
@@ -282,7 +307,7 @@ Z
 q
 q
 b
-a
+S
 "}
 (8,1,1) = {"
 a
@@ -293,7 +318,7 @@ o
 b
 C
 Z
-q
+W
 b
 a
 "}
@@ -301,7 +326,7 @@ a
 a
 b
 k
-l
+u
 T
 b
 v
@@ -325,12 +350,12 @@ a
 "}
 (11,1,1) = {"
 a
+a
 e
 a
+e
 a
-a
-a
-a
+S
 a
 a
 e

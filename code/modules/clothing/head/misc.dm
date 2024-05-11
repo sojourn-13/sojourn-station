@@ -14,14 +14,6 @@
 	name = "Laurel wreath"
 	icon_state = "laurel"
 	desc = "A round wreath made of connected branches and leaves of the bay laurel."
-	armor_list = list(
-		melee = 0,
-		bullet = 0,
-		energy = 0,
-		bomb = 0,
-		bio = 100, //drip
-		rad = 0
-	)
 	slot_flags = SLOT_HEAD | SLOT_EARS
 	body_parts_covered = 0
 
@@ -66,6 +58,21 @@
 	icon_state = "hairflower_white"
 	name = "white flower pin"
 
+/*Ears Pins*/
+/obj/item/clothing/head/pin/ear_pin
+	name = "ear dangle"
+	icon_state = "ear_dangle"
+	desc = "Two small objects dangling on someone's ears. Probably some sorta of decoration."
+	slot_flags =  SLOT_EARS
+	body_parts_covered = 0
+
+/obj/item/clothing/head/pin/ear_pin/ear_stud
+	name = "ear stud"
+	icon_state = "ear_stud"
+	desc = "Two small objects dangling on someone's ears. Probably some sorta of decoration"
+	slot_flags =  SLOT_EARS
+	body_parts_covered = 0
+
 /*Hair Pins*/
 
 /obj/item/clothing/head/pin
@@ -74,6 +81,30 @@
 	desc = "A small metal hair pin."
 	slot_flags = SLOT_HEAD | SLOT_EARS
 	body_parts_covered = 0
+
+/obj/item/clothing/head/pin/attackby(var/obj/item/W, var/mob/user) //happy valentines day Gidgit
+	//do checks for what we were hit by and what kind of pin we turn into.
+	var/obj/item/reagent_containers/food/snacks/grown/G = W
+	if(G.seed && G.name == "poppy")
+		new /obj/item/clothing/head/hairflower(src.loc)
+		user.drop_from_inventory(W)
+		qdel(W)
+		qdel(src)
+	if(G.seed && G.name == "harebell")
+		new /obj/item/clothing/head/hairflower/violet(src.loc)
+		user.drop_from_inventory(W)
+		qdel(W)
+		qdel(src)
+	if(G.seed && G.name == "sunflower")
+		new /obj/item/clothing/head/hairflower/yellow(src.loc)
+		user.drop_from_inventory(W)
+		qdel(W)
+		qdel(src)
+	if(G.seed && G.name == "grass")
+		new /obj/item/clothing/head/pin/clover(src.loc)
+		user.drop_from_inventory(W)
+		qdel(W)
+		qdel(src)
 
 /obj/item/clothing/head/pin/butterfly
 	name = "blue butterfly pin"
@@ -249,6 +280,11 @@ obj/item/clothing/head/ribbon/red
 	icon_state = "feather_trilby"
 	desc = "A dark blue felt fedora with a classy white feather."
 
+/obj/item/clothing/head/investigator //to prevent it being under loadout
+	name = "investigator fedora"
+	icon_state = "investigator"
+	desc = "A soft brown fedora belonging to a man of law."
+
 /*Misc*/
 
 /obj/item/clothing/head/rank/centcom
@@ -279,10 +315,10 @@ obj/item/clothing/head/ribbon/red
 	icon_state = "boater_hat"
 	desc = "A formal beige summer hat."
 
-/obj/item/clothing/head/numerical_hat
-	name = "numerical hat"
-	icon_state = "numerical_hat"
-	desc = "A tall hat for nurmerical of the faith. Can be turned inside out to turn form red to gray or gray to red"
+/obj/item/clothing/head/leather_hat
+	name = "leather hat"
+	icon_state = "field_numerical_hat"
+	desc = "A tall hat for followers of the faith. Can be turned inside out to turn from red to purple or vice versa"
 	armor_list = list( //same as the garb
 		melee = 10,
 		bullet = 0,
@@ -292,7 +328,7 @@ obj/item/clothing/head/ribbon/red
 		rad = 0
 	)
 
-/obj/item/clothing/head/numerical_hat/verb/toggle_style()
+/obj/item/clothing/head/leather_hat/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -302,8 +338,8 @@ obj/item/clothing/head/ribbon/red
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Red Hat"] = "numerical_hat"
-	options["Gray Hat"] = "numerical_hatgrey"
+	options["Red Hat"] = "field_numerical_hat"
+	options["Purple Hat"] = "field_numerical_hat_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -343,6 +379,98 @@ obj/item/clothing/head/ribbon/red
 	name = "rice hat"
 	desc = "A hat made out of straw, designed to keep the sun from hurting your face."
 	icon_state = "rice_hat"
+
+/obj/item/clothing/head/jingasa
+	name = "jingasa"
+	desc = "A sturdy metal cap designed to protect the head from weather and falling objects."
+	icon_state = "jingasa"
+	armor_list = list(melee = 5, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+
+/obj/item/clothing/head/headband
+	name = "headband"
+	desc = "A simple cloth headband intended to help keep ones hair neat and orderly."
+	icon_state = "headband_colorless"
+
+/obj/item/clothing/head/strawhat
+	name = "straw hat"
+	desc = "A plain old straw hat for keeping the sun out of ones eyes. A red band is all that keeps this old thing in one piece."
+	icon_state = "small_strawhat"
+
+/obj/item/clothing/head/strawhat/big
+	name = "wide straw hat"
+	desc = "A great big straw hat. Its size and durable make will keep ones eyes safe for a thousand sunny days."
+	icon_state = "large_strawhat"
+
+/obj/item/clothing/head/sunhat
+	name = "yellow sunhat"
+	desc = "A wide brimmed, feminine hat. Perfect for those warm Amethyn summers."
+	icon_state = "sunhat"
+
+/obj/item/clothing/head/sunhat/white
+	name = "white sunhat"
+	desc = "A wide brimmed, feminine hat. Perfect for those warm Amethyn summers."
+	icon_state = "sunhat_white"
+
+/obj/item/clothing/head/sunhat/shade
+	name = "shadehat"
+	desc = "A wide brimmed shadecap. A bit witchy, but it'll do the job."
+	icon_state = "shadehat"
+
+/obj/item/clothing/head/sunhat/blackshade
+	name = "black shadehat"
+	desc = "A wide brimmed shadecap. A bit gothic, but it'll do the job."
+	icon_state = "shadehat_black"
+
+obj/item/clothing/head/sunhat/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["standard"] = ""
+	options["lopsided"] = "_lopsided"
+	var/choice = input(M,"What do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		var/base = initial(icon_state)
+		base += options[choice]
+		icon_state = base
+		item_state = base
+		item_state_slots = null
+		to_chat(M, "You adjust your hat to a [choice] style.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/head/tiara
+	name = "tiara"
+	desc = "A simple, metal tiara."
+	icon_state = "tiara"
+
+/obj/item/clothing/head/voidhelm
+	name = "kin voidhelm"
+	desc = "An old, battered voidhelmet. Its original source unknown and its seals long since worn out - still, it makes for a decent helmet, if nothing else is available."
+	icon_state = "kin_voidhelm"
+	armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0) //if the absolute greatcoat can have these stats, so can this.
+	item_flags = THICKMATERIAL
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EARS
+	obscuration = MEDIUM_OBSCURATION
+
+/obj/item/clothing/head/headdress
+	name = "headdress"
+	desc = "A simple, ornamental headdress."
+	icon_state = "headress"
+
+/obj/item/clothing/head/headscarf
+	name = "headscarf"
+	desc = "A patterned bolt of synth-cloth tied here and there that sits comfortably around the head. Excellent for keeping sand from your face - if you weren't in a temperate forest, that is."
+	icon_state = "zhan_scarf"
 
 /obj/item/clothing/head/exceslior/excelsior_officer
 	name = "excelsior officer cap"
@@ -387,6 +515,20 @@ obj/item/clothing/head/ribbon/red
 		bomb = 0,
 		bio = 20,
 		rad = 25
+	)
+
+/obj/item/clothing/head/os_cap/nova
+	name = "Greyson Star Trader Cap"
+	desc = "A flat brim cap made for the colony office workers to keep out light out of their heads, weirdly enough it smells like if you just buyed it out of the vendor, it smells like cinnamon."
+	icon_state = "os_cap"
+	item_state = "os_cap"
+	armor_list = list(
+		melee = 0,
+		bullet = 0,
+		energy = 5,
+		bomb = 0,
+		bio = 5,
+		rad = 5
 	)
 
 /*
@@ -436,6 +578,13 @@ obj/item/clothing/head/ribbon/red
 	item_state = "tacponhood_green"
 	flags_inv = HIDEEARS|BLOCKHAIR
 
+/obj/item/clothing/head/tacticalhood/grey
+	name = "grey tactical hood"
+	desc = "A tactical grey hood to no doubt match an equally tactical grey poncho."
+	icon_state = "tacponhood_grey"
+	item_state = "tacponhood_grey"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
 /obj/item/clothing/head/tacticalhood/camo
 	name = "camo tactical hood"
 	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
@@ -448,4 +597,11 @@ obj/item/clothing/head/ribbon/red
 	desc = "A tactical brown hood to no doubt match an equally tactical brown poncho."
 	icon_state = "tacponhood_ghillie"
 	item_state = "tacponhood_ghillie"
+	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/tacticalhood_color
+	name = "hood"
+	desc = "A tactical hood, in a color of your choice."
+	icon_state = "tacponhood_color"
+	item_state = "tacponhood_color"
 	flags_inv = HIDEEARS|BLOCKHAIR

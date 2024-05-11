@@ -113,6 +113,11 @@ var/list/_client_preferences_by_type
 	key = "CHAT_GHOSTEARS"
 	options = list(GLOB.PREF_ALL_SPEECH, GLOB.PREF_NEARBY)
 
+/datum/client_preference/ghost_ears_plus
+	description ="Ghost Psionics/Cruciform"
+	key = "CHAT_GHOST_EARS_PLUS"
+	options = list(GLOB.PREF_YES, GLOB.PREF_NO)
+
 /datum/client_preference/ghost_sight
 	description ="Ghost sight"
 	key = "CHAT_GHOSTSIGHT"
@@ -227,6 +232,24 @@ var/list/_client_preferences_by_type
 /datum/client_preference/area_info_blurb
 	description = "Show area narration."
 	key = "AREA_INFO"
+
+/datum/client_preference/tgui_fancy
+	description ="Enable/Disable tgui fancy mode"
+	key = "tgui_fancy"
+
+/datum/client_preference/tgui_fancy/changed(mob/preference_mob, new_value)
+	for (var/datum/tgui/tgui as anything in preference_mob?.tgui_open_uis)
+		// Force it to reload either way
+		tgui.update_static_data(preference_mob)
+
+/datum/client_preference/tgui_lock
+	description ="TGUI Lock"
+	key = "tgui_lock"
+
+/datum/client_preference/tgui_lock/changed(mob/preference_mob, new_value)
+	for (var/datum/tgui/tgui as anything in preference_mob?.tgui_open_uis)
+		// Force it to reload either way
+		tgui.update_static_data(preference_mob)
 
 /********************
 * General Staff Preferences *

@@ -156,6 +156,21 @@ Class Procs:
 /obj/machinery/Process()//If you dont use process or power why are you here
 	return PROCESS_KILL
 
+/obj/machinery/examine(mob/user, distance, infix, suffix)
+	. = ..()
+
+	if(isghost(user))
+		show_parts(user)
+
+	if(panel_open && get_dist(src, user) <= 2)
+		if((user.stats && user.stats.getPerk(PERK_HANDYMAN)))
+			show_parts(user)
+
+/obj/machinery/proc/show_parts(mob/user)
+	to_chat(user, SPAN_NOTICE("\The [src] contains the following parts:"))
+	for(var/obj/item/C in component_parts)
+		to_chat(user, SPAN_NOTICE("\t[C.name]"))
+
 /obj/machinery/emp_act(severity)
 	if(use_power && !stat)
 		use_power(7500/severity)
@@ -183,7 +198,10 @@ Class Procs:
 /obj/machinery/proc/inoperable(var/additional_flags = 0)
 	return (stat & (NOPOWER|BROKEN|additional_flags))
 
-/obj/machinery/CanUseTopic(var/mob/user)
+/obj/machinery/ui_state(mob/user)
+	return GLOB.machinery_state
+
+/obj/machinery/CanUseTopic(mob/user)
 	if(stat & BROKEN)
 		return STATUS_CLOSE
 

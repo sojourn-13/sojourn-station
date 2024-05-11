@@ -1,8 +1,3 @@
-/obj/item/gun/energy/sst/add_initial_transforms()
-	. = ..()
-
-	add_new_transformation(/datum/transform_type/modular, list(0.65, 0.65, flag = SST_INITIAL_SCALE_TRANSFORM, priority = SST_INITIAL_SCALE_TRANSFORM_PRIORITY))
-
 /obj/item/gun/energy/sst
 	name = "\"SST Abnegate\" handgun"
 	desc = "\"Soteria Surface Tension\" brand handgun. A cooperative project between Soteria Medical and Soteria Research, the Abnegate uses Greyson tech to internally synthesize soporific coated 9mm bullets. \
@@ -27,6 +22,7 @@
 	projectile_type=/obj/item/projectile/bullet/pistol_35/rubber/soporific
 	price_tag = 1750
 	serial_type = "SI"
+	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE) // I can't believe I have to do this. Don't turn NL weapons into literal war crimes.
 
 /obj/item/gun/energy/sst/preloaded
 
@@ -55,6 +51,7 @@
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 0.2)
 	price_tag = 1600
 
+
 /obj/item/gun/energy/sst/humility
 	name = "\"SST Humility\" shotgun"
 	desc = "\"Soteria Surface Tension\" brand semi-automatic shotgun. Larger threats demanded larger ordinance and Soteria responded to the internal need for such equipment. \
@@ -63,14 +60,14 @@
 	wielded_item_state = "_doble"
 	icon_state = "humility"
 	item_state = "humility"
-	charge_cost = 500
+	charge_cost = 100
 	fire_sound = 'sound/weapons/energy/energy_shotgun.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_LASER, GUN_ENERGY)
 	w_class = ITEM_SIZE_HUGE
 	force = WEAPON_FORCE_PAINFUL
 	charge_meter = FALSE
 	twohanded = TRUE
-	suitable_cell = /obj/item/cell/large
+	suitable_cell = /obj/item/cell/medium
 	slot_flags = SLOT_BACK
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_STEEL = 20, MATERIAL_SILVER = 15, MATERIAL_GOLD = 12, MATERIAL_PLATINUM = 0.5)
 	price_tag = 2500
@@ -90,6 +87,13 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/gun/energy/sst/humility/preloaded
+
+/obj/item/gun/energy/sst/humility/preloaded/New()
+	cell = new /obj/item/cell/medium/moebius/high(src)
+	. = ..()
+	update_icon()
 
 /obj/item/gun/energy/sst/systemcost
 	name = "\"SST System Cost\" light machinegun"

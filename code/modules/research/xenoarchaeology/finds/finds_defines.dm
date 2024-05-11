@@ -124,15 +124,35 @@
 			return "carbon"
 	return "plasma"
 
-//see /turf/simulated/mineral/New() in code/modules/mining/mine_turfs.dm
-/proc/get_random_digsite_type(Z)
-	switch (Z)
-		if (2, 3, 4) return DIGSITE_HOUSE // all colony besides mines
-		if (8, 9) return DIGSITE_TECHNICAL //deep jungle
-		if (10) return DIGSITE_TEMPLE // swamp
-		if (15, 16) return pick(50;DIGSITE_GARDEN, 50;DIGSITE_ANIMAL) // hunter field
-		if (17, 18, 19, 20, 21) return DIGSITE_WAR // scrap haven
-		else return pick(100;DIGSITE_GARDEN,95;DIGSITE_ANIMAL,90;DIGSITE_HOUSE,85;DIGSITE_TECHNICAL,80;DIGSITE_TEMPLE,75;DIGSITE_WAR)
+/*
+	see /turf/simulated/mineral/New() in code/modules/mining/mine_turfs.dm
+	Uses map_data files from the map section to determine xenoarch digsite spawns.
+	Is fed the Z level and mapdata list from xenoarch subsystem.
+*/
+/proc/get_digsite_type(Z, Maps)
+	var/obj/map_data/map_found = null
+	for(var/obj/map_data/MD in Maps)
+		if (map_found != null)
+			continue
+		if (Z == MD.z)
+			map_found = MD
+			continue
+		while(Z >= 1 && !map_found)
+			Z--
+			if (Z == MD.z)
+				map_found = MD
+				continue
+	if (map_found.digsites != null)
+		switch (map_found.digsites)
+			if ("GARDEN") return DIGSITE_GARDEN
+			if ("ANIMAL") return DIGSITE_ANIMAL
+			if ("HOUSE") return DIGSITE_HOUSE
+			if ("TECHNICAL") return DIGSITE_TECHNICAL
+			if ("TEMPLE") return DIGSITE_TEMPLE
+			if ("WAR") return DIGSITE_WAR
+			if ("ANY") return pick(100;DIGSITE_GARDEN,95;DIGSITE_ANIMAL,90;DIGSITE_HOUSE,85;DIGSITE_TECHNICAL,80;DIGSITE_TEMPLE,75;DIGSITE_WAR)
+			else return DIGSITE_GARDEN
+	else return DIGSITE_GARDEN//safty catch just in case.
 
 /proc/get_random_find_type(var/digsite)
 

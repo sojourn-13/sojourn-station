@@ -5,7 +5,7 @@
 /obj/item/gun/projectile/automatic/chaingun
 	name = "\"Fenrir\" heavy chaingun"
 	desc = "A massive single-barrel chaingun originally intended as a vehicle mounted weapon. Refitted for and commonly seen with SolFed powered infantry, it's a devastating tool for removing those stubborn stains on the universe. \
-	It is chambered in 8.6x70mm and has feeding systems for drums and linkless ammunition boxes. This one is fitted with a tactical sight and a gyrostabilizer. A weapon fit to slay even the hordes of Hell."
+	It is chambered in 8.6x70mm and has feeding systems for both drums and linked ammunition boxes. This one is fitted with a tactical sight and a gyrostabilizer. A weapon fit to slay even the hordes of Hell."
 	icon = 'icons/obj/guns/projectile/chaingun.dmi'
 	var/icon_base
 	icon_base = "gpmg"
@@ -21,7 +21,7 @@
 	caliber = CAL_HRIFLE
 	tac_reloads = FALSE
 	penetration_multiplier = 0.85
-	damage_multiplier = 1
+	damage_multiplier = 1.2
 	slowdown = 0.15
 	matter = list(MATERIAL_PLASTEEL = 50, MATERIAL_PLASTIC = 20)
 	price_tag = 2500
@@ -32,7 +32,9 @@
 	twohanded = TRUE
 	zoom_factors = list(0.4)
 	slowdown_hold = 1 //Heavy massive gun, slow down
-	init_recoil = HMG_RECOIL(1.3)
+	init_recoil = HMG_RECOIL(0.9)
+	blacklist_upgrades = list(/obj/item/tool_upgrade/refinement/stabilized_grip = TRUE,
+							  /obj/item/tool_upgrade/refinement/laserguide = TRUE) // Can't upgrade what it already has built in.
 	init_firemodes = list(
 		FULL_AUTO_600,
 		list(mode_name="hyper-burst", mode_desc = "Short, rapid shot 3 round burst to stop any unarmed target", burst=3,    burst_delay=0.3, move_delay=2,  icon="burst"),
@@ -43,6 +45,7 @@
 
 	wield_delay = 2.5 SECOND
 	wield_delay_factor = 0.6 // 60 vig , holy shit big gun
+	gun_parts = list(/obj/item/part/gun = 4, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/hrifle = 1)
 
 /obj/item/gun/projectile/automatic/chaingun/special_check(mob/user)
 	if(cover_open)

@@ -121,14 +121,13 @@
 
 /obj/random/scrap/beacon/sparse_weighted/item_to_spawn()
 		return pickweight(list(
-						/obj/structure/scrap/poor = 120,
-						/obj/structure/scrap = 40,
-						/obj/structure/scrap/science = 12,
-						/obj/structure/scrap/vehicle = 18,
+						/obj/structure/scrap/poor = 125,
+						/obj/structure/scrap = 50,
+						/obj/structure/scrap/science = 10,
+						/obj/structure/scrap/vehicle = 7,
 						/obj/structure/scrap/cloth = 5,
-						/obj/structure/scrap/guns = 10
+						/obj/structure/scrap/guns = 3
 					))
-
 
 
 /obj/random/scrap/beacon/moderate_weighted
@@ -136,10 +135,9 @@
 
 /obj/random/scrap/beacon/moderate_weighted/item_to_spawn()
 		return pickweight(list(
-						/obj/random/scrap/beacon/sparse_weighted = 2,
-						/obj/random/scrap/beacon/dense_weighted = 1
+						/obj/random/scrap/beacon/sparse_weighted = 9,
+						/obj/random/scrap/beacon/dense_weighted = 1,
 					))
-
 
 
 /obj/random/scrap/beacon/dense_weighted

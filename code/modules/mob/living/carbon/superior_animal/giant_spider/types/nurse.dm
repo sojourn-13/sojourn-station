@@ -9,8 +9,8 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes."
 	icon_state = "nurse"
 	icon_living = "nurse"
-	maxHealth = 40
-	health = 40
+	maxHealth = 30
+	health = 30
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	poison_per_bite = 2
@@ -32,8 +32,8 @@
 	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes and purple stripes on the back."
 	icon_state = "midwife"
 	icon_living = "midwife"
-	maxHealth = 60
-	health = 60
+	maxHealth = 50
+	health = 50
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	poison_per_bite = 4
@@ -45,8 +45,8 @@
 	desc = "Furry and white, it makes you shudder to look at it. This one has brilliant blue eyes and a pale cold body."
 	icon_state = "nurse_E"
 	icon_living = "nurse_E"
-	maxHealth = 140 // Slow but tanky
-	health = 140
+	maxHealth = 100 // Slow but tanky
+	health = 100
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	poison_per_bite = 4
@@ -88,15 +88,15 @@
 	icon_living = "webslinger"
 	emote_see = list("chitters.","rubs its legs.","trails webs through its hairs.","screeches.","bounces happily in place!")
 	web_activity = 70
-	armor = list(melee = 15, bullet = 10, energy = 5, bomb = 5, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 15, bullet = 10, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 
 /mob/living/carbon/superior_animal/giant_spider/nurse/recluse
 	name = "recluse spider"
 	desc = "Furry and brown, it makes you shudder to look at it. This one has brilliant green eyes and light brown skin."
 	icon_state = "recluse"
 	icon_living = "recluse"
-	maxHealth = 20
-	health = 20
+	maxHealth = 15
+	health = 15
 	poison_per_bite = 1 //1u is all it takes to sleep you, your asleep also dosnt prevet it form attacking you more then once meaning this quit quickly stacks without someones help
 	melee_damage_lower = 3
 	melee_damage_upper = 5
@@ -114,8 +114,8 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "spider_queen"
 	icon_living = "spider_queen"
-	maxHealth = 400
-	health = 400
+	maxHealth = 200
+	health = 200
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	poison_per_bite = 4
@@ -126,7 +126,7 @@
 	egg_inject_chance = 10 //Likely
 	//Giving the queen her own meat type which contains MENACE.
 	mob_size = MOB_LARGE
-	armor = list(melee = 15, bullet = 10, energy = 5, bomb = 5, bio = 10, rad = 25, agony = 0)
+	armor = list(melee = 15, bullet = 0, energy = 0, bomb = 5, bio = 10, rad = 25, agony = 0)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_SPIDER_FRIEND, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE, MUTATION_RAND_UNSTABLE)
 	armor_penetration = 35
 
@@ -261,7 +261,7 @@
 									else
 										src.visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out."))
 										M.drip_blood(200)
-										M.adjustToxLoss(200)
+										M.adjustToxLoss(6)
 										M.adjustOxyLoss(200)
 										M.adjustBrainLoss(60)
 										M.updatehealth()

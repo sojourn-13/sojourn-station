@@ -48,28 +48,32 @@
 	In future, we will implement largescale missions and research contracts to earn money, and then set it
 	to a much lower starting value
 	*/
-	account_initial_balance = 50000
+	account_initial_balance = 57800 //50k for emergencies, 7800 for the wages if both have nepotism to last 5 hour shift if it comes to it, shouldn't ever need any more.
 	jobs_in_department = list("/datum/job/premier","/datum/job/pg")
+
 /*************
 	Retainers
 **************/
-//These departments are paid out of ship funding
+//These departments are paid out of colony funding
 /datum/department/ironhammer
-	name = "Marshal and Blackshield Division"
+	name = "Nadezhda Marshals"
 	id = DEPARTMENT_SECURITY
-	//This is balanced around full team in 6 hours with nepitism
-	//Without nepitsm a full team 27000 in 6 hours
-	//With nepitsm a full team 35100 in 6 hours
-	account_initial_balance = 50000 //+15k~ do to being state funded
-	jobs_in_department = list("/datum/job/smc","/datum/job/swo","/datum/job/supsec","/datum/job/serg","/datum/job/inspector","/datum/job/medspec","/datum/job/trooper","/datum/job/officer")
+	//With nepotism a full team 21 125 in 5 hours
+	account_initial_balance = 25000 //Required to run a full roster with nepotism and almost 4k for expenses.
+	jobs_in_department = list("/datum/job/swo","/datum/job/supsec","/datum/job/inspector","/datum/job/officer")
 
+/datum/department/blackshield
+	name = "Blackshield Division"
+	id = DEPARTMENT_BLACKSHIELD
+	//With nepotism a full team 21 125 in 5 hours
+	account_initial_balance = 21200 //Required to run full roster with nepotism and basically nothing else.
+	jobs_in_department = list("/datum/job/smc","/datum/job/serg","/datum/job/medspec","/datum/job/trooper")
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
 	id = DEPARTMENT_ENGINEERING
-	account_initial_balance = 25000 //+15k~ do to being state funded
-	//Full team with nepitsm in 6 hours is 11900
-	//A full crew GM + 4 adpets is 1700 an hour, takes 10~ hours to drain the department funds
+	account_initial_balance = 17000 //17000 to cover some expenses but not that much
+	//Full team with nepotism in 5 hours is 15600
 	jobs_in_department = list("/datum/job/chief_engineer","/datum/job/technomancer")
 
 
@@ -87,25 +91,22 @@
 /datum/department/moebius_medical
 	name = "Soteria Institution: Medical Division"
 	id = DEPARTMENT_MEDICAL
-	//18600 in 6 hours with full crew
-	//24180 in 6 hours with full crew + nep
-	account_initial_balance = 30000 //5~k For buying medical and items and payments
+	//30225 in 5 hours with full crew + nepotism
+	account_initial_balance = 30250 //Covers crew-cost. Rest should be made up for by medical fees and chem sales.
 	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/recovery_team","/datum/job/psychiatrist")
 
 /datum/department/moebius_research
 	name = "Soteria Institution: Research Division"
 	id = DEPARTMENT_SCIENCE
-	//15000 in 6 hours with full crew
-	//19500 in 6 hours with full crew + nepitism
-	account_initial_balance = 20000 //+10k~ For buying materials and components and things of scientific value as well as pay the demanding staff
+	//24375 in 5 hours with full crew + nepotism
+	account_initial_balance = 24500 //Covers wages of employees. Sell posis and whatever else to make up for material cost.
 	jobs_in_department = list("/datum/job/rd","/datum/job/scientist","/datum/job/roboticist")
 
 /datum/department/church
 	name = "Church of Absolute"
 	id = DEPARTMENT_CHURCH
-	//9600 in 6 hours with full crew
-	//12480 with all nep in 6 hours
-	account_initial_balance = 25000 //Materals, and they are the faith, they donate and get a lot to the colony thus they have a lot to spend
+	account_initial_balance = 17000 //17000 to cover some expenses but not that much
+	//Full team with nepotism in 5 hours is 15600
 	jobs_in_department = list ("/datum/job/chaplain","/datum/job/acolyte")
 
 /******************
@@ -123,22 +124,31 @@
 	if you manage to get this variable refferenced there you're a better man than me. godspeed
 	*/
 	//Note: LSS isnt accounted for wages when starting money as they have the easyest ways to make money
-	account_initial_balance = 25000 //has a lot of workers thus needs a higher starting to off-set its paychecks if no one actively runs the cargo shuttle
+	account_initial_balance = 18200 //Has a lot of workers to pay - but their /entire/ job is literally to make money. Should cover the base nessessities of hourly payment.
 	jobs_in_department = list("/datum/job/merchant","/datum/job/cargo_tech","/datum/job/mining")
 
 /datum/department/prospector
 	name = "Prospectors"
 	id = DEPARTMENT_PROSPECTOR
-	//Full team in 6 hours is 6600
-	//Full team with Nep in 6 hours is 6600
-	//Nep in 6 hours with full team is 8580
-	account_initial_balance = 12500 //5k+6~hours of work. should be good for them to make money
-	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro")
+	//With only the Foreman currently being paid, after 8 hours, it totals to 4800 of payment, leaving an ample 1700 left.
+	account_initial_balance = 6500 //With how Prospectors no longer get paid, they no longer need such an inflated department balance
+	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro","/datm/job/fence")
 
 /datum/department/independent
 	name = "Independent Allied Factions"
 	id = DEPARTMENT_INDEPENDENT
-	jobs_in_department = list("/datum/job/off_colony_hunt_master","/datum/job/off_colony_hunter","/datum/job/off_colony_herbalist","/datum/job/outsider","/datum/job/assistant")
+	jobs_in_department = list("/datum/job/outsider","/datum/job/assistant","/datum/job/foreigner")
+
+/datum/department/lodge
+	name = "Lodge"
+	id = DEPARTMENT_LODGE
+	jobs_in_department = list("/datum/job/off_colony_hunt_master","/datum/job/off_colony_hunter","/datum/job/off_colony_herbalist")
+
+/datum/department/greyson_positronic
+	name = "Greyson Positronic"
+	id = DEPARTMENT_GREYSON
+	jobs_in_department = list()
+
 
 ///////////////////////DEPARTMENT EXPERIENCE PERKS//////////////////////////////////////////
 
@@ -228,6 +238,10 @@
 /datum/perk/experienced/shitcurity
 	name = "Experienced: Shitcurity"
 	dept = DEPARTMENT_SECURITY
+
+/datum/perk/experienced/blokeshield
+	name = "Experienced: Friendly Fire Militia"
+	dept = DEPARTMENT_BLACKSHIELD
 
 /datum/perk/experienced/unaligned
 	name = "Experienced: Other"

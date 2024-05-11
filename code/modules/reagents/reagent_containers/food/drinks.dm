@@ -88,16 +88,13 @@
 	if(is_drainable())
 		if(ishuman(usr))
 			var/mob/living/carbon/human/H = usr
-			if(!H.check_has_mouth())
-				to_chat(H, "Where do you intend to put \the [src]? You don't have a mouth!")
-				return
 			var/obj/item/blocked = H.check_mouth_coverage()
 			if(blocked)
 				to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
 				return
 
 		if(reagents.total_volume > 30) // 30 equates to 3 SECONDS.
-			usr.visible_message(SPAN_NOTICE("[usr] prepares to gulp down [src]."), SPAN_NOTICE("You prepare to gulp down [src]."))
+			usr.visible_message(SPAN_NOTICE("[usr] prepares to gulp down [src]."), SPAN_NOTICE("You prepare to gulp down \the [src]."))
 		if(!do_after(usr, reagents.total_volume))
 			standard_splash_mob(usr, usr)
 			return
@@ -105,7 +102,7 @@
 		if(!Adjacent(usr))
 			return
 
-		usr.visible_message(SPAN_NOTICE("[usr] gulped down the whole [src]!"),SPAN_NOTICE("You gulped down the whole [src]!"))
+		usr.visible_message(SPAN_NOTICE("[usr] gulped down the whole \the [src]!"),SPAN_NOTICE("You gulped down the whole \the [src]!"))
 		reagents.trans_to_mob(usr, reagents.total_volume, CHEM_INGEST)
 		feed_sound(usr)
 	else
@@ -194,6 +191,14 @@
 		icon_state = "coffee"
 	else
 		icon_state = "cup"
+
+/obj/item/reagent_containers/food/drinks/os_coffee
+	name = "Hot Black Water"
+	desc = "A bottle of likely coffee..."
+	icon_state = "oscoffee"
+	center_of_mass = list("x"=15, "y"=10)
+	base_icon = "oscup"
+	preloaded_reagents = list("coffee" = 30)
 
 /obj/item/reagent_containers/food/drinks/ice
 	name = "Northern Freeze"

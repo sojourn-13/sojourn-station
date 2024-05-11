@@ -16,7 +16,7 @@
 	if (isnull(target))
 		return
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility()) //Doesn't use the normal check possibility flags since we want it to work on dead people
 		if(target.psi_blocking >= 10)
 			owner.stun_effect_act(0, target.psi_blocking * 5, BP_HEAD)
 			owner.weakened = target.psi_blocking

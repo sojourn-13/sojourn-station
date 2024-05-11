@@ -4,6 +4,9 @@
 	desc = "Looking at this makes you feel nervous."
 	organ_efficiency = list(OP_NERVE = 100)
 	price_tag = 100
+	max_damage = IORGAN_TINY_HEALTH
+	min_bruised_damage = IORGAN_TINY_BRUISE
+	min_broken_damage = IORGAN_TINY_BREAK
 	specific_organ_size = 1
 	blood_req = 0.5
 	max_blood_storage = 2.5
@@ -23,7 +26,7 @@
 
 
 //Handle NSA changing due to organ damage
-/obj/item/organ/internal/nerve/take_damage(amount, silent)
+/obj/item/organ/internal/nerve/take_damage(amount, silent, sharp = FALSE, edge = FALSE)
 	..(amount, silent)
 	owner.metabolism_effects.calculate_nsa(TRUE)
 
@@ -51,7 +54,7 @@
 	name = "exalt nerve synapses"
 	desc = "Extra sensitive to poorness. This exalted organ is bigger and more complex than standard nerves.\
 	Likely worth more on the black market."
-	organ_efficiency = list(OP_NERVE = 120)
+	organ_efficiency = list(OP_NERVE = 105)
 	price_tag = 125
 
 /obj/item/organ/internal/nerve/sensitive_nerve/exalt_leg

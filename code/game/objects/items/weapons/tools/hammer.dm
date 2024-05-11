@@ -16,6 +16,14 @@
 	damage_mult = 2
 	hitsound = 'sound/weapons/smash.ogg'
 
+	has_alt_mode = TRUE
+	alt_mode_damagetype = HALLOSS
+	alt_mode_sharp = FALSE
+	alt_mode_verbs = list("bashes", "stunts", "wacks", "blunts")
+	alt_mode_toggle = "loosens their grip on the handle of their weapon"
+	alt_mode_lossrate = 0.4
+
+
 /obj/item/tool/hammer/deadblow
 	name = "deadblow hammer"
 	desc = "Used for applying blunt force to a surface. This one has sand inside its plasteel head to help do strikes much more constantly in the same place with the same force well reducing trama onto soft surfaces."
@@ -55,14 +63,14 @@
 
 /obj/item/tool/hammer/powered_hammer/turn_on(mob/user)
 
-	if (cell && cell.charge > 0)
+	if (cell && cell.charge >= 1)
 		item_state = "[initial(item_state)]_on"
 		to_chat(user, SPAN_NOTICE("You switch [src] on."))
 		playsound(loc, 'sound/effects/sparks4.ogg', 50, 1)
 		..()
 	else
 		item_state = initial(item_state)
-		to_chat(user, SPAN_WARNING("[src] has no power!"))
+		to_chat(user, SPAN_WARNING("[src]'s battery is dead or missing."))
 
 /obj/item/tool/hammer/powered_hammer/turn_off(mob/user)
 	item_state = initial(item_state)
@@ -88,6 +96,7 @@
 	use_power_cost = 1.5
 	workspeed = 1.5
 	max_upgrades = 2
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/hammer/foremansledge
 	name = "foreman's sledgehammer"
@@ -141,10 +150,7 @@
 	structure_damage_factor = STRUCTURE_DAMAGE_BORING
 	tool_qualities = list(QUALITY_HAMMERING = 40, QUALITY_PRYING = 1)
 	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 15)
-
-/obj/item/tool/hammer/ironhammer/attack()
-	..()
-	usr.setClickCooldown(DEFAULT_LONG_COOLDOWN)
+	clickdelay_offset = DEFAULT_LONG_COOLDOWN
 
 /obj/item/tool/hammer/mace
 	name = "mace"
@@ -173,6 +179,28 @@
 	degradation = 5 //This one breaks REALLY fast
 	max_upgrades = 5 //all makeshift tools get more mods to make them actually viable for mid-late game
 
+/obj/item/tool/hammer/makeshift_staff
+	name = "makeshift staff"
+	desc = "Three rods, some duct tape and a lot of bloodlust give you this."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "makeshift_staff"
+	item_state = "makeshift_staff"
+	wielded_icon = "makeshift_staff_wielded"
+	tool_qualities = list(QUALITY_HAMMERING = 5)
+	matter = list(MATERIAL_STEEL = 3)
+	max_upgrades = 3
+	armor_penetration = ARMOR_PEN_GRAZING
+	force = WEAPON_FORCE_PAINFUL
+	w_class = ITEM_SIZE_HUGE
+
+/obj/item/tool/hammer/dumbbell
+	name = "dumbbell"
+	desc = "To get stronger with this thing, you need to regularly train for many a month. But to hammer a nail, or crack a skull..."
+	icon_state = "dumbbell"
+	item_state = "dumbbell"
+	tool_qualities = list(QUALITY_HAMMERING = 15)
+	matter = list(MATERIAL_STEEL = 5)
+
 /obj/item/tool/hammer/charge
 	name = "rocket hammer"
 	desc = "After many issues with scientists trying to hammer a nail, one bright individual wondered what could be achieved by attaching a stellar-grade ship engine to the back."
@@ -196,7 +224,7 @@
 
 /obj/item/tool/hammer/charge/turn_on(mob/user)
 
-	if (cell && cell.charge > 0)
+	if (cell && cell.charge >= 1)
 		item_state = "[initial(item_state)]-on"
 		icon_state = "[initial(icon_state)]_on"
 		if(wielded)
@@ -206,7 +234,7 @@
 		..()
 	else
 		item_state = initial(item_state)
-		to_chat(user, SPAN_WARNING("[src] has no power!"))
+		to_chat(user, SPAN_WARNING("[src]'s battery is dead or missing."))
 
 /obj/item/tool/hammer/charge/turn_off(mob/user)
 	item_state = initial(item_state)

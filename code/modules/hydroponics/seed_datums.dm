@@ -354,7 +354,7 @@
 	seed_name = "ambrosia omni"
 	display_name = "ambrosia omni"
 	mutants = null
-	evolutions = list("ambrosiapanacea")
+	evolutions = list("ambrosiapanacea"=list("cronexidone"))
 	chems = list("nutriment"=list(1), "tricordrazine"=list(1,10), "anti_toxin"=list(1,10), "bicaridine"=list(2), "dexalinp"=list(2), "kelotane"=list(2),"copper"=list(2),"stoxin"=list(2))
 
 /datum/seed/ambrosia/omni/New()
@@ -368,7 +368,7 @@
 	display_name = "ambrosia panacea"
 	mutants = null
 	evolutions = null
-	chems = list("nutriment"=list(1), "cronexidone"=list(5), "cordradaxon"=list(5,20),"peridaxon"=list(5,20),"respiradoxon"=list(5,20),"vermicetol"=list(5,20),"rezadone"=list(5,20),"quickclot"=list(5,20),"ossissine"=list(5,20))
+	chems = list("nutriment"=list(1), "cronexidone"=list(5), "cordradaxon"=list(5,20),"peridaxon"=list(5,20),"respirodaxon"=list(5,20),"vermicetol"=list(5,20),"rezadone"=list(5,20),"quickclot"=list(5,20),"flossisine"=list(5,20))
 	exude_gasses = list("sleeping_agent" = 4)
 
 /datum/seed/ambrosia/panacea/New()
@@ -393,7 +393,7 @@
 	seed_name = "ambrosia infernum"
 	display_name = "ambrosia infernum"
 	mutants = null
-	evolutions = list("ambrosiadiablos" = list("aluminum"))
+	evolutions = list("ambrosiadiablos"=list("aluminum"))
 	chems = list("plasma" = list(5,20), "fuel" = list(5,20), "acetone" = list(1,25), "space_drugs" = list(1))
 	exude_gasses = list("plasma"=1)
 
@@ -708,8 +708,8 @@
 		"water",
 		"potassium",
 		"plasticide",
-		"mutationtoxin",
-		"amutationtoxin",
+		//"mutationtoxin",
+		//"amutationtoxin",
 		"inaprovaline",
 		"space_drugs",
 		"paroxetine",
@@ -1353,7 +1353,7 @@
 	set_trait(TRAIT_WATER_CONSUMPTION, 0.5)
 
 /datum/seed/shand
-	name = "shand"
+	name = "mercy's hand"
 	seed_name = "mercy's hand"
 	display_name = "mercy's hand leaves"
 	chems = list("bicaridine" = list(1,10), "anti_toxin" = list(1,10))
@@ -1373,7 +1373,7 @@
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
 
 /datum/seed/mtear
-	name = "mtear"
+	name = "sun tear"
 	seed_name = "sun tear"
 	display_name = "sun tear leaves"
 	chems = list("honey" = list(1,10), "kelotane" = list(3,5))
@@ -1389,6 +1389,28 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#4CC5C7")
 	set_trait(TRAIT_PLANT_COLOUR,"#4CC789")
 	set_trait(TRAIT_PLANT_ICON,"bush7")
+	set_trait(TRAIT_IDEAL_HEAT, 283)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+/datum/seed/broot
+	name = "blood root"
+	seed_name = "blood root"
+	display_name = "blood root"
+	chems = list("nutriment" = list(1,10), "sanguinum" = list(3,5))
+	kitchen_tag = "broot"
+
+/datum/seed/broot/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_JUICY,1)
+	set_trait(TRAIT_MATURATION,5)
+	set_trait(TRAIT_PRODUCTION,4)
+	set_trait(TRAIT_YIELD,4)
+	set_trait(TRAIT_POTENCY,10)
+	set_trait(TRAIT_PRODUCT_ICON,"broot")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#FA1414")
+	set_trait(TRAIT_PLANT_COLOUR,"#F1F2E9")
+	set_trait(TRAIT_PLANT_ICON,"stalk4")
 	set_trait(TRAIT_IDEAL_HEAT, 283)
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
 
@@ -1487,10 +1509,11 @@
 	set_trait(TRAIT_POTENCY,1)
 
 /datum/seed/vale
-	name = "vale"
+	name = "vale bush"
 	seed_name = "vale bush"
 	display_name = "vale bush"
 	chems = list("paracetamol" = list(1,5),"dexalin" = list(1,2),"nutriment"= list(1,5))
+	kitchen_tag = "vbush"
 
 /datum/seed/vale/New()
 	..()

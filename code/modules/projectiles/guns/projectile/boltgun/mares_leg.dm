@@ -23,6 +23,8 @@
 	name = "\"Bounty\" repeating shotgun"
 	desc = "A training shotgun turned into a workhorse. The Bounty was a Blackshield training shotgun for their bolt cycling training, now modified and repurposed to fire slug and buckshot shells. When used in close quarters with Blackshield's training, a trooper can clear a whole room full of bugs in seconds."
 	icon = 'icons/obj/guns/projectile/bounty.dmi'
+	damage_multiplier = 1.1
+	penetration_multiplier = 0.7
 	icon_state = "bounty"
 	item_state = "bounty"
 	price_tag = 950

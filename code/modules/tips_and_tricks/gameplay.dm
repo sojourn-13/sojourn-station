@@ -14,6 +14,9 @@
 /tipsAndTricks/gameplay/fightBlob_two
     tipText = "Blobs are shockingly weak to flashbangs, and smoke grenade. Make good use of them in cases were a blob is overrunning the colony."
 
+/tipsAndTricks/gameplay/maskProtections
+    tipText = "Balaclavas, surgical masks, and other masks provide a buff to your sanity protection. Perfect for operators, thieves, and people afraid of disease!."
+
 /tipsAndTricks/gameplay/fuhrerRoachReinforcement
     tipText = "The Fuhrer roach can call for an entire battalion of reinforcement roaches. If you hear it scream, RUN!"
 
@@ -57,10 +60,7 @@
     tipText = "Are you going into danger or risking yourself in combat? Maybe hire a colonist as a body guard or medic. It might just make their day to be useful for once."
 
 /tipsAndTricks/gameplay/guncases
-    tipText = "Gun cases are large and unwieldy but great for transporting rifles and certain weapons in a legal way. Security can supply you with one from their vendor or armory shop!"
-
-/tipsAndTricks/gameplay/newscasters_can_be_maintaind
-    tipText = "Newscasters have limited stock that can be refilled by refitting back in printed news papers."
+    tipText = "Gun cases are large and unwieldy but great for transporting rifles and certain weapons. Security can supply you with one from their vendor or armory shop!"
 
 /tipsAndTricks/gameplay/flashlights_fit_in_baton_holsters
     tipText = "Tubular and Baton Holsters can fit many things inside them, from flashlights to hatton tubes try to fit just about anything inside them to learn what can and cant fit."
@@ -73,5 +73,17 @@
 
 /tipsAndTricks/gameplay/fighting_slimes_two
     tipText = "Slimes are weaker to cold than heat. You can use frost oil or bullets to greater affect, while lasers and pepper spray only make a slime stronger!"
+
+/tipsAndTricks/gameplay/hauling
+    tipText = "You can control+click tiles which you are not standing on to move every item on said tile to yours. Take advantage of this to gather large amounts of spread out resources, or just to help clean up."
+
+/tipsAndTricks/gameplay/survivalism
+    tipText = "If you're hurt in the wilderness, some red-flowers can yield poppys if a knife is used on them. Poppys contain a small amount of brute healing meds."
+
+/tipsAndTricks/gameplay/sinks
+    tipText = "you can alt-click a sink with a container to pour the reagents down the drain."
+
+/tipsAndTricks/gameplay/sinks
+    tipText = "if you spill all the bullets out of an ammobox, you can click the tile they're on with their box to scoop them back up"
 
 

@@ -425,7 +425,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		emagged = TRUE
 		locked = FALSE
 		enabled = FALSE //turns off the turret temporarily
-		spawn(60) //6 seconds for the traitor to gtfo of the area before the turret decides to ruin his shit
+		spawn(60) //6 seconds for the contractor to gtfo of the area before the turret decides to ruin his shit
 			enabled = TRUE //turns it back on.
 		return TRUE
 
@@ -524,19 +524,14 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	if(get_dist(src, L) > firing_range)	//if it's too far away, why bother?
 		return TURRET_NOT_TARGET
 
-	/*
 	if(colony_allied_turret && L.colony_friend) //Dont target colony pets if were allied with them
 		return TURRET_NOT_TARGET
 
 	if(!colony_allied_turret && !L.colony_friend) //If were not allied to the colony we dont attack anything thats against the colony
 		return TURRET_NOT_TARGET
 
-	if(!colony_allied_turret && L.colony_friend) //If were not allied with the colony we attack them and their pets
+	if(colony_allied_turret ^ L.colony_friend) //If were allied with the colony and we attack things that are not are pets
 		return TURRET_SECONDARY_TARGET
-
-	if(colony_allied_turret && !L.colony_friend) //If were allied with the colony and we attack things that are not are pets
-		return TURRET_SECONDARY_TARGET
-	*/
 
 	if(issilicon(L))
 		if(check_synth) // Destroy all impure inhumane detestable irredeemable robots.
@@ -622,10 +617,13 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		sleep(shot_delay)
 		last_fired = FALSE
 
+	var/power = min(apc.terminal.powernet.avail*0.25, damage_cap * power_damage_ratio)
+	//message_admins("Tesla Turret Power:[power]| apc.terminal.powernet.avail [apc.terminal.powernet.avail]")
 
-	var/power = min(apc.terminal.powernet.avail/2, damage_cap * power_damage_ratio) //Drains based on ALL available power on an APC's grid
-	current_power_area.removeStaticPower(power, power_channel)
-	//apc.terminal.powernet.draw_power(power) //Alternative if it doesn't draw enough
+	if(power <= 0)
+		return
+
+	apc.terminal.powernet.draw_power(power)
 	playsound(src, 'sound/effects/lightningshock.ogg', 100, 1, extrarange = 5)
 
 	// The actual Zap

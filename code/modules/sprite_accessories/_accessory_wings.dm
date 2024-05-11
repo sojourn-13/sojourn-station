@@ -58,6 +58,13 @@
 	colored_layers = 1
 	blend = ICON_MULTIPLY
 
+/datum/sprite_accessory/wings/dragonfold
+	name = "Dragon Wings Folded"
+	desc = ""
+	icon_state = "dragonfold"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
+
 /datum/sprite_accessory/wings/dragonfly
 	name = "Dragonfly Wings"
 	desc = ""
@@ -97,6 +104,8 @@
 	name = "Gazer Eyestalks"
 	desc = ""
 	icon_state = "eyestalk"
+	colored_layers = 2
+	blend = ICON_MULTIPLY
 
 /datum/sprite_accessory/wings/harpywings
 	name = "Harpy Wings"

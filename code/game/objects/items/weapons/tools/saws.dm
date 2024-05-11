@@ -31,6 +31,7 @@
 	max_upgrades = 2
 	workspeed = 1.2
 	price_tag = 500 //Still just a saw.
+	allow_greyson_mods = TRUE
 
 /obj/item/tool/saw/improvised
 	name = "choppa"
@@ -60,7 +61,7 @@
 /obj/item/tool/saw/circular/medical
 	name = "medical circular saw"
 	desc = "For clean bone cutting but doesn't seem all that durable. Spins slower than the normal saw to allow for higher surgical precision."
-	icon_state = "saw"
+	icon_state = "saw_medical"
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 4, MATERIAL_PLASTEEL = 2)
 	tool_qualities = list(QUALITY_SAWING = 60, QUALITY_CUTTING = 40, QUALITY_WIRE_CUTTING = 40)
@@ -68,6 +69,9 @@
 	degradation = 2.65
 	suitable_cell = /obj/item/cell/small
 	price_tag = 290
+
+/obj/item/tool/saw/circular/medical/si
+	icon_state = "saw_si"
 
 /obj/item/tool/saw/circular/advanced
 	name = "advanced circular saw"
@@ -116,8 +120,10 @@
 	name = "TM hypersaw"
 	desc = "This eco-friendly chainsaw will Rip and Tear until it is done."
 	icon_state = "hypersaw"
+	item_state = "hypersaw"
 	switched_on_item_state = "hypersaw"
 	switched_on_icon_state = "hypersaw"
+	wielded_icon = "hypersaw_on"
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
 	force = WEAPON_FORCE_WEAK
@@ -136,17 +142,17 @@
 	price_tag = 720
 
 /obj/item/tool/saw/hyper/turn_on(mob/user)
-	if (cell && cell.charge > 0)
+	if (cell && cell.charge >= 1)
 		item_state = "[initial(item_state)]_on"
 		to_chat(user, SPAN_NOTICE("You rev up the [src]."))
 		playsound(loc, 'sound/items/chainsaw_on.ogg', 40)
 		..()
-	else
+
+	else if (!cell || cell.charge <= 0)
 		item_state = initial(item_state)
-		to_chat(user, SPAN_WARNING("[src] has no power!"))
+		to_chat(user, SPAN_WARNING("[src]'s battery is dead or missing."))
 
 /obj/item/tool/saw/hyper/turn_off(mob/user)
-	item_state = initial(item_state)
 	playsound(loc, 'sound/items/chainsaw_off.ogg', 80)
 	to_chat(user, SPAN_NOTICE("You turn the [src] off."))
 	..()

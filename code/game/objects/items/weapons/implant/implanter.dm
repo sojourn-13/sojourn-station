@@ -1,5 +1,6 @@
 /obj/item/implanter
 	name = "implanter"
+	desc = "An implanter that allows safe and hygienic implant implantation even to untrained personel"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "implanter"
 	item_state = "syringe_0"

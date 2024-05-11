@@ -47,6 +47,7 @@
 	path = /obj/item/clothing/mask/gas/bigguy
 	slot = slot_wear_mask
 	cost = 2
+	flags= GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/clothing/mask/costume/history/plaguedoctor
 	display_name = "Plague Doctor mask"

@@ -7,6 +7,7 @@ var/list/department_radio_keys = list(
 	"c" = "Command",
 	"n" = "Science",
 	"m" = "Medical",
+	"j" = "Medical(I)",
 	"e" = "Engineering",
 	"s" = "Marshal",
 	"b" = "Blackshield",
@@ -17,10 +18,10 @@ var/list/department_radio_keys = list(
 	"p" = "AI Private",
 	"t" = "Church",
 	"k" = "Prospector",
-	"1" = "Plasmatag B",
-	"2" = "Plasmatag R",
-	"3" = "Plasmatag Y",
-	"4" = "Plasmatag G"
+	"a" = "Plasmatag B",
+	"o" = "Plasmatag R",
+	"q" = "Plasmatag Y",
+	"z" = "Plasmatag G"
 )
 
 
@@ -62,7 +63,9 @@ var/list/channel_to_radio_key = new
 	return default_language
 
 /mob/living/proc/is_muzzled()
-	return 0
+	if(istype(src.wear_mask, /obj/item/clothing/mask/muzzle) || istype(src.wear_mask, /obj/item/grenade))
+		return TRUE
+	return FALSE
 
 /mob/living/proc/handle_speech_problems(var/message, var/verb)
 	var/list/returns[3]
@@ -127,7 +130,7 @@ var/list/channel_to_radio_key = new
 		if(stat == DEAD)
 			return say_dead(message)
 		else if(last_symbol=="@")
-			if(src.stats.getPerk(/datum/perk/codespeak))
+			if(src.stats.getPerk(PERK_CODESPEAK))
 				return
 			else
 				to_chat(src, "You don't know the codes, pal.")
@@ -299,7 +302,7 @@ var/list/channel_to_radio_key = new
 mob/proc/format_say_message(var/message = null)
 
 	///List of symbols that we dont want a dot after
-	var/list/punctuation = list("!","?",".")
+	var/list/punctuation = list("!","?",".","-","~")
 
 	///Last character in the message
 	var/last_character = copytext(message,length_char(message))

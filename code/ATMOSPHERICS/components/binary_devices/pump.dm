@@ -31,13 +31,35 @@ Thus, the two variables affect pump operation are set in New():
 	var/max_pressure_setting = 15000	//kPa
 
 	var/frequency = 0
-	var/id = null
+	var/id
 	var/datum/radio_frequency/radio_connection
 
 /obj/machinery/atmospherics/binary/pump/New()
 	..()
 	air1.volume = ATMOS_DEFAULT_VOLUME_PUMP
 	air2.volume = ATMOS_DEFAULT_VOLUME_PUMP
+
+/obj/machinery/atmospherics/binary/pump/AltClick(mob/user)
+	if(user.incapacitated(INCAPACITATION_ALL) || isghost(user) || !user.IsAdvancedToolUser())
+		return FALSE
+	if(get_dist(user , src) > 1)
+		return FALSE
+	target_pressure = max_pressure_setting
+	visible_message("[user] sets the [src]'s pressure setting to the maximum.",
+		"You hear a LED panel being tapped and slid upon.", 6)
+	investigate_log("had its pressure changed to [target_pressure] by [key_name(user)]", "atmos")
+	update_icon()
+
+/obj/machinery/atmospherics/binary/pump/CtrlClick(mob/user)
+	if(user.incapacitated(INCAPACITATION_ALL) || isghost(user) || !user.IsAdvancedToolUser())
+		return FALSE
+	if(get_dist(user , src) > 1)
+		return FALSE
+	use_power = !use_power
+	visible_message("[user] turns [use_power ? "on" : "off"] \the [src]'s valve.",
+	"You hear a valve being turned.", 6)
+	investigate_log("had its power status changed to [use_power] by [key_name(user)]", "atmos")
+	update_icon()
 
 /obj/machinery/atmospherics/binary/pump/on
 	icon_state = "map_on"
@@ -117,32 +139,6 @@ Thus, the two variables affect pump operation are set in New():
 
 	return 1
 
-/obj/machinery/atmospherics/binary/pump/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	if(stat & (BROKEN|NOPOWER))
-		return
-
-	// this is the data which will be sent to the ui
-	var/data[0]
-
-	data = list(
-		"on" = use_power,
-		"pressure_set" = round(target_pressure*100),	//Nano UI can't handle rounded non-integers, apparently.
-		"max_pressure" = max_pressure_setting,
-		"last_flow_rate" = round(last_flow_rate*10),
-		"last_power_draw" = round(last_power_draw),
-		"max_power_draw" = power_rating,
-	)
-
-	// update the ui if it exists, returns null if no ui is passed/found
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		// the ui does not exist, so we'll create a new() one
-		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "gas_pump.tmpl", name, 470, 290)
-		ui.set_initial_data(data)	// when the ui is first opened this is the data it will use
-		ui.open()					// open the new ui window
-		ui.set_auto_update(1)		// auto update every Master Controller tick
-
 /obj/machinery/atmospherics/binary/pump/atmos_init()
 	..()
 	if(frequency)
@@ -189,32 +185,8 @@ Thus, the two variables affect pump operation are set in New():
 		to_chat(user, SPAN_WARNING("Access denied."))
 		return
 	usr.set_machine(src)
-	nano_ui_interact(user)
+	ui_interact(user)
 	return
-
-/obj/machinery/atmospherics/binary/pump/Topic(href, href_list)
-	if(..()) return 1
-
-	if(href_list["power"])
-		investigate_log("was [use_power ? "disabled" : "enabled"] by a [key_name(usr)]", "atmos")
-		use_power = !use_power
-
-	switch(href_list["set_press"])
-		if ("min")
-			target_pressure = 0
-		if ("max")
-			target_pressure = max_pressure_setting
-		if ("set")
-			var/new_pressure = input(usr, "Enter new output pressure (0-[max_pressure_setting]kPa)", "Pressure control", src.target_pressure) as num
-			src.target_pressure = between(0, new_pressure, max_pressure_setting)
-	if(href_list["set_press"])
-		investigate_log("had it's pressure changed to [target_pressure] by [key_name(usr)]", "atmos")
-
-	playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
-	usr.set_machine(src)
-	src.add_fingerprint(usr)
-
-	src.update_icon()
 
 /obj/machinery/atmospherics/binary/pump/power_change()
 	var/old_stat = stat
@@ -226,12 +198,12 @@ Thus, the two variables affect pump operation are set in New():
 	if(!(QUALITY_BOLT_TURNING in I.tool_qualities))
 		return ..()
 	if (!(stat & NOPOWER) && use_power)
-		to_chat(user, SPAN_WARNING("You cannot unfasten this [src], turn it off first."))
+		to_chat(user, SPAN_WARNING("You cannot unwrench this [src], turn it off first."))
 		return 1
 	var/datum/gas_mixture/int_air = return_air()
 	var/datum/gas_mixture/env_air = loc.return_air()
 	if ((int_air.return_pressure()-env_air.return_pressure()) > 2*ONE_ATMOSPHERE)
-		to_chat(user, SPAN_WARNING("You cannot unfasten this [src], it is under too much pressure."))
+		to_chat(user, SPAN_WARNING("You cannot unwrench this [src], it too exerted due to internal pressure."))
 		add_fingerprint(user)
 		return 1
 	to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
@@ -239,7 +211,44 @@ Thus, the two variables affect pump operation are set in New():
 		user.visible_message( \
 			SPAN_NOTICE("\The [user] unfastens \the [src]."), \
 			SPAN_NOTICE("You have unfastened \the [src]."), \
-			"You hear ratcheting.")
+			"You hear ratchet.")
 		investigate_log("was unfastened by [key_name(user)]", "atmos")
 		new /obj/item/pipe(loc, make_from=src)
 		qdel(src)
+
+//tgui stuff
+
+/obj/machinery/atmospherics/binary/pump/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "AtmosPump", name)
+		ui.open()
+
+/obj/machinery/atmospherics/binary/pump/ui_data()
+	var/data = list()
+	data["on"] = use_power
+	data["pressure"] = round(target_pressure)
+	data["max_pressure"] = max_pressure_setting
+	return data
+
+/obj/machinery/atmospherics/binary/pump/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	switch(action)
+		if("power")
+			use_power = !use_power
+			investigate_log("was [use_power ? "disabled" : "enabled"] by a [key_name(usr)]", "atmos")
+			. = TRUE
+		if("pressure")
+			var/pressure = params["pressure"]
+			if(pressure == "max")
+				pressure = max_pressure_setting
+				. = TRUE
+			else if(text2num(pressure) != null)
+				pressure = text2num(pressure)
+				. = TRUE
+			if(.)
+				target_pressure = clamp(pressure, 0, max_pressure_setting)
+				investigate_log("had it's pressure changed to [target_pressure] by [key_name(usr)]", "atmos")
+	update_icon()

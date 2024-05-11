@@ -5,6 +5,7 @@
 	icon_state = "energy"
 	fire_sound = 'sound/weapons/energy/Taser.ogg'
 	fire_sound_text = "laser blast"
+	gun_parts = null //No disassembling these by default, SOMEONE failed to give them any actual parts.
 
 	init_recoil = HANDGUN_RECOIL(0.1)
 
@@ -172,6 +173,7 @@
 		to_chat(usr, SPAN_WARNING("[src] is a disposable gun, its batteries cannot be removed!."))
 
 /obj/item/gun/energy/attackby(obj/item/C, mob/living/user)
+	..()
 	if(self_recharge)
 		to_chat(usr, SPAN_WARNING("[src] is a self-charging gun, it doesn't need more batteries."))
 		return
@@ -186,7 +188,6 @@
 		else if(insert_item(C, user))
 			cell = C
 			update_icon()
-	..()
 
 	if(istype(C, suitable_cell) && insert_item(C, user))
 		cell = C

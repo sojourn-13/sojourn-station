@@ -6,16 +6,16 @@
 	w_class = ITEM_SIZE_TINY
 	var/stamped = FALSE //used by the voucher vender to be an anti-cheat
 
-// Blackshild
+// Blackshield
 /obj/item/voucher/blackshield
 	name = "blackshield voucher"
-	desc = "A token to redeem blackshield equipment from a vendor."
+	desc = "A token to redeem Blackshield equipment from a vendor."
 	icon_state = "voucher"
 	var/voucher_type // The type of equipment the voucher redeem
 
 /obj/item/voucher/blackshield/primary
 	name = "\improper blackshield primary weapon voucher"
-	desc = "A token to redeem blackshield equipment from a vendor."
+	desc = "A token to redeem Blackshield equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "Primary"
 
@@ -33,13 +33,19 @@
 
 /obj/item/voucher/blackshield/secondary
 	name = "\improper blackshield secondary weapon voucher"
-	desc = "A token to redeem blackshield equipment from a vendor."
+	desc = "A token to redeem Blackshield equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "Secondary"
 
+/obj/item/voucher/blackshield/COsecondary
+	name = "\improper Blackshield Commander secondary weapon voucher"
+	desc = "A token to redeem Blackshield equipment from a vendor."
+	icon_state = "voucher"
+	voucher_type = "COSecondary"
+
 /obj/item/voucher/blackshield/armor
 	name = "\improper blackshield armor voucher"
-	desc = "A token to redeem blackshield equipment from a vendor."
+	desc = "A token to redeem Blackshield equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "Armor"
 
@@ -85,6 +91,12 @@
 	desc = "A token to redeem marshal equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "RangerSecondary"
+
+/obj/item/voucher/marshal/wosecondary
+	name = "Warrant Officer secondary weapon voucher"
+	desc = "A token to redeem marshal equipment from a vendor."
+	icon_state = "voucher"
+	voucher_type = "WOSecondary"
 
 /obj/item/voucher/marshal/armor
 	name = "\improper marshal armor voucher"

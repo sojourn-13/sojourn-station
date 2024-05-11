@@ -47,8 +47,7 @@
 /datum/supply_pack/armor
 	name = "Marshal Surplus Armor Crate"
 	contains = list(/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/suit/armor/vest/security,
-					/obj/item/clothing/suit/armor/vest/detective,
+					/obj/item/clothing/suit/armor/vest/ironhammer,
 					/obj/item/clothing/suit/storage/vest,
 					/obj/item/clothing/head/helmet,
 					/obj/item/clothing/head/helmet)

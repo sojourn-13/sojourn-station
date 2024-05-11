@@ -117,21 +117,58 @@
 	var/obj/screen/nsa/hud = parent.HUDneed["neural system accumulation"]
 	hud?.update_icon()
 
+//NSA Overloads!
+//First we have a tell were over are limit, harmless shaking
 /datum/metabolism_effects/proc/nsa_breached_effect()
-	if(get_nsa() < nsa_threshold*1.2) // 20% more
+	var/nsa_amount = get_nsa()
+	if(nsa_amount < nsa_threshold*1.1)
 		return
-	parent.vomit()
+	parent.make_jittery(2)
 
-	if(get_nsa() < nsa_threshold*1.6)
+	if(nsa_amount < nsa_threshold*1.2)
 		return
 	parent.drop_l_hand()
 	parent.drop_r_hand()
 
-	if(get_nsa() < nsa_threshold*1.8)
+	if(nsa_amount < nsa_threshold*1.3)
 		return
-	parent.adjustToxLoss(1)
+	parent.vomit()
 
-	if(get_nsa() < nsa_threshold*2)
+	if(nsa_amount < nsa_threshold*1.4)
+		return
+	parent.adjust_hallucination(8,12)
+
+	if(nsa_amount < nsa_threshold*1.5)
+		return
+	parent.eye_blurry = max(parent.eye_blurry, 3)
+
+	if(nsa_amount < nsa_threshold*1.6)
+		if(ishuman(src))
+			var/mob/living/carbon/human/H = src
+			var/blood_volume = H.vessel.get_reagent_amount("blood")
+			var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
+			if(blood_percent * H.effective_blood_volume > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
+				return
+		parent.drip_blood(10) //This is quite a bit but your also suffering a lot
+
+	//At this point were starting to have a heart attack
+	if(nsa_amount < nsa_threshold*1.7)
+		return
+	if(ishuman(parent))
+		var/mob/living/carbon/human/H = parent
+		var/obj/item/organ/internal/vital/heart/C = H.random_organ_by_process(OP_HEART)
+		if(H && istype(H))
+			C.take_damage(0.5, FALSE)
+
+	if(nsa_amount < nsa_threshold*1.8)
+		return
+	parent.confused = max(parent.confused, 3)
+
+	if(nsa_amount < nsa_threshold*1.9)
+		return
+	parent.paralysis = max(parent.paralysis, 10)
+
+	if(nsa_amount < nsa_threshold*2)
 		return
 	parent.Sleeping(2)
 

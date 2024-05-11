@@ -71,7 +71,7 @@
 	return
 
 /obj/machinery/power/am_control_unit/proc/produce_power()
-	playsound(src.loc, 'sound/effects/bang.ogg', 25, 1)
+	playsound(src.loc, 'sound/effects/magnetclamp.ogg', 25, 1)
 	var/core_power = reported_core_efficiency //Effectively how much fuel we can safely deal with
 	if(core_power <= 0)
 		return 0 //Something is wrong

@@ -229,6 +229,7 @@
 /area/deepmaint)
 "xb" = (
 /obj/structure/bed/chair/office/dark,
+/obj/random/mob/psi_monster/low_chance,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
 "xq" = (
@@ -273,6 +274,11 @@
 /obj/effect/decal/cleanable/blood/gibs/xeno,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
+"Ai" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/white,
+/area/deepmaint)
 "Aw" = (
 /obj/machinery/light{
 	dir = 1
@@ -305,7 +311,6 @@
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder,
 /obj/item/material/shard,
-/obj/item/circuitboard/chemical_dispenser,
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
 "CK" = (
@@ -446,6 +451,10 @@
 /obj/item/material/shard,
 /turf/simulated/floor/wood,
 /area/deepmaint)
+"OD" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/white,
+/area/deepmaint)
 "OL" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -468,7 +477,7 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/deepmaint)
 "SR" = (
-/obj/machinery/sleeper,
+/obj/machinery/sleeper/sarcophagus/random,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/deepmaint)
 "SW" = (
@@ -518,7 +527,7 @@
 /turf/simulated/floor/tiled/white,
 /area/deepmaint)
 "XK" = (
-/obj/structure/showcase/horrific_experiment_cryo,
+/obj/structure/salvageable/deepmaints_cryopod,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/deepmaint)
 "YS" = (
@@ -642,7 +651,7 @@ yi
 fa
 pB
 fa
-fa
+OD
 OL
 fa
 fa
@@ -662,7 +671,7 @@ WG
 ep
 Or
 Eb
-fa
+OD
 pB
 Aw
 JJ
@@ -783,7 +792,7 @@ Id
 CK
 fa
 wp
-CK
+Ai
 Wl
 wp
 Ev
@@ -823,7 +832,7 @@ ZZ
 Id
 fa
 fa
-fa
+OD
 Wl
 fa
 ch
@@ -871,7 +880,7 @@ fA
 Vy
 xA
 fa
-fa
+OD
 pB
 gL
 Sj

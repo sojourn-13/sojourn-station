@@ -2,9 +2,9 @@
 //			Psionic Catalysts
 //////////////////////////////
 // These are usually collected by killing psionic monsters and finding them within the ashes of the left over bodies. See conquest_powers.dm for there power code. -Kaz
-
+// Dropped by mobs to give psionics and RP to players, powers themselfs located in conquest_powers.dm
 /obj/item/device/psionic_catalyst
-	name = "psionic catalyst: "
+	name = "psionic catalyst"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
 	recycled for the somewhat rare materials that make them. Holding it feels... wrong. Even to an unattuned mind, one can hear the faintly glowing object whispering, the discordant voices say: \
 	"
@@ -15,6 +15,15 @@
 	matter = list(MATERIAL_GLASS = 1, MATERIAL_PLASTEEL = 2, MATERIAL_PLASMA = 1, MATERIAL_DIAMOND = 1)
 	price_tag = 0
 	var/stored_power
+
+
+/obj/item/device/psionic_catalyst/dull
+	name = "dull psionic catalyst"
+	desc = "Psionic catalysts, other worldly items not quite understood. This one for some reason has no echo or glow unlike most others."
+	icon_state = "psi_catalyst_dull"
+	item_state = "psi_catalyst"
+	origin_tech = list(TECH_BIO = 2, TECH_MATERIAL = 1, TECH_PLASMA = 1)
+	matter = list(MATERIAL_GLASS = 1, MATERIAL_PLASTEEL = 2, MATERIAL_PLASMA = 1)
 
 // Found catalysts
 /obj/item/device/psionic_catalyst/nightmare_mind
@@ -141,7 +150,8 @@
 /obj/item/device/psionic_catalyst/Light_psi_armor
 	name = "psionic catalyst: Void robe"
 	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
-	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: TEST"
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	Can we really afford to not be in are shell?"
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/Light_psi_armor
 
 /obj/item/device/psionic_catalyst/Hpsi_armor
@@ -150,6 +160,13 @@
 	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
 	Pain accompanies you, broken bones, torn flesh have become your companions. This catalyst will help to minimize suffering by giving your mind and body a rest."
 	stored_power = /obj/item/organ/internal/psionic_tumor/proc/Hpsi_armor
+
+/obj/item/device/psionic_catalyst/layered_psi_shield
+	name = "psionic catalyst: Layered Shield"
+	desc = "Psionic catalysts, other worldly items not quite understood, but valuable for the powers they may grant a psion. To everyone else, they have research value in a deconstructor or may be \
+	recycled for the somewhat rare materials that make them. Holding it feels quite strange. Even to an unattuned mind, one can hear the faintly glowing object whispering, the eager voices say: \
+	If we put are mind to it, we can think of many shapes at the same time."
+	stored_power = /obj/item/organ/internal/psionic_tumor/proc/psionic_shield_layered
 
 /obj/item/device/psionic_catalyst/add_initial_transforms()
 	. = ..()
@@ -163,6 +180,11 @@
 
 	if(!usr.stats.getPerk(PERK_PSION))
 		to_chat(usr, "<span class='notice'>You lack the psionic potential to invoke this.</span>")
+		return
+
+
+	if(!stored_power)
+		to_chat(usr, "<span class='notice'>The catalyst has no power to invoke, as its a faded memory from another time.</span>")
 		return
 
 	playsound(src.loc, 'sound/hallucinations/ghosty_wind.ogg', 25, 1)
@@ -188,6 +210,7 @@
 				/obj/item/device/psionic_catalyst/psionic_ascension = 10,
 				/obj/item/device/psionic_catalyst/Hpsi_armor = 4,
 				/obj/item/device/psionic_catalyst/Light_psi_armor = 4,
+				/obj/item/device/psionic_catalyst/layered_psi_shield = 8,
 				/obj/item/device/psionic_catalyst/heretical_ascension = 1))
 
 // Psi-related lore paperwork. Not really a good place to put this so here it is. -Kaz
@@ -229,7 +252,7 @@
 	work, it absolutely succeeded.</p><br>\
 	<br><p>As an aside, our secondary labs working on improving cryogenics, genetics, and chemical research have hit several break throughs. The new machines they've cooked up have done wonders \
 	to the monkies we've taken to testing on. Trials for higher life forms will begin shortly, though some are worried that such tamperings will end quite poorly if we progress too quickly. \
-	Given what our benefactor has stressed about safety, I've exchanged the standard load out of our more brutish workers to include gladstone shotguns, a common and easily procured firearm here \
+	Given what our benefactor has stressed about safety, I've exchanged the standard load out of our more brutish workers to include grizzly shotguns, a common and easily procured firearm here \
 	on the frontier. Just a shame that our contacts in krios must trade so secretively.</p>"
 
 /obj/item/paper/psi_log_4

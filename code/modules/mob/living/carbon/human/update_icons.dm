@@ -220,25 +220,24 @@ var/global/list/wings_icon_cache = list()
 	var/image/standing_image = image(form.damage_overlays, icon_state = "00")
 
 	// blend the individual damage states with our icons
-	for(var/obj/item/organ/external/O in organs)
-		if(O.is_stump())
-			continue
+	if(species.blood_color)
+		for(var/obj/item/organ/external/O in organs)
+			if(O.is_stump())
+				continue
 
-		O.update_damstate()
-		if(O.damage_state == "00") continue
-		var/icon/DI
+			O.update_damstate()
+			if(O.damage_state == "00") continue
+			var/icon/DI
+			var/cache_index = "[O.damage_state]/[O.organ_tag]/[species.blood_color]/[species.get_bodytype()]"
+			if(damage_icon_parts[cache_index] == null)
+				DI = new /icon(form.damage_overlays, O.damage_state)			// the damage icon for whole human
+				DI.Blend(new /icon(form.damage_mask, O.organ_tag), ICON_MULTIPLY)	// mask with this organ's pixels
+				DI.Blend(species.blood_color, ICON_MULTIPLY)
+				damage_icon_parts[cache_index] = DI
+			else
+				DI = damage_icon_parts[cache_index]
 
-		var/cache_index = "[O.damage_state]/[O.organ_tag]/[form.blood_color]/[species.get_bodytype()]"
-		if(damage_icon_parts[cache_index] == null)
-
-			DI = new /icon(form.damage_overlays, O.damage_state)			// the damage icon for whole human
-			DI.Blend(new /icon(form.damage_mask, O.organ_tag), ICON_MULTIPLY)	// mask with this organ's pixels
-			DI.Blend(form.blood_color, ICON_MULTIPLY)
-			damage_icon_parts[cache_index] = DI
-		else
-			DI = damage_icon_parts[cache_index]
-
-		standing_image.add_overlay(DI)
+			standing_image.overlays += DI
 
 	overlays_standing[DAMAGE_LAYER] = standing_image
 
@@ -391,6 +390,9 @@ var/global/list/wings_icon_cache = list()
 				facial_s.Blend(facial_color, ICON_ADD)
 
 			face_standing.Blend(facial_s, ICON_OVERLAY)
+			if(head_organ.nonsolid)
+				face_standing += rgb(,,,120)
+
 
 	if(h_style && !(head && (head.flags_inv & BLOCKHEADHAIR)))
 		var/icon/grad_s = null
@@ -407,8 +409,11 @@ var/global/list/wings_icon_cache = list()
 					hair_s.Blend(grad_s, ICON_OVERLAY)
 
 			face_standing.Blend(hair_s, ICON_OVERLAY)
+			if(head_organ.nonsolid)
+				face_standing += rgb(,,,120)
 
 	overlays_standing[HAIR_LAYER]	= image(face_standing)
+
 
 	if(update_icons)   update_icons()
 
@@ -489,6 +494,7 @@ var/global/list/wings_icon_cache = list()
 						break
 			if(valid && ("[real_marking.icon_state]-[part]" in icon_states(real_marking.icon)))
 				valid_body_parts += part
+			CHECK_TICK
 		var/icon/specific_marking_icon
 		var/cache_key = "[markname]-[valid_body_parts.Join("_")]"
 		var/advanced_cache_key = "B*[cache_key]*[body_markings[markname]]*[real_marking.blend]" //The *B is there to prevent collisions.
@@ -511,6 +517,7 @@ var/global/list/wings_icon_cache = list()
 			marking_icon.Blend(specific_marking_icon, ICON_OVERLAY)
 		else //WARNING: THIS WILL BREAK IF WE EVER USE INCONSISTENT MARKING SIZES
 			marking_icon = specific_marking_icon
+		CHECK_TICK
 	return image(marking_icon)
 
 //Insert Furry Bits
@@ -523,8 +530,11 @@ var/global/list/wings_icon_cache = list()
 		if(update_icons) update_icons()
 		return
 
+
 	var/image/ears_image = get_ears_image()
 	if(ears_image)
+		var/obj/item/organ/external/head = organs_by_name[BP_HEAD]
+		ears_image.alpha = head?.nonsolid ? 180 : 255
 		overlays_standing[CUSTOM_EARS_LAYER] = ears_image
 		if(update_icons) update_icons()
 
@@ -559,10 +569,12 @@ var/global/list/wings_icon_cache = list()
 		return
 	*/
 	var/active_tail_layer = tail_over ? CUSTOM_TAIL_LAYER_ALT : CUSTOM_TAIL_LAYER
+	var/obj/item/organ/external/chest = organs_by_name[BP_TORSO]
 
 	var/image/tail_image = get_tail_image()
 	if(tail_image)
 		overlays_standing[active_tail_layer] = tail_image
+		tail_image.alpha = chest?.nonsolid ? 180 : 255
 		if(update_icons) update_icons()
 
 /*	var/species_tail = species.get_tail(src) // Species tail icon_state prefix.
@@ -602,9 +614,12 @@ var/global/list/wings_icon_cache = list()
 		if(update_icons) update_icons()
 		return
 
+	var/obj/item/organ/external/chest = organs_by_name[BP_TORSO]
+
 	var/image/wings_image = get_wings_image()
 	if(wings_image)
 		overlays_standing[CUSTOM_WINGS_LAYER] = wings_image
+		wings_image.alpha = chest?.nonsolid ? 180 : 255
 		if(update_icons) update_icons()
 
 mob/living/carbon/human/proc/get_wings_image()

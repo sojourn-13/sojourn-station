@@ -60,7 +60,7 @@
 	if(!equip_access && is_equipped())
 		if (istype(L))
 			if(!no_message)
-				to_chat(L, "<span class='warning'>The [src] is too cumbersome to handle with one hand, you're going to have to set it down somewhere!</span>")
+				to_chat(L, "<span class='warning'>\The [src] is too cumbersome to handle with one hand, you're going to have to set it down somewhere!</span>")
 		if (!no_message && use_sound)
 			playsound(loc, use_sound, 50, 1, -5)
 		return FALSE
@@ -68,7 +68,7 @@
 	else if(!worn_access && is_worn())
 		if (istype(L))
 			if(!no_message)
-				to_chat(L, "<span class='warning'>Oh no! Your arms are not long enough to open [src] while it is on your back!</span>")
+				to_chat(L, "<span class='warning'>Oh no! Your arms are not long enough to reach inside \the [src] while it is on your back!</span>")
 		if (!no_message && use_sound)
 			playsound(loc, use_sound, 50, 1, -5)
 		return FALSE
@@ -187,8 +187,11 @@
 	desc = "A robust military backpack with crudely added IFF stripes of the Blackshield."
 	icon_state = "backpack_mil"
 
+/obj/item/storage/backpack/militia/green
+	icon_state = "backpack_milgreen"
+
 /obj/item/storage/backpack/corpsman
-	name = "Corpsman backpack"
+	name = "corpsman backpack"
 	desc = "A robust military backpack with medical liverly."
 	icon_state = "backpack_corps"
 
@@ -232,7 +235,6 @@
 	flags = CONDUCT
 	force = WEAPON_FORCE_NORMAL
 	throwforce = WEAPON_FORCE_NORMAL
-	w_class = ITEM_SIZE_BULKY
 	throw_speed = 1
 	throw_range = 4
 	max_w_class = null
@@ -283,8 +285,13 @@
 //Faction-specific backsports
 /obj/item/storage/backpack/sport/ironhammer
 	name = "operator's sport backpack"
-	desc = "Done in a complementing shade for Ironhammer Security forces. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
+	desc = "Done in a complementing shade for Nadezhda security. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
 	icon_state = "backsport_ironhammer"
+
+/obj/item/storage/backpack/sport/militia
+	name = "blackshield sport backpack"
+	desc = "Done in a complementing shade for Nadezhda militia. It looks as if it belongs on a kindergartener rather than a operative, which is why in actuality this style makes perfect sense."
+	icon_state = "backsport_militia"
 
 /obj/item/storage/backpack/sport/neotheology
 	name = "cruciform sport backpack"
@@ -376,6 +383,11 @@
 	name = "operator's satchel"
 	desc = "Done in a complementing shade for Nadezhda security forces, for the itinerant military contractor."
 	icon_state = "satchel_ironhammer"
+
+/obj/item/storage/backpack/satchel/militia
+	name = "blackshield satchel"
+	desc = "Done in a complementing shade for Nadezhda militia, for the itinerant military contractor."
+	icon_state = "satchel_militia"
 
 /obj/item/storage/backpack/satchel/neotheology
 	name = "cruciform satchel"

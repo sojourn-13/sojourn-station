@@ -8,7 +8,6 @@
 	active_power_usage = 180
 	var/dir_output = NORTH
 
-
 /obj/machinery/multistructure/bioreactor_part/unloader/Process()
 	if(!MS)
 		use_power(1)
@@ -36,4 +35,4 @@
 
 
 #undef CLEANING_TIME
-#undef CLONE_DAMAGE_PER_TICK
+#undef BIOREACTOR_DAMAGE_PER_TICK

@@ -5,8 +5,8 @@
 	icon_state = "fuhrer"
 
 	turns_per_move = 4
-	maxHealth = 200
-	health = 200
+	maxHealth = 125
+	health = 125
 
 	knockdown_odds = 5
 	melee_damage_lower = 15
@@ -21,7 +21,7 @@
 
 	flash_resistances = 5 //half stuns by flash, so we can still get up and be in the fight!
 
-	armor = list(melee = 15, bullet = 15, energy = 5, bomb = 5, bio = 20, rad = 0, agony = 0)
+	armor = list(melee = 10, bullet = 10, energy = 5, bomb = 5, bio = 20, rad = 0, agony = 0)
 	armor_penetration = 25
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/fuhrer

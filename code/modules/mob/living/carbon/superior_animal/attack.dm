@@ -156,7 +156,7 @@
 					if (possible_target)
 						if (possible_target == target)
 							continue //we made the concious choice to attack them
-						else if (!(prob(do_friendly_fire_chance)) && (((!attack_same && (possible_target.faction == faction)) || (possible_target in friends)) || (possible_target.friendly_to_colony && friendly_to_colony)))
+						else if (!(prob(do_friendly_fire_chance)) && !friendly_to_colony && (((!attack_same && (possible_target.faction == faction)) || (possible_target in friends))))
 							do_we_shoot = FALSE
 							break
 
@@ -169,6 +169,9 @@
 
 		if (do_we_shoot)
 			var/offset_temp = right_before_firing()
+			A.original_firer = src
+			if(friendly_to_colony)
+				A.friendly_to_colony = TRUE
 			A.launch(target, def_zone, firer_arg = src, angle_offset = offset_temp) //this is where we actually shoot the projectile
 			right_after_firing()
 			SEND_SIGNAL(src, COMSIG_SUPERIOR_FIRED_PROJECTILE, A)

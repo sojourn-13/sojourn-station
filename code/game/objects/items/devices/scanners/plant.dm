@@ -8,6 +8,7 @@
 	charge_per_use = 2
 
 	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1)
+	preloaded_reagents = list("mercury" = 15, "lithium" = 5, "plasticide" = 9)
 
 	var/global/list/valid_targets = list(
 		/obj/item/reagent_containers/food/snacks/grown,

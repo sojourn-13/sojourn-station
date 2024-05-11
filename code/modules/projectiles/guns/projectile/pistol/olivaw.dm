@@ -16,6 +16,7 @@
 	penetration_multiplier = 1.1
 	init_recoil = HANDGUN_RECOIL(1)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL, GUN_SILENCABLE)
+	gun_parts = list(/obj/item/part/gun/frame/olivaw = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol = 1)
 
 	init_firemodes = list(
 		list(mode_name="semiauto", mode_desc="Shoot as fast as you can pull the trigger",       burst=1, fire_delay=1.2, move_delay=null, 				icon="semi"),
@@ -41,3 +42,13 @@
 
 	icon_state = iconstring
 	set_item_state(itemstring)
+
+/obj/item/part/gun/frame/olivaw
+	name = "Olivaw frame"
+	desc = "An Olivaw pistol frame. Why shoot one bullet when you can shoot two?"
+	icon_state = "frame_olivaw"
+	result = /obj/item/gun/projectile/olivaw
+	resultvars = list(/obj/item/gun/projectile/olivaw)
+	gripvars = list(/obj/item/part/gun/grip/wood)
+	mechanismvar = /obj/item/part/gun/mechanism/pistol
+	barrelvars = list(/obj/item/part/gun/barrel/pistol)

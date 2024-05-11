@@ -30,7 +30,7 @@
 	return TRUE
 
 /obj/item/organ/internal/carrion
-	max_damage = 150 //resilient
+	max_damage = 15 //resilient
 	scanner_hidden = TRUE //sneaky
 
 /obj/item/organ/internal/carrion/chemvessel
@@ -72,6 +72,8 @@
 	owner = null //overrides removed() call
 	. = ..()
 
+/obj/item/organ/internal/carrion/core/take_damage(amount, damage_type = BRUTE, wounding_multiplier = 1, sharp = FALSE, edge = FALSE, silent = FALSE)
+	return
 
 /obj/item/organ/internal/carrion/core/proc/make_spider()
 	set category = "Carrion"
@@ -377,13 +379,13 @@
 			visible_message(SPAN_DANGER("[owner] bites into [H.name]'s [E.name] and starts tearing it apart!"))
 			if(do_after(owner, 5 SECONDS, H))
 				tearing = FALSE
-				E.take_damage(30)
+				E.take_damage(30, BRUTE)
 				var/blacklist = list()
 				for (var/obj/item/organ/internal/to_blacklist in E.internal_organs)
 					if (istype(to_blacklist, /obj/item/organ/internal/bone/))
 						blacklist += to_blacklist
 						continue
-					if (istype(to_blacklist, /obj/item/organ/internal/brain/))
+					if (istype(to_blacklist, /obj/item/organ/internal/vital/brain/))
 						blacklist += to_blacklist// removing bones from a valid_organs list based on
 				var/list/valid_organs = E.internal_organs - blacklist// E.internal_organs gibs the victim.
 				if (!valid_organs.len)
@@ -561,9 +563,8 @@
 	set name = "Blood Purge (25)"
 
 
-	if (owner.check_ability(25))
+	if(owner.check_ability(25))
 		to_chat(owner, SPAN_NOTICE("You cleanse your blood of all chemicals and poisons."))
-		owner.adjustToxLoss(-100)
 		owner.radiation = 0
 		owner.reagents.update_total()
 		owner.reagents.trans_to_turf(owner.loc, owner.reagents.total_volume)

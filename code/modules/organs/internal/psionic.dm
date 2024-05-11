@@ -23,6 +23,7 @@
 	nutriment_req = 6
 	var/psi_points = 0         //How many points we have currently
 	var/max_psi_points = 0
+	var/burn
 	var/disabled = TRUE        //Whether or not the implant functions.
 	var/psi_point_cost
 	var/inhibited = FALSE      //Whether or not the organ has been inhibited by an external force
@@ -30,10 +31,12 @@
 
 	owner_verbs = list(
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_healing,
+		/obj/item/organ/internal/psionic_tumor/proc/meditative_focus,
 		/obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_telepathy,
 		/obj/item/organ/internal/psionic_tumor/proc/telekineticprowress,
 		/obj/item/organ/internal/psionic_tumor/proc/telekineticprowress_end,
+		/obj/item/organ/internal/psionic_tumor/proc/pyrokinetic_spark,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_omnitool,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_knife,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_shield,
@@ -43,8 +46,11 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_tool,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_call,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_banish,
+        /obj/item/organ/internal/psionic_tumor/proc/pain_infliction,
+		/obj/item/organ/internal/psionic_tumor/proc/pain_transference,
 		/obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_armor,
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_swarm,
 		/obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster
 	)
 
@@ -52,10 +58,12 @@
 	name = "cultured flesh"
 	owner_verbs = list(
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_healing,
+		/obj/item/organ/internal/psionic_tumor/proc/meditative_focus,
 		/obj/item/organ/internal/psionic_tumor/proc/psychosomatictransfer,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_telepathy,
 		/obj/item/organ/internal/psionic_tumor/proc/telekineticprowress,
 		/obj/item/organ/internal/psionic_tumor/proc/telekineticprowress_end,
+		/obj/item/organ/internal/psionic_tumor/proc/pyrokinetic_spark,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_omnitool,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_knife,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_shield,
@@ -65,11 +73,16 @@
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_tool,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_call,
 		/obj/item/organ/internal/psionic_tumor/proc/psychic_banish,
+        /obj/item/organ/internal/psionic_tumor/proc/pain_infliction,
+		/obj/item/organ/internal/psionic_tumor/proc/pain_transference,
 		/obj/item/organ/internal/psionic_tumor/proc/journey_to_nowhere,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_armor,
 		/obj/item/organ/internal/psionic_tumor/proc/kinetic_blaster,
+		/obj/item/organ/internal/psionic_tumor/proc/psionic_swarm,
 		// Psych unique powers just for them. Do not add these to other lists. -Kaz
+		/obj/item/organ/internal/psionic_tumor/proc/peace_of_mind,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_heal_other,
+		/obj/item/organ/internal/psionic_tumor/proc/meditative_focus_other,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_heal_brain,
 		/obj/item/organ/internal/psionic_tumor/proc/psionic_gift
 	)

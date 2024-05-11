@@ -63,6 +63,7 @@
 
 	var/current_log_page = 1
 	var/log_page_max
+	var/to_fast_to_soon = FALSE
 
 /datum/computer_file/program/trade/cargo_download
 	available_on_ntnet = TRUE
@@ -70,6 +71,9 @@
 	required_access = access_cargo
 	requires_access_to_run = FALSE
 	copy_cat = FALSE //Dosnt REALLY matter but for sake of ViewVar'ing
+
+/datum/computer_file/program/trade/proc/anti_lag()
+	to_fast_to_soon = FALSE
 
 /datum/computer_file/program/trade/proc/set_chosen_category(value)
 	chosen_category = value
@@ -568,6 +572,11 @@
 				if(!account)
 					to_chat(usr, SPAN_WARNING("ERROR: no account linked."))
 					return
+				if(to_fast_to_soon)
+					to_chat(usr, SPAN_WARNING("TIMER ERROR: Slow Down!."))
+					return
+				to_fast_to_soon = TRUE
+				addtimer(CALLBACK(src, /datum/computer_file/program/trade/proc/anti_lag, src), 1 SECONDS)
 				var/path = get_2d_matrix_cell(station.inventory, chosen_category, t2n)
 				SStrade.sell_thing(sending, account, locate(path) in SStrade.assess_offer(sending, path), station)
 				return TRUE

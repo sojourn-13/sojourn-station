@@ -16,7 +16,7 @@
 
 /datum/design/autolathe/tool/multitool/multitool_onestar
 	name = "greyson positronic multitool"
-	build_path = /obj/item/tool/onestar_multitool
+	build_path = /obj/item/tool/multitool/advanced/onestar
 	materials = list(MATERIAL_PLASTEEL = 1, MATERIAL_PLATINUM = 2)
 
 /datum/design/autolathe/tool/weldertool

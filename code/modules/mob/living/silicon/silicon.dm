@@ -49,6 +49,13 @@
 	add_language(LANGUAGE_JANA)
 	add_language(LANGUAGE_CYRILLIC)
 	add_language(LANGUAGE_LATIN)
+	add_language(LANGUAGE_KRIOSAN)
+	add_language(LANGUAGE_AKULA)
+	add_language(LANGUAGE_MARQUA)
+	add_language(LANGUAGE_SYNTHETIC)
+	add_language(LANGUAGE_MERP)
+	add_language(LANGUAGE_BLORP)
+	add_language(LANGUAGE_WEH)
 	init_id()
 	init_subsystems()
 
@@ -354,8 +361,8 @@
 		cameratext += "[(cameratext == "")? "" : "|"]<A HREF='?src=\ref[src];switchcamera=\ref[C]'>[C.c_tag]</A>"
 	to_chat(src, "[A.alarm_name()]! ([(cameratext)? cameratext : "No Camera"])")
 
-/mob/living/silicon/proc/is_malf_or_traitor()
-	return check_special_role(ROLE_TRAITOR) || check_special_role(ROLE_MALFUNCTION)
+/mob/living/silicon/proc/is_malf_or_contractor()
+	return check_special_role(ROLE_CONTRACTOR) || check_special_role(ROLE_MALFUNCTION)
 
 /mob/living/silicon/adjustEarDamage()
 	return

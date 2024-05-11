@@ -23,37 +23,43 @@
 	if(needs_to_maintain)
 		if(prob(25))
 			needs_to_be_deweeded = TRUE
+			sanity_damage += 0.004
 		if(prob(25))
 			needs_to_be_pest_b_goned = TRUE
+			sanity_damage += 0.004
 		if(prob(25))
 			needs_to_be_watered = TRUE
+			sanity_damage += 0.004
 		if(prob(10))
 			remove_dead_weeds = TRUE
+			sanity_damage += 0.004
 		if(prob(10))
 			remove_dead_pets = TRUE
+			sanity_damage += 0.004
 
 /obj/structure/flora/examine(mob/user)
 	..()
 	if(needs_to_maintain)
-		to_chat(user, "<span class='info'>This plant needs to be maintained a bit form time to time.</span>")
+		to_chat(user, "<span class='info'>This plant needs to be maintained a bit from time to time.</span>")
 	if(needs_to_be_deweeded)
-		to_chat(user, "<span class='info'>Other plants seem to have infected this plant.</span>")
+		to_chat(user, "<span class='info'>Weeds seem to have infested this plant.</span>")
 	if(needs_to_be_pest_b_goned)
-		to_chat(user, "<span class='info'>Small harmfull pests can be seen on the plant and in its pot.</span>")
+		to_chat(user, "<span class='info'>Small harmful pests can be seen on the plant and in its pot.</span>")
 	if(needs_to_be_watered)
 		to_chat(user, "<span class='info'>This plant looks rather dry and seems to need some LSS Plant Mineral Water.</span>")
 	if(remove_dead_weeds)
-		to_chat(user, "<span class='info'>This plant has some dead other plants inside it.</span>")
+		to_chat(user, "<span class='info'>This plant has some dead weeds mingling with it.</span>")
 	if(remove_dead_pets)
-		to_chat(user, "<span class='info'>This plant has some dead bugs inside, gross.</span>")
+		to_chat(user, "<span class='info'>This plant has some dead bugs on it, gross.</span>")
 
 /obj/structure/flora/attackby(obj/item/I, mob/user)
 	..()
 	if(needs_to_be_deweeded)
 		if(istype(I, /obj/item/plantspray/weeds) || istype(I, /obj/item/weedkiller))
-			to_chat(user, "<span class='info'>The invasive other plants wilt away.</span>")
+			to_chat(user, "<span class='info'>The invasive weeds wilt away.</span>")
 			needs_to_be_deweeded = FALSE
 			remove_dead_weeds = TRUE
+			sanity_damage -= 0.004
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 2, learner = H)
@@ -61,14 +67,16 @@
 		if(istype(I, /obj/item/tool/minihoe))
 			to_chat(user, "<span class='info'>You remove the invasive plants.</span>")
 			needs_to_be_deweeded = FALSE
+			sanity_damage -= 0.004
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
 			return
 	if(remove_dead_weeds)
 		if(istype(I, /obj/item/tool/minihoe)  || istype(I, /obj/item/tool/scythe))
-			to_chat(user, "<span class='info'>The dead plants are no more.</span>")
+			to_chat(user, "<span class='info'>The weeds are no more.</span>")
 			remove_dead_weeds = FALSE
+			sanity_damage -= 0.004
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
@@ -78,6 +86,7 @@
 			to_chat(user, "<span class='info'>The harmful pests slowly die out.</span>")
 			needs_to_be_pest_b_goned = FALSE
 			remove_dead_pets = TRUE
+			sanity_damage -= 0.004
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
@@ -86,6 +95,7 @@
 		if(istype(I, /obj/item/tool/shovel))
 			to_chat(user, "<span class='info'>The dead pests are no more.</span>")
 			remove_dead_pets = FALSE
+			sanity_damage -= 0.004
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 1, learner = H)
@@ -94,6 +104,7 @@
 		if(istype(I, /obj/item/plantspray/water))
 			to_chat(user, "<span class='info'>The water rejuvenates the plants.</span>")
 			needs_to_be_watered = FALSE
+			sanity_damage -= 0.004
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/clay_thumb, "CLAY_THUMB_CONISOUR", skill_gained = 3, learner = H)
@@ -901,7 +912,13 @@
 	layer = ABOVE_MOB_LAYER
 	anchored = 1
 
-/obj/structure/flora/small/big/attackby(obj/item/I, mob/user)
+
+
+/obj/structure/flora/big/bush1
+	icon = 'icons/obj/flora/largejungleflora.dmi'
+	icon_state = "bush1"
+
+/obj/structure/flora/big/bush1/attackby(obj/item/I, mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(!istype(user.loc, /turf))
 		return
@@ -920,17 +937,51 @@
 			return
 		return
 
-/obj/structure/flora/big/bush1
-	icon = 'icons/obj/flora/largejungleflora.dmi'
-	icon_state = "bush1"
-
 /obj/structure/flora/big/bush2
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "bush2"
 
+/obj/structure/flora/big/bush2/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You start to cut the bush away, harvesting some plant clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
+
 /obj/structure/flora/big/bush3
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "bush3"
+
+/obj/structure/flora/big/bush3/attackby(obj/item/I, mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(!istype(user.loc, /turf))
+		return
+	var/list/usable_qualities = list(QUALITY_CUTTING)
+	var/tool_type = I.get_tool_type(user, usable_qualities, src)
+	if(tool_type==QUALITY_CUTTING)
+		to_chat(user, SPAN_NOTICE("You start to cut the bush away, harvesting some plant clippings..."))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			new /obj/plant_spawner/grass(get_turf(src))
+			to_chat(user, SPAN_NOTICE("You harvest some clippings."))
+			qdel(src)
+			return
+		return
 
 /obj/structure/flora/big/rocks1
 	name = "rock pile"
@@ -1088,13 +1139,3 @@
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
 	mouse_opacity = MOUSE_OPACITY_ICON
-
-/obj/structure/flora/church_rock/Initialize(mapload) //When its mapped in
-	..()
-	pixel_x = -45
-	pixel_y = null
-
-/obj/structure/flora/church_rock/New() //If an admin spawns it in
-	..()
-	pixel_x = -45
-	pixel_y = null

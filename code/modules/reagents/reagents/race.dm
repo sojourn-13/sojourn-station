@@ -16,7 +16,7 @@
 
 /datum/reagent/medicine/sabledone/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_PAINKILLER, 200, TRUE)
-	M.apply_effect(-50, AGONY, 0)
+	M.apply_effect(-50, HALLOSS, 0)
 
 /datum/reagent/stim/marquatol
 	name = "Marquatol"
@@ -49,7 +49,7 @@
 /datum/reagent/medicine/hadrenol/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.heal_organ_damage(1, 0.8, 4, 2) // Barely buffed up Hustimdol without the sleepyness, any more would be too good. Remember this has a half hour cooldown.
 	M.adjustOxyLoss(-1)
-	M.adjustToxLoss(-1)
+	M.add_chemical_effect(CE_TOXIN, -1)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.4)
 	M.add_chemical_effect(CE_BLOODRESTORE, 1.1 * effect_multiplier) // Paramount due to how organ efficiency works
 	M.add_chemical_effect(CE_PAINKILLER, 45, TRUE) // Come on, stand up! You can do it!
@@ -132,13 +132,16 @@
 	scannable = TRUE
 
 /datum/reagent/medicine/cindpetamol/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed)
-	M.adjustToxLoss(-8)
+	M.add_chemical_effect(CE_TOXIN, -8)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
 		if(istype(L))
 			if(BP_IS_ROBOTIC(L))
 				return
+			var/list/current_wounds = L.GetComponents(/datum/component/internal_wound)
+			if(LAZYLEN(current_wounds) && prob(20))
+				LEGACY_SEND_SIGNAL(L, COMSIG_IORGAN_REMOVE_WOUND, pick(current_wounds))
 			if(L.damage > 0)
 				L.damage = max(L.damage - 2 * removed, 0)
 	var/mob/living/carbon/C = M

@@ -20,7 +20,7 @@ var/global/list/modifications_types = list(
 
 /proc/get_default_modificaton(var/nature = MODIFICATION_ORGANIC)
 	switch(nature)
-		if(MODIFICATION_ORGANIC, MODIFICATION_SUPERIOR)
+		if(MODIFICATION_ORGANIC, MODIFICATION_SUPERIOR, MODIFICATION_SLIME)
 			return body_modifications["nothing"]
 		if(MODIFICATION_SILICON)
 			return body_modifications["robotize_organ"]
@@ -184,13 +184,13 @@ var/global/list/modifications_types = list(
 	id = "prosthesis_asters"
 	replace_limb = /obj/item/organ/external/robotic/asters
 	icon = 'icons/mob/human_races/cyberlimbs/asters.dmi'
-	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_CHEST, BP_GROIN, BP_HEAD)
+	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 
 /datum/body_modification/limb/prosthesis/serbian
 	id = "prosthesis_serbian"
 	replace_limb = /obj/item/organ/external/robotic/serbian
 	icon = 'icons/mob/human_races/cyberlimbs/serbian.dmi'
-	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_CHEST, BP_GROIN, BP_HEAD)
+	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 
 /datum/body_modification/limb/prosthesis/frozen_star
 	id = "prosthesis_frozen_star"
@@ -206,7 +206,7 @@ var/global/list/modifications_types = list(
 	id = "prosthesis_ghetto"
 	replace_limb = /obj/item/organ/external/robotic/junktech
 	icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi'
-	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_CHEST, BP_GROIN)
+	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 
 /datum/body_modification/limb/prosthesis/synthskin
 	id = "prosthesis_full_body_prosthetic"
@@ -225,7 +225,7 @@ var/global/list/modifications_types = list(
 	replace_limb = /obj/item/organ/external/robotic/blackshield
 	body_parts = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 	icon = 'icons/mob/human_races/cyberlimbs/blackshield.dmi'
-	department_specific = list(DEPARTMENT_SECURITY)
+	department_specific = list(DEPARTMENT_SECURITY, DEPARTMENT_BLACKSHIELD)
 
 /datum/body_modification/limb/prosthesis/church
 	id = "prosthesis_church"

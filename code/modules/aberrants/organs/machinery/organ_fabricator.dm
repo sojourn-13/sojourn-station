@@ -20,13 +20,14 @@
 	have_recycling = FALSE
 	speed = 6
 
+	code_dex = "ORGAN_GROWER"
 	selectively_recycled_types = list(
 		/obj/item/organ,
 		/obj/item/modification/organ
 	)
 
 	special_actions = list(
-		list("action" = "rip", "name" = "Rip OMG! designs", "icon" = "document")
+		list("action" = "rip", "name" = "Rip OMG! designs", "icon" = "utensils")
 	)
 
 	var/datum/research/files
@@ -82,20 +83,21 @@
 
 	return design_files
 
-/obj/machinery/autolathe/organ_fabricator/nano_ui_interact()
+/obj/machinery/autolathe/organ_fabricator/ui_interact()
 	if(!categories?.len)
 		categories = files.design_categories_organfab
 	if(!disk && !show_category && length(categories))
 		show_category = categories[1]
-	..()
+	. = ..()
 
-/obj/machinery/autolathe/organ_fabricator/Topic(href, href_list)
-	if(..())
-		return TRUE
+/obj/machinery/autolathe/organ_fabricator/ui_act(action, list/params)
+	. = ..()
+	if(.)
+		return
 
-	if(href_list["action"] == "rip")
+	if(action == "special_action" && params["action"] == "rip")
 		rip_disk()
-		return TRUE
+		. = TRUE
 
 /obj/machinery/autolathe/organ_fabricator/attackby(obj/item/I, mob/user)
 	// Warn about deconstruction
@@ -106,7 +108,7 @@
 			var/choice = alert("If you deconstruct this machine, the biomatter inside will be destroyed. Are you sure you want to continue?", "Deconstruction Warning", "Deconstruct", "Leave it alone")
 			if(choice != "Deconstruct" || starting_loc != user.loc)
 				return
-	
+
 	..()
 
 /obj/machinery/autolathe/organ_fabricator/on_deconstruction(obj/item/I, mob/user)

@@ -208,11 +208,12 @@
 				/obj/item/ammo_magazine/smg_35/lethal = 9,
 				/obj/item/ammo_magazine/pistol_35/lethal = 9,
 				/obj/item/ammo_magazine/kurtz_50/lethal = 3,
-				/obj/item/ammo_magazine/ammobox/shotgun/payload = 3,
+				///obj/item/ammo_magazine/ammobox/shotgun/payload = 3,
 				/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 6,
 				/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv = 6,
 				/obj/item/ammo_casing/antim/lethal/prespawned = 1,
-				/obj/item/ammo_casing/antim/ion/prespawned = 1))
+				/obj/item/ammo_casing/antim/ion/prespawned = 1,
+				/obj/item/grenade/frag/white_phosphorous = 1))
 
 /obj/random/dungeon_ammo/low_chance
 	name = "low chance random special ammunition"

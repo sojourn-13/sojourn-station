@@ -48,6 +48,9 @@
 	if(target_turf.holy) //Holy tiles can kill off the wire sometimes!
 		if(prob(30))
 			die_off()
+	else
+		if(prob(5)) //5% per spred tile to spawn a mob, this makes hivemins in open areas more deadly
+			new /obj/random/structures/hivemind_mob(src.loc)
 
 /obj/effect/plant/hivemind/proc/try_to_assimilate()
 	for(var/obj/machinery/machine_on_my_tile in loc)
@@ -83,7 +86,52 @@
 
 
 /obj/effect/plant/hivemind/update_neighbors()
-	..()
+	// Update our list of valid neighboring turfs.
+	neighbors = list()
+	var/list/tocheck = get_cardinal_neighbors()
+	var/add_to_neighbors = TRUE
+	for(var/turf/simulated/floor in tocheck)
+		var/turf/zdest = get_connecting_turf(floor, loc)//Handling zlevels
+		add_to_neighbors = TRUE
+		if(get_dist(parent, floor) > spread_distance)
+			add_to_neighbors = FALSE
+
+		//We check zdest, not floor, for existing plants
+		if((locate(/obj/effect/plant) in zdest.contents) || (locate(/obj/effect/dead_plant) in zdest.contents))
+			if(!(seed.get_trait(TRAIT_INVASIVE)))//Invasive ones can invade onto other tiles
+				add_to_neighbors = FALSE
+			var/obj/effect/plant/neighbor_plant = (locate(/obj/effect/plant) in zdest.contents)
+			if(neighbor_plant.seed.get_trait(TRAIT_INVASIVE))//If it's also invasive, don't invade (for better performance and plants not eating at itself)
+				add_to_neighbors = FALSE
+
+		if(!near_external && floor.density)
+			add_to_neighbors = FALSE
+		if(!Adjacent(floor))
+			add_to_neighbors = FALSE
+		if(!floor.CanPass(src, floor))
+			add_to_neighbors = FALSE
+
+		if((locate(/obj/structure/low_wall) in floor))
+			add_to_neighbors = FALSE
+
+			var/obj/machinery/door/found_door = null
+			for (var/obj/machinery/door/D in floor)
+				if(D.density || !D.welded)
+					found_door = D
+
+			if(found_door)
+				var/can_pass = door_interaction(found_door, floor)
+				if(!can_pass)
+					add_to_neighbors = FALSE
+
+
+		if(add_to_neighbors)
+			neighbors |= floor
+	// Update all of our friends.
+	var/turf/T = get_turf(src)
+	for(var/obj/effect/plant/neighbor in range(1,src))
+		neighbor.neighbors -= T
+
 	update_connections()
 	update_icon()
 	update_openspace()
@@ -232,13 +280,16 @@
 		if(target.density)
 			return FALSE
 
-		if(locate(/obj/structure) in target)
+		if(locate(/obj/machinery/door) in target.contents)
+			return FALSE
+
+		if(locate(/obj/machinery) in target.contents)
+			return TRUE
+
+		if(locate(/obj/structure) in target.contents)
 			for(var/obj/structure/S in target)
 				if(S.density && S.anchored)
 					return FALSE
-
-		if(locate(/obj/machinery/door) in target)
-			return FALSE
 
 		return TRUE
 	else
@@ -330,7 +381,7 @@
 		if(ishuman(subject))
 			var/mob/living/L = subject
 
-			if(GLOB.hive_data_bool["gibbing_dead"])
+			if(GLOB.hive_data_bool["prevent_gibbing_dead"])
 			//We we dont touch the dead via are controler we dont want to pk people form the round
 				return
 

@@ -25,13 +25,10 @@ SUBSYSTEM_DEF(migration)
 
 	var/migrate_chance = 15 //The chance, during each migration, for each populated burrow, that mobs will move from there to somewhere else
 
-
 	var/roundstart_burrows = 30
 	var/migrate_time = 80 SECONDS //How long it takes to move mobs from one burrow to another
 	var/reinforcement_time = 10 SECONDS //How long it takes for reinforcements to arrive
 	var/plantspread_burrows_num = 2 //How many other burrows will each one with plants send them to
-
-
 
 /*************************************************
 	Burrow Creation
@@ -45,8 +42,6 @@ SUBSYSTEM_DEF(migration)
 		var/area/A = random_ship_area(FALSE, FALSE, FALSE)
 		var/turf/T = A.random_space() //Lets make sure the selected area is valid
 		create_burrow(T)
-
-
 
 /*
 Called by roaches when they spawn.
@@ -211,9 +206,9 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 
 	switch (GLOB.storyteller.config_tag)
 		if ("jester") // Jester will most likely not reroll the maintenance area check.
-			reroll_prob = 19.5
+			reroll_prob = 99.5 //loljk, original values caused issues with infestation event.
 		if ("warrior")
-			reroll_prob = 80
+			reroll_prob = 99.5
 
 	//Lets copy the list into a candidates buffer
 	var/list/candidates = GLOB.all_burrows.Copy(1,0)
@@ -235,7 +230,7 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 			continue
 
 		// just nop.
-		if (candidate.obelisk_around)
+		if (candidate.obelisk_around())
 			continue
 
 		//And a high chance to reroll it if its not what we want in terms of being in/out of maintenance
@@ -387,6 +382,7 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 	while (i < plantspread_burrows_num && sorted.len)
 		var/obj/structure/burrow/C = sorted[1] //Grab the first element
 		sorted.Cut(1,2)//And remove it from the list
+		var/turf/simulated/T = get_turf(C)
 
 
 		//It already has plants, no good
@@ -400,6 +396,10 @@ This proc will attempt to create a burrow against a wall, within view of the tar
 
 		//Chance to reject it anyways to make plant spreading less predictable
 		if (prob(60))
+			continue
+
+		//We don't want maintshrooms to spread into places that are too bright
+		if (B.plant.type == /datum/seed/mushroom/maintshroom && T.get_lumcount() > 0.5)
 			continue
 
 		//If it has no plants yet, it should be okay to send things to it

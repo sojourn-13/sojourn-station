@@ -451,6 +451,17 @@
 /obj/random/lowkeyrandom/low_chance,
 /turf/simulated/floor/tiled/steel/monofloor,
 /area/deepmaint)
+"iA" = (
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
+"Pa" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/random/mob/psi_monster/low_chance,
+/turf/simulated/floor/tiled/steel,
+/area/deepmaint)
 
 (1,1,1) = {"
 aa
@@ -459,19 +470,19 @@ ac
 aa
 aa
 aa
-aa
-aa
-aa
-ac
-ac
-ac
+iA
 aa
 aa
 ac
 ac
-aa
 ac
 aa
+aa
+ac
+ac
+aa
+ac
+iA
 aa
 ac
 "}
@@ -488,7 +499,7 @@ ac
 aa
 aa
 aa
-aa
+iA
 aa
 ac
 bo
@@ -523,7 +534,7 @@ aa
 "}
 (4,1,1) = {"
 ac
-aa
+iA
 aX
 ag
 aN
@@ -564,7 +575,7 @@ ay
 ay
 ay
 aX
-aa
+iA
 ac
 "}
 (6,1,1) = {"
@@ -637,7 +648,7 @@ aa
 aa
 "}
 (9,1,1) = {"
-aa
+iA
 aa
 aX
 ao
@@ -679,7 +690,7 @@ aX
 ay
 bB
 aX
-aa
+iA
 ac
 "}
 (11,1,1) = {"
@@ -753,7 +764,7 @@ aa
 "}
 (14,1,1) = {"
 ac
-aa
+iA
 aX
 as
 aa
@@ -795,7 +806,7 @@ aa
 bH
 aX
 ac
-aa
+iA
 "}
 (16,1,1) = {"
 ac
@@ -854,7 +865,7 @@ aS
 aT
 aH
 aX
-aa
+iA
 aX
 aH
 bp
@@ -894,7 +905,7 @@ ac
 aa
 aa
 aa
-aB
+Pa
 aa
 ac
 ac
@@ -919,16 +930,16 @@ aa
 aa
 ac
 aa
+iA
 aa
 aa
 aa
 aa
 aa
-aa
-aa
+iA
 ac
 ac
-aa
+iA
 aa
 aa
 aa

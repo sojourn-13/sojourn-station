@@ -5,6 +5,7 @@
 #define ERR_NOLICENSE "no license"
 #define ERR_PAUSED "paused"
 #define ERR_NOINSIGHT "no insight"
+#define ERR_WRONG_BUILDTYPE "cant read"
 
 
 /obj/machinery/autolathe
@@ -21,6 +22,7 @@
 	circuit = /obj/item/circuitboard/autolathe
 
 	var/build_type = AUTOLATHE
+	var/code_dex = "AUTOLATHE" //Used in place of build_type
 
 	var/obj/item/computer_hardware/hard_drive/portable/disk
 
@@ -63,6 +65,8 @@
 	var/have_recycling = FALSE //Also dictates auto-input
 	var/have_design_selector = TRUE
 
+	var/max_efficiency = 0.5
+
 	var/list/selectively_recycled_types = list()	// Allows recycling of specified types if have_recycling = FALSE
 
 	var/list/unsuitable_materials = list(MATERIAL_BIOMATTER)
@@ -74,7 +78,8 @@
 		ERR_NOMATERIAL = "Not enough materials.",
 		ERR_NOREAGENT = "Not enough reagents.",
 		ERR_PAUSED = "**Construction Paused**",
-		ERR_NOINSIGHT = "Not enough insight."
+		ERR_NOINSIGHT = "Not enough insight.",
+		ERR_WRONG_BUILDTYPE = "Unable to read design."
 	)
 
 	var/tmp/datum/wires/autolathe/wires
@@ -100,39 +105,13 @@
 	QDEL_NULL(image_load_material)
 	return ..()
 
+/obj/machinery/autolathe/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Autolathe", name)
+		ui.open()
 
-// Also used by R&D console UI.
-/obj/machinery/autolathe/proc/materials_data()
-	var/list/data = list()
-
-	data["mat_efficiency"] = mat_efficiency
-	data["mat_capacity"] = storage_capacity
-
-	data["container"] = !!container
-	if(container && container.reagents)
-		var/list/L = list()
-		for(var/datum/reagent/R in container.reagents.reagent_list)
-			var/list/LE = list("name" = R.name, "amount" = R.volume)
-			L.Add(list(LE))
-
-		data["reagents"] = L
-
-	var/list/M = list()
-	for(var/mtype in stored_material)
-		if(stored_material[mtype] <= 0)
-			continue
-
-		var/material/MAT = get_material_by_name(mtype)
-		var/list/ME = list("name" = MAT.display_name, "id" = mtype, "amount" = stored_material[mtype], "ejectable" = !!MAT.stack_type)
-
-		M.Add(list(ME))
-
-	data["materials"] = M
-
-	return data
-
-
-/obj/machinery/autolathe/nano_ui_data()
+/obj/machinery/autolathe/ui_data(mob/user)
 	var/list/data = list()
 
 	data["have_disk"] = have_disk
@@ -153,10 +132,15 @@
 			"license" = disk.license,
 			"read_only" = disk.read_only
 		)
+	else
+		data["disk"] = null
 
 	if(categories)
 		data["categories"] = categories
 		data["show_category"] = show_category
+	else
+		data["categories"] = null
+		data["show_category"] = null
 
 	data["special_actions"] = special_actions
 
@@ -173,6 +157,9 @@
 	if(current_file)
 		data["current"] = current_file.nano_ui_data()
 		data["progress"] = progress
+	else
+		data["current"] = null
+		data["progress"] = null
 
 	var/list/Q = list()
 	var/licenses_used = 0
@@ -210,26 +197,42 @@
 
 	return data
 
+/obj/machinery/autolathe/ui_assets(mob/user)
+	return list(
+		get_asset_datum(/datum/asset/simple/design_icons)
+	)
 
-/obj/machinery/autolathe/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	var/list/data = nano_ui_data(user, ui_key)
+// Also used by R&D console UI.
+/obj/machinery/autolathe/proc/materials_data()
+	var/list/data = list()
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		// the ui does not exist, so we'll create a new() one
-		// for a list of parameters and their descriptions see the code docs in \code\modules\nano\nanoui.dm
-		ui = new(user, src, ui_key, "autolathe.tmpl", capitalize(name), 550, 655)
+	data["mat_efficiency"] = mat_efficiency
+	data["mat_capacity"] = storage_capacity
 
-		// template keys starting with _ are not appended to the UI automatically and have to be called manually
-		ui.add_template("_materials", "autolathe_materials.tmpl")
-		ui.add_template("_reagents", "autolathe_reagents.tmpl")
-		ui.add_template("_designs", "autolathe_designs.tmpl")
-		ui.add_template("_queue", "autolathe_queue.tmpl")
+	data["container"] = !!container
+	if(container && container.reagents)
+		var/list/L = list()
+		for(var/datum/reagent/R in container.reagents.reagent_list)
+			var/list/LE = list("name" = R.name, "amount" = R.volume)
+			L.Add(list(LE))
 
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
+		data["reagents"] = L
+	else
+		data["reagents"] = null
+
+	var/list/M = list()
+	for(var/mtype in stored_material)
+		if(stored_material[mtype] <= 0)
+			continue
+
+		var/material/MAT = get_material_by_name(mtype)
+		var/list/ME = list("name" = MAT.display_name, "id" = mtype, "amount" = stored_material[mtype], "ejectable" = !!MAT.stack_type)
+
+		M.Add(list(ME))
+
+	data["materials"] = M
+
+	return data
 
 /obj/machinery/autolathe/attackby(obj/item/I, mob/user)
 
@@ -256,7 +259,7 @@
 		return
 
 	user.set_machine(src)
-	nano_ui_interact(user)
+	ui_interact(user)
 
 
 /obj/machinery/autolathe/attack_hand(mob/user)
@@ -264,110 +267,99 @@
 		return TRUE
 
 	user.set_machine(src)
-	nano_ui_interact(user)
+	ui_interact(user)
 	wires.Interact(user)
 
-/obj/machinery/autolathe/Topic(href, href_list)
-	if(..())
+/obj/machinery/autolathe/ui_act(action, list/params)
+	. = ..()
+	if(.)
 		return
 
-	usr.set_machine(src)
+	switch(action)
+		if("abort_print")
+			abort()
+			. = TRUE
 
-	if(href_list["insert"])
-		eat(usr)
-		return 1
+		if("pause")
+			paused = !paused
+			. = TRUE
 
-	if(href_list["disk"])
-		if(disk)
+		if("eject_disk")
 			eject_disk(usr)
-		else
-			insert_disk(usr)
-		return 1
+			. = TRUE
 
-	if(href_list["container"])
-		if(container)
+		if("eject_beaker")
 			eject_beaker(usr)
-		else
-			insert_beaker(usr)
-		return 1
+			. = TRUE
 
-	if(href_list["category"] && categories && (href_list["category"] in categories))
-		show_category = href_list["category"]
-		return 1
+		if("clear_queue")
+			queue.Cut()
+			. = TRUE
 
-	if(href_list["eject_material"] && (!current_file || paused || error))
-		var/material = href_list["eject_material"]
-		var/material/M = get_material_by_name(material)
+		if("insert_material")
+			eat(usr)
+			. = TRUE
 
-		if(!M.stack_type)
-			return
+		if("eject_material")
+			if(!current_file || paused || error)
+				var/material = params["id"]
+				var/material/M = get_material_by_name(material)
 
-		var/num = input("Enter sheets number to eject. 0-[stored_material[material]]","Eject",0) as num
-		if(!CanUseTopic(usr))
-			return
+				if(!M.stack_type)
+					return FALSE
 
-		num = min(max(num,0), stored_material[material])
+				var/num = input("Enter sheets number to eject. 0-[stored_material[material]]","Eject",0) as num
+				if(!CanUseTopic(usr))
+					return FALSE
 
-		eject(material, num)
-		return 1
+				num = min(max(num,0), stored_material[material])
 
+				eject(material, num)
+				. = TRUE
 
-	if(href_list["add_to_queue"])
-		var/recipe_filename = href_list["add_to_queue"]
-		var/datum/computer_file/binary/design/design_file
+		if("add_to_queue")
+			var/recipe_filename = params["filename"]
+			var/datum/computer_file/binary/design/design_file
 
-		for(var/f in design_list())
-			var/datum/computer_file/temp_file = f
-			if(temp_file.filename == recipe_filename)
-				design_file = temp_file
-				break
+			for(var/f in design_list())
+				var/datum/computer_file/temp_file = f
+				if(temp_file.filename == recipe_filename)
+					design_file = temp_file
+					break
 
-		if(design_file)
-			var/amount = 1
+			if(design_file)
+				var/amount = 1
 
-			if(href_list["several"])
-				amount = input("How many \"[design_file.design.name]\" you want to print ?", "Print several") as null|num
-				if(!CanUseTopic(usr) || !(design_file in design_list()))
-					return
+				if(params["several"])
+					amount = input("How many \"[design_file.design.name]\" you want to print ?", "Print several") as null|num
+					if(!CanUseTopic(usr) || !(design_file in design_list()))
+						return FALSE
 
-			queue_design(design_file, amount)
+				queue_design(design_file, amount)
 
-		return 1
+			. = TRUE
 
-	if(href_list["remove_from_queue"])
-		var/ind = text2num(href_list["remove_from_queue"])
-		if(ind >= 1 && ind <= queue.len)
-			queue.Cut(ind, ind + 1)
-		return 1
+		if("remove_from_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 1 && ind <= queue.len)
+				queue.Cut(ind, ind + 1)
+			. = TRUE
 
-	if(href_list["move_up_queue"])
-		var/ind = text2num(href_list["move_up_queue"])
-		if(ind >= 2 && ind <= queue.len)
-			queue.Swap(ind, ind - 1)
-		return 1
+		if("move_up_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 2 && ind <= queue.len)
+				queue.Swap(ind, ind - 1)
+			. = TRUE
+		
+		if("move_down_queue")
+			var/ind = text2num(params["index"])
+			if(ind >= 1 && ind <= queue.len-1)
+				queue.Swap(ind, ind + 1)
+			. = TRUE
 
-	if(href_list["move_down_queue"])
-		var/ind = text2num(href_list["move_down_queue"])
-		if(ind >= 1 && ind <= queue.len-1)
-			queue.Swap(ind, ind + 1)
-		return 1
-
-
-	if(href_list["abort_print"])
-		abort()
-		return 1
-
-	if(href_list["pause"])
-		paused = !paused
-		return 1
-
-	if(href_list["unfold"])
-		if(unfolded == href_list["unfold"])
-			unfolded = null
-		else
-			unfolded = href_list["unfold"]
-		return 1
-
+		if("switch_category")
+			show_category = params["category"]
+			. = TRUE
 
 /obj/machinery/autolathe/proc/insert_disk(mob/living/user, obj/item/computer_hardware/hard_drive/portable/inserted_disk)
 	if(!inserted_disk && istype(user))
@@ -393,7 +385,7 @@
 	inserted_disk.forceMove(src)
 	disk = inserted_disk
 	to_chat(user, SPAN_NOTICE("You insert \the [inserted_disk] into [src]."))
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 
 
 /obj/machinery/autolathe/proc/insert_beaker(mob/living/user, obj/item/reagent_containers/glass/beaker)
@@ -790,6 +782,11 @@
 		if(!design_file.check_license())
 			return ERR_NOLICENSE
 
+
+		if(design_file.design.required_printer_code)
+			if(design_file.design.code_dex != code_dex)
+				return ERR_WRONG_BUILDTYPE
+
 		var/datum/design/design = design_file.design
 
 		for(var/rmat in design.materials)
@@ -972,7 +969,7 @@
 	queue_max = initial(queue_max) + mb_rating + (hacked ? 8 : 0) //So the more matter bin levels the more we can queue!
 
 	speed = initial(speed) + man_rating + las_rating
-	mat_efficiency = max(0.5, 1.0 - (man_rating * 0.1))
+	mat_efficiency = max(max_efficiency, 1.0 - (man_rating * 0.1))
 
 
 
@@ -1017,6 +1014,7 @@
 	circuit = /obj/item/circuitboard/autolathe_industrial
 	speed = 4
 	storage_capacity = 240
+	max_efficiency = 0.3
 	have_recycling = TRUE
 
 /obj/machinery/autolathe/greyson
@@ -1066,6 +1064,7 @@
 #undef ERR_NOLICENSE
 #undef ERR_PAUSED
 #undef ERR_NOINSIGHT
+#undef ERR_WRONG_BUILDTYPE
 
 
 // A version with some materials already loaded, to be used on map spawn

@@ -35,6 +35,7 @@
 	name_pick()
 	health = max_health
 	set_light(2, 3, illumination_color)
+	icon = 'icons/obj/hivemind_machines.dmi'
 
 
 /obj/machinery/hivemind_machine/update_icon()
@@ -59,7 +60,7 @@
 
 /obj/machinery/hivemind_machine/Process()
 	if(!hive_mind_ai || (wireweeds_required && !locate(/obj/effect/plant/hivemind) in loc))
-		take_damage(5, on_damage_react = FALSE)
+		take_damage(35, on_damage_react = FALSE)
 
 	if(SDP)
 		SDP.check_conditions()
@@ -326,13 +327,15 @@
 		/obj/item/reagent_containers/glass/beaker)
 	var/list/reward_oddity = list(
 		/obj/item/oddity/common/old_radio,
-		/obj/item/oddity/common/old_pda)
+		/obj/item/oddity/common/old_pda,
+		/obj/item/oddity/rare/eldritch_tie)
 
 /obj/machinery/hivemind_machine/node/proc/gift()
 	var/gift = prob(GLOB.hive_data_float["core_oddity_drop_chance"]) ? pick(reward_oddity) : pick(reward_item)
 	new gift(get_turf(loc))
 	state("leaves behind an item!")
 
+//Seems unused, added it to reward oddity
 /obj/machinery/hivemind_machine/node/proc/core()
 	state("leaves behind a weird looking tie!")
 	new /obj/item/oddity/rare/eldritch_tie(get_turf(loc))
@@ -441,10 +444,9 @@
 	max_health = 220
 	resistance = RESISTANCE_IMPROVED
 	icon_state = "turret"
-	cooldown_time = 5 SECONDS
+	cooldown_time = 1 SECONDS
 	spawn_weight  = 60
 	var/proj_type = /obj/item/projectile/goo
-
 
 /obj/machinery/hivemind_machine/turret/Process()
 	if(!..())
@@ -455,12 +457,10 @@
 		use_ability(target)
 		set_cooldown()
 
-
 /obj/machinery/hivemind_machine/turret/use_ability(atom/target)
 	var/obj/item/projectile/proj = new proj_type(loc)
 	proj.launch(target)
 	playsound(src, 'sound/effects/blobattack.ogg', 70, 1)
-
 
 
 //MOB PRODUCER

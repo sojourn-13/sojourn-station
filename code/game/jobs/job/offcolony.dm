@@ -4,18 +4,18 @@
 	spawn_positions = 1
 	flag = HUNTMASTER
 	faction = MAP_FACTION
-	department = DEPARTMENT_INDEPENDENT
-	department_flag = INDEPENDENT
+	department = DEPARTMENT_LODGE
+	department_flag = LODGE
 	supervisors = "the lodge matriarch"
 	difficulty = "Hard."
 	selection_color = "#9b633e"
 	account_allowed = 0
-	create_record = 0
+	create_record = 1
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunt_master
 	health_modifier = 15
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
+	perks = list(PERK_BUTCHER, PERK_MASTER_HERBALIST, PERK_GREENTHUMB)
 	access = list(access_huntmaster, access_hunter)
 
 	stat_modifiers = list(
@@ -46,18 +46,18 @@
 	spawn_positions = 4
 	flag = LODGEHUNTER
 	faction = MAP_FACTION
-	department = DEPARTMENT_INDEPENDENT
-	department_flag = INDEPENDENT
+	department = DEPARTMENT_LODGE
+	department_flag = LODGE
 	difficulty = "Hard."
 	supervisors = "the hunt master"
 	selection_color = "#9b633e"
 	account_allowed = 0
-	create_record = 0
+	create_record = 1
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/hunter
 	health_modifier = 10
 
-	perks = list(/datum/perk/job/butcher)
+	perks = list(PERK_BUTCHER)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
@@ -88,18 +88,18 @@
 	spawn_positions = 2
 	flag = LODGEHERBALIST
 	faction = MAP_FACTION
-	department = DEPARTMENT_INDEPENDENT
-	department_flag = INDEPENDENT
+	department = DEPARTMENT_LODGE
+	department_flag = LODGE
 	difficulty = "Hard."
 	supervisors = "the hunt master"
 	selection_color = "#9b633e"
 	account_allowed = 0
-	create_record = 0
+	create_record = 1
 	wage = WAGE_NONE
 	outfit_type = /decl/hierarchy/outfit/job/off_colony/herbalist
 	health_modifier = 5
 
-	perks = list(/datum/perk/job/butcher, /datum/perk/job/master_herbalist, /datum/perk/greenthumb)
+	perks = list(PERK_BUTCHER, PERK_MASTER_HERBALIST, PERK_GREENTHUMB)
 	access = list(access_hunter)
 
 	stat_modifiers = list(
@@ -124,8 +124,8 @@
 
 /datum/job/outsider
 	title = "Outsider"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 10
+	spawn_positions = 10
 	flag = OUTSIDER
 	faction = MAP_FACTION
 	department = DEPARTMENT_INDEPENDENT
@@ -138,7 +138,6 @@
 //	minimal_access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/outsider
 	difficulty = "Impossible!"
-	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 	has_id = FALSE
 
 	stat_modifiers = list(

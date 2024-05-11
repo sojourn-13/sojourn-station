@@ -20,7 +20,7 @@
 
 /obj/item/hydrogen_fuel_cell/examine(mob/user)
 	..()
-	to_chat(user, "The [src.name] currently hold [plasma] units of plasma fuel.")
+	to_chat(user, "The [src.name] currently holds [plasma] units of plasma fuel.")
 
 /obj/item/hydrogen_fuel_cell/proc/use(var/amount)
 	if(plasma >= amount) // Is there enough plasma left?
@@ -30,19 +30,25 @@
 		return FALSE
 
 // Fuel Cell for the bluecross weapon
-/obj/item/hydrogen_fuel_cell/infinite
+/obj/item/hydrogen_fuel_cell/bluecross
 	name = "anomalous hydrogen fuel cell"
-	desc = "This fuel cell doesn't seem to run out."
-	plasma = 500
-	max_plasma = 500
+	desc = "An anomalous fuel cell created by an unknown person (or group?), their work marked by a blue cross, these objects are known to vanish and reappear when left alone.\
+			This hydrogen flask has been internally expanded in capacity via pocket bluespace infusion, carrying a lot more than the standard ones."
+	plasma = 300
+	max_plasma = 300 // Double the capacity of a normal cell
+	icon_state = "plasma_can_bluecross"
+	item_state = "plasma_can_bluecross"
 
+/*	This cell used to be infinite, but was deemed too powerful. Leaving this commented out as legacy code for it.
 /obj/item/hydrogen_fuel_cell/infinite/use(var/amount)
 	return TRUE // Never runs out.
+*/
 
 // Backpack variant.
 /obj/item/hydrogen_fuel_cell/backpack
 	name = "cryo-sealed hydrogen fuel pack"
 	desc = "A backpack full of volatile hydrogen. It cannot be refilled once spent."
+	description_info = "Insert your hydrogen gun on it to connect it to its holding port, then drag the backpack to an empty hand to draw the gun. To disconnect it for retrieval, use a wrenching tool on the backpack."
 
 	icon_state = "plasmapack"
 	item_state = "plasmapack"
@@ -58,7 +64,7 @@
 /obj/item/hydrogen_fuel_cell/backpack/examine(mob/user)
 	..()
 	if(the_gun)
-		to_chat(user, "The [src.name] is currently attached to [the_gun.name].")
+		to_chat(user, "The [src.name] is currently attached to [the_gun.name]. Click-drag the [src.name] to an empty hand to draw it.")
 
 /obj/item/hydrogen_fuel_cell/backpack/attackby(obj/item/W as obj, mob/living/user as mob)
 	..()

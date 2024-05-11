@@ -9,6 +9,7 @@
 	icon = 'icons/obj/machines/one_star/machines.dmi'
 	icon_state = "os_gauss" // sprite by Infrared Baron
 	circuit = /obj/item/circuitboard/os_turret
+	var/faction_iff = "greyson"
 	idle_power_usage = 30
 	active_power_usage = 2500
 	density = TRUE
@@ -16,7 +17,7 @@
 
 	// Targeting
 	var/should_target_players = TRUE			// TRUE targets players, FALSE targets superior animals (roaches, golems, and spiders)
-	var/firing_range = 8								// Starts firing just out of player sight
+	var/firing_range = 7						// 15x15 atm, so we dont no-scope off screen target
 	var/returning_fire = FALSE					// Will attempt to fire at the nearest target when attacked and no one is in range
 	var/last_target								//last target fired at, prevents turrets from erratically firing at all valid targets in range
 
@@ -26,9 +27,11 @@
 	var/time_between_shots = 0.5 SECONDS
 	var/list/shot_timer_ids = list()
 	var/cooldown_time = null
+	var/shot_sound = 'sound/weapons/energy/energy_shotgun.ogg'
+
 
 	// Internal
-	var/emp_cooldown = 4 SECONDS
+	var/emp_cooldown = 8 SECONDS
 	var/emp_timer_id
 	var/on_cooldown = FALSE
 	var/cooldown_timer_id
@@ -40,16 +43,17 @@
 /obj/machinery/power/os_turret/laser
 	icon_state = "os_laser"
 	circuit = /obj/item/circuitboard/os_turret/laser
-	firing_range = 10
 	projectile = /obj/item/projectile/beam/os_turret
 	number_of_shots = 3
 	time_between_shots = 0.3 SECONDS
 	cooldown_time = 2 SECONDS
+	shot_sound = 'sound/weapons/guns/misc/laser_searwall.ogg'
 
 /obj/machinery/power/os_turret/Initialize()
 	. = ..()
 	update_icon()
-
+	RefreshParts()
+	firing_range = world.view
 	if(!cooldown_time)
 		cooldown_time = time_between_shots * number_of_shots
 
@@ -63,6 +67,7 @@
 
 	if(health <= 0)
 		stat |= BROKEN
+		update_icon()
 		return
 
 	if(!on_cooldown)
@@ -139,13 +144,10 @@
 	if(!check_trajectory(L, src))	//check if we have true line of sight
 		return TURRET_NOT_TARGET
 
-	if(should_target_players && ishuman(L))
-		return TURRET_PRIORITY_TARGET
+	if(!should_target_players && ishuman(L))
+		return TURRET_NOT_TARGET
 
-	if(should_target_players && issilicon(L)) //We shoot non GP robots
-		return TURRET_SECONDARY_TARGET
-
-	if(!should_target_players && !ishuman(L))
+	if(!should_target_players && issilicon(L)) //We shoot non GP robots
 		return TURRET_NOT_TARGET
 
 	return TURRET_PRIORITY_TARGET	//if the perp has passed all previous tests, congrats, it is now a "shoot-me!" nominee
@@ -170,7 +172,11 @@
 
 /obj/machinery/power/os_turret/update_icon()
 	underlays.Cut()
-	underlays += image(icon, "osframe")
+	if(stat & BROKEN)
+		icon_state = "[initial(icon_state)]_broken"
+		underlays += image(icon, "osframe_broken")
+	else
+		underlays += image(icon, "osframe")
 
 /obj/machinery/power/os_turret/emp_act()
 	..()
@@ -241,16 +247,19 @@
 
 /obj/machinery/power/os_turret/RefreshParts()
 	var/obj/item/circuitboard/os_turret/C = circuit
-	should_target_players = !C.target_superior_mobs
+	should_target_players = C.should_target_players
 
 /obj/machinery/power/os_turret/on_deconstruction()
 	var/obj/item/circuitboard/os_turret/C = circuit
-	C.target_superior_mobs = TRUE
+	C.should_target_players = FALSE
 
 /obj/machinery/power/os_turret/proc/take_damage(amount)
 	health = max(health - amount, 0)
 	if(health <= 0)
 		stat |= BROKEN
+		update_icon()
+	else if(prob(50))
+		do_sparks(1, 0, loc)
 	return amount
 
 /obj/machinery/power/os_turret/proc/try_shoot(target)
@@ -298,7 +307,12 @@
 		return
 	set_dir(get_dir(src, target))
 	var/obj/item/projectile/P = new projectile(loc)
+	P.original_firer = src
+	P.faction_iff = faction_iff
+	if(!should_target_players)
+		P.friendly_to_colony = TRUE
 	P.launch(target, def_zone)
+	playsound(src, shot_sound, 60, 1)
 
 /obj/machinery/power/os_turret/proc/cooldown()
 	on_cooldown = FALSE

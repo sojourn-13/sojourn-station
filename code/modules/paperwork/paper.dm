@@ -20,6 +20,7 @@
 	body_parts_covered = HEAD
 	attack_verb = list("bapped")
 	matter = list(MATERIAL_BIOMATTER = 1)
+	preloaded_reagents = list("woodpulp" = 3)
 
 	var/info		//What's actually written on the paper.
 	var/info_links	//A different version of the paper which includes html links at fields and EOF
@@ -38,6 +39,12 @@
 	var/const/deffont = "Verdana"
 	var/const/signfont = "Times New Roman"
 	var/const/crayonfont = "Comic Sans MS"
+	var/crayon_pen = FALSE
+
+/obj/item/paper/ui_host(mob/user)
+	if(istype(loc, /obj/structure/noticeboard))
+		return loc
+	return ..()
 
 /obj/item/paper/card
 	name = "blank card"
@@ -119,7 +126,7 @@
 	return TRUE
 
 /obj/item/paper/update_icon()
-	if (icon_state == "paper_talisman")
+	if (icon_state == "paper_talisman" || icon_state == "Scroll ink") // For Alchemy related stuff
 		return
 	else if (info)
 		icon_state = "paper_words"
@@ -366,6 +373,7 @@
 
 	if (iscrayon)
 		t = "<font face=\"[crayonfont]\" color=[P ? P.colour : "black"]><b>[t]</b></font>"
+		crayon_pen = TRUE
 	else
 		t = "<font face=\"[deffont]\" color=[P ? P.colour : "black"]>[t]</font>"
 

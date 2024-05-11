@@ -18,3 +18,4 @@
 	attacktext = "mauled"
 	leather_amount = 0
 	bones_amount = 0
+	sanity_damage = 1

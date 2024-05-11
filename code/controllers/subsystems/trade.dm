@@ -221,8 +221,14 @@ SUBSYSTEM_DEF(trade)
 
 /datum/controller/subsystem/trade/proc/get_sell_price(path, datum/trade_station/station, price)
 	var/selling_price = round(get_new_cost(path) * station.markdown)
+	var/buying_price = get_import_cost(path, station)
+
 	if(selling_price <= 0)
 		selling_price = price * station.markdown
+
+	if(selling_price > buying_price)
+		selling_price -= selling_price * station.markdown
+
 	. = selling_price
 
 /datum/controller/subsystem/trade/proc/get_import_cost(path, datum/trade_station/station)
@@ -292,7 +298,7 @@ SUBSYSTEM_DEF(trade)
 /datum/controller/subsystem/trade/proc/assess_offer(obj/machinery/trade_beacon/sending/beacon, offer_path, list/attachments = null, attach_count = null)
 	if(QDELETED(beacon))
 		return
-		
+
 	. = list()
 
 	for(var/atom/movable/AM in beacon.get_objects())
@@ -466,15 +472,20 @@ SUBSYSTEM_DEF(trade)
 	for(var/path in category)
 		. += get_import_cost(path, station) * category[path]
 
-/datum/controller/subsystem/trade/proc/buy(obj/machinery/trade_beacon/receiving/senderBeacon, datum/money_account/account, list/shopList)
+/datum/controller/subsystem/trade/proc/buy(obj/machinery/trade_beacon/receiving/senderBeacon, datum/money_account/account, list/shopList, is_order = FALSE, buyer_name = null)
 	if(QDELETED(senderBeacon) || !istype(senderBeacon) || !account || !recursiveLen(shopList))
 		return
 
-	var/obj/structure/closet/crate/C
+	var/obj/structure/closet/secure_closet/personal/trade/C
 	var/count_of_all = collect_counts_from(shopList)
 	var/price_for_all = collect_price_for_list(shopList)
 	if(isnum(count_of_all) && count_of_all > 1)
-		C = senderBeacon.drop(/obj/structure/closet/crate)
+		C = senderBeacon.drop(/obj/structure/closet/secure_closet/personal/trade)
+		if(is_order)
+			C.locked = TRUE
+			C.registered_name = buyer_name
+			C.name = "[initial(C.name)] ([C.registered_name])"
+			C.update_icon()
 	if(price_for_all && get_account_credits(account) < price_for_all)
 		return
 
@@ -540,7 +551,7 @@ SUBSYSTEM_DEF(trade)
 		var/datum/transaction/T = new(cost * 0.2, lonestar_account.get_name(), "Sold item", TRADE_SYSTEM_IC_NAME)
 		T.apply_to(lonestar_account)
 		TA.apply_to(A)
-		station.add_to_wealth(cost)
+		//station.add_to_wealth(cost) We dont want to take or give wealth for balance
 
 /datum/controller/subsystem/trade/proc/export(obj/machinery/trade_beacon/sending/senderBeacon)
 	if(QDELETED(senderBeacon) || !istype(senderBeacon))
@@ -548,13 +559,24 @@ SUBSYSTEM_DEF(trade)
 
 	var/invoice_contents_info
 	var/cost = 0
+	var/item_counter = 0
+	var/pass_counter = 0
 
-	for(var/atom/movable/AM in senderBeacon.get_objects())
+	for(var/obj/AM in senderBeacon.get_objects())
+		if(item_counter > 50) //You can only export 50 items at a time, anti-lag7
+			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"Success, scanners have passed over 50 items, starting Recharging Mode\""))
+			break
+		if(pass_counter > 50)
+			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"ERROR, scanners have passed over 50 items that have nested items, shutting down and starting Recharging Mode!\""))
+			break
+		item_counter += 1
 		if(isliving(AM))
 			var/mob/living/L = AM
 			L.apply_damages(0,5,0,0,0,5)
 			continue
-		if(AM.anchored)
+		if(AM.contents.len)
+			item_counter -= 1 //Refund
+			pass_counter += 1 //Hold on now
 			continue
 
 		var/list/contents_incl_self = AM.GetAllContents(5, TRUE)
@@ -659,7 +681,7 @@ SUBSYSTEM_DEF(trade)
 		var/total_cost = order["cost"] + order["fee"]
 		var/is_requestor_master = (requesting_account == master_account) ? TRUE : FALSE
 
-		buy(beacon, master_account, shopping_list)
+		buy(beacon, master_account, shopping_list, !is_requestor_master, requesting_account.owner_name)
 		if(!is_requestor_master)
 			transfer_funds(requesting_account, master_account, "Order Request", null, total_cost)
 		create_log_entry("Order", requesting_account.get_name(), viewable_contents, total_cost)

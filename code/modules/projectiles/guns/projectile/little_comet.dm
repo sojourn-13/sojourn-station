@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/revolver/little_comet
 	name = "\"Little Comet\" revolver"
 	desc = "A special revolver developed to be as flashy and over priced as the businessmen that carry them. A special gravity based modification in the cylinder allows for it to over penetrate \
-	even solid steel walls despite its low caliber, the weapons value derived from said gravitonic modification being old tech from greyson that can no longer be reproduced. Uses 9mm special rounds."
+	even solid steel walls despite its low caliber, the weapons value derived from said gravitonic modification being old tech from Greyson Positronics that can no longer be reproduced. Uses 9mm special rounds."
 	icon = 'icons/obj/guns/projectile/little_comet.dmi'
 	icon_state = "little_comet"
 	item_state = "little_comet"

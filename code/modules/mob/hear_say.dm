@@ -30,7 +30,7 @@
 		if(isghost(src))
 			message = cop_code + " (" + replace_characters(message, list("@"=")"))
 		else
-			if(!src.stats.getPerk(/datum/perk/codespeak))
+			if(!src.stats.getPerk(PERK_CODESPEAK))
 				message = cop_code
 			else
 				message = cop_code + " (" + replace_characters(message, list("@"=")"))
@@ -91,7 +91,7 @@
 		if(isghost(src))
 			message = cop_code + " (" + replace_characters(message, list("@"=")"))
 		else
-			if(!src.stats.getPerk(/datum/perk/codespeak))
+			if(!src.stats.getPerk(PERK_CODESPEAK))
 				message = cop_code
 			else
 				message = cop_code + " (" + replace_characters(message, list("@"=")"))

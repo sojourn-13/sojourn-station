@@ -7,14 +7,14 @@
 
 	meat_amount = 2
 	turns_per_move = 1
-	maxHealth = 45
-	health = 45
+	maxHealth = 40
+	health = 40
 
 	flash_resistances = 10 //We are the light
 
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/roachmeat/glowing
 
-	armor = list(melee = 10, bullet = 5, energy = 0, bomb = 5, bio = 20, rad = 100, agony = 0)
+	armor = list(melee = 5, bullet = 0, energy = 0, bomb = 5, bio = 20, rad = 100, agony = 0)
 
 	contaminant_immunity = TRUE
 	toxin_immune = TRUE

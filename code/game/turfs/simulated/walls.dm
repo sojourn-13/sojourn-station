@@ -210,6 +210,7 @@
 			return PROJECTILE_CONTINUE
 		src.ricochet_id = 0
 	var/proj_damage = Proj.get_structure_damage()
+	var/ricochet_mult = Proj.get_ricochet_modifier()
 	if(istype(Proj,/obj/item/projectile/beam))
 		if (!(Proj.testing))
 			burn(500)//TODO : fucking write these two procs not only for plasma (see plasma in materials.dm:283) ~
@@ -221,7 +222,7 @@
 		var/ricochetchance = 1
 		if(proj_damage <= 60)
 			ricochetchance = 2 + round((60 - proj_damage) / 5)
-			ricochetchance = min(ricochetchance * ricochetchance, 100)
+			ricochetchance = min(ricochetchance * ricochetchance * ricochet_mult, 100)
 		// here it is multiplied by 1/2 temporally, changes will be required when new wall system gets implemented
 		ricochetchance = round(ricochetchance * projectile_reflection(Proj, TRUE) / 2)
 		ricochetchance = min(max(ricochetchance, 0), 100)
@@ -231,9 +232,9 @@
 			Proj.damage_types[BRUTE] = round(Proj.damage_types[BRUTE] / 2 + Proj.damage_types[BRUTE] * ricochetchance / 200)
 			Proj.damage_types[BURN] = round(Proj.damage_types[BURN] / 2 + Proj.damage_types[BURN] * ricochetchance / 200)
 			if (!(Proj.testing))
-				take_damage(min(proj_damage - damagediff, 100))
 				visible_message("<span class='danger'>\The [Proj] ricochets from the surface of wall!</span>")
 			projectile_reflection(Proj)
+			take_damage(min(proj_damage - damagediff, 100))
 			if (!(Proj.testing))
 				new /obj/effect/sparks(get_turf(Proj))
 			return PROJECTILE_CONTINUE // complete projectile permutation

@@ -268,7 +268,7 @@ Procs:
 	desc = "The study of technologies that are used in covert missions."
 	rare = 3
 	shown = FALSE
-	item_tech_req = TECH_ILLEGAL // research any traitor item and this tech will show up
+	item_tech_req = TECH_ILLEGAL // research any contractor item and this tech will show up
 
 /datum/technology
 	var/name = "name"
