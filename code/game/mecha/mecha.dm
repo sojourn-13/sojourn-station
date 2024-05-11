@@ -391,20 +391,11 @@
 		if(selected && selected.is_ranged())
 			selected.action(target, user)
 	else if(selected) // If target is adjacent
-		if(istype(selected, /obj/item/mecha_parts/mecha_equipment/melee_weapon) || istype(selected, /obj/item/mecha_parts/mecha_equipment/ranged_weapon)) // This makes it so you can atleast melee with your ranged weapon
+		if(istype(selected, /obj/item/mecha_parts/mecha_equipment)) // Check if you're using equipment
 			if(istype(target, /mob/living))
 				selected.attack(target, user, user.targeted_organ) // Against living targets
-			else if(istype(target, /obj))
-				if(user.a_intent == I_HELP && istype(target, /obj/machinery)) // This allows us to interface on health intent on machinery, so we don't break a computer we're trying to access
-					interface_action(target)
-				else // If not machinery or help intent, attack
-					selected.attack_object(target, user)
-
-		else if(istype(selected, /obj/item/mecha_parts/mecha_equipment/tool)) // For every other tool mechs have
-			if(istype(target, /mob/living))
-				selected.attack(target, user, user.targeted_organ) // Against living targets
-			else if(istype(target, /obj))
-				if(user.a_intent == I_HELP && istype(target, /obj/machinery)) // This allows us to interface on health intent on machinery, so we don't break a computer we're trying to access
+			else if(istype(target, /obj/machinery))
+				if(user.a_intent == I_HELP) // This allows us to interface on help intent with machinery, so we don't break a computer we're trying to access
 					interface_action(target)
 				else // If not machinery or help intent, attack
 					selected.attack_object(target, user)
