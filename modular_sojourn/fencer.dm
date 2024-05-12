@@ -37,8 +37,6 @@
 		flick("fencer_glare",src)
 
 //Retrieve whether or not are **single** pixel was clicked
-#define ICON_SPLIT_X_1 11
-#define ICON_SPLIT_Y_1 5
 /mob/living/carbon/superior_animal/robot/fencer/proc/getInput(params)
 	var/list/click_params = params2list(params)
 	var/input
