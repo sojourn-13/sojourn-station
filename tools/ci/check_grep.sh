@@ -96,6 +96,10 @@ if grep -i '/obj/effect/mapping_helpers/custom_icon' maps/**/*.dmm; then
     echo "Custom icon helper found. Please include dmis as standard assets instead for built-in maps."
     st=1
 fi;
+if grep -i '^#define ENABLE_BYOND_TRACY' code/**/*.dm; then
+    echo 'BYOND Tracy is still enabled, this will kill the server!'
+    st=1
+fi;
 # for json in maps/*.json
 # do
 #     map_path=$(jq -r '.map_path' $json)
