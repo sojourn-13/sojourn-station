@@ -16,7 +16,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	armor_penetration = 35
-
+	deathmessage = "Gives a short wave and steps forwards into nothing..."
 
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 500, rad = 500, agony = 0)
 	emp_damage = FALSE
@@ -33,7 +33,7 @@
 	else
 		visible_message("<b><font color='#ffaa00'>Glares a moment, before standing up strait still ready to fight.</font></b>")
 		rejuvenate() //We do this to reset health from fake data
-		death_hits += 1
+		death_hits += 1 //Allows brute force
 		flick("fencer_glare",src)
 
 //Retrieve whether or not are **single** pixel was clicked
@@ -60,6 +60,7 @@
 	log_debug("fencer center_selected [center_selected]. params: [params]")
 	if(center_selected)
 		flick("fencer_hurt",src)
+		death_hits += 1 //Typically takes 3 hits to bonk the fencer away
 		..()
 		return
 
