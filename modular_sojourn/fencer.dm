@@ -21,7 +21,7 @@
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 500, rad = 500, agony = 0)
 	emp_damage = FALSE
 	drop1 = /obj/item/tool/sword/saber/nightmare_saber //A true user of the nightmare
-	//Who are we attacking? It goes by DIRECT name same as the saber
+	//Who are we attacking? It goes by goes by TRUE NAME of the human its tracking, does not track non-humans
 	var/tracker
 	var/coins = 0
 	var/death_hits = 0
