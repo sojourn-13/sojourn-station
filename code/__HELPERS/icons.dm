@@ -1213,6 +1213,33 @@ proc/get_average_color(var/icon, var/icon_state, var/image_dir)
 	dummySave = null
 	fdel("tmp/dummySave.sav") //if you get the idea to try and make this more optimized, make sure to still call unlock on the savefile after every write to unlock it.
 
+/proc/icon2base64tgui(thing)
+	var/static/list/bicon_cache = list()
+
+	ASSERT(thing)
+
+	if(ispath(thing))
+		var/atom/A = thing
+		var/key = "[initial(A.icon)]:[initial(A.icon_state)]"
+		var/cached = bicon_cache[key]
+
+		if(!cached)
+			bicon_cache[key] = cached = icon2base64(path2icon(A))
+
+		return "data:image/png;base64,[cached]"
+
+	if(isicon(thing))
+		var/key = REF(thing)
+		var/cached = bicon_cache[key]
+
+		if(!cached)
+			bicon_cache[key] = cached = icon2base64(thing)
+
+		return "data:image/png;base64,[cached]"
+
+	CRASH("[thing] must be a path or an icon")
+
+
 /proc/icon2html(thing, target, icon_state, dir = SOUTH, frame = 1, moving = FALSE, sourceonly = FALSE, extra_classes = null)
 	if (!thing)
 		return

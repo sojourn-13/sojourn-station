@@ -31,12 +31,6 @@
 	// base multiplier for scrap smelting, increased by better microlasers
 	var/scrap_multiplier = 0.5 //50% refunds
 
-	//some UI stuff here
-	var/show_config = FALSE
-	var/show_iconfig = FALSE
-	var/show_oconfig = FALSE
-	var/show_rconfig = FALSE
-
 /obj/machinery/smelter/cargo_t2_parts
 
 /obj/machinery/smelter/cargo_t2_parts/Initialize()
@@ -277,76 +271,103 @@
 
 
 /obj/machinery/smelter/attack_hand(mob/user as mob)
-	return nano_ui_interact(user)
+	return ui_interact(user)
 
+/obj/machinery/smelter/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Smelter", name)
+		ui.open()
 
-/obj/machinery/smelter/nano_ui_data()
+/obj/machinery/smelter/ui_assets(mob/user)
+	return list(
+		get_asset_datum(/datum/asset/simple/ores),
+		get_asset_datum(/datum/asset/simple/materials)
+	)
+
+/obj/machinery/smelter/ui_data(mob/user)
 	var/list/data = list()
-	data["currentItem"] = current_item?.name
-	data["progress"] = progress
+	if(current_item)
+		var/list/item_materials_data = list()
 
-	var/list/M = list()
+		var/list/item_materials = result_materials(current_item)
+		if(are_valid_materials(item_materials))
+			for(var/mtype in item_materials)
+				var/mat_ui_data = get_material_ui_data(mtype)
+				mat_ui_data["count"] = item_materials[mtype]
+			
+				if(istype(current_item, /obj/item/stack))
+					var/obj/item/stack/S = current_item
+					mat_ui_data["count"] *= S.amount
+				else 
+					mat_ui_data["count"] *= scrap_multiplier
+
+				item_materials_data += list(mat_ui_data)
+
+		var/list/item_data = list(
+			"name" = current_item.name,
+			"materials" = item_materials_data
+		)
+
+		if(istype(current_item, /obj/item/stack/ore) || istype(current_item, /obj/item/stack/material))
+			item_data["icon"] = SSassets.transport.get_asset_url(sanitizeFileName("[current_item.type].png"))
+		else
+			item_data["icon"] = icon2base64tgui(current_item.type)
+
+		data["current_item"] = item_data
+	else
+		data["current_item"] = null
+	data["progress"] = progress
+	data["capacity"] = storage_capacity
+	data["input_side"] = capitalize(dir2text(input_side))
+	data["output_side"] = capitalize(dir2text(output_side))
+	data["refuse_side"] = capitalize(dir2text(refuse_output_side))
+
+	var/list/materials = list()
+
 	for(var/mtype in stored_material)
 		if(stored_material[mtype] < 1)
 			continue
-		M.Add(list(list("name" = mtype, "count" = stored_material[mtype])))
-	data["materials"] = M
-	data["capacity"] = storage_capacity
-	data["sideI"] = capitalize(dir2text(input_side))
-	data["sideO"] = capitalize(dir2text(output_side))
-	data["sideR"] = capitalize(dir2text(refuse_output_side))
-	data["show_config"] = show_config
-	data["show_iconfig"] = show_iconfig
-	data["show_oconfig"] = show_oconfig
-	data["show_rconfig"] = show_rconfig
+
+		var/mat_ui_data = get_material_ui_data(mtype)
+		mat_ui_data["count"] = stored_material[mtype]
+
+		materials += list(mat_ui_data)
+
+	data["materials"] = materials
 
 	return data
 
+/obj/machinery/smelter/proc/get_material_ui_data(name)
+	return list(
+		"name" = name,
+		"icon" = SSassets.transport.get_asset_url(sanitizeFileName("[material_stack_type(name)].png"))
+	)
 
-/obj/machinery/smelter/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
-	var/list/data = nano_ui_data()
+/obj/machinery/smelter/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "smelter.tmpl", src.name, 600, 400)
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	switch(action)
+		if("eject")
+			var/material = params["name"]
 
+			if(material in stored_material)
+				eject_all_material(material)
+			else
+				eject_all_material()
+			. = TRUE
 
-/obj/machinery/smelter/Topic(href, href_list)
-	if (..()) return TRUE
+		if("setside_input")
+			input_side = text2dir(params["side"])
+			. = TRUE
 
-	if(href_list["eject"])
-		var/material = href_list["eject"]
+		if("setside_output")
+			output_side = text2dir(params["side"])
+			. = TRUE
 
-		if(material in stored_material)
-			eject_all_material(material)
-		else
-			eject_all_material()
+		if("setside_refuse")
+			refuse_output_side = text2dir(params["side"])
+			. = TRUE
 
-	if(href_list["setsideI"])
-		input_side = text2dir(href_list["setsideI"])
-
-	if(href_list["setsideO"])
-		output_side = text2dir(href_list["setsideO"])
-
-	if(href_list["setsideR"])
-		refuse_output_side = text2dir(href_list["setsideR"])
-
-	if(href_list["toggle_config"])
-		show_config = !show_config
-
-	if(href_list["toggle_iconfig"])
-		show_iconfig = !show_iconfig
-
-	if(href_list["toggle_oconfig"])
-		show_oconfig = !show_oconfig
-
-	if(href_list["toggle_rconfig"])
-		show_rconfig = !show_rconfig
-
-
-	SSnano.update_uis(src)
-	return FALSE
-	
