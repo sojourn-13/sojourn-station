@@ -251,7 +251,7 @@ var/global/list/default_medbay_channels = list(
 	return has_access(list(), req_one_accesses, I ? I.GetAccess() : list())
 
 /mob/observer/ghost/has_internal_radio_channel_access(var/list/req_one_accesses)
-	return can_admin_interact()
+	return isAdminGhostAI(src)
 
 /obj/item/device/radio/proc/text_wires()
 	if (b_stat)
