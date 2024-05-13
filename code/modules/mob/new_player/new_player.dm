@@ -365,7 +365,7 @@ GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 		list("key" = "sci", "flag" = SCIENCE),
 		list("key" = "chr", "flag" = CHURCH),
 		list("key" = "sup", "flag" = LSS),
-		list("key" = "sup", "flag" = ENGINEERING),
+		list("key" = "eng", "flag" = ENGINEERING),
 		list("key" = "pro", "flag" = PROSPECTORS),
 		list("key" = "civ", "flag" = CIVILIAN),
 		list("key" = "bot", "flag" = MISC),
