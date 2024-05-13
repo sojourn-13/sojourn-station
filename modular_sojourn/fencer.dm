@@ -3,7 +3,7 @@
 
 /mob/living/carbon/superior_animal/robot/fencer
 	name = "Blue Fencer"
-	desc = "Something that dosnt even match this worlds estectic."
+	desc = "Something that doesn't even match this worlds aesthetic."
 	icon_state = "fencer" //Dream Sprite
 	icon = 'modular_sojourn/fencer.dmi'
 
