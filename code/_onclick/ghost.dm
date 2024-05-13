@@ -1,10 +1,14 @@
-/client/var/inquisitive_ghost = 1
+/client/var/inquisitive_ghost = FALSE
 /mob/observer/ghost/verb/toggle_inquisition() // warning: unexpected inquisition
 	set name = "Toggle Inquisitiveness"
 	set desc = "Sets whether your ghost examines everything on click by default"
 	set category = "Ghost"
-	if(!client) return
+
+	if(!client)
+		return
+
 	client.inquisitive_ghost = !client.inquisitive_ghost
+
 	if(client.inquisitive_ghost)
 		to_chat(src, SPAN_NOTICE("You will now examine everything you click on."))
 	else
@@ -53,6 +57,8 @@
 
 // Oh by the way this didn't work with old click code which is why clicking shit didn't spam you
 /atom/proc/attack_ghost(mob/observer/ghost/user as mob)
+	if(user?.client?.inquisitive_ghost)
+		user.examinate(src)
 	return FALSE
 
 // ---------------------------------------
