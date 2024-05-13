@@ -23,6 +23,7 @@
 
 /obj/structure/lift/proc/pressed(var/mob/user)
 	if(!istype(user, /mob/living/silicon))
+		playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
 		if(user.a_intent == I_HURT)
 			user.visible_message("<span class='danger'>\The [user] hammers on the lift button!</span>")
 		else
@@ -177,8 +178,9 @@
 	return data
 
 /obj/structure/lift/panel/ui_act(action, params)
-	if(..())
-		return TRUE
+	. = ..()
+	if(.)
+		return
 
 	switch(action)
 		if("move_to_floor")
