@@ -69,7 +69,7 @@
 
 //Intended for open manifest in separate window
 /proc/show_manifest(mob/user)
-	var/datum/tgui_module/manifest/manifest = new()
+	var/datum/tgui_module/manifest/manifest = new(user)
 	manifest.ui_interact(user)
 
 /proc/html_crew_manifest(var/monochrome, var/OOC)

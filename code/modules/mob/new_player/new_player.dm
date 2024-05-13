@@ -457,7 +457,7 @@ GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 		. = UI_CLOSE
 
 /mob/new_player/proc/LateChoices()
-	var/datum/tgui_module/late_choices/dialog = new()
+	var/datum/tgui_module/late_choices/dialog = new(src)
 	dialog.ui_interact(src)
 
 /mob/new_player/proc/create_character()
