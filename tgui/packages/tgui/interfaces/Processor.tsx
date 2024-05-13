@@ -50,9 +50,19 @@ export const Processor = (props) => {
         <Window.Content scrollable>
           <Flex frex-wrap="wrap">
             <Flex.Item>
-              <Button onClick={() => act('set_running')}>
-                {running ? 'TURN OFF' : 'TURN ON'}
-              </Button>
+              <Button
+                onClick={() => act('set_running')}
+                width={5}
+                height={5}
+                mb={2}
+                color={running ? 'green' : 'red'}
+                icon="power-off"
+                fontSize={2}
+                tooltipPosition="right"
+                tooltip={running ? 'Turn off' : 'Turn on'}
+                verticalAlignContent="middle"
+                textAlign="center"
+              />
               <Box>
                 <Knob
                   size={2}
