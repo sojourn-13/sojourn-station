@@ -92,12 +92,13 @@
 		/mob/living/carbon/superior_animal/human/excelsior/excel_ppsh = 2,
 		/mob/living/carbon/superior_animal/human/excelsior/excel_ak = 2,
 		/mob/living/carbon/superior_animal/human/excelsior/excel_vintorez = 2,
-		/mob/living/carbon/superior_animal/human/excelsior/excel_drozd = 2
+		/mob/living/carbon/superior_animal/human/excelsior/excel_drozd = 2,
+		/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield = 2,
+		/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/batton = 2
 		)
 
 /obj/random/mob/excelsior/item_to_spawn()
 	return pickweight()
-
 
 /obj/random/mob/excelsior/low_chance
 	name = "low chance random excelsior"

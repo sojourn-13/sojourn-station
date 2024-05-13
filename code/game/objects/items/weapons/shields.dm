@@ -241,6 +241,38 @@
 		playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
 		cooldown = world.time
 
+/obj/item/shield/buckler/excelsior
+	name = "Excelsior shield"
+	desc = "A small round shield in Excelsior colours with the rim having a engraving \"A shield only the working people!\"."
+	icon_state = "buckler_excelsior"
+	item_state = "buckler_excelsior"
+	flags = null
+	throw_speed = 2
+	throw_range = 6
+	armor_list = list(melee = 30, bullet = 15, energy = 20, bomb = 10, bio = 0, rad = 0)
+	base_block_chance = 60
+	matter = list(MATERIAL_GLASS = 5, MATERIAL_STEEL = 8, MATERIAL_PLASTEEL = 15)
+	max_durability = 300 //Strong so that we can protect folks from quote a few shots
+	durability = 300
+
+//Used for mobs as these has less materals and are pre-damageed
+/obj/item/shield/buckler/excelsior/dropped
+	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 1)
+
+/obj/item/shield/buckler/excelsior/dropped/Initialize()
+	. = ..()
+	durability -= rand(200, 280)
+
+/obj/item/shield/buckler/exl/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
+	if(!is_excelsior(user))
+		return FALSE
+	..()
+
+/obj/item/shield/buckler/exl/block_bullet(mob/user, var/obj/item/projectile/damage_source, def_zone)
+	if(!is_excelsior(user))
+		return FALSE
+	..()
+
 /obj/item/shield/riot
 	name = "ballistic shield"
 	desc = "A heavy personal shield made of pre-preg aramid fibres designed to stop or deflect bullets and other projectiles fired at its wielder at the cost of mobility."

@@ -197,6 +197,8 @@
 		/datum/design/autolathe/device/propaganda_chip,
 		/datum/design/autolathe/clothing/excelsior_armor,
 		/datum/design/autolathe/device/excelbaton,
+		/datum/design/autolathe/tool/excelsior_hammer,
+		/datum/design/autolathe/sec/excelsior_shield,
 		/datum/design/autolathe/container/ammocan_excel,
 		/datum/design/autolathe/excelsior/laser,
 		/datum/design/autolathe/excelsior/matter,
@@ -243,6 +245,8 @@
 		/datum/design/autolathe/ammo/sbaw_pellet,
 		/datum/design/autolathe/ammo/maxim, 						//maxim
 		/datum/design/autolathe/sec/silencer,						//misc
+		/datum/design/autolathe/sec/excelsior_shield,
+		/datum/design/autolathe/tool/excelsior_hammer,
 		/datum/design/autolathe/clothing/excelsior_armor,
 		/datum/design/autolathe/container/ammocan_excel
 	)
