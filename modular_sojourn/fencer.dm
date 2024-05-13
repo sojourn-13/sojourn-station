@@ -108,7 +108,7 @@
 			if(H.has_shield())
 				var/obj/item/shield/shield = H.has_shield()
 				visible_message("<b><font color='#ffaa00'>The [src] echos in an etheral voice \"Second Form, Bulwark Buster Number 4.\"</font></b>")
-				shield.adjustShieldDurability(150, H)
+				shield.adjustShieldDurability(-150, H)
 
 		if(coins == 4 && give_coins)
 			visible_message("<b><font color='#ffaa00'>The [src] echos in an etheral voice \"Third Stance, Saved Slash Number 8.\"</font></b>")
