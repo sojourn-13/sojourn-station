@@ -22,6 +22,18 @@ export const CrewManifest = (props) => {
 
   let { manifest } = data;
 
+  if (!manifest || manifest.length === 0) {
+    return (
+      <Window width={450} height={600}>
+        <Window.Content>
+          <Section title="No Crew Found">
+            There doesn&apos;t seem to be anyone here.
+          </Section>
+        </Window.Content>
+      </Window>
+    );
+  }
+
   const departments = uniq(manifest.flatMap((crew) => crew.departments)).sort(
     (a, b) =>
       Object.keys(departmentData).indexOf(a) -

@@ -15,7 +15,7 @@
 		list("key" = "sci", "flag" = SCIENCE),
 		list("key" = "chr", "flag" = CHURCH),
 		list("key" = "sup", "flag" = LSS),
-		list("key" = "sup", "flag" = ENGINEERING),
+		list("key" = "eng", "flag" = ENGINEERING),
 		list("key" = "pro", "flag" = PROSPECTORS),
 		list("key" = "civ", "flag" = CIVILIAN),
 		list("key" = "bot", "flag" = MISC),
@@ -32,7 +32,7 @@
 		var/rank = CR.get_job()
 		var/datum/job/job = SSjob.occupations_by_name[rank]
 
-		crew_data["title"] = job.title
+		crew_data["rank"] = job.title
 
 		var/list/departments = list()
 		for(var/list/department in dept_data)
