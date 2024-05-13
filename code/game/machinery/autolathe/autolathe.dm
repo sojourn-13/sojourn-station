@@ -275,7 +275,7 @@
 	ui_interact(user)
 	wires.Interact(user)
 
-/obj/machinery/autolathe/ui_act(action, list/params)
+/obj/machinery/autolathe/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -364,6 +364,7 @@
 
 		if("switch_category")
 			show_category = params["category"]
+			update_static_data(usr, ui)
 			. = TRUE
 
 /obj/machinery/autolathe/proc/insert_disk(mob/living/user, obj/item/computer_hardware/hard_drive/portable/inserted_disk)
