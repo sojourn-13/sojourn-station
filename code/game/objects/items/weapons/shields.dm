@@ -185,6 +185,13 @@
 			L.slowdown += slowdown_time
 	return ..()
 
+/obj/item/shield/resolve_attackby(atom/target, mob/user)
+	if(issuperioranimal(target))
+		var/mob/living/carbon/superior_animal/SA = target
+		SA.loseTarget(TRUE,TRUE)
+		SA.react_to_attack(SA,src,user)
+	..()
+
 /obj/item/shield/buckler
 	name = "tactical shield"
 	desc = "A compact personal shield made of pre-preg aramid fibres designed to stop or deflect bullets without slowing down its wielder."
@@ -263,12 +270,12 @@
 	. = ..()
 	durability -= rand(200, 280)
 
-/obj/item/shield/buckler/exl/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
+/obj/item/shield/buckler/excelsior/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(!is_excelsior(user))
 		return FALSE
 	..()
 
-/obj/item/shield/buckler/exl/block_bullet(mob/user, var/obj/item/projectile/damage_source, def_zone)
+/obj/item/shield/buckler/excelsior/block_bullet(mob/user, var/obj/item/projectile/damage_source, def_zone)
 	if(!is_excelsior(user))
 		return FALSE
 	..()
