@@ -496,7 +496,7 @@
 	if(!eating && istype(user))
 		eating = user.get_active_hand()
 
-	if(!istype(eating))
+	if(!istype(eating) || QDELETED(eating))
 		return FALSE
 
 	if(stat)
