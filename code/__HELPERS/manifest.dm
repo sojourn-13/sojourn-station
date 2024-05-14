@@ -30,15 +30,15 @@
 		crew_data["name"] = name
 		
 		var/rank = CR.get_job()
+		crew_data["rank"] = rank
+
 		var/datum/job/job = SSjob.occupations_by_name[rank]
 
-		crew_data["rank"] = job.title
-
 		var/list/departments = list()
-		for(var/list/department in dept_data)
-			if(job.department_flag & department["flag"])
-				departments += department["key"]
-
+		if(istype(job))
+			for(var/list/department in dept_data)
+				if(job.department_flag & department["flag"])
+					departments += department["key"]
 		crew_data["departments"] = departments
 
 		for(var/datum/mind/M in SSticker.minds)
