@@ -1,9 +1,40 @@
+import { BooleanLike } from 'common/react';
+
 import { useBackend } from '../backend';
 import { Box, Button, Flex, Knob, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 
+enum OreAction {
+  Storing = 0,
+  Smelting = 1,
+  Compressing = 2,
+  Alloying = 3,
+}
+
+type Ore = {
+  name: string;
+  id: string;
+  amount: number;
+  current_action: OreAction;
+  current_action_string: string;
+};
+
+type Alloy = {
+  name: string;
+  creating: BooleanLike;
+};
+
+type Data = {
+  materials_data: Ore[];
+  alloy_data: Alloy[];
+  currently_alloying: string;
+  running: BooleanLike;
+  sheet_rate: number;
+  machine: BooleanLike;
+};
+
 export const Processor = (props) => {
-  const { act, data } = useBackend();
+  const { act, data } = useBackend<Data>();
   // Extract `health` and `color` variables from the `data` object.
   const {
     materials_data = [],
@@ -11,16 +42,26 @@ export const Processor = (props) => {
     currently_alloying,
     running,
     sheet_rate,
+    machine,
   } = data;
-  if (data.machine) {
+  if (machine) {
     return (
-      <Window resizable>
+      <Window>
         <Window.Content scrollable>
           <Flex frex-wrap="wrap">
             <Flex.Item>
               <Button
-                content={running ? 'TURN OFF' : 'TURN ON'}
                 onClick={() => act('set_running')}
+                width={5}
+                height={5}
+                mb={2}
+                color={running ? 'green' : 'red'}
+                icon="power-off"
+                fontSize={2}
+                tooltipPosition="right"
+                tooltip={running ? 'Turn off' : 'Turn on'}
+                verticalAlignContent="middle"
+                textAlign="center"
               />
               <Box>
                 <Knob
@@ -51,15 +92,17 @@ export const Processor = (props) => {
                       buttons={
                         <Button
                           key={material.name}
-                          content={material.current_action_string}
                           onClick={() =>
                             act('set_smelting', {
                               id: material.id,
                               action_type: material.current_action + 1,
                             })
                           }
-                        />
-                      }>
+                        >
+                          {material.current_action_string}
+                        </Button>
+                      }
+                    >
                       {material.amount}
                     </LabeledList.Item>
                   ))}
@@ -74,14 +117,15 @@ export const Processor = (props) => {
                       buttons={
                         <Button
                           key={alloy.name}
-                          content={alloy.name}
                           selected={alloy.name === currently_alloying}
                           onClick={() =>
                             act('set_alloying', {
                               id: alloy.name,
                             })
                           }
-                        />
+                        >
+                          {alloy.name}
+                        </Button>
                       }
                     />
                   ))}
@@ -94,10 +138,12 @@ export const Processor = (props) => {
       // Incase theres no machine
     );
   } else {
-    <Window resizable>
-      No machine linked! There must be a material processor within 3 tiles for
-      the wireless link to connect.
-      <Button content="Attempt linking" onClick={() => act('machine_link')} />
+    <Window>
+      <Window.Content>
+        No machine linked! There must be a material processor within 3 tiles for
+        the wireless link to connect.
+        <Button onClick={() => act('machine_link')}>Attempt linking</Button>
+      </Window.Content>
     </Window>;
   }
 };

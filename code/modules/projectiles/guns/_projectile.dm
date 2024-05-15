@@ -431,11 +431,14 @@
 	unload_ammo(usr)
 */
 
-/obj/item/gun/projectile/nano_ui_data(mob/user)
+/obj/item/gun/projectile/ui_data(mob/user)
 	var/list/data = ..()
-	data["caliber"] = caliber
-	data["current_ammo"] = get_ammo()
-	data["max_shells"] = get_max_ammo()
+
+	var/list/ammo_stats = list()
+	ammo_stats += list(list("name" = "Rifled Caliber", "type" = "String", "value" = caliber))
+	ammo_stats += list(list("name" = "Ammo Remaining", "type" = "ProgressBar", "value" = get_ammo(), "max" = get_max_ammo()))
+	ammo_stats += data["stats"]["Ammo Stats"]
+	data["stats"]["Ammo Stats"] = ammo_stats
 
 	return data
 

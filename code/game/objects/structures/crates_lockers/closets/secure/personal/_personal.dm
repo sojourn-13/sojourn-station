@@ -28,8 +28,10 @@
 		return
 
 	var/obj/item/card/id/I = W.GetIdCard()
-	if(istype(I) && (I.claimed_locker == FALSE))
-		if(!src.registered_name && has_access(access_occupy, list(), I.GetAccess()))
+	if(istype(I))
+		if(I.claimed_locker == TRUE)
+			to_chat(user, SPAN_WARNING("You have already occupied a locker using this card, you can never claim any other lockers with this card."))
+		else if(!src.registered_name && has_access(access_occupy, list(), I.GetAccess()))
 			src.registered_name = I.registered_name
 			name = "[initial(name)] ([registered_name])"
 			to_chat(user, SPAN_NOTICE("You occupied [src]."))

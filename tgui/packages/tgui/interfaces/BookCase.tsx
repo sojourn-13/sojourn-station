@@ -1,20 +1,27 @@
-import { useBackend } from "../backend";
-import { Box, Button, Flex, Section } from "../components";
-import { Window } from "../layouts";
+import { useBackend } from '../backend';
+import { Box, Button, Flex, Section } from '../components';
+import { Window } from '../layouts';
+
+type Data = {
+  bookcase_name: string;
+  hex_code_for_backround: string;
+  contents_ref: string[];
+  contents: string[];
+};
 
 export const BookCase = (props) => {
-  const { act, data } = useBackend();
+  const { act, data } = useBackend<Data>();
   const { bookcase_name, hex_code_for_backround, contents, contents_ref } =
     data;
   return (
-    <Window title={bookcase_name || "Bookcase"} width={350} height={300}>
+    <Window title={bookcase_name || 'Bookcase'} width={350} height={300}>
       <Window.Content backgroundColor={hex_code_for_backround} scrollable>
         {contents.map((object, index) => (
           <Flex
             key={contents_ref[index]}
             color="black"
             backgroundColor="white"
-            style={{ padding: "2px" }}
+            style={{ padding: '2px' }}
             mb={0.5}
           >
             <Flex.Item align="center" grow={1}>
@@ -24,7 +31,7 @@ export const BookCase = (props) => {
               <Button
                 icon="eject"
                 onClick={() =>
-                  act("remove_object", { ref: contents_ref[index] })
+                  act('remove_object', { ref: contents_ref[index] })
                 }
               />
             </Flex.Item>
