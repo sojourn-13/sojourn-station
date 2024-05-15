@@ -455,5 +455,5 @@
 /obj/item/clothing/under/modular/skylight_uniform
 	name = "starlight suit"
 	desc = "A neatly pressed fancy white shirt and sky blue tie with charcoal black pants. Common clothing worn by those of now known as Skylight Services, once a group with malicious dealings and business practices, now partially reformed under new management of Lonestar."
-	icon_state = "starlight_uniform"
-	item_state = "starlight_uniform"
+	icon_state = "skylight_uniform"
+	item_state = "skylight_uniform"
