@@ -1032,6 +1032,23 @@ obj/item/clothing/suit/sweater/blue
 	icon_state = "white_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 
+/obj/item/clothing/suit/storage/suitjacket/skylight_coat
+	name = "skylight overcoat"
+	desc = "A sleek black coat worn by those of now known as Skylight Services, once a group with malicious dealings and business practices, now partially reformed under new management of Lonestar. You feel like this overcoat could easily hide an old school submachine gun."
+	icon_state = "skylight_coat"
+	item_state = "skylight_coat"
+	icon_open = "skylight_coat_open"
+	icon_closed = "skylight_coat"
+	armor_list = list(
+		melee = 5,
+		bullet = 5,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|ARMS
+
 /obj/item/clothing/suit/storage/suitjacket/helltaker/black
 	name = "devilish black suit jacket"
 	desc = "A stylish, opened black suit jacket with adjustable styles."
