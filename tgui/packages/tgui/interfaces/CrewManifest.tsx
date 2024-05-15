@@ -1,4 +1,5 @@
 import { uniq } from 'common/collections';
+import { decodeHtmlEntities } from 'common/string';
 import { useBackend } from 'tgui/backend';
 import { Section, Table } from 'tgui/components';
 import { Window } from 'tgui/layouts';
@@ -65,7 +66,7 @@ export const CrewManifest = (props) => {
                       overflow="hidden"
                       width="40%"
                     >
-                      {crew.name}
+                      {decodeHtmlEntities(crew.name)}
                     </Table.Cell>
                     <Table.Cell
                       className={classes([
@@ -76,7 +77,7 @@ export const CrewManifest = (props) => {
                       overflow="hidden"
                       width="40%"
                     >
-                      {crew.rank}
+                      {decodeHtmlEntities(crew.rank)}
                     </Table.Cell>
                     <Table.Cell
                       className="CrewManifest__Cell"
@@ -103,7 +104,7 @@ export const CrewManifest = (props) => {
                     overflow="hidden"
                     width="40%"
                   >
-                    {crew.name}
+                    {decodeHtmlEntities(crew.name)}
                   </Table.Cell>
                   <Table.Cell
                     className={classes([
@@ -114,7 +115,7 @@ export const CrewManifest = (props) => {
                     overflow="hidden"
                     width="40%"
                   >
-                    {crew.rank}
+                    {decodeHtmlEntities(crew.rank)}
                   </Table.Cell>
                   <Table.Cell
                     className="CrewManifest__Cell"
