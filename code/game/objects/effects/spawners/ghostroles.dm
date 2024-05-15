@@ -68,6 +68,7 @@
 /obj/effect/mob_spawn/human/exl_civ/special(mob/living/H)
 	var/obj/item/implant/excelsior/E = new /obj/item/implant/excelsior(H)
 	E.install(H, BP_HEAD, H)
+	H.faction = "excelsior"
 
 /obj/effect/mob_spawn/human/exl_civ/armored
 	outfit = /decl/hierarchy/outfit/antagonist/mercenary/excelsior/equipped
