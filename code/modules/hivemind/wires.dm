@@ -389,7 +389,7 @@
 			if(is_neotheology_disciple(L))
 				return
 
-			to_world("Wires begin to wreathe around [L], starting the process of converting them into part of the hivemind.") //We tell people to get them off the wires
+			visible_message("Wires begin to wreathe around [L], starting the process of converting them into part of the hivemind.") //We tell people to get them off the wires
 			sleep(90 SECONDS) //We give them 90 seconds to be pulled off the wires
 
 			if(!locate(/obj/effect/plant/hivemind) in L.loc) //If we don't see any wires after the 90 seconds, we let them go
