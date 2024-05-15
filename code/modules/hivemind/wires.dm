@@ -381,25 +381,20 @@
 		if(ishuman(subject))
 			var/mob/living/L = subject
 
-			if(GLOB.hive_data_bool["prevent_gibbing_dead"])
-			//We we dont touch the dead via are controler we dont want to pk people form the round
+			if(!GLOB.hive_data_float["gibbing_warning_timer"]) //If the value is set to 0 (the default) we don't touch player humans
 				return
 
-			//if our target has cruciform, let's just leave it
-			if(is_neotheology_disciple(L))
+			var/timer = GLOB.hive_data_float["gibbing_warning_timer"] SECONDS //If we've continued, then there's a value there and we want it in seconds
+
+			if(is_neotheology_disciple(L)) //If our target has a cruciform, we don't touch it
 				return
 
 			visible_message("Wires begin to wreathe around [L], starting the process of converting them into part of the hivemind.") //We tell people to get them off the wires
-			sleep(90 SECONDS) //We give them 90 seconds to be pulled off the wires
+			addtimer(CALLBACK(src, .proc/assimilate_human, L), timer)
+			return
 
-			if(!locate(/obj/effect/plant/hivemind) in L.loc) //If we don't see any wires after the 90 seconds, we let them go
-				return
-			for(var/obj/item/W in L)
-				L.drop_from_inventory(W)
-			var/M = pick(/mob/living/simple_animal/hostile/hivemind/himan, /mob/living/simple_animal/hostile/hivemind/phaser)
-			new M(loc)
 		//robot corpses
-		else if(issilicon(subject))
+		else if(issilicon(subject)) //If you're a borg... sucks to suck? I don't feel like reworking this, you're too mechanical to prevent hivemind taking over you
 			new /mob/living/simple_animal/hostile/hivemind/hiborg(loc)
 		//other dead bodies
 		else
@@ -408,6 +403,15 @@
 
 		qdel(subject)
 
+/obj/effect/plant/hivemind/proc/assimilate_human(var/mob/living/L)
+	if(!locate(/obj/effect/plant/hivemind) in L.loc) //If we don't see any wires after the alotted time, we let them go
+		return
+	for(var/obj/item/W in L)
+		L.drop_from_inventory(W)
+	var/M = pick(/mob/living/simple_animal/hostile/hivemind/himan, /mob/living/simple_animal/hostile/hivemind/phaser)
+	new M(loc)
+
+	L.dust()
 
 //////////////////////////////////////////////////////////////////
 /////////////////////////>RESPONSE CODE<//////////////////////////
