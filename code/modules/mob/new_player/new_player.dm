@@ -6,6 +6,8 @@
 	var/totalPlayers = 0		 //Player counts for the Lobby tab
 	var/totalPlayersReady = 0
 	var/datum/browser/panel
+	var/datum/tgui_module/late_choices/late_choices_dialog = null
+	var/datum/tgui_module/manifest/manifest_panel = null
 	universal_speak = 1
 
 	invisibility = 101
@@ -221,7 +223,9 @@
 		LateChoices()
 
 	if(href_list["manifest"])
-		show_manifest(src)
+		if(!istype(manifest_panel))
+			manifest_panel = new(src)
+		manifest_panel.ui_interact(src)
 
 	if(href_list["SelectedJob"])
 
@@ -458,8 +462,9 @@ GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 		. = UI_CLOSE
 
 /mob/new_player/proc/LateChoices()
-	var/datum/tgui_module/late_choices/dialog = new(src)
-	dialog.ui_interact(src)
+	if(!istype(late_choices_dialog))
+		late_choices_dialog = new(src)
+	late_choices_dialog.ui_interact(src)
 
 /mob/new_player/proc/create_character()
 	spawning = 1
