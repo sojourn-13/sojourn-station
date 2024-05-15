@@ -223,7 +223,7 @@
 					new /obj/item/cell/medium(src)
 					new /obj/item/cell/medium(src)
 					new /obj/item/cell/medium(src)
-				if(96-100) //5% chance Concillium, you only get two cells because they're large
+				if(96 to 100) //5% chance Concillium, you only get two cells because they're large
 					new /obj/item/gun/energy/concillium(src)
 					new /obj/item/cell/large(src)
 					new /obj/item/cell/large(src)
@@ -433,7 +433,7 @@
 					new /obj/item/gun/energy/laser(src)
 					new /obj/random/powercell/medium_safe_lonestar(src)
 					new /obj/item/cell/medium(src)
-				if(96-100) //5% chance Concillium, you only get two cells because they're large
+				if(96 to 100) //5% chance Concillium, you only get two cells because they're large
 					new /obj/item/gun/energy/concillium(src)
 					new /obj/item/cell/large(src)
 					new /obj/item/cell/large(src)
