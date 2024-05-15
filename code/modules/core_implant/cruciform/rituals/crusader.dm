@@ -140,3 +140,14 @@
 	new /obj/item/clothing/suit/space/void/crusader(usr.loc)
 	set_personal_cooldown(user)
 	return TRUE
+
+/datum/ritual/targeted/cruciform/crusader/end_crusade
+	name = "End Crusade"
+	phrase = "Tempus occidendi, et tempus sanandi; tempus destruendi, et tempus aedificandi." //"A time to kill and a time to heal, a time to tear down and a time to build"
+	desc = "Ends your Crusade, returning you to the state you were in when you entered the upper levels."
+	power = 5 //This is literally a litany to depower yourself, it shouldn't cost much
+
+/datum/ritual/targeted/cruciform/crusader/end_crusade/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
+	for(var/datum/antagonist/A in user.mind.antagonist)
+		if(A.id == ROLE_INQUISITOR)
+			A.remove_antagonist()
