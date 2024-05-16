@@ -139,13 +139,16 @@
 	var/difficulty_adjust = 0
 	var/time_adjust = 0
 
-	//Cloathing checks: Every lim has cloathing blockers that make surgery harder!
-	if(ishuman(owner))
+	//Clothing checks: Every lim has cloathing blockers that make surgery harder!
+	if(ishuman(owner) && ishuman(user))
 		var/mob/living/carbon/human/H = owner
-		var/sanity_targeting_zone = H.targeted_organ
+		var/mob/living/carbon/human/op = user
+		var/sanity_targeting_zone = op.targeted_organ
+		to_chat(user, SPAN_WARNING("[H.targeted_organ] gets in the way."))
 
 		if(!sanity_targeting_zone)
 			sanity_targeting_zone = BP_TORSO
+		to_chat(user, SPAN_WARNING("[H.targeted_organ] gets in the way."))
 
 		switch(sanity_targeting_zone)
 			if(BP_MOUTH, BP_EYES, BP_HEAD)
@@ -187,7 +190,7 @@
 					to_chat(user, SPAN_WARNING("[H.wear_suit] gets in the way."))
 
 
-			//chest and lower body! ANY uniform but medical scrubs punish us, over-armor pushes us more so
+			//chest and lower body! ANY uniform but medical gown punish us, over-armor pushes us more so
 			if(BP_CHEST, BP_GROIN)
 				if(H.wear_suit)
 					difficulty_adjust += 30
@@ -198,7 +201,7 @@
 					if(!istype(H.w_uniform, /obj/item/clothing/under/medigown))
 						time_adjust += 10
 						to_chat(user, SPAN_WARNING("[H.w_uniform] takes additional time to operate through."))
-					//Proper scrubs = better, DO THIS!!!
+					//Proper gown = better, DO THIS!!!
 					else
 						difficulty_adjust += -25
 						time_adjust += -25
