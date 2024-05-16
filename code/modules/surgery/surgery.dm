@@ -144,11 +144,9 @@
 		var/mob/living/carbon/human/H = owner
 		var/mob/living/carbon/human/op = user
 		var/sanity_targeting_zone = op.targeted_organ
-		to_chat(user, SPAN_WARNING("[H.targeted_organ] gets in the way."))
 
 		if(!sanity_targeting_zone)
 			sanity_targeting_zone = BP_TORSO
-		to_chat(user, SPAN_WARNING("[H.targeted_organ] gets in the way."))
 
 		switch(sanity_targeting_zone)
 			if(BP_MOUTH, BP_EYES, BP_HEAD)
