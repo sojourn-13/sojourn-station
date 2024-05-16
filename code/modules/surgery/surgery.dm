@@ -139,38 +139,104 @@
 	var/difficulty_adjust = 0
 	var/time_adjust = 0
 
+	//Cloathing checks: Every lim has cloathing blockers that make surgery harder!
+	if(ishuman(owner))
+		var/mob/living/carbon/human/H = owner
+		var/sanity_targeting_zone = H.targeted_organ
+
+		if(!sanity_targeting_zone)
+			sanity_targeting_zone = BP_TORSO
+
+		switch(sanity_targeting_zone)
+			if(BP_MOUTH, BP_EYES, BP_HEAD)
+				if(H.head)
+					difficulty_adjust += 30
+					time_adjust += 20
+					to_chat(user, SPAN_WARNING("[H.head] gets in the way."))
+
+				if(H.wear_mask)
+					if(!istype(H.wear_mask, /obj/item/clothing/mask/breath/medical))
+						difficulty_adjust += 15
+						time_adjust += 10
+						to_chat(user, SPAN_WARNING("[H.wear_mask] gets in the way."))
+					//Proper mask = better
+					else
+						difficulty_adjust += -10
+						time_adjust += -5
+
+			//Arms and hands, waring an over suit is less punishing then gloves
+			if(BP_R_ARM, BP_L_ARM, BP_L_HAND, BP_R_HAND)
+				if(H.gloves)
+					difficulty_adjust += 30
+					time_adjust += 20
+					to_chat(user, SPAN_WARNING("[H.gloves] gets in the way."))
+				if(H.wear_suit)
+					difficulty_adjust += 15
+					time_adjust += 10
+					to_chat(user, SPAN_WARNING("[H.wear_suit] gets in the way."))
+
+			//legs, waring an over suit is less punishing then shoes
+			if(BP_R_LEG, BP_L_LEG, BP_L_FOOT, BP_R_FOOT)
+				if(H.shoes)
+					difficulty_adjust += 30
+					time_adjust += 20
+					to_chat(user, SPAN_WARNING("[H.shoes] gets in the way."))
+				if(H.wear_suit)
+					difficulty_adjust += 15
+					time_adjust += 10
+					to_chat(user, SPAN_WARNING("[H.wear_suit] gets in the way."))
+
+
+			//chest and lower body! ANY uniform but medical scrubs punish us, over-armor pushes us more so
+			if(BP_CHEST, BP_GROIN)
+				if(H.wear_suit)
+					difficulty_adjust += 30
+					time_adjust += 30
+					to_chat(user, SPAN_WARNING("[H.wear_suit] gets in the way."))
+
+				if(H.w_uniform)
+					if(!istype(H.w_uniform, /obj/item/clothing/under/medigown))
+						time_adjust += 10
+						to_chat(user, SPAN_WARNING("[H.w_uniform] takes additional time to operate through."))
+					//Proper scrubs = better, DO THIS!!!
+					else
+						difficulty_adjust += -25
+						time_adjust += -25
+
+
 	if(user.stats.getPerk(PERK_SURGICAL_MASTER) && !S.is_robotic)
-		difficulty_adjust = -90
-		time_adjust = -130
+		difficulty_adjust += -90
+		time_adjust += -130
 
 	if(user.stats.getPerk(PERK_MASTER_HERBALIST) && !S.is_robotic)
-		difficulty_adjust = -80 // Negates the difficulty of most basic surgical steps, but not as good as a professional at this
-		time_adjust = -100
+		difficulty_adjust += -80 // Negates the difficulty of most basic surgical steps, but not as good as a professional at this
+		time_adjust += -100
 
 	// Self-surgery increases failure chance
 	if(owner && user == owner)
-		difficulty_adjust = 70 // Godlike status required for surgery. Good luck keeping hands steady.
-		time_adjust = 40
+		difficulty_adjust += 70 // Godlike status required for surgery. Good luck keeping hands steady.
+		time_adjust += 40
 
 		//For if a user is doing 'surgery' on their own prosthetic bodypart
-		if(nature == MODIFICATION_SILICON)
-			difficulty_adjust = 70 //this is VERY complicated work to do with perfect sightlines and ergonomics - let alone without these.
-			time_adjust = 40
+		//this is VERY complicated work to do with perfect sightlines and ergonomics - let alone without these.
+		if(nature == MODIFICATION_SILICON && !user.stats.getPerk(PERK_ROBOTICS_EXPERT))
+			difficulty_adjust += 70
+			time_adjust += 40
 
-
-	if(user.stats.getPerk(PERK_SCUTTLEBUG || PERK_ICHOR || PERK_CHITINARMOR))
-		difficulty_adjust += -60 //We feel no pain, and are pretty used to working on ourselves due to metal paranoia. Still slightly worse than letting someone else do, due to limited ability to see inside
-		time_adjust += -30
+		//Chtmants feel no pain, and are pretty used to working on ourselves due to metal paranoia. Still slightly worse than letting someone else do, due to limited ability to see inside
+		if(user.stats.getPerk(PERK_SCUTTLEBUG || PERK_ICHOR || PERK_CHITINARMOR))
+			difficulty_adjust += -60
+			time_adjust += -30
 
 		// ...unless you are a carrion
 		// It makes sense that carrions have a way of making their flesh cooperate
 		if(is_carrion(user))
-			difficulty_adjust = -300
-			time_adjust = -80
+			difficulty_adjust += -300
+			time_adjust += -80
 
 	if(user.stats.getPerk(PERK_ROBOTICS_EXPERT) && S.is_robotic)
-		difficulty_adjust = -90
-		time_adjust = -130
+		difficulty_adjust += -90
+		time_adjust += -130
 
 	if(S.required_tool_quality)
 		success = tool.use_tool_extended(
