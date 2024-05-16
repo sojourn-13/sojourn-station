@@ -76,6 +76,7 @@
 				/obj/item/gun/energy/captain/zapper = 1,
 				/obj/item/gun/energy/xray/psychic_cannon = 1,
 				/obj/item/gun/energy/lasersmg/chaos_engine = 1,
+				/obj/item/gun/energy/painted_flaregun = 1,
 				//Hydrogen
 				/obj/item/gun/hydrogen/incinerator = 1,
 				//Tools / Melee

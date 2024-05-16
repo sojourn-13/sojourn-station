@@ -152,6 +152,23 @@
 	matter = list(MATERIAL_STEEL = 30, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 15)
 	clickdelay_offset = DEFAULT_LONG_COOLDOWN
 
+//Exl verson of the above hammer, slightly faster but deals less damaeg mostly used for breaking walls/windows/ect
+/obj/item/tool/hammer/excelsior_hammer
+	name = "Excelsior \"Chain-Braker\" siege hammer"
+	desc = "A massive hammer to break the chains of oppression with."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "excelsior_hammer"
+	item_state = "excelsior_hammer"
+	wielded_icon = "excelsior_hammer_wielded"
+	w_class = ITEM_SIZE_HUGE
+	armor_penetration = ARMOR_PEN_DEEP
+	slot_flags = SLOT_BELT
+	force = WEAPON_FORCE_BRUTAL
+	structure_damage_factor = STRUCTURE_DAMAGE_BORING + 2
+	tool_qualities = list(QUALITY_HAMMERING = 60, QUALITY_PRYING = 10)
+	matter = list(MATERIAL_STEEL = 10, MATERIAL_PLASTIC = 10, MATERIAL_PLASTEEL = 10)
+	clickdelay_offset = DEFAULT_ATTACK_COOLDOWN
+
 /obj/item/tool/hammer/mace
 	name = "mace"
 	desc = "Used for applying blunt force trauma to a person's rib cage."

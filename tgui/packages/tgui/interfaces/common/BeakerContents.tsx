@@ -1,6 +1,18 @@
+import { BooleanLike } from 'common/react';
+
 import { AnimatedNumber, Box } from '../../components';
 
-export const BeakerContents = (props) => {
+export type BeakerReagentData = {
+  name: string;
+  volume: number;
+};
+
+export type BeakerContentsProps = {
+  beakerLoaded: BooleanLike;
+  beakerContents: BeakerReagentData[];
+};
+
+export const BeakerContents = (props: BeakerContentsProps) => {
   const { beakerLoaded, beakerContents } = props;
   return (
     <Box>

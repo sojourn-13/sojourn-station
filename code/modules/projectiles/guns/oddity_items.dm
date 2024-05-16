@@ -328,6 +328,29 @@
 	serial_type = "BlueCross"
 	allow_greyson_mods = FALSE
 
+/obj/item/gun/energy/painted_flaregun
+	name = "\"Palette\" flaregun"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
+			A flaregun that has its barrel longer then most to store inside complex fabrication of flares on demand."
+	icon = 'icons/obj/guns/energy/flaregun_bluecross.dmi'
+	fire_sound = 'sound/weapons/guns/interact/hpistol_cock.ogg'
+	icon_state = "painted_flare"
+	charge_cost = 50
+	item_charge_meter = FALSE
+	charge_meter = FALSE
+	serial_type = "BlueCross"
+	self_recharge = TRUE
+	price_tag = 2250
+	init_firemodes = list(
+		list(mode_name="red", mode_desc="fires a red flare", projectile_type=/obj/item/projectile/bullet/flare, charge_cost = 50, icon="stun"),
+		list(mode_name="green", mode_desc="fires a green flare", projectile_type=/obj/item/projectile/bullet/flare/green, charge_cost = 50, icon="stun"),
+		list(mode_name="blue", mode_desc="fires a blue flare", projectile_type=/obj/item/projectile/bullet/flare/blue, charge_cost = 50, icon="stun"),
+		list(mode_name="wild", mode_desc="fires a random coloured flare", projectile_type=/obj/item/projectile/bullet/flare/choas, charge_cost = 10, icon="kill"),
+		list(mode_name="key", mode_desc="fires a random yellow flare", projectile_type=/obj/item/projectile/bullet/flare/yellow, charge_cost = 100, icon="kill"),
+		list(mode_name="thinner", mode_desc="fires a random colourless flare", projectile_type=/obj/item/projectile/bullet/flare/white, charge_cost = 200, icon="kill")
+	)
+
+
 /obj/item/gun/energy/xray/psychic_cannon
 	name = "\"Manta-RAY\" cannon"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \

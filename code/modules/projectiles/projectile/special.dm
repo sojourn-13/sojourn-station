@@ -352,6 +352,21 @@
 /obj/item/projectile/bullet/flare/choas //MEWHEHEHE, can be any colour
 	chaos = TRUE
 
+//Used for bluecross only atm
+/obj/item/projectile/bullet/flare/yellow
+	luminosity_color = COLOR_WHEAT //softer on the eyes
+	flash_range = 2
+	brightness = 12
+	luminosity_range = 7
+	luminosity_power = 3
+
+/obj/item/projectile/bullet/flare/white
+	luminosity_color = COLOR_SILVER //Not perfect white to help with rounding out shadows
+	flash_range = 2
+	brightness = 12
+	luminosity_range = 7
+	luminosity_power = 3
+
 // Special projectile that one-shot ameridian-related stuff
 /obj/item/projectile/sonic_bolt
 	name = "sonic bolt"

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { round } from '../../common/math';
 import { BooleanLike } from '../../common/react';
 import { toTitleCase } from '../../common/string';
 import { useBackend, useSharedState } from '../backend';
@@ -10,7 +11,9 @@ import {
   LabeledList,
   ProgressBar,
   Section,
-  Stack } from '../components';
+  Stack,
+  VirtualList,
+} from '../components';
 import { Window } from '../layouts';
 import { SearchBar } from './Fabrication/SearchBar';
 
@@ -103,7 +106,7 @@ export const AutolatheItemDetails = (props: AutolatheItemProps) => {
         <Section title='Materials'>
           {design.materials.map(mat => (
             <LabeledList.Item key={mat.id} label={mat.name}>
-              {mat.req * mat_efficiency}
+              {round(mat.req * mat_efficiency, 2)}
             </LabeledList.Item>
           ))}
         </Section>
@@ -429,12 +432,23 @@ export const Matterforge = props => {
                 scrollable
               >
                 <Stack vertical>
-                  {searchText.length > 0
-                    ? designs
-                        .filter(design =>
-                          design.name.toLowerCase().includes(searchText)
-                        )
-                        .map(design => {
+                  <VirtualList>
+                    {searchText.length > 0
+                      ? designs
+                          .filter(design =>
+                            design.name.toLowerCase().includes(searchText)
+                          )
+                          .map(design => {
+                            return (
+                              <Stack.Item key={design.id}>
+                                <AutolatheItem
+                                  design={design}
+                                  mat_efficiency={mat_efficiency}
+                                />
+                              </Stack.Item>
+                            );
+                          })
+                      : designs.map(design => {
                           return (
                             <Stack.Item key={design.id}>
                               <AutolatheItem
@@ -443,17 +457,8 @@ export const Matterforge = props => {
                               />
                             </Stack.Item>
                           );
-                        })
-                    : designs.map(design => {
-                        return (
-                          <Stack.Item key={design.id}>
-                            <AutolatheItem
-                              design={design}
-                              mat_efficiency={mat_efficiency}
-                            />
-                          </Stack.Item>
-                        );
-                      })}
+                        })}
+                  </VirtualList>
                 </Stack>
               </Section>
             </Section>

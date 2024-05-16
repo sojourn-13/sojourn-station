@@ -28,7 +28,7 @@
 		var/turf/input = get_step(src, input_dir)
 		var/obj/structure/ore_box/BOX = locate() in input
 		if(BOX)
-			BOX.dump_box_contents(get_step(src, output_dir))
+			BOX.dump_all_contents(get_step(src, output_dir))
 
 		if(locate(/obj/item) in input)
 			var/obj/item/O
