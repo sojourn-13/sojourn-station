@@ -3,13 +3,8 @@
 	desc = "The implant given to every disciple of the Absolute. This one is a standard Vinculum design, having the base-line of a normal cruciform."
 	implant_type = /obj/item/implant/core_implant/cruciform
 	restricted_jobs = list(
-		/datum/job/merchant,
-		/datum/job/swo,
-		/datum/job/foreman,
 		/datum/job/rd,
 		/datum/job/cmo,
-		/datum/job/chief_engineer,
-		/datum/job/smc,
 		/datum/job/outsider,
 		/datum/job/cyborg, //To stop people auto dropping these
 		/datum/job/ai
