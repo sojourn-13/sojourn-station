@@ -605,3 +605,9 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	icon_state = "tacponhood_color"
 	item_state = "tacponhood_color"
 	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/religion_hood_color
+	name = "religious hood"
+	desc = "A religious hood that can be colored."
+	icon_state = "general_hood"
+	item_state = "general_hood"
