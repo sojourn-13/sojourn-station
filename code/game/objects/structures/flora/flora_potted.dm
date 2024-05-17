@@ -92,7 +92,7 @@
 
 /obj/structure/flora/pottedplant/sticky
 	name = "potted sun flower"
-		desc = "This is a sun flower pot. This flower likes sun."
+	desc = "This is a sun flower pot. This flower likes sun."
 	icon_state = "plant-13"
 	needs_to_maintain = TRUE
 
