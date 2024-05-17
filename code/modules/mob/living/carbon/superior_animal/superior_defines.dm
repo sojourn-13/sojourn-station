@@ -188,8 +188,6 @@
 	var/melee_damage_type = BRUTE
 	//If are melee attacks are sharp, used for delimming
 	var/melee_sharp = FALSE
-	//If this is set, will ALWAYS hit said lim
-	var/zone_to_always_hit
 	//Used for what type of armor were fighting against
 	var/attacking_armor_type = ARMOR_MELEE
 
