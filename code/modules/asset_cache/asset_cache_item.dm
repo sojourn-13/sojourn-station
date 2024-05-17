@@ -25,13 +25,13 @@
 	if (!isfile(file))
 		file = fcopy_rsc(file)
 
+	if(length(file) == 0)
+		log_asset("WARNING: [name] is an empty file, this is almost certainly not intended and could indicate a bad boot!")
+		message_admins("ASSET WARNING: [name] is an empty file, this is almost certainly not intended and could indicate a bad boot!")
+
 	hash = md5asfile(file) //icons sent to the rsc sometimes md5 incorrectly
 	if (!hash)
 		CRASH("invalid asset sent to asset cache")
-	// the md5sum of an empty file
-	if (hash == "d41d8cd98f00b204e9800998ecf8427e")
-		log_asset("WARNING: [name] has hashed as an empty file, this is almost certainly not intended and could indicate a bad boot!")
-		message_admins("ASSET WARNING: [name] has hashed as an empty file, this is almost certainly not intended and could indicate a bad boot!")
 	src.name = name
 	var/extstart = findlasttext(name, ".")
 	if (extstart)
