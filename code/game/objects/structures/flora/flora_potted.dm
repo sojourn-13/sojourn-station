@@ -91,8 +91,8 @@
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/sticky
-	name = "sticky potted plant"
-	desc = "This is an odd plant. Its sticky leaves trap insects."
+	name = "potted sun flower"
+	desc = "This is a sun flower! You feel a urge to sing a silly music about sun flowers. Here comes the sun."
 	icon_state = "plant-13"
 	needs_to_maintain = TRUE
 
@@ -166,8 +166,8 @@
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/dead
-	name = "dead potted plant"
-	desc = "This is the dried up remains of a dead plant. Someone should replace it."
+	name = "potted summer plant"
+	desc = "This is a summer plant native of this planet."
 	icon_state = "plant-25"
 	needs_to_maintain = TRUE
 
