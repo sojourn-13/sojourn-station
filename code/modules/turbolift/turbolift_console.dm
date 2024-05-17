@@ -37,7 +37,7 @@
 /obj/structure/lift/attack_ai(var/mob/user)
 	return attack_hand(user)
 
-/obj/structure/lift/attack_generic(var/mob/user)
+/obj/structure/lift/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	return attack_hand(user)
 
 /obj/structure/lift/attack_hand(var/mob/user)
@@ -174,7 +174,7 @@
 			"name" = floor.name,
 		))
 	data["floors"] = floors
-	
+
 	return data
 
 /obj/structure/lift/panel/ui_act(action, params)

@@ -52,7 +52,7 @@
 						qdel(A)
 			T.ChangeTurf(type)
 
-/turf/unsimulated/wall/supermatter/attack_generic(mob/user as mob)
+/turf/unsimulated/wall/supermatter/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(istype(user))
 		return attack_hand(user)
 

@@ -156,7 +156,7 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 		return
 	.=..()
 
-/obj/item/beartrap/attack_generic(var/mob/user, var/damage)
+/obj/item/beartrap/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if (buckled_mob)
 		attempt_release(user)
 		return

@@ -116,7 +116,7 @@
 					update_icon()
 					return
 
-/obj/structure/shield_deployed/attack_generic(var/mob/user, var/damage, var/attack_message = "smashes", var/wallbreaker)//Occulus Edit
+/obj/structure/shield_deployed/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(damage)//Occulus edit
 		damage(damage)//Occulus Edit
 		attack_animation(user)

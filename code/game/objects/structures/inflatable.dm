@@ -135,14 +135,14 @@
 	verbs -= /obj/structure/inflatable/verb/hand_deflate
 	deflate()
 
-/obj/structure/inflatable/attack_generic(mob/user, damage, attack_verb)
+/obj/structure/inflatable/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	health -= damage
 	attack_animation(user)
 	if(health <= 0)
-		user.visible_message(SPAN_DANGER("[user] [attack_verb] open the [src]!"))
+		user.visible_message(SPAN_DANGER("[user] [attack_message] open the [src]!"))
 		spawn(1) deflate(1)
 	else
-		user.visible_message(SPAN_DANGER("[user] [attack_verb] at [src]!"))
+		user.visible_message(SPAN_DANGER("[user] [attack_message] at [src]!"))
 	return TRUE
 
 /obj/structure/inflatable/door //Based on mineral door code

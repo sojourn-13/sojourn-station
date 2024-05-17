@@ -266,7 +266,7 @@ GLOBAL_LIST_EMPTY(scrap_base_cache)
 	playsound(src, "rummage", 50, 1)
 	.=..()
 
-/obj/structure/scrap/attack_generic(mob/user)
+/obj/structure/scrap/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if (isliving(user) && loot)
 		loot.open(user)
 	.=..()

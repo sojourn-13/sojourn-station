@@ -2209,7 +2209,7 @@ assassination method if you time it right*/
 	return FALSE
 
 
-/obj/mecha/attack_generic(var/mob/user, var/damage, var/attack_message)
+/obj/mecha/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 
 	if(!damage)
 		return 0

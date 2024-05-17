@@ -54,7 +54,7 @@
 /obj/machinery/door/can_prevent_fall()
 	return density
 
-/obj/machinery/door/attack_generic(mob/user, damage)
+/obj/machinery/door/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(damage >= resistance)
 		visible_message(SPAN_DANGER("\The [user] smashes into \the [src]!"))
 		take_damage(damage)
