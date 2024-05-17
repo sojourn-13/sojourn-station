@@ -213,7 +213,7 @@ var/bomb_set
 /obj/machinery/nuclearbomb/proc/is_auth(var/mob/user)
 	if(auth)
 		return 1
-	if(user.can_admin_interact())
+	if(isAdminGhostAI(user))
 		return 1
 	return 0
 

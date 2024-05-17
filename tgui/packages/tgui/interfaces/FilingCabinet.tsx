@@ -1,19 +1,29 @@
-import { useBackend } from "../backend";
-import { Box, Button, Flex, Section } from "../components";
-import { Window } from "../layouts";
+import { useBackend } from '../backend';
+import { Box, Button, Flex, Section } from '../components';
+import { Window } from '../layouts';
+
+type Data = {
+  cabinet_name: string;
+  hex_code_for_backround: string;
+  contents_ref: string[];
+  contents: string[];
+};
 
 export const FilingCabinet = (props) => {
-  const { act, data } = useBackend();
+  const { act, data } = useBackend<Data>();
   const { cabinet_name, hex_code_for_backround, contents, contents_ref } = data;
   return (
-    <Window title={cabinet_name || "Filing Cabinet"} width={350} height={300}>
-      <Window.Content backgroundColor={hex_code_for_backround || "#7f7f7f"} scrollable>
+    <Window title={cabinet_name || 'Filing Cabinet'} width={350} height={300}>
+      <Window.Content
+        backgroundColor={hex_code_for_backround || '#7f7f7f'}
+        scrollable
+      >
         {contents.map((object, index) => (
           <Flex
             key={contents_ref[index]}
             color="black"
             backgroundColor="white"
-            style={{ padding: "2px" }}
+            style={{ padding: '2px' }}
             mb={0.5}
           >
             <Flex.Item align="center" grow={1}>
@@ -23,7 +33,7 @@ export const FilingCabinet = (props) => {
               <Button
                 icon="eject"
                 onClick={() =>
-                  act("remove_object", { ref: contents_ref[index] })
+                  act('remove_object', { ref: contents_ref[index] })
                 }
               />
             </Flex.Item>

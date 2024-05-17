@@ -1,7 +1,14 @@
 import { BooleanLike } from '../../common/react';
 import { decodeHtmlEntities } from '../../common/string';
 import { useBackend, useSharedState } from '../backend';
-import { Box, Button, LabeledList, Section, Stack } from '../components';
+import {
+  Box,
+  Button,
+  LabeledList,
+  Section,
+  Stack,
+  VirtualList,
+} from '../components';
 import { Window } from '../layouts';
 import { SearchBar } from './Fabrication/SearchBar';
 import {
@@ -234,12 +241,25 @@ export const Autolathe = props => {
                         scrollable
                       >
                         <Stack vertical>
-                          {searchText.length > 0
-                            ? designs
-                                .filter(design =>
-                                  design.name.toLowerCase().includes(searchText)
-                                )
-                                .map(design => {
+                          <VirtualList>
+                            {searchText.length > 0
+                              ? designs
+                                  .filter(design =>
+                                    design.name
+                                      .toLowerCase()
+                                      .includes(searchText)
+                                  )
+                                  .map(design => {
+                                    return (
+                                      <Stack.Item key={design.id + design.name}>
+                                        <AutolatheItem
+                                          design={design}
+                                          mat_efficiency={mat_efficiency}
+                                        />
+                                      </Stack.Item>
+                                    );
+                                  })
+                              : designs.map(design => {
                                   return (
                                     <Stack.Item key={design.id + design.name}>
                                       <AutolatheItem
@@ -248,17 +268,8 @@ export const Autolathe = props => {
                                       />
                                     </Stack.Item>
                                   );
-                                })
-                            : designs.map(design => {
-                                return (
-                                  <Stack.Item key={design.id + design.name}>
-                                    <AutolatheItem
-                                      design={design}
-                                      mat_efficiency={mat_efficiency}
-                                    />
-                                  </Stack.Item>
-                                );
-                              })}
+                                })}
+                          </VirtualList>
                         </Stack>
                       </Section>
                     </Section>

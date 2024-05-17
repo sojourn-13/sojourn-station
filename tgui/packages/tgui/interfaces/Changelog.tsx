@@ -43,7 +43,25 @@ const icons = {
   wip: { icon: 'hammer', color: 'orange' },
 };
 
-export class Changelog extends Component {
+type ChangelogState = {
+  data:
+    | string
+    | {
+        [date: string]: {
+          [author: string]: string[];
+        };
+      };
+  selectedDate: any;
+  selectedIndex: any;
+};
+
+type Data = {
+  dates: string[];
+};
+
+export class Changelog extends Component<{}, ChangelogState> {
+  dateChoices: any[];
+
   constructor(props) {
     super(props);
     this.state = {
@@ -99,7 +117,7 @@ export class Changelog extends Component {
   componentDidMount() {
     const {
       data: { dates = [] },
-    } = useBackend();
+    } = useBackend<Data>();
 
     if (dates) {
       dates.forEach((date) =>
@@ -114,7 +132,7 @@ export class Changelog extends Component {
     const { data, selectedDate, selectedIndex } = this.state;
     const {
       data: { dates },
-    } = useBackend();
+    } = useBackend<Data>();
     const { dateChoices } = this;
 
     const dateDropdown = dateChoices.length > 0 && (
