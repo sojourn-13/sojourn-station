@@ -12,6 +12,7 @@
 	var/obj/machinery/hivemind_machine/node/master_node
 	var/list/wires_connections = list("0", "0", "0", "0")
 	var/my_area
+	var/assimilation_timer
 
 /obj/effect/plant/hivemind/New()
 	..()
@@ -35,6 +36,10 @@
 		GLOB.hivemind_areas.Remove(my_area)
 	return ..()
 
+/obj/effect/plant/hivemind/die_off()
+	if(assimilation_timer)
+		deltimer(assimilation_timer)
+	return ..()
 
 /obj/effect/plant/hivemind/after_spread(obj/effect/plant/child, turf/target_turf)
 	if(master_node)
@@ -378,7 +383,7 @@
 	//Corpse reanimation
 	if(isliving(subject) && !ishivemindmob(subject))
 		//human bodies
-		if(ishuman(subject))
+		if(ishuman(subject) && !assimilation_timer)
 			var/mob/living/L = subject
 
 			if(!GLOB.hive_data_float["gibbing_warning_timer"]) //If the value is set to 0 (the default) we don't touch player humans
@@ -390,7 +395,7 @@
 				return
 
 			visible_message("Wires begin to wreathe around [L], starting the process of converting them into part of the hivemind.") //We tell people to get them off the wires
-			addtimer(CALLBACK(src, .proc/assimilate_human, L), timer)
+			assimilation_timer = addtimer(CALLBACK(src, .proc/assimilate_human, L), timer, TIMER_STOPPABLE)
 			return
 
 		//robot corpses
@@ -404,7 +409,7 @@
 		qdel(subject)
 
 /obj/effect/plant/hivemind/proc/assimilate_human(var/mob/living/L)
-	if(!locate(/obj/effect/plant/hivemind) in L.loc) //If we don't see any wires after the alotted time, we let them go
+	if(!locate(/obj/effect/plant/hivemind) in L.loc || !(L.stat == DEAD)) //If we don't see any wires after the alotted time or we're alive again, we don't get got
 		return
 	for(var/obj/item/W in L)
 		L.drop_from_inventory(W)
