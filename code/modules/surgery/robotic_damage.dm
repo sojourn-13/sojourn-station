@@ -80,7 +80,7 @@
 
 /datum/surgery_step/robotic/fix_burn
 	allowed_tools = list(/obj/item/stack/cable_coil = 100)
-
+	difficulty = -70 //We dont have toolmods/stats so this makes it insainly hard to use wire
 	duration = 60
 
 /datum/surgery_step/robotic/fix_burn/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/stack/cable_coil/tool)
