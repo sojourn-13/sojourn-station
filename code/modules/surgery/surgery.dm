@@ -220,9 +220,9 @@
 
 		//For if a user is doing 'surgery' on their own prosthetic bodypart
 		//this is VERY complicated work to do with perfect sightlines and ergonomics - let alone without these.
-		//Thus we add properly now a 50% increase to non-experts difficulty when self surgerying 
+		//Thus we add properly now a 5 increase to non-experts difficulty when self surgerying but make it take way longer burning more cell/fuel/ect
 		if(nature == MODIFICATION_SILICON && !user.stats.getPerk(PERK_ROBOTICS_EXPERT))
-			difficulty_adjust += 35
+			difficulty_adjust += 5
 			time_adjust += 20
 
 		//Chtmants feel no pain, and are pretty used to working on ourselves due to metal paranoia. Still slightly worse than letting someone else do, due to limited ability to see inside
