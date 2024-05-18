@@ -83,11 +83,17 @@
 	required_tool_quality = WORKSOUND_WIRECUTTING
 	duration = 60
 
-/datum/surgery_step/robotic/fix_burn/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/stack/cable_coil/tool)
+/datum/surgery_step/robotic/fix_burn/require_tool_message(mob/living/user)
+	to_chat(user, SPAN_WARNING("You need a tool capable of [required_tool_quality] or some some cable coils to complete this step."))
+
+
+/datum/surgery_step/robotic/fix_burn/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	if(..() && organ.is_open() && istype(tool))
-		if(!tool.get_amount() >= 3)
-			to_chat(user, SPAN_WARNING("You need three or more cable pieces to repair this damage."))
-			return SURGERY_FAILURE
+		if(istype(tool, /obj/item/stack/cable_coil))
+			var/obj/item/stack/S = tool
+			if(!tool.get_amount() >= 2)
+				to_chat(user, SPAN_WARNING("You need two or more cable pieces to repair this damage."))
+				return SURGERY_FAILURE
 		if(organ.burn_dam <= 0)
 			to_chat(user, SPAN_NOTICE("The wiring in [organ.get_surgery_name()] is undamaged!"))
 			return SURGERY_FAILURE
