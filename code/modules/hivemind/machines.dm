@@ -486,6 +486,8 @@
 /obj/machinery/hivemind_machine/turret/proc/assess_living(var/mob/living/L)
 	if(L.faction == "hive") //Don't shoot hive mobs
 		return TURRET_NOT_TARGET
+	if(L.stat == DEAD)
+		return TURRET_NOT_TARGET //Don't shoot the dead either
 	if(L.lying) //Lying down people are lower priority to shoot
 		return TURRET_SECONDARY_TARGET
 	return TURRET_PRIORITY_TARGET //If you ain't hive or lying, you're a priority target
@@ -526,6 +528,7 @@
 
 /obj/machinery/hivemind_machine/turret/use_ability(atom/target)
 	var/obj/item/projectile/proj = new proj_type(loc)
+	proj.faction_iff = "hive" //We get some iff so we're not used as a weapon against the hive... we should pretty much always have mobs attacking!
 	proj.launch(target)
 	playsound(src, 'sound/effects/blobattack.ogg', 70, 1)
 
