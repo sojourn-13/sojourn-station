@@ -80,7 +80,7 @@
 
 /datum/surgery_step/robotic/fix_burn
 	allowed_tools = list(/obj/item/stack/cable_coil = 100)
-	difficulty = -70 //We dont have toolmods/stats so this makes it insainly hard to use wire
+	required_tool_quality = WORKSOUND_WIRECUTTING
 	duration = 60
 
 /datum/surgery_step/robotic/fix_burn/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/stack/cable_coil/tool)
@@ -96,22 +96,29 @@
 
 	return FALSE
 
-/datum/surgery_step/robotic/fix_burn/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/stack/cable_coil/tool)
+/datum/surgery_step/robotic/fix_burn/begin_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(
 		SPAN_NOTICE("[user] begins to [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] replace damaged wiring in [organ.get_surgery_name()]."),
 		SPAN_NOTICE("You begin to replace damaged wiring in [organ.get_surgery_name()].")
 	)
 
-/datum/surgery_step/robotic/fix_burn/end_step(mob/living/user, obj/item/organ/external/organ, obj/item/stack/cable_coil/tool)
+/datum/surgery_step/robotic/fix_burn/end_step(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
 	user.visible_message(
 		SPAN_NOTICE("[user] finishes [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] replacing damaged wiring in [organ.get_surgery_name()]."),
 		SPAN_NOTICE("You finish replacing damaged wiring in [organ.get_surgery_name()].")
 	)
-	if(tool.use(3))
+	if(istype(tool, /obj/item/stack/cable_coil))
+		var/obj/item/stack/S = tool
+		S.use(2)
 		if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
 			organ.heal_damage(0, 50, TRUE)
 		else
 			organ.heal_damage(0,rand(30, 50), TRUE)
+
+	if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
+		organ.heal_damage(0, 20, TRUE)
+	else
+		organ.heal_damage(0,rand(5, 10), TRUE)
 
 /datum/surgery_step/robotic/fix_burn/fail_step(mob/living/user, obj/item/organ/external/organ, obj/item/stack/cable_coil/tool)
 	user.visible_message(
