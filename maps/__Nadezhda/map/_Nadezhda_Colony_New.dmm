@@ -24646,8 +24646,7 @@
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "East APC";
-	pixel_x = 28;
-	operating = 0
+	pixel_x = 28
 	},
 /obj/structure/cable/green{
 	d2 = 8;

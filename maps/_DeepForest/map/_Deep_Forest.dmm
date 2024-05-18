@@ -173,10 +173,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
-"ajn" = (
-/obj/random/cluster/spiders/low_chance,
-/turf/unsimulated/mineral,
-/area/nadezhda/dungeon/outside/prepper)
 "ajQ" = (
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -79952,7 +79948,7 @@ nxY
 rHY
 wDE
 wDE
-ajn
+wDE
 wDE
 qHH
 qHH
