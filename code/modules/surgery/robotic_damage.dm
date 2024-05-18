@@ -91,7 +91,7 @@
 	if(..() && organ.is_open() && istype(tool))
 		if(istype(tool, /obj/item/stack/cable_coil))
 			var/obj/item/stack/S = tool
-			if(!tool.get_amount() >= 2)
+			if(!S.get_amount() >= 2)
 				to_chat(user, SPAN_WARNING("You need two or more cable pieces to repair this damage."))
 				return SURGERY_FAILURE
 		if(organ.burn_dam <= 0)
