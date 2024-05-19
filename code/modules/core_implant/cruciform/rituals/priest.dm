@@ -183,6 +183,10 @@
 	if(!user.client)
 		return FALSE
 
+	if(!C.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_CRUSADER))
+		fail("Only Primes and Crusaders have the authority to Scry.", user, C)
+		return FALSE
+
 	var/mob/living/M = pick_disciple_global(user, TRUE)
 	if (!M)
 		return
@@ -259,10 +263,10 @@
 		fail("Commitment failed.", user, C)
 		return FALSE
 
-	if(ishuman(H))						We also don't need baptisms causing internal damage
+	if(ishuman(H))
 		var/mob/living/carbon/human/M = H
-		var/obj/item/organ/external/E = M.organs_by_name[BP_CHEST]
-		/*for (var/i = 0; i < 5;i++)
+		/*var/obj/item/organ/external/E = M.organs_by_name[BP_CHEST]  We also don't need baptisms causing internal damage
+		for (var/i = 0; i < 5;i++)
 			E.take_damage(5, sharp = FALSE)
 			//Deal 25 damage in five hits. Using multiple small hits mostly prevents internal damage
 
@@ -736,6 +740,10 @@
 		fail("Cruciform not found.",user,C)
 		return FALSE
 
+	if(!C.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_CRUSADER))
+		fail("Only Primes and Crusaders have the authority to Consecrate.", user, C)
+		return FALSE
+
 	if(CI.get_module(CRUCIFORM_PRIME))
 		fail("The target is already a Prime.",user,C)
 		return FALSE
@@ -829,7 +837,7 @@
 		CI.deactivate()
 		CI.uninstall()
 		to_chat(H, SPAN_DANGER("You feel a cold emptiness as you are cut off from the Absolute and the faithful. Your cruciform falls from your chest and down to the floor, lifeless."))
-		visible_message("The cruciform of [H] falls to the ground, inactive.")
+		H.visible_message("The cruciform of [H] falls to the ground, inactive.")
 		log_and_message_admins("removed [H]'s cruciform with the Separation litany.")
 		return TRUE
 
