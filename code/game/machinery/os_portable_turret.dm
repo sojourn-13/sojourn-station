@@ -181,7 +181,7 @@
 /obj/machinery/power/os_turret/emp_act()
 	..()
 	stat |= EMPED
-	emp_timer_id = addtimer(CALLBACK(src, .proc/emp_off), emp_cooldown, TIMER_STOPPABLE)
+	emp_timer_id = addtimer(CALLBACK(src, .proc/emp_off), emp_cooldown, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /obj/machinery/power/os_turret/bullet_act(obj/item/projectile/proj)
 	var/damage = proj.get_structure_damage()
