@@ -132,6 +132,8 @@
 
 	data["craftable_recipes"] = craftable_recipes
 
+	data["perk_no_obfuscation"] = !!user.stats.getPerk(PERK_NO_OBFUSCATION)
+
 	return data
 
 /obj/machinery/craftingstation/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)

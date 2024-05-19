@@ -1,5 +1,6 @@
 import { uniq } from 'common/collections';
 import { round } from 'common/math';
+import { BooleanLike } from 'common/react';
 import { toTitleCase } from 'common/string';
 import { useBackend, useSharedState } from 'tgui/backend';
 import { Box, Button, Section, Stack, Tabs } from 'tgui/components';
@@ -8,7 +9,7 @@ import { Window } from 'tgui/layouts';
 import { MaterialAccessBar } from './Fabrication/MaterialAccessBar';
 import { Material } from './Fabrication/Types';
 
-type Recipe = {
+type RecipeData = {
   name: string;
   type: string;
   category: string;
@@ -24,8 +25,9 @@ type Recipe = {
 
 type Data = {
   craftable_recipes: string[];
-  recipes: Recipe[];
+  recipes: RecipeData[];
   materials: Material[];
+  perk_no_obfuscation: BooleanLike;
 };
 
 const categorySortingOrder = [
@@ -58,7 +60,7 @@ const subcategorySortingOrder = [
 export const CraftingStation = (props) => {
   const { act, data } = useBackend<Data>();
 
-  const { craftable_recipes, recipes, materials } = data;
+  const { craftable_recipes, recipes, materials, perk_no_obfuscation } = data;
 
   const categories = uniq(recipes.map((r) => r.category)).sort((a, b) => {
     let alower = a.toLowerCase();
@@ -181,38 +183,11 @@ export const CraftingStation = (props) => {
                     align="center"
                   >
                     <Stack.Item grow>
-                      <Stack vertical>
-                        <Stack.Item fontSize={1.2} color="label">
-                          {recipe.name}{' '}
-                          {recipe.point_cost ? (
-                            <Box inline color="white">
-                              ({recipe.point_cost} / {recipe.available_points}{' '}
-                              points)
-                            </Box>
-                          ) : null}
-                        </Stack.Item>
-                        <Stack.Item
-                          textColor={
-                            craftable_recipes.includes(recipe.type) ? '' : 'bad'
-                          }
-                        >
-                          {recipe.cost === -1
-                            ? 'Unavailable'
-                            : typeof recipe.cost === 'object' &&
-                              Object.entries(recipe.cost).map(
-                                ([name, cost], index, arr) => (
-                                  <Box
-                                    key={name}
-                                    inline
-                                    mr={index === arr.length - 1 ? 0 : 0.5}
-                                  >
-                                    {toTitleCase(name)} ({round(cost, 2)})
-                                    {index === arr.length - 1 ? '' : ', '}
-                                  </Box>
-                                ),
-                              )}
-                        </Stack.Item>
-                      </Stack>
+                      <Recipe
+                        recipe={recipe}
+                        available={craftable_recipes.includes(recipe.type)}
+                        perk_no_obfuscation={perk_no_obfuscation}
+                      />
                     </Stack.Item>
                     <Stack.Item>
                       <Button
@@ -242,5 +217,70 @@ export const CraftingStation = (props) => {
         )}
       </Window.Content>
     </Window>
+  );
+};
+
+type PointCountProps = Required<
+  Pick<RecipeData, 'available_points' | 'point_cost'>
+> &
+  Pick<Data, 'perk_no_obfuscation'>;
+
+export const PointCount = (props: PointCountProps) => {
+  const { point_cost, available_points, perk_no_obfuscation } = props;
+
+  if (perk_no_obfuscation) {
+    return (
+      <Box inline color={available_points >= point_cost ? 'good' : 'bad'}>
+        ({point_cost} / {available_points} points)
+      </Box>
+    );
+  }
+
+  const percentage = available_points / point_cost;
+
+  // If it's far from unlocking or already unlocked, don't tell the user nothin'
+  if (percentage < 0.8 || percentage >= 1) {
+    return null;
+  }
+
+  return (
+    <Box inline color="good">
+      (Unlock Close)
+    </Box>
+  );
+};
+
+type RecipeProps = {
+  recipe: RecipeData;
+  available: boolean;
+} & Pick<Data, 'perk_no_obfuscation'>;
+
+export const Recipe = (props: RecipeProps) => {
+  const { recipe, available, perk_no_obfuscation } = props;
+
+  return (
+    <Stack vertical>
+      <Stack.Item fontSize={1.2} color="label">
+        {recipe.name}{' '}
+        {recipe.point_cost && recipe.available_points ? (
+          <PointCount
+            point_cost={recipe.point_cost}
+            available_points={recipe.available_points}
+            perk_no_obfuscation={perk_no_obfuscation}
+          />
+        ) : null}
+      </Stack.Item>
+      <Stack.Item textColor={available ? '' : 'bad'}>
+        {recipe.cost === -1
+          ? 'Cannot Craft: Lacking mechanical skill or improved stock parts.'
+          : typeof recipe.cost === 'object' &&
+            Object.entries(recipe.cost).map(([name, cost], index, arr) => (
+              <Box key={name} inline mr={index === arr.length - 1 ? 0 : 0.5}>
+                {toTitleCase(name)} ({round(cost, 2)})
+                {index === arr.length - 1 ? '' : ', '}
+              </Box>
+            ))}
+      </Stack.Item>
+    </Stack>
   );
 };
