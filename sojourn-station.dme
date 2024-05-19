@@ -1051,6 +1051,7 @@
 #include "code\game\objects\items\devices\taperecorder.dm"
 #include "code\game\objects\items\devices\text_to_speech.dm"
 #include "code\game\objects\items\devices\transfer_valve.dm"
+#include "code\game\objects\items\devices\translators.dm"
 #include "code\game\objects\items\devices\uplink.dm"
 #include "code\game\objects\items\devices\uplink_random_lists.dm"
 #include "code\game\objects\items\devices\violin.dm"
