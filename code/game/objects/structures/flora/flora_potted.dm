@@ -58,8 +58,8 @@
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/smalltree
-	name = "small potted tree"
-	desc = "This is a small tree. It is rather pleasant."
+	name = "small potted plant"
+	desc = "This is a small tree. The odor of the plant is rather unique."
 	icon_state = "plant-08"
 	needs_to_maintain = TRUE
 
@@ -104,7 +104,7 @@
 
 /obj/structure/flora/pottedplant/small
 	name = "small potted plant"
-	desc = "This is a pot of assorted small flora. Some look familiar."
+	desc = "This is a pot of assorted red flora. Some look familiar."
 	icon_state = "plant-15"
 	needs_to_maintain = TRUE
 
