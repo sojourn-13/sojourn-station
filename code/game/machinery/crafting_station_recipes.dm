@@ -94,8 +94,8 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 3
 	result = /obj/item/ammo_magazine/speed_loader_pistol_35/scrap
 
-/datum/recipe_crafting_station/ammo/nine_mm/scrap_ammo_box
-	name = "Scrap 9mm ammo box"
+/datum/recipe_crafting_station/ammo/nine_mm/scrap_packet
+	name = "Scrap 9mm ammo packet"
 	point_cost = 12
 	result = /obj/item/ammo_magazine/ammobox/pistol_35/scrap
 
@@ -104,8 +104,8 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 8
 	result = /obj/item/ammo_casing/pistol_35/prespawned
 
-/datum/recipe_crafting_station/ammo/nine_mm/ammo_box
-	name = "9mm ammo box"
+/datum/recipe_crafting_station/ammo/nine_mm/ammo_packet
+	name = "9mm ammo packet"
 	point_cost = 18
 	result = /obj/item/ammo_magazine/ammobox/pistol_35
 
@@ -139,8 +139,8 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 5
 	result = /obj/item/ammo_magazine/speed_loader_magnum_40/scrap
 
-/datum/recipe_crafting_station/ammo/ten_mm/scrap_ammo_box
-	name = "Scrap 10mm ammo box"
+/datum/recipe_crafting_station/ammo/ten_mm/scrap_ammo_packet
+	name = "Scrap 10mm ammo packet"
 	point_cost = 15
 	result = /obj/item/ammo_magazine/ammobox/magnum_40/scrap
 
@@ -149,8 +149,8 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 7
 	result = /obj/item/ammo_casing/magnum_40/prespawned
 
-/datum/recipe_crafting_station/ammo/ten_mm/ammo_box
-	name = "10mm ammo box"
+/datum/recipe_crafting_station/ammo/ten_mm/ammo_packet
+	name = "10mm ammo packet"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/magnum_40
 
@@ -204,18 +204,18 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 4
 	result = /obj/item/ammo_casing/shotgun/scrap/prespawned
 
-/datum/recipe_crafting_station/ammo/shotgun/scrap_slug_box
-	name = "Scrap slugs box"
+/datum/recipe_crafting_station/ammo/shotgun/scrap_slug_packet
+	name = "Scrap slugs packet"
 	point_cost = 15
 	result = /obj/item/ammo_magazine/ammobox/shotgun/scrap_slug
 
-/datum/recipe_crafting_station/ammo/shotgun/scrap_buckshot_box
-	name = "Scrap buckshot box"
+/datum/recipe_crafting_station/ammo/shotgun/scrap_buckshot_packet
+	name = "Scrap buckshot packet"
 	point_cost = 12
 	result = /obj/item/ammo_magazine/ammobox/shotgun/scrap_pellet
 
-/datum/recipe_crafting_station/ammo/shotgun/scrap_beanbag_box
-	name = "Scrap beanbag box"
+/datum/recipe_crafting_station/ammo/shotgun/scrap_beanbag_packet
+	name = "Scrap beanbag packet"
 	point_cost = 10
 	result = /obj/item/ammo_magazine/ammobox/shotgun/scrap_beanbag
 
@@ -234,18 +234,18 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 9
 	result = /obj/item/ammo_casing/shotgun/prespawned
 
-/datum/recipe_crafting_station/ammo/shotgun/beanbag_box
-	name = "20mm beanbag box"
+/datum/recipe_crafting_station/ammo/shotgun/beanbag_packet
+	name = "20mm beanbag packet"
 	point_cost = 15
 	result = /obj/item/ammo_magazine/ammobox/shotgun/beanbags
 
-/datum/recipe_crafting_station/ammo/shotgun/buckshot_box
-	name = "20mm buckshot box"
+/datum/recipe_crafting_station/ammo/shotgun/buckshot_packet
+	name = "20mm buckshot packet"
 	point_cost = 20
 	result = /obj/item/ammo_magazine/ammobox/shotgun/buckshot
 
-/datum/recipe_crafting_station/ammo/shotgun/slug_box
-	name = "20mm slug box"
+/datum/recipe_crafting_station/ammo/shotgun/slug_packet
+	name = "20mm slug packet"
 	point_cost = 25
 	result = /obj/item/ammo_magazine/ammobox/shotgun
 
@@ -254,8 +254,8 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 5
 	result = /obj/item/ammo_casing/shotgun/ceramic/prespawned
 
-/datum/recipe_crafting_station/ammo/shotgun/cermaic_box
-	name = "20mm ceramic box"
+/datum/recipe_crafting_station/ammo/shotgun/cermaic_packet
+	name = "20mm ceramic packet"
 	point_cost = 20
 	result = /obj/item/ammo_magazine/ammobox/shotgun/ceramic
 
@@ -264,8 +264,8 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 12
 	result = /obj/item/ammo_casing/shotgun/incendiary/prespawned
 
-/datum/recipe_crafting_station/ammo/shotgun/incendiary_box
-	name = "20mm incendiary box"
+/datum/recipe_crafting_station/ammo/shotgun/incendiary_packet
+	name = "20mm incendiary packet"
 	point_cost = 28
 	result = /obj/item/ammo_magazine/ammobox/shotgun/incendiary
 
@@ -279,7 +279,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 3
 	result = /obj/item/ammo_casing/light_rifle_257/scrap/prespawned
 
-/datum/recipe_crafting_station/ammo/lrifle/scrap_box
+/datum/recipe_crafting_station/ammo/lrifle/scrap_packet
 	name = "Scrap carbine ammo packet"
 	point_cost = 10
 	result = /obj/item/ammo_magazine/ammobox/light_rifle_257/scrap
@@ -289,7 +289,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 8
 	result = /obj/item/ammo_casing/light_rifle_257/prespawned
 
-/datum/recipe_crafting_station/ammo/lrifle/box
+/datum/recipe_crafting_station/ammo/lrifle/packet
 	name = "Carbine ammo packet"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/light_rifle_257_small
@@ -299,7 +299,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 8
 	result = /obj/item/ammo_casing/light_rifle_257/incend/prespawned
 
-/datum/recipe_crafting_station/ammo/lrifle/incendiary_box
+/datum/recipe_crafting_station/ammo/lrifle/incendiary_packet
 	name = "Incendiary carbine ammo packet"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/light_rifle_257_small/incend
@@ -334,7 +334,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 3
 	result = /obj/item/ammo_casing/rifle_75/scrap/prespawned
 
-/datum/recipe_crafting_station/ammo/rifle/scrap_box
+/datum/recipe_crafting_station/ammo/rifle/scrap_packet
 	name = "Scrap rifle ammo packet"
 	point_cost = 15
 	result = /obj/item/ammo_magazine/ammobox/rifle_75_small/scrap
@@ -344,7 +344,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 8
 	result = /obj/item/ammo_casing/rifle_75/prespawned
 
-/datum/recipe_crafting_station/ammo/rifle/box
+/datum/recipe_crafting_station/ammo/rifle/packet
 	name = "Rifle ammo packet"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/rifle_75_small
@@ -354,7 +354,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 8
 	result = /obj/item/ammo_casing/rifle_75/incend/prespawned
 
-/datum/recipe_crafting_station/ammo/rifle/incendiary_box
+/datum/recipe_crafting_station/ammo/rifle/incendiary_packet
 	name = "Incendiary rifle ammo packet"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/rifle_75_small/incend
@@ -389,8 +389,8 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 3
 	result = /obj/item/ammo_casing/heavy_rifle_408/scrap/prespawned
 
-/datum/recipe_crafting_station/ammo/hrifle/scrap_box
-	name = "Scrap heavy rifle ammo box"
+/datum/recipe_crafting_station/ammo/hrifle/scrap_packet
+	name = "Scrap heavy rifle ammo packet"
 	point_cost = 15
 	result = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap
 
@@ -399,7 +399,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 8
 	result = /obj/item/ammo_casing/heavy_rifle_408/prespawned
 
-/datum/recipe_crafting_station/ammo/hrifle/box
+/datum/recipe_crafting_station/ammo/hrifle/packet
 	name = "Heavy rifle ammo packet"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small
@@ -409,7 +409,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 8
 	result = /obj/item/ammo_casing/heavy_rifle_408/incend/prespawned
 
-/datum/recipe_crafting_station/ammo/hrifle/incendiary_box
+/datum/recipe_crafting_station/ammo/hrifle/incendiary_packet
 	name = "Incendiary heavy rifle ammo packet"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/incend
@@ -444,8 +444,8 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 10
 	result = /obj/item/ammo_casing/antim/prespawned
 
-/datum/recipe_crafting_station/ammo/antim/box
-	name = "14.5mm ammo box"
+/datum/recipe_crafting_station/ammo/antim/packet
+	name = "14.5mm ammo packet"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/antim_small // Same price as every packet for half the ammo, otherwise impossible to get
 
