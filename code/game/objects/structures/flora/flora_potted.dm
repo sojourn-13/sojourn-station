@@ -28,8 +28,8 @@
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/overgrown
-	name = "overgrown potted plants"
-	desc = "This is an assortment of colorful plants. Some parts are overgrown."
+	name = "potted plants of roses"
+	desc = "This a potted plant made of roses."
 	icon_state = "plant-03"
 	needs_to_maintain = TRUE
 
