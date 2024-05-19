@@ -28,8 +28,8 @@
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/overgrown
-	name = "overgrown potted plants"
-	desc = "This is an assortment of colorful plants. Some parts are overgrown."
+	name = "potted plants of roses"
+	desc = "This a potted plant made of roses."
 	icon_state = "plant-03"
 	needs_to_maintain = TRUE
 
@@ -58,8 +58,8 @@
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/smalltree
-	name = "small potted tree"
-	desc = "This is a small tree. It is rather pleasant."
+	name = "small potted plant"
+	desc = "This is a small tree. The odor of the plant is rather unique."
 	icon_state = "plant-08"
 	needs_to_maintain = TRUE
 
@@ -91,8 +91,8 @@
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/sticky
-	name = "sticky potted plant"
-	desc = "This is an odd plant. Its sticky leaves trap insects."
+	name = "potted sun flower"
+	desc = "This is a sun flower pot. This flower likes sun."
 	icon_state = "plant-13"
 	needs_to_maintain = TRUE
 
@@ -104,7 +104,7 @@
 
 /obj/structure/flora/pottedplant/small
 	name = "small potted plant"
-	desc = "This is a pot of assorted small flora. Some look familiar."
+	desc = "This is a pot of assorted red flora. Some look familiar."
 	icon_state = "plant-15"
 	needs_to_maintain = TRUE
 
@@ -166,8 +166,8 @@
 	needs_to_maintain = TRUE
 
 /obj/structure/flora/pottedplant/dead
-	name = "dead potted plant"
-	desc = "This is the dried up remains of a dead plant. Someone should replace it."
+	name = "potted summer plant"
+	desc = "This is a summer plant native of this planet."
 	icon_state = "plant-25"
 	needs_to_maintain = TRUE
 

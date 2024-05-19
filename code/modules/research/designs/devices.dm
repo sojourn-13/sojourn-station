@@ -111,3 +111,17 @@
 	desc = "A tool used by SI to stablize and get readings of bluespace entropy."
 	build_path = /obj/item/oddity/si_bluespace_scanner
 	category = "Bluespace Telecoms"
+
+/datum/design/research/item/omnitranslator_handheld
+	name = "Handheld Universal Translator"
+	materials = list(MATERIAL_STEEL = 4, MATERIAL_GLASS = 4, MATERIAL_PLASTIC = 2)
+	desc = "A handheld device that translates foreign language to a language known to the user."
+	build_path = /obj/item/device/universal_translator
+	category = "Bluespace Telecoms"
+	
+/datum/design/research/item/omnitranslator_earpiece
+	name = "Universal Translator Earpiece"
+	desc = "A headset that translates foreign languages to a known language of the users choice."
+	materials = list(MATERIAL_STEEL = 2, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1)
+	build_path = /obj/item/device/universal_translator/ear
+	category = "Bluespace Telecoms"

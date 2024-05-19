@@ -181,7 +181,7 @@
 /obj/machinery/power/os_turret/emp_act()
 	..()
 	stat |= EMPED
-	emp_timer_id = addtimer(CALLBACK(src, .proc/emp_off), emp_cooldown, TIMER_STOPPABLE)
+	emp_timer_id = addtimer(CALLBACK(src, .proc/emp_off), emp_cooldown, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /obj/machinery/power/os_turret/bullet_act(obj/item/projectile/proj)
 	var/damage = proj.get_structure_damage()
@@ -303,7 +303,7 @@
 		returning_fire = FALSE
 
 /obj/machinery/power/os_turret/proc/shoot(atom/target, def_zone)
-	if(QDELETED(target))
+	if(QDELETED(target) || stat & BROKEN)
 		return
 	set_dir(get_dir(src, target))
 	var/obj/item/projectile/P = new projectile(loc)

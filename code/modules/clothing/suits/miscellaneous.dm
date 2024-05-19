@@ -442,3 +442,24 @@ obj/item/clothing/suit/gownrisque/alt
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+
+// Miscs
+
+/obj/item/clothing/suit/storage/omni_robes
+	name = "religious robe"
+	desc = "A robe made of cloth that can be colored."
+	icon_state = "general_priest_cloth"
+	item_state = "general_priest_cloth"
+	armor_list = list(
+		melee = 10,
+		bullet = 5,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LOWER_TORSO
+	min_cold_protection_temperature = T0C - 20
+	price_tag = 50

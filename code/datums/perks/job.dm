@@ -465,12 +465,12 @@
 	desc = "Thanks to special and intensive training received in the course of your employment with Blackshield, with all the practice gained in space you feel you can jump from greater heights and know when to duck-and-cover."
 	icon_state = "blackshieldconditioning"
 
-/datum/perk/blackshield_conditioning/assign(mob/living/carbon/human/H)
+/datum/perk/job/blackshield_conditioning/assign(mob/living/carbon/human/H)
 	..()
 	holder.mob_bomb_defense += 20
 	holder.falls_mod -= 0.4
 
-/datum/perk/blackshield_conditioning/remove()
+/datum/perk/job/blackshield_conditioning/remove()
 	holder.mob_bomb_defense -= 20
 	holder.falls_mod += 0.4
 	..()
@@ -481,14 +481,14 @@
 	icon_state = "roughandtumble"
 	perk_shared_ability = PERK_SHARED_SEE_ILLEGAL_REAGENTS
 
-/datum/perk/prospector_conditioning/assign(mob/living/carbon/human/H)
+/datum/perk/job/prospector_conditioning/assign(mob/living/carbon/human/H)
 	..()
 	if(holder)
 		holder.metabolism_effects.addiction_chance_multiplier = 0.1
 		holder.metabolism_effects.nsa_bonus += 25
 		holder.metabolism_effects.calculate_nsa()
 
-/datum/perk/prospector_conditioning/remove()
+/datum/perk/job/prospector_conditioning/remove()
 	if(holder)
 		holder.metabolism_effects.addiction_chance_multiplier = 1
 		holder.metabolism_effects.nsa_bonus -= 25
