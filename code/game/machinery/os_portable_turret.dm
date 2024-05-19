@@ -303,7 +303,7 @@
 		returning_fire = FALSE
 
 /obj/machinery/power/os_turret/proc/shoot(atom/target, def_zone)
-	if(QDELETED(target))
+	if(QDELETED(target) || stat & BROKEN)
 		return
 	set_dir(get_dir(src, target))
 	var/obj/item/projectile/P = new projectile(loc)
