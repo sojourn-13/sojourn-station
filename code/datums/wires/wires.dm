@@ -205,9 +205,12 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 			return TRUE
 
 /datum/wires/proc/can_see_wire_info(mob/living/user, datum/wire_description/wd)
+	if(!istype(wd))
+		return FALSE
+
 	if(user?.stats.getPerk(PERK_HANDYMAN))
 		return TRUE
-		
+
 	var/user_skill = user.stats?.getStat(STAT_MEC) || 0
 	if(user_skill > wd.skill_level)
 		return TRUE
