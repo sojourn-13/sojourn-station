@@ -260,15 +260,17 @@
 	force = WEAPON_FORCE_DANGEROUS
 	armor_penetration = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_BULKY
-	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 4, MATERIAL_GOLD = 3)
+	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 6, MATERIAL_GOLD = 3)
 	toggleable = TRUE
+	heat = 3800
 	switched_on_forcemult = 1.75 //35 total; slightly better than a halberd
 	switched_on_penmult = 2 //30 total; same as a halberd
 	switched_on_qualities = list(QUALITY_CUTTING = 30, QUALITY_SAWING = 30)
 	switched_off_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
 	tool_qualities = list(QUALITY_CUTTING = 10, QUALITY_SAWING = 10)
-	active_time = 10 SECONDS
-	var/faith_cost = 50 //How much faith does it take to use this?
+	effective_faction = list("psi_monster", "hive") //DEUS VULT
+	damage_mult = 1.2 //20% damage buff when purging the ABOMINATION
+	var/faith_cost = 5 //How much faith does it use per attack?
 
 /obj/item/tool/sword/nt/power/attack_self(mob/living/user)
 	if(!user.get_core_implant(/obj/item/implant/core_implant/cruciform)) //No cruciform, no activation
@@ -276,12 +278,31 @@
 		return FALSE
 	else
 		var/obj/item/implant/core_implant/cruciform/user_cruci = user.get_core_implant(/obj/item/implant/core_implant/cruciform)
-		if(user_cruci.power < faith_cost)
+		if(user_cruci.power < faith_cost && !switched_on)
 			to_chat(user, SPAN_WARNING("Your cruciform has to recharge before you activate the [name]!"))
 			return FALSE
+		else if(!switched_on)
+			user_cruci.use_power(faith_cost)
+	set_light(l_range = 3, l_power = 1, l_color = COLOR_BLUE_LIGHT)
+	..()
+
+/obj/item/tool/sword/nt/power/attack(mob/living/M, mob/living/user)
+	if(switched_on)
+		var/obj/item/implant/core_implant/cruciform/user_cruci = user.get_core_implant(/obj/item/implant/core_implant/cruciform)
+		if(!user_cruci || user_cruci.power < faith_cost)
+			turn_off()
+			to_chat(user, SPAN_WARNING("The light of the [name] dims, its power extinguished."))
 		else
 			user_cruci.use_power(faith_cost)
 	..()
+
+/obj/item/tool/sword/nt/power/turn_off(mob/user)
+	. = ..()
+	set_light(l_range = 0, l_power = 0, l_color = COLOR_BLUE_LIGHT)
+
+/obj/item/tool/sword/nt/power/is_hot()
+	if (switched_on)
+		return heat
 
 /obj/item/shield/riot/nt
 	name = "shield"
