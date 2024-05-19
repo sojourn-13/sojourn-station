@@ -12547,6 +12547,10 @@
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
+"lfd" = (
+/obj/structure/invislight,
+/turf/simulated/mineral/planet,
+/area/nadezhda/dungeon/outside/prepper)
 "lfg" = (
 /obj/random/junk,
 /obj/random/junk,
@@ -80168,7 +80172,7 @@ nxY
 rHY
 rHY
 wDE
-kQB
+lfd
 kQB
 qHH
 qHH
