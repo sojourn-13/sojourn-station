@@ -144,6 +144,7 @@
 		/datum/design/research/item/computer_part/printer,
 		/datum/design/research/item/computer_part/led,
 		/datum/design/research/item/computer_part/led/adv = 2,
+		/datum/design/research/item/omnitranslator_handheld,
 		/datum/design/autolathe/part/cable_coil,
 		/datum/design/autolathe/device/camera,
 		/datum/design/autolathe/device/camerafilm,
@@ -154,7 +155,7 @@
 		/datum/design/autolathe/part/cell_mout = 2,
 		/datum/design/autolathe/container/hcase_parts,
 		/datum/design/autolathe/computer_part/scanner/paper,
-		/datum/design/autolathe/computer_part/scanner/atmos,
+		/datum/design/autolathe/computer_part/scanner/atmos
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/computer/rd
@@ -182,6 +183,7 @@
 		/datum/design/research/item/part/basic_sensor,
 		/datum/design/research/item/part/adv_sensor = 2,
 		/datum/design/research/item/part/phasic_sensor = 3,
+		/datum/design/research/item/omnitranslator_handheld,
 		/datum/design/autolathe/part/cable_coil,
 		/datum/design/autolathe/part/igniter,
 		/datum/design/autolathe/part/signaler,
