@@ -99,9 +99,6 @@
 	for(var/type in GLOB.all_crafting_station_recipes)
 		var/datum/recipe_crafting_station/recipe = GLOB.all_crafting_station_recipes[type]
 		var/list/recipe_data = recipe.get_ui_data(user, productivity_bonus)
-		// Skip recipes that are unavailable for some reason (mostly ammo being bitchy)
-		if(recipe_data["cost"] == -1)
-			continue
 
 		recipes += list(recipe_data)
 	

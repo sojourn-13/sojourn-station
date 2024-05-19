@@ -17,9 +17,13 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 /datum/recipe_crafting_station/proc/can_craft(mob/user, productivity_bonus, list/available_materials)
 	. = TRUE
 
-	var/list/cost = get_cost(user, productivity_bonus)
-	for(var/mat in cost)
-		var/amt_required = cost[mat]
+	var/cost = get_cost(user, productivity_bonus)
+	if(cost == -1)
+		return FALSE
+
+	var/list/costs = cost
+	for(var/mat in costs)
+		var/amt_required = costs[mat]
 		if(amt_required > available_materials[mat])
 			. = FALSE
 
@@ -48,10 +52,8 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	required_resources = list(MATERIAL_STEEL = 10, MATERIAL_CARDBOARD = 2)
 	var/point_cost = 0
 
-/datum/recipe_crafting_station/ammo/get_cost(mob/user, productivity_bonus)
-	var/list/cost = required_resources.Copy()
-
-	var/material_points = 15
+/datum/recipe_crafting_station/ammo/proc/available_points(mob/user, productivity_bonus)
+	var/material_points = 15 + productivity_bonus
 	if(user.stats)
 		if(user.stats.getPerk(PERK_HANDYMAN))
 			material_points += 11
@@ -69,6 +71,13 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 			if(STAT_LEVEL_MASTER to INFINITY)
 				material_points += 15
 
+	return material_points
+
+/datum/recipe_crafting_station/ammo/get_cost(mob/user, productivity_bonus)
+	var/list/cost = required_resources.Copy()
+
+	var/material_points = available_points(user, productivity_bonus)
+
 	if(point_cost > material_points)
 		return -1
 
@@ -78,6 +87,12 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 		cost[material] *= proportional_cost
 
 	return cost
+
+/datum/recipe_crafting_station/ammo/get_ui_data(mob/user, productivity_bonus)
+	var/list/data = ..()
+	data["available_points"] = available_points(user, productivity_bonus)
+	data["point_cost"] = point_cost
+	return data
 
 // 9mm
 /datum/recipe_crafting_station/ammo/nine_mm

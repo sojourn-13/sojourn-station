@@ -13,9 +13,13 @@ type Recipe = {
   type: string;
   category: string;
   subcategory: string | null;
-  cost: {
-    [material: string]: number;
-  };
+  available_points?: number;
+  point_cost?: number;
+  cost:
+    | number
+    | {
+        [material: string]: number;
+      };
 };
 
 type Data = {
@@ -179,25 +183,34 @@ export const CraftingStation = (props) => {
                     <Stack.Item grow>
                       <Stack vertical>
                         <Stack.Item fontSize={1.2} color="label">
-                          {recipe.name}
+                          {recipe.name}{' '}
+                          {recipe.point_cost ? (
+                            <Box inline color="white">
+                              ({recipe.point_cost} / {recipe.available_points}{' '}
+                              points)
+                            </Box>
+                          ) : null}
                         </Stack.Item>
                         <Stack.Item
                           textColor={
                             craftable_recipes.includes(recipe.type) ? '' : 'bad'
                           }
                         >
-                          {Object.entries(recipe.cost).map(
-                            ([name, cost], index, arr) => (
-                              <Box
-                                key={name}
-                                inline
-                                mr={index === arr.length - 1 ? 0 : 0.5}
-                              >
-                                {toTitleCase(name)} ({round(cost, 2)})
-                                {index === arr.length - 1 ? '' : ', '}
-                              </Box>
-                            ),
-                          )}
+                          {recipe.cost === -1
+                            ? 'Unavailable'
+                            : typeof recipe.cost === 'object' &&
+                              Object.entries(recipe.cost).map(
+                                ([name, cost], index, arr) => (
+                                  <Box
+                                    key={name}
+                                    inline
+                                    mr={index === arr.length - 1 ? 0 : 0.5}
+                                  >
+                                    {toTitleCase(name)} ({round(cost, 2)})
+                                    {index === arr.length - 1 ? '' : ', '}
+                                  </Box>
+                                ),
+                              )}
                         </Stack.Item>
                       </Stack>
                     </Stack.Item>
