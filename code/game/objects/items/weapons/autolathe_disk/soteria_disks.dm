@@ -155,7 +155,7 @@
 		/datum/design/autolathe/part/cell_mout = 2,
 		/datum/design/autolathe/container/hcase_parts,
 		/datum/design/autolathe/computer_part/scanner/paper,
-		/datum/design/autolathe/computer_part/scanner/atmos
+		/datum/design/autolathe/computer_part/scanner/atmos,
 	)
 
 /obj/item/computer_hardware/hard_drive/portable/design/computer/rd
