@@ -9,9 +9,9 @@
  * /obj/item/rig_module/maneuvering_jets
  * /obj/item/rig_module/foam_sprayer
  * /obj/item/rig_module/device/broadcaster
- * /obj/item/rig_module/chem_dispenser
- * /obj/item/rig_module/chem_dispenser/injector
- * /obj/item/rig_module/chem_dispenser/medical
+ * /obj/item/rig_module/modular_injector
+ * /obj/item/rig_module/modular_injector/injector
+ * /obj/item/rig_module/modular_injector/medical
  * /obj/item/rig_module/voice
  * /obj/item/rig_module/device/paperdispenser
  * /obj/item/rig_module/device/pen
@@ -291,14 +291,16 @@
 	max_injection_amount = 30
 	max_beakers = 6
 	injection_to_others_delay = 1
+	interface_name = "integrated chemical combat dispenser"
+	interface_desc = "Dispenses loaded chemicals directly into the user's bloodstream."
+
+/obj/item/rig_module/modular_injector/combat/preloaded
 	initial_beakers = list(
 		list(/obj/item/reagent_containers/glass/beaker/large/rig_hyperzine,     "hyperzine", 60),
 		list(/obj/item/reagent_containers/glass/beaker/large/rig_tramadol,      "tramadol", 60),
 		list(/obj/item/reagent_containers/glass/beaker/large/rig_nutriment,     "nutriment", 60),
 		list(/obj/item/reagent_containers/glass/beaker/large/rig_tricordrazine, "tricordrazine", 60)
 	)
-	interface_name = "integrated chemical combat dispenser"
-	interface_desc = "Dispenses loaded chemicals directly into the user's bloodstream."
 
 /obj/item/rig_module/modular_injector/medical
 	name = "mounted medical injector"
@@ -312,6 +314,10 @@
 	disruptive = 1
 	vial_only = TRUE
 	injection_to_others_delay = 7 //Not nerely as long as you would think
+	interface_name = "integrated chemical injector"
+	interface_desc = "Dispenses loaded chemicals directly into the bloodstream of its target. Can be used on the wearer as well."
+
+/obj/item/rig_module/modular_injector/medical/preloaded
 	initial_beakers = list(
 		list(/obj/item/reagent_containers/glass/beaker/vial/rig_inaprovaline, "inaprovaline",15),
 		list(/obj/item/reagent_containers/glass/beaker/vial/rig_dexalinp,     "dexalinp",15),
@@ -321,8 +327,6 @@
 		list(/obj/item/reagent_containers/glass/beaker/vial/rig_anti_toxin,   "anti_toxin", 15),
 		list(/obj/item/reagent_containers/glass/beaker/vial/rig_spaceacillin, "spaceacillin", 15)
 	)
-	interface_name = "integrated chemical injector"
-	interface_desc = "Dispenses loaded chemicals directly into the bloodstream of its target. Can be used on the wearer as well."
 
 /obj/item/rig_module/voice
 
