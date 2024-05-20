@@ -730,12 +730,6 @@
 	else
 		if(istype(user)) to_chat(user, "You [harvest_sample ? "take a sample" : "harvest"] from the [display_name].")
 
-		// Users with green thumb perk gain sanity when harvesting plants
-		if(ishuman(user) && user.stats && user.stats.getPerk(PERK_GREENTHUMB) && !harvest_sample)
-			var/mob/living/carbon/human/H = user
-			if(H.sanity)
-				H.sanity.changeLevel(2.5)
-
 		//This may be a new line. Update the global if it is.
 		if(name == "new line" || !(name in plant_controller.seeds))
 			uid = plant_controller.seeds.len + 1
@@ -756,13 +750,20 @@
 			else
 				total_yield = get_trait(TRAIT_YIELD) + yield_mod
 
-			if(prob(user.stats.getStat(STAT_BIO)))
-				total_yield += 1
-				to_chat(user, SPAN_NOTICE("You have managed to harvest more!"))
+			// Users with green thumb perk gain sanity when harvesting plants
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				if(user.stats.getPerk(PERK_GREENTHUMB))
+					if(H.sanity)
+						H.sanity.changeLevel(2.5)
 
-			if(user.stats.getPerk(PERK_MASTER_HERBALIST))
-				total_yield += 2
-				to_chat(user, SPAN_NOTICE("Thanks to your folken herbalistic teachings, you managed to harvest even more!"))
+				if(prob(H.stats.getStat(STAT_BIO)))
+					total_yield += 1
+					to_chat(H, SPAN_NOTICE("You have managed to harvest more!"))
+	
+				if(H.stats.getPerk(PERK_MASTER_HERBALIST))
+					total_yield += 2
+					to_chat(H, SPAN_NOTICE("Thanks to your folken herbalistic teachings, you managed to harvest even more!"))
 
 		if(!isnull(force_amount))
 			total_yield = force_amount
