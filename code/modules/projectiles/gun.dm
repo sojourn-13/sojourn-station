@@ -761,14 +761,14 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	return offset
 
 //Support proc. Returns the gun in the active hand. If restrictive is set to FALSE and there's no gun in the active hand, checks the other hand. If both hands have no guns, sends a message to user. Ported from CM for use with gun safety verb
-/obj/item/weapon/gun/proc/get_active_firearm(mob/user, restrictive = TRUE)
+/obj/item/gun/proc/get_active_firearm(mob/user, restrictive = TRUE)
 	if(!ishuman(usr))
 		return
 	if(user.incapacitated() || !isturf(usr.loc))
 		to_chat(user, SPAN_WARNING("Not right now."))
 		return
 
-	var/obj/item/weapon/gun/held_item = user.get_active_hand()
+	var/obj/item/gun/held_item = user.get_active_hand()
 
 	if(!istype(held_item)) // if active hand is not a gun
 		if(restrictive) // if restrictive we return right here
@@ -1114,7 +1114,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	set category = "Object"
 	set src = usr.contents
 
-	var/obj/item/weapon/gun/active_firearm = get_active_firearm(usr,FALSE) //safeties shouldn't be restrictive
+	var/obj/item/gun/active_firearm = get_active_firearm(usr,FALSE) //safeties shouldn't be restrictive
 
 	if(!active_firearm)
 		return
@@ -1205,18 +1205,18 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			firemode_stats += list(list("name" = "Fire Delay", "type" = "AnimatedNumber", "value" = F.settings["fire_delay"], "unit" = " ms"))
 		if(F.settings["move_delay"])
 			firemode_stats += list(list("name" = "Move Delay", "type" = "AnimatedNumber", "value" = F.settings["move_delay"], "unit" = " ms"))
-		
+
 		var/list/firemode_info = list(
 			"index" = i,
 			"name" = F.name,
 			"desc" = F.desc,
 			"stats" = firemode_stats
 		)
-		
+
 		if(F.settings["projectile_type"])
 			var/proj_path = F.settings["projectile_type"]
 			firemode_info["projectile"] = ui_data_projectile_stats(new proj_path)
-		
+
 		firemodes_data += list(firemode_info)
 		i += 1
 
@@ -1238,7 +1238,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	. = ..()
 	if(.)
 		return
-	
+
 	switch(action)
 		if("firemode")
 			sel_mode = text2num(params["index"])
