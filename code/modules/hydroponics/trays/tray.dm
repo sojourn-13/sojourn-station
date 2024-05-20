@@ -625,8 +625,15 @@
 		check_health()
 
 	else if(I.force && seed)
+		if(user.a_intent == I_HURT)
+			if(!dead)
+				health = -100 //So even if we have bees around or other healing chems inside we still die
+				user.visible_message(SPAN_DANGER("\The [seed.display_name] has been hacked, and uprooted by [user] with \the [I]!"))
+				check_health()
+				harvest(user)
+				return
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been attacked by [user] with \the [I]!"))
+		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been whacked by [user] with \the [I]!"))
 		if(!dead)
 			health -= I.force
 			check_health()
