@@ -1116,7 +1116,6 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	set src = usr.contents
 
 	var/obj/item/gun/active_firearm = get_active_firearm(usr, FALSE) //safeties shouldn't be restrictive
-	log_and_message_admins("[active_firearm] is the active firearm")
 
 	if(!active_firearm)
 		return
