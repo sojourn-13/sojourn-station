@@ -47,6 +47,7 @@
 	armor = list(melee = 20, bullet = 15, energy = 5, bomb = 50, bio = 0, rad = 0)
 
 	ranged = FALSE
+	armor_penetration = 25
 
 /mob/living/carbon/superior_animal/vox/hider
 	name = "Inuwa kisa"
@@ -93,6 +94,7 @@
 
 	maxHealth = 90
 	health = 90
+	armor_penetration = 35
 
 /mob/living/carbon/superior_animal/vox/weak
 	name = "Yaro mafarauci"
@@ -120,6 +122,7 @@
 	melee_damage_upper = 35
 
 	knock_over_odds = 25
+	armor_penetration = 15
 
 /mob/living/carbon/superior_animal/vox/scout
 	name = "karfe kafafu"

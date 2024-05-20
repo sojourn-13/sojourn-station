@@ -86,6 +86,8 @@ var/datum/xenomorph/xenomorph_ai
 	)
 
 
+	melee_sharp = TRUE //claws
+	armor_penetration = 15
 
 
 /mob/living/carbon/superior_animal/xenomorph/slip(slipped_on,stun_duration=8)

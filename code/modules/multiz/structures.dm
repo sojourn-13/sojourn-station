@@ -108,8 +108,8 @@
 		qdel(target)
 	return ..()
 
-/obj/structure/multiz/ladder/attack_generic(var/mob/M)
-	attack_hand(M)
+/obj/structure/multiz/ladder/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+	attack_hand(user)
 
 /obj/structure/multiz/ladder/proc/throw_through(var/obj/item/C, var/mob/throw_man)
 	if(istype(throw_man,/mob/living/carbon/human))

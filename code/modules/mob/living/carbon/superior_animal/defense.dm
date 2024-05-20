@@ -391,7 +391,7 @@
 /mob/living/carbon/superior_animal/proc/pick_armor()
 	return
 
-/mob/living/carbon/superior_animal/attack_generic(mob/user, damage, attack_message)
+/mob/living/carbon/superior_animal/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 
 	if(!damage || !istype(user))
 		return
@@ -401,7 +401,8 @@
 		var/mob/living/L = user
 		penetration = L.armor_penetration
 
-	damage_through_armor(damage, BRUTE, attack_flag=ARMOR_MELEE, armour_pen=penetration)
+	damage_through_armor(damage = damage, damagetype = damagetype, def_zone = null, attack_flag = ARMOR_MELEE, armour_pen = penetration, sharp = sharp, edge = sharp)
+
 	user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [src.name] ([src.ckey])</font>")
 	src.attack_log += text("\[[time_stamp()]\] <font color='orange'>was attacked by [user.name] ([user.ckey])</font>")
 	src.visible_message(SPAN_DANGER("[user] has [attack_message] [src]!"))

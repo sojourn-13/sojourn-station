@@ -73,7 +73,7 @@ for reference:
 	maxHealth = material.integrity
 	health = maxHealth
 
-/obj/structure/barricade/attack_generic(mob/user, damage, attack_verb, wallbreaker)
+/obj/structure/barricade/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(istype(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(src)
@@ -215,7 +215,7 @@ for reference:
 	var/locked = 0
 //	req_access = list(access_maint_tunnels)
 
-/obj/machinery/deployable/attack_generic(mob/user, damage, attack_verb, wallbreaker)
+/obj/machinery/deployable/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(istype(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(src)
