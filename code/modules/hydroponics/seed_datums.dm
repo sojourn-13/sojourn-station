@@ -807,7 +807,7 @@
 	name = "poppies"
 	seed_name = "poppy"
 	display_name = "poppies"
-	chems = list("nutriment" = list(1,20), "bicaridine" = list(1,10))
+	chems = list("nutriment" = list(1,20), "bicaridine" = list(1,30))
 	kitchen_tag = "poppy"
 
 /datum/seed/flower/poppy/New()
@@ -827,6 +827,7 @@
 	name = "sunflowers"
 	seed_name = "sunflower"
 	display_name = "sunflowers"
+	kitchen_tag = "sunflower"
 
 /datum/seed/flower/sunflower/New()
 	..()
@@ -845,6 +846,7 @@
 	display_name = "grapevines"
 	mutants = list("greengrapes")
 	chems = list("nutriment" = list(1,10), "sugar" = list(1,5), "grapejuice" = list(10,10))
+	kitchen_tag = "grape"
 
 /datum/seed/grapes/New()
 	..()

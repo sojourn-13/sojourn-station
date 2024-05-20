@@ -747,24 +747,27 @@
 			return
 
 		var/total_yield = 0
+		if(get_trait(TRAIT_YIELD) > -1)
+			if(isnull(yield_mod))
+				yield_mod = 0
+				total_yield = get_trait(TRAIT_YIELD)
+			else
+				total_yield = get_trait(TRAIT_YIELD) + yield_mod
+
+			if(prob(user.stats.getStat(STAT_BIO)))
+				total_yield += 1
+				to_chat(user, SPAN_NOTICE("You have managed to harvest more!"))
+
+			if(user.stats.getPerk(PERK_MASTER_HERBALIST))
+				total_yield += 2
+				to_chat(user, SPAN_NOTICE("Thanks to your folken herbalistic teachings, you managed to harvest even more!"))
+
 		if(!isnull(force_amount))
 			total_yield = force_amount
-		else
-			if(get_trait(TRAIT_YIELD) > -1)
-				if(isnull(yield_mod) || yield_mod < 1)
-					yield_mod = 0
-					total_yield = get_trait(TRAIT_YIELD)
-				else
-					total_yield = get_trait(TRAIT_YIELD) + rand(yield_mod)
-				if(prob(user.stats.getStat(STAT_BIO)))
-					total_yield += 1
-					to_chat(user, SPAN_NOTICE("You have managed to harvest more!"))
-				total_yield = max(1,total_yield)
 
-				if(user.stats.getPerk(PERK_MASTER_HERBALIST))
-					total_yield += 2
-					to_chat(user, SPAN_NOTICE("Thanks to your folken herbalistic teachings, you managed to harvest even more!"))
-				total_yield = max(2,total_yield)
+		if(total_yield <= 0)
+			to_chat(user, SPAN_NOTICE("You fail to harvest anything do to a bad yield!"))
+			return
 
 		for(var/i = 0;i<total_yield;i++)
 			var/obj/item/product

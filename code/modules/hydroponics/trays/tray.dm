@@ -220,10 +220,8 @@
 			//potency reagents boost the plats genetic potency, tweaking needed
 			if(potency_reagents[R.id])
 				//While I myself would love to see this limit removed, 400 potency bluespace tomato's are a little to powerfull
-				if(seed.get_trait(TRAIT_POTENCY) < 100)
-					seed.set_trait(TRAIT_POTENCY, min(100, seed.get_trait(TRAIT_POTENCY) + potency_reagents[R.id] * reagent_total))
-				else
-					seed.set_trait(TRAIT_POTENCY, 100)
+				if(seed.get_trait(TRAIT_POTENCY) < 60)
+					seed.set_trait(TRAIT_POTENCY, min(60, seed.get_trait(TRAIT_POTENCY) + potency_reagents[R.id] * reagent_total))
 
 			// Mutagen is distinct from the previous types and mostly has a chance of proccing a mutation.
 			if(mutagenic_reagents[R.id])
@@ -263,6 +261,11 @@
 		seed.harvest(user,yield_mod)
 	else
 */
+	var/post_moder_yield_mod = yield_mod
+	post_moder_yield_mod -= (age * 0.1)
+	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
+		post_moder_yield_mod  *= 0.5
+
 	if(user)
 		seed.harvest(user,yield_mod)
 	else
@@ -448,9 +451,6 @@
 	visible_message(SPAN_DANGER("The </span><span class='notice'>[previous_plant]</span><span class='danger'> has suddenly evolved into </span><span class='notice'>[seed.display_name]!"))
 
 	return
-
-
-
 
 /obj/machinery/portable_atmospherics/hydroponics/attackby(obj/item/I, var/mob/user as mob)
 
