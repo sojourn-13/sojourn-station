@@ -240,13 +240,16 @@
 
 
 /obj/item/computer_hardware/hard_drive/proc/set_autorun(program)
-	var/datum/computer_file/data/autorun = find_file_by_name("autorun")
+	var/datum/computer_file/data/autorun = find_file_by_name("AUTORUN")
 	if(!istype(autorun))
 		autorun = new /datum/computer_file/data
 		autorun.filename = "AUTORUN"
 		store_file(autorun)
 
-	autorun.stored_data = "[program]"
+	if(autorun.stored_data == "[program]")
+		autorun.stored_data = ""
+	else
+		autorun.stored_data = "[program]"
 
 
 // Disk UI data, used by file browser UI

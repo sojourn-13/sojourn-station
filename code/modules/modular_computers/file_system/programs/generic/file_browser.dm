@@ -4,7 +4,7 @@
 	extended_desc = "This program allows management of files."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "folder-collapsed"
+	program_menu_icon = "folder"
 	size = 6
 	requires_ntnet = 0
 	available_on_ntnet = 0

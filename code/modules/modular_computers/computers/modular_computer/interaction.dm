@@ -15,12 +15,12 @@
 	verbs |= /obj/item/modular_computer/verb/emergency_shutdown
 
 /obj/item/modular_computer/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
-	if(usr.incapacitated())
+	if(user.incapacitated())
 		if(show_message)
 			to_chat(user, "<span class='warning'>You can't do that.</span>")
 		return FALSE
 
-	if(!Adjacent(usr))
+	if(!Adjacent(user))
 		if(show_message)
 			to_chat(user, "<span class='warning'>You can't reach it.</span>")
 		return FALSE
@@ -145,7 +145,7 @@
 
 /obj/item/modular_computer/attack_ghost(var/mob/observer/ghost/user)
 	if(enabled)
-		nano_ui_interact(user)
+		ui_interact(user)
 	else if(check_rights(R_ADMIN, 0, user))
 		var/response = alert(user, "This computer is turned off. Would you like to turn it on?", "Admin Override", "Yes", "No")
 		if(response == "Yes")
@@ -162,7 +162,7 @@
 // On-click handling. Turns on the computer if it's off and opens the GUI.
 /obj/item/modular_computer/attack_self(var/mob/user)
 	if(enabled && screen_on)
-		nano_ui_interact(user)
+		ui_interact(user)
 	else if(!enabled && screen_on)
 		turn_on(user)
 

@@ -1,7 +1,7 @@
 /datum/computer_file/program/uplink
 	filename = "taxquickly"
 	filedesc = "TaxQuickly 2545"
-	program_icon_state = "uplink"
+	program_icon_state = "question"
 	extended_desc = "An online tax filing software. It is a few years out of date."
 	size = 0 // it is cloud based
 	requires_ntnet = 0

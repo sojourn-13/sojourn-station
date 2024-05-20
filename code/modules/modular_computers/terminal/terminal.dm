@@ -1,7 +1,7 @@
 // System for a terminal emulator.
 /datum/terminal
 	var/name = "Terminal"
-	var/datum/browser/panel
+	var/datum/weakref/user_ref = null
 	var/list/history = list()
 	var/list/history_max_length = 20
 	var/obj/item/modular_computer/computer
@@ -10,7 +10,8 @@
 	..()
 	src.computer = computer
 	if(user && can_use(user))
-		show_terminal(user)
+		user_ref = WEAKREF(user)
+		ui_interact(user)
 	START_PROCESSING(SSprocessing, src)
 
 /datum/terminal/Destroy()
@@ -18,10 +19,49 @@
 	if(computer && computer.terminals)
 		computer.terminals -= src
 	computer = null
-	if(panel)
-		panel.close()
-		QDEL_NULL(panel)
 	return ..()
+
+/datum/terminal/ui_status(mob/user, datum/ui_state/state)
+	. = ..()
+	if(!can_use(user))
+		. = UI_CLOSE
+
+/datum/terminal/ui_host(mob/user)
+	return computer ? computer.ui_host() : src
+
+/datum/terminal/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Terminal", name)
+		ui.open()
+
+/datum/terminal/ui_data(mob/user)
+	var/list/data = list()
+
+	data["history"] = history
+
+	return data
+
+/datum/terminal/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("command")
+			var/input = params["input"]
+			history += "> [input]"
+			input_command(usr, input)
+			. = TRUE
+
+/datum/terminal/ui_close(mob/user)
+	. = ..()
+	qdel(src)
+
+/datum/terminal/proc/get_user()
+	var/mob/user = user_ref.resolve()
+	if(istype(user))
+		return user
 
 /datum/terminal/proc/can_use(mob/user)
 	if(!user)
@@ -32,6 +72,12 @@
 		return FALSE
 	return TRUE
 
+/datum/terminal/proc/input_command(mob/user, command)
+	var/output = parse(command, user)
+	history += output
+	if(length(history) > history_max_length)
+		history.Cut(1, length(history) - history_max_length + 1)
+
 /datum/terminal/Process()
 	if(!can_use(get_user()))
 		qdel(src)
@@ -41,38 +87,6 @@
 		var/datum/terminal_command/command_datum = command
 		if(command_datum.name == name)
 			return command
-
-/datum/terminal/proc/get_user()
-	if(panel)
-		return panel.user
-
-/datum/terminal/proc/show_terminal(mob/user)
-	panel = new(user, "terminal-\ref[computer]", name, 500, 460, src)
-	update_content()
-	panel.open()
-
-/datum/terminal/proc/update_content()
-	var/list/content = history.Copy()
-	content += "<form action='byond://'><input type='hidden' name='src' value='\ref[src]'>> <input type='text' size='40' name='input'><input type='submit' value='Enter'></form>"
-	panel.set_content(jointext(content, "<br>"))
-
-/datum/terminal/Topic(href, href_list)
-	if(..())
-		return 1
-	if(!can_use(usr) || href_list["close"])
-		qdel(src)
-		return 1
-	if(href_list["input"])
-		var/input = sanitize(href_list["input"])
-		history += "> [input]"
-		var/output = parse(input, usr)
-		if(QDELETED(src)) // Check for exit.
-			return 1
-		history += output
-		if(length(history) > history_max_length)
-			history.Cut(1, length(history) - history_max_length + 1)
-		update_content()
-		return 1
 
 /datum/terminal/proc/parse(text, mob/user)
 	if(user.stat_check(STAT_COG, STAT_LEVEL_BASIC))

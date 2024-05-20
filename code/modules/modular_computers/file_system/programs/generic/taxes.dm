@@ -6,6 +6,7 @@
 	filename = "taxapp"
 	filedesc = "TaxQuickly 2561"
 	program_icon_state = "uplink"
+	program_menu_icon = "money-check"
 	extended_desc = "An online tax filing software."
 	size = 0 // it is cloud based
 	requires_ntnet = 1

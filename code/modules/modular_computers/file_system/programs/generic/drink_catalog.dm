@@ -4,6 +4,7 @@
 	extended_desc = "Electronic handbook containing all information about cocktail craft."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
+	program_menu_icon = "cocktail"
 	size = 2
 	available_on_ntnet = 1
 	nanomodule_path = /datum/nano_module/drink_catalog

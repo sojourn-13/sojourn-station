@@ -23,6 +23,43 @@
 		"tgfont.css" = file("tgui/packages/tgfont/static/tgfont.css"),
 	)
 
+/datum/asset/simple/ntos
+	assets = list(
+		"alarm_green.gif" = 'nano/images/modular_computers/alarm_green.gif',
+		"alarm_red.gif" = 'nano/images/modular_computers/alarm_red.gif',
+		"batt_5.gif" = 'nano/images/modular_computers/batt_5.gif',
+		"batt_20.gif" = 'nano/images/modular_computers/batt_20.gif',
+		"batt_40.gif" = 'nano/images/modular_computers/batt_40.gif',
+		"batt_60.gif" = 'nano/images/modular_computers/batt_60.gif',
+		"batt_80.gif" = 'nano/images/modular_computers/batt_80.gif',
+		"batt_100.gif" = 'nano/images/modular_computers/batt_100.gif',
+		"charging.gif" = 'nano/images/modular_computers/charging.gif',
+		"downloader_finished.gif" = 'nano/images/modular_computers/downloader_finished.gif',
+		"downloader_paused.gif" = 'nano/images/modular_computers/downloader_paused.gif',
+		"downloader_running.gif" = 'nano/images/modular_computers/downloader_running.gif',
+		"ntnrc_idle.gif" = 'nano/images/modular_computers/ntnrc_idle.gif',
+		"ntnrc_new.gif" = 'nano/images/modular_computers/ntnrc_new.gif',
+		"power_norm.gif" = 'nano/images/modular_computers/power_norm.gif',
+		"power_warn.gif" = 'nano/images/modular_computers/power_warn.gif',
+		"satelite_on.gif" = 'nano/images/modular_computers/satelite_on.gif',
+		"satelite_off.gif" = 'nano/images/modular_computers/satelite_off.gif',
+		"shield.gif" = 'nano/images/modular_computers/shield.gif',
+		"sig_high.gif" = 'nano/images/modular_computers/sig_high.gif',
+		"sig_low.gif" = 'nano/images/modular_computers/sig_low.gif',
+		"sig_lan.gif" = 'nano/images/modular_computers/sig_lan.gif',
+		"sig_none.gif" = 'nano/images/modular_computers/sig_none.gif',
+		"sig_warning.gif" = 'nano/images/modular_computers/sig_warning.gif',
+		"smmon_0.gif" = 'nano/images/modular_computers/smmon_0.gif',
+		"smmon_1.gif" = 'nano/images/modular_computers/smmon_1.gif',
+		"smmon_2.gif" = 'nano/images/modular_computers/smmon_2.gif',
+		"smmon_3.gif" = 'nano/images/modular_computers/smmon_3.gif',
+		"smmon_4.gif" = 'nano/images/modular_computers/smmon_4.gif',
+		"smmon_5.gif" = 'nano/images/modular_computers/smmon_5.gif',
+		"smmon_6.gif" = 'nano/images/modular_computers/smmon_6.gif',
+		// "borg_mon.gif" = 'nano/images/modular_computers/borg_mon.gif',
+		// "robotact.gif" = 'nano/images/modular_computers/robotact.gif'
+	)
+
 /datum/asset/simple/irv
 	assets = list(
 		"jquery-ui.custom-core-widgit-mouse-sortable.min.js" = 'html/jquery/jquery-ui.custom-core-widgit-mouse-sortable.min.js',

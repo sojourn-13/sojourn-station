@@ -4,6 +4,7 @@
 	extended_desc = "This program allows access to the manifest of active crew."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
+	program_menu_icon = "users"
 	size = 4
 	requires_ntnet = 1
 	available_on_ntnet = 1

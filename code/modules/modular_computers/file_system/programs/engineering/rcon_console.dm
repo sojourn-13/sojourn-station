@@ -4,7 +4,7 @@
 	nanomodule_path = /datum/nano_module/rcon
 	program_icon_state = "generic"
 	program_key_state = "rd_key"
-	program_menu_icon = "power"
+	program_menu_icon = "car-battery"
 	extended_desc = "This program allows remote control of power distribution systems. Cannot be run on tablet computers."
 	required_access = access_engine
 	requires_ntnet = 1

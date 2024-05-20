@@ -4,6 +4,7 @@
 	extended_desc = "This program allows the editing and preview of text documents."
 	program_icon_state = "word"
 	program_key_state = "atmos_key"
+	program_menu_icon = "file-word"
 	size = 4
 	requires_ntnet = FALSE
 	available_on_ntnet = TRUE

@@ -3,7 +3,7 @@
 	filedesc = "Software Download Tool"
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "arrowthickstop-1-s"
+	program_menu_icon = "download"
 	extended_desc = "This program allows downloads of software from official software repositories"
 	unsendable = 1
 	undeletable = 1

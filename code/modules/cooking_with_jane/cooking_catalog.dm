@@ -4,6 +4,7 @@
 	extended_desc = "Lonestar (and Soteria) Presents: Victoria's Incredible Kitchen Assistant - an AI-generated electronic catalog for cooking."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
+	program_menu_icon = "cookie-bite"
 	size = 2
 	available_on_ntnet = 1
 	nanomodule_path = /datum/nano_module/cook_catalog
