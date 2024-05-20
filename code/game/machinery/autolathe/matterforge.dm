@@ -74,7 +74,7 @@
 
 /obj/machinery/matter_nanoforge/ui_assets(mob/user)
 	return list(
-		get_asset_datum(/datum/asset/simple/design_icons)
+		get_asset_datum(/datum/asset/spritesheet/design_icons)
 	)
 
 /obj/machinery/matter_nanoforge/ui_interact(mob/user, datum/tgui/ui)

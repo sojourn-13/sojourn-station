@@ -151,8 +151,8 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 		var/icon/stripped = icon(fname)
 		if(resize != 1)
-			var/new_width = stripped.Width() * resize
-			var/new_height = stripped.Height() * resize
+			var/new_width = round(stripped.Width() * resize)
+			var/new_height = round(stripped.Height() * resize)
 			// Note: arguments MUST be strings or they don't make it past ffi
 			var/error_two = rustg_dmi_resize_png(fname, "[new_width]", "[new_height]", "nearest")
 			if(error_two)
@@ -169,7 +169,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	for (var/size_id in sizes)
 		var/size = sizes[size_id]
 		var/icon/tiny = size[SPRSZ_ICON]
-		out += ".[name][size_id]{display:inline-block;width:[tiny.Width() * resize]px;height:[tiny.Height() * resize]px;background:url('[SSassets.transport.get_asset_url("[name]_[size_id].png")]') no-repeat;}"
+		out += ".[name][size_id]{display:inline-block;width:[round(tiny.Width() * resize)]px;height:[round(tiny.Height() * resize)]px;background:url('[SSassets.transport.get_asset_url("[name]_[size_id].png")]') no-repeat;}"
 
 	for (var/sprite_id in sprites)
 		var/sprite = sprites[sprite_id]
@@ -179,9 +179,9 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 		var/icon/tiny = size[SPRSZ_ICON]
 		var/icon/big = size[SPRSZ_STRIPPED]
-		var/per_line = big.Width() / (tiny.Width() * resize)
-		var/x = (idx % per_line) * tiny.Width() * resize
-		var/y = round(idx / per_line) * tiny.Height() * resize
+		var/per_line = big.Width() / round(tiny.Width() * resize)
+		var/x = (idx % per_line) * round(tiny.Width() * resize)
+		var/y = round(idx / per_line) * round(tiny.Height() * resize)
 
 		out += ".[name][size_id].[sprite_id]{background-position:-[x]px -[y]px;}"
 

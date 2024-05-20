@@ -392,33 +392,53 @@
 // 	)
 
 /* === ERIS STUFF === */
-/datum/asset/simple/design_icons/register()
-	for(var/D in SSresearch.all_designs)
-		var/datum/design/design = D
+/datum/asset/spritesheet/design_icons
+	name = "design_icons"
 
-		var/filename = sanitizeFileName("[design.build_path].png")
+/datum/asset/spritesheet/design_icons/create_spritesheets()
+	for(var/datum/design/design as anything in SSresearch.all_designs)
+		var/key = sanitize_css_class_name("[design.build_path]")
 
-		var/atom/item = design.build_path
-		var/icon_file = initial(item.icon)
-		var/icon_state = initial(item.icon_state)
+		if(!(key in sprites))
+			var/atom/item = design.build_path
+			var/icon_file = initial(item.icon)
+			if(!icon_file)
+				continue
 
-		// eugh
-		if (!icon_file)
-			icon_file = ""
+			var/icon_state = initial(item.icon_state)
 
-		#ifdef UNIT_TESTS
-		if(!(icon_state in icon_states(icon_file)))
-			// stack_trace("design [D] with icon '[icon_file]' missing state '[icon_state]'")
-			continue
-		#endif
-		var/icon/I = icon(icon_file, icon_state, SOUTH)
+			var/icon/I = icon(icon_file, icon_state, SOUTH)
+			Insert(key, I)
 
-		assets[filename] = I
-	..()
+		design.nano_ui_data["icon"] = icon_class_name(key)
 
-	for(var/D in SSresearch.all_designs)
-		var/datum/design/design = D
-		design.nano_ui_data["icon"] = SSassets.transport.get_asset_url(sanitizeFileName("[design.build_path].png"))
+// /datum/asset/simple/design_icons/register()
+// 	for(var/D in SSresearch.all_designs)
+// 		var/datum/design/design = D
+
+// 		var/filename = sanitizeFileName("[design.build_path].png")
+
+// 		var/atom/item = design.build_path
+// 		var/icon_file = initial(item.icon)
+// 		var/icon_state = initial(item.icon_state)
+
+// 		// eugh
+// 		if (!icon_file)
+// 			icon_file = ""
+
+// 		#ifdef UNIT_TESTS
+// 		if(!(icon_state in icon_states(icon_file)))
+// 			// stack_trace("design [D] with icon '[icon_file]' missing state '[icon_state]'")
+// 			continue
+// 		#endif
+// 		var/icon/I = icon(icon_file, icon_state, SOUTH)
+
+// 		assets[filename] = I
+// 	..()
+
+// 	for(var/D in SSresearch.all_designs)
+// 		var/datum/design/design = D
+// 		design.nano_ui_data["icon"] = SSassets.transport.get_asset_url(sanitizeFileName("[design.build_path].png"))
 
 /datum/asset/simple/materials/register()
 	for(var/type in subtypesof(/obj/item/stack/material) - typesof(/obj/item/stack/material/cyborg))
