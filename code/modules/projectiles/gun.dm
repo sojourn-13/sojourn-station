@@ -1015,7 +1015,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		to_chat(user, SPAN_NOTICE("\The [src] is now set to [new_mode.name]."))
 
 /obj/item/gun/proc/toggle_safety(mob/living/user)
-	if(restrict_safety || src != user.get_active_hand())
+	if(restrict_safety)
+		to_chat(user, SPAN_WARNING("This gun does not have a functional safety!"))
 		return
 
 	safety = !safety
@@ -1110,11 +1111,12 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	update_firemode()
 
 /obj/item/gun/proc/toggle_safety_verb()
-	set name = "Toggle gun's safety"
+	set name = "Toggle gun safety"
 	set category = "Object"
 	set src = usr.contents
 
-	var/obj/item/gun/active_firearm = get_active_firearm(usr,FALSE) //safeties shouldn't be restrictive
+	var/obj/item/gun/active_firearm = get_active_firearm(usr, FALSE) //safeties shouldn't be restrictive
+	log_and_message_admins("[active_firearm] is the active firearm")
 
 	if(!active_firearm)
 		return
