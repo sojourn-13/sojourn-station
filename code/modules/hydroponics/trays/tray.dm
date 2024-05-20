@@ -262,7 +262,7 @@
 	else
 */
 	var/post_moder_yield_mod = yield_mod
-	post_moder_yield_mod -= (age * 0.1)
+	post_moder_yield_mod -= (age * 0.03)
 	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
 		post_moder_yield_mod  *= 0.5
 
