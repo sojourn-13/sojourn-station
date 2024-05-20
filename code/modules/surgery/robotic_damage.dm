@@ -80,7 +80,7 @@
 
 /datum/surgery_step/robotic/fix_burn
 	allowed_tools = list(/obj/item/stack/cable_coil = 100)
-	required_tool_quality = WORKSOUND_WIRECUTTING
+	required_tool_quality = QUALITY_WIRE_CUTTING
 	duration = 60
 
 /datum/surgery_step/robotic/fix_burn/require_tool_message(mob/living/user)
