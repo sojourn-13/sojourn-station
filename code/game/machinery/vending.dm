@@ -327,7 +327,7 @@
 				to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the maintenance panel."))
 				cut_overlays()
 				if(panel_open)
-					overlays += image(icon, "[icon_type]-panel")
+					add_overlay(image(icon, "[icon_type]-panel")) //we have to use add_overlay here as opposed to overlay += due to the latter adding another layer onto the icon with each use of the screwdriver
 			return
 
 		if(QUALITY_WELDING)
@@ -490,10 +490,31 @@
 		purchase_message = "Insufficient funds on chargecard."
 		purchase_error = TRUE
 		return FALSE
-	else
-		wallet.worth -= currently_vending.price
-		credit_purchase("[wallet.owner_name] (chargecard)")
-		return TRUE
+
+	if(give_discounts && give_discount_points)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			if(currently_vending.price)
+				var/points_rewarded = (currently_vending.price / 100) //Shockingly this is MORE fair then a flat value as it rewards better for high spenders well still punishing low value endless transations
+				H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/vender_e_shopper, "VENDER_E_SHOPPER", skill_gained = points_rewarded, learner = H)
+			//Small order of operations here to prevent first time buyers being SCAMMED out of point rewards and such.
+			var/task_level = H.learnt_tasks.get_task_mastery_level("VENDER_E_SHOPPER")
+
+			if(task_level < currently_vending.price) //so free stuff dosnt get discounted/givepoints
+				currently_vending.price -= task_level
+				wallet.worth -= currently_vending.price
+				credit_purchase("[wallet.owner_name] (chargecard)")
+				currently_vending.price += task_level //So we dont perma lower the price of things
+				return TRUE
+
+			wallet.worth -= currently_vending.price
+			credit_purchase("[wallet.owner_name] (chargecard)")
+			return TRUE
+
+
+	wallet.worth -= currently_vending.price
+	credit_purchase("[wallet.owner_name] (chargecard)")
+	return TRUE
 
 /**
  * Scan a card and attempt to transfer payment from associated account.

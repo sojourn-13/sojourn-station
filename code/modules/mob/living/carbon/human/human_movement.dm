@@ -20,7 +20,9 @@
 	if(stats.getPerk(PERK_FAST_WALKER))
 		tally -= 0.4
 	if(stats.getPerk(PERK_NANITE_MUSCLE))
-		tally -= 0.3
+		var/datum/perk/nanite_power/nanite_muscle/P = stats.getPerk(PERK_NANITE_MUSCLE)
+		if(!P.emped)
+			tally -= 0.3
 	if(stats.getPerk(PERK_SCUTTLEBUG))
 		tally -= 0.3
 	if(stats.getPerk(PERK_REZ_SICKNESS))
@@ -53,7 +55,7 @@
 			tally += wear_suit.slowdown
 		if(shoes)
 			tally += shoes.slowdown
-		if(back)
+		if(back && !src.stats.getPerk(PERK_SECOND_SKIN))
 			tally += back.slowdown
 
 	//tally += min((shock_stage / 100) * 3, 3) //Scales from 0 to 3 over 0 to 100 shock stage

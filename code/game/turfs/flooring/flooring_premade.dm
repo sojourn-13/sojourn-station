@@ -477,6 +477,66 @@
 /turf/simulated/floor/plating/snow
 /turf/simulated/floor/airless/ceiling
 
+/*Newsnow*/
+/turf/simulated/floor/newsnow
+	name = "Snow"
+	icon = 'icons/turf/flooring/newsnow.dmi'
+	icon_state = "snow1_1"
+
+/turf/simulated/floor/newsnow1
+	name = "Snow"
+	icon = 'icons/turf/flooring/newsnow.dmi'
+	icon_state = "snow1_2"
+
+/turf/simulated/floor/newsnow2
+	name = "Snow"
+	icon = 'icons/turf/flooring/newsnow.dmi'
+	icon_state = "snow1_3"
+
+/turf/simulated/floor/newsnow3
+	name = "Snow"
+	icon = 'icons/turf/flooring/newsnow.dmi'
+	icon_state = "snow1_4"
+
+/turf/simulated/floor/newsnow4
+	name = "Snow"
+	icon = 'icons/turf/flooring/newsnow.dmi'
+	icon_state = "snow1_5"
+
+/turf/simulated/floor/newsnow5
+	name = "Snow"
+	icon = 'icons/turf/flooring/newsnow.dmi'
+	icon_state = "snowmodular_1"
+
+/turf/simulated/floor/newsnow6
+	name = "Snow"
+	icon = 'icons/turf/flooring/newsnow.dmi'
+	icon_state = "snowmodular_2"
+
+/turf/simulated/floor/newsnow7
+	name = "Snow"
+	icon = 'icons/turf/flooring/newsnow.dmi'
+	icon_state = "snowempty_1"
+
+/turf/simulated/floor/newsnow8
+	name = "Snow"
+	icon = 'icons/turf/flooring/newsnow.dmi'
+	icon_state = "snowempty_2"
+
+/turf/simulated/floor/newsnow9
+	name = "Snow"
+	icon = 'icons/turf/flooring/newsnow.dmi'
+	icon_state = "snowmound_1"
+/turf/simulated/floor/newsnow10
+	name = "Snow"
+	icon = 'icons/turf/flooring/newsnow.dmi'
+	icon_state = "snowmound_2"
+
+/turf/simulated/floor/newsnow11
+	name = "Snow"
+	icon = 'icons/turf/flooring/newsnow.dmi'
+	icon_state = "snowglide_1"
+
 /*Beach/Water*/
 
 /turf/simulated/floor/beach
@@ -746,6 +806,17 @@
 	name = "gravel road"
 	icon_state = "road_1"
 	initial_flooring = /decl/flooring/rock/manmade/road
+
+/*Shale - ALL SPRITE CREDITS GO TO CM-SS13!*/
+
+/turf/simulated/floor/asteroid/shale
+	name = "coarse shale"
+	icon = 'icons/turf/flooring/dirt.dmi'
+	icon_state = "shale0"
+	initial_flooring = /decl/flooring/shale
+	oxygen = 0
+	nitrogen = 0
+	carbon_dioxide = 850
 
 /*POOL - new pool tile and the splash code to go with it*/
 /turf/simulated/floor/pool

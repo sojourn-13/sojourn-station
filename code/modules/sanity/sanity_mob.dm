@@ -9,7 +9,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 #define SANITY_VIEW_DAMAGE_MOD (0.4 * GLOB.GLOBAL_SANITY_MOD)
 
 // Damage received from unpleasant stuff in view
-#define SANITY_DAMAGE_VIEW(damage, vig, dist) ((damage) * SANITY_VIEW_DAMAGE_MOD * (1.2 - (vig) / STAT_LEVEL_MAX) * (1 - (dist)/15))
+#define SANITY_DAMAGE_VIEW(damage, vig, dist) ((damage) * SANITY_VIEW_DAMAGE_MOD * max((1.2 - (vig) / STAT_LEVEL_MAX), 0.05) * (1 - (dist)/15))
 
 // Damage received from body damage
 #define SANITY_DAMAGE_HURT(damage, vig) (min((damage) / 5 * SANITY_DAMAGE_MOD * (1.2 - (vig) / STAT_LEVEL_MAX), 60))
@@ -158,13 +158,17 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		return
 	var/vig = owner.stats.getStat(STAT_VIG)
 	for(var/atom/A in view(owner.client ? owner.client : owner))
-		if(A.sanity_damage) //If this thing is not nice to behold
-			. += SANITY_DAMAGE_VIEW(A.sanity_damage, vig, get_dist(owner, A))
-
 		if(owner.stats.getPerk(PERK_IDEALIST) && ishuman(A)) //Moralists react negatively to people in distress
 			var/mob/living/carbon/human/H = A
 			if(H.sanity.level < 30 || H.health < 50)
 				. += SANITY_DAMAGE_VIEW(0.1, vig, get_dist(owner, A))
+
+		var/mob/M = A
+		if(ismob(M) && M?.faction == owner.faction)
+			continue
+
+		if(A.sanity_damage) //If this thing is not nice to behold
+			. += SANITY_DAMAGE_VIEW(A.sanity_damage, vig, get_dist(owner, A))
 
 
 /datum/sanity/proc/handle_area()
@@ -342,7 +346,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					resting_times = 1
 				for(var/stat in L)
 					var/stat_up = L[stat] * 2 * resting_times
-					if((owner.stats.getStat(stat)) >= STAT_VALUE_MAXIMUM)
+					if((owner.stats.getStat(stat)) >= owner.stats.grab_Stat_cap(stat))
 						stat_up = 0
 						to_chat(owner, SPAN_NOTICE("You feel that you can't grow anymore better for today in [stat] with oddities"))
 					else
@@ -353,7 +357,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 					if(owner.stats.addPerk(I.perk))
 						I.perk = null
 
-				if(I.kill_stats)
+				if(I.self_destroy)
 					qdel(I, FALSE, TRUE) //Forcefully remove are component
 
 				resting = 0
@@ -380,7 +384,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 				LAZYAPLUS(stat_change, pick(ALL_STATS_FOR_LEVEL_UP), 3)
 
 			for(var/stat in stat_change)
-				if((owner.stats.getStat(stat)) >= STAT_VALUE_MAXIMUM)
+				if((owner.stats.getStat(stat)) >= owner.stats.grab_Stat_cap(stat))
 					to_chat(owner, SPAN_NOTICE("You can not increase [stat] anymore with simple resting."))
 				else
 					to_chat(owner, SPAN_NOTICE("Your [stat] stat goes up by [stat_change[stat]]"))

@@ -102,9 +102,10 @@ h1.alert, h2.alert		{color: #000000;}
 .romana					{color: #ed7961}
 .yassari				{color: #5fbf4e}
 .kriosan				{color: #ff8000}
-.marqua					{color: #00FFFF}
+.marqua					{color: #5ec2e7}
 .akula					{color: #f8412c}
 .plant					{color: #882d17}
+.opifex					{color: #e96443}
 
 .interface				{color: #330033;}
 

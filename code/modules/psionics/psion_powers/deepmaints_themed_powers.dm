@@ -6,7 +6,7 @@
 	set desc = "Expend three psi points to break all the lights connected to the power grid near you. Does not work on independent light sources, sunlight, or grant you sight in darkness."
 	psi_point_cost = 3
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		playsound(owner.loc, 'sound/hallucinations/growl1.ogg', 25,1,8,8)
 		var/area/A = get_area(owner)
 		for(var/obj/machinery/power/apc/apc in A)
@@ -25,7 +25,7 @@
 	set desc = "Expend two psi points to expel gore, blood, and smoke to decorate the world as the king desires."
 	psi_point_cost = 2
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		var/datum/effect/effect/system/smoke_spread/bad/smoke
 		smoke = new
 		playsound(loc, 'sound/effects/smoke.ogg', 50, 1, -3)
@@ -86,7 +86,7 @@
 	psi_point_cost = 10
 
 
-	if(pay_power_cost(psi_point_cost))
+	if(pay_power_cost(psi_point_cost) && check_possibility())
 		if(alert(usr, "Are you sure you want to do this? It will absoutely kill you.", "Merge Flesh and Steel", "Yes", "No") == "Yes")
 			new /obj/machinery/hivemind_machine/node(owner.loc)
 			owner.gib()
@@ -101,28 +101,23 @@
 
 	if(get_front_mob(owner))
 		var/mob/living/carbon/human/L = get_front_mob(owner)
-		if(L.psi_blocking >= 10)
-			owner.stun_effect_act(0, L.psi_blocking * 5, BP_HEAD)
-			owner.weakened = L.psi_blocking
-			usr.show_message(SPAN_DANGER("Your head pulsates with pain as your mind bashes against an unbreakable barrier!"))
-			return
-
-		if(istype(L, /mob/living/carbon/human) && L.stat == CONSCIOUS)
-			if(L.ckey)
-				if(alert(L, "An alien presence touches your mind, offering you power and insight into the very fabric of reality. Do you accept its offer and become a Psion?",
-					"Become Psion", "No", "Yes") != "Yes")
-					to_chat(owner, "They refused your gift!")
-					return
-				else
-					if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC)
-						visible_message(
-							SPAN_WARNING("[src] grabs [L]! Psionic energy alights [src]'s eyes as they focus intently on [L] !"),
-							SPAN_WARNING("You project your psionic essence, turning it towards [L].")
-						)
-						L.make_psion()
-						owner.adjustBrainLoss(10)
-						to_chat(owner, "You feel a horrible splitting migraine as the process ends.")
-						to_chat(L, "Your mind is aflame with possibilities! You can see, you can SEE, YOU CAN SEE IT ALL!")
+		if(pay_power_cost(psi_point_cost) && check_possibility(TRUE, L))
+			if(istype(L, /mob/living/carbon/human) && L.stat == CONSCIOUS)
+				if(L.ckey)
+					if(alert(L, "An alien presence touches your mind, offering you power and insight into the very fabric of reality. Do you accept its offer and become a Psion?",
+						"Become Psion", "No", "Yes") != "Yes")
+						to_chat(owner, "They refused your gift!")
+						return
+					else
+						if(L && isliving(L) && !L.get_core_implant(/obj/item/implant/core_implant/cruciform) && L.species?.reagent_tag != IS_SYNTHETIC)
+							visible_message(
+								SPAN_WARNING("[src] grabs [L]! Psionic energy alights [src]'s eyes as they focus intently on [L] !"),
+								SPAN_WARNING("You project your psionic essence, turning it towards [L].")
+							)
+							L.make_psion()
+							owner.adjustBrainLoss(10)
+							to_chat(owner, "You feel a horrible splitting migraine as the process ends.")
+							to_chat(L, "Your mind is aflame with possibilities! You can see, you can SEE, YOU CAN SEE IT ALL!")
 	else
 		to_chat(src, "You must face your target!")
 

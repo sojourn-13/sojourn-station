@@ -13,12 +13,12 @@
 /datum/design/autolathe/ammo/shotgun_box
 	name = "shotgun shells box (slug)"
 	build_path = /obj/item/ammo_magazine/ammobox/shotgun
-	materials = list(MATERIAL_STEEL = 6)
+	materials = list(MATERIAL_STEEL = 15)
 
 /datum/design/autolathe/ammo/shotgun_pellet_box
 	name = "shotgun shells box (buckshot)"
 	build_path = /obj/item/ammo_magazine/ammobox/shotgun/buckshot
-	materials = list(MATERIAL_STEEL = 6)
+	materials = list(MATERIAL_STEEL = 15)
 
 /datum/design/autolathe/ammo/shotgun_blanks
 	name = "shotgun shells (blank)"
@@ -38,17 +38,17 @@
 /datum/design/autolathe/ammo/shotgun_plasma
 	name = "shotgun shells (Plasma)"
 	build_path = /obj/item/ammo_casing/shotgun/plasma/prespawned
-	materials = list(MATERIAL_STEEL = 6, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1, MATERIAL_URANIUM = 1)
+	materials = list(MATERIAL_STEEL = 6, MATERIAL_SILVER = 0.6, MATERIAL_GOLD = 0.6, MATERIAL_URANIUM = 0.6)
 
 /datum/design/autolathe/ammo/shotgun_plasma_heavy
 	name = "shotgun shells (Heavy Plasma)"
 	build_path = /obj/item/ammo_casing/shotgun/plasma_heavy/prespawned
-	materials = list(MATERIAL_STEEL = 6, MATERIAL_SILVER = 2, MATERIAL_GOLD = 2, MATERIAL_URANIUM = 2)
+	materials = list(MATERIAL_STEEL = 6, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1, MATERIAL_URANIUM = 1)
 
 /datum/design/autolathe/ammo/shotgun_biomatter
 	name = "shotgun shells box (caustic)"
 	build_path = /obj/item/ammo_magazine/ammobox/shotgun/biomatter
-	materials = list(MATERIAL_BIOMATTER = 120) //Double the cost of magnum rounds, i guess? It works.
+	materials = list(MATERIAL_BIOMATTER = 60) //Double the cost of magnum rounds, i guess? It works.
 
 /datum/design/autolathe/ammo/shotgun_he
 	name = "20mm shells (HEFI)"
@@ -58,17 +58,17 @@
 /datum/design/autolathe/ammo/shotgun_speedloader_slug
 	name = "20mm loader tube (slug)"
 	build_path = /obj/item/ammo_magazine/speed_loader_shotgun
-	materials = list(MATERIAL_STEEL = 8)
+	materials = list(MATERIAL_STEEL = 6)
 
 /datum/design/autolathe/ammo/shotgun_speedloader_buckshot
 	name = "20mm loader tube (buckshot)"
 	build_path = /obj/item/ammo_magazine/speed_loader_shotgun/pellet
-	materials = list(MATERIAL_STEEL = 8)
+	materials = list(MATERIAL_STEEL = 6)
 
 /datum/design/autolathe/ammo/shotgun_speedloader_beanbag
 	name = "20mm loader tube (beanbag)"
 	build_path = /obj/item/ammo_magazine/speed_loader_shotgun/beanbag
-	materials = list(MATERIAL_STEEL = 8)
+	materials = list(MATERIAL_STEEL = 6)
 
 /datum/design/autolathe/ammo/shotgun_speedloader_empty
 	name = "20mm loader tube (empty)"
@@ -255,7 +255,7 @@
 /datum/design/autolathe/ammo/pistol_ammobox_biomatter
 	name = "ammunition box (9mm Caustic)"
 	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/biomatter
-	materials = list(MATERIAL_BIOMATTER = 35)
+	materials = list(MATERIAL_BIOMATTER = 20)
 
 //9mm large box
 /datum/design/autolathe/ammo/pistol_ammobox/large
@@ -371,7 +371,7 @@
 /datum/design/autolathe/ammo/magnum_ammobox_biomatter
 	name = "ammunition box (10mm Auto-Mag Caustic)"
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/biomatter
-	materials = list(MATERIAL_BIOMATTER = 50)
+	materials = list(MATERIAL_BIOMATTER = 25)
 
 // 10mm magnum large boxes
 /datum/design/autolathe/ammo/magnum_ammobox/large
@@ -528,7 +528,7 @@
 	materials = list(MATERIAL_STEEL = 3)
 
 /datum/design/autolathe/ammo/lrifle_short
-	name = "6.5×39mm short carbine magazine (ball)"
+	name = "short 6.5×39mm carbine magazine (ball)"
 	build_path = /obj/item/ammo_magazine/light_rifle_257_short
 	materials = list(MATERIAL_STEEL = 2)
 
@@ -647,7 +647,7 @@
 	materials = list(MATERIAL_STEEL = 2)
 
 /datum/design/autolathe/ammo/rifle_hv
-	name = "7.62×39mm Rifle magazine (AP)"
+	name = "7.62×39mm Rifle magazine (APDS)"
 	build_path = /obj/item/ammo_magazine/rifle_75/highvelocity
 	materials = list(MATERIAL_STEEL = 2)
 
@@ -674,7 +674,7 @@
 	materials = list(MATERIAL_STEEL = 1)
 
 /datum/design/autolathe/ammo/rifle_short_hv
-	name = "short 7.62×39mm Rifle magazine (AP)"
+	name = "short 7.62×39mm Rifle magazine (APDS)"
 	build_path = /obj/item/ammo_magazine/rifle_75_short/highvelocity
 	materials = list(MATERIAL_STEEL = 1)
 
@@ -701,7 +701,7 @@
 	materials = list(MATERIAL_STEEL = 10)
 
 /datum/design/autolathe/ammo/rifle_drum_hv
-	name = "7.62×39mm Rifle drum magazine (AP)"
+	name = "7.62×39mm Rifle drum magazine (APDS)"
 	build_path = /obj/item/ammo_magazine/rifle_75_drum/highvelocity
 	materials = list(MATERIAL_STEEL = 10)
 
@@ -720,12 +720,12 @@
 /datum/design/autolathe/ammo/rifle_ammobox
 	name = "ammunition box 7.62×39mm Rifle (ball)"
 	build_path = /obj/item/ammo_magazine/ammobox/rifle_75
-	materials = list(MATERIAL_STEEL = 5)
+	materials = list(MATERIAL_STEEL = 20)
 
 /datum/design/autolathe/ammo/rifle_ammobox_lethal
 	name = "ammunition box 7.62×39mm Rifle (hollow point)"
 	build_path = /obj/item/ammo_magazine/ammobox/rifle_75/lethal
-	materials = list(MATERIAL_STEEL = 5)
+	materials = list(MATERIAL_STEEL = 20)
 
 /datum/design/autolathe/ammo/sl_rifle
 	name = "stripper clip 7.62×39mm Rifle (ball)"
@@ -753,14 +753,14 @@
 	materials = list(MATERIAL_STEEL = 10)
 
 /datum/design/autolathe/ammo/rifle_ammobox_small_hv
-	name = "ammunition packet 7.62×39mm Rifle (AP)"
+	name = "ammunition packet 7.62×39mm Rifle (APDS)"
 	build_path = /obj/item/ammo_magazine/ammobox/rifle_75_small/hv
 	materials = list(MATERIAL_STEEL = 10)
 
 /datum/design/autolathe/ammo/rifle_pk
 	name = "linked ammunition box 7.62×39mm Rifle (ball)"
 	build_path = /obj/item/ammo_magazine/rifle_75_linked_box
-	materials = list(MATERIAL_STEEL = 5)
+	materials = list(MATERIAL_STEEL = 20)
 
 /datum/design/autolathe/ammo/rifle_pk_empty
 	name = "linked ammunition box 7.62×39mm Rifle (empty)"
@@ -816,27 +816,27 @@
 /datum/design/autolathe/ammo/hrifle_ammobox
 	name = "ammunition box 8.6mm H-Rifle(ball)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408
-	materials = list(MATERIAL_STEEL = 20)
+	materials = list(MATERIAL_STEEL = 30)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_rubber
 	name = "ammunition box 8.6mm H-Rifle(rubber)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber
-	materials = list(MATERIAL_STEEL = 20)
+	materials = list(MATERIAL_STEEL = 30)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_practice
 	name = "ammunition box 8.6mm (training)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408/practice
-	materials = list(MATERIAL_STEEL = 20)
+	materials = list(MATERIAL_STEEL = 30)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_hv
 	name = "ammunition box 8.6mm H-Rifle (SLAP)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv
-	materials = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
+	materials = list(MATERIAL_STEEL = 30, MATERIAL_PLASTEEL = 10)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_lethal
 	name = "ammunition box 8.6mm H-Rifle (hollow point)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408/lethal
-	materials = list(MATERIAL_STEEL = 20)
+	materials = list(MATERIAL_STEEL = 30)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_linked
 	name = "linked ammunition box 8.6mm H-Rifle (ball)"
@@ -885,7 +885,7 @@
 	materials = list(MATERIAL_STEEL = 15)
 
 /datum/design/autolathe/ammo/hrifle_ammobox_small_hv
-	name = "ammunition packet 8.6mm Heavy Rifle (AP)"
+	name = "ammunition packet 8.6mm Heavy Rifle (SLAP)"
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/hv
 	materials = list(MATERIAL_STEEL = 15)
 

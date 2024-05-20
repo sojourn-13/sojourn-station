@@ -412,7 +412,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEJUMPSUIT
-	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
 /obj/item/clothing/suit/armor/vest/rosaria/verb/toggle_style()
 	set name = "Adjust Style"
@@ -478,7 +478,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 50, bio = 100, rad = 100)
 	flags_inv = HIDEJUMPSUIT
-	matter = list(MATERIAL_PLASTEEL = 60, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_PLASTEEL = 40, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 5, MATERIAL_GOLD = 5)
 
 /obj/item/clothing/suit/armor/vest/prime/verb/toggle_style()
 	set name = "Adjust Style"
@@ -836,7 +836,7 @@
 	item_state = "flakvest_mil"
 	blood_overlay_type = "armor"
 	slowdown = 0.1 //faster than standard due to being fancier.
-	armor_list = list(melee = 11, bullet = 12, energy = 7, bomb = 50, bio = 0, rad = 0)
+	armor_list = list(melee = 9, bullet = 12, energy = 10, bomb = 50, bio = 0, rad = 0)
 
 
 /obj/item/clothing/suit/armor/flakvest/commander/toggle_style()

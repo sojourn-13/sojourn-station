@@ -19,7 +19,12 @@ backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/storage/back
 backpack_overrides[/decl/backpack_outfit/backsport]     = /obj/item/storage/backpack/sport/ironhammer; \
 backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/storage/backpack/satchel/ironhammer; \
 
+#define BACKPACK_OVERRIDE_BLACKSHIELD \
+backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/storage/backpack/militia; \
+backpack_overrides[/decl/backpack_outfit/backsport]     = /obj/item/storage/backpack/sport/militia; \
+backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/storage/backpack/satchel/militia; \
+
 #define BACKPACK_OVERRIDE_NEOTHEOLOGY \
-	backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/storage/backpack/neotheology; \
-	backpack_overrides[/decl/backpack_outfit/backsport]     = /obj/item/storage/backpack/sport/neotheology; \
-	backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/storage/backpack/satchel/neotheology; \
+backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/storage/backpack/neotheology; \
+backpack_overrides[/decl/backpack_outfit/backsport]     = /obj/item/storage/backpack/sport/neotheology; \
+backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/storage/backpack/satchel/neotheology; \

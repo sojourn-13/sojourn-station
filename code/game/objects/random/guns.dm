@@ -283,6 +283,7 @@
 				/obj/item/gun/projectile/automatic/bastard = 2,
 				/obj/item/gun/projectile/automatic/sts/rifle/blackshield = 2,
 				/obj/item/gun/projectile/automatic/ak47/sa/tac = 1,
+				/obj/item/gun/projectile/automatic/pulse_rifle = 0.1,
 				/obj/item/gun/projectile/shotgun/pump/combat = 3,
 				/obj/item/gun/projectile/shotgun/pug = 2,
 				///obj/item/gun/projectile/gyropistol = 1,

@@ -10,31 +10,31 @@ const MODE2COLOR = {
 };
 
 type DisposalUnitData = {
-  isai: boolean;
-  mode: string;
-  panel: boolean;
-  eject: boolean;
-  handle: boolean;
-  pressure: number;
-};
+  isai: boolean
+  mode: string
+  panel: boolean
+  eject: boolean
+  handle: boolean
+  pressure: number
+}
 
-export const DisposalUnit = (props: any, context: any) => {
-  const { act, data } = useBackend<DisposalUnitData>(context);
+export const DisposalUnit = props => {
+  const { act, data } = useBackend<DisposalUnitData>();
   const { isai, mode, handle, panel, eject, pressure } = data;
   let modeColor = MODE2COLOR[panel ? 'Panel' : mode];
   let modeText = panel ? 'Power Disabled' : mode;
 
   return (
-    <Window width={300} height={155} title="Waste Disposal Unit">
+    <Window width={300} height={155} title='Waste Disposal Unit'>
       <Window.Content>
         <Section>
           <Stack fill vertical>
             <Stack.Item>
               <LabeledList>
-                <LabeledList.Item label="Status" color={modeColor}>
+                <LabeledList.Item label='Status' color={modeColor}>
                   {modeText}
                 </LabeledList.Item>
-                <LabeledList.Item label="Handle">
+                <LabeledList.Item label='Handle'>
                   <Button
                     icon={handle ? 'toggle-on' : 'toggle-off'}
                     content={handle ? 'Disengage' : 'Engage'}
@@ -44,9 +44,9 @@ export const DisposalUnit = (props: any, context: any) => {
                     disabled={isai}
                   />
                 </LabeledList.Item>
-                <LabeledList.Item label="Pump">
+                <LabeledList.Item label='Pump'>
                   <Button
-                    icon="power-off"
+                    icon='power-off'
                     selected={mode !== 'Off'}
                     onClick={() => {
                       act('toggle', { pump: true });
@@ -59,11 +59,11 @@ export const DisposalUnit = (props: any, context: any) => {
             <Stack.Item>
               <Button
                 fluid
-                icon="eject"
+                icon='eject'
                 disabled={!eject}
-                content="Eject"
-                textAlign="center"
-                style={{ 'font-size': '15px' }}
+                content='Eject'
+                textAlign='center'
+                style={{ fontSize: '15px' }}
                 onClick={() => {
                   act('eject');
                 }}

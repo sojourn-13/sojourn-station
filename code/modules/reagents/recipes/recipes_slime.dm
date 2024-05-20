@@ -78,12 +78,12 @@
 
 //Green
 /datum/chemical_reaction/slime/mutate
-	result = "mutationtoxin"
+	result = "mutagen"
 	required_reagents = list("plasma" = 1)
-	result_amount = 1
+	result_amount = 10
 	required = /obj/item/slime_extract/green
 
-//
+
 /datum/chemical_reaction/slime/mutate_clear
 	result = null
 	required_reagents = list("water" = 1)
@@ -442,16 +442,17 @@
 	P.loc = get_turf(holder.my_atom)
 
 //Black
+/* //should be replaced with something/reworked some day but I've no ideas.
 /datum/chemical_reaction/slime/mutate2
 	result = "amutationtoxin"
 	required_reagents = list("plasma" = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/black
+*/
 
-//
-/datum/chemical_reaction/slime/spawn2
+datum/chemical_reaction/slime/spawn2
 	result = null
-	required_reagents = list("amutationtoxin" = 1)
+	required_reagents = list("mutagen" = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/black
 

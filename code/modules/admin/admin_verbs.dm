@@ -207,6 +207,14 @@ ADMIN_VERB_ADD(/client/proc/hivemind_panel, R_FUN, TRUE)
 		var/datum/hivemind_panel/H = GLOB.hivemind_panel
 		H.main_interact()
 
+ADMIN_VERB_ADD(/client/proc/deepmaints_panel, R_FUN, TRUE)
+/client/proc/deepmaints_panel()
+	set category = "Fun"
+	set name = "Deepmaint Psionic Panel"
+	if(holder && GLOB.deepmaints_panel)
+		var/datum/deepmaints_panel/H = GLOB.deepmaints_panel
+		H.main_interact()
+
 #define MAX_WARNS 3
 #define AUTOBANTIME 10
 
@@ -532,7 +540,7 @@ ADMIN_VERB_ADD(/client/proc/change_security_level, R_ADMIN|R_FUN, FALSE)
 	set desc = "Sets the colony's security level"
 	set category = "Admin"
 
-	if(!check_rights(R_ADMIN))	return
+	if(!check_rights(R_FUN))	return
 
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
 	var/decl/security_level/new_security_level = input(usr, "It's currently [security_state.current_security_level.name].", "Select Security Level")  as null|anything in (security_state.all_security_levels - security_state.current_security_level)
@@ -687,6 +695,20 @@ ADMIN_VERB_ADD(/client/proc/global_man_up, R_ADMIN, FALSE)
 
 	log_admin("[key_name(usr)] told everyone to man up and deal with it.")
 	message_admins("\blue [key_name_admin(usr)] told everyone to man up and deal with it.", 1)
+
+ADMIN_VERB_ADD(/client/proc/toggleAiInteract, R_ADMIN, FALSE)
+/client/proc/toggleAiInteract()
+	set category = "Admin"
+	set name = "Toggle Admin AI Interact"
+	set desc = "Allows you to interact with most machines as an AI would, as a ghost."
+
+	AI_Interact = !AI_Interact
+	// Difference from /tg/: This is running a in a client's context, so we already know the user is an admin ghost
+	if(mob && isobserver(mob))
+		mob.has_unlimited_silicon_privilege = AI_Interact
+
+	log_admin("[key_name(src)] has [AI_Interact ? "activated" : "deactivated"] Admin AI Interact")
+	message_admins("\blue [key_name_admin(src)] has [AI_Interact ? "activated" : "deactivated"] their AI interaction")
 
 ADMIN_VERB_ADD(/client/proc/toggleUIDebugMode, R_DEBUG, FALSE)
 /client/proc/toggleUIDebugMode()

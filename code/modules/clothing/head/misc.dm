@@ -315,10 +315,10 @@ obj/item/clothing/head/ribbon/red
 	icon_state = "boater_hat"
 	desc = "A formal beige summer hat."
 
-/obj/item/clothing/head/numerical_hat
-	name = "numerical hat"
+/obj/item/clothing/head/leather_hat
+	name = "leather hat"
 	icon_state = "field_numerical_hat"
-	desc = "A tall hat for nurmerical of the faith. Can be turned inside out to turn form red to purple or purple to red"
+	desc = "A tall hat for followers of the faith. Can be turned inside out to turn from red to purple or vice versa"
 	armor_list = list( //same as the garb
 		melee = 2,
 		bullet = 0,
@@ -328,7 +328,7 @@ obj/item/clothing/head/ribbon/red
 		rad = 0
 	)
 
-/obj/item/clothing/head/numerical_hat/verb/toggle_style()
+/obj/item/clothing/head/leather_hat/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -605,3 +605,9 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	icon_state = "tacponhood_color"
 	item_state = "tacponhood_color"
 	flags_inv = HIDEEARS|BLOCKHAIR
+
+/obj/item/clothing/head/religion_hood_color
+	name = "religious hood"
+	desc = "A religious hood that can be colored."
+	icon_state = "general_hood"
+	item_state = "general_hood"

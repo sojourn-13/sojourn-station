@@ -27,6 +27,8 @@
 	var/hard_crit_threshold = HARDCRIT_TRAUMATIC_SHOCK + min(stats.getStat(STAT_TGH), 100)
 	if(stats.getPerk(PERK_BALLS_OF_PLASTEEL))
 		hard_crit_threshold += 20
+	if(stats.getPerk(PERK_TENACITY))
+		hard_crit_threshold += 20
 
 	. = get_limb_damage()
 
@@ -45,13 +47,13 @@
 	. = getFireLoss() + getBruteLoss()
 
 /mob/living/carbon/human/get_limb_damage()
-	for(var/obj/item/organ/external/organ in organs)
-		var/limb_damage = min(organ.burn_dam + organ.brute_dam, organ.max_damage)	// Limbs can be damaged beyond their max damage, but max pain is max damage
-		. += limb_damage
-		. += organ.internal_wound_hal_dam
-		if(organ && (organ.is_broken() || (!BP_IS_ROBOTIC(organ) && organ.open)))
-			. += 25
-		. *= max((get_specific_organ_efficiency(OP_NERVE, organ.organ_tag)/100), 0.5)
+    for(var/obj/item/organ/external/organ in organs)
+        var/limb_damage = min(organ.burn_dam + organ.brute_dam, organ.max_damage)    // Limbs can be damaged beyond their max damage, but max pain is max damage
+        if(organ && (organ.is_broken() || (!BP_IS_ROBOTIC(organ) && organ.open)))
+            limb_damage += 25
+        limb_damage += organ.internal_wound_hal_dam
+        limb_damage *= clamp((get_specific_organ_efficiency(OP_NERVE, organ.organ_tag)/100), 0.5, 1.25)
+        . += limb_damage
 
 /mob/living/carbon/proc/get_dynamic_pain()
 	. = 1.33 * halloss
@@ -75,6 +77,10 @@
 	var/soft_crit_threshold = SOFTCRIT_TRAUMATIC_SHOCK + stats.getStat(STAT_TGH)
 	var/hard_crit_threshold = HARDCRIT_TRAUMATIC_SHOCK + stats.getStat(STAT_TGH)
 	if(stats.getPerk(PERK_BALLS_OF_PLASTEEL))
+		soft_crit_threshold += 20
+		hard_crit_threshold += 20
+
+	if(stats.getPerk(PERK_TENACITY))
 		soft_crit_threshold += 20
 		hard_crit_threshold += 20
 

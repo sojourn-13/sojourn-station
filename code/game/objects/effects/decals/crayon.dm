@@ -25,7 +25,7 @@
 		return FALSE
 	return TRUE
 
-// Shimmer rune, invoked by Scribe scrolls, doesn't allow bullets to pass through.
+// Shimmer rune, invoked by Scribe scrolls, doesn't allow bullets to pass through. Unless they have penetration.
 /obj/effect/decal/cleanable/crayon/shimmer
 	name = "strange rune"
 	desc = "The air shimmers about this rune."
@@ -126,6 +126,17 @@
 // Proc that controls all Book-type spells
 /obj/effect/decal/cleanable/crayon/attackby(obj/item/I, mob/living/carbon/human/M)
 	..()
+
+	//Run these up here to cut down on repeat code
+	var/alchemist = FALSE
+	if(M.stats.getPerk(PERK_ALCHEMY))
+		alchemist = TRUE // We are an alchemist!
+
+	var/able_to_cast = FALSE
+	for(var/datum/language/L in M.languages)
+		if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
+			able_to_cast = TRUE // We can cast
+
 	if(istype(I, /obj/item/oddity/common/book_unholy) || istype(I, /obj/item/oddity/common/book_omega))
 		if(M.get_core_implant(/obj/item/implant/core_implant/cruciform))
 			rejected_playmate_faithful(M)
@@ -137,13 +148,6 @@
 				follow_crayon.desc = "[old_desc] The strange energies of this planet seem to have infused it with more signicance than before."
 				desc = "A rune drawn in empowered crayon wax."
 				follow_crayon = null
-			var/alchemist = FALSE
-			var/able_to_cast = FALSE
-			if(M.stats.getPerk(PERK_ALCHEMY))
-				alchemist = TRUE // We are an alchemist!
-			for(var/datum/language/L in M.languages)
-				if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
-					able_to_cast = TRUE // We can cast
 			var/datum/reagent/organic/blood/B = M.get_blood()
 			var/candle_amount = 0
 			for(var/obj/item/flame/candle/mage_candle in oview(3))
@@ -155,88 +159,15 @@
 					to_chat(M, "<span class='info'>A candle is lit by forces unknown...</span>")
 				candle_amount += 1
 
-			for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) // Don't forget to clear your old work!
-
-				/* Spell example and explination.
-				able_to_cast: True or False used to check if they know cult or occult language.
-				alchemist: If you have this perk it is true, used in some spells that need to know.
-				scribe: Same as Alchemist but for the scribe perk.
-
-				if(spell.message == "Example Spell." && candle_amount >= 0)
-					example_spell(M, able_to_cast)
-					continue*/
-
-				if(spell.message == "Babel." && candle_amount >= 3)
-					babel_spell(M)
-					continue
-
-				if(spell.message == "Ignorance." && candle_amount >= 1)
-					ignorance_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Flux." && candle_amount >= 1)
-					flux_spell(M)
-					continue
-
-				if(spell.message == "Negentropy." && candle_amount >= 1)
-					negentropy_spell(M)
-					continue
-
-				if(spell.message == "Life." && candle_amount >= 5)
-					life_spell(M, able_to_cast)
-					continue
-
-				if((spell.message == "Madness." || spell.message == "Insanity.") && candle_amount >= 3)
-					madness_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Sight." && candle_amount >= 3)
-					sight_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Paradox." && candle_amount >= 7)
-					paradox_spell(M)
-					continue
-
-				if((spell.message == "The End." || spell.message == "The Beginning.") && candle_amount >= 1)
-					end_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Brew." && candle_amount >= 2)
-					brew_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Recipe." && candle_amount >= 1)
-					recipe_spell(M, alchemist)
-					continue
-
-				if((spell.message == "Bees." || spell.message == "Bees!") && candle_amount >= 4)
-					bees_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Scribe." && candle_amount >= 7)
-					scribe_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Pouch." && candle_amount >= 2)
-					pouch_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Escape." && candle_amount >= 1)
-					escape_spell(M)
-					continue
-
-				if(spell.message == "Awaken." && candle_amount >= 7)
-					awaken_spell(M, able_to_cast)
-					continue
-				// Alchemy-specific rituals below
-				if(spell.message == "Satchel." && candle_amount >= 5)
-					satchel_spell(M, alchemist)
-					continue
-				/* WIP!!!
-				if(spell.message == "Transmute." && candle_amount >= 6)
-					transmutation_spell(M)
-					continue */
+			if(able_to_cast && M.health <= M.maxHealth*0.75)
+				//log_debug("Able to cast and health passed")
+				for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) // Don't forget to clear your old work!
+					spell_index(M, spell.message, 3, I, able_to_cast, candle_amount, alchemist)
+					//log_debug("tea found")
+			for(var/obj/item/paper/spell in oview(3)) // Don't forget to clear your old work!
+				if(spell.crayon_pen)
+					spell_index(M, spell.info, 3, I, able_to_cast, candle_amount, alchemist)
+					//log_debug("paperfound")
 			return
 
 // Ritual Knife spell procs
@@ -249,10 +180,6 @@
 		if(body_checks(M) && is_rune)
 
 			to_chat(M, "<span class='info'>The rune lights up in response to the touch of the ritual weapon...</span>")
-			var/able_to_cast = FALSE
-			for(var/datum/language/L in M.languages)
-				if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
-					able_to_cast = TRUE // We can cast
 
 			var/datum/reagent/organic/blood/B = M.get_blood()
 			var/candle_amount = 0
@@ -264,60 +191,14 @@
 					to_chat(M, "<span class='info'>A candle is lit by forces unknown...</span>")
 				candle_amount += 1
 
-			for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) // Don't forget to clear your old work!
-				if(spell.message == "Voice." && candle_amount >= 3)
-					voice_spell(M, able_to_cast)
-					continue
+			if(able_to_cast && M.health <= M.maxHealth*0.75)
+				for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) // Don't forget to clear your old work!
+					spell_index(M, spell.message, 6, I, able_to_cast, candle_amount)
 
-				if(spell.message == "Drain." && candle_amount >= 5)
-					drain_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Cards To Life." && candle_amount >= 3)
-					cards_to_life_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Life To Cards." && candle_amount >= 3)
-					life_to_cards_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Cards." && candle_amount >= 3)
-					cards_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Equalize." && candle_amount >= 6)
-					equalize_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Scroll." && candle_amount >= 7)
-					scroll_spell(M)
-					continue
-
-				if(spell.message == "Tea Party." && candle_amount >= 4)
-					tea_party_spell(M)
-					continue
-
-				if(spell.message == "Fountain." && candle_amount >= 7)
-					basin_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Ascension." && candle_amount >= 7)
-					ascension_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Veil." && candle_amount >= 5)
-					veil_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Caprice." && candle_amount >= 3)
-					caprice_spell(M, able_to_cast)
-					continue
-
-				if(spell.message == "Mightier." && candle_amount >= 3)
-					mightier_spell(M, able_to_cast)
-					continue
-
-				return
+			for(var/obj/item/paper/spell in oview(3)) // Don't forget to clear your old work!
+				if(spell.crayon_pen)
+					spell_index(M, spell.info, 6, I, able_to_cast, candle_amount)
+			return
 
 
 // Scroll Spell Check to assign spells to the blank scroll by writing in blood the name of the spells we want inscribed on them
@@ -330,27 +211,163 @@
 
 			to_chat(M, "<span class='info'>The smell of iron fills the air as the scroll fumbles out of your hands.</span>")
 
-			var/obj/item/scroll/S = new /obj/item/scroll(src.loc) // Hard set a new scroll. Cause I don't trust players
-			M.drop_from_inventory(I)
-			qdel(I)
+			if(able_to_cast && M.health <= M.maxHealth*0.75)
+				for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) // Don't forget to clear your old work!
+					spell_index(M, spell.message, 2, I, candle_amount, alchemist)
 
-			for(var/obj/effect/decal/cleanable/blood/writing/spell in oview(3)) // Finds writing then consumes it and the rune.
-				if(spell.message && candle_amount >= 7)
-					S.message = spell.message
-					qdel(spell) // We consume the spell
-					S.name = "strange scroll"
-					if(S.message != "")
-						S.icon_state = "Scroll circle"
-						S.desc = "A scroll covered in various glyphs and runes."
-						qdel(src) //Eat the rune, nom nom
-						return
-					else S.icon_state = "Scroll blood"
-					S.desc = "A scroll with a large rune on it."
-					qdel(src) // We consume the rune.
-					return
-				return
+			for(var/obj/item/paper/spell in oview(3)) // Don't forget to clear your old work!
+				if(spell.crayon_pen)
+					spell_index(M, spell.info, 2, I, candle_amount, alchemist)
 			return
 		return
+	return
+
+/obj/effect/decal/cleanable/crayon/proc/spell_index(mob/living/carbon/human/M, spell, type, obj/I, able_to_cast, candle_amount, alchemist = FALSE)
+	//log_debug("running spell index")
+	//log_debug("M:[M.name], type [type], spell[spell], obj/I [I.name], able_to_cast [able_to_cast], candle_amount [candle_amount], alchemist [alchemist]")
+	if(type == 2)
+		//log_debug("type 2 ran")
+
+		var/obj/item/scroll/S = new /obj/item/scroll(src.loc) // Hard set a new scroll. Cause I don't trust players
+		M.drop_from_inventory(I)
+		qdel(I)
+
+		S.message = spell
+		qdel(spell) // We consume the spell
+		S.name = "strange scroll"
+		if(S.message != "")
+			S.icon_state = "Scroll circle"
+			S.desc = "A scroll covered in various glyphs and runes."
+			qdel(src) //Eat the rune, nom nom
+			return
+
+		S.icon_state = "Scroll blood"
+		S.desc = "A scroll with a large rune on it."
+		qdel(src) // We consume the rune.
+		return
+
+	if(type == 3)
+		//log_debug("type 3 ran")
+		/* Spell example and explination.
+		able_to_cast: True or False used to check if they know cult or occult language.
+		alchemist: If you have this perk it is true, used in some spells that need to know.
+		scribe: Same as Alchemist but for the scribe perk.
+
+		if(findtext(spell, "Example Spell." && candle_amount >= 0)
+			example_spell(M, able_to_cast)
+			continue*/
+
+		if(findtext(spell, "Babel.") && candle_amount >= 3)
+			babel_spell(M)
+
+		if(findtext(spell, "Ignorance.") && candle_amount >= 1)
+			ignorance_spell(M, able_to_cast)
+
+		if(findtext(spell, "Flux.") && candle_amount >= 1)
+			flux_spell(M)
+
+		if(findtext(spell, "Negentropy.") && candle_amount >= 1)
+			negentropy_spell(M)
+
+		if(findtext(spell, "Life.") && candle_amount >= 5)
+			life_spell(M, able_to_cast)
+
+		if(findtext(spell, "Madness.") || findtext(spell, "Insanity.") && candle_amount >= 3)
+			madness_spell(M, able_to_cast)
+
+		if(findtext(spell, "Sight.") && candle_amount >= 3)
+			sight_spell(M, able_to_cast)
+
+		if(findtext(spell, "Paradox.") && candle_amount >= 7)
+			paradox_spell(M)
+
+		if(findtext(spell, "The End.") || findtext(spell, "The Beginning.") && candle_amount >= 1)
+			end_spell(M, able_to_cast)
+
+		if(findtext(spell, "Brew.") && candle_amount >= 2)
+			brew_spell(M, able_to_cast)
+
+		if(findtext(spell, "Recipe.") && candle_amount >= 1)
+			recipe_spell(M, alchemist)
+
+		if(findtext(spell, "Bees.") || findtext(spell, "Bees!") && candle_amount >= 4)
+			bees_spell(M, able_to_cast)
+
+		if(findtext(spell, "Sky.") || findtext(spell, "Above.") && candle_amount >= 1)
+			sun_spell(M, able_to_cast)
+
+		if(findtext(spell, "Scribe.") && candle_amount >= 7)
+			scribe_spell(M, able_to_cast)
+
+		if(findtext(spell, "Pouch.") && candle_amount >= 2)
+			pouch_spell(M, able_to_cast)
+
+		if(findtext(spell, "Escape.") && candle_amount >= 1)
+			escape_spell(M)
+
+		if(findtext(spell, "Awaken.") && candle_amount >= 7)
+			awaken_spell(M, able_to_cast)
+
+				// Alchemy-specific rituals below
+		if(findtext(spell, "Satchel.") && candle_amount >= 5)
+			satchel_spell(M, alchemist)
+
+		//Both book and knife work with this one
+		if(findtext(spell, "Cessation.") && candle_amount >= 1)
+			cessation_spell(M, candle_amount)
+
+		/* WIP!!!
+		if(findtext(spell, "Transmute." && candle_amount >= 6)
+			transmutation_spell(M)
+			continue
+		*/
+		return
+
+	if(type == 6)
+		//log_debug("type 6 ran")
+		if(findtext(spell, "Voice.") && candle_amount >= 3)
+			voice_spell(M, able_to_cast)
+
+		if(findtext(spell, "Drain.") && candle_amount >= 5)
+			drain_spell(M, able_to_cast)
+
+		if(findtext(spell, "Cards To Life.") && candle_amount >= 3)
+			cards_to_life_spell(M, able_to_cast)
+
+		if(findtext(spell, "Life To Cards.") && candle_amount >= 3)
+			life_to_cards_spell(M, able_to_cast)
+
+		if(findtext(spell, "Cards.") && candle_amount >= 3)
+			cards_spell(M, able_to_cast)
+
+		if(findtext(spell, "Equalize.") && candle_amount >= 6)
+			equalize_spell(M, able_to_cast)
+
+		if(findtext(spell, "Scroll.") && candle_amount >= 7)
+			scroll_spell(M)
+
+		if(findtext(spell, "Tea Party.") && candle_amount >= 4)
+			tea_party_spell(M)
+
+		if(findtext(spell, "Cessation.") && candle_amount >= 1)
+			cessation_spell(M, candle_amount)
+
+		if(findtext(spell, "Fountain.") && candle_amount >= 7)
+			basin_spell(M, able_to_cast)
+
+		if(findtext(spell, "Ascension.") && candle_amount >= 7)
+			ascension_spell(M, able_to_cast)
+
+		if(findtext(spell, "Veil.") && candle_amount >= 5)
+			veil_spell(M, able_to_cast)
+
+		if(findtext(spell, "Caprice.") && candle_amount >= 3)
+			caprice_spell(M, able_to_cast)
+
+		if(findtext(spell, "Mightier.") && candle_amount >= 3)
+			mightier_spell(M, able_to_cast)
+		return
+
 	return
 
 //Proc to punish people who are anti-fun.
@@ -440,7 +457,7 @@
 		return FALSE //Faster return with a fancy message why they can
 
 	if(!pass)
-		to_chat(M, "<span class='info'>You try to do as the book describes but your frail body condition physically prevents you from even mumbling a single word out of its pages.</span>")
+		to_chat(M, "<span class='info'>You try to do as the book describes, but something isn't correct.</span>")
 		return pass
 
 	return pass
@@ -688,6 +705,30 @@
 			qdel(G)
 	return
 
+// Sky: / Above:
+// Converts a open omega book into a drawing of the sun, a oddity with a perk that exspands the skill cap by 30 points.
+/obj/effect/decal/cleanable/crayon/proc/sun_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!able_to_cast)
+		return
+
+	M.maxHealth -= 5
+	M.health -= 5
+	for(var/obj/item/oddity/common/book_omega/opened/BOOK in oview(3))
+
+		to_chat(M, "<span class='info'>A cold voice creeks. </span><span class='angelsay'> With this messy canvas, I can only provide you a glance of that.</span>")
+
+		if(!body_checks(M))
+			to_chat(M, "<span class='info'>A cold voice sighs. </span><span class='angelsay'> You will not do. Waste the others time.</span>")
+			bluespace_entropy(3, get_turf(src)) //Wasting an artists time is rather rude
+			return
+
+		to_chat(M, "<span class='info'>The pages of [BOOK.name] slowly turn into paint.</span>")
+		new /obj/item/oddity/rare/drawing_of_sun(BOOK.loc)
+		B.remove_self(140) //Base is 540
+		qdel(BOOK)
+	return
+
 // Pouch: Spawns a pouch with a dimensional-linked shared storage. Every person holding one of these can access the same storage from anywhere.
 // Works only if the pouch is opened, and accessed while being held in-hand
 /obj/effect/decal/cleanable/crayon/proc/pouch_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
@@ -903,7 +944,7 @@
 			return
 
 		to_chat(M, "<span class='warning'>The sacrifice vanishes to dust before you. You feel an ominous warm wind envelop your form as you absorb its lifeforce unto your own.</span>")
-		if(able_to_cast)
+		if(able_to_cast && M.maxHealth < 200)
 			M.maxHealth += 1
 			M.health += 1
 			M.unnatural_mutations.total_instability += 1 //A soft cap
@@ -918,7 +959,7 @@
 			return
 
 		to_chat(M, "<span class='warning'>The sacrifice vanishes to dust before you. You feel an ominous warm wind envelop your form as you absorb its lifeforce unto your own.</span>")
-		if(able_to_cast)
+		if(able_to_cast && M.maxHealth < 200)
 			M.maxHealth += 1
 			M.health += 1
 			M.unnatural_mutations.total_instability += 1 //A soft cap
@@ -1166,7 +1207,7 @@
 		if(!body_checks(M))
 			return
 
-		to_chat(M, "<span class='info'>Thunder crackles as a miniature cloud of nothingness manifests itself. Blood begins pouring down, forming an omnious obsidian basin beneath it...</span>")
+		to_chat(M, "<span class='info'>Thunder crackles as a miniature cloud of nothingness manifests itself. Otherworldy tea begins pouring down, forming an omnious black crayon basin beneath it...</span>")
 		B.remove_self(100) // Basically pouring your blood into a container, insane
 		M.sanity.breakdown(FALSE) // If your blood got sucked and poured into a container you too would freak out
 		M.sanity.changeLevel(-50)
@@ -1229,7 +1270,7 @@
 		qdel(G)
 	return
 
-// Caprice: Converts runes to and trap rune, if having bable or voice will send it randomly to maints or deepmaints.
+// Caprice: Converts the rune to a trap rune, if having bable or voice will send it randomly to maints or deepmaints.
 /obj/effect/decal/cleanable/crayon/proc/caprice_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
 	var/turf/simulated/floor/target	//this is where we are teleporting
 	var/list/validtargets = list()
@@ -1352,6 +1393,37 @@
 			M.stats.addTempStat(stat, stat_amount, stat_amount MINUTES, "Tea Party")
 	return
 
+// Cessation: Baba is gone? - Removes you from player from the world for an equal amount of candles
+/obj/effect/decal/cleanable/crayon/proc/cessation_spell(mob/living/carbon/human/M, candle_number)
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	var/cn
+	//Dont change the top lines they are real letters BYOND DM cant see normally
+	var/list/hmm = list("༒", "༎༐།", "‽", "⸘", "༑", \
+	"Sipping sounds echo in you.", "Nothing is around you.", "Nothing is still.", "Sounds are felt here, not heard.", "Where are you?")
+
+	B.remove_self(candle_number)
+
+	for(cn=0, cn<candle_number, cn++)
+		var/huh = pick(hmm)
+		to_chat(M, "<span class='info'>[huh]</span>") //Spammy!
+	M.loc = null
+
+	if(prob(candle_number))
+		to_chat(M, "<span class='info'>A secondary voice of a canvus being painted on fittles \"You wanted me to paint a slow path back for you? Don't blame me for what you dont hear!\".</span>")
+		candle_number *= 60
+	else
+		to_chat(M, "<span class='info'>A primary chipper voice of musical notes drips \"You wish to get away from here quickly? I'll lead the way! Te Te Te. Don't blame me for what you dont see!\".</span>")
+
+	//Surely nothing bad will happen
+	var/cn_s = candle_number SECONDS
+	sleep(cn_s)
+	var/turf/source = get_turf(src)
+	if(source)
+		M.loc = source
+		to_chat(M, "<span class='info'>In a instance you find yourself back at the rune...</span>")
+	else
+		to_chat(M, "<span class='info'>The path back is no longer, as the planet no longer can find you.</span>")
+
 /******************************/
 /* SCROLL SPELLS PROCS START! */
 /******************************/
@@ -1375,7 +1447,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	new /obj/effect/decal/cleanable/crayon/mist(M.loc,main=RANDOM_RGB,shade=RANDOM_RGB)
 	ScrollBurn()
 
-// Shimmer: Invokes a crayon mark that blocks both bullets and laser projectiles.
+// Shimmer: Invokes a crayon mark that blocks both bullets, penetration weapons and rounds will still pierce.
 /obj/item/scroll/proc/shimmer_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	B.remove_self(100)
@@ -1441,7 +1513,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 	bluespace_entropy(20, get_turf(src)) //high entropy cost. Low blood cost.
 	ScrollBurn()
 
-// Gaia: Ever Mob seeable via the scroll when burned must past a language checks or be weaken 5:3
+// Gaia: Every Mob seeable via the scroll when burned must past a language checks or be weaken 5:3, multiple crayon mages nearby will flip the effect.
 /obj/item/scroll/proc/gaia_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	bluespace_entropy(5, get_turf(src))
@@ -1460,13 +1532,14 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		M.drop_from_inventory(src)
 	ScrollBurn()
 
-// Eta: Ever Mob seeable via the scroll when burned must past a language checks or be thrown backwards 8 to 12 spaces
+// Eta: Every Mob seeable via the scroll when burned must past a language checks or be thrown backwards 8 to 12 spaces
 /obj/item/scroll/proc/eta_spell(mob/living/carbon/human/M)
 	var/datum/reagent/organic/blood/B = M.get_blood()
 	bluespace_entropy(5, get_turf(src))
 	B.remove_self(30)
 	var/iron_mind = FALSE
 	for(var/mob/T in oview(7))
+		iron_mind = FALSE //So 1 crayon mage dosnt block the whole thing
 		for(var/datum/language/L in T.languages)
 			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
 				iron_mind = TRUE
@@ -1679,14 +1752,13 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 		playsound(loc, pick('sound/items/polaroid1.ogg', 'sound/items/polaroid2.ogg'), 75, 1, -3)
 		user.disabilities|=NEARSIGHTED
 
-// BLOOD FONT!!!
+// TEA FONT!!!
 /obj/structure/sink/basion/crayon
-	name = "blood basin"
-	desc = "A deep basin of polished obsidian that forever fills with gore. \
-			An inkwell of blood in which to dip your fingers to write in blood."
+	name = "crayon basin"
+	desc = "A deep basin of polished black crayon that forever fills with tea for a most splended party. \
+			An inkwell of tea in which to dip your fingers to write in tea."
 	icon_state = "blood_basin"
 	density = 1
-	sanity_damage = 5 //its a vat of refilling blood.
 	limited_reagents = FALSE
 	refill_rate = 200
 	reagent_id = "blood"
@@ -1694,13 +1766,16 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 /obj/structure/sink/basion/crayon/attack_hand(mob/living/carbon/human/user) //gives us bloody hands for writing spells.
 	if(istype(user))
 		if(user.gloves)
-			to_chat(user, SPAN_NOTICE("You must take off your gloves to dip your fingers in blood."))
+			to_chat(user, SPAN_NOTICE("You must take off your gloves to dip your fingers into the kettle."))
 			return FALSE
-		to_chat(user, SPAN_NOTICE("You dip your fingers on the basin, covering them in blood."))
-		user.sanity.changeLevel(-25)
-		user.bloody_hands += 5
-		user.hand_blood_color = "#A10808"
-		user.update_inv_gloves(1)
+		if(user.sanity.insight && user.sanity.insight < 25)
+			to_chat(user, SPAN_NOTICE("You dip your fingers in the basin, a bellow of voices echo in your head, A price for a pour of tea."))
+			user.sanity.insight = 0
+			user.bloody_hands += 5
+			user.hand_blood_color = "#A10808"
+			user.update_inv_gloves(1)
+		else
+			to_chat(user, SPAN_NOTICE("Voices boom in your thoughts. TAKE NOT! INEXPERIENCED PUPPET!"))
 		user.verbs += /mob/living/carbon/human/proc/bloody_doodle
 
 /obj/structure/sink/basion/crayon/attackby(obj/item/I, mob/user)
@@ -1786,62 +1861,62 @@ obj/item/scroll/sealed
 */
 
 
-		if(message == "Mist.")
+		if(findtext(message, "Mist."))
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			mist_spell(M)
 			return
 
-		if(message == "Shimmer.")
+		if(findtext(message, "Shimmer."))
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			shimmer_spell(M)
 			return
 
-		if(message == "Smoke.")
+		if(findtext(message, "Smoke."))
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			smoke_spell(M)
 			return
 
-		if(message == "Oil.")
+		if(findtext(message, "Oil."))
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			oil_spell(M)
 			return
 
-		if(message == "Floor Seal.")
+		if(findtext(message, "Floor Seal."))
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			floor_seal_spell(M)
 			return
 
-		if(message == "Light.")
+		if(findtext(message, "Light."))
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash with a world twisting aura.</span>")
 			light_spell(M)
 			return
 
-		if(message == "Gaia.")
+		if(findtext(message, "Gaia."))
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns the ashes sharply move downwards as the world's twisting aura straightens.</span>")
 			gaia_spell(M)
 			return
 
-		if(message == "Eta.")
+		if(findtext(message, "Eta."))
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash flying every direction away with a world pushing force.</span>")
 			eta_spell(M)
 			return
 
-		if(message == "Reveal.")
+		if(findtext(message, "Reveal."))
 			to_chat(M, "<span class='warning'>You ignite the scroll. It burns to ash, the smoke from the scroll pressing into peoples eyes.</span>")
 			reveal_spell(M)
 			return
 
-		if(message == "Entangle.")
+		if(findtext(message, "Entangle."))
 			to_chat(M, "<span class='warning'>You ignite the scroll. Soft bright silk weaves its way thru the air around you.</span>")
 			entangle_spell(M)
 			return
 
-		if(message == "Joke.")
+		if(findtext(message, "Joke."))
 			to_chat(M, "<span class='warning'>You ignite the scroll. Words fill the page and you quickly read them off before suddenly forgetting them.</span>")
 			joke_spell(M)
 			return
 
-		if(message == "Charger.")
+		if(findtext(message, "Charger."))
 			to_chat(M, "<span class='warning'>You ignite the scroll. Crackling fills the air. Static clings to everything.</span>")
 			charger_spell(M)
 			return

@@ -45,6 +45,8 @@
 	var/def_zone = ""	//Aiming at
 	var/mob/firer = null//Who shot it
 	var/mob/original_firer //Who shot it. Never changes, even after ricochet.
+	var/friendly_to_colony = FALSE //If we bypass allies or not.
+	var/faction_iff = "" //Used for Excel and Greyson turrets
 	var/silenced = FALSE	//Attack message
 	var/yo = null
 	var/xo = null
@@ -291,7 +293,8 @@
 
 	if (firer_arg)
 		firer = firer_arg
-		original_firer = firer_arg
+		if(!original_firer)
+			original_firer = firer_arg
 
 	if (firer && (isliving(firer))) //here we apply the projectile adjustments applied by prefixes and such
 		var/mob/living/livingfirer = firer
@@ -399,6 +402,12 @@
 		return
 
 	if(target_mob == firer) // Do not hit the shooter if the bullet hasn't ricocheted yet. The firer changes upon ricochet, so this should not prevent ricocheting shots from hitting their shooter.
+		return FALSE
+
+	if(friendly_to_colony && target_mob.friendly_to_colony) // Used for automated defenses
+		return FALSE
+
+	if(faction_iff == target_mob.faction)
 		return FALSE
 
 	//roll to-hit
@@ -757,10 +766,11 @@
 			var/victim_message = "shot with \a [src.type]"
 			var/admin_message = "shot (\a [src.type])"
 
-			admin_attack_log(firer, target_mob, attacker_message, victim_message, admin_message)
+			admin_attack_log(original_firer, target_mob, attacker_message, victim_message, admin_message)
 		else
-			target_mob.attack_log += "\[[time_stamp()]\] <b>UNKNOWN SUBJECT (No longer exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
-			msg_admin_attack("UNKNOWN shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
+			target_mob.attack_log += "\[[time_stamp()]\] <b>[original_firer] (May No Longer Exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
+			if(target_mob.ckey && original_firer.ckey) //We dont care about PVE
+				msg_admin_attack("[original_firer.name] (May No Longer Exists) shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
 
 	//sometimes bullet_act() will want the projectile to continue flying
 	if (result == PROJECTILE_CONTINUE)

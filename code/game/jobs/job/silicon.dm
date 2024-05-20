@@ -51,6 +51,7 @@
 	//alt_titles = list("Drone", "Cyborg")
 	supervisors = "your laws and the AI"
 	difficulty = "Medium to Hard."
+	alt_titles = list("Cyborg")
 	selection_color = "#cdcfe0"
 	account_allowed = 0
 	wage = WAGE_NONE

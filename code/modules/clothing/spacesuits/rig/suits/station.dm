@@ -372,7 +372,7 @@ Technomancer RIG
 	req_one_access = list()
 
 	initial_modules = list(
-		/obj/item/rig_module/modular_injector/medical,
+		/obj/item/rig_module/modular_injector/medical/preloaded,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
@@ -387,9 +387,9 @@ Technomancer RIG
 	icon_state = "response_team"
 	armor_list = list(
 		melee = 15,
-		bullet = 8,
-		energy = 6,
-		bomb = 50,
+		bullet = 4,
+		energy = 2,
+		bomb = 7,
 		bio = 100,
 		rad = 100
 	)
@@ -411,8 +411,7 @@ Technomancer RIG
 	req_one_access = list()
 
 	initial_modules = list(
-		/obj/item/rig_module/modular_injector/combat,
-		/obj/item/rig_module/modular_injector/medical,
+		/obj/item/rig_module/modular_injector/medical/preloaded,
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
@@ -438,8 +437,8 @@ Technomancer RIG
 	slowdown = -0.3 //we get a bit more speed than the baseline recovery rig as this is a unique item with exactly 0 armor. This is for zipping around medical, rather than getting in the weeds
 
 	initial_modules = list(
-		/obj/item/rig_module/modular_injector/combat,
-		/obj/item/rig_module/modular_injector/medical,
+		/obj/item/rig_module/modular_injector/combat/preloaded,
+		/obj/item/rig_module/modular_injector/medical/preloaded,
 		/obj/item/rig_module/device/healthscanner,
 		/obj/item/rig_module/vision/medhud,
 		/obj/item/rig_module/storage/med
@@ -511,7 +510,7 @@ Technomancer RIG
 		/obj/item/rig_module/device/flash,
 		/obj/item/rig_module/vision/medhud,
 		/obj/item/rig_module/device/healthscanner,
-		/obj/item/rig_module/modular_injector/medical,
+		/obj/item/rig_module/modular_injector/medical/preloaded,
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/storage/combat
 		)

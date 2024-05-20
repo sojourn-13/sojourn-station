@@ -357,6 +357,11 @@
 
 	user.do_attack_animation(src)
 
+	//reduced damage
+	var/RD = unique_armor_check(null, user, damage)
+	if(RD)
+		damage = RD
+
 	var/dam_zone = pick(organs_by_name)
 	var/obj/item/organ/external/affecting = get_organ(ran_zone(dam_zone))
 	var/dam = damage_through_armor(damage, BRUTE, affecting, ARMOR_MELEE, penetration)

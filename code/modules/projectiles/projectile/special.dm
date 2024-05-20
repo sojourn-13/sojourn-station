@@ -140,7 +140,7 @@
 	nodamage = TRUE
 	check_armour = ARMOR_ENERGY
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	hitscan = TRUE
+	hitscan = FALSE
 
 /obj/item/projectile/slime_death/on_impact(atom/target)//These two could likely check temp protection on the mob
 	if (!testing)
@@ -352,6 +352,21 @@
 /obj/item/projectile/bullet/flare/choas //MEWHEHEHE, can be any colour
 	chaos = TRUE
 
+//Used for bluecross only atm
+/obj/item/projectile/bullet/flare/yellow
+	luminosity_color = COLOR_WHEAT //softer on the eyes
+	flash_range = 2
+	brightness = 12
+	luminosity_range = 7
+	luminosity_power = 3
+
+/obj/item/projectile/bullet/flare/white
+	luminosity_color = COLOR_SILVER //Not perfect white to help with rounding out shadows
+	flash_range = 2
+	brightness = 12
+	luminosity_range = 7
+	luminosity_power = 3
+
 // Special projectile that one-shot ameridian-related stuff
 /obj/item/projectile/sonic_bolt
 	name = "sonic bolt"
@@ -375,7 +390,7 @@
 	damage_types = list(BRUTE = 0)
 	kill_count = 10
 	step_delay = 0.2
-	muzzle_type = /obj/effect/projectile/line/muzzle
+	muzzle_type = null
 	tracer_type = /obj/effect/projectile/line/tracer
 	impact_type = /obj/effect/projectile/line/impact
 	var/list/our_tracers

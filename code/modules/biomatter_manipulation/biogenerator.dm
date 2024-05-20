@@ -1,5 +1,3 @@
-
-
 //Power biomatter generator
 //This machine use biomatter reagent and some of O2 to produce power (it also produce CO2)
 //It has a few components that can be weared out, so operator should check this machine from time o time and tinker it
@@ -207,16 +205,16 @@
 
 
 /obj/machinery/multistructure/biogenerator_part/port/update_icon()
-	cut_overlays()
+	overlays.Cut()
 	if(panel_open)
-		add_overlay("port-opened")
+		overlays += "port-opened"
 		if(pipes_dirtiness)
 			if(pipes_dirtiness == 1)
-				add_overlay("port_dirty_low")
+				overlays += "port_dirty_low"
 			else if(pipes_dirtiness <= 3)
-				add_overlay("port_dirty_medium")
+				overlays += "port_dirty_medium"
 			else
-				add_overlay("port_dirty_full")
+				overlays += "port_dirty_full"
 
 
 /obj/machinery/multistructure/biogenerator_part/port/examine(mob/user)
@@ -236,20 +234,27 @@
 				to_chat(user, SPAN_WARNING("You should close cover first."))
 				return
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY,  required_stat = STAT_MEC))
+				var/set_canister = FALSE
 				if(tank)
-					tank.anchored = FALSE
-					tank.pixel_x = initial(tank.pixel_x)
-					tank = null
-					playsound(src, 'sound/machines/airlock_ext_open.ogg', 60, 1)
-					to_chat(user, SPAN_NOTICE("You detached [tank] from [src]."))
+					tank.can_anchor = TRUE
+					set_canister = tank.bio_anchored(FALSE)
+					if(set_canister)
+						tank.pixel_x = initial(tank.pixel_x)
+						tank = null
+						playsound(src, 'sound/machines/airlock_ext_open.ogg', 60, 1)
+						to_chat(user, SPAN_NOTICE("You detached [tank] from [src]."))
 				else
 					tank = locate(/obj/structure/reagent_dispensers) in get_turf(src)
 					if(tank)
-						tank.anchored = TRUE
-						tank.pixel_x = 8
-						playsound(src, 'sound/machines/airlock_ext_close.ogg', 60, 1)
-						to_chat(user, SPAN_NOTICE("You attached [tank] to [src]."))
-
+						set_canister = tank.bio_anchored(TRUE)
+						if(set_canister)
+							tank.can_anchor = FALSE
+							tank.pixel_x = 8
+							playsound(src, 'sound/machines/airlock_ext_close.ogg', 60, 1)
+							to_chat(user, SPAN_NOTICE("You attached [tank] to [src]."))
+				if(!set_canister)
+					to_chat(user, SPAN_WARNING("Ugh. You done something wrong!"))
+					tank = null
 		if(QUALITY_SCREW_DRIVING)
 			if(tank)
 				to_chat(user, SPAN_WARNING("You need to detach [tank] first."))
@@ -283,7 +288,6 @@
 	icon = null
 	var/obj/machinery/atmospherics/binary/biogen_chamber/chamber
 	var/obj/machinery/power/biogenerator_core/core
-
 
 /obj/machinery/multistructure/biogenerator_part/generator/New()
 	. = ..()
@@ -391,7 +395,7 @@
 			working_cycles = 0
 			wires = TRUE
 		else
-			to_chat(user, SPAN_WARNING("You need atleast 10 cables to replace wiring."))
+			to_chat(user, SPAN_WARNING("You need at least 10 cables to replace wiring."))
 	update_icon()
 
 
@@ -437,10 +441,10 @@
 
 
 /obj/machinery/power/biogenerator_core/update_icon()
-	cut_overlays()
-	add_overlay("core-pipe")
+	overlays.Cut()
+	overlays += "core-pipe"
 	if(!coil_frame)
-		add_overlay("core-coil")
+		overlays += "core-coil"
 
 
 /obj/machinery/power/biogenerator_core/examine(mob/user)

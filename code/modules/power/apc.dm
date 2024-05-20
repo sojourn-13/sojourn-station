@@ -909,10 +909,11 @@
 		"powerCellStatus" = cell ? cell.percent() : null,
 		"chargeMode" = chargemode,
 		"chargingStatus" = charging,
+		"chargingPowerDisplay" = round(lastused_charging),
 		"totalLoad" = round(lastused_total),
 		"coverLocked" = coverlocked,
 		//"remoteAccess" = (user == remote_control_user),
-		"siliconUser" = issilicon(user),
+		"siliconUser" = HAS_SILICON_ACCESS(user),
 		//"malfStatus" = get_malf_status(user),
 		//"emergencyLights" = !emergency_lights,
 		//"nightshiftLights" = nightshift_lights,
@@ -955,11 +956,11 @@
 
 /obj/machinery/power/apc/ui_act(action, params)
 	. = ..()
-	if(. || !can_use(usr, 1) || (locked && !issilicon(usr) && !failure_timer && action != "toggle_nightshift"))
+	if(. || !can_use(usr, 1) || (locked && !HAS_SILICON_ACCESS(usr) && !failure_timer && action != "toggle_nightshift"))
 		return
 	switch(action)
 		if("lock")
-			if (issilicon(usr))
+			if (HAS_SILICON_ACCESS(usr))
 				var/permit = 0 // Malfunction variable. If AI hacks APC it can control it even without AI control wire.
 				var/mob/living/silicon/ai/AI = usr
 				var/mob/living/silicon/robot/robot = usr
@@ -1006,7 +1007,7 @@
 				update()
 			. = TRUE
 		if("overload")
-			if(issilicon(usr))
+			if(HAS_SILICON_ACCESS(usr))
 				overload_lighting()
 				. = TRUE
 		//if("hack") 			malf is no longer a gamemode here
@@ -1020,7 +1021,7 @@
 		//		malfvacate()
 		if("reboot")
 			failure_timer = 0
-			force_update = FALSE
+			force_update = TRUE
 			update_icon()
 			update()
 		//if("emergency_lighting")		we don't have those
@@ -1053,7 +1054,7 @@
 
 
 /obj/machinery/power/apc/proc/can_use(mob/user, var/loud = 0) //used by attack_hand() and Topic()
-	if(is_admin(user) && isghost(user)) //admin abuse
+	if(isAdminGhostAI(user)) //admin abuse
 		return TRUE
 	if (user.stat)
 		to_chat(user, SPAN_WARNING("You must be conscious to use [src]!"))
@@ -1107,7 +1108,7 @@
 		update()
 		return TRUE
 
-	if(!issilicon(usr) && (locked && !emagged))
+	if(!HAS_SILICON_ACCESS(usr) && (locked && !emagged))
 		// Shouldn't happen, this is here to prevent href exploits
 		to_chat(usr, "You must unlock the panel to use this!")
 		return TRUE
@@ -1143,11 +1144,11 @@
 		update()
 
 	else if (href_list["overload"])
-		if(issilicon(usr))
+		if(HAS_SILICON_ACCESS(usr))
 			overload_lighting()
 
 	else if (href_list["toggleaccess"])
-		if(issilicon(usr))
+		if(HAS_SILICON_ACCESS(usr))
 			if(emagged || (stat & (BROKEN|MAINT)))
 				to_chat(usr, "The APC does not respond to the command.")
 			else

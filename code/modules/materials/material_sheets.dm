@@ -331,6 +331,9 @@
 /obj/item/stack/material/cloth/soteria
 	amount = 4
 
+/obj/item/stack/material/cloth/biogen
+	amount = 5
+
 /obj/item/stack/material/silk
 	name = "silk"
 	icon_state = "sheet_silk_bundle"
@@ -356,6 +359,9 @@
 	icon_state = "sheet-leather"
 	default_type = MATERIAL_LEATHER
 	price_tag = 10
+
+/obj/item/stack/material/leather/biogen
+	amount = 5
 
 /obj/item/stack/material/bone
 	name = "bones"
@@ -417,7 +423,7 @@
 	default_type = MATERIAL_BIOMATTER
 	price_tag = 1 //to keep biomatter in the player economy as the church and science use it.
 	novariants = FALSE
-	var/biomatter_in_sheet = 1
+	var/biomatter_in_sheet = BIOMATTER_PER_SHEET // defined in solidifier.dm
 
 /obj/item/stack/material/biomatter/random
 	rand_min = 5

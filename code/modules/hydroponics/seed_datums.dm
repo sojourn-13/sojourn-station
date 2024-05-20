@@ -354,7 +354,7 @@
 	seed_name = "ambrosia omni"
 	display_name = "ambrosia omni"
 	mutants = null
-	evolutions = list("ambrosiapanacea")
+	evolutions = list("ambrosiapanacea"=list("cronexidone"))
 	chems = list("nutriment"=list(1), "tricordrazine"=list(1,10), "anti_toxin"=list(1,10), "bicaridine"=list(2), "dexalinp"=list(2), "kelotane"=list(2),"copper"=list(2),"stoxin"=list(2))
 
 /datum/seed/ambrosia/omni/New()
@@ -368,7 +368,7 @@
 	display_name = "ambrosia panacea"
 	mutants = null
 	evolutions = null
-	chems = list("nutriment"=list(1), "cronexidone"=list(5), "cordradaxon"=list(5,20),"peridaxon"=list(5,20),"respiradoxon"=list(5,20),"vermicetol"=list(5,20),"rezadone"=list(5,20),"quickclot"=list(5,20),"ossissine"=list(5,20))
+	chems = list("nutriment"=list(1), "cronexidone"=list(5), "cordradaxon"=list(5,20),"peridaxon"=list(5,20),"respirodaxon"=list(5,20),"vermicetol"=list(5,20),"rezadone"=list(5,20),"quickclot"=list(5,20),"flossisine"=list(5,20))
 	exude_gasses = list("sleeping_agent" = 4)
 
 /datum/seed/ambrosia/panacea/New()
@@ -393,7 +393,7 @@
 	seed_name = "ambrosia infernum"
 	display_name = "ambrosia infernum"
 	mutants = null
-	evolutions = list("ambrosiadiablos" = list("aluminum"))
+	evolutions = list("ambrosiadiablos"=list("aluminum"))
 	chems = list("plasma" = list(5,20), "fuel" = list(5,20), "acetone" = list(1,25), "space_drugs" = list(1))
 	exude_gasses = list("plasma"=1)
 
@@ -708,8 +708,8 @@
 		"water",
 		"potassium",
 		"plasticide",
-		"mutationtoxin",
-		"amutationtoxin",
+		//"mutationtoxin",
+		//"amutationtoxin",
 		"inaprovaline",
 		"space_drugs",
 		"paroxetine",

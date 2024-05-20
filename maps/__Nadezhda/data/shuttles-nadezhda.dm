@@ -56,13 +56,13 @@
 /obj/machinery/computer/shuttle_control/multi/surface_transport
 	name = "surface transport shuttle console"
 	shuttle_tag = "Surface Transport Shuttle"
-	req_one_access = list(access_security, access_heads, access_huntmaster)
+	req_one_access = list(access_security, access_moebius, access_heads, access_huntmaster)
 	//circuit = /obj/item/electronics/circuitboard/shuttle/mining
 
 //Skipjack Code
 /datum/shuttle/autodock/multi/skipjack
 	name = "Skipjack"
-	move_time = (15 MINUTES) / (1 SECOND)
+	move_time = (7 MINUTES) / (1 SECOND)
 	shuttle_area = /area/shuttle/skipjack_area
 	current_location = "nav_skipjack_homebase"
 	landmark_transition = "nav_skipjack_transit"
@@ -121,7 +121,7 @@
 //Merc shuttle Code
 /datum/shuttle/autodock/multi/mercshuttle
 	name = "Mercenary Shuttle"
-	move_time = (15 MINUTES) / (1 SECOND)
+	move_time = (7 MINUTES) / (1 SECOND)
 	shuttle_area = /area/shuttle/mercshuttle_area
 	current_location = "nav_mercshuttle_homebase"
 	landmark_transition = "nav_mercshuttle_transit"
@@ -241,11 +241,11 @@
 //Marshal shuttle
 /datum/shuttle/autodock/multi/vasiliy
 	name = "The Vasiliy"
-	move_time = (7 MINUTES) / (1 SECOND)
+	move_time = (3 MINUTES) / (1 SECOND)
 	shuttle_area = /area/shuttle/vasiliy_shuttle_area
 	current_location = "nav_vasiliy_homebase"
 	landmark_transition = "nav_vasiliy_transit"
-	destination_tags = list("nav_vasiliy_homebase", "nav_vasiliy_deep_forest", "nav_vasiliy_swamps", "nav_vasiliy_river_forest") //, "nav_vasiliy_spacefort"
+	destination_tags = list("nav_vasiliy_homebase", "nav_vasiliy_deep_forest", "nav_vasiliy_swamps", "nav_vasiliy_river_forest", "nav_vasiliy_graysonfield") //, "nav_vasiliy_spacefort"
 
 //, "nav_vasiliy_spacefort"
 
@@ -278,6 +278,13 @@
 	landmark_tag = "nav_vasiliy_river_forest"
 	base_turf = /turf/simulated/floor/reinforced
 	autoset = TRUE
+
+/obj/effect/shuttle_landmark/vasiliy_field_office
+	name = "Greyson Field Office Dock"
+	landmark_tag = "nav_vasiliy_graysonfield"
+	base_turf = /turf/simulated/floor/reinforced
+	autoset = TRUE
+
 /* Pretty sure this isn't even active?
 /obj/effect/shuttle_landmark/vasiliy_spacefort
 	name = "Local Space Station Dock"

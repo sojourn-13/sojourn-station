@@ -107,3 +107,65 @@
 	drop_death_loot()
 	qdel(src)
 	return
+
+/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield
+	icon_state = "excel_hammer_shield"
+	maxHealth = 150 //More hp do to shield
+	health = 150
+
+	melee_damage_lower = 33
+	melee_damage_upper = 40
+	armor_penetration = ARMOR_PEN_DEEP
+
+	ranged = 0
+	rapid = 0
+	//Baseline armor + a littlebit of armor from the shield they hold
+	armor = list(melee = 65, bullet = 60, energy = 75, bomb = 85, bio = 100, rad = 25)
+	//Atm snowflake code for these 2 mobs to not bloat the parrent anymore
+	var/block_chance = 50
+	var/give_cooldown_odds = 60
+	var/give_cooldown_amount = DEFAULT_ATTACK_COOLDOWN
+	var/stunning = FALSE
+
+	drop_items = list(/obj/item/shield/buckler/excelsior, /obj/item/tool/hammer/excelsior_hammer)
+
+/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/batton
+	icon_state = "excel_batton_shield"
+	give_cooldown_odds = 80
+	give_cooldown_amount = 12 //DEFAULT_ATTACK_COOLDOWN is 8 so this is 50% longer
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+	stunning = TRUE
+
+	drop_items = list(/obj/item/shield/buckler/excelsior, /obj/item/tool/baton/excelbaton)
+
+
+/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/UnarmedAttack(atom/A, proximity)
+	. = ..()
+	if(!.)
+		return
+
+	if(isliving(A))
+		var/mob/living/L = A
+		if(prob(give_cooldown_odds))
+			L.visible_message(SPAN_DANGER("\the [src] stunts \the [L]!"))
+			L.setClickCooldown(give_cooldown_amount) //Dont melee these guys!
+		if(stunning)
+			L.visible_message(SPAN_DANGER("\the [src] zaps \the [L]!"))
+			L.damage_through_armor(rand(melee_damage_lower,melee_damage_upper), HALLOSS, BP_CHEST, ARMOR_MELEE, used_weapon = src)
+
+/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	if(prob(block_chance))
+		visible_message("\red \b [src] blocks the [O]!")
+		return
+	..()
+
+/mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield/bullet_act(var/obj/item/projectile/Proj)
+	if(!Proj)
+		return
+	if(prob(block_chance))
+		..()
+	else if (!(Proj.testing))
+		visible_message("\red <B>[src] blocks [Proj] with its shield!</B>")
+	return TRUE
+

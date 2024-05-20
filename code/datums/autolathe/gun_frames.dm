@@ -25,10 +25,6 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	name = "7.62mm judge revolver - frame"
 	build_path = /obj/item/part/gun/frame/judge
 
-/datum/design/autolathe/gun_frame/bastard
-	name = "6.5mm bastard smg - frame"
-	build_path = /obj/item/part/gun/frame/bastard
-
 /datum/design/autolathe/gun_frame/mamba
 	name = "6.5mm / 7.62mm mamba - frame"
 	build_path = /obj/item/part/gun/frame/mamba
@@ -36,10 +32,6 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 /datum/design/autolathe/gun_frame/specop
 	name = "10x24mm spec-op - frame"
 	build_path = /obj/item/part/gun/frame/specop
-
-/datum/design/autolathe/gun_frame/dp
-	name = "7.62mm DP27 - frame"
-	build_path = /obj/item/part/gun/frame/dp27
 
 /datum/design/autolathe/gun_frame/opshot
 	name = "20mm operator - frame"
@@ -53,8 +45,41 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	name = "6.5mm/7.62mm Wind frame"
 	build_path = /obj/item/part/gun/frame/nord
 
+//Marshal Surplus
+
+/datum/design/autolathe/gun_frame/glock
+	name = "9mm sky - frame"
+	build_path = /obj/item/part/gun/frame/glock
+
+/datum/design/autolathe/gun_frame/ladon
+	name = "10mm ladon - frame"
+	build_path = /obj/item/part/gun/frame/ladon
+
+/datum/design/autolathe/gun_frame/grease
+	name = "9mm greasegun/texan - frame"
+	build_path = /obj/item/part/gun/frame/grease
+
+/datum/design/autolathe/gun_frame/canine
+	name = "6.5mm K9 frame"
+	build_path = /obj/item/part/gun/frame/bulldog
+
+/datum/design/autolathe/gun_frame/gladstone
+	name = "20mm gladstone - frame"
+	build_path = /obj/item/part/gun/frame/gladstone
+
+/datum/design/autolathe/gun_frame/bastard
+	name = "6.5mm bastard smg - frame"
+	build_path = /obj/item/part/gun/frame/bastard
+
+/datum/design/autolathe/gun_frame/dp
+	name = "7.62mm DP27 - frame"
+	build_path = /obj/item/part/gun/frame/dp27
 
 //Blackshield guns.
+
+/datum/design/autolathe/gun_frame/discountnordwind
+	name = "6.5mm/7.62 carbine/rifle- frame"
+	build_path = /obj/item/part/gun/frame/discountnordwind
 
 /datum/design/autolathe/gun_frame/omni
 	name = "8.6mm omni - frame"

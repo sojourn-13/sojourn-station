@@ -1032,6 +1032,44 @@ obj/item/clothing/suit/sweater/blue
 	icon_state = "white_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
 
+/obj/item/clothing/suit/storage/suitjacket/skylight_coat
+	name = "skylight overcoat"
+	desc = "A sleek black coat worn by those of now known as Skylight Services, once a group with malicious dealings and business practices, now partially reformed under new management of Lonestar. This overcoat seems like it could easily hide an old school submachine gun."
+	icon_state = "skylight_coat_open"
+	item_state = "skylight_coat_open"
+	armor_list = list(
+		melee = 5,
+		bullet = 5,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+	)
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/suitjacket/skylight_coat/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Overcoat open"] = "skylight_coat_open"
+	options["Overcoat closed"] = "skylight_coat"
+
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
 /obj/item/clothing/suit/storage/suitjacket/helltaker/black
 	name = "devilish black suit jacket"
 	desc = "A stylish, opened black suit jacket with adjustable styles."

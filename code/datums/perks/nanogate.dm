@@ -1,55 +1,70 @@
-// Perks given by the nanogate organ
+ // Perks given by the nanogate organ
 
 /datum/perk/nanogate
 	name = "Nanogate Implant"
 	desc = "At some point you chose to have a nanogate installed in your body, the metallic nanite based implant goes directly at the base of your skull right where your spine connects. While \
 	quite powerful and widely useful, but there are side effects. Those with a nanogate find it far more difficult to become inspired. On top of this, nanogates violently attack any mutations \
 	it detects in the body, which can be harmful when combined with fast-acting genetic modifications."
+	icon_state = "nanogateimplant"
 	gain_text = "Your head aches for a moment, the effects of your spine having been seperated and an advanced machine slotted inbetween leaving you with a dull pain that is quickly cured \
 	by your nanites."
 
-/datum/perk/nanite_regen
+/datum/perk/nanite_power/nanite_regen
 	name = "Nanite Regeneration"
 	desc = "You configure your nanite matrix to begin aiding in your natural healing."
+	icon_state = "naniteregeneration"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	var/regen_rate = 0.5 //This seems low but this is per human handle_chemicals_in_body meaning this is rather robust
+	emped_message = "You feel an uncomfortable tingling numbness throughout your entire body, like a limb that has just gone to sleep."
+	emped_end_message = "The tingling stops as your nanogate informs you that it has restored its regenerative nanites."
 
-/datum/perk/nanite_muscle
+/datum/perk/nanite_power/nanite_regen/on_emp(nano, severity)
+	if(severity) //Let's NOT divide by any zeroes!
+		emp_duration = (120 SECONDS / severity) //Duration that the regeneration is disabled.
+	..()
+
+/datum/perk/nanite_power/nanite_regen/on_process()
+	. = ..()
+	if(regen_rate && !emped && holder.stat != DEAD) //Check if we're EMP'ed and shouldn't regenerate. Also, don't heal us if we're DEAD.
+		holder.heal_overall_damage(regen_rate, regen_rate, 1)
+
+/datum/perk/nanite_power/nanite_muscle
 	name = "Nanofiber Muscle Therapy"
 	desc = "Through the use of pain killers, implanted nanofibers, and small dispersed drug therapy to critical areas your nanogate has enhanced your physical movement speed and endurance, allowing you to run for \
-	longer stretches at a faster pace without tiring. Though you feel that all this strain might make your slightly weaker to physical trauma."
+	longer stretches at a faster pace without tiring."
+	icon_state = "nanofibermuscletherapy"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
+	emped_message = "You feel your legs cramp as your nanite-augmented muscles seize."
+	emped_end_message = "The pain in your legs fades as mobility returns to your muscles."
 
-/datum/perk/nanite_muscle/assign(mob/living/carbon/human/H)
+/datum/perk/nanite_power/nanite_muscle/on_emp(nano, severity)
+	if(severity) //Let's NOT divide by any zeroes!
+		emp_duration = (30 SECONDS / severity) //Duration that your speed is disabled.
 	..()
-	holder.brute_mod_perk += 0.10
 
-/datum/perk/nanite_muscle/remove()
-	holder.brute_mod_perk -= 0.10
-	..()
-
-/datum/perk/nanite_armor
+/datum/perk/nanite_power/nanite_armor
 	name = "Nanite Skin-Weave"
 	desc = "Through the use of reactive nanites designed to plate together into a shield your machines can reform at a lightning pace to let you physically resist incoming damage by forming a \
 	mesh weave shield just before a strike connects."
+	icon_state = "naniteskinweave"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 
-/datum/perk/nanite_armor/assign(mob/living/carbon/human/H)
+/datum/perk/nanite_power/nanite_armor/assign(mob/living/carbon/human/H)
 	..()
 	holder.maxHealth += 40
 	holder.health += 40
 
-/datum/perk/nanite_armor/remove()
+/datum/perk/nanite_power/nanite_armor/remove()
 	holder.maxHealth -= 40
 	holder.health -= 40
 	..()
 
-/datum/perk/nanite_metal_drinker
+/datum/perk/nanite_power/nanite_metal_drinker
 	name = "Nanite Metal Drinker"
 	desc = "Allows the user to drink metals (like Gold/Silver/Iron/Potassium and more) to regain nutrition."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 
-/datum/perk/nanite_chem
+/datum/perk/nanite_power/nanite_chem
 	name = "Nanite Chemicals"
 	desc = "You programmed and set aside a specific subset of nanites who have a singular purpose that you can call upon at any time to engage their effect, but this only works once."
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
@@ -59,7 +74,7 @@
 	var/chem_amount = 15
 	var/anti_cheat = FALSE //Used to prevent multy stacking clicking
 
-/datum/perk/nanite_chem/activate()
+/datum/perk/nanite_power/nanite_chem/activate()
 	..()
 	if(anti_cheat)
 		to_chat(holder, "Something feels cold.")
@@ -69,45 +84,54 @@
 	holder.reagents.add_reagent(chem_id, chem_amount)
 	spawn(20) holder.stats.removePerk(src.type) // Delete the perk
 
-/datum/perk/nanite_chem/implantoids
+//Unused, because this kind of nanite doesn't exist?!?!
+/datum/perk/nanite_power/nanite_chem/implantoids
 	name = "Implantoids Nanites"
 	chem_id = "implant nanites"
 
-/datum/perk/nanite_chem/trauma_control_system
+/datum/perk/nanite_power/nanite_chem/symbiotes
+	name = "Symbiote Nanites"
+	chem_id = "nanosymbiotes"
+
+/datum/perk/nanite_power/nanite_chem/trauma_control_system
 	name = "Trauma Control System Nanites"
 	chem_id = "trauma_control_system"
 
-/datum/perk/nanite_chem/control_booster_utility
+/datum/perk/nanite_power/nanite_chem/control_booster_utility
 	name = "Control Booster Utility Nanites"
 	chem_id = "cbu"
 
-/datum/perk/nanite_chem/control_booster_combat
+/datum/perk/nanite_power/nanite_chem/control_booster_combat
 	name = "Control Booster Combat Nanites"
+	icon_state = "combatnanites"
 	chem_id = "cbc"
 
-/datum/perk/nanite_chem/purgers
+/datum/perk/nanite_power/nanite_chem/purgers
 	name = "Purger Nanites"
+	icon_state = "purgernanites"
 	chem_id = "nanopurgers"
 
-/datum/perk/nanite_chem/oxyrush
+/datum/perk/nanite_power/nanite_chem/oxyrush
 	name = "Oxyrush Nanites"
+	icon_state = "oxyrushnanites"
 	chem_id = "oxyrush"
 
-/datum/perk/nanite_chem/nantidotes
+/datum/perk/nanite_power/nanite_chem/nantidotes
 	name = "Nantidotes"
 	chem_id = "nantidotes"
 
-/datum/perk/nanite_ammo
+/datum/perk/nanite_power/nanite_ammo
 	name = "Munition Fabrication"
 	desc = "You programmed and set aside a specific subset of nanites whose singular purpose is to reconstruct themselves into ammunition boxes. The process is quite intensive and requires \
 	half an hour between uses."
+	icon_state = "munitionfabrication"
 	gain_text = "You feel a dull ache as your nanogate releases newly configured nanites into your body."
 	active = FALSE
 	passivePerk = FALSE
 	var/cooldown = 30 MINUTES
 	var/anti_cheat = FALSE //No more spaming...
 
-/datum/perk/nanite_ammo/activate()
+/datum/perk/nanite_power/nanite_ammo/activate()
 	if(world.time < cooldown_time)
 		to_chat(usr, SPAN_NOTICE("Your nanites didn't ready an ammo box yet."))
 		return FALSE
@@ -138,6 +162,9 @@
 						/obj/item/ammo_magazine/ammobox/rifle_75/hv,
 						/obj/item/ammo_magazine/ammobox/rifle_75_small/hv,
 						/obj/item/ammo_magazine/ammobox/rifle_75_small/scrap,
+						/obj/item/ammo_magazine/ammobox/laser_223/box,
+						//obj/item/ammo_magazine/ammobox/laser_223/box/ap,
+						//obj/item/ammo_magazine/ammobox/laser_223/box/lethal,
 						/obj/item/ammo_magazine/ammobox/kurtz_50/hv,
 						/obj/item/ammo_magazine/ammobox/kurtz_50/laser,
 						/obj/item/ammo_magazine/ammobox/antim, //Unlike the small box holds 15

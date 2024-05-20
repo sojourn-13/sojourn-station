@@ -37,6 +37,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 /datum/perk/linguist
 	name = "Linguist"
 	desc = "Having dedicated time to learn foreign tongues, you find yourself knowing an extra language. Be it from your upbringing or schooling, you're fluent in one more language than the average person!"
+	icon_state = "linguist"
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
@@ -172,7 +173,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	W.desc += " It has been inscribed with the \"[holder.name]\" family name."
 	W.name = "[W] of [holder.name]"
 	var/oddities = rand(2,4) //Will boost 2-4 random stats
-	var/list/stats = ALL_STATS
+	var/list/stats = ALL_STATS_FOR_LEVEL_UP
 	var/list/final_oddity = list()
 	for(var/i = 1 to oddities)
 		var/stat = pick(stats)
@@ -195,7 +196,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	name = "Chem Addict"
 	desc = "You've been an addict all your life, for whatever piss poor reason you've told yourself. Your body is able to handle a variety of drugs, more than the average person, but you get \
 	easily addicted to all of them."
-	icon_state = "selfmedicated" // https://game-icons.net/1x1/lorc/overdose.html
+	icon_state = "chemaddict" // https://game-icons.net/1x1/lorc/overdose.html
 
 /datum/perk/addict/assign(mob/living/carbon/human/H)
 	..()
@@ -209,9 +210,9 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	holder.metabolism_effects.calculate_nsa()
 	..()
 
-/datum/perk/no_obsucation
+/datum/perk/no_obfuscation
 	name = "Exact Values"
 	desc = "Unlike most people you can fully visualize your own stats, owing to your greater grasp of the concepts. \
 	This is in addition to knowing exactly how likely you were to fail after failing some tasks. \
 	This ability does not extend to medical matters, wounds or similar. "
-	icon_state = "obsucation_ranking"
+	icon_state = "obfuscation_ranking"

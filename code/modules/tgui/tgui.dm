@@ -229,6 +229,57 @@
 		custom_data,
 		with_data = should_update_data))
 
+GLOBAL_VAR_CONST(PREF_TGUITHEME_DEFAULT, "Default")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_ABDUCTOR, "Abductor")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_CARDTABLE, "Cardtable")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_HACKERMAN, "Hackerman")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_MALFUNCTION, "Malfunction")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_NEUTRAL, "Neutral")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_PAPER, "Paper")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_RETRO, "Retro")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_SPOOKYCONSOLE, "Spooky Console")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_SYNDICATE, "Syndicate")
+GLOBAL_VAR_CONST(PREF_TGUITHEME_WIZARD, "Wizard")
+
+GLOBAL_LIST_INIT(TGUI_THEMES, list(
+	GLOB.PREF_TGUITHEME_DEFAULT,
+	GLOB.PREF_TGUITHEME_ABDUCTOR,
+	GLOB.PREF_TGUITHEME_CARDTABLE,
+	GLOB.PREF_TGUITHEME_HACKERMAN,
+	GLOB.PREF_TGUITHEME_MALFUNCTION,
+	GLOB.PREF_TGUITHEME_NEUTRAL,
+	GLOB.PREF_TGUITHEME_PAPER,
+	GLOB.PREF_TGUITHEME_RETRO,
+	GLOB.PREF_TGUITHEME_SPOOKYCONSOLE,
+	GLOB.PREF_TGUITHEME_SYNDICATE,
+	GLOB.PREF_TGUITHEME_WIZARD,
+))
+
+/proc/get_theme_by_pref(pref)
+	switch(pref)
+		if(GLOB.PREF_TGUITHEME_DEFAULT)
+			return null
+		if(GLOB.PREF_TGUITHEME_ABDUCTOR)
+			return "abductor"
+		if(GLOB.PREF_TGUITHEME_CARDTABLE)
+			return "cardtable"
+		if(GLOB.PREF_TGUITHEME_HACKERMAN)
+			return "hackerman"
+		if(GLOB.PREF_TGUITHEME_MALFUNCTION)
+			return "malfunction"
+		if(GLOB.PREF_TGUITHEME_NEUTRAL)
+			return "neutral"
+		if(GLOB.PREF_TGUITHEME_PAPER)
+			return "paper"
+		if(GLOB.PREF_TGUITHEME_RETRO)
+			return "retro"
+		if(GLOB.PREF_TGUITHEME_SPOOKYCONSOLE)
+			return "spookyconsole"
+		if(GLOB.PREF_TGUITHEME_SYNDICATE)
+			return "syndicate"
+		if(GLOB.PREF_TGUITHEME_WIZARD)
+			return "wizard"
+
 /**
  * private
  *
@@ -248,6 +299,7 @@
 			"size" = window_size,
 			"fancy" = user.client.get_preference_value(/datum/client_preference/tgui_fancy),
 			"locked" = user.client.get_preference_value(/datum/client_preference/tgui_lock),
+			"default_theme" = get_theme_by_pref(user.client.prefs.TGUI_theme)
 		),
 		"client" = list(
 			"ckey" = user.client.ckey,

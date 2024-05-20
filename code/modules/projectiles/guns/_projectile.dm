@@ -27,8 +27,6 @@
 	var/cocked_sound 	= 'sound/weapons/guns/interact/pistol_cock.ogg'
 	var/bulletinsert_sound 	= 'sound/weapons/guns/interact/bullet_insert.ogg'
 	var/item_suffix = ""		//Allows for variations within the same icon sheet.
-	var/saw_off = FALSE			//Can be sawn off?
-	var/sawn = null				//what it becomes when sawn down, accepts a typepath.
 
 	//For SINGLE_CASING or SPEEDLOADER guns
 	var/max_shells = 1			//the number of casings that will fit inside As of 3/29/2022 this has to be at lest 1 otherwise the gun can no fire without fire_from_mag
@@ -433,11 +431,14 @@
 	unload_ammo(usr)
 */
 
-/obj/item/gun/projectile/nano_ui_data(mob/user)
+/obj/item/gun/projectile/ui_data(mob/user)
 	var/list/data = ..()
-	data["caliber"] = caliber
-	data["current_ammo"] = get_ammo()
-	data["max_shells"] = get_max_ammo()
+
+	var/list/ammo_stats = list()
+	ammo_stats += list(list("name" = "Rifled Caliber", "type" = "String", "value" = caliber))
+	ammo_stats += list(list("name" = "Ammo Remaining", "type" = "ProgressBar", "value" = get_ammo(), "max" = get_max_ammo()))
+	ammo_stats += data["stats"]["Ammo Stats"]
+	data["stats"]["Ammo Stats"] = ammo_stats
 
 	return data
 
@@ -470,26 +471,6 @@
 /obj/item/gun/projectile/dropped(mob/user)
 	..()
 	playsound(src,'sound/weapons/guns/interact/lmg_magin.ogg',20,4)
-
-/obj/item/gun/projectile/attackby(var/obj/item/A as obj, mob/user as mob)
-	if(QUALITY_SAWING in A.tool_qualities)
-		to_chat(user, SPAN_NOTICE("You begin to saw off the stock and barrel of \the [src]."))
-		if(saw_off == FALSE)
-			to_chat(user, SPAN_NOTICE("Sawing down \the [src] will achieve nothing or may impede operation."))
-			return
-		if(ammo_magazine && ammo_magazine.stored_ammo && !ammo_magazine.stored_ammo.len)
-			to_chat(user, SPAN_WARNING("You should unload \the [src] first!"))
-			return
-		if(silenced)
-			to_chat(user, SPAN_WARNING("You should remove the silencer first!"))
-			return
-		if(saw_off && A.use_tool(user, src, WORKTIME_LONG, QUALITY_SAWING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
-			qdel(src)
-			new sawn(usr.loc)
-			to_chat(user, SPAN_WARNING("You cut down the stock, barrel, and anything else nice from \the [src], ruining a perfectly good weapon for no good reason!"))
-	else
-		..()
-
 
 //Lib sideloading port
 /obj/item/gun/projectile/proc/side_loading(mob/user)

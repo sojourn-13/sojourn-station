@@ -1,5 +1,5 @@
-//Admin only mob to heck some people up or do events with
-
+//EXSTREAMLY RARE able heck some people up or do events with
+//Requires chaos level 3 or admins
 
 /mob/living/carbon/superior_animal/psi_monster/ploge
 	name = "Ploge"
@@ -39,6 +39,7 @@
 	size_pixel_offset_x = 0
 
 	var/transform_ed = FALSE
+	can_leave = TRUE
 
 // BUMP!
 /mob/living/carbon/superior_animal/psi_monster/ploge/UnarmedAttack(atom/A, proximity)

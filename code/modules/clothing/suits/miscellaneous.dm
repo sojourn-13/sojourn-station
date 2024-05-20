@@ -133,6 +133,13 @@ obj/item/clothing/suit/gownrisque/alt
 	icon_state = "tacticalponcho"
 	item_state = "tacticalponcho"
 
+// Umi_Cloak
+/obj/item/clothing/suit/orsicoat
+	name = "Red Winter Cape"
+	desc = "A soft red cape with synthetic white fur trim."
+	icon_state = "orsicoat"
+	item_state = "orsicoat"
+
 /*Shirts*/
 
 /obj/item/clothing/suit/shirt
@@ -397,9 +404,9 @@ obj/item/clothing/suit/gownrisque/alt
 	min_cold_protection_temperature = T0C - 20
 	price_tag = 50
 
-/obj/item/clothing/suit/storage/numericalgarb
-	name = "numerical garb"
-	desc = "A padded cloak meant for numerical, made to be biomatter resistant. The cloak is reversible, with its switchable colors being red and purple."
+/obj/item/clothing/suit/storage/surtout
+	name = "Absolute surtout"
+	desc = "A padded surtout, made to be biomatter resistant. The surtout is reversible, with its switchable colors being red and purple."
 	icon_state = "field_numerical"
 	item_state = "field_numerical"
 	armor_list = list(
@@ -413,7 +420,7 @@ obj/item/clothing/suit/gownrisque/alt
 	body_parts_covered = UPPER_TORSO|ARMS
 	price_tag = 60
 
-/obj/item/clothing/suit/storage/numericalgarb/verb/toggle_style()
+/obj/item/clothing/suit/storage/surtout/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -435,3 +442,24 @@ obj/item/clothing/suit/gownrisque/alt
 		update_wear_icon()
 		usr.update_action_buttons()
 		return 1
+
+
+// Miscs
+
+/obj/item/clothing/suit/storage/omni_robes
+	name = "religious robe"
+	desc = "A robe made of cloth that can be colored."
+	icon_state = "general_priest_cloth"
+	item_state = "general_priest_cloth"
+	armor_list = list(
+		melee = 10,
+		bullet = 5,
+		energy = 0,
+		bomb = 0,
+		bio = 0,
+		rad = 0
+		)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LOWER_TORSO
+	min_cold_protection_temperature = T0C - 20
+	price_tag = 50

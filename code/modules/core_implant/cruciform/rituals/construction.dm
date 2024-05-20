@@ -14,10 +14,11 @@ GLOBAL_LIST_INIT(nt_blueprints, init_nt_blueprints())
 			continue
 		if(blueprint_type == /datum/nt_blueprint/cruciform_upgrade)
 			continue
+		/* - Removed do to exploits with uprooting after autolathen printing giving full prices
 		if(blueprint_type == /datum/nt_blueprint/weapons)
 			continue
 		if(blueprint_type == /datum/nt_blueprint/health_care)
-			continue
+			continue*/
 		var/datum/nt_blueprint/pb = new blueprint_type()
 		list[pb.name] = pb
 	. = list
@@ -557,7 +558,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	)
 	build_time = 8 SECONDS
 
-
+/* Removed do to exploits
 //Church weapons, faster but more exspensive way for vectors to get their armorments without a disk
 /datum/nt_blueprint/weapons
 	blueprint_type = "item"
@@ -607,7 +608,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	name = "Absolutism Medkit"
 	build_path = /obj/item/storage/firstaid/nt
 	materials = list(
-		/obj/item/stack/material/biomatter = 105,
+		/obj/item/stack/material/biomatter = 45,
 		/obj/item/stack/material/plastic = 4,
 		/obj/item/stack/material/glass = 2,
 		/obj/item/stack/material/gold = 2,
@@ -638,4 +639,4 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 		/obj/item/stack/material/silver = 1
 	)
 	build_time = 5 SECONDS
-
+*/

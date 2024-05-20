@@ -117,7 +117,7 @@
 	melee_damage_upper = 20
 	attacktext = "chomped"
 	attack_sound = 'sound/weapons/bite.ogg'
-	faction = "sargoyle"
+	faction = "scarybat"
 	speed = 6
 	has_special_parts = TRUE
 	inherent_mutations = list(MUTATION_BLINDNESS, MUTATION_ECHOLOCATION, MUTATION_TOXIN_RESISTANCE, MUTATION_BLOOD_BANK)

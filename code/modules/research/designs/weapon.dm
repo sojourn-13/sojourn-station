@@ -107,6 +107,12 @@
 	desc = "Laser reflective armor."
 	build_path = /obj/item/clothing/suit/armor/laserproof/rnd
 
+/datum/design/research/item/clothing/armor_soterialabcoat
+	name = "SI Field Labcoat"
+	desc = "Specially made for protecting men and women of science in the dangerous wilds of Amethyn, this labcoat features lightweight armor inlays over strategic locations to protect vital organs. \
+	Features an assortment of pouches and straps to secure your samples for extraction."
+	build_path = /obj/item/clothing/suit/storage/toggle/labcoat/field
+
 /datum/design/research/item/weapon/katana
 	name = "Soteria \"Muramasa\" Katana"
 	build_path = /obj/item/tool/sword/katana/nano
@@ -137,6 +143,17 @@
 	build_path = /obj/item/gun/projectile/dartgun
 
 
+//Starstriker - The gun thats able to strike the stars!
+/datum/design/research/item/weapon/starstriker
+	name = "\"Star Striker\" laser boltgun"
+	desc = "A mix of the lighter version of the Sike point 257 hunting rifle, but with the twist of using laser based casings rather then normal bullet based projectiles. Its cal is .233 unlike the gun its based on."
+	build_path = /obj/item/gun/projectile/boltgun/sci
+
+//LAK - The gun thats able to laser shot away most proplems
+/datum/design/research/item/weapon/laser_ak
+	name = "\"Legkiy-Kalashnikov\" laser carbine"
+	build_path = /obj/item/gun/projectile/automatic/ak47/akl
+
 // Plasma guns
 /datum/design/research/item/weapon/hydrogen_rifle
 	name = "Hydrogen \"Venatori\" Rifle"
@@ -163,19 +180,19 @@
 /datum/design/research/item/ammo
 	name_category = "ammunition"
 	category = "Ammo"
-	
+
 /datum/design/research/item/ammo/pistol/empty
 	name = "Pistol Magazine 9mm (Empty)"
 	desc = "An empty magazine for pistols, chambered for 9mm"
 	build_path = /obj/item/ammo_magazine/pistol_35/empty
 	materials = list(MATERIAL_STEEL = 3)
-	
+
 /datum/design/research/item/ammo/pistol
 	name = "Pistol Magazine 9mm"
 	desc = "A magazine for pistols, chambered for 9mm"
 	build_path = /obj/item/ammo_magazine/pistol_35
 	materials = list(MATERIAL_STEEL = 8)
-	
+
 /datum/design/research/item/ammo/pistol/rubber
 	name = "Pistol Magazine 9mm (Rubber)"
 	desc = "A magazine for pistols, chambered for 9mm rubber"
@@ -204,38 +221,62 @@
 	name = "Specialized Magaine 9mm, laser"
 	desc = "Auto 9mm cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/laser
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
+	materials = list(MATERIAL_STEEL = 9, MATERIAL_GLASS = 9, MATERIAL_GOLD = 4.5)
 
 /datum/design/research/item/ammo/magum_laser
 	name = "Magnum 10mm, laser case"
 	desc = "Magnum 10mm cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/laser
-	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
+	materials = list(MATERIAL_STEEL = 7, MATERIAL_GLASS = 7, MATERIAL_GOLD = 3.5)
 
 /datum/design/research/item/ammo/light_rifle_257
 	name = "Light rifle 6.5mm laser casing."
 	desc = "6.5mm casings fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/light_rifle_257_small/laser
-	materials = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
+	materials = list(MATERIAL_STEEL = 12, MATERIAL_GLASS = 12, MATERIAL_GOLD = 6)
 
 /datum/design/research/item/ammo/rifle_75
 	name = "Rifle 7.62mm laser casing."
 	desc = "7.62mm casings fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/rifle_75_small/laser
-	materials = list(MATERIAL_STEEL = 10, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
+	materials = list(MATERIAL_STEEL = 9, MATERIAL_GLASS = 9, MATERIAL_GOLD = 4.5)
 
 /datum/design/research/item/ammo/heavy_rifle_408
 	name = "Heavy Rifle 8.6mm laser casing."
 	desc = "Heavy Rifle 8.6x70mm casing fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
-	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
+	materials = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 6, MATERIAL_GOLD = 3)
 
 /datum/design/research/item/ammo/kurtz_laser
 	name = "Specialized 12mm, laser cases"
 	desc = "12mm cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50/laser
-	materials = list(MATERIAL_STEEL = 15, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
+	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 
+/datum/design/research/item/ammo/laser_mag
+	name = "Laser 5.56mm casing mag (empty)"
+	desc = "A 20 round magazine marked for 5.56mm Carbine laser ammunition."
+	build_path = /obj/item/ammo_magazine/rifle_223/empty
+	materials = list(MATERIAL_STEEL = 5)
+
+/datum/design/research/item/ammo/laser/box
+	name = "\"Piezoelectric\" standard laser box"
+	desc = "A 200 round box of casings of pulse loaded laser cavities. Its cal is 5.56mm."
+	build_path = /obj/item/ammo_magazine/ammobox/laser_223/box
+	materials = list(MATERIAL_STEEL = 20, MATERIAL_GLASS = 20, MATERIAL_SILVER = 10)
+/*
+/datum/design/research/item/ammo/laser/box/ap
+	name = "\"Piezoelectric\" piercing laser box."
+	desc = "A 200 round box of casings of pulse loaded laser cavities. This type possess an integrated sensor array that adjusts the focal point to the targets location, allowing for better penetration for the cost of firepower due to the occupied space. Its cal is 5.56mm."
+	build_path = /obj/item/ammo_magazine/ammobox/laser_223/box/ap
+	materials = list(MATERIAL_STEEL = 20, MATERIAL_GLASS = 20, MATERIAL_GOLD = 10)
+
+/datum/design/research/item/ammo/laser/box/lethal
+	name = "\"Piezoelectric\" dense laser box."
+	desc = "A 200 round box of casings of pulse loaded laser cavities. This type uses a wide witdh lense to cause less overpenetration and cause more damage in exchange of being more susceptible to armor. Its cal is 5.56mm."
+	materials = list(MATERIAL_STEEL = 20, MATERIAL_GLASS = 20, MATERIAL_PLASMA = 10)
+	build_path = /obj/item/ammo_magazine/ammobox/laser_223/box/lethal
+*/
 /datum/design/research/item/ammo/fancy_dart
 	name = "carbine chem dart"
 	desc = "A hollow dart that loads into a cartridge."

@@ -32,8 +32,8 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		block_damage(loss, A)
 		A.visible_message(SPAN_WARNING("\The [src] is weakened by the \the [A]!"))
 		playsound(A.loc, 'sound/weapons/shield/shielddissipate.ogg', 50, 1)
-		return 1
-	return 0
+		return FALSE
+	return TRUE
 
 /obj/item/projectile/beam/musket
 	name = "Musket laser"
@@ -55,28 +55,61 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	armor_divisor = 1.15 //Some AP
 	recoil = 2
 
+// Laser bullets are your premium and expensive upgrade to your traditional bullets.
+// The basic design philosophy here is that they possess the AP of HV and the damge of FMJ all while having half the recoil.
+// Keep in mind that laser bullets do not imbed and leave no shrapnel behind, which is stupidly lethal as of date.
+
+
+// 223 is a middle ground between 408 and 75. Damage of 408, AP of 75
+/obj/item/projectile/beam/laser_223
+	damage_types = list(BURN = 20)
+	armor_penetration = 20
+	recoil = 5
+	wounding_mult = WOUNDING_SERIOUS
+/*
+/obj/item/projectile/beam/laser_223/ap
+	damage_types = list(BURN = 16)
+	armor_penetration = 36
+	recoil = 7
+	wounding_mult = WOUNDING_NORMAL
+	penetrating = 1
+
+/obj/item/projectile/beam/laser_223/lethal
+	damage_types = list(BURN = 27)
+	armor_penetration = 15
+	recoil = 5
+	wounding_mult = WOUNDING_WIDE
+*/
+
 /obj/item/projectile/beam/weak/pistol_35
-	damage_types = list(BURN = 12)
-	recoil = 1
+	damage_types = list(BURN = 15)
+	armor_penetration = 20
+	recoil = 2.5
 
 /obj/item/projectile/beam/weak/light_rifle_257
-	damage_types = list(BURN = 13)
+	damage_types = list(BURN = 14)
+	armor_penetration = 30
+	recoil = 3.5
 
 /obj/item/projectile/beam/weak/rifle_75
-	damage_types = list(BURN = 22)
-	recoil = 4
+	damage_types = list(BURN = 15.5)
+	armor_penetration = 36
+	recoil = 5
 
 /obj/item/projectile/beam/weak/heavy_rifle_408
-	damage_types = list(BURN = 16)
-	recoil = 3
+	damage_types = list(BURN = 20)
+	armor_penetration = 46
+	recoil = 10
 
 /obj/item/projectile/beam/weak/magnum_40
-	damage_types = list(BURN = 20)
-	recoil = 3
+	damage_types = list(BURN = 19)
+	armor_penetration = 33
+	recoil = 4.5
 
 /obj/item/projectile/beam/weak/kurtz_50
-	damage_types = list(BURN = 40)
-	recoil = 5
+	damage_types = list(BURN = 23.5)
+	armor_penetration = 35
+	recoil = 8
 
 /obj/item/projectile/beam/weak/smg
 	damage_types = list(BURN = 10)

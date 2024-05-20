@@ -18,9 +18,9 @@ SUBSYSTEM_DEF(mapping)
 					// If it's still not a number, we probably got fed some nonsense string.
 					admin_notice("<span class='danger'>Error: ASTEROID_Z_LEVELS config wasn't given a number.</span>")
 				// Now for the actual map generating.  This occurs for every z-level defined in the config.
-				new /datum/random_map/automata/cave_system(null, 1, 1, z_level, 300, 300)
+				new /datum/random_map/automata/cave_system(null, 1, 1, z_level, world.maxx, world.maxy)
 				// Let's add ore too.
-				new /datum/random_map/noise/ore(null, 1, 1, z_level, 64, 64)
+				new /datum/random_map/noise/ore(null, 1, 1, z_level, world.maxx, world.maxy)
 		else
 			admin_notice("<span class='danger'>Error: No asteroid z-levels defined in config!</span>")
 

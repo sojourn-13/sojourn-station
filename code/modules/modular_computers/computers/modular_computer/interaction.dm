@@ -14,13 +14,15 @@
 
 	verbs |= /obj/item/modular_computer/verb/emergency_shutdown
 
-/obj/item/modular_computer/can_interact(mob/user)
+/obj/item/modular_computer/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
 	if(usr.incapacitated())
-		to_chat(user, "<span class='warning'>You can't do that.</span>")
+		if(show_message)
+			to_chat(user, "<span class='warning'>You can't do that.</span>")
 		return FALSE
 
 	if(!Adjacent(usr))
-		to_chat(user, "<span class='warning'>You can't reach it.</span>")
+		if(show_message)
+			to_chat(user, "<span class='warning'>You can't reach it.</span>")
 		return FALSE
 
 	return TRUE

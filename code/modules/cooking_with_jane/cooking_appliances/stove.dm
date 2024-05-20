@@ -138,6 +138,17 @@
 	var/input = getInput(params)
 
 	if(items[input] != null)
+
+		if(istype(used_item, /obj/item/gripper))
+			var/obj/item/gripper/gripper = used_item
+			if(!gripper.wrapped && items[input])
+				var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
+				var/turf/T = get_turf(src)
+				container.forceMove(T)
+				items[input] = null
+				update_icon()
+			return
+
 		var/obj/item/reagent_containers/cooking_with_jane/cooking_container/container = items[input]
 
 		if(istype(used_item, /obj/item/spatula))

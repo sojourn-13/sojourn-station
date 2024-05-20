@@ -42,7 +42,7 @@
 	armor_divisor = ARMOR_PEN_EXTREME
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 500
-	matter = list(MATERIAL_BIOMATTER = 75, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5)
+	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5)
 
 /obj/item/tool/knife/dagger/nt
 	name = "dagger"
@@ -54,7 +54,7 @@
 	force = WEAPON_FORCE_PAINFUL
 	armor_divisor = ARMOR_PEN_MASSIVE
 	price_tag = 120
-	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_STEEL = 1)
+	matter = list(MATERIAL_BIOMATTER = 5, MATERIAL_STEEL = 1)
 
 /obj/item/tool/spear/halberd
 	name = "halberd"
@@ -68,7 +68,7 @@
 	force = WEAPON_FORCE_BRUTAL
 	armor_divisor = ARMOR_PEN_MASSIVE
 	price_tag = 600
-	matter = list(MATERIAL_BIOMATTER = 80, MATERIAL_STEEL = 8, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 2)
+	matter = list(MATERIAL_BIOMATTER = 60, MATERIAL_STEEL = 8, MATERIAL_WOOD = 10, MATERIAL_PLASTEEL = 2)
 
 /obj/item/tool/sword/nt/scourge
 	name = "scourge"
@@ -86,7 +86,7 @@
 	var/stun = 0
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
-	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 2)
+	matter = list(MATERIAL_BIOMATTER = 30, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 2)
 	has_alt_mode = FALSE
 
 /obj/item/tool/sword/nt/scourge/attack_self(mob/user)
@@ -182,7 +182,7 @@
 	armor_divisor = ARMOR_PEN_MASSIVE
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
-	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 3)
+	matter = list(MATERIAL_BIOMATTER = 30, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 3)
 	tool_qualities = list(QUALITY_HAMMERING = 10) //Not designed for that fine nailing
 	var/glowing = FALSE
 	sharp = FALSE
@@ -234,7 +234,7 @@
 	armor_divisor = ARMOR_PEN_EXTREME
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
-	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 12)
+	matter = list(MATERIAL_BIOMATTER = 30, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 8)
 	tool_qualities = list(QUALITY_HAMMERING = 30) //Not designed for that fine nailing
 	var/glowing = FALSE
 	sharp = FALSE
@@ -293,7 +293,7 @@
 	item_state = "nt_shield"
 	force = WEAPON_FORCE_DANGEROUS
 	armor_list = list(melee = 5, bullet = 5, energy = 2, bomb = 15, bio = 0, rad = 0)
-	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 10, MATERIAL_GOLD = 5)
+	matter = list(MATERIAL_BIOMATTER = 35, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5, MATERIAL_GOLD = 3)
 	price_tag = 1000
 	base_block_chance = 60
 	item_flags = DRAG_AND_DROP_UNEQUIP

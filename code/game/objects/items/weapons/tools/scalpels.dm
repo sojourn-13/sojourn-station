@@ -52,6 +52,8 @@
 
 /obj/item/tool/scalpel/laser/si/robo
 	cell = /obj/item/cell/small/moebius/nuclear
+	force = WEAPON_FORCE_NORMAL
+	embed_mult = 0
 
 //A makeshift knife, for doing all manner of cutting and stabbing tasks in a half-assed manner
 /obj/item/tool/knife/shiv

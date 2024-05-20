@@ -617,10 +617,13 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 		sleep(shot_delay)
 		last_fired = FALSE
 
+	var/power = min(apc.terminal.powernet.avail*0.25, damage_cap * power_damage_ratio)
+	//message_admins("Tesla Turret Power:[power]| apc.terminal.powernet.avail [apc.terminal.powernet.avail]")
 
-	var/power = min(apc.terminal.powernet.avail/2, damage_cap * power_damage_ratio) //Drains based on ALL available power on an APC's grid
-	current_power_area.removeStaticPower(power, power_channel)
-	//apc.terminal.powernet.draw_power(power) //Alternative if it doesn't draw enough
+	if(power <= 0)
+		return
+
+	apc.terminal.powernet.draw_power(power)
 	playsound(src, 'sound/effects/lightningshock.ogg', 100, 1, extrarange = 5)
 
 	// The actual Zap

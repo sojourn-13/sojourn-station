@@ -423,5 +423,14 @@
 		registered_z = new_z
 // if this returns true, interaction to turf will be redirected to src instead
 
+///Sets the anchored var and returns if it was sucessfully changed or not. Port from eris since I was getting problems currently only used for the bioreactor
+/atom/movable/proc/bio_anchored(anchorvalue)
+	SHOULD_CALL_PARENT(TRUE)
+	if(anchored == anchorvalue || !can_anchor)
+		return FALSE
+	anchored = anchorvalue
+	LEGACY_SEND_SIGNAL(src, COMSIG_ATOM_UNFASTEN, anchored)
+	. = TRUE
+
 /atom/movable/proc/preventsTurfInteractions()
 	return FALSE

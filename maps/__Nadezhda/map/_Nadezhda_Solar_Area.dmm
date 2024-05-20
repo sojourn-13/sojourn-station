@@ -2113,6 +2113,11 @@
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	dir = 4
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/outside/mountainsolars)
 "DI" = (
@@ -2895,9 +2900,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/outside/mountainsolars)
 "Td" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 1
 	},

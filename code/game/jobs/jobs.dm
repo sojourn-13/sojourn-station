@@ -1,22 +1,25 @@
 GLOBAL_LIST_INIT(department_command, list(DEPARTMENT_COMMAND))
-GLOBAL_LIST_INIT(department_security, list(DEPARTMENT_SECURITY))
+GLOBAL_LIST_INIT(department_security, list(DEPARTMENT_SECURITY, DEPARTMENT_BLACKSHIELD))
 GLOBAL_LIST_INIT(department_moebius, list(DEPARTMENT_SCIENCE, DEPARTMENT_MEDICAL))
 GLOBAL_LIST_INIT(department_engineering, list(DEPARTMENT_ENGINEERING))
 GLOBAL_LIST_INIT(department_guild, list(DEPARTMENT_LSS))
 GLOBAL_LIST_INIT(department_church, list(DEPARTMENT_CHURCH))
+GLOBAL_LIST_INIT(department_lodge, list(DEPARTMENT_LODGE))
 
 var/const/ENGINEERING       =(1<<0)
 var/const/SECURITY        	=(1<<1)
-var/const/MEDICAL           =(1<<2)
-var/const/SCIENCE           =(1<<3)
-var/const/CIVILIAN          =(1<<4)
-var/const/COMMAND           =(1<<5)
-var/const/MISC              =(1<<6)
-var/const/SERVICE           =(1<<7)
-var/const/LSS	            =(1<<8)
-var/const/CHURCH           	=(1<<9)
-var/const/PROSPECTORS		=(1<<10)
-var/const/INDEPENDENT		=(1<<11)
+var/const/BLACKSHIELD 		=(1<<2)
+var/const/MEDICAL           =(1<<3)
+var/const/SCIENCE           =(1<<4)
+var/const/CIVILIAN          =(1<<5)
+var/const/COMMAND           =(1<<6)
+var/const/MISC              =(1<<7)
+var/const/SERVICE           =(1<<8)
+var/const/LSS	            =(1<<9)
+var/const/CHURCH           	=(1<<10)
+var/const/PROSPECTORS		=(1<<11)
+var/const/INDEPENDENT		=(1<<12)
+var/const/LODGE				=(1<<13)
 
 var/const/ENGSEC			=(1<<0)
 
@@ -67,9 +70,10 @@ var/const/FENCE				=(1<<14)
 var/const/CHAPLAIN			=(1<<0)
 var/const/ACOLYTE			=(1<<1)
 
+var/const/OUTSIDER			=(1<<0)
+
 var/const/HUNTMASTER		=(1<<0)
 var/const/LODGEHUNTER		=(1<<1)
-var/const/OUTSIDER			=(1<<2)
 var/const/LODGEHERBALIST	=(1<<3)
 
 var/list/assistant_occupations = list()
@@ -102,10 +106,16 @@ var/list/civilian_positions = list(JOBS_CIVILIAN)
 var/list/security_positions = list(JOBS_SECURITY)
 
 
+var/list/blackshield_positions = list(JOBS_BLACKSHIELD)
+
+
 var/list/nonhuman_positions = list(JOBS_NONHUMAN)
 
 
 var/list/offcolony_positions = list(JOBS_INDEPENDENT)
+
+
+var/list/lodge_positions = list(JOBS_LODGE)
 
 /proc/guest_jobbans(var/job)
 	return ((job in command_positions) || (job in nonhuman_positions) || (job in security_positions))

@@ -7,7 +7,7 @@
 	var/state = 0
 	var/datum/ai_laws/laws = new /datum/ai_laws/eris
 	var/obj/item/circuitboard/circuit = null
-	var/obj/item/device/mmi/brain = null
+	var/obj/item/device/mmi/digital/posibrain/brain = null
 
 
 /obj/structure/AIcore/attackby(obj/item/I, mob/user)
@@ -167,8 +167,8 @@
 				to_chat(usr, "Law module applied.")
 				return
 
-			if(istype(I, /obj/item/device/mmi))
-				var/obj/item/device/mmi/M = I
+			if(istype(I, /obj/item/device/mmi/digital/posibrain))
+				var/obj/item/device/mmi/digital/posibrain/M = I
 				if(!M.brainmob)
 					to_chat(user, SPAN_WARNING("Sticking an empty [I] into the frame would sort of defeat the purpose."))
 					return

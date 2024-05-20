@@ -6,7 +6,7 @@ GLOBAL_LIST_INIT(hive_data_bool, list(
 	"allow_tyrant_spawn"			= TRUE,
 	"tyrant_death_kills_hive"		= FALSE,
 	"all_church_to_battle"			= FALSE,
-	"gibbing_dead"					= FALSE,
+	"prevent_gibbing_dead"			= TRUE,
 	"pop_lock"						= TRUE,
 	"slime_pop_lock"				= TRUE))
 
@@ -110,13 +110,13 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	data += "<br>All Church To Inquisitors: [GLOB.hive_data_bool["all_church_to_battle"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_inquisitors=1'>\[TOGGLE\]</a>"
 
-	data += "<br>Prevent Hivemind Gibbing Dead Victims: [GLOB.hive_data_bool["gibbing_dead"] ? "Enabled" : "Disabled"] \
-	<a href='?src=\ref[src];toggle_gibbing_dead=1'>\[TOGGLE\]</a>"
+	data += "<br>Prevent Hivemind Gibbing Dead Victims: [GLOB.hive_data_bool["prevent_gibbing_dead"] ? "Enabled" : "Disabled"] \
+	<a href='?src=\ref[src];toggle_prevent_gibbing_dead=1'>\[TOGGLE\]</a>"
 
-	data += "<br>Prevent Hivemind Events Below 15 Pop: [GLOB.hive_data_bool["pop_lock"] ? "Enabled" : "Disabled"] \
+	data += "<br>Prevent Hivemind Events Below 7 Pop: [GLOB.hive_data_bool["pop_lock"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_pop_lock=1'>\[TOGGLE\]</a>"
 
-	data += "<br>Prevent Blob Events Below 7 Pop: [GLOB.hive_data_bool["slime_pop_lock"] ? "Enabled" : "Disabled"] \
+	data += "<br>Prevent Blob Events Below 4 Pop: [GLOB.hive_data_bool["slime_pop_lock"] ? "Enabled" : "Disabled"] \
 	<a href='?src=\ref[src];toggle_slime_pop_lock=1'>\[TOGGLE\]</a>"
 
 	data += "</td></tr></table>"
@@ -204,8 +204,8 @@ GLOBAL_VAR_INIT(hivemind_panel, new /datum/hivemind_panel)
 	if(href_list["toggle_tyrant_gameover"])
 		GLOB.hive_data_bool["tyrant_death_kills_hive"] = !GLOB.hive_data_bool["tyrant_death_kills_hive"]
 
-	if(href_list["toggle_gibbing_dead"])
-		GLOB.hive_data_bool["gibbing_dead"] = !GLOB.hive_data_bool["gibbing_dead"]
+	if(href_list["toggle_prevent_gibbing_dead"])
+		GLOB.hive_data_bool["prevent_gibbing_dead"] = !GLOB.hive_data_bool["prevent_gibbing_dead"]
 
 	if(href_list["toggle_pop_lock"])
 		GLOB.hive_data_bool["pop_lock"] = !GLOB.hive_data_bool["pop_lock"]

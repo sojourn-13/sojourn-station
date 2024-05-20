@@ -68,6 +68,7 @@
 /obj/effect/mob_spawn/human/exl_civ/special(mob/living/H)
 	var/obj/item/implant/excelsior/E = new /obj/item/implant/excelsior(H)
 	E.install(H, BP_HEAD, H)
+	H.faction = "excelsior"
 
 /obj/effect/mob_spawn/human/exl_civ/armored
 	outfit = /decl/hierarchy/outfit/antagonist/mercenary/excelsior/equipped
@@ -190,17 +191,16 @@
 
 /obj/effect/mob_spawn/human/lonestar_ert
 	name = "deployment sleeper"
-	desc = "A sleeper, with an unconscious body inside. The occupant seems to be an Auditor."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Lonestar IA Agent."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/lss_ert
-	ghost_role_perks = list(PERK_SI_SCI, PERK_CHEMIST, PERK_SURE_STEP, PERK_TRUE_NAME)
-	short_desc = "You are an Auditor."
-	flavour_text = "The upper colony has done something thats not upto code, whether it be LSS, SI or any other department your job is to look into any matter that HC tells you about. \
-	You're not a cop, you're not medical personal you're here to correct some papers not criminals."
-	assignedrole = "Guild Emergency Personnel"
-	title = "Guild Emergency Personnel"
+	ghost_role_perks = list(PERK_NO_OBFUSCATION, PERK_MARKET_PROF, PERK_TRUE_NAME)
+	short_desc = "You are an Internal Affairs Agent."
+	flavour_text = "Lonestar's surface operations have run into some troubles, and your job is to handle them. Speak to those involved, make decisions, keep the profits flowing."
+	assignedrole = "Lonestar Internal Affairs Agent"
+	title = "Lonestar Internal Affairs Agent"
 	stat_modifiers = list(
 		STAT_ROB = 45,
 		STAT_TGH = 45,

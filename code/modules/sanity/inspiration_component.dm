@@ -15,7 +15,7 @@
 	//perk
 	var/datum/perk/perk
 	//If we after we are used set are stats to 0
-	var/kill_stats = FALSE
+	var/self_destroy = FALSE
 
 /// Statistics can be a list (static) or a callback to a proc that returns a list (of the same format)
 /datum/component/inspiration/Initialize(statistics, datum/perk/new_perk, kill_stats)
@@ -28,7 +28,7 @@
 	else
 		return COMPONENT_INCOMPATIBLE
 	if(kill_stats)
-		kill_stats = TRUE
+		self_destroy = TRUE
 	if(new_perk)
 		perk = new_perk
 	else
@@ -142,7 +142,7 @@
 			var/datum/perk/oddity/OD = GLOB.all_perks[perk]
 			to_chat(user, SPAN_NOTICE("Instinct tells you more about this anomaly: <span style='color:orange'>[OD]. [OD.desc]</span>"))
 
-	if(kill_stats)
+	if(self_destroy)
 		to_chat(user, SPAN_NOTICE("<span style='color:angelsay'>An unstable decaying aura radiates from this one. It seems this type will one be useable once...</span>"))
 
 

@@ -29,7 +29,7 @@
 		FULL_AUTO_200
 		)
 	serial_type = "NM"
-	gun_parts = list(/obj/item/part/gun/frame/strelki = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
+	gun_parts = list(/obj/item/part/gun/frame/discountnordwind = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/srifle = 1)
 
 /obj/item/gun/projectile/automatic/duty/update_icon()
 	..()
@@ -49,3 +49,13 @@
 
 //SNOWFLAKE CODE
 //TODO make all projectile guns work like this with a flag
+
+/obj/item/part/gun/frame/discountnordwind
+	name = "Blackshield rifle frame"
+	desc = "A blackshield branded rifle frame used for their more 'modern' firearms. Can be assembled into a Duty or a Watchtower"
+	icon_state = "frame_serbrifle"
+	result = /obj/item/gun/projectile/automatic/duty
+	gripvars = list(/obj/item/part/gun/grip/black, /obj/item/part/gun/grip/serb)
+	mechanismvar = /obj/item/part/gun/mechanism/autorifle
+	barrelvars = list(/obj/item/part/gun/barrel/srifle, /obj/item/part/gun/barrel/lrifle)
+	resultvars = list(/obj/item/gun/projectile/automatic/duty, /obj/item/gun/projectile/automatic/nordwind/watchtower)

@@ -1,22 +1,83 @@
 // Generates a simple HTML crew manifest for use in various places
 
-//Intended for open manifest in separate window
-/proc/show_manifest(var/mob/user, var/datum/src_object = user, nano_state = GLOB.default_state)
-	var/list/data = list()
-	data["crew_manifest"] = html_crew_manifest(TRUE)
+/datum/tgui_module/manifest
+	name = "Manifest"
+	tgui_id = "CrewManifest"
 
-	var/datum/nanoui/ui = SSnano.try_update_ui(user, src_object, "manifest", null, data, TRUE)
-	if (!ui)
-		ui = new(user, src_object, "manifest", "crew_manifest.tmpl", "Crew Manifest", 450, 600, state = nano_state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
+/datum/tgui_module/manifest/ui_data(mob/user)
+	var/list/data = list()
+
+	var/list/dept_data = list(
+		list("key" = "heads", "flag" = COMMAND),
+		list("key" = "sec", "flag" = SECURITY),
+		list("key" = "bls", "flag" = BLACKSHIELD),
+		list("key" = "med", "flag" = MEDICAL),
+		list("key" = "sci", "flag" = SCIENCE),
+		list("key" = "chr", "flag" = CHURCH),
+		list("key" = "sup", "flag" = LSS),
+		list("key" = "eng", "flag" = ENGINEERING),
+		list("key" = "pro", "flag" = PROSPECTORS),
+		list("key" = "civ", "flag" = CIVILIAN),
+		list("key" = "bot", "flag" = MISC),
+		list("key" = "ldg", "flag" = LODGE)
+	)
+
+	var/list/manifest = list()
+	for(var/datum/computer_file/report/crew_record/CR in GLOB.all_crew_records)
+		var/list/crew_data = list()
+
+		var/name = CR.get_name()
+		crew_data["name"] = name
+		
+		var/rank = CR.get_job()
+		crew_data["rank"] = rank
+
+		var/datum/job/job = SSjob.occupations_by_name[rank]
+
+		var/list/departments = list()
+		if(istype(job))
+			for(var/list/department in dept_data)
+				if(job.department_flag & department["flag"])
+					departments += department["key"]
+		crew_data["departments"] = departments
+
+		for(var/datum/mind/M in SSticker.minds)
+			if(M.name == name)
+				var/status = M.manifest_status(CR)
+				if(status)
+					crew_data["status"] = status
+				break
+
+		manifest += list(crew_data)
+
+	for(var/mob/living/silicon/ai/ai in SSmobs.mob_list)
+		manifest += list(list("name" = ai.name, "rank" = "Artificial Intelligence", "departments" = list("bot")))
+
+	for(var/mob/living/silicon/robot/robot in SSmobs.mob_list)
+		// No combat/syndicate cyborgs, no drones.
+		if(robot.module && robot.module.hide_on_manifest)
+			continue
+
+		manifest += list(list("name" = robot.name, "rank" = "[robot.modtype] [robot.braintype]", "departments" = list("bot")))
+	
+	data["manifest"] = manifest
+
+	return data
+
+/datum/tgui_module/manifest/ui_state(mob/user)
+	return GLOB.always_state
+
+//Intended for open manifest in separate window
+/proc/show_manifest(mob/user)
+	var/datum/tgui_module/manifest/manifest = new(user)
+	manifest.ui_interact(user)
 
 /proc/html_crew_manifest(var/monochrome, var/OOC)
 	var/list/dept_data = list(
 
 		list("names" = list(), "header" = "Command Staff", "flag" = COMMAND),
-		list("names" = list(), "header" = "Marshal and Blackshield", "flag" = SECURITY),
+		list("names" = list(), "header" = "Security - Marshals", "flag" = SECURITY),
+		list("names" = list(), "header" = "Security - Blackshield", "flag" = BLACKSHIELD),
 		list("names" = list(), "header" = "Soteria Medical", "flag" = MEDICAL),
 		list("names" = list(), "header" = "Soteria Research", "flag" = SCIENCE),
 		list("names" = list(), "header" = "Church of the Absolute", "flag" = CHURCH),
@@ -25,7 +86,8 @@
 		list("names" = list(), "header" = "Prospector", "flag" = PROSPECTORS),
 		list("names" = list(), "header" = "Civilian", "flag" = CIVILIAN),
 		list("names" = list(), "header" = "Miscellaneous", "flag" = MISC),
-		list("names" = list(), "header" = "Silicon")
+		list("names" = list(), "header" = "Silicon"),
+		list("names" = list(), "header" = "Lodge", "flag" = LODGE)
 	)
 	var/list/misc //Special departments for easier access
 	var/list/bot
@@ -141,13 +203,15 @@
 		"heads" = filtered_nano_crew_manifest(command_positions),\
 		"sci" = filtered_nano_crew_manifest(science_positions),\
 		"sec" = filtered_nano_crew_manifest(security_positions),\
+		"bls" = filtered_nano_crew_manifest(blackshield_positions),\
 		"eng" = filtered_nano_crew_manifest(engineering_positions),\
 		"med" = filtered_nano_crew_manifest(medical_positions),\
 		"sup" = filtered_nano_crew_manifest(cargo_positions),\
 		"chr" = filtered_nano_crew_manifest(church_positions),\
 		"pro" = filtered_nano_crew_manifest(prospector_positions),\
 		"bot" = silicon_nano_crew_manifest(nonhuman_positions),\
-		"civ" = filtered_nano_crew_manifest(civilian_positions)\
+		"civ" = filtered_nano_crew_manifest(civilian_positions),\
+		"ldg" = filtered_nano_crew_manifest(lodge_positions)\
 		)
 
 /proc/flat_nano_crew_manifest()

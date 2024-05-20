@@ -62,6 +62,12 @@
 	var/list/zoom_factors = list()//How much to scope in when using weapon,
 	var/list/initial_zoom_factors = list()
 	var/psigun = 0
+	//For projectile guns mostly but we put them here in the base for the tool wheel
+	var/saw_off = FALSE			//Can be sawn off?
+	var/sawn = null				//what it becomes when sawn down, accepts a typepath.
+	var/wrench_intraction = FALSE
+	var/plusing_intraction = FALSE
+
 /*
 
 NOTE: For the sake of standardizing guns and extra vision range, here's a general guideline for zooming factor.
@@ -390,41 +396,86 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			to_chat(user, "<span class='info'>Projectile Serial Calibration: ERROR.</span>")
 
 
-	if(!istool(I) || user.a_intent != I_HURT)
-		return FALSE
+	var/list/usable_qualities = list()
+	if(saw_off)
+		usable_qualities.Add(QUALITY_SAWING)
 
-	//UNDETECTABLE CRIIIIMEEEE!!!!!!!
-	if(I.get_tool_quality(QUALITY_HAMMERING) && serial_type)
-		user.visible_message(SPAN_NOTICE("[user] begins chiseling \the [name]'s serial numbers away."), SPAN_NOTICE("You begin removing the serial numbers from \the [name]."))
-		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_MEC))
-			user.visible_message(SPAN_DANGER("[user] removes \the [name]'s serial numbers."), SPAN_NOTICE("You successfully remove the serial numbers from \the [name]."))
-			serial_type = "INDEX"
-			serial_type += "-[generate_gun_serial(pick(3,4,5,6,7,8))]"
-			serial_shown = FALSE
-			return FALSE
+	if(!psigun && gun_parts)
+		usable_qualities.Add(QUALITY_WIRE_CUTTING)
 
-	if(I.get_tool_quality(QUALITY_WIRE_CUTTING))
-		if(psigun)
-			to_chat(user, SPAN_NOTICE("You can't dismantle [src] as it has no gun parts! How strange..."))
-			return FALSE
-		if(!gun_parts)
-			to_chat(user, SPAN_NOTICE("You can't dismantle [src], it is far too complicated!"))
-			return FALSE
+	if(serial_type)
+		usable_qualities.Add(QUALITY_HAMMERING)
+
+	if(wrench_intraction)
+		usable_qualities.Add(QUALITY_BOLT_TURNING)
+
+	if(plusing_intraction)
+		usable_qualities.Add(QUALITY_PULSING)
+
+	if(usable_qualities)
+		var/tool_type = I.get_tool_type(user, usable_qualities, src)
+		switch(tool_type)
+
+			if(QUALITY_SAWING)
+				to_chat(user, SPAN_NOTICE("You begin to saw off the stock and barrel of \the [src]."))
+				//We got to know if were loaded or not seeings how this works
+				if(istype(src, /obj/item/gun/projectile))
+					var/obj/item/gun/projectile/MLG = src
+					if(MLG.ammo_magazine && MLG.ammo_magazine.stored_ammo && !MLG.ammo_magazine.stored_ammo.len)
+						to_chat(user, SPAN_WARNING("You should unload \the [src] first!"))
+						return
+				if(cell)
+					to_chat(user, SPAN_WARNING("You should unload \the [src] first!"))
+					return
+				if(silenced)
+					to_chat(user, SPAN_WARNING("You should remove the silencer first!"))
+					return
+				if(saw_off && I.use_tool(user, src, WORKTIME_LONG, QUALITY_SAWING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+					qdel(src)
+					new sawn(usr.loc)
+					to_chat(user, SPAN_WARNING("You cut down the stock, barrel, and anything else nice from \the [src], ruining a perfectly good weapon for no good reason!"))
+				return
+
+			if(QUALITY_WIRE_CUTTING)
+				user.visible_message(SPAN_NOTICE("[user] begins breaking apart [src]."), SPAN_WARNING("You begin breaking apart [src] for gun parts."))
+				if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					user.visible_message(SPAN_NOTICE("[user] breaks [src] apart for gun parts!"), SPAN_NOTICE("You break [src] apart for gun parts."))
+					for(var/target_item in gun_parts)
+						var/amount = gun_parts[target_item]
+						while(amount)
+							if(ispath(target_item, /obj/item/part/gun/frame))
+								var/obj/item/part/gun/frame/F = new target_item(get_turf(src))
+								F.serial_type = serial_type
+							else
+								new target_item(get_turf(src))
+							amount--
+					qdel(src)
+				return
+
+			//UNDETECTABLE CRIIIIMEEEE!!!!!!!
+			if(QUALITY_HAMMERING)
+				user.visible_message(SPAN_NOTICE("[user] begins chiseling \the [name]'s serial numbers away."), SPAN_NOTICE("You begin removing the serial numbers from \the [name]."))
+				if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					user.visible_message(SPAN_DANGER("[user] removes \the [name]'s serial numbers."), SPAN_NOTICE("You successfully remove the serial numbers from \the [name]."))
+					serial_type = "INDEX"
+					serial_type += "-[generate_gun_serial(pick(3,4,5,6,7,8))]"
+					serial_shown = FALSE
+					return
+
+			if(QUALITY_BOLT_TURNING)
+				wrench_intraction(I, user)
+				return
+
+			if(QUALITY_PULSING)
+				plusing_intraction(I, user)
+				return
+
+			if(ABORT_CHECK)
+				return
 
 
-		user.visible_message(SPAN_NOTICE("[user] begins breaking apart [src]."), SPAN_WARNING("You begin breaking apart [src] for gun parts."))
-		if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
-			user.visible_message(SPAN_NOTICE("[user] breaks [src] apart for gun parts!"), SPAN_NOTICE("You break [src] apart for gun parts."))
-			for(var/target_item in gun_parts)
-				var/amount = gun_parts[target_item]
-				while(amount)
-					if(ispath(target_item, /obj/item/part/gun/frame))
-						var/obj/item/part/gun/frame/F = new target_item(get_turf(src))
-						F.serial_type = serial_type
-					else
-						new target_item(get_turf(src))
-					amount--
-			qdel(src)
+	else
+		..()
 
 /obj/item/gun/proc/dna_check(user)
 	if(dna_compare_samples)
@@ -984,7 +1035,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 /obj/item/gun/CtrlShiftClick(mob/user)
 	. = ..()
 
-	var/able = can_interact(user)
+	var/able = can_fold(user)
 
 	if(able == 1)
 		return
@@ -995,7 +1046,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	fold(span_chat = TRUE)
 
-/obj/item/gun/can_interact(mob/user)
+/obj/item/gun/proc/can_fold(mob/user)
 	if((!ishuman(user) && (loc != user)) || user.stat || user.restrained())
 		return 1
 	if(istype(loc, /obj/item/storage))
@@ -1006,11 +1057,11 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(folding_stock)
 		if(!folded)
 			if(span_chat)
-				to_chat(usr, SPAN_NOTICE("You unfold the stock on \the [src]."))
+				to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
 			folded = TRUE
 		else
 			if(span_chat)
-				to_chat(usr, SPAN_NOTICE("You fold the stock on \the [src]."))
+				to_chat(usr, SPAN_NOTICE("You unfold the stock on \the [src]."))
 			folded = FALSE
 	refresh_upgrades() //First we grab our upgrades to not do anything silly
 	update_icon() //Likely has alt icons for being folded or not so we refresh our icon
@@ -1043,84 +1094,147 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	toggle_safety(usr)
 
-/obj/item/gun/nano_ui_data(mob/user)
+/obj/item/gun/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ItemStats", name)
+		ui.open()
+
+/obj/item/gun/ui_assets(mob/user)
+	return list(
+		get_asset_datum(/datum/asset/simple/tool_upgrades)
+	)
+
+/obj/item/gun/ui_data(mob/user)
 	var/list/data = list()
-	data["damage_multiplier"] = damage_multiplier
-	data["pierce_multiplier"] = pierce_multiplier
-	data["penetration_multiplier"] = penetration_multiplier + 1
-	data["proj_agony_multiplier"] = proj_agony_multiplier
 
-	data["fire_delay"] = fire_delay //time between shots, in ms
-	data["burst"] = burst //How many shots are fired per click
-	data["burst_delay"] = burst_delay //time between shot in burst mode, in ms
+	var/list/stats = list()
 
-	data["force"] = force
-	data["force_max"] = initial(force)*10
-	data["armor_divisor"] = armor_divisor
-	data["muzzle_flash"] = muzzle_flash
+	var/list/weapon_stats = list()
 
+	if(damage_multiplier != 1)
+		weapon_stats += list(list("name" = "Projectile Damage Multiplier", "type" = "AnimatedNumber", "value" = damage_multiplier, "unit" = "x"))
+	if(pierce_multiplier != 0)
+		weapon_stats += list(list("name" = "Projectile Wall Penetration", "type" = "AnimatedNumber", "value" = pierce_multiplier, "unit" = " walls"))
+	if(penetration_multiplier != 1)
+		weapon_stats += list(list("name" = "Projectile AP Multiplier", "type" = "AnimatedNumber", "value" = penetration_multiplier, "unit" = "x"))
+	if(proj_agony_multiplier != 1)
+		weapon_stats += list(list("name" = "Projectile Agony Multiplier", "type" = "AnimatedNumber", "value" = proj_agony_multiplier, "unit" = "x"))
+	weapon_stats += list(list("name" = "Fire Delay", "type" = "AnimatedNumber", "value" = fire_delay, "unit" = " ms"))
+	weapon_stats += list(list("name" = "Muzzle Flash Range", "type" = "AnimatedNumber", "value" = muzzle_flash, "unit" = " tiles"))
+	if(burst > 1)
+		weapon_stats += list(list("name" = "Rounds Per Burst", "type" = "AnimatedNumber", "value" = burst, "unit" = " rounds"))
+		weapon_stats += list(list("name" = "Burst Delay", "type" = "AnimatedNumber", "value" = burst_delay, "unit" = " ms"))
+
+	stats["Weapon Stats"] = weapon_stats
+
+	var/list/recoil_stats = list()
+
+	var/list/recoil_list = recoil.getFancyList()
 	var/total_recoil = 0
-	var/list/recoilList = recoil.getFancyList()
-	if(recoilList.len)
-		var/list/recoil_vals = list()
-		for(var/i in recoilList)
-			if(recoilList[i])
-				recoil_vals += list(list(
+	for(var/i in recoil_list)
+		total_recoil += recoil_list[i]
+
+	if(total_recoil == 0)
+		recoil_stats += list(list("name" = "Recoil", "type" = "String", "value" = "Has no kickback."))
+	else
+		recoil_stats += list(list("name" = "Total Recoil", "type" = "AnimatedNumber", "value" = total_recoil, "unit" = " degrees"))
+		for(var/i in recoil_list)
+			if(recoil_list[i] > 0)
+				recoil_stats += list(list(
 					"name" = i,
-					"value" = recoilList[i]
-					))
-				total_recoil += recoilList[i]
-		data["recoil_info"] = recoil_vals
+					"type" = "ProgressBar",
+					"value" = recoil_list[i],
+					"unit" = " degrees",
+					"max" = total_recoil,
+					"ranges" = list(
+						"good" = list(0, 0.5),
+						"average" = list(0.51, 1.5),
+						"bad" = list(1.5, 100)
+					)
+				))
 
-	data["total_recoil"] = total_recoil
-	data["extra_volume"] = extra_bulk
+	stats["Recoil Stats"] = recoil_stats
 
-	data["upgrades_max"] = max_upgrades
+	var/list/melee_stats = list()
 
-	data += ui_data_projectile(get_dud_projectile())
+	melee_stats += list(list("name" = "Melee Capabilities", "type" = "ProgressBar", "value" = force, "max" = initial(force) * 10))
+	melee_stats += list(list("name" = "Armor Penetration", "type" = "ProgressBar", "value" = armor_penetration, "max" = 100, "unit" = "%"))
 
-	if(firemodes.len)
-		var/list/firemodes_info = list()
-		for(var/i = 1 to firemodes.len)
-			data["firemode_count"] += 1
-			var/datum/firemode/F = firemodes[i]
-			var/list/firemode_info = list(
-				"index" = i,
-				"current" = (i == sel_mode),
-				"name" = F.name,
-				"desc" = F.desc,
-				"burst" = F.settings["burst"],
-				"fire_delay" = F.settings["fire_delay"],
-				"move_delay" = F.settings["move_delay"],
-				)
-			if(F.settings["projectile_type"])
-				var/proj_path = F.settings["projectile_type"]
-				var/list/proj_data = ui_data_projectile(new proj_path)
-				firemode_info += proj_data
-			firemodes_info += list(firemode_info)
-		data["firemode_info"] = firemodes_info
+	stats["Physical Details"] = melee_stats
 
-	if(item_upgrades.len)
-		data["attachments"] = list()
-		for(var/atom/A in item_upgrades)
-			data["attachments"] += list(list("name" = A.name, "icon" = SSassets.transport.get_asset_url(A)))
+	stats["Ammo Stats"] = ui_data_projectile_stats(get_dud_projectile())
 
+	var/list/firemodes_data = list()
+
+	var/i = 1
+	for(var/datum/firemode/F in firemodes)
+		var/list/firemode_stats = list()
+		if(F.settings["burst"])
+			firemode_stats += list(list("name" = "Rounds Per Burst", "type" = "AnimatedNumber", "value" = F.settings["burst"], "unit" = " rounds"))
+		if(F.settings["fire_delay"])
+			firemode_stats += list(list("name" = "Fire Delay", "type" = "AnimatedNumber", "value" = F.settings["fire_delay"], "unit" = " ms"))
+		if(F.settings["move_delay"])
+			firemode_stats += list(list("name" = "Move Delay", "type" = "AnimatedNumber", "value" = F.settings["move_delay"], "unit" = " ms"))
+
+		var/list/firemode_info = list(
+			"index" = i,
+			"name" = F.name,
+			"desc" = F.desc,
+			"stats" = firemode_stats
+		)
+
+		if(F.settings["projectile_type"])
+			var/proj_path = F.settings["projectile_type"]
+			firemode_info["projectile"] = ui_data_projectile_stats(new proj_path)
+
+		firemodes_data += list(firemode_info)
+		i += 1
+
+	data["firemodes"] = list(
+		"sel_mode" = sel_mode,
+		"modes" = firemodes_data
+	)
+
+	data["max_upgrades"] = max_upgrades
+	var/list/attachments = list()
+	for(var/atom/A in item_upgrades)
+		attachments += list(list("name" = A.name, "icon" = SSassets.transport.get_asset_url(sanitizeFileName("[A.type].png"))))
+	data["attachments"] = attachments
+
+	data["stats"] = stats
 	return data
 
-/obj/item/gun/Topic(href, href_list, var/datum/nano_topic_state/state)
-	if(..(href, href_list, state))
-		return 1
+/obj/item/gun/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
 
-	if(href_list["firemode"])
-		sel_mode = text2num(href_list["firemode"])
-		set_firemode(sel_mode)
-		return 1
+	switch(action)
+		if("firemode")
+			sel_mode = text2num(params["index"])
+			set_firemode(sel_mode)
+			return TRUE
 
 //Returns a projectile that's not for active usage.
 /obj/item/gun/proc/get_dud_projectile()
 	return null
 
-/obj/item/gun/proc/ui_data_projectile(obj/item/projectile/P)
+/obj/item/gun/proc/ui_data_projectile_stats(obj/item/projectile/P)
+	var/list/data = list()
+	if(!P)
+		return data
+
+	data += list(list("name" = "Projectile Type", "type" = "String", "value" = P.name))
+	data += list(list("name" = "Overall Damage", "type" = "String", "value" = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()))
+	data += list(list("name" = "Overall AP", "type" = "String", "value" = P.armor_penetration * penetration_multiplier))
+	data += list(list("name" = "Overall Pain", "type" = "String", "value" = P.agony * proj_agony_multiplier))
+	data += list(list("name" = "Wound Scale", "type" = "String", "value" = P.wounding_mult))
+	data += list(list("name" = "Recoil Multiplier", "type" = "String", "value" = P.recoil))
+
+	return data
+
+/obj/item/gun/proc/ui_data_projectile(var/obj/item/projectile/P)
 	if(!P)
 		return list()
 	var/list/data = list()
@@ -1205,7 +1319,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	update_icon()
 	//then update any UIs with the new stats
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 
 /obj/item/gun/zoom(tileoffset, viewsize)
 	..()
@@ -1226,3 +1340,11 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	if(!sharp)
 		gun_tags |= SLOT_BAYONET
 */
+
+//Used for swapping some guns to have an alt "hidden" mode.
+/obj/item/gun/proc/wrench_intraction(obj/item/I, mob/user)
+	return
+
+//Used for swapping some guns to have an alt "hidden" mode.
+/obj/item/gun/proc/plusing_intraction(obj/item/I, mob/user)
+	return

@@ -42,10 +42,18 @@
 
 /obj/item/device/core_sampler/proc/sample_item(var/item_to_sample, var/mob/user as mob)
 	var/datum/geosample/geo_data
+	var/obj/item/stack/ore/strangerock/SR
+
+	if(istype(item_to_sample, /obj/item/stack/ore/strangerock))
+		SR = item_to_sample
+		geo_data = SR.geologic_data
+
 	if(istype(item_to_sample, /turf/simulated/mineral))
 		var/turf/simulated/mineral/T = item_to_sample
 		T.geologic_data.UpdateNearbyArtifactInfo(T)
 		geo_data = T.geologic_data
+		if(SR)
+			geo_data.RelicInfo(SR.method)
 
 	if(geo_data)
 		if(filled_bag)
@@ -65,6 +73,8 @@
 			var/obj/item/rocksliver/R = new()
 			R.geological_data = geo_data
 			R.loc = filled_bag
+			if(SR)
+				R.method_hint = SR.method
 
 			//update the sample bag
 			filled_bag.icon_state = "evidence"

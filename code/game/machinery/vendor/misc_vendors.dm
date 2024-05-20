@@ -150,6 +150,8 @@
 					/obj/item/scale = 12,
 					/obj/item/bone_counter = 12,
 					/obj/item/pack_card_carp = 90,
+					/obj/item/pack_card_carp/flyers_booster_pack = 15,
+					/obj/item/pack_card_carp/rare_booster_pack = 5,
 					/obj/item/cardholder = 40,
 					/obj/item/cardholder/squirl = 20,
 					/obj/item/cardholder/ratbox = 20,
@@ -189,6 +191,8 @@
 					/obj/item/scale = 65,
 					/obj/item/bone_counter = 85,
 					/obj/item/pack_card_carp = 35,
+					/obj/item/pack_card_carp/flyers_booster_pack = 75,
+					/obj/item/pack_card_carp/rare_booster_pack = 100,
 					/obj/item/cardholder = 42,
 					/obj/item/cardholder/squirl = 30,
 					/obj/item/cardholder/ratbox = 30,
@@ -319,3 +323,26 @@
 		/obj/item/reagent_containers/syringe/stim/bouncer = 3,
 		/obj/item/reagent_containers/syringe/stim/violence = 3
 		)
+
+
+/obj/machinery/vending/neko
+	name = "Neko vending machine"
+	desc = "A machine filled with every neko related items you can imagine."
+	icon_state = "neko"
+	product_slogans = "Supporting nekos since 1984!"
+	product_ads = "For all cat-boys and cat-girls!;release your inner tiger!"
+	products = list(/obj/item/storage/box/costume/nekomaid = 3,
+					/obj/item/clothing/head/costume/animal/kitty = 10,
+					/obj/item/toy/plushie/cat = 10,
+					/obj/item/toy/plushie/kitten = 5,
+					/obj/item/paper/card/cat = 10 )
+	prices = list(/obj/item/storage/box/costume/nekomaid = 200,
+					/obj/item/clothing/head/costume/animal/kitty =20,
+					/obj/item/toy/plushie/cat = 10,
+					/obj/item/toy/plushie/kitten = 10,
+					/obj/item/paper/card/cat = 10,
+					/mob/living/simple_animal/cat/kitten = 500 )
+	contraband = list(/mob/living/simple_animal/cat/kitten = 1)
+	idle_power_usage = 50
+	auto_price = FALSE
+	always_open = TRUE

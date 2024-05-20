@@ -317,6 +317,16 @@
 				data += " - Hyperspectral imaging reveals exotic energy wavelength detected with ID: [G.artifact_id]<br>"
 				data += " - Fourier transform analysis on anomalous energy absorption indicates energy source located inside emission radius of [G.artifact_distance]m<br>"
 
+			if(G.relic_method != null)
+				switch(G.relic_method)
+					if(0)
+						data += " - Packed Sand Around Geo: Use Welder to extract Geo<br>"
+					if(1)
+						data += " - Light Cobble Around Geo: Dig cobble to extract Geo<br>"
+					if(2)
+						data += " - Hard Rocks Around Geo: Carefully Excavate to extract Geo<br>"
+
+
 		if(!anom_found)
 			data += " - No anomalous data<br>"
 

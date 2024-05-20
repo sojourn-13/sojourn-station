@@ -19,7 +19,7 @@
 		/obj/item/stock_parts/scanning_module/one_star = 1,
 		/obj/item/cell/large = 1
 	)
-	var/target_superior_mobs = FALSE
+	var/should_target_players = TRUE
 
 /obj/item/circuitboard/os_turret/laser
 	build_name = "Greyson Positronic laser turret"

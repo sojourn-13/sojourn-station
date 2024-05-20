@@ -59,35 +59,39 @@
 	name = "sliced vascular layer"
 
 // Burn
-
+// Gonna be avoiding infections here. Far more likely you get welding flare then a direct laser to the eyes. Makes little sense in some cases but easier then reworking welding!
 /datum/component/internal_wound/organic/eyes_burn
 	treatments_item = list(/obj/item/stack/medical/ointment/advanced = 2)
 	treatments_tool = list(QUALITY_LASER_CUTTING = FAILCHANCE_HARD)
 	treatments_chem = list(CE_EYEHEAL = 1)
-	scar = /datum/component/internal_wound/organic/necrosis_start
 	severity = 0
 	severity_max = 3
-	next_wound = /datum/component/internal_wound/organic/infection
 	hal_damage = IWOUND_MEDIUM_DAMAGE
 	diagnosis_difficulty = STAT_LEVEL_EXPERT
-
-/datum/component/internal_wound/organic/eyes_burn/burnt
-	name = "burnt external fibrous layer"
-
-/datum/component/internal_wound/organic/eyes_burn/char
-	name = "charred sclera"
 
 /datum/component/internal_wound/organic/eyes_burn/scorch
 	name = "scorched tissue"
 	treatments_tool = list(QUALITY_RETRACTING = FAILCHANCE_HARD)
-	//scar = /datum/component/internal_wound/organic/eyes_deep_burn
+	next_wound = /datum/component/internal_wound/organic/eyes_burn/eyes_deep_burn
 
 /datum/component/internal_wound/organic/eyes_burn/eyes_deep_burn //stage 2
 	name = "scorched deep tissue"
-	severity = 3 // starts with max damage as it is a second stage
+	severity = 2 // starts with high damage as it is a second stage
 	severity_max = 3
+	next_wound = /datum/component/internal_wound/organic/eyes_special
+
+/datum/component/internal_wound/organic/eyes_special
 	treatments_item = list(/obj/item/stack/medical/ointment/advanced = 2)
+	treatments_tool = list(QUALITY_CLAMPING = FAILCHANCE_HARD)
 	treatments_chem = list(CE_EYEHEAL = 1)
+	severity = 0
+	severity_max = 8 //slow death of eyes like infection but we dont want it spreading elsewhere!
+	progression_threshold = IWOUND_10_MINUTES //very slow! I hope
+
+/datum/component/internal_wound/organic/eyes_special/photokeratitis
+	name = "photokeratitis"
+/datum/component/internal_wound/organic/eyes_special/keratoconus
+	name = "keratoconus"
 
 // Tox (toxins)
 /datum/component/internal_wound/organic/eyes_poisoning

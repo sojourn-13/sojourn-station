@@ -83,6 +83,8 @@
 	name = "ammunition packet (9mm laser)"
 	icon_state = "pistol_si"
 	ammo_type = /obj/item/ammo_casing/pistol_35/laser
+	matter = list(MATERIAL_CARDBOARD = 1)
+	max_ammo = 90
 
 /obj/item/ammo_magazine/ammobox/pistol_35/biomatter
 	name = "ammunition packet (9mm Caustic)"
@@ -164,6 +166,8 @@
 	name = "ammunition packet (10mm Magnum Laser)"
 	icon_state = "magnum_si"
 	ammo_type = /obj/item/ammo_casing/magnum_40/laser
+	matter = list(MATERIAL_CARDBOARD = 1)
+	max_ammo = 70
 
 /obj/item/ammo_magazine/ammobox/magnum_40/biomatter
 	name = "ammunition packet (10mm Magnum Caustic)"
@@ -285,6 +289,8 @@
 	name = "ammunition packet (6.5mm Carbine laser)"
 	icon_state = "clrifle_si"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/laser
+	matter = list(MATERIAL_CARDBOARD = 1)
+	max_ammo = 120
 
 /obj/item/ammo_magazine/ammobox/light_rifle_257/scrap
 	name = "ammunition packet (old 6.5mm Carbine)"
@@ -335,7 +341,7 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
 /obj/item/ammo_magazine/ammobox/rifle_75/hv
-	name = "ammunition box (7.62mm Rifle High-Velocity)"
+	name = "ammunition box (7.62mm Rifle APDS)"
 	icon_state = "boxhrifle-hv"
 	desc = "A box of 7.62mm rifle ammunition. 180ct, high-velocity rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
@@ -360,7 +366,7 @@
 	ammo_type = /obj/item/ammo_casing/rifle_75/practice
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/hv
-	name = "ammunition packet (7.62mm Rifle high-velocity)"
+	name = "ammunition packet (7.62mm Rifle APDS)"
 	icon_state = "rifle_hv"
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
 
@@ -383,6 +389,8 @@
 	name = "ammunition packet (7.62mm Rifle laser)"
 	icon_state = "srifle_si"
 	ammo_type = /obj/item/ammo_casing/rifle_75/laser
+	matter = list(MATERIAL_CARDBOARD = 1)
+	max_ammo = 90
 
 
 ////snowflake 10x24////
@@ -405,6 +413,29 @@
 	ammo_type = /obj/item/ammo_casing/c10x24
 	max_ammo = 80 //6.6 reloads of the SWAT, 2 of the bond, almost 1 full pulse mag
 
+// .223 laser
+
+/obj/item/ammo_magazine/ammobox/laser_223/box
+	name = "ammunition box (5.56mm L)"
+	icon_state = "box223-laser"
+	desc = "A large box of 5.56mm laser round."
+	matter = list(MATERIAL_PLASTIC = 1)
+	caliber = CAL_SCI
+	ammo_type = /obj/item/ammo_casing/laser_223
+	max_ammo = 200
+/*
+/obj/item/ammo_magazine/ammobox/laser_223/box/ap
+	name = "ammunition box (5.56mm PL)"
+	icon_state = "box223-ap-laser"
+	ammo_type = /obj/item/ammo_casing/laser_223/ap
+	max_ammo = 200
+
+/obj/item/ammo_magazine/ammobox/laser_223/box/lethal
+	name = "ammunition box (5.56mm DL)"
+	icon_state = "box223-lethal-laser"
+	ammo_type = /obj/item/ammo_casing/laser_223/lethal
+	max_ammo = 200
+*/
 //// 12mm heavy pistol
 
 /obj/item/ammo_magazine/ammobox/kurtz_50
@@ -447,6 +478,8 @@
 	name = "ammunition box (12mm laser)"
 	icon_state = "box50-si"
 	ammo_type = /obj/item/ammo_casing/kurtz_50/laser
+	matter = list(MATERIAL_CARDBOARD = 1)
+	max_ammo = 50
 
 //// 14.5×114mm ////
 
@@ -502,7 +535,7 @@
 	name = "ammunition packet (8.6mm ball)"
 	icon_state = "hrifle"
 	desc = "A box of 8.6x70mm heavy rifle ammunition."
-	matter = list(MATERIAL_STEEL = 15, MATERIAL_CARDBOARD = 1)
+	matter = list(MATERIAL_STEEL = 5, MATERIAL_CARDBOARD = 1)
 	caliber = CAL_HRIFLE
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
 	max_ammo = 40
@@ -542,6 +575,8 @@
 	icon_state = "hrifle_si"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 7mm subcaliber laser rounds."
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/laser
+	matter = list(MATERIAL_CARDBOARD = 1)
+	max_ammo = 60
 
 /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap
 	name = "ammunition packet (old 8.6mm Rifle)"
@@ -672,7 +707,7 @@
 	caliber = CAL_SHOTGUN
 	w_class = ITEM_SIZE_NORMAL //so we dont magiclly shrink
 	ammo_type = /obj/item/ammo_casing/shotgun
-	max_ammo = 35
+	max_ammo = 40 //Down to 40 from 50 from original 35
 
 /obj/item/ammo_magazine/ammobox/shotgun/update_icon()
 	var/iconstring = initial(icon_state)
@@ -765,4 +800,3 @@
 	name = "old ammunition packet (20mm Slug)"
 	icon_state = "shot_ss"
 	ammo_type = /obj/item/ammo_casing/shotgun/scrap
-

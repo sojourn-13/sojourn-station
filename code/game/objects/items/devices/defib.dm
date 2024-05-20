@@ -553,14 +553,16 @@
 	M.updatehealth()
 	apply_brain_damage(M, deadtime)
 
+	if(M.stats.getPerk(PERK_REZ_SICKNESS) || M.stats.getPerk(PERK_REZ_SICKNESS_SEVERE) || M.stats.getPerk(PERK_REZ_SICKNESS_FATAL))
+		log_and_message_admins("[M] already had rez sickness! Medical Malpractice or Deathwish?")
+		return
+
 	if(!advanced_pads)
 		stat_changes(M)
 
 	if(!M.stats.getPerk(PERK_REZ_SICKNESS) && !M.stats.getPerk(PERK_REZ_SICKNESS_SEVERE) && !M.stats.getPerk(PERK_REZ_SICKNESS_FATAL))
 		M.stats.addPerk(PERK_REZ_SICKNESS)
-		log_and_message_admins("Added mild rez sickness to [M]. Do to no Rez Sickness being found.")
-	else
-		log_and_message_admins("[M] already had rez sickness! Medical Malpractice or Deathwish?")
+		log_and_message_admins("Added mild rez sickness to [M]. Do to no Rez Sickness being found somehow. This shoudnt be possable!")
 
 /obj/item/shockpaddles/proc/stat_changes(mob/living/carbon/human/M) //This revives the mob
 	for(var/stat_to_change in ALL_STATS_FOR_DEFIBS)

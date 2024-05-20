@@ -22,24 +22,28 @@
 		list(mode_name="supercharge", mode_desc="hold down the trigger to supercharge capacitors", mode_type = /datum/firemode/charge, icon="charge"),
 	)
 	price_tag = 5000
+	plusing_intraction = TRUE
 
-/obj/item/gun/energy/laser/railgun/pistol/slab/attackby(obj/item/I, mob/user)
-	if(I.tool_qualities)
-		var/successful_fix = FALSE
-		var/user_mec = user.stats.getStat(STAT_MEC)
-		var/charge_bonus = 0 //How much time are we shaving off the recharge?
-		for(var/quality in I.tool_qualities)
-			if(I.tool_qualities[quality] >= 10 && quality == QUALITY_PULSING) //Check for pulsing quality of at least 10
-				charge_bonus = round(((I.tool_qualities[quality] + user_mec) / 10),1) //Add pulsing quality to MEC, divide by 10, then round to the nearest digit. Subtract from 20; this is the new recharge_time.
-				if(charge_bonus > 15)
-					charge_bonus = 15 //Don't want recharge time going into the negatives
-				if(src.recharge_time == 5)
-					successful_fix = TRUE
-					to_chat(user, SPAN_NOTICE("The Slab is already running at maximum efficiency!"))
-				else if((src.recharge_time) > (20 - charge_bonus))
-					successful_fix = TRUE
-					src.recharge_time = 20 - charge_bonus
-					to_chat(user, SPAN_NOTICE("Through your mechanical knowledge, you manage to overclock the Slab's reactor. It's now running at [round((charge_bonus * 6.6),5)]% efficiency!")) //We can shave up to 15 off recharge_time, so "round((charge_bonus * 6.6),5" rounds that to the nearest 5% of the potential improvement
-		if(!successful_fix)
-			to_chat(user, SPAN_NOTICE("Try as you might, you can't figure out how to improve the Slab's operation."))
-	..()
+//Slab uniquic intraction
+/obj/item/gun/energy/laser/railgun/pistol/slab/plusing_intraction(obj/item/I, mob/user)
+	var/successful_fix = FALSE
+	var/user_mec = user.stats.getStat(STAT_MEC)
+	var/charge_bonus = 0 //How much time are we shaving off the recharge?
+	var/quality_pulsing = I.get_tool_quality(QUALITY_PULSING)
+
+	if(quality_pulsing >= 10)
+		//Add pulsing quality to MEC, divide by 10, then round to the nearest digit. Subtract from 20; this is the new recharge_time.
+		charge_bonus = round(((quality_pulsing + user_mec) / 10),1)
+		if(charge_bonus > 15)
+			charge_bonus = 15 //Don't want recharge time going into the negatives
+		if(recharge_time == 5)
+			successful_fix = TRUE
+			to_chat(user, SPAN_NOTICE("The Slab is already running at maximum efficiency!"))
+		else if((recharge_time) > (20 - charge_bonus))
+			successful_fix = TRUE
+			recharge_time = 20 - charge_bonus
+			//We can shave up to 15 off recharge_time, so "round((charge_bonus * 6.6),5" rounds that to the nearest 5% of the potential improvement
+			to_chat(user, SPAN_NOTICE("Through your mechanical knowledge, you manage to overclock the Slab's reactor. It's now running at [round((charge_bonus * 6.6),5)]% efficiency!"))
+	if(!successful_fix)
+		to_chat(user, SPAN_NOTICE("Try as you might, you can't figure out how to improve the Slab's operation."))
+

@@ -280,4 +280,4 @@
 			playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
 		return
 
-	..()
+	.=..()

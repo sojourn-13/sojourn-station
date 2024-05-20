@@ -128,7 +128,7 @@
 
 //Ignite plasma around, if we need it
 /obj/item/tool/Process()
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 	if(switched_on)
 		if(create_hot_spot)
 			var/turf/location = get_turf(src)
@@ -182,83 +182,117 @@
 			turn_off(user)
 		else
 			turn_on(user)
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 	..()
 	return
 
-
-/obj/item/tool/nano_ui_data(mob/user)
-	var/list/data = list()
-
-	if(tool_qualities)
-		data["tool_qualities"] = list()
-		for(var/name in tool_qualities)
-			data["tool_qualities"] += list(list("name" = capitalize(name), "number" = tool_qualities[name]))
-
-	data["precision"] = precision
-	data["precision_state"] = precision > 0 ? "good" : precision < 0 ? "bad" : ""
-
-	data["workspeed"] = workspeed
-	data["workspeed_state"] = initial(workspeed) < workspeed ? "good" : initial(workspeed) > workspeed ? "bad" : ""
-	data["workspeed_max"] = initial(workspeed) * 20
-
-	data["degradation"] = degradation
-	data["degradation_state"] = initial(degradation) > degradation ? "good" : initial(degradation) < degradation ? "bad" : ""
-	data["degradation_max"] = initial(degradation) * 10
-
-	if(use_power_cost)
-		data["cell_charge"] = cell ? cell.percent() : null
-		data["use_power_cost"] = use_power_cost
-		data["use_power_cost_state"] = initial(use_power_cost) > use_power_cost ? "good" : initial(use_power_cost) < use_power_cost ? "bad" : ""
-		data["use_power_cost_max"] = initial(use_power_cost) * 10
-
-	if(use_fuel_cost)
-		data["fuel"] = reagents ? reagents.nano_ui_data() : null
-		data["max_fuel"] = max_fuel
-		data["use_fuel_cost"] = use_fuel_cost
-		data["use_fuel_cost_state"] = initial(use_fuel_cost) > use_fuel_cost ? "good" : initial(use_fuel_cost) < use_fuel_cost ? "bad" : ""
-		data["use_fuel_cost_max"] = initial(use_fuel_cost) * 10
-
-	data["health"] = health
-	data["health_max"] = max_health
-	data["health_threshold"] = health_threshold
-
-	data["force"] = force
-	data["force_max"] = initial(force) * 10
-
-	data["armor_divisor"] = armor_divisor
-
-	data["extra_volume"] = extra_bulk
-
-	data["upgrades_max"] = max_upgrades
-
-	// it could be done with catalog using one line but whatever
-	if(item_upgrades.len)
-		data["attachments"] = list()
-		for(var/atom/A in item_upgrades)
-			data["attachments"] += list(list("name" = A.name, "icon" = SSassets.transport.get_asset_url(name)))
-
-	return data
-
-/obj/item/tool/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
-	var/list/data = nano_ui_data(user)
-
-	var/datum/asset/toolupgrageds = get_asset_datum(/datum/asset/simple/tool_upgrades)
-	if (toolupgrageds.send(user.client))
-		user.client.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+/obj/item/tool/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key, "tool_stats.tmpl", name, 650, 550, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
+		ui = new(user, src, "ItemStats", name)
 		ui.open()
 
-// saves troubles for some one else who will expand this
-// delete this comment if you are the chosen one
-/obj/item/tool/Topic(href, href_list)
-	if(..())
-		return 1
+/obj/item/tool/ui_assets(mob/user)
+	return list(
+		get_asset_datum(/datum/asset/simple/tool_upgrades)
+	)
+
+/obj/item/tool/ui_data(mob/user)
+	var/list/data = list()
+
+	var/list/stats = list()
+
+	var/list/tool_qualities_stats = list()
+	if(tool_qualities)
+		for(var/name in tool_qualities)
+			tool_qualities_stats += list(list("name" = capitalize(name), "type" = "ProgressBar", "value" = tool_qualities[name], "max" = 100))
+
+	stats["Tool Qualities"] = tool_qualities_stats
+
+	var/list/item_stats = list()
+
+	var/list/health_ranges = list(
+		"bad" = list(0, health_threshold),
+		"average" = list(health_threshold, max_health - 1),
+		"good" = list(max_health, max_health)
+	)
+
+	item_stats += list(list( "name" = "Health", "type" = "ProgressBar", "value" = health, "max" = max_health, "ranges" = health_ranges ))
+	item_stats += list(list( "name" = "Degradation", "type" = "ProgressBar", "value" = degradation, "max" = initial(degradation) * 10, "color" = initial(degradation) > degradation ? "good" : initial(degradation) < degradation ? "bad" : "" ))
+	item_stats += list(list( "name" = "Precision", "type" = "ProgressBar", "value" = precision, "min" = -100, "max" = 100, "color" = precision > 0 ? "good" : precision < 0 ? "bad" : "", "unit" = "%"))
+	item_stats += list(list( "name" = "Workspeed", "type" = "ProgressBar", "value" = workspeed, "max" = initial(workspeed) * 20, "color" = initial(workspeed) < workspeed ? "good" : initial(workspeed) > workspeed ? "bad" : ""))
+	item_stats += list(list( "name" = "Damage", "type" = "ProgressBar", "value" = force, "max" = initial(force) * 10 ))
+	if (extra_bulk)
+		item_stats += list(list( "name" = "Extra Volume", "type" = "AnimatedNumber", "value" = extra_bulk ))
+	  item_stats += list(list( "name" = "Armor Penetration", "type" = "AnimatedNumber", "value" = armor_penetration ))
+
+	stats["Item Stats"] = item_stats
+
+	var/list/fuel_stats = list()
+	if(use_fuel_cost)
+		fuel_stats += list(list(
+			"name" = "Fuel Volume",
+			"type" = "ProgressBar",
+			"value" = reagents.total_volume,
+			"max" = reagents.maximum_volume,
+			"ranges" = list(
+				"good" = list(reagents.maximum_volume, reagents.maximum_volume),
+				"average" = list(reagents.maximum_volume * 0.25, reagents.maximum_volume - 0.01),
+				"bad" = list(0, (reagents.maximum_volume * 0.25) - 0.01)
+			)
+		))
+
+		for(var/r in reagents.reagent_list)
+			var/datum/reagent/R = r
+			fuel_stats += list(list( "name" = R.name, "type" = "AnimatedNumber", value = R.volume, unit = R.volume == 1 ? " unit" : " units" ))
+
+		fuel_stats += list(list(
+			"name" = "Fuel Cost",
+			"type" = "ProgressBar",
+			"value" = use_fuel_cost,
+			"max" = initial(use_fuel_cost) * 10,
+			"color" = initial(use_fuel_cost) > use_fuel_cost ? "good" : initial(use_fuel_cost) < use_fuel_cost ? "bad" : ""
+		))
+	stats["Fuel Stats"] = fuel_stats
+
+	var/list/cell_stats = list()
+	if(use_power_cost)
+		if(cell)
+			cell_stats += list(list(
+				"name" = "Cell Charge",
+				"type" = "ProgressBar",
+				"value" = cell.percent(),
+				"unit" = "%",
+				"max" = 100,
+				"ranges" = list(
+					"good" = list(100, 100),
+					"average" = list(25, 100),
+					"bad" = list(0, 24.99)
+				)
+			))
+		else
+			cell_stats += list(list( "name" = "Cell Charge", "type" = "String", "value" = "No Cell Installed" ))
+
+		cell_stats += list(list(
+			"name" = "Power Cost",
+			"type" = "ProgressBar",
+			"value" = use_power_cost,
+			"max" = initial(use_power_cost) * 10,
+			"color" = initial(use_power_cost) > use_power_cost ? "good" : initial(use_power_cost) < use_power_cost ? "bad" : ""
+		))
+
+	stats["Power Cell"] = cell_stats
+
+	data["stats"] = stats
+
+	data["max_upgrades"] = max_upgrades
+
+	var/list/attachments = list()
+	for(var/atom/A in item_upgrades)
+		attachments += list(list("name" = A.name, "icon" = SSassets.transport.get_asset_url(sanitizeFileName("[A.type].png"))))
+	data["attachments"] = attachments
+
+	return data
 
 //Damaged tools are worth less matter for recycling
 /obj/item/tool/get_matter()
@@ -295,7 +329,7 @@
 
 	if(T)
 		T.tool_in_use = FALSE
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 	switch(result)
 		if(TOOL_USE_CANCEL)
 			return FALSE
@@ -492,7 +526,7 @@
 		fail_chance = 0
 
 	if(fail_chance >= 100)
-		if(!user.stats.getPerk(PERK_NO_OBSUCATION))
+		if(!user.stats.getPerk(PERK_NO_OBFUSCATION))
 			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! Considering your skills and this tool, it is impossible."))
 		else
 			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! The odds of succes are [fail_chance], this is infact impossible."))
@@ -511,7 +545,7 @@
 		else if(fail_chance < 95)
 			chanceMessage = "tiny"
 
-		if(!user.stats.getPerk(PERK_NO_OBSUCATION))
+		if(!user.stats.getPerk(PERK_NO_OBFUSCATION))
 			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [chanceMessage] chance to succeed."))
 		else
 			to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [fail_chance]% chance to fail."))
@@ -936,7 +970,7 @@
 	if(alt_mode_active)
 		alt_mode_activeate_two()
 
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 
 /obj/item/tool/examine(mob/user)
 	if(isbroken)
@@ -1036,8 +1070,15 @@
 				user.visible_message(SPAN_NOTICE("[user] begins repairing \the [O] with the [src]!"))
 				//Toolception!
 				if(use_tool(user, T, 60, QUALITY_ADHESIVE, FAILCHANCE_EASY, STAT_MEC))
-					var/tool_repair = T.max_health * 0.8 + (user.stats.getStat(STAT_MEC)/2)/100
-					var/perma_health_loss = (tool_repair *= 0.02) //2%
+					//Little notes about how this works
+					//If a tool is REALLY damaged, they take more max hp damage, this helps encurages use tape and repairs
+					//Otherwise small repairing isnt punished
+					//Repairing a tool will **always** do to how this math works out be at full hp.
+					var/tool_repair = T.max_health * (0.8 + (user.stats.getStat(STAT_MEC))/200)
+					var/damage_to_repair = T.max_health - T.health
+					tool_repair = min(tool_repair, damage_to_repair)
+					var/perma_health_loss = tool_repair * 0.50 //50%
+
 					T.max_health -= perma_health_loss
 					T.adjustToolHealth(tool_repair, user)
 					if(user.stats.getStat(STAT_MEC) > STAT_LEVEL_BASIC/2)
@@ -1213,4 +1254,4 @@
 /obj/item/tool/ui_action_click(mob/living/user, action_name)
 	switch(action_name)
 		if("Tool information")
-			nano_ui_interact(user)
+			ui_interact(user)
