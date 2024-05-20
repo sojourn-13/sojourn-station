@@ -100,6 +100,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 /datum/asset/spritesheet
 	_abstract = /datum/asset/spritesheet
 	var/name
+	var/resize = 1
 	var/list/sizes = list()    // "32x32" -> list(10, icon/normal, icon/stripped)
 	var/list/sprites = list()  // "foo_bar" -> list("32x32", 5)
 
@@ -147,7 +148,19 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		var/error = rustg_dmi_strip_metadata(fname)
 		if(length(error))
 			stack_trace("Failed to strip [name]_[size_id].png: [error]")
-		size[SPRSZ_STRIPPED] = icon(fname)
+
+		var/icon/stripped = icon(fname)
+		if(resize != 1)
+			var/new_width = stripped.Width() * resize
+			var/new_height = stripped.Height() * resize
+			// Note: arguments MUST be strings or they don't make it past ffi
+			var/error_two = rustg_dmi_resize_png(fname, "[new_width]", "[new_height]", "nearest")
+			if(error_two)
+				stack_trace("Failed to resize [name]_[size_id].png to [new_width]x[new_height]: [error_two]")
+
+			size[SPRSZ_STRIPPED] = icon(fname)
+		else
+			size[SPRSZ_STRIPPED] = stripped
 		fdel(fname)
 
 /datum/asset/spritesheet/proc/generate_css()
@@ -156,7 +169,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	for (var/size_id in sizes)
 		var/size = sizes[size_id]
 		var/icon/tiny = size[SPRSZ_ICON]
-		out += ".[name][size_id]{display:inline-block;width:[tiny.Width()]px;height:[tiny.Height()]px;background:url('[SSassets.transport.get_asset_url("[name]_[size_id].png")]') no-repeat;}"
+		out += ".[name][size_id]{display:inline-block;width:[tiny.Width() * resize]px;height:[tiny.Height() * resize]px;background:url('[SSassets.transport.get_asset_url("[name]_[size_id].png")]') no-repeat;}"
 
 	for (var/sprite_id in sprites)
 		var/sprite = sprites[sprite_id]
@@ -166,9 +179,9 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 		var/icon/tiny = size[SPRSZ_ICON]
 		var/icon/big = size[SPRSZ_STRIPPED]
-		var/per_line = big.Width() / tiny.Width()
-		var/x = (idx % per_line) * tiny.Width()
-		var/y = round(idx / per_line) * tiny.Height()
+		var/per_line = big.Width() / (tiny.Width() * resize)
+		var/x = (idx % per_line) * tiny.Width() * resize
+		var/y = round(idx / per_line) * tiny.Height() * resize
 
 		out += ".[name][size_id].[sprite_id]{background-position:-[x]px -[y]px;}"
 
@@ -195,9 +208,18 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 	if (size)
 		var/position = size[SPRSZ_COUNT]++
+		// Icons are essentially representations of files + modifications
+		// Because of this, byond keeps them in a cache. It does this in a really dumb way tho
+		// It's essentially a FIFO queue. So after we do icon() some amount of times, our old icons go out of cache
+		// When this happens it becomes impossible to modify them, trying to do so will instead throw a
+		// "bad icon" error.
+		// What we're doing here is ensuring our icon is in the cache by refreshing it, so we can modify it w/o runtimes.
 		var/icon/sheet = size[SPRSZ_ICON]
+		var/icon/sheet_copy = icon(sheet)
 		size[SPRSZ_STRIPPED] = null
-		sheet.Insert(I, icon_state=sprite_name)
+		sheet_copy.Insert(I, icon_state=sprite_name)
+		size[SPRSZ_ICON] = sheet_copy
+
 		sprites[sprite_name] = list(size_id, position)
 	else
 		sizes[size_id] = size = list(1, I, null)
