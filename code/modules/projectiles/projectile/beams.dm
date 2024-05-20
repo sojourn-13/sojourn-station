@@ -63,52 +63,52 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 // 223 is a middle ground between 408 and 75. Damage of 408, AP of 75
 /obj/item/projectile/beam/laser_223
 	damage_types = list(BURN = 20)
-	armor_penetration = 20
+	armor_divisor = 2
 	recoil = 5
 	wounding_mult = WOUNDING_SERIOUS
 /*
 /obj/item/projectile/beam/laser_223/ap
 	damage_types = list(BURN = 16)
-	armor_penetration = 36
+	armor_divisor = 36
 	recoil = 7
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 1
 
 /obj/item/projectile/beam/laser_223/lethal
 	damage_types = list(BURN = 27)
-	armor_penetration = 15
+	armor_divisor = 15
 	recoil = 5
 	wounding_mult = WOUNDING_WIDE
 */
 
 /obj/item/projectile/beam/weak/pistol_35
 	damage_types = list(BURN = 15)
-	armor_penetration = 20
+	armor_divisor = 20
 	recoil = 2.5
 
 /obj/item/projectile/beam/weak/light_rifle_257
 	damage_types = list(BURN = 14)
-	armor_penetration = 30
+	armor_divisor = 30
 	recoil = 3.5
 
 /obj/item/projectile/beam/weak/rifle_75
 	damage_types = list(BURN = 15.5)
-	armor_penetration = 36
+	armor_divisor = 36
 	recoil = 5
 
 /obj/item/projectile/beam/weak/heavy_rifle_408
 	damage_types = list(BURN = 20)
-	armor_penetration = 46
+	armor_divisor = 46
 	recoil = 10
 
 /obj/item/projectile/beam/weak/magnum_40
 	damage_types = list(BURN = 19)
-	armor_penetration = 33
+	armor_divisor = 33
 	recoil = 4.5
 
 /obj/item/projectile/beam/weak/kurtz_50
 	damage_types = list(BURN = 23.5)
-	armor_penetration = 35
+	armor_divisor = 35
 	recoil = 8
 
 /obj/item/projectile/beam/weak/smg

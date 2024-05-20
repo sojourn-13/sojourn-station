@@ -531,9 +531,9 @@
 	real_mod *= 0.5 //Insainly op
 
 //	message_admins("3ogre: safty_math [safty_math] safty_health [safty_health]  delay_adder [delay_adder]")
-//	message_admins("4ogre: armor_penetration [armor_penetration]")
-	armor_penetration += real_mod
-//	message_admins("5ogre: armor_penetration [armor_penetration]")
+//	message_admins("4ogre: armor_divisor [armor_divisor]")
+	armor_divisor += real_mod
+//	message_admins("5ogre: armor_divisor [armor_divisor]")
 	clickdelay_offset = delay_adder
 
 	.=..()
@@ -549,7 +549,7 @@
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_PLASTIC = 12)
 	force = 15 //Base level
 	backstab_damage = 15 //base is 15 but grows
-	armor_penetration = ARMOR_PEN_MASSIVE //Less do to how powerful it is
+	armor_divisor = ARMOR_PEN_MASSIVE //Less do to how powerful it is
 	throwforce = WEAPON_FORCE_ROBUST
 	price_tag = 3500
 	max_upgrades = 2
@@ -709,7 +709,7 @@
 			//message_admins("2knife: speedy_dashing [speedy_dashing]")
 			if(speedy_dashing > 0)
 				//Hopefully your running around to accually use this
-				armor_penetration *= speedy_dashing
+				armor_divisor *= speedy_dashing
 				force *= speedy_dashing
 			if(tracker == target.name && give_coin)
 				coin_tracker += 1
@@ -753,7 +753,7 @@
 	item_state = "katana"
 	hitsound = 'sound/weapons/heavyslash.ogg'
 	force = WEAPON_FORCE_BRUTAL
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 	price_tag = 2050
 	clickdelay_offset = 0
 	max_upgrades = 1//Already over powered.
@@ -782,7 +782,7 @@
 	icon_state = "spectral_harvester"
 	hitsound = 'sound/weapons/heavyslash.ogg'
 	force = WEAPON_FORCE_GODLIKE //88 damage but + weilding
-	armor_penetration = ARMOR_PEN_MODERATE
+	armor_divisor = ARMOR_PEN_MODERATE
 	price_tag = 2750
 	clickdelay_offset = 15 //This stacks with base
 	max_upgrades = 0 //No...
@@ -858,7 +858,7 @@
 	slowdown_hold = 0.3
 	//Its a bad weapon
 	force = WEAPON_FORCE_PAINFUL
-	armor_penetration = ARMOR_PEN_SHALLOW
+	armor_divisor = ARMOR_PEN_SHALLOW
 
 /obj/item/shield/riot/mass_grave/check_shield_arc()
 	return TRUE
@@ -876,31 +876,31 @@
 		if(5)
 			armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_DANGEROUS
-			armor_penetration = ARMOR_PEN_MODERATE
+			armor_divisor = ARMOR_PEN_MODERATE
 			slowdown = 0.25
 			slowdown_hold = 0.25
 		if(10)
 			armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_ROBUST
-			armor_penetration = ARMOR_PEN_DEEP
+			armor_divisor = ARMOR_PEN_DEEP
 			slowdown = 0.20
 			slowdown_hold = 0.20
 		if(20)
 			armor_list = list(melee = 25, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_BRUTAL
-			armor_penetration = ARMOR_PEN_EXTREME
+			armor_divisor = ARMOR_PEN_EXTREME
 			slowdown = 0.15
 			slowdown_hold = 0.15
 		if(50)
 			armor_list = list(melee = 35, bullet = 35, energy = 35, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_LETHAL
-			armor_penetration = ARMOR_PEN_MASSIVE
+			armor_divisor = ARMOR_PEN_MASSIVE
 			slowdown = 0.10
 			slowdown_hold = 0.10
 		if(100)
 			armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_LETHAL + 5
-			armor_penetration = ARMOR_PEN_MASSIVE + 5
+			armor_divisor = ARMOR_PEN_MASSIVE + 5
 			slowdown = 0.05
 			slowdown_hold = 0.05
 
@@ -908,7 +908,7 @@
 		//Endless Growth
 		name = "mass grave marker shield"
 		force += 1
-		armor_penetration += 1
+		armor_divisor += 1
 		post_moder_game_balance *= 1.1 //150 x 1.1 = 165 -> 165 x 1.1 = 181.5(182) ect ect
 		post_moder_game_balance = round(post_moder_game_balance)
 

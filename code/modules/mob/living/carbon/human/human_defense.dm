@@ -572,7 +572,7 @@ uniquic_armor_act
 					if(en_passant)
 					//	message_admins("unique_armor_check en_passant ranged")
 					//	message_admins("prj ranged [Proj.penetrating]")
-						Proj.armor_penetration *= 0.5
+						Proj.armor_divisor *= 0.5
 						Proj.check_armour = ARMOR_MELEE //Foolishness
 						Proj.fire_stacks = 0   //No witches here
 						Proj.wounding_mult = 1 //Foolishness!
@@ -589,7 +589,7 @@ uniquic_armor_act
 					else
 					//	message_admins("unique_armor_check en_passant ranged")
 					//	message_admins("prj ranged [Proj.penetrating]")
-						Proj.armor_penetration *= 2
+						Proj.armor_divisor *= 2
 						if(Proj.damage_types[BRUTE])
 						//	message_admins("prj BRUTE [Proj.damage_types[BRUTE]] Pre")
 							Proj.damage_types[BRUTE] *= 1.5

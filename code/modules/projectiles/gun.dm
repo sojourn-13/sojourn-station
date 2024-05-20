@@ -1159,7 +1159,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/melee_stats = list()
 
 	melee_stats += list(list("name" = "Melee Capabilities", "type" = "ProgressBar", "value" = force, "max" = initial(force) * 10))
-	melee_stats += list(list("name" = "Armor Penetration", "type" = "ProgressBar", "value" = armor_penetration, "max" = 100, "unit" = "%"))
+	melee_stats += list(list("name" = "Armor Penetration", "type" = "ProgressBar", "value" = armor_divisor, "max" = 100, "unit" = "%"))
 
 	stats["Physical Details"] = melee_stats
 
@@ -1227,7 +1227,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	data += list(list("name" = "Projectile Type", "type" = "String", "value" = P.name))
 	data += list(list("name" = "Overall Damage", "type" = "String", "value" = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()))
-	data += list(list("name" = "Overall AP", "type" = "String", "value" = P.armor_penetration * penetration_multiplier))
+	data += list(list("name" = "Overall AP", "type" = "String", "value" = P.armor_divisor * penetration_multiplier))
 	data += list(list("name" = "Overall Pain", "type" = "String", "value" = P.agony * proj_agony_multiplier))
 	data += list(list("name" = "Wound Scale", "type" = "String", "value" = P.wounding_mult))
 	data += list(list("name" = "Recoil Multiplier", "type" = "String", "value" = P.recoil))

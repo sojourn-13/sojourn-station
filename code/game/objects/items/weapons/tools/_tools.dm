@@ -224,7 +224,7 @@
 	item_stats += list(list( "name" = "Damage", "type" = "ProgressBar", "value" = force, "max" = initial(force) * 10 ))
 	if (extra_bulk)
 		item_stats += list(list( "name" = "Extra Volume", "type" = "AnimatedNumber", "value" = extra_bulk ))
-	  item_stats += list(list( "name" = "Armor Penetration", "type" = "AnimatedNumber", "value" = armor_penetration ))
+		item_stats += list(list( "name" = "Armor Divisor", "type" = "AnimatedNumber", "value" = armor_divisor ))
 
 	stats["Item Stats"] = item_stats
 

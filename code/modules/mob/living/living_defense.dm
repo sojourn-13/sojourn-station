@@ -423,15 +423,14 @@
 /mob/living/proc/adjust_fire_stacks(add_fire_stacks) //Adjusting the amount of fire_stacks we have on person
     fire_stacks = CLAMP(fire_stacks + add_fire_stacks, FIRE_MIN_STACKS, FIRE_MAX_STACKS)
 
-/mob/living/proc/handle_fire()
-	if(fire_stacks < 0)
-		fire_stacks = min(0, ++fire_stacks) //If we've doused ourselves in water to avoid fire, dry off slowly
+/mob/living/proc/handle_fire(flammable_gas, turf/location)
+	if(never_stimulate_air)
+		if (fire_stacks > 0)
+			ExtinguishMob() //We dont simulate air thus we dont simulate fire
+		return
 
-	if(!on_fire)
-		return 1
-	else if(fire_stacks <= 0)
-		ExtinguishMob() //Fire's been put out.
-		return 1
+	var/burn_temperature = fire_burn_temperature()
+	var/thermal_protection = get_heat_protection(burn_temperature)
 
 	if (thermal_protection < 1 && bodytemperature < burn_temperature && on_fire)
 		bodytemperature += round(BODYTEMP_HEATING_MAX*(1-thermal_protection), 1)

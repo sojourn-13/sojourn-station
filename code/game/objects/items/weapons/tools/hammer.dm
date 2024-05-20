@@ -161,7 +161,7 @@
 	item_state = "excelsior_hammer"
 	wielded_icon = "excelsior_hammer_wielded"
 	w_class = ITEM_SIZE_HUGE
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 	slot_flags = SLOT_BELT
 	force = WEAPON_FORCE_BRUTAL
 	structure_damage_factor = STRUCTURE_DAMAGE_BORING + 2

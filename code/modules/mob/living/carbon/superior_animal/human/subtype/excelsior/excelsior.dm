@@ -115,7 +115,7 @@
 
 	melee_damage_lower = 33
 	melee_damage_upper = 40
-	armor_penetration = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_DEEP
 
 	ranged = 0
 	rapid = 0
