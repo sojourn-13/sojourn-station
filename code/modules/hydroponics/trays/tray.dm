@@ -222,8 +222,8 @@
 				//While I myself would love to see this limit removed, 400 potency bluespace tomato's are a little to powerfull
 				if(seed.get_trait(TRAIT_POTENCY) < 100)
 					seed.set_trait(TRAIT_POTENCY, min(100, seed.get_trait(TRAIT_POTENCY) + potency_reagents[R.id] * reagent_total))
-				else
-					seed.set_trait(TRAIT_POTENCY, 100)
+				//else  - If are plant is over 100 potency then adding a chemical that would *raise it* shouldnt lower it
+				//	seed.set_trait(TRAIT_POTENCY, 100)
 
 			// Mutagen is distinct from the previous types and mostly has a chance of proccing a mutation.
 			if(mutagenic_reagents[R.id])
