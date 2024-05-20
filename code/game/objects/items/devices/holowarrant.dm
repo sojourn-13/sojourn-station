@@ -9,9 +9,13 @@
 	throw_range = 10
 	slot_flags = SLOT_BELT|SLOT_POCKET // QOL improvement tbh
 	req_access = list(list(access_heads, access_security))
-	var/boss_name = "Marshals"
-	var/station_name = "The Nadezhda Colony"
+	var/boss_name = "Nadezhda Marshals" //The issuing authority. Can be VVed to make a warrant out to be from another party for whatever reason
+	var/station_name = "Nadezhda Colony" //As above
+	var/language = LANGUAGE_COMMON //More stuff put here so it can theoretically be VVed
 	var/datum/computer_file/data/warrant/active
+	var/output //What we give to paper parser
+	var/header //The header for the paper
+	var/holoheader //The header for the holowarrant
 
 //Examine text
 /obj/item/device/holowarrant/examine(mob/user, distance)
@@ -52,6 +56,54 @@
 			active = W
 	update_icon_status()
 	update_icon()
+	if(active)
+		if(active.fields["arrestsearch"] == "arrest")
+			output = {"
+			<HTML><HEAD><TITLE>[active.fields["namewarrant"]]</TITLE></HEAD>
+			<BODY bgcolor='#ffffff'>Issued under the jurisdiction of the [boss_name]</br>
+			</br>
+			<b>ARREST WARRANT</b></center></br>
+			</br>
+			This document serves as authorization and notice for the arrest of _<u>[active.fields["namewarrant"]]</u>____ for the crime(s) of:</br>[active.fields["charges"]]</br>
+			</br>
+			<b>Jurisdiction:</b> _<u>[station_name]</u>____</br>
+			</br>_<u>[active.fields["auth"]]</u>____</br>
+			<small>Person authorizing arrest</small></br>
+			</BODY></HTML>
+			"}
+
+			header = "Arrest warrant for [active.fields["namewarrant"]]"
+			holoheader = "window=Search warrant for [active.fields["namewarrant"]]"
+
+		if(active.fields["arrestsearch"] ==  "search")
+			output= {"
+			<HTML><HEAD><TITLE>[active.fields["namewarrant"]]</TITLE></HEAD>
+			<BODY bgcolor='#ffffff'>Issued under the jurisdiction of the [boss_name]</br>
+			</br>
+			<b>SEARCH WARRANT</b></center></br>
+			</br>
+			<b>Suspect's/location name: </b>[active.fields["namewarrant"]]</br>
+			</br>
+			<b>For the following reasons: </b> [active.fields["charges"]]</br>
+			</br>
+			<b>Warrant issued by: </b> [active.fields ["auth"]]</br>
+			</br>
+			<b>Jurisdiction:</b> _<u>[station_name]</u>____</br>
+			</br>
+			<center><small><i>The Marshals Officer(s) bearing this Warrant are hereby authorized by the Issuer to conduct a one-time lawful search of the Suspect's person/belongings/premises and/or Department for any items and materials that could be connected to the suspected criminal charges described below, pending an investigation in progress.</br>
+			</br>
+			The Marshals Officer(s) are obligated to remove any and all such items from the Suspect's posession and/or Department and file it as evidence.</br>
+			</br>
+			The Suspect/Departamental staff is expected to offer full co-operation.</br>
+			</br>
+			In the event of the Suspect/Departamental staff attempting to resist/impede this search or flee, they may be taken into custody immediately and charged with appropriate crimes. </br>
+			</br>
+			All confiscated items must be filed and taken to Evidence.</small></i></center></br>
+			</BODY></HTML>
+			"}
+
+			header = "Search warrant for [active.fields["namewarrant"]]"
+			holoheader = "window=Search warrant for [active.fields["namewarrant"]]"
 
 // Use your ID on it to authorize warrants
 /obj/item/device/holowarrant/attackby(obj/item/W, mob/user)
@@ -84,53 +136,14 @@
 /obj/item/device/holowarrant/proc/show_content(mob/user, forceshow)
 	if(!active)
 		return
-	if(active.fields["arrestsearch"] == "arrest")
-		var/output = {"
-		<HTML><HEAD><TITLE>[active.fields["namewarrant"]]</TITLE></HEAD>
-		<BODY bgcolor='#ffffff'><center><large><b>MARSHALS SECURITY Warrant Tracker System</b></large></br>
-		</br>
-		Issued under the jurisdiction of the</br>
-		[boss_name]</br>
-		</br>
-		<b>ARREST WARRANT</b></center></br>
-		</br>
-		This document serves as authorization and notice for the arrest of _<u>[active.fields["namewarrant"]]</u>____ for the crime(s) of:</br>[active.fields["charges"]]</br>
-		</br>
-		In situs: _<u>[station_name]</u>____</br>
-		</br>_<u>[active.fields["auth"]]</u>____</br>
-		<small>Person authorizing arrest</small></br>
-		</BODY></HTML>
-		"}
+	show_browser(user, output, holoheader)
 
-		show_browser(user, output, "window=Warrant for the arrest of [active.fields["namewarrant"]]")
-	if(active.fields["arrestsearch"] ==  "search")
-		var/output= {"
-		<HTML><HEAD><TITLE>Search Warrant: [active.fields["namewarrant"]]</TITLE></HEAD>
-		<BODY bgcolor='#ffffff'><center><large><b>MARSHALS SECURITY Warrant Tracker System</b></large></br>
-		</br>
-		Issued under the jurisdiction of the</br>
-		[boss_name]</br>
-		</br>
-		<b>SEARCH WARRANT</b></center></br>
-		</br>
-		<b>Suspect's/location name: </b>[active.fields["namewarrant"]]</br>
-		</br>
-		<b>For the following reasons: </b> [active.fields["charges"]]</br>
-		</br>
-		<b>Warrant issued by: </b> [active.fields ["auth"]]</br>
-		</br>
-		Jurisdiction: _<u>[station_name]</u>____</br>
-		</br>
-		<center><small><i>The Marshals Officer(s) bearing this Warrant are hereby authorized by the Issuer to conduct a one-time lawful search of the Suspect's person/belongings/premises and/or Department for any items and materials that could be connected to the suspected criminal charges described below, pending an investigation in progress.</br>
-		</br>
-		The Marshals Officer(s) are obligated to remove any and all such items from the Suspect's posession and/or Department and file it as evidence.</br>
-		</br>
-		The Suspect/Departamental staff is expected to offer full co-operation.</br>
-		</br>
-		In the event of the Suspect/Departamental staff attempting to resist/impede this search or flee, they must be taken into custody immediately! </br>
-		</br>
-		All confiscated items must be filed and taken to Evidence!</small></i></center></br>
-		</BODY></HTML>
-		"}
-		show_browser(user, output, "window=Search warrant for [active.fields["namewarrant"]]")
+/obj/item/device/holowarrant/verb/print_warrant()
+	set src in usr.contents
+	set name = "Print Warrant"
+	set desc = "Prints the active warrant."
+	set category = "Object"
 
+	if(!active)
+		return
+	new/obj/item/paper(usr.drop_location(), output, header, language)

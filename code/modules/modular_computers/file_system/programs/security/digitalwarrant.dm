@@ -160,17 +160,26 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 			activewarrant.fields["namewarrant"] = new_name
 			activewarrant.fields["jobwarrant"] = new_job
 
-	if(href_list["editwarrantnamelocation"])
+	if(href_list["editwarrantnamesearch"])
 		. = 1
-		var/new_name = sanitize(input("Please input name or location") as null|text)
+		var/new_name = sanitize(input("Please input name of suspect or location") as null|text)
 		if(CanInteract(user, GLOB.default_state))
 			if (!new_name || !activewarrant)
 				return
 			activewarrant.fields["namewarrant"] = new_name
+			activewarrant.fields["jobwarrant"] = "N/A"
 
 	if(href_list["editwarrantcharges"])
 		. = 1
 		var/new_charges = sanitize(input("Please input charges", "Charges", activewarrant.fields["charges"]) as text|null)
+		if(CanInteract(user, GLOB.default_state))
+			if (!new_charges || !activewarrant)
+				return
+			activewarrant.fields["charges"] = new_charges
+
+	if(href_list["editwarrantsearchreason"])
+		. = 1
+		var/new_charges = sanitize(input("Please input reason for search", "Reason", activewarrant.fields["charges"]) as text|null)
 		if(CanInteract(user, GLOB.default_state))
 			if (!new_charges || !activewarrant)
 				return
