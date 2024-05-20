@@ -52,6 +52,12 @@
 
 	potency = seed.get_trait(TRAIT_POTENCY)
 
+	var/chem_mult = 0.5
+	if(seed.get_trait(TRAIT_JUICY))
+		chem_mult += 0.25
+	if(seed.get_trait(TRAIT_CHEM_PRODUCTION))
+		chem_mult += 0.25
+
 	for(var/rid in seed.chems)
 		var/list/reagent_data = seed.chems[rid]
 		if(reagent_data && reagent_data.len)
@@ -61,6 +67,7 @@
 				rtotal += round(potency/reagent_data[2])
 			if(rid == "nutriment")
 				data[seed.seed_name] = max(1,rtotal)
+			rtotal *= chem_mult
 			reagents.maximum_volume += max(1,rtotal)
 			reagents.add_reagent(rid,max(1,rtotal),data)
 	update_desc()

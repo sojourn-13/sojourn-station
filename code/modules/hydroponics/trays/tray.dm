@@ -220,8 +220,8 @@
 			//potency reagents boost the plats genetic potency, tweaking needed
 			if(potency_reagents[R.id])
 				//While I myself would love to see this limit removed, 400 potency bluespace tomato's are a little to powerfull
-				if(seed.get_trait(TRAIT_POTENCY) < 60)
-					seed.set_trait(TRAIT_POTENCY, min(60, seed.get_trait(TRAIT_POTENCY) + potency_reagents[R.id] * reagent_total))
+				if(seed.get_trait(TRAIT_POTENCY) < 100)
+					seed.set_trait(TRAIT_POTENCY, min(100, seed.get_trait(TRAIT_POTENCY) + potency_reagents[R.id] * reagent_total))
 
 			// Mutagen is distinct from the previous types and mostly has a chance of proccing a mutation.
 			if(mutagenic_reagents[R.id])

@@ -519,6 +519,8 @@
 	if(prob(5))
 		set_trait(TRAIT_BIOLUM,1)
 		set_trait(TRAIT_BIOLUM_COLOUR,get_random_colour(0,75,190))
+	if(prob(1))
+		set_trait(TRAIT_CHEM_PRODUCTION,1)
 
 	set_trait(TRAIT_ENDURANCE,rand(60,100))
 	set_trait(TRAIT_YIELD,rand(3,15))
@@ -711,7 +713,7 @@
 		if(GENE_FRUIT)
 			traits_to_copy = list(TRAIT_STINGS,TRAIT_EXPLOSIVE,TRAIT_FLESH_COLOUR,TRAIT_JUICY,TRAIT_CHEM_SPRAYER)
 		if(GENE_SPECIAL)
-			traits_to_copy = list(TRAIT_TELEPORTING)
+			traits_to_copy = list(TRAIT_TELEPORTING, TRAIT_CHEM_PRODUCTION)
 
 	for(var/trait in traits_to_copy)
 		P.values[trait] = get_trait(trait)
