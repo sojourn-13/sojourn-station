@@ -58,6 +58,8 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 
 	if(portable_drive)
 		data["portable_drive"] = get_program_data(portable_drive)
+	else
+		data["portable_drive"] = null
 
 	return data
 
@@ -134,6 +136,10 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 
 		if("PC_terminal")
 			open_terminal(usr)
+			. = TRUE
+
+		if("PC_eject_disk")
+			proc_eject_usb(usr)
 			. = TRUE
 
 // Handles user's GUI input

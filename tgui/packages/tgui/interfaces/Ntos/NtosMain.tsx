@@ -36,7 +36,18 @@ const DriveView = (props: { drive: Drive; removable?: boolean }) => {
   const title = drive.name || (removable ? 'Data Disk' : 'Programs');
 
   return (
-    <Section title={title}>
+    <Section
+      title={title}
+      buttons={
+        removable && (
+          <Button
+            icon="eject"
+            tooltip="Eject Disk"
+            onClick={() => act('PC_eject_disk')}
+          />
+        )
+      }
+    >
       <Table>
         {drive.programs.map((program) => (
           <Table.Row key={program.name}>
@@ -73,21 +84,6 @@ const DriveView = (props: { drive: Drive; removable?: boolean }) => {
                   }
                 />
               )}
-            </Table.Cell>
-            <Table.Cell collapsing width="18px">
-              <Button
-                color="dark-grey"
-                tooltip="Set Autorun"
-                tooltipPosition="left"
-                selected={drive.autorun === program.name}
-                onClick={() =>
-                  act('PC_setautorun', {
-                    program: program.name,
-                  })
-                }
-              >
-                AR
-              </Button>
             </Table.Cell>
           </Table.Row>
         ))}

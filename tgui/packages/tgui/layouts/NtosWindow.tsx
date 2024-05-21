@@ -96,7 +96,7 @@ export const NtosWindow = (props) => {
       <div className="NtosWindow">
         <div
           className="NtosWindow__header NtosHeader"
-          style={{ height: has_gps ? '4em' : '2em' }}
+          style={{ height: has_gps ? '4.5em' : '2em' }}
         >
           <Stack vertical ml={1} mr={1}>
             <Stack.Item>
@@ -230,7 +230,7 @@ const NtosWindowContent = (props) => {
   return (
     <div className="NtosWindow__content">
       <Window.Content
-        style={{ marginTop: has_gps ? '4em' : '2em' }}
+        style={{ marginTop: has_gps ? '4.5em' : '2em' }}
         {...props}
       />
     </div>

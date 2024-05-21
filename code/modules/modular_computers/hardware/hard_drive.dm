@@ -254,11 +254,14 @@
 
 // Disk UI data, used by file browser UI
 /obj/item/computer_hardware/hard_drive/nano_ui_data()
+	var/datum/computer_file/data/autorun = find_file_by_name("AUTORUN")
+
 	var/list/data = list(
 		"read_only" = read_only,
 		"disk_name" = get_disk_name(),
 		"max_capacity" = max_capacity,
-		"used_capacity" = used_capacity
+		"used_capacity" = used_capacity,
+		"autorun" = istype(autorun) ? autorun.stored_data : null
 	)
 
 	var/list/files = list()
@@ -267,6 +270,7 @@
 			"filename" = F.filename,
 			"filetype" = F.filetype,
 			"size" = F.size,
+			"clone_able" = F.clone_able,
 			"undeletable" = F.undeletable
 		)))
 	data["files"] = files
