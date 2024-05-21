@@ -52,9 +52,13 @@
 
 	potency = seed.get_trait(TRAIT_POTENCY)
 
-	var/chem_mult = 0.75
+	var/chem_mult = 1
+	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
+		chem_mult -= 0.25
 	if(seed.get_trait(TRAIT_JUICY))
 		chem_mult += 0.25
+		if(seed.get_trait(TRAIT_JUICY) == 2)
+			chem_mult += 0.10 //35% extra chems
 	if(seed.get_trait(TRAIT_CHEM_PRODUCTION))
 		chem_mult += 0.25
 

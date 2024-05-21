@@ -28,6 +28,8 @@
 	var/charge_per_use = 0
 	var/is_virtual = FALSE // for non-physical scanner to avoid displaying action messages
 
+	var/print_report_delay = 50
+
 	throw_speed = 3
 	throw_range = 7
 
@@ -136,7 +138,7 @@
 /obj/item/device/scanner/OnTopic(var/user, var/list/href_list)
 	if(href_list["print"])
 		to_chat(user, "The [src] hums as it begins printing a report.")
-		sleep(50)
+		sleep(print_report_delay)
 		print_report(user)
 		return 1
 	if(href_list["clear"])

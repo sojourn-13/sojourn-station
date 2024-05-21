@@ -754,13 +754,15 @@
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				if(user.stats.getPerk(PERK_GREENTHUMB))
+					to_chat(H, SPAN_NOTICE("Thanks to your gardening experience, you managed to harvest even more!"))
+					total_yield += 1 //
 					if(H.sanity)
 						H.sanity.changeLevel(2.5)
 
 				if(prob(H.stats.getStat(STAT_BIO)))
 					total_yield += 1
 					to_chat(H, SPAN_NOTICE("You have managed to harvest more!"))
-	
+
 				if(H.stats.getPerk(PERK_MASTER_HERBALIST))
 					total_yield += 2
 					to_chat(H, SPAN_NOTICE("Thanks to your folken herbalistic teachings, you managed to harvest even more!"))
