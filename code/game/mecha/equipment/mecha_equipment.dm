@@ -17,6 +17,7 @@
 	var/range = MECHA_MELEE //bitflags
 	var/salvageable = 1
 	var/required_type = /obj/mecha //may be either a type or a list of allowed types
+	var/harmful = 1 //for those tools that you cannot smack people with but still need to click on them to use, aka sleepers
 
 /obj/item/mecha_parts/mecha_equipment/Destroy()
 	if(chassis)
@@ -129,9 +130,12 @@
 		msg_admin_attack("[key_name(user)] attacked [key_name(M)] with [name] (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(damtype)])" )
 
 	if(user.a_intent == I_HELP) // Checks if you have help intent on
-		step_away(M, chassis)
-		occupant_message("You push [M] out of the way.")
-		chassis.visible_message("[chassis] pushes [M] out of the way.")
+		if(!src.harmful) // If not a harmful tool (aka, a sleeper)
+			src.action(M, user)
+		else
+			step_away(M, chassis)
+			occupant_message("You push [M] out of the way.")
+			chassis.visible_message("[chassis] pushes [M] out of the way.")
 	else
 		var/hit_zone = M.resolve_item_attack(src, user, target_zone) // Zone targetting
 		if(hit_zone)

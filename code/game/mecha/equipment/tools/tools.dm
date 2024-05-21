@@ -104,7 +104,7 @@
 	price_tag = 150
 	force = 30
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
-	tool_qualities = list(QUALITY_DIGGING = 60) // Duh
+	tool_qualities = list(QUALITY_DIGGING = 60)
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
 	action(atom/T, mob/living/user)
@@ -130,7 +130,7 @@
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_DIAMOND = 3)
 	equip_cooldown = 10 // 3 diamonds for 3x the speed!
 	force = 40
-	tool_qualities = list(QUALITY_DIGGING = 70) // Duh
+	tool_qualities = list(QUALITY_DIGGING = 90)
 
 	action(atom/T, mob/living/user)
 		attack_object(T,user) // drill has nothing special to do, just drilling
@@ -156,6 +156,7 @@
 	range = MECHA_MELEE|MECHA_RANGED
 	required_type = /obj/mecha/working
 	price_tag = 100
+	harmful = 0 // to extinguish people
 	var/spray_particles = 5
 	var/spray_amount = 5	//units of liquid per particle. 5 is enough to wet the floor - it's a big fire extinguisher, so should be fine
 	var/max_water = 1000
@@ -172,7 +173,7 @@
 		if(get_dist(chassis, target)>2) return
 		set_ready_state(0)
 		if(do_after_cooldown(target))
-			if( istype(target, /obj/structure/reagent_dispensers/watertank) && get_dist(chassis,target) <= 1)
+			if(istype(target, /obj/structure/reagent_dispensers/watertank) && get_dist(chassis,target) <= 1)
 				var/obj/o = target
 				var/amount = o.reagents.trans_to_obj(src, 200)
 				occupant_message(SPAN_NOTICE("[amount] units transferred into internal tank."))
@@ -393,6 +394,7 @@
 	equip_cooldown = 10
 	energy_drain = 100
 	range = MECHA_MELEE|MECHA_RANGED
+	harmful = 0
 	var/atom/movable/locked
 	var/mode = 1 //1 - gravsling 2 - gravpush
 
@@ -933,14 +935,13 @@
 		return 1
 
 
-
 //This is pretty much just for the death-ripley so that it is harmless / MY BROTHER IN CHRIST IT DOES 90 DAMAGE WHAT DO YOU MEAN
 /obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
 	name = "\improper KILL CLAMP"
 	icon_state = "mecha_clamp"
 	equip_cooldown = 15
 	energy_drain = 0
-	var/dam_force = 90
+	var/dam_force = 90 //Lmao, the mech sword deals 60
 	var/obj/mecha/working/ripley/cargo_holder
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
@@ -949,70 +950,56 @@
 		cargo_holder = M
 		return
 
-	action(atom/target)
-		if(!action_checks(target)) return
+		action(atom/A, mob/living/user) // fancy non attackby interactions
+		if(!action_checks(A)) return
 		if(!cargo_holder) return
-		if(isobj(target))
-			var/obj/O = target
-			if(O.buckled_mob)
+
+		//clamp loading code
+		if(istype(A, /obj)) //if it's not an object, don't even bother loading, none of the code beyond here will work with non objects
+			var/obj/T = A
+			if(T.buckled_mob)
 				return
-			if(istype(target, /obj/structure/scrap))
-				occupant_message(SPAN_NOTICE("\The [chassis] begins compressing \the [O] with \the [src]."))
-				if(do_after_cooldown(O))
-					if(istype(O, /obj/structure/scrap))
-						var/obj/structure/scrap/S = O
+			if(istype(T, /obj/structure/scrap))
+				occupant_message(SPAN_NOTICE("\The [chassis] begins compressing \the [T] with \the [src]."))
+				if(do_after_cooldown(T))
+					if(istype(T, /obj/structure/scrap))
+						var/obj/structure/scrap/S = T
 						S.make_cube()
-						occupant_message(SPAN_NOTICE("\The [chassis] compresses \the [O] into a cube with \the [src]."))
+						occupant_message(SPAN_NOTICE("\The [chassis] compresses \the [T] into a cube with \the [src]."))
 				return
-			if(O.anchored && !istype(O, /obj/structure/salvageable))
-				occupant_message(SPAN_WARNING("[target] is firmly secured."))
+
+			if(T.anchored && !istype(T, /obj/structure/salvageable))
+				attack_object(T, user)
 				return
 			if(cargo_holder.cargo.len >= cargo_holder.cargo_capacity)
 				occupant_message(SPAN_WARNING("Not enough room in cargo compartment."))
 				return
 
+			if(user.a_intent == I_HELP) // So, if we want to do something stupid like searching a trash pile or hitting a locker, we can on non help intent
+				occupant_message("You lift [T] and start to load it into cargo compartment.")
+				playsound(src,'sound/mecha/hydraulic.ogg',100,1)
+				chassis.visible_message("[chassis] lifts [T] and starts to load it into cargo compartment.")
+				set_ready_state(0)
+				chassis.use_power(energy_drain)
+				T.anchored = 1
+				var/L = chassis.loc
+				if(do_after_cooldown(T))
+					if(L == chassis.loc && src == chassis.selected)
+						cargo_holder.cargo += T
+						T.loc = chassis
+						T.anchored = 0
+						occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
+						log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
+						return
+					else
+						occupant_message(SPAN_WARNING("You must hold still while handling objects."))
+						T.anchored = initial(T.anchored)
+						return
 
-			occupant_message("You lift [target] and start to load it into cargo compartment.")
-			playsound(src,'sound/mecha/hydraulic.ogg',100,1)
-			chassis.visible_message("[chassis] lifts [target] and starts to load it into cargo compartment.")
-			set_ready_state(0)
-			chassis.use_power(energy_drain)
-			O.anchored = 1
-			var/T = chassis.loc
-			if(do_after_cooldown(target))
-				if(T == chassis.loc && src == chassis.selected)
-					cargo_holder.cargo += O
-					O.loc = chassis
-					O.anchored = 0
-					occupant_message(SPAN_NOTICE("[target] succesfully loaded."))
-					log_message("Loaded [O]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
-				else
-					occupant_message(SPAN_WARNING("You must hold still while handling objects."))
-					O.anchored = initial(O.anchored)
+		attack_object(A, user) // If none of these has come to pass, we do normal item interactions
 
-		else if(isliving(target))
-			var/mob/living/M = target
-			if(M.stat>1) return
-			if(chassis.occupant.a_intent == I_HURT)
-				chassis.occupant_message(SPAN_DANGER("You obliterate [target] with [src.name], leaving blood and guts everywhere."))
-				chassis.visible_message(SPAN_DANGER("[chassis] destroys [target] in an unholy fury."))
-				M.take_overall_damage(dam_force)
-				M.adjustOxyLoss(round(dam_force/9))
-				M.updatehealth()
-			if(chassis.occupant.a_intent == I_DISARM)
-				chassis.occupant_message(SPAN_DANGER("You tear at [target]'s limbs with [src.name]."))
-				chassis.visible_message(SPAN_DANGER("[chassis] rips [target]'s."))
-				M.take_overall_damage(dam_force/6)
-				M.adjustOxyLoss(round(dam_force/2))
-				M.updatehealth()
-			else
-				step_away(M,chassis)
-				chassis.occupant_message("You smash into [target], sending them flying.")
-				chassis.visible_message("[chassis] tosses [target] like a piece of paper.")
-			set_ready_state(0)
-			chassis.use_power(energy_drain)
-			do_after_cooldown()
-		return 1
+	attack_object(obj/T, mob/living/user) // attack_object override for the clamp after action()
+		return ..()
 
 /obj/item/mecha_parts/mecha_equipment/tool/passenger
 	name = "passenger compartment"
