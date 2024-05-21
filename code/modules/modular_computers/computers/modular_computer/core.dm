@@ -250,7 +250,7 @@
 
 	active_program.program_state = PROGRAM_STATE_BACKGROUND // Should close any existing UIs
 	SSnano.close_uis(active_program.NM ? active_program.NM : active_program)
-	SStgui.close_uis(active_program.NM ? active_program.NM : active_program)
+	SStgui.close_uis(active_program.TM ? active_program.TM : active_program)
 	active_program = null
 	update_icon()
 	if(istype(user))
@@ -414,17 +414,3 @@
 		F = portable_drive.find_file_by_name(name)
 
 	return F
-
-// accepts either name or type
-/obj/item/modular_computer/proc/getNanoModuleByFile(var/name)
-	var/datum/computer_file/program/P
-	if(ispath(name))
-		P = getProgramByType(name)
-	else
-		P = getFileByName(name)
-	if(!P || !istype(P))
-		return null
-	var/datum/nano_module/module = P.NM
-	if(!module)
-		return null
-	return module

@@ -5,7 +5,7 @@
 	tgui_id = "CrewManifest"
 
 /datum/tgui_module/manifest/ui_data(mob/user)
-	var/list/data = list()
+	var/list/data = ..()
 
 	var/list/dept_data = list(
 		list("key" = "heads", "flag" = COMMAND),

@@ -18,7 +18,7 @@
 	var/extended_desc = "N/A"						// Short description of this program's function.
 	var/program_icon_state = null					// Program-specific screen icon state
 	var/program_key_state = "standby_key"			// Program-specific keyboard icon state
-	var/program_menu_icon = "newwin"				// Icon to use for program's link in main menu
+	var/program_menu_icon = ""						// Icon to use for program's link in main menu (default handled by UI)
 	var/requires_ntnet = 0							// Set to 1 for program to require nonstop NTNet connection to run. If NTNet connection is lost program crashes.
 	var/requires_ntnet_feature = 0					// Optional, if above is set to 1 checks for specific function of NTNet (currently NTNET_SOFTWAREDOWNLOAD, NTNET_PEERTOPEER, NTNET_SYSTEMCONTROL and NTNET_COMMUNICATION)
 	var/ntnet_status = 1							// NTNet status, updated every tick by computer running this program. Don't use this for checks if NTNet works, computers do that. Use this for calculations, etc.
@@ -175,6 +175,10 @@
 			NM = new nanomodule_path(src, new /datum/topic_manager/program(src), src)
 			if(user)
 				NM.using_access = user.GetAccess()
+		if(tguimodule_path)
+			TM = new tguimodule_path(src)
+			if(user)
+				TM.using_access = user.GetAccess()
 		if(requires_ntnet && network_destination)
 			generate_network_log("Connection opened to [network_destination].")
 		program_state = PROGRAM_STATE_ACTIVE
@@ -187,6 +191,7 @@
 	if(network_destination)
 		generate_network_log("Connection to [network_destination] closed.")
 	QDEL_NULL(NM)
+	QDEL_NULL(TM)
 	return 1
 
 // Checks a skill of a given mob, if mob can have one.
@@ -259,10 +264,9 @@
 /datum/computer_file/program/proc/check_eye(var/mob/user)
 	if(NM)
 		return NM.check_eye(user)
-	else if(TM)
+	if(TM)
 		return TM.check_eye(user)
-	else
-		return -1
+	return -1
 
 /datum/computer_file/program/initial_data()
 	return computer.get_header_data()
@@ -299,11 +303,11 @@
 /datum/computer_file/program/apply_visual(mob/M)
 	if(NM)
 		NM.apply_visual(M)
-	else if(TM)
+	if(TM)
 		TM.apply_visual(M)
 
 /datum/computer_file/program/remove_visual(mob/M)
 	if(NM)
 		NM.remove_visual(M)
-	else if(TM)
+	if(TM)
 		TM.remove_visual(M)
