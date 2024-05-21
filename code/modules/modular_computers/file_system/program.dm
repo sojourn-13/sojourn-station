@@ -190,6 +190,7 @@
 	program_state = PROGRAM_STATE_KILLED
 	if(network_destination)
 		generate_network_log("Connection to [network_destination] closed.")
+	SStgui.close_uis(src)
 	QDEL_NULL(NM)
 	QDEL_NULL(TM)
 	return 1
@@ -202,6 +203,12 @@
 
 	return STAT_LEVEL_MIN
 
+/datum/computer_file/program/ui_data(mob/user)
+	var/list/data = ..()
+	
+	data += computer.get_header_data()
+
+	return data
 
 /datum/computer_file/program/ui_interact(mob/user, datum/tgui/ui)
 	if(program_state != PROGRAM_STATE_ACTIVE) // Our program was closed. Close the ui if it exists.

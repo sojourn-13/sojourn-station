@@ -1,7 +1,19 @@
 // Operates TGUI
+GLOBAL_LIST_INIT(ntos_themes, list(
+	"ntos",
+	"ntos_cat",
+	"ntos_darkmode",
+	"ntos_lightmode",
+	"ntos_spooky",
+	"ntos_synth",
+	"ntos_terminal",
+	"ntOS95",
+))
+
 /obj/item/modular_computer/ui_assets(mob/user)
 	return list(
-		get_asset_datum(/datum/asset/simple/ntos)
+		get_asset_datum(/datum/asset/simple/ntos),
+		
 	)
 
 /obj/item/modular_computer/ui_interact(mob/user, datum/tgui/ui)
@@ -27,6 +39,11 @@
 	if(!hard_drive || !hard_drive.stored_files || !hard_drive.stored_files.len)
 		visible_message("\The [src] beeps three times, it's screen displaying \"DISK ERROR\" warning.")
 		return // No HDD, No HDD files list or no stored files. Something is very broken.
+
+	// Until we murder nanomodules entirely, this should make the hybrid system more stable
+	var/datum/asset/simple/directories/nanoui/nano_assets = get_asset_datum(/datum/asset/simple/directories/nanoui)
+	nano_assets.send(user)
+	// No browse_queue_flush() because nano assets should hopefully load before the user clicks any NM
 
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
@@ -213,6 +230,8 @@
 // Function used by NanoUI's to obtain data for header. All relevant entries begin with "PC_"
 /obj/item/modular_computer/proc/get_header_data()
 	var/list/data = list()
+
+	data["PC_device_theme"] = device_theme
 
 	if(cell)
 		switch(cell.percent())
