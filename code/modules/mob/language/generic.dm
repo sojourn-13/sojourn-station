@@ -3,7 +3,7 @@
 	name = "Noise"
 	desc = "Noises"
 	key = ""
-	flags = RESTRICTED|NONGLOBAL|INNATE|NO_TALK_MSG|NO_STUTTER
+	flags = RESTRICTED|NONGLOBAL|INNATE|NO_TALK_MSG|NO_STUTTER|NO_TRANSLATE
 	has_written_form = FALSE
 
 /datum/language/noise/format_message(message, verb)
