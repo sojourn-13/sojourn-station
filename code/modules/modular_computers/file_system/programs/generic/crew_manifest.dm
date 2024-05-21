@@ -13,3 +13,7 @@
 
 /datum/tgui_module/manifest/ntos
 	ntos = TRUE
+
+// Manifest by default is ALWAYS_STATE
+/datum/tgui_module/manifest/ntos/ui_state()
+	return GLOB.default_state
