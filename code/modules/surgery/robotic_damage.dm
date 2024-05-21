@@ -86,17 +86,13 @@
 /datum/surgery_step/robotic/fix_burn/require_tool_message(mob/living/user)
 	to_chat(user, SPAN_WARNING("You need a tool capable of [required_tool_quality] or some some cable coils to complete this step."))
 
-
 /datum/surgery_step/robotic/fix_burn/can_use(mob/living/user, obj/item/organ/external/organ, obj/item/tool)
-	if(..() && organ.is_open() && istype(tool))
+	if(BP_IS_ROBOTIC(organ) && organ.is_open() && istype(tool))
 		if(istype(tool, /obj/item/stack/cable_coil))
 			var/obj/item/stack/S = tool
-			if(!S.get_amount() >= 2)
+			if(S.amount < 2)
 				to_chat(user, SPAN_WARNING("You need two or more cable pieces to repair this damage."))
-				return SURGERY_FAILURE
-		if(organ.burn_dam <= 0)
-			to_chat(user, SPAN_NOTICE("The wiring in [organ.get_surgery_name()] is undamaged!"))
-			return SURGERY_FAILURE
+				return
 
 		return TRUE
 

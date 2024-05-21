@@ -133,6 +133,7 @@
 		return FALSE
 
 	S.begin_step(user, src, tool, target)	//start on it
+
 	var/atom/surgery_target = get_surgery_target()
 	var/success = FALSE
 
@@ -240,7 +241,12 @@
 		difficulty_adjust += -90
 		time_adjust += -130
 
-	if(S.required_tool_quality)
+	var/bypass_normal_tool_check = FALSE
+	for(var/tool_to_check in S.allowed_tools)
+		if(istype(tool, tool_to_check))
+			bypass_normal_tool_check = TRUE
+
+	if(S.required_tool_quality && !bypass_normal_tool_check)
 		success = tool.use_tool_extended(
 			user, surgery_target,
 			S.duration + time_adjust,
@@ -248,7 +254,6 @@
 			S.difficulty + difficulty_adjust,
 			required_stat = S.required_stat
 		)
-
 	else
 		var/wait
 		var/time_bonus = bio_time_bonus(user) // 80 being base duration, whatever value the proc returns will be deducted from the surgical step's duration. - Seb
