@@ -941,7 +941,7 @@
 	icon_state = "mecha_clamp"
 	equip_cooldown = 15
 	energy_drain = 0
-	var/dam_force = 90 //Lmao, the mech sword deals 60
+	force = 90 //Lmao, the mech sword deals 60
 	var/obj/mecha/working/ripley/cargo_holder
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
