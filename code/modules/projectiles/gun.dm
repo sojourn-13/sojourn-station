@@ -760,6 +760,28 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		offset -= braceable * 3 // Bipod doubles effect
 	return offset
 
+//Support proc. Returns the gun in the active hand. If restrictive is set to FALSE and there's no gun in the active hand, checks the other hand. If both hands have no guns, sends a message to user. Ported from CM for use with gun safety verb
+/obj/item/gun/proc/get_active_firearm(mob/user, restrictive = TRUE)
+	if(!ishuman(usr))
+		return
+	if(user.incapacitated() || !isturf(usr.loc))
+		to_chat(user, SPAN_WARNING("Not right now."))
+		return
+
+	var/obj/item/gun/held_item = user.get_active_hand()
+
+	if(!istype(held_item)) // if active hand is not a gun
+		if(restrictive) // if restrictive we return right here
+			to_chat(user, SPAN_WARNING("You need a gun in your active hand to do that!"))
+			return
+		else // else check inactive hand
+			held_item = user.get_inactive_hand()
+			if(!istype(held_item)) // if inactive hand is ALSO not a gun we return
+				to_chat(user, SPAN_WARNING("You need a gun in one of your hands to do that!"))
+				return
+
+	return held_item
+
 //Suicide handling.
 /obj/item/gun/proc/handle_suicide(mob/living/user)
 	if(!ishuman(user))
@@ -993,7 +1015,8 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		to_chat(user, SPAN_NOTICE("\The [src] is now set to [new_mode.name]."))
 
 /obj/item/gun/proc/toggle_safety(mob/living/user)
-	if(restrict_safety || src != user.get_active_hand())
+	if(restrict_safety)
+		to_chat(user, SPAN_WARNING("This gun does not have a functional safety!"))
 		return
 
 	safety = !safety
@@ -1088,9 +1111,16 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	update_firemode()
 
 /obj/item/gun/proc/toggle_safety_verb()
-	set name = "Toggle gun's safety"
+	set name = "Toggle gun safety"
 	set category = "Object"
-	set src in view(1)
+	set src = usr.contents
+
+	var/obj/item/gun/active_firearm = get_active_firearm(usr, FALSE) //safeties shouldn't be restrictive
+
+	if(!active_firearm)
+		return
+
+	src = active_firearm
 
 	toggle_safety(usr)
 
@@ -1176,18 +1206,18 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			firemode_stats += list(list("name" = "Fire Delay", "type" = "AnimatedNumber", "value" = F.settings["fire_delay"], "unit" = " ms"))
 		if(F.settings["move_delay"])
 			firemode_stats += list(list("name" = "Move Delay", "type" = "AnimatedNumber", "value" = F.settings["move_delay"], "unit" = " ms"))
-		
+
 		var/list/firemode_info = list(
 			"index" = i,
 			"name" = F.name,
 			"desc" = F.desc,
 			"stats" = firemode_stats
 		)
-		
+
 		if(F.settings["projectile_type"])
 			var/proj_path = F.settings["projectile_type"]
 			firemode_info["projectile"] = ui_data_projectile_stats(new proj_path)
-		
+
 		firemodes_data += list(firemode_info)
 		i += 1
 
@@ -1209,7 +1239,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	. = ..()
 	if(.)
 		return
-	
+
 	switch(action)
 		if("firemode")
 			sel_mode = text2num(params["index"])
