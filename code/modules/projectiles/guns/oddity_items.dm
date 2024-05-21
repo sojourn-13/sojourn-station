@@ -54,7 +54,6 @@
 		list(mode_name="August Presence", mode_desc="Fires two of the king's decrees at the same time.", burst=2, icon="semi")
 		)
 
-
 /obj/item/gun/projectile/shotgun/doublebarrel/bluecross_shotgun/bolt_act(mob/living/user)
 	bolt_open = !bolt_open
 	if(bolt_open)
@@ -101,7 +100,6 @@
 	excelsior = FALSE
 	gun_parts = list(/obj/item/part/gun/frame/maxim = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
-
 /obj/item/gun/energy/lasersmg/inferno
 	name = "Disco Inferno \"Light Show\""
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
@@ -138,6 +136,7 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 	A spray painted decal of a rat man with a grinning face has been placed on the grip, the deadliest killers are often those ignored or underestimated by others after all. \
 	This particular pistol has been oiled, cleaned, and appears to be so well maintained that its become 110% of its normal potential."
+	icon = 'icons/obj/guns/projectile/rafale_bluecross.dmi'
 	damage_multiplier = 1.8
 	init_recoil = HANDGUN_RECOIL(0.3)
 	penetration_multiplier = 3.1
@@ -262,6 +261,7 @@
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A \"presumebly\" endless supply of slaught-o-matics when drawn. You are never really able to tell when and how a new one takes its place when you draw one."
 	price_tag = 4000
+	icon_state = "holster_lock_pick"
 	var/spam_protection = 2 //The amount of guns we currently store
 	var/spam_protection_delay = 2.5 SECOND //How fast we recharge our storage
 	var/stored = 2
@@ -350,7 +350,6 @@
 		list(mode_name="thinner", mode_desc="fires a random colourless flare", projectile_type=/obj/item/projectile/bullet/flare/white, charge_cost = 200, icon="kill")
 	)
 
-
 /obj/item/gun/energy/xray/psychic_cannon
 	name = "\"Manta-RAY\" cannon"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
@@ -370,7 +369,6 @@
 	can_dual = TRUE
 	slot_flags = SLOT_BACK|SLOT_BELT|SLOT_HOLSTER
 	serial_type = "BlueCross"
-
 
 /obj/item/gun/projectile/that_gun
 	name = "\"That Gun\" revolver pistol"
@@ -459,8 +457,8 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
 	serial_type = "BlueCross"
 	gun_parts = null
-	slowdown = -0.5
-	slowdown_hold = -0.5
+	slowdown = -0.2
+	slowdown_hold = -0.2
 
 /obj/item/gun/energy/lasersmg/p9evil
 	name = "P9 \"Evil\" smg"
@@ -607,6 +605,8 @@
 	degradation = 0.7
 	max_upgrades = 4
 	price_tag = 1500
+	effective_faction = list("excelsior")
+	damage_mult = 2
 
 /obj/item/tool/saw/hyper/doombringer
 	name = "\"Doombringer\" chainsword"
@@ -699,7 +699,6 @@
 			robo_lim += 1
 		if(robo_lim == 1)
 			able_to_use = TRUE
-
 
 		//message_admins("1knife: able_to_use [able_to_use]")
 
@@ -859,14 +858,12 @@
 	//Its a bad weapon
 	force = WEAPON_FORCE_PAINFUL
 	armor_penetration = ARMOR_PEN_SHALLOW
+	has_alt_mode = FALSE
 
 /obj/item/shield/riot/mass_grave/check_shield_arc()
 	return TRUE
 
 /obj/item/shield/riot/mass_grave/refresh_upgrades()
-	return
-
-/obj/item/shield/riot/mass_grave/alt_mode_activeate_one()
 	return
 
 /obj/item/shield/riot/mass_grave/proc/upgrade_mass_grave()
@@ -918,7 +915,6 @@
 		mass_grave_counter -= 1
 	..()
 
-
 /obj/item/shield/riot/mass_grave/get_protected_area(mob/user)
 	return BP_ALL_LIMBS
 
@@ -940,7 +936,6 @@
 	..()
 
 //Armor
-
 
 // Regal Outfit (Crimson Clothing)
 /obj/item/clothing/suit/crimsoncross_regaloutfit
