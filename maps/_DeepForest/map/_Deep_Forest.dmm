@@ -173,10 +173,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/prepper/vault/entryway)
-"ajn" = (
-/obj/random/cluster/spiders/low_chance,
-/turf/unsimulated/mineral,
-/area/nadezhda/dungeon/outside/prepper)
 "ajQ" = (
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/white/brown_perforated,
@@ -12263,6 +12259,9 @@
 	narrate = "A great, massive structure. Rotting and decayed, though seemingly maintained to some minimum, the whole vault feels as if it could collapse around you at any moment, the shuffling of steel-clad boots echoes through the halls.";
 	name = "Abandoned Bunker"
 	})
+"kQB" = (
+/turf/simulated/mineral/planet,
+/area/nadezhda/dungeon/outside/prepper)
 "kQG" = (
 /obj/structure/closet/onestar/tier1/mineral,
 /turf/simulated/floor/tiled/derelict/white_big_edges,
@@ -12548,6 +12547,10 @@
 /obj/random/mob/vox/low_chance,
 /turf/simulated/floor/asteroid/grass,
 /area/colony/exposedsun/pastgate)
+"lfd" = (
+/obj/structure/invislight,
+/turf/simulated/mineral/planet,
+/area/nadezhda/dungeon/outside/prepper)
 "lfg" = (
 /obj/random/junk,
 /obj/random/junk,
@@ -22820,6 +22823,14 @@
 /obj/structure/scrap/guns/large,
 /obj/structure/scrap/guns/large,
 /turf/simulated/floor/tiled/dark,
+/area/nadezhda/dungeon/outside/prepper)
+"tYC" = (
+/obj/random/cluster/spiders/low_chance,
+/obj/item/hand_tele/handmade,
+/obj/random/cloth/armor,
+/obj/random/pack/gun_loot,
+/obj/item/remains/human,
+/turf/simulated/mineral/planet,
 /area/nadezhda/dungeon/outside/prepper)
 "tZg" = (
 /obj/random/mob/vox,
@@ -79952,7 +79963,7 @@ nxY
 rHY
 wDE
 wDE
-ajn
+tYC
 wDE
 qHH
 qHH
@@ -80161,8 +80172,8 @@ nxY
 rHY
 rHY
 wDE
-wDE
-wDE
+lfd
+kQB
 qHH
 qHH
 chp
@@ -80368,10 +80379,10 @@ nxY
 nxY
 nxY
 rHY
+rHY
+rHY
 tml
-rHY
-rHY
-rHY
+tml
 gbQ
 gbQ
 jSh
@@ -80578,10 +80589,10 @@ nxY
 nxY
 rHY
 tml
-tml
 rHY
-gbQ
-gbQ
+rHY
+tml
+tml
 gbQ
 ojX
 ojX
@@ -80790,7 +80801,7 @@ tml
 tml
 naj
 naj
-naj
+qxe
 hRL
 wFt
 wFt

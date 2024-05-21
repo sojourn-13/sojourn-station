@@ -16,43 +16,43 @@ import { GameIcon } from '../components/GameIcon';
 import { Window } from '../layouts';
 
 interface OwnerData {
-  name: string
-  dept: string
+  name: string;
+  dept: string;
 }
 
 interface ErrorData {
-  message: string
-  isError: boolean
+  message: string;
+  isError: boolean;
 }
 
 interface VendingProductData extends ErrorData {
-  name: string
-  desc: string
-  price: number
+  name: string;
+  desc: string;
+  price: number;
 }
 
 interface ProductData {
-  key: number
-  name: string
-  icon: string
-  price: number
-  color?: null
-  amount: number
+  key: number;
+  name: string;
+  icon: string;
+  price: number;
+  color?: null;
+  amount: number;
 }
 
 interface VendingData {
-  name: string
-  panel: boolean
-  isCustom: string
-  ownerData?: OwnerData
-  isManaging: boolean
-  managingData: ErrorData
-  isVending: boolean
-  vendingData: VendingProductData
-  products?: ProductData[]
-  markup?: number
-  speaker?: string
-  advertisement?: string
+  name: string;
+  panel: boolean;
+  isCustom: string;
+  ownerData?: OwnerData;
+  isManaging: boolean;
+  managingData: ErrorData;
+  isVending: boolean;
+  vendingData: VendingProductData;
+  products?: ProductData[];
+  markup?: number;
+  speaker?: string;
+  advertisement?: string;
 }
 
 const managing = (managingData: ErrorData) => {
@@ -73,12 +73,12 @@ const managing = (managingData: ErrorData) => {
         )}
       </Stack.Item>
       <Stack.Item>
-        <Stack justify='space-between' textAlign='center'>
+        <Stack justify="space-between" textAlign="center">
           <Stack.Item grow>
             <Button
               fluid
               ellipsis
-              icon='building'
+              icon="building"
               onClick={() => act('setdepartment')}
             >
               Organization
@@ -88,14 +88,14 @@ const managing = (managingData: ErrorData) => {
             <Button
               fluid
               ellipsis
-              icon='id-card'
+              icon="id-card"
               onClick={() => act('setaccount')}
             >
               Account
             </Button>
           </Stack.Item>
           <Stack.Item grow>
-            <Button fluid ellipsis icon='tags' onClick={() => act('markup')}>
+            <Button fluid ellipsis icon="tags" onClick={() => act('markup')}>
               Markup
             </Button>
           </Stack.Item>
@@ -105,7 +105,7 @@ const managing = (managingData: ErrorData) => {
   );
 };
 
-const custom = props => {
+const custom = (props) => {
   const { act, data } = useBackend<VendingData>();
   const { ownerData } = data;
 
@@ -113,18 +113,18 @@ const custom = props => {
     <Section title={data.isManaging ? 'Managment' : 'Commercial Info'}>
       <Stack fill vertical>
         <Stack>
-          <Stack.Item align='center'>
-            <Icon name='toolbox' size={3} mx={1} />
+          <Stack.Item align="center">
+            <Icon name="toolbox" size={3} mx={1} />
           </Stack.Item>
           <Stack.Item>
             <LabeledList>
-              <LabeledList.Item label='Owner'>
+              <LabeledList.Item label="Owner">
                 {ownerData?.name || 'Unknown'}
               </LabeledList.Item>
-              <LabeledList.Item label='Department'>
+              <LabeledList.Item label="Department">
                 {ownerData?.dept || 'Not Specified'}
               </LabeledList.Item>
-              <LabeledList.Item label='Murkup'>
+              <LabeledList.Item label="Murkup">
                 {(data?.markup && data?.markup > 0 && (
                   <Box>{data.markup}</Box>
                 )) ||
@@ -140,34 +140,36 @@ const custom = props => {
 };
 
 const product = (product: ProductData) => {
-  const { act, data } = useBackend<VendingData>();
+  const { act, config, data } = useBackend<VendingData>();
 
   return (
     <Stack.Item>
-      <Stack fill height='5.9ch'>
+      <Stack fill>
         <Stack.Item grow>
-          { /*
-          // @ts-expect-error: Spurious error due to bad type in upstream Button component */ }
+          {/*
+          // @ts-expect-error: Spurious error due to bad type in upstream Button component */}
           <Button
             fluid
             ellipsis
             onClick={() => act('vend', { key: product.key })}
           >
-            <Stack fill align='center'>
-              <Stack.Item>
-                <GameIcon html={product.icon} />
-              </Stack.Item>
-              <Stack.Item grow={4} textAlign='left' className='Vending--text'>
+            <Stack fill align="center">
+              {!config.window.toaster && (
+                <Stack.Item>
+                  <GameIcon html={product.icon} />
+                </Stack.Item>
+              )}
+              <Stack.Item grow={4} textAlign="left" className="Vending--text">
                 {product.name}
               </Stack.Item>
-              <Stack.Item grow textAlign='right' className='Vending--text'>
+              <Stack.Item grow textAlign="right" className="Vending--text">
                 {product.amount}
-                <Icon name='box' pl='0.6em' />
+                <Icon name="box" pl="0.6em" />
               </Stack.Item>
               {(product.price > 0 && (
-                <Stack.Item grow textAlign='right' className='Vending--text'>
+                <Stack.Item grow textAlign="right" className="Vending--text">
                   {product.price}
-                  <Icon name='money-bill' pl='0.6em' />
+                  <Icon name="money-bill" pl="0.6em" />
                 </Stack.Item>
               )) ||
                 null}
@@ -178,21 +180,21 @@ const product = (product: ProductData) => {
           <>
             <Stack.Item>
               <Button
-                icon='tag'
+                icon="tag"
                 tooltip="Change Price"
-                color='yellow'
-                className='Vending--icon'
-                verticalAlignContent='middle'
+                color="yellow"
+                className="Vending--icon"
+                verticalAlignContent="middle"
                 onClick={() => act('setprice', { key: product.key })}
               />
             </Stack.Item>
             <Stack.Item>
               <Button
-                icon='eject'
+                icon="eject"
                 tooltip="Remove"
-                color='red'
-                className='Vending--icon'
-                verticalAlignContent='middle'
+                color="red"
+                className="Vending--icon"
+                verticalAlignContent="middle"
                 onClick={() => act('remove', { key: product.key })}
               />
             </Stack.Item>
@@ -208,17 +210,17 @@ const pay = (vendingProduct: VendingProductData) => {
   const { act } = useBackend<VendingData>();
 
   return (
-    <Modal className='Vending--modal'>
-      <Stack fill vertical justify='space-between'>
+    <Modal className="Vending--modal">
+      <Stack fill vertical justify="space-between">
         <Stack.Item>
           <LabeledList>
-            <LabeledList.Item label='Name'>
+            <LabeledList.Item label="Name">
               {capitalize(vendingProduct.name)}
             </LabeledList.Item>
-            <LabeledList.Item label='Description'>
+            <LabeledList.Item label="Description">
               {vendingProduct.desc}
             </LabeledList.Item>
-            <LabeledList.Item label='Price'>
+            <LabeledList.Item label="Price">
               {vendingProduct.price}
             </LabeledList.Item>
           </LabeledList>
@@ -231,11 +233,11 @@ const pay = (vendingProduct: VendingProductData) => {
         <Stack.Item>
           <Button
             fluid
-            icon='ban'
-            color='red'
-            content='Cancel'
-            className='Vending--cancel'
-            verticalAlignContent='middle'
+            icon="ban"
+            color="red"
+            content="Cancel"
+            className="Vending--cancel"
+            verticalAlignContent="middle"
             onClick={() => act('cancelpurchase')}
           />
         </Stack.Item>
@@ -244,7 +246,7 @@ const pay = (vendingProduct: VendingProductData) => {
   );
 };
 
-export const Vending = props => {
+export const Vending = (props) => {
   const { act, data } = useBackend<VendingData>();
 
   return (
@@ -261,7 +263,7 @@ export const Vending = props => {
                 py={1}
                 icon={data.speaker ? 'comment' : 'comment-slash'}
                 content={`Speaker ${data.speaker ? 'Enabled' : 'Disabled'}`}
-                textAlign='center'
+                textAlign="center"
                 color={data.speaker ? 'green' : 'red'}
                 onClick={() => act('togglevoice')}
               />
@@ -277,7 +279,7 @@ export const Vending = props => {
           )) ||
             null}
           <Stack.Item grow>
-            <Section scrollable fill title='Products'>
+            <Section scrollable fill title="Products">
               <Stack fill vertical>
                 {data.products &&
                   data.products.map((value, i) => product(value))}

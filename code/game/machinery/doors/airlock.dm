@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(wedge_icon_cache)
 
 	damage_smoke = TRUE
 
-/obj/machinery/door/airlock/attack_generic(mob/user, damage)
+/obj/machinery/door/airlock/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(stat & (BROKEN|NOPOWER))
 		if(damage >= 10)
 			if(density)

@@ -374,13 +374,15 @@
 	return 0
 
 // End BS12 momentum-transfer code.
-
-/mob/living/attack_generic(var/mob/user, var/damage, var/attack_message)
+//A **lot** of the arguments for this are dead data used for human/superier mobs
+/mob/living/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 
 	if(!damage || !istype(user))
 		return
-
-	adjustBruteLoss(damage)
+	if(damagetype == BRUTE)
+		adjustBruteLoss(damage)
+	else
+		adjustFireLoss(damage)
 	user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [src.name] ([src.ckey])</font>")
 	src.attack_log += text("\[[time_stamp()]\] <font color='orange'>was attacked by [user.name] ([user.ckey])</font>")
 	src.visible_message(SPAN_DANGER("[user] has [attack_message] [src]!"))

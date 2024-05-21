@@ -38,7 +38,6 @@
 /obj/machinery/smartfridge/secure/medbay/organs/stocked/New()
 	..()
 	new /obj/item/storage/freezer(src)
-	update_contents()
 	update_icon()
 
 /obj/machinery/vending/organfridge_aberrant

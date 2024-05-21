@@ -21,12 +21,12 @@ var/const/SUIT_STORAGE_WIRE_LOCKED		= 4
 		return 1
 	return 0
 
-/datum/wires/suit_storage_unit/GetInteractWindow(mob/living/user)
+/datum/wires/suit_storage_unit/get_status(mob/living/user)
 	var/obj/machinery/suit_storage_unit/S = holder
-	. += ..(user)
-	. += "<BR>The orange light is [S.electrified ? "off" : "on"].<BR>"
-	. += "The red light is [S.safeties ? "off" : "blinking"].<BR>"
-	. += "The yellow light is [S.locked ? "on" : "off"].<BR>"
+	. = ..()
+	. += "The orange light is [S.electrified ? "off" : "on"]."
+	. += "The red light is [S.safeties ? "off" : "blinking"]."
+	. += "The yellow light is [S.locked ? "on" : "off"]."
 
 /datum/wires/suit_storage_unit/UpdatePulsed(var/index)
 	var/obj/machinery/suit_storage_unit/S = holder

@@ -558,7 +558,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	)
 	build_time = 8 SECONDS
 
-
+/* Removed do to exploits
 //Church weapons, faster but more exspensive way for vectors to get their armorments without a disk
 /datum/nt_blueprint/weapons
 	blueprint_type = "item"
@@ -639,4 +639,4 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 		/obj/item/stack/material/silver = 1
 	)
 	build_time = 5 SECONDS
-
+*/

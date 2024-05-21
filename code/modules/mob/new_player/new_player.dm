@@ -6,6 +6,8 @@
 	var/totalPlayers = 0		 //Player counts for the Lobby tab
 	var/totalPlayersReady = 0
 	var/datum/browser/panel
+	var/datum/tgui_module/late_choices/late_choices_dialog = null
+	var/datum/tgui_module/manifest/manifest_panel = null
 	universal_speak = 1
 
 	invisibility = 101
@@ -221,7 +223,9 @@
 		LateChoices()
 
 	if(href_list["manifest"])
-		show_manifest(src, nano_state = GLOB.interactive_state)
+		if(!istype(manifest_panel))
+			manifest_panel = new(src)
+		manifest_panel.ui_interact(src)
 
 	if(href_list["SelectedJob"])
 
@@ -344,35 +348,123 @@
 
 	qdel(src)
 
-/mob/new_player/proc/LateChoices()
-	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
+/datum/tgui_module/late_choices
+	name = "Late Join"
+	tgui_id = "LateChoices"
 
-	var/dat = "<html><body><center>"
-	dat += "<b>Welcome, [name].<br></b>"
-	dat += "Round Duration: [roundduration2text()]<br>"
+GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_HAS_EVACUATED, "Gone")
+GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_EMERGENCY, "Emergency")
+GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_TRANSFER, "CrewTransfer")
+GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 
-	if(evacuation_controller.has_evacuated()) //In case Nanotrasen decides reposess CentCom's shuttles.
-		dat += "<font color='red'><b>The vessel has been evacuated.</b></font><br>"
+/datum/tgui_module/late_choices/ui_data(mob/new_player/user)
+	if(!istype(user))
+		return
+
+	var/list/dept_data = list(
+		list("key" = "heads", "flag" = COMMAND),
+		list("key" = "sec", "flag" = SECURITY),
+		list("key" = "bls", "flag" = BLACKSHIELD),
+		list("key" = "med", "flag" = MEDICAL),
+		list("key" = "sci", "flag" = SCIENCE),
+		list("key" = "chr", "flag" = CHURCH),
+		list("key" = "sup", "flag" = LSS),
+		list("key" = "eng", "flag" = ENGINEERING),
+		list("key" = "pro", "flag" = PROSPECTORS),
+		list("key" = "civ", "flag" = CIVILIAN),
+		list("key" = "bot", "flag" = MISC),
+		list("key" = "ldg", "flag" = LODGE)
+	)
+
+	var/list/data = list()
+
+	var/name = user.client.prefs.be_random_name ? "friend" : user.client.prefs.real_name
+
+	data["name"] = name
+	data["duration"] = roundduration2text()
+
+	if(evacuation_controller.has_evacuated())
+		data["evac"] = GLOB.TGUI_LATEJOIN_EVAC_HAS_EVACUATED
 	else if(evacuation_controller.is_evacuating())
-		if(evacuation_controller.emergency_evacuation) // Emergency shuttle is past the point of no recall
-			dat += "<font color='red'>The vessel is currently undergoing evacuation procedures.</font><br>"
-		else                                           // Crew transfer initiated
-			dat += "<font color='red'>The vessel is currently undergoing crew transfer procedures.</font><br>"
+		if(evacuation_controller.emergency_evacuation)
+			data["evac"] = GLOB.TGUI_LATEJOIN_EVAC_EMERGENCY
+		else
+			data["evac"] = GLOB.TGUI_LATEJOIN_EVAC_TRANSFER
+	else
+		data["evac"] = GLOB.TGUI_LATEJOIN_EVAC_NONE
 
-	dat += "Choose from the following open/valid positions:<br>"
+	var/list/jobs = list()
+
 	for(var/datum/job/job in SSjob.occupations)
-		if(job && IsJobAvailable(job.title))
-			if(job.is_restricted(client.prefs))
+		if(job && user.IsJobAvailable(job.title))
+			if(job.is_restricted(user.client.prefs))
 				continue
+
 			var/active = 0
 			// Only players with the job assigned and AFK for less than 10 minutes count as active
-			for(var/mob/M in GLOB.player_list) if(M.mind && M.client && M.mind.assigned_role == job.title && M.client.inactivity <= 10 * 60 * 10)
-				active++
-			dat += "<a href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions]) (Active: [active])</a><br>"
+			for(var/mob/M in GLOB.player_list)
+				if(M.mind?.assigned_role == job.title && M.client?.inactivity <= 10 * 60 * 10)
+					active++
 
-	dat += "</center>"
-	src << browse(dat, "window=latechoices;size=400x640;can_close=1")
+			var/list/departments = list()
+			for(var/list/department in dept_data)
+				if(job.department_flag & department["flag"])
+					departments += department["key"]
+		
+			jobs += list(list(
+				"title" = job.title,
+				"departments" = departments,
+				"current_positions" = job.current_positions,
+				"active" = active
+			))
 
+	data["jobs"] = jobs
+
+	return data
+
+/datum/tgui_module/late_choices/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+
+	if(!isnewplayer(usr))
+		return
+	var/mob/new_player/user = usr
+
+	switch(action)
+		if("join")
+			var/job = params["job"]
+
+			if(!config.enter_allowed)
+				to_chat(user, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+				return
+			else if(SSticker.nuke_in_progress)
+				to_chat(user, "<span class='danger'>The station is currently exploding. Joining would go poorly.</span>")
+				return
+
+			var/datum/species/S = all_species[user.client.prefs.species]
+			if((S.spawn_flags & IS_WHITELISTED) && !is_alien_whitelisted(user, user.client.prefs.species))
+				user << alert("You are currently not whitelisted to play [user.client.prefs.species].")
+				return
+
+			if(!(S.spawn_flags & CAN_JOIN))
+				user << alert("Your current species, [user.client.prefs.species], is not available for play on the station.")
+				return
+
+			user.AttemptLateSpawn(job, user.client.prefs.spawnpoint)
+			return
+
+/datum/tgui_module/late_choices/ui_status(mob/user, datum/ui_state/state)
+	if(isnewplayer(user))
+		. = UI_INTERACTIVE
+	else
+		// should be impossible but hey
+		. = UI_CLOSE
+
+/mob/new_player/proc/LateChoices()
+	if(!istype(late_choices_dialog))
+		late_choices_dialog = new(src)
+	late_choices_dialog.ui_interact(src)
 
 /mob/new_player/proc/create_character()
 	spawning = 1

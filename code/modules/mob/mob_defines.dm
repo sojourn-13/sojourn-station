@@ -169,6 +169,9 @@ While it would be entirely possible to check the mob's move handlers list for th
 
 	var/status_flags = CANSTUN|CANWEAKEN|CANPARALYSE|CANPUSH	//bitflags defining which status effects can be inflicted (replaces canweaken, canstun, etc)
 
+	/// Can they interact with station electronics
+	var/has_unlimited_silicon_privilege = FALSE
+
 	var/area/lastarea = null
 
 	var/digitalcamo = 0 // Can they be tracked by the AI?

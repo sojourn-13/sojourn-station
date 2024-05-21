@@ -73,6 +73,8 @@
 	return files
 
 /obj/machinery/matter_nanoforge/ui_assets(mob/user)
+	if(user?.client?.get_preference_value(/datum/client_preference/tgui_toaster) == GLOB.PREF_YES)
+		return list()
 	return list(
 		get_asset_datum(/datum/asset/simple/design_icons)
 	)
@@ -128,7 +130,7 @@
 
 				if(params["several"])
 					amount = input("How many \"[picked_design.id]\" you want to print ?", "Print several") as null|num
-					if(!CanUseTopic(usr) || !(picked_design in design_list))
+					if(!CanUseTopic(usr) || !(picked_design in design_list) || amount == null)
 						return
 
 				queue_design(picked_design, amount)
@@ -184,6 +186,16 @@
 
 	return data
 
+/obj/machinery/matter_nanoforge/ui_static_data(mob/user)
+	var/list/data = list()
+
+	var/list/L = list()
+	for(var/datum/design/d in design_list)
+		L.Add(list(d.nano_ui_data))
+	data["designs"] = L
+
+	return data
+
 /obj/machinery/matter_nanoforge/ui_data(mob/user)
 	var/list/data = list()
 
@@ -195,11 +207,6 @@
 	data["unfolded"] = unfolded
 
 	data |= materials_data()
-
-	var/list/L = list()
-	for(var/datum/design/d in design_list)
-		L.Add(list(d.nano_ui_data))
-	data["designs"] = L
 
 	if(current_design)
 		data["current"] = current_design.nano_ui_data

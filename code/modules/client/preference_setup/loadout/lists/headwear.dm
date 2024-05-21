@@ -132,6 +132,11 @@
 	path = /obj/item/clothing/head/tiara
 	flags = GEAR_HAS_COLOR_SELECTION
 
+/datum/gear/head/omni_hood
+	display_name = "religious hood"
+	path = /obj/item/clothing/head/religion_hood_color
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/head/kinhelm
 	display_name = "kin voidhelm"
 	path = /obj/item/clothing/head/voidhelm

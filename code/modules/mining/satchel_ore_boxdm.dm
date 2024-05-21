@@ -30,11 +30,9 @@
 	return
 
 /obj/structure/ore_box/proc/update_ore_count()
-
 	stored_ore = list()
 
 	for(var/obj/item/stack/ore/O in contents)
-
 		if(stored_ore[O.name])
 			stored_ore[O.name]++
 		else
@@ -81,19 +79,57 @@
 	if(Adjacent(user))
 		ui_interact(user)
 
-/obj/structure/ore_box/proc/dump_box_contents(ore_name, ore_amount=-1)
+/obj/structure/ore_box/proc/dump_all_contents()
 	var/drop = drop_location()
 	for(var/obj/item/stack/ore/O in src)
-		if(ore_amount == 0)
+		if(QDELETED(O))
+			continue
+		if(QDELETED(src))
+			break
+		O.forceMove(drop)
+
+	update_ore_count()
+
+/obj/structure/ore_box/proc/dump_all_of_type(ore_type)
+	var/drop = drop_location()
+	for(var/obj/item/stack/ore/O in src)
+		if(QDELETED(O))
+			continue
+		if(QDELETED(src))
+			break
+		if("[O.type]" != ore_type)
+			continue
+		O.forceMove(drop)
+
+	update_ore_count()
+
+/obj/structure/ore_box/proc/dump_ore(ore_type, ore_number)
+	var/drop = drop_location()
+
+	var/to_drop = ore_number
+	for(var/obj/item/stack/ore/O in src)
+		if(to_drop <= 0)
 			break
 		if(QDELETED(O))
 			continue
 		if(QDELETED(src))
 			break
-		if(ore_name && O.name != ore_name)
+		if("[O.type]" != ore_type)
 			continue
-		ore_amount--
-		O.forceMove(drop)
+
+		if(O.amount > to_drop)
+			// Split remainder directly into our inventory
+			// We keep the split so the user always gets their original (fucked up) stack back first
+			O.split(O.amount - to_drop)
+			if(!QDELETED(O))
+				to_drop = 0
+				O.forceMove(drop)
+		else
+			to_drop -= O.amount
+			O.forceMove(drop)
+
+	update_ore_count()
+	return ore_number - to_drop
 
 /obj/structure/ore_box/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -111,7 +147,7 @@
     for(var/type in contents)
         var/obj/item/stack/ore/O = type
         var/name = initial(O.name)
-        data["materials"] += list(list("name" = name, "amount" = contents[type], "id" = type))
+        data["materials"] += list(list("name" = name, "amount" = contents[type], "type" = type))
 
     return data
 
@@ -124,20 +160,27 @@
 	add_fingerprint(usr)
 	switch(action)
 		if("ejectallores")
-			dump_box_contents()
+			dump_all_contents()
 			to_chat(usr, span_notice("You release all the content of the box."))
-			update_ore_count()
 			return TRUE
+
 		if("ejectall")
-			var/ore_name = params["type"]
-			dump_box_contents(ore_name)
-			to_chat(usr, span_notice("You release all the [ore_name] ores."))
-			update_ore_count()
+			var/ore_type = params["type"]
+			dump_all_of_type(ore_type)
+
+			var/obj/item/stack/ore/O = text2path(ore_type)
+			var/name = initial(O.name)
+			to_chat(usr, span_notice("You release all \the [name]."))
+
 			return TRUE
+
 		if("eject")
-			var/ore_name = params["type"]
+			var/ore_type = params["type"]
 			var/ore_amount = params["qty"]
-			dump_box_contents(ore_name, ore_amount)
-			to_chat(usr, span_notice("You release [ore_amount] [ore_name] ores."))
-			update_ore_count()
+			var/amount_dropped = dump_ore(ore_type, ore_amount)
+
+			var/obj/item/stack/ore/O = text2path(ore_type)
+			var/name = initial(O.name)
+			to_chat(usr, span_notice("You release [amount_dropped] [name]."))
+
 			return TRUE

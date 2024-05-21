@@ -23,6 +23,7 @@
 
 /obj/structure/lift/proc/pressed(var/mob/user)
 	if(!istype(user, /mob/living/silicon))
+		playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
 		if(user.a_intent == I_HURT)
 			user.visible_message("<span class='danger'>\The [user] hammers on the lift button!</span>")
 		else
@@ -36,7 +37,7 @@
 /obj/structure/lift/attack_ai(var/mob/user)
 	return attack_hand(user)
 
-/obj/structure/lift/attack_generic(var/mob/user)
+/obj/structure/lift/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	return attack_hand(user)
 
 /obj/structure/lift/attack_hand(var/mob/user)
@@ -144,60 +145,59 @@
 	if(!..())
 		return
 
-	var/dat = list()
-	dat += "<html><body><hr><b>Lift panel</b><hr>"
+	ui_interact(user)
 
-	//the stops list stores levels in order of increasing Z
-	//therefore, to display upper levels at the top of the menu and
-	//lower levels at the bottom, we need to go through the list in reverse
+/obj/structure/lift/panel/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Turbolift", name)
+		ui.open()
+
+/obj/structure/lift/panel/ui_data(mob/user)
+	var/list/data = list()
+
+	data["doors_open"] = lift.doors_are_open()
+	data["fire_mode"] = lift.fire_mode
+
+	var/list/floors = list()
 	for(var/i in lift.stops.len to 1 step -1)
 		var/datum/turbolift_stop/floor = lift.stops[i]
-
 		if(!floor.label)
 			continue
+		floors += list(list(
+			"id" = i,
+			"ref" = "[REF(floor)]",
+			"queued" = (floor in lift.queued_stops),
+			"target" = (lift.target_stop == floor),
+			"current" = (lift.current_stop == floor),
+			"label" = floor.label,
+			"name" = floor.name,
+		))
+	data["floors"] = floors
 
-		var/label = floor.label? floor.label : "Level #[i]"
-		dat += "<font color = '[(floor in lift.queued_stops) ? COLOR_YELLOW : COLOR_WHITE]'>"
-		dat += "<a href='?src=\ref[src];move_to_floor=["\ref[floor]"]'>[label]</a>: [floor.name]</font><br>"
+	return data
 
-	dat += "<hr>"
-	if(lift.doors_are_open())
-		dat += "<a href='?src=\ref[src];close_doors=1'>Close Doors</a><br>"
-	else
-		dat += "<a href='?src=\ref[src];open_doors=1'>Open Doors</a><br>"
-	dat += "<a href='?src=\ref[src];emergency_stop=1'>Emergency Stop</a>"
-	dat += "<hr></body></html>"
-
-	user.set_machine(src)
-	var/datum/browser/popup = new(user, "turbolift_panel", "Lift Panel", 350, 320) //VOREStation Edit - Wider!
-	popup.set_content(jointext(dat, null))
-	popup.open()
-	return
-
-/obj/structure/lift/panel/Topic(href, href_list)
+/obj/structure/lift/panel/ui_act(action, params)
 	. = ..()
 	if(.)
 		return
 
-	var/panel_interact
-	if(href_list["move_to_floor"])
-		lift.queue_move_to(locate(href_list["move_to_floor"]))
-		panel_interact = 1
-	if(href_list["open_doors"])
-		panel_interact = 1
-		lift.open_doors()
-	if(href_list["close_doors"])
-		panel_interact = 1
-		lift.close_doors()
-	if(href_list["emergency_stop"])
-		panel_interact = 1
-		lift.emergency_stop()
+	switch(action)
+		if("move_to_floor")
+			. = TRUE
+			lift.queue_move_to(locate(params["ref"]))
+		if("toggle_doors")
+			. = TRUE
+			if(lift.doors_are_open())
+				lift.close_doors()
+			else
+				lift.open_doors()
+		if("emergency_stop")
+			. = TRUE
+			lift.emergency_stop()
 
-	if(panel_interact)
+	if(.)
 		pressed(usr)
-		updateDialog()
-
-	return 0
 
 /obj/structure/lift/panel/update_icon()
 	if(lift.fire_mode)

@@ -1,13 +1,38 @@
-import { useBackend } from '../backend';
-import { Box, Button, Flex, LabeledList, ProgressBar, Section, Slider } from '../components';
-import { formatPower } from '../format';
-import { Window } from '../layouts';
+import { BooleanLike } from 'common/react';
+import { useBackend } from 'tgui/backend';
+import {
+  Box,
+  Button,
+  Flex,
+  LabeledList,
+  ProgressBar,
+  Section,
+  Slider,
+} from 'tgui/components';
+import { formatPower } from 'tgui/format';
+import { Window } from 'tgui/layouts';
 
 // Common power multiplier
 const POWER_MUL = 1e3;
 
+type Data = {
+  capacityPercent: number;
+  capacity: number;
+  charge: number;
+  inputAttempt: BooleanLike;
+  inputting: BooleanLike;
+  inputLevel: number;
+  inputLevelMax: number;
+  inputAvailable: number;
+  outputAttempt: number;
+  outputting: BooleanLike;
+  outputLevel: number;
+  outputLevelMax: number;
+  outputUsed: number;
+};
+
 export const Smes = (props) => {
-  const { act, data } = useBackend();
+  const { act, data } = useBackend<Data>();
   const {
     capacityPercent,
     capacity,
@@ -48,10 +73,12 @@ export const Smes = (props) => {
                 <Button
                   icon={inputAttempt ? 'sync-alt' : 'times'}
                   selected={inputAttempt}
-                  onClick={() => act('tryinput')}>
+                  onClick={() => act('tryinput')}
+                >
                   {inputAttempt ? 'Auto' : 'Off'}
                 </Button>
-              }>
+              }
+            >
               <Box color={inputState}>
                 {(capacityPercent >= 100 && 'Fully Charged') ||
                   (inputting && 'Charging') ||
@@ -131,10 +158,12 @@ export const Smes = (props) => {
                 <Button
                   icon={outputAttempt ? 'power-off' : 'times'}
                   selected={outputAttempt}
-                  onClick={() => act('tryoutput')}>
+                  onClick={() => act('tryoutput')}
+                >
                   {outputAttempt ? 'On' : 'Off'}
                 </Button>
-              }>
+              }
+            >
               <Box color={outputState}>
                 {outputting
                   ? 'Sending'

@@ -83,6 +83,10 @@
 
 #define isdrone(A) istype(A, /mob/living/silicon/robot/drone)
 
+///Define on whether A has access to Silicon stuff either through being a silicon, admin ghost or is a non-silicon holding the Silicon remote.
+///This can only be used for instances where you are not specifically looking for silicon, but access.
+#define HAS_SILICON_ACCESS(A) (issilicon(A) || isAdminGhostAI(A) || A.has_unlimited_silicon_privilege)  // || istype(A.get_active_held_item(), /obj/item/machine_remote))
+
 //-----------------Objects
 #define ismovable(A) istype(A, /atom/movable)
 

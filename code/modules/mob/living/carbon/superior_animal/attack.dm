@@ -17,7 +17,8 @@
 			var/mob/living/carbon/human/target_human = L
 			if(target_human.check_shields(damage, null, src, null, attacktext))
 				return 0
-	. = A.attack_generic(src, damage, attacktext, environment_smash)
+
+	. = A.attack_generic(user = src, damage = damage, attack_message = attacktext, damagetype = melee_damage_type, attack_flag = attacking_armor_type, sharp = melee_sharp, edge = melee_sharp)
 
 	if(.)
 		if (attack_sound && loc && prob(attack_sound_chance))

@@ -69,6 +69,10 @@
 	name = "tactical shield"
 	build_path = /obj/item/shield/buckler
 
+/datum/design/autolathe/sec/excelsior_shield
+	name = "excelsior buckler"
+	build_path = /obj/item/shield/buckler/excelsior
+
 /datum/design/autolathe/sec/bastion
 	name = "bastion shield"
 	build_path = /obj/item/shield/riot/bastion

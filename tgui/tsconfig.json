@@ -13,6 +13,9 @@
       "ESNext",
       "ScriptHost"
     ],
+    "paths": {
+      "tgui/*": [ "./packages/tgui/*" ]
+    },
     "module": "ESNext",
     "moduleResolution": "Node",
     "noEmit": true,

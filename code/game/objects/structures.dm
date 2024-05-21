@@ -207,10 +207,10 @@
 		return 0
 	return 1
 
-/obj/structure/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
-	if(!breakable || !damage || !wallbreaker)
+/obj/structure/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+	if(!breakable || !damage)
 		return 0
-	visible_message(SPAN_DANGER("[user] [attack_verb] the [src] apart!"))
+	visible_message(SPAN_DANGER("[user] [attack_message] the [src] apart!"))
 	attack_animation(user)
 	spawn(1) qdel(src)
 	return 1
