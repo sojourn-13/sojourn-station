@@ -427,6 +427,13 @@
 		assets[filename] = I
 	..()
 
+/datum/asset/simple/ores/register()
+	for(var/type in subtypesof(/obj/item/stack/ore))
+		var/filename = sanitizeFileName("[type].png")
+		var/icon/I = getFlatTypeIcon(type)
+		assets[filename] = I
+	..()
+
 /datum/asset/simple/craft/register()
 	var/list/craftStep = list()
 	for(var/name in SScraft.categories)

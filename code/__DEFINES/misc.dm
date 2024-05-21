@@ -403,3 +403,19 @@
         }\
         A.flags &= ~OVERLAY_QUEUED;\
     } while (FALSE)
+
+#define LIST_COLOR_RENAME 				\
+	list(								\
+		"rebeccapurple" = "dark purple",\
+		"darkslategrey" = "dark grey",	\
+		"darkolivegreen"= "dark green",	\
+		"darkslateblue" = "dark blue",	\
+		"darkkhaki" 	= "khaki",		\
+		"darkseagreen" 	= "light green",\
+		"midnightblue" 	= "blue",		\
+		"lightgrey" 	= "light grey",	\
+		"darkgrey" 		= "dark grey",	\
+		"darkmagenta"	= "dark magenta",\
+		"steelblue" 	= "blue",		\
+		"goldenrod"	 	= "gold"		\
+	)

@@ -253,11 +253,6 @@ var/global/list/default_medbay_channels = list(
 /mob/observer/ghost/has_internal_radio_channel_access(var/list/req_one_accesses)
 	return isAdminGhostAI(src)
 
-/obj/item/device/radio/proc/text_wires()
-	if (b_stat)
-		return wires.GetInteractWindow()
-	return
-
 /obj/item/device/radio/proc/update_transmit_levels() //Updating how far a radio can reach in multi-Z areas
 	var/turf/position = get_turf(src)
 	//Fetching own Z-level

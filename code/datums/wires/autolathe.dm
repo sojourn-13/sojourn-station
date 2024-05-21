@@ -12,12 +12,12 @@ var/const/AUTOLATHE_HACK_WIRE = 1
 var/const/AUTOLATHE_SHOCK_WIRE = 2
 var/const/AUTOLATHE_DISABLE_WIRE = 4
 
-/datum/wires/autolathe/GetInteractWindow(mob/living/user)
+/datum/wires/autolathe/get_status(mob/living/user)
 	var/obj/machinery/autolathe/A = holder
-	. += ..(user)
-	. += "<BR>The red light is [A.disabled ? "off" : "on"]."
-	. += "<BR>The green light is [A.shocked ? "off" : "on"]."
-	. += "<BR>The blue light is [A.hacked ? "off" : "on"].<BR>"
+	. = ..()
+	. += "The red light is [A.disabled ? "off" : "on"]."
+	. += "The green light is [A.shocked ? "off" : "on"]."
+	. += "The blue light is [A.hacked ? "off" : "on"]."
 
 /datum/wires/autolathe/CanUse()
 	var/obj/machinery/autolathe/A = holder

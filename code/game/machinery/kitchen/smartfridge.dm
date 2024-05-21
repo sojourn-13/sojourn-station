@@ -18,8 +18,7 @@
 	var/icon_fill10 = "smartfridge-fill10"
 	var/icon_fill20 = "smartfridge-fill20"
 	var/icon_fill30 = "smartfridge-fill30"
-	var/list/item_quants = list()
-	var/seconds_electrified = 0;
+	var/seconds_electrified = 0
 	var/shoot_inventory = 0
 	var/locked = 0
 	var/scan_id = 1
@@ -221,7 +220,6 @@
 					var/obj/item/reagent_containers/food/snacks/SD = D
 					SD.dry = TRUE //So we dont get stuck in an endless loop of drying, transforming and drying again
 				qdel(S)
-			update_contents()
 		else
 			drying_something = TRUE
 
@@ -320,7 +318,7 @@
 		panel_open = !panel_open
 		user.visible_message("[user] [panel_open ? "opens" : "closes"] the maintenance panel of \the [src].", "You [panel_open ? "open" : "close"] the maintenance panel of \the [src].")
 		update_icon()
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 		return
 
 	if(istype(O, /obj/item/tool/multitool)||istype(O, /obj/item/tool/wirecutters))
@@ -339,10 +337,9 @@
 		else
 			user.remove_from_mob(O)
 			O.forceMove(src)
-			update_contents()
 			user.visible_message(SPAN_NOTICE("[user] has added \the [O] to \the [src]."), SPAN_NOTICE("You add \the [O] to \the [src]."))
 			update_icon()
-			SSnano.update_uis(src)
+			SStgui.update_uis(src)
 
 	else if(istype(O, /obj/item/storage/bag))
 		var/obj/item/storage/bag/P = O
@@ -356,13 +353,12 @@
 					P.remove_from_storage(G,src)
 					plants_loaded++
 		if(plants_loaded)
-			update_contents()
 			update_icon()
 			user.visible_message(SPAN_NOTICE("[user] loads \the [src] with \the [P]."), SPAN_NOTICE("You load \the [src] with \the [P]."))
 			if(P.contents.len > 0)
 				to_chat(user, SPAN_NOTICE("Some items are refused."))
 
-		SSnano.update_uis(src)
+		SStgui.update_uis(src)
 
 	else
 		to_chat(user, SPAN_NOTICE("\The [src] smartly refuses [O]."))
@@ -371,7 +367,6 @@
 /obj/machinery/smartfridge/secure/emag_act(var/remaining_charges, var/mob/user)
 	if(!emagged)
 		emagged = 1
-		locked = -1
 		to_chat(user, "You short out the product lock on [src].")
 		return 1
 
@@ -379,80 +374,69 @@
 	if(stat & (NOPOWER|BROKEN))
 		return
 	wires.Interact(user)
-	nano_ui_interact(user)
+	ui_interact(user)
 
-
-/obj/machinery/smartfridge/proc/update_contents()
-	item_quants.Cut()
-	for (var/obj/item/i in contents)
-		item_quants[i.name] = (item_quants[i.name] ? item_quants[i.name]+1 : 1)
 /*******************
 *   SmartFridge Menu
 ********************/
-
-/obj/machinery/smartfridge/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
-	user.set_machine(src)
-
-	var/data[0]
-	data["contents"] = null
-	data["electrified"] = seconds_electrified > 0
-	data["shoot_inventory"] = shoot_inventory
-	data["locked"] = locked
-	data["secure"] = is_secure
-
-	var/list/items[0]
-	for (var/i=1 to length(item_quants))
-		var/K = item_quants[i]
-		var/count = item_quants[K]
-		if(count > 0)
-			items.Add(list(list("display_name" = html_encode(capitalize(K)), "vend" = i, "quantity" = count)))
-
-	if(items.len > 0)
-		data["contents"] = items
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+/obj/machinery/smartfridge/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key, "smartfridge.tmpl", src.name, 400, 500)
-		ui.set_initial_data(data)
+		ui = new(user, src, "Smartfridge", name)
 		ui.open()
 
-/obj/machinery/smartfridge/Topic(href, href_list)
-	if(..()) return 0
+/obj/machinery/smartfridge/ui_data(mob/user)
+	var/list/data = list()
 
-	var/mob/user = usr
-	var/datum/nanoui/ui = SSnano.get_open_ui(user, src, "main")
+	data["emagged"] = emagged
+	data["secure"] = is_secure
+	data["allowed"] = allowed(user)
+	
+	var/list/items = list()
 
-	src.add_fingerprint(user)
+	for(var/obj/item/I in src)
+		// TODO: If we have smart fridges use component_parts, uncomment this
+		// if(item in component_parts)
+		// 	continue
 
-	if(href_list["close"])
-		user.unset_machine()
-		ui.close()
-		return 0
+		if(!QDELETED(I))
+			if(items[I.name])
+				items[I.name]++
+			else
+				items[I.name] = 1
 
-	if(href_list["vend"])
-		var/index = text2num(href_list["vend"])
-		var/amount = text2num(href_list["amount"])
-		var/K = item_quants[index]
-		var/count = item_quants[K]
+	data["items"] = items
 
-		// Sanity check, there are probably ways to press the button when it shouldn't be possible.
-		if(count > 0)
-			item_quants[K] = max(count - amount, 0)
+	return data
 
-			var/i = amount
-			for(var/obj/O in contents)
-				if(O.name == K)
-					O.loc = loc
-					i--
-					if(i <= 0)
-						update_contents()
-						update_icon()
-						return 1
+/obj/machinery/smartfridge/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
 
-		update_contents()
-		update_icon()
-		return 1
-	return 0
+	if(is_secure)
+		if(!allowed(usr) && !emagged)
+			to_chat(usr, SPAN_WARNING("Access denied."))
+			return TRUE
+
+	switch(action)
+		if("vend")
+			var/count = text2num(params["count"])
+
+			for(var/obj/item/I in src)
+				if(count <= 0)
+					break
+
+				if(format_text(I.name) == format_text(params["name"]))
+					// TODO: If we have smart fridges use component_parts, uncomment this
+					// if(dispensed_item in component_parts)
+					// 	CRASH("Attempted removal of [dispensed_item] component_part from smartfridge via smartfridge interface.")
+					I.forceMove(drop_location())
+					count--
+
+			update_icon()
+			playsound(loc, 'sound/machines/vending_drop.ogg', 100, 1)
+			. = TRUE
 
 /obj/machinery/smartfridge/throw_item()
 	var/obj/throw_item = null
@@ -460,33 +444,19 @@
 	if(!target)
 		return 0
 
-	for (var/O in item_quants)
-		if(item_quants[O] <= 0) //Try to use a record that actually has something to dump.
-			continue
-
-		item_quants[O]--
-		for(var/obj/T in contents)
-			if(T.name == O)
-				T.loc = src.loc
-				throw_item = T
-				break
+	for(var/obj/item/I in src)
+		// TODO: If we have smart fridges use component_parts, uncomment this
+		// if(item in component_parts)
+		// 	continue
+		I.forceMove(drop_location())
+		throw_item = I
 		break
-	update_contents()
+
 	if(!throw_item)
 		return 0
+
 	spawn(0)
-		throw_item.throw_at(target,16,3,src)
-	src.visible_message(SPAN_WARNING("[src] launches [throw_item.name] at [target.name]!"))
+		throw_item.throw_at(target, 16, 3, src)
+
+	visible_message(SPAN_WARNING("[src] launches [throw_item] at [target]!"))
 	return 1
-
-/************************
-*   Secure SmartFridges
-*************************/
-
-/obj/machinery/smartfridge/secure/Topic(href, href_list)
-	if(stat & (NOPOWER|BROKEN)) return 0
-	if(usr.contents.Find(src) || (in_range(src, usr) && istype(loc, /turf)))
-		if(!allowed(usr) && !emagged && locked != -1 && href_list["vend"])
-			to_chat(usr, SPAN_WARNING("Access denied."))
-			return 0
-	return ..()

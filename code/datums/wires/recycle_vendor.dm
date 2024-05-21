@@ -23,13 +23,13 @@ var/const/VENDING_WIRE_SPEAKER = 2
 	if(V.panel_open)
 		return TRUE
 
-/datum/wires/recycle_vendor/GetInteractWindow(mob/living/user)
+/datum/wires/recycle_vendor/get_status(mob/living/user)
 	var/obj/machinery/recycle_vendor/V = holder
-	. += ..(user)
-	. += "<BR>The orange light is [BITTEST(V.wire_flags, WIRE_SHOCK) ? "off" : "on"].<BR>"
-	. += "The red light is [BITTEST(V.wire_flags, WIRE_THROW) ? "off" : "blinking"].<BR>"
-	. += "The green light is [BITTEST(V.wire_flags, WIRE_SPEAKER) ? "on" : "off"].<BR>"
-	. += "The [BITTEST(V.wire_flags, WIRE_ID_SCAN) ? "purple" : "yellow"] light is on.<BR>"
+	. = ..()
+	. += "The orange light is [BITTEST(V.wire_flags, WIRE_SHOCK) ? "off" : "on"]."
+	. += "The red light is [BITTEST(V.wire_flags, WIRE_THROW) ? "off" : "blinking"]."
+	. += "The green light is [BITTEST(V.wire_flags, WIRE_SPEAKER) ? "on" : "off"]."
+	. += "The [BITTEST(V.wire_flags, WIRE_ID_SCAN) ? "purple" : "yellow"] light is on."
 
 /datum/wires/recycle_vendor/UpdatePulsed(index)
 	var/obj/machinery/recycle_vendor/V = holder
