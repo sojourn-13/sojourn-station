@@ -118,7 +118,7 @@
 	id = DEPARTMENT_LSS
 
 	/*
-		The LSS account represents the holdings of the local branch, and CEO.
+		The LSS account represents the holdings of the local branch, and SOM.
 	*/
 	/* if you want to change this remember to do so in code\game\gamemodes\score.dm as well,
 	if you manage to get this variable refferenced there you're a better man than me. godspeed

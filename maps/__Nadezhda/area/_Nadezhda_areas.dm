@@ -687,7 +687,7 @@
 	area_light_color = COLOR_LIGHTING_CREW_SOFT
 
 /area/nadezhda/command/merchant
-	name = "\improper Lonestar - CEO's Office"
+	name = "\improper Lonestar - Manager's Office"
 	icon_state = "quart"
 	flags = AREA_FLAG_CRITICAL
 	sound_env = SMALL_SOFTFLOOR
