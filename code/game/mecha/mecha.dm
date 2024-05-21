@@ -390,6 +390,7 @@
 	if(!target.Adjacent(src))
 		if(selected && selected.is_ranged())
 			selected.action(target, user)
+
 	else if(selected) // If target is adjacent
 		if(istype(selected, /obj/item/mecha_parts/mecha_equipment)) // Check if you're using equipment
 			if(istype(target, /mob/living))
@@ -403,6 +404,7 @@
 				selected.attack_object(target, user)
 			else // If not machinery, not mech or not alive, do the fancy tool uses
 				selected.action(target, user)
+
 	else // Empty handed, no equipment selected
 		if(user.a_intent == I_HELP && istype(target, /obj/machinery))
 			interface_action(target, user)

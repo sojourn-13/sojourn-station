@@ -950,7 +950,7 @@
 		cargo_holder = M
 		return
 
-		action(atom/A, mob/living/user) // fancy non attackby interactions
+	action(atom/A, mob/living/user) // fancy non attackby interactions
 		if(!action_checks(A)) return
 		if(!cargo_holder) return
 
