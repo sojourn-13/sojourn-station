@@ -397,14 +397,14 @@
 	cooldown_category = "bulwark_of_harmony"
 	effect_time = 1 MINUTES
 	power = 60
-	var/brute_mod_monomial
+	/*var/brute_mod_monomial
 	var/burn_mod_monomial
 	var/toxin_mod_monomial
-	var/oxygen_mod_monomial
+	var/oxygen_mod_monomial*/
 
 /datum/ritual/cruciform/monomial/bulwark_of_harmony/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 
-	brute_mod_monomial = (user.brute_mod_perk * 0.5)
+	/*brute_mod_monomial = (user.brute_mod_perk * 0.5)
 	user.brute_mod_perk -= brute_mod_monomial
 
 	burn_mod_monomial = (user.burn_mod_perk * 0.5)
@@ -414,7 +414,12 @@
 	user.toxin_mod_perk -= toxin_mod_monomial
 
 	oxygen_mod_monomial = (user.oxy_mod_perk * 0.5)
-	user.oxy_mod_perk -= oxygen_mod_monomial
+	user.oxy_mod_perk -= oxygen_mod_monomial*/
+
+	user.brute_mod_perk *= 0.5
+	user.burn_mod_perk *= 0.5
+	user.toxin_mod_perk *= 0.5
+	user.oxy_mod_perk *= 0.5
 
 	user.added_movedelay += 5
 
@@ -425,10 +430,14 @@
 
 /datum/ritual/cruciform/monomial/bulwark_of_harmony/proc/discard_effect(mob/living/carbon/human/user, amount)
 	to_chat(user, SPAN_NOTICE("Your body quickens as you slip once more into the flow of normal spacetime."))
-	user.brute_mod_perk += brute_mod_monomial
+	/*user.brute_mod_perk += brute_mod_monomial
 	user.burn_mod_perk += burn_mod_monomial
 	user.toxin_mod_perk += toxin_mod_monomial
-	user.oxy_mod_perk += oxygen_mod_monomial
+	user.oxy_mod_perk += oxygen_mod_monomial*/
+	user.brute_mod_perk /= 0.5
+	user.burn_mod_perk /= 0.5
+	user.toxin_mod_perk /= 0.5
+	user.oxy_mod_perk /= 0.5
 	user.added_movedelay -= 5
 
 //////////////////////////////////////////////////

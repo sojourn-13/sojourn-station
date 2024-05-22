@@ -13,15 +13,15 @@
 /datum/genetics/mutation/thick_fur/onPlayerImplant()
 	if(!..())
 		return
-	container.holder.brute_mod_perk -= 0.1
-	container.holder.burn_mod_perk += 0.1
+	container.holder.brute_mod_perk *= 0.75
+	container.holder.burn_mod_perk *= 1.25
 	if(mutation && !(mutation in container.holder.mutations))
 		container.holder.mutations.Add(mutation)
 
 /datum/genetics/mutation/thick_fur/onPlayerRemove()
 	if(!..())
 		return
-	container.holder.brute_mod_perk += 0.1
-	container.holder.burn_mod_perk -= 0.1
+	container.holder.brute_mod_perk /= 0.75
+	container.holder.burn_mod_perk /= 1.25
 	if(mutation && (mutation in container.holder.mutations))
 		container.holder.mutations.Remove(mutation)

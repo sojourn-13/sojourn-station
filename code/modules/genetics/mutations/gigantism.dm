@@ -6,8 +6,8 @@
 	gain_text = "You feel your body getting larger, stronger, and slower..."
 	var/old_size
 	var/slowdown_delta
-	var/brute_mod_delta
-	var/oxy_mod_delta
+	//var/brute_mod_delta
+	//var/oxy_mod_delta
 
 /datum/genetics/mutation/gigantism/onPlayerImplant()
 	if(!..())
@@ -22,12 +22,14 @@
 	human_holder.stats.changeStat(STAT_ROB, 20)
 	human_holder.stats.changeStat(STAT_TGH, 15)
 
-	brute_mod_delta = (human_holder.brute_mod_perk * 0.2)
-	human_holder.brute_mod_perk -= brute_mod_delta
+	//brute_mod_delta = (human_holder.brute_mod_perk * 0.2)
+	//human_holder.brute_mod_perk -= brute_mod_delta
+	human_holder.brute_mod_perk *= 0.8 //I am sorry Hex but I was able to gain perma brute mod through your math -DimasW
 
 	//Bigger need for air
-	oxy_mod_delta = (human_holder.oxy_mod_perk * 0.2)
-	human_holder.oxy_mod_perk += oxy_mod_delta
+	//oxy_mod_delta = (human_holder.oxy_mod_perk * 0.2)
+	//human_holder.oxy_mod_perk += oxy_mod_delta
+	human_holder.oxy_mod_perk *= 1.2
 
 	//Slower
 	slowdown_delta = human_holder.slowdown - (human_holder.slowdown * 0.8)
@@ -45,10 +47,12 @@
 	human_holder.stats.changeStat(STAT_ROB, -20)
 	human_holder.stats.changeStat(STAT_TGH, -15)
 
-	human_holder.brute_mod_perk += brute_mod_delta
+	//human_holder.brute_mod_perk += brute_mod_delta
+	human_holder.brute_mod_perk /= 0.8
 
 	//Need less air
-	human_holder.oxy_mod_perk -= oxy_mod_delta
+	//human_holder.oxy_mod_perk -= oxy_mod_delta
+	human_holder.oxy_mod_perk /= 1.2
 
 	//faster
 	human_holder.slowdown -= slowdown_delta
