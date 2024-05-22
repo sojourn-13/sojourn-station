@@ -193,6 +193,7 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 				to_chat(usr, SPAN_NOTICE("Program [PRG.filename].[PRG.filetype] has been killed."))
 				. = 1
 
+	// MUST STAY: Email client uses this in a chat link
 	if(href_list["PC_runprogram"])
 		var/obj/item/computer_hardware/hard_drive/prog_disk = locate(href_list["disk"]) in src
 		return run_program(href_list["PC_runprogram"], prog_disk)
