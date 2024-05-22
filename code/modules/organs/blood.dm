@@ -322,11 +322,11 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 	return min(blood_volume, 100)
 
 /mob/living/carbon/human/proc/regenerate_blood(var/amount)
-	amount *= (species.blood_volume / SPECIES_BLOOD_DEFAULT)
+	amount *= (vessel.maximum_volume / species.blood_volume)
 	var/blood_volume_raw = vessel.get_reagent_amount("blood")
-	amount = max(0,min(amount, species.blood_volume - blood_volume_raw))
+	amount = clamp(amount,0,vessel.maximum_volume - blood_volume_raw)
 	if(VAMPIRE in mutations)
-		amount *= 1.50 //25% more
+		amount *= 1.50 //25% more //trilby, how is that 25% -DimasW
 	if(amount)
 		vessel.add_reagent("blood", amount, get_blood_data())
 	return amount
