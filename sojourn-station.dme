@@ -769,6 +769,7 @@
 #include "code\game\machinery\floodlight.dm"
 #include "code\game\machinery\floor_light.dm"
 #include "code\game\machinery\floorlayer.dm"
+#include "code\game\machinery\guild_turret.dm"
 #include "code\game\machinery\gym.dm"
 #include "code\game\machinery\hologram.dm"
 #include "code\game\machinery\holoposter.dm"
@@ -3463,4 +3464,3 @@
 #include "modular_sojourn\task_master\tasks.dm"
 #include "tgs_dmapi\tgs.dm"
 #include "tgs_dmapi\tgs\includes.dm"
-// END_INCLUDE
