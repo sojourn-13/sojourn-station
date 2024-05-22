@@ -3911,13 +3911,10 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/command/smc/quarters)
 "aQO" = (
-/obj/structure/closet/wall_mounted/firecloset{
-	pixel_y = -32
+/obj/structure/railing{
+	dir = 1
 	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/warningred,
+/obj/machinery/power/am_control_unit,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "aQR" = (
@@ -9132,10 +9129,6 @@
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/workshop)
-"bWI" = (
-/obj/effect/floor_decal/industrial/warningred,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/engine_room)
 "bWL" = (
 /obj/structure/flora/small/grassa4,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -14885,10 +14878,9 @@
 /area/nadezhda/hallway/main/stairwell)
 "dhg" = (
 /obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -32
+	dir = 8;
+	pixel_x = 32
 	},
-/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "dhi" = (
@@ -22583,11 +22575,13 @@
 	name = "\improper Clinic"
 	})
 "eKO" = (
-/obj/structure/sign/warning/nosmoking/small{
-	pixel_x = -32;
-	pixel_y = 32
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
 	},
-/turf/simulated/wall/r_wall,
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "eKU" = (
 /obj/machinery/light{
@@ -24765,6 +24759,12 @@
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/nadezhda/outside/inside_colony)
+"fgW" = (
+/obj/structure/sign/warning/nosmoking/small{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/engine_room)
 "fhb" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -25211,6 +25211,9 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/sign/warning/nosmoking/small{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
@@ -33542,13 +33545,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/prisoncells)
-"gYD" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/machinery/power/am_control_unit,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/engine_room)
 "gYU" = (
 /obj/machinery/door/airlock/mining{
 	name = "Prospector Prep";
@@ -36104,13 +36100,6 @@
 /area/nadezhda/rnd/circuitlab{
 	name = "Science Expedition prep"
 	})
-"hAG" = (
-/obj/effect/floor_decal/industrial/warningred,
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/engine_room)
 "hAT" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -38008,6 +37997,9 @@
 /area/nadezhda/crew_quarters)
 "hUA" = (
 /obj/machinery/light,
+/obj/structure/closet/wall_mounted/firecloset{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "hUD" = (
@@ -40261,9 +40253,7 @@
 /turf/simulated/floor/tiled/white/gray_platform,
 /area/nadezhda/crew_quarters/fitness)
 "ipf" = (
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
-	},
+/obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
 "ipl" = (
@@ -76740,12 +76730,6 @@
 /obj/random/closet_maintloot,
 /turf/simulated/floor/plating/under,
 /area/colony)
-"pPc" = (
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/nadezhda/engineering/engine_room)
 "pPi" = (
 /obj/machinery/door/unpowered/simple/wood,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -81337,6 +81321,12 @@
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/security/maingate)
+"qJT" = (
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/engine_room)
 "qKe" = (
 /turf/simulated/wall,
 /area/nadezhda/hallway/surface/section1)
@@ -86380,9 +86370,7 @@
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "rOc" = (
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 1
-	},
+/obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
@@ -105401,6 +105389,12 @@
 /obj/random/closet_maintloot/low_chance,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/dungeon/outside/burned_outpost)
+"vFE" = (
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/engine_room)
 "vFL" = (
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
@@ -111077,12 +111071,12 @@
 	},
 /area/nadezhda/maintenance/undergroundfloor1north)
 "wLJ" = (
-/obj/structure/catwalk,
-/obj/structure/sign/warning/nosmoking/small{
-	pixel_x = 32
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
 	},
-/turf/simulated/floor/plating/under,
-/area/nadezhda/engineering/engine_waste)
+/obj/effect/floor_decal/industrial/warningred,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/engine_room)
 "wLL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
@@ -188514,7 +188508,7 @@ hrP
 hrP
 hrP
 wiT
-wLJ
+nyB
 gSZ
 tip
 cZb
@@ -188712,7 +188706,7 @@ hrP
 cWv
 cIX
 rgg
-oSc
+kyK
 hUA
 hrP
 tip
@@ -188913,13 +188907,13 @@ krt
 hrP
 sdp
 vXX
-gYD
+aQO
 nDO
 sxU
-pPc
-pPc
-pPc
-aQO
+qJT
+qJT
+qJT
+wLJ
 hrP
 cZb
 cZb
@@ -189121,7 +189115,7 @@ oOh
 kyK
 kyK
 kyK
-bWI
+ipf
 hrP
 tad
 tad
@@ -189323,7 +189317,7 @@ oOh
 kyK
 kyK
 kyK
-dhg
+ipf
 hrP
 pDL
 pDL
@@ -189525,7 +189519,7 @@ oOh
 kyK
 kyK
 kyK
-bWI
+ipf
 hrP
 hKz
 hKz
@@ -189723,11 +189717,11 @@ iPz
 kyK
 diB
 kyK
+eKO
+vFE
+vFE
+vFE
 rOc
-ipf
-ipf
-ipf
-hAG
 hrP
 nOS
 hKz
@@ -189920,7 +189914,7 @@ szw
 vHX
 jiu
 krt
-eKO
+hrP
 fkV
 kyK
 diB
@@ -190126,9 +190120,9 @@ hrP
 kld
 kyK
 pJK
-kyK
-kyK
-kyK
+dhg
+oSc
+fgW
 kyK
 jlP
 hOz
