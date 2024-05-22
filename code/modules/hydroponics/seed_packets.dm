@@ -306,3 +306,9 @@ var/global/list/plant_seed_sprites = list()
 
 /obj/item/seeds/mintseed
 	seed_type = "mint"
+
+/obj/item/seeds/spacealocasiaseed
+	seed_type = "space alocasia"
+
+/obj/item/seeds/moontearseed
+	seed_type = "moon tear"
