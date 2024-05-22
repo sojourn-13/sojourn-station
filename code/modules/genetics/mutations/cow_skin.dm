@@ -9,8 +9,8 @@
 
 /datum/genetics/mutation/cow_skin/onMobImplant()
 	..()
-	container.holder. *= 0.75
+	container.holder.brute_mod_delta *= 0.75
 
 /datum/genetics/mutation/cow_skin/onMobRemove()
 	..()
-	container.holder. /= 0.75
+	container.holder.brute_mod_delta /= 0.75

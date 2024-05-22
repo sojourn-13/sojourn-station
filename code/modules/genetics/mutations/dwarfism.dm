@@ -23,7 +23,7 @@
 
 	//brute_mod_delta = (human_holder.brute_mod_perk * 0.2)
 	//human_holder.brute_mod_perk += brute_mod_delta
-	human_holder.brute_mod_delta *= 1.2
+	human_holder.brute_mod_perk *= 1.2
 
 	//Less need for air
 	//oxy_mod_delta = (human_holder.oxy_mod_perk * 0.2)
@@ -43,7 +43,7 @@
 	human_holder.stats.changeStat(STAT_TGH, 15)
 
 	//human_holder.brute_mod_perk -= brute_mod_delta
-	human_holder.brute_mod_delta /= 1.2
+	human_holder.brute_mod_perk /= 1.2
 
 	//We are normal again, breath more
 	human_holder.oxy_mod_perk /= 0.8
