@@ -10,5 +10,5 @@
 	ask_verb = list("chimpers")
 	exclaim_verb = list("screeches")
 	key = "6"
-	flags = RESTRICTED
+	flags = RESTRICTED | NO_TRANSLATE
 	shorthand = "HM"
