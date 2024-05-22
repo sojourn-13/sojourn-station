@@ -38,7 +38,7 @@ type Data = {
   error: string | null;
   internal_disk: Disk;
   portable_disk: Disk;
-  open_file: OpenFileData | [];
+  open_file: OpenFileData | null;
 } & NTOSData;
 
 export const NtosFileManager = (props) => {
@@ -72,7 +72,7 @@ export const NtosFileManager = (props) => {
         </Button>
       </Section>
     );
-  } else if (open_file && !Array.isArray(open_file)) {
+  } else if (open_file) {
     content = <OpenFile file={open_file} />;
   }
 

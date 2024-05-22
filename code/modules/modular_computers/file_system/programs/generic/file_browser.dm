@@ -27,7 +27,6 @@
 	data["internal_disk"] = computer.hard_drive.nano_ui_data()
 	data["portable_disk"] = computer.portable_drive?.nano_ui_data()
 
-	var/list/open_file_data = list()
 	if(open_file)
 		var/datum/computer_file/data/file
 		file = computer.hard_drive.find_file_by_name(open_file)
@@ -37,10 +36,12 @@
 		else if(!istype(file))
 			data["error"] = "I/O ERROR: Unable to open file."
 		else
-			open_file_data["filedata"] = pencode2html(file.stored_data)
-			open_file_data["filename"] = "[file.filename].[file.filetype]"
-
-	data["open_file"] = open_file_data
+			data["open_file"] = list(
+				"filedata" = pencode2html(file.stored_data),
+				"filename" = "[file.filename].[file.filetype]"
+			)
+	else
+		data["open_file"] = null
 
 	return data
 
