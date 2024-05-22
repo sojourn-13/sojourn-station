@@ -269,11 +269,14 @@
 	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
 		post_moder_yield_mod  *= 0.5
 
-	post_moder_yield_mod -= (age * 0.005)
+	//Fast growing crops dont get hit by the first harvest being elder
+	if(age >= 70)
+		post_moder_yield_mod -= (age * 0.005)
 	if(age >= 120 && user) //Losing yield slowly now
 		to_chat(user, "This plant appears to be deteriorating with age, surpassing any reasonable life expectancy for a [seed.display_name]. It's yield is suffering as a result.")
 	post_moder_yield_mod = round(post_moder_yield_mod)
 	yield_mod = post_moder_yield_mod
+	to_chat(user, "yield_mod [seed.display_name]. post_moder_yield_mod [post_moder_yield_mod].")
 
 	if(user)
 		seed.harvest(user,yield_mod,potency_mod)
