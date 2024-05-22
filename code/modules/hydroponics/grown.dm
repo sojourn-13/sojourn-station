@@ -352,7 +352,7 @@
 
 /obj/plant_spawner/proc/spawn_growth()
 	var/datum/seed/S = plant_controller.seeds[seedtype]
-	S.harvest(loc,0,0,1)
+	S.harvest(loc,force_amount = 1, harvest_sample = FALSE)
 	spawn(5) if(src) qdel(src)
 
 /obj/plant_spawner/libertycap
