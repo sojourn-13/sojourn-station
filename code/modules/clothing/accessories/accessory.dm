@@ -376,7 +376,7 @@
 	name = "SOMs holo-mantle"
 	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar \
 	make to similar cloaks, its quality cannot be contested."
-	icon_state = "half_SOM"
+	icon_state = "half_ceo"
 
 
 /obj/item/clothing/accessory/halfcape/premier
