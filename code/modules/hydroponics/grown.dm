@@ -56,9 +56,9 @@
 	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
 		chem_mult -= 0.25
 	if(seed.get_trait(TRAIT_JUICY))
-		chem_mult += 0.25
+		chem_mult += 0.15
 		if(seed.get_trait(TRAIT_JUICY) == 2)
-			chem_mult += 0.10 //35% extra chems
+			chem_mult += 0.10 //25% extra chems
 	if(seed.get_trait(TRAIT_CHEM_PRODUCTION))
 		chem_mult += 0.25
 

@@ -264,12 +264,15 @@
 	else
 */
 	var/post_moder_yield_mod = yield_mod
-	post_moder_yield_mod -= (age * 0.03)
-	if(age >= 120 && user) //Losing 4 yield is quite a long time
-		to_chat(user, "This plant appears to be deteriorating with age, surpassing any reasonable life expectancy for a [seed.display_name]. It's yield is suffering as a result.")
 
 	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
 		post_moder_yield_mod  *= 0.5
+
+	post_moder_yield_mod -= (age * 0.01)
+	if(age >= 120 && user) //Losing 4 yield is quite a long time
+		to_chat(user, "This plant appears to be deteriorating with age, surpassing any reasonable life expectancy for a [seed.display_name]. It's yield is suffering as a result.")
+	post_moder_yield_mod = round(post_moder_yield_mod)
+	yield_mod -= post_moder_yield_mod
 
 	if(user)
 		seed.harvest(user,yield_mod)

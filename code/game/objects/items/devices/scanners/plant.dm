@@ -205,10 +205,10 @@
 
 	if(grown_seed.get_trait(TRAIT_JUICY) == 1)
 		dat += "<br>The fruit is soft-skinned and juicy."
-		chem_exspection += 0.25
+		chem_exspection += 0.15
 	else if(grown_seed.get_trait(TRAIT_JUICY) == 2)
 		dat += "<br>The fruit is excessively juicy."
-		chem_exspection += 0.35
+		chem_exspection += 0.25
 
 	if(grown_seed.get_trait(TRAIT_CHEM_PRODUCTION))
 		dat += "<br>The fruit is has more and larger vacuole cells."
