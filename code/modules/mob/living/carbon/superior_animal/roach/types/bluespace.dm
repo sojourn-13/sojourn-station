@@ -84,7 +84,7 @@
 			return FALSE
 	. = ..()
 
-/mob/living/carbon/superior_animal/roach/bluespace/attack_generic(mob/user, damage, attack_message)
+/mob/living/carbon/superior_animal/roach/bluespace/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	var/atom/targetted_mob = (target_mob?.resolve())
 
 	if(!damage || !istype(user))

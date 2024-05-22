@@ -75,6 +75,7 @@
 	melee_damage_upper = 25
 	attacktext = "stabbed"
 	attack_sound = 'sound/weapons/sharphit.ogg'
+	melee_sharp = TRUE //Eswords and welders
 
 /mob/living/carbon/superior_animal/human/prisoner/elite
 	name = "Escaped Convict Looter"

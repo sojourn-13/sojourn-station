@@ -28,6 +28,7 @@
 
 	melee_damage_lower = 10
 	melee_damage_upper = 15
+	melee_sharp = TRUE //claws
 	breath_required_type = 0 // Doesn't need to breath for event atmosphere purposes.
 	breath_poison_type = 0 // Can't be poisoned
 	min_air_pressure = 0 // Doesn't need pressure for event atmosphere purposes.

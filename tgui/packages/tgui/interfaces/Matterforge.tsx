@@ -135,7 +135,7 @@ export const AutolatheItemDetails = (props: AutolatheItemProps) => {
 };
 
 export const AutolatheItem = (props: AutolatheItemProps) => {
-  const { act } = useBackend();
+  const { act, config } = useBackend();
   const { design, mat_efficiency } = props;
 
   const [showDetails, setShowDetails] = useState(false);
@@ -145,19 +145,21 @@ export const AutolatheItem = (props: AutolatheItemProps) => {
       <Stack vertical>
         <Stack.Item>
           <Stack align="center">
-            <Stack.Item>
-              <Stack
-                width="32px"
-                height="32px"
-                align="center"
-                justify="center"
-                backgroundColor="black"
-                overflow="hidden"
-                style={{ border: '1px solid #3e6189 ' }}
-              >
-                <Stack.Item className={design.icon} />
-              </Stack>
-            </Stack.Item>
+            {!config.window.toaster && (
+              <Stack.Item>
+                <Stack
+                  width="32px"
+                  height="32px"
+                  align="center"
+                  justify="center"
+                  backgroundColor="black"
+                  overflow="hidden"
+                  style={{ border: '1px solid #3e6189 ' }}
+                >
+                  <Stack.Item className={design.icon} />
+                </Stack>
+              </Stack.Item>
+            )}
             <Stack.Item grow>{design.name}</Stack.Item>
             <Stack.Item>
               <Button
@@ -221,7 +223,7 @@ export type AutolatheQueueData = {
 };
 
 export const AutolatheQueue = (props: AutolatheQueueData) => {
-  const { act } = useBackend<Data>();
+  const { act, config } = useBackend<Data>();
   const { error, current, progress, queue, queue_max, paused, mat_efficiency } =
     props;
 
@@ -233,20 +235,22 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
             <Stack vertical>
               <Stack.Item>
                 <Stack align="center">
-                  <Stack.Item>
-                    <Image
-                      width="48px"
-                      height="48px"
-                      src={current.icon}
-                      style={{
-                        verticalAlign: 'middle',
-                        objectFit: 'cover',
-                        margin: '4px',
-                        backgroundColor: 'black',
-                        border: '1px solid #3e6189',
-                      }}
-                    />
-                  </Stack.Item>
+                  {!config.window.toaster && (
+                    <Stack.Item>
+                      <Image
+                        width="48px"
+                        height="48px"
+                        src={current.icon}
+                        style={{
+                          verticalAlign: 'middle',
+                          objectFit: 'cover',
+                          margin: '4px',
+                          backgroundColor: 'black',
+                          border: '1px solid #3e6189',
+                        }}
+                      />
+                    </Stack.Item>
+                  )}
                   <Stack.Item grow>
                     <Stack vertical>
                       <Stack.Item>Printing {current.name}</Stack.Item>

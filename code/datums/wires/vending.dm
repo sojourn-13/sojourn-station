@@ -29,13 +29,13 @@ var/const/VENDING_WIRE_IDSCAN = 8
 		return 1
 	return 0
 
-/datum/wires/vending/GetInteractWindow(mob/living/user)
+/datum/wires/vending/get_status(mob/living/user)
 	var/obj/machinery/vending/V = holder
-	. += ..(user)
-	. += "<BR>The orange light is [V.seconds_electrified ? "off" : "on"].<BR>"
-	. += "The red light is [V.shoot_inventory ? "off" : "blinking"].<BR>"
-	. += "The green light is [(V.categories & CAT_HIDDEN) ? "on" : "off"].<BR>"
-	. += "The [V.scan_id ? "purple" : "yellow"] light is on.<BR>"
+	. = ..()
+	. += "The orange light is [V.seconds_electrified ? "off" : "on"]."
+	. += "The red light is [V.shoot_inventory ? "off" : "blinking"]."
+	. += "The green light is [(V.categories & CAT_HIDDEN) ? "on" : "off"]."
+	. += "The [V.scan_id ? "purple" : "yellow"] light is on."
 
 /datum/wires/vending/UpdatePulsed(var/index)
 	var/obj/machinery/vending/V = holder
@@ -113,10 +113,10 @@ var/const/VENDING_INT_WIRE_POWER = 64
 		new /datum/wire_description(VENDING_INT_WIRE_POWER, "Power")
 	)
 
-/datum/wires/vending/intermediate/GetInteractWindow(mob/living/user)
-	. += ..(user)
-	. += "The [is_signal_securely_cut ? "blue" : "pink"] light is on.<BR>"
-	. += "The suspicious light is [is_contraband_securely_pulsed ? "blinking" : "on"].<BR>"
+/datum/wires/vending/intermediate/get_status(mob/living/user)
+	. = ..()
+	. += "The [is_signal_securely_cut ? "blue" : "pink"] light is on."
+	. += "The suspicious light is [is_contraband_securely_pulsed ? "blinking" : "on"]."
 
 /datum/wires/vending/intermediate/UpdatePulsed(var/index)
 	if(is_powered)

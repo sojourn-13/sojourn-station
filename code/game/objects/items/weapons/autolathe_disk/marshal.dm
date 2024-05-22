@@ -24,6 +24,7 @@
 		/datum/design/autolathe/gun/cop_mod = 0,
 		/datum/design/autolathe/sec/auto_eject_mod,
 		/datum/design/research/item/weapon/weapon_upgrade/dnalock_mod,
+		/datum/design/research/item/omnitranslator_handheld,
 		/datum/design/autolathe/gun/bipod_mod = 2,
 		/datum/design/autolathe/gun/flare_gun = 3,
 		/datum/design/autolathe/ammo/flare_shell,

@@ -69,7 +69,7 @@
 
 	try_touch(user, rotting)
 
-/turf/simulated/wall/attack_generic(var/mob/user, var/damage, var/attack_message, var/wallbreaker)
+/turf/simulated/wall/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 
 	radiate()
 	if(!istype(user))
@@ -77,7 +77,7 @@
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	var/rotting = (locate(/obj/effect/overlay/wallrot) in src)
-	if(!damage || !wallbreaker)
+	if(!damage)
 		try_touch(user, rotting)
 		return
 
@@ -85,7 +85,7 @@
 		return success_smash(user)
 
 	if(reinf_material)
-		if((wallbreaker == 2) || (damage >= max(material.hardness,reinf_material.hardness)))
+		if(damage >= max(material.hardness,reinf_material.hardness))
 			return success_smash(user)
 	else if(damage >= material.hardness)
 		return success_smash(user)
@@ -98,7 +98,7 @@
 		to_chat(user, SPAN_WARNING("You don't have the dexterity to do this!"))
 		return
 
-	
+
 	if(!istype(I, /obj/item/mecha_parts/mecha_equipment)) //make sure you're not in a mech
 		if(!istype(user.loc, /turf)) //get the user's location
 			return	//can't do this stuff whilst inside objects and such

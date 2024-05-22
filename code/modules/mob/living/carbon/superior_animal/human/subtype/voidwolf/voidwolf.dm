@@ -12,9 +12,14 @@
 	health = 125
 	melee_damage_lower = 30
 	melee_damage_upper = 30
+
+	melee_sharp = FALSE //Eswords
+	armor_penetration = 30
+
 	breath_required_type = 0 // Doesn't need to breath, in a space suit
 	breath_poison_type = 0 // Can't be poisoned
 	min_air_pressure = 0 // Doesn't need pressure
+
 	attacktext = "slashed"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	meat_amount = 0
@@ -99,6 +104,9 @@
 	attacktext = "burnt"
 	attack_sound = 'sound/items/Welder.ogg'
 	drop_items = list(/obj/item/tool/weldingtool/advanced)
+	melee_sharp = FALSE
+	armor_penetration = 0
+	melee_damage_type = BURN
 
 /*Ranged Void Wolfs*/
 /mob/living/carbon/superior_animal/human/voidwolf/ranged
@@ -122,6 +130,8 @@
 	rounds_left = 16
 	mag_type = /obj/item/cell/medium/high/depleted
 	mags_left = 1
+	melee_sharp = FALSE
+	armor_penetration = 0
 
 /mob/living/carbon/superior_animal/human/voidwolf/ranged/New()
 	..()
@@ -144,6 +154,9 @@
 	rounds_left = 4
 	mag_type = /obj/item/cell/small/high/depleted
 	mags_left = 2
+	melee_sharp = FALSE
+	armor_penetration = 0
+	melee_damage_type = BURN
 
 /mob/living/carbon/superior_animal/human/voidwolf/fieldtech/ranged/New()
 	..()
@@ -161,6 +174,8 @@
 	rapid_fire_shooting_amount = 3
 	projectiletype = /obj/item/projectile/beam
 	drop_items = list(/obj/item/gun/energy/cog)
+	melee_sharp = FALSE
+	armor_penetration = 0
 
 /mob/living/carbon/superior_animal/human/voidwolf/ranged/aerotrooper/New()
 	..()
@@ -185,6 +200,8 @@
 	rounds_left = 8
 	mag_type = /obj/item/cell/small/high/depleted
 	mags_left = 1
+	melee_sharp = TRUE //Eswords
+	armor_penetration = 30
 
 	times_to_get_stat_modifiers = 2 //two prefixes
 
@@ -213,7 +230,8 @@
 	mags_left = 3
 
 	flash_resistances = 20 //no.
-
+	melee_sharp = TRUE //Eswords
+	armor_penetration = 30
 	armor = list(melee = 60, bullet = 55, energy = 50, bomb = 75, bio = 100, rad = 25) //Legitmently their armor
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/New()
@@ -235,6 +253,8 @@
 
 	rapid_fire_shooting_amount = 5 //we're using the burst 5 mode
 	delay_for_rapid_range = 0.22 SECONDS
+	melee_sharp = FALSE
+	armor_penetration = 0
 
 /obj/item/gun/energy/firestorm/reaver_modded
 
@@ -258,6 +278,8 @@
 	mags_left = 6 //since we fire. FAST
 
 	casingtype = /obj/item/ammo_casing/pistol_35/hv/spent
+	melee_sharp = FALSE
+	armor_penetration = 0
 
 /obj/item/gun/projectile/automatic/c20r/reaver_modded
 
@@ -288,6 +310,8 @@
 	get_stat_modifier = FALSE
 
 	casingtype = /obj/item/ammo_casing/a75/spent
+	melee_sharp = FALSE
+	armor_penetration = 0
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/gyrojet/New()
 	..()
@@ -305,6 +329,8 @@
 	limited_ammo = FALSE
 	drop_items = list(/obj/item/tool/sword/saber/cutlass, /obj/item/shield/buckler/energy/reaver/damaged,/obj/random/cloth/assault/reaver)
 
+	melee_sharp = TRUE //Eswords
+	armor_penetration = 30
 	var/block_chance = 65
 
 /mob/living/carbon/superior_animal/human/voidwolf/elite/myrmidon/New()

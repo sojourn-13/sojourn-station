@@ -259,6 +259,8 @@ type BackendState<TData> = {
       size: [number, number];
       fancy: boolean;
       locked: boolean;
+      // for bad PCs
+      toaster: boolean;
       default_theme: string | null;
     };
     client: {

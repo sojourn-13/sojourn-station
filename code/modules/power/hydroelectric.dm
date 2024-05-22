@@ -190,47 +190,46 @@
 	..()
 	update_icon()
 
-/obj/machinery/power/hydroelectric_control/nano_ui_interact(mob/user, ui_key = "hydroelectric", datum/nanoui/ui=null, force_open=NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
+/obj/machinery/power/hydroelectric_control/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "HydroelectricControl", name)
+		ui.open()
 
-	if(stat & BROKEN)
-		return
+/obj/machinery/power/hydroelectric_control/ui_data(mob/user)
+	var/list/data = list()
 
-	if(!user)
-		return
-
-	//UI data
-	var/data[0]
-	data["waterheld"] = round(100.0*waterheld/watermax, 0.1)
+	data["waterheld"] = waterheld
+	data["watermax"] = watermax
 	data["hydrostatus"] = statusreport
-	data["isOpen"] = working
+	data["is_open"] = working
 	data["generated"] = lastgen
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "hydroelectric.tmpl", "Hydroelectric Control Panel", 540, 380)
-		// when the ui is first opened this is the data it will use
-		ui.set_initial_data(data)
-		// open the new ui window
-		ui.open()
-		// auto update every Master Controller tick
-		ui.set_auto_update(TRUE)
+	return data
 
-/obj/machinery/power/hydroelectric_control/Topic(href, href_list)
-	if(..())
-		return 1
+/obj/machinery/power/hydroelectric_control/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
 
-	if(href_list["togglegate"])
-		togglegate()
+	switch(action)
+		if("togglegate")
+			togglegate()
+			. = TRUE
 
-	if(href_list["detectturbines"])
-		src.search_for_connected()
+		if("detect_turbines")
+			search_for_connected()
+			. = TRUE
+
+	if(.)
+		playsound(src, 'sound/machines/machine_switch.ogg', 100, 1)
 
 /obj/machinery/power/hydroelectric_control/proc/togglegate()
 	working = !working
 	malfnumber = malfnumber + 10
 
 /obj/machinery/power/hydroelectric_control/attack_hand(mob/user)
-	nano_ui_interact(user)
+	ui_interact(user)
 
 /obj/item/paper/hydroworking
 	name = "paper- 'Working the Hydroelectric Generator.'"
