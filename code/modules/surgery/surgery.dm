@@ -157,14 +157,20 @@
 					to_chat(user, SPAN_WARNING("[H.head] gets in the way."))
 
 				if(H.wear_mask)
-					if(!istype(H.wear_mask, /obj/item/clothing/mask/breath/medical))
-						difficulty_adjust += 15
-						time_adjust += 10
-						to_chat(user, SPAN_WARNING("[H.wear_mask] gets in the way."))
+					var/allowed_mask = TRUE
 					//Proper mask = better
-					else
+					if(istype(H.wear_mask, /obj/item/clothing/mask/breath/medical))
 						difficulty_adjust += -10
 						time_adjust += -5
+						allowed_mask = TRUE
+					//Opifiex masks dont encure a punishment, but cant really get the benifits eather!
+					if(istype(H.wear_mask, /obj/item/clothing/mask/gas/opifex) || istype(H.wear_mask, /obj/item/clothing/mask/opifex_no_mask))
+						allowed_mask = TRUE
+					if(!allowed_mask)
+						to_chat(user, SPAN_WARNING("[H.wear_mask] gets in the way."))
+						difficulty_adjust += -10
+						time_adjust += -5
+
 
 			//Arms and hands, waring an over suit is less punishing then gloves
 			if(BP_R_ARM, BP_L_ARM, BP_L_HAND, BP_R_HAND)
