@@ -845,7 +845,8 @@
 	icon = 'icons/obj/oddities.dmi'
 	max_upgrades = 0 //No...
 	embed_mult = 0
-	force = WEAPON_FORCE_DANGEROUS
+	degradation = 0.01 //Lead pipes NEVER break!
+	force = WEAPON_FORCE_DANGEROUS + 5 //scaling starts at 25
 
 /obj/item/tool/crit_pipe_bluecross/resolve_attackby(atom/target, mob/user)
 	//Little icky but it works
