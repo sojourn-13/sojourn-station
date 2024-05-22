@@ -26,7 +26,8 @@
 	var/sampled = 0            // Have we taken a sample?
 
 	// Harvest/mutation mods.
-	var/yield_mod = 0          // Modifier to yield
+	var/yield_mod = 0          // Modifier to yield, post harvest
+	var/potency_mod = 0        // Modifier to potency, post harvest
 	var/mutation_mod = 0       // Modifier to mutation chance
 	var/toxins = 0             // Toxicity in the tray?
 	var/mutation_level = 0     // When it hits 100, the plant mutates.
@@ -220,8 +221,8 @@
 			//potency reagents boost the plats genetic potency, tweaking needed
 			if(potency_reagents[R.id])
 				//While I myself would love to see this limit removed, 400 potency bluespace tomato's are a little to powerfull
-				if(seed.get_trait(TRAIT_POTENCY) < 100)
-					seed.set_trait(TRAIT_POTENCY, min(100, seed.get_trait(TRAIT_POTENCY) + potency_reagents[R.id] * reagent_total))
+				if((seed.get_trait(TRAIT_POTENCY) + potency_mod) < 100)
+					potency_mod = min(100, potency_mod + potency_reagents[R.id] * reagent_total)
 				//else  - If are plant is over 100 potency then adding a chemical that would *raise it* shouldnt lower it
 				//	seed.set_trait(TRAIT_POTENCY, 100)
 
@@ -268,22 +269,23 @@
 	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
 		post_moder_yield_mod  *= 0.5
 
-	post_moder_yield_mod -= (age * 0.01)
-	if(age >= 120 && user) //Losing 4 yield is quite a long time
+	post_moder_yield_mod -= (age * 0.005)
+	if(age >= 120 && user) //Losing yield slowly now
 		to_chat(user, "This plant appears to be deteriorating with age, surpassing any reasonable life expectancy for a [seed.display_name]. It's yield is suffering as a result.")
 	post_moder_yield_mod = round(post_moder_yield_mod)
-	yield_mod -= post_moder_yield_mod
+	yield_mod = post_moder_yield_mod
 
 	if(user)
-		seed.harvest(user,yield_mod)
+		seed.harvest(user,yield_mod,potency_mod)
 	else
-		seed.selfharvest(get_turf(src),yield_mod)
+		seed.selfharvest(get_turf(src),yield_mod,potency_mod)
 	// Reset values.
 	harvest = 0
 	lastproduce = age
 
 	if(!seed.get_trait(TRAIT_HARVEST_REPEAT))
 		yield_mod = 0
+		potency_mod = 0
 		seed = null
 		dead = 0
 		age = 0
@@ -306,6 +308,7 @@
 	sampled = 0
 	age = 0
 	yield_mod = 0
+	potency_mod = 0
 	mutation_mod = 0
 
 	to_chat(user, "You remove the dead plant.")
@@ -492,7 +495,7 @@
 				to_chat(user, SPAN_NOTICE("You have already sampled from this plant."))
 				if(user.a_intent == I_HURT)
 					to_chat(user, SPAN_NOTICE("You start killing it for one last sample."))
-					seed.harvest(user,yield_mod,1)
+					seed.harvest(user,yield_mod,potency_mod,1)
 					dead = 1
 					update_icon()
 				return
@@ -503,7 +506,7 @@
 
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
 				// Create a sample.
-				seed.harvest(user,yield_mod,1)
+				seed.harvest(user,yield_mod, potency_mod,1)
 				health -= (rand(3,5)*10)
 				sampled += 1 //no RnG not anymore
 

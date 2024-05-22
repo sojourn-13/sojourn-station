@@ -13,7 +13,7 @@
 	var/potency = -1
 
 
-/obj/item/reagent_containers/food/snacks/grown/New(newloc,planttype)
+/obj/item/reagent_containers/food/snacks/grown/New(newloc,planttype,potency_plus)
 
 	..()
 	if(!dried_type)
@@ -50,7 +50,7 @@
 	if(!seed.chems)
 		return
 
-	potency = seed.get_trait(TRAIT_POTENCY)
+	potency = seed.get_trait(TRAIT_POTENCY) + potency_plus
 
 	var/chem_mult = 1
 	if(seed.get_trait(TRAIT_HARVEST_REPEAT))

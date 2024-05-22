@@ -720,7 +720,7 @@
 	return P
 
 //Place the plant products at the feet of the user.
-/datum/seed/proc/harvest(mob/living/user,yield_mod,harvest_sample,force_amount)
+/datum/seed/proc/harvest(mob/living/user,yield_mod,potency_mod,harvest_sample,force_amount)
 
 	if(!user)
 		return
@@ -779,7 +779,7 @@
 			if(has_mob_product)
 				product = new has_mob_product(get_turf(user),name)
 			else
-				product = new /obj/item/reagent_containers/food/snacks/grown(get_turf(user),name)
+				product = new /obj/item/reagent_containers/food/snacks/grown(get_turf(user),name,potency_mod)
 			if(get_trait(TRAIT_PRODUCT_COLOUR))
 				if(!ismob(product))
 					product.color = get_trait(TRAIT_PRODUCT_COLOUR)
