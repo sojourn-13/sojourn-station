@@ -1391,7 +1391,7 @@
 	set_trait(TRAIT_POTENCY,10)
 	set_trait(TRAIT_PRODUCT_ICON,"alien3")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#1a4108")
-	set_trait(TRAIT_PLANT_COLOUR,"#1a4108")
+	set_trait(TRAIT_PLANT_COLOUR,"#2e740d")
 	set_trait(TRAIT_PLANT_ICON,"tree5")
 	set_trait(TRAIT_IDEAL_HEAT, 283)
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
