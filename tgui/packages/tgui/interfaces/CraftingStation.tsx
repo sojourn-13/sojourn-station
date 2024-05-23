@@ -62,6 +62,18 @@ export const CraftingStation = (props) => {
 
   const { craftable_recipes, recipes, materials, perk_no_obfuscation } = data;
 
+  if (!Array.isArray(craftable_recipes)) {
+    return (
+      <Window width={400} height={400}>
+        <Window.Content>
+          <Section title="ERROR" color="bad">
+            <Box fontSize={1.5}>No recipes were found.</Box>
+          </Section>
+        </Window.Content>
+      </Window>
+    );
+  }
+
   const categories = uniq(recipes.map((r) => r.category)).sort((a, b) => {
     let alower = a.toLowerCase();
     let blower = b.toLowerCase();
@@ -120,7 +132,7 @@ export const CraftingStation = (props) => {
         <Section
           title="Crafting"
           fill
-          height={materials.length > 0 ? '85%' : '100%'}
+          height={!!materials && materials.length > 0 ? '85%' : '100%'}
         >
           <Stack fill vertical>
             <Stack.Item>
