@@ -1574,6 +1574,26 @@
 	set_trait(TRAIT_YIELD,3)
 	set_trait(TRAIT_POTENCY,3)
 
+/datum/seed/curtain
+	name = "curtain weed"
+	seed_name = "curtain weed"
+	display_name = "curtain weed"
+	chems = list("paracetamol" = list(1,5),"quintalin" = list(1,2),"nutriment"= list(1,5))
+	kitchen_tag = "vbush"
+
+/datum/seed/curtain/New()
+	..()
+	set_trait(TRAIT_PLANT_ICON,"bush4")
+	set_trait(TRAIT_PRODUCT_ICON, "nuts")
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_PRODUCT_COLOUR, "#dfdede")
+	set_trait(TRAIT_PLANT_COLOUR, "#b3b0ce")
+	set_trait(TRAIT_ENDURANCE,15)
+	set_trait(TRAIT_MATURATION,8)
+	set_trait(TRAIT_PRODUCTION,10)
+	set_trait(TRAIT_YIELD,3)
+	set_trait(TRAIT_POTENCY,3)
+
 /datum/seed/surik
 	name = "surik"
 	seed_name = "surik vine"

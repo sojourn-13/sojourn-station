@@ -54,7 +54,6 @@
 	nerve_system_accumulations = 15 // Basic chems shouldn't hurt the body as much as higher potency ones.
 
 /datum/reagent/medicine/monocaridine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	holder.remove_reagent("bicaridine", 4 * effect_multiplier)
 	M.heal_organ_damage(0.1 * effect_multiplier, 0, 1 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.15)
 
@@ -121,8 +120,6 @@
 	nerve_system_accumulations = 10
 
 /datum/reagent/medicine/moonwater/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	holder.remove_reagent("kelotane", 4 * effect_multiplier)
-	holder.remove_reagent("dermaline", 4 * effect_multiplier)
 	M.heal_organ_damage(0, 0.3 * effect_multiplier, 0, 1.5 * effect_multiplier)
 
 /datum/reagent/medicine/kelotane
@@ -206,7 +203,6 @@
 	M.adjust_hallucination(-0.2 * effect_multiplier)
 	M.add_chemical_effect(CE_ANTITOX, 1)
 
-	holder.remove_reagent("anti_toxin", 3 * effect_multiplier) //Does not play well with its brother
 	holder.remove_reagent("pararein", 0.2 * effect_multiplier)
 	holder.remove_reagent("carpotoxin", 0.1 * effect_multiplier)
 	holder.remove_reagent("toxin", 0.1 * effect_multiplier)
@@ -294,6 +290,8 @@
 	if(ce_to_add > 0)
 		M.add_chemical_effect(CE_OXYGENATED, ce_to_add)
 
+
+
 /datum/reagent/medicine/dexalinp
 	name = "Dexalin Plus"
 	id = "dexalinp"
@@ -321,6 +319,23 @@
 			if(G.damage > 0)
 				G.damage = max(G.damage - 5 * removed, 0)
 
+/datum/reagent/medicine/quintalin
+	name = "Quintalin"
+	id = "quintalin"
+	description = "A slow acting, natural remedy for oxygen deprivation. Works on all kinds of creatures, but neutralizes dexalin chemicals."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#8dc6ff"
+	overdose = REAGENTS_OVERDOSE
+	scannable = TRUE
+	nerve_system_accumulations = 5
+
+/datum/reagent/medicine/quintalin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.adjustOxyLoss(-0.5 * effect_multiplier)
+	holder.remove_reagent("lexorin", 0.2 * effect_multiplier)
+	var/ce_to_add = 1 - M.chem_effects[CE_OXYGENATED]
+	if(ce_to_add > 0)
+		M.add_chemical_effect(CE_OXYGENATED, ce_to_add)
 
 /datum/reagent/medicine/respirodaxon
 	name = "Respirodaxon"
