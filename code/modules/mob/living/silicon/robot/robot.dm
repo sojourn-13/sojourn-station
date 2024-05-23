@@ -420,10 +420,12 @@
 	set name = "Show Crew Manifest"
 	show_manifest(src)
 
+/*
 /mob/living/silicon/robot/proc/self_diagnosis()
 	if(!is_component_functioning("diagnosis unit"))
 		return null
 
+	return
 	var/dat = "<HEAD><TITLE>[name] Self-Diagnosis Report</TITLE></HEAD><BODY>\n"
 	for (var/V in components)
 		var/datum/robot_component/C = components[V]
@@ -436,7 +438,7 @@
 			</table><br>
 		"}
 
-	return dat
+	return dat */
 
 /mob/living/silicon/robot/verb/toggle_panel_lock()
 	set name = "Toggle Panel Lock"
@@ -471,8 +473,13 @@
 	var/datum/robot_component/CO = get_component("diagnosis unit")
 	if (!cell_use_power(CO.active_usage))
 		to_chat(src, SPAN_DANGER("Low Power."))
+		return
+	var/obj/item/device/robotanalyzer/diagnosis = new /obj/item/device/robotanalyzer(src) // Hiding it inside us for now
+	diagnosis.attack(src,src) // Hit ourselves with it.
+	qdel(diagnosis)
+/*
 	var/dat = self_diagnosis()
-	src << browse(dat, "window=robotdiagnosis")
+	src << browse(dat, "window=robotdiagnosis") */
 
 
 /mob/living/silicon/robot/verb/toggle_component()
