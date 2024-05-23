@@ -4132,6 +4132,7 @@
 /obj/item/storage/box/monkeycubes,
 /obj/item/storage/box/monkeycubes,
 /obj/item/storage/box/monkeycubes,
+/obj/item/gun/energy/slimegun,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
 "aUc" = (
@@ -20878,16 +20879,11 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "erv" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 24
-	},
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
 /obj/machinery/newscaster/directional/north,
+/obj/machinery/slime_compresser,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology)
 "erE" = (
@@ -75589,10 +75585,6 @@
 /area/shuttle/vasiliy_shuttle_area)
 "pDc" = (
 /obj/structure/table/reinforced,
-/obj/machinery/slime_dye_vat{
-	pixel_x = 1;
-	pixel_y = 5
-	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
 "pDd" = (
@@ -77038,6 +77030,11 @@
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -32
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/slime_dye_vat{
+	pixel_x = 1;
+	pixel_y = 5
 	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/xenobiology)
