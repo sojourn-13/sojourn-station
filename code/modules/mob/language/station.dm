@@ -3,7 +3,7 @@
 	desc = "Most popular language in Canis Majoris constellation, thanks to many USA colonial ships arrived there in distant past."
 	key = "0"
 	partial_understanding = list(
-		LANGUAGE_LATIN = 5
+		LANGUAGE_LATIN = 5,
 		LANGUAGE_JANA = 5,
 		LANGUAGE_ROMANA = 10,
 		LANGUAGE_EURO = 20,
