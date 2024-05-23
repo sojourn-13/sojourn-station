@@ -26,6 +26,12 @@
 /datum/tgui_module/email_client/ntos
 	ntos = TRUE
 
+/datum/tgui_module/email_client/silicon
+	available_to_ai = TRUE
+
+/datum/tgui_module/email_client/silicon/ui_state(mob/user)
+	return GLOB.self_state
+
 /datum/tgui_module/email_client/proc/log_in()
 	var/list/id_login
 

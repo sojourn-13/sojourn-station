@@ -13,6 +13,7 @@ Code is pretty much ripped verbatim from nano modules, but with un-needed stuff 
 
 	var/tgui_id
 	var/ntos = FALSE
+	var/available_to_ai = FALSE
 
 /datum/tgui_module/New(new_host)
 	host = new_host

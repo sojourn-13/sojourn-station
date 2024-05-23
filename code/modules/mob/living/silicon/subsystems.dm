@@ -3,7 +3,7 @@
 	var/list/silicon_subsystems = list(
 		/datum/nano_module/alarm_monitor/all,
 		/datum/nano_module/law_manager,
-		/datum/nano_module/email_client,
+		/datum/tgui_module/email_client/silicon,
 		/datum/nano_module/crew_monitor,
 		/datum/nano_module/chem_catalog,
 		/datum/nano_module/drink_catalog,
@@ -16,12 +16,16 @@
 		var/datum/nano_module/NM = subtype
 		if(initial(NM.available_to_ai))
 			silicon_subsystems += NM
+	for(var/subtype in subtypesof(/datum/tgui_module))
+		var/datum/tgui_module/TM = subtype
+		if(initial(TM.available_to_ai))
+			silicon_subsystems += TM
 	..()
 
 /mob/living/silicon/robot/syndicate
 	silicon_subsystems = list(
 		/datum/nano_module/law_manager,
-		/datum/nano_module/email_client
+		/datum/tgui_module/email_client/silicon,
 	)
 
 /mob/living/silicon/Destroy()
@@ -77,7 +81,7 @@
 	set name = "Show Emails"
 	set desc = "Open email subsystem"
 
-	open_subsystem(/datum/nano_module/email_client)
+	open_subsystem(/datum/tgui_module/email_client/silicon)
 
 /mob/living/silicon/verb/show_alerts()
 	set name = "Show Alerts"
@@ -149,8 +153,12 @@
 	subsystem = null
 	. = ..()
 
-/stat_silicon_subsystem/Click(var/mob/given = usr)
-	if (istype(given))
-		subsystem.nano_ui_interact(given, state = ui_state)
-	else
-		subsystem.nano_ui_interact(usr, state = ui_state)
+/stat_silicon_subsystem/Click(mob/user)
+	if(!istype(user))
+		user = usr
+
+	if(istype(subsystem, /datum/nano_module))
+		subsystem.nano_ui_interact(user, state = ui_state)
+	else if(istype(subsystem, /datum/tgui_module))
+		subsystem.ui_interact(user)
+
