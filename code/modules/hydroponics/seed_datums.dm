@@ -1383,7 +1383,7 @@
 	chems = list("monocaridine" = list(1,10), "lg_anti_toxin" = list(1,10))
 	kitchen_tag = "space alocasia"
 
-/datum/seed/shand/New()
+/datum/seed/alocasia/New()
 	..()
 	set_trait(TRAIT_MATURATION,3)
 	set_trait(TRAIT_PRODUCTION,5)
@@ -1417,7 +1417,7 @@
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
 
 
-/datum/seed/moonstear
+/datum/seed/moontear
 	name = "moon tear"
 	seed_name = "moon tear"
 	display_name = "moon tear leaves"
