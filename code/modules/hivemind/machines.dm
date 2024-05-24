@@ -462,7 +462,7 @@
 	var/list/targets = list()			//Primary targets
 	var/list/secondarytargets = list()	//targets that are less important
 
-	shot_delay = min(30 - hive_mind_ai.evo_level * 5, 5) //Scales at half a second faster for each evo level, minimum half a second
+	shot_delay = max(30 - hive_mind_ai.evo_level * 5, 5) //Scales at half a second faster for each evo level, minimum half a second
 
 	for(var/mob/living/M in view(firing_range, src))
 		assess_and_assign(M, targets, secondarytargets)
