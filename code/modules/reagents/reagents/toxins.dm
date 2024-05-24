@@ -311,12 +311,13 @@
 
 /datum/reagent/toxin/zombiepowder/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.status_flags |= FAKEDEATH
-	M.adjustOxyLoss(0.6 * effect_multiplier)
-	M.Weaken(10)
-	M.silent = max(M.silent, 10)
-	M.tod = world.time
-	M.add_chemical_effect(CE_NOPULSE, 1)
+	if(dose > 1)
+		M.status_flags |= FAKEDEATH
+		M.adjustOxyLoss(0.6 * effect_multiplier)
+		M.Weaken(10)
+		M.silent = max(M.silent, 10)
+		M.tod = world.time
+		M.add_chemical_effect(CE_NOPULSE, 1)
 
 /datum/reagent/toxin/zombiepowder/Destroy()
 	if(holder && holder.my_atom && ismob(holder.my_atom))
