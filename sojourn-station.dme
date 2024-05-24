@@ -3327,6 +3327,7 @@
 #include "code\modules\tgui\tgui.dm"
 #include "code\modules\tgui\tgui_window.dm"
 #include "code\modules\tgui\modules\_base.dm"
+#include "code\modules\tgui\modules\catalog.dm"
 #include "code\modules\tgui\modules\crew_manifest.dm"
 #include "code\modules\tgui\modules\email.dm"
 #include "code\modules\tgui\states\always.dm"

@@ -5,9 +5,9 @@
 		/datum/nano_module/law_manager,
 		/datum/tgui_module/email_client/silicon,
 		/datum/nano_module/crew_monitor,
-		/datum/nano_module/chem_catalog,
-		/datum/nano_module/drink_catalog,
-		/datum/nano_module/cook_catalog
+		/datum/tgui_module/catalog/chemistry/silicon,
+		/datum/tgui_module/catalog/drinks/silicon,
+		/datum/tgui_module/catalog/cooking/silicon,
 	)
 
 /mob/living/silicon/ai/New()
@@ -91,17 +91,17 @@
 /mob/living/silicon/verb/show_chemicals_mixes()
 	set name = "Show Chem Catalog"
 	set desc = "Open the Chem Catalog"
-	open_subsystem(/datum/nano_module/chem_catalog)
+	open_subsystem(/datum/tgui_module/catalog/chemistry/silicon)
 
 /mob/living/silicon/verb/show_drink_mixes()
 	set name = "Show Drink Catalog"
 	set desc = "Open Neon Cocktails for all your mixing needs."
-	open_subsystem(/datum/nano_module/drink_catalog)
+	open_subsystem(/datum/tgui_module/catalog/drinks/silicon)
 
 /mob/living/silicon/verb/show_cook_catalog()
 	set name = "Show VIKA Catalog"
 	set desc = "Open Lonestar (and Soteria) Presents: Victoria's Incredible Kitchen Assistant."
-	open_subsystem(/datum/nano_module/cook_catalog)
+	open_subsystem(/datum/tgui_module/catalog/cooking/silicon)
 
 /mob/living/silicon/verb/activate_subsystem()
 	set name = "Subsystems"

@@ -7,34 +7,9 @@
 	program_menu_icon = "cookie-bite"
 	size = 2
 	available_on_ntnet = 1
-	nanomodule_path = /datum/nano_module/cook_catalog
+	tguimodule_path = /datum/tgui_module/catalog/cooking/ntos
 	usage_flags = PROGRAM_ALL
 
-/datum/nano_module/cook_catalog
-	name = "Lonestar (and Soteria) Presents: Victoria's Incredible Kitchen Assistant"
-
-/datum/nano_module/cook_catalog/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, state = GLOB.default_state)
-	var/list/data = nano_ui_data(user)
-
-	var/datum/asset/cooking_icons = get_asset_datum(/datum/asset/simple/cooking_icons)
-	if (cooking_icons.send(user.client))
-		user.client.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "cooking_catalog.tmpl", name, 640, 700, state = state)
-		ui.set_initial_data(data)
-		refresh_catalog_browsing(user, ui)
-		ui.auto_update_layout = 1
-		ui.open()
-
-/datum/nano_module/cook_catalog/Topic(href, href_list)
-	if(..())
-		return 1
-
-	if(href_list["greet"])
-		browse_catalog(GLOB.catalogs[CATALOG_COOKING], usr)
-		return 0
 //===================================================================================
 /proc/createCookingCatalogs()
 	for(var/datum/cooking_with_jane/recipe/our_recipe in GLOB.cwj_recipe_list)
