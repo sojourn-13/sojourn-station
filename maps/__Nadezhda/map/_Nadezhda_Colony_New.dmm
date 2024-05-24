@@ -95536,6 +95536,15 @@
 /obj/effect/window_lwall_spawn/smartspawn,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/nadezhda/engineering/engine_room)
+"tIz" = (
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 8
+	},
+/obj/machinery/camera/network/engineering{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/nadezhda/engineering/engine_room)
 "tIA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -188910,7 +188919,7 @@ vXX
 aQO
 nDO
 sxU
-qJT
+tIz
 qJT
 qJT
 wLJ
