@@ -89,7 +89,7 @@
 	receiver.afterattack(target, owner.mob, FALSE)
 
 /datum/click_handler/fullauto/MouseDown(object, location, control, params)
-	if(QDELETED(receiver)
+	if(QDELETED(receiver))
 		Destroy()
 		return FALSE
 	if(!isturf(owner.mob.loc)) // This stops from firing full auto weapons inside closets or in /obj/effect/dummy/chameleon chameleon projector
