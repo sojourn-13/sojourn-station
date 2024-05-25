@@ -1256,7 +1256,7 @@ var/global/list/robot_modules = list(
 	health = 35 //Basic colony drones and the like should have 35 health as they are not meant for combat
 	stat_modifiers = list(
 		STAT_COG = 120,
-		STAT_MEC = 40
+		STAT_MEC = 80
 	) //so we can use rnd consoles for parts ect
 
 /obj/item/robot_module/drone/New(var/mob/living/silicon/robot/R)
