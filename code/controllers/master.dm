@@ -229,6 +229,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 	world.TgsInitializationComplete()
 
+	world.TgsTargetedChatBroadcast(new /datum/tgs_message_content(text = "A new round has begun!"))
+
 	// Sort subsystems by display setting for easy access.
 	sortTim(subsystems, /proc/cmp_subsystem_display)
 	// Set world options.

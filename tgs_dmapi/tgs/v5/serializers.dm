@@ -43,7 +43,6 @@
 	. = ..()
 	.["iconUrl"] = icon_url
 	.["proxyIconUrl"] = proxy_icon_url
-
 /datum/tgs_chat_embed/footer/_interop_serialize()
 	return list(
 		"text" = text,
