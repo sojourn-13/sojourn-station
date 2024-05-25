@@ -12,6 +12,7 @@
 	var/obj/machinery/hivemind_machine/node/master_node
 	var/list/wires_connections = list("0", "0", "0", "0")
 	var/my_area
+	var/assimilation_timer
 
 /obj/effect/plant/hivemind/New()
 	..()
@@ -35,6 +36,10 @@
 		GLOB.hivemind_areas.Remove(my_area)
 	return ..()
 
+/obj/effect/plant/hivemind/die_off()
+	if(assimilation_timer)
+		deltimer(assimilation_timer)
+	return ..()
 
 /obj/effect/plant/hivemind/after_spread(obj/effect/plant/child, turf/target_turf)
 	if(master_node)
@@ -378,23 +383,23 @@
 	//Corpse reanimation
 	if(isliving(subject) && !ishivemindmob(subject))
 		//human bodies
-		if(ishuman(subject))
+		if(ishuman(subject) && !assimilation_timer)
 			var/mob/living/L = subject
 
-			if(GLOB.hive_data_bool["prevent_gibbing_dead"])
-			//We we dont touch the dead via are controler we dont want to pk people form the round
+			if(!GLOB.hive_data_float["gibbing_warning_timer"]) //If the value is set to 0 (the default) we don't touch player humans
 				return
 
-			//if our target has cruciform, let's just leave it
-			if(is_neotheology_disciple(L))
+			var/timer = GLOB.hive_data_float["gibbing_warning_timer"] SECONDS //If we've continued, then there's a value there and we want it in seconds
+
+			if(is_neotheology_disciple(L)) //If our target has a cruciform, we don't touch it
 				return
 
-			for(var/obj/item/W in L)
-				L.drop_from_inventory(W)
-			var/M = pick(/mob/living/simple_animal/hostile/hivemind/himan, /mob/living/simple_animal/hostile/hivemind/phaser)
-			new M(loc)
+			visible_message("Wires begin to wreathe around [L], starting the process of converting them into part of the hivemind.") //We tell people to get them off the wires
+			assimilation_timer = addtimer(CALLBACK(src, .proc/assimilate_human, L), timer, TIMER_STOPPABLE)
+			return
+
 		//robot corpses
-		else if(issilicon(subject))
+		else if(issilicon(subject)) //If you're a borg... sucks to suck? I don't feel like reworking this, you're too mechanical to prevent hivemind taking over you
 			new /mob/living/simple_animal/hostile/hivemind/hiborg(loc)
 		//other dead bodies
 		else
@@ -403,6 +408,15 @@
 
 		qdel(subject)
 
+/obj/effect/plant/hivemind/proc/assimilate_human(var/mob/living/L)
+	if(!locate(/obj/effect/plant/hivemind) in L.loc || !(L.stat == DEAD)) //If we don't see any wires after the alotted time or we're alive again, we don't get got
+		return
+	for(var/obj/item/W in L)
+		L.drop_from_inventory(W)
+	var/M = pick(/mob/living/simple_animal/hostile/hivemind/himan, /mob/living/simple_animal/hostile/hivemind/phaser)
+	new M(loc)
+
+	L.dust()
 
 //////////////////////////////////////////////////////////////////
 /////////////////////////>RESPONSE CODE<//////////////////////////
