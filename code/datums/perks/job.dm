@@ -48,7 +48,7 @@
 
 /datum/perk/timeismoney
 	name = "Hyperzine Injections"
-	desc = "A standard issue injector hidden away that is designed for Chief Executive Officers that contains a small on-demand injection of Hyperzine. The injector itself is unable to be seen by prying scanners and comes in both \
+	desc = "A standard issue injector hidden away that is designed for Surface Operations Managers that contains a small on-demand injection of Hyperzine. The injector itself is unable to be seen by prying scanners and comes in both \
 	metal and organic material designs to aid in remaining hidden. While useful, the chemical storage takes time to recharge after use."
 	active = FALSE
 	passivePerk = FALSE

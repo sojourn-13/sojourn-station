@@ -1,6 +1,6 @@
 //Cargo
 /datum/job/merchant
-	title = "Chief Executive Officer"
+	title = "Surface Operations Manager"
 	flag = MERCHANT
 	department = DEPARTMENT_LSS
 	head_position = TRUE
@@ -12,7 +12,7 @@
 	supervisors = "the Nadezhda Council"
 	difficulty = "Medium."
 	selection_color = "#b3a68c"
-	wage = WAGE_COMMAND	//CEO now gets paid the money moola muh [redacted] -Kaz
+	wage = WAGE_COMMAND	//SOM now gets paid the money moola muh [redacted] -Kaz
 	access = list(
 		access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_merchant, access_mining,
 		access_heads, access_mining_station, access_RC_announce, access_keycard_auth, access_sec_doors,
@@ -31,7 +31,7 @@
 		STAT_MEC = 15,
 		STAT_VIG = 10
 	)
-	description = "The Chief Executive Officer coordinates the affairs of the local branch of Lonestar Shipping Solutions.<br>\
+	description = "The Surface Operations Manager coordinates the affairs of the local branch of Lonestar Shipping Solutions.<br>\
 Your main objective, bluntly, is to make as much money as you can. Purchase and acquire goods, and sell them on for a profit.<br>\
 Your Cargo Technicians will handle most of the grunt work and your Miners will acquire minerals. They are capable - utilize them well.<br>\
 The vendors found throughout the colony are also operated by your organization. They make you money - ensure they are functional and well-stocked.<br>\
@@ -55,7 +55,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 	perks = list(PERK_TIMEISMONEY, PERK_MARKET_PROF, PERK_BARTENDER, PERK_CHEM_CONTRABAND)
 
 /obj/landmark/join/start/merchant
-	name = "Chief Executive Officer"
+	name = "Surface Operations Manager"
 	icon_state = "player-beige-officer"
 	join_tag = /datum/job/merchant
 
@@ -67,7 +67,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Cargo Specialist", "Lonestar Sales Technician", "Lonestar Retail Assistant")
 	selection_color = "#c3b9a6"
@@ -121,7 +121,7 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Lonestar Drill Technician", "Junior Lonestar Miner")
 	selection_color = "#c3b9a6"

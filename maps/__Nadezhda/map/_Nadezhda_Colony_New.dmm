@@ -24520,7 +24520,7 @@
 /area/nadezhda/engineering/engine_room)
 "fdN" = (
 /obj/machinery/door/airlock/command{
-	name = "CEO's Office";
+	name = "Surface Operations Manager's Office";
 	req_access = list(41);
 	id_tag = "ceodoor"
 	},
@@ -27140,7 +27140,7 @@
 "fFr" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
-	department = "Executive Officer's Office"
+	department = "Surface Operations Manager's Office"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -92042,10 +92042,8 @@
 "sUA" = (
 /obj/structure/table/reinforced,
 /obj/item/device/lighting/toggleable/lamp,
-/obj/item/stamp{
-	name = "Quartermaster's stamp"
-	},
 /obj/item/stamp/denied,
+/obj/item/stamp/qm,
 /turf/simulated/floor/carpet,
 /area/nadezhda/command/merchant)
 "sUB" = (
