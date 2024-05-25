@@ -21,6 +21,7 @@
 	required_type = /obj/mecha/medical
 	salvageable = 0
 	price_tag = 200
+	harmful = 0 // So you don't push people around on help intent when you want to scoop them
 
 	New()
 		..()
