@@ -416,7 +416,8 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	shot_delay = initial(shot_delay)
 	damage_mod = initial(damage_mod)
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
-		shot_delay -= (C.rating * 15)
+		shot_delay -= min((C.rating * 15), 60)
+
 	for(var/obj/item/stock_parts/smes_coil/coil in component_parts)
 		damage_mod += (coil.rating * 0.1)
 
