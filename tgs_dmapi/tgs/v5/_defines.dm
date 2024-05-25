@@ -28,14 +28,6 @@
 
 #define DMAPI5_MISSING_CHUNKS "missingChunks"
 
-#define DMAPI5_CHUNK "chunk"
-#define DMAPI5_CHUNK_PAYLOAD "payload"
-#define DMAPI5_CHUNK_TOTAL "totalChunks"
-#define DMAPI5_CHUNK_SEQUENCE_ID "sequenceId"
-#define DMAPI5_CHUNK_PAYLOAD_ID "payloadId"
-
-#define DMAPI5_MISSING_CHUNKS "missingChunks"
-
 #define DMAPI5_RESPONSE_ERROR_MESSAGE "errorMessage"
 
 #define DMAPI5_BRIDGE_PARAMETER_COMMAND_TYPE "commandType"
