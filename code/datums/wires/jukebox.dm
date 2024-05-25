@@ -26,12 +26,12 @@
 	return FALSE
 
 // Show the status of lights as a hint to the current state
-/datum/wires/jukebox/GetInteractWindow(mob/living/user)
+/datum/wires/jukebox/get_status(mob/living/user)
 	var/obj/machinery/media/jukebox/A = holder
-	. = ..(user)
-	. += "<br>\n The power light is [A.stat & (BROKEN|NOPOWER) ? "off." : "on."]"
-	. += "<br>\n The parental guidance light is [A.hacked ? "off." : "on."]"
-	. += "<br>\n The data light is [IsIndexCut(WIRE_REVERSE) ? "hauntingly dark." : "glowing softly."]"
+	. = ..()
+	. += "The power light is [A.stat & (BROKEN|NOPOWER) ? "off." : "on."]"
+	. += "The parental guidance light is [A.hacked ? "off." : "on."]"
+	. += "The data light is [IsIndexCut(WIRE_REVERSE) ? "hauntingly dark." : "glowing softly."]"
 
 // Give a hint as to what each wire does
 /datum/wires/jukebox/UpdatePulsed(wire)

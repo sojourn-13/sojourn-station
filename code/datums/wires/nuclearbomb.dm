@@ -15,12 +15,12 @@ var/const/NUCLEARBOMB_WIRE_SAFETY		= 4
 	var/obj/machinery/nuclearbomb/N = holder
 	return N.panel_open
 
-/datum/wires/nuclearbomb/GetInteractWindow(mob/living/user)
+/datum/wires/nuclearbomb/get_status(mob/living/user)
 	var/obj/machinery/nuclearbomb/N = holder
-	. += ..(user)
-	. += "<BR>The device is [N.timing ? "shaking!" : "still."]<BR>"
-	. += "The device is is [N.safety ? "quiet" : "whirring"].<BR>"
-	. += "The lights are [N.lighthack ? "static" : "functional"].<BR>"
+	. = ..()
+	. += "The device is [N.timing ? "shaking!" : "still."]"
+	. += "The device is is [N.safety ? "quiet" : "whirring"]."
+	. += "The lights are [N.lighthack ? "static" : "functional"]."
 
 /datum/wires/nuclearbomb/UpdatePulsed(var/index)
 	var/obj/machinery/nuclearbomb/N = holder

@@ -148,7 +148,7 @@
 					"color" = armorlist[i] > 25 ? (armorlist[i] > 50 ? "good" : "average") : "bad",
 					"unit" = "%"
 				))
-	
+
 	stats["Armor Stats"] = armor_stats
 
 	var/list/equipment_stats = list()
@@ -172,7 +172,7 @@
 		temperature_stats += list(list("name" = "Minimum Temperature", "type" = "AnimatedNumber", "value" = min_cold_protection_temperature, "unit" = " deg K"))
 
 	stats["Temperature Stats"] = temperature_stats
-	
+
 	data["stats"] = stats
 
 	return data
@@ -430,7 +430,7 @@ BLIND     // can't see anything
 	if(!mob_wear_hat(user))
 		return ..()
 
-/obj/item/clothing/head/attack_generic(var/mob/user)
+/obj/item/clothing/head/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(!istype(user) || !mob_wear_hat(user))
 		return ..()
 

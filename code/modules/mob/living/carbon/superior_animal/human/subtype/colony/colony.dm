@@ -104,6 +104,7 @@
 	projectiletype = /obj/item/projectile/beam
 	light_range = 5
 	light_color = COLOR_LIGHTING_BLUE_BRIGHT
+	melee_sharp = TRUE //Eswords and welders
 /*
 /mob/living/carbon/superior_animal/human/colony_allie/lonestar_merc
 	name = "Lonestar Corporate Infantryman"
@@ -183,7 +184,7 @@
 
 /mob/living/carbon/superior_animal/human/colony_allie/emp_act(severity)
 	..()
-	if(rapid)
+	if(rapid && egun)
 		rapid = FALSE
 	if(prob(95) && ranged && egun)
 		ranged = FALSE

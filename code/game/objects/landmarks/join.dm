@@ -47,7 +47,7 @@ GLOBAL_LIST_EMPTY(spawntypes)
 	join_tag = "starboard_late_cryo"
 	message = null
 	spawn_datum_type = /datum/spawnpoint/cryo/outsider
-	disallow_job = list("Robot","Lodge Hunter","Lodge Hunt Master","Lodge Herbalist","Foreman","Salvager","Prospector","Foreman","Salvager","Prospector","Colonist","Chief Executive Officer","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor","Artist","Chief Research Overseer","Soteria Scientist","Soteria Roboticist","Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Lifeline Technician","Guild Master","Guild Adept","Blackshield Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant","Premier","Steward","Prime","Vector")
+	disallow_job = list("Robot","Lodge Hunter","Lodge Hunt Master","Lodge Herbalist","Foreman","Salvager","Prospector","Foreman","Salvager","Prospector","Colonist","Surface Operations Manager","Cargo Technician","Lonestar Miner","Bartender","Chef","Gardener","Janitor","Artist","Chief Research Overseer","Soteria Scientist","Soteria Roboticist","Chief Biolab Overseer","Soteria Doctor","Soteria Psychiatrist","Soteria Lifeline Technician","Guild Master","Guild Adept","Blackshield Commander","Warrant Officer","Supply Specialist","Ranger","Corpsman","Blackshield Trooper","Marshal Officer","Sergeant","Premier","Steward","Prime","Vector")
 
 /obj/landmark/join/late/cryo/starboard
 	name = "Starboard Cryogenic Storage"

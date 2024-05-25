@@ -14,11 +14,12 @@
 		new /datum/wire_description(APC_WIRE_AI_CONTROL, "Remote access")
 	)
 
-/datum/wires/apc/GetInteractWindow(mob/living/user)
+/datum/wires/apc/get_status(mob/living/user)
 	var/obj/machinery/power/apc/A = holder
-	. += ..(user)
-	. += text("<br>\n[(A.locked ? "The APC is locked." : "The APC is unlocked.")]<br>\n[(A.shorted ? "The power wire of the APC has been shorted." : "The APC is working properly!")]<br>\n[(A.aidisabled ? "The 'AI control allowed' light is off." : "The 'AI control allowed' light is on.")]")
-
+	. = ..()
+	. += "The APC is [A.locked ? "" : "un"]locked."
+	. += A.shorted ? "The APCs power has been shorted." : "The APC is working properly!"
+	. += "The 'AI control allowed' light is [A.aidisabled ? "off" : "on"]."
 
 /datum/wires/apc/CanUse(var/mob/living/L)
 	var/obj/machinery/power/apc/A = holder

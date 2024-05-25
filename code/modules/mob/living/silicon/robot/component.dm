@@ -96,7 +96,7 @@
 // Protects the cyborg from damage. Usually first module to be hit
 // No power usage
 /datum/robot_component/armour
-	name = "armour plating"
+	name = "mark I armour plating"
 	external_type = /obj/item/robot_parts/robot_component/armour
 	max_damage = 80
 
@@ -319,7 +319,7 @@
 	icon_state_broken = "motor_broken"
 
 /obj/item/robot_parts/robot_component/armour
-	name = "armour plating"
+	name = "Mark I armour plating"
 	desc = "A robot part, basic metal plates to be able to take dents and burns so more sensitive component inside dont."
 	icon_state = "armor"
 	icon_state_broken = "armor_broken"

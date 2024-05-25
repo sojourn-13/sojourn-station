@@ -12,6 +12,8 @@
 	var/oxygentanks = TANK_DISPENSER_CAPACITY
 	var/plasmatanks = TANK_DISPENSER_CAPACITY
 
+	var/list/allowed_items = list(/obj/item/tank/oxygen, /obj/item/tank/air, /obj/item/tank/anesthetic, /obj/item/tank/plasma)
+
 /obj/structure/dispenser/oxygen
 	plasmatanks = 0
 
@@ -91,17 +93,8 @@
 	update_icon()
 
 /obj/structure/dispenser/attackby(obj/item/I, mob/user)
-	var/full
-	if(istype(I, /obj/item/tank/oxygen) || istype(I, /obj/item/tank/air) || istype(I, /obj/item/tank/anesthetic))
-		if(oxygentanks < TANK_DISPENSER_CAPACITY)
-			oxygentanks++
-		else
-			full = TRUE
-	else if(istype(I, /obj/item/tank/plasma))
-		if(plasmatanks < TANK_DISPENSER_CAPACITY)
-			plasmatanks++
-		else
-			full = TRUE
+	if(is_type_in_list(I, allowed_items))
+		return eat(user, I)
 	else if(QUALITY_BOLT_TURNING in I.tool_qualities)
 		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
 			if(anchored)
@@ -110,19 +103,39 @@
 			else
 				to_chat(user, SPAN_NOTICE("You wrench [src] into place."))
 				anchored = TRUE
-			return
+		return
 	else if(user.a_intent != I_HURT)
 		to_chat(user, SPAN_NOTICE("[I] does not fit into [src]"))
 		return
 	else
 		return ..()
 
+/obj/structure/dispenser/proc/eat(mob/user, obj/item/I)
+	if(!(is_type_in_list(I, allowed_items)))
+		return FALSE
+
+	var/full
+	if(istype(I, /obj/item/tank/oxygen) || istype(I, /obj/item/tank/air) || istype(I, /obj/item/tank/anesthetic))
+		if(oxygentanks < TANK_DISPENSER_CAPACITY)
+			if(!user.unEquip(I, Target = src))
+				to_chat(user, SPAN_WARNING("[I] is stuck to your hands!"))
+				return FALSE
+			oxygentanks++
+		else
+			full = TRUE
+	else if(istype(I, /obj/item/tank/plasma))
+		if(plasmatanks < TANK_DISPENSER_CAPACITY)
+			if(!user.unEquip(I, Target = src))
+				to_chat(user, SPAN_WARNING("[I] is stuck to your hands!"))
+				return FALSE
+			plasmatanks++
+		else
+			full = TRUE
 
 	if(full)
 		to_chat(user, "<span class='notice'>[src] can't hold any more of [I].</span>")
-		return
+		return FALSE
 
-	if(!user.unEquip(I, Target = src))
-		return
 	to_chat(user, "<span class='notice'>You put [I] in [src].</span>")
 	update_icon()
+	return TRUE

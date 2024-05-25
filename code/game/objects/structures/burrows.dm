@@ -681,11 +681,11 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 
 //Mobs that are summoned will walk up and attack this burrow
 //This will suck them in
-/obj/structure/burrow/attack_generic(mob/living/L)
-	if (is_valid(L))
-		enter_burrow(L)
-	if (issuperioranimal(L))//So they don't carry burrow's reference and never qdel
-		var/mob/living/carbon/superior_animal/SA = L
+/obj/structure/burrow/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+	if (is_valid(user))
+		enter_burrow(user)
+	if (issuperioranimal(user))//So they don't carry burrow's reference and never qdel
+		var/mob/living/carbon/superior_animal/SA = user
 		SA.target_mob = null
 
 
@@ -708,7 +708,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 		if(locate(/obj/effect/plant) in loc)
 			return
 
-		if(!hive_mind_ai || !hive_mind_ai.hives.len || maintenance || !GLOB.hive_data_bool["spread_trough_burrows"])
+		if(!hive_mind_ai || !hive_mind_ai.hives.len || !GLOB.hive_data_bool["spread_trough_burrows"])
 			return
 
 		var/area/A = get_area(src)

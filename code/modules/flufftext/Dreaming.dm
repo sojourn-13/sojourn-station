@@ -59,7 +59,7 @@ var/list/dreams = list(
 
 //Ranks
 	"the Steward","the Warrant Officer","the Blackshield Commander","the Guild Master","the Soteria Research Overseer",
-	"the Soteria Biolab Overseer","the Chief Executive Officer","an Assistant","a Bartender","a Janitor","a Gardener",
+	"the Soteria Biolab Overseer","the Surface Operations Manager","an Assistant","a Bartender","a Janitor","a Gardener",
 	"a Prime","an Entertainer","a Chef","a Doctor","a Psychologist","a Soteria Paramedic",
 	"a Soteria Chemist","a Soteria Scientist","a Soteria Roboticist","a Cyborg","a Cargo Technician","a Lonestar Miner",
 	"a Guild Adept", "a Marshal Officer","a Supply Specialist","a Ranger", "the Premier",

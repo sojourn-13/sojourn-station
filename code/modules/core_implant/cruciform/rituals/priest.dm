@@ -183,6 +183,10 @@
 	if(!user.client)
 		return FALSE
 
+	if(!C.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_CRUSADER))
+		fail("Only Primes and Crusaders have the authority to Scry.", user, C)
+		return FALSE
+
 	var/mob/living/M = pick_disciple_global(user, TRUE)
 	if (!M)
 		return
@@ -249,11 +253,11 @@
 		fail("[H] must lie on the altar.", user, C)
 		return FALSE
 
-	for(var/obj/item/clothing/CL in H)
+	/*for(var/obj/item/clothing/CL in H)     We don't need people naked for their baptisms
 		if(H.l_hand == CL || H.r_hand == CL)
 			continue
 		fail("[H] must be undressed.", user, C)
-		return FALSE
+		return FALSE */
 
 	if(!CI.install(H, BP_CHEST, user) || CI.wearer != H)
 		fail("Commitment failed.", user, C)
@@ -261,12 +265,13 @@
 
 	if(ishuman(H))
 		var/mob/living/carbon/human/M = H
-		var/obj/item/organ/external/E = M.organs_by_name[BP_CHEST]
+		/*var/obj/item/organ/external/E = M.organs_by_name[BP_CHEST]  We also don't need baptisms causing internal damage
 		for (var/i = 0; i < 5;i++)
 			E.take_damage(5, sharp = FALSE)
 			//Deal 25 damage in five hits. Using multiple small hits mostly prevents internal damage
 
-		M.custom_pain("You feel the nails of the cruciform drive into your ribs!",1)
+		M.custom_pain("You feel the nails of the cruciform drive into your ribs!",1) */
+		to_chat(M, "You feel a commection to something larger than yourself, divine power flowing into your body.")
 		M.update_implants()
 		M.updatehealth()
 
@@ -275,7 +280,7 @@
 /datum/ritual/cruciform/priest/epiphany
 	name = "Epiphany"
 	phrase = "Satus iter ad infinitum." //"Begin your journey to infinity."*
-	desc = "The Absolute's principal sacrament is a ritual of baptism and merging with cruciform. A body, relieved of clothes should be placed on Absolute's special altar."
+	desc = "The Absolute's principal sacrament is a ritual of baptism and merging with cruciform. A person with a cruciform attached by Commitment must be placed on an altar."
 	power = 25
 
 /datum/ritual/cruciform/priest/epiphany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
@@ -735,6 +740,10 @@
 		fail("Cruciform not found.",user,C)
 		return FALSE
 
+	if(!C.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_CRUSADER))
+		fail("Only Primes and Crusaders have the authority to Consecrate.", user, C)
+		return FALSE
+
 	if(CI.get_module(CRUCIFORM_PRIME))
 		fail("The target is already a Prime.",user,C)
 		return FALSE
@@ -828,7 +837,7 @@
 		CI.deactivate()
 		CI.uninstall()
 		to_chat(H, SPAN_DANGER("You feel a cold emptiness as you are cut off from the Absolute and the faithful. Your cruciform falls from your chest and down to the floor, lifeless."))
-		to_world("The cruciform of [H] falls to the ground, inactive.")
+		H.visible_message("The cruciform of [H] falls to the ground, inactive.")
 		log_and_message_admins("removed [H]'s cruciform with the Separation litany.")
 		return TRUE
 

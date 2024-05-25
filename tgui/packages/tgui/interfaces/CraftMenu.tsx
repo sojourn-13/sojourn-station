@@ -32,45 +32,52 @@ const GroupTitle = ({ title }) => {
 
 export type CraftingStepData = {
   // Amount of resource needed for this step
-  amt: number
+  amt: number;
   // The resource OR tool needed
-  tool_name: string
+  tool_name: string;
   // Icon url
-  icon: string
+  icon: string;
   // Used to indicate if tool_name is a material stack, used for correct pluralization
-  reqed_material: BooleanLike
-}
+  reqed_material: BooleanLike;
+};
 
 export const CraftingStep = (props: { step: CraftingStepData }) => {
+  const { config } = useBackend();
   const { step } = props;
 
   const { amt, tool_name, icon, reqed_material } = step;
 
   if (amt === 0) {
     return (
-      <Stack align='center'>
-        <Stack.Item>
-          <Image src={icon} />
-        </Stack.Item>
+      <Stack align="center">
+        {!config.window.toaster && (
+          <Stack.Item>
+            <Image src={icon} />
+          </Stack.Item>
+        )}
         <Stack.Item>Apply {tool_name}</Stack.Item>
       </Stack>
     );
     // correct pluralization for non-stacks
   } else if (amt === 1 && !reqed_material) {
     return (
-      <Stack align='center'>
-        <Stack.Item>
-          <Image src={icon} />
-        </Stack.Item>
+      <Stack align="center">
+        {!config.window.toaster && (
+          <Stack.Item>
+            <Image src={icon} />
+          </Stack.Item>
+        )}
         <Stack.Item>Attach {tool_name}</Stack.Item>
       </Stack>
     );
   } else {
     return (
-      <Stack align='center'>
-        <Stack.Item>
-          <Image src={icon} />
-        </Stack.Item>
+      <Stack align="center">
+        {!config.window.toaster && (
+          <Stack.Item>
+            <Image src={icon} />
+          </Stack.Item>
+        )}
         <Stack.Item>
           Attach {amt} {tool_name}
         </Stack.Item>
@@ -93,33 +100,35 @@ const getCompactCraftingStepText = (step: CraftingStepData) => {
 };
 
 export type CraftingRecipeData = {
-  name: string
-  ref: string
-  icon: string
-  batch: BooleanLike
-  desc: string
-  steps: CraftingStepData[]
-}
+  name: string;
+  ref: string;
+  icon: string;
+  batch: BooleanLike;
+  desc: string;
+  steps: CraftingStepData[];
+};
 
 export const CraftingRecipe = (props: {
-  recipe: CraftingRecipeData
-  compact: boolean
-  admin: boolean
+  recipe: CraftingRecipeData;
+  compact: boolean;
+  admin: boolean;
 }) => {
-  const { act } = useBackend();
+  const { act, config } = useBackend();
   const { recipe, compact, admin } = props;
 
   return (
     <Section>
       <Stack>
-        <Stack.Item>
-          <Image src={recipe.icon} />
-        </Stack.Item>
+        {!config.window.toaster && (
+          <Stack.Item>
+            <Image src={recipe.icon} />
+          </Stack.Item>
+        )}
         <Stack.Item grow>
           <Box style={{ textTransform: 'capitalize' }}>{recipe.name}</Box>
-          {!compact && <Box color='grey'>{recipe.desc}</Box>}
+          {!compact && <Box color="grey">{recipe.desc}</Box>}
           <Box color={compact ? 'grey' : ''}>
-            {!compact && <GroupTitle title='Steps' />}
+            {!compact && <GroupTitle title="Steps" />}
             {recipe.steps.map((step, idx) => {
               if (compact) {
                 return (
@@ -138,16 +147,16 @@ export const CraftingRecipe = (props: {
           <Stack vertical={!compact}>
             <Stack.Item>
               <Button
-                icon='hammer'
-                tooltip='Craft'
+                icon="hammer"
+                tooltip="Craft"
                 onClick={() => act('build', { ref: recipe.ref })}
               />
             </Stack.Item>
             <Stack.Item>
               {admin && (
                 <Button
-                  icon='bug'
-                  tooltip='View Variables'
+                  icon="bug"
+                  tooltip="View Variables"
                   onClick={() => act('view_variables', { ref: recipe.ref })}
                 />
               )}
@@ -161,8 +170,8 @@ export const CraftingRecipe = (props: {
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign='right'
-                    tooltip='Craft 5'
+                    textAlign="right"
+                    tooltip="Craft 5"
                     onClick={() => act('build', { ref: recipe.ref, amount: 5 })}
                   >
                     5
@@ -171,8 +180,8 @@ export const CraftingRecipe = (props: {
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign='right'
-                    tooltip='Craft 10'
+                    textAlign="right"
+                    tooltip="Craft 10"
                     onClick={() =>
                       act('build', { ref: recipe.ref, amount: 10 })
                     }
@@ -183,8 +192,8 @@ export const CraftingRecipe = (props: {
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign='right'
-                    tooltip='Craft 25'
+                    textAlign="right"
+                    tooltip="Craft 25"
                     onClick={() =>
                       act('build', { ref: recipe.ref, amount: 25 })
                     }
@@ -195,8 +204,8 @@ export const CraftingRecipe = (props: {
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign='right'
-                    tooltip='Craft 50'
+                    textAlign="right"
+                    tooltip="Craft 50"
                     onClick={() =>
                       act('build', { ref: recipe.ref, amount: 50 })
                     }
@@ -212,8 +221,8 @@ export const CraftingRecipe = (props: {
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign='right'
-                    tooltip='Craft 5'
+                    textAlign="right"
+                    tooltip="Craft 5"
                     onClick={() => act('build', { ref: recipe.ref, amount: 5 })}
                   >
                     5
@@ -222,8 +231,8 @@ export const CraftingRecipe = (props: {
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign='right'
-                    tooltip='Craft 10'
+                    textAlign="right"
+                    tooltip="Craft 10"
                     onClick={() =>
                       act('build', { ref: recipe.ref, amount: 10 })
                     }
@@ -234,8 +243,8 @@ export const CraftingRecipe = (props: {
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign='right'
-                    tooltip='Craft 25'
+                    textAlign="right"
+                    tooltip="Craft 25"
                     onClick={() =>
                       act('build', { ref: recipe.ref, amount: 25 })
                     }
@@ -246,8 +255,8 @@ export const CraftingRecipe = (props: {
                 <Stack.Item>
                   <Button
                     fluid
-                    textAlign='right'
-                    tooltip='Craft 50'
+                    textAlign="right"
+                    tooltip="Craft 50"
                     onClick={() =>
                       act('build', { ref: recipe.ref, amount: 50 })
                     }
@@ -268,23 +277,23 @@ export const CraftingRecipe = (props: {
 
 type Data = {
   crafting_recipes: {
-    [key: string]: CraftingRecipeData[]
-  }
-  is_admin: BooleanLike
-}
+    [key: string]: CraftingRecipeData[];
+  };
+  is_admin: BooleanLike;
+};
 
-export const CraftMenu = props => {
+export const CraftMenu = (props) => {
   const { act, data } = useBackend<Data>();
   const { crafting_recipes, is_admin } = data;
 
   // Filter out empty categories
   const available_categories = Object.keys(crafting_recipes).filter(
-    category => crafting_recipes[category].length !== 0
+    (category) => crafting_recipes[category].length !== 0,
   );
 
   // Total recipe count
   const recipeCount = available_categories
-    .map(category => crafting_recipes[category].length)
+    .map((category) => crafting_recipes[category].length)
     .reduce((s, a) => s + a, 0);
 
   // -- State --
@@ -296,7 +305,7 @@ export const CraftMenu = props => {
 
   const searchName = createSearch(
     searchText,
-    (item: CraftingRecipeData) => item.name
+    (item: CraftingRecipeData) => item.name,
   );
 
   // Pagination
@@ -308,7 +317,7 @@ export const CraftMenu = props => {
 
   // Selected Category
   const [currentCategory, setCurrentCategory] = useState(
-    available_categories[0]
+    available_categories[0],
   );
 
   // -- Filter and search recipes --
@@ -316,12 +325,12 @@ export const CraftMenu = props => {
 
   if (searchText !== '') {
     recipes = available_categories
-      .flatMap(category => crafting_recipes[category])
+      .flatMap((category) => crafting_recipes[category])
       .filter(searchName);
   }
 
   recipes = sortBy<CraftingRecipeData>(recipes, (recipe: CraftingRecipeData) =>
-    recipe.name.toUpperCase()
+    recipe.name.toUpperCase(),
   );
 
   // -- UI --
@@ -329,9 +338,9 @@ export const CraftMenu = props => {
     <Window width={800} height={450}>
       <Window.Content>
         <Stack fill>
-          <Stack.Item width='30%'>
+          <Stack.Item width="30%">
             <Section fill>
-              <Stack fill vertical justify='space-between'>
+              <Stack fill vertical justify="space-between">
                 <Stack.Item>
                   <Input
                     placeholder={'Search in ' + recipeCount + ' recipes...'}
@@ -344,9 +353,9 @@ export const CraftMenu = props => {
                   />
                 </Stack.Item>
                 <Stack.Item grow>
-                  <Box height='100%' pt={1} pr={1} overflowY='auto'>
+                  <Box height="100%" pt={1} pr={1} overflowY="auto">
                     <Tabs fluid vertical>
-                      {available_categories.map(category => (
+                      {available_categories.map((category) => (
                         <Tabs.Tab
                           key={category}
                           selected={category === currentCategory}
@@ -369,7 +378,7 @@ export const CraftMenu = props => {
                   {/* <Button.Checkbox fluid content="Craftable Only" /> */}
                   <Button.Checkbox
                     fluid
-                    content='Compact List'
+                    content="Compact List"
                     checked={showCompact}
                     onClick={() => setShowCompact(!showCompact)}
                   />
@@ -378,8 +387,8 @@ export const CraftMenu = props => {
             </Section>
           </Stack.Item>
           <Stack.Item grow my={-1}>
-            <Box height='100%' pr={1} pt={1} mr={-1} overflowY='auto'>
-              {recipes.slice(0, displayLimit).map(recipe => (
+            <Box height="100%" pr={1} pt={1} mr={-1} overflowY="auto">
+              {recipes.slice(0, displayLimit).map((recipe) => (
                 <CraftingRecipe
                   key={recipe.ref}
                   recipe={recipe}
@@ -390,7 +399,7 @@ export const CraftMenu = props => {
               {recipes.length > displayLimit && (
                 <Section
                   mb={2}
-                  textAlign='center'
+                  textAlign="center"
                   style={{ cursor: 'pointer' }}
                   onClick={() => setPages(pages + 1)}
                 >

@@ -155,9 +155,11 @@
 	var/trays = 0
 	for(var/obj/machinery/portable_atmospherics/hydroponics/H in view(7, src))
 		if(H.seed && !H.dead)
+			var/yield_o_seed = H.seed.get_trait(TRAIT_YIELD)
+			yield_o_seed *= 0.5 //Bees can only give us a 1.5 mult, but it scales with base mult
 			H.health += 0.05 * coef
-			if(H.yield_mod < 16) //15 is highest natural yield
-				H.yield_mod += 0.005 * coef
+			if(H.yield_mod < yield_o_seed)
+				H.yield_mod += 0.001 * coef
 			++trays
 			if(H.seed.seed_name in bee_food_list)
 				++foods

@@ -18,6 +18,9 @@
 	tgui_id = "CraftMenu"
 
 /datum/tgui_module/craft/ui_assets(mob/user)
+	if(user?.client?.get_preference_value(/datum/client_preference/tgui_toaster) == GLOB.PREF_YES)
+		return list()
+
 	return list(
 		get_asset_datum(/datum/asset/simple/craft),
 		get_asset_datum(/datum/asset/simple/materials),

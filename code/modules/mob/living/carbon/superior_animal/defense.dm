@@ -391,7 +391,7 @@
 /mob/living/carbon/superior_animal/proc/pick_armor()
 	return
 
-/mob/living/carbon/superior_animal/attack_generic(mob/user, damage, attack_message)
+/mob/living/carbon/superior_animal/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 
 	if(!damage || !istype(user))
 		return

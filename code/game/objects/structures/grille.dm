@@ -220,7 +220,7 @@
 			healthCheck()
 	..()
 
-/obj/structure/grille/attack_generic(mob/user, damage, attack_verb)
+/obj/structure/grille/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
 	if(istype(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(src)

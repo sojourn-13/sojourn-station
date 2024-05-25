@@ -18,14 +18,14 @@ import { Window } from '../layouts';
 import { SearchBar } from './Fabrication/SearchBar';
 
 export type MaterialData = {
-  mat_capacity: number
+  mat_capacity: number;
   materials: {
-    name: string
-    id: string
-    amount: number
-    ejectable: BooleanLike
-  }[]
-}
+    name: string;
+    id: string;
+    amount: number;
+    ejectable: BooleanLike;
+  }[];
+};
 
 export const LoadedMaterials = (props: MaterialData) => {
   const { act, data } = useBackend<MaterialData>();
@@ -34,25 +34,25 @@ export const LoadedMaterials = (props: MaterialData) => {
 
   return (
     <Section
-      title='Loaded Materials'
+      title="Loaded Materials"
       buttons={
         <Button
-          icon='arrow-up'
-          tooltip='Load Materials From Hand'
+          icon="arrow-up"
+          tooltip="Load Materials From Hand"
           onClick={() => act('insert_material')}
         />
       }
     >
       {(materials.length > 0 && (
         <LabeledList>
-          {materials.map(material => {
+          {materials.map((material) => {
             return (
               <LabeledList.Item
                 key={material.id}
                 buttons={
                   material.ejectable && (
                     <Button
-                      icon='eject'
+                      icon="eject"
                       onClick={() => act('eject_material', { id: material.id })}
                     />
                   )
@@ -70,32 +70,32 @@ export const LoadedMaterials = (props: MaterialData) => {
 };
 
 export type Design = {
-  id: string
-  name: string
-  desc: string
-  time: number
-  category: string | null
-  adjust_materials: number
+  id: string;
+  name: string;
+  desc: string;
+  time: number;
+  category: string | null;
+  adjust_materials: number;
   materials: {
-    id: string
-    name: string
-    req: number
-  }[]
+    id: string;
+    name: string;
+    req: number;
+  }[];
   chemicals: {
-    id: string
-    name: string
-    req: number
-  }[]
-  icon: string
-  copy_protected: BooleanLike
-  filename: string
-  point_cost: number
-}
+    id: string;
+    name: string;
+    req: number;
+  }[];
+  icon: string;
+  copy_protected: BooleanLike;
+  filename: string;
+  point_cost: number;
+};
 
 export type AutolatheItemProps = {
-  design: Design
-  mat_efficiency: number
-}
+  design: Design;
+  mat_efficiency: number;
+};
 
 export const AutolatheItemDetails = (props: AutolatheItemProps) => {
   const { design, mat_efficiency } = props;
@@ -103,8 +103,8 @@ export const AutolatheItemDetails = (props: AutolatheItemProps) => {
   return (
     <>
       {design.materials ? (
-        <Section title='Materials'>
-          {design.materials.map(mat => (
+        <Section title="Materials">
+          {design.materials.map((mat) => (
             <LabeledList.Item key={mat.id} label={mat.name}>
               {round(mat.req * mat_efficiency, 2)}
             </LabeledList.Item>
@@ -112,19 +112,19 @@ export const AutolatheItemDetails = (props: AutolatheItemProps) => {
         </Section>
       ) : null}
       {design.chemicals ? (
-        <Section title='Chemicals'>
-          {design.chemicals.map(chem => (
+        <Section title="Chemicals">
+          {design.chemicals.map((chem) => (
             <LabeledList.Item key={chem.id} label={chem.name}>
               {chem.req}
             </LabeledList.Item>
           ))}
         </Section>
       ) : null}
-      <Section title='Other information'>
+      <Section title="Other information">
         <LabeledList>
-          <LabeledList.Item label='Build time'>{design.time}</LabeledList.Item>
+          <LabeledList.Item label="Build time">{design.time}</LabeledList.Item>
           {design.point_cost ? (
-            <LabeledList.Item label='Point cost'>
+            <LabeledList.Item label="Point cost">
               {design.point_cost}
             </LabeledList.Item>
           ) : null}
@@ -135,7 +135,7 @@ export const AutolatheItemDetails = (props: AutolatheItemProps) => {
 };
 
 export const AutolatheItem = (props: AutolatheItemProps) => {
-  const { act } = useBackend();
+  const { act, config } = useBackend();
   const { design, mat_efficiency } = props;
 
   const [showDetails, setShowDetails] = useState(false);
@@ -144,26 +144,28 @@ export const AutolatheItem = (props: AutolatheItemProps) => {
     <Box style={{ borderBottom: '2px solid #444', padding: '4px' }}>
       <Stack vertical>
         <Stack.Item>
-          <Stack align='center'>
-            <Stack.Item>
-              <Image
-                width='24px'
-                height='24px'
-                src={design.icon}
-                style={{
-                  verticalAlign: 'middle',
-                  objectFit: 'cover',
-                  margin: '4px',
-                  backgroundColor: 'black',
-                  border: '1px solid #3e6189',
-                }}
-              />
-            </Stack.Item>
+          <Stack align="center">
+            {!config.window.toaster && (
+              <Stack.Item>
+                <Image
+                  width="24px"
+                  height="24px"
+                  src={design.icon}
+                  style={{
+                    verticalAlign: 'middle',
+                    objectFit: 'cover',
+                    margin: '4px',
+                    backgroundColor: 'black',
+                    border: '1px solid #3e6189',
+                  }}
+                />
+              </Stack.Item>
+            )}
             <Stack.Item grow>{design.name}</Stack.Item>
             <Stack.Item>
               <Button
-                icon='print'
-                tooltip='Print'
+                icon="print"
+                tooltip="Print"
                 onClick={() => {
                   act('add_to_queue', {
                     id: design.id,
@@ -175,8 +177,8 @@ export const AutolatheItem = (props: AutolatheItemProps) => {
             </Stack.Item>
             <Stack.Item>
               <Button
-                icon='th'
-                tooltip='Print Several'
+                icon="th"
+                tooltip="Print Several"
                 onClick={() => {
                   act('add_to_queue', {
                     id: design.id,
@@ -188,7 +190,7 @@ export const AutolatheItem = (props: AutolatheItemProps) => {
             </Stack.Item>
             <Stack.Item>
               <Button
-                tooltip='Show Details'
+                tooltip="Show Details"
                 icon={showDetails ? 'arrow-up' : 'arrow-down'}
                 onClick={() => setShowDetails(!showDetails)}
               />
@@ -196,7 +198,7 @@ export const AutolatheItem = (props: AutolatheItemProps) => {
           </Stack>
         </Stack.Item>
         {showDetails && (
-          <Stack.Item backgroundColor='black' style={{ padding: '10px' }}>
+          <Stack.Item backgroundColor="black" style={{ padding: '10px' }}>
             <AutolatheItemDetails
               design={design}
               mat_efficiency={mat_efficiency}
@@ -209,55 +211,57 @@ export const AutolatheItem = (props: AutolatheItemProps) => {
 };
 
 export type AutolatheQueueData = {
-  error: string
-  current: Design | null
-  progress: number
+  error: string;
+  current: Design | null;
+  progress: number;
   queue: (Design & {
-    ind: number
-    error: number
-  })[]
-  queue_max: number
-  paused: BooleanLike
-  mat_efficiency: number
-}
+    ind: number;
+    error: number;
+  })[];
+  queue_max: number;
+  paused: BooleanLike;
+  mat_efficiency: number;
+};
 
 export const AutolatheQueue = (props: AutolatheQueueData) => {
-  const { act } = useBackend<Data>();
+  const { act, config } = useBackend<Data>();
   const { error, current, progress, queue, queue_max, paused, mat_efficiency } =
     props;
 
   return (
-    <Stack vertical height='100%'>
+    <Stack vertical height="100%">
       <Stack.Item>
-        <Section title='Current Item'>
+        <Section title="Current Item">
           {current ? (
             <Stack vertical>
               <Stack.Item>
-                <Stack align='center'>
-                  <Stack.Item>
-                    <Image
-                      width='48px'
-                      height='48px'
-                      src={current.icon}
-                      style={{
-                        verticalAlign: 'middle',
-                        objectFit: 'cover',
-                        margin: '4px',
-                        backgroundColor: 'black',
-                        border: '1px solid #3e6189',
-                      }}
-                    />
-                  </Stack.Item>
+                <Stack align="center">
+                  {!config.window.toaster && (
+                    <Stack.Item>
+                      <Image
+                        width="48px"
+                        height="48px"
+                        src={current.icon}
+                        style={{
+                          verticalAlign: 'middle',
+                          objectFit: 'cover',
+                          margin: '4px',
+                          backgroundColor: 'black',
+                          border: '1px solid #3e6189',
+                        }}
+                      />
+                    </Stack.Item>
+                  )}
                   <Stack.Item grow>
                     <Stack vertical>
                       <Stack.Item>Printing {current.name}</Stack.Item>
                       {error ? (
-                        <Stack.Item textColor='bad'>{error}</Stack.Item>
+                        <Stack.Item textColor="bad">{error}</Stack.Item>
                       ) : (
                         <Stack.Item>
                           <ProgressBar
                             value={progress / current.time}
-                            color='good'
+                            color="good"
                           />
                         </Stack.Item>
                       )}
@@ -271,7 +275,7 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                       }}
                     />
                     <Button
-                      icon='times'
+                      icon="times"
                       onClick={() => {
                         act('abort_print');
                       }}
@@ -279,7 +283,7 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                   </Stack.Item>
                 </Stack>
               </Stack.Item>
-              <Stack.Item backgroundColor='black' style={{ padding: '10px' }}>
+              <Stack.Item backgroundColor="black" style={{ padding: '10px' }}>
                 <AutolatheItemDetails
                   design={current}
                   mat_efficiency={mat_efficiency}
@@ -294,17 +298,17 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
       <Stack.Item grow>
         <Section
           fill
-          title='Queue'
+          title="Queue"
           buttons={
-            <Stack align='center'>
+            <Stack align="center">
               <Stack.Item>
                 Queue: {queue.length} / {queue_max}
               </Stack.Item>
               <Stack.Item>
                 <Button
-                  color='bad'
-                  icon='times'
-                  tooltip='Clear Queue'
+                  color="bad"
+                  icon="times"
+                  tooltip="Clear Queue"
                   onClick={() => {
                     act('clear_queue');
                   }}
@@ -315,19 +319,19 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
           scrollable
         >
           <Stack vertical>
-            {queue.map(item => (
+            {queue.map((item) => (
               <Stack.Item
                 key={item.name + item.ind}
                 style={{ borderBottom: '2px solid #444' }}
               >
-                <Stack align='center'>
+                <Stack align="center">
                   <Stack.Item grow color={errorToColor(item.error)}>
                     {item.name}
                   </Stack.Item>
                   {item.ind > 1 && (
                     <Stack.Item>
                       <Button
-                        icon='arrow-up'
+                        icon="arrow-up"
                         onClick={() => {
                           act('move_up_queue', { index: item.ind });
                         }}
@@ -337,7 +341,7 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                   {item.ind < queue.length && (
                     <Stack.Item>
                       <Button
-                        icon='arrow-down'
+                        icon="arrow-down"
                         onClick={() => {
                           act('move_down_queue', { index: item.ind });
                         }}
@@ -346,7 +350,7 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                   )}
                   <Stack.Item>
                     <Button
-                      icon='times'
+                      icon="times"
                       onClick={() => {
                         act('remove_from_queue', { index: item.ind });
                       }}
@@ -354,8 +358,8 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                   </Stack.Item>
                   <Stack.Item>
                     <Image
-                      width='24px'
-                      height='24px'
+                      width="24px"
+                      height="24px"
                       src={item.icon}
                       style={{
                         verticalAlign: 'middle',
@@ -378,11 +382,11 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
 
 type Data = MaterialData &
   AutolatheQueueData & {
-    unfolded: string | null
-    mat_efficiency: number
-    designs: Design[]
-    current: Design | null
-  }
+    unfolded: string | null;
+    mat_efficiency: number;
+    designs: Design[];
+    current: Design | null;
+  };
 
 const errorToColor = (error: number) => {
   if (error >= 2) {
@@ -394,7 +398,7 @@ const errorToColor = (error: number) => {
   }
 };
 
-export const Matterforge = props => {
+export const Matterforge = (props) => {
   const { act, data } = useBackend<Data>();
   const {
     error,
@@ -416,9 +420,9 @@ export const Matterforge = props => {
           mat_capacity={data.mat_capacity}
           materials={data.materials}
         />
-        <Stack height='85%'>
+        <Stack height="85%">
           <Stack.Item grow>
-            <Section title='Recipes' fill>
+            <Section title="Recipes" fill>
               <Box style={{ paddingBottom: '8px' }}>
                 <SearchBar
                   searchText={searchText}
@@ -435,10 +439,10 @@ export const Matterforge = props => {
                   <VirtualList>
                     {searchText.length > 0
                       ? designs
-                          .filter(design =>
-                            design.name.toLowerCase().includes(searchText)
+                          .filter((design) =>
+                            design.name.toLowerCase().includes(searchText),
                           )
-                          .map(design => {
+                          .map((design) => {
                             return (
                               <Stack.Item key={design.id}>
                                 <AutolatheItem
@@ -448,7 +452,7 @@ export const Matterforge = props => {
                               </Stack.Item>
                             );
                           })
-                      : designs.map(design => {
+                      : designs.map((design) => {
                           return (
                             <Stack.Item key={design.id}>
                               <AutolatheItem
