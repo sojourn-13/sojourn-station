@@ -109,7 +109,7 @@
 
 /datum/click_handler/fullauto/proc/shooting_loop()
 
-	if(!owner || !owner.mob || owner.mob.resting)
+	if(!owner || !owner.mob || owner.mob.resting || !reciever)
 		return FALSE
 
 	if(target)
