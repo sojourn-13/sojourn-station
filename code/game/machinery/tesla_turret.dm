@@ -58,7 +58,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	var/reqpower = 500		//holder for power needed
 
 	var/last_fired = 0		//1: if the turret is cooling down from a shot, 0: turret is ready to fire
-	var/shot_delay = 60		//7 seconds between each shot by default, made better with parts
+	var/shot_delay = 70		//7 seconds between each shot by default, made better with parts
 	var/damage_mod = 0.7
 
 	/// How far we will fire at mobs from. 6 by default.
