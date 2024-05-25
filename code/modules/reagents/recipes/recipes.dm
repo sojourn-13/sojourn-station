@@ -117,6 +117,11 @@
 	catalysts = list("plasma" = 5)
 	result_amount = 2
 
+/datum/chemical_reaction/trypsin
+	result = "trypsin"
+	required_reagents = list("carbon" = 1, "sacid" = 1, "dermaline" = 1)
+	result_amount = 1
+
 /datum/chemical_reaction/leporazine
 	result = "leporazine"
 	required_reagents = list("silicon" = 1, "copper" = 1)
