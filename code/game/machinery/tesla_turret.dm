@@ -637,7 +637,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	if(zapdir)
 		. = zapdir
 
-	var/shock_damage = CLAMP(round(power/400)*damage_mod, 10, 90) + rand(-5, 5)
+	var/shock_damage = CLAMP(round((power/400)*damage_mod), 10, 90) + rand(-5, 5)
 	if(ishuman(target))
 		target.electrocute_act(shock_damage, src, 1, ran_zone())
 	else
