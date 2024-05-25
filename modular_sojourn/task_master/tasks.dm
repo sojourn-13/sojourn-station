@@ -172,3 +172,23 @@
 
 /datum/task_master/task/poors/activate_affect()
 	forwards_refence.stats.addPerk(PERK_FORCEFUL_REJECTION)
+
+//This affect is in diving code directly
+/datum/task_master/task/parcore
+	name = "Acrobatics"
+	key = "PARCORE"
+	desc = "Diving around with after a warmup sure does make it easyer!"
+	gain_text = "Duck n Cover!"
+	level_threshholds = 10
+	alt_scaling_number = 2 // You can dive whenever
+	unlocked = TRUE
+
+//This affect is in plating directly
+/datum/task_master/task/slip_n_die
+	name = "Face planting trips"
+	key = "TRIPS"
+	desc = "Triping sucks, gotta be more careful..."
+	gain_text = "Ouch, my toe"
+	level_threshholds = 1 //You fall down a lot
+	alt_scaling_number = 2 //But it does hurt
+	unlocked = TRUE

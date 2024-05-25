@@ -654,7 +654,6 @@ default behaviour is:
 			return
 //End of SoJ edits
 	if(!weakened && _dir)// If true_dir = 0(src isn't moving), doesn't proc.
-		nutrition -= 25 //SOJ EDIT: WE TAKE HUNER
 		if(momentum_dir == _dir)
 			livmomentum = momentum_speed // Set momentum value as soon as possible for stopSliding to work better
 		var/range = 1 //checks for move intent; dive one tile further if on run intent
@@ -671,6 +670,11 @@ default behaviour is:
 		update_lying_buckled_and_verb_status()
 		pass_flags -= PASSTABLE // Jumpn't over them anymore!
 		allow_spin = TRUE
+		if(!species.reagent_tag == IS_SYNTHETIC)
+			var/par_core = learnt_tasks.get_task_mastery_level("PARCORE")
+			var/hunger_to_take = clamp(25 - par_core, 0, 25)
+			nutrition -= hunger_to_take  //SOJ EDIT: WE TAKE HUNER
+			learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/parcore, "PARCORE", skill_gained = range, learner = src)
 
 		// Slide
 		sleep(1.5)
