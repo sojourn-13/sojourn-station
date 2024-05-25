@@ -226,6 +226,48 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	else
 		return 1
 
+/obj/item/projectile/beam/IRKdissolver //Marking this for future use with IRK
+	name = "dissolver ray"
+	icon_state = "emitter"
+	damage_types = list(BURN = 30) //Less burn but also less recoil
+	armor_penetration = 40 //Experimental and extremely rare but also self recharging so take it as you will
+	recoil = 5 //Less recoil but also less burn
+
+	muzzle_type = /obj/effect/projectile/emitter/muzzle
+	tracer_type = /obj/effect/projectile/emitter/tracer
+	impact_type = /obj/effect/projectile/emitter/impact
+
+/obj/item/projectile/beam/IRKdissolver/on_impact(atom/target)
+	var/mob/living/M = target
+	var/mob/living/carbon/human/H = M
+	if(ishuman(target))
+		if(istype(target, /mob/living/carbon/))
+			H.apply_effect(35,IRRADIATE)//Irradiates more
+	else
+		return 1
+
+/obj/item/projectile/beam/IRKdesolator //Marking this for future use with IRK
+	name = "desolator ray"
+	icon_state = "xray"
+	damage_types = list(BURN = 20) //Worse Xray
+	armor_penetration = 25
+	eyeblur = 4
+	recoil = 6
+	penetrating = 1
+	
+	muzzle_type = /obj/effect/projectile/xray/muzzle
+	tracer_type = /obj/effect/projectile/xray/tracer
+	impact_type = /obj/effect/projectile/xray/impact
+		
+/obj/item/projectile/beam/IRKdesolator/on_impact(atom/target)
+	var/mob/living/M = target
+	var/mob/living/carbon/human/H = M
+	if(ishuman(target))
+		if(istype(target, /mob/living/carbon/))
+			H.apply_effect(15,IRRADIATE)//Irradiates less but pierces walls
+	else
+		return 1			
+
 /obj/item/projectile/beam/sniper
 	name = "sniper beam"
 	icon_state = "xray"
