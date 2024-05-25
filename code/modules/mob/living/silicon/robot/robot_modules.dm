@@ -118,6 +118,9 @@ var/global/list/robot_modules = list(
 	spawn() // For future coders , this "corrupts" the USR reference, so for good practice ,don't make the proc use USR if its called with a spawn.
 		R.choose_icon() //Choose icon recurses and blocks new from completing, so spawn it off
 
+	for(var/obj/item/tool/T in modules)
+		T.degradation = 0 //We don't want robot tools breaking
+
 
 /obj/item/robot_module/Initialize()
 	. = ..()
