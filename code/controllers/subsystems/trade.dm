@@ -553,7 +553,7 @@ SUBSYSTEM_DEF(trade)
 		TA.apply_to(A)
 		//station.add_to_wealth(cost) We dont want to take or give wealth for balance
 
-/datum/controller/subsystem/trade/proc/export(obj/machinery/trade_beacon/sending/senderBeacon)
+/datum/controller/subsystem/trade/proc/export(obj/machinery/trade_beacon/sending/senderBeacon, datum/money_account/account)
 	if(QDELETED(senderBeacon) || !istype(senderBeacon))
 		return
 
@@ -564,17 +564,23 @@ SUBSYSTEM_DEF(trade)
 
 	for(var/obj/AM in senderBeacon.get_objects())
 		if(item_counter > 50) //You can only export 50 items at a time, anti-lag7
-			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"Success, scanners have passed over 50 items, starting Recharging Mode\""))
+			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"Success, scanners have passed over 50 items worth of objects, starting Recharging Mode\""))
 			break
 		if(pass_counter > 50)
 			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"ERROR, scanners have passed over 50 items that have nested items, shutting down and starting Recharging Mode!\""))
+			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"To avoid this error, please wrapping paper the item or crate for export.\""))
 			break
 		item_counter += 1
 		if(isliving(AM))
 			var/mob/living/L = AM
 			L.apply_damages(0,5,0,0,0,5)
 			continue
-		if(AM.contents.len)
+		if(!istype(AM, /obj/structure/bigDelivery) && !istype(AM, /obj/item/smallDelivery))
+			if(AM.contents.len)
+				item_counter -= 1 //Refund
+				pass_counter += 1 //Hold on now
+				continue
+		if(AM.anchored)
 			item_counter -= 1 //Refund
 			pass_counter += 1 //Hold on now
 			continue
@@ -598,13 +604,20 @@ SUBSYSTEM_DEF(trade)
 			else
 				item.forceMove(get_turf(AM))		// Should be the same tile
 
-	senderBeacon.start_export()
-	var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_LSS]
-	var/datum/transaction/T = new(cost, lonestar_account.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
-	T.apply_to(lonestar_account)
+	if(account)
+		var/datum/money_account/A = account
+		var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_LSS]
+		var/datum/transaction/TA = new(cost * 0.8, account.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
+		var/datum/transaction/T = new(cost * 0.2, lonestar_account.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
+		T.apply_to(lonestar_account)
+		TA.apply_to(A)
+	else
+		var/datum/money_account/lonestar_account_backup = department_accounts[DEPARTMENT_LSS]
+		var/datum/transaction/T_backup = new(cost, lonestar_account_backup.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
+		T_backup.apply_to(lonestar_account_backup)
 
-	if(invoice_contents_info)	// If no info, then nothing was exported
-		create_log_entry("Export", lonestar_account.get_name(), invoice_contents_info, cost, TRUE, get_turf(senderBeacon))
+
+	senderBeacon.start_export()
 
 /datum/controller/subsystem/trade/proc/get_export_price_multiplier(atom/movable/target)
 	if(!target || target.anchored)
