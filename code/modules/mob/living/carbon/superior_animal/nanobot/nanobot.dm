@@ -148,11 +148,23 @@
 										SPAN_NOTICE("[user] [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name]."),
 										SPAN_NOTICE("You [user.stats.getPerk(PERK_ROBOTICS_EXPERT) ? "expertly" : ""] repair the damage to [src.name].")
 										)
+					//Robotics get an extra hard 50 heal ontop of rng
 					if(user.stats.getPerk(PERK_ROBOTICS_EXPERT))
-						health += 50
-					else
-						health += (rand(30, 50))
-					return
+						adjustBruteLoss(-50)
+						adjustOxyLoss(-50)
+						adjustToxLoss(-50)
+						adjustFireLoss(-50)
+						adjustCloneLoss(-50)
+						adjustBrainLoss(-50)
+						adjustHalLoss(-50)
+
+					adjustBruteLoss(-rand(50, 30))
+					adjustOxyLoss(-rand(50, 30))
+					adjustToxLoss(-rand(50, 30))
+					adjustFireLoss(-rand(50, 30))
+					adjustCloneLoss(-rand(50, 30))
+					adjustBrainLoss(-rand(50, 30))
+					adjustHalLoss(-rand(50, 30))
 				return
 			to_chat(user, "[src] doesn't need repairs.")
 			return
