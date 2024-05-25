@@ -78,7 +78,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 	var/datum/wire_description/wd = get_description(index)
 	if(!wd)
 		return
-	if(wd.skill_level > mec_stat)
+	if(wd.skill_level >= mec_stat)
 		return
 	return wd.description
 
@@ -113,7 +113,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 	var/list/wires_list = list()
 	for(var/color in wires)
 		var/datum/wire_description/wd = get_description(GetIndex(color))
-		
+
 		var/color_name = color
 		if(color in LIST_COLOR_RENAME)
 			color_name = LIST_COLOR_RENAME[color]
@@ -191,7 +191,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 				if(O)
 					user.put_in_hands(O)
 					return TRUE
-			
+
 			if(!(istype(user, /obj/item/device/assembly/signaler) || istype(I, /obj/item/implant/carrion_spider/spark)))
 				to_chat(user, SPAN_WARNING("You need a remote signaller!"))
 				return TRUE
