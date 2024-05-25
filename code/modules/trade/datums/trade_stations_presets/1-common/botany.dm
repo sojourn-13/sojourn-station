@@ -90,7 +90,9 @@
 			/obj/item/computer_hardware/hard_drive/portable/plantgene/diet/carnivorous = custom_good_name("plant gene disk: carnivorous"),
 			/obj/item/computer_hardware/hard_drive/portable/plantgene/diet/noncarnivorous = custom_good_name("plant gene disk: non-carnivorous"),
 			/obj/item/computer_hardware/hard_drive/portable/plantgene/diet/parasitic = custom_good_name("plant gene disk: parasitic"),
-			/obj/item/computer_hardware/hard_drive/portable/plantgene/diet/nonparasitic = custom_good_name("plant gene disk: non-parasitic")
+			/obj/item/computer_hardware/hard_drive/portable/plantgene/diet/nonparasitic = custom_good_name("plant gene disk: non-parasitic"),
+			/obj/item/computer_hardware/hard_drive/portable/plantgene/special/chem_producer = custom_good_name("plant gene disk: chem producer"),
+			/obj/item/computer_hardware/hard_drive/portable/plantgene/special/no_chem_producer = custom_good_name("plant gene disk: non-chem producer")
 		)
 	)
 	offer_types = list(
