@@ -264,16 +264,16 @@
 			var/mob/living/carbon/human/M = target
 			M.confused += rand(5,8)
 			M.sanity_damage = 8
-			
+
 /obj/item/projectile/IRKdebilitate //Marking for future use
 	name = "debilitator bolt"
 	damage_types = list(BRUTE = 12) //Intended to be brute
 	agony = 20
 	icon_state = "declone"
-	armor_penetration = 10
+	armor_divisor = 10
 	recoil = 2
 
-/obj/item/projectile/IRKdebilitate/on_impact(atom/target) 
+/obj/item/projectile/IRKdebilitate/on_impact(atom/target)
 	if(ishuman(target))
 		if (!testing)
 			var/mob/living/carbon/human/M = target

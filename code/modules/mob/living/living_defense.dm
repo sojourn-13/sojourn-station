@@ -16,11 +16,25 @@
 	else
 		show_message(msg1, 1)
 
-/mob/living/proc/damage_through_armor(damage = 0, damagetype = BRUTE, def_zone, attack_flag = ARMOR_MELEE, armor_divisor = 1, used_weapon, sharp = FALSE, edge = FALSE, wounding_multiplier, list/dmg_types = list(), return_continuation = FALSE)
+/mob/living/proc/damage_through_armor(damage = 0, damagetype = BRUTE, def_zone, attack_flag = ARMOR_MELEE, armor_divisor = 1, used_weapon, sharp = FALSE, edge = FALSE, wounding_multiplier, list/dmg_types = list(), return_continuation = FALSE, dir_mult = 1)
 	if(damage) // If damage is defined, we add it to the list
 		if(!dmg_types[damagetype])
 			dmg_types += damagetype
 		dmg_types[damagetype] += damage
+
+	if(armor_divisor <= 0)
+		armor_divisor = 1
+		log_debug("[used_weapon] applied damage to [name] with a nonpositive armor divisor")
+
+	var/total_dmg = 0
+	var/dealt_damage = 0
+
+	for(var/dmg_type in dmg_types)
+		total_dmg += dmg_types[dmg_type]
+
+	if(!total_dmg)
+		return FALSE
+
 /* shelving this for now. don't wanna deal with it - CDB
 		if(damagetype == HALLOSS)
 			//First we get the nervs!
@@ -44,18 +58,6 @@
 								apply_effect(1, WEAKEN, getarmor(def_zone, ARMOR_MELEE) )
 */
 
-	if(armor_divisor <= 0)
-		armor_divisor = 1
-		log_debug("[used_weapon] applied damage to [name] with a nonpositive armor divisor")
-
-	var/total_dmg = 0
-	var/dealt_damage = 0
-
-	for(var/dmg_type in dmg_types)
-		total_dmg += dmg_types[dmg_type]
-
-	if(!total_dmg)
-		return FALSE
 
 	// Determine DR and ADR, armour divisor reduces it
 	var/armor = getarmor(def_zone, attack_flag) / armor_divisor

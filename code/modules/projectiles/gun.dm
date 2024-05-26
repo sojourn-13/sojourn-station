@@ -135,7 +135,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/currently_firing = FALSE
 
 	var/wield_delay = 0 // Gun wielding delay , generally in seconds.
-	var/wield_delay_factor = 0 // A factor that characterizes weapon size , this makes it require more vig to insta-wield this weapon or less , values below 0 reduce the vig needed and above 1 increase it
+	var/wield_delay_factor = 2 // A factor that characterizes weapon size , this makes it require more vig to insta-wield this weapon or less , values below 0 reduce the vig needed and above 1 increase it
 
 	//Gun numbers and stuf
 	var/serial_type = "INDEX" // Index will be used for detective scanners, if there is a serial type , the gun will add a number onto its final , if none , it won;'t show on examine

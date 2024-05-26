@@ -1242,3 +1242,4 @@
 	var/icon/I = new(P.icon, P.icon_state)
 	I.Blend(color)
 	return I
+

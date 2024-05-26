@@ -69,46 +69,46 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /*
 /obj/item/projectile/beam/laser_223/ap
 	damage_types = list(BURN = 16)
-	armor_divisor = 36
+	armor_divisor = 3
 	recoil = 7
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 1
 
 /obj/item/projectile/beam/laser_223/lethal
 	damage_types = list(BURN = 27)
-	armor_divisor = 15
+	armor_divisor = 1
 	recoil = 5
 	wounding_mult = WOUNDING_WIDE
 */
 
 /obj/item/projectile/beam/weak/pistol_35
 	damage_types = list(BURN = 15)
-	armor_divisor = 20
+	armor_divisor = 2
 	recoil = 2.5
 
 /obj/item/projectile/beam/weak/light_rifle_257
 	damage_types = list(BURN = 14)
-	armor_divisor = 30
+	armor_divisor = 3
 	recoil = 3.5
 
 /obj/item/projectile/beam/weak/rifle_75
 	damage_types = list(BURN = 15.5)
-	armor_divisor = 36
+	armor_divisor = 3
 	recoil = 5
 
 /obj/item/projectile/beam/weak/heavy_rifle_408
 	damage_types = list(BURN = 20)
-	armor_divisor = 46
+	armor_divisor = 4
 	recoil = 10
 
 /obj/item/projectile/beam/weak/magnum_40
 	damage_types = list(BURN = 19)
-	armor_divisor = 33
+	armor_divisor = 3
 	recoil = 4.5
 
 /obj/item/projectile/beam/weak/kurtz_50
 	damage_types = list(BURN = 23.5)
-	armor_divisor = 35
+	armor_divisor = 3
 	recoil = 8
 
 /obj/item/projectile/beam/weak/smg
@@ -230,7 +230,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "dissolver ray"
 	icon_state = "emitter"
 	damage_types = list(BURN = 30) //Less burn but also less recoil
-	armor_penetration = 40 //Experimental and extremely rare but also self recharging so take it as you will
+	armor_divisor = 4 //Experimental and extremely rare but also self recharging so take it as you will
 	recoil = 5 //Less recoil but also less burn
 
 	muzzle_type = /obj/effect/projectile/emitter/muzzle
@@ -250,15 +250,15 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "desolator ray"
 	icon_state = "xray"
 	damage_types = list(BURN = 20) //Worse Xray
-	armor_penetration = 25
+	armor_divisor = 2
 	eyeblur = 4
 	recoil = 6
 	penetrating = 1
-	
+
 	muzzle_type = /obj/effect/projectile/xray/muzzle
 	tracer_type = /obj/effect/projectile/xray/tracer
 	impact_type = /obj/effect/projectile/xray/impact
-		
+
 /obj/item/projectile/beam/IRKdesolator/on_impact(atom/target)
 	var/mob/living/M = target
 	var/mob/living/carbon/human/H = M
@@ -266,7 +266,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 		if(istype(target, /mob/living/carbon/))
 			H.apply_effect(15,IRRADIATE)//Irradiates less but pierces walls
 	else
-		return 1			
+		return 1
 
 /obj/item/projectile/beam/sniper
 	name = "sniper beam"
