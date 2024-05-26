@@ -104,7 +104,6 @@ If you have any questions/constructive-comments/bugs-to-report/or have a massivl
 Please contact me on #coderbus IRC. ~Carn x
 */
 
-<<<<<<< HEAD
 //Human over-lays Indexes/////////
 #define MARKINGS_LAYER			1
 #define MUTATIONS_LAYER			2
@@ -138,39 +137,8 @@ Please contact me on #coderbus IRC. ~Carn x
 #define L_HAND_LAYER			29
 #define R_HAND_LAYER			30
 #define FIRE_LAYER				31		//If you're on fire
-#define TOTAL_LAYERS			31
-=======
-//Human Overlays Indexes/////////
-#define MUTATIONS_LAYER		1
-#define DAMAGE_LAYER		2
-#define SURGERY_LAYER		3
-#define IMPLANTS_LAYER		4
-#define UNDERWEAR_LAYER 	5
-#define UNIFORM_LAYER		6
-#define ID_LAYER			7
-#define SHOES_LAYER			8
-#define GLOVES_LAYER		9
-#define BELT_LAYER			10
-#define SUIT_LAYER			11
-#define TAIL_LAYER			12		//bs12 specific. this hack is probably gonna come back to haunt me
-#define GLASSES_LAYER		13
-#define BELT_LAYER_ALT		14
-#define BACK_LAYER			15
-#define SUIT_STORE_LAYER	16
-#define HAIR_LAYER			17		//TODO: make part of head layer?
-#define L_EAR_LAYER			18
-#define R_EAR_LAYER			19
-#define FACEMASK_LAYER		20
-#define HEAD_LAYER			21
-#define COLLAR_LAYER		22
-#define HANDCUFF_LAYER		23
-#define LEGCUFF_LAYER		24
-#define L_HAND_LAYER		25
-#define R_HAND_LAYER		26
-#define FIRE_LAYER			27		//If you're on fire
-#define BLOCKING_LAYER		28
-#define TOTAL_LAYERS		28
->>>>>>> 3df49479e3 (Blocking(melee) (#7704))
+#define BLOCKING_LAYER		    32
+#define TOTAL_LAYERS			32
 //////////////////////////////////
 
 /mob/living/carbon/human

@@ -278,11 +278,11 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		var/obj/item/organ/external/current_hand = H.organs_by_name[H.hand ? BP_L_ARM : BP_R_ARM]
 		power = power + ((current_hand.limb_efficiency - 100) / 10) //Organ damage in the arms reduces melee damage, Improved efficiency increases melee damage. Slap Harder.
 		power *= H.damage_multiplier
+		if(H.holding_back)
+			power /= 2
 	if(HULK in user.mutations)
 		power *= 2
 	if(effective_faction.Find(target.faction)) // Is the mob's in our list of factions we're effective against?
 		power *= damage_mult // Increase the damage
-		if(H.holding_back)
-			power /= 2
 	target.hit_with_weapon(src, user, power, hit_zone)
 	return

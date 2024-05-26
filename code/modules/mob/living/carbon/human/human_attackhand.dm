@@ -1,6 +1,6 @@
 /mob/living/carbon/human/proc/get_unarmed_attack(var/mob/living/carbon/human/target, var/hit_zone)
 	if(src.default_attack && src.default_attack.is_usable(src, target, hit_zone))
-		if(pulling_punches)
+		if(holding_back)
 			var/datum/unarmed_attack/soft_type = src.default_attack.get_sparring_variant()
 			if(soft_type)
 				return soft_type
@@ -208,43 +208,6 @@
 				stat_damage = stat_damage + 2
 
 			stat_damage *= limb_efficiency_multiplier
-<<<<<<< HEAD
-
-			// Process evasion and blocking
-			var/miss_type = 0
-			var/attack_message
-			if(!accurate)
-				/*
-					This place is kind of convoluted and will need some explaining.
-					ran_zone() will pick out of 11 zones, thus the chance for hitting
-					our target where we want to hit them is circa 9.1%.
-
-					Now since we want to statistically hit our target organ a bit more
-					often than other organs, we add a base chance of 50% for hitting it.
-
-					And after that, we subtract AGI stat from chance to hit different organ.
-					General miss chance also depends on AGI.
-
-					Note: We don't use get_zone_with_miss_chance() here since the chances
-						  were made for projectiles.
-					TODO: proc for melee combat miss chances depending on organ?
-				*/
-				if(prob(50 - H.stats.getStat(STAT_ROB)))
-					hit_zone = ran_zone(hit_zone)
-				if(prob(25 - H.stats.getStat(STAT_ROB)) && hit_zone != BP_CHEST) // Missed!
-					if(!src.lying)
-						attack_message = "[H] attempted to strike [src], but missed!"
-					else
-						attack_message = "[H] attempted to strike [src], but \he rolled out of the way!"
-						src.set_dir(pick(cardinal))
-					miss_type = 1
-
-			if(!miss_type && block)
-				attack_message = "[H] went for [src]'s [affecting.name] but was blocked!"
-				miss_type = 2
-
-=======
->>>>>>> 3df49479e3 (Blocking(melee) (#7704))
 			// See what attack they use
 			var/datum/unarmed_attack/attack = H.get_unarmed_attack(src, hit_zone)
 			if(!attack)
@@ -272,7 +235,6 @@
 
 			//Try to reduce damage by blocking
 			if(blocking)
-<<<<<<< HEAD
 				if(istype(get_active_hand(), /obj/item/grab))//we are blocking with a human shield! We redirect the attack. You know, because grab doesn't exist as an item.
 					var/obj/item/grab/G = get_active_hand()
 					grab_redirect_attack(M, G)
@@ -288,18 +250,6 @@
 					if(real_damage == 0)
 						visible_message(SPAN_DANGER("The attack has been completely negated!"))
 						return
-=======
-				stop_blocking()
-				real_damage = handle_blocking(real_damage)
-				//Tell everyone about blocking
-				H.attack_log += text("\[[time_stamp()]\] <font color='orange'>Blocked attack of [src.name] ([src.ckey])</font>")
-				src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Attack has been blocked by [H.name] ([H.ckey])</font>")
-				visible_message(SPAN_WARNING("[src] blocks the blow!"), SPAN_DANGER("You block the blow!"))
-				//They farked up
-				if(real_damage == 0)
-					visible_message(SPAN_DANGER("The attack has been completely negated!"))
-					return
->>>>>>> 3df49479e3 (Blocking(melee) (#7704))
 			// Apply additional unarmed effects.
 			attack.apply_effects(H, src, getarmor(affecting, ARMOR_MELEE), stat_damage, hit_zone)
 

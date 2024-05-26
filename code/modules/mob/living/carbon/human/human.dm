@@ -1636,9 +1636,8 @@ var/list/rank_prefix = list(\
 	reset_view(A)
 	reset_view(A)
 
-<<<<<<< HEAD
-#undef SLIME_TRANSPARENCY
-=======
+
+/*
 /mob/living/carbon/human/proc/resuscitate()
 	var/obj/item/organ/internal/heart_organ = random_organ_by_process(OP_HEART)
 	var/obj/item/organ/internal/brain_organ = random_organ_by_process(BP_BRAIN)
@@ -1689,7 +1688,7 @@ var/list/rank_prefix = list(\
 				pick(subtypesof(/datum/mutation/t3)) = 10,
 				pick(subtypesof(/datum/mutation/t4)) = 5))
 			dormant_mutations |= new M
-
+*/
 /mob/living/carbon/human/verb/blocking()
 	set name = "Blocking"
 	set desc = "Block an incoming melee attack, or lower your guard."
@@ -1723,4 +1722,6 @@ var/list/rank_prefix = list(\
 		HUD.update_icon()
 	update_block_overlay()
 	return
->>>>>>> 3df49479e3 (Blocking(melee) (#7704))
+
+
+#undef SLIME_TRANSPARENCY
