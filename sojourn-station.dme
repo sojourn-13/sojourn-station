@@ -1744,6 +1744,7 @@
 #include "code\modules\client\preference_setup\loadout\lists\factionsecurity.dm"
 #include "code\modules\client\preference_setup\loadout\lists\factionservice.dm"
 #include "code\modules\client\preference_setup\loadout\lists\factionsoteria.dm"
+#include "code\modules\client\preference_setup\loadout\lists\fluff.dm"
 #include "code\modules\client\preference_setup\loadout\lists\footwear.dm"
 #include "code\modules\client\preference_setup\loadout\lists\general.dm"
 #include "code\modules\client\preference_setup\loadout\lists\gloves.dm"
