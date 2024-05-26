@@ -7,22 +7,29 @@
 	var/wielded_icon = null //The item state used when it's weilded. Guns are snowflakey and have their own shit for this. This is for non guns.
 	var/force_unwielded = 0 //If you have a specific force for it being weilded.
 	var/force_wielded = 0 //If you have a specific force for it being unwielded. If for whatever reason you don't want to use the original force of the weapon.
+	var/force_wielded_multiplier = 0 //If you have a specific force for it being unwielded. If for whatever reason you don't want to use the original force of the weapon.
 
 
 /mob/living/proc/do_wield()//The proc we actually care about.
 	var/obj/item/I = get_active_hand()
+	var/obj/item/O = get_inactive_hand()
 	if(!I)
-		return
-	I.attempt_wield(src)
+		if(!O)
+			return
+		swap_hand()
+		O.attempt_wield(src)
+	else
+		I.attempt_wield(src)
 
 /obj/item/proc/unwield(mob/living/user)
 	if(!wielded || !user)
 		return
 	wielded = FALSE
-	if(force_unwielded)
-		force = force_unwielded
+	if(force_wielded_multiplier)
+		force = (force / force_wielded_multiplier)
 	else
 		force = (force / 1.3)
+
 	var/sf = findtext(name," (Wielded)")
 	if(sf)
 		name = copytext(name,1,sf)
@@ -47,12 +54,15 @@
 		return
 	if(!is_held_twohanded(user))
 		return
-	if(user.get_inactive_hand())
-		to_chat(user, SPAN_WARNING("You need your other hand to be empty!</span>"))
-		return
+	var/obj/item/X = user.get_inactive_hand()
+	if(X)
+		if(!X.canremove)
+			return
+		user.drop_offhand()
+		to_chat(user, SPAN_WARNING("You dropped \the [X]."))
 	wielded = TRUE
-	if(force_wielded)
-		force = force_wielded
+	if(force_wielded_multiplier)
+		force = force * force_wielded_multiplier
 	else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
 		force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
 	var/original_name = name //Else using [initial(name)] for the name of object returns compile-time name without any changes that've happened to the object's name
@@ -78,7 +88,6 @@
 /obj/item/proc/update_unwield_icon()//That way it doesn't interupt any other special icon_states.
 	if(!wielded && wielded_icon)
 		item_state = "[initial(item_state)]"
-
 //For general weapons.
 /obj/item/proc/attempt_wield(mob/user)
 	if(wielded) //Trying to unwield it

@@ -173,7 +173,7 @@
 			return
 		else // non-adjacent click
 			if(W)
-				if(W.double_tact(src))
+				if(W.double_tact(src, A))
 					W.afterattack(A, src, 0, params) // 0: not Adjacent
 			else
 				setClickCooldown(DEFAULT_ATTACK_COOLDOWN) // no ranged spam

@@ -61,7 +61,7 @@
 
 	var/can_ricochet = FALSE // defines if projectile can or cannot ricochet.
 	var/ricochet_id = 0 // if the projectile ricochets, it gets its unique id in order to process iteractions with adjacent walls correctly.
-	var/ricochet_mod = 1 //How much we affect the likeliness of a round to bounce. This number is modified negatively by 10% of the projecties AP(thus, ricochet_mult = 1.5 on ap 10 gun is actually 1.4). high cal rubbers have lower mult than low cal rubbers and are further penalized by having AP and AP mod on their rounds/weapons more often.
+//	var/ricochet_mod = 1 //How much we affect the likeliness of a round to bounce. This number is modified negatively by 10% of the projecties AP(thus, ricochet_mult = 1.5 on ap 10 gun is actually 1.4). high cal rubbers have lower mult than low cal rubbers and are further penalized by having AP and AP mod on their rounds/weapons more often.
 
 	var/list/damage_types = list(BRUTE = 10) //BRUTE, BURN, TOX, OXY, CLONE, HALLOSS -> int are the only things that should be in here
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
@@ -222,56 +222,18 @@
 		return FALSE
 	return TRUE
 
+/obj/item/projectile/proc/get_structure_damage()
+	return ((damage_types[BRUTE] + damage_types[BURN]) * structure_damage_factor)
+/*
 /obj/item/projectile/proc/get_structure_damage(var/injury_type)
 	if(!injury_type) // Assume homogenous
 		return (damage_types[BRUTE] + damage_types[BURN]) * wound_check(INJURY_TYPE_HOMOGENOUS, wounding_mult, edge, sharp) * 2
 	else
 		return (damage_types[BRUTE] + damage_types[BURN]) * wound_check(injury_type, wounding_mult, edge, sharp) * 2
-
+*/
 //return 1 if the projectile should be allowed to pass through after all, 0 if not.
 /obj/item/projectile/proc/check_penetrate(atom/A)
 	return TRUE
-
-/obj/item/projectile/proc/get_ricochet_modifier()
-	return (ricochet_mod - (armor_divisor * 0.1)) //Return ricochet mod(default 1) modified by AP. E.G 1 - (AP(5) * 0.1) = 0.5. Thus 10% less likely to bounce per divisor.
-
-/obj/item/projectile/bullet/check_penetrate(var/atom/A)
-	if((!A || !A.density)) return 1 //if whatever it was got destroyed when we hit it, then I guess we can just keep going
-
-	var/blocked_damage = 0
-	if(istype(A, /turf/simulated/wall)) // TODO: refactor this from functional into OOP
-		var/turf/simulated/wall/W = A
-		blocked_damage = round(W.material.integrity / 8)
-	else if(istype(A, /obj/machinery/door))
-		var/obj/machinery/door/D = A
-		blocked_damage = round(D.maxHealth / 8)
-		if(D.glass) blocked_damage /= 2
-	else if(istype(A, /obj/structure/girder))
-		return TRUE
-	else if(istype(A, /obj/structure/low_wall))
-		blocked_damage = 20 // hardcoded, value is same as steel wall, will have to be changed once low walls have integrity
-	else if(istype(A, /obj/structure/table))
-		var/obj/structure/table/T = A
-		blocked_damage = round(T.maxHealth / 8)
-	else if(istype(A, /obj/structure/barricade))
-		var/obj/structure/barricade/B = A
-		blocked_damage = round(B.material.integrity / 8)
-	else if(istype(A, /obj/machinery) || istype(A, /obj/structure))
-		blocked_damage = 20
-
-	var/percentile_blocked = block_damage(blocked_damage, A)
-	if(percentile_blocked > 0.5)
-		percentile_blocked = CLAMP(percentile_blocked, 50, 90) / 100 // calculate leftover velocity, capped between 50% and 90%
-
-		step_delay = min(step_delay / percentile_blocked, step_delay / 2)
-
-		if(A.opacity || istype(A, /obj/item/shield))
-			//display a message so that people on the other side aren't so confused
-			A.visible_message(SPAN_WARNING("\The [src] pierces through \the [A]!"))
-			playsound(A.loc, 'sound/weapons/shield/shieldpen.ogg', 50, 1)
-		return 1
-
-	return 0
 
 /obj/item/projectile/proc/check_fire(atom/target as mob, mob/living/user as mob)  //Checks if you can hit them or not.
 	check_trajectory(target, user, pass_flags, flags)
@@ -1130,8 +1092,9 @@
 			dmg_total += dmg
 		if(dmg && amount)
 			var/dmg_armor_difference = dmg - amount
-			amount = dmg_armor_difference > 0 ? 0 : -dmg_armor_difference
-			dmg = dmg_armor_difference > 0 ? dmg_armor_difference : 0
+			var/is_difference_positive = dmg_armor_difference > 0
+			amount = is_difference_positive ? 0 : -dmg_armor_difference
+			dmg = is_difference_positive ? dmg_armor_difference : 0
 			if(!(dmg_type == HALLOSS))
 				dmg_remaining += dmg
 		if(dmg > 0)
