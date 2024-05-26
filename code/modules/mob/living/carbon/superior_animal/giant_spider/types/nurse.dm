@@ -97,7 +97,7 @@
 	icon_living = "recluse"
 	maxHealth = 15
 	health = 15
-	poison_per_bite = 0.5 //Lets not have a classic ss13 traitor chem be used as an instant down when people are lagging. 2 hits for your unfun spider
+	poison_per_bite = 1
 	melee_damage_lower = 3
 	melee_damage_upper = 5
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/spider/recluse
