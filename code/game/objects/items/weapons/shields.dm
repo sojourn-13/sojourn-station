@@ -256,7 +256,7 @@
 	flags = null
 	throw_speed = 2
 	throw_range = 6
-	armor_list = list(melee = 30, bullet = 15, energy = 20, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 7, bullet = 2, energy = 3, bomb = 10, bio = 0, rad = 0)
 	base_block_chance = 60
 	matter = list(MATERIAL_GLASS = 5, MATERIAL_STEEL = 8, MATERIAL_PLASTEEL = 15)
 	max_durability = 300 //Strong so that we can protect folks from quote a few shots

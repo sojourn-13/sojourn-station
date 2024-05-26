@@ -410,9 +410,9 @@ obj/item/clothing/suit/gownrisque/alt
 	icon_state = "field_numerical"
 	item_state = "field_numerical"
 	armor_list = list(
-		melee = 10,
+		melee = 2,
 		bullet = 0, //well armored its not going to help a bullet
-		energy = 10,
+		energy = 2,
 		bomb = 5,
 		bio = 100,
 		rad = 0
@@ -452,8 +452,8 @@ obj/item/clothing/suit/gownrisque/alt
 	icon_state = "general_priest_cloth"
 	item_state = "general_priest_cloth"
 	armor_list = list(
-		melee = 10,
-		bullet = 5,
+		melee = 2,
+		bullet = 1,
 		energy = 0,
 		bomb = 0,
 		bio = 0,

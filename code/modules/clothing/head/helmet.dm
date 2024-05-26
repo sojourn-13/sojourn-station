@@ -395,7 +395,7 @@
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 5
 	light_overlay = "bsfullhelm_light"
-	armor_list = list(melee = 35, bullet = 50, energy = 40, bomb = 50, bio = 0, rad = 0)
+	armor_list = list(melee = 9, bullet = 12, energy = 10, bomb = 50, bio = 0, rad = 0)
 
 /obj/item/clothing/head/helmet/ballistic/militia/full/co/toggle_style()
 	set name = "Adjust Style"

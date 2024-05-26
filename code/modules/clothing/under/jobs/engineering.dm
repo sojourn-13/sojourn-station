@@ -99,7 +99,7 @@
 		melee = 5, //if they are not waring any armor over this then we give *something*
 		bullet = 5,
 		energy = 6,
-		bomb = 40,
+		bomb = 10,
 		bio = 50,
 		rad = 100 //Rad proof
 	)

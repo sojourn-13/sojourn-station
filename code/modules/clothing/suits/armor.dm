@@ -33,7 +33,7 @@
 	item_state = "armor"
 	blood_overlay_type = "armor"
 	armor_list = list(
-		melee =8,
+		melee = 8,
 		bullet = 8,
 		energy = 8,
 		bomb = 10,
@@ -79,9 +79,9 @@
 	desc = "An armored vest of dubious quality. Provides decent protection against physical damage, for a piece of crap."
 	icon_state = "armor_handmade"
 	armor_list = list(
-		melee =7,
-		bullet = 20,
-		energy = 15,
+		melee = 7,
+		bullet = 5,
+		energy = 4,
 		bomb = 10,
 		bio = 0,
 		rad = 0
@@ -1574,7 +1574,7 @@
 	item_state = "hunter_armor_reinforced"
 	blood_overlay_type = "armor"
 	armor_list = list(
-		melee =7,
+		melee = 7,
 		bullet = 11,
 		energy = 6,
 		bomb = 10,

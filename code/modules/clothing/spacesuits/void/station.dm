@@ -16,7 +16,7 @@
 		slot_r_hand_str = "eng_helm",
 		)
 	armor_list = list(
-		melee =8,
+		melee = 8,
 		bullet = 7,
 		energy =30,
 		bomb = 40,
@@ -131,7 +131,7 @@
 	item_state = "makeshift_void"
 	siemens_coefficient = 0.4
 	armor_list = list(
-		melee =7,
+		melee = 7,
 		bullet = 5,
 		energy = 5,
 		bomb = 25,
@@ -264,7 +264,7 @@
 		/obj/item/roller
 	)
 	armor_list = list(
-		melee =8,
+		melee = 8,
 		bullet = 2,
 		energy = 8,
 		bomb = 25,
@@ -559,7 +559,7 @@
 	obscuration = MEDIUM_OBSCURATION
 
 	armor_list = list(
-		melee = 40,
+		melee = 10,
 		bullet = 65,
 		energy = 50,
 		bomb = 70,
@@ -576,9 +576,9 @@
 	desc = "Void Wolves prey on Kriosan trade ships and frontier colonies all the time, in rare circumstances they engage military ships, with skilled and ballsy Void Wolf Reavers succeeding \
 	and making off with expensive loot, such as this assault armor given a Void Wolf paint job."
 	armor_list = list(
-		melee = 50,
-		bullet = 75,
-		energy = 60,
+		melee = 12,
+		bullet = 18,
+		energy = 15,
 		bomb = 80,
 		bio = 100,
 		rad = 50

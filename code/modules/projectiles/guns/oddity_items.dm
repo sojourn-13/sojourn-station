@@ -916,31 +916,31 @@
 	max_durability += 1
 	switch(mass_grave_counter)
 		if(5)
-			armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
+			armor_list = list(melee = 2, bullet = 2, energy = 2, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_DANGEROUS
 			armor_divisor = ARMOR_PEN_MODERATE
 			slowdown = 0.25
 			slowdown_hold = 0.25
 		if(10)
-			armor_list = list(melee = 15, bullet = 15, energy = 15, bomb = 0, bio = 0, rad = 0)
+			armor_list = list(melee = 4, bullet = 4, energy = 4, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_ROBUST
 			armor_divisor = ARMOR_PEN_DEEP
 			slowdown = 0.20
 			slowdown_hold = 0.20
 		if(20)
-			armor_list = list(melee = 25, bullet = 25, energy = 25, bomb = 0, bio = 0, rad = 0)
+			armor_list = list(melee = 6, bullet = 6, energy = 6, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_BRUTAL
 			armor_divisor = ARMOR_PEN_EXTREME
 			slowdown = 0.15
 			slowdown_hold = 0.15
 		if(50)
-			armor_list = list(melee = 35, bullet = 35, energy = 35, bomb = 0, bio = 0, rad = 0)
+			armor_list = list(melee = 9, bullet = 9, energy = 9, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_LETHAL
 			armor_divisor = ARMOR_PEN_MASSIVE
 			slowdown = 0.10
 			slowdown_hold = 0.10
 		if(100)
-			armor_list = list(melee = 40, bullet = 40, energy = 40, bomb = 0, bio = 0, rad = 0)
+			armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
 			force = WEAPON_FORCE_LETHAL + 5
 			armor_divisor = ARMOR_PEN_MASSIVE + 5
 			slowdown = 0.05
@@ -991,7 +991,7 @@
 	icon_state = "regaloutfit_redder" //Sprite by Ayshe / gid_git
 	item_state = "regaloutfit_redder"
 	blood_overlay_type = "coat"
-	armor_list = list(melee = 10, bullet = 5, energy = 5, bomb = 0, bio = 0, rad = 0)
+	armor_list = list(melee = 2, bullet = 1, energy = 1, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	min_cold_protection_temperature = T0C - 60
