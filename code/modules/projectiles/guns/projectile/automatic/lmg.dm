@@ -141,7 +141,7 @@
 	mag_well = MAG_WELL_LINKED_BOX|MAG_WELL_RIFLE
 	caliber = CAL_LRIFLE
 	damage_multiplier = 1.2
-	penetration_multiplier = 0.2
+	penetration_multiplier = 1.2
 	init_recoil = LMG_RECOIL(0.8)
 	serial_type = "SD GmbH"
 	gun_parts = list(/obj/item/part/gun/frame/tk = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/machinegun = 1, /obj/item/part/gun/barrel/srifle = 1)
@@ -200,7 +200,7 @@
 	fire_sound_silenced = 'sound/weapons/guns/fire/silenced_mg.ogg' // Yay snowflake silenced sound!
 	caliber = CAL_RIFLE
 	damage_multiplier = 1.2 // With full auto penalties in mind (20%) this becomes a normal x1 damage modifier.
-	penetration_multiplier = 0
+	penetration_multiplier = 1
 	init_recoil = HMG_RECOIL(0.6) // Better slap a bipod on this one! Impossible to fire steady if not braced.
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE) // Believe it or not, an LMG that CAN be silenced.
 	serial_type = "NM"

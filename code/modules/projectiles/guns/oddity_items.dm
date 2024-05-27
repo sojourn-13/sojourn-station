@@ -139,7 +139,7 @@
 	icon = 'icons/obj/guns/projectile/rafale_bluecross.dmi'
 	damage_multiplier = 1.8
 	init_recoil = HANDGUN_RECOIL(0.3)
-	penetration_multiplier = 0.5
+	penetration_multiplier = 1.5
 	price_tag = 2350
 	serial_type = "BlueCross"
 
@@ -387,7 +387,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
 	damage_multiplier = 1.25
-	penetration_multiplier = 0
+	penetration_multiplier = 1
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
 	init_recoil = HANDGUN_RECOIL(0.1)
 
@@ -430,7 +430,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL
 	damage_multiplier = 1.5
-	penetration_multiplier = 0.2 // So that it's good for PVE too
+	penetration_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(0.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "BlueCross"
@@ -477,7 +477,7 @@
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	can_dual = TRUE
 	damage_multiplier = 1.2
-	penetration_multiplier = 0.2
+	penetration_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(0.1)
 	gun_tags = list(GUN_ENERGY, GUN_LASER, GUN_SILENCABLE)
 	init_firemodes = list(

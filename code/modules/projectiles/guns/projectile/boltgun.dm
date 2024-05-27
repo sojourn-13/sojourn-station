@@ -12,7 +12,7 @@
 	caliber = CAL_RIFLE
 	fire_delay = 2
 	damage_multiplier = 1.1
-	penetration_multiplier  = 0.5
+	penetration_multiplier  = 1.5
 	init_recoil = HMG_RECOIL(0.6)
 	handle_casings = HOLD_CASINGS
 	load_method = SINGLE_CASING|SPEEDLOADER
@@ -51,7 +51,7 @@
 	price_tag = 75
 	sharp = 0
 	init_recoil = HMG_RECOIL(0.8)
-	penetration_multiplier = -0.5
+	penetration_multiplier = 0.5
 	damage_multiplier = 0.9
 	fire_delay = 4
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SILENCABLE)

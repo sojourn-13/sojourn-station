@@ -15,7 +15,7 @@
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 12)
 	price_tag = 1500
 	damage_multiplier = 1.3
-	penetration_multiplier = 0.3
+	penetration_multiplier = 1.3
 	init_recoil = RIFLE_RECOIL(0.6)
 	saw_off = FALSE //No
 	folding_stock = TRUE //we can fold are stocks
@@ -74,7 +74,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	matter = null
 	damage_multiplier = 1.4
-	penetration_multiplier = 0.2
+	penetration_multiplier = 1.2
 	force = 5
 	max_shells = 9
 	safety = FALSE

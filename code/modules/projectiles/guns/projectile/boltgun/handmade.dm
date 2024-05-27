@@ -8,7 +8,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE, GUN_SILENCABLE)
 	fire_delay = 4 // 2 more than the serbian one
 	damage_multiplier = 1
-	penetration_multiplier = 0
+	penetration_multiplier = 1
 	max_shells = 5
 	fire_sound = 'sound/weapons/guns/fire/mosin.ogg'
 	reload_sound = 'sound/weapons/guns/interact/rifle_load.ogg'

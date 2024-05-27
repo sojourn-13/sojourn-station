@@ -49,7 +49,7 @@
 	icon = 'icons/obj/guns/energy/sprocket.dmi'
 	icon_state = "sprocket"
 	damage_multiplier = 0.9 // +0.1 when unfolded = baseline Cog
-	penetration_multiplier = -0.2// +0.2 when unfolded = base Cog
+	penetration_multiplier = 0.8// +0.2 when unfolded = base Cog
 	projectile_type = /obj/item/projectile/beam/hardstun // Snowflake 100% nonlethal projectile with reduced firerate
 	w_class = ITEM_SIZE_NORMAL // Starts folded, bulk added when unfolded FAR surpasses BULKY class
 	folding_stock = TRUE // Foldable stock for easy carry
@@ -113,7 +113,7 @@
 	slot_flags = SLOT_BACK|SLOT_HOLSTER
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5)
 	damage_multiplier = 0.7
-	penetration_multiplier = -0.3
+	penetration_multiplier = 0.7
 	charge_cost = 50
 	price_tag = 400
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)

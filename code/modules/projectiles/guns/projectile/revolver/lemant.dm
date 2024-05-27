@@ -14,7 +14,7 @@
 	price_tag = 450
 	gun_parts = null
 	damage_multiplier = 1.2
-	penetration_multiplier = 0.1
+	penetration_multiplier = 1.1
 	init_recoil = HANDGUN_RECOIL(0.8)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER)
 
@@ -184,7 +184,7 @@
 	price_tag = 700
 	gun_parts = null
 	damage_multiplier = 1.3
-	penetration_multiplier = 0.2
+	penetration_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(1.1)
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	var/obj/item/gun/projectile/underslung/launcher

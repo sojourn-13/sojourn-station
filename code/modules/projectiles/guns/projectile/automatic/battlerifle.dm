@@ -17,7 +17,7 @@
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_DIAMOND = 3)
 	price_tag = 1500
-	penetration_multiplier = 0.1
+	penetration_multiplier = 1.1
 	damage_multiplier = 1.2
 	zoom_factors = list(0.4)
 	init_recoil = RIFLE_RECOIL(1.0)
@@ -82,7 +82,7 @@
 	zoom_factors = list(1)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL)
 	init_recoil = RIFLE_RECOIL(0.7)
-	penetration_multiplier = 0.35
+	penetration_multiplier = 1.35
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
 		BURST_2_ROUND,
@@ -124,7 +124,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_DIAMOND = 3)
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	price_tag = 1750
-	penetration_multiplier = 0.2
+	penetration_multiplier = 1.2
 	damage_multiplier = 1.1
 	init_recoil = RIFLE_RECOIL(0.8)
 	zoom_factors = list(0.4)
@@ -166,7 +166,7 @@
 	matter = list(MATERIAL_PLASTEEL = 30, MATERIAL_PLASTIC = 15, MATERIAL_DIAMOND = 10)
 	gun_parts = null
 	price_tag = 2000
-	penetration_multiplier = 0.1
+	penetration_multiplier = 1.1
 	damage_multiplier = 1.3 //better than the saigini but no full auto
 	zoom_factors = list(0.4)
 	fire_delay = 12

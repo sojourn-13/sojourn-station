@@ -16,7 +16,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	damage_multiplier = 1.2
-	penetration_multiplier = 0.3
+	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.3)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM)
 	serial_type = "H&S"
@@ -102,7 +102,7 @@
 	price_tag = 1200
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 8, MATERIAL_GLASS = 4)
 	damage_multiplier = 1.4
-	penetration_multiplier = 0.2
+	penetration_multiplier = 1.2
 	zoom_factors = list(0.2)
 	init_recoil = HANDGUN_RECOIL(1.1)
 	unload_sound 	= 'sound/weapons/guns/interact/avasarala_unload.ogg'

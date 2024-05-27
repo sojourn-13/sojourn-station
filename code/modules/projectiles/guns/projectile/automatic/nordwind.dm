@@ -142,7 +142,7 @@
 	zoom_factors = list(0.8)
 	damage_multiplier = 1 //Little bit better Strelki
 	extra_damage_mult_scoped = 0.3
-	penetration_multiplier = 0
+	penetration_multiplier = 1
 	init_recoil = RIFLE_RECOIL(1.1)
 	see_invisible_gun = -1
 	auto_eject = FALSE

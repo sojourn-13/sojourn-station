@@ -11,7 +11,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 6)
 	price_tag = 1400
 	damage_multiplier = 1.2
-	penetration_multiplier = 0.4
+	penetration_multiplier = 1.4
 	init_recoil = HANDGUN_RECOIL(1.5)
 	zoom_factors = list(0.2)
 	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'

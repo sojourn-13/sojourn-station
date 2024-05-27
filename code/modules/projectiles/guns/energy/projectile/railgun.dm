@@ -180,7 +180,7 @@
 	zoom_factors = list(1.8)
 	extra_damage_mult_scoped = 0.4
 	damage_multiplier = 1.6
-	penetration_multiplier = 0.5
+	penetration_multiplier = 1.5
 	twohanded = TRUE
 	slowdown_hold = 1.5
 	init_firemodes = list(

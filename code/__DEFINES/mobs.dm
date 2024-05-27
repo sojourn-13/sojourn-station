@@ -115,22 +115,22 @@
 // Defines mob health modifier, all mobs of a subtype will have their health modified by this. Mobs may have multiple types, attached to a max() operator.
 // Mobs may have multiple types, attached to a max() operator.  this is mostly because some 'miscelaneous' mobs are grouped more generally.
 // If you don't see something here that seems to fit what you want, it may very well not have a define.
-#define ROACH_HEALTH_MOD         1 //all roaches other than kaisers.
-#define SPIDER_HEALTH_MOD        1 //all spiders other than reapers.
-#define TERMITE_HEALTH_MOD       1 //all termites.
-#define CAVEMOB_HEALTH_MOD       1 //wurms, flyingthing
-#define AMGOLEM_HEALTH_MOD       1 //ameridien golems.area
-#define CHURCHMOB_HEALTH_MOD     1 //Rooks and other church related mobs.
-#define XENOMORPH_HEALTH_MOD     1 //Xenos, duh. includes queens.
-#define REPUBLICON_HEALTH_MOD    1 //preppers bots, including seekers and drones.
-#define CARP_HEALTH_MOD          1 //All space carp.
-#define VOIDWOLF_HEALTH_MOD      1 //all voidwolves other than reavers
-#define REAVER_HEALTH_MOD        1 //all reavers
-#define MEGAFAUNA_HEALTH_MOD     1 //all megafauna other than levaiathans. Renders, mutant bears, nightmare stalkers.
-#define VOXBIRD_HEALTH_MOD       1 //all the tribal birds.
-#define EXCELSIOR_HEALTH_MOD     1 //all the excelsior mobs, including mindslaves and bears.
-#define LEVIATHAN_HEALTH_MOD     1 //leviathans; Kaiser, Reaper, Patriarch, etc.area
-#define PSIMOB_HEALTH_MOD        1 //Deepmaints mobs
+#define ROACH_HEALTH_MOD         1            //all roaches other than kaisers.
+#define SPIDER_HEALTH_MOD        0.5          //all spiders other than reapers.
+#define TERMITE_HEALTH_MOD       1            //all termites.
+#define CAVEMOB_HEALTH_MOD       1            //wurms, flyingthing
+#define AMGOLEM_HEALTH_MOD       1            //ameridien golems.area
+#define CHURCHMOB_HEALTH_MOD     1            //Rooks and other church related mobs.
+#define XENOMORPH_HEALTH_MOD     1            //Xenos, duh. includes queens.
+#define REPUBLICON_HEALTH_MOD    1            //preppers bots, including seekers and drones.
+#define CARP_HEALTH_MOD          1            //All space carp.
+#define VOIDWOLF_HEALTH_MOD      1            //all voidwolves other than reavers
+#define REAVER_HEALTH_MOD        1            //all reavers
+#define MEGAFAUNA_HEALTH_MOD     1            //all megafauna other than levaiathans. Renders, mutant bears, nightmare stalkers.
+#define VOXBIRD_HEALTH_MOD       1            //all the tribal birds.
+#define EXCELSIOR_HEALTH_MOD     1            //all the excelsior mobs, including mindslaves and bears.
+#define LEVIATHAN_HEALTH_MOD     1            //leviathans; Kaiser, Reaper, Patriarch, etc.area
+#define PSIMOB_HEALTH_MOD        1            //Deepmaints mobs
 
 
 

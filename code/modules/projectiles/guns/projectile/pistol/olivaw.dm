@@ -13,7 +13,7 @@
 	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_WOOD = 6)
 	price_tag = 450
 	damage_multiplier = 1.1
-	penetration_multiplier = 0.1
+	penetration_multiplier = 1.1
 	init_recoil = HANDGUN_RECOIL(1)
 	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL, GUN_SILENCABLE)
 	gun_parts = list(/obj/item/part/gun/frame/olivaw = 1, /obj/item/part/gun/grip/wood = 1, /obj/item/part/gun/mechanism/pistol = 1, /obj/item/part/gun/barrel/pistol = 1)

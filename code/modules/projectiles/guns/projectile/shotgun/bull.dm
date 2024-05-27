@@ -19,7 +19,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	price_tag = 1000
 	damage_multiplier = 0.75
-	penetration_multiplier = -0.25
+	penetration_multiplier = 0.75
 	init_recoil = RIFLE_RECOIL(1.8)
 	burst_delay = null
 	fire_delay = null
@@ -58,7 +58,7 @@
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10)
 	price_tag = 1500
 	damage_multiplier = 0.9
-	penetration_multiplier = -0.1
+	penetration_multiplier = 0.9
 	init_recoil = RIFLE_RECOIL(1.6)
 	serial_type = "AG"
 

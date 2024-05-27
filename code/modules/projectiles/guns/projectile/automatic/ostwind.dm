@@ -21,7 +21,7 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	zoom_factors = list(0.4)
 	extra_damage_mult_scoped = 0.4
-	penetration_multiplier = 0.2
+	penetration_multiplier = 1.2
 	damage_multiplier = 1
 	max_upgrades = 3
 	init_recoil = CARBINE_RECOIL(1.1)

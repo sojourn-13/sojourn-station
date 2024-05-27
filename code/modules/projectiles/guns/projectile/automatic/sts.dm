@@ -81,7 +81,7 @@
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
 	damage_multiplier = 1
-	penetration_multiplier = 0.2
+	penetration_multiplier = 1.2
 	init_recoil = RIFLE_RECOIL(1.3)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 12)
 	fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg'
@@ -106,7 +106,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	caliber = CAL_RIFLE
 	mag_well = MAG_WELL_RIFLE
-	penetration_multiplier = 0
+	penetration_multiplier = 1
 	init_recoil = RIFLE_RECOIL(1.4)
 	saw_off = FALSE
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 12)
@@ -130,7 +130,7 @@
 	caliber = CAL_HRIFLE
 	mag_well = MAG_WELL_HRIFLE|MAG_WELL_DRUM
 	price_tag = 1500
-	penetration_multiplier = 0.1
+	penetration_multiplier = 1.1
 	damage_multiplier = 1.1
 	init_recoil = RIFLE_RECOIL(1.7)
 	fire_sound = 'sound/weapons/guns/fire/sniper_fire.ogg'
@@ -151,7 +151,7 @@
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)
 	price_tag = 1125
 	w_class = ITEM_SIZE_BULKY
-	penetration_multiplier = -0.2
+	penetration_multiplier = 0.8
 	damage_multiplier = 1
 	gun_parts = list(/obj/item/stack/material/plastic = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/stack/material/plasteel = 2)
 	init_recoil = RIFLE_RECOIL(1.8)

@@ -11,7 +11,7 @@
 	price_tag = 650
 	init_recoil = HMG_RECOIL(1.0)
 	damage_multiplier = 0.8
-	penetration_multiplier = -0.1
+	penetration_multiplier = 0.9
 	zoom_factors = list()
 	extra_damage_mult_scoped = 0.2
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_WOOD = 6, MATERIAL_PLASTEEL = 7)
@@ -24,7 +24,7 @@
 	desc = "A training shotgun turned into a workhorse. The Bounty was a Blackshield training shotgun for their bolt cycling training, now modified and repurposed to fire slug and buckshot shells. When used in close quarters with Blackshield's training, a trooper can clear a whole room full of bugs in seconds."
 	icon = 'icons/obj/guns/projectile/bounty.dmi'
 	damage_multiplier = 1.1
-	penetration_multiplier = -0.3
+	penetration_multiplier = 0.7
 	icon_state = "bounty"
 	item_state = "bounty"
 	price_tag = 950

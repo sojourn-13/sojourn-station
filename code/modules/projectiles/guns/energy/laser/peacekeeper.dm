@@ -16,7 +16,7 @@
 	fire_delay = 15
 	init_recoil = CARBINE_RECOIL(1)
 	damage_multiplier = 1
-	penetration_multiplier = -0.3
+	penetration_multiplier = 0.7
 	price_tag = 900
 	gun_tags = list(GUN_LASER, GUN_ENERGY)
 	init_firemodes = list(

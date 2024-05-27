@@ -87,7 +87,7 @@
 	can_dual = TRUE
 	gun_tags = list(GUN_ENERGY)
 	damage_multiplier = 0.6 		//no holdout belt strats anymore
-	penetration_multiplier = 0
+	penetration_multiplier = 1
 
 	init_firemodes = list(
 		list(mode_name="Stun", mode_desc="A weakening bolt of plasma that disables people", projectile_type=/obj/item/projectile/plasma/stun, fire_sound='sound/weapons/energy/marauder.ogg', fire_delay=2, icon="stun", projectile_color = "#0000FF"),

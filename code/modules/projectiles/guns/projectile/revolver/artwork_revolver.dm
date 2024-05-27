@@ -10,7 +10,7 @@
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)
 	price_tag = 1000
 	damage_multiplier = 1.4 //From havelock.dm
-	penetration_multiplier = 0.4
+	penetration_multiplier = 1.4
 	max_upgrades = 0 //Upgrading this revolver destorys its stats
 	serial_type = "INDEX" //We live in a suscity
 	serial_shown = FALSE

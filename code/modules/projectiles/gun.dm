@@ -31,7 +31,7 @@
 	var/auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg' //The sound that places when a mag is dropped
 
 	var/damage_multiplier = 1 //Multiplies damage of projectiles fired from this gun
-	var/penetration_multiplier = 0 //Multiplies armor penetration of projectiles fired from this gun
+	var/penetration_multiplier = 1 //Multiplies armor penetration of projectiles fired from this gun
 	var/pierce_multiplier = 0 //ADDITIVE wall penetration to projectiles fired from this gun
 	var/extra_damage_mult_scoped = 0 //Adds even more damage mulitplier, when scopped so snipers can sniper
 	var/proj_agony_multiplier = 1
@@ -1189,7 +1189,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/list/melee_stats = list()
 
 	melee_stats += list(list("name" = "Melee Capabilities", "type" = "ProgressBar", "value" = force, "max" = initial(force) * 10))
-	melee_stats += list(list("name" = "Armor Penetration", "type" = "ProgressBar", "value" = armor_divisor, "max" = 100, "unit" = "%"))
+	melee_stats += list(list( "name" = "Armor Divisor", "type" = "AnimatedNumber", "value" = armor_divisor, "max" = 10))
 
 	stats["Physical Details"] = melee_stats
 
@@ -1257,7 +1257,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 	data += list(list("name" = "Projectile Type", "type" = "String", "value" = P.name))
 	data += list(list("name" = "Overall Damage", "type" = "String", "value" = (P.get_total_damage() * damage_multiplier) + get_total_damage_adjust()))
-	data += list(list("name" = "Overall AP", "type" = "String", "value" = P.armor_divisor * penetration_multiplier))
+	data += list(list("name" = "Armor Divisor", "type" = "String", "value" = P.armor_divisor * penetration_multiplier))
 	data += list(list("name" = "Overall Pain", "type" = "String", "value" = P.agony * proj_agony_multiplier))
 	data += list(list("name" = "Wound Scale", "type" = "String", "value" = P.wounding_mult))
 	data += list(list("name" = "Recoil Multiplier", "type" = "String", "value" = P.recoil))

@@ -55,7 +55,7 @@
 	fire_sound = 'sound/weapons/guns/fire/1911_fire.ogg' //Two world wars or something / Sound taken from JSRS SOUND MOD https://www.moddb.com/mods/stalker-anomaly/addons/solarint-gunshot-overhaul
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_PLASTIC = 6)
 	damage_multiplier = 1.0
-	penetration_multiplier = 0.3
+	penetration_multiplier = 1.3
 	zoom_factors = list(0.2)
 	init_recoil = HANDGUN_RECOIL(0.6)
 	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_SILENCABLE)

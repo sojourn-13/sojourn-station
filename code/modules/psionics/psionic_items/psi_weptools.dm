@@ -147,7 +147,7 @@
 	matter = list()
 	price_tag = 0
 	damage_multiplier = 0.9
-	penetration_multiplier = -0.1
+	penetration_multiplier = 0.9
 	serial_shown = FALSE
 	saw_off = FALSE
 
@@ -156,7 +156,7 @@
 	desc = "A rather perfect copy of an STS-30 made form either pure willpower or a desperate need for survival."
 	psigun = 1
 	damage_multiplier = 1
-	penetration_multiplier = 0
+	penetration_multiplier = 1
 
 /obj/item/gun/energy/laser/cult
 	name = "\"Moonrise\" psi-laser rifle"
@@ -168,7 +168,7 @@
 	origin_tech = list()
 	matter = list()
 	damage_multiplier = 0.8
-	penetration_multiplier = -0.2
+	penetration_multiplier = 0.8
 	price_tag = 0
 	serial_shown = FALSE
 
@@ -177,7 +177,7 @@
 	desc = "A perfected copy of the Lightfall laser rifle at first glance, this empty husk of a weapon is willed into reality to fire condensed projectiles of sheer willpower from the psyche of its mindsmith, rather than relying on any internal components to do it for them."
 	psigun = 1
 	damage_multiplier = 1
-	penetration_multiplier = 0
+	penetration_multiplier = 1
 	projectile_color = "#BF40BF"
 
 /obj/item/gun/energy/plasma/cassad/cult
@@ -193,7 +193,7 @@
 	charge_cost = 70
 	fire_sound = 'sound/weapons/energy/pulse.ogg'
 	damage_multiplier = 0.9
-	penetration_multiplier = -0.1
+	penetration_multiplier = 0.9
 	init_firemodes = list(
 		list(mode_name="Melt", mode_desc="A reliable plasma round, for stripping away armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/burn.ogg', burst=1, fire_delay = 9, charge_cost=60, icon="kill", projectile_color = "#BF40BF"),
 		list(mode_name="Pulse", mode_desc="A plasma round configured to explode violently on impact, and cause a pulse of EMP", projectile_type=/obj/item/projectile/plasma/aoe/ion, fire_sound='sound/weapons/energy/taser.ogg', burst=1, fire_delay=12, charge_cost=200, icon="stun", projectile_color = "#c082c0")
@@ -205,7 +205,7 @@
 	name = "\"Blue Moon\" psi-plasma rifle"
 	desc = "A Cassad-sytle plasma rifle ready to take on any battle, this one crafted out of base violent thought alone has more unique ways of holding a cell's charge known only to the person that had thought of it."
 	damage_multiplier = 1
-	penetration_multiplier = 0
+	penetration_multiplier = 1
 	psigun = 1
 	init_firemodes = list(
 		list(mode_name="Melt", mode_desc="A reliable plasma round, for stripping away armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/burn.ogg', burst=1, fire_delay = 9, charge_cost=25, icon="kill", projectile_color = "#BF40BF"),
@@ -224,7 +224,7 @@
 	matter = list()
 	price_tag = 0
 	damage_multiplier = 0.8
-	penetration_multiplier = -0.2
+	penetration_multiplier = 0.8
 	serial_shown = FALSE
 	charge_cost = 50
 
@@ -238,7 +238,7 @@
 	matter = list()
 	price_tag = 0
 	damage_multiplier = 1
-	penetration_multiplier = 0
+	penetration_multiplier = 1
 	serial_shown = FALSE
 
 /obj/item/gun/projectile/automatic/greasegun/cult
@@ -250,7 +250,7 @@
 	matter = list()
 	price_tag = 0
 	damage_multiplier = 0.9
-	penetration_multiplier = 0
+	penetration_multiplier = 1
 	serial_shown = FALSE
 
 /obj/item/gun/projectile/automatic/greasegun/cult/deepmaints
@@ -259,7 +259,7 @@
 	icon = 'icons/obj/guns/projectile/greasegun_psi.dmi'
 	psigun = 1
 	damage_multiplier = 1
-	penetration_multiplier = 0.2
+	penetration_multiplier = 1.2
 
 //////////////////////////////
 //			Psionic Tools

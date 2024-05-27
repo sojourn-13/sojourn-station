@@ -17,7 +17,7 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 	damage_multiplier = 1.0
-	penetration_multiplier = 0.15
+	penetration_multiplier = 1.15
 	zoom_factors = list(0.2)
 	init_recoil = LMG_RECOIL(0.6)
 	init_firemodes = list(

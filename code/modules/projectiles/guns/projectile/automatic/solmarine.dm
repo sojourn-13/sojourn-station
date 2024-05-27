@@ -13,7 +13,7 @@
 	fire_sound = 'sound/weapons/guns/fire/carbine.ogg'
 	price_tag = 1100
 	damage_multiplier = 1.0
-	penetration_multiplier = 0.2
+	penetration_multiplier = 1.2
 	init_recoil = CARBINE_RECOIL(1.1)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,

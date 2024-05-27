@@ -78,7 +78,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_WOOD = 10)
 	price_tag = 450
 	damage_multiplier = 1
-	penetration_multiplier = -0.1
+	penetration_multiplier = 0.9
 	init_recoil = RIFLE_RECOIL(1.2)
 	saw_off = TRUE
 	sawn = /obj/item/gun/projectile/shotgun/pump/obrez
@@ -99,7 +99,7 @@
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_WOOD = 5)
 	price_tag = 350
 	damage_multiplier = 0.8
-	penetration_multiplier = -0.2
+	penetration_multiplier = 0.8
 	init_recoil = RIFLE_RECOIL(1.3)
 	saw_off = FALSE
 	gun_parts = list(/obj/item/stack/material/wood = 2, /obj/item/part/gun/mechanism/shotgun = 1, /obj/item/stack/material/plasteel = 2)

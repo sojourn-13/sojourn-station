@@ -262,6 +262,10 @@ uniquic_armor_act
 	if(!affecting)
 		return FALSE//should be prevented by attacked_with_item() but for sanity.
 
+	var/EF = unique_armor_check(I, user, effective_force)
+	if(EF)
+		effective_force = EF
+
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		H.stop_blocking()
