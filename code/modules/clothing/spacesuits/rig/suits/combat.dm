@@ -18,6 +18,9 @@
 	drain = 4
 	offline_slowdown = 3
 	offline_vision_restriction = 1
+	ablative_armor = 8
+	ablative_max = 8
+	ablation = ABLATION_RESILIENT
 	stiffness = 0
 	obscuration = 0
 	max_upgrades = 1
@@ -118,6 +121,8 @@
 	offline_slowdown = 3
 	offline_vision_restriction = 1
 	max_upgrades = 1
+	ablative_max = 8
+	ablation = ABLATION_SOFT //lots of gold and filigree
 	chest_type = /obj/item/clothing/suit/space/rig/combat/knight
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/combat/knight
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/combat/knight
@@ -248,6 +253,9 @@
 	drain = 4
 	offline_slowdown = 3
 	offline_vision_restriction = 1
+	ablative_armor = 12
+	ablative_max = 12
+	ablation = ABLATION_EVERLASTING
 	stiffness = 0
 	obscuration = 0
 	max_upgrades = 1
@@ -284,6 +292,9 @@
 	drain = 2
 	offline_slowdown = 4 // aalso fucking heavy.
 	offline_vision_restriction = 1
+	ablative_armor = 15
+	ablative_max = 15
+	ablation = ABLATION_EVERLASTING
 	stiffness = 0
 	obscuration = 0
 	max_upgrades = 0

@@ -42,7 +42,7 @@
 
 /obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 18)
+	damage_types = list(BRUTE = 14)
 	armor_divisor = 0.25
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 0
@@ -173,7 +173,7 @@
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 20)
+	damage_types = list(BRUTE = 19)
 	armor_divisor = 0.4
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 0
@@ -322,7 +322,7 @@
 
 /obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
-	damage_types = list(BRUTE = 26)
+	damage_types = list(BRUTE = 18)
 	armor_divisor = 1.6
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 2
@@ -410,7 +410,7 @@
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 18)
+	damage_types = list(BRUTE = 14)
 	armor_divisor = 0.4
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 0
@@ -457,7 +457,7 @@
 	recoil = 10
 
 /obj/item/projectile/bullet/rifle_75/hv
-	damage_types = list(BRUTE = 14)
+	damage_types = list(BRUTE = 16)
 	armor_divisor = 3
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 2
@@ -511,7 +511,7 @@
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 22)
+	damage_types = list(BRUTE = 16)
 	armor_divisor = 0.8
 	wounding_mult = WOUNDING_WIDE
 	penetrating = 0
@@ -593,7 +593,7 @@
 
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 28)
+	damage_types = list(BRUTE = 20)
 	armor_divisor = 1
 	wounding_mult = WOUNDING_WIDE
 	penetrating = 0
@@ -1122,7 +1122,7 @@
 /obj/item/projectile/bullet/crossbow_bolt/lethal
 	name = "bolt"
 	icon_state = "bolt"
-	damage_types = list(BRUTE = 22)
+	damage_types = list(BRUTE = 15)
 	wounding_mult = WOUNDING_NORMAL //slightly bigger
 	armor_divisor = 0.5
 	supereffective_types = list(/mob/living/carbon/human = FALSE, /mob/living = TRUE)

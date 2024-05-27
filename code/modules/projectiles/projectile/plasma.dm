@@ -18,12 +18,12 @@
 	impact_type = /obj/effect/projectile/plasma/impact
 
 /obj/item/projectile/plasma/shell
-	damage_types = list(BURN = 36)
+	damage_types = list(BURN = 40)
 	recoil = 12
 
 /obj/item/projectile/plasma/light
 	name = "light plasma bolt"
-	damage_types = list(BURN = 28)
+	damage_types = list(BURN = 33)
 	armor_divisor = 1
 	recoil = 7
 

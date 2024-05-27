@@ -708,6 +708,7 @@
 	throw_speed = 3
 	edge = TRUE
 	sharp = TRUE
+	extended_reach = TRUE
 	tool_qualities = list(QUALITY_CUTTING = 10)
 	origin_tech = list(TECH_COMBAT = 1)
 	hitsound = 'sound/weapons/slice.ogg' // Sounds more like a stab than a cut.
