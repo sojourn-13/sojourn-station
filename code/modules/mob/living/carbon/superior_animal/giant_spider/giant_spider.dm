@@ -9,8 +9,8 @@
 
 	mob_size = MOB_MEDIUM
 
-	maxHealth = 100
-	health = 100
+	maxHealth = 100 * SPIDER_HEALTH_MOD
+	health = 100 * SPIDER_HEALTH_MOD
 
 	attack_sound = 'sound/weapons/spiderlunge.ogg'
 	speak_emote = list("chitters")

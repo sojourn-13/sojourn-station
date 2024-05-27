@@ -4,8 +4,8 @@
 	icon_state = "panzer"
 	meat_amount = 4
 	turns_per_move = 2
-	maxHealth = 50
-	health = 50
+	maxHealth = 50 * ROACH_HEALTH_MOD
+	health = 50 * ROACH_HEALTH_MOD
 	move_to_delay = 7
 	mob_size = MOB_MEDIUM
 	density = TRUE

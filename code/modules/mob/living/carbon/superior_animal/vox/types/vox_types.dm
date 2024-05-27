@@ -92,8 +92,8 @@
 
 	reload_message = "picks up a rock!"
 
-	maxHealth = 90
-	health = 90
+	maxHealth = 90 * VOXBIRD_HEALTH_MOD
+	health = 90 * VOXBIRD_HEALTH_MOD
 	armor_divisor = 1.25
 
 /mob/living/carbon/superior_animal/vox/weak
@@ -108,8 +108,8 @@
 
 	knock_over_odds = 15
 
-	maxHealth = 35
-	health = 35
+	maxHealth = 35 * VOXBIRD_HEALTH_MOD
+	health = 35 * VOXBIRD_HEALTH_MOD
 
 /mob/living/carbon/superior_animal/vox/rage
 	name = "Jan barazana"

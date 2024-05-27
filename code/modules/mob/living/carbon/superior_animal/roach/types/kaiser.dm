@@ -12,8 +12,8 @@ Has ability of every roach.
 	density = TRUE
 
 	turns_per_move = 6
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 1000 * LEVIATHAN_HEALTH_MOD
+	health = 1000 * LEVIATHAN_HEALTH_MOD
 	contaminant_immunity = TRUE
 	get_stat_modifier = TRUE
 

@@ -7,8 +7,8 @@
 
 	meat_amount = 2
 	turns_per_move = 1
-	maxHealth = 40
-	health = 40
+	maxHealth = 40 * ROACH_HEALTH_MOD
+	health = 40 * ROACH_HEALTH_MOD
 
 	flash_resistances = 10 //We are the light
 

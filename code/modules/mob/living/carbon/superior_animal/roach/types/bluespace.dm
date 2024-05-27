@@ -2,8 +2,8 @@
 	name = "Unbekannt roach"
 	desc = "This shimmering insectoid-like creature greatly resembles a giant cockroach. It flickers in and out of reality, as if it didn't really belong here."
 	icon_state = "bluespaceroach"
-	maxHealth = 25
-	health = 25
+	maxHealth = 25 * ROACH_HEALTH_MOD
+	health = 25 * ROACH_HEALTH_MOD
 	meat_type = /obj/item/bluespace_crystal
 	melee_damage_lower = 3
 	melee_damage_upper = 10

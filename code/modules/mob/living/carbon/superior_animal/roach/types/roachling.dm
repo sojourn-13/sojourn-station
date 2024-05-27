@@ -4,8 +4,8 @@
 	icon_state = "roachling"
 
 	turns_per_move = 3
-	maxHealth = 10
-	health = 10
+	maxHealth = 10 * ROACH_HEALTH_MOD
+	health = 10 * ROACH_HEALTH_MOD
 	move_to_delay = 3.5
 
 	knockdown_odds = 3

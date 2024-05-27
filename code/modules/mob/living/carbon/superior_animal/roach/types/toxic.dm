@@ -5,8 +5,8 @@
 
 	meat_amount = 3
 	turns_per_move = 1
-	maxHealth = 40
-	health = 40
+	maxHealth = 40 * ROACH_HEALTH_MOD
+	health = 40 * ROACH_HEALTH_MOD
 
 	contaminant_immunity = TRUE
 

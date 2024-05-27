@@ -240,7 +240,7 @@
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 5)
 	sharp = TRUE
 	edge = TRUE
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_BULKY
 	slot_flags = SLOT_BELT
 	worksound = WORKSOUND_HARD_SLASH
 	force = WEAPON_FORCE_ROBUST

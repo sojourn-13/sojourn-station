@@ -4,8 +4,8 @@
 	icon_state = "jager"
 
 	turns_per_move = 3
-	maxHealth = 30
-	health = 30
+	maxHealth = 30 * ROACH_HEALTH_MOD
+	health = 30 * ROACH_HEALTH_MOD
 	move_to_delay = 3.5
 
 	blattedin_revives_left = 2

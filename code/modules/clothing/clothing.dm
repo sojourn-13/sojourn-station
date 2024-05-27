@@ -144,9 +144,9 @@
 					"type" = "ProgressBar",
 					"name" = capitalize(i) + " armor",
 					"value" = armorlist[i],
-					"max" = 100,
+					"max" = 25,
 					"color" = armorlist[i] > 25 ? (armorlist[i] > 50 ? "good" : "average") : "bad",
-					"unit" = "%"
+					"unit" = ""
 				))
 
 	stats["Armor Stats"] = armor_stats

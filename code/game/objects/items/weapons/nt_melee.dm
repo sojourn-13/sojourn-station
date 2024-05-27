@@ -6,6 +6,8 @@
 	icon = 'icons/obj/nt_melee.dmi'
 	icon_state = "nt_shortsword"
 	item_state = "nt_shortsword"
+	w_class = ITEM_SIZE_NORMAL
+	extra_bulk = 3 //a little more size, it's awkward to store out of a sheath.
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_WEAK
 	armor_divisor = ARMOR_PEN_DEEP
