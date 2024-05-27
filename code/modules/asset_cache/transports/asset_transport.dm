@@ -34,8 +34,9 @@
 	var/datum/asset_cache_item/ACI = asset
 	if (!istype(ACI))
 		ACI = new(asset_name, asset)
-		if (!ACI || !ACI.hash)
-			CRASH("ERROR: Invalid asset: [asset_name]:[asset]:[ACI]")
+		if(!ACI || !ACI.hash)
+			log_asset("ERROR: Invalid asset: [asset_name]:[asset]:[ACI]")
+			return null
 	if (SSassets.cache[asset_name])
 		var/datum/asset_cache_item/OACI = SSassets.cache[asset_name]
 		OACI.legacy = ACI.legacy = (ACI.legacy|OACI.legacy)

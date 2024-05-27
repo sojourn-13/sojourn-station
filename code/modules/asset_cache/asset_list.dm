@@ -359,33 +359,34 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	if (legacy)
 		assets |= parents
 	var/list/hashlist = list()
-	var/list/sorted_assets = sortList(assets)
+	var/list/created_items = list()
 
+	var/list/sorted_assets = sortList(assets)
 	for (var/asset_name in sorted_assets)
 		var/datum/asset_cache_item/ACI = new(asset_name, sorted_assets[asset_name])
-		if (!ACI?.hash)
+		if (!istype(ACI) || !ACI.hash)
 			log_asset("ERROR: Invalid asset: [type]:[asset_name]:[ACI]")
 			continue
 		hashlist += ACI.hash
-		sorted_assets[asset_name] = ACI
+		created_items[asset_name] = ACI
 	var/namespace = md5(hashlist.Join())
 
 	for (var/asset_name in parents)
 		var/datum/asset_cache_item/ACI = new(asset_name, parents[asset_name])
-		if (!ACI?.hash)
+		if (!istype(ACI) || !ACI.hash)
 			log_asset("ERROR: Invalid asset: [type]:[asset_name]:[ACI]")
 			continue
 		ACI.namespace_parent = TRUE
-		sorted_assets[asset_name] = ACI
+		created_items[asset_name] = ACI
 
-	for (var/asset_name in sorted_assets)
-		var/datum/asset_cache_item/ACI = sorted_assets[asset_name]
-		if (!ACI?.hash)
+	for (var/asset_name in created_items)
+		var/datum/asset_cache_item/ACI = created_items[asset_name]
+		if (!istype(ACI) || !ACI.hash)
 			log_asset("ERROR: Invalid asset: [type]:[asset_name]:[ACI]")
 			continue
 		ACI.namespace = namespace
 
-	assets = sorted_assets
+	assets = created_items
 	..()
 
 /// Get a html string that will load a html asset.
