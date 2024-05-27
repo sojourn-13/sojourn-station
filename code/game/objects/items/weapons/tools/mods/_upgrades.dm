@@ -406,7 +406,7 @@
 	if(weapon_upgrades[GUN_UPGRADE_PAIN_MULT])
 		G.proj_agony_multiplier += weapon_upgrades[GUN_UPGRADE_PAIN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
-		G.penetration_multiplier *= weapon_upgrades[GUN_UPGRADE_PEN_MULT]
+		G.penetration_multiplier += weapon_upgrades[GUN_UPGRADE_PEN_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PEN_BASE])
 		G.penetration_multiplier += weapon_upgrades[GUN_UPGRADE_PEN_BASE]
 	if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
