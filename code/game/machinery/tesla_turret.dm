@@ -168,7 +168,7 @@ GLOBAL_LIST_INIT(turret_channels, new/list(5))
 	settings[++settings.len] = list("category" = "Target Unauthorized Colonists", "setting" = "check_access", "value" = shock_net.check_access)
 	settings[++settings.len] = list("category" = "Target All Synthetics", "setting" = "check_synth", "value" = shock_net.check_synth)
 	settings[++settings.len] = list("category" = "Target Fauna", "setting" = "check_anomalies", "value" = shock_net.check_anomalies)
-	settings[++settings.len] = list("category" = "Filter out Friendly Fauna", "setting" = "colony_allied_turret", "value" = shock_net.colony_allied_turret)
+	settings[++settings.len] = list("category" = "Filter out Colony Members", "setting" = "colony_allied_turret", "value" = shock_net.colony_allied_turret)
 	settings[++settings.len] = list("category" = "Toggle AI Access", "setting" = "ailock", "value" = shock_net.ailock)
 	data["settings"] = settings
 
