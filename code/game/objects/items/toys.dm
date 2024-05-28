@@ -662,7 +662,7 @@
 /*Guild*/
 
 /obj/item/toy/figure/character/guild/qm
-	name = "CEO action figure"
+	name = "SOM action figure"
 	desc = "The money-minded manager of all cargo affairs. Lonestar 1/3."
 	icon_state = "qm"
 	toysay = "Charge for every drink and meal! Charge them even for breathing!"

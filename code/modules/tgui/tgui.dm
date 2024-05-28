@@ -56,7 +56,7 @@
  */
 /datum/tgui/New(mob/user, datum/src_object, interface, title, ui_x, ui_y)
 	log_tgui(user,
-		"new [interface] fancy [user?.client?.get_preference_value(/datum/client_preference/tgui_fancy)]",
+		"new [interface] fancy [user?.client?.get_preference_value(/datum/client_preference/tgui_fancy) == GLOB.PREF_YES]",
 		src_object = src_object)
 	src.user = user
 	src.src_object = src_object
@@ -97,7 +97,7 @@
 	if(!window.is_ready())
 		window.initialize(
 			strict_mode = TRUE,
-			fancy = user.client.get_preference_value(/datum/client_preference/tgui_fancy),
+			fancy = user.client.get_preference_value(/datum/client_preference/tgui_fancy) == GLOB.PREF_YES,
 			assets = list(
 				get_asset_datum(/datum/asset/simple/tgui),
 			))

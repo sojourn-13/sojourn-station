@@ -564,7 +564,7 @@
 				if(get_area(sending) != get_area(computer))
 					to_chat(usr, SPAN_WARNING("ERROR: Sending beacon is too far from \the [computer]."))
 					return
-				SStrade.export(sending)
+				SStrade.export(sending, account)
 				return TRUE
 
 			var/t2n = text2num(href_list["PRG_sell"])

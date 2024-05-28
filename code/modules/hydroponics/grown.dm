@@ -13,7 +13,7 @@
 	var/potency = -1
 
 
-/obj/item/reagent_containers/food/snacks/grown/New(newloc,planttype)
+/obj/item/reagent_containers/food/snacks/grown/New(newloc,planttype,potency_plus)
 
 	..()
 	if(!dried_type)
@@ -50,7 +50,17 @@
 	if(!seed.chems)
 		return
 
-	potency = seed.get_trait(TRAIT_POTENCY)
+	potency = seed.get_trait(TRAIT_POTENCY) + potency_plus
+
+	var/chem_mult = 1
+	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
+		chem_mult -= 0.25
+	if(seed.get_trait(TRAIT_JUICY))
+		chem_mult += 0.15
+		if(seed.get_trait(TRAIT_JUICY) == 2)
+			chem_mult += 0.10 //25% extra chems
+	if(seed.get_trait(TRAIT_CHEM_PRODUCTION))
+		chem_mult += 0.25
 
 	for(var/rid in seed.chems)
 		var/list/reagent_data = seed.chems[rid]
@@ -61,6 +71,7 @@
 				rtotal += round(potency/reagent_data[2])
 			if(rid == "nutriment")
 				data[seed.seed_name] = max(1,rtotal)
+			rtotal *= chem_mult
 			reagents.maximum_volume += max(1,rtotal)
 			reagents.add_reagent(rid,max(1,rtotal),data)
 	update_desc()
@@ -341,7 +352,7 @@
 
 /obj/plant_spawner/proc/spawn_growth()
 	var/datum/seed/S = plant_controller.seeds[seedtype]
-	S.harvest(loc,0,0,1)
+	S.harvest(loc,force_amount = 1, harvest_sample = FALSE)
 	spawn(5) if(src) qdel(src)
 
 /obj/plant_spawner/libertycap
