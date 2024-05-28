@@ -126,3 +126,59 @@
 	if(Victim)
 		if(Victim == M)
 			loc = M.loc // simple "attach to head" effect!
+
+
+//Fancy Chaos level attack upgrades
+
+//Memory: the shadow fella, when they attack teleport behind the person, regardless of whats in are way, (like walls n stuff)
+/mob/living/carbon/superior_animal/psi_monster/memory/UnarmedAttack(atom/A, proximity)
+	. = ..()
+
+	if(ismob(A))
+		var/mob/M = A
+		var/RD = reverse_direction(M.dir)
+		dir = M.dir
+
+		if(GLOB.chaos_level >= 2) //Unlocks early as these smucks are trash
+			var/turf/T = get_step(M, RD)
+			if(T)
+				forceMove(T)
+
+//thought and memory police! These two work together at chaos level 2 making them quite tricky
+/mob/living/carbon/superior_animal/psi_monster/thought_melter/UnarmedAttack(atom/A, proximity)
+	if(GLOB.chaos_level >= 2)
+		if(ishuman(A))
+			var/mob/living/carbon/human/H = A
+			if(istype(H.head, /obj/item/clothing)) //We only knock off hats
+				var/obj/item/clothing/hat
+				if(hat.canremove || hat.psi_blocking <= 0)
+					drop_from_inventory(hat)
+					visible_message(SPAN_DANGER("[src] steals [H.name]'s [hat]!"))
+	. = ..()
+
+/mob/living/carbon/superior_animal/psi_monster/memory_eater/UnarmedAttack(atom/A, proximity, repeat_attack = FALSE)
+	if(GLOB.chaos_level >= 2)
+		if(ishuman(A))
+			var/mob/living/carbon/human/H = A
+			if(!istype(H.head, /obj/item/clothing) && !repeat_attack) //if we dont have a hat we attack again!
+				UnarmedAttack(A,proximity,TRUE)
+	. = ..()
+
+//The masked horror!!!!
+/mob/living/carbon/superior_animal/psi_monster/hovering_nightmare/UnarmedAttack(atom/A, proximity)
+	if(GLOB.chaos_level >= 2)
+		if(ishuman(A))
+			var/mob/living/carbon/human/H = A
+
+			if(!H.wear_mask)
+				var/psionic_mask = pick(typesof(/obj/item/clothing/mask/deepmaints_debuff))
+				if(psionic_mask)
+					H.psionic_mask(new mask, slot_wear_mask, skip_covering_check = TRUE)
+
+			else
+				if(istype(H.wear_mask, /obj/item/clothing) && istype(H.wear_mask /obj/item/clothing/mask/deepmaints_debuff)) //Saved by a masked item!
+					var/obj/item/clothing/mask
+					if(mask.canremove || mask.psi_blocking <= 0)
+						drop_from_inventory(mask)
+						visible_message(SPAN_DANGER("[src] peals off [H.name]'s [mask]!"))
+	. = ..()

@@ -198,3 +198,59 @@
 	if(!pointgranted)
 		occultist.stats.changeStat(STAT_COG, 5)
 		pointgranted = 1
+
+//Deepmaints debuffing ones
+/obj/item/clothing/mask/deepmaints_debuff
+	name = "startled psionic mask"
+	desc = "A psionic mask laced into the victum mind. This one has a shocked expression."
+	icon_state = "tiki_eyebrow"
+	item_state = "tiki_eyebrow"
+
+	var/mob/living/carbon/human/victum
+	var/pointgranted = 0 //Did we give you your stat?
+	var/pointremoved = 0 //Did we take you your stat?
+	var/pointamounts = 10
+	var/sanity_damage = 5
+	var/stat_to_change = STAT_VIG
+	color = "#5B0E4F" //spooooky!!!!!
+	matter = list()
+
+/obj/item/clothing/mask/deepmaints_debuff/dropped()
+	..()
+	if(!pointremoved)
+		victum.stats.changeStat(stat_to_change, -stat_to_change)
+		pointremoved = TRUE
+	victum.sanity.onPsyDamage(sanity_damage)
+	spawn(2)
+	qdel(src)
+
+/obj/item/clothing/mask/deepmaints_debuff/equipped(var/mob/M)
+	.=..()
+	occultist = M
+	if(!pointgranted)
+		victum.stats.changeStat(stat_to_change, stat_to_change)
+		pointgranted = 1
+
+/obj/item/clothing/mask/deepmaints_debuff/angry
+	name = "angry psionic mask"
+	desc = "A psionic mask laced into the victum mind. This one looks furious about something."
+	icon_state = "tiki_angry"
+	item_state = "tiki_angry"
+	stat_to_change = STAT_BIO //WHY CANT I INJECT MY NEEEEDLEEEEEEE!!!!!!!!
+
+/obj/item/clothing/mask/deepmaints_debuffi/confused
+	name = "confused psionic mask"
+	desc = "A psionic mask laced into the victum mind. This one doesn't seem very sure of itself."
+	icon_state = "tiki_confused"
+	item_state = "tiki_confused"
+	stat_to_change = STAT_COG
+	pointamounts = 15
+
+/obj/item/clothing/mask/deepmaints_debuff/happy
+	name = "happy psionic mask"
+	desc = "A psionic mask laced into the victum mind. This one is smiling with joy."
+	icon_state = "tiki_happy"
+	item_state = "tiki_happy"
+	stat_to_change = STAT_VIV
+	sanity_damage = -5 //Should *heal* sanity not damage
+	pointamounts = 30 //Hope you didnt have combat chems

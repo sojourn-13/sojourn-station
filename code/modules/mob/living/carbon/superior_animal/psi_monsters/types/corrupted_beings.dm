@@ -65,6 +65,11 @@
 	//Same armor that they are warning
 	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 30, bio = 100, rad = 50)
 
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/deepmaints_bound
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/item/tool/sword/cult/deepmaints, /obj/random/psi/always_spawn)
+
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey
 	name = "Daskvey"
@@ -187,6 +192,11 @@
 
 	armor_penetration = 15
 
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/cleaver/deepmaints_bound
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/item/tool/sword/cleaver/cult/deepmaints, /obj/random/psi/always_spawn)
+
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/plasma
 	name = "Daskveyian Plasma Caster"
 	desc = "Trained warrior of the Hand of Daskvey. Carrying a laser gun enhanced by the wielder's mind, they inflict deadly pain on any that obstruct the freedom of their cult's members. For freedom is never free."
@@ -211,6 +221,11 @@
 	projectiletype = /obj/item/projectile/plasma/aoe/heat
 
 	armor_penetration = 15
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/plasma/deepmaints_bound
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/item/gun/energy/plasma/cassad/cult/deepmaints, /obj/random/psi/always_spawn)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/laser
 	name = "Daskveyian Las-Gunner"
@@ -239,6 +254,11 @@
 	projectiletype = /obj/item/projectile/beam
 
 	armor_penetration = 15
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/laser/deepmaints_bound
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/item/gun/energy/laser/cult/deepmaints, /obj/random/psi/always_spawn)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg
 	name = "Daskveyian Assaulter"
@@ -272,6 +292,17 @@
 
 	armor_penetration = 15
 
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg/Initialize(mapload)
+	. = ..()
+	//Proj Upgrade
+	if(GLOB.chaos_level >= 5)
+		projectiletype = /obj/item/projectile/bullet/pistol_35
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg/deepmaints_bound
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints, /obj/random/psi/always_spawn)
+
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle
 	name = "Daskveyian Rifleperson"
 	desc = "A basic rifleperson of the Hand of Daskvey. Shadowed behind the mask of the warrior, they find peace with weapon in hand, for no duty is more important to freedom than to take up arms for it."
@@ -303,6 +334,17 @@
 	mag_type = /obj/item/ammo_magazine/rifle_75/empty
 
 	armor_penetration = 15
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle/Initialize(mapload)
+	. = ..()
+	//Proj Upgrade
+	if(GLOB.chaos_level >= 5)
+		projectiletype = /obj/item/projectile/bullet/rifle_75
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle/deepmaints_bound
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/item/gun/projectile/automatic/sts/rifle/cult/deepmaints, /obj/random/psi/always_spawn)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/shield
 	name = "Daskveyian Juggernaut "
@@ -336,6 +378,11 @@
 				L.visible_message(SPAN_DANGER("\the [src] uses its shield to knock over \the [L]!"))
 	. = ..()
 
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/shield/deepmaints_bound
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/halberd
 	name = "Daskveyian Halberdier"
 	desc = "A soul of strength and integrity, recovered from the ravages laid upon it. Outfitted in heavy armor, it protects those in its shadow with unwavering confidence, for they know what failure means."
@@ -355,6 +402,11 @@
 	armor_penetration = 30
 	armor = list(melee = 60, bullet = 60, energy = 60, bomb = 100, bio = 100, rad = 90)
 
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/halberd/deepmaints_bound
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/weakling
 	name = "Daskveyian Uplifted"
 	desc = "A soul recently uplifted by the Hand of Daskvey, still lost and recovering from its pains, they find themselves lost in a trance of forgotten memories."
@@ -373,6 +425,11 @@
 
 	armor_penetration = 0
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/weakling/deepmaints_bound
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/random/psi/always_spawn)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_shooter
 	name = "Daskveyian Cultist "
@@ -413,6 +470,11 @@
 		projectiletype = /obj/item/projectile/kinetic_blast_electro/dangerous
 
 	..()
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_shooter/deepmaints_bound
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_master
 	name = "Daskveyian Hand"
@@ -455,3 +517,8 @@
 	if(prob(10))
 		projectiletype = /obj/item/projectile/kinetic_blast_electro/brutal
 	..()
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_master/deepmaints_bound
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
