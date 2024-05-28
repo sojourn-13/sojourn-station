@@ -90,6 +90,7 @@
 	return target
 
 /datum/gear/fluff
+	display_name = "Fluff Item"
 	category = /datum/gear/fluff
 	sort_category = "Fluff Items"
 	cost = 1
