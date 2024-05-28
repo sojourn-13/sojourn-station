@@ -151,9 +151,9 @@
 			var/mob/living/carbon/human/H = A
 			if(!H.psi_blocking > 0)
 				if(istype(H.head, /obj/item/clothing)) //We only knock off hats
-					var/obj/item/clothing/hat
+					var/obj/item/clothing/hat = H.head
 					if(hat.canremove || hat.psi_blocking <= 0)
-						drop_from_inventory(hat)
+						H.drop_from_inventory(hat)
 						visible_message(SPAN_DANGER("[src] steals [H.name]'s [hat]!"))
 	. = ..()
 
@@ -179,9 +179,9 @@
 						H.replace_in_slot(new psionic_mask, slot_wear_mask, skip_covering_check = TRUE)
 
 				else
-					if(istype(H.wear_mask, /obj/item/clothing) && istype(H.wear_mask, /obj/item/clothing/mask/deepmaints_debuff)) //Saved by a masked item!
-						var/obj/item/clothing/mask
+					if(istype(H.wear_mask, /obj/item/clothing) && !istype(H.wear_mask, /obj/item/clothing/mask/deepmaints_debuff)) //Saved by a masked item!
+						var/obj/item/clothing/mask = H.wear_mask
 						if(mask.canremove || mask.psi_blocking <= 0)
-							drop_from_inventory(mask)
+							H.drop_from_inventory(mask)
 							visible_message(SPAN_DANGER("[src] peals off [H.name]'s [mask]!"))
 	. = ..()

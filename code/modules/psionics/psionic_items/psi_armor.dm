@@ -220,7 +220,7 @@
 	if(!pointremoved)
 		victim.stats.changeStat(stat_to_change, -stat_to_change)
 		pointremoved = TRUE
-	victum.sanity.onPsyDamage(damage_to_sanity)
+	victim.sanity.onPsyDamage(damage_to_sanity)
 	spawn(2)
 	qdel(src)
 
