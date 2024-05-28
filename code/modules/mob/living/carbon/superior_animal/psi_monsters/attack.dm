@@ -173,10 +173,10 @@
 			if(!H.wear_mask)
 				var/psionic_mask = pick(typesof(/obj/item/clothing/mask/deepmaints_debuff))
 				if(psionic_mask)
-					H.psionic_mask(new mask, slot_wear_mask, skip_covering_check = TRUE)
+					H.replace_in_slot(new psionic_mask, slot_wear_mask, skip_covering_check = TRUE)
 
 			else
-				if(istype(H.wear_mask, /obj/item/clothing) && istype(H.wear_mask /obj/item/clothing/mask/deepmaints_debuff)) //Saved by a masked item!
+				if(istype(H.wear_mask, /obj/item/clothing) && istype(H.wear_mask, /obj/item/clothing/mask/deepmaints_debuff)) //Saved by a masked item!
 					var/obj/item/clothing/mask
 					if(mask.canremove || mask.psi_blocking <= 0)
 						drop_from_inventory(mask)

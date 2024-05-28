@@ -210,7 +210,7 @@
 	var/pointgranted = 0 //Did we give you your stat?
 	var/pointremoved = 0 //Did we take you your stat?
 	var/pointamounts = 10
-	var/sanity_damage = 5
+	var/damage_to_sanity = 5
 	var/stat_to_change = STAT_VIG
 	color = "#5B0E4F" //spooooky!!!!!
 	matter = list()
@@ -220,13 +220,13 @@
 	if(!pointremoved)
 		victum.stats.changeStat(stat_to_change, -stat_to_change)
 		pointremoved = TRUE
-	victum.sanity.onPsyDamage(sanity_damage)
+	victum.sanity.onPsyDamage(damage_to_sanity)
 	spawn(2)
 	qdel(src)
 
 /obj/item/clothing/mask/deepmaints_debuff/equipped(var/mob/M)
 	.=..()
-	occultist = M
+	victum = M
 	if(!pointgranted)
 		victum.stats.changeStat(stat_to_change, stat_to_change)
 		pointgranted = 1
@@ -238,7 +238,7 @@
 	item_state = "tiki_angry"
 	stat_to_change = STAT_BIO //WHY CANT I INJECT MY NEEEEDLEEEEEEE!!!!!!!!
 
-/obj/item/clothing/mask/deepmaints_debuffi/confused
+/obj/item/clothing/mask/deepmaints_debuff/confused
 	name = "confused psionic mask"
 	desc = "A psionic mask laced into the victum mind. This one doesn't seem very sure of itself."
 	icon_state = "tiki_confused"
@@ -252,5 +252,5 @@
 	icon_state = "tiki_happy"
 	item_state = "tiki_happy"
 	stat_to_change = STAT_VIV
-	sanity_damage = -5 //Should *heal* sanity not damage
+	damage_to_sanity = -5 //Should *heal* sanity not damage
 	pointamounts = 30 //Hope you didnt have combat chems
