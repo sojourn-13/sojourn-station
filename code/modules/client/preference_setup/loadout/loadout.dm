@@ -69,8 +69,11 @@ var/list/gear_datums = list()
 					okay = 1
 					break
 					*/
-		if(G.ckey_whitelist)
-			if(!preference_mob || !(preference_mob.ckey in G.ckey_whitelist))
+		// This has to return TRUE if there is no preference_mob or client
+		// because they don't exist when we're sanitizing the gear during pref load
+		// so it'll make it impossible to save the slot
+		if(preference_mob && preference_mob.client)
+			if(G.ckey_whitelist && !(preference_mob.ckey in G.ckey_whitelist))
 				okay = FALSE
 		if(!okay)
 			continue

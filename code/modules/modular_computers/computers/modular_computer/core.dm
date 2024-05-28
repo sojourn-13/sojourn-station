@@ -60,6 +60,9 @@
 /obj/item/modular_computer/Initialize()
 	if(!overlay_icon)
 		overlay_icon = icon
+	// Legacy
+	if(!icon_state_unpowered)
+		icon_state_unpowered = icon_state
 
 	START_PROCESSING(SSobj, src)
 
@@ -112,6 +115,8 @@
 		return TRUE
 
 /obj/item/modular_computer/update_icon()
+	icon_state = icon_state_unpowered
+
 	cut_overlays()
 
 	. = list()
