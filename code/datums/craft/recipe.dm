@@ -43,7 +43,8 @@
 	data["name"] = name
 	data["ref"] = "[REF(src)]"
 	
-	data["icon"] = SSassets.transport.get_asset_url(sanitizeFileName("[result].png"))
+	// because of course we have recipes that don't produce anything
+	data["icon"] = result ? SSassets.transport.get_asset_url(sanitizeFileName("[result].png")) : null
 	data["batch"] = flags & CRAFT_BATCH
 
 	var/atom/A = result

@@ -12,9 +12,11 @@ fi
 mkdir -p \
     $1/maps \
     $1/strings \
-	$1/config \
+    $1/config \
     $1/tgui/public \
-    $1/tgui/packages/tgfont/dist
+    $1/tgui/packages/tgfont/dist \
+    $1/data/spritesheets \
+    $1/icons
 
 if [ -d ".git" ]; then
   mkdir -p $1/.git/logs
@@ -27,6 +29,8 @@ cp -r strings/* $1/strings/
 cp -r config/names $1/config/
 cp -r tgui/public/* $1/tgui/public/
 cp -r tgui/packages/tgfont/dist/* $1/tgui/packages/tgfont/dist/
+# must copy all icons for spritesheet generation to work
+cp -r icons/* $1/icons/
 
 #remove .dm files from _maps
 

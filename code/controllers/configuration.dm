@@ -236,6 +236,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 	var/allow_ic_printing = TRUE
 
+	var/cache_assets = FALSE
+	var/smart_cache_assets = FALSE
+
 /datum/configuration/New()
 	fill_storyevents_list()
 
@@ -767,6 +770,11 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if("webhook_url")
 					config.webhook_url = value
+
+				if("cache_assets")
+					config.cache_assets = TRUE
+				if("smart_cache_assets")
+					config.smart_cache_assets = TRUE
 				else
 					log_misc("Unknown setting in configuration: '[name]'")
 
