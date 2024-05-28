@@ -98,7 +98,7 @@
 	var/is_leaching = FALSE
 	var/steal_odds = 0
 	var/stat_to_steal = STAT_VIV
-	var/steal_amount = 1
+	var/steal_amount = -1 //Possitive amounts give stats, and lower the health of the leacher
 	var/mob/living/Victim = null
 
 	var/can_leave = FALSE

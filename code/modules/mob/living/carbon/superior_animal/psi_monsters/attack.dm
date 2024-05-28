@@ -149,19 +149,21 @@
 	if(GLOB.chaos_level >= 2)
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = A
-			if(istype(H.head, /obj/item/clothing)) //We only knock off hats
-				var/obj/item/clothing/hat
-				if(hat.canremove || hat.psi_blocking <= 0)
-					drop_from_inventory(hat)
-					visible_message(SPAN_DANGER("[src] steals [H.name]'s [hat]!"))
+			if(!H.psi_blocking > 0)
+				if(istype(H.head, /obj/item/clothing)) //We only knock off hats
+					var/obj/item/clothing/hat
+					if(hat.canremove || hat.psi_blocking <= 0)
+						drop_from_inventory(hat)
+						visible_message(SPAN_DANGER("[src] steals [H.name]'s [hat]!"))
 	. = ..()
 
 /mob/living/carbon/superior_animal/psi_monster/memory_eater/UnarmedAttack(atom/A, proximity, repeat_attack = FALSE)
 	if(GLOB.chaos_level >= 2)
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = A
-			if(!istype(H.head, /obj/item/clothing) && !repeat_attack) //if we dont have a hat we attack again!
-				UnarmedAttack(A,proximity,TRUE)
+			if(!H.psi_blocking > 0)
+				if(!istype(H.head, /obj/item/clothing) && !repeat_attack) //if we dont have a hat we attack again!
+					UnarmedAttack(A,proximity,TRUE)
 	. = ..()
 
 //The masked horror!!!!
@@ -170,15 +172,16 @@
 		if(ishuman(A))
 			var/mob/living/carbon/human/H = A
 
-			if(!H.wear_mask)
-				var/psionic_mask = pick(typesof(/obj/item/clothing/mask/deepmaints_debuff))
-				if(psionic_mask)
-					H.replace_in_slot(new psionic_mask, slot_wear_mask, skip_covering_check = TRUE)
+			if(!H.psi_blocking > 0)
+				if(!H.wear_mask)
+					var/psionic_mask = pick(typesof(/obj/item/clothing/mask/deepmaints_debuff))
+					if(psionic_mask)
+						H.replace_in_slot(new psionic_mask, slot_wear_mask, skip_covering_check = TRUE)
 
-			else
-				if(istype(H.wear_mask, /obj/item/clothing) && istype(H.wear_mask, /obj/item/clothing/mask/deepmaints_debuff)) //Saved by a masked item!
-					var/obj/item/clothing/mask
-					if(mask.canremove || mask.psi_blocking <= 0)
-						drop_from_inventory(mask)
-						visible_message(SPAN_DANGER("[src] peals off [H.name]'s [mask]!"))
+				else
+					if(istype(H.wear_mask, /obj/item/clothing) && istype(H.wear_mask, /obj/item/clothing/mask/deepmaints_debuff)) //Saved by a masked item!
+						var/obj/item/clothing/mask
+						if(mask.canremove || mask.psi_blocking <= 0)
+							drop_from_inventory(mask)
+							visible_message(SPAN_DANGER("[src] peals off [H.name]'s [mask]!"))
 	. = ..()
