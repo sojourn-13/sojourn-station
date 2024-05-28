@@ -233,6 +233,8 @@
 	new /obj/item/clothing/under/rank/fatigues/kav/green(src)
 	new /obj/item/clothing/under/rank/fatigues/kav/tan(src)
 	new /obj/item/clothing/under/rank/fatigues/kav/tan(src)
+	new /obj/item/clothing/under/rank/fatigues/kav/jungle(src)
+	new /obj/item/clothing/under/rank/fatigues/kav/jungle(src)
 
 /obj/structure/closet/wardrobe/militia/accessory
 	name = "blackshield accessory wardrobe"
