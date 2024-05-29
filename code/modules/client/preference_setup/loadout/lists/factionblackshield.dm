@@ -105,6 +105,7 @@
 		"Alt Grey Fatigues"				=	/obj/item/clothing/under/rank/fatigues/kav,
 		"Alt Green Fatigues"				=	/obj/item/clothing/under/rank/fatigues/kav/green,
 		"Alt Tan Fatigues"				=	/obj/item/clothing/under/rank/fatigues/kav/tan,
+		"Alt Jungle Fatigues"				=	/obj/item/clothing/under/rank/fatigues/kav/jungle,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(fatigues)
 
