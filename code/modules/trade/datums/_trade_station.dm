@@ -22,7 +22,7 @@
 	var/list/name_pool = list()
 
 	var/markup = WHOLESALE_GOODS
-	var/markdown = 1			 // Do not increase above 1
+	var/markdown = 0.8			 // If increased above 1, then it turns into an exploit of buy n sell
 	var/favour_purchase_ratio = 0.125  // 8 credits = 1 favour
 
 
