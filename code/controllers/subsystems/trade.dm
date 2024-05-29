@@ -306,6 +306,7 @@ SUBSYSTEM_DEF(trade)
 			continue
 		if(!check_attachments(AM, offer_path, attachments, attach_count) || !check_contents(AM, offer_path))		// Check contents after we know it's the same type
 			continue
+
 		. += AM
 
 /datum/controller/subsystem/trade/proc/assess_all_offers(obj/machinery/trade_beacon/sending/beacon)
@@ -338,6 +339,7 @@ SUBSYSTEM_DEF(trade)
 	var/offer_price = text2num(offer_content["price"])
 	if(!exported || length(exported) < offer_amount || !offer_amount)
 		return
+
 
 	exported.Cut(offer_amount + 1)
 
@@ -508,6 +510,9 @@ SUBSYSTEM_DEF(trade)
 							new good_path(C)
 						else
 							var/atom/movable/new_item = senderBeacon.drop(good_path)
+							if(istype(new_item, /obj/item))
+								var/obj/item/T = new_item
+								T.surplus_tag = TRUE
 							invoice_location = new_item.loc
 					if(isnum(index_of_good))
 						station.set_good_amount(category_name, index_of_good, max(0, station.get_good_amount(category_name, index_of_good) - count_of_good))
@@ -538,7 +543,7 @@ SUBSYSTEM_DEF(trade)
 		cost = get_import_cost(thing, station)
 
 	if(thing.surplus_tag)
-		cost -= cost * 0.2
+		cost = cost * 0.1
 
 	if(account)
 		create_log_entry("Individial Sale", account.get_name(), "<li>[thing.name]</li>", cost)
@@ -594,7 +599,7 @@ SUBSYSTEM_DEF(trade)
 			var/export_value = item_price * export_multiplier
 
 			if(item.surplus_tag)
-				item_price -= item_price * 0.2
+				item_price = item_price * 0.1
 
 			if(export_multiplier)
 				invoice_contents_info += "<li>[item.name]</li>"
