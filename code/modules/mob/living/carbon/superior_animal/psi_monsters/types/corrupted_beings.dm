@@ -5,8 +5,8 @@
 	icon_state = "q-hound"
 	icon_living = "q-hound"
 	icon = 'icons/mob/mobs-monster.dmi'
-	maxHealth = 200
-	health = 200
+	maxHealth = 200 * DVEY_HEALTH_MOD
+	health = 200 * DVEY_HEALTH_MOD
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	melee_damage_lower = 20
 	melee_damage_upper = 30
@@ -35,8 +35,8 @@
 	icon_state = "psisolder_hm_sword"
 	icon_living = "psisolder_hm_sword"
 	icon = 'icons/mob/mobs-daskvey.dmi'
-	maxHealth = 250
-	health = 250
+	maxHealth = 250 * DVEY_HEALTH_MOD
+	health = 250 * DVEY_HEALTH_MOD
 	attack_sound = 'sound/weapons/slice.ogg'
 	melee_damage_lower = 26
 	melee_damage_upper = 26
@@ -173,8 +173,8 @@
 	desc = "A basic footsoldier of the Hand of Daskvey. Donning the mask of the warrior, the agressive souls of former criminals find themselves too enraged to naught but strike their enemies down with furious rage. Flesh or steel, the axe will smash its way through."
 	icon_state = "psisolder_hm_axe"
 	icon_living = "psisolder_hm_axe"
-	maxHealth = 250
-	health = 250
+	maxHealth = 250 * DVEY_HEALTH_MOD
+	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 33
 	melee_damage_upper = 33
 	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
@@ -192,8 +192,8 @@
 	desc = "Trained warrior of the Hand of Daskvey. Carrying a laser gun enhanced by the wielder's mind, they inflict deadly pain on any that obstruct the freedom of their cult's members. For freedom is never free."
 	icon_state = "psisolder_hm_plasma"
 	icon_living = "psisolder_hm_plasma"
-	maxHealth = 250
-	health = 250
+	maxHealth = 250 * DVEY_HEALTH_MOD
+	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 8
 	melee_damage_upper = 10
 	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
@@ -217,8 +217,8 @@
 	desc = "Trained Gunner of the Hand of Daskvey, their hands blessed with a fine laser rifle to burn away that which would threaten them or their fellow followers."
 	icon_state = "psisolder_hm_laser"
 	icon_living = "psisolder_hm_laser"
-	maxHealth = 250
-	health = 250
+	maxHealth = 250 * DVEY_HEALTH_MOD
+	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 8
 	melee_damage_upper = 10
 	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
@@ -245,8 +245,8 @@
 	desc = "A basic Gunner of the Hand of Daskvey, fervent and ready to fight, their weapon sprays waves of lead to any that would harm those that they hold dear."
 	icon_state = "psisolder_hm_smg"
 	icon_living = "psisolder_hm_smg"
-	maxHealth = 250
-	health = 250
+	maxHealth = 250 * DVEY_HEALTH_MOD
+	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 8
 	melee_damage_upper = 10
 	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
@@ -278,8 +278,8 @@
 
 	icon_state = "psisolder_hm_rifle"
 	icon_living = "psisolder_hm_rifle"
-	maxHealth = 250
-	health = 250
+	maxHealth = 250 * DVEY_HEALTH_MOD
+	health = 250 * DVEY_HEALTH_MOD
 	melee_damage_lower = 8
 	melee_damage_upper = 10
 	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
@@ -309,8 +309,8 @@
 	desc = "A soul of strength and integrity, recovered from the ravages laid upon it. Outfitted in heavy armor, it protects those in its shadow with unbending steel, for they are the wall that holds back any that seek to harm their kin."
 	icon_state = "psi_juggernaut_glass_Shield"
 	icon_living = "psi_juggernaut_glass_Shield"
-	maxHealth = 300
-	health = 300
+	maxHealth = 300 * DVEY_HEALTH_MOD
+	health = 300 * DVEY_HEALTH_MOD
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 	emote_see = list("looks left then right.", "breaths heavily.", "adjusts their armour.")
@@ -341,8 +341,8 @@
 	desc = "A soul of strength and integrity, recovered from the ravages laid upon it. Outfitted in heavy armor, it protects those in its shadow with unwavering confidence, for they know what failure means."
 	icon_state = "psi_juggernaut_glass_halberd"
 	icon_living = "psi_juggernaut_glass_halberd"
-	maxHealth = 280
-	health = 280
+	maxHealth = 280 * DVEY_HEALTH_MOD
+	health = 280 * DVEY_HEALTH_MOD
 	melee_damage_lower = 33
 	melee_damage_upper = 33
 	emote_see = list("looks left then right", "breaths heavilly", "adjusts their armour")
@@ -360,8 +360,8 @@
 	desc = "A soul recently uplifted by the Hand of Daskvey, still lost and recovering from its pains, they find themselves lost in a trance of forgotten memories."
 	icon_state = "psion_h"
 	icon_living = "psion_h"
-	maxHealth = 150
-	health = 150
+	maxHealth = 150 * DVEY_HEALTH_MOD
+	health = 150 * DVEY_HEALTH_MOD
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	emote_see = list("looks left then right.", "breathes softly.", "adjusts their robes.")
@@ -379,8 +379,8 @@
 	desc = "A soul reformed by the Hand of Daskvey, they spend their time occupied with daily routine, trying to fend off the insanity of their own predicament, while better learning their new powers."
 	icon_state = "psion_v"
 	icon_living = "psion_v"
-	maxHealth = 150
-	health = 150
+	maxHealth = 150 * DVEY_HEALTH_MOD
+	health = 150 * DVEY_HEALTH_MOD
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	emote_see = list("looks left then right.", "breathes softly.", "adjusts their robes.")
@@ -419,8 +419,8 @@
 	desc = "A master of the mind, reformed and guided true by the Hand of Daskvey. The members of the Hands form the parties of preach leaders, and assistants to the acolytes. Their knowledge of psionics is of a scholarly level."
 	icon_state = "psion_v_master"
 	icon_living = "psion_v_master"
-	maxHealth = 150
-	health = 150
+	maxHealth = 150 * DVEY_HEALTH_MOD
+	health = 150 * DVEY_HEALTH_MOD
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	emote_see = list("looks left then right.", "breathes softly.", "adjusts their robes.")

@@ -13,8 +13,8 @@
 	phaser = FALSE
 	psionic_respawn = FALSE
 
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 1000 * PSIMOB_HEALTH_MOD
+	health = 1000 * PSIMOB_HEALTH_MOD
 
 	//Good stats baseline in case admins dont edit these
 	armor = list(melee = 15, bullet = 7, energy = 7, bomb = 20, bio = 50, rad = 100, agony = 100)

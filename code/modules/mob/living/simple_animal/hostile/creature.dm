@@ -111,8 +111,8 @@
 	icon = 'icons/mob/mobs-monster.dmi'
 	speak_emote = list("gibbers")
 	icon_state = "devil"
-	health = 120
-	maxHealth = 120
+	health = 120 * CAVEMOB_HEALTH_MOD
+	maxHealth = 120 * CAVEMOB_HEALTH_MOD
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	attacktext = "chomped"

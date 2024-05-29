@@ -62,8 +62,8 @@
 
 	reload_message = "picks up a rock!"
 
-	maxHealth = 35 //Glass cannon
-	health = 35
+	maxHealth = 35 * VOXBIRD_HEALTH_MOD //Glass cannon
+	health = 35 * VOXBIRD_HEALTH_MOD
 
 /mob/living/carbon/superior_animal/vox/hider/UnarmedAttack()
 	. = ..()

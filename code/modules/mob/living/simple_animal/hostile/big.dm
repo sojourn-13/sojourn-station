@@ -42,8 +42,8 @@
 
 	mob_size = MOB_LARGE
 
-	maxHealth = 550
-	health = 550
+	maxHealth = 550 * MEGAFAUNA_HEALTH_MOD
+	health = 550 * MEGAFAUNA_HEALTH_MOD
 	melee_damage_lower = 35
 	melee_damage_upper = 40
 
@@ -85,8 +85,8 @@
 	icon = 'icons/mob/64x64.dmi'
 	icon_state = "chunks"
 	icon_dead = "deathclaw_dead"
-	maxHealth = 500
-	health = 500
+	maxHealth = 500 * MEGAFAUNA_HEALTH_MOD
+	health = 500 * MEGAFAUNA_HEALTH_MOD
 	melee_damage_lower = 30
 	melee_damage_upper = 40
 	meat_amount = 8
@@ -199,8 +199,8 @@
 	icon_dead = "arachnid_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	maxHealth = 300
-	health = 300
+	maxHealth = 300 * MEGAFAUNA_HEALTH_MOD
+	health = 300 * MEGAFAUNA_HEALTH_MOD
 	move_to_delay = 2
 	turns_per_move = 2
 	vision_range = 5
@@ -232,8 +232,8 @@
 	icon_dead = "arachnid_daemon_dead"
 	melee_damage_lower = 40
 	melee_damage_upper = 60
-	maxHealth = 450
-	health = 450
+	maxHealth = 450 * MEGAFAUNA_HEALTH_MOD
+	health = 450 * MEGAFAUNA_HEALTH_MOD
 	move_to_delay = 4
 	turns_per_move = 4
 	vision_range = 8
@@ -272,8 +272,8 @@
 	icon_dead = "leaper_dead"
 	melee_damage_lower = 50
 	melee_damage_upper = 60
-	maxHealth = 600
-	health = 600
+	maxHealth = 600 * MEGAFAUNA_HEALTH_MOD
+	health = 600 * MEGAFAUNA_HEALTH_MOD
 	move_to_delay = 4
 	turns_per_move = 4
 	vision_range = 16
@@ -325,8 +325,8 @@
 	icon_dead = "hellpig_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 45
-	maxHealth = 750
-	health = 750
+	maxHealth = 750 * MEGAFAUNA_HEALTH_MOD
+	health = 750 * MEGAFAUNA_HEALTH_MOD
 	move_to_delay = 4
 	turns_per_move = 4
 	vision_range = 16
@@ -357,8 +357,8 @@
 	icon_dead = "wendigo_dead"
 	melee_damage_lower = 25
 	melee_damage_upper = 35
-	maxHealth = 600
-	health = 600
+	maxHealth = 600 * MEGAFAUNA_HEALTH_MOD
+	health = 600 * MEGAFAUNA_HEALTH_MOD
 	move_to_delay = 2
 	turns_per_move = 6
 	speak_emote = list("snarls!", "jerks erratically.")
@@ -379,8 +379,8 @@
 	icon_dead = "slepnir_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	maxHealth = 550
-	health = 550
+	maxHealth = 550 * MEGAFAUNA_HEALTH_MOD
+	health = 550 * MEGAFAUNA_HEALTH_MOD
 	vision_range = 8
 	aggro_vision_range = 16
 	move_to_delay = 1

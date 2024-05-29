@@ -8,8 +8,8 @@
 	icon_state = "voidwolf_melee"
 	icon_dead = "voidwolf_melee_dead"
 	stop_automated_movement_when_pulled = 0
-	maxHealth = 125
-	health = 125
+	maxHealth = 125 * VOIDWOLF_HEALTH_MOD
+	health = 125 * VOIDWOLF_HEALTH_MOD
 	melee_damage_lower = 30
 	melee_damage_upper = 30
 
@@ -117,8 +117,8 @@
 	projectilesound = 'sound/weapons/energy/laser.ogg'
 	melee_damage_lower = 10 //We dont like melee
 	melee_damage_upper = 15
-	maxHealth = 75
-	health = 75
+	maxHealth = 75 * VOIDWOLF_HEALTH_MOD
+	health = 75 * VOIDWOLF_HEALTH_MOD
 	ranged = TRUE
 	rapid = TRUE
 	rapid_fire_shooting_amount = 3
@@ -188,8 +188,8 @@
 	icon_dead = "voidwolfcap_dead"
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	maxHealth = 150
-	health = 150
+	maxHealth = 150 * VOIDWOLF_HEALTH_MOD
+	health = 150 * VOIDWOLF_HEALTH_MOD
 	ranged_cooldown = 3
 	ranged = TRUE
 	rapid = FALSE

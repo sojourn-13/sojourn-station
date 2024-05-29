@@ -4,8 +4,8 @@
 	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "melee"
 	icon_dead = "melee_broken"
-	health = 50
-	maxHealth = 50
+	health = 50 * REPUBLICON_HEALTH_MOD
+	maxHealth = 50 * REPUBLICON_HEALTH_MOD
 	melee_damage_lower = 5
 	melee_damage_upper = 13
 	attacktext = "sawed"
@@ -72,8 +72,8 @@
 	icon = 'icons/mob/mobs-monster.dmi'
 	icon_state = "republicon"
 	icon_dead = "republicon_dead"
-	health = 75
-	maxHealth = 75
+	health = 75 * REPUBLICON_HEALTH_MOD
+	maxHealth = 75 * REPUBLICON_HEALTH_MOD
 	melee_damage_lower = 15
 	melee_damage_upper = 25
 	attacktext = "clawed"
@@ -150,8 +150,8 @@
 	armor = list(melee = 3, bullet = 2, energy = 5, bomb = 25, bio = 0, rad = 25)
 
 
-	health = 450
-	maxHealth = 450
+	health = 450 * REPUBLICON_HEALTH_MOD
+	maxHealth = 450 * REPUBLICON_HEALTH_MOD
 	attacktext = "sliced"
 	faction = "hivebot"
 	viewRange = 14

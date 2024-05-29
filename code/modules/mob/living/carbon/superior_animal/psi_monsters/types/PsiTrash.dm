@@ -25,8 +25,8 @@
 	icon_state = "arl"
 	icon_living = "arl"
 
-	maxHealth = 75
-	health = 75
+	maxHealth = 75 * PSIMOB_HEALTH_MOD
+	health = 75 * PSIMOB_HEALTH_MOD
 	melee_damage_lower = 12
 	melee_damage_upper = 14
 	emote_see = list("garbles inane speech.", "howls with laughter!", "growls foul unintelligible words.")
@@ -41,8 +41,8 @@
 	icon_state = "parasite"
 	icon_living = "parasite"
 
-	maxHealth = 110
-	health = 110
+	maxHealth = 110 * PSIMOB_HEALTH_MOD
+	health = 110 * PSIMOB_HEALTH_MOD
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	armor_divisor = 1.2

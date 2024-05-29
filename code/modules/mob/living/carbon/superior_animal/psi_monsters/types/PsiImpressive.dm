@@ -5,8 +5,8 @@
 	icon_state = "vargo"
 	icon_living = "vargo"
 
-	maxHealth = 800
-	health = 800
+	maxHealth = 800 * PSIMOB_HEALTH_MOD
+	health = 800 * PSIMOB_HEALTH_MOD
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	melee_damage_lower = 30
 	melee_damage_upper = 40
@@ -26,8 +26,8 @@
 	icon_state = "eelo"
 	icon_living = "eelo"
 
-	maxHealth = 400
-	health = 400
+	maxHealth = 400 * PSIMOB_HEALTH_MOD
+	health = 400 * PSIMOB_HEALTH_MOD
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	emote_see = list("whirls about, its massive singular eye spasming,", "suddenly halts, its singular pupil dilating!", "whistles a small tune...")
@@ -48,8 +48,8 @@
 	icon_state = "guardA"
 	icon_living = "guardA"
 
-	maxHealth = 600
-	health = 600
+	maxHealth = 600 * PSIMOB_HEALTH_MOD
+	health = 600 * PSIMOB_HEALTH_MOD
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	emote_see = list("crackles and pops as its head burns!", "looses a haunting scream!", "claws at its head, trying to put out the flames!")
@@ -69,8 +69,8 @@
 	icon_state = "farartbot"
 	icon_living = "farartbot"
 	life_cycles_before_sleep = 60
-	maxHealth = 800
-	health = 800
+	maxHealth = 800 * PSIMOB_HEALTH_MOD
+	health = 800 * PSIMOB_HEALTH_MOD
 	attack_sound = 'sound/xenomorph/alien_footstep_charge1.ogg'
 	melee_damage_lower = 30
 	melee_damage_upper = 40
@@ -90,8 +90,8 @@
 	icon_state = "oormat"
 	icon_living = "oormat"
 
-	maxHealth = 800
-	health = 800
+	maxHealth = 800 * PSIMOB_HEALTH_MOD
+	health = 800 * PSIMOB_HEALTH_MOD
 	chameleon_skill = 10
 	healing_factor = 10
 	pixel_x = 0
@@ -113,8 +113,8 @@
 	icon = 'icons/mob/psi_monsters.dmi'
 	icon_state = "hyper"
 	icon_living = "hyper"
-	maxHealth = 1250
-	health = 1250
+	maxHealth = 1250 * PSIMOB_HEALTH_MOD
+	health = 1250 * PSIMOB_HEALTH_MOD
 	knockdown_odds = 30
 	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/weapons/always_spawn)
 	armor_divisor = 4

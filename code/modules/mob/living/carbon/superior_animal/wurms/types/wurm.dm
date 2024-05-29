@@ -141,8 +141,8 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	projectiletype = /obj/item/projectile/goo
 
 //Health related variables
-	maxHealth = WURM_HEALTH_LOW
-	health = WURM_HEALTH_LOW
+	maxHealth = WURM_HEALTH_LOW * CAVEMOB_HEALTH_MOD
+	health = WURM_HEALTH_LOW * CAVEMOB_HEALTH_MOD
 
 //Movement related variables
 	move_to_delay = WURM_SPEED_MED
@@ -167,8 +167,8 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	icon_living = "worm"
 
 //Health related variables
-	maxHealth = WURM_HEALTH_HIGH
-	health = WURM_HEALTH_HIGH
+	maxHealth = WURM_HEALTH_HIGH * CAVEMOB_HEALTH_MOD
+	health = WURM_HEALTH_HIGH * CAVEMOB_HEALTH_MOD
 
 //Movement related variables
 	move_to_delay = WURM_SPEED_SLUG
@@ -193,8 +193,8 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	icon_living = "worm"
 
 //Health related variables
-	maxHealth = WURM_HEALTH_MED
-	health = WURM_HEALTH_MED
+	maxHealth = WURM_HEALTH_MED * CAVEMOB_HEALTH_MOD
+	health = WURM_HEALTH_MED * CAVEMOB_HEALTH_MOD
 
 //Movement related variables
 	move_to_delay = WURM_SPEED_HIGH
@@ -220,8 +220,8 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	icon_living = "worm"
 
 //Health related variables
-	maxHealth = WURM_HEALTH_HIGH
-	health = WURM_HEALTH_HIGH
+	maxHealth = WURM_HEALTH_HIGH * CAVEMOB_HEALTH_MOD
+	health = WURM_HEALTH_HIGH * CAVEMOB_HEALTH_MOD
 
 //Movement related variables
 	move_to_delay = WURM_SPEED_SLUG
@@ -249,8 +249,8 @@ GLOBAL_LIST_INIT(wurms_special, list(/mob/living/carbon/superior_animal/wurm/osm
 	destroy_surroundings = FALSE
 
 //Health related variables
-	maxHealth = WURM_HEALTH_HIGH
-	health = WURM_HEALTH_HIGH
+	maxHealth = WURM_HEALTH_HIGH * CAVEMOB_HEALTH_MOD
+	health = WURM_HEALTH_HIGH * CAVEMOB_HEALTH_MOD
 
 //Movement related variables
 	move_to_delay = WURM_SPEED_SLUG
