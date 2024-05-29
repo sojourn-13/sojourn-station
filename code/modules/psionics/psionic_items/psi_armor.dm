@@ -215,10 +215,13 @@
 	color = "#5B0E4F" //spooooky!!!!!
 	matter = list()
 
+//Small intraction you can do!
+//Get the mask, level up to stat cap, take it off, proofit!
+
 /obj/item/clothing/mask/deepmaints_debuff/dropped()
 	..()
 	if(!pointremoved)
-		victim.stats.changeStat(stat_to_change, -stat_to_change)
+		victim.stats.changeStat_withcap(stat_to_change, -pointamounts)
 		pointremoved = TRUE
 	victim.sanity.onPsyDamage(damage_to_sanity)
 	spawn(2)
@@ -228,7 +231,7 @@
 	.=..()
 	victim = M
 	if(!pointgranted)
-		victim.stats.changeStat(stat_to_change, stat_to_change)
+		victim.stats.changeStat_withcap(stat_to_change, pointamounts)
 		pointgranted = 1
 
 /obj/item/clothing/mask/deepmaints_debuff/angry
