@@ -227,7 +227,7 @@ SUBSYSTEM_DEF(trade)
 		selling_price = price * station.markdown
 
 	if(selling_price > buying_price)
-		selling_price -= selling_price * station.markdown
+		selling_price = buying_price * station.markdown
 
 	. = selling_price
 
