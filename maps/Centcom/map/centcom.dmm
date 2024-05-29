@@ -539,19 +539,12 @@
 /obj/effect/shuttle_landmark/transit/mercshuttle_transit,
 /turf/space/transit/north/shuttlespace_ns5,
 /area/space)
-"bO" = (
-/obj/effect/window_lwall_spawn/plasma/reinforced,
-/obj/machinery/door/blast/regular/open{
-	id = "syndieshutters"
-	},
-/turf/space,
-/area/shuttle/mercshuttle_area)
 "bP" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /obj/machinery/door/blast/regular/open{
 	id = "syndieshutters"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating,
 /area/shuttle/mercshuttle_area)
 "bQ" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
@@ -559,7 +552,7 @@
 	id = "syndieshutters"
 	},
 /obj/effect/shuttle_landmark/mercshuttle_home,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating,
 /area/shuttle/mercshuttle_area)
 "bR" = (
 /obj/item/modular_computer/console/preset/security,
@@ -946,13 +939,6 @@
 /obj/machinery/computer/shuttle_control/multi/mercshuttle,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/shuttle/mercshuttle_area)
-"di" = (
-/obj/machinery/door/blast/regular/open{
-	id = "shipjackshutters"
-	},
-/obj/effect/window_lwall_spawn/plasma/reinforced,
-/turf/simulated/floor/plating/under,
-/area/shuttle/skipjack_area)
 "dj" = (
 /obj/machinery/light{
 	dir = 1
@@ -1000,7 +986,7 @@
 	},
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /obj/effect/shuttle_landmark/skipjack_home,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating,
 /area/shuttle/skipjack_area)
 "dr" = (
 /obj/machinery/door/airlock/hatch{
@@ -2716,7 +2702,7 @@
 /area/shuttle/skipjack_area)
 "hP" = (
 /obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating,
 /area/shuttle/skipjack_area)
 "hQ" = (
 /obj/machinery/vending/hydroseeds,
@@ -3784,7 +3770,7 @@
 /area/shuttle/mercshuttle_area)
 "kA" = (
 /obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating,
 /area/shuttle/mercshuttle_area)
 "kB" = (
 /obj/machinery/door/window{
@@ -4204,7 +4190,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "syndieshutters_infirmary"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating,
 /area/shuttle/mercshuttle_area)
 "lt" = (
 /obj/effect/floor_decal/industrial/loading{
@@ -4252,7 +4238,7 @@
 /obj/machinery/door/blast/regular/open{
 	id = "syndieshutters_workshop"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating,
 /area/shuttle/mercshuttle_area)
 "lB" = (
 /obj/machinery/bodyscanner,
@@ -5063,7 +5049,7 @@
 /obj/structure/window/reinforced/crescent{
 	dir = 1
 	},
-/turf/simulated/floor/airless,
+/turf/simulated/floor/plating,
 /area/shuttle/mercshuttle_area)
 "nH" = (
 /obj/item/robot_parts/head,
@@ -5489,8 +5475,7 @@
 	id = "shipjackshutters"
 	},
 /obj/effect/window_lwall_spawn/plasma/reinforced,
-/turf/space,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/plating,
 /area/shuttle/skipjack_area)
 "oY" = (
 /obj/machinery/teleport/station{
@@ -17493,8 +17478,8 @@ dg
 dg
 dg
 dg
-di
-di
+oW
+oW
 dg
 dg
 dg
@@ -18701,7 +18686,7 @@ qH
 qH
 qH
 oW
-di
+oW
 dg
 dg
 dg
@@ -18901,8 +18886,8 @@ qH
 qH
 qH
 qH
-di
-di
+oW
+oW
 ee
 gb
 gw
@@ -19103,7 +19088,7 @@ qH
 qH
 qH
 qH
-di
+oW
 dv
 ef
 ef
@@ -19305,7 +19290,7 @@ qH
 qH
 qH
 qH
-di
+oW
 dw
 em
 ef
@@ -19709,7 +19694,7 @@ qH
 qH
 qH
 qH
-di
+oW
 dw
 em
 ef
@@ -19911,7 +19896,7 @@ qH
 qH
 qH
 qH
-di
+oW
 gj
 ef
 ef
@@ -20113,8 +20098,8 @@ qH
 qH
 qH
 qH
-di
-di
+oW
+oW
 ep
 gi
 gN
@@ -20317,7 +20302,7 @@ qH
 qH
 qH
 oW
-di
+oW
 dg
 dg
 dg
@@ -21533,8 +21518,8 @@ dg
 dg
 dg
 dg
-di
-di
+oW
+oW
 dg
 dg
 dg
@@ -32582,7 +32567,7 @@ qH
 qH
 qH
 qH
-bO
+bP
 bP
 ez
 fE
@@ -33390,7 +33375,7 @@ qH
 qH
 qH
 qH
-bO
+bP
 bP
 hp
 fE

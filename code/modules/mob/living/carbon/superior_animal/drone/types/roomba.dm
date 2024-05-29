@@ -9,7 +9,6 @@
 	maxHealth = 100
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
-	can_buckle = TRUE
 	mob_size = MOB_SMALL
 	stop_automated_movement_when_pulled = TRUE
 	density = FALSE
