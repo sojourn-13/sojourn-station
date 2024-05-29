@@ -141,7 +141,7 @@
 
 		if(GLOB.chaos_level >= 2) //Unlocks early as these smucks are trash
 			var/turf/T = get_step(M, RD)
-			if(T)
+			if(T && !QDELETED(src)) //Safty so we dont teleport out of quedel
 				forceMove(T)
 
 //thought and memory police! These two work together at chaos level 2 making them quite tricky
@@ -178,10 +178,50 @@
 					if(psionic_mask)
 						H.replace_in_slot(new psionic_mask, slot_wear_mask, skip_covering_check = TRUE)
 
-				else
-					if(istype(H.wear_mask, /obj/item/clothing) && !istype(H.wear_mask, /obj/item/clothing/mask/deepmaints_debuff)) //Saved by a masked item!
+				else //Small note IS_OPIFEX **will** die without their n2, so they do not have this risk at all.
+					if(istype(H.wear_mask, /obj/item/clothing) && !istype(H.wear_mask, /obj/item/clothing/mask/deepmaints_debuff) && H.species.reagent_tag != IS_OPIFEX) //Saved by a masked item!
 						var/obj/item/clothing/mask = H.wear_mask
 						if(mask.canremove || mask.psi_blocking <= 0)
 							H.drop_from_inventory(mask)
 							visible_message(SPAN_DANGER("[src] peals off [H.name]'s [mask]!"))
+	. = ..()
+
+//The Cerebral crusher gets by far the most complex and silly fancy attacks.
+//If we have a shield, then we deal direct damage to it, trying to kill the shield as fast as possable!
+//If we are wielding an item? Unwield it
+//If we dont have any of the above, but still hold an item, drop it (respects can drop)
+/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher/UnarmedAttack(atom/A, proximity)
+	if(GLOB.chaos_level >= 2)
+		if(ishuman(A))
+			var/mob/living/carbon/human/H = A
+			var/knock_out_of_hand = TRUE
+			if(!H.psi_blocking > 0)
+				if(H.has_shield())
+					var/obj/item/shield/shield = H.has_shield()
+					visible_message(SPAN_DANGER("[src] render, and tears into [H.name]'s [shield]!"))
+					shield.adjustShieldDurability(-50, H)
+					knock_out_of_hand = FALSE
+
+				//Lots of checks for a seemingly simple task, unwielding a persons wielded weapon
+				var/right_hand_found = FALSE
+				var/left_hand_found = FALSE
+				if(H.l_hand)
+					left_hand_found = TRUE
+				if(H.r_hand)
+					right_hand_found = TRUE
+				if(right_hand_found && left_hand_found)
+					var/obj/item/wielded_r = H.r_hand
+					var/obj/item/wielded_l = H.l_hand
+					knock_out_of_hand = FALSE
+					if(!wielded_r.is_held_twohanded(wielded_r))
+						visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_r], making [H.name] unwield [wielded_r]!"))
+						wielded_r.unwield(H)
+					if(!wielded_l.is_held_twohanded(wielded_l))
+						visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_l], making [H.name] unwield [wielded_l]!"))
+						wielded_l.unwield(H)
+				if(knock_out_of_hand)
+					if(H.get_active_hand())
+						var/obj/fumble = H.get_active_hand()
+						H.drop_from_inventory(fumble)
+						visible_message(SPAN_DANGER("[src] knocks [fumble] out of [H.name]'s grasp!"))
 	. = ..()
