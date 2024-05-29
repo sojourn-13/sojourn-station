@@ -94727,10 +94727,10 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/workshop)
 "tyH" = (
-/obj/machinery/vending/theomat,
 /obj/structure/sign/faction/neotheology_cross/gold{
 	pixel_x = 32
 	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/absolutism/hallways)
 "tyI" = (
