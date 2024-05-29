@@ -82,6 +82,7 @@
 @include meta.load-css('./interfaces/Turbolift.scss');
 @include meta.load-css('./interfaces/Canister.scss');
 @include meta.load-css('./interfaces/SuitStorageUnit.scss');
+@include meta.load-css('./interfaces/IDCard.scss');
 
 // Layouts
 @include meta.load-css('./layouts/Layout.scss');
