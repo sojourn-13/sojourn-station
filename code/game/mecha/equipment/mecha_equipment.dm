@@ -18,6 +18,7 @@
 	var/salvageable = 1
 	var/required_type = /obj/mecha //may be either a type or a list of allowed types
 	var/harmful = 1 //for those tools that you cannot smack people with but still need to click on them to use, aka sleepers
+	embed_mult = 0 // Mech mounted equipment, shouldn't ever embed
 
 /obj/item/mecha_parts/mecha_equipment/Destroy()
 	if(chassis)
