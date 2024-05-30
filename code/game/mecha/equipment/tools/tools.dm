@@ -30,6 +30,7 @@
 	energy_drain = 10
 	tool_qualities = list(QUALITY_CLAMPING = 5,  QUALITY_HAMMERING = 30, QUALITY_PRYING = 30, QUALITY_BOLT_TURNING = 20, QUALITY_EXCAVATION = 20, QUALITY_SHOVELING = 15) // This is a literal industrial clamp
 	force = 20
+	armor_penetration = ARMOR_PEN_SHALLOW
 	var/obj/mecha/working/ripley/cargo_holder
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
@@ -103,6 +104,7 @@
 	energy_drain = 10
 	price_tag = 150
 	force = 30
+	armor_penetration = ARMOR_PEN_DEEP
 	structure_damage_factor = STRUCTURE_DAMAGE_HEAVY
 	tool_qualities = list(QUALITY_DIGGING = 60)
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
@@ -942,6 +944,7 @@
 	equip_cooldown = 15
 	energy_drain = 0
 	force = 90 //Lmao, the mech sword deals 60
+	armor_penetration = ARMOR_PEN_EXTREME //This thing is hilarious, I'm just adding to it
 	var/obj/mecha/working/ripley/cargo_holder
 	required_type = list(/obj/mecha/working, /obj/mecha/combat, /obj/mecha/medical)
 
