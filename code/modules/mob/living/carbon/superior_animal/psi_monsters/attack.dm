@@ -213,15 +213,23 @@
 					var/obj/item/wielded_r = H.r_hand
 					var/obj/item/wielded_l = H.l_hand
 					knock_out_of_hand = FALSE
-					if(!wielded_r.is_held_twohanded(wielded_r))
-						visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_r], making [H.name] unwield [wielded_r]!"))
-						wielded_r.unwield(H)
-					if(!wielded_l.is_held_twohanded(wielded_l))
-						visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_l], making [H.name] unwield [wielded_l]!"))
-						wielded_l.unwield(H)
-				if(knock_out_of_hand)
+					if(GLOB.chaos_level >= 3) //At level 3 it knocks items from a wielded state out of it!
+						if(!wielded_r.is_held_twohanded(wielded_r))
+							visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_r], making [H.name] unwield [wielded_r]!"))
+							wielded_r.unwield(H)
+						if(!wielded_l.is_held_twohanded(wielded_l))
+							visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_l], making [H.name] unwield [wielded_l]!"))
+							wielded_l.unwield(H)
+				if(knock_out_of_hand) //When not wielding an item we knock it out of your grasp!
 					if(H.get_active_hand())
 						var/obj/fumble = H.get_active_hand()
 						H.drop_from_inventory(fumble)
 						visible_message(SPAN_DANGER("[src] knocks [fumble] out of [H.name]'s grasp!"))
 	. = ..()
+
+//To see full affects go to the ai.dm for psi_monsters
+/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo/UnarmedAttack(atom/A, proximity)
+	if(ishuman(A))
+		var/mob/living/carbon/human/H = A
+		dir = reverse_direction(H.dir) //face to face comferation (required for how we handle being attacked)
+	..()
