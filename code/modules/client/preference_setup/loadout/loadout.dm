@@ -73,8 +73,12 @@ var/list/gear_datums = list()
 		// because they don't exist when we're sanitizing the gear during pref load
 		// so it'll make it impossible to save the slot
 		if(preference_mob && preference_mob.client)
-			if(G.ckey_whitelist && !(preference_mob.ckey in G.ckey_whitelist))
-				okay = FALSE
+			if(G.ckey_whitelist)
+				if(!islist(G.ckey_whitelist))
+					WARNING("[G.type] has a ckey_whitelist that is not a list!")
+					okay = FALSE
+				else if(!(preference_mob.ckey in G.ckey_whitelist))
+					okay = FALSE
 		if(!okay)
 			continue
 		if(max_cost && G.cost > max_cost)
