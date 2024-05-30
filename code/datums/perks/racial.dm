@@ -494,12 +494,12 @@
 
 /datum/perk/chitinarmor/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk -= 0.15 // Reduces total brute damage to +10% **taken** instead of +25%
+	holder.brute_mod_perk *= 0.80 // I need to know what type of stuff people were smoking before my change here
 	holder.mob_bomb_defense += 5
 	holder.falls_mod -= 0.2
 
 /datum/perk/chitinarmor/remove()
-	holder.brute_mod_perk += 0.15
+	holder.brute_mod_perk /= 0.80
 	holder.mob_bomb_defense -= 5
 	holder.falls_mod += 0.2
 	..()

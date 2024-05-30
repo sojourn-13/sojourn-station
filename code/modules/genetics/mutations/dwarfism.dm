@@ -5,8 +5,8 @@
 	desc = "Causes you to become small. VERY small, and more fragile."
 	gain_text = "You feel your body getting smaller, and weaker..."
 	var/old_size
-	var/brute_mod_delta
-	var/oxy_mod_delta
+	//var/brute_mod_delta
+	//var/oxy_mod_delta
 
 /datum/genetics/mutation/dwarfism/onPlayerImplant()
 	if(!..())
@@ -21,27 +21,29 @@
 	human_holder.stats.changeStat(STAT_ROB, -20)
 	human_holder.stats.changeStat(STAT_TGH, -15)
 
-	brute_mod_delta = (human_holder.brute_mod_perk * 0.2)
-	human_holder.brute_mod_perk += brute_mod_delta
+	//brute_mod_delta = (human_holder.brute_mod_perk * 0.2)
+	//human_holder.brute_mod_perk += brute_mod_delta
+	human_holder.brute_mod_perk *= 1.2
 
 	//Less need for air
-	oxy_mod_delta = (human_holder.oxy_mod_perk * 0.2)
-	human_holder.oxy_mod_perk -= oxy_mod_delta
-
+	//oxy_mod_delta = (human_holder.oxy_mod_perk * 0.2)
+	//human_holder.oxy_mod_perk -= oxy_mod_delta
+	human_holder.oxy_mod_perk *= 0.80
 
 /datum/genetics/mutation/dwarfism/onPlayerRemove()
 	if(!..())
 		return
 	var/mob/living/carbon/human/human_holder = container.holder
-	//Smaller
+	//Bigger
 	human_holder.scale_effect = old_size
 	human_holder.update_icons()
 
-	//Weaker
+	//Stronger
 	human_holder.stats.changeStat(STAT_ROB, 20)
 	human_holder.stats.changeStat(STAT_TGH, 15)
 
-	human_holder.brute_mod_perk -= brute_mod_delta
+	//human_holder.brute_mod_perk -= brute_mod_delta
+	human_holder.brute_mod_perk /= 1.2
 
-	//Need less air
-	human_holder.oxy_mod_perk += oxy_mod_delta
+	//We are normal again, breath more
+	human_holder.oxy_mod_perk /= 0.8
