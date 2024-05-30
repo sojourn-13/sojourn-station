@@ -90,6 +90,9 @@
 	return 1
 
 /obj/item/mecha_parts/mecha_equipment/proc/action(atom/target, mob/living/user)
+	if(!chassis) //If you're not in the mech
+		to_chat(user, SPAN_DANGER("You cannot use this tool by hand!"))
+		return FALSE
 	return
 
 /obj/item/mecha_parts/mecha_equipment/proc/attack_object(obj/T, mob/living/user) // To prevent having mechs attacking other mechs accidentally attach their weapons on the opposing mech
