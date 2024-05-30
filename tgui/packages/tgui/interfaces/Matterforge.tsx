@@ -147,18 +147,17 @@ export const AutolatheItem = (props: AutolatheItemProps) => {
           <Stack align="center">
             {!config.window.toaster && (
               <Stack.Item>
-                <Image
-                  width="24px"
-                  height="24px"
-                  src={design.icon}
-                  style={{
-                    verticalAlign: 'middle',
-                    objectFit: 'cover',
-                    margin: '4px',
-                    backgroundColor: 'black',
-                    border: '1px solid #3e6189',
-                  }}
-                />
+                <Stack
+                  width="32px"
+                  height="32px"
+                  align="center"
+                  justify="center"
+                  backgroundColor="black"
+                  overflow="hidden"
+                  style={{ border: '1px solid #3e6189 ' }}
+                >
+                  <Stack.Item className={design.icon} />
+                </Stack>
               </Stack.Item>
             )}
             <Stack.Item grow>{design.name}</Stack.Item>

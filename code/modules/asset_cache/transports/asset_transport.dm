@@ -1,6 +1,3 @@
-/// When sending mutiple assets, how many before we give the client a quaint little sending resources message
-#define ASSET_CACHE_TELL_CLIENT_AMOUNT 8
-
 /// Base browse_rsc asset transport
 /datum/asset_transport
 	var/name = "Simple browse_rsc asset transport"
@@ -21,19 +18,25 @@
 	preload = assets.Copy()
 	// if (!CONFIG_GET(flag/asset_simple_preload))
 	// 	return
-	// for(var/client/C in GLOB.clients)
-	// 	addtimer(CALLBACK(src, .proc/send_assets_slow, C, preload), 1 SECONDS)
+	for(var/client/C in clients)
+		addtimer(CALLBACK(src, .proc/send_assets_slow, C, preload), 1 SECONDS)
 
 
-/// Register a browser asset with the asset cache system
-/// asset_name - the identifier of the asset
-/// asset - the actual asset file (or an asset_cache_item datum)
-/// returns a /datum/asset_cache_item.
-/// mutiple calls to register the same asset under the same asset_name return the same datum
-/datum/asset_transport/proc/register_asset(asset_name, asset)
+/**
+ * Register a browser asset with the asset cache system.
+ * returns a /datum/asset_cache_item.
+ * mutiple calls to register the same asset under the same asset_name return the same datum.
+ *
+ * Arguments:
+ * * asset_name - the identifier of the asset.
+ * * asset - the actual asset file (or an asset_cache_item datum).
+ * * file_hash - optional, a hash of the contents of the asset files contents. used so asset_cache_item doesnt have to hash it again
+ * * dmi_file_path - optional, means that the given asset is from the rsc and thus we dont need to do some expensive operations
+ */
+/datum/asset_transport/proc/register_asset(asset_name, asset, file_hash, dmi_file_path)
 	var/datum/asset_cache_item/ACI = asset
 	if (!istype(ACI))
-		ACI = new(asset_name, asset)
+		ACI = new(asset_name, asset, file_hash, dmi_file_path)
 		if (!ACI || !ACI.hash)
 			CRASH("ERROR: Invalid asset: [asset_name]:[asset]:[ACI]")
 	if (SSassets.cache[asset_name])
@@ -42,10 +45,9 @@
 		OACI.namespace_parent = ACI.namespace_parent = (ACI.namespace_parent | OACI.namespace_parent)
 		OACI.namespace = OACI.namespace || ACI.namespace
 		if (OACI.hash != ACI.hash)
-			/*var/error_msg = "ERROR: new asset added to the asset cache with the same name as another asset: [asset_name] existing asset hash: [OACI.hash] new asset hash:[ACI.hash]" // commented out because 800 MB logs crash PCs
+			var/error_msg = "ERROR: new asset added to the asset cache with the same name as another asset: [asset_name] existing asset hash: [OACI.hash] new asset hash:[ACI.hash]"
 			stack_trace(error_msg)
-			log_asset(error_msg) */
-			return TRUE
+			log_asset(error_msg)
 		else
 			if (length(ACI.namespace))
 				return ACI
@@ -54,6 +56,10 @@
 	SSassets.cache[asset_name] = ACI
 	return ACI
 
+/// Immediately removes an asset from the asset cache.
+/datum/asset_transport/proc/unregister_asset(asset_name)
+	SSassets.cache[asset_name] = null
+	SSassets.cache.Remove(null)
 
 /// Returns a url for a given asset.
 /// asset_name - Name of the asset.
@@ -61,18 +67,18 @@
 /datum/asset_transport/proc/get_asset_url(asset_name, datum/asset_cache_item/asset_cache_item)
 	if (!istype(asset_cache_item))
 		asset_cache_item = SSassets.cache[asset_name]
-	if(!asset_cache_item)
-		return url_encode(asset_name)
+	if (!istype(asset_cache_item))
+		return null
 	// To ensure code that breaks on cdns breaks in local testing, we only
 	// use the normal filename on legacy assets and name space assets.
 	var/keep_local_name = dont_mutate_filenames \
 		|| asset_cache_item.legacy \
 		|| asset_cache_item.keep_local_name \
 		|| (asset_cache_item.namespace && !asset_cache_item.namespace_parent)
+	// Runtime note: "null.legacy" happens, but that's because a client requested it while the server is still setting up. not that an issue. if it happens, check the comment at "Chat" sprite asset.
 	if (keep_local_name)
 		return url_encode(asset_cache_item.name)
 	return url_encode("asset.[asset_cache_item.hash][asset_cache_item.ext]")
-
 
 /// Sends a list of browser assets to a client
 /// client - a client or mob
@@ -87,7 +93,7 @@
 			else //no stacktrace because this will mainly happen because the client went away
 				return
 		else
-			CRASH("Invalid argument: client: `[client]`")
+			CRASH("Invalid client passed to send_assets: [client] ([REF(client)])")
 	if (!islist(asset_list))
 		asset_list = list(asset_list)
 	var/list/unreceived = list()
@@ -140,7 +146,7 @@
 
 
 /// Precache files without clogging up the browse() queue, used for passively sending files on connection start.
-/datum/asset_transport/proc/send_assets_slow(client/client, list/files, filerate = 3)
+/datum/asset_transport/proc/send_assets_slow(client/client, list/files, filerate = SLOW_ASSET_SEND_RATE)
 	var/startingfilerate = filerate
 	for (var/file in files)
 		if (!client)
