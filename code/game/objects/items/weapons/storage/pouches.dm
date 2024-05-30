@@ -16,9 +16,9 @@
 	attack_verb = list("pouched")
 
 	var/sliding_behavior = FALSE
-	var/interal_bulk = 0 //How much are inside items grows are size
+	var/internal_bulk = 0 //How much are inside items grows are size
 	var/used_storage_space = 0 //How much space is already used in the container, used for growing extra bulk
-	var/free_space_persent = 0 //0 means 100% free space, well 100% means no free space
+	var/free_space_percent = 0 //0 means 100% free space, well 100% means no free space
 	var/plus_extra_bulk = 0    //Used for adding bulk to the item, as the normal var gets overwrote
 
 /obj/item/storage/pouch/verb/toggle_slide()
@@ -61,9 +61,9 @@
 //Little complex at glance but shockingly simple!
 /obj/item/storage/pouch/proc/pouch_size_increase()
 	//Interal bulk is how much over-weight class you store it over with.
-	interal_bulk = 0
+	internal_bulk = 0
 	used_storage_space = 0
-	free_space_persent = 0
+	free_space_percent = 0
 
 	//Cycle through are contents and find everything ever
 	for(var/obj/item/I in contents)
@@ -71,23 +71,23 @@
 		over_filled = I.w_class + I.extra_bulk //Extrabulk for sake of calulations is insainly rough
 		used_storage_space += over_filled
 		if(over_filled > w_class) //If we are item is bigger then are pouch then we get get bigger!
-			interal_bulk += over_filled - w_class
+			internal_bulk += over_filled - w_class
 
 	if(used_storage_space) //Prevents devide by 0
-		free_space_persent = used_storage_space / max_storage_space //20 / 5 = 4
-		free_space_persent *= 100 //To get it to be base 100%
+		free_space_percent = used_storage_space / max_storage_space //20 / 5 = 4
+		free_space_percent *= 100 //To get it to be base 100%
 		//This **LOOKS** harsh but its not, unlike w_class these are lineral numbers not mulitied by silly hidden things
-		switch(free_space_persent)
+		switch(free_space_percent)
 			if(0 to 25)
-				interal_bulk += 1
+				internal_bulk += 1
 			if(25 to 50)
-				interal_bulk += 2
+				internal_bulk += 2
 			if(50 to 75)
-				interal_bulk += 3
+				internal_bulk += 3
 			if(75 to INFINITY)
-				interal_bulk += 4
+				internal_bulk += 4
 
-	extra_bulk = interal_bulk + plus_extra_bulk //This scaling means that if you mix in a-ok items with a few over-big ones they are not all stacking their mauls
+	extra_bulk = internal_bulk + plus_extra_bulk //This scaling means that if you mix in a-ok items with a few over-big ones they are not all stacking their mauls
 	if(extra_bulk < 0)
 		extra_bulk = 0
 	if(istype(loc, /obj/item/storage))
