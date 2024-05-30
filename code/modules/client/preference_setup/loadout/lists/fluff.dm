@@ -94,7 +94,7 @@
 	sort_category = "Fluff Items"
 	cost = 1
 
-/datum/gear/New()
+/datum/gear/fluff/New()
 	. = ..()
 	// no gear tweaks, they won't be carried through correctly because of modkits
 	gear_tweaks = list()
