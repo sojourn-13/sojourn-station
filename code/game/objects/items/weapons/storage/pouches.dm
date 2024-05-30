@@ -19,6 +19,7 @@
 	var/interal_bulk = 0 //How much are inside items grows are size
 	var/used_storage_space = 0 //How much space is already used in the container, used for growing extra bulk
 	var/free_space_persent = 0 //0 means 100% free space, well 100% means no free space
+	var/plus_extra_bulk = 0    //Used for adding bulk to the item, as the normal var gets overwrote
 
 /obj/item/storage/pouch/verb/toggle_slide()
 	set name = "Toggle Slide"
@@ -42,6 +43,10 @@
 		remove_from_storage(I, T)
 		usr.put_in_hands(I)
 		add_fingerprint(user)
+
+/obj/item/storage/pouch/Initialize(mapload)
+	..()
+	pouch_size_increase() //Do to plus_extra_bulk
 
 /obj/item/storage/pouch/handle_item_insertion(obj/item/W as obj, prevent_warning = FALSE, mob/user, suppress_warning = FALSE)
 	..()
@@ -71,17 +76,20 @@
 	if(used_storage_space) //Prevents devide by 0
 		free_space_persent = used_storage_space / max_storage_space //20 / 5 = 4
 		free_space_persent *= 100 //To get it to be base 100%
+		//This **LOOKS** harsh but its not, unlike w_class these are lineral numbers not mulitied by silly hidden things
 		switch(free_space_persent)
 			if(0 to 25)
-				interal_bulk += 0.5
-			if(25 to 50)
 				interal_bulk += 1
-			if(50 to 75)
-				interal_bulk += 1.5
-			if(75 to INFINITY)
+			if(25 to 50)
 				interal_bulk += 2
+			if(50 to 75)
+				interal_bulk += 3
+			if(75 to INFINITY)
+				interal_bulk += 4
 
-	extra_bulk = interal_bulk //This scaling means that if you mix in a-ok items with a few over-big ones they are not all stacking their mauls
+	extra_bulk = interal_bulk + plus_extra_bulk //This scaling means that if you mix in a-ok items with a few over-big ones they are not all stacking their mauls
+	if(extra_bulk < 0)
+		extra_bulk = 0
 	if(istype(loc, /obj/item/storage))
 		var/obj/item/storage/SO = loc
 		SO.refresh_all() //So we can see are items take up more space and prevent confusion
@@ -96,6 +104,7 @@
 	max_w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_BIOMATTER = 5)
 	level = BELOW_PLATING_LEVEL //We can hide under tiles :D
+	plus_extra_bulk = -3 //Small pouches have EVERY item scale with them, this is simply anti-scaling so that they are not useless
 
 /obj/item/storage/pouch/small_generic/purple
 	icon_state = "small_generic_p"
@@ -116,6 +125,7 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	price_tag = 400
 	level = BELOW_PLATING_LEVEL //As we can
+	plus_extra_bulk = 2 //Anti-quatom scaling with smaller items
 
 /obj/item/storage/pouch/medium_generic/leather
 	icon_state = "medium_leather"
@@ -140,6 +150,7 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_BIOMATTER = 20)
 	price_tag = 800
+	plus_extra_bulk = 4 //Anti-quatom scaling with smaller items
 
 obj/item/storage/pouch/large_generic/advmedic
 	desc = "A mini satchel. Can hold a fair bit, but it won't fit in your pocket. This one is well worn and reeks like the inside of a frontier-chemlab."
@@ -386,6 +397,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	storage_slots = 1
 	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
+	plus_extra_bulk = -1
 
 	can_hold = list(
 		/obj/item/gun/projectile/makarov,
@@ -509,6 +521,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_NORMAL
 	sliding_behavior = TRUE // It is by default a quickdraw quiver
+	plus_extra_bulk = -2
 
 	can_hold = list(
 		/obj/item/ammo_casing/arrow,
@@ -551,6 +564,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	w_class = ITEM_SIZE_SMALL
 	max_w_class = ITEM_SIZE_BULKY // Just in case a full stack won't fit.
 	sliding_behavior = TRUE // Quickdraw!
+	plus_extra_bulk = -2
 
 	can_hold = list(
 		/obj/item/stack/rods,
