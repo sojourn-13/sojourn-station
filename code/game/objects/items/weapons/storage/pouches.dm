@@ -81,11 +81,11 @@
 			if(0 to 25)
 				internal_bulk += 1
 			if(25 to 50)
-				internal_bulk += 2
+				internal_bulk += 1.5
 			if(50 to 75)
-				internal_bulk += 3
+				internal_bulk += 2
 			if(75 to INFINITY)
-				internal_bulk += 4
+				internal_bulk += 2.5
 
 	extra_bulk = internal_bulk + plus_extra_bulk //This scaling means that if you mix in a-ok items with a few over-big ones they are not all stacking their mauls
 	if(extra_bulk < 0)
