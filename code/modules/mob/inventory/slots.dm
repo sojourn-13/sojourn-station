@@ -137,6 +137,8 @@
 	req_organ = BP_HEAD
 	req_slot_flags = SLOT_EARS|SLOT_TWOEARS
 	update_proc = /mob/proc/update_inv_ears
+	max_w_class = ITEM_SIZE_TINY
+	resticted_items = list(/obj/item/storage/pouch)
 
 /datum/inventory_slot/ear/can_equip(obj/item/I, mob/living/carbon/human/owner, disable_warning)
 	if(I.slot_flags & SLOT_TWOEARS)
@@ -147,15 +149,11 @@
 /datum/inventory_slot/ear/left
 	name = "Left ear"
 	id = slot_l_ear
-	max_w_class = ITEM_SIZE_TINY
-	resticted_items = list(/obj/item/storage/pouch)
 
 /datum/inventory_slot/ear/right
 	name = "Right ear"
 	id = slot_r_ear
 	req_slot_flags = SLOT_EARS
-	max_w_class = ITEM_SIZE_TINY
-	resticted_items = list(/obj/item/storage/pouch)
 
 /datum/inventory_slot/glasses
 	name = "Glasses"
