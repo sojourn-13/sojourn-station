@@ -18,7 +18,6 @@
 
 	//Do a sort
 	var/datum/catalog/C = GLOB.catalogs[CATALOG_COOKING]
-	C.associated_template = "catalog_list_cooking.tmpl"
 	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_cook)
 
 //Because I want it to be EXTREMELY ORGANIZED.
@@ -67,7 +66,6 @@
 	C.add_entry(GLOB.all_catalog_entries_by_type[our_recipe.type])
 
 /datum/catalog_entry/cooking
-	associated_template = "catalog_entry_cooking.tmpl"
 	var/datum/cooking_with_jane/recipe/recipe
 
 /datum/catalog_entry/cooking/New(var/datum/cooking_with_jane/recipe/our_recipe)
@@ -75,7 +73,7 @@
 	title = our_recipe.name
 	recipe = our_recipe
 
-/datum/catalog_entry/cooking/catalog_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/cooking/catalog_ui_data(mob/user)
 	var/list/data = ..()
 	data["name"] = recipe.name
 	data["id"] = recipe.type
@@ -104,7 +102,7 @@
 	return data
 
 
-/datum/catalog_entry/cooking/nano_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/cooking/ui_data(mob/user)
 	var/list/data = ..()
 	data["name"] = recipe.name
 	data["id"] = recipe.type

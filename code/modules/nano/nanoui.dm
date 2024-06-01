@@ -223,19 +223,7 @@ nanoui is used to open and update nano browser uis
 	var/list/config_data = get_config_data()
 
 	var/list/send_data = list("config" = config_data)
-
-	if (!isnull(data))
-		var/list/types = parse_for_paths(data)
-
-		var/list/potential_catalog_data = list()
-		for(var/type in types)
-			var/datum/catalog_entry/E = get_catalog_entry(type)
-			if(E)
-				potential_catalog_data.Add(list(list("entry_name" = E.title, "entry_img_path" = E.image_path, "entry_type" = E.thing_type)))
-
-		send_data["potential_catalog_data"] = potential_catalog_data
-		send_data["data"] = data
-
+	send_data["data"] = data
 
 	return send_data
 

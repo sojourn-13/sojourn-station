@@ -1,3 +1,7 @@
+#define CATALOG_BROWSE_STAGE_LIST "list"
+#define CATALOG_BROWSE_STAGE_ENTRY "entry"
+#define CATALOG_BROWSE_STAGE_NONE null
+
 /datum/tgui_module/catalog
 	tgui_id = "Catalog"
 
@@ -80,9 +84,9 @@
 
 	switch(catalog_browse_stage)
 		if(CATALOG_BROWSE_STAGE_ENTRY)
-			data["selected_entry"] = selected_entry.nano_ui_data(user)
+			data["selected_entry"] = selected_entry.ui_data(user)
 		if(CATALOG_BROWSE_STAGE_LIST)
-			data += catalog.nano_ui_data(user, search_value = catalog_search)
+			data += catalog.ui_data(user, catalog_search)
 
 	return data
 

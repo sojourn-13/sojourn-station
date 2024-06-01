@@ -1,6 +1,6 @@
 /*
 	important notes
-	catalogs are handled in /datum/nano_module, check there
+	catalogs are handled in /datum/tgui_module/catalog, check there
 	important procs are:
 		browse_catalog_entry()
 		browse_catalog()
@@ -43,16 +43,12 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 					E.add_decomposition_from(D)
 
 	var/datum/catalog/C = GLOB.catalogs[CATALOG_REAGENTS]
-	C.associated_template = "catalog_list_reagents.tmpl"
 	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_asc)
 	C = GLOB.catalogs[CATALOG_CHEMISTRY]
-	C.associated_template = "catalog_list_reagents.tmpl"
 	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_chem)
 	C = GLOB.catalogs[CATALOG_DRINKS]
-	C.associated_template = "catalog_list_drinks.tmpl"
 	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_asc)
 	C = GLOB.catalogs[CATALOG_ALL]
-	C.associated_template = "catalog_list_general.tmpl"
 	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_asc)
 	createCookingCatalogs()
 	return 1
@@ -92,7 +88,6 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 /datum/catalog
 	var/id
 	var/list/datum/catalog_entry/entry_list = list()
-	var/associated_template
 
 /datum/catalog/New(var/_id)
 	. = ..()
@@ -110,12 +105,12 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 /datum/catalog/proc/remove_entry(var/datum/catalog_entry/entry)
 	entry_list.Remove(entry)
 
-/datum/catalog/nano_ui_data(mob/user, ui_key = "main", var/search_value)
+/datum/catalog/ui_data(mob/user, search_value)
 	var/list/data = list()
 	var/list/entries_data = list()
 	for(var/datum/catalog_entry/E in entry_list)
 		if(!search_value || E.search_value(search_value))
-			entries_data.Add(list(E.catalog_ui_data(user, ui_key)))
+			entries_data.Add(list(E.catalog_ui_data(user)))
 	data["entries"] = entries_data
 	return data
 
@@ -124,7 +119,6 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	var/image_path	//image path in client cache
 	var/title
 	var/description
-	var/associated_template
 	var/thing_nature 	// reagent/weapon/device/etc.
 
 /datum/catalog_entry/New(var/datum/V)
@@ -136,7 +130,7 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	if(findtext(thing_nature, value))
 		return TRUE
 
-/datum/catalog_entry/nano_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/ui_data(mob/user)
 	var/list/data = list()
 	data["id"] = thing_type
 	data["thing_nature"] = thing_nature
@@ -145,7 +139,7 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 
 // this used to get nano_ui_data for list
 // usually this is shorter nano_ui_data
-/datum/catalog_entry/proc/catalog_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/proc/catalog_ui_data(mob/user)
 	var/list/data = list()
 	data["id"] = thing_type
 	data["name"] = title
@@ -155,7 +149,6 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	return data
 
 /datum/catalog_entry/reagent
-	associated_template = "catalog_entry_reagent.tmpl"
 	var/reagent_type
 	var/reagent_state
 	var/metabolism_blood
@@ -263,13 +256,13 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 		addiction_chance = V.addiction_threshold ? "high" : V.addiction_chance <= 10 ? "Low" : V.addiction_chance <= 25 ? "Moderate" : "High"
 		addiction_threshold = V.addiction_threshold
 
-/datum/catalog_entry/reagent/catalog_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/reagent/catalog_ui_data(mob/user)
 	var/list/data = ..()
 	data["reagent_state"] = reagent_state
 	data["reagent_type"] = reagent_type
 	return data
 
-/datum/catalog_entry/reagent/nano_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/reagent/ui_data(mob/user)
 	var/list/data = ..()
 
 	// SPECIFICTS
@@ -301,7 +294,6 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	return data
 
 /datum/catalog_entry/atom
-	associated_template = "catalog_entry_atom.tmpl"
 
 /datum/catalog_entry/atom/New(var/atom/V)
 	if(!istype(V))
@@ -315,7 +307,7 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	image_path = SSassets.transport.get_asset_url(V)
 
 
-/datum/catalog_entry/atom/nano_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/atom/ui_data(mob/user)
 	var/list/data = ..()
 
 	// SPECIFICTS
@@ -328,7 +320,6 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 
 
 /datum/catalog_entry/drink
-	associated_template = "catalog_entry_drink.tmpl"
 	var/temperature
 	var/nutrition
 	var/taste
@@ -374,7 +365,7 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 		for(var/datum/chemical_reaction/R in recipes)
 			recipe_data += list(R.nano_ui_data())
 
-/datum/catalog_entry/drink/nano_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/drink/ui_data(mob/user)
 	var/list/data = ..()
 
 	// SPECIFICTS
