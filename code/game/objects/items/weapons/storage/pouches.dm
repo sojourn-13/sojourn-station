@@ -104,7 +104,6 @@
 	max_w_class = ITEM_SIZE_SMALL
 	matter = list(MATERIAL_BIOMATTER = 5)
 	level = BELOW_PLATING_LEVEL //We can hide under tiles :D
-	plus_extra_bulk = -3 //Small pouches have EVERY item scale with them, this is simply anti-scaling so that they are not useless
 
 /obj/item/storage/pouch/small_generic/purple
 	icon_state = "small_generic_p"
