@@ -16,7 +16,7 @@
 	rapid = 1
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
-	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
+	projectiletype = /obj/item/projectile/bullet/pistol_35
 	projectilesound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
@@ -65,7 +65,7 @@
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_ppsh
 	icon_state = "excel_ppsh"
-	projectiletype = /obj/item/projectile/bullet/pistol_35/hv
+	projectiletype = /obj/item/projectile/bullet/pistol_35
 	drop_items = list(/obj/item/gun/projectile/automatic/ppsh)
 	projectilesound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	rounds_left = 71
@@ -74,7 +74,7 @@
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_ak
 	icon_state = "excel_ak"
-	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
+	projectiletype = /obj/item/projectile/bullet/rifle_75
 	drop_items = list(/obj/item/gun/projectile/automatic/ak47)
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 20
@@ -84,7 +84,7 @@
 /mob/living/carbon/superior_animal/human/excelsior/excel_vintorez
 	icon_state = "excel_vintorez"
 	rapid = 0 //The gun cant rapid fire...
-	projectiletype = /obj/item/projectile/bullet/rifle_75/hv
+	projectiletype = /obj/item/projectile/bullet/rifle_75
 	drop_items = list(/obj/item/gun/projectile/automatic/vintorez)
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 10
@@ -93,7 +93,7 @@
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_drozd
 	icon_state = "excel_drozd"
-	projectiletype = /obj/item/projectile/bullet/magnum_40/hv
+	projectiletype = /obj/item/projectile/bullet/magnum_40
 	drop_items = list(/obj/item/gun/projectile/automatic/drozd)
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	rounds_left = 32

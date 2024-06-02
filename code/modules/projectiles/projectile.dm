@@ -162,6 +162,10 @@
 			return FALSE
 	return TRUE
 
+/obj/item/projectile/proc/get_pain_damage()
+	if (damage_types[HALLOSS])
+		return damage_types[HALLOSS]
+
 /obj/item/projectile/multiply_projectile_damage(newmult)
 	for(var/i in damage_types)
 		damage_types[i] *= i == HALLOSS ? 1 : newmult
@@ -224,7 +228,7 @@
 
 /obj/item/projectile/proc/get_structure_damage()
 	return ((damage_types[BRUTE] + damage_types[BURN]) * structure_damage_factor)
-/*
+/* this is the new code and i'm not entirely clear on WHY it has issues but will need further testing.
 /obj/item/projectile/proc/get_structure_damage(var/injury_type)
 	if(!injury_type) // Assume homogenous
 		return (damage_types[BRUTE] + damage_types[BURN]) * wound_check(INJURY_TYPE_HOMOGENOUS, wounding_mult, edge, sharp) * 2
