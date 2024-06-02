@@ -225,16 +225,16 @@
 	if(!embed || damage_types[BRUTE] <= 0)
 		return FALSE
 	return TRUE
-
+/*
 /obj/item/projectile/proc/get_structure_damage()
 	return ((damage_types[BRUTE] + damage_types[BURN]) * structure_damage_factor)
-/* this is the new code and i'm not entirely clear on WHY it has issues but will need further testing.
+*/
 /obj/item/projectile/proc/get_structure_damage(var/injury_type)
 	if(!injury_type) // Assume homogenous
 		return (damage_types[BRUTE] + damage_types[BURN]) * wound_check(INJURY_TYPE_HOMOGENOUS, wounding_mult, edge, sharp) * 2
 	else
 		return (damage_types[BRUTE] + damage_types[BURN]) * wound_check(injury_type, wounding_mult, edge, sharp) * 2
-*/
+
 //return 1 if the projectile should be allowed to pass through after all, 0 if not.
 /obj/item/projectile/proc/check_penetrate(atom/A)
 	return TRUE

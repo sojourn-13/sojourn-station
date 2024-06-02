@@ -6,8 +6,8 @@
 	icon_state = "excel_makarov"
 	stop_automated_movement_when_pulled = 1
 	wander = 0
-	maxHealth = 100
-	health = 100
+	maxHealth = 100 * EXCELSIOR_HEALTH_MOD
+	health = 100 * EXCELSIOR_HEALTH_MOD
 
 	armor = list(melee = 13, bullet = 13, energy = 17, bomb = 80, bio = 90, rad = 25) //Legitmently their armor (melee is higher {45} to account for AI stupidness)
 
@@ -110,8 +110,8 @@
 
 /mob/living/carbon/superior_animal/human/excelsior/excel_hammer_shield
 	icon_state = "excel_hammer_shield"
-	maxHealth = 150 //More hp do to shield
-	health = 150
+	maxHealth = 150 * EXCELSIOR_HEALTH_MOD //More hp do to shield
+	health = 150 * EXCELSIOR_HEALTH_MOD
 
 	melee_damage_lower = 33
 	melee_damage_upper = 40

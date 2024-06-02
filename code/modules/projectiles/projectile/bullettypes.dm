@@ -12,7 +12,7 @@
 ///9mm///
 /obj/item/projectile/bullet/pistol_35
 	damage_types = list(BRUTE = 24)
-	armor_divisor = 0.6
+	armor_divisor = 0.5
 	step_delay = 0.65
 	can_ricochet = TRUE
 	wounding_mult = WOUNDING_SMALL
@@ -22,8 +22,8 @@
 
 /obj/item/projectile/bullet/pistol_35/hv
 	damage_types = list(BRUTE = 14)
-	armor_divisor = 1.2
-	wounding_mult = WOUNDING_TINY
+	armor_divisor = 1
+	wounding_mult = WOUNDING_SMALL
 	step_delay = 0.5
 	affective_damage_range = 5
 	affective_ap_range = 5
@@ -140,7 +140,7 @@
 /obj/item/projectile/bullet/magnum_40
 	icon_state = "bullet_magnum"
 	damage_types = list(BRUTE = 28)
-	armor_divisor = 0.7
+	armor_divisor = 0.6
 	wounding_mult = WOUNDING_NORMAL
 	can_ricochet = TRUE
 	step_delay = 0.4
@@ -161,11 +161,11 @@
 
 /obj/item/projectile/bullet/magnum_40/hv
 	damage_types = list(BRUTE = 19)
-	armor_divisor = 1.4
+	armor_divisor = 1.2
 	penetrating = 1
 	step_delay = 0.25
 	nocap_structures = TRUE //Door breaching
-	wounding_mult = WOUNDING_SMALL
+	wounding_mult = WOUNDING_NORMAL
 	sharp = TRUE
 	affective_damage_range = 5
 	affective_ap_range = 5
@@ -259,7 +259,7 @@
 /obj/item/projectile/bullet/kurtz_50
 	icon_state = "bullet_krutz"
 	damage_types = list(BRUTE = 36)
-	armor_divisor = 0.8
+	armor_divisor = 0.7
 	wounding_mult = WOUNDING_WIDE
 	can_ricochet = TRUE
 	embed = TRUE
@@ -323,8 +323,8 @@
 /obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
 	damage_types = list(BRUTE = 18)
-	armor_divisor = 1.6
-	wounding_mult = WOUNDING_NORMAL
+	armor_divisor = 1.4
+	wounding_mult = WOUNDING_WIDE
 	penetrating = 2
 	can_ricochet = FALSE
 	step_delay = 0.45
@@ -343,7 +343,7 @@
 /obj/item/projectile/bullet/light_rifle_257
 	icon_state = "bullet_carbine"
 	damage_types = list(BRUTE = 18)
-	armor_divisor = 1.2
+	armor_divisor = 1
 	wounding_mult = WOUNDING_SMALL
 	penetrating = 1
 	can_ricochet = TRUE
@@ -351,7 +351,6 @@
 	affective_damage_range = 7
 	affective_ap_range = 7
 	recoil = 5
-	wounding_mult = WOUNDING_WIDE
 
 /obj/item/projectile/bullet/light_rifle_257/practice
 	name = "practice bullet"
@@ -364,8 +363,8 @@
 
 /obj/item/projectile/bullet/light_rifle_257/hv
 	damage_types = list(BRUTE = 14)
-	armor_divisor = 2.4
-	wounding_mult = WOUNDING_TINY
+	armor_divisor = 2.5
+	wounding_mult = WOUNDING_SMALL
 	penetrating = 2
 	hitscan = TRUE
 	affective_damage_range = 8 //Can snipe
@@ -447,7 +446,7 @@
 
 /obj/item/projectile/bullet/rifle_75
 	damage_types = list(BRUTE = 22)
-	armor_divisor = 1.3
+	armor_divisor = 1.25
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 1
 	can_ricochet = TRUE
@@ -459,7 +458,7 @@
 /obj/item/projectile/bullet/rifle_75/hv
 	damage_types = list(BRUTE = 16)
 	armor_divisor = 3
-	wounding_mult = WOUNDING_NORMAL
+	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 2
 	hitscan = TRUE
 	affective_damage_range = 8
@@ -544,7 +543,7 @@
 /obj/item/projectile/bullet/heavy_rifle_408
 	icon_state = "bullet_heavy"
 	damage_types = list(BRUTE = 28)
-	armor_divisor = 1.9
+	armor_divisor = 1.4
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 2
 	can_ricochet = TRUE
@@ -582,7 +581,7 @@
 	name = "sabot penetrator"
 	damage_types = list(BRUTE = 20)
 	armor_divisor = 3.5
-	wounding_mult = WOUNDING_NORMAL
+	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 3
 	hitscan = TRUE
 	affective_damage_range = 9 //Sniping cal
@@ -729,7 +728,7 @@
 	name = "coilgun round"
 	icon_state = null
 	damage_types = list(BRUTE = 26)
-	armor_divisor= 2
+	armor_divisor = 2
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 1
 
@@ -743,7 +742,7 @@
 /obj/item/projectile/bullet/pellet/mech_flak //Flak Cannon
 	name = "flak shrapnel"
 	icon_state = "l_birdshot-4"
-	damage_types = list(BRUTE = 11)
+	damage_types = list(BRUTE = 14)
 	armor_divisor = 1.5
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 0
@@ -765,14 +764,15 @@
 	range_step = 8		//projectile will lose a fragment each time it travels this distance.
 	base_spread = 90	//lower means the pellets spread more across body parts.
 	spread_step = 1	//higher means the pellets spread more across body parts with distance
-
+	pellets = 8
 	affective_damage_range = 11
 	affective_ap_range = 11  //Anti-Air
 
 /obj/item/projectile/bullet/mech_machinegun //Heavy Machinegun
 	name = "large caliber bullet"
 	icon_state = "bullet_heavy"
-	damage_types = list(BRUTE = 13)
+	damage_types = list(BRUTE = 21)
+	wounding_mult = WOUNDING_SERIOUS
 	armor_divisor = 1.25 //To keep it somewhat fair towards the handhelds considering it has higher ammo capacity
 	penetrating = 1
 
@@ -817,7 +817,7 @@
 	name = "slug"
 	icon_state = "slug"
 	damage_types = list(BRUTE = 35)
-	armor_divisor = 1.5
+	armor_divisor = 3
 	wounding_mult = WOUNDING_SERIOUS
 	knockback = 0 //Bug doups hits
 	step_delay = 0.9
@@ -931,7 +931,7 @@
 /obj/item/projectile/bullet/shotgun/biomatter //Unique niche round. High AP, Low damage, high agony. Good for mob crunching, or AP LTL uses
 	name = "biomatter slug"
 	damage_types = list(BURN = 10, HALLOSS = 40) // Thin little piece of biomass designed to defeat armor but not really large enough to cause super serious injuries.
-	armor_divisor = 3 //high velocity
+	armor_divisor = 4 //high velocity
 	wounding_mult = WOUNDING_SMALL //tiny slug.
 	penetrating = 0
 	can_ricochet = FALSE

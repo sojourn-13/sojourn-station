@@ -140,8 +140,8 @@
 	icon_dead = "combatbear_dead"
 	faction = "excelsior"
 	armor = list(melee = 5, bullet = 3, energy = 1, bomb = 10, bio = 100, rad = 100, agony = 0) // It's an ARMORED bear
-	maxHealth = 400
-	health = 400
+	maxHealth = 300 * EXCELSIOR_HEALTH_MOD
+	health = 300 * EXCELSIOR_HEALTH_MOD
 	melee_damage_lower = 30
 	melee_damage_upper = 40
 	special_parts = list(/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)

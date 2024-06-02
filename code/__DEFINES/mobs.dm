@@ -129,9 +129,9 @@
 #define VOIDWOLF_HEALTH_MOD      0.75         //all voidwolves other than reavers.
 #define MEGAFAUNA_HEALTH_MOD     1            //all megafauna other than levaiathans. Renders, mukwah, nightmare stalkers.
 #define VOXBIRD_HEALTH_MOD       1            //all the tribal birds./
-#define EXCELSIOR_HEALTH_MOD     1            //all the excelsior mobs, including mindslaves and bears.
+#define EXCELSIOR_HEALTH_MOD     0.7          //all the excelsior mobs, including mindslaves, and bears.
 #define LEVIATHAN_HEALTH_MOD     1            //leviathans; Kaiser, Reaper, Patriarch, etc./
-#define PSIMOB_HEALTH_MOD        0.5            //Deepmaints mobs other than bosses./
+#define PSIMOB_HEALTH_MOD        0.5          //Deepmaints mobs other than bosses./
 #define DVEY_HEALTH_MOD          0.6          //'corrupted beings', I.E Daskvey and their pets./
 #define PSIBOSS_HEALTH_MOD       1            //deepmaints bosses, be careful with this one. it's generally preferable to manually tweak them because they're...yknow, uniques./
 
