@@ -823,7 +823,7 @@
 		var/total_plasmaloss = 0
 		for(var/obj/item/I in src)
 			if(I.contaminated)
-				if(isarmor(I))
+				if(isarmor(I) && I.is_worn())
 					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS
 				else
 					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS * (100 - get_armor(NULL,ARMOR_BIO))
