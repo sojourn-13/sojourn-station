@@ -278,10 +278,11 @@
 	P.name = "Memo RE: LSS Bulk Selling"
 	P.info = "<ul><h3><u>How to deal with Cargo with many sellable items!</u></h3><hr>\
 	<li>Step 0: Get the loot \
-	<li>Step 1: Sort the loot into crates or lockers you <b>WANT</b> to bulk sell. \
+	<li>Step 1: Sort the loot into crates or lockers you <b>WANT</b> to bulk sell.Do <b>NOT</b> store sellables inside pouches, bags or toolboxes. Export beacons do NOT like nested items. \
 	<li>Step 2: Get a Cargo Tech or SOM to wrapper the crate up. \
 	<li>Step 3: <b>GET A PRINT OF THE SCANNER REPORT OF HOW MUCH THE WRAPPED GOODS SELL FOR.</b>\
-	<li>Step 4: Make sure to get your cut of the sale, and then have the crate when they are done with it.</b>\
+	<li>Step 4: Get a Cargo Tech or SOM to export the wrapped crate. \
+	<li>Step 5: Make sure to get your cut of the sale, and then have the crate when they are done with it.<hr></li>\
 	<b>Signed Pravel Marsk<br>"
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
@@ -338,7 +339,8 @@
 	<li>Step 1: They sort the loot into crates or lockers they <b>WANT</b> to bulk sell. \
 	<li>Step 2: They come to you to get the crate or locker wrapper for selling. Use the wrapping paper for packages. \
 	<li>Step 3: <b>GET A PRINT OF THE SCANNER REPORT OF HOW MUCH THE WRAPPED GOODS SELL FOR.</b>\
-	<li>Step 4: Make sure to give them their cut of the sale, and the crate back when done.</b>\
+	<li>Step 4: EXPORT the <b>WRAPPED CRATE</b>.\
+	<li>Step 5: Make sure to give them their cut of the sale, and the crate back when done.<hr></li>\
 	<b>Signed Pravel Marsk<br>"
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
