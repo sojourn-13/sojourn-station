@@ -124,7 +124,7 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	price_tag = 400
 	level = BELOW_PLATING_LEVEL //As we can
-	plus_extra_bulk = 2 //Anti-quatom scaling with smaller items
+	plus_extra_bulk = 1 //Anti-quatom scaling with smaller items
 
 /obj/item/storage/pouch/medium_generic/leather
 	icon_state = "medium_leather"
