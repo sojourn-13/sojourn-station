@@ -168,7 +168,7 @@
 	if (!istype(target) || target.anchored)
 		return
 
-	if (istype(src, /obj/item/storage))
+	if (istype(target, /obj/item/storage))
 		//dont tape storage items, just put them inside
 		return
 
