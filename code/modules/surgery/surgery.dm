@@ -157,7 +157,7 @@
 					to_chat(user, SPAN_WARNING("[H.head] gets in the way."))
 
 				if(H.wear_mask)
-					var/allowed_mask = TRUE
+					var/allowed_mask = FALSE
 					//Proper mask = better
 					if(istype(H.wear_mask, /obj/item/clothing/mask/breath/medical))
 						difficulty_adjust += -10
