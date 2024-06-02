@@ -270,6 +270,8 @@
 	force = WEAPON_FORCE_DANGEROUS
 	armor_divisor = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_BULKY
+	no_swing = TRUE
+	f
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 6, MATERIAL_GOLD = 3)
 	toggleable = TRUE
 	heat = 3800
