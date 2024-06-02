@@ -724,7 +724,7 @@
 */
 		playsound(target_mob, pick(mob_hit_sound), 40, 1)
 
-		//admin logs
+	//admin logs
 	if(!no_attack_log)
 		if(ismob(firer))
 
@@ -732,34 +732,31 @@
 			var/victim_message = "shot with \a [src.type]"
 			var/admin_message = "shot (\a [src.type])"
 
-			admin_attack_log(original_firer, target_mob, attacker_message, victim_message, admin_message)
+			admin_attack_log(firer, target_mob, attacker_message, victim_message, admin_message)
 		else
-			target_mob.attack_log += "\[[time_stamp()]\] <b>[original_firer] (May No Longer Exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
-			if(target_mob.ckey && original_firer.ckey) //We dont care about PVE
-				msg_admin_attack("[original_firer.name] (May No Longer Exists) shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
+			target_mob.attack_log += "\[[time_stamp()]\] <b>UNKNOWN SUBJECT (No longer exists)</b> shot <b>[target_mob]/[target_mob.ckey]</b> with <b>\a [src]</b>"
+			msg_admin_attack("UNKNOWN shot [target_mob] ([target_mob.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[target_mob.x];Y=[target_mob.y];Z=[target_mob.z]'>JMP</a>)")
 
-	//sometimes bullet_act() will want the projectile to continue flying
-	if (result == PROJECTILE_CONTINUE)
+	if(target_mob.mob_classification & CLASSIFICATION_ORGANIC)
+		var/turf/target_loca = get_turf(target_mob)
+		var/mob/living/L = target_mob
+		if(damage_types[BRUTE] > 10)
+			var/splatter_dir = dir
+			if(starting)
+				splatter_dir = get_dir(starting, target_loca)
+				target_loca = get_step(target_loca, splatter_dir)
+			var/blood_color = "#C80000"
+			if(ishuman(target_mob))
+				var/mob/living/carbon/human/H = target_mob
+				blood_color = H.species.blood_color
+			new /obj/effect/overlay/temp/dir_setting/bloodsplatter(target_mob.loc, splatter_dir, blood_color)
+			if(target_loca && prob(50))
+				target_loca.add_blood(L)
+
+	if(result == PROJECTILE_STOP)
+		return TRUE
+	else
 		return FALSE
-
-	if (!testing)
-		if(target_mob.mob_classification & CLASSIFICATION_ORGANIC)
-			var/turf/target_loca = get_turf(target_mob)
-			var/mob/living/L = target_mob
-			if(damage_types[BRUTE] > 10)
-				var/splatter_dir = dir
-				if(starting)
-					splatter_dir = get_dir(starting, target_loca)
-					target_loca = get_step(target_loca, splatter_dir)
-				var/blood_color = "#C80000"
-				if(ishuman(target_mob))
-					var/mob/living/carbon/human/H = target_mob
-					blood_color = H.form.blood_color
-				new /obj/effect/overlay/temp/dir_setting/bloodsplatter(target_mob.loc, splatter_dir, blood_color)
-				if(target_loca && prob(50))
-					target_loca.add_blood(L)
-
-	return TRUE
 
 /obj/item/projectile/Bump(atom/A as mob|obj|turf|area, forced = FALSE)
 	if(A == src)
@@ -804,13 +801,9 @@
 	else
 		passthrough = (A.bullet_act(src, def_zone) == PROJECTILE_CONTINUE) //backwards compatibility
 		if(isturf(A))
-			if(QDELETED(src)) // we don't want bombs to explode once for every time bullet_act is called
-				on_impact(A)
-				invisibility = 101
-				return TRUE // see that next line? it can overload the server.
-			for(var/obj/O in A) // if src's bullet act spawns more objs, the list will increase,
+			for(var/obj/O in A)
 				if(O.density)
-					O.bullet_act(src) // causing exponential growth due to the spawned obj spawning itself
+					O.bullet_act(src)
 			for(var/mob/living/M in A)
 				attack_mob(M)
 

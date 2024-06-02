@@ -741,7 +741,7 @@ proc/is_blind(A)
 				return WOUNDING_DEVESTATING
 			if(WOUNDING_EXTREME)
 				return WOUNDING_DEVESTATING
-
+	else
 		switch(wounding)
 			if(WOUNDING_HARMLESS)
 				return WOUNDING_HARMLESS

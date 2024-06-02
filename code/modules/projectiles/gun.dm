@@ -528,7 +528,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 		if(extra_proj_penmult)
 			projectile.add_projectile_penetration(penetration_multiplier)
 
-		projectile.add_projectile_penetration(penetration_multiplier + user.stats.getStat(STAT_VIG) * 0.02)
+		projectile.add_projectile_penetration(penetration_multiplier)
 
 		if(extra_proj_wallbangmult)
 			projectile.multiply_pierce_penetration(extra_proj_wallbangmult)

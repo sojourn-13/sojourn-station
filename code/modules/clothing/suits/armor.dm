@@ -692,7 +692,7 @@
 	icon_state = "ablative_bs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 	slowdown = 0.2
-	armor_list = list(melee = 6, bullet = 6, energy = 3, bomb = 10, bio = 0, rad = 0)
+	armor_list = list(melee = 6, bullet = 6, energy = 15, bomb = 10, bio = 0, rad = 0)
 
 //Flak Vests
 /obj/item/clothing/suit/armor/flakvest
