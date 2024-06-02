@@ -701,6 +701,34 @@ We don't use this but we might find use for it. Porting it since it was updated 
 		if(LAZYLEN(organs_sans_brain_and_bones))
 			create_overdose_wound(pick(organs_sans_brain_and_bones), H, /datum/component/internal_wound/organic/heavy_poisoning)
 
+/datum/reagent/medicine/trypsin
+	name = "Trypsin"
+	id = "trypsin"
+	description = "A synthetic enzyme designed to assist the body in clearing burned and dead flesh from within. Highly painful a typical dose of five units will serve most uses."
+	taste_description = "copper and faint burning"
+	color = "#9c3a33"
+	overdose = 10
+
+/datum/reagent/medicine/trypsin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Peridaxon shouldn't heal brain or bones
+		for(var/obj/item/organ/I in organs_sans_brain_and_bones)
+			var/list/current_wounds = I.GetComponents(/datum/component/internal_wound)
+			if(LAZYLEN(current_wounds) && !BP_IS_ROBOTIC(I) && prob(75)) //heals only non-robotic organs
+				M.add_chemical_effect(CE_DEBRIDEMENT, dose*0.2) //5 units will provide enough CE_DEBRIDEMENT to actually
+				M.apply_damage(dose*0.5, HALLOSS)
+
+
+/datum/reagent/medicine/trypsin/overdose(mob/living/carbon/M, alien)
+	. = ..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Since it doesn't heal brain/bones it shouldn't damage them too
+		if(LAZYLEN(organs_sans_brain_and_bones))
+			M.take_organ_damage(pick(0,5))
+			M.add_chemical_effect(CE_DEBRIDEMENT, dose*0.1) //a dose of about 20 will give you enough CE_DEBRIDEMENT to clear "permanent" scars. You'll still need to clear the carbonized flesh by hand, however.
+
 /datum/reagent/medicine/ctincture
 	name = "Carpotoxin Tincture"
 	id = "ctincture"
