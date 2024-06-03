@@ -30,5 +30,6 @@
 	offer_types = list(
 		/obj/item/bluespace_crystal = offer_data("bluespace crystal", 2000, 10),
 		/obj/item/oddity/si_bluespace_scanner = offer_data("Bluespace Tuning Device", 2400, 3),	// Significantly higher material cost per piece, longer production time per piece, more diverse mat req hence increase in sale price
-		/obj/item/reagent_containers/food/snacks/csandwich = offer_data("sandwich", 400, 1)
+		/obj/item/reagent_containers/food/snacks/csandwich = offer_data("sandwich", 400, 1),
+		/obj/item/gun/energy/plasma/stranger = offer_data("unknown plasma gun", 5000, 1)
 	)
