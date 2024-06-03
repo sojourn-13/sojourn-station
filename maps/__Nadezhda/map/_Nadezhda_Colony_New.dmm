@@ -9771,8 +9771,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2north)
 "ceW" = (
-/obj/machinery/portable_atmospherics/hydroponics/soil,
-/turf/simulated/floor/asteroid/dirt/dust,
+/obj/machinery/portable_atmospherics/hydroponics/soil{
+	color = "#5c463e"
+	},
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/forest)
 "ceX" = (
 /obj/machinery/door/airlock/glass,
@@ -10353,7 +10355,9 @@
 	},
 /area/nadezhda/maintenance/undergroundfloor1north)
 "clh" = (
-/obj/structure/reagent_dispensers/watertank/huge,
+/obj/structure/reagent_dispensers/watertank/huge{
+	color = "#9a977b"
+	},
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/farm)
 "clk" = (
@@ -14005,8 +14009,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "cXJ" = (
-/obj/item/remains/human,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/remains/ribcage,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "cXK" = (
@@ -19265,9 +19269,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/rnd/lab)
 "ebO" = (
-/obj/structure/bed/double/padded,
-/obj/random/furniture/bedsheetdouble,
-/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/junkfood/low_chance,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "ebP" = (
@@ -23017,10 +23020,12 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/merchant)
 "eOO" = (
-/obj/structure/closet/cabinet,
+/obj/structure/closet/cabinet{
+	color = "#9a977b"
+	},
+/obj/effect/decal/cleanable/cobweb2,
 /obj/random/ammo/shotgun/low_chance,
 /obj/random/gun_shotgun/low_chance,
-/obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "eOT" = (
@@ -31462,7 +31467,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/substation/science)
 "gAr" = (
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	color = "#9a977b"
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/dungeon/outside/farm)
 "gAx" = (
@@ -32421,7 +32428,9 @@
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/virology)
 "gNG" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/woodentable{
+	color = "#9a977b"
+	},
 /obj/random/junkfood/low_chance,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
@@ -45289,12 +45298,12 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "jsO" = (
-/obj/machinery/door/unpowered/simple/wood{
-	name = "Lost Farm"
-	},
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/random/traps/low_chance{
 	spawn_nothing_percentage = 90
+	},
+/obj/machinery/door/unpowered/simple/wood{
+	color = "#9a977b"
 	},
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
@@ -56101,6 +56110,7 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
 "lKb" = (
+/obj/item/paper_bin,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/farm)
 "lKe" = (
@@ -57764,7 +57774,12 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/sechall)
 "mcB" = (
-/obj/structure/table/woodentable,
+/obj/structure/bed/double/padded{
+	dir = 4
+	},
+/obj/random/furniture/bedsheetdouble{
+	dir = 1
+	},
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "mcC" = (
@@ -64757,7 +64772,9 @@
 	name = "Residential District Maintenance"
 	})
 "nwj" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/woodentable{
+	color = "#9a977b"
+	},
 /obj/item/tool/shovel/spade,
 /obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/wood/wild4,
@@ -67137,6 +67154,7 @@
 /area/shuttle/rocinante_shuttle_area)
 "nUo" = (
 /obj/structure/coatrack,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/nadezhda/dungeon/outside/farm)
 "nUD" = (
@@ -69459,7 +69477,9 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/nadezhda/engineering/workshop)
 "orR" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/woodentable{
+	color = "#9a977b"
+	},
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/farm)
 "orT" = (
@@ -78379,7 +78399,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1west)
 "qfL" = (
-/turf/simulated/wall/wood_barrel,
+/turf/simulated/wall/wood_old,
 /area/nadezhda/dungeon/outside/farm)
 "qfM" = (
 /turf/simulated/floor/tiled/steel,
@@ -80846,6 +80866,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1west)
+"qFQ" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/small/grassa1,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
 "qFS" = (
 /obj/structure/flora/small/rock3,
 /turf/simulated/floor/asteroid/grass,
@@ -85180,9 +85205,10 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
 "rBK" = (
-/mob/living/simple_animal/jungle_bird,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/forest)
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/shotgun/pellet/prespawned,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/dungeon/outside/farm)
 "rBL" = (
 /obj/structure/bonfire/permanent,
 /obj/item/material/shard,
@@ -85993,9 +86019,8 @@
 /turf/simulated/open,
 /area/nadezhda/dungeon/outside/abandoned_outpost)
 "rLy" = (
-/obj/structure/table/woodentable,
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/toolbox/low_chance,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "rLD" = (
@@ -87378,6 +87403,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/crew_quarters/sleep/cryo2)
+"rZE" = (
+/obj/structure/table/woodentable{
+	color = "#9a977b"
+	},
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/dungeon/outside/farm)
 "rZH" = (
 /obj/random/gun_normal,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -88381,6 +88412,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/crew_quarters/hydroponics/garden)
+"skQ" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
 "skU" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -99069,6 +99104,11 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos)
+"urg" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/random/mob/termite_no_despawn,
+/turf/simulated/floor/asteroid/grass,
+/area/nadezhda/outside/forest)
 "urn" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -100589,7 +100629,9 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/armoryshop)
 "uJn" = (
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	color = "#9a977b"
+	},
 /turf/simulated/floor/wood/wild4,
 /area/nadezhda/dungeon/outside/farm)
 "uJp" = (
@@ -106058,10 +106100,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "vMD" = (
-/obj/structure/table/woodentable,
-/obj/random/junkfood/low_chance,
-/obj/effect/decal/cleanable/cobweb,
-/turf/simulated/floor/wood/wild5,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/dungeon/outside/farm)
 "vME" = (
 /obj/structure/cable/green{
@@ -113310,6 +113349,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/maintenance/undergroundfloor2west)
+"xlr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/pen,
+/turf/simulated/floor/wood/wild5,
+/area/nadezhda/dungeon/outside/farm)
 "xlt" = (
 /obj/effect/decal/cleanable/ash,
 /obj/random/mob/roaches/low_chance,
@@ -115840,8 +115884,7 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/rnd/rbreakroom)
 "xKC" = (
-/obj/structure/table/woodentable,
-/obj/random/toolbox/low_chance,
+/obj/structure/table,
 /turf/simulated/floor/wood/wild5,
 /area/nadezhda/dungeon/outside/farm)
 "xKJ" = (
@@ -207729,14 +207772,14 @@ kOj
 mHv
 tfW
 olX
-tfW
+fhp
 tfW
 tfW
 tfW
 fhp
 tfW
 tfW
-tfW
+fhp
 tfW
 lMN
 lMN
@@ -207933,7 +207976,7 @@ tfW
 tfW
 tfW
 tfW
-tfW
+fhp
 tfW
 tfW
 tfW
@@ -208135,11 +208178,11 @@ cXA
 tfW
 tfW
 tfW
-cxU
-cxU
-cxU
-cxU
-cxU
+tfW
+tfW
+tfW
+tfW
+tfW
 tfW
 tfW
 tfW
@@ -208337,11 +208380,11 @@ tfW
 tfW
 asu
 tfW
-cxU
+tfW
 ceW
-ceW
-ceW
-cxU
+skQ
+skQ
+tfW
 tfW
 fhp
 tfW
@@ -208539,11 +208582,11 @@ tfW
 tfW
 tfW
 tfW
-cxU
-cxU
-cxU
+tfW
+tfW
+tfW
 ina
-cxU
+tfW
 tfW
 tfW
 tfW
@@ -208736,16 +208779,16 @@ cxU
 tfW
 tfW
 tfW
-tfW
+fhp
 tfW
 tfW
 tfW
 fhp
-cxU
-ceW
-ceW
-ceW
-cxU
+tfW
+skQ
+skQ
+skQ
+tfW
 tfW
 fhp
 tfW
@@ -208944,13 +208987,13 @@ tfW
 tfW
 tfW
 cxU
-cxU
+tfW
 cxU
 cxU
 cxU
 asu
 tfW
-tfW
+lch
 vDt
 tfW
 tfW
@@ -209142,12 +209185,6 @@ tfW
 tfW
 tfW
 tfW
-cxU
-cxU
-cxU
-cxU
-cxU
-cxU
 tfW
 tfW
 tfW
@@ -209156,6 +209193,12 @@ tfW
 tfW
 tfW
 tfW
+tfW
+tfW
+tfW
+tfW
+tfW
+fhp
 cxU
 tfW
 tfW
@@ -209344,10 +209387,10 @@ cXA
 tfW
 tfW
 tfW
-cxU
 tfW
-qfL
-qfL
+asu
+vMD
+vMD
 qfL
 jsO
 qfL
@@ -209356,7 +209399,7 @@ qfL
 qfL
 tfW
 cXA
-tfW
+lch
 tfW
 cxU
 cxU
@@ -209546,14 +209589,14 @@ tfW
 tfW
 tfW
 tfW
-rBK
 tfW
-sSB
+tfW
 vMD
-ugx
+vMD
+rBK
 xFj
-ugx
-bBy
+ebO
+rZE
 mcB
 qfL
 tfW
@@ -209748,15 +209791,15 @@ tfW
 tfW
 cXA
 tfW
-cxU
 tfW
-sSB
+tfW
+vMD
 gNG
 ugx
 fqx
 fKx
 udy
-ebO
+qXx
 qfL
 tfW
 fhp
@@ -209950,13 +209993,13 @@ tfW
 tfW
 tfW
 tfW
-cxU
+tfW
 tfW
 sSB
 eOO
 ugx
 cXJ
-ugx
+xlr
 rxh
 qXx
 sSB
@@ -210159,13 +210202,13 @@ qfL
 gAr
 qfL
 xKC
-ugx
+rLy
 bBy
 xfe
 wjb
 tfW
 tfW
-tfW
+fhp
 tfW
 tfW
 oHv
@@ -210360,8 +210403,8 @@ qfL
 vpD
 abI
 qfL
-rLy
-bBy
+xKC
+ugx
 ugx
 sSB
 tfW
@@ -210566,8 +210609,8 @@ nUo
 lKb
 gkd
 qfL
-tfW
-tfW
+cGa
+fhp
 fhp
 tfW
 oHv
@@ -210768,8 +210811,8 @@ xJC
 vJA
 vJA
 qfL
-tfW
-tfW
+cGa
+cGa
 tfW
 tfW
 tfW
@@ -210970,7 +211013,7 @@ sSB
 tQf
 sSB
 qfL
-tfW
+cGa
 tfW
 tfW
 tfW
@@ -211172,8 +211215,8 @@ tfW
 qrS
 tfW
 tfW
-tfW
-tfW
+cGa
+fhp
 cXA
 tfW
 tfW
@@ -211367,14 +211410,14 @@ eDm
 cGa
 cGa
 tfW
-tfW
-tfW
+cGa
+cGa
 tfW
 fhp
 tfW
-tfW
-tfW
-tfW
+fhp
+cGa
+cGa
 tfW
 tfW
 tfW
@@ -211568,15 +211611,15 @@ uTf
 uTf
 tfW
 cGa
+urg
 olX
+qFQ
 olX
-olX
-olX
 tfW
 tfW
 tfW
-tfW
-tfW
+cGa
+cGa
 tfW
 tfW
 mHv
@@ -211773,7 +211816,7 @@ mHv
 ohH
 tfW
 tfW
-tfW
+fhp
 tfW
 tfW
 tfW
