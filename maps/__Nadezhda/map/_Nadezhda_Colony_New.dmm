@@ -20904,6 +20904,7 @@
 	dir = 1
 	},
 /obj/machinery/newscaster/directional/north,
+/obj/machinery/slime_compresser,
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/xenobiology)
 "erE" = (
@@ -75688,10 +75689,7 @@
 /area/shuttle/vasiliy_shuttle_area)
 "pDc" = (
 /obj/structure/table/reinforced,
-/obj/machinery/slime_dye_vat{
-	pixel_x = 1;
-	pixel_y = 5
-	},
+/obj/item/gun/energy/slimegun,
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/xenobiology)
 "pDd" = (
@@ -77133,6 +77131,11 @@
 	dir = 4;
 	pixel_x = -32
 	},
+/obj/machinery/slime_dye_vat{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/rnd/xenobiology)
 "pRE" = (
