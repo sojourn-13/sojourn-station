@@ -93,11 +93,18 @@
 	materials = list(MATERIAL_STEEL = 45, MATERIAL_PLASTIC = 25)
 	category = "RIG"
 
+/datum/design/research/item/storage/large
+	name = "hardsuit distributed storage system"
+	desc = "A system of pouches that has been integrated into a hardsuit."
+	build_path = /obj/item/rig_module/storage/large
+	materials = list(MATERIAL_STEEL = 60, MATERIAL_PLASTIC = 40)
+	category = "RIG"
+
 /datum/design/research/item/storagemed
 	name = "hardsuit medical storage system"
 	desc = "A system of various storage solutions for a RIG. This one is designed for medicine."
 	build_path = /obj/item/rig_module/storage/med
-	materials = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 15)
+	materials = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 15)
 	category = "RIG"
 
 /datum/design/research/item/storagetac
