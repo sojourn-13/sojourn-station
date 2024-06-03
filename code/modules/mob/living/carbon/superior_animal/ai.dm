@@ -181,6 +181,9 @@
 			return FALSE
 		if(PO.colony_allied_turret && friendly_to_colony)
 			return FALSE
+		//So we dont try and attack turrets that are not attacking us
+		if(!PO.colony_allied_turret && !friendly_to_colony)
+			return FALSE
 		return TRUE
 
 	return FALSE
