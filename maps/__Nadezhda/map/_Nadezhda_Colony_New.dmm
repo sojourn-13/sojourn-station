@@ -13465,6 +13465,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/noticeboard/lonestar_supply{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/office)
 "cRI" = (
@@ -16697,6 +16700,9 @@
 "dzs" = (
 /obj/machinery/autolathe,
 /obj/structure/catwalk,
+/obj/structure/noticeboard/prospectors{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/pros/prep)
 "dzy" = (
@@ -28236,6 +28242,9 @@
 	icon_state = "2-8"
 	},
 /obj/structure/filingcabinet,
+/obj/structure/noticeboard/lonestar_supply{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/command/merchant)
 "fTa" = (
@@ -30611,6 +30620,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/noticeboard/lonestar_supply{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/quartermaster/hangarsupply)
 "gqN" = (
@@ -101335,6 +101347,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
+"uNF" = (
+/obj/structure/table/rack,
+/obj/effect/floor_decal/industrial/warningwhite/full,
+/obj/structure/noticeboard/prospectors{
+	pixel_x = -32
+	},
+/turf/simulated/floor/tiled/dark,
+/area/nadezhda/pros/prep)
 "uNI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
@@ -220314,7 +220334,7 @@ vlP
 weq
 kUX
 vIU
-vIU
+uNF
 lkL
 vIU
 epG
