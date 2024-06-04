@@ -252,6 +252,7 @@
 	anchored = 1
 	pixel_x = -48
 	pixel_y = -16
+	var/target_temperature = T20C
 
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
@@ -272,7 +273,7 @@
 	var/datum/gas_mixture/environment = loc.return_air()
 
 	if(environment)
-		environment.temperature = T20C
+		environment.temperature = target_temperature
 		environment.gas = list("oxygen" = O2STANDARD * MolesForPressure(environment.volume), \
 							   "nitrogen" = N2STANDARD *  MolesForPressure(environment.volume))
 
@@ -280,37 +281,35 @@
 	return
 
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/MolesForPressure(var/gasVolume)
-	return (ONE_ATMOSPHERE * gasVolume) / (R_IDEAL_GAS_EQUATION * T20C)
+	return (ONE_ATMOSPHERE * gasVolume) / (R_IDEAL_GAS_EQUATION * target_temperature)
 
-/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold
+	name = "Coldrasil"
+	desc = "You feel cold being near the tree that holds up the mountains."
+	icon = 'icons/obj/flora/snowtree.dmi'
+	icon_state = "tree3"
+	target_temperature = 240
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree
 	name = "Kriosan Tree"
 	desc = "Strange dog tree."
-	icon = 'icons/obj/flora/jungletree.dmi'
-	icon_state = "tree"
-	anchored = 1
-	pixel_x = -48
-	pixel_y = -16
 	var/damage = 0.3
 	var/NOLAG = 0
 
-	use_power = NO_POWER_USE
-	idle_power_usage = 0
-	active_power_usage = 0
-
-/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/attackby(var/obj/item/I as obj, var/mob/user as mob)
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree/attackby(var/obj/item/I as obj, var/mob/user as mob)
 	to_chat(user, SPAN_WARNING("This is a dog tree, no cutting."))
 	return
 
-/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/attack_hand(var/mob/user)
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree/attack_hand(var/mob/user)
 	to_chat(user, SPAN_WARNING("This is a dog tree, no cutting."))
 	return
 
-/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/Process()
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree/Process()
 
 	var/datum/gas_mixture/environment = loc.return_air()
 
 	if(environment)
-		environment.temperature = T20C
+		environment.temperature = target_temperature
 		environment.gas = list("carbon_dioxide" = MolesForPressure(environment.volume))
 
 	if(NOLAG)
@@ -328,8 +327,6 @@
 				affected.Add(H)
 		for(var/mob/living/carbon/human/affected_guy in affected)
 			affected_guy.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
-/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/update_icon()
-	return
 
-/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/MolesForPressure(var/gasVolume)
-	return (ONE_ATMOSPHERE * gasVolume) / (R_IDEAL_GAS_EQUATION * T20C)
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree/update_icon()
+	return
