@@ -906,6 +906,33 @@ var/list/flooring_types
 /decl/flooring/grass2/colonialbeach/corner
 	icon_base = "gbcorner"
 
+/*Snow*/
+/decl/flooring/snow
+	name = "snow"
+	icon = 'icons/turf/flooring/snows.dmi'
+	icon_base = "snow"
+	has_base_range = 4
+	flags = TURF_REMOVE_SHOVEL | TURF_EDGES_EXTERNAL | TURF_HAS_CORNERS
+	plating_type = /decl/flooring/dirt
+	footstep_sound = "snow"
+	floor_smooth = SMOOTH_NONE
+	space_smooth = SMOOTH_NONE
+
+/*Ice Water*/
+/decl/flooring/icewater
+	name = "frozen water"
+	desc = "Frozen water, solid enough to stand on, looks too thick to dig through without machines."
+	icon = 'icons/turf/flooring/icewater.dmi'
+	icon_base = "ice_water"
+	has_base_range = 2
+	flags = TURF_EDGES_EXTERNAL | TURF_HAS_CORNERS
+	plating_type = /decl/flooring/dirt
+	footstep_sound = "ice"
+	floor_smooth = SMOOTH_NONE
+	space_smooth = SMOOTH_NONE
+	resistance = RESISTANCE_TOUGH
+	health = 9999999
+
 /*Dirt*/
 /decl/flooring/dirt
 	name = "dirt"

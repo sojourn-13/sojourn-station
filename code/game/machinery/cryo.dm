@@ -280,12 +280,16 @@
 /obj/machinery/atmospherics/unary/cryo_cell/proc/go_out()
 	if(!( occupant ))
 		return
-	//for(var/obj/O in src)
-	//	O.loc = loc
+	for(var/obj/O in src)
+		if(O == beaker)
+			continue
+		if(O in component_parts)
+			continue
+		O.forceMove(loc)
 	if (occupant.client)
 		occupant.client.eye = occupant.client.mob
 		occupant.client.perspective = MOB_PERSPECTIVE
-	occupant.loc = get_step(loc, SOUTH)	//this doesn't account for walls or anything, but i don't forsee that being a problem.
+	occupant.forceMove(get_step(loc, SOUTH))	//this doesn't account for walls or anything, but i don't forsee that being a problem.
 	if (occupant.bodytemperature < 261 && occupant.bodytemperature >= 70) //Patch by Aranclanos to stop people from taking burn damage after being ejected
 		occupant.bodytemperature = 261									  // Changed to 70 from 140 by Zuhayr due to reoccurance of bug.
 //	occupant.metabslow = 0
@@ -304,9 +308,6 @@
 		return
 	if (occupant)
 		to_chat(usr, SPAN_DANGER("The cryo cell is already occupied!"))
-		return
-	if (M.abiotic())
-		to_chat(usr, SPAN_WARNING("Subject may not have abiotic items on."))
 		return
 	if(!node1)
 		to_chat(usr, SPAN_WARNING("The cell is not correctly connected to its pipe network!"))

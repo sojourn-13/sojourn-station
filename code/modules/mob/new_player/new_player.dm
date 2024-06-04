@@ -307,12 +307,10 @@
 
 	SSjob.AssignRole(src, rank, 1)
 	var/datum/job/job = src.mind.assigned_job
-	var/mob/living/character = create_character()	//creates the human and transfers vars and mind
 
 	// AIs don't need a spawnpoint, they must spawn at an empty core
 	if(rank == "AI")
-
-		character = character.AIize(move=0) // AIize the character, but don't move them yet
+		var/mob/living/character = AIize(move=0) // AIize the character, but don't move them yet
 
 			// IsJobAvailable for AI checks that there is an empty core available in this list
 		var/obj/structure/AIcore/deactivated/C = empty_playable_ai_cores[1]
@@ -326,9 +324,10 @@
 		qdel(src)
 		return
 
+	var/list/character_creation = create_character(rank, TRUE)	//creates the human and transfers vars and mind
+	var/mob/living/character = character_creation[1]
+	var/datum/spawnpoint/spawnpoint = character_creation[2]
 
-	var/datum/spawnpoint/spawnpoint = SSjob.get_spawnpoint_for(character.client, rank, late = TRUE)
-	spawnpoint.put_mob(character) // This can fail, and it'll result in the players being left in space and not being teleported to the station. But atleast they'll be equipped. Needs to be fixed so a default case for extreme situations is added.
 	character = SSjob.EquipRank(character, rank) //equips the human
 	equip_custom_items(character)
 	character.lastarea = get_area(loc)
@@ -343,8 +342,6 @@
 			//Grab some data from the character prefs for use in random news procs.
 
 	AnnounceArrival(character, character.mind.assigned_role, spawnpoint.message)	//will not broadcast if there is no message
-
-
 
 	qdel(src)
 
@@ -466,7 +463,7 @@ GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 		late_choices_dialog = new(src)
 	late_choices_dialog.ui_interact(src)
 
-/mob/new_player/proc/create_character()
+/mob/new_player/proc/create_character(rank, late = FALSE)
 	spawning = 1
 	close_spawn_windows()
 
@@ -484,20 +481,30 @@ GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 		chosen_form = GLOB.all_species_form_list[client.prefs.species_form]
 		use_form_name = chosen_form.get_station_variant() //Not used at all but whatever.
 
+	var/datum/spawnpoint/spawnpoint = SSjob.get_spawnpoint_for(client, rank, late)
+	var/turf/initial_loc = spawnpoint.get_turf_for_new_player()
+	if(!initial_loc)
+		// If we can't spawn them at their spawnpoint, try to spawn them at a default
+		spawnpoint = get_spawn_point("Aft Cryogenic Storage")
+		initial_loc = spawnpoint.get_turf_for_new_player()
+		if(!initial_loc)
+			// Finally, give up and spawn them at the lobby screen location
+			initial_loc = loc
+
 	if(chosen_species && use_species_name)
 		// Have to recheck admin due to no usr at roundstart. Latejoins are fine though.
 		if(!is_species_whitelisted(chosen_species) && !has_admin_rights())
 			use_species_name = null
 		if(!is_form_whitelisted(chosen_form) && !has_admin_rights())
 			use_form_name = null
-		new_character = new(loc, use_species_name, use_form_name)
+		new_character = new(initial_loc, use_species_name, use_form_name)
 
 	if(!new_character)
-		new_character = new(loc)
+		new_character = new(initial_loc)
 	if(chosen_species)
 		chosen_species.add_stats(new_character)
 
-	new_character.lastarea = get_area(loc)
+	new_character.lastarea = get_area(initial_loc)
 
 	for(var/lang in client.prefs.alternate_languages)
 		var/datum/language/chosen_language = all_languages[lang]
@@ -558,7 +565,15 @@ GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 	new_character.regenerate_icons()
 	new_character.key = key//Manually transfer the key to log them in
 
-	return new_character
+	// Put them into their place properly now
+	spawnpoint = SSjob.get_spawnpoint_for(new_character.client, rank, late)
+	if(!spawnpoint.put_mob(new_character, ignore_environment = !late))
+		// If we can't spawn them at their spawnpoint, try to spawn them at a default
+		spawnpoint = get_spawn_point("Aft Cryogenic Storage")
+		if(!spawnpoint.put_mob(new_character, ignore_environment = !late))
+			log_and_message_admins("[key_name_admin(new_character)] could not find any possible way to spawn and may be stuck in space.")
+
+	return list(new_character, spawnpoint)
 
 /mob/new_player/Move(NewLoc, Dir = 0, step_x = 0, step_y = 0, var/glide_size_override = 0)
 	return 0

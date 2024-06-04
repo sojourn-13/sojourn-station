@@ -74,6 +74,7 @@
 #define CE_DARKSIGHT 		"darksight"	//Vision methods built into a mob.
 #define CE_BRAINHEAL        "neural tissue restoration"
 #define CE_EYEHEAL          "sensory organ regeneration stimulant"
+#define CE_DEBRIDEMENT      "debriding agent" //for fixing burn/necrosis type wounds.
 
 // Chem effects for robotic/assisted organs
 #define CE_MECH_STABLE 		"cooling"

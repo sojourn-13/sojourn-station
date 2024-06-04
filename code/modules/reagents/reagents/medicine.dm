@@ -41,6 +41,22 @@
 	M.heal_organ_damage(0.3 * effect_multiplier, 0, 5 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.15)
 
+/datum/reagent/medicine/monocaridine
+	name = "Monocaridine"
+	id = "monocaridine"
+	description = "Monocaridine is a slow-acting medication that can be used to treat blunt trauma, naturally derived for plants. Functional for species with odd blood types. Bonds with and neutralizes Bicaridine."
+	taste_description = "faint bitterness"
+	taste_mult = 3
+	reagent_state = LIQUID
+	color = "#eb0046"
+	overdose = REAGENTS_OVERDOSE
+	scannable = TRUE
+	nerve_system_accumulations = 15 // Basic chems shouldn't hurt the body as much as higher potency ones.
+
+/datum/reagent/medicine/monocaridine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.heal_organ_damage(0.1 * effect_multiplier, 0, 1 * effect_multiplier)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.15)
+
 /datum/reagent/medicine/vermicetol
 	name = "Vermicetol"
 	id = "vermicetol"
@@ -91,6 +107,20 @@
 /datum/reagent/medicine/meralyne/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.heal_organ_damage(0.6 * effect_multiplier, 0, 5 * effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.30)
+
+/datum/reagent/medicine/moonwater
+	name = "Moon Water"
+	id = "moon water"
+	description = "Moon water is a natural medicine used to treat burn wounds in many species. Does not function well with chemical alternatives."
+	taste_description = "salty"
+	reagent_state = LIQUID
+	color = "#c4fcf9"
+	overdose = REAGENTS_OVERDOSE
+	scannable = TRUE
+	nerve_system_accumulations = 10
+
+/datum/reagent/medicine/moonwater/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.heal_organ_damage(0, 0.3 * effect_multiplier, 0, 1.5 * effect_multiplier)
 
 /datum/reagent/medicine/kelotane
 	name = "Kelotane"
@@ -156,6 +186,29 @@
 	holder.remove_reagent("blattedin", 0.4 * effect_multiplier) // Massive complains about its slow metabolization rate + poisoning actually working, plus dylo originally purged it, so I'm bringing it back. - Seb
 	holder.remove_reagent("wasp_toxin", 0.2 * effect_multiplier)
 	holder.remove_reagent("amatoxin", 0.2 * effect_multiplier) // We hate the shitbirds
+
+/datum/reagent/medicine/lg_antitoxin
+	name = "Low-grade Antitoxin"
+	id = "lg_anti_toxin"
+	description = "Low-grade antitoxin, harvested from common medicinal plants. A natural alternative for treating poisons and toxins, slowly. Also Neutralizes Dylovene."
+	taste_description = "a roll of gauze"
+	reagent_state = LIQUID
+	color = "#00A000"
+	scannable = TRUE
+	overdose = REAGENTS_OVERDOSE
+	nerve_system_accumulations = 0
+
+/datum/reagent/medicine/lg_antitoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.drowsyness = max(0, M.drowsyness - 0.6 * effect_multiplier)
+	M.adjust_hallucination(-0.2 * effect_multiplier)
+	M.add_chemical_effect(CE_ANTITOX, 1)
+
+	holder.remove_reagent("pararein", 0.2 * effect_multiplier)
+	holder.remove_reagent("carpotoxin", 0.1 * effect_multiplier)
+	holder.remove_reagent("toxin", 0.1 * effect_multiplier)
+	holder.remove_reagent("blattedin", 0.1 * effect_multiplier)
+	holder.remove_reagent("wasp_toxin", 0.05 * effect_multiplier)
+	holder.remove_reagent("amatoxin", 0.05 * effect_multiplier)
 
 
 /datum/reagent/medicine/dylovene/overdose(mob/living/carbon/human/user, alien)
@@ -237,6 +290,8 @@
 	if(ce_to_add > 0)
 		M.add_chemical_effect(CE_OXYGENATED, ce_to_add)
 
+
+
 /datum/reagent/medicine/dexalinp
 	name = "Dexalin Plus"
 	id = "dexalinp"
@@ -264,6 +319,23 @@
 			if(G.damage > 0)
 				G.damage = max(G.damage - 5 * removed, 0)
 
+/datum/reagent/medicine/quintalin
+	name = "Quintalin"
+	id = "quintalin"
+	description = "A slow acting, natural remedy for oxygen deprivation. Works on all kinds of creatures, but neutralizes dexalin chemicals."
+	taste_description = "bitterness"
+	reagent_state = LIQUID
+	color = "#8dc6ff"
+	overdose = REAGENTS_OVERDOSE
+	scannable = TRUE
+	nerve_system_accumulations = 5
+
+/datum/reagent/medicine/quintalin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	M.adjustOxyLoss(-0.5 * effect_multiplier)
+	holder.remove_reagent("lexorin", 0.2 * effect_multiplier)
+	var/ce_to_add = 1 - M.chem_effects[CE_OXYGENATED]
+	if(ce_to_add > 0)
+		M.add_chemical_effect(CE_OXYGENATED, ce_to_add)
 
 /datum/reagent/medicine/respirodaxon
 	name = "Respirodaxon"
@@ -700,6 +772,34 @@ We don't use this but we might find use for it. Porting it since it was updated 
 		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Since it doesn't heal brain/bones it shouldn't damage them too
 		if(LAZYLEN(organs_sans_brain_and_bones))
 			create_overdose_wound(pick(organs_sans_brain_and_bones), H, /datum/component/internal_wound/organic/heavy_poisoning)
+
+/datum/reagent/medicine/trypsin
+	name = "Trypsin"
+	id = "trypsin"
+	description = "A synthetic enzyme designed to assist the body in clearing burned and dead flesh from within. Highly painful a typical dose of five units will serve most uses."
+	taste_description = "copper and faint burning"
+	color = "#9c3a33"
+	overdose = 10
+
+/datum/reagent/medicine/trypsin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Peridaxon shouldn't heal brain or bones
+		for(var/obj/item/organ/I in organs_sans_brain_and_bones)
+			var/list/current_wounds = I.GetComponents(/datum/component/internal_wound)
+			if(LAZYLEN(current_wounds) && !BP_IS_ROBOTIC(I) && prob(75)) //heals only non-robotic organs
+				M.add_chemical_effect(CE_DEBRIDEMENT, dose*0.2) //5 units will provide enough CE_DEBRIDEMENT to actually
+				M.apply_damage(dose*0.5, HALLOSS)
+
+
+/datum/reagent/medicine/trypsin/overdose(mob/living/carbon/M, alien)
+	. = ..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/list/organs_sans_brain_and_bones = H.internal_organs - H.internal_organs_by_efficiency[BP_BRAIN] - H.internal_organs_by_efficiency[OP_BONE] // Since it doesn't heal brain/bones it shouldn't damage them too
+		if(LAZYLEN(organs_sans_brain_and_bones))
+			M.take_organ_damage(pick(0,5))
+			M.add_chemical_effect(CE_DEBRIDEMENT, dose*0.1) //a dose of about 20 will give you enough CE_DEBRIDEMENT to clear "permanent" scars. You'll still need to clear the carbonized flesh by hand, however.
 
 /datum/reagent/medicine/ctincture
 	name = "Carpotoxin Tincture"
