@@ -89,7 +89,7 @@
 #define DEFAULT_ATTACK_COOLDOWN 8 //Default timeout for aggressive actions
 #define DEFAULT_QUICK_COOLDOWN  4
 
-#define FAST_WEAPON_COOLDOWN 3
+#define FAST_WEAPON_COOLDOWN -2
 #define DEFAULT_WEAPON_COOLDOWN 5
 #define SLOW_WEAPON_COOLDOWN 7
 

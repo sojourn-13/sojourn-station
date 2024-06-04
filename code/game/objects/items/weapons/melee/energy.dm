@@ -182,6 +182,7 @@
 	blade_color = "green"
 	name = "laser dagger"
 	desc = "A much smaller but still useful energy based short blade."
+	clickdelay_offset FAST_WEAPON_COOLDOWN
 	armor_divisor = ARMOR_PEN_EXTREME
 	active_force =  WEAPON_FORCE_DANGEROUS
 	active_throwforce =  WEAPON_FORCE_DANGEROUS

@@ -353,7 +353,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "Advanced, extremely resilient and mobile prosthetic. Inscribed with \"Made in\" followed by gibberish, must have been lost to time."
 	force_icon = 'icons/mob/human_races/cyberlimbs/one_star.dmi'
 	model = "one_star"
-	armor_list = list(melee = 4, bullet = 4, energy = 4, bomb = 65, bio = 100, rad = 100)
+	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 65, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 4, MATERIAL_PLATINUM = 2)
 	max_damage = 70
 	min_broken_damage = 50

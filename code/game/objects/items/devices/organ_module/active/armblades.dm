@@ -6,7 +6,10 @@
 	item_state = null
 	worksound = WORKSOUND_HARD_SLASH
 	hitsound = 'sound/weapons/heavyslash.ogg'
-	force = WEAPON_FORCE_DANGEROUS
+	force = WEAPON_FORCE_BRUTAL
+	sharp = TRUE
+	edge = TRUE
+	clickdelay_offset = FAST_WEAPON_COOLDOWN
 	throwforce = WEAPON_FORCE_WEAK
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("stabbed", "chopped", "cut")
@@ -31,6 +34,7 @@
 	icon_state = "wolverine"
 	name = "claws"
 	desc = "A set of claws deployed from the tips of your fingers. Great for cutting people into ribbons."
+	clickdelay_offset = 0 //No bonus speed.
 
 /obj/item/organ_module/active/simple/wolverine
 	name = "embedded claws"

@@ -14,6 +14,7 @@
 	force = WEAPON_FORCE_NORMAL
 	throwforce = WEAPON_FORCE_DANGEROUS
 	armor_divisor = ARMOR_PEN_SHALLOW
+	clickdelay_offset FAST_WEAPON_COOLDOWN //small, but quicker to use.
 	max_upgrades = 2
 	tool_qualities = list(QUALITY_CUTTING = 20,  QUALITY_WIRE_CUTTING = 10, QUALITY_SCREW_DRIVING = 5)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
