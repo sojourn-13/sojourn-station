@@ -212,7 +212,6 @@ They are soully made and reflavoured to be for PVE.
 	psionic_respawn = TRUE //Endles fighter
 	can_leave = FALSE
 	drop_items = list(/obj/item/tool/sword/cleaver/cult/deepmaints, /obj/random/psi/always_spawn)
-	color = null
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/plasma
 	name = "Daskveyian Plasma Caster"
