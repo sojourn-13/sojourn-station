@@ -380,7 +380,7 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 
 /datum/nt_blueprint/machinery/bioreactor_unloader
 	name = "Biomatter Reactor: Unloader" //Basically a hopper
-	build_path = /obj/machinery/multistructure/bioreactor_part/platform
+	build_path = /obj/machinery/multistructure/bioreactor_part/unloader
 	materials = list(
 		/obj/item/stack/material/steel = 10
 	)
@@ -403,16 +403,6 @@ GLOBAL_LIST_INIT(nt_constructs, init_nt_constructs())
 	materials = list(
 		/obj/item/stack/material/silver = 5,
 		/obj/item/reagent_containers/glass/bucket = 1
-	)
-	build_time = 6 SECONDS
-
-/datum/nt_blueprint/machinery/bioreactor_biotank
-	name = "Biomatter Reactor: Tank"
-	build_path = /obj/machinery/multistructure/bioreactor_part/biotank_platform
-	materials = list(
-		/obj/item/stack/material/plastic = 10,
-		/obj/item/stack/material/steel = 20,
-		/obj/structure/reagent_dispensers/biomatter/large = 1
 	)
 	build_time = 6 SECONDS
 
