@@ -6687,6 +6687,8 @@
 /obj/item/storage/pouch/engineering_tools,
 /obj/item/storage/pouch/engineering_supply,
 /obj/item/storage/toolbox/mechanical,
+/obj/item/stack/material/steel/full,
+/obj/item/stack/rods/random,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/security/armory_blackshield)
 "bvf" = (
@@ -14422,8 +14424,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/surfaceeast)
 "dai" = (
-/obj/random/flora/small_jungle_tree,
-/turf/simulated/floor/asteroid/dirt,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/flora/small/rock3,
+/turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/outside/pond)
 "dak" = (
 /obj/effect/decal/cleanable/blood,
@@ -17833,7 +17837,7 @@
 	})
 "dKA" = (
 /obj/structure/flora/ausbushes/stalkybush,
-/turf/simulated/floor/beach/sand,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/pond)
 "dKC" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -38808,7 +38812,7 @@
 "hYu" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/beach/sand,
+/turf/simulated/floor/asteroid/dirt/dust,
 /area/nadezhda/outside/pond)
 "hYv" = (
 /obj/machinery/vending/boozeomat{
@@ -49316,8 +49320,8 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/engineering/atmos/surface)
 "kgc" = (
-/obj/structure/flora/small/rock2,
-/turf/simulated/floor/asteroid/dirt,
+/obj/structure/flora/small/rock3,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/pond)
 "kge" = (
 /obj/machinery/light/small{
@@ -54600,7 +54604,8 @@
 /area/nadezhda/maintenance/undergroundfloor1north)
 "loh" = (
 /obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/beach/sand,
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/outside/pond)
 "lol" = (
 /turf/simulated/shuttle/floor/science{
@@ -59848,6 +59853,7 @@
 "mrI" = (
 /obj/effect/overlay/water/top,
 /obj/effect/overlay/water,
+/obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/outside/pond)
 "mrJ" = (
@@ -85132,7 +85138,9 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/command/fo)
 "rtu" = (
-/turf/simulated/floor/beach/sand,
+/obj/structure/flora/ausbushes/reedbush,
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/pond)
 "rtx" = (
 /obj/machinery/vending/tool,
@@ -86763,8 +86771,10 @@
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security)
 "rLl" = (
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/asteroid/dirt,
+/obj/effect/overlay/water,
+/obj/effect/overlay/water/top,
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/simulated/floor/beach/water/flooded,
 /area/nadezhda/outside/pond)
 "rLm" = (
 /turf/simulated/wall/r_wall,
@@ -87670,11 +87680,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
-"rVz" = (
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/big/bush2,
-/turf/simulated/floor/asteroid/dirt,
-/area/nadezhda/outside/pond)
 "rVD" = (
 /obj/effect/step_trigger/surface_to_forest_1_B,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -209701,7 +209706,7 @@ tfW
 wSc
 tfW
 tfW
-cxU
+tfW
 bzf
 kOj
 kOj
@@ -210306,7 +210311,7 @@ tfW
 tfW
 tfW
 tfW
-cxU
+tfW
 iGL
 kOj
 kOj
@@ -219398,8 +219403,8 @@ nnz
 qMG
 sQo
 frI
+kgc
 qMG
-rtu
 rtu
 lwP
 sQo
@@ -219600,10 +219605,10 @@ qMG
 dXq
 kKd
 sQo
-rtu
+qMG
 vFL
 vFL
-rtu
+njk
 oKP
 kBL
 sQo
@@ -219802,11 +219807,11 @@ qMG
 wNF
 sQo
 sQo
-rtu
+qMG
 vFL
+dai
 vFL
-vFL
-rtu
+njk
 ciR
 rrK
 qMG
@@ -220004,12 +220009,12 @@ qMG
 dXq
 sQo
 rTq
-rtu
+njk
 vFL
+rLl
 vFL
-vFL
-rtu
-qMG
+sQo
+kgc
 sQo
 dXq
 qMG
@@ -220206,12 +220211,12 @@ emO
 dXq
 sQo
 sQo
-qMG
-rtu
+kgc
+sQo
 vFL
 vFL
-rtu
-rVz
+sQo
+rpP
 sQo
 dXq
 qMG
@@ -220408,12 +220413,12 @@ qMG
 dXq
 sQo
 doc
+rrK
+rtu
+vFL
 dai
-rtu
 vFL
-vFL
-vFL
-rtu
+sQo
 ciR
 dXq
 qMG
@@ -220611,11 +220616,11 @@ qMG
 sQo
 sQo
 sQo
-rtu
+qMG
 vFL
 vFL
 mrI
-rtu
+qMG
 rTq
 dXq
 qMG
@@ -220813,8 +220818,8 @@ dZu
 sQo
 sQo
 sQo
-rtu
-vFL
+qMG
+dai
 vFL
 vFL
 loh
@@ -221018,7 +221023,7 @@ sQo
 frI
 vFL
 vFL
-vFL
+dai
 hYu
 bDP
 bDP
@@ -221218,10 +221223,10 @@ sQo
 ciR
 rTq
 sQo
-qMG
+sQo
 dKA
 hYu
-qMG
+sQo
 frI
 sQo
 ela
@@ -221421,8 +221426,8 @@ ciR
 ciR
 sQo
 kKd
-rLl
-kgc
+doc
+bDP
 sQo
 sQo
 sQo
@@ -235746,7 +235751,7 @@ aYl
 aYl
 kTO
 kTO
-mHv
+ucy
 tHS
 tfW
 tfW
@@ -236351,7 +236356,7 @@ iYY
 iYY
 iYY
 kTO
-kOj
+kTO
 ucy
 tfW
 tfW
@@ -236553,8 +236558,8 @@ iYY
 iYY
 iYY
 kTO
-kOj
-kOj
+kTO
+kTO
 tfW
 mHv
 tfW
@@ -236755,8 +236760,8 @@ iYY
 iYY
 iYY
 kTO
-kOj
-kOj
+kTO
+kTO
 nVx
 dbo
 tfW
@@ -237159,8 +237164,8 @@ iPx
 qIy
 gBD
 rTe
-kOj
-kOj
+kTO
+kTO
 kOj
 cXA
 tfW
@@ -237361,7 +237366,7 @@ iYY
 gBD
 gBD
 rTe
-kOj
+kTO
 kOj
 ucy
 vcw
