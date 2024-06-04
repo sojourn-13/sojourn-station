@@ -7,7 +7,6 @@ import { useBackend, useSharedState } from '../backend';
 import {
   Box,
   Button,
-  Image,
   LabeledList,
   ProgressBar,
   Section,
@@ -237,18 +236,17 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                 <Stack align="center">
                   {!config.window.toaster && (
                     <Stack.Item>
-                      <Image
-                        width="48px"
-                        height="48px"
-                        src={current.icon}
-                        style={{
-                          verticalAlign: 'middle',
-                          objectFit: 'cover',
-                          margin: '4px',
-                          backgroundColor: 'black',
-                          border: '1px solid #3e6189',
-                        }}
-                      />
+                      <Stack
+                        width="32px"
+                        height="32px"
+                        align="center"
+                        justify="center"
+                        backgroundColor="black"
+                        overflow="hidden"
+                        style={{ border: '1px solid #3e6189 ' }}
+                      >
+                        <Stack.Item className={current.icon} />
+                      </Stack>
                     </Stack.Item>
                   )}
                   <Stack.Item grow>
@@ -356,18 +354,17 @@ export const AutolatheQueue = (props: AutolatheQueueData) => {
                     />
                   </Stack.Item>
                   <Stack.Item>
-                    <Image
-                      width="24px"
-                      height="24px"
-                      src={item.icon}
-                      style={{
-                        verticalAlign: 'middle',
-                        objectFit: 'cover',
-                        margin: '4px',
-                        backgroundColor: 'black',
-                        border: '1px solid #3e6189',
-                      }}
-                    />
+                    <Stack
+                      width="32px"
+                      height="32px"
+                      align="center"
+                      justify="center"
+                      backgroundColor="black"
+                      overflow="hidden"
+                      style={{ border: '1px solid #3e6189 ' }}
+                    >
+                      <Stack.Item className={item.icon} />
+                    </Stack>
                   </Stack.Item>
                 </Stack>
               </Stack.Item>
