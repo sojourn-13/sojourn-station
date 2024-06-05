@@ -328,8 +328,6 @@
 	var/mob/living/character = character_creation[1]
 	var/datum/spawnpoint/spawnpoint = character_creation[2]
 
-	log_debug("[key_name(character)] late joined, character is currently at [character?.loc], spawnpoint specified is [spawnpoint?.name]")
-
 	character = SSjob.EquipRank(character, rank) //equips the human
 	equip_custom_items(character)
 	character.lastarea = get_area(loc)
@@ -486,12 +484,10 @@ GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 	var/datum/spawnpoint/spawnpoint = SSjob.get_spawnpoint_for(client, rank, late)
 	var/turf/initial_loc = spawnpoint.get_turf_for_new_player()
 	if(!initial_loc)
-		log_debug("[key_name(src)] was unable to be created (step 1) at [spawnpoint?.name], attempting to spawn in Aft Cryogenic Storage")
 		// If we can't spawn them at their spawnpoint, try to spawn them at a default
 		spawnpoint = get_spawn_point("Aft Cryogenic Storage")
 		initial_loc = spawnpoint.get_turf_for_new_player()
 		if(!initial_loc)
-			log_debug("[key_name(src)] was unable to be created (step 1) at [spawnpoint?.name], spawning at new_player location [loc]")
 			// Finally, give up and spawn them at the lobby screen location
 			initial_loc = loc
 
@@ -573,10 +569,8 @@ GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 	spawnpoint = SSjob.get_spawnpoint_for(new_character.client, rank, late)
 	if(!spawnpoint.put_mob(new_character, ignore_environment = !late))
 		// If we can't spawn them at their spawnpoint, try to spawn them at a default
-		log_debug("[key_name(new_character)] was unable to be moved (step 2) to [spawnpoint?.name], attempting to spawn in Aft Cryogenic Storage")
 		spawnpoint = get_spawn_point("Aft Cryogenic Storage")
 		if(!spawnpoint.put_mob(new_character, ignore_environment = !late))
-			log_debug("[key_name(new_character)] was unable to be moved (step 2) to [spawnpoint?.name], we have no idea how to spawn them and they may be stuck")
 			log_and_message_admins("[key_name_admin(new_character)] could not find any possible way to spawn and may be stuck in space.")
 
 	return list(new_character, spawnpoint)
