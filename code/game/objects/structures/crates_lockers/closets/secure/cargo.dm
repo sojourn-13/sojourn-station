@@ -647,10 +647,10 @@
 	//pistols
 	new /obj/item/gun/projectile/automatic/slaught_o_matic(src) //has silver eye
 	new /obj/item/gun/projectile/silvereye(src)
-	new /obj/item/ammo_magazine/kurtz_50/hv(src)
-	new /obj/item/ammo_magazine/kurtz_50/hv(src)
-	new /obj/item/ammo_magazine/kurtz_50/hv(src)
-	new /obj/item/ammo_magazine/ammobox/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/kurtz_50(src)
+	new /obj/item/ammo_magazine/kurtz_50(src)
+	new /obj/item/ammo_magazine/kurtz_50(src)
+	new /obj/item/ammo_magazine/ammobox/kurtz_50(src)
 	//melee
 
 	switch(melee_cache)
