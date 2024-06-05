@@ -20982,13 +20982,13 @@
 /turf/simulated/floor/wood/wild1,
 /area/nadezhda/crew_quarters/podrooms)
 "eqm" = (
-/obj/machinery/door/airlock/glass_medical{
-	name = "Monkey Containment";
-	req_access = list(39)
-	},
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade,
+/obj/machinery/door/airlock/glass_medical{
+	name = "Chem/Viro Labs";
+	req_one_access = list(33,29)
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/virology)
 "eqq" = (
@@ -24138,10 +24138,6 @@
 	name = "Medbay Total Lockdown";
 	opacity = 0
 	},
-/obj/machinery/door/airlock/glass_medical{
-	name = "Chem/Viro Labs";
-	req_one_access = list(33,29)
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -24158,6 +24154,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade,
+/obj/machinery/door/airlock/glass_medical{
+	name = "Chem/Viro Labs";
+	req_one_access = list(33,29)
+	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/virology)
 "eXi" = (
@@ -100731,13 +100731,13 @@
 	name = "Medbay Total Lockdown";
 	opacity = 0
 	},
+/obj/machinery/door/firedoor,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade,
 /obj/machinery/door/airlock/glass_medical{
 	name = "Chem/Viro Labs";
 	req_one_access = list(33,29)
 	},
-/obj/machinery/door/firedoor,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade,
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/medical/virology)
 "uxw" = (
