@@ -25225,7 +25225,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/solid_biomass,
 /obj/structure/railing/grey{
 	dir = 4;
 	pixel_x = 4
@@ -35113,11 +35112,6 @@
 "hoH" = (
 /turf/simulated/mineral,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"hoK" = (
-/obj/effect/decal/cleanable/solid_biomass,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/nadezhda/command/teleporter)
 "hoR" = (
 /obj/structure/catwalk,
 /obj/structure/cable/yellow{
@@ -85962,7 +85956,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/obj/effect/decal/cleanable/solid_biomass,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4;
@@ -137660,7 +137653,7 @@ imQ
 fWx
 ezK
 wzz
-hoK
+ezK
 fWx
 vTb
 nSQ
