@@ -207,6 +207,8 @@
 	new /obj/item/clothing/mask/balaclava(src)
 	new /obj/item/clothing/suit/storage/armor/marshal_coat(src)
 	new /obj/item/clothing/suit/storage/armor/marshal_coat(src)
+	new /obj/item/clothing/accessory/armband(src)
+	new /obj/item/clothing/accessory/armband(src)
 
 /obj/structure/closet/wardrobe/militia
 	name = "blackshield wardrobe"
@@ -274,6 +276,11 @@
 	new /obj/item/clothing/glasses/ballistic(src)
 	new /obj/item/clothing/glasses/ballistic(src)
 	new /obj/item/clothing/glasses/ballistic(src)
+	new /obj/item/clothing/accessory/armband/militia(src)
+	new /obj/item/clothing/accessory/armband/militia(src)
+	new /obj/item/clothing/accessory/armband/militia(src)
+	new /obj/item/clothing/accessory/armband/corpsman(src)
+	new /obj/item/clothing/accessory/armband/corpsman(src)
 
 /obj/structure/closet/wardrobe/job/science_white
 	name = "science wardrobe"
