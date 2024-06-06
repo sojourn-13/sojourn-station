@@ -243,7 +243,7 @@
 	flash_pain()
 
 	//For not bloating damage_through_armor here is simple armor calculation for stun time
-	var/armor_coefficient = max(0, 1 - getarmor(def_zone, ARMOR_ENERGY) / 100)
+	var/armor_coefficient = max(0, 1 - getarmor(def_zone, ARMOR_ENERGY) / 25)
 
 	//If armor is 100 or more, we just skeeping it
 	if (stun_amount && armor_coefficient)

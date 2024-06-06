@@ -24,6 +24,7 @@
 	offline_vision_restriction = 1
 	stiffness = 0
 	obscuration = 0
+	price_tag = 2000
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/merc
 

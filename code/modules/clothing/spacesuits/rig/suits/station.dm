@@ -461,6 +461,7 @@ Technomancer RIG
 		bio = 100,
 		rad = 100
 	)
+	price_tag = 1500
 	ablative_max = 8
 	ablation = ABLATION_DURABLE // Lasts longer than most rigs
 	slowdown = 0.3

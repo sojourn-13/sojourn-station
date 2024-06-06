@@ -213,6 +213,7 @@
 	throwforce = WEAPON_FORCE_PAINFUL // Not gonna matter since it will turn off on throwing, thank you psions can't have shit in Nadezhda
 	throw_speed = 3 // Same as normal spear
 	throw_range = 7
+	extended_reach = TRUE
 	w_class = ITEM_SIZE_HUGE // It's a long spear
 	slot_flags = SLOT_BACK
 	flags = CONDUCT // It's a metal pole, you're a literal lightning rod while holding it

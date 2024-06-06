@@ -165,7 +165,7 @@
 	desc = "A unique, vaccum-proof suit of nano-enhanced armor designed specifically for assassins."
 	icon_state = "ninja_rig"
 	armor_list = list(
-		melee =7,
+		melee = 7,
 		bullet = 7,
 		energy = 20,
 		bomb = 25,
@@ -175,6 +175,7 @@
 	seal_delay = 15
 	emp_protection = 40 //change this to 30 if too high.
 	slowdown = 0
+	price_tag = 1000 //rare but ultimately not much to write home about other than its modules.
 
 	chest_type = /obj/item/clothing/suit/space/rig/light/ninja
 	glove_type = /obj/item/clothing/gloves/rig/light/ninja

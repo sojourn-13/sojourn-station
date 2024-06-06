@@ -69,7 +69,7 @@
 	wielded_icon = "nt_halberd_wielded"
 	force = WEAPON_FORCE_BRUTAL
 	armor_divisor = ARMOR_PEN_MASSIVE
-	max_upgrades = 1
+	max_upgrades = 3
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
 	extended_reach = TRUE

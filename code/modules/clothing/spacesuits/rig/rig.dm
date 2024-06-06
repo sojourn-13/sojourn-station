@@ -21,6 +21,7 @@
 	req_access = list()
 	w_class = ITEM_SIZE_BULKY
 	item_flags = DRAG_AND_DROP_UNEQUIP|EQUIP_SOUNDS
+	price_tag = 600
 
 	// These values are passed on to all component pieces.
 	armor = list(

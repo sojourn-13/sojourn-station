@@ -14,6 +14,7 @@
 		bio = 100,
 		rad = 100
 	)
+	price_tag = 1500
 	slowdown = 0.3
 	drain = 4
 	offline_slowdown = 3
@@ -121,8 +122,8 @@
 	offline_slowdown = 3
 	offline_vision_restriction = 1
 	max_upgrades = 1
-	ablative_max = 8
-	ablation = ABLATION_SOFT //lots of gold and filigree
+	ablative_max = 5
+	ablation = ABLATION_CERAMIC //lots of gold and filigree
 	chest_type = /obj/item/clothing/suit/space/rig/combat/knight
 	helm_type =  /obj/item/clothing/head/helmet/space/rig/combat/knight
 	boot_type =  /obj/item/clothing/shoes/magboots/rig/combat/knight
