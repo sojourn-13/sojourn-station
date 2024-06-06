@@ -152,13 +152,6 @@
 		M.buckled.set_dir(M.dir)
 	return TRUE
 
-// We will still call put_mob after this
-/datum/spawnpoint/proc/get_turf_for_new_player()
-	var/list/free_locs = get_spawn_locations()
-	if(!LAZYLEN(free_locs))
-		return FALSE
-
-	return get_turf(pick(free_locs))
 
 /**********************
 	Cryostorage Spawning
