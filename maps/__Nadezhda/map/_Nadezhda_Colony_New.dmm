@@ -10696,6 +10696,7 @@
 	pixel_y = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/dead,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/psych{
 	name = "\improper Psych Ward"
@@ -47741,11 +47742,13 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/rnd/rbreakroom)
 "jOt" = (
-/obj/structure/flora/pottedplant/dead,
-/obj/item/device/radio/intercom{
-	pixel_y = 28
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 35
+	},
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/psych{
 	name = "\improper Psych Ward"
@@ -68952,11 +68955,11 @@
 	},
 /area/shuttle/surface_transport_lz)
 "ogs" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 35
-	},
-/obj/machinery/atmospherics/unary/vent_pump,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/unary/vent_pump,
+/obj/item/device/radio/intercom{
+	pixel_y = 28
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/psych{
 	name = "\improper Psych Ward"
@@ -85968,8 +85971,7 @@
 /area/nadezhda/crew_quarters/clownoffice)
 "rCe" = (
 /obj/machinery/light/small{
-	dir = 8;
-	pixel_y = 8
+	dir = 8
 	},
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled/white,
