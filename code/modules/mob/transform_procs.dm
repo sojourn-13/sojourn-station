@@ -68,9 +68,9 @@
 	qdel(animation)
 	return src
 
-/mob/new_player/AIize(move=1)
+/mob/new_player/AIize()
 	spawning = 1
-	return ..(move)
+	return ..()
 
 /mob/proc/AIize(move=1)
 	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))

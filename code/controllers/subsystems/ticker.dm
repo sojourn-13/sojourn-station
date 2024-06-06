@@ -233,6 +233,7 @@ SUBSYSTEM_DEF(ticker)
 
 	create_characters() //Create player characters and transfer them
 	collect_minds()
+	move_characters_to_spawnpoints()
 	equip_characters()
 
 	CHECK_TICK
@@ -392,8 +393,9 @@ SUBSYSTEM_DEF(ticker)
 			else if(!player.mind.assigned_role)
 				continue
 			else
-				player.create_character(player.mind.assigned_role, FALSE)
+				player.create_character()
 				qdel(player)
+
 
 /datum/controller/subsystem/ticker/proc/collect_minds()
 	for(var/mob/living/player in GLOB.player_list)
@@ -494,6 +496,10 @@ SUBSYSTEM_DEF(ticker)
 			if(!isnewplayer(M))
 				to_chat(M, "Premier role not forced on anyone.")
 
+/datum/controller/subsystem/ticker/proc/move_characters_to_spawnpoints()
+	for(var/mob/living/carbon/human/player in GLOB.player_list)
+		var/datum/spawnpoint/SP = SSjob.get_spawnpoint_for(player.client, player.mind.assigned_role)
+		SP.put_mob(player)
 
 
 /datum/controller/subsystem/ticker/proc/declare_completion()
