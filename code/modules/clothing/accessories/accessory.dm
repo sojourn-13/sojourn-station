@@ -426,7 +426,7 @@
 	icon_state = "heavychurchcloakred"
 	desc = "A thick, luxurious cloak with red trim."
 
-/obj/item/clothing/accessory/job/cape/church
+/obj/item/clothing/accessory/job/cape/church/white
 	name = "white Absolutists greatcloak"
 	icon_state = "heavychurchcloakwhite"
 	desc = "A thick, luxurious white cloak with golden trim."
