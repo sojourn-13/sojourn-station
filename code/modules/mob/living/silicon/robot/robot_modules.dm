@@ -748,7 +748,7 @@ var/global/list/robot_modules = list(
 
 	//We are stronk so we get less no knockdowns
 	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
-
+	R.stats.addPerk(PERK_BLOOD_LUST) //Target ME
 	R.stats.addPerk(PERK_SI_SCI)
 
 	..(R)
@@ -842,7 +842,7 @@ var/global/list/robot_modules = list(
 
 	//We are stronk so we get less no knockdowns
 	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
-
+	R.stats.addPerk(PERK_BLOOD_LUST) //Target ME
 	R.stats.addPerk(PERK_SI_SCI)
 
 	..(R)
