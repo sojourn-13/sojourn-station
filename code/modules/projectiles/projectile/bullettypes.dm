@@ -12,7 +12,7 @@
 ///9mm///
 /obj/item/projectile/bullet/pistol_35
 	damage_types = list(BRUTE = 24)
-	armor_divisor = 0.5
+	armor_divisor = 0.4
 	step_delay = 0.65
 	can_ricochet = TRUE
 	wounding_mult = WOUNDING_SMALL
@@ -21,9 +21,8 @@
 	recoil = 5
 
 /obj/item/projectile/bullet/pistol_35/hv
-	damage_types = list(BRUTE = 14)
-	armor_divisor = 1
-	wounding_mult = WOUNDING_SMALL
+	damage_types = list(BRUTE = 18)
+	armor_divisor = 1.2
 	step_delay = 0.5
 	affective_damage_range = 5
 	affective_ap_range = 5
@@ -42,8 +41,8 @@
 
 /obj/item/projectile/bullet/pistol_35/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 14)
-	armor_divisor = 0.25
+	damage_types = list(BRUTE = 18)
+	armor_divisor = 0.2
 	wounding_mult = WOUNDING_NORMAL
 	penetrating = 0
 	can_ricochet = FALSE
@@ -140,11 +139,10 @@
 /obj/item/projectile/bullet/magnum_40
 	icon_state = "bullet_magnum"
 	damage_types = list(BRUTE = 28)
-	armor_divisor = 0.6
+	armor_divisor = 0.5
 	wounding_mult = WOUNDING_NORMAL
 	can_ricochet = TRUE
 	step_delay = 0.4
-	wounding_mult = WOUNDING_SMALL
 
 	affective_damage_range = 4
 	affective_ap_range = 4
@@ -160,12 +158,11 @@
 	recoil = 4
 
 /obj/item/projectile/bullet/magnum_40/hv
-	damage_types = list(BRUTE = 19)
-	armor_divisor = 1.2
+	damage_types = list(BRUTE = 22)
+	armor_divisor = 1.3
 	penetrating = 1
 	step_delay = 0.25
 	nocap_structures = TRUE //Door breaching
-	wounding_mult = WOUNDING_NORMAL
 	sharp = TRUE
 	affective_damage_range = 5
 	affective_ap_range = 5
@@ -173,8 +170,8 @@
 
 /obj/item/projectile/bullet/magnum_40/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 19)
-	armor_divisor = 0.4
+	damage_types = list(BRUTE = 22)
+	armor_divisor = 0.25
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 0
 	can_ricochet = FALSE
@@ -259,7 +256,7 @@
 /obj/item/projectile/bullet/kurtz_50
 	icon_state = "bullet_krutz"
 	damage_types = list(BRUTE = 36)
-	armor_divisor = 0.7
+	armor_divisor = 0.6
 	wounding_mult = WOUNDING_WIDE
 	can_ricochet = TRUE
 	embed = TRUE
@@ -274,7 +271,7 @@
 	damage_types = list(BRUTE = 20, HALLOSS = 35)
 	wounding_mult = WOUNDING_SERIOUS
 	check_armour = ARMOR_MELEE
-	armor_divisor = 0.6
+	armor_divisor = 0.5
 	can_ricochet = TRUE
 	//ricochet_mod = 2 //including our AP mallus for bounce we are baseline about 1.9x as likely to bounce.
 	step_delay = 0.7
@@ -312,8 +309,8 @@
 
 /obj/item/projectile/bullet/kurtz_50/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 18)
-	armor_divisor = 0.5
+	damage_types = list(BRUTE = 27)
+	armor_divisor = 0.3
 	wounding_mult = WOUNDING_EXTREME
 	penetrating = 0
 	can_ricochet = FALSE
@@ -322,9 +319,8 @@
 
 /obj/item/projectile/bullet/kurtz_50/hv
 	name = "AV bullet"
-	damage_types = list(BRUTE = 18)
+	damage_types = list(BRUTE = 27)
 	armor_divisor = 1.4
-	wounding_mult = WOUNDING_WIDE
 	penetrating = 2
 	can_ricochet = FALSE
 	step_delay = 0.45
@@ -342,7 +338,7 @@
 
 /obj/item/projectile/bullet/light_rifle_257
 	icon_state = "bullet_carbine"
-	damage_types = list(BRUTE = 18)
+	damage_types = list(BRUTE = 21)
 	armor_divisor = 1
 	wounding_mult = WOUNDING_SMALL
 	penetrating = 1
@@ -362,9 +358,8 @@
 	recoil = 4
 
 /obj/item/projectile/bullet/light_rifle_257/hv
-	damage_types = list(BRUTE = 14)
+	damage_types = list(BRUTE = 17)
 	armor_divisor = 2.5
-	wounding_mult = WOUNDING_SMALL
 	penetrating = 2
 	hitscan = TRUE
 	affective_damage_range = 8 //Can snipe
@@ -409,8 +404,8 @@
 
 /obj/item/projectile/bullet/light_rifle_257/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 14)
-	armor_divisor = 0.4
+	damage_types = list(BRUTE = 17)
+	armor_divisor = 0.5
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 0
 	can_ricochet = FALSE
@@ -445,7 +440,7 @@
 /// 7.62x39mm Rifle ///
 
 /obj/item/projectile/bullet/rifle_75
-	damage_types = list(BRUTE = 22)
+	damage_types = list(BRUTE = 25)
 	armor_divisor = 1.25
 	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 1
@@ -456,9 +451,8 @@
 	recoil = 10
 
 /obj/item/projectile/bullet/rifle_75/hv
-	damage_types = list(BRUTE = 16)
+	damage_types = list(BRUTE = 19)
 	armor_divisor = 3
-	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 2
 	hitscan = TRUE
 	affective_damage_range = 8
@@ -510,8 +504,8 @@
 
 /obj/item/projectile/bullet/rifle_75/lethal
 	name = "hollow-point bullet"
-	damage_types = list(BRUTE = 16)
-	armor_divisor = 0.8
+	damage_types = list(BRUTE = 19)
+	armor_divisor = 0.65
 	wounding_mult = WOUNDING_WIDE
 	penetrating = 0
 	can_ricochet = FALSE
@@ -581,7 +575,6 @@
 	name = "sabot penetrator"
 	damage_types = list(BRUTE = 20)
 	armor_divisor = 3.5
-	wounding_mult = WOUNDING_SERIOUS
 	penetrating = 3
 	hitscan = TRUE
 	affective_damage_range = 9 //Sniping cal
@@ -593,7 +586,7 @@
 /obj/item/projectile/bullet/heavy_rifle_408/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 20)
-	armor_divisor = 1
+	armor_divisor = 0.7
 	wounding_mult = WOUNDING_WIDE
 	penetrating = 0
 	can_ricochet = FALSE
@@ -625,7 +618,7 @@
 
 /obj/item/projectile/bullet/c10x24
 	damage_types = list(BRUTE = 20)
-	armor_divisor = 1.25
+	armor_divisor = 2
 	wounding_mult = WOUNDING_SMALL
 	penetrating = 2
 	can_ricochet = TRUE

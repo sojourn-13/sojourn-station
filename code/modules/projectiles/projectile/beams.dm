@@ -12,6 +12,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	damage_types = list(BURN = 20)
 	armor_divisor = 1.2 //Some AP
+	wounding_mult = 1.2 //and some wounding mult
 	check_armour = ARMOR_ENERGY
 	var/frequency = 1
 	hitscan = 1
@@ -156,7 +157,8 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "heavy laser"
 	icon_state = "heavylaser"
 	damage_types = list(BURN = 35)
-	armor_divisor = 1.25
+	armor_divisor = 1.5
+	wounding_mult = 1.3
 	eyeblur = 4
 	muzzle_type = /obj/effect/projectile/laser_heavy/muzzle
 	tracer_type = /obj/effect/projectile/laser_heavy/tracer
@@ -168,6 +170,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	icon_state = "xray"
 	damage_types = list(BURN = 25)
 	armor_divisor = 2.25
+	wounding_mult = 1
 	eyeblur = 4
 	recoil = 1
 	penetrating = 1 //Pierces walls
@@ -179,7 +182,8 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	name = "pulse"
 	icon_state = "u_laser"
 	damage_types = list(BURN = 40)
-	armor_divisor = 1.25
+	armor_divisor = 2 //it's a pulse blast.
+	wounding_mult = 1.5
 	eyeblur = 4
 	recoil = 3
 	muzzle_type = /obj/effect/projectile/laser_pulse/muzzle
@@ -194,7 +198,7 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 /obj/item/projectile/beam/pulse/heavy
 	name = "heavy pulse"
 	damage_types = list(BURN = 50)
-	armor_divisor = 1.75
+	armor_divisor = 2.25
 	recoil = 5
 
 /obj/item/projectile/beam/emitter
