@@ -220,11 +220,13 @@
 						if(!wielded_l.is_held_twohanded(wielded_l))
 							visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_l], making [H.name] unwield [wielded_l]!"))
 							wielded_l.unwield(H)
-				if(knock_out_of_hand) //When not wielding an item we knock it out of your grasp!
-					if(H.get_active_hand())
-						var/obj/fumble = H.get_active_hand()
-						H.drop_from_inventory(fumble)
-						visible_message(SPAN_DANGER("[src] knocks [fumble] out of [H.name]'s grasp!"))
+				//This is insainl powerful and shuld not just happend without choas level being exstreamly high
+				if(GLOB.chaos_level >= 5)
+					if(knock_out_of_hand) //When not wielding an item we knock it out of your grasp!
+						if(H.get_active_hand())
+							var/obj/fumble = H.get_active_hand()
+							H.drop_from_inventory(fumble)
+							visible_message(SPAN_DANGER("[src] knocks [fumble] out of [H.name]'s grasp!"))
 	. = ..()
 
 //To see full affects go to the ai.dm for psi_monsters
