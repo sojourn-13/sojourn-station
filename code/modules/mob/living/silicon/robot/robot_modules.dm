@@ -413,7 +413,9 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/scalpel/laser/si/robo(src) //hardsuits.
 	src.modules += new /obj/item/gripper/chemistry(src)
 	src.modules += new /obj/item/reagent_containers/dropper/industrial(src)
-	src.modules += new /obj/item/reagent_containers/syringe(src)
+	src.modules += new /obj/item/reagent_containers/syringe/large(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
 	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src) //Two beakers
 	src.modules += new /obj/item/device/scanner/reagent/adv(src)
@@ -468,7 +470,7 @@ var/global/list/robot_modules = list(
 
 
 /obj/item/robot_module/medical/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
-	var/obj/item/reagent_containers/syringe/S = locate() in src.modules
+	var/obj/item/reagent_containers/syringe/large/S = locate() in src.modules
 	if(S.mode == 2)
 		S.reagents.clear_reagents()
 		S.mode = initial(S.mode)
@@ -746,7 +748,7 @@ var/global/list/robot_modules = list(
 
 	//We are stronk so we get less no knockdowns
 	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
-
+	R.stats.addPerk(PERK_BLOOD_LUST) //Target ME
 	R.stats.addPerk(PERK_SI_SCI)
 
 	..(R)
@@ -834,13 +836,13 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
 	src.modules += new /obj/item/gripper/paperwork(src)
-	//src.modules += new /obj/item/device/holowarrant(src)
+	src.modules += new /obj/item/device/holowarrant(src)
 	//src.modules += new /obj/item/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
 	src.emag += new /obj/item/gun/energy/laser/mounted/cyborg(src)
 
 	//We are stronk so we get less no knockdowns
 	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
-
+	R.stats.addPerk(PERK_BLOOD_LUST) //Target ME
 	R.stats.addPerk(PERK_SI_SCI)
 
 	..(R)
@@ -934,6 +936,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/matter_decompiler(src) // free drone remains for all
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/tool/robotic_omni/cleaner(src)
+	src.modules += new /obj/item/tool/weldingtool/robotic(src)
 	src.modules += new /obj/item/gripper/upgrade(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/pen/robopen(src)

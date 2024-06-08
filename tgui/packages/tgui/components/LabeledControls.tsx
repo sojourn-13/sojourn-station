@@ -24,13 +24,14 @@ export function LabeledControls(props: FlexProps) {
 
 type ItemProps = {
   label: string;
+  basis?: string | number;
 } & FlexProps;
 
 function LabeledControlsItem(props: ItemProps) {
-  const { label, children, mx = 1, ...rest } = props;
+  const { label, children, mx = 1, basis, ...rest } = props;
 
   return (
-    <Flex.Item mx={mx}>
+    <Flex.Item mx={mx} basis={basis}>
       <Flex
         height="100%"
         direction="column"
