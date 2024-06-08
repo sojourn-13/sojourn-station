@@ -303,3 +303,12 @@
 		list(CRAFT_MATERIAL, 25, MATERIAL_STEEL),
 		list(QUALITY_WELDING, 10, 20)
 	)
+
+//Techinally it stores produce
+/datum/craft_recipe/storage/distilling_keg
+	name = "distilling keg"
+	result = /obj/structure/distilling_keg
+	steps = list(
+		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD),
+		list(/obj/item/stack/rods, 2)
+	)

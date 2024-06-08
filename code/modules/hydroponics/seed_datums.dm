@@ -868,6 +868,7 @@
 	display_name = "green grapevines"
 	mutants = null
 	chems = list("nutriment" = list(1,10), "kelotane" = list(3,5), "grapejuice" = list(10,10))
+	kitchen_tag = "greengrape"
 
 /datum/seed/grapes/green/New()
 	..()
@@ -1108,6 +1109,7 @@
 	seed_name = "sugarcane"
 	display_name = "sugarcanes"
 	chems = list("sugar" = list(4,5))
+	kitchen_tag = "sugarcane"
 
 /datum/seed/sugarcane/New()
 	..()
