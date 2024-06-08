@@ -95,7 +95,7 @@
 			deactivate()
 		update_icon()
 
-// /obj/item/tool/hydrogen_sword/emp_act(severity)
+ /obj/item/tool/hydrogen_sword/emp_act(severity)
 //	if(active) // Blow up.
 //		var/turf/T = get_turf(src)
 //		src.visible_message(SPAN_DANGER("[src]'s active magnetic field get disturbed by an EMP, violently exploding and scorching everything nearby!"))
