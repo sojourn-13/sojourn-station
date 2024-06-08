@@ -128,14 +128,20 @@
 	user.examinate(src)
 
 /obj/machinery/door/airlock/AIShiftClick(var/mob/user)  // Opens and closes doors!
-	user_toggle_open(user)
+	if(density)
+		Topic(src, list("command"="open", "activate" = "1"))
+	else
+		Topic(src, list("command"="open", "activate" = "0"))
 	return 1
 
 /atom/proc/AICtrlClick(var/mob/user)
 	return
 
 /obj/machinery/door/airlock/AICtrlClick(var/mob/user) // Bolts doors
-	toggle_bolt(user)
+	if(locked)
+		Topic(src, list("command"="bolts", "activate" = "0"))
+	else
+		Topic(src, list("command"="bolts", "activate" = "1"))
 	return 1
 
 /obj/machinery/power/apc/AICtrlClick(var/mob/user) // turns off/on APCs.
@@ -154,13 +160,12 @@
 	return AltClick(user)
 
 /obj/machinery/door/airlock/AIAltClick(var/mob/user) // Electrifies doors.
-	if(!user_allowed_ai(user))
-		return 0
-
 	if(!electrified_until)
-		electrify(-1, 1)
+		// permanent shock
+		Topic(src, list("command"="electrify_permanently", "activate" = "1"))
 	else
-		electrify(0, 1)
+		// disable/6 is not in Topic; disable/5 disables both temporary and permanent shock
+		Topic(src, list("command"="electrify_permanently", "activate" = "0"))
 	return 1
 
 /obj/machinery/turretid/AIAltClick(var/mob/user) //toggles lethal on turrets
@@ -171,14 +176,14 @@
 	return 0
 
 /obj/machinery/door/airlock/AIMiddleClick(var/mob/user) // Toggles door bolt lights.
+
 	if(..())
 		return
 
-	if(!user_allowed_ai(user))
-		return 0
-
-	lights = !lights
-	update_icon()
+	if(!src.lights)
+		Topic(src, list("command"="lights", "activate" = "1"))
+	else
+		Topic(src, list("command"="lights", "activate" = "0"))
 	return 1
 
 //

@@ -124,29 +124,10 @@
 	target_type = /obj/item/modular_computer/laptop
 
 	name_change = "Larkens-Branded Laptop"
-	icon_change = 'icons/fluff/fluff_items.dmi'
+	icon_change = 'icons/fluff/shadow_laptop.dmi'
 	icon_state_change = "shadowlaptop-closed"
 	vars_change = list(
 		"icon_state_unpowered" = "shadowlaptop",
 		"overlay_icon" = 'icons/obj/modular_laptop.dmi'
 	)
 
-// TheEternalFlame
-/datum/gear/fluff/tef_frayed_duster
-	ckey_whitelist = list("TheEternalFlame")
-	display_name = "Frayed Military Duster Conversion Kit"
-	path = /obj/item/fluff_conversion_kit/tef_frayed_duster
-
-// TheEternalFlame
-/obj/item/fluff_conversion_kit/tef_frayed_duster
-	name = "Frayed Military Duster Conversion Kit"
-	target_type = /obj/item/clothing/suit/storage/toggle/leather
-
-	name_change = "Frayed Military Duster"
-	icon_change = 'icons/fluff/fluff_items.dmi'
-	icon_state_change = "ghostechoe"
-	vars_change = list(
-		"desc" = "A military duster that's seen more combat than it probably should have, riddled with holes, tears and a healthy amount of dried blood. It likely should have been thrown away a long time ago, instead recently a peace symbol was drawn over it's back. The state of the duster and the symbol on it's back left it at odds with itself.",
-		"icon_override" = 'icons/fluff/clothing_mob.dmi',
-		"item_state" = "ghostechoe"
-	)

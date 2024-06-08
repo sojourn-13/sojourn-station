@@ -66,7 +66,6 @@
 /// A trait source when adding traits through unit tests
 #define TRAIT_SOURCE_UNIT_TESTS "unit_tests"
 
-#include "asset_smart_cache.dm"
 // #include "anchored_mobs.dm"
 // #include "bespoke_id.dm"
 #include "binary_insert.dm"

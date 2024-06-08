@@ -171,6 +171,7 @@
 					/obj/item/seeds/bananaseed = 3,
 					/obj/item/seeds/berryseed = 3,
 					/obj/item/seeds/blueberryseed = 3,
+					/obj/item/seeds/brootseed = 2,
 					/obj/item/seeds/cabbageseed = 3,
 					/obj/item/seeds/carrotseed = 3,
 					/obj/item/seeds/chantermycelium = 3,
@@ -186,6 +187,7 @@
 					/obj/item/seeds/lemonseed = 3,
 					/obj/item/seeds/limeseed = 3,
 					/obj/item/seeds/mintseed = 2,
+					/obj/item/seeds/mtearseed = 2,
 					/obj/item/seeds/orangeseed = 3,
 					/obj/item/seeds/peanutseed = 3,
 					/obj/item/seeds/pineappleseed = 2,
@@ -195,6 +197,7 @@
 					/obj/item/seeds/potatoseed = 3,
 					/obj/item/seeds/pumpkinseed = 3,
 					/obj/item/seeds/riceseed = 3,
+					/obj/item/seeds/shandseed = 2,
 					/obj/item/seeds/soyaseed = 3,
 					/obj/item/seeds/strawberryseed = 3,
 					/obj/item/seeds/sugarcaneseed = 3,
@@ -206,9 +209,6 @@
 					/obj/item/seeds/watermelonseed = 3,
 					/obj/item/seeds/wheatseed = 3,
 					/obj/item/seeds/whitebeetseed = 3,
-					/obj/item/seeds/moontearseed = 2,
-					/obj/item/seeds/spacealocasiaseed = 2,
-					/obj/item/seeds/curtainweedseed = 2,
 					)
 
 	contraband = list(
@@ -216,12 +216,14 @@
 					/obj/item/seeds/amauri = 2,
 					/obj/item/seeds/ambrosiavulgarisseed = 2,
 					/obj/item/seeds/glowshroom = 2,
+					/obj/item/seeds/jurlmah = 2,
 					/obj/item/seeds/libertymycelium = 2,
 					/obj/item/seeds/nettleseed = 2,
 					/obj/item/seeds/reishimycelium = 2,
 					/obj/item/seeds/reishimycelium = 2,
 					/obj/item/seeds/surik = 2,
-					/obj/item/seeds/telriis = 2
+					/obj/item/seeds/telriis = 2,
+					/obj/item/seeds/vale = 2,
 					 )
 	auto_price = FALSE
 

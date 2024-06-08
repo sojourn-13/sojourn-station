@@ -307,14 +307,6 @@ var/global/list/plant_seed_sprites = list()
 /obj/item/seeds/mintseed
 	seed_type = "mint"
 
-/obj/item/seeds/spacealocasiaseed
-	seed_type = "space alocasia"
-
-/obj/item/seeds/moontearseed
-	seed_type = "moon tear"
-
-/obj/item/seeds/curtainweedseed
-	seed_type = "curtain weed"
 
 //Renaming seed packets
 /obj/item/seeds/attackby(obj/item/I, mob/user, params)
