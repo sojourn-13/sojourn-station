@@ -468,74 +468,9 @@
 /turf/simulated/floor/airless/lava
 /turf/simulated/floor/light
 
-/turf/simulated/floor/snow
-	name = "snow"
-	icon = 'icons/turf/floors.dmi'
-	icon_state = "snow"
 
 /turf/simulated/floor/beach/coastline
-/turf/simulated/floor/plating/snow
 /turf/simulated/floor/airless/ceiling
-
-/*Newsnow*/
-/turf/simulated/floor/newsnow
-	name = "Snow"
-	icon = 'icons/turf/flooring/newsnow.dmi'
-	icon_state = "snow1_1"
-
-/turf/simulated/floor/newsnow1
-	name = "Snow"
-	icon = 'icons/turf/flooring/newsnow.dmi'
-	icon_state = "snow1_2"
-
-/turf/simulated/floor/newsnow2
-	name = "Snow"
-	icon = 'icons/turf/flooring/newsnow.dmi'
-	icon_state = "snow1_3"
-
-/turf/simulated/floor/newsnow3
-	name = "Snow"
-	icon = 'icons/turf/flooring/newsnow.dmi'
-	icon_state = "snow1_4"
-
-/turf/simulated/floor/newsnow4
-	name = "Snow"
-	icon = 'icons/turf/flooring/newsnow.dmi'
-	icon_state = "snow1_5"
-
-/turf/simulated/floor/newsnow5
-	name = "Snow"
-	icon = 'icons/turf/flooring/newsnow.dmi'
-	icon_state = "snowmodular_1"
-
-/turf/simulated/floor/newsnow6
-	name = "Snow"
-	icon = 'icons/turf/flooring/newsnow.dmi'
-	icon_state = "snowmodular_2"
-
-/turf/simulated/floor/newsnow7
-	name = "Snow"
-	icon = 'icons/turf/flooring/newsnow.dmi'
-	icon_state = "snowempty_1"
-
-/turf/simulated/floor/newsnow8
-	name = "Snow"
-	icon = 'icons/turf/flooring/newsnow.dmi'
-	icon_state = "snowempty_2"
-
-/turf/simulated/floor/newsnow9
-	name = "Snow"
-	icon = 'icons/turf/flooring/newsnow.dmi'
-	icon_state = "snowmound_1"
-/turf/simulated/floor/newsnow10
-	name = "Snow"
-	icon = 'icons/turf/flooring/newsnow.dmi'
-	icon_state = "snowmound_2"
-
-/turf/simulated/floor/newsnow11
-	name = "Snow"
-	icon = 'icons/turf/flooring/newsnow.dmi'
-	icon_state = "snowglide_1"
 
 /*Beach/Water*/
 
@@ -743,6 +678,26 @@
 	name = "mud"
 	icon_state = "mud_light"
 	initial_flooring = /decl/flooring/dirt/mud/light
+
+/*Snow and Icewater*/
+
+/turf/simulated/floor/snow
+	name = "snow"
+	icon = 'icons/turf/flooring/snows.dmi'
+	icon_state = "snow0"
+	temperature = 253.15
+	oxygen = MOLES_O2STANDARD * 1.14 //the multiplier is to compensate the lower pressure, to keep it breathable
+	nitrogen = MOLES_N2STANDARD *1.14
+	initial_flooring = /decl/flooring/snow
+
+/turf/simulated/floor/icewater
+	name = "icewater"
+	icon = 'icons/turf/flooring/icewater.dmi'
+	icon_state = "ice_water0"
+	temperature = 253.15
+	oxygen = MOLES_O2STANDARD * 1.14 //the multiplier is to compensate the lower pressure, to keep it breathable
+	nitrogen = MOLES_N2STANDARD *1.14
+	initial_flooring = /decl/flooring/icewater
 
 /*Rock*/
 

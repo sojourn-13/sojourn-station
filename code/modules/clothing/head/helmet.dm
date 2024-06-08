@@ -1804,7 +1804,11 @@
 					continue
 				crewmembers_recently_reported += entry["name"]
 				schedule_memory_cleanup(entry["name"])
-				to_chat(user, SPAN_WARNING("[src] beeps: '[entry["name"]]'s on-suit sensors broadcast an emergency signal. Access monitoring software for details.'"))
+				if((entry["area"]))
+					to_chat(user, SPAN_WARNING("[src] beeps: '[entry["name"]]'s on-suit sensors broadcast an emergency signal from [entry["area"]]. Access monitoring software for details.'"))
+				else
+					to_chat(user, SPAN_WARNING("[src] beeps: '[entry["name"]]'s on-suit sensors broadcast an emergency signal from an unidentified location. Access monitoring software for details.'"))
+
 
 	schedule_scan()
 

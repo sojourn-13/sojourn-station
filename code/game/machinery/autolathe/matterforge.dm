@@ -76,7 +76,7 @@
 	if(user?.client?.get_preference_value(/datum/client_preference/tgui_toaster) == GLOB.PREF_YES)
 		return list()
 	return list(
-		get_asset_datum(/datum/asset/simple/design_icons)
+		get_asset_datum(/datum/asset/spritesheet_batched/design_icons)
 	)
 
 /obj/machinery/matter_nanoforge/ui_interact(mob/user, datum/tgui/ui)
