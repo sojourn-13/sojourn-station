@@ -54,3 +54,9 @@
 
 /obj/plant_spawner/sugarcane
 	seedtype = "sugarcane"
+
+/obj/plant_spawner/potato
+	seedtype = "potato"
+
+/obj/plant_spawner/corn
+	seedtype = "corn"
