@@ -95,7 +95,7 @@
 			deactivate()
 		update_icon()
 
-//
+/*
 /obj/item/tool/hydrogen_sword/emp_act(severity)
 	if(active) // Blow up.
 		var/turf/T = get_turf(src)
@@ -107,7 +107,7 @@
 			M.take_overall_damage(0, rand(emp_burn_min, emp_burn_max))
 		spawn(20)
 			qdel(src)
-//
+*/
 
 /obj/item/tool/hydrogen_sword/attack(mob/M as mob, mob/living/user as mob)
 	..()
