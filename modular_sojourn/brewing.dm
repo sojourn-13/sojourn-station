@@ -130,6 +130,7 @@
 	options["Rum"] = "rum"
 	options["Ale"] = "ale"
 	options["Vodka"] = "vodka"
+	options["Whiskey"] = "whiskey"
 
 	var/choice = input(user,"What brew do you want to make?") as null|anything in options
 
@@ -173,7 +174,7 @@
 			//chems
 			needed_chem_one = "sodiumchloride"
 			needed_chem_one_amount = 5
-			price_tag_setter = 1500
+			price_tag_setter = 2000
 			brew_timer = 420 //7 mins
 			brewed_amount = 4 //4 pack
 
@@ -201,10 +202,20 @@
 			needed_crop_amount = 30
 			needed_crop_one = "corn"
 			needed_crop_one_amount = 15
-			price_tag_setter = 1500
+			price_tag_setter = 1000
 			brewed_amount = 4 //4 pack
 			brew_timer = 60 //1 mins
 
+		if("whiskey")
+			brew_to = "whiskey"
+			needed_water = 120
+			needed_crop = "wheat"
+			needed_crop_amount = 40
+			needed_crop_one = "towercap" //For that iTs AgEd iN aN OAk BaRrEl
+			needed_crop_one_amount = 5
+			price_tag_setter = 2000
+			brew_timer = 1200 //20 mins, whiskey takes long to be done
+			brewed_amount = 10 //10 pack
 
 
 //Nom nom nom, so if the person is mass making we dont cheat them out of crops as much
@@ -369,6 +380,9 @@
 				bottles = /obj/item/reagent_containers/food/drinks/bottle/rum
 			if("ale")
 				bottles = /obj/item/reagent_containers/food/drinks/bottle/small/ale
+			if("whiskey")
+				bottles = /obj/item/reagent_containers/food/drinks/bottle/whiskey
+
 
 		if(bottles)
 			able = TRUE
