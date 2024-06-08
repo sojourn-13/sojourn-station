@@ -168,6 +168,10 @@
 	if (!istype(target) || target.anchored)
 		return
 
+	if (istype(target, /obj/item/storage))
+		//dont tape storage items, just put them inside
+		return
+
 	if (target.w_class > ITEM_SIZE_SMALL)
 		to_chat(user, SPAN_WARNING("The [target] is too big to stick with tape!"))
 		return

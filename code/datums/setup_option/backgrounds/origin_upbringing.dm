@@ -246,3 +246,16 @@
 		STAT_COG = 5,
 		STAT_VIV = -5
 	)
+
+/datum/category_item/setup_option/background/bckgrnd/blood_lust
+	name = "Always Targetted"
+	desc = "Whether learned through combat or training, you can manipulate simple combatives into targeting you through a killing intent, making the simple-minded, target you before anyone else."
+	perks = list(PERK_BLOOD_LUST)
+
+	//Makes you little less good with chems and sanity
+	stat_modifiers = list(
+		STAT_ROB = 5,
+		STAT_VIG = -5,
+		STAT_TGH = 5,
+		STAT_VIV = -5
+	)
