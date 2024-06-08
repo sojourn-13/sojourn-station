@@ -2626,18 +2626,24 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "hu" = (
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide,
+/obj/machinery/atmospherics/pipe/tank/carbon_dioxide{
+	start_pressure = 0
+	},
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "hv" = (
-/obj/machinery/atmospherics/pipe/tank/nitrogen,
+/obj/machinery/atmospherics/pipe/tank/nitrogen{
+	start_pressure = 0
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "hw" = (
-/obj/machinery/atmospherics/pipe/tank/plasma,
+/obj/machinery/atmospherics/pipe/tank/plasma{
+	start_pressure = 0
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "hx" = (
@@ -2646,7 +2652,6 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "hy" = (
-/obj/random/structures,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "hz" = (
@@ -2718,25 +2723,26 @@
 /area/nadezhda/rnd/outpostmachineroom)
 "hL" = (
 /obj/machinery/atmospherics/omni/filter{
-	tag_east = 2;
+	tag_east = 1;
 	tag_north = 5;
-	tag_west = 1
+	tag_west = 2;
+	tag_south = 7
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "hM" = (
 /obj/machinery/atmospherics/omni/filter{
-	tag_east = 2;
-	tag_north = 7;
-	tag_west = 1
+	tag_east = 1;
+	tag_north = 4;
+	tag_west = 2
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "hN" = (
 /obj/machinery/atmospherics/omni/filter{
-	tag_east = 2;
+	tag_east = 1;
 	tag_north = 6;
-	tag_west = 1
+	tag_west = 2
 	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
@@ -2781,6 +2787,7 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 4
 	},
+/obj/random/structures,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "hT" = (
@@ -2791,8 +2798,11 @@
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "hU" = (
-/obj/machinery/portable_atmospherics/canister/air,
 /obj/machinery/light,
+/obj/machinery/atmospherics/pipe/tank/nitrous_oxide{
+	dir = 1;
+	start_pressure = 0
+	},
 /turf/simulated/floor/tiled/white/brown_perforated,
 /area/nadezhda/rnd/outpostmachineroom)
 "hV" = (
@@ -2818,7 +2828,6 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "hZ" = (
@@ -3108,7 +3117,7 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/rnd/outpostmachineroom)
 "iJ" = (
-/obj/machinery/space_heater,
+/obj/machinery/portable_atmospherics/canister/air,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "iL" = (
@@ -3386,6 +3395,7 @@
 /obj/machinery/camera/network/engineering{
 	dir = 8
 	},
+/obj/random/structures,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/nadezhda/rnd/outpostmachineroom)
 "ju" = (
@@ -9080,6 +9090,10 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/nadezhda/rnd/mixing)
+"Up" = (
+/obj/machinery/space_heater,
+/turf/simulated/floor/tiled/steel/brown_platform,
+/area/nadezhda/rnd/outpostmachineroom)
 "UL" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -12688,7 +12702,7 @@ id
 hR
 hY
 hs
-if
+Up
 iq
 if
 ja
