@@ -21,6 +21,8 @@ var/global/list/image/splatter_cache=list()
 	var/amount = 5
 	var/drytime
 	sanity_damage = 0.25
+	mergeable_decal = TRUE
+	var/should_dry = TRUE
 	// List of are shoe prints we got
 	var/list/shoe_types = list()
 
@@ -58,21 +60,21 @@ var/global/list/image/splatter_cache=list()
 /obj/effect/decal/cleanable/blood/New()
 	..()
 	fall_to_floor()
+
+/obj/effect/decal/cleanable/blood/Initialize()
+	. = ..()
 	update_icon()
 
-	if(istype(src, /obj/effect/decal/cleanable/blood/gibs))
-		return
-	if(type == /obj/effect/decal/cleanable/blood)
-		if(loc && isturf(loc))
-			for(var/obj/effect/decal/cleanable/blood/B in loc)
-				if(B != src)
-					if(B.blood_DNA)
-						blood_DNA |= B.blood_DNA.Copy()
-					if(B.shoe_types)
-						shoe_types |= B.shoe_types.Copy()
-					qdel(B)
-	drytime = world.time + DRYING_TIME * (amount+1)
-	addtimer(CALLBACK(src, .proc/dry), drytime)
+	if(should_dry)
+		drytime = world.time + DRYING_TIME * (amount+1)
+		addtimer(CALLBACK(src, .proc/dry), drytime)
+
+/obj/effect/decal/cleanable/blood/handle_merge_decal(obj/effect/decal/cleanable/blood/merger)
+	. = ..()
+	if(blood_DNA)
+		LAZYOR(merger.blood_DNA, blood_DNA.Copy())
+	if(shoe_types)
+		LAZYOR(merger.shoe_types, shoe_types.Copy())
 
 /obj/effect/decal/cleanable/blood/update_icon()
 	if(basecolor == "rainbow") basecolor = get_random_colour(1)
@@ -200,6 +202,8 @@ var/global/list/image/splatter_cache=list()
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "mgibbl5"
 	random_icon_states = list("gib1", "gib2", "gib3", "gib5", "gib6")
+	mergeable_decal = FALSE
+	should_dry = FALSE
 	var/fleshcolor = "#FFFFFF"
 
 /obj/effect/decal/cleanable/blood/gibs/update_icon()
