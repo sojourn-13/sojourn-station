@@ -390,35 +390,76 @@
 	return 1
 
 
-/*
-/mob/living/carbon/human/proc/absolute_grab(mob/living/carbon/human/T)
-	if(!ishuman(T))
-		return
-	if(stat || paralysis || stunned || weakened || lying || restrained() || buckled)
-		to_chat(src, "You cannot leap in your current state.")
-		return
-	if(l_hand && r_hand)
-		to_chat(src, SPAN_DANGER("You need to have one hand free to grab someone."))
-		return
+/obj/screen/click_catcher
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "catcher"
+	plane = CLICKCATCHER_PLANE
+	mouse_opacity = MOUSE_OPACITY_OPAQUE
+	screen_loc = "CENTER"
 
-	if(!T || !src || src.stat)
-		return
-	if(get_dist(get_turf(T), get_turf(src)) != 2)
-		return
-	if(last_special > world.time)
-		return
-	last_special = world.time + 75
-	status_flags |= LEAPING
-	src.visible_message(SPAN_DANGER("\The [src] leaps at [T]!"))
-	src.throw_at(get_step(get_turf(T),get_turf(src)), 4, 1, src)
-	mob_playsound(src.loc, 'sound/voice/shriek1.ogg', 50, 1)
-	sleep(5)
-	if(status_flags & LEAPING)
-		status_flags &= ~LEAPING
+/obj/screen/click_catcher/New(_name = "unnamed", mob/living/_parentmob, _icon, _icon_state)
+	. = ..()
+	// eris code is a bitch, we need this to be /actually fuckin unnamed you lil shit/
+	name = ""
 
-		if(!src.Adjacent(T))
-			to_chat(src, SPAN_WARNING("You miss!"))
-			Weaken(3)
-			return
-		T.attack_hand(src)
-*/
+/obj/screen/click_catcher/MouseEntered(location, control, params)
+	return
+
+/obj/screen/click_catcher/MouseExited(location, control, params)
+	return
+
+#define MAX_SAFE_BYOND_ICON_SCALE_PX (33 * 32)			//Not using world.icon_size on purpose.
+#define MAX_SAFE_BYOND_ICON_SCALE_TILES (MAX_SAFE_BYOND_ICON_SCALE_PX / world.icon_size)
+
+/obj/screen/click_catcher/proc/UpdateGreed(view_size_x = 15, view_size_y = 15)
+	var/icon/newicon = icon('icons/mob/screen_gen.dmi', "catcher")
+	var/ox = min(MAX_SAFE_BYOND_ICON_SCALE_TILES, view_size_x)
+	var/oy = min(MAX_SAFE_BYOND_ICON_SCALE_TILES, view_size_y)
+	var/px = view_size_x * world.icon_size
+	var/py = view_size_y * world.icon_size
+	var/sx = min(MAX_SAFE_BYOND_ICON_SCALE_PX, px)
+	var/sy = min(MAX_SAFE_BYOND_ICON_SCALE_PX, py)
+	newicon.Scale(sx, sy)
+	icon = newicon
+	screen_loc = "CENTER-[(ox-1)*0.5],CENTER-[(oy-1)*0.5]"
+	var/matrix/M = new
+	M.Scale(px/sx, py/sy)
+	transform = M
+
+/obj/screen/click_catcher/Click(location, control, params)
+	var/list/modifiers = params2list(params)
+	if(modifiers["middle"] && iscarbon(usr))
+		var/mob/living/carbon/C = usr
+		C.swap_hand()
+	else
+		var/turf/T = params2turf(modifiers["screen-loc"], get_turf(usr), usr?.client)
+		params += "&catcher=1"
+		if(T)
+			// we handle things differently than Paradise, client/Click is the entry point instead of atom/Click
+			usr.client.Click(T, location, control, params)
+	. = 1
+
+/obj/screen/click_catcher/MouseDown(location, control, params)
+	var/list/modifiers = params2list(params)
+	var/turf/T = params2turf(modifiers["screen-loc"], get_turf(usr), usr?.client)
+	params += "&catcher=1"
+	if(T)
+		usr.client.MouseDown(T, location, control, params)
+	. = 1
+
+/obj/screen/click_catcher/MouseUp(location, control, params)
+	var/list/modifiers = params2list(params)
+	var/turf/T = params2turf(modifiers["screen-loc"], get_turf(usr), usr?.client)
+	params += "&catcher=1"
+	if(T)
+		usr.client.MouseUp(T, location, control, params)
+	. = 1
+
+#undef MAX_SAFE_BYOND_ICON_SCALE_TILES
+#undef MAX_SAFE_BYOND_ICON_SCALE_PX
+
+/mob/proc/add_click_catcher()
+	client.screen += client.void
+
+/mob/new_player/add_click_catcher()
+	return
