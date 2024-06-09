@@ -277,7 +277,7 @@
 	mag_type = /obj/item/ammo_magazine/smg_35/empty
 	mags_left = 6 //since we fire. FAST
 
-	casingtype = /obj/item/ammo_casing/pistol_35
+	casingtype = /obj/item/ammo_casing/pistol_35/spent
 	melee_sharp = FALSE
 	armor_divisor = 1
 

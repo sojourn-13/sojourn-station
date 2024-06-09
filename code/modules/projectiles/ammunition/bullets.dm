@@ -12,6 +12,9 @@
 /obj/item/ammo_casing/pistol_35/prespawned
 	amount = 15
 
+/obj/item/ammo_casing/pistol_35/spent
+	projectile_type = null
+
 /obj/item/ammo_casing/pistol_35/hv
 	desc = "A 9mm high-velocity bullet casing."
 	icon_state = "pistol_c_hv"
