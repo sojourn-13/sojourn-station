@@ -359,6 +359,7 @@ LINEN BINS
 
 
 	add_fingerprint(user)
+	update_icon()
 
 /obj/structure/bedsheetbin/attack_tk(mob/user)
 	if(amount >= 1)
