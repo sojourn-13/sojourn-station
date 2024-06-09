@@ -13,7 +13,8 @@
 	name = "Conversion Kit"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "modkit"
-
+	
+	// ckeys are always lowercase
 	var/list/ckey_whitelist = list()
 
 	// Typed like this to hint at what typepath it should contain
@@ -133,7 +134,7 @@
 
 // TheEternalFlame
 /datum/gear/fluff/tef_frayed_duster
-	ckey_whitelist = list("TheEternalFlame")
+	ckey_whitelist = list("theeternalflame")
 	display_name = "Frayed Military Duster Conversion Kit"
 	path = /obj/item/fluff_conversion_kit/tef_frayed_duster
 
