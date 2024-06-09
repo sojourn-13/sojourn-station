@@ -60,3 +60,6 @@
 
 /obj/plant_spawner/corn
 	seedtype = "corn"
+
+/obj/plant_spawner/plumphelmet
+	seedtype = "plumphelmet"
