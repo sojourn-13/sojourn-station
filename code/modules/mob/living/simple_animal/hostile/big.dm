@@ -58,7 +58,6 @@
 	meat_amount = 6
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/primal
 	can_burrow = FALSE
-	mob_size = 3
 	leather_amount = 16
 	bones_amount = 20
 	has_special_parts = TRUE
@@ -211,7 +210,6 @@
 	attack_sound = 'sound/xenomorph/alien_bite1.ogg'
 	alpha = 30
 	faction = "stalker"
-	mob_size = 3
 	leather_amount = 0 //No actual skin
 	bones_amount = 30 //Lots of bone-like chitin
 	has_special_parts = TRUE
@@ -283,7 +281,6 @@
 	speak_emote = list("looses a rumbling croak.", "grumbles quietly.")
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	faction = "pond"
-	mob_size = 3
 	wander = 1
 	meat_amount = 10 //extra thicc
 	leather_amount = 20
@@ -336,7 +333,6 @@
 	speak_emote = list("emits a challenging roar!", "stomps the ground angrily.")
 	attack_sound = 'sound/xenomorph/alien_bite2.ogg'
 	faction = "tengolo_berserker"
-	mob_size =  3  // The same as Hivemind Tyrant
 	wander = 1
 	meat_type = /obj/item/reagent_containers/food/snacks/meat/pork
 	meat_amount = 8
