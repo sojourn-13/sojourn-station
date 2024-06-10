@@ -13,7 +13,6 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 /obj/item/modular_computer/ui_assets(mob/user)
 	return list(
 		get_asset_datum(/datum/asset/simple/ntos),
-		
 	)
 
 /obj/item/modular_computer/ui_interact(mob/user, datum/tgui/ui)
@@ -42,8 +41,9 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 
 	// Until we murder nanomodules entirely, this should make the hybrid system more stable
 	var/datum/asset/simple/directories/nanoui/nano_assets = get_asset_datum(/datum/asset/simple/directories/nanoui)
-	nano_assets.send(user)
-	// No browse_queue_flush() because nano assets should hopefully load before the user clicks any NM
+	if(nano_assets.send(user))
+		to_chat(user, span_warning("Currently sending <b>all</b> nanoui assets, please wait!"))
+		user.client.browse_queue_flush()
 
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
