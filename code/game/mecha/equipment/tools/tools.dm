@@ -28,7 +28,7 @@
 	icon_state = "mecha_clamp"
 	equip_cooldown = 15
 	energy_drain = 10
-	tool_qualities = list(QUALITY_CLAMPING = 5,  QUALITY_HAMMERING = 30, QUALITY_PRYING = 30, QUALITY_BOLT_TURNING = 20, QUALITY_EXCAVATION = 20, QUALITY_SHOVELING = 15) // This is a literal industrial clamp
+	tool_qualities = list(QUALITY_CLAMPING = 5,  QUALITY_HAMMERING = 30, QUALITY_PRYING = 30, QUALITY_BOLT_TURNING = 20, QUALITY_EXCAVATION = 20, QUALITY_SHOVELING = 30) // This is a literal industrial clamp
 	force = 20
 	armor_penetration = ARMOR_PEN_SHALLOW
 	var/obj/mecha/working/ripley/cargo_holder
