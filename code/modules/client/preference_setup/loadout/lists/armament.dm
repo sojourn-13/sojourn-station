@@ -16,7 +16,7 @@
 /datum/gear/armament/ammo_h
 	display_name = "High Cap Rubber .35 Auto pistol mag"
 	path = /obj/item/ammo_magazine/highcap_pistol_35/rubber
-	cost = 2
+	cost = 1
 
 /datum/gear/armament/ammo_speed
 	display_name = "Rubber .35 Auto pistol speed loader"
@@ -61,7 +61,7 @@
 /datum/gear/armament/baton
 	display_name = "telescopic baton"
 	path = /obj/item/melee/telebaton
-	cost = 5
+	cost = 4
 
 /datum/gear/armament/holster/armpit
 	display_name = "armpit holster"

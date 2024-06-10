@@ -850,7 +850,7 @@
 /obj/item/tool/cheap/katana
 	name = "cheap katana"
 	desc = "A katana of acceptable quality, mass-produced by Lonestar. Easily their best-selling product from this lineup."
-	icon_state = "katana_old"
+	icon_state = "katana"
 	item_state = "katana"
 	force = WEAPON_FORCE_DANGEROUS
 	armor_penetration = ARMOR_PEN_EXTREME
