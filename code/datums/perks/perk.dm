@@ -48,7 +48,7 @@
 	var/name = "Perk"
 	var/desc = ""
 	var/icon// = 'icons/effects/perks.dmi'
-	var/icon_state = ""
+	var/icon_state = "missing_perk_icon"
 	var/mob/living/carbon/human/holder
 	var/gain_text
 	var/lose_text
