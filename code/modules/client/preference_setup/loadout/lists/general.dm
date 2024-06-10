@@ -1,7 +1,7 @@
 /datum/gear/camera
 	display_name = "camera"
 	path = /obj/item/device/camera
-	cost = 1
+	cost = 0
 
 /datum/gear/cardpacksgame
 	display_name = "card game selection"
@@ -25,15 +25,18 @@
 	display_name = "cigar selection"
 	path = /obj/item/clothing/mask/smokable/cigarette/cigar
 	flags = GEAR_HAS_TYPE_SELECTION
+	cost = 1
 
 /datum/gear/cigarette
 	display_name = "cigarette pack selection"
 	path = /obj/item/storage/fancy/cigarettes
 	flags = GEAR_HAS_TYPE_SELECTION
+	cost = 1
 
 /datum/gear/cigarcase
 	display_name = "cigar case"
 	path = /obj/item/storage/fancy/cigar
+	cost = 1
 
 /datum/gear/dice
 	display_name = "dice pack"
@@ -55,11 +58,13 @@
 /datum/gear/psi_juice
 	display_name = "cerebrix inhaler"
 	path = /obj/item/psi_injector
+	cost = 1
 
 /datum/gear/pipe
 	display_name = "pipe selection"
 	path = /obj/item/clothing/mask/smokable/pipe
 	flags = GEAR_HAS_TYPE_SELECTION
+	cost = 1
 
 /datum/gear/plushies
 	display_name = "plushie selection"
@@ -95,12 +100,13 @@
 	cost = 0
 
 /datum/gear/photo_frame
-    display_name = "photograph frame"
-    path = /obj/item/toy/junk/photo_frame
+	display_name = "photograph frame"
+	path = /obj/item/toy/junk/photo_frame
 
 /datum/gear/taperecorder
-    display_name = "universal recorder"
-    path = /obj/item/device/taperecorder
+	display_name = "universal recorder"
+	path = /obj/item/device/taperecorder
+	cost = 1
 
 /datum/gear/wallet
 	display_name = "wallet"
