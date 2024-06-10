@@ -249,6 +249,8 @@
 			dat += "<font color='red'>Warning: Blood Level LOW: [blood_percent]% [blood_volume]cl.</font> <span class='highlight'>Type: [blood_type]</span>"
 		else if(blood_percent * H.effective_blood_volume <= H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
 			dat += "<font color='red'><i>Warning: Blood Level CRITICAL: [blood_percent]% [blood_volume]cl.</i></font> <span class='highlight'>Type: [blood_type]</span>"
+		else if(blood_percent > 100)
+			dat += span("highlight", "<font color='#14d70aff'>Blood Level Healthy: [blood_percent]% [blood_volume]cl. Type: [blood_type]</font>")
 		else
 			dat += span("highlight", "Blood Level Normal: [blood_percent]% [blood_volume]cl. Type: [blood_type]")
 	dat += "<span class='highlight'>Subject's pulse: <font color='[H.pulse() == PULSE_THREADY || H.pulse() == PULSE_NONE ? "red" : "#0080ff"]'>[H.get_pulse(GETPULSE_TOOL)] bpm.</font></span>"

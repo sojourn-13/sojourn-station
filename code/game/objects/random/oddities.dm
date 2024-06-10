@@ -57,13 +57,21 @@
 /obj/random/oddity_guns/item_to_spawn()
 	var/item_to_spawn = random_grabber()
 	var/doup_found = FALSE
+	var/doup_found_2 = FALSE
 	for(var/doup in GLOB.reapeat_odditie_weapon_spawn)
 		if(item_to_spawn in GLOB.reapeat_odditie_weapon_spawn)
 			item_to_spawn = random_grabber() //Roll again
 			doup_found = TRUE
 			break
 
-	if(!doup_found)
+	if(doup_found)
+		//Run it again to make sure are second pull isnt a doup, but only for adding to the list
+		for(var/doup_2 in GLOB.reapeat_odditie_weapon_spawn)
+			if(item_to_spawn in GLOB.reapeat_odditie_weapon_spawn)
+				doup_found_2 = TRUE
+				break
+
+	if(!doup_found_2)
 		GLOB.reapeat_odditie_weapon_spawn += item_to_spawn
 
 	return item_to_spawn
@@ -122,6 +130,7 @@
 				/obj/item/tool/knife/dagger/vail_render = 1,
 				/obj/item/shield/riot/mass_grave = 1,
 				/obj/item/tool/sword/saber/nightmare_saber = 1,
+				/obj/item/tool/crit_pipe_bluecross = 1,
 				//obj/item/material/butterfly/frenchman = 1,
 				//Gun/Tool Mods
 				/obj/item/gun_upgrade/mechanism/brass_kit = 1,

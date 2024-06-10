@@ -2,6 +2,12 @@
 // This file is quadruple wrapped for your pleasure
 // (
 
+//"fancy" math for calculating time in ms from tick_usage percentage and the length of ticks
+//percent_of_tick_used * (ticklag * 100(to convert to ms)) / 100(percent ratio)
+//collapsed to percent_of_tick_used * tick_lag
+#define TICK_DELTA_TO_MS(percent_of_tick_used) ((percent_of_tick_used) * world.tick_lag)
+#define TICK_USAGE_TO_MS(starting_tickusage) (TICK_DELTA_TO_MS(TICK_USAGE_REAL - starting_tickusage))
+
 #define R_IDEAL_GAS_EQUATION       8.31    // kPa*L/(K*mol).
 #define ONE_ATMOSPHERE             101.325 // kPa.
 #define IDEAL_GAS_ENTROPY_CONSTANT 1164    // (mol^3 * s^3) / (kg^3 * L).
@@ -23,7 +29,8 @@
 #define NUM_E 2.71828183
 
 #define M_PI						3.1416
-#define INFINITY				1.#INF
+#define INFINITY				1.#INF // tg uses 1e31, not ready to change this
+#define SYSTEM_TYPE_INFINITY	1.#INF //only for isinf check
 
 #define SHORT_REAL_LIMIT 16777216
 

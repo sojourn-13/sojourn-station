@@ -502,6 +502,7 @@
 	degradation = 0.4 //Used a lot
 	var/max_reagents = 30
 	embed_mult = 0
+	unacidable = TRUE //So if we do acid injections we dont melt
 
 /obj/item/tool/sword/saber/injection_rapier/refresh_upgrades()
 	..()

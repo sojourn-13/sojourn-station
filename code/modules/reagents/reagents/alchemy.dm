@@ -31,9 +31,9 @@
 			return
 	ironskin.mob_bomb_defense += 25
 	ironskin.falls_mod -= 0.4
-	ironskin.brute_mod_perk -= 0.2
-	ironskin.burn_mod_perk += 0.2
-	ironskin.oxy_mod_perk  += 2 //Iron casket
+	ironskin.brute_mod_perk *= 0.65
+	ironskin.burn_mod_perk *= 1.2
+	ironskin.oxy_mod_perk  *= 3 //Iron casket
 
 /datum/reagent/iron_skin_brew/on_mob_delete(mob/living/L)
 	. = ..()
@@ -43,9 +43,9 @@
 	ironskin.mob_bomb_defense -= 25
 	ironskin.falls_mod += 0.4
 	ironskin.Paralyse(3)
-	ironskin.burn_mod_perk -= 0.2
-	ironskin.brute_mod_perk += 0.2
-	ironskin.oxy_mod_perk  -= 2
+	ironskin.burn_mod_perk /= 1.2
+	ironskin.brute_mod_perk /= 0.65
+	ironskin.oxy_mod_perk  /= 3
 
 /datum/reagent/toxin_draft
 	name = "Noxious Sludge"

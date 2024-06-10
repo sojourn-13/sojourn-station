@@ -6,7 +6,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Barkeep","Barista","Mixologist")
 	selection_color = "#dddddd"
@@ -44,7 +44,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	alt_titles = list("Culinary Artist","Cook", "Line Chef")
 	selection_color = "#dddddd"
@@ -83,7 +83,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Hydroponicist")
@@ -124,7 +124,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	access = list(access_theatre)
@@ -149,7 +149,7 @@
 
 	description = "The Artist serves as a versatile performance artist here to entertain the colony.<br>\
 	You may find your colleagues distracted by boring duties or senseless bickering, so work hard to bring them some real culture.<br>\
-	The CEO pays you a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations.<br>\
+	The SOM pays you a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations.<br>\
 	In addition you do not gain desires like other members of the colony, instead you spend your insight at your workbench to create expensive works of art worth selling."
 
 	duties = "Provide (family-friendly) entertainment to the crew with your varied talents.<br>\
@@ -169,7 +169,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Executive Officer"
+	supervisors = "the Surface Operations Manager"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Custodian","Sanitation Technician")

@@ -12,6 +12,8 @@ var/global/datum/global_init/init = new ()
 	Pre-map initialization stuff should go here.
 */
 
+#define TGS_TOPIC var/tgs_topic_return = TgsTopic(args[1]); if(tgs_topic_return) return tgs_topic_return
+
 /datum/global_init/New()
 	generate_gameid()
 	load_configuration()
@@ -166,6 +168,7 @@ var/world_topic_spam_protect_ip = "0.0.0.0"
 var/world_topic_spam_protect_time = world.timeofday
 
 /world/Topic(T, addr, master, key)
+	TGS_TOPIC
 	var/list/topic_handlers = WorldTopicHandlers()
 
 	var/list/input = params2list(T)

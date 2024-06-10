@@ -835,6 +835,51 @@
 /obj/item/tool/scythe/spectral_harvester/Adjacent(var/atom/neighbor, var/recurse = 1)
 	return TRUE //We are always adjacent
 
+/obj/item/tool/crit_pipe_bluecross
+	name = "\"TingTang\" lead pipe"
+	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
+	Luck correlates with skill."
+	icon_state = "lead_pipe"
+	price_tag = 3750
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_IRON, MATERIAL_URANIUM = 2)
+	icon = 'icons/obj/oddities.dmi'
+	max_upgrades = 0 //No...
+	embed_mult = 0
+	degradation = 0.01 //Lead pipes NEVER break!
+	force = WEAPON_FORCE_DANGEROUS + 5 //scaling starts at 25
+
+/obj/item/tool/crit_pipe_bluecross/resolve_attackby(atom/target, mob/user)
+	//Little icky but it works
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/luck = 0
+		for(var/stat in ALL_STATS)
+			luck += H.stats.getStat(stat, FALSE, TRUE)
+		var/luck_lops = 1
+		var/crits_happend = 0
+		while(luck_lops)
+		//	to_chat(H, SPAN_DANGER("luck [luck], force: [force]!"))
+
+			if(prob(luck))
+				crits_happend += 1
+				force *= 1.2 //Crit!
+				luck -= 100 //You spent the crit!
+			else
+				luck_lops = 0
+
+		if(crits_happend)
+			H.visible_message(SPAN_DANGER("[H]'s [src] lands with a heavyer hit!"))
+			if(crits_happend >= 2)
+				to_chat(H, SPAN_DANGER("You land a mega critical hit with [src.name]!"))
+			else
+				to_chat(H, SPAN_DANGER("You land a critical hit with [src.name]!"))
+
+
+	.=..()
+	refresh_upgrades()
+
+
+
 // Shield
 
 /obj/item/shield/riot/mass_grave

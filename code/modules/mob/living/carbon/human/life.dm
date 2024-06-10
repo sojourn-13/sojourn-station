@@ -823,7 +823,10 @@
 		var/total_plasmaloss = 0
 		for(var/obj/item/I in src)
 			if(I.contaminated)
-				total_plasmaloss += vsc.plc.CONTAMINATION_LOSS
+				if(isarmor(I) && I.is_worn())
+					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS
+				else
+					total_plasmaloss += vsc.plc.CONTAMINATION_LOSS * (100 - getarmor(null,ARMOR_BIO))
 		if(!(status_flags & GODMODE) && prob(10))
 			bloodstr.add_reagent("plasma", total_plasmaloss)
 

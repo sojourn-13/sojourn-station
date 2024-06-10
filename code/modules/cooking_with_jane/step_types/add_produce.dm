@@ -48,7 +48,9 @@
 
 	var/obj/item/reagent_containers/food/snacks/grown/added_produce = added_item
 
-	if(added_produce.plantname == required_produce_type)
+	var/datum/seed/produce_seed = plant_controller.seeds[added_produce.plantname]
+
+	if(produce_seed != null && (produce_seed.seed_name == required_produce_type || produce_seed.seed_name == "modified "+required_produce_type || produce_seed.seed_name == "mutant "+required_produce_type))
 		return CWJ_CHECK_VALID
 
 	return CWJ_CHECK_INVALID
