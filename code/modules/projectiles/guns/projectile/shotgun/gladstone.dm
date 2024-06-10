@@ -9,7 +9,7 @@
 	max_shells = 7
 	caliber = CAL_SHOTGUN
 	damage_multiplier = 1.1
-	penetration_multiplier = 0.1 //Combat shotgun shouldn't be worse than makeshift shotgun
+	penetration_multiplier = 1.1 //Combat shotgun shouldn't be worse than makeshift shotgun
 	ammo_type = /obj/item/ammo_casing/shotgun
 	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 6)

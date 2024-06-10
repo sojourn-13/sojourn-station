@@ -95,11 +95,12 @@
 	desc = "May the Force be with you."
 	icon_state = "sword0"
 	icon = 'icons/obj/weapons.dmi'
-	active_force = WEAPON_FORCE_BRUTAL // Go forth and slay, padawan
-	active_throwforce = WEAPON_FORCE_BRUTAL
+	active_force = WEAPON_FORCE_LETHAL // Go forth and slay, padawan
+	active_throwforce = WEAPON_FORCE_LETHAL
 	active_w_class = ITEM_SIZE_BULKY
 	force = WEAPON_FORCE_HARMLESS
 	throwforce = WEAPON_FORCE_HARMLESS
+	no_double_tact = TRUE
 	throw_speed = 1
 	throw_range = 5
 	w_class = ITEM_SIZE_SMALL
