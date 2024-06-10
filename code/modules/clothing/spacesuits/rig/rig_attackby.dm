@@ -37,9 +37,6 @@
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)
 		if(QUALITY_SCREW_DRIVING)
-			if (is_worn())
-				to_chat(user, "You can't remove an installed device while the hardsuit is being worn.")
-				return 1
 
 			if(open)
 				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
@@ -67,6 +64,10 @@
 								to_chat(user, "There is nothing loaded in that mount.")
 
 						if("system module")
+							if (is_worn())
+								to_chat(user, "You can't remove an installed device while the hardsuit is being worn.")
+								return 1
+
 							var/list/possible_removals = list()
 							for(var/obj/item/rig_module/module in installed_modules)
 								if(module.permanent)
@@ -127,10 +128,6 @@
 				if(!air_supply)
 					to_chat(user, "There is not tank to remove.")
 					return
-
-				if (is_worn())
-					to_chat(user, "You can't remove an installed tank while the hardsuit is being worn.")
-					return 1
 
 				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
 					user.put_in_hands(air_supply)

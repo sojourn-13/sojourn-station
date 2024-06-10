@@ -257,9 +257,9 @@
 	if(!wearer)
 		to_chat(initiator, SPAN_DANGER("Cannot toggle suit: The suit is currently not being worn by anyone."))
 		return 0
-
-	if(!check_power_cost(wearer))
-		return 0
+	if(!offline && !cell) //incase we remove the cell while the suit is locked into place
+		if(!check_power_cost(wearer))
+			return 0
 
 
 
@@ -553,10 +553,17 @@
 		update_icon()
 
 
-/obj/item/rig/proc/toggle_piece(piece, mob/initiator, deploy_mode)
+/obj/item/rig/proc/toggle_piece(piece, mob/initiator, deploy_mode, var/forced = FALSE)
 
-	if(sealing || !cell || !cell.charge)
+	if(sealing)
 		return
+
+	if((!cell || !cell.charge) && !forced)
+		if(do_after(usr,10,src))
+			to_chat(wearer, "<font color='blue'><b>You manually set [piece] into place.</b></font>")
+		else
+			to_chat(wearer, SPAN_DANGER("You must stand still to manually set your suit!"))
+			return
 
 	if(!istype(wearer) || !wearer.back == src)
 		return
@@ -606,23 +613,45 @@
 							if(use_obj.overslot)
 								use_obj.remove_overslot_contents(wearer)
 							to_chat(wearer, "<font color='blue'><b>Your [use_obj.name] [use_obj.gender == PLURAL ? "retract" : "retracts"] swiftly.</b></font>")
+							if(piece == "gauntlets" && gloves)
+								use_obj.siemens_coefficient = initial(use_obj.siemens_coefficient)
 						use_obj.canremove = 0
 
 
 		else if (deploy_mode != ONLY_RETRACT)
 			if(check_slot && check_slot == use_obj)
 				return
-
-			if(!wearer.equip_to_slot_if_possible(use_obj, equip_to, TRUE)) //Disable_warning
-				use_obj.forceMove(src)
-				if(check_slot)
-					to_chat(initiator, SPAN_DANGER("You are unable to deploy \the [piece] as \the [check_slot] [check_slot.gender == PLURAL ? "are" : "is"] in the way."))
-					return
+			if(cosmetic_check(check_slot))
+				if(!wearer.equip_to_slot_if_possible(use_obj, equip_to, TRUE)) //Disable_warning
+					use_obj.forceMove(src)
+					if(check_slot)
+						to_chat(initiator, SPAN_DANGER("You are unable to deploy \the [piece] as \the [check_slot] [check_slot.gender == PLURAL ? "are" : "is"] in the way."))
+						return
+				else
+					to_chat(wearer, SPAN_NOTICE("Your [use_obj.name] [use_obj.gender == PLURAL ? "deploy" : "deploys"] swiftly."))
+					if(piece == "gauntlets" && gloves && check_slot)
+						use_obj.siemens_coefficient *= check_slot.siemens_coefficient
 			else
-				to_chat(wearer, SPAN_NOTICE("Your [use_obj.name] [use_obj.gender == PLURAL ? "deploy" : "deploys"] swiftly."))
+				to_chat(initiator, SPAN_DANGER("You are unable to deploy \the [piece] as \the [check_slot] [check_slot.gender == PLURAL ? "are" : "is"] in the way."))
+				return
 
 	if(piece == "helmet" && helmet)
 		helmet.update_light(wearer)
+
+/obj/item/rig/proc/cosmetic_check(var/obj/item/check_slot) //Return TRUE if we are cosmetic
+	var/list/armor = list(ARMOR_BULLET,ARMOR_ENERGY,ARMOR_MELEE,ARMOR_BOMB,ARMOR_RAD)
+	if(!check_slot)
+		return TRUE
+	if(!check_slot.armor_list || check_slot == wearer.shoes || check_slot == wearer.gloves)
+		return TRUE
+	for(var/i in check_slot.armor_list)
+		var/a = check_slot.armor_list[i]
+		for(a in armor)
+			if(check_slot.armor_list[i] > 2)
+				return FALSE
+	if(check_slot.armor_list[ARMOR_BIO] > 75) //Let the nerds keep the labcoat drip
+		return FALSE
+	return TRUE
 
 /obj/item/rig/proc/deploy(mob/M,var/sealed)
 
@@ -665,13 +694,13 @@
 	..()
 	remove()
 
-/obj/item/rig/proc/retract()
+/obj/item/rig/proc/retract(var/forced = FALSE)
 	if (wearer)
 		for(var/piece in list("helmet","gauntlets","chest","boots"))
-			toggle_piece(piece, wearer, ONLY_RETRACT)
+			toggle_piece(piece, wearer, ONLY_RETRACT, forced)
 
 /obj/item/rig/proc/remove()
-	retract()
+	retract(TRUE)
 	if(wearer)
 		wearer.wearing_rig = null
 		wearer = null
