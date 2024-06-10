@@ -15,6 +15,7 @@
 	stop_automated_movement = 1
 	friendly = "pinches"
 	faction = "pond"
+	mob_size = 5
 	leather_amount = 0
 	bones_amount = 0
 	var/obj/item/inventory_head
@@ -60,6 +61,7 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "stomps"
+	mob_size = 3
 	faction = "pond"
 	density = 0
 	wander = 1
@@ -96,6 +98,7 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "stomps"
+	mob_size = 3
 	faction = "neutral"
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
@@ -112,6 +115,7 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "stomps"
+	mob_size = 3
 	faction = "pond"
 	density = 0
 	colony_friend = TRUE

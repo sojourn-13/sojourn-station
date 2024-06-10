@@ -31,6 +31,7 @@
 	overkill_dust = 0
 	contaminant_immunity = TRUE
 	never_stimulate_air = TRUE
+	mob_size = 3 // Can't contain that which isn't actually real.
 
 	move_to_delay = 2
 	turns_per_move = 6
@@ -97,7 +98,7 @@
 	var/is_leaching = FALSE
 	var/steal_odds = 0
 	var/stat_to_steal = STAT_VIV
-	var/steal_amount = -1 //Possitive amounts give stats, and lower the health of the leacher
+	var/steal_amount = 1
 	var/mob/living/Victim = null
 
 	var/can_leave = FALSE
