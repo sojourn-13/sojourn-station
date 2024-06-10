@@ -56,7 +56,14 @@
 
 	return ..()
 
-/obj/item/device/radio/headset/receive_range(freq, level)
+// aiOverride is usedd in headset/heads/ai_integrated/receive_range calling ..(freq, level, 1)
+/obj/item/device/radio/headset/receive_range(freq, level, aiOverride = 0)
+	if(aiOverride)
+		. = ..(freq, level)
+		if(. > -1)
+			playsound(loc, 'sound/effects/radio_common.ogg', 25, 1, 1)
+		return
+
 	if(!ishuman(loc))
 		// must be equipped to hear
 		return -1
@@ -66,9 +73,10 @@
 		. = ..(freq, level)
 		if(. > -1)
 			playsound(loc, 'sound/effects/radio_common.ogg', 25, 1, 1)
-	else
-		// must be equipped to hear
-		return -1
+		return
+
+	// must be equipped to hear
+	return -1
 
 /obj/item/device/radio/headset/syndicate
 	origin_tech = list(TECH_ILLEGAL = 3)
