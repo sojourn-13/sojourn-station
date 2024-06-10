@@ -101,3 +101,9 @@
 	mag_drop = FALSE
 	attacktext = "slapped"
 	range_telegraph = "lurks back, getting ready to lob acids at"
+
+/mob/living/carbon/superior_animal/psi_monster/flesh_tower/Initialize(mapload)
+	. = ..()
+	//Proj Upgrade, its a bit random!
+	if(GLOB.chaos_level >= 2)
+		projectiletype = pick(typesof(/obj/item/projectile/goo))

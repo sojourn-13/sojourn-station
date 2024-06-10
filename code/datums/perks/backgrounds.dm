@@ -216,3 +216,36 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	This is in addition to knowing exactly how likely you were to fail after failing some tasks. \
 	This ability does not extend to medical matters, wounds or similar. "
 	icon_state = "obfuscation_ranking"
+
+/datum/perk/blood_lust
+	name = "Bloodlust Aura"
+	desc = "Your killing intent and wish for combat are felt by anything that attacks by instinct. \
+	When more simple-minded combatives evaluate you, they will target you immediately!" //this is how it works in code as the time this perks made
+	icon_state = "blood_lust"
+	active = FALSE
+	passivePerk = FALSE
+
+/datum/perk/blood_lust/assign(mob/living/L)
+	if(..())
+		holder.target_dummy = TRUE //We want to be targeted first so on assign toggle it
+
+/datum/perk/blood_lust/activate()
+	var/mob/living/user = usr
+	if(!istype(user))
+		return ..()
+	if(world.time < cooldown_time)
+		to_chat(usr, SPAN_NOTICE("It takes a single moment to collect yourself."))
+		return FALSE
+
+	//Disable and enableing target dummy
+	user.target_dummy = !user.target_dummy
+	cooldown_time = world.time + 1 // Not accually meant to have a real cooldown, just a toggle
+	if(user.target_dummy)
+		user.visible_message("<b><font color='red'>[user] begins leaking a killing intent!</font><b>", "<b><font color='red'>KILL EM.</font><b>", "<b><font color='red'>The air becomes more heavy around you!</font><b>")
+	else
+		user.visible_message("<b><font color='red'>[user] begins controlling their killing intent!</font><b>", "<b><font color='red'>You weaken your intent, making simple-minded combatives less likely to target you.</font><b>", "<b><font color='red'>The air thins a little!</font><b>")
+
+	log_and_message_admins("used their [src] perk.")
+
+
+	return ..()

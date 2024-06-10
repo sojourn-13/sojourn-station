@@ -66,3 +66,40 @@
 		I.throw_at(get_edge_target_turf(src,pick(alldirs)), rand(1,3), round(30/I.w_class))
 
 	. = ..()
+
+//Chaos intraction
+//Another complx mob that has quite a few bells and whistles!
+/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo/attackby(obj/item/I, mob/user)
+	..()
+	if(GLOB.chaos_level >= 2)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			var/dir_to_oppose = reverse_direction(H.dir)
+			//Ok! the second part of this if statement only applie if we do *not* have locked facing directions!
+			if(!H.psi_blocking > 0 && dir == dir_to_oppose)
+				//This is a bit wierd, so we set ARE direction to where we want to teleport based on WHO HIT US
+				dir = turn(H.dir, -90)
+
+				var/turf/T = get_step(H, dir)
+				if(T && !QDELETED(src)) //Safty so we dont teleport out of quedel
+					forceMove(T)
+					//Ok now turn back to face are foe!
+					dir = reverse_direction(H.dir)
+
+/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo/findTarget(prioritizeCurrent = FALSE)
+	. = ..()
+	if(GLOB.chaos_level >= 2)
+		var/atom/targetted_mob = (target_mob?.resolve())
+		if(ishuman(targetted_mob))
+			var/mob/living/carbon/human/H = targetted_mob
+			var/dir_to_oppose = reverse_direction(H.dir)
+			//Ok! the second part of this if statement only applie if we do *not* have locked facing directions!
+			if(!H.psi_blocking > 0 && dir == dir_to_oppose)
+			//This is a bit wierd, so we set ARE direction to where we want to teleport based on WHO HIT US
+				dir = set_dir(turn(src.dir, -90))
+
+				var/turf/T = get_step(H, dir)
+				if(T && !QDELETED(src)) //Safty so we dont teleport out of quedel
+					forceMove(T)
+					//Ok now turn back to face are foe!
+					dir = reverse_direction(H.dir)

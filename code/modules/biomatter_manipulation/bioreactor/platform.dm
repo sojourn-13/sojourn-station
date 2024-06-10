@@ -70,6 +70,9 @@
 							if(stack_type)
 								var/obj/item/stack/material/waste = new stack_type(MS_bioreactor.misc_output)
 								waste.amount = target.matter[material]
+								waste.amount = round(waste.amount) //So we dont get half stacks
+								if(waste.amount <= 0)
+									waste.amount = 1 //If we have negitive materal or 0 then magically give 1 to prevent bugs
 								waste.update_strings()
 							target.matter -= material
 						consume(target)

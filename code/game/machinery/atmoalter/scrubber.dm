@@ -95,51 +95,66 @@
 	return src.attack_hand(user)
 
 /obj/machinery/portable_atmospherics/powered/scrubber/attack_hand(var/mob/user)
-	nano_ui_interact(user)
-	return
+	return ui_interact(user)
 
-/obj/machinery/portable_atmospherics/powered/scrubber/nano_ui_interact(mob/user, ui_key = "rcon", datum/nanoui/ui=null, force_open=NANOUI_FOCUS)
-	var/list/data[0]
-	data["portConnected"] = connected_port ? 1 : 0
-	data["tankPressure"] = round(air_contents.return_pressure() > 0 ? air_contents.return_pressure() : 0)
-	data["rate"] = round(volume_rate)
-	data["minrate"] = round(minrate)
-	data["maxrate"] = round(maxrate)
-	data["powerDraw"] = round(last_power_draw)
-	data["cellCharge"] = cell ? cell.charge : 0
-	data["cellMaxCharge"] = cell ? cell.maxcharge : 1
-	data["on"] = on ? 1 : 0
-
-	data["hasHoldingTank"] = holding ? 1 : 0
-	if (holding)
-		data["holdingTank"] = list("name" = holding.name, "tankPressure" = round(holding.air_contents.return_pressure() > 0 ? holding.air_contents.return_pressure() : 0))
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "portscrubber.tmpl", "Portable Scrubber", 480, 400, state =GLOB.physical_state)
-		ui.set_initial_data(data)
+/obj/machinery/portable_atmospherics/powered/scrubber/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "AtmosScrubberPortable", name)
 		ui.open()
-		ui.set_auto_update(1)
 
+/obj/machinery/portable_atmospherics/powered/scrubber/ui_data(mob/user)
+	var/list/data = list()
 
-/obj/machinery/portable_atmospherics/powered/scrubber/Topic(href, href_list)
-	if(..())
-		return 1
+	data["on"] = !!on
+	data["connected"] = !!connected_port
+	data["pressure"] = round(air_contents.return_pressure() > 0 ? air_contents.return_pressure() : 0)
+	data["rate"] =  round(volume_rate)
+	data["defaultRate"] = initial(volume_rate)
+	data["minRate"] = round(minrate)
+	data["maxRate"] = round(maxrate)
+	data["powerDraw"] = round(last_power_draw)
 
-	if(href_list["power"])
-		on = !on
-		. = 1
-	if (href_list["remove_tank"])
-		if(holding)
-			holding.loc = loc
-			holding = null
-		. = 1
-	if (href_list["volume_adj"])
-		var/diff = text2num(href_list["volume_adj"])
-		volume_rate = CLAMP(volume_rate+diff, minrate, maxrate)
-		. = 1
-	update_icon()
+	if(holding)
+		data["holding"] = list(
+			"name" = holding.name,
+			"pressure" = round(holding.air_contents.return_pressure() > 0 ? holding.air_contents.return_pressure() : 0)
+		)
+	else
+		data["holding"] = null
 
+	if(cell)
+		data["cell"] = list(
+			"charge" = cell.charge,
+			"maxCharge" = cell.maxcharge,
+		)
+	else
+		data["cell"] = null
+
+	return data
+
+/obj/machinery/portable_atmospherics/powered/scrubber/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("power")
+			on = !on
+			. = TRUE
+		if("remove_tank")
+			if(holding)
+				holding.forceMove(loc)
+				holding = null
+			. = TRUE
+		if("set_volume")
+			volume_rate = CLAMP(params["volume"], minrate, maxrate)
+			. = TRUE
+
+	if(.)
+		add_fingerprint(usr)
+		playsound(src, 'sound/machines/machine_switch.ogg', 100, 1)
+		update_icon()
 
 //Huge scrubber
 /obj/machinery/portable_atmospherics/powered/scrubber/huge
@@ -252,6 +267,7 @@
 	anchored = 1
 	pixel_x = -48
 	pixel_y = -16
+	var/target_temperature = T20C
 
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
@@ -272,7 +288,7 @@
 	var/datum/gas_mixture/environment = loc.return_air()
 
 	if(environment)
-		environment.temperature = T20C
+		environment.temperature = target_temperature
 		environment.gas = list("oxygen" = O2STANDARD * MolesForPressure(environment.volume), \
 							   "nitrogen" = N2STANDARD *  MolesForPressure(environment.volume))
 
@@ -280,37 +296,35 @@
 	return
 
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/MolesForPressure(var/gasVolume)
-	return (ONE_ATMOSPHERE * gasVolume) / (R_IDEAL_GAS_EQUATION * T20C)
+	return (ONE_ATMOSPHERE * gasVolume) / (R_IDEAL_GAS_EQUATION * target_temperature)
 
-/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold
+	name = "Coldrasil"
+	desc = "You feel cold being near the tree that holds up the mountains."
+	icon = 'icons/obj/flora/snowtree.dmi'
+	icon_state = "tree3"
+	target_temperature = 240
+
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree
 	name = "Kriosan Tree"
 	desc = "Strange dog tree."
-	icon = 'icons/obj/flora/jungletree.dmi'
-	icon_state = "tree"
-	anchored = 1
-	pixel_x = -48
-	pixel_y = -16
 	var/damage = 0.3
 	var/NOLAG = 0
 
-	use_power = NO_POWER_USE
-	idle_power_usage = 0
-	active_power_usage = 0
-
-/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/attackby(var/obj/item/I as obj, var/mob/user as mob)
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree/attackby(var/obj/item/I as obj, var/mob/user as mob)
 	to_chat(user, SPAN_WARNING("This is a dog tree, no cutting."))
 	return
 
-/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/attack_hand(var/mob/user)
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree/attack_hand(var/mob/user)
 	to_chat(user, SPAN_WARNING("This is a dog tree, no cutting."))
 	return
 
-/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/Process()
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree/Process()
 
 	var/datum/gas_mixture/environment = loc.return_air()
 
 	if(environment)
-		environment.temperature = T20C
+		environment.temperature = target_temperature
 		environment.gas = list("carbon_dioxide" = MolesForPressure(environment.volume))
 
 	if(NOLAG)
@@ -328,8 +342,6 @@
 				affected.Add(H)
 		for(var/mob/living/carbon/human/affected_guy in affected)
 			affected_guy.damage_through_armor(damage, TOX, attack_flag = ARMOR_BIO)
-/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/update_icon()
-	return
 
-/obj/machinery/portable_atmospherics/powered/scrubber/kriostreee/MolesForPressure(var/gasVolume)
-	return (ONE_ATMOSPHERE * gasVolume) / (R_IDEAL_GAS_EQUATION * T20C)
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree/update_icon()
+	return

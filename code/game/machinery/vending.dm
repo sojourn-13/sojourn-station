@@ -69,6 +69,28 @@
 	product.forceMove(product_location)
 	return product
 
+// Used for custom vendors safely pooping out everything they have
+/datum/data/vending_product/proc/remove_all_items(var/product_location)
+	if(!product_location)
+		return
+	for(var/atom/movable/product in instances)
+		product.forceMove(product_location)
+		// do not check amount, if this isn't handled properly elsewhere then whatever, instances should never get lost
+		amount -= 1
+		// not sure this check matters
+		if(vending_machine.oldified && prob(30))
+			product.make_old()
+	instances.Cut()
+	// Spawn whatever is left in `amount`
+	while(amount > 0)
+		var/atom/movable/product = new product_path
+		amount -= 1
+		// not sure this check matters
+		if(vending_machine.oldified && prob(30))
+			product.make_old()
+		product.forceMove(product_location)
+
+
 /**
  * A vending machine
  */
@@ -739,6 +761,7 @@
 
 			var/key = text2num(params["key"])
 			var/datum/data/vending_product/R = product_records[key]
+			R.remove_all_items(get_turf(src))
 
 			qdel(R)
 			return TRUE

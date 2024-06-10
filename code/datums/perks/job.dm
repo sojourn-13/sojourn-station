@@ -284,20 +284,20 @@
 	..()
 	initial_time = world.time
 	cooldown_time = world.time + 30 MINUTES
-	holder.brute_mod_perk += 0.10
-	holder.burn_mod_perk += 0.10
-	holder.oxy_mod_perk += 0.10
-	holder.toxin_mod_perk += 0.10
+	holder.brute_mod_perk *= 1.10
+	holder.burn_mod_perk *= 1.10
+	holder.oxy_mod_perk *= 1.10
+	holder.toxin_mod_perk *= 1.10
 	holder.stats.changeStat(STAT_ROB, -10)
 	holder.stats.changeStat(STAT_TGH, -10)
 	holder.stats.changeStat(STAT_VIG, -10)
 	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 0.5, learner = H)
 
 /datum/perk/rezsickness/remove()
-	holder.brute_mod_perk -= 0.10
-	holder.burn_mod_perk -= 0.10
-	holder.oxy_mod_perk -= 0.10
-	holder.toxin_mod_perk -= 0.10
+	holder.brute_mod_perk /= 1.10
+	holder.burn_mod_perk /= 1.10
+	holder.oxy_mod_perk /= 1.10
+	holder.toxin_mod_perk /= 1.10
 	holder.stats.changeStat(STAT_ROB, 10)
 	holder.stats.changeStat(STAT_TGH, 10)
 	holder.stats.changeStat(STAT_VIG, 10)
@@ -311,19 +311,19 @@
 
 /datum/perk/rezsickness/severe/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk += 0.15
-	holder.burn_mod_perk += 0.15
-	holder.oxy_mod_perk += 0.15
-	holder.toxin_mod_perk += 0.15
+	holder.brute_mod_perk *= 1.15
+	holder.burn_mod_perk *= 1.15
+	holder.oxy_mod_perk *= 1.15
+	holder.toxin_mod_perk *= 1.15
 	holder.stats.changeStat(STAT_COG, -15)
 	holder.stats.changeStat(STAT_MEC, -15)
 	holder.stats.changeStat(STAT_BIO, -15)
 
 /datum/perk/rezsickness/severe/remove()
-	holder.brute_mod_perk -= 0.15
-	holder.burn_mod_perk -= 0.15
-	holder.oxy_mod_perk -= 0.15
-	holder.toxin_mod_perk -= 0.15
+	holder.brute_mod_perk /= 1.15
+	holder.burn_mod_perk /= 1.15
+	holder.oxy_mod_perk /= 1.15
+	holder.toxin_mod_perk /= 1.15
 	holder.stats.changeStat(STAT_COG, 15)
 	holder.stats.changeStat(STAT_MEC, 15)
 	holder.stats.changeStat(STAT_BIO, 15)
@@ -336,10 +336,10 @@
 
 /datum/perk/rezsickness/severe/fatal/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk += 0.25
-	holder.burn_mod_perk += 0.25
-	holder.oxy_mod_perk += 0.25
-	holder.toxin_mod_perk += 0.25
+	holder.brute_mod_perk *= 1.25
+	holder.burn_mod_perk *= 1.25
+	holder.oxy_mod_perk *= 1.25
+	holder.toxin_mod_perk *= 1.25
 	holder.stats.changeStat(STAT_ROB, -20)
 	holder.stats.changeStat(STAT_TGH, -20)
 	holder.stats.changeStat(STAT_VIG, -20)
@@ -348,10 +348,10 @@
 	holder.stats.changeStat(STAT_BIO, -20)
 
 /datum/perk/rezsickness/severe/fatal/remove()
-	holder.brute_mod_perk -= 0.25
-	holder.burn_mod_perk -= 0.25
-	holder.oxy_mod_perk -= 0.25
-	holder.toxin_mod_perk -= 0.25
+	holder.brute_mod_perk /= 1.25
+	holder.burn_mod_perk /= 1.25
+	holder.oxy_mod_perk /= 1.25
+	holder.toxin_mod_perk /= 1.25
 	holder.stats.changeStat(STAT_ROB, 20)
 	holder.stats.changeStat(STAT_TGH, 20)
 	holder.stats.changeStat(STAT_VIG, 20)
@@ -381,15 +381,15 @@
 	..()
 	initial_time = world.time
 	cooldown_time = world.time + 30 MINUTES
-	holder.brute_mod_perk += 0.3
-	holder.burn_mod_perk += 0.3
+	holder.brute_mod_perk *= 1.3
+	holder.burn_mod_perk *= 1.3
 	holder.stats.changeStat(STAT_ROB, 30)
 	holder.stats.changeStat(STAT_TGH, -30)
 	holder.stats.changeStat(STAT_VIG, -30)
 
 /datum/perk/racial/slime_rez_sickness/remove()
-	holder.brute_mod_perk -= 0.3
-	holder.burn_mod_perk -= 0.3
+	holder.brute_mod_perk /= 1.3
+	holder.burn_mod_perk /= 1.3
 	holder.stats.changeStat(STAT_ROB, -30)
 	holder.stats.changeStat(STAT_TGH, 30)
 	holder.stats.changeStat(STAT_VIG, 30)

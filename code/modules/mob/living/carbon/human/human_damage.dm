@@ -203,6 +203,11 @@
 /mob/living/carbon/human/setToxLoss()
 	return
 
+/mob/living/carbon/human/adjustHalLoss(amount)
+    if(species.flags & NO_PAIN)
+        return FALSE    //lmao pain
+    ..()
+
 ////////////////////////////////////////////
 
 //Returns a list of damaged organs

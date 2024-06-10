@@ -778,22 +778,37 @@ ADMIN_VERB_ADD(/datum/admins/proc/delay, R_SERVER, FALSE)
 /datum/admins/proc/delay()
 	set category = "Server"
 	set desc="Delay the game start/end"
-	set name="Delay"
+	set name="Start/End Delay"
 
 	if(!check_rights(R_SERVER))
 		return
 	if (SSticker.current_state != GAME_STATE_PREGAME && SSticker.current_state != GAME_STATE_STARTUP)
-		SSticker.delay_end = !SSticker.delay_end
-		log_admin("[key_name(usr)] [SSticker.delay_end ? "delayed the round end" : "has made the round end normally"].")
-		message_admins("\blue [key_name(usr)] [SSticker.delay_end ? "delayed the round end" : "has made the round end normally"].", 1)
+		SSticker.delay_end = TRUE
+		log_admin("[key_name(usr)] delayed the round end")
+		message_admins("\blue [key_name(usr)] delayed the round end.", 1)
 		return
-	round_progressing = !round_progressing
-	if (!round_progressing)
-		to_chat(world, "<b>The game start has been delayed.</b>")
-		log_admin("[key_name(usr)] delayed the game.")
-	else
-		to_chat(world, "<b>The game will start soon.</b>")
-		log_admin("[key_name(usr)] removed the delay.")
+
+	round_progressing = FALSE
+	to_chat(world, "<b>The game start has been delayed.</b>")
+	log_admin("[key_name(usr)] delayed the game.")
+
+
+ADMIN_VERB_ADD(/datum/admins/proc/resume, R_SERVER, FALSE)
+/datum/admins/proc/resume()
+	set category = "Server"
+	set desc="Resume the game start/end"
+	set name="Start/End Resume"
+
+	if(!check_rights(R_SERVER))
+		return
+	if (SSticker.current_state != GAME_STATE_PREGAME && SSticker.current_state != GAME_STATE_STARTUP)
+		SSticker.delay_end = FALSE
+		log_admin("[key_name(usr)] has made the round end normally.")
+		message_admins("\blue [key_name(usr)] has made the round end normally.", 1)
+		return
+	round_progressing = TRUE
+	to_chat(world, "<b>The game will start soon.</b>")
+	log_admin("[key_name(usr)] removed the delay.")
 
 ADMIN_VERB_ADD(/datum/admins/proc/adjump, R_SERVER, FALSE)
 /datum/admins/proc/adjump()

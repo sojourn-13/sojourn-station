@@ -203,6 +203,12 @@
 				return		// Don't shoot other turrets
 		try_shoot(proj_start_turf)
 
+/obj/machinery/power/os_turret/attack_generic(mob/user, damage, attack_message, damagetype = BRUTE, attack_flag = ARMOR_MELEE, sharp = FALSE, edge = FALSE)
+	if(!damage)
+		return 0
+	attack_animation(user)
+	take_damage(damage)
+
 /obj/machinery/power/os_turret/attackby(obj/item/I, mob/user)
 	var/mec_or_cog = max(user.stats.getStat(STAT_MEC), user.stats.getStat(STAT_COG))
 

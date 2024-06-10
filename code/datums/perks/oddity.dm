@@ -99,12 +99,12 @@
 
 /datum/perk/oddity/harden/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk -= 0.1 // One third of subdermal armor
+	holder.brute_mod_perk *= 0.75 // One third of subdermal armor
 	holder.mob_bomb_defense += 5
 	holder.falls_mod -= 0.2
 
 /datum/perk/oddity/harden/remove()
-	holder.brute_mod_perk += 0.1
+	holder.brute_mod_perk /= 0.75
 	holder.mob_bomb_defense -= 5
 	holder.falls_mod += 0.2
 	..()
@@ -117,14 +117,14 @@
 
 /datum/perk/oddity/thin_skin/assign(mob/living/carbon/human/H)
 	..()
-	holder.brute_mod_perk += 0.1
+	holder.brute_mod_perk *= 1.25
 	holder.mob_bomb_defense -= 5
 	holder.falls_mod += 0.2
 	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 
 /datum/perk/oddity/thin_skin/remove()
-	holder.brute_mod_perk -= 0.1 // One third of subdermal armor
+	holder.brute_mod_perk /= 1.25 // One third of subdermal armor
 	holder.mob_bomb_defense += 5
 	holder.falls_mod -= 0.2
 	..()

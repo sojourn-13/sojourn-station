@@ -209,7 +209,6 @@
 //distance
 #define RANGE_ADJACENT -1
 
-//#define UNTIL(X) while(!(X)) stoplag() old one
 
 //Core implants
 #define CORE_ACTIVATED /datum/core_module/activatable

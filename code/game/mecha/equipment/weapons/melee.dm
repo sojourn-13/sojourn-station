@@ -8,7 +8,6 @@
 	structure_damage_factor = 2
 	force = 20
 	required_type = /obj/mecha
-	embed_mult = 0 // Mech mounted weapons, shouldn't embed
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword
 	name = "mech sword"
