@@ -65,6 +65,21 @@
 	//Same armor that they are warning
 	armor = list(melee = 35, bullet = 35, energy = 35, bomb = 30, bio = 100, rad = 50)
 
+/*
+Note about the deepmaints_bound!
+These ones are meant to be only used for chaos level and not for events, or deeper factional ties
+They are soully made and reflavoured to be for PVE.
+*/
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/deepmaints_bound
+	name = "Wild Daskveyian Swordsman"
+	desc = "Once a basic footsoldier of the Hand of Daskvey. \
+	Donning the mask of the warrior, the lowest rank of souls receive their sword and begin training for only the safey of their brothers and sisters. \
+	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/item/tool/sword/cult/deepmaints, /obj/random/psi/always_spawn)
+	color = null
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/daskvey
 	name = "Daskvey"
@@ -187,6 +202,17 @@
 
 	armor_penetration = 15
 
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/cleaver/deepmaints_bound
+	name = "Wild Daskveyian Wall Breaker"
+	desc = "Once a basic footsoldier of the Hand of Daskvey. \
+	Donning the mask of the warrior, the agressive souls of former criminals find themselves too enraged to naught but strike their enemies down with furious rage. \
+	Flesh or steel, the axe will smash its way through. \
+	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
+	color = null
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/item/tool/sword/cleaver/cult/deepmaints, /obj/random/psi/always_spawn)
+
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/plasma
 	name = "Daskveyian Plasma Caster"
 	desc = "Trained warrior of the Hand of Daskvey. Carrying a laser gun enhanced by the wielder's mind, they inflict deadly pain on any that obstruct the freedom of their cult's members. For freedom is never free."
@@ -211,6 +237,15 @@
 	projectiletype = /obj/item/projectile/plasma/aoe/heat
 
 	armor_penetration = 15
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/plasma/deepmaints_bound
+	name = "Wild Daskveyian Plasma Caster"
+	desc = "Once a trained warrior of the Hand of Daskvey. Carrying a laser gun enhanced by the wielder's mind, they inflict deadly pain on most that obstruct them. \
+	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
+	color = null
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/item/gun/energy/plasma/cassad/cult/deepmaints, /obj/random/psi/always_spawn)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/laser
 	name = "Daskveyian Las-Gunner"
@@ -239,6 +274,15 @@
 	projectiletype = /obj/item/projectile/beam
 
 	armor_penetration = 15
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/laser/deepmaints_bound
+	name = "Wild Daskveyian Las-Gunner"
+	desc = "Once a trained Gunner of the Hand of Daskvey, their hands clutching a fine laser rifle to burn away that which would threaten them or their fellow followers. \
+	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
+	color = null
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/item/gun/energy/laser/cult/deepmaints, /obj/random/psi/always_spawn)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg
 	name = "Daskveyian Assaulter"
@@ -272,6 +316,21 @@
 
 	armor_penetration = 15
 
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg/Initialize(mapload)
+	. = ..()
+	//Proj Upgrade
+	if(GLOB.chaos_level >= 5)
+		projectiletype = /obj/item/projectile/bullet/pistol_35
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/smg/deepmaints_bound
+	name = "Wild Daskveyian Assaulter"
+	desc = "Once a mere Gunner of the Hand of Daskvey, still ready to fight, their weapon sprays waves of lead to any that would harm those that they held dear. \
+	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
+	color = null
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/item/gun/projectile/automatic/greasegun/cult/deepmaints, /obj/random/psi/always_spawn)
+
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle
 	name = "Daskveyian Rifleperson"
 	desc = "A basic rifleperson of the Hand of Daskvey. Shadowed behind the mask of the warrior, they find peace with weapon in hand, for no duty is more important to freedom than to take up arms for it."
@@ -303,6 +362,21 @@
 	mag_type = /obj/item/ammo_magazine/rifle_75/empty
 
 	armor_penetration = 15
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle/Initialize(mapload)
+	. = ..()
+	//Proj Upgrade
+	if(GLOB.chaos_level >= 5)
+		projectiletype = /obj/item/projectile/bullet/rifle_75
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/rifle/deepmaints_bound
+	name = "Wild Daskveyian Rifleperson"
+	desc = "Once just a basic rifleperson of the Hand of Daskvey. Shadowed behind the mask of the warrior, they lost the peace given to them, yearning freedom once more. \
+	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
+	color = null
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/item/gun/projectile/automatic/sts/rifle/cult/deepmaints, /obj/random/psi/always_spawn)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/shield
 	name = "Daskveyian Juggernaut "
@@ -336,6 +410,15 @@
 				L.visible_message(SPAN_DANGER("\the [src] uses its shield to knock over \the [L]!"))
 	. = ..()
 
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/shield/deepmaints_bound
+	name = "Wild Daskveyian Juggernaut "
+	desc = "Once a soul of strength and integrity, recovered from the ravages laid upon it. Still fitted in heavy armor, it protected those in its shadow with unbending steel, for they were once the wall that held back any that seek to harm their kin. \
+	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
+	color = null
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/halberd
 	name = "Daskveyian Halberdier"
 	desc = "A soul of strength and integrity, recovered from the ravages laid upon it. Outfitted in heavy armor, it protects those in its shadow with unwavering confidence, for they know what failure means."
@@ -355,6 +438,15 @@
 	armor_penetration = 30
 	armor = list(melee = 60, bullet = 60, energy = 60, bomb = 100, bio = 100, rad = 90)
 
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/halberd/deepmaints_bound
+	name = "Wild Daskveyian Halberdier"
+	desc = "Once a soul of strength and integrity, recovered from the ravages laid upon it. Still fitted in heavy armor, it used to protects those in its shadow with unwavering confidence, for they found what failure means. \
+	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
+	color = null
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
+
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/weakling
 	name = "Daskveyian Uplifted"
 	desc = "A soul recently uplifted by the Hand of Daskvey, still lost and recovering from its pains, they find themselves lost in a trance of forgotten memories."
@@ -373,6 +465,15 @@
 
 	armor_penetration = 0
 	armor = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/weakling/deepmaints_bound
+	name = "Wild Daskveyian Uplifted"
+	desc = "Once A soul uplifted by the Hand of Daskvey, lost and suffering from it's pains, found often in a trance of forgotten memories. \
+	Do to the Kings influence and being rebound to the Deep Maintenance it acts on impluse attacking anyone not directly apart of the Daskvey."
+	color = null
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/random/psi/always_spawn)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_shooter
 	name = "Daskveyian Cultist "
@@ -413,6 +514,15 @@
 		projectiletype = /obj/item/projectile/kinetic_blast_electro/dangerous
 
 	..()
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_shooter/deepmaints_bound
+	name = "Wild Daskveyian Cultist "
+	desc = "Once a soul reformed by the Hand of Daskvey, they spend their time occupied with daily routine, trying to fend off the insanity of their own predicament, while better learning their new powers. \
+	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
+	color = null
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
 
 /mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_master
 	name = "Daskveyian Hand"
@@ -455,3 +565,14 @@
 	if(prob(10))
 		projectiletype = /obj/item/projectile/kinetic_blast_electro/brutal
 	..()
+
+/mob/living/carbon/superior_animal/psi_monster/daskvey_follower/orb_master/deepmaints_bound
+	name = "Wild Daskveyian Hand"
+	desc = "A fallen master of the mind, once reformed and guided true by the Hand of Daskvey. \
+	The members of the Hands form the parties of preach leaders, and assistants to the acolytes. \
+	Their knowledge of psionics is of a scholarly level. \
+	Turned mad from the Kings influence and being rebound to the Deep Maintenance acts on impluse attacking anyone not directly apart of the Daskvey."
+	color = null
+	psionic_respawn = TRUE //Endles fighter
+	can_leave = FALSE
+	drop_items = list(/obj/random/psi/always_spawn, /obj/random/psi/always_spawn, /obj/random/psi/always_spawn)
