@@ -1,13 +1,13 @@
-/obj/item/rig/attackby(obj/item/I, mob/user)
+/obj/item/rig/proc/can_maintenance()
+	return !is_worn()
 
+/obj/item/rig/attackby(obj/item/I, mob/user)
 	if(!isliving(user))
 		return
 
 	if(electrified != 0)
 		if(shock(user)) //Handles removing charge from the cell, as well. No need to do that here.
 			return
-
-
 
 	// Lock or unlock the access panel.
 	if(I.GetIdCard())
@@ -37,7 +37,7 @@
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)
 		if(QUALITY_SCREW_DRIVING)
-			if (is_worn())
+			if(!can_maintenance())
 				to_chat(user, "You can't remove an installed device while the hardsuit is being worn.")
 				return 1
 
@@ -128,7 +128,7 @@
 					to_chat(user, "There is not tank to remove.")
 					return
 
-				if (is_worn())
+				if (!can_maintenance())
 					to_chat(user, "You can't remove an installed tank while the hardsuit is being worn.")
 					return 1
 

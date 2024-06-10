@@ -126,3 +126,112 @@
 	if(Victim)
 		if(Victim == M)
 			loc = M.loc // simple "attach to head" effect!
+
+
+//Fancy Chaos level attack upgrades
+
+//Memory: the shadow fella, when they attack teleport behind the person, regardless of whats in are way, (like walls n stuff)
+/mob/living/carbon/superior_animal/psi_monster/memory/UnarmedAttack(atom/A, proximity)
+	. = ..()
+
+	if(ismob(A))
+		var/mob/M = A
+		var/RD = reverse_direction(M.dir)
+		dir = M.dir
+
+		if(GLOB.chaos_level >= 2) //Unlocks early as these smucks are trash
+			var/turf/T = get_step(M, RD)
+			if(T && !QDELETED(src)) //Safty so we dont teleport out of quedel
+				forceMove(T)
+
+//thought and memory police! These two work together at chaos level 2 making them quite tricky
+/mob/living/carbon/superior_animal/psi_monster/thought_melter/UnarmedAttack(atom/A, proximity)
+	if(GLOB.chaos_level >= 2)
+		if(ishuman(A))
+			var/mob/living/carbon/human/H = A
+			if(!H.psi_blocking > 0)
+				if(istype(H.head, /obj/item/clothing)) //We only knock off hats
+					var/obj/item/clothing/hat = H.head
+					if(hat.canremove || hat.psi_blocking <= 0)
+						H.drop_from_inventory(hat)
+						visible_message(SPAN_DANGER("[src] steals [H.name]'s [hat]!"))
+	. = ..()
+
+/mob/living/carbon/superior_animal/psi_monster/memory_eater/UnarmedAttack(atom/A, proximity, repeat_attack = FALSE)
+	if(GLOB.chaos_level >= 2)
+		if(ishuman(A))
+			var/mob/living/carbon/human/H = A
+			if(!H.psi_blocking > 0)
+				if(!istype(H.head, /obj/item/clothing) && !repeat_attack) //if we dont have a hat we attack again!
+					UnarmedAttack(A,proximity,TRUE)
+	. = ..()
+
+//The masked horror!!!!
+/mob/living/carbon/superior_animal/psi_monster/hovering_nightmare/UnarmedAttack(atom/A, proximity)
+	if(GLOB.chaos_level >= 2)
+		if(ishuman(A))
+			var/mob/living/carbon/human/H = A
+
+			if(!H.psi_blocking > 0)
+				if(!H.wear_mask)
+					var/psionic_mask = pick(typesof(/obj/item/clothing/mask/deepmaints_debuff))
+					if(psionic_mask)
+						H.replace_in_slot(new psionic_mask, slot_wear_mask, skip_covering_check = TRUE)
+
+				else //Small note IS_OPIFEX **will** die without their n2, so they do not have this risk at all.
+					if(istype(H.wear_mask, /obj/item/clothing) && !istype(H.wear_mask, /obj/item/clothing/mask/deepmaints_debuff) && H.species.reagent_tag != IS_OPIFEX) //Saved by a masked item!
+						var/obj/item/clothing/mask = H.wear_mask
+						if(mask.canremove || mask.psi_blocking <= 0)
+							H.drop_from_inventory(mask)
+							visible_message(SPAN_DANGER("[src] peals off [H.name]'s [mask]!"))
+	. = ..()
+
+//The Cerebral crusher gets by far the most complex and silly fancy attacks.
+//If we have a shield, then we deal direct damage to it, trying to kill the shield as fast as possable!
+//If we are wielding an item? Unwield it
+//If we dont have any of the above, but still hold an item, drop it (respects can drop)
+/mob/living/carbon/superior_animal/psi_monster/cerebral_crusher/UnarmedAttack(atom/A, proximity)
+	if(GLOB.chaos_level >= 2)
+		if(ishuman(A))
+			var/mob/living/carbon/human/H = A
+			var/knock_out_of_hand = TRUE
+			if(!H.psi_blocking > 0)
+				if(H.has_shield())
+					var/obj/item/shield/shield = H.has_shield()
+					visible_message(SPAN_DANGER("[src] render, and tears into [H.name]'s [shield]!"))
+					shield.adjustShieldDurability(-50, H)
+					knock_out_of_hand = FALSE
+
+				//Lots of checks for a seemingly simple task, unwielding a persons wielded weapon
+				var/right_hand_found = FALSE
+				var/left_hand_found = FALSE
+				if(H.l_hand)
+					left_hand_found = TRUE
+				if(H.r_hand)
+					right_hand_found = TRUE
+				if(right_hand_found && left_hand_found)
+					var/obj/item/wielded_r = H.r_hand
+					var/obj/item/wielded_l = H.l_hand
+					knock_out_of_hand = FALSE
+					if(GLOB.chaos_level >= 3) //At level 3 it knocks items from a wielded state out of it!
+						if(!wielded_r.is_held_twohanded(wielded_r))
+							visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_r], making [H.name] unwield [wielded_r]!"))
+							wielded_r.unwield(H)
+						if(!wielded_l.is_held_twohanded(wielded_l))
+							visible_message(SPAN_DANGER("[src] batters [H.name]'s [wielded_l], making [H.name] unwield [wielded_l]!"))
+							wielded_l.unwield(H)
+				//This is insainl powerful and shuld not just happend without choas level being exstreamly high
+				if(GLOB.chaos_level >= 5)
+					if(knock_out_of_hand) //When not wielding an item we knock it out of your grasp!
+						if(H.get_active_hand())
+							var/obj/fumble = H.get_active_hand()
+							H.drop_from_inventory(fumble)
+							visible_message(SPAN_DANGER("[src] knocks [fumble] out of [H.name]'s grasp!"))
+	. = ..()
+
+//To see full affects go to the ai.dm for psi_monsters
+/mob/living/carbon/superior_animal/psi_monster/pus_maggot/ash_wendigo/UnarmedAttack(atom/A, proximity)
+	if(ishuman(A))
+		var/mob/living/carbon/human/H = A
+		dir = reverse_direction(H.dir) //face to face comferation (required for how we handle being attacked)
+	..()

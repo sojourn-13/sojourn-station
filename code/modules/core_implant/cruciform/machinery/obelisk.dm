@@ -32,7 +32,15 @@ GLOBAL_LIST_EMPTY(all_obelisk)
 /obj/machinery/power/nt_obelisk/New()
 	..()
 	GLOB.all_obelisk |= src
-
+/*
+	var/area/my_area = get_area(src.loc)
+	if(my_area.name == "Deep Maintenance") //Shockingly this is how get area works
+		//In deepmaints we work way worse,
+		area_radius = max(3, area_radius - 1 - GLOB.chaos_level)
+		damage = max(5, damage - 10 - GLOB.chaos_level)
+		max_targets = max(1, max_targets - 1 - GLOB.chaos_level)
+		desc = "[desc] This one is being weaked by the forces in the area"
+*/
 /obj/machinery/power/nt_obelisk/Destroy()
 	for(var/i in currently_affected)
 		var/mob/living/carbon/human/H = i
