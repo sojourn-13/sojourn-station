@@ -522,7 +522,7 @@
 	set category = "Object"
 	set src in range(1)
 
-	if(!isghost(usr)
+	if(!isghost(usr))
 		clear_out()
 	else
 		to_chat(usr, SPAN_NOTICE("Sadly this keg isnt brewing spirits!"))
