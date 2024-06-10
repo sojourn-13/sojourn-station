@@ -170,6 +170,9 @@
 		bio = 100,
 		rad = 100
 	)
+	ablative_armor = 12
+	ablative_max = 12
+	ablation = ABLATION_EVERLASTING
 	slowdown = 0.4 //Heavy ass armor. This isn't for rapid deployment. It is for slapping the shit out of a threat to the colony that has been foolish enough to stay in one place.
 	drain = 12
 	offline_slowdown = 3
@@ -215,6 +218,9 @@
 		bio = 100,
 		rad = 100
 	)
+	ablative_armor = 8
+	ablative_max = 8
+	ablation = ABLATION_RESILIENT
 	slowdown = 0.5 //Heavy ass armor. This isn't for rapid deployment. It is for slapping the shit out of a threat to the colony that has been foolish enough to stay in one place.
 	drain = 25
 	offline_slowdown = 3
@@ -254,9 +260,9 @@
 	drain = 4
 	offline_slowdown = 3
 	offline_vision_restriction = 1
-	ablative_armor = 12
-	ablative_max = 12
-	ablation = ABLATION_EVERLASTING
+	ablative_armor = 8
+	ablative_max = 8
+	ablation = ABLATION_RESILIENT
 	stiffness = 0
 	obscuration = 0
 	max_upgrades = 1

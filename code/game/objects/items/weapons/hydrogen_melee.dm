@@ -11,6 +11,7 @@
 	throwforce = WEAPON_FORCE_WEAK
 	throw_speed = 3
 	throw_range = 5
+	no_double_tact = TRUE //for now.
 	w_class = ITEM_SIZE_SMALL
 	switched_on_qualities = list(QUALITY_WELDING = 5, QUALITY_CAUTERIZING = 25, QUALITY_CUTTING = 50)
 	worksound = WORKSOUND_WELDING
