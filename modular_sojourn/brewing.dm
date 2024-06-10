@@ -281,7 +281,7 @@
 			needed_crop_one = "towercap"
 			needed_crop_one_amount = 5
 			needed_crop_two = "poppy"
-			needed_chem_two_amount = 25
+			needed_crop_two_amount = 25
 			//chems
 			needed_chem_one = "honey"
 			needed_chem_one_amount = 5
@@ -339,22 +339,25 @@
 
 //Remove and reset
 /obj/structure/fermentation_keg/proc/clear_out()
-	if(brewing ||ready_for_bottleing)
+	if(brewing || ready_for_bottleing)
 		return //no the lid is on stop it
 	if(reagents)
 		reagents.clear_reagents()
 
 	brew_to = null
 
-	pitty_system(needed_crop, needed_crop_amount)
+	pitty_system(needed_crop, stored_crop)
+	stored_crop = 0
 	needed_crop = null
 	needed_crop_amount = 0
 
-	pitty_system(needed_crop_one, needed_crop_one_amount)
+	pitty_system(needed_crop_one, stored_crop_one)
+	stored_crop_one = 0
 	needed_crop_one = null
 	needed_crop_one_amount = 0
 
-	pitty_system(needed_crop_two, needed_crop_two_amount)
+	pitty_system(needed_crop_two, stored_crop_two)
+	stored_crop_two = 0
 	needed_crop_two = null
 	needed_crop_two_amount = 0
 	needed_water = 0
@@ -448,14 +451,14 @@
 		if(needed_chem_one_amount > chem_one_has)
 			if(user)
 				to_chat(user, SPAN_NOTICE("This keg lacks [get_reagent_name_by_id(needed_chem_one)]!"))
-		return FALSE
+			return FALSE
 
 	if(needed_chem_two)
 		var/chem_one_has = reagents.get_reagent_amount("[needed_chem_two]")
 		if(needed_chem_one_amount > chem_one_has)
 			if(user)
 				to_chat(user, SPAN_NOTICE("This keg lacks [get_reagent_name_by_id(needed_chem_two)]!"))
-		return FALSE
+			return FALSE
 
 	return TRUE
 
@@ -466,7 +469,7 @@
 	var/water_has = 0
 	if(reagents)
 		water_has = reagents.get_reagent_amount("water")
-		if(needed_water <= water_has)
+		if(water_has >= needed_water)
 			return TRUE
 	if(user)
 		to_chat(user, SPAN_NOTICE("\The [src] needs at least [needed_water] units of water, currently only [water_has]!"))
@@ -518,4 +521,8 @@
 	set name = "Clear Keg (Completely Resets)"
 	set category = "Object"
 	set src in range(1)
-	clear_out()
+
+	if(!isghost(usr)
+		clear_out()
+	else
+		to_chat(usr, SPAN_NOTICE("Sadly this keg isnt brewing spirits!"))

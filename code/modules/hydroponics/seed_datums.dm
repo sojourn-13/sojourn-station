@@ -597,6 +597,7 @@
 	display_name = "tower caps"
 	chems = list("woodpulp" = list(10,1))
 	mutants = list("metalcap")
+	kitchen_tag = "towercap"
 
 /datum/seed/mushroom/towercap/New()
 	..()
