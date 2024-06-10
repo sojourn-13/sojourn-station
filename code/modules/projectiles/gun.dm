@@ -396,7 +396,7 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 			to_chat(user, "<span class='info'>Projectile Serial Calibration: ERROR.</span>")
 
 
-	var/list/usable_qualities = list()
+	var/list/usable_qualities = list(QUALITY_SCREW_DRIVING)
 	if(saw_off)
 		usable_qualities.Add(QUALITY_SAWING)
 
@@ -468,6 +468,11 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 
 			if(QUALITY_PULSING)
 				plusing_intraction(I, user)
+				return
+
+			//This is litterly just a stop gap so you dont accidently decon your weapon.
+			if(QUALITY_SCREW_DRIVING)
+				..()
 				return
 
 			if(ABORT_CHECK)
