@@ -55,11 +55,15 @@
 								to_chat(user, "[src]'s power cell cannot be removed")
 								return TRUE
 							if(cell)
-								to_chat(user, "You detatch \the [cell] from \the [src]'s battery mount.")
-								for(var/obj/item/rig_module/module in installed_modules)
-									module.deactivate()
-								user.put_in_hands(cell)
-								cell = null
+								to_chat(user, "You start removing \the [cell].")
+								if(do_after(usr,seal_delay*4/3,src))//4 for each piece. Taking one a third of its total time to get off.
+									to_chat(user, "You detatch \the [cell] from \the [src]'s battery mount.")
+									for(var/obj/item/rig_module/module in installed_modules)
+										module.deactivate()
+									user.put_in_hands(cell)
+									cell = null
+								else
+									to_chat(user, "You need to stand still to detatch \the [cell].")
 							else
 								to_chat(user, "There is nothing loaded in that mount.")
 
