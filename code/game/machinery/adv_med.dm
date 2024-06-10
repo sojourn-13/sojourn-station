@@ -42,9 +42,6 @@
 	if(src.occupant)
 		to_chat(usr, SPAN_WARNING("The scanner is already occupied!"))
 		return
-	if(usr.abiotic())
-		to_chat(usr, SPAN_WARNING("The subject cannot have abiotic items on."))
-		return
 	set_occupant(usr)
 	src.add_fingerprint(usr)
 	return
@@ -80,9 +77,6 @@
 	if(target.buckled)
 		to_chat(user, SPAN_NOTICE("Unbuckle the subject before attempting to move them."))
 		return
-	if(target.abiotic())
-		to_chat(user, SPAN_NOTICE("Subject cannot have abiotic items on."))
-		return
 	set_occupant(target)
 	src.add_fingerprint(user)
 	return TRUE
@@ -92,9 +86,6 @@
 		return
 	if (src.occupant)
 		to_chat(user, SPAN_WARNING("The scanner is already occupied!"))
-		return
-	if (target.abiotic())
-		to_chat(user, SPAN_WARNING("Subject cannot have abiotic items on."))
 		return
 	if (target.buckled)
 		to_chat(user, SPAN_NOTICE("Unbuckle the subject before attempting to move them."))

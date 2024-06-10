@@ -37,7 +37,7 @@
 		to_chat(user, "<span class='notice'>You disable \the [src].</span>")
 
 /obj/item/device/universal_translator/hear_talk(var/mob/speaker, var/message, var/vrb, var/datum/language/language)
-	if(!listening || !istype(speaker))
+	if(!listening || !istype(speaker) || isanimal(speaker))
 		return
 
 	//Handheld or pocket only.

@@ -70,7 +70,7 @@
 	new /obj/item/clothing/accessory/armband/cargo(src)
 
 /obj/structure/closet/secure_closet/reinforced/quartermaster
-	name = "chief executive officer's locker"
+	name = "surface operations manager's locker"
 	req_access = list(access_merchant)
 	icon_state = "qm"
 
@@ -80,7 +80,7 @@
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/suit/fire(src)
-	new /obj/item/clothing/accessory/halfcape/ceo(src)
+	new /obj/item/clothing/accessory/halfcape/som(src)
 	new /obj/item/tank/emergency_oxygen(src)
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/glasses/powered/meson(src)

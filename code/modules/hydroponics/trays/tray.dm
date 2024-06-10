@@ -26,7 +26,8 @@
 	var/sampled = 0            // Have we taken a sample?
 
 	// Harvest/mutation mods.
-	var/yield_mod = 0          // Modifier to yield
+	var/yield_mod = 0          // Modifier to yield, post harvest
+	var/potency_mod = 0        // Modifier to potency, post harvest
 	var/mutation_mod = 0       // Modifier to mutation chance
 	var/toxins = 0             // Toxicity in the tray?
 	var/mutation_level = 0     // When it hits 100, the plant mutates.
@@ -220,10 +221,10 @@
 			//potency reagents boost the plats genetic potency, tweaking needed
 			if(potency_reagents[R.id])
 				//While I myself would love to see this limit removed, 400 potency bluespace tomato's are a little to powerfull
-				if(seed.get_trait(TRAIT_POTENCY) < 100)
-					seed.set_trait(TRAIT_POTENCY, min(100, seed.get_trait(TRAIT_POTENCY) + potency_reagents[R.id] * reagent_total))
-				else
-					seed.set_trait(TRAIT_POTENCY, 100)
+				if((seed.get_trait(TRAIT_POTENCY) + potency_mod) < 100)
+					potency_mod = min(100, potency_mod + potency_reagents[R.id] * reagent_total)
+				//else  - If are plant is over 100 potency then adding a chemical that would *raise it* shouldnt lower it
+				//	seed.set_trait(TRAIT_POTENCY, 100)
 
 			// Mutagen is distinct from the previous types and mostly has a chance of proccing a mutation.
 			if(mutagenic_reagents[R.id])
@@ -263,16 +264,31 @@
 		seed.harvest(user,yield_mod)
 	else
 */
+	var/post_moder_yield_mod = yield_mod
+
+	if(seed.get_trait(TRAIT_HARVEST_REPEAT))
+		post_moder_yield_mod  *= 0.5
+
+	//Fast growing crops dont get hit by the first harvest being elder
+	if(age >= 70)
+		post_moder_yield_mod -= (age * 0.005)
+	if(age >= 120 && user) //Losing yield slowly now
+		to_chat(user, "This plant appears to be deteriorating with age, surpassing any reasonable life expectancy for a [seed.display_name]. It's yield is suffering as a result.")
+	post_moder_yield_mod = round(post_moder_yield_mod)
+	yield_mod = post_moder_yield_mod
+//	to_chat(user, "yield_mod [seed.display_name]. post_moder_yield_mod [post_moder_yield_mod].")
+
 	if(user)
-		seed.harvest(user,yield_mod)
+		seed.harvest(user,yield_mod,potency_mod)
 	else
-		seed.selfharvest(get_turf(src),yield_mod)
+		seed.selfharvest(get_turf(src),yield_mod,potency_mod)
 	// Reset values.
 	harvest = 0
 	lastproduce = age
 
 	if(!seed.get_trait(TRAIT_HARVEST_REPEAT))
 		yield_mod = 0
+		potency_mod = 0
 		seed = null
 		dead = 0
 		age = 0
@@ -295,6 +311,7 @@
 	sampled = 0
 	age = 0
 	yield_mod = 0
+	potency_mod = 0
 	mutation_mod = 0
 
 	to_chat(user, "You remove the dead plant.")
@@ -449,9 +466,6 @@
 
 	return
 
-
-
-
 /obj/machinery/portable_atmospherics/hydroponics/attackby(obj/item/I, var/mob/user as mob)
 
 	var/tool_type = I.get_tool_type(user, list(QUALITY_SHOVELING, QUALITY_CUTTING,QUALITY_DIGGING, QUALITY_WIRE_CUTTING, QUALITY_BOLT_TURNING, QUALITY_PULSING), src)
@@ -484,7 +498,7 @@
 				to_chat(user, SPAN_NOTICE("You have already sampled from this plant."))
 				if(user.a_intent == I_HURT)
 					to_chat(user, SPAN_NOTICE("You start killing it for one last sample."))
-					seed.harvest(user,yield_mod,1)
+					seed.harvest(user,yield_mod,potency_mod,1)
 					dead = 1
 					update_icon()
 				return
@@ -495,7 +509,7 @@
 
 			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_BIO))
 				// Create a sample.
-				seed.harvest(user,yield_mod,1)
+				seed.harvest(user,yield_mod, potency_mod,1)
 				health -= (rand(3,5)*10)
 				sampled += 1 //no RnG not anymore
 
@@ -625,8 +639,15 @@
 		check_health()
 
 	else if(I.force && seed)
+		if(user.a_intent == I_HURT)
+			if(!dead)
+				health = -100 //So even if we have bees around or other healing chems inside we still die
+				user.visible_message(SPAN_DANGER("\The [seed.display_name] has been hacked, and uprooted by [user] with \the [I]!"))
+				check_health()
+				harvest(user)
+				return
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been attacked by [user] with \the [I]!"))
+		user.visible_message(SPAN_DANGER("\The [seed.display_name] has been whacked by [user] with \the [I]!"))
 		if(!dead)
 			health -= I.force
 			check_health()

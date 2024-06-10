@@ -226,8 +226,8 @@ SUBSYSTEM_DEF(trade)
 	if(selling_price <= 0)
 		selling_price = price * station.markdown
 
-	if(selling_price > buying_price)
-		selling_price -= selling_price * station.markdown
+	if(selling_price >= buying_price)
+		selling_price = buying_price * station.markdown
 
 	. = selling_price
 
@@ -306,6 +306,7 @@ SUBSYSTEM_DEF(trade)
 			continue
 		if(!check_attachments(AM, offer_path, attachments, attach_count) || !check_contents(AM, offer_path))		// Check contents after we know it's the same type
 			continue
+
 		. += AM
 
 /datum/controller/subsystem/trade/proc/assess_all_offers(obj/machinery/trade_beacon/sending/beacon)
@@ -338,6 +339,7 @@ SUBSYSTEM_DEF(trade)
 	var/offer_price = text2num(offer_content["price"])
 	if(!exported || length(exported) < offer_amount || !offer_amount)
 		return
+
 
 	exported.Cut(offer_amount + 1)
 
@@ -508,6 +510,9 @@ SUBSYSTEM_DEF(trade)
 							new good_path(C)
 						else
 							var/atom/movable/new_item = senderBeacon.drop(good_path)
+							if(istype(new_item, /obj/item))
+								var/obj/item/T = new_item
+								T.surplus_tag = TRUE
 							invoice_location = new_item.loc
 					if(isnum(index_of_good))
 						station.set_good_amount(category_name, index_of_good, max(0, station.get_good_amount(category_name, index_of_good) - count_of_good))
@@ -538,7 +543,7 @@ SUBSYSTEM_DEF(trade)
 		cost = get_import_cost(thing, station)
 
 	if(thing.surplus_tag)
-		cost -= cost * 0.2
+		cost = cost * 0.1
 
 	if(account)
 		create_log_entry("Individial Sale", account.get_name(), "<li>[thing.name]</li>", cost)
@@ -553,7 +558,7 @@ SUBSYSTEM_DEF(trade)
 		TA.apply_to(A)
 		//station.add_to_wealth(cost) We dont want to take or give wealth for balance
 
-/datum/controller/subsystem/trade/proc/export(obj/machinery/trade_beacon/sending/senderBeacon)
+/datum/controller/subsystem/trade/proc/export(obj/machinery/trade_beacon/sending/senderBeacon, datum/money_account/account)
 	if(QDELETED(senderBeacon) || !istype(senderBeacon))
 		return
 
@@ -564,17 +569,23 @@ SUBSYSTEM_DEF(trade)
 
 	for(var/obj/AM in senderBeacon.get_objects())
 		if(item_counter > 50) //You can only export 50 items at a time, anti-lag7
-			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"Success, scanners have passed over 50 items, starting Recharging Mode\""))
+			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"Success, scanners have passed over 50 items worth of objects, starting Recharging Mode\""))
 			break
 		if(pass_counter > 50)
 			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"ERROR, scanners have passed over 50 items that have nested items, shutting down and starting Recharging Mode!\""))
+			senderBeacon.visible_message(SPAN_WARNING("\red [src] beeps, stating \"To avoid this error, please wrapping paper the item or crate for export.\""))
 			break
 		item_counter += 1
 		if(isliving(AM))
 			var/mob/living/L = AM
 			L.apply_damages(0,5,0,0,0,5)
 			continue
-		if(AM.contents.len)
+		if(!istype(AM, /obj/structure/bigDelivery) && !istype(AM, /obj/item/smallDelivery))
+			if(AM.contents.len)
+				item_counter -= 1 //Refund
+				pass_counter += 1 //Hold on now
+				continue
+		if(AM.anchored)
 			item_counter -= 1 //Refund
 			pass_counter += 1 //Hold on now
 			continue
@@ -588,7 +599,7 @@ SUBSYSTEM_DEF(trade)
 			var/export_value = item_price * export_multiplier
 
 			if(item.surplus_tag)
-				item_price -= item_price * 0.2
+				item_price = item_price * 0.1
 
 			if(export_multiplier)
 				invoice_contents_info += "<li>[item.name]</li>"
@@ -598,13 +609,20 @@ SUBSYSTEM_DEF(trade)
 			else
 				item.forceMove(get_turf(AM))		// Should be the same tile
 
-	senderBeacon.start_export()
-	var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_LSS]
-	var/datum/transaction/T = new(cost, lonestar_account.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
-	T.apply_to(lonestar_account)
+	if(account)
+		var/datum/money_account/A = account
+		var/datum/money_account/lonestar_account = department_accounts[DEPARTMENT_LSS]
+		var/datum/transaction/TA = new(cost * 0.8, account.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
+		var/datum/transaction/T = new(cost * 0.2, lonestar_account.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
+		T.apply_to(lonestar_account)
+		TA.apply_to(A)
+	else
+		var/datum/money_account/lonestar_account_backup = department_accounts[DEPARTMENT_LSS]
+		var/datum/transaction/T_backup = new(cost, lonestar_account_backup.get_name(), "Export", TRADE_SYSTEM_IC_NAME)
+		T_backup.apply_to(lonestar_account_backup)
 
-	if(invoice_contents_info)	// If no info, then nothing was exported
-		create_log_entry("Export", lonestar_account.get_name(), invoice_contents_info, cost, TRUE, get_turf(senderBeacon))
+
+	senderBeacon.start_export()
 
 /datum/controller/subsystem/trade/proc/get_export_price_multiplier(atom/movable/target)
 	if(!target || target.anchored)

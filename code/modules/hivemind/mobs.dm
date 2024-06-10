@@ -827,7 +827,7 @@
 	if(!Adjacent(targetted_mob))
 		return
 
-	if(world.time > special_ability_cooldown && !passenger)
+	if(world.time > special_ability_cooldown && !passenger && !ismecha(targetted_mob.loc) && !ismecha(targetted_mob))
 		special_ability(targetted_mob)
 
 	..()

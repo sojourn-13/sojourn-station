@@ -17,11 +17,20 @@
 /obj/structure/scrap_beacon/attack_hand(mob/user)
 	.=..()
 	if((last_summon + summon_cooldown) >= world.time)
-		to_chat(user, "<span class='notice'>[name] not charged yet.</span>")
+		var/time_left = ((last_summon + summon_cooldown) - world.time)
+		to_chat(user, "<span class='notice'>[name] not charged yet, [time2text(time_left,"mm:ss")] remaining.</span>")
 		return
 	last_summon = world.time
 	if(!active)
 		start_scrap_summon()
+
+/obj/structure/scrap_beacon/examine(mob/user)
+	. = ..()
+	if((last_summon + summon_cooldown) >= world.time)
+		var/time_left = ((last_summon + summon_cooldown) - world.time)
+		to_chat(user, "<span class='notice'>[name] not charged yet, [time2text(time_left,"mm:ss")] remaining.</span>")
+	return
+
 
 /obj/structure/scrap_beacon/proc/start_scrap_summon()
 	set waitfor = FALSE

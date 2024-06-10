@@ -250,6 +250,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 
 	. = ..() //calls mob.Login()
+	++global.client_count
 	if (byond_version >= 512)
 		if (!byond_build || byond_build < 1386)
 			message_admins(span_adminnotice("[key_name(src)] has been detected as spoofing their byond version. Connection rejected."))
@@ -336,7 +337,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 /client/Del()
 	if(!gc_destroyed)
 		Destroy() //Clean up signals and timers.
-	return ..()
+	. = ..()
+	--global.client_count
 
 /client/Destroy()
 	clients -= src
