@@ -208,7 +208,7 @@
 /datum/tgui_module/catalog/chemistry/silicon/ui_state(mob/user)
 	return GLOB.self_state
 
-// Centcomm Catalog
+// Centcom Catalog
 /datum/tgui_module/catalog/all
 	name = "Centcom chemCatalog"
 	catalog_key = CATALOG_ALL
