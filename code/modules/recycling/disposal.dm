@@ -467,6 +467,9 @@
 				visible_message("\The [I] lands in \the [src].")
 			else
 				visible_message("\The [I] bounces off of \the [src]\'s rim!")
+	else if (istype(mover, /obj/item/projectile))
+		return TRUE
+
 	else
 		return ..(mover, target, height, air_group)
 

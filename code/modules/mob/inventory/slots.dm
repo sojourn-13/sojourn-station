@@ -16,6 +16,7 @@
 	var/req_slot_flags
 	var/req_type
 	var/max_w_class
+	var/list/resticted_items = list()
 
 /datum/inventory_slot/proc/update_icon(mob/living/owner, redraw)
 	if(update_proc)
@@ -48,7 +49,10 @@
 		return TRUE
 	else if(req_slot_flags && (req_slot_flags & I.slot_flags))
 		return TRUE
-	else if(max_w_class && (I.w_class <= max_w_class))
+	if(max_w_class && (I.w_class <= max_w_class))
+		for(var/check in resticted_items)
+			if(istype(I, check))
+				return FALSE
 		return TRUE
 
 	if(!disable_warning)
@@ -133,6 +137,8 @@
 	req_organ = BP_HEAD
 	req_slot_flags = SLOT_EARS|SLOT_TWOEARS
 	update_proc = /mob/proc/update_inv_ears
+	max_w_class = ITEM_SIZE_TINY
+	resticted_items = list(/obj/item/storage/pouch)
 
 /datum/inventory_slot/ear/can_equip(obj/item/I, mob/living/carbon/human/owner, disable_warning)
 	if(I.slot_flags & SLOT_TWOEARS)
@@ -148,8 +154,6 @@
 	name = "Right ear"
 	id = slot_r_ear
 	req_slot_flags = SLOT_EARS
-	max_w_class = ITEM_SIZE_TINY
-
 
 /datum/inventory_slot/glasses
 	name = "Glasses"

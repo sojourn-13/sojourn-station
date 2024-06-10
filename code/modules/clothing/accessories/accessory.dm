@@ -317,7 +317,7 @@
 	desc = "A black cloak with dark-blue lining."
 
 /obj/item/clothing/accessory/job/cape/gm
-	name = "executive officer's cloak"
+	name = "surface manager's cloak"
 	icon_state = "gmcloak"
 	desc = "A brown cloak with yellow lining."
 
@@ -372,8 +372,8 @@
 	usual flare of the church."
 	icon_state = "half_nt"
 
-/obj/item/clothing/accessory/halfcape/ceo
-	name = "CEOs holo-mantle"
+/obj/item/clothing/accessory/halfcape/som
+	name = "SOMs holo-mantle"
 	desc = "A fancy holo-mantle made from light-toned silk and bearing the rank markings of the Prime. Fine alabaster silks and gold trim, despite its seemingly similar \
 	make to similar cloaks, its quality cannot be contested."
 	icon_state = "half_ceo"

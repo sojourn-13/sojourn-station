@@ -17,8 +17,10 @@
 		if(istype(I, /obj/item/paper))
 			I.loc = src
 			notices++
-	icon_state = "nboard0[notices]"
+	update_icon()
 
+/obj/structure/noticeboard/update_icon()
+	icon_state = "nboard0[notices]"
 
 //attaching papers!!
 /obj/structure/noticeboard/attackby(var/obj/item/O as obj, var/mob/user as mob)
@@ -29,7 +31,7 @@
 			user.drop_from_inventory(O)
 			O.loc = src
 			notices++
-			icon_state = "nboard0[notices]"	//update sprite
+			update_icon()
 			to_chat(user, SPAN_NOTICE("You pin the paper to the noticeboard."))
 		else
 			to_chat(user, SPAN_NOTICE("You reach to pin your paper to the board but hesitate. You are certain your paper will not be seen among the many others already attached."))
@@ -92,7 +94,7 @@
 		user.put_in_hands(item)
 		//balloon_alert(user, "removed from board")
 	notices--
-	icon_state = "nboard0[notices]"
+	update_icon()
 
 // put actual, filled noticeboards here. These are for adding actual notices via code. Be careful! Anything written here will likely be taken as law by those that read them
 
@@ -164,7 +166,7 @@
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P
-
+	update_icon()
 
 /obj/structure/noticeboard/blackshield
 	name = "Blackshield bulletin board"
@@ -216,6 +218,7 @@
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P
+	update_icon()
 
 /obj/structure/noticeboard/medical
 	name = "Medical bulletin board"
@@ -231,6 +234,7 @@
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P
+	update_icon()
 
 
 /obj/structure/noticeboard/research
@@ -255,6 +259,7 @@
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P
+	update_icon()
 
 /obj/structure/noticeboard/guild
 	name = "Artificers Guild bulletin board"
@@ -266,7 +271,23 @@
 	name = "Prospectors bulletin board"
 	desc = "A board containing vital notices and official memos for the colonies most underappreciated trashmen"
 	icon_state = "nboard00"
-	notices = 0
+	notices = 1
+
+/obj/structure/noticeboard/prospectors/New()
+	var/obj/item/paper/P = new()
+	P.name = "Memo RE: LSS Bulk Selling"
+	P.info = "<ul><h3><u>How to deal with Cargo with many sellable items!</u></h3><hr>\
+	<li>Step 0: Get the loot \
+	<li>Step 1: Sort the loot into crates or lockers you <b>WANT</b> to bulk sell.Do <b>NOT</b> store sellables inside pouches, bags or toolboxes. Export beacons do NOT like nested items. \
+	<li>Step 2: Get a Cargo Tech or SOM to wrapper the crate up. \
+	<li>Step 3: <b>GET A PRINT OF THE SCANNER REPORT OF HOW MUCH THE WRAPPED GOODS SELL FOR.</b>\
+	<li>Step 4: Get a Cargo Tech or SOM to export the wrapped crate. \
+	<li>Step 5: Make sure to get your cut of the sale, and then have the crate when they are done with it.<hr></li>\
+	<b>Signed Pravel Marsk<br>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+	update_icon()
 
 /obj/structure/noticeboard/lonestar_service
 	name = "Lonestar Shipping bulletin board"
@@ -278,7 +299,7 @@
 	name = "Lonestar Shipping bulletin board"
 	desc = "A board containing vital notices and official memos for Lonestar-Supply Employees"
 	icon_state = "nboard00"
-	notices = 2
+	notices = 3
 
 /obj/structure/noticeboard/lonestar_supply/New()
 	var/obj/item/paper/P = new()
@@ -291,7 +312,7 @@
 	<li> Seismic activity 5: Five burrows, four termites. At this point you can expect termites almost every minute out of a burrow, and a burrow every two minutes. Should have some serious firepower if you wanna tackle that. \
 	<li> Seismic activity 6: SEVEN BURROWS. FIVE TERMITES. Expect basically ONLY the beefy motherfuckers and get ready to BEAT SHIT DOWN FAST. THEY ARE COMING, AND THERE ARE MANY. Now it's literally two minutes between burrows and only sixty seconds between large groups coming from them. \
 	<b>Do not put your drill on an activity 6 spot if you ain't prepared for it, stuff WILL get out of hand, you WILL be overrun.</b></ul><br>Yeah that's about it, see ya'.<br>\
-P.S - <u><h1>Don't leave the drills running unattended!</u></h1>"
+	P.S - <u><h1>Don't leave the drills running unattended!</u></h1>"
 	P.copy_overlays(list("paper_stamp-dots"), TRUE)
 	P.stamped &= STAMP_FACTION
 	src.contents += P
@@ -311,6 +332,20 @@ P.S - <u><h1>Don't leave the drills running unattended!</u></h1>"
 	P.stamped &= STAMP_FACTION
 	src.contents += P
 
+	P = new()
+	P.name = "Memo RE: Prospector Bulk Selling"
+	P.info = "<ul><h3><u>How to deal with Prospector with many sellable items!</u></h3><hr>\
+	<li>Step 0: They get the loot \
+	<li>Step 1: They sort the loot into crates or lockers they <b>WANT</b> to bulk sell. \
+	<li>Step 2: They come to you to get the crate or locker wrapper for selling. Use the wrapping paper for packages. \
+	<li>Step 3: <b>GET A PRINT OF THE SCANNER REPORT OF HOW MUCH THE WRAPPED GOODS SELL FOR.</b>\
+	<li>Step 4: EXPORT the <b>WRAPPED CRATE</b>.\
+	<li>Step 5: Make sure to give them their cut of the sale, and the crate back when done.<hr></li>\
+	<b>Signed Pravel Marsk<br>"
+	P.copy_overlays(list("paper_stamp-dots"), TRUE)
+	P.stamped &= STAMP_FACTION
+	src.contents += P
+	update_icon()
 
 /obj/structure/noticeboard/church
 	name = "Church of the Absolute bulletin board"

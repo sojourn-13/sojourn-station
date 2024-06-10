@@ -49,7 +49,7 @@
 	set_trait(TRAIT_JUICY,1)
 	set_trait(TRAIT_MATURATION,5)
 	set_trait(TRAIT_PRODUCTION,5)
-	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_YIELD,4)
 	set_trait(TRAIT_POTENCY,10)
 	set_trait(TRAIT_PRODUCT_ICON,"berry")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#FA1616")
@@ -119,7 +119,7 @@
 	set_trait(TRAIT_JUICY,1)
 	set_trait(TRAIT_MATURATION,5)
 	set_trait(TRAIT_PRODUCTION,5)
-	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_YIELD,4)
 	set_trait(TRAIT_POTENCY,10)
 	set_trait(TRAIT_PRODUCT_ICON,"berry")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#3BA4EC")
@@ -183,7 +183,7 @@
 	set_trait(TRAIT_JUICY,1)
 	set_trait(TRAIT_MATURATION,8)
 	set_trait(TRAIT_PRODUCTION,6)
-	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_YIELD,4)
 	set_trait(TRAIT_POTENCY,10)
 	set_trait(TRAIT_PRODUCT_ICON,"tomato")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#D10000")
@@ -257,7 +257,7 @@
 	set_trait(TRAIT_HARVEST_REPEAT,1)
 	set_trait(TRAIT_MATURATION,6)
 	set_trait(TRAIT_PRODUCTION,6)
-	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_YIELD,4)
 	set_trait(TRAIT_POTENCY,20)
 	set_trait(TRAIT_PRODUCT_ICON,"eggplant")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#892694")
@@ -321,7 +321,7 @@
 	display_name = "ambrosia vulgaris"
 	mutants = list("ambrosiadeus", "ambrosiarobusto")
 	greatMutants = list("ambrosiainfernum", "ambrosiaomni")
-	chems = list("nutriment" = list(1), "space_drugs" = list(1,8), "kelotane" = list(1,8,1), "bicaridine" = list(1,10,1), "toxin" = list(1,10))
+	chems = list("nutriment" = list(1), "space_drugs" = list(1,8), "monocaridine" = list(1,10,1), "toxin" = list(1,10))
 	kitchen_tag = "ambrosia"
 
 /datum/seed/ambrosia/New()
@@ -807,7 +807,7 @@
 	name = "poppies"
 	seed_name = "poppy"
 	display_name = "poppies"
-	chems = list("nutriment" = list(1,20), "bicaridine" = list(1,10))
+	chems = list("space_drugs" = list(1,20), "monocaridine" = list(1,10))
 	kitchen_tag = "poppy"
 
 /datum/seed/flower/poppy/New()
@@ -827,6 +827,7 @@
 	name = "sunflowers"
 	seed_name = "sunflower"
 	display_name = "sunflowers"
+	kitchen_tag = "sunflower"
 
 /datum/seed/flower/sunflower/New()
 	..()
@@ -845,13 +846,14 @@
 	display_name = "grapevines"
 	mutants = list("greengrapes")
 	chems = list("nutriment" = list(1,10), "sugar" = list(1,5), "grapejuice" = list(10,10))
+	kitchen_tag = "grape"
 
 /datum/seed/grapes/New()
 	..()
 	set_trait(TRAIT_HARVEST_REPEAT,1)
 	set_trait(TRAIT_MATURATION,3)
 	set_trait(TRAIT_PRODUCTION,5)
-	set_trait(TRAIT_YIELD,4)
+	set_trait(TRAIT_YIELD,7)
 	set_trait(TRAIT_POTENCY,10)
 	set_trait(TRAIT_PRODUCT_ICON,"grapes")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#BB6AC4")
@@ -973,6 +975,7 @@
 	name = "potato"
 	seed_name = "potato"
 	display_name = "potatoes"
+	mutants = list("broot")
 	chems = list("nutriment" = list(1,10), "potato" = list(10,10))
 	kitchen_tag = "potato"
 
@@ -1156,9 +1159,9 @@
 	set_trait(TRAIT_PRODUCTION,6)
 	set_trait(TRAIT_YIELD,3)
 	set_trait(TRAIT_POTENCY,10)
-	set_trait(TRAIT_PRODUCT_ICON,"vine")
-	set_trait(TRAIT_PRODUCT_COLOUR,"#B4D4B9")
-	set_trait(TRAIT_PLANT_COLOUR,"#BAE8C1")
+	set_trait(TRAIT_PRODUCT_ICON,"vine2")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#EEB267")
+	set_trait(TRAIT_PLANT_COLOUR,"#EEB267")
 	set_trait(TRAIT_PLANT_ICON,"vine2")
 	set_trait(TRAIT_WATER_CONSUMPTION, 6)
 
@@ -1304,7 +1307,7 @@
 	set_trait(TRAIT_HARVEST_REPEAT,1)
 	set_trait(TRAIT_MATURATION,5)
 	set_trait(TRAIT_PRODUCTION,5)
-	set_trait(TRAIT_YIELD,2)
+	set_trait(TRAIT_YIELD,4)
 	set_trait(TRAIT_POTENCY,10)
 	set_trait(TRAIT_PRODUCT_ICON,"treefruit")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#CCA935")
@@ -1337,7 +1340,7 @@
 	name = "kudzu"
 	seed_name = "kudzu"
 	display_name = "kudzu vines"
-	chems = list("nutriment" = list(1,50), "anti_toxin" = list(1,25))
+	chems = list("nutriment" = list(1,50), "lg_anti_toxin" = list(1,25))
 
 /datum/seed/kudzu/New()
 	..()
@@ -1372,6 +1375,27 @@
 	set_trait(TRAIT_IDEAL_HEAT, 283)
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
 
+/datum/seed/alocasia
+	name = "space alocasia"
+	seed_name = "space alocasia"
+	display_name = "space alocasia leaves"
+	mutants = list("mercy's hand")
+	chems = list("monocaridine" = list(1,10), "lg_anti_toxin" = list(1,10))
+	kitchen_tag = "space alocasia"
+
+/datum/seed/alocasia/New()
+	..()
+	set_trait(TRAIT_MATURATION,3)
+	set_trait(TRAIT_PRODUCTION,5)
+	set_trait(TRAIT_YIELD,4)
+	set_trait(TRAIT_POTENCY,10)
+	set_trait(TRAIT_PRODUCT_ICON,"alien3")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#1a4108")
+	set_trait(TRAIT_PLANT_COLOUR,"#2e740d")
+	set_trait(TRAIT_PLANT_ICON,"tree5")
+	set_trait(TRAIT_IDEAL_HEAT, 283)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
 /datum/seed/mtear
 	name = "sun tear"
 	seed_name = "sun tear"
@@ -1388,6 +1412,28 @@
 	set_trait(TRAIT_PRODUCT_ICON,"alien4")
 	set_trait(TRAIT_PRODUCT_COLOUR,"#4CC5C7")
 	set_trait(TRAIT_PLANT_COLOUR,"#4CC789")
+	set_trait(TRAIT_PLANT_ICON,"bush7")
+	set_trait(TRAIT_IDEAL_HEAT, 283)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+
+/datum/seed/moontear
+	name = "moon tear"
+	seed_name = "moon tear"
+	display_name = "moon tear leaves"
+	mutants = list("sun tear")
+	chems = list("sugar" = list(1,10), "moon water" = list(3,5))
+	kitchen_tag = "mtear"
+
+/datum/seed/moontear/New()
+	..()
+	set_trait(TRAIT_MATURATION,3)
+	set_trait(TRAIT_PRODUCTION,5)
+	set_trait(TRAIT_YIELD,4)
+	set_trait(TRAIT_POTENCY,10)
+	set_trait(TRAIT_PRODUCT_ICON,"alien4")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#c4fcf9")
+	set_trait(TRAIT_PLANT_COLOUR,"#bee7d3")
 	set_trait(TRAIT_PLANT_ICON,"bush7")
 	set_trait(TRAIT_IDEAL_HEAT, 283)
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
@@ -1522,6 +1568,26 @@
 	set_trait(TRAIT_HARVEST_REPEAT,1)
 	set_trait(TRAIT_PRODUCT_COLOUR, "#B2B2B2")
 	set_trait(TRAIT_PLANT_COLOUR, "#4735C6")
+	set_trait(TRAIT_ENDURANCE,15)
+	set_trait(TRAIT_MATURATION,8)
+	set_trait(TRAIT_PRODUCTION,10)
+	set_trait(TRAIT_YIELD,3)
+	set_trait(TRAIT_POTENCY,3)
+
+/datum/seed/curtain
+	name = "curtain weed"
+	seed_name = "curtain weed"
+	display_name = "curtain weed"
+	chems = list("paracetamol" = list(1,5),"quintalin" = list(1,2),"nutriment"= list(1,5))
+	kitchen_tag = "vbush"
+
+/datum/seed/curtain/New()
+	..()
+	set_trait(TRAIT_PLANT_ICON,"bush4")
+	set_trait(TRAIT_PRODUCT_ICON, "nuts")
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_PRODUCT_COLOUR, "#dfdede")
+	set_trait(TRAIT_PLANT_COLOUR, "#b3b0ce")
 	set_trait(TRAIT_ENDURANCE,15)
 	set_trait(TRAIT_MATURATION,8)
 	set_trait(TRAIT_PRODUCTION,10)

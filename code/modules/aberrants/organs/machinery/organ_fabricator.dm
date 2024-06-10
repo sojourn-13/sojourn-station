@@ -65,10 +65,11 @@
 /obj/machinery/autolathe/organ_fabricator/eject_disk(mob/living/user)
 	. = ..()
 	// Sanitize categories
-	categories = files.design_categories_organfab
+	// always copy your lists before you modify them kids
+	categories = files.design_categories_organfab.Copy()
 	categories |= ripped_categories
 
-	SSnano.update_uis(src)
+	SStgui.update_uis(src)
 
 /obj/machinery/autolathe/organ_fabricator/design_list()
 	var/list/design_files = list()
@@ -85,7 +86,8 @@
 
 /obj/machinery/autolathe/organ_fabricator/ui_interact()
 	if(!categories?.len)
-		categories = files.design_categories_organfab
+		// always copy your lists before you modify them kids
+		categories = files.design_categories_organfab.Copy()
 	if(!disk && !show_category && length(categories))
 		show_category = categories[1]
 	. = ..()

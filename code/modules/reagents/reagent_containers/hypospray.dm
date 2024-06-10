@@ -34,6 +34,7 @@
 		return
 	if (!istype(M))
 		return
+	injtime = 0 //This -could- be abused but only in such narrow circumstances and with such meager payoff that it's fine. it's fine.
 	// Handling errors and injection duration
 	var/mob/living/carbon/human/H = M
 	if(istype(H))
@@ -83,8 +84,7 @@
 	var/contained = reagents.log_list()
 	var/trans = reagents.trans_to_mob(M, amount_per_transfer_from_this, CHEM_BLOOD)
 	admin_inject_log(user, M, src, contained, trans)
-	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))
-	injtime = 0 //This -could- be abused but only in such narrow circumstances and with such meager payoff that it's fine. it's fine.
+	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))	
 	return
 
 /obj/item/reagent_containers/hypospray/verb/empty()

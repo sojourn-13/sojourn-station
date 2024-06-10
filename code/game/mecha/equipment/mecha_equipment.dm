@@ -20,6 +20,7 @@
 	var/harmful = 1 //for those tools that you cannot smack people with but still need to click on them to use, aka sleepers
 	embed_mult = 0 // Mech mounted equipment, shouldn't ever embed
 
+
 /obj/item/mecha_parts/mecha_equipment/Destroy()
 	if(chassis)
 		chassis.equipment -= src

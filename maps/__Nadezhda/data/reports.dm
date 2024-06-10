@@ -605,9 +605,9 @@
 	add_field(/datum/report_field/simple_text, "Location of Delivery:")
 	add_field(/datum/report_field/date, "Date")
 	add_field(/datum/report_field/instruction, "NOTE: Items may be delievered or picked up at cargo.")
-	add_field(/datum/report_field/signature, "Chief Executive Officer/Cargo Technician's Signature:")
+	add_field(/datum/report_field/signature, "Surface Operations Manager/Cargo Technician's Signature:")
 	add_field(/datum/report_field/signature, "Requesters Signature:")
-	add_field(/datum/report_field/instruction, "NOTE: The below area is to be stamped by a Cargo Technician or the CEO when all items on this list are ordered.")
+	add_field(/datum/report_field/instruction, "NOTE: The below area is to be stamped by a Cargo Technician or the SOM when all items on this list are ordered.")
 
 /datum/computer_file/report/recipient/confirmation_form
 	form_name = "LSC-CFF-07"

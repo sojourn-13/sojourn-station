@@ -69,19 +69,23 @@
 	if(!istype(user) || stat & NOPOWER || !in_range(src, user))
 		return
 
-	if(LAZYLEN(GLOB.all_crafting_station_recipes) == 0)
-		populate_all_crafting_station_recipes()
-
 	icon_state = "craft_ready"
 	flick("craft_warmup", src)
 	ui_interact(user)
 
+/obj/machinery/craftingstation/ui_state(mob/user)
+	return GLOB.physical_state
+
 /obj/machinery/craftingstation/ui_close(mob/user)
 	. = ..()
-	icon_state = "craft"
-	flick("craft_done", src)
+	if(!isobserver(user))
+		icon_state = "craft"
+		flick("craft_done", src)
 
 /obj/machinery/craftingstation/ui_interact(mob/user, datum/tgui/ui)
+	if(LAZYLEN(GLOB.all_crafting_station_recipes) == 0)
+		populate_all_crafting_station_recipes()
+
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "CraftingStation", name)
@@ -132,7 +136,7 @@
 
 	data["craftable_recipes"] = craftable_recipes
 
-	data["perk_no_obfuscation"] = !!user.stats.getPerk(PERK_NO_OBFUSCATION)
+	data["perk_no_obfuscation"] = !!user.stats?.getPerk(PERK_NO_OBFUSCATION)
 
 	return data
 
