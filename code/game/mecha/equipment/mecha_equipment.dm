@@ -122,7 +122,7 @@
 		return FALSE
 
 	if(!chassis) //If you're not in the mech
-		to_chat(user, SPAN_DANGER("You cannot use this weapon by hand!"))
+		to_chat(user, SPAN_DANGER("You cannot manually use this equipment, it belongs on a mech!"))
 		return FALSE
 
 	user.lastattacked = M
