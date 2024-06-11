@@ -395,7 +395,7 @@
 		if(istype(selected, /obj/item/mecha_parts/mecha_equipment)) // Check if you're using equipment
 			if(istype(target, /mob/living))
 				selected.attack(target, user, user.targeted_organ) // Against living targets
-			else if(istype(target, /obj/machinery) || istype(target, /obj/structure))
+			else if(istype(target, /obj/machinery))
 				if(user.a_intent == I_HELP) // This allows us to interface on help intent with machinery, so we don't break a computer we're trying to access
 					interface_action(target)
 				else // If not machinery or help intent, attack
