@@ -649,7 +649,7 @@ window "mainwindow"
 		is-maximized = true
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
-		title = "Sojourn Station: Fullscreen Edition"
+		title = "Sojourn Station"
 		icon = 'icons\\ss13_64.png'
 		macro = "default"
 		menu = "menu"
@@ -704,7 +704,7 @@ window "mapwindow"
 	elem "status_bar"
 		type = LABEL
 		pos = 0,464
-		size = 280x16
+		size = 320x16
 		anchor1 = 0,100
 		is-visible = true
 		text = ""

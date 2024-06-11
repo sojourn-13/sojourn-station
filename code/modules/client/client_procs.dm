@@ -787,7 +787,12 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		winset(usr, "mainwindow", "menu=menu")
 		winset(usr, "mainwindow", "titlebar=true")
 		winset(usr, "mainwindow", "can-resize=true")
-	fit_viewport()
+
+	if(fully_created)
+		INVOKE_ASYNC(src, .verb/fit_viewport)
+	else
+		addtimer(CALLBACK(src, .verb/fit_viewport), 1 SECONDS)
+
 
 /client/verb/toggle_fullscreen() // F11 hotkey
 	set name = "Toggle Fullscreen"
@@ -795,19 +800,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	cycle_preference(/datum/client_preference/fullscreen)
 	fullscreen_check()
-
-/client/proc/statusbar_check()
-	if(try_get_preference_value(/datum/client_preference/statusbar) == GLOB.PREF_YES)
-		winset(src, "mapwindow.status_bar", "is-visible=true")
-	else
-		winset(src, "mapwindow.status_bar", "is-visible=false")
-
-/client/verb/toggle_statusbar()
-	set name = "Toggle Status Bar"
-	set hidden = TRUE
-
-	cycle_preference(/datum/client_preference/statusbar)
-	statusbar_check()
 
 //En-abled by SoJ
 /client/proc/apply_fps(var/client_fps)

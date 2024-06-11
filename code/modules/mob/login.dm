@@ -86,11 +86,6 @@
 		else
 			client.create_UI(src.type)
 		client.CAN_MOVE_DIAGONALLY = FALSE
-
-//		client.fullscreen_check()
-		// This should be called here, but for now commented out due to potential issues it creates with HUD non-human job spawns
-		// Following fit_viewport() call uses winget(), and apparently winget() functions similar to spawn()...
-		// thus breaking the order of proc calls and causing HUD procs to spam errors in chat and mind datum to be inactive
-		// TODO: Look for a workaround later, we do want a fullscreen check on login -- KIROV
+		client.fullscreen_check()
 
 	LEGACY_SEND_SIGNAL(src, COMSIG_MOB_LOGIN)
