@@ -12,9 +12,6 @@
 	passivePerk = FALSE
 	var/anti_cheat= FALSE
 
-/datum/perk/forceful_rejection/assign(mob/living/carbon/human/H)
-	..()
-
 /datum/perk/forceful_rejection/remove()
 	holder.stats.changeStat(STAT_VIV, -15)
 	if(ishuman(usr))
@@ -68,7 +65,7 @@
 	active = FALSE
 	passivePerk = FALSE
 
-/datum/perk/skill_cap_expanding/assign(mob/living/carbon/human/H)
+/datum/perk/skill_cap_expanding/assign(mob/living/L)
 	..()
 	for(var/stat in ALL_STATS)
 		var/gather_increase = holder.stats.grab_Stat_cap(stat)
@@ -90,7 +87,7 @@
 	active = FALSE
 	passivePerk = FALSE
 
-/datum/perk/skill_cap_addition/assign(mob/living/carbon/human/H)
+/datum/perk/skill_cap_addition/assign(mob/living/L)
 	..()
 	for(var/stat in ALL_STATS)
 		holder.stats.add_Stat_cap(30)
