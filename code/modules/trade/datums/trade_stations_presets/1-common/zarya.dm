@@ -103,5 +103,5 @@
 		/obj/item/tool/pickaxe/jackhammer/onestar = offer_data("greyson jackhammer", 1000, 3),
 		/obj/item/tool/screwdriver/combi_driver/onestar = offer_data("greyson combi driver", 1000, 3),
 		/obj/item/tool/weldingtool/onestar  = offer_data("greyson welding tool", 1000, 3),
-		/obj/item/tool_upgrade/augment/repair_nano = offer_data("repair nano", 5000, 1)
+		/obj/item/tool_upgrade/augment/repair_nano = offer_data("repair nano", 1000, 1)
 	)
