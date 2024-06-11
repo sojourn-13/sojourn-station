@@ -1776,7 +1776,7 @@ obj/item/scroll/proc/example_spell(mob/living/carbon/human/M) //testing spell
 			user.update_inv_gloves(1)
 		else
 			to_chat(user, SPAN_NOTICE("Voices boom in your thoughts. TAKE NOT! INEXPERIENCED PUPPET!"))
-		user.verbs += /mob/living/carbon/human/proc/bloody_doodle
+		add_verb(user, /mob/living/carbon/human/proc/bloody_doodle)
 
 /obj/structure/sink/basion/crayon/attackby(obj/item/I, mob/user)
 	if(I.has_quality(QUALITY_BOLT_TURNING))

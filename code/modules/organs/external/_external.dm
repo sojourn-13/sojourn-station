@@ -826,7 +826,7 @@ This function completely restores a damaged organ to perfect condition.
 
 	if(!istype(W, /obj/item/material/shard/shrapnel))
 		embedded += W
-		owner.verbs += /mob/proc/yank_out_object
+		add_verb(owner, /mob/proc/yank_out_object)
 
 	owner.embedded_flag = 1
 	W.on_embed(owner)

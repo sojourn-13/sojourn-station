@@ -184,9 +184,10 @@ ADMIN_VERB_ADD(/client/proc/enable_debug_verbs, R_DEBUG, FALSE)
 	set category = "Debug"
 	set name = "Debug verbs"
 
-	if(!check_rights(R_DEBUG)) return
+	if(!check_rights(R_DEBUG))
+		return
 
-	verbs += debug_verbs
+	add_verb(src, debug_verbs)
 
 
 
@@ -194,9 +195,10 @@ ADMIN_VERB_ADD(/client/proc/enable_debug_verbs, R_DEBUG, FALSE)
 	set category = "Debug"
 	set name = "Hide Debug verbs"
 
-	if(!check_rights(R_DEBUG)) return
+	if(!check_rights(R_DEBUG))
+		return
 
-	verbs -= debug_verbs
+	remove_verb(src, debug_verbs)
 
 
 /client

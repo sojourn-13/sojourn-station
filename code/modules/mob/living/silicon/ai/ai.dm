@@ -116,20 +116,20 @@ var/list/ai_verbs_default = list(
 	defaultHUD = "Eris"
 
 /mob/living/silicon/ai/proc/add_ai_verbs()
-	src.verbs |= ai_verbs_default
+	add_verb(src, ai_verbs_default)
 
 /mob/living/silicon/ai/proc/remove_ai_verbs()
-	src.verbs -= ai_verbs_default
+	remove_verb(src, ai_verbs_default)
 
 
 /mob/living/silicon/ai/proc/add_mecha_verbs()
-	verbs += /mob/living/silicon/ai/proc/view_mecha_stats
-	verbs += /mob/living/silicon/ai/proc/AIeject
+	add_verb(src, /mob/living/silicon/ai/proc/view_mecha_stats)
+	add_verb(src, /mob/living/silicon/ai/proc/AIeject)
 
 
 /mob/living/silicon/ai/proc/remove_mecha_verbs()
-	verbs -= /mob/living/silicon/ai/proc/view_mecha_stats
-	verbs -= /mob/living/silicon/ai/proc/AIeject
+	remove_verb(src, /mob/living/silicon/ai/proc/view_mecha_stats)
+	remove_verb(src, /mob/living/silicon/ai/proc/AIeject)
 
 /mob/living/silicon/ai/proc/view_mecha_stats()
 	set name = "View Stats"

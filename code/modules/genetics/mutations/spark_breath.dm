@@ -9,11 +9,11 @@
 	exclusive_type = MUT_TYPE_MOUTH
 
 /datum/genetics/mutation/spark_breath/onMobImplant()
-	container.holder.verbs += /mob/living/proc/mutation_spark_breath
+	add_verb(container.holder, /mob/living/proc/mutation_spark_breath)
 
 
 /datum/genetics/mutation/spark_breath/onMobRemove()
-	container.holder.verbs -= /mob/living/proc/mutation_spark_breath
+	remove_verb(container.holder, /mob/living/proc/mutation_spark_breath)
 
 /mob/living/proc/mutation_spark_breath()
 	set name = "Spark Breath"
@@ -26,7 +26,7 @@
 	//safty check to remove the verb if the mutation isn't there.
 	var/datum/genetics/mutation/spark_breath/spk = src.unnatural_mutations.getMutation("MUTATION_SPARK_BREATH", TRUE)
 	if(!spk)
-		src.verbs -= /mob/living/proc/mutation_spark_breath
+		remove_verb(src, /mob/living/proc/mutation_spark_breath)
 		return
 
 	//Check if we have a smokeable in our hand.

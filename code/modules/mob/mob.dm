@@ -1003,7 +1003,7 @@ mob/proc/yank_out_object()
 		visible_message("<span class='warning'><b>[usr] rips [selection] out of [src]'s body.</b></span>","<span class='warning'><b>[usr] rips [selection] out of your body.</b></span>")
 	valid_objects = get_visible_implants()
 	if(valid_objects.len == 1) //Yanking out last object - removing verb.
-		src.verbs -= /mob/proc/yank_out_object
+		remove_verb(src, /mob/proc/yank_out_object)
 
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src

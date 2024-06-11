@@ -30,9 +30,9 @@
 
 /mob/living/simple_animal/spider_core/New()
 	. = ..()
-	verbs |= /mob/living/proc/ventcrawl
-	verbs |= /mob/living/proc/hide
-	verbs |= /mob/living/simple_animal/spider_core/proc/generate_body
+	add_verb(src, /mob/living/proc/ventcrawl)
+	add_verb(src, /mob/living/proc/hide)
+	add_verb(src, /mob/living/simple_animal/spider_core/proc/generate_body)
 
 /mob/living/simple_animal/spider_core/death()
 	gibs(loc, null, /obj/effect/gibspawner/generic, "#666600", "#666600")

@@ -772,7 +772,7 @@ var/list/rank_prefix = list(\
 		return
 
 	if(!(mMorph in mutations))
-		src.verbs -= /mob/living/carbon/human/proc/morph
+		remove_verb(src, /mob/living/carbon/human/proc/morph)
 		return
 
 	var/new_facial = input("Please select facial hair color.", "Character Generation",facial_color) as color
@@ -846,7 +846,7 @@ var/list/rank_prefix = list(\
 		return
 
 	if(!(mRemotetalk in src.mutations))
-		src.verbs -= /mob/living/carbon/human/proc/remotesay
+		remove_verb(src, /mob/living/carbon/human/proc/remotesay)
 		return
 	var/list/creatures = list()
 	for(var/mob/living/carbon/h in world)
@@ -878,7 +878,7 @@ var/list/rank_prefix = list(\
 	if(!(mRemote in src.mutations))
 		remoteview_target = null
 		reset_view(0)
-		src.verbs -= /mob/living/carbon/human/proc/remoteobserve
+		remove_verb(src, /mob/living/carbon/human/proc/remoteobserve)
 		return
 
 	if(client.eye != client.mob)
@@ -935,7 +935,7 @@ var/list/rank_prefix = list(\
 			blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
 	hand_blood_color = blood_color
 	src.update_inv_gloves()	//handles bloody hands over-lays and updating
-	verbs += /mob/living/carbon/human/proc/bloody_doodle
+	add_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
 	return 1 //we applied blood to the item
 
 /mob/living/carbon/human/proc/get_full_print()
@@ -1283,7 +1283,7 @@ var/list/rank_prefix = list(\
 		return 0 //something is terribly wrong
 
 	if (!bloody_hands)
-		verbs -= /mob/living/carbon/human/proc/bloody_doodle
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
 
 	if (src.gloves)
 		to_chat(src, SPAN_WARNING("Your [src.gloves] are getting in the way."))

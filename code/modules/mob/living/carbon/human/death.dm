@@ -53,7 +53,7 @@
 				B.host_brain.ckey = null
 				B.host_brain.name = "host brain"
 				B.host_brain.real_name = "host brain"
-			verbs -= /mob/living/carbon/proc/release_control
+			remove_verb(src, /mob/living/carbon/proc/release_control)
 
 	callHook("death", list(src, gibbed))
 

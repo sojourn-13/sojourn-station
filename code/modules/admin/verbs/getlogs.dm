@@ -34,7 +34,7 @@ ADMIN_VERB_ADD(/client/proc/giveruntimelog, R_ADMIN, FALSE)
 		to_chat(src, "<font color='red'>Error: giveruntimelog(): Client not found.</font>")
 		return
 
-	target.verbs |= /client/proc/getruntimelog
+	add_verb(target, /client/proc/getruntimelog)
 	to_chat(target, "<font color='red'>You have been granted access to runtime logs. Please use them responsibly or risk being banned.</font>")
 	return
 

@@ -1609,7 +1609,6 @@
 #include "code\modules\admin\secrets\fun_secrets\turn_humans_into_monkeys.dm"
 #include "code\modules\admin\secrets\random_events\gravity.dm"
 #include "code\modules\admin\tickets\adminticketsverbs.dm"
-#include "code\modules\admin\tickets\mentorticketsverbs.dm"
 #include "code\modules\admin\verbs\adminhelp.dm"
 #include "code\modules\admin\verbs\adminjump.dm"
 #include "code\modules\admin\verbs\adminpm.dm"

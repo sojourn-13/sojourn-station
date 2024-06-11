@@ -103,8 +103,8 @@
 
 /mob/living/simple_animal/mouse/Initialize()
 	. = ..()
-	verbs += /mob/living/proc/ventcrawl
-	verbs += /mob/living/proc/hide
+	add_verb(src, /mob/living/proc/ventcrawl)
+	add_verb(src, /mob/living/proc/hide)
 
 	if(name == initial(name))
 		name = "[name] ([rand(1, 1000)])"
@@ -127,10 +127,6 @@
 		holder_type = /obj/item/holder/mouse/hooded
 	if (body_color == "irish")
 		holder_type = /obj/item/holder/mouse/irish
-
-	//verbs += /mob/living/simple_animal/mouse/proc/squeak
-	//verbs += /mob/living/simple_animal/mouse/proc/squeak_soft
-	//verbs += /mob/living/simple_animal/mouse/proc/squeak_loud(1)
 
 
 /mob/living/simple_animal/mouse/speak_audio()

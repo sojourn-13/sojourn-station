@@ -255,7 +255,7 @@ ADMIN_VERB_ADD(/client/proc/toggle_antagHUD_use, R_ADMIN, FALSE)
 	if(config.antag_hud_allowed)
 		for(var/mob/observer/ghost/g in get_ghosts())
 			if(!g.client.holder)						//Remove the verb from non-admin ghosts
-				g.verbs -= /mob/observer/ghost/verb/toggle_antagHUD
+				remove_verb(g, /mob/observer/ghost/verb/toggle_antagHUD)
 			if(g.antagHUD)
 				g.antagHUD = 0						// Disable it on those that have it enabled
 				g.has_enabled_antagHUD = 2				// We'll allow them to respawn
@@ -266,7 +266,7 @@ ADMIN_VERB_ADD(/client/proc/toggle_antagHUD_use, R_ADMIN, FALSE)
 	else
 		for(var/mob/observer/ghost/g in get_ghosts())
 			if(!g.client.holder)						// Add the verb back for all non-admin ghosts
-				g.verbs += /mob/observer/ghost/verb/toggle_antagHUD
+				add_verb(g, /mob/observer/ghost/verb/toggle_antagHUD)
 			to_chat(g, "\blue <B>The Administrator has enabled AntagHUD </B>"	) // Notify all observers they can now use AntagHUD
 		config.antag_hud_allowed = 1
 		action = "enabled"
