@@ -15,6 +15,13 @@ GLOBAL_LIST_INIT(ntos_themes, list(
 		get_asset_datum(/datum/asset/simple/ntos),
 	)
 
+/obj/item/modular_computer/ui_status(mob/user, datum/ui_state/state)
+	. = ..()
+	if(!screen_on || !enabled || bsod)
+		. = UI_CLOSE
+	if(!try_use_power(0))
+		. = UI_CLOSE
+
 /obj/item/modular_computer/ui_interact(mob/user, datum/tgui/ui)
 	if(!screen_on || !enabled || bsod)
 		if(ui)

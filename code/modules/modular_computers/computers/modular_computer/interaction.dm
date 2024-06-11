@@ -14,19 +14,16 @@
 
 	verbs |= /obj/item/modular_computer/verb/emergency_shutdown
 
-/obj/item/modular_computer/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
+/obj/item/modular_computer/proc/can_press_buttons(mob/user)
 	if(user.incapacitated())
-		if(show_message)
-			to_chat(user, "<span class='warning'>You can't do that.</span>")
+		to_chat(user, "<span class='warning'>You can't do that.</span>")
 		return FALSE
 
 	if(!Adjacent(user))
-		if(show_message)
-			to_chat(user, "<span class='warning'>You can't reach it.</span>")
+		to_chat(user, "<span class='warning'>You can't reach it.</span>")
 		return FALSE
 
 	return TRUE
-
 
 // Forcibly shut down the device. To be used when something bugs out and the UI is nonfunctional.
 /obj/item/modular_computer/verb/emergency_shutdown()
@@ -34,7 +31,7 @@
 	set category = "Object"
 	set src in view(1)
 
-	if(!can_interact(usr))
+	if(!can_press_buttons(usr))
 		return
 
 	if(enabled)
@@ -53,7 +50,7 @@
 	set category = "Object"
 	set src in view(1)
 
-	if(!can_interact(usr))
+	if(!can_press_buttons(usr))
 		return
 
 	playsound(loc, 'sound/machines/id_swipe.ogg', 100, 1)
@@ -65,7 +62,7 @@
 	set category = "Object"
 	set src in view(1)
 
-	if(!can_interact(usr))
+	if(!can_press_buttons(usr))
 		return
 
 	proc_eject_usb(usr)
@@ -75,7 +72,7 @@
 	set category = "Object"
 	set src in view(1)
 
-	if(!can_interact(usr))
+	if(!can_press_buttons(usr))
 		return
 
 	proc_eject_ai(usr)
@@ -85,7 +82,7 @@
 	set category = "Object"
 	set src in view(1)
 
-	if(!can_interact(usr))
+	if(!can_press_buttons(usr))
 		return
 
 	if(istype(stored_pen))
@@ -100,7 +97,7 @@
 	if(!user)
 		user = usr
 
-	if(!can_interact(usr))
+	if(!can_press_buttons(usr))
 		return
 
 	for(var/p in all_threads)
@@ -282,7 +279,7 @@
 
 /obj/item/modular_computer/MouseDrop(atom/over_object)
 	var/mob/M = usr
-	if(!istype(over_object, /obj/screen) && can_interact(M))
+	if(!istype(over_object, /obj/screen) && can_press_buttons(M))
 		return attack_self(M)
 
 	if((src.loc == M) && istype(over_object, /obj/screen/inventory/hand) && eject_item(cell, M))

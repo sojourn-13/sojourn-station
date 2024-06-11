@@ -25,11 +25,6 @@
 		return UI_CLOSE
 	return state.can_use_topic(src, user)
 
-/obj/item/modular_computer/tablet/nanogate/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
-	if(linked_nanogate.status & ORGAN_BROKEN)
-		return FALSE
-	..()
-
 //Currently it's a slightly fancy tablet but nothing super special.
 //TODO: Make variants for each type of nanogate.
 /obj/item/modular_computer/tablet/nanogate/install_default_hardware()
