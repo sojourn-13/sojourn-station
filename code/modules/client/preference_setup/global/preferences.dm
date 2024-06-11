@@ -220,10 +220,14 @@ var/list/_client_preferences_by_type
 	else
 		preference_mob.update_music()
 
-/datum/client_preference/stay_in_hotkey_mode
-	description = "Keep hotkeys on mob change"
-	key = "KEEP_HOTKEY_MODE"
-	default_value = GLOB.PREF_YES
+/datum/client_preference/fullscreen
+	description = "Enable fullscreen"
+	key = "FULLSCREEN"
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/fullscreen/changed(mob/preference_mob, new_value)
+	if(preference_mob.client)
+		preference_mob.client.fullscreen_check()
 
 /datum/client_preference/area_info_blurb
 	description = "Show area narration."
@@ -313,6 +317,16 @@ var/list/_client_preferences_by_type
 	description ="Remote LOOC chat"
 	key = "CHAT_RLOOC"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
+
+/datum/client_preference/staff/split_admin_tabs
+	description = "Split Admin Tabs"
+	key = "CHAT_SPLIT_TABS"
+	default_value = GLOB.PREF_YES
+
+/datum/client_preference/staff/fast_mc_refresh
+	description = "Fast MC Tab Refresh"
+	key = "fast_mc_refresh"
+	default_value = GLOB.PREF_NO
 
 /********************
 * Admin Preferences *

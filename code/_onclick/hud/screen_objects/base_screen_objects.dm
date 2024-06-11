@@ -959,11 +959,6 @@ obj/screen/fire/DEADelize()
 	screen_loc = "15,2"
 
 /obj/screen/HUDthrow/New()
-	/*if(usr)
-		//parentmob = usr
-		//usr.verbs += /obj/screen/HUDthrow/verb/toggle_throw_mode()
-		if(usr.client)
-			usr.client.screen += src*/
 	..()
 	update_icon()
 

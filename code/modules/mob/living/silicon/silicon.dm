@@ -62,8 +62,6 @@
 
 /mob/living/silicon/New()
 	..()
-	if(ckey)
-		recalibrate_hotkeys()
 
 /mob/living/silicon/Destroy()
 	GLOB.silicon_mob_list -= src
@@ -86,7 +84,6 @@
 	real_name = pickedName
 	name = real_name
 	create_or_rename_email(pickedName, "root.rt")
-	recalibrate_hotkeys()
 
 /mob/living/silicon/proc/show_laws()
 	return
@@ -261,18 +258,7 @@
 	set desc = "Sets a description which will be shown when someone examines you."
 	set category = "IC"
 
-	pose =  sanitize(input(usr, "This is [src]. It is...", "Pose", null)  as text)
-
-/mob/living/silicon/verb/recalibrate_hotkeys()
-	set name = "Recalibrate Hotkeys"
-	set desc = "Makes you use the correct borg based hotkeys."
-	set category = "OOC"
-
-	if(client.get_preference_value(/datum/client_preference/stay_in_hotkey_mode) == GLOB.PREF_YES)
-		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=true mapwindow.map.focus=true input.background-color=#F0F0F0")
-	else
-		winset(client, null, "mainwindow.macro=borgmacro hotkey_toggle.is-checked=false input.focus=true input.background-color=#D3B5B5")
-
+	pose =  sanitize(input(usr, "This is [src]. It is...", "Pose", null) as text)
 
 /mob/living/silicon/verb/set_flavor()
 	set name = "Set Flavour Text"

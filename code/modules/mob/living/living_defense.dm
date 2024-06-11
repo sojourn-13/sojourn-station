@@ -385,8 +385,8 @@
 			return
 	O.forceMove(src)
 	src.embedded += O
-	src.visible_message(SPAN_DANGER("\The [O] embeds in the [src]!"))
-	src.verbs += /mob/proc/yank_out_object
+	src.visible_message("<span class='danger'>[O] embeds in the [src]!</span>")
+	add_verb(src, /mob/proc/yank_out_object)
 	O.on_embed(src)
 
 //This is called when the mob is thrown into a dense turf

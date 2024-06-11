@@ -76,6 +76,7 @@
 					break
 		for (var/obj/screen/frippery/HUDfri in H.HUDfrippery)
 			H.client.screen -= HUDfri
+		winset(src, "mapwindow.status_bar", "size=270x16")
 	else
 
 		for (var/p in H.HUDneed)
@@ -99,6 +100,7 @@
 					break
 		for (var/obj/screen/frippery/HUDfri in H.HUDfrippery)
 			H.client.screen += HUDfri
+		winset(src, "mapwindow.status_bar", "size=320x16")
 	//update_equip_icon_position()
 	for(var/obj/item/I in get_equipped_items(1))
 		var/slotID = get_inventory_slot(I)

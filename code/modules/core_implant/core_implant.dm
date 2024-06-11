@@ -68,7 +68,7 @@
 	for(var/r in known_rituals)
 		if(ispath(r,/datum/ritual/mind))
 			var/datum/ritual/mind/m = r
-			wearer.verbs |= initial(m.activator_verb)
+			add_verb(wearer, initial(m.activator_verb))
 
 /obj/item/implant/core_implant/proc/remove_ritual_verbs()
 	if(!wearer || !active)
@@ -77,7 +77,7 @@
 	for(var/r in known_rituals)
 		if(ispath(r,/datum/ritual/mind))
 			var/datum/ritual/mind/m = r
-			wearer.verbs.Remove(initial(m.activator_verb))
+			remove_verb(wearer, initial(m.activator_verb))
 
 /obj/item/implant/core_implant/malfunction()
 	hard_eject()

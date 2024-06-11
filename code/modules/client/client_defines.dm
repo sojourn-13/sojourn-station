@@ -64,6 +64,18 @@
 
 	var/adminhelped = 0
 
+	/// our current tab
+	var/stat_tab
+
+	/// list of all tabs
+	var/list/panel_tabs = list()
+
+	/// Disables default BYOND verb panel in favor of Stat Panel™
+	show_verb_panel = FALSE
+
+	/// If this client has been fully initialized or not
+	var/fully_created = FALSE
+
 		///////////////
 		//SOUND STUFF//
 		///////////////

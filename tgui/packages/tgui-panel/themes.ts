@@ -10,7 +10,7 @@ const COLOR_DARK_BG = '#202020';
 const COLOR_DARK_BG_DARKER = '#171717';
 const COLOR_DARK_TEXT = '#a4bad6';
 
-// let setClientThemeTimer: NodeJS.Timeout;
+let setClientThemeTimer: NodeJS.Timeout;
 
 /**
  * Darkmode preference, originally by Kmc2000.
@@ -25,11 +25,11 @@ const COLOR_DARK_TEXT = '#a4bad6';
 export const setClientTheme = (name) => {
   // Transmit once for fast updates and again in a little while in case we won
   // the race against statbrowser init.
-  // clearInterval(setClientThemeTimer);
-  // Byond.command(`.output statbrowser:set_theme ${name}`);
-  // setClientThemeTimer = setTimeout(() => {
-  //   Byond.command(`.output statbrowser:set_theme ${name}`);
-  // }, 1500);
+  clearInterval(setClientThemeTimer);
+  Byond.command(`.output statbrowser:set_theme ${name}`);
+  setClientThemeTimer = setTimeout(() => {
+    Byond.command(`.output statbrowser:set_theme ${name}`);
+  }, 1500);
 
   if (name === 'light') {
     return Byond.winset({
