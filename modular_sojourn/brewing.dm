@@ -126,7 +126,7 @@
 		to_chat(user, "<span class='info'>[message]</span>")
 
 /obj/structure/fermentation_keg/proc/shopping_run(mob/user as mob, fermentation = 1)
-	if(brew_to)
+	if(brewing)
 		return
 
 	var/list/options = list()
@@ -157,10 +157,10 @@
 
 	var/shopping = options[choice]
 
-
 	//Little long but at lest its clean and easy to read
 	switch(shopping)
 		if("beer")
+			clear_out()
 			brew_to = "beer"
 			needed_water = 120
 			needed_crop = "wheat"
@@ -172,6 +172,7 @@
 			brewed_amount = 12 //12 pack
 
 		if("beer2")
+			clear_out()
 			brew_to = "beer2"
 			needed_water = 60
 			needed_crop = "wheat"
@@ -189,6 +190,7 @@
 			brewing = FALSE
 
 		if("wine")
+			clear_out()
 			brew_to = "wine"
 			needed_water = 160
 			needed_crop = "grape"
@@ -203,6 +205,7 @@
 			brewed_amount = 2 //2 pack
 
 		if("pwine")
+			clear_out()
 			brew_to = "pwine"
 			needed_water = -1
 			needed_crop = "grape"
@@ -222,6 +225,7 @@
 			brewing = FALSE
 
 		if("redcandyliquor")
+			clear_out()
 			brew_to = "redcandyliquor"
 			needed_water = -1
 			needed_crop = "grape"
@@ -241,6 +245,7 @@
 			brewing = FALSE
 
 		if("ntcahors")
+			clear_out()
 			brew_to = "ntcahors"
 			needed_water = -1
 			needed_crop = "greengrapes"
@@ -260,6 +265,7 @@
 			brewing = FALSE
 
 		if("rum")
+			clear_out()
 			brew_to = "rum"
 			needed_water = 120
 			needed_crop = "sugarcane"
@@ -274,6 +280,7 @@
 			brewed_amount = 4 //4 pack
 
 		if("ale")
+			clear_out()
 			brew_to = "ale"
 			needed_water = 120
 			needed_crop = "wheat"
@@ -291,6 +298,7 @@
 
 		//Fast n cheap
 		if("vodka")
+			clear_out()
 			brew_to = "vodka"
 			needed_water = 80
 			needed_crop = "potato"
@@ -302,6 +310,7 @@
 			brew_timer = 60 //1 mins
 
 		if("Kvass")
+			clear_out()
 			brew_to = "Kvass"
 			needed_water = 200
 			needed_crop = "wheat"
@@ -311,6 +320,7 @@
 			brew_timer = 180 //3 mins
 
 		if("whiskey")
+			clear_out()
 			brew_to = "whiskey"
 			needed_water = 120
 			needed_crop = "wheat"
@@ -320,7 +330,6 @@
 			price_tag_setter = 2000
 			brew_timer = 1200 //20 mins, whiskey takes long to be done
 			brewed_amount = 10 //10 pack
-
 
 //Nom nom nom, so if the person is mass making we dont cheat them out of crops as much
 /obj/structure/fermentation_keg/proc/consume_consume_consume_consume_consume_consume_consume_consume()
