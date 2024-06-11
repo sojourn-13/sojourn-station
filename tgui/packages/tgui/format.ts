@@ -4,6 +4,8 @@
  * @license MIT
  */
 
+import { toFixed } from "common/math";
+
 const SI_SYMBOLS = [
   'f', // femto
   'p', // pico
@@ -58,6 +60,14 @@ export const formatSiUnit = (
   }
 
   return `${formattedValue} ${symbol.trim()}${unit}`.trim();
+};
+
+// Formats a number with (Pa) as the unit, but does it the way most UIs expect it to work (we measure in kPa directly, not Pa)
+export const formatPressureKpa = (value: number) => {
+  if (value < 10000) {
+    return toFixed(value) + ' kPa';
+  }
+  return formatSiUnit(value * 1000, 1, 'Pa');
 };
 
 // Formats a number to a human readable form, with power (W) as the unit

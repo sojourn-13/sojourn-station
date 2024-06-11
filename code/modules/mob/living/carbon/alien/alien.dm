@@ -7,7 +7,7 @@
 	pass_flags = PASSTABLE
 	health = 100
 	maxHealth = 100
-	mob_size = 4
+	mob_size = MOB_MEDIUM
 
 	var/adult_form
 	var/dead_icon

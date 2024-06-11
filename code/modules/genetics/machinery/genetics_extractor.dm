@@ -142,6 +142,7 @@
 			var/sample_plates_to_make = occupant_meat_count + occupant_bonus
 			for(var/i=1 to sample_plates_to_make)
 				var/obj/item/genetics/sample/new_sample = new /obj/item/genetics/sample(mob_genes)
+				new_sample.name = "[new_sample.name] ([occupant.name])"
 				new_sample.forceMove(loc)
 
 			src.occupant.attack_log += "\[[time_stamp()]\] Was gibbed by <b>[user]/[user.ckey]</b>" //One shall not simply gib a mob unnoticed!
@@ -169,6 +170,7 @@
 					var/datum/genetics/genetics_holder/meat_genes =  new /datum/genetics/genetics_holder()
 					meat_genes.initializeFromMeat(meat_target)
 					var/obj/item/genetics/sample/new_sample = new /obj/item/genetics/sample(meat_genes)
+					new_sample.name = "[new_sample.name] ([meat_target.name])"
 					new_sample.forceMove(loc)
 
 			meat = list()

@@ -242,7 +242,9 @@ SUBSYSTEM_DEF(garbage)
 	if (level > GC_QUEUE_COUNT)
 		HardDelete(D)
 		return
-	var/gctime = world.time
+	// stuff deleted at compile map init (it happens) would have gc_destroyed = 0, making SSatoms decide to 
+	// initialize them even though they're in our queue, horribly breaking everything
+	var/gctime = world.time || 1
 	var/refid = "\ref[D]"
 
 	D.gc_destroyed = gctime

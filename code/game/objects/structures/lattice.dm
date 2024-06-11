@@ -16,9 +16,12 @@
 	if(!(istype(src.loc, /turf/space) || istype(src.loc, /turf/simulated/open) || istype(src.loc, /turf/simulated/floor/hull))) // || istype(src.loc, /turf/simulated/floor/open)
 ///// Z-Level Stuff
 		return INITIALIZE_HINT_QDEL
-	for(var/obj/structure/lattice/LAT in src.loc)
-		if(LAT != src)
-			qdel(LAT)
+	for(var/obj/structure/lattice/LAT in loc)
+		if(LAT == src)
+			continue
+		// commented out cuz we know already it's fucked, whatever
+		// stack_trace("multiple lattices found in ([loc.x], [loc.y], [loc.z])")
+		return INITIALIZE_HINT_QDEL
 	icon = 'icons/obj/smoothlattice.dmi'
 	icon_state = "latticeblank"
 	updateOverlays()

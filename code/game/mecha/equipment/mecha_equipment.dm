@@ -18,6 +18,8 @@
 	var/salvageable = 1
 	var/required_type = /obj/mecha //may be either a type or a list of allowed types
 	var/harmful = 1 //for those tools that you cannot smack people with but still need to click on them to use, aka sleepers
+	embed_mult = 0 // Mech mounted equipment, shouldn't ever embed
+
 
 /obj/item/mecha_parts/mecha_equipment/Destroy()
 	if(chassis)
@@ -90,6 +92,9 @@
 	return 1
 
 /obj/item/mecha_parts/mecha_equipment/proc/action(atom/target, mob/living/user)
+	if(!chassis) //If you're not in the mech
+		to_chat(user, SPAN_DANGER("You cannot use this tool by hand!"))
+		return FALSE
 	return
 
 /obj/item/mecha_parts/mecha_equipment/proc/attack_object(obj/T, mob/living/user) // To prevent having mechs attacking other mechs accidentally attach their weapons on the opposing mech
@@ -118,7 +123,7 @@
 		return FALSE
 
 	if(!chassis) //If you're not in the mech
-		to_chat(user, SPAN_DANGER("You cannot use this weapon by hand!"))
+		to_chat(user, SPAN_DANGER("You cannot manually use this equipment, it belongs on a mech!"))
 		return FALSE
 
 	user.lastattacked = M

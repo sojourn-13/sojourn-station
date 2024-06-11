@@ -24,7 +24,7 @@ Has ability of every roach.
 	melee_damage_lower = 20
 	melee_damage_upper = 35
 	move_to_delay = 4.5 //we're fast despite our size, many legs move us quick! otherwise, it's too easy to kite us.
-	mob_size =  3  // The same as Hivemind Tyrant
+	mob_size = MOB_LARGE  // The same as Hivemind Tyrant
 	status_flags = 0
 	mouse_opacity = MOUSE_OPACITY_OPAQUE // Easier to click on in melee, they're giant targets anyway
 
