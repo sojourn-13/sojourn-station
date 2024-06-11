@@ -1784,14 +1784,6 @@
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/crew_quarters/janitor)
-"ats" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white/techfloor,
-/area/nadezhda/medical/sleeper{
-	name = "Examination Room"
-	})
 "atw" = (
 /obj/effect/floor_decal/spline/wood,
 /turf/simulated/floor/wood/wild3,
@@ -11610,12 +11602,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/hallway)
-"czf" = (
-/obj/structure/sign/warning/nosmoking/small,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/medical/sleeper{
-	name = "Examination Room"
-	})
 "czA" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "13,15"
@@ -13443,10 +13429,20 @@
 	name = "Residential District Maintenance"
 	})
 "cRE" = (
-/obj/structure/bed/roller{
-	anchored = 1
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 9
 	},
-/turf/simulated/floor/tiled/white/techfloor,
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 6
+	},
+/obj/structure/filingcabinet/medical{
+	pixel_y = 14
+	},
+/turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper{
 	name = "Examination Room"
 	})
@@ -13522,6 +13518,26 @@
 	name = "murky water"
 	},
 /area/nadezhda/maintenance/undergroundfloor1east)
+"cSk" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/sleeper{
+	name = "Examination Room"
+	})
 "cSn" = (
 /turf/simulated/wall,
 /area/nadezhda/quartermaster/miningdock)
@@ -16336,6 +16352,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/newscaster/directional/south,
+/obj/structure/table/rack,
+/obj/item/clothing/under/medigown,
+/obj/item/clothing/under/medigown,
+/obj/item/clothing/under/medigown,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper)
 "dwN" = (
@@ -16568,25 +16588,6 @@
 /obj/random/flora/jungle_tree,
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
-"dyx" = (
-/obj/structure/table/reinforced,
-/obj/machinery/computer/med_data/laptop{
-	pixel_y = 3
-	},
-/obj/effect/floor_decal/industrial/road/straight4,
-/obj/effect/floor_decal/industrial/road/straight3,
-/obj/effect/floor_decal/industrial/road/straight2,
-/obj/effect/floor_decal/industrial/road/straight1,
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 6
-	},
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/sleeper{
-	name = "Examination Room"
-	})
 "dyy" = (
 /obj/machinery/holosign/surgery{
 	id = "surgery"
@@ -18641,26 +18642,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/nadezhda/engineering/engine_room)
-"dUU" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/effect/floor_decal/industrial/road/straight3,
-/obj/effect/floor_decal/industrial/road/straight4,
-/obj/effect/floor_decal/industrial/road/straight1,
-/obj/effect/floor_decal/industrial/road/straight2,
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/sleeper{
-	name = "Examination Room"
-	})
 "dVj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -39338,6 +39319,24 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/nadezhda/medical/sleeper)
+"ieb" = (
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 9
+	},
+/obj/structure/showcase/skeleton{
+	name = "Bone M.D."
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/sleeper{
+	name = "Examination Room"
+	})
 "iee" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -39709,6 +39708,12 @@
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/lab)
+"ihH" = (
+/obj/structure/sign/warning/nosmoking/small,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/medical/sleeper{
+	name = "Examination Room"
+	})
 "ihJ" = (
 /obj/structure/catwalk,
 /obj/structure/cable/cyan{
@@ -41767,6 +41772,30 @@
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/engineering/atmos)
+"iEe" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/sleeper{
+	name = "Examination Room"
+	})
 "iEk" = (
 /obj/machinery/petrel_maker,
 /obj/machinery/light/small{
@@ -49648,6 +49677,25 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1north)
+"kkA" = (
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 9
+	},
+/obj/structure/table/reinforced,
+/obj/item/clothing/gloves/latex,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/sleeper{
+	name = "Examination Room"
+	})
 "kkF" = (
 /obj/structure/flora/big/bush2,
 /obj/random/flora/small_jungle_tree,
@@ -51863,20 +51911,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/wall/wood_barrel,
 /area/nadezhda/maintenance/undergroundfloor1north)
-"kJa" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/white/brown_platform,
-/area/nadezhda/medical/sleeper)
 "kJc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
@@ -52966,6 +53000,21 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/command/teleporter)
+"kVC" = (
+/obj/machinery/door/firedoor,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/medical{
+	name = "Examination Room";
+	req_access = list(5)
+	},
+/turf/simulated/floor/tiled/techmaint_perforated,
+/area/nadezhda/medical/sleeper{
+	name = "Examination Room"
+	})
 "kVE" = (
 /obj/structure/table/woodentable,
 /obj/random/firstaid,
@@ -57424,20 +57473,23 @@
 /turf/unsimulated/wall/jungle,
 /area/nadezhda/outside/forest)
 "lUU" = (
-/obj/effect/floor_decal/industrial/road/straight4,
-/obj/effect/floor_decal/industrial/road/straight3,
-/obj/effect/floor_decal/industrial/road/straight2,
-/obj/effect/floor_decal/industrial/road/straight1,
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 6
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#0892d0"
 	},
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
 /obj/effect/floor_decal/corner_kafel/white{
 	dir = 9
 	},
-/obj/structure/table/reinforced,
-/obj/item/clothing/gloves/latex,
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 6
+	},
+/obj/structure/bed/chair/office/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/medical/sleeper{
 	name = "Examination Room"
@@ -57541,11 +57593,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/maintenance/undergroundfloor2east)
-"lVU" = (
-/turf/simulated/wall/r_wall,
-/area/nadezhda/medical/sleeper{
-	name = "Examination Room"
-	})
 "lVY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -60576,12 +60623,9 @@
 /turf/simulated/floor/asteroid/dirt,
 /area/nadezhda/security/maingate/east)
 "mBL" = (
-/obj/structure/girder,
-/obj/structure/curtain/open/privacy,
-/turf/simulated/floor/tiled/white/monofloor,
-/area/nadezhda/medical/sleeper{
-	name = "Examination Room"
-	})
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/wall/r_wall,
+/area/nadezhda/maintenance/undergroundfloor1west)
 "mBM" = (
 /obj/structure/table/marble,
 /obj/structure/extinguisher_cabinet{
@@ -62967,24 +63011,6 @@
 /area/nadezhda/maintenance{
 	name = "Residential District Maintenance"
 	})
-"mZS" = (
-/obj/effect/floor_decal/industrial/road/straight3,
-/obj/effect/floor_decal/industrial/road/straight4,
-/obj/effect/floor_decal/industrial/road/straight1,
-/obj/effect/floor_decal/industrial/road/straight2,
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 6
-	},
-/obj/structure/filingcabinet/medical{
-	pixel_y = 14
-	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/sleeper{
-	name = "Examination Room"
-	})
 "mZU" = (
 /obj/random/furniture/pottedplant,
 /obj/machinery/alarm{
@@ -63014,17 +63040,7 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/nadezhda/rnd/lab)
 "nal" = (
-/obj/machinery/door/firedoor,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/medical{
-	name = "Examination Room";
-	req_access = list(5)
-	},
-/turf/simulated/floor/tiled/techmaint_perforated,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/medical/sleeper{
 	name = "Examination Room"
 	})
@@ -65386,24 +65402,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1east)
-"nyo" = (
-/obj/effect/floor_decal/industrial/road/straight4,
-/obj/effect/floor_decal/industrial/road/straight3,
-/obj/effect/floor_decal/industrial/road/straight2,
-/obj/effect/floor_decal/industrial/road/straight1,
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 6
-	},
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 9
-	},
-/obj/structure/table/rack,
-/obj/item/clothing/under/medigown,
-/obj/item/clothing/under/medigown,
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/sleeper{
-	name = "Examination Room"
-	})
 "nyr" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
@@ -83696,6 +83694,13 @@
 /obj/random/scrap/moderate_weighted/low_chance,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/surfacenorth)
+"rfo" = (
+/obj/structure/girder,
+/obj/structure/curtain/open/privacy,
+/turf/simulated/floor/tiled/white/monofloor,
+/area/nadezhda/medical/sleeper{
+	name = "Examination Room"
+	})
 "rfq" = (
 /obj/random/cluster/roaches/low_chance,
 /obj/effect/decal/cleanable/dirt,
@@ -92684,28 +92689,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/nadezhda/command/bridge)
-"sXm" = (
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#0892d0"
-	},
-/obj/effect/floor_decal/industrial/road/straight3,
-/obj/effect/floor_decal/industrial/road/straight4,
-/obj/effect/floor_decal/industrial/road/straight1,
-/obj/effect/floor_decal/industrial/road/straight2,
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 6
-	},
-/obj/structure/bed/chair/office/light{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/nadezhda/medical/sleeper{
-	name = "Examination Room"
-	})
 "sXn" = (
 /obj/structure/cable/green{
 	d2 = 4;
@@ -99844,6 +99827,25 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/nadezhda/security/armory)
+"use" = (
+/obj/structure/table/reinforced,
+/obj/machinery/computer/med_data/laptop{
+	pixel_y = 3
+	},
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/sleeper{
+	name = "Examination Room"
+	})
 "usi" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating/under,
@@ -101099,6 +101101,14 @@
 	},
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/security/range)
+"uHI" = (
+/obj/structure/bed/roller{
+	anchored = 1
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/nadezhda/medical/sleeper{
+	name = "Examination Room"
+	})
 "uHQ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -108582,6 +108592,20 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
+"wew" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/nadezhda/medical/sleeper)
 "wez" = (
 /obj/item/material/shard,
 /obj/item/tool/broken_bottle,
@@ -109477,10 +109501,6 @@
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /turf/simulated/floor/asteroid/dirt/dark/plough,
 /area/nadezhda/crew_quarters/hydroponics/garden)
-"woI" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/wall/r_wall,
-/area/nadezhda/maintenance/undergroundfloor1west)
 "woR" = (
 /obj/machinery/light_switch{
 	dir = 4;
@@ -111733,6 +111753,25 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/nadezhda/maintenance/undergroundfloor2west)
+"wMi" = (
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 6
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 25
+	},
+/turf/simulated/floor/tiled/white,
+/area/nadezhda/medical/sleeper{
+	name = "Examination Room"
+	})
 "wMl" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "13,0"
@@ -112231,26 +112270,13 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "wRQ" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
+/obj/structure/sign/misc/anatomy{
+	pixel_x = -31
 	},
-/obj/effect/floor_decal/industrial/road/straight3,
-/obj/effect/floor_decal/industrial/road/straight4,
-/obj/effect/floor_decal/industrial/road/straight1,
-/obj/effect/floor_decal/industrial/road/straight2,
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/white/techfloor,
 /area/nadezhda/medical/sleeper{
 	name = "Examination Room"
 	})
@@ -174963,10 +174989,10 @@ rmk
 fxD
 vjl
 qgb
-lVU
-lVU
-lVU
-lVU
+nal
+nal
+nal
+nal
 bbA
 rIX
 onp
@@ -175165,10 +175191,10 @@ vAy
 hMF
 vjl
 uMK
-lVU
-mBL
-ats
-cRE
+nal
+rfo
+wRQ
+uHI
 bbA
 rIX
 onp
@@ -175367,7 +175393,7 @@ jbu
 jbu
 xmb
 dwK
-lVU
+nal
 stb
 jJp
 ttR
@@ -175568,9 +175594,9 @@ jeN
 wMO
 isb
 vjl
-kJa
-nal
-dUU
+wew
+kVC
+cSk
 umI
 umI
 bbA
@@ -175771,8 +175797,8 @@ ujr
 fBP
 ddJ
 igE
-lVU
-wRQ
+nal
+iEe
 mOC
 bLD
 bbA
@@ -175973,8 +175999,8 @@ eXk
 bKC
 bKC
 gOx
-czf
-nyo
+ihH
+ieb
 rxE
 fHD
 bbA
@@ -176175,9 +176201,9 @@ dKb
 fWM
 nMZ
 nMZ
-lVU
-dyx
-lUU
+nal
+use
+kkA
 fHD
 bbA
 rIX
@@ -176378,10 +176404,10 @@ cLC
 qXW
 dct
 nMZ
-mZS
-sXm
-fHD
-woI
+cRE
+lUU
+wMi
+mBL
 rIX
 bfy
 bfy
@@ -176582,8 +176608,8 @@ fSc
 nMZ
 nMZ
 nMZ
-nMZ
-woI
+nal
+mBL
 rIX
 bfy
 uFC
