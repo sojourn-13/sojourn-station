@@ -67,10 +67,9 @@
 								to_chat(user, "There is nothing loaded in that mount.")
 
 						if("system module")
-              if(!can_maintenance())
-                to_chat(user, "You can't remove an installed device while the hardsuit is being worn.")
-                return 1
-
+              				if(!can_maintenance())
+                				to_chat(user, "You can't remove an installed device while the hardsuit is being worn.")
+                				return 1
 							var/list/possible_removals = list()
 							for(var/obj/item/rig_module/module in installed_modules)
 								if(module.permanent)
