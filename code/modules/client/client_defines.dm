@@ -70,6 +70,9 @@
 	/// Disables default BYOND verb panel in favor of Stat Panel™
 	show_verb_panel = FALSE
 
+	/// If this client has been fully initialized or not
+	var/fully_created = FALSE
+
 		///////////////
 		//SOUND STUFF//
 		///////////////

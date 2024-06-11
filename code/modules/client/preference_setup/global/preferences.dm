@@ -224,10 +224,24 @@ var/list/_client_preferences_by_type
 	else
 		preference_mob.update_music()
 
-/datum/client_preference/stay_in_hotkey_mode
-	description = "Keep hotkeys on mob change"
-	key = "KEEP_HOTKEY_MODE"
+/datum/client_preference/fullscreen
+	description = "Enable fullscreen"
+	key = "FULLSCREEN"
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/fullscreen/changed(mob/preference_mob, new_value)
+	if(preference_mob.client)
+		preference_mob.client.fullscreen_check()
+
+/datum/client_preference/statusbar
+	description = "Enable status bar"
+	key = "statusbar"
 	default_value = GLOB.PREF_YES
+
+/datum/client_preference/statusbar/changed(mob/preference_mob, new_value)
+	if(preference_mob.client)
+		preference_mob.client.statusbar_check()
+
 
 /datum/client_preference/area_info_blurb
 	description = "Show area narration."

@@ -330,6 +330,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		tooltips = new /datum/tooltip(src)
 
 	Master.UpdateTickRate()
+	fully_created = TRUE
 
 	//////////////
 	//DISCONNECT//
@@ -774,6 +775,39 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	set category = "OOC"
 
 	init_verbs()
+
+/client/proc/fullscreen_check()
+	if(try_get_preference_value(/datum/client_preference/fullscreen) == GLOB.PREF_YES)
+		winset(usr, "mainwindow", "menu=")
+		winset(usr, "mainwindow", "titlebar=false")
+		winset(usr, "mainwindow", "can-resize=false")
+		winset(usr, "mainwindow", "is-maximized=false")
+		winset(usr, "mainwindow", "is-maximized=true")
+	else
+		winset(usr, "mainwindow", "menu=menu")
+		winset(usr, "mainwindow", "titlebar=true")
+		winset(usr, "mainwindow", "can-resize=true")
+	fit_viewport()
+
+/client/verb/toggle_fullscreen() // F11 hotkey
+	set name = "Toggle Fullscreen"
+	set hidden = TRUE
+
+	cycle_preference(/datum/client_preference/fullscreen)
+	fullscreen_check()
+
+/client/proc/statusbar_check()
+	if(try_get_preference_value(/datum/client_preference/statusbar) == GLOB.PREF_YES)
+		winset(src, "mapwindow.status_bar", "is-visible=true")
+	else
+		winset(src, "mapwindow.status_bar", "is-visible=false")
+
+/client/verb/toggle_statusbar()
+	set name = "Toggle Status Bar"
+	set hidden = TRUE
+
+	cycle_preference(/datum/client_preference/statusbar)
+	statusbar_check()
 
 //En-abled by SoJ
 /client/proc/apply_fps(var/client_fps)

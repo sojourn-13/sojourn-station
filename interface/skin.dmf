@@ -219,6 +219,9 @@ macro "robot"
 		name = "F8"
 		command = "Invisimin"
 	elem
+		name = "F11"
+		command = "Toggle-Fullscreen"
+	elem
 		name = "F12"
 		command = "F12"
 	elem
@@ -506,6 +509,9 @@ macro "default"
 		name = "F8"
 		command = "Invisimin"
 	elem
+		name = "F11"
+		command = "Toggle-Fullscreen"
+	elem
 		name = "F12"
 		command = "F12"
 
@@ -640,6 +646,7 @@ window "mainwindow"
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		is-default = true
+		is-maximized = true
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
 		title = "Sojourn Station: Fullscreen Edition"
@@ -648,7 +655,7 @@ window "mainwindow"
 		menu = "menu"
 	elem "split"
 		type = CHILD
-		pos = 3,0
+		pos = 0,0
 		size = 634x440
 		anchor1 = 0,0
 		anchor2 = 100,100
@@ -737,64 +744,64 @@ window "infowindow"
 		is-vert = false
 	elem "changelog"
 		type = BUTTON
-		pos = 16,5
-		size = 104x20
-		anchor1 = 3,0
-		anchor2 = 15,0
+		pos = 0,5
+		size = 100x20
+		anchor1 = 2,0
+		anchor2 = 12,0
 		saved-params = "is-checked"
 		text = "Changelog"
 		command = "changelog"
 	elem "rules"
 		type = BUTTON
-		pos = 120,5
+		pos = 100,5
 		size = 100x20
-		anchor1 = 15,0
-		anchor2 = 27,0
+		anchor1 = 12,0
+		anchor2 = 22,0
 		saved-params = "is-checked"
 		text = "Rules"
 		command = "rules"
 	elem "wiki"
 		type = BUTTON
-		pos = 220,5
+		pos = 200,5
 		size = 100x20
-		anchor1 = 27,0
-		anchor2 = 39,0
+		anchor1 = 22,0
+		anchor2 = 32,0
 		saved-params = "is-checked"
 		text = "Wiki"
 		command = "wiki"
 	elem "forum"
 		type = BUTTON
-		pos = 320,5
+		pos = 300,5
 		size = 100x20
-		anchor1 = 39,0
-		anchor2 = 51,0
+		anchor1 = 32,0
+		anchor2 = 42,0
 		saved-params = "is-checked"
 		text = "Forum"
 		command = "forum"
 	elem "github"
 		type = BUTTON
-		pos = 420,5
+		pos = 400,5
 		size = 100x20
-		anchor1 = 51,0
-		anchor2 = 63,0
+		anchor1 = 42,0
+		anchor2 = 52,0
 		saved-params = "is-checked"
 		text = "Github"
 		command = "github"
 	elem "discord"
 		type = BUTTON
-		pos = 520,5
+		pos = 500,5
 		size = 100x20
-		anchor1 = 63,0
-		anchor2 = 75,0
+		anchor1 = 52,0
+		anchor2 = 62,0
 		saved-params = "is-checked"
 		text = "Discord"
 		command = "discord"
 	elem "tickets"
 		type = BUTTON
-		pos = 620,5
+		pos = 600,5
 		size = 100x20
-		anchor1 = 75,0
-		anchor2 = 87,0
+		anchor1 = 62,0
+		anchor2 = 72,0
 		saved-params = "is-checked"
 		text = "Tickets"
 		command = "tickets"
