@@ -7,7 +7,7 @@
 	maxcharge = 2000
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3)
 	preloaded_reagents = list("lithium" = 25)
-	price_tag = 200
+	price_tag = 150
 
 /obj/item/cell/large/high
 	name = "Lonestar \"Robustcell 6000L\""
@@ -15,6 +15,7 @@
 	icon_state = "b_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 6000
+	price_tag = 200
 
 /obj/item/cell/large/super
 	name = "Lonestar \"Robustcell 16000L\""
@@ -22,6 +23,7 @@
 	icon_state = "b_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 16000
+	price_tag = 250
 
 /obj/item/cell/large/hyper
 	name = "Lonestar \"Robustcell-X 20000L\""
@@ -29,12 +31,14 @@
 	icon_state = "b_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 20000
+	price_tag = 300
 
 /obj/item/cell/large/moebius
 	name = "Soteria \"Power-Geyser 2000L\""
 	desc = "Soteria Institute-brand rechargeable L-standardized power cell. This one is as cheap as Lonestar models, yet improved in all senses."
 	icon_state = "meb_b_st"
 	maxcharge = 2000
+	price_tag = 200
 
 /obj/item/cell/large/moebius/high
 	name = "Soteria \"Power-Geyser 8000L\""
@@ -42,6 +46,7 @@
 	icon_state = "meb_b_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 8000
+	price_tag = 250
 
 /obj/item/cell/large/moebius/super
 	name = "Soteria \"Power-Geyser 14000L\""
@@ -49,6 +54,7 @@
 	icon_state = "meb_b_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 14000
+	price_tag = 300
 
 /obj/item/cell/large/moebius/hyper
 	name = "Soteria \"Power-Geyser 18000L\""
@@ -56,6 +62,7 @@
 	icon_state = "meb_b_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 18000
+	price_tag = 350
 
 /obj/item/cell/large/moebius/omega
 	name = "Soteria \"Omega-Geyser 20000L\""
@@ -66,6 +73,7 @@
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 20000
 	max_chargerate = 0.24
+	price_tag = 450 // takes silver and gold to print, might as well toss in an extra bit of value
 
 /obj/item/cell/large/moebius/nuclear
 	name = "Soteria \"Atomcell 14000L\""
@@ -76,7 +84,7 @@
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 3, MATERIAL_SILVER = 3, MATERIAL_URANIUM = 6)
 	preloaded_reagents = list("radium" = 10, "lithium" = 10, "phosphorus" = 5)
 	maxcharge = 14000
-	price_tag = 400
+	price_tag = 500
 
 /obj/item/cell/large/greyson
 	name = "GP-SI \"Posi-cell 16000L\""
@@ -152,6 +160,7 @@
 	icon_state = "m_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 800
+	price_tag = 125
 
 /obj/item/cell/medium/high/depleted
 	charge = 0
@@ -163,6 +172,7 @@
 	icon_state = "m_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 1000
+	price_tag = 170
 
 /obj/item/cell/medium/hyper
 	name = "Lonestar \"Robustcell-X 1600M\""
@@ -170,6 +180,7 @@
 	icon_state = "m_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1600
+	price_tag = 200
 
 /obj/item/cell/medium/hyper/depleted
 	charge = 0
@@ -180,6 +191,7 @@
 	desc = "Soteria branded rechargeable M-standardized power cell. This one is as cheap as Lonestar models come."
 	icon_state = "meb_m_st"
 	maxcharge = 800
+	price_tag = 140
 
 /obj/item/cell/medium/moebius/high
 	name = "Soteria \"Power-Geyser 1000M\""
@@ -187,6 +199,7 @@
 	icon_state = "meb_m_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 1000
+	price_tag = 160
 
 /obj/item/cell/medium/moebius/super
 	name = "Soteria \"Power-Geyser 1200M\""
@@ -194,6 +207,7 @@
 	icon_state = "meb_m_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 1200
+	price_tag = 180
 
 /obj/item/cell/medium/moebius/hyper
 	name = "Soteria \"Power-Geyser 1400M\""
@@ -201,6 +215,7 @@
 	icon_state = "meb_m_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1400
+	price_tag = 200
 
 /obj/item/cell/medium/moebius/omega
 	name = "Soteria \"Omega-Geyser 1600M\""
@@ -211,6 +226,7 @@
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 1600
 	max_chargerate = 0.24
+	price_tag = 225
 
 /obj/item/cell/medium/moebius/nuclear
 	name = "Soteria \"Atomcell 1000M\""
@@ -221,7 +237,7 @@
 	preloaded_reagents = list("lithium" = 5, "radium" = 5, "phosphorus" = 5)
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 1000
-	price_tag = 200
+	price_tag = 250
 
 /obj/item/cell/medium/greyson
 	name = "GP-SI \"Posi-cell 1600M\""
@@ -232,7 +248,7 @@
 	autorecharge_rate = 0.06
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLATINUM = 2, MATERIAL_URANIUM = 4)
 	preloaded_reagents = list("lithium" = 5, "radium" = 5, "phosphorus" = 5)
-	price_tag = 300
+	price_tag = 325
 
 /obj/item/cell/medium/excelsior
 	name = "Excelsior \"Zarya 1100M\""
@@ -283,6 +299,7 @@
 	icon_state = "s_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 200
+	price_tag = 60
 
 /obj/item/cell/small/high/depleted
 	charge = 0
@@ -294,6 +311,7 @@
 	icon_state = "s_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 300
+	price_tag = 75
 
 /obj/item/cell/small/hyper
 	name = "Lonestar \"Robustcell-X 500S\""
@@ -301,12 +319,14 @@
 	icon_state = "s_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 500
+	price_tag = 90
 
 /obj/item/cell/small/moebius
 	name = "Soteria \"Power-Geyser 120S\""
 	desc = "Soteria Institute branded rechargeable S-standardized power cell. This one is cheap, yet better than Lonestar models for same price."
 	icon_state = "meb_s_st"
 	maxcharge = 120
+	price_tag = 60
 
 /obj/item/cell/small/moebius/high
 	name = "Soteria \"Power-Geyser 250S\""
@@ -314,6 +334,7 @@
 	icon_state = "meb_s_hi"
 	origin_tech = list(TECH_POWER = 2)
 	maxcharge = 250
+	price_tag = 75
 
 /obj/item/cell/small/moebius/super
 	name = "Soteria \"Power-Geyser 300S\""
@@ -321,6 +342,7 @@
 	icon_state = "meb_s_sup"
 	origin_tech = list(TECH_POWER = 5)
 	maxcharge = 300
+	price_tag = 85
 
 /obj/item/cell/small/moebius/hyper
 	name = "Soteria \"Power-Geyser 400S\""
@@ -328,6 +350,7 @@
 	icon_state = "meb_s_hy"
 	origin_tech = list(TECH_POWER = 6)
 	maxcharge = 400
+	price_tag = 100
 
 /obj/item/cell/small/moebius/omega
 	name = "Soteria \"Omega-Geyser 500S\""
@@ -338,6 +361,7 @@
 	origin_tech = list(TECH_POWER = 7)
 	maxcharge = 500
 	max_chargerate = 0.24
+	price_tag = 115
 
 /obj/item/cell/small/moebius/nuclear
 	name = "Soteria \"Atomcell 300S\""
@@ -348,7 +372,7 @@
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 1, MATERIAL_SILVER = 1, MATERIAL_URANIUM = 2)
 	preloaded_reagents = list("radium" = 5)
 	maxcharge = 300
-	price_tag = 100
+	price_tag = 130
 
 /obj/item/cell/small/moebius/pda
 	name = "Soteria \"Atomcell 50S\""
