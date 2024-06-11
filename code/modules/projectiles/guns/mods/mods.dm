@@ -296,7 +296,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_BURN = 10,
-		GUN_UPGRADE_DAMAGE_HALLOSS = 10, //Once again this component was tox before, Tox damage does not exist in erismedIV and wounds are not particularly well thought out as we have seen with unmaker.
+		GUN_UPGRADE_DAMAGE_HALLOSS = 10, // Once again this component was tox before, Tox damage does not exist in erismedIV and wounds are not particularly well thought out as we have seen with unmaker.
 		UPGRADE_BULK = 1
 		)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
@@ -533,7 +533,7 @@
 	I.prefix = "honking"
 	I.gun_loc_tag = GUN_TRIGGER
 
-// Add toxin damage to your weapon
+// Add Halloss damage to your weapon
 /obj/item/gun_upgrade/barrel/toxin_coater
 	name = "Soteria \"Scorpion\" neurotoxin coater"
 	desc = "This experimental barrel coates a thin jet of some neurotoxin onto bullets just before they leave the weapon making them more painful to the receiving target. The device is rather unintrusive and does not alter the weapon in any detrimental way."
@@ -545,7 +545,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_DAMAGE_HALLOSS = 5) //I am not entirely sure how well halloss is with the combat rework but at least its not a noob trap that does nothing now
+	GUN_UPGRADE_DAMAGE_HALLOSS = 5) // I am not entirely sure how well halloss is with the combat rework but at least its not a noob trap that does nothing now
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_BARREL
 	I.prefix = "neurotoxic"
