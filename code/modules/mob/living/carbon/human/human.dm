@@ -95,9 +95,9 @@
 		if(!internal.air_contents)
 			qdel(internal)
 		else
-			. += list(list("Internal Atmosphere Info: [internal.name]"))
-			. += list(list("Tank Pressure: [internal.air_contents.return_pressure()]"))
-			. += list(list("Distribution Pressure: [internal.distribute_pressure]"))
+			. += "Internal Atmosphere Info: [internal.name]"
+			. += "Tank Pressure: [internal.air_contents.return_pressure()]"
+			. += "Distribution Pressure: [internal.distribute_pressure]"
 
 	// TODO: Rig
 	// if(back && istype(back,/obj/item/rig))
@@ -105,24 +105,24 @@
 	
 	var/chemvessel_efficiency = get_organ_efficiency(OP_CHEMICALS)
 	if(chemvessel_efficiency > 1)
-		. += list(list("Chemical Storage: [carrion_stored_chemicals]/[round(0.5 * chemvessel_efficiency)]"))
+		. += "Chemical Storage: [carrion_stored_chemicals]/[round(0.5 * chemvessel_efficiency)]"
 
 	var/maw_efficiency = get_organ_efficiency(OP_MAW)
 	if(maw_efficiency > 1)
-		. += list(list("Gnawing hunger: [carrion_hunger]/[round(maw_efficiency/10)]"))
+		. += "Gnawing hunger: [carrion_hunger]/[round(maw_efficiency/10)]"
 
 	var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
 	if(C)
-		. += list(list("Faith: [C.power]/[C.max_power]"))
-		. += list(list("Channeling Boost: [C.channeling_boost]"))
+		. += "Faith: [C.power]/[C.max_power]"
+		. += "Channeling Boost: [C.channeling_boost]"
 
 	var/obj/item/organ/internal/psionic_tumor/B = random_organ_by_process(BP_PSION)
 	if(B)
-		. += list(list("Psi Essence: [B.psi_points]/[B.max_psi_points]"))
+		. += "Psi Essence: [B.psi_points]/[B.max_psi_points]"
 
 	var/obj/item/organ/internal/nanogate/N = random_organ_by_process(BP_NANOGATE)
 	if(N)
-		. += list(list("Nanites Point: [N.nanite_points]"))
+		. += "Nanites Point: [N.nanite_points]"
 
 	// else if(statpanel("Perks"))
 	// 	for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)

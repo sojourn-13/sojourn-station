@@ -46,6 +46,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	// Tgui Topic middleware
 	if(tgui_Topic(href_list))
 		return
+	if(href_list["reload_statbrowser"])
+		src << browse(file('html/statbrowser.html'), "window=statbrowser")
 	// if(href_list["reload_tguipanel"])
 	// 	nuke_chat()
 	// if(href_list["reload_statbrowser"])
@@ -278,7 +280,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	// Initialize tgui panel
 	src << browse(file('html/statbrowser.html'), "window=statbrowser")
-	// addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
+	addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
 	// Starts the chat
 	chatOutput.start()
 
@@ -757,18 +759,27 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 /client/proc/init_verbs()
 	var/list/verblist = list()
-	verb_tabs.Cut()
-	for(var/thing in (verbs + mob?.verbs))
-		var/procpath/verb_to_init = thing
+	var/list/verbstoprocess = verbs.Copy()
+	if(mob)
+		verbstoprocess += mob.verbs
+		for(var/atom/movable/thing as anything in mob.contents)
+			verbstoprocess += thing.verbs
+	panel_tabs.Cut() // panel_tabs get reset in init_verbs on JS side anyway
+	for(var/procpath/verb_to_init as anything in verbstoprocess)
 		if(!verb_to_init)
 			continue
 		if(verb_to_init.hidden)
 			continue
 		if(!istext(verb_to_init.category))
 			continue
-		verb_tabs |= verb_to_init.category
+		panel_tabs |= verb_to_init.category
 		verblist[++verblist.len] = list(verb_to_init.category, verb_to_init.name)
-	src << output("[url_encode(json_encode(verb_tabs))];[url_encode(json_encode(verblist))]", "statbrowser:init_verbs")
+	src << output("[url_encode(json_encode(panel_tabs))];[url_encode(json_encode(verblist))]", "statbrowser:init_verbs")
+
+/client/proc/check_panel_loaded()
+	if(statbrowser_ready)
+		return
+	to_chat(src, "<span class='userdanger'>Statpanel failed to load, click <a href='?src=[REF(src)];reload_statbrowser=1'>here</a> to reload the panel </span>")
 
 /client/verb/fix_stat_panel()
 	set name = "Fix Stat Panel"

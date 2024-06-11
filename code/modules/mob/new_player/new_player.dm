@@ -79,9 +79,9 @@
 
 	if(SSticker.current_state == GAME_STATE_PREGAME)
 		// stat("Storyteller:", "[master_storyteller]") // Old setting for showing the game mode
-		. += list(list("Time To Start: [SSticker.pregame_timeleft][round_progressing ? "" : " (DELAYED)"]"))
-		. += list(list("Players: [totalPlayers]"))
-		. += list(list("Players Ready: [totalPlayersReady]"))
+		. += "Time To Start: [SSticker.pregame_timeleft][round_progressing ? "" : " (DELAYED)"]"
+		. += "Players: [totalPlayers]"
+		. += "Players Ready: [totalPlayersReady]"
 
 		totalPlayers = 0
 		totalPlayersReady = 0
@@ -97,7 +97,7 @@
 				// Only take top priority job into account, no use divining what lower priority job player could get
 				else if(player.client.prefs.job_high)
 					job_of_choice = player.client.prefs.job_high
-				. += list(list("[player.client.prefs.real_name] : [job_of_choice]"))
+				. += "[player.client.prefs.real_name] : [job_of_choice]"
 
 /mob/new_player/Topic(href, href_list[])
 	if(src != usr || !client)

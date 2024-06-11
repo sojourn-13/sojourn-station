@@ -64,8 +64,14 @@
 
 	var/adminhelped = 0
 
-	/// List of Stat Panel tabs
-	var/list/verb_tabs = list()
+	/// our current tab
+	var/stat_tab
+
+	/// whether our browser is ready or not yet
+	var/statbrowser_ready = FALSE
+	
+	/// list of all tabs
+	var/list/panel_tabs = list()
 
 	/// Disables default BYOND verb panel in favor of Stat Panel™
 	show_verb_panel = FALSE

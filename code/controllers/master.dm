@@ -611,6 +611,10 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	if (!skip_ticks)
 		skip_ticks = 1
 
+/datum/controller/master/stat_entry(msg)
+	msg = "(TickRate:[Master.processing]) (Iteration:[Master.iteration]) (TickLimit: [round(Master.current_ticklimit, 0.1)])"
+	return msg
+
 /datum/controller/master/StartLoadingMap()
 	//disallow more than one map to load at once, multithreading it will just cause race conditions
 	while(map_loading)

@@ -293,6 +293,16 @@ var/list/_client_preferences_by_type
 	key = "CHAT_RLOOC"
 	options = list(GLOB.PREF_SHOW, GLOB.PREF_HIDE)
 
+/datum/client_preference/staff/split_admin_tabs
+	description = "Split Admin Tabs"
+	key = "CHAT_SPLIT_TABS"
+	default_value = GLOB.PREF_YES
+
+/datum/client_preference/staff/fast_mc_refresh
+	description = "Fast MC Tab Refresh"
+	key = "fast_mc_refresh"
+	default_value = GLOB.PREF_NO
+
 /********************
 * Admin Preferences *
 ********************/

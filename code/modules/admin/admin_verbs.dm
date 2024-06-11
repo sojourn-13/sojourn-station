@@ -839,3 +839,14 @@ ADMIN_VERB_ADD(/client/proc/manage_custom_kits, R_FUN, FALSE)
 									GLOB.custom_kits -= kit_of_choice
 			else
 				groundhog_day = FALSE
+
+ADMIN_VERB_ADD(/client/proc/toggle_split_admin_tabs, R_ADMIN|R_DEBUG, FALSE)
+/client/proc/toggle_split_admin_tabs()
+	set name = "Toggle Split Admin Tabs"
+	set category = "Admin"
+	set desc = "Toggle the admin tab being split into separate tabs instead of being merged into one"
+	if(!holder)
+		return
+
+	cycle_preference(/datum/client_preference/staff/split_admin_tabs)
+	to_chat(src, "Admin tabs will now [(get_preference_value(/datum/client_preference/staff/split_admin_tabs) == GLOB.PREF_YES) ? "be" : "not be"] split.")
