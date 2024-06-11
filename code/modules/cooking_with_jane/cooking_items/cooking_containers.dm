@@ -116,6 +116,7 @@
 		if(lower_quality_on_fail)
 			for (var/obj/item/contained in contents)
 				contained?:food_quality -= lower_quality_on_fail
+			return
 		else
 			tracker = new /datum/cooking_with_jane/recipe_tracker(src)
 
