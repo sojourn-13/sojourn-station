@@ -323,8 +323,8 @@
 			user.listed_turf = null
 		else
 			user.listed_turf = T
-			user.client.statpanel = "Turf"
-	return 1
+			user.client << output("[url_encode(json_encode(T.name))];", "statbrowser:create_listedturf")
+	return TRUE
 
 /mob/proc/TurfAdjacent(var/turf/T)
 	return T.AdjacentQuick(src)

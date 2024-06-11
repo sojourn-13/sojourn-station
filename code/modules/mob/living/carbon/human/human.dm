@@ -88,61 +88,48 @@
 	worn_underwear.Cut()
 	return ..()
 
-/mob/living/carbon/human/Stat()
+/mob/living/carbon/human/get_status_tab_items()
+	// Remember that BYOND "unwraps" a list when it's added to another list, hence the use of list() matryoshkas here
 	. = ..()
-	if(statpanel("Status"))
-		stat("Intent:", "[a_intent]")
-		stat("Move Mode:", "[move_intent.name]")
-		if(evacuation_controller)
-			var/eta_status = evacuation_controller.get_status_panel_eta()
-			if(eta_status)
-				stat(null, eta_status)
+	if(internal)
+		if(!internal.air_contents)
+			qdel(internal)
+		else
+			. += list(list("Internal Atmosphere Info: [internal.name]"))
+			. += list(list("Tank Pressure: [internal.air_contents.return_pressure()]"))
+			. += list(list("Distribution Pressure: [internal.distribute_pressure]"))
 
-		if (internal)
-			if (!internal.air_contents)
-				qdel(internal)
-			else
-				stat("Internal Atmosphere Info", internal.name)
-				stat("Tank Pressure", internal.air_contents.return_pressure())
-				stat("Distribution Pressure", internal.distribute_pressure)
+	// TODO: Rig
+	// if(back && istype(back,/obj/item/rig))
+	// 	var/obj/item/rig/suit = back
+	
+	var/chemvessel_efficiency = get_organ_efficiency(OP_CHEMICALS)
+	if(chemvessel_efficiency > 1)
+		. += list(list("Chemical Storage: [carrion_stored_chemicals]/[round(0.5 * chemvessel_efficiency)]"))
 
-		//var/obj/item/organ/internal/xenos/plasmavessel/P = internal_organs_by_name[BP_PLASMA]
-		//if(P)
-		//	stat(null, "Plasma Stored: [P.stored_plasma]/[P.max_plasma]")
+	var/maw_efficiency = get_organ_efficiency(OP_MAW)
+	if(maw_efficiency > 1)
+		. += list(list("Gnawing hunger: [carrion_hunger]/[round(maw_efficiency/10)]"))
 
-		if(back && istype(back,/obj/item/rig))
-			var/obj/item/rig/suit = back
-			var/cell_status = "ERROR"
-			if(suit.cell) cell_status = "[suit.cell.charge]/[suit.cell.maxcharge]"
-			stat(null, "Suit charge: [cell_status]")
+	var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
+	if(C)
+		. += list(list("Faith: [C.power]/[C.max_power]"))
+		. += list(list("Channeling Boost: [C.channeling_boost]"))
 
-		var/chemvessel_efficiency = get_organ_efficiency(OP_CHEMICALS)
-		if(chemvessel_efficiency > 1)
-			stat("Chemical Storage", "[carrion_stored_chemicals]/[round(0.5 * chemvessel_efficiency)]")
+	var/obj/item/organ/internal/psionic_tumor/B = random_organ_by_process(BP_PSION)
+	if(B)
+		. += list(list("Psi Essence: [B.psi_points]/[B.max_psi_points]"))
 
-		var/maw_efficiency = get_organ_efficiency(OP_MAW)
-		if(maw_efficiency > 1)
-			stat("Gnawing hunger", "[carrion_hunger]/[round(maw_efficiency/10)]")
+	var/obj/item/organ/internal/nanogate/N = random_organ_by_process(BP_NANOGATE)
+	if(N)
+		. += list(list("Nanites Point: [N.nanite_points]"))
 
-		var/obj/item/implant/core_implant/cruciform/C = get_core_implant(/obj/item/implant/core_implant/cruciform)
-		if(C)
-			stat("Faith", "[C.power]/[C.max_power]")
-			stat("Channeling Boost", "[C.channeling_boost]")
+	// else if(statpanel("Perks"))
+	// 	for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)
+	// 		perkHolder.update()
 
-		var/obj/item/organ/internal/psionic_tumor/B = random_organ_by_process(BP_PSION)
-		if(B)
-			stat("Psi Essence", "[B.psi_points]/[B.max_psi_points]")
-
-		var/obj/item/organ/internal/nanogate/N = random_organ_by_process(BP_NANOGATE)
-		if(N)
-			stat("Nanites Point", "[N.nanite_points]")
-
-	else if(statpanel("Perks"))
-		for(var/obj/effect/statclick/perkHolder in src.stats.perk_stats)
-			perkHolder.update()
-
-	if(mind)
-		statpanel("Perks",src.stats.perk_stats)
+	// if(mind)
+	// 	statpanel("Perks",src.stats.perk_stats)
 
 	src.stats.initialized = TRUE
 

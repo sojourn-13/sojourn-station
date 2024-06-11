@@ -202,16 +202,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		ghost.timeofdeath = world.time // Because the living mob won't have a time of death and we want the respawn timer to work properly.
 		announce_ghost_joinleave(ghost)
 
-/mob/observer/ghost/can_use_hands()	return 0
-/mob/observer/ghost/is_active()		return 0
-
-/mob/observer/ghost/Stat()
-	. = ..()
-	if(statpanel("Status"))
-		if(evacuation_controller)
-			var/eta_status = evacuation_controller.get_status_panel_eta()
-			if(eta_status)
-				stat(null, eta_status)
+/mob/observer/ghost/can_use_hands()
+/mob/observer/ghost/is_active()
 
 /mob/observer/ghost/verb/reenter_corpse()
 	set category = "Ghost"
@@ -231,6 +223,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	mind.current.teleop = null
 	if(!admin_ghosted)
 		announce_ghost_joinleave(mind, 0, "They now occupy their body again.")
+	mind.current.client.init_verbs()
 	return 1
 
 /mob/observer/ghost/verb/toggle_medHUD()
@@ -310,7 +303,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	usr.forceMove(pick(L))
 
 /mob/observer/ghost/verb/follow(input in getmobs())
-	set category = "Ghost"
 	set name = ".Follow" // "Haunt"
 	set desc = "Follow and haunt a mob."
 
@@ -816,4 +808,5 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	M.key = key
 	if(M.client)
 		M.client.create_UI(M.type)
+		M.client.init_verbs()
 	return

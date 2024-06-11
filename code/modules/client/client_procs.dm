@@ -91,6 +91,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			hsrc = holder
 		if("usr")
 			hsrc = mob
+		if("statpanel")
+			hsrc = locate(href_list["statpanel_ref"])
 		if("prefs")
 			return prefs.process_link(usr,href_list)
 		if("vars")
@@ -275,9 +277,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 				return
 
 	// Initialize tgui panel
-	// src << browse(file('html/statbrowser.html'), "window=statbrowser")
+	src << browse(file('html/statbrowser.html'), "window=statbrowser")
 	// addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
-	// tgui_panel.initialize()
 	// Starts the chat
 	chatOutput.start()
 
@@ -318,9 +319,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	if(prefs.lastchangelog != changelog_hash) //bolds the changelog button on the interface so we know there are updates.
 		to_chat(src, span_info("You have unread updates in the changelog."))
-		winset(src, "rpane.changelog", "background-color=#eaeaea;font-style=bold")
 		if(config.aggressive_changelog)
-			src.changelog()
+			changelog()
 
 	if(!winexists(src, "asset_cache_browser")) // The client is using a custom skin, tell them.
 		to_chat(src, span_warning("Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you."))
@@ -621,19 +621,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(prefs)
 		prefs.ShowChoices(usr)
 
-// Byond seemingly calls stat, each tick.
-// Calling things each tick can get expensive real quick.
-// So we slow this down a little.
-// See: http://www.byond.com/docs/ref/info.html#/client/proc/Stat
-/client/Stat()
-	if(!usr)
-		return
-	// Add always-visible stat panel calls here, to define a consistent display order.
-	statpanel("Status")
-
-	. = ..()
-	sleep(1)
-
 /client/proc/create_UI(var/mob_type)
 	destroy_UI()
 	if(!mob_type)
@@ -767,6 +754,26 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 /client/proc/colour_transition(list/colour_to = null, time = 10) //Call this with no parameters to reset to default.
 	animate(src, color = colour_to, time = time, easing = SINE_EASING)
 
+/client/proc/init_verbs()
+	var/list/verblist = list()
+	verb_tabs.Cut()
+	for(var/thing in (verbs + mob?.verbs))
+		var/procpath/verb_to_init = thing
+		if(!verb_to_init)
+			continue
+		if(verb_to_init.hidden)
+			continue
+		if(!istext(verb_to_init.category))
+			continue
+		verb_tabs |= verb_to_init.category
+		verblist[++verblist.len] = list(verb_to_init.category, verb_to_init.name)
+	src << output("[url_encode(json_encode(verb_tabs))];[url_encode(json_encode(verblist))]", "statbrowser:init_verbs")
+
+/client/verb/fix_stat_panel()
+	set name = "Fix Stat Panel"
+	set category = "OOC"
+
+	init_verbs()
 
 //En-abled by SoJ
 /client/proc/apply_fps(var/client_fps)
