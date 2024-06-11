@@ -225,7 +225,12 @@
 	if(I.nature != initial(base_type.wound_nature))
 		return
 
-	var/wound_path = pick(subtypesof(base_type))
+	var/wound_path = base_type
+
+	var/list/types = subtypesof(base_type)
+	if(length(types))
+		wound_path = pick(types)
+
 	var/wound_name = "[name] [wound_descriptor]"
 	I.add_wound(wound_path, wound_name)
 	if(!silent && BP_IS_ORGANIC(I) || BP_IS_SLIME(I))

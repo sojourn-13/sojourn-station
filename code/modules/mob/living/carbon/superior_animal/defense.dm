@@ -347,7 +347,7 @@
 	//	loc.assume_air(breath) //by default, exhale
 
 /* this is now handled upwards in living_defense
-/mob/living/carbon/superior_animal/handle_fire(flammable_gas, turf/location)
+/mob/living/carbon/superior_animal/handle_fire()
 	if(never_stimulate_air)
 		if (fire_stacks > 0)
 			ExtinguishMob() //We dont simulate air thus we dont simulate fire

@@ -47,9 +47,9 @@
 /datum/perk
 	var/name = "Perk"
 	var/desc = ""
-	var/icon// = 'icons/effects/perks.dmi'
-	var/icon_state = ""
-	var/mob/living/carbon/human/holder
+	var/icon = 'icons/effects/perks.dmi'
+	var/icon_state = "missing_perk_icon"
+	var/mob/living/holder
 	var/gain_text
 	var/lose_text
 	var/active = TRUE
@@ -86,11 +86,11 @@
 		return FALSE
 	return TRUE
 
-/// Proc called when the perk is assigned to a human. Should be the first thing to be called.
-/datum/perk/proc/assign(mob/living/carbon/human/H)
-	if(istype(H))
+/// Proc called when the perk is assigned to a being. Should be the first thing to be called.
+/datum/perk/proc/assign(mob/living/L)
+	if(istype(L))
 		SHOULD_CALL_PARENT(TRUE)
-		holder = H
+		holder = L
 		RegisterSignal(holder, COMSIG_MOB_LIFE, .proc/on_process)
 		to_chat(holder, SPAN_NOTICE("[gain_text]"))
 		return TRUE

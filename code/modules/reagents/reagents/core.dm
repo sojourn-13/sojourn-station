@@ -30,9 +30,15 @@
 /datum/reagent/organic/blood/touch_turf(turf/simulated/T)
 	if(!istype(T) || volume < 3)
 		return TRUE
-	if(!data["donor"] || istype(data["donor"], /mob/living/carbon/human))
+	var/datum/weakref/D = data["donor"]
+	if(!istype(D))
 		blood_splatter(T, src, 1)
-	else if(istype(data["donor"], /mob/living/carbon/alien))
+		return
+	
+	var/mob/living/something = D.resolve()
+	if(istype(something, /mob/living/carbon/human))
+		blood_splatter(T, src, 1)
+	else if(istype(something, /mob/living/carbon/alien))
 		var/obj/effect/decal/cleanable/blood/B = blood_splatter(T, src, 1)
 		if(B)
 			B.blood_DNA["UNKNOWN DNA STRUCTURE"] = "X*"

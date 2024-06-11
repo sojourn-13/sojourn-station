@@ -75,14 +75,20 @@
 						if (ID in virusDB)
 							R = virusDB[ID]
 
-						var/mob/living/carbon/human/D = B.data["donor"]
-						pathogen_pool.Add(list(list(\
-							"name" = "[D.get_species()] [B.name]", \
+						var/list/new_data = list(
+							"name" = "[B.name]", \
 							"dna" = B.data["blood_DNA"], \
 							"unique_id" = V.uniqueID, \
 							"reference" = "\ref[V]", \
 							"is_in_database" = !!R, \
-							"record" = "\ref[R]")))
+							"record" = "\ref[R]"
+						)
+						var/datum/weakref/ref = B.data["donor"]
+						if(istype(ref))
+							var/mob/living/carbon/human/D = ref.resolve()
+							if(istype(D))
+								new_data["name"] = "[D.get_species()] [B.name]"
+						pathogen_pool += list(new_data)
 
 				if (pathogen_pool.len > 0)
 					data["pathogen_pool"] = pathogen_pool
@@ -187,8 +193,15 @@
 			P.info += "<hr>"
 
 			for(var/datum/reagent/organic/blood/B in sample.reagents.reagent_list)
-				var/mob/living/carbon/human/D = B.data["donor"]
-				P.info += "<large><u>[D.get_species()] [B.name]:</u></large><br>[B.data["blood_DNA"]]<br>"
+				var/datum/weakref/ref = B.data["donor"]
+				if(istype(ref))
+					var/mob/living/carbon/human/D = ref.resolve()
+					if(istype(D))
+						P.info += "<large><u>[D.get_species()] [B.name]:</u></large><br>[B.data["blood_DNA"]]<br>"
+					else
+						P.info += "<large><u>[B.name]:</u></large><br>[B.data["blood_DNA"]]<br>"
+				else
+					P.info += "<large><u>[B.name]:</u></large><br>[B.data["blood_DNA"]]<br>"
 
 				var/list/virus = B.data["virus2"]
 				P.info += "<u>Pathogens:</u> <br>"

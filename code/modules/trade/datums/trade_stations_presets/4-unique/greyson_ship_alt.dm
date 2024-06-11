@@ -16,8 +16,8 @@
 	automated. It's a wonder it hasn't been raided, but then again its protected by a massive army of still functioning combat drones. This one specializes in a wide variety of interesting goods.")
 	inventory = list(
 		"Sheji pan" = list(
-			/obj/item/computer_hardware/hard_drive/portable/design/onestar/stockparts = good_data("GP Stockpart Disk", list(30, 50), 900),
-			/obj/item/computer_hardware/hard_drive/portable/design/onestar = good_data("GP Tool Disk", list(30, 50), 1200)
+			/obj/item/computer_hardware/hard_drive/portable/design/onestar/stockparts = good_data("GP Stockpart Disk", list(30, 50), 1500),
+			/obj/item/computer_hardware/hard_drive/portable/design/onestar = good_data("GP Tool Disk", list(30, 50), 2000)
 		),
 		"Gongju" = list(
 			/obj/item/tool/crowbar/onestar = custom_good_nameprice("GP Crowbar", list(-100, -50)),
