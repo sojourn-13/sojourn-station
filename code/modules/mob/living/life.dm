@@ -67,7 +67,7 @@
 	handle_chemicals_in_body()
 
 	//Check if we're on fire
-	handle_fire(environment.gas["oxygen"], loc)
+	handle_fire()
 
 	update_pulling()
 

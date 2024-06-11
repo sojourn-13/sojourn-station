@@ -28,7 +28,7 @@
 		var/mutable_appearance/lid = mutable_appearance(icon, lid_icon)
 		add_overlay(lid)
 
-	if(reagents.total_volume)
+	if(reagents?.total_volume)
 		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[icon_state][get_filling_state()]")
 		filling.color = reagents.get_color()
 		add_overlay(filling)
