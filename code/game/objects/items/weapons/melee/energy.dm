@@ -171,6 +171,8 @@
 	name = "energy cutlass"
 	desc = "Arrrr matey."
 	icon_state = "cutlass0"
+	active_force =  WEAPON_FORCE_ROBUST
+	active_throwforce =  WEAPON_FORCE_ROBUST
 
 /obj/item/melee/energy/sword/sabre
 	name = "laser saber"

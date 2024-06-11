@@ -216,9 +216,8 @@
 	has_rare_parts = TRUE
 	special_parts = list(/obj/item/animal_part/stalker_chitin)
 	rare_parts = list(/obj/item/animal_part/stalker_spur)
-
+	armor = list(melee = 5, bullet = 7, energy = 1, bomb = 5, bio = 10, agony = 20, rad = 25)
 	mob_size = MOB_LARGE
-	armor = list(melee = 5, bullet = 14, energy = 12, bomb = 5, bio = 10, agony = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_COUGHING, MUTATION_NERVOUSNESS, MUTATION_CLOAKING)
 
 /mob/living/simple_animal/hostile/nightmare/dream_daemon
@@ -236,7 +235,7 @@
 	turns_per_move = 4
 	vision_range = 8
 	aggro_vision_range = 20
-	armor = list(melee = 5, bullet = 7, energy = 1, bomb = 5, bio = 10, agony = 20, rad = 25) //Lost its laser armor do to being a darker colour
+	armor = list(melee = 5, bullet = 14, energy = 12, bomb = 5, bio = 10, agony = 10, rad = 25)	
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_COUGHING, MUTATION_NERVOUSNESS, MUTATION_GREATER_CLOAKING)
 
 /mob/living/simple_animal/hostile/nightmare/MoveToTarget()

@@ -92,8 +92,8 @@
 	icon_state = "chainsaw"
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
-	force = WEAPON_FORCE_WEAK
-	switched_on_forcemult = 4 //28 total
+	force = WEAPON_FORCE_PAINFUL
+	switched_on_forcemult = 2 //30 total
 	w_class = ITEM_SIZE_NORMAL
 	armor_divisor = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 2)
@@ -127,8 +127,8 @@
 	wielded_icon = "hypersaw_on"
 	hitsound = WORKSOUND_CHAINSAW
 	worksound = WORKSOUND_CHAINSAW
-	force = WEAPON_FORCE_WEAK
-	switched_on_forcemult = 4 //28 total
+	force = 14
+	switched_on_forcemult = 2 //30 total
 	w_class = ITEM_SIZE_NORMAL
 	armor_divisor = ARMOR_PEN_SHALLOW
 	matter = list(MATERIAL_SILVER = 2, MATERIAL_PLASTEEL = 10, MATERIAL_PLASTIC = 3)

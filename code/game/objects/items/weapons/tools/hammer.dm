@@ -16,6 +16,7 @@
 	effective_faction = list("spider") // Spiders are weak to crushing.
 	damage_mult = 2
 	hitsound = 'sound/weapons/smash.ogg'
+	blacklist_upgrades = list(/obj/item/tool_upgrade/productivity/whetstone = TRUE, /obj/item/tool_upgrade/productivity/diamond_blade = TRUE) //it's hammers.
 
 	has_alt_mode = TRUE
 	alt_mode_damagetype = HALLOSS

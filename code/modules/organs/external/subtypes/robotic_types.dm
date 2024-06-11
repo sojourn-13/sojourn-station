@@ -246,7 +246,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "Reinforced dark prosthesis designed for heavy combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/blackshield.dmi'
 	model = "blackshield"
-	armor_list = list(melee = 8, bullet = 8, energy = 8, bomb = 35, bio = 100, rad = 100)
+	armor_list = list(melee = 7, bullet = 7, energy = 7, bomb = 35, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_PLASTEEL = 10)
 	max_damage = 60
 	min_broken_damage = 40
@@ -320,7 +320,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "Plasma reinforced black prosthesis designed for heavy combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/excelsior.dmi' //Sprites were done by Kirov on request
 	model = "excelsior"
-	armor_list = list(melee = 3, bullet = 3, energy = 3, bomb = 50, bio = 100, rad = 100)
+	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 50, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 1, MATERIAL_PLASMA = 0.5) //Plasma needed as a material that excelsiors can't teleport in
 	max_damage = 65
 	min_broken_damage = 45
