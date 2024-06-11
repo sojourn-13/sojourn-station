@@ -376,6 +376,7 @@
 	gain_text = "Your core vibrates and crackles with barely contained energy as you're revived. You feel stronger than ever, but your form is unstable and fragile. Perhaps it'd be best to lie down and allow time for this to pass, lest you loose cohesion once again."
 	lose_text = "The thunder bouncing around just beneath your dermis has passed and you feel stable once again."
 	var/initial_time
+	icon_state = "slime_rez"
 
 /datum/perk/racial/slime_rez_sickness/assign(mob/living/carbon/human/H)
 	..()
@@ -539,6 +540,7 @@
 	name = "Channeling"
 	desc = "You know how to channel spiritual energy during rituals. You gain additional skill points \
 			during group rituals, and have an increased regeneration of cruciform energy."
+	icon_state = "channeling"
 
 
 /datum/perk/codespeak
@@ -593,6 +595,7 @@
 	name = "Gunsmith Master"
 	desc = "You are a professional gunsmith, your knowledge allows to not only repair firearms but expertly craft them. \
 			This includes the machines required to do so, including the bullet fabricator."
+	icon_state = "gunsmith"
 
 //Chef's special perk
 
@@ -601,6 +604,8 @@
 	desc = "Your own special, secret touch in seasoning has anomalous properties that can enhance most food products."
 	active = FALSE
 	passivePerk = FALSE
+	icon_state = "spice"
+
 /datum/perk/foodappraise/activate()
 	var/mob/living/carbon/human/user = usr
 	var/obj/item/reagent_containers/food/snacks/F = user.get_active_hand()
@@ -651,6 +656,7 @@
 	active = FALSE
 	passivePerk = FALSE
 	var/anti_cheat = FALSE
+	icon_state = "true_name"
 
 /datum/perk/true_name/activate()
 	..()
