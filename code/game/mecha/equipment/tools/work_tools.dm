@@ -68,7 +68,7 @@
 			if(do_after_cooldown(T))
 				if(L == chassis.loc && src == chassis.selected)
 					cargo_holder.cargo += T
-					T.loc = chassis
+					T.forceMove(chassis)
 					T.anchored = 0
 					occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
 					log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
@@ -134,7 +134,7 @@
 			if(do_after_cooldown(T))
 				if(L == chassis.loc && src == chassis.selected)
 					cargo_holder.cargo += T
-					T.loc = chassis
+					T.forceMove(chassis)
 					T.anchored = 0
 					occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
 					log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")

@@ -1348,7 +1348,7 @@ assassination method if you time it right*/
 		if(istype(mob_container, /obj/item/device/mmi))
 			var/obj/item/device/mmi/mmi = mob_container
 			if(mmi.brainmob)
-				occupant.loc = mmi
+				occupant.forceMove(mmi)
 			mmi.mecha = null
 			occupant.canmove = 0
 			verbs += /obj/mecha/verb/eject

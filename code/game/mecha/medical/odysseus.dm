@@ -43,18 +43,13 @@
 			H.glasses = null
 	. = ..()
 
-
-
 //TODO - Check documentation for client.eye and client.perspective...
 /obj/item/clothing/glasses/hud/health/mech
 	name = "integrated medical HUD"
 
 /obj/item/clothing/glasses/hud/health/mech/Destroy()
-
 	LEGACY_SEND_SIGNAL(src, COMSIG_HUD_DELETED, src)
-
 	. = ..()
-
 
 /obj/item/clothing/glasses/hud/health/mech/process_hud(var/mob/M)
 	if(isnull(src))

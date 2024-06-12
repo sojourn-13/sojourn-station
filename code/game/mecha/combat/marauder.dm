@@ -53,7 +53,7 @@
 
 /obj/mecha/combat/dreadnought/relaymove(mob/user,direction)
 	if(user != occupant) //While not "realistic", this piece is player friendly.
-		user.loc = get_turf(src)
+		user.forceMove(get_turf(src))
 		to_chat(user, "You climb out from [src]")
 		return 0
 	if(!can_move)

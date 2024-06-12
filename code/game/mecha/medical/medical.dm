@@ -1,4 +1,7 @@
 /obj/mecha/medical
+	turnsound = 'sound/mecha/mechmove01.ogg'
+	stepsound = 'sound/mecha/mechstep.ogg'
+
 	internal_damage_threshold = 40
 	var/list/cargo = list()
 	var/cargo_capacity = 5
@@ -9,36 +12,15 @@
 	if(isPlayerLevel(T.z))
 		new /obj/item/mecha_parts/mecha_tracking(src)
 
-/obj/mecha/medical/mechturn(direction)
-	set_dir(direction)
-	playsound(src,'sound/mecha/mechmove01.ogg',40,1)
-	return 1
-
-/obj/mecha/medical/mechstep(direction)
-	var/result = step(src,direction)
-	if(result)
-		playsound(src,'sound/mecha/mechstep.ogg',25,1)
-	return result
-
-/obj/mecha/medical/mechsteprand()
-	var/result = step_rand(src)
-	if(result)
-		playsound(src,'sound/mecha/mechstep.ogg',25,1)
-	return result
-
-
 /obj/mecha/medical/Topic(href, href_list)
 	. = ..()
 	if(href_list["drop_from_cargo"])
 		var/obj/O = locate(href_list["drop_from_cargo"])
 		if(O && (O in cargo))
 			occupant_message(SPAN_NOTICE("You unload [O]."))
-			O.loc = get_turf(src)
+			O.forceMove(get_turf(src))
 			cargo -= O
 			O.reset_plane_and_layer()
-			var/turf/T = get_turf(O)
-			if(T)
-				T.Entered(O)
 			log_message("Unloaded [O]. Cargo compartment capacity: [cargo_capacity - cargo.len]")
 
 /obj/mecha/medical/Exit(atom/movable/O)

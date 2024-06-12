@@ -14,10 +14,7 @@
 
 /obj/mecha/working/ripley/Destroy()
 	for(var/atom/movable/A in cargo)
-		A.loc = loc
-		var/turf/T = loc
-		if(istype(T))
-			T.Entered(A)
+		A.forceMove(loc)
 		step_rand(A)
 	cargo.Cut()
 	. = ..()
