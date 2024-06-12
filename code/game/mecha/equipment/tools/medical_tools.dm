@@ -15,24 +15,51 @@
 	range = MECHA_MELEE
 	equip_cooldown = 20
 	var/mob/living/carbon/occupant = null
-	var/datum/global_iterator/pr_mech_sleeper
 	var/inject_amount = 10
 	required_type = /obj/mecha/medical
 	salvageable = 0
 	price_tag = 200
 	harmful = 0 // So you don't push people around on help intent when you want to scoop them
 
-/obj/item/mecha_parts/mecha_equipment/tool/sleeper/New()
-	. = ..()
-	pr_mech_sleeper = new /datum/global_iterator/mech_sleeper(list(src),0)
-	pr_mech_sleeper.set_delay(equip_cooldown)
-
 /obj/item/mecha_parts/mecha_equipment/tool/sleeper/Destroy()
-	QDEL_NULL(pr_mech_sleeper)
 	for(var/atom/movable/AM in src)
 		AM.forceMove(get_turf(src))
 	occupant = null
 	return ..()
+
+/obj/item/mecha_parts/mecha_equipment/tool/sleeper/Process()
+	if(!chassis)
+		return
+
+	if(!chassis.has_charge(energy_drain))
+		return
+
+	var/mob/living/carbon/M = occupant
+	if(!M)
+		return
+
+	if(M.health > 0)
+		M.adjustOxyLoss(-1)
+		M.updatehealth()
+	M.AdjustStunned(-4)
+	M.AdjustWeakened(-4)
+	M.AdjustStunned(-4)
+	M.Paralyse(2)
+	M.Weaken(2)
+	M.Stun(2)
+	// This entire list is terrible and there should be a better way to do this for a sleeper.
+	if(M.reagents.get_reagent_amount("carthatoline") < 1) // Thanks to livermed, a must.
+		M.reagents.add_reagent("carthatoline", 5)
+	if(M.reagents.get_reagent_amount("bicaridine") < 1)
+		M.reagents.add_reagent("bicaridine", 5)
+	if(M.reagents.get_reagent_amount("dermaline") < 1)
+		M.reagents.add_reagent("dermaline", 5)
+	if(M.reagents.get_reagent_amount("dexalinp") < 1)
+		M.reagents.add_reagent("dexalinp", 5)
+	if(M.reagents.get_reagent_amount("quickclot") < 1)
+		M.reagents.add_reagent("quickclot", 5) // Since we can't seal external wounds with gauze, stabilize so they don't bleed in their way to safety.
+	chassis.use_power(energy_drain)
+	update_equip_info()
 
 /obj/item/mecha_parts/mecha_equipment/tool/sleeper/Exit(atom/movable/O)
 	return 0
@@ -66,7 +93,6 @@
 		occupant = target
 		target.reset_view(src)
 		set_ready_state(0)
-		pr_mech_sleeper.start()
 		occupant_message(SPAN_NOTICE("[target] successfully loaded into [src]. Life support functions engaged."))
 		chassis.visible_message("[chassis] loads [target] into [src].")
 		log_message("[target] loaded. Life support functions engaged.")
@@ -79,14 +105,12 @@
 	log_message("[occupant] ejected. Life support functions disabled.")
 	occupant.reset_view()
 	occupant = null
-	pr_mech_sleeper.stop()
 	set_ready_state(1)
 
 /obj/item/mecha_parts/mecha_equipment/tool/sleeper/detach()
 	if(occupant)
 		occupant_message("Unable to detach [src] - equipment occupied.")
 		return
-	pr_mech_sleeper.stop()
 	return ..()
 
 /obj/item/mecha_parts/mecha_equipment/tool/sleeper/get_equip_info()
@@ -165,46 +189,6 @@
 		send_byjax(chassis.occupant, "msleeper.browser", "reagents", get_occupant_reagents())
 		return 1
 
-/datum/global_iterator/mech_sleeper
-
-/datum/global_iterator/mech_sleeper/Process(var/obj/item/mecha_parts/mecha_equipment/tool/sleeper/S)
-	if(!S.chassis)
-		S.set_ready_state(1)
-		return stop()
-
-	if(!S.chassis.has_charge(S.energy_drain))
-		S.set_ready_state(1)
-		S.log_message("Deactivated.")
-		S.occupant_message("[src] deactivated - no power.")
-		return stop()
-
-	var/mob/living/carbon/M = S.occupant
-	if(!M)
-		return
-
-	if(M.health > 0)
-		M.adjustOxyLoss(-1)
-		M.updatehealth()
-	M.AdjustStunned(-4)
-	M.AdjustWeakened(-4)
-	M.AdjustStunned(-4)
-	M.Paralyse(2)
-	M.Weaken(2)
-	M.Stun(2)
-	// This entire list is terrible and there should be a better way to do this for a sleeper.
-	if(M.reagents.get_reagent_amount("carthatoline") < 1) // Thanks to livermed, a must.
-		M.reagents.add_reagent("carthatoline", 5)
-	if(M.reagents.get_reagent_amount("bicaridine") < 1)
-		M.reagents.add_reagent("bicaridine", 5)
-	if(M.reagents.get_reagent_amount("dermaline") < 1)
-		M.reagents.add_reagent("dermaline", 5)
-	if(M.reagents.get_reagent_amount("dexalinp") < 1)
-		M.reagents.add_reagent("dexalinp", 5)
-	if(M.reagents.get_reagent_amount("quickclot") < 1)
-		M.reagents.add_reagent("quickclot", 5) // Since we can't seal external wounds with gauze, stabilize so they don't bleed in their way to safety.
-	S.chassis.use_power(S.energy_drain)
-	S.update_equip_info()
-
 /obj/item/mecha_parts/mecha_equipment/tool/syringe_gun
 	name = "syringe gun"
 	desc = "Exosuit-mounted chem synthesizer with syringe gun. Reagents inside are held in stasis, so no reactions will occur. (Can be attached to: Medical Exosuits)"
@@ -215,10 +199,9 @@
 	var/list/processed_reagents
 	var/max_syringes = 30
 	var/max_volume = 300 //max reagent volume
-	var/synth_speed = 5 //[num] reagent units per cycle
-	energy_drain = 5
+	var/synth_speed = 1.25 //[num] reagent units per cycle
+	energy_drain = 50
 	var/mode = 0 //0 - fire syringe, 1 - analyze reagents.
-	var/datum/global_iterator/mech_synth/synth
 	range = MECHA_MELEE|MECHA_RANGED
 	equip_cooldown = 10
 	origin_tech = list(TECH_MATERIAL = 3, TECH_BIO = 4, TECH_MAGNET = 4, TECH_DATA = 3)
@@ -232,15 +215,9 @@
 	known_reagents = list("inaprovaline"="Inaprovaline","anti_toxin"="Dylovene","bicaridine"="Bicaridine","tramadol"="Tramadol","kelotane"="Kelotane")
 	processed_reagents = new
 	create_reagents(max_volume)
-	synth = new (list(src),0)
 
 /obj/item/mecha_parts/mecha_equipment/tool/syringe_gun/Destroy()
 	QDEL_LIST(syringes)
-	QDEL_NULL(synth)
-	return ..()
-
-/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun/detach()
-	synth.stop()
 	return ..()
 
 /obj/item/mecha_parts/mecha_equipment/tool/syringe_gun/critfail()
@@ -339,7 +316,6 @@
 				m++
 		if(processed_reagents.len)
 			message += " added to production"
-			synth.start()
 			occupant_message(message)
 			occupant_message("Reagent processing started.")
 			log_message("Reagent processing started.")
@@ -464,6 +440,17 @@
 		return 1
 	return 0
 
+/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun/Process()
+	if(!chassis)
+		return
+	if(!processed_reagents.len || reagents.total_volume >= reagents.maximum_volume || !chassis.has_charge(energy_drain))
+		return
+	var/amount = synth_speed / processed_reagents.len
+	for(var/reagent in processed_reagents)
+		reagents.add_reagent(reagent, amount)
+		chassis.use_power(energy_drain)
+	return 1
+
 
 /obj/item/mecha_parts/mecha_equipment/tool/syringe_gun/update_equip_info()
 	if(..())
@@ -474,20 +461,3 @@
 /obj/item/mecha_parts/mecha_equipment/tool/syringe_gun/on_reagent_change()
 	..()
 	update_equip_info()
-
-/datum/global_iterator/mech_synth
-	delay = 100
-
-/datum/global_iterator/mech_synth/Process(var/obj/item/mecha_parts/mecha_equipment/tool/syringe_gun/S)
-	if(!S.chassis)
-		return stop()
-	var/energy_drain = S.energy_drain*10
-	if(!S.processed_reagents.len || S.reagents.total_volume >= S.reagents.maximum_volume || !S.chassis.has_charge(energy_drain))
-		S.occupant_message(SPAN_WARNING("Reagent processing stopped."))
-		S.log_message("Reagent processing stopped.")
-		return stop()
-	var/amount = S.synth_speed / S.processed_reagents.len
-	for(var/reagent in S.processed_reagents)
-		S.reagents.add_reagent(reagent,amount)
-		S.chassis.use_power(energy_drain)
-	return 1

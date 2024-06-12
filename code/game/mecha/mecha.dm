@@ -83,12 +83,6 @@
 	var/list/internals_req_access = list()//required access level to open cell compartment
 	var/list/dna_req_access = list(access_heads)
 
-	var/datum/global_iterator/pr_int_temp_processor //normalizes internal air mixture temperature
-	var/datum/global_iterator/pr_inertial_movement //controls intertial movement in spesss
-	var/datum/global_iterator/pr_give_air //moves air from tank to cabin
-	var/datum/global_iterator/pr_internal_damage //processes internal damage
-
-
 	var/wreckage
 	var/noexplode = 0 // Used for cases where an exosuit is spawned and turned into wreckage
 
@@ -104,6 +98,9 @@
 	var/list/obj/item/mech_ammo_box/ammo[3] // List to hold the mech's internal ammo.
 
 	var/obj/item/clothing/glasses/hud/hud
+
+	// set to a direction to make the mech go inertial
+	var/inertial_movement = 0
 
 /obj/mecha/can_prevent_fall()
 	return TRUE
@@ -131,7 +128,7 @@
 	spark_system.set_up(2, 0, src)
 	spark_system.attach(src)
 	add_cell()
-	add_iterators()
+	START_PROCESSING(SSobj, src)
 	removeVerb(/obj/mecha/verb/disconnect_from_port)
 	log_message("[name] created.")
 	loc.Entered(src)
@@ -139,6 +136,7 @@
 	add_hearing()
 
 /obj/mecha/Destroy()
+	STOP_PROCESSING(SSobj, src)
 	go_out()
 
 	for(var/mob/M in src) //Let's just be ultra sure
@@ -182,10 +180,6 @@
 
 	QDEL_NULL(events)
 	QDEL_NULL(cabin_air)
-	QDEL_NULL(pr_int_temp_processor)
-	QDEL_NULL(pr_inertial_movement)
-	QDEL_NULL(pr_give_air)
-	QDEL_NULL(pr_internal_damage)
 	QDEL_NULL(spark_system)
 
 	GLOB.mechas_list -= src //global mech list
@@ -262,12 +256,6 @@
 	radio.icon = icon
 	radio.icon_state = icon_state
 	radio.subspace_transmission = 1
-
-/obj/mecha/proc/add_iterators()
-	pr_int_temp_processor = new /datum/global_iterator/mecha_preserve_temp(list(src))
-	pr_inertial_movement = new /datum/global_iterator/mecha_inertial_movement(null,0)
-	pr_give_air = new /datum/global_iterator/mecha_tank_give_air(list(src))
-	pr_internal_damage = new /datum/global_iterator/mecha_internal_damage(list(src),0)
 
 /obj/mecha/proc/do_after_mech(delay as num)
 	sleep(delay)
@@ -500,7 +488,7 @@
 					visible_message("<b>[name] smashes through the wall</b>")
 					playsound(src, 'sound/weapons/smash.ogg', 50, 1)
 				melee_can_hit = FALSE
-				if(do_after(melee_cooldown))
+				if(do_after_mech(melee_cooldown))
 					melee_can_hit = TRUE
 				break
 
@@ -540,7 +528,7 @@
 
 	//Currently drifting through space. The iterator that controls this will cancel it if the mech finds
 	// things to grip or enables thrusters
-	if(pr_inertial_movement.active())
+	if(inertial_movement)
 		return 0
 
 	if(!has_charge(step_energy_drain))
@@ -566,7 +554,7 @@
 				//No movement if power is dead
 				return FALSE
 		else
-			pr_inertial_movement.start(list(src,direction))
+			inertial_movement = direction
 			log_message("Movement control lost. Inertial movement started.")
 			return FALSE
 	//There is support, normal movement, normal energy cost
@@ -635,8 +623,7 @@
 /obj/mecha/total_movement_delay()
 	return step_in
 
-/obj/mecha/Bump(var/atom/obstacle)
-//	inertia_dir = null
+/obj/mecha/Bump(atom/obstacle)
 	if(isobj(obstacle))
 		var/obj/O = obstacle
 		if(istype(O, /obj/effect/portal)) //derpfix
@@ -733,11 +720,7 @@ assassination method if you time it right*/
 	return int_dam_flag ? internal_damage&int_dam_flag : internal_damage
 
 /obj/mecha/proc/setInternalDamage(int_dam_flag)
-	if(!pr_internal_damage)
-		return
-
 	internal_damage |= int_dam_flag
-	pr_internal_damage.start()
 	log_append_to_last("Internal damage of type [int_dam_flag].",1)
 	occupant << sound('sound/machines/warning-buzzer.ogg',wait=0)
 
@@ -746,7 +729,6 @@ assassination method if you time it right*/
 	switch(int_dam_flag)
 		if(MECHA_INT_TEMP_CONTROL)
 			occupant_message("<font color='blue'><b>Life support system reactivated.</b></font>")
-			pr_int_temp_processor.start()
 		if(MECHA_INT_FIRE)
 			occupant_message("<font color='blue'><b>Internal fire extinquished.</b></font>")
 		if(MECHA_INT_TANK_BREACH)
@@ -783,6 +765,9 @@ assassination method if you time it right*/
 	else
 		power_to_use = rhit_power_use
 		damage_coeff_to_use = r_damage_coeff
+
+	if(power_to_use)
+		use_power(power_to_use)
 
 	take_damage(round(damage*damage_coeff_to_use), type)
 	start_booster_cooldown(is_melee)
@@ -1193,25 +1178,14 @@ assassination method if you time it right*/
 	return get_turf_air()
 
 /obj/mecha/proc/return_pressure()
-	. = 0
-	if(use_internal_tank)
-		. =  cabin_air.return_pressure()
-	else
-		var/datum/gas_mixture/t_air = get_turf_air()
-		if(t_air)
-			. = t_air.return_pressure()
-	return
+	var/datum/gas_mixture/t_air = return_air()
+	if(t_air)
+		. = t_air.return_pressure()
 
-//skytodo: //No idea what you want me to do here, mate.
 /obj/mecha/proc/return_temperature()
-	. = 0
-	if(use_internal_tank)
-		. = cabin_air.temperature
-	else
-		var/datum/gas_mixture/t_air = get_turf_air()
-		if(t_air)
-			. = t_air.temperature
-	return
+	var/datum/gas_mixture/t_air = return_air()
+	if(t_air)
+		. = t_air.temperature
 
 /obj/mecha/proc/connect(obj/machinery/atmospherics/portables_connector/new_port)
 	//Make sure not already connected to something else
@@ -1252,7 +1226,7 @@ assassination method if you time it right*/
 		move_inside(user)
 
 /obj/mecha/proc/move_inside(mob/user)
-	if(user.stat || !ishuman(user))
+	if(user.incapacitated() || !ishuman(user))
 		return
 
 	if(user.buckled)
@@ -1264,11 +1238,6 @@ assassination method if you time it right*/
 		return
 
 	log_message("[user] tries to move in.")
-	if(iscarbon(user))
-		var/mob/living/carbon/C = user
-		if(C.handcuffed)
-			to_chat(user, SPAN_DANGER("Kinda hard to climb in while handcuffed don't you think?"))
-			return
 	if(occupant)
 		user << sound('sound/mecha/UI_SCI-FI_Tone_Deep_Wet_15_stereo_error.ogg',channel = 4, volume = 100)
 		to_chat(user, SPAN_DANGER("The [name] is already occupied!"))
@@ -1277,7 +1246,7 @@ assassination method if you time it right*/
 
 	var/passed
 	if(dna)
-		if(user.dna.unique_enzymes==dna)
+		if(user.dna.unique_enzymes == dna)
 			passed = 1
 	else if(operation_allowed(user))
 		passed = 1
@@ -1286,6 +1255,7 @@ assassination method if you time it right*/
 		to_chat(user, SPAN_WARNING("Access denied"))
 		log_append_to_last("Permission denied.")
 		return
+
 	for(var/mob/living/carbon/slime/M in range(1,user))
 		if(M.Victim == user)
 			to_chat(user, "You're too busy getting your life sucked out of you.")
@@ -1457,99 +1427,90 @@ assassination method if you time it right*/
 //////////////////////////////////////////
 ////////  Mecha global iterators  ////////
 //////////////////////////////////////////
+/obj/mecha/Process()
+	// shitty spacemovement
+	do_inertial_movement()
+	regulate_temp()
+	give_air()
+	process_internal_damage()
 
+/obj/mecha/proc/do_inertial_movement()
+	if(!inertial_movement)
+		return
 
-/datum/global_iterator/mecha_preserve_temp  //normalizing cabin air temperature to 20 degrees celsius
-	delay = 20
+	anchored = FALSE
+	if(!step(src, inertial_movement) || check_for_support() || (thruster && thruster.do_move()))
+		inertial_movement = 0
+	anchored = TRUE 
 
-/datum/global_iterator/mecha_preserve_temp/Process(obj/mecha/mecha)
-	if(mecha.cabin_air && mecha.cabin_air.volume > 0)
-		var/delta = mecha.cabin_air.temperature - T20C
-		mecha.cabin_air.temperature -= max(-10, min(10, round(delta/4,0.1)))
+/obj/mecha/proc/regulate_temp()
+	if(hasInternalDamage(MECHA_INT_TEMP_CONTROL))
+		return
+	
+	if(cabin_air && cabin_air.volume > 0)
+		var/delta = cabin_air.temperature - T20C
+		cabin_air.temperature -= max(-10, min(10, round(delta/4,0.1)))
 
-/datum/global_iterator/mecha_tank_give_air
-	delay = 15
+/obj/mecha/proc/give_air()
+	if(!internal_tank)
+		return
 
-/datum/global_iterator/mecha_tank_give_air/Process(obj/mecha/mecha)
-	if(mecha.internal_tank)
-		var/datum/gas_mixture/tank_air = mecha.internal_tank.return_air()
-		var/datum/gas_mixture/cabin_air = mecha.cabin_air
+	var/datum/gas_mixture/tank_air = internal_tank.return_air()
 
-		var/release_pressure = mecha.internal_tank_valve
-		var/cabin_pressure = cabin_air.return_pressure()
-		var/pressure_delta = min(release_pressure - cabin_pressure, (tank_air.return_pressure() - cabin_pressure)/2)
-		var/transfer_moles = 0
-		if(pressure_delta > 0) //cabin pressure lower than release pressure
-			if(tank_air.temperature > 0)
-				transfer_moles = pressure_delta*cabin_air.volume/(cabin_air.temperature * R_IDEAL_GAS_EQUATION)
-				var/datum/gas_mixture/removed = tank_air.remove(transfer_moles)
-				cabin_air.merge(removed)
-		else if(pressure_delta < 0) //cabin pressure higher than release pressure
-			var/datum/gas_mixture/t_air = mecha.get_turf_air()
-			pressure_delta = cabin_pressure - release_pressure
+	var/release_pressure = internal_tank_valve
+	var/cabin_pressure = cabin_air.return_pressure()
+	var/pressure_delta = min(release_pressure - cabin_pressure, (tank_air.return_pressure() - cabin_pressure)/2)
+	var/transfer_moles = 0
+	if(pressure_delta > 0) //cabin pressure lower than release pressure
+		if(tank_air.temperature > 0)
+			transfer_moles = pressure_delta*cabin_air.volume/(cabin_air.temperature * R_IDEAL_GAS_EQUATION)
+			var/datum/gas_mixture/removed = tank_air.remove(transfer_moles)
+			cabin_air.merge(removed)
+	else if(pressure_delta < 0) //cabin pressure higher than release pressure
+		var/datum/gas_mixture/t_air = get_turf_air()
+		pressure_delta = cabin_pressure - release_pressure
+		if(t_air)
+			pressure_delta = min(cabin_pressure - t_air.return_pressure(), pressure_delta)
+		if(pressure_delta > 0) //if location pressure is lower than cabin pressure
+			transfer_moles = pressure_delta*cabin_air.volume/(cabin_air.temperature * R_IDEAL_GAS_EQUATION)
+			var/datum/gas_mixture/removed = cabin_air.remove(transfer_moles)
 			if(t_air)
-				pressure_delta = min(cabin_pressure - t_air.return_pressure(), pressure_delta)
-			if(pressure_delta > 0) //if location pressure is lower than cabin pressure
-				transfer_moles = pressure_delta*cabin_air.volume/(cabin_air.temperature * R_IDEAL_GAS_EQUATION)
-				var/datum/gas_mixture/removed = cabin_air.remove(transfer_moles)
-				if(t_air)
-					t_air.merge(removed)
-				else //just delete the cabin gas, we're in space or some shit
-					qdel(removed)
-	else
-		return stop()
+				t_air.merge(removed)
+			else //just delete the cabin gas, we're in space or some shit
+				qdel(removed)
 
-/datum/global_iterator/mecha_inertial_movement //inertial movement in space
-	delay = 7
+/obj/mecha/proc/process_internal_damage()
+	if(!hasInternalDamage())
+		return
 
-/datum/global_iterator/mecha_inertial_movement/Process(obj/mecha/mecha, direction)
-	if(direction)
-		mecha.anchored = FALSE //Unanchor while moving, so we can fall if we float over a hole witgh gravity
-		if(!step(mecha, direction)||mecha.check_for_support() || (mecha.thruster && mecha.thruster.do_move()))
-			mecha.inertia_dir = 0
-			stop()
-		mecha.anchored = TRUE
-		mecha.inertia_dir = direction
-	else
-		stop()
-
-/datum/global_iterator/mecha_internal_damage // processing internal damage
-
-/datum/global_iterator/mecha_internal_damage/Process(obj/mecha/mecha)
-	if(!mecha.hasInternalDamage())
-		return stop()
-
-	if(mecha.hasInternalDamage(MECHA_INT_FIRE))
-		if(!mecha.hasInternalDamage(MECHA_INT_TEMP_CONTROL) && prob(5))
-			mecha.clearInternalDamage(MECHA_INT_FIRE)
-		if(mecha.internal_tank)
-			if(mecha.internal_tank.return_pressure()>mecha.internal_tank.maximum_pressure && !(mecha.hasInternalDamage(MECHA_INT_TANK_BREACH)))
-				mecha.setInternalDamage(MECHA_INT_TANK_BREACH)
-			var/datum/gas_mixture/int_tank_air = mecha.internal_tank.return_air()
+	if(hasInternalDamage(MECHA_INT_FIRE))
+		if(!hasInternalDamage(MECHA_INT_TEMP_CONTROL) && prob(5))
+			clearInternalDamage(MECHA_INT_FIRE)
+		if(internal_tank)
+			if(internal_tank.return_pressure()>internal_tank.maximum_pressure && !(hasInternalDamage(MECHA_INT_TANK_BREACH)))
+				setInternalDamage(MECHA_INT_TANK_BREACH)
+			var/datum/gas_mixture/int_tank_air = internal_tank.return_air()
 			if(int_tank_air && int_tank_air.volume>0) //heat the air_contents
 				int_tank_air.temperature = min(6000+T0C, int_tank_air.temperature+rand(10,15))
-		if(mecha.cabin_air && mecha.cabin_air.volume>0)
-			mecha.cabin_air.temperature = min(6000+T0C, mecha.cabin_air.temperature+rand(10,15))
-			if(mecha.cabin_air.temperature>mecha.max_temperature/2)
-				mecha.take_damage(4/round(mecha.max_temperature/mecha.cabin_air.temperature,0.1),"fire")
+		if(cabin_air && cabin_air.volume>0)
+			cabin_air.temperature = min(6000+T0C, cabin_air.temperature+rand(10,15))
+			if(cabin_air.temperature>max_temperature/2)
+				take_damage(4/round(max_temperature/cabin_air.temperature,0.1),"fire")
 
-	if(mecha.hasInternalDamage(MECHA_INT_TEMP_CONTROL)) //stop the mecha_preserve_temp loop datum
-		mecha.pr_int_temp_processor.stop()
-
-	if(mecha.hasInternalDamage(MECHA_INT_TANK_BREACH)) //remove some air from internal tank
-		if(mecha.internal_tank)
-			var/datum/gas_mixture/int_tank_air = mecha.internal_tank.return_air()
+	if(hasInternalDamage(MECHA_INT_TANK_BREACH)) //remove some air from internal tank
+		if(internal_tank)
+			var/datum/gas_mixture/int_tank_air = internal_tank.return_air()
 			var/datum/gas_mixture/leaked_gas = int_tank_air.remove_ratio(0.10)
-			if(mecha.loc && hascall(mecha.loc,"assume_air"))
-				mecha.loc.assume_air(leaked_gas)
+			if(loc && hascall(loc,"assume_air"))
+				loc.assume_air(leaked_gas)
 			else
 				qdel(leaked_gas)
 
-	if(mecha.hasInternalDamage(MECHA_INT_SHORT_CIRCUIT))
-		if(mecha.get_charge())
-			mecha.spark_system.start()
-			mecha.cell.charge -= min(20,mecha.cell.charge)
-			mecha.cell.maxcharge -= min(20,mecha.cell.maxcharge)
+	if(hasInternalDamage(MECHA_INT_SHORT_CIRCUIT))
+		if(get_charge())
+			spark_system.start()
+			cell.charge -= min(20,cell.charge)
+			cell.maxcharge -= min(20,cell.maxcharge)
 
 
 //Used for generating damaged exosuits.

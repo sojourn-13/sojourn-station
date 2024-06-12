@@ -1,6 +1,6 @@
 /obj/mecha/medical
-	turnsound = 'sound/mecha/mechmove01.ogg'
-	stepsound = 'sound/mecha/mechstep.ogg'
+	step_sound = 'sound/mecha/mechstep.ogg'
+	step_turn_sound = 'sound/mecha/mechmove01.ogg'
 
 	internal_damage_threshold = 40
 	var/list/cargo = list()

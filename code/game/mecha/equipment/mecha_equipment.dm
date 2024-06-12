@@ -21,7 +21,13 @@
 	var/harmful = 1 //for those tools that you cannot smack people with but still need to click on them to use, aka sleepers
 	embed_mult = 0 // Mech mounted equipment, shouldn't ever embed
 
+/obj/item/mecha_parts/mecha_equipment/Initialize()
+	// Process will kick this off if not used
+	START_PROCESSING(SSobj, src)
+	. = ..()
+
 /obj/item/mecha_parts/mecha_equipment/Destroy()
+	STOP_PROCESSING(SSobj, src)
 	if(chassis)
 		chassis.equipment -= src
 		listclearnulls(chassis.equipment)

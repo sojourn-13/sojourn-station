@@ -22,7 +22,7 @@
 		) // 6 
 	)
 
-/datum/construction/mecha/odysseus_chassis/pawn_result()
+/datum/construction/mecha/odysseus_chassis/spawn_result()
 	var/obj/item/mecha_parts/chassis/const_holder = holder
 	const_holder.construct = new /datum/construction/reversible/mecha/odysseus(const_holder)
 	const_holder.icon = 'icons/mecha/mech_construction.dmi'

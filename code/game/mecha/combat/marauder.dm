@@ -68,7 +68,7 @@
 			occupant_message("Unable to move while connected to the air system port")
 			last_message = world.time
 		return 0
-	if(!thrusters && pr_inertial_movement.active())
+	if(!thrusters && inertial_movement)
 		return 0
 	if(state || !has_charge(step_energy_drain))
 		return 0
@@ -86,13 +86,13 @@
 	if(move_result)
 		if(istype(loc, /turf/space))
 			if(!check_for_support())
-				pr_inertial_movement.start(list(src,direction))
+				inertial_movement = direction
 				if(thrusters)
-					pr_inertial_movement.set_process_args(list(src,direction))
 					tmp_step_energy_drain = step_energy_drain*2
 
 		can_move = 0
-		spawn(tmp_step_in) can_move = 1
+		spawn(tmp_step_in)
+			can_move = 1
 		use_power(tmp_step_energy_drain)
 		return 1
 	return 0
