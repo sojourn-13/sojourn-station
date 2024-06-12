@@ -38,11 +38,11 @@ var/intercom_range_display_status = 0
 	return 0
 
 /client/proc/do_not_use_these()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "-None of these are for ingame use!!"
 
 /client/proc/camera_view()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Camera Range Display"
 
 	if(camera_range_display_status)
@@ -63,7 +63,7 @@ var/intercom_range_display_status = 0
 
 
 /client/proc/sec_camera_report()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Camera Report"
 
 	var/list/obj/machinery/camera/CL = list()
@@ -99,7 +99,7 @@ var/intercom_range_display_status = 0
 
 
 /client/proc/intercom_view()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Intercom Range Display"
 
 	if(intercom_range_display_status)
@@ -283,7 +283,7 @@ ADMIN_VERB_ADD(/client/proc/enable_debug_verbs, R_DEBUG, FALSE)
 				images.Remove(i)
 
 /client/proc/count_objects_on_z_level()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Count Objects On Level"
 	var/level = input("Which z-level?","Level?") as text
 	if(!level) return
@@ -326,7 +326,7 @@ ADMIN_VERB_ADD(/client/proc/enable_debug_verbs, R_DEBUG, FALSE)
 
 
 /client/proc/count_objects_all()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Count Objects All"
 
 	var/type_text = input("Which type path?","") as text
@@ -356,7 +356,7 @@ ADMIN_VERB_ADD(/client/proc/enable_debug_verbs, R_DEBUG, FALSE)
 var/global/prevent_airgroup_regroup = 0
 
 /client/proc/break_all_air_groups()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Break All Airgroups"
 
 	/*prevent_airgroup_regroup = 1
@@ -365,7 +365,7 @@ var/global/prevent_airgroup_regroup = 0
 	message_admins("[src.ckey] used 'Break All Airgroups'")*/
 
 /client/proc/regroup_all_air_groups()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Regroup All Airgroups Attempt"
 
 	to_chat(usr, "\red Proc disabled.")
@@ -376,7 +376,7 @@ var/global/prevent_airgroup_regroup = 0
 	message_admins("[src.ckey] used 'Regroup All Airgroups Attempt'")*/
 
 /client/proc/kill_pipe_processing()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Kill pipe processing"
 
 	to_chat(usr, "\red Proc disabled.")
@@ -388,7 +388,7 @@ var/global/prevent_airgroup_regroup = 0
 		message_admins("[src.ckey] used 'kill pipe processing', restoring all pipe processing.")*/
 
 /client/proc/kill_air_processing()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Kill air processing"
 
 	to_chat(usr, "\red Proc disabled.")
@@ -402,7 +402,7 @@ var/global/prevent_airgroup_regroup = 0
 //This proc is intended to detect lag problems relating to communication procs
 var/global/say_disabled = 0
 /client/proc/disable_communication()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Disable all communication verbs"
 
 	to_chat(usr, "\red Proc disabled.")
@@ -417,7 +417,7 @@ var/global/say_disabled = 0
 var/global/movement_disabled = 0
 var/global/movement_disabled_exception //This is the client that calls the proc, so he can continue to run around to gauge any change to lag.
 /client/proc/disable_movement()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Disable all movement"
 
 	to_chat(usr, "\red Proc disabled.")

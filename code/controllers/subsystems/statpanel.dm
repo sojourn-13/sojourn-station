@@ -42,7 +42,8 @@ SUBSYSTEM_DEF(statpanels)
 		if(!target.statbrowser_ready)
 			continue
 
-		if(target.stat_tab == "Status" && num_fires % status_wait == 0)
+		// Update really fast during lobby for maximum responsiveness
+		if(target.stat_tab == "Status" && (num_fires % status_wait == 0 || Master.current_runlevel == RUNLEVEL_LOBBY))
 			set_status_tab(target)
 
 		if(!target.holder)
@@ -134,7 +135,7 @@ SUBSYSTEM_DEF(statpanels)
 		list("Instances:", "[num2text(world.contents.len, 10)]"),
 		list("World Time:", "[world.time]"),
 		list("Globals:", GLOB.stat_entry(), "\ref[GLOB]"),
-		list("[config]:", "Edit", "\ref[config]"),
+		list("Config:", "Edit", "\ref[config]"),
 		list("Byond:", "(FPS:[world.fps]) (TickCount:[world.time/world.tick_lag]) (TickDrift:[round(Master.tickdrift,1)]([round((Master.tickdrift/(world.time/world.tick_lag))*100,0.1)]%)) (Internal Tick Usage: [round(MAPTICK_LAST_INTERNAL_TICK_USAGE,0.1)]%)"),
 		list("Master Controller:", Master.stat_entry(), "\ref[Master]"),
 		list("Failsafe Controller:", Failsafe.stat_entry(), "\ref[Failsafe]"),
