@@ -152,12 +152,12 @@
 		switch(sanity_targeting_zone)
 			if(BP_MOUTH, BP_EYES, BP_HEAD)
 				if(H.head)
-					difficulty_adjust += 30
+					difficulty_adjust += 10
 					time_adjust += 20
 					to_chat(user, SPAN_WARNING("[H.head] gets in the way."))
 
 				if(H.wear_mask)
-					var/allowed_mask = TRUE
+					var/allowed_mask = FALSE
 					//Proper mask = better
 					if(istype(H.wear_mask, /obj/item/clothing/mask/breath/medical))
 						difficulty_adjust += -10
@@ -175,22 +175,22 @@
 			//Arms and hands, waring an over suit is less punishing then gloves
 			if(BP_R_ARM, BP_L_ARM, BP_L_HAND, BP_R_HAND)
 				if(H.gloves)
-					difficulty_adjust += 30
+					difficulty_adjust += 10
 					time_adjust += 20
 					to_chat(user, SPAN_WARNING("[H.gloves] gets in the way."))
 				if(H.wear_suit)
-					difficulty_adjust += 15
+					difficulty_adjust += 5
 					time_adjust += 10
 					to_chat(user, SPAN_WARNING("[H.wear_suit] gets in the way."))
 
 			//legs, waring an over suit is less punishing then shoes
 			if(BP_R_LEG, BP_L_LEG, BP_L_FOOT, BP_R_FOOT)
 				if(H.shoes)
-					difficulty_adjust += 30
+					difficulty_adjust += 10
 					time_adjust += 20
 					to_chat(user, SPAN_WARNING("[H.shoes] gets in the way."))
 				if(H.wear_suit)
-					difficulty_adjust += 15
+					difficulty_adjust += 5
 					time_adjust += 10
 					to_chat(user, SPAN_WARNING("[H.wear_suit] gets in the way."))
 
@@ -198,7 +198,7 @@
 			//chest and lower body! ANY uniform but medical gown punish us, over-armor pushes us more so
 			if(BP_CHEST, BP_GROIN)
 				if(H.wear_suit)
-					difficulty_adjust += 30
+					difficulty_adjust += 10
 					time_adjust += 30
 					to_chat(user, SPAN_WARNING("[H.wear_suit] gets in the way."))
 
