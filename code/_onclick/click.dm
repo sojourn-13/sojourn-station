@@ -319,11 +319,8 @@
 	LEGACY_SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
 	var/turf/T = get_turf(src)
 	if(T && user.TurfAdjacent(T))
-		if(user.listed_turf == T)
-			user.listed_turf = null
-		else
-			user.listed_turf = T
-			user.client << output("[url_encode(json_encode(T.name))];", "statbrowser:create_listedturf")
+		user.listed_turf = T
+		user.client.stat_panel.send_message("create_listedturf", T.name)
 	return TRUE
 
 /mob/proc/TurfAdjacent(var/turf/T)

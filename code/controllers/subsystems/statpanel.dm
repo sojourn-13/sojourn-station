@@ -5,24 +5,27 @@ SUBSYSTEM_DEF(statpanels)
 	init_stage = INITSTAGE_EARLY // doesn't do anything currently
 	priority = FIRE_PRIORITY_STATPANEL
 	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY
+	flags = SS_NO_INIT
 	var/list/currentrun = list()
-	var/encoded_global_data
-	var/mc_data_encoded
+	var/list/global_data
+	var/list/mc_data
 	var/list/cached_images = list()
 
 	///how many subsystem fires between most tab updates
 	var/default_wait = 10
 	///how many subsystem fires between updates of the status tab
-	var/status_wait = 12
+	var/status_wait = 6
 	///how many subsystem fires between updates of the MC tab
 	var/mc_wait = 5
+	/// how many subsystem fires between updates of the turf examine tab
+	var/turf_wait = 2
 	///how many full runs this subsystem has completed. used for variable rate refreshes.
 	var/num_fires = 0
 
 /datum/controller/subsystem/statpanels/fire(resumed = FALSE)
 	if(!resumed)
 		num_fires++
-		var/list/global_data = list(
+		global_data = list(
 			"Storyteller: [master_storyteller ? master_storyteller : "being democratically elected"]",
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"Round Time: [roundduration2text()]",
@@ -31,15 +34,14 @@ SUBSYSTEM_DEF(statpanels)
 		var/eta_status = evacuation_controller.get_status_panel_eta()
 		if(eta_status)
 			global_data += eta_status
-		encoded_global_data = url_encode(json_encode(global_data))
 		src.currentrun = clients.Copy()
-		mc_data_encoded = null
+		mc_data = null
 
 	var/list/currentrun = src.currentrun
 	while(LAZYLEN(currentrun))
 		var/client/target = currentrun[LAZYLEN(currentrun)]
 		currentrun.len--
-		if(!target.statbrowser_ready)
+		if(!target.stat_panel.is_ready())
 			continue
 
 		// Update really fast during lobby for maximum responsiveness
@@ -47,14 +49,14 @@ SUBSYSTEM_DEF(statpanels)
 			set_status_tab(target)
 
 		if(!target.holder)
-			target << output("", "statbrowser:remove_admin_tabs")
+			target.stat_panel.send_message("remove_admin_tabs")
 		else
-			target << output("[target.get_preference_value(/datum/client_preference/staff/split_admin_tabs) == GLOB.PREF_YES]", "statbrowser:update_split_admin_tabs")
+			target.stat_panel.send_message("update_split_admin_tabs", target.get_preference_value(/datum/client_preference/staff/split_admin_tabs) == GLOB.PREF_YES)
 			
 			if(!("MC" in target.panel_tabs) || !("Tickets" in target.panel_tabs))
 				// target << output("[url_encode(target.holder.href_token)]", "statbrowser:add_admin_tabs")
 				// very super secret secure admin token to prevent href exploits
-				target << output("meowuwu", "statbrowser:add_admin_tabs")
+				target.stat_panel.send_message("add_admin_tabs", "meowuwu")
 
 			if(target.stat_tab == "MC" && ((num_fires % mc_wait == 0) || (target.get_preference_value(/datum/client_preference/staff/fast_mc_refresh) == GLOB.PREF_YES)))
 				set_MC_tab(target)
@@ -67,9 +69,9 @@ SUBSYSTEM_DEF(statpanels)
 			// 	if(num_fires % default_wait == 0)
 			// 		set_spells_tab(target, target_mob)
 
-			if(target_mob?.listed_turf && num_fires % default_wait == 0)
-				if(!target_mob.TurfAdjacent(target_mob.listed_turf))
-					target << output("", "statbrowser:remove_listedturf")
+			if(target_mob?.listed_turf && num_fires % turf_wait == 0)
+				if(!target_mob.TurfAdjacent(target_mob.listed_turf) || isnull(target_mob.listed_turf))
+					target.stat_panel.send_message("remove_listedturf")
 					target_mob.listed_turf = null
 				else if(target.stat_tab == target_mob?.listed_turf.name || !(target_mob?.listed_turf.name in target.panel_tabs))
 					set_turf_examine_tab(target, target_mob)
@@ -77,19 +79,21 @@ SUBSYSTEM_DEF(statpanels)
 			return
 
 /datum/controller/subsystem/statpanels/proc/set_status_tab(client/target)
-	if(!encoded_global_data)//statbrowser hasnt fired yet and we were called from immediate_send_stat_data()
+	if(!global_data)//statbrowser hasnt fired yet and we were called from immediate_send_stat_data()
 		return
 
-	var/ping_str = url_encode("Ping: [round(target.lastping, 1)]ms (Average: [round(target.avgping, 1)]ms)")
-	var/other_str = url_encode(json_encode(target.mob?.get_status_tab_items()))
-	target << output("[encoded_global_data];[ping_str];[other_str]", "statbrowser:update")
+	target.stat_panel.send_message("update_stat", list(
+		global_data = global_data,
+		ping_str = "Ping: [round(target.lastping, 1)]ms (Average: [round(target.avgping, 1)]ms)",
+		other_str = target.mob?.get_status_tab_items(),
+	))
 
 /datum/controller/subsystem/statpanels/proc/set_MC_tab(client/target)
 	var/turf/eye_turf = get_turf(target.eye)
-	var/coord_entry = url_encode(COORD(eye_turf))
-	if(!mc_data_encoded)
+	var/coord_entry = COORD(eye_turf)
+	if(!mc_data)
 		generate_mc_data()
-	target << output("[mc_data_encoded];[coord_entry]", "statbrowser:update_mc")
+	target.stat_panel.send_message("update_mc", list(mc_data = mc_data, coord_entry = coord_entry))
 
 /datum/controller/subsystem/statpanels/proc/set_turf_examine_tab(client/target, mob/target_mob)
 	var/list/overrides = list()
@@ -126,11 +130,10 @@ SUBSYSTEM_DEF(statpanels)
 		else
 			turfitems[++turfitems.len] = list("[turf_content.name]", REF(turf_content))
 
-	turfitems = url_encode(json_encode(turfitems))
-	target << output("[turfitems];", "statbrowser:update_listedturf")
+	target.stat_panel.send_message("update_listedturf", turfitems)
 
 /datum/controller/subsystem/statpanels/proc/generate_mc_data()
-	var/list/mc_data = list(
+	mc_data = list(
 		list("CPU:", world.cpu),
 		list("Instances:", "[num2text(world.contents.len, 10)]"),
 		list("World Time:", "[world.time]"),
@@ -144,11 +147,10 @@ SUBSYSTEM_DEF(statpanels)
 	for(var/datum/controller/subsystem/sub_system as anything in Master.subsystems)
 		mc_data[++mc_data.len] = list("\[[sub_system.state_letter()]][sub_system.name]", sub_system.stat_entry(), "\ref[sub_system]")
 	mc_data[++mc_data.len] = list("Camera Net", "Cameras: [LAZYLEN(cameranet.cameras)] | Chunks: [LAZYLEN(cameranet.chunks)]", "\ref[cameranet]")
-	mc_data_encoded = url_encode(json_encode(mc_data))
 
 ///immediately update the active statpanel tab of the target client
 /datum/controller/subsystem/statpanels/proc/immediate_send_stat_data(client/target)
-	if(!target.statbrowser_ready)
+	if(!target.stat_panel.is_ready())
 		return FALSE
 
 	if(target.stat_tab == "Status")
@@ -161,8 +163,8 @@ SUBSYSTEM_DEF(statpanels)
 	// 	return TRUE
 
 	if(target_mob?.listed_turf)
-		if(!target_mob.TurfAdjacent(target_mob.listed_turf))
-			target << output("", "statbrowser:remove_listedturf")
+		if(!target_mob.TurfAdjacent(target_mob.listed_turf) || isnull(target_mob.listed_turf))
+			target.stat_panel.send_message("remove_listedturf")
 			target_mob.listed_turf = null
 
 		else if(target.stat_tab == target_mob?.listed_turf.name || !(target_mob?.listed_turf.name in target.panel_tabs))
@@ -190,41 +192,5 @@ SUBSYSTEM_DEF(statpanels)
 	SIGNAL_HANDLER
 	SSstatpanels.cached_images -= REF(src)
 
-/// verbs that send information from the browser UI
-/client/verb/set_tab(tab as text|null)
-	set name = "Set Tab"
-	set hidden = TRUE
-
-	stat_tab = tab
-	SSstatpanels.immediate_send_stat_data(src)
-
-/client/verb/send_tabs(tabs as text|null)
-	set name = "Send Tabs"
-	set hidden = TRUE
-
-	panel_tabs |= tabs
-
-/client/verb/remove_tabs(tabs as text|null)
-	set name = "Remove Tabs"
-	set hidden = TRUE
-
-	panel_tabs -= tabs
-
-/client/verb/reset_tabs()
-	set name = "Reset Tabs"
-	set hidden = TRUE
-
-	panel_tabs = list()
-
-/client/verb/panel_ready()
-	set name = "Panel Ready"
-	set hidden = TRUE
-
-	statbrowser_ready = TRUE
-	init_verbs()
-
-/client/verb/update_verbs()
-	set name = "Update Verbs"
-	set hidden = TRUE
-
-	init_verbs()
+/// Stat panel window declaration
+/client/var/datum/tgui_window/stat_panel

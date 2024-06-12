@@ -221,7 +221,7 @@ ADMIN_VERB_ADD(/client/proc/debugstatpanel, R_DEBUG, TRUE)
 /client/proc/debugstatpanel()
 	set category = "Debug"
 	set name = "Debug Stat Panel"
-	src << output("", "statbrowser:create_debug")
+	stat_panel.send_message("create_debug")
 
 #define MAX_WARNS 3
 #define AUTOBANTIME 10
