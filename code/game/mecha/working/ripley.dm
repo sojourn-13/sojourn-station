@@ -13,7 +13,7 @@
 	max_equip = 6
 
 /obj/mecha/working/ripley/Destroy()
-	for(var/atom/movable/A in src.cargo)
+	for(var/atom/movable/A in cargo)
 		A.loc = loc
 		var/turf/T = loc
 		if(istype(T))
@@ -50,7 +50,7 @@
 	price_tag = 7000
 
 /obj/mecha/working/ripley/deathripley/New()
-	..()
+	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/tool/safety_clamp
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/flak/loaded
@@ -61,14 +61,13 @@
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/armor_booster/antiproj_armor_booster
 	ME.attach(src)
-	return
 
 /obj/mecha/working/ripley/mining
 	desc = "An old, dusty mining ripley."
 	name = "APLU \"Miner\""
 
 /obj/mecha/working/ripley/mining/New()
-	..()
+	. = ..()
 	//Attach drill
 	if(prob(25)) //Possible diamond drill... Feeling lucky?
 		var/obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill/D = new /obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill
@@ -80,7 +79,7 @@
 	//Attach hydrolic clamp
 	var/obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp/HC = new /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp
 	HC.attach(src)
-	for(var/obj/item/mecha_parts/mecha_tracking/B in src.contents)//Deletes the beacon so it can't be found easily
-		qdel (B)
+	for(var/obj/item/mecha_parts/mecha_tracking/B in contents)//Deletes the beacon so it can't be found easily
+		qdel(B)
 
 

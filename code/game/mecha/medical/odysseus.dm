@@ -20,14 +20,14 @@
 	RegisterSignal(hud, COMSIG_HUD_DELETED, PROC_REF(hud_deleted))
 
 /obj/mecha/medical/odysseus/Destroy()
-	if (hud)
+	if(hud)
 		QDEL_NULL(hud)
 	return ..()
 
 /obj/mecha/medical/odysseus/moved_inside(mob/living/carbon/human/H)
 	if(..())
 		if(istype(H))
-			if (!isnull(hud))
+			if(!isnull(hud))
 				if(H.glasses)
 					occupant_message(SPAN_WARNING("[H.glasses] prevent you from using [src] [hud]."))
 				else
@@ -41,8 +41,7 @@
 		var/mob/living/carbon/human/H = occupant
 		if((H.glasses == hud) && (!isnull(hud)))
 			H.glasses = null
-	..()
-	return
+	. = ..()
 
 
 
@@ -58,19 +57,7 @@
 
 
 /obj/item/clothing/glasses/hud/health/mech/process_hud(var/mob/M)
-/*
-	to_chat(world, "view(M)")
-	for(var/mob/mob in view(M))
-		to_chat(world, "[mob]")
-	to_chat(world, "view(M.client)")
-	for(var/mob/mob in view(M.client))
-		to_chat(world, "[mob]")
-	to_chat(world, "view(M.loc)")
-	for(var/mob/mob in view(M.loc))
-		to_chat(world, "[mob]")
-*/
-
-	if (isnull(src))
+	if(isnull(src))
 		return
 	if(!M || M.stat || !(M in view(M)))
 		return
@@ -83,8 +70,8 @@
 			continue
 		var/foundVirus = 0
 
-		for (var/ID in patient.virus2)
-			if (ID in virusDB)
+		for(var/ID in patient.virus2)
+			if(ID in virusDB)
 				foundVirus = 1
 				break
 

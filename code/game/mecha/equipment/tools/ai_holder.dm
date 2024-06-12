@@ -27,34 +27,36 @@
 		chassis.occupant = prev_occupant
 		prev_occupant.forceMove(chassis)
 
-
-/obj/item/mecha_parts/mecha_equipment/tool/ai_holder/proc/occupied(var/mob/living/silicon/ai/AI)
+/obj/item/mecha_parts/mecha_equipment/tool/ai_holder/proc/occupied(mob/living/silicon/ai/AI)
 	if(chassis.occupant && !isAI(chassis.occupant))
 		prev_occupant = chassis.occupant
 		prev_occupant.forceMove(src)
+
 	AI.set_mecha(chassis)
 	occupant = AI
 	chassis.occupant = occupant
 	chassis.update_icon()
 	AI.add_mecha_verbs()
 
-/obj/item/mecha_parts/mecha_equipment/tool/ai_holder/interact(var/mob/living/silicon/ai/user)
+/obj/item/mecha_parts/mecha_equipment/tool/ai_holder/interact(mob/living/silicon/ai/user)
 	//Enter
 	if(!chassis)
 		//No chasis
 		return
+
 	if(occupant)
 		//OC exist
 		if(occupant == user)
 			go_out()
 		else
 			to_chat(user, "Controller is already occupied!")
-	else
-		//No OC
-		if(isAI(user))
-			//user is AI
-			occupied(user)
-			//"Exit"
+		return
+
+	//No OC
+	if(isAI(user))
+		//user is AI
+		occupied(user)
+		//"Exit"
 
 /obj/item/mecha_parts/mecha_equipment/tool/ai_holder/attach()
 	..()
@@ -64,15 +66,14 @@
 /obj/item/mecha_parts/mecha_equipment/tool/ai_holder/detach()
 	if(occupant)
 		go_out()
-	qdel(Cam)
+	QDEL_NULL(Cam)
 
-
-/obj/mecha/attack_ai(var/mob/living/user)
+/obj/mecha/attack_ai(mob/living/user)
 	var/obj/item/mecha_parts/mecha_equipment/tool/ai_holder/AH = locate() in src
 	if(AH)
 		AH.interact(user)
 
-/mob/living/silicon/ai/proc/set_mecha(var/obj/mecha/M)
+/mob/living/silicon/ai/proc/set_mecha(obj/mecha/M)
 	if(M)
 		if(controlled_mech == M)
 			return

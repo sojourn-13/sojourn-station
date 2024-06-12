@@ -21,21 +21,19 @@
 	internal_damage_threshold = 30
 
 /obj/mecha/combat/durand/New()
-	..()
+	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/ultracannon/loaded(src)
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/scattershot/loaded(src)
 	ME.attach(src)
-	return
 
-/obj/mecha/combat/durand/relaymove(mob/user,direction)
+/obj/mecha/combat/durand/relaymove(mob/user, direction)
 	if(defence)
 		if(world.time - last_message > 20)
-			src.occupant_message("<font color='red'>Unable to move while in defence mode</font>")
+			occupant_message("<font color='red'>Unable to move while in defence mode</font>")
 			last_message = world.time
 		return 0
 	. = ..()
-	return
 
 /obj/mecha/combat/durand/security
 	desc = "A heavy mech suit even older than the standard durand. This one has been repurposed for the security team but isn't in the best shape."
@@ -47,7 +45,7 @@
 	internal_damage_threshold = 40
 
 /obj/mecha/combat/durand/security/New()
-	..()//Let it equip whatever is needed.
+	. = ..()//Let it equip whatever is needed. - TODO: this is stupid
 	var/obj/item/mecha_parts/mecha_equipment/ME
 	if(equipment.len)//Now to remove it and equip anew.
 		for(ME in equipment)
@@ -61,25 +59,24 @@
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword
 	ME.attach(src)
-	return
 
 /obj/mecha/combat/durand/verb/defence_mode()
 	set category = "Exosuit Interface"
 	set name = "Toggle defence mode"
 	set src = usr.loc
 	set popup_menu = 0
-	if(usr!=src.occupant)
+
+	if(usr != occupant)
 		return
+
 	defence = !defence
 	if(defence)
 		deflect_chance += def_boost
-		src.occupant_message("<font color='blue'>You enable [src] defence mode.</font>")
+		occupant_message("<font color='blue'>You enable [src] defence mode.</font>")
 	else
 		deflect_chance -= def_boost
-		src.occupant_message("<font color='red'>You disable [src] defence mode.</font>")
-	src.log_message("Toggled defence mode.")
-	return
-
+		occupant_message("<font color='red'>You disable [src] defence mode.</font>")
+	log_message("Toggled defence mode.")
 
 /obj/mecha/combat/durand/get_stats_part()
 	var/output = ..()
@@ -98,7 +95,7 @@
 	return output
 
 /obj/mecha/combat/durand/Topic(href, href_list)
-	..()
-	if (href_list["toggle_defence_mode"])
-		src.defence_mode()
-	return
+	. = ..()
+
+	if(href_list["toggle_defence_mode"])
+		defence_mode()

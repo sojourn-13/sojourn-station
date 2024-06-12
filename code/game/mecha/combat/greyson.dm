@@ -22,7 +22,7 @@
 	pixel_y = -16
 
 /obj/mecha/combat/greyson/New()
-	..()
+	. = ..()
 	name += " [rand(0, 9)][rand(0, 9)][rand(0, 9)][rand(0, 9)]" // Random numbers for the name
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/ranged_weapon/ballistic/ultracannon/loaded(src)
 	ME.attach(src)
