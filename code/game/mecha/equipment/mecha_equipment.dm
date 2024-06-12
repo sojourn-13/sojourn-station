@@ -16,6 +16,7 @@
 	var/obj/mecha/chassis = null
 	var/range = MECHA_MELEE //bitflags
 	var/salvageable = 1
+	var/selectable = 1	// Set to 0 for passive equipment such as mining scanner or armor plates
 	var/required_type = /obj/mecha //may be either a type or a list of allowed types
 	var/harmful = 1 //for those tools that you cannot smack people with but still need to click on them to use, aka sleepers
 	embed_mult = 0 // Mech mounted equipment, shouldn't ever embed
@@ -29,13 +30,6 @@
 		update_chassis_page()
 		chassis = null
 	return ..()
-
-/obj/item/mecha_parts/mecha_equipment/proc/do_after_cooldown(target=1)
-	sleep(equip_cooldown)
-	set_ready_state(1)
-	if(target && chassis)
-		return 1
-	return 0
 
 /obj/item/mecha_parts/mecha_equipment/proc/update_chassis_page()
 	if(chassis)
@@ -52,7 +46,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/proc/destroy()//missiles detonating, teleporter creating singularity?
 	if(chassis)
-		chassis.occupant_message("<font color='red'>The [src] is destroyed!</font>")
+		chassis.occupant_message(SPAN_DANGER("[src] is destroyed"))
 		chassis.log_append_to_last("[src] is destroyed.",1)
 
 		// TODO: cursed
@@ -70,13 +64,21 @@
 /obj/item/mecha_parts/mecha_equipment/proc/get_equip_info()
 	if(!chassis)
 		return
-	return "<span style=\"color:[equip_ready?"#0f0":"#f00"];\">*</span>&nbsp;[chassis.selected==src?"<b>":"<a href='?src=\ref[chassis];select_equip=\ref[src]'>"][name][chassis.selected==src?"</b>":"</a>"]"
+	var/txt = "<span style=\"color:[equip_ready?"#0f0":"#f00"];\">*</span>&nbsp;"
+	if(chassis.selected == src)
+		txt += "<b>[name]</b>"
+	else if(selectable)
+		txt += "<a href='?src=\ref[chassis];select_equip=\ref[src]'>[name]</a>"
+	else
+		txt += "[name]"
+
+	return txt
 
 /obj/item/mecha_parts/mecha_equipment/proc/is_ranged()//add a distance restricted equipment. Why not?
-	return range&MECHA_RANGED
+	return range & MECHA_RANGED
 
 /obj/item/mecha_parts/mecha_equipment/proc/is_melee()
-	return range&MECHA_MELEE
+	return range & MECHA_MELEE
 
 /obj/item/mecha_parts/mecha_equipment/proc/action_checks(atom/target)
 	if(!target)
@@ -162,6 +164,22 @@
 	if(effective_faction.Find(target.faction)) // Is the mob's in our list of factions we're effective against?
 		power *= damage_mult // Increase the damage
 	target.hit_with_weapon(src, user, power, hit_zone)
+
+/obj/item/mecha_parts/mecha_equipment/proc/start_cooldown()
+	set_ready_state(0)
+	chassis.use_power(energy_drain)
+	addtimer(src, PROC_REF(set_ready_state), equip_cooldown, FALSE, 1)
+
+/obj/item/mecha_parts/mecha_equipment/proc/do_after_cooldown(atom/target)
+	if(!chassis)
+		return
+	var/C = chassis.loc
+	set_ready_state(0)
+	chassis.use_power(energy_drain)
+	. = do_after(chassis.occupant, equip_cooldown, target = target)
+	set_ready_state(1)
+	if(!chassis || 	chassis.loc != C || src != chassis.selected)
+		return 0
 
 /obj/item/mecha_parts/mecha_equipment/proc/can_attach(obj/mecha/M)
 	if(M.equipment.len >= M.max_equip)
