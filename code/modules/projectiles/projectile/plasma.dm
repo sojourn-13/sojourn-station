@@ -24,7 +24,7 @@
 /obj/item/projectile/plasma/light
 	name = "light plasma bolt"
 	damage_types = list(BURN = 33)
-	armor_divisor = 1
+	armor_divisor = 0.65
 	recoil = 7
 
 /obj/item/projectile/plasma/heavy

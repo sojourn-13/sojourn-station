@@ -40,8 +40,8 @@
 	It bears a tau cross marking it as produced by the Church of Absolute's New Testament weapons division."
 	icon_state = "nt_longsword"
 	item_state = "nt_longsword"
-	force = WEAPON_FORCE_ROBUST
-	armor_divisor = ARMOR_PEN_EXTREME
+	force = WEAPON_FORCE_ROBUST + 4
+	armor_divisor = ARMOR_PEN_HALF
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 500
 	matter = list(MATERIAL_BIOMATTER = 50, MATERIAL_STEEL = 10, MATERIAL_PLASTEEL = 5)
@@ -67,8 +67,8 @@
 	icon_state = "nt_halberd"
 	item_state = "nt_halberd"
 	wielded_icon = "nt_halberd_wielded"
-	force = WEAPON_FORCE_BRUTAL
-	armor_divisor = ARMOR_PEN_MASSIVE
+	force = WEAPON_FORCE_BRUTAL + 5
+	armor_divisor = ARMOR_PEN_MODERATE
 	max_upgrades = 3
 	w_class = ITEM_SIZE_HUGE
 	slot_flags = SLOT_BACK
@@ -85,8 +85,8 @@
 	item_state = "nt_scourge"
 	force = WEAPON_FORCE_ROBUST
 	var/force_extended = WEAPON_FORCE_PAINFUL
-	armor_divisor = ARMOR_PEN_MASSIVE
-	var/armor_divisor_extended = ARMOR_PEN_HALF
+	armor_divisor = 1
+	var/armor_divisor_extended = 0.5
 	var/extended = FALSE
 	var/agony = 20
 	var/agony_extended = 45 //Church harmbaton! This is legit better then a normal baton as it can be upgraded AND has base 15 damage
@@ -189,7 +189,7 @@
 	icon_state = "nt_flanged"
 	item_state = "nt_flanged"
 	force = WEAPON_FORCE_ROBUST
-	armor_divisor = ARMOR_PEN_MASSIVE
+	armor_divisor = ARMOR_PEN_HALF
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
 	matter = list(MATERIAL_BIOMATTER = 30, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 3)
@@ -239,9 +239,9 @@
 	icon_state = "nt_warhammer"
 	item_state = "nt_warhammer"
 	wielded_icon = "nt_warhammer_wielded"
-	force = WEAPON_FORCE_DANGEROUS //Naturally weaker do to knockbacking are targets (can stun lock)
+	force = WEAPON_FORCE_BRUTAL - 3 //Naturally weaker do to knockbacking are targets (can stun lock)
 	structure_damage_factor = STRUCTURE_DAMAGE_BREACHING
-	armor_divisor = ARMOR_PEN_EXTREME
+	armor_divisor = ARMOR_PEN_MODERATE
 	w_class = ITEM_SIZE_BULKY
 	price_tag = 800
 	matter = list(MATERIAL_BIOMATTER = 30, MATERIAL_STEEL = 5, MATERIAL_PLASTEEL = 8)
@@ -470,7 +470,7 @@
 	item_state = "nt_shortsword"
 	force = WEAPON_FORCE_DANGEROUS
 	throwforce = WEAPON_FORCE_WEAK
-	armor_divisor = ARMOR_PEN_DEEP
+	armor_divisor = ARMOR_PEN_SHALLOW
 	price_tag = 300
 	matter = list(MATERIAL_BIOMATTER = 25, MATERIAL_STEEL = 5)
 
