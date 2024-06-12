@@ -324,8 +324,7 @@
 	LEGACY_SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
 	var/turf/T = get_turf(src)
 	if(T && user.TurfAdjacent(T))
-		user.listed_turf = T
-		user.client.stat_panel.send_message("create_listedturf", T.name)
+		user.set_listed_turf(T)
 	return TRUE
 
 /mob/proc/TurfAdjacent(var/turf/T)

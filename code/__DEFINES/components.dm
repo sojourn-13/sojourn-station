@@ -90,6 +90,8 @@
 // /mob signals
 #define COMSIG_MOB_LIFE  "mob_life"							 //from mob/Life()
 #define COMSIG_MOB_LOGIN "mob_login"							//from mob/Login()
+///from base of /mob/Logout(): ()
+#define COMSIG_MOB_LOGOUT "mob_logout"
 #define COMSIG_MOB_DEATH "mob_death"							//from mob/death()
 
 #define COMSIG_TRACE_IMPACT "trace_impact" //Soj edit

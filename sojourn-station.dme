@@ -7,6 +7,7 @@
 #define DEBUG
 // END_PREFERENCES
 // BEGIN_INCLUDE
+#include "code\_byond_version_compat.dm"
 #include "code\_compile_options.dm"
 #include "code\_debugger.dm"
 #include "code\client_macros.dm"
@@ -293,6 +294,7 @@
 #include "code\controllers\subsystems\processing\fastprocess.dm"
 #include "code\controllers\subsystems\processing\mobs.dm"
 #include "code\controllers\subsystems\processing\nano.dm"
+#include "code\controllers\subsystems\processing\obj_tab_items.dm"
 #include "code\controllers\subsystems\processing\objs.dm"
 #include "code\controllers\subsystems\processing\processing.dm"
 #include "code\controllers\subsystems\processing\turf.dm"
@@ -355,6 +357,7 @@
 #include "code\datums\components\_component.dm"
 #include "code\datums\components\ai_like_control.dm"
 #include "code\datums\components\clothing_sanity_protection.dm"
+#include "code\datums\components\connect_mob_behalf.dm"
 #include "code\datums\components\fabric.dm"
 #include "code\datums\components\heat.dm"
 #include "code\datums\craft\crafting_items.dm"

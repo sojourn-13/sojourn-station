@@ -88,5 +88,4 @@
 		client.CAN_MOVE_DIAGONALLY = FALSE
 		add_click_catcher()
 		client.fullscreen_check()
-
-	LEGACY_SEND_SIGNAL(src, COMSIG_MOB_LOGIN)
+		client.init_verbs()
