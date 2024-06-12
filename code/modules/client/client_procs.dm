@@ -770,8 +770,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/list/verbstoprocess = verbs.Copy()
 	if(mob)
 		verbstoprocess += mob.verbs
-		for(var/atom/movable/thing as anything in mob.contents)
-			verbstoprocess += thing.verbs
+		// no go, items have a ton of shitty verbs and we init_verbs after we're dressed
+		// for(var/atom/movable/thing as anything in mob.contents)
+		// 	verbstoprocess += thing.verbs
 	panel_tabs.Cut() // panel_tabs get reset in init_verbs on JS side anyway
 	for(var/procpath/verb_to_init as anything in verbstoprocess)
 		if(!verb_to_init)

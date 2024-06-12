@@ -87,3 +87,4 @@
 			client.create_UI(src.type)
 		client.CAN_MOVE_DIAGONALLY = FALSE
 		client.fullscreen_check()
+		client.init_verbs()
