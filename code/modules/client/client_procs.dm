@@ -357,6 +357,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		holder.owner = null
 		admins -= src
 	QDEL_NULL(tooltips)
+	if(obj_window)
+		QDEL_NULL(obj_window)
 	if(dbcon.IsConnected())
 		var/DBQuery/query = dbcon.NewQuery("UPDATE players SET last_seen = Now() WHERE id = [src.id]")
 		if(!query.Execute())
@@ -823,9 +825,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		winset(usr, "mainwindow", "can-resize=true")
 
 	if(fully_created)
-		INVOKE_ASYNC(src, .verb/fit_viewport)
+		INVOKE_ASYNC(src, VERB_REF(fit_viewport))
 	else
-		addtimer(CALLBACK(src, .verb/fit_viewport), 1 SECONDS)
+		addtimer(CALLBACK(src, VERB_REF(fit_viewport)), 1 SECONDS)
 
 
 /client/verb/toggle_fullscreen() // F11 hotkey
