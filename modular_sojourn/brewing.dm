@@ -419,6 +419,7 @@
 /obj/structure/fermentation_keg/proc/end_brew()
 	icon_state = "barrel_tapless_ready"
 	ready_for_bottleing = TRUE
+	brewing = FALSE
 	price_tag = price_tag_setter
 
 
