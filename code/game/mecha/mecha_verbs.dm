@@ -8,46 +8,6 @@
 /obj/mecha/proc/addVerb(verb_path)
 	verbs += verb_path
 
-
-/obj/mecha/verb/connect_to_port()
-	set name = "Connect to port"
-	set category = "Exosuit Interface"
-	set src = usr.loc
-	set popup_menu = 0
-
-	if(usr != occupant)
-		return
-
-	var/obj/machinery/atmospherics/portables_connector/possible_port = locate(/obj/machinery/atmospherics/portables_connector) in loc
-	if(possible_port)
-		if(connect(possible_port))
-			occupant_message(SPAN_NOTICE("\The [name] connects to the port."))
-			verbs += /obj/mecha/verb/disconnect_from_port
-			verbs -= /obj/mecha/verb/connect_to_port
-			return
-		else
-			occupant_message(SPAN_DANGER("\The [name] failed to connect to the port."))
-			return
-	else
-		occupant_message("Nothing happens")
-
-
-/obj/mecha/verb/disconnect_from_port()
-	set name = "Disconnect from port"
-	set category = "Exosuit Interface"
-	set src = usr.loc
-	set popup_menu = 0
-
-	if(usr != occupant)
-		return
-
-	if(disconnect())
-		occupant_message(SPAN_NOTICE("[name] disconnects from the port."))
-		verbs -= /obj/mecha/verb/disconnect_from_port
-		verbs += /obj/mecha/verb/connect_to_port
-	else
-		occupant_message(SPAN_DANGER("[name] is not connected to the port at the moment."))
-
 /obj/mecha/verb/toggle_lights()
 	set name = "Toggle Lights"
 	set category = "Exosuit Interface"

@@ -27,7 +27,7 @@
 	layer = BELOW_MOB_LAYER//icon draw layer
 	infra_luminosity = 15 //byond implementation is bugged.
 	var/initial_icon = null //Mech type for resetting icon. Only used for reskinning kits (see custom items)
-	var/can_move = 1
+	var/can_move = 0
 	var/mob/living/carbon/occupant = null
 	var/list/dropped_items = list()
 
@@ -129,9 +129,7 @@
 	spark_system.attach(src)
 	add_cell()
 	START_PROCESSING(SSobj, src)
-	removeVerb(/obj/mecha/verb/disconnect_from_port)
 	log_message("[name] created.")
-	loc.Entered(src)
 	GLOB.mechas_list += src //global mech list
 	add_hearing()
 
@@ -177,6 +175,7 @@
 		QDEL_NULL(internal_tank)
 
 	equipment.Cut()
+	connected_port = null
 
 	QDEL_NULL(events)
 	QDEL_NULL(cabin_air)
@@ -257,24 +256,6 @@
 	radio.icon_state = icon_state
 	radio.subspace_transmission = 1
 
-/obj/mecha/proc/enter_after(delay as num, var/mob/user as mob, var/numticks = 5)
-	var/turf/T = user.loc
-
-	// TODO: cursed
-	var/datum/progressbar/progbar = new(user, delay, user)
-	var/starttime = world.time
-
-	for(var/i = 0, i < delay, i++)
-		sleep(1)
-		progbar.update(world.time - starttime)
-		if(i % numticks == 0)
-			if(!src || !user || !user.canmove || !(user.loc == T))
-				qdel(progbar)
-				return 0
-
-	qdel(progbar)
-	return 1
-
 //Called each step by mechas, and periodically when drifting through space
 /obj/mecha/proc/check_for_support()
 	var/turf/T = get_turf(src)
@@ -327,7 +308,7 @@
 /obj/mecha/proc/click_action(atom/target, mob/user)
 	if(!occupant || occupant != user)
 		return
-	if(user.stat)
+	if(user.incapacitated())
 		return
 	if(state)
 		occupant_message("<font color='red'>Maintenance protocols in effect.</font>")
@@ -517,14 +498,12 @@
 //This uses a goddamn do_after for movement, this is very bad. Todo: Redesign this in future
 /obj/mecha/proc/do_move(direction)
 	//If false, it's just moved, or locked down, or disabled or something
-	if(!can_move)
+	if(can_move >= world.time)
 		return 0
-
 	//Currently drifting through space. The iterator that controls this will cancel it if the mech finds
 	// things to grip or enables thrusters
 	if(inertial_movement)
 		return 0
-
 	if(!has_charge(step_energy_drain))
 		return 0
 
@@ -579,11 +558,20 @@
 
 	anchored = TRUE //Reanchor after moving
 	if(move_result)
-		can_move = 0
-		spawn(step_in)
-			can_move = 1
+		aftermove()
+		can_move = world.time + step_in
 		return 1
 	return 0
+
+/obj/mecha/proc/aftermove()
+	if(occupant)
+		var/obj/machinery/atmospherics/portables_connector/possible_port = locate() in loc
+		if(possible_port)
+			var/obj/screen/alert/mech_port_available/A = occupant.throw_alert("mechaport", /obj/screen/alert/mech_port_available)
+			if(A) 
+				A.target = possible_port
+		else
+			occupant.clear_alert("mechaport")
 
 /obj/mecha/proc/mechturn(direction, movemode = MOVEMODE_STEP)
 	//When turning in 0g with a thruster, we do a little airburst to rotate us
@@ -599,19 +587,17 @@
 	return 1
 
 /obj/mecha/proc/mechstep(direction, movemode = MOVEMODE_STEP)
-	var/result = Move(get_step(src, direction),direction)
-	if(result)
+	. = step(src, direction)
+	if(.)
 		if(movemode == MOVEMODE_STEP)
 			playsound(src,step_sound,100,1)
-	return result
 
 
 /obj/mecha/proc/mechsteprand(movemode = MOVEMODE_STEP)
-	var/result = step_rand(src)
-	if(result)
+	. = step_rand(src)
+	if(.)
 		if(movemode == MOVEMODE_STEP)
 			playsound(src,step_sound,100,1)
-	return result
 
 //Used for jetpacks
 /obj/mecha/total_movement_delay()
@@ -1182,7 +1168,7 @@ assassination method if you time it right*/
 
 /obj/mecha/proc/connect(obj/machinery/atmospherics/portables_connector/new_port)
 	//Make sure not already connected to something else
-	if(connected_port || !new_port || new_port.connected_device)
+	if(connected_port || !istype(new_port) || new_port.connected_device)
 		return 0
 
 	//Make sure are close enough for a valid connection
@@ -1192,6 +1178,10 @@ assassination method if you time it right*/
 	//Perform the connection
 	connected_port = new_port
 	connected_port.connected_device = src
+
+	if(occupant)
+		occupant.clear_alert("mechaport", TRUE)
+		occupant.throw_alert("mechaport_d", /obj/screen/alert/mech_port_disconnect)
 
 	//Actually enforce the air sharing
 	var/datum/pipe_network/network = connected_port.return_network(src)
@@ -1212,6 +1202,8 @@ assassination method if you time it right*/
 	connected_port.connected_device = null
 	connected_port = null
 	log_message("Disconnected from gas port.")
+	if(occupant)
+		occupant.clear_alert("mechaport_d")
 	return 1
 
 /obj/mecha/MouseDrop_T(mob/target, mob/user)
@@ -1266,18 +1258,19 @@ assassination method if you time it right*/
 
 /obj/mecha/proc/moved_inside(mob/living/carbon/human/H)
 	if(H && H.client && (H in range(1)))
-		H.reset_view(src)
+		occupant = H
 		H.stop_pulling()
 		H.forceMove(src)
-		occupant = H
+		H.reset_view(src)
 		add_fingerprint(H)
+		//GrantActions(H, human_occupant=1)
 		forceMove(loc)
 		log_append_to_last("[H] moved in as pilot.")
 		update_icon()
 		set_dir(dir_in)
 		playsound(src, 'sound/machines/windowdoor.ogg', 50, 1)
 		if(!hasInternalDamage())
-			occupant << sound('sound/mecha/nominal.ogg',volume=50)
+			occupant << sound('sound/mecha/nominal.ogg', volume = 50)
 		return 1
 	return 0
 
@@ -1286,10 +1279,16 @@ assassination method if you time it right*/
 		return
 
 	var/atom/movable/mob_container
+	occupant.clear_alert("charge")
+	occupant.clear_alert("mech damage")
+	occupant.clear_alert("mechaport")
+	occupant.clear_alert("mechaport_d")
 	if(ishuman(occupant) || isAI(occupant))
 		mob_container = occupant
+		//RemoveActions(occupant, human_occupant=1)
 	else if(isbrain(occupant))
 		var/mob/living/carbon/brain/brain = occupant
+		// RemoveActions(brain)
 		mob_container = brain.container
 	else
 		return

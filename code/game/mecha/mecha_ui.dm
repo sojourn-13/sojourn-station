@@ -108,8 +108,6 @@
 		<div class='header'>Airtank</div>
 		<div class='links'>
 		<a href='?src=\ref[src];toggle_airtank=1'>Toggle Internal Airtank Usage</a><br>
-		[(/obj/mecha/verb/disconnect_from_port in verbs)?"<a href='?src=\ref[src];port_disconnect=1'>Disconnect from port</a><br>":null]
-		[(/obj/mecha/verb/connect_to_port in verbs)?"<a href='?src=\ref[src];port_connect=1'>Connect to port</a><br>":null]
 		</div>
 		</div>
 		<div class='wr'>
@@ -327,18 +325,6 @@
 			new_frequency = sanitize_frequency(new_frequency)
 		radio.set_frequency(new_frequency)
 		send_byjax(occupant,"exosuit.browser","rfreq","[format_frequency(radio.frequency)]")
-		return
-	if(href_list["port_disconnect"])
-		if(usr != occupant)
-			return
-		usr << sound('sound/mecha/UI_SCI-FI_Tone_10_stereo.ogg',channel=4, volume=100)
-		disconnect_from_port()
-		return
-	if(href_list["port_connect"])
-		if(usr != occupant)
-			return
-		usr << sound('sound/mecha/UI_SCI-FI_Tone_10_stereo.ogg',channel=4, volume=100)
-		connect_to_port()
 		return
 	if(href_list["view_log"])
 		if(usr != occupant)
