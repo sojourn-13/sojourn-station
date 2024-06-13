@@ -550,6 +550,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		//if(usr.hud_used.hud_shown)
 			//usr.toggle_zoom_hud()	// If the user has already limited their HUD this avoids them having a HUD when they zoom in
 		usr.client.view = viewsize
+		usr.client.apply_clickcatcher()
 		zoom = 1
 
 		var/tilesize = 32
@@ -575,6 +576,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		H.using_scope = src
 	else
 		usr.client.view = world.view
+		usr.client.apply_clickcatcher()
 		//if(!usr.hud_used.hud_shown)
 			//usr.toggle_zoom_hud()
 		zoom = 0

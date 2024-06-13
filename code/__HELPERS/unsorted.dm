@@ -1437,3 +1437,19 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		digit_numbers--
 		generated_code += "[generate_single_gun_number()]" // cast to string
 	return generated_code
+
+/proc/params2turf(scr_loc, turf/origin, client/C)
+	if(!scr_loc)
+		return null
+	var/tX = splittext(scr_loc, ",")
+	var/tY = splittext(tX[2], ":")
+	var/tZ = origin.z
+	tY = tY[1]
+	tX = splittext(tX[1], ":")
+	tX = tX[1]
+	var/list/actual_view = getviewsize(C ? C.view : world.view)
+	var/client_offset_x = C ? round(C.pixel_x / world.icon_size) : 0
+	var/client_offset_y = C ? round(C.pixel_y / world.icon_size) : 0
+	tX = clamp(origin.x + text2num(tX) + client_offset_x - round(actual_view[1] / 2) - 1, 1, world.maxx)
+	tY = clamp(origin.y + text2num(tY) + client_offset_y - round(actual_view[2] / 2) - 1, 1, world.maxy)
+	return locate(tX, tY, tZ)

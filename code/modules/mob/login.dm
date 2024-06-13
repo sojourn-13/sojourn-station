@@ -89,5 +89,6 @@
 		else
 			client.create_UI(src.type)
 		client.CAN_MOVE_DIAGONALLY = FALSE
+		add_click_catcher()
 
 	LEGACY_SEND_SIGNAL(src, COMSIG_MOB_LOGIN)

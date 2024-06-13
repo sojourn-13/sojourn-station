@@ -192,7 +192,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 					user.put_in_hands(O)
 					return TRUE
 
-			if(!(istype(user, /obj/item/device/assembly/signaler) || istype(I, /obj/item/implant/carrion_spider/spark)))
+			if(!(istype(I, /obj/item/device/assembly/signaler) || istype(I, /obj/item/implant/carrion_spider/spark)))
 				to_chat(user, SPAN_WARNING("You need a remote signaller!"))
 				return TRUE
 
