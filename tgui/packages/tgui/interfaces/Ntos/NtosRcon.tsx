@@ -109,15 +109,16 @@ const Smes = (props: { smes: SMESData }) => {
               />
             }
           >
+            {/* smes values are in watts, but we want our text editor to be in kw, so /1000 for actual values (the text is fine) */}
             <Slider
-              value={smes.input_val}
+              value={smes.input_val / 1000}
               minValue={0}
-              maxValue={smes.input_max}
-              fillValue={smes.input_load}
-              step={1000}
-              format={(val) => formatPower(round(val, 2))}
+              maxValue={smes.input_max / 1000}
+              fillValue={smes.input_load / 1000}
+              step={1}
+              format={(val) => formatPower(round(val * 1000, 2))}
               onChange={(e, value) =>
-                act('smes_in_set', { smes: smes.RCON_tag, value })
+                act('smes_in_set', { smes: smes.RCON_tag, value: value * 1000 })
               }
             >
               {formatPower(round(smes.input_load, 2))} Load /{' '}
