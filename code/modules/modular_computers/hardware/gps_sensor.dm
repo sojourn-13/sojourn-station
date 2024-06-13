@@ -31,7 +31,7 @@
 /obj/item/computer_hardware/gps_sensor/proc/get_position_text()
 	var/text
 	if(!check_functionality())
-		text = "<span class='average'>ERROR:Unable to recive GPS location.</span>"
+		text = "ERROR: Unable to recive GPS location."
 		return text
 	var/datum/coords/C = gps.get_coords()
 	var/area/A = get_area(src)

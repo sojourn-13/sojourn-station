@@ -3,7 +3,7 @@
 @use 'sass:map';
 
 @use '../colors.scss' with (
-  $primary: #3f021a,
+  $primary: hwb(336 1% 75%),
   $good: #e62626,
   $bad: #970934
 );
@@ -65,5 +65,12 @@
 
   .Layout__content {
     background-image: url('../../assets/bg-spookycomp-compressed.svg');
+  }
+
+  // NTOS header bar
+  .NtosWindow__header {
+    background:
+      linear-gradient(rgba(83, 3, 3, 0.5), rgba(83, 3, 3, 0.5)),
+      url('../../assets/ntos_header_pattern.png') 0 5% repeat;
   }
 }

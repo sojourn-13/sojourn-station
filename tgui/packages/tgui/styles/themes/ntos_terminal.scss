@@ -7,7 +7,7 @@
 @use 'sass:meta';
 
 @use '../colors.scss' with (
-  $primary: #24e87e,
+  $primary: #24e87f,
   $label: #24e87e,
   $good: rgba(36, 232, 127, 0.5),
   // $fg-map-keys: (),
@@ -108,5 +108,11 @@
   }
   .Flex {
     text-shadow: 0 0 2px #24e87e;
+  }
+  // NTOS header bar
+  .NtosWindow__header {
+    background:
+      linear-gradient(rgba(3, 56, 3, 0.5), rgba(3, 56, 3, 0.5)),
+      url('../../assets/ntos_header_pattern.png') 0 5% repeat;
   }
 }

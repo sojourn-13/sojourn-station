@@ -124,6 +124,12 @@
 	if (use_onclose)
 		setup_onclose()
 
+/datum/browser/proc/update(force_open = FALSE, use_onclose = TRUE)
+	if(force_open)
+		open(use_onclose)
+	else
+		send_output(user, get_content(), "[window_id].browser")
+
 /datum/browser/proc/setup_onclose()
 	set waitfor = 0 //winexists sleeps, so we don't need to.
 	for (var/i in 1 to 10)

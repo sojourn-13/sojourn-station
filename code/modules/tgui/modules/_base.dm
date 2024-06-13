@@ -13,11 +13,16 @@ Code is pretty much ripped verbatim from nano modules, but with un-needed stuff 
 
 	var/tgui_id
 	var/ntos = FALSE
+	var/available_to_ai = FALSE
 
-/datum/tgui_module/New(var/host)
-	src.host = host
+/datum/tgui_module/New(new_host)
+	host = new_host
 	if(ntos)
 		tgui_id = "Ntos" + tgui_id
+
+/datum/tgui_module/Destroy()
+	host = null
+	. = ..()
 
 /datum/tgui_module/ui_host()
 	return host ? host.ui_host() : src
@@ -54,28 +59,21 @@ Code is pretty much ripped verbatim from nano modules, but with un-needed stuff 
 
 	return 0
 
-/datum/tgui_module/ui_static_data()
+/datum/tgui_module/ui_data(mob/user)
 	. = ..()
-	
+
 	var/obj/item/modular_computer/host = ui_host()
 	if(istype(host))
 		. += host.get_header_data()
 
-/datum/tgui_module/ui_act(action, params)
-	if(..())
-		return TRUE
+/datum/tgui_module/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
 
 	var/obj/item/modular_computer/host = ui_host()
 	if(istype(host))
-		if(action == "PC_exit")
-			host.kill_program()
-			return TRUE
-		if(action == "PC_shutdown")
-			host.shutdown_computer()
-			return TRUE
-		if(action == "PC_minimize")
-			host.minimize_program(usr)
-			return TRUE
+		host.ui_act(action, params, ui, state)
 
 // Just a nice little default interact in case the subtypes don't need any special behavior here
 /datum/tgui_module/ui_interact(mob/user, datum/tgui/ui = null)

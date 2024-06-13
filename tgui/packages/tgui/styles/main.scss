@@ -83,6 +83,8 @@
 @include meta.load-css('./interfaces/Canister.scss');
 @include meta.load-css('./interfaces/SuitStorageUnit.scss');
 @include meta.load-css('./interfaces/IDCard.scss');
+@include meta.load-css('./interfaces/Terminal.scss');
+@include meta.load-css('./interfaces/Catalog.scss');
 
 // Layouts
 @include meta.load-css('./layouts/Layout.scss');

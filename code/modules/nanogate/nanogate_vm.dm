@@ -16,10 +16,14 @@
 	desc = "A highly advanced satellite uplink that works anywhere on the planet."
 	ethernet = TRUE //Unlimited connection range.
 
-/obj/item/modular_computer/tablet/nanogate/can_interact(mob/user, require_adjacent_turf = TRUE, show_message = TRUE)
+/obj/item/modular_computer/tablet/nanogate/ui_state(mob/user)
+	return GLOB.deep_inventory_state
+
+// We have to override this because there's really stupid shitcode in /atom/ui_status that checks Adjacent ignoring UI_state completely
+/obj/item/modular_computer/tablet/nanogate/ui_status(mob/user, datum/ui_state/state)
 	if(linked_nanogate.status & ORGAN_BROKEN)
-		return FALSE
-	..()
+		return UI_CLOSE
+	return state.can_use_topic(src, user)
 
 //Currently it's a slightly fancy tablet but nothing super special.
 //TODO: Make variants for each type of nanogate.

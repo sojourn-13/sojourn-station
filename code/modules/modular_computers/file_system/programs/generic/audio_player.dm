@@ -1,6 +1,7 @@
 /datum/computer_file/program/audio
 	filename = "audioplyr"
 	filedesc = "Audio Player"
+	program_menu_icon = "music"
 	nanomodule_path = /datum/nano_module/program/audio
 	extended_desc = "This program may be used to play audio files. Features vocal transcription."
 	size = 3

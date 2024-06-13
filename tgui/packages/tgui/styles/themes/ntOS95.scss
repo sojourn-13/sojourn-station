@@ -161,6 +161,9 @@ $scrollbar-color-multiplier: 1;
     color: black;
   }
   .NtosWindow__header {
-    background-color: $dark-gray;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+      url('../../assets/ntos_header_pattern.png') 0 5% repeat;
+    color: black;
   }
 }

@@ -96,4 +96,14 @@ $purple: #463191;
   .Tab--selected {
     color: $pink;
   }
+  // NTOS header bar
+  .NtosWindow__header {
+    background:
+      linear-gradient(
+        to right,
+        rgba(194, 0, 219, 0.75),
+        rgba(3, 100, 117, 0.75)
+      ),
+      url('../../assets/ntos_header_pattern.png') 0 5% repeat;
+  }
 }

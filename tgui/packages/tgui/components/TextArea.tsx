@@ -27,6 +27,7 @@ type Props = Partial<{
   dontUseTabForIndent: boolean;
   fluid: boolean;
   maxLength: number;
+  multilineEnter: boolean;
   noborder: boolean;
   /** Fires when user is 'done typing': Clicked out, blur, enter key (but not shift+enter) */
   onChange: (event: SyntheticEvent<HTMLTextAreaElement>, value: string) => void;
@@ -50,6 +51,7 @@ export const TextArea = forwardRef(
       autoSelect,
       displayedValue,
       dontUseTabForIndent,
+      multilineEnter,
       maxLength,
       noborder,
       onChange,
@@ -69,7 +71,7 @@ export const TextArea = forwardRef(
 
     const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
       if (event.key === KEY.Enter) {
-        if (event.shiftKey) {
+        if (event.shiftKey || multilineEnter) {
           event.currentTarget.focus();
           return;
         }
