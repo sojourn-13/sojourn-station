@@ -580,7 +580,7 @@ macro "hotkeymode"
 		name = "CTRL+E"
 		command = "quick-equip"
 	elem
-		name = "F"
+		name = "V"
 		command = "blocking"
 	elem
 		name = "H"
