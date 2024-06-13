@@ -627,16 +627,14 @@
 		fire_alert = max(fire_alert, FIRE_ALERT_COLD)
 		if(status_flags & GODMODE)	return 1	//godmode
 		var/burn_dam = 0
-		switch(bodytemperature)
-			if(species.heat_level_1 to species.heat_level_2)
-				burn_dam = HEAT_DAMAGE_LEVEL_1
-				frost -= HEAT_DAMAGE_LEVEL_1
-			if(species.heat_level_2 to species.heat_level_3)
-				burn_dam = HEAT_DAMAGE_LEVEL_2
-				frost -= HEAT_DAMAGE_LEVEL_2
-			if(species.heat_level_3 to INFINITY)
-				burn_dam = HEAT_DAMAGE_LEVEL_3
-				frost -= HEAT_DAMAGE_LEVEL_3
+		// heat_level_3 is the highest number and HEAT_GAS_DAMAGE_LEVEL_3 implies the highest damage
+		if(bodytemperature > species.heat_level_3)
+			burn_dam = HEAT_GAS_DAMAGE_LEVEL_3
+		else if(bodytemperature > species.heat_level_2)
+			burn_dam = HEAT_GAS_DAMAGE_LEVEL_2
+		else
+			burn_dam = HEAT_GAS_DAMAGE_LEVEL_1
+
 		take_overall_damage(burn=burn_dam, used_weapon = "High Body Temperature")
 		fire_alert = max(fire_alert, FIRE_ALERT_HOT)
 
@@ -645,26 +643,15 @@
 		if(status_flags & GODMODE)	return 1	//godmode
 
 		if(!istype(loc, /obj/machinery/atmospherics/unary/cryo_cell))
-			switch(bodytemperature)
-				if(-INFINITY to species.cold_level_3)
-					frost += COLD_DAMAGE_LEVEL_1
-				if(species.cold_level_3 to species.cold_level_2)
-					frost += COLD_DAMAGE_LEVEL_2
-				if(species.cold_level_2 to species.cold_level_1)
-					frost += COLD_DAMAGE_LEVEL_3
-			fire_alert = max(fire_alert, FIRE_ALERT_COLD)
-		else
 			var/burn_dam = 0
-			switch(bodytemperature)
-				if(species.cold_level_1 to species.cold_level_2)
-					burn_dam = COLD_DAMAGE_LEVEL_1
-					frost += COLD_DAMAGE_LEVEL_1
-				if(species.cold_level_2 to species.cold_level_3)
-					burn_dam = COLD_DAMAGE_LEVEL_2
-					frost += COLD_DAMAGE_LEVEL_2
-				if(species.cold_level_3 to -(INFINITY))
-					burn_dam = COLD_DAMAGE_LEVEL_3
-					frost += COLD_DAMAGE_LEVEL_3
+			// cold_level_1 is the highest number and COLD_GAS_DAMAGE_LEVEL_1 implies the least severe damage
+			if(bodytemperature < species.cold_level_3)
+				burn_dam = COLD_GAS_DAMAGE_LEVEL_3
+			else if(bodytemperature < species.cold_level_2)
+				burn_dam = COLD_GAS_DAMAGE_LEVEL_2
+			else
+				burn_dam = COLD_GAS_DAMAGE_LEVEL_1
+
 			take_overall_damage(burn=burn_dam, used_weapon = "Low Body Temperature")
 			fire_alert = max(fire_alert, FIRE_ALERT_COLD)
 

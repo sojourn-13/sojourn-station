@@ -70,5 +70,6 @@
 		/obj/item/organ/internal/vital/heart/huge = offer_data("six-chambered heart", 2000, 1),
 		/obj/item/organ/internal/vital/lungs/long = offer_data("long lungs", 1650, 1),
 		/obj/item/organ/internal/nerve/sensitive_nerve  = offer_data("sensitive nerve", 2650, 1),
-		/obj/item/organ/internal/blood_vessel/extensive   = offer_data("extensive blood vessels", 2650, 1)
+		/obj/item/organ/internal/blood_vessel/extensive   = offer_data("extensive blood vessels", 2650, 1),
+		/obj/item/cell/medium/greyson = offer_data("GP-SI \"Posi-cell 1600M\"", 725, 3)
 	)

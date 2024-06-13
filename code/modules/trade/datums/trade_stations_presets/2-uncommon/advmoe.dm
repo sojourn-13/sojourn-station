@@ -62,7 +62,8 @@
 		/obj/item/slime_extract/lightpink = offer_data("light pink slime extract", 10000, 1),
 		/obj/item/slime_extract/black = offer_data("black slime extract", 10000, 1),
 		/obj/item/slime_extract/oil = offer_data("oil slime extract", 10000, 1),
-		/obj/item/slime_extract/adamantine = offer_data("adamantine slime extract", 10000, 1)
+		/obj/item/slime_extract/adamantine = offer_data("adamantine slime extract", 10000, 1),
+		/obj/item/cell/small/greyson = offer_data("GP_SI \"Posi-cell 400S\"", 350, 4)
 		// /obj/item/slime_extract/bluespace
 		// /obj/item/slime_extract/pyrite
 		// /obj/item/slime_extract/cerulean

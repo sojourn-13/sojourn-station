@@ -23,6 +23,19 @@
 	insertion_sound = 'sound/effects/sheathin.ogg'
 	extraction_sound = 'sound/effects/sheathout.ogg'
 
+/obj/item/storage/sheath/non_church/general
+	name = "sword sheath"
+	desc = "A leathery-like sheath made to store blades."
+	icon_state = "general_sheath"
+	item_state = "general_sheath"
+
+	can_hold = list(
+		/obj/item/tool/cheap
+		)
+	cant_hold = list(
+		/obj/item/tool/cheap/spear
+		)
+
 /obj/item/storage/sheath/non_church
 	name = "sheath_0"
 	desc = "Made to store swords."

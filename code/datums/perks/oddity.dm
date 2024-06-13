@@ -7,13 +7,15 @@
 			Halves sanity loss from seeing people die."
 	icon_state = "survivor" // https://game-icons.net/1x1/lorc/one-eyed.html
 
-/datum/perk/oddity/survivor/assign(mob/living/carbon/human/H)
-	if(..())
-		holder.sanity.death_view_multiplier *= 0.5
+/datum/perk/oddity/survivor/assign(mob/living/L)
+	if(..() && ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.death_view_multiplier *= 0.5
 
 /datum/perk/oddity/survivor/remove()
-	if(holder)
-		holder.sanity.death_view_multiplier *= 2
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.death_view_multiplier *= 2
 	..()
 
 /datum/perk/oddity/inspiring
@@ -22,7 +24,7 @@
 			People around you regain their sanity quicker."
 	icon_state = "inspiringpresence"
 
-/datum/perk/oddity/inspiring/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/inspiring/assign(mob/living/L)
 	if(..())
 		holder.sanity_damage -= 2
 
@@ -45,20 +47,25 @@
 	var/cooldown = 30 MINUTES
 	var/initial_time
 
-/datum/perk/oddity/toxic_revenger/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/toxic_revenger/assign(mob/living/L)
 	..()
 	initial_time = world.time
-	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 /datum/perk/oddity/toxic_revenger/on_process()
 	if(!..())
 		return
-	if(holder.species.flags & NO_BREATHE || holder.internal)
+	if(!ishuman(holder))
+		return
+	var/mob/living/carbon/human/holder_man = holder
+	if(holder_man.species.flags & NO_BREATHE || holder_man.internal)
 		return
 	if(world.time < initial_time + cooldown)
 		return
 	initial_time = world.time
-	for(var/mob/living/carbon/human/H in viewers(5, holder))
+	for(var/mob/living/carbon/human/H in viewers(5, holder_man))
 		if(H.stat == DEAD || H.internal || H.stats.getPerk(PERK_TOXIC_REVENGER) || H.species.flags & NO_BREATHE)
 			continue
 		if(H.head?.item_flags & BLOCK_GAS_SMOKE_EFFECT || H.wear_mask?.item_flags & BLOCK_GAS_SMOKE_EFFECT || BP_IS_ROBOTIC(H.get_organ(BP_CHEST)))
@@ -86,7 +93,7 @@
 	gain_text = "You feel your pace quickening, your thoughts barely catching up with your stride..."
 	icon_state = "fast" // https://game-icons.net/1x1/delapouite/fast-forward-button.html
 
-/datum/perk/oddity/fast_walker/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/fast_walker/assign(mob/living/L)
 	..()
 	if(holder.stats.getPerk(PERK_FAST_WALKER)) // Prevents stacking the same perk over and over for Emperor spider levels of speed. - Seb
 		return FALSE
@@ -97,7 +104,7 @@
 	gain_text = "After all you've endured, you can't help but feel tougher than normal, your skin feels like iron."
 	icon_state = "riotshield"
 
-/datum/perk/oddity/harden/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/harden/assign(mob/living/L)
 	..()
 	holder.brute_mod_perk *= 0.75 // One third of subdermal armor
 	holder.mob_bomb_defense += 5
@@ -115,12 +122,14 @@
 	gain_text = "You feel yourself growing softer...Did everything always hurt this much?"
 	icon_state = "paper"
 
-/datum/perk/oddity/thin_skin/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/thin_skin/assign(mob/living/L)
 	..()
 	holder.brute_mod_perk *= 1.25
 	holder.mob_bomb_defense -= 5
 	holder.falls_mod += 0.2
-	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 
 /datum/perk/oddity/thin_skin/remove()
@@ -135,7 +144,7 @@
 	gain_text = "What doesn't kill you, helps you survive it better."
 	icon_state = "alch"
 
-/datum/perk/oddity/better_toxins/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/better_toxins/assign(mob/living/L)
 	..()
 	holder.toxin_mod_perk -= 0.1 //Might be to high...
 
@@ -149,12 +158,14 @@
 	gain_text = "Things just get harder and harder..."
 	icon_state = "shock"
 
-/datum/perk/oddity/shell_shock/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/shell_shock/assign(mob/living/L)
 	..()
 	holder.stats.changeStat(STAT_ROB, -5)
 	holder.stats.changeStat(STAT_TGH, -5)
 	holder.stats.changeStat(STAT_VIG, -5)
-	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 
 /datum/perk/oddity/shell_shock/remove()
@@ -169,12 +180,14 @@
 	gain_text = "The world is not as clear as it once was."
 	icon_state = "brainrot"
 
-/datum/perk/oddity/failing_mind/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/failing_mind/assign(mob/living/L)
 	..()
 	holder.stats.changeStat(STAT_COG, -5)
 	holder.stats.changeStat(STAT_MEC, -5)
 	holder.stats.changeStat(STAT_BIO, -5)
-	H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.learnt_tasks.attempt_add_task_mastery(/datum/task_master/task/poors, "POORS", skill_gained = 1, learner = H)
 
 
 /datum/perk/oddity/failing_mind/remove()
@@ -195,7 +208,7 @@
 	gain_text = "The mind can over come any puzzle thrown at it!"
 	icon_state = "brain"
 
-/datum/perk/oddity/sharp_mind/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/sharp_mind/assign(mob/living/L)
 	..()
 	holder.stats.changeStat(STAT_COG, 5)
 	holder.stats.changeStat(STAT_MEC, 5)
@@ -213,7 +226,7 @@
 	gain_text = "The blood pumps, the muscles harden, and your trigger finger feels easier than ever..."
 	icon_state = "muscular"
 
-/datum/perk/oddity/strangth/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/strangth/assign(mob/living/L)
 	..()
 	holder.stats.changeStat(STAT_ROB, 5)
 	holder.stats.changeStat(STAT_TGH, 5)
@@ -230,16 +243,20 @@
 	desc = "The body is able to succumb to many negative affects but the mind can simply ignore them. Getting addicted to things is much harder and you can stomach more chemicals."
 	icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
 
-/datum/perk/oddity/iron_will/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/iron_will/assign(mob/living/L)
 	..()
-	holder.metabolism_effects.addiction_chance_multiplier = 0.2
-	holder.metabolism_effects.nsa_bonus += 20
-	holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 0.2
+		H.metabolism_effects.nsa_bonus += 20
+		H.metabolism_effects.calculate_nsa()
 
 /datum/perk/oddity/iron_will/remove()
-	holder.metabolism_effects.addiction_chance_multiplier = 1
-	holder.metabolism_effects.nsa_bonus -= 20
-	holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 1
+		H.metabolism_effects.nsa_bonus -= 20
+		H.metabolism_effects.calculate_nsa()
 	..()
 
 /datum/perk/oddity/mind_of_matter
@@ -247,7 +264,7 @@
 	desc = "The mind protects the body by imposing limits to prevent severe harm to the self. With enough focus, you can push yourself past that limit."
 	icon_state = "ironpill" // https://game-icons.net/1x1/lorc/underdose.html
 
-/datum/perk/oddity/mind_of_matter/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/mind_of_matter/assign(mob/living/L)
 	..()
 	holder.maxHealth += 20
 	holder.health += 20
@@ -265,7 +282,7 @@
 	lose_text = "The reloading from the side is more complicated..."
 	icon_state = "plus_one" // https://game-icons.net/1x1/lorc/gears.html
 
-/datum/perk/oddity/side_loading/assign(mob/living/carbon/human/H)
+/datum/perk/oddity/side_loading/assign(mob/living/L)
 	..()
 	holder.stats.changeStat(STAT_COG, -5)
 	holder.stats.changeStat(STAT_VIG, 5)
@@ -290,7 +307,7 @@
 	var/cooldown = 1 SECONDS // Just to make sure that perk don't go berserk.
 	var/initial_time
 
-/datum/perk/nt_oddity/holy_light/assign(mob/living/carbon/human/H)
+/datum/perk/nt_oddity/holy_light/assign(mob/living/L)
 	..()
 	initial_time = world.time
 
@@ -318,15 +335,16 @@
 	icon_state = "vortex"
 	var/initial_time
 
-/datum/perk/bluespace/assign(mob/living/carbon/human/H)
+/datum/perk/bluespace/assign(mob/living/L)
 	..()
 	initial_time = world.time
 	cooldown_time = world.time + rand(20, 60) MINUTES
 	holder.stats.changeStat(STAT_COG, 5) //We keep this 5 per use
-	if(!H.stats?.getPerk(PERK_SI_SCI) && prob(60))
-		GLOB.bluespace_entropy += rand(80, 150) //You done fucked it up.
-	if(H.stats?.getPerk(PERK_SI_SCI) && prob(50))
-		GLOB.bluespace_entropy -= rand(20, 30) //High odds to do even better!
+	if(holder?.stats)
+		if(!holder.stats.getPerk(PERK_SI_SCI) && prob(60))
+			GLOB.bluespace_entropy += rand(80, 150) //You done fucked it up.
+		if(holder.stats.getPerk(PERK_SI_SCI) && prob(50))
+			GLOB.bluespace_entropy -= rand(20, 30) //High odds to do even better!
 	GLOB.bluespace_entropy -= rand(30, 50)
 
 /datum/perk/bluespace/remove(mob/living/carbon/human/H)
@@ -353,7 +371,7 @@
 	gain_text = "What wondrous possibilities..."
 	icon_state = "tinker"
 
-/datum/perk/guild/blackbox_insight/assign(mob/living/carbon/human/H)
+/datum/perk/guild/blackbox_insight/assign(mob/living/L)
 	..()
 	holder.stats.changeStat(STAT_COG, 15)
 	holder.stats.changeStat(STAT_MEC, 15)
@@ -382,12 +400,14 @@
 	gain_text = "Your mind feels much clearer now."
 	lose_text = "You feel the shadows once more."
 
-/datum/perk/njoy/assign(mob/living/carbon/human/H)
-	if(..())
-		holder.sanity.insight_gain_multiplier *= 0.5
+/datum/perk/njoy/assign(mob/living/L)
+	if(..() && ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.insight_gain_multiplier *= 0.5
 
 /datum/perk/njoy/remove()
-	if(holder)
-		holder.sanity.insight_gain_multiplier *= 2
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.insight_gain_multiplier *= 2
 	..()
 

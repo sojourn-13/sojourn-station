@@ -104,7 +104,7 @@
 
 	lifetime -= old_delay //This needs to be based on work over time, not just time passed
 
-	if(lifetime < 0) //Otherwise lag would make things look really weird
+	if(lifetime < 0 || QDELETED(moving)) //Otherwise lag would make things look really weird
 		qdel(src)
 		return
 
