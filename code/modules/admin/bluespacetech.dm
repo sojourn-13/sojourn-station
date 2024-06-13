@@ -76,6 +76,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_dev_bst, R_ADMIN|R_MOD|R_DEBUG, TRUE)
 
 	log_and_message_admins("has become a Bluespace Technician \the [jumplink(T)] User:[src]", location = T) //So we can go to it
 	log_admin("Bluespace Tech Spawned: X:[bst.x] Y:[bst.y] Z:[bst.z] User:[src]") //Going to leave this do to XYZ logging
+	init_verbs()
 	return 1
 
 /client/proc/bst_post_spawn(mob/living/carbon/human/bst/bst)

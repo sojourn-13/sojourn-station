@@ -23,7 +23,7 @@ SUBSYSTEM_DEF(movement)
 	var/total_len = 0
 	for(var/list/bucket as anything in sorted_buckets)
 		total_len += length(bucket[MOVEMENT_BUCKET_LIST])
-	msg = "B:[length(sorted_buckets)] E:[total_len]"
+	msg += "B:[length(sorted_buckets)] E:[total_len]"
 	return ..()
 
 /datum/controller/subsystem/movement/Recover()

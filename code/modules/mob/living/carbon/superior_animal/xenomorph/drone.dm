@@ -103,7 +103,7 @@ var/datum/xenomorph/xenomorph_ai
 
 	objectsInView = new
 
-	verbs -= /mob/verb/observe
+	remove_verb(src, /mob/verb/observe)
 	pixel_x = -14
 	pixel_y = 0
 
@@ -116,7 +116,7 @@ var/datum/xenomorph/xenomorph_ai
 
 	objectsInView = new
 
-	verbs -= /mob/verb/observe
+	remove_verb(src, /mob/verb/observe)
 	pixel_x = 0
 	pixel_y = 0
 

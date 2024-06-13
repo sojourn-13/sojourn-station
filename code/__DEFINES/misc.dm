@@ -234,6 +234,20 @@
 #define CUPGRADE_WRATH_OF_GOD /obj/item/cruciform_upgrade/wrath_of_god
 #define CUPGRADE_SPEED_OF_THE_CHOSEN /obj/item/cruciform_upgrade/speed_of_the_chosen
 
+//Mouse buttons held
+#define RIGHT_CLICK "right"
+#define MIDDLE_CLICK "middle"
+#define LEFT_CLICK "left"
+
+///Mouse button that was just clicked/released
+///if(modifiers[BUTTON] == LEFT_CLICK)
+#define BUTTON "button"
+
+//Keys held down during the mouse action
+#define CTRL_CLICK "ctrl"
+#define ALT_CLICK "alt"
+#define SHIFT_CLICK "shift"
+
 //https://secure.byond.com/docs/ref/info.html#/atom/var/mouse_opacity
 #define MOUSE_OPACITY_TRANSPARENT 0
 #define MOUSE_OPACITY_ICON 1
@@ -418,3 +432,6 @@
 		"steelblue" 	= "blue",		\
 		"goldenrod"	 	= "gold"		\
 	)
+
+/// Removes characters incompatible with file names.
+#define SANITIZE_FILENAME(text) (GLOB.filename_forbidden_chars.Replace(text, ""))

@@ -1105,7 +1105,7 @@
 	if(R)
 		R.UnlinkSelf()
 		to_chat(R, "Buffers flushed and reset. Camera system shutdown.  All systems operational.")
-		verbs -= /mob/living/silicon/robot/proc/ResetSecurityCodes
+		remove_verb(src, /mob/living/silicon/robot/proc/ResetSecurityCodes)
 
 /mob/living/silicon/robot/proc/SetLockdown(var/state = 1)
 	// They stay locked down if their wire is cut.
@@ -1133,7 +1133,7 @@
 		to_chat(src, "Something is badly wrong with the sprite selection. Harass a coder.")
 		return
 	if (icon_selected == 1)
-		verbs -= /mob/living/silicon/robot/proc/choose_icon
+		remove_verb(src, /mob/living/silicon/robot/proc/choose_icon)
 		return
 
 
@@ -1158,10 +1158,10 @@
 	icon_selected = 1 //MEW
 	post_icon_giving()
 
-	verbs -= /mob/living/silicon/robot/proc/choose_icon
+	remove_verb(src, /mob/living/silicon/robot/proc/choose_icon)
 
 	if(allow_resting)
-		verbs += /mob/living/silicon/robot/verb/resting_icon_mode
+		add_verb(src, /mob/living/silicon/robot/verb/resting_icon_mode)
 
 	to_chat(src, "Your icon has been set. You now require a module reset to change it.")
 
@@ -1174,10 +1174,10 @@
 	toggle_sensor_mode()
 
 /mob/living/silicon/robot/proc/add_robot_verbs()
-	verbs |= robot_verbs_default
+	add_verb(src, robot_verbs_default)
 
 /mob/living/silicon/robot/proc/remove_robot_verbs()
-	verbs -= robot_verbs_default
+	remove_verb(src, robot_verbs_default)
 
 // Uses power from cyborg's cell. Returns 1 on success or 0 on failure.
 // Properly converts using CELLRATE now! Amount is in Joules.

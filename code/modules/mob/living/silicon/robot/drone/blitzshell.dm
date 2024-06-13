@@ -24,9 +24,9 @@
 
 /mob/living/silicon/robot/drone/blitzshell/New()
 	..()
-	verbs |= /mob/living/proc/ventcrawl
-	verbs -= /mob/living/silicon/robot/drone/verb/choose_armguard
-	verbs -= /mob/living/silicon/robot/drone/verb/choose_eyecolor
+	add_verb(src, /mob/living/proc/ventcrawl)
+	remove_verb(src, /mob/living/silicon/robot/drone/verb/choose_armguard)
+	remove_verb(src, /mob/living/silicon/robot/drone/verb/choose_eyecolor)
 
 	remove_language(LANGUAGE_ROBOT)
 	remove_language(LANGUAGE_DRONE)

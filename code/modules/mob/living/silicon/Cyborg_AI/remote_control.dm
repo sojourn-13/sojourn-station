@@ -23,7 +23,7 @@
 /mob/living/silicon/robot/proc/assume_controll(var/mob/living/silicon/ai/user)
 	user.c_borg = src
 	c_ai = user
-	verbs += /mob/living/silicon/robot/proc/release_ai_controll_verb
+	add_verb(src, /mob/living/silicon/robot/proc/release_ai_controll_verb)
 	local_transmit = FALSE
 	languages = c_ai.languages.Copy()
 
@@ -111,6 +111,6 @@
 	silicon_radio = r_ai
 	r_ai = null
 
-	verbs -= /mob/living/silicon/robot/proc/release_ai_controll_verb
+	remove_verb(src, /mob/living/silicon/robot/proc/release_ai_controll_verb)
 	updatename()
 	death()

@@ -58,12 +58,12 @@
 		else
 			integrated_ai.get_rig_stats = FALSE
 
-/mob/living/Stat()
-	. = ..()
-	if(. && get_rig_stats)
-		var/obj/item/rig/rig = get_rig()
-		if(rig)
-			SetupStat(rig)
+// /mob/living/Stat()
+// 	. = ..()
+// 	if(. && get_rig_stats)
+// 		var/obj/item/rig/rig = get_rig()
+// 		if(rig)
+// 			SetupStat(rig)
 
 /obj/item/rig_module/ai_container/proc/update_verb_holder()
 	if(!verb_holder)

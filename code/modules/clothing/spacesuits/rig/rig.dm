@@ -169,14 +169,11 @@
 		air_supply = new air_type(src)
 	if(glove_type)
 		gloves = new glove_type(src)
-		verbs |= /obj/item/rig/proc/toggle_gauntlets
 	if(helm_type)
 		helmet = new helm_type(src)
-		verbs |= /obj/item/rig/proc/toggle_helmet
 		helmet.obscuration = obscuration
 	if(boot_type)
 		boots = new boot_type(src)
-		verbs |= /obj/item/rig/proc/toggle_boots
 	if(chest_type)
 		chest = new chest_type(src)
 		chest.equip_delay = 0
@@ -184,7 +181,6 @@
 			chest.allowed |= allowed
 		chest.slowdown = offline_slowdown
 		chest.stiffness = stiffness
-		verbs |= /obj/item/rig/proc/toggle_chest
 
 	if(initial_modules && initial_modules.len)
 		for(var/path in initial_modules)
@@ -508,6 +504,16 @@
 		return 0
 
 	return 1
+
+/obj/item/rig/proc/check_suit_access_alternative(mob/living/carbon/human/user)
+	// Old proc does checks that are not always needed
+	// and spams into chat, which is less than ideal in some cases
+	// TODO: Emag functionality? See 'subverted' var
+
+	if((req_access || req_one_access) && !allowed(user))
+		return FALSE
+
+	return TRUE
 
 /obj/item/rig/proc/notify_ai(var/message)
 	for(var/obj/item/rig_module/ai_container/module in installed_modules)

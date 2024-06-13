@@ -71,8 +71,7 @@ SUBSYSTEM_DEF(air)
 	msg += "ZTU:[zones_to_update.len]|"
 	msg += "E:[edges.len]|"
 	msg += "Z:[zones.len]|"
-	..(msg)
-
+	return ..()
 
 /datum/controller/subsystem/air/Initialize(timeofday)
 	map_loading = FALSE

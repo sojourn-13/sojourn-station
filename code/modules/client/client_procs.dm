@@ -46,6 +46,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	// Tgui Topic middleware
 	if(tgui_Topic(href_list))
 		return
+	if(href_list["reload_statbrowser"])
+		stat_panel.reinitialize()
 	// if(href_list["reload_tguipanel"])
 	// 	nuke_chat()
 	// if(href_list["reload_statbrowser"])
@@ -91,6 +93,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			hsrc = holder
 		if("usr")
 			hsrc = mob
+		if("statpanel")
+			hsrc = locate(href_list["statpanel_ref"])
 		if("prefs")
 			return prefs.process_link(usr,href_list)
 		if("vars")
@@ -200,6 +204,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	clients += src
 	directory[ckey] = src
 
+	// Instantiate stat panel
+	stat_panel = new(src, "statbrowser")
+	stat_panel.subscribe(src, .proc/on_stat_panel_message)
+
 	// Instantiate ~~tgui~~ goonchat panel
 	// tgui_panel = new(src)
 	chatOutput = new /datum/chatOutput(src)
@@ -247,8 +255,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	to_chat(src, "\red If the title screen is black, resources are still downloading. Please be patient until the title screen appears.")
 
-
-
 	. = ..() //calls mob.Login()
 	++global.client_count
 	if (byond_version >= 512)
@@ -274,10 +280,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 				qdel(src)
 				return
 
-	// Initialize tgui panel
-	// src << browse(file('html/statbrowser.html'), "window=statbrowser")
-	// addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
-	// tgui_panel.initialize()
+	// Initialize stat panel
+	stat_panel.initialize(
+		inline_html = file2text('html/statbrowser.html'),
+		inline_js = file2text('html/statbrowser.js'),
+		inline_css = file2text('html/statbrowser.css'),
+	)
+	addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
 	// Starts the chat
 	chatOutput.start()
 
@@ -318,9 +327,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	if(prefs.lastchangelog != changelog_hash) //bolds the changelog button on the interface so we know there are updates.
 		to_chat(src, span_info("You have unread updates in the changelog."))
-		winset(src, "rpane.changelog", "background-color=#eaeaea;font-style=bold")
 		if(config.aggressive_changelog)
-			src.changelog()
+			changelog()
 
 	if(!winexists(src, "asset_cache_browser")) // The client is using a custom skin, tell them.
 		to_chat(src, span_warning("Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you."))
@@ -330,6 +338,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		tooltips = new /datum/tooltip(src)
 
 	Master.UpdateTickRate()
+	fully_created = TRUE
 
 	//////////////
 	//DISCONNECT//
@@ -348,6 +357,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		holder.owner = null
 		admins -= src
 	QDEL_NULL(tooltips)
+	if(obj_window)
+		QDEL_NULL(obj_window)
 	if(dbcon.IsConnected())
 		var/DBQuery/query = dbcon.NewQuery("UPDATE players SET last_seen = Now() WHERE id = [src.id]")
 		if(!query.Execute())
@@ -621,19 +632,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(prefs)
 		prefs.ShowChoices(usr)
 
-// Byond seemingly calls stat, each tick.
-// Calling things each tick can get expensive real quick.
-// So we slow this down a little.
-// See: http://www.byond.com/docs/ref/info.html#/client/proc/Stat
-/client/Stat()
-	if(!usr)
-		return
-	// Add always-visible stat panel calls here, to define a consistent display order.
-	statpanel("Status")
-
-	. = ..()
-	sleep(1)
-
 /client/proc/create_UI(var/mob_type)
 	destroy_UI()
 	if(!mob_type)
@@ -767,6 +765,78 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 /client/proc/colour_transition(list/colour_to = null, time = 10) //Call this with no parameters to reset to default.
 	animate(src, color = colour_to, time = time, easing = SINE_EASING)
 
+/client/proc/init_verbs()
+	var/list/verblist = list()
+	var/list/verbstoprocess = verbs.Copy()
+	if(mob)
+		verbstoprocess += mob.verbs
+		// no go, items have a ton of shitty verbs and we init_verbs after we're dressed
+		// for(var/atom/movable/thing as anything in mob.contents)
+		// 	verbstoprocess += thing.verbs
+	panel_tabs.Cut() // panel_tabs get reset in init_verbs on JS side anyway
+	for(var/procpath/verb_to_init as anything in verbstoprocess)
+		if(!verb_to_init)
+			continue
+		if(verb_to_init.hidden)
+			continue
+		if(!istext(verb_to_init.category))
+			continue
+		panel_tabs |= verb_to_init.category
+		verblist[++verblist.len] = list(verb_to_init.category, verb_to_init.name)
+	stat_panel.send_message("init_verbs", list(panel_tabs = panel_tabs, verblist = verblist))
+
+/client/proc/check_panel_loaded()
+	if(stat_panel.is_ready())
+		return
+	to_chat(src, "<span class='userdanger'>Statpanel failed to load, click <a href='?src=[REF(src)];reload_statbrowser=1'>here</a> to reload the panel </span>")
+
+/client/verb/fix_stat_panel()
+	set name = "Fix Stat Panel"
+	set category = "OOC"
+
+	init_verbs()
+
+/**
+ * Handles incoming messages from the stat-panel TGUI.
+ */
+/client/proc/on_stat_panel_message(type, payload)
+	switch(type)
+		if("Update-Verbs")
+			init_verbs()
+		if("Remove-Tabs")
+			panel_tabs -= payload["tab"]
+		if("Send-Tabs")
+			panel_tabs |= payload["tab"]
+		if("Reset-Tabs")
+			panel_tabs = list()
+		if("Set-Tab")
+			stat_tab = payload["tab"]
+			SSstatpanels.immediate_send_stat_data(src)
+
+/client/proc/fullscreen_check()
+	if(try_get_preference_value(/datum/client_preference/fullscreen) == GLOB.PREF_YES)
+		winset(usr, "mainwindow", "menu=")
+		winset(usr, "mainwindow", "titlebar=false")
+		winset(usr, "mainwindow", "can-resize=false")
+		winset(usr, "mainwindow", "is-maximized=false")
+		winset(usr, "mainwindow", "is-maximized=true")
+	else
+		winset(usr, "mainwindow", "menu=menu")
+		winset(usr, "mainwindow", "titlebar=true")
+		winset(usr, "mainwindow", "can-resize=true")
+
+	if(fully_created)
+		INVOKE_ASYNC(src, VERB_REF(fit_viewport))
+	else
+		addtimer(CALLBACK(src, VERB_REF(fit_viewport)), 1 SECONDS)
+
+
+/client/verb/toggle_fullscreen() // F11 hotkey
+	set name = "Toggle Fullscreen"
+	set hidden = TRUE
+
+	cycle_preference(/datum/client_preference/fullscreen)
+	fullscreen_check()
 
 //En-abled by SoJ
 /client/proc/apply_fps(var/client_fps)
