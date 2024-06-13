@@ -19,10 +19,8 @@
 		return
 	var/turf/T = get_turf(target)
 	if(T)
-		set_ready_state(0)
-		chassis.use_power(energy_drain)
+		start_cooldown()
 		do_teleport(chassis, T, 4)
-		do_after_cooldown()
 
 
 /obj/item/mecha_parts/mecha_equipment/wormhole_generator
@@ -60,10 +58,8 @@
 	var/turf/target_turf = pick(L)
 	if(!target_turf)
 		return
-	chassis.use_power(energy_drain)
-	set_ready_state(0)
+	start_cooldown()
 	new /obj/effect/portal/wormhole(get_turf(target), rand(150, 300), target_turf)
-	do_after_cooldown()
 
 /obj/item/mecha_parts/mecha_equipment/gravcatapult
 	name = "gravitational catapult"
@@ -105,9 +101,7 @@
 					locked.throw_at(target, 14, 1.5, chassis)
 					locked = null
 					send_byjax(chassis.occupant, "exosuit.browser", "\ref[src]", get_equip_info())
-					set_ready_state(0)
-					chassis.use_power(energy_drain)
-					do_after_cooldown()
+					start_cooldown()
 				else
 					locked = null
 					occupant_message("Lock on [locked] disengaged.")
@@ -128,9 +122,7 @@
 					for(var/i = 0 to iter)
 						step_away(A,target)
 						sleep(2)
-			set_ready_state(0)
-			chassis.use_power(energy_drain)
-			do_after_cooldown()
+			start_cooldown()
 
 /obj/item/mecha_parts/mecha_equipment/gravcatapult/get_equip_info()
 	return "[..()] [mode==1?"([locked||"Nothing"])":null] \[<a href='?src=\ref[src];mode=1'>S</a>|<a href='?src=\ref[src];mode=2'>P</a>\]"

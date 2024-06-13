@@ -8,6 +8,7 @@
 	structure_damage_factor = 2
 	force = 20
 	required_type = /obj/mecha
+	destroy_sound = 'sound/mecha/weapdestr.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/melee_weapon/sword
 	name = "mech sword"

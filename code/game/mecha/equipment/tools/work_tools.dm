@@ -61,22 +61,18 @@
 			occupant_message("You lift [T] and start to load it into cargo compartment.")
 			playsound(src, 'sound/mecha/hydraulic.ogg',100,1)
 			chassis.visible_message("[chassis] lifts [T] and starts to load it into cargo compartment.")
-			set_ready_state(0)
-			chassis.use_power(energy_drain)
-			T.anchored = 1
-			var/L = chassis.loc
-			if(do_after_cooldown(T))
-				if(L == chassis.loc && src == chassis.selected)
-					cargo_holder.cargo += T
-					T.forceMove(chassis)
-					T.anchored = 0
-					occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
-					log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
-					return
-				else
-					occupant_message(SPAN_WARNING("You must hold still while handling objects."))
-					T.anchored = initial(T.anchored)
-					return
+			var/anchor_state_before_load = T.anchored
+			T.anchored = TRUE
+			if(!do_after_cooldown(T))
+				occupant_message(SPAN_WARNING("You must hold still while handling objects."))
+				T.anchored = anchor_state_before_load
+				return
+			cargo_holder.cargo += T
+			T.forceMove(chassis)
+			T.anchored = FALSE
+			occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
+			log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
+			return
 
 	attack_object(A, user) // If none of these has come to pass, we do normal item interactions
 
@@ -127,22 +123,18 @@
 			occupant_message("You lift [T] and start to load it into cargo compartment.")
 			playsound(src,'sound/mecha/hydraulic.ogg',100,1)
 			chassis.visible_message("[chassis] lifts [T] and starts to load it into cargo compartment.")
-			set_ready_state(0)
-			chassis.use_power(energy_drain)
-			T.anchored = 1
-			var/L = chassis.loc
-			if(do_after_cooldown(T))
-				if(L == chassis.loc && src == chassis.selected)
-					cargo_holder.cargo += T
-					T.forceMove(chassis)
-					T.anchored = 0
-					occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
-					log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
-					return
-				else
-					occupant_message(SPAN_WARNING("You must hold still while handling objects."))
-					T.anchored = initial(T.anchored)
-					return
+			var/anchor_state_before_load = T.anchored
+			T.anchored = TRUE
+			if(!do_after_cooldown(T))
+				occupant_message(SPAN_WARNING("You must hold still while handling objects."))
+				T.anchored = anchor_state_before_load
+				return			
+			cargo_holder.cargo += T
+			T.forceMove(chassis)
+			T.anchored = FALSE
+			occupant_message(SPAN_NOTICE("[T] succesfully loaded."))
+			log_message("Loaded [T]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]")
+			return
 
 	attack_object(A, user) // If none of these has come to pass, we do normal item interactions
 
@@ -170,7 +162,6 @@
 		return
 	if(get_dist(chassis, target) > 2)
 		return
-	set_ready_state(0)
 	if(do_after_cooldown(target))
 		if(istype(target, /obj/structure/reagent_dispensers/watertank) && get_dist(chassis,target) <= 1)
 			var/obj/o = target
@@ -249,7 +240,6 @@
 			if(istype(target, /turf/simulated/wall))
 				var/turf/simulated/wall/W = target
 				occupant_message("Deconstructing [target]...")
-				set_ready_state(0)
 				if(do_after_cooldown(target))
 					if(disabled)
 						return
@@ -260,7 +250,6 @@
 			else if(istype(target, /turf/simulated/floor))
 				var/turf/simulated/floor/F = target
 				occupant_message("Deconstructing [target]...")
-				set_ready_state(0)
 				if(do_after_cooldown(target))
 					if(disabled)
 						return
@@ -270,7 +259,6 @@
 					chassis.use_power(energy_drain)
 			else if(istype(target, /obj/machinery/door/airlock))
 				occupant_message("Deconstructing [target]...")
-				set_ready_state(0)
 				if(do_after_cooldown(target))
 					if(disabled)
 						return
@@ -282,7 +270,6 @@
 			if(istype(target, /turf/space) || istype(target, get_base_turf_by_area(target)))
 				var/turf/T = target
 				occupant_message("Building Floor...")
-				set_ready_state(0)
 				if(do_after_cooldown(target))
 					if(disabled)
 						return
@@ -293,7 +280,6 @@
 			else if(istype(target, /turf/simulated/floor))
 				var/turf/simulated/floor/F = target
 				occupant_message("Building Wall...")
-				set_ready_state(0)
 				if(do_after_cooldown(target))
 					if(disabled)
 						return
@@ -304,7 +290,6 @@
 		if(2)
 			if(istype(target, /turf/simulated/floor))
 				occupant_message("Building Airlock...")
-				set_ready_state(0)
 				if(do_after_cooldown(target))
 					if(disabled)
 						return
@@ -386,7 +371,6 @@
 	. = ..()
 	if(href_list["toggle"])
 		set_ready_state(!equip_ready)
-		// I hate this but it is clever so I have to respect it
 		occupant_message("[src] [equip_ready ? "dea" : "a"]ctivated.")
 		log_message("[equip_ready ? "Dea" : "A"]ctivated.")
 		return

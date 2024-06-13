@@ -81,11 +81,7 @@
 			return
 	occupant_message("You start putting [target] into [src].")
 	chassis.visible_message("[chassis] starts putting [target] into the [src].")
-	var/C = chassis.loc
-	var/T = target.loc
 	if(do_after_cooldown(target))
-		if(chassis.loc!=C || target.loc!=T)
-			return
 		if(occupant)
 			occupant_message(SPAN_WARNING("The sleeper is already occupied!"))
 			return
@@ -246,8 +242,7 @@
 	if(reagents.total_volume<=0)
 		occupant_message(SPAN_WARNING("No available reagents to load syringe with."))
 		return
-	set_ready_state(0)
-	chassis.use_power(energy_drain)
+	start_cooldown()
 	var/turf/trg = get_turf(target)
 	var/obj/item/reagent_containers/syringe/S = syringes[1]
 	S.forceMove(get_turf(chassis))
@@ -292,7 +287,6 @@
 		if(!hit)
 			S.visible_message("\The [S] breaks!")
 		S.reagents.clear_reagents()
-	do_after_cooldown()
 
 /obj/item/mecha_parts/mecha_equipment/tool/syringe_gun/Topic(href,href_list)
 	. = ..()
@@ -432,8 +426,7 @@
 	return 1
 
 /obj/item/mecha_parts/mecha_equipment/tool/syringe_gun/proc/add_known_reagent(r_id, r_name)
-	set_ready_state(0)
-	do_after_cooldown()
+	start_cooldown()
 	if(!(r_id in known_reagents))
 		known_reagents += r_id
 		known_reagents[r_id] = r_name

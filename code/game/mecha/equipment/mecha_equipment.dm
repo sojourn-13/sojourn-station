@@ -20,6 +20,7 @@
 	var/required_type = /obj/mecha //may be either a type or a list of allowed types
 	var/harmful = 1 //for those tools that you cannot smack people with but still need to click on them to use, aka sleepers
 	embed_mult = 0 // Mech mounted equipment, shouldn't ever embed
+	var/destroy_sound = 'sound/mecha/critdestr.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/Initialize()
 	// Process will kick this off if not used
@@ -54,12 +55,7 @@
 	if(chassis)
 		chassis.occupant_message(SPAN_DANGER("[src] is destroyed"))
 		chassis.log_append_to_last("[src] is destroyed.",1)
-
-		// TODO: cursed
-		if(istype(src, /obj/item/mecha_parts/mecha_equipment/ranged_weapon) || istype(src, /obj/item/mecha_parts/mecha_equipment/melee_weapon))
-			chassis.occupant << sound('sound/mecha/weapdestr.ogg',volume=50)
-		else
-			chassis.occupant << sound('sound/mecha/critdestr.ogg',volume=50)
+		chassis.occupant << sound(destroy_sound, volume = 50)
 
 	qdel(src)
 
@@ -174,18 +170,26 @@
 /obj/item/mecha_parts/mecha_equipment/proc/start_cooldown()
 	set_ready_state(0)
 	chassis.use_power(energy_drain)
-	addtimer(src, PROC_REF(set_ready_state), equip_cooldown, FALSE, 1)
+	addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), equip_cooldown)
 
 /obj/item/mecha_parts/mecha_equipment/proc/do_after_cooldown(atom/target)
 	if(!chassis)
-		return
+		return FALSE
 	var/C = chassis.loc
 	set_ready_state(0)
 	chassis.use_power(energy_drain)
 	. = do_after(chassis.occupant, equip_cooldown, target = target)
 	set_ready_state(1)
-	if(!chassis || 	chassis.loc != C || src != chassis.selected)
-		return 0
+	if(!chassis || chassis.loc != C || src != chassis.selected || !(get_dir(chassis, target) & chassis.dir))
+		return FALSE
+
+/obj/item/mecha_parts/mecha_equipment/proc/do_after_mecha(atom/target, delay)
+	if(!chassis)
+		return FALSE
+	var/C = chassis.loc
+	. = do_after(chassis.occupant, delay, target = target)
+	if(!chassis || 	chassis.loc != C || src != chassis.selected || !(get_dir(chassis, target) & chassis.dir))
+		return FALSE
 
 /obj/item/mecha_parts/mecha_equipment/proc/can_attach(obj/mecha/M)
 	if(M.equipment.len >= M.max_equip)

@@ -257,12 +257,6 @@
 	radio.icon_state = icon_state
 	radio.subspace_transmission = 1
 
-/obj/mecha/proc/do_after_mech(delay as num)
-	sleep(delay)
-	if(src)
-		return 1
-	return 0
-
 /obj/mecha/proc/enter_after(delay as num, var/mob/user as mob, var/numticks = 5)
 	var/turf/T = user.loc
 
@@ -488,7 +482,7 @@
 					visible_message("<b>[name] smashes through the wall</b>")
 					playsound(src, 'sound/weapons/smash.ogg', 50, 1)
 				melee_can_hit = FALSE
-				if(do_after_mech(melee_cooldown))
+				spawn(melee_cooldown)
 					melee_can_hit = TRUE
 				break
 
@@ -586,7 +580,7 @@
 	anchored = TRUE //Reanchor after moving
 	if(move_result)
 		can_move = 0
-		if(do_after_mech(step_in))
+		spawn(step_in)
 			can_move = 1
 		return 1
 	return 0
@@ -802,8 +796,7 @@ assassination method if you time it right*/
 /obj/mecha/proc/start_booster_cooldown(is_melee)
 	for(var/obj/item/mecha_parts/mecha_equipment/armor_booster/B in equipment) //Ideally this would be done by the armor booster itself; attempts weren't great for performance.
 		if(B.melee == is_melee && B.equip_ready)
-			B.set_ready_state(0)
-			B.do_after_cooldown()
+			B.start_cooldown()
 
 /obj/mecha/airlock_crush(var/crush_damage)
 	..()
@@ -1263,7 +1256,7 @@ assassination method if you time it right*/
 
 	visible_message(SPAN_NOTICE("\The [user] starts to climb into [name]"))
 
-	if(enter_after(40, usr))
+	if(do_after(usr, 40, target = src))
 		if(!occupant)
 			moved_inside(user)
 		else if(occupant!=user)
