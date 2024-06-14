@@ -411,7 +411,7 @@
 /mob/living/proc/adjust_fire_stacks(add_fire_stacks) //Adjusting the amount of fire_stacks we have on person
     fire_stacks = CLAMP(fire_stacks + add_fire_stacks, FIRE_MIN_STACKS, FIRE_MAX_STACKS)
 
-/mob/living/proc/handle_fire(flammable_gas, turf/location)
+/mob/living/proc/handle_fire()
 	if(never_stimulate_air)
 		if (fire_stacks > 0)
 			ExtinguishMob() //We dont simulate air thus we dont simulate fire

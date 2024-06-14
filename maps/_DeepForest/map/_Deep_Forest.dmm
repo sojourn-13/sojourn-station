@@ -3305,7 +3305,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/power/solar,
+/obj/machinery/power/solar/enhanced,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
@@ -5050,7 +5050,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/machinery/power/solar,
+/obj/machinery/power/solar/enhanced,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
 "euK" = (
@@ -8165,7 +8165,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/machinery/power/solar,
+/obj/machinery/power/solar/enhanced,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
@@ -16746,7 +16746,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/power/solar,
+/obj/machinery/power/solar/enhanced,
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/meadow)
 "oMu" = (

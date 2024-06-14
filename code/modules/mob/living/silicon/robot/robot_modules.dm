@@ -141,6 +141,8 @@ var/global/list/robot_modules = list(
 			//Setting this to be infinity power isnt as good of a fix do to guns that cost power getting endless free shots, so auto charging is better - Trilby
 
 /obj/item/robot_module/proc/Reset(var/mob/living/silicon/robot/R)
+	if(!istype(R))
+		return
 	if(R.actively_resting || R.allow_resting)
 		R.actively_resting = 0
 		R.allow_resting = 0
@@ -334,8 +336,8 @@ var/global/list/robot_modules = list(
 	src.modules += O
 
 	//We are stronk so we get less no knockdowns
-	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
-	R.stats.addPerk(PERK_SI_SCI)
+	R?.stats?.addPerk(PERK_ASS_OF_CONCRETE)
+	R?.stats?.addPerk(PERK_SI_SCI)
 
 	..(R)
 
@@ -460,10 +462,10 @@ var/global/list/robot_modules = list(
 	src.modules += S
 
 	//We know medical care and have all the data on it
-	R.stats.addPerk(PERK_MEDICAL_EXPERT)
-	R.stats.addPerk(PERK_SURGICAL_MASTER)
-	R.stats.addPerk(PERK_ADVANCED_MEDICAL)
-	R.stats.addPerk(PERK_SI_SCI)
+	R?.stats?.addPerk(PERK_MEDICAL_EXPERT)
+	R?.stats?.addPerk(PERK_SURGICAL_MASTER)
+	R?.stats?.addPerk(PERK_ADVANCED_MEDICAL)
+	R?.stats?.addPerk(PERK_SI_SCI)
 
 	..(R)
 
@@ -471,20 +473,20 @@ var/global/list/robot_modules = list(
 
 /obj/item/robot_module/medical/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	var/obj/item/reagent_containers/syringe/large/S = locate() in src.modules
-	if(S.mode == 2)
-		S.reagents.clear_reagents()
+	if(S && S.mode == 2)
+		S.reagents?.clear_reagents()
 		S.mode = initial(S.mode)
 		S.desc = initial(S.desc)
 		S.update_icon()
 
 	if(src.modules)
 		var/obj/item/reagent_containers/spray/sterilizine/ST = locate() in src.modules //ST for STerilizine
-		ST.reagents.add_reagent("sterilizine", 2 * amount)
+		ST?.reagents?.add_reagent("sterilizine", 2 * amount)
 	..()
 
 	if(src.emag)
 		var/obj/item/reagent_containers/spray/acid/PS = locate() in src.emag
-		PS.reagents.add_reagent("pacid", 2 * amount)
+		PS?.reagents?.add_reagent("pacid", 2 * amount)
 	..()
 
 /obj/item/robot_module/engineering
@@ -637,16 +639,16 @@ var/global/list/robot_modules = list(
 	src.modules += FWT
 
 	//We know guild work and robotics.
-	R.stats.addPerk(PERK_HANDYMAN)
-	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
-	R.stats.addPerk(PERK_SI_SCI)
+	R?.stats?.addPerk(PERK_HANDYMAN)
+	R?.stats?.addPerk(PERK_ROBOTICS_EXPERT)
+	R?.stats?.addPerk(PERK_SI_SCI)
 	..(R)
 
 
 /obj/item/robot_module/engineering/general/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	if(src.modules)
 		var/obj/item/reagent_containers/spray/cleaner/SC = locate() in src.modules //space cleaner
-		SC.reagents.add_reagent("cleaner", 2 * amount)
+		SC?.reagents?.add_reagent("cleaner", 2 * amount)
 	..()
 
 	if(R.HasTrait(CYBORG_TRAIT_EMAGGED))
@@ -747,20 +749,20 @@ var/global/list/robot_modules = list(
 	src.emag += new /obj/item/melee/energy/sword(src)
 
 	//We are stronk so we get less no knockdowns
-	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
-	R.stats.addPerk(PERK_BLOOD_LUST) //Target ME
-	R.stats.addPerk(PERK_SI_SCI)
+	R?.stats?.addPerk(PERK_ASS_OF_CONCRETE)
+	R?.stats?.addPerk(PERK_BLOOD_LUST) //Target ME
+	R?.stats?.addPerk(PERK_SI_SCI)
 
 	..(R)
 
 /obj/item/robot_module/security/defense/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
 	var/obj/item/gun/energy/bsrifle/T = locate() in src.modules
-	if(T.cell.charge < T.cell.maxcharge)
+	if(T && T.cell && (T.cell.charge < T.cell.maxcharge))
 		T.cell.give(T.charge_cost * amount)
 		T.update_icon()
 	else
-		T.charge_tick = 0
+		T?.charge_tick = 0
 
 
 /obj/item/robot_module/security/enforcement
@@ -841,28 +843,28 @@ var/global/list/robot_modules = list(
 	src.emag += new /obj/item/gun/energy/laser/mounted/cyborg(src)
 
 	//We are stronk so we get less no knockdowns
-	R.stats.addPerk(PERK_ASS_OF_CONCRETE)
-	R.stats.addPerk(PERK_BLOOD_LUST) //Target ME
-	R.stats.addPerk(PERK_SI_SCI)
+	R?.stats?.addPerk(PERK_ASS_OF_CONCRETE)
+	R?.stats?.addPerk(PERK_BLOOD_LUST) //Target ME
+	R?.stats?.addPerk(PERK_SI_SCI)
 
 	..(R)
 
 /obj/item/robot_module/security/enforcement/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
 	var/obj/item/gun/energy/taser/mounted/cyborg/T = locate() in src.modules
-	if(T.cell.charge < T.cell.maxcharge)
+	if(T && T.cell && (T.cell.charge < T.cell.maxcharge))
 		T.cell.give(T.charge_cost * amount)
 		T.update_icon()
 	else
-		T.charge_tick = 0
+		T?.charge_tick = 0
 
 	if(R.HasTrait(CYBORG_TRAIT_EMAGGED))
 		var/obj/item/gun/energy/laser/mounted/cyborg/L = locate() in src.modules
-		if(L.cell.charge < L.cell.maxcharge)
+		if(L && L.cell && (L.cell.charge < L.cell.maxcharge))
 			L.cell.give(T.charge_cost * amount)
 			L.update_icon()
 		else
-			L.charge_tick = 0
+			L?.charge_tick = 0
 
 	var/obj/item/tool/baton/robot/B = locate() in src.modules
 	if(B && B.cell)
@@ -947,18 +949,18 @@ var/global/list/robot_modules = list(
 	src.emag += new /obj/item/melee/energy/sword(src)
 
 	//Silent cleaners
-	R.stats.addPerk(PERK_QUIET_AS_MOUSE)
-	R.stats.addPerk(PERK_SI_SCI)
+	R?.stats?.addPerk(PERK_QUIET_AS_MOUSE)
+	R?.stats?.addPerk(PERK_SI_SCI)
 
 	..(R)
 
 /obj/item/robot_module/custodial/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
 	var/obj/item/device/lightreplacer/LR = locate() in src.modules
-	LR.Charge(R, amount)
+	LR?.Charge(R, amount)
 	if(src.emag)
 		var/obj/item/reagent_containers/spray/lube/S = locate() in src.emag
-		S.reagents.add_reagent("lube", 2 * amount)
+		S?.reagents?.add_reagent("lube", 2 * amount)
 
 /obj/item/robot_module/service
 	name = "service robot module"
@@ -1047,7 +1049,6 @@ var/global/list/robot_modules = list(
 	src.emag += new /obj/item/melee/energy/sword(src)
 	src.emag += new /obj/item/stamp/chameleon(src)
 	src.emag += new /obj/item/pen/chameleon(src)
-	..(R)
 
 	var/obj/item/rsf/M = new /obj/item/rsf(src)
 	M.stored_matter = 30
@@ -1064,19 +1065,19 @@ var/global/list/robot_modules = list(
 	src.emag += new /obj/item/reagent_containers/food/drinks/bottle/small/beer_two(src)
 
 	//Seller and cleaner mix, so quite and knowing the deal!
-	R.stats.addPerk(PERK_QUIET_AS_MOUSE)
-	R.stats.addPerk(PERK_MARKET_PROF)
-	R.stats.addPerk(PERK_SI_SCI)
+	R?.stats?.addPerk(PERK_QUIET_AS_MOUSE)
+	R?.stats?.addPerk(PERK_MARKET_PROF)
+	R?.stats?.addPerk(PERK_SI_SCI)
 
 	..(R)
 
 /obj/item/robot_module/service/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	..()
 	var/obj/item/reagent_containers/food/condiment/enzyme/E = locate() in src.modules
-	E.reagents.add_reagent("enzyme", 2 * amount)
+	E?.reagents?.add_reagent("enzyme", 2 * amount)
 	if(src.emag)
 		var/obj/item/reagent_containers/food/drinks/bottle/small/beer_two/B = locate() in src.emag
-		B.reagents.add_reagent("beer2", 2 * amount)
+		B?.reagents?.add_reagent("beer2", 2 * amount)
 
 /obj/item/robot_module/miner
 	name = "miner robot module"
@@ -1153,8 +1154,8 @@ var/global/list/robot_modules = list(
 	src.emag += new /obj/item/melee/energy/sword(src)
 
 	//Seller so quite and knowing the deal!
-	R.stats.addPerk(PERK_MARKET_PROF)
-	R.stats.addPerk(PERK_SI_SCI)
+	R?.stats?.addPerk(PERK_MARKET_PROF)
+	R?.stats?.addPerk(PERK_SI_SCI)
 
 
 	..(R)
@@ -1245,10 +1246,10 @@ var/global/list/robot_modules = list(
 	src.modules += N
 
 	//We know medical and robotics, were a mix.
-	R.stats.addPerk(PERK_MEDICAL_EXPERT)
-	R.stats.addPerk(PERK_SURGICAL_MASTER)
-	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
-	R.stats.addPerk(PERK_SI_SCI)
+	R?.stats?.addPerk(PERK_MEDICAL_EXPERT)
+	R?.stats?.addPerk(PERK_SURGICAL_MASTER)
+	R?.stats?.addPerk(PERK_ROBOTICS_EXPERT)
+	R?.stats?.addPerk(PERK_SI_SCI)
 
 	..(R)
 
@@ -1346,20 +1347,18 @@ var/global/list/robot_modules = list(
 	src.modules += P
 
 	//We know repair work and robotics.
-	R.stats.addPerk(PERK_ROBOTICS_EXPERT)
-	R.stats.addPerk(PERK_SI_SCI)
+	R?.stats?.addPerk(PERK_ROBOTICS_EXPERT)
+	R?.stats?.addPerk(PERK_SI_SCI)
 
 	..(R)
 
 /obj/item/robot_module/drone/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	if(src.modules)
 		var/obj/item/reagent_containers/spray/krag_b_gone/KBG = locate() in src.modules //Krag-B-Gone
-		if(KBG)
-			KBG.reagents.add_reagent("silicate", 2 * amount)
+		KBG?.reagents?.add_reagent("silicate", 2 * amount)
 
 		var/obj/item/device/lightreplacer/LR = locate() in src.modules
-		if(LR)
-			LR.Charge(R, amount)
+		LR?.Charge(R, amount)
 
 	..()
 

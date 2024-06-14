@@ -6,7 +6,7 @@
 	extended_desc = "This program may be used to view and download news articles from the network."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "contact"
+	program_menu_icon = "newspaper"
 	size = 4
 	requires_ntnet = TRUE
 	available_on_ntnet = TRUE

@@ -22,16 +22,20 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	desc = "Your past life has been one of turmoil and extremes and as a result has toughened you up severely. Environmental damage from falling or explosives have less of an effect on your toughened body."
 	icon_state = "bomb" // https://game-icons.net
 
-/datum/perk/space_asshole/assign(mob/living/carbon/human/H)
+/datum/perk/space_asshole/assign(mob/living/L)
 	..()
 	holder.mob_bomb_defense += 25
 	holder.falls_mod -= 0.4
-	holder.sanity.view_damage_threshold += 20
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.view_damage_threshold += 20
 
 /datum/perk/space_asshole/remove()
 	holder.mob_bomb_defense -= 25
 	holder.falls_mod += 0.4
-	holder.sanity.view_damage_threshold -= 20
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.view_damage_threshold -= 20
 	..()
 
 /datum/perk/linguist
@@ -77,7 +81,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	faster. Finally, your rough and tumble movement makes falling from high heights deal a lot less damage compared to others and you will always land on your feet."
 	icon_state = "parkour" //https://game-icons.net/1x1/delapouite/jump-across.html
 
-/datum/perk/parkour/assign(mob/living/carbon/human/H)
+/datum/perk/parkour/assign(mob/living/L)
 	..()
 	holder.mod_climb_delay -= 0.95
 	holder.falls_mod -= 0.8
@@ -105,7 +109,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 
 	var/virtual_scanner = new /obj/item/device/scanner/plant/perk
 
-/datum/perk/greenthumb/assign(mob/living/carbon/human/H)
+/datum/perk/greenthumb/assign(mob/living/L)
 	..()
 	var/obj/item/device/scanner/V = virtual_scanner
 	V.is_virtual = TRUE
@@ -117,16 +121,18 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 			sometimes you won’t take any sanity loss and you can even gain back sanity, or get a boost to your cognition."
 	icon_state = "eye" //https://game-icons.net/1x1/lorc/tear-tracks.html
 
-/datum/perk/nihilist/assign(mob/living/carbon/human/H)
-	if(..())
-		holder.sanity.positive_prob += 30
-		holder.sanity.negative_prob += 20
+/datum/perk/nihilist/assign(mob/living/L)
+	if(..() && ishuman(L))
+		var/mob/living/carbon/human/H = L
+		H.sanity.positive_prob += 30
+		H.sanity.negative_prob += 20
 
 /datum/perk/nihilist/remove()
-	if(holder)
-		holder.sanity.positive_prob -= 30
-		holder.sanity.negative_prob -= 20
-		holder.stats.removeTempStat(STAT_COG, "Fate Nihilist")
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.positive_prob -= 30
+		H.sanity.negative_prob -= 20
+		H.stats.removeTempStat(STAT_COG, "Fate Nihilist")
 	..()
 
 /datum/perk/idealist
@@ -144,13 +150,13 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 			Start with an heirloom weapon, higher chance to be on contractor contracts and removed sanity cap. Stay clear of filth and danger."
 
 /datum/perk/noble/assign(mob/living/carbon/human/H)
-	if(!..())
+	if(!..() || !istype(H))
 		return
-	holder.sanity.environment_cap_coeff -= 1
-	if(!holder.name)
-		holder.stats.removePerk(src.type)
+	H.sanity.environment_cap_coeff -= 1
+	if(!H.name)
+		H.stats.removePerk(src.type)
 		return
-	var/turf/T = get_turf(holder)
+	var/turf/T = get_turf(H)
 	var/obj/item/W
 	var/picklist = list( //Total weight sum = 24
 				/obj/item/tool/hammer/mace = 5,
@@ -160,7 +166,7 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 				/obj/item/tool/sword/machete = 4,
 				/obj/item/tool/knife/dagger/ceremonial = 2,)
 
-	if(is_neotheology_disciple(holder)) //If someone's NT, they're likely to spawn with an NT weapon instead
+	if(is_neotheology_disciple(H)) //If someone's NT, they're likely to spawn with an NT weapon instead
 		picklist += list( //Total weight sum = 34
 				/obj/item/tool/sword/nt/longsword = 10,
 				/obj/item/tool/sword/nt/shortsword = 12,
@@ -168,10 +174,10 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 				/obj/item/tool/knife/dagger/nt = 10,)
 
 	W = pickweight(picklist)
-	holder.sanity.valid_inspirations += W
+	H.sanity.valid_inspirations += W
 	W = new W(T)
-	W.desc += " It has been inscribed with the \"[holder.name]\" family name."
-	W.name = "[W] of [holder.name]"
+	W.desc += " It has been inscribed with the \"[H.name]\" family name."
+	W.name = "[W] of [H.name]"
 	var/oddities = rand(2,4) //Will boost 2-4 random stats
 	var/list/stats = ALL_STATS_FOR_LEVEL_UP
 	var/list/final_oddity = list()
@@ -185,11 +191,12 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	W.sanity_damage -= 1
 	W.price_tag += rand(1000, 2500)
 	spawn(1)
-		holder.equip_to_storage_or_drop(W)
+		H.equip_to_storage_or_drop(W)
 
 /datum/perk/noble/remove()
-	if(holder)
-		holder.sanity.environment_cap_coeff += 1
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.sanity.environment_cap_coeff += 1
 	..()
 
 /datum/perk/addict
@@ -198,16 +205,20 @@ This is NOT for racial-specific perks, but rather specifically for general backg
 	easily addicted to all of them."
 	icon_state = "chemaddict" // https://game-icons.net/1x1/lorc/overdose.html
 
-/datum/perk/addict/assign(mob/living/carbon/human/H)
+/datum/perk/addict/assign(mob/living/L)
 	..()
-	holder.metabolism_effects.addiction_chance_multiplier = 2
-	holder.metabolism_effects.nsa_bonus += 20
-	holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 2
+		H.metabolism_effects.nsa_bonus += 20
+		H.metabolism_effects.calculate_nsa()
 
 /datum/perk/addict/remove()
-	holder.metabolism_effects.addiction_chance_multiplier = 1
-	holder.metabolism_effects.nsa_bonus -= 20
-	holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 1
+		H.metabolism_effects.nsa_bonus -= 20
+		H.metabolism_effects.calculate_nsa()
 	..()
 
 /datum/perk/no_obfuscation

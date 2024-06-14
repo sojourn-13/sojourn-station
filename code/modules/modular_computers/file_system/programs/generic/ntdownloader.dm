@@ -3,7 +3,7 @@
 	filedesc = "Software Download Tool"
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
-	program_menu_icon = "arrowthickstop-1-s"
+	program_menu_icon = "download"
 	extended_desc = "This program allows downloads of software from official software repositories"
 	unsendable = 1
 	undeletable = 1
@@ -11,14 +11,13 @@
 	requires_ntnet = 1
 	requires_ntnet_feature = NTNET_SOFTWAREDOWNLOAD
 	available_on_ntnet = 0
-	nanomodule_path = /datum/nano_module/program/computer_ntnetdownload/
 	ui_header = "downloader_finished.gif"
 	var/datum/computer_file/program/downloaded_file = null
 	var/hacked_download = FALSE
 	var/download_completion = 0 //GQ of downloaded data.
 
 	var/downloaderror = ""
-	var/list/downloads_queue[0]
+	var/list/downloads_queue = list()
 	var/file_info //For logging, can be faked by antags.
 	var/server
 	var/download_paused = FALSE
@@ -110,81 +109,42 @@
 	update_netspeed(speed_variance=15)
 	download_completion = min(download_completion + ntnet_speed, downloaded_file.size)
 
-/datum/computer_file/program/downloader/Topic(href, href_list)
-	if(..())
-		return 1
-	if(href_list["PRG_downloadfile"])
-		if(!downloaded_file)
-			begin_file_download(href_list["PRG_downloadfile"], usr.stats.getStat(STAT_COG))
-		else if(check_file_download(href_list["PRG_downloadfile"]) && !downloads_queue.Find(href_list["PRG_downloadfile"]) && downloaded_file.filename != href_list["PRG_downloadfile"])
-			downloads_queue[href_list["PRG_downloadfile"]] = usr.stats.getStat(STAT_COG)
-		return 1
-	if(href_list["PRG_removequeued"])
-		downloads_queue.Remove(href_list["PRG_removequeued"])
-		return 1
-	if(href_list["PRG_reseterror"])
-		if(downloaderror)
-			download_completion = 0
-			downloaded_file = null
-			downloaderror = ""
-		return 1
-	if(href_list["download_pause"])
-		download_paused = !download_paused
-		if (download_paused)
-			ui_header = "downloader_paused.gif"
-		else
-			ui_header = "downloader_running.gif"
-		return 1
+/datum/computer_file/program/downloader/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "NtosDownloader")
+		ui.open()
 
-	if(href_list["download_stop"])
-		if(downloaded_file)
-			end_file_download(abort=TRUE)
-		return 1
-	return 0
+/datum/computer_file/program/downloader/ui_data(mob/user)
+	var/list/data = ..()
 
-/datum/nano_module/program/computer_ntnetdownload
-	name = "Software Download Tool"
-	var/obj/item/modular_computer/my_computer = null
+	data["error"] = downloaderror || null
 
-/datum/nano_module/program/computer_ntnetdownload/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
-	if(program)
-		my_computer = program.computer
+	if(downloaded_file) // Download running. Wait please..
+		data["downloaded_file"] = list(
+			"downloadname" = downloaded_file.filename,
+			"downloaddesc" = downloaded_file.filedesc,
+			"downloadsize" = downloaded_file.size,
+			"downloadspeed" = ntnet_speed,
+			"downloadcompletion" = round(download_completion, 0.01)
+		)
+	else
+		data["downloaded_file"] = null
 
-	if(!istype(my_computer))
-		return
+	data["download_paused"] = download_paused
+	data["disk_size"] = computer.hard_drive.max_capacity
+	data["disk_used"] = computer.hard_drive.used_capacity
 
-	var/list/data = list()
-	var/datum/computer_file/program/downloader/prog = program
-	// For now limited to execution by the downloader program
-	if(!prog || !istype(prog))
-		return
-	if(program)
-		data = program.get_header_data()
-
-	// This IF cuts on data transferred to client, so i guess it's worth it.
-	if(prog.downloaderror) // Download errored. Wait until user resets the program.
-		data["error"] = prog.downloaderror
-	if(prog.downloaded_file) // Download running. Wait please..
-		data["downloadname"] = prog.downloaded_file.filename
-		data["downloaddesc"] = prog.downloaded_file.filedesc
-		data["downloadsize"] = prog.downloaded_file.size
-		data["downloadspeed"] = prog.ntnet_speed
-		data["downloadcompletion"] = round(prog.download_completion, 0.01)
-
-	data["download_paused"] = prog.download_paused
-	data["disk_size"] = my_computer.hard_drive.max_capacity
-	data["disk_used"] = my_computer.hard_drive.used_capacity
-
-	var/obj/item/computer_hardware/hard_drive/HDD = program.computer.hard_drive
-	if(!HDD)
-		return 1
+	// There's no way you could get here without a hard drive
+	var/obj/item/computer_hardware/hard_drive/HDD = computer.hard_drive
+	
 	var/list/datum/computer_file/program/installed_programs = list()
 	for(var/datum/computer_file/program/P in HDD.stored_files)
-		installed_programs.Add(P)
+		installed_programs += P
 
 	var/list/datum/computer_file/program/downloadable_programs = list()
 	for(var/datum/computer_file/program/P in ntnet_global.available_station_software)
-		downloadable_programs.Add(P)
+		downloadable_programs += P
 
 	for(var/datum/computer_file/program/P in downloadable_programs) //Removeing programs from list that are already present on HDD
 		for(var/datum/computer_file/program/I in installed_programs)
@@ -192,49 +152,79 @@
 				downloadable_programs -= P
 				break
 
-	var/list/queue = list() // Nanoui can't iterate through assotiative lists, so we have to do this
-	if(prog.downloads_queue.len > 0)
-		for(var/item in prog.downloads_queue)
+	var/list/queue = list()
+	if(downloads_queue.len > 0)
+		for(var/item in downloads_queue)
 			queue += item
-		data["downloads_queue"] = queue
+	data["downloads_queue"] = queue
 
-	var/list/all_entries[0]
+	var/list/all_entries = list()
 	for(var/datum/computer_file/program/P in downloadable_programs)
 		// Only those programs our user can run will show in the list
 		if(!P.can_run(user) && P.requires_access_to_download)
 			continue
-		if(!P.is_supported_by_hardware(my_computer, user))
+
+		if(!P.is_supported_by_hardware(computer, user))
 			continue
-		all_entries.Add(list(list(
-		"filename" = P.filename,
-		"filedesc" = P.filedesc,
-		"fileinfo" = P.extended_desc,
-		"size" = P.size,
-		"icon" = P.program_menu_icon,
-		"in_queue" = (P.filename in queue) ? 1 : 0
-		)))
-	data["hackedavailable"] = 0
-	if(prog.computer_emagged) // If we are running on emagged computer we have access to some "bonus" software
-		var/list/hacked_programs[0]
-		for(var/datum/computer_file/program/P in ntnet_global.available_antag_software)
-			data["hackedavailable"] = 1
-			hacked_programs.Add(list(list(
+
+		all_entries += list(list(
 			"filename" = P.filename,
 			"filedesc" = P.filedesc,
 			"fileinfo" = P.extended_desc,
 			"size" = P.size,
-			"icon" = P.program_menu_icon
-			)))
-		data["hacked_programs"] = hacked_programs
+			"icon" = P.program_menu_icon,
+			"in_queue" = (P.filename in queue) ? 1 : 0
+		))
+
+	var/list/hacked_programs = list()
+	if(computer_emagged) // If we are running on emagged computer we have access to some "bonus" software
+		for(var/datum/computer_file/program/P in ntnet_global.available_antag_software)
+			hacked_programs += list(list(
+				"filename" = P.filename,
+				"filedesc" = P.filedesc,
+				"fileinfo" = P.extended_desc,
+				"size" = P.size,
+				"icon" = P.program_menu_icon
+			))
+	data["hacked_programs"] = hacked_programs
 
 	data["downloadable_programs"] = all_entries
 
+	return data
 
+/datum/computer_file/program/downloader/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "mpc_downloader.tmpl", name, 600, 700, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
+	switch(action)
+		if("download_file")
+			if(!downloaded_file)
+				begin_file_download(params["file"], usr.stats.getStat(STAT_COG))
+			else if(check_file_download(params["file"]) && !downloads_queue.Find(params["file"]) && downloaded_file.filename != params["file"])
+				downloads_queue[params["file"]] = usr.stats.getStat(STAT_COG)
+			. = TRUE
+		
+		if("remove_queued")
+			downloads_queue -= params["file"]
+			. = TRUE
+		
+		if("reset_error")
+			if(downloaderror)
+				download_completion = 0
+				downloaded_file = null
+				downloaderror = ""
+			. = TRUE
+		
+		if("download_pause")
+			download_paused = !download_paused
+			if (download_paused)
+				ui_header = "downloader_paused.gif"
+			else
+				ui_header = "downloader_running.gif"
+			. = TRUE
+
+		if("download_stop")
+			if(downloaded_file)
+				end_file_download(abort=TRUE)
+			. = TRUE

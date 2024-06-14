@@ -35,6 +35,8 @@ type ConditionalProps =
     };
 
 type OptionalProps = Partial<{
+  /** Automatically updates whenever value changes, for reactive values */
+  autoUpdateValue: boolean;
   /** Automatically focuses the input on mount */
   autoFocus: boolean;
   /** Automatically selects the input value on focus */
@@ -81,6 +83,7 @@ const inputDebounce = debounce((onInput: () => void) => onInput(), 250);
  */
 export function Input(props: Props) {
   const {
+    autoUpdateValue,
     autoFocus,
     autoSelect,
     className,
@@ -154,6 +157,18 @@ export function Input(props: Props) {
       }
     }, 1);
   }, []);
+
+  /** Updates the input's text to match the value if autoUpdateValue is set */
+  useEffect(() => {
+    if (!autoUpdateValue) return;
+
+    const input = inputRef.current;
+    if (!input) return;
+
+    const newValue = toInputValue(value);
+
+    if (input.value !== newValue) input.value = newValue;
+  }, [value]);
 
   return (
     <Box

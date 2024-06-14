@@ -33,7 +33,7 @@
 	desc = "All sablekyne are stocky and built wide, your brawny build and low center of gravity gives you exceptional balance. Few beasts can knock you down and not even the strongest men can push you over."
 	icon_state = "muscular" // https://game-icons.net
 
-/datum/perk/brawn/assign(mob/living/carbon/human/H)
+/datum/perk/brawn/assign(mob/living/L)
 	..()
 	holder.mob_bump_flag = HEAVY
 
@@ -72,16 +72,20 @@
 	desc = "A mar'qua's nervous system has long since adapted to the use of stimulants, chemicals, and different toxins. Unlike lesser races, you can handle a wide variety of chemicals before showing any side effects and you'll never become addicted."
 	icon_state = "adaptednervoussystem"
 
-/datum/perk/alien_nerves/assign(mob/living/carbon/human/H)
+/datum/perk/alien_nerves/assign(mob/living/L)
 	..()
-	holder.metabolism_effects.addiction_chance_multiplier = -1
-	holder.metabolism_effects.nsa_bonus += 300
-	holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = -1
+		H.metabolism_effects.nsa_bonus += 300
+		H.metabolism_effects.calculate_nsa()
 
 /datum/perk/alien_nerves/remove()
-	holder.metabolism_effects.addiction_chance_multiplier = 1
-	holder.metabolism_effects.nsa_bonus -= 300
-	holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.addiction_chance_multiplier = 1
+		H.metabolism_effects.nsa_bonus -= 300
+		H.metabolism_effects.calculate_nsa()
 	..()
 
 //////////////////////////////////////Human perks
@@ -434,7 +438,7 @@
 	in your biology and pheromones however make you an enemy to roaches. As a side effect of dealing with spiders so often, you can't be slowed or stuck by webbing."
 	icon_state = "muscular" // https://game-icons.net
 
-/datum/perk/spiderfriend/assign(mob/living/carbon/human/H)
+/datum/perk/spiderfriend/assign(mob/living/L)
 	..()
 	holder.faction = "spiders"
 
@@ -492,7 +496,7 @@
 	desc = "Unlike other caste in the cht'mant hive you are built for combat, while not as naturally tough as other species you can tank a few more blows than your softer insectile brethren."
 	icon_state = "paper"
 
-/datum/perk/chitinarmor/assign(mob/living/carbon/human/H)
+/datum/perk/chitinarmor/assign(mob/living/L)
 	..()
 	holder.brute_mod_perk *= 0.80 // I need to know what type of stuff people were smoking before my change here
 	holder.mob_bomb_defense += 5
@@ -573,7 +577,7 @@
 	desc = "As a Folken, you can use the light to heal wounds, standing in areas of bright light will increase your natural regeneration. Due to your comparitively young age, you heal much faster than older folken."
 	var/replaced = FALSE // Did it replace the normal folken healing?
 
-/datum/perk/folken_healing/young/assign(mob/living/carbon/human/H)
+/datum/perk/folken_healing/young/assign(mob/living/L)
 	..()
 	if(holder.stats.getPerk(PERK_FOLKEN_HEALING)) // Does the user has the folken healing perk?
 		holder.stats.removePerk(PERK_FOLKEN_HEALING) // Remove the old healing.
@@ -777,14 +781,18 @@
 	if(regen_rate  && holder.nutrition > 300 && holder.stat != DEAD) //We lose regen when we are below half max nutrition. Or when we're dead.
 		holder.heal_overall_damage(regen_rate, regen_rate)
 
-/datum/perk/racial/slime_metabolism/assign(mob/living/carbon/human/H)
+/datum/perk/racial/slime_metabolism/assign(mob/living/L)
 	..()
 	holder.toxin_mod_perk -= 0.5
-	holder.metabolism_effects.nsa_bonus += 100
-	holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.nsa_bonus += 100
+		H.metabolism_effects.calculate_nsa()
 
 /datum/perk/racial/slime_metabolism/remove()
 	holder.toxin_mod_perk += 0.5
-	holder.metabolism_effects.nsa_bonus -= 100
-	holder.metabolism_effects.calculate_nsa()
+	if(ishuman(holder))
+		var/mob/living/carbon/human/H = holder
+		H.metabolism_effects.nsa_bonus -= 100
+		H.metabolism_effects.calculate_nsa()
 	..()

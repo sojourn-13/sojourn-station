@@ -247,7 +247,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	to_chat(src, "\red If the title screen is black, resources are still downloading. Please be patient until the title screen appears.")
 
-
+	// Try doing this before mob login
+	apply_clickcatcher()
 
 	. = ..() //calls mob.Login()
 	++global.client_count
@@ -772,3 +773,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 /client/proc/apply_fps(var/client_fps)
 	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
 		vars["fps"] = client_fps
+
+/client/proc/generate_clickcatcher()
+	if(!void)
+		void = new()
+		screen += void
+
+/client/proc/apply_clickcatcher()
+	generate_clickcatcher()
+	var/list/actualview = getviewsize(view)
+	void.UpdateGreed(actualview[1],actualview[2])

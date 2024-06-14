@@ -1,6 +1,6 @@
 /datum/trade_station/asterstradecapital
 	name_pool = list(
-		"FTS 'Solnishko'" = "Free Trade Station 'Solnishko', they're sending a message \"Zdravstvuite, this is the Trade Station 'Solnishko'. We have all of the best products for sale on the frontier! You couldn't get better prices!.\ Everything for sale here, don't be afraid to come aboard and check our wares!\"",
+		"FTS 'Solnishko'" = "Free Trade Station 'Solnishko', they're sending a message \"Zdravstvuite, this is the Trade Station 'Solnishko'. We have all of the best products for sale on the frontier! You couldn't get better prices! \ Everything for sale here, don't be afraid to come aboard and check our wares!\"",
 	)
 	forced_overmap_zone = list(
 		list(24, 26),

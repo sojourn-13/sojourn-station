@@ -4,36 +4,12 @@
 	extended_desc = "Lonestar (and Soteria) Presents: Victoria's Incredible Kitchen Assistant - an AI-generated electronic catalog for cooking."
 	program_icon_state = "generic"
 	program_key_state = "generic_key"
+	program_menu_icon = "cookie-bite"
 	size = 2
 	available_on_ntnet = 1
-	nanomodule_path = /datum/nano_module/cook_catalog
+	tguimodule_path = /datum/tgui_module/catalog/cooking/ntos
 	usage_flags = PROGRAM_ALL
 
-/datum/nano_module/cook_catalog
-	name = "Lonestar (and Soteria) Presents: Victoria's Incredible Kitchen Assistant"
-
-/datum/nano_module/cook_catalog/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, state = GLOB.default_state)
-	var/list/data = nano_ui_data(user)
-
-	var/datum/asset/cooking_icons = get_asset_datum(/datum/asset/simple/cooking_icons)
-	if (cooking_icons.send(user.client))
-		user.client.browse_queue_flush() // stall loading nanoui until assets actualy gets sent
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "cooking_catalog.tmpl", name, 640, 700, state = state)
-		ui.set_initial_data(data)
-		refresh_catalog_browsing(user, ui)
-		ui.auto_update_layout = 1
-		ui.open()
-
-/datum/nano_module/cook_catalog/Topic(href, href_list)
-	if(..())
-		return 1
-
-	if(href_list["greet"])
-		browse_catalog(GLOB.catalogs[CATALOG_COOKING], usr)
-		return 0
 //===================================================================================
 /proc/createCookingCatalogs()
 	for(var/datum/cooking_with_jane/recipe/our_recipe in GLOB.cwj_recipe_list)
@@ -42,7 +18,6 @@
 
 	//Do a sort
 	var/datum/catalog/C = GLOB.catalogs[CATALOG_COOKING]
-	C.associated_template = "catalog_list_cooking.tmpl"
 	C.entry_list = sortTim(C.entry_list, /proc/cmp_catalog_entry_cook)
 
 //Because I want it to be EXTREMELY ORGANIZED.
@@ -91,7 +66,6 @@
 	C.add_entry(GLOB.all_catalog_entries_by_type[our_recipe.type])
 
 /datum/catalog_entry/cooking
-	associated_template = "catalog_entry_cooking.tmpl"
 	var/datum/cooking_with_jane/recipe/recipe
 
 /datum/catalog_entry/cooking/New(var/datum/cooking_with_jane/recipe/our_recipe)
@@ -99,7 +73,7 @@
 	title = our_recipe.name
 	recipe = our_recipe
 
-/datum/catalog_entry/cooking/catalog_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/cooking/catalog_ui_data(mob/user)
 	var/list/data = ..()
 	data["name"] = recipe.name
 	data["id"] = recipe.type
@@ -128,7 +102,7 @@
 	return data
 
 
-/datum/catalog_entry/cooking/nano_ui_data(mob/user, ui_key = "main")
+/datum/catalog_entry/cooking/ui_data(mob/user)
 	var/list/data = ..()
 	data["name"] = recipe.name
 	data["id"] = recipe.type

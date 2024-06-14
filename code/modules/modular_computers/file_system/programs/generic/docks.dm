@@ -5,7 +5,7 @@
 	nanomodule_path = /datum/nano_module/docking
 	program_icon_state = "supply"
 	program_key_state = "rd_key"
-	program_menu_icon = "triangle-2-e-w"
+	program_menu_icon = "anchor"
 	extended_desc = "A management tool that lets you see the status of the docking ports."
 	size = 10
 	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP

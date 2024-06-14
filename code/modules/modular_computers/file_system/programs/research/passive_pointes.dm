@@ -4,7 +4,7 @@
 	nanomodule_path = /datum/nano_module/program/point_miner
 	program_icon_state = "comm_logs"
 	program_key_state = "rd_key"
-	program_menu_icon = "cart"
+	program_menu_icon = "sim-card"
 	extended_desc = "A SI devolped tool used to sort large databases of filed research reports to gather RnD points onto a local hardrives or disk."
 	size = 50
 	available_on_ntnet = FALSE

@@ -48,8 +48,6 @@
 	if (!QDELETED(src))
 		for(var/datum/reagent/organic/blood/B in vessel.reagent_list)
 			if(B.id == "blood")
-				B.data = list(	"donor"=src,"viruses"=null,"species"=species.name,"blood_DNA"=dna.unique_enzymes,"blood_colour"= blood_color,"blood_type"=dna.b_type,	\
-								"resistances"=null,"trace_chem"=null, "virus2" = null, "antibodies" = list())
 				B.initialize_data(get_blood_data())
 
 // Takes care blood loss and regeneration
@@ -167,9 +165,11 @@
 /mob/living/carbon/proc/get_blood()
 	var/datum/reagent/organic/blood/res = locate() in vessel.reagent_list //Grab some blood
 	if(res) // Make sure there's some blood at all
-		if(res.data["donor"] != src) //If it's not theirs, then we look for theirs
+		var/datum/weakref/ref = res.data["donor"]
+		if(istype(ref) && ref.resolve() != src)
 			for(var/datum/reagent/organic/blood/D in vessel.reagent_list)
-				if(D.data["donor"] == src)
+				ref = D.data["donor"]
+				if(ref.resolve() == src)
 					return D
 	return res
 

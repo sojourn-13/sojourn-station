@@ -56,15 +56,26 @@
 
 	return ..()
 
+// aiOverride is usedd in headset/heads/ai_integrated/receive_range calling ..(freq, level, 1)
 /obj/item/device/radio/headset/receive_range(freq, level, aiOverride = 0)
-	if (aiOverride)
-		playsound(loc, 'sound/effects/radio_common.ogg', 25, 1, 1)
-		return ..(freq, level)
-	if(ishuman(src.loc))
-		var/mob/living/carbon/human/H = src.loc
-		if(H.l_ear == src || H.r_ear == src || H.head == src) // Hotfix for the hat headset hat
+	if(aiOverride)
+		. = ..(freq, level)
+		if(. > -1)
 			playsound(loc, 'sound/effects/radio_common.ogg', 25, 1, 1)
-			return ..(freq, level)
+		return
+
+	if(!ishuman(loc))
+		// must be equipped to hear
+		return -1
+
+	var/mob/living/carbon/human/H = loc
+	if(H.l_ear == src || H.r_ear == src || H.head == src)
+		. = ..(freq, level)
+		if(. > -1)
+			playsound(loc, 'sound/effects/radio_common.ogg', 25, 1, 1)
+		return
+
+	// must be equipped to hear
 	return -1
 
 /obj/item/device/radio/headset/syndicate

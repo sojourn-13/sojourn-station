@@ -181,14 +181,17 @@
 	if(zoomeye == 7)
 		zoomeye = 9
 		usr.client.view = 9
+		usr.client.apply_clickcatcher()
 		return
 	if(zoomeye == 9)
 		zoomeye = 12
 		usr.client.view = 12
+		usr.client.apply_clickcatcher()
 		return
 	if(zoomeye == 12)
 		zoomeye = 7
 		usr.client.view = 7
+		usr.client.apply_clickcatcher()
 		return
 	return
 

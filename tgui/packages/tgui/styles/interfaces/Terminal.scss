@@ -1,0 +1,9 @@
+@use "sass:meta";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+.Terminal__Monospace * {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.4rem;
+}

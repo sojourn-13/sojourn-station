@@ -33,7 +33,7 @@
 
 //Return a non FALSE value to cancel whatever called this from propagating, if it respects it.
 /atom/proc/_try_interact(mob/user)
-	if(is_admin(user) && isghost(user)) //admin abuse
+	if(isAdminGhostAI(user)) //admin abuse
 		return interact(user)
 	if(can_interact(user))
 		return interact(user)
@@ -64,7 +64,7 @@
 	// 		return FALSE
 	return TRUE
 
-/atom/ui_status(mob/user)
+/atom/ui_status(mob/user, datum/ui_state/state)
 	. = ..()
 	//Check if both user and atom are at the same location
 	if(!can_interact(user, show_message = FALSE))
