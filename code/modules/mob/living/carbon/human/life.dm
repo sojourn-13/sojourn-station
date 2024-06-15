@@ -1047,6 +1047,9 @@
 					holder.add_overlay("hud_bleeding")
 				if(E.status & ORGAN_INFECTED)
 					holder.add_overlay("hud_infection")
+				if(E.status & ORGAN_WOUNDED)
+					holder.add_overlay("hud_generic_wound")
+
 
 
 			if(vessel)
