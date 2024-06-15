@@ -10,6 +10,7 @@
 	var/ready_for_bottleing = FALSE				//After brewing we can sell or bottle, this is for the latter
 	var/brewing = FALSE							//If we currently brewing a booze or not
 	var/brew_to									//What we are making
+	var/fake_name								//Used for Exsamine
 	//Needed crops
 	var/needed_crop								//crop by kitch tag needed
 	var/needed_crop_amount						//crop amount need
@@ -93,7 +94,10 @@
 /obj/structure/fermentation_keg/examine(mob/user)
 	..()
 	if(brew_to)
-		var/message = "Currently making: [brew_to].\n"
+		if(!fake_name)
+			fake_name = "Unknown brew"
+
+		var/message = "Currently making: [fake_name].\n"
 		//Water
 		if(needed_water)
 			message += "Water Required: [needed_water], current water level is [reagents.get_reagent_amount("water")].\n"
@@ -157,11 +161,14 @@
 
 	var/shopping = options[choice]
 
+	if(shopping)
+		clear_out(TRUE)
+
 	//Little long but at lest its clean and easy to read
 	switch(shopping)
 		if("beer")
-			clear_out()
 			brew_to = "beer"
+			fake_name = "beer"
 			needed_water = 120
 			needed_crop = "wheat"
 			needed_crop_amount = 40
@@ -172,8 +179,8 @@
 			brewed_amount = 12 //12 pack
 
 		if("beer2")
-			clear_out()
 			brew_to = "beer2"
+			fake_name = "sleepy beer"
 			needed_water = 60
 			needed_crop = "wheat"
 			needed_crop_amount = 10
@@ -185,15 +192,12 @@
 			price_tag_setter = 2250
 			brew_timer = 120 //2 mins
 			brewed_amount = 6 //6 pack
-			//We are brewing a new item
-			ready_for_bottleing = FALSE
-			brewing = FALSE
 
 		if("wine")
-			clear_out()
 			brew_to = "wine"
+			fake_name = "wine"
 			needed_water = 160
-			needed_crop = "grape"
+			needed_crop = "grapes"
 			needed_crop_amount = 80
 			needed_crop_one = "towercap"
 			needed_crop_one_amount = 5
@@ -205,10 +209,10 @@
 			brewed_amount = 2 //2 pack
 
 		if("pwine")
-			clear_out()
 			brew_to = "pwine"
+			fake_name = "fungal wine (poison)"
 			needed_water = -1
-			needed_crop = "grape"
+			needed_crop = "grapes"
 			needed_crop_amount = 10
 			needed_crop_one = "towercap"
 			needed_crop_one_amount = 5
@@ -220,15 +224,12 @@
 			price_tag_setter = 4000
 			brew_timer = 960 //16 mins
 			brewed_amount = 1 //1 pack
-			//We are brewing a new item
-			ready_for_bottleing = FALSE
-			brewing = FALSE
 
 		if("redcandyliquor")
-			clear_out()
 			brew_to = "redcandyliquor"
+			fake_name = "red candy wine"
 			needed_water = -1
-			needed_crop = "grape"
+			needed_crop = "grapes"
 			needed_crop_amount = 10
 			needed_crop_one = "sunflowers"
 			needed_crop_one_amount = 5
@@ -240,13 +241,10 @@
 			price_tag_setter = 4000
 			brew_timer = 960 //16 mins
 			brewed_amount = 1 //1 pack
-			//We are brewing a new item
-			ready_for_bottleing = FALSE
-			brewing = FALSE
 
 		if("ntcahors")
-			clear_out()
 			brew_to = "ntcahors"
+			fake_name = "blessed wine"
 			needed_water = -1
 			needed_crop = "greengrapes"
 			needed_crop_amount = 30
@@ -260,13 +258,10 @@
 			price_tag_setter = 6000
 			brew_timer = 3600 //1 hour
 			brewed_amount = 1 //1 pack
-			//We are brewing a new item
-			ready_for_bottleing = FALSE
-			brewing = FALSE
 
 		if("rum")
-			clear_out()
 			brew_to = "rum"
+			fake_name = "rum"
 			needed_water = 120
 			needed_crop = "sugarcane"
 			needed_crop_amount = 60
@@ -280,8 +275,8 @@
 			brewed_amount = 4 //4 pack
 
 		if("ale")
-			clear_out()
 			brew_to = "ale"
+			fake_name = "ale"
 			needed_water = 120
 			needed_crop = "wheat"
 			needed_crop_amount = 60
@@ -298,8 +293,8 @@
 
 		//Fast n cheap
 		if("vodka")
-			clear_out()
 			brew_to = "vodka"
+			fake_name = "vodka"
 			needed_water = 80
 			needed_crop = "potato"
 			needed_crop_amount = 30
@@ -310,8 +305,8 @@
 			brew_timer = 60 //1 mins
 
 		if("Kvass")
-			clear_out()
 			brew_to = "Kvass"
+			fake_name = "kvass"
 			needed_water = 200
 			needed_crop = "wheat"
 			needed_crop_amount = 30
@@ -320,8 +315,8 @@
 			brew_timer = 180 //3 mins
 
 		if("whiskey")
-			clear_out()
 			brew_to = "whiskey"
+			fake_name = "whiskey"
 			needed_water = 120
 			needed_crop = "wheat"
 			needed_crop_amount = 40
@@ -347,13 +342,22 @@
 		reagents.clear_reagents()
 
 //Remove and reset
-/obj/structure/fermentation_keg/proc/clear_out()
-	if(brewing || ready_for_bottleing)
-		return //no the lid is on stop it
+/obj/structure/fermentation_keg/proc/clear_out(forceful = FALSE)
+	if(brewing)
+		return FALSE
+
+	if(!forceful && ready_for_bottleing)
+		return FALSE
+
 	if(reagents)
 		reagents.clear_reagents()
 
-	brew_to = null
+	if(forceful)
+		brew_to = null
+
+	ready_for_bottleing = FALSE
+	fake_name = null
+	icon_state = "barrel_tapless_open"
 
 	pitty_system(needed_crop, stored_crop)
 	stored_crop = 0
@@ -370,8 +374,8 @@
 	needed_crop_two = null
 	needed_crop_two_amount = 0
 	needed_water = 0
-	ready_for_bottleing = FALSE
 	price_tag = 150
+	return TRUE
 
 //For returning plants that are leftover
 /obj/structure/fermentation_keg/proc/pitty_system(pitty_crop, sack_of_potatos)
@@ -388,7 +392,7 @@
 			PS = /obj/plant_spawner/grapes
 		if("greengrapes")
 			PS = /obj/plant_spawner/green_grapes
-		if("towercaps")
+		if("towercap")
 			PS = /obj/plant_spawner/towercaps
 		if("sugarcane")
 			PS = /obj/plant_spawner/sugarcane
@@ -533,6 +537,6 @@
 	set src in range(1)
 
 	if(!isghost(usr))
-		clear_out()
+		clear_out(TRUE)
 	else
 		to_chat(usr, SPAN_NOTICE("Sadly this keg isnt brewing spirits!"))

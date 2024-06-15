@@ -47,7 +47,7 @@
 	seedtype = "towercap"
 
 /obj/plant_spawner/grapes
-	seedtype = "grape"
+	seedtype = "grapes"
 
 /obj/plant_spawner/green_grapes
 	seedtype = "greengrapes"
