@@ -6,26 +6,29 @@
 	var/install_start_action = "attaching"
 	var/install_success_action = "attached"
 	var/install_time = WORKTIME_FAST
-	//var/install_tool_quality = null				
+	//var/install_tool_quality = null
 	var/install_difficulty = FAILCHANCE_ZERO
 	var/install_stat = STAT_COG
+	var/install_stat_robotic = STAT_COG //Used for robotic organs like FPB bones
 	var/install_sound = WORKSOUND_HONK
 
 	var/removal_time = WORKTIME_SLOW
 	var/removal_tool_quality = QUALITY_CLAMPING
 	var/removal_difficulty = FAILCHANCE_CHALLENGING
 	var/removal_stat = STAT_COG
+	var/removal_stat_robotic = STAT_COG //Used for robotic organs like FPB bones
 
 	var/mod_time = WORKTIME_FAST
-	var/mod_tool_quality = QUALITY_CLAMPING				
+	var/mod_tool_quality = QUALITY_CLAMPING
 	var/mod_difficulty = FAILCHANCE_ZERO
 	var/mod_stat = STAT_COG
+	var/mod_stat_robotic = STAT_COG //Used for robotic organs like FPB bones
 	var/mod_sound = WORKSOUND_HONK
 
 	var/bypass_perk = null
 
 	var/adjustable = FALSE
-	var/destroy_on_removal = FALSE 
+	var/destroy_on_removal = FALSE
 	var/removable = TRUE
 	var/breakable = FALSE //Some mods are meant to be tamper-resistant and should be removed only in a hard way
 
@@ -96,7 +99,7 @@
 				if(user)
 					to_chat(user, SPAN_WARNING("\The [parent] can not be attached to \the [I]!"))
 				return FALSE
-	
+
 	return TRUE
 
 /datum/component/modification/proc/apply(obj/item/A, mob/living/user)
@@ -111,7 +114,13 @@
 
 		user.visible_message(SPAN_NOTICE("[user] starts [install_start_action] [parent] to [A]"), SPAN_NOTICE("You start [install_start_action] \the [parent] to \the [A]"))
 		var/obj/item/I = parent
-		if(!I.use_tool(user = user, target =  A, base_time = final_install_time, required_quality = null, fail_chance = final_install_difficulty, required_stat = install_stat, forced_sound = install_sound))
+		var/stat_to_use = install_stat
+		if(istype(A, /obj/item/organ))
+			var/obj/item/organ/ro = A
+			if(BP_IS_ROBOTIC(ro))
+				stat_to_use = install_stat_robotic
+
+		if(!I.use_tool(user = user, target = A, base_time = final_install_time, required_quality = null, fail_chance = final_install_difficulty, required_stat = stat_to_use, forced_sound = install_sound))
 			return FALSE
 		to_chat(user, SPAN_NOTICE("You have successfully [install_success_action] \the [parent] to \the [A]"))
 		user.drop_from_inventory(parent)
@@ -138,10 +147,17 @@
 		var/final_install_time = mod_time - time_adjust
 		var/final_install_difficulty = mod_difficulty - difficulty_adjust
 
-		if(!I.use_tool(user = user, target = parent, base_time = final_install_time, required_quality = mod_tool_quality, fail_chance = final_install_difficulty, required_stat = mod_stat, forced_sound = mod_sound))
+		var/stat_to_use = mod_stat
+		var/obj/item/O = parent
+		if(istype(O, /obj/item/organ))
+			var/obj/item/organ/ro = O
+			if(BP_IS_ROBOTIC(ro))
+				stat_to_use = mod_stat_robotic
+
+		if(!I.use_tool(user = user, target = parent, base_time = final_install_time, required_quality = mod_tool_quality, fail_chance = final_install_difficulty, required_stat = stat_to_use, forced_sound = mod_sound))
 			return FALSE
 		modify(I, user)
-	
+
 /datum/component/modification/proc/modify(obj/item/I, mob/living/user)
 	return TRUE
 
@@ -236,7 +252,15 @@
 				time_adjust = M.removal_time
 			var/removal_time = M.removal_time - time_adjust
 			var/removal_difficulty = M.removal_difficulty - difficulty_adjust
-			if(C.use_tool(user = user, target =  upgrade_loc, base_time = removal_time, required_quality = removal_tool_quality, fail_chance = removal_difficulty, required_stat = M.removal_stat))
+
+			var/stat_to_use = M.removal_stat
+			var/obj/item/O = upgrade_loc
+			if(istype(O, /obj/item/organ))
+				var/obj/item/organ/ro = O
+				if(BP_IS_ROBOTIC(ro))
+					stat_to_use = M.removal_stat_robotic
+
+			if(C.use_tool(user = user, target = upgrade_loc, base_time = removal_time, required_quality = removal_tool_quality, fail_chance = removal_difficulty, required_stat = stat_to_use))
 				// If you pass the check, then you manage to remove the upgrade intact
 				if(!M.destroy_on_removal && user)
 					to_chat(user, SPAN_NOTICE("You successfully extract \the [toremove] while leaving it intact."))
