@@ -261,6 +261,22 @@ var/list/_client_preferences_by_type
 		// Force it to reload either way
 		tgui.send_full_update()
 
+
+/datum/client_preference/tgui_input
+	description = "TGUI Input: Use TGUI for basic input boxes"
+	key = "tgui_input"
+	default_value = GLOB.PREF_YES
+
+/datum/client_preference/tgui_input_large
+	description = "TGUI Input: Use Larger Buttons"
+	key = "tgui_input_large"
+	default_value = GLOB.PREF_NO
+
+/datum/client_preference/tgui_input_swapped
+	description = "TGUI Input: Swap Submit/Cancel buttons"
+	key = "tgui_input_swapped"
+	default_value = GLOB.PREF_NO
+
 /********************
 * General Staff Preferences *
 ********************/
