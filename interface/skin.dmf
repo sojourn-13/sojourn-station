@@ -640,6 +640,9 @@ macro "hotkeymode"
 		name = "SHIFT+X"
 		command = ".wield"
 	elem
+		name = "SHIFT+C"
+		command = ".toggle_scope"
+	elem
 		name = "Y"
 		command = "Activate-Held-Object"
 	elem

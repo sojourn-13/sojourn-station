@@ -147,6 +147,20 @@ For the sake of consistency, I suggest always rounding up on even values when ap
 	var/overcharge_level = 0 //What our current overcharge level is. Peaks at overcharge_max
 	var/overcharge_max = 10
 
+/mob/living/proc/attempt_scope()
+	var/obj/item/I = get_active_hand()
+	if(!I)
+		return
+	if(!istype(I, /obj/item/gun))
+		return
+
+	var/obj/item/gun/G = I
+	G.toggle_scope(src)
+
+/mob/living/verb/scope_hotkey()
+	set name = ".toggle_scope"
+	attempt_scope()
+
 /obj/item/gun/wield(mob/user)
 	if(!wield_delay)
 		..()
