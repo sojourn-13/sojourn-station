@@ -35,8 +35,8 @@
 	price_tag = 150
 
 /obj/item/bottle_kit
-	name = "Bottler Kit"
-	desc = "A box that holds glasses fabricators, lables, caps and quarks ready for home brewing ad bottling."
+	name = "Bottling Kit"
+	desc = "A box that holds glasses fabricators, lables, caps and quarks ready for home brewing and bottling."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "bottler_box"
 	w_class = ITEM_SIZE_NORMAL
@@ -112,9 +112,9 @@
 
 		//Chems
 		if(needed_chem_one)
-			message += "Reagent Needed: [get_reagent_name_by_id(needed_chem_one)] in amount of at lest [needed_chem_one_amount].\n"
+			message += "Reagent Needed: [get_reagent_name_by_id(needed_chem_one)] in a amount of at least [needed_chem_one_amount].\n"
 		if(needed_chem_two)
-			message += "Second Reagent Needed: [get_reagent_name_by_id(needed_chem_two)] in amount of at lest [needed_chem_two_amount].\n"
+			message += "Second Reagent Needed: [get_reagent_name_by_id(needed_chem_two)] in a amount of at least [needed_chem_two_amount].\n"
 
 		//time
 		if(brew_timer)
