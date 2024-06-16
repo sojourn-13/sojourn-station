@@ -147,6 +147,20 @@
 			design.nano_ui_data["icon"] = icon_class_name(sanitize_css_class_name("[design.build_path]"))
 		design_data_loaded = TRUE
 
+/datum/asset/spritesheet_batched/chem_master
+	name = "chem_master"
+
+/datum/asset/spritesheet_batched/chem_master/create_spritesheets()
+	for(var/i = 1 to MAX_PILL_SPRITE)
+		insert_icon("pill[i]", uni_icon('icons/obj/chemical.dmi', "pill" + num2text(i)))
+	for(var/sprite in BOTTLE_SPRITES)
+		insert_icon(sprite, uni_icon('icons/obj/chemical.dmi', sprite))
+	for(var/sprite in SYRETTE_SPRITES)
+		insert_icon(sprite, uni_icon('icons/obj/syringe.dmi', sprite))
+	for(var/sprite in PILL_BOTTLE_MODELS)
+		insert_icon(sprite, uni_icon('icons/obj/chemical.dmi', sprite))
+	insert_icon("supeyrette", uni_icon('icons/obj/syringe.dmi', "supeyrette"))
+
 /datum/asset/simple/materials/register()
 	for(var/type in subtypesof(/obj/item/stack/material) - typesof(/obj/item/stack/material/cyborg))
 		var/filename = sanitizeFileName("[type].png")
