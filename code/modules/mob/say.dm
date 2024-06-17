@@ -1,10 +1,16 @@
 /mob/proc/say()
 	return
 
+// Do nothing, only available for humans
+/mob/verb/whisper_wrapper()
+	set name = "Whisper verb"
+	set category = "IC"
+
+// Do nothing, only available for humans
 /mob/verb/whisper()
 	set name = "Whisper"
 	set category = "IC"
-
+	set hidden = TRUE
 
 /mob/verb/say_wrapper()
 	set name = "Say verb"

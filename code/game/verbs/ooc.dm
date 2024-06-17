@@ -77,10 +77,23 @@
 			else
 				to_chat(target, "<span class='ooc'><span class='[ooc_style]'>" + create_text_tag("ooc", "OOC:", target) + " <EM>[display_name]:</EM> <span class='message'>[msg]</span></span></span>")
 
+/client/verb/looc_wrapper()
+	set name = "LOOC verb"
+	set category = "OOC"
+
+	if(get_preference_value(/datum/client_preference/tgui_say) == GLOB.PREF_YES)
+		winset(src, null, "command=[tgui_say_create_open_command(LOOC_CHANNEL)]")
+		return
+
+	var/message = input("", "looc (text)") as text|null
+	if(message)
+		looc(message)
+
 /client/verb/looc(msg as text)
 	set name = "LOOC"
 	set desc = "Local OOC, seen only by those in view."
 	set category = "OOC"
+	set hidden = TRUE
 
 	if(!BC_IsKeyAllowedToConnect(ckey) && !usr.client.holder)
 		to_chat(src, "Non-Whitelisted may not use OOC.")
