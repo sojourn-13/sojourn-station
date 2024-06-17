@@ -139,3 +139,6 @@
 	var/on_fire = 0 //The "Are we on fire?" var
 	var/fire_stacks
 	var/next_onfire_brn = 0 //burn
+
+	/// Icon used for speechbubbles
+	var/bubble_icon = "default"

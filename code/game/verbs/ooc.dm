@@ -1,7 +1,19 @@
+/client/verb/ooc_wrapper()
+	set name = "OOC verb"
+	set category = "OOC"
+
+	if(get_preference_value(/datum/client_preference/tgui_say) == GLOB.PREF_YES)
+		winset(src, null, "command=[tgui_say_create_open_command(OOC_CHANNEL)]")
+		return
+
+	var/message = input("", "ooc (text)") as text|null
+	if(message)
+		ooc(message)
 
 /client/verb/ooc(msg as text)
 	set name = "OOC"
 	set category = "OOC"
+	set hidden = TRUE
 
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, SPAN_WARNING("Speech is currently admin-disabled."))
@@ -11,7 +23,8 @@
 		to_chat(src, "Non-Whitelisted may not use OOC.")
 		return
 
-	if(!mob)	return
+	if(!mob)
+		return
 	if(IsGuestKey(key))
 		to_chat(src, "Guests may not use OOC.")
 		return

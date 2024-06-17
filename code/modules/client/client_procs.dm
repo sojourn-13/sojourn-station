@@ -86,6 +86,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		cmd_admin_irc_pm(href_list["irc_msg"])
 		return
 
+	if(href_list["commandbar_typing"])
+		handle_commandbar_typing(href_list)
+
 	switch(href_list["_src_"])
 		if("holder")
 			hsrc = holder
@@ -202,6 +205,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	// Instantiate ~~tgui~~ goonchat panel
 	// tgui_panel = new(src)
+	tgui_say = new(src, "tgui_say")
+	initialize_commandbar_spy()
 	chatOutput = new /datum/chatOutput(src)
 
 	var/connecting_admin = FALSE //because de-admined admins connecting should be treated like admins.
@@ -279,6 +284,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	// src << browse(file('html/statbrowser.html'), "window=statbrowser")
 	// addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
 	// tgui_panel.initialize()
+	tgui_say.initialize()
 	// Starts the chat
 	chatOutput.start()
 
