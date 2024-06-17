@@ -224,7 +224,9 @@ nanoui is used to open and update nano browser uis
 	var/list/config_data = get_config_data()
 
 	var/list/send_data = list("config" = config_data)
-	send_data["data"] = data
+
+	if(!isnull(data))
+		send_data["data"] = data
 
 	return send_data
 
