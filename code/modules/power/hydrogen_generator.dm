@@ -123,16 +123,16 @@
 				else
 					disconnect_from_network()
 
-			if(QUALITY_SCREW_DRIVING)
-				default_deconstruction(W, user)
-				return
+		if(QUALITY_SCREW_DRIVING)
+			default_deconstruction(W, user)
+			return
 
-			if(QUALITY_PRYING)
-				default_deconstruction(W, user)
-				return
+		if(QUALITY_PRYING)
+			default_deconstruction(W, user)
+			return
 
-			if(ABORT_CHECK)
-				return
+		if(ABORT_CHECK)
+			return
 
 
 	..()
