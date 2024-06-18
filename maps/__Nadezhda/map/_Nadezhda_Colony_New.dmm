@@ -57596,8 +57596,10 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/absolutism/bioreactor)
 "lGS" = (
-/obj/structure/bed/double,
-/obj/item/bedsheet/rddouble,
+/obj/structure/noticeboard{
+	pixel_y = 35
+	},
+/obj/item/stack/cable_coil,
 /turf/simulated/floor/wood,
 /area/nadezhda/command/cro)
 "lGV" = (
