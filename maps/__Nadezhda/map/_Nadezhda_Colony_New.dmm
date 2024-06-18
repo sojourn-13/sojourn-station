@@ -8713,12 +8713,6 @@
 /obj/structure/scrap/medical,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2west)
-"bPt" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/violetcorener,
-/area/nadezhda/rnd/rbreakroom)
 "bPD" = (
 /obj/landmark/costume/highlander,
 /obj/structure/table/rack,
@@ -10614,17 +10608,11 @@
 	name = "Science Expedition prep"
 	})
 "ckH" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "MedbayTotalLockdown";
-	layer = 2.6;
-	name = "Medbay Total Lockdown";
-	opacity = 0
+/obj/machinery/door/airlock/glass{
+	name = "Break Room"
 	},
-/obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/tiled/steel/gray_perforated,
-/area/nadezhda/medical/chemistry)
+/area/nadezhda/rnd/rbreakroom)
 "ckN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -15132,15 +15120,16 @@
 /turf/simulated/floor/tiled/steel/gray_perforated,
 /area/nadezhda/quartermaster/hangarsupply)
 "dfC" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/table/standard,
+/obj/item/device/camera,
+/obj/item/folder/black{
+	pixel_x = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/steel/violetcorener,
+/obj/item/folder/blue,
+/obj/item/folder/red{
+	pixel_x = -6
+	},
+/turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/rnd/rbreakroom)
 "dfE" = (
 /obj/structure/multiz/stairs/enter{
@@ -18645,7 +18634,6 @@
 	name = "Research and Development Teleporter Testing";
 	req_access = list(5)
 	},
-/obj/structure/barricade,
 /turf/simulated/floor/tiled/white/gray_perforated,
 /area/nadezhda/command/teleporter)
 "dOx" = (
@@ -35057,6 +35045,9 @@
 	name = "Residential District Maintenance"
 	})
 "hdq" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel/violetcorener,
 /area/nadezhda/rnd/rbreakroom)
 "hdt" = (
@@ -35280,8 +35271,15 @@
 	name = "Residential District Maintenance"
 	})
 "hfO" = (
-/obj/machinery/vending/snack,
-/turf/simulated/floor/tiled/white/monofloor,
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/tiled/steel/violetcorener,
 /area/nadezhda/rnd/rbreakroom)
 "hfY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -41920,24 +41918,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
-"itM" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/industrial/road/straight1,
-/obj/effect/floor_decal/industrial/road/straight2,
-/obj/effect/floor_decal/industrial/road/straight3,
-/obj/effect/floor_decal/industrial/road/straight4,
-/obj/effect/floor_decal/corner_oldtile/white/diagonal{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner_oldtile/white/diagonal{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/cyancorner,
-/area/nadezhda/command/cro)
 "itU" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/asteroid/dirt/dust,
@@ -43390,16 +43370,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/nadezhda/maintenance/undergroundfloor2west)
-"iJj" = (
-/obj/machinery/button/remote/airlock{
-	dir = 4;
-	id = "researchlockdown";
-	name = "Research Wing Lockdown";
-	req_access = list(30);
-	pixel_y = 10
-	},
-/turf/simulated/wall/r_wall,
-/area/nadezhda/command/cro)
 "iJk" = (
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/structure/multiz/ladder,
@@ -56467,10 +56437,9 @@
 /turf/simulated/floor,
 /area/shuttle/vasiliy_shuttle_area)
 "lvF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/network/research,
-/turf/simulated/floor/tiled/dark/danger,
-/area/nadezhda/rnd/lab)
+/obj/structure/bed/chair/office/light,
+/turf/simulated/floor/carpet/purcarpet,
+/area/nadezhda/command/cro)
 "lvI" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -61208,10 +61177,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "mtn" = (
-/obj/machinery/door/airlock/glass{
-	name = "Break Room"
-	},
-/turf/simulated/floor/tiled/steel/gray_perforated,
+/obj/machinery/vending/snack,
+/turf/simulated/floor/tiled/white/monofloor,
 /area/nadezhda/rnd/rbreakroom)
 "mto" = (
 /obj/structure/flora/ausbushes/palebush,
@@ -64202,11 +64169,10 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/engineering/atmos)
 "mXV" = (
-/obj/structure/bed/chair/comfy/blue{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/steel/violetcorener,
-/area/nadezhda/rnd/rbreakroom)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/research,
+/turf/simulated/floor/tiled/dark/danger,
+/area/nadezhda/rnd/lab)
 "mXW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -65022,9 +64988,8 @@
 	name = "Residential District Maintenance"
 	})
 "neL" = (
-/obj/structure/bed/chair/office/light,
-/turf/simulated/floor/carpet/purcarpet,
-/area/nadezhda/command/cro)
+/turf/simulated/floor/tiled/cafe,
+/area/nadezhda/rnd/rbreakroom)
 "nfc" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -69516,6 +69481,24 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/bluecorner,
 /area/nadezhda/security/sechall)
+"nWK" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/road/straight3,
+/obj/effect/floor_decal/industrial/road/straight4,
+/obj/effect/floor_decal/corner_oldtile/white/diagonal{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_oldtile/white/diagonal{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/cyancorner,
+/area/nadezhda/command/cro)
 "nWM" = (
 /obj/item/modular_computer/console/preset/security/records{
 	dir = 8
@@ -75449,6 +75432,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/nadezhda/maintenance/undergroundfloor2north)
+"pdB" = (
+/obj/machinery/door/airlock/command{
+	name = "Soteria Research Overseer's Office";
+	req_access = list(30);
+	id_tag = "crodoor"
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/nadezhda/command/cro)
 "pdE" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/plating/under,
@@ -79294,14 +79290,8 @@
 /turf/simulated/floor/tiled/cafe,
 /area/nadezhda/crew_quarters/dorm4)
 "pQG" = (
-/obj/structure/table/standard,
-/obj/item/device/camera,
-/obj/item/folder/black{
-	pixel_x = 6
-	},
-/obj/item/folder/blue,
-/obj/item/folder/red{
-	pixel_x = -6
+/obj/structure/bed/chair{
+	dir = 8
 	},
 /turf/simulated/floor/carpet/blucarpet,
 /area/nadezhda/rnd/rbreakroom)
@@ -89011,9 +89001,6 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/nadezhda/hallway/side/f2section1)
 "rNy" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/steel/violetcorener,
 /area/nadezhda/rnd/rbreakroom)
 "rNB" = (
@@ -107857,17 +107844,14 @@
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/nadezhda/rnd/xenobiology/xenoflora)
 "vwZ" = (
-/obj/machinery/door/airlock/command{
-	name = "Soteria Research Overseer's Office";
+/obj/machinery/button/remote/airlock{
+	dir = 4;
+	id = "researchlockdown";
+	name = "Research Wing Lockdown";
 	req_access = list(30);
-	id_tag = "crodoor"
+	pixel_y = 10
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/monofloor,
+/turf/simulated/wall/r_wall,
 /area/nadezhda/command/cro)
 "vxh" = (
 /obj/machinery/vending/boozeomat{
@@ -109299,11 +109283,17 @@
 /turf/simulated/floor/tiled/steel,
 /area/nadezhda/maintenance/undergroundfloor1east)
 "vLU" = (
-/obj/structure/bed/chair{
-	dir = 8
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "MedbayTotalLockdown";
+	layer = 2.6;
+	name = "Medbay Total Lockdown";
+	opacity = 0
 	},
-/turf/simulated/floor/carpet/blucarpet,
-/area/nadezhda/rnd/rbreakroom)
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/tiled/steel/gray_perforated,
+/area/nadezhda/medical/chemistry)
 "vMe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -115848,7 +115838,10 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/maintenance/undergroundfloor1south)
 "xaP" = (
-/turf/simulated/floor/tiled/cafe,
+/obj/structure/bed/chair/comfy/blue{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel/violetcorener,
 /area/nadezhda/rnd/rbreakroom)
 "xaS" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -117440,6 +117433,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/nadezhda/rnd/docking)
+"xsv" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel/violetcorener,
+/area/nadezhda/rnd/rbreakroom)
 "xsx" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -136292,7 +136291,7 @@ nZB
 cFw
 rlJ
 rlJ
-iJj
+vwZ
 rlJ
 rlJ
 rlJ
@@ -136899,7 +136898,7 @@ cFw
 raT
 jPJ
 pWt
-neL
+lvF
 mPu
 rlJ
 tad
@@ -137505,7 +137504,7 @@ eWx
 raT
 cgd
 qhv
-itM
+nWK
 nWd
 rlJ
 hLL
@@ -137707,7 +137706,7 @@ cFw
 raT
 dGD
 pgk
-itM
+nWK
 wcN
 rlJ
 rUl
@@ -138111,7 +138110,7 @@ xnE
 mqV
 rlJ
 rlJ
-vwZ
+pdB
 rlJ
 rlJ
 azO
@@ -139120,7 +139119,7 @@ kbA
 tUE
 oCs
 rLm
-lvF
+mXV
 lXi
 iBt
 uOw
@@ -176686,7 +176685,7 @@ fws
 ebY
 dSd
 gIk
-ckH
+vLU
 fws
 uhB
 btQ
@@ -176875,10 +176874,10 @@ kbF
 ggq
 txJ
 dQp
-hdq
-hdq
-hdq
-xaP
+rNy
+rNy
+rNy
+neL
 bcl
 mpA
 txJ
@@ -177077,10 +177076,10 @@ nTx
 bcQ
 txJ
 apk
-bPt
+hdq
 fLc
 tgU
-xaP
+neL
 uMy
 lmZ
 txJ
@@ -177279,10 +177278,10 @@ uRs
 tUa
 txJ
 jHF
-pQG
+dfC
 eMB
 vwn
-mXV
+xaP
 oAD
 tWV
 txJ
@@ -177481,10 +177480,10 @@ oxA
 pxF
 txJ
 aVR
-vLU
+pQG
 hVu
 heC
-hdq
+rNy
 xwM
 tck
 qlG
@@ -177683,10 +177682,10 @@ inc
 vgL
 ewD
 oyL
-dfC
-dfC
-dfC
-dfC
+hfO
+hfO
+hfO
+hfO
 isw
 cbp
 eqB
@@ -177885,16 +177884,16 @@ leS
 ekq
 txJ
 oMe
+xsv
 rNy
-hdq
-hfO
-hdq
+mtn
+rNy
 jOo
 iZg
 txJ
 qcz
 vIr
-ckH
+vLU
 ivk
 uYv
 kYu
@@ -178090,7 +178089,7 @@ txJ
 txJ
 txJ
 mrK
-mtn
+ckH
 xKB
 mrK
 txJ
