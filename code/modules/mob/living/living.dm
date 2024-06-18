@@ -634,23 +634,23 @@ default behaviour is:
 	if(ishuman(src) && !weakened && (_dir))// If true_dir = 0(src isn't moving), doesn't proc.
 		var/mob/living/carbon/human/H = src
 		if(H.handcuffed || H.legcuffed)
-			to_chat(H, SPAN_NOTICE("You cant dive well cuffed!"))
+			to_chat(H, SPAN_NOTICE("You can't dive while cuffed!"))
 			return
 
 		if(H.grabbed_by.len)
-			to_chat(H, SPAN_NOTICE("You cant dive well grappled!"))
+			to_chat(H, SPAN_NOTICE("You can't dive while grappled!"))
 			return
 
 		if(H.stat != CONSCIOUS)
-			to_chat(H, SPAN_NOTICE("You cant dive well not awake!"))
+			to_chat(H, SPAN_NOTICE("You can't dive while unconcious!"))
 			return
 
 		if(buckled)
-			to_chat(H, SPAN_NOTICE("You cant dive well buckled!"))
+			to_chat(H, SPAN_NOTICE("You can't dive while buckled!"))
 			return
 
 		if(40 >= health)
-			to_chat(H, SPAN_NOTICE("Your to hurt to dive!"))
+			to_chat(H, SPAN_NOTICE("You are too hurt to dive!"))
 			return
 //End of SoJ edits
 	if(!weakened && _dir)// If true_dir = 0(src isn't moving), doesn't proc.
